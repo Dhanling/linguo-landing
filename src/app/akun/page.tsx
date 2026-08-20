@@ -4080,7 +4080,7 @@ export default function AkunPage() {
                       <div className="flex flex-wrap items-center justify-between gap-4">
                         <div>
                           <h1 className="flex items-center gap-2 text-[24px] font-extrabold leading-tight text-[#12172B] sm:text-[26px]">Halo, {firstName} <motion.span style={{ display: "inline-block", transformOrigin: "75% 75%" }} animate={{ rotate: [0, 14, -8, 14, -4, 10, 0] }} transition={{ duration: 1.6, repeat: Infinity, repeatDelay: 1.4, ease: "easeInOut" }}><Hand className="h-6 w-6 text-[#F2CB05]" strokeWidth={2.2} /></motion.span></h1>
-                          <p className="mt-0.5 text-[14px] font-medium text-gray-500">{getGreeting()} — yuk belajar bahasa hari ini!</p>
+                          <p className="mt-0.5 text-[14px] font-medium text-gray-500">{tt(getGreeting())} — {tt("yuk belajar bahasa hari ini!")}</p>
                         </div>
                         <div className="flex items-center gap-3">
                           {/* [beranda-search-live-v1] cari kelas / pengajar / bahasa / menu */}
@@ -4124,7 +4124,7 @@ export default function AkunPage() {
                                     <span className="shrink-0 rounded-lg bg-slate-100 px-2 py-0.5 text-[10.5px] font-bold uppercase tracking-wide text-gray-500">{h.kind}</span>
                                   </button>
                                 )) : (
-                                  <p className="px-3 py-6 text-center text-[13px] font-medium text-gray-500">Ga ada yang cocok sama &ldquo;{homeQ}&rdquo;</p>
+                                  <p className="px-3 py-6 text-center text-[13px] font-medium text-gray-500">{tt("Ga ada yang cocok sama")} &ldquo;{homeQ}&rdquo;</p>
                                 )}
                               </div>
                             )}
@@ -4173,7 +4173,7 @@ export default function AkunPage() {
                                   onClick={() => setBerandaTab(k)}
                                   className={`inline-flex items-center gap-2 rounded-xl px-3.5 py-1.5 text-[13.5px] font-bold transition ${berandaTab === k ? "bg-[#16796E] text-white" : "text-gray-500 hover:text-[#16796E]"}`}
                                 >
-                                  <Icon className="h-4 w-4" strokeWidth={2.4} /> {label}
+                                  <Icon className="h-4 w-4" strokeWidth={2.4} /> {tt(label)}
                                 </button>
                               ))}
                             </div>
@@ -4182,7 +4182,7 @@ export default function AkunPage() {
                                 {/* [beranda-riwayat-kelas-v1] toggle Aktif / Riwayat — hanya muncul kalau ada kelas selesai */}
                                 {riwayatRegs.length > 0 && (
                                   <div className="inline-flex items-center gap-1 rounded-xl bg-white p-1">
-                                    {([["aktif", "Aktif"], ["riwayat", `Riwayat (${riwayatRegs.length})`]] as const).map(([k, label]) => (
+                                    {([["aktif", tt("Aktif")], ["riwayat", `${tt("Riwayat")} (${riwayatRegs.length})`]] as const).map(([k, label]) => (
                                       <button
                                         key={k}
                                         onClick={() => setLiveView(k)}
@@ -4194,7 +4194,7 @@ export default function AkunPage() {
                                   </div>
                                 )}
                                 {liveView === "aktif" && liveRegs.length > 0 && (
-                                  <button onClick={openEnrollWizard} className="text-[13px] font-bold text-[#16796E] hover:text-[#0F5A52]">+ Tambah</button>
+                                  <button onClick={openEnrollWizard} className="text-[13px] font-bold text-[#16796E] hover:text-[#0F5A52]">+ {tt("Tambah")}</button>
                                 )}
                               </div>
                             )}
@@ -4284,11 +4284,11 @@ export default function AkunPage() {
                                       {/* [beranda-status-badge-v1] badge status di pojok kanan atas */}
                                       {selesai ? (
                                         <span className="absolute right-2.5 top-2.5 inline-flex items-center gap-1 rounded-full bg-white/90 px-2 py-0.5 text-[10.5px] font-bold text-gray-500">
-                                          <Check className="h-2.5 w-2.5" strokeWidth={3} /> Selesai
+                                          <Check className="h-2.5 w-2.5" strokeWidth={3} /> {tt("Selesai")}
                                         </span>
                                       ) : (
                                         <span className="absolute right-2.5 top-2.5 inline-flex items-center gap-1 rounded-full bg-white/90 px-2 py-0.5 text-[10.5px] font-bold text-[#16796E]">
-                                          <span className="h-1.5 w-1.5 rounded-full bg-[#16796E]" /> Aktif
+                                          <span className="h-1.5 w-1.5 rounded-full bg-[#16796E]" /> {tt("Aktif")}
                                         </span>
                                       )}
                                       <div className="relative w-full p-3">
@@ -4312,8 +4312,8 @@ export default function AkunPage() {
                                         <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${pct}%` }} />
                                       </div>
                                       <div className="mt-2 flex items-center justify-between text-[11.5px] font-semibold">
-                                        <span className="text-gray-500">Selesai: <span className="text-[#12172B]">{pct}%</span></span>
-                                        <span className="text-gray-500">Sesi: <span className="text-[#12172B]">{used}/{total}</span></span>
+                                        <span className="text-gray-500">{tt("Selesai")}: <span className="text-[#12172B]">{pct}%</span></span>
+                                        <span className="text-gray-500">{tt("Sesi")}: <span className="text-[#12172B]">{used}/{total}</span></span>
                                       </div>
                                     </div>
                                   </Link>
@@ -4333,11 +4333,11 @@ export default function AkunPage() {
                                           <span className={`inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg ${badge?.bg || "bg-slate-100"} ${badge?.color || "text-gray-500"}`}>
                                             <SectionIcon className="h-4 w-4" strokeWidth={2.4} />
                                           </span>
-                                          <h3 className="text-[15px] font-extrabold text-[#12172B]">{badge?.label || key}</h3>
+                                          <h3 className="text-[15px] font-extrabold text-[#12172B]">{tt(badge?.label || key)}</h3>
                                           <span className="rounded-full bg-[#F5F6F8] px-2 py-0.5 text-[11.5px] font-bold text-gray-500">
-                                            {items.length} kelas
+                                            {items.length} {tt("kelas")}
                                           </span>
-                                          {note && <p className="text-[12px] font-medium text-gray-500">{note}</p>}
+                                          {note && <p className="text-[12px] font-medium text-gray-500">{tt(note)}</p>}
                                         </div>
                                         {/* [beranda-kartu-kompak-v1] 3 kartu per baris mulai lg —
                                             dulu baru 3 kolom di 2xl, jadi di layar laptop kartunya
@@ -4353,7 +4353,7 @@ export default function AkunPage() {
                                               className="flex min-h-[140px] flex-col items-center justify-center gap-2 rounded-[20px] bg-gray-50 p-4 text-gray-400 transition-colors hover:bg-gray-100 hover:text-[#16796E]"
                                             >
                                               <Plus className="h-6 w-6" strokeWidth={2} />
-                                              <span className="text-[12.5px] font-semibold">Tambah Kelas</span>
+                                              <span className="text-[12.5px] font-semibold">{tt("Tambah Kelas")}</span>
                                             </button>
                                           )}
                                         </div>
@@ -4366,18 +4366,18 @@ export default function AkunPage() {
                           ) : liveView === "riwayat" ? (
                             <div className="mt-3 rounded-3xl bg-white p-8 text-center">
                               <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
-                              <h3 className="mb-1 font-bold text-[#12172B]">Belum ada riwayat kelas</h3>
-                              <p className="text-sm text-gray-500">Kelas yang sudah selesai akan muncul di sini.</p>
+                              <h3 className="mb-1 font-bold text-[#12172B]">{tt("Belum ada riwayat kelas")}</h3>
+                              <p className="text-sm text-gray-500">{tt("Kelas yang sudah selesai akan muncul di sini.")}</p>
                             </div>
                           ) : (
                             <div className="mt-3 rounded-3xl bg-white p-8 text-center">
                               <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
-                              <h3 className="mb-1 font-bold text-[#12172B]">Belum ada kelas live aktif</h3>
-                              <p className="mb-4 text-sm text-gray-500">Mulai belajar bahasa baru sekarang!</p>
+                              <h3 className="mb-1 font-bold text-[#12172B]">{tt("Belum ada kelas live aktif")}</h3>
+                              <p className="mb-4 text-sm text-gray-500">{tt("Mulai belajar bahasa baru sekarang!")}</p>
                               {/* [beranda-onboarding-cta-v1] kalau kartu "Mulai dari sini" udah tampil di
                                   atas, tombol di sini diturunkan jadi sekunder — biar ga 2 CTA primer
                                   dgn tujuan sama saling rebutan di satu layar. */}
-                              <button onClick={openEnrollWizard} className={`inline-flex h-11 items-center gap-2 rounded-2xl px-6 text-sm font-bold transition-colors ${belumPunyaApaPun ? "border border-slate-200 bg-white text-[#12172B] hover:border-[#16796E] hover:text-[#16796E]" : "bg-[#16796E] text-white hover:bg-[#0F5A52]"}`}><Plus className="h-4 w-4" strokeWidth={2.5} /> Daftar Kelas</button>
+                              <button onClick={openEnrollWizard} className={`inline-flex h-11 items-center gap-2 rounded-2xl px-6 text-sm font-bold transition-colors ${belumPunyaApaPun ? "border border-slate-200 bg-white text-[#12172B] hover:border-[#16796E] hover:text-[#16796E]" : "bg-[#16796E] text-white hover:bg-[#0F5A52]"}`}><Plus className="h-4 w-4" strokeWidth={2.5} /> {tt("Daftar Kelas")}</button>
                             </div>
                           )
                           )}
@@ -4406,18 +4406,18 @@ export default function AkunPage() {
                                     <span className="text-[56px] font-extrabold tracking-tight text-white/95 transform-gpu scale-[1.02] transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]">{mandiri.native.slice(0, 2)}</span>
                                   )}
                                   <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-[#16796E]">
-                                    <GraduationCap className="h-3 w-3" strokeWidth={2.5} /> Belajar Mandiri
+                                    <GraduationCap className="h-3 w-3" strokeWidth={2.5} /> {tt("Belajar Mandiri")}
                                   </span>
                                 </div>
                                 <div className="px-2 pb-1.5 pt-3">
                                   <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{mandiri.native} <span className="font-bold text-gray-500">· {mandiri.label}</span></h3>
-                                  <p className="mt-0.5 truncate text-[13px] font-medium text-gray-500">{mandiri.fresh ? "Lanjut" : "Ulangi"}: {mandiri.resumeTitle}</p>
+                                  <p className="mt-0.5 truncate text-[13px] font-medium text-gray-500">{mandiri.fresh ? tt("Lanjut") : tt("Ulangi")}: {mandiri.resumeTitle}</p>
                                   <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#E8EAEE]">
                                     <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${mandiri.pct}%` }} />
                                   </div>
                                   <div className="mt-3 flex items-center justify-between text-[12px] font-semibold">
-                                    <span className="text-gray-500">Selesai: <span className="text-[#12172B]">{mandiri.pct}%</span></span>
-                                    <span className="text-gray-500">Sesi: <span className="text-[#12172B]">{mandiri.done}/{mandiri.total}</span></span>
+                                    <span className="text-gray-500">{tt("Selesai")}: <span className="text-[#12172B]">{mandiri.pct}%</span></span>
+                                    <span className="text-gray-500">{tt("Sesi")}: <span className="text-[#12172B]">{mandiri.done}/{mandiri.total}</span></span>
                                   </div>
                                 </div>
                               </button>
@@ -4425,8 +4425,8 @@ export default function AkunPage() {
                           ) : (
                             <div className="mt-3 rounded-3xl bg-white p-8 text-center">
                               <GraduationCap className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
-                              <h3 className="mb-1 font-bold text-[#12172B]">Belum ada paket belajar mandiri</h3>
-                              <p className="mb-4 text-sm text-gray-500">Belajar sendiri kapan saja lewat paket E-Learning.</p>
+                              <h3 className="mb-1 font-bold text-[#12172B]">{tt("Belum ada paket belajar mandiri")}</h3>
+                              <p className="mb-4 text-sm text-gray-500">{tt("Belajar sendiri kapan saja lewat paket E-Learning.")}</p>
                               <button onClick={openEnrollWizard} className="inline-flex h-11 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-sm font-bold text-white transition-colors hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} /> Lihat Paket</button>
                             </div>
                           )
@@ -4568,8 +4568,8 @@ export default function AkunPage() {
                           kartu detail sublevel CEFR) DIHAPUS dari beranda atas permintaan.
                           Katalog lengkapnya tetap hidup di /silabus — tautannya di bawah. */}
                       <div className="flex flex-wrap items-center gap-x-5 gap-y-2 px-1 text-[13px] font-medium text-gray-500">
-                        <a href="/silabus" className="inline-flex items-center gap-1.5 transition-colors hover:text-[#16796E]"><Globe className="h-4 w-4" strokeWidth={2} />Semua Silabus (60+ Bahasa)</a>
-                        <a href="/blog" className="inline-flex items-center gap-1.5 transition-colors hover:text-[#16796E]"><Newspaper className="h-4 w-4" strokeWidth={2} />Blog &amp; Tips Belajar</a>
+                        <a href="/silabus" className="inline-flex items-center gap-1.5 transition-colors hover:text-[#16796E]"><Globe className="h-4 w-4" strokeWidth={2} />{tt("Semua Silabus (60+ Bahasa)")}</a>
+                        <a href="/blog" className="inline-flex items-center gap-1.5 transition-colors hover:text-[#16796E]"><Newspaper className="h-4 w-4" strokeWidth={2} />{tt("Blog & Tips Belajar")}</a>
                       </div>
 
 
@@ -4808,11 +4808,11 @@ export default function AkunPage() {
                 const MateriTopBar = (
                   <div className="flex flex-wrap items-center justify-between gap-4 px-6 pt-6 lg:px-8">
                     <div>
-                      <p className="flex items-center gap-1.5 text-[12px] font-bold text-gray-500"><span>Dashboard</span><ChevronRight className="h-3.5 w-3.5" /><span className="text-[#16796E]">Kelas &amp; Materi</span></p>
-                      <h1 className="mt-1 text-[24px] font-extrabold leading-tight text-[#12172B]">Kelas &amp; Materi</h1>
+                      <p className="flex items-center gap-1.5 text-[12px] font-bold text-gray-500"><span>{tt("Dashboard")}</span><ChevronRight className="h-3.5 w-3.5" /><span className="text-[#16796E]">{tt("Kelas & Materi")}</span></p>
+                      <h1 className="mt-1 text-[24px] font-extrabold leading-tight text-[#12172B]">{tt("Kelas & Materi")}</h1>
                       <div className="mt-3 inline-flex gap-1 rounded-2xl bg-[#EEF1F4] p-1">
                         {([["live", "Kelas Live"], ["mandiri", "Belajar Mandiri"]] as const).map(([k, label]) => (
-                          <button key={k} onClick={() => { setMateriView(k); if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&view=${k}`); }} className={`rounded-xl px-3.5 py-1.5 text-[12px] font-bold transition ${materiView === k ? "bg-[#16796E] text-white" : "text-gray-500 hover:text-[#12172B]"}`}>{label}</button>
+                          <button key={k} onClick={() => { setMateriView(k); if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&view=${k}`); }} className={`rounded-xl px-3.5 py-1.5 text-[12px] font-bold transition ${materiView === k ? "bg-[#16796E] text-white" : "text-gray-500 hover:text-[#12172B]"}`}>{tt(label)}</button>
                         ))}
                       </div>
                     </div>
@@ -4825,11 +4825,11 @@ export default function AkunPage() {
                         <input
                           value={materiSearch}
                           onChange={(e) => setMateriSearch(e.target.value)}
-                          placeholder={materiView === "mandiri" ? "Cari bahasa…" : "Cari kelas, pengajar, atau bahasa…"}
+                          placeholder={materiView === "mandiri" ? tt("Cari bahasa…") : tt("Cari kelas, pengajar, atau bahasa…")}
                           className="w-full bg-transparent text-[13px] font-medium outline-none placeholder:text-slate-400"
                         />
                         {materiSearch ? (
-                          <button onClick={() => setMateriSearch("")} aria-label="Hapus pencarian" className="shrink-0 text-gray-400 transition hover:text-[#12172B]">
+                          <button onClick={() => setMateriSearch("")} aria-label={tt("Hapus pencarian")} className="shrink-0 text-gray-400 transition hover:text-[#12172B]">
                             <X className="h-4 w-4" strokeWidth={2.4} />
                           </button>
                         ) : null}
@@ -4852,7 +4852,7 @@ export default function AkunPage() {
                         {/* LEFT list — desktop */}
                         <aside className="materi-flat hidden min-h-0 flex-col border-r border-slate-100 bg-white lg:flex">
                           <div className="shrink-0 px-6 pb-4 pt-7">
-                            <h2 className="text-[18px] font-extrabold text-[#12172B]">Kelas Kamu</h2>
+                            <h2 className="text-[18px] font-extrabold text-[#12172B]">{tt("Kelas Kamu")}</h2>
                             {/* [materi-bahasa-siswa-v1] daftar ini kini memuat kelas selesai juga,
                                 jadi jangan lagi menyebut semuanya "aktif". */}
                             <p className="mt-0.5 text-[12px] font-medium text-gray-500">
@@ -4863,14 +4863,14 @@ export default function AkunPage() {
                               })()}
                             </p>
                             <div className="mt-4 flex gap-2">
-                              {([["all", "Semua"], ["run", "Berjalan"], ["done", "Selesai"]] as const).map(([k, label]) => (
+                              {([["all", tt("Semua")], ["run", tt("Berjalan")], ["done", tt("Selesai")]] as const).map(([k, label]) => (
                                 <button key={k} onClick={() => setMateriFilter(k)} className={`h-8 rounded-full px-3 text-[12px] font-bold transition ${materiFilter === k ? "bg-[#16796E] text-white" : "bg-[#F5F6F8] text-gray-500 hover:text-[#12172B]"}`}>{label}</button>
                               ))}
                             </div>
                           </div>
                           <div className="flex flex-col gap-2.5 overflow-y-auto px-4 pb-6">
                             {shown.length > 0 ? shown.map((r: any) => <ClassItem key={r.id} r={r} />) : (
-                              <p className="px-2 py-6 text-center text-[13px] font-medium text-gray-400">Tidak ada kelas di filter ini</p>
+                              <p className="px-2 py-6 text-center text-[13px] font-medium text-gray-400">{tt("Tidak ada kelas di filter ini")}</p>
                             )}
                           </div>
                         </aside>
@@ -4891,7 +4891,7 @@ export default function AkunPage() {
                               const nextSched = upcomingSchedules.find((s) => s.registration_id === selected.id);
                               const nextLabel = nextSched
                                 ? new Date(nextSched.scheduled_at).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" }) + " · " + new Date(nextSched.scheduled_at).toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })
-                                : "Belum terjadwal";
+                                : tt("Belum terjadwal");
                               return (
                                 <div className="materi-panel overflow-hidden rounded-3xl bg-white">
                                   <div className="relative flex items-center gap-5 overflow-hidden px-6 py-6 sm:px-7" style={{ background: pal.color }}>
@@ -4906,31 +4906,31 @@ export default function AkunPage() {
                                       <LangSlugFlag slug={langFlagSlug(selected.language)} h={40} />
                                     </span>
                                     <div className="relative z-10 min-w-0 flex-1 text-white">
-                                      <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold">{badge.label}</span>
+                                      <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold">{tt(badge.label)}</span>
                                       <h2 className="mt-2 text-[22px] font-extrabold leading-tight">{displayLanguage(selected.language)} — {selected.level || "TBD"}</h2>
-                                      <p className="mt-1 flex items-center gap-1.5 text-[13px] font-medium text-white/85"><User className="h-4 w-4" strokeWidth={2.5} />Pengajar: {teacherLabel(selected) || "Belum ditentukan"}</p>
+                                      <p className="mt-1 flex items-center gap-1.5 text-[13px] font-medium text-white/85"><User className="h-4 w-4" strokeWidth={2.5} />{tt("Pengajar")}: {teacherLabel(selected) || tt("Belum ditentukan")}</p>
                                     </div>
                                   </div>
                                   <div className="grid grid-cols-3 gap-4 px-6 py-5 sm:px-7">
                                     <div>
-                                      <p className="text-[12px] font-semibold text-gray-500">Progress</p>
+                                      <p className="text-[12px] font-semibold text-gray-500">{tt("Progress")}</p>
                                       {/* [materi-flag-pie-v1] bilah progres → donat, sebentuk dengan kartu kelas */}
                                       <div className="mt-1.5 flex items-center gap-2.5">
                                         <ProgressPie pct={pct} size={44} stroke={6} />
-                                        <span className="text-[12px] font-medium text-gray-500">{pct >= 100 ? "Kelas selesai" : "Sedang berjalan"}</span>
+                                        <span className="text-[12px] font-medium text-gray-500">{pct >= 100 ? tt("Kelas selesai") : tt("Sedang berjalan")}</span>
                                       </div>
                                     </div>
                                     <div className="border-l border-slate-100 pl-4">
-                                      <p className="text-[12px] font-semibold text-gray-500">Sesi Selesai</p>
+                                      <p className="text-[12px] font-semibold text-gray-500">{tt("Sesi Selesai")}</p>
                                       <p className="mt-1 text-[18px] font-extrabold text-[#12172B]">{selected.sessions_used || 0}<span className="text-[14px] font-bold text-gray-400">/{selected.sessions_total || 0}</span></p>
                                       {/* [materi-paket-detail-v1] durasi per sesi tadinya cuma ada di tab Tagihan */}
                                       {(() => {
                                         const m = String(selected.duration ?? "").match(/\d+/)?.[0];
-                                        return m ? <p className="mt-0.5 text-[11px] font-semibold text-gray-400">{m} menit/sesi</p> : null;
+                                        return m ? <p className="mt-0.5 text-[11px] font-semibold text-gray-400">{m} {tt("menit/sesi")}</p> : null;
                                       })()}
                                     </div>
                                     <div className="border-l border-slate-100 pl-4">
-                                      <p className="text-[12px] font-semibold text-gray-500">Sesi Berikutnya</p>
+                                      <p className="text-[12px] font-semibold text-gray-500">{tt("Sesi Berikutnya")}</p>
                                       <p className="mt-1.5 text-[13px] font-bold leading-tight text-[#12172B]">{nextLabel}</p>
                                     </div>
                                   </div>
@@ -4940,8 +4940,8 @@ export default function AkunPage() {
 
                             {/* tabs */}
                             <div className="flex items-center gap-2">
-                              <button onClick={() => setMateriTab("sesi")} className={`flex h-10 items-center gap-2 rounded-xl px-4 text-[13px] font-bold transition ${materiTab === "sesi" ? "bg-[#16796E] text-white" : "materi-panel bg-white text-gray-500 hover:text-[#12172B]"}`}><Video className="h-4 w-4" strokeWidth={2.5} />Sesi &amp; Rekaman</button>
-                              <button onClick={() => setMateriTab("materi")} className={`flex h-10 items-center gap-2 rounded-xl px-4 text-[13px] font-bold transition ${materiTab === "materi" ? "bg-[#16796E] text-white" : "materi-panel bg-white text-gray-500 hover:text-[#12172B]"}`}><BookOpen className="h-4 w-4" strokeWidth={2.5} />Materi</button>
+                              <button onClick={() => setMateriTab("sesi")} className={`flex h-10 items-center gap-2 rounded-xl px-4 text-[13px] font-bold transition ${materiTab === "sesi" ? "bg-[#16796E] text-white" : "materi-panel bg-white text-gray-500 hover:text-[#12172B]"}`}><Video className="h-4 w-4" strokeWidth={2.5} />{tt("Sesi & Rekaman")}</button>
+                              <button onClick={() => setMateriTab("materi")} className={`flex h-10 items-center gap-2 rounded-xl px-4 text-[13px] font-bold transition ${materiTab === "materi" ? "bg-[#16796E] text-white" : "materi-panel bg-white text-gray-500 hover:text-[#12172B]"}`}><BookOpen className="h-4 w-4" strokeWidth={2.5} />{tt("Materi")}</button>
                             </div>
 
                             {/* body */}
@@ -4957,7 +4957,7 @@ export default function AkunPage() {
                               {/* silabus level tetap ada di bawah linimasa — itu peta levelnya,
                                   bukan materi sesi yang sudah/akan dibahas pengajar */}
                               <div>
-                              <p className="mb-2.5 text-[11px] font-bold uppercase tracking-wider text-gray-500">Silabus Level</p>
+                              <p className="mb-2.5 text-[11px] font-bold uppercase tracking-wider text-gray-500">{tt("Silabus Level")}</p>
                               <SilabusOutline
                                 /* [reguler-english-conversation-v1] slug HARUS dari bahasa dasar —
                                    "English - Conversation A1.1 (ENG-A11-AUG26)" dulu jadi slug ngawur.
@@ -4983,9 +4983,9 @@ export default function AkunPage() {
                         <div className="flex flex-1 flex-col items-center justify-center px-4 pb-10 pt-8 lg:pt-0">
                           <div className="materi-flat w-full max-w-md rounded-3xl bg-white p-10 text-center lg:border-0 lg:bg-transparent lg:shadow-none">
                             <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
-                            <p className="text-[14px] font-semibold text-gray-600">Belum ada kelas live aktif</p>
-                            <p className="mt-1 text-[12px] font-medium text-gray-400">Punya paket e-learning? Buka tab <strong>Belajar Mandiri</strong> di atas. Atau daftar kelas live di bawah.</p>
-                            <button onClick={openEnrollWizard} className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl bg-[#16796E] px-5 text-[13px] font-bold text-white transition hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} />Daftar Kelas</button>
+                            <p className="text-[14px] font-semibold text-gray-600">{tt("Belum ada kelas live aktif")}</p>
+                            <p className="mt-1 text-[12px] font-medium text-gray-400">{tt("Punya paket e-learning? Buka tab Belajar Mandiri di atas. Atau daftar kelas live di bawah.")}</p>
+                            <button onClick={openEnrollWizard} className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl bg-[#16796E] px-5 text-[13px] font-bold text-white transition hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} />{tt("Daftar Kelas")}</button>
                           </div>
                         </div>
                       </div>

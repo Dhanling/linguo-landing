@@ -35,6 +35,7 @@ import { loadSilabusLevel, type SilabusSesi, type SilabusLevel } from '@/lib/sil
 // [materi-slide-v1] Materi berbentuk dek slide — ditonton di tempat, lihat lib/materiSlides.
 import { parseDeck } from '@/lib/materiSlides';
 import { SlideDeckViewer } from '@/components/akun/SlideDeckViewer';
+import { tr, useT, useUiLang } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 
 // Deteksi jenis dari URL — fallback kalau kolom kind kosong / materi lama.
 export function detectKind(url: string): string {
@@ -99,6 +100,7 @@ function TeksMateri({ isi }: { isi: string }) {
 }
 
 export function TeksMateriOverlay({ m, onClose }: { m: any; onClose: () => void }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   useEffect(() => {
     const esc = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     window.addEventListener('keydown', esc);
@@ -114,10 +116,10 @@ export function TeksMateriOverlay({ m, onClose }: { m: any; onClose: () => void 
           <div className="min-w-0">
             <h3 className="text-base font-extrabold text-[#12172B]">{m.title}</h3>
             <p className="mt-0.5 text-xs font-medium text-gray-500">
-              Materi belajar{m.note ? ` · ${m.note}` : ''}
+              {t('Materi belajar')}{m.note ? ` · ${m.note}` : ''}
             </p>
           </div>
-          <button onClick={onClose} aria-label="Tutup" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200">
+          <button onClick={onClose} aria-label={t('Tutup')} className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200">
             <X className="h-4 w-4" strokeWidth={2.4} />
           </button>
         </div>
@@ -130,6 +132,9 @@ export function TeksMateriOverlay({ m, onClose }: { m: any; onClose: () => void 
 }
 
 function MaterialCard({ m, teacherName }: { m: any; teacherName?: string }) {
+  const t = useT(); // [ui-lang-switcher-v1]
+  const uiLang = useUiLang();
+  const dateLocale = uiLang === 'en' ? 'en-GB' : 'id-ID';
   const kind = m.kind && KIND_META[m.kind] ? m.kind : detectKind(m.url || '');
   const meta = KIND_META[kind] || KIND_META.link;
   const yt = kind === 'youtube' || kind === 'recording' ? youtubeId(m.url || '') : null;
@@ -154,9 +159,9 @@ function MaterialCard({ m, teacherName }: { m: any; teacherName?: string }) {
             <div className="truncate text-sm font-semibold text-gray-900 group-hover:text-[#16796E]">{m.title}</div>
             {m.note && <div className="mt-0.5 truncate text-xs text-gray-500">{m.note}</div>}
             <div className="mt-0.5 text-[11px] text-gray-400">
-              {dek.slides.length} slide
+              {dek.slides.length} {t('slide')}
               {teacherName ? ` · ${teacherName}` : ''}
-              {m.created_at ? ` · ${new Date(m.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'short' })}` : ''}
+              {m.created_at ? ` · ${new Date(m.created_at).toLocaleDateString(dateLocale, { day: 'numeric', month: 'short' })}` : ''}
             </div>
           </div>
           <Play className="h-4 w-4 shrink-0 text-gray-300 group-hover:text-[#16796E]" strokeWidth={2} />
@@ -165,7 +170,7 @@ function MaterialCard({ m, teacherName }: { m: any; teacherName?: string }) {
           <SlideDeckViewer
             slides={dek.slides}
             title={m.title}
-            subtitle={m.session_number ? `Sesi ${m.session_number}` : undefined}
+            subtitle={m.session_number ? `${t('Sesi')} ${m.session_number}` : undefined}
             onClose={() => setBaca(false)}
           />
         )}
@@ -189,8 +194,8 @@ function MaterialCard({ m, teacherName }: { m: any; teacherName?: string }) {
             <div className="truncate text-sm font-semibold text-gray-900 group-hover:text-[#16796E]">{m.title}</div>
             {m.note && <div className="mt-0.5 truncate text-xs text-gray-500">{m.note}</div>}
             <div className="mt-0.5 text-[11px] text-gray-400">
-              Materi Belajar
-              {m.created_at ? ` · ${new Date(m.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'short' })}` : ''}
+              {t('Materi Belajar')}
+              {m.created_at ? ` · ${new Date(m.created_at).toLocaleDateString(dateLocale, { day: 'numeric', month: 'short' })}` : ''}
             </div>
           </div>
           <ChevronRight className="h-4 w-4 shrink-0 text-gray-300 group-hover:text-[#16796E]" strokeWidth={2} />
@@ -218,9 +223,9 @@ function MaterialCard({ m, teacherName }: { m: any; teacherName?: string }) {
         <div className="truncate text-sm font-semibold text-gray-900 group-hover:text-[#16796E]">{m.title}</div>
         {m.note && <div className="mt-0.5 truncate text-xs text-gray-500">{m.note}</div>}
         <div className="mt-0.5 text-[11px] text-gray-400">
-          {meta.label}
+          {t(meta.label)}
           {teacherName ? ` · ${teacherName}` : ''}
-          {m.created_at ? ` · ${new Date(m.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'short' })}` : ''}
+          {m.created_at ? ` · ${new Date(m.created_at).toLocaleDateString(dateLocale, { day: 'numeric', month: 'short' })}` : ''}
         </div>
       </div>
       <ExternalLink className="h-4 w-4 shrink-0 text-gray-300 group-hover:text-[#16796E]" strokeWidth={2} />
@@ -297,6 +302,9 @@ function SesiDetailDrawer({
   const catatan = parseSessionNotes(sched?.notes);
   const presensi = ATTENDANCE_BADGE[sched?.attendance_status as string];
   const pesan = [catatan.message, ...catatan.extras].filter(Boolean).join('\n');
+  const t = useT(); // [ui-lang-switcher-v1]
+  const uiLang = useUiLang();
+  const dateLocale = uiLang === 'en' ? 'en-GB' : 'id-ID';
   const pr = (sched?.homework || catatan.homework || '').trim();
   const adaLaporan = !!(catatan.topic || pesan || pr || sched?.material_notes);
 
@@ -312,9 +320,9 @@ function SesiDetailDrawer({
         <div className="sticky top-0 z-10 flex items-start justify-between gap-3 border-b border-gray-200 bg-white px-5 py-4">
           <div className="min-w-0">
             <div className="flex flex-wrap items-center gap-2">
-              <h3 className="text-base font-extrabold text-[#12172B]">Sesi {no}</h3>
-              {st.label && <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${st.badge}`}>{st.label}</span>}
-              {presensi && <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${presensi.cls}`}>{presensi.label}</span>}
+              <h3 className="text-base font-extrabold text-[#12172B]">{t('Sesi')} {no}</h3>
+              {st.label && <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${st.badge}`}>{t(st.label)}</span>}
+              {presensi && <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${presensi.cls}`}>{t(presensi.label)}</span>}
             </div>
             {silabus?.title && (
               <p className="mt-0.5 text-sm font-bold text-[#16796E]">{silabus.title}</p>
@@ -323,23 +331,23 @@ function SesiDetailDrawer({
               <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs font-medium text-gray-500">
                 <span className="inline-flex items-center gap-1">
                   <CalendarDays className="h-3.5 w-3.5" strokeWidth={2.2} />
-                  {dt.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
+                  {dt.toLocaleDateString(dateLocale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
                 </span>
                 <span className="inline-flex items-center gap-1">
                   <Clock className="h-3.5 w-3.5" strokeWidth={2.2} />
-                  {dt.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} WIB{durasi ? ` · ${durasi} menit` : ''}
+                  {dt.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} WIB{durasi ? ` · ${durasi} ${t('menit')}` : ''}
                 </span>
               </p>
             ) : (
               <p className="mt-1 text-xs font-medium text-gray-500">
-                {st.done ? 'Sesi ini sudah berjalan' : 'Belum dijadwalkan'}
-                {durasi ? ` · ${durasi} menit` : ''}
+                {st.done ? t('Sesi ini sudah berjalan') : t('Belum dijadwalkan')}
+                {durasi ? ` · ${durasi} ${t('menit')}` : ''}
               </p>
             )}
           </div>
           <button
             onClick={onClose}
-            aria-label="Tutup"
+            aria-label={t('Tutup')}
             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200"
           >
             <X className="h-4 w-4" strokeWidth={2.4} />
@@ -353,7 +361,7 @@ function SesiDetailDrawer({
               belum berjalan atau kelas lawas tanpa baris jadwal. */}
           {silabus?.topics && silabus.topics.length > 0 && (
             <section>
-              <h4 className="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">Yang dipelajari</h4>
+              <h4 className="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">{t('Yang dipelajari')}</h4>
               <div className="flex flex-wrap gap-1.5">
                 {silabus.topics.map((t, i) => (
                   <span key={i} className="rounded-full bg-teal-50 px-2.5 py-1 text-xs font-semibold text-[#16796E]">{t}</span>
@@ -364,14 +372,14 @@ function SesiDetailDrawer({
 
           {catatan.topic && (
             <section>
-              <h4 className="mb-1.5 text-xs font-bold uppercase tracking-wider text-gray-500">Topik</h4>
+              <h4 className="mb-1.5 text-xs font-bold uppercase tracking-wider text-gray-500">{t('Topik')}</h4>
               <p className="text-sm font-semibold text-[#12172B]">{catatan.topic}</p>
             </section>
           )}
 
           {sched?.material_notes && (
             <section>
-              <h4 className="mb-1.5 text-xs font-bold uppercase tracking-wider text-gray-500">Catatan Materi</h4>
+              <h4 className="mb-1.5 text-xs font-bold uppercase tracking-wider text-gray-500">{t('Catatan Materi')}</h4>
               <p className="whitespace-pre-line rounded-2xl bg-gray-50 px-3.5 py-3 text-sm text-gray-600">{sched.material_notes}</p>
             </section>
           )}
@@ -379,7 +387,7 @@ function SesiDetailDrawer({
           {pesan && (
             <section>
               <h4 className="mb-1.5 text-xs font-bold uppercase tracking-wider text-gray-500">
-                Catatan {teacherName || 'Pengajar'}
+                {t('Catatan')} {teacherName || t('Pengajar')}
               </h4>
               <p className="whitespace-pre-line rounded-2xl bg-gray-50 px-3.5 py-3 text-sm text-gray-600">{pesan}</p>
             </section>
@@ -391,13 +399,13 @@ function SesiDetailDrawer({
                 <PenLine className="h-3.5 w-3.5" strokeWidth={2.4} /> PR
               </h4>
               <p className="whitespace-pre-line rounded-2xl bg-amber-50 px-3.5 py-3 text-sm font-medium text-amber-700">{pr}</p>
-              <p className="mt-1 text-[11px] text-gray-400">Pengumpulan &amp; penilaiannya ada di tab Tugas.</p>
+              <p className="mt-1 text-[11px] text-gray-400">{t('Pengumpulan & penilaiannya ada di tab Tugas.')}</p>
             </section>
           )}
 
           <section>
             <h4 className="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">
-              Materi Sesi {items.length > 0 ? `(${items.length})` : ''}
+              {t('Materi Sesi')} {items.length > 0 ? `(${items.length})` : ''}
             </h4>
             {items.length > 0 ? (
               <div className="grid grid-cols-1 gap-2">
@@ -406,13 +414,13 @@ function SesiDetailDrawer({
             ) : (
               <div className="rounded-2xl bg-gray-50 px-4 py-6 text-center">
                 <BookOpen className="mx-auto mb-2 h-7 w-7 text-gray-300" strokeWidth={1.6} />
-                <p className="text-sm font-semibold text-gray-500">Belum ada materi untuk sesi ini</p>
+                <p className="text-sm font-semibold text-gray-500">{t('Belum ada materi untuk sesi ini')}</p>
                 <p className="mt-1 text-xs text-gray-400">
                   {!sched
-                    ? 'Rekaman, berkas, & catatan sesi ini akan muncul di sini setelah sesinya dijalankan pengajar.'
+                    ? t('Rekaman, berkas, & catatan sesi ini akan muncul di sini setelah sesinya dijalankan pengajar.')
                     : adaLaporan
-                    ? 'Pengajar belum melampirkan berkas atau tautan di sesi ini.'
-                    : 'Materi & catatan akan muncul di sini setelah pengajar mengisinya.'}
+                    ? t('Pengajar belum melampirkan berkas atau tautan di sesi ini.')
+                    : t('Materi & catatan akan muncul di sini setelah pengajar mengisinya.')}
                 </p>
               </div>
             )}
@@ -452,6 +460,9 @@ function MilestoneRow({
   isLast: boolean;
   onOpen?: () => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
+  const uiLang = useUiLang();
+  const dateLocale = uiLang === 'en' ? 'en-GB' : 'id-ID';
   const st = statusMilestone(sched, sudahJalan);
   const dt = sched ? new Date(sched.scheduled_at) : null;
   const catatan = sched ? publicNotes(sched.notes) : '';
@@ -489,7 +500,7 @@ function MilestoneRow({
           dijadwalkan — punya tinggi rail negatif alias garisnya hilang. */}
       {!isLast && <span aria-hidden className="absolute bottom-0 left-[11px] top-3 w-0.5 bg-gray-200" />}
       {bisaDibuka ? (
-        <button type="button" onClick={onOpen} aria-label={`Buka materi sesi ${no}`} className={kelasBulatan}>
+        <button type="button" onClick={onOpen} aria-label={`${t('Buka materi sesi')} ${no}`} className={kelasBulatan}>
           {isiBulatan}
         </button>
       ) : (
@@ -504,16 +515,16 @@ function MilestoneRow({
           {/* min-h-6 = setinggi bulatan, jadi tulisan "Sesi N" persis sejajar
               dengan titik milestone-nya di semua baris (ada tanggal atau tidak). */}
           <div className="flex min-h-6 flex-wrap items-center gap-x-2 gap-y-1">
-            <span className={`text-sm font-extrabold ${sched || st.done ? 'text-[#12172B]' : 'text-gray-400'} ${bisaDibuka ? 'group-hover/head:text-[#16796E]' : ''}`}>Sesi {no}</span>
+            <span className={`text-sm font-extrabold ${sched || st.done ? 'text-[#12172B]' : 'text-gray-400'} ${bisaDibuka ? 'group-hover/head:text-[#16796E]' : ''}`}>{t('Sesi')} {no}</span>
             {/* Judul sesi dari silabus level — bikin linimasa terbaca sebagai peta
                 materi, bukan cuma deretan nomor. */}
             {silabus?.title && (
               <span className={`text-sm font-semibold ${sched || st.done ? 'text-gray-600' : 'text-gray-400'}`}>{silabus.title}</span>
             )}
-            {st.label && <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${st.badge}`}>{st.label}</span>}
+            {st.label && <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${st.badge}`}>{t(st.label)}</span>}
             {items.length > 0 && (
               <span className="inline-flex items-center gap-1 rounded-full bg-teal-50 px-2 py-0.5 text-[11px] font-bold text-[#16796E]">
-                <Paperclip className="h-3 w-3" strokeWidth={2.4} />{items.length} materi
+                <Paperclip className="h-3 w-3" strokeWidth={2.4} />{items.length} {t('materi')}
               </span>
             )}
             {bisaDibuka && <ChevronRight className="h-3.5 w-3.5 text-gray-300 group-hover/head:text-[#16796E]" strokeWidth={2.4} />}
@@ -521,10 +532,10 @@ function MilestoneRow({
 
           {dt && (
             <div className="mt-0.5 text-xs text-gray-500">
-              {dt.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
+              {dt.toLocaleDateString(dateLocale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
               {' · '}
               {dt.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} WIB
-              {durasi ? ` · ${durasi} menit` : ''}
+              {durasi ? ` · ${durasi} ${t('menit')}` : ''}
             </div>
           )}
         </HeaderSesi>
@@ -549,6 +560,9 @@ export default function ClassMateriTab({
    *  sama, jangan menghitung ulang sendiri (bisa beda dari yang dibaca siswa). */
   sesiTerpakai?: number;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
+  const uiLang = useUiLang();
+  const dateLocale = uiLang === 'en' ? 'en-GB' : 'id-ID';
   const [materials, setMaterials] = useState<any[] | null>(null); // null = loading
   // Pasang dari cache SEBELUM paint. Tanpa ini, tiap pindah level tab Materi
   // selalu melewati layar "Memuat…" walau isinya sudah di-prefetch.
@@ -663,7 +677,7 @@ export default function ClassMateriTab({
       if (!l?.url) return;
       out.push({
         id: `ml-${sched.id}-${i}`,
-        title: l.name || 'Lampiran',
+        title: l.name || tr('Lampiran'),
         kind: l.kind === 'file' ? 'file' : detectKind(l.url),
         url: l.url,
         created_at: sched.scheduled_at,
@@ -672,7 +686,7 @@ export default function ClassMateriTab({
     if (sched.status === 'completed' && sched.recording_url) {
       out.unshift({
         id: `rec-${sched.id}`,
-        title: 'Recording Sesi',
+        title: tr('Recording Sesi'),
         kind: 'recording',
         // [kelas-video-rekaman-siswa-v1] Deep link Riwayat dashboard khusus tim →
         // alihkan ke pemutar siswa (lihat lib/classRoom).
@@ -700,7 +714,7 @@ export default function ClassMateriTab({
     <div className="space-y-7">
       {general.length > 0 && (
         <section>
-          <h2 className="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">Materi Umum</h2>
+          <h2 className="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">{t('Materi Umum')}</h2>
           <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
             {general.map((m) => <MaterialCard key={m.id} m={m} teacherName={teacherName} />)}
           </div>
@@ -709,13 +723,13 @@ export default function ClassMateriTab({
 
       <section>
         <h2 className="mb-3 text-xs font-bold uppercase tracking-wider text-gray-500">
-          Perjalanan Kelas ({totalSlot} sesi)
+          {t('Perjalanan Kelas')} ({totalSlot} {t('sesi')})
         </h2>
         {totalSlot === 0 ? (
           <div className="py-14 text-center text-gray-400">
             <BookOpen className="mx-auto mb-2 h-9 w-9" strokeWidth={1.5} />
-            <div className="text-sm text-gray-500">Belum ada sesi di kelas ini</div>
-            <div className="mt-1 text-xs">Hubungi admin untuk menjadwalkan sesi pertamamu</div>
+            <div className="text-sm text-gray-500">{t('Belum ada sesi di kelas ini')}</div>
+            <div className="mt-1 text-xs">{t('Hubungi admin untuk menjadwalkan sesi pertamamu')}</div>
           </div>
         ) : (
           <ol className="relative">
@@ -732,8 +746,8 @@ export default function ClassMateriTab({
                   onClick={() => setKosongTerbuka(true)}
                   className="flex min-h-6 items-center text-left text-sm font-bold text-gray-400 hover:text-[#16796E]"
                 >
-                  Sesi {ordered[0].no}–{ordered[kosongDepan - 1].no} belum dijadwalkan
-                  <span className="ml-1.5 text-xs font-semibold text-[#16796E]">Tampilkan</span>
+                  {t('Sesi')} {ordered[0].no}–{ordered[kosongDepan - 1].no} {t('belum dijadwalkan')}
+                  <span className="ml-1.5 text-xs font-semibold text-[#16796E]">{t('Tampilkan')}</span>
                 </button>
               </li>
             )}
@@ -756,17 +770,17 @@ export default function ClassMateriTab({
 
       {dibatalkan.length > 0 && (
         <section>
-          <h2 className="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">Sesi Dibatalkan ({dibatalkan.length})</h2>
+          <h2 className="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">{t('Sesi Dibatalkan')} ({dibatalkan.length})</h2>
           <div className="space-y-2">
             {dibatalkan.map((s) => (
               <div key={s.id} className="rounded-2xl bg-gray-50 p-3.5">
                 <div className="text-sm font-semibold text-gray-500 line-through">
-                  {new Date(s.scheduled_at).toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
+                  {new Date(s.scheduled_at).toLocaleDateString(dateLocale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
                   {' · '}
                   {new Date(s.scheduled_at).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} WIB
                 </div>
                 {s.cancel_reason && (
-                  <div className="mt-1 text-xs text-gray-500">Alasan: <span className="text-gray-700">{s.cancel_reason}</span></div>
+                  <div className="mt-1 text-xs text-gray-500">{t('Alasan')}: <span className="text-gray-700">{s.cancel_reason}</span></div>
                 )}
               </div>
             ))}

@@ -28,6 +28,7 @@ import {
 } from '@/lib/studentInsights';
 import { shareProgress, printProgressCard, periodLabel } from '@/lib/shareProgress';
 import { SkillRow, DeltaBadge } from '@/components/akun/SkillBar';
+import { useT, useUiLang } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 
 const SKILLS: { key: string; label: string; Icon: LucideIcon }[] = [
   { key: 'speaking', label: 'Speaking', Icon: Mic },
@@ -213,6 +214,10 @@ export default function BerandaInsights({
     window.setTimeout(() => setShareState(''), 2200);
   };
 
+  const t = useT(); // [ui-lang-switcher-v1]
+  const uiLang = useUiLang();
+  const dateLocale = uiLang === 'en' ? 'en-GB' : 'id-ID';
+  const dur = (min: number) => (uiLang === 'en' ? fmtDuration(min).replace(' jam', ' hr').replace('j ', 'h ') : fmtDuration(min));
   const skillMap: Record<string, any> = {};
   (active?.skills || []).forEach((s) => { skillMap[s.key] = s; });
 
@@ -228,17 +233,17 @@ export default function BerandaInsights({
       >
         <h2 className="inline-flex items-center gap-2 text-[18px] font-extrabold text-[#12172B]">
           <TrendingUp className="h-5 w-5 text-[#16796E]" strokeWidth={2.5} />
-          Ringkasan Belajar
+          {t('Ringkasan Belajar')}
         </h2>
         <span className="inline-flex items-center gap-2">
           {pendingHomework.length > 0 && (
             <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-50 px-3 py-1 text-[12px] font-bold text-rose-600">
               <span className="h-2 w-2 rounded-full bg-rose-500" />
-              {pendingHomework.length} PR menunggu
+              {pendingHomework.length} {t('PR menunggu')}
             </span>
           )}
           <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-3 py-1 text-[12px] font-bold text-gray-500">
-            {open ? 'Tutup' : 'Lihat'}
+            {open ? t('Tutup') : t('Lihat')}
             <ChevronDown
               className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`}
               strokeWidth={2.6}
@@ -253,31 +258,31 @@ export default function BerandaInsights({
       <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
         <StatTile
           Icon={Clock}
-          value={fmtDuration(week.doneMinutes)}
-          label="Jam belajar minggu ini"
-          sub={week.upcomingMinutes ? `+${fmtDuration(week.upcomingMinutes)} terjadwal` : 'dari sesi yang sudah jalan'}
+          value={dur(week.doneMinutes)}
+          label={t('Jam belajar minggu ini')}
+          sub={week.upcomingMinutes ? `+${dur(week.upcomingMinutes)} ${t('terjadwal')}` : t('dari sesi yang sudah jalan')}
         />
         <StatTile
           Icon={CalendarDays}
           tone="indigo"
           value={sesiTotal ? `${week.doneCount}/${sesiTotal}` : '0'}
-          label="Sesi minggu ini"
-          sub={week.upcomingCount ? `${week.upcomingCount} sesi lagi` : 'semua sudah jalan'}
+          label={t('Sesi minggu ini')}
+          sub={week.upcomingCount ? `${week.upcomingCount} ${t('sesi lagi')}` : t('semua sudah jalan')}
         />
         <StatTile
           Icon={ClipboardList}
           tone={pendingHomework.length ? 'rose' : 'teal'}
           alert={pendingHomework.length > 0}
           value={String(pendingHomework.length)}
-          label="PR belum disetor"
-          sub={pendingHomework.length ? 'ketuk kartu PR di bawah' : 'aman, tidak ada tunggakan'}
+          label={t('PR belum disetor')}
+          sub={pendingHomework.length ? t('ketuk kartu PR di bawah') : t('aman, tidak ada tunggakan')}
         />
         <StatTile
           Icon={TrendingUp}
           tone="amber"
           value={active?.avg ? active.avg.toFixed(1) : '—'}
-          label="Rata-rata skill"
-          sub={active?.avg ? `≈ ${cefrBand(active.avg).band} ${cefrBand(active.avg).name}` : 'belum dinilai pengajar'}
+          label={t('Rata-rata skill')}
+          sub={active?.avg ? `≈ ${cefrBand(active.avg).band} ${cefrBand(active.avg).name}` : t('belum dinilai pengajar')}
         />
       </div>
 
@@ -288,24 +293,24 @@ export default function BerandaInsights({
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div className="min-w-0">
                 <h3 className="truncate text-[16px] font-extrabold text-[#12172B]">
-                  Progres {displayLanguage(activeReg.language)}{activeReg.level ? ` — ${activeReg.level}` : ''}
+                  {t('Progres')} {displayLanguage(activeReg.language)}{activeReg.level ? ` — ${activeReg.level}` : ''}
                 </h3>
                 <p className="mt-0.5 text-[11.5px] font-semibold text-gray-400">
-                  {periodLabel(active.periodStart, active.periodEnd) || 'Dinilai pengajar'}
+                  {periodLabel(active.periodStart, active.periodEnd) || t('Dinilai pengajar')}
                 </p>
               </div>
               <div className="flex shrink-0 items-center gap-1.5">
                 <button
                   onClick={onShare}
-                  aria-label="Bagikan progres"
+                  aria-label={t('Bagikan progres')}
                   className="inline-flex items-center gap-1.5 rounded-xl bg-[#16796E]/10 px-3 py-2 text-[12px] font-bold text-[#16796E] transition hover:bg-[#16796E]/15"
                 >
                   {shareState === 'copied' ? <Check className="h-3.5 w-3.5" strokeWidth={3} /> : <Share2 className="h-3.5 w-3.5" strokeWidth={2.5} />}
-                  {shareState === 'copied' ? 'Tersalin' : shareState === 'failed' ? 'Gagal' : 'Bagikan'}
+                  {shareState === 'copied' ? t('Tersalin') : shareState === 'failed' ? t('Gagal') : t('Bagikan')}
                 </button>
                 <button
                   onClick={() => printProgressCard(shareData)}
-                  aria-label="Cetak kartu progres"
+                  aria-label={t('Cetak kartu progres')}
                   className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-gray-600 transition hover:bg-slate-200"
                 >
                   <Printer className="h-4 w-4" strokeWidth={2.4} />
@@ -346,7 +351,7 @@ export default function BerandaInsights({
 
             <div className="mt-3 flex items-center justify-between gap-2 border-t border-slate-100 pt-2.5">
               <span className="inline-flex items-center gap-2 text-[12.5px] font-semibold text-gray-500">
-                Rata-rata
+                {t('Rata-rata')}
                 <span className="text-[15px] font-extrabold text-[#16796E]">{active.avg.toFixed(1)}</span>
                 <span className="text-[11px] text-gray-400">/5.0</span>
                 {active.avgBefore !== null && (
@@ -363,7 +368,7 @@ export default function BerandaInsights({
                 onClick={() => handoff(activeReg)}
                 className="inline-flex items-center gap-1 text-[12.5px] font-bold text-[#16796E] hover:text-[#0F5A52]"
               >
-                Detail <ChevronRight className="h-3.5 w-3.5" />
+                {t('Detail')} <ChevronRight className="h-3.5 w-3.5" />
               </Link>
             </div>
           </div>
@@ -381,8 +386,8 @@ export default function BerandaInsights({
                   <ClipboardList className="h-[18px] w-[18px]" strokeWidth={2.2} />
                 </span>
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-[15px] font-extrabold text-[#12172B]">PR belum disetor</h3>
-                  <p className="text-[11.5px] font-medium text-gray-500">{pendingHomework.length} tugas menunggu dikerjakan</p>
+                  <h3 className="text-[15px] font-extrabold text-[#12172B]">{t('PR belum disetor')}</h3>
+                  <p className="text-[11.5px] font-medium text-gray-500">{pendingHomework.length} {t('tugas menunggu dikerjakan')}</p>
                 </div>
               </div>
               <div className="mt-3 flex flex-col gap-2">
@@ -399,10 +404,10 @@ export default function BerandaInsights({
                       <span className="min-w-0 flex-1">
                         <span className="block text-[12.5px] font-bold leading-snug text-[#12172B] line-clamp-2">{hw.homework}</span>
                         <span className="mt-0.5 block text-[11px] font-medium text-gray-500">
-                          {r ? displayLanguage(r.language) : 'Kelas'}
-                          {hw.sessionNumber ? ` · sesi ${hw.sessionNumber}` : ''}
+                          {r ? displayLanguage(r.language) : t('Kelas')}
+                          {hw.sessionNumber ? ` · ${t('sesi')} ${hw.sessionNumber}` : ''}
                           {' · '}
-                          {new Date(hw.scheduledAt).toLocaleDateString('id-ID', { day: 'numeric', month: 'short' })}
+                          {new Date(hw.scheduledAt).toLocaleDateString(dateLocale, { day: 'numeric', month: 'short' })}
                         </span>
                       </span>
                       <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-slate-300 transition group-hover:text-rose-500" />
@@ -411,7 +416,7 @@ export default function BerandaInsights({
                 })}
                 {pendingHomework.length > 3 && (
                   <p className="pt-0.5 text-center text-[11.5px] font-semibold text-gray-400">
-                    +{pendingHomework.length - 3} PR lain di tab Tugas
+                    +{pendingHomework.length - 3} {t('PR lain di tab Tugas')}
                   </p>
                 )}
               </div>
@@ -421,8 +426,8 @@ export default function BerandaInsights({
           {materials.length > 0 && (
             <div className="rounded-3xl bg-white p-4 ring-1 ring-slate-200/70">
               <div className="flex items-center justify-between gap-2">
-                <h3 className="text-[15px] font-extrabold text-[#12172B]">Materi Terbaru</h3>
-                <span className="text-[11.5px] font-semibold text-gray-400">dari pengajar</span>
+                <h3 className="text-[15px] font-extrabold text-[#12172B]">{t('Materi Terbaru')}</h3>
+                <span className="text-[11.5px] font-semibold text-gray-400">{t('dari pengajar')}</span>
               </div>
               {/* Rak gulir — sengaja horizontal biar 6+ berkas muat tanpa mendorong
                   isi beranda lain ke bawah. */}
@@ -445,7 +450,7 @@ export default function BerandaInsights({
                       <span className="mt-1 truncate text-[10.5px] font-medium text-gray-400">
                         {r ? displayLanguage(r.language) : ''}
                         {' · '}
-                        {new Date(m.createdAt).toLocaleDateString('id-ID', { day: 'numeric', month: 'short' })}
+                        {new Date(m.createdAt).toLocaleDateString(dateLocale, { day: 'numeric', month: 'short' })}
                       </span>
                     </a>
                   );
@@ -464,11 +469,11 @@ export default function BerandaInsights({
           <div className="flex flex-wrap items-center justify-between gap-2">
             <h3 className="inline-flex items-center gap-2 text-[15px] font-extrabold text-[#12172B]">
               <Trophy className="h-[18px] w-[18px] text-[#F2CB05]" strokeWidth={2.4} />
-              Peringkat Kelas {displayLanguage(leaderboard.language)}
+              {t('Peringkat Kelas')} {displayLanguage(leaderboard.language)}
             </h3>
             {leaderboard.myRank && (
               <span className="rounded-full bg-[#16796E]/10 px-3 py-1 text-[11.5px] font-bold text-[#16796E]">
-                Kamu peringkat {leaderboard.myRank} dari {leaderboard.rows.length}
+                {t('Kamu peringkat')} {leaderboard.myRank} {t('dari')} {leaderboard.rows.length}
               </span>
             )}
           </div>
@@ -484,7 +489,7 @@ export default function BerandaInsights({
                   {i + 1}
                 </span>
                 <span className={`w-24 shrink-0 truncate text-[13px] font-bold ${row.isMe ? 'text-[#16796E]' : 'text-[#12172B]'}`}>
-                  {row.isMe ? 'Kamu' : row.label}
+                  {row.isMe ? t('Kamu') : row.label}
                 </span>
                 <span className="h-2 flex-1 overflow-hidden rounded-full bg-white">
                   <span
@@ -493,7 +498,7 @@ export default function BerandaInsights({
                   />
                 </span>
                 <span className="w-10 shrink-0 text-right text-[12px] font-extrabold text-gray-600">{row.progressPct}%</span>
-                <span className="hidden w-16 shrink-0 text-right text-[11px] font-medium text-gray-400 sm:block">{row.sessionsDone} sesi</span>
+                <span className="hidden w-16 shrink-0 text-right text-[11px] font-medium text-gray-400 sm:block">{row.sessionsDone} {t('sesi')}</span>
               </div>
             ))}
           </div>

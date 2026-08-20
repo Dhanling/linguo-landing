@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
 import { cefr } from '@/components/akun/ClassProgressTab';
 import { BarChart2, Award, Printer, Mic, Headphones, BookOpen, PenLine, type LucideIcon } from 'lucide-react';
+import { useT, useUiLang } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 
 const SKILLS: { key: string; label: string; Icon: LucideIcon }[] = [
   { key: 'speaking', label: 'Speaking', Icon: Mic },
@@ -146,6 +147,9 @@ function printCertificate(opts: { studentName: string; reg: any; teacherName?: s
 // `teacherFullName` = nama lengkap buat dokumen cetak (rapor & sertifikat) —
 // tanda tangan di sertifikat tetap harus nama resmi, bukan panggilan.
 export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { reg: any; teacherName?: string; teacherFullName?: string }) {
+  const t = useT(); // [ui-lang-switcher-v1]
+  const uiLang = useUiLang();
+  const dateLocale = uiLang === 'en' ? 'en-GB' : 'id-ID';
   const [reports, setReports] = useState<any[] | null>(null); // null = loading
   const [studentName, setStudentName] = useState<string>('');
 
@@ -177,7 +181,7 @@ export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { r
   }, [reg.id, reg.student_id]);
 
   if (reports === null) {
-    return <div className="py-10 text-center text-gray-400">Memuat…</div>;
+    return <div className="py-10 text-center text-gray-400">{t('Memuat…')}</div>;
   }
 
   const finalReport = reports.find((r) => r.report_type === 'final');
@@ -186,8 +190,8 @@ export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { r
     return (
       <div className="py-14 text-center text-gray-400">
         <BarChart2 className="mx-auto mb-2 h-9 w-9" strokeWidth={1.5} />
-        <div className="text-sm text-gray-500">Belum ada rapor yang diterbitkan</div>
-        <div className="mt-1 text-xs">Pengajar menerbitkan Rapor Tengah (± sesi 8) dan Rapor Akhir di akhir program</div>
+        <div className="text-sm text-gray-500">{t('Belum ada rapor yang diterbitkan')}</div>
+        <div className="mt-1 text-xs">{t('Pengajar menerbitkan Rapor Tengah (± sesi 8) dan Rapor Akhir di akhir program')}</div>
       </div>
     );
   }
@@ -201,14 +205,14 @@ export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { r
             <Award className="h-6 w-6" strokeWidth={2} />
           </span>
           <div className="min-w-0 flex-1">
-            <div className="text-sm font-bold text-gray-900">Sertifikat Penyelesaian</div>
-            <div className="text-xs text-gray-500">Selamat! 🎉 Program {reg.language} {reg.level || ''} sudah selesai — sertifikatmu siap diunduh.</div>
+            <div className="text-sm font-bold text-gray-900">{t('Sertifikat Penyelesaian')}</div>
+            <div className="text-xs text-gray-500">{t('Selamat! 🎉 Program')} {reg.language} {reg.level || ''} {t('sudah selesai — sertifikatmu siap diunduh.')}</div>
           </div>
           <button
             onClick={() => printCertificate({ studentName: studentName || 'Siswa', reg, teacherName: teacherFullName || teacherName, finalReport })}
             className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-amber-500 px-4 py-2.5 text-sm font-bold text-white hover:bg-amber-600"
           >
-            <Award className="h-4 w-4" strokeWidth={2.5} /> Unduh Sertifikat
+            <Award className="h-4 w-4" strokeWidth={2.5} /> {t('Unduh Sertifikat')}
           </button>
         </div>
       )}
@@ -223,17 +227,17 @@ export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { r
             <div className="flex items-start justify-between gap-2">
               <div>
                 <span className={`inline-block rounded-full px-2.5 py-1 text-[11px] font-bold ${r.report_type === 'final' ? 'bg-[#16796E] text-white' : 'bg-[#16796E]/10 text-[#16796E]'}`}>
-                  {TYPE_LABEL[r.report_type] || 'Rapor'}
+                  {t(TYPE_LABEL[r.report_type] || 'Rapor')}
                 </span>
                 <div className="mt-1.5 text-xs text-gray-400">
-                  Diterbitkan {new Date(r.published_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
+                  {t('Diterbitkan')} {new Date(r.published_at).toLocaleDateString(dateLocale, { day: 'numeric', month: 'long', year: 'numeric' })}
                 </div>
               </div>
               <button
                 onClick={() => printReport({ report: r, studentName: studentName || 'Siswa', reg, teacherName: teacherFullName || teacherName })}
                 className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-gray-100 px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-gray-200"
               >
-                <Printer className="h-3.5 w-3.5" strokeWidth={2.5} /> Cetak
+                <Printer className="h-3.5 w-3.5" strokeWidth={2.5} /> {t('Cetak')}
               </button>
             </div>
 
@@ -250,7 +254,7 @@ export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { r
                       {v ? (
                         <span className="text-[13px] font-bold text-[#16796E]">
                           <span className="mr-1.5 rounded bg-[#16796E]/10 px-1.5 py-0.5 text-xs">{cefr(v).band}</span>
-                          {cefr(v).name}
+                          {t(cefr(v).name)}
                         </span>
                       ) : (
                         <span className="text-xs text-gray-400">-</span>
@@ -265,7 +269,7 @@ export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { r
               })}
               {avg > 0 && (
                 <div className="pt-1 text-right text-xs font-semibold text-gray-500">
-                  Rata-rata <span className="text-[#16796E]">{avg.toFixed(1)}/5.0 · ≈ {cefr(avg).band} {cefr(avg).name}</span>
+                  {t('Rata-rata')} <span className="text-[#16796E]">{avg.toFixed(1)}/5.0 · ≈ {cefr(avg).band} {t(cefr(avg).name)}</span>
                 </div>
               )}
             </div>
@@ -281,7 +285,7 @@ export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { r
                 ].map((x, i) => (
                   <div key={i} className="rounded-xl bg-gray-50 py-2.5">
                     <div className="text-sm font-bold text-gray-900">{x.v}</div>
-                    <div className="text-[10px] text-gray-500">{x.l}</div>
+                    <div className="text-[10px] text-gray-500">{t(x.l)}</div>
                   </div>
                 ))}
               </div>
@@ -289,13 +293,13 @@ export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { r
 
             {r.teacher_comment && (
               <div className="mt-4 rounded-xl border-l-[3px] border-[#16796E] bg-[#F0FAF8] px-4 py-3">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-[#16796E]">Komentar Pengajar</div>
+                <div className="text-[11px] font-bold uppercase tracking-wider text-[#16796E]">{t('Komentar Pengajar')}</div>
                 <div className="mt-1 whitespace-pre-line text-[13px] leading-relaxed text-gray-700">{r.teacher_comment}</div>
               </div>
             )}
             {r.recommendation && (
               <div className="mt-2.5 rounded-xl border-l-[3px] border-amber-400 bg-amber-50 px-4 py-3">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-amber-600">Rekomendasi</div>
+                <div className="text-[11px] font-bold uppercase tracking-wider text-amber-600">{t('Rekomendasi')}</div>
                 <div className="mt-1 whitespace-pre-line text-[13px] leading-relaxed text-gray-700">{r.recommendation}</div>
               </div>
             )}

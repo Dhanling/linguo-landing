@@ -20,6 +20,7 @@ import { studentRecordingHref, isInternalRecordingHref } from '@/lib/classRoom';
 import { fetchSkillProgressFor, type SkillProgress } from '@/lib/studentInsights';
 import { shareProgress, printProgressCard, periodLabel } from '@/lib/shareProgress';
 import { SkillRow } from '@/components/akun/SkillBar';
+import { useT, useUiLang } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 // [nilai-per-pertemuan-v1] nilai kuis tiap pertemuan (schedules.quiz_*)
 import { quizPct } from '@/components/akun/ClassQuizScores';
 import { Mic, Headphones, BookOpen, PenLine, TrendingUp, Video, ClipboardList, MessageCircle, Share2, Printer, Check, type LucideIcon } from 'lucide-react';
@@ -52,6 +53,9 @@ const ATT_SOLID: Record<string, { label: string; solid: string; dot: string }> =
 const ATT_ORDER = ['hadir', 'izin', 'sakit', 'alpa'] as const;
 
 export default function ClassProgressTab({ reg, schedules }: { reg: any; schedules: any[] }) {
+  const t = useT(); // [ui-lang-switcher-v1]
+  const uiLang = useUiLang();
+  const dateLocale = uiLang === 'en' ? 'en-GB' : 'id-ID';
   // undefined = masih loading; null = kosong / gagal (tampilkan placeholder, jangan crash)
   const [prog, setProg] = useState<SkillProgress | null | undefined>(undefined);
   const [studentName, setStudentName] = useState('Siswa');
@@ -135,12 +139,12 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
       {total > 0 && (
         <section>
           <div className="mb-3 flex items-baseline justify-between gap-2">
-            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500">Presensi</h2>
-            <span className="text-[11px] text-gray-400">{used}/{total} sesi berjalan</span>
+            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500">{t('Presensi')}</h2>
+            <span className="text-[11px] text-gray-400">{used}/{total} {t('sesi berjalan')}</span>
           </div>
           <div className="rounded-2xl bg-white p-4">
             <div className="mb-3 flex items-center justify-between gap-2">
-              <span className="text-[13px] font-semibold text-gray-700">Kehadiran</span>
+              <span className="text-[13px] font-semibold text-gray-700">{t('Kehadiran')}</span>
               <span className="inline-flex items-baseline gap-1 text-[13px] font-bold text-[#16796E]">
                 <span className="text-xl">{hadirRate}%</span>
                 <span className="text-[11px] font-medium text-gray-400">({attCounts.hadir}/{used || 0})</span>
@@ -152,7 +156,7 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
                   return (
                     <div
                       key={i}
-                      title={`Sesi ${i + 1} — belum berjalan`}
+                      title={`${t('Sesi')} ${i + 1} — ${t('belum berjalan')}`}
                       className="flex h-8 w-8 select-none items-center justify-center rounded-md border border-dashed border-gray-300 bg-gray-50 text-[10px] text-gray-300"
                     >
                       {i + 1}
@@ -163,7 +167,7 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
                 return (
                   <div
                     key={i}
-                    title={`Sesi ${i + 1} — ${meta.label}`}
+                    title={`${t('Sesi')} ${i + 1} — ${t(meta.label)}`}
                     className={`flex h-8 w-8 select-none items-center justify-center rounded-md text-[10px] font-semibold text-white ${meta.solid}`}
                   >
                     {i + 1}
@@ -175,12 +179,12 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
               {ATT_ORDER.map((k) => (
                 <span key={k} className="inline-flex items-center gap-1">
                   <span className={`h-2.5 w-2.5 rounded-sm ${ATT_SOLID[k].dot}`} />
-                  {ATT_SOLID[k].label}{attCounts[k] ? ` ${attCounts[k]}` : ''}
+                  {t(ATT_SOLID[k].label)}{attCounts[k] ? ` ${attCounts[k]}` : ''}
                 </span>
               ))}
               <span className="inline-flex items-center gap-1">
                 <span className="h-2.5 w-2.5 rounded-sm border border-dashed border-gray-300 bg-gray-50" />
-                Belum jalan
+                {t('Belum jalan')}
               </span>
             </div>
           </div>
@@ -191,7 +195,7 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
       <section>
         <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
           <div>
-            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500">Kemampuan 4 Skill · CEFR</h2>
+            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500">{t('Kemampuan 4 Skill · CEFR')}</h2>
             {/* [progress-delta-v1] rentang periode: dari rapor pembanding sampai
                 penilaian terakhir. Tanpa ini angka progres kehilangan konteks. */}
             {periode && <p className="mt-0.5 text-[11px] font-semibold text-gray-400">{periode}</p>}
@@ -203,25 +207,25 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
                 className="inline-flex items-center gap-1.5 rounded-lg bg-[#16796E]/10 px-3 py-2 text-xs font-bold text-[#16796E] transition hover:bg-[#16796E]/15"
               >
                 {shareState === 'copied' ? <Check className="h-3.5 w-3.5" strokeWidth={3} /> : <Share2 className="h-3.5 w-3.5" strokeWidth={2.5} />}
-                {shareState === 'copied' ? 'Tersalin' : shareState === 'failed' ? 'Gagal' : 'Bagikan'}
+                {shareState === 'copied' ? t('Tersalin') : shareState === 'failed' ? t('Gagal') : t('Bagikan')}
               </button>
               <button
                 onClick={() => printProgressCard(shareData)}
                 className="inline-flex items-center gap-1.5 rounded-lg bg-gray-100 px-3 py-2 text-xs font-semibold text-gray-700 transition hover:bg-gray-200"
               >
-                <Printer className="h-3.5 w-3.5" strokeWidth={2.5} /> Cetak
+                <Printer className="h-3.5 w-3.5" strokeWidth={2.5} /> {t('Cetak')}
               </button>
             </div>
           )}
         </div>
 
         {prog === undefined ? (
-          <div className="rounded-2xl bg-gray-50 p-6 text-center text-sm text-gray-400">Memuat…</div>
+          <div className="rounded-2xl bg-gray-50 p-6 text-center text-sm text-gray-400">{t('Memuat…')}</div>
         ) : rated.length === 0 ? (
           <div className="rounded-2xl bg-gray-50 p-6 text-center">
             <TrendingUp className="mx-auto mb-2 h-7 w-7 text-gray-300" strokeWidth={1.5} />
-            <div className="text-sm text-gray-500">Pengajar belum mengisi penilaian skill</div>
-            <div className="mt-1 text-xs text-gray-400">Penilaian muncul di sini setelah pengajar mengisi Catatan Progress</div>
+            <div className="text-sm text-gray-500">{t('Pengajar belum mengisi penilaian skill')}</div>
+            <div className="mt-1 text-xs text-gray-400">{t('Penilaian muncul di sini setelah pengajar mengisi Catatan Progress')}</div>
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-4 md:grid-cols-[1fr_180px]">
@@ -237,18 +241,18 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
             </div>
 
             <div className="flex flex-col items-center justify-center rounded-2xl bg-gradient-to-br from-[#16796E] to-emerald-600 p-4 text-center text-white">
-              <div className="text-[11px] font-semibold uppercase tracking-wider opacity-80">Rata-rata</div>
+              <div className="text-[11px] font-semibold uppercase tracking-wider opacity-80">{t('Rata-rata')}</div>
               <div className="text-4xl font-extrabold">{avg ? avg.toFixed(1) : '-'}</div>
-              <div className="text-[11px] opacity-80">dari 5.0</div>
+              <div className="text-[11px] opacity-80">{t('dari 5.0')}</div>
               {avg > 0 && (
                 <div className="mt-2 rounded-full bg-white/20 px-3 py-1 text-xs font-bold">
-                  ≈ {cefr(avg).band} · {cefr(avg).name}
+                  ≈ {cefr(avg).band} · {t(cefr(avg).name)}
                 </div>
               )}
               {/* [progress-delta-v1] rata-rata lama biar kenaikannya kebaca sekali lihat */}
               {avgBefore !== null && (
                 <div className="mt-2 text-[11px] font-semibold opacity-85">
-                  sebelumnya {avgBefore.toFixed(1)} · {cefr(avgBefore).band}
+                  {t('sebelumnya')} {avgBefore.toFixed(1)} · {cefr(avgBefore).band}
                 </div>
               )}
             </div>
@@ -261,12 +265,12 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
 
       {/* ── Timeline sesi ── */}
       <section>
-        <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-gray-500">Perjalanan Belajar ({timeline.length} sesi)</h2>
+        <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-gray-500">{t('Perjalanan Belajar')} ({timeline.length} {t('sesi')})</h2>
         {timeline.length === 0 ? (
           <div className="rounded-2xl bg-gray-50 p-6 text-center">
             <ClipboardList className="mx-auto mb-2 h-7 w-7 text-gray-300" strokeWidth={1.5} />
-            <div className="text-sm text-gray-500">Belum ada sesi yang selesai</div>
-            <div className="mt-1 text-xs text-gray-400">Setiap sesi selesai, laporan pengajar (topik, PR, recording) tampil di sini</div>
+            <div className="text-sm text-gray-500">{t('Belum ada sesi yang selesai')}</div>
+            <div className="mt-1 text-xs text-gray-400">{t('Setiap sesi selesai, laporan pengajar (topik, PR, recording) tampil di sini')}</div>
           </div>
         ) : (
           <div className="relative space-y-3 pl-5 before:absolute before:bottom-2 before:left-[7px] before:top-2 before:w-px before:bg-gray-200">
@@ -278,9 +282,9 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
                   <span className="absolute -left-[19px] top-5 h-3 w-3 rounded-full border-2 border-white bg-[#16796E]" />
                   <div className="flex items-start justify-between gap-2">
                     <div>
-                      <div className="text-[11px] font-bold uppercase tracking-wider text-[#16796E]">Sesi {s.sessionNo}</div>
+                      <div className="text-[11px] font-bold uppercase tracking-wider text-[#16796E]">{t('Sesi')} {s.sessionNo}</div>
                       <div className="text-sm font-semibold text-gray-900">
-                        {new Date(s.scheduled_at).toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
+                        {new Date(s.scheduled_at).toLocaleDateString(dateLocale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
                       </div>
                     </div>
                     <div className="flex shrink-0 items-center gap-1.5">
@@ -290,21 +294,21 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
                         const pct = quizPct(s.quiz_score, s.quiz_max);
                         return pct === null ? null : (
                           <span
-                            title={`Nilai kuis ${s.quiz_score}/${s.quiz_max}`}
+                            title={`${t('Nilai kuis')} ${s.quiz_score}/${s.quiz_max}`}
                             className="rounded-full bg-[#16796E]/10 px-2 py-1 text-xs font-bold text-[#16796E]"
                           >
-                            Kuis {pct}%
+                            {t('Kuis')} {pct}%
                           </span>
                         );
                       })()}
-                      {att && <span className={`rounded-full px-2 py-1 text-xs font-semibold ${att.cls}`}>{att.label}</span>}
+                      {att && <span className={`rounded-full px-2 py-1 text-xs font-semibold ${att.cls}`}>{t(att.label)}</span>}
                     </div>
                   </div>
 
                   {(parsed.topic || parsed.homework || parsed.message || parsed.extras.length > 0) && (
                     <div className="mt-2.5 space-y-1.5 border-t border-gray-100 pt-2.5 text-[13px]">
-                      {parsed.topic && <div><span className="font-semibold text-gray-700">📚 Topik:</span> <span className="text-gray-600">{parsed.topic}</span></div>}
-                      {parsed.homework && <div><span className="font-semibold text-gray-700">📝 PR:</span> <span className="text-gray-600">{parsed.homework}</span></div>}
+                      {parsed.topic && <div><span className="font-semibold text-gray-700">📚 {t('Topik')}:</span> <span className="text-gray-600">{parsed.topic}</span></div>}
+                      {parsed.homework && <div><span className="font-semibold text-gray-700">📝 {t('PR')}:</span> <span className="text-gray-600">{parsed.homework}</span></div>}
                       {parsed.message && (
                         <div className="flex items-start gap-1.5 rounded-xl bg-[#F0FAF8] px-3 py-2 text-gray-700">
                           <MessageCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#16796E]" strokeWidth={2} />
@@ -325,7 +329,7 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
                         : { target: "_blank", rel: "noreferrer" })}
                       className="mt-2.5 inline-flex items-center gap-1.5 rounded-lg bg-gray-900 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gray-800"
                     >
-                      <Video className="h-3.5 w-3.5" strokeWidth={2.5} /> Tonton Recording
+                      <Video className="h-3.5 w-3.5" strokeWidth={2.5} /> {t('Tonton Recording')}
                     </a>
                   )}
                 </div>

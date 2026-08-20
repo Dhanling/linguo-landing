@@ -20,6 +20,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Video, CalendarDays, Clock, BookOpen, FileText, ExternalLink, PlayCircle, Maximize2, Minimize2 } from "lucide-react";
 import { classRoomUrl, isJoinable, studentRecordingHref, isInternalRecordingHref } from "@/lib/classRoom"; // [kelas-video-siswa-v1] + jadwal-riwayat-v1
 import { fmtDuration } from "@/lib/studentInsights"; // jadwal-week-timeline-v1: label beban minggu
+import { useT, useUiLang } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import { liburOn, liburLabel, liburTooltip } from "@/lib/hariLibur"; // [kalender-hari-libur-v1]
 import {
   ATT_META, DOWS, DOWS_FULL, LIVE_COLOR, LangFlag, LiveBadge, MONTHS, MONTHS_SHORT, TeacherAvatar,
@@ -58,6 +59,9 @@ export default function JadwalCalendar({
   /** Nama siswa — ikut dikirim ke room biar dia tak perlu mengetiknya lagi. */
   studentName?: string;
 }) {
+  // [ui-lang-switcher-v1] `tt`, bukan `t` — `t` sudah dipakai buat handle interval di bawah.
+  const tt = useT();
+  const uiLang = useUiLang();
   const today = useMemo(() => new Date(), []);
   const todayIso = ymd(today);
 
@@ -266,20 +270,20 @@ export default function JadwalCalendar({
   const agendaTitle = useMemo(() => {
     const [yy, mm, dd] = agendaIso.split("-").map(Number);
     const d = new Date(yy, mm - 1, dd);
-    return `${DOWS_FULL[(d.getDay() + 6) % 7]}, ${dd} ${MONTHS[mm - 1]} ${yy}`;
-  }, [agendaIso]);
+    return `${tt(DOWS_FULL[(d.getDay() + 6) % 7])}, ${dd} ${tt(MONTHS[mm - 1])} ${yy}`;
+  }, [agendaIso, tt]);
 
   const goPrev = () => { setSelected(null); setCursor((c) => mode === "month" ? new Date(c.getFullYear(), c.getMonth() - 1, 1) : addDays(c, mode === "week" ? -7 : -1)); };
   const goNext = () => { setSelected(null); setCursor((c) => mode === "month" ? new Date(c.getFullYear(), c.getMonth() + 1, 1) : addDays(c, mode === "week" ? 7 : 1)); };
   const goToday = () => { setSelected(null); setCursor(new Date()); };
 
   const periodTitle = (() => {
-    if (mode === "month") return `${MONTHS[cursor.getMonth()]} ${cursor.getFullYear()}`;
-    if (mode === "day") return `${DOWS_FULL[(cursor.getDay() + 6) % 7]}, ${cursor.getDate()} ${MONTHS[cursor.getMonth()]} ${cursor.getFullYear()}`;
+    if (mode === "month") return `${tt(MONTHS[cursor.getMonth()])} ${cursor.getFullYear()}`;
+    if (mode === "day") return `${tt(DOWS_FULL[(cursor.getDay() + 6) % 7])}, ${cursor.getDate()} ${tt(MONTHS[cursor.getMonth()])} ${cursor.getFullYear()}`;
     const s = startOfWeek(cursor), e = addDays(s, 6);
-    if (s.getMonth() === e.getMonth()) return `${s.getDate()}–${e.getDate()} ${MONTHS[s.getMonth()]} ${s.getFullYear()}`;
-    if (s.getFullYear() === e.getFullYear()) return `${s.getDate()} ${MONTHS_SHORT[s.getMonth()]} – ${e.getDate()} ${MONTHS_SHORT[e.getMonth()]} ${s.getFullYear()}`;
-    return `${s.getDate()} ${MONTHS_SHORT[s.getMonth()]} ${s.getFullYear()} – ${e.getDate()} ${MONTHS_SHORT[e.getMonth()]} ${e.getFullYear()}`;
+    if (s.getMonth() === e.getMonth()) return `${s.getDate()}–${e.getDate()} ${tt(MONTHS[s.getMonth()])} ${s.getFullYear()}`;
+    if (s.getFullYear() === e.getFullYear()) return `${s.getDate()} ${tt(MONTHS_SHORT[s.getMonth()])} – ${e.getDate()} ${tt(MONTHS_SHORT[e.getMonth()])} ${s.getFullYear()}`;
+    return `${s.getDate()} ${tt(MONTHS_SHORT[s.getMonth()])} ${s.getFullYear()} – ${e.getDate()} ${tt(MONTHS_SHORT[e.getMonth()])} ${e.getFullYear()}`;
   })();
 
   const navBtn = "w-9 h-9 rounded-xl border border-slate-200 bg-white flex items-center justify-center hover:bg-slate-50 transition text-[#12172B]";
@@ -304,7 +308,7 @@ export default function JadwalCalendar({
       {regularBatches.length > 0 && (
         <div className="rounded-2xl bg-white p-4 ring-1 ring-slate-200">
           <h3 className="text-[13px] font-bold text-[#12172B] mb-2.5 inline-flex items-center gap-1.5">
-            <CalendarDays className="w-4 h-4 text-[#16796E]" strokeWidth={2.5} /> Jadwal Tetap (Kelas Grup)
+            <CalendarDays className="w-4 h-4 text-[#16796E]" strokeWidth={2.5} /> {tt("Jadwal Tetap (Kelas Grup)")}
           </h3>
           <div className="space-y-2">
             {regularBatches.map((b) => {
@@ -318,7 +322,7 @@ export default function JadwalCalendar({
                     </p>
                     {(b.scheduleDay || b.scheduleTime) && (
                       <p className="text-[12px] text-[#6B7280] font-medium">
-                        Setiap {b.scheduleDay}{b.scheduleTime ? `, ${b.scheduleTime} WIB` : ""}
+                        {tt("Setiap")} {tt(b.scheduleDay || "")}{b.scheduleTime ? `, ${b.scheduleTime} WIB` : ""}
                       </p>
                     )}
                   </div>
@@ -343,15 +347,15 @@ export default function JadwalCalendar({
         {/* Kepala: judul + hitungan + tombol Hari ini */}
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 px-4 pt-5 pb-4 sm:px-6">
           <div>
-            <h1 className="text-[20px] font-extrabold leading-tight text-[#12172B]">Jadwal Kelas</h1>
+            <h1 className="text-[20px] font-extrabold leading-tight text-[#12172B]">{tt("Jadwal Kelas")}</h1>
             {/* jadwal-riwayat-v1: `items` termasuk riwayat — hitungannya wajib dari
                 `upcoming`, kalau tidak angkanya bohong. */}
             <p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">
-              {upcoming.length} sesi mendatang{pastCount > 0 ? ` · ${pastCount} sudah lewat` : ""}
+              {upcoming.length} {tt("sesi mendatang")}{pastCount > 0 ? ` · ${pastCount} ${tt("sudah lewat")}` : ""}
             </p>
           </div>
           <button onClick={goToday} className="h-9 rounded-xl border border-slate-200 bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:bg-slate-50">
-            Hari ini
+            {tt("Hari ini")}
           </button>
         </div>
 
@@ -363,7 +367,7 @@ export default function JadwalCalendar({
             {mode === "week" && weekMinutes > 0 && (
               <span className="inline-flex items-center gap-1.5 rounded-full bg-[#16796E]/10 px-3 py-1 text-[12px] font-bold text-[#16796E]">
                 <Clock className="w-3.5 h-3.5" strokeWidth={2.6} />
-                Total minggu ini: {fmtDuration(weekMinutes)}
+                {tt("Total minggu ini")}: {uiLang === "en" ? fmtDuration(weekMinutes).replace(" jam", " hr").replace("j ", "h ") : fmtDuration(weekMinutes)}
               </span>
             )}
           </div>
@@ -377,17 +381,17 @@ export default function JadwalCalendar({
                   className="text-[12px] font-bold px-3 h-8 rounded-lg transition"
                   style={mode === m ? { background: "#16796E", color: "#fff" } : { color: "#6B7280" }}
                 >
-                  {label}
+                  {tt(label)}
                 </button>
               ))}
             </div>
-            <button onClick={goPrev} aria-label="Sebelumnya" className={navBtn}><ChevronLeft className="w-5 h-5" /></button>
-            <button onClick={goNext} aria-label="Berikutnya" className={navBtn}><ChevronRight className="w-5 h-5" /></button>
+            <button onClick={goPrev} aria-label={tt("Sebelumnya")} className={navBtn}><ChevronLeft className="w-5 h-5" /></button>
+            <button onClick={goNext} aria-label={tt("Berikutnya")} className={navBtn}><ChevronRight className="w-5 h-5" /></button>
             {/* jadwal-fullscreen-v1: sejajar tombol layar penuh di dashboard pengajar */}
             <button
               onClick={() => setFullscreen((v) => !v)}
-              aria-label={fullscreen ? "Keluar layar penuh" : "Layar penuh"}
-              title={fullscreen ? "Keluar layar penuh (Esc)" : "Layar penuh (F)"}
+              aria-label={fullscreen ? tt("Keluar layar penuh") : tt("Layar penuh")}
+              title={fullscreen ? tt("Keluar layar penuh (Esc)") : tt("Layar penuh (F)")}
               className={navBtn}
             >
               {fullscreen ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
@@ -400,7 +404,7 @@ export default function JadwalCalendar({
           {mode === "month" && (
             <div className="rounded-2xl border border-slate-100 p-2 sm:p-3">
               <div className="grid grid-cols-7 pb-2 text-center text-[11px] font-bold uppercase tracking-wide text-[#6B7280]">
-                {DOWS.map((d, i) => <div key={d} className={i >= 5 ? "text-slate-300" : ""}>{d}</div>)}
+                {DOWS.map((d, i) => <div key={d} className={i >= 5 ? "text-slate-300" : ""}>{tt(d)}</div>)}
               </div>
               <div className="grid grid-cols-7 gap-1 sm:gap-1.5">
                 {cells.map((cell, i) => {
@@ -416,7 +420,7 @@ export default function JadwalCalendar({
                       onClick={() => evs.length && setSelected(cell.iso)}
                       tabIndex={evs.length ? 0 : -1}
                       title={libur ? liburTooltip(libur) : undefined}
-                      aria-label={`${cell.d} ${MONTHS[cursor.getMonth()]}${libur ? `, ${liburTooltip(libur)}` : ""}${evs.length ? `, ${evs.length} sesi` : ""}`}
+                      aria-label={`${cell.d} ${tt(MONTHS[cursor.getMonth()])}${libur ? `, ${liburTooltip(libur)}` : ""}${evs.length ? `, ${evs.length} ${tt("sesi")}` : ""}`}
                       className={[
                         "flex min-h-[44px] flex-col gap-1 rounded-xl border border-slate-100 p-1.5 text-left transition sm:min-h-[78px] sm:p-2",
                         evs.length ? "cursor-pointer hover:bg-slate-50" : "cursor-default",
@@ -482,9 +486,9 @@ export default function JadwalCalendar({
               <div className="rounded-2xl border border-slate-100 p-8 text-center">
                 <CalendarDays className="mx-auto mb-2 h-8 w-8 text-slate-300" strokeWidth={1.6} />
                 <p className="text-[14px] font-bold text-[#12172B]">
-                  {mode === "day" ? "Tidak ada sesi di hari ini" : "Tidak ada sesi minggu ini"}
+                  {mode === "day" ? tt("Tidak ada sesi di hari ini") : tt("Tidak ada sesi minggu ini")}
                 </p>
-                <p className="mt-1 text-[12.5px] font-medium text-[#6B7280]">Pakai panah di atas buat lihat {mode === "day" ? "hari" : "minggu"} lain.</p>
+                <p className="mt-1 text-[12.5px] font-medium text-[#6B7280]">{mode === "day" ? tt("Pakai panah di atas buat lihat hari lain.") : tt("Pakai panah di atas buat lihat minggu lain.")}</p>
               </div>
             ) : (() => {
               const { start: h0, end: h1 } = gridHours;
@@ -523,7 +527,7 @@ export default function JadwalCalendar({
                               title={libur ? liburTooltip(libur) : undefined}
                               className={`flex flex-col items-center gap-0.5 rounded-t-lg py-1.5 transition ${agendaIso === iso ? "bg-[#16796E]/5" : "hover:bg-slate-50"}`}
                             >
-                              <span className={`text-[10px] font-bold uppercase tracking-wide ${libur ? "libur-teks" : dow >= 5 ? "text-slate-300" : "text-[#6B7280]"}`}>{DOWS[dow]}</span>
+                              <span className={`text-[10px] font-bold uppercase tracking-wide ${libur ? "libur-teks" : dow >= 5 ? "text-slate-300" : "text-[#6B7280]"}`}>{tt(DOWS[dow])}</span>
                               <span className={`text-[14px] font-extrabold tabular-nums ${isToday ? "flex h-6 w-6 items-center justify-center rounded-full bg-[#16796E] text-white" : libur ? "libur-teks" : "text-[#12172B]"}`}>
                                 {d.getDate()}
                               </span>
@@ -675,7 +679,7 @@ export default function JadwalCalendar({
             <div className="mt-4">
               <div className="mb-2 flex items-center justify-between gap-2">
                 <h3 className="text-[14px] font-extrabold text-[#12172B]">{agendaTitle}</h3>
-                <span className="text-[12px] font-semibold text-[#6B7280]">{agendaEvents.length} sesi</span>
+                <span className="text-[12px] font-semibold text-[#6B7280]">{agendaEvents.length} {tt("sesi")}</span>
               </div>
               <div className="flex flex-col gap-3 rounded-2xl border border-slate-100 p-3 sm:p-4">
                 {agendaEvents.map((e) => (
@@ -688,7 +692,7 @@ export default function JadwalCalendar({
           {/* Keterangan warna — sederet di bawah kalender (dulu numpuk di kolom kiri) */}
           {legend.length > 0 && (
             <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-slate-100 pt-3 text-[12px] font-semibold text-[#12172B]">
-              <span className="text-[11px] font-bold uppercase tracking-wide text-[#6B7280]">Bahasa</span>
+              <span className="text-[11px] font-bold uppercase tracking-wide text-[#6B7280]">{tt("Bahasa")}</span>
               {legend.map(([lang, c]) => (
                 <span key={lang} className="flex items-center gap-1.5">
                   <span className="h-2.5 w-2.5 rounded-full" style={{ background: c.dot }} />{lang}
@@ -698,10 +702,10 @@ export default function JadwalCalendar({
                   keterangan ini titik warnanya cuma jadi teka-teki. */}
               {attLegend.length > 0 && (
                 <>
-                  <span className="ml-1 text-[11px] font-bold uppercase tracking-wide text-[#6B7280]">Presensi</span>
+                  <span className="ml-1 text-[11px] font-bold uppercase tracking-wide text-[#6B7280]">{tt("Presensi")}</span>
                   {attLegend.map((k) => (
                     <span key={k} className="flex items-center gap-1.5">
-                      <span className="h-2.5 w-2.5 rounded-full" style={{ background: ATT_META[k].color }} />{ATT_META[k].label}
+                      <span className="h-2.5 w-2.5 rounded-full" style={{ background: ATT_META[k].color }} />{tt(ATT_META[k].label)}
                     </span>
                   ))}
                 </>
@@ -709,7 +713,7 @@ export default function JadwalCalendar({
               {/* [kalender-hari-libur-v1] keterangan tanggal merah — nama liburnya sering
                   terpotong di sel sempit, jadi maknanya dijelaskan sekali di sini. */}
               <span className="libur-teks flex items-center gap-1.5">
-                <span className="libur-teks h-2.5 w-2.5 rounded-full bg-current" />Libur nasional / cuti bersama
+                <span className="libur-teks h-2.5 w-2.5 rounded-full bg-current" />{tt("Libur nasional / cuti bersama")}
               </span>
             </div>
           )}
@@ -724,6 +728,7 @@ export default function JadwalCalendar({
  * bawah kalender pada SEMUA view.
  */
 function SessionCard({ e, now, studentName }: { e: NormSession; now: number; studentName?: string }) {
+  const tt = useT(); // [ui-lang-switcher-v1]
   const c = langColor(e.language);
   const st = statusMeta(e); // jadwal-riwayat-v1
   const rec = e.recordingUrl ? studentRecordingHref(e.recordingUrl) : null;
@@ -757,19 +762,19 @@ function SessionCard({ e, now, studentName }: { e: NormSession; now: number; stu
             {/* jadwal-recurring-materi-v1: pertemuan ke berapa */}
             {e.sessionNumber ? (
               <span className="shrink-0 rounded-full px-2 py-0.5 text-[11px] font-extrabold" style={{ background: c.bg, color: c.text }}>
-                {e.isBatch ? "Pertemuan" : "Sesi"} {e.sessionNumber}
+                {e.isBatch ? tt("Pertemuan") : tt("Sesi")} {e.sessionNumber}
               </span>
             ) : null}
             {/* [jadwal-batch-kalender-v1] penanda kelas grup berjadwal tetap */}
             {e.isBatch && (
-              <span className="shrink-0 rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-extrabold text-[#6B7280]">Jadwal tetap</span>
+              <span className="shrink-0 rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-extrabold text-[#6B7280]">{tt("Jadwal tetap")}</span>
             )}
             {/* jadwal-live-now-v1: sesi yang jamnya lagi jalan */}
             {e._live && <LiveBadge />}
             {/* jadwal-riwayat-v1: hasil sesi (presensi / dibatalkan) */}
             {st && (
               <span className="shrink-0 rounded-full px-2 py-0.5 text-[11px] font-extrabold" style={{ background: `${st.color}1A`, color: st.color }}>
-                {st.label}
+                {tt(st.label)}
               </span>
             )}
           </span>
@@ -781,7 +786,7 @@ function SessionCard({ e, now, studentName }: { e: NormSession; now: number; stu
                 {e.teacher}
               </span>
             )}
-            {e.durationMinutes ? <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" strokeWidth={2} /> {e.durationMinutes} menit</span> : null}
+            {e.durationMinutes ? <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" strokeWidth={2} /> {e.durationMinutes} {tt("menit")}</span> : null}
             {e.product && <span className="text-[#9CA3AF]">{e.product}</span>}
             {/* jadwal-riwayat-v1: hitung mundur sesi mendatang. Sesi yang lagi jalan
                 sudah dijawab lencana di atas — "sedang berlangsung" dua kali sebaris
@@ -790,7 +795,7 @@ function SessionCard({ e, now, studentName }: { e: NormSession; now: number; stu
               <span className="font-bold text-[#16796E]">{countdownLabel(e._d, now)}</span>
             )}
             {e._live && e._end && (
-              <span className="font-bold" style={{ color: LIVE_COLOR }}>selesai {e._end}</span>
+              <span className="font-bold" style={{ color: LIVE_COLOR }}>{tt("selesai")} {e._end}</span>
             )}
           </span>
         </span>
@@ -802,7 +807,7 @@ function SessionCard({ e, now, studentName }: { e: NormSession; now: number; stu
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-xl bg-[#16796E] px-3.5 py-2 text-[12.5px] font-extrabold text-white hover:bg-[#0F5A52]"
             >
-              <Video className="h-3.5 w-3.5" strokeWidth={2.2} /> Masuk Kelas
+              <Video className="h-3.5 w-3.5" strokeWidth={2.2} /> {tt("Masuk Kelas")}
             </a>
           )}
           {/* jadwal-riwayat-v1: rekaman sesi lampau */}
@@ -812,7 +817,7 @@ function SessionCard({ e, now, studentName }: { e: NormSession; now: number; stu
               {...(isInternalRecordingHref(rec) ? {} : { target: "_blank", rel: "noopener noreferrer" })}
               className="inline-flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-[12.5px] font-extrabold text-[#16796E] hover:bg-[#EAF3F2]"
             >
-              <PlayCircle className="h-3.5 w-3.5" strokeWidth={2.2} /> Rekaman
+              <PlayCircle className="h-3.5 w-3.5" strokeWidth={2.2} /> {tt("Rekaman")}
             </a>
           )}
         </span>
@@ -827,13 +832,14 @@ function SessionCard({ e, now, studentName }: { e: NormSession; now: number; stu
  * berkas/link rujukan yang dilampirkan pengajar. Tak dirender kalau kosong.
  */
 function MaterialBlock({ s }: { s: NormSession }) {
+  const tt = useT(); // [ui-lang-switcher-v1]
   const links = s.materialLinks ?? [];
   if (!s.materialTitle && !s.materialNotes && links.length === 0) return null;
   return (
     <div className="mt-2.5 rounded-xl bg-white p-3">
       <p className="flex items-center gap-1.5 text-[12px] font-extrabold text-[#16796E]">
         <BookOpen className="h-3.5 w-3.5 shrink-0" strokeWidth={2.4} />
-        {s.materialTitle || "Materi sesi"}
+        {s.materialTitle || tt("Materi sesi")}
       </p>
       {s.materialNotes && <p className="mt-1 whitespace-pre-line text-[12px] font-medium leading-snug text-[#6B7280]">{s.materialNotes}</p>}
       {links.length > 0 && (

@@ -25,6 +25,7 @@ import { quizScoreRows } from '@/components/akun/ClassQuizScores';
 import ClassRaporTab from '@/components/akun/ClassRaporTab';
 // [kelas-tab-kuis-v1] Kuis tiap pertemuan: grafik skor + rincian benar/salah + pembahasan
 import ClassKuisTab from '@/components/akun/ClassKuisTab';
+import { tr, useT, useUiLang } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 import { ArrowLeft, Calendar, TrendingUp, BookOpen, BarChart2, User, Clock, MessageCircle, ClipboardList, Check, ClipboardCheck, CalendarClock, type LucideIcon } from 'lucide-react';
 
 interface Props {
@@ -76,15 +77,19 @@ const normalizeTab = (t: string | null | undefined): string | null | undefined =
 // tak punya alasan me-render ulang dan labelnya membeku.
 function hitungMundur(dt: Date, now: number): string {
   const menit = Math.round((dt.getTime() - now) / 60_000);
-  if (menit <= 0) return 'sedang berlangsung';
-  if (menit < 60) return `${menit} menit lagi`;
+  if (menit <= 0) return tr('sedang berlangsung');
+  if (menit < 60) return `${menit} ${tr('menit lagi')}`;
   const jam = Math.round(menit / 60);
-  if (jam < 24) return `${jam} jam lagi`;
+  if (jam < 24) return `${jam} ${tr('jam lagi')}`;
   const hari = Math.round(jam / 24);
-  return hari === 1 ? 'besok' : `${hari} hari lagi`;
+  return hari === 1 ? tr('besok') : `${hari} ${tr('hari lagi')}`;
 }
 
 export default function ClassDetailView({ reg, initialTab, previewStudentId = null, previewSchedules = null, previewRegs = null, sesiMati = false, pratinjauMati = false }: Props) {
+  // [ui-lang-switcher-v1] `tl` — nama `t` sudah dipakai buat item TABS di bawah.
+  const tl = useT();
+  const uiLang = useUiLang();
+  const dateLocale = uiLang === 'en' ? 'en-GB' : 'id-ID';
   const [activeTab, setActiveTabState] = useState<ClassTab>(isValidTab(normalizeTab(initialTab)) ? (normalizeTab(initialTab) as ClassTab) : 'materi');
   const [schedules, setSchedules] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -348,7 +353,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
     <main className="mx-auto w-full max-w-[1000px] px-4 pb-16 pt-5 sm:px-6">
       {/* Back */}
       <Link href={previewStudentId ? `/akun?preview=${encodeURIComponent(previewStudentId)}` : "/akun"} prefetch className="inline-flex items-center gap-1.5 text-[13px] font-bold text-gray-500 transition hover:text-[#16796E]">
-        <ArrowLeft className="h-4 w-4" strokeWidth={2.5} /> Kembali ke Beranda
+        <ArrowLeft className="h-4 w-4" strokeWidth={2.5} /> {tl('Kembali ke Beranda')}
       </Link>
 
       {/* [kelas-sesi-mati-jujur-v1] Sesi habis → akui, jangan diam. Tanpa banner ini
@@ -358,7 +363,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
           strip level & jadwal kosong terbaca sebagai fakta tentang siswanya. */}
       {!sesiMati && pratinjauMati && (
         <div className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 p-4">
-          <div className="text-sm font-bold text-amber-800">Sesi pratinjau sudah kedaluwarsa</div>
+          <div className="text-sm font-bold text-amber-800">{tl('Sesi pratinjau sudah kedaluwarsa')}</div>
           <div className="mt-1 text-[13px] text-amber-700">
             Jadwal &amp; daftar level di bahasa ini tak bisa disegarkan. Yang tampil data terakhir
             yang sempat tersimpan — terbitkan kode &quot;Lihat sebagai Siswa&quot; yang baru dari dasbor.
@@ -368,23 +373,22 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
 
       {sesiMati && (
         <div className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 p-4">
-          <div className="text-sm font-bold text-amber-800">Sesi kamu sudah berakhir</div>
+          <div className="text-sm font-bold text-amber-800">{tl('Sesi kamu sudah berakhir')}</div>
           <div className="mt-1 text-[13px] text-amber-700">
-            Jadwal, materi, dan daftar level di bahasa ini tidak bisa dimuat sampai kamu masuk lagi.
-            Yang tampil di halaman ini data terakhir yang sempat tersimpan.
+            {tl('Jadwal, materi, dan daftar level di bahasa ini tidak bisa dimuat sampai kamu masuk lagi. Yang tampil di halaman ini data terakhir yang sempat tersimpan.')}
           </div>
           <div className="mt-3 flex flex-wrap gap-2">
             <button
               onClick={() => window.location.reload()}
               className="inline-flex items-center gap-1.5 rounded-xl bg-[#16796E] px-4 py-2 text-[13px] font-bold text-white hover:bg-[#0F5A52]"
             >
-              Muat Ulang
+              {tl('Muat Ulang')}
             </button>
             <Link
               href="/akun"
               className="inline-flex items-center gap-1.5 rounded-xl bg-white px-4 py-2 text-[13px] font-bold text-amber-800 hover:bg-amber-100"
             >
-              Masuk Lagi
+              {tl('Masuk Lagi')}
             </Link>
           </div>
         </div>
@@ -418,17 +422,17 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
           {/* Status badge */}
           {selesai ? (
             <span className="absolute right-4 top-4 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-gray-500">
-              <Check className="h-3 w-3" strokeWidth={3} /> Selesai
+              <Check className="h-3 w-3" strokeWidth={3} /> {tl('Selesai')}
             </span>
           ) : (
             <span className="absolute right-4 top-4 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-[#16796E]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#16796E]" /> Aktif
+              <span className="h-1.5 w-1.5 rounded-full bg-[#16796E]" /> {tl('Aktif')}
             </span>
           )}
 
           {/* Judul */}
           <div className="relative w-full px-5 pb-5 sm:px-7 sm:pb-6">
-            <div className="text-[11px] font-bold uppercase tracking-wider text-white/80">{reg.product || 'Kelas'}</div>
+            <div className="text-[11px] font-bold uppercase tracking-wider text-white/80">{tl(reg.product || 'Kelas')}</div>
             <div className="mt-1 flex items-center gap-2.5">
               <img src={getFlagUrl(reg.language)} alt="" className="h-5 w-5 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} />
               <h1 className="truncate text-[24px] font-extrabold leading-tight text-white sm:text-[30px]">
@@ -440,8 +444,8 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
                 pembayaran sengaja TIDAK ditampilkan di sini (sudah ada di
                 halaman Pembayaran). */}
             <div className="mt-1.5 flex flex-wrap items-center gap-x-3.5 gap-y-1 text-[12px] font-semibold text-white/85">
-              <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" strokeWidth={2.2} />{reg.duration || '-'} menit/sesi</span>
-              <span className="inline-flex items-center gap-1.5"><ClipboardList className="h-3.5 w-3.5" strokeWidth={2.2} />Paket {reg.sessions_total || 0} sesi</span>
+              <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" strokeWidth={2.2} />{reg.duration || '-'} {tl('menit/sesi')}</span>
+              <span className="inline-flex items-center gap-1.5"><ClipboardList className="h-3.5 w-3.5" strokeWidth={2.2} />{tl('Paket')} {reg.sessions_total || 0} {tl('sesi')}</span>
             </div>
           </div>
         </div>
@@ -458,19 +462,19 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
               <User className="h-5 w-5" strokeWidth={2.2} />
             </div>
             <div className="min-w-0">
-              <div className="text-[11px] font-bold uppercase tracking-wider text-[#16796E]">Pengajar</div>
+              <div className="text-[11px] font-bold uppercase tracking-wider text-[#16796E]">{tl('Pengajar')}</div>
               <div className="truncate text-[16px] font-extrabold text-[#12172B]">{teacherName}</div>
             </div>
           </div>
         ) : (
           <div className="flex items-center rounded-2xl border border-yellow-200 bg-yellow-50 p-4 text-sm font-medium text-yellow-800">
-            Pengajar belum di-assign. Hubungi admin untuk dipasangkan.
+            {tl('Pengajar belum di-assign. Hubungi admin untuk dipasangkan.')}
           </div>
         )}
 
         <div className="rounded-2xl bg-gray-50 p-4">
           <div className="mb-2 flex items-center justify-between">
-            <div className="text-sm font-semibold text-gray-700">Progress Sesi</div>
+            <div className="text-sm font-semibold text-gray-700">{tl('Progress Sesi')}</div>
             <div className="text-sm font-bold text-[#16796E]">{sesiTerpakai} / {reg.sessions_total || 0}</div>
           </div>
           <div className="h-2.5 overflow-hidden rounded-full bg-gray-200">
@@ -480,11 +484,11 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
               Sisa sesi yang bikin siswa sadar kapan harus ambil paket berikutnya. */}
           {sisaSesi > 0 && (
             <div className="mt-2 text-xs text-gray-500">
-              Sisa <b className="text-gray-700">{sisaSesi} sesi</b> lagi di level ini
+              {tl('Sisa')} <b className="text-gray-700">{sisaSesi} {tl('sesi')}</b> {tl('lagi di level ini')}
             </div>
           )}
           {selesai && (
-            <div className="mt-2 text-xs text-gray-500">Semua sesi di level ini sudah selesai</div>
+            <div className="mt-2 text-xs text-gray-500">{tl('Semua sesi di level ini sudah selesai')}</div>
           )}
         </div>
       </div>
@@ -501,17 +505,17 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0">
                   <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-[#16796E]">
-                    <CalendarClock className="h-3.5 w-3.5" strokeWidth={2.4} /> Sesi Berikutnya
+                    <CalendarClock className="h-3.5 w-3.5" strokeWidth={2.4} /> {tl('Sesi Berikutnya')}
                   </div>
                   <div className="mt-1.5 text-[18px] font-extrabold leading-tight text-[#12172B] sm:text-[20px]">
-                    {new Date(nextSched.scheduled_at).toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long' })}
+                    {new Date(nextSched.scheduled_at).toLocaleDateString(dateLocale, { weekday: 'long', day: 'numeric', month: 'long' })}
                   </div>
                   <div className="mt-0.5 text-sm text-gray-600">
                     {new Date(nextSched.scheduled_at).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} WIB
                     {/* [durasi-paket-v1] Durasi paket menang atas duration_minutes baris
                         jadwal — baris lama bisa menyimpan 45 menit di kelas 60 menit. */}
-                    {' · '}{Number(reg.duration) || nextSched.duration_minutes || 60} menit
-                    {nextSched.status === 'pending' ? ' · menunggu konfirmasi pengajar' : ''}
+                    {' · '}{Number(reg.duration) || nextSched.duration_minutes || 60} {tl('menit')}
+                    {nextSched.status === 'pending' ? ` · ${tl('menunggu konfirmasi pengajar')}` : ''}
                   </div>
                 </div>
                 <span className="shrink-0 rounded-full bg-white px-2.5 py-1 text-[11px] font-bold text-[#16796E]">
@@ -524,7 +528,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
                   kuota sesi tidak terpotong karena salah klik. */}
               <div className="mt-3.5 flex flex-wrap items-center gap-2 border-t border-[#16796E]/20 pt-3">
                 <div className="text-xs text-gray-600">
-                  Mau ubah atau batalkan jadwal? Kabari pengajar di grup kelas ya.
+                  {tl('Mau ubah atau batalkan jadwal? Kabari pengajar di grup kelas ya.')}
                 </div>
                 <a
                   href={waAdminUrl}
@@ -532,7 +536,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
                   rel="noreferrer"
                   className="ml-auto inline-flex items-center gap-1.5 rounded-xl px-2 py-2 text-xs font-bold text-gray-600 hover:text-[#16796E]"
                 >
-                  <MessageCircle className="h-3.5 w-3.5" strokeWidth={2.4} /> Chat Admin
+                  <MessageCircle className="h-3.5 w-3.5" strokeWidth={2.4} /> {tl('Chat Admin')}
                 </a>
               </div>
             </div>
@@ -545,10 +549,10 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
                jadwal. */
             <div className="rounded-2xl bg-gray-50 p-5 text-center">
               <Calendar className="mx-auto h-6 w-6 text-gray-400" strokeWidth={1.8} />
-              <div className="mt-2 text-sm font-semibold text-gray-700">Belum ada sesi terjadwal</div>
-              <div className="mt-1 text-xs text-gray-500">Hubungi admin untuk menjadwalkan sesi berikutnya.</div>
+              <div className="mt-2 text-sm font-semibold text-gray-700">{tl('Belum ada sesi terjadwal')}</div>
+              <div className="mt-1 text-xs text-gray-500">{tl('Hubungi admin untuk menjadwalkan sesi berikutnya.')}</div>
               <a href={waAdminUrl} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-1.5 rounded-xl bg-[#16796E] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#0F5A52]">
-                <MessageCircle className="h-4 w-4" strokeWidth={2.4} /> Chat Admin
+                <MessageCircle className="h-4 w-4" strokeWidth={2.4} /> {tl('Chat Admin')}
               </a>
             </div>
           )}
@@ -573,7 +577,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
                 onClick={() => setActiveTab(t.id)}
                 className={`inline-flex items-center gap-1.5 whitespace-nowrap border-b-2 px-4 py-3 text-sm font-semibold transition-colors ${aktif ? 'border-[#16796E] text-[#16796E]' : 'border-transparent text-gray-500 hover:text-gray-800'}`}
               >
-                <Icon className="h-4 w-4" strokeWidth={2} />{t.label}
+                <Icon className="h-4 w-4" strokeWidth={2} />{tl(t.label)}
                 {badge > 0 && (
                   <span className={`ml-0.5 inline-flex h-[18px] min-w-[18px] items-center justify-center rounded-full px-1 text-[10px] font-bold ${perluAksi ? 'bg-amber-100 text-amber-700' : aktif ? 'bg-[#16796E]/12 text-[#16796E]' : 'bg-gray-100 text-gray-600'}`}>
                     {badge}
@@ -587,7 +591,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
 
       {/* ── Konten tab ── */}
       <div className="pt-6">
-        {loading && <div className="py-10 text-center text-gray-400">Memuat…</div>}
+        {loading && <div className="py-10 text-center text-gray-400">{tl('Memuat…')}</div>}
 
         {/* [kelas-tab-v1] Progress = skill CEFR (student_skills) + timeline laporan sesi */}
         {!loading && activeTab === 'progress' && <ClassProgressTab reg={reg} schedules={schedules} />}

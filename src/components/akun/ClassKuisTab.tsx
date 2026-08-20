@@ -19,8 +19,13 @@ import { supabase } from '@/lib/supabase-client';
 import ClassQuizScores, { QuizReviewModal, quizScoreRows, quizPct, type QuizScoreRow } from '@/components/akun/ClassQuizScores';
 import ClassTugasTab from '@/components/akun/ClassTugasTab';
 import { ClipboardCheck, Check, X, ChevronRight } from 'lucide-react';
+import { useT, useUiLang } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 
 export default function ClassKuisTab({ reg, schedules }: { reg: any; schedules: any[] }) {
+  // [ui-lang-switcher-v1] `tl` — `t` sudah dipakai buat tally per baris di bawah.
+  const tl = useT();
+  const uiLang = useUiLang();
+  const dateLocale = uiLang === 'en' ? 'en-GB' : 'id-ID';
   const rows = quizScoreRows(schedules);
   const [detail, setDetail] = useState<QuizScoreRow | null>(null);
   // Rincian benar/salah per kuis. Dihitung dari `quiz_answers` — bukan dari
@@ -63,7 +68,7 @@ export default function ClassKuisTab({ reg, schedules }: { reg: any; schedules: 
 
       {rows.length > 0 && (
         <section>
-          <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-gray-500">Rincian per Kuis</h2>
+          <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-gray-500">{tl('Rincian per Kuis')}</h2>
           <ul className="space-y-2">
             {[...rows].reverse().map((r) => {
               const pct = quizPct(r.quiz_score, r.quiz_max);
@@ -82,20 +87,20 @@ export default function ClassKuisTab({ reg, schedules }: { reg: any; schedules: 
                     </span>
                     <span className="min-w-0 flex-1">
                       <span className="block text-sm font-bold text-[#12172B]">
-                        Sesi {r.sessionNo}
+                        {tl('Sesi')} {r.sessionNo}
                         <span className="ml-2 text-xs font-semibold text-gray-500">
-                          {r.quiz_score}/{r.quiz_max} poin
+                          {r.quiz_score}/{r.quiz_max} {tl('poin')}
                         </span>
                       </span>
                       <span className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-gray-500">
-                        {new Date(r.scheduled_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
+                        {new Date(r.scheduled_at).toLocaleDateString(dateLocale, { day: 'numeric', month: 'long', year: 'numeric' })}
                         {t && (t.benar + t.salah) > 0 && (
                           <>
                             <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 font-bold text-emerald-700">
-                              <Check className="h-3 w-3" strokeWidth={3} />{t.benar} benar
+                              <Check className="h-3 w-3" strokeWidth={3} />{t.benar} {tl('benar')}
                             </span>
                             <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 font-bold text-amber-700">
-                              <X className="h-3 w-3" strokeWidth={3} />{t.salah} salah
+                              <X className="h-3 w-3" strokeWidth={3} />{t.salah} {tl('salah')}
                             </span>
                           </>
                         )}
@@ -109,7 +114,7 @@ export default function ClassKuisTab({ reg, schedules }: { reg: any; schedules: 
           </ul>
           <p className="mt-2 text-[11px] text-gray-400">
             <ClipboardCheck className="mr-1 inline h-3 w-3 align-[-2px]" strokeWidth={2.2} />
-            Klik kuis untuk melihat pembahasan tiap soal beserta catatan perbaikannya.
+            {tl('Klik kuis untuk melihat pembahasan tiap soal beserta catatan perbaikannya.')}
           </p>
         </section>
       )}

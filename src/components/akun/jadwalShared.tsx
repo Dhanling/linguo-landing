@@ -10,6 +10,7 @@ import { RectFlag } from "@/components/RectFlag";
 import { LANG_FLAGS } from "@/lib/lang-visuals";
 import { baseLanguage } from "@/lib/classLanguage";
 import { initial } from "@/lib/teacherName";
+import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 // + jadwal-recurring-materi-v1: pertemuan ke berapa + materi yang bakal dibahas
 //   (topik, rincian, berkas/link rujukan) — diisi pengajar waktu bikin jadwal.
@@ -212,6 +213,7 @@ export function isLiveNow(
 
 /** Lencana "Sedang berlangsung" — titik berdenyut + label. */
 export function LiveBadge({ compact = false }: { compact?: boolean }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   return (
     <span
       className={`inline-flex shrink-0 items-center gap-1 rounded-full font-extrabold leading-none ${
@@ -223,7 +225,7 @@ export function LiveBadge({ compact = false }: { compact?: boolean }) {
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" style={{ background: LIVE_COLOR }} />
         <span className="relative inline-flex h-1.5 w-1.5 rounded-full" style={{ background: LIVE_COLOR }} />
       </span>
-      {compact ? "Live" : "Sedang berlangsung"}
+      {compact ? t("Live") : t("Sedang berlangsung")}
     </span>
   );
 }
@@ -231,11 +233,11 @@ export function LiveBadge({ compact = false }: { compact?: boolean }) {
 /** "2 jam lagi" / "45 menit lagi" — hitung mundur ringkas ke jam mulai. */
 export function countdownLabel(start: Date, now: number) {
   const diff = start.getTime() - now;
-  if (diff <= 0) return "sedang berlangsung";
+  if (diff <= 0) return tr("sedang berlangsung");
   const mins = Math.round(diff / 60000);
-  if (mins < 60) return `${mins} menit lagi`;
+  if (mins < 60) return `${mins} ${tr("menit lagi")}`;
   const hours = Math.round(mins / 60);
-  if (hours < 24) return `${hours} jam lagi`;
+  if (hours < 24) return `${hours} ${tr("jam lagi")}`;
   const days = Math.round(hours / 24);
-  return `${days} hari lagi`;
+  return `${days} ${tr("hari lagi")}`;
 }

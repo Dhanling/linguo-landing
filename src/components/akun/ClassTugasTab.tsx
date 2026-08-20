@@ -14,11 +14,13 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
 import { BookOpen, Upload, Check, Clock, ExternalLink, Loader2, MessageSquare } from 'lucide-react';
+import { getUiLang, useT } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 
 const fmtDate = (iso: string) =>
-  new Date(iso).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+  new Date(iso).toLocaleDateString(getUiLang() === 'en' ? 'en-GB' : 'id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
 
 export default function ClassTugasTab({ reg, schedules }: { reg: any; schedules: any[] }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [subs, setSubs] = useState<Record<string, any>>({});
   const [loading, setLoading] = useState(true);
   const [openId, setOpenId] = useState<string | null>(null);
@@ -86,14 +88,14 @@ export default function ClassTugasTab({ reg, schedules }: { reg: any; schedules:
     await load();
   }
 
-  if (loading) return <div className="py-10 text-center text-gray-400">Memuat…</div>;
+  if (loading) return <div className="py-10 text-center text-gray-400">{t('Memuat…')}</div>;
 
   if (withHomework.length === 0) {
     return (
       <div className="rounded-2xl border border-dashed border-gray-300 py-12 text-center">
         <BookOpen className="mx-auto h-8 w-8 text-gray-300" strokeWidth={1.5} />
-        <div className="mt-3 font-semibold text-gray-700">Belum ada tugas</div>
-        <div className="mt-1 text-xs text-gray-500">PR yang diberikan pengajar setelah sesi akan muncul di sini, lengkap dengan tempat menyetornya.</div>
+        <div className="mt-3 font-semibold text-gray-700">{t('Belum ada tugas')}</div>
+        <div className="mt-1 text-xs text-gray-500">{t('PR yang diberikan pengajar setelah sesi akan muncul di sini, lengkap dengan tempat menyetornya.')}</div>
       </div>
     );
   }
@@ -109,16 +111,16 @@ export default function ClassTugasTab({ reg, schedules }: { reg: any; schedules:
               <span className="text-xs font-semibold text-gray-500">{fmtDate(s.scheduled_at)}</span>
               {sub ? (
                 <span className="inline-flex items-center gap-1 rounded-full bg-teal-50 px-2 py-0.5 text-[11px] font-semibold text-[#16796E]">
-                  <Check className="h-3 w-3" strokeWidth={2.5} /> Sudah disetor
+                  <Check className="h-3 w-3" strokeWidth={2.5} /> {t('Sudah disetor')}
                 </span>
               ) : (
                 <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-semibold text-amber-700">
-                  <Clock className="h-3 w-3" strokeWidth={2.5} /> Belum disetor
+                  <Clock className="h-3 w-3" strokeWidth={2.5} /> {t('Belum disetor')}
                 </span>
               )}
               {sub?.reviewed_at && (
                 <span className="inline-flex items-center gap-1 rounded-full bg-purple-50 px-2 py-0.5 text-[11px] font-semibold text-purple-700">
-                  <MessageSquare className="h-3 w-3" strokeWidth={2.5} /> Sudah dinilai
+                  <MessageSquare className="h-3 w-3" strokeWidth={2.5} /> {t('Sudah dinilai')}
                 </span>
               )}
             </div>
@@ -127,16 +129,16 @@ export default function ClassTugasTab({ reg, schedules }: { reg: any; schedules:
 
             {sub && !isOpen && (
               <div className="mt-3 rounded-xl bg-gray-50 p-3">
-                <div className="text-[11px] font-semibold text-gray-500">Setoran kamu · {fmtDate(sub.submitted_at)}</div>
+                <div className="text-[11px] font-semibold text-gray-500">{t('Setoran kamu')} · {fmtDate(sub.submitted_at)}</div>
                 {sub.content && <p className="mt-1 whitespace-pre-wrap text-sm text-gray-800">{sub.content}</p>}
                 {sub.url && (
                   <a href={sub.url} target="_blank" rel="noreferrer" className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-[#16796E] hover:underline">
-                    <ExternalLink className="h-3.5 w-3.5" strokeWidth={2} /> Buka lampiran
+                    <ExternalLink className="h-3.5 w-3.5" strokeWidth={2} /> {t('Buka lampiran')}
                   </a>
                 )}
                 {sub.teacher_feedback && (
                   <div className="mt-2 rounded-lg border border-purple-200 bg-purple-50 p-2.5">
-                    <div className="text-[11px] font-semibold text-purple-700">Penilaian pengajar</div>
+                    <div className="text-[11px] font-semibold text-purple-700">{t('Penilaian pengajar')}</div>
                     <p className="mt-0.5 whitespace-pre-wrap text-sm text-purple-900">{sub.teacher_feedback}</p>
                   </div>
                 )}
@@ -149,19 +151,19 @@ export default function ClassTugasTab({ reg, schedules }: { reg: any; schedules:
                   rows={3}
                   value={text}
                   onChange={(e) => setText(e.target.value)}
-                  placeholder="Tulis jawabanmu di sini…"
+                  placeholder={t('Tulis jawabanmu di sini…')}
                   className="w-full rounded-xl border border-gray-300 p-3 text-sm outline-none focus:border-slate-300"
                 />
                 <input
                   type="url"
                   value={link}
                   onChange={(e) => setLink(e.target.value)}
-                  placeholder="…atau tempel link (Google Docs, Drive, dll)"
+                  placeholder={t('…atau tempel link (Google Docs, Drive, dll)')}
                   disabled={!!file}
                   className="w-full rounded-xl border border-gray-300 p-3 text-sm outline-none focus:border-slate-300 disabled:bg-gray-50"
                 />
                 <label className="inline-flex cursor-pointer items-center gap-1.5 rounded-xl border border-dashed border-gray-300 px-3 py-2 text-xs font-medium text-gray-600 hover:bg-gray-50">
-                  <Upload className="h-3.5 w-3.5" strokeWidth={2} /> {file ? file.name : 'Lampirkan file (foto / PDF)'}
+                  <Upload className="h-3.5 w-3.5" strokeWidth={2} /> {file ? file.name : t('Lampirkan file (foto / PDF)')}
                   <input type="file" className="hidden" onChange={(e) => { const f = e.target.files?.[0] || null; setFile(f); if (f) setLink(''); e.target.value = ''; }} />
                 </label>
                 {msg && <p className="text-xs font-medium text-red-600">{msg}</p>}
@@ -172,9 +174,9 @@ export default function ClassTugasTab({ reg, schedules }: { reg: any; schedules:
                     className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-[#16796E] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#125f57] disabled:opacity-60"
                   >
                     {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Check className="h-4 w-4" strokeWidth={2.5} />}
-                    {sub ? 'Perbarui setoran' : 'Setor tugas'}
+                    {sub ? t('Perbarui setoran') : t('Setor tugas')}
                   </button>
-                  <button onClick={() => setOpenId(null)} className="rounded-xl border border-gray-300 px-4 py-2.5 text-sm font-semibold text-gray-600">Batal</button>
+                  <button onClick={() => setOpenId(null)} className="rounded-xl border border-gray-300 px-4 py-2.5 text-sm font-semibold text-gray-600">{t('Batal')}</button>
                 </div>
               </div>
             ) : (
@@ -182,7 +184,7 @@ export default function ClassTugasTab({ reg, schedules }: { reg: any; schedules:
                 onClick={() => openForm(s.id)}
                 className="mt-3 inline-flex items-center gap-1.5 rounded-xl bg-[#16796E] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#125f57]"
               >
-                <Upload className="h-4 w-4" strokeWidth={2.5} /> {sub ? 'Perbarui setoran' : 'Setor tugas'}
+                <Upload className="h-4 w-4" strokeWidth={2.5} /> {sub ? t('Perbarui setoran') : t('Setor tugas')}
               </button>
             )}
           </div>

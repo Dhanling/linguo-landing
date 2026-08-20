@@ -8,6 +8,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { CalendarDays, ChevronRight, Video } from "lucide-react";
 import { classRoomUrl, isJoinable } from "@/lib/classRoom";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import {
   LIVE_COLOR, LangFlag, LiveBadge, MONTHS_SHORT, countdownLabel, fmtTime, isDead, isLiveNow,
   langColor, langFlagCode, TeacherAvatar,
@@ -97,6 +98,7 @@ export default function SesiMendatangCard({
 
   if (!upcoming.length) return null;
 
+  const t = useT(); // [ui-lang-switcher-v1]
   const gridCls = layout === "column" ? "grid gap-2.5" : "grid gap-2.5 sm:grid-cols-2";
   const groupLabel = "mb-1.5 mt-3 text-[11px] font-extrabold uppercase tracking-wide text-[#6B7280] first:mt-0";
 
@@ -107,22 +109,22 @@ export default function SesiMendatangCard({
       <div className="mb-3 flex items-center justify-between gap-3">
         <div className="min-w-0">
           <h3 className="inline-flex flex-wrap items-center gap-1.5 text-[16px] font-extrabold text-[#12172B]">
-            <CalendarDays className="h-4 w-4 text-[#16796E]" strokeWidth={2.5} /> Sesi Mendatang
+            <CalendarDays className="h-4 w-4 text-[#16796E]" strokeWidth={2.5} /> {t("Sesi Mendatang")}
             {liveCount > 0 && <LiveBadge />}
           </h3>
           <p className="mt-0.5 text-[12px] font-medium text-gray-500">
             {/* [sesi-hari-ini-v1] "hari ini" itu angka yang dicari duluan; total
                 terjadwal jadi keterangan kedua. */}
             {hariIni.length > 0
-              ? `${hariIni.length} sesi hari ini · ${upcoming.length} terjadwal`
-              : `${upcoming.length} sesi terjadwal · semua kelas aktif`}
+              ? `${hariIni.length} ${t("sesi hari ini")} · ${upcoming.length} ${t("terjadwal")}`
+              : `${upcoming.length} ${t("sesi terjadwal")} · ${t("semua kelas aktif")}`}
           </p>
         </div>
         <button
           onClick={goJadwal}
           className="inline-flex shrink-0 items-center gap-1 text-[12px] font-bold text-[#16796E] transition hover:text-[#0F5A52]"
         >
-          Buka Jadwal <ChevronRight className="h-3.5 w-3.5" strokeWidth={2.6} />
+          {t("Buka Jadwal")} <ChevronRight className="h-3.5 w-3.5" strokeWidth={2.6} />
         </button>
       </div>
 
@@ -134,7 +136,7 @@ export default function SesiMendatangCard({
           ini tetap satu daftar polos seperti sebelumnya. */}
       {hariIni.length > 0 && (
         <>
-          <p className={groupLabel}>Hari Ini</p>
+          <p className={groupLabel}>{t("Hari Ini")}</p>
           <div className={gridCls}>
             {hariIni.map((s) => (
               <SesiItem key={s.id} s={s} studentName={studentName} onClick={goJadwal} today now={now} />
@@ -144,7 +146,7 @@ export default function SesiMendatangCard({
       )}
       {visibleNanti.length > 0 && (
         <>
-          {hariIni.length > 0 && <p className={groupLabel}>Berikutnya</p>}
+          {hariIni.length > 0 && <p className={groupLabel}>{t("Berikutnya")}</p>}
           <div className={gridCls}>
             {visibleNanti.map((s) => (
               <SesiItem key={s.id} s={s} studentName={studentName} onClick={goJadwal} now={now} />
@@ -158,7 +160,7 @@ export default function SesiMendatangCard({
           onClick={() => setExpanded((v) => !v)}
           className="mt-3 w-full rounded-xl bg-[#F5F6F8] py-2 text-[12px] font-bold text-[#16796E] transition hover:bg-[#EAF3F2]"
         >
-          {expanded ? "Ringkas" : `Lihat semua (${upcoming.length})`}
+          {expanded ? t("Ringkas") : `${t("Lihat semua")} (${upcoming.length})`}
         </button>
       )}
     </div>
@@ -176,6 +178,7 @@ function SesiItem({ s, studentName, onClick, today = false, now }: {
   today?: boolean;
   now: number;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const c = langColor(s.language);
   const hasFlag = !!langFlagCode(s.language);
   return (
@@ -191,7 +194,7 @@ function SesiItem({ s, studentName, onClick, today = false, now }: {
       <div className="flex w-full items-center gap-3">
         <span className="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-xl bg-white leading-none shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)]">
           <span className="text-[15px] font-extrabold text-[#12172B]">{s._d.getDate()}</span>
-          <span className="mt-0.5 text-[10px] font-bold text-[#6B7280]">{MONTHS_SHORT[s._d.getMonth()]}</span>
+          <span className="mt-0.5 text-[10px] font-bold text-[#6B7280]">{t(MONTHS_SHORT[s._d.getMonth()])}</span>
         </span>
         <span className="min-w-0 flex-1">
           <span className="flex items-center gap-1.5">
@@ -211,18 +214,18 @@ function SesiItem({ s, studentName, onClick, today = false, now }: {
           <span className="mt-0.5 block truncate text-[12px] font-medium text-[#6B7280]">
             {s._live ? (
               <span className="font-bold" style={{ color: LIVE_COLOR }}>
-                Sedang berlangsung{s._end ? ` · selesai ${s._end}` : ""}
+                {t("Sedang berlangsung")}{s._end ? ` · ${t("selesai")} ${s._end}` : ""}
               </span>
             ) : today ? (
               // Nama harinya sudah dijawab judul kelompok — ruangnya dipakai buat
               // hitung mundur, yang justru dicari siswa di kelas hari ini.
               <>
-                {s._time}{s._end ? `–${s._end}` : ""}{s.durationMinutes ? ` · ${s.durationMinutes} mnt` : ""}
+                {s._time}{s._end ? `–${s._end}` : ""}{s.durationMinutes ? ` · ${s.durationMinutes} ${t("mnt")}` : ""}
                 {" · "}
                 <span className="font-bold text-[#16796E]">{countdownLabel(s._d, now)}</span>
               </>
             ) : (
-              <>{s._weekday} · {s._time}{s._end ? `–${s._end}` : ""}{s.durationMinutes ? ` · ${s.durationMinutes} mnt` : ""}</>
+              <>{t(s._weekday)} · {s._time}{s._end ? `–${s._end}` : ""}{s.durationMinutes ? ` · ${s.durationMinutes} ${t("mnt")}` : ""}</>
             )}
           </span>
           {s.teacher && (
@@ -242,7 +245,7 @@ function SesiItem({ s, studentName, onClick, today = false, now }: {
           onClick={(e) => e.stopPropagation()}
           className="mt-2.5 inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-[#16796E] px-3 py-2 text-[12px] font-extrabold text-white transition hover:bg-[#0F5A52]"
         >
-          <Video className="h-3.5 w-3.5" strokeWidth={2.2} /> Masuk Kelas
+          <Video className="h-3.5 w-3.5" strokeWidth={2.2} /> {t("Masuk Kelas")}
         </a>
       )}
     </div>
