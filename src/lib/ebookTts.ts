@@ -56,13 +56,89 @@ export function kodeBahasaEbook(language?: string | null, judul?: string | null)
    kata yang kembar dengan bahasa lain sengaja tidak dimasukkan ("di", "para",
    "kami", "mau"), karena satu kata kembar sudah cukup membungkam kalimat
    bahasa target yang seharusnya berbunyi. */
-const KATA_ID = /\b(yang|dan|atau|dengan|untuk|dari|pada|dalam|tidak|bukan|jangan|adalah|akan|sudah|belum|saya|aku|kamu|anda|dia|mereka|kita|ini|itu|apa|apakah|bagaimana|mengapa|kenapa|berapa|siapa|kapan|karena|kalau|jika|ketika|sampai|setelah|sesudah|sebelum|lalu|kemudian|juga|hanya|sangat|lebih|paling|bisa|dapat|harus|ingin|suka|tahu|ada|orang|hari|malam|pagi|siang|sore|rumah|sekolah|kerja|bekerja|jalan|lurus|kanan|kiri|belok|terus|besar|kecil|baik|banyak|sedikit|semua|setiap|antara|tentang|sebagai|seperti|namun|tetapi|tapi|supaya|agar|sehingga|oleh|kepada|terhadap|harfiah|permisi|maaf|maafkan|terima|kasih|bentuk|perintah|sopan|urutan|catatan|contoh|latihan|kosakata|arti|artinya|makna|bermakna|kalimat|halaman|bahasa|mana|kemana|dimana|menit|jam|nomor|depan|belakang|naik|turun|ambil|kedua|ketiga|sepuluh|nyasar|kaki|mungkin|menanyakan|memberi|meminta|menyebut|menyatakan|memperkenalkan|perkenalan|petunjuk|arah|sapaan|ucapan|angka|waktu|keluarga|makanan|minuman|belanja|pekerjaan|cuaca|tubuh|transportasi|membaca|menulis|mendengar|berbicara|tata|bunyi|huruf|hafalan|ringkasan|tujuan|target|target)\b/i;
+const DAFTAR_ID = [
+  "yang", "dan", "atau", "dengan", "untuk", "dari", "pada", "dalam", "tidak", "bukan",
+  "jangan", "adalah", "akan", "sudah", "belum", "saya", "aku", "kamu", "anda", "dia",
+  "mereka", "kita", "ini", "itu", "apa", "apakah", "bagaimana", "mengapa", "kenapa",
+  "berapa", "siapa", "kapan", "karena", "kalau", "jika", "ketika", "sampai", "setelah",
+  "sesudah", "sebelum", "lalu", "kemudian", "juga", "hanya", "sangat", "lebih", "paling",
+  "bisa", "dapat", "harus", "ingin", "suka", "tahu", "ada", "orang", "hari", "malam", "pagi",
+  "siang", "sore", "rumah", "sekolah", "kerja", "bekerja", "jalan", "lurus", "kanan", "kiri",
+  "belok", "terus", "besar", "kecil", "baik", "banyak", "sedikit", "semua", "setiap",
+  "antara", "tentang", "sebagai", "seperti", "namun", "tetapi", "tapi", "supaya", "agar",
+  "sehingga", "oleh", "kepada", "terhadap", "harfiah", "permisi", "maaf", "maafkan",
+  "terima", "kasih", "bentuk", "perintah", "sopan", "urutan", "catatan", "contoh", "latihan",
+  "kosakata", "arti", "artinya", "makna", "bermakna", "kalimat", "halaman", "bahasa", "mana",
+  "kemana", "dimana", "menit", "jam", "nomor", "depan", "belakang", "naik", "turun", "ambil",
+  "kedua", "ketiga", "sepuluh", "nyasar", "kaki", "mungkin", "menanyakan", "memberi",
+  "meminta", "menyebut", "menyatakan", "memperkenalkan", "perkenalan", "petunjuk", "arah",
+  "sapaan", "ucapan", "angka", "waktu", "keluarga", "makanan", "minuman", "belanja",
+  "pekerjaan", "cuaca", "tubuh", "transportasi", "membaca", "menulis", "mendengar",
+  "berbicara", "tata", "bunyi", "huruf", "hafalan", "ringkasan", "tujuan", "target",
+];
+
+const KATA_ID = new RegExp(`\\b(${DAFTAR_ID.join("|")})\\b`, "i");
+const SET_ID = new Set(DAFTAR_ID);
 
 /* Akhiran -nya (haltenya, caranya, artinya) praktis cuma milik bahasa Indonesia
    dan Melayu — satu kata berakhiran itu sudah cukup menandai baris terjemahan
    yang lolos daftar kata di atas ("Di mana haltenya?" pernah lolos persis
    begitu). Sengaja tidak dipakai untuk modul Indonesia/Melayu sendiri. */
 const SUFIKS_ID = /\b\p{L}{3,}nya\b/iu;
+
+/* [ebook-tts-kata-bukan-baris-v1] Penjagaan bahasa Indonesia dinilai PER KATA,
+   bukan per baris — inilah yang dulu membungkam hampir seluruh modul.
+
+   Satu potongan teks pdf.js kerap memuat satu BARIS UTUH tabel, dan baris modul
+   kita memang dwibahasa dari sananya: "casa (KA-sa) = rumah". Dengan penilaian
+   per baris, satu kata "rumah" di ujung kanan cukup untuk membungkam "casa" —
+   kata Spanyol yang justru jadi alasan fitur ini ada. Sekarang yang dinilai
+   adalah kata yang BENAR-BENAR diketuk. */
+export function kataIndonesia(kata: string, kode: string): boolean {
+  if (kode === "id" || kode === "ms") return false;
+  const k = kata.trim().toLowerCase();
+  if (!k) return true;
+  return SET_ID.has(k) || SUFIKS_ID.test(k);
+}
+
+/* Yang dibuang dari sebuah baris sebelum dibunyikan sebagai kalimat:
+   - "(KA-sa)"  → petunjuk cara baca, bukan bagian kalimatnya;
+   - "= rumah"  → kolom arti di tabel kosakata;
+   - "1." / "•" → nomor & bulir daftar;
+   - "harfiah: …" → baris terjemahan harfiah. */
+const BUANG_KURUNG = /\([^)]*\)/g;
+/** Nomor urut & bulir di kepala baris: "1.", "2)", "–", "•". */
+const BUANG_NOMOR = /^\s*(?:\d{1,3}[.):]|[-–—•·*])\s*/u;
+/* Nomor baris dialog itu angka TELANJANG ("1 Ana: ¡Hola!") — nomornya duduk di
+   kolom terpisah selebar 6 mm, dan jarak sesempit itu tak selalu terbaca
+   sebagai batas kolom. Sengaja hanya dibuang kalau yang menyusul memang nama
+   penutur (kata berawal huruf besar lalu titik dua), supaya kalimat yang
+   sungguh dimulai angka — "24 horas al día" — tidak ikut terpangkas. */
+const BUANG_NOMOR_DIALOG = /^\s*\d{1,2}\s+(?=\p{Lu}[\p{L}'’.\-]{0,14}\s*:)/u;
+/* Hanya "=" dan "→". Titik dua SENGAJA tidak ikut: baris dialog modul ditulis
+   "Ana: Hola, ¿qué tal?" — memenggalnya di titik dua menyisakan nama tokohnya
+   saja. Baris "harfiah: …" tetap tersaring oleh penjagaan bahasa Indonesia. */
+const PISAH_ARTI = /\s*(?:=|→)\s*/;
+
+/**
+ * [ebook-tts-kalimat-v1] Satu baris halaman → kalimat bahasa target yang layak
+ * diputar. Kosong = tak ada yang bisa dibunyikan dari baris itu.
+ */
+export function kalimatTarget(baris: string, kode: string): string {
+  let s = String(baris || "")
+    .replace(BUANG_KURUNG, " ")
+    .replace(BUANG_NOMOR_DIALOG, "")
+    .replace(BUANG_NOMOR, "");
+  // "casa = rumah" → yang dibunyikan sisi KIRI. Di modul bahasa, sisi kanan
+  // "=" praktis selalu kolom arti; kalimat yang benar-benar memuat tanda sama
+  // dengan tidak ada di materi A1.
+  const bagian = s.split(PISAH_ARTI).map((x) => x.trim()).filter(Boolean);
+  if (bagian.length > 1) s = bagian[0];
+  s = s.replace(/\s{2,}/g, " ").trim();
+  if (s.length < 2) return "";
+  if (barisTerjemahan(s, kode)) return "";
+  return s.slice(0, 400);
+}
 
 /** Potongan ini kelihatan bahasa Indonesia (baris terjemahan), bukan bahasa target? */
 export function barisTerjemahan(teks: string, kode: string): boolean {

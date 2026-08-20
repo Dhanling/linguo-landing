@@ -34,13 +34,15 @@ import { createPortal } from "react-dom";
 import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import {
   ChevronLeft, ChevronRight, Loader2, Minus, Plus, X, BookOpen, AlertCircle,
-  Columns2, Square, Maximize2, Minimize2, Volume2,
+  Columns2, Square, Maximize2, Minimize2, Volume2, List, Play, CornerDownLeft,
 } from "lucide-react";
 // [ebook-tts-ketuk-kata-v1]
 import {
-  bisaDibunyikan, kodeBahasaEbook, barisTerjemahan, ucapkanEbook,
+  bisaDibunyikan, kodeBahasaEbook, kataIndonesia, kalimatTarget, ucapkanEbook,
   hentikanEbookTts, bukaKunciAudio,
 } from "@/lib/ebookTts";
+// [ebook-popup-kata-v1]
+import { artiKataEbook, artiTersimpan, type HasilArti } from "@/lib/ebookKata";
 import { langLabel } from "@/lib/quiz/language";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -181,6 +183,26 @@ async function ambilBerkas(purchaseId: string, accessToken: string): Promise<Arr
    dalam SATUAN HALAMAN (viewport skala 1) supaya tetap sahih waktu di-zoom. */
 type ItemTeks = { str: string; x: number; y: number; w: number; h: number };
 
+/* [ebook-tts-kalimat-v1] Satu BARIS halaman: kumpulan potongan yang duduk di
+   ketinggian yang sama, diurutkan kiri→kanan.
+
+   Kenapa perlu: pdf.js memecah satu baris jadi beberapa potongan tiap kali
+   fontnya berubah — di baris tabel "casa (KA-sa) = rumah", "casa" yang miring
+   adalah potongan tersendiri. Tombol "Putar kalimat" yang cuma membunyikan satu
+   potongan jadi terdengar seperti mengulang kata yang barusan diketuk. */
+type Baris = { teks: string; y: number; h: number; segmen: Segmen[] };
+
+/* Satu "sel" dalam sebuah baris. Baris tabel modul memuat tiga kolom sekaligus
+   ("casa | KA-sa | rumah") dan pdf.js melaporkannya sebagai satu baris; tanpa
+   pemisahan ini, tombol Putar kalimat membacakan seluruh barisnya — bahasa
+   target dan terjemahannya sekalian. Batas kolom dikenali dari JARAK MENDATAR
+   antar potongan, bukan dari garis tabelnya (garis tabel bukan teks). */
+type Segmen = { teks: string; x0: number; x1: number };
+type HalTeks = { items: ItemTeks[]; baris: Baris[] };
+
+/** Satu entri daftar isi. */
+type Bab = { hal: number; judul: string; label?: string; utama: boolean };
+
 /** Huruf penyusun kata — dipakai memuaikan ketukan jadi satu kata utuh. */
 const HURUF = /[\p{L}\p{M}\p{N}'\u2019\u02BC-]/u;
 
@@ -266,6 +288,18 @@ export default function EbookReader({
     | null
   >(null);
   const [bunyi, setBunyi] = useState<"kata" | "kalimat" | null>(null);
+  /* [ebook-popup-kata-v1] Arti kata yang sedang tampil di popup.
+     undefined = masih dicari, null = tak terbaca (popup tetap tampil). */
+  const [arti, setArti] = useState<HasilArti | undefined>(undefined);
+
+  /* [ebook-daftar-isi-v1] Daftar isi + lompat halaman. */
+  const [daftarBuka, setDaftarBuka] = useState(false);
+  const [bab, setBab] = useState<Bab[] | null>(null);
+  const [memindai, setMemindai] = useState(false);
+  /** Nomor halaman yang sedang ditarik di penggeser (belum dilepas). */
+  const [tarik, setTarik] = useState<number | null>(null);
+  /** Kotak "lompat ke halaman" di bilah bawah sedang terbuka? */
+  const [lompat, setLompat] = useState<string | null>(null);
 
   const [layarPenuh, setLayarPenuh] = useState(false);
 
@@ -277,7 +311,7 @@ export default function EbookReader({
   const docRef = useRef<PdfDoc | null>(null);
   const pdfjsRef = useRef<any>(null);
   /** Isi teks per halaman (satuan halaman, skala 1) — dibaca sekali per halaman. */
-  const teksRef = useRef<Map<number, ItemTeks[]>>(new Map());
+  const teksRef = useRef<Map<number, HalTeks>>(new Map());
   const capRef = useRef(watermark);
   capRef.current = watermark;
 
@@ -297,6 +331,10 @@ export default function EbookReader({
   /** Halaman terkini yang bisa dibaca dari dalam callback tanpa ikut basi. */
   const pageRef = useRef(1);
   pageRef.current = page;
+  /** Kata+kalimat yang artinya sedang ditunggu — penjaga hasil AI yang basi. */
+  const ucapKunciRef = useRef("");
+  /** Ada popup kata terbuka? — dibaca dari penangan tombol tanpa ikut basi. */
+  const ucapRef = useRef(false);
 
   const dua = muatDua && (duaManual ?? true);
   const tampil = useMemo(() => bentangan(page, total, dua), [page, total, dua]);
@@ -486,6 +524,25 @@ export default function EbookReader({
     ctx.restore();
   }, []);
 
+  /* [ebook-nomor-halaman-v1] Nomor halaman dicetak di kaki kertas.
+     PDF-nya dicetak Chromium dengan --no-pdf-header-footer, jadi halamannya
+     memang polos tanpa nomor: siswa yang diberi tahu "buka halaman 12" tak
+     punya apa pun untuk dicocokkan selain menghitung sendiri dari bilah bawah.
+     Sama seperti cap air, nomornya DIBAKAR ke bitmap supaya ikut berputar
+     bersama kertas waktu halaman dibalik.
+     Sampul dilewati — buku betulan juga tidak menomori sampulnya. */
+  const gambarNomor = useCallback((ctx: CanvasRenderingContext2D, w: number, h: number, n: number) => {
+    if (n <= 1) return;
+    ctx.save();
+    ctx.fillStyle = "rgba(90,100,120,0.72)";
+    ctx.font = `600 ${Math.max(9, Math.round(h * 0.0115))}px "Helvetica Neue", Arial, sans-serif`;
+    ctx.textAlign = "center";
+    // Ditaruh di dalam margin bawah (A4 margin 16mm ≈ 5,4% tinggi), jadi tidak
+    // pernah menimpa teks isi.
+    ctx.fillText(String(n), w / 2, h - h * 0.022);
+    ctx.restore();
+  }, []);
+
   const siapkan = useCallback((n: number): Promise<Bitmap | null> => {
     const d = docRef.current;
     // skalaRef masih 0 = ukuran halaman belum dihitung. Merender di sini cuma
@@ -515,6 +572,7 @@ export default function EbookReader({
         // itu dulu memaksa semua render antre di satu rantai promise.
         await p.render({ canvasContext: ctx, viewport }).promise;
         gambarCap(ctx, viewport.width, viewport.height);
+        gambarNomor(ctx, viewport.width, viewport.height, n);
         const bm: Bitmap = { canvas, w: Math.floor(viewport.width), h: Math.floor(viewport.height) };
         // Hasil generasi lama (skala sudah berubah) dibuang, bukan disimpan —
         // dibandingkan lewat ref, karena `generasi` di closure ini nilainya
@@ -534,7 +592,7 @@ export default function EbookReader({
     })();
     antreRef.current.set(n, tugas);
     return tugas;
-  }, [generasi, gambarCap]);
+  }, [generasi, gambarCap, gambarNomor]);
 
   /** Salin bitmap ke canvas yang tampak. drawImage = blit, jauh lebih murah dari render ulang. */
   const pasang = useCallback((target: HTMLCanvasElement | null, bm: Bitmap | null) => {
@@ -686,7 +744,16 @@ export default function EbookReader({
       // Jangan bajak tombol panah waktu siswa sedang mengetik di suatu tempat.
       const el = e.target as HTMLElement | null;
       if (el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA" || el.isContentEditable)) return;
-      if (e.key === "Escape") { onClose(); return; }
+      // Esc menutup lapisan yang PALING atas dulu — daftar isi, lalu popup kata,
+      // baru readernya. Tanpa urutan ini, membuka daftar isi jadi jebakan:
+      // refleks menekan Esc justru menutup modulnya.
+      if (e.key === "Escape") {
+        if (daftarBuka) { setDaftarBuka(false); return; }
+        if (ucapRef.current) { setUcap(null); return; }
+        onClose();
+        return;
+      }
+      if (daftarBuka) return;
       // ⌘/Ctrl + = − 0 — pintasan zoom yang sudah jadi refleks semua orang.
       if ((e.ctrlKey || e.metaKey) && ["=", "+", "-", "_", "0"].includes(e.key)) {
         e.preventDefault();
@@ -708,7 +775,7 @@ export default function EbookReader({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [balikKe, ke, total, onClose, aturZoom]);
+  }, [balikKe, ke, total, onClose, aturZoom, daftarBuka]);
 
   // Layar penuh: dicoba begitu reader terbuka, dilepas lagi saat ditutup.
   useEffect(() => {
@@ -784,6 +851,19 @@ export default function EbookReader({
     ? 0
     : (untukGeser.kiri ? 1 : -1) * ((pw + GAP) / 2);
   const halPertama = tampil.kiri ?? tampil.kanan ?? 1;
+
+  /** Penggeser dilepas → baru halamannya benar-benar pindah. */
+  const komitTarik = useCallback(() => {
+    setTarik((v) => { if (v != null) ke(v); return null; });
+  }, [ke]);
+
+  /** Isi kotak "lompat ke halaman" → buka halamannya. */
+  const lompatKe = useCallback(() => {
+    const n = parseInt(lompat || "", 10);
+    if (Number.isFinite(n) && total) ke(Math.min(Math.max(1, n), total));
+    setLompat(null);
+  }, [lompat, total, ke]);
+
   const nomor = total
     ? (tampil.kiri && tampil.kanan ? `${tampil.kiri}–${tampil.kanan} / ${total}` : `${halPertama} / ${total}`)
     : "—";
@@ -795,33 +875,95 @@ export default function EbookReader({
   const kodeBahasa = useMemo(() => kodeBahasaEbook(language, title), [language, title]);
   const ttsAktif = bisaDibunyikan(kodeBahasa);
 
-  const ambilTeks = useCallback(async (n: number): Promise<ItemTeks[]> => {
+  const KOSONG: HalTeks = useMemo(() => ({ items: [], baris: [] }), []);
+
+  const ambilTeks = useCallback(async (n: number): Promise<HalTeks> => {
     const ada = teksRef.current.get(n);
     if (ada) return ada;
     const d = docRef.current;
     const pdfjs = pdfjsRef.current;
-    if (!d || !pdfjs || n < 1 || n > d.numPages) return [];
+    if (!d || !pdfjs || n < 1 || n > d.numPages) return KOSONG;
     try {
       const hal = await d.getPage(n);
       // Skala 1: koordinatnya jadi satuan halaman, jadi tetap sahih waktu siswa
       // mencubit — tinggal dikalikan skala yang sedang berlaku.
       const vp = hal.getViewport({ scale: 1 });
       const tc = await hal.getTextContent();
-      const items: ItemTeks[] = [];
+      // Potongan yang isinya HANYA spasi ikut dikumpulkan (kosong: true). Bukan
+      // sampah: di PDF cetakan Chromium, jarak antar kolom tabel justru muncul
+      // sebagai satu potongan spasi lebar, dan spasi antar kata di ujung
+      // pergantian font juga hidup di potongan tersendiri. Dulu semuanya
+      // dibuang, jadi "casa (KA-sa)" terbaca "casa(KA-sa)".
+      const semua: (ItemTeks & { kosong: boolean })[] = [];
       for (const it of tc.items as any[]) {
         const str = typeof it.str === "string" ? it.str : "";
-        if (!str.trim() || !it.transform) continue;
+        if (!str || !it.transform) continue;
         const tx = pdfjs.Util.transform(vp.transform, it.transform);
         const h = Math.hypot(tx[2], tx[3]);
         if (!h) continue;
-        items.push({ str, x: tx[4], y: tx[5] - h, w: it.width || 0, h });
+        semua.push({ str, x: tx[4], y: tx[5] - h, w: it.width || 0, h, kosong: !str.trim() });
       }
-      teksRef.current.set(n, items);
-      return items;
+      // Ketukan diadu hanya dengan potongan yang benar-benar berisi huruf.
+      const items: ItemTeks[] = semua
+        .filter((i) => !i.kosong)
+        .map(({ str, x, y, w, h }) => ({ str, x, y, w, h }));
+
+      // Potongan → baris. Toleransi 0,6 tinggi huruf: cukup longgar untuk
+      // superskrip & campuran ukuran font dalam satu baris, cukup ketat supaya
+      // dua baris paragraf yang rapat tidak menyatu.
+      const urut = [...semua].sort((a, b) => (a.y - b.y) || (a.x - b.x));
+      const baris: Baris[] = [];
+      let kump: typeof semua = [];
+      const tutup = () => {
+        if (!kump.length) return;
+        const rapi = [...kump].sort((a, b) => a.x - b.x);
+        const segmen: Segmen[] = [];
+        let sel: typeof semua = [];
+        const tutupSel = () => {
+          const isi = sel.filter((i) => !i.kosong);
+          const teks = sel.map((i) => i.str).join("").replace(/\s{2,}/g, " ").trim();
+          if (teks && isi.length) {
+            segmen.push({ teks, x0: isi[0].x, x1: isi[isi.length - 1].x + isi[isi.length - 1].w });
+          }
+          sel = [];
+        };
+        for (const it of rapi) {
+          const sblm = sel[sel.length - 1];
+          // Dua penanda batas kolom: jarak mendatar yang menganga, dan potongan
+          // spasi yang lebarnya sendiri lebih dari satu setengah tinggi huruf
+          // (di dalam satu kalimat, spasi tak pernah selebar itu). Ambang 1,2
+          // dipilih dari kolom nomor baris dialog yang lebarnya cuma 6 mm.
+          if (sblm && it.x - (sblm.x + sblm.w) > Math.max(sblm.h, it.h) * 1.2) tutupSel();
+          if (it.kosong && it.w > it.h * 1.5) { tutupSel(); continue; }
+          sel.push(it);
+        }
+        tutupSel();
+        const isiBaris = rapi.filter((i) => !i.kosong);
+        const teks = segmen.map((g) => g.teks).join(" ").trim();
+        if (teks && isiBaris.length) {
+          baris.push({
+            teks,
+            y: Math.min(...isiBaris.map((i) => i.y)),
+            h: Math.max(...isiBaris.map((i) => i.h)),
+            segmen,
+          });
+        }
+        kump = [];
+      };
+      for (const it of urut) {
+        const acuan = kump[0];
+        if (acuan && Math.abs(it.y - acuan.y) > Math.max(acuan.h, it.h) * 0.6) tutup();
+        kump.push(it);
+      }
+      tutup();
+
+      const hasil: HalTeks = { items, baris };
+      teksRef.current.set(n, hasil);
+      return hasil;
     } catch {
-      return []; // modul hasil pindaian (tanpa lapisan teks) — ketukan diabaikan
+      return KOSONG; // modul hasil pindaian (tanpa lapisan teks) — ketukan diabaikan
     }
-  }, []);
+  }, [KOSONG]);
 
   /** Kata pada posisi x (satuan halaman) di dalam satu potongan teks. */
   const kataDi = useCallback((it: ItemTeks, x: number) => {
@@ -846,6 +988,72 @@ export default function EbookReader({
     return { kata: huruf.slice(a, b + 1).join(""), x: it.x + batas[a], w: batas[b + 1] - batas[a] };
   }, []);
 
+  /* ── daftar isi ────────────────────────────────────────────────────────
+     [ebook-daftar-isi-v1] Modul 40 halaman tanpa daftar isi cuma bisa disusuri
+     dengan membalik satu-satu — dan pengajar yang menulis "kerjakan Unit 5" di
+     grup praktis menyuruh siswanya mencari.
+
+     PDF-nya dicetak Chromium headless (lihat scripts/build-ebook-pdf.mjs) yang
+     TIDAK menyertakan bookmark, jadi getOutline() selalu kosong: daftarnya
+     disusun sendiri dari ukuran huruf. Judul unit dicetak 17pt di atas badan
+     teks 10,5pt, jadi "baris yang hurufnya jauh lebih besar dari kebanyakan
+     baris di halaman ini" adalah penanda yang bertahan walau modulnya bahasa
+     lain — ambangnya relatif, bukan angka pt yang dipatok. */
+  /* Diuji pada teks yang SPASINYA SUDAH DIBUANG. Label "Unit 1" dicetak dengan
+     letter-spacing lebar, dan pdf.js membaca renggangnya sebagai spasi sungguhan
+     — teks yang sampai ke sini berbunyi "U n i t 1". */
+  const LABEL_BAB = useMemo(
+    () => /^(unit|bab|pelajaran|lecci[oó]n|lesson|le[çc]on|lezione|unidade|unidad|kapitel|part|bagian)\.?\d+$/i,
+    []
+  );
+
+  /** "U n i t 1" / "Unit 1" → "Unit 1". */
+  const rapikanLabel = (teks: string) => teks.replace(/\s+/g, "").replace(/(\d+)$/, " $1");
+
+  const pindaiDaftar = useCallback(async () => {
+    const d = docRef.current;
+    if (!d || memindai) return;
+    setMemindai(true);
+    try {
+      const hasil: Bab[] = [];
+      for (let n = 1; n <= d.numPages; n++) {
+        const { baris } = await ambilTeks(n);
+        if (!baris.length) continue;
+        const tinggi = baris.map((b) => b.h).sort((a, b) => a - b);
+        const tengah = tinggi[Math.floor(tinggi.length / 2)] || 10;
+        // 1,3x badan teks: cukup untuk menangkap judul unit (17pt vs 10,5pt),
+        // cukup tinggi untuk melewatkan sub-judul h3 (11pt) & kepala tabel.
+        const ambang = Math.max(tengah * 1.3, 12.5);
+        // baris sudah terurut dari atas ke bawah — yang pertama lolos = judulnya.
+        const judul = baris.find((b) => b.h >= ambang);
+        if (!judul) continue;
+        // Label "Unit 3" dicetak kecil PERSIS di atas judulnya.
+        const label = baris.find(
+          (b) => b.y < judul.y && judul.y - b.y < judul.h * 3.5 && LABEL_BAB.test(b.teks.replace(/\s+/g, ""))
+        );
+        const teks = judul.teks.replace(/\s{2,}/g, " ").trim().slice(0, 90);
+        if (!teks) continue;
+        // Judul yang sama di halaman berturut-turut (unit yang tumpah ke halaman
+        // berikutnya) cuma ditulis sekali.
+        if (hasil.length && hasil[hasil.length - 1].judul === teks) continue;
+        hasil.push({
+          hal: n,
+          judul: teks,
+          label: label ? rapikanLabel(label.teks).slice(0, 24) : undefined,
+          utama: !!label,
+        });
+      }
+      setBab(hasil);
+    } finally {
+      setMemindai(false);
+    }
+  }, [ambilTeks, memindai, LABEL_BAB]);
+
+  const bukaDaftar = useCallback(() => {
+    setDaftarBuka(true);
+    if (!bab) void pindaiDaftar();
+  }, [bab, pindaiDaftar]);
+
   const onKlikTeks = useCallback(async (e: React.MouseEvent<HTMLDivElement>) => {
     if (abaikanKlikRef.current) { abaikanKlikRef.current = false; return; }
     if (!ttsAktif || !kodeBahasa || balik || !ukuran || skalaTampil <= 0) return;
@@ -868,7 +1076,7 @@ export default function EbookReader({
     }
     if (!hal) return;
 
-    const items = await ambilTeks(hal);
+    const { items, baris } = await ambilTeks(hal);
     const xp = xh / skalaTampil;
     const yp = fy / skalaTampil;
     const kena = items.find(
@@ -877,11 +1085,16 @@ export default function EbookReader({
     const kata = kena ? kataDi(kena, xp) : null;
     if (!kena || !kata) { setUcap(null); return; }
 
-    const kalimat = kena.str.trim();
-    // Baris terjemahan Indonesia duduk persis di bawah kalimat bahasa targetnya;
-    // membunyikannya dengan suara Spanyol justru yang paling tidak boleh ditiru
+    // Kalimatnya diambil dari BARIS tempat kata itu duduk, bukan dari potongan
+    // teksnya — lihat catatan pada tipe Baris.
+    const barisKena = baris.find((b) => Math.abs(b.y - kena.y) <= Math.max(b.h, kena.h) * 0.6);
+    // Di baris tabel, yang dipakai adalah SEL tempat katanya duduk — lihat Segmen.
+    const sel = barisKena?.segmen.find((g) => xp >= g.x0 - 2 && xp <= g.x1 + 2);
+    const kalimat = kalimatTarget(sel?.teks ?? barisKena?.teks ?? kena.str, kodeBahasa);
+    // Kata bahasa Indonesia (baris terjemahan/penjelasan) tidak dibunyikan:
+    // bahasa Indonesia berlogat Spanyol justru yang paling tidak boleh ditiru
     // siswa A1. Ketukannya tetap ditandai supaya tak terasa seperti tombol rusak.
-    const terjemahan = barisTerjemahan(kalimat, kodeBahasa);
+    const terjemahan = kataIndonesia(kata.kata, kodeBahasa);
     const kiriSlot = dua && hal === tampil.kanan ? pw + GAP : 0;
     setUcap({
       hal,
@@ -893,7 +1106,17 @@ export default function EbookReader({
       h: kena.h * skalaTampil,
       terjemahan,
     });
-    if (terjemahan) return;
+    if (terjemahan) { setArti(undefined); return; }
+
+    // Arti & bunyi jalan BARENGAN: suara adalah alasan utama fitur ini ada, dan
+    // tak boleh ikut menunggu AI yang butuh satu-dua detik.
+    const kunciArti = `${kata.kata}|${kalimat}`;
+    ucapKunciRef.current = kunciArti;
+    setArti(artiTersimpan(kata.kata, kalimat, kodeBahasa));
+    void artiKataEbook(kata.kata, kalimat, kodeBahasa).then((a) => {
+      // Siswa mungkin sudah mengetuk kata lain — jangan timpa popup yang baru.
+      if (ucapKunciRef.current === kunciArti) setArti(a);
+    });
     setBunyi("kata");
     await ucapkanEbook(kata.kata, kodeBahasa);
     setBunyi(null);
@@ -910,11 +1133,25 @@ export default function EbookReader({
   // Pindah halaman / ganti tata letak → sorotan kata ikut hilang.
   useEffect(() => { setUcap(null); hentikanEbookTts(); }, [page, dua]);
 
+  useEffect(() => {
+    ucapRef.current = !!ucap;
+    if (!ucap) { setArti(undefined); ucapKunciRef.current = ""; }
+  }, [ucap]);
+
   const isi = (
     <div className="fixed inset-0 z-[100] flex flex-col bg-slate-900/95 backdrop-blur-sm">
       {/* bilah atas */}
       <div className="flex shrink-0 items-center gap-3 border-b border-white/10 px-3 py-2.5 sm:px-5">
-        <BookOpen className="h-5 w-5 shrink-0 text-[#3ED9C0]" />
+        <button
+          onClick={bukaDaftar}
+          className="flex shrink-0 items-center gap-1.5 rounded-lg px-2 py-1.5 text-white/70 transition hover:bg-white/10 hover:text-white"
+          aria-label={t("Daftar isi")}
+          title={t("Daftar isi")}
+        >
+          <List className="h-5 w-5" />
+          <span className="hidden text-[12.5px] font-bold lg:inline">{t("Daftar isi")}</span>
+        </button>
+        <BookOpen className="hidden h-5 w-5 shrink-0 text-[#3ED9C0] sm:block" />
         <h2 className="min-w-0 flex-1 truncate text-[14px] font-bold text-white sm:text-[15px]">{title}</h2>
         <div className="hidden items-center gap-1 sm:flex">
           {muatDua && (
@@ -1083,41 +1320,92 @@ export default function EbookReader({
                     boxShadow: ucap.terjemahan ? "none" : "0 0 0 1px rgba(26,158,158,0.6)",
                   }}
                 />
+                {/* [ebook-popup-kata-v1] Kartu kata — bentuknya sengaja meniru
+                    balon kata Watch and Learn: kata + kelas kata + artinya, lalu
+                    dua tombol suara. Dulu isinya cuma nama katanya sendiri, jadi
+                    siswa yang tak paham artinya tetap harus membuka kamus. */}
                 <div
-                  className="pointer-events-auto absolute flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-xl bg-slate-900/95 px-2 py-1.5 text-[12px] font-bold text-white shadow-xl ring-1 ring-white/15"
+                  className={`pointer-events-auto absolute w-[252px] -translate-x-1/2 rounded-2xl bg-[#0A1212]/97 p-3 text-white shadow-2xl ring-1 ring-white/15 ${
+                    ucap.y > 170 ? "-translate-y-full" : ""
+                  }`}
                   style={{
-                    left: Math.min(Math.max(ucap.x + ucap.w / 2, 100), Math.max(100, lebarBuku - 100)),
-                    // Kalau kata itu ada di baris paling atas halaman, gelembungnya
-                    // ditaruh di BAWAH — di atas berarti keluar dari kertas.
-                    top: ucap.y - ucap.h - 18 > 0 ? ucap.y - ucap.h - 18 : ucap.y + ucap.h + 8,
+                    left: Math.min(Math.max(ucap.x + ucap.w / 2, 132), Math.max(132, lebarBuku - 132)),
+                    // Di baris paling atas halaman, kartunya ditaruh DI BAWAH kata —
+                    // di atas berarti keluar dari kertas.
+                    top: ucap.y > 170 ? ucap.y - 10 : ucap.y + ucap.h + 10,
                   }}
                   onClick={(e) => e.stopPropagation()}
                 >
                   {ucap.terjemahan ? (
-                    <span className="font-semibold text-white/70">
-                      {t("Yang bisa dibunyikan hanya teks")} {langLabel(kodeBahasa)}
-                    </span>
+                    <p className="text-[12px] font-semibold leading-snug text-white/70">
+                      {t("Yang bisa dibunyikan hanya teks")} {langLabel(kodeBahasa)}.
+                    </p>
                   ) : (
                     <>
-                      <button
-                        onClick={() => void ucapkanLagi(ucap.kata, "kata")}
-                        className="flex items-center gap-1.5 rounded-lg px-1.5 py-0.5 transition hover:bg-white/10"
-                      >
-                        {bunyi === "kata"
-                          ? <Loader2 className="h-3.5 w-3.5 animate-spin text-[#3ED9C0]" />
-                          : <Volume2 className="h-3.5 w-3.5 text-[#3ED9C0]" />}
-                        <span className="max-w-[180px] truncate">{ucap.kata}</span>
-                      </button>
-                      {ucap.kalimat && ucap.kalimat !== ucap.kata && (
+                      <div className="flex items-start gap-2">
                         <button
-                          onClick={() => void ucapkanLagi(ucap.kalimat, "kalimat")}
-                          className="flex items-center gap-1.5 rounded-lg border-l border-white/15 pl-2 pr-1.5 py-0.5 text-white/75 transition hover:bg-white/10 hover:text-white"
+                          onClick={() => void ucapkanLagi(ucap.kata, "kata")}
+                          className="flex min-w-0 flex-1 items-center gap-2 text-left"
+                          title={t("Dengar pelafalannya")}
                         >
-                          {bunyi === "kalimat"
-                            ? <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                            : <Volume2 className="h-3.5 w-3.5" />}
-                          {t("Kalimat")}
+                          {bunyi === "kata"
+                            ? <Loader2 className="h-4 w-4 shrink-0 animate-spin text-[#3ED9C0]" />
+                            : <Volume2 className="h-4 w-4 shrink-0 text-[#3ED9C0]" />}
+                          <span className="truncate text-[16px] font-extrabold leading-tight">{ucap.kata}</span>
                         </button>
+                        {arti && arti !== "mati" && arti.kelas && (
+                          <span className="shrink-0 rounded-md bg-[#3ED9C0]/15 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-[#7fe3e0]">
+                            {arti.kelas}
+                          </span>
+                        )}
+                        <button
+                          onClick={() => setUcap(null)}
+                          className="shrink-0 rounded-md p-0.5 text-white/35 transition hover:bg-white/10 hover:text-white"
+                          aria-label={t("Tutup")}
+                        >
+                          <X className="h-3.5 w-3.5" />
+                        </button>
+                      </div>
+
+                      {/* Baris arti hilang sepenuhnya waktu layanannya memang
+                          sedang mati (kuota AI habis) — popupnya menyusut jadi
+                          kartu pelafalan, bukan kartu berisi pesan galat. */}
+                      {arti !== "mati" && (
+                        <div className="mt-1.5 text-[12.5px] font-medium leading-snug text-white/80">
+                          {arti === undefined ? (
+                            <span className="inline-flex items-center gap-1.5 text-white/35">
+                              <Loader2 className="h-3 w-3 animate-spin" /> {t("Mencari arti…")}
+                            </span>
+                          ) : arti ? (
+                            <>
+                              {arti.arti}
+                              {arti.dasar && (
+                                <span className="text-white/40"> · {t("bentuk dasar")}: {arti.dasar}</span>
+                              )}
+                            </>
+                          ) : (
+                            /* Arti gagal dimuat BUKAN alasan menutup popup: bunyinya —
+                               bagian yang paling dibutuhkan — tetap jalan. */
+                            <span className="text-white/30">{t("Arti belum bisa dimuat")}</span>
+                          )}
+                        </div>
+                      )}
+
+                      {ucap.kalimat && ucap.kalimat.toLowerCase() !== ucap.kata.toLowerCase() && (
+                        <>
+                          <p className="mt-2 border-t border-white/10 pt-2 text-[11.5px] italic leading-snug text-white/45 line-clamp-3">
+                            {ucap.kalimat}
+                          </p>
+                          <button
+                            onClick={() => void ucapkanLagi(ucap.kalimat, "kalimat")}
+                            className="mt-2 flex w-full items-center justify-center gap-1.5 rounded-lg bg-white/10 px-2 py-1.5 text-[12px] font-bold text-white/85 transition hover:bg-white/20 hover:text-white"
+                          >
+                            {bunyi === "kalimat"
+                              ? <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                              : <Play className="h-3.5 w-3.5" fill="currentColor" />}
+                            {t("Putar kalimat")}
+                          </button>
+                        </>
                       )}
                     </>
                   )}
@@ -1128,34 +1416,197 @@ export default function EbookReader({
         )}
       </div>
 
-      {/* bilah bawah */}
+      {/* bilah bawah — [ebook-navigasi-halaman-v1] dulu isinya cuma dua panah &
+          nomor halaman: satu-satunya cara sampai ke halaman 28 adalah membalik
+          14 kali. Sekarang ada penggeser (tarik untuk menyusur cepat) dan nomor
+          halaman yang bisa DIKETIK. */}
       {!galat && (
-        <div className="relative flex shrink-0 items-center justify-center gap-3 border-t border-white/10 px-4 py-2.5">
+        <div className="flex shrink-0 items-center gap-2 border-t border-white/10 px-3 py-2 sm:px-4">
+          {/* Di layar sempit tombol daftar isi di bilah atas ikut menyempit —
+              di sini letaknya justru dekat ibu jari. */}
+          <button
+            onClick={bukaDaftar}
+            className="rounded-lg p-2 text-white/70 transition hover:bg-white/10 hover:text-white lg:hidden"
+            aria-label={t("Daftar isi")}
+          >
+            <List className="h-5 w-5" />
+          </button>
           <button
             onClick={() => void balikKe(-1)}
             disabled={halPertama <= 1}
-            className="rounded-lg p-2 text-white/70 transition hover:bg-white/10 hover:text-white disabled:opacity-30"
+            className="shrink-0 rounded-lg p-2 text-white/70 transition hover:bg-white/10 hover:text-white disabled:opacity-30"
             aria-label={t("Halaman sebelumnya")}
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
-          <span className="text-[13px] font-bold text-white/80">{nomor}</span>
-          {/* Petunjuk ditaruh absolut, bukan ikut arus: kalau ikut, nomor halaman
-              & panahnya tergeser dari tengah. */}
-          {ttsAktif && (
-            <span className="absolute right-4 hidden items-center gap-1.5 text-[12px] font-semibold text-white/45 lg:flex">
-              <Volume2 className="h-3.5 w-3.5" />
-              {t("Ketuk kata untuk mendengar pelafalannya")}
-            </span>
+
+          <input
+            type="range"
+            min={1}
+            max={Math.max(1, total)}
+            value={tarik ?? halPertama}
+            disabled={!total}
+            // Halamannya baru benar-benar pindah waktu jari DILEPAS: merender
+            // tiap halaman yang terlewati selama tarikan bikin penggesernya
+            // tersendat dan boros memori bitmap.
+            onChange={(e) => setTarik(Number(e.target.value))}
+            onPointerUp={komitTarik}
+            onTouchEnd={komitTarik}
+            onKeyUp={komitTarik}
+            onBlur={komitTarik}
+            className="ebook-geser min-w-0 flex-1"
+            aria-label={t("Geser ke halaman")}
+          />
+
+          {lompat !== null ? (
+            <form
+              className="flex shrink-0 items-center gap-1"
+              onSubmit={(e) => { e.preventDefault(); lompatKe(); }}
+            >
+              <input
+                autoFocus
+                value={lompat}
+                inputMode="numeric"
+                onChange={(e) => setLompat(e.target.value.replace(/[^0-9]/g, "").slice(0, 4))}
+                onBlur={() => setLompat(null)}
+                onKeyDown={(e) => { if (e.key === "Escape") setLompat(null); }}
+                placeholder="…"
+                className="w-14 rounded-md bg-white/10 px-2 py-1 text-center text-[13px] font-bold text-white outline-none ring-1 ring-white/20 placeholder:text-white/25 focus:ring-[#3ED9C0]"
+                aria-label={t("Lompat ke halaman")}
+              />
+              <span className="text-[12px] font-semibold text-white/40">/ {total || "—"}</span>
+              {/* onMouseDown ditahan: tanpa itu, blur kotak isian lebih dulu
+                  menutup formulir sebelum kliknya sempat mendarat. */}
+              <button
+                type="submit"
+                onMouseDown={(e) => e.preventDefault()}
+                className="rounded-md p-1.5 text-white/60 transition hover:bg-white/10 hover:text-white"
+                aria-label={t("Buka halaman")}
+              >
+                <CornerDownLeft className="h-4 w-4" />
+              </button>
+            </form>
+          ) : (
+            <button
+              onClick={() => setLompat("")}
+              className="shrink-0 rounded-lg px-2 py-1 text-[13px] font-bold text-white/80 transition hover:bg-white/10 hover:text-white"
+              title={t("Lompat ke halaman")}
+            >
+              {tarik != null ? `${tarik} / ${total}` : nomor}
+            </button>
           )}
+
           <button
             onClick={() => void balikKe(1)}
             disabled={!total || (tampil.kanan ?? tampil.kiri ?? 1) >= total}
-            className="rounded-lg p-2 text-white/70 transition hover:bg-white/10 hover:text-white disabled:opacity-30"
+            className="shrink-0 rounded-lg p-2 text-white/70 transition hover:bg-white/10 hover:text-white disabled:opacity-30"
             aria-label={t("Halaman berikutnya")}
           >
             <ChevronRight className="h-5 w-5" />
           </button>
+
+          {ttsAktif && (
+            <span className="hidden shrink-0 items-center gap-1.5 pl-1 text-[12px] font-semibold text-white/45 xl:flex">
+              <Volume2 className="h-3.5 w-3.5" />
+              {t("Ketuk kata untuk mendengar pelafalannya")}
+            </span>
+          )}
+        </div>
+      )}
+
+      {/* [ebook-daftar-isi-v1] Panel daftar isi + lompat halaman. */}
+      {daftarBuka && (
+        <div className="absolute inset-0 z-[60] flex">
+          <div
+            className="absolute inset-0 bg-slate-950/60"
+            onClick={() => setDaftarBuka(false)}
+            aria-hidden
+          />
+          <aside className="relative flex h-full w-[86vw] max-w-[340px] flex-col border-r border-white/10 bg-[#0B1220] shadow-2xl">
+            <div className="flex shrink-0 items-center gap-2 border-b border-white/10 px-4 py-3">
+              <List className="h-4 w-4 text-[#3ED9C0]" />
+              <span className="flex-1 text-[13.5px] font-extrabold text-white">{t("Daftar isi")}</span>
+              <button
+                onClick={() => setDaftarBuka(false)}
+                className="rounded-lg p-1.5 text-white/60 transition hover:bg-white/10 hover:text-white"
+                aria-label={t("Tutup")}
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+
+            <div className="min-h-0 flex-1 overflow-y-auto px-2 py-2">
+              {memindai && (
+                <p className="flex items-center gap-2 px-2 py-3 text-[12.5px] font-semibold text-white/50">
+                  <Loader2 className="h-4 w-4 animate-spin text-[#3ED9C0]" />
+                  {t("Menyusun daftar isi…")}
+                </p>
+              )}
+
+              {!memindai && bab && bab.length === 0 && (
+                <p className="px-2 py-3 text-[12.5px] font-semibold leading-relaxed text-white/45">
+                  {t("Modul ini tak punya judul yang bisa dibaca otomatis — pakai nomor halaman di bawah.")}
+                </p>
+              )}
+
+              {!memindai && bab?.map((b) => {
+                const aktif = b.hal === tampil.kiri || b.hal === tampil.kanan;
+                return (
+                  <button
+                    key={`${b.hal}-${b.judul}`}
+                    onClick={() => { ke(b.hal); setDaftarBuka(false); }}
+                    className={`flex w-full items-start gap-2 rounded-lg px-2 py-2 text-left transition ${
+                      aktif ? "bg-[#3ED9C0]/15" : "hover:bg-white/5"
+                    }`}
+                  >
+                    <div className="min-w-0 flex-1">
+                      {b.label && (
+                        <span className="block text-[10px] font-extrabold uppercase tracking-wider text-[#3ED9C0]">
+                          {b.label}
+                        </span>
+                      )}
+                      <span
+                        className={`block text-[13px] leading-snug ${
+                          b.utama ? "font-bold text-white" : "font-semibold text-white/75"
+                        }`}
+                      >
+                        {b.judul}
+                      </span>
+                    </div>
+                    <span className="shrink-0 pt-0.5 text-[11.5px] font-bold tabular-nums text-white/35">
+                      {b.hal}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Kisi nomor halaman: penyelamat waktu judul otomatisnya meleset —
+                dan satu-satunya jalan buat modul hasil pindaian. */}
+            {!!total && (
+              <div className="shrink-0 border-t border-white/10 px-3 py-3">
+                <p className="mb-2 text-[10.5px] font-extrabold uppercase tracking-wider text-white/35">
+                  {t("Lompat ke halaman")}
+                </p>
+                <div className="grid max-h-[124px] grid-cols-8 gap-1 overflow-y-auto">
+                  {Array.from({ length: total }, (_, i) => i + 1).map((n) => {
+                    const aktif = n === tampil.kiri || n === tampil.kanan;
+                    return (
+                      <button
+                        key={n}
+                        onClick={() => { ke(n); setDaftarBuka(false); }}
+                        className={`rounded-md py-1 text-[11px] font-bold tabular-nums transition ${
+                          aktif ? "bg-[#3ED9C0] text-slate-900" : "bg-white/5 text-white/60 hover:bg-white/15 hover:text-white"
+                        }`}
+                      >
+                        {n}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </aside>
         </div>
       )}
 
@@ -1215,6 +1666,42 @@ export default function EbookReader({
           50% { opacity: 0.9; }
           100% { opacity: 0; }
         }
+        /* [ebook-navigasi-halaman-v1] Penggeser halaman. Tampilan bawaan
+           browser terlalu tinggi & terang untuk bilah gelap ini. */
+        .ebook-geser {
+          -webkit-appearance: none;
+          appearance: none;
+          height: 18px;
+          background: transparent;
+          cursor: pointer;
+        }
+        .ebook-geser::-webkit-slider-runnable-track {
+          height: 4px;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.14);
+        }
+        .ebook-geser::-moz-range-track {
+          height: 4px;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.14);
+        }
+        .ebook-geser::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          width: 13px;
+          height: 13px;
+          margin-top: -4.5px;
+          border-radius: 999px;
+          background: #3ed9c0;
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+        }
+        .ebook-geser::-moz-range-thumb {
+          width: 13px;
+          height: 13px;
+          border: 0;
+          border-radius: 999px;
+          background: #3ed9c0;
+        }
+        .ebook-geser:disabled::-webkit-slider-thumb { background: rgba(255, 255, 255, 0.3); }
         @media (prefers-reduced-motion: reduce) {
           .ebook-flipper, .ebook-bayang { animation: none !important; }
         }
