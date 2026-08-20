@@ -3807,7 +3807,7 @@ export default function AkunPage() {
           halaman ini yang punya, sisanya nol navigasi di HP. */}
 
       {/* ── Content ─────────────────────────────────────────────── */}
-      <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : activeTab === "sertifikat" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "akun" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "simulasi" ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5" : (activeTab === "jadwal" || activeTab === "pustaka" || activeTab === "grup") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
+      <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : activeTab === "sertifikat" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "akun" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "simulasi" ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5" : activeTab === "grup" ? "w-full pt-5" : (activeTab === "jadwal" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
         {/* [akun-tab-swap-nofade-v1] Pindah menu dulu pakai mode="wait": tab lama
             fade-out DULU sampai habis, baru tab baru fade-in dari opacity 0 →
             ada jeda panel kosong ±0.6 detik = kedipan tiap balik ke Beranda.
@@ -5045,7 +5045,9 @@ export default function AkunPage() {
               komponen yang sama dengan route /akun/grup */}
           {tabShown("grup") && (
             <motion.div key="grup" initial={false} animate={{ opacity: 1 }} className="w-full" style={tabHidden("grup")}>
-              <div className="mb-5">
+              {/* [grup-kanvas-penuh-siswa-v1] Judul tetap punya padding sendiri; panel
+                  chat di bawahnya sengaja full-bleed sampai tepi kanvas shell. */}
+              <div className="mb-4 px-4 sm:px-6">
                 <h1 className="text-xl font-bold text-gray-900 sm:text-2xl">{tt("Grup Kelas")}</h1>
                 <p className="mt-1 text-sm text-gray-500">
                   {tt("Ngobrol dengan pengajarmu di grup WhatsApp kelas — tanpa keluar dari dashboard.")}

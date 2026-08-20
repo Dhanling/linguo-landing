@@ -103,8 +103,10 @@ export default function GrupKelasPage() {
           Preview POV Siswa · {previewName || "Siswa"} — data real, read-only
         </div>
       )}
-      <main className="mx-auto w-full max-w-[1200px] px-5 pb-16 pt-6 sm:px-8 lg:py-9">
-        <div className="mb-5">
+      {/* [grup-kanvas-penuh-siswa-v1] Sama dengan tab "grup" di /akun: panel chat
+          full-bleed sampai tepi kanvas, cuma judulnya yang berpadding. */}
+      <main className="w-full pt-5">
+        <div className="mb-4 px-4 sm:px-6">
           <h1 className="text-xl font-bold text-gray-900 sm:text-2xl">Grup Kelas</h1>
           <p className="mt-1 text-sm text-gray-500">
             Ngobrol dengan pengajarmu di grup WhatsApp kelas — tanpa keluar dari dashboard.

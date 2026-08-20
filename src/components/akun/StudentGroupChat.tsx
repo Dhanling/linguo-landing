@@ -1130,7 +1130,7 @@ export default function StudentGroupChat({
 
   if (!identityReady || loadingGroups) {
     return (
-      <div className="flex items-center justify-center rounded-3xl border border-gray-200 bg-white py-24">
+      <div className="flex items-center justify-center py-24">
         <Loader2 className="h-7 w-7 animate-spin text-gray-300" />
       </div>
     );
@@ -1138,7 +1138,7 @@ export default function StudentGroupChat({
 
   if (groups.length === 0) {
     return (
-      <div className="rounded-3xl border border-gray-200 bg-white px-6 py-16 text-center">
+      <div className="px-6 py-16 text-center">
         <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-teal-50 text-teal-700">
           <MessagesSquare className="h-6 w-6" />
         </span>
@@ -1153,23 +1153,30 @@ export default function StudentGroupChat({
   }
 
   return (
+    /* [grup-kanvas-penuh-siswa-v1] Kartu (garis tepi + sudut membulat) DIBUANG,
+       menyusul dashboard pengajar: panel grup menyatu dengan kanvas shell, jadi
+       lebar layar kepakai penuh dan di mode gelap latarnya hitam pekat — bukan
+       kotak #101010 bergaris abu yang mengambang di atas hitam. Sekat antar
+       kolom tetap ada lewat border-r daftar grup.
+       `bg-[#FFFFFF]` (bukan `bg-white`) dipakai untuk layar penuh karena aturan
+       lms-dark memetakan yang pertama ke #000000 dan yang kedua ke #101010. */
     <div
       className={
         fullscreen
           // z di bawah drawer nav StudentShell (z-70), di atas header sticky &
           // banner pratinjau (z-40/z-60).
-          ? "fixed inset-0 z-[65] overflow-hidden bg-white"
-          : "overflow-hidden rounded-3xl border border-gray-200 bg-white"
+          ? "fixed inset-0 z-[65] overflow-hidden bg-[#FFFFFF]"
+          : "overflow-hidden bg-transparent"
       }
     >
       <div
         className={`flex flex-col lg:flex-row ${
-          fullscreen ? "h-[100dvh] lg:h-[100dvh]" : "min-h-[34rem] lg:h-[calc(100vh-11rem)]"
+          fullscreen ? "h-[100dvh] lg:h-[100dvh]" : "min-h-[40rem] lg:h-[calc(100vh-9.5rem)]"
         }`}
       >
         {/* ── Daftar grup ── */}
         <aside
-          className={`flex w-full shrink-0 flex-col border-gray-200 lg:w-[19rem] lg:border-r ${
+          className={`flex w-full shrink-0 flex-col border-gray-200 lg:w-80 lg:border-r ${
             active ? "hidden lg:flex" : "flex"
           }`}
         >
