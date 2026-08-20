@@ -1750,10 +1750,17 @@ export default function EbookReader({
                 const kotak = kunciKotak.get(n);
                 if (!kotak) return null;
                 const kiriSlot = dua && n === tampil.kanan ? pw + GAP : 0;
+                // Tirai dibentangkan simetris: marjin kirinya disalin ke kanan
+                // supaya kotaknya sebidang dengan kolom teks halaman. Lebar
+                // mentah kotak = seluas tulisan kunci jawabannya saja, jadi
+                // tirainya duduk melenceng ke kiri dan terlihat miring.
+                const halW = skalaTampil > 0 ? pw / skalaTampil : 0;
+                const marjin = Math.max(0, Math.min(kotak.x, halW / 2 - 24));
+                const lebar = halW > 0 ? halW - marjin * 2 : kotak.w;
                 const gaya = {
-                  left: kiriSlot + kotak.x * skalaTampil,
+                  left: kiriSlot + marjin * skalaTampil,
                   top: kotak.y * skalaTampil,
-                  width: kotak.w * skalaTampil,
+                  width: lebar * skalaTampil,
                   height: kotak.h * skalaTampil,
                 };
                 const terbuka = kunciBuka.has(n);
@@ -1778,7 +1785,7 @@ export default function EbookReader({
                   <button
                     key={`kunci-${n}`}
                     onClick={(e) => { e.stopPropagation(); setKunciBuka((s) => new Set(s).add(n)); }}
-                    className="ebook-kunci absolute z-10 flex flex-col items-center justify-center gap-1.5 rounded-xl border border-[#1A9E9E]/25 text-[#12776F] transition hover:border-[#1A9E9E]/50"
+                    className="ebook-kunci absolute z-10 flex flex-col items-center justify-center gap-1.5 rounded-xl text-[#12776F] transition"
                     style={gaya}
                   >
                     <Eye className="h-5 w-5" />
@@ -2249,6 +2256,9 @@ export default function EbookReader({
           background: rgba(251, 247, 238, 0.985);
           backdrop-filter: blur(7px);
           -webkit-backdrop-filter: blur(7px);
+        }
+        .ebook-kunci:hover {
+          background: rgba(244, 238, 226, 0.99);
         }
         .ebook-hal {
           display: block;
