@@ -1,0 +1,84 @@
+{
+  "title": "Menanyakan arah",
+  "title_target": "¿Cómo llego?",
+  "goal": "Menanyakan dan memberi petunjuk arah, memakai bentuk perintah sopan, dan menyebut urutan.",
+  "dialog": {
+    "title": "Diálogo — En la calle",
+    "lines": [
+      { "speaker": "Budi:", "text": "Perdone, ¿cómo llego a la estación?", "id": "Permisi, bagaimana caranya sampai ke stasiun?", "literal": "maafkan(Anda), bagaimana saya-tiba ke stasiun?" },
+      { "speaker": "Policía:", "text": "Siga todo recto hasta la plaza.", "id": "Terus lurus sampai alun-alun.", "literal": "lanjutkan(Anda) semua lurus sampai alun-alun." },
+      { "speaker": "Budi:", "text": "¿Y después de la plaza?", "id": "Lalu setelah alun-alun?", "literal": "dan sesudah dari alun-alun?" },
+      { "speaker": "Policía:", "text": "Gire a la derecha y tome la segunda calle.", "id": "Belok kanan lalu ambil jalan kedua.", "literal": "belokkan(Anda) ke kanan dan ambil(Anda) yang kedua jalan." },
+      { "speaker": "Budi:", "text": "¿Está muy lejos? Tengo prisa.", "id": "Jauh tidak? Saya buru-buru.", "literal": "dia-berada sangat jauh? saya-punya ketergesaan." },
+      { "speaker": "Policía:", "text": "Diez minutos a pie. También puede tomar el autobús número cinco.", "id": "Sepuluh menit jalan kaki. Anda juga bisa naik bus nomor lima.", "literal": "sepuluh menit-menit pada kaki. juga Anda-bisa mengambil bus nomor lima." },
+      { "speaker": "Budi:", "text": "¿Y dónde está la parada?", "id": "Di mana haltenya?", "literal": "dan di mana dia-berada halte?" },
+      { "speaker": "Policía:", "text": "Enfrente del banco. No tiene pérdida.", "id": "Di depan bank. Tidak mungkin nyasar.", "literal": "di-depan dari-bank. tidak Anda-punya kehilangan." }
+    ]
+  },
+  "notes": [
+    "**Perintah sopan dibentuk dengan menukar vokalnya.** Ambil bentuk *yo* sekarang, buang -o, lalu pasang huruf **lawannya**: kata kerja -ar dapat **-e** (*girar → gire*), kata kerja -er/-ir dapat **-a** (*comer → coma*, *seguir → siga*). Pertukaran inilah yang membuat kalimatnya terdengar formal, bukan kata tambahan.",
+    "**Ke teman, bentuknya justru lebih sederhana:** sama persis dengan bentuk \"dia\". *Sigue todo recto*, *gira a la derecha*, *toma el autobús*. Jadi *gire* untuk orang yang kamu panggil *usted*, *gira* untuk yang kamu panggil *tú*.",
+    "**Urutan: primero, segundo, tercero, cuarto, quinto.** Dua di antaranya memendek di depan kata benda maskulin tunggal: *el primer día*, *el tercer piso* — tapi tetap utuh untuk perempuan: *la primera calle*.",
+    "**Banyak keadaan tubuh pakai tener, bukan estar.** *Tengo prisa* (buru-buru), *tengo hambre* (lapar), *tengo sed* (haus), *tengo frío* (kedinginan), *tengo sueño* (mengantuk). Semuanya \"dipunyai\", persis seperti umur di unit 4.",
+    "**Coger atau tomar?** Di Spanyol *coger el autobús* biasa sekali. Di sebagian besar Amerika Latin kata itu bermakna cabul, jadi orang memakai *tomar* atau *agarrar*. Kalau ragu, *tomar* aman di mana pun."
+  ],
+  "grammar": {
+    "title": "Bentuk perintah",
+    "body": [
+      "Bandingkan kedua lajur di bawah. Yang akrab (*tú*) memakai vokal aslinya; yang sopan (*usted*) menukarnya. Untuk melarang, bentuk sopannya tinggal diberi *no*: *No gire aquí*."
+    ],
+    "table": {
+      "head": ["Kata kerja", "Ke teman (tú)", "Sopan (usted)", "Arti"],
+      "rows": [
+        ["girar", "gir**a**", "gir**e**", "belok"],
+        ["tomar", "tom**a**", "tom**e**", "ambil, naik"],
+        ["seguir", "sigu**e**", "sig**a**", "lanjutkan"],
+        ["cruzar", "cruz**a**", "cruc**e**", "seberangi"],
+        ["subir", "sub**e**", "sub**a**", "naik"],
+        ["perdonar", "perdon**a**", "perdon**e**", "maaf, permisi"]
+      ]
+    }
+  },
+  "vocab": [
+    { "es": "la estación", "baca": "la es-ta-SION", "id": "stasiun" },
+    { "es": "la plaza", "baca": "la PLA-sa", "id": "alun-alun" },
+    { "es": "todo recto", "baca": "TO-do REK-to", "id": "lurus terus" },
+    { "es": "a la derecha", "baca": "a la de-RE-cha", "id": "ke kanan" },
+    { "es": "a la izquierda", "baca": "a la is-KIER-da", "id": "ke kiri" },
+    { "es": "la esquina", "baca": "la es-KI-na", "id": "sudut jalan" },
+    { "es": "el semáforo", "baca": "el se-MA-fo-ro", "id": "lampu merah" },
+    { "es": "el autobús", "baca": "el au-to-BUS", "id": "bus" },
+    { "es": "la parada", "baca": "la pa-RA-da", "id": "halte" },
+    { "es": "a pie", "baca": "a pie", "id": "jalan kaki" },
+    { "es": "primero / segundo", "baca": "pri-ME-ro / se-GUN-do", "id": "pertama / kedua" },
+    { "es": "tener prisa", "baca": "te-NER PRI-sa", "id": "buru-buru" },
+    { "es": "cruzar", "baca": "kru-SAR", "id": "menyeberang" },
+    { "es": "no tiene pérdida", "baca": "no TIE-ne PER-di-da", "id": "tidak mungkin nyasar" }
+  ],
+  "exercises": [
+    { "prompt": "Ubah jadi perintah sopan (*usted*).", "items": [
+      "girar a la izquierda → ____",
+      "tomar el autobús → ____",
+      "seguir todo recto → ____",
+      "cruzar la plaza → ____"
+    ] },
+    { "prompt": "Lengkapi dengan kata arah yang tepat.", "items": [
+      "El banco está en la ____ de la calle Mayor.",
+      "Siga todo ____ hasta el semáforo.",
+      "La farmacia está a la ____, al lado del café.",
+      "Voy a la estación ____ pie."
+    ] },
+    { "prompt": "Terjemahkan ke bahasa Spanyol (pakai bentuk sopan).", "items": [
+      "Permisi, di mana haltenya?",
+      "Belok kiri di lampu merah.",
+      "Ambil jalan ketiga.",
+      "Saya buru-buru, stasiunnya jauh?"
+    ] }
+  ],
+  "answers": [
+    "gire a la izquierda — tome el autobús — siga todo recto — cruce la plaza",
+    "esquina — recto — derecha — a",
+    "Perdone, ¿dónde está la parada? — Gire a la izquierda en el semáforo. — Tome la tercera calle. — Tengo prisa, ¿está lejos la estación?"
+  ],
+  "wave": "Ulangi **unit 2** dengan cara terbalik: tutup bahasa Spanyolnya, baca terjemahan Indonesianya, dan bangun kembali kalimat aslinya. Perhatikan khususnya kata kerja -ar/-er/-ir — dua unit terakhir bergantung penuh padanya."
+}

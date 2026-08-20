@@ -1,0 +1,85 @@
+{
+  "title": "Rencana akhir pekan",
+  "title_target": "Planes para el fin de semana",
+  "goal": "Menyatakan rencana, mengatakan bisa dan ingin, serta berbicara tentang cuaca.",
+  "dialog": {
+    "title": "Diálogo — ¿Qué vas a hacer?",
+    "lines": [
+      { "speaker": "Marta:", "text": "¿Qué vas a hacer este fin de semana?", "id": "Apa rencanamu akhir pekan ini?", "literal": "apa kamu-pergi untuk melakukan ini akhir dari pekan?" },
+      { "speaker": "Budi:", "text": "Voy a visitar a mis abuelos en Bogor.", "id": "Saya akan mengunjungi kakek-nenek saya di Bogor.", "literal": "saya-pergi untuk mengunjungi kepada kakek-nenekku di Bogor." },
+      { "speaker": "Marta:", "text": "¡Qué bien! ¿Vas a ir en tren?", "id": "Bagus! Kamu akan naik kereta?", "literal": "betapa baik! kamu-pergi untuk pergi dalam kereta?" },
+      { "speaker": "Budi:", "text": "Sí, el tren sale a las siete. Quiero llegar temprano.", "id": "Ya, keretanya berangkat jam tujuh. Saya ingin sampai lebih awal.", "literal": "ya, kereta dia-keluar pada jam-jam tujuh. saya-ingin tiba awal." },
+      { "speaker": "Marta:", "text": "Aquí va a llover todo el fin de semana.", "id": "Di sini akan hujan sepanjang akhir pekan.", "literal": "sini dia-pergi untuk menghujan seluruh akhir dari pekan." },
+      { "speaker": "Budi:", "text": "¿Y tú? ¿No puedes salir?", "id": "Kalau kamu? Tidak bisa keluar?", "literal": "dan kamu? tidak kamu-bisa keluar?" },
+      { "speaker": "Marta:", "text": "No, así que voy a ver una serie española en casa.", "id": "Tidak, jadi saya akan menonton serial Spanyol di rumah.", "literal": "tidak, begitu bahwa saya-pergi untuk melihat satu serial spanyol di rumah." },
+      { "speaker": "Budi:", "text": "¡Buena idea! Nos vemos el lunes.", "id": "Ide bagus! Sampai ketemu Senin.", "literal": "baik ide! kita-saling-melihat hari-senin." }
+    ]
+  },
+  "notes": [
+    "**Masa depan yang sebenarnya dipakai orang.** Bahasa Spanyol punya bentuk futuro resmi (*hablaré*), tapi dalam percakapan sehari-hari orang jauh lebih sering memakai **ir + a + kata kerja dasar**: *voy a estudiar*, *vamos a comer*. Untuk seluruh level A1, ini saja sudah cukup.",
+    "**Ir tidak mirip apa pun.** *Voy, vas, va, vamos, vais, van* — tidak ada hubungannya dengan bentuk dasarnya. Terima saja dan hafalkan; ini salah satu dari segelintir kata kerja yang benar-benar liar.",
+    "**Cuaca lewat hacer.** *Hace calor* (panas), *hace frío* (dingin), *hace sol* (cerah), *hace viento* (berangin) — harfiahnya \"ia membuat panas\". Tapi hujan dan salju punya kata kerjanya sendiri: *llueve* (hujan), *nieva* (bersalju).",
+    "**Manusia sebagai sasaran dapat \"a\".** *Visito Bogor* (tempat, tanpa *a*), tapi *visito **a** mis abuelos* (orang, pakai *a*). Kata kecil ini tidak diterjemahkan ke bahasa Indonesia dan sering dilupakan pemula — padahal penutur asli langsung mendengarnya hilang.",
+    "**Nos vemos** harfiahnya \"kita saling melihat\", dipakai persis seperti \"sampai ketemu\". Bandingkan *hasta luego* yang lebih netral."
+  ],
+  "grammar": {
+    "title": "Ir a + kata kerja dasar",
+    "body": [
+      "Rumusnya tetap: bentuk *ir* + *a* + kata kerja dalam bentuk dasarnya (yang berakhiran -ar/-er/-ir). Kata kerja keduanya **tidak pernah** ikut berubah:",
+      "Dua kata kerja lain yang sepasang dengannya: *querer* (ingin) → *quiero, quieres, quiere, queremos, queréis, quieren*, dan *poder* (bisa) → *puedo, puedes, puede, podemos, podéis, pueden*. Keduanya juga langsung diikuti kata kerja dasar: *quiero llegar*, *no puedo salir*."
+    ],
+    "table": {
+      "head": ["", "ir", "Contoh", "Arti"],
+      "rows": [
+        ["yo", "**voy**", "voy a estudiar", "saya akan belajar"],
+        ["tú", "**vas**", "vas a comer", "kamu akan makan"],
+        ["él / ella / usted", "**va**", "va a llover", "akan hujan"],
+        ["nosotros", "**vamos**", "vamos a salir", "kami akan keluar"],
+        ["vosotros", "**vais**", "vais a ver", "kalian akan melihat"],
+        ["ellos / ustedes", "**van**", "van a viajar", "mereka akan bepergian"]
+      ]
+    }
+  },
+  "vocab": [
+    { "es": "el plan", "baca": "el plan", "id": "rencana" },
+    { "es": "visitar", "baca": "bi-si-TAR", "id": "mengunjungi" },
+    { "es": "viajar", "baca": "bia-KHAR", "id": "bepergian" },
+    { "es": "el tren / el avión", "baca": "tren / a-BION", "id": "kereta / pesawat" },
+    { "es": "llegar", "baca": "ye-GAR", "id": "tiba" },
+    { "es": "querer", "baca": "ke-RER", "id": "ingin" },
+    { "es": "poder", "baca": "po-DER", "id": "bisa" },
+    { "es": "hace calor / frío", "baca": "A-se ka-LOR", "id": "panas / dingin" },
+    { "es": "llueve", "baca": "YUE-be", "id": "hujan" },
+    { "es": "hace sol", "baca": "A-se sol", "id": "cerah" },
+    { "es": "la playa", "baca": "la PLA-ya", "id": "pantai" },
+    { "es": "descansar", "baca": "des-kan-SAR", "id": "beristirahat" },
+    { "es": "así que", "baca": "a-SI ke", "id": "jadi, maka" },
+    { "es": "nos vemos", "baca": "nos BE-mos", "id": "sampai ketemu" }
+  ],
+  "exercises": [
+    { "prompt": "Ubah jadi rencana dengan *ir a*.", "items": [
+      "Estudio español. → ____",
+      "Comemos en casa. → ____",
+      "Marta viaja a Madrid. → ____",
+      "¿Trabajas el sábado? → ____"
+    ] },
+    { "prompt": "Lengkapi dengan *querer* atau *poder*.", "items": [
+      "Yo ____ (querer) visitar a mi abuela.",
+      "No ____ (poder) salir, llueve mucho.",
+      "¿Vosotros ____ (querer) ver una película?",
+      "Ellos no ____ (poder) llegar temprano."
+    ] },
+    { "prompt": "Terjemahkan ke bahasa Spanyol.", "items": [
+      "Akhir pekan ini akan hujan.",
+      "Kami akan pergi ke pantai naik kereta.",
+      "Saya ingin beristirahat di rumah.",
+      "Hari ini panas sekali."
+    ] }
+  ],
+  "answers": [
+    "Voy a estudiar español. — Vamos a comer en casa. — Marta va a viajar a Madrid. — ¿Vas a trabajar el sábado?",
+    "quiero — puedo — queréis — pueden",
+    "Este fin de semana va a llover. — Vamos a ir a la playa en tren. — Quiero descansar en casa. — Hoy hace mucho calor."
+  ],
+  "wave": "Buka lagi **unit 1**. Tutup kolom Spanyolnya, baca terjemahan Indonesianya, lalu susun ulang kalimat Spanyolnya dari ingatan. Yang terasa tersendat justru itulah yang belum benar-benar melekat — dan sekarang kamu tahu persis apa yang perlu diulang."
+}

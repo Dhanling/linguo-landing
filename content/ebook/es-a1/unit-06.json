@@ -1,0 +1,84 @@
+{
+  "title": "Di kota",
+  "title_target": "En la ciudad",
+  "goal": "Menanyakan keberadaan tempat, menyebut letak benda, dan membedakan ser dari estar.",
+  "dialog": {
+    "title": "Diálogo — Perdona, ¿hay un banco por aquí?",
+    "lines": [
+      { "speaker": "Budi:", "text": "Perdona, ¿hay un banco por aquí?", "id": "Permisi, ada bank di sekitar sini?", "literal": "maafkan, ada satu bank lewat sini?" },
+      { "speaker": "Señora:", "text": "Sí, hay uno en la calle Mayor.", "id": "Ya, ada satu di Jalan Mayor.", "literal": "ya, ada satu di jalan Mayor." },
+      { "speaker": "Budi:", "text": "¿Está lejos de aquí?", "id": "Jauh dari sini?", "literal": "dia-berada jauh dari sini?" },
+      { "speaker": "Señora:", "text": "No, está cerca. Está al lado de la farmacia.", "id": "Tidak, dekat. Letaknya di sebelah apotek.", "literal": "tidak, dia-berada dekat. dia-berada pada sisi dari apotek." },
+      { "speaker": "Budi:", "text": "¿Y el mercado? Hoy está cerrado, ¿verdad?", "id": "Dan pasarnya? Hari ini tutup, kan?", "literal": "dan pasar? hari-ini dia-berada tertutup, kebenaran?" },
+      { "speaker": "Señora:", "text": "No, está abierto hasta las dos.", "id": "Tidak, buka sampai jam dua.", "literal": "tidak, dia-berada terbuka sampai jam-jam dua." },
+      { "speaker": "Budi:", "text": "Muchas gracias. Usted es muy amable.", "id": "Terima kasih banyak. Anda baik sekali.", "literal": "banyak terima-kasih. Anda adalah sangat ramah." },
+      { "speaker": "Señora:", "text": "De nada. ¡Que tenga un buen día!", "id": "Sama-sama. Semoga hari Anda menyenangkan!", "literal": "dari tidak-apa. semoga(Anda) punya satu baik hari!" }
+    ]
+  },
+  "notes": [
+    "**Hay = ada, dan bentuknya tidak pernah berubah.** Satu benda atau seratus, tetap *hay*: *hay un banco*, *hay tres bancos*. Dipakai untuk memperkenalkan sesuatu yang belum dikenal — makanya selalu berpasangan dengan *un / una / dos*, tidak pernah dengan *el / la*.",
+    "**Begitu bendanya sudah dikenal, giliran estar.** Bandingkan: *Hay un banco en la calle Mayor* (memberi tahu keberadaannya) lalu *El banco está al lado de la farmacia* (menunjuk letaknya). Urutan ini hampir selalu benar: hay dulu, estar kemudian.",
+    "**Ser vs estar — inti seluruh bahasa Spanyol.** *Ser* untuk siapa/apa sesuatu itu pada dasarnya: *Marta es española*, *el mercado es grande*. *Estar* untuk di mana dan sedang bagaimana: *Marta está en casa*, *el mercado está cerrado*. Salah pilih mengubah arti, bukan cuma bunyi: *es aburrido* = dia orang yang membosankan; *está aburrido* = dia sedang bosan.",
+    "**Usted = Anda.** Bentuk kata kerjanya sama persis dengan \"dia\": *usted es*, *usted tiene*, *usted vive*. Terasa aneh di awal, tapi itu peninggalan sopan santun lama (\"yang mulia\"). Di Spanyol *usted* dipakai hemat; di Amerika Latin jauh lebih sering.",
+    "**¿verdad? dan ¿no?** Ditempel di ekor kalimat untuk minta persetujuan, persis \"kan?\" dalam bahasa Indonesia: *Está abierto, ¿verdad?*"
+  ],
+  "grammar": {
+    "title": "Kata kerja estar (berada) + kata letak",
+    "body": [
+      "*Estar* menjawab dua pertanyaan: **di mana** sesuatu berada dan **sedang bagaimana** keadaannya.",
+      "Kata letak yang paling sering dipakai: *al lado de* (di sebelah), *cerca de* (dekat), *lejos de* (jauh dari), *enfrente de* (di depan), *detrás de* (di belakang), *entre … y …* (di antara). Semuanya berakhir *de* — dan *de + el* selalu melebur jadi *del*: *al lado del banco*."
+    ],
+    "table": {
+      "head": ["", "estar", "Cara baca", "Contoh"],
+      "rows": [
+        ["yo", "**estoy**", "es-TOY", "*Estoy en casa.*"],
+        ["tú", "**estás**", "es-TAS", "*¿Dónde estás?*"],
+        ["él / ella / usted", "**está**", "es-TA", "*El banco está cerca.*"],
+        ["nosotros", "**estamos**", "es-TA-mos", "*Estamos en el café.*"],
+        ["vosotros", "**estáis**", "es-TAIS", "*¿Estáis cansados?*"],
+        ["ellos / ustedes", "**están**", "es-TAN", "*Las tiendas están abiertas.*"]
+      ]
+    }
+  },
+  "vocab": [
+    { "es": "hay", "baca": "ai", "id": "ada" },
+    { "es": "la calle", "baca": "la KA-ye", "id": "jalan" },
+    { "es": "el banco", "baca": "el BAN-ko", "id": "bank" },
+    { "es": "la farmacia", "baca": "la far-MA-sia", "id": "apotek" },
+    { "es": "el mercado", "baca": "el mer-KA-do", "id": "pasar" },
+    { "es": "la tienda", "baca": "la TIEN-da", "id": "toko" },
+    { "es": "cerca / lejos", "baca": "SER-ka / LE-khos", "id": "dekat / jauh" },
+    { "es": "al lado de", "baca": "al LA-do de", "id": "di sebelah" },
+    { "es": "enfrente de", "baca": "en-FREN-te de", "id": "di depan" },
+    { "es": "abierto / cerrado", "baca": "a-BIER-to / se-RRA-do", "id": "buka / tutup" },
+    { "es": "aquí / allí", "baca": "a-KI / a-YI", "id": "di sini / di sana" },
+    { "es": "perdona / perdone", "baca": "per-DO-na", "id": "permisi (akrab / sopan)" },
+    { "es": "amable", "baca": "a-MA-ble", "id": "ramah, baik" },
+    { "es": "de nada", "baca": "de NA-da", "id": "sama-sama" }
+  ],
+  "exercises": [
+    { "prompt": "Pilih *hay* atau bentuk *estar* yang tepat.", "items": [
+      "____ una farmacia en esta calle.",
+      "El mercado ____ cerca de mi casa.",
+      "¿Dónde ____ tú?",
+      "____ tres cafés en la plaza."
+    ] },
+    { "prompt": "Pilih *ser* atau *estar*.", "items": [
+      "Marta ____ española.",
+      "Marta ____ en Barcelona hoy.",
+      "El banco ____ cerrado los domingos.",
+      "Mi hermano ____ profesor."
+    ] },
+    { "prompt": "Terjemahkan ke bahasa Spanyol.", "items": [
+      "Ada sebuah toko di depan bank.",
+      "Apoteknya jauh dari sini.",
+      "Kami sedang di pasar.",
+      "Permisi, di mana Jalan Mayor?"
+    ] }
+  ],
+  "answers": [
+    "Hay — está — estás — Hay",
+    "es — está — está — es",
+    "Hay una tienda enfrente del banco. — La farmacia está lejos de aquí. — Estamos en el mercado. — Perdone, ¿dónde está la calle Mayor?"
+  ]
+}
