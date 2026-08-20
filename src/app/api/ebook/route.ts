@@ -48,19 +48,25 @@ export async function POST(req: NextRequest) {
     global: { headers: { Authorization: `Bearer ${accessToken}` } },
     auth: { persistSession: false, autoRefreshToken: false },
   });
-  const { data: { user }, error: authErr } = await userClient.auth.getUser();
-  if (authErr || !user) return tolak("Sesi tidak valid atau sudah habis", 401);
-
   const admin = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY, {
     auth: { persistSession: false, autoRefreshToken: false },
   });
 
+  // [ebook-reader-cepat-v2] Verifikasi sesi dan pembacaan baris pembelian
+  // dijalankan BERBARENGAN. Dulu berurutan, jadi siswa menunggu dua perjalanan
+  // ke Supabase sebelum berkasnya mulai diambil. Datanya tetap tidak bocor:
+  // hasil query di bawah baru dipakai SETELAH pemeriksaan pemilik lolos.
+  const [{ data: { user }, error: authErr }, { data: beli, error: beliErr }] = await Promise.all([
+    userClient.auth.getUser(),
+    admin
+      .from("digital_purchases")
+      .select("id, auth_user_id, buyer_email, payment_status, access_granted, expires_at, download_count, digital_products(id, type, title, file_url)")
+      .eq("id", purchaseId)
+      .maybeSingle(),
+  ]);
+  if (authErr || !user) return tolak("Sesi tidak valid atau sudah habis", 401);
+
   // ── 2. Pembelian ini memang miliknya? ─────────────────────────────────────
-  const { data: beli, error: beliErr } = await admin
-    .from("digital_purchases")
-    .select("id, auth_user_id, buyer_email, payment_status, access_granted, expires_at, download_count, digital_products(id, type, title, file_url)")
-    .eq("id", purchaseId)
-    .maybeSingle();
   if (beliErr) return tolak("Gagal membaca data pembelian", 500);
   if (!beli) return tolak("Pembelian tidak ditemukan", 404);
 
@@ -87,8 +93,17 @@ export async function POST(req: NextRequest) {
   if (!isStoragePath(prod.file_url)) return tolak("E-book ini tidak disimpan sebagai berkas", 400);
 
   // ── 4. Ambil berkasnya ────────────────────────────────────────────────────
-  const { data: file, error: fileErr } = await admin.storage.from(BUCKET).download(prod.file_url!);
-  if (fileErr || !file) {
+  // [ebook-reader-cepat-v2] Diambil lewat REST storage lalu badan responsnya
+  // DITERUSKAN apa adanya (streaming). `storage.download()` menunggu seluruh
+  // berkas jadi Blob di memori server dulu, baru byte pertamanya berangkat ke
+  // siswa — untuk modul 1 MB itu jeda yang percuma, dan memori Vercel ikut
+  // kena. Yang penting tetap sama: URL bertanda tangan tak pernah ke browser.
+  const jalur = prod.file_url!.split("/").map(encodeURIComponent).join("/");
+  const berkas = await fetch(`${SUPABASE_URL}/storage/v1/object/${BUCKET}/${jalur}`, {
+    headers: { apikey: SUPABASE_SERVICE_KEY, Authorization: `Bearer ${SUPABASE_SERVICE_KEY}` },
+    cache: "no-store",
+  }).catch(() => null);
+  if (!berkas || !berkas.ok || !berkas.body) {
     // Kasus nyata saat fitur ini dibuat: semua produk masih menunjuk
     // "placeholder.pdf" sementara buckernya kosong. Katakan apa adanya —
     // ini bukan salah siswanya dan bukan sesi kedaluwarsa.
@@ -102,11 +117,13 @@ export async function POST(req: NextRequest) {
     .eq("id", beli.id)
     .then(undefined, () => {});
 
-  return new NextResponse(await file.arrayBuffer(), {
+  const panjang = berkas.headers.get("content-length");
+  return new NextResponse(berkas.body, {
     status: 200,
     headers: {
       ...NO_STORE,
       "Content-Type": "application/pdf",
+      ...(panjang ? { "Content-Length": panjang } : {}),
       "Content-Disposition": `inline; filename="${prod.id}.pdf"`,
     },
   });

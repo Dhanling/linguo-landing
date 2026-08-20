@@ -34,7 +34,7 @@ import { getLangPhoto } from "@/lib/lang-visuals";
 // [pustaka-judul-bendera-v1] bendera rounded-rectangle di kiri judul kartu
 import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
 // [ebook-reader-v1] e-book berkas dibaca di dalam dashboard, bukan diunduh
-import EbookReader from "@/components/akun/EbookReader";
+import EbookReader, { prewarmEbookReader } from "@/components/akun/EbookReader";
 import { ELEARNING_BUNDLE_SLUG } from "@/lib/elearningBundle";
 
 /* ---------------- types ---------------- */
@@ -425,6 +425,13 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
   const pvCached = preview && libPreviewCache?.student === previewStudentId ? libPreviewCache : null;
   const cached = !preview && libCache && libCache.userId === userId ? libCache : null;
   const [purchases, setPurchases] = useState<Purchase[]>(cached?.purchases ?? pvCached?.purchases ?? []);
+
+  // [ebook-reader-cepat-v2] Begitu terlihat siswa punya e-book, bundel pdf.js
+  // diunduh saat browser senggang. Dulu unduhan itu baru mulai PADA DETIK
+  // tombol Baca ditekan — itulah sebagian besar layar "Menyiapkan modul…".
+  useEffect(() => {
+    if (purchases.some((p) => p.digital_products?.type === "ebook")) prewarmEbookReader();
+  }, [purchases]);
   const [byLang, setByLang] = useState<LangProgress>(cached?.byLang ?? {});
   const [loading, setLoading] = useState(preview ? !pvCached : !cached);
   const [busy, setBusy] = useState<string | null>(null);

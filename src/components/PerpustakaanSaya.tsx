@@ -12,7 +12,7 @@ import YouTubePlayerModal, { type PlayerTarget } from "@/components/YouTubePlaye
 /* produk-digital-per-bahasa-v1 — paket multi-bahasa: pilih bahasa dulu, baru playlist-nya dibuka */
 import LangMateriPicker, { type LangPickerTarget } from "@/components/LangMateriPicker";
 /* [ebook-reader-v1] e-book berkas dibaca di dalam dashboard, bukan diunduh */
-import EbookReader from "@/components/akun/EbookReader";
+import EbookReader, { prewarmEbookReader } from "@/components/akun/EbookReader";
 /* [perpustakaan-akses-email-v1] kepemilikan = auth_user_id ATAU email sesi */
 import { orMilikSaya } from "@/lib/digitalOwnership";
 
@@ -44,6 +44,12 @@ interface Props {
 
 export default function PerpustakaanSaya({ userId, supabase }: Props) {
   const [purchases, setPurchases] = useState<PurchaseItem[]>([]);
+
+  // [ebook-reader-cepat-v2] Pemanasan bundel pdf.js waktu browser senggang —
+  // lihat catatan yang sama di LibraryView.
+  useEffect(() => {
+    if (purchases.some((p) => p.digital_products?.type === "ebook")) prewarmEbookReader();
+  }, [purchases]);
   const [loading, setLoading] = useState(true);
   const [downloading, setDownloading] = useState<string | null>(null);
   const [playing, setPlaying] = useState<PlayerTarget | null>(null);
