@@ -120,7 +120,12 @@ export function materialReady(p: ProductLink, langs?: ProductLang[] | null): boo
   // Tanpa link eksternal: e-learning jatuh ke modul LMS internal, e-book ke
   // berkas storage. Dua-duanya punya isi selama kolomnya tidak kosong.
   if (p.type === "elearning") return true;
-  return isStoragePath(p.file_url);
+  // [pustaka-katalog-terkunci-v1] `placeholder.pdf` itu path storage yang sah
+  // secara bentuk, jadi dulu lolos sebagai "siap" — padahal berkasnya tak pernah
+  // ada di bucket (43 produk aktif masih begitu per 20 Agu 2026). Sejak katalog
+  // bisa dibeli langsung dari Perpustakaan, lolosnya bukan cuma bikin pesan
+  // error: siswa bayar dulu, modulnya tak ada.
+  return isStoragePath(p.file_url) && !isPlaceholderLink(p.file_url);
 }
 
 /**

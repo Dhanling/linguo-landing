@@ -13,6 +13,7 @@ import {
   Film, BookOpen, Bookmark, BookmarkCheck, Play, Search, LayoutGrid, List,
   Infinity as InfinityIcon, CalendarClock, Clock, ChevronRight,
   Flame, Loader2, ShoppingBag, GraduationCap, ExternalLink, X, Check, CreditCard, Sparkles,
+  Lock,
 } from "lucide-react";
 import {
   externalLinkFor, isStoragePath, accessVerb, isPlaceholderLink,
@@ -101,6 +102,10 @@ function fmtRupiah(n: number) {
 
 // [perpanjang-inplace-v1] tier harga produk digital (dari digital_product_pricing)
 interface RenewTier { id: string; price: number; display_label: string | null; sort_order: number | null; duration_days: number | null }
+
+// [pustaka-katalog-terkunci-v1] produk katalog yang BELUM dimiliki siswa —
+// ditampilkan sebagai kartu tergembok di Perpustakaan, checkout Xendit di tempat.
+interface CatalogItem extends DProduct { pricing: RenewTier[] }
 
 type Access =
   | { kind: "forever" }
@@ -298,6 +303,46 @@ function loadLibraryShared(
   return p;
 }
 
+// [pustaka-katalog-terkunci-v1] Katalog produk aktif (bisa dibaca anon: policy
+// products_public_read_active + pricing_public_read_active). Di-cache modul
+// karena isinya sama untuk semua siswa dan jarang berubah.
+let katalogCache: CatalogItem[] | null = null;
+let katalogInflight: Promise<CatalogItem[]> | null = null;
+
+async function loadKatalog(supabase: SupabaseClient): Promise<CatalogItem[]> {
+  if (katalogCache) return katalogCache;
+  if (katalogInflight) return katalogInflight;
+  katalogInflight = (async () => {
+    const { data, error } = await supabase
+      .from("digital_products")
+      .select(`
+        id, type, title, slug, cover_url, file_url, video_playlist_url,
+        language, level, pages, modules_count, total_duration_min,
+        digital_product_pricing ( id, price, display_label, sort_order, duration_days, is_active )
+      `)
+      .eq("is_active", true)
+      .order("title");
+    // Katalog cuma pemanis; kalau gagal, Perpustakaan tetap menampilkan milik siswa.
+    if (error || !data) return [];
+    const rows = (data as unknown as (DProduct & { digital_product_pricing: (RenewTier & { is_active: boolean })[] })[]).map((p) => {
+      const { digital_product_pricing, ...prod } = p;
+      const pricing = (digital_product_pricing ?? [])
+        .filter((t) => t.is_active !== false)
+        .sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0));
+      return { ...prod, pricing } as CatalogItem;
+    });
+    katalogCache = rows;
+    return rows;
+  })().finally(() => { katalogInflight = null; });
+  return katalogInflight;
+}
+
+/** Harga termurah produk katalog (null = belum ada tier aktif → belum bisa dibeli). */
+function hargaMulai(item: CatalogItem): number | null {
+  if (item.pricing.length === 0) return null;
+  return Math.min(...item.pricing.map((t) => t.price));
+}
+
 /** [perf:pustaka-prewarm-v1] Dipanggil dari /akun saat browser senggang. */
 export function prewarmLibrary(supabase: SupabaseClient, userId: string) {
   if (!userId || (libCache && libCache.userId === userId)) return;
@@ -331,6 +376,9 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
   const [bookmarks, setBookmarks] = useState<Set<string>>(new Set());
   // [perpanjang-inplace-v1] popup perpanjang akses — checkout langsung tanpa pindah page
   const [renewFor, setRenewFor] = useState<Purchase | null>(null);
+  // [pustaka-katalog-terkunci-v1] katalog produk lain + popup beli
+  const [katalog, setKatalog] = useState<CatalogItem[]>(katalogCache ?? []);
+  const [buyFor, setBuyFor] = useState<CatalogItem | null>(null);
   /* linguo-patch:produk-digital-link-v1 */
   const [playing, setPlaying] = useState<PlayerTarget | null>(null);
   /* produk-digital-per-bahasa-v1 — link materi per bahasa (paket 12+ bahasa) */
@@ -361,6 +409,23 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
   /* fetch */
   useEffect(() => { fetchAll(); /* eslint-disable-next-line */ }, [userId, previewStudentId]);
 
+  /* [pustaka-katalog-terkunci-v1] katalog produk aktif — dimuat terpisah dari
+     pembelian supaya kegagalannya tak menjatuhkan isi perpustakaan. Baris bahasa
+     produk katalog ikut diambil buat menentukan materinya sudah siap atau belum. */
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      const rows = await loadKatalog(supabase);
+      if (!alive) return;
+      setKatalog(rows);
+      const langs = await fetchProductLangs(supabase, rows.map((r) => r.id));
+      if (!alive) return;
+      // Entri milik siswa yang sudah dimuat menang — ini cuma menambal sisanya.
+      setProdLangs((prev) => ({ ...langs, ...prev }));
+    })();
+    return () => { alive = false; };
+  }, [supabase]);
+
   async function fetchAll() {
     // Sesi belum ketahuan → jangan query pakai userId kosong (hasilnya pasti nol
     // dan malah tersimpan di cache modul atas nama user "").
@@ -376,7 +441,10 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
         const next = ((j?.purchases ?? []) as unknown) as Purchase[];
         setPurchases(next);
         // baris bahasa boleh dibaca anon (policy dpl_public_read) → pratinjau ikut dapat
-        setProdLangs(await fetchProductLangs(supabase, next.map((p) => p.digital_products?.id)));
+        const pvLangs = await fetchProductLangs(supabase, next.map((p) => p.digital_products?.id));
+        // [pustaka-katalog-terkunci-v1] gabung, jangan timpa: baris bahasa produk
+        // katalog dimuat effect lain dan masih dipakai kartu tergembok.
+        setProdLangs((prev) => ({ ...prev, ...pvLangs }));
         if (j) libPreviewCache = { student: previewStudentId, purchases: next };
       } catch {
         setPurchases([]);
@@ -402,7 +470,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
     }
     setPurchases(data.purchases);
     setByLang(data.byLang);
-    setProdLangs(data.prodLangs);
+    setProdLangs((prev) => ({ ...prev, ...data.prodLangs }));
     setLoading(false);
   }
 
@@ -538,6 +606,19 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
       return true;
     });
   }, [purchases, tab, q]);
+
+  // [pustaka-katalog-terkunci-v1] produk yang belum dimiliki → kartu tergembok.
+  // Saring ikut tab & pencarian yang sama supaya terasa satu daftar.
+  const terkunci = useMemo(() => {
+    const punya = new Set(purchases.map((p) => p.digital_products?.id).filter(Boolean));
+    const needle = q.trim().toLowerCase();
+    return katalog.filter((k) => {
+      if (punya.has(k.id)) return false;
+      if (tab !== "all" && k.type !== tab) return false;
+      if (needle && !k.title.toLowerCase().includes(needle)) return false;
+      return true;
+    });
+  }, [katalog, purchases, tab, q]);
 
   /* ---------------- render ---------------- */
   if (loading) {
@@ -681,12 +762,16 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
       </div>
 
       {/* ===== EMPTY ===== */}
-      {purchases.length === 0 ? (
+      {purchases.length === 0 && terkunci.length === 0 ? (
         <EmptyState />
       ) : shown.length === 0 ? (
-        <div className="rounded-3xl bg-white py-16 text-center">
-          <p className="text-[14px] font-semibold text-slate-500">Tidak ada produk yang cocok.</p>
-        </div>
+        /* [pustaka-katalog-terkunci-v1] tanpa produk yang cocok, seksi terkunci
+           di bawah yang jadi isinya — jangan bilang "tidak ada" kalau ada. */
+        terkunci.length === 0 ? (
+          <div className="rounded-3xl bg-white py-16 text-center">
+            <p className="text-[14px] font-semibold text-slate-500">{t("Tidak ada produk yang cocok.")}</p>
+          </div>
+        ) : null
       ) : view === "grid" ? (
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {shown.map((p) => (
@@ -725,9 +810,46 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
         </div>
       )}
 
+      {/* ===== [pustaka-katalog-terkunci-v1] KATALOG TERGEMBOK ===== */}
+      {terkunci.length > 0 && (
+        <section className="space-y-4 pt-2">
+          <div className="flex items-end justify-between gap-3">
+            <div className="min-w-0">
+              <h2 className="flex items-center gap-2 text-[19px] font-extrabold text-[#12172B]">
+                <Lock className="h-[18px] w-[18px] text-slate-400" strokeWidth={2.4} />
+                {t("Belum kamu miliki")}
+              </h2>
+              <p className="mt-0.5 text-[13.5px] font-medium text-slate-500">
+                {t("Klik salah satu untuk membeli — bayar sekali, akses langsung terbuka di sini.")}
+              </p>
+            </div>
+            <span className="hidden shrink-0 rounded-full bg-slate-100 px-3 py-1 text-[12px] font-bold text-slate-500 sm:inline">
+              {terkunci.length} {t("produk")}
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            {terkunci.map((k) => (
+              <LockedCard
+                key={k.id}
+                item={k}
+                /* [materi-belum-siap-v1] jangan jual yang materinya belum dipasang */
+                ready={materialReady(k, prodLangs[k.id])}
+                onBuy={() => (preview ? toast("Mode pratinjau — hanya tampilan.") : setBuyFor(k))}
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* [perpanjang-inplace-v1] popup perpanjang akses */}
       {renewFor && (
         <RenewModal purchase={renewFor} supabase={supabase} onClose={() => setRenewFor(null)} />
+      )}
+
+      {/* [pustaka-katalog-terkunci-v1] popup beli produk katalog */}
+      {buyFor && (
+        <BuyModal item={buyFor} supabase={supabase} onClose={() => setBuyFor(null)} />
       )}
 
       {/* [produk-digital-per-bahasa-v1] paket multi-bahasa: pilih bahasa dulu */}
@@ -1117,6 +1239,221 @@ function RenewModal({
             </button>
             <p className="mt-2.5 text-center text-[11px] font-medium text-slate-400">
               Pembayaran aman via Xendit · akses aktif otomatis setelah lunas
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// [pustaka-katalog-terkunci-v1] Kartu produk yang belum dimiliki: sampulnya
+// diredam + gembok, jadi tak pernah tertukar dengan produk milik siswa. Produk
+// yang materinya belum dipasang admin TIDAK bisa dibeli — menjual dulu lalu
+// menyuruh siswa menunggu berkasnya itu cara tercepat bikin permintaan refund.
+function LockedCard({
+  item, ready, onBuy,
+}: {
+  item: CatalogItem; ready: boolean; onBuy: () => void;
+}) {
+  const mulai = hargaMulai(item);
+  const bisaBeli = ready && mulai !== null;
+
+  return (
+    <div className="group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white transition hover:border-slate-300">
+      {/* cover teredam + gembok */}
+      <button
+        onClick={bisaBeli ? onBuy : undefined}
+        disabled={!bisaBeli}
+        className="relative h-[132px] w-full shrink-0 overflow-hidden disabled:cursor-default"
+        style={{ background: gradFor(item.id) }}
+      >
+        <span className="absolute -bottom-3 right-3 text-[74px] font-black leading-none text-white/15">
+          {glyphFor(item)}
+        </span>
+        <span className="absolute inset-0 bg-slate-900/45 backdrop-blur-[1.5px]" />
+        <span className="absolute left-3 top-3"><TypeBadge type={item.type} /></span>
+        <span className="absolute inset-0 flex items-center justify-center">
+          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-slate-500 shadow-lg transition group-hover:scale-105">
+            <Lock className="h-5 w-5" strokeWidth={2.4} />
+          </span>
+        </span>
+      </button>
+
+      {/* body */}
+      <div className="flex flex-1 flex-col p-4">
+        <h3 className="line-clamp-2 text-[15px] font-extrabold leading-snug text-[#12172B]">{item.title}</h3>
+        <p className="mt-1 text-[12.5px] font-medium text-slate-500">
+          {[item.language, item.level].filter(Boolean).join(" · ") || (item.type === "ebook" ? "E-Book" : "E-Learning")}
+        </p>
+
+        <div className="mt-4 flex items-center justify-between gap-3 pt-1">
+          <div className="min-w-0">
+            {mulai !== null ? (
+              <>
+                {item.pricing.length > 1 && <p className="text-[11px] font-bold uppercase tracking-wide text-slate-400">mulai</p>}
+                <p className="text-[16px] font-extrabold text-[#12172B]">{fmtRupiah(mulai)}</p>
+              </>
+            ) : (
+              <p className="text-[13px] font-bold text-slate-400">Harga menyusul</p>
+            )}
+          </div>
+          <button
+            onClick={onBuy}
+            disabled={!bisaBeli}
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-[#12A37E] px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.98] disabled:bg-slate-300 disabled:active:scale-100"
+          >
+            {bisaBeli ? <><ShoppingBag className="h-4 w-4" strokeWidth={2.4} /> Beli</> : "Segera hadir"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// [pustaka-katalog-terkunci-v1] Popup beli — kembar dengan RenewModal (edge fn
+// xendit-create-digital-invoice yang sama, invoice dibuka di tab baru), bedanya
+// tier harganya sudah ikut terbawa dari katalog jadi tak perlu query lagi.
+function BuyModal({
+  item, supabase, onClose,
+}: {
+  item: CatalogItem; supabase: SupabaseClient; onClose: () => void;
+}) {
+  const tiers = item.pricing;
+  const [selectedId, setSelectedId] = useState<string | null>(
+    tiers.length >= 3 ? tiers[1].id : tiers[0]?.id ?? null,
+  );
+  const [submitting, setSubmitting] = useState(false);
+  const [buyer, setBuyer] = useState<{ email: string; name: string; phone: string | null }>({ email: "", name: "", phone: null });
+
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      const { data: userRes } = await supabase.auth.getUser();
+      const u = userRes?.user;
+      if (!alive || !u) return;
+      setBuyer({
+        email: u.email ?? "",
+        name: (u.user_metadata?.full_name as string) || (u.user_metadata?.name as string) || (u.email?.split("@")[0] ?? "Siswa Linguo"),
+        phone: (u.user_metadata?.phone as string) || (u.phone ? `+${u.phone}` : null),
+      });
+    })();
+    return () => { alive = false; };
+  }, [supabase]);
+
+  const selected = tiers.find((t) => t.id === selectedId) || null;
+
+  async function handlePay() {
+    if (!selected) return;
+    if (!buyer.email) { toast.error("Email tidak ditemukan. Coba login ulang."); return; }
+    setSubmitting(true);
+    try {
+      const refCookie = typeof document !== "undefined"
+        ? (("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0] ?? null)
+        : null;
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/xendit-create-digital-invoice`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            pricing_id: selected.id,
+            referral_code: refCookie,
+            buyer_email: buyer.email,
+            buyer_name: buyer.name,
+            buyer_phone: buyer.phone,
+          }),
+        }
+      );
+      const data = await res.json();
+      if (!res.ok || !data.invoice_url) throw new Error(data.error ?? "Gagal membuat invoice");
+      window.open(data.invoice_url, "_blank", "noopener,noreferrer");
+      toast.success("Halaman pembayaran dibuka. Produk masuk Perpustakaan otomatis setelah lunas.");
+      onClose();
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Terjadi kesalahan.");
+      setSubmitting(false);
+    }
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-end justify-center bg-black/50 p-0 backdrop-blur-sm sm:items-center sm:p-4"
+      onClick={onClose}
+    >
+      <div
+        className="flex max-h-[92vh] w-full max-w-md flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl sm:rounded-3xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* header */}
+        <div className="flex items-start justify-between gap-3 border-b border-slate-100 px-5 py-4">
+          <div className="min-w-0">
+            <h3 className="text-[17px] font-extrabold text-[#12172B]">Beli Produk</h3>
+            <p className="mt-0.5 truncate text-[13px] font-medium text-slate-500">{item.title}</p>
+          </div>
+          <button onClick={onClose} className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition hover:bg-slate-200">
+            <X className="h-5 w-5" strokeWidth={2.2} />
+          </button>
+        </div>
+
+        {/* body */}
+        <div className="flex-1 overflow-y-auto px-5 py-4">
+          {tiers.length === 0 ? (
+            <div className="py-10 text-center">
+              <p className="text-[14px] font-semibold text-slate-500">Paket harga belum tersedia.</p>
+              <a href="/toko" target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-bold text-[#12A37E] hover:underline">
+                Lihat di Toko <ChevronRight className="h-4 w-4" />
+              </a>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-2.5">
+              {tiers.length > 1 && <p className="mb-1 text-[13px] font-medium text-slate-500">Pilih paket:</p>}
+              {tiers.map((t) => {
+                const active = t.id === selectedId;
+                const bulan = t.duration_days ? Math.max(1, Math.round(t.duration_days / 30)) : null;
+                return (
+                  <button
+                    key={t.id}
+                    onClick={() => setSelectedId(t.id)}
+                    className={`flex items-center justify-between gap-3 rounded-2xl border p-3.5 text-left transition ${
+                      active ? "border-[#12A37E] bg-[#12A37E]/[0.06] ring-1 ring-[#12A37E]" : "border-slate-200 hover:border-slate-300"
+                    }`}
+                  >
+                    <div className="min-w-0">
+                      <p className="text-[14px] font-extrabold text-[#12172B]">{t.display_label || (bulan ? `${bulan} Bulan` : "Akses selamanya")}</p>
+                      <p className="mt-0.5 text-[12px] font-medium text-slate-500">
+                        {t.duration_days ? `Akses ${t.duration_days} hari` : "Akses selamanya"}
+                      </p>
+                    </div>
+                    <div className="flex shrink-0 items-center gap-2.5">
+                      <span className="text-[15px] font-extrabold text-[#12172B]">{fmtRupiah(t.price)}</span>
+                      <span className={`flex h-5 w-5 items-center justify-center rounded-full border ${active ? "border-[#12A37E] bg-[#12A37E] text-white" : "border-slate-300 text-transparent"}`}>
+                        <Check className="h-3 w-3" strokeWidth={3} />
+                      </span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        {/* footer */}
+        {tiers.length > 0 && (
+          <div className="border-t border-slate-100 px-5 py-4">
+            <button
+              onClick={handlePay}
+              disabled={!selected || submitting}
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[#12A37E] text-[15px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.99] disabled:opacity-50"
+            >
+              {submitting ? <Loader2 className="h-5 w-5 animate-spin" /> : <CreditCard className="h-5 w-5" strokeWidth={2.2} />}
+              {submitting ? "Menyiapkan…" : selected ? `Bayar ${fmtRupiah(selected.price)}` : "Pilih paket"}
+            </button>
+            <p className="mt-2.5 text-center text-[11px] font-medium text-slate-400">
+              Pembayaran aman via Xendit · produk terbuka otomatis setelah lunas
             </p>
           </div>
         )}
