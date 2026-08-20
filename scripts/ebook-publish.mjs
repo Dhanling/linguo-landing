@@ -127,7 +127,7 @@ async function beriAkses() {
   let id = sudah?.id;
   if (!id) {
     // Langkah 1: "Belum Bayar" — trigger auto-convert tidak menyalin baris ini.
-    const { data, error } = await sb.from("digital_purchases").insert({
+    const dasar = {
       product_id: prod.id,
       student_id: s.id,
       buyer_name: s.name,
@@ -135,8 +135,16 @@ async function beriAkses() {
       payment_status: "Belum Bayar",
       access_granted: false,
       amount: 0,
-      source: "linguo_grant",
-    }).select("id").single();
+    };
+    let { data, error } = await sb.from("digital_purchases")
+      .insert({ ...dasar, source: "linguo_grant" }).select("id").single();
+    // `source` kemungkinan dipagari check constraint yang cuma mengenal nilai
+    // jalur resmi (toko, landing, …). Nilainya cuma penanda asal, jadi lebih
+    // baik barisnya tetap lahir tanpa itu daripada pemberian akses gagal total.
+    if (error && /source|constraint/i.test(error.message)) {
+      ({ data, error } = await sb.from("digital_purchases").insert(dasar).select("id").single());
+      if (!error) console.log("· kolom source ditolak DB — baris dibuat tanpa penanda asal");
+    }
     if (error) throw new Error(`insert gagal: ${error.message}`);
     id = data.id;
     console.log(`✓ baris pembelian dibuat (Belum Bayar): ${id}`);

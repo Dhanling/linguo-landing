@@ -244,7 +244,11 @@
       "Bash(curl -s -H 'Authorization: Bearer __CMDSUB_OUTPUT__' 'https://api.vercel.com/v6/deployments?teamId=__TRACKED_VAR__&limit=100&since=__TRACKED_VAR__')",
       "Bash(python3 -c \"import time;print\\(int\\(\\(time.time\\(\\)-86400\\)*1000\\)\\)\")",
       "Bash(cp /Users/muhamadlutfiramadhani/linguo-admin-dashboard/supabase/migrations/20260818140000_teacher_group_participants_fix.sql /private/tmp/claude-501/-Users-muhamadlutfiramadhani-linguo-landing/5521d438-c24f-41b2-a4bd-811ea9f203b8/scratchpad/mig.sql)",
-      "Bash(/private/tmp/claude-501/-Users-muhamadlutfiramadhani-linguo-landing/5521d438-c24f-41b2-a4bd-811ea9f203b8/scratchpad/q.sh /private/tmp/claude-501/-Users-muhamadlutfiramadhani-linguo-landing/5521d438-c24f-41b2-a4bd-811ea9f203b8/scratchpad/mig.sql)"
+      "Bash(/private/tmp/claude-501/-Users-muhamadlutfiramadhani-linguo-landing/5521d438-c24f-41b2-a4bd-811ea9f203b8/scratchpad/q.sh /private/tmp/claude-501/-Users-muhamadlutfiramadhani-linguo-landing/5521d438-c24f-41b2-a4bd-811ea9f203b8/scratchpad/mig.sql)",
+      "Bash(node -e \"const fs=require\\('fs'\\);fs.writeFileSync\\('mig.json',JSON.stringify\\({query:fs.readFileSync\\('/Users/muhamadlutfiramadhani/linguo-admin-dashboard/supabase/migrations/20260819150000_pendataan_source_check.sql','utf8'\\)}\\)\\);console.log\\('ok'\\)\")",
+      "Bash(curl -s -w '\\\\nHTTP %{http_code}\\\\n' -X POST https://api.supabase.com/v1/projects/jbtgciepdmqxxcjflrxz/database/query -H 'Authorization: Bearer __CMDSUB_OUTPUT__' -H 'Content-Type: application/json' --data-binary @mig.json)",
+      "Bash(curl -s -w '\\\\nHTTP %{http_code}\\\\n' -X POST https://api.supabase.com/v1/projects/jbtgciepdmqxxcjflrxz/database/query -H 'Authorization: Bearer __CMDSUB_OUTPUT__' -H 'Content-Type: application/json' --data-binary @/private/tmp/claude-501/-Users-muhamadlutfiramadhani-linguo-landing/9a241326-2d1a-4eba-ae5b-214ac6910521/scratchpad/mig.json)",
+      "Bash(SUPA_TOKEN=__CMDSUB_OUTPUT__ node -e ' *)"
     ],
     "additionalDirectories": [
       "/Users/muhamadlutfiramadhani/linguo-app/supabase/functions/_shared",
