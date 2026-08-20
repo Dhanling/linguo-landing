@@ -8,6 +8,7 @@ import Link from "next/link";
 import { BOOKS, type Book } from "@/data/lingbook";
 import { loadBooks } from "@/data/lingbook/remote";
 import { BookOpen } from "lucide-react";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 function firstChapterSlug(book: Book): string {
   const now = book.toc.find((c) => c.status === "now");
@@ -28,12 +29,13 @@ export default function BookLibrary() {
     return () => { alive = false; };
   }, []);
 
+  const t = useT(); // [ui-lang-switcher-v1]
   return (
     <div>
       <header className="mb-6">
         <h1 className="text-2xl font-extrabold text-[#11313A]">Lingbook</h1>
         <p className="mt-1 text-sm text-[#5A7A78]">
-          Ebook interaktif — tap tiap kata untuk cara baca, arti, dan analisa tata bahasanya.
+          {t("Ebook interaktif — tap tiap kata untuk cara baca, arti, dan analisa tata bahasanya.")}
         </p>
       </header>
 
@@ -65,14 +67,14 @@ export default function BookLibrary() {
 
                 <div className="mt-auto pt-4">
                   <div className="flex items-center justify-between text-[11.5px] font-semibold text-[#5A7A78]">
-                    <span>{done} / {total} bab</span>
+                    <span>{done} / {total} {t("bab")}</span>
                     <span>{pct}%</span>
                   </div>
                   <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-[#E9F2F0]">
                     <div className="h-full rounded-full bg-[#1A9E9E] transition-all" style={{ width: `${Math.max(4, pct)}%` }} />
                   </div>
                   <div className="mt-3 inline-flex items-center gap-1 text-[13px] font-extrabold text-[#0B7570] group-hover:gap-2 transition-all">
-                    {done > 0 ? "Lanjutkan membaca" : "Mulai membaca"} →
+                    {done > 0 ? t("Lanjutkan membaca") : t("Mulai membaca")} →
                   </div>
                 </div>
               </div>

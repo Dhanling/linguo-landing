@@ -75,6 +75,7 @@ import { RectFlag } from "@/components/RectFlag";
 import { LangPickerPanel } from "./LangPickerPanel";
 import { useWlPanel, useWlHeartbeat } from "@/lib/wlAnalytics";
 import dynamic from "next/dynamic";
+import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 // [perf:watch-split-player-v1] Player belajar (transkrip dwibahasa, analisa,
 // tap-kata) + dashboard flashcard adalah dua komponen TERBESAR di fitur ini,
@@ -508,6 +509,7 @@ async function fetchCatalogBatch(opts: {
 }
 
 export default function WatchAndLearn() {
+  const t = useT(); // [ui-lang-switcher-v1]
   // [perf:watch-boot-v1] Bahasa tersimpan dibaca SINKRON di render pertama, bukan
   // lewat useEffect. Dulu state mulai dari "en" lalu effect menggantinya dengan
   // bahasa simpanan → efek katalog jalan DUA kali: satu fetch penuh untuk katalog
@@ -1398,18 +1400,18 @@ export default function WatchAndLearn() {
             className="inline-flex items-center gap-2 text-sm font-semibold transition-opacity hover:opacity-80"
             style={{ color: SUB }}
           >
-            <ArrowLeft className="h-4 w-4" /> Dashboard
+            <ArrowLeft className="h-4 w-4" /> {t("Dashboard")}
           </Link>
           <div className="flex items-center gap-2">
             <button
               onClick={() => setDeckOpen(true)}
-              title="Kosakata"
-              aria-label="Kosakata"
+              title={t("Kosakata")}
+              aria-label={t("Kosakata")}
               className="group inline-flex items-center rounded-full px-3 py-1.5 text-sm font-bold transition-transform active:scale-95"
               style={{ backgroundColor: CARD }}
             >
               <Layers className="h-4 w-4 shrink-0" color={TEAL} />
-              <RevealLabel>Kosakata</RevealLabel>
+              <RevealLabel>{t("Kosakata")}</RevealLabel>
               {vocabCount > 0 && (
                 <span
                   className="ml-1.5 rounded-full px-1.5 py-0.5 text-[11px] font-extrabold leading-none"
@@ -1432,7 +1434,7 @@ export default function WatchAndLearn() {
               <button
                 onClick={() => setLearnMenuOpen((v) => !v)}
                 title={`${getBaseLangDef(baseLang).label} → ${lang.name}`}
-                aria-label={`Bahasa saya ${getBaseLangDef(baseLang).label}, bahasa yang dipelajari ${lang.name}`}
+                aria-label={`${t("Bahasa saya")} ${getBaseLangDef(baseLang).label}, ${t("bahasa yang dipelajari")} ${lang.name}`}
                 aria-expanded={learnMenuOpen}
                 className="group inline-flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-sm font-bold transition-transform active:scale-95"
                 style={{ backgroundColor: CARD }}
@@ -1475,7 +1477,7 @@ export default function WatchAndLearn() {
           <div>
             <h1 className="text-2xl font-extrabold sm:text-3xl">Watch &amp; Learn</h1>
             <p className="mt-0.5 text-[13px] sm:text-sm" style={{ color: SUB }}>
-              Belajar bahasa dari konten yang kamu suka
+              {t("Belajar bahasa dari konten yang kamu suka")}
             </p>
           </div>
         </div>
@@ -1498,7 +1500,7 @@ export default function WatchAndLearn() {
                   if (e.key === "Enter") onSearchSubmit();
                   else if (e.key === "Escape") setSearchFocused(false);
                 }}
-                placeholder={`Cari video dalam bahasa ${lang.name}…`}
+                placeholder={`${t("Cari video dalam bahasa")} ${lang.name}…`}
                 className="flex-1 bg-transparent py-3.5 text-[15px] text-white outline-none placeholder:text-white/35"
               />
               {(freeText || committedText) && (
@@ -1508,7 +1510,7 @@ export default function WatchAndLearn() {
                     setCommittedText("");
                   }}
                   className="shrink-0 transition-opacity hover:opacity-70"
-                  aria-label="Hapus pencarian"
+                  aria-label={t("Hapus pencarian")}
                 >
                   <X className="h-4 w-4" color={SUB} />
                 </button>
@@ -1523,7 +1525,7 @@ export default function WatchAndLearn() {
               >
                 <div className="flex items-center justify-between px-4 pt-3 pb-1.5">
                   <span className="text-[11px] font-bold uppercase tracking-wide" style={{ color: SUB }}>
-                    Pencarian terakhir
+                    {t("Pencarian terakhir")}
                   </span>
                   <button
                     onMouseDown={(e) => e.preventDefault()}
@@ -1531,7 +1533,7 @@ export default function WatchAndLearn() {
                     className="text-[11px] font-bold transition-opacity hover:opacity-70"
                     style={{ color: SUB }}
                   >
-                    Hapus semua
+                    {t("Hapus semua")}
                   </button>
                 </div>
                 <ul className="pb-1.5">
@@ -1549,7 +1551,7 @@ export default function WatchAndLearn() {
                         onMouseDown={(e) => e.preventDefault()}
                         onClick={() => removeSearchHistory(q)}
                         className="shrink-0 px-3 py-2.5 opacity-60 transition-opacity hover:opacity-100"
-                        aria-label={`Hapus "${q}" dari riwayat`}
+                        aria-label={`${t("Hapus")} "${q}" ${t("dari riwayat")}`}
                       >
                         <X className="h-3.5 w-3.5" color={SUB} />
                       </button>
@@ -1565,13 +1567,13 @@ export default function WatchAndLearn() {
         {shownHistory.length > 0 && (
           <section className="mt-8">
             <div className="flex items-center justify-between">
-              <h2 className="text-[17px] font-extrabold">Lanjut Menonton</h2>
+              <h2 className="text-[17px] font-extrabold">{t("Lanjut Menonton")}</h2>
               <button
                 onClick={clearHistory}
                 className="inline-flex items-center gap-1.5 text-[12px] font-bold transition-opacity hover:opacity-70"
                 style={{ color: SUB }}
               >
-                <Trash2 className="h-3.5 w-3.5" /> Hapus
+                <Trash2 className="h-3.5 w-3.5" /> {t("Hapus")}
               </button>
             </div>
             <div className="mt-3 flex gap-3 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
@@ -1610,11 +1612,11 @@ export default function WatchAndLearn() {
           <h2 className="text-[17px] font-extrabold">
             {wordMode ? (
               <>
-                <TextSearch className="mr-1 inline h-4 w-4 align-text-bottom" color={GOLD} /> Cari Kata
+                <TextSearch className="mr-1 inline h-4 w-4 align-text-bottom" color={GOLD} /> {t("Cari Kata")}
               </>
             ) : (
               <>
-                <span style={{ color: GOLD }}>✨</span> Rekomendasi untukmu
+                <span style={{ color: GOLD }}>✨</span> {t("Rekomendasi untukmu")}
               </>
             )}
           </h2>
@@ -1624,7 +1626,7 @@ export default function WatchAndLearn() {
               className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[12px] font-bold transition-opacity hover:opacity-80"
               style={{ backgroundColor: "rgba(26,158,158,0.14)", color: TEAL }}
             >
-              <RefreshCw className="h-3.5 w-3.5" /> Muat ulang
+              <RefreshCw className="h-3.5 w-3.5" /> {t("Muat ulang")}
             </button>
           )}
         </div>
@@ -1639,7 +1641,7 @@ export default function WatchAndLearn() {
             }}
           >
             <CircleCheck className="h-4 w-4" />
-            Terjemahan Siap
+            {t("Terjemahan Siap")}
           </button>
           {/* Tab "Cari Kata" (ala YouGlish) — cari cara pakai kata di kalimat video. */}
           <button
@@ -1651,7 +1653,7 @@ export default function WatchAndLearn() {
             }}
           >
             <TextSearch className="h-4 w-4" />
-            Cari Kata
+            {t("Cari Kata")}
           </button>
           {CATEGORY_TABS.map((c) => {
             const on = c.id === category;
@@ -1667,7 +1669,7 @@ export default function WatchAndLearn() {
                 }}
               >
                 {Icon && <Icon className="h-4 w-4" />}
-                {c.label}
+                {t(c.label)}
               </button>
             );
           })}
@@ -1687,7 +1689,7 @@ export default function WatchAndLearn() {
                 onKeyDown={(e) => {
                   if (e.key === "Enter") runWordSearch();
                 }}
-                placeholder={`Ketik kata dalam bahasa ${lang.name}…`}
+                placeholder={`${t("Ketik kata dalam bahasa")} ${lang.name}…`}
                 className="flex-1 bg-transparent py-3.5 text-[15px] text-white outline-none placeholder:text-white/35"
               />
               {wordInput && (
@@ -1699,7 +1701,7 @@ export default function WatchAndLearn() {
                     wordReqId.current++;
                   }}
                   className="shrink-0 transition-opacity hover:opacity-70"
-                  aria-label="Hapus"
+                  aria-label={t("Hapus")}
                 >
                   <X className="h-4 w-4" color={SUB} />
                 </button>
@@ -1710,12 +1712,11 @@ export default function WatchAndLearn() {
                 className="shrink-0 rounded-xl px-4 py-2 text-[13px] font-bold transition-opacity hover:opacity-90 disabled:opacity-40"
                 style={{ backgroundColor: GOLD, color: "#1A1205" }}
               >
-                Cari
+                {t("Cari")}
               </button>
             </div>
             <p className="mt-2 text-[12.5px]" style={{ color: SUB }}>
-              Lihat cara sebuah kata dipakai di kalimat nyata dari video katalog. Klik hasil
-              untuk lompat ke momen kata itu diucapkan.
+              {t("Lihat cara sebuah kata dipakai di kalimat nyata dari video katalog. Klik hasil untuk lompat ke momen kata itu diucapkan.")}
             </p>
 
             {wordState === "loading" && (
@@ -1723,13 +1724,13 @@ export default function WatchAndLearn() {
                 className="mt-8 flex items-center justify-center gap-2 text-[13px]"
                 style={{ color: SUB }}
               >
-                <Loader2 className="h-4 w-4 animate-spin" /> Mencari…
+                <Loader2 className="h-4 w-4 animate-spin" /> {t("Mencari…")}
               </div>
             )}
 
             {wordState === "idle" && (
               <div className="mt-10 text-center text-[13px]" style={{ color: SUB }}>
-                Ketik sebuah kata lalu tekan Enter untuk melihat contohnya di video.
+                {t("Ketik sebuah kata lalu tekan Enter untuk melihat contohnya di video.")}
               </div>
             )}
 
@@ -1738,10 +1739,9 @@ export default function WatchAndLearn() {
                 className="mt-6 rounded-2xl p-6 text-center"
                 style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
               >
-                <p className="text-[15px] font-bold">Tidak ketemu di katalog</p>
+                <p className="text-[15px] font-bold">{t("Tidak ketemu di katalog")}</p>
                 <p className="mx-auto mt-1 max-w-md text-[13px]" style={{ color: SUB }}>
-                  Kata “{wordInput.trim()}” belum ada di transkrip video {lang.name} yang
-                  tersimpan. Coba kata lain, atau tambah videonya ke katalog dulu.
+                  {t("Kata")} “{wordInput.trim()}” {t("belum ada di transkrip video")} {lang.name} {t("yang tersimpan. Coba kata lain, atau tambah videonya ke katalog dulu.")}
                 </p>
               </div>
             )}
@@ -1749,7 +1749,7 @@ export default function WatchAndLearn() {
             {wordState === "done" && (
               <div className="mt-5 space-y-2.5">
                 <p className="text-[12.5px] font-bold" style={{ color: SUB }}>
-                  {wordResults.length} contoh ditemukan
+                  {wordResults.length} {t("contoh ditemukan")}
                 </p>
                 {wordResults.map((h, i) => {
                   const parts = highlightParts(h.target, wordInput.trim());
@@ -1851,7 +1851,7 @@ export default function WatchAndLearn() {
                     color: on ? "#fff" : "rgba(255,255,255,0.7)",
                   }}
                 >
-                  {d.label}
+                  {t(d.label)}
                 </button>
               );
             })}
@@ -1863,7 +1863,7 @@ export default function WatchAndLearn() {
         {readyMode && (
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <span className="text-[12px] font-bold" style={{ color: SUB }}>
-              Level:
+              {t("Level")}:
             </span>
             {LEVEL_FILTERS.map((lv) => {
               const on = levelFilter === lv;
@@ -1881,7 +1881,7 @@ export default function WatchAndLearn() {
                     color: on ? (style ? style.fg : "#fff") : "rgba(255,255,255,0.7)",
                   }}
                 >
-                  {lv === "all" ? "Semua" : lv}
+                  {lv === "all" ? t("Semua") : lv}
                 </button>
               );
             })}
@@ -1927,9 +1927,9 @@ export default function WatchAndLearn() {
             className="mt-6 rounded-2xl p-6 text-center"
             style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
           >
-            <p className="text-[15px] font-bold">Tak ada video cocok filter di halaman ini</p>
+            <p className="text-[15px] font-bold">{t("Tak ada video cocok filter di halaman ini")}</p>
             <p className="mx-auto mt-1 max-w-md text-[13px]" style={{ color: SUB }}>
-              Longgarkan filter durasi/level, muat lainnya, atau ganti kategori.
+              {t("Longgarkan filter durasi/level, muat lainnya, atau ganti kategori.")}
             </p>
             <button
               onClick={() => {
@@ -1939,7 +1939,7 @@ export default function WatchAndLearn() {
               className="mt-3 rounded-full px-4 py-2 text-[12.5px] font-bold"
               style={{ backgroundColor: "rgba(26,158,158,0.14)", color: TEAL }}
             >
-              Reset filter
+              {t("Reset filter")}
             </button>
           </div>
         )}
@@ -1952,20 +1952,16 @@ export default function WatchAndLearn() {
           >
             {readyMode ? (
               <>
-                <p className="text-[15px] font-bold">Belum ada video siap</p>
+                <p className="text-[15px] font-bold">{t("Belum ada video siap")}</p>
                 <p className="mx-auto mt-1 max-w-md text-[13px]" style={{ color: SUB }}>
-                  Tonton beberapa video dari kategori lain dulu. Begitu subtitle +
-                  terjemahannya selesai diproses, video otomatis muncul di sini — dan
-                  langsung tampil instan buat siapa pun yang membukanya.
+                  {t("Tonton beberapa video dari kategori lain dulu. Begitu subtitle + terjemahannya selesai diproses, video otomatis muncul di sini — dan langsung tampil instan buat siapa pun yang membukanya.")}
                 </p>
               </>
             ) : (
               <>
-                <p className="text-[15px] font-bold">Belum ada video ketemu</p>
+                <p className="text-[15px] font-bold">{t("Belum ada video ketemu")}</p>
                 <p className="mx-auto mt-1 max-w-md text-[13px]" style={{ color: SUB }}>
-                  Coba kategori lain, ganti bahasa, atau muat ulang. Katalog cuma
-                  menampilkan video pendek (≤20 menit) & terbatas kuota harian YouTube —
-                  beberapa saat lagi biasanya kembali penuh.
+                  {t("Coba kategori lain, ganti bahasa, atau muat ulang. Katalog cuma menampilkan video pendek (≤20 menit) & terbatas kuota harian YouTube — beberapa saat lagi biasanya kembali penuh.")}
                 </p>
               </>
             )}
@@ -1982,7 +1978,7 @@ export default function WatchAndLearn() {
               className="rounded-full px-6 py-3 text-sm font-bold transition-transform active:scale-95 disabled:opacity-60"
               style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
             >
-              {state === "more" ? "Memuat…" : "Muat lainnya"}
+              {state === "more" ? t("Memuat…") : t("Muat lainnya")}
             </button>
           </div>
         )}
@@ -2003,8 +1999,8 @@ export default function WatchAndLearn() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between px-5 pt-5">
-              <p className="text-[15px] font-bold">Pilih bahasa</p>
-              <button onClick={() => setLangPickerOpen(false)} aria-label="Tutup">
+              <p className="text-[15px] font-bold">{t("Pilih bahasa")}</p>
+              <button onClick={() => setLangPickerOpen(false)} aria-label={t("Tutup")}>
                 <X className="h-5 w-5" color={SUB} />
               </button>
             </div>
@@ -2016,7 +2012,7 @@ export default function WatchAndLearn() {
               <input
                 value={langQuery}
                 onChange={(e) => setLangQuery(e.target.value)}
-                placeholder="Cari bahasa…"
+                placeholder={t("Cari bahasa…")}
                 autoFocus
                 className="flex-1 bg-transparent py-3 text-[14px] text-white outline-none placeholder:text-white/35"
               />
@@ -2024,7 +2020,7 @@ export default function WatchAndLearn() {
             {!langQuery.trim() && recentLangObjs.length > 0 && (
               <div className="mt-3 px-5">
                 <p className="mb-2 text-[11px] font-bold uppercase tracking-wide" style={{ color: SUB }}>
-                  Terakhir dipilih
+                  {t("Terakhir dipilih")}
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {recentLangObjs.map((l) => {
@@ -2070,7 +2066,7 @@ export default function WatchAndLearn() {
               })}
               {filteredLangs.length === 0 && (
                 <p className="px-3 py-6 text-center text-[13px]" style={{ color: SUB }}>
-                  Tidak ada bahasa cocok.
+                  {t("Tidak ada bahasa cocok.")}
                 </p>
               )}
             </div>
@@ -2093,14 +2089,13 @@ export default function WatchAndLearn() {
           >
             <div className="flex items-start justify-between gap-3 px-5 pt-5">
               <div>
-                <p className="text-[16px] font-bold">Kamu bicara bahasa apa?</p>
+                <p className="text-[16px] font-bold">{t("Kamu bicara bahasa apa?")}</p>
                 <p className="mt-1 text-[12.5px] leading-relaxed" style={{ color: SUB }}>
-                  Terjemahan di bawah subtitle akan ditampilkan dalam bahasa ini. Bisa
-                  diganti kapan saja lewat tombol bendera di atas.
+                  {t("Terjemahan di bawah subtitle akan ditampilkan dalam bahasa ini. Bisa diganti kapan saja lewat tombol bendera di atas.")}
                 </p>
               </div>
               {!baseFirstOpen && (
-                <button onClick={() => setBasePickerOpen(false)} aria-label="Tutup" className="shrink-0">
+                <button onClick={() => setBasePickerOpen(false)} aria-label={t("Tutup")} className="shrink-0">
                   <X className="h-5 w-5" color={SUB} />
                 </button>
               )}
@@ -2220,7 +2215,7 @@ function Thumb({
         <span
           className="absolute left-1.5 top-1.5 rounded px-1.5 py-0.5 text-[10.5px] font-extrabold leading-none"
           style={{ backgroundColor: lvlStyle.bg, color: lvlStyle.fg }}
-          title="Perkiraan level bahasa dari transkrip"
+          title={tr("Perkiraan level bahasa dari transkrip")}
         >
           {level}
         </span>

@@ -347,12 +347,13 @@ function getBaseline(): string {
 
 /** [group-fullscreen-v1] Tombol layar penuh — dipakai di header daftar grup & header chat. */
 function FullscreenToggle({ on, onToggle }: { on: boolean; onToggle: () => void }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   return (
     <button
       onClick={onToggle}
       className="shrink-0 rounded-lg p-1.5 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700"
-      aria-label={on ? "Keluar dari layar penuh" : "Layar penuh"}
-      title={on ? "Keluar dari layar penuh (Esc)" : "Layar penuh"}
+      aria-label={on ? t("Keluar dari layar penuh") : t("Layar penuh")}
+      title={on ? t("Keluar dari layar penuh (Esc)") : t("Layar penuh")}
     >
       {on ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
     </button>
@@ -1165,12 +1166,12 @@ export default function StudentGroupChat({
           <AlertTriangle className="h-6 w-6" />
         </span>
         <h2 className="mt-4 text-base font-bold text-gray-900">
-          {expired ? "Sesi pratinjau sudah habis" : "Grup kelas gagal dimuat"}
+          {expired ? t("Sesi pratinjau sudah habis") : t("Grup kelas gagal dimuat")}
         </h2>
         <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-gray-500">
           {expired
-            ? "Layar ini tidak bisa membaca grup kelas siswa lagi. Buka ulang “Lihat sebagai siswa” dari dashboard admin — bukan berarti siswanya tak punya grup kelas."
-            : "Sambungan ke server terputus sebentar. Coba muat ulang; percakapan grupmu tidak ke mana-mana."}
+            ? t("Layar ini tidak bisa membaca grup kelas siswa lagi. Buka ulang “Lihat sebagai siswa” dari dashboard admin — bukan berarti siswanya tak punya grup kelas.")
+            : t("Sambungan ke server terputus sebentar. Coba muat ulang; percakapan grupmu tidak ke mana-mana.")}
         </p>
         {!expired && (
           <button
@@ -1181,7 +1182,7 @@ export default function StudentGroupChat({
             }}
             className="mt-4 rounded-lg bg-teal-600 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-700"
           >
-            Muat ulang
+            {t("Muat ulang")}
           </button>
         )}
       </div>
@@ -1194,11 +1195,9 @@ export default function StudentGroupChat({
         <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-teal-50 text-teal-700">
           <MessagesSquare className="h-6 w-6" />
         </span>
-        <h2 className="mt-4 text-base font-bold text-gray-900">Grup kelasmu belum tersambung</h2>
+        <h2 className="mt-4 text-base font-bold text-gray-900">{t("Grup kelasmu belum tersambung")}</h2>
         <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-gray-500">
-          Kalau kamu sudah punya grup WhatsApp kelas bersama pengajar, minta tim Linguo
-          menyambungkannya ke akun ini — setelah itu percakapannya bisa dibaca & dibalas dari
-          halaman ini.
+          {t("Kalau kamu sudah punya grup WhatsApp kelas bersama pengajar, minta tim Linguo menyambungkannya ke akun ini — setelah itu percakapannya bisa dibaca & dibalas dari halaman ini.")}
         </p>
       </div>
     );
@@ -1240,8 +1239,7 @@ export default function StudentGroupChat({
               <FullscreenToggle on={fullscreen} onToggle={() => setFullscreen((v) => !v)} />
             </div>
             <p className="mt-1 text-[11px] leading-relaxed text-gray-500">
-              Percakapan ini grup WhatsApp kelasmu. Pesanmu tetap masuk ke grupnya, jadi pengajar
-              & teman kelas tetap bisa membacanya dari WhatsApp.
+              {t("Percakapan ini grup WhatsApp kelasmu. Pesanmu tetap masuk ke grupnya, jadi pengajar & teman kelas tetap bisa membacanya dari WhatsApp.")}
             </p>
             {groups.length > 3 && (
               <div className="relative mt-2.5">
@@ -1256,7 +1254,7 @@ export default function StudentGroupChat({
                   <button
                     onClick={() => setGroupQuery("")}
                     className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md p-0.5 text-gray-400 hover:bg-gray-100"
-                    aria-label="Bersihkan pencarian"
+                    aria-label={t("Bersihkan pencarian")}
                   >
                     <X className="h-3.5 w-3.5" />
                   </button>
@@ -1267,7 +1265,7 @@ export default function StudentGroupChat({
           <div className="min-h-0 flex-1 overflow-y-auto p-2">
             {filteredGroups.length === 0 ? (
               <p className="px-3 py-8 text-center text-sm text-gray-500">
-                Tidak ada grup yang cocok dengan “{groupQuery.trim()}”.
+                {t("Tidak ada grup yang cocok dengan")} “{groupQuery.trim()}”.
               </p>
             ) : (
               filteredGroups.map((g) => {
@@ -1277,7 +1275,7 @@ export default function StudentGroupChat({
                 const preview = last
                   ? `${
                       isMineLike(last, identity)
-                        ? "Kamu: "
+                        ? `${t("Kamu")}: `
                         : last.direction === "out"
                           ? ""
                           : last.contact_name
@@ -1285,8 +1283,8 @@ export default function StudentGroupChat({
                             : ""
                     }${splitAuthor(last.body)[1].trim() || (last.media_type ? `[${last.media_type}]` : "")}`
                   : g.participants
-                    ? `${g.participants} anggota`
-                    : "grup WhatsApp";
+                    ? `${g.participants} ${t("anggota")}`
+                    : t("grup WhatsApp");
                 const stampAt = last?.at || g.last_seen_at;
                 return (
                   <button
@@ -1356,7 +1354,7 @@ export default function StudentGroupChat({
                 <button
                   onClick={() => setActive(null)}
                   className="rounded-lg p-1.5 text-gray-500 hover:bg-gray-100 lg:hidden"
-                  aria-label="Kembali ke daftar grup"
+                  aria-label={t("Kembali ke daftar grup")}
                 >
                   <ChevronLeft className="h-5 w-5" />
                 </button>
@@ -1370,7 +1368,7 @@ export default function StudentGroupChat({
                 <button
                   onClick={() => void loadMsgs(active.jid, active.sender)}
                   className="rounded-lg p-1.5 text-gray-500 hover:bg-gray-100"
-                  aria-label="Muat ulang"
+                  aria-label={t("Muat ulang")}
                 >
                   <RotateCw className={`h-4 w-4 ${loadingMsgs ? "animate-spin" : ""}`} />
                 </button>
@@ -1388,10 +1386,10 @@ export default function StudentGroupChat({
                 className="min-h-0 flex-1 space-y-1.5 overflow-y-auto bg-gray-50 px-3 py-4"
               >
                 {loadingMsgs && msgs.length === 0 ? (
-                  <p className="py-10 text-center text-sm text-gray-500">Memuat percakapan…</p>
+                  <p className="py-10 text-center text-sm text-gray-500">{t("Memuat percakapan…")}</p>
                 ) : dayGroups.length === 0 ? (
                   <p className="py-10 text-center text-sm text-gray-500">
-                    Belum ada pesan di grup ini. Sapa pengajarmu duluan boleh, kok.
+                    {t("Belum ada pesan di grup ini. Sapa pengajarmu duluan boleh, kok.")}
                   </p>
                 ) : (
                   dayGroups.map((g) => (
@@ -1433,15 +1431,15 @@ export default function StudentGroupChat({
                       <div className="mt-1 flex items-center gap-2 text-[10px] opacity-90">
                         <span>
                           {p.status === "failed"
-                            ? `Gagal terkirim${p.error ? `: ${p.error}` : ""}`
-                            : "Mengirim…"}
+                            ? `${t("Gagal terkirim")}${p.error ? `: ${p.error}` : ""}`
+                            : t("Mengirim…")}
                         </span>
                         {p.status === "failed" && (
                           <button
                             onClick={() => void cancelQueued(p)}
                             className="font-semibold underline underline-offset-2"
                           >
-                            Buang
+                            {t("Buang")}
                           </button>
                         )}
                       </div>
@@ -1457,7 +1455,7 @@ export default function StudentGroupChat({
                 <button
                   type="button"
                   onClick={() => scrollToBottom(true)}
-                  aria-label="Turun ke pesan terbaru"
+                  aria-label={t("Turun ke pesan terbaru")}
                   className={`absolute bottom-2 right-3 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-600 shadow-lg transition-all hover:bg-gray-50 ${
                     showScrollDown ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-2 opacity-0"
                   }`}
@@ -1471,7 +1469,7 @@ export default function StudentGroupChat({
                   tampilan siswa, tapi tidak ikut bicara di grup atas namanya. */}
               {preview ? (
                 <div className="border-t border-gray-200 px-4 py-4 text-center text-[11.5px] font-medium text-gray-400">
-                  Mode pratinjau — kotak tulis dimatikan.
+                  {t("Mode pratinjau — kotak tulis dimatikan.")}
                 </div>
               ) : (
               <div className="border-t border-gray-200">
@@ -1487,7 +1485,7 @@ export default function StudentGroupChat({
                     <button
                       onClick={() => setReplyTo(null)}
                       className="rounded p-0.5 text-gray-400 hover:bg-gray-100"
-                      aria-label="Batal membalas"
+                      aria-label={t("Batal membalas")}
                     >
                       <X className="h-3.5 w-3.5" />
                     </button>
@@ -1515,7 +1513,7 @@ export default function StudentGroupChat({
                     className={`h-[42px] shrink-0 rounded-xl px-2.5 transition-colors ${
                       emojiOpen ? "bg-teal-50 text-teal-700" : "text-gray-400 hover:bg-gray-100"
                     }`}
-                    aria-label="Emoji"
+                    aria-label={t("Emoji")}
                   >
                     <Smile className="h-5 w-5" />
                   </button>
@@ -1542,7 +1540,7 @@ export default function StudentGroupChat({
                     onClick={() => void send()}
                     disabled={!draft.trim() || sending}
                     className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full bg-[#16796E] text-white transition-opacity hover:opacity-90 disabled:opacity-40"
-                    aria-label="Kirim"
+                    aria-label={t("Kirim")}
                   >
                     {sending ? (
                       <Loader2 className="h-4 w-4 animate-spin" />
@@ -1605,6 +1603,7 @@ function Bubble({
   /* Bar reaksi hanya muncul saat kursor benar-benar di atas BUBBLE-nya. Sengaja
      state sendiri, bukan group-hover: baris pesan selebar transkrip, jadi
      group-hover bikin bar meletup walau kursor cuma lewat ruang kosong. */
+  const t = useT(); // [ui-lang-switcher-v1]
   const [hovered, setHovered] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -1636,7 +1635,7 @@ function Bubble({
     return (
       <div className={`flex ${mine ? "justify-end" : "justify-start"}`}>
         <div className="max-w-[80%] rounded-2xl bg-gray-100 px-3 py-2 text-xs italic text-gray-500">
-          Pesan ini dihapus
+          {t("Pesan ini dihapus")}
         </div>
       </div>
     );
@@ -1649,7 +1648,7 @@ function Bubble({
           <button
             onClick={onReply}
             className="rounded-lg p-1.5 text-gray-400 transition-colors hover:bg-gray-100"
-            title="Balas"
+            title={t("Balas")}
           >
             <Reply className="h-3.5 w-3.5" />
           </button>
@@ -1761,7 +1760,7 @@ function Bubble({
           <button
             onClick={onReply}
             className="rounded-lg p-1.5 text-gray-400 transition-colors hover:bg-gray-100"
-            title="Balas"
+            title={t("Balas")}
           >
             <Reply className="h-3.5 w-3.5" />
           </button>
@@ -1782,10 +1781,11 @@ function MediaView({
   mime: string | null;
   onOpen: () => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const kind = type || "";
   if (kind === "image" || kind === "sticker") {
     return (
-      <button onClick={onOpen} className="mb-1 block" title="Buka gambar">
+      <button onClick={onOpen} className="mb-1 block" title={t("Buka gambar")}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={url} alt="" loading="lazy" className="max-h-80 rounded-xl object-contain" />
       </button>
@@ -1793,7 +1793,7 @@ function MediaView({
   }
   if (kind === "video" || kind === "gif") {
     return (
-      <button onClick={onOpen} className="mb-1 block" title="Putar video">
+      <button onClick={onOpen} className="mb-1 block" title={t("Putar video")}>
         <video src={url} className="max-h-80 rounded-xl" />
       </button>
     );
@@ -1808,7 +1808,7 @@ function MediaView({
       rel="noreferrer"
       className="mb-1 inline-flex items-center gap-1.5 underline underline-offset-2"
     >
-      <FileText className="h-3.5 w-3.5" /> Buka lampiran{mime ? ` (${mime})` : ""}
+      <FileText className="h-3.5 w-3.5" /> {t("Buka lampiran")}{mime ? ` (${mime})` : ""}
     </a>
   );
 }
@@ -1829,6 +1829,7 @@ function Lightbox({
   onStep: (dir: 1 | -1) => void;
   onClose: () => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   return (
     <div
       onClick={onClose}
@@ -1837,7 +1838,7 @@ function Lightbox({
       <button
         onClick={onClose}
         className="absolute right-4 top-4 rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
-        aria-label="Tutup"
+        aria-label={t("Tutup")}
       >
         <X className="h-5 w-5" />
       </button>
@@ -1853,7 +1854,7 @@ function Lightbox({
             }}
             disabled={index <= 0}
             className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 disabled:opacity-30 disabled:hover:bg-white/10"
-            aria-label="Foto sebelumnya"
+            aria-label={t("Foto sebelumnya")}
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
@@ -1864,7 +1865,7 @@ function Lightbox({
             }}
             disabled={index >= total - 1}
             className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 disabled:opacity-30 disabled:hover:bg-white/10"
-            aria-label="Foto berikutnya"
+            aria-label={t("Foto berikutnya")}
           >
             <ChevronRight className="h-6 w-6" />
           </button>
@@ -1899,7 +1900,7 @@ function Lightbox({
         onClick={(e) => e.stopPropagation()}
         className="absolute bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white hover:bg-white/20"
       >
-        Buka di tab baru
+        {t("Buka di tab baru")}
       </a>
     </div>
   );
