@@ -4256,12 +4256,18 @@ export default function AkunPage() {
                                         bawahnya — kartunya jadi tinggi tapi fotonya nyaris tak kelihatan.
                                         Gradient hitam di bawah wajib: tanpa itu teks putih hilang di atas
                                         sampul yang terang (mis. langit siang). */}
-                                    <div className={`relative flex h-44 items-end overflow-hidden rounded-2xl sm:h-48 ${bg} ${selesai ? "grayscale" : ""}`}>
+                                    {/* [kartu-hover-artefak-v1] Dulu sampul warna (CARD_BG) ikut kepasang di
+                                        belakang foto. Waktu zoom hover balik ke ukuran semula,
+                                        pembulatan subpiksel menyisakan garis warna (merah/oranye)
+                                        di tepi gambar. Sekarang: warna cuma dipakai kalau tak ada
+                                        foto, wadahnya dilapis sendiri (isolate + transform-gpu)
+                                        supaya repaint bersih. */}
+                                    <div className={`relative isolate flex h-44 items-end overflow-hidden rounded-2xl transform-gpu [backface-visibility:hidden] sm:h-48 ${photo ? "bg-[#0E1526]" : bg} ${selesai ? "grayscale" : ""}`}>
                                       {photo ? (
-                                        <img src={photo} alt={reg.language} className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                                        <img src={photo} alt={reg.language} className="absolute inset-0 h-full w-full object-cover transform-gpu scale-[1.02] transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
                                       ) : (
                                         <>
-                                          <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[70%] text-[52px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{langGlyph(reg.language)}</span>
+                                          <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[70%] text-[52px] font-extrabold tracking-tight text-white/95 transform-gpu scale-[1.02] transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]">{langGlyph(reg.language)}</span>
                                           <div className="absolute -bottom-5 -right-3 h-20 w-20 rounded-full bg-white/10" />
                                         </>
                                       )}
@@ -4381,14 +4387,14 @@ export default function AkunPage() {
                                 }}
                                 className="group rounded-3xl bg-white p-3 text-left ring-1 ring-slate-200 transition-transform hover:-translate-y-1"
                               >
-                                <div className="relative flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-[#16796E]">
+                                <div className="relative isolate flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-[#16796E] transform-gpu [backface-visibility:hidden]">
                                   {mandiri.photo ? (
                                     <>
-                                      <img src={mandiri.photo} alt={mandiri.label} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                                      <img src={mandiri.photo} alt={mandiri.label} className="h-full w-full object-cover transform-gpu scale-[1.02] transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
                                       <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
                                     </>
                                   ) : (
-                                    <span className="text-[56px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{mandiri.native.slice(0, 2)}</span>
+                                    <span className="text-[56px] font-extrabold tracking-tight text-white/95 transform-gpu scale-[1.02] transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]">{mandiri.native.slice(0, 2)}</span>
                                   )}
                                   <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-[#16796E]">
                                     <GraduationCap className="h-3 w-3" strokeWidth={2.5} /> Belajar Mandiri
@@ -4500,15 +4506,15 @@ export default function AkunPage() {
                                 onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setPendingModalReg(reg); } }}
                                 className="group cursor-pointer rounded-3xl bg-white p-3 text-left ring-1 ring-amber-200 transition-transform hover:-translate-y-1"
                               >
-                                <div className="relative flex h-32 items-center justify-center overflow-hidden rounded-2xl bg-amber-400">
+                                <div className="relative isolate flex h-32 items-center justify-center overflow-hidden rounded-2xl bg-amber-400 transform-gpu [backface-visibility:hidden]">
                                   {photo ? (
                                     <>
-                                      <img src={photo} alt={reg.language} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                                      <img src={photo} alt={reg.language} className="h-full w-full object-cover transform-gpu scale-[1.02] transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]" />
                                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                                     </>
                                   ) : (
                                     <>
-                                      <span className="text-[52px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{langGlyph(reg.language)}</span>
+                                      <span className="text-[52px] font-extrabold tracking-tight text-white/95 transform-gpu scale-[1.02] transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]">{langGlyph(reg.language)}</span>
                                       <div className="absolute -bottom-6 -right-4 h-24 w-24 rounded-full bg-white/10" />
                                     </>
                                   )}
