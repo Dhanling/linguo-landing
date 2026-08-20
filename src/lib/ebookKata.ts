@@ -6,18 +6,17 @@
  * balon kata Watch and Learn supaya siswa yang pindah antar produk tidak perlu
  * belajar dua kebiasaan.
  *
- * Jalurnya SAMA dengan Watch and Learn: edge function `word-info` di project
- * Supabase yang sama, anon key, mode "meaning". Tidak ada rute, kredensial,
- * maupun tagihan baru. Sengaja TIDAK lewat @/lib/immersionLearn: modul itu 150
- * KB berisi transkrip, deck, & langganan — semuanya ikut terbawa ke bundel
- * reader hanya demi satu pemanggilan.
+ * [ebook-kata-deepseek-v1] Jalurnya lewat /api/ebook-kata — BUKAN lagi edge
+ * function `word-info` milik Watch and Learn. Kuota fungsi itu habis (20 Agu
+ * 2026) sehingga baris arti tak pernah terisi, dan rute sendiri membuat kita
+ * bisa memakai penyedia termurah + cache bersama; lihat catatan di rutenya.
+ *
+ * Sengaja TIDAK lewat @/lib/immersionLearn: modul itu 150 KB berisi transkrip,
+ * deck, & langganan — semuanya ikut terbawa ke bundel reader hanya demi satu
+ * pemanggilan.
  */
 
 import { langEnglishName } from "@/lib/quiz/language";
-
-const SUPABASE_URL =
-  process.env.NEXT_PUBLIC_SUPABASE_URL || "https://jbtgciepdmqxxcjflrxz.supabase.co";
-const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 
 export interface ArtiKata {
   /** Arti singkat dalam bahasa Indonesia. */
@@ -66,37 +65,23 @@ export async function artiKataEbook(
   const ada = memori.get(k);
   if (ada) return ada;
   if (mati) return "mati";
-  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return "mati";
 
   try {
-    const res = await fetch(`${SUPABASE_URL}/functions/v1/word-info`, {
+    const res = await fetch("/api/ebook-kata", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        apikey: SUPABASE_ANON_KEY,
-        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         word: kata,
         // Kalimat kosong pun tak apa — modelnya cuma kehilangan konteks.
         sentence: kalimat || kata,
-        mode: "meaning",
         language: langEnglishName(kode),
-        explanationLanguage: "Indonesian",
-        nonLatin: false,
       }),
     });
-    const data = (await res.json().catch(() => ({}))) as { text?: string; reason?: string };
-    // Kuota AI habis bukan galat sesaat — jangan diulang tiap ketukan.
-    if (res.status === 429 || data?.reason === "quota") { mati = true; return "mati"; }
+    const p = (await res.json().catch(() => ({}))) as Record<string, unknown>;
+    // 502 dari rute = SEMUA penyedia gagal (biasanya kuota). Bukan galat sesaat
+    // per kata — matikan sampai sesi berakhir, jangan diulang tiap ketukan.
+    if (res.status === 429 || res.status === 502) { mati = true; return "mati"; }
     if (!res.ok) return null;
-    const raw = String(data?.text || "");
-    // Modelnya kadang membungkus JSON-nya dengan pagar ```json — ambil kurung
-    // kurawal terluar, jangan JSON.parse mentah-mentah.
-    const a = raw.indexOf("{");
-    const b = raw.lastIndexOf("}");
-    if (a === -1 || b <= a) return null;
-    const p = JSON.parse(raw.slice(a, b + 1)) as Record<string, unknown>;
     const arti = typeof p.meaning === "string" ? p.meaning.trim() : "";
     const kelas = typeof p.type === "string" ? p.type.trim() : "";
     const dasar = typeof p.base === "string" ? p.base.trim() : "";
