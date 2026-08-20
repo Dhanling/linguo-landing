@@ -25,7 +25,25 @@ const SELECT_COLS = [
   "hobby", "prior_experience",
   // [pendataan-domisili-referral-v1] migrasi pendataan_domisili_referral_20260813
   "province", "city", "referral_source",
+  // [pendataan-alamat-offline-v1] migrasi 20260820120000
+  "address", "district", "postal_code",
 ].join(",");
+
+// Mode kelas dibaca hidup-hidup dari registrasi/tagihannya, bukan disalin ke
+// baris form: admin kadang mengubah online→offline setelah link dibagikan, dan
+// salinan yang basi berarti siswa offline tidak pernah ditanyai alamatnya.
+const MODE_EMBED = "registrations(class_mode),manual_invoices(class_mode)";
+
+type ModeRow = {
+  registrations?: { class_mode?: string | null } | null;
+  manual_invoices?: { class_mode?: string | null } | null;
+};
+
+function classModeOf(row: ModeRow): "online" | "offline" {
+  const mode = row?.registrations?.class_mode || row?.manual_invoices?.class_mode || "";
+  // Baris lama tanpa class_mode dianggap ONLINE — dulu semua kelas memang online.
+  return mode.toLowerCase() === "offline" ? "offline" : "online";
+}
 
 function sb(path: string, init: RequestInit = {}) {
   return fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
@@ -73,7 +91,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Server belum dikonfigurasi" }, { status: 500 });
   }
 
-  const res = await sb(`student_intake_forms?token=eq.${token}&select=${SELECT_COLS}`);
+  const res = await sb(`student_intake_forms?token=eq.${token}&select=${SELECT_COLS},${MODE_EMBED}`);
   if (!res.ok) {
     console.error("Pendataan GET error:", await res.text());
     return NextResponse.json({ error: "Gagal membaca form" }, { status: 500 });
@@ -82,7 +100,10 @@ export async function GET(req: NextRequest) {
   if (!Array.isArray(rows) || rows.length === 0) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
-  return NextResponse.json(rows[0]);
+  // Yang dikirim ke formulir cuma satu kolom datar `class_mode`; sisa hasil
+  // embed tidak perlu bocor ke halaman publik.
+  const { registrations, manual_invoices, ...form } = rows[0] as ModeRow & Record<string, unknown>;
+  return NextResponse.json({ ...form, class_mode: classModeOf(rows[0]) });
 }
 
 export async function POST(req: NextRequest) {
@@ -101,6 +122,10 @@ export async function POST(req: NextRequest) {
     const institution = clean(body.institution, 160);
     const province = clean(body.province, 80);
     const city = clean(body.city, 120);
+    // [pendataan-alamat-offline-v1] Hanya dipakai kalau kelasnya offline.
+    const address = clean(body.address, 400);
+    const district = clean(body.district, 120);
+    const postalCode = clean(body.postal_code, 10);
     const referralSource = clean(body.referral_source, 200);
     const hobby = clean(body.hobby, 300);
     const priorExperience = clean(body.prior_experience, 300);
@@ -125,6 +150,31 @@ export async function POST(req: NextRequest) {
     if (!learningGoal) return NextResponse.json({ error: "Tujuan belajar wajib diisi" }, { status: 400 });
     if (!schedule) return NextResponse.json({ error: "Pilih minimal 1 blok waktu yang kamu bisa" }, { status: 400 });
 
+    // [pendataan-alamat-offline-v1] Kelas offline butuh alamat yang bisa
+    // didatangi. Modenya ditanyakan ke database, bukan dipercaya dari body:
+    // yang menembak endpoint ini langsung tidak boleh melewati pertanyaannya
+    // cuma dengan mengaku kelasnya online.
+    const modeRes = await sb(
+      `student_intake_forms?token=eq.${token}&select=id,${MODE_EMBED}`,
+    );
+    if (!modeRes.ok) {
+      console.error("Pendataan mode error:", await modeRes.text());
+      return NextResponse.json({ error: "Gagal membaca form" }, { status: 500 });
+    }
+    const modeRows = await modeRes.json();
+    if (!Array.isArray(modeRows) || modeRows.length === 0) {
+      return NextResponse.json({ error: "Link tidak sah" }, { status: 404 });
+    }
+    const isOffline = classModeOf(modeRows[0]) === "offline";
+    if (isOffline) {
+      if (!district) return NextResponse.json({ error: "Kecamatan wajib diisi untuk kelas offline" }, { status: 400 });
+      if (!address) return NextResponse.json({ error: "Alamat lengkap wajib diisi untuk kelas offline" }, { status: 400 });
+      if (address.length < 10) return NextResponse.json({ error: "Alamat lengkap kurang detail — tulis nama jalan, nomor rumah, dan patokannya" }, { status: 400 });
+      if (postalCode && !/^\d{5}$/.test(postalCode)) {
+        return NextResponse.json({ error: "Kode pos harus 5 angka" }, { status: 400 });
+      }
+    }
+
     const payload = {
       full_name: fullName,
       nickname,
@@ -143,6 +193,11 @@ export async function POST(req: NextRequest) {
       province,
       city,
       referral_source: referralSource,
+      // Alamat detail cuma disimpan untuk kelas offline; kelas online tidak
+      // menampilkan kolomnya, jadi apa pun yang terkirim di sana diabaikan.
+      address: isOffline ? address : null,
+      district: isOffline ? district : null,
+      postal_code: isOffline ? postalCode : null,
       hobby,
       prior_experience: priorExperience,
       learning_goal: learningGoal,

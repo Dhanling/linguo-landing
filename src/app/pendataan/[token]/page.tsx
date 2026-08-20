@@ -47,6 +47,12 @@ type IntakeForm = {
   province: string | null;
   city: string | null;
   referral_source: string | null;
+  // [pendataan-alamat-offline-v1] Alamat detail — cuma ditanyakan kalau
+  // kelasnya offline. `class_mode` dihitung server dari registrasi/tagihannya.
+  class_mode: "online" | "offline" | null;
+  address: string | null;
+  district: string | null;
+  postal_code: string | null;
 };
 
 const DAYS = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"];
@@ -709,6 +715,9 @@ export default function PendataanPage() {
   const [institution, setInstitution] = useState("");
   const [province, setProvince] = useState("");
   const [city, setCity] = useState("");
+  const [district, setDistrict] = useState("");
+  const [address, setAddress] = useState("");
+  const [postalCode, setPostalCode] = useState("");
   const [referral, setReferral] = useState("");
   const [referralNote, setReferralNote] = useState("");
   const [hobby, setHobby] = useState("");
@@ -735,6 +744,9 @@ export default function PendataanPage() {
         setHobby(d.hobby || "");
         setProvince(d.province || "");
         setCity(d.city || "");
+        setDistrict(d.district || "");
+        setAddress(d.address || "");
+        setPostalCode(d.postal_code || "");
         if (d.referral_source) {
           // Disimpan "<pilihan> — <detail>", sama seperti pengalaman belajar.
           const pick = REFERRALS.find((r) => d.referral_source!.startsWith(r));
@@ -763,6 +775,10 @@ export default function PendataanPage() {
       .catch(() => setNotFound(true))
       .finally(() => setLoading(false));
   }, [token]);
+
+  // [pendataan-alamat-offline-v1] Pengajar datang ke tempat siswa, jadi
+  // kelas offline butuh alamat yang bisa didatangi — bukan cuma kota.
+  const isOffline = form?.class_mode === "offline";
 
   const birthdate = birthYear && birthMonth && birthDay
     ? `${birthYear}-${birthMonth.padStart(2, "0")}-${birthDay.padStart(2, "0")}`
@@ -815,6 +831,12 @@ export default function PendataanPage() {
       if (!birthdate) return "Lengkapi tanggal lahir";
       if (!province) return "Pilih provinsi domisilimu";
       if (!city) return "Pilih kota / kabupaten domisilimu";
+      if (isOffline) {
+        if (!district.trim()) return "Kecamatan wajib diisi untuk kelas offline";
+        if (!address.trim()) return "Alamat lengkap wajib diisi untuk kelas offline";
+        if (address.trim().length < 10) return "Alamat lengkap kurang detail — tulis nama jalan, nomor rumah, dan patokannya";
+        if (postalCode.trim() && !/^\d{5}$/.test(postalCode.trim())) return "Kode pos harus 5 angka";
+      }
       if (!institution.trim()) return "Sekolah / instansi / perusahaan wajib diisi";
       if (!hobby.trim()) return "Hobi & minat wajib diisi";
     }
@@ -883,6 +905,9 @@ export default function PendataanPage() {
           birth_date: birthdate,
           province,
           city,
+          district: isOffline ? district : "",
+          address: isOffline ? address : "",
+          postal_code: isOffline ? postalCode : "",
           referral_source: referralNote.trim() ? `${referral} — ${referralNote.trim()}` : referral,
           institution,
           hobby,
@@ -1078,10 +1103,49 @@ export default function PendataanPage() {
                         disabled={!province} onPilih={setCity} />
                     </Field>
                   </div>
-                  <p className="-mt-2 text-sm leading-relaxed text-slate-600">
-                    Domisili dipakai untuk menyesuaikan zona waktu kelas dan mencarikan
-                    pengajar offline kalau kamu butuh.
-                  </p>
+                  {!isOffline && (
+                    <p className="-mt-2 text-sm leading-relaxed text-slate-600">
+                      Domisili dipakai untuk menyesuaikan zona waktu kelas dan mencarikan
+                      pengajar offline kalau kamu butuh.
+                    </p>
+                  )}
+
+                  {/* [pendataan-alamat-offline-v1] Kelas offline = pengajar
+                      datang ke tempat siswa, jadi kota/kabupaten saja tidak
+                      cukup. Kolomnya sengaja cuma muncul untuk kelas offline:
+                      siswa online tidak perlu menyerahkan alamat rumahnya. */}
+                  {isOffline && (
+                    <div className="space-y-4 rounded-2xl border border-dashed p-4 sm:p-5"
+                      style={{ borderColor: `${TEAL}66`, backgroundColor: `${TEAL}0D` }}>
+                      <p className="flex items-center gap-1.5 text-base font-bold text-slate-900">
+                        <MapPin className="h-4 w-4" style={{ color: TEAL }} />
+                        Alamat kelas offline
+                      </p>
+                      <p className="-mt-2 text-sm leading-relaxed text-slate-600">
+                        Kelasmu tatap muka, jadi pengajar datang ke alamat ini. Tulis
+                        selengkap mungkin supaya tidak ada sesi yang molor karena tersesat.
+                      </p>
+
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        <Field label="Kecamatan" icon={MapPin} required>
+                          <input type="text" value={district} onChange={(e) => setDistrict(e.target.value)}
+                            placeholder="contoh: Coblong" className={inputClass} />
+                        </Field>
+                        <Field label="Kode pos" icon={MapPin} hint="Boleh dikosongkan kalau tidak hafal.">
+                          <input type="text" inputMode="numeric" maxLength={5} value={postalCode}
+                            onChange={(e) => setPostalCode(e.target.value.replace(/\D/g, ""))}
+                            placeholder="contoh: 40132" className={inputClass} />
+                        </Field>
+                      </div>
+
+                      <Field label="Alamat lengkap" icon={MapPin} required
+                        hint="Nama jalan, nomor rumah, RT/RW, blok/unit, dan patokan terdekat.">
+                        <textarea value={address} onChange={(e) => setAddress(e.target.value)} rows={3}
+                          placeholder="contoh: Jl. Dago No. 12, RT 03/RW 05, Perum Griya Asri Blok C2, seberang Indomaret"
+                          className={`${inputClass} resize-none`} />
+                      </Field>
+                    </div>
+                  )}
 
                   <Field label="Hobi & minat" icon={Heart} required
                     hint="Pengajar memakainya sebagai bahan obrolan dan contoh materi di kelas.">
