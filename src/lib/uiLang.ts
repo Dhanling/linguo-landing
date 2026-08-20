@@ -706,6 +706,7 @@ const EN: Record<string, string> = {
   "Halaman verifikasi publik dengan QR code sedang disiapkan. Untuk konfirmasi keaslian, hubungi tim Linguo dengan menyebutkan No. Sertifikat di atas.": "A public verification page with a QR code is on the way. To confirm authenticity, contact the Linguo team quoting the certificate number above.",
   "Jam Belajar": "Study Hours",
   "Kamu di sini": "You are here",
+  "Lihat isi bagian ini": "Show what is inside",
   "Kamu perlu masuk dulu untuk mengerjakan simulasi.": "You need to sign in first to take a simulation.",
   "Lanjut Belajar": "Keep Learning",
   "Lanjutkan": "Continue",

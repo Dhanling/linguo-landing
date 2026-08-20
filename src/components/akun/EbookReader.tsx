@@ -35,6 +35,7 @@ import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import {
   ChevronLeft, ChevronRight, Loader2, Minus, Plus, X, BookOpen, AlertCircle,
   Columns2, Square, Maximize2, Minimize2, Volume2, List, Play, CornerDownLeft, Scan,
+  ChevronDown,
 } from "lucide-react";
 // [ebook-tts-ketuk-kata-v1]
 import {
@@ -236,7 +237,7 @@ type ItemTeks = { str: string; x: number; y: number; w: number; h: number };
    fontnya berubah — di baris tabel "casa (KA-sa) = rumah", "casa" yang miring
    adalah potongan tersendiri. Tombol "Putar kalimat" yang cuma membunyikan satu
    potongan jadi terdengar seperti mengulang kata yang barusan diketuk. */
-type Baris = { teks: string; y: number; h: number; segmen: Segmen[] };
+type Baris = { teks: string; y: number; h: number; segmen: Segmen[]; fam?: string };
 
 /* Satu "sel" dalam sebuah baris. Baris tabel modul memuat tiga kolom sekaligus
    ("casa | KA-sa | rumah") dan pdf.js melaporkannya sebagai satu baris; tanpa
@@ -246,8 +247,14 @@ type Baris = { teks: string; y: number; h: number; segmen: Segmen[] };
 type Segmen = { teks: string; x0: number; x1: number };
 type HalTeks = { items: ItemTeks[]; baris: Baris[] };
 
+/* [ebook-daftar-isi-subunit-v1] Satu bagian DI DALAM bab — "Kosakata unit ini",
+   "Catatan", "Latihan", judul kotak tata bahasa. Dipisah dari Bab karena
+   pertanyaannya beda: bab menjawab "unit ini di halaman berapa", sub-bagian
+   menjawab "kosakata unit 6 ada di sebelah mana". */
+type SubBab = { hal: number; judul: string };
+
 /** Satu entri daftar isi. */
-type Bab = { hal: number; judul: string; label?: string; utama: boolean };
+type Bab = { hal: number; judul: string; label?: string; utama: boolean; anak: SubBab[] };
 
 /* [ebook-daftar-isi-timeline-v1] Entri daftar isi + rentang halamannya. `sampai`
    dihitung dari awal bab BERIKUTNYA, bukan dibaca dari PDF: modulnya tak
@@ -353,6 +360,10 @@ export default function EbookReader({
 
   /* [ebook-daftar-isi-v1] Daftar isi + lompat halaman. */
   const [daftarBuka, setDaftarBuka] = useState(false);
+  /* Bab mana yang isinya sedang dibentangkan. `undefined` = panel baru dibuka
+     dan belum diputuskan — dipakai supaya bab yang sedang dibaca membentang
+     sendiri sekali saja; kalau siswa menutupnya, ia tetap tertutup. */
+  const [babBuka, setBabBuka] = useState<number | null | undefined>(undefined);
   const [bab, setBab] = useState<Bab[] | null>(null);
   const [memindai, setMemindai] = useState(false);
   /** Halaman terakhir yang sedang dipindai — dipakai bilah progres "Menyusun daftar isi". */
@@ -1033,7 +1044,13 @@ export default function EbookReader({
 
      Aliran yang sama dibaca manual lewat getReader() — API yang ada di semua
      browser. ⚠️ Jangan kembalikan ke getTextContent() "supaya ringkas". */
-  const potonganTeks = useCallback(async (hal: any): Promise<any[]> => {
+  /* `gaya` dibawa serta karena daftar isi memakainya: pdf.js melaporkan
+     keluarga huruf tiap potongan ("serif" / "sans-serif"), dan di modul Linguo
+     SEMUA judul dicetak sans-serif di atas badan teks serif — itu penanda
+     paling murah untuk mengenali judul kotak tata bahasa yang ukurannya sama
+     persis dengan badan teks. */
+  const potonganTeks = useCallback(async (hal: any): Promise<{ potongan: any[]; gaya: Record<string, any> }> => {
+    const gaya: Record<string, any> = {};
     if (typeof hal?.streamTextContent === "function") {
       const pembaca = hal.streamTextContent().getReader();
       const kumpul: any[] = [];
@@ -1041,11 +1058,13 @@ export default function EbookReader({
         const { value, done } = await pembaca.read();
         if (done) break;
         if (value?.items?.length) kumpul.push(...value.items);
+        if (value?.styles) Object.assign(gaya, value.styles);
       }
-      return kumpul;
+      return { potongan: kumpul, gaya };
     }
     // pdf.js versi lama tanpa streamTextContent — jalur lama masih benar di sana.
-    return (await hal.getTextContent()).items ?? [];
+    const isi = await hal.getTextContent();
+    return { potongan: isi.items ?? [], gaya: isi.styles ?? {} };
   }, []);
 
   const ambilTeks = useCallback(async (n: number): Promise<HalTeks> => {
@@ -1059,20 +1078,21 @@ export default function EbookReader({
       // Skala 1: koordinatnya jadi satuan halaman, jadi tetap sahih waktu siswa
       // mencubit — tinggal dikalikan skala yang sedang berlaku.
       const vp = hal.getViewport({ scale: 1 });
-      const potongan = await potonganTeks(hal);
+      const { potongan, gaya } = await potonganTeks(hal);
       // Potongan yang isinya HANYA spasi ikut dikumpulkan (kosong: true). Bukan
       // sampah: di PDF cetakan Chromium, jarak antar kolom tabel justru muncul
       // sebagai satu potongan spasi lebar, dan spasi antar kata di ujung
       // pergantian font juga hidup di potongan tersendiri. Dulu semuanya
       // dibuang, jadi "casa (KA-sa)" terbaca "casa(KA-sa)".
-      const semua: (ItemTeks & { kosong: boolean })[] = [];
+      const semua: (ItemTeks & { kosong: boolean; fam: string })[] = [];
       for (const it of potongan) {
         const str = typeof it.str === "string" ? it.str : "";
         if (!str || !it.transform) continue;
         const tx = pdfjs.Util.transform(vp.transform, it.transform);
         const h = Math.hypot(tx[2], tx[3]);
         if (!h) continue;
-        semua.push({ str, x: tx[4], y: tx[5] - h, w: it.width || 0, h, kosong: !str.trim() });
+        const fam = String(gaya[it.fontName]?.fontFamily ?? "").toLowerCase();
+        semua.push({ str, x: tx[4], y: tx[5] - h, w: it.width || 0, h, kosong: !str.trim(), fam });
       }
       // Ketukan diadu hanya dengan potongan yang benar-benar berisi huruf.
       const items: ItemTeks[] = semua
@@ -1112,11 +1132,16 @@ export default function EbookReader({
         const isiBaris = rapi.filter((i) => !i.kosong);
         const teks = segmen.map((g) => g.teks).join(" ").trim();
         if (teks && isiBaris.length) {
+          // Keluarga huruf baris cuma diisi kalau SELURUH barisnya seragam:
+          // kata tebal/miring di tengah paragraf tak boleh menyulap baris biasa
+          // jadi judul.
+          const keluarga = new Set(isiBaris.map((i) => i.fam).filter(Boolean));
           baris.push({
             teks,
             y: Math.min(...isiBaris.map((i) => i.y)),
             h: Math.max(...isiBaris.map((i) => i.h)),
             segmen,
+            fam: keluarga.size === 1 ? [...keluarga][0] : undefined,
           });
         }
         kump = [];
@@ -1198,22 +1223,66 @@ export default function EbookReader({
         // cukup tinggi untuk melewatkan sub-judul h3 (11pt) & kepala tabel.
         const ambang = Math.max(tengah * 1.3, 12.5);
         // baris sudah terurut dari atas ke bawah — yang pertama lolos = judulnya.
-        const judul = baris.find((b) => b.h >= ambang);
-        if (!judul) continue;
-        // Label "Unit 3" dicetak kecil PERSIS di atas judulnya.
-        const label = baris.find(
-          (b) => b.y < judul.y && judul.y - b.y < judul.h * 3.5 && LABEL_BAB.test(b.teks.replace(/\s+/g, ""))
-        );
-        const teks = judul.teks.replace(/\s{2,}/g, " ").trim().slice(0, 90);
-        if (!teks) continue;
-        // Judul yang sama di halaman berturut-turut (unit yang tumpah ke halaman
-        // berikutnya) cuma ditulis sekali.
-        if (hasil.length && hasil[hasil.length - 1].judul === teks) continue;
-        hasil.push({
-          hal: n,
-          judul: teks,
-          label: label ? rapikanLabel(label.teks).slice(0, 24) : undefined,
-          utama: !!label,
+        const idxJudul = baris.findIndex((b) => b.h >= ambang);
+        const judul = idxJudul >= 0 ? baris[idxJudul] : undefined;
+
+        /* Keluarga huruf badan teks halaman ini, ditimbang per huruf: yang
+           menang pasti serif (badan teks), jadi baris sans-serif yang tersisa
+           adalah judul — lihat catatan pada potonganTeks. */
+        const hitungFam = new Map<string, number>();
+        for (const b of baris) if (b.fam) hitungFam.set(b.fam, (hitungFam.get(b.fam) ?? 0) + b.teks.length);
+        let famBadan = "";
+        let terbanyak = 0;
+        hitungFam.forEach((v, k) => { if (v > terbanyak) { terbanyak = v; famBadan = k; } });
+
+        if (judul) {
+          // Label "Unit 3" dicetak kecil PERSIS di atas judulnya.
+          const label = baris.find(
+            (b) => b.y < judul.y && judul.y - b.y < judul.h * 3.5 && LABEL_BAB.test(b.teks.replace(/\s+/g, ""))
+          );
+          const teks = judul.teks.replace(/\s{2,}/g, " ").trim().slice(0, 90);
+          // Judul yang sama di halaman berturut-turut (unit yang tumpah ke
+          // halaman berikutnya) cuma ditulis sekali.
+          if (teks && !(hasil.length && hasil[hasil.length - 1].judul === teks)) {
+            hasil.push({
+              hal: n,
+              judul: teks,
+              label: label ? rapikanLabel(label.teks).slice(0, 24) : undefined,
+              utama: !!label,
+              anak: [],
+            });
+          }
+        }
+
+        /* [ebook-daftar-isi-subunit-v1] Sub-bagian dikumpulkan di SETIAP
+           halaman, juga halaman yang tak punya judul unit: "Kosakata unit ini"
+           hampir selalu tumpah ke halaman kedua sebuah unit, dan di sana
+           induknya adalah unit yang barusan dicatat. */
+        const induk = hasil[hasil.length - 1];
+        if (!induk) continue;
+        baris.forEach((b, i) => {
+          // Kepala unit (judul asing yang miring + kalimat tujuan) duduk persis
+          // di bawah judulnya dan bukan bagian isi — dilewati lewat urutan baris
+          // sekaligus jaraknya, supaya judul unit yang terpaksa dua baris tak
+          // menyeret sub-judul palsu ikut masuk.
+          if (judul && (i <= idxJudul + 1 || b.y - judul.y < judul.h * 2.2)) return;
+          // Sekecil badan teks = paragraf; sebesar judul unit = bab, bukan anak.
+          if (b.h < tengah * 0.93 || b.h >= ambang) return;
+          // Kepala tabel dilaporkan sebagai satu baris berisi banyak kolom.
+          if (b.segmen.length > 1) return;
+          const teks = b.teks.replace(/\s{2,}/g, " ").trim();
+          if (teks.length < 2 || teks.length > 70 || !/\p{L}/u.test(teks)) return;
+          // Dua penanda judul bagian di modul Linguo: dicetak KAPITAL SEMUA
+          // (h3 "KOSAKATA UNIT INI"), atau keluarga hurufnya beda dari badan
+          // teks (judul kotak tata bahasa — ukurannya sama persis dengan badan
+          // teks, jadi tinggi saja tak cukup).
+          const kapital = !/\p{Ll}/u.test(teks);
+          const bedaKeluarga = !!b.fam && !!famBadan && b.fam !== famBadan;
+          if (!kapital && !bedaKeluarga) return;
+          // Kalimat tebal di tengah latihan berakhir dengan titik; judul tidak.
+          if (!kapital && /[.,;:!?]$/.test(teks)) return;
+          if (induk.judul === teks || induk.anak[induk.anak.length - 1]?.judul === teks) return;
+          induk.anak.push({ hal: n, judul: teks });
         });
       }
       setBab(hasil);
@@ -1224,6 +1293,7 @@ export default function EbookReader({
 
   const bukaDaftar = useCallback(() => {
     setDaftarBuka(true);
+    setBabBuka(undefined);
     if (!bab) void pindaiDaftar();
   }, [bab, pindaiDaftar]);
 
@@ -1259,6 +1329,22 @@ export default function EbookReader({
     const isi = b.sampai - b.hal + 1;
     return Math.min(100, Math.round(((halTerbaca - b.hal + 1) / isi) * 100));
   }, [garisWaktu, idxAktif, halTerbaca]);
+
+  /** Sub-bagian keberapa di bab aktif yang sedang dibaca (-1 = belum sampai). */
+  const idxAnak = useMemo(() => {
+    const b = garisWaktu[idxAktif];
+    if (!b) return -1;
+    let k = -1;
+    b.anak.forEach((a, i) => { if (a.hal <= halTerbaca) k = i; });
+    return k;
+  }, [garisWaktu, idxAktif, halTerbaca]);
+
+  /* Bab yang sedang dibaca membentang sendiri begitu daftarnya siap — yang
+     dicari siswa saat membuka panel hampir selalu ada di dalam bab itu. */
+  useEffect(() => {
+    if (!daftarBuka || memindai || idxAktif < 0) return;
+    setBabBuka((s) => (s === undefined ? idxAktif : s));
+  }, [daftarBuka, memindai, idxAktif]);
 
   /* Panel dibuka di unit 7 tapi daftarnya mulai dari unit 1 — barisnya digulung
      sendiri supaya "kamu di sini" tak perlu dicari. */
@@ -1848,12 +1934,11 @@ export default function EbookReader({
                 // sedang dibaca; rel di BAWAH cuma kalau sudah dilewati — itu
                 // yang membuat ujung nyalanya berhenti tepat di posisi siswa.
                 const relAtas = lewat || aktif;
+                const buka = babBuka === i && b.anak.length > 0;
                 return (
-                  <button
+                  <div
                     key={`${b.hal}-${b.judul}`}
-                    ref={aktif ? babAktifRef : undefined}
-                    onClick={() => ke(b.hal)}
-                    className={`flex w-full gap-2.5 rounded-lg pr-2 text-left transition ${
+                    className={`flex w-full gap-2.5 rounded-lg pr-2 transition ${
                       aktif ? "bg-[#3ED9C0]/10" : "hover:bg-white/5"
                     }`}
                   >
@@ -1878,9 +1963,16 @@ export default function EbookReader({
                       />
                     </span>
 
-                    <span className="min-w-0 flex-1 py-2">
-                      <span className="flex items-start gap-2">
-                        <span className="min-w-0 flex-1">
+                    <div className="min-w-0 flex-1 py-2">
+                      <div className="flex items-start gap-2">
+                        {/* Ketuk judulnya = lompat KE babnya sekaligus membentangkan
+                            isinya: siswa yang menuju unit 6 hampir selalu lanjut
+                            mencari bagian di dalamnya. */}
+                        <button
+                          ref={aktif ? babAktifRef : undefined}
+                          onClick={() => { ke(b.hal); setBabBuka(i); }}
+                          className="min-w-0 flex-1 text-left"
+                        >
                           {b.label && (
                             <span className="block text-[10px] font-extrabold uppercase tracking-wider text-[#3ED9C0]">
                               {b.label}
@@ -1897,7 +1989,7 @@ export default function EbookReader({
                           >
                             {b.judul}
                           </span>
-                        </span>
+                        </button>
                         {/* Nomor halamannya: rentang, bukan satu angka — "Unit 6
                             itu 3 halaman" jawaban yang lebih berguna. */}
                         <span
@@ -1907,7 +1999,21 @@ export default function EbookReader({
                         >
                           {b.hal === b.sampai ? b.hal : `${b.hal}–${b.sampai}`}
                         </span>
-                      </span>
+                        {b.anak.length > 0 && (
+                          // Tombol tersendiri: membentangkan isi bab TANPA ikut
+                          // pindah halaman — mengintip isi unit lain sambil tetap
+                          // di halaman sekarang.
+                          <button
+                            onClick={() => setBabBuka(buka ? null : i)}
+                            aria-expanded={buka}
+                            aria-label={t("Lihat isi bagian ini")}
+                            title={t("Lihat isi bagian ini")}
+                            className="-mr-1 shrink-0 rounded-md p-1 text-white/35 transition hover:bg-white/10 hover:text-white/70"
+                          >
+                            <ChevronDown className={`h-3.5 w-3.5 transition-transform ${buka ? "rotate-180" : ""}`} />
+                          </button>
+                        )}
+                      </div>
 
                       {aktif && (
                         <span className="mt-1.5 flex items-center gap-2">
@@ -1922,8 +2028,39 @@ export default function EbookReader({
                           </span>
                         </span>
                       )}
-                    </span>
-                  </button>
+
+                      {buka && (
+                        <ul className="mt-1.5 space-y-px border-l border-white/10 pl-2">
+                          {b.anak.map((a, k) => {
+                            const anakAktif = aktif && k === idxAnak;
+                            return (
+                              <li key={`${a.hal}-${a.judul}-${k}`}>
+                                <button
+                                  onClick={() => ke(a.hal)}
+                                  className="flex w-full items-center gap-2 rounded-md px-1.5 py-1 text-left transition hover:bg-white/5"
+                                >
+                                  <span
+                                    className={`min-w-0 flex-1 truncate text-[11.5px] leading-snug ${
+                                      anakAktif ? "font-bold text-[#3ED9C0]" : "font-semibold text-white/55"
+                                    }`}
+                                  >
+                                    {a.judul}
+                                  </span>
+                                  <span
+                                    className={`shrink-0 text-[10px] font-bold tabular-nums ${
+                                      anakAktif ? "text-[#3ED9C0]" : "text-white/30"
+                                    }`}
+                                  >
+                                    {a.hal}
+                                  </span>
+                                </button>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      )}
+                    </div>
+                  </div>
                 );
               })}
             </div>
