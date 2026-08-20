@@ -50,20 +50,40 @@ function cariChrome() {
   return ada;
 }
 
+/* [ebook-sampul-gambar-v1] Sampul bergambar. Modul yang dijual sebaiknya
+   bersampul rancangan desainer, bukan judul di tengah halaman kosong: berkas
+   `cover.(jpg|png|webp)` di folder modul (atau `meta.cover`) langsung dipakai
+   sebagai halaman 1 penuh tanpa marjin. Gambarnya ditanam sebagai data URI —
+   Chromium mencetak dari file:// dan jalur relatif di dalam <img> gampang
+   meleset begitu HTML-nya dipindah ke dist/. */
+const JENIS_GAMBAR = { jpg: "image/jpeg", jpeg: "image/jpeg", png: "image/png", webp: "image/webp" };
+function cariSampul() {
+  const kandidat = meta.cover
+    ? [`${DIR}/${meta.cover}`]
+    : ["cover.jpg", "cover.jpeg", "cover.png", "cover.webp"].map((f) => `${DIR}/${f}`);
+  const ada = kandidat.find((f) => existsSync(f));
+  if (!ada) return null;
+  const jenis = JENIS_GAMBAR[ada.split(".").pop().toLowerCase()];
+  if (!jenis) return null;
+  return `data:${jenis};base64,${readFileSync(ada).toString("base64")}`;
+}
+const sampulGambar = cariSampul();
+
 const esc = (s) => String(s ?? "").replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
 /** *miring* dan **tebal** ala markdown ringan — cukup untuk teks pelajaran. */
 const teks = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\*(.+?)\*/g, "<i>$1</i>");
 
 /* ── potongan halaman ────────────────────────────────────────────────────── */
 
-const sampul = () => `
+const sampul = () => (sampulGambar ? `
+<section class="sampul-gambar"><img src="${sampulGambar}" alt=""></section>` : `
 <section class="sampul">
   <div class="sampul-tanda">${esc(meta.brand ?? "LINGUO")}</div>
   <h1>${esc(meta.title)}</h1>
   <p class="sampul-sub">${esc(meta.subtitle ?? "")}</p>
   <div class="sampul-garis"></div>
   <p class="sampul-kaki">${esc(meta.level ?? "")} &middot; ${units.length} unit &middot; ${esc(meta.edition ?? "")}</p>
-</section>`;
+</section>`);
 
 const halamanTeks = (h) => `
 <section class="hal">
@@ -143,10 +163,17 @@ const html = `<!doctype html><html lang="id"><head><meta charset="utf-8">
 <title>${esc(meta.title)}</title>
 <style>
   @page { size: A4; margin: 18mm 16mm 16mm; }
+  /* Halaman bernama: cuma sampulnya yang dicetak tanpa marjin. */
+  @page sampul { size: A4; margin: 0; }
   * { box-sizing: border-box; }
   body { margin: 0; font-family: "Charter", "Georgia", "Times New Roman", serif;
          font-size: 10.5pt; line-height: 1.55; color: #1B2233; }
   h1, h2, h3, h4, .unit-no, .sampul-tanda, th { font-family: "Helvetica Neue", Arial, sans-serif; }
+
+  .sampul-gambar { page: sampul; page-break-after: always; }
+  /* object-fit: cover — rancangan sampul jarang persis 1:√2, dan gambar yang
+     digencet lebih kentara daripada pinggiran yang terpotong satu-dua mm. */
+  .sampul-gambar img { display: block; width: 210mm; height: 297mm; object-fit: cover; }
 
   .sampul { height: 250mm; display: flex; flex-direction: column; justify-content: center;
             text-align: center; page-break-after: always; }
