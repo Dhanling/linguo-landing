@@ -96,9 +96,15 @@ export default function SesiMendatangCard({
   const visibleNanti = expanded ? berikutnya : berikutnya.slice(0, Math.max(1, limit - hariIni.length));
   const hidden = Math.max(0, berikutnya.length - visibleNanti.length);
 
+  /* [beranda-insights-hook-order-v1] useT() harus di ATAS `if (!upcoming.length)`.
+     Waktu masih di bawahnya, render sebelum jadwal datang (upcoming kosong →
+     return null) menjalankan lebih sedikit hook daripada render sesudahnya →
+     React error #310, dan yang mati bukan cuma kartu ini melainkan seluruh
+     halaman /akun ("This page couldn't load"). */
+  const t = useT(); // [ui-lang-switcher-v1]
+
   if (!upcoming.length) return null;
 
-  const t = useT(); // [ui-lang-switcher-v1]
   const gridCls = layout === "column" ? "grid gap-2.5" : "grid gap-2.5 sm:grid-cols-2";
   const groupLabel = "mb-1.5 mt-3 text-[11px] font-extrabold uppercase tracking-wide text-[#6B7280] first:mt-0";
 

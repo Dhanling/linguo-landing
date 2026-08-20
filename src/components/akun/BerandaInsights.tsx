@@ -117,6 +117,16 @@ export default function BerandaInsights({
   aside?: ReactNode;
 }) {
   const previewQs = previewStudentId ? `&preview=${encodeURIComponent(previewStudentId)}` : "";
+  /* [beranda-insights-hook-order-v1] useT/useUiLang WAJIB di atas sini. Dulu
+     keduanya dipanggil di bawah, sesudah dua `return <>{aside}</>` (regs kosong /
+     data belum datang / semua kotak nihil) — jadi render pertama menjalankan
+     lebih SEDIKIT hook daripada render sesudah data insights masuk. React
+     membalasnya dengan error #310 ("rendered more hooks than during the previous
+     render") yang mematikan SELURUH /akun, bukan cuma blok ini: layar siswa jadi
+     "This page couldn't load". Kelihatannya cuma kena sebagian siswa karena yang
+     rapornya masih kosong tak pernah melewati early-return itu. */
+  const t = useT(); // [ui-lang-switcher-v1]
+  const uiLang = useUiLang();
   const [fetched, setFetched] = useState<{ key: string; data: StudentInsights } | null>(null);
   const [selReg, setSelReg] = useState<string>('');
   const [shareState, setShareState] = useState('');
@@ -214,8 +224,6 @@ export default function BerandaInsights({
     window.setTimeout(() => setShareState(''), 2200);
   };
 
-  const t = useT(); // [ui-lang-switcher-v1]
-  const uiLang = useUiLang();
   const dateLocale = uiLang === 'en' ? 'en-GB' : 'id-ID';
   const dur = (min: number) => (uiLang === 'en' ? fmtDuration(min).replace(' jam', ' hr').replace('j ', 'h ') : fmtDuration(min));
   const skillMap: Record<string, any> = {};
