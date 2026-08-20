@@ -13,6 +13,8 @@ import YouTubePlayerModal, { type PlayerTarget } from "@/components/YouTubePlaye
 import LangMateriPicker, { type LangPickerTarget } from "@/components/LangMateriPicker";
 /* [ebook-reader-v1] e-book berkas dibaca di dalam dashboard, bukan diunduh */
 import EbookReader from "@/components/akun/EbookReader";
+/* [perpustakaan-akses-email-v1] kepemilikan = auth_user_id ATAU email sesi */
+import { orMilikSaya } from "@/lib/digitalOwnership";
 
 interface PurchaseItem {
   id: string;
@@ -59,10 +61,13 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
 
   async function fetchPurchases() {
     setLoading(true);
-    const { data, error } = await supabase
+    /* [perpustakaan-akses-email-v1] pembelian lama sering ber-auth_user_id NULL
+       (akunnya dibuat sesudah bayar) → cocokkan juga lewat email sesi. */
+    const milikSaya = await orMilikSaya(supabase, userId);
+    const base = supabase
       .from("digital_purchases")
       .select(`
-        id, payment_status, access_granted, expires_at, 
+        id, payment_status, access_granted, expires_at,
         download_count, created_at,
         digital_products (
           id, type, title, cover_url, file_url, video_playlist_url
@@ -70,8 +75,8 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
         digital_product_pricing (
           display_label, duration_days
         )
-      `)
-      .eq("auth_user_id", userId)
+      `);
+    const { data, error } = await (milikSaya ? base.or(milikSaya) : base.eq("auth_user_id", userId))
       .eq("payment_status", "Lunas")
       .order("created_at", { ascending: false });
 

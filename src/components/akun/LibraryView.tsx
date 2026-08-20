@@ -25,6 +25,8 @@ import YouTubePlayerModal, { type PlayerTarget } from "@/components/YouTubePlaye
 import LangMateriPicker, { type LangPickerTarget } from "@/components/LangMateriPicker";
 // [lms-content-readiness-v1] progres e-learning cuma dihitung dari sesi yang sudah ada materinya
 import { fetchLessonStats, keepReady } from "@/lib/lmsContent";
+/* [perpustakaan-akses-email-v1] kepemilikan = auth_user_id ATAU email sesi */
+import { orMilikSaya } from "@/lib/digitalOwnership";
 // [ebook-reader-v1] e-book berkas dibaca di dalam dashboard, bukan diunduh
 import EbookReader from "@/components/akun/EbookReader";
 
@@ -223,7 +225,10 @@ async function runLoadLibrary(
   userId: string,
   onEarly?: (d: { purchases: Purchase[]; byLang: LangProgress }) => void,
 ): Promise<LibData | null> {
-  const purchasesReq = supabase
+  // [perpustakaan-akses-email-v1] pembelian lama sering ber-auth_user_id NULL
+  // (akunnya dibuat sesudah bayar) → cocokkan juga lewat email sesi.
+  const milikSaya = await orMilikSaya(supabase, userId);
+  const purchasesBase = supabase
     .from("digital_purchases")
     .select(`
       id, payment_status, access_granted, expires_at, download_count, created_at,
@@ -232,8 +237,8 @@ async function runLoadLibrary(
         language, level, pages, modules_count, total_duration_min
       ),
       digital_product_pricing ( display_label, duration_days )
-    `)
-    .eq("auth_user_id", userId)
+    `);
+  const purchasesReq = (milikSaya ? purchasesBase.or(milikSaya) : purchasesBase.eq("auth_user_id", userId))
     .eq("payment_status", "Lunas")
     .order("created_at", { ascending: false });
 

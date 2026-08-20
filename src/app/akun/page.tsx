@@ -40,6 +40,7 @@ import StudentShell from '@/components/akun/StudentShell';
 import { canAccessMateri as canAccessMateriGate } from '@/lib/materiGate';
 // [lms-content-readiness-v1] sesi Belajar Mandiri yang materinya belum ditulis jangan ikut dihitung
 import { fetchLessonStats, keepReady } from '@/lib/lmsContent';
+import { orMilikSaya } from "@/lib/digitalOwnership"; // [perpustakaan-akses-email-v1] kepemilikan = auth_user_id ATAU email sesi
 const SimulasiKatalog = dynamic(() => import('@/components/akun/SimulasiKatalog'), { ssr: false, loading: () => <div className="flex w-full items-center justify-center py-24"><div className="h-7 w-7 animate-spin rounded-full border-2 border-[#16796E] border-t-transparent" /></div> }); // [simulasi-inshell-v1] lazy
 
 // [linguo-patch:onboarding-success-lottie-v1] Lottie ceklis sukses (reuse success-anim.json).
@@ -1225,14 +1226,21 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
   const [digitalBuys, setDigitalBuys] = useState<any[]>([]);
   useEffect(() => {
     if (!user?.id) return;
-    supabase
-      .from("digital_purchases")
-      .select("id, amount, payment_status, created_at, digital_products(title, type)")
-      .eq("auth_user_id", user.id)
-      .eq("payment_status", "Lunas")
-      .is("archived_at", null)
-      .order("created_at", { ascending: false })
-      .then(({ data }: any) => setDigitalBuys(data || []));
+    const uid = user.id;
+    let batal = false;
+    (async () => {
+      // [perpustakaan-akses-email-v1] pembelian lama sering ber-auth_user_id NULL.
+      const milikSaya = await orMilikSaya(supabase, uid);
+      const base = supabase
+        .from("digital_purchases")
+        .select("id, amount, payment_status, created_at, digital_products(title, type)");
+      const { data } = await (milikSaya ? base.or(milikSaya) : base.eq("auth_user_id", uid))
+        .eq("payment_status", "Lunas")
+        .is("archived_at", null)
+        .order("created_at", { ascending: false });
+      if (!batal) setDigitalBuys(data || []);
+    })();
+    return () => { batal = true; };
   }, [user?.id, supabase]);
 
   // Gabung registrations + digital purchases jadi satu riwayat, terbaru duluan.
@@ -3036,10 +3044,11 @@ export default function AkunPage() {
       // dan skip onboarding. Mereka udah commit ke produk — gak perlu nudge lagi.
       // ─────────────────────────────────────────────────────────────────
       if (!studentData && user?.id) {
-        const { data: digitalPurchases } = await supabase
-          .from("digital_purchases")
-          .select("id")
-          .eq("auth_user_id", user.id)
+        // [perpustakaan-akses-email-v1] termasuk pembelian yang auth_user_id-nya
+        // masih NULL (akun dibuat sesudah bayar) — mereka juga pelanggan digital.
+        const milikSaya = await orMilikSaya(supabase, user.id);
+        const dpBase = supabase.from("digital_purchases").select("id");
+        const { data: digitalPurchases } = await (milikSaya ? dpBase.or(milikSaya) : dpBase.eq("auth_user_id", user.id))
           .eq("payment_status", "Lunas")
           .limit(1);
 
