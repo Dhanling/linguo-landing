@@ -43,7 +43,7 @@ export default function TokoCTA() {
                   aria-hidden
                 />
               </span>
-              <span className="text-xs text-white/60 hidden md:block">Mulai Rp 29.000</span>
+              <span className="text-xs text-white/60 hidden md:block">Mulai Rp 79.000</span>
             </div>
           </div>
         </Link>

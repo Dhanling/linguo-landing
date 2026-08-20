@@ -64,10 +64,11 @@ export const PRODUCTS: ProductDef[] = [
     key: "elearning",
     label: "E-Learning",
     rates: [0.15, 0.2, 0.25, 0.3],
+    // [elearning-per-bahasa-v1] E-learning dijual per bahasa: 6 bulan Rp79.000,
+    // 1 tahun Rp150.000. Paket "12+ bahasa" 29rb/99rb/179rb sudah tidak ada.
     prices: [
-      { label: "1 Bulan — Rp29.000", amount: 29000 },
-      { label: "6 Bulan — Rp99.000", amount: 99000 },
-      { label: "12 Bulan — Rp179.000", amount: 179000 },
+      { label: "6 Bulan — Rp79.000", amount: 79000 },
+      { label: "12 Bulan — Rp150.000", amount: 150000 },
     ],
   },
   {

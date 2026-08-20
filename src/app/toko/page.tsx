@@ -1,4 +1,5 @@
 import { createServerClient } from '@/lib/supabase-server';
+import { ELEARNING_BUNDLE_SLUG } from '@/lib/elearningBundle';
 import TokoClient from './TokoClient';
 
 // ISR: halaman di-render sekali lalu di-cache 1 jam. Tidak lagi query Supabase
@@ -56,6 +57,9 @@ export default async function TokoPage() {
     `
     )
     .eq('is_active', true)
+    // [elearning-per-bahasa-v1] Paket lama 12+ bahasa tidak dijual lagi — barisnya
+    // tetap aktif demi pembeli lama, tapi jangan tampil di etalase.
+    .neq('slug', ELEARNING_BUNDLE_SLUG)
     .order('is_featured', { ascending: false })
     .order('created_at', { ascending: false });
 

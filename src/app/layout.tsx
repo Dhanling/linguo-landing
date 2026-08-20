@@ -43,7 +43,7 @@ import PromoLeadModal from "@/components/PromoLeadModal"; // promo-lead-form-v1 
 export const metadata: Metadata = {
   metadataBase: new URL("https://linguo.id"),
   title: "Kursus Bahasa Asing Online No.1 di Indonesia — Linguo.id",
-  description: "Kursus 60+ bahasa asing online rasa offline! Kelas Private, Reguler, IELTS/TOEFL, E-Learning & E-Book. Mulai dari Rp 29.000.",
+  description: "Kursus 60+ bahasa asing online rasa offline! Kelas Private, Reguler, IELTS/TOEFL, E-Learning & E-Book. Mulai dari Rp 75.000.",
   keywords: [
     "kursus bahasa asing online",
     "les bahasa online",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://linguo.id" },
   openGraph: {
     title: "Kursus Bahasa Asing Online No.1 di Indonesia — Linguo.id",
-    description: "Kursus 60+ bahasa asing online rasa offline! Kelas live via Zoom, mulai dari Rp 29.000.",
+    description: "Kursus 60+ bahasa asing online rasa offline! Kelas live via Zoom, mulai dari Rp 75.000.",
     url: "https://linguo.id",
     siteName: "Linguo.id",
     locale: "id_ID",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Kursus Bahasa Asing Online No.1 di Indonesia — Linguo.id",
-    description: "Kursus 60+ bahasa asing online rasa offline! Kelas live via Zoom, mulai dari Rp 29.000.",
+    description: "Kursus 60+ bahasa asing online rasa offline! Kelas live via Zoom, mulai dari Rp 75.000.",
   },
   robots: {
     index: true,

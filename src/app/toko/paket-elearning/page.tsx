@@ -1,6 +1,6 @@
 import { supabase } from '@/lib/supabase-client';
-import { notFound } from 'next/navigation';
-import PaketElearningClient from './PaketElearningClient';
+import { ELEARNING_BUNDLE_SLUG } from '@/lib/elearningBundle';
+import ElearningLangClient from './ElearningLangClient';
 
 // Product/pricing data changes rarely, so cache the rendered page and
 // revalidate hourly (ISR). This makes navigation from /toko instant — the
@@ -10,9 +10,9 @@ export const revalidate = 3600;
 
 export const metadata = {
   alternates: { canonical: "https://linguo.id/toko/paket-elearning" },
-  title: 'Paket E-Learning Linguo — Akses 10+ Bahasa Mulai Rp 29.000',
+  title: 'E-Learning Linguo — Rekaman Kelas per Bahasa, Rp 79.000',
   description:
-    'Belajar bahasa di waktu luangmu dengan video materi, komunitas belajar, dan e-sertifikat. Pilih durasi 1, 6, atau 12 bulan.',
+    'Rekaman kelas level Basic per bahasa: belajar mandiri lewat video kapan saja. Rp 79.000 akses 6 bulan, Rp 150.000 akses 1 tahun.',
 };
 
 export type PricingTier = {
@@ -29,11 +29,19 @@ export type ElearningProduct = {
   title: string;
   slug: string;
   description: string | null;
+  language: string | null;
+  level: string | null;
+  is_featured: boolean;
   digital_product_pricing: PricingTier[];
 };
 
-export default async function PaketElearningPage() {
-  const { data: product, error } = await supabase
+// [elearning-per-bahasa-v1] Paket "12+ bahasa sekaligus" sudah tidak dijual;
+// e-learning sekarang satu produk per bahasa (harga sama rata: Rp 79.000 untuk
+// 6 bulan, Rp 150.000 untuk 1 tahun). Halaman ini TIDAK dipindah/diganti URL-nya
+// karena dipakai link afiliator, iklan, dan sitemap — isinya saja yang berubah
+// dari halaman checkout satu paket jadi etalase per bahasa.
+export default async function ElearningPage() {
+  const { data, error } = await supabase
     .from('digital_products')
     .select(
       `
@@ -42,6 +50,9 @@ export default async function PaketElearningPage() {
       title,
       slug,
       description,
+      language,
+      level,
+      is_featured,
       digital_product_pricing (
         id,
         price,
@@ -51,19 +62,15 @@ export default async function PaketElearningPage() {
       )
     `
     )
-    // [produk-digital-per-bahasa-v1] Dulu ini `.eq('type','elearning').limit(1)` —
-    // aman selama produk e-learning cuma satu. Begitu paketnya dipecah jadi
-    // jualan per bahasa, baris mana yang kepilih jadi undian. Dikunci ke slug
-    // paketnya.
     .eq('type', 'elearning')
-    .eq('slug', 'paket-elearning-10-bahasa')
     .eq('is_active', true)
-    .single();
+    .neq('slug', ELEARNING_BUNDLE_SLUG)
+    .order('is_featured', { ascending: false })
+    .order('title');
 
-  if (error || !product) {
-    console.error('[/toko/paket-elearning] not found:', error?.message);
-    notFound();
+  if (error) {
+    console.error('[/toko/paket-elearning] fetch error:', error.message);
   }
 
-  return <PaketElearningClient product={product as ElearningProduct} />;
+  return <ElearningLangClient products={(data as ElearningProduct[] | null) ?? []} />;
 }

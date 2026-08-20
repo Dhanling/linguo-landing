@@ -136,7 +136,7 @@ const DESTINATIONS: {
   {
     key: "elearning",
     label: "Halaman E-Learning",
-    desc: "Paket belajar 12+ bahasa — halaman yang menghasilkan komisi.",
+    desc: "E-Learning per bahasa (mulai Rp79.000) — halaman yang menghasilkan komisi.",
     path: ELEARNING_PATH,
     earns: true,
   },
@@ -167,7 +167,7 @@ const PROMO: {
     icon: MessageCircle,
     text: `Halo! 👋 Aku lagi belajar bahasa di Linguo.id — ada 60+ bahasa, materinya berupa video terstruktur, jadi bisa belajar kapan aja sesuai ritme sendiri.
 
-Paket E-Learning-nya mulai Rp29.000 aja udah bisa akses 12+ bahasa sekaligus. Kalau kamu mau coba, daftar lewat link aku ya 🌏
+E-Learning-nya dijual per bahasa: Rp79.000 buat akses 6 bulan, atau Rp150.000 setahun penuh. Kalau kamu mau coba, daftar lewat link aku ya 🌏
 
 {{LINK}}`,
   },
@@ -179,7 +179,7 @@ Paket E-Learning-nya mulai Rp29.000 aja udah bisa akses 12+ bahasa sekaligus. Ka
 
 Di Linguo.id ada 60+ bahasa dengan materi video terstruktur level A1–B2 — belajar fleksibel kapan pun kamu mau.
 
-Paket E-Learning mulai Rp29.000 → akses 12+ bahasa sekaligus.
+E-Learning per bahasa → Rp79.000 akses 6 bulan, Rp150.000 akses 1 tahun.
 Cobain lewat link ini yuk 👇
 {{LINK}}
 
@@ -189,7 +189,7 @@ Cobain lewat link ini yuk 👇
     key: "status",
     title: "Status Singkat (WA / Story)",
     icon: Sparkles,
-    text: `Lagi seru belajar bahasa di Linguo.id 🌏 60+ bahasa, materi video, mulai Rp29.000 aja. Cobain juga yuk 👉 {{LINK}}`,
+    text: `Lagi seru belajar bahasa di Linguo.id 🌏 rekaman kelas per bahasa, Rp79.000 buat 6 bulan. Cobain juga yuk 👉 {{LINK}}`,
   },
 ];
 

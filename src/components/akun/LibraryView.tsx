@@ -35,6 +35,7 @@ import { getLangPhoto } from "@/lib/lang-visuals";
 import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
 // [ebook-reader-v1] e-book berkas dibaca di dalam dashboard, bukan diunduh
 import EbookReader from "@/components/akun/EbookReader";
+import { ELEARNING_BUNDLE_SLUG } from "@/lib/elearningBundle";
 
 /* ---------------- types ---------------- */
 type ProductType = "elearning" | "ebook";
@@ -375,6 +376,10 @@ async function loadKatalog(supabase: SupabaseClient): Promise<CatalogItem[]> {
         digital_product_pricing ( id, price, display_label, sort_order, duration_days, is_active )
       `)
       .eq("is_active", true)
+      // [elearning-per-bahasa-v1] paket 12+ bahasa tak dijual lagi (lihat
+      // lib/elearningBundle.ts) — barisnya tetap aktif untuk pembeli lama,
+      // tapi jangan ditawarkan lagi di katalog.
+      .neq("slug", ELEARNING_BUNDLE_SLUG)
       .order("title");
     // Katalog cuma pemanis; kalau gagal, Perpustakaan tetap menampilkan milik siswa.
     if (error || !data) return [];
