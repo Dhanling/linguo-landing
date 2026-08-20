@@ -207,19 +207,17 @@ function buildProgressByLang(
 }
 
 // [elearning-per-bahasa-v1] "Siap dibuka" untuk produk yang SUDAH dimiliki.
-// `materialReady` sengaja meloloskan e-learning tanpa link (dianggap jatuh ke
-// modul LMS internal), padahal per 20 Agu 2026 13 produk e-learning per bahasa
-// belum punya playlist DAN belum punya modul LMS berisi — kartunya tampil
-// normal, tombolnya ditekan, tidak ada yang terbuka. Di kartu milik sendiri
-// syaratnya dipertegas: harus ada link, atau bahasa paket, atau pelajaran LMS.
+// Sedikit lebih longgar dari `materialReady` (yang menjaga etalase & kode promo):
+// pemilik e-learning tanpa playlist masih boleh masuk lewat modul LMS bahasa yang
+// sama kalau modulnya sudah berisi. Kalau dua-duanya kosong, kartunya bilang
+// "Materi sedang disiapkan" — jangan tampilkan tombol yang tak membuka apa pun.
 function siapDibuka(
   prod: Purchase["digital_products"],
   langs: ProductLang[] | undefined,
   byLang: Record<string, { total: number; done: number; resume: { id: string; title: string } | null }>,
 ): boolean {
-  if (!materialReady(prod, langs)) return false;
-  if (prod.type !== "elearning") return true;
-  if (externalLinkFor(prod) || (langs?.length ?? 0) > 0) return true;
+  if (materialReady(prod, langs)) return true;
+  if (prod.type !== "elearning") return false;
   const lang = prod.language?.toLowerCase().trim();
   return !!(lang && (byLang[lang]?.total ?? 0) > 0);
 }
@@ -248,24 +246,24 @@ function TypeBadge({ type }: { type: ProductType }) {
 function AccessChip({ a }: { a: Access }) {
   if (a.kind === "forever")
     return (
-      <span className="inline-flex items-center gap-1.5 rounded-full bg-[#12A37E]/10 px-2.5 py-1 text-[11px] font-bold text-[#0C8163]">
+      <span className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-[#12A37E]/10 px-2.5 py-1 text-[11px] font-bold text-[#0C8163]">
         <InfinityIcon className="h-3.5 w-3.5" strokeWidth={2.4} /> Selamanya
       </span>
     );
   if (a.kind === "expired")
     return (
-      <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-50 px-2.5 py-1 text-[11px] font-bold text-rose-600">
+      <span className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-rose-50 px-2.5 py-1 text-[11px] font-bold text-rose-600">
         <Clock className="h-3.5 w-3.5" strokeWidth={2.4} /> Akses Berakhir
       </span>
     );
   if (a.kind === "soon")
     return (
-      <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-2.5 py-1 text-[11px] font-bold text-amber-600">
+      <span className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-amber-50 px-2.5 py-1 text-[11px] font-bold text-amber-600">
         <Clock className="h-3.5 w-3.5" strokeWidth={2.4} /> Sisa {a.days} hari
       </span>
     );
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-bold text-slate-500">
+    <span className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-bold text-slate-500">
       <CalendarClock className="h-3.5 w-3.5" strokeWidth={2.4} /> s/d {fmtDate(a.until)}
     </span>
   );
@@ -1146,14 +1144,14 @@ function ProductCard({
         <div className="mt-auto flex items-center justify-between gap-2 pt-1">
           <AccessChip a={a} />
           {expired ? (
-            <button onClick={onRenew} className="inline-flex items-center gap-1.5 rounded-xl bg-amber-500 px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-amber-600 active:scale-[0.98]">
+            <button onClick={onRenew} className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-xl bg-amber-500 px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-amber-600 active:scale-[0.98]">
               <Sparkles className="h-4 w-4" strokeWidth={2.4} /> Perpanjang
             </button>
           ) : (
             <button
               onClick={onOpen}
               disabled={busy}
-              className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-[13px] font-bold text-white transition active:scale-[0.98] disabled:opacity-50 ${
+              className={`inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-xl px-3.5 py-2 text-[13px] font-bold text-white transition active:scale-[0.98] disabled:opacity-50 ${
                 ready ? "bg-[#12A37E] hover:bg-[#0C8163]" : "bg-slate-400 hover:bg-slate-500"
               }`}
             >

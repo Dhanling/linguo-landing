@@ -117,9 +117,14 @@ export function materialReady(p: ProductLink, langs?: ProductLang[] | null): boo
   if (langs && langs.length > 0) return usableLangs(langs).length > 0;
   const link = externalLinkFor(p);
   if (link) return !isPlaceholderLink(link);
-  // Tanpa link eksternal: e-learning jatuh ke modul LMS internal, e-book ke
-  // berkas storage. Dua-duanya punya isi selama kolomnya tidak kosong.
-  if (p.type === "elearning") return true;
+  // [elearning-per-bahasa-v1] Dulu e-learning tanpa link tetap dianggap siap
+  // ("jatuh ke modul LMS internal"). Sejak e-learning dijual per bahasa, ke-13
+  // produk barunya terbit dengan `video_playlist_url` NULL dan modul LMS-nya
+  // pun kosong: kartunya berbunyi "Beli", uangnya masuk, lalu tak ada satu pun
+  // video yang bisa diputar. Jadi tanpa link = BELUM siap — etalase menahannya
+  // di "Segera hadir" dan kode promo menolaknya sampai admin mengisi linknya.
+  // Kartu milik sendiri masih boleh terbuka lewat modul LMS bahasa yang sama;
+  // pengecualian itu tinggal di `siapDibuka()` (LibraryView), bukan di sini.
   // [pustaka-katalog-terkunci-v1] `placeholder.pdf` itu path storage yang sah
   // secara bentuk, jadi dulu lolos sebagai "siap" — padahal berkasnya tak pernah
   // ada di bucket (43 produk aktif masih begitu per 20 Agu 2026). Sejak katalog
