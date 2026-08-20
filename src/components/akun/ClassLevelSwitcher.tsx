@@ -14,6 +14,7 @@
 
 import Link from 'next/link';
 import { Check, Layers } from 'lucide-react';
+import { useT } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 
 export interface SwitcherReg {
   id: string;
@@ -58,6 +59,7 @@ interface Props {
 }
 
 export default function ClassLevelSwitcher({ regs, currentId, activeTab, previewStudentId = null }: Props) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const items = urutkanLevel(regs);
   // Cuma satu level → strip-nya tak menawarkan apa pun, jangan makan tempat.
   if (items.length < 2) return null;
@@ -73,7 +75,7 @@ export default function ClassLevelSwitcher({ regs, currentId, activeTab, preview
   return (
     <div className="mt-4">
       <div className="mb-1.5 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-gray-500">
-        <Layers className="h-3.5 w-3.5" strokeWidth={2.2} /> Level di bahasa ini
+        <Layers className="h-3.5 w-3.5" strokeWidth={2.2} /> {t('Level di bahasa ini')}
       </div>
       <div className="-mx-4 overflow-x-auto px-4 sm:-mx-6 sm:px-6">
         <div className="flex min-w-max items-center gap-2 pb-1">
@@ -86,7 +88,7 @@ export default function ClassLevelSwitcher({ regs, currentId, activeTab, preview
                 href={href(r.id)}
                 prefetch={false}
                 aria-current={aktif ? 'page' : undefined}
-                title={`${r.product || 'Kelas'} · ${r.level || 'TBD'}`}
+                title={`${t(r.product || 'Kelas')} · ${r.level || 'TBD'}`}
                 // Handoff sama seperti kartu beranda: halaman tujuan render instan
                 // tanpa nunggu query (lihat regHandoffKey di /akun/kelas/[id]).
                 onClick={() => { try { sessionStorage.setItem(`linguo_reg_${r.id}`, JSON.stringify(r)); } catch {} }}

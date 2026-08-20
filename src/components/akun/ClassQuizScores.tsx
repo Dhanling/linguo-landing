@@ -14,6 +14,7 @@
 
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
+import { getUiLang, useT } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 import {
   ClipboardCheck, TrendingUp, TrendingDown, X, Check, Minus, Sparkles,
   ThumbsUp, AlertTriangle, Target, BookOpen,
@@ -75,17 +76,18 @@ export function quizScoreRows(schedules: any[]): QuizScoreRow[] {
 }
 
 export default function ClassQuizScores({ schedules }: { schedules: any[] }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [reviewFor, setReviewFor] = useState<QuizScoreRow | null>(null);
   const rows = quizScoreRows(schedules);
 
   if (rows.length === 0) {
     return (
       <section>
-        <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-gray-500">Nilai Kuis per Pertemuan</h2>
+        <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-gray-500">{t("Nilai Kuis per Pertemuan")}</h2>
         <div className="rounded-2xl bg-gray-50 p-6 text-center">
           <ClipboardCheck className="mx-auto mb-2 h-7 w-7 text-gray-300" strokeWidth={1.5} />
-          <div className="text-sm text-gray-500">Belum ada nilai kuis</div>
-          <div className="mt-1 text-xs text-gray-400">Nilai kuis tiap pertemuan muncul di sini setelah pengajar mengisinya</div>
+          <div className="text-sm text-gray-500">{t("Belum ada nilai kuis")}</div>
+          <div className="mt-1 text-xs text-gray-400">{t("Nilai kuis tiap pertemuan muncul di sini setelah pengajar mengisinya")}</div>
         </div>
       </section>
     );
@@ -100,8 +102,8 @@ export default function ClassQuizScores({ schedules }: { schedules: any[] }) {
   return (
     <section>
       <div className="mb-3 flex items-baseline justify-between gap-2">
-        <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500">Nilai Kuis per Pertemuan</h2>
-        <span className="text-[11px] text-gray-400">{rows.length} kuis</span>
+        <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500">{t("Nilai Kuis per Pertemuan")}</h2>
+        <span className="text-[11px] text-gray-400">{rows.length} {t("kuis")}</span>
       </div>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-[1fr_180px]">
@@ -120,7 +122,7 @@ export default function ClassQuizScores({ schedules }: { schedules: any[] }) {
                   type="button"
                   disabled={!clickable}
                   onClick={() => clickable && setReviewFor(r)}
-                  title={`Sesi ${r.sessionNo} · ${new Date(r.scheduled_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })} · ${r.quiz_score}/${r.quiz_max} (${pct}%)${clickable ? ' — klik untuk lihat pembahasan' : ''}`}
+                  title={`${t('Sesi')} ${r.sessionNo} · ${new Date(r.scheduled_at).toLocaleDateString(getUiLang() === 'en' ? 'en-GB' : 'id-ID', { day: 'numeric', month: 'short', year: 'numeric' })} · ${r.quiz_score}/${r.quiz_max} (${pct}%)${clickable ? ` — ${t('klik untuk lihat pembahasan')}` : ''}`}
                   className={`group relative flex min-w-0 flex-1 flex-col justify-end ${clickable ? 'cursor-pointer' : 'cursor-default'}`}
                   style={{ height: '100%' }}
                 >
@@ -141,20 +143,20 @@ export default function ClassQuizScores({ schedules }: { schedules: any[] }) {
             ))}
           </div>
           <p className="mt-2 text-[11px] text-gray-400">
-            Angka di bawah = nomor pertemuan. Batang yang ada pembahasannya bisa diklik.
+            {t("Angka di bawah = nomor pertemuan. Batang yang ada pembahasannya bisa diklik.")}
           </p>
         </div>
 
         <div className="flex flex-col items-center justify-center rounded-2xl bg-gradient-to-br from-[#16796E] to-emerald-600 p-4 text-center text-white">
-          <div className="text-[11px] font-semibold uppercase tracking-wider opacity-80">Rata-rata</div>
+          <div className="text-[11px] font-semibold uppercase tracking-wider opacity-80">{t("Rata-rata")}</div>
           <div className="text-4xl font-extrabold">{avg}%</div>
-          <div className="text-[11px] opacity-80">dari {rows.length} kuis</div>
+          <div className="text-[11px] opacity-80">{t("dari")} {rows.length} {t("kuis")}</div>
           {delta !== null && (
             <div className="mt-2 inline-flex items-center gap-1 rounded-full bg-white/20 px-3 py-1 text-xs font-bold">
               {delta > 0 ? <TrendingUp className="h-3.5 w-3.5" strokeWidth={2.5} />
                 : delta < 0 ? <TrendingDown className="h-3.5 w-3.5" strokeWidth={2.5} />
                 : <Minus className="h-3.5 w-3.5" strokeWidth={2.5} />}
-              {delta > 0 ? `+${delta}` : delta} poin
+              {delta > 0 ? `+${delta}` : delta} {t("poin")}
             </div>
           )}
         </div>
@@ -198,10 +200,11 @@ function AnalysisBlock({
 }
 
 function AnalysisPanel({ analysis }: { analysis: QuizAnalysis }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   return (
     <div className="mb-4 space-y-2.5">
       <h3 className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider" style={{ color: BRAND }}>
-        <Sparkles className="h-3.5 w-3.5" strokeWidth={2.5} /> Catatan buat kamu
+        <Sparkles className="h-3.5 w-3.5" strokeWidth={2.5} /> {t("Catatan buat kamu")}
       </h3>
 
       {analysis.summary && (
@@ -212,17 +215,17 @@ function AnalysisPanel({ analysis }: { analysis: QuizAnalysis }) {
           `bg-emerald-50/60`): override dark mode di StudentShell menyasar nama
           kelas polos, dan varian /60 lolos dari situ lalu jadi blok terang
           menyilaukan di atas latar hitam. */}
-      <AnalysisBlock icon={ThumbsUp} title="Sudah bagus" items={analysis.strengths}
+      <AnalysisBlock icon={ThumbsUp} title={t("Sudah bagus")} items={analysis.strengths}
         ring="border-emerald-200" tint="bg-emerald-50" fg="text-emerald-700" />
-      <AnalysisBlock icon={AlertTriangle} title="Masih kurang" items={analysis.weaknesses}
+      <AnalysisBlock icon={AlertTriangle} title={t("Masih kurang")} items={analysis.weaknesses}
         ring="border-amber-200" tint="bg-amber-50" fg="text-amber-700" />
-      <AnalysisBlock icon={Target} title="Perbaikannya" items={analysis.improvements}
+      <AnalysisBlock icon={Target} title={t("Perbaikannya")} items={analysis.improvements}
         ring="border-teal-200" tint="bg-teal-50" fg="text-teal-700" />
 
       {analysis.topics.length > 0 && (
         <div className="flex flex-wrap items-center gap-1.5">
           <span className="flex items-center gap-1 text-[11px] font-semibold text-gray-500">
-            <BookOpen className="h-3 w-3" /> Ulang lagi:
+            <BookOpen className="h-3 w-3" /> {t("Ulang lagi")}:
           </span>
           {analysis.topics.map((t, i) => (
             <span key={i} className="rounded-full bg-gray-100 px-2 py-0.5 text-[11px] font-semibold text-gray-600">{t}</span>
@@ -248,6 +251,7 @@ interface AnswerRow {
 }
 
 export function QuizReviewModal({ row, onClose }: { row: QuizScoreRow; onClose: () => void }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [answers, setAnswers] = useState<AnswerRow[] | null>(null);
   const [analysis, setAnalysis] = useState<QuizAnalysis | null>(null);
 
@@ -291,12 +295,12 @@ export function QuizReviewModal({ row, onClose }: { row: QuizScoreRow; onClose: 
       >
         <div className="mb-3 flex items-start justify-between gap-2">
           <div>
-            <div className="text-[11px] font-bold uppercase tracking-wider" style={{ color: BRAND }}>Pembahasan · Sesi {row.sessionNo}</div>
+            <div className="text-[11px] font-bold uppercase tracking-wider" style={{ color: BRAND }}>{t("Pembahasan")} · {t("Sesi")} {row.sessionNo}</div>
             <div className="text-sm font-semibold text-gray-900">
-              Nilai {row.quiz_score}/{row.quiz_max}{pct !== null ? ` · ${pct}%` : ''}
+              {t("Nilai")} {row.quiz_score}/{row.quiz_max}{pct !== null ? ` · ${pct}%` : ''}
             </div>
           </div>
-          <button onClick={onClose} className="rounded-full p-1.5 text-gray-400 hover:bg-gray-100" aria-label="Tutup">
+          <button onClick={onClose} className="rounded-full p-1.5 text-gray-400 hover:bg-gray-100" aria-label={t('Tutup')}>
             <X className="h-4 w-4" />
           </button>
         </div>
@@ -307,14 +311,14 @@ export function QuizReviewModal({ row, onClose }: { row: QuizScoreRow; onClose: 
         {analysis && <AnalysisPanel analysis={analysis} />}
 
         {answers === null ? (
-          <div className="py-8 text-center text-sm text-gray-400">Memuat pembahasan…</div>
+          <div className="py-8 text-center text-sm text-gray-400">{t("Memuat pembahasan…")}</div>
         ) : answers.length === 0 ? (
           <div className="rounded-2xl bg-gray-50 p-6 text-center text-sm text-gray-500">
-            Pembahasan belum tersedia untuk kuis ini.
+            {t("Pembahasan belum tersedia untuk kuis ini.")}
           </div>
         ) : (
           <div className="space-y-2.5">
-            <h3 className="pt-1 text-[11px] font-bold uppercase tracking-wider text-gray-500">Koreksi per soal</h3>
+            <h3 className="pt-1 text-[11px] font-bold uppercase tracking-wider text-gray-500">{t("Koreksi per soal")}</h3>
             {answers.map((a, i) => {
               const q = a.quiz_questions || {};
               const ok = a.is_correct === true;
@@ -325,9 +329,9 @@ export function QuizReviewModal({ row, onClose }: { row: QuizScoreRow; onClose: 
                     <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-white text-[10px] font-bold text-gray-600">{i + 1}</span>
                     <span className={`inline-flex items-center gap-1 text-[11px] font-bold ${ok ? 'text-emerald-700' : 'text-amber-700'}`}>
                       {ok ? <Check className="h-3 w-3" strokeWidth={3} /> : <X className="h-3 w-3" strokeWidth={3} />}
-                      {ok ? 'Benar' : 'Belum tepat'}
+                      {ok ? t('Benar') : t('Belum tepat')}
                     </span>
-                    <span className="ml-auto text-[11px] font-semibold text-gray-500">{a.score ?? 0}/{q.points ?? 1} poin</span>
+                    <span className="ml-auto text-[11px] font-semibold text-gray-500">{a.score ?? 0}/{q.points ?? 1} {t("poin")}</span>
                   </div>
                   <p className="text-[13px] font-medium text-gray-800">{q.prompt}</p>
                   {a.feedback && (
@@ -337,7 +341,7 @@ export function QuizReviewModal({ row, onClose }: { row: QuizScoreRow; onClose: 
                     </p>
                   )}
                   {q.explanation && (
-                    <p className="mt-1.5 text-[12px] text-gray-500"><span className="font-semibold">Pembahasan:</span> {q.explanation}</p>
+                    <p className="mt-1.5 text-[12px] text-gray-500"><span className="font-semibold">{t('Pembahasan')}:</span> {q.explanation}</p>
                   )}
                 </div>
               );

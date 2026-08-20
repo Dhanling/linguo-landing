@@ -5,6 +5,7 @@
 // CTA -> onSelectPlan(plan); wiring ke checkout Xendit nyusul setelah SKU dikonfirmasi.
 
 import { Lock, Check } from 'lucide-react';
+import { useT } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 import {
   LMS_PLANS,
   formatRupiah,
@@ -36,11 +37,12 @@ export default function UnlockFullAccess({
   language?: string;
   onSelectPlan?: (plan: LmsPlanId) => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const cards = CARD_PLANS.map((id) => LMS_PLANS.find((p) => p.plan === id)).filter(
     (p): p is LmsPlan => Boolean(p)
   );
   const oneMonth = LMS_PLANS.find((p) => p.plan === '1m');
-  const langLabel = language ? ` Bahasa ${language}` : '';
+  const langLabel = language ? ` ${language}` : '';
 
   return (
     <div style={{ maxWidth: 920, margin: '0 auto', padding: '32px 20px', textAlign: 'center' }}>
@@ -60,11 +62,10 @@ export default function UnlockFullAccess({
       </div>
 
       <h2 style={{ fontSize: 24, fontWeight: 800, color: INK, margin: '0 0 8px' }}>
-        Buka akses penuh{langLabel}
+        {t('Buka akses penuh')}{langLabel}
       </h2>
       <p style={{ fontSize: 15, color: '#5B6477', margin: '0 0 24px', lineHeight: 1.5 }}>
-        Level A1 gratis buat dicoba. Lanjut ke A2–B2 dengan akses penuh — sekali bayar, bukan
-        langganan kartu otomatis.
+        {t('Level A1 gratis buat dicoba. Lanjut ke A2–B2 dengan akses penuh — sekali bayar, bukan langganan kartu otomatis.')}
       </p>
 
       <div
@@ -80,7 +81,7 @@ export default function UnlockFullAccess({
         {VALUE_PROPS.map((v) => (
           <div key={v} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
             <Check size={18} color={TEAL} style={{ flexShrink: 0, marginTop: 2 }} />
-            <span style={{ fontSize: 14, color: INK }}>{v}</span>
+            <span style={{ fontSize: 14, color: INK }}>{t(v)}</span>
           </div>
         ))}
       </div>
@@ -146,10 +147,10 @@ export default function UnlockFullAccess({
 
               {p.efektifPerBulan != null ? (
                 <div style={{ fontSize: 12, color: '#5B6477' }}>
-                  ≈ {formatRupiah(p.efektifPerBulan)}/bulan
+                  ≈ {formatRupiah(p.efektifPerBulan)}/{t('bulan')}
                 </div>
               ) : (
-                <div style={{ fontSize: 12, color: '#5B6477' }}>akses selamanya</div>
+                <div style={{ fontSize: 12, color: '#5B6477' }}>{t('akses selamanya')}</div>
               )}
 
               {p.hematLabel && (
@@ -171,7 +172,7 @@ export default function UnlockFullAccess({
                   borderRadius: 10,
                 }}
               >
-                Pilih paket
+                {t('Pilih paket')}
               </button>
             </div>
           );
@@ -180,7 +181,7 @@ export default function UnlockFullAccess({
 
       {oneMonth && (
         <p style={{ fontSize: 13, color: '#5B6477', marginTop: 18 }}>
-          Atau coba dulu{' '}
+          {t('Atau coba dulu')}{' '}
           <button
             type="button"
             onClick={() => onSelectPlan?.('1m')}
@@ -194,7 +195,7 @@ export default function UnlockFullAccess({
               textDecoration: 'underline',
             }}
           >
-            1 bulan {formatRupiah(oneMonth.harga)}
+            {t('1 bulan')} {formatRupiah(oneMonth.harga)}
           </button>
         </p>
       )}

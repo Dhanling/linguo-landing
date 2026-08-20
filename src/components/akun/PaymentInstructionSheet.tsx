@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 // ── Types ──────────────────────────────────────────────────────────
 type Props = {
@@ -34,6 +35,7 @@ export default function PaymentInstructionSheet({
   existingProofUrl,
   onUploadSuccess,
 }: Props) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState<string | null>(null);
 
@@ -57,7 +59,7 @@ export default function PaymentInstructionSheet({
         <div className="flex items-center gap-2">
           <span className="text-base">💳</span>
           <span className="text-xs font-semibold text-amber-900">
-            {isVerifying ? "Bukti terkirim — menunggu verifikasi" : "Instruksi Pembayaran"}
+            {isVerifying ? t("Bukti terkirim — menunggu verifikasi") : t("Instruksi Pembayaran")}
           </span>
         </div>
         <span className={`text-amber-600 text-xs transition-transform ${expanded ? "rotate-180" : ""}`}>
@@ -78,31 +80,31 @@ export default function PaymentInstructionSheet({
               {/* Rejection warning */}
               {rejectionReason && (
                 <div className="mt-3 rounded-lg bg-red-50 border border-red-200 px-3 py-2 text-xs text-red-700">
-                  <p className="font-semibold mb-0.5">❌ Bukti ditolak</p>
+                  <p className="font-semibold mb-0.5">❌ {t("Bukti ditolak")}</p>
                   <p>{rejectionReason}</p>
-                  <p className="mt-1 text-red-600 font-medium">Silakan upload ulang bukti yang benar.</p>
+                  <p className="mt-1 text-red-600 font-medium">{t("Silakan upload ulang bukti yang benar.")}</p>
                 </div>
               )}
 
               {/* Verification pending */}
               {isVerifying && !rejectionReason && (
                 <div className="mt-3 rounded-lg bg-blue-50 border border-blue-200 px-3 py-2 text-xs text-blue-700">
-                  <p className="font-semibold">⏳ Menunggu verifikasi admin</p>
-                  <p className="mt-0.5 text-blue-600">Biasanya 1–2 jam di jam kerja (08:00–17:00 WIB)</p>
+                  <p className="font-semibold">⏳ {t("Menunggu verifikasi admin")}</p>
+                  <p className="mt-0.5 text-blue-600">{t("Biasanya 1–2 jam di jam kerja (08:00–17:00 WIB)")}</p>
                 </div>
               )}
 
               {/* Amount */}
               {totalAmount > 0 && (
                 <div className="mt-3 flex items-center justify-between bg-white rounded-lg px-3 py-2 border border-amber-100">
-                  <span className="text-xs text-gray-500">Total Transfer</span>
+                  <span className="text-xs text-gray-500">{t("Total Transfer")}</span>
                   <button
                     onClick={() => copyToClipboard(String(totalAmount), "amount")}
                     className="flex items-center gap-1.5"
                   >
                     <span className="text-sm font-bold text-gray-900">{formattedAmount}</span>
                     <span className="text-[10px] text-amber-600 font-medium">
-                      {copied === "amount" ? "✓ Tersalin" : "Salin"}
+                      {copied === "amount" ? `✓ ${t("Tersalin")}` : t("Salin")}
                     </span>
                   </button>
                 </div>
@@ -120,18 +122,18 @@ export default function PaymentInstructionSheet({
                       onClick={() => copyToClipboard(acct.number, acct.bank)}
                       className="text-[10px] text-amber-600 font-semibold hover:text-amber-700 transition-colors"
                     >
-                      {copied === acct.bank ? "✓ Tersalin" : "📋 Salin"}
+                      {copied === acct.bank ? `✓ ${t("Tersalin")}` : `📋 ${t("Salin")}`}
                     </button>
                   </div>
                   <p className="text-xs font-mono font-bold text-gray-900 tracking-wide break-all">{acct.number}</p>
-                  <p className="text-[11px] text-gray-500">a.n. {acct.name}</p>
+                  <p className="text-[11px] text-gray-500">{t("a.n.")} {acct.name}</p>
                 </div>
               ))}
 
               {/* Tips */}
               <div className="text-[11px] text-amber-700 bg-amber-100/50 rounded-lg px-3 py-2 space-y-0.5">
-                <p>💡 <strong>Transfer persis sesuai nominal</strong> agar mudah diverifikasi.</p>
-                <p>💡 Setelah transfer, upload bukti di bawah — atau kirim via WhatsApp.</p>
+                <p>💡 <strong>{t("Transfer persis sesuai nominal")}</strong> {t("agar mudah diverifikasi.")}</p>
+                <p>💡 {t("Setelah transfer, upload bukti di bawah — atau kirim via WhatsApp.")}</p>
               </div>
 
               {/* Existing proof thumbnail */}
@@ -139,8 +141,8 @@ export default function PaymentInstructionSheet({
                 <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-2">
                   <img src={existingProofUrl} alt="Bukti" className="h-10 w-10 rounded object-cover border" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs font-medium text-gray-700 truncate">Bukti sudah diupload</p>
-                    <p className="text-[10px] text-gray-400">Klik upload lagi untuk mengganti</p>
+                    <p className="text-xs font-medium text-gray-700 truncate">{t("Bukti sudah diupload")}</p>
+                    <p className="text-[10px] text-gray-400">{t("Klik upload lagi untuk mengganti")}</p>
                   </div>
                 </div>
               )}

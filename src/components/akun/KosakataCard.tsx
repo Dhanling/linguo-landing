@@ -13,6 +13,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { Layers, ChevronRight, Sparkles } from 'lucide-react';
+import { useT } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 import { getSavedWords, onSavedWordsChanged, type SavedWord } from '@/lib/immersionLearn';
 import {
   buildVocabSummary, fetchMateriVocab, type VocabItem, type VocabSummary,
@@ -34,6 +35,7 @@ export default function KosakataCard({
   /** POV siswa (staf): kata simpanan ikut perangkat ini, bukan milik siswanya. */
   previewMode?: boolean;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [saved, setSaved] = useState<SavedWord[]>([]);
   const [fetched, setFetched] = useState<{ key: string; data: { mastered: VocabItem[]; learning: VocabItem[] } } | null>(null);
 
@@ -82,9 +84,9 @@ export default function KosakataCard({
           <Layers className="h-[18px] w-[18px]" strokeWidth={2.2} />
         </span>
         <span className="min-w-0 flex-1">
-          <span className="block text-[14px] font-extrabold text-[#12172B]">Kosakata Saya masih kosong</span>
+          <span className="block text-[14px] font-extrabold text-[#12172B]">{t("Kosakata Saya masih kosong")}</span>
           <span className="block text-[12px] font-medium text-gray-500">
-            Simpan kata sambil nonton di Watch &amp; Learn, atau selesaikan materi kelas — hitungannya muncul di sini.
+            {t("Simpan kata sambil nonton di Watch & Learn, atau selesaikan materi kelas — hitungannya muncul di sini.")}
           </span>
         </span>
         <ChevronRight className="h-4 w-4 shrink-0 text-slate-300 transition group-hover:text-[#16796E]" />
@@ -97,13 +99,13 @@ export default function KosakataCard({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h3 className="inline-flex items-center gap-2 text-[15px] font-extrabold text-[#12172B]">
           <Layers className="h-[18px] w-[18px] text-[#16796E]" strokeWidth={2.4} />
-          Kosakata Saya
+          {t("Kosakata Saya")}
         </h3>
         <Link
           href="/kosakata"
           className="inline-flex items-center gap-1 text-[12.5px] font-bold text-[#16796E] hover:text-[#0F5A52]"
         >
-          Latihan flashcard <ChevronRight className="h-3.5 w-3.5" />
+          {t("Latihan flashcard")} <ChevronRight className="h-3.5 w-3.5" />
         </Link>
       </div>
 
@@ -113,11 +115,11 @@ export default function KosakataCard({
             <span className="text-[28px] font-extrabold leading-none text-[#12172B]">{dikuasai}</span>
             <span className="pb-0.5 text-[12.5px] font-bold text-gray-400">/ {sum.target}</span>
           </div>
-          <p className="mt-1 text-[12px] font-semibold text-gray-600">kata dikuasai</p>
+          <p className="mt-1 text-[12px] font-semibold text-gray-600">{t("kata dikuasai")}</p>
         </div>
         <div className="min-w-[180px] flex-1">
           <div className="flex items-center justify-between text-[11.5px] font-bold">
-            <span className="text-gray-500">Target level {sum.targetLevel}</span>
+            <span className="text-gray-500">{t("Target level")} {sum.targetLevel}</span>
             <span className="text-[#16796E]">{pct}%</span>
           </div>
           <div className="mt-1.5 h-2.5 overflow-hidden rounded-full bg-[#E8EAEE]">
@@ -125,8 +127,8 @@ export default function KosakataCard({
           </div>
           <p className="mt-1.5 text-[11.5px] font-medium text-gray-500">
             {sum.learning.length > 0
-              ? `${sum.learning.length} kata lagi dipelajari — tinggal ${Math.max(0, sum.target - dikuasai)} kata menuju target.`
-              : `Tinggal ${Math.max(0, sum.target - dikuasai)} kata lagi menuju target level ${sum.targetLevel}.`}
+              ? `${sum.learning.length} ${t("kata lagi dipelajari — tinggal")} ${Math.max(0, sum.target - dikuasai)} ${t("kata menuju target.")}`
+              : `${t("Tinggal")} ${Math.max(0, sum.target - dikuasai)} ${t("kata lagi menuju target level")} ${sum.targetLevel}.`}
           </p>
         </div>
       </div>
@@ -149,20 +151,20 @@ export default function KosakataCard({
             href="/kosakata"
             className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 text-[12px] font-bold text-gray-500 transition hover:text-[#16796E]"
           >
-            +{dikuasai - CHIP_LIMIT} lagi
+            +{dikuasai - CHIP_LIMIT} {t("lagi")}
           </Link>
         )}
         {dikuasai === 0 && (
           <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-2.5 py-1 text-[12px] font-semibold text-amber-700">
             <Sparkles className="h-3.5 w-3.5" strokeWidth={2.4} />
-            Belum ada yang dikuasai — review {sum.learning.length} kata biar naik status
+            {t("Belum ada yang dikuasai — review")} {sum.learning.length} {t("kata biar naik status")}
           </span>
         )}
       </div>
 
       <p className="mt-3 border-t border-slate-100 pt-2.5 text-[11px] font-medium leading-relaxed text-gray-400">
-        Dihitung dari materi &amp; kuis yang sudah kamu selesaikan ({sum.fromMateri} kata) + kata tersimpan di Watch &amp; Learn ({sum.fromSimpanan} kata).
-        {previewMode && ' Di mode pratinjau, kata tersimpan mengikuti perangkat ini — bukan milik siswanya.'}
+        {t("Dihitung dari materi & kuis yang sudah kamu selesaikan")} ({sum.fromMateri} {t("kata")}) + {t("kata tersimpan di Watch & Learn")} ({sum.fromSimpanan} {t("kata")}).
+        {previewMode && ` ${t("Di mode pratinjau, kata tersimpan mengikuti perangkat ini — bukan milik siswanya.")}`}
       </p>
     </div>
   );

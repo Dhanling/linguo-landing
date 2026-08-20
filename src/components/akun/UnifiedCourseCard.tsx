@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { getFlagUrl } from "@/lib/lang-visuals";
 import { displayLanguage } from "@/lib/classLanguage";
+import { useT, useUiLang } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 // ── Types ──────────────────────────────────────────────────────────
 export type CourseReg = {
@@ -108,6 +109,9 @@ export default function UnifiedCourseCard({
   renderPayment,
   variant = "active",
 }: Props) {
+  const t = useT(); // [ui-lang-switcher-v1]
+  const uiLang = useUiLang();
+  const dateLocale = uiLang === "en" ? "en-GB" : "id-ID";
   const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
   const BadgeIcon = badge.icon;
   const isReguler = reg.product === "Kelas Reguler";
@@ -186,9 +190,9 @@ export default function UnifiedCourseCard({
           <div className="flex items-center gap-1.5 mt-0.5">
             <span className={`inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color}`}>
               <BadgeIcon className="w-3 h-3" strokeWidth={2.5} />
-              {badge.label}
+              {t(badge.label)}
             </span>
-            {reg.duration && <span className="text-[10px] text-gray-400">{reg.duration} mnt/sesi</span>}
+            {reg.duration && <span className="text-[10px] text-gray-400">{reg.duration} {t("mnt/sesi")}</span>}
           </div>
         </div>
         <span className="inline-flex items-center rounded-lg bg-teal-50 px-2.5 py-1 text-xs font-bold text-teal-700">{reg.level}</span>
@@ -208,7 +212,7 @@ export default function UnifiedCourseCard({
       {isReguler && reg.batch && (
         <div className="mb-3 rounded-xl bg-blue-50/70 border border-blue-100 p-3 space-y-1.5">
           <div className="flex items-center justify-between">
-            <span className="text-[10px] font-semibold text-blue-600 uppercase tracking-wide">Jadwal Tetap</span>
+            <span className="text-[10px] font-semibold text-blue-600 uppercase tracking-wide">{t("Jadwal Tetap")}</span>
             <span className="text-[10px] text-blue-500 font-medium">{reg.batch.batch_code}</span>
           </div>
           <div className="flex items-center gap-1.5 text-xs text-blue-800">
@@ -217,14 +221,14 @@ export default function UnifiedCourseCard({
           </div>
           {reg.batch.start_date && reg.batch.end_date && (
             <p className="text-[10px] text-blue-500">
-              Periode: {new Date(reg.batch.start_date).toLocaleDateString("id-ID", { day: "numeric", month: "short" })} — {new Date(reg.batch.end_date).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" })}
+              {t("Periode")}: {new Date(reg.batch.start_date).toLocaleDateString(dateLocale, { day: "numeric", month: "short" })} — {new Date(reg.batch.end_date).toLocaleDateString(dateLocale, { day: "numeric", month: "short", year: "numeric" })}
             </p>
           )}
           {reg.batch.zoom_link && (
             <a href={reg.batch.zoom_link} target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-blue-600 hover:text-blue-700 mt-1">
               <Video className="w-3.5 h-3.5" strokeWidth={2.5} />
-              Buka Zoom
+              {t("Buka Zoom")}
             </a>
           )}
         </div>
@@ -234,7 +238,7 @@ export default function UnifiedCourseCard({
       {isReguler && !reg.batch && isActive && (
         <div className="mb-3 rounded-xl bg-blue-50/50 border border-blue-100 px-3 py-2 text-xs text-blue-600 flex items-start gap-1.5">
           <Info className="w-3.5 h-3.5 shrink-0 mt-0.5" strokeWidth={2} />
-          <span>Jadwal batch akan segera diinfokan admin via WhatsApp</span>
+          <span>{t("Jadwal batch akan segera diinfokan admin via WhatsApp")}</span>
         </div>
       )}
 
@@ -242,7 +246,7 @@ export default function UnifiedCourseCard({
       {isKids && isActive && (
         <div className="mb-3 rounded-xl bg-purple-50/70 border border-purple-100 px-3 py-2 text-xs text-purple-700 flex items-start gap-1.5">
           <Heart className="w-3.5 h-3.5 shrink-0 mt-0.5" strokeWidth={2.5} fill="currentColor" />
-          <span>Kelas disesuaikan untuk anak usia 5–12 tahun · {reg.duration === "30" ? "30 menit" : "45 menit"}/sesi</span>
+          <span>{t("Kelas disesuaikan untuk anak usia 5–12 tahun")} · {reg.duration === "30" ? t("30 menit") : t("45 menit")}/{t("sesi")}</span>
         </div>
       )}
 
@@ -250,7 +254,7 @@ export default function UnifiedCourseCard({
       {isTestPrep && isActive && (
         <div className="mb-3 rounded-xl bg-amber-50/70 border border-amber-100 px-3 py-2 text-xs text-amber-700 flex items-start gap-1.5">
           <Target className="w-3.5 h-3.5 shrink-0 mt-0.5" strokeWidth={2.5} />
-          <span>Target: {reg.language} · {reg.sessions_total > 0 ? `${reg.sessions_total} sesi persiapan` : "Sesi diatur admin"}</span>
+          <span>{t("Target")}: {reg.language} · {reg.sessions_total > 0 ? `${reg.sessions_total} ${t("sesi persiapan")}` : t("Sesi diatur admin")}</span>
         </div>
       )}
 
@@ -260,10 +264,10 @@ export default function UnifiedCourseCard({
           <div className="flex items-center gap-2 text-xs">
             <span className="inline-flex items-center gap-1 text-emerald-600 font-semibold">
               <Calendar className="w-3.5 h-3.5" strokeWidth={2.5} />
-              Kelas berikutnya:
+              {t("Kelas berikutnya")}:
             </span>
             <span className="text-emerald-700 font-bold">
-              {nextClassDate.toLocaleDateString("id-ID", { weekday: "short", day: "numeric", month: "short" })} · {nextClassDate.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })} WIB
+              {nextClassDate.toLocaleDateString(dateLocale, { weekday: "short", day: "numeric", month: "short" })} · {nextClassDate.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })} WIB
             </span>
           </div>
         </div>
@@ -272,7 +276,7 @@ export default function UnifiedCourseCard({
       {/* Session progress */}
       <div className="mb-1">
         <div className="flex justify-between text-xs mb-1">
-          <span className="text-gray-500">{isReguler ? "Pertemuan" : "Sesi"}</span>
+          <span className="text-gray-500">{isReguler ? t("Pertemuan") : t("Sesi")}</span>
           <span className="font-semibold text-gray-700">{reg.sessions_used}/{reg.sessions_total} ({progress}%)</span>
         </div>
         <div className="h-2 rounded-full bg-gray-100 overflow-hidden">
@@ -296,14 +300,14 @@ export default function UnifiedCourseCard({
             className="inline-flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
           >
             <FileText className="w-3.5 h-3.5" strokeWidth={2.5} />
-            Detail
+            {t("Detail")}
           </button>
           <button
             onClick={() => onBooking?.(reg)}
             className="flex-1 inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-teal-600 text-white text-sm font-semibold hover:bg-teal-700 transition-colors shadow-sm"
           >
             <Calendar className="w-4 h-4" strokeWidth={2.5} />
-            Booking Sesi
+            {t("Booking Sesi")}
           </button>
         </div>
       )}
@@ -315,14 +319,14 @@ export default function UnifiedCourseCard({
           className="w-full mt-3 inline-flex h-9 items-center justify-center gap-1.5 rounded-xl text-xs font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
         >
           <FileText className="w-3.5 h-3.5" strokeWidth={2.5} />
-          Lihat Detail Kelas
+          {t("Lihat Detail Kelas")}
         </button>
       )}
 
       {/* Level progress */}
       <div className="mt-3 pt-3 border-t border-gray-50">
         <div className="flex justify-between mb-1.5">
-          <span className="text-[10px] font-medium text-gray-400">Level Progress</span>
+          <span className="text-[10px] font-medium text-gray-400">{t("Level Progress")}</span>
           <span className="text-xs font-bold text-teal-600">{reg.level}</span>
         </div>
         <div className="relative">

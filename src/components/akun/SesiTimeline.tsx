@@ -24,6 +24,7 @@ import { detectKind, KIND_META, TeksMateriOverlay } from './ClassMateriTab';
 // bukan sebagai tautan — lihat ItemRow.
 import { parseDeck } from '@/lib/materiSlides';
 import { SlideDeckViewer } from '@/components/akun/SlideDeckViewer';
+import { getUiLang, tr, useT } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 
 export type TimelineSchedule = {
   id: string;
@@ -56,7 +57,7 @@ function statusChip(s: TimelineSchedule, past: boolean) {
   return { label: 'Mendatang', cls: 'bg-[#16796E]/10 text-[#16796E]' };
 }
 
-const fmtTanggal = (d: Date) => d.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
+const fmtTanggal = (d: Date) => d.toLocaleDateString(getUiLang() === 'en' ? 'en-GB' : 'id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
 const fmtJam = (d: Date) => d.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
 
 function ItemRow({ it }: { it: Item }) {
@@ -118,6 +119,7 @@ export default function SesiTimeline({
   schedules: TimelineSchedule[];
   variant: 'sesi' | 'materi';
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   // Lampiran pengajar cuma dibutuhkan di tab Materi — jangan query di tab Sesi.
   const [materials, setMaterials] = useState<any[] | null>(variant === 'materi' ? null : []);
   useEffect(() => {
@@ -198,7 +200,7 @@ export default function SesiTimeline({
     if (s.recording_url) {
       out.push({
         id: `rec-${s.id}`,
-        title: 'Rekaman sesi',
+        title: tr('Rekaman sesi'),
         kind: 'recording',
         // [kelas-video-rekaman-siswa-v1] deep link dashboard → pemutar siswa
         url: studentRecordingHref(s.recording_url),
@@ -207,7 +209,7 @@ export default function SesiTimeline({
     }
     (bySchedule.get(s.id) || []).forEach((m) => out.push({ id: m.id, title: m.title, kind: m.kind, url: m.url, note: m.note, content: m.content }));
     (Array.isArray(s.material_links) ? s.material_links : []).forEach((l, i) =>
-      out.push({ id: `ml-${s.id}-${i}`, title: l?.name || 'Lampiran', kind: l?.kind === 'file' ? 'file' : undefined, url: l?.url || '#' }),
+      out.push({ id: `ml-${s.id}-${i}`, title: l?.name || tr('Lampiran'), kind: l?.kind === 'file' ? 'file' : undefined, url: l?.url || '#' }),
     );
     return out;
   };
@@ -221,11 +223,11 @@ export default function SesiTimeline({
       <div className="materi-panel rounded-2xl bg-white px-4 py-3.5">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <p className="text-[13px] font-extrabold text-[#12172B]">
-            Sesi {selesai} dari {total || rows.length}
+            {t('Sesi')} {selesai} {t('dari')} {total || rows.length}
           </p>
           <p className="text-[12px] font-semibold text-gray-500">
-            {durasiMenit ? `${durasiMenit} menit/sesi · ` : ''}
-            {variant === 'materi' ? `${totalRekaman} rekaman · ${totalLampiran} lampiran` : `${pct}% selesai`}
+            {durasiMenit ? `${durasiMenit} ${t('menit/sesi')} · ` : ''}
+            {variant === 'materi' ? `${totalRekaman} ${t('rekaman')} · ${totalLampiran} ${t('lampiran')}` : `${pct}% ${t('selesai')}`}
           </p>
         </div>
         <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-[#E8EAEE]">
@@ -236,7 +238,7 @@ export default function SesiTimeline({
       {/* [kelas-materi] lampiran yang tidak terikat sesi mana pun */}
       {variant === 'materi' && general.length > 0 && (
         <div className="materi-panel rounded-2xl bg-white p-4">
-          <p className="mb-2.5 text-[11px] font-bold uppercase tracking-wider text-gray-500">Materi Umum</p>
+          <p className="mb-2.5 text-[11px] font-bold uppercase tracking-wider text-gray-500">{t('Materi Umum')}</p>
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             {general.map((m) => <ItemRow key={m.id} it={{ id: m.id, title: m.title, kind: m.kind, url: m.url, note: m.note, content: m.content }} />)}
           </div>
@@ -249,11 +251,11 @@ export default function SesiTimeline({
       {rows.length === 0 ? (
         <div className="materi-flat rounded-2xl border border-dashed border-slate-200 bg-white/60 p-8 text-center">
           <Calendar className="mx-auto mb-2 h-8 w-8 text-slate-300" strokeWidth={1.6} />
-          <p className="text-[13px] font-semibold text-gray-500">Belum ada sesi terjadwal</p>
-          <p className="mt-1 text-[12px] font-medium text-gray-400">Riwayat sesi, materi &amp; rekaman akan tampil di sini</p>
+          <p className="text-[13px] font-semibold text-gray-500">{t('Belum ada sesi terjadwal')}</p>
+          <p className="mt-1 text-[12px] font-medium text-gray-400">{t('Riwayat sesi, materi & rekaman akan tampil di sini')}</p>
         </div>
       ) : variant === 'materi' && materials === null ? (
-        <p className="py-8 text-center text-[13px] font-medium text-gray-400">Memuat materi…</p>
+        <p className="py-8 text-center text-[13px] font-medium text-gray-400">{t('Memuat materi…')}</p>
       ) : (
         <ol className="flex flex-col">
           {rows.map(({ s, no, key, jenis }, i) => {
@@ -287,11 +289,11 @@ export default function SesiTimeline({
                 <div className="min-w-0 flex-1 pb-3">
                   <div className="materi-panel rounded-2xl bg-white p-4 transition">
                     <div className="flex flex-wrap items-center gap-2">
-                      <p className="text-[14px] font-extrabold text-[#12172B]">Sesi {no}</p>
-                      <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${chip.cls}`}>{chip.label}</span>
+                      <p className="text-[14px] font-extrabold text-[#12172B]">{t('Sesi')} {no}</p>
+                      <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${chip.cls}`}>{t(chip.label)}</span>
                       {variant === 'sesi' && jumlahMateri > 0 && (
                         <span className="inline-flex items-center gap-1 rounded-full bg-[#F5F6F8] px-2 py-0.5 text-[11px] font-bold text-gray-500">
-                          <BookOpen className="h-3 w-3" strokeWidth={2.4} />{jumlahMateri} materi
+                          <BookOpen className="h-3 w-3" strokeWidth={2.4} />{jumlahMateri} {t('materi')}
                         </span>
                       )}
                     </div>
@@ -304,13 +306,13 @@ export default function SesiTimeline({
                           <span className="inline-flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{fmtTanggal(d)} · {fmtJam(d)}</span>
                           {/* [durasi-paket-v1] Durasi paket menang atas duration_minutes
                               baris jadwal (baris lama bisa menyimpan 45 di kelas 60). */}
-                          {(Number(reg?.duration) || s?.duration_minutes) ? <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{Number(reg?.duration) || s?.duration_minutes} menit</span> : null}
+                          {(Number(reg?.duration) || s?.duration_minutes) ? <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{Number(reg?.duration) || s?.duration_minutes} {t('menit')}</span> : null}
                         </>
                       ) : (
                         /* Tanggalnya memang tak ada di data — jangan dikarang. */
                         <span className="inline-flex items-center gap-1.5 text-gray-400">
                           <Calendar className="h-3.5 w-3.5" />
-                          {jenis === 'selesai-semu' ? 'Tanggal sesi tak tercatat di aplikasi' : 'Jadwal belum ditentukan'}
+                          {jenis === 'selesai-semu' ? t('Tanggal sesi tak tercatat di aplikasi') : t('Jadwal belum ditentukan')}
                         </span>
                       )}
                     </p>
@@ -325,7 +327,7 @@ export default function SesiTimeline({
                           {items.map((it) => <ItemRow key={it.id} it={it} />)}
                         </div>
                       ) : (
-                        <p className="mt-2 text-[12px] font-medium text-gray-400">Belum ada materi untuk sesi ini</p>
+                        <p className="mt-2 text-[12px] font-medium text-gray-400">{t('Belum ada materi untuk sesi ini')}</p>
                       )
                     )}
 
@@ -339,7 +341,7 @@ export default function SesiTimeline({
                           rel={internal ? undefined : 'noreferrer'}
                           className="mt-2.5 inline-flex h-9 items-center gap-1.5 rounded-xl bg-[#16796E] px-3 text-[12px] font-bold text-white transition hover:bg-[#0F5A52]"
                         >
-                          <Video className="h-3.5 w-3.5" strokeWidth={2.5} />Tonton rekaman
+                          <Video className="h-3.5 w-3.5" strokeWidth={2.5} />{t('Tonton rekaman')}
                         </a>
                       );
                     })()}

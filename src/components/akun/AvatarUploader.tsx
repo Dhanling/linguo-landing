@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { Camera, Loader2 } from "lucide-react";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 type Props = {
   avatarUrl?: string;
@@ -12,6 +13,7 @@ type Props = {
 };
 
 export default function AvatarUploader({ avatarUrl, firstName, studentId, supabase, onUploaded }: Props) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const inputRef = useRef<HTMLInputElement>(null);
   const [uploading, setUploading] = useState(false);
   const [dragOver, setDragOver] = useState(false);
@@ -19,11 +21,11 @@ export default function AvatarUploader({ avatarUrl, firstName, studentId, supaba
   async function uploadFile(file: File) {
     if (!file || !studentId) return;
     if (!file.type.startsWith("image/")) {
-      alert("File harus berupa gambar (JPG/PNG/WebP).");
+      alert(t("File harus berupa gambar (JPG/PNG/WebP)."));
       return;
     }
     if (file.size > 5 * 1024 * 1024) {
-      alert("Ukuran gambar maksimal 5MB.");
+      alert(t("Ukuran gambar maksimal 5MB."));
       return;
     }
     setUploading(true);
@@ -40,7 +42,7 @@ export default function AvatarUploader({ avatarUrl, firstName, studentId, supaba
       onUploaded(url);
     } catch (err) {
       console.error("Avatar upload failed:", err);
-      alert("Upload gagal. Coba lagi atau pakai file lain.");
+      alert(t("Upload gagal. Coba lagi atau pakai file lain."));
     } finally {
       setUploading(false);
     }
@@ -73,7 +75,7 @@ export default function AvatarUploader({ avatarUrl, firstName, studentId, supaba
         await uploadFile(new File([blob], `drop.${ext}`, { type: blob.type }));
       } catch (err) {
         console.error("Drop URL upload failed:", err);
-        alert("Gambar dari tab lain ga bisa diambil (kemungkinan diblokir situsnya). Coba simpan dulu lalu drag filenya.");
+        alert(t("Gambar dari tab lain ga bisa diambil (kemungkinan diblokir situsnya). Coba simpan dulu lalu drag filenya."));
       } finally {
         setUploading(false);
       }
@@ -86,7 +88,7 @@ export default function AvatarUploader({ avatarUrl, firstName, studentId, supaba
       onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
       onDragLeave={() => setDragOver(false)}
       onDrop={handleDrop}
-      title="Klik atau drag gambar untuk ganti foto"
+      title={t("Klik atau drag gambar untuk ganti foto")}
       className={`group relative h-28 w-28 cursor-pointer overflow-hidden rounded-3xl shadow-lg ring-4 transition ${
         dragOver ? "ring-slate-300" : "ring-white"
       }`}

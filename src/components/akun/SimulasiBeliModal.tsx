@@ -10,6 +10,7 @@ import { getStudentInfo } from "@/lib/simulations";
 import { supabase } from "@/lib/supabase-client";
 import { PAKET, PRICE, PROMO, FEATURES, SKILL_META, formatRp, getFreePromo, type Paket } from "@/lib/simulasiPakets";
 import { usePromoMerdeka } from "@/components/PromoMerdeka";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
@@ -27,6 +28,7 @@ export default function SimulasiBeliModal({
 }) {
   const list = testType ? PAKET.filter((p) => p.testType === testType) : PAKET;
 
+  const t = useT(); // [ui-lang-switcher-v1]
   const [paket, setPaket] = useState<Paket | null>(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -68,7 +70,7 @@ export default function SimulasiBeliModal({
     try {
       const { data: { session } } = await supabase.auth.getSession();
       const token = session?.access_token;
-      if (!token) throw new Error("Kamu perlu login dulu untuk pakai kode promo.");
+      if (!token) throw new Error(t("Kamu perlu login dulu untuk pakai kode promo."));
       const res = await fetch("/api/simulasi/redeem-promo", {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
@@ -125,8 +127,8 @@ export default function SimulasiBeliModal({
                     </button>
                   )}
                   <div>
-                    <p className="text-xs text-white/70">{paket ? "Checkout" : "Pilih Paket"}</p>
-                    <h3 className="text-lg font-bold">{paket ? paket.title : "Simulasi Tes"}</h3>
+                    <p className="text-xs text-white/70">{paket ? t("Checkout") : t("Pilih Paket")}</p>
+                    <h3 className="text-lg font-bold">{paket ? paket.title : t("Simulasi Tes")}</h3>
                   </div>
                 </div>
                 <button onClick={() => !loading && onClose()} className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">✕</button>
@@ -158,7 +160,7 @@ export default function SimulasiBeliModal({
                           {p.tag}
                         </span>
                         {p.soon && (
-                          <span className="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-1 text-[11px] font-bold text-amber-700">Segera</span>
+                          <span className="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-1 text-[11px] font-bold text-amber-700">{t("Segera")}</span>
                         )}
                       </div>
                       <span className="flex items-baseline gap-1.5 text-lg font-extrabold text-slate-900">
@@ -181,7 +183,7 @@ export default function SimulasiBeliModal({
                       })}
                     </div>
                     <p className="mt-2 text-[11px] font-medium" style={{ color: p.accent }}>
-                      {p.soon ? "Masih dalam pengembangan — segera hadir." : p.covers}
+                      {p.soon ? t("Masih dalam pengembangan — segera hadir.") : p.covers}
                     </p>
                   </button>
                 ))}
@@ -191,11 +193,11 @@ export default function SimulasiBeliModal({
               <div className="space-y-4 overflow-y-auto p-6">
                 <ul className="space-y-1.5">
                   <li className="flex items-start gap-2 text-sm text-slate-600">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: paket.accent }} /> {paket.skills.length} bagian sesuai format tes asli
+                    <Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: paket.accent }} /> {paket.skills.length} {t("bagian sesuai format tes asli")}
                   </li>
                   {FEATURES.map((f) => (
                     <li key={f} className="flex items-start gap-2 text-sm text-slate-600">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: paket.accent }} /> {f}
+                      <Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: paket.accent }} /> {t(f)}
                     </li>
                   ))}
                 </ul>
@@ -207,18 +209,18 @@ export default function SimulasiBeliModal({
                     </span>
                     <div className="min-w-0">
                       <p className="truncate text-sm font-semibold text-slate-800">{name || email}</p>
-                      <p className="truncate text-xs text-slate-500">Akses terbuka di {email}</p>
+                      <p className="truncate text-xs text-slate-500">{t("Akses terbuka di")} {email}</p>
                     </div>
                   </div>
                 ) : (
                   <>
                     <div>
-                      <label className="mb-1.5 block text-xs font-semibold text-slate-500">Nama Lengkap</label>
-                      <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Nama" disabled={loading}
+                      <label className="mb-1.5 block text-xs font-semibold text-slate-500">{t("Nama Lengkap")}</label>
+                      <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder={t("Nama")} disabled={loading}
                         className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-300 disabled:opacity-50" />
                     </div>
                     <div>
-                      <label className="mb-1.5 block text-xs font-semibold text-slate-500">Email <span className="font-normal text-slate-400">(dipakai untuk akses)</span></label>
+                      <label className="mb-1.5 block text-xs font-semibold text-slate-500">{t("Email")} <span className="font-normal text-slate-400">({t("dipakai untuk akses")})</span></label>
                       <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email@contoh.com" disabled={loading}
                         className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-300 disabled:opacity-50" />
                     </div>
@@ -232,16 +234,16 @@ export default function SimulasiBeliModal({
                 {/* Kode promo / afiliator */}
                 <div>
                   <label className="mb-1.5 block text-xs font-semibold text-slate-500">
-                    Kode Promo / Afiliator <span className="font-normal text-slate-400">(opsional)</span>
+                    {t("Kode Promo / Afiliator")} <span className="font-normal text-slate-400">({t("opsional")})</span>
                   </label>
                   <div className="relative">
                     <Tag className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-                    <input type="text" value={code} onChange={(e) => setCode(e.target.value)} placeholder="Masukkan kode" disabled={loading}
+                    <input type="text" value={code} onChange={(e) => setCode(e.target.value)} placeholder={t("Masukkan kode")} disabled={loading}
                       className="w-full rounded-xl border border-slate-200 py-3 pl-10 pr-4 text-sm uppercase placeholder:normal-case outline-none focus:border-slate-300 disabled:opacity-50" />
                   </div>
                   {freePromo && (
                     <p className="mt-1.5 flex items-center gap-1.5 text-xs font-semibold text-emerald-600">
-                      <Sparkles className="h-3.5 w-3.5" /> Kode {freePromo.code}: {freePromo.label} — gratis, tanpa bayar!
+                      <Sparkles className="h-3.5 w-3.5" /> {t("Kode")} {freePromo.code}: {freePromo.label} — {t("gratis, tanpa bayar!")}
                     </p>
                   )}
                 </div>
@@ -250,17 +252,17 @@ export default function SimulasiBeliModal({
                   <button onClick={claimFree} disabled={loading}
                     className="flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-sm font-bold text-white shadow-lg disabled:opacity-60"
                     style={{ background: "#059669" }}>
-                    {loading ? (<><Loader2 className="h-4 w-4 animate-spin" /> Mengaktifkan...</>) : (<><Sparkles className="h-4 w-4" /> Klaim Akses Gratis</>)}
+                    {loading ? (<><Loader2 className="h-4 w-4 animate-spin" /> {t("Mengaktifkan...")}</>) : (<><Sparkles className="h-4 w-4" /> {t("Klaim Akses Gratis")}</>)}
                   </button>
                 ) : (
                   <button onClick={checkout} disabled={loading}
                     className="flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-sm font-bold text-white shadow-lg disabled:opacity-60"
                     style={{ background: TEAL }}>
-                    {loading ? (<><Loader2 className="h-4 w-4 animate-spin" /> Memproses...</>) : `Bayar ${formatRp(priceOf(paket))}`}
+                    {loading ? (<><Loader2 className="h-4 w-4 animate-spin" /> {t("Memproses...")}</>) : `${t("Bayar")} ${formatRp(priceOf(paket))}`}
                   </button>
                 )}
                 <p className="text-center text-[11px] text-slate-400">
-                  {freePromo ? "Akses gratis dibatasi sesuai ketentuan kode promo." : "Pembayaran aman via Xendit: QRIS, GoPay, OVO, Dana, ShopeePay, Transfer Bank"}
+                  {freePromo ? t("Akses gratis dibatasi sesuai ketentuan kode promo.") : t("Pembayaran aman via Xendit: QRIS, GoPay, OVO, Dana, ShopeePay, Transfer Bank")}
                 </p>
               </div>
             )}

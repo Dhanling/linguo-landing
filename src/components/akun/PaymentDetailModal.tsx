@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import UnifiedCourseCard from "@/components/akun/UnifiedCourseCard";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 type Props = {
   reg: any;
@@ -12,6 +13,7 @@ type Props = {
 };
 
 export default function PaymentDetailModal({ reg, userId, onClose, renderPayment }: Props) {
+  const t = useT(); // [ui-lang-switcher-v1]
   if (!reg) return null;
 
   return (
@@ -35,7 +37,7 @@ export default function PaymentDetailModal({ reg, userId, onClose, renderPayment
           <button
             onClick={onClose}
             className="ml-3 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200"
-            aria-label="Tutup"
+            aria-label={t("Tutup")}
           >
             ✕
           </button>

@@ -1,5 +1,7 @@
 "use client";
 
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
+
 type Props = {
   firstName: string;
   greeting: string;
@@ -17,6 +19,7 @@ export default function CompactHeroBanner({
   streak,
   activeCount,
 }: Props) {
+  const t = useT(); // [ui-lang-switcher-v1]
   return (
     <div className="rounded-2xl bg-gradient-to-br from-[#1A9E9E] to-[#0F6E56] px-4 py-3.5 sm:px-5 sm:py-4 text-white shadow-md shadow-teal-200/40">
       <div className="flex items-center justify-between gap-3">
@@ -34,14 +37,14 @@ export default function CompactHeroBanner({
               <span className="inline-flex items-center gap-0.5">
                 <span>{"🔥"}</span>
                 <span className="font-semibold text-white">{streak}</span>
-                <span>minggu</span>
+                <span>{t("minggu")}</span>
               </span>
             )}
             {activeCount > 0 && (
               <span className="inline-flex items-center gap-1">
                 <span>·</span>
                 <span className="font-semibold text-white">{activeCount}</span>
-                <span>kursus aktif</span>
+                <span>{t("kursus aktif")}</span>
               </span>
             )}
           </div>

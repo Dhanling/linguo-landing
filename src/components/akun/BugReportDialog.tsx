@@ -13,6 +13,7 @@ import { createPortal } from "react-dom";
 import { supabase } from "@/lib/supabase-client";
 import { toast } from "sonner";
 import { Bug, Film, Upload, X } from "lucide-react";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 type Severity = "critical" | "high" | "medium" | "low";
 
@@ -39,6 +40,7 @@ export default function BugReportDialog({
   open: boolean;
   onClose: () => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [severity, setSeverity] = useState<Severity>("medium");
@@ -118,7 +120,7 @@ export default function BugReportDialog({
     setSending(true);
     try {
       const { data: { user } } = await supabase.auth.getUser();
-      if (!user) throw new Error("Sesi kamu habis — coba login ulang dulu ya");
+      if (!user) throw new Error(t("Sesi kamu habis — coba login ulang dulu ya"));
 
       // Lampiran gagal naik JANGAN membatalkan laporan — teks keluhannya yang paling
       // berharga; foto/video cuma pelengkap. Yang gagal dilewat, sisanya tetap ikut.
@@ -160,11 +162,11 @@ export default function BugReportDialog({
       });
       if (error) throw error;
 
-      toast.success("Laporan terkirim — makasih! Tim Linguo bakal cek ya 🐛");
+      toast.success(t("Laporan terkirim — makasih! Tim Linguo bakal cek ya 🐛"));
       reset();
       onClose();
     } catch (err) {
-      toast.error(err instanceof Error ? err.message : "Gagal mengirim laporan");
+      toast.error(err instanceof Error ? err.message : t("Gagal mengirim laporan"));
     } finally {
       setSending(false);
     }
@@ -180,7 +182,7 @@ export default function BugReportDialog({
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      aria-label="Lapor Bug"
+aria-label={t("Lapor Bug")}
     >
       <div
         onClick={(e) => e.stopPropagation()}
@@ -191,14 +193,14 @@ export default function BugReportDialog({
             <Bug className="h-5 w-5" />
           </span>
           <div className="min-w-0 flex-1">
-            <p className="text-[15px] font-bold text-slate-900">Lapor Bug</p>
+            <p className="text-[15px] font-bold text-slate-900">{t("Lapor Bug")}</p>
             <p className="text-[12px] text-slate-500">
-              Ada yang error atau aneh? Ceritain di sini — laporannya langsung masuk ke tim Linguo.
+              {t("Ada yang error atau aneh? Ceritain di sini — laporannya langsung masuk ke tim Linguo.")}
             </p>
           </div>
           <button
             onClick={onClose}
-            aria-label="Tutup"
+aria-label={t("Tutup")}
             className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-slate-400 transition hover:bg-gray-100 hover:text-slate-700"
           >
             <X className="h-4 w-4" />
@@ -208,12 +210,12 @@ export default function BugReportDialog({
         <div className="flex-1 space-y-4 overflow-y-auto px-5 py-4">
           <div>
             <label className="mb-1.5 block text-[12.5px] font-bold text-slate-700">
-              Masalahnya apa? <span className="text-red-500">*</span>
+              {t("Masalahnya apa?")} <span className="text-red-500">*</span>
             </label>
             <input
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="Contoh: Tombol mulai simulasi gak bisa diklik"
+              placeholder={t("Contoh: Tombol mulai simulasi gak bisa diklik")}
               className={inputCls}
               maxLength={140}
             />
@@ -221,35 +223,35 @@ export default function BugReportDialog({
 
           <div>
             <label className="mb-1.5 block text-[12.5px] font-bold text-slate-700">
-              Ceritain detailnya <span className="text-red-500">*</span>
+              {t("Ceritain detailnya")} <span className="text-red-500">*</span>
             </label>
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               rows={4}
-              placeholder="Lagi buka menu apa, ngeklik apa, terus yang muncul apa. Makin detail makin cepat kami perbaiki."
+              placeholder={t("Lagi buka menu apa, ngeklik apa, terus yang muncul apa. Makin detail makin cepat kami perbaiki.")}
               className={`${inputCls} resize-y`}
             />
           </div>
 
           <div>
-            <label className="mb-1.5 block text-[12.5px] font-bold text-slate-700">Seberapa mengganggu?</label>
+            <label className="mb-1.5 block text-[12.5px] font-bold text-slate-700">{t("Seberapa mengganggu?")}</label>
             <select
               value={severity}
               onChange={(e) => setSeverity(e.target.value as Severity)}
               className={inputCls}
             >
               {SEVERITY_OPTIONS.map((o) => (
-                <option key={o.value} value={o.value}>{o.label}</option>
+                <option key={o.value} value={o.value}>{t(o.label)}</option>
               ))}
             </select>
           </div>
 
           <div>
             <label className="mb-1.5 block text-[12.5px] font-bold text-slate-700">
-              Foto / Video{" "}
+              {t("Foto / Video")}{" "}
               <span className="font-medium text-slate-400">
-                (opsional, tapi sangat membantu — {picked.length}/{MAX_FILES})
+                ({t("opsional, tapi sangat membantu")} — {picked.length}/{MAX_FILES})
               </span>
             </label>
             {picked.length > 0 && (
@@ -264,7 +266,7 @@ export default function BugReportDialog({
                     )}
                     <button
                       onClick={() => removeAt(i)}
-                      aria-label={`Hapus ${p.file.name}`}
+                      aria-label={`${t("Hapus")} ${p.file.name}`}
                       className="absolute right-1.5 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-white text-slate-600 shadow transition hover:bg-gray-100"
                     >
                       <X className="h-3 w-3" />
@@ -284,10 +286,10 @@ export default function BugReportDialog({
               >
                 <Upload className="h-5 w-5" />
                 <span className="text-[12.5px] font-semibold">
-                  Pilih foto atau video — boleh beberapa sekaligus
+                  {t("Pilih foto atau video — boleh beberapa sekaligus")}
                 </span>
                 <span className="text-[11px]">
-                  Gambar maks {MAX_MB}MB · video maks {MAX_VIDEO_MB}MB
+                  {t("Gambar maks")} {MAX_MB}MB · {t("video maks")} {MAX_VIDEO_MB}MB
                 </span>
               </button>
             )}
@@ -311,14 +313,14 @@ export default function BugReportDialog({
             onClick={onClose}
             className="rounded-xl px-4 py-2.5 text-[13.5px] font-semibold text-slate-500 transition hover:bg-gray-100 hover:text-slate-700"
           >
-            Batal
+            {t("Batal")}
           </button>
           <button
             onClick={submit}
             disabled={!valid || sending}
             className="rounded-xl bg-[#16796E] px-5 py-2.5 text-[13.5px] font-bold text-white shadow-sm transition hover:bg-[#0F5A52] disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {sending ? "Mengirim…" : "Kirim Laporan"}
+            {sending ? t("Mengirim…") : t("Kirim Laporan")}
           </button>
         </div>
       </div>

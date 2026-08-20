@@ -1,5 +1,7 @@
 "use client";
 
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
+
 type Props = {
   count: number;
   onClick?: () => void;
@@ -7,9 +9,10 @@ type Props = {
 };
 
 export default function AttentionAlert({ count, onClick, label }: Props) {
+  const t = useT(); // [ui-lang-switcher-v1]
   if (count <= 0) return null;
 
-  const text = label || `${count} hal perlu perhatian`;
+  const text = label || `${count} ${t("hal perlu perhatian")}`;
 
   return (
     <button
@@ -23,7 +26,7 @@ export default function AttentionAlert({ count, onClick, label }: Props) {
       <div className="flex-1 min-w-0">
         <p className="text-sm font-semibold text-amber-900 truncate">{text}</p>
         <p className="text-[11px] text-amber-700/80">
-          {count === 1 ? "Lihat kartu dengan badge 'Belum Bayar'" : "Lihat kartu dengan badge kuning / merah"}
+          {count === 1 ? t("Lihat kartu dengan badge 'Belum Bayar'") : t("Lihat kartu dengan badge kuning / merah")}
         </p>
       </div>
       <span className="shrink-0 text-amber-600 group-hover:translate-x-0.5 transition-transform">›</span>

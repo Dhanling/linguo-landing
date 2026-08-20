@@ -13,6 +13,7 @@ import {
   ChevronLeft, ChevronRight, X, Maximize2, Minimize2, Eye, EyeOff,
 } from "lucide-react";
 import type { MateriSlide } from "@/lib/materiSlides";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 const TEAL = "#1A9E9E";
 
@@ -150,6 +151,7 @@ export function SlideDeckViewer({
   subtitle?: string;
   onClose: () => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [i, setI] = useState(0);
   const [fs, setFs] = useState(false);
   const [kunci, setKunci] = useState(false);
@@ -225,19 +227,19 @@ export function SlideDeckViewer({
             className="rounded-lg p-1.5 text-gray-400 transition hover:bg-gray-800 hover:text-white">
             {fs ? <Minimize2 size={16} /> : <Maximize2 size={16} />}
           </button>
-          <button onClick={onClose} title="Tutup" className="rounded-lg p-1.5 text-gray-400 transition hover:bg-gray-800 hover:text-white">
+          <button onClick={onClose} title={t("Tutup")} className="rounded-lg p-1.5 text-gray-400 transition hover:bg-gray-800 hover:text-white">
             <X size={16} />
           </button>
         </div>
       </div>
 
       <div className="relative flex min-h-0 flex-1 items-center justify-center p-3 sm:p-6">
-        <button onClick={mundur} disabled={i === 0} aria-label="Slide sebelumnya"
+        <button onClick={mundur} disabled={i === 0} aria-label={t("Slide sebelumnya")}
           className="absolute left-2 z-10 rounded-full bg-white/10 p-2.5 text-white transition hover:bg-white/20 disabled:opacity-20 sm:left-4 sm:p-3">
           <ChevronLeft size={22} />
         </button>
         <SlideCard s={s} showAnswers={kunci} className="aspect-[16/9] max-h-full w-full max-w-[min(1100px,92vw)] rounded-2xl shadow-2xl" />
-        <button onClick={maju} disabled={i === total - 1} aria-label="Slide berikutnya"
+        <button onClick={maju} disabled={i === total - 1} aria-label={t("Slide berikutnya")}
           className="absolute right-2 z-10 rounded-full bg-white/10 p-2.5 text-white transition hover:bg-white/20 disabled:opacity-20 sm:right-4 sm:p-3">
           <ChevronRight size={22} />
         </button>

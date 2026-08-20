@@ -13,6 +13,7 @@ import SilabusOutline from "@/components/akun/SilabusOutline";
 import { isFreeLevel } from "@/lib/lmsAccess"; // [linguo-patch:lms-katalog-upgrade-cta-v1] sumber tunggal aturan A1-gratis
 // [lms-content-readiness-v1] sesi yang belum ditulis materinya jangan ikut dihitung
 import { fetchLessonStats, keepReady, type LessonStat } from "@/lib/lmsContent";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 
 const TEAL = "#16796E";
@@ -147,6 +148,7 @@ export default function LmsKatalog({
   query?: string;
   languages?: string[];
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [loading, setLoading] = useState(() => !_lmsCache);
   const [courses, setCourses] = useState<Course[]>(() => _lmsCache?.courses || []);
   const [sel, setSel] = useState<string>(() => _lmsCache?.courses[0]?.slug || ""); // selected slug
@@ -252,8 +254,8 @@ export default function LmsKatalog({
     return (
       <Frame sidebar={(
         <div className="shrink-0 px-6 pb-4 pt-7">
-          <h2 className="text-[18px] font-extrabold text-[#12172B]">Bahasa Kamu</h2>
-          <p className="mt-0.5 text-[12px] font-medium text-gray-500">Memuat…</p>
+          <h2 className="text-[18px] font-extrabold text-[#12172B]">{t("Bahasa Kamu")}</h2>
+          <p className="mt-0.5 text-[12px] font-medium text-gray-500">{t("Memuat…")}</p>
         </div>
       )}>
         <div className="flex flex-1 items-center justify-center py-16">
@@ -267,14 +269,14 @@ export default function LmsKatalog({
     return (
       <Frame sidebar={(
         <div className="shrink-0 px-6 pb-4 pt-7">
-          <h2 className="text-[18px] font-extrabold text-[#12172B]">Bahasa Kamu</h2>
-          <p className="mt-0.5 text-[12px] font-medium text-gray-500">0 bahasa · belajar mandiri</p>
+          <h2 className="text-[18px] font-extrabold text-[#12172B]">{t("Bahasa Kamu")}</h2>
+          <p className="mt-0.5 text-[12px] font-medium text-gray-500">0 {t("bahasa · belajar mandiri")}</p>
         </div>
       )}>
         <div className="flex flex-1 flex-col items-center justify-center px-4 pb-10 pt-8 text-center">
           <GraduationCap className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
-          <p className="text-[14px] font-semibold text-gray-600">Belum ada materi mandiri kamu</p>
-          <p className="mt-1 max-w-sm text-[12px] font-medium text-gray-400">Kamu belum punya paket Belajar Mandiri. Daftar dulu bahasanya biar materinya muncul di sini.</p>
+          <p className="text-[14px] font-semibold text-gray-600">{t("Belum ada materi mandiri kamu")}</p>
+          <p className="mt-1 max-w-sm text-[12px] font-medium text-gray-400">{t("Kamu belum punya paket Belajar Mandiri. Daftar dulu bahasanya biar materinya muncul di sini.")}</p>
         </div>
       </Frame>
     );
@@ -323,7 +325,7 @@ export default function LmsKatalog({
     );
   };
 
-  const startLabel = selected.done === 0 ? "Mulai belajar" : "Lanjutkan";
+  const startLabel = selected.done === 0 ? t("Mulai belajar") : t("Lanjutkan");
   const photo = `/lang/${selected.slug}.jpg`;
 
   const ResumeBtn = ({ block }: { block?: boolean }) =>
@@ -354,7 +356,7 @@ export default function LmsKatalog({
         className={`inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-[13px] font-bold text-gray-500 ring-1 ring-slate-200 ${block ? "w-full" : ""}`}
       >
         <Hammer className="h-4 w-4" strokeWidth={2.2} />
-        Materi sedang disiapkan
+        {t("Materi sedang disiapkan")}
       </span>
     ) : null;
 
@@ -368,7 +370,7 @@ export default function LmsKatalog({
           className={`inline-flex items-center justify-center gap-1.5 rounded-xl border border-[#16796E]/25 px-4 py-2.5 text-[13px] font-bold text-[#16796E] transition hover:bg-[#16796E]/5 ${block ? "w-full" : ""}`}
         >
           <Crown className="h-4 w-4" />
-          Buka akses penuh
+          {t("Buka akses penuh")}
           <ArrowRight className="h-3.5 w-3.5" />
         </button>
       ) : (
@@ -377,7 +379,7 @@ export default function LmsKatalog({
           className={`inline-flex items-center justify-center gap-1.5 rounded-xl border border-[#16796E]/25 px-4 py-2.5 text-[13px] font-bold text-[#16796E] transition hover:bg-[#16796E]/5 ${block ? "w-full" : ""}`}
         >
           <Crown className="h-4 w-4" />
-          Buka akses penuh
+          {t("Buka akses penuh")}
           <ArrowRight className="h-3.5 w-3.5" />
         </a>
       )
@@ -392,12 +394,12 @@ export default function LmsKatalog({
           <div className="shrink-0 px-6 pb-4 pt-7">
             <div className="flex items-start justify-between gap-2">
               <div>
-                <h2 className="text-[18px] font-extrabold text-[#12172B]">Bahasa Kamu</h2>
-                <p className="mt-0.5 text-[12px] font-medium text-gray-500">{visible.length} bahasa · belajar mandiri</p>
+                <h2 className="text-[18px] font-extrabold text-[#12172B]">{t("Bahasa Kamu")}</h2>
+                <p className="mt-0.5 text-[12px] font-medium text-gray-500">{visible.length} {t("bahasa · belajar mandiri")}</p>
               </div>
               <button
                 onClick={() => setSidebarOpen(false)}
-                aria-label="Lipat panel Bahasa Kamu"
+                aria-label={t("Lipat panel Bahasa Kamu")}
                 title="Lipat panel"
                 className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[#F5F6F8] text-gray-500 transition hover:bg-[#16796E]/10 hover:text-[#16796E]"
               >
@@ -412,7 +414,7 @@ export default function LmsKatalog({
           </div>
           <div className="flex flex-col gap-2.5 overflow-y-auto px-4 pb-6">
             {shown.length > 0 ? shown.map((c) => <CourseItem key={c.slug} c={c} />) : (
-              <p className="px-2 py-6 text-center text-[13px] font-medium text-gray-400">Tidak ada bahasa di filter ini</p>
+              <p className="px-2 py-6 text-center text-[13px] font-medium text-gray-400">{t("Tidak ada bahasa di filter ini")}</p>
             )}
           </div>
         </aside>
@@ -421,8 +423,8 @@ export default function LmsKatalog({
         <aside className="hidden min-h-0 flex-col items-center border-r border-slate-100 bg-white pt-7 lg:flex">
           <button
             onClick={() => setSidebarOpen(true)}
-            aria-label="Buka panel Bahasa Kamu"
-            title="Buka panel Bahasa Kamu"
+            aria-label={t("Buka panel Bahasa Kamu")}
+            title={t("Buka panel Bahasa Kamu")}
             className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#F5F6F8] text-gray-500 transition hover:bg-[#16796E]/10 hover:text-[#16796E]"
           >
             <PanelLeftOpen className="h-[18px] w-[18px]" strokeWidth={2} />
@@ -445,7 +447,7 @@ export default function LmsKatalog({
               <div className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(105deg, rgba(15,71,65,0.88) 0%, rgba(22,121,110,0.66) 46%, rgba(22,121,110,0.28) 100%)" }} />
               <span className="relative z-10 flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-white/15 text-[40px] font-extrabold leading-none text-white">{selected.glyph}</span>
               <div className="relative z-10 min-w-0 flex-1 text-white">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold">Belajar Mandiri</span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold">{t("Belajar Mandiri")}</span>
                 <h2 className="mt-2 text-[22px] font-extrabold leading-tight">{selected.native}</h2>
                 <p className="mt-1 text-[13px] font-medium text-white/85">{selected.idLabel} · CEFR A1–B2</p>
               </div>
@@ -455,32 +457,32 @@ export default function LmsKatalog({
             </div>
             <div className="grid grid-cols-3 gap-4 px-6 py-5 sm:px-7">
               <div>
-                <p className="text-[12px] font-semibold text-gray-500">Progress</p>
+                <p className="text-[12px] font-semibold text-gray-500">{t("Progress")}</p>
                 <div className="mt-2 flex items-center gap-2">
                   <span className="h-2 flex-1 overflow-hidden rounded-full bg-[#E8EAEE]"><span className="block h-full rounded-full bg-[#16796E]" style={{ width: `${selected.pct}%` }} /></span>
                   <span className="text-[13px] font-extrabold text-[#12172B]">{selected.pct}%</span>
                 </div>
               </div>
               <div className="border-l border-slate-100 pl-4">
-                <p className="text-[12px] font-semibold text-gray-500">Sesi Selesai</p>
+                <p className="text-[12px] font-semibold text-gray-500">{t("Sesi Selesai")}</p>
                 <p className="mt-1 text-[18px] font-extrabold text-[#12172B]">{selected.done}<span className="text-[14px] font-bold text-gray-400">/{selected.total}</span></p>
                 {/* [lms-content-readiness-v1] sesi yang judulnya sudah ada tapi materinya belum ditulis */}
                 {selected.pending > 0 ? (
-                  <p className="mt-0.5 text-[11px] font-semibold text-gray-400">+{selected.pending} sesi lagi disiapkan</p>
+                  <p className="mt-0.5 text-[11px] font-semibold text-gray-400">+{selected.pending} {t("sesi lagi disiapkan")}</p>
                 ) : null}
               </div>
               <div className="border-l border-slate-100 pl-4">
-                <p className="text-[12px] font-semibold text-gray-500">Akses</p>
+                <p className="text-[12px] font-semibold text-gray-500">{t("Akses")}</p>
                 {/* [linguo-patch:lms-katalog-entitlement-v1] jujur soal kepemilikan — jgn klaim "selamanya" utk bahasa yg belum dibeli */}
                 {selected.owned ? (
                   <p className="mt-1.5 inline-flex items-center gap-1 text-[13px] font-bold leading-tight text-[#12172B]">
                     <Crown className="h-3.5 w-3.5" style={{ color: YELLOW }} strokeWidth={2.5} />
-                    Selamanya · kapan aja
+                    {t("Selamanya · kapan aja")}
                   </p>
                 ) : (
                   <p className="mt-1.5 inline-flex items-center gap-1 text-[13px] font-bold leading-tight text-[#12172B]">
                     <Lock className="h-3.5 w-3.5 text-slate-400" strokeWidth={2.5} />
-                    Gratis A1 · A2–B2 terkunci
+                    {t("Gratis A1 · A2–B2 terkunci")}
                   </p>
                 )}
               </div>
@@ -489,7 +491,7 @@ export default function LmsKatalog({
             {!selected.owned && selected.upgrade && (
               <div className="flex flex-col gap-3 border-t border-slate-100 px-6 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7">
                 <p className="text-[12.5px] font-medium leading-snug text-gray-500">
-                  Kamu lagi pakai versi gratis (level A1). Buka <span className="font-bold text-[#12172B]">A2–B2</span> buat lanjut sampai mahir.
+                  {t("Kamu lagi pakai versi gratis (level A1). Buka")} <span className="font-bold text-[#12172B]">A2–B2</span> {t("buat lanjut sampai mahir.")}
                 </p>
                 <div className="shrink-0">
                   <UpgradeBtn />

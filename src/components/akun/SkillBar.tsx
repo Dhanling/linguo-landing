@@ -6,6 +6,7 @@
 
 import { ArrowUpRight, ArrowDownRight, Minus } from 'lucide-react';
 import { cefrBand, scorePct, type SkillDelta } from '@/lib/studentInsights';
+import { tr, useT } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 
 /** Panah + selisih persen. Tidak merender apa-apa kalau tak ada pembanding. */
 export function DeltaBadge({ delta, before, score, size = 'sm' }: {
@@ -20,7 +21,7 @@ export function DeltaBadge({ delta, before, score, size = 'sm' }: {
   if (diff === 0) {
     return (
       <span className={`inline-flex items-center gap-0.5 rounded-md bg-slate-100 font-bold text-gray-500 ${pad}`}>
-        <Minus className="h-3 w-3" strokeWidth={2.6} /> tetap
+        <Minus className="h-3 w-3" strokeWidth={2.6} /> {tr('tetap')}
       </span>
     );
   }
@@ -29,7 +30,7 @@ export function DeltaBadge({ delta, before, score, size = 'sm' }: {
   return (
     <span
       className={`inline-flex items-center gap-0.5 rounded-md font-bold ${pad} ${naik ? 'bg-emerald-50 text-emerald-700' : 'bg-red-50 text-red-600'}`}
-      title={naik ? `Naik ${diff}% dari penilaian sebelumnya` : `Turun ${Math.abs(diff)}% dari penilaian sebelumnya`}
+      title={naik ? `${tr('Naik')} ${diff}% ${tr('dari penilaian sebelumnya')}` : `${tr('Turun')} ${Math.abs(diff)}% ${tr('dari penilaian sebelumnya')}`}
     >
       <Icon className="h-3 w-3" strokeWidth={2.8} />
       {naik ? '+' : ''}{diff}%
@@ -47,6 +48,7 @@ export function SkillRow({ skill, label, Icon, compact = false }: {
   Icon: any;
   compact?: boolean;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const pct = scorePct(skill.score);
   const beforePct = skill.before !== null ? scorePct(skill.before) : null;
   return (
@@ -64,7 +66,7 @@ export function SkillRow({ skill, label, Icon, compact = false }: {
             </span>
           </span>
         ) : (
-          <span className="text-xs text-gray-400">belum dinilai</span>
+          <span className="text-xs text-gray-400">{t('belum dinilai')}</span>
         )}
       </div>
       {/* Bar utama = nilai sekarang. Garis abu di bawahnya = nilai lama, jadi

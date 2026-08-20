@@ -6,6 +6,7 @@ import { supabase } from "@/lib/supabase-client";
 import { BookOpen, ChevronDown, Target, Loader2, ArrowRight, X, Video, FileText, ClipboardList, ChevronRight } from "lucide-react";
 // [lms-content-readiness-v1] sumber tunggal "sesi ini sudah ada isinya atau belum"
 import { fetchLessonStats } from "@/lib/lmsContent";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 type Session = { number: number; title: string; topics?: string[] };
 type Sublevel = { code: string; name: string; preview?: boolean; sessions: Session[] };
@@ -58,6 +59,7 @@ export default function SilabusOutline({
   mode = "live",
   onOpen,
 }: Props) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [data, setData] = useState<Curriculum | null>(null);
   const [state, setState] = useState<"loading" | "ready" | "error">("loading");
   const [openLevel, setOpenLevel] = useState<string | null>(null);
@@ -176,12 +178,12 @@ export default function SilabusOutline({
     return (
       <div className="rounded-2xl border border-dashed border-slate-200 bg-white/60 p-8 text-center">
         <BookOpen className="mx-auto mb-2 h-8 w-8 text-slate-300" strokeWidth={1.6} />
-        <p className="text-[13px] font-semibold text-gray-500">Silabus belum tersedia untuk bahasa ini</p>
+        <p className="text-[13px] font-semibold text-gray-500">{t("Silabus belum tersedia untuk bahasa ini")}</p>
         <a
           href={`/silabus/${slug}`}
           className="mt-3 inline-flex items-center gap-1.5 text-[12px] font-bold text-[#16796E] hover:underline"
         >
-          Lihat di halaman silabus <ArrowRight className="h-3.5 w-3.5" strokeWidth={2.5} />
+          {t("Lihat di halaman silabus")} <ArrowRight className="h-3.5 w-3.5" strokeWidth={2.5} />
         </a>
       </div>
     );
@@ -238,12 +240,12 @@ export default function SilabusOutline({
                   <span className="truncate text-[14px] font-extrabold text-[#12172B]">{lvl.name}</span>
                   {isCurrent ? (
                     <span className="shrink-0 rounded-full bg-[#F2CB05]/25 px-2 py-0.5 text-[10px] font-bold text-[#9A7400]">
-                      Level kamu
+                      {t("Level kamu")}
                     </span>
                   ) : null}
                 </span>
                 <span className="mt-0.5 block text-[12px] font-medium text-gray-400">
-                  {lvl.sublevels.length} chapter · {totalSesi} sesi
+                  {lvl.sublevels.length} {t("chapter")} · {totalSesi} {t("sesi")}
                 </span>
               </span>
               <ChevronDown
@@ -264,12 +266,12 @@ export default function SilabusOutline({
                       >
                         <span className="min-w-0 flex-1">
                           <span className="block text-[10px] font-bold uppercase tracking-wide text-gray-400">
-                            Chapter {si + 1} · {sub.code}
+                            {t("Chapter")} {si + 1} · {sub.code}
                           </span>
                           <span className="block truncate text-[13.5px] font-bold text-[#12172B]">{sub.name}</span>
                         </span>
                         <span className="shrink-0 text-[11px] font-semibold text-gray-400">
-                          {sub.sessions?.length || 0} sesi
+                          {sub.sessions?.length || 0} {t("sesi")}
                         </span>
                         <ChevronDown
                           className={`h-4 w-4 shrink-0 text-slate-300 transition-transform ${subOpen ? "rotate-180" : ""}`}
@@ -297,7 +299,7 @@ export default function SilabusOutline({
                                 </span>
                                 <span className={`min-w-0 flex-1 truncate text-[13px] font-bold ${soon ? "text-gray-400" : "text-[#12172B]"}`}>{s.title}</span>
                                 {soon ? (
-                                  <span className="shrink-0 rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-bold text-gray-400">Segera</span>
+                                  <span className="shrink-0 rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-bold text-gray-400">{t("Segera")}</span>
                                 ) : null}
                                 <ChevronRight className="h-4 w-4 shrink-0 text-slate-300 transition group-hover:text-[#16796E]" strokeWidth={2} />
                               </button>
@@ -321,7 +323,7 @@ export default function SilabusOutline({
           className="inline-flex h-9 items-center gap-1.5 rounded-xl bg-white px-3.5 text-[12px] font-bold text-[#12172B] transition hover:border-slate-200 hover:text-[#16796E]"
         >
           <BookOpen className="h-4 w-4" strokeWidth={2} />
-          Silabus lengkap{languageLabel ? ` ${languageLabel}` : ""}
+          {t("Silabus lengkap")}{languageLabel ? ` ${languageLabel}` : ""}
         </a>
         {showPlacementTest ? (
           <a
@@ -329,7 +331,7 @@ export default function SilabusOutline({
             className="inline-flex h-9 items-center gap-1.5 rounded-xl bg-white px-3.5 text-[12px] font-bold text-[#12172B] transition hover:border-slate-200 hover:text-[#16796E]"
           >
             <Target className="h-4 w-4" strokeWidth={2} />
-            Placement Test
+            {t("Placement Test")}
           </a>
         ) : null}
       </div>
@@ -355,7 +357,7 @@ export default function SilabusOutline({
               </div>
               <button
                 onClick={() => setOpenSession(null)}
-                aria-label="Tutup"
+                aria-label={t("Tutup")}
                 className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-gray-400 transition hover:bg-slate-100 hover:text-[#12172B]"
               >
                 <X className="h-5 w-5" strokeWidth={2} />
@@ -364,7 +366,7 @@ export default function SilabusOutline({
 
             {openSession.s.topics && openSession.s.topics.length ? (
               <div className="mt-4">
-                <p className="text-[11px] font-bold uppercase tracking-wide text-gray-400">Yang dipelajari</p>
+                <p className="text-[11px] font-bold uppercase tracking-wide text-gray-400">{t("Yang dipelajari")}</p>
                 <ul className="mt-2 space-y-1.5">
                   {openSession.s.topics.map((t, i) => (
                     <li key={i} className="flex gap-2.5 text-[13px] font-medium leading-snug text-gray-700">
@@ -387,15 +389,15 @@ export default function SilabusOutline({
                     <BookOpen className="h-4 w-4" strokeWidth={2.2} />
                   </span>
                   <div className="min-w-0 flex-1">
-                    <p className="text-[13px] font-extrabold text-[#0F5A52]">Pelajaran interaktif tersedia</p>
+                    <p className="text-[13px] font-extrabold text-[#0F5A52]">{t("Pelajaran interaktif tersedia")}</p>
                     <p className="text-[11.5px] font-medium text-[#16796E]">
                       {[
-                        lessonState.hasAudio ? "Audio" : null,
-                        lessonState.hasMateri ? "Materi" : null,
-                        lessonState.quizCount ? `${lessonState.quizCount} soal kuis` : null,
+                        lessonState.hasAudio ? t("Audio") : null,
+                        lessonState.hasMateri ? t("Materi") : null,
+                        lessonState.quizCount ? `${lessonState.quizCount} ${t("soal kuis")}` : null,
                       ]
                         .filter(Boolean)
-                        .join(" · ") || "Materi belajar"}
+                        .join(" · ") || t("Materi belajar")}
                     </p>
                   </div>
                 </div>
@@ -404,33 +406,33 @@ export default function SilabusOutline({
                     onClick={() => onOpen(lessonState.lessonId)}
                     className="mt-3 flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[#16796E] text-[13px] font-bold text-white transition hover:bg-[#0F5A52]"
                   >
-                    Mulai belajar <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
+                    {t("Mulai belajar")} <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
                   </button>
                 ) : (
                   <a
                     href={`/akun/belajar/${lessonState.lessonId}`}
                     className="mt-3 flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[#16796E] text-[13px] font-bold text-white transition hover:bg-[#0F5A52]"
                   >
-                    Mulai belajar <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
+                    {t("Mulai belajar")} <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
                   </a>
                 )}
               </div>
             ) : mode === "selfpaced" ? (
               <div className="mt-5 space-y-2">
-                <ContentSlot icon={Video} label="Video pelajaran" hint="Materi interaktif sesi ini" />
-                <ContentSlot icon={FileText} label="Materi &amp; kosakata" hint="Bacaan, gloss, contoh kalimat" />
-                <ContentSlot icon={ClipboardList} label="Latihan &amp; kuis" hint="Pilihan ganda + isian rumpang" />
+                <ContentSlot icon={Video} label={t("Video pelajaran")} hint={t("Materi interaktif sesi ini")} />
+                <ContentSlot icon={FileText} label={t("Materi & kosakata")} hint={t("Bacaan, gloss, contoh kalimat")} />
+                <ContentSlot icon={ClipboardList} label={t("Latihan & kuis")} hint={t("Pilihan ganda + isian rumpang")} />
                 <p className="px-1 pt-1 text-[11.5px] font-medium leading-snug text-gray-400">
-                  Pelajaran interaktif buat sesi ini lagi disiapin — pantau terus, ya.
+                  {t("Pelajaran interaktif buat sesi ini lagi disiapin — pantau terus, ya.")}
                 </p>
               </div>
             ) : (
               <div className="mt-5 space-y-2">
-                <ContentSlot icon={Video} label="Rekaman / video sesi" hint="Link Google Drive / Zoom recording" />
-                <ContentSlot icon={FileText} label="File materi" hint="PDF / slide — berupa link" />
-                <ContentSlot icon={ClipboardList} label="Latihan & kuis" hint="Pilihan ganda + isian rumpang" />
+                <ContentSlot icon={Video} label={t("Rekaman / video sesi")} hint={t("Link Google Drive / Zoom recording")} />
+                <ContentSlot icon={FileText} label={t("File materi")} hint={t("PDF / slide — berupa link")} />
+                <ContentSlot icon={ClipboardList} label={t("Latihan & kuis")} hint={t("Pilihan ganda + isian rumpang")} />
                 <p className="px-1 pt-1 text-[11.5px] font-medium leading-snug text-gray-400">
-                  Buat kelas live, rekaman &amp; materi sesi nyata ada di tab <span className="font-bold text-gray-500">Sesi &amp; Rekaman</span>.
+                  {t("Buat kelas live, rekaman & materi sesi nyata ada di tab")} <span className="font-bold text-gray-500">{t("Sesi & Rekaman")}</span>.
                 </p>
               </div>
             )}
@@ -452,14 +454,14 @@ export default function SilabusOutline({
                 <BookOpen className="h-4 w-4" strokeWidth={2.2} />
               </span>
               <div className="min-w-0 flex-1">
-                <p className="text-[10px] font-bold uppercase tracking-wide text-gray-400">Tentang bahasa ini</p>
+                <p className="text-[10px] font-bold uppercase tracking-wide text-gray-400">{t("Tentang bahasa ini")}</p>
                 <h3 className="mt-0.5 text-[16px] font-extrabold leading-snug text-[#12172B]">
-                  {languageLabel || "Deskripsi bahasa"}
+                  {languageLabel || t("Deskripsi bahasa")}
                 </h3>
               </div>
               <button
                 onClick={() => setShowOverview(false)}
-                aria-label="Tutup"
+                aria-label={t("Tutup")}
                 className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-gray-400 transition hover:bg-slate-100 hover:text-[#12172B]"
               >
                 <X className="h-5 w-5" strokeWidth={2} />
