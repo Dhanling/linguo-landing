@@ -650,8 +650,16 @@ export default function EbookReader({
         setTotal(d.numPages);
         // Lanjut dari halaman terakhir. Disimpan lokal dulu — menambah kolom di
         // digital_purchases perlu ubah skema, dan itu keputusan terpisah.
-        const simpanan = Number(localStorage.getItem(halamanKey(purchaseId)) || "1");
-        setPage(Number.isFinite(simpanan) ? Math.min(Math.max(1, simpanan), d.numPages) : 1);
+        // Simpanannya berbentuk "halaman/jumlahHalaman". Kalau jumlahnya beda,
+        // modulnya sudah diterbitkan ulang dengan isi baru — nomor halaman lama
+        // menunjuk ke tempat yang salah, jadi bacanya dimulai dari sampul lagi.
+        const mentah = localStorage.getItem(halamanKey(purchaseId)) || "";
+        const [halTeks, totalTeks] = mentah.split("/");
+        const simpanan = Number(halTeks);
+        const totalLama = Number(totalTeks);
+        const sahih =
+          Number.isFinite(simpanan) && simpanan >= 1 && totalLama === d.numPages;
+        setPage(sahih ? Math.min(simpanan, d.numPages) : 1);
       } catch (e: any) {
         if (hidup) setGalat(e?.message || tr("Gagal memuat modul"));
       } finally {
@@ -986,7 +994,7 @@ export default function EbookReader({
   }, [doc, tampil, dua, siapkan, ukuran, generasi]);
 
   useEffect(() => {
-    if (doc) localStorage.setItem(halamanKey(purchaseId), String(page));
+    if (doc) localStorage.setItem(halamanKey(purchaseId), `${page}/${doc.numPages}`);
   }, [page, purchaseId, doc]);
 
   /* ── membalik halaman ──────────────────────────────────────────────────── */
