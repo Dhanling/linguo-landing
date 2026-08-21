@@ -1,131 +1,207 @@
 {
-  "title": "Belanja",
-  "title_target": "De compras",
-  "goal": "Menyatakan suka dan tidak suka, menyebut warna dan pakaian, menanyakan harga, dan berbelanja di pasar.",
+  "title": "Keluargaku",
+  "title_target": "Mi familia",
+  "goal": "Menyebut anggota keluarga, menyatakan umur, dan memakai *tener* dalam enam bentuknya.",
   "bekal": [
-    "mengatakan apa yang kamu suka dan tidak suka",
-    "menyebut warna, pakaian, dan ukuran",
-    "menanyakan harga dan menawar sopan",
-    "menunjuk barang dengan *este*, *ese*, *aquel*",
-    "membeli bahan makanan dengan takarannya"
+    "menyebut siapa saja anggota keluargamu",
+    "menanyakan dan menyebutkan umur",
+    "memakai *tener* dan ungkapan turunannya",
+    "menyebut angka 20-100"
   ],
   "dialogs": [
     {
-      "title": "Diálogo 1 — En una tienda de ropa",
-      "intro": "Toko pakaian. Perhatikan kata *gustar* yang bekerja terbalik dari kebiasaan bahasa Indonesia.",
+      "title": "Diálogo — Fotos en el móvil",
+      "intro": "Dua teman sekelas menunggu kelas dimulai, dan seperti biasa foto keluarga keluar dari saku.",
       "lines": [
-        { "speaker": "Dependiente:", "text": "Buenas tardes, ¿en qué puedo ayudarle?", "id": "Selamat sore, ada yang bisa saya bantu?", "literal": "baik sore-sore, pada apa saya-bisa membantu-Anda?" },
-        { "speaker": "Marta:", "text": "Busco una camisa blanca.", "id": "Saya cari kemeja putih.", "literal": "saya-mencari satu kemeja putih." },
-        { "speaker": "Dependiente:", "text": "¿Le gusta esta? Es de algodón.", "id": "Anda suka yang ini? Bahannya katun.", "literal": "kepada-Anda menyenangkan ini? adalah dari kapas." },
-        { "speaker": "Marta:", "text": "Me gusta, pero prefiero la azul. ¿Cuánto cuesta?", "id": "Saya suka, tapi saya lebih suka yang biru. Berapa harganya?", "literal": "kepada-saya menyenangkan, tetapi saya-lebih-suka yang biru. berapa dia-berharga?" },
-        { "speaker": "Dependiente:", "text": "Veinticinco euros. ¿Qué talla usa?", "id": "Dua puluh lima euro. Ukuran berapa?", "literal": "dua-puluh-lima euro. apa ukuran Anda-pakai?" },
-        { "speaker": "Marta:", "text": "La mediana. ¿Puedo probarla?", "id": "Ukuran sedang. Boleh saya coba?", "literal": "yang tengah. saya-bisa mencoba-nya?" },
-        { "speaker": "Dependiente:", "text": "Claro, el probador está al fondo.", "id": "Tentu, kamar pasnya di ujung sana.", "literal": "jelas, kamar-coba dia-berada pada ujung." },
-        { "speaker": "Marta:", "text": "Me queda un poco grande. ¿Tiene la talla pequeña?", "id": "Agak kebesaran. Ada ukuran kecil?", "literal": "kepada-saya dia-tinggal se-sedikit besar. Anda-punya si ukuran kecil?" },
-        { "speaker": "Dependiente:", "text": "Sí, aquí tiene. Esta le queda perfecta.", "id": "Ada, ini dia. Yang ini pas sekali di Anda.", "literal": "ya, di-sini Anda-punya. ini kepada-Anda dia-tinggal sempurna." },
-        { "speaker": "Marta:", "text": "Me la llevo. ¿Puedo pagar con tarjeta?", "id": "Saya ambil yang ini. Boleh bayar pakai kartu?", "literal": "kepada-saya-nya saya-bawa. saya-bisa membayar dengan kartu?" },
-        { "speaker": "Dependiente:", "text": "Por supuesto. ¿Quiere una bolsa?", "id": "Tentu saja. Mau kantong?", "literal": "tentu saja. Anda-mau satu kantong?" },
-        { "speaker": "Marta:", "text": "No, gracias. Llevo la mía.", "id": "Tidak, terima kasih. Saya bawa punya sendiri.", "literal": "tidak, terima-kasih. saya-bawa si milikku." }
-      ],
-      "notes": [
-        "**Gustar bekerja terbalik, dan ini bagian tersulit unit ini.** *Me gusta el café* bukan \"saya menyukai kopi\", melainkan harfiahnya **\"kopi menyenangkan kepada saya\"**. Artinya yang jadi pokok kalimat adalah **bendanya**, bukan kamu. Begitu kamu menerima itu, sisanya otomatis.",
-        "**Karena bendanya yang jadi pokok, bentuknya ikut benda itu.** Satu benda: *me gusta el libro*. Banyak: *me gustan los libros*. Dan kalau diikuti kata kerja, selalu tunggal: *me gusta leer* (saya suka membaca), bahkan kalau kata kerjanya dua: *me gusta leer y escribir*.",
-        "**Yang berubah adalah orang yang merasakannya:** *me* (saya), *te* (kamu), *le* (dia/Anda), *nos* (kami), *os* (kalian), *les* (mereka). Untuk menegaskan, tambahkan di depan: *A mí me gusta, pero a él no le gusta*.",
-        "**Warna ikut kata bendanya.** Yang berakhiran -o berubah penuh: *blanco / blanca / blancos / blancas*. Yang berakhiran -e atau konsonan hanya berubah saat jamak: *verde → verdes*, *azul → azules*. Dan warna diletakkan **sesudah** kata benda: *una camisa blanca*, bukan *una blanca camisa*.",
-        "**La azul, la mediana, la mía** — kata bendanya boleh dibuang sepenuhnya asal kata sandangnya tinggal. *Prefiero la azul* = \"saya lebih suka yang biru\", dengan *camisa* yang sudah dipahami dari kalimat sebelumnya.",
-        "**Quedar untuk ukuran pakaian.** *Me queda grande* (kebesaran di saya), *me queda bien* (pas), *te queda muy bien* (bagus sekali di kamu). Polanya sama persis dengan *gustar*: yang jadi pokok adalah pakaiannya.",
-        "**Kata kerja yang pecah di tengah.** *Poder* → *puedo*, *querer* → *quiero*, *preferir* → *prefiero*, *costar* → *cuesta*. Perubahannya cuma terjadi di suku kata yang ditekan — makanya bentuk *nosotros* selamat: *podemos*, *queremos*, *preferimos*.",
-        "**Me la llevo** memakai dua kata kecil sekaligus (*me* + *la*) — tata bahasa yang sebenarnya di atas A1. Hafalkan sebagai frasa jadi: \"saya ambil ini\". Untuk benda maskulin: *me lo llevo*."
-      ],
-      "grammars": [
         {
-          "title": "Pola gustar",
-          "body": [
-            "Susunannya tetap: **kepada siapa** + *gusta / gustan* + **apa yang disukai**. Menyangkal tinggal menaruh *no* paling depan: *No me gusta el pescado*."
-          ],
-          "table": {
-            "head": ["Kepada siapa", "Satu benda", "Banyak benda"],
-            "rows": [
-              ["a mí **me**", "me gusta el café", "me gustan los libros"],
-              ["a ti **te**", "te gusta la ciudad", "te gustan los zapatos"],
-              ["a él / ella / usted **le**", "le gusta viajar", "le gustan las flores"],
-              ["a nosotros **nos**", "nos gusta el cine", "nos gustan las series"],
-              ["a vosotros **os**", "os gusta bailar", "os gustan los perros"],
-              ["a ellos / ustedes **les**", "les gusta el mar", "les gustan las playas"]
-            ]
-          },
-          "after": [
-            "Seberapa suka, dari paling benci sampai paling cinta: *odio* (benci) &middot; *no me gusta nada* &middot; *no me gusta* &middot; *me gusta* &middot; *me gusta mucho* &middot; *me encanta* (suka sekali). Perhatikan *me encanta* sudah berarti \"sangat suka\", jadi *me encanta mucho* mubazir.",
-            "Kata kerja lain yang berpola sama persis: *me duele* (sakit bagi saya), *me interesa* (menarik bagi saya), *me parece* (menurut saya), *me apetece* (saya lagi ingin). Sekali pola *gustar* melekat, kelimanya ikut gratis."
-          ]
+          "speaker": "Marta:",
+          "text": "¿Tienes hermanos?",
+          "id": "Kamu punya saudara?",
+          "literal": "kamu-punya saudara-saudara?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sí, tengo una hermana y un hermano.",
+          "id": "Ya, saya punya satu adik perempuan dan satu adik laki-laki.",
+          "literal": "ya, saya-punya satu saudara-perempuan dan satu saudara-laki-laki."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "¿Cuántos años tiene tu hermana?",
+          "id": "Berapa umur saudara perempuanmu?",
+          "literal": "berapa tahun-tahun dia-punya saudara-perempuanmu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tiene veinte años. Es enfermera.",
+          "id": "Umurnya dua puluh tahun. Dia perawat.",
+          "literal": "dia-punya dua-puluh tahun-tahun. dia-adalah perawat(perempuan)."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "¿Y tus padres? ¿Dónde viven?",
+          "id": "Dan orang tuamu? Di mana mereka tinggal?",
+          "literal": "dan orang-tuamu? di mana mereka-tinggal?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Viven en Bandung. Mi padre es profesor.",
+          "id": "Mereka tinggal di Bandung. Ayah saya guru.",
+          "literal": "mereka-tinggal di Bandung. ayahku dia-adalah guru."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "¿Y tu madre? ¿Trabaja también?",
+          "id": "Dan ibumu? Bekerja juga?",
+          "literal": "dan ibumu? bekerja juga?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sí, tiene una tienda pequeña. Trabaja mucho.",
+          "id": "Ya, dia punya toko kecil. Kerjanya keras.",
+          "literal": "ya, dia-punya sebuah toko kecil. bekerja banyak."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "¡Qué familia tan grande! Yo soy hija única.",
+          "id": "Keluargamu besar sekali! Saya anak tunggal.",
+          "literal": "betapa keluarga begitu besar! saya adalah anak-perempuan tunggal."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nosotros somos cinco en casa.",
+          "id": "Kami berlima di rumah.",
+          "literal": "kami kami-adalah lima di rumah."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "¿Y tienes sobrinos?",
+          "id": "Kamu punya keponakan?",
+          "literal": "dan kamu-punya keponakan-keponakan?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Todavía no. Mi hermano es soltero.",
+          "id": "Belum. Saudara laki-laki saya masih lajang.",
+          "literal": "masih tidak. saudara-laki-lakiku adalah lajang."
         }
-      ]
-    },
-    {
-      "title": "Diálogo 2 — En el mercado",
-      "intro": "Pasar tradisional, tempat harga disebut per kilo dan antrean punya aturannya sendiri.",
-      "lines": [
-        { "speaker": "Vendedor:", "text": "¿Quién es el último?", "id": "Siapa yang terakhir?", "literal": "siapa adalah si terakhir?" },
-        { "speaker": "Budi:", "text": "Yo. ¿Qué tal? Quisiera un kilo de tomates.", "id": "Saya. Apa kabar? Saya mau satu kilo tomat.", "literal": "saya. apa kabar? saya-ingin satu kilo dari tomat-tomat." },
-        { "speaker": "Vendedor:", "text": "¿Estos o aquellos? Estos están más maduros.", "id": "Yang ini atau yang di sana? Yang ini lebih matang.", "literal": "ini-jamak atau itu-jamak? ini-jamak mereka-berada lebih matang." },
-        { "speaker": "Budi:", "text": "Esos de ahí, por favor. ¿A cuánto están?", "id": "Yang itu, tolong. Berapa harganya sekarang?", "literal": "itu-jamak dari situ, tolong. pada berapa mereka-berada?" },
-        { "speaker": "Vendedor:", "text": "A dos euros el kilo. Están muy buenos hoy.", "id": "Dua euro sekilo. Hari ini bagus-bagus.", "literal": "pada dua euro si kilo. mereka-berada sangat baik hari-ini." },
-        { "speaker": "Budi:", "text": "Vale. Y medio kilo de queso, por favor.", "id": "Baik. Dan setengah kilo keju.", "literal": "baik. dan setengah kilo dari keju, tolong." },
-        { "speaker": "Vendedor:", "text": "¿Algo más? Tengo naranjas muy dulces.", "id": "Ada lagi? Saya punya jeruk yang manis sekali.", "literal": "sesuatu lebih? saya-punya jeruk-jeruk sangat manis." },
-        { "speaker": "Budi:", "text": "No me gustan mucho las naranjas. ¿Tiene manzanas?", "id": "Saya kurang suka jeruk. Ada apel?", "literal": "tidak kepada-saya menyenangkan(jamak) banyak si jeruk-jeruk. Anda-punya apel-apel?" },
-        { "speaker": "Vendedor:", "text": "Sí, un kilo son tres euros.", "id": "Ada, satu kilo tiga euro.", "literal": "ya, satu kilo adalah(jamak) tiga euro." },
-        { "speaker": "Budi:", "text": "Entonces un kilo. ¿Cuánto es todo?", "id": "Kalau begitu satu kilo. Semuanya berapa?", "literal": "kalau-begitu satu kilo. berapa adalah semua?" },
-        { "speaker": "Vendedor:", "text": "Ocho euros con veinte. ¿Tiene suelto?", "id": "Delapan euro dua puluh. Ada uang pas?", "literal": "delapan euro dengan dua-puluh. Anda-punya uang-kecil?" },
-        { "speaker": "Budi:", "text": "Solo tengo un billete de veinte. Lo siento.", "id": "Saya cuma punya uang dua puluhan. Maaf.", "literal": "hanya saya-punya satu lembar dari dua-puluh. itu saya-menyesali." }
       ],
       "notes": [
-        "**¿Quién es el último?** adalah aturan antre pasar Spanyol yang tak tertulis: orang tidak berbaris rapi, mereka bertanya siapa yang datang terakhir lalu mengingat wajahnya. Kalau ada yang bertanya begitu setelah kamu datang, jawab *yo*.",
-        "**¿A cuánto están?** khusus untuk barang yang harganya berubah-ubah — sayur, buah, ikan. *¿Cuánto cuesta?* untuk barang berharga tetap. Kalau kamu memakai *cuesta* di pasar, tak ada yang salah, cuma sedikit kurang luwes.",
-        "**Vale** = \"oke\", kata paling sering diucapkan di Spanyol sesudah *hola*. Di Amerika Latin padanannya *está bien* atau *bueno*.",
-        "**Takaran memakai de.** *Un kilo **de** tomates*, *medio kilo **de** queso*, *una botella **de** agua*, *un poco **de** azúcar*. Bahasa Indonesia tak memakai kata apa pun di situ, jadi *de*-nya gampang lupa.",
-        "**Están muy buenos** memakai *estar*, bukan *ser* — karena yang dimaksud rasanya hari ini, bukan sifat tomat secara umum. Ingat pasangan *ser bueno* (baik) vs *estar bueno* (enak) dari unit 6.",
-        "**No me gustan mucho** = \"saya kurang suka\", jauh lebih halus daripada *no me gustan*. Menyisipkan *mucho* melunakkan penolakan, persis seperti \"kurang begitu\" dalam bahasa Indonesia.",
-        "**Suelto** = uang receh atau pecahan kecil. *Un billete* lembaran uang kertas, *una moneda* uang logam. Pertanyaan *¿tiene suelto?* akan kamu dengar hampir setiap hari di pasar.",
-        "**Lo siento** = \"maaf\" untuk hal yang kamu sesali. Berbeda dari *perdón / perdone* yang dipakai untuk menyela atau permisi."
+        "**Umur itu \"dipunyai\", bukan \"adalah\".** Bahasa Spanyol bilang *tengo veinte años* — harfiahnya \"saya punya dua puluh tahun\". *Soy veinte años* salah dan terdengar sangat asing. Pertanyaannya pun ikut pola itu: *¿Cuántos años tienes?* Dan *años* tak boleh dibuang: *tengo veinte* saja terdengar seperti kalimat yang terpotong.",
+        "**Mi, tu, su ikut JUMLAH bendanya, bukan pemiliknya.** Satu benda: *mi hermano*. Lebih dari satu: *mis hermanos*. Jadi *tus padres* bukan berarti \"orang tua kalian\", tapi \"orang tua (jamak) milikmu\".",
+        "**Su itu memang ambigu.** *Su casa* bisa berarti rumah dia, rumah mereka, atau rumah Anda. Bahasa Spanyol membiarkannya begitu dan mengandalkan konteks; kalau perlu tegas, orang bilang *la casa de él*.",
+        "**Jamak maskulin memayungi campuran.** *Los padres* = ayah dan ibu, bukan \"para ayah\". Begitu juga *los hermanos* (kakak-adik campur) dan *los hijos* (anak-anak laki dan perempuan). Satu perempuan di antara sepuluh laki-laki tetap membuat kelompoknya maskulin — aturan tata bahasa, bukan pendapat.",
+        "**Bahasa Spanyol tak membedakan kakak dan adik.** *Hermano* berarti saudara laki-laki, titik. Kalau urutannya penting, ditambahkan keterangan: *mi hermano mayor* (kakak), *mi hermano menor* (adik).",
+        "**¡Qué … tan …!** Pola seruan siap pakai: *¡Qué familia tan grande!*, *¡Qué día tan bonito!* Boleh juga tanpa *tan*: *¡Qué bien!*",
+        "**Todavía no** = \"belum\", jawaban yang jauh lebih halus daripada *no* untuk pertanyaan tentang rencana hidup. Lawannya *ya* (\"sudah\").",
+        "**Dua bentuk yang belum diajarkan — kenali saja dulu.** Di dialog lewat *viven* (\"mereka tinggal\") dan *somos* (\"kami adalah\"). Keduanya bentuk *ellos* dan *nosotros*, yang baru dibedah di unit 9 dan 11. Untuk sekarang cukup tahu artinya."
       ],
       "grammars": [
         {
-          "title": "Este, ese, aquel — menunjuk barang",
+          "title": "Kata kerja tener (punya)",
           "body": [
-            "Bahasa Spanyol membedakan **tiga** jarak, bukan dua seperti bahasa Indonesia: dekat penutur, dekat lawan bicara, dan jauh dari keduanya."
+            "Mulai unit ini tabel kata kerjanya memuat **enam pelaku**, bukan tiga seperti sebelumnya. Yang baru: *nosotros* (kami), *vosotros* (kalian), dan *ellos* (mereka). Terselip juga *usted* — sapaan sopan untuk satu orang, yang bentuknya menumpang pada baris *él / ella*. Polanya dijelaskan penuh di unit berikutnya — di sini cukup kenali bentuknya, belum perlu dihafal.",
+            "*Tener* tidak beraturan, tapi terlalu sering dipakai untuk ditunda — umur, keluarga, kepemilikan, bahkan rasa lapar semuanya lewat kata ini:"
           ],
           "table": {
-            "head": ["Jarak", "Maskulin", "Feminin", "Arti"],
+            "head": [
+              "",
+              "tener",
+              "Cara baca",
+              "Arti"
+            ],
             "rows": [
-              ["dekat saya", "**este / estos**", "**esta / estas**", "ini"],
-              ["dekat kamu", "**ese / esos**", "**esa / esas**", "itu"],
-              ["jauh dari kita", "**aquel / aquellos**", "**aquella / aquellas**", "itu (di sana)"]
+              [
+                "yo",
+                "**tengo**",
+                "TEN-go",
+                "saya punya"
+              ],
+              [
+                "tú",
+                "**tienes**",
+                "TIE-nes",
+                "kamu punya"
+              ],
+              [
+                "él / ella / usted",
+                "**tiene**",
+                "TIE-ne",
+                "dia / Anda punya"
+              ],
+              [
+                "nosotros",
+                "**tenemos**",
+                "te-NE-mos",
+                "kami punya"
+              ],
+              [
+                "vosotros",
+                "**tenéis**",
+                "te-NEIS",
+                "kalian punya"
+              ],
+              [
+                "ellos / ustedes",
+                "**tienen**",
+                "TIE-nen",
+                "mereka punya"
+              ]
             ]
           },
           "after": [
-            "Semuanya bisa berdiri sendiri tanpa kata benda: *quiero este* (saya mau yang ini), *esos de ahí* (yang itu di situ). Penanda tempat yang berpasangan: *aquí* (di sini) — *ahí* (di situ) — *allí* (di sana).",
-            "Ada satu bentuk lagi yang tak berjenis kelamin: *esto*, *eso*, *aquello*, dipakai untuk hal yang belum bernama. *¿Qué es esto?* — ini apa? Kamu tidak akan pernah memakainya di depan kata benda."
+            "*Tener* juga membawa serombongan ungkapan yang dalam bahasa Indonesia memakai \"merasa\", bukan \"punya\": *tengo hambre* (saya lapar), *tengo sed* (saya haus), *tengo frío* (saya kedinginan), *tengo calor* (saya kepanasan), *tengo sueño* (saya mengantuk), *tengo prisa* (saya buru-buru), *tengo miedo* (saya takut).",
+            "Satu lagi yang sangat sering dipakai: *tener que + kata kerja* = \"harus\". *Tengo que trabajar* — saya harus bekerja."
           ]
         },
         {
-          "title": "Kata kerja yang pecah di tengah",
+          "title": "Angka 20-100",
           "body": [
-            "Sekelompok besar kata kerja mengubah vokal di **suku kata yang ditekan**. Karena bentuk *nosotros* dan *vosotros* tekanannya jatuh di akhiran, dua baris itu selamat dari perubahan — dan itulah tanda pengenal seluruh kelompok ini."
+            "Sampai 29 ditulis serangkai jadi satu kata; dari 31 ke atas dipisah dengan *y*."
           ],
           "table": {
-            "head": ["", "querer (e→ie)", "poder (o→ue)", "pedir (e→i)"],
+            "head": [
+              "",
+              "",
+              "",
+              ""
+            ],
             "rows": [
-              ["yo", "qu**ie**ro", "p**ue**do", "p**i**do"],
-              ["tú", "qu**ie**res", "p**ue**des", "p**i**des"],
-              ["él / ella / usted", "qu**ie**re", "p**ue**de", "p**i**de"],
-              ["nosotros", "queremos", "podemos", "pedimos"],
-              ["vosotros", "queréis", "podéis", "pedís"],
-              ["ellos / ustedes", "qu**ie**ren", "p**ue**den", "p**i**den"]
+              [
+                "20 veinte",
+                "25 veinticinco",
+                "50 cincuenta",
+                "80 ochenta"
+              ],
+              [
+                "21 veintiuno",
+                "29 veintinueve",
+                "60 sesenta",
+                "90 noventa"
+              ],
+              [
+                "22 veintidós",
+                "30 treinta",
+                "70 setenta",
+                "100 cien"
+              ],
+              [
+                "23 veintitrés",
+                "31 treinta y uno",
+                "75 setenta y cinco",
+                "101 ciento uno"
+              ],
+              [
+                "24 veinticuatro",
+                "40 cuarenta",
+                "78 setenta y ocho",
+                "200 doscientos"
+              ]
             ]
           },
           "after": [
-            "Anggota lain kelompok **e→ie**: *empezar* (mulai), *preferir* (lebih suka), *entender* (mengerti), *pensar* (berpikir), *cerrar* (menutup). Kelompok **o→ue**: *costar* (berharga), *dormir* (tidur), *volver* (pulang), *encontrar* (menemukan), *jugar* (bermain, satu-satunya u→ue).",
-            "Kamus tidak menandai perubahan ini, jadi cara paling aman adalah menghafal bentuk *yo*-nya bersama kata kerjanya sejak awal: bukan *poder*, melainkan *poder / puedo*."
+            "Seperti angka satu, *veintiuno* memendek di depan kata benda maskulin: *veintiún años*. Bentuk femininnya *veintiuna*: *veintiuna personas*.",
+            "*Cien* dipakai kalau tepat seratus; begitu ada tambahannya, ia jadi *ciento*: *cien euros* tapi *ciento veinte euros*. Tidak ada *y* setelah *ciento* — *ciento uno*, bukan *ciento y uno*."
           ]
         }
       ]
@@ -133,207 +209,241 @@
   ],
   "sections": [
     {
-      "title": "Warna",
+      "title": "Pohon keluarga",
       "blocks": [
         {
           "type": "tabel",
-          "head": ["Español", "Cara baca", "Arti", "Bentuk"],
+          "head": [
+            "Él",
+            "Ella",
+            "Arti"
+          ],
           "rows": [
-            ["blanco", "BLAN-ko", "putih", "blanco / blanca / blancos / blancas"],
-            ["negro", "NE-gro", "hitam", "negro / negra / negros / negras"],
-            ["rojo", "RO-kho", "merah", "rojo / roja / rojos / rojas"],
-            ["amarillo", "a-ma-RI-yo", "kuning", "amarillo / amarilla / …"],
-            ["azul", "a-SUL", "biru", "azul / azules"],
-            ["verde", "BER-de", "hijau", "verde / verdes"],
-            ["gris", "gris", "abu-abu", "gris / grises"],
-            ["marrón", "ma-RRON", "cokelat", "marrón / marrones"],
-            ["rosa", "RO-sa", "merah muda", "rosa (tak berubah)"],
-            ["naranja", "na-RAN-kha", "oranye", "naranja (tak berubah)"],
-            ["morado", "mo-RA-do", "ungu", "morado / morada / …"],
-            ["claro / oscuro", "KLA-ro / os-KU-ro", "muda / tua", "*azul claro*, *verde oscuro*"]
-          ]
-        },
-        { "type": "p", "text": "Dua warna yang aslinya nama benda — *rosa* (bunga mawar) dan *naranja* (jeruk) — tidak pernah berubah bentuk: *unos zapatos rosa*, bukan *rosas*. Dan keterangan *claro* atau *oscuro* mengunci warnanya jadi tak berubah juga: *unas camisas azul claro*." }
-      ]
-    },
-    {
-      "title": "Pakaian dan ukuran",
-      "blocks": [
-        {
-          "type": "tabel",
-          "head": ["Español", "Cara baca", "Arti"],
-          "rows": [
-            ["la ropa", "la RO-pa", "pakaian"],
-            ["la camisa", "la ka-MI-sa", "kemeja"],
-            ["la camiseta", "la ka-mi-SE-ta", "kaus"],
-            ["los pantalones", "pan-ta-LO-nes", "celana"],
-            ["los vaqueros", "ba-KE-ros", "celana jins"],
-            ["la falda", "la FAL-da", "rok"],
-            ["el vestido", "el bes-TI-do", "gaun"],
-            ["la chaqueta", "la cha-KE-ta", "jaket"],
-            ["el abrigo", "el a-BRI-go", "mantel"],
-            ["los zapatos", "sa-PA-tos", "sepatu"],
-            ["las zapatillas", "sa-pa-TI-yas", "sepatu olahraga"],
-            ["el bolso", "el BOL-so", "tas"],
-            ["la gorra", "la GO-rra", "topi"],
-            ["el cinturón", "el sin-tu-RON", "ikat pinggang"]
+            [
+              "el padre",
+              "la madre",
+              "ayah / ibu"
+            ],
+            [
+              "los padres",
+              "—",
+              "orang tua"
+            ],
+            [
+              "el hijo",
+              "la hija",
+              "anak"
+            ],
+            [
+              "el hermano",
+              "la hermana",
+              "saudara kandung"
+            ],
+            [
+              "el abuelo",
+              "la abuela",
+              "kakek / nenek"
+            ],
+            [
+              "el nieto",
+              "la nieta",
+              "cucu"
+            ],
+            [
+              "el tío",
+              "la tía",
+              "paman / bibi"
+            ],
+            [
+              "el sobrino",
+              "la sobrina",
+              "keponakan"
+            ],
+            [
+              "el primo",
+              "la prima",
+              "sepupu"
+            ],
+            [
+              "el marido / el esposo",
+              "la mujer / la esposa",
+              "suami / istri"
+            ],
+            [
+              "el novio",
+              "la novia",
+              "pacar / tunangan"
+            ],
+            [
+              "el suegro",
+              "la suegra",
+              "mertua"
+            ],
+            [
+              "el cuñado",
+              "la cuñada",
+              "ipar"
+            ],
+            [
+              "el bebé",
+              "la bebé",
+              "bayi"
+            ],
+            [
+              "el niño",
+              "la niña",
+              "anak kecil"
+            ]
           ]
         },
         {
           "type": "kotak",
-          "title": "Kalimat wajib di toko",
+          "title": "Keadaan keluarga",
           "items": [
-            "*¿Qué talla usa?* — ukuran berapa? Jawabannya *la pequeña* (S), *la mediana* (M), *la grande* (L). Untuk sepatu: *¿Qué número calza?*",
-            "*¿Puedo probármelo?* — boleh saya coba? &middot; *el probador* — kamar pas &middot; *¿Tiene otro color?* — ada warna lain?",
-            "*Me queda grande / pequeño / bien* — kebesaran / kekecilan / pas. &middot; *Me lo llevo* — saya ambil ini.",
-            "*¿Se puede cambiar?* — bisa ditukar? &middot; *el recibo* — struk &middot; *las rebajas* — masa diskon."
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Di pasar",
-      "blocks": [
-        {
-          "type": "tabel",
-          "head": ["Takaran", "Arti", "Contoh"],
-          "rows": [
-            ["un kilo de…", "satu kilo", "*un kilo de tomates*"],
-            ["medio kilo de…", "setengah kilo", "*medio kilo de queso*"],
-            ["cien gramos de…", "seratus gram", "*cien gramos de jamón*"],
-            ["un litro de…", "satu liter", "*un litro de leche*"],
-            ["una docena de…", "selusin", "*una docena de huevos*"],
-            ["un paquete de…", "satu bungkus", "*un paquete de arroz*"],
-            ["una botella de…", "sebotol", "*una botella de aceite*"],
-            ["una lata de…", "sekaleng", "*una lata de atún*"]
-          ]
-        },
-        {
-          "type": "tabel",
-          "head": ["Español", "Arti", "Español", "Arti"],
-          "rows": [
-            ["el tomate", "tomat", "la manzana", "apel"],
-            ["la patata", "kentang", "el plátano", "pisang"],
-            ["la cebolla", "bawang bombai", "la naranja", "jeruk"],
-            ["el ajo", "bawang putih", "la fresa", "stroberi"],
-            ["la zanahoria", "wortel", "la uva", "anggur"],
-            ["el queso", "keju", "el huevo", "telur"],
-            ["el jamón", "ham", "el pollo", "ayam"],
-            ["el pan", "roti", "el aceite", "minyak"]
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Sekilas budaya",
-      "blocks": [
-        {
-          "type": "kotak",
-          "title": "Harga yang tidak ditawar, kecuali di satu tempat",
-          "items": [
-            "Di toko dan pasar Spanyol harga **tidak ditawar**. Menawar di *mercado* dianggap kurang sopan. Satu-satunya tempat menawar itu wajar adalah *el mercadillo* — pasar kaget mingguan yang menjual barang bekas dan pakaian murah.",
-            "Harga yang tertera sudah termasuk pajak (*IVA*). Angka di label adalah angka yang kamu bayar — tidak ada tambahan di kasir seperti di Amerika Serikat.",
-            "*Las rebajas* adalah musim diskon resmi, dua kali setahun: Januari dan Juli. Diskonnya sungguhan dan besar, dan hari pertamanya ramai luar biasa.",
-            "Koma dan titik terbalik dari kebiasaan Indonesia yang mengikuti Inggris: *2,50 €* berarti dua euro lima puluh, dan *1.500 €* berarti seribu lima ratus. Harganya pun ditulis di belakang angka."
+            "*soltero / soltera* — lajang &middot; *casado / casada* — menikah &middot; *divorciado / divorciada* — bercerai &middot; *viudo / viuda* — duda / janda",
+            "*hijo único / hija única* — anak tunggal &middot; *el hermano mayor* — kakak &middot; *el hermano menor* — adik &middot; *el mayor de tres* — anak sulung dari tiga bersaudara",
+            "Menanyakannya: *¿Estás casado?* (memakai *estar*, karena status bisa berubah) atau *¿Tienes pareja?* (\"punya pasangan?\") yang lebih netral."
           ]
         }
       ]
     }
   ],
   "vocab": [
-    { "es": "la tienda", "baca": "la TIEN-da", "id": "toko" },
-    { "es": "el mercado", "baca": "el mer-KA-do", "id": "pasar" },
-    { "es": "comprar", "baca": "kom-PRAR", "id": "membeli" },
-    { "es": "buscar", "baca": "bus-KAR", "id": "mencari" },
-    { "es": "la ropa", "baca": "la RO-pa", "id": "pakaian" },
-    { "es": "la camisa", "baca": "la ka-MI-sa", "id": "kemeja" },
-    { "es": "los pantalones", "baca": "pan-ta-LO-nes", "id": "celana" },
-    { "es": "el vestido", "baca": "el bes-TI-do", "id": "gaun" },
-    { "es": "los zapatos", "baca": "sa-PA-tos", "id": "sepatu" },
-    { "es": "la talla", "baca": "la TA-ya", "id": "ukuran" },
-    { "es": "el probador", "baca": "el pro-ba-DOR", "id": "kamar pas" },
-    { "es": "blanco / negro", "baca": "BLAN-ko / NE-gro", "id": "putih / hitam" },
-    { "es": "rojo / azul / verde", "baca": "RO-kho / a-SUL / BER-de", "id": "merah / biru / hijau" },
-    { "es": "amarillo", "baca": "a-ma-RI-yo", "id": "kuning" },
-    { "es": "el color", "baca": "el ko-LOR", "id": "warna" },
-    { "es": "gustar", "baca": "gus-TAR", "id": "menyenangkan (suka)" },
-    { "es": "encantar", "baca": "en-kan-TAR", "id": "suka sekali" },
-    { "es": "preferir", "baca": "pre-fe-RIR", "id": "lebih suka" },
-    { "es": "probar", "baca": "pro-BAR", "id": "mencoba" },
-    { "es": "quedar", "baca": "ke-DAR", "id": "pas (soal ukuran)" },
-    { "es": "llevar", "baca": "ye-BAR", "id": "membawa, memakai" },
-    { "es": "¿cuánto cuesta?", "baca": "KUAN-to KUES-ta", "id": "berapa harganya?" },
-    { "es": "¿a cuánto están?", "baca": "a KUAN-to es-TAN", "id": "sekilonya berapa?" },
-    { "es": "barato / caro", "baca": "ba-RA-to / KA-ro", "id": "murah / mahal" },
-    { "es": "pagar con tarjeta", "baca": "pa-GAR kon tar-KHE-ta", "id": "bayar dengan kartu" },
-    { "es": "en efectivo", "baca": "en e-fek-TI-bo", "id": "tunai" },
-    { "es": "el suelto", "baca": "el SUEL-to", "id": "uang kecil" },
-    { "es": "el kilo", "baca": "el KI-lo", "id": "kilo" },
-    { "es": "medio kilo", "baca": "ME-dio KI-lo", "id": "setengah kilo" },
-    { "es": "la docena", "baca": "la do-SE-na", "id": "lusin" },
-    { "es": "el tomate", "baca": "el to-MA-te", "id": "tomat" },
-    { "es": "la manzana", "baca": "la man-SA-na", "id": "apel" },
-    { "es": "el queso", "baca": "el KE-so", "id": "keju" },
-    { "es": "maduro / dulce", "baca": "ma-DU-ro / DUL-se", "id": "matang / manis" },
-    { "es": "este / ese / aquel", "baca": "ES-te / E-se / a-KEL", "id": "ini / itu / itu di sana" },
-    { "es": "vale", "baca": "BA-le", "id": "oke" },
-    { "es": "por supuesto", "baca": "por su-PUES-to", "id": "tentu saja" },
-    { "es": "lo siento", "baca": "lo SIEN-to", "id": "maaf" }
+    {
+      "es": "la familia",
+      "baca": "la fa-MI-lia",
+      "id": "keluarga"
+    },
+    {
+      "es": "el padre / la madre",
+      "baca": "el PA-dre / la MA-dre",
+      "id": "ayah / ibu"
+    },
+    {
+      "es": "los padres",
+      "baca": "los PA-dres",
+      "id": "orang tua"
+    },
+    {
+      "es": "el hermano / la hermana",
+      "baca": "er-MA-no",
+      "id": "saudara laki-laki / perempuan"
+    },
+    {
+      "es": "el primo / la prima",
+      "baca": "el PRI-mo",
+      "id": "sepupu"
+    },
+    {
+      "es": "el sobrino / la sobrina",
+      "baca": "so-BRI-no",
+      "id": "keponakan"
+    },
+    {
+      "es": "el novio / la novia",
+      "baca": "el NO-bio",
+      "id": "pacar"
+    },
+    {
+      "es": "tener",
+      "baca": "te-NER",
+      "id": "punya"
+    },
+    {
+      "es": "tengo hambre",
+      "baca": "TEN-go AM-bre",
+      "id": "saya lapar"
+    },
+    {
+      "es": "tener que…",
+      "baca": "te-NER ke",
+      "id": "harus…"
+    },
+    {
+      "es": "¿cuántos años?",
+      "baca": "KUAN-tos A-nyos",
+      "id": "berapa umur"
+    },
+    {
+      "es": "hijo único / hija única",
+      "baca": "U-ni-ko",
+      "id": "anak tunggal"
+    },
+    {
+      "es": "casado / soltero",
+      "baca": "ka-SA-do / sol-TE-ro",
+      "id": "menikah / lajang"
+    },
+    {
+      "es": "grande / pequeño",
+      "baca": "GRAN-de / pe-KE-nyo",
+      "id": "besar / kecil"
+    },
+    {
+      "es": "la tienda",
+      "baca": "la TIEN-da",
+      "id": "toko"
+    },
+    {
+      "es": "en casa",
+      "baca": "en KA-sa",
+      "id": "di rumah"
+    },
+    {
+      "es": "todavía no",
+      "baca": "to-da-BI-a no",
+      "id": "belum"
+    },
+    {
+      "es": "el marido / la mujer",
+      "baca": "ma-RI-do / mu-KHER",
+      "id": "suami / istri"
+    },
+    {
+      "es": "el enfermero / la enfermera",
+      "baca": "en-fer-ME-ro",
+      "id": "perawat"
+    }
   ],
   "exercises": [
-    { "prompt": "Isi dengan *gusta* atau *gustan*.", "items": [
-      "Me ____ los zapatos negros.",
-      "¿Te ____ esta camisa?",
-      "Nos ____ viajar en tren.",
-      "A ellos no les ____ las series largas.",
-      "A mí me ____ mucho el café.",
-      "¿Os ____ las naranjas?"
-    ] },
-    { "prompt": "Sesuaikan warnanya dengan kata bendanya.", "items": [
-      "una falda (rojo) ____",
-      "unos pantalones (negro) ____",
-      "dos camisas (azul) ____",
-      "un vestido (verde) ____",
-      "unas zapatillas (blanco) ____",
-      "un bolso (marrón) ____"
-    ] },
-    { "prompt": "Terjemahkan ke bahasa Spanyol.", "items": [
-      "Saya suka kemeja putih ini.",
-      "Berapa harga sepatu itu?",
-      "Kami tidak suka warna hitam.",
-      "Boleh saya bayar pakai kartu?",
-      "Saya mau satu kilo tomat.",
-      "Kemejanya kebesaran di saya."
-    ] },
-    { "prompt": "Isi dengan bentuk penunjuk yang tepat (*este*, *esta*, *estos*, *estas*).", "items": [
-      "Me gusta ____ camisa.",
-      "____ zapatos son muy caros.",
-      "¿Cuánto cuesta ____ vestido?",
-      "____ manzanas están muy buenas.",
-      "¿Qué es ____ ?"
-    ] },
-    { "prompt": "Isi dengan bentuk yang tepat dari kata kerja dalam kurung.", "items": [
-      "Yo (preferir) ____ la camisa azul.",
-      "¿Tú (poder) ____ ayudarme?",
-      "La falda (costar) ____ treinta euros.",
-      "Nosotros (querer) ____ pagar en efectivo.",
-      "Ellos (dormir) ____ mucho los domingos."
-    ] },
-    { "prompt": "Susun jadi kalimat Spanyol yang benar.", "items": [
-      "cuesta / ¿ / cuánto / ?",
-      "gusta / no / me / negro / el",
-      "llevo / la / me",
-      "tomates / kilo / un / de",
-      "grande / me / queda"
-    ] }
+    {
+      "prompt": "Terjemahkan ke bahasa Spanyol.",
+      "items": [
+        "Saya punya dua saudara laki-laki.",
+        "Berapa umur ayahmu?",
+        "Ibu saya berumur empat puluh lima tahun.",
+        "Kami punya rumah kecil di Bandung.",
+        "Nenek saya sudah sepuh, tapi sehat.",
+        "Saya harus bekerja."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk *tener* yang tepat.",
+      "items": [
+        "Yo ____ una hermana.",
+        "¿Tú ____ hijos?",
+        "Mis padres ____ una casa grande.",
+        "Nosotros ____ veinte años.",
+        "Mi abuela ____ ochenta y siete años.",
+        "¿Vosotros ____ hambre?"
+      ]
+    },
+    {
+      "prompt": "Tulis angkanya dengan huruf.",
+      "items": [
+        "23 ____",
+        "48 ____",
+        "60 ____",
+        "91 ____",
+        "100 ____",
+        "76 ____"
+      ]
+    }
   ],
   "answers": [
-    "gustan — gusta — gusta — gustan — gusta — gustan",
-    "roja — negros — azules — verde — blancas — marrón",
-    "Me gusta esta camisa blanca. — ¿Cuánto cuestan esos zapatos? — No nos gusta el color negro. — ¿Puedo pagar con tarjeta? — Quisiera un kilo de tomates. — La camisa me queda grande.",
-    "esta — estos — este — estas — esto",
-    "prefiero — puedes — cuesta — queremos — duermen",
-    "¿Cuánto cuesta? — No me gusta el negro. — Me la llevo. — Un kilo de tomates. — Me queda grande."
+    "Tengo dos hermanos. — ¿Cuántos años tiene tu padre? — Mi madre tiene cuarenta y cinco años. — Tenemos una casa pequeña en Bandung. — Mi abuela es mayor, pero está bien. — Tengo que trabajar.",
+    "tengo — tienes — tienen — tenemos — tiene — tenéis",
+    "veintitrés — cuarenta y ocho — sesenta — noventa y uno — cien — setenta y seis"
   ],
-  "wave": "Pola *gustar* muncul lagi di unit 8 (*me apetece*) dan unit 10. Sebelum lanjut, tulis lima kalimat tentang apa yang kamu suka dan tidak suka — makanan, warna, kegiatan — lalu bacakan keras-keras."
+  "wave": "Ulangi **unit 5**: pesan sarapanmu dari ingatan, lengkap sampai menanyakan harganya."
 }

@@ -1,0 +1,414 @@
+{
+  "title": "Di stasiun",
+  "title_target": "En la estación",
+  "goal": "Membeli tiket, menanyakan jadwal dan peron, serta memakai angka urutan.",
+  "bekal": [
+    "membeli tiket kereta atau bus",
+    "menanyakan jam berangkat dan lama perjalanan",
+    "memakai angka urutan",
+    "menyebut alat transportasi"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — En la estación",
+      "intro": "Membeli tiket. Percakapan yang bentuknya nyaris selalu sama di mana pun.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Buenos días. Un billete para Sevilla, por favor.",
+          "id": "Selamat pagi. Satu tiket ke Sevilla.",
+          "literal": "baik hari. satu tiket untuk Sevilla, tolong."
+        },
+        {
+          "speaker": "Taquillera:",
+          "text": "¿De ida o de ida y vuelta?",
+          "id": "Sekali jalan atau pulang pergi?",
+          "literal": "dari pergi atau dari pergi dan kembali?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "De ida y vuelta. Vuelvo el domingo.",
+          "id": "Pulang pergi. Saya kembali hari Minggu.",
+          "literal": "dari pergi dan kembali. saya-kembali si minggu."
+        },
+        {
+          "speaker": "Taquillera:",
+          "text": "¿Para qué hora? Hay uno a las nueve y otro a las once.",
+          "id": "Untuk jam berapa? Ada yang jam sembilan dan jam sebelas.",
+          "literal": "untuk apa jam? ada satu pada jam-jam sembilan dan lain pada jam-jam sebelas."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "El de las nueve. ¿Cuánto tarda?",
+          "id": "Yang jam sembilan. Berapa lama perjalanannya?",
+          "literal": "si dari si-jamak sembilan. berapa dia-memakan?"
+        },
+        {
+          "speaker": "Taquillera:",
+          "text": "Dos horas y media. Llega a las once y media.",
+          "id": "Dua setengah jam. Tiba jam setengah dua belas.",
+          "literal": "dua jam-jam dan setengah. dia-tiba pada jam-jam sebelas dan setengah."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Perfecto. ¿Cuánto es?",
+          "id": "Bagus. Berapa harganya?",
+          "literal": "sempurna. berapa adalah?"
+        },
+        {
+          "speaker": "Taquillera:",
+          "text": "Sesenta y cuatro euros. ¿Ventanilla o pasillo?",
+          "id": "Enam puluh empat euro. Dekat jendela atau lorong?",
+          "literal": "enam-puluh dan empat euro. jendela-kecil atau lorong?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ventanilla, por favor. ¿De qué andén sale?",
+          "id": "Dekat jendela. Berangkat dari peron berapa?",
+          "literal": "jendela-kecil, tolong. dari apa peron dia-keluar?"
+        },
+        {
+          "speaker": "Taquillera:",
+          "text": "Del andén cuatro. Suba diez minutos antes.",
+          "id": "Peron empat. Naiklah sepuluh menit sebelumnya.",
+          "literal": "dari-si peron empat. naiklah(Anda) sepuluh menit sebelum."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Gracias. Una última cosa: ¿hay wifi en el tren?",
+          "id": "Terima kasih. Satu lagi: ada wifi di kereta?",
+          "literal": "terima-kasih. satu terakhir hal: ada wifi di si kereta?"
+        },
+        {
+          "speaker": "Taquillera:",
+          "text": "Sí, es gratis. Buen viaje.",
+          "id": "Ada, gratis. Selamat jalan.",
+          "literal": "ya, adalah gratis. baik perjalanan."
+        }
+      ],
+      "notes": [
+        "**Un billete para Sevilla.** Tujuan tiket memakai *para*, bukan *a*: *un billete para Madrid*, *un billete para las nueve*. Sedangkan gerakannya sendiri memakai *a*: *voy a Sevilla*.",
+        "**De ida / de ida y vuelta** = sekali jalan / pulang pergi. Di Amerika Latin tiketnya disebut *el boleto* atau *el pasaje*, bukan *el billete*.",
+        "**El de las nueve** = \"yang jam sembilan\". Pola *el de…* dan *la de…* menggantikan kata benda yang sudah jelas: *la de azul* (yang biru), *el de Marta* (punya Marta). Sangat sering dipakai dan sangat menghemat kata.",
+        "**Otro tanpa kata sandang.** *Hay otro a las once*, bukan *un otro*. Kesalahan yang hampir semua pemula lakukan karena tergoda bahasa Inggris.",
+        "**Tardar vs durar.** *¿Cuánto tarda?* menanyakan berapa lama perjalanannya bagimu; *¿cuánto dura?* menanyakan berapa lama sesuatu berlangsung — film, kelas, pertunjukan.",
+        "**Suba** adalah perintah sopan dari *subir*. Kalimat petugas di stasiun dan bandara hampir seluruhnya berbentuk perintah sopan, jadi mengenali bentuknya lebih penting daripada bisa membuatnya sendiri.",
+        "**Antes / después** dipakai sendiri sebagai keterangan (*diez minutos antes*), dan memakai *de* kalau diikuti benda atau kata kerja: *antes de salir*, *después de la plaza*.",
+        "**Buen viaje** — *bueno* memendek jadi *buen* di depan kata benda maskulin tunggal, seperti *un buen día*, *un buen restaurante*. Bentuk femininnya utuh: *una buena idea*."
+      ],
+      "grammars": [
+        {
+          "title": "Angka urutan",
+          "body": [
+            "Sesudah kesepuluh, penutur asli pun jarang memakai bentuk urutan — mereka kembali ke angka biasa: *el piso once*, *la calle veinte*."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Español",
+              "Bentuk feminin",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "1",
+                "primero / **primer**",
+                "primera",
+                "*el primer día*"
+              ],
+              [
+                "2",
+                "segundo",
+                "segunda",
+                "*la segunda calle*"
+              ],
+              [
+                "3",
+                "tercero / **tercer**",
+                "tercera",
+                "*el tercer piso*"
+              ],
+              [
+                "4",
+                "cuarto",
+                "cuarta",
+                "*la cuarta vez*"
+              ],
+              [
+                "5",
+                "quinto",
+                "quinta",
+                "*el quinto capítulo*"
+              ],
+              [
+                "6",
+                "sexto",
+                "sexta",
+                "*la sexta planta*"
+              ],
+              [
+                "7",
+                "séptimo",
+                "séptima",
+                "*el séptimo día*"
+              ],
+              [
+                "8",
+                "octavo",
+                "octava",
+                "*la octava calle*"
+              ],
+              [
+                "9",
+                "noveno",
+                "novena",
+                "*el noveno piso*"
+              ],
+              [
+                "10",
+                "décimo",
+                "décima",
+                "*la décima vez*"
+              ]
+            ]
+          },
+          "after": [
+            "Hanya *primero* dan *tercero* yang memendek, dan hanya di depan kata benda maskulin tunggal. Kalau berdiri sendiri, bentuknya utuh: *¿Cuál tomo? —El primero.*",
+            "Untuk lantai gedung, ingat lagi peringatan unit 12: *la planta baja* adalah lantai dasar, jadi *el primer piso* berarti lantai dua menurut hitungan Indonesia."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Transportasi dan stasiun",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "el autobús",
+              "el au-to-BUS",
+              "bus"
+            ],
+            [
+              "el metro",
+              "el ME-tro",
+              "kereta bawah tanah"
+            ],
+            [
+              "el tren",
+              "el tren",
+              "kereta"
+            ],
+            [
+              "el taxi",
+              "el TAK-si",
+              "taksi"
+            ],
+            [
+              "el coche",
+              "el KO-che",
+              "mobil"
+            ],
+            [
+              "la bicicleta",
+              "la bi-si-KLE-ta",
+              "sepeda"
+            ],
+            [
+              "el avión",
+              "el a-BION",
+              "pesawat"
+            ],
+            [
+              "la estación",
+              "la es-ta-SION",
+              "stasiun"
+            ],
+            [
+              "la parada",
+              "la pa-RA-da",
+              "halte"
+            ],
+            [
+              "el andén",
+              "el an-DEN",
+              "peron"
+            ],
+            [
+              "el billete",
+              "el bi-YE-te",
+              "tiket"
+            ],
+            [
+              "de ida y vuelta",
+              "de I-da i BUEL-ta",
+              "pulang pergi"
+            ],
+            [
+              "el horario",
+              "el o-RA-rio",
+              "jadwal"
+            ],
+            [
+              "el retraso",
+              "el re-TRA-so",
+              "keterlambatan"
+            ],
+            [
+              "la salida / la llegada",
+              "sa-LI-da / ye-GA-da",
+              "keberangkatan / kedatangan"
+            ],
+            [
+              "la entrada / la salida",
+              "en-TRA-da / sa-LI-da",
+              "pintu masuk / keluar"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan *salida* muncul dua kali dengan arti berbeda — keberangkatan di papan jadwal, pintu keluar di gedung. Konteks yang memisahkan, dan keduanya berasal dari kata kerja yang sama: *salir*."
+        }
+      ]
+    },
+    {
+      "title": "Sekilas budaya",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Bertanya jalan tanpa peta",
+          "items": [
+            "Orang Spanyol dan Amerika Latin hampir selalu berhenti dan menjawab kalau ditanya jalan — sering sambil ikut berjalan beberapa langkah bersamamu. Membuka pertanyaan dengan *perdone* atau *disculpe* sudah cukup.",
+            "Ada satu risiko: banyak orang lebih memilih menebak daripada mengaku tidak tahu. Kalau petunjuknya terdengar ragu, tanyakan sekali lagi kepada orang kedua.",
+            "Jarak jarang disebut dalam meter; hampir selalu dalam menit berjalan kaki. *Está a diez minutos* bisa berarti apa saja antara tujuh dan dua puluh menit.",
+            "Di kota besar Spanyol, tiket bus dan metro biasanya bisa dibeli dengan kartu bank langsung di pintu masuk. Di kota kecil, siapkan uang tunai — sopir bus tidak selalu punya kembalian untuk lembaran besar."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "¿me lo repite?",
+      "baca": "me lo re-PI-te",
+      "id": "boleh diulang?"
+    },
+    {
+      "es": "más despacio",
+      "baca": "mas des-PA-sio",
+      "id": "lebih pelan"
+    },
+    {
+      "es": "el billete",
+      "baca": "el bi-YE-te",
+      "id": "tiket"
+    },
+    {
+      "es": "de ida y vuelta",
+      "baca": "de I-da i BUEL-ta",
+      "id": "pulang pergi"
+    },
+    {
+      "es": "el andén",
+      "baca": "el an-DEN",
+      "id": "peron"
+    },
+    {
+      "es": "la ventanilla",
+      "baca": "la ben-ta-NI-ya",
+      "id": "dekat jendela"
+    },
+    {
+      "es": "el pasillo",
+      "baca": "el pa-SI-yo",
+      "id": "lorong"
+    },
+    {
+      "es": "antes / después",
+      "baca": "AN-tes / des-PUES",
+      "id": "sebelum / sesudah"
+    },
+    {
+      "es": "buen viaje",
+      "baca": "buen BIA-khe",
+      "id": "selamat jalan"
+    },
+    {
+      "es": "llegar",
+      "baca": "ye-GAR",
+      "id": "tiba, sampai"
+    },
+    {
+      "es": "subir / bajar",
+      "baca": "su-BIR / ba-KHAR",
+      "id": "naik / turun"
+    },
+    {
+      "es": "el metro (ukuran)",
+      "baca": "el ME-tro",
+      "id": "meter"
+    },
+    {
+      "es": "primero / segundo",
+      "baca": "pri-ME-ro / se-GUN-do",
+      "id": "pertama / kedua"
+    },
+    {
+      "es": "tercero / cuarto",
+      "baca": "ter-SE-ro / KUAR-to",
+      "id": "ketiga / keempat"
+    },
+    {
+      "es": "tener prisa",
+      "baca": "te-NER PRI-sa",
+      "id": "buru-buru"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis bentuk urutannya dengan huruf.",
+      "items": [
+        "Ambil jalan ke-1 (maskulin: *el ____ *)",
+        "Ambil jalan ke-2 (feminin: *la ____ *)",
+        "Lantai ke-3 (maskulin: *el ____ *)",
+        "Kali ke-4 (feminin: *la ____ *)",
+        "Hari ke-5 (maskulin: *el ____ *)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Indonesia.",
+      "items": [
+        "¿De qué andén sale el tren?",
+        "Hay uno a las nueve y otro a las once.",
+        "Suba diez minutos antes.",
+        "No tiene pérdida.",
+        "¿Cuánto tarda el viaje?"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat Spanyol yang benar.",
+      "items": [
+        "recto / siga / todo",
+        "derecha / a / gire / la",
+        "¿ / llego / cómo / estación / la / a / ?",
+        "para / billete / un / Sevilla",
+        "prisa / tengo"
+      ]
+    }
+  ],
+  "answers": [
+    "primer — segunda — tercer — cuarta — quinto",
+    "Keretanya berangkat dari peron berapa? — Ada yang jam sembilan dan yang lain jam sebelas. — Naiklah sepuluh menit sebelumnya. — Tidak mungkin nyasar. — Perjalanannya berapa lama?",
+    "Siga todo recto. — Gire a la derecha. — ¿Cómo llego a la estación? — Un billete para Sevilla. — Tengo prisa."
+  ],
+  "wave": "Ulangi **unit 16**: ajak temanmu keluar Sabtu ini, lalu tolak ajakan yang sama dengan alasan dan tawaran hari lain."
+}

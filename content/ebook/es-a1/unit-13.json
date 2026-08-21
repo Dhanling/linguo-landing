@@ -1,0 +1,479 @@
+{
+  "title": "Di toko pakaian",
+  "title_target": "En la tienda de ropa",
+  "goal": "Menyatakan suka dan tidak suka, menyebut warna dan pakaian, lalu mencoba dan membelinya.",
+  "bekal": [
+    "mengatakan apa yang kamu suka dan tidak suka",
+    "menyebut warna dengan bentuk yang cocok",
+    "menyebut pakaian dan ukuran",
+    "menanyakan harga dan mencoba barang"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — En una tienda de ropa",
+      "intro": "Toko pakaian. Perhatikan kata *gustar* yang bekerja terbalik dari kebiasaan bahasa Indonesia.",
+      "lines": [
+        {
+          "speaker": "Dependiente:",
+          "text": "Buenas tardes, ¿en qué puedo ayudarle?",
+          "id": "Selamat sore, ada yang bisa saya bantu?",
+          "literal": "baik sore-sore, pada apa saya-bisa membantu-Anda?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Busco una camisa blanca.",
+          "id": "Saya cari kemeja putih.",
+          "literal": "saya-mencari satu kemeja putih."
+        },
+        {
+          "speaker": "Dependiente:",
+          "text": "¿Le gusta esta? Es de algodón.",
+          "id": "Anda suka yang ini? Bahannya katun.",
+          "literal": "kepada-Anda menyenangkan ini? adalah dari kapas."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Me gusta, pero prefiero la azul. ¿Cuánto cuesta?",
+          "id": "Saya suka, tapi saya lebih suka yang biru. Berapa harganya?",
+          "literal": "kepada-saya menyenangkan, tetapi saya-lebih-suka yang biru. berapa dia-berharga?"
+        },
+        {
+          "speaker": "Dependiente:",
+          "text": "Veinticinco euros. ¿Qué talla usa?",
+          "id": "Dua puluh lima euro. Ukuran berapa?",
+          "literal": "dua-puluh-lima euro. apa ukuran Anda-pakai?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "La mediana. ¿Puedo probarla?",
+          "id": "Ukuran sedang. Boleh saya coba?",
+          "literal": "yang tengah. saya-bisa mencoba-nya?"
+        },
+        {
+          "speaker": "Dependiente:",
+          "text": "Claro, el probador está al fondo.",
+          "id": "Tentu, kamar pasnya di ujung sana.",
+          "literal": "jelas, kamar-coba dia-berada pada ujung."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Me queda un poco grande. ¿Tiene la talla pequeña?",
+          "id": "Agak kebesaran. Ada ukuran kecil?",
+          "literal": "kepada-saya dia-tinggal se-sedikit besar. Anda-punya si ukuran kecil?"
+        },
+        {
+          "speaker": "Dependiente:",
+          "text": "Sí, aquí tiene. Esta le queda perfecta.",
+          "id": "Ada, ini dia. Yang ini pas sekali di Anda.",
+          "literal": "ya, di-sini Anda-punya. ini kepada-Anda dia-tinggal sempurna."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Me la llevo. ¿Puedo pagar con tarjeta?",
+          "id": "Saya ambil yang ini. Boleh bayar pakai kartu?",
+          "literal": "kepada-saya-nya saya-bawa. saya-bisa membayar dengan kartu?"
+        },
+        {
+          "speaker": "Dependiente:",
+          "text": "Por supuesto. ¿Quiere una bolsa?",
+          "id": "Tentu saja. Mau kantong?",
+          "literal": "tentu saja. Anda-mau satu kantong?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "No, gracias. Llevo la mía.",
+          "id": "Tidak, terima kasih. Saya bawa punya sendiri.",
+          "literal": "tidak, terima-kasih. saya-bawa si milikku."
+        }
+      ],
+      "notes": [
+        "**Gustar bekerja terbalik, dan ini bagian tersulit unit ini.** *Me gusta el café* bukan \"saya menyukai kopi\", melainkan harfiahnya **\"kopi menyenangkan kepada saya\"**. Artinya yang jadi pokok kalimat adalah **bendanya**, bukan kamu. Begitu kamu menerima itu, sisanya otomatis.",
+        "**Karena bendanya yang jadi pokok, bentuknya ikut benda itu.** Satu benda: *me gusta el libro*. Banyak: *me gustan los libros*. Dan kalau diikuti kata kerja, selalu tunggal: *me gusta leer* (saya suka membaca), bahkan kalau kata kerjanya dua: *me gusta leer y escribir*.",
+        "**Yang berubah adalah orang yang merasakannya:** *me* (saya), *te* (kamu), *le* (dia/Anda), *nos* (kami), *os* (kalian), *les* (mereka). Untuk menegaskan, tambahkan di depan: *A mí me gusta, pero a él no le gusta*.",
+        "**Warna ikut kata bendanya.** Yang berakhiran -o berubah penuh: *blanco / blanca / blancos / blancas*. Yang berakhiran -e atau konsonan hanya berubah saat jamak: *verde → verdes*, *azul → azules*. Dan warna diletakkan **sesudah** kata benda: *una camisa blanca*, bukan *una blanca camisa*.",
+        "**La azul, la mediana, la mía** — kata bendanya boleh dibuang sepenuhnya asal kata sandangnya tinggal. *Prefiero la azul* = \"saya lebih suka yang biru\", dengan *camisa* yang sudah dipahami dari kalimat sebelumnya.",
+        "**Quedar untuk ukuran pakaian.** *Me queda grande* (kebesaran di saya), *me queda bien* (pas), *te queda muy bien* (bagus sekali di kamu). Polanya sama persis dengan *gustar*: yang jadi pokok adalah pakaiannya.",
+        "**Kata kerja yang pecah di tengah.** *Poder* → *puedo*, *querer* → *quiero*, *preferir* → *prefiero*, *costar* → *cuesta*. Perubahannya cuma terjadi di suku kata yang ditekan — makanya bentuk *nosotros* selamat: *podemos*, *queremos*, *preferimos*.",
+        "**Me la llevo** memakai dua kata kecil sekaligus (*me* + *la*) — tata bahasa yang sebenarnya di atas A1. Hafalkan sebagai frasa jadi: \"saya ambil ini\". Untuk benda maskulin: *me lo llevo*."
+      ],
+      "grammars": [
+        {
+          "title": "Pola gustar",
+          "body": [
+            "Susunannya tetap: **kepada siapa** + *gusta / gustan* + **apa yang disukai**. Menyangkal tinggal menaruh *no* paling depan: *No me gusta el pescado*."
+          ],
+          "table": {
+            "head": [
+              "Kepada siapa",
+              "Satu benda",
+              "Banyak benda"
+            ],
+            "rows": [
+              [
+                "a mí **me**",
+                "me gusta el café",
+                "me gustan los libros"
+              ],
+              [
+                "a ti **te**",
+                "te gusta la ciudad",
+                "te gustan los zapatos"
+              ],
+              [
+                "a él / ella / usted **le**",
+                "le gusta viajar",
+                "le gustan las flores"
+              ],
+              [
+                "a nosotros **nos**",
+                "nos gusta el cine",
+                "nos gustan las series"
+              ],
+              [
+                "a vosotros **os**",
+                "os gusta bailar",
+                "os gustan los perros"
+              ],
+              [
+                "a ellos / ustedes **les**",
+                "les gusta el mar",
+                "les gustan las playas"
+              ]
+            ]
+          },
+          "after": [
+            "Seberapa suka, dari paling benci sampai paling cinta: *odio* (benci) &middot; *no me gusta nada* &middot; *no me gusta* &middot; *me gusta* &middot; *me gusta mucho* &middot; *me encanta* (suka sekali). Perhatikan *me encanta* sudah berarti \"sangat suka\", jadi *me encanta mucho* mubazir.",
+            "Kata kerja lain yang berpola sama persis: *me duele* (sakit bagi saya), *me interesa* (menarik bagi saya), *me parece* (menurut saya), *me apetece* (saya lagi ingin). Sekali pola *gustar* melekat, kelimanya ikut gratis."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Warna",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Cara baca",
+            "Arti",
+            "Bentuk"
+          ],
+          "rows": [
+            [
+              "blanco",
+              "BLAN-ko",
+              "putih",
+              "blanco / blanca / blancos / blancas"
+            ],
+            [
+              "negro",
+              "NE-gro",
+              "hitam",
+              "negro / negra / negros / negras"
+            ],
+            [
+              "rojo",
+              "RO-kho",
+              "merah",
+              "rojo / roja / rojos / rojas"
+            ],
+            [
+              "amarillo",
+              "a-ma-RI-yo",
+              "kuning",
+              "amarillo / amarilla / …"
+            ],
+            [
+              "azul",
+              "a-SUL",
+              "biru",
+              "azul / azules"
+            ],
+            [
+              "verde",
+              "BER-de",
+              "hijau",
+              "verde / verdes"
+            ],
+            [
+              "gris",
+              "gris",
+              "abu-abu",
+              "gris / grises"
+            ],
+            [
+              "marrón",
+              "ma-RRON",
+              "cokelat",
+              "marrón / marrones"
+            ],
+            [
+              "rosa",
+              "RO-sa",
+              "merah muda",
+              "rosa (tak berubah)"
+            ],
+            [
+              "naranja",
+              "na-RAN-kha",
+              "oranye",
+              "naranja (tak berubah)"
+            ],
+            [
+              "morado",
+              "mo-RA-do",
+              "ungu",
+              "morado / morada / …"
+            ],
+            [
+              "claro / oscuro",
+              "KLA-ro / os-KU-ro",
+              "muda / tua",
+              "*azul claro*, *verde oscuro*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dua warna yang aslinya nama benda — *rosa* (bunga mawar) dan *naranja* (jeruk) — tidak pernah berubah bentuk: *unos zapatos rosa*, bukan *rosas*. Dan keterangan *claro* atau *oscuro* mengunci warnanya jadi tak berubah juga: *unas camisas azul claro*."
+        }
+      ]
+    },
+    {
+      "title": "Pakaian dan ukuran",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "la ropa",
+              "la RO-pa",
+              "pakaian"
+            ],
+            [
+              "la camisa",
+              "la ka-MI-sa",
+              "kemeja"
+            ],
+            [
+              "la camiseta",
+              "la ka-mi-SE-ta",
+              "kaus"
+            ],
+            [
+              "los pantalones",
+              "pan-ta-LO-nes",
+              "celana"
+            ],
+            [
+              "los vaqueros",
+              "ba-KE-ros",
+              "celana jins"
+            ],
+            [
+              "la falda",
+              "la FAL-da",
+              "rok"
+            ],
+            [
+              "el vestido",
+              "el bes-TI-do",
+              "gaun"
+            ],
+            [
+              "la chaqueta",
+              "la cha-KE-ta",
+              "jaket"
+            ],
+            [
+              "el abrigo",
+              "el a-BRI-go",
+              "mantel"
+            ],
+            [
+              "los zapatos",
+              "sa-PA-tos",
+              "sepatu"
+            ],
+            [
+              "las zapatillas",
+              "sa-pa-TI-yas",
+              "sepatu olahraga"
+            ],
+            [
+              "el bolso",
+              "el BOL-so",
+              "tas"
+            ],
+            [
+              "la gorra",
+              "la GO-rra",
+              "topi"
+            ],
+            [
+              "el cinturón",
+              "el sin-tu-RON",
+              "ikat pinggang"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kalimat wajib di toko",
+          "items": [
+            "*¿Qué talla usa?* — ukuran berapa? Jawabannya *la pequeña* (S), *la mediana* (M), *la grande* (L). Untuk sepatu: *¿Qué número calza?*",
+            "*¿Puedo probármelo?* — boleh saya coba? &middot; *el probador* — kamar pas &middot; *¿Tiene otro color?* — ada warna lain?",
+            "*Me queda grande / pequeño / bien* — kebesaran / kekecilan / pas. &middot; *Me lo llevo* — saya ambil ini.",
+            "*¿Se puede cambiar?* — bisa ditukar? &middot; *el recibo* — struk &middot; *las rebajas* — masa diskon."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "la ropa",
+      "baca": "la RO-pa",
+      "id": "pakaian"
+    },
+    {
+      "es": "la camisa",
+      "baca": "la ka-MI-sa",
+      "id": "kemeja"
+    },
+    {
+      "es": "los pantalones",
+      "baca": "pan-ta-LO-nes",
+      "id": "celana"
+    },
+    {
+      "es": "la talla",
+      "baca": "la TA-ya",
+      "id": "ukuran"
+    },
+    {
+      "es": "el probador",
+      "baca": "el pro-ba-DOR",
+      "id": "kamar pas"
+    },
+    {
+      "es": "blanco / negro",
+      "baca": "BLAN-ko / NE-gro",
+      "id": "putih / hitam"
+    },
+    {
+      "es": "rojo / azul / verde",
+      "baca": "RO-kho / a-SUL / BER-de",
+      "id": "merah / biru / hijau"
+    },
+    {
+      "es": "amarillo",
+      "baca": "a-ma-RI-yo",
+      "id": "kuning"
+    },
+    {
+      "es": "el color",
+      "baca": "el ko-LOR",
+      "id": "warna"
+    },
+    {
+      "es": "gustar",
+      "baca": "gus-TAR",
+      "id": "menyenangkan (suka)"
+    },
+    {
+      "es": "probar",
+      "baca": "pro-BAR",
+      "id": "mencoba"
+    },
+    {
+      "es": "quedar",
+      "baca": "ke-DAR",
+      "id": "pas (soal ukuran)"
+    },
+    {
+      "es": "¿cuánto cuesta?",
+      "baca": "KUAN-to KUES-ta",
+      "id": "berapa harganya?"
+    },
+    {
+      "es": "pagar con tarjeta",
+      "baca": "pa-GAR kon tar-KHE-ta",
+      "id": "bayar dengan kartu"
+    },
+    {
+      "es": "por supuesto",
+      "baca": "por su-PUES-to",
+      "id": "tentu saja"
+    },
+    {
+      "es": "comprar",
+      "baca": "kom-PRAR",
+      "id": "membeli"
+    },
+    {
+      "es": "el vestido",
+      "baca": "el bes-TI-do",
+      "id": "gaun"
+    },
+    {
+      "es": "encantar",
+      "baca": "en-kan-TAR",
+      "id": "suka sekali"
+    },
+    {
+      "es": "llevar",
+      "baca": "ye-BAR",
+      "id": "membawa, memakai"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan *gusta* atau *gustan*.",
+      "items": [
+        "Me ____ los zapatos negros.",
+        "¿Te ____ esta camisa?",
+        "Nos ____ viajar en tren.",
+        "A ellos no les ____ las series largas.",
+        "A mí me ____ mucho el café.",
+        "¿Os ____ las naranjas?"
+      ]
+    },
+    {
+      "prompt": "Sesuaikan warnanya dengan kata bendanya.",
+      "items": [
+        "una falda (rojo) ____",
+        "unos pantalones (negro) ____",
+        "dos camisas (azul) ____",
+        "un vestido (verde) ____",
+        "unas zapatillas (blanco) ____",
+        "un bolso (marrón) ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Spanyol.",
+      "items": [
+        "Saya suka kemeja putih ini.",
+        "Berapa harga sepatu itu?",
+        "Kami tidak suka warna hitam.",
+        "Boleh saya bayar pakai kartu?",
+        "Saya mau satu kilo tomat.",
+        "Kemejanya kebesaran di saya."
+      ]
+    }
+  ],
+  "answers": [
+    "gustan — gusta — gusta — gustan — gusta — gustan",
+    "roja — negros — azules — verde — blancas — marrón",
+    "Me gusta esta camisa blanca. — ¿Cuánto cuestan esos zapatos? — No nos gusta el color negro. — ¿Puedo pagar con tarjeta? — Quisiera un kilo de tomates. — La camisa me queda grande."
+  ],
+  "wave": "Ulangi **unit 11**: tanyakan jalan ke bank, apotek, dan pasar — tiga kalimat, tanpa melihat."
+}

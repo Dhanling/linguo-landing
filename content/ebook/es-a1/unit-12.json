@@ -1,0 +1,406 @@
+{
+  "title": "Menggambarkan kota",
+  "title_target": "Mi ciudad",
+  "goal": "Menyebut tempat-tempat di kota, memakai kata letak, dan menggambarkan kota tempat kamu tinggal.",
+  "bekal": [
+    "menyebut tempat penting di kota",
+    "memakai kata letak yang berakhir *de*",
+    "menggambarkan kotamu dalam lima kalimat",
+    "memakai *hay que* dan *poder*"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — En la oficina de turismo",
+      "intro": "Sekarang giliran menggambarkan kota, bukan cuma satu bangunan.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Buenos días. ¿Qué hay que ver en la ciudad?",
+          "id": "Selamat pagi. Apa yang perlu dilihat di kota ini?",
+          "literal": "baik hari. apa ada yang melihat di si kota?"
+        },
+        {
+          "speaker": "Empleada:",
+          "text": "Mucho. La catedral es preciosa y está en el centro.",
+          "id": "Banyak. Katedralnya indah sekali dan letaknya di pusat kota.",
+          "literal": "banyak. si katedral adalah cantik dan dia-berada di si pusat."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Y hay un museo?",
+          "id": "Dan ada museum?",
+          "literal": "dan ada satu museum?"
+        },
+        {
+          "speaker": "Empleada:",
+          "text": "Hay tres. El más interesante está detrás de la plaza.",
+          "id": "Ada tiga. Yang paling menarik ada di belakang alun-alun.",
+          "literal": "ada tiga. si lebih menarik dia-berada di-belakang dari si alun-alun."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Está abierto los lunes?",
+          "id": "Buka hari Senin?",
+          "literal": "dia-berada terbuka si-jamak senin?"
+        },
+        {
+          "speaker": "Empleada:",
+          "text": "No, los lunes está cerrado. De martes a domingo, de diez a ocho.",
+          "id": "Tidak, Senin tutup. Selasa sampai Minggu, jam sepuluh sampai delapan.",
+          "literal": "tidak, si-jamak senin dia-berada tertutup. dari selasa ke minggu, dari sepuluh ke delapan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Y dónde puedo comer algo típico?",
+          "id": "Dan di mana saya bisa makan makanan khas?",
+          "literal": "dan di-mana saya-bisa makan sesuatu khas?"
+        },
+        {
+          "speaker": "Empleada:",
+          "text": "En la calle de las Flores hay muchos restaurantes buenos.",
+          "id": "Di Jalan Flores ada banyak restoran enak.",
+          "literal": "di si jalan dari si-jamak bunga ada banyak restoran-restoran baik."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Está lejos la playa?",
+          "id": "Pantainya jauh?",
+          "literal": "dia-berada jauh si pantai?"
+        },
+        {
+          "speaker": "Empleada:",
+          "text": "A veinte minutos en autobús. El número 12 va directo.",
+          "id": "Dua puluh menit naik bus. Nomor 12 langsung ke sana.",
+          "literal": "pada dua-puluh menit dengan bus. si nomor 12 pergi langsung."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Perfecto. ¿Tiene un mapa de la ciudad?",
+          "id": "Bagus. Ada peta kotanya?",
+          "literal": "sempurna. Anda-punya satu peta dari si kota?"
+        },
+        {
+          "speaker": "Empleada:",
+          "text": "Claro, aquí tiene. Es gratis.",
+          "id": "Tentu, ini dia. Gratis.",
+          "literal": "tentu, di-sini Anda-punya. adalah gratis."
+        }
+      ],
+      "notes": [
+        "**¿Qué hay que ver?** = \"apa yang perlu dilihat?\" Pola *hay que + kata kerja* berarti \"perlu / harus\" tanpa menyebut siapa yang harus: *hay que pagar aquí* (bayarnya di sini). Bandingkan dengan *tengo que pagar* (saya harus bayar) di unit 7 — yang satu umum, yang satu pribadi.",
+        "**El más interesante** = \"yang paling menarik\". Bentuk paling-paling cukup dengan *el / la / los / las + más + kata sifat*: *la ciudad más bonita*, *los museos más antiguos*.",
+        "**Poder (bisa)** juga berubah di dalam, seperti *querer*: *puedo, puedes, puede, podemos, podéis, pueden*. Selalu diikuti kata kerja bentuk kamus: *puedo comer*, *¿puedes ayudarme?*",
+        "**De … a …** dipakai untuk rentang apa pun — waktu, hari, jam: *de martes a domingo*, *de diez a ocho*, *de Madrid a Barcelona*.",
+        "**Algo típico.** Kata sifat sesudah *algo* dan *nada* selalu bentuk maskulin tunggal: *algo típico*, *nada especial*, *algo barato*.",
+        "**Muchos restaurantes buenos** — perhatikan dua-duanya ikut jamak: kata jumlah *muchos* dan kata sifat *buenos*. Kata sifat berubah mengikuti bendanya, bukan mengikuti kata di sebelahnya.",
+        "**Gratis** tak pernah berubah bentuk: *es gratis*, *son gratis*, *entrada gratis*. Salah satu dari sedikit kata sifat yang kebal.",
+        "**Nomor bus dibaca apa adanya**, tanpa kata *número* pun dimengerti: *el doce va directo*."
+      ],
+      "grammars": [
+        {
+          "title": "Kata letak",
+          "body": [
+            "Hampir semuanya berakhiran *de*, dan *de + el* wajib melebur jadi *del*: *al lado del banco*, *cerca del centro*, *enfrente del museo*."
+          ],
+          "table": {
+            "head": [
+              "Español",
+              "Arti",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "al lado de",
+                "di sebelah",
+                "*al lado de la farmacia*"
+              ],
+              [
+                "cerca de",
+                "dekat dengan",
+                "*cerca del centro*"
+              ],
+              [
+                "lejos de",
+                "jauh dari",
+                "*lejos de aquí*"
+              ],
+              [
+                "enfrente de",
+                "di seberang / di depan",
+                "*enfrente del banco*"
+              ],
+              [
+                "delante de",
+                "di depan",
+                "*delante de la puerta*"
+              ],
+              [
+                "detrás de",
+                "di belakang",
+                "*detrás de la plaza*"
+              ],
+              [
+                "encima de",
+                "di atas",
+                "*encima de la mesa*"
+              ],
+              [
+                "debajo de",
+                "di bawah",
+                "*debajo de la silla*"
+              ],
+              [
+                "dentro de",
+                "di dalam",
+                "*dentro del edificio*"
+              ],
+              [
+                "fuera de",
+                "di luar",
+                "*fuera de la ciudad*"
+              ],
+              [
+                "entre … y …",
+                "di antara",
+                "*entre el banco y el café*"
+              ],
+              [
+                "a la derecha de",
+                "di sebelah kanan",
+                "*a la derecha de la entrada*"
+              ],
+              [
+                "a la izquierda de",
+                "di sebelah kiri",
+                "*a la izquierda del museo*"
+              ]
+            ]
+          },
+          "after": [
+            "*Enfrente de* dan *delante de* sering tertukar. *Delante de* berarti persis di muka sesuatu (kamu berdiri di depan pintu); *enfrente de* berarti di seberangnya, biasanya terpisah jalan.",
+            "Kalau bendanya sudah jelas dari konteks, *de*-nya boleh dibuang dan kata letaknya berdiri sendiri: *El banco está enfrente.* — banknya di seberang sana."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menggambarkan kotamu",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Latihan bicara yang paling cepat berbuah di tingkat A1: gambarkan kota tempat kamu tinggal dalam lima kalimat. Kerangkanya seperti ini."
+        },
+        {
+          "type": "kotak",
+          "title": "Kerangka lima kalimat",
+          "items": [
+            "**Vivo en …** — sebut kota dan negaranya. *Vivo en Bandung, en Indonesia.*",
+            "**Es una ciudad …** — sifatnya, memakai *ser*: *grande*, *pequeña*, *tranquila*, *ruidosa*, *bonita*, *moderna*, *antigua*.",
+            "**Está en …** — letaknya, memakai *estar*: *en el norte / sur / este / oeste de Java*, *cerca de Yakarta*, *en las montañas*.",
+            "**En mi ciudad hay …** — apa saja yang ada: *muchas tiendas*, *dos universidades*, *un mercado muy grande*.",
+            "**Lo que más me gusta es …** — bagian yang paling kamu suka. *Lo que más me gusta es el clima.*"
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sifat kota",
+            "Arti",
+            "Sifat kota",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "grande",
+              "besar",
+              "pequeña",
+              "kecil"
+            ],
+            [
+              "moderna",
+              "modern",
+              "antigua",
+              "tua, bersejarah"
+            ],
+            [
+              "tranquila",
+              "tenang",
+              "ruidosa",
+              "berisik"
+            ],
+            [
+              "limpia",
+              "bersih",
+              "sucia",
+              "kotor"
+            ],
+            [
+              "cara",
+              "mahal",
+              "barata",
+              "murah"
+            ],
+            [
+              "turística",
+              "ramai turis",
+              "industrial",
+              "kota industri"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sekilas budaya",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Kota yang dibangun mengelilingi alun-alun",
+          "items": [
+            "Hampir setiap kota Spanyol dan Amerika Latin punya *plaza mayor* — alun-alun berbentuk persegi dengan gereja di satu sisi dan balai kota di sisi lain. Kalau kamu tersesat, arahkan langkah ke sana: dari alun-alun semua jalan gampang dibaca.",
+            "*El paseo* adalah kebiasaan berjalan santai di sore hari, biasanya sebelum makan malam, sekadar untuk keluar dan bertemu tetangga. Bukan olahraga, dan bukan pula tujuan tertentu.",
+            "Alamat ditulis dengan nomor **di belakang** nama jalan: *Calle Mayor 25*, bukan *25 Calle Mayor*. Lantai disebut terpisah: *Calle Mayor 25, 3.º B* — lantai tiga, pintu B.",
+            "Dan hati-hati soal lantai: *la planta baja* adalah lantai dasar, sedangkan *el primer piso* berarti lantai dua menurut hitungan Indonesia."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "la ciudad",
+      "baca": "la si-u-DAD",
+      "id": "kota"
+    },
+    {
+      "es": "el centro",
+      "baca": "el SEN-tro",
+      "id": "pusat kota"
+    },
+    {
+      "es": "la plaza",
+      "baca": "la PLA-sa",
+      "id": "alun-alun"
+    },
+    {
+      "es": "el museo",
+      "baca": "el mu-SE-o",
+      "id": "museum"
+    },
+    {
+      "es": "la playa",
+      "baca": "la PLA-ya",
+      "id": "pantai"
+    },
+    {
+      "es": "el autobús",
+      "baca": "el au-to-BUS",
+      "id": "bus"
+    },
+    {
+      "es": "el mapa",
+      "baca": "el MA-pa",
+      "id": "peta"
+    },
+    {
+      "es": "enfrente de",
+      "baca": "en-FREN-te de",
+      "id": "di seberang"
+    },
+    {
+      "es": "detrás de",
+      "baca": "de-TRAS de",
+      "id": "di belakang"
+    },
+    {
+      "es": "delante de",
+      "baca": "de-LAN-te de",
+      "id": "di depan"
+    },
+    {
+      "es": "encima de",
+      "baca": "en-SI-ma de",
+      "id": "di atas"
+    },
+    {
+      "es": "debajo de",
+      "baca": "de-BA-kho de",
+      "id": "di bawah"
+    },
+    {
+      "es": "a la derecha",
+      "baca": "a la de-RE-cha",
+      "id": "ke / di kanan"
+    },
+    {
+      "es": "poder",
+      "baca": "po-DER",
+      "id": "bisa, boleh"
+    },
+    {
+      "es": "hay que…",
+      "baca": "ai ke",
+      "id": "perlu / harus…"
+    },
+    {
+      "es": "gratis",
+      "baca": "GRA-tis",
+      "id": "gratis"
+    },
+    {
+      "es": "estar",
+      "baca": "es-TAR",
+      "id": "berada, sedang"
+    },
+    {
+      "es": "la tienda",
+      "baca": "la TIEN-da",
+      "id": "toko"
+    },
+    {
+      "es": "entre… y…",
+      "baca": "EN-tre",
+      "id": "di antara"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata letak yang tepat sesuai artinya.",
+      "items": [
+        "El banco está ____ de la farmacia. (di sebelah)",
+        "El museo está ____ de la plaza. (di belakang)",
+        "El libro está ____ de la mesa. (di atas)",
+        "La tienda está ____ el banco y el café. (di antara)",
+        "Mi casa está ____ del centro. (jauh dari)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Indonesia.",
+      "items": [
+        "¿Qué hay que ver en la ciudad?",
+        "El más interesante está detrás de la plaza.",
+        "¿A cuántos minutos está la playa?",
+        "Hay que pagar en la entrada.",
+        "Todo recto y a la izquierda."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat Spanyol yang benar.",
+      "items": [
+        "banco / ¿ / hay / aquí / un / por / ?",
+        "farmacia / la / al / de / lado / está",
+        "cerrado / lunes / los / está",
+        "ciudad / mi / grande / es",
+        "¿ / está / dónde / estación / la / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "al lado — detrás — encima — entre — lejos",
+    "Apa yang perlu dilihat di kota ini? — Yang paling menarik ada di belakang alun-alun. — Berapa menit dari sini ke pantai? — Bayarnya di pintu masuk. — Lurus terus lalu ke kiri.",
+    "¿Hay un banco por aquí? — Está al lado de la farmacia. — Los lunes está cerrado. — Mi ciudad es grande. — ¿Dónde está la estación?"
+  ],
+  "wave": "Ulangi **unit 10**: sebutkan kegiatanmu sepanjang seminggu, pakai *siempre*, *a veces*, dan *nunca* di tempat yang benar."
+}

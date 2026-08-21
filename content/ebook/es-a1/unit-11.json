@@ -1,0 +1,508 @@
+{
+  "title": "Ada bank di sekitar sini?",
+  "title_target": "¿Hay un banco por aquí?",
+  "goal": "Menanyakan keberadaan tempat, menyebut letaknya, dan membedakan *ser* dari *estar*.",
+  "bekal": [
+    "menanyakan apakah ada sesuatu di sekitar",
+    "menyebut letak sebuah tempat",
+    "memilih antara *ser* dan *estar*",
+    "menyebut jam buka dan tutup"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Perdona, ¿hay un banco por aquí?",
+      "intro": "Bertanya kepada orang di jalan. Perhatikan pergantian *hay* dan *está* — di situlah seluruh pelajaran unit ini.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Perdona, ¿hay un banco por aquí?",
+          "id": "Permisi, ada bank di sekitar sini?",
+          "literal": "maafkan, ada satu bank lewat sini?"
+        },
+        {
+          "speaker": "Señora:",
+          "text": "Sí, hay uno en la calle Mayor.",
+          "id": "Ya, ada satu di Jalan Mayor.",
+          "literal": "ya, ada satu di jalan Mayor."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Está lejos de aquí?",
+          "id": "Jauh dari sini?",
+          "literal": "dia-berada jauh dari sini?"
+        },
+        {
+          "speaker": "Señora:",
+          "text": "No, está cerca. Está al lado de la farmacia.",
+          "id": "Tidak, dekat. Letaknya di sebelah apotek.",
+          "literal": "tidak, dia-berada dekat. dia-berada pada sisi dari apotek."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿A cuántos minutos está?",
+          "id": "Berapa menit dari sini?",
+          "literal": "pada berapa menit dia-berada?"
+        },
+        {
+          "speaker": "Señora:",
+          "text": "A cinco minutos a pie. Todo recto y a la izquierda.",
+          "id": "Lima menit jalan kaki. Lurus terus lalu ke kiri.",
+          "literal": "pada lima menit dengan kaki. semua lurus dan ke si kiri."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Y el mercado? Hoy está cerrado, ¿verdad?",
+          "id": "Dan pasarnya? Hari ini tutup, kan?",
+          "literal": "dan pasar? hari-ini dia-berada tertutup, kebenaran?"
+        },
+        {
+          "speaker": "Señora:",
+          "text": "No, está abierto hasta las dos.",
+          "id": "Tidak, buka sampai jam dua.",
+          "literal": "tidak, dia-berada terbuka sampai jam-jam dua."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Y hay un cajero automático en el banco?",
+          "id": "Dan ada ATM di bank itu?",
+          "literal": "dan ada satu kasir otomatis di si bank?"
+        },
+        {
+          "speaker": "Señora:",
+          "text": "Sí, hay dos. Están en la entrada.",
+          "id": "Ada dua. Letaknya di pintu masuk.",
+          "literal": "ya, ada dua. mereka-berada di si pintu-masuk."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Muchas gracias. Usted es muy amable.",
+          "id": "Terima kasih banyak. Anda baik sekali.",
+          "literal": "banyak terima-kasih. Anda adalah sangat ramah."
+        },
+        {
+          "speaker": "Señora:",
+          "text": "De nada. ¡Que tenga un buen día!",
+          "id": "Sama-sama. Semoga hari Anda menyenangkan!",
+          "literal": "dari tidak-apa. semoga(Anda) punya satu baik hari!"
+        }
+      ],
+      "notes": [
+        "**Hay = ada, dan bentuknya tidak pernah berubah.** Satu benda atau seratus, tetap *hay*: *hay un banco*, *hay tres bancos*. Dipakai untuk memperkenalkan sesuatu yang belum dikenal — makanya selalu berpasangan dengan *un / una / dos*, tidak pernah dengan *el / la*.",
+        "**Begitu bendanya sudah dikenal, giliran estar.** Bandingkan: *Hay un banco en la calle Mayor* (memberi tahu keberadaannya) lalu *El banco está al lado de la farmacia* (menunjuk letaknya). Urutan ini hampir selalu benar: *hay* dulu, *estar* kemudian.",
+        "**Ser vs estar — inti seluruh bahasa Spanyol.** *Ser* untuk siapa/apa sesuatu itu pada dasarnya: *Marta es española*, *el mercado es grande*. *Estar* untuk di mana dan sedang bagaimana: *Marta está en casa*, *el mercado está cerrado*. Salah pilih mengubah arti, bukan cuma bunyi: *es aburrido* = dia orang yang membosankan; *está aburrido* = dia sedang bosan.",
+        "**Por aquí** = \"di sekitar sini\", lebih longgar daripada *aquí* yang berarti tepat di titik ini. *Por* dengan kata tempat selalu berarti \"di seputar\": *por Madrid*, *por el centro*.",
+        "**Uno menggantikan kata benda yang sudah disebut.** *Hay uno en la calle Mayor* — *uno* di sini berarti \"satu bank\", tanpa perlu mengulang kata *banco*. Untuk benda feminin: *una*.",
+        "**Jarak diukur dengan waktu.** *Está a cinco minutos* (lima menit dari sini), *a diez minutos en coche*, *a dos horas de Madrid*. Perhatikan *a*-nya, yang tak boleh dibuang.",
+        "**Usted = Anda.** Bentuk kata kerjanya sama persis dengan \"dia\": *usted es*, *usted tiene*, *usted vive*. Di Spanyol *usted* dipakai hemat; di Amerika Latin jauh lebih sering.",
+        "**¿verdad? dan ¿no?** Ditempel di ekor kalimat untuk minta persetujuan, persis \"kan?\" dalam bahasa Indonesia: *Está abierto, ¿verdad?*",
+        "**¡Que tenga un buen día!** adalah doa singkat yang sangat sering dipakai. Bentuknya sebenarnya subjuntif — tata bahasa tingkat B1 — jadi hafalkan saja utuh. Versi akrabnya *¡que tengas un buen día!*"
+      ],
+      "grammars": [
+        {
+          "title": "Kata kerja estar (berada)",
+          "body": [
+            "*Estar* menjawab dua pertanyaan: **di mana** sesuatu berada dan **sedang bagaimana** keadaannya."
+          ],
+          "table": {
+            "head": [
+              "",
+              "estar",
+              "Cara baca",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "yo",
+                "**estoy**",
+                "es-TOY",
+                "*Estoy en casa.*"
+              ],
+              [
+                "tú",
+                "**estás**",
+                "es-TAS",
+                "*¿Dónde estás?*"
+              ],
+              [
+                "él / ella / usted",
+                "**está**",
+                "es-TA",
+                "*El banco está cerca.*"
+              ],
+              [
+                "nosotros",
+                "**estamos**",
+                "es-TA-mos",
+                "*Estamos en el café.*"
+              ],
+              [
+                "vosotros",
+                "**estáis**",
+                "es-TAIS",
+                "*¿Estáis cansados?*"
+              ],
+              [
+                "ellos / ustedes",
+                "**están**",
+                "es-TAN",
+                "*Las tiendas están abiertas.*"
+              ]
+            ]
+          },
+          "after": [
+            "Pasangannya, *ser*, sudah kamu pakai sejak unit 1 — tapi baru tiga bentuk pertamanya. Ini daftar penuhnya: **yo soy, tú eres, él / ella / usted es, nosotros somos, vosotros sois, ellos / ustedes son**. Jangkarnya sama seperti kata kerja lain: bentuk *nosotros* berakhir **-mos**, bentuk *ellos* berakhir **-n**."
+          ]
+        },
+        {
+          "title": "Ser atau estar? Tabel keputusan",
+          "body": [
+            "Kalau kamu ragu, jalankan pertanyaan ini: **apakah yang saya katakan bisa berubah besok?** Kalau bisa, hampir pasti *estar*."
+          ],
+          "table": {
+            "head": [
+              "Dipakai untuk",
+              "Kata kerja",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "Identitas, nama, profesi",
+                "**ser**",
+                "*Soy profesora.*"
+              ],
+              [
+                "Asal dan kebangsaan",
+                "**ser**",
+                "*Somos de Indonesia.*"
+              ],
+              [
+                "Sifat tetap",
+                "**ser**",
+                "*Mi hermana es simpática.*"
+              ],
+              [
+                "Waktu, tanggal, jam",
+                "**ser**",
+                "*Son las tres.*"
+              ],
+              [
+                "Harga total",
+                "**ser**",
+                "*Son veinte euros.*"
+              ],
+              [
+                "Kepemilikan",
+                "**ser**",
+                "*El libro es de Luis.*"
+              ],
+              [
+                "Letak, tempat",
+                "**estar**",
+                "*El banco está cerca.*"
+              ],
+              [
+                "Keadaan sementara",
+                "**estar**",
+                "*Estoy cansado.*"
+              ],
+              [
+                "Perasaan hari ini",
+                "**estar**",
+                "*¿Cómo estás?*"
+              ],
+              [
+                "Buka / tutup, hidup / mati",
+                "**estar**",
+                "*La tienda está cerrada.*"
+              ],
+              [
+                "Status yang bisa berubah",
+                "**estar**",
+                "*Está casada.*"
+              ]
+            ]
+          },
+          "after": [
+            "Sekelompok kata sifat berganti arti tergantung pasangannya. Ini yang paling sering muncul: *ser listo* (pintar) vs *estar listo* (siap); *ser aburrido* (membosankan) vs *estar aburrido* (sedang bosan); *ser bueno* (baik) vs *estar bueno* (enak, tentang makanan); *ser rico* (kaya) vs *estar rico* (lezat).",
+            "Satu pengecualian yang sering menjebak: **acara** memakai *ser*, meski yang ditanyakan tempatnya. *La fiesta es en mi casa* — pestanya di rumah saya. Tapi *mi casa está en Bandung*. Bendanya *estar*, kejadiannya *ser*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tempat di kota",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "el centro",
+              "el SEN-tro",
+              "pusat kota"
+            ],
+            [
+              "la plaza",
+              "la PLA-sa",
+              "alun-alun"
+            ],
+            [
+              "la calle",
+              "la KA-ye",
+              "jalan"
+            ],
+            [
+              "la avenida",
+              "la a-be-NI-da",
+              "jalan besar"
+            ],
+            [
+              "el banco",
+              "el BAN-ko",
+              "bank"
+            ],
+            [
+              "el cajero automático",
+              "el ka-KHE-ro",
+              "ATM"
+            ],
+            [
+              "la farmacia",
+              "la far-MA-sia",
+              "apotek"
+            ],
+            [
+              "el hospital",
+              "el os-pi-TAL",
+              "rumah sakit"
+            ],
+            [
+              "el mercado",
+              "el mer-KA-do",
+              "pasar"
+            ],
+            [
+              "el supermercado",
+              "el su-per-mer-KA-do",
+              "swalayan"
+            ],
+            [
+              "la tienda",
+              "la TIEN-da",
+              "toko"
+            ],
+            [
+              "el restaurante",
+              "el res-tau-RAN-te",
+              "restoran"
+            ],
+            [
+              "la estación",
+              "la es-ta-SION",
+              "stasiun"
+            ],
+            [
+              "la parada de autobús",
+              "la pa-RA-da",
+              "halte bus"
+            ],
+            [
+              "el aeropuerto",
+              "el a-e-ro-PUER-to",
+              "bandara"
+            ],
+            [
+              "la iglesia",
+              "la i-GLE-sia",
+              "gereja"
+            ],
+            [
+              "la catedral",
+              "la ka-te-DRAL",
+              "katedral"
+            ],
+            [
+              "la mezquita",
+              "la mes-KI-ta",
+              "masjid"
+            ],
+            [
+              "el museo",
+              "el mu-SE-o",
+              "museum"
+            ],
+            [
+              "el parque",
+              "el PAR-ke",
+              "taman"
+            ],
+            [
+              "la playa",
+              "la PLA-ya",
+              "pantai"
+            ],
+            [
+              "el hotel",
+              "el o-TEL",
+              "hotel"
+            ],
+            [
+              "la oficina de correos",
+              "ko-RRE-os",
+              "kantor pos"
+            ],
+            [
+              "la comisaría",
+              "la ko-mi-sa-RI-a",
+              "kantor polisi"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "hay",
+      "baca": "ai",
+      "id": "ada"
+    },
+    {
+      "es": "la calle",
+      "baca": "la KA-ye",
+      "id": "jalan"
+    },
+    {
+      "es": "el banco",
+      "baca": "el BAN-ko",
+      "id": "bank"
+    },
+    {
+      "es": "la farmacia",
+      "baca": "la far-MA-sia",
+      "id": "apotek"
+    },
+    {
+      "es": "el mercado",
+      "baca": "el mer-KA-do",
+      "id": "pasar"
+    },
+    {
+      "es": "la iglesia",
+      "baca": "la i-GLE-sia",
+      "id": "gereja"
+    },
+    {
+      "es": "el parque",
+      "baca": "el PAR-ke",
+      "id": "taman"
+    },
+    {
+      "es": "cerca / lejos",
+      "baca": "SER-ka / LE-khos",
+      "id": "dekat / jauh"
+    },
+    {
+      "es": "al lado de",
+      "baca": "al LA-do de",
+      "id": "di sebelah"
+    },
+    {
+      "es": "a la izquierda",
+      "baca": "a la is-KIER-da",
+      "id": "ke / di kiri"
+    },
+    {
+      "es": "todo recto",
+      "baca": "TO-do REK-to",
+      "id": "lurus terus"
+    },
+    {
+      "es": "abierto / cerrado",
+      "baca": "a-BIER-to / se-RRA-do",
+      "id": "buka / tutup"
+    },
+    {
+      "es": "aquí / allí",
+      "baca": "a-KI / a-YI",
+      "id": "di sini / di sana"
+    },
+    {
+      "es": "por aquí",
+      "baca": "por a-KI",
+      "id": "di sekitar sini"
+    },
+    {
+      "es": "perdona / perdone",
+      "baca": "per-DO-na",
+      "id": "permisi (akrab / sopan)"
+    },
+    {
+      "es": "amable",
+      "baca": "a-MA-ble",
+      "id": "ramah, baik"
+    },
+    {
+      "es": "de nada",
+      "baca": "de NA-da",
+      "id": "sama-sama"
+    },
+    {
+      "es": "¿verdad?",
+      "baca": "ber-DAD",
+      "id": "kan?"
+    },
+    {
+      "es": "la estación",
+      "baca": "la es-ta-SION",
+      "id": "stasiun"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan *hay* atau bentuk *estar* yang tepat.",
+      "items": [
+        "En esta calle ____ una farmacia.",
+        "El mercado ____ cerca de mi casa.",
+        "¿Dónde ____ tú?",
+        "En la plaza ____ tres cafés.",
+        "Los museos ____ cerrados los lunes.",
+        "Cerca del hotel ____ un cajero automático."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk *ser* atau *estar* yang tepat.",
+      "items": [
+        "Marta ____ española.",
+        "Marta ____ en Barcelona hoy.",
+        "El banco ____ cerrado los domingos.",
+        "Mi hermano ____ profesor.",
+        "Nosotros ____ muy cansados.",
+        "La fiesta ____ en mi casa."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Spanyol.",
+      "items": [
+        "Ada sebuah toko di seberang bank.",
+        "Apoteknya jauh dari sini.",
+        "Kami sedang di pasar.",
+        "Permisi, di mana Jalan Mayor?",
+        "Museumnya buka dari jam sepuluh sampai delapan.",
+        "Pantainya dua puluh menit naik bus."
+      ]
+    }
+  ],
+  "answers": [
+    "hay — está — estás — hay — están — hay",
+    "es — está — está — es — estamos — es",
+    "Hay una tienda enfrente del banco. — La farmacia está lejos de aquí. — Estamos en el mercado. — Perdone, ¿dónde está la calle Mayor? — El museo está abierto de diez a ocho. — La playa está a veinte minutos en autobús."
+  ],
+  "wave": "Ulangi **unit 9**: ceritakan pagimu dari bangun sampai tiba di tempat kerja, enam kalimat."
+}

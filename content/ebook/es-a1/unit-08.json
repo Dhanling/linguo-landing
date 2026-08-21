@@ -1,321 +1,150 @@
 {
-  "title": "Rencana akhir pekan",
-  "title_target": "Planes para el fin de semana",
-  "goal": "Menyatakan rencana, mengajak dan menolak ajakan, berbicara tentang cuaca, dan menyebut tanggal.",
+  "title": "Menggambarkan orang",
+  "title_target": "¿Cómo es?",
+  "goal": "Menggambarkan orang secara fisik maupun sifat, dan memakai kata milik.",
   "bekal": [
-    "mengatakan apa yang akan kamu lakukan",
-    "mengajak seseorang dan menjawab ajakan",
-    "membuat janji: kapan, di mana, jam berapa",
-    "berbicara tentang cuaca dan musim",
-    "menyebut bulan dan tanggal"
+    "menggambarkan orang dengan kata sifat yang cocok",
+    "memakai *mi*, *tu*, *su*, *nuestro*",
+    "membandingkan dengan *más… que*",
+    "menyebut status pernikahan"
   ],
   "dialogs": [
     {
-      "title": "Diálogo 1 — ¿Qué vas a hacer?",
-      "intro": "Jumat sore, pertanyaan yang sama di seluruh dunia.",
+      "title": "Diálogo — La foto de la boda",
+      "intro": "Marta menunjukkan foto pernikahan kakaknya, dan menerangkan siapa saja yang ada di dalamnya.",
       "lines": [
         {
           "speaker": "Marta:",
-          "text": "¿Qué vas a hacer este fin de semana?",
-          "id": "Apa rencanamu akhir pekan ini?",
-          "literal": "apa kamu-pergi untuk melakukan ini akhir dari pekan?"
+          "text": "Mira, esta es la boda de mi prima Laura.",
+          "id": "Lihat, ini pernikahan sepupu saya Laura.",
+          "literal": "lihat, ini adalah si pernikahan dari sepupu-perempuanku Laura."
         },
         {
           "speaker": "Budi:",
-          "text": "Voy a visitar a mis abuelos en Bogor.",
-          "id": "Saya akan mengunjungi kakek-nenek saya di Bogor.",
-          "literal": "saya-pergi untuk mengunjungi kepada kakek-nenekku di Bogor."
+          "text": "¡Qué guapa! ¿Y quién es el señor alto?",
+          "id": "Cantik sekali! Dan siapa bapak yang tinggi itu?",
+          "literal": "betapa cantik! dan siapa adalah si tuan tinggi?"
         },
         {
           "speaker": "Marta:",
-          "text": "¡Qué bien! ¿Vas a ir en tren?",
-          "id": "Bagus! Kamu akan naik kereta?",
-          "literal": "betapa baik! kamu-pergi untuk pergi dalam kereta?"
+          "text": "Es mi tío Paco, el hermano de mi madre.",
+          "id": "Itu paman saya Paco, saudara laki-laki ibu saya.",
+          "literal": "adalah pamanku Paco, si saudara-laki-laki dari ibuku."
         },
         {
           "speaker": "Budi:",
-          "text": "Sí, el tren sale a las siete. Quiero llegar temprano.",
-          "id": "Ya, keretanya berangkat jam tujuh. Saya ingin sampai lebih awal.",
-          "literal": "ya, kereta dia-keluar pada jam-jam tujuh. saya-ingin tiba awal."
+          "text": "¿Y la señora mayor, a la derecha?",
+          "id": "Dan ibu yang sudah sepuh, di sebelah kanan?",
+          "literal": "dan si nyonya lebih-tua, ke si kanan?"
         },
         {
           "speaker": "Marta:",
-          "text": "¿Cuánto tiempo vas a quedarte?",
-          "id": "Kamu akan tinggal berapa lama?",
-          "literal": "berapa waktu kamu-pergi untuk tinggal-diri?"
+          "text": "Mi abuela. Tiene ochenta y siete años, pero está muy bien.",
+          "id": "Nenek saya. Umurnya delapan puluh tujuh tahun, tapi masih sehat sekali.",
+          "literal": "nenekku. dia-punya delapan-puluh dan tujuh tahun-tahun, tetapi dia-berada sangat baik."
         },
         {
           "speaker": "Budi:",
-          "text": "Dos días. Vuelvo el domingo por la tarde.",
-          "id": "Dua hari. Saya pulang Minggu sore.",
-          "literal": "dua hari. saya-kembali hari-minggu lewat sore."
+          "text": "¿Y los niños? ¿Son tus sobrinos?",
+          "id": "Dan anak-anak itu? Keponakanmu?",
+          "literal": "dan si anak-anak? adalah(jamak) keponakan-keponakanmu?"
         },
         {
           "speaker": "Marta:",
-          "text": "Aquí va a llover todo el fin de semana.",
-          "id": "Di sini akan hujan sepanjang akhir pekan.",
-          "literal": "sini dia-pergi untuk menghujan seluruh akhir dari pekan."
+          "text": "Sí, el rubio es Diego y la morena es Sara.",
+          "id": "Ya, yang pirang Diego dan yang berambut gelap Sara.",
+          "literal": "ya, si pirang adalah Diego dan si gelap adalah Sara."
         },
         {
           "speaker": "Budi:",
-          "text": "¿Y tú? ¿No puedes salir?",
-          "id": "Kalau kamu? Tidak bisa keluar?",
-          "literal": "dan kamu? tidak kamu-bisa keluar?"
+          "text": "¿Cuántos años tienen?",
+          "id": "Berapa umur mereka?",
+          "literal": "berapa tahun-tahun mereka-punya?"
         },
         {
           "speaker": "Marta:",
-          "text": "No, así que voy a ver una serie española en casa.",
-          "id": "Tidak, jadi saya akan menonton serial Spanyol di rumah.",
-          "literal": "tidak, begitu bahwa saya-pergi untuk melihat satu serial spanyol di rumah."
+          "text": "Diego tiene seis y Sara tiene nueve.",
+          "id": "Diego enam dan Sara sembilan.",
+          "literal": "Diego dia-punya enam dan Sara dia-punya sembilan."
         },
         {
           "speaker": "Budi:",
-          "text": "¿Cuál? A mí me encantan las series.",
-          "id": "Yang mana? Saya suka sekali serial.",
-          "literal": "yang-mana? kepada saya kepada-saya menyenangkan-sangat(jamak) si serial-serial."
+          "text": "Nuestra familia es más pequeña. Solo somos cinco.",
+          "id": "Keluarga kami lebih kecil. Kami cuma berlima.",
+          "literal": "keluarga-kami adalah lebih kecil. hanya kami-adalah lima."
         },
         {
           "speaker": "Marta:",
-          "text": "Una de detectives. Te la recomiendo.",
-          "id": "Serial detektif. Saya rekomendasikan buat kamu.",
-          "literal": "satu dari detektif-detektif. kepada-kamu-nya saya-merekomendasikan."
-        },
-        {
-          "speaker": "Budi:",
-          "text": "¡Buena idea! Nos vemos el lunes.",
-          "id": "Ide bagus! Sampai ketemu Senin.",
-          "literal": "baik ide! kita-saling-melihat hari-senin."
+          "text": "Pero cinco personas también es una familia bonita.",
+          "id": "Tapi lima orang juga keluarga yang indah.",
+          "literal": "tetapi lima orang-orang juga adalah sebuah keluarga cantik."
         }
       ],
       "notes": [
-        "**Masa depan yang sebenarnya dipakai orang.** Bahasa Spanyol punya bentuk futuro resmi (*hablaré*), tapi dalam percakapan sehari-hari orang jauh lebih sering memakai **ir + a + kata kerja dasar**: *voy a estudiar*, *vamos a comer*. Untuk seluruh level A1, ini saja sudah cukup.",
-        "**Ir tidak mirip apa pun.** *Voy, vas, va, vamos, vais, van* — tidak ada hubungannya dengan bentuk dasarnya. Terima saja dan hafalkan; ini salah satu dari segelintir kata kerja yang benar-benar liar.",
-        "**Sekarang bisa berarti nanti.** *El tren sale a las siete* memakai bentuk sekarang meski keretanya berangkat besok. Sama seperti bahasa Indonesia: \"keretanya berangkat jam tujuh\". Untuk jadwal yang sudah pasti, bentuk sekarang justru lebih lazim daripada *va a salir*.",
-        "**Manusia sebagai sasaran dapat \"a\".** *Visito Bogor* (tempat, tanpa *a*), tapi *visito **a** mis abuelos* (orang, pakai *a*). Kata kecil ini tidak diterjemahkan ke bahasa Indonesia dan sering dilupakan pemula — padahal penutur asli langsung mendengarnya hilang.",
-        "**Quedarse** = tinggal, berdiam. Bandingkan dengan *quedar* (bertemu, berjanji) di dialog berikutnya dan *quedar* (pas, soal ukuran) dari unit 7. Satu kata, tiga kehidupan.",
-        "**Cuánto tiempo** = berapa lama. *Tiempo* berarti waktu **dan** cuaca sekaligus: *no tengo tiempo* (saya tak punya waktu), *hace buen tiempo* (cuacanya bagus).",
-        "**¿Cuál?** = \"yang mana?\", dipakai kalau memilih dari sekelompok hal yang sudah jelas. Bandingkan *¿qué?* yang menanyakan apa secara umum: *¿Qué serie ves?* tapi *¿Cuál prefieres?*",
-        "**Nos vemos** harfiahnya \"kita saling melihat\", dipakai persis seperti \"sampai ketemu\". Bandingkan *hasta luego* yang lebih netral."
+        "**Kata sifat datang SESUDAH kata bendanya.** *El señor alto* (bapak yang tinggi), *una familia grande*, *un coche rojo*. Urutan bahasa Inggris dan Indonesia justru terbalik dari bahasa Spanyol di sini — dan pemula hampir selalu tergelincir di kalimat pertama.",
+        "**Kata sifat ikut jenis kelamin DAN jumlah.** *Un niño rubio*, *una niña rubia*, *unos niños rubios*, *unas niñas rubias*. Empat bentuk untuk satu kata sifat; yang berakhiran -e atau konsonan cuma punya dua (*grande / grandes*).",
+        "**Kata sifat bisa berdiri sendiri sebagai kata benda.** *El rubio* = \"si pirang\", *la morena* = \"si berambut gelap\", *los pequeños* = \"si kecil-kecil\". Cukup pasang kata sandang di depannya.",
+        "**Mayor** secara harfiah \"lebih tua\", tapi dipakai sebagai cara sopan menyebut orang lanjut usia — jauh lebih halus daripada *viejo*, yang untuk orang terdengar kasar.",
+        "**Nuestro berubah empat kali.** Berbeda dari *mi* dan *tu*, kata milik \"kami\" ikut jenis kelamin juga: *nuestro coche*, *nuestra familia*, *nuestros hijos*, *nuestras hijas*.",
+        "**Está muy bien vs es muy buena.** Kesehatan dan keadaan sementara memakai *estar* (*está bien* = dia sehat / baik-baik saja); sifat tetap memakai *ser*. Perbedaan ini dibedah di unit 11.",
+        "**Solo = hanya.** Jangan tertukar dengan *solo* yang berarti \"sendirian\" (*estoy solo*) — bentuknya sama, konteks yang memisahkan.",
+        "**Más pequeña** = \"lebih kecil\". Membandingkan cukup dengan *más* di depan kata sifat, dan *que* untuk \"daripada\": *más grande que*, *más joven que*. Empat kata sifat menolak pola ini dan punya bentuk sendiri: *bueno → mejor*, *malo → peor*, *grande → mayor*, *pequeño → menor*."
       ],
       "grammars": [
         {
-          "title": "Ir a + kata kerja dasar",
+          "title": "Kata milik — mi, tu, su, nuestro",
           "body": [
-            "Rumusnya tetap: bentuk *ir* + *a* + kata kerja dalam bentuk dasarnya (yang berakhiran -ar/-er/-ir). Kata kerja keduanya **tidak pernah** ikut berubah:"
+            "Ini kata milik yang berdiri **di depan** kata bendanya. Yang menentukan bentuknya adalah bendanya, bukan pemiliknya:"
           ],
           "table": {
             "head": [
-              "",
-              "ir",
-              "Contoh",
-              "Arti"
+              "Pemilik",
+              "Satu benda",
+              "Banyak benda",
+              "Contoh"
             ],
             "rows": [
               [
                 "yo",
-                "**voy**",
-                "voy a estudiar",
-                "saya akan belajar"
+                "**mi**",
+                "**mis**",
+                "*mi hermana*, *mis hermanas*"
               ],
               [
                 "tú",
-                "**vas**",
-                "vas a comer",
-                "kamu akan makan"
+                "**tu**",
+                "**tus**",
+                "*tu casa*, *tus casas*"
               ],
               [
                 "él / ella / usted",
-                "**va**",
-                "va a llover",
-                "akan hujan"
+                "**su**",
+                "**sus**",
+                "*su padre*, *sus padres*"
               ],
               [
                 "nosotros",
-                "**vamos**",
-                "vamos a salir",
-                "kami akan keluar"
+                "**nuestro / nuestra**",
+                "**nuestros / nuestras**",
+                "*nuestra familia*"
               ],
               [
                 "vosotros",
-                "**vais**",
-                "vais a ver",
-                "kalian akan melihat"
+                "**vuestro / vuestra**",
+                "**vuestros / vuestras**",
+                "*vuestro coche*"
               ],
               [
                 "ellos / ustedes",
-                "**van**",
-                "van a viajar",
-                "mereka akan bepergian"
+                "**su**",
+                "**sus**",
+                "*su casa*, *sus hijos*"
               ]
             ]
           },
           "after": [
-            "Dua kata kerja lain yang sepasang dengannya karena sama-sama langsung diikuti kata kerja dasar: *querer* (ingin) → *quiero llegar*, dan *poder* (bisa) → *no puedo salir*. Ketiganya jadi kerangka hampir semua kalimat rencana.",
-            "*Vamos a…* punya arti kedua: ajakan. *Vamos a comer* bisa berarti \"kami akan makan\" atau \"ayo makan\", dan cuma nada suara yang memisahkan. Untuk mempertegas ajakan, orang menambahkan *¡Vamos!* di depan."
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Diálogo 2 — Quedamos el sábado",
-      "intro": "Membuat janji: mengajak, menawar waktu, menyepakati tempat.",
-      "lines": [
-        {
-          "speaker": "Ana:",
-          "text": "Oye, ¿te apetece ir al cine el sábado?",
-          "id": "Eh, mau nonton bioskop Sabtu?",
-          "literal": "dengar, kepada-kamu berselera pergi ke-si bioskop hari-sabtu?"
-        },
-        {
-          "speaker": "Luis:",
-          "text": "¡Vale! ¿A qué hora quedamos?",
-          "id": "Boleh! Ketemu jam berapa?",
-          "literal": "oke! pada apa jam kami-berjanji?"
-        },
-        {
-          "speaker": "Ana:",
-          "text": "La película empieza a las ocho. ¿Quedamos a las siete y media?",
-          "id": "Filmnya mulai jam delapan. Ketemu jam setengah delapan?",
-          "literal": "si film dia-mulai pada jam-jam delapan. kami-berjanji pada jam-jam tujuh dan setengah?"
-        },
-        {
-          "speaker": "Luis:",
-          "text": "Uf, a las siete y media no puedo. Trabajo hasta las siete.",
-          "id": "Aduh, setengah delapan saya tidak bisa. Saya kerja sampai jam tujuh.",
-          "literal": "uf, pada jam-jam tujuh dan setengah tidak saya-bisa. saya-bekerja sampai jam-jam tujuh."
-        },
-        {
-          "speaker": "Ana:",
-          "text": "Entonces a las ocho menos cuarto, en la puerta del cine.",
-          "id": "Kalau begitu jam delapan kurang seperempat, di pintu bioskop.",
-          "literal": "kalau-begitu pada jam-jam delapan kurang seperempat, di si pintu dari-si bioskop."
-        },
-        {
-          "speaker": "Luis:",
-          "text": "Perfecto. ¿Y después cenamos algo?",
-          "id": "Bagus. Habis itu makan malam?",
-          "literal": "sempurna. dan sesudah kami-makan-malam sesuatu?"
-        },
-        {
-          "speaker": "Ana:",
-          "text": "Me encantaría. Conozco un sitio muy bueno.",
-          "id": "Mau banget. Saya tahu tempat yang enak.",
-          "literal": "kepada-saya akan-menyenangkan-sangat. saya-mengenal satu tempat sangat baik."
-        },
-        {
-          "speaker": "Luis:",
-          "text": "¿Está lejos? Porque no tengo coche.",
-          "id": "Jauh? Soalnya saya tidak bawa mobil.",
-          "literal": "dia-berada jauh? karena tidak saya-punya mobil."
-        },
-        {
-          "speaker": "Ana:",
-          "text": "No, está al lado. Diez minutos andando.",
-          "id": "Tidak, dekat kok. Sepuluh menit jalan kaki.",
-          "literal": "tidak, dia-berada pada sisi. sepuluh menit berjalan."
-        },
-        {
-          "speaker": "Luis:",
-          "text": "Genial. ¿Qué tiempo va a hacer el sábado?",
-          "id": "Mantap. Sabtu cuacanya bagaimana?",
-          "literal": "hebat. apa cuaca dia-pergi untuk membuat hari-sabtu?"
-        },
-        {
-          "speaker": "Ana:",
-          "text": "Va a hacer bueno. Sol y veinticinco grados.",
-          "id": "Bakal cerah. Matahari dan dua puluh lima derajat.",
-          "literal": "dia-pergi untuk membuat baik. matahari dan dua-puluh-lima derajat."
-        },
-        {
-          "speaker": "Luis:",
-          "text": "Estupendo. Hasta el sábado, entonces.",
-          "id": "Bagus sekali. Sampai Sabtu kalau begitu.",
-          "literal": "hebat. sampai hari-sabtu, kalau-begitu."
-        }
-      ],
-      "notes": [
-        "**Oye** = \"eh\", \"dengar\", pembuka percakapan yang sangat lazim di antara teman. Bentuk sopannya *oiga*, yang lebih sering dipakai untuk memanggil pelayan atau orang asing.",
-        "**¿Te apetece…?** = \"kamu lagi ingin…?\" — cara mengajak yang paling halus dan paling sering dipakai di Spanyol. Polanya sama persis dengan *gustar*: *me apetece*, *te apetece*, *le apetece*. Di Amerika Latin lebih lazim *¿tienes ganas de…?*",
-        "**Quedar = berjanji bertemu.** *¿Quedamos a las siete?* — kita ketemu jam tujuh, ya? *Hemos quedado* — kami sudah janjian. Ini kata kerja sosial paling penting dalam bahasa Spanyol sehari-hari, dan tidak punya padanan satu kata di bahasa Inggris.",
-        "**Menolak tanpa mengatakan tidak.** Orang Spanyol jarang menjawab *no* telanjang. Rumusnya: keluhan pendek (*uf*, *qué pena*) + alasan + tawaran ganti. *A las siete y media no puedo, trabajo hasta las siete. ¿A las ocho?*",
-        "**Me encantaría** = \"saya akan senang sekali\" — bentuk condicional, tata bahasa B1. Hafalkan utuh; inilah jawaban paling hangat untuk sebuah ajakan.",
-        "**Conocer vs saber.** Keduanya berarti \"tahu\". *Conocer* untuk orang dan tempat yang kamu **kenal** (*conozco un sitio*, *conozco a Marta*); *saber* untuk fakta dan keterampilan (*sé dónde está*, *sé nadar*). Bentuk *yo*-nya nakal: *conozco*, *sé*.",
-        "**Andando** = sambil berjalan. Bentuk -ando / -iendo ini setara \"sedang\" dan akan kamu temui lagi sebagai *estoy comiendo* (saya sedang makan). Untuk sekarang cukup kenali dalam frasa *diez minutos andando*.",
-        "**Suhu memakai grados.** *Veinticinco grados*, *tres grados bajo cero* (tiga derajat di bawah nol). Yang dipakai selalu Celsius."
-      ],
-      "grammars": [
-        {
-          "title": "Cuaca — el tiempo",
-          "body": [
-            "Cuaca dibicarakan lewat tiga kata kerja yang tak punya pelaku sama sekali. Pilihannya ditentukan kebiasaan, bukan aturan, jadi hafalkan berkelompok:"
-          ],
-          "table": {
-            "head": [
-              "Kata kerja",
-              "Contoh",
-              "Arti"
-            ],
-            "rows": [
-              [
-                "**hacer**",
-                "hace calor",
-                "panas"
-              ],
-              [
-                "",
-                "hace frío",
-                "dingin"
-              ],
-              [
-                "",
-                "hace sol",
-                "cerah"
-              ],
-              [
-                "",
-                "hace viento",
-                "berangin"
-              ],
-              [
-                "",
-                "hace buen / mal tiempo",
-                "cuacanya bagus / buruk"
-              ],
-              [
-                "**haber**",
-                "hay niebla",
-                "berkabut"
-              ],
-              [
-                "",
-                "hay tormenta",
-                "ada badai"
-              ],
-              [
-                "",
-                "hay nubes",
-                "berawan"
-              ],
-              [
-                "**sendiri**",
-                "llueve",
-                "hujan"
-              ],
-              [
-                "",
-                "nieva",
-                "turun salju"
-              ],
-              [
-                "",
-                "está nublado",
-                "mendung"
-              ]
-            ]
-          },
-          "after": [
-            "Menanyakannya: *¿Qué tiempo hace?* (sekarang) atau *¿Qué tiempo va a hacer mañana?* (besok). Perhatikan *tiempo* di sini berarti cuaca, bukan waktu.",
-            "*Llover* dan *nevar* juga ikut pecah di tengah seperti kata kerja unit 7: *llueve* dari *llover*, *nieva* dari *nevar*. Tapi karena hujan tidak punya pelaku, cuma bentuk ini yang pernah kamu butuhkan."
+            "Perhatikan *tu* (milikmu) tanpa tanda ´ dan *tú* (kamu) dengan tanda ´. Satu-satunya pembeda di tulisan adalah tanda itu; di ucapan keduanya sama persis.",
+            "Cara kedua menyatakan milik, yang selalu aman dari kebingungan *su*: **de + pemilik**. *El hermano de mi madre*, *la casa de Luis*, *el libro del profesor*. Kalau kamu ragu, pakai bentuk ini."
           ]
         }
       ]
@@ -323,173 +152,99 @@
   ],
   "sections": [
     {
-      "title": "Mengajak dan menjawab",
+      "title": "Menggambarkan orang",
       "blocks": [
         {
-          "type": "tabel",
-          "head": [
-            "Mengajak",
-            "Arti"
-          ],
-          "rows": [
-            [
-              "¿Te apetece ir al cine?",
-              "Mau nonton bioskop?"
-            ],
-            [
-              "¿Quieres venir conmigo?",
-              "Mau ikut saya?"
-            ],
-            [
-              "¿Vamos a tomar algo?",
-              "Ayo minum-minum?"
-            ],
-            [
-              "¿Quedamos el sábado?",
-              "Ketemuan Sabtu, ya?"
-            ],
-            [
-              "¿Qué tal si vamos a la playa?",
-              "Bagaimana kalau ke pantai?"
-            ],
-            [
-              "¿Te viene bien a las ocho?",
-              "Jam delapan cocok buatmu?"
-            ]
-          ]
+          "type": "sub",
+          "text": "Fisik — *¿Cómo es?*"
         },
-        {
-          "type": "tabel",
-          "head": [
-            "Menerima",
-            "Menolak"
-          ],
-          "rows": [
-            [
-              "¡Vale!",
-              "Lo siento, no puedo."
-            ],
-            [
-              "¡Genial!",
-              "Qué pena, ese día trabajo."
-            ],
-            [
-              "Me encantaría.",
-              "Me gustaría, pero estoy ocupado."
-            ],
-            [
-              "Buena idea.",
-              "Uf, ese día no me viene bien."
-            ],
-            [
-              "Por supuesto.",
-              "Mejor otro día, ¿vale?"
-            ],
-            [
-              "Ahí estaré.",
-              "Tengo otros planes, lo siento."
-            ]
-          ]
-        },
-        {
-          "type": "p",
-          "text": "Perhatikan bahwa kolom kanan hampir tak pernah berhenti pada penolakan: hampir semuanya menawarkan hari lain. Menolak tanpa menawarkan pengganti terdengar seperti menutup pintu."
-        }
-      ]
-    },
-    {
-      "title": "Bulan, tanggal, dan musim",
-      "blocks": [
         {
           "type": "tabel",
           "head": [
             "Español",
             "Arti",
-            "Español",
-            "Arti"
+            "Lawannya"
           ],
           "rows": [
             [
-              "enero",
-              "Januari",
-              "julio",
-              "Juli"
+              "alto / alta",
+              "tinggi",
+              "bajo / baja (pendek)"
             ],
             [
-              "febrero",
-              "Februari",
-              "agosto",
-              "Agustus"
+              "delgado / delgada",
+              "kurus",
+              "gordo / gorda (gemuk)"
             ],
             [
-              "marzo",
-              "Maret",
-              "septiembre",
-              "September"
+              "joven",
+              "muda",
+              "mayor (lanjut usia)"
             ],
             [
-              "abril",
-              "April",
-              "octubre",
-              "Oktober"
+              "rubio / rubia",
+              "berambut pirang",
+              "moreno / morena (berambut gelap)"
             ],
             [
-              "mayo",
-              "Mei",
-              "noviembre",
-              "November"
+              "guapo / guapa",
+              "tampan / cantik",
+              "feo / fea (jelek)"
             ],
             [
-              "junio",
-              "Juni",
-              "diciembre",
-              "Desember"
+              "fuerte",
+              "kuat",
+              "débil (lemah)"
             ]
           ]
         },
         {
-          "type": "kotak",
-          "title": "Menyebut tanggal",
-          "items": [
-            "Rumusnya **el + angka + de + bulan**: *el quince de mayo*, *el tres de enero*. Tanpa *de* kalimatnya tidak jalan.",
-            "Angkanya angka biasa, bukan urutan: *el dos de mayo* (tanggal dua), bukan *el segundo*. Satu-satunya yang kadang berbeda adalah tanggal satu, yang boleh disebut *el uno* atau *el primero* — bentuk kedua lebih lazim di Amerika Latin.",
-            "Nama bulan ditulis huruf kecil, sama seperti hari: *quince de mayo*, bukan *quince de Mayo*.",
-            "Menanyakannya: *¿Qué día es hoy?* (hari apa) atau *¿A qué fecha estamos?* (tanggal berapa). Jawaban lengkap: *Hoy es martes, doce de agosto.*"
-          ]
+          "type": "sub",
+          "text": "Sifat — *¿Cómo es de carácter?*"
         },
         {
           "type": "tabel",
           "head": [
-            "Las estaciones",
+            "Español",
             "Arti",
-            "Cuacanya"
+            "Lawannya"
           ],
           "rows": [
             [
-              "la primavera",
-              "musim semi",
-              "*hace buen tiempo, llueve a veces*"
+              "simpático / simpática",
+              "ramah",
+              "antipático / antipática"
             ],
             [
-              "el verano",
-              "musim panas",
-              "*hace mucho calor, hace sol*"
+              "amable",
+              "baik hati",
+              "grosero / grosera (kasar)"
             ],
             [
-              "el otoño",
-              "musim gugur",
-              "*hace viento, llueve*"
+              "inteligente",
+              "cerdas",
+              "tonto / tonta (bodoh)"
             ],
             [
-              "el invierno",
-              "musim dingin",
-              "*hace frío, a veces nieva*"
+              "trabajador / trabajadora",
+              "rajin",
+              "perezoso / perezosa (malas)"
+            ],
+            [
+              "tranquilo / tranquila",
+              "tenang",
+              "nervioso / nerviosa (gugup)"
+            ],
+            [
+              "divertido / divertida",
+              "menyenangkan",
+              "aburrido / aburrida (membosankan)"
             ]
           ]
         },
         {
           "type": "p",
-          "text": "Indonesia cuma punya dua: *la estación seca* (musim kemarau) dan *la estación de lluvias* (musim hujan). Kalimat yang berguna saat memperkenalkan negaramu: *En Indonesia no hay cuatro estaciones, solo dos.*"
+          "text": "Menggabungkannya jadi kalimat: *Mi hermana es alta y muy simpática.* Perhatikan satu *es* saja sudah cukup untuk dua kata sifat yang disambung *y*."
         }
       ]
     },
@@ -498,12 +253,12 @@
       "blocks": [
         {
           "type": "kotak",
-          "title": "Akhir pekan yang mulai Jumat malam",
+          "title": "Keluarga yang tak pernah jauh",
           "items": [
-            "Malam Spanyol mulai terlambat dan berakhir terlambat. Bertemu teman pukul 22.00 untuk makan malam itu biasa, dan bar baru ramai lewat tengah malam.",
-            "*El puente* — \"jembatan\" — adalah hari libur yang jatuh Selasa atau Kamis, sehingga hari kerja di antaranya ikut diliburkan. Kalau ada dua hari libur berdekatan, orang menyebutnya *acueducto*.",
-            "Setiap kota punya *fiestas* tahunannya sendiri, kadang seminggu penuh, dan hampir semuanya berhubungan dengan santo pelindung kota itu. Selama pekan itu, jangan berharap kantor buka seperti biasa.",
-            "Ajakan di Spanyol sering dibuat mendadak — pesan Sabtu pagi untuk Sabtu sore itu wajar, bukan tidak sopan. Sebaliknya, janji yang dibuat tiga minggu sebelumnya justru sering perlu dipastikan ulang."
+            "Makan siang Minggu bersama keluarga besar masih jadi kebiasaan di banyak keluarga Spanyol dan Amerika Latin — sesuatu yang tak perlu dijanjikan karena sudah dianggap ada.",
+            "Anak muda Spanyol tinggal di rumah orang tua jauh lebih lama daripada di Eropa utara, sering sampai usia tiga puluhan. Menanyakan *¿vives con tus padres?* sama sekali tidak dianggap menyinggung.",
+            "*Mi mujer* harfiahnya \"perempuan saya\" dan berarti \"istri saya\" — lazim di Spanyol, tapi di beberapa negara Amerika Latin lebih halus memakai *mi esposa*. Untuk suami, *mi marido* dan *mi esposo* keduanya aman.",
+            "Anak sering dipanggil dengan bentuk kecilnya: *Juan → Juanito*, *Ana → Anita*, *abuela → abuelita*. Akhiran *-ito / -ita* menambahkan rasa sayang, bukan cuma ukuran kecil."
           ]
         }
       ]
@@ -511,267 +266,137 @@
   ],
   "vocab": [
     {
-      "es": "el plan",
-      "baca": "el plan",
-      "id": "rencana"
+      "es": "el tío / la tía",
+      "baca": "el TI-o",
+      "id": "paman / bibi"
     },
     {
-      "es": "ir a…",
-      "baca": "ir a",
-      "id": "akan…"
+      "es": "el niño / la niña",
+      "baca": "el NI-nyo",
+      "id": "anak kecil"
     },
     {
-      "es": "quedar",
-      "baca": "ke-DAR",
-      "id": "janjian bertemu"
+      "es": "la boda",
+      "baca": "la BO-da",
+      "id": "pernikahan"
     },
     {
-      "es": "quedarse",
-      "baca": "ke-DAR-se",
-      "id": "tinggal, berdiam"
+      "es": "mayor / menor",
+      "baca": "ma-YOR / me-NOR",
+      "id": "lebih tua / lebih muda"
     },
     {
-      "es": "visitar",
-      "baca": "bi-si-TAR",
-      "id": "mengunjungi"
+      "es": "joven",
+      "baca": "KHO-ben",
+      "id": "muda"
     },
     {
-      "es": "viajar",
-      "baca": "bia-KHAR",
-      "id": "bepergian"
+      "es": "alto / bajo",
+      "baca": "AL-to / BA-kho",
+      "id": "tinggi / pendek"
     },
     {
-      "es": "el tren / el avión",
-      "baca": "tren / a-BION",
-      "id": "kereta / pesawat"
+      "es": "rubio / moreno",
+      "baca": "RU-bio / mo-RE-no",
+      "id": "pirang / berambut gelap"
     },
     {
-      "es": "salir / llegar",
-      "baca": "sa-LIR / ye-GAR",
-      "id": "berangkat / tiba"
+      "es": "guapo / guapa",
+      "baca": "GUA-po",
+      "id": "tampan / cantik"
     },
     {
-      "es": "volver",
-      "baca": "bol-BER",
-      "id": "pulang, kembali"
+      "es": "delgado / gordo",
+      "baca": "del-GA-do / GOR-do",
+      "id": "kurus / gemuk"
     },
     {
-      "es": "querer",
-      "baca": "ke-RER",
-      "id": "ingin"
+      "es": "amable",
+      "baca": "a-MA-ble",
+      "id": "baik hati"
     },
     {
-      "es": "poder",
-      "baca": "po-DER",
-      "id": "bisa"
+      "es": "trabajador",
+      "baca": "tra-ba-kha-DOR",
+      "id": "rajin"
     },
     {
-      "es": "apetecer",
-      "baca": "a-pe-te-SER",
-      "id": "berselera, lagi ingin"
+      "es": "divertido",
+      "baca": "di-ber-TI-do",
+      "id": "menyenangkan"
     },
     {
-      "es": "conocer",
-      "baca": "ko-no-SER",
-      "id": "mengenal"
+      "es": "nuestro / nuestra",
+      "baca": "NUES-tro",
+      "id": "milik kami"
     },
     {
-      "es": "la película",
-      "baca": "la pe-LI-ku-la",
-      "id": "film"
+      "es": "solo",
+      "baca": "SO-lo",
+      "id": "hanya"
     },
     {
-      "es": "el cine",
-      "baca": "el SI-ne",
-      "id": "bioskop"
+      "es": "la persona",
+      "baca": "la per-SO-na",
+      "id": "orang"
     },
     {
-      "es": "la serie",
-      "baca": "la SE-rie",
-      "id": "serial"
+      "es": "el hijo / la hija",
+      "baca": "I-kho / I-kha",
+      "id": "anak laki-laki / perempuan"
     },
     {
-      "es": "el sitio",
-      "baca": "el SI-tio",
-      "id": "tempat"
+      "es": "el abuelo / la abuela",
+      "baca": "a-BUE-lo",
+      "id": "kakek / nenek"
     },
     {
-      "es": "el tiempo",
-      "baca": "el TIEM-po",
-      "id": "waktu / cuaca"
+      "es": "tener… años",
+      "baca": "te-NER A-nyos",
+      "id": "berumur… tahun"
     },
     {
-      "es": "hace calor / frío",
-      "baca": "A-se ka-LOR",
-      "id": "panas / dingin"
-    },
-    {
-      "es": "hace sol",
-      "baca": "A-se sol",
-      "id": "cerah"
-    },
-    {
-      "es": "hace viento",
-      "baca": "A-se BIEN-to",
-      "id": "berangin"
-    },
-    {
-      "es": "llueve",
-      "baca": "YUE-be",
-      "id": "hujan"
-    },
-    {
-      "es": "nieva",
-      "baca": "NIE-ba",
-      "id": "turun salju"
-    },
-    {
-      "es": "está nublado",
-      "baca": "es-TA nu-BLA-do",
-      "id": "mendung"
-    },
-    {
-      "es": "el grado",
-      "baca": "el GRA-do",
-      "id": "derajat"
-    },
-    {
-      "es": "la primavera",
-      "baca": "la pri-ma-BE-ra",
-      "id": "musim semi"
-    },
-    {
-      "es": "el verano",
-      "baca": "el be-RA-no",
-      "id": "musim panas"
-    },
-    {
-      "es": "el otoño",
-      "baca": "el o-TO-nyo",
-      "id": "musim gugur"
-    },
-    {
-      "es": "el invierno",
-      "baca": "el in-BIER-no",
-      "id": "musim dingin"
-    },
-    {
-      "es": "el mes",
-      "baca": "el mes",
-      "id": "bulan"
-    },
-    {
-      "es": "la fecha",
-      "baca": "la FE-cha",
-      "id": "tanggal"
-    },
-    {
-      "es": "la playa",
-      "baca": "la PLA-ya",
-      "id": "pantai"
-    },
-    {
-      "es": "descansar",
-      "baca": "des-kan-SAR",
-      "id": "beristirahat"
-    },
-    {
-      "es": "así que",
-      "baca": "a-SI ke",
-      "id": "jadi, maka"
-    },
-    {
-      "es": "oye / oiga",
-      "baca": "O-ye / OI-ga",
-      "id": "eh, dengar"
-    },
-    {
-      "es": "vale",
-      "baca": "BA-le",
-      "id": "oke"
-    },
-    {
-      "es": "qué pena",
-      "baca": "ke PE-na",
-      "id": "sayang sekali"
-    },
-    {
-      "es": "nos vemos",
-      "baca": "nos BE-mos",
-      "id": "sampai ketemu"
+      "es": "más… que",
+      "baca": "MAS ke",
+      "id": "lebih… daripada"
     }
   ],
   "exercises": [
     {
-      "prompt": "Ubah jadi rencana dengan *ir a*.",
+      "prompt": "Isi dengan kata milik yang tepat (*mi*, *mis*, *tu*, *tus*, *su*, *nuestra*).",
       "items": [
-        "Estudio español.",
-        "Comemos en casa.",
-        "Marta viaja a Madrid.",
-        "¿Trabajas el sábado?",
-        "Mis padres visitan Bogor.",
-        "Vosotros veis una película."
+        "Tengo una hermana; ____ hermana es enfermera.",
+        "Tengo dos hermanos; ____ hermanos viven en Bandung.",
+        "¿Dónde viven ____ padres, Marta?",
+        "Laura tiene un hijo; ____ hijo tiene seis años.",
+        "Somos cinco; ____ familia es pequeña."
       ]
     },
     {
-      "prompt": "Lengkapi dengan bentuk *querer* atau *poder* yang tepat.",
+      "prompt": "Ubah kata sifat dalam kurung agar cocok.",
       "items": [
-        "Yo ____ (querer) visitar a mi abuela.",
-        "No ____ (poder) salir, llueve mucho.",
-        "¿Vosotros ____ (querer) ver una película?",
-        "Ellos no ____ (poder) llegar temprano.",
-        "¿Tú ____ (poder) venir el sábado?",
-        "Nosotros ____ (querer) cenar fuera."
-      ]
-    },
-    {
-      "prompt": "Terjemahkan ke bahasa Spanyol.",
-      "items": [
-        "Akhir pekan ini akan hujan.",
-        "Kami akan pergi ke pantai naik kereta.",
-        "Saya ingin beristirahat di rumah.",
-        "Hari ini panas sekali.",
-        "Ketemuan jam delapan, ya?",
-        "Sayang sekali, hari itu saya tidak bisa."
-      ]
-    },
-    {
-      "prompt": "Isi dengan ungkapan cuaca yang tepat.",
-      "items": [
-        "En verano ____ mucho calor.",
-        "Hoy no hay sol, está ____ .",
-        "En invierno en Madrid a veces ____ .",
-        "Llevo paraguas porque ____ .",
-        "¿Qué ____ va a hacer mañana?"
-      ]
-    },
-    {
-      "prompt": "Tulis tanggalnya dengan huruf.",
-      "items": [
-        "15/5 ____",
-        "3/1 ____",
-        "24/12 ____",
-        "1/8 ____"
+        "Mi hermana es muy (alto) ____.",
+        "Los niños son (rubio) ____.",
+        "Mi tía es (simpático) ____.",
+        "Nuestros abuelos son (mayor) ____.",
+        "Las primas de Marta son (guapo) ____."
       ]
     },
     {
       "prompt": "Susun jadi kalimat Spanyol yang benar.",
       "items": [
-        "hacer / ¿ / vas / qué / a / ?",
-        "playa / la / a / vamos / a / ir",
-        "sábado / ¿ / el / quedamos / ?",
-        "siento / puedo / lo / no",
-        "llover / va / mañana / a"
+        "años / ¿ / tienes / cuántos / ?",
+        "hermanos / tengo / dos",
+        "es / mi / enfermera / hermana",
+        "familia / grande / ¡ / qué / tan / !",
+        "que / tengo / trabajar"
       ]
     }
   ],
   "answers": [
-    "Voy a estudiar español. — Vamos a comer en casa. — Marta va a viajar a Madrid. — ¿Vas a trabajar el sábado? — Mis padres van a visitar Bogor. — Vosotros vais a ver una película.",
-    "quiero — puedo — queréis — pueden — puedes — queremos",
-    "Este fin de semana va a llover. — Vamos a ir a la playa en tren. — Quiero descansar en casa. — Hoy hace mucho calor. — ¿Quedamos a las ocho? — Qué pena, ese día no puedo.",
-    "hace — nublado — nieva — llueve — tiempo",
-    "el quince de mayo — el tres de enero — el veinticuatro de diciembre — el uno de agosto",
-    "¿Qué vas a hacer? — Vamos a ir a la playa. — ¿Quedamos el sábado? — No puedo, lo siento. — Mañana va a llover."
+    "mi — mis — tus — su — nuestra",
+    "alta — rubios — simpática — mayores — guapas",
+    "¿Cuántos años tienes? — Tengo dos hermanos. — Mi hermana es enfermera. — ¡Qué familia tan grande! — Tengo que trabajar."
   ],
-  "wave": "Buka lagi **unit 1**. Tutup kolom Spanyolnya, baca terjemahan Indonesianya, lalu susun ulang kalimat Spanyolnya dari ingatan. Yang terasa tersendat justru itulah yang belum benar-benar melekat — dan sekarang kamu tahu persis apa yang perlu diulang."
+  "wave": "Ulangi **unit 6**: pesan makan siang lengkap lalu minta bonnya, keras-keras."
 }
