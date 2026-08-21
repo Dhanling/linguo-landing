@@ -1226,6 +1226,8 @@ export default function EbookReader({
   // Waktu membalik, geseran memakai bentangan TUJUAN supaya bukunya "membuka"
   // berbarengan dengan kertasnya, bukan menyentak setelah animasi selesai.
   const untukGeser = balik?.tujuan ?? tampil;
+  /** Sudut lembar yang sedang berputar — ikut slot asalnya, lihat pemakaiannya. */
+  const sudutDaun = !dua ? 8 : (balik && balik.arah > 0 ? "2px 8px 8px 2px" : "8px 2px 2px 8px");
   const geser = !dua || (untukGeser.kiri && untukGeser.kanan)
     ? 0
     : (untukGeser.kiri ? 1 : -1) * ((pw + GAP) / 2);
@@ -2129,6 +2131,11 @@ export default function EbookReader({
                 aria-hidden
                 className="pointer-events-none absolute top-0 h-full"
                 style={{
+                  // Di ATAS lembar yang berputar (z-5). Kalau di bawahnya,
+                  // separuh lipatan tertutup kertas selama animasi lalu muncul
+                  // lagi seketika waktu lembarnya dicabut — persis kedipan
+                  // bayangan yang terlihat di sisi dalam halaman kiri.
+                  zIndex: 6,
                   left: pw - 8,
                   width: 16,
                   background:
@@ -2163,13 +2170,27 @@ export default function EbookReader({
                   "--ebook-durasi": `${DURASI_BALIK}ms`,
                 } as React.CSSProperties}
               >
+                {/* Sudut kertas disamakan dengan slot tempatnya mendarat.
+                    Lembar bersudut siku yang rebah di atas halaman bersudut
+                    tumpul membuat kedua ujung luarnya "menyiku" sesaat lalu
+                    membulat lagi begitu lembarnya dicabut. Muka punggung ikut
+                    nilai yang sama: ia tercermin 180deg, jadi sisi CSS-nya
+                    tertukar dengan yang terlihat. */}
                 <div className="ebook-muka">
-                  <canvas ref={depanRef} className="ebook-hal bg-white" style={{ width: pw, height: ph }} />
-                  <div className="ebook-bayang" />
+                  <canvas
+                    ref={depanRef}
+                    className="ebook-hal bg-white"
+                    style={{ width: pw, height: ph, borderRadius: sudutDaun }}
+                  />
+                  <div className="ebook-bayang" style={{ borderRadius: sudutDaun }} />
                 </div>
                 <div className="ebook-muka ebook-punggung">
-                  <canvas ref={belakangRef} className="ebook-hal bg-white" style={{ width: pw, height: ph }} />
-                  <div className="ebook-bayang balik" />
+                  <canvas
+                    ref={belakangRef}
+                    className="ebook-hal bg-white"
+                    style={{ width: pw, height: ph, borderRadius: sudutDaun }}
+                  />
+                  <div className="ebook-bayang balik" style={{ borderRadius: sudutDaun }} />
                 </div>
               </div>
             )}
@@ -2754,6 +2775,13 @@ export default function EbookReader({
         }
         .ebook-flipper.maju { animation-name: ebook-maju; }
         .ebook-flipper.mundur { animation-name: ebook-mundur; }
+        /* Kertas yang berputar TIDAK memakai drop shadow halaman. Dua alasan:
+           bayangannya ikut diputar 3D sehingga menyapu halaman kiri sebagai
+           pita gelap, dan waktu lembar mendarat ia menumpuk di atas bayangan
+           slot di bawahnya — begitu lembarnya dicabut, bayangan ganda itu
+           kembali tunggal dan kelihatan seperti halaman kiri berkedip.
+           Gelap-terangnya lembar diurus .ebook-bayang yang menyapu permukaan. */
+        .ebook-flipper .ebook-hal { box-shadow: none; }
         .ebook-muka {
           position: absolute;
           inset: 0;
@@ -2775,12 +2803,12 @@ export default function EbookReader({
           position: absolute;
           inset: 0;
           pointer-events: none;
-          background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 42%);
+          background: linear-gradient(90deg, rgba(0, 0, 0, 0.34) 0%, rgba(0, 0, 0, 0) 46%);
           opacity: 0;
-          animation: ebook-bayang-sapu var(--ebook-durasi, 620ms) cubic-bezier(0.42, 0.02, 0.32, 1) forwards;
+          animation: ebook-bayang-sapu var(--ebook-durasi, 620ms) linear forwards;
         }
         .ebook-bayang.balik {
-          background: linear-gradient(270deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 42%);
+          background: linear-gradient(270deg, rgba(0, 0, 0, 0.34) 0%, rgba(0, 0, 0, 0) 46%);
         }
         @keyframes ebook-maju {
           from { transform: rotateY(0deg); }
@@ -2790,9 +2818,15 @@ export default function EbookReader({
           from { transform: rotateY(0deg); }
           to { transform: rotateY(180deg); }
         }
+        /* Puncaknya digeser dari 50%: tepat di 50% muka depan dan punggung
+           bertukar tampak, dan bayangan yang sedang paling pekat di detik itu
+           terbaca sebagai kejut gelap. Nolnya juga dijemput lebih awal (92%)
+           supaya kertas sudah rata terang sebelum lembarnya dicabut. */
         @keyframes ebook-bayang-sapu {
           0% { opacity: 0; }
-          50% { opacity: 0.9; }
+          38% { opacity: 0.72; }
+          62% { opacity: 0.72; }
+          92% { opacity: 0; }
           100% { opacity: 0; }
         }
         /* [ebook-navigasi-halaman-v1] Penggeser halaman. Tampilan bawaan
