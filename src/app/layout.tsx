@@ -27,6 +27,7 @@ import PromoTopBar from "@/components/PromoTopBar"; // promo-merdeka-v1 — bann
 import BatchRegulerTopBar from "@/components/BatchRegulerTopBar"; // bar-batch-reguler-v1 — pita hitung mundur batch Kelas Reguler
 import PromoFloatingButton from "@/components/PromoFloatingButton"; // promo-merdeka-v1 — sticker melayang → WA CS
 import PromoLeadModal from "@/components/PromoLeadModal"; // promo-lead-form-v1 — form nama/WA/email sebelum ke WhatsApp
+import PosterPopup from "@/components/PosterPopup"; // poster-popup-v1 — pop-up poster promo saat pengunjung baru masuk
 
 // [seo-metadata-v1] Judul lama bertumpu pada kata "Polyglot" — hampir tidak ada
 // yang mencarinya dalam bahasa Indonesia, jadi homepage kehilangan sinyal
@@ -200,6 +201,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AdAttributionCapture />{/* ads-conversion-sync */}
         <PromoFloatingButton />{/* promo-merdeka-v1 */}
         <PromoLeadModal />{/* promo-lead-form-v1 — dipicu banner & sticker */}
+        <PosterPopup />{/* poster-popup-v1 — sekali per sesi, ditunda 1,2 dtk */}
 
       </body>
     </html>
