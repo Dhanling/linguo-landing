@@ -33,18 +33,23 @@ export interface EtpBatchRow {
 }
 
 // Cadangan statik — WAJIB sama persis dengan baris etp_batches yang aktif.
-// Kalau batch diganti, ubah di sini DAN di tabel (lihat migrasi
-// 20260728140000_etp_batches_public_read_sync.sql sebagai contoh).
+//
+// [etp-batches-satu-sumber-v1, 21 Agu 2026] `etp_batches` bukan tabel lagi,
+// melainkan VIEW turunan `test_prep_batches` — jadwal ETP di website sekarang
+// ikut menu Test Prep di dashboard, tak perlu migrasi SQL tiap ganti batch.
+// Cadangan ini cuma dipakai kalau DB tak terbaca; isinya tetap harus batch yang
+// sedang dibuka, karena cadangan basi persis keluhan yang bikin aturan ini ada
+// ("website masih memajang batch Agustus padahal September sudah dipublish").
 export const ETP_FALLBACK_BATCHES: EtpBatchRow[] = [
   {
-    id: "toefl-agu26",
+    id: "toefl-sep26",
     title: "TOEFL Preparation",
     badge: "TOEFL",
     icon: "", // ikon dirender lewat <EtpIcon> (Lucide) berdasarkan badge
     color: "teal",
     days: "Senin & Rabu",
     time: "19.30 – 21.00 WIB",
-    start_date: "2026-08-03",
+    start_date: "2026-09-16",
     duration_min: 90,
     total_sessions: 16,
     price: 300000,
@@ -69,14 +74,14 @@ export const ETP_FALLBACK_BATCHES: EtpBatchRow[] = [
     is_active: true,
   },
   {
-    id: "ielts-agu26",
+    id: "ielts-sep26",
     title: "IELTS Preparation",
     badge: "IELTS",
     icon: "",
     color: "blue",
     days: "Selasa & Kamis",
     time: "19.30 – 21.00 WIB",
-    start_date: "2026-08-04",
+    start_date: "2026-09-17",
     duration_min: 90,
     total_sessions: 16,
     price: 300000,
