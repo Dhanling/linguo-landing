@@ -1,0 +1,348 @@
+{
+  "title": "Perkenalan pertama",
+  "title_target": "はじめまして — Hajimemashite",
+  "goal": "Menyapa sesuai waktu hari, memperkenalkan diri, menyebut asal dan pekerjaan, bertanya nama orang lain, lalu berpamitan — dalam nada sopan yang aman dipakai kepada siapa saja.",
+  "bekal": [
+    "menyapa dari pagi sampai malam",
+    "berkata *saya X* dengan pola AはBです",
+    "menyangkal dengan *じゃありません*",
+    "bertanya dengan menambah か di ujung kalimat",
+    "menyebut asal negara dan pekerjaan"
+  ],
+  "dialogs": [
+    {
+      "title": "会話 1 — Kelas sore",
+      "intro": "Dua orang baru bertemu di kelas bahasa Jepang. Baca dulu barisan aksaranya dengan suara keras sambil melirik rōmaji di atasnya, baru lihat artinya.",
+      "lines": [
+        {"speaker": "アニ:", "text": "[こんにちは|Konnichiwa]。", "id": "Selamat siang.", "literal": "hari-ini-hari."},
+        {"speaker": "たなか:", "text": "[こんにちは|Konnichiwa]。[はじめまして|Hajimemashite]。", "id": "Selamat siang. Salam kenal.", "literal": "hari-ini-hari. untuk-pertama-kalinya."},
+        {"speaker": "アニ:", "text": "[はじめまして|Hajimemashite]。[わたしは|Watashi wa] [アニです|Ani desu]。", "id": "Salam kenal. Saya Ani.", "literal": "untuk-pertama-kalinya. saya — mengenai — Ani — adalah."},
+        {"speaker": "たなか:", "text": "[たなかです|Tanaka desu]。[どうぞ|Dōzo] [よろしく|yoroshiku] [おねがいします|onegaishimasu]。", "id": "Saya Tanaka. Mohon bantuannya.", "literal": "Tanaka — adalah. silakan — dengan-baik — mohon."},
+        {"speaker": "アニ:", "text": "[こちらこそ|Kochira koso] [よろしく|yoroshiku] [おねがいします|onegaishimasu]。", "id": "Saya juga mohon bantuannya.", "literal": "pihak-ini — justru — dengan-baik — mohon."},
+        {"speaker": "たなか:", "text": "[アニさんは|Ani-san wa] [がくせいですか|gakusei desu ka]。", "id": "Ani, kamu pelajar?", "literal": "Ani-tuan — mengenai — pelajar — adalah — kah."},
+        {"speaker": "アニ:", "text": "[はい|Hai]、[がくせいです|gakusei desu]。[たなかさんは|Tanaka-san wa]？", "id": "Ya, saya pelajar. Kalau Tanaka?", "literal": "ya, pelajar — adalah. Tanaka-tuan — mengenai?"},
+        {"speaker": "たなか:", "text": "[わたしは|Watashi wa] [がくせいじゃありません|gakusei ja arimasen]。[かいしゃいんです|Kaishain desu]。", "id": "Saya bukan pelajar. Saya karyawan.", "literal": "saya — mengenai — pelajar — bukan. perusahaan-orang — adalah."},
+        {"speaker": "アニ:", "text": "そうですか。[しごとは|Shigoto wa] [たいへんですか|taihen desu ka]。", "id": "Oh begitu. Pekerjaannya berat?", "literal": "begitu — adalah — kah. pekerjaan — mengenai — berat — adalah — kah."},
+        {"speaker": "たなか:", "text": "[ちょっと|Chotto] [たいへんです|taihen desu]。でも、[おもしろいです|omoshiroi desu]。", "id": "Agak berat. Tapi menarik.", "literal": "sedikit — berat — adalah. tetapi, menarik — adalah."},
+        {"speaker": "アニ:", "text": "いいですね。[じゃあ|Jā]、また [あした|ashita]。", "id": "Bagus, ya. Kalau begitu, sampai besok.", "literal": "baik — adalah — ya. kalau-begitu, lagi besok."},
+        {"speaker": "たなか:", "text": "[さようなら|Sayōnara]。[きを|Ki o] つけて。", "id": "Sampai jumpa. Hati-hati di jalan.", "literal": "selamat-tinggal. semangat — akan — pasangkan."}
+      ],
+      "notes": [
+        "**はじめまして bukan “halo”.** Kata ini harfiahnya “untuk pertama kalinya”, dan hanya dipakai di **pertemuan pertama saja**. Menyapa teman lama dengan はじめまして terdengar seperti melupakan mereka. Untuk sapaan sehari-hari, pakai こんにちは.",
+        "**よろしくおねがいします tidak punya terjemahan tunggal.** Harfiahnya “mohon perlakukan saya dengan baik”, dan dipakai jauh lebih luas daripada perkenalan: saat menitipkan pekerjaan, saat masuk tim baru, saat mengakhiri email. Anggap saja sebagai “mari kita jalani ini baik-baik”. Di perkenalan, mengucapkannya nyaris wajib — perkenalan tanpa kalimat ini terasa menggantung bagi orang Jepang.",
+        "**こちらこそ = “justru saya”.** Dipakai untuk mengembalikan ucapan baik: kalau lawan bicara duluan bilang よろしく, jawaban paling wajar adalah こちらこそよろしくおねがいします.",
+        "**さん bukan “Bapak/Ibu”, tapi hampir selalu dipakai.** さん ditempel ke nama orang lain apa pun jenis kelaminnya dan apa pun umurnya. Yang penting: **jangan pernah menempelkannya ke namamu sendiri**. Menyebut diri “たなかさんです” terdengar seperti memuji diri sendiri.",
+        "**そうですか dengan nada turun = “oh, begitu”.** Dengan nada naik, artinya jadi “oh ya?”. Nadanya yang membedakan, bukan katanya. Ini salah satu kalimat paling sering dipakai dalam percakapan Jepang — semacam “iya iya” yang menandakan kamu masih menyimak.",
+        "**でも = tapi, di awal kalimat.** Perhatikan bahwa でも memulai kalimat baru, bukan menyambung di tengah seperti “tetapi” bahasa Indonesia."
+      ],
+      "grammars": [
+        {
+          "title": "Pola inti: A は B です",
+          "body": [
+            "Ini pola pertama dan paling penting dalam bahasa Jepang. Bentuknya: **topik + は + keterangan + です**.",
+            "**は** di sini dibaca *wa*, bukan *ha*. Ini satu-satunya pengecualian besar dalam membaca hiragana, dan kamu akan bertemu dengannya di hampir setiap kalimat.",
+            "**は menandai topik**, bukan subjek. Terjemahan paling jujur adalah “mengenai …”: わたしはアニです = “mengenai saya, Ani”. Perbedaan ini terasa nanti, saat satu kalimat punya topik dan subjek sekaligus.",
+            "**です berarti “adalah”**, dan sekaligus menandakan kesopanan. Ia ditaruh di **ujung** kalimat — dalam bahasa Jepang, kata kerja selalu di ujung.",
+            "Bunyinya: です dibaca *des*, bukan *de-su*. Huruf u di ujung nyaris tidak terdengar."
+          ],
+          "table": {
+            "head": ["Topik (は)", "Keterangan", "です", "Arti"],
+            "rows": [
+              ["[わたしは|watashi wa]", "[アニ|Ani]", "です", "Saya Ani."],
+              ["[わたしは|watashi wa]", "[がくせい|gakusei]", "です", "Saya pelajar."],
+              ["[たなかさんは|Tanaka-san wa]", "[かいしゃいん|kaishain]", "です", "Tanaka karyawan."],
+              ["[しごとは|shigoto wa]", "[たいへん|taihen]", "です", "Pekerjaannya berat."]
+            ]
+          },
+          "after": [
+            "**Topiknya boleh dibuang.** Kalau sudah jelas siapa yang dibicarakan, わたしは dihilangkan: がくせいです sudah berarti “saya pelajar”. Orang Jepang membuangnya jauh lebih sering daripada yang dikira pemula — kalimat yang terus-terusan diawali わたしは terdengar seperti terjemahan buku."
+          ]
+        },
+        {
+          "title": "Bertanya: cukup tambah か",
+          "body": [
+            "Bahasa Jepang **tidak membalik susunan kalimat** untuk bertanya, dan tidak butuh tanda tanya. Cukup tempelkan **か** di ujung.",
+            "がくせいです = “Anda pelajar.” → がくせいですか = “Anda pelajar?”",
+            "Karena か sudah menandai pertanyaan, tanda ？ sebenarnya berlebihan. Tulisan resmi memakai titik 。 di ujung kalimat tanya. Tanda ？ tetap dipakai di pesan singkat dan percakapan santai — biasanya justru ketika か-nya yang dibuang."
+          ],
+          "table": {
+            "head": ["Pernyataan", "Pertanyaan", "Arti"],
+            "rows": [
+              ["[がくせいです|gakusei desu]", "[がくせいですか|gakusei desu ka]", "Anda pelajar?"],
+              ["[にほんじんです|Nihonjin desu]", "[にほんじんですか|Nihonjin desu ka]", "Anda orang Jepang?"],
+              ["[たなかさんです|Tanaka-san desu]", "[たなかさんですか|Tanaka-san desu ka]", "Anda Tanaka?"]
+            ]
+          },
+          "after": [
+            "**Menjawabnya:** はい (ya) atau いいえ (bukan/tidak). Sopannya bukan berhenti di situ — sesudah はい biasanya kalimatnya diulang: はい、がくせいです."
+          ]
+        },
+        {
+          "title": "Menyangkal: じゃありません",
+          "body": [
+            "Kebalikan です adalah **じゃありません**. Tempatnya sama persis: di ujung kalimat.",
+            "わたしはがくせいです → わたしはがくせいじゃありません.",
+            "Ada tiga bentuk yang artinya sama, bedanya cuma pada kadar resminya:"
+          ],
+          "table": {
+            "head": ["Bentuk", "Rasa", "Dipakai di mana"],
+            "rows": [
+              ["[じゃありません|ja arimasen]", "Sopan, wajar", "Percakapan sehari-hari yang sopan. Pakai yang ini."],
+              ["[ではありません|de wa arimasen]", "Sopan, agak resmi", "Tulisan, presentasi, pengumuman."],
+              ["[じゃないです|ja nai desu]", "Sopan, santai", "Obrolan dengan teman, tetap sopan."]
+            ]
+          },
+          "after": [
+            "**Sebelum bertanya:** じゃ sebenarnya bentuk singkat dari では yang diucapkan cepat. Bahasa Jepang lisan penuh pemendekan semacam ini, dan hampir selalu pemendekannya yang kamu dengar di dunia nyata."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "会話 2 — Di meja resepsionis",
+      "intro": "Ani mendaftar di sebuah sekolah bahasa. Perhatikan bahwa resepsionis memakai bentuk yang lebih halus daripada dialog pertama — perhatikan おなまえ, bukan なまえ.",
+      "lines": [
+        {"speaker": "うけつけ:", "text": "[いらっしゃいませ|Irasshaimase]。", "id": "Selamat datang.", "literal": "silakan-datang (bentuk hormat)."},
+        {"speaker": "アニ:", "text": "[すみません|Sumimasen]。[にほんごの|Nihongo no] [クラスは|kurasu wa]…", "id": "Permisi. Kelas bahasa Jepang…", "literal": "maaf. Jepang-bahasa — punya — kelas — mengenai…"},
+        {"speaker": "うけつけ:", "text": "はい。[おなまえは|Onamae wa]？", "id": "Ya. Nama Anda?", "literal": "ya. nama-yang-terhormat — mengenai?"},
+        {"speaker": "アニ:", "text": "[アニ・ウィジャヤです|Ani Wijaya desu]。", "id": "Ani Wijaya.", "literal": "Ani Wijaya — adalah."},
+        {"speaker": "うけつけ:", "text": "[アニさんですね|Ani-san desu ne]。[おくには|Okuni wa]？", "id": "Ibu Ani, ya. Dari negara mana?", "literal": "Ani-tuan — adalah — ya. negara-yang-terhormat — mengenai?"},
+        {"speaker": "アニ:", "text": "[インドネシアです|Indoneshia desu]。[ジャカルタから|Jakaruta kara] [きました|kimashita]。", "id": "Indonesia. Saya datang dari Jakarta.", "literal": "Indonesia — adalah. Jakarta — dari — datang-sudah."},
+        {"speaker": "うけつけ:", "text": "[おしごとは|Oshigoto wa] [なんですか|nan desu ka]。", "id": "Pekerjaan Anda apa?", "literal": "pekerjaan-yang-terhormat — mengenai — apa — adalah — kah."},
+        {"speaker": "アニ:", "text": "[エンジニアです|Enjinia desu]。でも、[いまは|ima wa] [がくせいです|gakusei desu]。", "id": "Insinyur. Tapi sekarang saya pelajar.", "literal": "insinyur — adalah. tetapi, sekarang — mengenai — pelajar — adalah."},
+        {"speaker": "うけつけ:", "text": "わかりました。[これは|Kore wa] [がっこうの|gakkō no] カードです。", "id": "Baik, saya mengerti. Ini kartu sekolahnya.", "literal": "mengerti-sudah. ini — mengenai — sekolah — punya — kartu — adalah."},
+        {"speaker": "アニ:", "text": "[ありがとうございます|Arigatō gozaimasu]。", "id": "Terima kasih banyak.", "literal": "terima-kasih (bentuk sopan penuh)."},
+        {"speaker": "うけつけ:", "text": "[クラスは|Kurasu wa] [あしたからです|ashita kara desu]。[きょうしつは|Kyōshitsu wa] 2かいです。", "id": "Kelasnya mulai besok. Ruang kelasnya di lantai 2.", "literal": "kelas — mengenai — besok — dari — adalah. ruang-kelas — mengenai — 2-lantai — adalah."},
+        {"speaker": "アニ:", "text": "はい、わかりました。[しつれいします|Shitsurei shimasu]。", "id": "Baik, saya mengerti. Permisi.", "literal": "ya, mengerti-sudah. ketidaksopanan — saya-lakukan."}
+      ],
+      "notes": [
+        "**お di depan kata = kesopanan yang dipinjamkan ke lawan bicara.** なまえ = nama, おなまえ = nama Anda. Aturannya sederhana: pakai お untuk milik **orang lain**, jangan untuk milikmu sendiri. Jadi おなまえは？ untuk bertanya, tapi menjawabnya cukup なまえはアニです — atau lebih sering, langsung アニです.",
+        "**Kalimat yang sengaja digantung.** にほんごのクラスは… berhenti di tengah, dan itu **bukan kesalahan**. Menggantung kalimat adalah kesopanan Jepang: kamu menyerahkan penyelesaiannya kepada lawan bicara alih-alih menuntut. Pemula sering merasa harus melengkapinya; orang Jepang justru sering tidak.",
+        "**すみません punya tiga arti sekaligus:** “permisi” (memanggil orang), “maaf” (kesalahan kecil), dan “terima kasih” (saat merepotkan orang). Kalau ragu memilih antara ini dan ありがとう, すみません jarang salah.",
+        "**ね di ujung kalimat = mencari persetujuan**, seperti “ya?” atau “kan?” dalam bahasa Indonesia. アニさんですね = “Ibu Ani, ya?”. Kata sekecil ini melunakkan kalimat secara mencolok — kalimat tanpa ね bisa terdengar seperti memeriksa data.",
+        "**しつれいします harfiahnya “saya melakukan ketidaksopanan”** dan dipakai saat masuk ruangan, keluar ruangan, atau menutup telepon. Ini yang dipakai di kantor, bukan さようなら — さようなら terasa seperti perpisahan yang lama.",
+        "**きました = “sudah datang”.** Ini bentuk lampau; kamu akan mempelajarinya penuh di Unit 10. Untuk sekarang, hafalkan ジャカルタからきました sebagai satu paket kalimat perkenalan."
+      ],
+      "grammars": [
+        {
+          "title": "Asal dan pekerjaan: ～じん dan ～ご",
+          "body": [
+            "Nama negara ditulis katakana (kecuali beberapa negara Asia yang punya kanji sendiri). Dari nama negara itu, dua kata lain terbentuk otomatis:",
+            "**～じん (人)** = orang dari negara itu. **～ご (語)** = bahasa negara itu.",
+            "Pola ini nyaris tanpa pengecualian, jadi satu nama negara memberimu tiga kata sekaligus."
+          ],
+          "table": {
+            "head": ["Negara", "Orangnya (～じん)", "Bahasanya (～ご)"],
+            "rows": [
+              ["[インドネシア|Indoneshia] Indonesia", "[インドネシアじん|Indoneshia-jin]", "[インドネシアご|Indoneshia-go]"],
+              ["[にほん|Nihon] 日本 Jepang", "[にほんじん|Nihonjin]", "[にほんご|Nihongo]"],
+              ["[かんこく|Kankoku] Korea Selatan", "[かんこくじん|Kankokujin]", "[かんこくご|Kankokugo]"],
+              ["[ちゅうごく|Chūgoku] Tiongkok", "[ちゅうごくじん|Chūgokujin]", "[ちゅうごくご|Chūgokugo]"],
+              ["[アメリカ|Amerika] Amerika", "[アメリカじん|Amerika-jin]", "[えいご|eigo] (bahasa Inggris)"],
+              ["[マレーシア|Marēshia] Malaysia", "[マレーシアじん|Marēshia-jin]", "[マレーごMarē-go|Marē-go]"]
+            ]
+          },
+          "after": [
+            "**Satu pengecualian yang harus dihafal:** bahasa Inggris **bukan** イギリスご, melainkan **えいご**. Begitu juga bahasa Arab: アラビアご. Selebihnya, polanya jalan."
+          ]
+        },
+        {
+          "title": "Kata tanya: なん / だれ / どこ",
+          "body": [
+            "Bahasa Jepang tidak memindahkan kata tanya ke depan kalimat seperti bahasa Indonesia atau Inggris. Kata tanya **menempati posisi yang sama** dengan jawabannya — cukup tukar bagian yang tidak kamu ketahui.",
+            "しごとはエンジニアです → しごとは**なん**ですか. Tempatnya tidak bergeser sedikit pun."
+          ],
+          "table": {
+            "head": ["Kata tanya", "Arti", "Contoh kalimat"],
+            "rows": [
+              ["[なん|nan] / [なに|nani]", "apa", "[おしごとは|Oshigoto wa] [なんですか|nan desu ka]. — Pekerjaan Anda apa?"],
+              ["[だれ|dare]", "siapa", "[あのひとは|Ano hito wa] [だれですか|dare desu ka]. — Orang itu siapa?"],
+              ["[どこ|doko]", "di mana", "[トイレは|Toire wa] [どこですか|doko desu ka]. — Toilet di mana?"],
+              ["[どちら|dochira]", "mana (halus)", "[おくには|Okuni wa] [どちらですか|dochira desu ka]. — Anda dari negara mana?"]
+            ]
+          },
+          "after": [
+            "**なん atau なに?** Dua-duanya ditulis 何. Pakai **なん** di depan です dan di depan bunyi t/d/n (なんですか, なんじ). Pakai **なに** di posisi lain (なにを たべますか). Kalau salah, tetap dimengerti — telinga yang akan membetulkannya seiring waktu.",
+            "⚠️ **Kalimat tanya berkata tanya tidak dijawab dengan はい/いいえ.** Menjawab おしごとはなんですか dengan はい tidak masuk akal, persis seperti dalam bahasa Indonesia."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Sapaan sepanjang hari",
+      "blocks": [
+        {"type": "p", "text": "Sapaan Jepang terikat waktu, dan batasnya lebih tegas daripada di Indonesia. Memakai おはようございます di sore hari terdengar aneh, bukan sekadar tidak tepat."},
+        {"type": "tabel", "head": ["Sapaan", "Waktu", "Catatan"], "rows": [
+          ["[おはようございます|Ohayō gozaimasu]", "Pagi sampai sekitar pukul 10", "Ke teman dekat cukup おはよう. Di tempat kerja, ini juga dipakai sebagai sapaan pertama hari itu — bahkan kalau shift-nya mulai malam."],
+          ["[こんにちは|Konnichiwa]", "Sekitar 10 pagi sampai matahari terbenam", "Sapaan paling aman kalau kamu ragu."],
+          ["[こんばんは|Konbanwa]", "Sesudah gelap", "Untuk bertemu, bukan untuk berpisah."],
+          ["[おやすみなさい|Oyasuminasai]", "Sebelum tidur", "Dipakai saat berpisah di malam hari, bukan saat bertemu."],
+          ["[さようなら|Sayōnara]", "Berpisah", "Terasa berat — dipakai kalau tidak bertemu untuk waktu lama. Untuk sehari-hari, じゃあまた atau またあした jauh lebih wajar."],
+          ["[おつかれさまです|Otsukaresama desu]", "Kapan saja di tempat kerja", "Harfiahnya “Anda pasti lelah”. Ini sapaan kantor serba guna: saat berpapasan, saat pulang, saat menutup rapat."]
+        ]},
+        {"type": "p", "text": "**Membungkuk (おじぎ).** Sapaan Jepang hampir selalu disertai bungkukan kecil. Aturan praktisnya: makin dalam bungkukannya, makin tinggi kesopanannya. Anggukan 15° untuk sapaan sehari-hari, 30° untuk terima kasih dan perkenalan resmi, 45° untuk permintaan maaf sungguhan. Yang perlu dijaga: punggung lurus, dan berhenti sejenak di titik terendah — bungkukan yang buru-buru terbaca sebagai tidak tulus."}
+      ]
+    },
+    {
+      "title": "Nama, urutan, dan panggilan",
+      "blocks": [
+        {"type": "p", "text": "Orang Jepang menyebut **nama keluarga lebih dulu**, baru nama diri: たなか ゆうこ = keluarga Tanaka, nama Yuko. Dan dalam pergaulan sehari-hari, yang dipakai justru **nama keluarga** — たなかさん, bukan ゆうこさん. Memanggil orang dengan nama dirinya menandakan kedekatan yang belum tentu ada."},
+        {"type": "tabel", "head": ["Akhiran", "Dipakai untuk", "Catatan"], "rows": [
+          ["**～さん**", "Hampir semua orang", "Aman untuk siapa saja, tanpa memandang jenis kelamin atau umur. Kalau ragu, pakai ini."],
+          ["**～せんせい**", "Guru, dokter, pengacara", "Menggantikan さん, tidak digabung: たなかせんせい, bukan たなかせんせいさん."],
+          ["**～くん**", "Anak/pria muda, teman akrab", "Dipakai ke bawah atau ke sesama, tidak ke atasan."],
+          ["**～ちゃん**", "Anak kecil, teman sangat dekat", "Salah pakai ke orang yang baru dikenal terdengar merendahkan."],
+          ["**～さま**", "Pelanggan, penerima surat", "Sangat hormat. Kamu akan sering mendengarnya di toko: おきゃくさま."]
+        ]},
+        {"type": "kotak", "title": "Namamu dalam katakana", "items": [
+          "Nama Indonesia ditulis dengan katakana, disesuaikan ke pola suku kata Jepang: **Budi → ブディ**, **Sari → サリ**, **Rahmat → ラフマット**, **Dewi → デウィ**, **Agus → アグス**, **Siti → シティ**.",
+          "Konsonan yang berdiri sendiri disisipi vokal u (atau o sesudah t/d): Rahmat → ラフマッ**ト**.",
+          "Kalau namamu panjang, orang Jepang biasanya memakai sebagian saja — dan itu bukan ketidaksopanan, melainkan cara mereka membuat namamu bisa diucapkan."
+        ]}
+      ]
+    },
+    {
+      "title": "Merangkai perkenalan sendiri",
+      "blocks": [
+        {"type": "p", "text": "Perkenalan diri (**じこしょうかい**) punya susunan baku di Jepang, dan orang benar-benar memakainya — di hari pertama kerja, di kelas, di rapat. Empat kalimat sudah cukup:"},
+        {"type": "tabel", "head": ["Urutan", "Kalimat", "Arti"], "rows": [
+          ["1. Pembuka", "[はじめまして|Hajimemashite]。", "Salam kenal."],
+          ["2. Nama", "[わたしは|Watashi wa] ___ [です|desu]。", "Saya ___."],
+          ["3. Asal", "___ [から|kara] [きました|kimashita]。", "Saya datang dari ___."],
+          ["4. Pekerjaan", "[しごとは|Shigoto wa] ___ [です|desu]。", "Pekerjaan saya ___."],
+          ["5. Penutup", "[どうぞ|Dōzo] [よろしく|yoroshiku] [おねがいします|onegaishimasu]。", "Mohon bantuannya."]
+        ]},
+        {"type": "kotak", "title": "Contoh utuh", "items": [
+          "[はじめまして|Hajimemashite]。[わたしは|Watashi wa] [ブディです|Budi desu]。[インドネシアの|Indoneshia no] [バンドンから|Bandon kara] [きました|kimashita]。[しごとは|Shigoto wa] [エンジニアです|enjinia desu]。[どうぞ|Dōzo] [よろしく|yoroshiku] [おねがいします|onegaishimasu]。",
+          "Salam kenal. Saya Budi. Saya datang dari Bandung, Indonesia. Pekerjaan saya insinyur. Mohon bantuannya.",
+          "Ucapkan dengan suara keras lima kali, dengan namamu sendiri. Ini kalimat yang akan paling sering kamu pakai di bulan pertama."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"ja": "[こんにちは|konnichiwa]", "baca": "こんにちは · konnichiwa", "id": "selamat siang"},
+    {"ja": "[おはようございます|ohayō gozaimasu]", "baca": "おはようございます · ohayō gozaimasu", "id": "selamat pagi"},
+    {"ja": "[こんばんは|konbanwa]", "baca": "こんばんは · konbanwa", "id": "selamat malam (saat bertemu)"},
+    {"ja": "[おやすみなさい|oyasuminasai]", "baca": "おやすみなさい · oyasuminasai", "id": "selamat tidur"},
+    {"ja": "[さようなら|sayōnara]", "baca": "さようなら · sayōnara", "id": "selamat tinggal"},
+    {"ja": "[はじめまして|hajimemashite]", "baca": "はじめまして · hajimemashite", "id": "salam kenal (pertemuan pertama)"},
+    {"ja": "[よろしくおねがいします|yoroshiku onegaishimasu]", "baca": "よろしくおねがいします · yoroshiku onegaishimasu", "id": "mohon bantuannya"},
+    {"ja": "[こちらこそ|kochira koso]", "baca": "こちらこそ · kochira koso", "id": "saya juga; justru saya"},
+    {"ja": "[すみません|sumimasen]", "baca": "すみません · sumimasen", "id": "permisi; maaf; terima kasih"},
+    {"ja": "[ありがとうございます|arigatō gozaimasu]", "baca": "ありがとうございます · arigatō gozaimasu", "id": "terima kasih banyak"},
+    {"ja": "[しつれいします|shitsurei shimasu]", "baca": "しつれいします · shitsurei shimasu", "id": "permisi (masuk/keluar ruangan)"},
+    {"ja": "[いらっしゃいませ|irasshaimase]", "baca": "いらっしゃいませ · irasshaimase", "id": "selamat datang (di toko)"},
+    {"ja": "[おつかれさまです|otsukaresama desu]", "baca": "おつかれさまです · otsukaresama desu", "id": "sapaan kerja serba guna"},
+    {"ja": "[わたし|watashi] 私", "baca": "わたし · watashi", "id": "saya"},
+    {"ja": "[あなた|anata]", "baca": "あなた · anata", "id": "kamu (jarang dipakai; pakai nama)"},
+    {"ja": "[ひと|hito] 人", "baca": "ひと · hito", "id": "orang"},
+    {"ja": "[なまえ|namae] 名前", "baca": "なまえ · namae", "id": "nama"},
+    {"ja": "[がくせい|gakusei] 学生", "baca": "がくせい · gakusei", "id": "pelajar, mahasiswa"},
+    {"ja": "[せんせい|sensei] 先生", "baca": "せんせい · sensei", "id": "guru, dosen, dokter"},
+    {"ja": "[かいしゃいん|kaishain] 会社員", "baca": "かいしゃいん · kaishain", "id": "karyawan perusahaan"},
+    {"ja": "[エンジニア|enjinia]", "baca": "エンジニア · enjinia", "id": "insinyur"},
+    {"ja": "[いしゃ|isha] 医者", "baca": "いしゃ · isha", "id": "dokter"},
+    {"ja": "[しごと|shigoto] 仕事", "baca": "しごと · shigoto", "id": "pekerjaan"},
+    {"ja": "[がっこう|gakkō] 学校", "baca": "がっこう · gakkō", "id": "sekolah"},
+    {"ja": "[きょうしつ|kyōshitsu] 教室", "baca": "きょうしつ · kyōshitsu", "id": "ruang kelas"},
+    {"ja": "[クラス|kurasu]", "baca": "クラス · kurasu", "id": "kelas"},
+    {"ja": "[うけつけ|uketsuke] 受付", "baca": "うけつけ · uketsuke", "id": "resepsionis, meja penerima"},
+    {"ja": "[くに|kuni] 国", "baca": "くに · kuni", "id": "negara"},
+    {"ja": "[にほん|Nihon] 日本", "baca": "にほん · Nihon", "id": "Jepang"},
+    {"ja": "[にほんご|Nihongo] 日本語", "baca": "にほんご · Nihongo", "id": "bahasa Jepang"},
+    {"ja": "[インドネシア|Indoneshia]", "baca": "インドネシア · Indoneshia", "id": "Indonesia"},
+    {"ja": "[はい|hai]", "baca": "はい · hai", "id": "ya"},
+    {"ja": "[いいえ|iie]", "baca": "いいえ · iie", "id": "bukan, tidak"},
+    {"ja": "[そうです|sō desu]", "baca": "そうです · sō desu", "id": "benar begitu"},
+    {"ja": "[そうですか|sō desu ka]", "baca": "そうですか · sō desu ka", "id": "oh, begitu"},
+    {"ja": "[でも|demo]", "baca": "でも · demo", "id": "tetapi"},
+    {"ja": "[ちょっと|chotto]", "baca": "ちょっと · chotto", "id": "sedikit, agak"},
+    {"ja": "[たいへん|taihen] 大変", "baca": "たいへん · taihen", "id": "berat, repot"},
+    {"ja": "[おもしろい|omoshiroi]", "baca": "おもしろい · omoshiroi", "id": "menarik"},
+    {"ja": "[いま|ima] 今", "baca": "いま · ima", "id": "sekarang"},
+    {"ja": "[あした|ashita] 明日", "baca": "あした · ashita", "id": "besok"},
+    {"ja": "[きょう|kyō] 今日", "baca": "きょう · kyō", "id": "hari ini"},
+    {"ja": "[わかりました|wakarimashita]", "baca": "わかりました · wakarimashita", "id": "saya mengerti"},
+    {"ja": "[なん|nan] 何", "baca": "なん · nan", "id": "apa"},
+    {"ja": "[だれ|dare] 誰", "baca": "だれ · dare", "id": "siapa"},
+    {"ja": "[どこ|doko]", "baca": "どこ · doko", "id": "di mana"},
+    {"ja": "[じゃあ|jā]", "baca": "じゃあ · jā", "id": "kalau begitu"},
+    {"ja": "[また|mata]", "baca": "また · mata", "id": "lagi, sampai jumpa lagi"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi partikel yang hilang. Pilih dari kepingan yang tersedia.",
+      "items": [
+        "わたし ___ アニです。",
+        "たなかさん ___ がくせいですか。",
+        "しごと ___ たいへんですか。",
+        "にほんご ___ クラスです。",
+        "ジャカルタ ___ きました。",
+        "おなまえ ___ なんですか。"
+      ]
+    },
+    {
+      "prompt": "Susun kepingan menjadi kalimat yang benar.",
+      "items": [
+        "わたし / は / インドネシアじん / です",
+        "たなかさん / は / かいしゃいん / です / か",
+        "わたし / は / がくせい / じゃありません",
+        "おしごと / は / なん / です / か",
+        "これ / は / がっこう / の / カード / です",
+        "きょうしつ / は / どこ / です / か"
+      ]
+    },
+    {
+      "prompt": "Lengkapi dengan kata negara, orang, atau bahasanya.",
+      "items": [
+        "にほん → orang Jepang: ___",
+        "インドネシア → orang Indonesia: ___",
+        "かんこく → bahasa Korea: ___",
+        "ちゅうごく → orang Tiongkok: ___",
+        "イギリス → bahasa Inggris: ___"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Indonesia.",
+      "items": [
+        "はじめまして。わたしはブディです。",
+        "たなかさんはせんせいじゃありません。",
+        "おくにはどちらですか。",
+        "しごとはちょっとたいへんです。でも、おもしろいです。",
+        "クラスはあしたからです。"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Jepang. Tulis dengan rōmaji, tanpa tanda baca.",
+      "items": [
+        "Saya bukan karyawan perusahaan.",
+        "Anda orang Jepang?",
+        "Nama Anda siapa? (pakai kata untuk apa)",
+        "Ini kelas bahasa Jepang.",
+        "Kalau begitu, sampai besok."
+      ]
+    },
+    {
+      "prompt": "Pilih sapaan yang tepat untuk situasi ini.",
+      "items": [
+        "Pukul tujuh pagi, bertemu atasan di kantor: ___",
+        "Pukul dua siang, bertemu tetangga: ___",
+        "Pukul delapan malam, masuk restoran dan disambut pelayan: ___",
+        "Meninggalkan ruang rapat sebelum orang lain: ___",
+        "Berpisah dengan teman yang akan kamu temui besok: ___"
+      ]
+    }
+  ],
+  "answers": [
+    "は — は — は — の — から — は",
+    "わたし は インドネシアじん です — たなかさん は かいしゃいん です か — わたし は がくせい じゃありません — おしごと は なん です か — これ は がっこう の カード です — きょうしつ は どこ です か",
+    "にほんじん — インドネシアじん — かんこくご — ちゅうごくじん — えいご",
+    "Salam kenal. Saya Budi. — Tanaka bukan guru. — Anda dari negara mana? — Pekerjaannya agak berat. Tapi menarik. — Kelasnya mulai besok.",
+    "watashi wa kaishain ja arimasen — Nihonjin desu ka — onamae wa nan desu ka — kore wa Nihongo no kurasu desu — jā mata ashita",
+    "おはようございます — こんにちは — こんばんは — しつれいします — じゃあまた"
+  ],
+  "wave": "Belum ada unit sebelumnya untuk diulang. Sebagai gantinya, ucapkan perkenalan dirimu sendiri dengan suara keras lima kali sebelum masuk Unit 2 — dengan namamu, kotamu, dan pekerjaanmu yang sungguhan."
+}

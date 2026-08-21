@@ -1,0 +1,331 @@
+{
+  "title": "Tempat dan keberadaan",
+  "title_target": "どこですか — Doko desu ka",
+  "goal": "Menanyakan letak sesuatu, menyatakan ada atau tidak ada, menerangkan posisi benda terhadap benda lain, dan bertanya arah kepada orang asing.",
+  "bekal": [
+    "membedakan あります (benda) dan います (makhluk hidup)",
+    "menyebut letak dengan うえ・した・なか・となり",
+    "memakai partikel に untuk tempat keberadaan",
+    "menanyakan arah dan memahami jawabannya",
+    "membedakan は dan が dalam kalimat keberadaan"
+  ],
+  "dialogs": [
+    {
+      "title": "会話 1 — Mencari toilet dan mesin tiket",
+      "intro": "Ani baru pertama kali masuk ke gedung ini. Perhatikan pasangan は dan が yang bergantian di sepanjang dialog.",
+      "lines": [
+        {"speaker": "アニ:", "text": "[すみません|Sumimasen]。[トイレは|Toire wa] [どこですか|doko desu ka]。", "id": "Permisi. Toilet di mana?", "literal": "maaf. toilet — mengenai — mana — adalah — kah."},
+        {"speaker": "ひと:", "text": "[トイレは|Toire wa] [あそこです|asoko desu]。[エレベーターの|Erebētā no] [となりです|tonari desu]。", "id": "Toilet di sana. Di sebelah lift.", "literal": "toilet — mengenai — sana — adalah. lift — punya — sebelah — adalah."},
+        {"speaker": "アニ:", "text": "[ありがとうございます|Arigatō gozaimasu]。[この|Kono] [ビルに|biru ni] [コンビニは|konbini wa] [ありますか|arimasu ka]。", "id": "Terima kasih. Di gedung ini ada minimarket?", "literal": "terima-kasih. ini — gedung — di — minimarket — mengenai — ada — kah."},
+        {"speaker": "ひと:", "text": "[はい|Hai]、1[かいに|kai ni] [あります|arimasu]。[いりぐちの|Iriguchi no] [ちかくです|chikaku desu]。", "id": "Ya, ada di lantai 1. Dekat pintu masuk.", "literal": "ya, 1 — lantai — di — ada. pintu-masuk — punya — dekat — adalah."},
+        {"speaker": "アニ:", "text": "[ATMも|ATM mo] [ありますか|arimasu ka]。", "id": "Ada ATM juga?", "literal": "ATM — juga — ada — kah."},
+        {"speaker": "ひと:", "text": "[ATMは|ATM wa] [コンビニの|konbini no] [なかに|naka ni] [あります|arimasu]。", "id": "ATM-nya ada di dalam minimarket.", "literal": "ATM — mengenai — minimarket — punya — dalam — di — ada."},
+        {"speaker": "アニ:", "text": "[じゃあ|Jā]、[じむしょは|jimusho wa]？", "id": "Kalau kantornya?", "literal": "kalau-begitu, kantor — mengenai?"},
+        {"speaker": "ひと:", "text": "[じむしょは|Jimusho wa] 3[かいです|kai desu]。[かいだんの|Kaidan no] [うえに|ue ni] [あります|arimasu]。", "id": "Kantornya di lantai 3. Ada di atas tangga.", "literal": "kantor — mengenai — 3 — lantai — adalah. tangga — punya — atas — di — ada."},
+        {"speaker": "アニ:", "text": "[いま|Ima] [だれか|dareka] [いますか|imasu ka]。", "id": "Sekarang ada orangnya?", "literal": "sekarang — seseorang — ada — kah."},
+        {"speaker": "ひと:", "text": "[はい|Hai]、[やまださんが|Yamada-san ga] [います|imasu]。", "id": "Ya, ada Pak Yamada.", "literal": "ya, Yamada-tuan — yang — ada."},
+        {"speaker": "アニ:", "text": "[たすかりました|Tasukarimashita]。[ありがとうございます|Arigatō gozaimasu]。", "id": "Sangat menolong. Terima kasih banyak.", "literal": "tertolong-sudah. terima-kasih."}
+      ],
+      "notes": [
+        "**あります untuk benda mati, います untuk yang bernyawa.** Ini pembeda yang tidak ada dalam bahasa Indonesia dan harus dijaga sejak awal: ほんが**あります** (ada buku), ねこが**います** (ada kucing). Salah memilih tidak membuat kalimatmu gagal dipahami, tapi langsung terdengar seperti pemula.",
+        "**Tumbuhan pakai あります.** Meski hidup, tumbuhan tidak dianggap “bergerak sendiri”. Mobil yang sedang dikendarai orang? Tetap あります. Aturan sebenarnya bukan “hidup”, melainkan **bergerak atas kemauan sendiri**.",
+        "**に menandai tempat keberadaan.** 1かい**に**あります = ada **di** lantai 1. Bedakan dengan で (Unit 6) yang menandai tempat **kegiatan** — dua partikel yang sama-sama diterjemahkan “di” dan paling sering tertukar.",
+        "**だれか = seseorang** (siapa saja), berbeda dari だれ (siapa). Menambah か pada kata tanya mengubahnya jadi “ada … yang”: なにか (sesuatu), どこか (suatu tempat), いつか (suatu saat).",
+        "**かい (階) = lantai.** 1かい = いっかい, 3かい = さんがい ⚠️ (bukan さんかい), なんがい = lantai berapa. Penggolong lain yang bunyinya bergeser — kelompok yang sama dengan 300 dan 1 menit.",
+        "**Konbini** (コンビニ) adalah minimarket 24 jam, singkatan dari *convenience store*. Di Jepang, konbini juga tempat mengambil uang, membayar tagihan, mencetak dokumen, dan mengirim paket."
+      ],
+      "grammars": [
+        {
+          "title": "あります dan います — dua cara berkata “ada”",
+          "body": [
+            "Pola dasarnya dua, dan keduanya sama sering dipakai. Yang membedakan adalah **apa yang jadi topik pembicaraan**:"
+          ],
+          "table": {
+            "head": ["Pola", "Contoh", "Dipakai saat"],
+            "rows": [
+              ["**tempat** に **benda** が あります", "[つくえの|Tsukue no] [うえに|ue ni] [ほんが|hon ga] [あります|arimasu]。", "Menerangkan apa yang **ada di suatu tempat**. Tempatnya yang jadi titik berangkat."],
+              ["**benda** は **tempat** に あります", "[ほんは|Hon wa] [つくえの|tsukue no] [うえに|ue ni] [あります|arimasu]。", "Menerangkan **di mana suatu benda berada**. Bendanya yang jadi titik berangkat."],
+              ["**tempat** に **orang** が います", "[きょうしつに|Kyōshitsu ni] [せんせいが|sensei ga] [います|imasu]。", "Sama, tapi untuk yang bernyawa."],
+              ["Menyangkal", "[ATMは|ATM wa] [ありません|arimasen]。", "Tidak ada ATM."]
+            ]
+          },
+          "after": [
+            "**Kenapa は di satu kalimat dan が di kalimat lain?** Aturan praktis yang jarang meleset: **は menandai apa yang sudah dikenal**, **が menandai kabar baru**. トイレは (kita berdua tahu toilet apa) どこですか. きょうしつに せんせいが (informasi baru) います.",
+            "**Menjawab pertanyaan どこ** hampir selalu memakai は untuk bendanya: トイレは あそこです. Kalau kamu ragu antara は dan が dalam kalimat keberadaan, tanyakan: apakah lawan bicaramu sudah tahu benda ini? Kalau ya, は."
+          ]
+        },
+        {
+          "title": "Kata letak — semuanya lewat の",
+          "body": [
+            "Menyatakan posisi selalu memakai pola **[patokan] の [letak] に**. Patokannya lebih dulu, sama seperti pola の yang kamu pelajari di Unit 2."
+          ],
+          "table": {
+            "head": ["Kata letak", "Bacaan", "Arti", "Contoh"],
+            "rows": [
+              ["上", "[うえ|ue]", "di atas", "[つくえの|tsukue no] [うえ|ue] — di atas meja"],
+              ["下", "[した|shita]", "di bawah", "[いすの|isu no] [した|shita] — di bawah kursi"],
+              ["中", "[なか|naka]", "di dalam", "[かばんの|kaban no] [なか|naka] — di dalam tas"],
+              ["外", "[そと|soto]", "di luar", "[うちの|uchi no] [そと|soto] — di luar rumah"],
+              ["前", "[まえ|mae]", "di depan", "[えきの|eki no] [まえ|mae] — di depan stasiun"],
+              ["後ろ", "[うしろ|ushiro]", "di belakang", "[ビルの|biru no] [うしろ|ushiro] — di belakang gedung"],
+              ["隣", "[となり|tonari]", "di sebelah", "[ぎんこうの|ginkō no] [となり|tonari] — di sebelah bank"],
+              ["近く", "[ちかく|chikaku]", "di dekat", "[がっこうの|gakkō no] [ちかく|chikaku] — dekat sekolah"],
+              ["間", "[あいだ|aida]", "di antara", "[Aと|A to] [Bの|B no] [あいだ|aida] — antara A dan B"],
+              ["右", "[みぎ|migi]", "kanan", "[みちの|michi no] [みぎ|migi] — kanan jalan"],
+              ["左", "[ひだり|hidari]", "kiri", "[みちの|michi no] [ひだり|hidari] — kiri jalan"]
+            ]
+          },
+          "after": [
+            "**となり vs ちかく:** となり berarti tepat bersebelahan dan sejenis (toko di sebelah toko). ちかく cuma berarti berada di sekitar situ, tanpa harus menempel.",
+            "**Letak bisa jadi jawaban utuh:** どこですか → えきのまえです。 Tanpa あります pun sudah lengkap."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "会話 2 — Menanyakan jalan",
+      "intro": "Budi tersesat mencari kantor pos. Perhatikan bahwa jawaban orang Jepang sering berupa rangkaian patokan, bukan nama jalan — sistem alamat Jepang memang tidak memakai nama jalan.",
+      "lines": [
+        {"speaker": "ブディ:", "text": "[すみません|Sumimasen]、[ゆうびんきょくは|yūbinkyoku wa] [どこですか|doko desu ka]。", "id": "Permisi, kantor pos di mana?", "literal": "maaf, kantor-pos — mengenai — mana — adalah — kah."},
+        {"speaker": "ひと:", "text": "[ゆうびんきょくですか|Yūbinkyoku desu ka]。[あの|Ano] [しんごうの|shingō no] [ちかくです|chikaku desu]。", "id": "Kantor pos ya. Dekat lampu merah yang di sana.", "literal": "kantor-pos — adalah — kah. itu — lampu-lalu-lintas — punya — dekat — adalah."},
+        {"speaker": "ブディ:", "text": "[この|Kono] [みちを|michi o] [まっすぐですか|massugu desu ka]。", "id": "Lurus terus di jalan ini?", "literal": "ini — jalan — akan — lurus — adalah — kah."},
+        {"speaker": "ひと:", "text": "[はい|Hai]。[しんごうを|Shingō o] [みぎに|migi ni] [まがってください|magatte kudasai]。", "id": "Ya. Belok kanan di lampu merah.", "literal": "ya. lampu-lalu-lintas — akan — kanan — ke — belok-tolong."},
+        {"speaker": "ブディ:", "text": "[みぎですね|Migi desu ne]。[そのあとは|Sono ato wa]？", "id": "Kanan, ya. Setelah itu?", "literal": "kanan — adalah — ya. itu — sesudah — mengenai?"},
+        {"speaker": "ひと:", "text": "[ぎんこうと|Ginkō to] [コンビニの|konbini no] [あいだに|aida ni] [あります|arimasu]。[しろい|Shiroi] [ビルです|biru desu]。", "id": "Ada di antara bank dan minimarket. Gedung putih.", "literal": "bank — dan — minimarket — punya — antara — di — ada. putih — gedung — adalah."},
+        {"speaker": "ブディ:", "text": "[ここから|Koko kara] [とおいですか|tōi desu ka]。", "id": "Dari sini jauh?", "literal": "sini — dari — jauh — adalah — kah."},
+        {"speaker": "ひと:", "text": "[いいえ|Iie]、[ちかいです|chikai desu]。[あるいて|Aruite] 5[ふんぐらいです|fun gurai desu]。", "id": "Tidak, dekat. Sekitar 5 menit jalan kaki.", "literal": "tidak, dekat — adalah. berjalan — 5 — menit — kira-kira — adalah."},
+        {"speaker": "ブディ:", "text": "[わかりました|Wakarimashita]。[どうも|Dōmo] [ありがとうございます|arigatō gozaimasu]。", "id": "Saya mengerti. Terima kasih banyak.", "literal": "mengerti-sudah. sungguh — terima-kasih."},
+        {"speaker": "ひと:", "text": "[いいえ|Iie]、[きをつけて|ki o tsukete]。", "id": "Sama-sama, hati-hati.", "literal": "tidak, semangat — akan — pasangkan."}
+      ],
+      "notes": [
+        "**Jepang tidak memakai nama jalan untuk alamat.** Alamat disusun dari wilayah → blok → nomor bangunan, dan urutannya dari besar ke kecil — kebalikan alamat Indonesia. Itulah sebabnya petunjuk arah selalu berupa patokan: lampu merah, minimarket, bank.",
+        "**を dengan kata kerja gerak berarti “melewati”**, bukan objek: みち**を**まっすぐ (lurus **menyusuri** jalan), しんごう**を**まがる (belok **di** lampu merah). Ini pemakaian を yang berbeda dari “menandai objek” dan hanya muncul dengan kata kerja gerak.",
+        "**まがってください = tolong belok.** Ini bentuk て + ください, cara meminta orang **melakukan** sesuatu — pelengkap ください yang kamu pelajari di Unit 3. Dibongkar penuh di Unit 10.",
+        "**ぐらい / くらい = kira-kira.** 5ふんぐらい = kira-kira 5 menit. Ditaruh **sesudah** jumlahnya. Jangan tertukar dengan ごろ, yang dipakai untuk titik waktu: 3じごろ = sekitar jam 3.",
+        "**あるいて = dengan berjalan kaki.** Pasangannya: でんしゃで (dengan kereta), くるまで (dengan mobil), バスで (dengan bus) — memakai partikel で yang sudah kamu kenal dari Unit 3.",
+        "**きをつけて = hati-hati.** Ucapan berpisah yang sangat lazim, harfiahnya “pasangkan perhatianmu”."
+      ],
+      "grammars": [
+        {
+          "title": "Menanyakan dan menerangkan arah",
+          "body": [
+            "Empat kalimat ini sudah cukup untuk menemukan hampir apa pun di kota Jepang, dan lima kalimat berikutnya cukup untuk memahami jawabannya."
+          ],
+          "tables": [
+            {
+              "head": ["Yang kamu tanyakan", "Kalimat"],
+              "rows": [
+                ["Di mana ～?", "[すみません|Sumimasen]、～[は|wa] [どこですか|doko desu ka]。"],
+                ["Ada ～ di dekat sini?", "[このへんに|Kono hen ni] ～[は|wa] [ありますか|arimasu ka]。"],
+                ["Jauh?", "[ここから|Koko kara] [とおいですか|tōi desu ka]。"],
+                ["Berapa menit?", "[なんぷん|Nanpun] [ぐらいですか|gurai desu ka]。"],
+                ["Sekali lagi, pelan-pelan", "[ゆっくり|Yukkuri] [おねがいします|onegaishimasu]。"]
+              ]
+            },
+            {
+              "head": ["Yang kamu dengar", "Artinya"],
+              "rows": [
+                ["[まっすぐです|Massugu desu]。", "Lurus terus."],
+                ["[みぎに|Migi ni] [まがってください|magatte kudasai]。", "Belok kanan."],
+                ["[ひだりに|Hidari ni] [まがってください|magatte kudasai]。", "Belok kiri."],
+                ["[つぎの|Tsugi no] [しんごうです|shingō desu]。", "Di lampu merah berikutnya."],
+                ["[となりです|Tonari desu]。", "Di sebelahnya."],
+                ["[すぐ|Sugu] [そこです|soko desu]。", "Persis di situ."]
+              ]
+            }
+          ],
+          "after": [
+            "**Kalau kamu tidak paham jawabannya**, jangan mengangguk. Katakan: **すみません、もういちど ゆっくり おねがいします。** Orang Jepang hampir selalu mau mengulang, dan sering justru mengantar."
+          ]
+        },
+        {
+          "title": "Lantai, dan penggolong tempat",
+          "body": [
+            "Bangunan Jepang menomori lantai mulai dari 1 di permukaan tanah (bukan “ground floor” seperti Inggris). Lantai bawah tanah memakai awalan ちか (地下)."
+          ],
+          "table": {
+            "head": ["Lantai", "Bacaan", "Lantai", "Bacaan"],
+            "rows": [
+              ["1 階", "[いっかい|ikkai] ⚠️", "6 階", "[ろっかい|rokkai] ⚠️"],
+              ["2 階", "[にかい|nikai]", "7 階", "[ななかい|nanakai]"],
+              ["3 階", "[さんがい|sangai] ⚠️", "8 階", "[はっかい|hakkai] ⚠️"],
+              ["4 階", "[よんかい|yonkai]", "9 階", "[きゅうかい|kyūkai]"],
+              ["5 階", "[ごかい|gokai]", "10 階", "[じゅっかい|jukkai] ⚠️"],
+              ["地下 1 階", "[ちかいっかい|chika ikkai]", "berapa", "[なんがい|nangai] ⚠️"]
+            ]
+          },
+          "after": [
+            "**Pola bunyi yang sama berulang.** Bandingkan dengan menit di Unit 4 dan ratusan di Unit 3: angka 1, 3, 6, 8, 10 selalu jadi biang perubahan bunyi. Begitu polanya kamu kenali, penggolong baru berhenti terasa seperti hafalan acak."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tempat yang perlu kamu tahu namanya",
+      "blocks": [
+        {"type": "p", "text": "Sebagian tempat memakai kata Jepang, sebagian lagi kata serapan. Kalau kamu bisa membaca katakana, separuh daftar ini sudah kamu kuasai sebelum menghafal."},
+        {"type": "tabel", "head": ["Jepang", "Arti", "Jepang", "Arti"], "rows": [
+          ["[えき|eki] 駅", "stasiun", "[くうこう|kūkō] 空港", "bandara"],
+          ["[ぎんこう|ginkō] 銀行", "bank", "[ゆうびんきょく|yūbinkyoku] 郵便局", "kantor pos"],
+          ["[びょういん|byōin] 病院", "rumah sakit", "[やっきょく|yakkyoku] 薬局", "apotek"],
+          ["[としょかん|toshokan] 図書館", "perpustakaan", "[こうえん|kōen] 公園", "taman"],
+          ["[がっこう|gakkō] 学校", "sekolah", "[だいがく|daigaku] 大学", "universitas"],
+          ["[かいしゃ|kaisha] 会社", "perusahaan", "[じむしょ|jimusho] 事務所", "kantor"],
+          ["[うち|uchi] 家", "rumah", "[へや|heya] 部屋", "kamar"],
+          ["[みせ|mise] 店", "toko", "[しょくどう|shokudō] 食堂", "kantin, warung makan"],
+          ["[コンビニ|konbini]", "minimarket", "[スーパー|sūpā]", "supermarket"],
+          ["[レストラン|resutoran]", "restoran", "[ホテル|hoteru]", "hotel"],
+          ["[トイレ|toire]", "toilet", "[エレベーター|erebētā]", "lift"],
+          ["[ビル|biru]", "gedung", "[デパート|depāto]", "pusat perbelanjaan"]
+        ]},
+        {"type": "kotak", "title": "Kata yang menipu", "items": [
+          "**ビル** = gedung (dari *building*), bukan bir. Bir adalah **ビール** dengan vokal panjang. Satu tanda ー membedakan “gedung” dan “bir” — dan ini kesalahan yang sungguh sering terjadi.",
+          "**デパート** dari *department store*, bukan “departemen”.",
+          "**マンション** dari *mansion*, tapi artinya **apartemen**, bukan rumah mewah.",
+          "**スーパー** dari *supermarket* — dipotong di tengah, seperti kebanyakan kata serapan panjang."
+        ]}
+      ]
+    },
+    {
+      "title": "Menerangkan kamarmu sendiri",
+      "blocks": [
+        {"type": "p", "text": "Latihan terbaik untuk kata letak adalah menerangkan ruangan yang sedang kamu tempati. Bacalah contoh ini, lalu ganti isinya dengan barang di sekitarmu:"},
+        {"type": "kotak", "title": "Contoh utuh", "items": [
+          "[わたしの|Watashi no] [へやに|heya ni] [つくえが|tsukue ga] [あります|arimasu]。",
+          "[つくえの|Tsukue no] [うえに|ue ni] [パソコンと|pasokon to] [ほんが|hon ga] [あります|arimasu]。",
+          "[つくえの|Tsukue no] [したに|shita ni] [かばんが|kaban ga] [あります|arimasu]。",
+          "[まどの|Mado no] [ちかくに|chikaku ni] [ベッドが|beddo ga] [あります|arimasu]. ",
+          "[へやの|Heya no] [なかに|naka ni] [ねこが|neko ga] [います|imasu]。",
+          "Di kamar saya ada meja. Di atas meja ada laptop dan buku. Di bawah meja ada tas. Dekat jendela ada ranjang. Di dalam kamar ada kucing."
+        ]},
+        {"type": "p", "text": "Perhatikan kalimat terakhir: kucing memakai **います**, sisanya **あります**. Ganti-gantilah antara keduanya sampai pilihannya terasa otomatis — inilah satu-satunya bagian unit ini yang benar-benar butuh pengulangan."}
+      ]
+    }
+  ],
+  "vocab": [
+    {"ja": "[ここ|koko]", "baca": "ここ · koko", "id": "di sini"},
+    {"ja": "[そこ|soko]", "baca": "そこ · soko", "id": "di situ"},
+    {"ja": "[あそこ|asoko]", "baca": "あそこ · asoko", "id": "di sana"},
+    {"ja": "[どこ|doko]", "baca": "どこ · doko", "id": "di mana"},
+    {"ja": "[あります|arimasu]", "baca": "あります · arimasu", "id": "ada (benda)"},
+    {"ja": "[います|imasu]", "baca": "います · imasu", "id": "ada (makhluk hidup)"},
+    {"ja": "[ありません|arimasen]", "baca": "ありません · arimasen", "id": "tidak ada (benda)"},
+    {"ja": "[いません|imasen]", "baca": "いません · imasen", "id": "tidak ada (makhluk hidup)"},
+    {"ja": "[うえ|ue] 上", "baca": "うえ · ue", "id": "atas"},
+    {"ja": "[した|shita] 下", "baca": "した · shita", "id": "bawah"},
+    {"ja": "[なか|naka] 中", "baca": "なか · naka", "id": "dalam"},
+    {"ja": "[そと|soto] 外", "baca": "そと · soto", "id": "luar"},
+    {"ja": "[まえ|mae] 前", "baca": "まえ · mae", "id": "depan"},
+    {"ja": "[うしろ|ushiro] 後ろ", "baca": "うしろ · ushiro", "id": "belakang"},
+    {"ja": "[となり|tonari] 隣", "baca": "となり · tonari", "id": "sebelah"},
+    {"ja": "[ちかく|chikaku] 近く", "baca": "ちかく · chikaku", "id": "dekat"},
+    {"ja": "[あいだ|aida] 間", "baca": "あいだ · aida", "id": "antara"},
+    {"ja": "[みぎ|migi] 右", "baca": "みぎ · migi", "id": "kanan"},
+    {"ja": "[ひだり|hidari] 左", "baca": "ひだり · hidari", "id": "kiri"},
+    {"ja": "[まっすぐ|massugu]", "baca": "まっすぐ · massugu", "id": "lurus"},
+    {"ja": "[つぎ|tsugi] 次", "baca": "つぎ · tsugi", "id": "berikutnya"},
+    {"ja": "[とおい|tōi] 遠い", "baca": "とおい · tōi", "id": "jauh"},
+    {"ja": "[ちかい|chikai] 近い", "baca": "ちかい · chikai", "id": "dekat"},
+    {"ja": "[えき|eki] 駅", "baca": "えき · eki", "id": "stasiun"},
+    {"ja": "[ぎんこう|ginkō] 銀行", "baca": "ぎんこう · ginkō", "id": "bank"},
+    {"ja": "[ゆうびんきょく|yūbinkyoku] 郵便局", "baca": "ゆうびんきょく · yūbinkyoku", "id": "kantor pos"},
+    {"ja": "[びょういん|byōin] 病院", "baca": "びょういん · byōin", "id": "rumah sakit"},
+    {"ja": "[としょかん|toshokan] 図書館", "baca": "としょかん · toshokan", "id": "perpustakaan"},
+    {"ja": "[こうえん|kōen] 公園", "baca": "こうえん · kōen", "id": "taman"},
+    {"ja": "[だいがく|daigaku] 大学", "baca": "だいがく · daigaku", "id": "universitas"},
+    {"ja": "[かいしゃ|kaisha] 会社", "baca": "かいしゃ · kaisha", "id": "perusahaan"},
+    {"ja": "[じむしょ|jimusho] 事務所", "baca": "じむしょ · jimusho", "id": "kantor"},
+    {"ja": "[うち|uchi] 家", "baca": "うち · uchi", "id": "rumah"},
+    {"ja": "[へや|heya] 部屋", "baca": "へや · heya", "id": "kamar"},
+    {"ja": "[まど|mado] 窓", "baca": "まど · mado", "id": "jendela"},
+    {"ja": "[みち|michi] 道", "baca": "みち · michi", "id": "jalan"},
+    {"ja": "[しんごう|shingō] 信号", "baca": "しんごう · shingō", "id": "lampu lalu lintas"},
+    {"ja": "[かいだん|kaidan] 階段", "baca": "かいだん · kaidan", "id": "tangga"},
+    {"ja": "[いりぐち|iriguchi] 入口", "baca": "いりぐち · iriguchi", "id": "pintu masuk"},
+    {"ja": "[かい|kai] 階", "baca": "かい · kai", "id": "lantai"},
+    {"ja": "[コンビニ|konbini]", "baca": "コンビニ · konbini", "id": "minimarket"},
+    {"ja": "[スーパー|sūpā]", "baca": "スーパー · sūpā", "id": "supermarket"},
+    {"ja": "[ビル|biru]", "baca": "ビル · biru", "id": "gedung"},
+    {"ja": "[ねこ|neko] 猫", "baca": "ねこ · neko", "id": "kucing"},
+    {"ja": "[いぬ|inu] 犬", "baca": "いぬ · inu", "id": "anjing"},
+    {"ja": "[ぐらい|gurai]", "baca": "ぐらい · gurai", "id": "kira-kira"},
+    {"ja": "[きをつけて|ki o tsukete] 気をつけて", "baca": "きをつけて · ki o tsukete", "id": "hati-hati"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih あります atau います.",
+      "items": [
+        "つくえのうえにほんが ___ 。",
+        "きょうしつにせんせいが ___ 。",
+        "かばんのなかにさいふが ___ 。",
+        "こうえんにいぬが ___ 。",
+        "へやのなかにテレビが ___ 。",
+        "うちにねこが ___ 。"
+      ]
+    },
+    {
+      "prompt": "Isi partikel yang hilang.",
+      "items": [
+        "トイレ ___ どこですか。",
+        "1かい ___ コンビニがあります。",
+        "きょうしつ ___ せんせいがいます。",
+        "ぎんこう ___ となりです。",
+        "ここ ___ とおいですか。",
+        "ぎんこう ___ コンビニのあいだにあります。"
+      ]
+    },
+    {
+      "prompt": "Tulis kata letak yang tepat dalam kana.",
+      "items": [
+        "di atas: ___",
+        "di bawah: ___",
+        "di dalam: ___",
+        "di sebelah: ___",
+        "di depan: ___",
+        "di antara: ___"
+      ]
+    },
+    {
+      "prompt": "Susun kepingan menjadi kalimat yang benar.",
+      "items": [
+        "トイレ / は / どこ / です / か",
+        "つくえ / の / うえ / に / ほん / が / あります",
+        "きょうしつ / に / せんせい / が / います",
+        "ぎんこう / は / えき / の / ちかく / です",
+        "この / みち / を / まっすぐ / です",
+        "ここ / から / あるいて / ごふん / ぐらい / です"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Indonesia.",
+      "items": [
+        "ゆうびんきょくはぎんこうのとなりにあります。",
+        "へやのなかにねこがいます。",
+        "このビルにATMはありますか。",
+        "しんごうをみぎにまがってください。",
+        "えきからとおいですか。"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Jepang. Tulis dengan rōmaji.",
+      "items": [
+        "Toilet di mana?",
+        "Di atas meja ada buku.",
+        "Di kelas ada guru.",
+        "Tidak ada minimarket.",
+        "Dari sini dekat."
+      ]
+    }
+  ],
+  "answers": [
+    "あります — います — あります — います — あります — います",
+    "は — に — に — の — から — と",
+    "うえ — した — なか — となり — まえ — あいだ",
+    "トイレ は どこ です か — つくえ の うえ に ほん が あります — きょうしつ に せんせい が います — ぎんこう は えき の ちかく です — この みち を まっすぐ です — ここ から あるいて ごふん ぐらい です",
+    "Kantor pos ada di sebelah bank. — Di dalam kamar ada kucing. — Di gedung ini ada ATM? — Belok kanan di lampu merah. — Jauh dari stasiun?",
+    "toire wa doko desu ka — tsukue no ue ni hon ga arimasu — kyōshitsu ni sensei ga imasu — konbini wa arimasen — koko kara chikai desu"
+  ],
+  "wave": "Ulangi Unit 4 sambil memakai unit ini: sebutkan jadwalmu hari ini lengkap dengan tempatnya — “jam 9 di kantor, jam 12 di kantin, jam 6 pulang ke rumah”. Waktu dan tempat adalah dua tulang punggung kalimat sehari-hari; melatihnya bersamaan jauh lebih berguna daripada terpisah."
+}

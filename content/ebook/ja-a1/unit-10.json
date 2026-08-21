@@ -1,0 +1,325 @@
+{
+  "title": "Menceritakan kejadian kemarin",
+  "title_target": "きのう なにを しましたか — Kinō nani o shimashita ka",
+  "goal": "Menceritakan apa yang sudah terjadi: bentuk lampau untuk kata kerja, kata sifat, dan kata benda; merangkai kejadian dengan bentuk て; dan menyusun cerita pendek yang runtut.",
+  "bekal": [
+    "memakai ました dan ませんでした",
+    "melampaukan kata sifat い dan な",
+    "membentuk bentuk て dari kata kerja",
+    "merangkai kejadian dengan ～てから dan ～てください",
+    "menceritakan akhir pekanmu dalam lima kalimat"
+  ],
+  "dialogs": [
+    {
+      "title": "会話 1 — Akhir pekan kemarin",
+      "intro": "Tanaka dan Ani bertukar cerita hari Senin pagi. Ini dialog terakhir modul — hampir semua yang kamu pelajari sembilan unit sebelumnya muncul di sini sekaligus.",
+      "lines": [
+        {"speaker": "たなか:", "text": "[アニさん|Ani-san]、[しゅうまつは|shūmatsu wa] [なにを|nani o] [しましたか|shimashita ka]。", "id": "Ani, akhir pekan kemarin ngapain?", "literal": "Ani-tuan, akhir-pekan — mengenai — apa — akan — melakukan-sudah — kah."},
+        {"speaker": "アニ:", "text": "[どようびに|Doyōbi ni] [ともだちと|tomodachi to] [きょうとへ|Kyōto e] [いきました|ikimashita]。", "id": "Sabtu saya pergi ke Kyoto dengan teman.", "literal": "Sabtu — pada — teman — bersama — Kyoto — ke — pergi-sudah."},
+        {"speaker": "たなか:", "text": "[どうでしたか|Dō deshita ka]。", "id": "Bagaimana?", "literal": "bagaimana — adalah-lampau — kah."},
+        {"speaker": "アニ:", "text": "[とても|Totemo] [きれいでした|kirei deshita]。[おてらを|Otera o] [みて|mite]、[しゃしんを|shashin o] [たくさん|takusan] [とりました|torimashita]。", "id": "Sangat indah. Saya melihat kuil, lalu memotret banyak sekali.", "literal": "sangat — indah — adalah-lampau. kuil — akan — melihat-dan, foto — akan — banyak — mengambil-sudah."},
+        {"speaker": "たなか:", "text": "[ひとは|Hito wa] [おおかったですか|ōkatta desu ka]。", "id": "Orangnya banyak?", "literal": "orang — mengenai — banyak-lampau — adalah — kah."},
+        {"speaker": "アニ:", "text": "[はい|Hai]、[すごく|sugoku] [おおかったです|ōkatta desu]。でも、[たのしかったです|tanoshikatta desu]。", "id": "Ya, banyak sekali. Tapi menyenangkan.", "literal": "ya, sangat — banyak-lampau — adalah. tetapi, menyenangkan-lampau — adalah."},
+        {"speaker": "たなか:", "text": "[なにか|Nanika] [かいましたか|kaimashita ka]。", "id": "Beli sesuatu?", "literal": "sesuatu — membeli-sudah — kah."},
+        {"speaker": "アニ:", "text": "[おみやげを|Omiyage o] [かいました|kaimashita]。[でも|Demo]、[すこし|sukoshi] [たかかったです|takakatta desu]。", "id": "Saya beli oleh-oleh. Tapi agak mahal.", "literal": "oleh-oleh — akan — membeli-sudah. tetapi, sedikit — mahal-lampau — adalah."},
+        {"speaker": "たなか:", "text": "[にちようびは|Nichiyōbi wa]？", "id": "Kalau Minggu?", "literal": "Minggu — mengenai?"},
+        {"speaker": "アニ:", "text": "[どこも|Doko mo] [いきませんでした|ikimasen deshita]。[つかれましたから|Tsukaremashita kara]、[うちで|uchi de] [やすみました|yasumimashita]。", "id": "Tidak pergi ke mana-mana. Karena capek, saya istirahat di rumah.", "literal": "mana — juga — tidak-pergi-lampau. lelah-sudah — karena, rumah — di — beristirahat-sudah."},
+        {"speaker": "たなか:", "text": "[それは|Sore wa] [よかったですね|yokatta desu ne]。", "id": "Bagus kalau begitu.", "literal": "itu — mengenai — baik-lampau — adalah — ya."}
+      ],
+      "notes": [
+        "**どうでしたか = “bagaimana tadi?”** — bentuk lampau dari どうですか. Ini pertanyaan pembuka standar tentang pengalaman yang sudah lewat, dan kamu akan sering ditanya begini.",
+        "**どこも + kata kerja negatif = “tidak ke mana-mana”.** Pola kata tanya + も + negatif menghasilkan “tidak … pun”: なにも たべませんでした (tidak makan apa pun), だれも いませんでした (tidak ada siapa pun).",
+        "**なにか = sesuatu.** Bandingkan dengan なにも yang selalu berpasangan negatif. Satu huruf berbeda, arah kalimatnya berbalik.",
+        "**よかったです punya arti kedua yang hangat:** selain “dulu bagus”, ia juga berarti “syukurlah”. それはよかったですね = “syukurlah kalau begitu”. Salah satu kalimat yang paling sering dipakai untuk menanggapi kabar baik.",
+        "**つかれました = lelah**, sama seperti おなかがすきました di Unit 7: bentuk lampau untuk keadaan **sekarang**. Bahasa Jepang memandangnya sebagai “sudah menjadi lelah”.",
+        "**おみやげ = oleh-oleh**, dan ini bukan sekadar kebiasaan: membawa oleh-oleh untuk rekan kerja sepulang bepergian adalah adat yang benar-benar diikuti di kantor Jepang."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk lampau — tiga jenis kata, tiga cara",
+          "body": [
+            "Ini rangkuman terpenting modul ini. Perhatikan bahwa **kata kerja** dan **kata sifat い** mengubah dirinya sendiri, sedangkan **kata sifat な** dan **kata benda** mengubah です-nya."
+          ],
+          "table": {
+            "head": ["Jenis", "Sekarang", "Lampau", "Lampau negatif"],
+            "rows": [
+              ["Kata kerja", "[たべます|tabemasu]", "[たべました|tabemashita]", "[たべませんでした|tabemasen deshita]"],
+              ["Kata sifat い", "[たかいです|takai desu]", "[たかかったです|takakatta desu]", "[たかくなかったです|takakunakatta desu]"],
+              ["Kata sifat な", "[しずかです|shizuka desu]", "[しずかでした|shizuka deshita]", "[しずかじゃありませんでした|shizuka ja arimasen deshita]"],
+              ["Kata benda", "[がくせいです|gakusei desu]", "[がくせいでした|gakusei deshita]", "[がくせいじゃありませんでした|gakusei ja arimasen deshita]"],
+              ["⚠️ いい", "[いいです|ii desu]", "[よかったです|yokatta desu]", "[よくなかったです|yokunakatta desu]"]
+            ]
+          },
+          "after": [
+            "⚠️ **Kesalahan nomor satu:** menulis **たかいでした**. Kata sifat い melampaukan **dirinya sendiri** (たかかった), bukan です-nya. Ini kesalahan yang bertahan lama bahkan pada pembelajar tingkat menengah — cegah sekarang.",
+            "**Cara cepat kata sifat い:** buang い, tambahkan **かった**. たかい → たか + かった → たかかった. Negatifnya: たかくない → たかくなかった."
+          ]
+        },
+        {
+          "title": "Membentuk bentuk て",
+          "body": [
+            "Bentuk **て** adalah simpul besar bahasa Jepang: dari sinilah lahir permintaan (～てください), izin (～てもいいですか), keadaan berlangsung (～ています), dan penyambung kejadian (～て、～).",
+            "Cara membentuknya dari bentuk ます bergantung pada bunyi terakhir sebelum ます:"
+          ],
+          "table": {
+            "head": ["Akhiran ます", "Jadi", "Contoh"],
+            "rows": [
+              ["～い / ～ち / ～り", "→ **って**", "[かいます|kaimasu] → [かって|katte] · [まちます|machimasu] → [まって|matte]"],
+              ["～み / ～び / ～に", "→ **んで**", "[のみます|nomimasu] → [のんで|nonde] · [よみます|yomimasu] → [よんで|yonde]"],
+              ["～き", "→ **いて**", "[かきます|kakimasu] → [かいて|kaite] · [ききます|kikimasu] → [きいて|kiite]"],
+              ["～ぎ", "→ **いで**", "[およぎます|oyogimasu] → [およいで|oyoide]"],
+              ["～し", "→ **して**", "[はなします|hanashimasu] → [はなして|hanashite]"],
+              ["Kelompok 2 (～え/～い + ます)", "→ **て**", "[たべます|tabemasu] → [たべて|tabete] · [みます|mimasu] → [みて|mite]"],
+              ["⚠️ Tak beraturan", "—", "[します|shimasu] → [して|shite] · [きます|kimasu] → [きて|kite] · [いきます|ikimasu] → [いって|itte]"]
+            ]
+          },
+          "after": [
+            "**Jangan menghafal tabel ini sekaligus.** Yang berhasil bagi hampir semua pembelajar: hafalkan bentuk て dari sepuluh kata kerja yang paling sering kamu pakai, sebagai kata utuh. Polanya akan muncul sendiri dari pengalaman, bukan dari tabel.",
+            "⚠️ **いきます → いって** adalah satu-satunya pengecualian di kelompok ～き. Sisanya (かきます → かいて) mengikuti pola."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "会話 2 — Merangkai kejadian",
+      "intro": "Budi menceritakan harinya kepada gurunya. Perhatikan bagaimana bentuk て menyambung kejadian berurutan tanpa mengulang “lalu” terus-menerus.",
+      "lines": [
+        {"speaker": "せんせい:", "text": "[ブディさん|Budi-san]、[きのうは|kinō wa] [どうでしたか|dō deshita ka]。", "id": "Budi, kemarin bagaimana?", "literal": "Budi-tuan, kemarin — mengenai — bagaimana — adalah-lampau — kah."},
+        {"speaker": "ブディ:", "text": "[あさ|Asa] [おきて|okite]、[あさごはんを|asagohan o] [たべて|tabete]、[がっこうへ|gakkō e] [きました|kimashita]。", "id": "Pagi saya bangun, sarapan, lalu datang ke sekolah.", "literal": "pagi — bangun-dan, sarapan — akan — makan-dan, sekolah — ke — datang-sudah."},
+        {"speaker": "せんせい:", "text": "[ごごは|Gogo wa]？", "id": "Sorenya?", "literal": "sore — mengenai?"},
+        {"speaker": "ブディ:", "text": "[じゅぎょうが|Jugyō ga] [おわってから|owatte kara]、[としょかんで|toshokan de] [べんきょうしました|benkyō shimashita]。", "id": "Setelah pelajaran selesai, saya belajar di perpustakaan.", "literal": "pelajaran — yang — selesai-sesudah, perpustakaan — di — belajar-melakukan-sudah."},
+        {"speaker": "せんせい:", "text": "[なんじまで|Nanji made] [べんきょうしましたか|benkyō shimashita ka]。", "id": "Belajar sampai jam berapa?", "literal": "apa-jam — sampai — belajar-melakukan-sudah — kah."},
+        {"speaker": "ブディ:", "text": "8[じまでです|ji made desu]。[それから|Sorekara] [ともだちと|tomodachi to] [ばんごはんを|bangohan o] [たべました|tabemashita]。", "id": "Sampai jam 8. Setelah itu makan malam dengan teman.", "literal": "8 — jam — sampai — adalah. sesudah-itu — teman — bersama — makan-malam — akan — makan-sudah."},
+        {"speaker": "せんせい:", "text": "[なにを|Nani o] [たべましたか|tabemashita ka]。", "id": "Makan apa?", "literal": "apa — akan — makan-sudah — kah."},
+        {"speaker": "ブディ:", "text": "[カレーを|Karē o] [たべました|tabemashita]。[やすくて|Yasukute] [おいしかったです|oishikatta desu]。", "id": "Makan kari. Murah dan enak.", "literal": "kari — akan — makan-sudah. murah-dan — enak-lampau — adalah."},
+        {"speaker": "せんせい:", "text": "[しゅくだいは|Shukudai wa] [しましたか|shimashita ka]。", "id": "PR-nya sudah dikerjakan?", "literal": "PR — mengenai — melakukan-sudah — kah."},
+        {"speaker": "ブディ:", "text": "[すみません|Sumimasen]、[まだです|mada desu]。[きょう|Kyō] [うちへ|uchi e] [かえってから|kaette kara] [します|shimasu]。", "id": "Maaf, belum. Hari ini setelah pulang ke rumah saya kerjakan.", "literal": "maaf, belum — adalah. hari-ini — rumah — ke — pulang-sesudah — melakukan."},
+        {"speaker": "せんせい:", "text": "[わかりました|Wakarimashita]。[がんばってください|Ganbatte kudasai]。", "id": "Baik. Semangat ya.", "literal": "mengerti-sudah. berusaha-tolong."}
+      ],
+      "notes": [
+        "**～て、～て、～ました** — kejadian berurutan cuma menandai **kalimat terakhir** dengan bentuk lampau. Yang sebelumnya cukup bentuk て. Ini menghemat banyak sekali, dan langsung membuat ceritamu terdengar mengalir daripada terpotong-potong.",
+        "**～てから = sesudah ～.** Berbeda dari ～て biasa: てから menegaskan bahwa yang pertama benar-benar selesai lebih dulu. かえってからします = saya kerjakan **setelah** pulang.",
+        "**まだです = belum.** Jawaban pendek yang sopan untuk “sudah belum?”. Kebalikannya もうしました (sudah).",
+        "**がんばってください = semangat ya.** Salah satu kalimat paling khas Jepang, dipakai untuk apa saja: ujian, pekerjaan, pertandingan. Versi santainya がんばって, versi menyemangati diri sendiri がんばります.",
+        "**しゅくだい = pekerjaan rumah**, harfiahnya “tugas rumah”. Kata kerjanya します: しゅくだいをします.",
+        "**カレー** — kari Jepang berbeda dari kari Indonesia atau India: lebih manis, lebih kental, disajikan di atas nasi. Termasuk makanan rumahan paling umum di Jepang."
+      ],
+      "grammars": [
+        {
+          "title": "Merangkai kejadian dengan bentuk て",
+          "body": [
+            "Bahasa Jepang tidak menyambung kalimat dengan “dan”. Yang dipakai adalah bentuk て pada kata kerja sebelumnya. Urutannya sama dengan urutan waktu — kejadian pertama ditulis pertama."
+          ],
+          "table": {
+            "head": ["Bentuk", "Contoh", "Arti"],
+            "rows": [
+              ["～て、～ました", "[おきて|Okite]、[たべて|tabete]、[いきました|ikimashita]。", "Bangun, makan, lalu pergi."],
+              ["～てから", "[かえってから|Kaette kara] [します|shimasu]。", "Saya kerjakan setelah pulang."],
+              ["～てください", "[まって|Matte] [ください|kudasai]。", "Tolong tunggu."],
+              ["～てもいいですか", "[すわっても|Suwatte mo] [いいですか|ii desu ka]。", "Boleh saya duduk?"],
+              ["～ています", "[いま|Ima] [たべています|tabete imasu]。", "Sekarang sedang makan."],
+              ["～ています (keadaan)", "[とうきょうに|Tōkyō ni] [すんでいます|sunde imasu]。", "Saya tinggal di Tokyo."]
+            ]
+          },
+          "after": [
+            "**Satu bentuk, enam kegunaan.** Inilah sebabnya bentuk て pantas dilatih sampai keluar tanpa berpikir. Kalau ada satu hal dari modul ini yang harus kamu bawa ke tingkat berikutnya, ini dia."
+          ]
+        },
+        {
+          "title": "Tanggal dan bulan",
+          "body": [
+            "Untuk bercerita tentang masa lalu, kamu butuh tanggal. Bulan sangat teratur — cukup angka + **がつ**. Tanggal 1 sampai 10 tidak beraturan dan harus dihafal; sisanya angka + **にち**."
+          ],
+          "tables": [
+            {
+              "head": ["Bulan", "Bacaan", "Bulan", "Bacaan"],
+              "rows": [
+                ["1月", "[いちがつ|ichigatsu]", "7月", "[しちがつ|shichigatsu] ⚠️"],
+                ["2月", "[にがつ|nigatsu]", "8月", "[はちがつ|hachigatsu]"],
+                ["3月", "[さんがつ|sangatsu]", "9月", "[くがつ|kugatsu] ⚠️"],
+                ["4月", "[しがつ|shigatsu] ⚠️", "10月", "[じゅうがつ|jūgatsu]"],
+                ["5月", "[ごがつ|gogatsu]", "11月", "[じゅういちがつ|jūichigatsu]"],
+                ["6月", "[ろくがつ|rokugatsu]", "12月", "[じゅうにがつ|jūnigatsu]"]
+              ]
+            },
+            {
+              "head": ["Tanggal", "Bacaan", "Tanggal", "Bacaan"],
+              "rows": [
+                ["1日", "[ついたち|tsuitachi] ⚠️", "8日", "[ようか|yōka] ⚠️"],
+                ["2日", "[ふつか|futsuka] ⚠️", "9日", "[ここのか|kokonoka] ⚠️"],
+                ["3日", "[みっか|mikka] ⚠️", "10日", "[とおか|tōka] ⚠️"],
+                ["4日", "[よっか|yokka] ⚠️", "14日", "[じゅうよっか|jūyokka] ⚠️"],
+                ["5日", "[いつか|itsuka] ⚠️", "20日", "[はつか|hatsuka] ⚠️"],
+                ["6日", "[むいか|muika] ⚠️", "24日", "[にじゅうよっか|nijūyokka] ⚠️"],
+                ["7日", "[なのか|nanoka] ⚠️", "berapa", "[なんにち|nannichi]"]
+              ]
+            }
+          ],
+          "after": [
+            "**Urutannya dari besar ke kecil:** 2026[ねん|nen] 8[がつ|gatsu] 21[にち|nichi] = 21 Agustus 2026. Tahun dulu, baru bulan, baru tanggal — kebalikan urutan Indonesia, dan sama dengan cara Jepang menulis alamat.",
+            "**Sisanya teratur:** 11日 = じゅういちにち, 15日 = じゅうごにち, 30日 = さんじゅうにち. Yang tidak beraturan cuma yang ditandai di tabel — hafalkan sepuluh pertama, sisanya jalan sendiri."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menyusun cerita lima kalimat",
+      "blocks": [
+        {"type": "p", "text": "Kemampuan terakhir tingkat A1 adalah menceritakan sesuatu yang sudah terjadi, secara runtut. Kerangka lima kalimat ini bisa kamu pakai untuk cerita apa pun:"},
+        {"type": "tabel", "head": ["Bagian", "Pola", "Contoh"], "rows": [
+          ["1. Kapan & apa", "[waktu] [に] [tempat] [へ/で] [kata kerja ました]", "[どようびに|Doyōbi ni] [きょうとへ|Kyōto e] [いきました|ikimashita]。"],
+          ["2. Bersama siapa", "[siapa] [と] …", "[ともだちと|Tomodachi to] [いきました|ikimashita]。"],
+          ["3. Apa yang dilakukan", "～て、～て、～ました", "[おてらを|Otera o] [みて|mite]、[しゃしんを|shashin o] [とりました|torimashita]。"],
+          ["4. Bagaimana rasanya", "[kata sifat lampau]", "[とても|Totemo] [たのしかったです|tanoshikatta desu]。"],
+          ["5. Penutup / rencana", "[また|Mata] ～たいです", "[また|Mata] [いきたいです|ikitai desu]。"]
+        ]},
+        {"type": "kotak", "title": "Contoh utuh", "items": [
+          "[せんしゅうの|Senshū no] [にちようびに|nichiyōbi ni] [ともだちと|tomodachi to] [うみへ|umi e] [いきました|ikimashita]。",
+          "[でんしゃで|Densha de] 2[じかん|jikan] [ぐらい|gurai] [かかりました|kakarimashita]。",
+          "[うみで|Umi de] [およいで|oyoide]、[しゃしんを|shashin o] [たくさん|takusan] [とりました|torimashita]。",
+          "[てんきが|Tenki ga] [よくて|yokute]、[とても|totemo] [たのしかったです|tanoshikatta desu]。",
+          "[こんど|Kondo] [かぞくと|kazoku to] [また|mata] [いきたいです|ikitai desu]。",
+          "Minggu lalu saya pergi ke pantai bersama teman. Naik kereta sekitar 2 jam. Di pantai saya berenang dan memotret banyak sekali. Cuacanya bagus dan sangat menyenangkan. Lain kali saya ingin pergi lagi bersama keluarga."
+        ]},
+        {"type": "p", "text": "Tulis versimu sendiri sekarang, tentang akhir pekanmu yang sebenarnya. Lima kalimat. Ini pekerjaan rumah terakhir modul ini, dan yang paling berguna."}
+      ]
+    },
+    {
+      "title": "Kata keterangan waktu lampau",
+      "blocks": [
+        {"type": "tabel", "head": ["Jepang", "Arti", "Jepang", "Arti"], "rows": [
+          ["[きのう|kinō] 昨日", "kemarin", "[おととい|ototoi]", "kemarin lusa"],
+          ["[せんしゅう|senshū] 先週", "minggu lalu", "[せんげつ|sengetsu] 先月", "bulan lalu"],
+          ["[きょねん|kyonen] 去年", "tahun lalu", "[このまえ|kono mae]", "waktu itu"],
+          ["[さっき|sakki]", "tadi", "[もう|mō]", "sudah"],
+          ["[まだ|mada]", "belum", "[はじめて|hajimete] 初めて", "untuk pertama kali"],
+          ["[ときどき|tokidoki] 時々", "kadang-kadang", "[いつか|itsuka]", "suatu saat"]
+        ]},
+        {"type": "kotak", "title": "もう dan まだ", "items": [
+          "**[もう|Mō] [しましたか|shimashita ka]。** — Sudah dikerjakan?",
+          "**[はい|Hai]、[もう|mō] [しました|shimashita]。** — Ya, sudah.",
+          "**[いいえ|Iie]、[まだです|mada desu]。** — Belum.",
+          "⚠️ Jangan menjawab いいえ、しませんでした untuk “belum” — itu berarti “saya tidak mengerjakannya (dan tidak akan)”. まだです menyisakan kemungkinan, dan itulah yang biasanya kamu maksud."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"ja": "[きのう|kinō] 昨日", "baca": "きのう · kinō", "id": "kemarin"},
+    {"ja": "[おととい|ototoi]", "baca": "おととい · ototoi", "id": "kemarin lusa"},
+    {"ja": "[せんげつ|sengetsu] 先月", "baca": "せんげつ · sengetsu", "id": "bulan lalu"},
+    {"ja": "[きょねん|kyonen] 去年", "baca": "きょねん · kyonen", "id": "tahun lalu"},
+    {"ja": "[さっき|sakki]", "baca": "さっき · sakki", "id": "tadi"},
+    {"ja": "[もう|mō]", "baca": "もう · mō", "id": "sudah"},
+    {"ja": "[はじめて|hajimete] 初めて", "baca": "はじめて · hajimete", "id": "untuk pertama kali"},
+    {"ja": "[たのしい|tanoshii] 楽しい", "baca": "たのしい · tanoshii", "id": "menyenangkan"},
+    {"ja": "[おおい|ōi] 多い", "baca": "おおい · ōi", "id": "banyak"},
+    {"ja": "[すくない|sukunai] 少ない", "baca": "すくない · sukunai", "id": "sedikit"},
+    {"ja": "[たくさん|takusan]", "baca": "たくさん · takusan", "id": "banyak sekali"},
+    {"ja": "[つかれました|tsukaremashita] 疲れました", "baca": "つかれました · tsukaremashita", "id": "lelah"},
+    {"ja": "[おわります|owarimasu] 終わります", "baca": "おわります · owarimasu", "id": "selesai"},
+    {"ja": "[はじまります|hajimarimasu] 始まります", "baca": "はじまります · hajimarimasu", "id": "dimulai"},
+    {"ja": "[およぎます|oyogimasu] 泳ぎます", "baca": "およぎます · oyogimasu", "id": "berenang"},
+    {"ja": "[かかります|kakarimasu]", "baca": "かかります · kakarimasu", "id": "memakan waktu"},
+    {"ja": "[がんばります|ganbarimasu] 頑張ります", "baca": "がんばります · ganbarimasu", "id": "berusaha, semangat"},
+    {"ja": "[おてら|otera] お寺", "baca": "おてら · otera", "id": "kuil Buddha"},
+    {"ja": "[じんじゃ|jinja] 神社", "baca": "じんじゃ · jinja", "id": "kuil Shinto"},
+    {"ja": "[うみ|umi] 海", "baca": "うみ · umi", "id": "laut, pantai"},
+    {"ja": "[やま|yama] 山", "baca": "やま · yama", "id": "gunung"},
+    {"ja": "[おみやげ|omiyage] お土産", "baca": "おみやげ · omiyage", "id": "oleh-oleh"},
+    {"ja": "[しゅくだい|shukudai] 宿題", "baca": "しゅくだい · shukudai", "id": "pekerjaan rumah"},
+    {"ja": "[カレー|karē]", "baca": "カレー · karē", "id": "kari"},
+    {"ja": "[きょうと|Kyōto] 京都", "baca": "きょうと · Kyōto", "id": "Kyoto"},
+    {"ja": "[おおさか|Ōsaka] 大阪", "baca": "おおさか · Ōsaka", "id": "Osaka"},
+    {"ja": "[ねん|nen] 年", "baca": "ねん · nen", "id": "tahun"},
+    {"ja": "[がつ|gatsu] 月", "baca": "がつ · gatsu", "id": "bulan (nama bulan)"},
+    {"ja": "[にち|nichi] 日", "baca": "にち · nichi", "id": "tanggal, hari"},
+    {"ja": "[ついたち|tsuitachi] 一日", "baca": "ついたち · tsuitachi", "id": "tanggal 1"},
+    {"ja": "[ふつか|futsuka] 二日", "baca": "ふつか · futsuka", "id": "tanggal 2"},
+    {"ja": "[みっか|mikka] 三日", "baca": "みっか · mikka", "id": "tanggal 3"},
+    {"ja": "[はつか|hatsuka] 二十日", "baca": "はつか · hatsuka", "id": "tanggal 20"},
+    {"ja": "[なんにち|nannichi] 何日", "baca": "なんにち · nannichi", "id": "tanggal berapa"},
+    {"ja": "[なにか|nanika] 何か", "baca": "なにか · nanika", "id": "sesuatu"},
+    {"ja": "[なにも|nanimo] 何も", "baca": "なにも · nanimo", "id": "tidak … apa pun"},
+    {"ja": "[どこも|dokomo]", "baca": "どこも · dokomo", "id": "tidak … ke mana pun"},
+    {"ja": "[それから|sorekara]", "baca": "それから · sorekara", "id": "setelah itu"},
+    {"ja": "[てから|te kara]", "baca": "てから · te kara", "id": "sesudah (melakukan)"},
+    {"ja": "[よかった|yokatta]", "baca": "よかった · yokatta", "id": "syukurlah; tadi bagus"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah ke bentuk lampau.",
+      "items": [
+        "たべます → ___",
+        "いきます → ___",
+        "たかいです → ___",
+        "しずかです → しずか ___",
+        "がくせいです → がくせい ___",
+        "いいです → ___"
+      ]
+    },
+    {
+      "prompt": "Ubah ke bentuk lampau negatif.",
+      "items": [
+        "いきます → ___",
+        "たべます → ___",
+        "しません → ___",
+        "きます → ___",
+        "のみます → ___"
+      ]
+    },
+    {
+      "prompt": "Tulis bentuk て dari kata kerja ini.",
+      "items": [
+        "たべます → ___",
+        "のみます → ___",
+        "かきます → ___",
+        "します → ___",
+        "きます → ___",
+        "いきます → ___"
+      ]
+    },
+    {
+      "prompt": "Susun kepingan menjadi kalimat yang benar.",
+      "items": [
+        "きのう / ともだち / と / きょうと / へ / いきました",
+        "とても / たのしかった / です",
+        "おきて / あさごはん / を / たべて / がっこう / へ / いきました",
+        "うち / へ / かえって / から / しゅくだい / を / します",
+        "どこ / も / いきません / でした",
+        "つかれました / から / うち / で / やすみました"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Indonesia.",
+      "items": [
+        "しゅうまつはなにをしましたか。",
+        "きょうとはとてもきれいでした。",
+        "ひとがすごくおおかったです。",
+        "にちようびはどこもいきませんでした。",
+        "じゅぎょうがおわってから、としょかんでべんきょうしました。"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Jepang. Tulis dengan rōmaji.",
+      "items": [
+        "Kemarin saya pergi ke Kyoto.",
+        "Sangat menyenangkan.",
+        "Saya tidak makan apa pun.",
+        "Setelah pulang saya kerjakan PR.",
+        "Lain kali saya ingin pergi lagi."
+      ]
+    }
+  ],
+  "answers": [
+    "たべました — いきました — たかかったです — でした — でした — よかったです",
+    "いきませんでした — たべませんでした — しませんでした — きませんでした — のみませんでした",
+    "たべて — のんで — かいて — して — きて — いって",
+    "きのう ともだち と きょうと へ いきました — とても たのしかった です — おきて あさごはん を たべて がっこう へ いきました — うち へ かえって から しゅくだい を します — どこ も いきません でした — つかれました から うち で やすみました",
+    "Akhir pekan kemarin ngapain? — Kyoto sangat indah. — Orangnya banyak sekali. — Hari Minggu saya tidak pergi ke mana-mana. — Setelah pelajaran selesai, saya belajar di perpustakaan.",
+    "kinō Kyōto e ikimashita — totemo tanoshikatta desu — nanimo tabemasen deshita — kaette kara shukudai o shimasu — kondo mata ikitai desu"
+  ],
+  "wave": "Ini unit terakhir, jadi ulangannya menyeluruh: baca ulang **dialog pertama dari setiap unit** dengan suara keras, satu per hari selama sepuluh hari, tanpa melihat terjemahannya. Yang tidak lagi butuh rōmaji di atasnya adalah bagian yang benar-benar sudah jadi milikmu — dan biasanya jumlahnya mengejutkan."
+}

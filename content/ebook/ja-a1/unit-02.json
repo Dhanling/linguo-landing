@@ -1,0 +1,314 @@
+{
+  "title": "Ini, itu, dan punya siapa",
+  "title_target": "これは なんですか — Kore wa nan desu ka",
+  "goal": "Menunjuk benda di dekat dan jauh, menanyakan namanya dalam bahasa Jepang, menyatakan kepemilikan, dan membetulkan orang yang salah tebak.",
+  "bekal": [
+    "membedakan これ・それ・あれ menurut jaraknya",
+    "memakai この・その・あの di depan kata benda",
+    "menyatakan milik dengan の",
+    "bertanya *punya siapa* dengan だれの",
+    "membetulkan dengan ちがいます tanpa terdengar kasar"
+  ],
+  "dialogs": [
+    {
+      "title": "会話 1 — Di ruang kelas",
+      "intro": "Ani menunjuk benda-benda di sekitarnya dan menanyakan namanya. Perhatikan bagaimana kata tunjuknya berganti mengikuti jarak benda dari kedua pembicara.",
+      "lines": [
+        {"speaker": "アニ:", "text": "[すみません|Sumimasen]。[これは|Kore wa] [なんですか|nan desu ka]。", "id": "Permisi. Ini apa?", "literal": "maaf. ini — mengenai — apa — adalah — kah."},
+        {"speaker": "たなか:", "text": "[それは|Sore wa] [じしょです|jisho desu]。[にほんごの|Nihongo no] [じしょです|jisho desu]。", "id": "Itu kamus. Kamus bahasa Jepang.", "literal": "itu — mengenai — kamus — adalah. Jepang-bahasa — punya — kamus — adalah."},
+        {"speaker": "アニ:", "text": "[じゃあ|Jā]、[あれは|are wa]？", "id": "Kalau begitu, yang di sana itu?", "literal": "kalau-begitu, itu-jauh — mengenai?"},
+        {"speaker": "たなか:", "text": "[あれは|Are wa] [とけいです|tokei desu]。", "id": "Yang di sana itu jam.", "literal": "itu-jauh — mengenai — jam — adalah."},
+        {"speaker": "アニ:", "text": "[この|Kono] [ほんは|hon wa] [だれのですか|dare no desu ka]。", "id": "Buku ini punya siapa?", "literal": "ini — buku — mengenai — siapa — punya — adalah — kah."},
+        {"speaker": "たなか:", "text": "[それは|Sore wa] [わたしのです|watashi no desu]。", "id": "Itu punya saya.", "literal": "itu — mengenai — saya — punya — adalah."},
+        {"speaker": "アニ:", "text": "[この|Kono] [ペンも|pen mo] [たなかさんのですか|Tanaka-san no desu ka]。", "id": "Pena ini juga punya Tanaka?", "literal": "ini — pena — juga — Tanaka-tuan — punya — adalah — kah."},
+        {"speaker": "たなか:", "text": "[いいえ|Iie]、[ちがいます|chigaimasu]。[それは|Sore wa] [やまださんのです|Yamada-san no desu]。", "id": "Bukan, salah. Itu punya Yamada.", "literal": "bukan, berbeda. itu — mengenai — Yamada-tuan — punya — adalah."},
+        {"speaker": "アニ:", "text": "[そうですか|Sō desu ka]。[じしょは|Jisho wa] [いくらですか|ikura desu ka]。", "id": "Oh begitu. Kamusnya berapa harganya?", "literal": "begitu — adalah — kah. kamus — mengenai — berapa — adalah — kah."},
+        {"speaker": "たなか:", "text": "[ちょっと|Chotto] [たかいです|takai desu]。でも、[いい|ii] [じしょです|jisho desu]。", "id": "Agak mahal. Tapi kamus yang bagus.", "literal": "sedikit — mahal — adalah. tetapi, baik — kamus — adalah."},
+        {"speaker": "アニ:", "text": "[わたしも|Watashi mo] [ほしいです|hoshii desu]。", "id": "Saya juga mau.", "literal": "saya — juga — diinginkan — adalah."}
+      ],
+      "notes": [
+        "**Jaraknya diukur dari dua orang, bukan satu.** これ = dekat **pembicara**. それ = dekat **lawan bicara**. あれ = jauh dari **keduanya**. Itulah sebabnya Ani bertanya これは (buku di tangannya) dan Tanaka menjawab それは (buku itu jauh darinya). Dua kata berbeda, benda yang sama. Pemula sering mengira それ berarti “itu yang agak jauh”; sebenarnya artinya “yang di sisimu”.",
+        "**ちがいます bukan “tidak”, tapi “berbeda”.** Untuk membetulkan tebakan orang, いいえ、ちがいます jauh lebih wajar daripada いいえ、じゃありません. Di percakapan sehari-hari ちがいます sering berdiri sendiri, tanpa いいえ.",
+        "**も menggantikan は, tidak menempel padanya.** わたしは → わたし**も** (saya juga). Jangan menulis わたしはも. Aturan yang sama berlaku untuk を nanti: それを → それも.",
+        "**の di sini berarti “punya”.** わたしの = punya saya. Kata bendanya boleh dibuang kalau sudah jelas: それはわたしのです = “itu punyaku”, tanpa perlu mengulang “buku”.",
+        "**いい = bagus, dan bentuknya nakal.** Kata sifat ini satu-satunya yang tidak mengikuti pola: bentuk negatif dan lampaunya berubah jadi よ～ (よくない, よかった). Untuk sekarang cukup ingat いい dipakai apa adanya di depan kata benda: いいじしょ.",
+        "**ほしいです = ingin punya (benda).** Berbeda dari “ingin melakukan”, yang bentuknya ～たいです — itu di Unit 9."
+      ],
+      "grammars": [
+        {
+          "title": "こそあど — sistem kata tunjuk",
+          "body": [
+            "Kata tunjuk Jepang tersusun rapi dalam satu kisi. Begitu kamu melihat kisinya, tiga puluh kata berubah jadi empat pola yang bisa ditebak. Barisnya: **こ** dekat saya, **そ** dekat kamu, **あ** jauh dari kita berdua, **ど** kata tanya."
+          ],
+          "table": {
+            "head": ["", "こ (dekat saya)", "そ (dekat kamu)", "あ (jauh)", "ど (mana?)"],
+            "rows": [
+              ["Benda, berdiri sendiri", "[これ|kore] ini", "[それ|sore] itu", "[あれ|are] itu (sana)", "[どれ|dore] yang mana"],
+              ["+ kata benda", "[この|kono] ～ini", "[その|sono] ～itu", "[あの|ano] ～itu", "[どの|dono] ～yang mana"],
+              ["Tempat", "[ここ|koko] di sini", "[そこ|soko] di situ", "[あそこ|asoko] di sana", "[どこ|doko] di mana"],
+              ["Arah, benda (halus)", "[こちら|kochira]", "[そちら|sochira]", "[あちら|achira]", "[どちら|dochira]"]
+            ]
+          },
+          "after": [
+            "⚠️ **これ dan この tidak bisa ditukar.** これ berdiri sendiri (これはほんです), この harus diikuti kata benda (このほんは…). Menulis これほん adalah kesalahan pemula yang paling sering terdengar.",
+            "**こちら / そちら / あちら** dipakai untuk arah, tapi juga sebagai versi halus dari これ/それ/あれ dan bahkan untuk memperkenalkan orang: こちらはたなかさんです = “ini Bapak Tanaka”."
+          ]
+        },
+        {
+          "title": "の — perekat serba guna",
+          "body": [
+            "Partikel **の** menempelkan dua kata benda: **A の B**, artinya “B yang berkaitan dengan A”. Urutannya kebalikan bahasa Indonesia — yang **menerangkan** ditulis lebih dulu.",
+            "Bahasa Indonesia: *kamus bahasa Jepang* → Jepang: **にほんごの じしょ** (bahasa-Jepang-punya kamus).",
+            "Satu partikel ini menutup tiga hal yang di bahasa Indonesia butuh kata berbeda: milik, asal, dan jenis."
+          ],
+          "table": {
+            "head": ["Bahasa Jepang", "Arti", "Jenis hubungan"],
+            "rows": [
+              ["[わたしの|watashi no] [ほん|hon]", "buku saya", "milik"],
+              ["[たなかさんの|Tanaka-san no] [ペン|pen]", "pena Tanaka", "milik"],
+              ["[にほんごの|Nihongo no] [じしょ|jisho]", "kamus bahasa Jepang", "jenis / isi"],
+              ["[インドネシアの|Indoneshia no] [コーヒー|kōhī]", "kopi Indonesia", "asal"],
+              ["[がっこうの|gakkō no] [せんせい|sensei]", "guru sekolah itu", "keterkaitan"],
+              ["[にほんごの|Nihongo no] [がっこうの|gakkō no] [せんせい|sensei]", "guru sekolah bahasa Jepang", "bertingkat"]
+            ]
+          },
+          "after": [
+            "**Kata bendanya boleh dibuang.** Kalau bendanya sudah jelas dari percakapan, cukup berhenti di の: これはわたしのです = “ini punyaku”. Bentuk ini yang paling sering dipakai untuk menjawab pertanyaan だれの.",
+            "**Bertanya:** だれの = punya siapa. このかばんはだれのですか = “tas ini punya siapa?”"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "会話 2 — Barang tertinggal",
+      "intro": "Di meja penerima, seseorang mencari tas yang tertinggal. Perhatikan cara membetulkan dan cara memastikan.",
+      "lines": [
+        {"speaker": "うけつけ:", "text": "[はい|Hai]、[うけつけです|uketsuke desu]。", "id": "Ya, meja penerima.", "literal": "ya, penerima — adalah."},
+        {"speaker": "ブディ:", "text": "[すみません|Sumimasen]。[かばんを|Kaban o] [わすれました|wasuremashita]。", "id": "Permisi. Saya ketinggalan tas.", "literal": "maaf. tas — akan — melupakan-sudah."},
+        {"speaker": "うけつけ:", "text": "[どんな|Donna] [かばんですか|kaban desu ka]。", "id": "Tas yang seperti apa?", "literal": "seperti-apa — tas — adalah — kah."},
+        {"speaker": "ブディ:", "text": "[くろい|Kuroi] [かばんです|kaban desu]。[なかに|Naka ni] [パソコンが|pasokon ga] [あります|arimasu]。", "id": "Tas hitam. Di dalamnya ada laptop.", "literal": "hitam — tas — adalah. dalam — di — komputer — yang — ada."},
+        {"speaker": "うけつけ:", "text": "[これですか|Kore desu ka]。", "id": "Yang ini?", "literal": "ini — adalah — kah."},
+        {"speaker": "ブディ:", "text": "[いいえ|Iie]、[ちがいます|chigaimasu]。[それは|Sore wa] [わたしのじゃありません|watashi no ja arimasen]。", "id": "Bukan, salah. Itu bukan punya saya.", "literal": "bukan, berbeda. itu — mengenai — saya — punya — bukan."},
+        {"speaker": "うけつけ:", "text": "[じゃあ|Jā]、[あれは|are wa] [どうですか|dō desu ka]。", "id": "Kalau yang di sana itu bagaimana?", "literal": "kalau-begitu, itu-jauh — mengenai — bagaimana — adalah — kah."},
+        {"speaker": "ブディ:", "text": "[あ|A]、[そうです|sō desu]！[あれです|Are desu]。[わたしのです|Watashi no desu]。", "id": "Ah, benar! Yang itu. Punya saya.", "literal": "ah, begitu — adalah! itu-jauh — adalah. saya — punya — adalah."},
+        {"speaker": "うけつけ:", "text": "[おなまえは|Onamae wa]？", "id": "Nama Anda?", "literal": "nama-terhormat — mengenai?"},
+        {"speaker": "ブディ:", "text": "[ブディです|Budi desu]。[インドネシアの|Indoneshia no] [がくせいです|gakusei desu]。", "id": "Budi. Saya pelajar dari Indonesia.", "literal": "Budi — adalah. Indonesia — punya — pelajar — adalah."},
+        {"speaker": "うけつけ:", "text": "[はい|Hai]、[どうぞ|dōzo]。", "id": "Baik, silakan.", "literal": "ya, silakan."},
+        {"speaker": "ブディ:", "text": "[たすかりました|Tasukarimashita]。[ありがとうございます|Arigatō gozaimasu]。", "id": "Sangat menolong. Terima kasih banyak.", "literal": "tertolong-sudah. terima-kasih."}
+      ],
+      "notes": [
+        "**どんな = “yang seperti apa”**, selalu diikuti kata benda: どんなかばん, どんなひと, どんなくるま. Jangan tertukar dengan どう (= bagaimana), yang berdiri sendiri: どうですか.",
+        "**どうですか punya dua pekerjaan:** menanyakan pendapat (“bagaimana menurutmu?”) dan menawarkan (“bagaimana kalau ini?”). Di dialog ini yang kedua.",
+        "**どうぞ = silakan**, dipakai saat menyerahkan sesuatu, mempersilakan duduk, mempersilakan lewat. Pasangannya どうも, yang bisa berarti terima kasih singkat. Dua kata mirip, dua arah berbeda.",
+        "**たすかりました harfiahnya “saya tertolong”** dan dipakai sebagai terima kasih yang lebih hangat daripada ありがとう biasa — cocok saat orang benar-benar menyelamatkanmu dari repot.",
+        "**が dan あります muncul sekilas di sini.** Keduanya dibongkar penuh di Unit 5. Untuk sekarang, baca ～があります sebagai satu paket berarti “ada ～”.",
+        "**くろい = hitam**, salah satu kata sifat berakhiran い yang bisa langsung ditempel di depan kata benda: くろいかばん. Kata sifat dibahas tuntas di Unit 7."
+      ],
+      "grammars": [
+        {
+          "title": "も — “juga”, dan tempat ia menggusur",
+          "body": [
+            "**も** berarti “juga”, dan ia **menggantikan** partikel は atau を, bukan menempel setelahnya.",
+            "わたしはがくせいです。→ ブディさん**も**がくせいです。 (Budi juga pelajar.)",
+            "Kalau kalimatnya negatif, も berarti “juga tidak”: わたしもがくせいじゃありません = “saya juga bukan pelajar”."
+          ],
+          "table": {
+            "head": ["Kalimat asal", "Dengan も", "Arti"],
+            "rows": [
+              ["[わたしは|watashi wa] [がくせいです|gakusei desu]", "[わたしも|watashi mo] [がくせいです|gakusei desu]", "Saya juga pelajar."],
+              ["[これは|kore wa] [わたしのです|watashi no desu]", "[これも|kore mo] [わたしのです|watashi no desu]", "Ini juga punya saya."],
+              ["[アニさんは|Ani-san wa] [きません|kimasen]", "[アニさんも|Ani-san mo] [きません|kimasen]", "Ani juga tidak datang."]
+            ]
+          },
+          "after": [
+            "⚠️ Kesalahan tersering: menulis **わたしはも**. Partikelnya cuma satu — pilih は atau も, tidak dua-duanya."
+          ]
+        },
+        {
+          "title": "Membetulkan tanpa terdengar kasar",
+          "body": [
+            "Bahasa Jepang punya tangga kehalusan sendiri untuk berkata “bukan”. Memilih anak tangga yang salah adalah salah satu cara tercepat terdengar kaku."
+          ],
+          "table": {
+            "head": ["Ungkapan", "Rasa", "Dipakai saat"],
+            "rows": [
+              ["[ちがいます|chigaimasu]", "Netral, jelas", "Membetulkan fakta: tebakan orang salah."],
+              ["[いいえ|iie]", "Netral, agak tegas", "Menjawab pertanyaan ya/tidak. Jarang berdiri sendiri."],
+              ["[ちょっと|chotto]…", "Sangat halus, menggantung", "Menolak ajakan atau permintaan tanpa mengatakan tidak."],
+              ["[すみません|sumimasen]、[ちがいます|chigaimasu]", "Halus", "Membetulkan orang yang lebih tua atau atasan."],
+              ["[そうじゃないです|sō ja nai desu]", "Santai", "Antar teman."]
+            ]
+          },
+          "after": [
+            "**ちょっと… yang menggantung adalah penolakan.** Kalau kamu mengajak orang Jepang dan jawabannya “ちょっと…”, itu berarti tidak — bukan “sebentar”. Menunggu kelanjutan kalimatnya adalah kesalahpahaman yang sangat umum."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Benda di sekitarmu",
+      "blocks": [
+        {"type": "p", "text": "Sebagian besar benda modern di Jepang memakai kata serapan yang ditulis katakana. Kalau kamu sudah bisa membaca katakana, kamu sudah tahu kata-kata ini sebelum menghafalnya — cobalah tebak sebelum melihat kolom kanan."},
+        {"type": "tabel", "head": ["Katakana", "Rōmaji", "Arti"], "rows": [
+          ["[ペン|pen]", "pen", "pena"],
+          ["[ノート|nōto]", "nōto", "buku catatan"],
+          ["[パソコン|pasokon]", "pasokon", "laptop, komputer pribadi"],
+          ["[スマホ|sumaho]", "sumaho", "ponsel pintar"],
+          ["[カメラ|kamera]", "kamera", "kamera"],
+          ["[テーブル|tēburu]", "tēburu", "meja"],
+          ["[コーヒー|kōhī]", "kōhī", "kopi"],
+          ["[バス|basu]", "basu", "bus"],
+          ["[テレビ|terebi]", "terebi", "televisi"],
+          ["[エアコン|eakon]", "eakon", "AC"]
+        ]},
+        {"type": "p", "text": "Dan ini benda sehari-hari yang **tidak** memakai kata serapan — ini yang harus dihafal:"},
+        {"type": "tabel", "head": ["Jepang", "Arti", "Jepang", "Arti"], "rows": [
+          ["[ほん|hon] 本", "buku", "[かばん|kaban]", "tas"],
+          ["[じしょ|jisho] 辞書", "kamus", "[かさ|kasa] 傘", "payung"],
+          ["[とけい|tokei] 時計", "jam", "[かぎ|kagi] 鍵", "kunci"],
+          ["[つくえ|tsukue] 机", "meja belajar", "[いす|isu] 椅子", "kursi"],
+          ["[くつ|kutsu] 靴", "sepatu", "[さいふ|saifu] 財布", "dompet"],
+          ["[みず|mizu] 水", "air", "[おかね|okane] お金", "uang"]
+        ]}
+      ]
+    },
+    {
+      "title": "Memastikan sebelum salah",
+      "blocks": [
+        {"type": "p", "text": "Percakapan sehari-hari lebih banyak berisi memastikan daripada menyatakan. Tiga pola pendek ini menutup hampir semua kebutuhan pemula:"},
+        {"type": "tabel", "head": ["Pola", "Contoh", "Arti"], "rows": [
+          ["～ですか", "[これですか|Kore desu ka]。", "Yang ini?"],
+          ["～ですね", "[アニさんですね|Ani-san desu ne]。", "Ibu Ani, ya?"],
+          ["～ですよ", "[それは|Sore wa] [わたしのですよ|watashi no desu yo]。", "Itu punya saya, lho."]
+        ]},
+        {"type": "kotak", "title": "ね dan よ — dua kata terkecil yang paling mengubah nada", "items": [
+          "**ね** mengajak setuju: “ya kan?”. Melunakkan kalimat. Kalau kamu ragu, ね hampir selalu memperbaiki nada kalimatmu.",
+          "**よ** memberi tahu sesuatu yang lawan bicara belum tahu: “lho”. Berguna, tapi berlebihan memakainya bisa terdengar menggurui.",
+          "**Tanpa keduanya**, kalimat terdengar datar dan agak dingin — seperti membaca daftar. Bukan salah, tapi terasa jauh."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"ja": "[これ|kore]", "baca": "これ · kore", "id": "ini (dekat saya)"},
+    {"ja": "[それ|sore]", "baca": "それ · sore", "id": "itu (dekat kamu)"},
+    {"ja": "[あれ|are]", "baca": "あれ · are", "id": "itu (jauh dari kita)"},
+    {"ja": "[どれ|dore]", "baca": "どれ · dore", "id": "yang mana"},
+    {"ja": "[この|kono]", "baca": "この · kono", "id": "ini + kata benda"},
+    {"ja": "[その|sono]", "baca": "その · sono", "id": "itu + kata benda"},
+    {"ja": "[あの|ano]", "baca": "あの · ano", "id": "itu (jauh) + kata benda"},
+    {"ja": "[どの|dono]", "baca": "どの · dono", "id": "yang mana + kata benda"},
+    {"ja": "[こちら|kochira]", "baca": "こちら · kochira", "id": "sebelah sini; ini (halus)"},
+    {"ja": "[どんな|donna]", "baca": "どんな · donna", "id": "yang seperti apa"},
+    {"ja": "[どう|dō]", "baca": "どう · dō", "id": "bagaimana"},
+    {"ja": "[ほん|hon] 本", "baca": "ほん · hon", "id": "buku"},
+    {"ja": "[じしょ|jisho] 辞書", "baca": "じしょ · jisho", "id": "kamus"},
+    {"ja": "[ノート|nōto]", "baca": "ノート · nōto", "id": "buku catatan"},
+    {"ja": "[ペン|pen]", "baca": "ペン · pen", "id": "pena"},
+    {"ja": "[とけい|tokei] 時計", "baca": "とけい · tokei", "id": "jam"},
+    {"ja": "[かばん|kaban]", "baca": "かばん · kaban", "id": "tas"},
+    {"ja": "[かさ|kasa] 傘", "baca": "かさ · kasa", "id": "payung"},
+    {"ja": "[かぎ|kagi] 鍵", "baca": "かぎ · kagi", "id": "kunci"},
+    {"ja": "[さいふ|saifu] 財布", "baca": "さいふ · saifu", "id": "dompet"},
+    {"ja": "[つくえ|tsukue] 机", "baca": "つくえ · tsukue", "id": "meja belajar"},
+    {"ja": "[いす|isu] 椅子", "baca": "いす · isu", "id": "kursi"},
+    {"ja": "[くつ|kutsu] 靴", "baca": "くつ · kutsu", "id": "sepatu"},
+    {"ja": "[おかね|okane] お金", "baca": "おかね · okane", "id": "uang"},
+    {"ja": "[みず|mizu] 水", "baca": "みず · mizu", "id": "air"},
+    {"ja": "[パソコン|pasokon]", "baca": "パソコン · pasokon", "id": "laptop"},
+    {"ja": "[スマホ|sumaho]", "baca": "スマホ · sumaho", "id": "ponsel pintar"},
+    {"ja": "[カメラ|kamera]", "baca": "カメラ · kamera", "id": "kamera"},
+    {"ja": "[テレビ|terebi]", "baca": "テレビ · terebi", "id": "televisi"},
+    {"ja": "[コーヒー|kōhī]", "baca": "コーヒー · kōhī", "id": "kopi"},
+    {"ja": "[くろい|kuroi] 黒い", "baca": "くろい · kuroi", "id": "hitam"},
+    {"ja": "[しろい|shiroi] 白い", "baca": "しろい · shiroi", "id": "putih"},
+    {"ja": "[あかい|akai] 赤い", "baca": "あかい · akai", "id": "merah"},
+    {"ja": "[たかい|takai] 高い", "baca": "たかい · takai", "id": "mahal; tinggi"},
+    {"ja": "[やすい|yasui] 安い", "baca": "やすい · yasui", "id": "murah"},
+    {"ja": "[いい|ii]", "baca": "いい · ii", "id": "bagus, baik"},
+    {"ja": "[ちがいます|chigaimasu]", "baca": "ちがいます · chigaimasu", "id": "salah, berbeda"},
+    {"ja": "[どうぞ|dōzo]", "baca": "どうぞ · dōzo", "id": "silakan"},
+    {"ja": "[どうも|dōmo]", "baca": "どうも · dōmo", "id": "terima kasih (singkat)"},
+    {"ja": "[ほしい|hoshii]", "baca": "ほしい · hoshii", "id": "ingin punya"},
+    {"ja": "[わすれました|wasuremashita]", "baca": "わすれました · wasuremashita", "id": "saya lupa / ketinggalan"},
+    {"ja": "[たすかりました|tasukarimashita]", "baca": "たすかりました · tasukarimashita", "id": "sangat menolong"},
+    {"ja": "[も|mo]", "baca": "も · mo", "id": "juga"},
+    {"ja": "[の|no]", "baca": "の · no", "id": "punya; dari; jenis"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih kata tunjuk yang tepat menurut jaraknya.",
+      "items": [
+        "Buku ada di tanganmu, kamu bertanya: ___ はなんですか。",
+        "Buku ada di tangan lawan bicara: ___ はなんですか。",
+        "Buku ada di rak jauh dari kalian berdua: ___ はなんですか。",
+        "Kamu menunjuk buku di tanganmu, memakai kata benda: ___ ほんはわたしのです。",
+        "Kamu menanyakan yang mana dari beberapa buku: ___ ですか。"
+      ]
+    },
+    {
+      "prompt": "Isi partikel yang hilang.",
+      "items": [
+        "これはにほんご ___ じしょです。",
+        "このかばんはだれ ___ ですか。",
+        "わたし ___ がくせいです。(saya juga)",
+        "あれ ___ たなかさんのですか。",
+        "インドネシア ___ コーヒーです。",
+        "それはわたし ___ じゃありません。"
+      ]
+    },
+    {
+      "prompt": "Susun kepingan menjadi kalimat yang benar.",
+      "items": [
+        "これ / は / わたし / の / かばん / です",
+        "あの / とけい / は / だれ / の / です / か",
+        "その / ほん / も / たなかさん / の / です / か",
+        "いいえ / ちがいます / それ / は / やまださん / の / です",
+        "どんな / かばん / です / か",
+        "この / じしょ / は / ちょっと / たかい / です"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Indonesia.",
+      "items": [
+        "これはインドネシアのコーヒーです。",
+        "そのペンはだれのですか。",
+        "いいえ、ちがいます。わたしのじゃありません。",
+        "あのくろいかばんもたなかさんのですか。",
+        "このじしょはやすいです。でも、いいじしょです。"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Jepang. Tulis dengan rōmaji.",
+      "items": [
+        "Ini kamus bahasa Jepang.",
+        "Payung itu punya siapa?",
+        "Bukan, salah.",
+        "Tas ini juga punya saya.",
+        "Jam yang di sana itu mahal, ya."
+      ]
+    },
+    {
+      "prompt": "Tulis nama benda ini dalam bahasa Jepang (kana).",
+      "items": [
+        "tas: ___",
+        "buku: ___",
+        "payung: ___",
+        "dompet: ___",
+        "laptop: ___",
+        "sepatu: ___"
+      ]
+    }
+  ],
+  "answers": [
+    "これ — それ — あれ — この — どれ",
+    "の — の — も — は — の — の",
+    "これ は わたし の かばん です — あの とけい は だれ の です か — その ほん も たなかさん の です か — いいえ ちがいます それ は やまださん の です — どんな かばん です か — この じしょ は ちょっと たかい です",
+    "Ini kopi Indonesia. — Pena itu punya siapa? — Bukan, salah. Bukan punya saya. — Tas hitam yang di sana itu juga punya Tanaka? — Kamus ini murah. Tapi kamus yang bagus.",
+    "kore wa Nihongo no jisho desu — sono kasa wa dare no desu ka — iie chigaimasu — kono kaban mo watashi no desu — ano tokei wa takai desu ne",
+    "かばん — ほん — かさ — さいふ — パソコン — くつ"
+  ],
+  "wave": "Sebelum masuk Unit 3, baca ulang kedua dialog Unit 1 dengan suara keras dan tutup kolom artinya. Perhatikan berapa banyak yang sekarang terbaca tanpa melirik rōmaji di atasnya — itu ukuran kemajuanmu yang sebenarnya."
+}

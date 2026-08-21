@@ -1,0 +1,944 @@
+{
+ "title": "Keluarga dan orang di sekitarmu",
+ "title_target": "かぞくは なんにんですか — Kazoku wa nannin desu ka",
+ "goal": "Menyebut anggota keluarga dengan dua sistem kata yang berbeda, menghitung orang dan umur, serta menerangkan orang lain — pekerjaannya, sifatnya, tempat tinggalnya.",
+ "bekal": [
+  "membedakan sebutan keluarga sendiri dan keluarga orang lain",
+  "menghitung orang dengan ～にん",
+  "menyebut umur dengan ～さい",
+  "menerangkan orang dengan kata sifat dan pekerjaan",
+  "bertanya tentang keluarga tanpa terdengar lancang"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Berapa orang keluargamu?",
+   "intro": "Tanaka bertanya tentang keluarga Ani. Perhatikan dengan cermat: kata untuk “ibu” berganti tergantung siapa yang punya ibu itu.",
+   "lines": [
+    {
+     "speaker": "たなか:",
+     "text": "[アニさんの|Ani-san no] [ごかぞくは|gokazoku wa] [なんにんですか|nannin desu ka]。",
+     "id": "Keluarga Ani berapa orang?",
+     "literal": "Ani-tuan — punya — keluarga-terhormat — mengenai — berapa-orang — adalah — kah."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[ごにん|Gonin] [かぞくです|kazoku desu]。[ちちと|Chichi to] [ははと|haha to] [あにと|ani to] [いもうとと|imōto to] [わたしです|watashi desu]。",
+     "id": "Keluarga lima orang. Ayah, ibu, kakak laki-laki, adik perempuan, dan saya.",
+     "literal": "lima-orang — keluarga — adalah. ayah — dan — ibu — dan — kakak-lelaki — dan — adik-perempuan — dan — saya — adalah."
+    },
+    {
+     "speaker": "たなか:",
+     "text": "[おにいさんは|Oniisan wa] [なんさいですか|nansai desu ka]。",
+     "id": "Kakak laki-lakimu berumur berapa?",
+     "literal": "kakak-lelaki-terhormat — mengenai — berapa-umur — adalah — kah."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[あには|Ani wa] 28[さいです|sai desu]。[ジャカルタで|Jakaruta de] [はたらいています|hataraite imasu]。",
+     "id": "Kakak saya 28 tahun. Dia bekerja di Jakarta.",
+     "literal": "kakak-lelaki — mengenai — 28 — umur — adalah. Jakarta — di — bekerja-sedang."
+    },
+    {
+     "speaker": "たなか:",
+     "text": "[おしごとは|Oshigoto wa] [なんですか|nan desu ka]。",
+     "id": "Pekerjaannya apa?",
+     "literal": "pekerjaan-terhormat — mengenai — apa — adalah — kah."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[いしゃです|Isha desu]。[とても|Totemo] [まじめな|majimena] [ひとです|hito desu]。",
+     "id": "Dokter. Orangnya sangat serius.",
+     "literal": "dokter — adalah. sangat — serius — orang — adalah."
+    },
+    {
+     "speaker": "たなか:",
+     "text": "[いもうとさんは|Imōtosan wa]？",
+     "id": "Kalau adik perempuanmu?",
+     "literal": "adik-perempuan-terhormat — mengenai?"
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[いもうとは|Imōto wa] [まだ|mada] [こうこうせいです|kōkōsei desu]。17[さいです|sai desu]。",
+     "id": "Adik saya masih SMA. Umur 17.",
+     "literal": "adik-perempuan — mengenai — masih — SMA-pelajar — adalah. 17 — umur — adalah."
+    },
+    {
+     "speaker": "たなか:",
+     "text": "[ごりょうしんは|Goryōshin wa] [おげんきですか|ogenki desu ka]。",
+     "id": "Orang tuamu sehat?",
+     "literal": "orang-tua-terhormat — mengenai — sehat-terhormat — adalah — kah."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[はい|Hai]、[おかげさまで|okagesama de] [げんきです|genki desu]。[たなかさんの|Tanaka-san no] [ごかぞくは|gokazoku wa]？",
+     "id": "Ya, alhamdulillah sehat. Kalau keluarga Tanaka?",
+     "literal": "ya, berkat-terhormat — dengan — sehat — adalah. Tanaka-tuan — punya — keluarga-terhormat — mengenai?"
+    },
+    {
+     "speaker": "たなか:",
+     "text": "[わたしは|Watashi wa] [ひとりっこです|hitorikko desu]。[りょうしんと|Ryōshin to] [さんにんです|sannin desu]。",
+     "id": "Saya anak tunggal. Bertiga dengan orang tua.",
+     "literal": "saya — mengenai — anak-tunggal — adalah. orang-tua — bersama — tiga-orang — adalah."
+    }
+   ],
+   "notes": [
+    "**Dua sistem kata keluarga, dan ini pembeda paling khas bahasa Jepang.** Untuk keluargamu sendiri, pakai bentuk pendek dan merendah: **ちち** (ayah saya), **はは** (ibu saya). Untuk keluarga orang lain, pakai bentuk panjang dan hormat: **おとうさん**, **おかあさん**. Memakai おかあさん untuk ibumu sendiri di depan orang luar terdengar seperti memuji keluargamu — itulah yang dihindari.",
+    "**Di dalam rumah, aturannya berbalik.** Kamu tetap memanggil ibumu おかあさん saat berbicara **kepadanya**. Bentuk はは cuma dipakai saat menceritakannya **kepada orang luar**. Ini bukan soal hormat pribadi, melainkan soal batas dalam-luar (うち/そと) yang mengatur banyak hal dalam bahasa Jepang.",
+    "**おかげさまで = “berkat Anda”**, dipakai sebagai jawaban sopan atas pertanyaan kabar. Tidak berarti lawan bicaramu benar-benar berjasa — ini ungkapan tetap, mirip “alhamdulillah” yang dipakai reflektif.",
+    "**ひとりっこ = anak tunggal.** Perhatikan つ kecil (っ) yang berarti jeda satu ketukan: hi-to-ri-k-ko.",
+    "**まだ = masih**, dan dengan kata kerja negatif berarti “belum”: まだです (belum). Dua arti, satu kata.",
+    "**はたらいています = sedang bekerja (di sana).** Bentuk ～ています di sini menyatakan **keadaan yang berlanjut** — pekerjaan tetap, bukan kegiatan sesaat. Kamu akan sering mendengarnya untuk profesi dan tempat tinggal: とうきょうに すんでいます (tinggal di Tokyo)."
+   ],
+   "grammars": [
+    {
+     "title": "Dua daftar kata keluarga",
+     "body": [
+      "Kolom kiri untuk **keluargamu sendiri** (saat bercerita ke orang luar). Kolom kanan untuk **keluarga orang lain** — dan juga untuk memanggil anggota keluargamu sendiri secara langsung."
+     ],
+     "table": {
+      "head": [
+       "Hubungan",
+       "Keluargaku (merendah)",
+       "Keluarga Anda (hormat)"
+      ],
+      "rows": [
+       [
+        "keluarga",
+        "[かぞく|kazoku] 家族",
+        "[ごかぞく|gokazoku] ご家族"
+       ],
+       [
+        "orang tua",
+        "[りょうしん|ryōshin] 両親",
+        "[ごりょうしん|goryōshin] ご両親"
+       ],
+       [
+        "ayah",
+        "[ちち|chichi] 父",
+        "[おとうさん|otōsan] お父さん"
+       ],
+       [
+        "ibu",
+        "[はは|haha] 母",
+        "[おかあさん|okāsan] お母さん"
+       ],
+       [
+        "kakak laki-laki",
+        "[あに|ani] 兄",
+        "[おにいさん|oniisan] お兄さん"
+       ],
+       [
+        "kakak perempuan",
+        "[あね|ane] 姉",
+        "[おねえさん|onēsan] お姉さん"
+       ],
+       [
+        "adik laki-laki",
+        "[おとうと|otōto] 弟",
+        "[おとうとさん|otōtosan] 弟さん"
+       ],
+       [
+        "adik perempuan",
+        "[いもうと|imōto] 妹",
+        "[いもうとさん|imōtosan] 妹さん"
+       ],
+       [
+        "suami",
+        "[しゅじん|shujin] 主人",
+        "[ごしゅじん|goshujin] ご主人"
+       ],
+       [
+        "istri",
+        "[つま|tsuma] 妻",
+        "[おくさん|okusan] 奥さん"
+       ],
+       [
+        "anak",
+        "[こども|kodomo] 子供",
+        "[おこさん|okosan] お子さん"
+       ],
+       [
+        "kakek",
+        "[そふ|sofu] 祖父",
+        "[おじいさん|ojiisan]"
+       ],
+       [
+        "nenek",
+        "[そぼ|sobo] 祖母",
+        "[おばあさん|obāsan]"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Bahasa Jepang membedakan kakak dan adik, tapi tidak punya kata umum untuk “saudara”.** Tidak ada satu kata yang berarti “kakak/adik” tanpa menyebutkan mana yang lebih tua — persis kebalikan bahasa Inggris yang punya *brother* tapi tidak membedakan urutan.",
+      "**Kalau kamu lupa, pakai bentuk hormat untuk orang lain.** Salah karena terlalu hormat jauh lebih ringan daripada salah karena terlalu akrab."
+     ]
+    },
+    {
+     "title": "Menghitung orang dan umur",
+     "body": [
+      "Orang dihitung dengan **～にん (人)**, umur dengan **～さい (歳/才)**. Keduanya teratur kecuali beberapa bentuk yang harus dihafal."
+     ],
+     "tables": [
+      {
+       "head": [
+        "Jumlah orang",
+        "Bacaan",
+        "Jumlah orang",
+        "Bacaan"
+       ],
+       "rows": [
+        [
+         "1 人",
+         "[ひとり|hitori] ⚠️",
+         "6 人",
+         "[ろくにん|rokunin]"
+        ],
+        [
+         "2 人",
+         "[ふたり|futari] ⚠️",
+         "7 人",
+         "[ななにん|nananin]"
+        ],
+        [
+         "3 人",
+         "[さんにん|sannin]",
+         "8 人",
+         "[はちにん|hachinin]"
+        ],
+        [
+         "4 人",
+         "[よにん|yonin] ⚠️",
+         "9 人",
+         "[きゅうにん|kyūnin]"
+        ],
+        [
+         "5 人",
+         "[ごにん|gonin]",
+         "10 人",
+         "[じゅうにん|jūnin]"
+        ],
+        [
+         "berapa orang",
+         "[なんにん|nannin]",
+         "sendirian",
+         "[ひとりで|hitori de]"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Umur",
+        "Bacaan",
+        "Umur",
+        "Bacaan"
+       ],
+       "rows": [
+        [
+         "1 歳",
+         "[いっさい|issai] ⚠️",
+         "10 歳",
+         "[じゅっさい|jussai] ⚠️"
+        ],
+        [
+         "2 歳",
+         "[にさい|nisai]",
+         "17 歳",
+         "[じゅうななさい|jūnanasai]"
+        ],
+        [
+         "3 歳",
+         "[さんさい|sansai]",
+         "20 歳",
+         "[はたち|hatachi] ⚠️⚠️"
+        ],
+        [
+         "4 歳",
+         "[よんさい|yonsai]",
+         "28 歳",
+         "[にじゅうはっさい|nijūhassai]"
+        ],
+        [
+         "8 歳",
+         "[はっさい|hassai] ⚠️",
+         "berapa",
+         "[なんさい|nansai]"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️⚠️ **20 tahun = はたち**, sama sekali tidak mengikuti pola. Angka ini penting di Jepang: 20 adalah usia dewasa menurut hukum lama dan tetap jadi tonggak sosial.",
+      "**Bertanya umur dengan hati-hati.** なんさいですか wajar untuk anak-anak dan teman sebaya, tapi kepada orang yang lebih tua sebaiknya dihindari sama sekali. Bentuk halusnya **おいくつですか**."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Menerangkan seseorang",
+   "intro": "Ani memperkenalkan teman sekelasnya lewat foto. Perhatikan bagaimana kata sifat dan kata benda dirangkai untuk menggambarkan orang.",
+   "lines": [
+    {
+     "speaker": "たなか:",
+     "text": "[この|Kono] [しゃしんの|shashin no] [ひとは|hito wa] [だれですか|dare desu ka]。",
+     "id": "Orang di foto ini siapa?",
+     "literal": "ini — foto — punya — orang — mengenai — siapa — adalah — kah."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[クラスの|Kurasu no] [ともだちです|tomodachi desu]。[なまえは|Namae wa] [マヤさんです|Maya-san desu]。",
+     "id": "Teman sekelas. Namanya Maya.",
+     "literal": "kelas — punya — teman — adalah. nama — mengenai — Maya-tuan — adalah."
+    },
+    {
+     "speaker": "たなか:",
+     "text": "[どんな|Donna] [ひとですか|hito desu ka]。",
+     "id": "Orangnya bagaimana?",
+     "literal": "seperti-apa — orang — adalah — kah."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[あかるくて|Akarukute]、[しんせつな|shinsetsuna] [ひとです|hito desu]。[かみが|Kami ga] [ながいです|nagai desu]。",
+     "id": "Orang yang ceria dan ramah. Rambutnya panjang.",
+     "literal": "ceria-dan, ramah — orang — adalah. rambut — yang — panjang — adalah."
+    },
+    {
+     "speaker": "たなか:",
+     "text": "[マヤさんも|Maya-san mo] [インドネシアじんですか|Indoneshia-jin desu ka]。",
+     "id": "Maya juga orang Indonesia?",
+     "literal": "Maya-tuan — juga — Indonesia-orang — adalah — kah."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[はい|Hai]、[スラバヤから|Surabaya kara] [きました|kimashita]。[いま|Ima] [おおさかに|Ōsaka ni] [すんでいます|sunde imasu]。",
+     "id": "Ya, dia datang dari Surabaya. Sekarang tinggal di Osaka.",
+     "literal": "ya, Surabaya — dari — datang-sudah. sekarang — Osaka — di — tinggal-sedang."
+    },
+    {
+     "speaker": "たなか:",
+     "text": "[そのとなりの|Sono tonari no] [ひとは|hito wa]？",
+     "id": "Yang di sebelahnya?",
+     "literal": "itu — sebelah — punya — orang — mengenai?"
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[せんせいです|Sensei desu]。[きびしいですが|Kibishii desu ga]、[いい|ii] [せんせいです|sensei desu]。",
+     "id": "Guru. Galak, tapi guru yang baik.",
+     "literal": "guru — adalah. keras — adalah — tetapi, baik — guru — adalah."
+    },
+    {
+     "speaker": "たなか:",
+     "text": "[せが|Se ga] [たかいですね|takai desu ne]。",
+     "id": "Badannya tinggi, ya.",
+     "literal": "punggung — yang — tinggi — adalah — ya."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[はい|Hai]、190[センチ|senchi] [ぐらいです|gurai desu]。[バスケットボールが|Basukettobōru ga] [じょうずです|jōzu desu]。",
+     "id": "Ya, sekitar 190 senti. Dia jago basket.",
+     "literal": "ya, 190 — senti — kira-kira — adalah. bola-basket — yang — mahir — adalah."
+    }
+   ],
+   "notes": [
+    "**せがたかい = tinggi (badan), bukan たかい saja.** たかいひと bisa terbaca “orang yang mahal”. Untuk tinggi badan, せ (tinggi badan) yang jadi subjeknya: せがたかい / せがひくい.",
+    "**Bagian tubuh dan sifat memakai pola ～が～です.** かみがながい (rambutnya panjang), めがおおきい (matanya besar), あたまがいい (pintar — harfiahnya “kepalanya bagus”). Yang diterangkan は, bagiannya が.",
+    "**すんでいます = tinggal (menetap).** Selalu dalam bentuk ～ています, tidak pernah すみます untuk menyatakan tempat tinggal. Tempatnya ditandai **に**: とうきょうに すんでいます.",
+    "**あかるくて — kata sifat い disambung dengan ～くて.** あかるい + しんせつ = あかるくて、しんせつな. Kata sifat な disambung dengan で: しんせつで、あかるい.",
+    "**きびしい = keras, ketat.** Untuk guru dan atasan, ini bukan penghinaan — sering justru pujian yang bercampur hormat.",
+    "**センチ = sentimeter**, dari *centimeter*. Tinggi badan di Jepang selalu disebut dalam sentimeter penuh: 170センチ, bukan 1,7 meter."
+   ],
+   "grammars": [
+    {
+     "title": "Menyambung dua kata sifat",
+     "body": [
+      "Untuk menempelkan dua sifat pada satu benda atau orang, kata sifat pertama diubah jadi bentuk penyambung. Bentuknya berbeda menurut jenis kata sifatnya."
+     ],
+     "table": {
+      "head": [
+       "Jenis",
+       "Cara",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "Kata sifat い",
+        "い → **くて**",
+        "[やすくて|Yasukute] [おいしい|oishii] — murah dan enak"
+       ],
+       [
+        "Kata sifat な",
+        "+ **で**",
+        "[しずかで|Shizuka de] [きれい|kirei] — tenang dan bersih"
+       ],
+       [
+        "Kata benda",
+        "+ **で**",
+        "[がくせいで|Gakusei de] 20[さい|sai] — pelajar dan berumur 20"
+       ],
+       [
+        "⚠️ いい",
+        "→ **よくて**",
+        "[よくて|Yokute] [やすい|yasui] — bagus dan murah"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Sambungan ini hanya untuk sifat yang searah.** Kalau dua sifatnya berlawanan (mahal tapi enak), pakai **が** = tetapi: たかいです**が**、おいしいです。 Memakai くて untuk sifat berlawanan terdengar janggal bagi orang Jepang."
+     ]
+    },
+    {
+     "title": "Menggambarkan orang",
+     "body": [
+      "Susunan yang paling wajar: **sifat → orangnya → keterangan tambahan**. Perhatikan bahwa kata sifat な memerlukan な saat menempel ke ひと, kata sifat い tidak."
+     ],
+     "tables": [
+      {
+       "head": [
+        "Sifat",
+        "Arti",
+        "Kalimat"
+       ],
+       "rows": [
+        [
+         "[あかるい|akarui] 明るい",
+         "ceria",
+         "[あかるい|Akarui] [ひとです|hito desu]。"
+        ],
+        [
+         "[やさしい|yasashii] 優しい",
+         "lembut, baik",
+         "[やさしい|Yasashii] [ひとです|hito desu]。"
+        ],
+        [
+         "[きびしい|kibishii] 厳しい",
+         "keras, ketat",
+         "[きびしい|Kibishii] [せんせいです|sensei desu]。"
+        ],
+        [
+         "[おもしろい|omoshiroi]",
+         "lucu, menarik",
+         "[おもしろい|Omoshiroi] [ひとです|hito desu]。"
+        ],
+        [
+         "[しんせつ|shinsetsu] 親切",
+         "ramah",
+         "[しんせつな|Shinsetsuna] [ひとです|hito desu]。"
+        ],
+        [
+         "[まじめ|majime]",
+         "tekun, serius",
+         "[まじめな|Majimena] [がくせいです|gakusei desu]。"
+        ],
+        [
+         "[げんき|genki] 元気",
+         "bersemangat",
+         "[げんきな|Genkina] [こどもです|kodomo desu]。"
+        ],
+        [
+         "[しずか|shizuka] 静か",
+         "pendiam",
+         "[しずかな|Shizukana] [ひとです|hito desu]。"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Ciri fisik",
+        "Kalimat",
+        "Arti"
+       ],
+       "rows": [
+        [
+         "tinggi badan",
+         "[せが|Se ga] [たかいです|takai desu]。",
+         "Badannya tinggi."
+        ],
+        [
+         "pendek",
+         "[せが|Se ga] [ひくいです|hikui desu]。",
+         "Badannya pendek."
+        ],
+        [
+         "rambut",
+         "[かみが|Kami ga] [ながいです|nagai desu]。",
+         "Rambutnya panjang."
+        ],
+        [
+         "mata",
+         "[めが|Me ga] [おおきいです|ōkii desu]。",
+         "Matanya besar."
+        ],
+        [
+         "pintar",
+         "[あたまが|Atama ga] [いいです|ii desu]。",
+         "Dia pintar."
+        ],
+        [
+         "umur",
+         "20[さいです|sai desu]。",
+         "Umur 20."
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "**Menghindari komentar fisik.** Di Jepang, mengomentari berat badan, usia, atau penampilan orang yang baru dikenal dianggap sangat lancang — jauh lebih ketat daripada kebiasaan Indonesia. Kalau ragu, batasi pada sifat dan pekerjaan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pekerjaan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Semua bisa dipakai dengan pola sederhana yang sudah kamu kuasai sejak Unit 1: **[siapa] は [pekerjaan] です**."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Jepang",
+      "Arti",
+      "Jepang",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "[かいしゃいん|kaishain] 会社員",
+       "karyawan",
+       "[こうむいん|kōmuin] 公務員",
+       "pegawai negeri"
+      ],
+      [
+       "[せんせい|sensei] 先生",
+       "guru",
+       "[きょうし|kyōshi] 教師",
+       "guru (menyebut diri)"
+      ],
+      [
+       "[いしゃ|isha] 医者",
+       "dokter",
+       "[かんごし|kangoshi] 看護師",
+       "perawat"
+      ],
+      [
+       "[エンジニア|enjinia]",
+       "insinyur",
+       "[プログラマー|puroguramā]",
+       "programmer"
+      ],
+      [
+       "[べんごし|bengoshi] 弁護士",
+       "pengacara",
+       "[ぎんこういん|ginkōin] 銀行員",
+       "pegawai bank"
+      ],
+      [
+       "[てんいん|ten'in] 店員",
+       "pelayan toko",
+       "[コック|kokku]",
+       "juru masak"
+      ],
+      [
+       "[うんてんしゅ|untenshu] 運転手",
+       "sopir",
+       "[けいさつかん|keisatsukan] 警察官",
+       "polisi"
+      ],
+      [
+       "[がくせい|gakusei] 学生",
+       "mahasiswa",
+       "[こうこうせい|kōkōsei] 高校生",
+       "pelajar SMA"
+      ],
+      [
+       "[しゅふ|shufu] 主婦",
+       "ibu rumah tangga",
+       "[むしょく|mushoku] 無職",
+       "belum bekerja"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ せんせい tidak dipakai untuk diri sendiri",
+     "items": [
+      "せんせい adalah **sebutan hormat** yang diberikan orang lain kepadamu. Menyebut diri sendiri “わたしはせんせいです” terdengar seperti menuntut dihormati.",
+      "Kalau kamu memang guru, sebut dirimu **きょうし** (教師) — kata netral untuk profesi guru.",
+      "Pola yang sama berlaku di seluruh bahasa Jepang: bentuk hormat untuk orang lain, bentuk netral atau merendah untuk diri sendiri. Kamu sudah melihatnya pada keluarga di unit ini, dan pada さん di Unit 1."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bertanya tentang keluarga tanpa canggung",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Di Jepang, pertanyaan tentang keluarga jauh lebih hati-hati daripada di Indonesia. Yang aman ditanyakan kepada kenalan baru:"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Aman ditanyakan",
+      "Kalimat"
+     ],
+     "rows": [
+      [
+       "Berapa orang keluarganya",
+       "[ごかぞくは|Gokazoku wa] [なんにんですか|nannin desu ka]。"
+      ],
+      [
+       "Punya saudara atau tidak",
+       "[きょうだいは|Kyōdai wa] [いますか|imasu ka]。"
+      ],
+      [
+       "Tinggal di mana",
+       "[どこに|Doko ni] [すんでいますか|sunde imasu ka]。"
+      ],
+      [
+       "Pekerjaannya",
+       "[おしごとは|Oshigoto wa] [なんですか|nan desu ka]。"
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Sebaiknya dihindari",
+      "Kenapa"
+     ],
+     "rows": [
+      [
+       "Umur orang dewasa",
+       "Dianggap urusan pribadi, apalagi kepada perempuan."
+      ],
+      [
+       "Sudah menikah atau belum",
+       "Pertanyaan yang lazim di Indonesia, tapi terasa menekan di Jepang."
+      ],
+      [
+       "Gaji, sewa rumah",
+       "Nyaris tabu, bahkan antar teman."
+      ],
+      [
+       "Kenapa belum punya anak",
+       "Sangat lancang."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kalau kamu yang ditanya",
+     "items": [
+      "Kamu tidak wajib menjawab lengkap. **[ちょっと|Chotto]…** sudah cukup untuk menutup pertanyaan tanpa menyinggung — dan orang Jepang akan langsung mengerti.",
+      "Sebaliknya, kalau kamu ingin mengalihkan: jawab pendek, lalu balikkan pertanyaannya dengan **[～さんは|～-san wa]？** — pola yang sudah kamu pakai sejak Unit 1."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ja": "[かぞく|kazoku] 家族",
+   "baca": "かぞく · kazoku",
+   "id": "keluarga (saya)"
+  },
+  {
+   "ja": "[ごかぞく|gokazoku] ご家族",
+   "baca": "ごかぞく · gokazoku",
+   "id": "keluarga (Anda)"
+  },
+  {
+   "ja": "[りょうしん|ryōshin] 両親",
+   "baca": "りょうしん · ryōshin",
+   "id": "orang tua (saya)"
+  },
+  {
+   "ja": "[ちち|chichi] 父",
+   "baca": "ちち · chichi",
+   "id": "ayah (saya)"
+  },
+  {
+   "ja": "[はは|haha] 母",
+   "baca": "はは · haha",
+   "id": "ibu (saya)"
+  },
+  {
+   "ja": "[おとうさん|otōsan] お父さん",
+   "baca": "おとうさん · otōsan",
+   "id": "ayah (Anda)"
+  },
+  {
+   "ja": "[おかあさん|okāsan] お母さん",
+   "baca": "おかあさん · okāsan",
+   "id": "ibu (Anda)"
+  },
+  {
+   "ja": "[あに|ani] 兄",
+   "baca": "あに · ani",
+   "id": "kakak laki-laki (saya)"
+  },
+  {
+   "ja": "[あね|ane] 姉",
+   "baca": "あね · ane",
+   "id": "kakak perempuan (saya)"
+  },
+  {
+   "ja": "[おとうと|otōto] 弟",
+   "baca": "おとうと · otōto",
+   "id": "adik laki-laki (saya)"
+  },
+  {
+   "ja": "[いもうと|imōto] 妹",
+   "baca": "いもうと · imōto",
+   "id": "adik perempuan (saya)"
+  },
+  {
+   "ja": "[おにいさん|oniisan] お兄さん",
+   "baca": "おにいさん · oniisan",
+   "id": "kakak laki-laki (Anda)"
+  },
+  {
+   "ja": "[おねえさん|onēsan] お姉さん",
+   "baca": "おねえさん · onēsan",
+   "id": "kakak perempuan (Anda)"
+  },
+  {
+   "ja": "[きょうだい|kyōdai] 兄弟",
+   "baca": "きょうだい · kyōdai",
+   "id": "saudara kandung"
+  },
+  {
+   "ja": "[こども|kodomo] 子供",
+   "baca": "こども · kodomo",
+   "id": "anak"
+  },
+  {
+   "ja": "[つま|tsuma] 妻",
+   "baca": "つま · tsuma",
+   "id": "istri (saya)"
+  },
+  {
+   "ja": "[おくさん|okusan] 奥さん",
+   "baca": "おくさん · okusan",
+   "id": "istri (Anda)"
+  },
+  {
+   "ja": "[しゅじん|shujin] 主人",
+   "baca": "しゅじん · shujin",
+   "id": "suami (saya)"
+  },
+  {
+   "ja": "[そふ|sofu] 祖父",
+   "baca": "そふ · sofu",
+   "id": "kakek (saya)"
+  },
+  {
+   "ja": "[そぼ|sobo] 祖母",
+   "baca": "そぼ · sobo",
+   "id": "nenek (saya)"
+  },
+  {
+   "ja": "[ひとりっこ|hitorikko] 一人っ子",
+   "baca": "ひとりっこ · hitorikko",
+   "id": "anak tunggal"
+  },
+  {
+   "ja": "[にん|nin] 人",
+   "baca": "にん · nin",
+   "id": "penggolong orang"
+  },
+  {
+   "ja": "[なんにん|nannin] 何人",
+   "baca": "なんにん · nannin",
+   "id": "berapa orang"
+  },
+  {
+   "ja": "[さい|sai] 歳",
+   "baca": "さい · sai",
+   "id": "tahun (umur)"
+  },
+  {
+   "ja": "[なんさい|nansai] 何歳",
+   "baca": "なんさい · nansai",
+   "id": "umur berapa"
+  },
+  {
+   "ja": "[はたち|hatachi] 二十歳",
+   "baca": "はたち · hatachi",
+   "id": "umur 20"
+  },
+  {
+   "ja": "[すんでいます|sunde imasu] 住んでいます",
+   "baca": "すんでいます · sunde imasu",
+   "id": "tinggal (menetap)"
+  },
+  {
+   "ja": "[はたらいています|hataraite imasu] 働いています",
+   "baca": "はたらいています · hataraite imasu",
+   "id": "bekerja (sebagai)"
+  },
+  {
+   "ja": "[しゃしん|shashin] 写真",
+   "baca": "しゃしん · shashin",
+   "id": "foto"
+  },
+  {
+   "ja": "[かみ|kami] 髪",
+   "baca": "かみ · kami",
+   "id": "rambut"
+  },
+  {
+   "ja": "[め|me] 目",
+   "baca": "め · me",
+   "id": "mata"
+  },
+  {
+   "ja": "[せ|se] 背",
+   "baca": "せ · se",
+   "id": "tinggi badan"
+  },
+  {
+   "ja": "[あたま|atama] 頭",
+   "baca": "あたま · atama",
+   "id": "kepala"
+  },
+  {
+   "ja": "[あかるい|akarui] 明るい",
+   "baca": "あかるい · akarui",
+   "id": "ceria, terang"
+  },
+  {
+   "ja": "[きびしい|kibishii] 厳しい",
+   "baca": "きびしい · kibishii",
+   "id": "keras, ketat"
+  },
+  {
+   "ja": "[まじめ|majime] 真面目",
+   "baca": "まじめ · majime",
+   "id": "tekun, serius"
+  },
+  {
+   "ja": "[ひくい|hikui] 低い",
+   "baca": "ひくい · hikui",
+   "id": "rendah, pendek"
+  },
+  {
+   "ja": "[いしゃ|isha] 医者",
+   "baca": "いしゃ · isha",
+   "id": "dokter"
+  },
+  {
+   "ja": "[べんごし|bengoshi] 弁護士",
+   "baca": "べんごし · bengoshi",
+   "id": "pengacara"
+  },
+  {
+   "ja": "[こうむいん|kōmuin] 公務員",
+   "baca": "こうむいん · kōmuin",
+   "id": "pegawai negeri"
+  },
+  {
+   "ja": "[こうこうせい|kōkōsei] 高校生",
+   "baca": "こうこうせい · kōkōsei",
+   "id": "pelajar SMA"
+  },
+  {
+   "ja": "[しゅふ|shufu] 主婦",
+   "baca": "しゅふ · shufu",
+   "id": "ibu rumah tangga"
+  },
+  {
+   "ja": "[まだ|mada]",
+   "baca": "まだ · mada",
+   "id": "masih; belum"
+  },
+  {
+   "ja": "[おかげさまで|okagesama de]",
+   "baca": "おかげさまで · okagesama de",
+   "id": "syukurlah"
+  },
+  {
+   "ja": "[おいくつ|oikutsu]",
+   "baca": "おいくつ · oikutsu",
+   "id": "berumur berapa (halus)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih bentuk yang tepat: keluargamu sendiri atau keluarga orang lain.",
+   "items": [
+    "Ibu saya (kepada orang luar): ___",
+    "Ibu Anda: ___",
+    "Ayah saya (kepada orang luar): ___",
+    "Kakak laki-laki Anda: ___",
+    "Adik perempuan saya: ___",
+    "Keluarga Anda: ___"
+   ]
+  },
+  {
+   "prompt": "Tulis jumlah orang ini dalam kana.",
+   "items": [
+    "1 orang: ___",
+    "2 orang: ___",
+    "4 orang: ___",
+    "5 orang: ___",
+    "berapa orang: ___"
+   ]
+  },
+  {
+   "prompt": "Isi partikel yang hilang.",
+   "items": [
+    "わたし ___ かぞくは5にんです。",
+    "あに ___ いしゃです。",
+    "とうきょう ___ すんでいます。",
+    "かみ ___ ながいです。",
+    "せ ___ たかいですね。",
+    "きびしいです ___ 、いいせんせいです。"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "わたし / の / かぞく / は / ごにん / です",
+    "あに / は / いしゃ / です",
+    "いま / おおさか / に / すんでいます",
+    "あかるくて / しんせつな / ひと / です",
+    "ごかぞく / は / なんにん / です / か",
+    "いもうと / は / まだ / こうこうせい / です"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "わたしはひとりっこです。",
+    "ちちはこうむいんです。",
+    "あねはとうきょうではたらいています。",
+    "マヤさんはやさしいひとです。",
+    "ごりょうしんはおげんきですか。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang. Tulis dengan rōmaji.",
+   "items": [
+    "Keluarga saya lima orang.",
+    "Ayah saya dokter.",
+    "Saya tinggal di Tokyo.",
+    "Keluarga Anda berapa orang?",
+    "Dia orang yang ramah."
+   ]
+  }
+ ],
+ "answers": [
+  "はは — おかあさん — ちち — おにいさん — いもうと — ごかぞく",
+  "ひとり — ふたり — よにん — ごにん — なんにん",
+  "の — は — に — が — が — が",
+  "わたし の かぞく は ごにん です — あに は いしゃ です — いま おおさか に すんでいます — あかるくて しんせつな ひと です — ごかぞく は なんにん です か — いもうと は まだ こうこうせい です",
+  "Saya anak tunggal. — Ayah saya pegawai negeri. — Kakak perempuan saya bekerja di Tokyo. — Maya orang yang baik hati. — Orang tua Anda sehat?",
+  "watashi no kazoku wa gonin desu — chichi wa isha desu — watashi wa Tōkyō ni sunde imasu — gokazoku wa nannin desu ka — shinsetsuna hito desu"
+ ],
+ "wave": "Ulangi Unit 7 lewat unit ini: gambarkan tiga orang terdekatmu, masing-masing dengan **dua kata sifat yang disambung** — satu kata sifat い dan satu kata sifat な. Perhatikan sambungannya: くて untuk yang pertama, で untuk yang kedua."
+}

@@ -1,0 +1,336 @@
+{
+  "title": "Kegiatan sehari-hari",
+  "title_target": "まいにち なにを しますか — Mainichi nani o shimasu ka",
+  "goal": "Menceritakan apa yang kamu lakukan setiap hari: kata kerja bentuk ます dengan objeknya, tempat kegiatannya, alat yang dipakai, dan orang yang bersamamu.",
+  "bekal": [
+    "memakai を untuk menandai objek",
+    "memakai で untuk tempat kegiatan dan alat",
+    "memakai へ / に untuk arah tujuan",
+    "memakai と untuk menyatakan bersama siapa",
+    "menceritakan satu hari penuh dalam bahasa Jepang"
+  ],
+  "dialogs": [
+    {
+      "title": "会話 1 — Hari-harimu bagaimana?",
+      "intro": "Tanaka menanyakan kebiasaan Ani. Perhatikan bagaimana satu kalimat bisa memuat waktu, tempat, objek, dan kata kerja sekaligus — dan selalu dalam urutan itu.",
+      "lines": [
+        {"speaker": "たなか:", "text": "[アニさんは|Ani-san wa] [まいにち|mainichi] [なにを|nani o] [しますか|shimasu ka]。", "id": "Ani, setiap hari kamu melakukan apa?", "literal": "Ani-tuan — mengenai — setiap-hari — apa — akan — melakukan — kah."},
+        {"speaker": "アニ:", "text": "[あさ|Asa] [がっこうで|gakkō de] [にほんごを|Nihongo o] [べんきょうします|benkyō shimasu]。", "id": "Pagi hari saya belajar bahasa Jepang di sekolah.", "literal": "pagi — sekolah — di — Jepang-bahasa — akan — belajar-melakukan."},
+        {"speaker": "たなか:", "text": "[ごごは|Gogo wa]？", "id": "Kalau sorenya?", "literal": "sore — mengenai?"},
+        {"speaker": "アニ:", "text": "[ごごは|Gogo wa] [としょかんで|toshokan de] [ほんを|hon o] [よみます|yomimasu]。", "id": "Sore saya membaca buku di perpustakaan.", "literal": "sore — mengenai — perpustakaan — di — buku — akan — membaca."},
+        {"speaker": "たなか:", "text": "[ひとりで|Hitori de] [いきますか|ikimasu ka]。", "id": "Pergi sendirian?", "literal": "satu-orang — dengan — pergi — kah."},
+        {"speaker": "アニ:", "text": "[いいえ|Iie]、[ともだちと|tomodachi to] [いきます|ikimasu]。[ときどき|Tokidoki] [カフェで|kafe de] [コーヒーを|kōhī o] [のみます|nomimasu]。", "id": "Tidak, saya pergi dengan teman. Kadang-kadang kami minum kopi di kafe.", "literal": "tidak, teman — bersama — pergi. kadang-kadang — kafe — di — kopi — akan — minum."},
+        {"speaker": "たなか:", "text": "[うちへは|Uchi e wa] [なんじに|nanji ni] [かえりますか|kaerimasu ka]。", "id": "Pulang ke rumah jam berapa?", "literal": "rumah — ke — mengenai — apa-jam — pada — pulang — kah."},
+        {"speaker": "アニ:", "text": "[ろくじごろ|Roku-ji goro] [かえります|kaerimasu]。[でんしゃで|Densha de] [かえります|kaerimasu]。", "id": "Pulang sekitar jam 6. Pulang naik kereta.", "literal": "enam-jam — sekitar — pulang. kereta — dengan — pulang."},
+        {"speaker": "たなか:", "text": "[よるは|Yoru wa] [なにを|nani o] [しますか|shimasu ka]。", "id": "Malamnya melakukan apa?", "literal": "malam — mengenai — apa — akan — melakukan — kah."},
+        {"speaker": "アニ:", "text": "[ばんごはんを|Bangohan o] [つくります|tsukurimasu]。[それから|Sorekara] [テレビを|terebi o] [みます|mimasu]。", "id": "Saya memasak makan malam. Setelah itu menonton televisi.", "literal": "makan-malam — akan — membuat. sesudah-itu — televisi — akan — melihat."},
+        {"speaker": "たなか:", "text": "[まいにち|Mainichi] [いそがしいですね|isogashii desu ne]。", "id": "Setiap hari sibuk, ya.", "literal": "setiap-hari — sibuk — adalah — ya."}
+      ],
+      "notes": [
+        "**Urutan kata dalam kalimat Jepang jauh lebih longgar daripada dugaan** — kecuali satu hal: **kata kerja selalu di ujung**. Selebihnya urutan yang paling wajar adalah: siapa は — kapan — di mana で — apa を — kata kerja.",
+        "**します = melakukan**, kata kerja paling serba guna. Digabungkan dengan kata benda ia membentuk ratusan kata kerja baru: べんきょう**します** (belajar), しごと**します** (bekerja), そうじ**します** (bersih-bersih), でんわ**します** (menelepon).",
+        "**ごろ vs ぐらい.** ごろ untuk **titik waktu** (6じごろ = sekitar jam 6), ぐらい untuk **jumlah dan durasi** (5ふんぐらい = sekitar 5 menit). Menukarnya langsung terdengar salah bagi orang Jepang.",
+        "**ひとりで = sendirian**, memakai で. Pasangannya ともだち**と** = bersama teman, memakai と. Dua partikel berbeda untuk dua gagasan yang berkerabat.",
+        "**それから = setelah itu**, dipakai untuk merangkai kegiatan berurutan. Kerabatnya: そして (dan lalu), でも (tapi), だから (karena itu).",
+        "**うちへは — dua partikel bertumpuk.** へ menandai arah, は menjadikannya topik. Ini wajar dan dipakai untuk membandingkan: “kalau soal ke rumah, jam berapa?”"
+      ],
+      "grammars": [
+        {
+          "title": "を dan で — dua partikel yang paling sering tertukar",
+          "body": [
+            "**を** menandai **objek**: apa yang dikenai kegiatan. **で** menandai **tempat kegiatan** atau **alat**. Keduanya sering muncul dalam satu kalimat, dan urutannya hampir selalu tempat dulu, objek kemudian."
+          ],
+          "table": {
+            "head": ["Kalimat", "Arti", "Yang ditandai"],
+            "rows": [
+              ["[ほんを|Hon o] [よみます|yomimasu]。", "Membaca buku.", "を — objek"],
+              ["[としょかんで|Toshokan de] [よみます|yomimasu]。", "Membaca di perpustakaan.", "で — tempat kegiatan"],
+              ["[としょかんで|Toshokan de] [ほんを|hon o] [よみます|yomimasu]。", "Membaca buku di perpustakaan.", "keduanya"],
+              ["[でんしゃで|Densha de] [いきます|ikimasu]。", "Pergi naik kereta.", "で — alat"],
+              ["[にほんごで|Nihongo de] [はなします|hanashimasu]。", "Berbicara dalam bahasa Jepang.", "で — alat (bahasa)"],
+              ["[ともだちと|Tomodachi to] [はなします|hanashimasu]。", "Berbicara dengan teman.", "と — bersama siapa"]
+            ]
+          },
+          "after": [
+            "⚠️ **で (tempat kegiatan) vs に (tempat keberadaan).** Bandingkan: きょうしつ**に** います (berada **di** kelas — Unit 5) dan きょうしつ**で** べんきょうします (belajar **di** kelas). Kalau ada kegiatan yang dilakukan, pakai で. Kalau cuma menyatakan ada di situ, pakai に. Ini pembeda partikel paling penting di tingkat A1.",
+            "⚠️ **を ditulis dengan huruf を, bukan お.** Huruf ini hanya dipakai sebagai partikel dan tidak pernah muncul di dalam kata."
+          ]
+        },
+        {
+          "title": "へ dan に untuk arah tujuan",
+          "body": [
+            "Untuk kata kerja gerak — いきます (pergi), きます (datang), かえります (pulang) — arah tujuannya ditandai **へ** atau **に**. Keduanya nyaris bisa ditukar.",
+            "Bedanya tipis: **へ** menekankan **arahnya**, **に** menekankan **titik tibanya**. Dalam praktik sehari-hari, pilih yang mana pun.",
+            "⚠️ **へ sebagai partikel dibaca *e*, bukan *he*.** Ini pengecualian kedua setelah は yang dibaca *wa*."
+          ],
+          "table": {
+            "head": ["Kalimat", "Arti"],
+            "rows": [
+              ["[がっこうへ|Gakkō e] [いきます|ikimasu]。", "Pergi ke sekolah."],
+              ["[うちへ|Uchi e] [かえります|kaerimasu]。", "Pulang ke rumah."],
+              ["[にほんに|Nihon ni] [きました|kimashita]。", "Datang ke Jepang."],
+              ["[どこへ|Doko e] [いきますか|ikimasu ka]。", "Pergi ke mana?"],
+              ["[でんしゃで|Densha de] [えきへ|eki e] [いきます|ikimasu]。", "Pergi ke stasiun naik kereta."]
+            ]
+          },
+          "after": [
+            "**Rangkaian lengkapnya:** [まいにち|Mainichi] [でんしゃで|densha de] [がっこうへ|gakkō e] [いきます|ikimasu]。 — kapan, dengan apa, ke mana, kata kerja. Urutan ini yang paling terdengar wajar."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "会話 2 — Akhir pekan",
+      "intro": "Budi menceritakan rencana akhir pekannya. Perhatikan kata keterangan frekuensi yang muncul di beberapa baris.",
+      "lines": [
+        {"speaker": "アニ:", "text": "[ブディさんは|Budi-san wa] [しゅうまつ|shūmatsu] [なにを|nani o] [しますか|shimasu ka]。", "id": "Budi, akhir pekan melakukan apa?", "literal": "Budi-tuan — mengenai — akhir-pekan — apa — akan — melakukan — kah."},
+        {"speaker": "ブディ:", "text": "[どようびは|Doyōbi wa] [うちで|uchi de] [やすみます|yasumimasu]。[にちようびは|Nichiyōbi wa] [こうえんで|kōen de] [サッカーを|sakkā o] [します|shimasu]。", "id": "Sabtu istirahat di rumah. Minggu main sepak bola di taman.", "literal": "Sabtu — mengenai — rumah — di — beristirahat. Minggu — mengenai — taman — di — sepak-bola — akan — melakukan."},
+        {"speaker": "アニ:", "text": "[よく|Yoku] [サッカーを|sakkā o] [しますか|shimasu ka]。", "id": "Sering main sepak bola?", "literal": "sering — sepak-bola — akan — melakukan — kah."},
+        {"speaker": "ブディ:", "text": "[まいしゅう|Maishū] [します|shimasu]。[インドネシアじんの|Indoneshia-jin no] [ともだちと|tomodachi to] [します|shimasu]。", "id": "Setiap minggu. Main dengan teman-teman orang Indonesia.", "literal": "setiap-minggu — melakukan. Indonesia-orang — punya — teman — bersama — melakukan."},
+        {"speaker": "アニ:", "text": "[おもしろそうですね|Omoshirosō desu ne]。[わたしは|Watashi wa] [スポーツを|supōtsu o] [あまり|amari] [しません|shimasen]。", "id": "Kedengarannya seru. Saya jarang berolahraga.", "literal": "menarik-tampak — adalah — ya. saya — mengenai — olahraga — akan — tidak-begitu — tidak-melakukan."},
+        {"speaker": "ブディ:", "text": "[じゃあ|Jā]、[なにを|nani o] [しますか|shimasu ka]。", "id": "Kalau begitu, melakukan apa?", "literal": "kalau-begitu, apa — akan — melakukan — kah."},
+        {"speaker": "アニ:", "text": "[おんがくを|Ongaku o] [ききます|kikimasu]。[それから|Sorekara] [えいがを|eiga o] [みます|mimasu]。", "id": "Saya mendengarkan musik. Lalu menonton film.", "literal": "musik — akan — mendengar. sesudah-itu — film — akan — melihat."},
+        {"speaker": "ブディ:", "text": "[どこで|Doko de] [えいがを|eiga o] [みますか|mimasu ka]。", "id": "Nonton filmnya di mana?", "literal": "mana — di — film — akan — melihat — kah."},
+        {"speaker": "アニ:", "text": "[うちで|Uchi de] [みます|mimasu]。[えいがかんへは|Eigakan e wa] [ぜんぜん|zenzen] [いきません|ikimasen]。", "id": "Nonton di rumah. Saya tidak pernah ke bioskop.", "literal": "rumah — di — melihat. bioskop — ke — mengenai — sama-sekali — tidak-pergi."},
+        {"speaker": "ブディ:", "text": "[こんどの|Kondo no] [にちようび|nichiyōbi]、[いっしょに|issho ni] [いきませんか|ikimasen ka]。", "id": "Minggu depan, mau pergi bersama?", "literal": "kali-ini — punya — Minggu, bersama — tidak-pergi — kah."},
+        {"speaker": "アニ:", "text": "[いいですね|Ii desu ne]。[いきましょう|Ikimashō]。", "id": "Boleh juga. Ayo pergi.", "literal": "baik — adalah — ya. mari-pergi."}
+      ],
+      "notes": [
+        "**あまり dan ぜんぜん selalu berpasangan dengan kata kerja negatif.** あまり しません = jarang melakukan. ぜんぜん いきません = sama sekali tidak pergi. Memakainya dengan kata kerja positif adalah kesalahan tata bahasa, bukan sekadar gaya.",
+        "**よく punya dua arti:** “sering” (よくいきます) dan “dengan baik” (よくわかりました). Konteks yang membedakan, dan dua-duanya sangat sering dipakai.",
+        "**いっしょに = bersama-sama**, berbeda dari と yang menyebutkan **siapa**. Keduanya bisa dipakai sekaligus: ともだちと いっしょに いきます.",
+        "**～ませんか = ajakan halus**, harfiahnya “tidakkah kamu mau ～?”. Dalam bahasa Jepang, mengajak dengan bentuk negatif terdengar lebih sopan daripada bentuk positif — karena memberi ruang untuk menolak. Dibongkar penuh di Unit 9.",
+        "**こんどの = yang akan datang.** こんどのにちようび = Minggu depan. Kata ini agak licin: bisa berarti “kali ini” atau “lain kali” tergantung konteks.",
+        "**おもしろそう = kedengarannya menarik.** Akhiran ～そう menyatakan kesan dari luar. Belum wajib di tingkat ini, tapi terlalu berguna untuk tidak dikenali."
+      ],
+      "grammars": [
+        {
+          "title": "Kata keterangan frekuensi",
+          "body": [
+            "Kata-kata ini ditaruh **sebelum kata kerjanya**, dan tiga di antaranya mengharuskan kata kerja negatif. Kolom kanan adalah aturan yang tidak boleh dilanggar."
+          ],
+          "table": {
+            "head": ["Kata", "Arti", "Kata kerjanya"],
+            "rows": [
+              ["[いつも|itsumo]", "selalu", "positif"],
+              ["[たいてい|taitei]", "biasanya", "positif"],
+              ["[よく|yoku]", "sering", "positif"],
+              ["[ときどき|tokidoki]", "kadang-kadang", "positif"],
+              ["[たまに|tamani]", "sesekali", "positif"],
+              ["[あまり|amari]", "jarang, tidak begitu", "⚠️ negatif"],
+              ["[ぜんぜん|zenzen]", "sama sekali tidak", "⚠️ negatif"],
+              ["[まだ|mada]", "belum", "⚠️ negatif"],
+              ["[まいにち|mainichi]", "setiap hari", "positif"],
+              ["[まいしゅう|maishū]", "setiap minggu", "positif"],
+              ["[まいつき|maitsuki]", "setiap bulan", "positif"],
+              ["[まいあさ|maiasa]", "setiap pagi", "positif"]
+            ]
+          },
+          "after": [
+            "**Contoh berpasangan:** [よく|Yoku] [コーヒーを|kōhī o] [のみます|nomimasu]。 / [あまり|Amari] [コーヒーを|kōhī o] [のみません|nomimasen]。 — dua kalimat yang bentuk kata kerjanya harus ikut berubah."
+          ]
+        },
+        {
+          "title": "Tiga puluh kata kerja pertama",
+          "body": [
+            "Ini kata kerja yang menutup sebagian besar percakapan sehari-hari. Semua ditulis dalam bentuk ます. Hafalkan berpasangan dengan objeknya — otak mengingat frasa jauh lebih baik daripada kata tunggal."
+          ],
+          "tables": [
+            {
+              "head": ["Kata kerja", "Arti", "Contoh frasa"],
+              "rows": [
+                ["[たべます|tabemasu] 食べます", "makan", "[ごはんを|gohan o] [たべます|tabemasu]"],
+                ["[のみます|nomimasu] 飲みます", "minum", "[みずを|mizu o] [のみます|nomimasu]"],
+                ["[みます|mimasu] 見ます", "melihat, menonton", "[テレビを|terebi o] [みます|mimasu]"],
+                ["[ききます|kikimasu] 聞きます", "mendengar, bertanya", "[おんがくを|ongaku o] [ききます|kikimasu]"],
+                ["[よみます|yomimasu] 読みます", "membaca", "[ほんを|hon o] [よみます|yomimasu]"],
+                ["[かきます|kakimasu] 書きます", "menulis", "[てがみを|tegami o] [かきます|kakimasu]"],
+                ["[はなします|hanashimasu] 話します", "berbicara", "[にほんごを|Nihongo o] [はなします|hanashimasu]"],
+                ["[かいます|kaimasu] 買います", "membeli", "[パンを|pan o] [かいます|kaimasu]"],
+                ["[つくります|tsukurimasu] 作ります", "membuat", "[りょうりを|ryōri o] [つくります|tsukurimasu]"],
+                ["[べんきょうします|benkyō shimasu]", "belajar", "[にほんごを|Nihongo o] [べんきょうします|benkyō shimasu]"]
+              ]
+            },
+            {
+              "head": ["Kata kerja", "Arti", "Contoh frasa"],
+              "rows": [
+                ["[いきます|ikimasu] 行きます", "pergi", "[がっこうへ|gakkō e] [いきます|ikimasu]"],
+                ["[きます|kimasu] 来ます", "datang", "[にほんへ|Nihon e] [きます|kimasu]"],
+                ["[かえります|kaerimasu] 帰ります", "pulang", "[うちへ|uchi e] [かえります|kaerimasu]"],
+                ["[おきます|okimasu] 起きます", "bangun", "6[じに|ji ni] [おきます|okimasu]"],
+                ["[ねます|nemasu] 寝ます", "tidur", "11[じに|ji ni] [ねます|nemasu]"],
+                ["[はたらきます|hatarakimasu] 働きます", "bekerja", "[かいしゃで|kaisha de] [はたらきます|hatarakimasu]"],
+                ["[やすみます|yasumimasu] 休みます", "istirahat", "[うちで|uchi de] [やすみます|yasumimasu]"],
+                ["[あいます|aimasu] 会います", "bertemu", "[ともだちに|tomodachi ni] [あいます|aimasu]"],
+                ["[します|shimasu]", "melakukan", "[サッカーを|sakkā o] [します|shimasu]"],
+                ["[わかります|wakarimasu] 分かります", "mengerti", "[にほんごが|Nihongo ga] [わかります|wakarimasu]"]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **Dua kata kerja yang memakai partikel tak terduga:** ともだち**に** あいます (bertemu **dengan** teman — に, bukan と atau を) dan にほんご**が** わかります (mengerti bahasa Jepang — が, bukan を). Kata kerja seperti ini ada belasan; hafalkan bersama partikelnya sejak hari pertama."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menyusun kalimat panjang",
+      "blocks": [
+        {"type": "p", "text": "Kalimat Jepang tumbuh dengan menambahkan keterangan di **depan** kata kerja, bukan di belakangnya. Lihat bagaimana satu kalimat pendek berkembang tanpa satu pun bagian yang perlu diubah:"},
+        {"type": "tabel", "head": ["Tumbuh", "Kalimat", "Arti"], "rows": [
+          ["1", "[たべます|Tabemasu]。", "Makan."],
+          ["2", "[ごはんを|Gohan o] [たべます|tabemasu]。", "Makan nasi."],
+          ["3", "[しょくどうで|Shokudō de] [ごはんを|gohan o] [たべます|tabemasu]。", "Makan nasi di kantin."],
+          ["4", "[じゅうにじに|Jūni-ji ni] [しょくどうで|shokudō de] [ごはんを|gohan o] [たべます|tabemasu]。", "Makan nasi di kantin jam 12."],
+          ["5", "[まいにち|Mainichi] [じゅうにじに|jūni-ji ni] [しょくどうで|shokudō de] [ごはんを|gohan o] [たべます|tabemasu]。", "Setiap hari makan nasi di kantin jam 12."],
+          ["6", "[ともだちと|Tomodachi to] [まいにち|mainichi] [じゅうにじに|jūni-ji ni] [しょくどうで|shokudō de] [ごはんを|gohan o] [たべます|tabemasu]。", "Setiap hari jam 12 saya makan nasi di kantin bersama teman."]
+        ]},
+        {"type": "kotak", "title": "Urutan yang paling wajar", "items": [
+          "**Siapa は — Kapan — Bersama siapa と — Di mana で — Dengan apa で — Apa を — Kata kerja**",
+          "Urutan ini bukan aturan mati; orang Jepang menggesernya untuk menekankan sesuatu. Tapi kalau kamu mengikutinya, kalimatmu tidak akan pernah terdengar janggal.",
+          "Yang **mati** cuma satu: kata kerja di ujung. Itu tidak pernah bergeser."
+        ]}
+      ]
+    },
+    {
+      "title": "Alat transportasi",
+      "blocks": [
+        {"type": "p", "text": "Semua alat transportasi memakai partikel **で**, kecuali berjalan kaki yang memakai bentuk khusus あるいて."},
+        {"type": "tabel", "head": ["Jepang", "Arti", "Contoh"], "rows": [
+          ["[でんしゃ|densha] 電車", "kereta", "[でんしゃで|densha de] [いきます|ikimasu]"],
+          ["[ちかてつ|chikatetsu] 地下鉄", "kereta bawah tanah", "[ちかてつで|chikatetsu de] [かえります|kaerimasu]"],
+          ["[バス|basu]", "bus", "[バスで|basu de] [きます|kimasu]"],
+          ["[くるま|kuruma] 車", "mobil", "[くるまで|kuruma de] [いきます|ikimasu]"],
+          ["[じてんしゃ|jitensha] 自転車", "sepeda", "[じてんしゃで|jitensha de] [いきます|ikimasu]"],
+          ["[タクシー|takushī]", "taksi", "[タクシーで|takushī de] [かえります|kaerimasu]"],
+          ["[ひこうき|hikōki] 飛行機", "pesawat", "[ひこうきで|hikōki de] [きました|kimashita]"],
+          ["[あるいて|aruite] 歩いて", "jalan kaki", "⚠️ [あるいて|aruite] [いきます|ikimasu] — tanpa で"]
+        ]},
+        {"type": "p", "text": "**Kereta di Jepang.** JR adalah jaringan nasional, sisanya milik perusahaan swasta dan kota. Kartu IC (Suica, PASMO, ICOCA) berlaku hampir di seluruh negeri dan juga bisa dipakai membayar di minimarket — satu kartu ini menghemat banyak percakapan di loket."}
+      ]
+    }
+  ],
+  "vocab": [
+    {"ja": "[します|shimasu]", "baca": "します · shimasu", "id": "melakukan"},
+    {"ja": "[べんきょうします|benkyō shimasu] 勉強します", "baca": "べんきょうします · benkyō shimasu", "id": "belajar"},
+    {"ja": "[よみます|yomimasu] 読みます", "baca": "よみます · yomimasu", "id": "membaca"},
+    {"ja": "[かきます|kakimasu] 書きます", "baca": "かきます · kakimasu", "id": "menulis"},
+    {"ja": "[ききます|kikimasu] 聞きます", "baca": "ききます · kikimasu", "id": "mendengar, bertanya"},
+    {"ja": "[みます|mimasu] 見ます", "baca": "みます · mimasu", "id": "melihat, menonton"},
+    {"ja": "[のみます|nomimasu] 飲みます", "baca": "のみます · nomimasu", "id": "minum"},
+    {"ja": "[かいます|kaimasu] 買います", "baca": "かいます · kaimasu", "id": "membeli"},
+    {"ja": "[つくります|tsukurimasu] 作ります", "baca": "つくります · tsukurimasu", "id": "membuat, memasak"},
+    {"ja": "[はなします|hanashimasu] 話します", "baca": "はなします · hanashimasu", "id": "berbicara"},
+    {"ja": "[いきます|ikimasu] 行きます", "baca": "いきます · ikimasu", "id": "pergi"},
+    {"ja": "[きます|kimasu] 来ます", "baca": "きます · kimasu", "id": "datang"},
+    {"ja": "[わかります|wakarimasu] 分かります", "baca": "わかります · wakarimasu", "id": "mengerti"},
+    {"ja": "[ともだち|tomodachi] 友達", "baca": "ともだち · tomodachi", "id": "teman"},
+    {"ja": "[ひとりで|hitori de] 一人で", "baca": "ひとりで · hitori de", "id": "sendirian"},
+    {"ja": "[いっしょに|issho ni] 一緒に", "baca": "いっしょに · issho ni", "id": "bersama-sama"},
+    {"ja": "[おんがく|ongaku] 音楽", "baca": "おんがく · ongaku", "id": "musik"},
+    {"ja": "[えいが|eiga] 映画", "baca": "えいが · eiga", "id": "film"},
+    {"ja": "[えいがかん|eigakan] 映画館", "baca": "えいがかん · eigakan", "id": "bioskop"},
+    {"ja": "[スポーツ|supōtsu]", "baca": "スポーツ · supōtsu", "id": "olahraga"},
+    {"ja": "[サッカー|sakkā]", "baca": "サッカー · sakkā", "id": "sepak bola"},
+    {"ja": "[りょうり|ryōri] 料理", "baca": "りょうり · ryōri", "id": "masakan, memasak"},
+    {"ja": "[てがみ|tegami] 手紙", "baca": "てがみ · tegami", "id": "surat"},
+    {"ja": "[ごはん|gohan] ご飯", "baca": "ごはん · gohan", "id": "nasi, makanan"},
+    {"ja": "[しゅうまつ|shūmatsu] 週末", "baca": "しゅうまつ · shūmatsu", "id": "akhir pekan"},
+    {"ja": "[カフェ|kafe]", "baca": "カフェ · kafe", "id": "kafe"},
+    {"ja": "[でんしゃ|densha] 電車", "baca": "でんしゃ · densha", "id": "kereta"},
+    {"ja": "[ちかてつ|chikatetsu] 地下鉄", "baca": "ちかてつ · chikatetsu", "id": "kereta bawah tanah"},
+    {"ja": "[くるま|kuruma] 車", "baca": "くるま · kuruma", "id": "mobil"},
+    {"ja": "[じてんしゃ|jitensha] 自転車", "baca": "じてんしゃ · jitensha", "id": "sepeda"},
+    {"ja": "[ひこうき|hikōki] 飛行機", "baca": "ひこうき · hikōki", "id": "pesawat"},
+    {"ja": "[あるいて|aruite] 歩いて", "baca": "あるいて · aruite", "id": "jalan kaki"},
+    {"ja": "[いつも|itsumo]", "baca": "いつも · itsumo", "id": "selalu"},
+    {"ja": "[よく|yoku]", "baca": "よく · yoku", "id": "sering; dengan baik"},
+    {"ja": "[ときどき|tokidoki] 時々", "baca": "ときどき · tokidoki", "id": "kadang-kadang"},
+    {"ja": "[たいてい|taitei]", "baca": "たいてい · taitei", "id": "biasanya"},
+    {"ja": "[あまり|amari]", "baca": "あまり · amari", "id": "jarang (+ negatif)"},
+    {"ja": "[ぜんぜん|zenzen] 全然", "baca": "ぜんぜん · zenzen", "id": "sama sekali tidak"},
+    {"ja": "[まいしゅう|maishū] 毎週", "baca": "まいしゅう · maishū", "id": "setiap minggu"},
+    {"ja": "[まいあさ|maiasa] 毎朝", "baca": "まいあさ · maiasa", "id": "setiap pagi"},
+    {"ja": "[ごろ|goro]", "baca": "ごろ · goro", "id": "sekitar (waktu)"},
+    {"ja": "[それから|sorekara]", "baca": "それから · sorekara", "id": "setelah itu"},
+    {"ja": "[こんど|kondo] 今度", "baca": "こんど · kondo", "id": "kali ini; lain kali"},
+    {"ja": "[へ|e]", "baca": "へ · e", "id": "ke (arah)"},
+    {"ja": "[を|o]", "baca": "を · o", "id": "penanda objek"},
+    {"ja": "[で|de]", "baca": "で · de", "id": "di (kegiatan); dengan (alat)"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi partikel yang hilang.",
+      "items": [
+        "としょかん ___ ほんをよみます。",
+        "ほん ___ よみます。",
+        "がっこう ___ いきます。",
+        "でんしゃ ___ かえります。",
+        "ともだち ___ はなします。",
+        "きょうしつ ___ せんせいがいます。"
+      ]
+    },
+    {
+      "prompt": "Ubah kata kerja ini ke bentuk yang diminta.",
+      "items": [
+        "たべます → tidak makan: ___",
+        "いきます → tidak pergi: ___",
+        "のみます → tidak minum: ___",
+        "べんきょうします → tidak belajar: ___",
+        "みます → tidak menonton: ___"
+      ]
+    },
+    {
+      "prompt": "Susun kepingan menjadi kalimat yang benar.",
+      "items": [
+        "まいにち / がっこう / で / にほんご / を / べんきょうします",
+        "ともだち / と / カフェ / で / コーヒー / を / のみます",
+        "わたし / は / でんしゃ / で / かいしゃ / へ / いきます",
+        "よる / うち / で / テレビ / を / みます",
+        "しゅうまつ / は / こうえん / で / サッカー / を / します",
+        "あまり / スポーツ / を / しません"
+      ]
+    },
+    {
+      "prompt": "Isi kata keterangan frekuensi yang tepat.",
+      "items": [
+        "setiap hari: ___",
+        "sering: ___",
+        "kadang-kadang: ___",
+        "jarang (+ negatif): ___",
+        "sama sekali tidak: ___"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Indonesia.",
+      "items": [
+        "あさ、うちであさごはんをたべます。",
+        "としょかんでにほんごをべんきょうします。",
+        "ともだちといっしょにえいがをみます。",
+        "わたしはぜんぜんおさけをのみません。",
+        "まいあさ じてんしゃで がっこうへ いきます。"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Jepang. Tulis dengan rōmaji.",
+      "items": [
+        "Setiap hari saya belajar bahasa Jepang.",
+        "Saya membaca buku di perpustakaan.",
+        "Saya pergi ke sekolah naik kereta.",
+        "Malam saya menonton televisi.",
+        "Saya jarang minum kopi."
+      ]
+    }
+  ],
+  "answers": [
+    "で — を — へ — で — と — に",
+    "たべません — いきません — のみません — べんきょうしません — みません",
+    "まいにち がっこう で にほんご を べんきょうします — ともだち と カフェ で コーヒー を のみます — わたし は でんしゃ で かいしゃ へ いきます — よる うち で テレビ を みます — しゅうまつ は こうえん で サッカー を します — あまり スポーツ を しません",
+    "まいにち — よく — ときどき — あまり — ぜんぜん",
+    "Pagi hari saya sarapan di rumah. — Saya belajar bahasa Jepang di perpustakaan. — Saya menonton film bersama teman. — Saya sama sekali tidak minum alkohol. — Setiap pagi saya pergi ke sekolah naik sepeda.",
+    "mainichi Nihongo o benkyō shimasu — toshokan de hon o yomimasu — densha de gakkō e ikimasu — yoru terebi o mimasu — amari kōhī o nomimasen"
+  ],
+  "wave": "Ulangi Unit 5 lewat unit ini: ceritakan satu hari penuh dengan menyebutkan **tempat** tiap kegiatan. Perhatikan bahwa Unit 5 memakai に (berada di) dan unit ini memakai で (melakukan di) — dua partikel yang paling sering tertukar. Baca ulang kotak tata bahasanya kalau masih ragu."
+}

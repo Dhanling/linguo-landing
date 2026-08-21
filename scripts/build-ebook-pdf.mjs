@@ -244,7 +244,12 @@ const unitHal = (u, i) => `
 const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charset="utf-8">
 <title>${esc(meta.title)}</title>
 <style>
-  @page { size: A4; margin: 18mm 16mm 16mm; }
+  /* [ebook-kerapatan-modul-v1] Marjin & ukuran huruf ikut modulnya. Modul
+     beraksara asing memakai baris beruby yang tingginya hampir dua kali baris
+     biasa; dibiarkan selonggar modul Latin, tebalnya membengkak sampai
+     sepertiga tanpa satu kata pun ditambahkan. Nilai bawaannya persis seperti
+     sebelum ada tombol ini, jadi modul lama tercetak sama saja. */
+  @page { size: A4; margin: ${esc(meta.page_margin ?? "18mm 16mm 16mm")}; }
   /* Halaman bernama: cuma sampulnya yang dicetak tanpa marjin. */
   @page sampul { size: A4; margin: 0; }
   * { box-sizing: border-box; }
@@ -253,7 +258,7 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
      sedikit pun sementara aksara asing tidak lagi jatuh ke fon darurat. */
   body { margin: 0; font-family: "Charter", "Georgia", "Times New Roman", serif,
          "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP";
-         font-size: 10.5pt; line-height: 1.55; color: #1B2233; }
+         font-size: ${esc(meta.font_size ?? "10.5pt")}; line-height: 1.55; color: #1B2233; }
   h1, h2, h3, h4, .unit-no, .sampul-tanda, th { font-family: "Helvetica Neue", Arial, sans-serif,
          "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP"; }
 
@@ -270,8 +275,19 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
      badan teks bikin paragraf Indonesia ikut melar dan modulnya membengkak
      puluhan halaman tanpa satu pun aksara asing di dalamnya. */
   p:has(ruby), li:has(ruby), td:has(ruby), th:has(ruby),
-  h3:has(ruby), h4:has(ruby), .asing:has(ruby) { line-height: 2.15; }
+  h3:has(ruby), h4:has(ruby), .asing:has(ruby) { line-height: 1.85; }
   h2 rt, h3 rt, h4 rt, th rt { text-transform: none; }
+
+  /* Modul beraksara: jarak antar unsur dirapatkan sekalian, karena barisnya
+     sendiri sudah tinggi. Modul Latin tidak kena kelas ini sama sekali. */
+  .beraksara .dialog .baris { margin-bottom: 1.8mm; }
+  .beraksara .arti { margin-bottom: 0.8mm; }
+  .beraksara table { font-size: 9.1pt; margin: 2.2mm 0; }
+  .beraksara td, .beraksara th { padding: 1mm 1.6mm; }
+  .beraksara h3 { margin: 5mm 0 1.5mm; }
+  .beraksara .kotak, .beraksara .kunci { padding: 3mm 4mm; margin: 3mm 0; }
+  .beraksara .catatan li, .beraksara .soal li { margin-bottom: 1.2mm; }
+  .beraksara p { margin-bottom: 1.7mm; }
 
   .sampul-gambar { page: sampul; page-break-after: always; }
   /* object-fit: cover — rancangan sampul jarang persis 1:√2, dan gambar yang

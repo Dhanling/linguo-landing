@@ -1,0 +1,341 @@
+{
+  "title": "Menggambarkan dan menilai",
+  "title_target": "どうですか — Dō desu ka",
+  "goal": "Menggambarkan benda, tempat, dan orang dengan kata sifat; menyatakan suka dan tidak suka; serta memberi pendapat yang terdengar wajar, bukan terjemahan.",
+  "bekal": [
+    "membedakan kata sifat い dan kata sifat な",
+    "menyangkal dan melampaukan kata sifat",
+    "menempelkan kata sifat di depan kata benda",
+    "menyatakan suka dengan ～が すきです",
+    "memberi pendapat dengan とても dan あまり"
+  ],
+  "dialogs": [
+    {
+      "title": "会話 1 — Bagaimana Tokyo?",
+      "intro": "Tanaka menanyakan kesan Ani tentang Jepang. Perhatikan dua jenis kata sifat yang berselang-seling — ini pembeda paling penting di unit ini.",
+      "lines": [
+        {"speaker": "たなか:", "text": "[とうきょうは|Tōkyō wa] [どうですか|dō desu ka]。", "id": "Tokyo bagaimana?", "literal": "Tokyo — mengenai — bagaimana — adalah — kah."},
+        {"speaker": "アニ:", "text": "[とても|Totemo] [おもしろいです|omoshiroi desu]。でも、[すこし|sukoshi] [たかいです|takai desu]。", "id": "Sangat menarik. Tapi sedikit mahal.", "literal": "sangat — menarik — adalah. tetapi, sedikit — mahal — adalah."},
+        {"speaker": "たなか:", "text": "[そうですね|Sō desu ne]。[へやは|Heya wa] [ひろいですか|hiroi desu ka]。", "id": "Betul juga. Kamarnya luas?", "literal": "begitu — adalah — ya. kamar — mengenai — luas — adalah — kah."},
+        {"speaker": "アニ:", "text": "[いいえ|Iie]、[ひろくないです|hirokunai desu]。[せまいですが|Semai desu ga]、[しずかです|shizuka desu]。", "id": "Tidak, tidak luas. Sempit, tapi tenang.", "literal": "tidak, luas-tidak — adalah. sempit — adalah — tetapi, tenang — adalah."},
+        {"speaker": "たなか:", "text": "[しずかな|Shizukana] [へやは|heya wa] [いいですね|ii desu ne]。[ちかくに|Chikaku ni] [なにが|nani ga] [ありますか|arimasu ka]。", "id": "Kamar yang tenang itu bagus. Di dekatnya ada apa?", "literal": "tenang — kamar — mengenai — baik — adalah — ya. dekat — di — apa — yang — ada — kah."},
+        {"speaker": "アニ:", "text": "[おおきい|Ōkii] [こうえんが|kōen ga] [あります|arimasu]。[とても|Totemo] [きれいです|kirei desu]。", "id": "Ada taman besar. Sangat indah.", "literal": "besar — taman — yang — ada. sangat — indah — adalah."},
+        {"speaker": "たなか:", "text": "[にほんの|Nihon no] [たべものは|tabemono wa] [どうですか|dō desu ka]。", "id": "Makanan Jepang bagaimana?", "literal": "Jepang — punya — makanan — mengenai — bagaimana — adalah — kah."},
+        {"speaker": "アニ:", "text": "[おいしいです|Oishii desu]！でも、[なっとうは|nattō wa] [あまり|amari] [すきじゃありません|suki ja arimasen]。", "id": "Enak! Tapi natto saya kurang suka.", "literal": "enak — adalah! tetapi, natto — mengenai — tidak-begitu — suka — bukan."},
+        {"speaker": "たなか:", "text": "[はは|Haha]、[なっとうは|nattō wa] [むずかしいですね|muzukashii desu ne]。", "id": "Haha, natto memang sulit ya.", "literal": "haha, natto — mengenai — sulit — adalah — ya."},
+        {"speaker": "アニ:", "text": "[でも|Demo]、[すしは|sushi wa] [だいすきです|daisuki desu]。[まいしゅう|Maishū] [たべます|tabemasu]。", "id": "Tapi sushi saya sangat suka. Setiap minggu saya makan.", "literal": "tetapi, sushi — mengenai — sangat-suka — adalah. setiap-minggu — makan."}
+      ],
+      "notes": [
+        "**Bahasa Jepang punya dua jenis kata sifat**, dan keduanya berkelakuan berbeda. Kata sifat **い** berakhiran い dan berubah bentuk sendiri (たかい → たかくない). Kata sifat **な** tidak berubah dan bergantung pada です (しずか → しずかじゃありません). Membedakannya adalah pekerjaan utama unit ini.",
+        "**が di tengah kalimat berarti “tetapi”.** せまいです**が**、しずかです = sempit, tapi tenang. Jangan tertukar dengan が sebagai penanda subjek — posisinya yang membedakan: di ujung klausa berarti “tetapi”, sesudah kata benda berarti penanda.",
+        "**きれい berakhiran い tapi bukan kata sifat い.** Ini jebakan paling terkenal dalam bahasa Jepang. きれい, ゆうめい, きらい semuanya kata sifat **な**, meski ujungnya い. Sebabnya: い-nya bagian dari kanji (綺麗), bukan akhiran. Ketiganya harus dihafal sebagai pengecualian.",
+        "**すき bukan kata kerja, tapi kata sifat な.** すきです = “suka”, dan yang disukai ditandai **が**, bukan を: すしが すきです. Ini terasa aneh di awal, tapi masuk akal begitu kamu tahu すき artinya lebih dekat ke “menyenangkan bagi saya”.",
+        "**だいすき = sangat suka**, awalan だい (大) memperkuat. Pasangannya: きらい (tidak suka), だいきらい (benci).",
+        "**あまり + kata sifat negatif** — sama seperti dengan kata kerja di Unit 6: あまり すきじゃありません = kurang suka. Ini cara paling halus untuk mengatakan tidak suka, dan orang Jepang jauh lebih sering memakainya daripada きらいです yang terdengar keras."
+      ],
+      "grammars": [
+        {
+          "title": "Kata sifat い — berubah sendiri",
+          "body": [
+            "Kata sifat い berakhiran **い** dan mengubah dirinya sendiri untuk menyangkal dan melampaukan. **です tidak ikut berubah** — ia cuma menempel di ujung sebagai penanda kesopanan."
+          ],
+          "table": {
+            "head": ["Bentuk", "Contoh (たかい = mahal)", "Arti"],
+            "rows": [
+              ["Biasa", "[たかいです|takai desu]", "mahal"],
+              ["Negatif", "[たかくないです|takakunai desu]", "tidak mahal"],
+              ["Lampau", "[たかかったです|takakatta desu]", "dulu mahal"],
+              ["Lampau negatif", "[たかくなかったです|takakunakatta desu]", "dulu tidak mahal"],
+              ["+ kata benda", "[たかい|takai] [ほん|hon]", "buku yang mahal"]
+            ]
+          },
+          "after": [
+            "**Aturannya:** buang い, lalu tambahkan **くない** (negatif) atau **かった** (lampau).",
+            "⚠️ **いい (bagus) tidak beraturan.** Bentuknya berubah jadi よ～: よくないです (tidak bagus), よかったです (bagus tadi/dulu). Bentuk いくないです adalah kesalahan.",
+            "⚠️ **Jangan menulis たかいでした untuk bentuk lampau.** Yang berubah kata sifatnya, bukan です. Ini kesalahan pemula nomor satu di unit ini."
+          ]
+        },
+        {
+          "title": "Kata sifat な — bergantung pada です",
+          "body": [
+            "Kata sifat な **tidak berubah sama sekali**. Yang berubah adalah です di belakangnya — persis seperti kata benda di Unit 1. Kalau kamu sudah bisa mengubah がくせいです, kamu sudah bisa mengubah semua kata sifat な."
+          ],
+          "table": {
+            "head": ["Bentuk", "Contoh (しずか = tenang)", "Arti"],
+            "rows": [
+              ["Biasa", "[しずかです|shizuka desu]", "tenang"],
+              ["Negatif", "[しずかじゃありません|shizuka ja arimasen]", "tidak tenang"],
+              ["Lampau", "[しずかでした|shizuka deshita]", "dulu tenang"],
+              ["Lampau negatif", "[しずかじゃありませんでした|shizuka ja arimasen deshita]", "dulu tidak tenang"],
+              ["+ kata benda", "[しずかな|shizukana] [へや|heya]", "kamar yang tenang"]
+            ]
+          },
+          "after": [
+            "**Dari mana namanya?** Dari **な** yang muncul saat kata sifat ini ditempel ke kata benda: しずか**な**へや. Kata sifat い tidak memerlukannya: たかいほん.",
+            "**Cara cepat mengenali jenisnya:** kalau ujungnya bukan い, itu pasti kata sifat な. Kalau ujungnya い, hampir pasti kata sifat い — kecuali **きれい, ゆうめい, きらい**, tiga pengecualian yang harus dihafal."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "会話 2 — Memilih restoran",
+      "intro": "Budi dan Ani memilih tempat makan. Perhatikan bagaimana kata sifat dipakai untuk membandingkan dan memberi alasan.",
+      "lines": [
+        {"speaker": "ブディ:", "text": "[おなかが|Onaka ga] [すきました|sukimashita]。[どこで|Doko de] [たべますか|tabemasu ka]。", "id": "Saya lapar. Mau makan di mana?", "literal": "perut — yang — kosong-sudah. mana — di — makan — kah."},
+        {"speaker": "アニ:", "text": "[えきの|Eki no] [ちかくに|chikaku ni] [あたらしい|atarashii] [みせが|mise ga] [あります|arimasu]。", "id": "Di dekat stasiun ada toko baru.", "literal": "stasiun — punya — dekat — di — baru — toko — yang — ada."},
+        {"speaker": "ブディ:", "text": "[どんな|Donna] [みせですか|mise desu ka]。", "id": "Toko yang seperti apa?", "literal": "seperti-apa — toko — adalah — kah."},
+        {"speaker": "アニ:", "text": "[ラーメンやです|Rāmen-ya desu]。[やすくて|Yasukute] [おいしいです|oishii desu]。", "id": "Kedai ramen. Murah dan enak.", "literal": "ramen-toko — adalah. murah-dan — enak — adalah."},
+        {"speaker": "ブディ:", "text": "[いいですね|Ii desu ne]。でも、[こんでいますか|konde imasu ka]。", "id": "Bagus. Tapi ramai tidak?", "literal": "baik — adalah — ya. tetapi, penuh-sedang — kah."},
+        {"speaker": "アニ:", "text": "[ひるは|Hiru wa] [とても|totemo] [こんでいます|konde imasu]。でも、[いまは|ima wa] [だいじょうぶです|daijōbu desu]。", "id": "Siang sangat ramai. Tapi sekarang tidak masalah.", "literal": "siang — mengenai — sangat — penuh-sedang. tetapi, sekarang — mengenai — tidak-apa-apa — adalah."},
+        {"speaker": "ブディ:", "text": "[ブディは|Budi wa] [からい|karai] [たべものが|tabemono ga] [すきです|suki desu]。[からい|Karai] [ラーメンは|rāmen wa] [ありますか|arimasu ka]。", "id": "Saya suka makanan pedas. Ada ramen pedas?", "literal": "Budi — mengenai — pedas — makanan — yang — suka — adalah. pedas — ramen — mengenai — ada — kah."},
+        {"speaker": "アニ:", "text": "[はい|Hai]、[あります|arimasu]。[でも|Demo]、[すごく|sugoku] [からいですよ|karai desu yo]。", "id": "Ya, ada. Tapi pedasnya luar biasa, lho.", "literal": "ya, ada. tetapi, sangat — pedas — adalah — lho."},
+        {"speaker": "ブディ:", "text": "[だいじょうぶです|Daijōbu desu]。[インドネシアの|Indoneshia no] [りょうりも|ryōri mo] [からいです|karai desu]。", "id": "Tidak masalah. Masakan Indonesia juga pedas.", "literal": "tidak-apa-apa — adalah. Indonesia — punya — masakan — juga — pedas — adalah."},
+        {"speaker": "アニ:", "text": "[そうですね|Sō desu ne]。[じゃあ|Jā]、[いきましょう|ikimashō]。", "id": "Betul juga. Kalau begitu, ayo pergi.", "literal": "begitu — adalah — ya. kalau-begitu, mari-pergi."}
+      ],
+      "notes": [
+        "**おなかがすきました = lapar**, harfiahnya “perut saya sudah kosong”. Bentuknya lampau meski maksudnya sekarang — ini ungkapan tetap yang harus dihafal apa adanya. Kebalikannya: おなかがいっぱいです (kenyang).",
+        "**～くて menyambung dua kata sifat い**: やすくて おいしい = murah dan enak. Untuk kata sifat な, sambungannya memakai **で**: しずかで きれい. Ini bentuk penyambung yang sangat sering dipakai dan hemat sekali.",
+        "**～や (屋) = toko yang menjual ～.** ラーメンや (kedai ramen), パンや (toko roti), はなや (toko bunga), ほんや (toko buku). Satu akhiran ini memberimu puluhan kata.",
+        "**こんでいます = sedang ramai/penuh.** Bentuk ～ています menyatakan keadaan yang sedang berlangsung; belum dibongkar di modul ini, tapi kata ini terlalu berguna untuk dilewatkan.",
+        "**すごく = sangat**, versi lebih bersemangat dari とても. Sedikit lebih santai, sangat lazim di percakapan sehari-hari.",
+        "**Budi menyebut dirinya “ブディは”, bukan “わたしは”.** Menyebut nama sendiri sebagai ganti “saya” terdengar wajar di Jepang, terutama dalam percakapan santai — sesuatu yang di bahasa Indonesia justru terdengar kekanak-kanakan."
+      ],
+      "grammars": [
+        {
+          "title": "Menyatakan suka: ～が すきです",
+          "body": [
+            "Yang disukai ditandai **が**, bukan を — karena すき sebenarnya kata sifat, bukan kata kerja. Pola lengkapnya: **[siapa] は [apa] が すきです**."
+          ],
+          "table": {
+            "head": ["Kalimat", "Arti"],
+            "rows": [
+              ["[わたしは|Watashi wa] [すしが|sushi ga] [すきです|suki desu]。", "Saya suka sushi."],
+              ["[わたしは|Watashi wa] [なっとうが|nattō ga] [あまり|amari] [すきじゃありません|suki ja arimasen]。", "Saya kurang suka natto."],
+              ["[アニさんは|Ani-san wa] [おんがくが|ongaku ga] [だいすきです|daisuki desu]。", "Ani sangat suka musik."],
+              ["[なにが|Nani ga] [すきですか|suki desu ka]。", "Suka apa?"],
+              ["[にほんごが|Nihongo ga] [じょうずですね|jōzu desu ne]。", "Bahasa Jepangmu bagus, ya."]
+            ]
+          },
+          "after": [
+            "**Keluarga pola が ini cukup besar:** すき (suka), きらい (tidak suka), じょうず (mahir), へた (tidak mahir), わかります (mengerti), できます (bisa), あります/います (ada). Semuanya memakai が, semuanya sering salah dipakai dengan を oleh pemula.",
+            "⚠️ **Jangan memuji dirimu sendiri dengan じょうず.** Kalau dipuji にほんごがじょうずですね, jawaban yang wajar adalah **いいえ、まだまだです** (belum, masih jauh) — merendah adalah bagian dari sopan santun Jepang."
+          ]
+        },
+        {
+          "title": "Empat puluh kata sifat pertama",
+          "body": [
+            "Kolom kiri kata sifat **い**, kolom kanan kata sifat **な**. Hafalkan berpasangan dengan lawan katanya — jauh lebih cepat menempel."
+          ],
+          "tables": [
+            {
+              "head": ["Kata sifat い", "Arti", "Lawan katanya", "Arti"],
+              "rows": [
+                ["[おおきい|ōkii] 大きい", "besar", "[ちいさい|chiisai] 小さい", "kecil"],
+                ["[たかい|takai] 高い", "mahal; tinggi", "[やすい|yasui] 安い", "murah"],
+                ["[あたらしい|atarashii] 新しい", "baru", "[ふるい|furui] 古い", "lama"],
+                ["[あつい|atsui] 暑い", "panas", "[さむい|samui] 寒い", "dingin (cuaca)"],
+                ["[ひろい|hiroi] 広い", "luas", "[せまい|semai] 狭い", "sempit"],
+                ["[ながい|nagai] 長い", "panjang", "[みじかい|mijikai] 短い", "pendek"],
+                ["[おもしろい|omoshiroi]", "menarik", "[つまらない|tsumaranai]", "membosankan"],
+                ["[むずかしい|muzukashii] 難しい", "sulit", "[やさしい|yasashii]", "mudah; lembut"],
+                ["[いそがしい|isogashii] 忙しい", "sibuk", "[おいしい|oishii]", "enak"],
+                ["[ちかい|chikai] 近い", "dekat", "[とおい|tōi] 遠い", "jauh"],
+                ["[はやい|hayai] 早い", "cepat; pagi", "[おそい|osoi] 遅い", "lambat; larut"],
+                ["[からい|karai] 辛い", "pedas", "[あまい|amai] 甘い", "manis"]
+              ]
+            },
+            {
+              "head": ["Kata sifat な", "Arti", "Kata sifat な", "Arti"],
+              "rows": [
+                ["[しずか|shizuka] 静か", "tenang", "[にぎやか|nigiyaka]", "ramai, meriah"],
+                ["[きれい|kirei] ⚠️", "indah, bersih", "[ゆうめい|yūmei] 有名 ⚠️", "terkenal"],
+                ["[すき|suki] 好き", "suka", "[きらい|kirai] 嫌い ⚠️", "tidak suka"],
+                ["[じょうず|jōzu] 上手", "mahir", "[へた|heta] 下手", "tidak mahir"],
+                ["[べんり|benri] 便利", "praktis", "[ふべん|fuben] 不便", "merepotkan"],
+                ["[げんき|genki] 元気", "sehat, bersemangat", "[ひま|hima] 暇", "senggang"],
+                ["[たいへん|taihen] 大変", "berat, repot", "[だいじょうぶ|daijōbu] 大丈夫", "tidak apa-apa"],
+                ["[しんせつ|shinsetsu] 親切", "ramah, baik hati", "[まじめ|majime]", "serius, tekun"]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Tiga yang ditandai — **きれい, ゆうめい, きらい** — berakhiran い tapi termasuk kata sifat **な**. Kalau kamu cuma hafal satu pengecualian dari unit ini, hafalkan ketiganya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Memberi pendapat yang terdengar wajar",
+      "blocks": [
+        {"type": "p", "text": "Orang Jepang jarang menyatakan pendapat secara mutlak. Kalimat yang dilunakkan bukan tanda ragu — itu tanda memperhitungkan lawan bicara. Deretan berikut disusun dari yang paling tegas ke paling halus:"},
+        {"type": "tabel", "head": ["Kalimat", "Arti", "Kadar"], "rows": [
+          ["[おいしいです|Oishii desu]。", "Enak.", "Datar, jelas"],
+          ["[とても|Totemo] [おいしいです|oishii desu]。", "Sangat enak.", "Bersemangat"],
+          ["[おいしいですね|Oishii desu ne]。", "Enak, ya.", "Mengajak setuju — paling wajar"],
+          ["[ちょっと|Chotto] [からいですね|karai desu ne]。", "Agak pedas, ya.", "Keluhan halus"],
+          ["[あまり|Amari] [すきじゃありません|suki ja arimasen]。", "Kurang suka.", "Penolakan halus"],
+          ["[すきじゃありません|Suki ja arimasen]。", "Tidak suka.", "Terus terang"],
+          ["[きらいです|Kirai desu]。", "Benci.", "⚠️ Keras — hati-hati memakainya"]
+        ]},
+        {"type": "kotak", "title": "Penguat dan pelemah", "items": [
+          "**[とても|totemo]** = sangat. Netral, aman di mana saja.",
+          "**[すごく|sugoku]** = sangat sekali. Lebih santai dan bersemangat.",
+          "**[ちょっと|chotto] / [すこし|sukoshi]** = sedikit, agak. ちょっと lebih santai, すこし lebih rapi.",
+          "**[あまり|amari] + negatif** = kurang, tidak begitu.",
+          "**[ぜんぜん|zenzen] + negatif** = sama sekali tidak.",
+          "⚠️ とても tidak boleh dipakai dengan kata kerja negatif. Untuk itu, pakai あまり."
+        ]}
+      ]
+    },
+    {
+      "title": "Cuaca dan musim",
+      "blocks": [
+        {"type": "p", "text": "Cuaca adalah topik pembuka percakapan nomor satu di Jepang, dan hampir semuanya memakai kata sifat yang baru kamu pelajari."},
+        {"type": "tabel", "head": ["Musim", "Bacaan", "Kalimat khasnya"], "rows": [
+          ["春", "[はる|haru]", "[はるは|Haru wa] [あたたかいです|atatakai desu]。 — Musim semi hangat."],
+          ["夏", "[なつ|natsu]", "[なつは|Natsu wa] [あついです|atsui desu]。 — Musim panas panas."],
+          ["秋", "[あき|aki]", "[あきは|Aki wa] [すずしいです|suzushii desu]。 — Musim gugur sejuk."],
+          ["冬", "[ふゆ|fuyu]", "[ふゆは|Fuyu wa] [さむいです|samui desu]。 — Musim dingin dingin."]
+        ]},
+        {"type": "tabel", "head": ["Cuaca", "Bacaan", "Arti"], "rows": [
+          ["[てんき|tenki] 天気", "tenki", "cuaca"],
+          ["[はれ|hare] 晴れ", "hare", "cerah"],
+          ["[くもり|kumori] 曇り", "kumori", "berawan"],
+          ["[あめ|ame] 雨", "ame", "hujan"],
+          ["[ゆき|yuki] 雪", "yuki", "salju"],
+          ["[かぜ|kaze] 風", "kaze", "angin"]
+        ]},
+        {"type": "kotak", "title": "Pembuka percakapan yang tak pernah gagal", "items": [
+          "**[きょうは|Kyō wa] [いい|ii] [てんきですね|tenki desu ne]。** — Hari ini cuacanya bagus ya.",
+          "**[あついですね|Atsui desu ne]。** — Panas ya. (Musim panas Jepang lembap dan berat — kalimat ini akan kamu pakai tiap hari di bulan Agustus.)",
+          "**[さむくなりましたね|Samuku narimashita ne]。** — Jadi dingin ya.",
+          "Kalimat cuaca berfungsi seperti “apa kabar” dalam bahasa Indonesia: tidak menuntut jawaban serius, tapi membuka pintu."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"ja": "[おおきい|ōkii] 大きい", "baca": "おおきい · ōkii", "id": "besar"},
+    {"ja": "[ちいさい|chiisai] 小さい", "baca": "ちいさい · chiisai", "id": "kecil"},
+    {"ja": "[あたらしい|atarashii] 新しい", "baca": "あたらしい · atarashii", "id": "baru"},
+    {"ja": "[ふるい|furui] 古い", "baca": "ふるい · furui", "id": "lama, tua (benda)"},
+    {"ja": "[あつい|atsui] 暑い", "baca": "あつい · atsui", "id": "panas"},
+    {"ja": "[さむい|samui] 寒い", "baca": "さむい · samui", "id": "dingin (cuaca)"},
+    {"ja": "[ひろい|hiroi] 広い", "baca": "ひろい · hiroi", "id": "luas"},
+    {"ja": "[せまい|semai] 狭い", "baca": "せまい · semai", "id": "sempit"},
+    {"ja": "[ながい|nagai] 長い", "baca": "ながい · nagai", "id": "panjang"},
+    {"ja": "[みじかい|mijikai] 短い", "baca": "みじかい · mijikai", "id": "pendek"},
+    {"ja": "[おもしろい|omoshiroi] 面白い", "baca": "おもしろい · omoshiroi", "id": "menarik"},
+    {"ja": "[つまらない|tsumaranai]", "baca": "つまらない · tsumaranai", "id": "membosankan"},
+    {"ja": "[むずかしい|muzukashii] 難しい", "baca": "むずかしい · muzukashii", "id": "sulit"},
+    {"ja": "[やさしい|yasashii] 優しい", "baca": "やさしい · yasashii", "id": "mudah; lembut"},
+    {"ja": "[おいしい|oishii]", "baca": "おいしい · oishii", "id": "enak"},
+    {"ja": "[からい|karai] 辛い", "baca": "からい · karai", "id": "pedas"},
+    {"ja": "[あまい|amai] 甘い", "baca": "あまい · amai", "id": "manis"},
+    {"ja": "[はやい|hayai] 早い", "baca": "はやい · hayai", "id": "cepat; pagi"},
+    {"ja": "[おそい|osoi] 遅い", "baca": "おそい · osoi", "id": "lambat; larut"},
+    {"ja": "[しずか|shizuka] 静か", "baca": "しずか · shizuka", "id": "tenang"},
+    {"ja": "[にぎやか|nigiyaka]", "baca": "にぎやか · nigiyaka", "id": "ramai, meriah"},
+    {"ja": "[きれい|kirei] ⚠️な", "baca": "きれい · kirei", "id": "indah, bersih"},
+    {"ja": "[ゆうめい|yūmei] 有名 ⚠️な", "baca": "ゆうめい · yūmei", "id": "terkenal"},
+    {"ja": "[すき|suki] 好き", "baca": "すき · suki", "id": "suka"},
+    {"ja": "[だいすき|daisuki] 大好き", "baca": "だいすき · daisuki", "id": "sangat suka"},
+    {"ja": "[きらい|kirai] 嫌い ⚠️な", "baca": "きらい · kirai", "id": "tidak suka"},
+    {"ja": "[じょうず|jōzu] 上手", "baca": "じょうず · jōzu", "id": "mahir"},
+    {"ja": "[へた|heta] 下手", "baca": "へた · heta", "id": "tidak mahir"},
+    {"ja": "[べんり|benri] 便利", "baca": "べんり · benri", "id": "praktis"},
+    {"ja": "[げんき|genki] 元気", "baca": "げんき · genki", "id": "sehat, bersemangat"},
+    {"ja": "[しんせつ|shinsetsu] 親切", "baca": "しんせつ · shinsetsu", "id": "ramah, baik hati"},
+    {"ja": "[とても|totemo]", "baca": "とても · totemo", "id": "sangat"},
+    {"ja": "[すごく|sugoku]", "baca": "すごく · sugoku", "id": "sangat sekali"},
+    {"ja": "[すこし|sukoshi] 少し", "baca": "すこし · sukoshi", "id": "sedikit"},
+    {"ja": "[たべもの|tabemono] 食べ物", "baca": "たべもの · tabemono", "id": "makanan"},
+    {"ja": "[のみもの|nomimono] 飲み物", "baca": "のみもの · nomimono", "id": "minuman"},
+    {"ja": "[すし|sushi] 寿司", "baca": "すし · sushi", "id": "sushi"},
+    {"ja": "[ラーメン|rāmen]", "baca": "ラーメン · rāmen", "id": "ramen"},
+    {"ja": "[てんき|tenki] 天気", "baca": "てんき · tenki", "id": "cuaca"},
+    {"ja": "[あめ|ame] 雨", "baca": "あめ · ame", "id": "hujan"},
+    {"ja": "[ゆき|yuki] 雪", "baca": "ゆき · yuki", "id": "salju"},
+    {"ja": "[はる|haru] 春", "baca": "はる · haru", "id": "musim semi"},
+    {"ja": "[なつ|natsu] 夏", "baca": "なつ · natsu", "id": "musim panas"},
+    {"ja": "[あき|aki] 秋", "baca": "あき · aki", "id": "musim gugur"},
+    {"ja": "[ふゆ|fuyu] 冬", "baca": "ふゆ · fuyu", "id": "musim dingin"},
+    {"ja": "[まち|machi] 町", "baca": "まち · machi", "id": "kota"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah kata sifat ini ke bentuk negatif.",
+      "items": [
+        "たかいです → ___",
+        "おおきいです → ___",
+        "おもしろいです → ___",
+        "しずかです → しずか ___",
+        "べんりです → べんり ___"
+      ]
+    },
+    {
+      "prompt": "Isi partikel yang hilang.",
+      "items": [
+        "わたしはすし ___ すきです。",
+        "せまいです ___ 、しずかです。",
+        "にほんご ___ じょうずですね。",
+        "とうきょう ___ どうですか。",
+        "しずか ___ へやです。",
+        "からいたべもの ___ すきです。"
+      ]
+    },
+    {
+      "prompt": "Tulis lawan katanya dalam kana.",
+      "items": [
+        "おおきい → ___",
+        "あたらしい → ___",
+        "あつい → ___",
+        "ひろい → ___",
+        "むずかしい → ___",
+        "たかい → ___"
+      ]
+    },
+    {
+      "prompt": "Susun kepingan menjadi kalimat yang benar.",
+      "items": [
+        "この / へや / は / せまい / です",
+        "とうきょう / は / とても / にぎやか / です",
+        "わたし / は / すし / が / だいすき / です",
+        "しずかな / へや / は / いい / です / ね",
+        "この / みせ / は / やすくて / おいしい / です",
+        "なっとう / は / あまり / すき / じゃありません"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Indonesia.",
+      "items": [
+        "このへやはひろくないです。",
+        "きょうはとてもさむいですね。",
+        "あたらしいみせはきれいです。",
+        "わたしはからいたべものがすきです。",
+        "にほんごはむずかしいですが、おもしろいです。"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Jepang. Tulis dengan rōmaji.",
+      "items": [
+        "Kamar ini tidak luas.",
+        "Tokyo sangat menarik.",
+        "Saya suka sushi.",
+        "Kurang suka.",
+        "Hari ini cuacanya bagus, ya."
+      ]
+    }
+  ],
+  "answers": [
+    "たかくないです — おおきくないです — おもしろくないです — じゃありません — じゃありません",
+    "が — が — が — は — な — が",
+    "ちいさい — ふるい — さむい — せまい — やさしい — やすい",
+    "この へや は せまい です — とうきょう は とても にぎやか です — わたし は すし が だいすき です — しずかな へや は いい です ね — この みせ は やすくて おいしい です — なっとう は あまり すき じゃありません",
+    "Kamar ini tidak luas. — Hari ini sangat dingin ya. — Toko baru itu bersih. — Saya suka makanan pedas. — Bahasa Jepang sulit, tapi menarik.",
+    "kono heya wa hirokunai desu — Tōkyō wa totemo omoshiroi desu — watashi wa sushi ga suki desu — amari suki ja arimasen — kyō wa ii tenki desu ne"
+  ],
+  "wave": "Ulangi Unit 6 lewat unit ini: ceritakan lagi satu harimu, tapi kali ini tambahkan **satu kata sifat** di tiap kalimat — “setiap pagi saya minum kopi yang panas di kafe yang tenang”. Kata sifat adalah bumbu yang mengubah daftar kegiatan jadi cerita."
+}

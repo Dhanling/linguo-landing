@@ -1,0 +1,341 @@
+{
+  "title": "Jam, hari, dan jadwal",
+  "title_target": "なんじですか — Nanji desu ka",
+  "goal": "Menyebut jam dan menit, menanyakan waktu, menyebut hari dalam seminggu, dan menerangkan jam buka atau jadwal dengan ～から～まで.",
+  "bekal": [
+    "menyebut jam dan menit dengan benar",
+    "membaca jadwal dengan ～から～まで",
+    "menyebut tujuh hari dalam seminggu",
+    "memakai bentuk ます untuk kegiatan sehari-hari",
+    "membuat janji sederhana dengan orang lain"
+  ],
+  "dialogs": [
+    {
+      "title": "会話 1 — Jam berapa kelasnya?",
+      "intro": "Ani menanyakan jadwal kelas kepada temannya. Perhatikan pola ～から～まで yang berulang di beberapa baris.",
+      "lines": [
+        {"speaker": "アニ:", "text": "[すみません|Sumimasen]、[いま|ima] [なんじですか|nanji desu ka]。", "id": "Permisi, sekarang jam berapa?", "literal": "maaf, sekarang — apa-jam — adalah — kah."},
+        {"speaker": "たなか:", "text": "[はちじはんです|Hachi-ji han desu]。", "id": "Setengah sembilan.", "literal": "delapan-jam-setengah — adalah."},
+        {"speaker": "アニ:", "text": "[クラスは|Kurasu wa] [なんじからですか|nanji kara desu ka]。", "id": "Kelasnya mulai jam berapa?", "literal": "kelas — mengenai — apa-jam — dari — adalah — kah."},
+        {"speaker": "たなか:", "text": "[くじから|Ku-ji kara] [じゅういちじまでです|jūichi-ji made desu]。", "id": "Dari jam sembilan sampai jam sebelas.", "literal": "sembilan-jam — dari — sebelas-jam — sampai — adalah."},
+        {"speaker": "アニ:", "text": "[やすみは|Yasumi wa] [ありますか|arimasu ka]。", "id": "Ada istirahat?", "literal": "istirahat — mengenai — ada — kah."},
+        {"speaker": "たなか:", "text": "[はい|Hai]、[じゅうじから|jū-ji kara] [じゅうじじゅうごふんまで|jū-ji jūgo-fun made] [やすみます|yasumimasu]。", "id": "Ya, istirahat dari jam sepuluh sampai jam sepuluh lewat lima belas.", "literal": "ya, sepuluh-jam — dari — sepuluh-jam-lima-belas-menit — sampai — beristirahat."},
+        {"speaker": "アニ:", "text": "[ごごの|Gogo no] [クラスも|kurasu mo] [ありますか|arimasu ka]。", "id": "Ada kelas sore juga?", "literal": "sore — punya — kelas — juga — ada — kah."},
+        {"speaker": "たなか:", "text": "[かようびと|Kayōbi to] [もくようびだけです|mokuyōbi dake desu]。", "id": "Cuma Selasa dan Kamis.", "literal": "Selasa — dan — Kamis — hanya — adalah."},
+        {"speaker": "アニ:", "text": "[にちようびは|Nichiyōbi wa] [やすみですか|yasumi desu ka]。", "id": "Hari Minggu libur?", "literal": "Minggu — mengenai — libur — adalah — kah."},
+        {"speaker": "たなか:", "text": "[はい|Hai]、[どようびと|doyōbi to] [にちようびは|nichiyōbi wa] [やすみです|yasumi desu]。", "id": "Ya, Sabtu dan Minggu libur.", "literal": "ya, Sabtu — dan — Minggu — mengenai — libur — adalah."},
+        {"speaker": "アニ:", "text": "[わかりました|Wakarimashita]。[ありがとうございます|Arigatō gozaimasu]。", "id": "Baik, saya mengerti. Terima kasih.", "literal": "mengerti-sudah. terima-kasih."}
+      ],
+      "notes": [
+        "**なんじ = jam berapa, なんぷん = menit berapa.** Perhatikan bahwa jam memakai penggolong **じ (時)** dan menit memakai **ふん/ぷん (分)** — dua penggolong berbeda yang tidak bisa ditukar.",
+        "**はん = setengah**, dan letaknya sesudah jamnya: はちじはん = jam 8.30. Ini jauh lebih sering dipakai daripada はちじさんじゅっぷん, meski keduanya benar.",
+        "**だけ = hanya**, ditaruh **sesudah** kata yang dibatasi: かようびだけ = hanya Selasa. Berbeda dengan bahasa Indonesia yang menaruh “hanya” di depan.",
+        "**と = dan, tapi cuma untuk kata benda.** どようびとにちようび = Sabtu dan Minggu. Untuk menyambung dua kalimat, と tidak bisa dipakai — itu butuh bentuk て di Unit 10.",
+        "**やすみ adalah kata benda (libur, istirahat), やすみます adalah kata kerja (beristirahat).** Banyak pasangan seperti ini dalam bahasa Jepang, dan biasanya bentuk kata bendanya lebih pendek.",
+        "**ごぜん / ごご = pagi (AM) / siang-sore (PM).** Diletakkan **sebelum** jamnya: ごご3じ = jam 3 sore. Jepang memakai jam 24 di jadwal resmi, tapi jam 12 dalam percakapan."
+      ],
+      "grammars": [
+        {
+          "title": "Jam dan menit",
+          "body": [
+            "Menyebut jam = angka + **じ**. Menyebut menit = angka + **ふん** atau **ぷん**. Sebagian besar teratur; yang tidak teratur ada di tabel dan hanya enam buah."
+          ],
+          "tables": [
+            {
+              "head": ["Jam", "Bacaan", "Jam", "Bacaan"],
+              "rows": [
+                ["1 時", "[いちじ|ichi-ji]", "7 時", "[しちじ|shichi-ji] ⚠️"],
+                ["2 時", "[にじ|ni-ji]", "8 時", "[はちじ|hachi-ji]"],
+                ["3 時", "[さんじ|san-ji]", "9 時", "[くじ|ku-ji] ⚠️"],
+                ["4 時", "[よじ|yo-ji] ⚠️", "10 時", "[じゅうじ|jū-ji]"],
+                ["5 時", "[ごじ|go-ji]", "11 時", "[じゅういちじ|jūichi-ji]"],
+                ["6 時", "[ろくじ|roku-ji]", "12 時", "[じゅうにじ|jūni-ji]"]
+              ]
+            },
+            {
+              "head": ["Menit", "Bacaan", "Menit", "Bacaan"],
+              "rows": [
+                ["1 分", "[いっぷん|ippun] ⚠️", "7 分", "[ななふん|nana-fun]"],
+                ["2 分", "[にふん|ni-fun]", "8 分", "[はっぷん|happun] ⚠️"],
+                ["3 分", "[さんぷん|sanpun] ⚠️", "9 分", "[きゅうふん|kyū-fun]"],
+                ["4 分", "[よんぷん|yonpun] ⚠️", "10 分", "[じゅっぷん|juppun] ⚠️"],
+                ["5 分", "[ごふん|go-fun]", "30 分", "[さんじゅっぷん|sanjuppun] / [はん|han]"],
+                ["6 分", "[ろっぷん|roppun] ⚠️", "berapa", "[なんぷん|nanpun]"]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **Empat jam yang keluar dari pola:** 4時 = **よじ** (bukan よんじ), 7時 = **しちじ**, 9時 = **くじ** (bukan きゅうじ). Tiga inilah yang paling sering salah diucapkan pemula.",
+            "**Aturan praktis menit:** angka yang berujung 1, 3, 4, 6, 8, 10 memakai **ぷん**; sisanya **ふん**. Bunyinya menempel karena mulut, bukan karena tata bahasa — ucapkan keras-keras beberapa kali dan tangannya akan hafal sendiri.",
+            "**Urutan lengkap:** ごご **3じ 15ふん** = jam 3 lewat 15 sore. Jamnya dulu, menitnya kemudian, sama seperti bahasa Indonesia."
+          ]
+        },
+        {
+          "title": "～から～まで — dari … sampai …",
+          "body": [
+            "**から** = dari (titik mulai). **まで** = sampai (titik akhir). Keduanya menempel **sesudah** kata yang ditandai, bukan sebelum — ini pola paling umum dalam bahasa Jepang dan akan terus berulang.",
+            "Dua-duanya bisa dipakai untuk **waktu** maupun **tempat**, dan boleh berdiri sendiri tanpa pasangannya."
+          ],
+          "table": {
+            "head": ["Kalimat", "Arti"],
+            "rows": [
+              ["[くじから|Ku-ji kara] [ごじまでです|go-ji made desu]。", "Dari jam 9 sampai jam 5."],
+              ["[くじからです|Ku-ji kara desu]。", "Mulai jam 9."],
+              ["[ごじまでです|Go-ji made desu]。", "Sampai jam 5."],
+              ["[ジャカルタから|Jakaruta kara] [とうきょうまで|Tōkyō made]", "Dari Jakarta sampai Tokyo."],
+              ["[げつようびから|Getsuyōbi kara] [きんようびまで|kin'yōbi made]", "Dari Senin sampai Jumat."]
+            ]
+          },
+          "after": [
+            "**から juga berarti “karena”** kalau menempel di ujung kalimat, bukan di ujung kata benda. Ini dua tugas berbeda dengan satu kata yang sama; konteksnya hampir selalu membedakan."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "会話 2 — Membuat janji",
+      "intro": "Budi dan Ani mengatur waktu bertemu. Perhatikan kata kerja bentuk ます yang mulai bermunculan.",
+      "lines": [
+        {"speaker": "ブディ:", "text": "[アニさん|Ani-san]、[あした|ashita] [ひまですか|hima desu ka]。", "id": "Ani, besok senggang?", "literal": "Ani-tuan, besok — senggang — adalah — kah."},
+        {"speaker": "アニ:", "text": "[あしたは|Ashita wa] [しごとが|shigoto ga] [あります|arimasu]。[あさってはひまです|Asatte wa hima desu]。", "id": "Besok ada kerjaan. Lusa senggang.", "literal": "besok — mengenai — pekerjaan — yang — ada. lusa — mengenai — senggang — adalah."},
+        {"speaker": "ブディ:", "text": "[あさっては|Asatte wa] [なんようびですか|nan-yōbi desu ka]。", "id": "Lusa hari apa?", "literal": "lusa — mengenai — apa-hari — adalah — kah."},
+        {"speaker": "アニ:", "text": "[すいようびです|Suiyōbi desu]。", "id": "Hari Rabu.", "literal": "Rabu — adalah."},
+        {"speaker": "ブディ:", "text": "[すいようびの|Suiyōbi no] [ごご|gogo] 2[じは|ji wa] [どうですか|dō desu ka]。", "id": "Rabu jam 2 siang bagaimana?", "literal": "Rabu — punya — sore — 2 — jam — mengenai — bagaimana — adalah — kah."},
+        {"speaker": "アニ:", "text": "[すみません|Sumimasen]、2[じは|ji wa] [ちょっと|chotto]…。3[じは|ji wa] [だいじょうぶです|daijōbu desu]。", "id": "Maaf, jam 2 agak… Jam 3 tidak masalah.", "literal": "maaf, 2 — jam — mengenai — sedikit…. 3 — jam — mengenai — tidak-apa-apa — adalah."},
+        {"speaker": "ブディ:", "text": "[じゃあ|Jā]、3[じに|ji ni] [あいましょう|aimashō]。[どこで|Doko de] [あいますか|aimasu ka]。", "id": "Kalau begitu, ayo bertemu jam 3. Ketemu di mana?", "literal": "kalau-begitu, 3 — jam — pada — mari-bertemu. mana — di — bertemu — kah."},
+        {"speaker": "アニ:", "text": "[えきの|Eki no] [まえは|mae wa] [どうですか|dō desu ka]。", "id": "Bagaimana kalau di depan stasiun?", "literal": "stasiun — punya — depan — mengenai — bagaimana — adalah — kah."},
+        {"speaker": "ブディ:", "text": "[いいですね|Ii desu ne]。[じゃあ|Jā]、[すいようびの|suiyōbi no] 3[じに|ji ni]。", "id": "Bagus. Kalau begitu, Rabu jam 3.", "literal": "baik — adalah — ya. kalau-begitu, Rabu — punya — 3 — jam — pada."},
+        {"speaker": "アニ:", "text": "[はい|Hai]、[またあさって|mata asatte]。", "id": "Ya, sampai lusa.", "literal": "ya, lagi — lusa."}
+      ],
+      "notes": [
+        "**ちょっと… yang menggantung adalah penolakan halus** — kamu sudah melihatnya di Unit 2, dan di sini kegunaannya jelas: menolak jam yang ditawarkan tanpa mengatakan “tidak bisa”. Orang Jepang jarang menolak dengan lugas, dan kalimat yang tidak diselesaikan justru dianggap sopan.",
+        "**に menandai waktu tertentu.** 3じ**に**あいましょう = bertemu **pada** jam 3. Aturannya: pakai に kalau waktunya bisa ditunjuk di jam atau kalender (jam, tanggal, hari), jangan pakai に untuk waktu yang samar (きょう, あした, いま, まいにち).",
+        "**～ましょう = “mari kita ～”.** Ajakan yang akan dibongkar penuh di Unit 9. Untuk sekarang, kenali bentuknya: あいます → あいましょう.",
+        "**ひま = senggang.** Kata sifat jenis な (Unit 7). Kebalikannya いそがしい (sibuk).",
+        "**まえ = depan.** えきのまえ = depan stasiun. Kata letak dibahas penuh di Unit 5.",
+        "**なんようび = hari apa.** Jangan tertukar dengan なんにち (tanggal berapa)."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk ます — kata kerja sopan",
+          "body": [
+            "Semua kata kerja bahasa Jepang punya satu bentuk sopan yang berakhiran **～ます**. Untuk tingkat A1, inilah bentuk yang kamu pakai — aman untuk semua orang, dalam semua keadaan.",
+            "Kabar baiknya: **bentuknya tidak berubah menurut siapa pelakunya.** Tidak ada perbedaan saya/kamu/dia, tunggal/jamak. Satu bentuk untuk semua."
+          ],
+          "table": {
+            "head": ["Bentuk", "Arti", "Contoh"],
+            "rows": [
+              ["～[ます|masu]", "sekarang / akan / kebiasaan", "[やすみます|yasumimasu] — beristirahat"],
+              ["～[ません|masen]", "tidak", "[やすみません|yasumimasen] — tidak beristirahat"],
+              ["～[ました|mashita]", "sudah (lampau)", "[やすみました|yasumimashita] — sudah beristirahat"],
+              ["～[ませんでした|masen deshita]", "tidak (lampau)", "[やすみませんでした|yasumimasen deshita] — tidak beristirahat"],
+              ["～[ましょう|mashō]", "mari kita", "[やすみましょう|yasumimashō] — mari beristirahat"],
+              ["～[ませんか|masen ka]", "maukah kamu", "[やすみませんか|yasumimasen ka] — mau istirahat?"]
+            ]
+          },
+          "after": [
+            "**Satu bentuk ます tidak membedakan sekarang dan nanti.** いきます bisa berarti “saya pergi” dan “saya akan pergi”. Yang membedakan cuma keterangan waktunya: あしたいきます = besok saya pergi.",
+            "⚠️ **Kata kerjanya selalu di ujung kalimat.** Ini berlaku tanpa kecuali, dan itulah sebabnya orang Jepang sering baru tahu maksud kalimat di detik terakhir."
+          ]
+        },
+        {
+          "title": "Hari, dan kata waktu di sekitarnya",
+          "body": [
+            "Nama hari semuanya berakhiran **ようび (曜日)**, dan awalannya berasal dari unsur alam — bulan, api, air, kayu, emas, tanah, matahari. Urutannya sama persis dengan urutan Senin sampai Minggu, jadi cukup dihafal sekali."
+          ],
+          "tables": [
+            {
+              "head": ["Hari", "Bacaan", "Asal katanya"],
+              "rows": [
+                ["月曜日", "[げつようび|getsuyōbi]", "bulan — Senin"],
+                ["火曜日", "[かようび|kayōbi]", "api — Selasa"],
+                ["水曜日", "[すいようび|suiyōbi]", "air — Rabu"],
+                ["木曜日", "[もくようび|mokuyōbi]", "kayu — Kamis"],
+                ["金曜日", "[きんようび|kin'yōbi]", "emas — Jumat"],
+                ["土曜日", "[どようび|doyōbi]", "tanah — Sabtu"],
+                ["日曜日", "[にちようび|nichiyōbi]", "matahari — Minggu"],
+                ["何曜日", "[なんようび|nan'yōbi]", "hari apa?"]
+              ]
+            },
+            {
+              "head": ["Kata waktu", "Bacaan", "Arti"],
+              "rows": [
+                ["今日", "[きょう|kyō]", "hari ini"],
+                ["明日", "[あした|ashita]", "besok"],
+                ["明後日", "[あさって|asatte]", "lusa"],
+                ["昨日", "[きのう|kinō]", "kemarin"],
+                ["毎日", "[まいにち|mainichi]", "setiap hari"],
+                ["今週", "[こんしゅう|konshū]", "minggu ini"],
+                ["来週", "[らいしゅう|raishū]", "minggu depan"],
+                ["先週", "[せんしゅう|senshū]", "minggu lalu"],
+                ["午前", "[ごぜん|gozen]", "pagi (AM)"],
+                ["午後", "[ごご|gogo]", "siang-sore (PM)"]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **Kata waktu yang samar tidak memakai に**: きょういきます (bukan きょうにいきます), まいにちべんきょうします. Yang memakai に: jam, tanggal, hari, bulan — apa pun yang bisa ditunjuk di kalender."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Jam buka di Jepang",
+      "blocks": [
+        {"type": "p", "text": "Jadwal di Jepang ditulis dengan pola yang sama di mana-mana, dan begitu kamu mengenali polanya, papan jam buka apa pun jadi terbaca:"},
+        {"type": "tabel", "head": ["Yang tertulis", "Bacaan", "Arti"], "rows": [
+          ["[えいぎょうじかん|eigyō jikan] 営業時間", "eigyō jikan", "jam buka"],
+          ["9:00 〜 18:00", "[くじから|ku-ji kara] [じゅうはちじまで|jūhachi-ji made]", "dari jam 9 sampai jam 18"],
+          ["[ていきゅうび|teikyūbi] 定休日", "teikyūbi", "hari tutup tetap"],
+          ["[きゅうぎょう|kyūgyō] 休業", "kyūgyō", "tutup"],
+          ["[ちゅうし|chūshi] 中止", "chūshi", "dibatalkan"],
+          ["24[じかん|jikan]", "nijūyo-jikan", "24 jam"]
+        ]},
+        {"type": "kotak", "title": "Waktu itu serius di Jepang", "items": [
+          "Kereta di Jepang dianggap terlambat kalau meleset lebih dari satu menit, dan penumpang diberi surat keterangan terlambat untuk ditunjukkan ke kantor. Ini bukan lelucon.",
+          "Datang **tepat waktu** artinya datang **lima menit lebih awal**. Datang tepat pada menitnya sudah dianggap mepet.",
+          "Kalau terlambat, kabari sebelum jamnya lewat — bukan sesudahnya. Kalimatnya: **[すみません|Sumimasen]、10[ぷん|pun] [おくれます|okuremasu]。** (Maaf, saya terlambat 10 menit.)"
+        ]}
+      ]
+    },
+    {
+      "title": "Satu hari, dari bangun sampai tidur",
+      "blocks": [
+        {"type": "p", "text": "Kalimat-kalimat ini memakai bentuk ます yang baru saja kamu lihat. Bacalah sebagai satu cerita — ini kerangka yang akan dipakai penuh di Unit 6."},
+        {"type": "tabel", "head": ["Waktu", "Kalimat", "Arti"], "rows": [
+          ["6:00", "[ろくじに|Roku-ji ni] [おきます|okimasu]。", "Bangun jam 6."],
+          ["7:00", "[しちじに|Shichi-ji ni] [あさごはんを|asagohan o] [たべます|tabemasu]。", "Sarapan jam 7."],
+          ["8:00", "[はちじに|Hachi-ji ni] [うちを|uchi o] [でます|demasu]。", "Keluar rumah jam 8."],
+          ["9:00", "[くじから|Ku-ji kara] [はたらきます|hatarakimasu]。", "Bekerja mulai jam 9."],
+          ["12:00", "[じゅうにじに|Jūni-ji ni] [ひるごはんを|hirugohan o] [たべます|tabemasu]。", "Makan siang jam 12."],
+          ["18:00", "[ろくじに|Roku-ji ni] [うちへ|uchi e] [かえります|kaerimasu]。", "Pulang ke rumah jam 6."],
+          ["23:00", "[じゅういちじに|Jūichi-ji ni] [ねます|nemasu]。", "Tidur jam 11."]
+        ]},
+        {"type": "p", "text": "Bacalah tabel ini dengan suara keras sambil mengganti jamnya dengan jadwalmu sendiri. Tujuh kalimat ini saja sudah cukup untuk menceritakan satu hari penuh kepada orang Jepang."}
+      ]
+    }
+  ],
+  "vocab": [
+    {"ja": "[じ|ji] 時", "baca": "じ · ji", "id": "jam (penunjuk waktu)"},
+    {"ja": "[ふん|fun] 分", "baca": "ふん · fun", "id": "menit"},
+    {"ja": "[はん|han] 半", "baca": "はん · han", "id": "setengah"},
+    {"ja": "[なんじ|nanji] 何時", "baca": "なんじ · nanji", "id": "jam berapa"},
+    {"ja": "[ごぜん|gozen] 午前", "baca": "ごぜん · gozen", "id": "pagi, AM"},
+    {"ja": "[ごご|gogo] 午後", "baca": "ごご · gogo", "id": "siang-sore, PM"},
+    {"ja": "[あさ|asa] 朝", "baca": "あさ · asa", "id": "pagi"},
+    {"ja": "[ひる|hiru] 昼", "baca": "ひる · hiru", "id": "siang"},
+    {"ja": "[ばん|ban] 晩", "baca": "ばん · ban", "id": "malam"},
+    {"ja": "[よる|yoru] 夜", "baca": "よる · yoru", "id": "malam hari"},
+    {"ja": "[げつようび|getsuyōbi] 月曜日", "baca": "げつようび · getsuyōbi", "id": "Senin"},
+    {"ja": "[かようび|kayōbi] 火曜日", "baca": "かようび · kayōbi", "id": "Selasa"},
+    {"ja": "[すいようび|suiyōbi] 水曜日", "baca": "すいようび · suiyōbi", "id": "Rabu"},
+    {"ja": "[もくようび|mokuyōbi] 木曜日", "baca": "もくようび · mokuyōbi", "id": "Kamis"},
+    {"ja": "[きんようび|kin'yōbi] 金曜日", "baca": "きんようび · kin'yōbi", "id": "Jumat"},
+    {"ja": "[どようび|doyōbi] 土曜日", "baca": "どようび · doyōbi", "id": "Sabtu"},
+    {"ja": "[にちようび|nichiyōbi] 日曜日", "baca": "にちようび · nichiyōbi", "id": "Minggu"},
+    {"ja": "[なんようび|nan'yōbi] 何曜日", "baca": "なんようび · nan'yōbi", "id": "hari apa"},
+    {"ja": "[きょう|kyō] 今日", "baca": "きょう · kyō", "id": "hari ini"},
+    {"ja": "[あした|ashita] 明日", "baca": "あした · ashita", "id": "besok"},
+    {"ja": "[あさって|asatte]", "baca": "あさって · asatte", "id": "lusa"},
+    {"ja": "[きのう|kinō] 昨日", "baca": "きのう · kinō", "id": "kemarin"},
+    {"ja": "[まいにち|mainichi] 毎日", "baca": "まいにち · mainichi", "id": "setiap hari"},
+    {"ja": "[らいしゅう|raishū] 来週", "baca": "らいしゅう · raishū", "id": "minggu depan"},
+    {"ja": "[せんしゅう|senshū] 先週", "baca": "せんしゅう · senshū", "id": "minggu lalu"},
+    {"ja": "[やすみ|yasumi] 休み", "baca": "やすみ · yasumi", "id": "libur, istirahat"},
+    {"ja": "[じかん|jikan] 時間", "baca": "じかん · jikan", "id": "waktu; jam (lamanya)"},
+    {"ja": "[ひま|hima] 暇", "baca": "ひま · hima", "id": "senggang"},
+    {"ja": "[いそがしい|isogashii] 忙しい", "baca": "いそがしい · isogashii", "id": "sibuk"},
+    {"ja": "[から|kara]", "baca": "から · kara", "id": "dari"},
+    {"ja": "[まで|made]", "baca": "まで · made", "id": "sampai"},
+    {"ja": "[だけ|dake]", "baca": "だけ · dake", "id": "hanya"},
+    {"ja": "[と|to]", "baca": "と · to", "id": "dan (kata benda)"},
+    {"ja": "[えき|eki] 駅", "baca": "えき · eki", "id": "stasiun"},
+    {"ja": "[まえ|mae] 前", "baca": "まえ · mae", "id": "depan; sebelum"},
+    {"ja": "[おきます|okimasu] 起きます", "baca": "おきます · okimasu", "id": "bangun"},
+    {"ja": "[ねます|nemasu] 寝ます", "baca": "ねます · nemasu", "id": "tidur"},
+    {"ja": "[たべます|tabemasu] 食べます", "baca": "たべます · tabemasu", "id": "makan"},
+    {"ja": "[はたらきます|hatarakimasu] 働きます", "baca": "はたらきます · hatarakimasu", "id": "bekerja"},
+    {"ja": "[やすみます|yasumimasu] 休みます", "baca": "やすみます · yasumimasu", "id": "beristirahat, libur"},
+    {"ja": "[かえります|kaerimasu] 帰ります", "baca": "かえります · kaerimasu", "id": "pulang"},
+    {"ja": "[あいます|aimasu] 会います", "baca": "あいます · aimasu", "id": "bertemu"},
+    {"ja": "[おくれます|okuremasu] 遅れます", "baca": "おくれます · okuremasu", "id": "terlambat"},
+    {"ja": "[あさごはん|asagohan] 朝ごはん", "baca": "あさごはん · asagohan", "id": "sarapan"},
+    {"ja": "[ひるごはん|hirugohan] 昼ごはん", "baca": "ひるごはん · hirugohan", "id": "makan siang"},
+    {"ja": "[ばんごはん|bangohan] 晩ごはん", "baca": "ばんごはん · bangohan", "id": "makan malam"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis jam ini dalam kana.",
+      "items": [
+        "jam 4: ___",
+        "jam 7: ___",
+        "jam 9: ___",
+        "jam setengah 3 (3.30): ___ じはん",
+        "jam berapa: ___"
+      ]
+    },
+    {
+      "prompt": "Isi partikel yang hilang.",
+      "items": [
+        "クラスは9じ ___ です。(mulai)",
+        "5じ ___ はたらきます。(sampai)",
+        "3じ ___ あいましょう。",
+        "どようび ___ にちようびはやすみです。",
+        "かようび ___ です。(hanya)",
+        "すいようび ___ ごご2じはどうですか。"
+      ]
+    },
+    {
+      "prompt": "Tulis nama hari ini dalam kana.",
+      "items": [
+        "Senin: ___",
+        "Rabu: ___",
+        "Jumat: ___",
+        "Sabtu: ___",
+        "Minggu: ___"
+      ]
+    },
+    {
+      "prompt": "Susun kepingan menjadi kalimat yang benar.",
+      "items": [
+        "いま / なんじ / です / か",
+        "クラス / は / くじ / から / じゅういちじ / まで / です",
+        "まいにち / ろくじ / に / おきます",
+        "どようび / と / にちようび / は / やすみ / です",
+        "えき / の / まえ / で / あいましょう",
+        "すみません / じゅっぷん / おくれます"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Indonesia.",
+      "items": [
+        "いまはちじはんです。",
+        "しごとはくじからごじまでです。",
+        "あさっては なんようびですか。",
+        "まいにち じゅういちじに ねます。",
+        "きんようびの ごご は ひまです。"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Jepang. Tulis dengan rōmaji.",
+      "items": [
+        "Sekarang jam berapa?",
+        "Kelasnya dari jam 9 sampai jam 11.",
+        "Hari Minggu libur.",
+        "Ayo bertemu jam 3.",
+        "Besok saya sibuk."
+      ]
+    }
+  ],
+  "answers": [
+    "よじ — しちじ — くじ — さん — なんじ",
+    "から — まで — に — と — だけ — の",
+    "げつようび — すいようび — きんようび — どようび — にちようび",
+    "いま なんじ です か — クラス は くじ から じゅういちじ まで です — まいにち ろくじ に おきます — どようび と にちようび は やすみ です — えき の まえ で あいましょう — すみません じゅっぷん おくれます",
+    "Sekarang jam setengah sembilan. — Kerja dari jam 9 sampai jam 5. — Lusa hari apa? — Setiap hari tidur jam 11. — Jumat sore saya senggang.",
+    "ima nanji desu ka — kurasu wa ku-ji kara jūichi-ji made desu — nichiyōbi wa yasumi desu — san-ji ni aimashō — ashita wa isogashii desu"
+  ],
+  "wave": "Ulangi Unit 3: baca sepuluh harga acak dalam yen dengan suara keras, lalu gabungkan dengan unit ini — “Toko itu buka dari jam berapa sampai jam berapa, dan barangnya berapa harganya?” Dua unit dipakai dalam satu kalimat."
+}
