@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Suspense } from "react";
 import { createClient } from "@supabase/supabase-js";
 import JadwalKelasRegulerClient from "./JadwalKelasRegulerClient";
+import { todayWIBISO } from "@/lib/etpBatches";
 
 export const metadata: Metadata = {
   title: "Jadwal Kelas Reguler — Linguo.id",
@@ -57,7 +58,26 @@ async function getBatches() {
     return [];
   }
 
-  return (data || []).filter((b: any) => b.actual_enrolled < b.max_capacity);
+  const rows = (data || []).filter((b: any) => b.actual_enrolled < b.max_capacity);
+
+  // Siklus lama (mis. AUG26) kadang masih `is_published` walau kelasnya sudah
+  // jalan. Batch semacam itu cuma berguna kalau bahasanya belum punya batch
+  // penerus — begitu siklus baru terbit, yang lama disembunyikan biar daftarnya
+  // tidak penuh kartu "Pendaftaran ditutup".
+  // Tanggal dibanding dalam WIB — server Vercel jalan di UTC, kalau pakai jam
+  // server batch yang mulai hari ini bisa hilang sejak pukul 07.00 WIB.
+  const hariIni = todayWIBISO();
+  const masihBuka = (b: any) => {
+    if (b.closes_at && new Date(b.closes_at).getTime() < Date.now()) return false;
+    return String(b.start_date).slice(0, 10) >= hariIni;
+  };
+  const adaPenerus = new Set(
+    rows.filter(masihBuka).map((b: any) => `${b.language}|${b.level}`)
+  );
+
+  return rows.filter(
+    (b: any) => masihBuka(b) || !adaPenerus.has(`${b.language}|${b.level}`)
+  );
 }
 
 async function getEtpBatches() {

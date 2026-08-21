@@ -48,6 +48,9 @@ interface Batch {
   current_price_per_student: number | null;
   status_display: string;
   capacity_hint: string;
+  // Batas pendaftaran. Beda dengan start_date: batch September buka 21 Agustus,
+  // tutup 10 September, kelasnya sendiri baru mulai pekan 14 September.
+  closes_at: string | null;
 }
 
 // Bentuk baris tabel etp_batches ada di @/lib/etpBatches — dipakai bareng
@@ -141,14 +144,13 @@ function EtpIcon({ program, className = "" }: { program: EtpProgram; className?:
 
 const WA_NUMBER = "6282116859493";
 
-// Info batch berikutnya. Ditulis manual karena baris batch-nya belum dibuat di
-// database — begitu batch September masuk `regular_batches`, banner ini otomatis
-// hilang (cuma tampil kalau tak ada satu pun batch yang belum mulai).
+// Cadangan buat siklus yang baris batch-nya belum dibuat di `regular_batches`.
+// Banner ini cuma muncul kalau tak ada satu pun batch yang pendaftarannya masih
+// buka, jadi jangan patok tanggal di sini — tanggal yang benar hidup di kolom
+// `opens_at`/`closes_at` tiap batch.
 const NEXT_BATCH = {
-  label: "Batch September",
-  regOpen: "19 Agustus",
-  regClose: "30 Agustus 2026",
-  startNote: "Kelas mulai September 2026",
+  label: "Batch Berikutnya",
+  startNote: "Jadwal & tanggal pendaftaran siklus berikutnya via WhatsApp",
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -166,6 +168,20 @@ function formatDate(dateStr: string): string {
   });
 }
 
+// "2026-09-01" → "Batch September". Dipakai di banner countdown supaya siswa tahu
+// siklus mana yang lagi dibuka tanpa harus dipatok manual di kode.
+function batchMonthLabel(batchMonth: string | null): string {
+  if (!batchMonth) return "Batch Terdekat";
+  const d = new Date(`${String(batchMonth).slice(0, 10)}T00:00:00`);
+  if (isNaN(d.getTime())) return "Batch Terdekat";
+  return `Batch ${d.toLocaleDateString("id-ID", { month: "long" })}`;
+}
+
+function formatDateShort(dateStr: string): string {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString("id-ID", { day: "numeric", month: "short" });
+}
+
 function getCountdown(dateStr: string): { label: string; color: string } {
   const now = new Date();
   now.setHours(0, 0, 0, 0);
@@ -179,14 +195,26 @@ function getCountdown(dateStr: string): { label: string; color: string } {
   return { label: `${diff} hari lagi`, color: "text-slate-400" };
 }
 
-// Batch yang tanggal mulainya sudah lewat = pendaftaran ditutup. Dibandingkan
-// per hari (bukan per jam) supaya batch yang mulai hari ini masih bisa didaftar.
-function isBatchClosed(dateStr: string): boolean {
+// Batas pendaftaran sebuah batch: `closes_at` kalau diisi, kalau tidak jatuh
+// balik ke tanggal mulai kelas (perilaku lama, batch lawas tak punya closes_at).
+function regDeadline(batch: Batch): Date {
+  if (batch.closes_at) return new Date(batch.closes_at);
+  const d = new Date(batch.start_date);
+  d.setHours(23, 59, 59, 0);
+  return d;
+}
+
+// Pendaftaran ditutup kalau batas tadi sudah lewat, ATAU kelasnya terlanjur mulai.
+// Tanggal mulai dibandingkan per hari (bukan per jam) supaya batch yang mulai
+// hari ini masih bisa didaftar.
+function isBatchClosed(batch: Batch): boolean {
   const now = new Date();
-  now.setHours(0, 0, 0, 0);
-  const target = new Date(dateStr);
-  target.setHours(0, 0, 0, 0);
-  return target.getTime() < now.getTime();
+  if (regDeadline(batch).getTime() < now.getTime()) return true;
+  const start = new Date(batch.start_date);
+  start.setHours(0, 0, 0, 0);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return start.getTime() < today.getTime();
 }
 
 function buildNextBatchWALink(): string {
@@ -304,12 +332,11 @@ export default function JadwalKelasRegulerClient({
     [etpPrograms]
   );
 
-  // Cari batch yang paling dekat mulainya (masih upcoming)
+  // Batch yang pendaftarannya masih buka dan paling dekat ditutup
   const nearestBatch = useMemo(() => {
-    const now = new Date();
     return batches
-      .filter((b) => new Date(b.start_date) > now)
-      .sort((a, b) => new Date(a.start_date).getTime() - new Date(b.start_date).getTime())[0] ?? null;
+      .filter((b) => !isBatchClosed(b))
+      .sort((a, b) => regDeadline(a).getTime() - regDeadline(b).getTime())[0] ?? null;
   }, [batches]);
 
   // Live countdown tick
@@ -317,9 +344,7 @@ export default function JadwalKelasRegulerClient({
     if (!nearestBatch) return;
     const tick = () => {
       const now = new Date().getTime();
-      const target = new Date(nearestBatch.start_date);
-      target.setHours(23, 59, 59, 0); // tutup akhir hari H
-      const diff = target.getTime() - now;
+      const diff = regDeadline(nearestBatch).getTime() - now;
       if (diff <= 0) { setCountdown("Pendaftaran ditutup"); return; }
       const d = Math.floor(diff / (1000 * 60 * 60 * 24));
       const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -380,8 +405,8 @@ export default function JadwalKelasRegulerClient({
       })
       .sort((a, b) => {
         // Batch yang pendaftarannya ditutup selalu turun ke bawah daftar
-        const closedA = isBatchClosed(a.start_date) ? 1 : 0;
-        const closedB = isBatchClosed(b.start_date) ? 1 : 0;
+        const closedA = isBatchClosed(a) ? 1 : 0;
+        const closedB = isBatchClosed(b) ? 1 : 0;
         if (closedA !== closedB) return closedA - closedB;
         const slotsA = a.max_capacity - a.actual_enrolled;
         const slotsB = b.max_capacity - b.actual_enrolled;
@@ -429,10 +454,17 @@ export default function JadwalKelasRegulerClient({
             <div className="flex items-center gap-3">
               <Hourglass className="h-6 w-6 shrink-0" />
               <div>
-                <div className="text-xs font-medium text-teal-100 uppercase tracking-wide">Pendaftaran Batch Terdekat Ditutup Dalam</div>
+                <div className="text-xs font-medium text-teal-100 uppercase tracking-wide">
+                  Pendaftaran {batchMonthLabel(nearestBatch.batch_month)} Ditutup Dalam
+                </div>
                 <div className="text-xl md:text-2xl font-bold tabular-nums leading-tight">
                   {countdown || "Menghitung..."}
                 </div>
+                {nearestBatch.closes_at && (
+                  <div className="text-xs text-teal-100 mt-0.5">
+                    Terakhir daftar {formatDate(nearestBatch.closes_at)}
+                  </div>
+                )}
               </div>
             </div>
             <div className="flex items-center gap-3 sm:text-right">
@@ -482,13 +514,7 @@ export default function JadwalKelasRegulerClient({
                 <div className="text-lg md:text-xl font-bold text-slate-900 mt-2">
                   {NEXT_BATCH.label}
                 </div>
-                <div className="text-sm text-slate-700 mt-1">
-                  Pendaftaran dibuka{" "}
-                  <span className="font-bold text-teal-700">
-                    {NEXT_BATCH.regOpen} &ndash; {NEXT_BATCH.regClose}
-                  </span>
-                </div>
-                <div className="text-xs text-slate-500 mt-0.5 inline-flex items-center gap-1.5">
+                <div className="text-xs text-slate-500 mt-1 inline-flex items-center gap-1.5">
                   <CalendarDays className="h-3.5 w-3.5" />
                   {NEXT_BATCH.startNote}
                 </div>
@@ -635,7 +661,7 @@ export default function JadwalKelasRegulerClient({
                       <tbody>
                         {filteredBatches.map((batch) => {
                           const slotsLeft = batch.max_capacity - batch.actual_enrolled;
-                          const closed = isBatchClosed(batch.start_date);
+                          const closed = isBatchClosed(batch);
                           const slotBgClass =
                             slotsLeft <= 3
                               ? "bg-red-100 text-red-700"
@@ -670,6 +696,11 @@ export default function JadwalKelasRegulerClient({
                                 <div className={`text-[11px] mt-0.5 ${getCountdown(batch.start_date).color}`}>
                                   {getCountdown(batch.start_date).label}
                                 </div>
+                                {!closed && batch.closes_at && (
+                                  <div className="text-[11px] mt-0.5 text-teal-700 font-medium">
+                                    Daftar s/d {formatDateShort(batch.closes_at)}
+                                  </div>
+                                )}
                               </td>
                               <td className="py-4 px-4 text-slate-600 text-xs">
                                 {batch.total_sessions} × {batch.session_duration_min} mnt
@@ -719,7 +750,7 @@ export default function JadwalKelasRegulerClient({
                   <div className="md:hidden space-y-3">
                     {filteredBatches.map((batch) => {
                       const slotsLeft = batch.max_capacity - batch.actual_enrolled;
-                      const closed = isBatchClosed(batch.start_date);
+                      const closed = isBatchClosed(batch);
                       const waLink = `https://wa.me/${WA_NUMBER}?text=${buildWAMessage(batch)}`;
                       return (
                         <div
@@ -773,6 +804,11 @@ export default function JadwalKelasRegulerClient({
                                 <span className={`ml-2 text-[11px] ${getCountdown(batch.start_date).color}`}>
                                   · {getCountdown(batch.start_date).label}
                                 </span>
+                                {!closed && batch.closes_at && (
+                                  <div className="text-[11px] text-teal-700 font-medium mt-0.5">
+                                    Daftar s/d {formatDate(batch.closes_at)}
+                                  </div>
+                                )}
                               </div>
                             </div>
                           </div>
