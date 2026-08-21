@@ -36,6 +36,8 @@ import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
 // [ebook-reader-v1] e-book berkas dibaca di dalam dashboard, bukan diunduh
 import EbookReader, { prewarmEbookReader, prewarmEbookModul, mintaLayarPenuh } from "@/components/akun/EbookReader";
 import { ELEARNING_BUNDLE_SLUG } from "@/lib/elearningBundle";
+// [pustaka-popup-blocked-v1] tab bayar dibuka di dalam gestur klik, bukan sesudah fetch
+import { siapkanTabPembayaran } from "@/lib/bukaTabPembayaran";
 
 /* ---------------- types ---------------- */
 type ProductType = "elearning" | "ebook";
@@ -1342,6 +1344,8 @@ function RenewModal({
   async function handlePay() {
     if (!selected) return;
     if (!buyer.email) { toast.error("Email tidak ditemukan. Coba login ulang."); return; }
+    // [pustaka-popup-blocked-v1] tab dibuka SEKARANG, selagi gestur klik masih hidup
+    const tabBayar = siapkanTabPembayaran();
     setSubmitting(true);
     try {
       const refCookie = typeof document !== "undefined"
@@ -1367,10 +1371,11 @@ function RenewModal({
       const data = await res.json();
       if (!res.ok || !data.invoice_url) throw new Error(data.error ?? "Gagal membuat invoice");
       // buka Xendit di tab baru → halaman Perpustakaan tetap (ga pindah page)
-      window.open(data.invoice_url, "_blank", "noopener,noreferrer");
-      toast.success("Halaman pembayaran dibuka. Akses aktif otomatis setelah bayar.");
+      const tabBaru = tabBayar.arahkan(data.invoice_url);
+      if (tabBaru) toast.success("Halaman pembayaran dibuka. Akses aktif otomatis setelah bayar.");
       onClose();
     } catch (err) {
+      tabBayar.batal();
       toast.error(err instanceof Error ? err.message : "Terjadi kesalahan.");
       setSubmitting(false);
     }
@@ -1643,6 +1648,8 @@ function BuyModal({
   async function handlePay() {
     if (!selected) return;
     if (!buyer.email) { toast.error("Email tidak ditemukan. Coba login ulang."); return; }
+    // [pustaka-popup-blocked-v1] tab dibuka SEKARANG, selagi gestur klik masih hidup
+    const tabBayar = siapkanTabPembayaran();
     setSubmitting(true);
     try {
       const refCookie = typeof document !== "undefined"
@@ -1667,10 +1674,13 @@ function BuyModal({
       );
       const data = await res.json();
       if (!res.ok || !data.invoice_url) throw new Error(data.error ?? "Gagal membuat invoice");
-      window.open(data.invoice_url, "_blank", "noopener,noreferrer");
-      toast.success("Halaman pembayaran dibuka. Produk masuk Perpustakaan otomatis setelah lunas.");
+      const tabBaru = tabBayar.arahkan(data.invoice_url);
+      // Kalau tab penampungnya terhalang, halaman ini yang pindah ke Xendit —
+      // toast "halaman pembayaran dibuka" jadi mubazir (dan menyesatkan).
+      if (tabBaru) toast.success("Halaman pembayaran dibuka. Produk masuk Perpustakaan otomatis setelah lunas.");
       onClose();
     } catch (err) {
+      tabBayar.batal();
       toast.error(err instanceof Error ? err.message : "Terjadi kesalahan.");
       setSubmitting(false);
     }
