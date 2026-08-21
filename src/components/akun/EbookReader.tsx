@@ -297,6 +297,50 @@ function kalimatLayakDibunyikan(kata: string, kalimat: string) {
   return k.split(" ").length > 1;
 }
 
+/* [ebook-tts-frasa-v1] Sebagian entri modul memang satu SATUAN makna yang
+   kebetulan ditulis dua kata: "buenos días", "me llamo", "mucho gusto". Mengetuk
+   "buenos" saja mengeluarkan bunyi yang tak pernah dipakai siapa pun — di
+   percakapan betulan kata itu tak pernah berdiri sendiri, dan pemenggalannya
+   justru mengajarkan jeda yang salah. Jadi sel pendek dibunyikan UTUH.
+
+   Yang dipakai adalah SEL (kolom tabel kosakata), bukan barisnya: kalimat
+   dialog delapan kata tetap dibunyikan per kata seperti dulu — di sana justru
+   kata tunggal yang dicari siswa.
+
+   Kembalinya "" = tak ada frasa, pakai katanya sendiri. */
+const FRASA_MAKS_KATA = 4;
+const FRASA_MAKS_HURUF = 34;
+/* Kolom "cara baca" ("BUE-nos DI-as") bukan bahasa target — membunyikannya
+   utuh cuma menghasilkan ejaan Indonesia berlogat aneh. */
+const POLA_CARA_BACA = /\p{Lu}+[-‑]\p{Ll}/u;
+function frasaSel(selTeks: string, kata: string): string {
+  let s = String(selTeks || "")
+    .replace(/\([^)]*\)/g, " ")     // "(KA-sa)" — petunjuk cara baca
+    .replace(/[…]+/g, " ")           // "me llamo…" → "me llamo"
+    .replace(/^\s*(?:\d{1,3}[.):]|[-–—•·*])\s*/u, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+  if (!s || POLA_CARA_BACA.test(s)) return "";
+  // "encantado / encantada" & "él / ella es" itu dua pilihan, bukan satu frasa:
+  // yang dibunyikan sisi tempat kata yang diketuk duduk.
+  if (s.includes("/")) {
+    const sisi = s.split("/").map((x) => x.trim()).filter(Boolean);
+    const pilih = sisi.find((x) => new RegExp(`(^|\\P{L})${kata.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}($|\\P{L})`, "iu").test(x));
+    s = pilih || "";
+  }
+  s = s.replace(/^[^\p{L}\p{N}¿¡]+|[^\p{L}\p{N}?!.]+$/gu, "").trim();
+  if (!s || s.length > FRASA_MAKS_HURUF) return "";
+  // Kalimat berakhiran titik tetap kalimat — biar tombol "Putar kalimat" yang
+  // mengurusnya, jangan diserap jadi "kata".
+  if (/[.]$/.test(s)) return "";
+  const kataan = s.split(/[^\p{L}\p{N}'’-]+/u).filter(Boolean);
+  if (kataan.length < 2 || kataan.length > FRASA_MAKS_KATA) return "";
+  // Frasanya wajib memuat kata yang diketuk — kalau tidak, pemenggalan selnya
+  // meleset dan siswa akan mendengar sesuatu yang tak ia tunjuk.
+  if (!kataan.some((k) => k.toLowerCase() === kata.toLowerCase())) return "";
+  return s;
+}
+
 /* [ebook-daftar-isi-subunit-v1] Satu bagian DI DALAM bab — "Kosakata unit ini",
    "Catatan", "Latihan", judul kotak tata bahasa. Dipisah dari Bab karena
    pertanyaannya beda: bab menjawab "unit ini di halaman berapa", sub-bagian
@@ -488,6 +532,16 @@ export default function EbookReader({
 
   /* [ebook-daftar-isi-v1] Daftar isi + lompat halaman. */
   const [daftarBuka, setDaftarBuka] = useState(false);
+  /* [ebook-daftar-isi-tepi-v1] Tombol daftar isi di bilah atas berjarak satu
+     layar penuh dari mata yang sedang membaca — tiap kali siswa mau melompat
+     unit, kursornya harus menyeberang seluruh halaman. Sekarang cukup menempel
+     ke tepi KIRI layar: tombolnya menyongsong sendiri. Tepi layar itu sasaran
+     tak berhingga (hukum Fitts) — tak perlu dibidik, tinggal didorong.
+
+     Cuma untuk tetikus: di layar sentuh tak ada "menempel", dan zona tepi malah
+     mencegat gerakan menggeser halaman. */
+  const [tepiSiap, setTepiSiap] = useState(false);
+  const [tepiHover, setTepiHover] = useState(false);
   /* Bab mana yang isinya sedang dibentangkan. `undefined` = panel baru dibuka
      dan belum diputuskan — dipakai supaya bab yang sedang dibaca membentang
      sendiri sekali saja; kalau siswa menutupnya, ia tetap tertutup. */
@@ -1620,6 +1674,19 @@ export default function EbookReader({
     }
   }, [ambilTeks, memindai, LABEL_BAB]);
 
+  /* Perangkat bertetikus saja — lihat catatan pada `tepiSiap`. */
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return;
+    const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const ubah = () => setTepiSiap(mq.matches);
+    ubah();
+    mq.addEventListener("change", ubah);
+    return () => mq.removeEventListener("change", ubah);
+  }, []);
+
+  /* Panel dibuka → tepi kiri berhenti menawarkan diri (tombolnya sudah di sana). */
+  useEffect(() => { if (daftarBuka) setTepiHover(false); }, [daftarBuka]);
+
   const bukaDaftar = useCallback(() => {
     setDaftarBuka(true);
     setBabBuka(undefined);
@@ -1723,6 +1790,17 @@ export default function EbookReader({
     // Di baris tabel, yang dipakai adalah SEL tempat katanya duduk — lihat Segmen.
     const sel = barisKena?.segmen.find((g) => xp >= g.x0 - 2 && xp <= g.x1 + 2);
     const kalimat = kalimatTarget(sel?.teks ?? barisKena?.teks ?? kena.str, kodeBahasa);
+    /* [ebook-tts-frasa-v1] "buenos días" dibunyikan sebagai satu satuan, bukan
+       "buenos" saja — lihat catatan pada frasaSel. Sorotannya ikut melebar ke
+       seluruh sel supaya jelas yang dibunyikan memang keduanya. */
+    let frasa = sel ? frasaSel(sel.teks, kata.kata) : "";
+    // Satu kata Indonesia di dalamnya sudah cukup membatalkan frasa: kolom arti
+    // ("senang berkenalan") tak boleh ikut dibunyikan berlogat bahasa target.
+    if (frasa && frasa.split(/[^\p{L}\p{N}'’-]+/u).some((w) => w && kataIndonesia(w, kodeBahasa))) frasa = "";
+    const unit = frasa || kata.kata;
+    const kotak = frasa && sel
+      ? { x: sel.x0, w: Math.max(6, sel.x1 - sel.x0) }
+      : { x: kata.x, w: Math.max(6, kata.w) };
     // Kata bahasa Indonesia (baris terjemahan/penjelasan) tidak dibunyikan:
     // bahasa Indonesia berlogat Spanyol justru yang paling tidak boleh ditiru
     // siswa A1. Ketukannya tetap ditandai supaya tak terasa seperti tombol rusak.
@@ -1730,11 +1808,11 @@ export default function EbookReader({
     const kiriSlot = dua && hal === tampil.kanan ? pw + GAP : 0;
     setUcap({
       hal,
-      kata: kata.kata,
+      kata: unit,
       kalimat,
-      x: kiriSlot + kata.x * skalaTampil,
+      x: kiriSlot + kotak.x * skalaTampil,
       y: kena.y * skalaTampil,
-      w: Math.max(6, kata.w * skalaTampil),
+      w: kotak.w * skalaTampil,
       h: kena.h * skalaTampil,
       terjemahan,
     });
@@ -1742,15 +1820,15 @@ export default function EbookReader({
 
     // Arti & bunyi jalan BARENGAN: suara adalah alasan utama fitur ini ada, dan
     // tak boleh ikut menunggu AI yang butuh satu-dua detik.
-    const kunciArti = `${kata.kata}|${kalimat}`;
+    const kunciArti = `${unit}|${kalimat}`;
     ucapKunciRef.current = kunciArti;
-    setArti(artiTersimpan(kata.kata, kalimat, kodeBahasa));
-    void artiKataEbook(kata.kata, kalimat, kodeBahasa).then((a) => {
+    setArti(artiTersimpan(unit, kalimat, kodeBahasa));
+    void artiKataEbook(unit, kalimat, kodeBahasa).then((a) => {
       // Siswa mungkin sudah mengetuk kata lain — jangan timpa popup yang baru.
       if (ucapKunciRef.current === kunciArti) setArti(a);
     });
     setBunyi("kata");
-    await ucapkanEbook(kata.kata, kodeBahasa);
+    await ucapkanEbook(unit, kodeBahasa);
     setBunyi(null);
   }, [ttsAktif, kodeBahasa, balik, ukuran, skalaTampil, lebarBuku, ph, pw, dua, tampil, ambilTeks, kataDi]);
 
@@ -1774,15 +1852,19 @@ export default function EbookReader({
     <div className="fixed inset-0 z-[100] flex flex-col bg-black/95 backdrop-blur-sm">
       {/* bilah atas */}
       <div className="flex shrink-0 items-center gap-3 border-b border-white/10 px-3 py-2.5 sm:px-5">
+        {/* [ebook-daftar-isi-tepi-v1] Dulu tombol ini cuma ikon telanjang
+            setinggi 32 px yang meleleh ke bilah hitam — dicari dulu baru bisa
+            diklik. Sekarang berbingkai, lebih tinggi, dan tulisannya muncul
+            jauh lebih awal (sm, bukan lg). */}
         <button
           onClick={bukaDaftar}
           data-panduan="daftar"
-          className="flex shrink-0 items-center gap-1.5 rounded-lg px-2 py-1.5 text-white/70 transition hover:bg-white/10 hover:text-white"
+          className="flex h-9 shrink-0 items-center gap-2 rounded-xl border border-white/15 bg-white/[0.07] px-3 text-white/80 transition hover:border-[#3ED9C0]/60 hover:bg-white/15 hover:text-white active:scale-[0.97]"
           aria-label={t("Daftar isi")}
           title={t("Daftar isi")}
         >
-          <List className="h-5 w-5" />
-          <span className="hidden text-[12.5px] font-bold lg:inline">{t("Daftar isi")}</span>
+          <List className="h-[18px] w-[18px]" />
+          <span className="hidden text-[12.5px] font-bold sm:inline">{t("Daftar isi")}</span>
         </button>
         <BookOpen className="hidden h-5 w-5 shrink-0 text-[#3ED9C0] sm:block" />
         <h2 className="min-w-0 flex-1 truncate text-[14px] font-bold text-white sm:text-[15px]">{title}</h2>
@@ -2270,6 +2352,38 @@ export default function EbookReader({
               {t("Ketuk kata untuk mendengar pelafalannya")}
             </span>
           )}
+        </div>
+      )}
+
+      {/* [ebook-daftar-isi-tepi-v1] Zona tepi kiri: tempelkan kursor, tombolnya
+          muncul. Lebarnya 14 px — cukup untuk ditemukan tanpa dibidik, tapi tak
+          sampai memakan klik pada halaman. Zona & tombolnya satu wadah supaya
+          kursor yang berpindah dari zona ke tombol tidak dianggap "keluar". */}
+      {tepiSiap && !daftarBuka && !galat && (
+        <div
+          className="absolute inset-y-0 left-0 z-[55] flex w-[188px] items-center"
+          style={{ pointerEvents: "none" }}
+        >
+          <div
+            className="h-full w-[14px] shrink-0"
+            style={{ pointerEvents: "auto" }}
+            onMouseEnter={() => setTepiHover(true)}
+          />
+          <div
+            className={`-ml-[14px] transition-all duration-200 ${
+              tepiHover ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
+            }`}
+            style={{ pointerEvents: tepiHover ? "auto" : "none" }}
+            onMouseLeave={() => setTepiHover(false)}
+          >
+            <button
+              onClick={bukaDaftar}
+              className="flex items-center gap-2 rounded-r-2xl border border-l-0 border-white/15 bg-[#0D0D0D]/95 py-3 pl-4 pr-4 text-white shadow-2xl backdrop-blur transition hover:bg-[#14201f]"
+            >
+              <List className="h-[18px] w-[18px] text-[#3ED9C0]" />
+              <span className="text-[12.5px] font-bold">{t("Daftar isi")}</span>
+            </button>
+          </div>
         </div>
       )}
 
