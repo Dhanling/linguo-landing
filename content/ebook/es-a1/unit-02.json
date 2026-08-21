@@ -1,80 +1,807 @@
 {
   "title": "Dari mana asalmu?",
   "title_target": "¿De dónde eres?",
-  "goal": "Menyebut asal, kebangsaan, dan tempat tinggal; mengenal perbedaan laki-laki dan perempuan pada kata sifat.",
-  "dialog": {
-    "title": "Diálogo — En una fiesta",
-    "lines": [
-      { "speaker": "Marta:", "text": "Hola, ¿de dónde eres?", "id": "Halo, dari mana asalmu?", "literal": "halo, dari mana kamu-adalah?" },
-      { "speaker": "Budi:", "text": "Soy de Indonesia. Soy indonesio.", "id": "Saya dari Indonesia. Saya orang Indonesia.", "literal": "adalah dari Indonesia. adalah indonesia(laki-laki)." },
-      { "speaker": "Marta:", "text": "¡Qué bien! Yo soy española, de Madrid.", "id": "Bagus sekali! Saya orang Spanyol, dari Madrid.", "literal": "betapa baik! saya adalah spanyol(perempuan), dari Madrid." },
-      { "speaker": "Budi:", "text": "¿Vives en Madrid ahora?", "id": "Kamu tinggal di Madrid sekarang?", "literal": "kamu-tinggal di Madrid sekarang?" },
-      { "speaker": "Marta:", "text": "No, vivo en Barcelona. Trabajo allí.", "id": "Tidak, saya tinggal di Barcelona. Saya bekerja di sana.", "literal": "tidak, saya-tinggal di Barcelona. saya-bekerja di-sana." },
-      { "speaker": "Budi:", "text": "Yo vivo en Yakarta, pero estudio español.", "id": "Saya tinggal di Jakarta, tapi saya belajar bahasa Spanyol.", "literal": "saya saya-tinggal di Jakarta, tetapi saya-belajar spanyol." },
-      { "speaker": "Marta:", "text": "¿Y hablas español muy bien?", "id": "Dan kamu bicara bahasa Spanyol dengan baik?", "literal": "dan kamu-bicara spanyol sangat baik?" },
-      { "speaker": "Budi:", "text": "Un poco. Hablo poco, pero entiendo mucho.", "id": "Sedikit. Saya bicara sedikit, tapi saya mengerti banyak.", "literal": "se-sedikit. saya-bicara sedikit, tetapi saya-mengerti banyak." }
-    ]
-  },
-  "notes": [
-    "**Kebangsaan ikut jenis kelamin, dan huruf kecil.** *indonesio* (laki-laki) / *indonesia* (perempuan), *español* / *española*. Tidak seperti bahasa Inggris, nama kebangsaan **tidak** diawali huruf besar — tapi nama negaranya tetap: *España*, *Indonesia*.",
-    "**Pola gantinya sederhana.** Kata sifat berakhiran **-o** untuk laki-laki berubah jadi **-a** untuk perempuan: *mexicano / mexicana*. Yang berakhiran konsonan tinggal ditambah **-a**: *español / española*.",
-    "**Kata kerja -ar, -er, -ir.** Semua kata kerja Spanyol berakhiran salah satu dari tiga ini. Untuk \"saya\", ketiganya sama-sama berakhir **-o**: *hablar* → *hablo*, *comer* → *como*, *vivir* → *vivo*. Untuk \"kamu\", -ar jadi **-as** dan dua sisanya **-es**.",
-    "**De = dari.** *Soy de Indonesia* = \"saya dari Indonesia\". Kalau diikuti *el*, keduanya melebur jadi *del*: *del norte* (dari utara), bukan *de el norte*.",
-    "**Pero vs sino.** *Pero* = \"tapi\" dalam arti biasa. Kamu akan bertemu *sino* nanti; itu dipakai khusus setelah kalimat yang menyangkal."
+  "goal": "Menyebut asal, kebangsaan, bahasa yang kamu kuasai, dan tempat tinggal; mengenal perbedaan bentuk laki-laki dan perempuan.",
+  "bekal": [
+    "menyebut asal negara dan kota",
+    "menyebut kebangsaan dengan bentuk yang benar",
+    "mengatakan bahasa apa saja yang kamu bicarakan",
+    "memakai kata kerja beraturan untuk *yo*, *tú*, dan *él / ella*",
+    "membedakan *el* dan *la* di depan kata benda"
   ],
-  "grammar": {
-    "title": "Kata kerja beraturan — bentuk \"saya\" dan \"kamu\"",
-    "body": [
-      "Buang akhiran *-ar / -er / -ir* dari kata dasarnya, lalu tempelkan akhiran di bawah. Sekali pola ini melekat, ribuan kata kerja terbuka sekaligus:"
-    ],
-    "table": {
-      "head": ["", "hablar (bicara)", "comer (makan)", "vivir (tinggal)"],
-      "rows": [
-        ["yo", "habl**o**", "com**o**", "viv**o**"],
-        ["tú", "habl**as**", "com**es**", "viv**es**"],
-        ["él / ella", "habl**a**", "com**e**", "viv**e**"]
+  "dialogs": [
+    {
+      "title": "Diálogo 1 — En una fiesta",
+      "intro": "Sebuah pesta di Barcelona. Dua orang yang belum saling kenal berbasa-basi.",
+      "lines": [
+        {
+          "speaker": "Marta:",
+          "text": "Hola, ¿de dónde eres?",
+          "id": "Halo, dari mana asalmu?",
+          "literal": "halo, dari mana kamu-adalah?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Soy de Indonesia. Soy indonesio.",
+          "id": "Saya dari Indonesia. Saya orang Indonesia.",
+          "literal": "adalah dari Indonesia. adalah indonesia(laki-laki)."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "¡Qué bien! Yo soy española, de Madrid.",
+          "id": "Bagus sekali! Saya orang Spanyol, dari Madrid.",
+          "literal": "betapa baik! saya adalah spanyol(perempuan), dari Madrid."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Vives en Madrid ahora?",
+          "id": "Kamu tinggal di Madrid sekarang?",
+          "literal": "kamu-tinggal di Madrid sekarang?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "No, vivo en Barcelona. Trabajo allí.",
+          "id": "Tidak, saya tinggal di Barcelona. Saya bekerja di sana.",
+          "literal": "tidak, saya-tinggal di Barcelona. saya-bekerja di-sana."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Y en qué trabajas?",
+          "id": "Dan kamu kerja apa?",
+          "literal": "dan di apa kamu-bekerja?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Trabajo en una librería. Me gusta mucho.",
+          "id": "Saya bekerja di toko buku. Saya suka sekali.",
+          "literal": "saya-bekerja di sebuah toko-buku. kepada-saya menyenangkan banyak."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yo vivo en Yakarta, pero estudio español.",
+          "id": "Saya tinggal di Jakarta, tapi saya belajar bahasa Spanyol.",
+          "literal": "saya saya-tinggal di Jakarta, tetapi saya-belajar spanyol."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "¿Y hablas español muy bien?",
+          "id": "Dan kamu bicara bahasa Spanyol dengan baik?",
+          "literal": "dan kamu-bicara spanyol sangat baik?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Un poco. Hablo poco, pero entiendo mucho.",
+          "id": "Sedikit. Saya bicara sedikit, tapi saya mengerti banyak.",
+          "literal": "se-sedikit. saya-bicara sedikit, tetapi saya-mengerti banyak."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Pues hablamos despacio. ¡No hay problema!",
+          "id": "Kalau begitu kita bicara pelan-pelan. Tidak masalah!",
+          "literal": "kalau-begitu kami-bicara pelan. tidak ada masalah!"
+        }
+      ],
+      "notes": [
+        "**Kebangsaan ikut jenis kelamin, dan huruf kecil.** *indonesio* (laki-laki) / *indonesia* (perempuan), *español* / *española*. Tidak seperti bahasa Inggris, nama kebangsaan **tidak** diawali huruf besar — tapi nama negaranya tetap: *España*, *Indonesia*. Aturan yang sama berlaku untuk nama bahasa: *hablo español*, huruf kecil.",
+        "**Pola gantinya sederhana.** Kata sifat berakhiran **-o** untuk laki-laki berubah jadi **-a** untuk perempuan: *mexicano / mexicana*. Yang berakhiran konsonan tinggal ditambah **-a**: *español / española*. Yang berakhiran **-e** tidak berubah sama sekali: *estadounidense* dipakai untuk keduanya.",
+        "**Kata kerja -ar, -er, -ir.** Semua kata kerja Spanyol berakhiran salah satu dari tiga ini. Untuk \"saya\", ketiganya sama-sama berakhir **-o**: *hablar* → *hablo*, *comer* → *como*, *vivir* → *vivo*. Untuk \"kamu\", -ar jadi **-as** dan dua sisanya **-es**.",
+        "**De = dari.** *Soy de Indonesia* = \"saya dari Indonesia\". Kalau diikuti *el*, keduanya melebur jadi *del*: *del norte* (dari utara), bukan *de el norte*. Peleburan yang sama terjadi pada *a + el* → *al*.",
+        "**¿En qué trabajas?** harfiahnya \"di apa kamu bekerja?\" — inilah cara biasa menanyakan pekerjaan. Jawabannya boleh tempat (*trabajo en una librería*) atau profesi (*soy profesora*).",
+        "**Me gusta** artinya \"saya suka\", tapi bangunannya terbalik: harfiahnya \"itu menyenangkan bagi saya\". Untuk sekarang hafalkan utuh — polanya dibongkar di unit 7.",
+        "**Pero vs sino.** *Pero* = \"tapi\" dalam arti biasa. Kamu akan bertemu *sino* nanti; itu dipakai khusus setelah kalimat yang menyangkal.",
+        "**Pues** adalah kata sambung serbaguna yang nyaris tak bisa diterjemahkan — \"kalau begitu\", \"ya sudah\", \"soalnya\". Orang Spanyol menaburkannya di mana-mana; kamu tidak wajib memakainya, tapi wajib mengenalinya."
+      ],
+      "grammars": [
+        {
+          "title": "Kata kerja beraturan — bentuk \"saya\", \"kamu\", \"dia\"",
+          "body": [
+            "Buang akhiran *-ar / -er / -ir* dari kata dasarnya, lalu tempelkan akhiran di bawah. Sekali pola ini melekat, ribuan kata kerja terbuka sekaligus:"
+          ],
+          "table": {
+            "head": [
+              "",
+              "hablar (bicara)",
+              "comer (makan)",
+              "vivir (tinggal)"
+            ],
+            "rows": [
+              [
+                "yo",
+                "habl**o**",
+                "com**o**",
+                "viv**o**"
+              ],
+              [
+                "tú",
+                "habl**as**",
+                "com**es**",
+                "viv**es**"
+              ],
+              [
+                "él / ella / usted",
+                "habl**a**",
+                "com**e**",
+                "viv**e**"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa **-er** dan **-ir** hanya berbeda di bentuk yang belum kamu pelajari (*comemos* vs *vivimos*, unit 5). Di tiga bentuk pertama ini keduanya kembar — jadi praktisnya kamu cuma menghafal **dua** pola, bukan tiga.",
+            "Ketiga bentuk ini menutup sebagian besar percakapan berdua: kamu bicara tentang dirimu (*yo*), tentang lawan bicaramu (*tú*), atau tentang orang yang kalian bicarakan (*él / ella*). Bentuk jamaknya menyusul di unit 5."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Diálogo 2 — En la oficina de la escuela",
+      "intro": "Pendaftaran murid baru. Karena resmi, seluruh percakapan memakai *usted*.",
+      "lines": [
+        {
+          "speaker": "Secretaria:",
+          "text": "Buenos días. ¿De dónde es usted, señor Tanaka?",
+          "id": "Selamat pagi. Bapak berasal dari mana?",
+          "literal": "baik hari. dari mana adalah Anda, tuan Tanaka?"
+        },
+        {
+          "speaker": "Sr. Tanaka:",
+          "text": "Soy japonés, de Osaka. Pero ahora vivo en México.",
+          "id": "Saya orang Jepang, dari Osaka. Tapi sekarang saya tinggal di Meksiko.",
+          "literal": "adalah jepang, dari Osaka. tetapi sekarang saya-tinggal di Meksiko."
+        },
+        {
+          "speaker": "Secretaria:",
+          "text": "¿Y habla usted inglés también?",
+          "id": "Dan Bapak berbicara bahasa Inggris juga?",
+          "literal": "dan berbicara Anda inggris juga?"
+        },
+        {
+          "speaker": "Sr. Tanaka:",
+          "text": "Sí, hablo japonés, inglés y un poco de español.",
+          "id": "Ya, saya bicara bahasa Jepang, Inggris, dan sedikit bahasa Spanyol.",
+          "literal": "ya, saya-bicara jepang, inggris dan se-sedikit dari spanyol."
+        },
+        {
+          "speaker": "Secretaria:",
+          "text": "¿Y su amiga? ¿Ella también es japonesa?",
+          "id": "Dan teman Bapak? Dia orang Jepang juga?",
+          "literal": "dan teman-Anda? dia juga adalah jepang(perempuan)?"
+        },
+        {
+          "speaker": "Sr. Tanaka:",
+          "text": "No, no es japonesa. Es coreana, de Seúl.",
+          "id": "Bukan, dia bukan orang Jepang. Dia orang Korea, dari Seoul.",
+          "literal": "tidak, tidak adalah jepang. adalah korea, dari Seoul."
+        },
+        {
+          "speaker": "Secretaria:",
+          "text": "¿Y dónde trabaja ella?",
+          "id": "Dan dia bekerja di mana?",
+          "literal": "dan di-mana bekerja dia?"
+        },
+        {
+          "speaker": "Sr. Tanaka:",
+          "text": "Trabaja en un hospital. Es médica.",
+          "id": "Dia bekerja di rumah sakit. Dia dokter.",
+          "literal": "bekerja di sebuah rumah-sakit. adalah dokter(perempuan)."
+        },
+        {
+          "speaker": "Secretaria:",
+          "text": "Perfecto. ¿Y usted trabaja o estudia?",
+          "id": "Baik. Dan Bapak bekerja atau belajar?",
+          "literal": "sempurna. dan Anda bekerja atau belajar?"
+        },
+        {
+          "speaker": "Sr. Tanaka:",
+          "text": "Estudio español por la mañana y trabajo por la tarde.",
+          "id": "Saya belajar bahasa Spanyol pada pagi hari dan bekerja pada sore hari.",
+          "literal": "saya-belajar spanyol pada pagi dan saya-bekerja pada sore."
+        },
+        {
+          "speaker": "Secretaria:",
+          "text": "Estupendo. Bienvenido a la escuela.",
+          "id": "Bagus sekali. Selamat datang di sekolah kami.",
+          "literal": "hebat. selamat-datang ke sekolah."
+        }
+      ],
+      "notes": [
+        "**Usted memakai bentuk kata kerja *él / ella*.** Karena itu *¿habla usted inglés?* memakai *habla*, bukan *hablas*. Kalau kamu keliru memakai bentuk *tú* pada orang yang harus dihormati, kalimatnya tetap dimengerti — cuma terdengar terlalu akrab.",
+        "**Su** = \"milik Anda\", tapi juga \"miliknya\": *su amiga* bisa berarti teman Anda atau teman dia. Ambigu memang, dan bahasa Spanyol membiarkannya begitu — konteks yang memutuskan.",
+        "**Bahasa tanpa kata sandang.** *Hablo español*, bukan *hablo el español*. Kata sandangnya baru muncul kalau bahasanya jadi pokok kalimat: *el español es fácil* (\"bahasa Spanyol itu gampang\").",
+        "**Un poco de + kata benda.** Perhatikan *de*-nya: *un poco de español*, *un poco de agua*. Tapi kalau yang disifati kata sifat, *de*-nya hilang: *un poco cansado*.",
+        "**O = atau**, kecuali di depan kata yang dimulai bunyi *o*. Di situ ia berubah jadi *u*: *siete u ocho* (tujuh atau delapan). Alasannya semata bunyi — dua *o* berturut-turut lenyap di telinga.",
+        "**Por la mañana / por la tarde / por la noche** = pada pagi / siang-sore / malam hari. Ini penanda waktu paling sering dipakai, dan bentuknya tak pernah berubah.",
+        "**Profesi juga berjenis kelamin.** *médico / médica*, *enfermero / enfermera*, *abogado / abogada*. Beberapa yang berakhiran -ista tidak berubah: *el dentista / la dentista*, yang berganti cuma kata sandangnya.",
+        "**Bienvenido / bienvenida / bienvenidos.** Bentuknya ikut yang disambut: satu laki-laki *bienvenido*, satu perempuan *bienvenida*, sekelompok orang *bienvenidos*."
+      ],
+      "grammars": [
+        {
+          "title": "El, la, un, una — kata benda tak pernah datang sendirian",
+          "body": [
+            "Setiap kata benda Spanyol punya jenis kelamin, dan kata sandangnya harus ikut. Tidak ada cara memutar aturan ini: kata bendanya sebaiknya dihafal **beserta kata sandangnya** sejak hari pertama — bukan *hospital*, melainkan *el hospital*."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Maskulin",
+              "Feminin",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "Tertentu (\"si / itu\")",
+                "**el**",
+                "**la**",
+                "*el libro*, *la casa*"
+              ],
+              [
+                "Tak tentu (\"sebuah\")",
+                "**un**",
+                "**una**",
+                "*un hospital*, *una librería*"
+              ],
+              [
+                "Tertentu jamak",
+                "**los**",
+                "**las**",
+                "*los libros*, *las casas*"
+              ],
+              [
+                "Tak tentu jamak",
+                "**unos**",
+                "**unas**",
+                "*unos amigos*, *unas amigas*"
+              ]
+            ]
+          },
+          "after": [
+            "Tebakan yang benar sekitar delapan dari sepuluh kali: berakhiran **-o** biasanya maskulin, berakhiran **-a**, **-ción**, **-dad** biasanya feminin. Sisanya harus dihafal — dan pengecualian yang paling sering menjegal pemula: *el día* (hari) maskulin meski berakhiran -a, *la mano* (tangan) feminin meski berakhiran -o.",
+            "Menjamakkan gampang: berakhiran vokal tambahkan **-s** (*libro → libros*), berakhiran konsonan tambahkan **-es** (*profesor → profesores*)."
+          ]
+        }
       ]
     }
-  },
+  ],
+  "sections": [
+    {
+      "title": "Negara, bangsa, bahasa",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tiga kolom yang sering tertukar. Perhatikan bahwa nama bahasa selalu sama dengan bentuk maskulin kebangsaannya — sekali kamu tahu *japonés*, kamu otomatis tahu nama bahasanya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "País",
+            "Él es…",
+            "Ella es…",
+            "Idioma"
+          ],
+          "rows": [
+            [
+              "Indonesia",
+              "indonesio",
+              "indonesia",
+              "indonesio"
+            ],
+            [
+              "España",
+              "español",
+              "española",
+              "español"
+            ],
+            [
+              "México",
+              "mexicano",
+              "mexicana",
+              "español"
+            ],
+            [
+              "Argentina",
+              "argentino",
+              "argentina",
+              "español"
+            ],
+            [
+              "Colombia",
+              "colombiano",
+              "colombiana",
+              "español"
+            ],
+            [
+              "Estados Unidos",
+              "estadounidense",
+              "estadounidense",
+              "inglés"
+            ],
+            [
+              "Inglaterra",
+              "inglés",
+              "inglesa",
+              "inglés"
+            ],
+            [
+              "Francia",
+              "francés",
+              "francesa",
+              "francés"
+            ],
+            [
+              "Alemania",
+              "alemán",
+              "alemana",
+              "alemán"
+            ],
+            [
+              "Italia",
+              "italiano",
+              "italiana",
+              "italiano"
+            ],
+            [
+              "Japón",
+              "japonés",
+              "japonesa",
+              "japonés"
+            ],
+            [
+              "China",
+              "chino",
+              "china",
+              "chino"
+            ],
+            [
+              "Corea",
+              "coreano",
+              "coreana",
+              "coreano"
+            ],
+            [
+              "Brasil",
+              "brasileño",
+              "brasileña",
+              "portugués"
+            ],
+            [
+              "Marruecos",
+              "marroquí",
+              "marroquí",
+              "árabe"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan hilangnya tanda ´ pada bentuk perempuan: *japonés* → *japonesa*, *francés* → *francesa*, *alemán* → *alemana*. Tandanya tak lagi dibutuhkan begitu kata itu bertambah satu suku."
+        }
+      ]
+    },
+    {
+      "title": "Bertanya",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Semua kata tanya bahasa Spanyol memakai tanda ´ — itulah yang membedakannya dari kata yang sama tanpa tanda tanya. Bandingkan *¿qué?* (apa?) dengan *que* (yang)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Cara baca",
+            "Arti",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "¿qué?",
+              "ke",
+              "apa",
+              "*¿Qué estudias?*"
+            ],
+            [
+              "¿quién?",
+              "kien",
+              "siapa",
+              "*¿Quién es ella?*"
+            ],
+            [
+              "¿dónde?",
+              "DON-de",
+              "di mana",
+              "*¿Dónde trabajas?*"
+            ],
+            [
+              "¿de dónde?",
+              "de DON-de",
+              "dari mana",
+              "*¿De dónde eres?*"
+            ],
+            [
+              "¿adónde?",
+              "a-DON-de",
+              "ke mana",
+              "*¿Adónde vas?*"
+            ],
+            [
+              "¿cómo?",
+              "KO-mo",
+              "bagaimana",
+              "*¿Cómo estás?*"
+            ],
+            [
+              "¿cuándo?",
+              "KUAN-do",
+              "kapan",
+              "*¿Cuándo trabajas?*"
+            ],
+            [
+              "¿cuánto?",
+              "KUAN-to",
+              "berapa",
+              "*¿Cuánto cuesta?*"
+            ],
+            [
+              "¿por qué?",
+              "por KE",
+              "kenapa",
+              "*¿Por qué estudias español?*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Bertanya tanpa kata tanya",
+          "items": [
+            "Kalimat berita bisa langsung jadi pertanyaan cukup dengan tanda tanya dan nada naik di ujung: *Vives en Madrid.* → *¿Vives en Madrid?* Susunan katanya tidak perlu dibalik seperti bahasa Inggris.",
+            "Membalik pelaku ke belakang juga lazim dan terdengar sedikit lebih baku: *¿Vive usted en Madrid?*",
+            "Menjawab \"ya\" biasanya diikuti pengulangan kata kerjanya, bukan berhenti di *sí*: *—¿Hablas español? —Sí, hablo un poco.* Jawaban *sí* sendirian terdengar dingin."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pekerjaan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Él es…",
+            "Ella es…",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "profesor",
+              "profesora",
+              "guru"
+            ],
+            [
+              "médico",
+              "médica",
+              "dokter"
+            ],
+            [
+              "enfermero",
+              "enfermera",
+              "perawat"
+            ],
+            [
+              "ingeniero",
+              "ingeniera",
+              "insinyur"
+            ],
+            [
+              "abogado",
+              "abogada",
+              "pengacara"
+            ],
+            [
+              "camarero",
+              "camarera",
+              "pelayan"
+            ],
+            [
+              "cocinero",
+              "cocinera",
+              "juru masak"
+            ],
+            [
+              "empleado",
+              "empleada",
+              "karyawan"
+            ],
+            [
+              "dependiente",
+              "dependienta",
+              "penjaga toko"
+            ],
+            [
+              "periodista",
+              "periodista",
+              "wartawan"
+            ],
+            [
+              "estudiante",
+              "estudiante",
+              "pelajar"
+            ],
+            [
+              "ama de casa",
+              "ama de casa",
+              "ibu rumah tangga"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Ingat: menyebut profesi tidak memakai kata sandang. *Soy ingeniera*, bukan *soy una ingeniera*. Kata sandangnya baru masuk kalau ada keterangan tambahan: *soy una ingeniera muy ocupada*."
+        }
+      ]
+    }
+  ],
   "vocab": [
-    { "es": "¿de dónde?", "baca": "de DON-de", "id": "dari mana" },
-    { "es": "vivir", "baca": "bi-BIR", "id": "tinggal, hidup" },
-    { "es": "trabajar", "baca": "tra-ba-KHAR", "id": "bekerja" },
-    { "es": "estudiar", "baca": "es-tu-DIAR", "id": "belajar" },
-    { "es": "hablar", "baca": "a-BLAR", "id": "berbicara" },
-    { "es": "entender", "baca": "en-ten-DER", "id": "mengerti" },
-    { "es": "ahora", "baca": "a-O-ra", "id": "sekarang" },
-    { "es": "allí", "baca": "a-YI", "id": "di sana" },
-    { "es": "pero", "baca": "PE-ro", "id": "tetapi" },
-    { "es": "un poco", "baca": "un PO-ko", "id": "sedikit" },
-    { "es": "mucho", "baca": "MU-cho", "id": "banyak" },
-    { "es": "español / española", "baca": "es-pa-NYOL", "id": "orang Spanyol" },
-    { "es": "indonesio / indonesia", "baca": "in-do-NE-sio", "id": "orang Indonesia" },
-    { "es": "¡qué bien!", "baca": "ke BIEN", "id": "bagus sekali!" }
+    {
+      "es": "¿de dónde?",
+      "baca": "de DON-de",
+      "id": "dari mana"
+    },
+    {
+      "es": "¿dónde?",
+      "baca": "DON-de",
+      "id": "di mana"
+    },
+    {
+      "es": "el país",
+      "baca": "el pa-IS",
+      "id": "negara"
+    },
+    {
+      "es": "la ciudad",
+      "baca": "la si-u-DAD",
+      "id": "kota"
+    },
+    {
+      "es": "el idioma",
+      "baca": "el i-DIO-ma",
+      "id": "bahasa"
+    },
+    {
+      "es": "vivir",
+      "baca": "bi-BIR",
+      "id": "tinggal, hidup"
+    },
+    {
+      "es": "trabajar",
+      "baca": "tra-ba-KHAR",
+      "id": "bekerja"
+    },
+    {
+      "es": "estudiar",
+      "baca": "es-tu-DIAR",
+      "id": "belajar"
+    },
+    {
+      "es": "hablar",
+      "baca": "a-BLAR",
+      "id": "berbicara"
+    },
+    {
+      "es": "entender",
+      "baca": "en-ten-DER",
+      "id": "mengerti"
+    },
+    {
+      "es": "comer",
+      "baca": "ko-MER",
+      "id": "makan"
+    },
+    {
+      "es": "ahora",
+      "baca": "a-O-ra",
+      "id": "sekarang"
+    },
+    {
+      "es": "aquí",
+      "baca": "a-KI",
+      "id": "di sini"
+    },
+    {
+      "es": "allí",
+      "baca": "a-YI",
+      "id": "di sana"
+    },
+    {
+      "es": "pero",
+      "baca": "PE-ro",
+      "id": "tetapi"
+    },
+    {
+      "es": "o",
+      "baca": "o",
+      "id": "atau"
+    },
+    {
+      "es": "pues",
+      "baca": "pues",
+      "id": "kalau begitu"
+    },
+    {
+      "es": "despacio",
+      "baca": "des-PA-sio",
+      "id": "pelan-pelan"
+    },
+    {
+      "es": "un poco de…",
+      "baca": "un PO-ko de",
+      "id": "sedikit…"
+    },
+    {
+      "es": "mucho",
+      "baca": "MU-cho",
+      "id": "banyak"
+    },
+    {
+      "es": "por la mañana",
+      "baca": "por la ma-NYA-na",
+      "id": "pada pagi hari"
+    },
+    {
+      "es": "por la tarde",
+      "baca": "por la TAR-de",
+      "id": "pada sore hari"
+    },
+    {
+      "es": "por la noche",
+      "baca": "por la NO-che",
+      "id": "pada malam hari"
+    },
+    {
+      "es": "el hospital",
+      "baca": "el os-pi-TAL",
+      "id": "rumah sakit"
+    },
+    {
+      "es": "la librería",
+      "baca": "la li-bre-RI-a",
+      "id": "toko buku"
+    },
+    {
+      "es": "la oficina",
+      "baca": "la o-fi-SI-na",
+      "id": "kantor"
+    },
+    {
+      "es": "la escuela",
+      "baca": "la es-KUE-la",
+      "id": "sekolah"
+    },
+    {
+      "es": "el médico / la médica",
+      "baca": "el ME-di-ko",
+      "id": "dokter"
+    },
+    {
+      "es": "el ingeniero",
+      "baca": "el in-khe-NIE-ro",
+      "id": "insinyur"
+    },
+    {
+      "es": "el camarero",
+      "baca": "el ka-ma-RE-ro",
+      "id": "pelayan"
+    },
+    {
+      "es": "español / española",
+      "baca": "es-pa-NYOL",
+      "id": "orang Spanyol"
+    },
+    {
+      "es": "indonesio / indonesia",
+      "baca": "in-do-NE-sio",
+      "id": "orang Indonesia"
+    },
+    {
+      "es": "japonés / japonesa",
+      "baca": "kha-po-NES",
+      "id": "orang Jepang"
+    },
+    {
+      "es": "inglés / inglesa",
+      "baca": "in-GLES",
+      "id": "orang Inggris"
+    },
+    {
+      "es": "bienvenido / bienvenida",
+      "baca": "bien-be-NI-do",
+      "id": "selamat datang"
+    },
+    {
+      "es": "¡qué bien!",
+      "baca": "ke BIEN",
+      "id": "bagus sekali!"
+    },
+    {
+      "es": "estupendo",
+      "baca": "es-tu-PEN-do",
+      "id": "hebat"
+    },
+    {
+      "es": "no hay problema",
+      "baca": "no ai pro-BLE-ma",
+      "id": "tidak masalah"
+    }
   ],
   "exercises": [
-    { "prompt": "Terjemahkan ke bahasa Spanyol.", "items": [
-      "Saya dari Indonesia.",
-      "Kamu tinggal di Madrid?",
-      "Dia bekerja di Barcelona.",
-      "Saya belajar bahasa Spanyol sedikit."
-    ] },
-    { "prompt": "Ubah bentuk kata kerja dalam kurung.", "items": [
-      "Yo (vivir) ____ en Yakarta.",
-      "¿Tú (hablar) ____ español?",
-      "Ella (trabajar) ____ mucho.",
-      "Yo (comer) ____ en casa."
-    ] },
-    { "prompt": "Pilih bentuk yang benar sesuai penuturnya.", "items": [
-      "Marta: Soy (español / española).",
-      "Budi: Soy (indonesio / indonesia).",
-      "Ana y Marta: Somos (española / españolas)."
-    ] }
+    {
+      "prompt": "Terjemahkan ke bahasa Spanyol.",
+      "items": [
+        "Saya dari Indonesia.",
+        "Kamu tinggal di Madrid?",
+        "Dia bekerja di Barcelona.",
+        "Saya belajar bahasa Spanyol sedikit.",
+        "Bapak berbicara bahasa Inggris?",
+        "Dia dokter."
+      ]
+    },
+    {
+      "prompt": "Ubah bentuk kata kerja dalam kurung.",
+      "items": [
+        "Yo (vivir) ____ en Yakarta.",
+        "¿Tú (hablar) ____ español?",
+        "Ella (trabajar) ____ mucho.",
+        "Yo (comer) ____ en casa.",
+        "¿Usted (estudiar) ____ español?",
+        "Él (entender) ____ un poco."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk kebangsaan yang tepat sesuai penuturnya.",
+      "items": [
+        "Marta (perempuan, Madrid): Soy ____.",
+        "Budi (laki-laki, Jakarta): Soy ____.",
+        "Yuki (perempuan, Osaka): Soy ____.",
+        "Pierre (laki-laki, Paris): Soy ____.",
+        "Anna (perempuan, Berlin): Soy ____."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata sandang yang tepat (*el*, *la*, *un*, *una*).",
+      "items": [
+        "Trabajo en ____ hospital de Madrid.",
+        "Ella es ____ profesora muy simpática.",
+        "Vivo en ____ casa de Marta.",
+        "Estudio en ____ escuela de idiomas.",
+        "Leo ____ libro de Luis."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat Spanyol yang benar.",
+      "items": [
+        "eres / ¿ / dónde / de / ?",
+        "Barcelona / vivo / en",
+        "español / hablo / poco / de / un",
+        "trabajas / ¿ / qué / en / ?",
+        "japonesa / ella / es / no"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Indonesia.",
+      "items": [
+        "Estudio español por la mañana.",
+        "¿Y su amiga? ¿Es coreana?",
+        "Trabajo en una librería.",
+        "Hablo japonés, inglés y un poco de español.",
+        "No hay problema."
+      ]
+    }
   ],
   "answers": [
-    "Soy de Indonesia. — ¿Vives en Madrid? — Ella trabaja en Barcelona. — Estudio español un poco.",
-    "vivo — hablas — trabaja — como",
-    "española — indonesio — españolas"
+    "Soy de Indonesia. — ¿Vives en Madrid? — Ella trabaja en Barcelona. — Estudio español un poco. — ¿Habla usted inglés? — Es médica.",
+    "vivo — hablas — trabaja — como — estudia — entiende",
+    "española — indonesio — japonesa — francés — alemana",
+    "un — una — la — una — el",
+    "¿De dónde eres? — Vivo en Barcelona. — Hablo un poco de español. — ¿En qué trabajas? — Ella no es japonesa.",
+    "Saya belajar bahasa Spanyol pada pagi hari. — Dan temannya? Dia orang Korea? — Saya bekerja di sebuah toko buku. — Saya bicara bahasa Jepang, Inggris, dan sedikit bahasa Spanyol. — Tidak masalah."
   ],
-  "wave": "Belum ada — ulangan berjenjang dimulai di unit 8."
+  "wave": "Bentuk *-o / -as / -a* di unit ini adalah kerangka yang dipakai seluruh sisa modul. Kalau di unit 5 kamu merasa kewalahan menghadapi enam bentuk sekaligus, kembalilah ke tabel di halaman ini dulu."
 }

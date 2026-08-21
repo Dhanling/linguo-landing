@@ -1,83 +1,327 @@
 {
   "title": "Sehari-hari",
   "title_target": "Un día normal",
-  "goal": "Menyebut jam, menceritakan rutinitas harian, dan melengkapi enam bentuk kata kerja.",
-  "dialog": {
-    "title": "Diálogo — ¿A qué hora te levantas?",
-    "lines": [
-      { "speaker": "Marta:", "text": "¿A qué hora te levantas?", "id": "Jam berapa kamu bangun?", "literal": "pada apa jam kamu-mengangkat-diri?" },
-      { "speaker": "Budi:", "text": "Me levanto a las seis de la mañana.", "id": "Saya bangun jam enam pagi.", "literal": "saya-mengangkat-diri pada jam-jam enam dari pagi." },
-      { "speaker": "Marta:", "text": "¡Qué temprano! ¿Y después?", "id": "Pagi sekali! Lalu?", "literal": "betapa awal! dan sesudah?" },
-      { "speaker": "Budi:", "text": "Desayuno, me ducho y salgo a las siete.", "id": "Saya sarapan, mandi, lalu berangkat jam tujuh.", "literal": "saya-sarapan, saya-memandikan-diri dan saya-keluar pada jam-jam tujuh." },
-      { "speaker": "Marta:", "text": "¿Trabajas por la mañana?", "id": "Kamu bekerja di pagi hari?", "literal": "kamu-bekerja lewat pagi?" },
-      { "speaker": "Budi:", "text": "Trabajo de ocho a cuatro. Después estudio español.", "id": "Saya bekerja dari jam delapan sampai empat. Setelah itu saya belajar bahasa Spanyol.", "literal": "saya-bekerja dari delapan ke empat. sesudah saya-belajar spanyol." },
-      { "speaker": "Marta:", "text": "Nosotros cenamos muy tarde en España, a las diez.", "id": "Kami di Spanyol makan malam sangat larut, jam sepuluh.", "literal": "kami kami-makan-malam sangat larut di Spanyol, pada jam-jam sepuluh." },
-      { "speaker": "Budi:", "text": "¿A las diez? ¡A esa hora yo ya duermo!", "id": "Jam sepuluh? Jam segitu saya sudah tidur!", "literal": "pada jam-jam sepuluh? pada itu jam saya sudah saya-tidur!" }
-    ]
-  },
-  "notes": [
-    "**Menyebut jam pakai bentuk jamak.** *Son las tres* (jam tiga), *son las nueve* (jam sembilan) — karena yang dimaksud \"jam-jam\"-nya. Satu-satunya pengecualian: jam satu, yang tunggal: *Es la una*. Menit: *y cuarto* (lewat 15), *y media* (setengah), *menos cuarto* (kurang 15).",
-    "**De la mañana vs por la mañana.** Pakai *de* kalau jamnya disebut (*a las seis de la mañana*), dan *por* kalau tidak (*trabajo por la mañana* = saya bekerja pagi hari). Salah pilih tidak fatal, tapi langsung terdengar seperti terjemahan.",
-    "**Kata kerja berbalik ke diri sendiri.** *Levantar* = mengangkat, *levantarse* = mengangkat **diri sendiri** alias bangun. Yang berubah cuma kata kecil di depannya: *me levanto, te levantas, se levanta*. Begitu juga *ducharse* (mandi) dan *llamarse* (bernama) yang sudah kamu pakai sejak unit 1 tanpa sadar.",
-    "**Beberapa bentuk \"saya\" nakal.** *Salir* → *salgo*, *hacer* → *hago*, *poner* → *pongo*. Hanya bentuk *yo*-nya yang aneh; sisanya kembali beraturan (*sales, sale, salimos*). Hafalkan satu per satu saat bertemu, jangan didaftar.",
-    "**Nama hari huruf kecil.** *lunes, martes, miércoles, jueves, viernes, sábado, domingo*. Untuk \"tiap Senin\" cukup tambah *los*: *los lunes trabajo en casa*."
+  "goal": "Menyebut jam, menceritakan rutinitas harian, menyebut hari, dan melengkapi enam bentuk kata kerja.",
+  "bekal": [
+    "menanyakan dan menyebutkan jam",
+    "menceritakan urutan kegiatan sehari",
+    "memakai kata kerja berbalik (*me levanto*, *me ducho*)",
+    "menyebut hari dan seberapa sering kamu melakukan sesuatu",
+    "memakai keenam bentuk kata kerja beraturan"
   ],
-  "grammar": {
-    "title": "Enam bentuk kata kerja — sekarang lengkap",
-    "body": [
-      "Di unit 2 kamu memakai tiga bentuk pertama, dan di unit 4 tabel *tener* sudah memperlihatkan keenamnya sekaligus. Ini daftar penuhnya, sekarang berikut polanya. Perhatikan bahwa bentuk *nosotros* selalu berakhir **-mos** dan bentuk *ellos* selalu **-n** — dua jangkar yang tidak pernah berubah di seluruh bahasa Spanyol:"
-    ],
-    "table": {
-      "head": ["", "trabajar", "comer", "vivir"],
-      "rows": [
-        ["yo", "trabaj**o**", "com**o**", "viv**o**"],
-        ["tú", "trabaj**as**", "com**es**", "viv**es**"],
-        ["él / ella / usted", "trabaj**a**", "com**e**", "viv**e**"],
-        ["nosotros", "trabaj**amos**", "com**emos**", "viv**imos**"],
-        ["vosotros", "trabaj**áis**", "com**éis**", "viv**ís**"],
-        ["ellos / ustedes", "trabaj**an**", "com**en**", "viv**en**"]
+  "dialogs": [
+    {
+      "title": "Diálogo 1 — ¿A qué hora te levantas?",
+      "intro": "Dua orang dari dua benua membandingkan pagi masing-masing. Ternyata jamnya yang paling berbeda.",
+      "lines": [
+        { "speaker": "Marta:", "text": "¿A qué hora te levantas?", "id": "Jam berapa kamu bangun?", "literal": "pada apa jam kamu-mengangkat-diri?" },
+        { "speaker": "Budi:", "text": "Me levanto a las seis de la mañana.", "id": "Saya bangun jam enam pagi.", "literal": "saya-mengangkat-diri pada jam-jam enam dari pagi." },
+        { "speaker": "Marta:", "text": "¡Qué temprano! ¿Y después?", "id": "Pagi sekali! Lalu?", "literal": "betapa awal! dan sesudah?" },
+        { "speaker": "Budi:", "text": "Desayuno, me ducho y salgo a las siete.", "id": "Saya sarapan, mandi, lalu berangkat jam tujuh.", "literal": "saya-sarapan, saya-memandikan-diri dan saya-keluar pada jam-jam tujuh." },
+        { "speaker": "Marta:", "text": "¿Y cómo vas al trabajo?", "id": "Dan bagaimana kamu pergi ke tempat kerja?", "literal": "dan bagaimana kamu-pergi ke-si kerja?" },
+        { "speaker": "Budi:", "text": "Voy en moto. Tardo media hora.", "id": "Saya naik motor. Butuh setengah jam.", "literal": "saya-pergi dengan motor. saya-memakan setengah jam." },
+        { "speaker": "Marta:", "text": "¿Trabajas por la mañana?", "id": "Kamu bekerja di pagi hari?", "literal": "kamu-bekerja lewat pagi?" },
+        { "speaker": "Budi:", "text": "Trabajo de ocho a cuatro. Después estudio español.", "id": "Saya bekerja dari jam delapan sampai empat. Setelah itu saya belajar bahasa Spanyol.", "literal": "saya-bekerja dari delapan ke empat. sesudah saya-belajar spanyol." },
+        { "speaker": "Marta:", "text": "Nosotros cenamos muy tarde en España, a las diez.", "id": "Kami di Spanyol makan malam sangat larut, jam sepuluh.", "literal": "kami kami-makan-malam sangat larut di Spanyol, pada jam-jam sepuluh." },
+        { "speaker": "Budi:", "text": "¿A las diez? ¡A esa hora yo ya duermo!", "id": "Jam sepuluh? Jam segitu saya sudah tidur!", "literal": "pada jam-jam sepuluh? pada itu jam saya sudah saya-tidur!" },
+        { "speaker": "Marta:", "text": "Entonces te acuestas a las nueve, ¿no?", "id": "Berarti kamu tidur jam sembilan, ya?", "literal": "kalau-begitu kamu-membaringkan-diri pada jam-jam sembilan, tidak?" },
+        { "speaker": "Budi:", "text": "Casi siempre. Los viernes me acuesto más tarde.", "id": "Hampir selalu. Kalau Jumat saya tidur lebih larut.", "literal": "hampir selalu. si-jamak jumat saya-membaringkan-diri lebih larut." }
+      ],
+      "notes": [
+        "**Menyebut jam pakai bentuk jamak.** *Son las tres* (jam tiga), *son las nueve* (jam sembilan) — karena yang dimaksud \"jam-jam\"-nya. Satu-satunya pengecualian: jam satu, yang tunggal: *Es la una*.",
+        "**A qué hora vs qué hora.** *¿Qué hora es?* menanyakan jam berapa **sekarang**; *¿A qué hora…?* menanyakan jam berapa sesuatu **terjadi**. Jawabannya pun ikut: *son las seis* untuk yang pertama, *a las seis* untuk yang kedua.",
+        "**De la mañana vs por la mañana.** Pakai *de* kalau jamnya disebut (*a las seis de la mañana*), dan *por* kalau tidak (*trabajo por la mañana* = saya bekerja pagi hari). Salah pilih tidak fatal, tapi langsung terdengar seperti terjemahan.",
+        "**Kata kerja berbalik ke diri sendiri.** *Levantar* = mengangkat, *levantarse* = mengangkat **diri sendiri** alias bangun. Yang berubah cuma kata kecil di depannya: *me levanto, te levantas, se levanta*. Begitu juga *ducharse* (mandi) dan *llamarse* (bernama) yang sudah kamu pakai sejak unit 1 tanpa sadar.",
+        "**Beberapa bentuk \"saya\" nakal.** *Salir* → *salgo*, *hacer* → *hago*, *poner* → *pongo*, *conocer* → *conozco*. Hanya bentuk *yo*-nya yang aneh; sisanya kembali beraturan (*sales, sale, salimos*). Hafalkan satu per satu saat bertemu, jangan didaftar.",
+        "**Tardar** = memakan waktu. *Tardo media hora* — perjalanan saya setengah jam. Berguna sekali dan tak ada padanan satu kata dalam bahasa Inggris.",
+        "**Los viernes** = \"setiap Jumat\". Kata sandang jamak di depan nama hari mengubahnya jadi kebiasaan. Tanpa kata sandang, *el viernes* berarti Jumat ini yang akan datang.",
+        "**¿No? di ujung kalimat** persis seperti \"ya?\" atau \"kan?\" dalam bahasa Indonesia — meminta persetujuan. Padanan lainnya *¿verdad?*"
+      ],
+      "grammars": [
+        {
+          "title": "Enam bentuk kata kerja — sekarang lengkap",
+          "body": [
+            "Di unit 2 kamu memakai tiga bentuk pertama, dan di unit 4 tabel *tener* sudah memperlihatkan keenamnya sekaligus. Ini daftar penuhnya, sekarang berikut polanya. Perhatikan bahwa bentuk *nosotros* selalu berakhir **-mos** dan bentuk *ellos* selalu **-n** — dua jangkar yang tidak pernah berubah di seluruh bahasa Spanyol:"
+          ],
+          "table": {
+            "head": ["", "trabajar", "comer", "vivir"],
+            "rows": [
+              ["yo", "trabaj**o**", "com**o**", "viv**o**"],
+              ["tú", "trabaj**as**", "com**es**", "viv**es**"],
+              ["él / ella / usted", "trabaj**a**", "com**e**", "viv**e**"],
+              ["nosotros", "trabaj**amos**", "com**emos**", "viv**imos**"],
+              ["vosotros", "trabaj**áis**", "com**éis**", "viv**ís**"],
+              ["ellos / ustedes", "trabaj**an**", "com**en**", "viv**en**"]
+            ]
+          },
+          "after": [
+            "*Vosotros* (\"kalian\", akrab) hanya hidup di Spanyol. Di seluruh Amerika Latin orang memakai *ustedes* untuk semua kelompok, akrab maupun sopan — jadi kalau tujuanmu Meksiko atau Argentina, satu baris di tabel ini boleh kamu kenali tanpa perlu kamu kuasai.",
+            "Satu pola yang menghemat banyak hafalan: bentuk *nosotros* untuk **-ar** dan **-er** memakai vokal kata kerjanya sendiri (*trabajamos*, *comemos*), sedangkan **-ir** memakai *-imos* (*vivimos*)."
+          ]
+        },
+        {
+          "title": "Kata kerja berbalik — me, te, se",
+          "body": [
+            "Kata kerja berbalik (*verbos reflexivos*) menunjuk perbuatan yang jatuh kembali ke pelakunya. Bentuk kamusnya selalu berakhiran **-se**: *levantarse*, *ducharse*, *acostarse*, *llamarse*. Yang berubah bukan cuma kata kerjanya, tapi juga kata kecil di depannya:"
+          ],
+          "table": {
+            "head": ["", "levantarse (bangun)", "Arti"],
+            "rows": [
+              ["yo", "**me** levanto", "saya bangun"],
+              ["tú", "**te** levantas", "kamu bangun"],
+              ["él / ella / usted", "**se** levanta", "dia bangun"],
+              ["nosotros", "**nos** levantamos", "kami bangun"],
+              ["vosotros", "**os** levantáis", "kalian bangun"],
+              ["ellos / ustedes", "**se** levantan", "mereka bangun"]
+            ]
+          },
+          "after": [
+            "Kata kecilnya berdiri **di depan** kata kerja bertekuk: *me ducho*. Tapi kalau kata kerjanya masih berbentuk kamus, ia menempel di **belakang** jadi satu kata: *quiero ducharme*, *tengo que levantarme temprano*.",
+            "Beberapa kata kerja berubah arti kalau dibalikkan: *ir* (pergi) → *irse* (pergi meninggalkan tempat), *dormir* (tidur) → *dormirse* (jatuh tertidur), *llamar* (memanggil) → *llamarse* (bernama)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Diálogo 2 — La semana de Marta",
+      "intro": "Sekarang giliran Marta bercerita. Perhatikan kata-kata yang menyebut seberapa sering.",
+      "lines": [
+        { "speaker": "Budi:", "text": "¿Qué haces normalmente los lunes?", "id": "Biasanya kamu ngapain hari Senin?", "literal": "apa kamu-melakukan biasanya si-jamak senin?" },
+        { "speaker": "Marta:", "text": "Los lunes siempre trabajo en la librería.", "id": "Setiap Senin saya selalu bekerja di toko buku.", "literal": "si-jamak senin selalu saya-bekerja di si toko-buku." },
+        { "speaker": "Budi:", "text": "¿Y los martes y miércoles?", "id": "Dan Selasa dan Rabu?", "literal": "dan si-jamak selasa dan rabu?" },
+        { "speaker": "Marta:", "text": "Igual. Pero los jueves estudio inglés por la tarde.", "id": "Sama. Tapi Kamis saya belajar bahasa Inggris sore hari.", "literal": "sama. tetapi si-jamak kamis saya-belajar inggris lewat sore." },
+        { "speaker": "Budi:", "text": "¿Y no descansas nunca?", "id": "Dan kamu tidak pernah istirahat?", "literal": "dan tidak kamu-istirahat tidak-pernah?" },
+        { "speaker": "Marta:", "text": "Sí, los fines de semana. Los sábados me levanto tarde.", "id": "Istirahat, kok, akhir pekan. Sabtu saya bangun siang.", "literal": "ya, si-jamak akhir dari pekan. si-jamak sabtu saya-mengangkat-diri larut." },
+        { "speaker": "Budi:", "text": "¿A qué hora?", "id": "Jam berapa?", "literal": "pada apa jam?" },
+        { "speaker": "Marta:", "text": "A las once, a veces a las doce. ¡Es mi lujo!", "id": "Jam sebelas, kadang jam dua belas. Itu kemewahan saya!", "literal": "pada jam-jam sebelas, pada kali-kali pada jam-jam dua-belas. adalah kemewahanku!" },
+        { "speaker": "Budi:", "text": "¿Y los domingos?", "id": "Dan hari Minggu?", "literal": "dan si-jamak minggu?" },
+        { "speaker": "Marta:", "text": "Los domingos comemos en casa de mis padres. Nunca falto.", "id": "Hari Minggu kami makan siang di rumah orang tua saya. Saya tidak pernah absen.", "literal": "si-jamak minggu kami-makan di rumah dari orang-tuaku. tidak-pernah saya-absen." },
+        { "speaker": "Budi:", "text": "¡Qué bien! Nosotros también comemos juntos los domingos.", "id": "Bagus sekali! Kami juga makan bersama hari Minggu.", "literal": "betapa baik! kami juga kami-makan bersama si-jamak minggu." },
+        { "speaker": "Marta:", "text": "Entonces no somos tan diferentes.", "id": "Berarti kita tidak sebeda itu.", "literal": "kalau-begitu tidak kami-adalah begitu berbeda." }
+      ],
+      "notes": [
+        "**Nunca boleh dobel dengan no.** *No descanso nunca* dan *nunca descanso* dua-duanya benar dan berarti sama. Bahasa Spanyol memang membolehkan sangkalan berlipat — *no veo nada nunca* sah sepenuhnya, sesuatu yang di bahasa Inggris justru salah.",
+        "**Sí sebagai bantahan.** Waktu Marta menjawab *sí* atas pertanyaan bernada menyangkal, artinya \"istirahat, kok\". Bahasa Indonesia memakai partikel; Spanyol memakai *sí* yang ditekan.",
+        "**Hacer** = melakukan / membuat, salah satu kata kerja paling sering dipakai. Bentuk *yo*-nya *hago*, sisanya beraturan: *haces, hace, hacemos, hacéis, hacen*. *¿Qué haces?* dipakai untuk dua hal: \"kamu sedang apa?\" dan \"kerjaanmu apa?\"",
+        "**Comer punya dua arti.** Umumnya \"makan\", tapi di Spanyol *comer* secara khusus berarti makan siang — jadwal makan besar hari itu. Makan malam *cenar*, sarapan *desayunar*.",
+        "**Los fines de semana** — perhatikan yang dijamakkan adalah *fin*, bukan *semana*: *los fines de semana*, bukan *los fin de semanas*. Aturan yang sama untuk semua rangkaian dengan *de*.",
+        "**Igual** = \"sama saja\", jawaban singkat yang sangat sering dipakai. Juga muncul sebagai *me da igual* (\"bagi saya sama saja\", \"terserah\").",
+        "**Normalmente, generalmente, normalmente.** Keterangan cara dibentuk dari kata sifat bentuk feminin + **-mente**: *normal → normalmente*, *rápida → rápidamente*, *tranquila → tranquilamente*. Persis seperti akhiran -ly bahasa Inggris.",
+        "**Juntos / juntas** = bersama-sama, dan bentuknya ikut kelompoknya: *comemos juntos* (campuran atau laki-laki), *comemos juntas* (semua perempuan)."
+      ],
+      "grammars": [
+        {
+          "title": "Membaca jam",
+          "body": [
+            "Rumusnya dua bagian: **Es la una** untuk jam satu, **Son las…** untuk semua jam lainnya. Menitnya disambung *y* sampai lewat setengah, lalu *menos* sesudahnya — orang Spanyol berhitung mundur dari jam berikutnya."
+          ],
+          "table": {
+            "head": ["Jam", "Español", "Harfiah"],
+            "rows": [
+              ["01.00", "Es la una", "adalah si satu"],
+              ["03.00", "Son las tres", "adalah si-jamak tiga"],
+              ["03.10", "Son las tres y diez", "tiga dan sepuluh"],
+              ["03.15", "Son las tres y cuarto", "tiga dan seperempat"],
+              ["03.30", "Son las tres y media", "tiga dan setengah"],
+              ["03.40", "Son las cuatro menos veinte", "empat kurang dua puluh"],
+              ["03.45", "Son las cuatro menos cuarto", "empat kurang seperempat"],
+              ["12.00", "Son las doce / Es mediodía", "dua belas / tengah hari"],
+              ["00.00", "Son las doce / Es medianoche", "dua belas / tengah malam"]
+            ]
+          },
+          "after": [
+            "Untuk memperjelas pagi atau malam, tambahkan *de la mañana* (kira-kira 06.00-12.00), *de la tarde* (12.00 sampai gelap), atau *de la noche* (sesudah gelap). Jadi *las ocho de la mañana* dan *las ocho de la tarde* dua waktu yang sangat berbeda.",
+            "Di jadwal resmi — stasiun, bandara, bioskop — orang memakai angka 24 jam apa adanya: *el tren sale a las diecinueve treinta*. Yang dipakai lisan sehari-hari tetap sistem 12 jam di tabel ini."
+          ]
+        }
       ]
     }
-  },
+  ],
+  "sections": [
+    {
+      "title": "Hari, dan seberapa sering",
+      "blocks": [
+        { "type": "sub", "text": "Los días de la semana" },
+        {
+          "type": "tabel",
+          "head": ["Español", "Cara baca", "Arti"],
+          "rows": [
+            ["lunes", "LU-nes", "Senin"],
+            ["martes", "MAR-tes", "Selasa"],
+            ["miércoles", "MIER-ko-les", "Rabu"],
+            ["jueves", "KHUE-bes", "Kamis"],
+            ["viernes", "BIER-nes", "Jumat"],
+            ["sábado", "SA-ba-do", "Sabtu"],
+            ["domingo", "do-MIN-go", "Minggu"],
+            ["el fin de semana", "el fin de se-MA-na", "akhir pekan"],
+            ["hoy / mañana / ayer", "oi / ma-NYA-na / a-YER", "hari ini / besok / kemarin"]
+          ]
+        },
+        { "type": "p", "text": "Nama hari ditulis huruf kecil, dan lima yang pertama sudah berbentuk jamak apa adanya: *el lunes* satu hari Senin, *los lunes* setiap Senin. Hanya *sábado* dan *domingo* yang berubah: *los sábados*, *los domingos*." },
+        { "type": "sub", "text": "¿Con qué frecuencia?" },
+        {
+          "type": "tabel",
+          "head": ["Español", "Arti", "Contoh"],
+          "rows": [
+            ["siempre", "selalu", "*Siempre desayuno en casa.*"],
+            ["casi siempre", "hampir selalu", "*Casi siempre llego temprano.*"],
+            ["normalmente", "biasanya", "*Normalmente ceno a las nueve.*"],
+            ["a menudo", "sering", "*Voy a menudo al cine.*"],
+            ["a veces", "kadang-kadang", "*A veces trabajo el sábado.*"],
+            ["casi nunca", "hampir tidak pernah", "*Casi nunca veo la tele.*"],
+            ["nunca", "tidak pernah", "*Nunca llego tarde.*"],
+            ["todos los días", "setiap hari", "*Estudio todos los días.*"],
+            ["una vez por semana", "seminggu sekali", "*Voy al gimnasio una vez por semana.*"]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sehari dari bangun sampai tidur",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Español", "Cara baca", "Arti"],
+          "rows": [
+            ["levantarse", "le-ban-TAR-se", "bangun (dari tempat tidur)"],
+            ["despertarse", "des-per-TAR-se", "terbangun"],
+            ["ducharse", "du-CHAR-se", "mandi"],
+            ["vestirse", "bes-TIR-se", "berpakaian"],
+            ["desayunar", "de-sa-yu-NAR", "sarapan"],
+            ["salir de casa", "sa-LIR de KA-sa", "berangkat dari rumah"],
+            ["ir al trabajo", "ir al tra-BA-kho", "pergi bekerja"],
+            ["empezar", "em-pe-SAR", "mulai"],
+            ["terminar", "ter-mi-NAR", "selesai"],
+            ["comer", "ko-MER", "makan (siang)"],
+            ["volver a casa", "bol-BER a KA-sa", "pulang ke rumah"],
+            ["descansar", "des-kan-SAR", "istirahat"],
+            ["cenar", "se-NAR", "makan malam"],
+            ["ver la tele", "ber la TE-le", "menonton TV"],
+            ["acostarse", "a-kos-TAR-se", "berbaring tidur"],
+            ["dormir", "dor-MIR", "tidur"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Ir — pergi",
+          "items": [
+            "*voy* (saya pergi) &middot; *vas* &middot; *va* &middot; *vamos* &middot; *vais* &middot; *van*. Tidak beraturan sepenuhnya, dan wajib dihafal karena dipakai setiap hari.",
+            "*A + el* melebur jadi *al*: *voy al trabajo*, *voy al cine*. Untuk tempat feminin tidak ada peleburan: *voy a la oficina*.",
+            "Alat transportasi memakai *en*: *en moto*, *en coche*, *en autobús*, *en tren*, *en metro*. Satu-satunya kecuali: *a pie* (jalan kaki)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sekilas budaya",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Sehari yang bergeser dua jam",
+          "items": [
+            "Jam Spanyol berjalan sekitar dua jam lebih lambat dari tetangganya di Eropa. Makan siang pukul 14.00, makan malam pukul 21.00-22.00, dan acara TV utama baru mulai pukul 22.30. Undangan makan malam pukul 20.00 adalah undangan turis.",
+            "*La siesta* memang ada, tapi bukan tidur siang nasional seperti bayangan orang. Yang nyata adalah *horario partido*: banyak toko kecil tutup pukul 14.00-17.00, lalu buka lagi sampai pukul 20.00.",
+            "Karena itu jangan kaget kalau apotek atau kantor pos tutup persis di jam kamu bebas. Yang buka terus biasanya toko besar dan pusat perbelanjaan.",
+            "Di Amerika Latin polanya jauh lebih dekat dengan Indonesia: makan siang pukul 12.00-13.00, makan malam pukul 19.00-20.00."
+          ]
+        }
+      ]
+    }
+  ],
   "vocab": [
     { "es": "¿qué hora es?", "baca": "ke O-ra es", "id": "jam berapa?" },
+    { "es": "¿a qué hora?", "baca": "a ke O-ra", "id": "jam berapa (terjadi)?" },
+    { "es": "la hora", "baca": "la O-ra", "id": "jam, waktu" },
     { "es": "levantarse", "baca": "le-ban-TAR-se", "id": "bangun" },
     { "es": "ducharse", "baca": "du-CHAR-se", "id": "mandi" },
+    { "es": "acostarse", "baca": "a-kos-TAR-se", "id": "berbaring tidur" },
     { "es": "desayunar", "baca": "de-sa-yu-NAR", "id": "sarapan" },
-    { "es": "comer / cenar", "baca": "ko-MER / se-NAR", "id": "makan siang / makan malam" },
+    { "es": "comer", "baca": "ko-MER", "id": "makan (siang)" },
+    { "es": "cenar", "baca": "se-NAR", "id": "makan malam" },
     { "es": "salir", "baca": "sa-LIR", "id": "keluar, berangkat" },
+    { "es": "volver", "baca": "bol-BER", "id": "kembali, pulang" },
+    { "es": "ir", "baca": "ir", "id": "pergi" },
+    { "es": "hacer", "baca": "a-SER", "id": "melakukan, membuat" },
+    { "es": "empezar", "baca": "em-pe-SAR", "id": "mulai" },
+    { "es": "terminar", "baca": "ter-mi-NAR", "id": "selesai" },
+    { "es": "descansar", "baca": "des-kan-SAR", "id": "istirahat" },
     { "es": "dormir", "baca": "dor-MIR", "id": "tidur" },
+    { "es": "tardar", "baca": "tar-DAR", "id": "memakan waktu" },
     { "es": "temprano / tarde", "baca": "tem-PRA-no / TAR-de", "id": "awal / larut" },
     { "es": "la mañana", "baca": "la ma-NYA-na", "id": "pagi" },
-    { "es": "la tarde / la noche", "baca": "TAR-de / NO-che", "id": "sore / malam" },
-    { "es": "y cuarto / y media", "baca": "i KUAR-to / i ME-dia", "id": "lewat seperempat / setengah" },
+    { "es": "la tarde", "baca": "la TAR-de", "id": "siang / sore" },
+    { "es": "la noche", "baca": "la NO-che", "id": "malam" },
+    { "es": "y cuarto", "baca": "i KUAR-to", "id": "lewat seperempat" },
+    { "es": "y media", "baca": "i ME-dia", "id": "setengah" },
+    { "es": "menos cuarto", "baca": "ME-nos KUAR-to", "id": "kurang seperempat" },
+    { "es": "el mediodía", "baca": "el me-dio-DI-a", "id": "tengah hari" },
     { "es": "todos los días", "baca": "TO-dos los DI-as", "id": "setiap hari" },
+    { "es": "siempre / nunca", "baca": "SIEM-pre / NUN-ka", "id": "selalu / tidak pernah" },
+    { "es": "a veces", "baca": "a BE-ses", "id": "kadang-kadang" },
+    { "es": "normalmente", "baca": "nor-mal-MEN-te", "id": "biasanya" },
     { "es": "después", "baca": "des-PUES", "id": "setelah itu" },
-    { "es": "el fin de semana", "baca": "fin de se-MA-na", "id": "akhir pekan" }
+    { "es": "entonces", "baca": "en-TON-ses", "id": "kalau begitu" },
+    { "es": "el fin de semana", "baca": "fin de se-MA-na", "id": "akhir pekan" },
+    { "es": "el trabajo", "baca": "el tra-BA-kho", "id": "pekerjaan, tempat kerja" },
+    { "es": "en coche / en moto", "baca": "en KO-che", "id": "naik mobil / motor" },
+    { "es": "a pie", "baca": "a PIE", "id": "jalan kaki" },
+    { "es": "juntos / juntas", "baca": "KHUN-tos", "id": "bersama" },
+    { "es": "igual", "baca": "i-GUAL", "id": "sama saja" }
   ],
   "exercises": [
     { "prompt": "Tulis jamnya dengan huruf.", "items": [
-      "07.00 — ____",
-      "13.15 — ____",
-      "20.30 — ____",
-      "01.00 — ____"
+      "07.00 ____",
+      "13.15 ____",
+      "20.30 ____",
+      "01.00 ____",
+      "09.45 ____",
+      "16.20 ____"
     ] },
     { "prompt": "Lengkapi dengan bentuk yang tepat.", "items": [
       "Nosotros (cenar) ____ a las ocho.",
       "Ellos (vivir) ____ en Madrid.",
-      "Yo (levantarse) ____ ____ a las seis.",
-      "¿Vosotros (trabajar) ____ los sábados?"
+      "Yo (levantarse) ____ a las seis.",
+      "¿Vosotros (trabajar) ____ los sábados?",
+      "Marta (salir) ____ de casa a las siete.",
+      "¿Tú (acostarse) ____ tarde?"
     ] },
     { "prompt": "Terjemahkan ke bahasa Spanyol.", "items": [
       "Saya mandi lalu sarapan.",
       "Kami makan malam jam sembilan.",
       "Dia berangkat jam setengah delapan.",
-      "Setiap hari saya belajar bahasa Spanyol."
+      "Setiap hari saya belajar bahasa Spanyol.",
+      "Setiap Sabtu saya bangun siang.",
+      "Saya pergi bekerja naik motor."
+    ] },
+    { "prompt": "Isi dengan bentuk *ir* yang tepat (*voy*, *vas*, *va*, *vamos*, *van*).", "items": [
+      "Yo ____ al trabajo en moto.",
+      "¿Tú ____ a la escuela a pie?",
+      "Marta ____ a la librería los lunes.",
+      "Nosotros ____ al cine los domingos.",
+      "Mis padres ____ a Madrid mañana."
+    ] },
+    { "prompt": "Terjemahkan ke bahasa Indonesia.", "items": [
+      "Normalmente me acuesto a las once.",
+      "Los domingos comemos en casa de mis padres.",
+      "Nunca llego tarde al trabajo.",
+      "Tardo media hora en llegar.",
+      "A veces trabajo el sábado por la mañana."
+    ] },
+    { "prompt": "Susun jadi kalimat Spanyol yang benar.", "items": [
+      "hora / ¿ / qué / es / ?",
+      "seis / me / las / levanto / a",
+      "domingos / los / descanso",
+      "tarde / nunca / llego",
+      "trabajo / al / moto / en / voy"
     ] }
   ],
   "answers": [
-    "Son las siete. — Es la una y cuarto. — Son las ocho y media. — Es la una.",
-    "cenamos — viven — me levanto — trabajáis",
-    "Me ducho y después desayuno. — Cenamos a las nueve. — Sale a las siete y media. — Todos los días estudio español."
-  ]
+    "Son las siete. — Es la una y cuarto. — Son las ocho y media. — Es la una. — Son las diez menos cuarto. — Son las cuatro y veinte.",
+    "cenamos — viven — me levanto — trabajáis — sale — te acuestas",
+    "Me ducho y después desayuno. — Cenamos a las nueve. — Sale a las siete y media. — Todos los días estudio español. — Los sábados me levanto tarde. — Voy al trabajo en moto.",
+    "voy — vas — va — vamos — van",
+    "Biasanya saya tidur jam sebelas. — Hari Minggu kami makan siang di rumah orang tua saya. — Saya tidak pernah terlambat ke tempat kerja. — Perjalanan saya setengah jam. — Kadang-kadang saya bekerja Sabtu pagi.",
+    "¿Qué hora es? — Me levanto a las seis. — Los domingos descanso. — Nunca llego tarde. — Voy al trabajo en moto."
+  ],
+  "wave": "Jam dan hari dari unit ini adalah bahan mentah unit 8 (rencana akhir pekan) dan unit 10 (kejadian kemarin). Sebelum lanjut, ceritakan harimu sendiri keras-keras dari bangun sampai tidur — enam kalimat saja sudah cukup."
 }

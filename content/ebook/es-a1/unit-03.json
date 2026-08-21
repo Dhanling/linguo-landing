@@ -1,79 +1,294 @@
 {
   "title": "Di kafe",
   "title_target": "En el café",
-  "goal": "Memesan makanan dan minuman, menyebut angka 1-20, dan meminta sesuatu dengan sopan.",
-  "dialog": {
-    "title": "Diálogo — Pidiendo el desayuno",
-    "lines": [
-      { "speaker": "Camarero:", "text": "Buenos días. ¿Qué desea?", "id": "Selamat pagi. Anda mau pesan apa?", "literal": "baik hari. apa anda-inginkan?" },
-      { "speaker": "Ana:", "text": "Quisiera un café con leche, por favor.", "id": "Saya mau satu kopi susu.", "literal": "saya-menginginkan sebuah kopi dengan susu, tolong." },
-      { "speaker": "Camarero:", "text": "¿Y para comer? Tenemos tostadas y churros.", "id": "Dan untuk makan? Kami punya roti panggang dan churros.", "literal": "dan untuk makan? kami-punya roti-panggang dan churros." },
-      { "speaker": "Ana:", "text": "Una tostada con tomate, por favor.", "id": "Satu roti panggang dengan tomat.", "literal": "sebuah roti-panggang dengan tomat, tolong." },
-      { "speaker": "Camarero:", "text": "Muy bien. ¿Algo más?", "id": "Baik. Ada lagi?", "literal": "sangat baik. sesuatu lebih?" },
-      { "speaker": "Ana:", "text": "No, gracias. ¿Cuánto es?", "id": "Tidak, terima kasih. Berapa harganya?", "literal": "tidak, terima kasih. berapa adalah?" },
-      { "speaker": "Camarero:", "text": "Son cuatro euros con cincuenta.", "id": "Empat euro lima puluh.", "literal": "adalah(jamak) empat euro dengan lima-puluh." },
-      { "speaker": "Ana:", "text": "Aquí tiene. ¡Muchas gracias!", "id": "Ini dia. Terima kasih banyak!", "literal": "di-sini anda-punya. banyak terima-kasih!" }
-    ]
-  },
-  "notes": [
-    "**Quisiera itu kunci kesopanan.** Artinya \"saya ingin\", tapi nadanya jauh lebih halus daripada *quiero* (\"saya mau\"). Di kafe, restoran, atau toko, *quisiera* nyaris selalu pilihan yang tepat.",
-    "**Un dan una.** Kata benda Spanyol punya jenis kelamin: *un café* (laki-laki), *una tostada* (perempuan). Umumnya berakhiran **-o** laki-laki dan **-a** perempuan, tapi ada pengecualian yang harus dihafal apa adanya — *el día* (hari) laki-laki meski berakhiran -a.",
-    "**Por favor dan gracias.** *Por favor* di akhir permintaan, *gracias* setelah menerima. Menjatuhkan keduanya terdengar kasar di telinga penutur Spanyol, lebih kasar daripada di bahasa Indonesia.",
-    "**¿Cuánto es? vs ¿Cuánto son?** Untuk satu barang, *¿cuánto es?*; menjawab total beberapa barang, orang Spanyol memakai bentuk jamak: *son cuatro euros*. Kamu akan sering mendengar *son* di kasir.",
-    "**Aquí tiene** harfiahnya \"di sini Anda punya\" — dipakai saat menyerahkan sesuatu, setara \"ini dia\" atau \"silakan\"."
+  "goal": "Memesan makanan dan minuman, menyebut angka 0-20, meminta bon, dan membayar.",
+  "bekal": [
+    "memesan dengan sopan memakai *quisiera*",
+    "menyebut angka 0 sampai 20",
+    "menanyakan harga dan meminta bon",
+    "memakai *hay* untuk \"ada\"",
+    "membedakan *un* dan *una* saat memesan"
   ],
-  "grammar": {
-    "title": "Angka 1-20",
-    "body": [
-      "Angka 1 berubah bentuk mengikuti benda yang dihitung: *un café* tapi *una tostada*. Selebihnya tidak berubah."
-    ],
-    "table": {
-      "head": ["", "", "", ""],
-      "rows": [
-        ["1 uno/una", "6 seis", "11 once", "16 dieciséis"],
-        ["2 dos", "7 siete", "12 doce", "17 diecisiete"],
-        ["3 tres", "8 ocho", "13 trece", "18 dieciocho"],
-        ["4 cuatro", "9 nueve", "14 catorce", "19 diecinueve"],
-        ["5 cinco", "10 diez", "15 quince", "20 veinte"]
+  "dialogs": [
+    {
+      "title": "Diálogo 1 — Pidiendo el desayuno",
+      "intro": "Pukul delapan pagi di sebuah kafe Madrid. Sarapan orang Spanyol pendek dan berdiri di bar.",
+      "lines": [
+        { "speaker": "Camarero:", "text": "Buenos días. ¿Qué desea?", "id": "Selamat pagi. Anda mau pesan apa?", "literal": "baik hari. apa anda-inginkan?" },
+        { "speaker": "Ana:", "text": "Quisiera un café con leche, por favor.", "id": "Saya mau satu kopi susu.", "literal": "saya-menginginkan sebuah kopi dengan susu, tolong." },
+        { "speaker": "Camarero:", "text": "¿Y para comer? Tenemos tostadas y churros.", "id": "Dan untuk makan? Kami punya roti panggang dan churros.", "literal": "dan untuk makan? kami-punya roti-panggang dan churros." },
+        { "speaker": "Ana:", "text": "Una tostada con tomate, por favor.", "id": "Satu roti panggang dengan tomat.", "literal": "sebuah roti-panggang dengan tomat, tolong." },
+        { "speaker": "Camarero:", "text": "Muy bien. ¿Algo más?", "id": "Baik. Ada lagi?", "literal": "sangat baik. sesuatu lebih?" },
+        { "speaker": "Ana:", "text": "¿Hay zumo de naranja?", "id": "Ada jus jeruk?", "literal": "ada sari dari jeruk?" },
+        { "speaker": "Camarero:", "text": "Sí, claro. ¿Grande o pequeño?", "id": "Ada, tentu. Besar atau kecil?", "literal": "ya, tentu. besar atau kecil?" },
+        { "speaker": "Ana:", "text": "Pequeño, gracias. Nada más.", "id": "Kecil, terima kasih. Sudah cukup.", "literal": "kecil, terima-kasih. tidak-ada lebih." },
+        { "speaker": "Camarero:", "text": "Enseguida.", "id": "Segera datang.", "literal": "seketika." },
+        { "speaker": "Ana:", "text": "¿Cuánto es?", "id": "Berapa semuanya?", "literal": "berapa adalah?" },
+        { "speaker": "Camarero:", "text": "Son cuatro euros con cincuenta.", "id": "Empat euro lima puluh.", "literal": "adalah(jamak) empat euro dengan lima-puluh." },
+        { "speaker": "Ana:", "text": "Aquí tiene. ¡Muchas gracias!", "id": "Ini dia. Terima kasih banyak!", "literal": "di-sini anda-punya. banyak terima-kasih!" }
+      ],
+      "notes": [
+        "**Quisiera itu kunci kesopanan.** Artinya \"saya ingin\", tapi nadanya jauh lebih halus daripada *quiero* (\"saya mau\"). Di kafe, restoran, atau toko, *quisiera* nyaris selalu pilihan yang tepat. Bentuknya sama untuk siapa pun pelakunya, jadi tak ada yang perlu dihafal selain kata itu sendiri.",
+        "**Un dan una.** Kata benda Spanyol punya jenis kelamin: *un café* (maskulin), *una tostada* (feminin). Waktu memesan, jenis kelaminnya menentukan bentuk angka satu — dan cuma angka satu. *Dos cafés* dan *dos tostadas* memakai kata yang sama.",
+        "**Por favor dan gracias.** *Por favor* di akhir permintaan, *gracias* setelah menerima. Menjatuhkan keduanya terdengar kasar di telinga penutur Spanyol, lebih kasar daripada di bahasa Indonesia.",
+        "**Hay = ada.** Satu kata untuk tunggal maupun jamak: *hay un café* (ada satu kafe), *hay tres cafés* (ada tiga kafe). Bentuknya tak pernah berubah, dan inilah kata paling berguna untuk menanyakan ketersediaan apa pun: *¿hay wifi?*, *¿hay agua?*",
+        "**¿Cuánto es? vs ¿cuánto son?** Untuk satu barang, *¿cuánto es?*; menjawab total beberapa barang, orang Spanyol memakai bentuk jamak: *son cuatro euros*. Kamu akan sering mendengar *son* di kasir.",
+        "**Nada más** = \"tidak ada lagi\", jawaban baku untuk *¿algo más?* Lebih halus daripada *no* saja.",
+        "**Aquí tiene** harfiahnya \"di sini Anda punya\" — dipakai saat menyerahkan sesuatu, setara \"ini dia\" atau \"silakan\". Versi akrabnya *aquí tienes*.",
+        "**Enseguida** (kadang ditulis *en seguida*) = \"segera\". Pelayan mengucapkannya sambil berbalik; artinya pesananmu sudah dicatat."
+      ],
+      "grammars": [
+        {
+          "title": "Angka 0-20",
+          "body": [
+            "Angka 1 berubah bentuk mengikuti benda yang dihitung: *un café* tapi *una tostada*. Selebihnya tidak berubah sama sekali, berapa pun bendanya."
+          ],
+          "table": {
+            "head": ["", "", "", ""],
+            "rows": [
+              ["0 cero", "6 seis", "11 once", "16 dieciséis"],
+              ["1 uno / una", "7 siete", "12 doce", "17 diecisiete"],
+              ["2 dos", "8 ocho", "13 trece", "18 dieciocho"],
+              ["3 tres", "9 nueve", "14 catorce", "19 diecinueve"],
+              ["4 cuatro", "10 diez", "15 quince", "20 veinte"],
+              ["5 cinco", "", "", ""]
+            ]
+          },
+          "after": [
+            "*Uno* memendek jadi *un* tepat sebelum kata benda maskulin: *uno* kalau berdiri sendiri (\"satu!\"), *un café* kalau ada bendanya. Bentuk femininnya tidak memendek: *una tostada*.",
+            "Angka 16-19 sebenarnya gabungan *diez y seis* yang dirapatkan jadi satu kata. Karena itu *dieciséis* memakai tanda ´, sedangkan *diecisiete* tidak — tekanannya jatuh di tempat yang berbeda."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Diálogo 2 — La comida del mediodía",
+      "intro": "Makan siang, hidangan utama hari itu. Dua orang duduk, memesan, dan meminta bon.",
+      "lines": [
+        { "speaker": "Camarero:", "text": "Buenas tardes. ¿Una mesa para dos?", "id": "Selamat siang. Meja untuk dua orang?", "literal": "baik sore-sore. sebuah meja untuk dua?" },
+        { "speaker": "Luis:", "text": "Sí, por favor. ¿Hay menú del día?", "id": "Ya. Ada menu hari ini?", "literal": "ya, tolong. ada menu dari-si hari?" },
+        { "speaker": "Camarero:", "text": "Sí. De primero, sopa o ensalada. De segundo, pollo o pescado.", "id": "Ada. Hidangan pertama, sup atau salad. Hidangan kedua, ayam atau ikan.", "literal": "ya. dari pertama, sup atau salad. dari kedua, ayam atau ikan." },
+        { "speaker": "Luis:", "text": "Para mí, ensalada y pollo, por favor.", "id": "Untuk saya, salad dan ayam.", "literal": "untuk saya, salad dan ayam, tolong." },
+        { "speaker": "Ana:", "text": "Yo quiero sopa. Y de segundo, pescado.", "id": "Saya mau sup. Dan hidangan keduanya ikan.", "literal": "saya saya-mau sup. dan dari kedua, ikan." },
+        { "speaker": "Camarero:", "text": "¿Y para beber?", "id": "Dan untuk minum?", "literal": "dan untuk minum?" },
+        { "speaker": "Luis:", "text": "Una botella de agua, por favor. Sin gas.", "id": "Satu botol air. Tanpa soda.", "literal": "sebuah botol dari air, tolong. tanpa gas." },
+        { "speaker": "Camarero:", "text": "Perfecto. El postre está incluido.", "id": "Baik. Pencuci mulut sudah termasuk.", "literal": "sempurna. si pencuci-mulut berada termasuk." },
+        { "speaker": "Ana:", "text": "¡Qué bien! Perdone, ¿dónde está el baño?", "id": "Bagus! Permisi, kamar kecilnya di mana?", "literal": "betapa baik! maafkan, di-mana berada si kamar-mandi?" },
+        { "speaker": "Camarero:", "text": "Al fondo, a la derecha.", "id": "Di ujung, sebelah kanan.", "literal": "ke-si dasar, ke si kanan." },
+        { "speaker": "Luis:", "text": "La cuenta, por favor. ¿Se puede pagar con tarjeta?", "id": "Minta bonnya. Bisa bayar pakai kartu?", "literal": "si bon, tolong. bisa membayar dengan kartu?" },
+        { "speaker": "Camarero:", "text": "Sí, claro. Son veinte euros.", "id": "Bisa, tentu. Dua puluh euro.", "literal": "ya, tentu. adalah(jamak) dua-puluh euro." }
+      ],
+      "notes": [
+        "**Menú del día** adalah lembaga tersendiri di Spanyol: hidangan pertama, hidangan kedua, roti, minum, dan pencuci mulut dengan satu harga tetap, hanya pada jam makan siang. Jangan tertukar dengan *la carta* — itulah daftar menu lengkap yang kita sebut \"menu\" dalam bahasa Indonesia.",
+            "**Del = de + el.** *El menú del día*, bukan *de el día*. Peleburan ini wajib, bukan pilihan gaya.",
+        "**Para mí** = \"untuk saya\". Perhatikan tanda ´ pada *mí* — tanpa tanda itu, *mi* berarti \"milikku\". Sesudah kata depan, kata gantinya berubah bentuk: *para mí*, *para ti*, *para él*.",
+        "**Quiero vs quisiera.** *Quiero sopa* sopan-sopan saja di antara teman atau saat memesan cepat; *quisiera* lebih halus lagi. Yang benar-benar kasar adalah menyebut nama makanannya saja tanpa apa pun — itu berlaku di mana-mana.",
+        "**Sin gas / con gas** = air putih biasa atau air bersoda. Di Spanyol *agua* di restoran selalu botol, jarang gratis.",
+        "**¿Dónde está…?** memakai *estar*, bukan *ser*, karena yang ditanyakan letak. Bedanya dibedah tuntas di unit 6; untuk sekarang cukup: **letak selalu *estar***.",
+        "**Perdone / perdona** = \"permisi\" untuk menyela seseorang — bentuk pertama sopan, kedua akrab. Bedakan dari *lo siento*, yang dipakai untuk minta maaf sungguhan.",
+        "**Se puede…?** = \"boleh / bisakah…?\" tanpa menyebut siapa pelakunya. Pola serbaguna: *¿se puede pagar con tarjeta?*, *¿se puede fumar aquí?*"
+      ],
+      "grammars": [
+        {
+          "title": "Querer (mau) dan hay (ada)",
+          "body": [
+            "*Querer* termasuk kata kerja yang **berubah di dalam**, bukan cuma di akhirannya: huruf *e* pada suku kata yang ditekan berubah jadi *ie*. Pola yang sama nanti muncul pada *tener*, *empezar*, dan *preferir*."
+          ],
+          "table": {
+            "head": ["", "querer (mau)", "Contoh"],
+            "rows": [
+              ["yo", "qu**ie**ro", "*Quiero un café.*"],
+              ["tú", "qu**ie**res", "*¿Quieres agua?*"],
+              ["él / ella / usted", "qu**ie**re", "*Ella quiere sopa.*"],
+              ["(sopan, semua pelaku)", "quisiera", "*Quisiera la cuenta.*"]
+            ]
+          },
+          "after": [
+            "*Hay* berdiri sendiri di luar semua tabel: ia tidak punya bentuk lain, tidak punya pelaku, dan berarti \"ada\" untuk tunggal maupun jamak. *Hay una mesa libre* (ada satu meja kosong), *hay tres mesas libres* (ada tiga meja kosong).",
+            "Bentuk sangkalnya cukup *no hay*: *no hay pescado hoy* — hari ini ikannya tidak ada. Kalimat ini akan sering kamu dengar di kafe kecil menjelang sore."
+          ]
+        }
       ]
     }
-  },
+  ],
+  "sections": [
+    {
+      "title": "Yang diucapkan pelayan, yang diucapkan tamu",
+      "blocks": [
+        { "type": "p", "text": "Percakapan di kafe hampir selalu memakai kalimat yang sama persis. Hafalkan kolom kanan; kolom kiri cukup dikenali saat terdengar." },
+        {
+          "type": "tabel",
+          "head": ["Kata pelayan", "Arti", "Jawabanmu"],
+          "rows": [
+            ["¿Qué desea?", "Anda mau pesan apa?", "*Quisiera…*"],
+            ["¿Qué le pongo?", "Mau saya buatkan apa?", "*Un café con leche.*"],
+            ["¿Para tomar aquí o para llevar?", "Minum di sini atau bawa pulang?", "*Para llevar.*"],
+            ["¿Algo más?", "Ada lagi?", "*Nada más, gracias.*"],
+            ["¿Y para beber?", "Untuk minumnya?", "*Agua sin gas.*"],
+            ["Enseguida", "Segera", "*Gracias.*"],
+            ["Aquí tiene", "Ini dia", "*Muchas gracias.*"],
+            ["¿Todo bien?", "Semuanya baik?", "*Sí, muy rico.*"],
+            ["¿Junto o separado?", "Bayar jadi satu atau terpisah?", "*Junto, por favor.*"]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Menu kecil",
+      "blocks": [
+        { "type": "sub", "text": "Untuk diminum — *para beber*" },
+        {
+          "type": "tabel",
+          "head": ["Español", "Cara baca", "Arti"],
+          "rows": [
+            ["un café solo", "un ka-FE SO-lo", "kopi hitam"],
+            ["un café con leche", "un ka-FE kon LE-che", "kopi susu"],
+            ["un cortado", "un kor-TA-do", "kopi dengan sedikit susu"],
+            ["un té", "un TE", "teh"],
+            ["un zumo de naranja", "un SU-mo de na-RAN-kha", "jus jeruk"],
+            ["una botella de agua", "u-na bo-TE-ya de A-gua", "sebotol air"],
+            ["una cerveza", "u-na ser-BE-sa", "bir"],
+            ["un vino tinto", "un BI-no TIN-to", "anggur merah"]
+          ]
+        },
+        { "type": "sub", "text": "Untuk dimakan — *para comer*" },
+        {
+          "type": "tabel",
+          "head": ["Español", "Cara baca", "Arti"],
+          "rows": [
+            ["una tostada", "u-na tos-TA-da", "roti panggang"],
+            ["un bocadillo", "un bo-ka-DI-yo", "roti isi panjang"],
+            ["una ensalada", "u-na en-sa-LA-da", "salad"],
+            ["una sopa", "u-na SO-pa", "sup"],
+            ["el pollo", "el PO-yo", "ayam"],
+            ["el pescado", "el pes-KA-do", "ikan"],
+            ["la carne", "la KAR-ne", "daging"],
+            ["el arroz", "el a-ROS", "nasi"],
+            ["las patatas fritas", "las pa-TA-tas FRI-tas", "kentang goreng"],
+            ["la tortilla española", "la tor-TI-ya es-pa-NYO-la", "telur dadar kentang"],
+            ["el postre", "el POS-tre", "pencuci mulut"],
+            ["el helado", "el e-LA-do", "es krim"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "El agua — kata yang menipu",
+          "items": [
+            "*Agua* itu **feminin**, tapi di bentuk tunggal ia memakai *el*: *el agua*, bukan *la agua*. Alasannya semata bunyi — *la agua* terdengar seperti satu kata yang tergagap.",
+            "Buktinya kata sifatnya tetap feminin: *el agua fría* (air dingin), bukan *frío*. Dan di bentuk jamak semuanya kembali normal: *las aguas*.",
+            "Kata lain dengan perlakuan sama: *el aula* (ruang kelas), *el hambre* (lapar), *el águila* (elang). Cirinya sama: feminin, dimulai bunyi **a** yang ditekan."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sekilas budaya",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Jam makan yang bergeser",
+          "items": [
+            "Sarapan Spanyol ringan sekali: kopi dan roti panggang, sering sambil berdiri di bar. Makan besar justru siang, sekitar pukul 14.00-15.00, dan makan malam baru mulai pukul 21.00. Restoran yang buka pukul 18.00 hampir pasti restoran turis.",
+            "*Tapas* adalah porsi kecil yang menemani minuman. Di beberapa kota — Granada yang paling terkenal — tapas datang gratis bersama setiap gelas yang kamu pesan.",
+            "*La propina* (tip) tidak wajib dan tidak diharapkan seperti di Amerika. Meninggalkan uang receh atau membulatkan tagihan sudah dianggap ramah.",
+            "Minta bon harus diucapkan; pelayan yang membawakan bon tanpa diminta dianggap mengusir tamu. *La cuenta, por favor* — atau angkat tangan sambil menggambar bujur sangkar kecil di udara."
+          ]
+        }
+      ]
+    }
+  ],
   "vocab": [
     { "es": "el café", "baca": "el ka-FE", "id": "kopi / kafe" },
     { "es": "la leche", "baca": "la LE-che", "id": "susu" },
     { "es": "el té", "baca": "el TE", "id": "teh" },
     { "es": "el agua", "baca": "el A-gua", "id": "air" },
+    { "es": "el zumo", "baca": "el SU-mo", "id": "jus" },
+    { "es": "la naranja", "baca": "la na-RAN-kha", "id": "jeruk" },
+    { "es": "la botella", "baca": "la bo-TE-ya", "id": "botol" },
     { "es": "la tostada", "baca": "la tos-TA-da", "id": "roti panggang" },
+    { "es": "el pan", "baca": "el PAN", "id": "roti" },
+    { "es": "el tomate", "baca": "el to-MA-te", "id": "tomat" },
+    { "es": "el azúcar", "baca": "el a-SU-kar", "id": "gula" },
+    { "es": "la sopa", "baca": "la SO-pa", "id": "sup" },
+    { "es": "la ensalada", "baca": "la en-sa-LA-da", "id": "salad" },
+    { "es": "el pollo", "baca": "el PO-yo", "id": "ayam" },
+    { "es": "el pescado", "baca": "el pes-KA-do", "id": "ikan" },
+    { "es": "el postre", "baca": "el POS-tre", "id": "pencuci mulut" },
+    { "es": "la mesa", "baca": "la ME-sa", "id": "meja" },
+    { "es": "el menú del día", "baca": "el me-NU del DI-a", "id": "menu hari ini" },
+    { "es": "la carta", "baca": "la KAR-ta", "id": "daftar menu" },
+    { "es": "la cuenta", "baca": "la KUEN-ta", "id": "bon / tagihan" },
+    { "es": "la tarjeta", "baca": "la tar-KHE-ta", "id": "kartu" },
+    { "es": "el baño", "baca": "el BA-nyo", "id": "kamar kecil" },
     { "es": "quisiera", "baca": "ki-SIE-ra", "id": "saya ingin (sopan)" },
+    { "es": "querer", "baca": "ke-RER", "id": "mau, menginginkan" },
+    { "es": "beber", "baca": "be-BER", "id": "minum" },
+    { "es": "pagar", "baca": "pa-GAR", "id": "membayar" },
+    { "es": "hay", "baca": "ai", "id": "ada" },
     { "es": "por favor", "baca": "por fa-BOR", "id": "tolong / silakan" },
     { "es": "gracias", "baca": "GRA-sias", "id": "terima kasih" },
     { "es": "¿algo más?", "baca": "AL-go MAS", "id": "ada lagi?" },
+    { "es": "nada más", "baca": "NA-da MAS", "id": "sudah cukup" },
     { "es": "¿cuánto es?", "baca": "KUAN-to ES", "id": "berapa harganya?" },
-    { "es": "la cuenta", "baca": "la KUEN-ta", "id": "bon / tagihan" },
-    { "es": "con / sin", "baca": "kon / sin", "id": "dengan / tanpa" }
+    { "es": "con", "baca": "kon", "id": "dengan" },
+    { "es": "sin", "baca": "sin", "id": "tanpa" },
+    { "es": "grande", "baca": "GRAN-de", "id": "besar" },
+    { "es": "pequeño", "baca": "pe-KE-nyo", "id": "kecil" },
+    { "es": "enseguida", "baca": "en-se-GI-da", "id": "segera" },
+    { "es": "perdone", "baca": "per-DO-ne", "id": "permisi (sopan)" }
   ],
   "exercises": [
     { "prompt": "Pesan hal berikut dengan sopan, pakai *quisiera*.", "items": [
       "satu kopi susu",
-      "satu teh tanpa gula (*azúcar*)",
-      "dua roti panggang dengan tomat"
+      "satu teh tanpa gula",
+      "dua roti panggang dengan tomat",
+      "satu botol air tanpa soda",
+      "satu jus jeruk"
     ] },
-    { "prompt": "Tulis angkanya dengan huruf.", "items": [
+    { "prompt": "Tulis hasilnya dengan huruf.", "items": [
       "3 + 4 = ____",
       "10 + 5 = ____",
-      "12 + 8 = ____"
+      "12 + 8 = ____",
+      "9 + 2 = ____",
+      "6 + 7 = ____",
+      "18 − 6 = ____"
     ] },
     { "prompt": "Isi rumpang dengan *un* atau *una*.", "items": [
-      "____ café",
-      "____ tostada",
-      "____ agua",
-      "____ churro"
+      "____ café con leche",
+      "____ tostada con tomate",
+      "____ botella de agua",
+      "____ ensalada",
+      "____ zumo de naranja",
+      "____ mesa para dos"
+    ] },
+    { "prompt": "Isi dengan bentuk *querer* yang tepat (*quiero*, *quieres*, *quiere*).", "items": [
+      "Yo ____ un café solo.",
+      "¿Tú ____ postre?",
+      "Ana ____ pescado.",
+      "¿Usted ____ la cuenta?"
+    ] },
+    { "prompt": "Susun jadi kalimat Spanyol yang benar.", "items": [
+      "cuenta / por favor / la",
+      "¿ / hay / del / menú / día / ?",
+      "agua / botella / una / de",
+      "está / ¿ / dónde / baño / el / ?",
+      "más / nada / gracias"
+    ] },
+    { "prompt": "Terjemahkan ke bahasa Indonesia.", "items": [
+      "¿Se puede pagar con tarjeta?",
+      "No hay pescado hoy.",
+      "El postre está incluido.",
+      "¿Para tomar aquí o para llevar?",
+      "Son cuatro euros con cincuenta."
     ] }
   ],
   "answers": [
-    "Quisiera un café con leche, por favor. — Quisiera un té sin azúcar, por favor. — Quisiera dos tostadas con tomate, por favor.",
-    "siete — quince — veinte",
-    "un — una — un (*el agua* laki-laki meski berakhiran -a) — un"
+    "Quisiera un café con leche, por favor. — Quisiera un té sin azúcar, por favor. — Quisiera dos tostadas con tomate, por favor. — Quisiera una botella de agua sin gas, por favor. — Quisiera un zumo de naranja, por favor.",
+    "siete — quince — veinte — once — trece — doce",
+    "un — una — una — una — un — una",
+    "quiero — quieres — quiere — quiere",
+    "La cuenta, por favor. — ¿Hay menú del día? — Una botella de agua. — ¿Dónde está el baño? — Nada más, gracias.",
+    "Bisa bayar pakai kartu? — Hari ini tidak ada ikan. — Pencuci mulutnya sudah termasuk. — Minum di sini atau dibawa pulang? — Empat euro lima puluh."
   ],
-  "wave": "Belum ada — ulangan berjenjang dimulai di unit 8."
+  "wave": "Angka di unit ini dipakai lagi di unit 4 (umur), unit 5 (jam), dan unit 7 (harga). Kalau angka 11-15 masih tersendat, ulangi bagian ini sebelum masuk unit 4 — sisanya akan terasa jauh lebih ringan."
 }

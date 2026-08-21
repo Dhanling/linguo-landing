@@ -1,84 +1,282 @@
 {
   "title": "Kemarin",
   "title_target": "Ayer",
-  "goal": "Menceritakan kejadian yang sudah lewat dengan bentuk lampau kata kerja beraturan.",
-  "dialog": {
-    "title": "Diálogo — ¿Qué tal el fin de semana?",
-    "lines": [
-      { "speaker": "Marta:", "text": "¿Qué tal el fin de semana?", "id": "Bagaimana akhir pekanmu?", "literal": "apa begitu akhir dari pekan?" },
-      { "speaker": "Budi:", "text": "Muy bien. El sábado fui a Bogor.", "id": "Sangat baik. Sabtu saya pergi ke Bogor.", "literal": "sangat baik. yang sabtu saya-pergi ke Bogor." },
-      { "speaker": "Marta:", "text": "¿Y qué hiciste allí?", "id": "Dan kamu ngapain di sana?", "literal": "dan apa kamu-melakukan di-sana?" },
-      { "speaker": "Budi:", "text": "Comí con mis abuelos y hablamos toda la tarde.", "id": "Saya makan bersama kakek-nenek dan kami mengobrol sepanjang sore.", "literal": "saya-makan dengan kakek-nenekku dan kami-bicara seluruh sore." },
-      { "speaker": "Marta:", "text": "¿Volviste el domingo?", "id": "Kamu pulang hari Minggu?", "literal": "kamu-kembali yang minggu?" },
-      { "speaker": "Budi:", "text": "Sí, volví por la noche y llegué muy tarde.", "id": "Ya, saya pulang malam dan tiba sangat larut.", "literal": "ya, saya-kembali lewat malam dan saya-tiba sangat larut." },
-      { "speaker": "Marta:", "text": "Yo no salí de casa. Llovió todo el día.", "id": "Saya tidak keluar rumah. Hujan seharian.", "literal": "saya tidak saya-keluar dari rumah. dia-menghujan seluruh hari." },
-      { "speaker": "Budi:", "text": "Pero viste tu serie española, ¿no?", "id": "Tapi kamu nonton serial Spanyolmu, kan?", "literal": "tetapi kamu-melihat serialmu spanyol, tidak?" }
-    ]
-  },
-  "notes": [
-    "**Bentuk lampau ini untuk kejadian yang sudah tuntas**, biasanya dengan batas waktu jelas: *ayer* (kemarin), *el sábado*, *la semana pasada*, *en 2020*. Bahasa Spanyol punya bentuk lampau lain untuk kebiasaan dan latar cerita, tapi itu urusan A2 — yang ini dulu.",
-    "**Kata kerja -er dan -ir berbagi satu daftar akhiran.** *Comí, comiste, comió…* dan *salí, saliste, salió…* persis sama polanya. Jadi yang perlu dihafal cuma dua daftar, bukan tiga.",
-    "**Tekanan pindah ke suku kata terakhir, dan tanda aksennya menentukan arti.** *Hablo* = saya bicara (sekarang); *habló* = dia bicara (kemarin). Satu tanda kecil memisahkan pelaku dan waktu sekaligus — inilah alasan tanda aksen tidak boleh dianggap hiasan.",
-    "**Ir dan ser punya bentuk lampau yang sama persis:** *fui, fuiste, fue, fuimos, fuisteis, fueron*. *Fui a Bogor* = saya pergi ke Bogor; *fui estudiante* = saya dulu pelajar. Konteks yang memilah, dan penutur asli tidak pernah bingung.",
-    "**Beberapa ejaan menyesuaikan diri demi bunyi.** *Llegar → llegué* (bukan *llegé*, supaya g tetap keras), *buscar → busqué*, *empezar → empecé*. Perubahannya hanya terjadi di bentuk *yo*; sisanya normal."
+  "goal": "Menceritakan kejadian yang sudah lewat, dengan kata kerja beraturan maupun yang paling sering dipakai tak beraturan.",
+  "bekal": [
+    "menceritakan apa yang kamu lakukan kemarin",
+    "menanyakan pengalaman orang lain",
+    "memakai penanda waktu lampau",
+    "merangkai cerita pendek dengan urutan yang jelas",
+    "mengenali lima kata kerja lampau tak beraturan yang paling sering muncul"
   ],
-  "grammar": {
-    "title": "Bentuk lampau kata kerja beraturan",
-    "body": [
-      "Buang akhiran -ar / -er / -ir, lalu pasang akhiran di bawah. Perhatikan bahwa bentuk *nosotros* untuk kata kerja -ar dan -ir kebetulan sama dengan bentuk sekarangnya (*hablamos*, *salimos*) — waktu kejadiannya dibedakan oleh konteks kalimat."
-    ],
-    "table": {
-      "head": ["", "hablar", "comer", "salir"],
-      "rows": [
-        ["yo", "habl**é**", "com**í**", "sal**í**"],
-        ["tú", "habl**aste**", "com**iste**", "sal**iste**"],
-        ["él / ella / usted", "habl**ó**", "com**ió**", "sal**ió**"],
-        ["nosotros", "habl**amos**", "com**imos**", "sal**imos**"],
-        ["vosotros", "habl**asteis**", "com**isteis**", "sal**isteis**"],
-        ["ellos / ustedes", "habl**aron**", "com**ieron**", "sal**ieron**"]
+  "dialogs": [
+    {
+      "title": "Diálogo 1 — ¿Qué tal el fin de semana?",
+      "intro": "Senin pagi. Percakapan yang paling sering terjadi di kantor mana pun di dunia.",
+      "lines": [
+        { "speaker": "Marta:", "text": "¿Qué tal el fin de semana?", "id": "Bagaimana akhir pekanmu?", "literal": "apa begitu akhir dari pekan?" },
+        { "speaker": "Budi:", "text": "Muy bien. El sábado fui a Bogor.", "id": "Sangat baik. Sabtu saya pergi ke Bogor.", "literal": "sangat baik. yang sabtu saya-pergi ke Bogor." },
+        { "speaker": "Marta:", "text": "¿Y qué hiciste allí?", "id": "Dan kamu ngapain di sana?", "literal": "dan apa kamu-melakukan di-sana?" },
+        { "speaker": "Budi:", "text": "Comí con mis abuelos y hablamos toda la tarde.", "id": "Saya makan bersama kakek-nenek dan kami mengobrol sepanjang sore.", "literal": "saya-makan dengan kakek-nenekku dan kami-bicara seluruh sore." },
+        { "speaker": "Marta:", "text": "¿Y el domingo? ¿Volviste pronto?", "id": "Dan Minggu? Kamu pulang cepat?", "literal": "dan yang minggu? kamu-kembali segera?" },
+        { "speaker": "Budi:", "text": "Sí, volví por la noche y llegué muy tarde.", "id": "Ya, saya pulang malam dan tiba sangat larut.", "literal": "ya, saya-kembali lewat malam dan saya-tiba sangat larut." },
+        { "speaker": "Marta:", "text": "¿No tuviste problemas con el tren?", "id": "Tidak ada masalah dengan keretanya?", "literal": "tidak kamu-punya masalah-masalah dengan si kereta?" },
+        { "speaker": "Budi:", "text": "Un poco de retraso, nada más. ¿Y tú?", "id": "Telat sedikit, itu saja. Kalau kamu?", "literal": "se-sedikit dari keterlambatan, tidak-ada lebih. dan kamu?" },
+        { "speaker": "Marta:", "text": "Yo no salí de casa. Llovió todo el día.", "id": "Saya tidak keluar rumah. Hujan seharian.", "literal": "saya tidak saya-keluar dari rumah. dia-menghujan seluruh hari." },
+        { "speaker": "Budi:", "text": "Pero viste tu serie española, ¿no?", "id": "Tapi kamu nonton serial Spanyolmu, kan?", "literal": "tetapi kamu-melihat serialmu spanyol, tidak?" },
+        { "speaker": "Marta:", "text": "Vi seis capítulos. Fue un domingo perfecto.", "id": "Saya nonton enam episode. Minggu yang sempurna.", "literal": "saya-melihat enam bab. dia-adalah satu minggu sempurna." },
+        { "speaker": "Budi:", "text": "¡Qué envidia! Yo no vi nada.", "id": "Enak banget! Saya tidak nonton apa-apa.", "literal": "betapa iri! saya tidak saya-melihat tidak-ada." }
+      ],
+      "notes": [
+        "**Bentuk lampau ini untuk kejadian yang sudah tuntas**, biasanya dengan batas waktu jelas: *ayer* (kemarin), *el sábado*, *la semana pasada*, *en 2020*. Bahasa Spanyol punya bentuk lampau lain untuk kebiasaan dan latar cerita, tapi itu urusan A2 — yang ini dulu.",
+        "**Kata kerja -er dan -ir berbagi satu daftar akhiran.** *Comí, comiste, comió…* dan *salí, saliste, salió…* persis sama polanya. Jadi yang perlu dihafal cuma dua daftar, bukan tiga.",
+        "**Tekanan pindah ke suku kata terakhir, dan tanda aksennya menentukan arti.** *Hablo* = saya bicara (sekarang); *habló* = dia bicara (kemarin). Satu tanda kecil memisahkan pelaku dan waktu sekaligus — inilah alasan tanda aksen tidak boleh dianggap hiasan.",
+        "**Ir dan ser punya bentuk lampau yang sama persis:** *fui, fuiste, fue, fuimos, fuisteis, fueron*. *Fui a Bogor* = saya pergi ke Bogor; *fui estudiante* = saya dulu pelajar. Konteks yang memilah, dan penutur asli tidak pernah bingung.",
+        "**Beberapa ejaan menyesuaikan diri demi bunyi.** *Llegar → llegué* (bukan *llegé*, supaya g tetap keras), *buscar → busqué*, *empezar → empecé*. Perubahannya hanya terjadi di bentuk *yo*; sisanya normal.",
+        "**Ver kehilangan seluruh tanda aksennya:** *vi, viste, vio, vimos, visteis, vieron*. Bandingkan dengan kata kerja lain yang mendapat tanda di bentuk *yo* dan *él*.",
+        "**Sangkalan berlipat, lagi.** *Yo no vi nada* harfiahnya \"saya tidak melihat tidak-apa-apa\" dan berarti \"saya tidak melihat apa-apa\". Sudah kamu temui di unit 5 dengan *nunca*; polanya sama.",
+        "**¡Qué envidia!** harfiahnya \"betapa iri!\" dan dipakai persis seperti \"enak banget\" atau \"jadi ingin\" dalam bahasa Indonesia — pujian ringan, bukan keluhan sungguhan."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk lampau kata kerja beraturan",
+          "body": [
+            "Buang akhiran -ar / -er / -ir, lalu pasang akhiran di bawah. Perhatikan bahwa bentuk *nosotros* untuk kata kerja -ar dan -ir kebetulan sama dengan bentuk sekarangnya (*hablamos*, *salimos*) — waktu kejadiannya dibedakan oleh konteks kalimat."
+          ],
+          "table": {
+            "head": ["", "hablar", "comer", "salir"],
+            "rows": [
+              ["yo", "habl**é**", "com**í**", "sal**í**"],
+              ["tú", "habl**aste**", "com**iste**", "sal**iste**"],
+              ["él / ella / usted", "habl**ó**", "com**ió**", "sal**ió**"],
+              ["nosotros", "habl**amos**", "com**imos**", "sal**imos**"],
+              ["vosotros", "habl**asteis**", "com**isteis**", "sal**isteis**"],
+              ["ellos / ustedes", "habl**aron**", "com**ieron**", "sal**ieron**"]
+            ]
+          },
+          "after": [
+            "Kabar baiknya: kata kerja yang pecah di tengah pada bentuk sekarang — *querer*, *poder*, *volver*, *empezar* — sebagian besar **kembali beraturan** di bentuk lampau untuk kata kerja -ar dan -er. *Vuelvo* jadi *volví*, *empiezo* jadi *empecé*.",
+            "Kabar buruknya, sebagian kecil kata kerja -ir tetap berubah, tapi hanya di bentuk *él* dan *ellos*: *dormir → durmió, durmieron*; *pedir → pidió, pidieron*. Cukup dikenali; jangan dihafal sekarang."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Diálogo 2 — El viaje a Sevilla",
+      "intro": "Cerita lebih panjang, dengan kata kerja lampau tak beraturan yang paling sering dipakai.",
+      "lines": [
+        { "speaker": "Ana:", "text": "¿Qué tal el viaje? ¿Cuándo fuiste a Sevilla?", "id": "Bagaimana perjalanannya? Kapan kamu ke Sevilla?", "literal": "apa begitu si perjalanan? kapan kamu-pergi ke Sevilla?" },
+        { "speaker": "Budi:", "text": "El mes pasado. Estuve allí cinco días.", "id": "Bulan lalu. Saya di sana lima hari.", "literal": "si bulan lampau. saya-berada di-sana lima hari." },
+        { "speaker": "Ana:", "text": "¿Y qué hiciste?", "id": "Dan kamu ngapain saja?", "literal": "dan apa kamu-melakukan?" },
+        { "speaker": "Budi:", "text": "El primer día visité la catedral. Es enorme.", "id": "Hari pertama saya mengunjungi katedral. Besar sekali.", "literal": "si pertama hari saya-mengunjungi si katedral. adalah raksasa." },
+        { "speaker": "Ana:", "text": "¿Subiste a la Giralda?", "id": "Kamu naik ke Giralda?", "literal": "kamu-naik ke si Giralda?" },
+        { "speaker": "Budi:", "text": "Sí, pero tuve que descansar dos veces. ¡Treinta y cuatro rampas!", "id": "Ya, tapi saya harus istirahat dua kali. Tiga puluh empat tanjakan!", "literal": "ya, tetapi saya-punya bahwa beristirahat dua kali. tiga-puluh dan empat tanjakan!" },
+        { "speaker": "Ana:", "text": "¿Y la comida? ¿Comiste bien?", "id": "Dan makanannya? Kamu makan enak?", "literal": "dan si makanan? kamu-makan baik?" },
+        { "speaker": "Budi:", "text": "Muy bien. Una noche fuimos a un bar de tapas y probé de todo.", "id": "Enak sekali. Suatu malam kami ke bar tapas dan saya coba semuanya.", "literal": "sangat baik. satu malam kami-pergi ke satu bar dari tapas dan saya-mencoba dari semua." },
+        { "speaker": "Ana:", "text": "¿Hizo mucho calor?", "id": "Panas sekali?", "literal": "dia-membuat banyak panas?" },
+        { "speaker": "Budi:", "text": "Cuarenta grados. Por eso salíamos solo por la tarde.", "id": "Empat puluh derajat. Makanya kami cuma keluar sore hari.", "literal": "empat-puluh derajat. untuk itu kami-keluar hanya lewat sore." },
+        { "speaker": "Ana:", "text": "¿Y volviste con ganas de repetir?", "id": "Dan pulangnya kamu ingin ke sana lagi?", "literal": "dan kamu-kembali dengan hasrat dari mengulang?" },
+        { "speaker": "Budi:", "text": "Muchísimas. Fue el mejor viaje de mi vida.", "id": "Ingin banget. Itu perjalanan terbaik dalam hidup saya.", "literal": "banyak-sekali(jamak). dia-adalah si terbaik perjalanan dari hidupku." }
+      ],
+      "notes": [
+        "**Lima kata kerja lampau tak beraturan menutup separuh percakapan sehari-hari:** *ir / ser* → *fui*, *estar* → *estuve*, *tener* → *tuve*, *hacer* → *hice*, *poder* → *pude*. Semuanya berbagi satu ciri: **tak ada tanda aksen sama sekali**, dan tekanannya jatuh di suku kata sebelum akhir.",
+        "**Hacer punya satu ejaan yang berubah:** bentuk *él*-nya *hizo*, bukan *hició* — c-nya berganti jadi z supaya bunyinya tetap sama. Kata kerja tak beraturan memang begitu; kejanggalannya justru tanda pengenalnya.",
+        "**Tuve que** = \"saya harus\", bentuk lampau dari *tengo que*. Perhatikan artinya lebih kuat daripada bahasa Indonesia: *tuve que* berarti kamu benar-benar melakukannya, bukan sekadar seharusnya.",
+        "**Dos veces** = dua kali. *Vez* adalah kata untuk \"kali\": *una vez*, *dos veces*, *muchas veces*, *otra vez* (sekali lagi), *a veces* (kadang-kadang).",
+        "**De todo** = \"segala macam\". *Probé de todo* — saya mencoba segalanya. Berbeda dari *todo* saja, yang berarti seluruhnya sampai habis.",
+        "**Salíamos** di baris 10 adalah bentuk lampau yang **lain** — imperfecto, untuk kebiasaan berulang selama masa itu. Ia dibedah di A2; di sini cukup rasakan bedanya: *fui* sekali jadi, *salíamos* berkali-kali.",
+        "**Por eso** = \"makanya\", \"karena itu\". Penyambung yang sangat berguna untuk membuat ceritamu terdengar tersusun, bukan sekadar daftar kejadian.",
+        "**El mejor** = yang terbaik. *Bueno* punya bentuk khusus, bukan *más bueno*: *mejor* (lebih baik / terbaik), dan lawannya *peor*. Pasangan yang sama sudah kamu temui di unit 4 dengan *mayor* dan *menor*."
+      ],
+      "grammars": [
+        {
+          "title": "Lima kata kerja lampau yang wajib",
+          "body": [
+            "Hafalkan lajur *yo* dan *él* lebih dulu — dua bentuk itu yang paling sering keluar saat bercerita."
+          ],
+          "table": {
+            "head": ["", "ir / ser", "estar", "tener", "hacer"],
+            "rows": [
+              ["yo", "**fui**", "**estuve**", "**tuve**", "**hice**"],
+              ["tú", "fuiste", "estuviste", "tuviste", "hiciste"],
+              ["él / ella / usted", "**fue**", "**estuvo**", "**tuvo**", "**hizo**"],
+              ["nosotros", "fuimos", "estuvimos", "tuvimos", "hicimos"],
+              ["vosotros", "fuisteis", "estuvisteis", "tuvisteis", "hicisteis"],
+              ["ellos / ustedes", "fueron", "estuvieron", "tuvieron", "hicieron"]
+            ]
+          },
+          "after": [
+            "Yang kelima, *poder*: *pude, pudiste, pudo, pudimos, pudisteis, pudieron*. Perhatikan bahwa keempat kata kerja di tabel dan *poder* memakai akhiran yang **sama persis** — *-e, -iste, -o, -imos, -isteis, -ieron* — cuma batang katanya yang berubah. Jadi yang benar-benar perlu dihafal adalah lima batang: *fu-*, *estuv-*, *tuv-*, *hic-*, *pud-*.",
+            "Dua lagi yang berpola sama dan sering muncul: *decir* → *dije* (saya bilang) dan *venir* → *vine* (saya datang)."
+          ]
+        }
       ]
     }
-  },
+  ],
+  "sections": [
+    {
+      "title": "Penanda waktu lampau",
+      "blocks": [
+        { "type": "p", "text": "Kalimat lampau hampir selalu didahului salah satu dari kata-kata ini. Menyebutkannya membuat lawan bicara langsung tahu kamu sedang bercerita, bahkan sebelum kata kerjanya keluar." },
+        {
+          "type": "tabel",
+          "head": ["Español", "Cara baca", "Arti"],
+          "rows": [
+            ["ayer", "a-YER", "kemarin"],
+            ["anteayer", "an-te-a-YER", "kemarin lusa"],
+            ["anoche", "a-NO-che", "tadi malam"],
+            ["esta mañana", "ES-ta ma-NYA-na", "tadi pagi"],
+            ["el lunes pasado", "el LU-nes pa-SA-do", "Senin lalu"],
+            ["la semana pasada", "se-MA-na pa-SA-da", "minggu lalu"],
+            ["el mes pasado", "el mes pa-SA-do", "bulan lalu"],
+            ["el año pasado", "el A-nyo pa-SA-do", "tahun lalu"],
+            ["hace dos días", "A-se dos DI-as", "dua hari yang lalu"],
+            ["hace mucho tiempo", "A-se MU-cho TIEM-po", "lama sekali yang lalu"],
+            ["en 2019", "en dos mil die-si-NUE-be", "pada 2019"]
+          ]
+        },
+        { "type": "p", "text": "Perhatikan *hace* dipakai untuk \"… yang lalu\", dan letaknya di **depan**: *hace dos días*, bukan *dos días hace*. Kata yang sama sudah kamu kenal sebagai cuaca (*hace calor*) — ketiga pemakaiannya tidak berhubungan sama sekali selain kebetulan sejarah." }
+      ]
+    },
+    {
+      "title": "Merangkai cerita",
+      "blocks": [
+        { "type": "p", "text": "Perbedaan antara pemula dan penutur yang terdengar lancar sering bukan kosakatanya, melainkan penyambungnya. Enam kata ini mengubah daftar kejadian jadi cerita." },
+        {
+          "type": "tabel",
+          "head": ["Español", "Arti", "Contoh"],
+          "rows": [
+            ["primero", "mula-mula", "*Primero fui a la catedral.*"],
+            ["luego / después", "lalu, sesudah itu", "*Luego comimos en un bar.*"],
+            ["más tarde", "belakangan", "*Más tarde volví al hotel.*"],
+            ["al final", "akhirnya", "*Al final no salimos.*"],
+            ["por eso", "makanya", "*Llovió, por eso me quedé en casa.*"],
+            ["pero", "tapi", "*Quise ir, pero no pude.*"],
+            ["porque", "karena", "*No salí porque llovía.*"],
+            ["también", "juga", "*También visité el museo.*"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Latihan bicara: ceritakan akhir pekanmu",
+          "items": [
+            "Enam kalimat, tidak lebih. Kalimat pertama menyebutkan kapan: *El sábado…*",
+            "Tiga kalimat tengah menyebut apa yang kamu lakukan, disambung *primero*, *luego*, *más tarde*.",
+            "Satu kalimat tentang orang lain: *Mi hermano vino a casa* atau *Comimos juntos*.",
+            "Kalimat terakhir memberi penilaian: *Fue un fin de semana tranquilo* atau *Fue el mejor fin de semana del mes*.",
+            "Lakukan keras-keras, dan ulangi tiga kali. Kali ketiga hampir selalu jauh lebih lancar daripada kali pertama — dan itulah yang mau kamu bawa ke percakapan sungguhan."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sekilas budaya",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Dua bentuk lampau, dan mengapa kamu akan mendengarnya bercampur",
+          "items": [
+            "Bahasa Spanyol punya dua bentuk lampau yang dipakai bergantian dalam satu cerita: *pretérito* (yang kamu pelajari di unit ini) untuk kejadian tuntas, dan *imperfecto* untuk latar dan kebiasaan. *Llovía y no salí* — hujan terus (latar), saya tak keluar (kejadian).",
+            "Di Spanyol ada satu bentuk lagi, *pretérito perfecto* (*he comido*), untuk hari yang masih berjalan: *hoy he comido con Marta*. Di sebagian besar Amerika Latin bentuk itu jauh lebih jarang — orang tetap memakai *comí*.",
+            "Jadi jangan panik kalau yang kamu dengar tidak persis seperti tabel di unit ini. Yang kamu punya sekarang sudah cukup untuk dimengerti sepenuhnya di mana pun, dan itulah tujuan A1.",
+            "Kalau ceritamu tersendat, tak apa memakai bentuk sekarang dengan penanda waktu: *ayer voy a Bogor* memang tidak baku, tapi lawan bicaramu paham dan percakapannya jalan terus. Bicara dulu, rapikan kemudian."
+          ]
+        }
+      ]
+    }
+  ],
   "vocab": [
     { "es": "ayer", "baca": "a-YER", "id": "kemarin" },
     { "es": "anoche", "baca": "a-NO-che", "id": "tadi malam" },
     { "es": "la semana pasada", "baca": "se-MA-na pa-SA-da", "id": "minggu lalu" },
+    { "es": "el mes pasado", "baca": "el mes pa-SA-do", "id": "bulan lalu" },
+    { "es": "el año pasado", "baca": "el A-nyo pa-SA-do", "id": "tahun lalu" },
+    { "es": "hace dos días", "baca": "A-se dos DI-as", "id": "dua hari lalu" },
+    { "es": "fui", "baca": "fui", "id": "saya pergi / saya dulu" },
+    { "es": "estuve", "baca": "es-TU-be", "id": "saya berada" },
+    { "es": "tuve", "baca": "TU-be", "id": "saya punya (dulu)" },
+    { "es": "hice", "baca": "I-se", "id": "saya lakukan" },
+    { "es": "pude", "baca": "PU-de", "id": "saya bisa (dulu)" },
     { "es": "volver", "baca": "bol-BER", "id": "kembali, pulang" },
     { "es": "ver", "baca": "ber", "id": "melihat, menonton" },
     { "es": "hacer", "baca": "a-SER", "id": "melakukan, membuat" },
-    { "es": "fui", "baca": "fui", "id": "saya pergi / saya dulu" },
-    { "es": "¿qué tal?", "baca": "ke tal", "id": "bagaimana?" },
-    { "es": "todo el día", "baca": "TO-do el DI-a", "id": "seharian" },
+    { "es": "probar", "baca": "pro-BAR", "id": "mencoba, mencicipi" },
+    { "es": "subir", "baca": "su-BIR", "id": "naik" },
+    { "es": "visitar", "baca": "bi-si-TAR", "id": "mengunjungi" },
     { "es": "empezar", "baca": "em-pe-SAR", "id": "memulai" },
     { "es": "terminar", "baca": "ter-mi-NAR", "id": "menyelesaikan" },
     { "es": "conocer", "baca": "ko-no-SER", "id": "mengenal, berkenalan" },
+    { "es": "el viaje", "baca": "el BIA-khe", "id": "perjalanan" },
+    { "es": "la vez / las veces", "baca": "la bes", "id": "kali" },
+    { "es": "otra vez", "baca": "O-tra bes", "id": "sekali lagi" },
     { "es": "la película", "baca": "pe-LI-ku-la", "id": "film" },
-    { "es": "el año pasado", "baca": "el A-nyo pa-SA-do", "id": "tahun lalu" }
+    { "es": "el capítulo", "baca": "el ka-PI-tu-lo", "id": "episode, bab" },
+    { "es": "el retraso", "baca": "el re-TRA-so", "id": "keterlambatan" },
+    { "es": "todo el día", "baca": "TO-do el DI-a", "id": "seharian" },
+    { "es": "primero", "baca": "pri-ME-ro", "id": "mula-mula" },
+    { "es": "luego", "baca": "LUE-go", "id": "lalu" },
+    { "es": "más tarde", "baca": "mas TAR-de", "id": "belakangan" },
+    { "es": "al final", "baca": "al fi-NAL", "id": "akhirnya" },
+    { "es": "por eso", "baca": "por E-so", "id": "makanya" },
+    { "es": "porque", "baca": "POR-ke", "id": "karena" },
+    { "es": "el mejor / la mejor", "baca": "el me-KHOR", "id": "yang terbaik" },
+    { "es": "¡qué envidia!", "baca": "ke en-BI-dia", "id": "enak banget!" },
+    { "es": "¿qué tal?", "baca": "ke tal", "id": "bagaimana?" }
   ],
   "exercises": [
     { "prompt": "Ubah ke bentuk lampau.", "items": [
-      "Hablo con Marta. → ____",
-      "Comemos en un restaurante. → ____",
-      "Ella sale a las ocho. → ____",
-      "¿Trabajas el domingo? → ____"
+      "Hablo con Marta.",
+      "Comemos en un restaurante.",
+      "Ella sale a las ocho.",
+      "¿Trabajas el domingo?",
+      "Visitamos la catedral.",
+      "Ellos vuelven el lunes."
     ] },
     { "prompt": "Lengkapi dengan bentuk lampau kata dalam kurung.", "items": [
       "Ayer yo (llegar) ____ muy tarde.",
       "Nosotros (visitar) ____ a mis abuelos.",
       "Ellos (volver) ____ el lunes.",
-      "La semana pasada (llover) ____ todos los días."
+      "La semana pasada (llover) ____ todos los días.",
+      "¿Tú (comer) ____ en casa ayer?",
+      "Marta (salir) ____ a las nueve."
+    ] },
+    { "prompt": "Lengkapi dengan bentuk lampau tak beraturan (*ir*, *estar*, *tener*, *hacer*).", "items": [
+      "El sábado yo ____ a Bogor.",
+      "¿Qué ____ tú el fin de semana?",
+      "Nosotros ____ en Sevilla cinco días.",
+      "Ella ____ que trabajar el domingo.",
+      "Ayer ____ mucho calor."
     ] },
     { "prompt": "Terjemahkan ke bahasa Spanyol.", "items": [
       "Kemarin saya menonton film Spanyol.",
       "Minggu lalu kami pergi ke pantai.",
       "Dia tidak keluar rumah tadi malam.",
-      "Saya berkenalan dengan gurunya tahun lalu."
+      "Saya berkenalan dengan gurunya tahun lalu.",
+      "Bulan lalu saya di Sevilla lima hari.",
+      "Itu perjalanan terbaik dalam hidup saya."
+    ] },
+    { "prompt": "Terjemahkan ke bahasa Indonesia.", "items": [
+      "¿Qué hiciste el fin de semana?",
+      "Llovió todo el día, por eso me quedé en casa.",
+      "Tuve que descansar dos veces.",
+      "Primero fui a la catedral y luego comí en un bar.",
+      "Fue un domingo perfecto."
+    ] },
+    { "prompt": "Susun jadi kalimat Spanyol yang benar.", "items": [
+      "Bogor / fui / a / sábado / el",
+      "¿ / hiciste / qué / ?",
+      "día / llovió / el / todo",
+      "pasada / semana / la / playa / a / fuimos / la",
+      "vida / mi / de / viaje / mejor / el / fue"
     ] }
   ],
   "answers": [
-    "Hablé con Marta. — Comimos en un restaurante. — Ella salió a las ocho. — ¿Trabajaste el domingo?",
-    "llegué — visitamos — volvieron — llovió",
-    "Ayer vi una película española. — La semana pasada fuimos a la playa. — No salió de casa anoche. — Conocí a la profesora el año pasado."
+    "Hablé con Marta. — Comimos en un restaurante. — Ella salió a las ocho. — ¿Trabajaste el domingo? — Visitamos la catedral. — Ellos volvieron el lunes.",
+    "llegué — visitamos — volvieron — llovió — comiste — salió",
+    "fui — hiciste — estuvimos — tuvo — hizo",
+    "Ayer vi una película española. — La semana pasada fuimos a la playa. — No salió de casa anoche. — Conocí a la profesora el año pasado. — El mes pasado estuve en Sevilla cinco días. — Fue el mejor viaje de mi vida.",
+    "Apa yang kamu lakukan akhir pekan lalu? — Hujan seharian, makanya saya di rumah saja. — Saya harus istirahat dua kali. — Mula-mula saya ke katedral lalu makan di sebuah bar. — Itu hari Minggu yang sempurna.",
+    "El sábado fui a Bogor. — ¿Qué hiciste? — Llovió todo el día. — La semana pasada fuimos a la playa. — Fue el mejor viaje de mi vida."
   ],
   "wave": "Ulangi **unit 3**: tutup bahasa Spanyolnya dan pesan lagi kopi serta sarapanmu dari ingatan. Setelah sepuluh unit, adegan kafe yang dulu terasa berat semestinya kini keluar hampir tanpa berpikir — itu ukuran kemajuan yang paling jujur."
 }

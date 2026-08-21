@@ -1,86 +1,830 @@
 {
   "title": "Keluargaku",
   "title_target": "Mi familia",
-  "goal": "Bicara tentang anggota keluarga, menyebut umur, dan memakai angka 20-100.",
-  "dialog": {
-    "title": "Diálogo — Fotos en el móvil",
-    "lines": [
-      { "speaker": "Marta:", "text": "¿Tienes hermanos?", "id": "Kamu punya saudara?", "literal": "kamu-punya saudara-saudara?" },
-      { "speaker": "Budi:", "text": "Sí, tengo una hermana y un hermano.", "id": "Ya, saya punya satu adik perempuan dan satu adik laki-laki.", "literal": "ya, saya-punya satu saudara-perempuan dan satu saudara-laki-laki." },
-      { "speaker": "Marta:", "text": "¿Cuántos años tiene tu hermana?", "id": "Berapa umur saudara perempuanmu?", "literal": "berapa tahun-tahun dia-punya saudara-perempuanmu?" },
-      { "speaker": "Budi:", "text": "Tiene veinte años. Es enfermera.", "id": "Umurnya dua puluh tahun. Dia perawat.", "literal": "dia-punya dua-puluh tahun-tahun. dia-adalah perawat(perempuan)." },
-      { "speaker": "Marta:", "text": "¿Y tus padres? ¿Dónde viven?", "id": "Dan orang tuamu? Di mana mereka tinggal?", "literal": "dan orang-tuamu? di mana mereka-tinggal?" },
-      { "speaker": "Budi:", "text": "Viven en Bandung. Mi padre es profesor.", "id": "Mereka tinggal di Bandung. Ayah saya guru.", "literal": "mereka-tinggal di Bandung. ayahku dia-adalah guru." },
-      { "speaker": "Marta:", "text": "¡Qué familia tan grande! Yo soy hija única.", "id": "Keluargamu besar sekali! Saya anak tunggal.", "literal": "betapa keluarga begitu besar! saya adalah anak-perempuan tunggal." },
-      { "speaker": "Budi:", "text": "Nosotros somos cinco en casa.", "id": "Kami berlima di rumah.", "literal": "kami kami-adalah lima di rumah." }
-    ]
-  },
-  "notes": [
-    "**Umur itu \"dipunyai\", bukan \"adalah\".** Bahasa Spanyol bilang *tengo veinte años* — harfiahnya \"saya punya dua puluh tahun\". *Soy veinte años* salah dan terdengar sangat asing. Pertanyaannya pun ikut pola itu: *¿Cuántos años tienes?*",
-    "**Mi, tu, su ikut JUMLAH bendanya, bukan pemiliknya.** Satu benda: *mi hermano*. Lebih dari satu: *mis hermanos*. Jadi *tus padres* bukan berarti \"orang tua kalian\", tapi \"orang tua (jamak) milikmu\".",
-    "**Su itu memang ambigu.** *Su casa* bisa berarti rumah dia, rumah mereka, atau rumah Anda. Bahasa Spanyol membiarkannya begitu dan mengandalkan konteks; kalau perlu tegas, orang bilang *la casa de él*.",
-    "**Jamak maskulin memayungi campuran.** *Los padres* = ayah dan ibu, bukan \"para ayah\". Begitu juga *los hermanos* (kakak-adik campur) dan *los hijos* (anak-anak laki dan perempuan). Satu perempuan di antara sepuluh laki-laki tetap membuat kelompoknya maskulin — aturan tata bahasa, bukan pendapat.",
-    "**¡Qué … tan …!** Pola seruan siap pakai: *¡Qué familia tan grande!*, *¡Qué día tan bonito!* Boleh juga tanpa *tan*: *¡Qué bien!*",
-    "**Dua bentuk yang belum diajarkan — kenali saja dulu.** Di dialog lewat *viven* (\"mereka tinggal\") dan *somos* (\"kami adalah\"). Keduanya bentuk *ellos* dan *nosotros*, yang baru dibedah di unit 5 dan 6. Untuk sekarang cukup tahu artinya."
+  "goal": "Bicara tentang anggota keluarga, menyebut umur, menggambarkan orang, dan memakai angka 20-100.",
+  "bekal": [
+    "menyebut siapa saja anggota keluargamu",
+    "menanyakan dan menyebutkan umur",
+    "memakai *tener* dalam enam bentuknya",
+    "memakai *mi*, *tu*, *su*, *nuestro*",
+    "menggambarkan orang secara sederhana"
   ],
-  "grammar": {
-    "title": "Kata kerja tener (punya) + angka 20-100",
-    "body": [
-      "Mulai unit ini tabel kata kerjanya memuat **enam pelaku**, bukan tiga seperti sebelumnya. Yang baru: *nosotros* (kami), *vosotros* (kalian), dan *ellos* (mereka). Terselip juga *usted* — sapaan sopan untuk satu orang, yang bentuknya menumpang pada baris *él / ella*; kapan memakainya dibahas di unit 6. Polanya dijelaskan penuh di unit berikutnya — di sini cukup kenali bentuknya, belum perlu dihafal.",
-      "*Tener* tidak beraturan, tapi terlalu sering dipakai untuk ditunda — umur, keluarga, kepemilikan, bahkan rasa lapar (*tengo hambre*, harfiahnya \"saya punya lapar\") semuanya lewat kata ini:",
-      "Angkanya: **20** veinte, **21** veintiuno, **22** veintidós, **30** treinta, **31** treinta y uno, **40** cuarenta, **50** cincuenta, **60** sesenta, **70** setenta, **80** ochenta, **90** noventa, **100** cien. Sampai 29 ditulis serangkai (*veintitrés*); dari 31 ke atas dipisah dengan *y* (*cuarenta y cinco*)."
-    ],
-    "table": {
-      "head": ["", "tener", "Cara baca", "Arti"],
-      "rows": [
-        ["yo", "**tengo**", "TEN-go", "saya punya"],
-        ["tú", "**tienes**", "TIE-nes", "kamu punya"],
-        ["él / ella / usted", "**tiene**", "TIE-ne", "dia / Anda punya"],
-        ["nosotros", "**tenemos**", "te-NE-mos", "kami punya"],
-        ["vosotros", "**tenéis**", "te-NEIS", "kalian punya"],
-        ["ellos / ustedes", "**tienen**", "TIE-nen", "mereka punya"]
+  "dialogs": [
+    {
+      "title": "Diálogo 1 — Fotos en el móvil",
+      "intro": "Dua teman sekelas menunggu kelas dimulai, dan seperti biasa foto keluarga keluar dari saku.",
+      "lines": [
+        {
+          "speaker": "Marta:",
+          "text": "¿Tienes hermanos?",
+          "id": "Kamu punya saudara?",
+          "literal": "kamu-punya saudara-saudara?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sí, tengo una hermana y un hermano.",
+          "id": "Ya, saya punya satu adik perempuan dan satu adik laki-laki.",
+          "literal": "ya, saya-punya satu saudara-perempuan dan satu saudara-laki-laki."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "¿Cuántos años tiene tu hermana?",
+          "id": "Berapa umur saudara perempuanmu?",
+          "literal": "berapa tahun-tahun dia-punya saudara-perempuanmu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tiene veinte años. Es enfermera.",
+          "id": "Umurnya dua puluh tahun. Dia perawat.",
+          "literal": "dia-punya dua-puluh tahun-tahun. dia-adalah perawat(perempuan)."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "¿Y tus padres? ¿Dónde viven?",
+          "id": "Dan orang tuamu? Di mana mereka tinggal?",
+          "literal": "dan orang-tuamu? di mana mereka-tinggal?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Viven en Bandung. Mi padre es profesor.",
+          "id": "Mereka tinggal di Bandung. Ayah saya guru.",
+          "literal": "mereka-tinggal di Bandung. ayahku dia-adalah guru."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "¿Y tu madre? ¿Trabaja también?",
+          "id": "Dan ibumu? Bekerja juga?",
+          "literal": "dan ibumu? bekerja juga?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sí, tiene una tienda pequeña. Trabaja mucho.",
+          "id": "Ya, dia punya toko kecil. Kerjanya keras.",
+          "literal": "ya, dia-punya sebuah toko kecil. bekerja banyak."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "¡Qué familia tan grande! Yo soy hija única.",
+          "id": "Keluargamu besar sekali! Saya anak tunggal.",
+          "literal": "betapa keluarga begitu besar! saya adalah anak-perempuan tunggal."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nosotros somos cinco en casa.",
+          "id": "Kami berlima di rumah.",
+          "literal": "kami kami-adalah lima di rumah."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "¿Y tienes sobrinos?",
+          "id": "Kamu punya keponakan?",
+          "literal": "dan kamu-punya keponakan-keponakan?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Todavía no. Mi hermano es soltero.",
+          "id": "Belum. Saudara laki-laki saya masih lajang.",
+          "literal": "masih tidak. saudara-laki-lakiku adalah lajang."
+        }
+      ],
+      "notes": [
+        "**Umur itu \"dipunyai\", bukan \"adalah\".** Bahasa Spanyol bilang *tengo veinte años* — harfiahnya \"saya punya dua puluh tahun\". *Soy veinte años* salah dan terdengar sangat asing. Pertanyaannya pun ikut pola itu: *¿Cuántos años tienes?* Dan *años* tak boleh dibuang: *tengo veinte* saja terdengar seperti kalimat yang terpotong.",
+        "**Mi, tu, su ikut JUMLAH bendanya, bukan pemiliknya.** Satu benda: *mi hermano*. Lebih dari satu: *mis hermanos*. Jadi *tus padres* bukan berarti \"orang tua kalian\", tapi \"orang tua (jamak) milikmu\".",
+        "**Su itu memang ambigu.** *Su casa* bisa berarti rumah dia, rumah mereka, atau rumah Anda. Bahasa Spanyol membiarkannya begitu dan mengandalkan konteks; kalau perlu tegas, orang bilang *la casa de él*.",
+        "**Jamak maskulin memayungi campuran.** *Los padres* = ayah dan ibu, bukan \"para ayah\". Begitu juga *los hermanos* (kakak-adik campur) dan *los hijos* (anak-anak laki dan perempuan). Satu perempuan di antara sepuluh laki-laki tetap membuat kelompoknya maskulin — aturan tata bahasa, bukan pendapat.",
+        "**Bahasa Spanyol tak membedakan kakak dan adik.** *Hermano* berarti saudara laki-laki, titik. Kalau urutannya penting, ditambahkan keterangan: *mi hermano mayor* (kakak), *mi hermano menor* (adik).",
+        "**¡Qué … tan …!** Pola seruan siap pakai: *¡Qué familia tan grande!*, *¡Qué día tan bonito!* Boleh juga tanpa *tan*: *¡Qué bien!*",
+        "**Todavía no** = \"belum\", jawaban yang jauh lebih halus daripada *no* untuk pertanyaan tentang rencana hidup. Lawannya *ya* (\"sudah\").",
+        "**Dua bentuk yang belum diajarkan — kenali saja dulu.** Di dialog lewat *viven* (\"mereka tinggal\") dan *somos* (\"kami adalah\"). Keduanya bentuk *ellos* dan *nosotros*, yang baru dibedah di unit 5 dan 6. Untuk sekarang cukup tahu artinya."
+      ],
+      "grammars": [
+        {
+          "title": "Kata kerja tener (punya)",
+          "body": [
+            "Mulai unit ini tabel kata kerjanya memuat **enam pelaku**, bukan tiga seperti sebelumnya. Yang baru: *nosotros* (kami), *vosotros* (kalian), dan *ellos* (mereka). Terselip juga *usted* — sapaan sopan untuk satu orang, yang bentuknya menumpang pada baris *él / ella*. Polanya dijelaskan penuh di unit berikutnya — di sini cukup kenali bentuknya, belum perlu dihafal.",
+            "*Tener* tidak beraturan, tapi terlalu sering dipakai untuk ditunda — umur, keluarga, kepemilikan, bahkan rasa lapar semuanya lewat kata ini:"
+          ],
+          "table": {
+            "head": [
+              "",
+              "tener",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "yo",
+                "**tengo**",
+                "TEN-go",
+                "saya punya"
+              ],
+              [
+                "tú",
+                "**tienes**",
+                "TIE-nes",
+                "kamu punya"
+              ],
+              [
+                "él / ella / usted",
+                "**tiene**",
+                "TIE-ne",
+                "dia / Anda punya"
+              ],
+              [
+                "nosotros",
+                "**tenemos**",
+                "te-NE-mos",
+                "kami punya"
+              ],
+              [
+                "vosotros",
+                "**tenéis**",
+                "te-NEIS",
+                "kalian punya"
+              ],
+              [
+                "ellos / ustedes",
+                "**tienen**",
+                "TIE-nen",
+                "mereka punya"
+              ]
+            ]
+          },
+          "after": [
+            "*Tener* juga membawa serombongan ungkapan yang dalam bahasa Indonesia memakai \"merasa\", bukan \"punya\": *tengo hambre* (saya lapar), *tengo sed* (saya haus), *tengo frío* (saya kedinginan), *tengo calor* (saya kepanasan), *tengo sueño* (saya mengantuk), *tengo prisa* (saya buru-buru), *tengo miedo* (saya takut).",
+            "Satu lagi yang sangat sering dipakai: *tener que + kata kerja* = \"harus\". *Tengo que trabajar* — saya harus bekerja."
+          ]
+        },
+        {
+          "title": "Angka 20-100",
+          "body": [
+            "Sampai 29 ditulis serangkai jadi satu kata; dari 31 ke atas dipisah dengan *y*."
+          ],
+          "table": {
+            "head": [
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": [
+              [
+                "20 veinte",
+                "25 veinticinco",
+                "50 cincuenta",
+                "80 ochenta"
+              ],
+              [
+                "21 veintiuno",
+                "29 veintinueve",
+                "60 sesenta",
+                "90 noventa"
+              ],
+              [
+                "22 veintidós",
+                "30 treinta",
+                "70 setenta",
+                "100 cien"
+              ],
+              [
+                "23 veintitrés",
+                "31 treinta y uno",
+                "75 setenta y cinco",
+                "101 ciento uno"
+              ],
+              [
+                "24 veinticuatro",
+                "40 cuarenta",
+                "78 setenta y ocho",
+                "200 doscientos"
+              ]
+            ]
+          },
+          "after": [
+            "Seperti angka satu, *veintiuno* memendek di depan kata benda maskulin: *veintiún años*. Bentuk femininnya *veintiuna*: *veintiuna personas*.",
+            "*Cien* dipakai kalau tepat seratus; begitu ada tambahannya, ia jadi *ciento*: *cien euros* tapi *ciento veinte euros*. Tidak ada *y* setelah *ciento* — *ciento uno*, bukan *ciento y uno*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Diálogo 2 — La foto de la boda",
+      "intro": "Marta menunjukkan foto pernikahan kakaknya, dan menerangkan siapa saja yang ada di dalamnya.",
+      "lines": [
+        {
+          "speaker": "Marta:",
+          "text": "Mira, esta es la boda de mi prima Laura.",
+          "id": "Lihat, ini pernikahan sepupu saya Laura.",
+          "literal": "lihat, ini adalah si pernikahan dari sepupu-perempuanku Laura."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¡Qué guapa! ¿Y quién es el señor alto?",
+          "id": "Cantik sekali! Dan siapa bapak yang tinggi itu?",
+          "literal": "betapa cantik! dan siapa adalah si tuan tinggi?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Es mi tío Paco, el hermano de mi madre.",
+          "id": "Itu paman saya Paco, saudara laki-laki ibu saya.",
+          "literal": "adalah pamanku Paco, si saudara-laki-laki dari ibuku."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Y la señora mayor, a la derecha?",
+          "id": "Dan ibu yang sudah sepuh, di sebelah kanan?",
+          "literal": "dan si nyonya lebih-tua, ke si kanan?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Mi abuela. Tiene ochenta y siete años, pero está muy bien.",
+          "id": "Nenek saya. Umurnya delapan puluh tujuh tahun, tapi masih sehat sekali.",
+          "literal": "nenekku. dia-punya delapan-puluh dan tujuh tahun-tahun, tetapi dia-berada sangat baik."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Y los niños? ¿Son tus sobrinos?",
+          "id": "Dan anak-anak itu? Keponakanmu?",
+          "literal": "dan si anak-anak? adalah(jamak) keponakan-keponakanmu?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Sí, el rubio es Diego y la morena es Sara.",
+          "id": "Ya, yang pirang Diego dan yang berambut gelap Sara.",
+          "literal": "ya, si pirang adalah Diego dan si gelap adalah Sara."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Cuántos años tienen?",
+          "id": "Berapa umur mereka?",
+          "literal": "berapa tahun-tahun mereka-punya?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Diego tiene seis y Sara tiene nueve.",
+          "id": "Diego enam dan Sara sembilan.",
+          "literal": "Diego dia-punya enam dan Sara dia-punya sembilan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nuestra familia es más pequeña. Solo somos cinco.",
+          "id": "Keluarga kami lebih kecil. Kami cuma berlima.",
+          "literal": "keluarga-kami adalah lebih kecil. hanya kami-adalah lima."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Pero cinco personas también es una familia bonita.",
+          "id": "Tapi lima orang juga keluarga yang indah.",
+          "literal": "tetapi lima orang-orang juga adalah sebuah keluarga cantik."
+        }
+      ],
+      "notes": [
+        "**Kata sifat datang SESUDAH kata bendanya.** *El señor alto* (bapak yang tinggi), *una familia grande*, *un coche rojo*. Urutan bahasa Inggris dan Indonesia justru terbalik dari bahasa Spanyol di sini — dan pemula hampir selalu tergelincir di kalimat pertama.",
+        "**Kata sifat ikut jenis kelamin DAN jumlah.** *Un niño rubio*, *una niña rubia*, *unos niños rubios*, *unas niñas rubias*. Empat bentuk untuk satu kata sifat; yang berakhiran -e atau konsonan cuma punya dua (*grande / grandes*).",
+        "**Kata sifat bisa berdiri sendiri sebagai kata benda.** *El rubio* = \"si pirang\", *la morena* = \"si berambut gelap\", *los pequeños* = \"si kecil-kecil\". Cukup pasang kata sandang di depannya.",
+        "**Mayor** secara harfiah \"lebih tua\", tapi dipakai sebagai cara sopan menyebut orang lanjut usia — jauh lebih halus daripada *viejo*, yang untuk orang terdengar kasar.",
+        "**Nuestro berubah empat kali.** Berbeda dari *mi* dan *tu*, kata milik \"kami\" ikut jenis kelamin juga: *nuestro coche*, *nuestra familia*, *nuestros hijos*, *nuestras hijas*.",
+        "**Está muy bien vs es muy buena.** Kesehatan dan keadaan sementara memakai *estar* (*está bien* = dia sehat / baik-baik saja); sifat tetap memakai *ser*. Perbedaan ini dibedah di unit 6.",
+        "**Solo = hanya.** Jangan tertukar dengan *solo* yang berarti \"sendirian\" (*estoy solo*) — bentuknya sama, konteks yang memisahkan.",
+        "**Más pequeña** = \"lebih kecil\". Membandingkan cukup dengan *más* di depan kata sifat, dan *que* untuk \"daripada\": *más grande que*, *más joven que*. Empat kata sifat menolak pola ini dan punya bentuk sendiri: *bueno → mejor*, *malo → peor*, *grande → mayor*, *pequeño → menor*."
+      ],
+      "grammars": [
+        {
+          "title": "Kata milik — mi, tu, su, nuestro",
+          "body": [
+            "Ini kata milik yang berdiri **di depan** kata bendanya. Yang menentukan bentuknya adalah bendanya, bukan pemiliknya:"
+          ],
+          "table": {
+            "head": [
+              "Pemilik",
+              "Satu benda",
+              "Banyak benda",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "yo",
+                "**mi**",
+                "**mis**",
+                "*mi hermana*, *mis hermanas*"
+              ],
+              [
+                "tú",
+                "**tu**",
+                "**tus**",
+                "*tu casa*, *tus casas*"
+              ],
+              [
+                "él / ella / usted",
+                "**su**",
+                "**sus**",
+                "*su padre*, *sus padres*"
+              ],
+              [
+                "nosotros",
+                "**nuestro / nuestra**",
+                "**nuestros / nuestras**",
+                "*nuestra familia*"
+              ],
+              [
+                "vosotros",
+                "**vuestro / vuestra**",
+                "**vuestros / vuestras**",
+                "*vuestro coche*"
+              ],
+              [
+                "ellos / ustedes",
+                "**su**",
+                "**sus**",
+                "*su casa*, *sus hijos*"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan *tu* (milikmu) tanpa tanda ´ dan *tú* (kamu) dengan tanda ´. Satu-satunya pembeda di tulisan adalah tanda itu; di ucapan keduanya sama persis.",
+            "Cara kedua menyatakan milik, yang selalu aman dari kebingungan *su*: **de + pemilik**. *El hermano de mi madre*, *la casa de Luis*, *el libro del profesor*. Kalau kamu ragu, pakai bentuk ini."
+          ]
+        }
       ]
     }
-  },
+  ],
+  "sections": [
+    {
+      "title": "Pohon keluarga",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Él",
+            "Ella",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "el padre",
+              "la madre",
+              "ayah / ibu"
+            ],
+            [
+              "los padres",
+              "—",
+              "orang tua"
+            ],
+            [
+              "el hijo",
+              "la hija",
+              "anak"
+            ],
+            [
+              "el hermano",
+              "la hermana",
+              "saudara kandung"
+            ],
+            [
+              "el abuelo",
+              "la abuela",
+              "kakek / nenek"
+            ],
+            [
+              "el nieto",
+              "la nieta",
+              "cucu"
+            ],
+            [
+              "el tío",
+              "la tía",
+              "paman / bibi"
+            ],
+            [
+              "el sobrino",
+              "la sobrina",
+              "keponakan"
+            ],
+            [
+              "el primo",
+              "la prima",
+              "sepupu"
+            ],
+            [
+              "el marido / el esposo",
+              "la mujer / la esposa",
+              "suami / istri"
+            ],
+            [
+              "el novio",
+              "la novia",
+              "pacar / tunangan"
+            ],
+            [
+              "el suegro",
+              "la suegra",
+              "mertua"
+            ],
+            [
+              "el cuñado",
+              "la cuñada",
+              "ipar"
+            ],
+            [
+              "el bebé",
+              "la bebé",
+              "bayi"
+            ],
+            [
+              "el niño",
+              "la niña",
+              "anak kecil"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Keadaan keluarga",
+          "items": [
+            "*soltero / soltera* — lajang &middot; *casado / casada* — menikah &middot; *divorciado / divorciada* — bercerai &middot; *viudo / viuda* — duda / janda",
+            "*hijo único / hija única* — anak tunggal &middot; *el hermano mayor* — kakak &middot; *el hermano menor* — adik &middot; *el mayor de tres* — anak sulung dari tiga bersaudara",
+            "Menanyakannya: *¿Estás casado?* (memakai *estar*, karena status bisa berubah) atau *¿Tienes pareja?* (\"punya pasangan?\") yang lebih netral."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Menggambarkan orang",
+      "blocks": [
+        {
+          "type": "sub",
+          "text": "Fisik — *¿Cómo es?*"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Arti",
+            "Lawannya"
+          ],
+          "rows": [
+            [
+              "alto / alta",
+              "tinggi",
+              "bajo / baja (pendek)"
+            ],
+            [
+              "delgado / delgada",
+              "kurus",
+              "gordo / gorda (gemuk)"
+            ],
+            [
+              "joven",
+              "muda",
+              "mayor (lanjut usia)"
+            ],
+            [
+              "rubio / rubia",
+              "berambut pirang",
+              "moreno / morena (berambut gelap)"
+            ],
+            [
+              "guapo / guapa",
+              "tampan / cantik",
+              "feo / fea (jelek)"
+            ],
+            [
+              "fuerte",
+              "kuat",
+              "débil (lemah)"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Sifat — *¿Cómo es de carácter?*"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Arti",
+            "Lawannya"
+          ],
+          "rows": [
+            [
+              "simpático / simpática",
+              "ramah",
+              "antipático / antipática"
+            ],
+            [
+              "amable",
+              "baik hati",
+              "grosero / grosera (kasar)"
+            ],
+            [
+              "inteligente",
+              "cerdas",
+              "tonto / tonta (bodoh)"
+            ],
+            [
+              "trabajador / trabajadora",
+              "rajin",
+              "perezoso / perezosa (malas)"
+            ],
+            [
+              "tranquilo / tranquila",
+              "tenang",
+              "nervioso / nerviosa (gugup)"
+            ],
+            [
+              "divertido / divertida",
+              "menyenangkan",
+              "aburrido / aburrida (membosankan)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Menggabungkannya jadi kalimat: *Mi hermana es alta y muy simpática.* Perhatikan satu *es* saja sudah cukup untuk dua kata sifat yang disambung *y*."
+        }
+      ]
+    },
+    {
+      "title": "Sekilas budaya",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Keluarga yang tak pernah jauh",
+          "items": [
+            "Makan siang Minggu bersama keluarga besar masih jadi kebiasaan di banyak keluarga Spanyol dan Amerika Latin — sesuatu yang tak perlu dijanjikan karena sudah dianggap ada.",
+            "Anak muda Spanyol tinggal di rumah orang tua jauh lebih lama daripada di Eropa utara, sering sampai usia tiga puluhan. Menanyakan *¿vives con tus padres?* sama sekali tidak dianggap menyinggung.",
+            "*Mi mujer* harfiahnya \"perempuan saya\" dan berarti \"istri saya\" — lazim di Spanyol, tapi di beberapa negara Amerika Latin lebih halus memakai *mi esposa*. Untuk suami, *mi marido* dan *mi esposo* keduanya aman.",
+            "Anak sering dipanggil dengan bentuk kecilnya: *Juan → Juanito*, *Ana → Anita*, *abuela → abuelita*. Akhiran *-ito / -ita* menambahkan rasa sayang, bukan cuma ukuran kecil."
+          ]
+        }
+      ]
+    }
+  ],
   "vocab": [
-    { "es": "la familia", "baca": "la fa-MI-lia", "id": "keluarga" },
-    { "es": "el padre / la madre", "baca": "el PA-dre / la MA-dre", "id": "ayah / ibu" },
-    { "es": "los padres", "baca": "los PA-dres", "id": "orang tua" },
-    { "es": "el hermano / la hermana", "baca": "er-MA-no", "id": "saudara laki-laki / perempuan" },
-    { "es": "el hijo / la hija", "baca": "I-kho / I-kha", "id": "anak laki-laki / perempuan" },
-    { "es": "el abuelo / la abuela", "baca": "a-BUE-lo", "id": "kakek / nenek" },
-    { "es": "el marido / la mujer", "baca": "ma-RI-do / mu-KHER", "id": "suami / istri" },
-    { "es": "tener", "baca": "te-NER", "id": "punya" },
-    { "es": "¿cuántos años?", "baca": "KUAN-tos A-nyos", "id": "berapa umur" },
-    { "es": "hijo único / hija única", "baca": "U-ni-ko", "id": "anak tunggal" },
-    { "es": "casado / soltero", "baca": "ka-SA-do / sol-TE-ro", "id": "menikah / lajang" },
-    { "es": "grande / pequeño", "baca": "GRAN-de / pe-KE-nyo", "id": "besar / kecil" },
-    { "es": "el enfermero / la enfermera", "baca": "en-fer-ME-ro", "id": "perawat" },
-    { "es": "en casa", "baca": "en KA-sa", "id": "di rumah" }
+    {
+      "es": "la familia",
+      "baca": "la fa-MI-lia",
+      "id": "keluarga"
+    },
+    {
+      "es": "el padre / la madre",
+      "baca": "el PA-dre / la MA-dre",
+      "id": "ayah / ibu"
+    },
+    {
+      "es": "los padres",
+      "baca": "los PA-dres",
+      "id": "orang tua"
+    },
+    {
+      "es": "el hermano / la hermana",
+      "baca": "er-MA-no",
+      "id": "saudara laki-laki / perempuan"
+    },
+    {
+      "es": "el hijo / la hija",
+      "baca": "I-kho / I-kha",
+      "id": "anak laki-laki / perempuan"
+    },
+    {
+      "es": "el abuelo / la abuela",
+      "baca": "a-BUE-lo",
+      "id": "kakek / nenek"
+    },
+    {
+      "es": "el tío / la tía",
+      "baca": "el TI-o",
+      "id": "paman / bibi"
+    },
+    {
+      "es": "el primo / la prima",
+      "baca": "el PRI-mo",
+      "id": "sepupu"
+    },
+    {
+      "es": "el sobrino / la sobrina",
+      "baca": "so-BRI-no",
+      "id": "keponakan"
+    },
+    {
+      "es": "el marido / la mujer",
+      "baca": "ma-RI-do / mu-KHER",
+      "id": "suami / istri"
+    },
+    {
+      "es": "el novio / la novia",
+      "baca": "el NO-bio",
+      "id": "pacar"
+    },
+    {
+      "es": "el niño / la niña",
+      "baca": "el NI-nyo",
+      "id": "anak kecil"
+    },
+    {
+      "es": "la boda",
+      "baca": "la BO-da",
+      "id": "pernikahan"
+    },
+    {
+      "es": "tener",
+      "baca": "te-NER",
+      "id": "punya"
+    },
+    {
+      "es": "tener… años",
+      "baca": "te-NER A-nyos",
+      "id": "berumur… tahun"
+    },
+    {
+      "es": "tengo hambre",
+      "baca": "TEN-go AM-bre",
+      "id": "saya lapar"
+    },
+    {
+      "es": "tener que…",
+      "baca": "te-NER ke",
+      "id": "harus…"
+    },
+    {
+      "es": "¿cuántos años?",
+      "baca": "KUAN-tos A-nyos",
+      "id": "berapa umur"
+    },
+    {
+      "es": "hijo único / hija única",
+      "baca": "U-ni-ko",
+      "id": "anak tunggal"
+    },
+    {
+      "es": "casado / soltero",
+      "baca": "ka-SA-do / sol-TE-ro",
+      "id": "menikah / lajang"
+    },
+    {
+      "es": "mayor / menor",
+      "baca": "ma-YOR / me-NOR",
+      "id": "lebih tua / lebih muda"
+    },
+    {
+      "es": "joven",
+      "baca": "KHO-ben",
+      "id": "muda"
+    },
+    {
+      "es": "alto / bajo",
+      "baca": "AL-to / BA-kho",
+      "id": "tinggi / pendek"
+    },
+    {
+      "es": "rubio / moreno",
+      "baca": "RU-bio / mo-RE-no",
+      "id": "pirang / berambut gelap"
+    },
+    {
+      "es": "guapo / guapa",
+      "baca": "GUA-po",
+      "id": "tampan / cantik"
+    },
+    {
+      "es": "delgado / gordo",
+      "baca": "del-GA-do / GOR-do",
+      "id": "kurus / gemuk"
+    },
+    {
+      "es": "amable",
+      "baca": "a-MA-ble",
+      "id": "baik hati"
+    },
+    {
+      "es": "trabajador",
+      "baca": "tra-ba-kha-DOR",
+      "id": "rajin"
+    },
+    {
+      "es": "divertido",
+      "baca": "di-ber-TI-do",
+      "id": "menyenangkan"
+    },
+    {
+      "es": "grande / pequeño",
+      "baca": "GRAN-de / pe-KE-nyo",
+      "id": "besar / kecil"
+    },
+    {
+      "es": "el enfermero / la enfermera",
+      "baca": "en-fer-ME-ro",
+      "id": "perawat"
+    },
+    {
+      "es": "la tienda",
+      "baca": "la TIEN-da",
+      "id": "toko"
+    },
+    {
+      "es": "en casa",
+      "baca": "en KA-sa",
+      "id": "di rumah"
+    },
+    {
+      "es": "nuestro / nuestra",
+      "baca": "NUES-tro",
+      "id": "milik kami"
+    },
+    {
+      "es": "todavía no",
+      "baca": "to-da-BI-a no",
+      "id": "belum"
+    },
+    {
+      "es": "solo",
+      "baca": "SO-lo",
+      "id": "hanya"
+    },
+    {
+      "es": "más… que",
+      "baca": "MAS ke",
+      "id": "lebih… daripada"
+    },
+    {
+      "es": "la persona",
+      "baca": "la per-SO-na",
+      "id": "orang"
+    }
   ],
   "exercises": [
-    { "prompt": "Terjemahkan ke bahasa Spanyol.", "items": [
-      "Saya punya dua saudara laki-laki.",
-      "Berapa umur ayahmu?",
-      "Ibu saya berumur empat puluh lima tahun.",
-      "Kami punya rumah kecil di Bandung."
-    ] },
-    { "prompt": "Isi dengan bentuk *tener* yang tepat.", "items": [
-      "Yo ____ una hermana.",
-      "¿Tú ____ hijos?",
-      "Mis padres ____ una casa grande.",
-      "Nosotros ____ veinte años."
-    ] },
-    { "prompt": "Tulis angkanya dengan huruf.", "items": [
-      "23 — ____",
-      "48 — ____",
-      "60 — ____",
-      "91 — ____"
-    ] }
+    {
+      "prompt": "Terjemahkan ke bahasa Spanyol.",
+      "items": [
+        "Saya punya dua saudara laki-laki.",
+        "Berapa umur ayahmu?",
+        "Ibu saya berumur empat puluh lima tahun.",
+        "Kami punya rumah kecil di Bandung.",
+        "Nenek saya sudah sepuh, tapi sehat.",
+        "Saya harus bekerja."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk *tener* yang tepat.",
+      "items": [
+        "Yo ____ una hermana.",
+        "¿Tú ____ hijos?",
+        "Mis padres ____ una casa grande.",
+        "Nosotros ____ veinte años.",
+        "Mi abuela ____ ochenta y siete años.",
+        "¿Vosotros ____ hambre?"
+      ]
+    },
+    {
+      "prompt": "Tulis angkanya dengan huruf.",
+      "items": [
+        "23 ____",
+        "48 ____",
+        "60 ____",
+        "91 ____",
+        "100 ____",
+        "76 ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata milik yang tepat (*mi*, *mis*, *tu*, *tus*, *su*, *nuestra*).",
+      "items": [
+        "Tengo una hermana; ____ hermana es enfermera.",
+        "Tengo dos hermanos; ____ hermanos viven en Bandung.",
+        "¿Dónde viven ____ padres, Marta?",
+        "Laura tiene un hijo; ____ hijo tiene seis años.",
+        "Somos cinco; ____ familia es pequeña."
+      ]
+    },
+    {
+      "prompt": "Ubah kata sifat dalam kurung agar cocok.",
+      "items": [
+        "Mi hermana es muy (alto) ____.",
+        "Los niños son (rubio) ____.",
+        "Mi tía es (simpático) ____.",
+        "Nuestros abuelos son (mayor) ____.",
+        "Las primas de Marta son (guapo) ____."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat Spanyol yang benar.",
+      "items": [
+        "años / ¿ / tienes / cuántos / ?",
+        "hermanos / tengo / dos",
+        "es / mi / enfermera / hermana",
+        "familia / grande / ¡ / qué / tan / !",
+        "que / tengo / trabajar"
+      ]
+    }
   ],
   "answers": [
-    "Tengo dos hermanos. — ¿Cuántos años tiene tu padre? — Mi madre tiene cuarenta y cinco años. — Tenemos una casa pequeña en Bandung.",
-    "tengo — tienes — tienen — tenemos",
-    "veintitrés — cuarenta y ocho — sesenta — noventa y uno"
-  ]
+    "Tengo dos hermanos. — ¿Cuántos años tiene tu padre? — Mi madre tiene cuarenta y cinco años. — Tenemos una casa pequeña en Bandung. — Mi abuela es mayor, pero está bien. — Tengo que trabajar.",
+    "tengo — tienes — tienen — tenemos — tiene — tenéis",
+    "veintitrés — cuarenta y ocho — sesenta — noventa y uno — cien — setenta y seis",
+    "mi — mis — tus — su — nuestra",
+    "alta — rubios — simpática — mayores — guapas",
+    "¿Cuántos años tienes? — Tengo dos hermanos. — Mi hermana es enfermera. — ¡Qué familia tan grande! — Tengo que trabajar."
+  ],
+  "wave": "Kata milik dan kata sifat dari unit ini muncul lagi di hampir setiap unit sesudahnya. Sebelum masuk unit 5, uji dirimu: sebutkan lima anggota keluargamu berikut umurnya, keras-keras, tanpa melihat halaman ini."
 }

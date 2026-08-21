@@ -70,8 +70,23 @@ function cariSampul() {
 const sampulGambar = cariSampul();
 
 const esc = (s) => String(s ?? "").replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+
+/* [ebook-translit-ruby-v1] Cara baca DI ATAS aksaranya, bukan di baris terpisah.
+
+   Modul bahasa beraksara non-Latin (Jepang, Korea, Thai, Arab…) tak terbaca
+   pemula kalau cara bacanya ditaruh di baris bawah: mata harus melompat bolak-
+   balik dan kehilangan tempat di tengah kalimat. Penulisannya di berkas unit:
+
+       [わたし|watashi]は[学生|gakusei]です。
+
+   → `<ruby>` HTML, yang dicetak Chromium sebagai huruf kecil persis di atas
+   suku katanya. Tanda kurung siku TANPA garis tegak dibiarkan apa adanya,
+   supaya teks biasa yang memakai [...] tidak ikut tersedot. */
+const RUBY = /\[([^\[\]|]+)\|([^\[\]|]+)\]/g;
+const ruby = (s) => s.replace(RUBY, (_, dasar, baca) => `<ruby>${dasar}<rt>${baca}</rt></ruby>`);
+
 /** *miring* dan **tebal** ala markdown ringan — cukup untuk teks pelajaran. */
-const teks = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\*(.+?)\*/g, "<i>$1</i>");
+const teks = (s) => ruby(esc(s)).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\*(.+?)\*/g, "<i>$1</i>");
 
 /* ── potongan halaman ────────────────────────────────────────────────────── */
 
@@ -116,36 +131,58 @@ const halamanIsi = (h, nomor) => `
     </tr>`).join("")}</tbody></table>
 </section>`;
 
+/** Satu blok isi bebas — dipakai halaman pengantar/penutup DAN bagian di
+ *  dalam unit (lihat `sections`), supaya penulisnya cuma menghafal satu skema. */
+const blok = (b) => {
+  if (b.type === "p") return `<p>${teks(b.text)}</p>`;
+  if (b.type === "list") return `<ul>${b.items.map((i) => `<li>${teks(i)}</li>`).join("")}</ul>`;
+  if (b.type === "tabel") return tabel(b);
+  if (b.type === "kotak") return `<div class="kotak"><h4>${teks(b.title)}</h4>${b.items.map((i) => `<p>${teks(i)}</p>`).join("")}</div>`;
+  if (b.type === "sub") return `<h4 class="anak-judul">${teks(b.text)}</h4>`;
+  return "";
+};
+
 const halamanTeks = (h, nomor) => (h.type === "isi" ? halamanIsi(h, nomor) : `
 <section class="hal">
   <h2>${esc(h.title)}</h2>
-  ${(h.blocks ?? []).map((b) => {
-    if (b.type === "p") return `<p>${teks(b.text)}</p>`;
-    if (b.type === "list") return `<ul>${b.items.map((i) => `<li>${teks(i)}</li>`).join("")}</ul>`;
-    if (b.type === "tabel") return tabel(b);
-    if (b.type === "kotak") return `<div class="kotak"><h4>${esc(b.title)}</h4>${b.items.map((i) => `<p>${teks(i)}</p>`).join("")}</div>`;
-    return "";
-  }).join("\n")}
+  ${(h.blocks ?? []).map(blok).join("\n")}
 </section>`);
 
 const tabel = (b) => `
 <table>
-  ${b.head ? `<thead><tr>${b.head.map((h) => `<th>${esc(h)}</th>`).join("")}</tr></thead>` : ""}
+  ${b.head ? `<thead><tr>${b.head.map((h) => `<th>${teks(h)}</th>`).join("")}</tr></thead>` : ""}
   <tbody>${b.rows.map((r) => `<tr>${r.map((c) => `<td>${teks(c)}</td>`).join("")}</tr>`).join("")}</tbody>
 </table>`;
 
-const unitHal = (u, i) => `
-<section class="hal unit">
-  <div class="unit-kepala">
-    <span class="unit-no">Unit ${i + 1}</span>
-    <h2>${esc(u.title)}<span class="unit-asing">${esc(u.title_target ?? "")}</span></h2>
-    ${u.goal ? `<p class="unit-tujuan">${teks(u.goal)}</p>` : ""}
-  </div>
+/* [ebook-translit-ruby-v1] Judul kolom kosakata ikut bahasanya. Modul Spanyol
+   cukup "Español · Cara baca · Bahasa Indonesia", modul beraksara asing perlu
+   kolom kana/aksara tersendiri — jadi susunannya ditulis di meta.json
+   (`vocab_columns: [{head, key}, …]`) dan bentuk lama tetap jadi bawaan. */
+const KOLOM_KOSAKATA = meta.vocab_columns ?? [
+  { head: "Español", key: "es" },
+  { head: "Cara baca", key: "baca" },
+  { head: "Bahasa Indonesia", key: "id" },
+];
 
-  ${u.dialog ? `
-  <h3>${esc(u.dialog.title ?? "Diálogo")}</h3>
+/* [ebook-unit-tebal-v2] Satu unit boleh punya lebih dari satu dialog, dan tiap
+   dialog membawa catatan serta kotak tata bahasanya sendiri — itulah yang
+   membedakan unit sekali-duduk dari unit yang benar-benar menuntaskan satu
+   topik. Bentuk lama (`dialog` + `notes` + `grammar` tunggal) tetap dibaca apa
+   adanya supaya modul yang sudah ada tak perlu ditulis ulang. */
+const kotakTata = (g) => `
+  <div class="kotak">
+    <h4>${teks(g.title)}</h4>
+    ${(g.body ?? []).map((b) => `<p>${teks(b)}</p>`).join("")}
+    ${g.table ? tabel(g.table) : ""}
+    ${(g.tables ?? []).map(tabel).join("")}
+    ${(g.after ?? []).map((b) => `<p>${teks(b)}</p>`).join("")}
+  </div>`;
+
+const dialogHtml = (d) => `
+  <h3>${teks(d.title ?? meta.labels?.dialog ?? "Diálogo")}</h3>
+  ${d.intro ? `<p class="dialog-intro">${teks(d.intro)}</p>` : ""}
   <div class="dialog">
-    ${u.dialog.lines.map((l, n) => `
+    ${d.lines.map((l, n) => `
       <div class="baris">
         <span class="nomor">${n + 1}</span>
         <div>
@@ -154,22 +191,36 @@ const unitHal = (u, i) => `
           ${l.literal ? `<p class="harfiah">harfiah: ${teks(l.literal)}</p>` : ""}
         </div>
       </div>`).join("")}
-  </div>` : ""}
+  </div>
+  ${d.notes?.length ? `
+  <h3>${teks(d.notes_title ?? "Catatan")}</h3>
+  <ol class="catatan">${d.notes.map((n) => `<li>${teks(n)}</li>`).join("")}</ol>` : ""}
+  ${(d.grammars ?? (d.grammar ? [d.grammar] : [])).map(kotakTata).join("")}`;
+
+const unitHal = (u, i) => `
+<section class="hal unit">
+  <div class="unit-kepala">
+    <span class="unit-no">Unit ${i + 1}</span>
+    <h2>${esc(u.title)}<span class="unit-asing">${esc(u.title_target ?? "")}</span></h2>
+    ${u.goal ? `<p class="unit-tujuan">${teks(u.goal)}</p>` : ""}
+    ${u.bekal?.length ? `<p class="unit-bekal"><b>Di ujung unit ini kamu bisa:</b> ${u.bekal.map(teks).join(" &middot; ")}</p>` : ""}
+  </div>
+
+  ${(u.dialogs ?? (u.dialog ? [u.dialog] : [])).map(dialogHtml).join("\n")}
 
   ${u.notes?.length ? `
   <h3>Catatan</h3>
   <ol class="catatan">${u.notes.map((n) => `<li>${teks(n)}</li>`).join("")}</ol>` : ""}
 
-  ${u.grammar ? `
-  <div class="kotak">
-    <h4>${esc(u.grammar.title)}</h4>
-    ${u.grammar.body.map((b) => `<p>${teks(b)}</p>`).join("")}
-    ${u.grammar.table ? tabel(u.grammar.table) : ""}
-  </div>` : ""}
+  ${(u.grammars ?? (u.grammar ? [u.grammar] : [])).map(kotakTata).join("")}
+
+  ${(u.sections ?? []).map((s) => `
+  <h3>${teks(s.title)}</h3>
+  ${(s.blocks ?? []).map(blok).join("\n")}`).join("\n")}
 
   ${u.vocab?.length ? `
   <h3>Kosakata unit ini</h3>
-  ${tabel({ head: ["Español", "Cara baca", "Bahasa Indonesia"], rows: u.vocab.map((v) => [v.es, v.baca, v.id]) })}` : ""}
+  ${tabel({ head: KOLOM_KOSAKATA.map((k) => k.head), rows: u.vocab.map((v) => KOLOM_KOSAKATA.map((k) => v[k.key])) })}` : ""}
 
   ${u.exercises?.length ? `
   <h3>Latihan</h3>
@@ -197,9 +248,30 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
   /* Halaman bernama: cuma sampulnya yang dicetak tanpa marjin. */
   @page sampul { size: A4; margin: 0; }
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: "Charter", "Georgia", "Times New Roman", serif;
+  /* Huruf Jepang/Korea/Tionghoa disusulkan di ekor tumpukan: peramban memakai
+     fon pertama yang PUNYA glifnya, jadi modul beraksara Latin tak berubah
+     sedikit pun sementara aksara asing tidak lagi jatuh ke fon darurat. */
+  body { margin: 0; font-family: "Charter", "Georgia", "Times New Roman", serif,
+         "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP";
          font-size: 10.5pt; line-height: 1.55; color: #1B2233; }
-  h1, h2, h3, h4, .unit-no, .sampul-tanda, th { font-family: "Helvetica Neue", Arial, sans-serif; }
+  h1, h2, h3, h4, .unit-no, .sampul-tanda, th { font-family: "Helvetica Neue", Arial, sans-serif,
+         "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP"; }
+
+  /* [ebook-translit-ruby-v1] Cara baca di atas aksara. ruby-position over wajib
+     ditulis — bawaan Chromium sudah begitu untuk tulisan mendatar, tapi tanpa
+     line-height yang dilonggarkan barisnya saling menempel dan rōmaji baris
+     bawah menabrak aksara baris atasnya. (Aturan CSS ini ada DI DALAM template
+     literal — jangan pakai tanda petik miring di komentarnya, berkasnya
+     langsung gagal diurai.) */
+  ruby { ruby-position: over; ruby-align: center; }
+  rt { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 6.4pt; font-weight: 500;
+       font-style: normal; color: #12776F; letter-spacing: .01em; line-height: 1; }
+  /* Cuma baris yang BENAR-BENAR beruby yang dilonggarkan. Melonggarkan seluruh
+     badan teks bikin paragraf Indonesia ikut melar dan modulnya membengkak
+     puluhan halaman tanpa satu pun aksara asing di dalamnya. */
+  p:has(ruby), li:has(ruby), td:has(ruby), th:has(ruby),
+  h3:has(ruby), h4:has(ruby), .asing:has(ruby) { line-height: 2.15; }
+  h2 rt, h3 rt, h4 rt, th rt { text-transform: none; }
 
   .sampul-gambar { page: sampul; page-break-after: always; }
   /* object-fit: cover — rancangan sampul jarang persis 1:√2, dan gambar yang
@@ -225,6 +297,9 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
   .unit-no { font-size: 9pt; font-weight: 800; letter-spacing: .18em; color: #1A9E9E; }
   .unit-asing { display: block; font-size: 11pt; font-weight: 500; color: #5A6478; font-style: italic; }
   .unit-tujuan { font-size: 9.5pt; color: #5A6478; margin-top: 1.5mm; }
+  .unit-bekal { font-size: 9.5pt; color: #5A6478; margin-top: 1.5mm; }
+  .dialog-intro { font-size: 9.5pt; color: #5A6478; margin-bottom: 3mm; }
+  .anak-judul { margin: 4mm 0 1.5mm; color: #12776F; }
 
   .dialog .baris { display: flex; gap: 3mm; margin-bottom: 3mm; page-break-inside: avoid; }
   .nomor { flex: 0 0 6mm; font-size: 8.5pt; color: #A9B2C0; padding-top: 1mm; text-align: right; }
@@ -256,7 +331,7 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
   .latihan-judul { font-weight: 700; }
   .soal li { margin-bottom: 1.2mm; }
   ul, ol { margin: 0 0 2.5mm; padding-left: 5.5mm; }
-</style></head><body>
+</style></head><body class="${meta.ruby ? "beraksara" : ""}">
 ${sampul()}
 ${(meta.front ?? []).map((h) => halamanTeks(h, nomor)).join("\n")}
 ${units.map(unitHal).join("\n")}
@@ -320,7 +395,12 @@ async function barisHalaman(pdfjs, doc, n) {
 }
 
 /** Buang penanda *miring* / **tebal** — antarmuka reader menampilkannya polos. */
-const polos = (s) => String(s ?? "").replace(/\*\*(.+?)\*\*/g, "$1").replace(/\*(.+?)\*/g, "$1").trim();
+const polos = (s) => String(s ?? "")
+  // [ebook-translit-ruby-v1] Di reader soalnya teks polos: yang tersisa aksara
+  // aslinya, cara bacanya dibuang — kepingan jawaban jadi kacau kalau rōmaji
+  // ikut menempel di dalam satu chip.
+  .replace(RUBY, "$1")
+  .replace(/\*\*(.+?)\*\*/g, "$1").replace(/\*(.+?)\*/g, "$1").trim();
 
 /* Judul halaman pengantar dicetak sebagai h2 17pt, sedangkan barisnya sendiri
    MUNCUL LAGI di daftar isi dengan huruf badan teks. Yang dipakai sebagai
@@ -391,7 +471,14 @@ if (PNG) {
   console.log(`PNG   → ${OUT}/${slug}.png`);
 }
 
-function tulisLatihan({ halaman, mulai, latihanHal }) {
+function tulisLatihan({ halaman, mulai, latihanHal, judul }) {
+  /* Unit terakhir berhenti di halaman penutup, bukan di halaman terakhir PDF:
+     tanpa batas ini, lampiran tata bahasa di belakang ikut terhitung sebagai
+     bagian unit 10 dan reader menyorotinya sebagai isi unit. */
+  const awalPenutup = Math.min(
+    ...(meta.back ?? []).map((h) => judul?.get(h.title) ?? Infinity),
+    halaman + 1,
+  );
   const daftar = units.map((u, i) => {
     const no = i + 1;
     const hal = mulai.get(no) ?? null;
@@ -414,7 +501,7 @@ function tulisLatihan({ halaman, mulai, latihanHal }) {
       no,
       judul: u.title,
       hal,
-      sampai: hal ? (berikut ?? halaman + 1) - 1 : null,
+      sampai: hal ? (berikut ?? awalPenutup) - 1 : null,
       halLatihan: latihanHal.get(no) ?? null,
       latihan,
     };
