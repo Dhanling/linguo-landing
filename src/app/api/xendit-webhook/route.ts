@@ -443,7 +443,7 @@ async function fulfillEbookLead(
     const prodRes = await fetch(
       `${SUPABASE_URL}/rest/v1/digital_products?type=eq.ebook&language=in.(${wanted
         .map((l) => `"${l}"`)
-        .join(",")})&select=id,slug,language,digital_product_pricing(id,is_active)`,
+        .join(",")})&select=id,slug,language,digital_product_pricing(id,is_active,duration_days,price)`,
       { headers: supaHeaders }
     );
     if (!prodRes.ok) {
@@ -454,7 +454,7 @@ async function fulfillEbookLead(
       id: string;
       slug: string;
       language: string;
-      digital_product_pricing?: { id: string; is_active: boolean }[];
+      digital_product_pricing?: { id: string; is_active: boolean; duration_days: number | null; price: number | null }[];
     }[];
 
     const picked = wanted
@@ -468,14 +468,30 @@ async function fulfillEbookLead(
     }
     if (picked.length === 0) return;
 
+    // Tier "akses selamanya" produk ini; kalau tak ada, tier aktif termurah,
+    // supaya baris tetap lahir walau katalognya cuma punya paket berjangka.
+    const tierSelamanya = (
+      tiers?: { id: string; is_active: boolean; duration_days?: number | null; price?: number | null }[]
+    ) => {
+      const aktif = (tiers || []).filter((t) => t.is_active);
+      const abadi = aktif.find((t) => t.duration_days == null);
+      if (abadi) return abadi.id;
+      const termurah = aktif.slice().sort((a, b) => (a.price ?? 0) - (b.price ?? 0))[0];
+      return termurah?.id ?? (tiers || [])[0]?.id ?? null;
+    };
+
     // Bagi rata; sisa pembagian ke baris pertama → jumlahnya persis `total`.
     const per = Math.floor(total / picked.length);
     const nowIso = new Date().toISOString();
     const payload = picked.map((p, i) => ({
       product_id: p.id,
-      pricing_id: (p.digital_product_pricing || []).find((pr) => pr.is_active)?.id
-        ?? (p.digital_product_pricing || [])[0]?.id
-        ?? null,
+      // [ebook-tier-langganan-v1] Paket e-book dari landing dijual sebagai akses
+      // SELAMANYA (aktivasi di bawah sengaja tidak mengisi expires_at). Sejak
+      // modul "new edition" punya tier 6/12 bulan, "tier aktif pertama" tidak
+      // lagi cukup: urutan baris dari PostgREST tak dijamin, jadi baris promo
+      // bisa tercatat sebagai "6 Bulan" padahal aksesnya tanpa batas. Yang
+      // dicari karena itu tier tanpa `duration_days` dulu.
+      pricing_id: tierSelamanya(p.digital_product_pricing),
       buyer_email: lead.email,
       buyer_name: lead.name || null,
       buyer_phone: lead.wa_number || null,
