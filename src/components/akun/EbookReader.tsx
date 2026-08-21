@@ -305,6 +305,77 @@ type SubBab = { hal: number; judul: string };
 
 /** Kotak di halaman PDF, satuan halaman (skala 1). */
 type Kotak = { x: number; y: number; w: number; h: number };
+/** Sudut kartu kunci jawaban di cetakan: 3mm, dalam satuan titik PDF. */
+const SUDUT_KARTU = (3 * 72) / 25.4;
+/** Kotak kunci jawaban; `pas` menandai kotak yang datang dari gambar halaman. */
+type KotakKunci = Kotak & { pas: boolean };
+
+/* [ebook-kunci-tirai-presisi-v1] Kotak kunci jawaban diambil dari BIDANG YANG
+   DIGAMBAR di halaman, bukan ditebak dari batas tulisannya.
+
+   Dulu tirainya disusun dari kotak teks + 12pt jarak napas, lalu lebarnya
+   dipaksa simetris dengan menyalin marjin kiri ke kanan. Hasilnya selalu meleset
+   beberapa milimeter: baris terpanjang di dalam kotak tak pernah persis
+   selebar kotaknya, dan padding cetak (4mm atas-bawah, 5mm kiri-kanan) tak sama
+   dengan 12pt. Yang tampak: tirai krem melayang tidak sebidang dengan kartu
+   yang ditutupinya.
+
+   pdf.js menyimpan kotak batas tiap lintasan gambar di argumen ketiga
+   `constructPath` — sudah dalam koordinat lintasan, tinggal dikalikan matriks
+   yang sedang berlaku. Kartu kunci jawaban = bidang terisi TERKECIL yang
+   memuat seluruh tulisan kunci jawabannya, jadi pilihannya tak bergantung pada
+   warna dan tetap benar walau palet modulnya diganti. */
+async function kotakKunciGambar(hal: any, pdfjs: any, isi: Kotak): Promise<Kotak | null> {
+  const OPS = pdfjs?.OPS;
+  if (!OPS) return null;
+  // Lintasan yang cuma digaris (stroke) tanpa isi bukan kartu — itu garis
+  // bawah tabel dan pemisah bagian.
+  const TERISI = new Set<number>([
+    OPS.fill, OPS.eoFill, OPS.fillStroke, OPS.eoFillStroke,
+    OPS.closeFillStroke, OPS.closeEOFillStroke,
+  ]);
+  let daftar: { fnArray: number[]; argsArray: any[] };
+  try {
+    daftar = await hal.getOperatorList();
+  } catch {
+    return null;
+  }
+  const vp = hal.getViewport({ scale: 1 });
+  let ctm: number[] = [1, 0, 0, 1, 0, 0];
+  const tumpuk: number[][] = [];
+  let pilih: Kotak | null = null;
+  for (let i = 0; i < daftar.fnArray.length; i++) {
+    const fn = daftar.fnArray[i];
+    const arg = daftar.argsArray[i];
+    if (fn === OPS.save) tumpuk.push(ctm);
+    else if (fn === OPS.restore) ctm = tumpuk.pop() ?? ctm;
+    else if (fn === OPS.transform) ctm = pdfjs.Util.transform(ctm, arg);
+    else if (fn === OPS.constructPath) {
+      const jenis = arg?.[0];
+      const mm = arg?.[2];
+      if (!TERISI.has(jenis) || !mm || mm.length < 4) continue;
+      const m = pdfjs.Util.transform(vp.transform, ctm);
+      const xs: number[] = [];
+      const ys: number[] = [];
+      for (const [px, py] of [[mm[0], mm[1]], [mm[2], mm[1]], [mm[2], mm[3]], [mm[0], mm[3]]]) {
+        xs.push(m[0] * px + m[2] * py + m[4]);
+        ys.push(m[1] * px + m[3] * py + m[5]);
+      }
+      const x = Math.min(...xs);
+      const y = Math.min(...ys);
+      const k: Kotak = { x, y, w: Math.max(...xs) - x, h: Math.max(...ys) - y };
+      // Harus memuat SELURUH blok kunci jawaban — bukan cuma judulnya — supaya
+      // sorotan latar satu baris tidak ikut terpilih.
+      const memuat =
+        k.x <= isi.x + 2 && k.x + k.w >= isi.x + isi.w - 2 &&
+        k.y <= isi.y + 2 && k.y + k.h >= isi.y + isi.h - 2;
+      // Latar halaman ikut memuat semuanya; batas 99% membuangnya.
+      if (!memuat || k.w > vp.width * 0.99 || k.h > vp.height * 0.9) continue;
+      if (!pilih || k.w * k.h < pilih.w * pilih.h) pilih = k;
+    }
+  }
+  return pilih;
+}
 
 /** Satu entri daftar isi. */
 type Bab = { hal: number; judul: string; label?: string; utama: boolean; anak: SubBab[] };
@@ -477,8 +548,10 @@ export default function EbookReader({
   const [tur, setTur] = useState<"penuh" | "latihan" | null>(null);
   /* [ebook-kunci-tertutup-v1] Halaman yang kunci jawabannya sudah dibuka siswa. */
   const [kunciBuka, setKunciBuka] = useState<Set<number>>(new Set());
-  /** Letak kotak "Kunci jawaban" per halaman (satuan halaman PDF, skala 1). */
-  const [kunciKotak, setKunciKotak] = useState<Map<number, { x: number; y: number; w: number; h: number }>>(new Map());
+  /** Letak kotak "Kunci jawaban" per halaman (satuan halaman PDF, skala 1).
+      `pas` = kotaknya diambil dari bidang yang benar-benar digambar, jadi boleh
+      dipakai apa adanya; false = tebakan dari batas tulisan. */
+  const [kunciKotak, setKunciKotak] = useState<Map<number, KotakKunci>>(new Map());
 
   const dua = muatDua && (duaManual ?? true);
   const tampil = useMemo(() => bentangan(page, total, dua), [page, total, dua]);
@@ -1257,7 +1330,7 @@ export default function EbookReader({
      memuat butir "Kunci jawaban — baru dibuka setelah kamu benar-benar
      mencoba", dan pencocokan awalan menutupinya dengan tirai. */
   const KUNCI_JUDUL = useMemo(() => /^(kunci\s*jawaban|jawaban|answer\s*key)$/i, []);
-  const kunciRef = useRef<Map<number, Kotak | null>>(new Map());
+  const kunciRef = useRef<Map<number, KotakKunci | null>>(new Map());
 
   useEffect(() => {
     const halaman = [tampil.kiri, tampil.kanan].filter((n): n is number => !!n);
@@ -1287,10 +1360,26 @@ export default function EbookReader({
         const x1 = Math.max(...isi.flatMap((b) => b.segmen.map((g) => g.x1)));
         const y0 = isi[0].y;
         const y1 = Math.max(...isi.map((b) => b.y + b.h));
-        kunciRef.current.set(n, { x: x0 - 12, y: y0 - 12, w: x1 - x0 + 24, h: y1 - y0 + 24 });
+        const tulisan: Kotak = { x: x0, y: y0, w: x1 - x0, h: y1 - y0 };
+        // [ebook-kunci-tirai-presisi-v1] Kartu yang tercetak lebih dulu dicari;
+        // kotak dari tulisan cuma jaring pengaman untuk modul yang kunci
+        // jawabannya dicetak tanpa latar berwarna.
+        let kotak: KotakKunci = {
+          x: tulisan.x - 12, y: tulisan.y - 12, w: tulisan.w + 24, h: tulisan.h + 24, pas: false,
+        };
+        try {
+          const d = docRef.current;
+          const pdfjs = pdfjsRef.current;
+          const halObj = d ? await d.getPage(n) : null;
+          if (!hidup) return;
+          const gambar = halObj ? await kotakKunciGambar(halObj, pdfjs, tulisan) : null;
+          if (!hidup) return;
+          if (gambar) kotak = { ...gambar, pas: true };
+        } catch { /* daftar operator gagal dibaca → pakai kotak dari tulisan */ }
+        kunciRef.current.set(n, kotak);
       }
       if (hidup && berubah) {
-        const rapi = new Map<number, Kotak>();
+        const rapi = new Map<number, KotakKunci>();
         kunciRef.current.forEach((v, k) => { if (v) rapi.set(k, v); });
         setKunciKotak(rapi);
       }
@@ -1904,18 +1993,23 @@ export default function EbookReader({
                 const kotak = kunciKotak.get(n);
                 if (!kotak) return null;
                 const kiriSlot = dua && n === tampil.kanan ? pw + GAP : 0;
-                // Tirai dibentangkan simetris: marjin kirinya disalin ke kanan
-                // supaya kotaknya sebidang dengan kolom teks halaman. Lebar
-                // mentah kotak = seluas tulisan kunci jawabannya saja, jadi
-                // tirainya duduk melenceng ke kiri dan terlihat miring.
+                /* [ebook-kunci-tirai-presisi-v1] Kotak yang datang dari bidang
+                   gambar halaman sudah persis sebesar kartunya — dipakai apa
+                   adanya. Yang ditebak dari tulisan tetap dibentangkan simetris
+                   (marjin kiri disalin ke kanan), kalau tidak tirainya duduk
+                   melenceng ke kiri karena baris terpanjang di dalam kartu tak
+                   pernah persis selebar kartunya. */
                 const halW = skalaTampil > 0 ? pw / skalaTampil : 0;
-                const marjin = Math.max(0, Math.min(kotak.x, halW / 2 - 24));
-                const lebar = halW > 0 ? halW - marjin * 2 : kotak.w;
+                const marjin = kotak.pas ? kotak.x : Math.max(0, Math.min(kotak.x, halW / 2 - 24));
+                const lebar = kotak.pas ? kotak.w : (halW > 0 ? halW - marjin * 2 : kotak.w);
                 const gaya = {
                   left: kiriSlot + marjin * skalaTampil,
                   top: kotak.y * skalaTampil,
                   width: lebar * skalaTampil,
                   height: kotak.h * skalaTampil,
+                  // Sudut kartu cetaknya 3mm; tirai bersudut lain langsung
+                  // terlihat sebagai lapisan yang menempel di atasnya.
+                  borderRadius: kotak.pas ? SUDUT_KARTU * skalaTampil : undefined,
                 };
                 const terbuka = kunciBuka.has(n);
                 if (terbuka) {
@@ -1939,7 +2033,7 @@ export default function EbookReader({
                   <button
                     key={`kunci-${n}`}
                     onClick={(e) => { e.stopPropagation(); setKunciBuka((s) => new Set(s).add(n)); }}
-                    className="ebook-kunci absolute z-10 flex flex-col items-center justify-center gap-1.5 rounded-xl text-[#12776F] transition"
+                    className={`ebook-kunci absolute z-10 flex flex-col items-center justify-center gap-1.5 text-[#12776F] transition ${kotak.pas ? "" : "rounded-xl"}`}
                     style={gaya}
                   >
                     <Eye className="h-5 w-5" />
