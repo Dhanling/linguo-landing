@@ -24,6 +24,7 @@ import ChunkReloader from "@/components/ChunkReloader"; // [chunk-reload-v1] aut
 import AnalyticsTracker from "@/components/AnalyticsTracker"; // landing-analytics-v1 — catat page view + durasi ke Supabase
 import AdAttributionCapture from "@/components/AdAttributionCapture"; // ads-conversion-sync — tangkap fbclid/gclid/_fbp buat konversi offline
 import PromoTopBar from "@/components/PromoTopBar"; // promo-merdeka-v1 — banner promo paling atas, hilang sendiri setelah periode
+import BatchRegulerTopBar from "@/components/BatchRegulerTopBar"; // bar-batch-reguler-v1 — pita hitung mundur batch Kelas Reguler
 import PromoFloatingButton from "@/components/PromoFloatingButton"; // promo-merdeka-v1 — sticker melayang → WA CS
 import PromoLeadModal from "@/components/PromoLeadModal"; // promo-lead-form-v1 — form nama/WA/email sebelum ke WhatsApp
 
@@ -189,6 +190,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-white text-slate-900 antialiased">
         <PromoTopBar />{/* promo-merdeka-v1 */}
+        <BatchRegulerTopBar />{/* bar-batch-reguler-v1 — mundur otomatis kalau Promo Merdeka lagi buka */}
         {children}
         <Toaster richColors position="top-center" closeButton />
         <ChunkReloader />{/* [chunk-reload-v1] */}
