@@ -85,7 +85,38 @@ const sampul = () => (sampulGambar ? `
   <p class="sampul-kaki">${esc(meta.level ?? "")} &middot; ${units.length} unit &middot; ${esc(meta.edition ?? "")}</p>
 </section>`);
 
-const halamanTeks = (h) => `
+/* ── daftar isi cetak ───────────────────────────────────────
+   [ebook-daftar-isi-cetak-v1] Sidebar "Contents" di reader disusun reader
+   sendiri dari ukuran huruf, dan itu cuma hidup di layar: PDF yang diunduh atau
+   dicetak siswa tak punya daftar isi sama sekali. Halaman ini yang mengisinya.
+
+   Nomor halamannya perkara ayam-telur: Chromium yang memutuskan paginasi, tapi
+   paginasinya baru diketahui SESUDAH dicetak — sementara daftar isinya harus
+   ikut tercetak. Jalan keluarnya dua putaran. Putaran pertama mencetak dengan
+   nomor bertanda "—", lalu PDF-nya dibaca balik untuk tahu tiap bagian jatuh di
+   halaman berapa; putaran kedua mencetak ulang dengan nomor sungguhan. Jumlah
+   BARISNYA sama persis di dua putaran, jadi tinggi halamannya tak berubah dan
+   nomor putaran pertama tetap sahih. Putarannya diulang sampai nomor yang
+   dibaca sama dengan nomor yang dicetak — kalau modulnya tumbuh dan daftar
+   isinya meluber jadi dua halaman, putaran ketiga yang membereskan. */
+const barisIsi = () => [
+  ...(meta.front ?? []).filter((h) => h.type !== "isi").map((h) => ({ kunci: `judul:${h.title}`, label: h.title })),
+  ...units.map((u, i) => ({ kunci: `unit:${i + 1}`, label: `Unit ${i + 1} — ${u.title}`, sub: u.title_target })),
+  ...(meta.back ?? []).map((h) => ({ kunci: `judul:${h.title}`, label: h.title })),
+];
+
+const halamanIsi = (h, nomor) => `
+<section class="hal">
+  <h2>${esc(h.title)}</h2>
+  ${h.intro ? `<p class="isi-intro">${teks(h.intro)}</p>` : ""}
+  <table class="isi"><tbody>${barisIsi().map((b) => `
+    <tr>
+      <td>${esc(b.label)}${b.sub ? `<span class="isi-asing">${esc(b.sub)}</span>` : ""}</td>
+      <td class="isi-hal">${nomor.get(b.kunci) ?? "&mdash;"}</td>
+    </tr>`).join("")}</tbody></table>
+</section>`;
+
+const halamanTeks = (h, nomor) => (h.type === "isi" ? halamanIsi(h, nomor) : `
 <section class="hal">
   <h2>${esc(h.title)}</h2>
   ${(h.blocks ?? []).map((b) => {
@@ -95,7 +126,7 @@ const halamanTeks = (h) => `
     if (b.type === "kotak") return `<div class="kotak"><h4>${esc(b.title)}</h4>${b.items.map((i) => `<p>${teks(i)}</p>`).join("")}</div>`;
     return "";
   }).join("\n")}
-</section>`;
+</section>`);
 
 const tabel = (b) => `
 <table>
@@ -159,7 +190,7 @@ const unitHal = (u, i) => `
 
 /* ── halaman jadi ────────────────────────────────────────────────────────── */
 
-const html = `<!doctype html><html lang="id"><head><meta charset="utf-8">
+const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charset="utf-8">
 <title>${esc(meta.title)}</title>
 <style>
   @page { size: A4; margin: 18mm 16mm 16mm; }
@@ -214,37 +245,38 @@ const html = `<!doctype html><html lang="id"><head><meta charset="utf-8">
   td { border-bottom: 1px solid #E7ECEB; padding: 1.6mm 2mm; vertical-align: top; }
   tr { page-break-inside: avoid; }
 
+  /* Daftar isi: tabel tanpa garis, nomor halamannya dirapatkan ke tepi kanan. */
+  .isi-intro { font-size: 9.5pt; color: #5A6478; margin-bottom: 5mm; }
+  table.isi { font-size: 10.5pt; }
+  table.isi td { border-bottom: 1px dotted #D8E3E1; padding: 2.2mm 0; }
+  .isi-asing { display: block; font-size: 9pt; font-style: italic; color: #8A93A3; }
+  .isi-hal { width: 14mm; text-align: right; color: #5A6478; white-space: nowrap; }
+
   .latihan { margin-bottom: 3.5mm; page-break-inside: avoid; }
   .latihan-judul { font-weight: 700; }
   .soal li { margin-bottom: 1.2mm; }
   ul, ol { margin: 0 0 2.5mm; padding-left: 5.5mm; }
 </style></head><body>
 ${sampul()}
-${(meta.front ?? []).map(halamanTeks).join("\n")}
+${(meta.front ?? []).map((h) => halamanTeks(h, nomor)).join("\n")}
 ${units.map(unitHal).join("\n")}
-${(meta.back ?? []).map(halamanTeks).join("\n")}
+${(meta.back ?? []).map((h) => halamanTeks(h, nomor)).join("\n")}
 </body></html>`;
 
 const htmlPath = resolve(`${OUT}/${slug}.html`);
-writeFileSync(htmlPath, html);
-console.log(`HTML  → ${OUT}/${slug}.html (${units.length} unit)`);
-if (HTML_SAJA) process.exit(0);
+const pdfPath = resolve(`${OUT}/${slug}.pdf`);
+const tulisHtml = (nomor) => {
+  writeFileSync(htmlPath, bangunHtml(nomor));
+  console.log(`HTML  → ${OUT}/${slug}.html (${units.length} unit)`);
+};
+
+if (HTML_SAJA) { tulisHtml(new Map()); process.exit(0); }
 
 const chrome = cariChrome();
-const pdfPath = resolve(`${OUT}/${slug}.pdf`);
-execFileSync(chrome, [
+const cetak = () => execFileSync(chrome, [
   "--headless", "--disable-gpu", "--no-sandbox", "--no-pdf-header-footer",
   `--print-to-pdf=${pdfPath}`, `file://${htmlPath}`,
 ], { stdio: "ignore" });
-console.log(`PDF   → ${OUT}/${slug}.pdf`);
-
-if (PNG) {
-  execFileSync(chrome, [
-    "--headless", "--disable-gpu", "--no-sandbox", "--window-size=1240,1754",
-    `--screenshot=${resolve(`${OUT}/${slug}.png`)}`, `file://${htmlPath}`,
-  ], { stdio: "ignore" });
-  console.log(`PNG   → ${OUT}/${slug}.png`);
-}
 
 /* ── berkas latihan interaktif ───────────────────────────────────────────────
    [ebook-latihan-interaktif-v1] Latihan di dalam PDF cuma bisa dikerjakan di
@@ -290,18 +322,33 @@ async function barisHalaman(pdfjs, doc, n) {
 /** Buang penanda *miring* / **tebal** — antarmuka reader menampilkannya polos. */
 const polos = (s) => String(s ?? "").replace(/\*\*(.+?)\*\*/g, "$1").replace(/\*(.+?)\*/g, "$1").trim();
 
-async function tulisLatihan() {
+/* Judul halaman pengantar dicetak sebagai h2 17pt, sedangkan barisnya sendiri
+   MUNCUL LAGI di daftar isi dengan huruf badan teks. Yang dipakai sebagai
+   penanda halaman karena itu bukan kecocokan teksnya saja, tapi teks yang
+   hurufnya jauh lebih besar dari kebanyakan baris di halaman yang sama —
+   ambang relatif, sama seperti cara reader menyusun daftar isinya sendiri. */
+const judulHalaman = new Set([...(meta.front ?? []), ...(meta.back ?? [])].map((h) => h.title));
+const ambangJudul = (baris) => {
+  const tinggi = baris.map((b) => b.h).sort((a, b) => a - b);
+  return (tinggi[Math.floor(tinggi.length / 2)] ?? 0) * 1.3;
+};
+
+/** Baca balik PDF yang barusan dicetak: unit & judul jatuh di halaman berapa. */
+async function bacaPdf() {
   const pdfjs = await import("pdfjs-dist/legacy/build/pdf.mjs");
   const doc = await pdfjs.getDocument({ data: new Uint8Array(readFileSync(pdfPath)) }).promise;
 
   // halaman awal tiap unit + halaman tempat bagian LATIHAN-nya mulai
   const mulai = new Map();   // nomor unit → halaman
   const latihanHal = new Map();
+  const judul = new Map();   // judul halaman pengantar/penutup → halaman
   for (let n = 1; n <= doc.numPages; n++) {
     const baris = await barisHalaman(pdfjs, doc, n);
+    const ambang = ambangJudul(baris);
     for (const b of baris) {
       const m = b.teks.replace(/\s+/g, "").match(LABEL_UNIT);
       if (m && !mulai.has(Number(m[1]))) mulai.set(Number(m[1]), n);
+      if (b.h >= ambang && judulHalaman.has(b.teks) && !judul.has(b.teks)) judul.set(b.teks, n);
       if (/^latihan$/i.test(b.teks.replace(/\s+/g, ""))) {
         // Unit yang halamannya sedang berjalan = unit terakhir yang sudah mulai.
         const no = [...mulai.entries()].filter(([, h]) => h <= n).map(([u]) => u).pop();
@@ -309,7 +356,42 @@ async function tulisLatihan() {
       }
     }
   }
+  return { halaman: doc.numPages, mulai, latihanHal, judul };
+}
 
+/** Hasil pembacaan → peta yang dipakai halaman daftar isi. */
+const petaNomor = (baca) => new Map([
+  ...[...baca.judul].map(([j, n]) => [`judul:${j}`, n]),
+  ...[...baca.mulai].map(([u, n]) => [`unit:${u}`, n]),
+]);
+const petaSama = (a, b) => a.size === b.size && [...a].every(([k, v]) => b.get(k) === v);
+
+/* Dua putaran cetak — lihat [ebook-daftar-isi-cetak-v1] di atas. Tanpa halaman
+   daftar isi, putaran pertama sudah final: tak ada nomor yang perlu diisi. */
+const punyaDaftarIsi = (meta.front ?? []).some((h) => h.type === "isi");
+let nomor = new Map();
+let baca;
+for (let putaran = 1; putaran <= 3; putaran++) {
+  tulisHtml(nomor);
+  cetak();
+  baca = await bacaPdf();
+  const baru = petaNomor(baca);
+  const cocok = petaSama(nomor, baru);
+  nomor = baru;
+  if (!punyaDaftarIsi || cocok) break;
+  if (putaran === 3) console.warn("⚠️  nomor daftar isi belum stabil setelah 3 putaran");
+}
+console.log(`PDF   → ${OUT}/${slug}.pdf (${baca.halaman} halaman)`);
+
+if (PNG) {
+  execFileSync(chrome, [
+    "--headless", "--disable-gpu", "--no-sandbox", "--window-size=1240,1754",
+    `--screenshot=${resolve(`${OUT}/${slug}.png`)}`, `file://${htmlPath}`,
+  ], { stdio: "ignore" });
+  console.log(`PNG   → ${OUT}/${slug}.png`);
+}
+
+function tulisLatihan({ halaman, mulai, latihanHal }) {
   const daftar = units.map((u, i) => {
     const no = i + 1;
     const hal = mulai.get(no) ?? null;
@@ -332,16 +414,16 @@ async function tulisLatihan() {
       no,
       judul: u.title,
       hal,
-      sampai: hal ? (berikut ?? doc.numPages + 1) - 1 : null,
+      sampai: hal ? (berikut ?? halaman + 1) - 1 : null,
       halLatihan: latihanHal.get(no) ?? null,
       latihan,
     };
   }).filter((u) => u.hal && u.latihan.length);
 
   const keluar = `${OUT}/${slug}.latihan.json`;
-  writeFileSync(keluar, JSON.stringify({ slug, produk: meta.product?.slug ?? slug, halaman: doc.numPages, unit: daftar }, null, 1));
+  writeFileSync(keluar, JSON.stringify({ slug, produk: meta.product?.slug ?? slug, halaman, unit: daftar }, null, 1));
   const soal = daftar.reduce((a, u) => a + u.latihan.reduce((b, l) => b + l.soal.length, 0), 0);
   console.log(`SOAL  → ${keluar} (${daftar.length} unit · ${soal} soal)`);
 }
 
-await tulisLatihan();
+tulisLatihan(baca);
