@@ -273,6 +273,22 @@ type Baris = { teks: string; y: number; h: number; segmen: Segmen[]; fam?: strin
 type Segmen = { teks: string; x0: number; x1: number };
 type HalTeks = { items: ItemTeks[]; baris: Baris[] };
 
+/* [ebook-tts-kalimat-v1] Layakkah barisnya dibunyikan sebagai KALIMAT, terpisah
+   dari kata yang diketuk? Baris "¿cómo?" cuma katanya sendiri berpakaian tanda
+   baca: tombol "Putar kalimat" di situ mengeluarkan bunyi yang sama persis
+   dengan tombol katanya, jadi cuma menawarkan pilihan palsu.
+
+   Pembandingnya jumlah KATA sesudah tanda baca dibuang, bukan panjang teks
+   mentahnya — sebelumnya cukup "beda dari katanya", dan tanda tanya terbalik
+   di depan sudah membuat "¿cómo?" lolos sebagai kalimat. */
+const KATA_SAJA = /[^\p{L}\p{N}]+/gu;
+function kalimatLayakDibunyikan(kata: string, kalimat: string) {
+  const bersih = (s: string) => s.replace(KATA_SAJA, " ").trim().toLowerCase();
+  const k = bersih(kalimat);
+  if (!k || k === bersih(kata)) return false;
+  return k.split(" ").length > 1;
+}
+
 /* [ebook-daftar-isi-subunit-v1] Satu bagian DI DALAM bab — "Kosakata unit ini",
    "Catatan", "Latihan", judul kotak tata bahasa. Dipisah dari Bab karena
    pertanyaannya beda: bab menjawab "unit ini di halaman berapa", sub-bagian
@@ -1886,7 +1902,7 @@ export default function EbookReader({
                         </div>
                       )}
 
-                      {ucap.kalimat && ucap.kalimat.toLowerCase() !== ucap.kata.toLowerCase() && (
+                      {ucap.kalimat && kalimatLayakDibunyikan(ucap.kata, ucap.kalimat) && (
                         <>
                           <p className="mt-2 border-t border-white/10 pt-2 text-[11.5px] italic leading-snug text-white/45 line-clamp-3">
                             {ucap.kalimat}
