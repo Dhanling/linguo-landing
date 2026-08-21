@@ -36,9 +36,11 @@ import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import {
   ChevronLeft, ChevronRight, Loader2, Minus, Plus, X, BookOpen, AlertCircle,
   Columns2, Square, Maximize2, Minimize2, Volume2, List, Play, CornerDownLeft, Scan,
-  ChevronDown, Eye, EyeOff, PenLine,
+  ChevronDown, Eye, EyeOff, PenLine, HelpCircle,
 } from "lucide-react";
 import EbookLatihan, { type BerkasLatihan, type UnitLatihan } from "./EbookLatihan";
+// [ebook-panduan-tour-v1]
+import EbookPanduan, { type LangkahPanduan } from "./EbookPanduan";
 // [ebook-tts-ketuk-kata-v1]
 import {
   bisaDibunyikan, kodeBahasaEbook, kataIndonesia, kalimatTarget, ucapkanEbook,
@@ -84,6 +86,12 @@ const SWIPE_SERET = 70;
 const SWIPE_RESET = 320;
 
 const halamanKey = (purchaseId: string) => `ebook-hal:${purchaseId}`;
+
+/* [ebook-panduan-tour-v1] Panduan itu milik ORANGNYA, bukan milik modulnya:
+   siswa yang sudah paham cara pakai reader tidak perlu diajari lagi waktu
+   membuka e-book kedua. Karena itu kuncinya tanpa purchaseId. */
+const PANDUAN_KEY = "ebook-panduan-v1";
+const TUR_LATIHAN_KEY = "ebook-panduan-latihan-v1";
 
 /* ── pemanasan pdf.js ──────────────────────────────────────────────────────
    Bundel pdf.js itu ratusan KB dan dulu baru mulai diunduh PADA DETIK reader
@@ -462,6 +470,11 @@ export default function EbookReader({
      dikerjakan. Keduanya pelengkap: modul tanpa berkas soal jalan seperti biasa. */
   const [soal, setSoal] = useState<BerkasLatihan | null>(null);
   const [kerjakan, setKerjakan] = useState<UnitLatihan | null>(null);
+  /* [ebook-panduan-tour-v1] Tur yang sedang berjalan. "penuh" = panduan
+     pemakaian dari tombol tanda tanya; "latihan" = sorotan sekali jalan yang
+     memperkenalkan tombol Kerjakan latihan waktu siswa pertama kali sampai di
+     halaman yang ada soalnya. */
+  const [tur, setTur] = useState<"penuh" | "latihan" | null>(null);
   /* [ebook-kunci-tertutup-v1] Halaman yang kunci jawabannya sudah dibuka siswa. */
   const [kunciBuka, setKunciBuka] = useState<Set<number>>(new Set());
   /** Letak kotak "Kunci jawaban" per halaman (satuan halaman PDF, skala 1). */
@@ -1288,16 +1301,128 @@ export default function EbookReader({
   /* [ebook-latihan-interaktif-v1] Unit yang halamannya sedang terbuka — dasar
      tombol "Kerjakan latihan". Rentang halamannya dihitung waktu modul dirakit,
      bukan di sini: paginasi PDF ditentukan mesin cetak, dan menebaknya dari
-     teks halaman tiap kali reader dibuka cuma menambah kerja. */
+     teks halaman tiap kali reader dibuka cuma menambah kerja.
+
+     [ebook-panduan-tour-v1] Dulu tombolnya menyala di SELURUH rentang unit —
+     termasuk halaman penjelasan yang belum ada soalnya, jadi bacaan pertama
+     unit pun sudah ditawari "kerjakan latihan" yang belum dibaca soalnya.
+     Sekarang batasnya `halLatihan` (halaman tempat blok LATIHAN dicetak)
+     sampai akhir unit, yaitu halaman latihan berikut halaman kunci
+     jawabannya. */
   const unitKini = useMemo<UnitLatihan | null>(() => {
     if (!soal?.unit?.length) return null;
     const halaman = [tampil.kiri, tampil.kanan].filter((n): n is number => !!n);
     return (
-      soal.unit.find(
-        (u) => u.latihan.length && u.hal && u.sampai && halaman.some((n) => n >= u.hal! && n <= u.sampai!)
-      ) ?? null
+      soal.unit.find((u) => {
+        if (!u.latihan.length) return false;
+        // Modul lama dirakit sebelum `halLatihan` ada — di situ rentang unit
+        // tetap dipakai supaya tombolnya tidak hilang sama sekali.
+        const mulai = u.halLatihan ?? u.hal;
+        const habis = u.sampai ?? u.halLatihan ?? u.hal;
+        if (!mulai || !habis) return false;
+        return halaman.some((n) => n >= mulai && n <= habis);
+      }) ?? null
     );
   }, [soal, tampil.kiri, tampil.kanan]);
+
+  /* ── panduan berpandu ──────────────────────────────────────────────────
+     [ebook-panduan-tour-v1] Isi langkahnya ditulis di sini, bukan di dalam
+     EbookPanduan: yang tahu tombol mana yang sedang ada di layar cuma reader.
+     Targetnya selektor `data-panduan`, dan boleh lebih dari satu — yang
+     pertama KETEMU DAN TERLIHAT yang disorot, jadi langkah zoom (tombolnya
+     disembunyikan di layar HP) jatuh ke halaman bukunya. */
+  const langkahPenuh = useMemo<LangkahPanduan[]>(() => [
+    {
+      judul: t("Cara memakai reader ini"),
+      isi: t("Tujuh langkah singkat, kurang dari satu menit. Kamu bisa membukanya lagi kapan saja."),
+      tip: t("Tekan Esc untuk keluar, panah kiri/kanan untuk berpindah langkah."),
+    },
+    {
+      target: ['[data-panduan="daftar"]'],
+      judul: t("Lompat lewat daftar isi"),
+      isi: t("Semua unit modul terdaftar di sini beserta nomor halamannya — ketuk satu unit untuk langsung ke sana, tanpa membalik satu per satu."),
+    },
+    {
+      target: ['[data-panduan="navigasi"]'],
+      judul: t("Berpindah halaman"),
+      isi: t("Pakai panah untuk membalik satu halaman, tarik penggeser untuk menyusur cepat, atau ketuk nomor halamannya lalu ketik halaman yang kamu tuju."),
+      tip: t("Papan tik: ← dan →. Di HP: geser layar seperti membalik kertas."),
+    },
+    {
+      target: ['[data-panduan="zoom"]', ".ebook-buku"],
+      judul: t("Memperbesar tulisan"),
+      isi: t("Angka persen itu bisa diketik langsung, jadi tak perlu menekan + berkali-kali. Tombol di sebelahnya mengembalikan halaman supaya pas satu layar."),
+      tip: t("Cubit dua jari di trackpad atau layar sentuh, atau tekan Ctrl/⌘ dengan + − 0."),
+    },
+    {
+      target: [".ebook-buku"],
+      judul: t("Ketuk kata untuk mendengarnya"),
+      isi: t("Ketuk kata mana pun di halaman: kamu akan mendengar pelafalannya sekaligus melihat artinya dalam bahasa Indonesia."),
+    },
+    {
+      target: [".ebook-buku"],
+      judul: t("Kunci jawaban ditutup dulu"),
+      isi: t("Kunci jawaban di modul sengaja ditutup tirai. Kerjakan dulu soalnya, baru ketuk kotaknya untuk mencocokkan."),
+    },
+    {
+      target: ['[data-panduan="latihan"]', '[data-panduan="navigasi"]'],
+      judul: t("Kerjakan latihannya di layar"),
+      isi: t("Di halaman yang ada blok LATIHAN-nya, tombol ini muncul di bilah bawah. Soalnya dikerjakan langsung di sini dan dinilai otomatis — tanpa kertas."),
+    },
+    {
+      target: ['[data-panduan="panduan"]'],
+      judul: t("Panduan ini selalu ada di sini"),
+      isi: t("Lupa salah satu langkah? Buka lagi panduannya dari tombol ini kapan saja."),
+    },
+  ], [t]);
+
+  const langkahLatihan = useMemo<LangkahPanduan[]>(() => [
+    {
+      target: ['[data-panduan="latihan"]'],
+      judul: t("Halaman ini ada latihannya"),
+      isi: t("Ketuk tombol ini untuk mengerjakan soal unit ini langsung di layar. Jawabanmu dicek otomatis, dan yang belum pas bisa diulang."),
+    },
+  ], [t]);
+
+  /* Panduan pertama kali: dijalankan sesudah halaman pertama benar-benar
+     tergambar. Menyorot tombol yang kotaknya belum ada = sorotan melayang di
+     pojok kiri atas. */
+  useEffect(() => {
+    if (!doc || memuat || galat || kerjakan) return;
+    try { if (localStorage.getItem(PANDUAN_KEY)) return; } catch { return; }
+    const jam = window.setTimeout(() => setTur((v) => v ?? "penuh"), 700);
+    return () => window.clearTimeout(jam);
+  }, [doc, memuat, galat, kerjakan]);
+
+  /* Sorotan tombol latihan: sekali seumur akun, waktu halaman latihan pertama
+     terbuka. Tidak dipaksakan menimpa panduan penuh yang mungkin sedang jalan. */
+  useEffect(() => {
+    if (!unitKini || tur || kerjakan) return;
+    try {
+      if (localStorage.getItem(TUR_LATIHAN_KEY)) return;
+      if (!localStorage.getItem(PANDUAN_KEY)) return; // panduan penuh belum kelar
+    } catch { return; }
+    const jam = window.setTimeout(() => setTur("latihan"), 450);
+    return () => window.clearTimeout(jam);
+  }, [unitKini, tur, kerjakan]);
+
+  const tutupTur = useCallback(() => {
+    setTur((v) => {
+      try {
+        if (v === "penuh") localStorage.setItem(PANDUAN_KEY, "1");
+        // Panduan penuh sudah memperkenalkan tombolnya — sorotannya tak perlu
+        // muncul lagi nanti.
+        if (v) localStorage.setItem(TUR_LATIHAN_KEY, "1");
+      } catch { /* localStorage diblokir → panduannya cuma muncul lagi lain kali */ }
+      return null;
+    });
+  }, []);
+
+  /* Siswa yang langsung menekan tombol latihan dari dalam sorotan sudah paham
+     maksudnya — panduannya dianggap selesai, bukan ditunda sampai kembali. */
+  useEffect(() => {
+    if (kerjakan && tur) tutupTur();
+  }, [kerjakan, tur, tutupTur]);
 
   /* ── daftar isi ────────────────────────────────────────────────────────
      [ebook-daftar-isi-v1] Modul 40 halaman tanpa daftar isi cuma bisa disusuri
@@ -1562,6 +1687,7 @@ export default function EbookReader({
       <div className="flex shrink-0 items-center gap-3 border-b border-white/10 px-3 py-2.5 sm:px-5">
         <button
           onClick={bukaDaftar}
+          data-panduan="daftar"
           className="flex shrink-0 items-center gap-1.5 rounded-lg px-2 py-1.5 text-white/70 transition hover:bg-white/10 hover:text-white"
           aria-label={t("Daftar isi")}
           title={t("Daftar isi")}
@@ -1571,7 +1697,7 @@ export default function EbookReader({
         </button>
         <BookOpen className="hidden h-5 w-5 shrink-0 text-[#3ED9C0] sm:block" />
         <h2 className="min-w-0 flex-1 truncate text-[14px] font-bold text-white sm:text-[15px]">{title}</h2>
-        <div className="hidden items-center gap-1 sm:flex">
+        <div data-panduan="zoom" className="hidden items-center gap-1 sm:flex">
           {muatDua && (
             <button
               onClick={() => setDuaManual((v) => !(v ?? true))}
@@ -1633,6 +1759,18 @@ export default function EbookReader({
             <Scan className="h-4 w-4" />
           </button>
         </div>
+        {/* [ebook-panduan-tour-v1] Tombolnya duduk di bilah atas, bukan di menu
+            tersembunyi: panduan yang harus dicari dulu tak menolong orang yang
+            sedang bingung. */}
+        <button
+          onClick={() => setTur("penuh")}
+          data-panduan="panduan"
+          className="rounded-lg p-2 text-white/70 transition hover:bg-white/10 hover:text-white"
+          aria-label={t("Panduan pemakaian")}
+          title={t("Panduan pemakaian")}
+        >
+          <HelpCircle className="h-4 w-4" />
+        </button>
         <button
           onClick={alihLayarPenuh}
           className="rounded-lg p-2 text-white/70 transition hover:bg-white/10 hover:text-white"
@@ -1932,7 +2070,7 @@ export default function EbookReader({
           14 kali. Sekarang ada penggeser (tarik untuk menyusur cepat) dan nomor
           halaman yang bisa DIKETIK. */}
       {!galat && (
-        <div className="flex shrink-0 items-center gap-2 border-t border-white/10 px-3 py-2 sm:px-4">
+        <div data-panduan="navigasi" className="flex shrink-0 items-center gap-2 border-t border-white/10 px-3 py-2 sm:px-4">
           {/* Di layar sempit tombol daftar isi di bilah atas ikut menyempit —
               di sini letaknya justru dekat ibu jari. */}
           <button
@@ -2022,6 +2160,7 @@ export default function EbookReader({
           {unitKini && (
             <button
               onClick={() => setKerjakan(unitKini)}
+              data-panduan="latihan"
               className="ml-1 flex shrink-0 items-center gap-1.5 rounded-lg bg-[#3ED9C0] px-2.5 py-1.5 text-[12px] font-extrabold text-black transition hover:brightness-95"
               title={t("Kerjakan latihan unit ini")}
             >
@@ -2369,6 +2508,16 @@ export default function EbookReader({
           tab baru: siswa sering bolak-balik melihat catatan unitnya, dan
           menutup latihan mengembalikannya ke halaman yang sama. */}
       {kerjakan && <EbookLatihan unit={kerjakan} onClose={() => setKerjakan(null)} />}
+
+      {/* [ebook-panduan-tour-v1] Tur disembunyikan selama latihan terbuka:
+          targetnya ada di balik lembar soal, jadi sorotannya akan menunjuk
+          tombol yang sedang tak terlihat. */}
+      {tur && !kerjakan && (
+        <EbookPanduan
+          langkah={tur === "penuh" ? langkahPenuh : langkahLatihan}
+          onClose={tutupTur}
+        />
+      )}
     </div>
   );
 
