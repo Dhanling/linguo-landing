@@ -156,7 +156,7 @@ Jadwal & ketentuan:
 - Jadwal & pendaftaran Reguler: https://linguo.id/jadwal-kelas-reguler
 - HARI/JAM/TANGGAL MULAI batch Reguler & ETP (TOEFL/IELTS Prep) TIDAK ADA di daftar fakta ini — jangan pernah menyebutnya dari ingatan. Sumbernya HANYA blok "JADWAL BATCH ..." di bawah (ditarik live dari sumber yang sama dengan halaman linguo.id/jadwal-kelas-reguler). Kalau blok itu tidak ada / batchnya tidak tercantum, bilang batchnya belum dibuka & arahkan cek linguo.id/jadwal-kelas-reguler — JANGAN mengarang hari & jam.
 - Jangan menyimpulkan sendiri sebuah batch "sudah berjalan" atau "sebentar lagi mulai". Ikuti penanda [BELUM MULAI] / [SUDAH BERJALAN] di blok jadwal.
-- Batch [SUDAH BERJALAN]: bilang apa adanya bahwa kelasnya sudah mulai (sebutkan tanggalnya), lalu IKUTI PENANDANYA — kalau penandanya bilang MASIH menerima pendaftar susulan (per 18 Agustus 2026: Reguler Jepang & Inggris) masih bisa gabung menyusul dan sesi yang sudah lewat ditonton lewat rekaman kelas; kalau penandanya bilang PENDAFTARAN DITUTUP, sampaikan pendaftaran batch bahasa itu sudah ditutup lalu tawarkan Kelas Private/Semi-Private (jadwal fleksibel, bisa mulai kapan saja) atau batch Reguler berikutnya gelombang September 2026 (pendaftarannya dibuka 19–30 Agustus 2026, kelasnya mulai September 2026).
+- Batch [SUDAH BERJALAN]: bilang apa adanya bahwa kelasnya sudah mulai (sebutkan tanggalnya), lalu IKUTI PENANDANYA — kalau penandanya bilang MASIH menerima pendaftar susulan (per 18 Agustus 2026: Reguler Jepang & Inggris) masih bisa gabung menyusul dan sesi yang sudah lewat ditonton lewat rekaman kelas; kalau penandanya bilang PENDAFTARAN DITUTUP, sampaikan pendaftaran batch bahasa itu sudah ditutup lalu tawarkan Kelas Private/Semi-Private (jadwal fleksibel, bisa mulai kapan saja) atau batch Reguler berikutnya gelombang September 2026 (pendaftaran 21 Agustus – 10 September 2026, kelasnya mulai pekan 14 September 2026 — hari & jam tiap bahasa ambil dari blok JADWAL BATCH REGULER, jangan dikarang).
 - JUMLAH PENDAFTAR & SISA KUOTA batch Reguler/ETP juga TIDAK ADA di daftar fakta ini. Angkanya cuma ada di penanda [KUOTA] pada blok "JADWAL BATCH ..." (ditarik realtime dari database pendaftaran, sama dengan yang dipakai halaman linguo.id/jadwal-kelas-reguler). Jangan mengarang jumlah peserta.
 - BATAS PENDAFTARAN (deadline) batch Reguler/ETP juga cuma ada di penanda [PENDAFTARAN] pada blok "JADWAL BATCH ...". Jangan menghitung atau mengarang tanggal penutupan sendiri.
 - Private 16x pertemuan: maksimal selesai 5 bulan, sisa sesi hangus setelahnya.
@@ -411,7 +411,7 @@ const todayWIB = todayWIBISO;
 // linguo-app/suggest-reply, linguo-wa-bot/db.js, linguo-landing chat route &
 // linguo-admin-dashboard (mirror).
 const LATE_JOIN_LANGS = ["english", "inggris", "japanese", "jepang"];
-const NEXT_REGULER_BATCH = "September 2026 (pendaftaran batch berikutnya dibuka 19–30 Agustus 2026, kelasnya mulai September 2026)";
+const NEXT_REGULER_BATCH = "September 2026 (pendaftaran dibuka 21 Agustus – 10 September 2026, kelasnya mulai pekan 14 September 2026 — hari & jamnya ada di blok JADWAL BATCH REGULER)";
 
 /** Batch Reguler bahasa ini masih boleh disusul walau kelasnya sudah mulai? */
 function acceptsLateJoin(language: unknown): boolean {
@@ -635,7 +635,19 @@ async function getScheduleBlock(): Promise<string> {
     const etpLive = resolveEtpBatches(etp as never, today);
     // Batch penuh TETAP dicantumkan (bertanda [KUOTA: PENUH ...]) — dulu dibuang,
     // akibatnya kalau ditanya batch itu AI jawab "belum dibuka" padahal penuh.
-    const regLines = (reg || []).map((b: any) => {
+    // Siklus lama yang pendaftarannya sudah tutup dibuang KALAU bahasa+levelnya
+    // sudah punya batch penerus yang masih buka — penyaringan yang sama dipakai
+    // halaman /jadwal-kelas-reguler, biar daftar Ling tidak beda dengan landing.
+    const regBuka = (b: any) =>
+      (!b.closes_at || new Date(b.closes_at).getTime() >= Date.now()) &&
+      String(b.start_date).slice(0, 10) >= today;
+    const adaPenerus = new Set(
+      (reg || []).filter(regBuka).map((b: any) => `${b.language}|${b.level}`)
+    );
+    const regHidup = (reg || []).filter(
+      (b: any) => regBuka(b) || !adaPenerus.has(`${b.language}|${b.level}`)
+    );
+    const regLines = regHidup.map((b: any) => {
       const t1 = (b.session_start_time || "").slice(0, 5).replace(":", ".");
       const t2 = (b.session_end_time || "").slice(0, 5).replace(":", ".");
       const jam = t1 && t2 ? `${t1}–${t2} WIB` : "jam menyusul";
