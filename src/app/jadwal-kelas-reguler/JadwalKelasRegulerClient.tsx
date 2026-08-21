@@ -198,6 +198,10 @@ function formatIDR(amount: number): string {
   return `Rp ${amount.toLocaleString("id-ID")}`;
 }
 
+// Harga normal yang dicoret di samping harga promo. Cuma tampil kalau harga
+// yang dibayar siswa memang lebih murah dari angka ini.
+const PRICE_STRIKE = 500000;
+
 function formatDate(dateStr: string): string {
   const d = new Date(dateStr);
   return d.toLocaleDateString("id-ID", {
@@ -807,16 +811,17 @@ export default function JadwalKelasRegulerClient({
               ) : (
                 <>
                   {/* DESKTOP */}
-                  {/* jadwal-tabel-sticky-v1 — tabel punya scroller sendiri (maks 70vh)
-                      dan baris judul kolomnya mengambang (sticky) biar pas daftar
-                      batch panjang, pembaca tetap tahu kolom mana yang dilihat.
+                  {/* jadwal-tabel-sticky-v2 — tabel TANPA scroller vertikal sendiri:
+                      semua baris batch kelihatan sekaligus, gulirnya ikut halaman.
+                      Yang tersisa cuma guliran mendatar buat layar sempit.
                       Garis bawah header pakai box-shadow: border pada <th> sticky
                       ikut tergulung di Safari, shadow tidak. */}
                   <div className="hidden md:block bg-white rounded-2xl border border-slate-200 overflow-hidden">
-                    <div className="max-h-[70vh] overflow-y-auto overflow-x-auto overscroll-contain">
+                    <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                       <thead className="sticky top-0 z-10 bg-slate-50">
                         <tr>
+                          <th className="text-left py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0] w-12">No</th>
                           <SortableTh label="Bahasa" sortKey="language" sort={sort} onSort={toggleSort} />
                           <th className="text-left py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Level</th>
                           <th className="text-left py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Jadwal</th>
@@ -828,7 +833,7 @@ export default function JadwalKelasRegulerClient({
                         </tr>
                       </thead>
                       <tbody>
-                        {filteredBatches.map((batch) => {
+                        {filteredBatches.map((batch, idx) => {
                           const slotsLeft = batch.max_capacity - batch.actual_enrolled;
                           const closed = isBatchClosed(batch);
                           const slotBgClass =
@@ -846,6 +851,7 @@ export default function JadwalKelasRegulerClient({
                                 closed ? "bg-slate-50/70 opacity-70" : "hover:bg-slate-50/50"
                               }`}
                             >
+                              <td className="py-4 px-4 text-slate-500 tabular-nums font-medium">{idx + 1}</td>
                               <td className="py-4 px-4">
                                 <div className="flex items-center gap-2">
                                   <RectFlag code={getFlagCode(batch.language)} h={20} />
@@ -854,14 +860,14 @@ export default function JadwalKelasRegulerClient({
                               </td>
                               <td className="py-4 px-4 text-slate-600">{batch.level}</td>
                               <td className="py-4 px-4">
-                                <div className="text-slate-900 font-medium">{batch.session_day}</div>
-                                <div className="text-xs text-slate-500 tabular-nums">
+                                <div className="text-black font-bold">{batch.session_day}</div>
+                                <div className="text-xs text-black font-semibold tabular-nums">
                                   {batch.session_start_time?.slice(0, 5)} -{" "}
                                   {batch.session_end_time?.slice(0, 5)} WIB
                                 </div>
                               </td>
                               <td className="py-4 px-4 text-slate-600 text-xs">
-                                <div>{formatDate(batch.start_date)}</div>
+                                <div className="text-black font-bold text-sm">{formatDate(batch.start_date)}</div>
                                 <div className={`text-[11px] mt-0.5 ${getCountdown(batch.start_date).color}`}>
                                   {getCountdown(batch.start_date).label}
                                 </div>
@@ -871,10 +877,15 @@ export default function JadwalKelasRegulerClient({
                                   </div>
                                 )}
                               </td>
-                              <td className="py-4 px-4 text-slate-600 text-xs">
+                              <td className="py-4 px-4 text-black text-sm font-bold">
                                 {batch.total_sessions} × {batch.session_duration_min} mnt
                               </td>
                               <td className="py-4 px-4 text-right">
+                                {(batch.current_price_per_student || batch.price_regular) < PRICE_STRIKE && (
+                                  <div className="text-[11px] text-slate-400 line-through tabular-nums">
+                                    {formatIDR(PRICE_STRIKE)}
+                                  </div>
+                                )}
                                 <div className="font-bold text-slate-900 tabular-nums">
                                   {formatIDR(batch.current_price_per_student || batch.price_regular)}
                                 </div>
@@ -900,7 +911,7 @@ export default function JadwalKelasRegulerClient({
                                   <button
                                     type="button"
                                     onClick={() => setRegisterBatch(batch)}
-                                    className="inline-flex items-center gap-1.5 h-9 px-3 rounded-lg bg-teal-600 text-white text-xs font-semibold hover:bg-teal-700 transition-colors"
+                                    className="inline-flex items-center gap-1.5 h-9 px-3 rounded-lg bg-teal-600 text-white text-xs font-semibold transition-all duration-200 hover:bg-teal-700 hover:scale-110 hover:shadow-md active:scale-95"
                                   >
                                     <MessageCircle className="h-3.5 w-3.5" />
                                     Daftar
@@ -983,6 +994,11 @@ export default function JadwalKelasRegulerClient({
                           </div>
                           <div className="flex items-center justify-between pt-3 border-t border-slate-100">
                             <div>
+                              {(batch.current_price_per_student || batch.price_regular) < PRICE_STRIKE && (
+                                <div className="text-xs text-slate-400 line-through tabular-nums">
+                                  {formatIDR(PRICE_STRIKE)}
+                                </div>
+                              )}
                               <div className="text-lg font-bold text-slate-900 tabular-nums">
                                 {formatIDR(batch.current_price_per_student || batch.price_regular)}
                               </div>
@@ -996,7 +1012,7 @@ export default function JadwalKelasRegulerClient({
                               <button
                                 type="button"
                                 onClick={() => setRegisterBatch(batch)}
-                                className="inline-flex items-center gap-1.5 h-10 px-4 rounded-xl bg-teal-600 text-white text-sm font-semibold hover:bg-teal-700 transition-colors"
+                                className="inline-flex items-center gap-1.5 h-10 px-4 rounded-xl bg-teal-600 text-white text-sm font-semibold transition-all duration-200 hover:bg-teal-700 hover:scale-110 hover:shadow-md active:scale-95"
                               >
                                 <MessageCircle className="h-4 w-4" />
                                 Daftar
