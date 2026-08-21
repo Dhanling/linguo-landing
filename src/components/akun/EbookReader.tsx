@@ -30,7 +30,7 @@
 // Issuu. Sampul (halaman 1) berdiri sendiri, sisanya berpasangan genap–ganjil.
 // Layar sempit otomatis balik ke satu halaman.
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import {
@@ -44,7 +44,7 @@ import EbookPanduan, { type LangkahPanduan } from "./EbookPanduan";
 // [ebook-tts-ketuk-kata-v1]
 import {
   bisaDibunyikan, kodeBahasaEbook, kataIndonesia, kalimatTarget, ucapkanEbook,
-  hentikanEbookTts, bukaKunciAudio,
+  hentikanEbookTts, bukaKunciAudio, siapkanEbook,
 } from "@/lib/ebookTts";
 // [ebook-popup-kata-v1]
 import { artiKataEbook, artiTersimpan, type HasilArti } from "@/lib/ebookKata";
@@ -583,6 +583,18 @@ export default function EbookReader({
   const balikRef = useRef(false);
   /** Satu permintaan balik yang datang saat animasi masih jalan — lihat balikKe. */
   const antreBalikRef = useRef<1 | -1 | null>(null);
+  /* [ebook-balik-tanpa-kedip-v1] Bitmap lembar yang sedang dibalik. Disimpan di
+     ref, bukan di state: canvas-nya harus sudah terisi SEBELUM browser
+     menggambar frame pertama animasinya (lihat useLayoutEffect di bawah),
+     sementara state baru sampai ke DOM satu commit kemudian. */
+  const daunRef = useRef<{
+    depan: Bitmap | null;
+    punggung: Bitmap | null;
+    kiri: Bitmap | null;
+    kanan: Bitmap | null;
+  } | null>(null);
+  /** Penutup animasi balik — dipanggil animationend ATAU jam cadangan, sekali saja. */
+  const selesaiBalikRef = useRef<(() => void) | null>(null);
   /** Halaman terkini yang bisa dibaca dari dalam callback tanpa ikut basi. */
   const pageRef = useRef(1);
   pageRef.current = page;
@@ -1043,33 +1055,60 @@ export default function EbookReader({
 
     // Lembar baru dipasang SESUDAH bitmapnya siap: animasi CSS mulai berjalan
     // begitu elemennya muncul, jadi kalau dipasang duluan yang berputar adalah
-    // kertas kosong.
+    // kertas kosong. Bitmapnya dititipkan ke ref supaya useLayoutEffect bisa
+    // mengisinya di commit yang SAMA — versi lama mengisi lewat
+    // requestAnimationFrame, dan satu frame di antaranya terlihat sebagai
+    // kedipan kertas putih kosong tepat saat halaman mulai berputar.
+    daunRef.current = { depan: bmDaun, punggung: bmPunggung, kiri: bmKiriBaru, kanan: bmKananBaru };
     setBalik({ arah, tujuan: baru });
 
-    // Satu frame supaya elemen flipper sudah terpasang sebelum canvasnya diisi.
-    requestAnimationFrame(() => {
-      pasang(depanRef.current, bmDaun);
-      pasang(belakangRef.current, bmPunggung);
-      // Sisi yang TERSINGKAP di balik lembar langsung diisi halaman baru; sisi
-      // yang justru akan tertimpa lembar tetap memakai isi lama sampai selesai.
+    // Penutup animasi. Dipanggil oleh animationend (paling presisi) atau jam
+    // cadangan kalau eventnya tak datang — mis. tab disembunyikan di tengah
+    // jalan. Dijaga sekali pakai lewat selesaiBalikRef.
+    let sudah = false;
+    const selesai = () => {
+      if (sudah) return;
+      sudah = true;
+      selesaiBalikRef.current = null;
+      window.clearTimeout(jamCadangan);
+      // Sisi yang tadi TERTIMPA lembar masih memegang halaman lama. Diisi di
+      // sini — sinkron, sebelum flipper-nya dicabut — karena efek yang biasa
+      // mengisi slot baru berjalan satu frame kemudian: jeda itulah yang dulu
+      // terbaca sebagai kedipan halaman lama sesaat setelah kertas mendarat.
       if (dua) {
-        if (arah > 0) pasang(kananRef.current, bmKananBaru);
-        else pasang(kiriRef.current, bmKiriBaru);
-      } else {
-        pasang(kiriRef.current, bmPunggung);
+        if (arah > 0) pasang(kiriRef.current, bmKiriBaru);
+        else pasang(kananRef.current, bmKananBaru);
       }
-    });
-
-    window.setTimeout(() => {
       balikRef.current = false;
+      daunRef.current = null;
       setBalik(null);
       setPage(halBaru);
       pageRef.current = halBaru;
       const lanjut = antreBalikRef.current;
       antreBalikRef.current = null;
       if (lanjut) requestAnimationFrame(() => balikKeRef.current(lanjut));
-    }, DURASI_BALIK);
+    };
+    selesaiBalikRef.current = selesai;
+    const jamCadangan = window.setTimeout(selesai, DURASI_BALIK + 160);
   }, [total, dua, siapkan, pasang]);
+
+  /* [ebook-balik-tanpa-kedip-v1] Isi canvas lembar yang berputar di commit yang
+     sama dengan pemasangannya. useLayoutEffect jalan SEBELUM browser menggambar,
+     jadi frame pertama animasi sudah berisi kertas bergambar. */
+  useLayoutEffect(() => {
+    const bm = daunRef.current;
+    if (!balik || !bm) return;
+    pasang(depanRef.current, bm.depan);
+    pasang(belakangRef.current, bm.punggung);
+    // Sisi yang TERSINGKAP di balik lembar langsung diisi halaman baru; sisi
+    // yang justru akan tertimpa lembar tetap memakai isi lama sampai selesai.
+    if (dua) {
+      if (balik.arah > 0) pasang(kananRef.current, bm.kanan);
+      else pasang(kiriRef.current, bm.kiri);
+    } else {
+      pasang(kiriRef.current, bm.punggung);
+    }
+  }, [balik, dua, pasang]);
 
   balikKeRef.current = (arah: 1 | -1) => { void balikKe(arah); };
 
@@ -1761,19 +1800,26 @@ export default function EbookReader({
     return () => window.clearTimeout(id);
   }, [daftarBuka, memindai, idxAktif, garisWaktu.length]);
 
-  const onKlikTeks = useCallback(async (e: React.MouseEvent<HTMLDivElement>) => {
-    if (abaikanKlikRef.current) { abaikanKlikRef.current = false; return; }
-    if (!ttsAktif || !kodeBahasa || balik || !ukuran || skalaTampil <= 0) return;
-    bukaKunciAudio(); // masih di dalam gerakan pengguna — lihat catatan di ebookTts
-    const box = e.currentTarget.getBoundingClientRect();
-    if (!box.height || !ph) return;
+  /* [ebook-tts-ketuk-kata-v1] Koordinat ketukan → kata + kalimat yang layak
+     dibunyikan. Dipakai dua kali: waktu jari MENYENTUH halaman (prasiapan
+     audio) dan waktu klik-nya benar-benar jadi. null = tak ada yang perlu
+     diubah di popup, "kosong" = ketukan mendarat di luar teks. */
+  type Ketuk = {
+    unit: string; kalimat: string; terjemahan: boolean;
+    ucap: { hal: number; kata: string; kalimat: string; x: number; y: number; w: number; h: number; terjemahan: boolean };
+  };
+  const resolusiKetuk = useCallback(async (
+    box: DOMRect, clientX: number, clientY: number
+  ): Promise<Ketuk | "kosong" | null> => {
+    if (!ttsAktif || !kodeBahasa || balik || !ukuran || skalaTampil <= 0) return null;
+    if (!box.height || !ph) return null;
     // Kotak buku bisa sedang diskalakan CSS (cubitan belum diraster ulang), jadi
     // ketukan dinormalkan dulu ke ukuran halaman yang sebenarnya. Pembaginya
     // TINGGI, bukan lebar: tinggi tak pernah ikut digencet flex, jadi angkanya
     // sahih walau tata letaknya berubah.
     const tampak = box.height / ph;
-    const fx = (e.clientX - box.left) / tampak;
-    const fy = (e.clientY - box.top) / tampak;
+    const fx = (clientX - box.left) / tampak;
+    const fy = (clientY - box.top) / tampak;
 
     let hal = tampil.kiri ?? tampil.kanan;
     let xh = fx;
@@ -1781,7 +1827,7 @@ export default function EbookReader({
       if (fx > pw + GAP / 2) { hal = tampil.kanan; xh = fx - pw - GAP; }
       else hal = tampil.kiri;
     }
-    if (!hal) return;
+    if (!hal) return null;
 
     const { items, baris } = await ambilTeks(hal);
     const xp = xh / skalaTampil;
@@ -1790,7 +1836,7 @@ export default function EbookReader({
       (it) => xp >= it.x - 1 && xp <= it.x + it.w + 1 && yp >= it.y - 1 && yp <= it.y + it.h + 1
     );
     const kata = kena ? kataDi(kena, xp) : null;
-    if (!kena || !kata) { setUcap(null); return; }
+    if (!kena || !kata) return "kosong";
 
     // Kalimatnya diambil dari BARIS tempat kata itu duduk, bukan dari potongan
     // teksnya — lihat catatan pada tipe Baris.
@@ -1804,26 +1850,64 @@ export default function EbookReader({
     let frasa = sel ? frasaSel(sel.teks, kata.kata) : "";
     // Satu kata Indonesia di dalamnya sudah cukup membatalkan frasa: kolom arti
     // ("senang berkenalan") tak boleh ikut dibunyikan berlogat bahasa target.
-    if (frasa && frasa.split(/[^\p{L}\p{N}'’-]+/u).some((w) => w && kataIndonesia(w, kodeBahasa))) frasa = "";
+    if (frasa && frasa.split(/[^\p{L}\p{N}'’-]+/u).some((w) => w && kataIndonesia(w, kodeBahasa, frasa))) frasa = "";
     const unit = frasa || kata.kata;
     const kotak = frasa && sel
       ? { x: sel.x0, w: Math.max(6, sel.x1 - sel.x0) }
       : { x: kata.x, w: Math.max(6, kata.w) };
-    // Kata bahasa Indonesia (baris terjemahan/penjelasan) tidak dibunyikan:
-    // bahasa Indonesia berlogat Spanyol justru yang paling tidak boleh ditiru
-    // siswa A1. Ketukannya tetap ditandai supaya tak terasa seperti tombol rusak.
-    const terjemahan = kataIndonesia(kata.kata, kodeBahasa);
+    /* Kata bahasa Indonesia (baris terjemahan/penjelasan) tidak dibunyikan dan
+       tidak dicarikan arti: bahasa Indonesia berlogat Spanyol justru yang paling
+       tidak boleh ditiru siswa A1. Ketukannya tetap ditandai supaya tak terasa
+       seperti tombol rusak.
+
+       [ebook-jaga-bahasa-id-v2] Konteksnya SEL dulu, barisnya belakangan: di
+       tabel kosakata, sel adalah satu kolom penuh ("Januari"), sementara di
+       paragraf penjelasan sel = barisnya sendiri. Kata yang tak bisa dipastikan
+       dari dirinya sendiri ("lengkap") diputuskan dari klausa tempat ia duduk —
+       lihat kataIndonesia di lib/ebookTts. */
+    const konteks = sel?.teks || barisKena?.teks || kena.str;
+    const terjemahan = kataIndonesia(kata.kata, kodeBahasa, konteks);
     const kiriSlot = dua && hal === tampil.kanan ? pw + GAP : 0;
-    setUcap({
-      hal,
-      kata: unit,
+    return {
+      unit,
       kalimat,
-      x: kiriSlot + kotak.x * skalaTampil,
-      y: kena.y * skalaTampil,
-      w: kotak.w * skalaTampil,
-      h: kena.h * skalaTampil,
       terjemahan,
+      ucap: {
+        hal,
+        kata: unit,
+        kalimat,
+        x: kiriSlot + kotak.x * skalaTampil,
+        y: kena.y * skalaTampil,
+        w: kotak.w * skalaTampil,
+        h: kena.h * skalaTampil,
+        terjemahan,
+      },
+    };
+  }, [ttsAktif, kodeBahasa, balik, ukuran, skalaTampil, ph, pw, dua, tampil, ambilTeks, kataDi]);
+
+  /* [tts-prasiap-v1] Jari menyentuh halaman → audionya sudah mulai disiapkan,
+     jauh sebelum `click` menyala (di ponsel jaraknya ratusan milidetik). Cuma
+     mengambil yang sudah ada di cache bersama; sentuhan yang ternyata cuma
+     geseran halaman tak boleh menagih sintesis baru. */
+  const onSentuhTeks = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
+    if (!ttsAktif || !kodeBahasa) return;
+    const box = e.currentTarget.getBoundingClientRect();
+    const { clientX, clientY } = e;
+    void resolusiKetuk(box, clientX, clientY).then((r) => {
+      if (!r || r === "kosong" || r.terjemahan) return;
+      siapkanEbook(r.unit, kodeBahasa);
     });
+  }, [ttsAktif, kodeBahasa, resolusiKetuk]);
+
+  const onKlikTeks = useCallback(async (e: React.MouseEvent<HTMLDivElement>) => {
+    if (abaikanKlikRef.current) { abaikanKlikRef.current = false; return; }
+    if (!ttsAktif || !kodeBahasa) return;
+    bukaKunciAudio(); // masih di dalam gerakan pengguna — lihat catatan di ebookTts
+    const r = await resolusiKetuk(e.currentTarget.getBoundingClientRect(), e.clientX, e.clientY);
+    if (!r) return;
+    if (r === "kosong") { setUcap(null); return; }
+    const { unit, kalimat, terjemahan } = r;
+    setUcap(r.ucap);
     if (terjemahan) { setArti(undefined); return; }
 
     // Arti & bunyi jalan BARENGAN: suara adalah alasan utama fitur ini ada, dan
@@ -1838,7 +1922,7 @@ export default function EbookReader({
     setBunyi("kata");
     await ucapkanEbook(unit, kodeBahasa);
     setBunyi(null);
-  }, [ttsAktif, kodeBahasa, balik, ukuran, skalaTampil, lebarBuku, ph, pw, dua, tampil, ambilTeks, kataDi]);
+  }, [ttsAktif, kodeBahasa, resolusiKetuk]);
 
   const ucapkanLagi = useCallback(async (teks: string, jenis: "kata" | "kalimat") => {
     if (!kodeBahasa) return;
@@ -2020,6 +2104,7 @@ export default function EbookReader({
               cursor: ttsAktif ? "pointer" : undefined,
             }}
             onContextMenu={(e) => e.preventDefault()}
+            onPointerDown={onSentuhTeks}
             onClick={(e) => void onKlikTeks(e)}
           >
             {/* Menu klik-kanan dimatikan: "Simpan gambar" di atas canvas adalah
@@ -2055,7 +2140,20 @@ export default function EbookReader({
             {/* lembar yang sedang dibalik */}
             {balik && (
               <div
+                /* key ikut tujuan: kalau siswa menahan panah, lembar berikutnya
+                   memasang elemen BARU — elemen yang dipakai ulang tidak
+                   mengulang animasinya dan halamannya terlihat lompat. */
+                key={`daun-${balik.arah}-${balik.tujuan.kiri ?? 0}-${balik.tujuan.kanan ?? 0}`}
                 className={`ebook-flipper ${balik.arah > 0 ? "maju" : "mundur"}`}
+                /* Animasinya sendiri yang mengabari kapan kertas mendarat.
+                   Jam setTimeout selalu meleset beberapa frame dari animasi CSS
+                   — kalau kecepetan, lembarnya dicabut sebelum rebah dan itu
+                   yang terlihat sebagai kedipan di ujung balikan. */
+                onAnimationEnd={(e) => {
+                  if (e.target !== e.currentTarget) return;
+                  if (!e.animationName.startsWith("ebook-ma") && !e.animationName.startsWith("ebook-mu")) return;
+                  selesaiBalikRef.current?.();
+                }}
                 style={{
                   left: dua && balik.arah > 0 ? pw + GAP : 0,
                   width: pw,
@@ -2634,11 +2732,21 @@ export default function EbookReader({
         .ebook-hal {
           display: block;
           box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.55);
+          /* Sudut piksel canvas kadang jatuh di tengah piksel layar waktu zoom
+             bukan kelipatan bulat; backface-visibility memaksa penggambaran
+             lewat lapisan sendiri sehingga tepinya tidak bergetar. */
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
         }
         .ebook-flipper {
           position: absolute;
           top: 0;
           transform-style: preserve-3d;
+          -webkit-transform-style: preserve-3d;
+          /* Sudut awal ditulis eksplisit: tanpa transform di keadaan diam,
+             WebKit baru membangun lapisan 3D-nya pada frame pertama animasi —
+             frame itulah yang berkedip di Safari/iPad. */
+          transform: rotateY(0deg);
           animation-timing-function: cubic-bezier(0.42, 0.02, 0.32, 1);
           animation-fill-mode: forwards;
           will-change: transform;
@@ -2651,8 +2759,16 @@ export default function EbookReader({
           inset: 0;
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden;
+          /* Tiap muka dipromosikan jadi lapisannya sendiri. Tanpa ini isi
+             canvas-nya diraster ulang tiap frame dan di layar besar putarannya
+             patah-patah. */
+          will-change: transform;
         }
-        .ebook-punggung { transform: rotateY(180deg); }
+        /* translateZ kecil, bukan 0: dua muka yang duduk di kedalaman persis
+           sama bikin WebKit ragu mana yang di depan — kertasnya berkelip
+           bergantian tepat di tengah putaran. */
+        .ebook-muka:not(.ebook-punggung) { transform: translateZ(0.4px); }
+        .ebook-punggung { transform: rotateY(180deg) translateZ(0.4px); }
         /* Bayangan yang menyapu permukaan kertas saat sudutnya berubah —
            tanpa ini putarannya terlihat seperti gambar yang diputar. */
         .ebook-bayang {
