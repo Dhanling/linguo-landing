@@ -11,6 +11,7 @@ import {
   Hourglass, CalendarDays, CalendarCheck, Lightbulb, Wallet,
   Target, AlertTriangle, Check, ClipboardList, GraduationCap,
   Trophy, BarChart3, FileText, Globe,
+  ArrowUpDown, ArrowUp, ArrowDown,
 } from "lucide-react";
 import { resolveFlag } from "@blade-flags/core";
 import { defaultFlags } from "@blade-flags/core/flags/default";
@@ -153,6 +154,42 @@ const NEXT_BATCH = {
   startNote: "Jadwal & tanggal pendaftaran siklus berikutnya via WhatsApp",
 };
 
+// Kolom tabel Reguler yang bisa diurutkan. Arah default per kolom dipilih dari
+// pertanyaan yang paling sering muncul ("yang mulai paling awal mana?", "yang
+// slotnya masih banyak mana?") supaya sekali klik langsung memberi jawabannya —
+// klik kedua di kolom yang sama membalik arahnya.
+type SortKey = "language" | "start" | "sessions" | "price" | "slots";
+type SortDir = "asc" | "desc";
+type SortState = { key: SortKey; dir: SortDir };
+
+const SORT_LABELS: Record<SortKey, string> = {
+  language: "bahasa",
+  start: "tanggal mulai",
+  sessions: "total sesi",
+  price: "harga",
+  slots: "slot tersisa",
+};
+
+const SORT_DEFAULT_DIR: Record<SortKey, SortDir> = {
+  language: "asc",
+  start: "asc",   // paling awal mulai
+  sessions: "desc",
+  price: "asc",   // termurah
+  slots: "desc",  // slot tersisa terbanyak
+};
+
+// Pilihan urutan versi ponsel (tak ada judul kolom buat diklik di tampilan kartu).
+const SORT_OPTIONS: { value: string; label: string }[] = [
+  { value: "default", label: "Rekomendasi" },
+  { value: "start:asc", label: "Mulai paling awal" },
+  { value: "start:desc", label: "Mulai paling akhir" },
+  { value: "slots:desc", label: "Slot tersisa terbanyak" },
+  { value: "slots:asc", label: "Slot tersisa paling sedikit" },
+  { value: "price:asc", label: "Harga termurah" },
+  { value: "price:desc", label: "Harga termahal" },
+  { value: "language:asc", label: "Bahasa A–Z" },
+];
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Helpers
 // ─────────────────────────────────────────────────────────────────────────────
@@ -215,6 +252,54 @@ function isBatchClosed(batch: Batch): boolean {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   return start.getTime() < today.getTime();
+}
+
+function sortValue(batch: Batch, key: SortKey): number | string {
+  switch (key) {
+    case "language": return batch.language || "";
+    case "start": return new Date(batch.start_date).getTime();
+    case "sessions": return Number(batch.total_sessions) || 0;
+    case "price": return Number(batch.current_price_per_student || batch.price_regular) || 0;
+    case "slots": return (batch.max_capacity || 0) - (batch.actual_enrolled || 0);
+  }
+}
+
+// Judul kolom yang bisa diklik buat mengurutkan. Panah abu = kolom ini belum
+// dipakai; panah teal = kolom yang sedang menentukan urutan + arahnya.
+function SortableTh({
+  label, sortKey, align = "left", sort, onSort,
+}: {
+  label: string;
+  sortKey: SortKey;
+  align?: "left" | "right" | "center";
+  sort: SortState | null;
+  onSort: (key: SortKey) => void;
+}) {
+  const active = sort?.key === sortKey;
+  const Icon = !active ? ArrowUpDown : sort!.dir === "asc" ? ArrowUp : ArrowDown;
+  const alignCls = align === "right" ? "text-right" : align === "center" ? "text-center" : "text-left";
+  return (
+    <th
+      aria-sort={active ? (sort!.dir === "asc" ? "ascending" : "descending") : "none"}
+      className={`${alignCls} py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]`}
+    >
+      <button
+        type="button"
+        onClick={() => onSort(sortKey)}
+        title={`Urutkan menurut ${label.toLowerCase()}`}
+        className={`group inline-flex items-center gap-1.5 transition-colors ${
+          active ? "text-teal-700" : "hover:text-teal-700"
+        }`}
+      >
+        {label}
+        <Icon
+          className={`h-3.5 w-3.5 ${
+            active ? "text-teal-600" : "text-slate-400 group-hover:text-teal-500"
+          }`}
+        />
+      </button>
+    </th>
+  );
 }
 
 function buildNextBatchWALink(): string {
@@ -304,6 +389,8 @@ export default function JadwalKelasRegulerClient({
   );
   const [search, setSearch] = useState("");
   const [selectedLang, setSelectedLang] = useState<string>("all");
+  // null = urutan bawaan (rekomendasi): slot terbanyak dulu, lalu A–Z.
+  const [sort, setSort] = useState<SortState | null>(null);
   const [countdown, setCountdown] = useState("");
   const [etpCountdown, setEtpCountdown] = useState("");
   const [openSyllabus, setOpenSyllabus] = useState<Record<string, boolean>>({});
@@ -404,16 +491,42 @@ export default function JadwalKelasRegulerClient({
         return matchesSearch && matchesLang;
       })
       .sort((a, b) => {
-        // Batch yang pendaftarannya ditutup selalu turun ke bawah daftar
+        // Batch yang pendaftarannya ditutup selalu turun ke bawah daftar,
+        // apa pun kolom yang dipakai mengurutkan — yang tak bisa didaftar
+        // jangan sampai menduduki baris teratas.
         const closedA = isBatchClosed(a) ? 1 : 0;
         const closedB = isBatchClosed(b) ? 1 : 0;
         if (closedA !== closedB) return closedA - closedB;
+
+        if (sort) {
+          const va = sortValue(a, sort.key);
+          const vb = sortValue(b, sort.key);
+          let cmp =
+            typeof va === "string" || typeof vb === "string"
+              ? String(va).localeCompare(String(vb), "id")
+              : (va as number) - (vb as number);
+          if (sort.dir === "desc") cmp = -cmp;
+          // Nilai kembar (mis. harga sama semua) dirapikan alfabetis biar
+          // urutannya tidak acak tiap render.
+          if (cmp !== 0) return cmp;
+          return a.language.localeCompare(b.language, "id");
+        }
+
         const slotsA = a.max_capacity - a.actual_enrolled;
         const slotsB = b.max_capacity - b.actual_enrolled;
         if (slotsB !== slotsA) return slotsB - slotsA; // slot terbanyak dulu
         return a.language.localeCompare(b.language, "id"); // alphabetical
       });
-  }, [batches, search, selectedLang]);
+  }, [batches, search, selectedLang, sort]);
+
+  // Klik judul kolom: kolom baru → pakai arah default kolom itu, kolom yang
+  // sedang aktif → balik arah.
+  const toggleSort = (key: SortKey) =>
+    setSort((cur) =>
+      cur?.key === key
+        ? { key, dir: cur.dir === "asc" ? "desc" : "asc" }
+        : { key, dir: SORT_DEFAULT_DIR[key] }
+    );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-teal-50/20 to-white">
@@ -621,6 +734,62 @@ export default function JadwalKelasRegulerClient({
                     </button>
                   ))}
                 </div>
+
+                {/* Pengurut. Di layar lebar judul kolom tabel sudah bisa diklik,
+                    jadi di sini cukup penunjuk + tombol balik ke urutan bawaan.
+                    Di ponsel tabelnya berubah jadi kartu (tak ada judul kolom),
+                    makanya disediakan dropdown berisi urutan yang sama. */}
+                <div className="flex items-center justify-between gap-3">
+                  <label className="md:hidden flex items-center gap-2 text-sm text-slate-600 w-full">
+                    <ArrowUpDown className="h-4 w-4 shrink-0 text-slate-400" />
+                    <span className="shrink-0">Urutkan</span>
+                    <select
+                      value={sort ? `${sort.key}:${sort.dir}` : "default"}
+                      onChange={(e) => {
+                        const v = e.target.value;
+                        if (v === "default") return setSort(null);
+                        const [key, dir] = v.split(":");
+                        setSort({ key: key as SortKey, dir: dir as SortDir });
+                      }}
+                      className="flex-1 h-10 px-3 rounded-xl border border-slate-200 bg-white text-sm font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    >
+                      {SORT_OPTIONS.map((o) => (
+                        <option key={o.value} value={o.value}>{o.label}</option>
+                      ))}
+                      {/* Kombinasi yang cuma bisa lahir dari klik judul kolom di
+                          layar lebar (mis. total sesi) — tanpa ini, dropdownnya
+                          kosong melompong waktu jendela dikecilkan. */}
+                      {sort && !SORT_OPTIONS.some((o) => o.value === `${sort.key}:${sort.dir}`) && (
+                        <option value={`${sort.key}:${sort.dir}`}>
+                          {SORT_LABELS[sort.key]} {sort.dir === "asc" ? "↑" : "↓"}
+                        </option>
+                      )}
+                    </select>
+                  </label>
+
+                  <div className="hidden md:flex items-center gap-2 text-xs text-slate-500">
+                    <ArrowUpDown className="h-3.5 w-3.5 text-slate-400" />
+                    {sort ? (
+                      <>
+                        <span>
+                          Diurutkan menurut{" "}
+                          <span className="font-semibold text-teal-700">
+                            {SORT_LABELS[sort.key]} {sort.dir === "asc" ? "↑" : "↓"}
+                          </span>
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => setSort(null)}
+                          className="underline underline-offset-2 hover:text-teal-700"
+                        >
+                          urutan bawaan
+                        </button>
+                      </>
+                    ) : (
+                      <span>Klik judul kolom (Mulai, Slot, Harga) untuk mengurutkan</span>
+                    )}
+                  </div>
+                </div>
               </div>
             </section>
 
@@ -648,13 +817,13 @@ export default function JadwalKelasRegulerClient({
                     <table className="w-full text-sm">
                       <thead className="sticky top-0 z-10 bg-slate-50">
                         <tr>
-                          <th className="text-left py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Bahasa</th>
+                          <SortableTh label="Bahasa" sortKey="language" sort={sort} onSort={toggleSort} />
                           <th className="text-left py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Level</th>
                           <th className="text-left py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Jadwal</th>
-                          <th className="text-left py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Mulai</th>
-                          <th className="text-left py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Total Sesi</th>
-                          <th className="text-right py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Harga</th>
-                          <th className="text-center py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Slot</th>
+                          <SortableTh label="Mulai" sortKey="start" sort={sort} onSort={toggleSort} />
+                          <SortableTh label="Total Sesi" sortKey="sessions" sort={sort} onSort={toggleSort} />
+                          <SortableTh label="Harga" sortKey="price" align="right" sort={sort} onSort={toggleSort} />
+                          <SortableTh label="Slot" sortKey="slots" align="center" sort={sort} onSort={toggleSort} />
                           <th className="text-right py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Aksi</th>
                         </tr>
                       </thead>
