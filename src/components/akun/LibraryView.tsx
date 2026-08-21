@@ -13,7 +13,7 @@ import {
   Film, BookOpen, Bookmark, BookmarkCheck, Play, Search, LayoutGrid, List,
   Infinity as InfinityIcon, CalendarClock, Clock, ChevronRight,
   Flame, Loader2, ShoppingBag, GraduationCap, ExternalLink, X, Check, CreditCard, Sparkles,
-  Lock, Ticket,
+  Lock, Ticket, ShoppingCart, Trash2, Plus,
 } from "lucide-react";
 import {
   externalLinkFor, isStoragePath, accessVerb, isPlaceholderLink,
@@ -38,6 +38,11 @@ import EbookReader, { prewarmEbookReader, prewarmEbookModul, mintaLayarPenuh } f
 import { ELEARNING_BUNDLE_SLUG } from "@/lib/elearningBundle";
 // [pustaka-popup-blocked-v1] tab bayar dibuka di dalam gestur klik, bukan sesudah fetch
 import { siapkanTabPembayaran } from "@/lib/bukaTabPembayaran";
+// [pustaka-keranjang-v1] beli beberapa produk sekaligus → satu invoice
+import {
+  useKeranjang, tambahKeKeranjang, hapusDariKeranjang, kosongkanKeranjang,
+  sinkronkanKeranjang, type ItemKeranjang,
+} from "@/lib/keranjangPustaka";
 
 /* ---------------- types ---------------- */
 type ProductType = "elearning" | "ebook";
@@ -414,6 +419,31 @@ async function loadKatalog(supabase: SupabaseClient): Promise<CatalogItem[]> {
   return katalogInflight;
 }
 
+/**
+ * [pustaka-keranjang-v1] Tier yang dipilihkan lebih dulu. Sengaja SAMA persis
+ * dengan default popup Beli (tengah kalau ada 3 — paket "populer"), supaya
+ * harga di kartu, di keranjang, dan di popup tidak pernah berbeda-beda.
+ */
+function tierDefault(pricing: RenewTier[]): RenewTier | null {
+  if (pricing.length === 0) return null;
+  return pricing.length >= 3 ? pricing[1] : pricing[0];
+}
+
+/** [pustaka-keranjang-v1] CatalogItem + tier terpilih → baris keranjang. */
+function keItemKeranjang(item: CatalogItem, tier: RenewTier): ItemKeranjang {
+  return {
+    productId: item.id,
+    pricingId: tier.id,
+    title: item.title,
+    type: item.type,
+    price: tier.price,
+    tierLabel: tier.display_label,
+    durationDays: tier.duration_days,
+    language: item.language,
+    coverUrl: item.cover_url,
+  };
+}
+
 /** Harga termurah produk katalog (null = belum ada tier aktif → belum bisa dibeli). */
 function hargaMulai(item: CatalogItem): number | null {
   if (item.pricing.length === 0) return null;
@@ -465,6 +495,11 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
   // [pustaka-katalog-terkunci-v1] katalog produk lain + popup beli
   const [katalog, setKatalog] = useState<CatalogItem[]>(katalogCache ?? []);
   const [buyFor, setBuyFor] = useState<CatalogItem | null>(null);
+  // [pustaka-keranjang-v1] keranjang belanja + popupnya. Mode pratinjau staf
+  // memakai kunci kosong supaya keranjang siswa asli tak pernah tersentuh.
+  const kunciKeranjang = preview ? "" : userId;
+  const { items: keranjang, total: totalKeranjang } = useKeranjang(kunciKeranjang);
+  const [bukaKeranjang, setBukaKeranjang] = useState(false);
   /* linguo-patch:produk-digital-link-v1 */
   const [playing, setPlaying] = useState<PlayerTarget | null>(null);
   /* produk-digital-per-bahasa-v1 — link materi per bahasa (paket 12+ bahasa) */
@@ -494,6 +529,14 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
 
   /* fetch */
   useEffect(() => { fetchAll(); /* eslint-disable-next-line */ }, [userId, previewStudentId]);
+
+  /* [pustaka-keranjang-v1] Produk yang sudah lunas rontok dari keranjang. Tanpa
+     ini, sepulang dari Xendit barang yang baru dibayar masih nangkring di sana
+     dan terbaca seolah pembayarannya gagal. */
+  useEffect(() => {
+    if (!kunciKeranjang || purchases.length === 0) return;
+    sinkronkanKeranjang(kunciKeranjang, new Set(purchases.map((p) => p.digital_products.id)));
+  }, [purchases, kunciKeranjang]);
 
   /* [pustaka-katalog-terkunci-v1] katalog produk aktif — dimuat terpisah dari
      pembelian supaya kegagalannya tak menjatuhkan isi perpustakaan. Baris bahasa
@@ -558,6 +601,20 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
     setByLang(data.byLang);
     setProdLangs((prev) => ({ ...prev, ...data.prodLangs }));
     setLoading(false);
+  }
+
+  /* [pustaka-keranjang-v1] tambah/keluarkan produk katalog dari keranjang */
+  function toggleKeranjang(item: CatalogItem) {
+    if (preview) { toast("Mode pratinjau — hanya tampilan."); return; }
+    if (keranjang.some((x) => x.productId === item.id)) {
+      hapusDariKeranjang(kunciKeranjang, item.id);
+      toast(`${judulRingkas(item.title)} dikeluarkan dari keranjang`);
+      return;
+    }
+    const tier = tierDefault(item.pricing);
+    if (!tier) { toast.error("Produk ini belum punya paket harga."); return; }
+    tambahKeKeranjang(kunciKeranjang, keItemKeranjang(item, tier));
+    toast.success(`${judulRingkas(item.title)} masuk keranjang`);
   }
 
   /* [produk-digital-per-bahasa-v1] buka satu bahasa dari paket */
@@ -1014,10 +1071,50 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
                 /* [materi-belum-siap-v1] jangan jual yang materinya belum dipasang */
                 ready={materialReady(k, prodLangs[k.id])}
                 onBuy={() => (preview ? toast("Mode pratinjau — hanya tampilan.") : setBuyFor(k))}
+                diKeranjang={keranjang.some((x) => x.productId === k.id)}
+                onKeranjang={() => toggleKeranjang(k)}
               />
             ))}
           </div>
         </section>
+      )}
+
+      {/* [pustaka-keranjang-v1] Bilah keranjang — melayang di bawah supaya tetap
+          terlihat sambil menggulir katalog. Disembunyikan saat popupnya terbuka
+          biar tak bertumpuk dengan tombol Bayar di dalamnya. */}
+      {keranjang.length > 0 && !bukaKeranjang && !preview && (
+        <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[60] flex justify-center px-4 pb-[calc(env(safe-area-inset-bottom)+16px)] sm:pb-6">
+          <button
+            onClick={() => setBukaKeranjang(true)}
+            className="pointer-events-auto flex w-full max-w-md items-center gap-3 rounded-2xl bg-[#12172B] px-4 py-3 text-white shadow-2xl transition hover:bg-[#1c2340] active:scale-[0.99]"
+          >
+            <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/15">
+              <ShoppingCart className="h-[18px] w-[18px]" strokeWidth={2.4} />
+              <span className="absolute -right-1.5 -top-1.5 flex h-5 min-w-[20px] items-center justify-center rounded-full bg-[#12A37E] px-1 text-[11px] font-extrabold">
+                {keranjang.length}
+              </span>
+            </span>
+            <span className="min-w-0 flex-1 text-left">
+              <span className="block text-[13.5px] font-bold leading-tight">
+                {keranjang.length} produk di keranjang
+              </span>
+              <span className="block text-[12px] font-medium text-white/60">Bayar sekali untuk semuanya</span>
+            </span>
+            <span className="shrink-0 text-[15px] font-extrabold">{fmtRupiah(totalKeranjang)}</span>
+            <ChevronRight className="h-5 w-5 shrink-0 text-white/70" strokeWidth={2.4} />
+          </button>
+        </div>
+      )}
+
+      {/* [pustaka-keranjang-v1] popup rincian + checkout satu invoice */}
+      {bukaKeranjang && (
+        <CartModal
+          items={keranjang}
+          supabase={supabase}
+          onClose={() => setBukaKeranjang(false)}
+          onHapus={(id) => hapusDariKeranjang(kunciKeranjang, id)}
+          onKosongkan={() => kosongkanKeranjang(kunciKeranjang)}
+        />
       )}
 
       {/* [perpanjang-inplace-v1] popup perpanjang akses */}
@@ -1034,6 +1131,11 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
           /* [pustaka-promo-kode-v1] cache modul dibuang dulu — tanpa itu kartu
              hasil klaim baru muncul sesudah halaman dimuat ulang. */
           onClaimed={() => { libCache = null; fetchAll(); }}
+          diKeranjang={keranjang.some((x) => x.productId === buyFor.id)}
+          onKeranjang={(tier) => {
+            tambahKeKeranjang(kunciKeranjang, keItemKeranjang(buyFor, tier));
+            toast.success(`${judulRingkas(buyFor.title)} masuk keranjang`);
+          }}
         />
       )}
 
@@ -1479,9 +1581,11 @@ function RenewModal({
 // yang materinya belum dipasang admin TIDAK bisa dibeli — menjual dulu lalu
 // menyuruh siswa menunggu berkasnya itu cara tercepat bikin permintaan refund.
 function LockedCard({
-  item, ready, onBuy,
+  item, ready, onBuy, diKeranjang, onKeranjang,
 }: {
   item: CatalogItem; ready: boolean; onBuy: () => void;
+  /* [pustaka-keranjang-v1] */
+  diKeranjang: boolean; onKeranjang: () => void;
 }) {
   const mulai = hargaMulai(item);
   const bisaBeli = ready && mulai !== null;
@@ -1559,6 +1663,188 @@ function LockedCard({
             {bisaBeli ? <><ShoppingBag className="h-4 w-4" strokeWidth={2.4} /> Beli</> : <><Clock className="h-4 w-4" strokeWidth={2.4} /> Segera hadir</>}
           </button>
         </div>
+
+        {/* [pustaka-keranjang-v1] Jalur kedua: kumpulkan dulu, bayar sekalian.
+            Ditaruh sebagai tombol lebar di bawah harga — bukan ikon kecil di
+            pojok sampul — supaya di layar HP tetap kena jari dan jelas apa
+            bedanya dengan "Beli" (yang langsung ke halaman pembayaran). */}
+        {bisaBeli && (
+          <button
+            onClick={onKeranjang}
+            className={`mt-2.5 inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-xl text-[12.5px] font-bold transition active:scale-[0.99] ${
+              diKeranjang
+                ? "bg-[#12A37E]/10 text-[#0C8163] ring-1 ring-[#12A37E]/40 hover:bg-[#12A37E]/15"
+                : "bg-slate-100 text-slate-700 ring-1 ring-slate-200 hover:bg-slate-200"
+            }`}
+          >
+            {diKeranjang
+              ? <><Check className="h-4 w-4" strokeWidth={3} /> Di keranjang</>
+              : <><Plus className="h-4 w-4" strokeWidth={2.6} /> Keranjang</>}
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// [pustaka-keranjang-v1] Popup keranjang: rincian belanja + checkout SATU invoice.
+//
+// Bedanya dengan BuyModal: ini tidak memanggil edge fn xendit-create-digital-invoice
+// (yang satu-invoice-satu-produk), melainkan /api/create-cart-invoice di repo ini
+// yang menulis N baris digital_purchases untuk satu invoice. Harga di layar cuma
+// tampilan — yang ditagih adalah hitungan ulang server dari digital_product_pricing.
+function CartModal({
+  items, supabase, onClose, onHapus, onKosongkan,
+}: {
+  items: ItemKeranjang[];
+  supabase: SupabaseClient;
+  onClose: () => void;
+  onHapus: (productId: string) => void;
+  onKosongkan: () => void;
+}) {
+  const [submitting, setSubmitting] = useState(false);
+  const total = items.reduce((n, x) => n + (Number(x.price) || 0), 0);
+
+  // Keranjang yang dikosongkan dari dalam popup tak menyisakan apa pun untuk
+  // dilihat — tutup sendiri daripada memamerkan layar kosong.
+  useEffect(() => { if (items.length === 0) onClose(); }, [items.length, onClose]);
+
+  async function bayar() {
+    if (items.length === 0) return;
+    // [pustaka-popup-blocked-v1] tab dibuka SEKARANG, selagi gestur klik hidup
+    const tabBayar = siapkanTabPembayaran();
+    setSubmitting(true);
+    try {
+      const { data: sesi } = await supabase.auth.getSession();
+      const token = sesi?.session?.access_token ?? "";
+      if (!token) throw new Error("Sesi tidak terbaca — coba muat ulang halaman.");
+
+      const refCookie = typeof document !== "undefined"
+        ? (("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0] ?? null)
+        : null;
+
+      const res = await fetch("/api/create-cart-invoice", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          accessToken: token,
+          referral_code: refCookie,
+          items: items.map((x) => ({ productId: x.productId, pricingId: x.pricingId })),
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data?.invoice_url) throw new Error(data?.error ?? "Gagal membuat invoice");
+
+      // Item yang gugur di server (sudah dimiliki / materi belum siap) dikatakan
+      // apa adanya — tagihannya memang lebih kecil dari yang terlihat di layar.
+      if (Array.isArray(data.ditolak) && data.ditolak.length > 0) {
+        toast(`Tidak semua ikut ditagih: ${data.ditolak.join("; ")}.`);
+      }
+
+      const tabBaru = tabBayar.arahkan(data.invoice_url);
+      if (tabBaru) {
+        toast.success(`Halaman pembayaran dibuka — ${data.jumlah} produk. Akses terbuka otomatis setelah lunas.`);
+      }
+      // Keranjang SENGAJA tidak dikosongkan di sini: invoice belum tentu dibayar.
+      // Yang membersihkannya adalah sinkronkanKeranjang() begitu barisnya lunas.
+      onClose();
+    } catch (err) {
+      tabBayar.batal();
+      toast.error(err instanceof Error ? err.message : "Terjadi kesalahan.");
+      setSubmitting(false);
+    }
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-end justify-center bg-black/50 p-0 backdrop-blur-sm sm:items-center sm:p-4"
+      onClick={onClose}
+    >
+      <div
+        className="flex max-h-[92vh] w-full max-w-md flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl sm:rounded-3xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* header */}
+        <div className="flex items-start justify-between gap-3 border-b border-slate-100 px-5 py-4">
+          <div className="min-w-0">
+            <h3 className="flex items-center gap-2 text-[17px] font-extrabold text-[#12172B]">
+              <ShoppingCart className="h-[18px] w-[18px] text-[#12A37E]" strokeWidth={2.4} />
+              Keranjang
+            </h3>
+            <p className="mt-0.5 text-[13px] font-medium text-slate-500">
+              {items.length} produk · satu kali pembayaran
+            </p>
+          </div>
+          <button onClick={onClose} className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition hover:bg-slate-200">
+            <X className="h-5 w-5" strokeWidth={2.2} />
+          </button>
+        </div>
+
+        {/* daftar */}
+        <div className="flex-1 overflow-y-auto px-5 py-4">
+          <ul className="space-y-2.5">
+            {items.map((x) => (
+              <li key={x.productId} className="flex items-center gap-3 rounded-2xl border border-slate-200 p-3">
+                <span
+                  className="h-11 w-11 shrink-0 overflow-hidden rounded-xl bg-slate-100"
+                  style={{ background: gradFor(x.productId) }}
+                >
+                  {(x.coverUrl || getLangPhoto(x.language)) && (
+                    /* eslint-disable-next-line @next/next/no-img-element */
+                    <img
+                      src={x.coverUrl || getLangPhoto(x.language) || ""}
+                      alt=""
+                      className="h-full w-full object-cover"
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+                    />
+                  )}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p title={x.title} className="truncate text-[13.5px] font-extrabold text-[#12172B]">
+                    {judulRingkas(x.title)}
+                  </p>
+                  <p className="mt-0.5 truncate text-[11.5px] font-semibold text-slate-500">
+                    {[x.type === "ebook" ? "E-Book" : "E-Learning", x.tierLabel].filter(Boolean).join(" · ")}
+                  </p>
+                </div>
+                <span className="shrink-0 text-[13.5px] font-extrabold text-[#12172B]">{fmtRupiah(x.price)}</span>
+                <button
+                  onClick={() => onHapus(x.productId)}
+                  aria-label={`Hapus ${x.title} dari keranjang`}
+                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-slate-400 transition hover:bg-rose-50 hover:text-rose-600"
+                >
+                  <Trash2 className="h-4 w-4" strokeWidth={2.2} />
+                </button>
+              </li>
+            ))}
+          </ul>
+
+          <button
+            onClick={onKosongkan}
+            className="mt-3 text-[12px] font-bold text-slate-400 underline-offset-2 transition hover:text-rose-600 hover:underline"
+          >
+            Kosongkan keranjang
+          </button>
+        </div>
+
+        {/* footer */}
+        <div className="border-t border-slate-100 px-5 py-4">
+          <div className="mb-3 flex items-center justify-between">
+            <span className="text-[13px] font-bold text-slate-500">Total</span>
+            <span className="text-[19px] font-extrabold text-[#12172B]">{fmtRupiah(total)}</span>
+          </div>
+          <button
+            onClick={bayar}
+            disabled={submitting || items.length === 0}
+            className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[#12A37E] text-[15px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.99] disabled:opacity-50"
+          >
+            {submitting ? <Loader2 className="h-5 w-5 animate-spin" /> : <CreditCard className="h-5 w-5" strokeWidth={2.2} />}
+            {submitting ? "Menyiapkan…" : `Bayar ${fmtRupiah(total)}`}
+          </button>
+          <p className="mt-2.5 text-center text-[11px] font-medium text-slate-400">
+            Pembayaran aman via Xendit · semua produk terbuka otomatis setelah lunas
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -1568,11 +1854,13 @@ function LockedCard({
 // xendit-create-digital-invoice yang sama, invoice dibuka di tab baru), bedanya
 // tier harganya sudah ikut terbawa dari katalog jadi tak perlu query lagi.
 function BuyModal({
-  item, supabase, onClose, onClaimed,
+  item, supabase, onClose, onClaimed, diKeranjang, onKeranjang,
 }: {
   item: CatalogItem; supabase: SupabaseClient; onClose: () => void;
   /** [pustaka-promo-kode-v1] dipanggil sesudah akses promo terbit → pustaka dimuat ulang */
   onClaimed: () => void;
+  /* [pustaka-keranjang-v1] tier yang sedang dipilih ikut dibawa ke keranjang */
+  diKeranjang: boolean; onKeranjang: (tier: RenewTier) => void;
 }) {
   const tiers = item.pricing;
   const [selectedId, setSelectedId] = useState<string | null>(
@@ -1815,6 +2103,25 @@ function BuyModal({
               >
                 {submitting ? <Loader2 className="h-5 w-5 animate-spin" /> : <CreditCard className="h-5 w-5" strokeWidth={2.2} />}
                 {submitting ? "Menyiapkan…" : selected ? `Bayar ${fmtRupiah(selected.price)}` : "Pilih paket"}
+              </button>
+            )}
+
+            {/* [pustaka-keranjang-v1] Alternatif "bayar sekarang": simpan paket
+                yang dipilih lalu lanjut belanja. Disembunyikan saat kode promo
+                aktif — klaim gratis tak lewat keranjang sama sekali. */}
+            {!promo && selected && (
+              <button
+                onClick={() => { onKeranjang(selected); onClose(); }}
+                disabled={submitting}
+                className={`mt-2.5 inline-flex h-11 w-full items-center justify-center gap-2 rounded-2xl text-[14px] font-bold transition active:scale-[0.99] disabled:opacity-50 ${
+                  diKeranjang
+                    ? "bg-[#12A37E]/10 text-[#0C8163] ring-1 ring-[#12A37E]/40 hover:bg-[#12A37E]/15"
+                    : "bg-slate-100 text-slate-700 ring-1 ring-slate-200 hover:bg-slate-200"
+                }`}
+              >
+                {diKeranjang
+                  ? <><Check className="h-[18px] w-[18px]" strokeWidth={3} /> Perbarui keranjang</>
+                  : <><Plus className="h-[18px] w-[18px]" strokeWidth={2.6} /> Masukkan keranjang</>}
               </button>
             )}
             <p className="mt-2.5 text-center text-[11px] font-medium text-slate-400">

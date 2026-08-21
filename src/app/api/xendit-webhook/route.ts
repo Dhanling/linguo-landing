@@ -558,6 +558,96 @@ async function fulfillEbookLead(
   }
 }
 
+// ── pustaka-keranjang-v1: invoice keranjang LUNAS → semua barisnya diaktifkan ──
+// Checkout keranjang (/api/create-cart-invoice) sudah menulis N baris
+// `digital_purchases` "Belum Bayar" untuk SATU invoice, jadi di sini tak ada
+// lagi yang perlu ditebak: cukup cari barisnya lewat xendit_invoice_id dan
+// ubah jadi Lunas. Pola insert-dulu-update-kemudian itu keharusan, bukan gaya —
+// lihat catatan trigger sync_digital_purchase_to_registration di fulfillEbookLead.
+//
+// Masa aktif dihitung PER BARIS dari duration_days tier masing-masing: satu
+// keranjang bisa berisi e-book "selamanya" (duration_days NULL → expires_at
+// dibiarkan NULL) bersama e-learning 6 bulan.
+async function fulfillCartPurchase(
+  externalId: string,
+  invoiceId: string,
+  paidAt: string | null
+): Promise<void> {
+  try {
+    const supaHeaders = {
+      "Content-Type": "application/json",
+      apikey: SUPABASE_KEY,
+      Authorization: `Bearer ${SUPABASE_KEY}`,
+    };
+
+    // Dicari lewat xendit_invoice_id, BUKAN external_id: baris ke-2 dst sengaja
+    // memakai external_id bersufiks (-2, -3, …) supaya kolom itu tetap unik 1:1,
+    // jadi pencarian by external_id cuma akan menemukan baris pertama.
+    const rowsRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/digital_purchases?xendit_invoice_id=eq.${invoiceId}&select=id,payment_status,digital_product_pricing(duration_days)`,
+      { headers: supaHeaders }
+    );
+    if (!rowsRes.ok) {
+      console.error("Cart fulfillment lookup failed:", await rowsRes.text());
+      return;
+    }
+    const rows = (await rowsRes.json()) as {
+      id: string;
+      payment_status: string | null;
+      digital_product_pricing: { duration_days: number | null } | { duration_days: number | null }[] | null;
+    }[];
+    if (!Array.isArray(rows) || rows.length === 0) {
+      console.error(`Cart fulfillment: tak ada baris untuk invoice ${invoiceId} (${externalId})`);
+      return;
+    }
+
+    // Idempotensi: webhook Xendit bisa datang berkali-kali untuk invoice sama.
+    const belum = rows.filter((r) => r.payment_status !== "Lunas");
+    if (belum.length === 0) {
+      console.log(`Cart fulfillment: ${externalId} sudah dipenuhi — skip`);
+      return;
+    }
+
+    const nowIso = new Date().toISOString();
+    const mulai = paidAt || nowIso;
+    let gagal = 0;
+    for (const r of belum) {
+      const tier = Array.isArray(r.digital_product_pricing)
+        ? r.digital_product_pricing[0]
+        : r.digital_product_pricing;
+      const hari = tier?.duration_days ?? null;
+      const expiresAt = hari
+        ? new Date(new Date(mulai).getTime() + hari * 86_400_000).toISOString()
+        : null;
+
+      const actRes = await fetch(`${SUPABASE_URL}/rest/v1/digital_purchases?id=eq.${r.id}`, {
+        method: "PATCH",
+        headers: supaHeaders,
+        body: JSON.stringify({
+          payment_status: "Lunas",
+          xendit_status: "PAID",
+          xendit_paid_at: mulai,
+          access_granted: true,
+          access_granted_at: nowIso,
+          expires_at: expiresAt,
+        }),
+      });
+      // Satu baris gagal tak boleh membatalkan sisanya: pembelinya sudah bayar,
+      // jadi akses yang bisa terbit harus tetap terbit dan sisanya dilaporkan.
+      if (!actRes.ok) {
+        gagal++;
+        console.error(`Cart fulfillment: baris ${r.id} gagal diaktifkan:`, await actRes.text());
+      }
+    }
+
+    console.log(
+      `Cart fulfillment OK: ${externalId} → ${belum.length - gagal}/${belum.length} akses aktif`
+    );
+  } catch (e) {
+    console.error("fulfillCartPurchase error (non-fatal):", e);
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
     // 1. Verify webhook token
@@ -616,6 +706,10 @@ export async function POST(req: NextRequest) {
       // ebook-fulfillment-v1: pembelian e-book landing (bundle sekalipun) → baris
       // digital_purchases, biar masuk Overview/Penjualan Digital + akses /akun.
       await fulfillEbookLead(external_id, id, paid_amount ?? null, paid_at ?? null);
+      // pustaka-keranjang-v1: checkout banyak produk sekaligus dari Perpustakaan.
+      if (/^LINGUO-CART-/.test(external_id || "")) {
+        await fulfillCartPurchase(external_id, id, paid_at ?? null);
+      }
     }
 
     // 2c. [REGISTRATION] enrollment-server-flow-v1 — invoice dari /api/enroll
