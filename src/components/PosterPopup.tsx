@@ -5,21 +5,18 @@
 // promo Linguo apa adanya + satu tombol aksi.
 //
 // Aturan mainnya:
-//   - Muncul SEKALI per sesi browser (sessionStorage). Pindah halaman di dalam
-//     situs tidak memunculkannya lagi — kalau tidak, tiap klik menu kena pop-up
-//     dan itu yang bikin orang kabur.
-//   - Kuncinya dibubuhi POSTER_ID: begitu posternya diganti (ganti berkas &
-//     ganti id), semua orang otomatis kebagian lihat sekali lagi tanpa perlu
-//     menyuruh mereka bersihkan cache.
+//   - Muncul SETIAP kali halaman dimuat ulang (refresh / buka tab baru / masuk
+//     dari iklan). Sengaja TANPA gerbang sessionStorage: promonya masih baru
+//     dan pemiliknya memang mau poster ini kelihatan tiap kunjungan.
+//   - Perpindahan halaman di DALAM situs (klik menu) tidak memunculkannya lagi,
+//     karena komponen ini hidup di layout dan tidak ter-mount ulang selama
+//     navigasi klien.
 //   - Ditunda ~1,2 detik supaya halaman sempat terlihat dulu (dan tidak
 //     mengganggu LCP/CLS halaman).
 //   - Halaman ber-chrome sendiri & halaman "kerja" (dashboard siswa, laporan,
 //     form pendataan, pembayaran, pengerjaan kuis, checkout) dilewati — daftar
 //     yang sama dengan PromoTopBar/BatchRegulerTopBar, ditambah alur yang
 //     sedang di tengah transaksi.
-//
-// `?popup=preview` memaksa tampil (abaikan sessionStorage) buat mengecek tata
-// letak sebelum disebar.
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,8 +24,7 @@ import { usePathname } from "next/navigation";
 import { ArrowRight, X } from "lucide-react";
 import { useOverlayLock } from "@/lib/overlayStore";
 
-// Ganti dua-duanya bareng kalau posternya diperbarui.
-const POSTER_ID = "reguler-september-2026";
+// Ganti kalau posternya diperbarui.
 const POSTER_SRC = "/popup-reguler-september.jpg";
 const POSTER_W = 1200;
 const POSTER_H = 982;
@@ -40,7 +36,6 @@ const POSTER_ALT =
 const CTA_HREF = "/jadwal-kelas-reguler";
 const CTA_LABEL = "Lihat Jadwal & Daftar";
 
-const SESSION_KEY = `linguo_poster_popup_${POSTER_ID}`;
 const DELAY_MS = 1200;
 
 const EXCLUDED = [
@@ -68,27 +63,9 @@ export default function PosterPopup() {
   useEffect(() => {
     if (dilewati) return;
 
-    // Dibaca lewat window, BUKAN useSearchParams(): hook itu memaksa seluruh
-    // halaman statis keluar dari prerender dan menuntut Suspense boundary.
-    const preview =
-      new URLSearchParams(window.location.search).get("popup") === "preview";
-
-    if (!preview) {
-      try {
-        if (sessionStorage.getItem(SESSION_KEY)) return;
-      } catch {
-        /* sessionStorage diblokir → biarkan tampil, sekali per muat halaman */
-      }
-    }
-
     const id = setTimeout(() => {
       setOpen(true);
       requestAnimationFrame(() => setMasuk(true));
-      if (!preview) {
-        try {
-          sessionStorage.setItem(SESSION_KEY, "1");
-        } catch {}
-      }
     }, DELAY_MS);
     return () => clearTimeout(id);
   }, [dilewati]);
