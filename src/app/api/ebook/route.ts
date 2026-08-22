@@ -1,10 +1,18 @@
 // [ebook-reader-v1] Penyalur berkas e-book untuk reader di dashboard siswa.
 //
-// Kenapa tidak createSignedUrl dari browser seperti sebelumnya: URL bertanda
-// tangan itu sampai ke klien apa adanya, umurnya 7 hari, dan siapa pun yang
-// memegangnya bisa mengunduh modul tanpa login — cukup satu siswa menyalinnya
-// dari tab Network. Route ini menahan URL-nya di server: byte PDF-nya yang
-// dikirim, bukan alamatnya, dan tiap permintaan diverifikasi ulang.
+// Kenapa tidak createSignedUrl 7 hari dari browser seperti dulu: URL sepanjang
+// itu sampai ke klien apa adanya dan siapa pun yang memegangnya bisa mengunduh
+// modul tanpa login — cukup satu siswa menyalinnya dari tab Network.
+//
+// [ebook-buka-cepat-v3] Sekarang ada DUA jalur, dua-duanya lewat pemeriksaan
+// hak yang sama persis di bawah:
+//   • `bagian: "url"` → balas URL bertanda tangan berumur 5 MENIT. Bytenya
+//     ditarik browser LANGSUNG dari CDN Supabase, jadi modul 3,5 MB tidak lagi
+//     melewati fungsi serverless kita dua kali (dan tidak menggerogoti egress).
+//   • `bagian: "pdf"` → jalur lama: bytenya diteruskan server. Dipakai sebagai
+//     cadangan kalau tarikan langsung gagal (proxy kantor, CORS aneh).
+// Umur 5 menit itu tawar-menawar sadar: cukup untuk mengunduh sekali, terlalu
+// pendek untuk jadi tautan bajakan yang bisa disebar.
 //
 // Urutan pemeriksaan:
 //   1. token sesi Supabase valid → siapa pemanggilnya,
@@ -17,12 +25,24 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { isStoragePath } from "@/lib/digitalAccess";
+import { buatTiket } from "@/lib/ebookToken";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
 const BUCKET = "ebook-files";
+
+/** Umur URL bertanda tangan (detik) — lihat catatan kepala berkas. */
+const UMUR_TANDA = 300;
+/** Umur tiket potongan. Panjang: satu sesi baca bisa berjam-jam, dan tiket yang
+    habis di tengah jalan berarti halaman berikutnya gagal dimuat. Tiketnya
+    sendiri cuma berlaku untuk SATU berkas dan cuma bisa dipakai lewat domain
+    kita. */
+const UMUR_TIKET = 6 * 3600;
+
+/** Jalur objek storage → potongan URL yang aman. */
+const enc = (jalur: string) => jalur.split("/").map(encodeURIComponent).join("/");
 
 // Berkas modul dibaca sekali lalu dipegang di memori browser; jangan pernah
 // dianggap statis oleh perantara mana pun.
@@ -96,10 +116,61 @@ export async function POST(req: NextRequest) {
   // Link eksternal (Drive dsb) tidak lewat sini — reader hanya untuk berkas milik kita.
   if (!isStoragePath(prod.file_url)) return tolak("E-book ini tidak disimpan sebagai berkas", 400);
 
+  /** Catat akses — best-effort, jangan pernah menahan modul gara-gara statistik. */
+  const catatAkses = () => {
+    admin
+      .from("digital_purchases")
+      .update({ download_count: (beli.download_count || 0) + 1, last_downloaded_at: new Date().toISOString() })
+      .eq("id", beli.id)
+      .then(undefined, () => {});
+  };
+
+  // ── Jalur cepat: alamat bertanda tangan, bukan bytenya ────────────────────
+  // [ebook-buka-cepat-v3] Satu permintaan ini melayani PDF sekaligus berkas
+  // soalnya, jadi membuka modul cuma sekali membangunkan fungsi serverless —
+  // dulu dua kali, dan tiap bangun harganya 1–1,5 detik sebelum byte pertama
+  // berangkat.
+  if (bagian === "url") {
+    const jalurPdf = prod.file_url!;
+    const jalurSoal = jalurPdf.replace(/\.pdf$/i, "") + ".latihan.json";
+    const [tandaPdf, tandaSoal, kepala] = await Promise.all([
+      admin.storage.from(BUCKET).createSignedUrl(jalurPdf, UMUR_TANDA),
+      admin.storage.from(BUCKET).createSignedUrl(jalurSoal, UMUR_TANDA),
+      // HEAD sekalian jadi dua hal: bukti berkasnya memang ada, dan `etag`-nya
+      // dipakai klien untuk tahu simpanan di perangkatnya masih edisi terbaru.
+      fetch(`${SUPABASE_URL}/storage/v1/object/${BUCKET}/${enc(jalurPdf)}`, {
+        method: "HEAD",
+        headers: { apikey: SUPABASE_SERVICE_KEY, Authorization: `Bearer ${SUPABASE_SERVICE_KEY}` },
+        cache: "no-store",
+      }).catch(() => null),
+    ]);
+    if (!tandaPdf.data?.signedUrl || (kepala && !kepala.ok)) {
+      return tolak("Berkas modul belum diunggah tim Linguo. Hubungi CS ya.", 404);
+    }
+    catatAkses();
+    // Dua alamat, dua tugas:
+    //   • `url` (langsung ke CDN Supabase) untuk menarik modul UTUH ke simpanan
+    //     perangkat — tidak lewat server kita, jadi tidak makan egress Vercel;
+    //   • `urlPotong` (domain sendiri) untuk pdf.js: potongan seperlunya saja,
+    //     supaya bentangan pertama tampil sebelum berkasnya utuh.
+    const tiket = buatTiket(jalurPdf, UMUR_TIKET);
+    return NextResponse.json(
+      {
+        url: tandaPdf.data.signedUrl,
+        urlPotong: `/api/ebook/berkas?p=${tiket.p}&exp=${tiket.exp}&sig=${encodeURIComponent(tiket.sig)}`,
+        // Modul pihak ketiga tak punya berkas soal — URL-nya tetap dikirim,
+        // yang menjawab 400 nanti cuma bikin tombol latihannya tidak muncul.
+        urlSoal: tandaSoal.data?.signedUrl ?? null,
+        versi: kepala?.headers.get("etag") ?? null,
+        umur: UMUR_TANDA,
+      },
+      { headers: NO_STORE },
+    );
+  }
+
   if (bagian === "latihan") {
     const namaSoal = prod.file_url!.replace(/\.pdf$/i, "") + ".latihan.json";
-    const jalurSoal = namaSoal.split("/").map(encodeURIComponent).join("/");
-    const res = await fetch(`${SUPABASE_URL}/storage/v1/object/${BUCKET}/${jalurSoal}`, {
+    const res = await fetch(`${SUPABASE_URL}/storage/v1/object/${BUCKET}/${enc(namaSoal)}`, {
       headers: { apikey: SUPABASE_SERVICE_KEY, Authorization: `Bearer ${SUPABASE_SERVICE_KEY}` },
       cache: "no-store",
     }).catch(() => null);
@@ -116,8 +187,7 @@ export async function POST(req: NextRequest) {
   // berkas jadi Blob di memori server dulu, baru byte pertamanya berangkat ke
   // siswa — untuk modul 1 MB itu jeda yang percuma, dan memori Vercel ikut
   // kena. Yang penting tetap sama: URL bertanda tangan tak pernah ke browser.
-  const jalur = prod.file_url!.split("/").map(encodeURIComponent).join("/");
-  const berkas = await fetch(`${SUPABASE_URL}/storage/v1/object/${BUCKET}/${jalur}`, {
+  const berkas = await fetch(`${SUPABASE_URL}/storage/v1/object/${BUCKET}/${enc(prod.file_url!)}`, {
     headers: { apikey: SUPABASE_SERVICE_KEY, Authorization: `Bearer ${SUPABASE_SERVICE_KEY}` },
     cache: "no-store",
   }).catch(() => null);
@@ -128,12 +198,7 @@ export async function POST(req: NextRequest) {
     return tolak("Berkas modul belum diunggah tim Linguo. Hubungi CS ya.", 404);
   }
 
-  // Catat akses (best-effort — jangan pernah menahan modul gara-gara statistik).
-  admin
-    .from("digital_purchases")
-    .update({ download_count: (beli.download_count || 0) + 1, last_downloaded_at: new Date().toISOString() })
-    .eq("id", beli.id)
-    .then(undefined, () => {});
+  catatAkses();
 
   const panjang = berkas.headers.get("content-length");
   return new NextResponse(berkas.body, {

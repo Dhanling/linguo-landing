@@ -826,7 +826,15 @@ export default function EbookReader({
        tergambar tetap di layar (bitmapnya disimpan per nomor halaman), yang
        berubah cuma dari mana halaman BERIKUTNYA dibaca. */
     let jamUtuh: number | null = null;
+    /** Koneksi hemat/lambat: jangan menyeret 3,5 MB di latar cuma untuk
+        simpanan besok. Membaca hari ini tetap jalan lewat potongan. */
+    const koneksiIrit = () => {
+      const c = (navigator as any)?.connection;
+      if (!c) return false;
+      return !!c.saveData || /(^|-)2g$/.test(String(c.effectiveType || ""));
+    };
     const gantiKeUtuh = async () => {
+      if (koneksiIrit()) return;
       try {
         const buf = await ambilBerkas(purchaseId, accessToken);
         const pdfjs = pdfjsRef.current;
