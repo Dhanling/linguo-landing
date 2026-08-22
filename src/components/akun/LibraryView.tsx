@@ -1591,8 +1591,11 @@ function LockedCard({
   const bisaBeli = ready && mulai !== null;
   const foto = fotoSampul(item); // [pustaka-kartu-foto-v1]
 
+  // [pustaka-kartu-tanpa-garis-v1] Tanpa garis tepi: di mode gelap border abu-abu jadi
+  // kotak yang menonjol di sekeliling foto, sementara kartu "sudah dimiliki" di atasnya
+  // cuma pakai bayangan. Sekarang dua-duanya seragam — bayangan saja.
   return (
-    <div className="group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white transition hover:border-slate-300">
+    <div className="group flex flex-col overflow-hidden rounded-3xl bg-white shadow-[0_18px_40px_-30px_rgba(18,23,43,0.5)] transition hover:shadow-[0_24px_50px_-30px_rgba(18,23,43,0.55)]">
       {/* cover teredam + gembok */}
       <button
         onClick={bisaBeli ? onBuy : undefined}
