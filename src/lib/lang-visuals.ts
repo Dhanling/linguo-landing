@@ -56,6 +56,20 @@ export const LANG_PHOTO_SLUG: Record<string, string> = {
   uzbekistan: "uzbek", uzbek: "uzbek",
   // [kelas-card-foto-v3] Islandia — kartu beranda siswa masih jatuh ke glyph "Aa"
   islandia: "icelandic", icelandic: "icelandic", "bahasa islandia": "icelandic",
+  // [pustaka-foto-bahasa-v1] Katalog Perpustakaan (digital_products) punya 28 bahasa,
+  // 11 di antaranya masih jatuh ke gradien + glyph karena belum ada foto stoknya.
+  // Foto baru masuk ke public/lang/<slug>.jpg dengan ukuran seragam 900x900.
+  turki: "turkish", turkish: "turkish", turkey: "turkish",
+  ukraina: "ukrainian", ukraine: "ukrainian", ukrainian: "ukrainian",
+  belanda: "dutch", dutch: "dutch",
+  estonia: "estonian", estonian: "estonian",
+  norwegia: "norwegian", norway: "norwegian", norwegian: "norwegian",
+  swedia: "swedish", swedish: "swedish",
+  finlandia: "finnish", finland: "finnish", finnish: "finnish",
+  serbia: "serbian", serbian: "serbian",
+  yunani: "greek", greek: "greek", greece: "greek",
+  thai: "thai", thailand: "thai",
+  tagalog: "filipino", filipina: "filipino", filipino: "filipino",
 };
 export const getLangPhoto = (lang?: string | null): string | null => {
   if (!lang) return null;
