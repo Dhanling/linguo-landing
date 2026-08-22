@@ -30,14 +30,20 @@ const KODE_PROMO: Record<string, {
   hari: number;
   /** null = berlaku untuk semua tipe produk */
   tipe: "ebook" | "elearning" | null;
-  /** berapa produk yang boleh diklaim satu akun dengan kode ini */
-  maksPerAkun: number;
+  /** berapa produk yang boleh diklaim satu akun dengan kode ini — null = tanpa batas */
+  maksPerAkun: number | null;
   label: string;
 }> = {
-  FREEEBOOK: { hari: 30, tipe: "ebook", maksPerAkun: 1, label: "Akses gratis 1 bulan" },
+  // [promo-freeebook-tanpa-batas-v1] FREEEBOOK sengaja TANPA batas jumlah
+  // produk: kodenya dibagikan sebagai "semua e-book gratis 30 hari", jadi
+  // batas 1 produk membuat pemakainya mentok di judul kedua padahal janjinya
+  // bukan itu. Yang tetap menjaga: masa aktif 30 hari, gerbang materiReady,
+  // dan pagar "sudah punya" (satu produk tak bisa diklaim dua kali).
+  FREEEBOOK: { hari: 30, tipe: "ebook", maksPerAkun: null, label: "Akses gratis 1 bulan" },
   // [elearning-per-bahasa-v1] Pasangan FREEEBOOK untuk e-learning per bahasa.
   // Jatahnya dihitung TERPISAH per tipe produk (lihat bawah), jadi satu akun
-  // boleh mencicipi satu e-book DAN satu bahasa e-learning.
+  // boleh mencicipi satu e-book DAN satu bahasa e-learning. Batasnya SENGAJA
+  // masih 1 — e-learning dijual per bahasa, bukan per judul.
   FREEELEARNING: { hari: 30, tipe: "elearning", maksPerAkun: 1, label: "Akses gratis 1 bulan" },
 };
 
@@ -184,14 +190,17 @@ export async function POST(req: NextRequest) {
   // Jatah dihitung PER TIPE PRODUK, bukan atas semua baris promo. Dulu satu
   // penghitung dipakai bersama, jadi begitu FREEEBOOK terpakai, FREEELEARNING
   // ikut tertutup padahal itu promo yang lain sama sekali.
-  const klaimPromo = rows.filter(
-    (r) => r.source === "promo" && (!promo.tipe || tipeBaris(r) === promo.tipe),
-  ).length;
-  if (klaimPromo >= promo.maksPerAkun) {
-    return tolak(
-      `Kode ${kode} cuma bisa dipakai untuk ${promo.maksPerAkun} produk per akun, dan jatah kamu sudah terpakai.`,
-      409,
-    );
+  // maksPerAkun null = tanpa batas: penghitungnya tak perlu dijalankan sama sekali.
+  if (promo.maksPerAkun != null) {
+    const klaimPromo = rows.filter(
+      (r) => r.source === "promo" && (!promo.tipe || tipeBaris(r) === promo.tipe),
+    ).length;
+    if (klaimPromo >= promo.maksPerAkun) {
+      return tolak(
+        `Kode ${kode} cuma bisa dipakai untuk ${promo.maksPerAkun} produk per akun, dan jatah kamu sudah terpakai.`,
+        409,
+      );
+    }
   }
 
   const sampai = new Date(Date.now() + promo.hari * 86_400_000).toISOString();
