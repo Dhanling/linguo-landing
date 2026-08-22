@@ -197,22 +197,192 @@ const simpanBuf = (id: string, buf: ArrayBuffer) => {
   }
 };
 
+/* ── simpanan modul di perangkat ───────────────────────────────────────────
+   [ebook-buka-cepat-v3] Modul 3,5–5,5 MB dulu diunduh ULANG tiap kali tab
+   dimuat: simpanannya cuma di memori halaman, jadi refresh sekali saja sudah
+   membuang semuanya. Sekarang bytenya dititipkan ke Cache Storage — buka modul
+   yang sama besok pagi tidak menyentuh jaringan sama sekali, bahkan tidak
+   membangunkan fungsi serverless kita.
+
+   Kenapa aman-aman saja: bytenya cuma mendarat di perangkat siswa yang MEMANG
+   berhak (pemeriksaan hak tetap di server, sebelum alamatnya diberikan), dan
+   isinya sama persis dengan berkas yang boleh dia unduh. */
+const CACHE_MODUL = "ebook-modul-v1";
+/** Berapa modul yang boleh menumpuk di perangkat. */
+const CACHE_MODUL_MAX = 3;
+/** Selang pemeriksaan "modulnya sudah terbit ulang belum?" */
+const CACHE_SEGAR_MS = 12 * 60 * 60 * 1000;
+
+const kunciModul = (id: string) => `https://ebook.linguo.id/modul/${encodeURIComponent(id)}`;
+
+async function laciModul(): Promise<Cache | null> {
+  // Safari mode pribadi & halaman non-HTTPS tak punya Cache Storage — di situ
+  // readernya cuma kembali ke perilaku lama, bukan gagal.
+  if (typeof caches === "undefined") return null;
+  try { return await caches.open(CACHE_MODUL); } catch { return null; }
+}
+
+type SimpananModul = { buf: ArrayBuffer; versi: string | null; waktu: number };
+
+async function dariLaci(id: string): Promise<SimpananModul | null> {
+  const laci = await laciModul();
+  if (!laci) return null;
+  try {
+    const res = await laci.match(kunciModul(id));
+    if (!res) return null;
+    const buf = await res.arrayBuffer();
+    if (!buf.byteLength) return null;
+    return { buf, versi: res.headers.get("x-versi") || null, waktu: Number(res.headers.get("x-waktu")) || 0 };
+  } catch { return null; }
+}
+
+async function keLaci(id: string, buf: ArrayBuffer, versi: string | null) {
+  const laci = await laciModul();
+  if (!laci) return;
+  try {
+    await laci.put(
+      kunciModul(id),
+      new Response(buf.slice(0), {
+        headers: {
+          "Content-Type": "application/pdf",
+          "X-Versi": versi ?? "",
+          "X-Waktu": String(Date.now()),
+        },
+      }),
+    );
+    // Sisakan yang terbaru saja: satu siswa bisa punya belasan modul dan kuota
+    // penyimpanan browser bukan milik kita sendiri.
+    const kunci = await laci.keys();
+    if (kunci.length <= CACHE_MODUL_MAX) return;
+    const umur = await Promise.all(
+      kunci.map(async (k) => ({ k, w: Number((await laci.match(k))?.headers.get("x-waktu")) || 0 })),
+    );
+    umur.sort((a, b) => b.w - a.w);
+    await Promise.all(umur.slice(CACHE_MODUL_MAX).map(({ k }) => laci.delete(k)));
+  } catch { /* kuota penuh / mode pribadi — simpanan memang cuma bonus */ }
+}
+
+/* [ebook-buka-cepat-v3] Alamat bertanda tangan + versi berkasnya. Satu
+   permintaan ini melayani PDF sekaligus berkas soal, dan hasilnya dipakai ulang
+   selama tanda tangannya belum kedaluwarsa — prefetch waktu kursor menyentuh
+   kartu dan pembukaan reader beberapa detik kemudian cukup sekali membangunkan
+   fungsi serverless. */
+type MetaModul = {
+  /** Alamat CDN Supabase — untuk menarik berkas UTUH ke simpanan perangkat. */
+  url: string;
+  /** Alamat di domain sendiri — untuk pdf.js, yang menariknya potong demi potong. */
+  urlPotong: string | null;
+  urlSoal: string | null;
+  versi: string | null;
+  kedaluwarsa: number;
+};
+const metaCache = new Map<string, MetaModul>();
+const metaAntre = new Map<string, Promise<MetaModul>>();
+
+function ambilMeta(purchaseId: string, accessToken: string): Promise<MetaModul> {
+  const ada = metaCache.get(purchaseId);
+  // Sisa 30 detik: cukup untuk menyelesaikan unduhan yang baru mau berangkat.
+  if (ada && ada.kedaluwarsa - 30_000 > Date.now()) return Promise.resolve(ada);
+  const jalan = metaAntre.get(purchaseId);
+  if (jalan) return jalan;
+  const janji = (async () => {
+    const res = await fetch("/api/ebook", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ purchaseId, accessToken, bagian: "url" }),
+    });
+    if (!res.ok) {
+      const j = await res.json().catch(() => ({}));
+      throw new Error(j.error || tr("Gagal memuat modul"));
+    }
+    const j = await res.json();
+    if (!j?.url) throw new Error(tr("Gagal memuat modul"));
+    const meta: MetaModul = {
+      url: String(j.url),
+      urlPotong: j.urlPotong ? String(j.urlPotong) : null,
+      urlSoal: j.urlSoal ? String(j.urlSoal) : null,
+      versi: j.versi ? String(j.versi) : null,
+      kedaluwarsa: Date.now() + (Number(j.umur) || 300) * 1000,
+    };
+    metaCache.set(purchaseId, meta);
+    return meta;
+  })().finally(() => { metaAntre.delete(purchaseId); });
+  metaAntre.set(purchaseId, janji);
+  return janji;
+}
+
+/** Unduh bytenya: langsung dari CDN dulu, jalur proksi sebagai cadangan. */
+async function unduhModul(purchaseId: string, accessToken: string): Promise<ArrayBuffer> {
+  try {
+    const meta = await ambilMeta(purchaseId, accessToken);
+    const res = await fetch(meta.url, { cache: "no-store" });
+    if (res.ok) {
+      const buf = await res.arrayBuffer();
+      if (buf.byteLength) {
+        void keLaci(purchaseId, buf, meta.versi);
+        return buf;
+      }
+    }
+  } catch {
+    /* Tanda tangan ditolak, CORS diblokir proxy kantor, atau haknya memang
+       tidak ada — jalur proksi di bawah yang memutuskan, sekalian supaya pesan
+       galatnya (kedaluwarsa/bukan milikmu) tetap sampai apa adanya. */
+  }
+  const res = await fetch("/api/ebook", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ purchaseId, accessToken }),
+  });
+  if (!res.ok) {
+    const j = await res.json().catch(() => ({}));
+    throw new Error(j.error || tr("Gagal memuat modul"));
+  }
+  const buf = await res.arrayBuffer();
+  void keLaci(purchaseId, buf, null);
+  return buf;
+}
+
+/** Modul di laci sudah lama → cek diam-diam apakah edisinya sudah diganti.
+ *  Yang sedang dibaca TIDAK diusik; salinan barunya dipakai pembukaan berikut. */
+async function segarkanLaci(purchaseId: string, accessToken: string, simpanan: SimpananModul) {
+  if (Date.now() - simpanan.waktu < CACHE_SEGAR_MS) return;
+  try {
+    const meta = await ambilMeta(purchaseId, accessToken);
+    if (!meta.versi || meta.versi === simpanan.versi) {
+      // Isinya masih sama — cap waktunya saja yang disegarkan supaya
+      // pemeriksaan ini tidak terulang tiap kali reader dibuka.
+      await keLaci(purchaseId, simpanan.buf, simpanan.versi);
+      return;
+    }
+    const res = await fetch(meta.url, { cache: "no-store" });
+    if (!res.ok) return;
+    const buf = await res.arrayBuffer();
+    if (buf.byteLength) await keLaci(purchaseId, buf, meta.versi);
+  } catch { /* diam: ini kerja latar, bukan kerja siswa */ }
+}
+
+/** Byte yang SUDAH ada di perangkat (memori atau laci) — tanpa jaringan sama
+ *  sekali. Dipakai reader untuk memutuskan: buka dari berkas utuh, atau buka
+ *  dari potongan sambil berkas utuhnya menyusul. */
+async function bufLokal(purchaseId: string): Promise<SimpananModul | null> {
+  const ada = bufCache.get(purchaseId);
+  if (ada) return { buf: ada, versi: null, waktu: Date.now() };
+  return dariLaci(purchaseId);
+}
+
 function ambilBerkas(purchaseId: string, accessToken: string): Promise<ArrayBuffer> {
   const ada = bufCache.get(purchaseId);
   if (ada) return Promise.resolve(ada);
   const jalan = bufAntre.get(purchaseId);
   if (jalan) return jalan;
   const janji = (async () => {
-    const res = await fetch("/api/ebook", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ purchaseId, accessToken }),
-    });
-    if (!res.ok) {
-      const j = await res.json().catch(() => ({}));
-      throw new Error(j.error || tr("Gagal memuat modul"));
+    const simpanan = await dariLaci(purchaseId);
+    if (simpanan) {
+      simpanBuf(purchaseId, simpanan.buf);
+      void segarkanLaci(purchaseId, accessToken, simpanan);
+      return simpanan.buf;
     }
-    const buf = await res.arrayBuffer();
+    const buf = await unduhModul(purchaseId, accessToken);
     simpanBuf(purchaseId, buf);
     return buf;
   })().finally(() => { bufAntre.delete(purchaseId); });
@@ -228,6 +398,20 @@ const soalCache = new Map<string, BerkasLatihan>();
 async function ambilSoal(purchaseId: string, accessToken: string): Promise<BerkasLatihan | null> {
   const ada = soalCache.get(purchaseId);
   if (ada) return ada;
+  const simpan = (j: BerkasLatihan | null) => {
+    if (!Array.isArray(j?.unit)) return null;
+    soalCache.set(purchaseId, j!);
+    return j;
+  };
+  // [ebook-buka-cepat-v3] Alamatnya menumpang permintaan yang sama dengan PDF —
+  // tak ada bangun fungsi serverless kedua cuma untuk berkas puluhan KB ini.
+  try {
+    const meta = await ambilMeta(purchaseId, accessToken);
+    if (meta.urlSoal) {
+      const res = await fetch(meta.urlSoal, { cache: "no-store" });
+      if (res.ok) return simpan((await res.json()) as BerkasLatihan);
+    }
+  } catch { /* jatuh ke jalur proksi */ }
   try {
     const res = await fetch("/api/ebook", {
       method: "POST",
@@ -235,10 +419,7 @@ async function ambilSoal(purchaseId: string, accessToken: string): Promise<Berka
       body: JSON.stringify({ purchaseId, accessToken, bagian: "latihan" }),
     });
     if (!res.ok) return null;
-    const j = (await res.json()) as BerkasLatihan;
-    if (!Array.isArray(j?.unit)) return null;
-    soalCache.set(purchaseId, j);
-    return j;
+    return simpan((await res.json()) as BerkasLatihan);
   } catch {
     return null;
   }
@@ -639,29 +820,93 @@ export default function EbookReader({
     const jedaTunggu = simpananDoc
       ? null
       : window.setTimeout(() => { if (hidup) setTundaMemuat(true); }, 220);
+    /* [ebook-buka-cepat-v3] Dokumen yang dibuka dari POTONGAN masih bergantung
+       pada jaringan tiap kali halaman baru diminta. Begitu berkas utuhnya
+       mendarat di perangkat, dokumennya ditukar diam-diam: halaman yang sudah
+       tergambar tetap di layar (bitmapnya disimpan per nomor halaman), yang
+       berubah cuma dari mana halaman BERIKUTNYA dibaca. */
+    let jamUtuh: number | null = null;
+    const gantiKeUtuh = async () => {
+      try {
+        const buf = await ambilBerkas(purchaseId, accessToken);
+        const pdfjs = pdfjsRef.current;
+        const lama = docRef.current;
+        if (!hidup || !pdfjs || !lama) return;
+        const baru = await pdfjs.getDocument({ data: new Uint8Array(buf.slice(0)) }).promise;
+        if (!hidup) { baru.destroy?.(); return; }
+        docRef.current = baru;
+        setDoc(baru);
+        if (docCache && docCache.id !== purchaseId) docCache.doc.destroy?.();
+        docCache = { id: purchaseId, doc: baru };
+        // Render yang masih jalan memegang dokumen lama — ditunggu rampung dulu,
+        // kalau tidak halamannya gagal di tengah jalan dan slotnya jadi kosong.
+        await Promise.allSettled([...antreRef.current.values()]);
+        lama.destroy?.();
+      } catch { /* gagal = tetap pakai dokumen potongan, bukan kiamat */ }
+    };
+
     (async () => {
       try {
-        // [ebook-reader-paralel-v1] Bundel pdf.js dan berkas modulnya diminta
-        // BARENGAN — dua penantian itu tidak saling bergantung, jadi waktu
-        // tunggunya tinggal yang paling lama, bukan jumlah keduanya.
-        const bufJanji = simpananDoc ? null : ambilBerkas(purchaseId, accessToken);
-        const pdfjs = await muatPdfjs();
+        // [ebook-reader-paralel-v1] Bundel pdf.js, byte yang mungkin sudah
+        // tersimpan, dan alamat berkasnya diminta BARENGAN — tiga penantian itu
+        // tidak saling bergantung, jadi waktu tunggunya tinggal yang paling
+        // lama, bukan jumlah ketiganya.
+        const pdfjsJanji = muatPdfjs();
+        const lokalJanji = simpananDoc ? Promise.resolve(null) : bufLokal(purchaseId);
+        const metaJanji = simpananDoc ? null : ambilMeta(purchaseId, accessToken).catch(() => null);
+        const pdfjs = await pdfjsJanji;
         if (!hidup) return;
         pdfjsRef.current = pdfjs; // dipakai Util.transform waktu menghitung letak teks
 
         let d = simpananDoc;
+        let dariPotongan = false;
         if (!d) {
-          const buf = await bufJanji!;
+          const lokal = await lokalJanji;
           if (!hidup) return;
-          // Salinan byte: pdf.js "memindahkan" buffer yang diberikan ke worker,
-          // jadi kalau aslinya dipakai langsung, entri bufCache jadi kosong dan
-          // buka-ulang reader malah gagal.
-          d = await pdfjs.getDocument({ data: new Uint8Array(buf.slice(0)) }).promise;
+          if (lokal) {
+            // Berkasnya sudah ada di perangkat: tak ada jaringan yang ditunggu.
+            simpanBuf(purchaseId, lokal.buf);
+            void segarkanLaci(purchaseId, accessToken, lokal);
+            // Salinan byte: pdf.js "memindahkan" buffer yang diberikan ke worker,
+            // jadi kalau aslinya dipakai langsung, entri bufCache jadi kosong dan
+            // buka-ulang reader malah gagal.
+            d = await pdfjs.getDocument({ data: new Uint8Array(lokal.buf.slice(0)) }).promise;
+          } else {
+            const meta = await metaJanji;
+            if (!hidup) return;
+            if (meta?.urlPotong) {
+              /* Modul 3,5 MB di koneksi rumahan = 5–17 detik menatap
+                 "Menyiapkan modul…". pdf.js cuma butuh beberapa ratus KB untuk
+                 bentangan pertama, jadi biarkan ia meminta seperlunya:
+                 - disableAutoFetch: jangan menyedot sisa berkas di latar,
+                 - disableStream: jangan menunggu badan respons yang panjang. */
+              d = await pdfjs.getDocument({
+                url: meta.urlPotong,
+                rangeChunkSize: 1 << 18, // 256 KB — cukup besar supaya jumlah
+                                         // permintaannya sedikit, cukup kecil
+                                         // supaya halaman pertama tak menunggu.
+                disableAutoFetch: true,
+                disableStream: true,
+              }).promise;
+              dariPotongan = true;
+            } else {
+              // Tak dapat alamat (jaringan/hak) — jalur lama yang menentukan,
+              // sekalian supaya pesan galatnya sampai apa adanya.
+              const buf = await ambilBerkas(purchaseId, accessToken);
+              if (!hidup) return;
+              d = await pdfjs.getDocument({ data: new Uint8Array(buf.slice(0)) }).promise;
+            }
+          }
           if (!hidup) { d.destroy?.(); return; }
           // Modul lain yang tersimpan dilepas — dua dokumen pdf.js hidup
           // barengan artinya dua worker penuh isi halaman di memori.
           if (docCache && docCache.id !== purchaseId) docCache.doc.destroy?.();
-          docCache = { id: purchaseId, doc: d };
+          // Dokumen potongan TIDAK disimpan sebagai dokumen siap pakai: ia masih
+          // menggantung pada jaringan. Simpanannya diisi gantiKeUtuh.
+          docCache = dariPotongan ? null : { id: purchaseId, doc: d };
+          // Berkas utuh ditarik BELAKANGAN — kalau berbarengan, unduhan 3,5 MB
+          // itu merebut jalur dari potongan yang sedang ditunggu mata siswa.
+          if (dariPotongan) jamUtuh = window.setTimeout(() => { void gantiKeUtuh(); }, 2500);
         }
 
         docRef.current = d;
@@ -689,6 +934,7 @@ export default function EbookReader({
     return () => {
       hidup = false;
       if (jedaTunggu) window.clearTimeout(jedaTunggu);
+      if (jamUtuh) window.clearTimeout(jamUtuh);
       // ⚠️ Dokumen TIDAK dimusnahkan kalau ia yang sedang disimpan: itulah
       // yang membuat buka-ulang modul yang sama terbuka seketika. Yang lama
       // dimusnahkan waktu modul LAIN menggantikannya di simpanan.
