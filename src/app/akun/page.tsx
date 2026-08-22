@@ -18,7 +18,7 @@ import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import successAnim from "../payment/success/success-anim.json";
-import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, Lightbulb, Loader2, AlertTriangle, Minus, type LucideIcon } from "lucide-react";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, Lightbulb, Loader2, AlertTriangle, Minus, Play, ExternalLink, type LucideIcon } from "lucide-react";
 // [no-emoji-lucide-v1] bendera rounded-rect buat prefix nomor WA & pilihan tes (bukan emoji 🇮🇩)
 import { RectFlag } from "@/components/RectFlag";
 
@@ -40,6 +40,7 @@ import StudentShell from '@/components/akun/StudentShell';
 import { canAccessMateri as canAccessMateriGate } from '@/lib/materiGate';
 // [lms-content-readiness-v1] sesi Belajar Mandiri yang materinya belum ditulis jangan ikut dihitung
 import { fetchLessonStats, keepReady } from '@/lib/lmsContent';
+import { externalLinkFor, isPlaceholderLink } from "@/lib/digitalAccess"; // [elearning-kartu-langsung-youtube-v1]
 import { orMilikSaya } from "@/lib/digitalOwnership"; // [perpustakaan-akses-email-v1] kepemilikan = auth_user_id ATAU email sesi
 const SimulasiKatalog = dynamic(() => import('@/components/akun/SimulasiKatalog'), { ssr: false, loading: () => <div className="flex w-full items-center justify-center py-24"><div className="h-7 w-7 animate-spin rounded-full border-2 border-[#16796E] border-t-transparent" /></div> }); // [simulasi-inshell-v1] lazy
 
@@ -3046,6 +3047,55 @@ export default function AkunPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [student?.registrations]);
 
+  // ── [elearning-kartu-langsung-youtube-v1] ────────────────────────────────
+  // Kelas E-Learning itu rekaman, bukan kelas live: tak ada pengajar, tak ada
+  // jadwal, tak ada sesi. Kartunya dulu tetap mendarat di halaman detail kelas
+  // dan yang kebaca cuma "Belum ada pengajar / Belum ada sesi" — padahal yang
+  // dibeli siswa cuma satu hal: playlist videonya. Jadi kartunya sekarang
+  // langsung membuka link yang sudah diisi admin di /produk-digital.
+  //
+  // Sumber link: digital_purchases → digital_products (video_playlist_url →
+  // file_url). Dicocokkan lewat `registration_id` (baris registrasi memang
+  // dilahirkan trigger dari pembelian itu), dengan cadangan cocok-per-BAHASA
+  // buat baris lama yang belum tertaut. Kalau linknya belum ada / masih
+  // placeholder, perilakunya kembali seperti dulu (masuk halaman detail).
+  const [elearnLink, setElearnLink] = useState<Record<string, string>>({});
+  useEffect(() => {
+    if (!user?.id) return;
+    let batal = false;
+    (async () => {
+      // [perpustakaan-akses-email-v1] pembelian lama sering ber-auth_user_id NULL.
+      const milikSaya = await orMilikSaya(supabase, user.id);
+      const base = supabase
+        .from("digital_purchases")
+        .select("id, registration_id, digital_products(id, type, language, file_url, video_playlist_url)");
+      const { data } = await (milikSaya ? base.or(milikSaya) : base.eq("auth_user_id", user.id))
+        .eq("payment_status", "Lunas")
+        .is("archived_at", null);
+      if (batal || !data) return;
+      const map: Record<string, string> = {};
+      for (const row of data as any[]) {
+        const prod = row?.digital_products;
+        if (!prod || prod.type === "ebook") continue;
+        const link = externalLinkFor(prod);
+        if (!link || isPlaceholderLink(link)) continue;
+        if (row.registration_id) map[row.registration_id] = link;
+        const lang = (prod.language || "").trim().toLowerCase();
+        if (lang) map[`lang:${lang}`] = link;
+      }
+      setElearnLink(map);
+    })();
+    return () => { batal = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user?.id]);
+
+  /** Link playlist buat satu registrasi E-Learning; null = buka halaman detail seperti biasa. */
+  const linkElearning = (reg: any): string | null => {
+    if (normalizeProduct(reg?.product) !== "E-Learning") return null;
+    const lang = (reg?.language || "").trim().toLowerCase();
+    return elearnLink[reg?.id] || (lang ? elearnLink[`lang:${lang}`] : null) || null;
+  };
+
   async function loadStudentData(email: string, silent = false) {
     if (!silent) setDataLoading(true);
     try {
@@ -4302,18 +4352,29 @@ export default function AkunPage() {
                                 const tAva = tDir?.avatar_url || reg?.teachers?.avatar_url || null;
                                 // [teacher-sapaan-v1] kartu kelas sempit — sapaan + panggilan saja
                                 const tName = sapaan(tDir?.name || reg?.teachers?.name, tDir?.title || reg?.teachers?.title) || null;
+                                // [elearning-kartu-langsung-youtube-v1] E-Learning yang playlistnya
+                                // sudah diisi admin: kartunya jadi tautan LUAR ke playlist itu,
+                                // bukan ke halaman detail kelas (di sana tak ada apa-apa buat
+                                // produk rekaman — tanpa pengajar & tanpa sesi).
+                                const ytLink = linkElearning(reg);
+                                const Wrap: any = ytLink ? "a" : Link;
+                                const wrapProps: any = ytLink
+                                  ? { href: ytLink, target: "_blank", rel: "noopener noreferrer" }
+                                  : {
+                                      // [preview-keep-param-v1] mode POV staf: `?preview=` WAJIB
+                                      // ikut. Tanpa itu halaman detail kehilangan identitas
+                                      // pratinjau → tombol menu di sana balik ke /akun polos
+                                      // dan mendarat di gate login (terasa "keluar akun").
+                                      href: previewId ? `/akun/kelas/${reg.id}?preview=${encodeURIComponent(previewId)}` : `/akun/kelas/${reg.id}`,
+                                      prefetch: true,
+                                      // [kelas-detail-resilient-v1] titipkan data reg → halaman detail
+                                      // render instan tanpa nunggu query (anti mental balik ke beranda)
+                                      onClick: () => { try { sessionStorage.setItem(`linguo_reg_${reg.id}`, JSON.stringify({ ...reg, teachers: { ...(reg.teachers || {}), ...(tDir || {}) } })); } catch {} },
+                                    };
                                 return (
-                                  <Link
+                                  <Wrap
                                     key={reg.id}
-                                    // [preview-keep-param-v1] mode POV staf: `?preview=` WAJIB
-                                    // ikut. Tanpa itu halaman detail kehilangan identitas
-                                    // pratinjau → tombol menu di sana balik ke /akun polos
-                                    // dan mendarat di gate login (terasa "keluar akun").
-                                    href={previewId ? `/akun/kelas/${reg.id}?preview=${encodeURIComponent(previewId)}` : `/akun/kelas/${reg.id}`}
-                                    prefetch
-                                    // [kelas-detail-resilient-v1] titipkan data reg → halaman detail
-                                    // render instan tanpa nunggu query (anti mental balik ke beranda)
-                                    onClick={() => { try { sessionStorage.setItem(`linguo_reg_${reg.id}`, JSON.stringify({ ...reg, teachers: { ...(reg.teachers || {}), ...(tDir || {}) } })); } catch {} }}
+                                    {...wrapProps}
                                     className={`group block rounded-[20px] bg-white p-2.5 text-left transition-transform hover:-translate-y-1 ${selesai ? "opacity-80" : ""}`}
                                   >
                                     {/* [beranda-kartu-foto-poster-v1] Foto dipanjangkan ke bawah dan
@@ -4365,15 +4426,29 @@ export default function AkunPage() {
                                       </div>
                                     </div>
                                     <div className="px-1.5 pb-1 pt-2.5">
-                                      <div className="h-1.5 overflow-hidden rounded-full bg-[#E8EAEE]">
-                                        <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${pct}%` }} />
-                                      </div>
-                                      <div className="mt-2 flex items-center justify-between text-[11.5px] font-semibold">
-                                        <span className="text-gray-500">{tt("Selesai")}: <span className="text-[#12172B]">{pct}%</span></span>
-                                        <span className="text-gray-500">{tt("Sesi")}: <span className="text-[#12172B]">{used}/{total}</span></span>
-                                      </div>
+                                      {ytLink ? (
+                                        // Bilah progres & hitungan sesi tak ada artinya buat rekaman
+                                        // (selalu 0% dan 0/0) — diganti ajakan yang jujur soal
+                                        // apa yang terjadi kalau kartunya diketuk.
+                                        <div className="flex items-center justify-between text-[11.5px] font-semibold">
+                                          <span className="inline-flex items-center gap-1.5 text-[#16796E]">
+                                            <Play className="h-3.5 w-3.5" strokeWidth={2.4} /> {tt("Tonton videonya")}
+                                          </span>
+                                          <ExternalLink className="h-3.5 w-3.5 text-gray-400" />
+                                        </div>
+                                      ) : (
+                                        <>
+                                          <div className="h-1.5 overflow-hidden rounded-full bg-[#E8EAEE]">
+                                            <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${pct}%` }} />
+                                          </div>
+                                          <div className="mt-2 flex items-center justify-between text-[11.5px] font-semibold">
+                                            <span className="text-gray-500">{tt("Selesai")}: <span className="text-[#12172B]">{pct}%</span></span>
+                                            <span className="text-gray-500">{tt("Sesi")}: <span className="text-[#12172B]">{used}/{total}</span></span>
+                                          </div>
+                                        </>
+                                      )}
                                     </div>
-                                  </Link>
+                                  </Wrap>
                                 );
                               };
                               return (

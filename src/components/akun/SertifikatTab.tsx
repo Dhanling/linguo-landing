@@ -434,7 +434,7 @@ export default function SertifikatTab({
   }
 
   return (
-    <div className="w-full">
+    <div className="cert-tab w-full">
       {/* [sertifikat-dark-v1] Dua hal yang cuma bisa dibereskan lewat CSS:
           1) KERTAS SERTIFIKAT wajib tetap terang di mode gelap. Itu dokumen —
              sekaligus yang difoto html2canvas buat PDF; kalau ikut menghitam,
@@ -443,6 +443,23 @@ export default function SertifikatTab({
           2) Tombol sekunder `bg-white` di mode gelap jadi #1c1c1c — sewarna persis
              dengan kartunya, jadi tombolnya lenyap. Dinaikkan + dikasih garis. */}
       <style>{`
+        /* [sertifikat-hitam-v1] Di mode gelap tab ini dulu bertumpuk abu-abu:
+           kanvas #000, panel #101010, kolom kanan #080808, ubin #1c1c1c — empat
+           nada yang beda tipis, kebacanya kotak abu di atas hitam. Sekarang semua
+           bidangnya HITAM dan pemisahnya cuma garis rambut. Cakupannya .cert-tab
+           doang biar tak menular ke halaman dashboard yang lain. */
+        .lms-dark .cert-tab .bg-white,
+        .lms-dark .cert-tab .bg-\[\#F5F6F8\],
+        .lms-dark .cert-tab .bg-slate-50,
+        .lms-dark .cert-tab .bg-gray-50{background-color:#000000 !important;}
+        .lms-dark .cert-tab .cert-chip{background-color:#141414 !important;}
+        .lms-dark .cert-tab .cert-chip:hover{background-color:#1e1e1e !important;}
+        .lms-dark .cert-tab .cert-chip-num{background-color:#262626 !important;}
+        .lms-dark .cert-tab .bg-\[\#E8EAEE\],.lms-dark .cert-tab .bg-\[\#EEF1F4\]{background-color:#1a1a1a !important;}
+        .lms-dark .cert-tab .cert-shell{border:1px solid #1c1c1c;box-shadow:none !important;}
+        .lms-dark .cert-tab .cert-card{border:1px solid #1c1c1c;box-shadow:none !important;}
+        .lms-dark .cert-tab .cert-tile{border:1px solid #1c1c1c;}
+        .lms-dark .cert-tab .cert-row-active{background-color:#000000 !important;}
         .lms-dark .cert-paper.bg-white,.lms-dark .cert-paper .bg-white{background-color:#ffffff !important;}
         .lms-dark .cert-paper .bg-white\\/70{background-color:rgba(255,255,255,.72) !important;}
         .lms-dark .cert-paper .bg-\\[\\#EEF1F4\\]{background-color:#EEF1F4 !important;}
@@ -453,7 +470,7 @@ export default function SertifikatTab({
         .lms-dark .cert-btn-ghost.bg-white:hover{background-color:#333333 !important;}
         .lms-dark .cert-tint{background-color:rgba(45,212,191,.10) !important;}
       `}</style>
-      <div className="flex min-w-0 flex-col-reverse overflow-hidden rounded-[26px] bg-white shadow-[0_24px_60px_-40px_rgba(18,23,43,0.45)] lg:flex-row">
+      <div className="cert-shell flex min-w-0 flex-col-reverse overflow-hidden rounded-[26px] bg-white shadow-[0_24px_60px_-40px_rgba(18,23,43,0.45)] lg:flex-row">
         {/* LEFT: list */}
         <section className="flex w-full shrink-0 flex-col border-t border-slate-100 bg-white lg:w-[320px] lg:border-r lg:border-t-0">
           <div className="px-6 pb-3 pt-7">
@@ -469,11 +486,11 @@ export default function SertifikatTab({
                   key={f.key}
                   onClick={() => setFilter(f.key)}
                   className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[12px] font-bold transition ${
-                    on ? "bg-[#16796E] text-white" : "bg-[#F5F6F8] text-[#6B7280] hover:bg-[#EAEDF0]"
+                    on ? "bg-[#16796E] text-white" : "cert-chip bg-[#F5F6F8] text-[#6B7280] hover:bg-[#EAEDF0]"
                   }`}
                 >
                   {f.label}
-                  <span className={`rounded-full px-1.5 text-[11px] ${on ? "bg-white/25 text-white" : "bg-white text-[#6B7280]"}`}>{f.count}</span>
+                  <span className={`rounded-full px-1.5 text-[11px] ${on ? "bg-white/25 text-white" : "cert-chip-num bg-white text-[#6B7280]"}`}>{f.count}</span>
                 </button>
               );
             })}
@@ -481,7 +498,12 @@ export default function SertifikatTab({
           {activeHint && (
             <p className="-mt-1 px-4 pb-3 text-[11px] font-medium leading-relaxed text-[#6B7280]">{activeHint}</p>
           )}
-          <div className="flex max-h-[360px] flex-1 flex-col gap-2.5 overflow-y-auto px-4 pb-4 lg:max-h-none">
+          {/* [sertifikat-kartu-kepotong-v1] Kartu paling atas dulu kepotong waktu dipilih:
+              garis pilihnya dipasang lewat `outline` (digambar DI LUAR kotak) sementara
+              wadahnya `overflow-y-auto` tanpa ruang atas — jadi 2px sisi atasnya tergunting
+              scroller. Sekarang wadahnya dikasih pt-1.5 dan garisnya ditarik ke dalam
+              (outlineOffset -2px), jadi aman juga waktu daftarnya di-scroll. */}
+          <div className="flex max-h-[360px] flex-1 flex-col gap-2.5 overflow-y-auto px-4 pb-4 pt-1.5 lg:max-h-none">
             {filtered.length === 0 && (
               <div className="flex flex-col items-center justify-center gap-1 px-4 py-10 text-center">
                 <Award className="h-8 w-8 text-slate-300" strokeWidth={1.6} />
@@ -501,8 +523,8 @@ export default function SertifikatTab({
                       ? isDark
                         // Dulu di sini hardcoded `background:"#fff"` — di mode gelap teksnya
                         // dipaksa putih oleh shell, hasilnya putih di atas putih alias hilang.
-                        ? { background: "#2E2E2E", outline: "2px solid #2DD4BF", boxShadow: "0 16px 36px -22px rgba(0,0,0,.8)" }
-                        : { background: "#fff", outline: "2px solid #16796E", boxShadow: "0 16px 36px -22px rgba(18,23,43,.55)" }
+                        ? { background: "#111111", outline: "2px solid #2DD4BF", outlineOffset: "-2px", boxShadow: "none" }
+                        : { background: "#fff", outline: "2px solid #16796E", outlineOffset: "-2px", boxShadow: "0 16px 36px -22px rgba(18,23,43,.55)" }
                       : undefined
                   }
                 >
@@ -549,7 +571,7 @@ export default function SertifikatTab({
                 ? <IssuedDetail ct={selected} studentName={studentName} />
                 : <ProgressDetail ct={selected} onContinue={onContinue} onSchedule={onSchedule} />
             ) : (
-              <div className="rounded-2xl bg-white p-12 text-center">
+              <div className="cert-card rounded-2xl bg-white p-12 text-center">
                 <Award className="mx-auto mb-3 h-10 w-10 text-slate-300" strokeWidth={1.6} />
                 <p className="text-[15px] font-extrabold text-[#12172B]">{t("Pilih sertifikat")}</p>
                 <p className="mt-1 text-[13px] text-[#6B7280]">{t("Belum ada sertifikat di kategori ini.")}</p>
@@ -767,7 +789,7 @@ function ProgressDetail({ ct, onContinue, onSchedule }: { ct: Cert; onContinue?:
   const pct = ct.pct ?? (total > 0 ? Math.round((used / total) * 100) : 0);
   const remain = Math.max(0, total - used);
   return (
-    <div className="overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,.5)]">
+    <div className="cert-card overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,.5)]">
       {/* [sertifikat-banner-foto-v1] Banner pakai FOTO bahasa, persis kartu kelas di
           Beranda (sumber: getLangPhoto). Dulu cuma blok warna aksen — di kanvas hitam
           bidang oranye/merah sepenuh lebar itu menyilaukan. Kalau bahasanya belum punya
@@ -807,9 +829,9 @@ function ProgressDetail({ ct, onContinue, onSchedule }: { ct: Cert; onContinue?:
         <div className="mt-2 h-3 overflow-hidden rounded-full bg-[#E8EAEE]"><div className="h-full rounded-full" style={{ width: `${pct}%`, background: isDark ? "#2DD4BF" : "#16796E" }} /></div>
         <p className="mt-3 flex items-center gap-1.5 text-[13px] font-medium text-[#6B7280]"><Flag className="h-4 w-4 text-[#16796E]" />{t("Tinggal")} <b className="text-[#12172B]">{remain} {t("sesi")}</b> {t("lagi")} ({used}/{total}) {t("untuk membuka sertifikat ini.")}</p>
         <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
-          <div className="rounded-2xl bg-slate-50 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">{used}/{total}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">{t("Sesi Selesai")}</p></div>
-          <div className="rounded-2xl bg-slate-50 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">{remain}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">{t("Sesi Tersisa")}</p></div>
-          <div className="rounded-2xl bg-slate-50 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">CEFR {ct.level}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">{t("Target Level")}</p></div>
+          <div className="cert-tile rounded-2xl bg-slate-50 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">{used}/{total}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">{t("Sesi Selesai")}</p></div>
+          <div className="cert-tile rounded-2xl bg-slate-50 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">{remain}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">{t("Sesi Tersisa")}</p></div>
+          <div className="cert-tile rounded-2xl bg-slate-50 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">CEFR {ct.level}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">{t("Target Level")}</p></div>
         </div>
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <button onClick={onContinue} className="inline-flex h-12 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]"><Play className="h-[18px] w-[18px]" />{t("Lanjut Belajar")}</button>
@@ -865,9 +887,10 @@ function CefrModal({ onClose, currentLevel, isDark }: { onClose: () => void; cur
   const VB_W = PAD_L * 2 + (totalSubs - 1) * STEP + COL_W;
   const ink = isDark ? "#E7E9EE" : "#12172B";
   const sub = isDark ? "#9BA3AF" : "#6B7280";
-  const card = isDark ? "#1F1F1F" : "#ffffff";
-  const soft = isDark ? "#2A2A2A" : "#F5F6F8";
-  const line = isDark ? "#333333" : "#E8EAEE";
+  // [sertifikat-hitam-v1] popup ikut palet hitam tab-nya (dulu #1F1F1F/#2A2A2A = abu)
+  const card = isDark ? "#000000" : "#ffffff";
+  const soft = isDark ? "#141414" : "#F5F6F8";
+  const line = isDark ? "#242424" : "#E8EAEE";
   const teal = isDark ? "#2DD4BF" : "#16796E";
 
   return (
