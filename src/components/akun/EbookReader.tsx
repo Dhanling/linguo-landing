@@ -429,6 +429,13 @@ type Bab = { hal: number; judul: string; label?: string; utama: boolean; anak: S
    menuliskan "unit ini 3 halaman" di mana pun. */
 type BabRentang = Bab & { sampai: number };
 
+/* [ebook-isi-lompat-v1] Satu baris pada halaman "Daftar isi" CETAK (halaman di
+   dalam PDF-nya, bukan panel di tepi kiri) beserta kotak ketuknya dalam satuan
+   halaman. Kotaknya sengaja selebar tabel dan setinggi seluruh baris — yang
+   diketuk siswa biasanya judulnya atau ruang kosong di antara judul dan
+   nomornya, hampir tak pernah angkanya sendiri. */
+type BarisIsi = { hal: number; judul: string; x0: number; x1: number; y0: number; y1: number };
+
 /** Huruf penyusun kata — dipakai memuaikan ketukan jadi satu kata utuh. */
 const HURUF = /[\p{L}\p{M}\p{N}'\u2019\u02BC-]/u;
 
@@ -1436,7 +1443,13 @@ export default function EbookReader({
   const kunciRef = useRef<Map<number, KotakKunci | null>>(new Map());
 
   useEffect(() => {
-    const halaman = [tampil.kiri, tampil.kanan].filter((n): n is number => !!n);
+    const kini = [tampil.kiri, tampil.kanan].filter((n): n is number => !!n);
+    /* Bentangan TETANGGA ikut dicari di muka. Pencarian tirai ini asinkron
+       (teks halaman + daftar operator gambar), dan dulu cuma dijalankan untuk
+       halaman yang sedang tampil — jadi begitu lembar mendarat, kunci jawaban
+       halaman baru sempat terbaca beberapa frame sebelum tirainya terpasang. */
+    const tepi = kini.length ? [kini[0] - 2, kini[0] - 1, kini[kini.length - 1] + 1, kini[kini.length - 1] + 2] : [];
+    const halaman = [...kini, ...tepi.filter((n) => n >= 1 && (!total || n <= total))];
     let hidup = true;
     (async () => {
       let berubah = false;
@@ -1488,7 +1501,99 @@ export default function EbookReader({
       }
     })();
     return () => { hidup = false; };
-  }, [tampil.kiri, tampil.kanan, doc, ambilTeks, KUNCI_JUDUL]);
+  }, [tampil.kiri, tampil.kanan, total, doc, ambilTeks, KUNCI_JUDUL]);
+
+  /* Pindah bentangan = tirainya tertutup lagi. Kunci jawaban yang sudah dibuka
+     tidak boleh "menempel" pada nomor halamannya: siswa yang kembali ke unit
+     itu besok pagi harus mengerjakan soalnya dulu, bukan disambut jawabannya. */
+  useEffect(() => {
+    setKunciBuka((s) => (s.size ? new Set() : s));
+  }, [tampil.kiri, tampil.kanan]);
+
+  /* Satu tirai kunci jawaban di atas satu halaman. `kiriSlot` = pergeseran
+     mendatar slot halamannya (0 untuk muka lembar yang berputar), `beku` =
+     lembar sedang berputar sehingga tirainya cuma gambar, tak bisa diketuk.
+
+     [ebook-kunci-tirai-saat-balik-v1] Waktu lembar berputar tirainya TETAP
+     digambar — termasuk di kedua muka lembar itu sendiri. Dulu seluruh lapisan
+     ini dicabut selama animasi (`!balik`), jadi kunci jawaban halaman yang
+     sedang dibalik terbaca utuh selama setengah detik: bocor persis di gerakan
+     yang paling sering dipakai siswa. */
+  const gambarTirai = useCallback((n: number | null | undefined, kiriSlot: number, beku: boolean) => {
+    if (!n) return null;
+    const kotak = kunciKotak.get(n);
+    if (!kotak) return null;
+    /* [ebook-kunci-tirai-presisi-v1] Kotak yang datang dari bidang gambar
+       halaman sudah persis sebesar kartunya — dipakai apa adanya. Yang ditebak
+       dari tulisan tetap dibentangkan simetris (marjin kiri disalin ke kanan),
+       kalau tidak tirainya duduk melenceng ke kiri karena baris terpanjang di
+       dalam kartu tak pernah persis selebar kartunya. */
+    const halW = skalaTampil > 0 ? pw / skalaTampil : 0;
+    const marjin = kotak.pas ? kotak.x : Math.max(0, Math.min(kotak.x, halW / 2 - 24));
+    const lebar = kotak.pas ? kotak.w : (halW > 0 ? halW - marjin * 2 : kotak.w);
+    const gaya = {
+      left: kiriSlot + marjin * skalaTampil,
+      top: kotak.y * skalaTampil,
+      width: lebar * skalaTampil,
+      height: kotak.h * skalaTampil,
+      // Sudut kartu cetaknya 3mm; tirai bersudut lain langsung terlihat sebagai
+      // lapisan yang menempel di atasnya.
+      borderRadius: kotak.pas ? SUDUT_KARTU * skalaTampil : undefined,
+    };
+    const isi = (
+      <>
+        <Eye className="h-5 w-5" />
+        <span className="px-3 text-center text-[12px] font-extrabold leading-tight">
+          {t("Lihat kunci jawaban")}
+        </span>
+        <span className="px-4 text-center text-[10.5px] font-semibold leading-snug text-[#12776F]/70">
+          {t("Coba dulu, baru cocokkan")}
+        </span>
+      </>
+    );
+    if (kunciBuka.has(n)) {
+      // Halaman yang tirainya memang sudah dibuka siswa tetap terbuka selama
+      // lembarnya berputar — tombol "Tutup lagi" saja yang disembunyikan.
+      if (beku) return null;
+      return (
+        <button
+          key={`kunci-${n}`}
+          onClick={(e) => {
+            e.stopPropagation();
+            setKunciBuka((v) => { const x = new Set(v); x.delete(n); return x; });
+          }}
+          title={t("Sembunyikan kunci jawaban")}
+          className="absolute z-10 flex items-center gap-1 rounded-lg bg-[#0F172A]/80 px-2 py-1 text-[10.5px] font-bold text-white/80 backdrop-blur-sm transition hover:bg-[#0F172A]"
+          style={{ left: gaya.left + gaya.width - 92, top: gaya.top - 6 }}
+        >
+          <EyeOff className="h-3.5 w-3.5" />
+          {t("Tutup lagi")}
+        </button>
+      );
+    }
+    if (beku) {
+      return (
+        <div
+          key={`kunci-${n}`}
+          aria-hidden
+          className={`ebook-kunci pointer-events-none absolute z-10 flex flex-col items-center justify-center gap-1.5 text-[#12776F] ${kotak.pas ? "" : "rounded-xl"}`}
+          style={gaya}
+        >
+          {isi}
+        </div>
+      );
+    }
+    return (
+      <button
+        key={`kunci-${n}`}
+        onClick={(e) => { e.stopPropagation(); setKunciBuka((v) => new Set(v).add(n)); }}
+        className={`ebook-kunci absolute z-10 flex flex-col items-center justify-center gap-1.5 text-[#12776F] transition ${kotak.pas ? "" : "rounded-xl"}`}
+        style={gaya}
+      >
+        {isi}
+      </button>
+    );
+  }, [kunciKotak, kunciBuka, skalaTampil, pw, t]);
 
   /* [ebook-latihan-interaktif-v1] Unit yang halamannya sedang terbuka — dasar
      tombol "Kerjakan latihan". Rentang halamannya dihitung waktu modul dirakit,
@@ -1802,19 +1907,11 @@ export default function EbookReader({
     return () => window.clearTimeout(id);
   }, [daftarBuka, memindai, idxAktif, garisWaktu.length]);
 
-  /* [ebook-tts-ketuk-kata-v1] Koordinat ketukan → kata + kalimat yang layak
-     dibunyikan. Dipakai dua kali: waktu jari MENYENTUH halaman (prasiapan
-     audio) dan waktu klik-nya benar-benar jadi. null = tak ada yang perlu
-     diubah di popup, "kosong" = ketukan mendarat di luar teks. */
-  type Ketuk = {
-    unit: string; kalimat: string; terjemahan: boolean;
-    ucap: { hal: number; kata: string; kalimat: string; x: number; y: number; w: number; h: number; terjemahan: boolean };
-  };
-  const resolusiKetuk = useCallback(async (
-    box: DOMRect, clientX: number, clientY: number
-  ): Promise<Ketuk | "kosong" | null> => {
-    if (!ttsAktif || !kodeBahasa || balik || !ukuran || skalaTampil <= 0) return null;
-    if (!box.height || !ph) return null;
+  /* [ebook-isi-lompat-v1] Ketukan layar → halaman mana yang kena + titiknya
+     dalam satuan halaman (skala 1). Dipakai dua fitur sekaligus: ketuk kata dan
+     ketuk baris daftar isi cetak, jadi normalisasinya cuma ditulis sekali. */
+  const titikHal = useCallback((box: DOMRect, clientX: number, clientY: number) => {
+    if (balik || !ukuran || skalaTampil <= 0 || !box.height || !ph) return null;
     // Kotak buku bisa sedang diskalakan CSS (cubitan belum diraster ulang), jadi
     // ketukan dinormalkan dulu ke ukuran halaman yang sebenarnya. Pembaginya
     // TINGGI, bukan lebar: tinggi tak pernah ikut digencet flex, jadi angkanya
@@ -1830,10 +1927,32 @@ export default function EbookReader({
       else hal = tampil.kiri;
     }
     if (!hal) return null;
+    return {
+      hal,
+      xp: xh / skalaTampil,
+      yp: fy / skalaTampil,
+      /** Geseran mendatar halaman ini di dalam kotak buku — untuk menggambar sorotan. */
+      kiriSlot: dua && hal === tampil.kanan ? pw + GAP : 0,
+    };
+  }, [balik, ukuran, skalaTampil, ph, pw, dua, tampil]);
+
+  /* [ebook-tts-ketuk-kata-v1] Koordinat ketukan → kata + kalimat yang layak
+     dibunyikan. Dipakai dua kali: waktu jari MENYENTUH halaman (prasiapan
+     audio) dan waktu klik-nya benar-benar jadi. null = tak ada yang perlu
+     diubah di popup, "kosong" = ketukan mendarat di luar teks. */
+  type Ketuk = {
+    unit: string; kalimat: string; terjemahan: boolean;
+    ucap: { hal: number; kata: string; kalimat: string; x: number; y: number; w: number; h: number; terjemahan: boolean };
+  };
+  const resolusiKetuk = useCallback(async (
+    box: DOMRect, clientX: number, clientY: number
+  ): Promise<Ketuk | "kosong" | null> => {
+    if (!ttsAktif || !kodeBahasa) return null;
+    const titik = titikHal(box, clientX, clientY);
+    if (!titik) return null;
+    const { hal, xp, yp, kiriSlot } = titik;
 
     const { items, baris } = await ambilTeks(hal);
-    const xp = xh / skalaTampil;
-    const yp = fy / skalaTampil;
     const kena = items.find(
       (it) => xp >= it.x - 1 && xp <= it.x + it.w + 1 && yp >= it.y - 1 && yp <= it.y + it.h + 1
     );
@@ -1869,7 +1988,6 @@ export default function EbookReader({
        lihat kataIndonesia di lib/ebookTts. */
     const konteks = sel?.teks || barisKena?.teks || kena.str;
     const terjemahan = kataIndonesia(kata.kata, kodeBahasa, konteks);
-    const kiriSlot = dua && hal === tampil.kanan ? pw + GAP : 0;
     return {
       unit,
       kalimat,
@@ -1885,7 +2003,102 @@ export default function EbookReader({
         terjemahan,
       },
     };
-  }, [ttsAktif, kodeBahasa, balik, ukuran, skalaTampil, ph, pw, dua, tampil, ambilTeks, kataDi]);
+  }, [ttsAktif, kodeBahasa, skalaTampil, titikHal, ambilTeks, kataDi]);
+
+  /* ── daftar isi cetak yang bisa diketuk ───────────────────────────────
+     [ebook-isi-lompat-v1] Halaman "Daftar isi" di dalam modul dulu cuma gambar:
+     siswa membacanya, lalu mengetik nomornya sendiri di kotak lompat halaman.
+     Sekarang barisnya diketuk langsung.
+
+     Tautan PDF sungguhan tak bisa dipakai: modul dicetak Chromium dengan
+     --no-pdf-header-footer dan halamannya tak beranotasi sama sekali (lihat
+     [ebook-daftar-isi-cetak-v1] di scripts/build-ebook-pdf.mjs), lagipula
+     modul yang sudah terbit tak akan dicetak ulang. Barisnya dikenali dari
+     BENTUKNYA: kolom paling kanan berisi angka saja, kolom pertama berhuruf.
+     Nomor pada daftar isi memang nomor halaman PDF — perakitnya membaca balik
+     PDF hasil putaran pertama untuk mengisinya. */
+  const isiRef = useRef<Map<number, BarisIsi[]>>(new Map());
+  const ambilDaftarIsi = useCallback(async (n: number): Promise<BarisIsi[]> => {
+    const ada = isiRef.current.get(n);
+    if (ada) return ada;
+    const { baris } = await ambilTeks(n);
+    const calon: { y: number; h: number; x0: number; x1: number; judul: string; hal: number }[] = [];
+    for (const b of baris) {
+      const awal = b.segmen[0];
+      const akhir = b.segmen[b.segmen.length - 1];
+      if (b.segmen.length < 2 || !awal || !akhir) continue;
+      if (!/^\d{1,4}$/.test(akhir.teks)) continue;   // kolom nomor halaman
+      if (!/\p{L}/u.test(awal.teks)) continue;       // kolom judul
+      const hal = Number(akhir.teks);
+      if (!total || hal < 1 || hal > total) continue;
+      calon.push({
+        y: b.y, h: b.h, x0: awal.x0, x1: akhir.x1, hal,
+        judul: b.segmen.slice(0, -1).map((g) => g.teks).join(" "),
+      });
+    }
+    /* Pagar terhadap salah kenal: tabel kosakata pun berkolom dua dan kadang
+       berangka. Daftar isi punya dua ciri yang tak dimiliki tabel biasa —
+       minimal tiga baris bernomor, dan nomornya menanjak dari atas ke bawah. */
+    const sah = calon.length >= 3 && calon.every((c, i) => i === 0 || c.hal >= calon[i - 1].hal);
+    const x0 = Math.min(...calon.map((c) => c.x0));
+    const x1 = Math.max(...calon.map((c) => c.x1));
+    const hasil: BarisIsi[] = !sah ? [] : calon.map((c, i) => {
+      /* Kotaknya membentang sampai tepat di atas baris berikutnya, supaya judul
+         asing yang dicetak miring di bawah judul Indonesianya ("¡Hola! ¿Cómo te
+         llamas?") membuka halaman yang sama, bukan jadi lubang mati. Dibatasi
+         3,2x tinggi huruf supaya baris TERAKHIR daftar tak menelan sisa
+         halaman yang kosong. */
+      const bawah = calon[i + 1] ? calon[i + 1].y - 1 : c.y + c.h * 2.4;
+      return {
+        hal: c.hal,
+        judul: c.judul,
+        x0: x0 - 4,
+        x1: x1 + 4,
+        y0: c.y - c.h * 0.35,
+        y1: Math.max(c.y + c.h, Math.min(bawah, c.y + c.h * 3.2)),
+      };
+    });
+    isiRef.current.set(n, hasil);
+    return hasil;
+  }, [ambilTeks, total]);
+
+  /** Ketukan/tunjukan tetikus → baris daftar isi yang kena + sorotannya (px layar). */
+  const isiDiTitik = useCallback(async (
+    box: DOMRect, clientX: number, clientY: number
+  ): Promise<{ hal: number; x: number; y: number; w: number; h: number } | null> => {
+    const titik = titikHal(box, clientX, clientY);
+    if (!titik) return null;
+    const daftar = await ambilDaftarIsi(titik.hal);
+    if (!daftar.length) return null;
+    const kena = daftar.find(
+      (r) => titik.xp >= r.x0 && titik.xp <= r.x1 && titik.yp >= r.y0 && titik.yp <= r.y1
+    );
+    if (!kena || kena.hal === titik.hal) return null; // barisnya menunjuk dirinya sendiri
+    return {
+      hal: kena.hal,
+      x: titik.kiriSlot + kena.x0 * skalaTampil,
+      y: kena.y0 * skalaTampil,
+      w: (kena.x1 - kena.x0) * skalaTampil,
+      h: (kena.y1 - kena.y0) * skalaTampil,
+    };
+  }, [titikHal, ambilDaftarIsi, skalaTampil]);
+
+  /* Baris daftar isi yang sedang ditunjuk tetikus — cuma sorotan, bukan keadaan
+     yang perlu bertahan. Titik terakhir disimpan supaya mousemove yang beruntun
+     tak memanggil ulang pencariannya tiap piksel. */
+  const [isiSorot, setIsiSorot] = useState<{ hal: number; x: number; y: number; w: number; h: number } | null>(null);
+  const titikTetikusRef = useRef({ x: -1, y: -1 });
+  const onGerakTeks = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (!tepiSiap) return; // layar sentuh tak punya "menunjuk"
+    const { clientX, clientY } = e;
+    const lalu = titikTetikusRef.current;
+    if (Math.abs(clientX - lalu.x) < 3 && Math.abs(clientY - lalu.y) < 3) return;
+    titikTetikusRef.current = { x: clientX, y: clientY };
+    const box = e.currentTarget.getBoundingClientRect();
+    void isiDiTitik(box, clientX, clientY).then((r) => {
+      setIsiSorot((s) => (r?.hal === s?.hal && r?.y === s?.y ? s : r));
+    });
+  }, [tepiSiap, isiDiTitik]);
 
   /* [tts-prasiap-v1] Jari menyentuh halaman → audionya sudah mulai disiapkan,
      jauh sebelum `click` menyala (di ponsel jaraknya ratusan milidetik). Cuma
@@ -1903,9 +2116,24 @@ export default function EbookReader({
 
   const onKlikTeks = useCallback(async (e: React.MouseEvent<HTMLDivElement>) => {
     if (abaikanKlikRef.current) { abaikanKlikRef.current = false; return; }
+    // Masih di dalam gerakan pengguna — lihat catatan di ebookTts. WAJIB sebelum
+    // await pertama: sesudahnya Safari sudah tak menganggapnya gerakan pengguna.
+    if (ttsAktif && kodeBahasa) bukaKunciAudio();
+    const box = e.currentTarget.getBoundingClientRect();
+    const { clientX, clientY } = e;
+    /* [ebook-isi-lompat-v1] Baris daftar isi didahulukan: barisnya bukan bahan
+       bacaan, jadi tak perlu ikut dibunyikan — dan lompatannya harus tetap
+       jalan di modul yang bahasanya belum punya suara. */
+    const isiKena = await isiDiTitik(box, clientX, clientY);
+    if (isiKena) {
+      setUcap(null);
+      setIsiSorot(null);
+      hentikanEbookTts();
+      ke(isiKena.hal);
+      return;
+    }
     if (!ttsAktif || !kodeBahasa) return;
-    bukaKunciAudio(); // masih di dalam gerakan pengguna — lihat catatan di ebookTts
-    const r = await resolusiKetuk(e.currentTarget.getBoundingClientRect(), e.clientX, e.clientY);
+    const r = await resolusiKetuk(box, clientX, clientY);
     if (!r) return;
     if (r === "kosong") { setUcap(null); return; }
     const { unit, kalimat, terjemahan } = r;
@@ -1924,7 +2152,7 @@ export default function EbookReader({
     setBunyi("kata");
     await ucapkanEbook(unit, kodeBahasa);
     setBunyi(null);
-  }, [ttsAktif, kodeBahasa, resolusiKetuk]);
+  }, [ttsAktif, kodeBahasa, resolusiKetuk, isiDiTitik, ke]);
 
   const ucapkanLagi = useCallback(async (teks: string, jenis: "kata" | "kalimat") => {
     if (!kodeBahasa) return;
@@ -1935,7 +2163,7 @@ export default function EbookReader({
   }, [kodeBahasa]);
 
   // Pindah halaman / ganti tata letak → sorotan kata ikut hilang.
-  useEffect(() => { setUcap(null); hentikanEbookTts(); }, [page, dua]);
+  useEffect(() => { setUcap(null); setIsiSorot(null); hentikanEbookTts(); }, [page, dua]);
 
   useEffect(() => {
     ucapRef.current = !!ucap;
@@ -2103,10 +2331,12 @@ export default function EbookReader({
               transition: faktorZoom === 1
                 ? `transform ${DURASI_BALIK}ms cubic-bezier(0.42, 0.02, 0.32, 1)`
                 : "none",
-              cursor: ttsAktif ? "pointer" : undefined,
+              cursor: ttsAktif || isiSorot ? "pointer" : undefined,
             }}
             onContextMenu={(e) => e.preventDefault()}
             onPointerDown={onSentuhTeks}
+            onMouseMove={onGerakTeks}
+            onMouseLeave={() => setIsiSorot(null)}
             onClick={(e) => void onKlikTeks(e)}
           >
             {/* Menu klik-kanan dimatikan: "Simpan gambar" di atas canvas adalah
@@ -2182,6 +2412,8 @@ export default function EbookReader({
                     className="ebook-hal bg-white"
                     style={{ width: pw, height: ph, borderRadius: sudutDaun }}
                   />
+                  {/* Muka depan = halaman yang sedang ditinggalkan. */}
+                  {gambarTirai(dua ? (balik.arah > 0 ? tampil.kanan : tampil.kiri) : tampil.kiri, 0, true)}
                   <div className="ebook-bayang" style={{ borderRadius: sudutDaun }} />
                 </div>
                 <div className="ebook-muka ebook-punggung">
@@ -2190,71 +2422,55 @@ export default function EbookReader({
                     className="ebook-hal bg-white"
                     style={{ width: pw, height: ph, borderRadius: sudutDaun }}
                   />
+                  {/* Punggung = halaman baru yang tersingkap di balik kertas. */}
+                  {gambarTirai(
+                    dua
+                      ? (balik.arah > 0 ? balik.tujuan.kiri : balik.tujuan.kanan)
+                      : (balik.tujuan.kiri ?? balik.tujuan.kanan),
+                    0,
+                    true,
+                  )}
                   <div className="ebook-bayang balik" style={{ borderRadius: sudutDaun }} />
                 </div>
               </div>
             )}
 
-            {/* [ebook-kunci-tertutup-v1] tirai kunci jawaban */}
-            {!balik &&
-              [tampil.kiri, tampil.kanan].map((n) => {
-                if (!n) return null;
-                const kotak = kunciKotak.get(n);
-                if (!kotak) return null;
-                const kiriSlot = dua && n === tampil.kanan ? pw + GAP : 0;
-                /* [ebook-kunci-tirai-presisi-v1] Kotak yang datang dari bidang
-                   gambar halaman sudah persis sebesar kartunya — dipakai apa
-                   adanya. Yang ditebak dari tulisan tetap dibentangkan simetris
-                   (marjin kiri disalin ke kanan), kalau tidak tirainya duduk
-                   melenceng ke kiri karena baris terpanjang di dalam kartu tak
-                   pernah persis selebar kartunya. */
-                const halW = skalaTampil > 0 ? pw / skalaTampil : 0;
-                const marjin = kotak.pas ? kotak.x : Math.max(0, Math.min(kotak.x, halW / 2 - 24));
-                const lebar = kotak.pas ? kotak.w : (halW > 0 ? halW - marjin * 2 : kotak.w);
-                const gaya = {
-                  left: kiriSlot + marjin * skalaTampil,
-                  top: kotak.y * skalaTampil,
-                  width: lebar * skalaTampil,
-                  height: kotak.h * skalaTampil,
-                  // Sudut kartu cetaknya 3mm; tirai bersudut lain langsung
-                  // terlihat sebagai lapisan yang menempel di atasnya.
-                  borderRadius: kotak.pas ? SUDUT_KARTU * skalaTampil : undefined,
-                };
-                const terbuka = kunciBuka.has(n);
-                if (terbuka) {
-                  return (
-                    <button
-                      key={`kunci-${n}`}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setKunciBuka((s) => { const x = new Set(s); x.delete(n); return x; });
-                      }}
-                      title={t("Sembunyikan kunci jawaban")}
-                      className="absolute z-10 flex items-center gap-1 rounded-lg bg-[#0F172A]/80 px-2 py-1 text-[10.5px] font-bold text-white/80 backdrop-blur-sm transition hover:bg-[#0F172A]"
-                      style={{ left: gaya.left + gaya.width - 92, top: gaya.top - 6 }}
-                    >
-                      <EyeOff className="h-3.5 w-3.5" />
-                      {t("Tutup lagi")}
-                    </button>
-                  );
-                }
-                return (
-                  <button
-                    key={`kunci-${n}`}
-                    onClick={(e) => { e.stopPropagation(); setKunciBuka((s) => new Set(s).add(n)); }}
-                    className={`ebook-kunci absolute z-10 flex flex-col items-center justify-center gap-1.5 text-[#12776F] transition ${kotak.pas ? "" : "rounded-xl"}`}
-                    style={gaya}
-                  >
-                    <Eye className="h-5 w-5" />
-                    <span className="px-3 text-center text-[12px] font-extrabold leading-tight">
-                      {t("Lihat kunci jawaban")}
-                    </span>
-                    <span className="px-4 text-center text-[10.5px] font-semibold leading-snug text-[#12776F]/70">
-                      {t("Coba dulu, baru cocokkan")}
-                    </span>
-                  </button>
-                );
-              })}
+            {/* [ebook-kunci-tertutup-v1] tirai kunci jawaban.
+                [ebook-kunci-tirai-saat-balik-v1] Waktu lembar berputar, slot
+                kiri/kanan tidak selalu memegang halaman yang sedang "tampil":
+                yang maju sudah memasang halaman baru di kanan, yang mundur di
+                kiri. Tirainya ikut nomor halaman yang BENAR-BENAR tergambar di
+                slot itu, kalau tidak ia menutup tempat yang salah. */}
+            {(() => {
+              const kiriHal = balik
+                ? (dua ? (balik.arah > 0 ? tampil.kiri : balik.tujuan.kiri) : (balik.tujuan.kiri ?? balik.tujuan.kanan))
+                : tampil.kiri;
+              const kananHal = balik ? (balik.arah > 0 ? balik.tujuan.kanan : tampil.kanan) : tampil.kanan;
+              return (
+                <>
+                  {gambarTirai(kiriHal, 0, !!balik)}
+                  {dua && gambarTirai(kananHal, pw + GAP, !!balik)}
+                </>
+              );
+            })()}
+
+            {/* [ebook-isi-lompat-v1] Baris daftar isi yang sedang ditunjuk. Tanpa
+                sorotan ini halamannya terlihat seperti gambar mati — tak ada
+                yang memberi tahu barisnya bisa diketuk. */}
+            {isiSorot && !balik && (
+              <span
+                aria-hidden
+                className="pointer-events-none absolute z-10 rounded-md"
+                style={{
+                  left: isiSorot.x,
+                  top: isiSorot.y,
+                  width: isiSorot.w,
+                  height: isiSorot.h,
+                  background: "rgba(62,217,192,0.16)",
+                  boxShadow: "inset 0 0 0 1px rgba(26,158,158,0.45)",
+                }}
+              />
+            )}
 
             {/* [ebook-tts-ketuk-kata-v1] sorotan kata yang diketuk + gelembung
                 pelafalan. Wadahnya pointer-events-none supaya ketukan berikutnya

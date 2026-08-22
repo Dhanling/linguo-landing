@@ -248,7 +248,8 @@
       "Bash(node -e \"const fs=require\\('fs'\\);fs.writeFileSync\\('mig.json',JSON.stringify\\({query:fs.readFileSync\\('/Users/muhamadlutfiramadhani/linguo-admin-dashboard/supabase/migrations/20260819150000_pendataan_source_check.sql','utf8'\\)}\\)\\);console.log\\('ok'\\)\")",
       "Bash(curl -s -w '\\\\nHTTP %{http_code}\\\\n' -X POST https://api.supabase.com/v1/projects/jbtgciepdmqxxcjflrxz/database/query -H 'Authorization: Bearer __CMDSUB_OUTPUT__' -H 'Content-Type: application/json' --data-binary @mig.json)",
       "Bash(curl -s -w '\\\\nHTTP %{http_code}\\\\n' -X POST https://api.supabase.com/v1/projects/jbtgciepdmqxxcjflrxz/database/query -H 'Authorization: Bearer __CMDSUB_OUTPUT__' -H 'Content-Type: application/json' --data-binary @/private/tmp/claude-501/-Users-muhamadlutfiramadhani-linguo-landing/9a241326-2d1a-4eba-ae5b-214ac6910521/scratchpad/mig.json)",
-      "Bash(SUPA_TOKEN=__CMDSUB_OUTPUT__ node -e ' *)"
+      "Bash(SUPA_TOKEN=__CMDSUB_OUTPUT__ node -e ' *)",
+      "Bash(node /private/tmp/claude-501/-Users-muhamadlutfiramadhani-linguo-landing/b836d877-99b7-491a-b0b9-452628862ce7/scratchpad/t.mjs)"
     ],
     "additionalDirectories": [
       "/Users/muhamadlutfiramadhani/linguo-app/supabase/functions/_shared",
