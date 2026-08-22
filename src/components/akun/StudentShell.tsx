@@ -11,6 +11,7 @@ import MobileBottomNav from "@/components/akun/MobileBottomNav";
 import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, BookText, MessagesSquare, Menu, X, Bug, type LucideIcon } from "lucide-react";
 // [bug-report-pengajar-siswa-v1] siswa lapor bug dari LMS → masuk Bug Tracker admin
 import BugReportDialog from "@/components/akun/BugReportDialog";
+import PosterPopupAkun from "@/components/akun/PosterPopupAkun"; // [poster-popup-akun-v1]
 // [ui-lang-switcher-v1] label menu ikut bahasa antarmuka yang dipilih siswa
 import { useT } from "@/lib/uiLang";
 import UiLangSwitcher from "@/components/akun/UiLangSwitcher";
@@ -789,6 +790,11 @@ export default function StudentShell({
       {/* ── BOTTOM NAV MOBILE ── dipindah ke shell (dulu cuma dirender di /akun,
           jadi halaman lain nol navigasi di HP: cuma bisa keluar via back browser). */}
       {canReportBug && <BugReportDialog open={bugOpen} onClose={() => setBugOpen(false)} />}
+
+      {/* [poster-popup-akun-v1] Poster promo e-book — muncul tiap dashboard dimuat
+          (buka / refresh), persis pola pop-up di landing. Halaman immersive
+          (pemutar sesi, reader) dilewati: di sana siswa lagi mengerjakan sesuatu. */}
+      {!immersive && <PosterPopupAkun />}
 
       {!immersive && (
         <MobileBottomNav
