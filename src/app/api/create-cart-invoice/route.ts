@@ -8,9 +8,15 @@
 // formatnya memang tak muat di sana. Repo landing sendiri sudah punya
 // XENDIT_SECRET_KEY + service role, jadi tak perlu deploy lintas repo.
 //
-// external_id = `LINGUO-CART-<uuid>-<ts>` → dipenuhi oleh
-// src/app/api/xendit-webhook/route.ts (fulfillCartPurchase). Awalannya sengaja
-// baru: LINGUO-EBOOK-/SIM-/INV-/REG- sudah punya arti masing-masing.
+// external_id = `LINGUO-CART-<uuid>-<ts>`. Awalannya sengaja baru: LINGUO-EBOOK-/
+// SIM-/INV-/REG- sudah punya arti masing-masing.
+//
+// ⚠️ Yang MEMENUHI invoice ini adalah edge function `xendit-webhook`
+// (linguo-app, handler `handleCartPurchase`) — itu yang terdaftar sebagai
+// callback di Xendit. `src/app/api/xendit-webhook/route.ts` di repo ini punya
+// fulfillCartPurchase yang isinya sama persis, tapi TAK PERNAH DIPANGGIL; sampai
+// 22 Agu 2026 itu berarti tiap checkout keranjang yang lunas cuma tercatat
+// sebagai ORPHAN_PAYMENT. Kalau logikanya berubah, ubah di edge function-nya.
 //
 // ⚠️ Gotcha DB (sama seperti /api/promo-digital): `digital_purchases` punya
 // trigger BEFORE INSERT OR UPDATE `sync_digital_purchase_to_registration` yang

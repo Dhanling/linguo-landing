@@ -559,6 +559,10 @@ async function fulfillEbookLead(
 }
 
 // ── pustaka-keranjang-v1: invoice keranjang LUNAS → semua barisnya diaktifkan ──
+// ⚠️ TIDAK AKTIF: yang terdaftar sebagai callback di Xendit adalah edge function
+// `xendit-webhook` (repo linguo-app), bukan route ini. Fungsi yang benar-benar
+// jalan = `handleCartPurchase` di sana. Dibiarkan di sini sebagai cadangan kalau
+// suatu saat callback dipindah, tapi jangan menambal jalur keranjang di sini.
 // Checkout keranjang (/api/create-cart-invoice) sudah menulis N baris
 // `digital_purchases` "Belum Bayar" untuk SATU invoice, jadi di sini tak ada
 // lagi yang perlu ditebak: cukup cari barisnya lewat xendit_invoice_id dan
