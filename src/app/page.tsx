@@ -1371,7 +1371,9 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
   const card = p as typeof p & { img1?: string; img2?: string; lucideIcon?: React.ElementType };
   const LucideIco = card.lucideIcon;
   const sizeCls = mobile ? "w-full h-full rounded-xl" : "w-full h-full rounded-3xl";
-  const objPos = "object-center";
+  // gambar sudah dipangkas rapat ke tepi (tanpa bingkai putih bawaan file);
+  // titik potong ditarik ke atas biar wajah tak kepotong saat object-cover
+  const objPos = "object-[50%_25%]";
 
   const handleClick = () => {
     if(p.tab>=0){window.location.href = daftarHref(["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep","Kelas Kids"][p.tab]||"")}
