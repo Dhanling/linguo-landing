@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { BookOpen, Clapperboard } from "lucide-react";
 import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
 import CheckoutSection from "./CheckoutSection";
+import { masihDijual } from "@/lib/elearningBundle";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -35,6 +36,12 @@ async function getProduct(slug: string) {
 
 export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  /* [elearning-per-bahasa-v1] Paket 12+ bahasa berhenti dijual. Barisnya
+     TETAP is_active (pembeli lama membacanya lewat join dari
+     `digital_purchases` — lihat lib/elearningBundle.ts), jadi etalase publiknya
+     ditutup di sini: tanpa penjagaan ini halamannya masih terbuka lewat tautan
+     lama dan masih bisa dibayar. */
+  if (!masihDijual(slug)) notFound();
   const product = await getProduct(slug);
   if (!product) notFound();
 

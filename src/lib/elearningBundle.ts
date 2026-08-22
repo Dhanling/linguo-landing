@@ -9,3 +9,6 @@
 // Jadi cara menyembunyikannya bukan is_active, melainkan menyaring slug ini dari
 // semua etalase publik. Satu-satunya sumber slug-nya ada di sini.
 export const ELEARNING_BUNDLE_SLUG = 'paket-elearning-10-bahasa';
+
+/** Produk ini masih boleh dijual/diperpanjang? */
+export const masihDijual = (slug?: string | null) => slug !== ELEARNING_BUNDLE_SLUG;

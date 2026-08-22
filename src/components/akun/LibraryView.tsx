@@ -35,7 +35,7 @@ import { getLangPhoto } from "@/lib/lang-visuals";
 import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
 // [ebook-reader-v1] e-book berkas dibaca di dalam dashboard, bukan diunduh
 import EbookReader, { prewarmEbookReader, prewarmEbookModul, mintaLayarPenuh } from "@/components/akun/EbookReader";
-import { ELEARNING_BUNDLE_SLUG } from "@/lib/elearningBundle";
+import { ELEARNING_BUNDLE_SLUG, masihDijual } from "@/lib/elearningBundle";
 // [pustaka-popup-blocked-v1] tab bayar dibuka di dalam gestur klik, bukan sesudah fetch
 import { siapkanTabPembayaran } from "@/lib/bukaTabPembayaran";
 // [pustaka-keranjang-v1] beli beberapa produk sekaligus → satu invoice
@@ -1241,6 +1241,11 @@ function ProductCard({
   const prod = p.digital_products;
   const a = accessInfo(p);
   const expired = a.kind === "expired";
+  /* [elearning-per-bahasa-v1] Paket 12+ bahasa berhenti dijual: kartunya tetap
+     ada supaya pembeli lama melihat riwayat & sisa aksesnya, tapi "Perpanjang"
+     dicabut — tombol itu menerbitkan pembelian BARU atas produk yang sudah
+     tidak ditawarkan lagi. Yang masanya habis berhenti di chip "Akses Berakhir". */
+  const bolehPerpanjang = masihDijual(prod.slug);
   const isExternal = !!externalLinkFor(prod);
   const verb = accessVerb(prod);
   const label = prod.type === "elearning" && prog && prog.pct > 0 ? "Lanjut" : verb;
@@ -1308,7 +1313,7 @@ function ProductCard({
 
         <div className="mt-auto flex items-center justify-between gap-2 pt-1">
           <AccessChip a={a} />
-          {expired ? (
+          {expired && !bolehPerpanjang ? null : expired ? (
             <button onClick={onRenew} className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-xl bg-amber-500 px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-amber-600 active:scale-[0.98]">
               <Sparkles className="h-4 w-4" strokeWidth={2.4} /> Perpanjang
             </button>
@@ -1343,6 +1348,11 @@ function ProductRow({
   const prod = p.digital_products;
   const a = accessInfo(p);
   const expired = a.kind === "expired";
+  /* [elearning-per-bahasa-v1] Paket 12+ bahasa berhenti dijual: kartunya tetap
+     ada supaya pembeli lama melihat riwayat & sisa aksesnya, tapi "Perpanjang"
+     dicabut — tombol itu menerbitkan pembelian BARU atas produk yang sudah
+     tidak ditawarkan lagi. Yang masanya habis berhenti di chip "Akses Berakhir". */
+  const bolehPerpanjang = masihDijual(prod.slug);
   const isExternal = !!externalLinkFor(prod);
   const verb = accessVerb(prod);
   // [ebook-reader-v1] berkas e-book dibaca di dashboard → ikon buku, bukan panah unduh
@@ -1391,7 +1401,7 @@ function ProductRow({
       >
         {bookmarked ? <BookmarkCheck className="h-[18px] w-[18px]" fill="currentColor" /> : <Bookmark className="h-[18px] w-[18px]" />}
       </button>
-      {expired ? (
+      {expired && !bolehPerpanjang ? null : expired ? (
         <button onClick={onRenew} className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-amber-500 px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-amber-600 active:scale-[0.98]"><Sparkles className="h-4 w-4" strokeWidth={2.4} /> Perpanjang</button>
       ) : (
         <button onClick={onOpen} disabled={busy} className={`inline-flex shrink-0 items-center gap-1.5 rounded-xl px-3.5 py-2 text-[13px] font-bold text-white transition disabled:opacity-50 ${ready ? "bg-[#12A37E] hover:bg-[#0C8163]" : "bg-slate-400 hover:bg-slate-500"}`}>
