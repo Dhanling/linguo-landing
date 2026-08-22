@@ -980,8 +980,22 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder={t("Cari produk…")}
-              className="w-full rounded-2xl border border-slate-200 bg-white py-2.5 pl-10 pr-3 text-[14px] font-medium text-[#12172B] outline-none transition placeholder:text-slate-400 focus:border-slate-300"
+              className="w-full rounded-2xl border border-slate-200 bg-white py-2.5 pl-10 pr-10 text-[14px] font-medium text-[#12172B] outline-none transition placeholder:text-slate-400 focus:border-slate-300"
             />
+            {/* [pustaka-cari-hapus-v1] Tombol hapus teks — dulu satu-satunya cara balik ke
+                daftar penuh itu menghapus ketikannya satu per satu (di HP tak ada tombol
+                silang bawaan seperti input[type=search] di desktop). */}
+            {q && (
+              <button
+                type="button"
+                onClick={() => setQ("")}
+                aria-label={t("Hapus pencarian")}
+                title={t("Hapus pencarian")}
+                className="absolute right-2.5 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition hover:bg-slate-200 hover:text-[#12172B]"
+              >
+                <X className="h-3.5 w-3.5" strokeWidth={2.6} />
+              </button>
+            )}
           </div>
           <div className="hidden items-center gap-1 rounded-2xl bg-slate-100 p-1 sm:flex">
             <button onClick={() => setView("grid")} aria-label="Grid" className={`flex h-9 w-9 items-center justify-center rounded-xl transition ${view === "grid" ? "bg-white text-[#12172B] shadow-sm" : "text-slate-400 hover:text-slate-600"}`}>
