@@ -6,12 +6,24 @@
 //   1. process.env.GOOGLE_TTS_CREDENTIALS_JSON  — isi JSON service account (buat deploy/Vercel)
 //   2. process.env.GOOGLE_APPLICATION_CREDENTIALS — path ke file JSON
 //   3. ~/linguo-audio-gen/linguo-tts-key.json     — fallback dev lokal
+//
+// [tts-cepat-v1] Dua hal yang bikin rute ini terasa lambat di reader e-book —
+// diukur di produksi 21 Agu 2026, balasan CACHE HIT tetap 0,9–2,9 detik:
+//   1. token OAuth diambil SEBELUM cache dilihat, jadi tiap kontainer baru
+//      membayar satu perjalanan ke Google walau mp3-nya sudah ada;
+//   2. tiap ketukan selalu membangunkan fungsi serverless (dingin: 7–20 detik).
+// (1) dibereskan di bawah — token baru diambil kalau memang harus menyintesis.
+// (2) dibereskan lewat GET yang boleh disimpan CDN + jalur langsung ke Storage
+//     di klien (lihat src/lib/ebookTts.ts).
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import crypto from "node:crypto";
 import { readFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import {
+  BATAS_TEKS_TTS, BUCKET_TTS, bersihkanTeksTts, jalurCacheTts, localeChirp, namaVoice,
+} from "@/lib/ttsVoice";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -20,34 +32,16 @@ const LANG_CODE = "vi-VN";
 const ENCODING = "MP3";
 const TOKEN_URI = "https://oauth2.googleapis.com/token";
 
-// [watch-tts-chirp-v1] Peta kode bahasa → locale BCP-47 Chirp 3 HD. Dipakai TTS
-// multi-bahasa Watch & Learn (tombol "Dengar" di tooltip kata). Diverifikasi live
-// di app mobile (~/linguo-app/supabase/functions/tts). Voice = `${locale}-Chirp3-HD-Kore`.
-const CHIRP_LOCALES: Record<string, string> = {
-  es: "es-ES", fr: "fr-FR", de: "de-DE", it: "it-IT", pt: "pt-BR",
-  nl: "nl-NL", ja: "ja-JP", ko: "ko-KR", zh: "cmn-CN", ru: "ru-RU",
-  ar: "ar-XA", hi: "hi-IN", th: "th-TH", vi: "vi-VN", tr: "tr-TR",
-  en: "en-US",
-  // [watch-tts-chirp-v2] Locale tambahan (Danish dkk) — diverifikasi live via
-  // GET /v1/voices 2026-07-13: semua locale di bawah punya varian Chirp3-HD-Kore.
-  da: "da-DK", sv: "sv-SE", no: "nb-NO", nb: "nb-NO", fi: "fi-FI",
-  pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", ro: "ro-RO",
-  bg: "bg-BG", uk: "uk-UA", el: "el-GR", he: "he-IL", id: "id-ID",
-  hr: "hr-HR", sr: "sr-RS", sl: "sl-SI", lt: "lt-LT", lv: "lv-LV",
-  et: "et-EE", sw: "sw-KE", ur: "ur-IN", bn: "bn-IN", ta: "ta-IN",
-  te: "te-IN", gu: "gu-IN", kn: "kn-IN", ml: "ml-IN", mr: "mr-IN",
-  pa: "pa-IN", yue: "yue-HK",
-  // Tagalog/Filipino — kode kanonik `fil`, `tl` alias ISO-639-1. Chirp3-HD fil-PH.
-  fil: "fil-PH", tl: "fil-PH",
-};
-// Kore = suara Chirp 3 HD default (valid di semua locale di atas).
-const CHIRP_SPEAKER = "Kore";
-
-// [watch-tts-tagalog] Locale yang BELUM punya voice Chirp 3 HD → pakai voice
-// terbaik yang tersedia (diverifikasi live via GET /v1/voices 2026-07-14). Tanpa
-// override, nama `${locale}-Chirp3-HD-Kore` tak eksis → sintesis 400 "voice not found".
-const VOICE_OVERRIDE: Record<string, string> = {
-  "fil-PH": "fil-ph-Neural2-A", // Tagalog: Neural2 wanita (Chirp3-HD belum ada di fil-PH)
+/* Audio untuk (voice + teks) yang sama tidak pernah berubah, jadi balasannya
+   boleh disimpan selamanya — di browser siswa maupun di CDN Vercel. Header
+   inilah yang membuat ketukan kedua (siswa mana pun, perangkat mana pun di POP
+   yang sama) tak lagi membangunkan fungsi ini. Hanya untuk GET: browser tak
+   pernah menyimpan balasan POST. */
+const SETAHUN = "public, max-age=31536000, s-maxage=31536000, immutable";
+const HEADER_ABADI = {
+  "Cache-Control": SETAHUN,
+  "CDN-Cache-Control": SETAHUN,
+  "Vercel-CDN-Cache-Control": SETAHUN,
 };
 
 type SA = { client_email: string; private_key: string; token_uri?: string };
@@ -134,13 +128,12 @@ async function resolveVoice(token: string): Promise<string> {
    Simpanan di sini dipakai BERSAMA: satu frasa disintesis sekali, lalu semua
    pemanggil berikutnya — kuis, Watch and Learn, reader e-book, siswa mana pun —
    mengambil mp3 yang sama. Kuncinya ikut nama voice, jadi ganti suara tidak
-   menyajikan audio lama.
+   menyajikan audio lama. Nama berkasnya dihitung di src/lib/ttsVoice.ts karena
+   klien pun menghitungnya sendiri.
 
    Best-effort total: bucket belum ada, kredensial kosong, atau storage error →
    jalan terus ke Google seperti sebelumnya. Cache yang gagal tidak boleh
    membuat suara ikut gagal. */
-const CACHE_BUCKET = "tts-cache";
-
 function admin() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -149,13 +142,13 @@ function admin() {
 }
 
 const jalurCache = (voice: string, text: string) =>
-  `${voice}/${crypto.createHash("sha256").update(`${voice}|${text}`).digest("hex").slice(0, 40)}.mp3`;
+  jalurCacheTts(voice, crypto.createHash("sha256").update(`${voice}|${text}`).digest("hex"));
 
 async function dariCache(jalur: string): Promise<string | null> {
   const sb = admin();
   if (!sb) return null;
   try {
-    const { data, error } = await sb.storage.from(CACHE_BUCKET).download(jalur);
+    const { data, error } = await sb.storage.from(BUCKET_TTS).download(jalur);
     if (error || !data) return null;
     return Buffer.from(await data.arrayBuffer()).toString("base64");
   } catch {
@@ -169,82 +162,100 @@ async function keCache(jalur: string, base64: string) {
   const isi = Buffer.from(base64, "base64");
   const opsi = { contentType: "audio/mpeg", upsert: true, cacheControl: "31536000" };
   try {
-    const { error } = await sb.storage.from(CACHE_BUCKET).upload(jalur, isi, opsi);
+    const { error } = await sb.storage.from(BUCKET_TTS).upload(jalur, isi, opsi);
     // Bucket-nya belum pernah dibuat (deploy baru / project lain): bikin sekali,
     // privat, lalu coba sekali lagi. Kalau tetap gagal — biarkan, sekadar cache.
     if (error && /bucket/i.test(error.message || "")) {
-      await sb.storage.createBucket(CACHE_BUCKET, { public: false }).catch(() => {});
-      await sb.storage.from(CACHE_BUCKET).upload(jalur, isi, opsi);
+      await sb.storage.createBucket(BUCKET_TTS, { public: false }).catch(() => {});
+      await sb.storage.from(BUCKET_TTS).upload(jalur, isi, opsi);
     }
   } catch {
     /* diam */
   }
 }
 
-// sama seperti cleanText di gen-vietnam-audio.mjs — buang anotasi "(...)" & "·"
-function cleanText(s: string) {
-  return String(s || "").replace(/\s*\([^)]*\)/g, "").replace(/\s*·\s*/g, ", ").trim();
+/** Balasan rute ini: `abadi` menandai isi yang boleh disimpan CDN/browser. */
+type Hasil = { status: number; body: Record<string, unknown>; abadi?: boolean };
+
+async function sintesis(teksMentah: unknown, langMentah: unknown): Promise<Hasil> {
+  const text = bersihkanTeksTts(String(teksMentah || "")).slice(0, BATAS_TEKS_TTS);
+  if (!text) return { status: 400, body: { error: "text kosong" } };
+
+  // [watch-tts-chirp-v1] Kalau client kirim `lang` (mis. "es"), pakai voice Chirp
+  // 3 HD sesuai bahasa itu. Tanpa `lang` → perilaku lama (kuis vi-VN) tetap utuh.
+  const langRaw = typeof langMentah === "string" ? langMentah.trim().toLowerCase() : "";
+  const langBase = langRaw.split("-")[0];
+  const chirpLocale = langBase ? localeChirp(langBase) : null;
+
+  // [watch-tts-chirp-v2] Bahasa dikirim tapi tak ada di peta (mis. fa, km, am):
+  // JANGAN jatuh ke voice vi-VN (kedengaran bahasa Vietnam!) — balas 422 supaya
+  // client fallback ke Web Speech browser.
+  if (langBase && !chirpLocale) {
+    return { status: 422, body: { error: `lang tidak didukung: ${langBase}` } };
+  }
+
+  // ⚠️ Token OAuth SENGAJA tidak diambil di sini. Untuk bahasa ber-Chirp, nama
+  // voice-nya bisa dihitung tanpa memanggil Google sama sekali — dan kalau
+  // mp3-nya sudah ada di cache, seluruh perjalanan ke Google jadi mubazir.
+  // Jalur lawas (tanpa `lang`) tetap butuh token karena voice-nya ditanyakan.
+  const languageCode = chirpLocale ?? LANG_CODE;
+  const voice = chirpLocale
+    ? (namaVoice(langBase) as string)
+    : await resolveVoice(await getAccessToken());
+
+  // Sudah pernah disintesis? Balas dari simpanan — nol karakter ditagih.
+  const jalur = jalurCache(voice, text);
+  const tersimpan = await dariCache(jalur);
+  if (tersimpan) return { status: 200, body: { audioContent: tersimpan, cached: true }, abadi: true };
+
+  const token = await getAccessToken();
+  const res = await fetch("https://texttospeech.googleapis.com/v1/text:synthesize", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      input: { text },
+      voice: { languageCode, name: voice },
+      audioConfig: { audioEncoding: ENCODING },
+    }),
+  });
+  if (!res.ok) {
+    const detail = await res.text().catch(() => "");
+    return { status: 502, body: { error: "tts failed", detail: detail.slice(0, 300) } };
+  }
+  const j = await res.json();
+  // Ditunggu, bukan dilepas: fungsi serverless bisa dimatikan begitu balasan
+  // terkirim, dan unggahan yang keburu terpotong = cache yang tak pernah isi.
+  if (j.audioContent) await keCache(jalur, j.audioContent);
+  // [ling-lms-quiz-tts-v2] balikin base64 apa adanya dari Google → client decode (atob→Uint8Array→Blob).
+  // Lebih robust dari body biner di Next route handler, dan match pola decode di client.
+  return { status: 200, body: { audioContent: j.audioContent }, abadi: true };
+}
+
+function balas(h: Hasil, boleh_cdn: boolean) {
+  return NextResponse.json(h.body, {
+    status: h.status,
+    headers: h.abadi && boleh_cdn ? HEADER_ABADI : { "Cache-Control": "no-store" },
+  });
 }
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json().catch(() => ({}));
-    const text = cleanText(body?.text || "").slice(0, 400);
-    if (!text) return NextResponse.json({ error: "text kosong" }, { status: 400 });
+    // POST tak pernah disimpan browser/CDN — headernya sekadar tak menghalangi.
+    return balas(await sintesis(body?.text, body?.lang), false);
+  } catch (e: any) {
+    return NextResponse.json({ error: e?.message || "internal error" }, { status: 500 });
+  }
+}
 
-    // [watch-tts-chirp-v1] Kalau client kirim `lang` (mis. "es"), pakai voice Chirp
-    // 3 HD sesuai bahasa itu. Tanpa `lang` → perilaku lama (kuis vi-VN) tetap utuh.
-    const langRaw = typeof body?.lang === "string" ? body.lang.trim().toLowerCase() : "";
-    const langBase = langRaw.split("-")[0];
-    const chirpLocale = langBase ? CHIRP_LOCALES[langBase] : undefined;
-
-    // [watch-tts-chirp-v2] Bahasa dikirim tapi tak ada di peta (mis. fa, km, am):
-    // JANGAN jatuh ke voice vi-VN (kedengaran bahasa Vietnam!) — balas 422 supaya
-    // client fallback ke Web Speech browser.
-    if (langBase && !chirpLocale) {
-      return NextResponse.json({ error: `lang tidak didukung: ${langBase}` }, { status: 422 });
-    }
-
-    const token = await getAccessToken();
-
-    const languageCode = chirpLocale ?? LANG_CODE;
-    const voice = chirpLocale
-      ? (VOICE_OVERRIDE[chirpLocale] ?? `${chirpLocale}-Chirp3-HD-${CHIRP_SPEAKER}`)
-      : await resolveVoice(token);
-
-    // Sudah pernah disintesis? Balas dari simpanan — nol karakter ditagih.
-    const jalur = jalurCache(voice, text);
-    const tersimpan = await dariCache(jalur);
-    if (tersimpan) {
-      return NextResponse.json(
-        { audioContent: tersimpan, cached: true },
-        { headers: { "Cache-Control": "public, max-age=86400" } }
-      );
-    }
-
-    const res = await fetch("https://texttospeech.googleapis.com/v1/text:synthesize", {
-      method: "POST",
-      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        input: { text },
-        voice: { languageCode, name: voice },
-        audioConfig: { audioEncoding: ENCODING },
-      }),
-    });
-    if (!res.ok) {
-      const detail = await res.text().catch(() => "");
-      return NextResponse.json({ error: "tts failed", detail: detail.slice(0, 300) }, { status: 502 });
-    }
-    const j = await res.json();
-    // Ditunggu, bukan dilepas: fungsi serverless bisa dimatikan begitu balasan
-    // terkirim, dan unggahan yang keburu terpotong = cache yang tak pernah isi.
-    if (j.audioContent) await keCache(jalur, j.audioContent);
-    // [ling-lms-quiz-tts-v2] balikin base64 apa adanya dari Google → client decode (atob→Uint8Array→Blob).
-    // Lebih robust dari body biner di Next route handler, dan match pola decode di client.
-    return NextResponse.json(
-      { audioContent: j.audioContent },
-      { headers: { "Cache-Control": "public, max-age=86400" } }
-    );
+/* [tts-cepat-v1] Bentuk GET dari rute yang sama: satu-satunya bedanya, balasan
+   yang berhasil boleh disimpan CDN Vercel + cache browser selama setahun. Kata
+   yang sudah pernah diketuk siapa pun di POP yang sama tak lagi membangunkan
+   fungsi ini — 1,5 detik jadi puluhan milidetik. */
+export async function GET(req: NextRequest) {
+  try {
+    const q = req.nextUrl.searchParams;
+    return balas(await sintesis(q.get("text"), q.get("lang")), true);
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || "internal error" }, { status: 500 });
   }
