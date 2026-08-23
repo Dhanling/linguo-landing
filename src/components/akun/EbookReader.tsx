@@ -86,6 +86,8 @@ const SWIPE_SERET = 70;
 const SWIPE_RESET = 320;
 
 const halamanKey = (purchaseId: string) => `ebook-hal:${purchaseId}`;
+// [lanjutkan-belajar-v1] kapan terakhir modul ini dibaca (epoch ms).
+export const halamanTsKey = (purchaseId: string) => `ebook-hal-ts:${purchaseId}`;
 
 /* [ebook-panduan-tour-v1] Panduan itu milik ORANGNYA, bukan milik modulnya:
    siswa yang sudah paham cara pakai reader tidak perlu diajari lagi waktu
@@ -1277,7 +1279,14 @@ export default function EbookReader({
   }, [doc, tampil, dua, siapkan, ukuran, generasi]);
 
   useEffect(() => {
-    if (doc) localStorage.setItem(halamanKey(purchaseId), `${page}/${doc.numPages}`);
+    if (!doc) return;
+    localStorage.setItem(halamanKey(purchaseId), `${page}/${doc.numPages}`);
+    /* [lanjutkan-belajar-v1] Stempel waktu ditulis TERPISAH, bukan disisipkan ke
+       nilai "halaman/total" di atas — format itu sudah dibaca waktu modul dibuka,
+       menambah ruas ketiga akan membuat pembacaan lama menyimpulkan modulnya
+       terbit ulang lalu memulai dari sampul lagi. Dipakai blok "Lanjutkan
+       Belajar" di Beranda buat mengurutkan e-book bersama sumber lain. */
+    try { localStorage.setItem(halamanTsKey(purchaseId), String(Date.now())); } catch {}
   }, [page, purchaseId, doc]);
 
   /* ── membalik halaman ──────────────────────────────────────────────────── */

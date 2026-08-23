@@ -40,8 +40,11 @@ export default function LingbookLibraryPage() {
   };
 
   return (
-    // [shell-nav-groups-v1] "lingbook" sekarang key sah (NavKey) → highlight sidebar nyala
-    <StudentShell active="lingbook" onTabChange={goTab}>
+    /* [lingbook-lebur-pustaka-v1] Route ini TETAP hidup (tautan yang sudah
+       dibagikan jangan mati), tapi sidebar-nya menyorot "Perpustakaan": di sana
+       rumah barunya. Dulu active="lingbook" — key itu sudah tak punya item menu,
+       jadi tak ada yang menyala dan siswa kehilangan jejak posisinya. */
+    <StudentShell active="pustaka" onTabChange={goTab}>
       <main className="mx-auto w-full max-w-[1200px] px-5 pb-16 pt-6 sm:px-8 lg:py-9">
         {ready ? (
           <BookLibrary />

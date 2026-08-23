@@ -20,7 +20,11 @@ function progressOf(book: Book): { done: number; total: number } {
   return { done, total: book.chapterCount };
 }
 
-export default function BookLibrary() {
+/* [lingbook-lebur-pustaka-v1] Dipakai di dua tempat sekarang: route /akun/lingbook
+   (judul halaman sendiri) DAN tab "Interaktif" di dalam Perpustakaan (judul halaman
+   sudah dipegang LibraryView — dua H1 bertumpuk terbaca seperti halaman salah muat).
+   `hideHeader` yang membedakan; sisanya persis sama. */
+export default function BookLibrary({ hideHeader = false }: { hideHeader?: boolean } = {}) {
   // Paint instan dari file, lalu override dgn data CMS (Supabase) bila ada.
   const [books, setBooks] = useState<Book[]>(BOOKS);
   useEffect(() => {
@@ -32,12 +36,18 @@ export default function BookLibrary() {
   const t = useT(); // [ui-lang-switcher-v1]
   return (
     <div>
-      <header className="mb-6">
-        <h1 className="text-2xl font-extrabold text-[#11313A]">Lingbook</h1>
-        <p className="mt-1 text-sm text-[#5A7A78]">
+      {hideHeader ? (
+        <p className="mb-5 text-[13.5px] font-medium text-slate-500">
           {t("Ebook interaktif — tap tiap kata untuk cara baca, arti, dan analisa tata bahasanya.")}
         </p>
-      </header>
+      ) : (
+        <header className="mb-6">
+          <h1 className="text-2xl font-extrabold text-[#11313A]">Lingbook</h1>
+          <p className="mt-1 text-sm text-[#5A7A78]">
+            {t("Ebook interaktif — tap tiap kata untuk cara baca, arti, dan analisa tata bahasanya.")}
+          </p>
+        </header>
+      )}
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {books.map((book) => {

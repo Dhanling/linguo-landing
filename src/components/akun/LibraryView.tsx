@@ -43,6 +43,11 @@ import {
   useKeranjang, tambahKeKeranjang, hapusDariKeranjang, kosongkanKeranjang,
   sinkronkanKeranjang, type ItemKeranjang,
 } from "@/lib/keranjangPustaka";
+/* [lingbook-lebur-pustaka-v1] Lingbook tidak lagi jadi menu sendiri di sidebar —
+   dia tab di sini. Alasannya: siswa tidak berpikir "ini e-book atau lingbook",
+   dia berpikir "di mana bahan bacaanku". Satu rumah, tiga rak. */
+import BookLibrary from "@/components/lingbook/BookLibrary";
+import { canAccessLingbook } from "@/lib/materiGate";
 
 /* ---------------- types ---------------- */
 type ProductType = "elearning" | "ebook";
@@ -484,7 +489,20 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
   const [loading, setLoading] = useState(preview ? !pvCached : !cached);
   const [busy, setBusy] = useState<string | null>(null);
 
-  const [tab, setTab] = useState<"all" | "elearning" | "ebook">("all");
+  const [tab, setTab] = useState<"all" | "elearning" | "ebook" | "lingbook">("all");
+  /* [lingbook-lebur-pustaka-v1] Lingbook masih development → tabnya cuma tampil
+     buat email allowlist (lib/materiGate), gerbang yang persis sama dengan yang
+     dulu menjaga item sidebar-nya. Default SEMBUNYI sampai terbukti boleh. */
+  const [bolehLingbook, setBolehLingbook] = useState(false);
+  useEffect(() => {
+    if (preview) return; // pratinjau staf: tab development tak perlu ikut
+    let alive = true;
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (alive) setBolehLingbook(canAccessLingbook(session?.user?.email));
+    });
+    return () => { alive = false; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [preview]);
   // [pustaka-filter-edisi-v1] "all" = kedua edisi (plus produk tanpa edisi)
   const [edisi, setEdisi] = useState<"all" | Edisi>("all");
   const [view, setView] = useState<"grid" | "list">("grid");
@@ -883,7 +901,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
       </header>
 
       {/* ===== CONTINUE HERO ===== */}
-      {hero && (
+      {tab !== "lingbook" && hero && (
         <section className="overflow-hidden rounded-3xl border border-[#12A37E]/15 bg-[#12A37E]/[0.04] p-4 sm:p-5">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
             {/* cover */}
@@ -940,7 +958,17 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-wrap items-center gap-2">
         <div className="inline-flex items-center gap-1 rounded-2xl bg-slate-100 p-1">
-          {([["all", "Semua"], ["elearning", "E-Learning"], ["ebook", "E-Book"]] as const).map(([k, label]) => (
+          {(
+            [
+              ["all", "Semua"],
+              ["elearning", "E-Learning"],
+              ["ebook", "E-Book"],
+              /* [lingbook-lebur-pustaka-v1] rak ketiga. Sengaja TANPA angka:
+                 daftar bukunya datang dari CMS dan dimuat oleh BookLibrary
+                 sendiri — badge di sini cuma bisa menjanjikan jumlah yang salah. */
+              ...(bolehLingbook ? ([["lingbook", "Interaktif"]] as const) : []),
+            ] as readonly (readonly [typeof tab, string])[]
+          ).map(([k, label]) => (
             <button
               key={k}
               onClick={() => setTab(k)}
@@ -949,15 +977,20 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
               }`}
             >
               {t(label)}
-              <span className={`rounded-full px-1.5 py-0.5 text-[11px] ${tab === k ? "bg-[#12A37E]/10 text-[#0C8163]" : "bg-slate-200 text-slate-500"}`}>
-                {counts[k]}
-              </span>
+              {k !== "lingbook" && (
+                <span className={`rounded-full px-1.5 py-0.5 text-[11px] ${tab === k ? "bg-[#12A37E]/10 text-[#0C8163]" : "bg-slate-200 text-slate-500"}`}>
+                  {counts[k as "all" | "elearning" | "ebook"]}
+                </span>
+              )}
             </button>
           ))}
         </div>
 
         {/* [pustaka-filter-edisi-v1] edisi bahasa pengantar — tiap modul terbit
-            dalam dua versi, tanpa saringan ini daftarnya terbaca dobel semua. */}
+            dalam dua versi, tanpa saringan ini daftarnya terbaca dobel semua.
+            [lingbook-lebur-pustaka-v1] Lingbook tak punya edisi → chip disembunyikan
+            di rak itu, bukan dibiarkan jadi tombol yang tak mengubah apa pun. */}
+        {tab !== "lingbook" && (
         <div className="inline-flex items-center gap-1 rounded-2xl bg-slate-100 p-1">
           {([["all", "Semua edisi"], ["id", "Indonesia"], ["en", "English"]] as const).map(([k, label]) => (
             <button
@@ -971,8 +1004,13 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
             </button>
           ))}
         </div>
+        )}
         </div>
 
+        {/* [lingbook-lebur-pustaka-v1] Kotak cari & pilihan grid/list menyaring
+            daftar PRODUK; di rak Interaktif daftarnya milik BookLibrary, jadi
+            keduanya ikut sembunyi ketimbang jadi kontrol yang diam. */}
+        {tab !== "lingbook" && (
         <div className="flex items-center gap-2">
           <div className="relative flex-1 sm:w-[280px] sm:flex-none">
             <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
@@ -1006,10 +1044,15 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
             </button>
           </div>
         </div>
+        )}
       </div>
 
       {/* ===== EMPTY ===== */}
-      {purchases.length === 0 && terkunci.length === 0 ? (
+      {/* [lingbook-lebur-pustaka-v1] rak "Interaktif" punya sumber datanya sendiri
+          (CMS Lingbook), jadi seluruh cabang daftar-produk di bawah dilewati. */}
+      {tab === "lingbook" ? (
+        <BookLibrary hideHeader />
+      ) : purchases.length === 0 && terkunci.length === 0 ? (
         <EmptyState />
       ) : shown.length === 0 ? (
         /* [pustaka-katalog-terkunci-v1] tanpa produk yang cocok, seksi terkunci
@@ -1060,7 +1103,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
       )}
 
       {/* ===== [pustaka-katalog-terkunci-v1] KATALOG TERGEMBOK ===== */}
-      {terkunci.length > 0 && (
+      {tab !== "lingbook" && terkunci.length > 0 && (
         <section className="space-y-4 pt-2">
           <div className="flex items-end justify-between gap-3">
             <div className="min-w-0">

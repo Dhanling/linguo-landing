@@ -5,10 +5,9 @@ import Link from "next/link";
 // [kelas-detail-resilient-v1] pakai klien BERSAMA — instance GoTrue ganda bikin
 // race refresh token (query bisa 401 sesaat padahal user masih login).
 import { supabase } from "@/lib/supabase-client";
-import { canAccessLingbook } from "@/lib/materiGate"; // [dev-gate-lingbook-v1]
 import NotificationBell from "@/components/NotificationBell";
 import MobileBottomNav from "@/components/akun/MobileBottomNav";
-import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, BookText, MessagesSquare, Menu, X, Bug, type LucideIcon } from "lucide-react";
+import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, MessagesSquare, Menu, X, Bug, type LucideIcon } from "lucide-react";
 // [bug-report-pengajar-siswa-v1] siswa lapor bug dari LMS → masuk Bug Tracker admin
 import BugReportDialog from "@/components/akun/BugReportDialog";
 import PosterPopupAkun from "@/components/akun/PosterPopupAkun"; // [poster-popup-akun-v1]
@@ -27,13 +26,6 @@ type NavItem =
   | { key: string; label: string; icon: LucideIcon; soon: true }
   // simulasi-paywall-v1 — item link ke route terpisah, bukan tab.
   | { key: string; label: string; icon: LucideIcon; href: string };
-
-// [dev-gate-lingbook-v1] menu yang masih development → cuma tampil buat email allowlist
-// (lib/materiGate). Digate DI SINI biar semua halaman yang pakai StudentShell ikut aman,
-// bukan cuma /akun.
-// [materi-bahasa-siswa-v1] "Kelas & Materi" KELUAR dari daftar ini — sudah dibuka untuk
-// semua siswa (isinya dibatasi ke bahasa yang dia ambil, bukan ke email tertentu).
-const DEV_ONLY_KEYS = new Set(["lingbook"]);
 
 // [shell-nav-groups-v1] menu dikelompokkan + dikasih label seksi. Dulu 10 item rata
 // tanpa pengelompokan → semua bobotnya sama, siswa mesti coba-coba satu-satu.
@@ -63,8 +55,11 @@ const NAV_GROUPS: { title: string; items: NavItem[] }[] = [
     title: "Belajar",
     items: [
       { key: "materi", label: "Kelas & Materi", icon: BookOpen },
-      // [lingbook-phase1-v1] ebook interaktif → route terpisah /akun/lingbook
-      { key: "lingbook", label: "Lingbook", icon: BookText, href: "/akun/lingbook" },
+      /* [lingbook-lebur-pustaka-v1] "Lingbook" DICABUT dari sidebar. Dulu ada tiga
+         pintu ke barang yang sama — Kelas & Materi, Perpustakaan, dan Lingbook —
+         dan siswa harus menebak yang mana. Sekarang Perpustakaan jadi satu-satunya
+         rumah bahan bacaan: Lingbook masuk ke sana sebagai tab "Interaktif".
+         Fiturnya utuh & route /akun/lingbook TETAP hidup buat tautan langsung. */
       // [simulasi-inshell-v1] jadi tab (sidebar tetap tampil), bukan route terpisah lagi
       { key: "simulasi", label: "Simulasi Tes", icon: ClipboardCheck },
       { key: "watch", label: "Watch & Learn", icon: Clapperboard, href: "/watch" },
@@ -98,9 +93,6 @@ const DARK_KEY = "lms-dark-mode";
 
 /** Jawaban "punya grup kelas?" ditahan per tab — menunya ikut ke semua halaman LMS. */
 export const GROUP_NAV_KEY = "linguo-has-group-v1";
-
-/** Idem untuk gerbang menu development (Lingbook) — lihat [perf:shell-devnav-cache-v1]. */
-const DEV_NAV_KEY = "linguo-dev-nav-v1";
 
 
 // [shell-dark-fouc-v1] Skrip kecil yang ikut ke-render di HTML awal → kelas `lms-dark`
@@ -159,26 +151,10 @@ export default function StudentShell({
     window.location.href = "/";
   };
 
-  // [dev-gate-lingbook-v1] cek email sesi → menu development (Lingbook) default
-  // SEMBUNYI sampai terbukti masuk allowlist, biar ga sempat kelihatan sekilas.
-  /* [perf:shell-devnav-cache-v1] Jawabannya ditahan per tab (sessionStorage), sama
-     seperti gerbang "punya grup kelas?" di bawah. Dulu tiap pindah halaman LMS menu
-     Lingbook mulai dari SEMBUNYI lalu muncul lagi setelah getSession() balik —
-     sidebar-nya kelihatan "meloncat" tiap klik menu. */
-  const [devOk, setDevOk] = useState<boolean>(() => {
-    if (typeof window === "undefined") return false;
-    try { return sessionStorage.getItem(DEV_NAV_KEY) === "1"; } catch { return false; }
-  });
-  useEffect(() => {
-    let alive = true;
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (!alive) return;
-      const ok = canAccessLingbook(session?.user?.email);
-      setDevOk(ok);
-      try { sessionStorage.setItem(DEV_NAV_KEY, ok ? "1" : "0"); } catch {}
-    });
-    return () => { alive = false; };
-  }, []);
+  /* [lingbook-lebur-pustaka-v1] Gerbang allowlist menu development ikut dicabut
+     bersama item Lingbook — tak ada lagi menu yang digate di sidebar, jadi tak
+     perlu satu getSession() tiap shell dipasang. Allowlist-nya sendiri masih
+     dipakai, cuma pindah ke tab "Interaktif" di dalam Perpustakaan. */
   /* [student-group-gate-v1] "Grup Kelas" cuma untuk siswa yang PUNYA grup kelas.
      Dulu item ini tampil untuk semua yang login, dan halamannya membaca wa_groups
      langsung — user yang kebetulan juga pengajar/admin jadi melihat seluruh grup
@@ -220,7 +196,7 @@ export default function StudentShell({
     // [materi-bahasa-siswa-v1] "Kelas & Materi" tampil untuk semua siswa; prop tetap
     // dihormati kalau halaman pemanggil mau menyembunyikannya.
     if (key === "materi") return canAccessMateri;
-    return !DEV_ONLY_KEYS.has(key) || devOk;
+    return true;
   };
 
   // [ling-lms-dark-v1] dark mode dashboard — state sync dgn LessonPlayer via localStorage "lms-dark-mode"
