@@ -72,7 +72,9 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             <div className="aspect-square md:aspect-auto bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center text-white">
               {product.cover_url ? (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={product.cover_url} alt={product.title} className="w-full h-full object-cover" />
+                // [ebook-sampul-produk-v1] sampul modul itu potret — jangkar atas
+                // supaya judulnya tidak ikut terpotong di kotak yang lebih persegi
+                <img src={product.cover_url} alt={product.title} className="w-full h-full object-cover object-top" />
               ) : flagCode ? (
                 <RectFlag code={flagCode} h={112} className="shadow-xl" />
               ) : (

@@ -116,6 +116,15 @@ function fotoSampul(p: DProduct): string | null {
   return getLangPhoto(p.language);
 }
 
+// [ebook-sampul-produk-v1] Sampul rancangan itu potret 1:√2 (judul di sepertiga
+// atas), sementara kotak sampul kartu lebar. `object-cover` yang menjangkar di
+// tengah memotong persis judulnya — yang tersisa cuma dagu ilustrasi. Foto stok
+// bahasa lanskap tak punya masalah itu, jadi jangkar atas hanya dipakai kalau
+// sampulnya memang berasal dari cover_url.
+function jangkarSampul(p: DProduct): string {
+  return p.cover_url ? " object-top" : "";
+}
+
 // [pustaka-judul-ringkas-v1] Judul katalog dari admin panjangnya bisa dua baris penuh
 // ("Modul Belajar Bahasa Arab Linguo — Arabic 101 (Edisi Bahasa Indonesia)"). Di kartu
 // yang dibaca sekilas, potongan boilerplate itu cuma bikin semua kartu kelihatan sama.
@@ -1234,7 +1243,7 @@ function Cover({ p, prog, big }: { p: DProduct; prog: Prog | null; big?: boolean
           <img
             src={foto}
             alt={p.title}
-            className="absolute inset-0 h-full w-full object-cover"
+            className={`absolute inset-0 h-full w-full object-cover${jangkarSampul(p)}`}
             onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
           />
           {/* scrim: label bahasa & ikon putih di atas foto wajib tetap kebaca */}
@@ -1668,7 +1677,7 @@ function LockedCard({
             <img
               src={foto}
               alt={item.title}
-              className="absolute inset-0 h-full w-full object-cover"
+              className={`absolute inset-0 h-full w-full object-cover${jangkarSampul(item)}`}
               onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
             />
           </>
@@ -1856,7 +1865,7 @@ function CartModal({
                     <img
                       src={x.coverUrl || getLangPhoto(x.language) || ""}
                       alt=""
-                      className="h-full w-full object-cover"
+                      className={`h-full w-full object-cover${x.coverUrl ? " object-top" : ""}`}
                       onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
                     />
                   )}
