@@ -25,6 +25,11 @@ export const FLAG_CODE_BY_SLUG: Record<string, string> = {
   minangkabau: "id", batak: "id", bugis: "id", acehnese: "id", banjar: "id",
   madurese: "id", swahili: "ke", zulu: "za", yoruba: "ng", amharic: "et",
   armenian: "am",
+  // [materi-bendera-uzbek-v1] Bahasa yang TIDAK ada di master kurikulum jatuh ke
+  // slug darurat (nama di-lowercase + strip), jadi tanpa entri di sini benderanya
+  // hilang jadi Globe abu-abu — kasus nyata: kelas Private "Uzbek" di Kelas & Materi.
+  uzbek: "uz", irish: "ie", farsi: "ir", "english-british": "gb",
+  "traditional-chinese": "tw",
 };
 
 // [perf:flags-lazy-v1] Kumpulan bendera blade-flags itu SATU modul berisi SVG

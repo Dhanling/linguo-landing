@@ -4908,18 +4908,28 @@ export default function AkunPage() {
                   const v = (lang || "").trim().toLowerCase();
                   return v === "" || v === "all languages" || v === "tbd";
                 };
-                const liveClasses = activeRegs
+                const liveClassesRaw = activeRegs
                   /* [produk-digital-bukan-kelas-v1] E-Book & E-Learning disaring keluar:
                      sub-tab ini khusus kelas yang punya pengajar & jadwal. Isinya tetap
                      terjangkau — E-Learning di sub-tab "Belajar Mandiri" (sumber datanya
                      myLanguageSlugs, bukan daftar ini), E-Book di menu Perpustakaan. */
-                  .filter((r: any) => !isPlaceholderLang(r.language) && !isProdukDigital(r.product))
-                  .slice()
-                  .sort((a: any, b: any) => (a.status === "Aktif" ? 0 : 1) - (b.status === "Aktif" ? 0 : 1));
+                  .filter((r: any) => !isPlaceholderLang(r.language) && !isProdukDigital(r.product));
                 const pctOf = (r: any) => {
                   const t = r.sessions_total || 0; const u = r.sessions_used || 0;
                   return t > 0 ? Math.min(100, Math.max(0, Math.round((u / t) * 100))) : 0;
                 };
+                /* [materi-filter-selesai-v1] Chip "Berjalan"/"Selesai" dulu cuma melihat
+                   persentase sesi, jadi kelas yang paketnya SUDAH habis (status "Non Aktif" —
+                   dibatalkan, kedaluwarsa, atau ditutup manual dengan sisa sesi hangus)
+                   selamanya nyangkut di "Berjalan" walau tak akan pernah dilanjutkan.
+                   Akibatnya angka "· N berjalan" di bawah judul (yang memang memakai status)
+                   tak pernah cocok dengan isi chip "Berjalan".
+                   Sekarang satu definisi dipakai bertiga — chip, angka, dan urutan daftar:
+                   selesai = sesi penuh 100% ATAU registrasinya sudah tidak aktif. */
+                const isSelesai = (r: any) => pctOf(r) >= 100 || (r.status ? r.status !== "Aktif" : false);
+                const liveClasses = liveClassesRaw
+                  .slice()
+                  .sort((a: any, b: any) => (isSelesai(a) ? 1 : 0) - (isSelesai(b) ? 1 : 0));
                 // [materi-search-live-v1] chip filter + kotak cari dipakai bareng
                 const mq = materiSearch.trim().toLowerCase();
                 const matchQ = (r: any) =>
@@ -4929,8 +4939,8 @@ export default function AkunPage() {
                     .some((v: string) => String(v).toLowerCase().includes(mq));
                 const shown = liveClasses.filter((r: any) => {
                   if (!matchQ(r)) return false;
-                  if (materiFilter === "run") return pctOf(r) < 100;
-                  if (materiFilter === "done") return pctOf(r) >= 100;
+                  if (materiFilter === "run") return !isSelesai(r);
+                  if (materiFilter === "done") return isSelesai(r);
                   return true;
                 });
                 const selected = shown.find((r: any) => r.id === materiSel) || shown[0] || liveClasses[0];
@@ -5014,7 +5024,7 @@ export default function AkunPage() {
                             <p className="mt-0.5 text-[12px] font-medium text-gray-500">
                               {liveClasses.length} kelas
                               {(() => {
-                                const jalan = liveClasses.filter((r: any) => r.status === "Aktif").length;
+                                const jalan = liveClasses.filter((r: any) => !isSelesai(r)).length;
                                 return jalan < liveClasses.length ? ` · ${jalan} berjalan` : "";
                               })()}
                             </p>
