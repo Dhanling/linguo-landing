@@ -2,7 +2,7 @@
 // Client component: tab Kelas Reguler + ETP (TOEFL/IELTS)
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { Fragment, useState, useMemo, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -17,6 +17,7 @@ import { resolveFlag } from "@blade-flags/core";
 import { defaultFlags } from "@blade-flags/core/flags/default";
 import Link from "next/link";
 import RegisterRegulerModal from "@/components/RegisterRegulerModal";
+import RegisterEtpModal from "@/components/RegisterEtpModal";
 import {
   type EtpBatchRow,
   resolveEtpBatches,
@@ -360,20 +361,6 @@ function mapEtpRow(row: EtpBatchRow): EtpProgram {
   };
 }
 
-function buildEtpWAMessage(program: EtpProgram): string {
-  const text = [
-    `Halo Linguo! Saya tertarik mendaftar program ETP:`,
-    ``,
-    `🎯 Program: ${program.title}`,
-    `📅 Batch: ${program.subtitle}`,
-    `⏰ Jadwal: ${program.days}, ${program.time}`,
-    `🗓️ Mulai: ${program.startDate}`,
-    ``,
-    `Mohon info lebih lanjut & cara pendaftarannya. Terima kasih!`,
-  ].join("\n");
-  return encodeURIComponent(text);
-}
-
 // ─────────────────────────────────────────────────────────────────────────────
 // Main Component
 // ─────────────────────────────────────────────────────────────────────────────
@@ -399,6 +386,7 @@ export default function JadwalKelasRegulerClient({
   const [etpCountdown, setEtpCountdown] = useState("");
   const [openSyllabus, setOpenSyllabus] = useState<Record<string, boolean>>({});
   const [registerBatch, setRegisterBatch] = useState<Batch | null>(null);
+  const [registerEtp, setRegisterEtp] = useState<EtpProgram | null>(null);
 
   // Sumber data ETP: baris DB (etp_batches) yang masih jalan, kalau kosong
   // fallback ke data statik di @/lib/etpBatches. Resolver-nya sama persis dengan
@@ -1106,127 +1094,274 @@ export default function JadwalKelasRegulerClient({
               </div>
             </section>
 
-            {/* ETP Cards */}
+            {/* ETP Tabel — bentuknya sengaja dibikin sama dengan tab Kelas
+                Reguler: satu baris = satu batch, jadi TOEFL vs IELTS bisa
+                dibandingkan sekali lihat. Detail (keunggulan + silabus) pindah
+                ke baris lipatan supaya tabelnya tetap ringkas. */}
             <section className="px-4 pb-12 max-w-6xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-6">
-                {etpPrograms.map((program) => {
-                  const waLink = `https://wa.me/${WA_NUMBER}?text=${buildEtpWAMessage(program)}`;
-                  const isTeal = program.color === "teal";
-                  const slotsLeft = program.maxCapacity - program.currentEnrolled;
-                  const slotPct = Math.round((program.currentEnrolled / program.maxCapacity) * 100);
-                  const slotColor = slotsLeft <= 3 ? "bg-red-500" : slotsLeft <= 6 ? "bg-amber-400" : isTeal ? "bg-teal-500" : "bg-blue-500";
-                  const slotTextColor = slotsLeft <= 3 ? "text-red-600" : slotsLeft <= 6 ? "text-amber-600" : isTeal ? "text-teal-700" : "text-blue-700";
-                  const isSylOpen = !!openSyllabus[program.id];
-                  return (
-                    <div
-                      key={program.id}
-                      className={`bg-white rounded-2xl border-2 overflow-hidden ${
-                        isTeal ? "border-teal-200" : "border-blue-200"
-                      }`}
-                    >
-                      {/* Card header */}
-                      <div className={`px-6 py-5 ${isTeal ? "bg-teal-50" : "bg-blue-50"}`}>
-                        <div className="flex items-start justify-between">
-                          <div className="flex items-center gap-3">
-                            <EtpIcon program={program} className={`h-8 w-8 shrink-0 ${isTeal ? "text-teal-600" : "text-blue-600"}`} />
-                            <div>
-                              <div className="flex items-center gap-2">
-                                <h3 className="text-lg font-bold text-slate-900">{program.title}</h3>
-                                <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
-                                  isTeal ? "bg-teal-600 text-white" : "bg-blue-600 text-white"
-                                }`}>
-                                  {program.badge}
-                                </span>
-                              </div>
-                              <p className={`text-xs font-medium mt-0.5 ${isTeal ? "text-teal-700" : "text-blue-700"}`}>
-                                {program.subtitle}
-                              </p>
-                            </div>
-                          </div>
-                          <div className="text-right">
-                            <div className="text-xl font-bold text-slate-900 tabular-nums">
-                              {formatIDR(program.price)}
-                            </div>
-                            <div className="text-[10px] text-slate-500">/siswa/batch</div>
-                          </div>
-                        </div>
+              {etpPrograms.length === 0 ? (
+                <div className="text-center py-16 bg-white rounded-2xl border border-slate-200">
+                  <p className="text-slate-500 mb-2">Belum ada batch ETP yang dibuka</p>
+                  <p className="text-xs text-slate-400">
+                    Batch baru akan segera diumumkan. Follow Instagram @linguo.id untuk info terbaru!
+                  </p>
+                </div>
+              ) : (
+                <>
+                  {/* DESKTOP */}
+                  <div className="hidden md:block bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead className="bg-slate-50">
+                          <tr>
+                            <th className="text-left py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0] w-12">No</th>
+                            <th className="text-left py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Program</th>
+                            <th className="text-left py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Jadwal</th>
+                            <th className="text-left py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Mulai</th>
+                            <th className="text-left py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Total Sesi</th>
+                            <th className="text-right py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Harga</th>
+                            <th className="text-center py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Slot</th>
+                            <th className="text-right py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Aksi</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {etpPrograms.map((program, idx) => {
+                            const isTeal = program.color === "teal";
+                            const slotsLeft = Math.max(0, program.maxCapacity - program.currentEnrolled);
+                            const full = slotsLeft <= 0;
+                            const isSylOpen = !!openSyllabus[program.id];
+                            const slotBgClass = full
+                              ? "bg-slate-200 text-slate-600"
+                              : slotsLeft <= 3
+                              ? "bg-red-100 text-red-700"
+                              : slotsLeft <= 6
+                              ? "bg-amber-100 text-amber-700"
+                              : "bg-emerald-100 text-emerald-700";
+                            return (
+                              <Fragment key={program.id}>
+                                <tr
+                                  id={program.id}
+                                  className={`border-b border-slate-100 transition-colors scroll-mt-20 ${
+                                    full ? "bg-slate-50/70 opacity-70" : "hover:bg-slate-50/50"
+                                  }`}
+                                >
+                                  <td className="py-4 px-4 text-slate-500 tabular-nums font-medium">{idx + 1}</td>
+                                  <td className="py-4 px-4">
+                                    <div className="flex items-center gap-2.5">
+                                      <EtpIcon
+                                        program={program}
+                                        className={`h-6 w-6 shrink-0 ${isTeal ? "text-teal-600" : "text-blue-600"}`}
+                                      />
+                                      <div>
+                                        <div className="flex items-center gap-2">
+                                          <span className="font-semibold text-slate-900">{program.title}</span>
+                                          <span
+                                            className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                                              isTeal ? "bg-teal-600 text-white" : "bg-blue-600 text-white"
+                                            }`}
+                                          >
+                                            {program.badge}
+                                          </span>
+                                        </div>
+                                        <div className="text-xs text-slate-500 mt-0.5">{program.subtitle}</div>
+                                        <button
+                                          type="button"
+                                          onClick={() =>
+                                            setOpenSyllabus((prev) => ({ ...prev, [program.id]: !prev[program.id] }))
+                                          }
+                                          className={`mt-1 inline-flex items-center gap-1 text-[11px] font-semibold ${
+                                            isTeal ? "text-teal-700 hover:text-teal-800" : "text-blue-700 hover:text-blue-800"
+                                          }`}
+                                        >
+                                          <ClipboardList className="h-3.5 w-3.5" />
+                                          {isSylOpen ? "Tutup detail" : "Silabus & keunggulan"}
+                                          <ChevronRight className={`h-3.5 w-3.5 transition-transform ${isSylOpen ? "rotate-90" : ""}`} />
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td className="py-4 px-4">
+                                    <div className="text-black font-bold">{program.days}</div>
+                                    <div className="text-xs text-black font-semibold tabular-nums">{program.time}</div>
+                                  </td>
+                                  <td className="py-4 px-4 text-slate-600 text-xs">
+                                    <div className="text-black font-bold text-sm">{program.startDate}</div>
+                                    <div className={`text-[11px] mt-0.5 ${getCountdown(program.startDateISO).color}`}>
+                                      {getCountdown(program.startDateISO).label}
+                                    </div>
+                                  </td>
+                                  <td className="py-4 px-4 text-black text-sm font-bold">
+                                    {program.sessions} × {program.sessionMin} mnt
+                                  </td>
+                                  <td className="py-4 px-4 text-right">
+                                    <div className="font-bold text-slate-900 tabular-nums">{formatIDR(program.price)}</div>
+                                    <div className="text-[10px] text-slate-500">/siswa/batch</div>
+                                  </td>
+                                  <td className="py-4 px-4 text-center">
+                                    <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold ${slotBgClass}`}>
+                                      {!full && slotsLeft <= 3 && <AlertTriangle className="h-3 w-3" />}
+                                      {full ? "Penuh" : `${slotsLeft} slot`}
+                                    </span>
+                                  </td>
+                                  <td className="py-4 px-4 text-right">
+                                    {full ? (
+                                      <span className="inline-flex items-center gap-1.5 h-9 px-3 rounded-lg bg-slate-100 text-slate-400 text-xs font-semibold cursor-not-allowed">
+                                        Kuota penuh
+                                      </span>
+                                    ) : (
+                                      <button
+                                        type="button"
+                                        onClick={() => setRegisterEtp(program)}
+                                        className={`inline-flex items-center gap-1.5 h-9 px-3 rounded-lg text-white text-xs font-semibold transition-all duration-200 hover:scale-110 hover:shadow-md active:scale-95 ${
+                                          isTeal ? "bg-teal-600 hover:bg-teal-700" : "bg-blue-600 hover:bg-blue-700"
+                                        }`}
+                                      >
+                                        <Wallet className="h-3.5 w-3.5" />
+                                        Daftar
+                                      </button>
+                                    )}
+                                  </td>
+                                </tr>
+                                {isSylOpen && (
+                                  <tr className="border-b border-slate-100">
+                                    <td colSpan={8} className={`px-4 py-5 ${isTeal ? "bg-teal-50/60" : "bg-blue-50/60"}`}>
+                                      <div className="grid md:grid-cols-3 gap-6">
+                                        <div>
+                                          <div className={`text-xs font-bold mb-2 ${isTeal ? "text-teal-700" : "text-blue-700"}`}>
+                                            Keunggulan
+                                          </div>
+                                          <div className="space-y-1.5">
+                                            {program.highlights.map((h, i) => (
+                                              <div key={i} className="flex items-start gap-2 text-xs text-slate-700">
+                                                <Check className={`h-3.5 w-3.5 mt-0.5 shrink-0 ${isTeal ? "text-teal-500" : "text-blue-500"}`} />
+                                                {h}
+                                              </div>
+                                            ))}
+                                          </div>
+                                        </div>
+                                        <div className="md:col-span-2">
+                                          <div className={`text-xs font-bold mb-2 ${isTeal ? "text-teal-700" : "text-blue-700"}`}>
+                                            Silabus Lengkap
+                                          </div>
+                                          <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+                                            {program.syllabus.map((sy, i) => (
+                                              <div key={i}>
+                                                <div className={`text-[11px] font-bold mb-1 ${isTeal ? "text-teal-700" : "text-blue-700"}`}>
+                                                  {sy.week}
+                                                </div>
+                                                <ul className="space-y-1">
+                                                  {sy.topics.map((t, j) => (
+                                                    <li key={j} className="text-[11px] text-slate-600 flex items-start gap-1.5">
+                                                      <span className="mt-0.5 text-slate-300">•</span>
+                                                      {t}
+                                                    </li>
+                                                  ))}
+                                                </ul>
+                                              </div>
+                                            ))}
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                )}
+                              </Fragment>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
 
-                        {/* Kuota bar */}
-                        <div className="mt-4">
-                          <div className="flex items-center justify-between text-xs mb-1.5">
-                            <span className="text-slate-500">Kuota terisi</span>
-                            <span className={`font-semibold inline-flex items-center gap-1 ${slotTextColor}`}>
-                              {slotsLeft <= 3 && <AlertTriangle className="h-3.5 w-3.5" />}
-                              {slotsLeft} slot tersisa dari {program.maxCapacity}
+                  {/* MOBILE */}
+                  <div className="md:hidden space-y-3">
+                    {etpPrograms.map((program) => {
+                      const isTeal = program.color === "teal";
+                      const slotsLeft = Math.max(0, program.maxCapacity - program.currentEnrolled);
+                      const full = slotsLeft <= 0;
+                      const isSylOpen = !!openSyllabus[program.id];
+                      return (
+                        <div
+                          key={program.id}
+                          id={program.id}
+                          className={`rounded-2xl border p-4 scroll-mt-20 ${
+                            full ? "bg-slate-50 border-slate-200 opacity-75" : "bg-white border-slate-200"
+                          }`}
+                        >
+                          <div className="flex items-start justify-between mb-3">
+                            <div className="flex items-center gap-2">
+                              <EtpIcon program={program} className={`h-6 w-6 shrink-0 ${isTeal ? "text-teal-600" : "text-blue-600"}`} />
+                              <div>
+                                <div className="font-bold text-slate-900">{program.title}</div>
+                                <div className="text-xs text-slate-500">{program.subtitle}</div>
+                              </div>
+                            </div>
+                            <span
+                              className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${
+                                full
+                                  ? "bg-slate-200 text-slate-600"
+                                  : slotsLeft <= 3
+                                  ? "bg-red-100 text-red-700"
+                                  : slotsLeft <= 6
+                                  ? "bg-amber-100 text-amber-700"
+                                  : "bg-emerald-100 text-emerald-700"
+                              }`}
+                            >
+                              {full ? "Kuota penuh" : `${slotsLeft} slot tersisa`}
                             </span>
                           </div>
-                          <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
-                            <div
-                              className={`h-full rounded-full transition-all ${slotColor}`}
-                              style={{ width: `${slotPct}%` }}
-                            />
+                          <div className="grid grid-cols-2 gap-2 text-xs mb-3">
+                            <div className="flex items-start gap-1.5 text-slate-600">
+                              <Calendar className="h-3.5 w-3.5 mt-0.5 shrink-0" />
+                              <span>{program.days}, {program.time}</span>
+                            </div>
+                            <div className="flex items-start gap-1.5 text-slate-600">
+                              <Clock className="h-3.5 w-3.5 mt-0.5 shrink-0" />
+                              <span>{program.sessions} sesi × {program.sessionMin} mnt</span>
+                            </div>
+                            <div className="flex items-start gap-1.5 text-slate-600 col-span-2">
+                              <CalendarDays className="h-3.5 w-3.5 mt-0.5 shrink-0" />
+                              <div>
+                                <span>Mulai {program.startDate}</span>
+                                <span className={`ml-2 text-[11px] ${getCountdown(program.startDateISO).color}`}>
+                                  · {getCountdown(program.startDateISO).label}
+                                </span>
+                              </div>
+                            </div>
                           </div>
-                          <div className="text-[10px] text-slate-400 mt-1">{program.currentEnrolled} dari {program.maxCapacity} siswa sudah mendaftar</div>
-                        </div>
-                      </div>
 
-                      {/* Card body */}
-                      <div className="px-6 py-5 space-y-4">
-                        {/* Schedule info */}
-                        <div className="grid grid-cols-2 gap-3 text-sm">
-                          <div className="flex items-start gap-2 text-slate-600">
-                            <Calendar className="h-4 w-4 mt-0.5 shrink-0 text-slate-400" />
-                            <div>
-                              <div className="font-medium text-slate-800">{program.days}</div>
-                              <div className="text-xs">{program.time}</div>
-                            </div>
-                          </div>
-                          <div className="flex items-start gap-2 text-slate-600">
-                            <Clock className="h-4 w-4 mt-0.5 shrink-0 text-slate-400" />
-                            <div>
-                              <div className="font-medium text-slate-800">{program.sessions} sesi</div>
-                              <div className="text-xs">{program.duration}</div>
-                            </div>
-                          </div>
-                          <div className="flex items-start gap-2 text-slate-600 col-span-2">
-                            <CalendarDays className="h-4 w-4 mt-0.5 shrink-0 text-slate-400" />
-                            <div>
-                              <span className="font-medium text-slate-800">Mulai: </span>
-                              {program.startDate}
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Highlights */}
-                        <div className="space-y-1.5">
-                          {program.highlights.map((h, i) => (
-                            <div key={i} className="flex items-start gap-2 text-sm text-slate-700">
-                              <Check className={`h-4 w-4 mt-0.5 shrink-0 ${isTeal ? "text-teal-500" : "text-blue-500"}`} />
-                              {h}
-                            </div>
-                          ))}
-                        </div>
-
-                        {/* Silabus accordion */}
-                        <div className={`rounded-xl border ${isTeal ? "border-teal-100" : "border-blue-100"}`}>
                           <button
+                            type="button"
                             onClick={() => setOpenSyllabus((prev) => ({ ...prev, [program.id]: !prev[program.id] }))}
-                            className={`w-full flex items-center justify-between px-4 py-3 text-sm font-semibold transition-colors rounded-xl ${
-                              isTeal ? "text-teal-700 hover:bg-teal-50" : "text-blue-700 hover:bg-blue-50"
+                            className={`w-full flex items-center justify-between px-3 py-2 rounded-xl border text-xs font-semibold ${
+                              isTeal ? "border-teal-100 text-teal-700" : "border-blue-100 text-blue-700"
                             }`}
                           >
-                            <span className="inline-flex items-center gap-1.5"><ClipboardList className="h-4 w-4" /> Lihat Silabus Lengkap</span>
+                            <span className="inline-flex items-center gap-1.5">
+                              <ClipboardList className="h-3.5 w-3.5" /> Silabus & keunggulan
+                            </span>
                             <ChevronRight className={`h-4 w-4 transition-transform ${isSylOpen ? "rotate-90" : ""}`} />
                           </button>
                           {isSylOpen && (
-                            <div className={`px-4 pb-4 space-y-3 border-t ${isTeal ? "border-teal-100" : "border-blue-100"}`}>
-                              {program.syllabus.map((s, i) => (
-                                <div key={i} className="pt-3">
-                                  <div className={`text-xs font-bold mb-1.5 ${isTeal ? "text-teal-700" : "text-blue-700"}`}>{s.week}</div>
+                            <div className="mt-3 space-y-3">
+                              <div className="space-y-1.5">
+                                {program.highlights.map((h, i) => (
+                                  <div key={i} className="flex items-start gap-2 text-xs text-slate-700">
+                                    <Check className={`h-3.5 w-3.5 mt-0.5 shrink-0 ${isTeal ? "text-teal-500" : "text-blue-500"}`} />
+                                    {h}
+                                  </div>
+                                ))}
+                              </div>
+                              {program.syllabus.map((sy, i) => (
+                                <div key={i}>
+                                  <div className={`text-[11px] font-bold mb-1 ${isTeal ? "text-teal-700" : "text-blue-700"}`}>
+                                    {sy.week}
+                                  </div>
                                   <ul className="space-y-1">
-                                    {s.topics.map((t, j) => (
-                                      <li key={j} className="text-xs text-slate-600 flex items-start gap-1.5">
-                                        <span className="mt-0.5 text-slate-300">•</span>{t}
+                                    {sy.topics.map((t, j) => (
+                                      <li key={j} className="text-[11px] text-slate-600 flex items-start gap-1.5">
+                                        <span className="mt-0.5 text-slate-300">•</span>
+                                        {t}
                                       </li>
                                     ))}
                                   </ul>
@@ -1234,27 +1369,50 @@ export default function JadwalKelasRegulerClient({
                               ))}
                             </div>
                           )}
-                        </div>
 
-                        {/* CTA */}
-                        <a
-                          href={waLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`w-full flex items-center justify-center gap-2 h-11 rounded-xl text-white font-semibold text-sm transition-colors ${
-                            isTeal
-                              ? "bg-teal-600 hover:bg-teal-700"
-                              : "bg-blue-600 hover:bg-blue-700"
-                          }`}
-                        >
-                          <MessageCircle className="h-4 w-4" />
-                          Daftar Sekarang via WhatsApp
-                        </a>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+                          <div className="flex items-center justify-between pt-3 mt-3 border-t border-slate-100">
+                            <div>
+                              <div className="text-lg font-bold text-slate-900 tabular-nums">{formatIDR(program.price)}</div>
+                              <div className="text-[10px] text-slate-500">/siswa/batch</div>
+                            </div>
+                            {full ? (
+                              <span className="inline-flex items-center gap-1.5 h-10 px-4 rounded-xl bg-slate-100 text-slate-400 text-sm font-semibold cursor-not-allowed">
+                                Penuh
+                              </span>
+                            ) : (
+                              <button
+                                type="button"
+                                onClick={() => setRegisterEtp(program)}
+                                className={`inline-flex items-center gap-1.5 h-10 px-4 rounded-xl text-white text-sm font-semibold transition-all duration-200 hover:scale-110 hover:shadow-md active:scale-95 ${
+                                  isTeal ? "bg-teal-600 hover:bg-teal-700" : "bg-blue-600 hover:bg-blue-700"
+                                }`}
+                              >
+                                <Wallet className="h-4 w-4" />
+                                Daftar
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Masih ragu → tetap sediakan jalur tanya WhatsApp. */}
+                  <div className="mt-4 text-center">
+                    <a
+                      href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
+                        "Halo Linguo! Saya mau tanya soal program ETP (TOEFL/IELTS)."
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 hover:text-slate-700"
+                    >
+                      <MessageCircle className="h-3.5 w-3.5" />
+                      Masih ragu? Tanya dulu via WhatsApp
+                    </a>
+                  </div>
+                </>
+              )}
             </section>
 
             {/* ETP FAQ/Info */}
@@ -1305,6 +1463,11 @@ export default function JadwalKelasRegulerClient({
       <RegisterRegulerModal
         batch={registerBatch}
         onClose={() => setRegisterBatch(null)}
+      />
+
+      <RegisterEtpModal
+        program={registerEtp}
+        onClose={() => setRegisterEtp(null)}
       />
     </div>
   );

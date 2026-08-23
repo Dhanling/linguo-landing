@@ -196,7 +196,7 @@ export async function POST(req: NextRequest) {
       return await handleLmsSubscription(body);
     }
 
-    const { name, email, wa_number, language, program, level, productKey: directKey, addon, ref_code, variant } = body;
+    const { name, email, wa_number, language, program, level, productKey: directKey, addon, ref_code, variant, sessions, duration, etp_batch_id } = body;
 
     const productKey = directKey || (program && level ? `${program}-${level.toLowerCase()}` : program);
     const product = PRODUCT_PRICES[productKey || ""];
@@ -226,6 +226,37 @@ export async function POST(req: NextRequest) {
       ? `${baseDescription} — Promo Kemerdekaan`
       : baseDescription;
 
+    // ── etp-checkout-v1: harga & judul batch ETP diambil SERVER-SIDE dari baris
+    // `etp_batches` (VIEW turunan test_prep_batches). Klien cuma mengirim id-nya,
+    // jadi ganti harga di dashboard Test Prep langsung berlaku di checkout tanpa
+    // deploy — dan nominalnya tetap tak bisa diutak-atik dari browser.
+    // Kalau baris tak ketemu (mis. landing sedang pakai batch cadangan statik),
+    // jatuh ke harga PRODUCT_PRICES["ielts-toefl"] di atas.
+    let etpAmount: number | null = null;
+    let etpDescription: string | null = null;
+    if (productKey === "ielts-toefl" && typeof etp_batch_id === "string" && etp_batch_id) {
+      try {
+        const etpRes = await fetch(
+          `${SUPABASE_URL}/rest/v1/etp_batches?id=eq.${encodeURIComponent(etp_batch_id)}&select=title,price,total_sessions,duration_min,start_date,is_active&limit=1`,
+          { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } }
+        );
+        if (etpRes.ok) {
+          const rows = await etpRes.json();
+          const row = Array.isArray(rows) ? rows[0] : null;
+          if (row && row.is_active !== false && Number(row.price) > 0) {
+            etpAmount = Number(row.price);
+            const bulan = new Date(String(row.start_date)).toLocaleDateString("id-ID", {
+              month: "long",
+              year: "numeric",
+            });
+            etpDescription = `${row.title} — Batch ${bulan} (${row.total_sessions} sesi @${row.duration_min} menit)`;
+          }
+        }
+      } catch (e) {
+        console.warn("ETP batch lookup failed (non-fatal):", e);
+      }
+    }
+
     // simulasi-paywall-v1: external_id khusus simulasi (LINGUO-SIM-<test_type>-<ts>)
     // supaya xendit-webhook bisa deteksi & grant simulation_entitlements saat PAID.
     const simMatch = /^simulasi-(toefl|ielts)$/.exec(productKey || "");
@@ -245,7 +276,9 @@ export async function POST(req: NextRequest) {
     const ADDON_PRICE = 150000;
     const ADDON_DESC = "Bundle E-Book + Recording Kelas (akses selamanya)";
     const wantsAddon = addon === true;
-    const totalAmount = unitAmount + (wantsAddon ? ADDON_PRICE : 0);
+    const finalUnitAmount = etpAmount ?? unitAmount;
+    const finalDescription = etpDescription ?? productDescription;
+    const totalAmount = finalUnitAmount + (wantsAddon ? ADDON_PRICE : 0);
 
     // ── affiliate-attribution-v1 ─────────────────────────────────────────
     // Last-touch referral: middleware drops a `linguo_ref` cookie when a
@@ -303,6 +336,10 @@ export async function POST(req: NextRequest) {
         amount: totalAmount,
         affiliate_ref_code: affiliateRefCode,
         affiliate_id: affiliateId,
+        // funnel-sessions-sync-v1 — dibawa supaya xendit-webhook bisa mengisi
+        // registrations.sessions_total / duration / price_per_session.
+        ...(Number(sessions) > 0 ? { sessions: Number(sessions) } : {}),
+        ...(Number(duration) > 0 ? { duration: Number(duration) } : {}),
         // addon fields cuma dikirim kalau opt-in -> pendaftaran normal ga nyentuh kolom baru
         ...(wantsAddon
           ? { addon_ebook_recording: true, addon_amount: ADDON_PRICE, addon_type: "reguler_bundle" }
@@ -326,7 +363,7 @@ export async function POST(req: NextRequest) {
         external_id: externalId,
         amount: totalAmount,
         payer_email: email,
-        description: `${productDescription}${wantsAddon ? " + Bundle E-Book & Recording" : ""}${language ? ` — ${language}` : ""}`,
+        description: `${finalDescription}${wantsAddon ? " + Bundle E-Book & Recording" : ""}${language ? ` — ${language}` : ""}`,
         currency: "IDR",
         invoice_duration: 86400,
         // invoice-email-notif-v1 — set notifikasi eksplisit supaya Xendit
@@ -347,7 +384,7 @@ export async function POST(req: NextRequest) {
         success_redirect_url: `${BASE_URL}/payment/success?id=${externalId}`,
         failure_redirect_url: `${BASE_URL}/payment/failed?id=${externalId}`,
         items: [
-          { name: productDescription, quantity: 1, price: unitAmount },
+          { name: finalDescription, quantity: 1, price: finalUnitAmount },
           ...(wantsAddon ? [{ name: ADDON_DESC, quantity: 1, price: ADDON_PRICE }] : []),
         ],
       }),
