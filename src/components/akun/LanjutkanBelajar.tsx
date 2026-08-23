@@ -12,12 +12,12 @@
    Sumber yang tak punya jejak aktivitas TIDAK ikut — blok ini menjanjikan
    "lanjutkan", bukan "coba mulai". Jadi tanpa riwayat apa pun, dia diam. */
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase-client";
 import { getWatchHistory, youtubeThumb, youtubeThumbMax } from "@/lib/immersion";
 import { useT } from "@/lib/uiLang";
-import { GraduationCap, BookMarked, Clapperboard, BookText, ArrowRight, type LucideIcon } from "lucide-react";
+import { GraduationCap, BookMarked, Clapperboard, BookText, ArrowRight, Play, type LucideIcon } from "lucide-react";
 
 export interface MandiriResume {
   native: string; label: string; photo: string | null; slug: string;
@@ -41,6 +41,8 @@ type Item = {
   photo: string | null;
   /** Gambar lebar 16:9 (thumbnail video) — dipakai ganti kotak ikon persegi. */
   wide?: boolean;
+  /** Ada isinya = kartu ini bisa memutar pratinjau bisu saat kursor menetap. */
+  videoId?: string;
   pct: number | null;
   run: () => void;
 };
@@ -126,6 +128,23 @@ export default function LanjutkanBelajar({
     });
   }, []);
 
+  /* [lanjutkan-watch-preview-v1] Pratinjau bisu ala YouTube: kursor menetap
+     sebentar di kartu → thumbnail digantikan video yang jalan tanpa suara.
+     Jeda 700 ms itu sengaja — tanpa itu, kursor yang cuma lewat sudah cukup
+     untuk menyuruh browser mengunduh player YouTube. */
+  const [preview, setPreview] = useState<string | null>(null);
+  const previewTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => { if (previewTimer.current) clearTimeout(previewTimer.current); }, []);
+
+  function mulaiPratinjau(key: string) {
+    if (previewTimer.current) clearTimeout(previewTimer.current);
+    previewTimer.current = setTimeout(() => setPreview(key), 700);
+  }
+  function setopPratinjau() {
+    if (previewTimer.current) clearTimeout(previewTimer.current);
+    setPreview(null);
+  }
+
   const items = useMemo<Item[]>(() => {
     const out: Item[] = [];
 
@@ -193,6 +212,7 @@ export default function LanjutkanBelajar({
            videoId, jangan jatuh ke kotak ikon polos. */
         photo: watch.thumbnail || youtubeThumbMax(watch.videoId),
         wide: true,
+        videoId: watch.videoId,
         pct: null,
         /* Mendarat di BERANDA Watch & Learn, bukan langsung memutar videonya:
            rail "Keep Watching" di sana sudah memuat video ini di posisi pertama,
@@ -208,6 +228,11 @@ export default function LanjutkanBelajar({
 
   return (
     <section className="mb-5">
+      {/* Pratinjau muncul melembut, bukan berkedip. Ditulis global karena
+          animasinya dipakai iframe yang lahir-mati mengikuti kursor. */}
+      <style jsx global>{`
+        @keyframes lanjutFade { from { opacity: 0 } to { opacity: 1 } }
+      `}</style>
       <div className="mb-2.5 flex items-center gap-2">
         <ArrowRight className="h-4 w-4 text-[#16796E]" strokeWidth={2.6} />
         <h2 className="text-[15px] font-extrabold text-[#12172B]">{t("Lanjutkan Belajar")}</h2>
@@ -220,11 +245,13 @@ export default function LanjutkanBelajar({
             <button
               key={it.key}
               onClick={it.run}
+              onMouseEnter={it.videoId ? () => mulaiPratinjau(it.key) : undefined}
+              onMouseLeave={it.videoId ? setopPratinjau : undefined}
               className="group flex items-center gap-3 rounded-2xl bg-white p-3 text-left ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:ring-[#16796E]/40"
             >
               <span
                 className={`relative isolate flex shrink-0 items-center justify-center overflow-hidden rounded-xl bg-[#EEF1F4] ${
-                  it.wide ? "h-14 w-[5.75rem]" : "h-14 w-14"
+                  it.wide ? "h-14 w-[6.25rem]" : "h-14 w-14"
                 }`}
               >
                 {it.photo ? (
@@ -232,18 +259,38 @@ export default function LanjutkanBelajar({
                   <img
                     src={it.photo}
                     alt=""
-                    className="relative z-10 h-full w-full object-cover"
+                    className="relative z-10 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110 motion-reduce:transform-none"
                     /* maxresdefault sering 404 → turun ke hqdefault dulu; kalau
                        itu pun gagal, biarkan ikon di belakangnya yang kelihatan */
                     onError={(e) => {
                       const img = e.currentTarget as HTMLImageElement;
-                      const hq = it.wide && watch ? youtubeThumb(watch.videoId) : "";
+                      const hq = it.videoId ? youtubeThumb(it.videoId) : "";
                       if (hq && img.src !== hq) img.src = hq;
                       else img.style.opacity = "0";
                     }}
                   />
                 ) : null}
                 <Icon className="absolute -z-0 h-5 w-5 text-[#16796E]" strokeWidth={2.4} />
+
+                {/* Lencana ▶ menyala saat kursor masuk — penanda "ini bisa diputar",
+                    sekaligus pengisi jeda 700 ms sebelum pratinjau muncul. */}
+                {it.videoId && preview !== it.key && (
+                  <span className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center bg-black/25 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                    <Play className="h-4 w-4 fill-white text-white drop-shadow" strokeWidth={1.5} />
+                  </span>
+                )}
+
+                {/* Pratinjau bisu. `pointer-events-none` wajib: iframe menelan klik,
+                    dan kartunya sendiri sebuah <button> yang harus tetap bisa ditekan. */}
+                {it.videoId && preview === it.key && (
+                  <iframe
+                    src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(it.videoId)}?autoplay=1&mute=1&controls=0&loop=1&playlist=${encodeURIComponent(it.videoId)}&modestbranding=1&rel=0&playsinline=1&disablekb=1`}
+                    title=""
+                    allow="autoplay; encrypted-media"
+                    tabIndex={-1}
+                    className="pointer-events-none absolute inset-0 z-30 h-full w-full scale-[1.35] border-0 opacity-0 animate-[lanjutFade_.35s_ease-out_forwards]"
+                  />
+                )}
               </span>
 
               <span className="min-w-0 flex-1">
