@@ -15,7 +15,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase-client";
-import { getWatchHistory } from "@/lib/immersion";
+import { getWatchHistory, youtubeThumb, youtubeThumbMax } from "@/lib/immersion";
 import { useT } from "@/lib/uiLang";
 import { GraduationCap, BookMarked, Clapperboard, BookText, ArrowRight, type LucideIcon } from "lucide-react";
 
@@ -39,6 +39,8 @@ type Item = {
   sub: string;
   icon: LucideIcon;
   photo: string | null;
+  /** Gambar lebar 16:9 (thumbnail video) — dipakai ganti kotak ikon persegi. */
+  wide?: boolean;
   pct: number | null;
   run: () => void;
 };
@@ -181,14 +183,16 @@ export default function LanjutkanBelajar({
         title: watch.title,
         sub: t("Lanjut menonton"),
         icon: Clapperboard,
-        photo: watch.thumbnail,
+        /* Thumbnail video asli — sama seperti layar diam waktu videonya dijeda.
+           Riwayat lama kadang menyimpan thumbnail null → rakit sendiri dari
+           videoId, jangan jatuh ke kotak ikon polos. */
+        photo: watch.thumbnail || youtubeThumbMax(watch.videoId),
+        wide: true,
         pct: null,
-        /* `?v=` (plus `vl=` bahasa) memang dibaca WatchAndLearn saat boot —
-           videonya langsung terbuka, bukan mendarat di katalog. */
-        run: () =>
-          router.push(
-            `/watch?v=${encodeURIComponent(watch.videoId)}&vl=${encodeURIComponent(watch.lang || "en")}`
-          ),
+        /* Mendarat di BERANDA Watch & Learn, bukan langsung memutar videonya:
+           rail "Keep Watching" di sana sudah memuat video ini di posisi pertama,
+           sekalian siswa bisa memilih tontonan lain. */
+        run: () => router.push("/watch"),
       });
     }
 
@@ -213,15 +217,25 @@ export default function LanjutkanBelajar({
               onClick={it.run}
               className="group flex items-center gap-3 rounded-2xl bg-white p-3 text-left ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:ring-[#16796E]/40"
             >
-              <span className="relative isolate flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-[#EEF1F4]">
+              <span
+                className={`relative isolate flex shrink-0 items-center justify-center overflow-hidden rounded-xl bg-[#EEF1F4] ${
+                  it.wide ? "h-14 w-[5.75rem]" : "h-14 w-14"
+                }`}
+              >
                 {it.photo ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={it.photo}
                     alt=""
                     className="relative z-10 h-full w-full object-cover"
-                    /* gambar gagal → biarkan ikon di belakangnya yang kelihatan */
-                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = "0"; }}
+                    /* maxresdefault sering 404 → turun ke hqdefault dulu; kalau
+                       itu pun gagal, biarkan ikon di belakangnya yang kelihatan */
+                    onError={(e) => {
+                      const img = e.currentTarget as HTMLImageElement;
+                      const hq = it.wide && watch ? youtubeThumb(watch.videoId) : "";
+                      if (hq && img.src !== hq) img.src = hq;
+                      else img.style.opacity = "0";
+                    }}
                   />
                 ) : null}
                 <Icon className="absolute -z-0 h-5 w-5 text-[#16796E]" strokeWidth={2.4} />
