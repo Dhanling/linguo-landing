@@ -629,22 +629,27 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                     className="absolute top-full left-0 mt-2 w-[720px] bg-white rounded-2xl shadow-2xl border border-slate-100 p-5">
                     {NAV_MEGA.map((g)=>(
                       <div key={g.group} className="mb-4 last:mb-0">
-                        <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5 px-2">{g.group}</p>
+                        <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5 px-2">{g.group}</p>
                         <div className="grid grid-cols-3 gap-1">
                           {g.items.map((it)=>(
                             <div key={it.title} role="button" tabIndex={0}
                               onClick={()=>{ setProgOpen(false); window.location.href = it.href || daftarHref(it.prog); }}
                               onKeyDown={(e)=>{ if(e.key==="Enter"){ setProgOpen(false); window.location.href = it.href || daftarHref(it.prog); } }}
-                              className="cursor-pointer flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#1A9E9E]/5 transition-colors group/item">
-                              <span className="w-9 h-9 rounded-lg bg-[#1A9E9E]/10 text-[#1A9E9E] flex items-center justify-center shrink-0"><it.icon className="w-[18px] h-[18px]"/></span>
-                              <span className="min-w-0">
-                                <span className="block text-sm font-bold text-slate-800 group-hover/item:text-[#1A9E9E] transition-colors">{it.title}</span>
-                                <span className="block text-xs text-slate-400 leading-snug mt-0.5">{it.desc}</span>
-                                {it.schedHref && (
-                                  <a href={it.schedHref} onClick={(e)=>{ e.stopPropagation(); setProgOpen(false); }}
-                                    className="inline-block text-[11px] font-semibold text-[#1A9E9E] mt-1 hover:underline">{it.schedLabel}</a>
-                                )}
-                              </span>
+                              className="cursor-pointer group/item rounded-xl relative z-0 hover:z-10">
+                              {/* linguo-patch:nav-mega-hover-zoom-v1 — zoom + highlight teal solid.
+                                  Transform-nya di elemen DALAM (bukan di target hover) biar gak
+                                  kedip pas kursor diam / halaman gerak. */}
+                              <div className="flex items-start gap-3 p-2.5 rounded-xl bg-transparent group-hover/item:bg-[#1A9E9E] group-hover/item:scale-[1.05] group-hover/item:shadow-lg group-hover/item:shadow-[#1A9E9E]/25 transition-[transform,background-color,box-shadow] duration-200 ease-out origin-center">
+                                <span className="w-9 h-9 rounded-lg bg-[#1A9E9E]/10 text-[#1A9E9E] group-hover/item:bg-white group-hover/item:text-[#1A9E9E] flex items-center justify-center shrink-0 transition-colors duration-200"><it.icon className="w-[18px] h-[18px]"/></span>
+                                <span className="min-w-0">
+                                  <span className="block text-sm font-bold text-slate-900 group-hover/item:text-white transition-colors duration-200">{it.title}</span>
+                                  <span className="block text-xs text-slate-700 group-hover/item:text-white leading-snug mt-0.5 transition-colors duration-200">{it.desc}</span>
+                                  {it.schedHref && (
+                                    <a href={it.schedHref} onClick={(e)=>{ e.stopPropagation(); setProgOpen(false); }}
+                                      className="inline-block text-[11px] font-semibold text-[#1A9E9E] group-hover/item:text-[#fbbf24] mt-1 hover:underline transition-colors duration-200">{it.schedLabel}</a>
+                                  )}
+                                </span>
+                              </div>
                             </div>
                           ))}
                         </div>
