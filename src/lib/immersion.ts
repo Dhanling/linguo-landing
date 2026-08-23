@@ -510,6 +510,9 @@ export interface WatchHistoryItem {
   duration?: number | null;
   /** [watch-lanjut-menit-v1] Detik terakhir ditonton. Entri lama: undefined = mulai dari awal. */
   position?: number | null;
+  /** [lanjutkan-watch-level-v1] Estimasi level CEFR video (badge di kartu "Lanjutkan
+   *  Belajar"). Entri lama: undefined = kartunya tak menggambar badge apa pun. */
+  level?: import("./cefr").CefrLevel | null;
   lang: string;
   ts: number;
 }
@@ -531,14 +534,67 @@ export function getWatchHistory(): WatchHistoryItem[] {
 
 export function pushWatchHistory(item: WatchHistoryItem): WatchHistoryItem[] {
   if (typeof window === "undefined") return [];
-  const list = getWatchHistory().filter((h) => h.videoId !== item.videoId);
-  const next = [item, ...list].slice(0, HISTORY_MAX);
+  const semua = getWatchHistory();
+  // [watch-lanjut-menit-v1] Membuka ulang video yang sama TIDAK menghapus posisinya:
+  // entri baru ini dirakit dari data katalog (yang tak tahu apa-apa soal detik), jadi
+  // tanpa penjagaan ini setiap klik "lanjut menonton" justru mereset ke detik 0.
+  const lama = semua.find((h) => h.videoId === item.videoId);
+  const list = semua.filter((h) => h.videoId !== item.videoId);
+  /* [lanjutkan-watch-level-v1] Level ikut diwarisi dengan alasan yang sama seperti
+     posisi: katalog tab "Cari" tak menghitung level, jadi membuka ulang video dari
+     sana akan menghapus badge yang sudah pernah tercatat dari tab "Siap". */
+  const next = [
+    { ...item, position: item.position ?? lama?.position ?? null, level: item.level ?? lama?.level ?? null },
+    ...list,
+  ].slice(0, HISTORY_MAX);
   try {
     window.localStorage.setItem(HISTORY_KEY, JSON.stringify(next));
   } catch {
     /* storage penuh/diblokir — abaikan */
   }
   return next;
+}
+
+/* [watch-lanjut-menit-v1] Detik terakhir ditonton, dititipkan player tiap beberapa
+   detik. Dulu riwayat cuma tahu VIDEO APA yang terakhir dibuka, jadi "lanjut
+   menonton" selalu melempar siswa ke detik 0 — di video 20 menit itu bukan
+   melanjutkan, itu mengulang.
+
+   Dua pagar: di bawah MIN_SIMPAN_DETIK dianggap belum benar-benar mulai (tak usah
+   dicatat), dan yang sudah mepet ujung dinolkan — kalau tidak, membuka lagi video
+   yang sudah tamat mendarat di layar akhir dan terasa rusak. */
+const MIN_SIMPAN_DETIK = 5;
+const SISA_DIANGGAP_TAMAT = 20;
+
+export function saveWatchPosition(videoId: string, seconds: number, duration?: number | null): void {
+  if (typeof window === "undefined" || !videoId) return;
+  if (!Number.isFinite(seconds) || seconds < MIN_SIMPAN_DETIK) return;
+  const d = typeof duration === "number" && duration > 0 ? duration : 0;
+  const pos = d && seconds > d - SISA_DIANGGAP_TAMAT ? 0 : Math.floor(seconds);
+  const list = getWatchHistory();
+  const i = list.findIndex((h) => h.videoId === videoId);
+  if (i < 0) return; // belum tercatat = tak ada yang perlu dilanjutkan
+  const entri: WatchHistoryItem = {
+    ...list[i],
+    position: pos,
+    duration: list[i].duration || (d || null),
+    ts: Date.now(),
+  };
+  // Naik ke depan: urutan daftar ini = "terakhir disentuh", dan kartu "Lanjutkan
+  // Belajar" membaca elemen pertama.
+  const next = [entri, ...list.filter((_, n) => n !== i)].slice(0, HISTORY_MAX);
+  try {
+    window.localStorage.setItem(HISTORY_KEY, JSON.stringify(next));
+  } catch {
+    /* storage penuh/diblokir — abaikan */
+  }
+}
+
+/** Detik terakhir ditonton video ini; 0 kalau belum pernah / sudah tamat. */
+export function getWatchPosition(videoId: string): number {
+  const h = getWatchHistory().find((x) => x.videoId === videoId);
+  const p = h?.position;
+  return typeof p === "number" && Number.isFinite(p) && p > MIN_SIMPAN_DETIK ? p : 0;
 }
 
 // Hapus riwayat tonton. Tanpa argumen → bersihkan semua. Dengan `lang` →

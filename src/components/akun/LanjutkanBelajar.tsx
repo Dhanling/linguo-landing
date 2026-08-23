@@ -15,8 +15,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase-client";
-import { getWatchHistory, youtubeThumb, youtubeThumbMax } from "@/lib/immersion";
-import { getLangPhoto } from "@/lib/lang-visuals";
+import { getImmersionLang, getWatchHistory, youtubeThumb, youtubeThumbMax } from "@/lib/immersion";
+import { getLangPhoto, LANG_FLAGS } from "@/lib/lang-visuals";
+import { baseLanguage } from "@/lib/classLanguage";
+import { CEFR_STYLE, type CefrLevel } from "@/lib/cefr";
+import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
 import { useT } from "@/lib/uiLang";
 import { BookMarked, Clapperboard, ArrowRight, type LucideIcon } from "lucide-react";
 
@@ -43,8 +46,29 @@ type Item = {
   /** Ada isinya = kartu ini bisa memutar pratinjau bisu saat kursor menetap. */
   videoId?: string;
   pct: number | null;
+  /** [lanjutkan-bendera-level-v1] Kode negara ISO-2 buat bendera rounded-rect. */
+  flag?: string | null;
+  /** Level CEFR materinya — digambar sebagai chip di sebelah nama sumber. */
+  level?: CefrLevel | null;
   run: () => void;
 };
+
+/* [lanjutkan-bendera-level-v1] Bahasa e-book datang sebagai slug katalog
+   ("spanish") ATAU nama kelas ("Spanish", "English - Conversation"), jadi dua peta
+   dicoba berurutan sebelum menyerah. Menyerah = tak menggambar apa-apa: bendera
+   yang salah lebih membingungkan daripada tak ada bendera. */
+function benderaBahasa(language: string | null | undefined): string | null {
+  const raw = (language || "").trim();
+  if (!raw) return null;
+  return FLAG_CODE_BY_SLUG[raw.toLowerCase()] || LANG_FLAGS[baseLanguage(raw)] || null;
+}
+
+/* Level modul biasanya cuma tertulis di judulnya ("English 101 A1 …") — e-book tak
+   punya kolom level sendiri di `digital_products`. */
+function levelDariJudul(judul: string): CefrLevel | null {
+  const m = judul.match(/\b(A1|A2|B1|B2|C1)\b/i);
+  return m ? (m[1].toUpperCase() as CefrLevel) : null;
+}
 
 /** Detik → "7:12" / "1:04:30". Dipakai label "Lanjut dari …" kartu Watch & Learn. */
 function jamMenit(detik: number): string {
@@ -148,7 +172,15 @@ export default function LanjutkanBelajar({
   /* Riwayat tonton hidup di localStorage (lihat lib/immersion). Dibaca sesudah
      mount supaya render server & klien tidak berbeda. */
   const [watch, setWatch] = useState<
-    { videoId: string; title: string; thumbnail: string | null; lang: string; ts: number; position: number } | null
+    {
+      videoId: string;
+      title: string;
+      thumbnail: string | null;
+      lang: string;
+      ts: number;
+      position: number;
+      level: CefrLevel | null;
+    } | null
   >(null);
   useEffect(() => {
     const h = getWatchHistory();
@@ -161,6 +193,8 @@ export default function LanjutkanBelajar({
       ts: h[0].ts || 0,
       // [watch-lanjut-menit-v1] entri lama tak punya `position` → mulai dari awal
       position: typeof h[0].position === "number" && h[0].position > 5 ? h[0].position : 0,
+      // [lanjutkan-bendera-level-v1] Entri riwayat lama tak punya level → tanpa chip.
+      level: h[0].level || null,
     });
   }, []);
 
@@ -252,6 +286,8 @@ export default function LanjutkanBelajar({
         photo: sampulEbook(purchaseId) || m.cover || (m.language ? getLangPhoto(m.language) : null),
         fitTop: true,
         pct: b.total ? Math.min(100, Math.round((b.page / b.total) * 100)) : null,
+        flag: benderaBahasa(m.language),
+        level: levelDariJudul(m.title),
         /* [lanjutkan-ebook-buka-langsung-v1] Langsung ke readernya, bukan ke
            daftar Perpustakaan: kartunya menjanjikan SATU modul yang tadi dibaca. */
         run: () => onOpenEbook(purchaseId),
@@ -275,6 +311,8 @@ export default function LanjutkanBelajar({
         wide: true,
         videoId: watch.videoId,
         pct: null,
+        flag: getImmersionLang(watch.lang)?.country || null,
+        level: watch.level,
         /* [watch-lanjut-menit-v1] Langsung memutar videonya: `?v=` (plus `vl=`
            bahasa) memang dibaca WatchAndLearn saat boot, dan `t=` menaruh jarumnya
            di detik terakhir yang tercatat — jadi tak ada yang perlu diulang. */
@@ -354,7 +392,21 @@ export default function LanjutkanBelajar({
               </span>
 
               <span className="min-w-0 flex-1">
-                <span className="block text-[11px] font-bold uppercase tracking-wide text-[#16796E]">{it.kind}</span>
+                {/* [lanjutkan-bendera-level-v1] Bendera + nama sumber + chip level dalam
+                    satu baris: sekali lirik siswa tahu ini bahasa apa dan setingkat apa,
+                    tanpa harus membaca judulnya yang sudah terpotong di kartu sesempit ini. */}
+                <span className="flex items-center gap-1.5">
+                  {it.flag ? <RectFlag code={it.flag} h={11} className="shadow-sm" /> : null}
+                  <span className="truncate text-[11px] font-bold uppercase tracking-wide text-[#16796E]">{it.kind}</span>
+                  {it.level ? (
+                    <span
+                      className="shrink-0 rounded-md px-1.5 py-[1px] text-[9px] font-extrabold leading-[14px] tracking-wide"
+                      style={{ backgroundColor: CEFR_STYLE[it.level].bg, color: CEFR_STYLE[it.level].fg }}
+                    >
+                      {it.level}
+                    </span>
+                  ) : null}
+                </span>
                 <span className="mt-0.5 block truncate text-[14px] font-extrabold text-[#12172B]">{it.title}</span>
                 <span className="mt-0.5 block truncate text-[12px] font-medium text-gray-500">{it.sub}</span>
                 {it.pct != null && (

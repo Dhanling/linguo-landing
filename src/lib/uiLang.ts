@@ -1422,6 +1422,10 @@ const EN: Record<string, string> = {
   "Langganan": "Subscribe",
   "Langganan aktif! Arti kata & Analisa terbuka penuh 🎉": "Subscription active! Word meanings & Analysis are fully unlocked 🎉",
   "Lanjut menonton": "Keep watching",
+  /* [watch-lanjut-menit-v1] "Lanjut dari 7:12" — jamnya dirakit di komponen. */
+  "Lanjut dari": "Resume at",
+  /* [lingbook-sampul-kartu-v1] "Halaman 12/135" di kartu Lingbook. */
+  "Halaman": "Page",
   "Maaf, tidak ada jawaban. Coba lagi.": "Sorry, no answer came back. Try again.",
   "Main lagi": "Play again",
   "Masukkan email yang valid untuk kirim invoice & aktivasi.": "Enter a valid email so we can send the invoice & activate access.",

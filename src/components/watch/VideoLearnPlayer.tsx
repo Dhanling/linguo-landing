@@ -88,6 +88,7 @@ import {
   getImmersionLang,
   ImmersionVideo,
   searchImmersionVideos,
+  saveWatchPosition,
   WATCH_REC_MAX_DURATION_SEC,
   youtubeThumb,
   youtubeThumbMax,
@@ -1590,6 +1591,30 @@ export default function VideoLearnPlayer({
     }, 500);
     return () => window.clearInterval(id);
   }, [ready, video.videoId]);
+
+  /* [watch-lanjut-menit-v1] Titipkan posisi tonton ke riwayat tiap 5 detik, plus
+     sekali lagi saat video berganti / player ditutup. Sengaja TIDAK peduli video
+     sedang jalan atau dijeda: berhenti di menit 7 lalu menutup tab juga "posisi
+     terakhir". Nilainya dibaca lewat ref supaya interval tak perlu dipasang ulang
+     tiap 50ms (`time` berdetak secepat sorotan karaoke). */
+  const posRef = useRef({ t: 0, d: 0 });
+  useEffect(() => {
+    posRef.current = { t: time, d: duration };
+  }, [time, duration]);
+  useEffect(() => {
+    const vid = video.videoId;
+    /* Nolkan dulu: waktu pindah video (rekomendasi), `time` masih menyimpan detik
+       video SEBELUMNYA sampai ticker-nya mengangkat nilai baru. Tanpa ini, video
+       3 menit bisa tercatat "terakhir di menit 10". Pembersih efek lama sudah
+       menyimpan nilai yang benar sebelum baris ini jalan. */
+    posRef.current = { t: 0, d: 0 };
+    const simpan = () => saveWatchPosition(vid, posRef.current.t, posRef.current.d);
+    const id = window.setInterval(simpan, 5000);
+    return () => {
+      window.clearInterval(id);
+      simpan();
+    };
+  }, [video.videoId]);
 
   // ── Muat transkrip ──────────────────────────────────────────────────────────
   // Paritas dgn app mobile: buka video = subtitle DIBUAT OTOMATIS bila belum ada.

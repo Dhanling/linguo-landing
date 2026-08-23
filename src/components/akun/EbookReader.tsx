@@ -86,6 +86,30 @@ const SWIPE_SERET = 70;
 const SWIPE_RESET = 320;
 
 const halamanKey = (purchaseId: string) => `ebook-hal:${purchaseId}`;
+/* [lingbook-sampul-kartu-v1] Sampul modul sebagai gambar kecil, buat kartu
+   "Lanjutkan Belajar" di Beranda. Diambil dari halaman 1 yang MEMANG sudah
+   dirender reader — `digital_products.cover_url` kosong untuk semua e-book, dan
+   sampulnya cuma hidup sebagai halaman pertama di dalam PDF. Efeknya: sampul
+   tersedia persis untuk buku yang pernah dibuka siswa, yaitu satu-satunya buku
+   yang bisa muncul di blok "lanjutkan". */
+export const sampulKey = (purchaseId: string) => `ebook-sampul:${purchaseId}`;
+const SAMPUL_LEBAR = 220;
+
+function simpanSampul(purchaseId: string, sumber: HTMLCanvasElement): void {
+  try {
+    if (localStorage.getItem(sampulKey(purchaseId))) return; // sudah ada — jangan raster ulang
+    const rasio = sumber.height / sumber.width;
+    const kecil = document.createElement("canvas");
+    kecil.width = SAMPUL_LEBAR;
+    kecil.height = Math.round(SAMPUL_LEBAR * rasio);
+    const ctx = kecil.getContext("2d");
+    if (!ctx) return;
+    ctx.drawImage(sumber, 0, 0, kecil.width, kecil.height);
+    localStorage.setItem(sampulKey(purchaseId), kecil.toDataURL("image/jpeg", 0.72));
+  } catch {
+    /* kuota localStorage penuh / canvas ternoda — kartu jatuh ke foto bahasa */
+  }
+}
 // [lanjutkan-belajar-v1] kapan terakhir modul ini dibaca (epoch ms).
 export const halamanTsKey = (purchaseId: string) => `ebook-hal-ts:${purchaseId}`;
 /* [lanjutkan-ebook-jejak-lokal-v1] Judul & bahasa modulnya ikut dititipkan ke
@@ -1256,6 +1280,8 @@ export default function EbookReader({
         // itu dulu memaksa semua render antre di satu rantai promise.
         await p.render({ canvasContext: ctx, viewport }).promise;
         gambarNomor(ctx, viewport.width, viewport.height, n);
+        // [lingbook-sampul-kartu-v1] halaman 1 = sampul → titipkan versi kecilnya
+        if (n === 1) simpanSampul(purchaseId, canvas);
         const bm: Bitmap = { canvas, w: Math.floor(viewport.width), h: Math.floor(viewport.height) };
         // Hasil generasi lama (skala sudah berubah) dibuang, bukan disimpan —
         // dibandingkan lewat ref, karena `generasi` di closure ini nilainya
@@ -1275,7 +1301,7 @@ export default function EbookReader({
     })();
     antreRef.current.set(n, tugas);
     return tugas;
-  }, [generasi, gambarNomor]);
+  }, [generasi, gambarNomor, purchaseId]);
 
   /** Salin bitmap ke canvas yang tampak. drawImage = blit, jauh lebih murah dari render ulang. */
   const pasang = useCallback((target: HTMLCanvasElement | null, bm: Bitmap | null) => {
@@ -1335,6 +1361,29 @@ export default function EbookReader({
       else clearTimeout(id);
     };
   }, [doc, tampil, dua, siapkan, ukuran, generasi]);
+
+  /* [lingbook-sampul-kartu-v1] Siswa yang MELANJUTKAN bacaan mendarat di halaman
+     40-sekian — sampulnya tak pernah ikut dirender, jadi kartu Beranda tak akan
+     pernah punya gambarnya. Sekali, waktu browser senggang, halaman 1 dirender
+     diam-diam khusus untuk ditangkap. Cuma kalau belum tersimpan. */
+  useEffect(() => {
+    if (!doc || !ukuran) return;
+    try {
+      if (localStorage.getItem(sampulKey(purchaseId))) return;
+    } catch {
+      return;
+    }
+    let batal = false;
+    const jalan = () => { if (!batal) void siapkan(1); };
+    const w = window as any;
+    const idle = typeof w.requestIdleCallback === "function";
+    const id = idle ? w.requestIdleCallback(jalan, { timeout: 3000 }) : w.setTimeout(jalan, 1200);
+    return () => {
+      batal = true;
+      if (idle) w.cancelIdleCallback?.(id);
+      else clearTimeout(id);
+    };
+  }, [doc, ukuran, siapkan, purchaseId]);
 
   useEffect(() => {
     if (!doc) return;

@@ -45,6 +45,7 @@ import {
   filterVideosByLanguage,
   getImmersionLang,
   getWatchHistory,
+  getWatchPosition,
   pushWatchHistory,
   searchImmersionVideos,
   WatchHistoryItem,
@@ -326,6 +327,7 @@ function stripWatchParams() {
   if (!u.searchParams.has("v") && !u.searchParams.has("vl")) return;
   u.searchParams.delete("v");
   u.searchParams.delete("vl");
+  u.searchParams.delete("t"); // [watch-lanjut-menit-v1] ikut dibuang bersama v/vl
   window.history.replaceState(window.history.state, "", u.pathname + u.search + u.hash);
 }
 
@@ -755,6 +757,12 @@ export default function WatchAndLearn() {
             : { videoId: vid, title: "", thumbnail: null }
         );
         setActiveLang(getImmersionLang(vl) ? vl : "en");
+        /* [watch-lanjut-menit-v1] `?t=` (detik) menang kalau ada — kartu "Lanjutkan
+           Belajar" mengirimnya supaya titik lanjutnya tetap benar walau riwayat di
+           perangkat ini sudah dipangkas. Kalau tak ada, pakai catatan riwayat. */
+        const detik = Number(params.get("t"));
+        const mulai = Number.isFinite(detik) && detik > 5 ? detik : getWatchPosition(vid);
+        setActiveStart(mulai > 0 ? mulai : undefined);
       }
       // URL bawa ?kosakata=1 → refresh terjadi saat dashboard Kosakata terbuka:
       // buka lagi overlay flashcard, jangan mentalkan siswa ke katalog Watch & Learn.
@@ -1006,6 +1014,10 @@ export default function WatchAndLearn() {
     const u = new URL(window.location.href);
     u.searchParams.set("v", active.videoId);
     u.searchParams.set("vl", activeLang);
+    /* [watch-lanjut-menit-v1] `t=` cuma tiket sekali pakai dari kartu "Lanjutkan
+       Belajar". Dibiarkan menempel, refresh setengah jam kemudian akan memutar ulang
+       dari detik lama itu — padahal riwayat sudah punya posisi yang lebih baru. */
+    u.searchParams.delete("t");
     window.history.replaceState(window.history.state, "", u.pathname + u.search + u.hash);
   }, [active, activeLang]);
 
@@ -1242,13 +1254,19 @@ export default function WatchAndLearn() {
     (v: ImmersionVideo, forLang: string, startAt?: number) => {
       setActive(v);
       setActiveLang(forLang);
-      setActiveStart(startAt);
+      /* [watch-lanjut-menit-v1] Tanpa titik mulai yang diminta pemanggil (mis. klik
+         baris transkrip), video dibuka DARI DETIK TERAKHIR ditonton. Membuka ulang
+         video 20 menit dari detik 0 bukan "lanjut menonton". */
+      setActiveStart((startAt ?? getWatchPosition(v.videoId)) || undefined);
       const next = pushWatchHistory({
         videoId: v.videoId,
         title: v.title,
         thumbnail: v.thumbnail,
         channel: v.channel,
         duration: v.duration,
+        // [lanjutkan-watch-level-v1] Level ikut dicatat supaya kartu "Lanjutkan
+        // Belajar" di Beranda bisa memasang badge levelnya tanpa menghitung ulang.
+        level: v.level ?? null,
         lang: forLang,
         ts: Date.now(),
       });
