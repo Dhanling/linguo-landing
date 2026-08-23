@@ -1,0 +1,330 @@
+{
+ "title": "Perkenalan pertama",
+ "title_target": "你好 — Nǐ hǎo",
+ "goal": "Menyapa, menyebut nama dan marga, mengatakan asal negara dan pekerjaan, serta membuat pertanyaan ya/tidak — semuanya dengan satu kata kerja: 是.",
+ "bekal": [
+  "menyapa dan berpamitan",
+  "menyebut nama dengan 叫 dan marga dengan 姓",
+  "mengatakan “saya orang Indonesia” dan “saya guru”",
+  "bertanya dengan 吗 dan mengembalikan pertanyaan dengan 呢",
+  "menyangkal dengan 不是"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Bertemu di kelas",
+   "intro": "Andi, seorang guru dari Jakarta, bertemu Wang Li di hari pertamanya di Beijing. Perhatikan bahwa seluruh percakapan ini berjalan dengan satu kata kerja saja.",
+   "lines": [
+    { "speaker": "王丽:", "text": "[你好|Nǐ hǎo]！", "id": "Halo!", "literal": "kamu — baik." },
+    { "speaker": "安迪:", "text": "[你好|Nǐ hǎo]！[我叫|Wǒ jiào][安迪|Āndí]。", "id": "Halo! Nama saya Andi.", "literal": "kamu — baik. saya — bernama — Andi." },
+    { "speaker": "王丽:", "text": "[我姓|Wǒ xìng][王|Wáng]，[叫|jiào][王丽|Wáng Lì]。", "id": "Marga saya Wang, nama saya Wang Li.", "literal": "saya — bermarga — Wang, bernama — Wang Li." },
+    { "speaker": "安迪:", "text": "[认识|Rènshi][你|nǐ][很|hěn][高兴|gāoxìng]。", "id": "Senang berkenalan denganmu.", "literal": "mengenal — kamu — penyangga — gembira." },
+    { "speaker": "王丽:", "text": "[我|Wǒ][也|yě][很|hěn][高兴|gāoxìng]。[你是|Nǐ shì][哪国人|nǎ guó rén]？", "id": "Saya juga senang. Kamu orang mana?", "literal": "saya — juga — penyangga — gembira. kamu — adalah — mana — negara — orang." },
+    { "speaker": "安迪:", "text": "[我是|Wǒ shì][印尼人|Yìnní rén]。[你呢|Nǐ ne]？", "id": "Saya orang Indonesia. Kalau kamu?", "literal": "saya — adalah — Indonesia — orang. kamu — bagaimana." },
+    { "speaker": "王丽:", "text": "[我是|Wǒ shì][中国人|Zhōngguó rén]。[你是|Nǐ shì][学生|xuésheng][吗|ma]？", "id": "Saya orang Tiongkok. Kamu pelajar?", "literal": "saya — adalah — Tiongkok — orang. kamu — adalah — pelajar — kah." },
+    { "speaker": "安迪:", "text": "[不是|Bú shì]，[我是|wǒ shì][老师|lǎoshī]。[你|Nǐ][也是|yě shì][老师|lǎoshī][吗|ma]？", "id": "Bukan, saya guru. Kamu juga guru?", "literal": "tidak — adalah, saya — adalah — guru. kamu — juga — adalah — guru — kah." },
+    { "speaker": "王丽:", "text": "[我|Wǒ][不是|bú shì][老师|lǎoshī]，[我是|wǒ shì][学生|xuésheng]。", "id": "Saya bukan guru, saya pelajar.", "literal": "saya — tidak — adalah — guru, saya — adalah — pelajar." },
+    { "speaker": "安迪:", "text": "[你的|Nǐ de][名字|míngzi][很|hěn][好听|hǎotīng]。", "id": "Namamu enak didengar.", "literal": "kamu — punya — nama — penyangga — enak-didengar." },
+    { "speaker": "王丽:", "text": "[谢谢|Xièxie]！[再见|Zàijiàn]！", "id": "Terima kasih! Sampai jumpa!", "literal": "terima-kasih. lagi — bertemu." },
+    { "speaker": "安迪:", "text": "[再见|Zàijiàn]！", "id": "Sampai jumpa!", "literal": "lagi — bertemu." }
+   ],
+   "notes": [
+    "**[你好|Nǐ hǎo] harfiah berarti “kamu baik”** — dan itu **pernyataan**, bukan pertanyaan. Ia dipakai kapan saja, kepada siapa saja, seperti “halo”. Yang menanyakan kabar adalah [你好吗|Nǐ hǎo ma]？ dengan 吗 di ujungnya.",
+    "**[姓|xìng] hanya untuk marga, [叫|jiào] untuk nama.** [我姓王|Wǒ xìng Wáng] = marga saya Wang. [我叫王丽|Wǒ jiào Wáng Lì] = nama saya Wang Li. ⚠️ Orang Indonesia yang cuma punya satu nama sering keliru berkata 我姓安迪 — yang terdengar seperti “marga saya Andi”. Kalau ragu, pakai 叫 saja; ia hampir selalu benar.",
+    "**Nama Tionghoa dibalik dari kebiasaan kita: marga dulu, baru nama diri.** 王丽 = marga 王, nama 丽. Begitu juga 毛泽东 dan 习近平 — suku kata pertama adalah marganya. Marga Tionghoa hampir selalu satu suku kata.",
+    "**[呢|ne] mengembalikan pertanyaan tanpa mengulangnya.** Sesudah ditanya sesuatu, cukup jawab lalu tambahkan [你呢|Nǐ ne]？ Ini menghemat seluruh kalimat dan terdengar sangat wajar.",
+    "**⚠️ 不 berubah nada di depan nada keempat.** 不 sendiri berbunyi *bù* (nada 4), tapi [不是|bú shì] diucapkan *bú* (nada 2) karena 是 juga nada keempat. Hal yang sama terjadi di [不去|bú qù], [不要|bú yào], [不错|bú cuò]. Tulisannya tetap 不.",
+    "**⚠️ [也|yě] “juga” berdiri di depan kata kerja, tidak pernah di ujung kalimat.** [我也是老师|Wǒ yě shì lǎoshī] = saya juga guru. Susunan “saya guru juga” tidak ada dalam bahasa Mandarin.",
+    "**[很|hěn] di [很高兴|hěn gāoxìng] bukan berarti “sangat”.** Ia penyangga wajib yang dipasang di depan kata sifat. Ini titik yang akan kita bereskan tuntas di Unit 8 — untuk sekarang, hafalkan saja pasangannya."
+   ],
+   "grammars": [
+    {
+     "title": "是 — satu kata kerja yang sudah cukup untuk seluruh unit ini",
+     "body": [
+      "[是|shì] menghubungkan dua **kata benda**: A 是 B artinya “A adalah B”. Kata kerja Mandarin tidak pernah berubah bentuk, jadi 是 sama persis untuk saya, kamu, dia, kami, dan mereka — tidak ada *am / is / are* seperti bahasa Inggris."
+     ],
+     "tables": [
+      {
+       "head": ["Orang", "Mandarin", "Contoh"],
+       "rows": [
+        ["saya", "[我|wǒ]", "[我是老师|Wǒ shì lǎoshī]。 Saya guru."],
+        ["kamu", "[你|nǐ]", "[你是学生|Nǐ shì xuésheng]。 Kamu pelajar."],
+        ["Anda (hormat)", "[您|nín]", "[您是王先生|Nín shì Wáng xiānsheng]？ Anda Pak Wang?"],
+        ["dia (laki-laki)", "[他|tā]", "[他是医生|Tā shì yīshēng]。 Dia dokter."],
+        ["dia (perempuan)", "[她|tā]", "[她是我朋友|Tā shì wǒ péngyou]。 Dia teman saya."],
+        ["kami / kita", "[我们|wǒmen]", "[我们是印尼人|Wǒmen shì Yìnní rén]。 Kami orang Indonesia."],
+        ["kalian", "[你们|nǐmen]", "[你们是学生吗|Nǐmen shì xuésheng ma]？"],
+        ["mereka", "[他们|tāmen]", "[他们是中国人|Tāmen shì Zhōngguó rén]。"]
+       ]
+      },
+      {
+       "head": ["Bentuk", "Pola", "Contoh"],
+       "rows": [
+        ["Positif", "A 是 B", "[我是印尼人|Wǒ shì Yìnní rén]。"],
+        ["Negatif", "A **不**是 B", "[我不是中国人|Wǒ bú shì Zhōngguó rén]。"],
+        ["Tanya", "A 是 B **吗**？", "[你是老师吗|Nǐ shì lǎoshī ma]？"],
+        ["Jawab ya", "[是|Shì]。 / [对|Duì]。", "— cukup satu kata"],
+        ["Jawab tidak", "[不是|Bú shì]。", "— cukup dua kata"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **是 tidak pernah dipakai dengan kata sifat.** “Saya sibuk” **bukan** 我是忙 melainkan [我很忙|Wǒ hěn máng]. Ini kesalahan nomor satu penutur bahasa Indonesia dan bahasa Inggris, dan ia bertahan bertahun-tahun kalau tidak dicabut sekarang. Ingat: 是 hanya menghubungkan **benda dengan benda**."
+     ]
+    },
+    {
+     "title": "Tiga cara bertanya dalam bahasa Mandarin",
+     "body": [
+      "Bahasa Mandarin tidak membalik urutan kata untuk bertanya. Urutan kalimat tanya **sama persis** dengan urutan kalimat berita — yang berubah cuma satu kata kecil."
+     ],
+     "tables": [
+      {
+       "head": ["Cara", "Bentuknya", "Contoh", "Jawaban"],
+       "rows": [
+        ["**吗**", "Tempel [吗|ma] di ujung kalimat berita", "[你是学生吗|Nǐ shì xuésheng ma]？", "[是|Shì]。 / [不是|Bú shì]。"],
+        ["**Kata tanya**", "Taruh kata tanya persis di tempat jawabannya berdiri", "[你是哪国人|Nǐ shì nǎ guó rén]？", "[我是印尼人|Wǒ shì Yìnní rén]。"],
+        ["**呢**", "Kata benda + [呢|ne] — mengembalikan pertanyaan barusan", "[你呢|Nǐ ne]？", "— apa pun yang tadi ditanyakan"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **Kata tanya Mandarin tidak pindah ke depan.** Bahasa Indonesia berkata “**siapa** dia?”, bahasa Mandarin berkata [他是谁|Tā shì shéi]？ — harfiah “dia adalah siapa”. Cara memeriksanya gampang: susun dulu kalimat jawabannya, lalu ganti bagian yang tidak kamu ketahui dengan kata tanya. Tidak ada satu kata pun yang perlu digeser.",
+      "⚠️ 吗 dan kata tanya **tidak boleh dipakai bersamaan**. [你是谁吗|Nǐ shì shéi ma]？ salah — cukup [你是谁|Nǐ shì shéi]？"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Memperkenalkan orang ketiga",
+   "intro": "Sore harinya Wang Li memperkenalkan Andi kepada temannya. Perhatikan kata 这 dan 那 — dua kata yang akan kamu pakai ratusan kali mulai unit berikutnya.",
+   "lines": [
+    { "speaker": "王丽:", "text": "[安迪|Āndí]，[这是|zhè shì][我|wǒ][朋友|péngyou][李明|Lǐ Míng]。", "id": "Andi, ini teman saya, Li Ming.", "literal": "Andi, ini — adalah — saya — teman — Li Ming." },
+    { "speaker": "安迪:", "text": "[你好|Nǐ hǎo]，[李明|Lǐ Míng]！", "id": "Halo, Li Ming!", "literal": "kamu — baik, Li Ming." },
+    { "speaker": "李明:", "text": "[你好|Nǐ hǎo]！[你|Nǐ][叫|jiào][什么|shénme][名字|míngzi]？", "id": "Halo! Siapa namamu?", "literal": "kamu — baik. kamu — bernama — apa — nama." },
+    { "speaker": "安迪:", "text": "[我|Wǒ][叫|jiào][安迪|Āndí]。[我是|Wǒ shì][印尼人|Yìnní rén]。", "id": "Nama saya Andi. Saya orang Indonesia.", "literal": "saya — bernama — Andi. saya — adalah — Indonesia — orang." },
+    { "speaker": "李明:", "text": "[印尼|Yìnní]？[太好了|Tài hǎo le]！[我|Wǒ][很|hěn][喜欢|xǐhuan][巴厘岛|Bālí Dǎo]。", "id": "Indonesia? Bagus sekali! Saya suka Bali.", "literal": "Indonesia. terlalu — baik — sudah. saya — penyangga — suka — Bali." },
+    { "speaker": "安迪:", "text": "[真的|Zhēn de][吗|ma]？[你|Nǐ][去过|qù guo][印尼|Yìnní][吗|ma]？", "id": "Benarkah? Kamu pernah ke Indonesia?", "literal": "sungguh — punya — kah. kamu — pergi — pernah — Indonesia — kah." },
+    { "speaker": "李明:", "text": "[去过|Qù guo]，[两次|liǎng cì]。[那|Nà][是|shì][谁|shéi]？", "id": "Pernah, dua kali. Itu siapa?", "literal": "pergi — pernah, dua — kali. itu — adalah — siapa." },
+    { "speaker": "安迪:", "text": "[那|Nà][是|shì][我|wǒ][同事|tóngshì]。[他|Tā][也|yě][是|shì][老师|lǎoshī]。", "id": "Itu rekan kerja saya. Dia juga guru.", "literal": "itu — adalah — saya — rekan-kerja. dia — juga — adalah — guru." },
+    { "speaker": "李明:", "text": "[你们|Nǐmen][都|dōu][是|shì][老师|lǎoshī]？[太好了|Tài hǎo le]！", "id": "Kalian semua guru? Bagus sekali!", "literal": "kalian — semuanya — adalah — guru. terlalu — baik — sudah." },
+    { "speaker": "安迪:", "text": "[对|Duì]。[明天见|Míngtiān jiàn]！", "id": "Betul. Sampai besok!", "literal": "benar. besok — bertemu." }
+   ],
+   "notes": [
+    "**[这|zhè] = ini, [那|nà] = itu.** Dua kata ini dipakai untuk benda maupun orang. Memperkenalkan seseorang selalu memakai 这 — [这是我朋友|Zhè shì wǒ péngyou], harfiah “ini adalah teman saya”. Menyebut orang dengan “ini” terdengar kasar dalam bahasa Indonesia; dalam bahasa Mandarin justru itulah bentuk yang sopan.",
+    "**[什么|shénme] = apa.** Perhatikan tempatnya: [你叫什么名字|Nǐ jiào shénme míngzi]？ — harfiah “kamu bernama apa nama”. Ia berdiri persis di tempat jawabannya akan berdiri.",
+    "**[太好了|Tài hǎo le] = “bagus sekali!”.** Pola [太|tài] + kata sifat + [了|le] dipakai untuk apa pun yang berlebih: [太贵了|tài guì le] terlalu mahal, [太累了|tài lèi le] capek sekali. Ini salah satu pola paling sering terdengar dalam percakapan sehari-hari.",
+    "**[都|dōu] = “semuanya”, dan ia selalu berdiri sesudah pelakunya, sebelum kata kerja.** [我们都是老师|Wǒmen dōu shì lǎoshī] = kami semua guru. ⚠️ 都 tidak boleh ditaruh di depan kalimat seperti “semua kami …”.",
+    "**[去过|qù guo] = pernah pergi.** Kita akan membahas 过 dengan tuntas di Unit 10; untuk sekarang cukup kenali bahwa 过 berarti “pernah, sekali seumur hidup”.",
+    "**[明天见|Míngtiān jiàn] = sampai besok.** Polanya waktu + 见: [回头见|huítóu jiàn] sampai nanti, [下周见|xiàzhōu jiàn] sampai minggu depan. Jauh lebih hangat daripada 再见 yang datar."
+   ],
+   "grammars": [
+    {
+     "title": "这 dan 那 — menunjuk sesuatu",
+     "tables": [
+      {
+       "head": ["Mandarin", "Arti", "Contoh"],
+       "rows": [
+        ["[这|zhè]", "ini", "[这是我的书|Zhè shì wǒ de shū]。"],
+        ["[那|nà]", "itu", "[那是他的车|Nà shì tā de chē]。"],
+        ["[这儿|zhèr] / [这里|zhèlǐ]", "di sini", "[我在这儿|Wǒ zài zhèr]。"],
+        ["[那儿|nàr] / [那里|nàlǐ]", "di sana", "[他在那儿|Tā zài nàr]。"],
+        ["[哪|nǎ]", "yang mana", "[哪个是你的|Nǎge shì nǐ de]？"],
+        ["[哪儿|nǎr] / [哪里|nǎlǐ]", "di mana", "[你在哪儿|Nǐ zài nǎr]？"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ Perhatikan baik-baik: [那|nà] “itu” dan [哪|nǎ] “mana” hanya berbeda nada dan satu bagian kecil di sisi kiri aksaranya (口). Ini pasangan yang paling sering tertukar oleh pemula. Cara membedakannya: yang **bertanya** punya mulut 口 di depannya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyapa sepanjang hari",
+   "blocks": [
+    { "type": "p", "text": "你好 selalu benar, tapi orang Tiongkok jarang memakainya di antara orang yang sudah saling kenal. Yang berikut ini membuat sapaanmu terdengar wajar, bukan seperti buku pelajaran." },
+    { "type": "tabel", "head": ["Sapaan", "Kapan dipakai", "Jawaban yang wajar"], "rows": [
+      ["[你好|Nǐ hǎo]", "Kapan saja, terutama pada orang baru", "[你好|Nǐ hǎo]。"],
+      ["[您好|Nín hǎo]", "Kepada orang yang lebih tua, atasan, tamu, pelanggan", "[您好|Nín hǎo]。"],
+      ["[大家好|Dàjiā hǎo]", "Kepada sekelompok orang sekaligus", "[你好|Nǐ hǎo]。"],
+      ["[早上好|Zǎoshang hǎo] / [早|Zǎo]", "Pagi hari. 早 saja sudah cukup di antara teman", "[早|Zǎo]。"],
+      ["[晚上好|Wǎnshang hǎo]", "Malam hari, agak resmi", "[晚上好|Wǎnshang hǎo]。"],
+      ["[你好吗|Nǐ hǎo ma]？", "Menanyakan kabar orang yang sudah dikenal", "[我很好|Wǒ hěn hǎo]，[谢谢|xièxie]。"],
+      ["[最近怎么样|Zuìjìn zěnmeyàng]？", "“Apa kabar belakangan ini?” — jauh lebih sering dipakai", "[还行|Hái xíng]。 / [挺好的|Tǐng hǎo de]。"],
+      ["[吃了吗|Chī le ma]？", "Sapaan akrab, harfiah “sudah makan?” — bukan ajakan makan", "[吃了|Chī le]。 / [还没|Hái méi]。"]
+    ]},
+    { "type": "tabel", "head": ["Berpamitan", "Nuansanya"], "rows": [
+      ["[再见|Zàijiàn]", "Standar, aman di mana saja"],
+      ["[拜拜|Báibái]", "Akrab, dari “bye bye”, sangat sering dipakai anak muda"],
+      ["[明天见|Míngtiān jiàn]", "Sampai besok"],
+      ["[回头见|Huítóu jiàn]", "Sampai nanti (hari yang sama)"],
+      ["[慢走|Màn zǒu]", "Diucapkan **tuan rumah** kepada tamu yang pulang — harfiah “jalan pelan-pelan”"],
+      ["[晚安|Wǎn'ān]", "Selamat malam, hanya sebelum tidur"]
+    ]},
+    { "type": "kotak", "title": "Sopan santun yang perlu diketahui sejak hari pertama", "items": [
+      "**[谢谢|Xièxie]** — terima kasih. Jawabannya [不客气|Bú kèqi] atau [不用谢|Bú yòng xiè].",
+      "**[对不起|Duìbuqǐ]** — maaf, untuk kesalahan sungguhan. Jawabannya [没关系|Méi guānxi] atau [没事儿|Méi shìr].",
+      "**[不好意思|Bù hǎoyìsi]** — “permisi, maaf ya” untuk hal kecil: menyerobot, terlambat lima menit, merepotkan orang. Jauh lebih sering dipakai daripada 对不起.",
+      "**[请问|Qǐngwèn]** — “boleh saya bertanya”. Selalu dipasang di depan pertanyaan kepada orang asing. Satu kata ini mengubah kesan seluruh kalimatmu.",
+      "⚠️ Orang Tiongkok memakai 谢谢 lebih jarang di antara keluarga dan teman dekat daripada kita. Berterima kasih berlebihan kepada teman dekat justru terasa menjauhkan."
+    ]}
+   ]
+  },
+  {
+   "title": "Nama, marga, dan negara",
+   "blocks": [
+    { "type": "p", "text": "Nama akan menjadi hal pertama yang kamu ucapkan di setiap perkenalan seumur hidupmu berbahasa Mandarin. Tiga pola berikut cukup untuk semua keadaan." },
+    { "type": "tabel", "head": ["Pola", "Tingkat", "Contoh"], "rows": [
+      ["[我叫…|Wǒ jiào…]", "Biasa, aman di mana saja", "[我叫安迪|Wǒ jiào Āndí]。"],
+      ["[我姓…|Wǒ xìng…]", "Menyebut marga saja, agak resmi", "[我姓王|Wǒ xìng Wáng]。"],
+      ["[我的名字是…|Wǒ de míngzi shì…]", "Resmi dan agak kaku, dipakai saat mengisi formulir atau menghadap petugas", "[我的名字是安迪|Wǒ de míngzi shì Āndí]。"],
+      ["[您贵姓|Nín guì xìng]？", "**Menanyakan marga dengan hormat** — harfiah “marga Anda yang mulia?”", "[免贵姓王|Miǎn guì xìng Wáng]。 / [我姓王|Wǒ xìng Wáng]。"],
+      ["[你叫什么名字|Nǐ jiào shénme míngzi]？", "Menanyakan nama, biasa", "[我叫王丽|Wǒ jiào Wáng Lì]。"]
+    ]},
+    { "type": "sub", "text": "Negara dan bangsa" },
+    { "type": "p", "text": "Polanya sangat teratur: nama negara + [人|rén] = orangnya, nama negara + [语|yǔ] atau [文|wén] = bahasanya. Sekali kamu tahu nama negaranya, dua kata lain ikut gratis." },
+    { "type": "tabel", "head": ["Negara", "Orangnya", "Bahasanya"], "rows": [
+      ["[中国|Zhōngguó] Tiongkok", "[中国人|Zhōngguó rén]", "[中文|Zhōngwén] / [汉语|Hànyǔ]"],
+      ["[印尼|Yìnní] Indonesia", "[印尼人|Yìnní rén]", "[印尼语|Yìnníyǔ]"],
+      ["[美国|Měiguó] Amerika", "[美国人|Měiguó rén]", "[英语|Yīngyǔ]"],
+      ["[英国|Yīngguó] Inggris", "[英国人|Yīngguó rén]", "[英语|Yīngyǔ]"],
+      ["[日本|Rìběn] Jepang", "[日本人|Rìběn rén]", "[日语|Rìyǔ]"],
+      ["[韩国|Hánguó] Korea", "[韩国人|Hánguó rén]", "[韩语|Hányǔ]"],
+      ["[新加坡|Xīnjiāpō] Singapura", "[新加坡人|Xīnjiāpō rén]", "—"],
+      ["[马来西亚|Mǎláixīyà] Malaysia", "[马来西亚人|Mǎláixīyà rén]", "[马来语|Mǎláiyǔ]"]
+    ]},
+    { "type": "kotak", "title": "Pekerjaan yang paling sering ditanyakan", "items": [
+      "[学生|xuésheng] pelajar · [老师|lǎoshī] guru · [医生|yīshēng] dokter · [护士|hùshi] perawat",
+      "[工程师|gōngchéngshī] insinyur · [律师|lǜshī] pengacara · [警察|jǐngchá] polisi · [司机|sījī] sopir",
+      "[商人|shāngrén] pedagang · [服务员|fúwùyuán] pelayan · [记者|jìzhě] wartawan · [经理|jīnglǐ] manajer",
+      "Menanyakannya: [你做什么工作|Nǐ zuò shénme gōngzuò]？ — “kamu bekerja apa?”",
+      "⚠️ Menjawabnya **tidak** dengan 是: bisa [我是老师|Wǒ shì lǎoshī] (identitas) maupun [我教书|Wǒ jiāo shū] (saya mengajar). Yang pertama lebih lazim."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "你好", "baca": "nǐ hǎo", "id": "halo" },
+  { "zh": "您好", "baca": "nín hǎo", "id": "halo (hormat)" },
+  { "zh": "再见", "baca": "zàijiàn", "id": "sampai jumpa" },
+  { "zh": "谢谢", "baca": "xièxie", "id": "terima kasih" },
+  { "zh": "不客气", "baca": "bú kèqi", "id": "sama-sama" },
+  { "zh": "对不起", "baca": "duìbuqǐ", "id": "maaf" },
+  { "zh": "没关系", "baca": "méi guānxi", "id": "tidak apa-apa" },
+  { "zh": "请问", "baca": "qǐngwèn", "id": "permisi, boleh bertanya" },
+  { "zh": "我", "baca": "wǒ", "id": "saya" },
+  { "zh": "你", "baca": "nǐ", "id": "kamu" },
+  { "zh": "您", "baca": "nín", "id": "Anda (hormat)" },
+  { "zh": "他", "baca": "tā", "id": "dia (laki-laki)" },
+  { "zh": "她", "baca": "tā", "id": "dia (perempuan)" },
+  { "zh": "我们", "baca": "wǒmen", "id": "kami, kita" },
+  { "zh": "你们", "baca": "nǐmen", "id": "kalian" },
+  { "zh": "他们", "baca": "tāmen", "id": "mereka" },
+  { "zh": "是", "baca": "shì", "id": "adalah" },
+  { "zh": "不", "baca": "bù", "id": "tidak" },
+  { "zh": "吗", "baca": "ma", "id": "penanda pertanyaan" },
+  { "zh": "呢", "baca": "ne", "id": "kalau …? (mengembalikan tanya)" },
+  { "zh": "叫", "baca": "jiào", "id": "bernama, memanggil" },
+  { "zh": "姓", "baca": "xìng", "id": "bermarga" },
+  { "zh": "名字", "baca": "míngzi", "id": "nama" },
+  { "zh": "什么", "baca": "shénme", "id": "apa" },
+  { "zh": "谁", "baca": "shéi", "id": "siapa" },
+  { "zh": "哪", "baca": "nǎ", "id": "yang mana" },
+  { "zh": "这", "baca": "zhè", "id": "ini" },
+  { "zh": "那", "baca": "nà", "id": "itu" },
+  { "zh": "国", "baca": "guó", "id": "negara" },
+  { "zh": "人", "baca": "rén", "id": "orang" },
+  { "zh": "中国", "baca": "Zhōngguó", "id": "Tiongkok" },
+  { "zh": "印尼", "baca": "Yìnní", "id": "Indonesia" },
+  { "zh": "中文", "baca": "Zhōngwén", "id": "bahasa Mandarin" },
+  { "zh": "学生", "baca": "xuésheng", "id": "pelajar" },
+  { "zh": "老师", "baca": "lǎoshī", "id": "guru" },
+  { "zh": "医生", "baca": "yīshēng", "id": "dokter" },
+  { "zh": "朋友", "baca": "péngyou", "id": "teman" },
+  { "zh": "同事", "baca": "tóngshì", "id": "rekan kerja" },
+  { "zh": "认识", "baca": "rènshi", "id": "mengenal" },
+  { "zh": "高兴", "baca": "gāoxìng", "id": "gembira" },
+  { "zh": "很", "baca": "hěn", "id": "penyangga kata sifat" },
+  { "zh": "也", "baca": "yě", "id": "juga" },
+  { "zh": "都", "baca": "dōu", "id": "semuanya" },
+  { "zh": "太…了", "baca": "tài … le", "id": "terlalu, … sekali" },
+  { "zh": "对", "baca": "duì", "id": "benar" },
+  { "zh": "喜欢", "baca": "xǐhuan", "id": "suka" },
+  { "zh": "工作", "baca": "gōngzuò", "id": "pekerjaan, bekerja" },
+  { "zh": "明天", "baca": "míngtiān", "id": "besok" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan 是, 不是, atau 叫.",
+   "items": [
+    "[我|Wǒ] ___ [印尼人|Yìnní rén]。",
+    "[他|Tā] ___ [老师|lǎoshī]，[他是学生|tā shì xuésheng]。",
+    "[你|Nǐ] ___ [什么名字|shénme míngzi]？",
+    "[她|Tā] ___ [王丽|Wáng Lì]。",
+    "[我们|Wǒmen] ___ [中国人|Zhōngguó rén]，[我们是印尼人|wǒmen shì Yìnní rén]。",
+    "[这|Zhè] ___ [我朋友|wǒ péngyou]。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata tanya yang tepat: 什么, 谁, 哪, 吗, 呢.",
+   "items": [
+    "[他是|Tā shì] ___？ [他是我同事|Tā shì wǒ tóngshì]。",
+    "[你是|Nǐ shì] ___ [国人|guó rén]？",
+    "[你叫|Nǐ jiào] ___ [名字|míngzi]？",
+    "[你是老师|Nǐ shì lǎoshī] ___？",
+    "[我是学生|Wǒ shì xuésheng]，[你|nǐ] ___？"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "我 / 是 / 印尼 / 人",
+    "你 / 是 / 学生 / 吗",
+    "他 / 也 / 是 / 老师",
+    "这 / 是 / 我 / 朋友",
+    "我们 / 都 / 是 / 中国 / 人",
+    "认识 / 你 / 很 / 高兴"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[她不是医生，她是护士|Tā bú shì yīshēng, tā shì hùshi]。",
+    "[你们都是印尼人吗|Nǐmen dōu shì Yìnní rén ma]？",
+    "[那是谁|Nà shì shéi]？",
+    "[我姓王，叫王丽|Wǒ xìng Wáng, jiào Wáng Lì]。",
+    "[他也不是老师|Tā yě bú shì lǎoshī]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Halo! Nama saya Andi.",
+    "Saya orang Indonesia. Kalau kamu?",
+    "Dia bukan pelajar.",
+    "Senang berkenalan denganmu.",
+    "Kami semua guru."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[我是也老师|Wǒ shì yě lǎoshī]。",
+    "[谁是他|Shéi shì tā]？",
+    "[你是谁吗|Nǐ shì shéi ma]？",
+    "[我姓安迪|Wǒ xìng Āndí]。",
+    "[都我们是学生|Dōu wǒmen shì xuésheng]。"
+   ]
+  }
+ ],
+ "answers": [
+  "是 — 不是 — 叫 — 叫 — 不是 — 是",
+  "谁 — 哪 — 什么 — 吗 — 呢",
+  "我 是 印尼 人 — 你 是 学生 吗 — 他 也 是 老师 — 这 是 我 朋友 — 我们 都 是 中国 人 — 认识 你 很 高兴",
+  "Dia bukan dokter, dia perawat. — Apakah kalian semua orang Indonesia? — Itu siapa? — Marga saya Wang, nama saya Wang Li. — Dia juga bukan guru.",
+  "Nǐ hǎo! Wǒ jiào Āndí. — Wǒ shì Yìnní rén. Nǐ ne? — Tā bú shì xuésheng. — Rènshi nǐ hěn gāoxìng. — Wǒmen dōu shì lǎoshī.",
+  "Wǒ yě shì lǎoshī. — Tā shì shéi? — Nǐ shì shéi? — Wǒ jiào Āndí. — Wǒmen dōu shì xuésheng."
+ ],
+ "wave": "Lima menit sebelum Unit 2: tutup kolom arti di daftar kosakata, lalu perkenalkan dirimu keras-keras enam kali berturut-turut — nama, marga, asal, pekerjaan — sampai keluar tanpa berpikir. Perkenalan adalah satu-satunya bagian bahasa Mandarin yang akan kamu ucapkan seumur hidup, dan ia harus otomatis."
+}

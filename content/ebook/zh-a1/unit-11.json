@@ -1,0 +1,322 @@
+{
+ "title": "Bepergian dan kendaraan",
+ "title_target": "怎么去 — Zěnme qù",
+ "goal": "Menanyakan cara pergi ke suatu tempat, menyebut kendaraan dengan kata kerja yang benar, dan memakai rangka 从…到… serta keterangan alat yang selalu berdiri di depan kata kerja.",
+ "bekal": [
+  "bertanya 怎么去 dan mengerti jawabannya",
+  "memakai 坐, 骑, 开 sesuai kendaraannya",
+  "menyusun kalimat dengan alat di depan kata kerja",
+  "naik taksi, kereta bawah tanah, dan bus tanpa panik",
+  "menyebut berapa lama dan berapa jauh"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Ke bandara",
+   "intro": "Andi harus ke bandara besok pagi. Li Ming membantunya merencanakan. Perhatikan bahwa alat perjalanan selalu disebut sebelum kata kerja tujuannya.",
+   "lines": [
+    { "speaker": "安迪:", "text": "[明天|Míngtiān][我|wǒ][要|yào][去|qù][机场|jīchǎng]。[怎么|Zěnme][去|qù][最|zuì][快|kuài]？", "id": "Besok saya mau ke bandara. Bagaimana cara tercepat ke sana?", "literal": "besok — saya — akan — pergi — bandara. bagaimana — pergi — paling — cepat." },
+    { "speaker": "李明:", "text": "[坐|Zuò][机场|jīchǎng][快线|kuàixiàn][最|zuì][快|kuài]。[三十|Sānshí][分钟|fēnzhōng][就|jiù][到|dào][了|le]。", "id": "Naik kereta bandara paling cepat. Tiga puluh menit sudah sampai.", "literal": "duduk — bandara — cepat-jalur — paling — cepat. tiga-puluh — menit — langsung — sampai — sudah." },
+    { "speaker": "安迪:", "text": "[从|Cóng][我|wǒ][家|jiā][到|dào][地铁站|dìtiězhàn][远|yuǎn][吗|ma]？", "id": "Dari rumah saya ke stasiun MRT jauh?", "literal": "dari — saya — rumah — sampai — MRT-stasiun — jauh — kah." },
+    { "speaker": "李明:", "text": "[不|Bù][远|yuǎn]，[走路|zǒu lù][十|shí][分钟|fēnzhōng]。[也|Yě][可以|kěyǐ][骑|qí][自行车|zìxíngchē]。", "id": "Tidak jauh, jalan kaki sepuluh menit. Bisa juga naik sepeda.", "literal": "tidak — jauh, jalan — jalan — sepuluh — menit. juga — boleh — mengangkangi — sendiri-jalan-kendaraan." },
+    { "speaker": "安迪:", "text": "[我|Wǒ][行李|xíngli][很|hěn][多|duō]。[打车|Dǎchē][怎么样|zěnmeyàng]？", "id": "Barang saya banyak. Naik taksi bagaimana?", "literal": "saya — barang-bawaan — penyangga — banyak. memukul-kendaraan — bagaimana." },
+    { "speaker": "李明:", "text": "[打车|Dǎchē][要|yào][一|yí][个|ge][小时|xiǎoshí]，[而且|érqiě][早上|zǎoshang][很|hěn][堵|dǔ]。", "id": "Naik taksi butuh sejam, lagi pula pagi hari macet.", "literal": "taksi — perlu — satu — penggolong — jam, lagi-pula — pagi — penyangga — macet." },
+    { "speaker": "安迪:", "text": "[那|Nà][我|wǒ][坐|zuò][地铁|dìtiě][吧|ba]。[要|Yào][换|huàn][车|chē][吗|ma]？", "id": "Kalau begitu saya naik MRT saja. Perlu ganti kereta?", "literal": "itu — saya — duduk — bawah-tanah-rel — ya. perlu — ganti — kendaraan — kah." },
+    { "speaker": "李明:", "text": "[要|Yào][换|huàn][一|yí][次|cì]。[坐|Zuò][二|èr][号|hào][线|xiàn]，[在|zài][东直门|Dōngzhímén][换|huàn][机场|jīchǎng][线|xiàn]。", "id": "Perlu ganti sekali. Naik jalur 2, ganti ke jalur bandara di Dongzhimen.", "literal": "perlu — ganti — satu — kali. duduk — dua — nomor — jalur, di — Dongzhimen — ganti — bandara — jalur." },
+    { "speaker": "安迪:", "text": "[我|Wǒ][记|jì][下来|xiàlái]。[几|Jǐ][点|diǎn][出发|chūfā][比较|bǐjiào][好|hǎo]？", "id": "Saya catat. Berangkat jam berapa lebih baik?", "literal": "saya — catat — turun-datang. berapa — jam — berangkat — relatif — baik." },
+    { "speaker": "李明:", "text": "[飞机|Fēijī][几|jǐ][点|diǎn]？[一般|Yìbān][提前|tíqián][三|sān][个|ge][小时|xiǎoshí][到|dào][机场|jīchǎng]。", "id": "Pesawatnya jam berapa? Biasanya sampai bandara tiga jam sebelumnya.", "literal": "pesawat — berapa — jam. umumnya — maju-depan — tiga — penggolong — jam — sampai — bandara." },
+    { "speaker": "安迪:", "text": "[十|Shí][点|diǎn][的|de][飞机|fēijī]。[那|Nà][我|wǒ][六|liù][点|diǎn][出发|chūfā]。", "id": "Pesawat jam sepuluh. Kalau begitu saya berangkat jam enam.", "literal": "sepuluh — jam — punya — pesawat. itu — saya — enam — jam — berangkat." }
+   ],
+   "notes": [
+    "**⚠️ Tiap kendaraan punya kata kerjanya sendiri.** [坐|zuò] “duduk” untuk kendaraan yang kamu tumpangi: bus, kereta, pesawat, kapal, taksi. [骑|qí] “mengangkangi” untuk yang kamu duduki dengan kaki terbuka: sepeda, motor, kuda. [开|kāi] “mengemudikan” untuk kendaraan yang kamu kemudikan sendiri: mobil.",
+    "**⚠️ Alat perjalanan berdiri SEBELUM kata kerja tujuan.** [我坐地铁去|Wǒ zuò dìtiě qù] = saya pergi naik MRT — harfiah “saya duduk MRT pergi”. Susunan 我去坐地铁 berarti hal lain: “saya pergi untuk naik MRT”. Aturannya sama dengan waktu dan tempat: semua keterangan mendahului perbuatan.",
+    "**[从…到…|cóng… dào…] dipakai untuk jarak maupun waktu.** [从我家到机场|cóng wǒ jiā dào jīchǎng] dari rumah saya ke bandara; [从八点到五点|cóng bā diǎn dào wǔ diǎn] dari jam delapan sampai lima.",
+    "**[打车|dǎchē] = naik taksi**, harfiah “memukul kendaraan”. Sinonimnya [坐出租车|zuò chūzūchē]. Untuk memanggil taksi di jalan: [打个车|dǎ ge chē].",
+    "**[堵|dǔ] = macet**, dan bentuk lengkapnya [堵车|dǔchē]. [今天很堵|Jīntiān hěn dǔ] hari ini macet.",
+    "**[换|huàn] = mengganti, menukar.** [换车|huàn chē] ganti kendaraan, [换钱|huàn qián] tukar uang, [换衣服|huàn yīfu] ganti baju.",
+    "**[比较|bǐjiào] = agak, relatif lebih.** [比较好|bǐjiào hǎo] lebih baik; [比较贵|bǐjiào guì] lumayan mahal. Kata ini melunakkan penilaian, dan penutur asli memakainya terus-menerus.",
+    "**[提前|tíqián] = lebih awal dari jadwal**; lawannya [推迟|tuīchí] menunda."
+   ],
+   "grammars": [
+    {
+     "title": "Kendaraan dan kata kerjanya",
+     "tables": [
+      {
+       "head": ["Kata kerja", "Untuk", "Contoh"],
+       "rows": [
+        ["[坐|zuò]", "Kendaraan yang ditumpangi", "[坐飞机|zuò fēijī] naik pesawat · [坐地铁|zuò dìtiě] · [坐公共汽车|zuò gōnggòng qìchē] · [坐船|zuò chuán] naik kapal · [坐火车|zuò huǒchē] naik kereta"],
+        ["[骑|qí]", "Kendaraan yang dikangkangi", "[骑自行车|qí zìxíngchē] naik sepeda · [骑摩托车|qí mótuōchē] naik motor · [骑马|qí mǎ] naik kuda"],
+        ["[开|kāi]", "Kendaraan yang dikemudikan sendiri", "[开车|kāi chē] menyetir mobil"],
+        ["[走|zǒu] / [走路|zǒu lù]", "Jalan kaki", "[走路去|zǒu lù qù] pergi jalan kaki"],
+        ["[打车|dǎchē]", "Naik taksi", "[打车去|dǎchē qù]"]
+       ]
+      },
+      {
+       "head": ["Kalimat", "Arti"],
+       "rows": [
+        ["[我坐地铁去公司|Wǒ zuò dìtiě qù gōngsī]。", "Saya pergi ke kantor naik MRT."],
+        ["[他骑自行车上班|Tā qí zìxíngchē shàng bān]。", "Dia berangkat kerja naik sepeda."],
+        ["[我们走路去吧|Wǒmen zǒu lù qù ba]。", "Kita jalan kaki saja, yuk."],
+        ["[你怎么来的|Nǐ zěnme lái de]？", "Kamu datang naik apa?"],
+        ["[坐飞机来的|Zuò fēijī lái de]。", "Naik pesawat."]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ [坐摩托车|zuò mótuōchē] dan [骑摩托车|qí mótuōchē] dua-duanya ada, tapi artinya berbeda: yang pertama **dibonceng**, yang kedua **mengendarai sendiri**. Bagi orang Indonesia, perbedaan ini akan langsung terasa masuk akal."
+     ]
+    },
+    {
+     "title": "Berapa lama dan berapa jauh",
+     "tables": [
+      {
+       "head": ["Pertanyaan", "Contoh jawaban"],
+       "rows": [
+        ["[怎么去|Zěnme qù]？", "[坐地铁去|Zuò dìtiě qù]。"],
+        ["[要多长时间|Yào duō cháng shíjiān]？", "[要半个小时|Yào bàn ge xiǎoshí]。"],
+        ["[多久|Duō jiǔ]？", "[大概二十分钟|Dàgài èrshí fēnzhōng]。"],
+        ["[远不远|Yuǎn bu yuǎn]？", "[不远，很近|Bù yuǎn, hěn jìn]。"],
+        ["[有多远|Yǒu duō yuǎn]？", "[大概三公里|Dàgài sān gōnglǐ]。"],
+        ["[多少钱|Duōshao qián]？", "[打车大概五十块|Dǎchē dàgài wǔshí kuài]。"],
+        ["[要换车吗|Yào huàn chē ma]？", "[要换一次|Yào huàn yí cì]。"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **Lamanya perjalanan berdiri sesudah kata kerja**, sama seperti lamanya perbuatan di Unit 10: [坐地铁要半个小时|Zuò dìtiě yào bàn ge xiǎoshí]。 Bandingkan dengan **kapan**, yang selalu di depan: [我八点坐地铁|Wǒ bā diǎn zuò dìtiě]。"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Di dalam taksi",
+   "intro": "Andi terpaksa naik taksi karena hujan. Percakapan dengan sopir taksi adalah salah satu ujian mendengar yang paling menegangkan bagi pemula — dan salah satu yang paling cepat memperbaiki kemampuanmu.",
+   "lines": [
+    { "speaker": "司机:", "text": "[您好|Nín hǎo]，[去|qù][哪儿|nǎr]？", "id": "Selamat siang, ke mana?", "literal": "Anda — baik, pergi — mana." },
+    { "speaker": "安迪:", "text": "[师傅|Shīfu]，[去|qù][首都|Shǒudū][机场|Jīchǎng][三|sān][号|hào][航站楼|hángzhànlóu]。", "id": "Pak, ke Bandara Ibu Kota terminal 3.", "literal": "tuan-ahli, pergi — ibu-kota — bandara — tiga — nomor — terbang-stasiun-gedung." },
+    { "speaker": "司机:", "text": "[好|Hǎo][的|de]。[走|Zǒu][高速|gāosù][可以|kěyǐ][吗|ma]？[快|Kuài][一点儿|yìdiǎnr]。", "id": "Baik. Lewat tol boleh? Lebih cepat sedikit.", "literal": "baik — punya. jalan — tinggi-cepat — boleh — kah. cepat — sedikit." },
+    { "speaker": "安迪:", "text": "[可以|Kěyǐ]。[大概|Dàgài][要|yào][多长|duō cháng][时间|shíjiān]？", "id": "Boleh. Kira-kira perlu berapa lama?", "literal": "boleh. kira-kira — perlu — berapa — panjang — waktu." },
+    { "speaker": "司机:", "text": "[现在|Xiànzài][不|bù][堵|dǔ]，[四十|sìshí][分钟|fēnzhōng][左右|zuǒyòu]。", "id": "Sekarang tidak macet, sekitar empat puluh menit.", "literal": "sekarang — tidak — macet, empat-puluh — menit — kiri-kanan." },
+    { "speaker": "安迪:", "text": "[太好了|Tài hǎo le]。[师傅|Shīfu]，[能|néng][开|kāi][一下|yíxià][空调|kōngtiáo][吗|ma]？", "id": "Bagus. Pak, bisa nyalakan ACnya sebentar?", "literal": "terlalu — baik — sudah. tuan-ahli, bisa — buka — sebentar — AC — kah." },
+    { "speaker": "司机:", "text": "[好|Hǎo]。[您|Nín][是|shì][哪国人|nǎ guó rén]？[中文|Zhōngwén][说|shuō][得|de][挺|tǐng][好|hǎo][的|de]。", "id": "Baik. Anda orang mana? Bahasa Mandarin Anda lumayan bagus.", "literal": "baik. Anda — adalah — mana — negara — orang. Mandarin — bicara — penanda — cukup — baik — punya." },
+    { "speaker": "安迪:", "text": "[哪里哪里|Nǎli nǎli]。[我|Wǒ][是|shì][印尼人|Yìnní rén]，[学|xué][了|le][半|bàn][年|nián]。", "id": "Ah, biasa saja. Saya orang Indonesia, sudah belajar setengah tahun.", "literal": "mana — mana. saya — adalah — Indonesia — orang, belajar — sudah — setengah — tahun." },
+    { "speaker": "司机:", "text": "[半|Bàn][年|nián][就|jiù][这么|zhème][好|hǎo]？[厉害|Lìhai]！", "id": "Setengah tahun sudah sebagus ini? Hebat!", "literal": "setengah — tahun — langsung — sebegini — baik. hebat." },
+    { "speaker": "安迪:", "text": "[到|Dào][了|le][叫|jiào][我|wǒ][一|yí][下|xià]，[我|wǒ][眯|mī][一会儿|yíhuìr]。", "id": "Kalau sudah sampai tolong panggil saya, saya mau tidur sebentar.", "literal": "sampai — sudah — panggil — saya — satu — kali, saya — memicing — sebentar." },
+    { "speaker": "司机:", "text": "[没问题|Méi wèntí]，[您|nín][休息|xiūxi][吧|ba]。", "id": "Tidak masalah, istirahat saja.", "literal": "tidak — masalah, Anda — istirahat — ya." }
+   ],
+   "notes": [
+    "**[师傅|shīfu] adalah sapaan untuk sopir, tukang, dan pekerja terampil lain.** Memanggil sopir taksi dengan 师傅 langsung terdengar wajar dan hormat — jauh lebih baik daripada [先生|xiānsheng].",
+    "**[一下|yíxià] sesudah kata kerja membuatnya ringan dan sebentar**, sama seperti mengulang kata kerja. [看一下|kàn yíxià] lihat sebentar, [等一下|děng yíxià] tunggu sebentar. Satu kata ini melembutkan hampir semua permintaan.",
+    "**[左右|zuǒyòu] harfiah “kiri-kanan”, artinya “kurang lebih”.** Selalu berdiri **sesudah** jumlahnya: [四十分钟左右|sìshí fēnzhōng zuǒyòu] sekitar empat puluh menit, [五十块左右|wǔshí kuài zuǒyòu] sekitar lima puluh yuan.",
+    "**[挺…的|tǐng… de] = “lumayan …”.** Bentuk lisan yang sangat sering dipakai: [挺好的|tǐng hǎo de] lumayan bagus, [挺贵的|tǐng guì de] lumayan mahal. Terdengar lebih santai daripada 很.",
+    "**[哪里哪里|Nǎli nǎli]** adalah jawaban baku untuk pujian — harfiah “mana, mana”, maksudnya “ah, tidak juga”. Wajib dihafal, karena pujian atas bahasa Mandarinmu akan datang terus-menerus.",
+    "**[厉害|lìhai] = hebat, luar biasa.** Pujian yang sangat lazim di kalangan muda.",
+    "**[开空调|kāi kōngtiáo] menyalakan AC.** 开 dipakai untuk menyalakan mesin apa pun: [开灯|kāi dēng] nyalakan lampu, [开电视|kāi diànshì]. Lawannya [关|guān]: [关灯|guān dēng] matikan lampu."
+   ],
+   "grammars": [
+    {
+     "title": "Bertahan di kendaraan umum",
+     "tables": [
+      {
+       "head": ["Kalimatmu", "Arti"],
+       "rows": [
+        ["[师傅，去…|Shīfu, qù…]", "Pak, ke … (menyebut tujuan di taksi)"],
+        ["[请打表|Qǐng dǎ biǎo]。", "Tolong pakai argo."],
+        ["[请在这儿停|Qǐng zài zhèr tíng]。", "Tolong berhenti di sini."],
+        ["[请开发票|Qǐng kāi fāpiào]。", "Tolong buatkan kuitansi."],
+        ["[到…怎么走|Dào… zěnme zǒu]？", "Ke … lewat mana?"],
+        ["[这趟车去…吗|Zhè tàng chē qù… ma]？", "Kendaraan ini ke … tidak?"],
+        ["[在哪站下|Zài nǎ zhàn xià]？", "Turun di halte mana?"],
+        ["[到了叫我一下|Dào le jiào wǒ yíxià]。", "Kalau sudah sampai tolong panggil saya."],
+        ["[我坐过站了|Wǒ zuò guò zhàn le]。", "Saya kelewatan halte."],
+        ["[下一站是哪儿|Xià yí zhàn shì nǎr]？", "Halte berikutnya apa?"]
+       ]
+      },
+      {
+       "head": ["Yang tertulis atau terdengar", "Arti"],
+       "rows": [
+        ["[入口|rùkǒu] / [出口|chūkǒu]", "Masuk / keluar"],
+        ["[换乘|huànchéng]", "Ganti jalur"],
+        ["[上车|shàng chē] / [下车|xià chē]", "Naik / turun kendaraan"],
+        ["[请注意安全|Qǐng zhùyì ānquán]。", "Harap perhatikan keselamatan."],
+        ["[前方到站|Qiánfāng dào zhàn]…", "Berikutnya berhenti di …"],
+        ["[请让座|Qǐng ràng zuò]。", "Harap memberi tempat duduk."],
+        ["[末班车|mòbānchē]", "Kendaraan terakhir"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **[上车|shàng chē] dan [下车|xià chē] memakai “naik” dan “turun”**, bukan “masuk” dan “keluar”. Kebetulan sama persis dengan bahasa Indonesia — salah satu dari sedikit hal yang tidak perlu kamu ubah kebiasaannya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kendaraan dan tempatnya",
+   "blocks": [
+    { "type": "tabel", "head": ["Kendaraan", "Pīnyīn", "Tempat", "Pīnyīn"], "rows": [
+      ["[飞机|fēijī] pesawat", "fēijī", "[机场|jīchǎng] bandara", "jīchǎng"],
+      ["[火车|huǒchē] kereta", "huǒchē", "[火车站|huǒchēzhàn] stasiun kereta", "huǒchēzhàn"],
+      ["[高铁|gāotiě] kereta cepat", "gāotiě", "[地铁站|dìtiězhàn] stasiun MRT", "dìtiězhàn"],
+      ["[地铁|dìtiě] MRT", "dìtiě", "[车站|chēzhàn] halte", "chēzhàn"],
+      ["[公共汽车|gōnggòng qìchē] bus", "gōnggòng qìchē", "[码头|mǎtóu] dermaga", "mǎtóu"],
+      ["[出租车|chūzūchē] taksi", "chūzūchē", "[停车场|tíngchēchǎng] tempat parkir", "tíngchēchǎng"],
+      ["[自行车|zìxíngchē] sepeda", "zìxíngchē", "[路口|lùkǒu] persimpangan", "lùkǒu"],
+      ["[摩托车|mótuōchē] motor", "mótuōchē", "[高速|gāosù] jalan tol", "gāosù"],
+      ["[船|chuán] kapal", "chuán", "[红绿灯|hónglǜdēng] lampu lalu lintas", "hónglǜdēng"],
+      ["[车|chē] mobil, kendaraan", "chē", "[人行道|rénxíngdào] trotoar", "rénxíngdào"]
+    ]},
+    { "type": "kotak", "title": "Kata yang akan kamu lihat di layar dan papan", "items": [
+      "[出发|chūfā] berangkat · [到达|dàodá] tiba · [晚点|wǎndiǎn] terlambat · [取消|qǔxiāo] dibatalkan",
+      "[登机口|dēngjīkǒu] gerbang naik pesawat · [候车室|hòuchēshì] ruang tunggu · [检票|jiǎnpiào] periksa tiket",
+      "[车票|chēpiào] tiket kendaraan · [机票|jīpiào] tiket pesawat · [单程|dānchéng] sekali jalan · [往返|wǎngfǎn] pulang pergi",
+      "[身份证|shēnfènzhèng] KTP · [护照|hùzhào] paspor — ⚠️ tiket kereta Tiongkok diikat pada identitas, jadi paspormu harus selalu dibawa.",
+      "[安检|ānjiǎn] pemeriksaan keamanan — ada di setiap stasiun MRT dan kereta di Tiongkok, bukan hanya di bandara."
+    ]}
+   ]
+  },
+  {
+   "title": "Menyusun rencana perjalanan",
+   "blocks": [
+    { "type": "p", "text": "Menceritakan rencana adalah latihan yang menggabungkan hampir semua yang sudah kamu pelajari: waktu di depan, tempat sesudahnya, alat sebelum kata kerja, dan urutan yang disambung kata penghubung." },
+    { "type": "tabel", "head": ["Penghubung", "Arti", "Contoh"], "rows": [
+      ["[先|xiān]", "pertama-tama", "[先坐地铁|Xiān zuò dìtiě]…"],
+      ["[然后|ránhòu]", "lalu", "[然后换机场线|ránhòu huàn jīchǎng xiàn]"],
+      ["[再|zài]", "baru kemudian", "[再走五分钟|zài zǒu wǔ fēnzhōng]"],
+      ["[最后|zuìhòu]", "akhirnya", "[最后到航站楼|zuìhòu dào hángzhànlóu]"],
+      ["[的时候|de shíhou]", "waktu, ketika", "[到的时候给我打电话|Dào de shíhou gěi wǒ dǎ diànhuà]。"],
+      ["[以后|yǐhòu]", "sesudah", "[下班以后|xià bān yǐhòu] sesudah pulang kerja"],
+      ["[以前|yǐqián]", "sebelum", "[出发以前|chūfā yǐqián] sebelum berangkat"]
+    ]},
+    { "type": "kotak", "title": "Contoh rencana utuh", "items": [
+      "[明天早上六点，我从家出发。先走路十分钟到地铁站，然后坐二号线，在东直门换机场线。四十分钟以后到机场。到的时候大概八点，飞机十点起飞|Míngtiān zǎoshang liù diǎn, wǒ cóng jiā chūfā. Xiān zǒu lù shí fēnzhōng dào dìtiězhàn, ránhòu zuò èr hào xiàn, zài Dōngzhímén huàn jīchǎng xiàn. Sìshí fēnzhōng yǐhòu dào jīchǎng. Dào de shíhou dàgài bā diǎn, fēijī shí diǎn qǐfēi]。",
+      "Bacalah keras-keras tiga kali. Kalimat ini memuat waktu, tempat, alat, urutan, dan lamanya — seluruh rangka Unit 5, 6, dan 11 dalam satu paragraf.",
+      "Lalu ganti tempat dan jamnya dengan perjalanan **kamu sendiri** besok. Itu latihan terbaik yang bisa kamu lakukan hari ini."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "怎么", "baca": "zěnme", "id": "bagaimana (cara)" },
+  { "zh": "坐", "baca": "zuò", "id": "duduk; menumpang" },
+  { "zh": "骑", "baca": "qí", "id": "mengendarai (sepeda, motor)" },
+  { "zh": "开车", "baca": "kāi chē", "id": "menyetir" },
+  { "zh": "走路", "baca": "zǒu lù", "id": "jalan kaki" },
+  { "zh": "打车", "baca": "dǎchē", "id": "naik taksi" },
+  { "zh": "飞机", "baca": "fēijī", "id": "pesawat" },
+  { "zh": "火车", "baca": "huǒchē", "id": "kereta api" },
+  { "zh": "地铁", "baca": "dìtiě", "id": "kereta bawah tanah" },
+  { "zh": "公共汽车", "baca": "gōnggòng qìchē", "id": "bus" },
+  { "zh": "出租车", "baca": "chūzūchē", "id": "taksi" },
+  { "zh": "自行车", "baca": "zìxíngchē", "id": "sepeda" },
+  { "zh": "摩托车", "baca": "mótuōchē", "id": "sepeda motor" },
+  { "zh": "船", "baca": "chuán", "id": "kapal" },
+  { "zh": "车站", "baca": "chēzhàn", "id": "halte, stasiun" },
+  { "zh": "机场", "baca": "jīchǎng", "id": "bandara" },
+  { "zh": "上车", "baca": "shàng chē", "id": "naik kendaraan" },
+  { "zh": "下车", "baca": "xià chē", "id": "turun dari kendaraan" },
+  { "zh": "换", "baca": "huàn", "id": "mengganti" },
+  { "zh": "线", "baca": "xiàn", "id": "jalur" },
+  { "zh": "票", "baca": "piào", "id": "tiket" },
+  { "zh": "护照", "baca": "hùzhào", "id": "paspor" },
+  { "zh": "行李", "baca": "xíngli", "id": "barang bawaan" },
+  { "zh": "堵车", "baca": "dǔchē", "id": "macet" },
+  { "zh": "高速", "baca": "gāosù", "id": "jalan tol" },
+  { "zh": "红绿灯", "baca": "hónglǜdēng", "id": "lampu lalu lintas" },
+  { "zh": "停", "baca": "tíng", "id": "berhenti" },
+  { "zh": "师傅", "baca": "shīfu", "id": "sapaan untuk sopir" },
+  { "zh": "司机", "baca": "sījī", "id": "sopir" },
+  { "zh": "一下", "baca": "yíxià", "id": "sebentar" },
+  { "zh": "左右", "baca": "zuǒyòu", "id": "kurang lebih" },
+  { "zh": "比较", "baca": "bǐjiào", "id": "relatif, agak" },
+  { "zh": "挺", "baca": "tǐng", "id": "lumayan" },
+  { "zh": "厉害", "baca": "lìhai", "id": "hebat" },
+  { "zh": "提前", "baca": "tíqián", "id": "lebih awal" },
+  { "zh": "出发", "baca": "chūfā", "id": "berangkat" },
+  { "zh": "到达", "baca": "dàodá", "id": "tiba" },
+  { "zh": "晚点", "baca": "wǎndiǎn", "id": "terlambat (jadwal)" },
+  { "zh": "空调", "baca": "kōngtiáo", "id": "AC" },
+  { "zh": "开", "baca": "kāi", "id": "membuka, menyalakan" },
+  { "zh": "关", "baca": "guān", "id": "menutup, mematikan" },
+  { "zh": "先", "baca": "xiān", "id": "lebih dulu" },
+  { "zh": "再", "baca": "zài", "id": "baru kemudian; lagi" },
+  { "zh": "的时候", "baca": "de shíhou", "id": "ketika" },
+  { "zh": "公里", "baca": "gōnglǐ", "id": "kilometer" },
+  { "zh": "记", "baca": "jì", "id": "mencatat, mengingat" },
+  { "zh": "叫", "baca": "jiào", "id": "memanggil" },
+  { "zh": "安检", "baca": "ānjiǎn", "id": "pemeriksaan keamanan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan kata kerja yang tepat: 坐, 骑, 开, 走.",
+   "items": [
+    "___ [飞机|fēijī]",
+    "___ [自行车|zìxíngchē]",
+    "___ [车|chē]",
+    "___ [路|lù]",
+    "___ [地铁|dìtiě]",
+    "___ [摩托车|mótuōchē]"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 从, 到, 换, 左右, atau 比较.",
+   "items": [
+    "___ [我家|wǒ jiā] ___ [机场很远|jīchǎng hěn yuǎn]。",
+    "[在东直门|Zài Dōngzhímén] ___ [机场线|jīchǎng xiàn]。",
+    "[大概四十分钟|Dàgài sìshí fēnzhōng] ___。",
+    "[坐地铁|Zuò dìtiě] ___ [快|kuài]。"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "我 / 坐 / 地铁 / 去 / 公司",
+    "从 / 我 / 家 / 到 / 机场 / 很 / 远",
+    "他 / 骑 / 自行车 / 上班",
+    "要 / 多长 / 时间",
+    "我们 / 走路 / 去 / 吧",
+    "师傅 / 请 / 在 / 这儿 / 停"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[你怎么来的|Nǐ zěnme lái de]？",
+    "[坐地铁四十分钟左右|Zuò dìtiě sìshí fēnzhōng zuǒyòu]。",
+    "[今天早上很堵|Jīntiān zǎoshang hěn dǔ]。",
+    "[要换一次车|Yào huàn yí cì chē]。",
+    "[到的时候给我打电话|Dào de shíhou gěi wǒ dǎ diànhuà]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Bagaimana cara ke bandara?",
+    "Saya pergi ke sekolah naik sepeda.",
+    "Dari sini ke stasiun jauh?",
+    "Perlu berapa lama?",
+    "Tolong berhenti di sini."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[我去坐地铁公司|Wǒ qù zuò dìtiě gōngsī]。",
+    "[他坐自行车上班|Tā zuò zìxíngchē shàng bān]。",
+    "[我坐地铁去半个小时|Wǒ zuò dìtiě qù bàn ge xiǎoshí]。",
+    "[左右四十分钟|Zuǒyòu sìshí fēnzhōng]。",
+    "[我开地铁去公司|Wǒ kāi dìtiě qù gōngsī]。"
+   ]
+  }
+ ],
+ "answers": [
+  "坐 — 骑 — 开 — 走 — 坐 — 骑",
+  "从 到 — 换 — 左右 — 比较",
+  "我 坐 地铁 去 公司 — 从 我 家 到 机场 很 远 — 他 骑 自行车 上班 — 要 多长 时间 — 我们 走路 去 吧 — 师傅 请 在 这儿 停",
+  "Kamu datang naik apa? — Naik MRT sekitar empat puluh menit. — Pagi ini macet sekali. — Perlu ganti kendaraan sekali. — Kalau sudah sampai telepon saya.",
+  "Qù jīchǎng zěnme qù? — Wǒ qí zìxíngchē qù xuéxiào. — Cóng zhèr dào chēzhàn yuǎn ma? — Yào duō cháng shíjiān? — Qǐng zài zhèr tíng.",
+  "Wǒ zuò dìtiě qù gōngsī. — Tā qí zìxíngchē shàng bān. — Wǒ zuò dìtiě qù yào bàn ge xiǎoshí. — Sìshí fēnzhōng zuǒyòu. — Wǒ zuò dìtiě qù gōngsī."
+ ],
+ "wave": "Ulangi Unit 10: ceritakan perjalanan terakhirmu — ke mana, naik apa, berapa lama, dengan siapa — memakai 了 dan 过 di tempat yang benar. Lalu ceritakan rencana perjalananmu besok tanpa satu pun 了. Perbedaan keduanya harus terasa di mulutmu, bukan cuma di kepalamu."
+}

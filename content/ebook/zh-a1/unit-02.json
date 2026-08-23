@@ -1,0 +1,336 @@
+{
+ "title": "Benda di sekitarmu dan milik siapa",
+ "title_target": "这是什么 — Zhè shì shénme",
+ "goal": "Menunjuk benda dan menamainya, menyatakan kepemilikan dengan 的, mengatakan punya dan tidak punya dengan 有 dan 没有, serta memakai kata penggolong — hal yang tidak dimiliki bahasa Indonesia secara wajib.",
+ "bekal": [
+  "menanyakan “ini apa” dan menjawabnya",
+  "memakai 这 dan 那 dengan kata penggolong yang benar",
+  "menyatakan milik dengan 的 dan tahu kapan 的 boleh dibuang",
+  "membedakan 有 (punya) dari 是 (adalah)",
+  "menyangkal kepemilikan dengan 没有, bukan 不有"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Di meja kerja",
+   "intro": "Andi baru masuk ruang guru dan melihat barang-barang di meja Wang Li. Perhatikan bahwa setiap kali ada angka atau kata 这/那, selalu ada satu kata kecil sebelum kata bendanya.",
+   "lines": [
+    { "speaker": "安迪:", "text": "[这是|Zhè shì][什么|shénme]？", "id": "Ini apa?", "literal": "ini — adalah — apa." },
+    { "speaker": "王丽:", "text": "[这是|Zhè shì][我的|wǒ de][词典|cídiǎn]。[中文|Zhōngwén][词典|cídiǎn]。", "id": "Ini kamus saya. Kamus bahasa Mandarin.", "literal": "ini — adalah — saya — punya — kamus. Mandarin — kamus." },
+    { "speaker": "安迪:", "text": "[那|Nà][本|běn][书|shū][也是|yě shì][你的|nǐ de][吗|ma]？", "id": "Buku itu juga punyamu?", "literal": "itu — penggolong — buku — juga — adalah — kamu — punya — kah." },
+    { "speaker": "王丽:", "text": "[不是|Bú shì]，[那|nà][是|shì][李明|Lǐ Míng][的|de]。", "id": "Bukan, itu punya Li Ming.", "literal": "tidak — adalah, itu — adalah — Li Ming — punya." },
+    { "speaker": "安迪:", "text": "[你|Nǐ][有|yǒu][笔|bǐ][吗|ma]？", "id": "Kamu punya pulpen?", "literal": "kamu — punya — pena — kah." },
+    { "speaker": "王丽:", "text": "[有|Yǒu]。[我|Wǒ][有|yǒu][两|liǎng][支|zhī][笔|bǐ]。[给|Gěi][你|nǐ]。", "id": "Punya. Saya punya dua pulpen. Ini untukmu.", "literal": "punya. saya — punya — dua — penggolong — pena. beri — kamu." },
+    { "speaker": "安迪:", "text": "[谢谢|Xièxie]。[你|Nǐ][有|yǒu][纸|zhǐ][吗|ma]？", "id": "Terima kasih. Ada kertas?", "literal": "terima-kasih. kamu — punya — kertas — kah." },
+    { "speaker": "王丽:", "text": "[对不起|Duìbuqǐ]，[我|wǒ][没有|méiyǒu][纸|zhǐ]。[李明|Lǐ Míng][有|yǒu]。", "id": "Maaf, saya tidak punya kertas. Li Ming punya.", "literal": "maaf, saya — tidak-punya — kertas. Li Ming — punya." },
+    { "speaker": "安迪:", "text": "[他的|Tā de][桌子|zhuōzi][是|shì][哪|nǎ][张|zhāng]？", "id": "Yang mana mejanya?", "literal": "dia — punya — meja — adalah — mana — penggolong." },
+    { "speaker": "王丽:", "text": "[那|Nà][张|zhāng]。[窗户|Chuānghu][旁边|pángbiān][的|de][那|nà][张|zhāng]。", "id": "Yang itu. Yang di sebelah jendela.", "literal": "itu — penggolong. jendela — sebelah — punya — itu — penggolong." },
+    { "speaker": "安迪:", "text": "[好的|Hǎo de]，[谢谢|xièxie]！", "id": "Baik, terima kasih!", "literal": "baik — punya, terima-kasih." }
+   ],
+   "notes": [
+    "**⚠️ Angka tidak boleh menempel langsung pada kata benda.** 两笔 salah; yang benar [两支笔|liǎng zhī bǐ] — “dua **batang** pena”. Kata kecil di tengah itu disebut **kata penggolong**, dan Mandarin mewajibkannya setiap kali. Bahasa Indonesia punya kebiasaan yang sama (*dua **batang** rokok*) tapi membolehkan kita melewatkannya; Mandarin tidak pernah.",
+    "**⚠️ [两|liǎng], bukan [二|èr], di depan kata penggolong.** [两支笔|liǎng zhī bǐ], [两个人|liǎng ge rén], [两本书|liǎng běn shū]. 二 dipakai untuk berhitung (一、二、三), nomor rumah, nomor telepon, dan angka di dalam bilangan besar seperti [十二|shí'èr] atau [二十|èrshí].",
+    "**[的|de] menyatakan milik.** [我的书|wǒ de shū] = buku saya. Kalau yang dimiliki sudah jelas dari pembicaraan, kata bendanya boleh dibuang dan 的 berdiri sendiri: [那是李明的|Nà shì Lǐ Míng de] = itu punya Li Ming.",
+    "**⚠️ Penyangkalan 有 adalah 没有, bukan 不有.** Ini satu-satunya kata kerja dalam bahasa Mandarin yang tidak boleh disangkal dengan 不. Hafalkan sebagai satu kesatuan: [没有|méiyǒu]. Dalam percakapan cepat sering dipendekkan jadi [没|méi] saja.",
+    "**[给你|Gěi nǐ] = “ini untukmu”** — diucapkan sambil menyerahkan sesuatu. Sangat sering dipakai; jauh lebih wajar daripada kalimat panjang.",
+    "**[好的|Hǎo de] = “baik, oke”.** Jawaban singkat untuk menyetujui sesuatu, sedikit lebih halus daripada [好|hǎo] saja."
+   ],
+   "grammars": [
+    {
+     "title": "这 / 那 / 哪 + kata penggolong + kata benda",
+     "body": [
+      "Ini rangka yang akan kamu pakai setiap hari. Perhatikan bahwa **kata penggolong tidak boleh dilewatkan**, bahkan ketika tidak ada angka sama sekali."
+     ],
+     "tables": [
+      {
+       "head": ["Susunan", "Contoh", "Arti"],
+       "rows": [
+        ["这 + penggolong + benda", "[这本书|zhè běn shū]", "buku ini"],
+        ["那 + penggolong + benda", "[那张桌子|nà zhāng zhuōzi]", "meja itu"],
+        ["哪 + penggolong + benda", "[哪个人|nǎge rén]", "orang yang mana"],
+        ["angka + penggolong + benda", "[三支笔|sān zhī bǐ]", "tiga batang pena"],
+        ["这 + angka + penggolong + benda", "[这两本书|zhè liǎng běn shū]", "dua buku ini"]
+       ]
+      },
+      {
+       "head": ["Penggolong", "Dipakai untuk", "Contoh"],
+       "rows": [
+        ["[个|gè]", "Umum — orang dan hampir apa saja", "[一个人|yí ge rén], [两个问题|liǎng ge wèntí]"],
+        ["[本|běn]", "Buku, kamus, majalah", "[三本书|sān běn shū]"],
+        ["[张|zhāng]", "Benda datar: kertas, meja, tiket, foto", "[一张纸|yì zhāng zhǐ]"],
+        ["[支|zhī]", "Benda kecil memanjang: pena, pensil, rokok", "[两支笔|liǎng zhī bǐ]"],
+        ["[件|jiàn]", "Baju atasan; perkara", "[一件衣服|yí jiàn yīfu]"],
+        ["[把|bǎ]", "Benda bergagang: kursi, payung, pisau, kunci", "[一把伞|yì bǎ sǎn]"]
+       ]
+      }
+     ],
+     "after": [
+      "Kalau kamu benar-benar lupa penggolong yang tepat, **pakai 个**. Terdengar seperti anak kecil, tapi dimengerti sepenuhnya — dan jauh lebih baik daripada berhenti di tengah kalimat. Daftar lengkapnya ada di lampiran belakang modul ini."
+     ]
+    },
+    {
+     "title": "的 — penanda milik, dan kapan ia boleh dibuang",
+     "body": [
+      "Susunannya: **pemilik + 的 + yang dimiliki**. Urutannya sama dengan bahasa Indonesia kalau dibaca dari belakang: [我的书|wǒ de shū] = buku (milik) saya."
+     ],
+     "tables": [
+      {
+       "head": ["Contoh", "Arti", "的 wajib?"],
+       "rows": [
+        ["[我的手机|wǒ de shǒujī]", "HP saya", "Wajib"],
+        ["[老师的书|lǎoshī de shū]", "buku guru", "Wajib"],
+        ["[我妈妈|wǒ māma]", "ibu saya", "**Boleh dibuang** — hubungan keluarga"],
+        ["[我朋友|wǒ péngyou]", "teman saya", "**Boleh dibuang** — hubungan dekat"],
+        ["[我们学校|wǒmen xuéxiào]", "sekolah kami", "**Boleh dibuang** — lembaga tempat bernaung"],
+        ["[他的|tā de]", "punya dia", "的 berdiri sendiri, bendanya sudah jelas"]
+       ]
+      }
+     ],
+     "after": [
+      "Aturan praktisnya: **kalau hubungannya melekat pada diri seseorang** — keluarga, teman, sekolah, kantor, negara — 的 sering dibuang dan justru terdengar lebih akrab. Untuk benda mati, 的 hampir selalu dipakai.",
+      "⚠️ Jangan tertukar dengan 得 dan 地 yang juga dibaca *de*. Ketiganya berbeda tugas; yang dipakai untuk kepemilikan hanya **的**."
+     ]
+    },
+    {
+     "title": "有 dan 没有 — punya, ada",
+     "tables": [
+      {
+       "head": ["Bentuk", "Contoh", "Arti"],
+       "rows": [
+        ["Positif", "[我有一个哥哥|Wǒ yǒu yí ge gēge]。", "Saya punya seorang kakak laki-laki."],
+        ["Negatif", "[我没有车|Wǒ méiyǒu chē]。", "Saya tidak punya mobil."],
+        ["Tanya (吗)", "[你有笔吗|Nǐ yǒu bǐ ma]？", "Kamu punya pena?"],
+        ["Tanya (pilihan)", "[你有没有笔|Nǐ yǒu méiyǒu bǐ]？", "Sama artinya, terdengar lebih hidup"],
+        ["Jawab ya", "[有|Yǒu]。", "Punya."],
+        ["Jawab tidak", "[没有|Méiyǒu]。", "Tidak punya."]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **有 dan 是 tidak boleh tertukar.** 是 menghubungkan dua benda yang **sama** (“ini adalah kamus”). 有 menyatakan **memiliki** atau **ada** (“saya punya kamus”). [这是词典|Zhè shì cídiǎn] ≠ [我有词典|Wǒ yǒu cídiǎn].",
+      "有 juga berarti “ada” untuk menyatakan keberadaan di suatu tempat — [桌子上有一本书|Zhuōzi shang yǒu yì běn shū] “di atas meja ada sebuah buku”. Ini akan dibahas tuntas di Unit 6."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Barang tertinggal",
+   "intro": "Sepulang kelas, Li Ming mencari sesuatu. Perhatikan bagaimana 的 dipakai tanpa kata benda di belakangnya.",
+   "lines": [
+    { "speaker": "李明:", "text": "[安迪|Āndí]，[你|nǐ][看见|kànjiàn][我的|wǒ de][手机|shǒujī][了|le][吗|ma]？", "id": "Andi, kamu lihat HP saya?", "literal": "Andi, kamu — melihat — saya — punya — HP — sudah — kah." },
+    { "speaker": "安迪:", "text": "[没有|Méiyǒu]。[你的|Nǐ de][手机|shǒujī][是|shì][什么|shénme][颜色|yánsè][的|de]？", "id": "Tidak. HP-mu warna apa?", "literal": "tidak-punya. kamu — punya — HP — adalah — apa — warna — punya." },
+    { "speaker": "李明:", "text": "[黑色|Hēisè][的|de]。[很|Hěn][旧|jiù][的|de][那|nà][个|ge]。", "id": "Yang hitam. Yang sudah tua itu.", "literal": "hitam-warna — punya. penyangga — tua — punya — itu — penggolong." },
+    { "speaker": "安迪:", "text": "[桌子上|Zhuōzi shang][有|yǒu][一|yí][个|ge][黑色|hēisè][的|de][手机|shǒujī]。[是|Shì][你的|nǐ de][吗|ma]？", "id": "Di atas meja ada HP hitam. Punyamu?", "literal": "meja — atas — ada — satu — penggolong — hitam — punya — HP. adalah — kamu — punya — kah." },
+    { "speaker": "李明:", "text": "[哪|Nǎ][张|zhāng][桌子|zhuōzi]？", "id": "Meja yang mana?", "literal": "mana — penggolong — meja." },
+    { "speaker": "安迪:", "text": "[门|Mén][旁边|pángbiān][的|de][那|nà][张|zhāng]。", "id": "Yang di sebelah pintu.", "literal": "pintu — sebelah — punya — itu — penggolong." },
+    { "speaker": "李明:", "text": "[啊|A]，[是|shì][我的|wǒ de]！[太好了|Tài hǎo le]！[谢谢|Xièxie]！", "id": "Ah, punya saya! Syukurlah! Terima kasih!", "literal": "ah, adalah — saya — punya. terlalu — baik — sudah. terima-kasih." },
+    { "speaker": "安迪:", "text": "[不客气|Bú kèqi]。[你|Nǐ][还|hái][有|yǒu][别的|bié de][东西|dōngxi][吗|ma]？", "id": "Sama-sama. Ada barang lain lagi?", "literal": "tidak — sungkan. kamu — masih — punya — lain — punya — barang — kah." },
+    { "speaker": "李明:", "text": "[没有|Méiyǒu][了|le]。[都|Dōu][在|zài][这儿|zhèr]。", "id": "Sudah tidak ada. Semuanya di sini.", "literal": "tidak-punya — sudah. semuanya — berada — sini." }
+   ],
+   "notes": [
+    "**[什么颜色的|shénme yánsè de]？** — “yang warna apa?”. 的 di ujungnya menggantikan kata benda yang sudah jelas. Jawabannya juga memakai 的: [黑色的|Hēisè de] = yang hitam.",
+    "**Kata sifat + 的 + benda.** [很旧的手机|hěn jiù de shǒujī] = HP yang sudah tua. Kalau kata sifatnya cuma satu suku kata, 的 sering dibuang: [新手机|xīn shǒujī] HP baru, [旧书|jiù shū] buku bekas.",
+    "**⚠️ Penjelas selalu berdiri di DEPAN yang dijelaskan.** Bahasa Indonesia berkata “meja **yang di sebelah pintu**”; bahasa Mandarin berkata [门旁边的那张桌子|mén pángbiān de nà zhāng zhuōzi] — “pintu sebelah punya itu meja”. Ini urutan yang terbalik dari kebiasaan kita dan butuh beberapa hari untuk terasa wajar.",
+    "**[没有了|Méiyǒu le] = “sudah tidak ada lagi”.** 了 di ujung menandai **perubahan keadaan**: tadi ada, sekarang habis. Kita akan membahasnya di Unit 10.",
+    "**[还|hái] = masih, lagi.** [你还有别的吗|Nǐ hái yǒu bié de ma]？ = masih ada yang lain?"
+   ],
+   "grammars": [
+    {
+     "title": "Warna dan sifat benda",
+     "tables": [
+      {
+       "head": ["Warna", "Pīnyīn", "Warna", "Pīnyīn"],
+       "rows": [
+        ["[红色|hóngsè] merah", "hóngsè", "[白色|báisè] putih", "báisè"],
+        ["[黄色|huángsè] kuning", "huángsè", "[黑色|hēisè] hitam", "hēisè"],
+        ["[蓝色|lánsè] biru", "lánsè", "[灰色|huīsè] abu-abu", "huīsè"],
+        ["[绿色|lǜsè] hijau", "lǜsè", "[棕色|zōngsè] cokelat", "zōngsè"]
+       ]
+      },
+      {
+       "head": ["Sifat", "Lawannya"],
+       "rows": [
+        ["[新|xīn] baru", "[旧|jiù] lama, bekas"],
+        ["[大|dà] besar", "[小|xiǎo] kecil"],
+        ["[长|cháng] panjang", "[短|duǎn] pendek"],
+        ["[好|hǎo] bagus", "[坏|huài] rusak, jelek"],
+        ["[多|duō] banyak", "[少|shǎo] sedikit"]
+       ]
+      }
+     ],
+     "after": [
+      "Kata warna hampir selalu diikuti 色 (*sè*, “warna”) ketika berdiri sendiri, tapi 色 dibuang kalau langsung menempel pada benda: [红色|hóngsè] merah → [红车|hóng chē] mobil merah."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Benda yang ada di sekitarmu sekarang",
+   "blocks": [
+    { "type": "p", "text": "Kosakata benda paling cepat menempel kalau bendanya benar-benar ada di depan matamu. Tutup modul ini sebentar sesudah membaca tabelnya, lihat sekelilingmu, dan sebutkan sepuluh benda yang kamu lihat dengan pola [这是…|Zhè shì…]." },
+    { "type": "tabel", "head": ["Di ruang kerja", "Pīnyīn", "Di rumah", "Pīnyīn"], "rows": [
+      ["[书|shū] buku", "shū", "[桌子|zhuōzi] meja", "zhuōzi"],
+      ["[笔|bǐ] pena", "bǐ", "[椅子|yǐzi] kursi", "yǐzi"],
+      ["[纸|zhǐ] kertas", "zhǐ", "[门|mén] pintu", "mén"],
+      ["[词典|cídiǎn] kamus", "cídiǎn", "[窗户|chuānghu] jendela", "chuānghu"],
+      ["[电脑|diànnǎo] komputer", "diànnǎo", "[床|chuáng] kasur", "chuáng"],
+      ["[手机|shǒujī] HP", "shǒujī", "[灯|dēng] lampu", "dēng"],
+      ["[包|bāo] tas", "bāo", "[钥匙|yàoshi] kunci", "yàoshi"],
+      ["[钱包|qiánbāo] dompet", "qiánbāo", "[伞|sǎn] payung", "sǎn"],
+      ["[本子|běnzi] buku tulis", "běnzi", "[衣服|yīfu] baju", "yīfu"],
+      ["[东西|dōngxi] barang", "dōngxi", "[水|shuǐ] air", "shuǐ"]
+     ]},
+    { "type": "kotak", "title": "东西 — kata yang menyelamatkan", "items": [
+      "**[东西|dōngxi]** harfiah berarti “timur barat”, tapi artinya “barang, benda”. Ia dipakai untuk apa pun yang namanya tidak kamu ketahui.",
+      "[这是什么东西|Zhè shì shénme dōngxi]？ — “ini benda apa?”",
+      "[我要买点儿东西|Wǒ yào mǎi diǎnr dōngxi]。 — “saya mau beli sesuatu.”",
+      "⚠️ Jangan dipakai untuk **orang**. [他不是东西|Tā bú shì dōngxi] adalah makian yang cukup kasar, bukan “dia bukan barang”."
+    ]}
+   ]
+  },
+  {
+   "title": "Bertanya tentang benda tanpa tahu namanya",
+   "blocks": [
+    { "type": "p", "text": "Kamu akan sering berada dalam keadaan ini: melihat sesuatu, tidak tahu namanya, dan ingin tahu. Empat kalimat berikut cukup untuk seluruh tahun pertamamu." },
+    { "type": "tabel", "head": ["Kalimat", "Kapan dipakai"], "rows": [
+      ["[这是什么|Zhè shì shénme]？", "Menunjuk benda yang ada di dekatmu"],
+      ["[这个用中文怎么说|Zhège yòng Zhōngwén zěnme shuō]？", "“Ini dalam bahasa Mandarin bagaimana menyebutnya?”"],
+      ["[这个字怎么念|Zhège zì zěnme niàn]？", "“Aksara ini bagaimana membacanya?”"],
+      ["[请再说一遍|Qǐng zài shuō yí biàn]。", "“Tolong ulangi sekali lagi.” Kalimat paling berguna di minggu pertamamu"],
+      ["[请说慢一点儿|Qǐng shuō màn yìdiǎnr]。", "“Tolong bicara lebih pelan.”"],
+      ["[我不明白|Wǒ bù míngbai]。", "“Saya tidak paham.” Lebih jujur daripada mengangguk"]
+    ]},
+    { "type": "kotak", "title": "Tiga kalimat darurat untuk dihafal hari ini", "items": [
+      "**[请再说一遍|Qǐng zài shuō yí biàn]。** — Tolong ulangi.",
+      "**[我不明白|Wǒ bù míngbai]。** — Saya tidak paham.",
+      "**[这个用中文怎么说|Zhège yòng Zhōngwén zěnme shuō]？** — Ini bahasa Mandarinnya apa?",
+      "Tiga kalimat ini yang membuat percakapan tidak mati di detik kesepuluh. Hafalkan sekarang, bukan nanti — kamu akan memakainya lebih sering daripada seluruh kosakata unit ini digabung."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "这", "baca": "zhè", "id": "ini" },
+  { "zh": "那", "baca": "nà", "id": "itu" },
+  { "zh": "这儿", "baca": "zhèr", "id": "di sini" },
+  { "zh": "那儿", "baca": "nàr", "id": "di sana" },
+  { "zh": "个", "baca": "gè", "id": "penggolong umum" },
+  { "zh": "本", "baca": "běn", "id": "penggolong buku" },
+  { "zh": "张", "baca": "zhāng", "id": "penggolong benda datar" },
+  { "zh": "支", "baca": "zhī", "id": "penggolong benda memanjang" },
+  { "zh": "件", "baca": "jiàn", "id": "penggolong baju, perkara" },
+  { "zh": "把", "baca": "bǎ", "id": "penggolong benda bergagang" },
+  { "zh": "两", "baca": "liǎng", "id": "dua (di depan penggolong)" },
+  { "zh": "的", "baca": "de", "id": "penanda milik" },
+  { "zh": "有", "baca": "yǒu", "id": "punya, ada" },
+  { "zh": "没有", "baca": "méiyǒu", "id": "tidak punya, tidak ada" },
+  { "zh": "给", "baca": "gěi", "id": "memberi, untuk" },
+  { "zh": "还", "baca": "hái", "id": "masih, lagi" },
+  { "zh": "别的", "baca": "bié de", "id": "yang lain" },
+  { "zh": "东西", "baca": "dōngxi", "id": "barang, benda" },
+  { "zh": "书", "baca": "shū", "id": "buku" },
+  { "zh": "笔", "baca": "bǐ", "id": "pena" },
+  { "zh": "纸", "baca": "zhǐ", "id": "kertas" },
+  { "zh": "词典", "baca": "cídiǎn", "id": "kamus" },
+  { "zh": "本子", "baca": "běnzi", "id": "buku tulis" },
+  { "zh": "电脑", "baca": "diànnǎo", "id": "komputer" },
+  { "zh": "手机", "baca": "shǒujī", "id": "telepon genggam" },
+  { "zh": "包", "baca": "bāo", "id": "tas" },
+  { "zh": "钱包", "baca": "qiánbāo", "id": "dompet" },
+  { "zh": "钥匙", "baca": "yàoshi", "id": "kunci" },
+  { "zh": "伞", "baca": "sǎn", "id": "payung" },
+  { "zh": "衣服", "baca": "yīfu", "id": "baju" },
+  { "zh": "桌子", "baca": "zhuōzi", "id": "meja" },
+  { "zh": "椅子", "baca": "yǐzi", "id": "kursi" },
+  { "zh": "门", "baca": "mén", "id": "pintu" },
+  { "zh": "窗户", "baca": "chuānghu", "id": "jendela" },
+  { "zh": "床", "baca": "chuáng", "id": "kasur" },
+  { "zh": "旁边", "baca": "pángbiān", "id": "di sebelah" },
+  { "zh": "颜色", "baca": "yánsè", "id": "warna" },
+  { "zh": "红色", "baca": "hóngsè", "id": "merah" },
+  { "zh": "白色", "baca": "báisè", "id": "putih" },
+  { "zh": "黑色", "baca": "hēisè", "id": "hitam" },
+  { "zh": "蓝色", "baca": "lánsè", "id": "biru" },
+  { "zh": "新", "baca": "xīn", "id": "baru" },
+  { "zh": "旧", "baca": "jiù", "id": "lama, bekas" },
+  { "zh": "大", "baca": "dà", "id": "besar" },
+  { "zh": "小", "baca": "xiǎo", "id": "kecil" },
+  { "zh": "看见", "baca": "kànjiàn", "id": "melihat" },
+  { "zh": "明白", "baca": "míngbai", "id": "paham" },
+  { "zh": "怎么说", "baca": "zěnme shuō", "id": "bagaimana mengatakannya" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi kata penggolong yang tepat: 个, 本, 张, 支, 件, 把.",
+   "items": [
+    "[两|liǎng] ___ [书|shū]",
+    "[一|yì] ___ [纸|zhǐ]",
+    "[三|sān] ___ [笔|bǐ]",
+    "[这|zhè] ___ [人|rén]",
+    "[一|yí] ___ [衣服|yīfu]",
+    "[那|nà] ___ [伞|sǎn]"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 有, 没有, atau 是.",
+   "items": [
+    "[我|Wǒ] ___ [中文词典|Zhōngwén cídiǎn]，[我要买一本|wǒ yào mǎi yì běn]。",
+    "[这|Zhè] ___ [我的手机|wǒ de shǒujī]。",
+    "[你|Nǐ] ___ [笔吗|bǐ ma]？",
+    "[他|Tā] ___ [两个包|liǎng ge bāo]。",
+    "[那|Nà] ___ [李明的书|Lǐ Míng de shū]。"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "这 / 是 / 我 / 的 / 词典",
+    "我 / 有 / 两 / 支 / 笔",
+    "那 / 本 / 书 / 是 / 谁 / 的",
+    "我 / 没有 / 手机",
+    "门 / 旁边 / 的 / 那 / 张 / 桌子",
+    "你 / 有 / 没有 / 纸"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[这不是我的包，是他的|Zhè bú shì wǒ de bāo, shì tā de]。",
+    "[你的手机是什么颜色的|Nǐ de shǒujī shì shénme yánsè de]？",
+    "[我有一个新电脑|Wǒ yǒu yí ge xīn diànnǎo]。",
+    "[那两本书都是老师的|Nà liǎng běn shū dōu shì lǎoshī de]。",
+    "[我没有钥匙|Wǒ méiyǒu yàoshi]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Ini apa?",
+    "Saya punya dua buku.",
+    "Buku itu punya siapa?",
+    "Saya tidak punya payung.",
+    "Tas merah itu punya saya."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[我不有钱包|Wǒ bù yǒu qiánbāo]。",
+    "[我有二本书|Wǒ yǒu èr běn shū]。",
+    "[这书是我的|Zhè shū shì wǒ de]。",
+    "[那是谁书|Nà shì shéi shū]？",
+    "[我有一手机|Wǒ yǒu yì shǒujī]。"
+   ]
+  }
+ ],
+ "answers": [
+  "本 — 张 — 支 — 个 — 件 — 把",
+  "没有 — 是 — 有 — 有 — 是",
+  "这 是 我 的 词典 — 我 有 两 支 笔 — 那 本 书 是 谁 的 — 我 没有 手机 — 门 旁边 的 那 张 桌子 — 你 有 没有 纸",
+  "Ini bukan tas saya, ini punya dia. — HP-mu warna apa? — Saya punya komputer baru. — Dua buku itu semuanya punya guru. — Saya tidak punya kunci.",
+  "Zhè shì shénme? — Wǒ yǒu liǎng běn shū. — Nà běn shū shì shéi de? — Wǒ méiyǒu sǎn. — Nà ge hóngsè de bāo shì wǒ de.",
+  "Wǒ méiyǒu qiánbāo. — Wǒ yǒu liǎng běn shū. — Zhè běn shū shì wǒ de. — Nà shì shéi de shū? — Wǒ yǒu yí ge shǒujī."
+ ],
+ "wave": "Ulangi Unit 1: perkenalkan dirimu, lalu tunjuk lima benda di sekitarmu dan sebutkan pemiliknya dengan pola A 是 B 的. Dua unit sekaligus terlatih dalam lima menit, dan kata penggolong hanya menempel lewat pengulangan seperti ini."
+}

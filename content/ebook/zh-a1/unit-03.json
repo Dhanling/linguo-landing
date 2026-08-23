@@ -1,0 +1,329 @@
+{
+ "title": "Angka, harga, dan tawar-menawar",
+ "title_target": "多少钱 — Duōshao qián",
+ "goal": "Membaca angka sampai puluhan ribu, menanyakan harga, menyebut uang dalam bahasa lisan maupun tulisan, dan menawar tanpa merasa canggung.",
+ "bekal": [
+  "menghitung dari nol sampai 99.999",
+  "menanyakan harga dengan 多少钱 dan jumlah dengan 几",
+  "menyebut harga dengan 块, 毛, 分",
+  "membeli sesuatu dari salam sampai kembalian",
+  "menawar dengan 便宜一点儿吧"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Di toko buah",
+   "intro": "Andi berbelanja di pasar dekat rumahnya. Perhatikan bahwa penjual memakai 块 dan bukan 元 — itulah bentuk yang sebenarnya terdengar sehari-hari.",
+   "lines": [
+    { "speaker": "老板:", "text": "[您好|Nín hǎo]！[要|Yào][什么|shénme]？", "id": "Selamat datang! Mau apa?", "literal": "Anda — baik. mau — apa." },
+    { "speaker": "安迪:", "text": "[请问|Qǐngwèn]，[苹果|píngguǒ][多少|duōshao][钱|qián][一|yì][斤|jīn]？", "id": "Permisi, apel berapa harganya sekati?", "literal": "silakan — tanya, apel — berapa — uang — satu — kati." },
+    { "speaker": "老板:", "text": "[八|Bā][块|kuài][五|wǔ][一|yì][斤|jīn]。[很|Hěn][甜|tián]！", "id": "Delapan setengah sekati. Manis sekali!", "literal": "delapan — yuan — lima, satu — kati. penyangga — manis." },
+    { "speaker": "安迪:", "text": "[有点儿|Yǒudiǎnr][贵|guì]。[便宜|Piányi][一点儿|yìdiǎnr][吧|ba]？", "id": "Agak mahal. Boleh kurang sedikit?", "literal": "ada — sedikit — mahal. murah — sedikit — ya." },
+    { "speaker": "老板:", "text": "[好吧|Hǎo ba]，[八|bā][块|kuài]。[您|Nín][要|yào][几|jǐ][斤|jīn]？", "id": "Baiklah, delapan. Anda mau berapa kati?", "literal": "baik — ya, delapan — yuan. Anda — mau — berapa — kati." },
+    { "speaker": "安迪:", "text": "[两|Liǎng][斤|jīn]。[香蕉|Xiāngjiāo][呢|ne]？", "id": "Dua kati. Kalau pisang?", "literal": "dua — kati. pisang — bagaimana." },
+    { "speaker": "老板:", "text": "[香蕉|Xiāngjiāo][六|liù][块|kuài]。[一共|Yígòng][二十二|èrshí'èr][块|kuài]。", "id": "Pisang enam yuan. Semuanya dua puluh dua yuan.", "literal": "pisang — enam — yuan. seluruh — jumlah — dua-puluh-dua — yuan." },
+    { "speaker": "安迪:", "text": "[给|Gěi][您|nín][一百|yì bǎi]。", "id": "Ini seratus.", "literal": "beri — Anda — satu — ratus." },
+    { "speaker": "老板:", "text": "[找|Zhǎo][您|nín][七十八|qīshíbā][块|kuài]。[谢谢|Xièxie]！", "id": "Kembaliannya tujuh puluh delapan yuan. Terima kasih!", "literal": "mencari-kembali — Anda — tujuh-puluh-delapan — yuan. terima-kasih." },
+    { "speaker": "安迪:", "text": "[谢谢|Xièxie]！[再见|Zàijiàn]！", "id": "Terima kasih! Sampai jumpa!", "literal": "terima-kasih. lagi — bertemu." }
+   ],
+   "notes": [
+    "**[多少钱|Duōshao qián]？ = berapa harganya.** Harfiah “berapa banyak uang”. Kalau ingin menyebutkan satuannya, tempelkan di belakang: [多少钱一斤|duōshao qián yì jīn] berapa sekati, [多少钱一个|duōshao qián yí ge] berapa sebuah.",
+    "**⚠️ [几|jǐ] dan [多少|duōshao] dua-duanya berarti “berapa”, tapi tidak bisa saling menggantikan.** 几 untuk jumlah yang **diperkirakan di bawah sepuluh** dan **wajib diikuti kata penggolong**: [几个人|jǐ ge rén], [几点|jǐ diǎn]. 多少 untuk jumlah besar atau tidak diketahui, dan **tanpa penggolong**: [多少钱|duōshao qián], [多少人|duōshao rén].",
+    "**[块|kuài] adalah kata yang sebenarnya diucapkan orang** untuk mata uang Tiongkok. [元|yuán] hanya ditulis — di label harga, kuitansi, dan bank. Kalau kamu berkata 八元 di pasar, kamu akan langsung terdengar seperti buku pelajaran.",
+    "**Harga pecahan: [八块五|bā kuài wǔ] = 8,5 yuan.** Bagian terakhirnya boleh dibiarkan telanjang tanpa 毛. Bentuk lengkapnya [八块五毛|bā kuài wǔ máo], tapi orang jarang mengucapkannya sepanjang itu.",
+    "**[有点儿|yǒudiǎnr] + kata sifat = “agak …”, dan selalu bernada tidak enak.** [有点儿贵|yǒudiǎnr guì] agak mahal, [有点儿累|yǒudiǎnr lèi] agak capek. ⚠️ Jangan tertukar dengan [一点儿|yìdiǎnr] yang berdiri **sesudah** kata sifat dan berarti “sedikit lebih”: [便宜一点儿|piányi yìdiǎnr] = lebih murah sedikit.",
+    "**[吧|ba] di ujung kalimat melembutkan permintaan.** [便宜一点儿吧|Piányi yìdiǎnr ba] terdengar seperti mengajak, bukan menuntut. Satu suku kata ini mengubah seluruh kesan kalimatmu.",
+    "**[找|zhǎo] berarti “mencari”, tapi di kasir artinya “memberi kembalian”.** [找您七十八块|Zhǎo nín qīshíbā kuài] = kembaliannya 78 yuan.",
+    "**[斤|jīn] adalah satuan berat Tiongkok = 500 gram**, bukan satu kilogram. Harga di pasar hampir selalu disebut per 斤, jadi harga yang terdengar murah sebenarnya dua kali lipat per kilo."
+   ],
+   "grammars": [
+    {
+     "title": "Angka 0 sampai 99.999",
+     "body": [
+      "Angka Mandarin sangat teratur — jauh lebih teratur daripada bahasa Indonesia yang punya bentuk khusus *belas* dan *puluh*. Sesudah sepuluh, angka dibaca persis seperti hitungannya: 11 = 10 + 1, 25 = 2 × 10 + 5."
+     ],
+     "tables": [
+      {
+       "head": ["Angka", "Aksara · Pīnyīn", "Angka", "Aksara · Pīnyīn"],
+       "rows": [
+        ["0", "[零|líng]", "6", "[六|liù]"],
+        ["1", "[一|yī]", "7", "[七|qī]"],
+        ["2", "[二|èr]", "8", "[八|bā]"],
+        ["3", "[三|sān]", "9", "[九|jiǔ]"],
+        ["4", "[四|sì]", "10", "[十|shí]"],
+        ["5", "[五|wǔ]", "", ""]
+       ]
+      },
+      {
+       "head": ["Angka", "Susunannya", "Aksara · Pīnyīn"],
+       "rows": [
+        ["11", "10 + 1", "[十一|shíyī]"],
+        ["20", "2 × 10", "[二十|èrshí]"],
+        ["35", "3 × 10 + 5", "[三十五|sānshíwǔ]"],
+        ["99", "9 × 10 + 9", "[九十九|jiǔshíjiǔ]"],
+        ["100", "1 × 100", "[一百|yìbǎi]"],
+        ["101", "100 + **0** + 1 ⚠️", "[一百零一|yìbǎi líng yī]"],
+        ["110", "100 + 1 × 10", "[一百一十|yìbǎi yīshí]"],
+        ["256", "2×100 + 5×10 + 6", "[二百五十六|èrbǎi wǔshíliù]"],
+        ["1.000", "1 × 1000", "[一千|yìqiān]"],
+        ["2.500", "2×1000 + 5×100", "[两千五百|liǎngqiān wǔbǎi]"],
+        ["10.000", "1 万 ⚠️", "[一万|yíwàn]"],
+        ["58.000", "5万 + 8千", "[五万八千|wǔwàn bāqiān]"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **Nol di tengah wajib diucapkan.** 101 bukan 一百一 melainkan [一百零一|yìbǎi líng yī]. Kalau nolnya dilewatkan, 105 dan 150 jadi tak bisa dibedakan.",
+      "⚠️ **Mandarin memotong angka setiap EMPAT digit, bukan tiga.** Sesudah [千|qiān] (1.000) bukan “sepuluh ribu” melainkan satuan baru: [万|wàn] = 10.000. Jadi 250.000 dibaca 25 万 — [二十五万|èrshíwǔ wàn]. Ini sumber kebingungan terbesar orang Indonesia saat mendengar harga besar. Latihannya: baca sepuluh harga barang elektronik keras-keras hari ini.",
+      "⚠️ **两 vs 二 sekali lagi**: [两百|liǎngbǎi] 200 dan [两千|liǎngqiān] 2.000 memakai 两, tapi [二十|èrshí] 20 memakai 二. Aturannya: 两 dipakai kalau angka dua itu **mengalikan** satuan besar."
+     ]
+    },
+    {
+     "title": "Uang: 块 · 毛 · 分",
+     "tables": [
+      {
+       "head": ["Nilai", "Lisan", "Tulisan", "Contoh 8,50"],
+       "rows": [
+        ["Yuan", "[块|kuài]", "[元|yuán]", "[八块五|bā kuài wǔ]"],
+        ["1/10 yuan", "[毛|máo]", "[角|jiǎo]", "[五毛|wǔ máo]"],
+        ["1/100 yuan", "[分|fēn]", "[分|fēn]", "[两分|liǎng fēn] — praktis sudah tak dipakai"]
+       ]
+      },
+      {
+       "head": ["Harga", "Cara mengucapkannya"],
+       "rows": [
+        ["¥5", "[五块|wǔ kuài]"],
+        ["¥5,50", "[五块五|wǔ kuài wǔ]"],
+        ["¥5,55", "[五块五毛五|wǔ kuài wǔ máo wǔ]"],
+        ["¥20", "[二十块|èrshí kuài]"],
+        ["¥200", "[两百块|liǎngbǎi kuài]"],
+        ["¥1.999", "[一千九百九十九块|yìqiān jiǔbǎi jiǔshíjiǔ kuài]"]
+       ]
+      }
+     ],
+     "after": [
+      "Kalau angka terakhirnya berdiri sendiri di ujung, satuannya sering dibuang — kecuali angkanya **dua**, yang wajib jadi 两: ¥2,20 = [两块二|liǎng kuài èr]."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Membeli baju dan menawar",
+   "intro": "Menawar adalah bagian wajar dari berbelanja di pasar Tiongkok — bukan di toko besar atau supermarket. Perhatikan bahwa Andi tidak pernah bersikap kasar; ia hanya bertahan dengan tenang.",
+   "lines": [
+    { "speaker": "安迪:", "text": "[这|Zhè][件|jiàn][衣服|yīfu][多少|duōshao][钱|qián]？", "id": "Baju ini berapa?", "literal": "ini — penggolong — baju — berapa — uang." },
+    { "speaker": "老板:", "text": "[三百|Sānbǎi][八十|bāshí]。[质量|Zhìliàng][很|hěn][好|hǎo]。", "id": "Tiga ratus delapan puluh. Kualitasnya bagus.", "literal": "tiga-ratus — delapan-puluh. mutu — penyangga — baik." },
+    { "speaker": "安迪:", "text": "[太|Tài][贵|guì][了|le]！[能|Néng][便宜|piányi][点儿|diǎnr][吗|ma]？", "id": "Mahal sekali! Bisa kurang sedikit?", "literal": "terlalu — mahal — sudah. bisa — murah — sedikit — kah." },
+    { "speaker": "老板:", "text": "[您|Nín][想|xiǎng][多少|duōshao][钱|qián][买|mǎi]？", "id": "Anda mau beli berapa?", "literal": "Anda — ingin — berapa — uang — beli." },
+    { "speaker": "安迪:", "text": "[两百|Liǎngbǎi][怎么样|zěnmeyàng]？", "id": "Dua ratus bagaimana?", "literal": "dua-ratus — bagaimana." },
+    { "speaker": "老板:", "text": "[两百|Liǎngbǎi][太|tài][少|shǎo][了|le]。[三百|Sānbǎi][吧|ba]。", "id": "Dua ratus terlalu sedikit. Tiga ratus, ya.", "literal": "dua-ratus — terlalu — sedikit — sudah. tiga-ratus — ya." },
+    { "speaker": "安迪:", "text": "[两百|Liǎngbǎi][五|wǔ]。[可以|Kěyǐ][吗|ma]？", "id": "Dua ratus lima puluh. Boleh?", "literal": "dua-ratus — lima. boleh — kah." },
+    { "speaker": "老板:", "text": "[好吧|Hǎo ba]，[两百|liǎngbǎi][五|wǔ]。[要|Yào][什么|shénme][颜色|yánsè]？", "id": "Baiklah, dua ratus lima puluh. Mau warna apa?", "literal": "baik — ya, dua-ratus — lima. mau — apa — warna." },
+    { "speaker": "安迪:", "text": "[蓝色|Lánsè][的|de]。[可以|Kěyǐ][试试|shìshi][吗|ma]？", "id": "Yang biru. Boleh dicoba?", "literal": "biru — punya. boleh — coba-coba — kah." },
+    { "speaker": "老板:", "text": "[当然|Dāngrán][可以|kěyǐ]。[试衣间|Shìyījiān][在|zài][那儿|nàr]。", "id": "Tentu boleh. Kamar pasnya di sana.", "literal": "tentu — boleh. coba-baju-ruang — berada — sana." }
+   ],
+   "notes": [
+    "**[太贵了|Tài guì le]！** — kalimat pertama yang harus keluar dari mulutmu saat menawar. Pola [太|tài] + sifat + [了|le] menyatakan “terlalu …”, dan 了 di ujung hampir tak pernah dibuang.",
+    "**[怎么样|zěnmeyàng]？ = “bagaimana?”** — dipakai untuk menawarkan pendapat atau usul. [两百怎么样|Liǎngbǎi zěnmeyàng]？ = dua ratus bagaimana? Ini cara menawar yang paling halus.",
+    "**[两百五|liǎngbǎi wǔ] = 250, bukan 205.** Kalau angka terakhir berdiri sendiri di ujung harga, ia menempati **tempat yang tersisa di bawahnya**. Untuk 205 harus diucapkan [两百零五|liǎngbǎi líng wǔ] dengan 零.",
+    "**[试试|shìshi] = “coba sebentar”.** Mengulang kata kerja membuat perbuatannya terdengar ringan dan sebentar — mirip “coba-coba” dalam bahasa Indonesia. [看看|kànkan] lihat sebentar, [听听|tīngting] dengar sebentar, [想想|xiǎngxiang] pikir sebentar.",
+    "**[当然|dāngrán] = tentu saja.** Kata yang membuat jawabanmu terdengar ramah, bukan sekadar setuju.",
+    "⚠️ **Menawar hanya wajar di pasar, kaki lima, dan toko kecil.** Di supermarket, toko berjaringan, dan restoran, menawar dianggap aneh — sama seperti di Indonesia."
+   ],
+   "grammars": [
+    {
+     "title": "Dua cara berkata “agak” dan “sedikit”",
+     "body": [
+      "Ini pasangan yang paling sering tertukar, dan salahnya langsung terdengar. Bedanya ada di **tempatnya berdiri**."
+     ],
+     "tables": [
+      {
+       "head": ["Bentuk", "Tempatnya", "Nuansa", "Contoh"],
+       "rows": [
+        ["[有点儿|yǒudiǎnr] + sifat", "**Sebelum** kata sifat", "Keluhan — selalu tentang sesuatu yang kurang enak", "[有点儿贵|yǒudiǎnr guì] agak mahal"],
+        ["sifat + [一点儿|yìdiǎnr]", "**Sesudah** kata sifat", "Permintaan atau perbandingan — netral", "[便宜一点儿|piányi yìdiǎnr] lebih murah sedikit"]
+       ]
+      },
+      {
+       "head": ["Benar", "Salah", "Sebabnya"],
+       "rows": [
+        ["[这个有点儿贵|Zhège yǒudiǎnr guì]。", "这个一点儿贵。", "Mengeluh → 有点儿 di depan"],
+        ["[便宜一点儿吧|Piányi yìdiǎnr ba]。", "有点儿便宜吧。", "Meminta → 一点儿 di belakang"],
+        ["[我有点儿累|Wǒ yǒudiǎnr lèi]。", "我一点儿累。", "Mengeluh → 有点儿"],
+        ["[请说慢一点儿|Qǐng shuō màn yìdiǎnr]。", "请说有点儿慢。", "Meminta → 一点儿"]
+       ]
+      }
+     ],
+     "after": [
+      "Cara mengingatnya: **有点儿 mendahului keluhan, 一点儿 mengekori permintaan.** Kalau kalimatmu berisi keinginan agar sesuatu berubah, yang dipakai 一点儿."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bertahan di kasir dan di toko",
+   "blocks": [
+    { "type": "p", "text": "Penjual mengucapkan kalimat yang sama setiap hari. Kamu tidak perlu bisa mengucapkannya — kamu cuma perlu **mengenalinya** dan tahu jawaban pendeknya." },
+    { "type": "tabel", "head": ["Yang kamu dengar", "Artinya", "Jawaban pendekmu"], "rows": [
+      ["[您要什么|Nín yào shénme]？", "Mau apa?", "[我要这个|Wǒ yào zhège]。"],
+      ["[要几个|Yào jǐ ge]？", "Mau berapa?", "[两个|Liǎng ge]。"],
+      ["[还要别的吗|Hái yào bié de ma]？", "Mau yang lain lagi?", "[不用了|Bú yòng le]，[谢谢|xièxie]。"],
+      ["[一共一百二|Yígòng yìbǎi èr]。", "Semuanya 120.", "[给您|Gěi nín]。"],
+      ["[您怎么付|Nín zěnme fù]？", "Bayarnya bagaimana?", "[微信|Wēixìn]。 / [现金|Xiànjīn]。"],
+      ["[要发票吗|Yào fāpiào ma]？", "Perlu kuitansi?", "[不用|Bú yòng]。 / [要|Yào]。"],
+      ["[找您二十|Zhǎo nín èrshí]。", "Kembali 20.", "[谢谢|Xièxie]。"]
+    ]},
+    { "type": "kotak", "title": "Bayar dengan telepon", "items": [
+      "Uang tunai hampir hilang dari kota besar Tiongkok. Dua kata yang wajib kamu kenali: **[微信|Wēixìn]** (WeChat Pay) dan **[支付宝|Zhīfùbǎo]** (Alipay).",
+      "[可以用微信吗|Kěyǐ yòng Wēixìn ma]？ — Boleh pakai WeChat?",
+      "[扫这个|Sǎo zhège]。 — “Pindai yang ini.” 扫 = memindai kode QR.",
+      "[我没有中国的手机号|Wǒ méiyǒu Zhōngguó de shǒujī hào]。 — “Saya tidak punya nomor HP Tiongkok.” Kalimat yang akan sering kamu butuhkan sebagai pendatang."
+    ]}
+   ]
+  },
+  {
+   "title": "Satuan, angka, dan hal yang perlu diwaspadai",
+   "blocks": [
+    { "type": "tabel", "head": ["Satuan", "Nilainya", "Catatan"], "rows": [
+      ["[斤|jīn]", "500 gram", "Satuan pasar yang paling sering dipakai"],
+      ["[公斤|gōngjīn]", "1 kilogram", "Dipakai di supermarket dan timbangan resmi"],
+      ["[克|kè]", "gram", "[五百克|wǔbǎi kè] 500 gram"],
+      ["[米|mǐ]", "meter", "[两米|liǎng mǐ] dua meter"],
+      ["[公里|gōnglǐ]", "kilometer", "[三公里|sān gōnglǐ] tiga kilometer"],
+      ["[瓶|píng]", "botol", "[一瓶水|yì píng shuǐ] sebotol air"],
+      ["[杯|bēi]", "gelas, cangkir", "[两杯咖啡|liǎng bēi kāfēi] dua cangkir kopi"]
+    ]},
+    { "type": "kotak", "title": "Angka dalam kehidupan sehari-hari", "items": [
+      "**Nomor telepon dan nomor kamar dibaca satu per satu**, dan angka 1 dibaca [幺|yāo] supaya tidak tertukar dengan 七. Nomor 138-1174 dibaca *yāo sān bā, yāo yāo qī sì*.",
+      "**Angka 4** ([四|sì]) dihindari karena bunyinya mirip [死|sǐ] “mati”. Banyak gedung tidak punya lantai 4, 14, dan 24.",
+      "**Angka 8** ([八|bā]) disukai karena mirip [发|fā] “menjadi makmur”. Nomor telepon berangka 8 banyak dijual mahal.",
+      "**Diskon dibaca terbalik dari kebiasaan kita.** [打八折|dǎ bā zhé] bukan diskon 80%, melainkan **bayar 80%** alias diskon 20%. [打五折|dǎ wǔ zhé] = diskon 50%. ⚠️ Salah membaca ini bisa membuatmu mengira barangnya empat kali lebih murah daripada sebenarnya."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "一", "baca": "yī", "id": "satu" },
+  { "zh": "二", "baca": "èr", "id": "dua" },
+  { "zh": "三", "baca": "sān", "id": "tiga" },
+  { "zh": "四", "baca": "sì", "id": "empat" },
+  { "zh": "五", "baca": "wǔ", "id": "lima" },
+  { "zh": "六", "baca": "liù", "id": "enam" },
+  { "zh": "七", "baca": "qī", "id": "tujuh" },
+  { "zh": "八", "baca": "bā", "id": "delapan" },
+  { "zh": "九", "baca": "jiǔ", "id": "sembilan" },
+  { "zh": "十", "baca": "shí", "id": "sepuluh" },
+  { "zh": "零", "baca": "líng", "id": "nol" },
+  { "zh": "百", "baca": "bǎi", "id": "ratus" },
+  { "zh": "千", "baca": "qiān", "id": "ribu" },
+  { "zh": "万", "baca": "wàn", "id": "sepuluh ribu" },
+  { "zh": "钱", "baca": "qián", "id": "uang" },
+  { "zh": "块", "baca": "kuài", "id": "yuan (lisan)" },
+  { "zh": "元", "baca": "yuán", "id": "yuan (tulisan)" },
+  { "zh": "毛", "baca": "máo", "id": "sepersepuluh yuan" },
+  { "zh": "多少", "baca": "duōshao", "id": "berapa (jumlah besar)" },
+  { "zh": "几", "baca": "jǐ", "id": "berapa (di bawah 10)" },
+  { "zh": "一共", "baca": "yígòng", "id": "semuanya, totalnya" },
+  { "zh": "买", "baca": "mǎi", "id": "membeli" },
+  { "zh": "卖", "baca": "mài", "id": "menjual" },
+  { "zh": "贵", "baca": "guì", "id": "mahal" },
+  { "zh": "便宜", "baca": "piányi", "id": "murah" },
+  { "zh": "太…了", "baca": "tài … le", "id": "terlalu" },
+  { "zh": "有点儿", "baca": "yǒudiǎnr", "id": "agak (keluhan)" },
+  { "zh": "一点儿", "baca": "yìdiǎnr", "id": "sedikit lebih" },
+  { "zh": "吧", "baca": "ba", "id": "pelembut ajakan" },
+  { "zh": "怎么样", "baca": "zěnmeyàng", "id": "bagaimana" },
+  { "zh": "可以", "baca": "kěyǐ", "id": "boleh" },
+  { "zh": "能", "baca": "néng", "id": "bisa" },
+  { "zh": "想", "baca": "xiǎng", "id": "ingin" },
+  { "zh": "要", "baca": "yào", "id": "mau" },
+  { "zh": "找", "baca": "zhǎo", "id": "mencari; memberi kembalian" },
+  { "zh": "试", "baca": "shì", "id": "mencoba" },
+  { "zh": "当然", "baca": "dāngrán", "id": "tentu saja" },
+  { "zh": "老板", "baca": "lǎobǎn", "id": "pemilik toko, bos" },
+  { "zh": "苹果", "baca": "píngguǒ", "id": "apel" },
+  { "zh": "香蕉", "baca": "xiāngjiāo", "id": "pisang" },
+  { "zh": "斤", "baca": "jīn", "id": "kati (500 gram)" },
+  { "zh": "公斤", "baca": "gōngjīn", "id": "kilogram" },
+  { "zh": "现金", "baca": "xiànjīn", "id": "uang tunai" },
+  { "zh": "微信", "baca": "Wēixìn", "id": "WeChat" },
+  { "zh": "发票", "baca": "fāpiào", "id": "kuitansi resmi" },
+  { "zh": "质量", "baca": "zhìliàng", "id": "mutu" },
+  { "zh": "甜", "baca": "tián", "id": "manis" },
+  { "zh": "打折", "baca": "dǎzhé", "id": "memberi diskon" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angka berikut dengan aksara Mandarin.",
+   "items": [
+    "8: ___",
+    "15: ___",
+    "40: ___",
+    "101: ___",
+    "250: ___",
+    "3000: ___"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 几 atau 多少.",
+   "items": [
+    "[你要|Nǐ yào] ___ [个|ge]？",
+    "[这个|Zhège] ___ [钱|qián]？",
+    "[你家有|Nǐ jiā yǒu] ___ [口人|kǒu rén]？",
+    "[这个学校有|Zhège xuéxiào yǒu] ___ [学生|xuésheng]？",
+    "[现在|Xiànzài] ___ [点|diǎn]？"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "这 / 件 / 衣服 / 多少 / 钱",
+    "能 / 便宜 / 一点儿 / 吗",
+    "苹果 / 八 / 块 / 一 / 斤",
+    "一共 / 二十二 / 块",
+    "我 / 要 / 两 / 斤 / 香蕉",
+    "这 / 个 / 有点儿 / 贵"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[这本书三十五块|Zhè běn shū sānshíwǔ kuài]。",
+    "[太贵了，便宜一点儿吧|Tài guì le, piányi yìdiǎnr ba]。",
+    "[一共多少钱|Yígòng duōshao qián]？",
+    "[找您七十八块|Zhǎo nín qīshíbā kuài]。",
+    "[可以用微信吗|Kěyǐ yòng Wēixìn ma]？"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Berapa harganya?",
+    "Mahal sekali!",
+    "Saya mau dua kati.",
+    "Bisa lebih murah sedikit?",
+    "Semuanya seratus dua puluh yuan."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[我要二个苹果|Wǒ yào èr ge píngguǒ]。",
+    "[这个一点儿贵|Zhège yìdiǎnr guì]。",
+    "[你要多少个|Nǐ yào duōshao ge]？",
+    "[这本书三十五元，太贵了|Zhè běn shū sānshíwǔ yuán, tài guì le]。",
+    "[一百一是101|Yìbǎi yī shì 101]。"
+   ]
+  }
+ ],
+ "answers": [
+  "八 — 十五 — 四十 — 一百零一 — 两百五十 — 三千",
+  "几 — 多少 — 几 — 多少 — 几",
+  "这 件 衣服 多少 钱 — 能 便宜 一点儿 吗 — 苹果 八 块 一 斤 — 一共 二十二 块 — 我 要 两 斤 香蕉 — 这 个 有点儿 贵",
+  "Buku ini tiga puluh lima yuan. — Mahal sekali, kurangi sedikit dong. — Semuanya berapa? — Kembaliannya tujuh puluh delapan yuan. — Boleh pakai WeChat?",
+  "Duōshao qián? — Tài guì le! — Wǒ yào liǎng jīn. — Néng piányi yìdiǎnr ma? — Yígòng yìbǎi èrshí kuài.",
+  "Wǒ yào liǎng ge píngguǒ. — Zhège yǒudiǎnr guì. — Nǐ yào jǐ ge? — Zhè běn shū sānshíwǔ kuài, tài guì le. — Yìbǎi líng yī shì 101."
+ ],
+ "wave": "Ulangi Unit 2: ambil lima benda di sekitarmu, sebutkan namanya dengan kata penggolong yang benar, lalu karang harganya dalam yuan dan ucapkan keras-keras. Angka hanya menempel lewat mulut, tidak lewat mata."
+}

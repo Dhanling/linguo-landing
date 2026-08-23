@@ -1,0 +1,318 @@
+{
+ "title": "Menceritakan yang sudah terjadi",
+ "title_target": "你去过中国吗 — Nǐ qù guo Zhōngguó ma",
+ "goal": "Menguasai 了 dan 过 — dua kata kecil yang paling sering disalahpahami sebagai “bentuk lampau”, padahal keduanya sama sekali bukan itu — dan menyangkal kejadian dengan 没, bukan 不.",
+ "bekal": [
+  "menceritakan apa yang sudah kamu lakukan",
+  "membedakan 了 penyelesaian dari 了 perubahan",
+  "menyatakan pengalaman dengan 过",
+  "menyangkal dengan 没有 dan tahu kapan 了 harus hilang",
+  "membedakan 不 dari 没"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Kemarin ke mana?",
+   "intro": "Senin pagi. Wang Li menanyakan akhir pekan Andi. Perhatikan bahwa kata kerjanya tidak berubah bentuk sedikit pun — yang menandai waktunya adalah keterangan waktu, bukan kata kerjanya.",
+   "lines": [
+    { "speaker": "王丽:", "text": "[周末|Zhōumò][你|nǐ][做|zuò][什么|shénme][了|le]？", "id": "Akhir pekan kamu ngapain?", "literal": "minggu-ujung — kamu — melakukan — apa — sudah." },
+    { "speaker": "安迪:", "text": "[我|Wǒ][去|qù][长城|Chángchéng][了|le]。", "id": "Saya pergi ke Tembok Besar.", "literal": "saya — pergi — panjang-tembok — sudah." },
+    { "speaker": "王丽:", "text": "[真的|Zhēn de]？[你|Nǐ][跟|gēn][谁|shéi][一起|yìqǐ][去|qù][的|de]？", "id": "Benarkah? Kamu pergi dengan siapa?", "literal": "sungguh — punya. kamu — dengan — siapa — bersama — pergi — punya." },
+    { "speaker": "安迪:", "text": "[跟|Gēn][李明|Lǐ Míng]。[我们|Wǒmen][早上|zǎoshang][六|liù][点|diǎn][就|jiù][出发|chūfā][了|le]。", "id": "Dengan Li Ming. Kami berangkat jam enam pagi.", "literal": "dengan — Li Ming. kami — pagi — enam — jam — langsung — berangkat — sudah." },
+    { "speaker": "王丽:", "text": "[那么|Nàme][早|zǎo]！[人|Rén][多|duō][吗|ma]？", "id": "Sepagi itu! Ramai?", "literal": "sebegitu — pagi. orang — banyak — kah." },
+    { "speaker": "安迪:", "text": "[很|Hěn][多|duō]。[我们|Wǒmen][爬|pá][了|le][三|sān][个|ge][小时|xiǎoshí]。[太|Tài][累|lèi][了|le]！", "id": "Ramai sekali. Kami mendaki tiga jam. Capek sekali!", "literal": "penyangga — banyak. kami — mendaki — sudah — tiga — penggolong — jam. terlalu — capek — sudah." },
+    { "speaker": "王丽:", "text": "[你们|Nǐmen][吃|chī][午饭|wǔfàn][了|le][吗|ma]？", "id": "Kalian makan siang?", "literal": "kalian — makan — siang-nasi — sudah — kah." },
+    { "speaker": "安迪:", "text": "[没有|Méiyǒu]。[我们|Wǒmen][只|zhǐ][吃|chī][了|le][一|yí][点儿|diǎnr][面包|miànbāo]。", "id": "Tidak. Kami cuma makan sedikit roti.", "literal": "tidak-ada. kami — hanya — makan — sudah — satu — sedikit — roti." },
+    { "speaker": "王丽:", "text": "[你|Nǐ][以前|yǐqián][去|qù][过|guo][长城|Chángchéng][吗|ma]？", "id": "Kamu pernah ke Tembok Besar sebelumnya?", "literal": "kamu — dulu — pergi — pernah — panjang-tembok — kah." },
+    { "speaker": "安迪:", "text": "[没|Méi][去|qù][过|guo]。[这|Zhè][是|shì][第一|dì-yī][次|cì]。", "id": "Belum pernah. Ini yang pertama kali.", "literal": "tidak — pergi — pernah. ini — adalah — urutan-satu — kali." },
+    { "speaker": "王丽:", "text": "[怎么样|Zěnmeyàng]？[值得|Zhíde][吗|ma]？", "id": "Bagaimana? Sepadan?", "literal": "bagaimana. berharga — kah." },
+    { "speaker": "安迪:", "text": "[非常|Fēicháng][值得|zhíde]！[我|Wǒ][拍|pāi][了|le][两百|liǎngbǎi][多|duō][张|zhāng][照片|zhàopiàn]。", "id": "Sangat sepadan! Saya memotret lebih dari dua ratus foto.", "literal": "sangat — berharga. saya — memotret — sudah — dua-ratus — lebih — penggolong — foto." }
+   ],
+   "notes": [
+    "**⚠️ 了 BUKAN penanda bentuk lampau.** Kalimat [我明天去了公司就回家|Wǒ míngtiān qù le gōngsī jiù huí jiā] berbicara tentang **besok**, dan tetap memakai 了. Yang ditandai 了 adalah **selesainya** sebuah perbuatan atau **berubahnya** sebuah keadaan — kapan pun itu terjadi.",
+    "**Lalu bagaimana Mandarin menandai masa lampau? Dengan keterangan waktu.** [昨天|zuótiān], [上个星期|shàng ge xīngqī], [去年|qùnián], [以前|yǐqián]. Kata kerjanya sendiri tidak berubah sedikit pun — dan inilah kabar baik terbesar bagi pembelajar bahasa Mandarin.",
+    "**⚠️ Penyangkalan kejadian memakai [没有|méiyǒu] atau [没|méi], dan 了 HILANG.** [我吃了|Wǒ chī le] saya sudah makan → [我没吃|Wǒ méi chī] saya belum makan. Bukan 我没吃了. Ini kesalahan yang hampir semua pemula lakukan berulang kali.",
+    "**[过|guo] menyatakan pengalaman: pernah, sekali seumur hidup.** [我去过中国|Wǒ qù guo Zhōngguó] saya pernah ke Tiongkok. Negatifnya [没去过|méi qù guo] belum pernah. ⚠️ Perhatikan: 过 di sini dibaca ringan tanpa nada.",
+    "**Bedanya 了 dan 过 dalam satu kalimat:** [我去了中国|Wǒ qù le Zhōngguó] = saya sudah berangkat ke Tiongkok (mungkin masih di sana). [我去过中国|Wǒ qù guo Zhōngguó] = saya pernah ke Tiongkok (sudah kembali, tinggal pengalamannya).",
+    "**[是…的|shì… de] menyoroti keterangan sebuah kejadian yang sudah pasti terjadi.** [你跟谁一起去的|Nǐ gēn shéi yìqǐ qù de]？ menanyakan **dengan siapa** — bukan apakah ia pergi. Bentuk ini akan terus kamu dengar; kenali dulu polanya.",
+    "**Lamanya waktu berdiri SESUDAH kata kerja.** [我们爬了三个小时|Wǒmen pá le sān ge xiǎoshí] kami mendaki selama tiga jam. ⚠️ Jangan tertukar dengan **kapan**, yang berdiri di depan kata kerja.",
+    "**[第一次|dì-yī cì] = kali pertama.** [第|dì] membuat angka jadi urutan: [第二|dì-èr] kedua, [第三|dì-sān] ketiga."
+   ],
+   "grammars": [
+    {
+     "title": "Dua tugas 了",
+     "body": [
+      "Bahasa Mandarin punya dua 了 yang berbeda, dan keduanya ditulis dengan aksara yang sama. Yang membedakan adalah **tempatnya berdiri**."
+     ],
+     "tables": [
+      {
+       "head": ["", "了 penyelesaian", "了 perubahan"],
+       "rows": [
+        ["**Tempatnya**", "Langsung sesudah kata kerja", "Di ujung kalimat"],
+        ["**Artinya**", "Perbuatan itu **selesai**", "Keadaan **berubah** — dulu tidak begitu, sekarang begitu"],
+        ["**Contoh**", "[我买了一本书|Wǒ mǎi le yì běn shū]。", "[下雨了|Xià yǔ le]。"],
+        ["**Terjemahan**", "Saya sudah membeli sebuah buku.", "Hujan (padahal tadi tidak)."],
+        ["**Contoh lain**", "[他喝了三杯咖啡|Tā hē le sān bēi kāfēi]。", "[我饿了|Wǒ è le]。 Saya jadi lapar."],
+        ["", "[我看了那个电影|Wǒ kàn le nàge diànyǐng]。", "[他退休了|Tā tuìxiū le]。 Dia sudah pensiun."]
+       ]
+      },
+      {
+       "head": ["Kalimat", "Artinya"],
+       "rows": [
+        ["[我吃饭了|Wǒ chī fàn le]。", "Saya sudah makan. — keadaan berubah dari lapar ke kenyang"],
+        ["[我吃了饭|Wǒ chī le fàn]。", "Saya sudah makan (dan akan lanjut ke hal berikutnya)"],
+        ["[我吃了三碗饭|Wǒ chī le sān wǎn fàn]。", "Saya makan tiga mangkuk nasi. — jumlahnya jelas, 了 penyelesaian"],
+        ["[我不吃了|Wǒ bù chī le]。", "Saya tidak jadi makan. — 了 perubahan; perhatikan 不, bukan 没"],
+        ["[太贵了|Tài guì le]！", "Terlalu mahal! — 了 di sini bagian dari pola 太…了"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **Jangan memasang 了 di setiap kalimat lampau.** Kalimat yang menceritakan kebiasaan dulu, keadaan, atau latar belakang **tidak memakai 了** sama sekali: [我小时候住在雅加达|Wǒ xiǎo shíhou zhù zài Yǎjiādá] “waktu kecil saya tinggal di Jakarta”. Tidak ada 了 di situ, dan kalimatnya tetap tentang masa lalu.",
+      "Rumus praktisnya: **kalau kamu bisa menambahkan “sudah” dalam bahasa Indonesia tanpa mengubah maksudnya, kemungkinan besar 了 tepat.** Kalau tidak bisa, jangan pasang."
+     ]
+    },
+    {
+     "title": "不 dan 没 — dua penyangkalan",
+     "tables": [
+      {
+       "head": ["", "[不|bù]", "[没|méi]"],
+       "rows": [
+        ["**Dipakai untuk**", "Kemauan, kebiasaan, keadaan, masa depan", "Kejadian yang **belum atau tidak terjadi**"],
+        ["**Waktu**", "Sekarang, selalu, nanti", "Masa lalu"],
+        ["**Contoh**", "[我不喝酒|Wǒ bù hē jiǔ]。 Saya tidak minum alkohol.", "[我没喝酒|Wǒ méi hē jiǔ]。 Saya tidak (belum) minum alkohol."],
+        ["**Bedanya**", "Kebiasaan saya begitu", "Kemarin kebetulan tidak"],
+        ["**Dengan 是**", "[不是|bú shì]", "⚠️ tidak pernah 没是"],
+        ["**Dengan 有**", "⚠️ tidak pernah 不有", "[没有|méiyǒu]"],
+        ["**Dengan 了**", "[不…了|bù… le] tidak jadi", "⚠️ 没 dan 了 tidak boleh bertemu"]
+       ]
+      }
+     ],
+     "after": [
+      "Tiga aturan yang menyelesaikan sebagian besar keraguan: **有 selalu 没有. 是 selalu 不是. Kejadian yang tidak terjadi selalu 没.**",
+      "⚠️ [我没去了|Wǒ méi qù le] salah dalam bentuk apa pun. Yang benar [我没去|Wǒ méi qù]."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Pengalaman",
+   "intro": "Li Ming bertanya tentang pengalaman Andi selama di Tiongkok. Perhatikan bagaimana 过 dan 了 dipakai bergantian dalam percakapan yang sama.",
+   "lines": [
+    { "speaker": "李明:", "text": "[你|Nǐ][来|lái][中国|Zhōngguó][多久|duō jiǔ][了|le]？", "id": "Kamu sudah berapa lama di Tiongkok?", "literal": "kamu — datang — Tiongkok — berapa — lama — sudah." },
+    { "speaker": "安迪:", "text": "[三|Sān][个|ge][月|yuè][了|le]。[时间|Shíjiān][过|guò][得|de][真|zhēn][快|kuài]。", "id": "Sudah tiga bulan. Waktu berjalan cepat sekali.", "literal": "tiga — penggolong — bulan — sudah. waktu — lewat — penanda — sungguh — cepat." },
+    { "speaker": "李明:", "text": "[你|Nǐ][吃|chī][过|guo][北京烤鸭|Běijīng kǎoyā][吗|ma]？", "id": "Kamu pernah makan bebek panggang Beijing?", "literal": "kamu — makan — pernah — Beijing — panggang-bebek — kah." },
+    { "speaker": "安迪:", "text": "[吃|Chī][过|guo][一|yí][次|cì]。[上|Shàng][个|ge][月|yuè][跟|gēn][同事|tóngshì][一起|yìqǐ][去|qù][的|de]。", "id": "Pernah sekali. Bulan lalu pergi dengan rekan kerja.", "literal": "makan — pernah — satu — kali. atas — penggolong — bulan — dengan — rekan — bersama — pergi — punya." },
+    { "speaker": "李明:", "text": "[好吃|Hǎochī][吗|ma]？", "id": "Enak?", "literal": "enak-makan — kah." },
+    { "speaker": "安迪:", "text": "[很|Hěn][好吃|hǎochī]，[但是|dànshì][有点儿|yǒudiǎnr][油|yóu]。[我|Wǒ][吃|chī][了|le][半|bàn][只|zhī][就|jiù][饱|bǎo][了|le]。", "id": "Enak, tapi agak berminyak. Saya makan setengah ekor sudah kenyang.", "literal": "penyangga — enak-makan, tetapi — ada-sedikit — minyak. saya — makan — sudah — setengah — penggolong — langsung — kenyang — sudah." },
+    { "speaker": "李明:", "text": "[你|Nǐ][坐|zuò][过|guo][高铁|gāotiě][吗|ma]？", "id": "Kamu pernah naik kereta cepat?", "literal": "kamu — duduk — pernah — tinggi-rel — kah." },
+    { "speaker": "安迪:", "text": "[还|Hái][没有|méiyǒu]。[但是|Dànshì][下|xià][个|ge][月|yuè][我|wǒ][要|yào][去|qù][上海|Shànghǎi]。", "id": "Belum. Tapi bulan depan saya mau ke Shanghai.", "literal": "masih — tidak-ada. tetapi — bawah — penggolong — bulan — saya — akan — pergi — Shanghai." },
+    { "speaker": "李明:", "text": "[那|Nà][你|nǐ][一定|yídìng][要|yào][坐|zuò][高铁|gāotiě]！[五|Wǔ][个|ge][小时|xiǎoshí][就|jiù][到|dào][了|le]。", "id": "Kalau begitu kamu harus naik kereta cepat! Lima jam sudah sampai.", "literal": "itu — kamu — pasti — harus — duduk — tinggi-rel. lima — penggolong — jam — langsung — sampai — sudah." },
+    { "speaker": "安迪:", "text": "[票|Piào][贵|guì][吗|ma]？[我|Wǒ][还|hái][没|méi][买|mǎi][票|piào]。", "id": "Tiketnya mahal? Saya belum beli tiket.", "literal": "tiket — mahal — kah. saya — masih — tidak — beli — tiket." },
+    { "speaker": "李明:", "text": "[不|Bù][便宜|piányi]，[但是|dànshì][值得|zhíde]。[我|Wǒ][帮|bāng][你|nǐ][订|dìng][吧|ba]。", "id": "Tidak murah, tapi sepadan. Saya bantu pesankan, ya.", "literal": "tidak — murah, tetapi — berharga. saya — bantu — kamu — memesan — ya." }
+   ],
+   "notes": [
+    "**[多久了|duō jiǔ le]？ = “sudah berapa lama?”** 了 di ujung menandai bahwa keadaannya masih berlanjut sampai sekarang. Jawabannya juga memakai 了: [三个月了|Sān ge yuè le] sudah tiga bulan.",
+    "**⚠️ [过|guò] bernada keempat berarti “melewati”, [过|guo] tanpa nada adalah penanda pengalaman.** Aksaranya sama. [时间过得真快|Shíjiān guò de zhēn kuài] memakai yang pertama; [吃过|chī guo] memakai yang kedua.",
+    "**[还没有|hái méiyǒu] = “belum”.** Jauh lebih halus daripada [没有|méiyǒu] saja, karena 还 menyiratkan “tapi mungkin nanti”. Untuk pertanyaan seperti “sudah menikah?” atau “sudah pernah ke sana?”, inilah jawaban yang wajar.",
+    "**[就|jiù] menandakan “baru … saja sudah …”** — lebih cepat, lebih sedikit, lebih mudah dari yang diperkirakan. [吃了半只就饱了|chī le bàn zhī jiù bǎo le] baru makan setengah sudah kenyang; [五个小时就到了|wǔ ge xiǎoshí jiù dào le] lima jam saja sudah sampai.",
+    "**[只|zhī] adalah kata penggolong untuk hewan** — juga untuk unggas yang sudah jadi masakan: [半只鸭子|bàn zhī yāzi] setengah ekor bebek.",
+    "**[高铁|gāotiě] = kereta cepat**, singkatan dari 高速铁路 “rel berkecepatan tinggi”. Jaringannya adalah yang terbesar di dunia, dan naik kereta cepat adalah pengalaman yang hampir selalu direkomendasikan orang Tiongkok kepada tamunya.",
+    "**[值得|zhíde] = sepadan, layak.** [值得去|zhíde qù] layak dikunjungi, [不值得|bù zhíde] tidak sepadan."
+   ],
+   "grammars": [
+    {
+     "title": "Menceritakan kejadian — rangka lengkapnya",
+     "tables": [
+      {
+       "head": ["Maksud", "Pola", "Contoh"],
+       "rows": [
+        ["Sudah melakukan", "kata kerja + 了", "[我买了票|Wǒ mǎi le piào]。"],
+        ["Belum melakukan", "没(有) + kata kerja", "[我没买票|Wǒ méi mǎi piào]。"],
+        ["Belum, tapi mungkin nanti", "还没(有) + kata kerja", "[我还没买票|Wǒ hái méi mǎi piào]。"],
+        ["Pernah mengalami", "kata kerja + 过", "[我坐过高铁|Wǒ zuò guo gāotiě]。"],
+        ["Belum pernah", "没 + kata kerja + 过", "[我没坐过高铁|Wǒ méi zuò guo gāotiě]。"],
+        ["Berapa kali", "kata kerja + 过 + angka + 次", "[我去过两次|Wǒ qù guo liǎng cì]。"],
+        ["Bertanya sudah belum", "… 了吗？ / … 了没有？", "[你吃了吗|Nǐ chī le ma]？"],
+        ["Jawab ya", "[吃了|Chī le]。", "—"],
+        ["Jawab belum", "[还没有|Hái méiyǒu]。", "—"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **Pertanyaan “sudah makan?” di Tiongkok sering bukan pertanyaan sungguhan** — ia sapaan, seperti “apa kabar”. Jawaban [吃了|Chī le]。 sudah cukup, dan tidak berarti kamu menolak ajakan makan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Keterangan waktu masa lalu",
+   "blocks": [
+    { "type": "p", "text": "Karena kata kerja Mandarin tidak berubah bentuk, seluruh beban penanda waktu jatuh pada kata-kata berikut. Menguasainya berarti menguasai cara Mandarin bercerita." },
+    { "type": "tabel", "head": ["Mandarin", "Arti", "Contoh"], "rows": [
+      ["[昨天|zuótiān]", "kemarin", "[昨天我去了公园|Zuótiān wǒ qù le gōngyuán]。"],
+      ["[前天|qiántiān]", "kemarin dulu", "[前天下雨了|Qiántiān xià yǔ le]。"],
+      ["[上个星期|shàng ge xīngqī]", "minggu lalu", "[上个星期我很忙|Shàng ge xīngqī wǒ hěn máng]。"],
+      ["[上个月|shàng ge yuè]", "bulan lalu", "[上个月我去了上海|Shàng ge yuè wǒ qù le Shànghǎi]。"],
+      ["[去年|qùnián]", "tahun lalu", "[去年我开始学中文|Qùnián wǒ kāishǐ xué Zhōngwén]。"],
+      ["[以前|yǐqián]", "dulu, sebelumnya", "[以前我不喜欢辣的|Yǐqián wǒ bù xǐhuan là de]。"],
+      ["[刚才|gāngcái]", "barusan", "[他刚才走了|Tā gāngcái zǒu le]。"],
+      ["[刚|gāng]", "baru saja", "[我刚吃完|Wǒ gāng chī wán]。"],
+      ["[小时候|xiǎo shíhou]", "waktu kecil", "[小时候我住在雅加达|Xiǎo shíhou wǒ zhù zài Yǎjiādá]。"],
+      ["[后来|hòulái]", "kemudian, setelah itu", "[后来他去了美国|Hòulái tā qù le Měiguó]。"],
+      ["[那时候|nà shíhou]", "waktu itu", "[那时候我还是学生|Nà shíhou wǒ hái shì xuésheng]。"]
+    ]},
+    { "type": "kotak", "title": "Menyusun cerita", "items": [
+      "**Mulai dengan waktu:** [上个星期天|Shàng ge xīngqītiān]…",
+      "**Lanjutkan dengan urutan:** [先|xiān] pertama-tama · [然后|ránhòu] lalu · [后来|hòulái] setelah itu · [最后|zuìhòu] akhirnya.",
+      "**Beri penilaian di akhir:** [真的很有意思|Zhēn de hěn yǒu yìsi]。 atau [下次我还想去|Xià cì wǒ hái xiǎng qù]。",
+      "Contoh utuh: [上个星期天我跟朋友去了长城。我们早上六点出发，爬了三个小时。后来我们在山下吃了午饭。真的很累，但是很值得|Shàng ge xīngqītiān wǒ gēn péngyou qù le Chángchéng. Wǒmen zǎoshang liù diǎn chūfā, pá le sān ge xiǎoshí. Hòulái wǒmen zài shān xià chī le wǔfàn. Zhēn de hěn lèi, dànshì hěn zhíde]。",
+      "Perhatikan: dalam cerita sepanjang itu, 了 muncul empat kali saja — bukan di setiap kata kerja."
+    ]}
+   ]
+  },
+  {
+   "title": "Tempat yang layak diceritakan",
+   "blocks": [
+    { "type": "tabel", "head": ["Tempat", "Mandarin", "Di mana"], "rows": [
+      ["Tembok Besar", "[长城|Chángchéng]", "Beijing"],
+      ["Kota Terlarang", "[故宫|Gùgōng]", "Beijing"],
+      ["Lapangan Tiananmen", "[天安门|Tiān'ānmén]", "Beijing"],
+      ["Istana Musim Panas", "[颐和园|Yíhéyuán]", "Beijing"],
+      ["Prajurit Terakota", "[兵马俑|Bīngmǎyǒng]", "Xi'an"],
+      ["Bund", "[外滩|Wàitān]", "Shanghai"],
+      ["Sungai Li", "[漓江|Líjiāng]", "Guilin"],
+      ["Gunung Huang", "[黄山|Huángshān]", "Anhui"],
+      ["Kebun panda", "[熊猫基地|Xióngmāo Jīdì]", "Chengdu"],
+      ["Danau Barat", "[西湖|Xīhú]", "Hangzhou"]
+    ]},
+    { "type": "kotak", "title": "Kalimat untuk bercerita tentang perjalanan", "items": [
+      "[我去过…|Wǒ qù guo…] — Saya pernah ke …",
+      "[我在…住了三天|Wǒ zài… zhù le sān tiān]。 — Saya menginap tiga hari di …",
+      "[那儿的风景很美|Nàr de fēngjǐng hěn měi]。 — Pemandangan di sana indah.",
+      "[人太多了|Rén tài duō le]。 — Orangnya terlalu banyak.",
+      "[值得去|Zhíde qù]。 / [不太值得|Bú tài zhíde]。 — Layak dikunjungi. / Kurang sepadan.",
+      "[下次我还想去|Xià cì wǒ hái xiǎng qù]。 — Lain kali saya ingin ke sana lagi."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "了", "baca": "le", "id": "penanda selesai / berubah" },
+  { "zh": "过", "baca": "guo", "id": "penanda pernah" },
+  { "zh": "没有", "baca": "méiyǒu", "id": "tidak, belum" },
+  { "zh": "还没有", "baca": "hái méiyǒu", "id": "belum" },
+  { "zh": "昨天", "baca": "zuótiān", "id": "kemarin" },
+  { "zh": "前天", "baca": "qiántiān", "id": "kemarin dulu" },
+  { "zh": "上个星期", "baca": "shàng ge xīngqī", "id": "minggu lalu" },
+  { "zh": "上个月", "baca": "shàng ge yuè", "id": "bulan lalu" },
+  { "zh": "去年", "baca": "qùnián", "id": "tahun lalu" },
+  { "zh": "刚才", "baca": "gāngcái", "id": "barusan" },
+  { "zh": "刚", "baca": "gāng", "id": "baru saja" },
+  { "zh": "小时候", "baca": "xiǎo shíhou", "id": "waktu kecil" },
+  { "zh": "后来", "baca": "hòulái", "id": "setelah itu" },
+  { "zh": "那时候", "baca": "nà shíhou", "id": "waktu itu" },
+  { "zh": "先", "baca": "xiān", "id": "lebih dulu" },
+  { "zh": "最后", "baca": "zuìhòu", "id": "akhirnya" },
+  { "zh": "小时", "baca": "xiǎoshí", "id": "jam (lamanya)" },
+  { "zh": "多久", "baca": "duō jiǔ", "id": "berapa lama" },
+  { "zh": "第一次", "baca": "dì-yī cì", "id": "kali pertama" },
+  { "zh": "出发", "baca": "chūfā", "id": "berangkat" },
+  { "zh": "到", "baca": "dào", "id": "sampai, tiba" },
+  { "zh": "爬", "baca": "pá", "id": "mendaki, memanjat" },
+  { "zh": "拍照", "baca": "pāi zhào", "id": "memotret" },
+  { "zh": "值得", "baca": "zhíde", "id": "sepadan, layak" },
+  { "zh": "只", "baca": "zhǐ", "id": "hanya" },
+  { "zh": "就", "baca": "jiù", "id": "langsung, saja sudah" },
+  { "zh": "订", "baca": "dìng", "id": "memesan" },
+  { "zh": "票", "baca": "piào", "id": "tiket" },
+  { "zh": "高铁", "baca": "gāotiě", "id": "kereta cepat" },
+  { "zh": "长城", "baca": "Chángchéng", "id": "Tembok Besar" },
+  { "zh": "故宫", "baca": "Gùgōng", "id": "Kota Terlarang" },
+  { "zh": "烤鸭", "baca": "kǎoyā", "id": "bebek panggang" },
+  { "zh": "面包", "baca": "miànbāo", "id": "roti" },
+  { "zh": "风景", "baca": "fēngjǐng", "id": "pemandangan" },
+  { "zh": "美", "baca": "měi", "id": "indah" },
+  { "zh": "时间", "baca": "shíjiān", "id": "waktu" },
+  { "zh": "开始", "baca": "kāishǐ", "id": "mulai" },
+  { "zh": "结束", "baca": "jiéshù", "id": "selesai, berakhir" },
+  { "zh": "完", "baca": "wán", "id": "habis, selesai" },
+  { "zh": "真的", "baca": "zhēn de", "id": "sungguh, benar" },
+  { "zh": "山", "baca": "shān", "id": "gunung" },
+  { "zh": "旅行", "baca": "lǚxíng", "id": "bepergian" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan 了, 过, atau 没.",
+   "items": [
+    "[我昨天去|Wǒ zuótiān qù] ___ [长城|Chángchéng]。",
+    "[我|Wǒ] ___ [吃早饭，现在很饿|chī zǎofàn, xiànzài hěn è]。",
+    "[你去|Nǐ qù] ___ [中国吗|Zhōngguó ma]？",
+    "[下雨|Xià yǔ] ___，[带伞吧|dài sǎn ba]。",
+    "[我还|Wǒ hái] ___ [买票|mǎi piào]。",
+    "[我坐|Wǒ zuò] ___ [两次高铁|liǎng cì gāotiě]。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 不 atau 没.",
+   "items": [
+    "[我|Wǒ] ___ [喝酒，我从来不喝|hē jiǔ, wǒ cónglái bù hē]。",
+    "[昨天我|Zuótiān wǒ] ___ [去上班|qù shàng bān]。",
+    "[我|Wǒ] ___ [有钱|yǒu qián]。",
+    "[他|Tā] ___ [是老师，他是医生|shì lǎoshī, tā shì yīshēng]。",
+    "[我今天|Wǒ jīntiān] ___ [想出去|xiǎng chūqù]。"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "我 / 昨天 / 去 / 了 / 公园",
+    "你 / 吃 / 过 / 北京 / 烤鸭 / 吗",
+    "我 / 还 / 没 / 买 / 票",
+    "我们 / 爬 / 了 / 三 / 个 / 小时",
+    "他 / 刚才 / 走 / 了",
+    "我 / 没 / 坐 / 过 / 高铁"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[上个月我去了上海|Shàng ge yuè wǒ qù le Shànghǎi]。",
+    "[你来中国多久了|Nǐ lái Zhōngguó duō jiǔ le]？",
+    "[我没去过故宫|Wǒ méi qù guo Gùgōng]。",
+    "[我吃了半只就饱了|Wǒ chī le bàn zhī jiù bǎo le]。",
+    "[小时候我住在雅加达|Xiǎo shíhou wǒ zhù zài Yǎjiādá]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Kemarin saya pergi ke rumah sakit.",
+    "Kamu pernah ke Tiongkok?",
+    "Saya belum makan.",
+    "Sudah hujan.",
+    "Saya sudah tiga bulan di sini."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[我没去了|Wǒ méi qù le]。",
+    "[昨天我不去上班|Zuótiān wǒ bú qù shàng bān]。",
+    "[我不有票|Wǒ bù yǒu piào]。",
+    "[小时候我住了在雅加达|Xiǎo shíhou wǒ zhù le zài Yǎjiādá]。",
+    "[我去了过中国|Wǒ qù le guo Zhōngguó]。"
+   ]
+  }
+ ],
+ "answers": [
+  "了 — 没 — 过 — 了 — 没 — 过",
+  "不 — 没 — 没 — 不 — 不",
+  "我 昨天 去 了 公园 — 你 吃 过 北京 烤鸭 吗 — 我 还 没 买 票 — 我们 爬 了 三 个 小时 — 他 刚才 走 了 — 我 没 坐 过 高铁",
+  "Bulan lalu saya pergi ke Shanghai. — Kamu sudah berapa lama di Tiongkok? — Saya belum pernah ke Kota Terlarang. — Saya makan setengah ekor sudah kenyang. — Waktu kecil saya tinggal di Jakarta.",
+  "Zuótiān wǒ qù le yīyuàn. — Nǐ qù guo Zhōngguó ma? — Wǒ méi chī fàn. — Xià yǔ le. — Wǒ lái zhèr sān ge yuè le.",
+  "Wǒ méi qù. — Zuótiān wǒ méi qù shàng bān. — Wǒ méiyǒu piào. — Xiǎo shíhou wǒ zhù zài Yǎjiādá. — Wǒ qù guo Zhōngguó."
+ ],
+ "wave": "Ulangi Unit 9: ceritakan akhir pekanmu yang lalu dalam delapan kalimat, memakai 先, 然后, 后来, 最后. Lalu hitung berapa kali kamu memakai 了 — kalau lebih dari empat, kemungkinan besar ada yang berlebihan."
+}

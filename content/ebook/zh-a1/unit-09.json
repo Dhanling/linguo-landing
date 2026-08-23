@@ -1,0 +1,318 @@
+{
+ "title": "Mengajak, meminta, dan meminta izin",
+ "title_target": "一起去吧 — Yìqǐ qù ba",
+ "goal": "Membedakan 会, 能, dan 可以 yang ketiganya diterjemahkan “bisa”; menyatakan keinginan dengan 想 dan 要; serta mengajak, meminta tolong, dan menolak dengan sopan.",
+ "bekal": [
+  "memakai 会, 能, 可以 di tempat masing-masing",
+  "membedakan 想 (ingin) dari 要 (mau, akan)",
+  "mengajak dengan 吧 dan 我们一起…",
+  "meminta tolong dengan 请 dan 帮",
+  "menolak tanpa menyinggung"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Mengajak makan",
+   "intro": "Li Ming mengajak Andi dan Wang Li makan malam. Perhatikan tiga kata berbeda yang semuanya berarti “bisa” dalam bahasa Indonesia.",
+   "lines": [
+    { "speaker": "李明:", "text": "[晚上|Wǎnshang][我们|wǒmen][一起|yìqǐ][吃饭|chī fàn][吧|ba]！", "id": "Malam ini kita makan bareng, yuk!", "literal": "malam — kita — bersama — makan — nasi — ya." },
+    { "speaker": "王丽:", "text": "[好啊|Hǎo a]！[去|Qù][哪儿|nǎr][吃|chī]？", "id": "Boleh! Makan di mana?", "literal": "baik — ya. pergi — mana — makan." },
+    { "speaker": "李明:", "text": "[学校|Xuéxiào][旁边|pángbiān][有|yǒu][一|yì][家|jiā][新|xīn][饭馆|fànguǎn]，[听说|tīngshuō][不错|búcuò]。", "id": "Di sebelah sekolah ada rumah makan baru, katanya lumayan.", "literal": "sekolah — sebelah — ada — satu — penggolong — baru — rumah-makan, dengar-kata — tidak — salah." },
+    { "speaker": "安迪:", "text": "[对不起|Duìbuqǐ]，[我|wǒ][今天|jīntiān][不|bù][能|néng][去|qù]。[我|Wǒ][有|yǒu][课|kè]。", "id": "Maaf, hari ini saya tidak bisa pergi. Saya ada kelas.", "literal": "maaf, saya — hari-ini — tidak — bisa — pergi. saya — ada — pelajaran." },
+    { "speaker": "李明:", "text": "[几|Jǐ][点|diǎn][下课|xià kè]？[我们|Wǒmen][可以|kěyǐ][等|děng][你|nǐ]。", "id": "Jam berapa kelasmu selesai? Kami bisa menunggumu.", "literal": "berapa — jam — turun — pelajaran. kami — boleh — menunggu — kamu." },
+    { "speaker": "安迪:", "text": "[八|Bā][点|diǎn]。[太|Tài][晚|wǎn][了|le][吧|ba]？", "id": "Jam delapan. Terlalu malam, ya?", "literal": "delapan — jam. terlalu — malam — sudah — kan." },
+    { "speaker": "王丽:", "text": "[不|Bù][晚|wǎn]。[那|Nà][家|jiā][饭馆|fànguǎn][开|kāi][到|dào][十|shí][点|diǎn]。", "id": "Tidak malam. Rumah makan itu buka sampai jam sepuluh.", "literal": "tidak — malam. itu — penggolong — rumah-makan — buka — sampai — sepuluh — jam." },
+    { "speaker": "安迪:", "text": "[那|Nà][好|hǎo][吧|ba]。[我|Wǒ][下课|xià kè][以后|yǐhòu][给|gěi][你们|nǐmen][打|dǎ][电话|diànhuà]。", "id": "Kalau begitu baiklah. Setelah kelas saya telepon kalian.", "literal": "itu — baik — ya. saya — turun — pelajaran — sesudah — kepada — kalian — memukul — telepon." },
+    { "speaker": "李明:", "text": "[你|Nǐ][能|néng][吃|chī][辣|là][的|de][吗|ma]？[那|Nà][家|jiā][是|shì][四川菜|Sìchuān cài]。", "id": "Kamu kuat pedas? Rumah makan itu masakan Sichuan.", "literal": "kamu — bisa — makan — pedas — punya — kah. itu — penggolong — adalah — Sichuan — lauk." },
+    { "speaker": "安迪:", "text": "[能|Néng]，[但是|dànshì][不|bù][能|néng][吃|chī][太|tài][辣|là][的|de]。", "id": "Bisa, tapi tidak kuat yang terlalu pedas.", "literal": "bisa, tetapi — tidak — bisa — makan — terlalu — pedas — punya." },
+    { "speaker": "王丽:", "text": "[没问题|Méi wèntí]，[可以|kěyǐ][点|diǎn][不|bú][辣|là][的|de][菜|cài]。", "id": "Tidak masalah, bisa pesan masakan yang tidak pedas.", "literal": "tidak — masalah, boleh — memesan — tidak — pedas — punya — lauk." }
+   ],
+   "notes": [
+    "**[吧|ba] mengubah pernyataan jadi ajakan.** [我们一起吃饭吧|Wǒmen yìqǐ chī fàn ba]！ = ayo kita makan bareng. Tanpa 吧, kalimat yang sama terdengar seperti pemberitahuan.",
+    "**⚠️ [不能|bù néng] = tidak bisa karena keadaan; [不会|bú huì] = tidak bisa karena belum belajar.** [我不能去|Wǒ bù néng qù] saya tidak bisa pergi (ada halangan); [我不会开车|Wǒ bú huì kāi chē] saya tidak bisa menyetir (belum pernah belajar). Menukarnya mengubah arti sepenuhnya.",
+    "**[可以|kěyǐ] menyatakan izin atau kemungkinan.** [我们可以等你|Wǒmen kěyǐ děng nǐ] kami bisa (tidak keberatan) menunggumu; [可以坐这儿吗|Kěyǐ zuò zhèr ma]？ boleh duduk di sini?",
+    "**[不错|búcuò] harfiah “tidak salah”, artinya “lumayan bagus”.** Salah satu pujian yang paling sering dipakai orang Tiongkok — lebih hangat daripada bunyinya.",
+    "**[家|jiā] adalah kata penggolong untuk tempat usaha**: rumah makan, toko, perusahaan, hotel. [一家饭馆|yì jiā fànguǎn], [两家公司|liǎng jiā gōngsī].",
+    "**Sifat + [的|de] menggantikan kata benda yang sudah jelas.** [辣的|là de] = yang pedas, [不辣的|bú là de] = yang tidak pedas, [贵的|guì de] = yang mahal. Bentuk ini sangat sering dipakai saat memesan makanan atau berbelanja.",
+    "**[下课以后|xià kè yǐhòu] = sesudah kelas.** ⚠️ Urutannya kebalikan dari bahasa Indonesia: kejadiannya dulu, baru 以后. Begitu juga [吃饭以前|chī fàn yǐqián] sebelum makan."
+   ],
+   "grammars": [
+    {
+     "title": "会, 能, 可以 — tiga “bisa” yang berbeda",
+     "body": [
+      "Ini salah satu titik tersulit bagi penutur bahasa Indonesia, karena bahasa kita memakai satu kata untuk ketiganya. Bedakan berdasarkan **sebab** kemampuan itu ada atau tidak ada."
+     ],
+     "tables": [
+      {
+       "head": ["Kata", "Sebabnya", "Contoh", "Arti"],
+       "rows": [
+        ["[会|huì]", "Sudah **dipelajari**, jadi keterampilan", "[我会说中文|Wǒ huì shuō Zhōngwén]。", "Saya bisa berbahasa Mandarin."],
+        ["[能|néng]", "**Keadaan** mengizinkan: waktu, tenaga, kesehatan, kesempatan", "[我今天不能来|Wǒ jīntiān bù néng lái]。", "Hari ini saya tidak bisa datang."],
+        ["[可以|kěyǐ]", "**Izin** dari orang lain atau aturan", "[可以进来吗|Kěyǐ jìnlái ma]？", "Boleh masuk?"],
+        ["[会|huì]", "Juga: kemungkinan di masa depan", "[明天会下雨|Míngtiān huì xià yǔ]。", "Besok akan hujan."],
+        ["[能|néng]", "Juga: mencapai batas kemampuan", "[我能吃三碗|Wǒ néng chī sān wǎn]。", "Saya sanggup makan tiga mangkuk."]
+       ]
+      },
+      {
+       "head": ["Kalimat Indonesia", "Yang benar", "Sebabnya"],
+       "rows": [
+        ["Saya bisa menyetir.", "[我会开车|Wǒ huì kāi chē]。", "Keterampilan yang dipelajari"],
+        ["Hari ini saya tidak bisa menyetir (mabuk).", "[今天我不能开车|Jīntiān wǒ bù néng kāi chē]。", "Keadaan menghalangi"],
+        ["Di sini boleh menyetir?", "[这儿可以开车吗|Zhèr kěyǐ kāi chē ma]？", "Aturan, izin"],
+        ["Saya tidak bisa berenang.", "[我不会游泳|Wǒ bú huì yóu yǒng]。", "Belum pernah belajar"],
+        ["Saya tidak bisa berenang hari ini (flu).", "[今天我不能游泳|Jīntiān wǒ bù néng yóu yǒng]。", "Keadaan badan"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ Untuk **menolak izin**, yang dipakai bukan 不可以 melainkan [不能|bù néng] atau [不行|bù xíng]. 不可以 terdengar keras, seperti melarang anak kecil.",
+      "Jawaban singkat mengikuti kata yang ditanyakan: [你会吗|Nǐ huì ma]？ → [会|Huì]。 [你能吗|Nǐ néng ma]？ → [能|Néng]。 [可以吗|Kěyǐ ma]？ → [可以|Kěyǐ]。"
+     ]
+    },
+    {
+     "title": "想 dan 要 — ingin dan mau",
+     "tables": [
+      {
+       "head": ["Kata", "Nuansa", "Contoh"],
+       "rows": [
+        ["[想|xiǎng]", "Ingin, kepingin — lembut, belum tentu dilakukan", "[我想去中国|Wǒ xiǎng qù Zhōngguó]。 Saya ingin ke Tiongkok."],
+        ["[要|yào]", "Mau, hendak — tegas, sudah diputuskan", "[我要去中国|Wǒ yào qù Zhōngguó]。 Saya mau ke Tiongkok."],
+        ["[要|yào]", "Juga: memesan, meminta barang", "[我要一杯茶|Wǒ yào yì bēi chá]。 Saya mau satu teh."],
+        ["[要|yào]", "Juga: akan segera terjadi", "[要下雨了|Yào xià yǔ le]。 Sebentar lagi hujan."],
+        ["[想要|xiǎngyào]", "Gabungan — “ingin punya”", "[我想要一个新手机|Wǒ xiǎngyào yí ge xīn shǒujī]。"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **Sangkalan 要 bukan 不要, melainkan 不想.** [我不想去|Wǒ bù xiǎng qù] = saya tidak ingin pergi. [我不要去|Wǒ bú yào qù] terdengar seperti anak kecil merajuk atau penolakan yang keras.",
+      "⚠️ [不要|bú yào] di depan kata kerja berarti **“jangan”**, bukan “tidak mau”: [不要走|Bú yào zǒu] jangan pergi. Sinonim yang lebih pendek: [别|bié]."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Minta tolong",
+   "intro": "Andi butuh bantuan Wang Li. Perhatikan bahwa setiap permintaan dibungkus dulu — orang Tiongkok jarang meminta secara langsung tanpa pengantar.",
+   "lines": [
+    { "speaker": "安迪:", "text": "[王丽|Wáng Lì]，[你|nǐ][现在|xiànzài][有空|yǒu kòng][吗|ma]？", "id": "Wang Li, sekarang kamu ada waktu?", "literal": "Wang Li, kamu — sekarang — ada — luang — kah." },
+    { "speaker": "王丽:", "text": "[有|Yǒu]，[什么|shénme][事|shì]？", "id": "Ada, ada apa?", "literal": "ada, apa — urusan." },
+    { "speaker": "安迪:", "text": "[我|Wǒ][想|xiǎng][请|qǐng][你|nǐ][帮|bāng][个|ge][忙|máng]。", "id": "Saya mau minta tolong.", "literal": "saya — ingin — memohon — kamu — bantu — penggolong — sibuk." },
+    { "speaker": "王丽:", "text": "[你|Nǐ][说|shuō][吧|ba]。", "id": "Katakan saja.", "literal": "kamu — berkata — ya." },
+    { "speaker": "安迪:", "text": "[你|Nǐ][能|néng][帮|bāng][我|wǒ][看看|kànkan][这|zhè][封|fēng][信|xìn][吗|ma]？[我|Wǒ][有|yǒu][几|jǐ][个|ge][字|zì][不|bú][认识|rènshi]。", "id": "Bisa tolong lihat surat ini? Ada beberapa aksara yang tidak saya kenal.", "literal": "kamu — bisa — bantu — saya — lihat-lihat — ini — penggolong — surat — kah. saya — ada — beberapa — penggolong — aksara — tidak — kenal." },
+    { "speaker": "王丽:", "text": "[当然|Dāngrán][可以|kěyǐ]。[给|Gěi][我|wǒ][看看|kànkan]。", "id": "Tentu boleh. Coba saya lihat.", "literal": "tentu — boleh. beri — saya — lihat-lihat." },
+    { "speaker": "安迪:", "text": "[谢谢|Xièxie]！[还有|Háiyǒu]，[你|nǐ][可以|kěyǐ][教|jiāo][我|wǒ][怎么|zěnme][写|xiě][我的|wǒ de][中文|Zhōngwén][名字|míngzi][吗|ma]？", "id": "Terima kasih! Oh ya, kamu bisa ajari saya menulis nama Tionghoa saya?", "literal": "terima-kasih. masih-ada, kamu — boleh — mengajar — saya — bagaimana — menulis — saya — punya — Mandarin — nama — kah." },
+    { "speaker": "王丽:", "text": "[没问题|Méi wèntí]！[你|Nǐ][有|yǒu][中文|Zhōngwén][名字|míngzi][了|le]？", "id": "Tidak masalah! Kamu sudah punya nama Tionghoa?", "literal": "tidak — masalah. kamu — punya — Mandarin — nama — sudah." },
+    { "speaker": "安迪:", "text": "[有|Yǒu]，[我的|wǒ de][老师|lǎoshī][给|gěi][我|wǒ][起|qǐ][了|le][一|yí][个|ge]：[安迪|Āndí]。", "id": "Ada, guru saya membuatkan satu: An Di.", "literal": "punya, saya — punya — guru — untuk — saya — mengangkat — sudah — satu — penggolong: An Di." },
+    { "speaker": "王丽:", "text": "[很|Hěn][好听|hǎotīng]！[来|Lái]，[我|wǒ][写|xiě][给|gěi][你|nǐ][看|kàn]。", "id": "Enak didengar! Sini, saya tuliskan untuk kamu lihat.", "literal": "penyangga — enak-didengar. datang, saya — menulis — beri — kamu — lihat." }
+   ],
+   "notes": [
+    "**[帮忙|bāng máng] = menolong, dan ia bisa dipisah.** [帮个忙|bāng ge máng] tolong sebentar; [帮我一个忙|bāng wǒ yí ge máng] tolong saya. ⚠️ Kalau ada objek orangnya, yang dipakai **[帮|bāng] saja**: [帮我看看|bāng wǒ kànkan], bukan 帮忙我.",
+    "**[请你帮我…|qǐng nǐ bāng wǒ…] adalah rangka permintaan yang paling sopan.** Semakin panjang pengantarnya, semakin sopan bunyinya: [我想请你帮个忙|Wǒ xiǎng qǐng nǐ bāng ge máng] — “saya ingin meminta tolong” — lebih halus daripada langsung menyebutkan permintaannya.",
+    "**Mengulang kata kerja membuatnya terdengar ringan**: [看看|kànkan] lihat sebentar, [听听|tīngting], [想想|xiǎngxiang], [试试|shìshi]. Untuk kata kerja dua suku kata, pengulangannya utuh: [休息休息|xiūxi xiūxi], [商量商量|shāngliang shāngliang].",
+    "**[封|fēng] adalah kata penggolong untuk surat.** [一封信|yì fēng xìn].",
+    "**[教|jiāo] = mengajar, [学|xué] = belajar.** ⚠️ Nada 教 di sini nada pertama (*jiāo*, mengajar); dengan nada keempat (*jiào*) artinya “pelajaran, agama”.",
+    "**[给|gěi] punya banyak tugas**: memberi ([给我|gěi wǒ]), untuk/kepada ([给你打电话|gěi nǐ dǎ diànhuà]), dan “supaya … melihat” ([写给你看|xiě gěi nǐ kàn]).",
+    "**Nama Tionghoa** hampir selalu diberikan oleh guru atau teman Tiongkok, bukan dipilih sendiri dari kamus. Bunyinya diusahakan mirip nama aslimu, artinya diusahakan baik."
+   ],
+   "grammars": [
+    {
+     "title": "Mengajak, meminta, dan menolak",
+     "tables": [
+      {
+       "head": ["Maksud", "Kalimat", "Nuansa"],
+       "rows": [
+        ["Mengajak", "[我们一起去吧|Wǒmen yìqǐ qù ba]！", "Ayo kita pergi bareng"],
+        ["", "[你想去吗|Nǐ xiǎng qù ma]？", "Kamu mau ikut?"],
+        ["", "[要不要一起吃饭|Yào bu yào yìqǐ chī fàn]？", "Mau makan bareng nggak?"],
+        ["Meminta", "[请你帮我…|Qǐng nǐ bāng wǒ…]", "Tolong bantu saya …"],
+        ["", "[你能帮我…吗|Nǐ néng bāng wǒ… ma]？", "Bisa tolong …?"],
+        ["", "[麻烦你了|Máfan nǐ le]。", "Merepotkanmu ya — diucapkan sesudahnya"],
+        ["Meminta izin", "[我可以…吗|Wǒ kěyǐ… ma]？", "Boleh saya …?"],
+        ["Menerima", "[好啊|Hǎo a]！ / [没问题|Méi wèntí]。", "Boleh! / Tidak masalah"],
+        ["Menolak", "[对不起，我有事|Duìbuqǐ, wǒ yǒu shì]。", "Maaf, saya ada urusan"],
+        ["", "[今天不太方便|Jīntiān bú tài fāngbiàn]。", "Hari ini kurang memungkinkan"],
+        ["", "[下次吧|Xià cì ba]。", "Lain kali ya"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **Menolak dengan “tidak” saja dianggap kasar.** Bentuk yang aman selalu punya tiga bagian: **maaf + alasan singkat + tawaran lain**. [对不起，我今天有课，下次吧|Duìbuqǐ, wǒ jīntiān yǒu kè, xià cì ba]。 Alasannya tidak perlu panjang, tapi harus ada.",
+      "[不太方便|bú tài fāngbiàn] “kurang memungkinkan” adalah penolakan halus yang dipahami semua orang tanpa perlu penjelasan lebih jauh."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata kerja bantu — rangkuman satu halaman",
+   "blocks": [
+    { "type": "p", "text": "Semua kata di tabel ini berdiri **sebelum kata kerja utama**, dan semuanya disangkal dengan 不 yang ditaruh di depannya. Sekali kamu memegang tempatnya, tinggal memilih artinya." },
+    { "type": "tabel", "head": ["Kata", "Arti", "Positif", "Negatif"], "rows": [
+      ["[会|huì]", "bisa (keterampilan); akan", "[我会说|Wǒ huì shuō]", "[我不会说|Wǒ bú huì shuō]"],
+      ["[能|néng]", "bisa (keadaan)", "[我能去|Wǒ néng qù]", "[我不能去|Wǒ bù néng qù]"],
+      ["[可以|kěyǐ]", "boleh (izin)", "[可以进|Kěyǐ jìn]", "[不能进|Bù néng jìn]"],
+      ["[想|xiǎng]", "ingin", "[我想吃|Wǒ xiǎng chī]", "[我不想吃|Wǒ bù xiǎng chī]"],
+      ["[要|yào]", "mau; akan", "[我要走|Wǒ yào zǒu]", "[我不想走|Wǒ bù xiǎng zǒu]"],
+      ["[应该|yīnggāi]", "seharusnya", "[你应该休息|Nǐ yīnggāi xiūxi]", "[你不应该去|Nǐ bù yīnggāi qù]"],
+      ["[必须|bìxū]", "harus", "[我必须走|Wǒ bìxū zǒu]", "[不用走|Bú yòng zǒu]"],
+      ["[喜欢|xǐhuan]", "suka", "[我喜欢看书|Wǒ xǐhuan kàn shū]", "[我不喜欢看书|Wǒ bù xǐhuan kàn shū]"],
+      ["[敢|gǎn]", "berani", "[我敢试|Wǒ gǎn shì]", "[我不敢试|Wǒ bù gǎn shì]"]
+    ]},
+    { "type": "kotak", "title": "Pertanyaan pilihan — cara bertanya yang paling hidup", "items": [
+      "Ulangi kata kerjanya dengan 不 di tengah: [你去不去|Nǐ qù bu qù]？ [你会不会|Nǐ huì bu huì]？ [好不好|Hǎo bu hǎo]？",
+      "Untuk kata dua suku kata, suku kata kedua boleh dibuang di bagian pertama: [喜不喜欢|xǐ bu xǐhuan]？ [可不可以|kě bu kěyǐ]？",
+      "⚠️ Bentuk ini **tidak boleh dipakai bersama 吗**. [你去不去吗|Nǐ qù bu qù ma]？ salah.",
+      "Artinya sama persis dengan 吗, tapi terdengar lebih ramah dan lebih lisan. Penutur asli memakainya sepanjang hari."
+    ]}
+   ]
+  },
+  {
+   "title": "Undangan, hadiah, dan meja makan",
+   "blocks": [
+    { "type": "p", "text": "Diundang makan oleh orang Tiongkok adalah tanda penerimaan yang sungguh-sungguh, dan beberapa kebiasaannya berbeda dari kita. Yang berikut menghindarkanmu dari salah langkah." },
+    { "type": "tabel", "head": ["Kalimat", "Kapan dipakai"], "rows": [
+      ["[我请客|Wǒ qǐngkè]。", "“Saya yang traktir.” Yang mengajak biasanya yang membayar"],
+      ["[我来吧|Wǒ lái ba]。", "“Biar saya saja.” Dipakai saat berebut membayar"],
+      ["[AA制|AA zhì]", "Bayar sendiri-sendiri. Lazim di kalangan muda, jarang di jamuan resmi"],
+      ["[多吃点儿|Duō chī diǎnr]！", "“Makan yang banyak!” Diucapkan tuan rumah berulang kali"],
+      ["[我吃饱了|Wǒ chī bǎo le]。", "“Saya sudah kenyang.” Cara menolak tambahan"],
+      ["[别客气|Bié kèqi]。", "“Jangan sungkan.”"],
+      ["[干杯|Gānbēi]！", "“Bersulang!” Harfiah “keringkan gelas”"],
+      ["[我不能喝酒|Wǒ bù néng hē jiǔ]。", "“Saya tidak boleh minum alkohol.” Alasan agama atau kesehatan diterima tanpa dipertanyakan"]
+    ]},
+    { "type": "kotak", "title": "Hadiah: yang boleh dan yang tidak", "items": [
+      "**Boleh dan disukai**: teh, buah, kue oleh-oleh dari negaramu, arak (kalau kamu tahu ia minum), barang khas Indonesia.",
+      "⚠️ **Jam dinding** — [送钟|sòng zhōng] terdengar sama dengan [送终|sòng zhōng] “mengantar ke pemakaman”.",
+      "⚠️ **Payung** — [伞|sǎn] terdengar mirip [散|sàn] “berpisah”.",
+      "⚠️ **Sepatu** — [鞋|xié] terdengar mirip [邪|xié] “sial”.",
+      "⚠️ **Benda tajam** (pisau, gunting) melambangkan memutus hubungan.",
+      "Hadiah biasanya **tidak dibuka di depan pemberinya**, dan awalnya akan **ditolak satu-dua kali** sebelum diterima. Tawarkan lagi dengan tenang; itu bagian dari tata kramanya."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "会", "baca": "huì", "id": "bisa (keterampilan); akan" },
+  { "zh": "能", "baca": "néng", "id": "bisa (keadaan)" },
+  { "zh": "可以", "baca": "kěyǐ", "id": "boleh" },
+  { "zh": "想", "baca": "xiǎng", "id": "ingin" },
+  { "zh": "要", "baca": "yào", "id": "mau, akan" },
+  { "zh": "应该", "baca": "yīnggāi", "id": "seharusnya" },
+  { "zh": "必须", "baca": "bìxū", "id": "harus" },
+  { "zh": "敢", "baca": "gǎn", "id": "berani" },
+  { "zh": "一起", "baca": "yìqǐ", "id": "bersama-sama" },
+  { "zh": "请", "baca": "qǐng", "id": "silakan; mentraktir" },
+  { "zh": "帮", "baca": "bāng", "id": "menolong" },
+  { "zh": "帮忙", "baca": "bāng máng", "id": "membantu" },
+  { "zh": "麻烦", "baca": "máfan", "id": "merepotkan" },
+  { "zh": "方便", "baca": "fāngbiàn", "id": "memungkinkan, praktis" },
+  { "zh": "教", "baca": "jiāo", "id": "mengajar" },
+  { "zh": "学", "baca": "xué", "id": "belajar" },
+  { "zh": "写", "baca": "xiě", "id": "menulis" },
+  { "zh": "念", "baca": "niàn", "id": "membaca nyaring" },
+  { "zh": "说", "baca": "shuō", "id": "berkata" },
+  { "zh": "给", "baca": "gěi", "id": "memberi; untuk" },
+  { "zh": "等", "baca": "děng", "id": "menunggu" },
+  { "zh": "进", "baca": "jìn", "id": "masuk" },
+  { "zh": "出", "baca": "chū", "id": "keluar" },
+  { "zh": "开", "baca": "kāi", "id": "membuka; menyetir" },
+  { "zh": "关", "baca": "guān", "id": "menutup" },
+  { "zh": "点", "baca": "diǎn", "id": "memesan (makanan)" },
+  { "zh": "字", "baca": "zì", "id": "aksara" },
+  { "zh": "信", "baca": "xìn", "id": "surat" },
+  { "zh": "封", "baca": "fēng", "id": "penggolong surat" },
+  { "zh": "家", "baca": "jiā", "id": "penggolong tempat usaha" },
+  { "zh": "不错", "baca": "búcuò", "id": "lumayan bagus" },
+  { "zh": "下次", "baca": "xià cì", "id": "lain kali" },
+  { "zh": "以后", "baca": "yǐhòu", "id": "sesudah" },
+  { "zh": "以前", "baca": "yǐqián", "id": "sebelum" },
+  { "zh": "下课", "baca": "xià kè", "id": "kelas selesai" },
+  { "zh": "请客", "baca": "qǐngkè", "id": "mentraktir" },
+  { "zh": "客气", "baca": "kèqi", "id": "sungkan" },
+  { "zh": "干杯", "baca": "gānbēi", "id": "bersulang" },
+  { "zh": "饱", "baca": "bǎo", "id": "kenyang" },
+  { "zh": "饿", "baca": "è", "id": "lapar" },
+  { "zh": "渴", "baca": "kě", "id": "haus" },
+  { "zh": "酒", "baca": "jiǔ", "id": "arak, minuman keras" },
+  { "zh": "礼物", "baca": "lǐwù", "id": "hadiah" },
+  { "zh": "开车", "baca": "kāi chē", "id": "menyetir" },
+  { "zh": "游泳", "baca": "yóu yǒng", "id": "berenang" },
+  { "zh": "认识", "baca": "rènshi", "id": "mengenal" },
+  { "zh": "商量", "baca": "shāngliang", "id": "berunding" },
+  { "zh": "没问题", "baca": "méi wèntí", "id": "tidak masalah" },
+  { "zh": "不行", "baca": "bù xíng", "id": "tidak boleh" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan 会, 能, atau 可以.",
+   "items": [
+    "[我|Wǒ] ___ [说一点儿中文|shuō yìdiǎnr Zhōngwén]。",
+    "[今天我有事，不|Jīntiān wǒ yǒu shì, bù] ___ [去|qù]。",
+    "[老师，我|Lǎoshī, wǒ] ___ [进来吗|jìnlái ma]？",
+    "[他不|Tā bú] ___ [开车，他没学过|kāi chē, tā méi xué guo]。",
+    "[这儿不|Zhèr bù] ___ [抽烟|chōu yān]。",
+    "[明天|Míngtiān] ___ [下雨|xià yǔ]。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 想, 要, 不想, atau 别.",
+   "items": [
+    "[我|Wǒ] ___ [去中国留学|qù Zhōngguó liúxué]，[可是还没有钱|kěshì hái méiyǒu qián]。",
+    "[服务员，我|Fúwùyuán, wǒ] ___ [一杯茶|yì bēi chá]。",
+    "[我今天很累，|Wǒ jīntiān hěn lèi,] ___ [出去|chūqù]。",
+    "___ [迟到|chídào]！",
+    "[外边下雨了，|Wàibian xià yǔ le,] ___ [出去|chūqù]！"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "我们 / 一起 / 去 / 吧",
+    "你 / 能 / 帮 / 我 / 吗",
+    "我 / 想 / 请 / 你 / 帮 / 个 / 忙",
+    "对不起 / 我 / 今天 / 不 / 能 / 去",
+    "你 / 会 / 不 / 会 / 开车",
+    "这儿 / 可以 / 坐 / 吗"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[我会说中文，但是说得不好|Wǒ huì shuō Zhōngwén, dànshì shuō de bù hǎo]。",
+    "[你能帮我看看这封信吗|Nǐ néng bāng wǒ kànkan zhè fēng xìn ma]？",
+    "[对不起，今天不太方便，下次吧|Duìbuqǐ, jīntiān bú tài fāngbiàn, xià cì ba]。",
+    "[我不能喝酒|Wǒ bù néng hē jiǔ]。",
+    "[晚上我们一起吃饭吧|Wǎnshang wǒmen yìqǐ chī fàn ba]！"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Boleh duduk di sini?",
+    "Saya ingin belajar bahasa Mandarin.",
+    "Hari ini saya tidak bisa datang.",
+    "Bisa tolong ajari saya?",
+    "Ayo kita pergi bersama."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[我不会去，我今天有课|Wǒ bú huì qù, wǒ jīntiān yǒu kè]。",
+    "[我不要去|Wǒ bú yào qù]。",
+    "[你能帮忙我吗|Nǐ néng bāng máng wǒ ma]？",
+    "[你去不去吗|Nǐ qù bu qù ma]？",
+    "[我可以说中文|Wǒ kěyǐ shuō Zhōngwén]。"
+   ]
+  }
+ ],
+ "answers": [
+  "会 — 能 — 可以 — 会 — 能 — 会",
+  "想 — 要 — 不想 — 别 — 别",
+  "我们 一起 去 吧 — 你 能 帮 我 吗 — 我 想 请 你 帮 个 忙 — 对不起 我 今天 不 能 去 — 你 会 不 会 开车 — 这儿 可以 坐 吗",
+  "Saya bisa berbahasa Mandarin, tapi bicaranya belum bagus. — Bisa tolong lihat surat ini? — Maaf, hari ini kurang memungkinkan, lain kali ya. — Saya tidak boleh minum alkohol. — Malam ini kita makan bareng, yuk!",
+  "Kěyǐ zuò zhèr ma? — Wǒ xiǎng xué Zhōngwén. — Jīntiān wǒ bù néng lái. — Nǐ néng jiāo wǒ ma? — Wǒmen yìqǐ qù ba.",
+  "Wǒ bù néng qù, wǒ jīntiān yǒu kè. — Wǒ bù xiǎng qù. — Nǐ néng bāng wǒ ma? — Nǐ qù bu qù? — Wǒ huì shuō Zhōngwén."
+ ],
+ "wave": "Ulangi Unit 8: ajak tiga orang bayangan melakukan tiga hal berbeda, lalu tolak tiga ajakan bayangan dengan pola maaf + alasan + tawaran lain. Menolak dengan sopan adalah keterampilan yang jauh lebih sering dipakai daripada yang kamu kira."
+}

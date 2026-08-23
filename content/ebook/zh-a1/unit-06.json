@@ -1,0 +1,330 @@
+{
+ "title": "Tempat, arah, dan keberadaan",
+ "title_target": "在哪儿 — Zài nǎr",
+ "goal": "Mengatakan sesuatu berada di mana, membedakan tiga kata yang semuanya diterjemahkan “ada” — 在, 有, 是 — dan menyusun kata tempat yang selalu berdiri di belakang bendanya.",
+ "bekal": [
+  "bertanya dan menjawab “di mana”",
+  "memakai 在, 有, dan 是 di tempatnya masing-masing",
+  "menyusun kata tempat: 上, 里, 旁边, 对面",
+  "menyebut alamat dari besar ke kecil",
+  "bertanya arah dan mengerti jawabannya"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Mencari ruang kelas",
+   "intro": "Hari pertama Andi mengajar. Ia tersesat di gedung sekolah dan bertanya kepada petugas. Perhatikan tiga kata kerja berbeda yang semuanya bisa diterjemahkan “ada”.",
+   "lines": [
+    { "speaker": "安迪:", "text": "[请问|Qǐngwèn]，[三零五|sān líng wǔ][教室|jiàoshì][在|zài][哪儿|nǎr]？", "id": "Permisi, ruang 305 di mana?", "literal": "silakan — tanya, tiga-nol-lima — ruang-kelas — berada — mana." },
+    { "speaker": "职员:", "text": "[在|Zài][三|sān][楼|lóu]。[上楼|Shàng lóu][以后|yǐhòu][往|wǎng][右|yòu][拐|guǎi]。", "id": "Di lantai tiga. Setelah naik, belok kanan.", "literal": "berada — tiga — lantai. naik — lantai — sesudah — menuju — kanan — belok." },
+    { "speaker": "安迪:", "text": "[楼梯|Lóutī][在|zài][哪儿|nǎr]？", "id": "Tangganya di mana?", "literal": "tangga — berada — mana." },
+    { "speaker": "职员:", "text": "[在|Zài][洗手间|xǐshǒujiān][旁边|pángbiān]。[电梯|Diàntī][在|zài][对面|duìmiàn]。", "id": "Di sebelah toilet. Liftnya di seberang.", "literal": "berada — cuci-tangan-ruang — sebelah. lift — berada — hadap-muka." },
+    { "speaker": "安迪:", "text": "[三|Sān][楼|lóu][有|yǒu][几|jǐ][个|ge][教室|jiàoshì]？", "id": "Di lantai tiga ada berapa ruang kelas?", "literal": "tiga — lantai — ada — berapa — penggolong — ruang-kelas." },
+    { "speaker": "职员:", "text": "[有|Yǒu][八|bā][个|ge]。[三零五|Sān líng wǔ][在|zài][最|zuì][里边|lǐbian]。", "id": "Ada delapan. Ruang 305 paling dalam.", "literal": "ada — delapan — penggolong. tiga-nol-lima — berada — paling — dalam — sisi." },
+    { "speaker": "安迪:", "text": "[教室|Jiàoshì][里|li][有|yǒu][电脑|diànnǎo][吗|ma]？", "id": "Di dalam kelas ada komputer?", "literal": "ruang-kelas — dalam — ada — komputer — kah." },
+    { "speaker": "职员:", "text": "[有|Yǒu]。[桌子|Zhuōzi][上|shang][有|yǒu][一|yì][台|tái][电脑|diànnǎo]。", "id": "Ada. Di atas meja ada satu komputer.", "literal": "ada. meja — atas — ada — satu — penggolong — komputer." },
+    { "speaker": "安迪:", "text": "[太好了|Tài hǎo le]。[谢谢|Xièxie][您|nín]！", "id": "Bagus sekali. Terima kasih!", "literal": "terlalu — baik — sudah. terima-kasih — Anda." },
+    { "speaker": "职员:", "text": "[不客气|Bú kèqi]。[慢走|Màn zǒu]！", "id": "Sama-sama. Hati-hati di jalan!", "literal": "tidak — sungkan. pelan — jalan." }
+   ],
+   "notes": [
+    "**⚠️ Kata tempat Mandarin berdiri DI BELAKANG bendanya**, kebalikan dari bahasa Indonesia. Kita berkata “**di atas** meja”; mereka berkata [桌子**上**|zhuōzi shang] — “meja atas”. Begitu juga [教室**里**|jiàoshì li] “di dalam kelas”, [洗手间**旁边**|xǐshǒujiān pángbiān] “di sebelah toilet”.",
+    "**[在|zài] menyatakan letak: A 在 tempat.** [教室在三楼|Jiàoshì zài sān lóu] ruang kelasnya di lantai tiga. Yang di depan 在 adalah **benda yang sudah kita ketahui**; yang di belakangnya adalah tempatnya.",
+    "**[有|yǒu] menyatakan keberadaan: tempat 有 benda.** [桌子上有一台电脑|Zhuōzi shang yǒu yì tái diànnǎo] di atas meja ada satu komputer. Urutannya persis kebalikan dari 在, dan yang diperkenalkan adalah **benda yang belum diketahui**.",
+    "**[往|wǎng] + arah + kata kerja = “menuju … ”.** [往右拐|wǎng yòu guǎi] belok kanan, [往前走|wǎng qián zǒu] jalan terus ke depan. Kata ini akan menyelamatkanmu setiap kali bertanya jalan.",
+    "**[最|zuì] = paling.** [最里边|zuì lǐbian] paling dalam, [最好|zuì hǎo] paling bagus, [最后|zuì hòu] paling akhir.",
+    "**[台|tái] adalah kata penggolong untuk mesin**: komputer, televisi, mesin cuci, AC. [一台电脑|yì tái diànnǎo].",
+    "**[慢走|Màn zǒu] harfiah “jalan pelan-pelan”** dan diucapkan tuan rumah kepada tamu yang pergi. Tidak ada padanan persisnya dalam bahasa Indonesia; “hati-hati di jalan” paling dekat."
+   ],
+   "grammars": [
+    {
+     "title": "在, 有, 是 — tiga kata, satu terjemahan Indonesia",
+     "body": [
+      "Ketiganya bisa diterjemahkan “ada” atau “di”, dan justru karena itu ketiganya sering tertukar. Yang membedakan adalah **apa yang diketahui pembicara dan apa yang belum**."
+     ],
+     "tables": [
+      {
+       "head": ["Kata", "Susunan", "Yang ditekankan", "Contoh"],
+       "rows": [
+        ["[在|zài]", "**Benda** 在 **tempat**", "Bendanya sudah diketahui, tempatnya yang baru", "[书在桌子上|Shū zài zhuōzi shang]。 Bukunya di atas meja."],
+        ["[有|yǒu]", "**Tempat** 有 **benda**", "Tempatnya sudah diketahui, bendanya yang baru", "[桌子上有书|Zhuōzi shang yǒu shū]。 Di atas meja ada buku."],
+        ["[是|shì]", "**Tempat** 是 **benda**", "Menjelaskan seluruh tempat itu berisi apa", "[桌子上是书|Zhuōzi shang shì shū]。 Yang di atas meja itu buku."]
+       ]
+      },
+      {
+       "head": ["Pertanyaannya", "Kata yang dipakai", "Contoh"],
+       "rows": [
+        ["“… di mana?”", "在", "[你在哪儿|Nǐ zài nǎr]？"],
+        ["“Di … ada apa?”", "有", "[房间里有什么|Fángjiān li yǒu shénme]？"],
+        ["“Di … ada … tidak?”", "有 … 吗", "[附近有超市吗|Fùjìn yǒu chāoshì ma]？"],
+        ["Menyangkal letak", "不在", "[他不在家|Tā bú zài jiā]。"],
+        ["Menyangkal keberadaan", "没有", "[房间里没有人|Fángjiān li méiyǒu rén]。"]
+       ]
+      }
+     ],
+     "after": [
+      "Cara memeriksanya dalam satu detik: **kalau kamu bisa menunjuk bendanya, pakai 在; kalau kamu memperkenalkan bendanya, pakai 有.** “Mana bukunya?” → 书在哪儿. “Ada buku tidak?” → 有书吗.",
+      "⚠️ Sangkalan 有 tetap 没有, tidak pernah 不有 — sama seperti Unit 2."
+     ]
+    },
+    {
+     "title": "Kata tempat — semuanya berdiri di belakang bendanya",
+     "tables": [
+      {
+       "head": ["Mandarin", "Arti", "Contoh"],
+       "rows": [
+        ["[上|shàng] / [上边|shàngbian]", "di atas", "[桌子上|zhuōzi shang]"],
+        ["[下|xià] / [下边|xiàbian]", "di bawah", "[床下|chuáng xià]"],
+        ["[里|lǐ] / [里边|lǐbian]", "di dalam", "[包里|bāo li]"],
+        ["[外|wài] / [外边|wàibian]", "di luar", "[门外|mén wài]"],
+        ["[前边|qiánbian]", "di depan", "[学校前边|xuéxiào qiánbian]"],
+        ["[后边|hòubian]", "di belakang", "[房子后边|fángzi hòubian]"],
+        ["[旁边|pángbiān]", "di sebelah", "[银行旁边|yínháng pángbiān]"],
+        ["[对面|duìmiàn]", "di seberang", "[医院对面|yīyuàn duìmiàn]"],
+        ["[中间|zhōngjiān]", "di tengah", "[两个楼中间|liǎng ge lóu zhōngjiān]"],
+        ["[附近|fùjìn]", "di sekitar", "[学校附近|xuéxiào fùjìn]"],
+        ["[左边|zuǒbian]", "di sebelah kiri", "[门左边|mén zuǒbian]"],
+        ["[右边|yòubian]", "di sebelah kanan", "[门右边|mén yòubian]"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **Nama tempat sudah berupa tempat, jadi tidak perlu ditambahi 里.** [我在北京|Wǒ zài Běijīng] benar; 我在北京里 salah. Yang butuh kata tempat adalah **benda**: meja, tas, ruangan, kotak.",
+      "Untuk 里 dan 上, kata bendanya dan kata tempatnya sering menyatu jadi satu kata dan dibaca ringan: [家里|jiā li], [桌上|zhuō shang], [手里|shǒu li]."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Bertanya jalan",
+   "intro": "Andi mencari bank di sekitar sekolah. Percakapan seperti ini adalah ujian pertama kemampuan mendengarmu — dan jawaban orang biasanya jauh lebih cepat daripada yang kamu harapkan.",
+   "lines": [
+    { "speaker": "安迪:", "text": "[请问|Qǐngwèn]，[附近|fùjìn][有|yǒu][银行|yínháng][吗|ma]？", "id": "Permisi, di sekitar sini ada bank?", "literal": "silakan — tanya, sekitar — ada — bank — kah." },
+    { "speaker": "路人:", "text": "[有|Yǒu]。[从|Cóng][这儿|zhèr][往|wǎng][前|qián][走|zǒu]，[大概|dàgài][两|liǎng][百|bǎi][米|mǐ]。", "id": "Ada. Dari sini jalan lurus ke depan, kira-kira dua ratus meter.", "literal": "ada. dari — sini — menuju — depan — jalan, kira-kira — dua — ratus — meter." },
+    { "speaker": "安迪:", "text": "[然后|Ránhòu][呢|ne]？", "id": "Lalu?", "literal": "kemudian — bagaimana." },
+    { "speaker": "路人:", "text": "[到|Dào][路口|lùkǒu][往|wǎng][左|zuǒ][拐|guǎi]。[银行|Yínháng][在|zài][超市|chāoshì][对面|duìmiàn]。", "id": "Sampai di persimpangan belok kiri. Banknya di seberang supermarket.", "literal": "sampai — jalan-mulut — menuju — kiri — belok. bank — berada — pasar-swalayan — seberang." },
+    { "speaker": "安迪:", "text": "[远|Yuǎn][吗|ma]？[走路|Zǒu lù][要|yào][多长|duō cháng][时间|shíjiān]？", "id": "Jauh? Jalan kaki perlu berapa lama?", "literal": "jauh — kah. jalan — jalan — perlu — berapa — panjang — waktu." },
+    { "speaker": "路人:", "text": "[不|Bù][远|yuǎn]，[五|wǔ][分钟|fēnzhōng][就|jiù][到|dào][了|le]。", "id": "Tidak jauh, lima menit juga sampai.", "literal": "tidak — jauh, lima — menit — langsung — sampai — sudah." },
+    { "speaker": "安迪:", "text": "[银行|Yínháng][旁边|pángbiān][有|yǒu][地铁站|dìtiězhàn][吗|ma]？", "id": "Di sebelah bank ada stasiun kereta bawah tanah?", "literal": "bank — sebelah — ada — bawah-tanah-kereta-stasiun — kah." },
+    { "speaker": "路人:", "text": "[有|Yǒu]，[二|èr][号|hào][线|xiàn]。[出口|Chūkǒu][就|jiù][在|zài][银行|yínháng][门口|ménkǒu]。", "id": "Ada, jalur 2. Pintu keluarnya persis di depan bank.", "literal": "ada, dua — nomor — jalur. keluar-mulut — persis — berada — bank — pintu-mulut." },
+    { "speaker": "安迪:", "text": "[太|Tài][谢谢|xièxie][您|nín][了|le]！", "id": "Terima kasih banyak!", "literal": "terlalu — terima-kasih — Anda — sudah." },
+    { "speaker": "路人:", "text": "[不用谢|Bú yòng xiè]。", "id": "Tidak perlu berterima kasih.", "literal": "tidak — perlu — terima-kasih." }
+   ],
+   "notes": [
+    "**[从…往…走|cóng… wǎng… zǒu] adalah rangka petunjuk arah.** [从这儿往前走|Cóng zhèr wǎng qián zǒu] dari sini jalan ke depan.",
+    "**[就|jiù] menandakan “langsung, tak lebih dari itu”.** [五分钟就到了|Wǔ fēnzhōng jiù dào le] lima menit saja sudah sampai; [出口就在门口|Chūkǒu jiù zài ménkǒu] pintu keluarnya persis di situ. Kata kecil ini dipakai puluhan kali sehari oleh penutur asli.",
+    "**⚠️ [分|fēn] adalah menit pada jam, [分钟|fēnzhōng] adalah lamanya waktu.** [三点五分|sān diǎn wǔ fēn] jam 3 lewat 5; [五分钟|wǔ fēnzhōng] selama lima menit. Menukarnya adalah kesalahan yang sangat lazim.",
+    "**[多长时间|duō cháng shíjiān]？ = berapa lama.** Harfiah “berapa panjang waktu”. Sinonimnya [多久|duō jiǔ].",
+    "**[口|kǒu] “mulut” dipakai untuk semua bukaan**: [门口|ménkǒu] pintu masuk, [路口|lùkǒu] persimpangan, [出口|chūkǒu] pintu keluar, [入口|rùkǒu] pintu masuk.",
+    "**[太谢谢您了|Tài xièxie nín le]！** — bentuk 太…了 dipakai juga untuk berterima kasih dengan hangat, bukan cuma untuk mengeluh."
+   ],
+   "grammars": [
+    {
+     "title": "Bertanya arah dan mengerti jawabannya",
+     "tables": [
+      {
+       "head": ["Pertanyaanmu", "Arti"],
+       "rows": [
+        ["[请问，…在哪儿|Qǐngwèn, … zài nǎr]？", "Permisi, … di mana?"],
+        ["[附近有…吗|Fùjìn yǒu … ma]？", "Di sekitar sini ada …?"],
+        ["[怎么去|Zěnme qù]？", "Bagaimana cara ke sana?"],
+        ["[远吗|Yuǎn ma]？", "Jauh?"],
+        ["[要多长时间|Yào duō cháng shíjiān]？", "Perlu berapa lama?"],
+        ["[能走着去吗|Néng zǒuzhe qù ma]？", "Bisa ditempuh jalan kaki?"]
+       ]
+      },
+      {
+       "head": ["Jawaban yang akan kamu dengar", "Arti"],
+       "rows": [
+        ["[往前走|Wǎng qián zǒu]。", "Jalan terus ke depan."],
+        ["[往左拐|Wǎng zuǒ guǎi]。 / [往右拐|Wǎng yòu guǎi]。", "Belok kiri. / Belok kanan."],
+        ["[一直走|Yìzhí zǒu]。", "Lurus terus."],
+        ["[到路口|Dào lùkǒu]…", "Sampai di persimpangan …"],
+        ["[在…对面|Zài … duìmiàn]。", "Di seberang …"],
+        ["[过马路|Guò mǎlù]。", "Seberangi jalan."],
+        ["[很近|Hěn jìn]。 / [有点儿远|Yǒudiǎnr yuǎn]。", "Dekat. / Agak jauh."],
+        ["[我也不知道|Wǒ yě bù zhīdào]。", "Saya juga tidak tahu."]
+       ]
+      }
+     ],
+     "after": [
+      "Kalau jawabannya terlalu cepat — dan biasanya begitu — pakai dua kalimat penyelamat dari Unit 2: [请再说一遍|Qǐng zài shuō yí biàn] dan [请说慢一点儿|Qǐng shuō màn yìdiǎnr]. Meminta pengulangan jauh lebih baik daripada berjalan ke arah yang salah."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tempat yang akan kamu cari",
+   "blocks": [
+    { "type": "tabel", "head": ["Di kota", "Pīnyīn", "Di gedung", "Pīnyīn"], "rows": [
+      ["[银行|yínháng] bank", "yínháng", "[教室|jiàoshì] ruang kelas", "jiàoshì"],
+      ["[超市|chāoshì] supermarket", "chāoshì", "[办公室|bàngōngshì] kantor", "bàngōngshì"],
+      ["[医院|yīyuàn] rumah sakit", "yīyuàn", "[洗手间|xǐshǒujiān] toilet", "xǐshǒujiān"],
+      ["[药店|yàodiàn] apotek", "yàodiàn", "[电梯|diàntī] lift", "diàntī"],
+      ["[饭馆|fànguǎn] rumah makan", "fànguǎn", "[楼梯|lóutī] tangga", "lóutī"],
+      ["[商店|shāngdiàn] toko", "shāngdiàn", "[门口|ménkǒu] pintu masuk", "ménkǒu"],
+      ["[学校|xuéxiào] sekolah", "xuéxiào", "[房间|fángjiān] kamar", "fángjiān"],
+      ["[公园|gōngyuán] taman", "gōngyuán", "[厨房|chúfáng] dapur", "chúfáng"],
+      ["[地铁站|dìtiězhàn] stasiun MRT", "dìtiězhàn", "[客厅|kètīng] ruang tamu", "kètīng"],
+      ["[机场|jīchǎng] bandara", "jīchǎng", "[卧室|wòshì] kamar tidur", "wòshì"],
+      ["[酒店|jiǔdiàn] hotel", "jiǔdiàn", "[楼|lóu] lantai, gedung", "lóu"],
+      ["[邮局|yóujú] kantor pos", "yóujú", "[电梯口|diàntīkǒu] depan lift", "diàntīkǒu"]
+    ]},
+    { "type": "kotak", "title": "Toilet — kata yang paling cepat dibutuhkan", "items": [
+      "**[洗手间|xǐshǒujiān]** — harfiah “ruang cuci tangan”. Bentuk paling sopan, aman di mana saja.",
+      "**[卫生间|wèishēngjiān]** — “ruang kebersihan”. Sama sopannya, sering tertulis di papan.",
+      "**[厕所|cèsuǒ]** — langsung dan biasa; dipakai di tempat umum dan sekolah.",
+      "[洗手间在哪儿|Xǐshǒujiān zài nǎr]？ — hafalkan sekarang, bukan nanti.",
+      "Papan pintunya: [男|nán] laki-laki · [女|nǚ] perempuan."
+    ]}
+   ]
+  },
+  {
+   "title": "Alamat: dari yang paling besar",
+   "blocks": [
+    { "type": "p", "text": "Alamat Tiongkok ditulis persis terbalik dari kebiasaan kita: negara dulu, nomor rumah paling akhir. Aturan ini sama dengan aturan tanggal dan aturan nama — **Mandarin selalu berjalan dari besar ke kecil.**" },
+    { "type": "tabel", "head": ["Bagian", "Mandarin", "Contoh"], "rows": [
+      ["negara", "[国|guó]", "[中国|Zhōngguó]"],
+      ["provinsi", "[省|shěng]", "[广东省|Guǎngdōng Shěng]"],
+      ["kota", "[市|shì]", "[广州市|Guǎngzhōu Shì]"],
+      ["distrik", "[区|qū]", "[天河区|Tiānhé Qū]"],
+      ["jalan", "[路|lù] / [街|jiē]", "[中山路|Zhōngshān Lù]"],
+      ["nomor", "[号|hào]", "[五十八号|wǔshíbā hào]"],
+      ["gedung / lantai", "[楼|lóu]", "[三楼|sān lóu]"],
+      ["kamar", "[室|shì] / [房间|fángjiān]", "[三零五室|sān líng wǔ shì]"]
+    ]},
+    { "type": "p", "text": "Contoh lengkap: 中国广东省广州市天河区中山路58号3楼305室 — “Tiongkok, Provinsi Guangdong, Kota Guangzhou, Distrik Tianhe, Jalan Zhongshan No. 58, lantai 3, kamar 305”. Dibaca dari depan, alamat itu menyempit seperti corong." },
+    { "type": "kotak", "title": "Kalimat yang berguna saat tersesat", "items": [
+      "[我迷路了|Wǒ mílù le]。 — Saya tersesat.",
+      "[我在这儿|Wǒ zài zhèr]。 — Saya di sini. (sambil menunjuk peta di telepon)",
+      "[这是什么地方|Zhè shì shénme dìfang]？ — Ini tempat apa?",
+      "[您能帮我吗|Nín néng bāng wǒ ma]？ — Bisakah Anda menolong saya?",
+      "[请写下来|Qǐng xiě xiàlái]。 — Tolong tuliskan. Kalimat penyelamat: aksara yang ditulis bisa kamu tunjukkan ke sopir taksi."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "在", "baca": "zài", "id": "berada di" },
+  { "zh": "哪儿", "baca": "nǎr", "id": "di mana" },
+  { "zh": "这儿", "baca": "zhèr", "id": "di sini" },
+  { "zh": "那儿", "baca": "nàr", "id": "di sana" },
+  { "zh": "上", "baca": "shàng", "id": "di atas" },
+  { "zh": "下", "baca": "xià", "id": "di bawah" },
+  { "zh": "里", "baca": "lǐ", "id": "di dalam" },
+  { "zh": "外", "baca": "wài", "id": "di luar" },
+  { "zh": "前边", "baca": "qiánbian", "id": "di depan" },
+  { "zh": "后边", "baca": "hòubian", "id": "di belakang" },
+  { "zh": "左边", "baca": "zuǒbian", "id": "sebelah kiri" },
+  { "zh": "右边", "baca": "yòubian", "id": "sebelah kanan" },
+  { "zh": "旁边", "baca": "pángbiān", "id": "di sebelah" },
+  { "zh": "对面", "baca": "duìmiàn", "id": "di seberang" },
+  { "zh": "中间", "baca": "zhōngjiān", "id": "di tengah" },
+  { "zh": "附近", "baca": "fùjìn", "id": "di sekitar" },
+  { "zh": "往", "baca": "wǎng", "id": "menuju" },
+  { "zh": "拐", "baca": "guǎi", "id": "belok" },
+  { "zh": "走", "baca": "zǒu", "id": "berjalan" },
+  { "zh": "一直", "baca": "yìzhí", "id": "lurus terus" },
+  { "zh": "过", "baca": "guò", "id": "melewati" },
+  { "zh": "到", "baca": "dào", "id": "sampai" },
+  { "zh": "远", "baca": "yuǎn", "id": "jauh" },
+  { "zh": "近", "baca": "jìn", "id": "dekat" },
+  { "zh": "就", "baca": "jiù", "id": "langsung, persis" },
+  { "zh": "最", "baca": "zuì", "id": "paling" },
+  { "zh": "大概", "baca": "dàgài", "id": "kira-kira" },
+  { "zh": "分钟", "baca": "fēnzhōng", "id": "menit (lamanya)" },
+  { "zh": "多长时间", "baca": "duō cháng shíjiān", "id": "berapa lama" },
+  { "zh": "银行", "baca": "yínháng", "id": "bank" },
+  { "zh": "超市", "baca": "chāoshì", "id": "supermarket" },
+  { "zh": "医院", "baca": "yīyuàn", "id": "rumah sakit" },
+  { "zh": "饭馆", "baca": "fànguǎn", "id": "rumah makan" },
+  { "zh": "商店", "baca": "shāngdiàn", "id": "toko" },
+  { "zh": "公园", "baca": "gōngyuán", "id": "taman" },
+  { "zh": "地铁站", "baca": "dìtiězhàn", "id": "stasiun MRT" },
+  { "zh": "机场", "baca": "jīchǎng", "id": "bandara" },
+  { "zh": "教室", "baca": "jiàoshì", "id": "ruang kelas" },
+  { "zh": "办公室", "baca": "bàngōngshì", "id": "kantor" },
+  { "zh": "洗手间", "baca": "xǐshǒujiān", "id": "toilet" },
+  { "zh": "房间", "baca": "fángjiān", "id": "kamar" },
+  { "zh": "楼", "baca": "lóu", "id": "lantai, gedung" },
+  { "zh": "电梯", "baca": "diàntī", "id": "lift" },
+  { "zh": "门口", "baca": "ménkǒu", "id": "pintu masuk" },
+  { "zh": "路口", "baca": "lùkǒu", "id": "persimpangan" },
+  { "zh": "地方", "baca": "dìfang", "id": "tempat" },
+  { "zh": "迷路", "baca": "mílù", "id": "tersesat" },
+  { "zh": "帮", "baca": "bāng", "id": "menolong" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan 在, 有, atau 是.",
+   "items": [
+    "[书|Shū] ___ [桌子上|zhuōzi shang]。",
+    "[桌子上|Zhuōzi shang] ___ [一本书|yì běn shū]。",
+    "[他今天不|Tā jīntiān bù] ___ [家|jiā]。",
+    "[附近|Fùjìn][没|méi] ___ [银行|yínháng]。",
+    "[洗手间|Xǐshǒujiān] ___ [楼梯旁边|lóutī pángbiān]。",
+    "[房间里|Fángjiān li] ___ [几个人|jǐ ge rén]？"
+   ]
+  },
+  {
+   "prompt": "Isi kata tempat yang tepat: 上, 里, 旁边, 对面, 附近.",
+   "items": [
+    "[钥匙在包|Yàoshi zài bāo] ___。",
+    "[电脑在桌子|Diànnǎo zài zhuōzi] ___。",
+    "[银行在超市|Yínháng zài chāoshì] ___，[要过马路|yào guò mǎlù]。",
+    "[电梯在洗手间|Diàntī zài xǐshǒujiān] ___。",
+    "[学校|Xuéxiào] ___ [有一个公园|yǒu yí ge gōngyuán]。"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "教室 / 在 / 三 / 楼",
+    "桌子 / 上 / 有 / 一 / 台 / 电脑",
+    "附近 / 有 / 银行 / 吗",
+    "从 / 这儿 / 往 / 前 / 走",
+    "银行 / 在 / 超市 / 对面",
+    "他 / 不 / 在 / 办公室"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[请问，洗手间在哪儿|Qǐngwèn, xǐshǒujiān zài nǎr]？",
+    "[到路口往左拐|Dào lùkǒu wǎng zuǒ guǎi]。",
+    "[房间里没有人|Fángjiān li méiyǒu rén]。",
+    "[五分钟就到了|Wǔ fēnzhōng jiù dào le]。",
+    "[我迷路了，您能帮我吗|Wǒ mílù le, nín néng bāng wǒ ma]？"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Bukunya di atas meja.",
+    "Di sekitar sini ada supermarket?",
+    "Toiletnya di mana?",
+    "Bank itu di seberang rumah sakit.",
+    "Dia tidak ada di rumah."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[书在上桌子|Shū zài shàng zhuōzi]。",
+    "[我在北京里|Wǒ zài Běijīng li]。",
+    "[附近不有银行|Fùjìn bù yǒu yínháng]。",
+    "[一本书在桌子上有|Yì běn shū zài zhuōzi shang yǒu]。",
+    "[我吃饭在食堂每天|Wǒ chī fàn zài shítáng měi tiān]。"
+   ]
+  }
+ ],
+ "answers": [
+  "在 — 有 — 在 — 有 — 在 — 有",
+  "里 — 上 — 对面 — 旁边 — 附近",
+  "教室 在 三 楼 — 桌子 上 有 一 台 电脑 — 附近 有 银行 吗 — 从 这儿 往 前 走 — 银行 在 超市 对面 — 他 不 在 办公室",
+  "Permisi, toiletnya di mana? — Sampai di persimpangan belok kiri. — Di dalam kamar tidak ada orang. — Lima menit saja sudah sampai. — Saya tersesat, bisakah Anda menolong saya?",
+  "Shū zài zhuōzi shang. — Fùjìn yǒu chāoshì ma? — Xǐshǒujiān zài nǎr? — Yínháng zài yīyuàn duìmiàn. — Tā bú zài jiā.",
+  "Shū zài zhuōzi shang. — Wǒ zài Běijīng. — Fùjìn méiyǒu yínháng. — Zhuōzi shang yǒu yì běn shū. — Wǒ měi tiān zài shítáng chī fàn."
+ ],
+ "wave": "Ulangi Unit 5: berdirilah di satu ruangan, sebutkan sepuluh benda beserta letaknya dengan pola A 在 B, lalu balik menjadi B 有 A. Dua kata kerja yang paling sering tertukar itu hanya bisa dipisahkan lewat pengulangan berpasangan seperti ini."
+}

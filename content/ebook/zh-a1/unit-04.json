@@ -1,0 +1,313 @@
+{
+ "title": "Keluarga dan umur",
+ "title_target": "你家有几口人 — Nǐ jiā yǒu jǐ kǒu rén",
+ "goal": "Menyebut anggota keluarga, menghitung isi rumah, menanyakan umur dengan tiga cara yang berbeda menurut lawan bicara, dan menggabungkan dua kata benda dengan 和.",
+ "bekal": [
+  "menyebut ayah, ibu, kakak, adik, dan anak",
+  "menjawab 你家有几口人 dengan benar",
+  "menanyakan umur anak, teman sebaya, dan orang tua dengan bentuk yang tepat",
+  "memakai 和 hanya di tempat yang benar",
+  "menyebut umur tanpa kata kerja sama sekali"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Foto keluarga",
+   "intro": "Wang Li menunjukkan foto keluarganya kepada Andi. Perhatikan satu hal aneh di kalimat umur: kata kerjanya hilang sama sekali.",
+   "lines": [
+    { "speaker": "王丽:", "text": "[这|Zhè][是|shì][我|wǒ][家|jiā][的|de][照片|zhàopiàn]。", "id": "Ini foto keluarga saya.", "literal": "ini — adalah — saya — rumah — punya — foto." },
+    { "speaker": "安迪:", "text": "[你|Nǐ][家|jiā][有|yǒu][几|jǐ][口|kǒu][人|rén]？", "id": "Keluargamu berapa orang?", "literal": "kamu — rumah — ada — berapa — penggolong — orang." },
+    { "speaker": "王丽:", "text": "[五|Wǔ][口|kǒu][人|rén]。[爸爸|Bàba]、[妈妈|māma]、[哥哥|gēge]、[妹妹|mèimei][和|hé][我|wǒ]。", "id": "Lima orang. Ayah, ibu, kakak laki-laki, adik perempuan, dan saya.", "literal": "lima — penggolong — orang. ayah, ibu, kakak-lk, adik-pr — dan — saya." },
+    { "speaker": "安迪:", "text": "[你|Nǐ][哥哥|gēge][做|zuò][什么|shénme][工作|gōngzuò]？", "id": "Kakakmu bekerja apa?", "literal": "kamu — kakak-lk — melakukan — apa — pekerjaan." },
+    { "speaker": "王丽:", "text": "[他|Tā][是|shì][医生|yīshēng]。[他|Tā][今年|jīnnián][三十|sānshí][岁|suì]。", "id": "Dia dokter. Tahun ini dia tiga puluh tahun.", "literal": "dia — adalah — dokter. dia — tahun-ini — tiga-puluh — tahun-umur." },
+    { "speaker": "安迪:", "text": "[你|Nǐ][妹妹|mèimei][多大|duō dà]？", "id": "Adikmu umur berapa?", "literal": "kamu — adik-pr — berapa — besar." },
+    { "speaker": "王丽:", "text": "[她|Tā][十六|shíliù][岁|suì]，[还|hái][是|shì][中学生|zhōngxuéshēng]。", "id": "Dia enam belas tahun, masih anak SMP.", "literal": "dia — enam-belas — tahun-umur, masih — adalah — sekolah-menengah-murid." },
+    { "speaker": "安迪:", "text": "[你|Nǐ][爸爸|bàba][妈妈|māma][呢|ne]？[他们|Tāmen][工作|gōngzuò][吗|ma]？", "id": "Kalau ayah ibumu? Mereka bekerja?", "literal": "kamu — ayah — ibu — bagaimana. mereka — bekerja — kah." },
+    { "speaker": "王丽:", "text": "[我|Wǒ][爸爸|bàba][还|hái][工作|gōngzuò]，[我|wǒ][妈妈|māma][退休|tuìxiū][了|le]。", "id": "Ayah saya masih bekerja, ibu saya sudah pensiun.", "literal": "saya — ayah — masih — bekerja, saya — ibu — pensiun — sudah." },
+    { "speaker": "安迪:", "text": "[你们|Nǐmen][都|dōu][住|zhù][在|zài][北京|Běijīng][吗|ma]？", "id": "Kalian semua tinggal di Beijing?", "literal": "kalian — semuanya — tinggal — berada — Beijing — kah." },
+    { "speaker": "王丽:", "text": "[不|Bù]，[他们|tāmen][住|zhù][在|zài][上海|Shànghǎi]。[我|Wǒ][一个人|yí ge rén][在|zài][北京|Běijīng]。", "id": "Tidak, mereka tinggal di Shanghai. Saya sendirian di Beijing.", "literal": "tidak, mereka — tinggal — berada — Shanghai. saya — satu — penggolong — orang — berada — Beijing." }
+   ],
+   "notes": [
+    "**⚠️ [口|kǒu] adalah kata penggolong khusus untuk menghitung isi rumah**, dan hanya untuk itu. [我家有五口人|Wǒ jiā yǒu wǔ kǒu rén]. Di luar keluarga, orang dihitung dengan [个|ge]: [三个学生|sān ge xuésheng]. Memakai 个 untuk keluarga tidak salah besar, tapi memakai 口 untuk orang di luar keluarga terdengar aneh.",
+    "**⚠️ Kalimat umur tidak memakai kata kerja sama sekali.** [他三十岁|Tā sānshí suì] — harfiah “dia tiga puluh tahun-umur”. Tidak ada 是 di dalamnya. Menambahkan 是 (他是三十岁) adalah kesalahan yang langsung terdengar. Ini salah satu dari sedikit kalimat Mandarin yang benar-benar berdiri tanpa kata kerja.",
+    "**⚠️ [和|hé] “dan” hanya menyambung KATA BENDA**, tidak pernah menyambung dua kalimat atau dua perbuatan. Benar: [爸爸和妈妈|bàba hé māma]. Salah: 我吃饭和我看书 — dua perbuatan disambung tanpa 和, cukup dipisah koma atau memakai [然后|ránhòu] “lalu”.",
+    "**[还|hái] = masih.** [他还工作|Tā hái gōngzuò] dia masih bekerja; [她还是中学生|Tā hái shì zhōngxuéshēng] dia masih anak SMP.",
+    "**[退休了|tuìxiū le] = sudah pensiun.** 了 di sini menandai **perubahan keadaan**: dulu bekerja, sekarang tidak. Inilah tugas 了 yang sebenarnya — bukan menandai masa lampau. Unit 10 membahasnya tuntas.",
+    "**[一个人|yí ge rén] berarti “sendirian”**, bukan “satu orang” dalam arti hitungan. [我一个人去|Wǒ yí ge rén qù] = saya pergi sendirian.",
+    "**[住在|zhù zài] = tinggal di.** Perhatikan urutannya: kata kerja 住 dulu, baru 在 + tempat. Kita akan membahas 在 dengan tuntas di Unit 6."
+   ],
+   "grammars": [
+    {
+     "title": "Menanyakan umur — tiga bentuk, tiga lawan bicara",
+     "body": [
+      "Bahasa Indonesia memakai satu kalimat untuk semua orang: “umurmu berapa?”. Bahasa Mandarin membedakannya menurut siapa yang ditanya, dan memakai yang salah terdengar cukup kentara."
+     ],
+     "tables": [
+      {
+       "head": ["Ditanyakan kepada", "Kalimatnya", "Harfiah"],
+       "rows": [
+        ["Anak kecil (di bawah 10)", "[你几岁|Nǐ jǐ suì]？", "kamu berapa tahun-umur"],
+        ["Teman sebaya, remaja, dewasa", "[你多大|Nǐ duō dà]？", "kamu berapa besar"],
+        ["Orang tua, orang yang dihormati", "[您多大年纪|Nín duō dà niánjì]？", "Anda berapa besar usia"]
+       ]
+      },
+      {
+       "head": ["Menjawabnya", "Contoh"],
+       "rows": [
+        ["Umur + 岁", "[我二十五岁|Wǒ èrshíwǔ suì]。"],
+        ["Umur saja, tanpa 岁", "[二十五|Èrshíwǔ]。 — cukup dalam percakapan santai"],
+        ["Tahun ini …", "[我今年二十五岁|Wǒ jīnnián èrshíwǔ suì]。"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ [多大|duō dà] harfiah berarti “berapa besar”, jadi jangan kaget: kalimat yang sama juga dipakai untuk menanyakan ukuran barang. Yang menentukan artinya adalah siapa yang dibicarakan.",
+      "Pola [多|duō] + kata sifat = “berapa …” ini sangat produktif: [多高|duō gāo] berapa tinggi, [多长|duō cháng] berapa panjang, [多远|duō yuǎn] berapa jauh, [多重|duō zhòng] berapa berat."
+     ]
+    },
+    {
+     "title": "和 dan kawan-kawannya — cara menyambung",
+     "tables": [
+      {
+       "head": ["Kata", "Menyambung", "Contoh"],
+       "rows": [
+        ["[和|hé]", "Dua kata benda", "[我和我妹妹|wǒ hé wǒ mèimei] saya dan adik saya"],
+        ["[跟|gēn]", "Sama dengan 和, lebih lisan; juga “bersama”", "[我跟他去|Wǒ gēn tā qù] saya pergi bersamanya"],
+        ["[还有|háiyǒu]", "Menambahkan hal terakhir dalam daftar", "[苹果、香蕉，还有水|píngguǒ, xiāngjiāo, háiyǒu shuǐ]"],
+        ["[然后|ránhòu]", "Dua perbuatan berurutan — “lalu”", "[我吃饭，然后看书|Wǒ chī fàn, ránhòu kàn shū]"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ Kesalahan yang hampir pasti kamu lakukan minggu ini: memakai 和 untuk menyambung dua kalimat, seperti “saya makan **dan** membaca buku”. Dalam bahasa Mandarin dua perbuatan cukup dipisah koma. **和 tidak pernah berdiri di antara dua kata kerja.**",
+      "Perhatikan juga tanda daftar Mandarin: koma miring [、|dùnhào] dipakai di antara barang dalam daftar, sementara koma biasa ，dipakai di antara bagian kalimat."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Bertanya tentang keluarga sendiri",
+   "intro": "Giliran Li Ming bertanya kepada Andi. Percakapan tentang keluarga adalah basa-basi paling lazim di Tiongkok — jauh lebih lazim daripada berbicara tentang cuaca.",
+   "lines": [
+    { "speaker": "李明:", "text": "[安迪|Āndí]，[你|nǐ][结婚|jiéhūn][了|le][吗|ma]？", "id": "Andi, kamu sudah menikah?", "literal": "Andi, kamu — menikah — sudah — kah." },
+    { "speaker": "安迪:", "text": "[结婚|Jiéhūn][了|le]。[我|Wǒ][有|yǒu][一个|yí ge][女儿|nǚ'ér]。", "id": "Sudah. Saya punya seorang anak perempuan.", "literal": "menikah — sudah. saya — punya — satu — penggolong — anak-perempuan." },
+    { "speaker": "李明:", "text": "[她|Tā][几|jǐ][岁|suì][了|le]？", "id": "Berapa umurnya sekarang?", "literal": "dia — berapa — tahun-umur — sudah." },
+    { "speaker": "安迪:", "text": "[六|Liù][岁|suì]。[她|Tā][在|zài][雅加达|Yǎjiādá][上|shàng][小学|xiǎoxué]。", "id": "Enam tahun. Dia SD di Jakarta.", "literal": "enam — tahun-umur. dia — berada — Jakarta — naik — sekolah-dasar." },
+    { "speaker": "李明:", "text": "[你|Nǐ][太太|tàitai][也|yě][在|zài][印尼|Yìnní][吗|ma]？", "id": "Istrimu juga di Indonesia?", "literal": "kamu — istri — juga — berada — Indonesia — kah." },
+    { "speaker": "安迪:", "text": "[对|Duì]。[我|Wǒ][很|hěn][想|xiǎng][她们|tāmen]。", "id": "Betul. Saya sangat rindu mereka.", "literal": "benar. saya — penyangga — rindu — mereka-perempuan." },
+    { "speaker": "李明:", "text": "[你|Nǐ][有|yǒu][兄弟姐妹|xiōngdì jiěmèi][吗|ma]？", "id": "Kamu punya saudara?", "literal": "kamu — punya — kakak-adik-lk-pr — kah." },
+    { "speaker": "安迪:", "text": "[有|Yǒu]，[一个|yí ge][弟弟|dìdi]。[他|Tā][比|bǐ][我|wǒ][小|xiǎo][五|wǔ][岁|suì]。", "id": "Ada, satu adik laki-laki. Dia lima tahun lebih muda dari saya.", "literal": "punya, satu — penggolong — adik-lk. dia — dibanding — saya — kecil — lima — tahun-umur." },
+    { "speaker": "李明:", "text": "[我|Wǒ][是|shì][独生子|dúshēngzǐ]。[家里|Jiā li][只有|zhǐyǒu][我|wǒ][一个|yí ge][孩子|háizi]。", "id": "Saya anak tunggal. Di rumah cuma saya sendiri anaknya.", "literal": "saya — adalah — tunggal-lahir-anak. rumah — dalam — hanya-ada — saya — satu — penggolong — anak." },
+    { "speaker": "安迪:", "text": "[那|Nà][你|nǐ][父母|fùmǔ][一定|yídìng][很|hěn][疼|téng][你|nǐ]。", "id": "Kalau begitu orang tuamu pasti sangat menyayangimu.", "literal": "itu — kamu — ayah-ibu — pasti — penyangga — sayang — kamu." }
+   ],
+   "notes": [
+    "**[结婚了吗|Jiéhūn le ma]？ — “sudah menikah?”** Pertanyaan ini benar-benar lazim di Tiongkok, bahkan kepada orang yang baru dikenal. Ia bukan dianggap lancang; ia dianggap perhatian. Jawaban singkatnya [结婚了|Jiéhūn le] atau [还没有|Hái méiyǒu] “belum”.",
+    "**[几岁了|Jǐ suì le]？** — 了 di ujung menambahkan nuansa “sekarang”, seolah menanyakan umur yang sudah bertambah. Sangat lazim untuk anak-anak.",
+    "**[上小学|shàng xiǎoxué] = bersekolah di SD.** 上 di sini berarti “naik, menghadiri”: [上班|shàng bān] masuk kerja, [上课|shàng kè] masuk kelas, [上大学|shàng dàxué] kuliah.",
+    "**[想|xiǎng] punya dua arti: “ingin” dan “rindu”.** [我想去|Wǒ xiǎng qù] saya ingin pergi; [我想你|Wǒ xiǎng nǐ] saya rindu kamu. Bedanya: kalau di belakangnya ada **kata kerja**, artinya “ingin”; kalau **orang**, artinya “rindu”.",
+    "**[比|bǐ] = dibandingkan dengan.** Polanya A 比 B + sifat: [他比我大|Tā bǐ wǒ dà] dia lebih tua dari saya. ⚠️ Jangan pakai 很 di dalam kalimat 比 — [他比我很大|Tā bǐ wǒ hěn dà] salah.",
+    "**[独生子|dúshēngzǐ] anak tunggal (laki-laki), [独生女|dúshēngnǚ] anak tunggal (perempuan).** Kata yang sangat lazim di Tiongkok karena kebijakan satu anak yang berlaku dari 1979 sampai 2015.",
+    "**[疼|téng] berarti “sakit, nyeri”, tapi juga “menyayangi”** — dengan nuansa memanjakan. [父母很疼他|Fùmǔ hěn téng tā] orang tuanya sangat menyayanginya."
+   ],
+   "grammars": [
+    {
+     "title": "比 — membandingkan dua hal",
+     "body": [
+      "Pola ini sebenarnya materi HSK 3, tapi dipasang di sini karena kamu akan langsung membutuhkannya begitu berbicara tentang umur dan keluarga."
+     ],
+     "tables": [
+      {
+       "head": ["Pola", "Contoh", "Arti"],
+       "rows": [
+        ["A 比 B + sifat", "[他比我大|Tā bǐ wǒ dà]。", "Dia lebih tua dari saya."],
+        ["A 比 B + sifat + jumlah", "[他比我大五岁|Tā bǐ wǒ dà wǔ suì]。", "Dia lima tahun lebih tua dari saya."],
+        ["A 没有 B + sifat", "[我没有他高|Wǒ méiyǒu tā gāo]。", "Saya tidak setinggi dia."],
+        ["A 跟 B 一样 + sifat", "[我跟他一样大|Wǒ gēn tā yíyàng dà]。", "Saya sama tuanya dengan dia."]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **很 dan 比 tidak boleh bertemu.** Penyangga 很 hilang begitu ada perbandingan. Kalau ingin mengatakan “jauh lebih”, pakai [多|duō] atau [得多|de duō] di belakangnya: [他比我大得多|Tā bǐ wǒ dà de duō]."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Peta keluarga",
+   "blocks": [
+    { "type": "p", "text": "Bahasa Mandarin membedakan saudara menurut **umurnya**, persis seperti bahasa Indonesia membedakan kakak dan adik. Tetapi ia melangkah lebih jauh: kakek dari pihak ayah dan dari pihak ibu punya nama yang berbeda." },
+    { "type": "tabel", "head": ["Mandarin", "Pīnyīn", "Arti"], "rows": [
+      ["[爸爸|bàba] / [父亲|fùqīn]", "bàba / fùqīn", "ayah (sehari-hari / resmi)"],
+      ["[妈妈|māma] / [母亲|mǔqīn]", "māma / mǔqīn", "ibu (sehari-hari / resmi)"],
+      ["[父母|fùmǔ]", "fùmǔ", "orang tua"],
+      ["[哥哥|gēge]", "gēge", "kakak laki-laki"],
+      ["[姐姐|jiějie]", "jiějie", "kakak perempuan"],
+      ["[弟弟|dìdi]", "dìdi", "adik laki-laki"],
+      ["[妹妹|mèimei]", "mèimei", "adik perempuan"],
+      ["[兄弟姐妹|xiōngdì jiěmèi]", "xiōngdì jiěmèi", "saudara kandung (semuanya)"],
+      ["[儿子|érzi]", "érzi", "anak laki-laki"],
+      ["[女儿|nǚ'ér]", "nǚ'ér", "anak perempuan"],
+      ["[孩子|háizi]", "háizi", "anak"],
+      ["[丈夫|zhàngfu] / [老公|lǎogōng]", "zhàngfu / lǎogōng", "suami (resmi / akrab)"],
+      ["[妻子|qīzi] / [太太|tàitai] / [老婆|lǎopo]", "qīzi / tàitai / lǎopo", "istri (resmi / sopan / akrab)"],
+      ["[爷爷|yéye]", "yéye", "kakek — **ayahnya ayah**"],
+      ["[奶奶|nǎinai]", "nǎinai", "nenek — **ibunya ayah**"],
+      ["[外公|wàigōng] / [姥爷|lǎoye]", "wàigōng / lǎoye", "kakek — **ayahnya ibu**"],
+      ["[外婆|wàipó] / [姥姥|lǎolao]", "wàipó / lǎolao", "nenek — **ibunya ibu**"],
+      ["[叔叔|shūshu]", "shūshu", "paman (adik ayah); juga sapaan untuk pria dewasa"],
+      ["[阿姨|āyí]", "āyí", "bibi (adik ibu); juga sapaan untuk wanita dewasa"]
+    ]},
+    { "type": "kotak", "title": "外 — penanda “dari pihak ibu”", "items": [
+      "Aksara [外|wài] berarti “luar”. Ia dipasang di depan sebutan keluarga dari **pihak ibu**: [外公|wàigōng], [外婆|wàipó], [外孙|wàisūn] cucu dari anak perempuan.",
+      "Sebabnya sejarah: keluarga Tiongkok tradisional menghitung keturunan lewat garis ayah, jadi pihak ibu secara harfiah berada “di luar” marga.",
+      "Ini tinggal jejak bahasa, bukan sikap keluarga masa kini — tapi kata-katanya masih dipakai persis seperti dulu.",
+      "**[叔叔|shūshu] dan [阿姨|āyí] juga dipakai kepada orang asing** yang seumur orang tuamu, persis seperti “om” dan “tante” dalam bahasa Indonesia."
+    ]}
+   ]
+  },
+  {
+   "title": "Basa-basi yang benar-benar dipakai orang",
+   "blocks": [
+    { "type": "p", "text": "Percakapan pertama dengan orang Tiongkok hampir selalu melewati pertanyaan-pertanyaan ini. Bagi telinga Indonesia sebagiannya terasa pribadi; bagi mereka, justru inilah bentuk keramahan." },
+    { "type": "tabel", "head": ["Pertanyaan", "Arti", "Jawaban yang aman"], "rows": [
+      ["[你家有几口人|Nǐ jiā yǒu jǐ kǒu rén]？", "Keluargamu berapa orang?", "[四口人|Sì kǒu rén]。"],
+      ["[你结婚了吗|Nǐ jiéhūn le ma]？", "Sudah menikah?", "[还没有|Hái méiyǒu]。 / [结婚了|Jiéhūn le]。"],
+      ["[你有孩子吗|Nǐ yǒu háizi ma]？", "Punya anak?", "[有一个|Yǒu yí ge]。 / [还没有|Hái méiyǒu]。"],
+      ["[你多大|Nǐ duō dà]？", "Umurmu berapa?", "[我三十岁|Wǒ sānshí suì]。"],
+      ["[你是哪儿人|Nǐ shì nǎr rén]？", "Kamu asal mana?", "[我是雅加达人|Wǒ shì Yǎjiādá rén]。"],
+      ["[你父母做什么工作|Nǐ fùmǔ zuò shénme gōngzuò]？", "Orang tuamu bekerja apa?", "[我爸爸是老师|Wǒ bàba shì lǎoshī]。"],
+      ["[你一个月挣多少钱|Nǐ yí ge yuè zhèng duōshao qián]？", "Gajimu sebulan berapa?", "[还行吧|Hái xíng ba]。 — jawaban mengelak yang sopan"]
+    ]},
+    { "type": "kotak", "title": "Kalau kamu tidak ingin menjawab", "items": [
+      "**[还行吧|Hái xíng ba]。** — “Ya begitulah.” Jawaban netral untuk pertanyaan tentang uang atau pekerjaan.",
+      "**[保密|Bǎomì]！** — “Rahasia!” Diucapkan sambil tersenyum; dianggap lucu, bukan kasar.",
+      "**[还没有|Hái méiyǒu]。** — “Belum.” Untuk pertanyaan tentang menikah atau punya anak. Sangat jarang ditanya lebih jauh.",
+      "Mengalihkan pembicaraan dengan [你呢|Nǐ ne]？ hampir selalu berhasil dan tidak melukai siapa pun."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "家", "baca": "jiā", "id": "rumah, keluarga" },
+  { "zh": "口", "baca": "kǒu", "id": "penggolong anggota keluarga" },
+  { "zh": "爸爸", "baca": "bàba", "id": "ayah" },
+  { "zh": "妈妈", "baca": "māma", "id": "ibu" },
+  { "zh": "父母", "baca": "fùmǔ", "id": "orang tua" },
+  { "zh": "哥哥", "baca": "gēge", "id": "kakak laki-laki" },
+  { "zh": "姐姐", "baca": "jiějie", "id": "kakak perempuan" },
+  { "zh": "弟弟", "baca": "dìdi", "id": "adik laki-laki" },
+  { "zh": "妹妹", "baca": "mèimei", "id": "adik perempuan" },
+  { "zh": "兄弟姐妹", "baca": "xiōngdì jiěmèi", "id": "saudara kandung" },
+  { "zh": "儿子", "baca": "érzi", "id": "anak laki-laki" },
+  { "zh": "女儿", "baca": "nǚ'ér", "id": "anak perempuan" },
+  { "zh": "孩子", "baca": "háizi", "id": "anak" },
+  { "zh": "丈夫", "baca": "zhàngfu", "id": "suami" },
+  { "zh": "太太", "baca": "tàitai", "id": "istri" },
+  { "zh": "爷爷", "baca": "yéye", "id": "kakek (pihak ayah)" },
+  { "zh": "奶奶", "baca": "nǎinai", "id": "nenek (pihak ayah)" },
+  { "zh": "外公", "baca": "wàigōng", "id": "kakek (pihak ibu)" },
+  { "zh": "外婆", "baca": "wàipó", "id": "nenek (pihak ibu)" },
+  { "zh": "叔叔", "baca": "shūshu", "id": "paman; om" },
+  { "zh": "阿姨", "baca": "āyí", "id": "bibi; tante" },
+  { "zh": "岁", "baca": "suì", "id": "tahun (umur)" },
+  { "zh": "多大", "baca": "duō dà", "id": "umur berapa" },
+  { "zh": "年纪", "baca": "niánjì", "id": "usia (hormat)" },
+  { "zh": "今年", "baca": "jīnnián", "id": "tahun ini" },
+  { "zh": "和", "baca": "hé", "id": "dan" },
+  { "zh": "跟", "baca": "gēn", "id": "dengan, bersama" },
+  { "zh": "还有", "baca": "háiyǒu", "id": "dan juga" },
+  { "zh": "然后", "baca": "ránhòu", "id": "lalu, kemudian" },
+  { "zh": "比", "baca": "bǐ", "id": "dibandingkan" },
+  { "zh": "一样", "baca": "yíyàng", "id": "sama" },
+  { "zh": "结婚", "baca": "jiéhūn", "id": "menikah" },
+  { "zh": "退休", "baca": "tuìxiū", "id": "pensiun" },
+  { "zh": "住", "baca": "zhù", "id": "tinggal" },
+  { "zh": "做", "baca": "zuò", "id": "melakukan, membuat" },
+  { "zh": "上班", "baca": "shàng bān", "id": "masuk kerja" },
+  { "zh": "上学", "baca": "shàng xué", "id": "bersekolah" },
+  { "zh": "小学", "baca": "xiǎoxué", "id": "sekolah dasar" },
+  { "zh": "中学", "baca": "zhōngxué", "id": "sekolah menengah" },
+  { "zh": "大学", "baca": "dàxué", "id": "universitas" },
+  { "zh": "照片", "baca": "zhàopiàn", "id": "foto" },
+  { "zh": "独生子", "baca": "dúshēngzǐ", "id": "anak tunggal (lk)" },
+  { "zh": "只有", "baca": "zhǐyǒu", "id": "hanya ada" },
+  { "zh": "一定", "baca": "yídìng", "id": "pasti" },
+  { "zh": "疼", "baca": "téng", "id": "sakit; menyayangi" },
+  { "zh": "想", "baca": "xiǎng", "id": "ingin; rindu" },
+  { "zh": "北京", "baca": "Běijīng", "id": "Beijing" },
+  { "zh": "上海", "baca": "Shànghǎi", "id": "Shanghai" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan 口, 个, 岁, 和, atau 比.",
+   "items": [
+    "[我家有四|Wǒ jiā yǒu sì] ___ [人|rén]。",
+    "[我有一|Wǒ yǒu yí] ___ [弟弟|dìdi]。",
+    "[他今年三十|Tā jīnnián sānshí] ___。",
+    "[爸爸|Bàba] ___ [妈妈|māma][都在上海|dōu zài Shànghǎi]。",
+    "[他|Tā] ___ [我大五岁|wǒ dà wǔ suì]。"
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk pertanyaan umur yang tepat: 几岁, 多大, 多大年纪.",
+   "items": [
+    "[你的女儿|Nǐ de nǚ'ér]（6 [岁|suì]）___？",
+    "[你|Nǐ]（[同学|tóngxué]）___？",
+    "[您的爷爷|Nín de yéye] ___？",
+    "[你儿子|Nǐ érzi]（3 [岁|suì]）___？",
+    "[你哥哥|Nǐ gēge] ___？"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "你 / 家 / 有 / 几 / 口 / 人",
+    "我 / 有 / 一 / 个 / 妹妹",
+    "他 / 今年 / 三十 / 岁",
+    "爸爸 / 和 / 妈妈 / 都 / 是 / 老师",
+    "他 / 比 / 我 / 小 / 五 / 岁",
+    "我 / 一个人 / 在 / 北京"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[我家有五口人|Wǒ jiā yǒu wǔ kǒu rén]。",
+    "[我妈妈退休了|Wǒ māma tuìxiū le]。",
+    "[你有兄弟姐妹吗|Nǐ yǒu xiōngdì jiěmèi ma]？",
+    "[她今年十六岁，还是中学生|Tā jīnnián shíliù suì, hái shì zhōngxuéshēng]。",
+    "[我没有他高|Wǒ méiyǒu tā gāo]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Keluargamu berapa orang?",
+    "Saya punya satu adik perempuan.",
+    "Dia dua puluh lima tahun.",
+    "Ayah dan ibu saya tinggal di Jakarta.",
+    "Kamu sudah menikah?"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[他是三十岁|Tā shì sānshí suì]。",
+    "[我家有五个人|Wǒ jiā yǒu wǔ ge rén]。",
+    "[我吃饭和看书|Wǒ chī fàn hé kàn shū]。",
+    "[他比我很大|Tā bǐ wǒ hěn dà]。",
+    "[您几岁|Nín jǐ suì]？"
+   ]
+  }
+ ],
+ "answers": [
+  "口 — 个 — 岁 — 和 — 比",
+  "几岁 — 多大 — 多大年纪 — 几岁 — 多大",
+  "你 家 有 几 口 人 — 我 有 一 个 妹妹 — 他 今年 三十 岁 — 爸爸 和 妈妈 都 是 老师 — 他 比 我 小 五 岁 — 我 一个人 在 北京",
+  "Keluarga saya lima orang. — Ibu saya sudah pensiun. — Kamu punya saudara kandung? — Tahun ini dia enam belas tahun, masih anak SMP. — Saya tidak setinggi dia.",
+  "Nǐ jiā yǒu jǐ kǒu rén? — Wǒ yǒu yí ge mèimei. — Tā èrshíwǔ suì. — Wǒ bàba hé māma zhù zài Yǎjiādá. — Nǐ jiéhūn le ma?",
+  "Tā sānshí suì. — Wǒ jiā yǒu wǔ kǒu rén. — Wǒ chī fàn, ránhòu kàn shū. — Tā bǐ wǒ dà. — Nín duō dà niánjì?"
+ ],
+ "wave": "Ulangi Unit 3: gambar pohon keluargamu di selembar kertas, tulis umur tiap orang dengan aksara angka Mandarin, lalu ceritakan keluargamu keras-keras dalam sepuluh kalimat. Angka dan keluarga terlatih sekaligus."
+}

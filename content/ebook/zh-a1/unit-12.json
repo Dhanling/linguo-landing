@@ -1,0 +1,372 @@
+{
+ "title": "Di rumah makan, di apotek, dan saat darurat",
+ "title_target": "我不舒服 — Wǒ bù shūfu",
+ "goal": "Memesan makanan dari awal sampai membayar, mengatakan bagian tubuh mana yang sakit, meminta pertolongan — dan merangkum seluruh rangka kalimat dua belas unit dalam keadaan yang paling menuntut.",
+ "bekal": [
+  "memesan makanan dan minuman di rumah makan",
+  "menyebutkan pantangan makanan dengan jelas",
+  "mengatakan bagian tubuh yang sakit dengan pola 我…疼",
+  "membeli obat di apotek",
+  "meminta pertolongan dalam keadaan darurat"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Memesan makanan",
+   "intro": "Andi dan Wang Li di rumah makan Sichuan. Ini percakapan yang akan kamu ulangi ratusan kali; hafalkan rangkanya, bukan kata-katanya.",
+   "lines": [
+    { "speaker": "服务员:", "text": "[几|Jǐ][位|wèi]？", "id": "Berapa orang?", "literal": "berapa — penggolong-hormat." },
+    { "speaker": "王丽:", "text": "[两|Liǎng][位|wèi]。[有|Yǒu][靠窗|kào chuāng][的|de][位子|wèizi][吗|ma]？", "id": "Dua orang. Ada tempat dekat jendela?", "literal": "dua — penggolong. ada — dekat — jendela — punya — tempat-duduk — kah." },
+    { "speaker": "服务员:", "text": "[有|Yǒu]，[请|qǐng][跟|gēn][我|wǒ][来|lái]。[这|Zhè][是|shì][菜单|càidān]。", "id": "Ada, silakan ikut saya. Ini menunya.", "literal": "ada, silakan — dengan — saya — datang. ini — adalah — lauk — daftar." },
+    { "speaker": "安迪:", "text": "[谢谢|Xièxie]。[你们|Nǐmen][这儿|zhèr][什么|shénme][最|zuì][好吃|hǎochī]？", "id": "Terima kasih. Di sini apa yang paling enak?", "literal": "terima-kasih. kalian — sini — apa — paling — enak-makan." },
+    { "speaker": "服务员:", "text": "[水煮鱼|Shuǐzhǔ yú][和|hé][宫保鸡丁|gōngbǎo jīdīng][最|zuì][有名|yǒumíng]。", "id": "Ikan rebus pedas dan ayam gongbao paling terkenal.", "literal": "air-rebus-ikan — dan — gongbao-ayam-potong — paling — punya — nama." },
+    { "speaker": "安迪:", "text": "[水煮鱼|Shuǐzhǔ yú][辣|là][吗|ma]？[我|Wǒ][不|bú][太|tài][能|néng][吃|chī][辣|là]。", "id": "Ikan rebusnya pedas? Saya kurang kuat pedas.", "literal": "air-rebus-ikan — pedas — kah. saya — tidak — terlalu — bisa — makan — pedas." },
+    { "speaker": "服务员:", "text": "[很|Hěn][辣|là]。[可以|Kěyǐ][做|zuò][微辣|wēi là][的|de]。", "id": "Pedas sekali. Bisa dibuat sedikit pedas saja.", "literal": "penyangga — pedas. boleh — membuat — sedikit — pedas — punya." },
+    { "speaker": "安迪:", "text": "[那|Nà][来|lái][一|yí][个|ge][微辣|wēi là][的|de][水煮鱼|shuǐzhǔ yú]。[还有|Háiyǒu]，[我|wǒ][不|bù][吃|chī][猪肉|zhūròu]。", "id": "Kalau begitu satu ikan rebus sedikit pedas. Oh ya, saya tidak makan daging babi.", "literal": "itu — datang — satu — penggolong — sedikit — pedas — punya — air-rebus-ikan. masih-ada, saya — tidak — makan — babi — daging." },
+    { "speaker": "服务员:", "text": "[明白|Míngbai][了|le]。[还|Hái][要|yào][别的|bié de][吗|ma]？", "id": "Mengerti. Mau yang lain lagi?", "literal": "paham — sudah. masih — mau — lain — punya — kah." },
+    { "speaker": "王丽:", "text": "[再|Zài][来|lái][一|yí][个|ge][青菜|qīngcài]、[两|liǎng][碗|wǎn][米饭|mǐfàn][和|hé][一|yì][壶|hú][茶|chá]。", "id": "Tambah satu sayur, dua mangkuk nasi, dan satu poci teh.", "literal": "lagi — datang — satu — penggolong — hijau-sayur, dua — mangkuk — beras-nasi — dan — satu — poci — teh." },
+    { "speaker": "服务员:", "text": "[好|Hǎo][的|de]，[请|qǐng][稍|shāo][等|děng]。", "id": "Baik, mohon tunggu sebentar.", "literal": "baik — punya, silakan — sedikit — tunggu." },
+    { "speaker": "安迪:", "text": "[服务员|Fúwùyuán]，[买单|mǎidān]！", "id": "Mas, bayar!", "literal": "pelayan, beli — nota." }
+   ],
+   "notes": [
+    "**[位|wèi] adalah kata penggolong hormat untuk orang.** Pelayan selalu memakainya: [几位|jǐ wèi]？ berapa orang? Kamu menjawab dengan angka + 位 juga: [两位|liǎng wèi].",
+    "**⚠️ Memesan makanan memakai [来|lái] “datang”, bukan 要 atau 买.** [来一个水煮鱼|Lái yí ge shuǐzhǔ yú] = satu ikan rebus. Terdengar aneh diterjemahkan harfiah, tapi inilah kata yang dipakai orang. [要|yào] juga bisa dan sama benarnya; 买 tidak pernah dipakai di meja makan.",
+    "**[再来一个…|Zài lái yí ge…] = “tambah satu lagi”.** 再 di depan kata kerja berarti “lagi, sekali lagi” — dan ia dipakai untuk hal yang **belum** terjadi. Untuk yang sudah terjadi, yang dipakai [又|yòu].",
+    "**[微辣|wēi là] sedikit pedas · [中辣|zhōng là] pedas sedang · [特辣|tè là] sangat pedas · [不辣|bú là] tidak pedas.** Empat kata ini menyelamatkan makan malammu di Sichuan atau Hunan.",
+    "**⚠️ [我不吃猪肉|Wǒ bù chī zhūròu] adalah kalimat yang wajib dihafal utuh** oleh pelancong muslim. Ucapkan sebelum makanan dipesan, bukan sesudah datang. Rumah makan Tiongkok terbiasa mendengarnya dan tidak akan bertanya lebih jauh.",
+    "**[买单|mǎidān] = minta bayar**, harfiah “beli nota”. Sinonimnya [结账|jiézhàng]. Cukup diucapkan sambil mengangkat tangan; memanggil pelayan dengan suara di rumah makan Tiongkok adalah hal yang wajar, bukan tidak sopan.",
+    "**[请稍等|Qǐng shāo děng] = mohon tunggu sebentar.** Bentuk yang lebih halus daripada [等一下|děng yíxià]; kamu akan mendengarnya di setiap tempat pelayanan."
+   ],
+   "grammars": [
+    {
+     "title": "Di rumah makan — rangka lengkapnya",
+     "tables": [
+      {
+       "head": ["Tahap", "Kalimatmu", "Arti"],
+       "rows": [
+        ["Masuk", "[两位|Liǎng wèi]。", "Dua orang."],
+        ["", "[有位子吗|Yǒu wèizi ma]？", "Ada tempat?"],
+        ["Melihat menu", "[有中文菜单吗|Yǒu Zhōngwén càidān ma]？", "Ada menu bahasa Mandarin?"],
+        ["", "[有图片吗|Yǒu túpiàn ma]？", "Ada gambarnya? — penyelamat kalau aksaranya belum terbaca"],
+        ["Bertanya", "[什么最好吃|Shénme zuì hǎochī]？", "Apa yang paling enak?"],
+        ["", "[这个辣吗|Zhège là ma]？", "Ini pedas?"],
+        ["", "[这个是什么肉|Zhège shì shénme ròu]？", "Ini daging apa?"],
+        ["Memesan", "[来一个…|Lái yí ge…]", "Satu … "],
+        ["", "[再来一个…|Zài lái yí ge…]", "Tambah satu …"],
+        ["Pantangan", "[我不吃猪肉|Wǒ bù chī zhūròu]。", "Saya tidak makan babi."],
+        ["", "[请不要放辣椒|Qǐng bú yào fàng làjiāo]。", "Tolong jangan diberi cabai."],
+        ["", "[我对花生过敏|Wǒ duì huāshēng guòmǐn]。", "Saya alergi kacang tanah."],
+        ["Saat makan", "[很好吃|Hěn hǎochī]！", "Enak!"],
+        ["", "[能加点儿水吗|Néng jiā diǎnr shuǐ ma]？", "Bisa tambah air?"],
+        ["Selesai", "[买单|Mǎidān]！ / [结账|Jiézhàng]！", "Bayar!"],
+        ["", "[能打包吗|Néng dǎbāo ma]？", "Bisa dibungkus?"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **Membungkus sisa makanan sangat lazim di Tiongkok** dan sama sekali tidak memalukan — justru dianggap tidak boros. [打包|dǎbāo] adalah kata yang akan sering kamu dengar.",
+      "⚠️ **Memberi tip tidak lazim** di rumah makan Tiongkok daratan dan sering justru membingungkan pelayannya."
+     ]
+    },
+    {
+     "title": "Makanan dan minuman",
+     "tables": [
+      {
+       "head": ["Makanan", "Pīnyīn", "Minuman", "Pīnyīn"],
+       "rows": [
+        ["[米饭|mǐfàn] nasi putih", "mǐfàn", "[水|shuǐ] air", "shuǐ"],
+        ["[面条|miàntiáo] mi", "miàntiáo", "[茶|chá] teh", "chá"],
+        ["[包子|bāozi] bakpau", "bāozi", "[咖啡|kāfēi] kopi", "kāfēi"],
+        ["[饺子|jiǎozi] pangsit", "jiǎozi", "[牛奶|niúnǎi] susu", "niúnǎi"],
+        ["[炒饭|chǎofàn] nasi goreng", "chǎofàn", "[果汁|guǒzhī] jus", "guǒzhī"],
+        ["[鸡肉|jīròu] daging ayam", "jīròu", "[啤酒|píjiǔ] bir", "píjiǔ"],
+        ["[牛肉|niúròu] daging sapi", "niúròu", "[热水|rè shuǐ] air panas", "rè shuǐ"],
+        ["[羊肉|yángròu] daging kambing", "yángròu", "[冰水|bīng shuǐ] air es", "bīng shuǐ"],
+        ["[猪肉|zhūròu] daging babi", "zhūròu", "[可乐|kělè] kola", "kělè"],
+        ["[鱼|yú] ikan", "yú", "[豆浆|dòujiāng] susu kedelai", "dòujiāng"],
+        ["[鸡蛋|jīdàn] telur", "jīdàn", "[汤|tāng] sup", "tāng"],
+        ["[青菜|qīngcài] sayur hijau", "qīngcài", "[水果|shuǐguǒ] buah", "shuǐguǒ"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **Orang Tiongkok jarang minum air dingin.** Kalau kamu meminta air begitu saja, yang datang hampir pasti air panas — [热水|rè shuǐ]. Kalau ingin yang dingin, sebutkan: [冰水|bīng shuǐ] atau [凉水|liáng shuǐ].",
+      "⚠️ [汤|tāng] “sup” **diminum**, bukan dimakan: [喝汤|hē tāng]. Begitu juga bubur: [喝粥|hē zhōu]."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Ke apotek",
+   "intro": "Keesokan harinya Andi tidak enak badan. Percakapan ini pendek, tapi setiap kalimatnya adalah kalimat yang benar-benar bisa menyelamatkanmu di negeri orang.",
+   "lines": [
+    { "speaker": "药店:", "text": "[您好|Nín hǎo]，[需要|xūyào][什么|shénme]？", "id": "Selamat siang, perlu apa?", "literal": "Anda — baik, perlu — apa." },
+    { "speaker": "安迪:", "text": "[我|Wǒ][不|bù][舒服|shūfu]。[我|Wǒ][肚子|dùzi][疼|téng]。", "id": "Saya tidak enak badan. Perut saya sakit.", "literal": "saya — tidak — nyaman. saya — perut — sakit." },
+    { "speaker": "药店:", "text": "[从|Cóng][什么|shénme][时候|shíhou][开始|kāishǐ][的|de]？", "id": "Mulai kapan?", "literal": "dari — apa — waktu — mulai — punya." },
+    { "speaker": "安迪:", "text": "[昨天|Zuótiān][晚上|wǎnshang]。[我|Wǒ][吃|chī][了|le][很|hěn][辣|là][的|de][东西|dōngxi]。", "id": "Semalam. Saya makan sesuatu yang sangat pedas.", "literal": "kemarin — malam. saya — makan — sudah — penyangga — pedas — punya — barang." },
+    { "speaker": "药店:", "text": "[发烧|Fāshāo][吗|ma]？[拉肚子|Lā dùzi][吗|ma]？", "id": "Demam? Diare?", "literal": "keluar-panas — kah. tarik-perut — kah." },
+    { "speaker": "安迪:", "text": "[没有|Méiyǒu][发烧|fāshāo]，[但是|dànshì][拉|lā][了|le][三|sān][次|cì]。", "id": "Tidak demam, tapi diare tiga kali.", "literal": "tidak-ada — demam, tetapi — tarik — sudah — tiga — kali." },
+    { "speaker": "药店:", "text": "[这|Zhè][个|ge][药|yào][一|yì][天|tiān][三|sān][次|cì]，[饭|fàn][后|hòu][吃|chī]。", "id": "Obat ini tiga kali sehari, diminum sesudah makan.", "literal": "ini — penggolong — obat — satu — hari — tiga — kali, nasi — sesudah — makan." },
+    { "speaker": "安迪:", "text": "[一|Yí][次|cì][几|jǐ][片|piàn]？", "id": "Sekali minum berapa butir?", "literal": "satu — kali — berapa — keping." },
+    { "speaker": "药店:", "text": "[两|Liǎng][片|piàn]。[多|Duō][喝|hē][热水|rè shuǐ]，[别|bié][吃|chī][辣|là][的|de]。", "id": "Dua butir. Banyak minum air hangat, jangan makan yang pedas.", "literal": "dua — keping. banyak — minum — panas-air, jangan — makan — pedas — punya." },
+    { "speaker": "安迪:", "text": "[好|Hǎo][的|de]。[如果|Rúguǒ][明天|míngtiān][还|hái][疼|téng][呢|ne]？", "id": "Baik. Kalau besok masih sakit bagaimana?", "literal": "baik — punya. jika — besok — masih — sakit — bagaimana." },
+    { "speaker": "药店:", "text": "[那|Nà][您|nín][得|děi][去|qù][医院|yīyuàn][看|kàn][医生|yīshēng]。", "id": "Kalau begitu Anda harus ke rumah sakit menemui dokter.", "literal": "itu — Anda — harus — pergi — rumah-sakit — melihat — dokter." },
+    { "speaker": "安迪:", "text": "[明白|Míngbai][了|le]，[谢谢|xièxie][您|nín]。", "id": "Mengerti, terima kasih.", "literal": "paham — sudah, terima-kasih — Anda." }
+   ],
+   "notes": [
+    "**⚠️ Menyebut sakit memakai pola “aku + bagian tubuh + 疼”, tanpa kata kerja dan tanpa 的.** [我肚子疼|Wǒ dùzi téng] harfiah “saya perut sakit”. Bukan 我的肚子是疼. Bagi penutur bahasa Indonesia, pola ini justru terasa sangat wajar — kita berkata “saya perutnya sakit” dengan cara yang mirip.",
+    "**[不舒服|bù shūfu] = tidak enak badan.** Kalimat pembuka paling berguna ketika kamu belum tahu persisnya sakit apa.",
+    "**[从什么时候开始的|Cóng shénme shíhou kāishǐ de]？** = mulai kapan. Perhatikan 的 di ujung — ini bentuk 是…的 dari Unit 10 yang menyoroti keterangan sebuah kejadian yang pasti sudah terjadi.",
+    "**[发烧|fāshāo] demam · [咳嗽|késou] batuk · [感冒|gǎnmào] flu · [拉肚子|lā dùzi] diare · [头晕|tóuyūn] pusing berputar.** Lima kata yang menutup sebagian besar keluhan.",
+    "**[片|piàn] adalah kata penggolong untuk benda tipis**: butir obat, irisan roti, keping. [两片药|liǎng piàn yào] dua butir obat.",
+    "**[得|děi] = harus.** ⚠️ Aksaranya sama dengan 得 penanda tingkat dari Unit 8, tapi bunyinya berbeda: *děi* (harus) dan *de* (penanda). Negatifnya bukan 不得 melainkan [不用|bú yòng] “tidak perlu”.",
+    "**[如果…呢|rúguǒ… ne]？ = “bagaimana kalau …?”.** Sinonim [要是|yàoshi]. Ini rangka pengandaian yang paling sederhana dan sudah cukup untuk seluruh tingkat A1.",
+    "**[看医生|kàn yīshēng] = menemui dokter**, harfiah “melihat dokter”. Bentuk lain: [看病|kàn bìng] “berobat”."
+   ],
+   "grammars": [
+    {
+     "title": "Badan dan keluhan",
+     "tables": [
+      {
+       "head": ["Bagian tubuh", "Pīnyīn", "Bagian tubuh", "Pīnyīn"],
+       "rows": [
+        ["[头|tóu] kepala", "tóu", "[肚子|dùzi] perut", "dùzi"],
+        ["[眼睛|yǎnjing] mata", "yǎnjing", "[背|bèi] punggung", "bèi"],
+        ["[鼻子|bízi] hidung", "bízi", "[手|shǒu] tangan", "shǒu"],
+        ["[嘴|zuǐ] mulut", "zuǐ", "[脚|jiǎo] kaki", "jiǎo"],
+        ["[耳朵|ěrduo] telinga", "ěrduo", "[腿|tuǐ] tungkai", "tuǐ"],
+        ["[牙|yá] gigi", "yá", "[嗓子|sǎngzi] tenggorokan", "sǎngzi"]
+       ]
+      },
+      {
+       "head": ["Keluhan", "Kalimat"],
+       "rows": [
+        ["Tidak enak badan", "[我不舒服|Wǒ bù shūfu]。"],
+        ["Sakit kepala", "[我头疼|Wǒ tóu téng]。"],
+        ["Demam", "[我发烧了|Wǒ fāshāo le]。"],
+        ["Flu", "[我感冒了|Wǒ gǎnmào le]。"],
+        ["Batuk", "[我咳嗽|Wǒ késou]。"],
+        ["Diare", "[我拉肚子|Wǒ lā dùzi]。"],
+        ["Alergi", "[我对…过敏|Wǒ duì… guòmǐn]。"],
+        ["Sudah berapa lama", "[疼了两天了|Téng le liǎng tiān le]。"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ Perhatikan bahwa [发烧了|fāshāo le] dan [感冒了|gǎnmào le] memakai **了 perubahan** dari Unit 10: dulu sehat, sekarang tidak. Tanpa 了, kalimatnya terdengar seperti menyebutkan kebiasaan."
+     ]
+    },
+    {
+     "title": "Keadaan darurat",
+     "tables": [
+      {
+       "head": ["Kalimat", "Arti"],
+       "rows": [
+        ["[救命|Jiùmìng]！", "Tolong! — hanya untuk bahaya jiwa"],
+        ["[帮帮我|Bāng bang wǒ]！", "Tolong saya!"],
+        ["[请叫救护车|Qǐng jiào jiùhùchē]。", "Tolong panggil ambulans."],
+        ["[请叫警察|Qǐng jiào jǐngchá]。", "Tolong panggil polisi."],
+        ["[我的护照丢了|Wǒ de hùzhào diū le]。", "Paspor saya hilang."],
+        ["[我的钱包被偷了|Wǒ de qiánbāo bèi tōu le]。", "Dompet saya dicuri."],
+        ["[我不会说中文|Wǒ bú huì shuō Zhōngwén]。", "Saya tidak bisa bahasa Mandarin."],
+        ["[有人会说英语吗|Yǒu rén huì shuō Yīngyǔ ma]？", "Ada yang bisa bahasa Inggris?"],
+        ["[请给我叫翻译|Qǐng gěi wǒ jiào fānyì]。", "Tolong panggilkan penerjemah."],
+        ["[我要联系我的大使馆|Wǒ yào liánxì wǒ de dàshǐguǎn]。", "Saya mau menghubungi kedutaan saya."]
+       ]
+      },
+      {
+       "head": ["Nomor darurat di Tiongkok", "Untuk"],
+       "rows": [
+        ["**110**", "Polisi"],
+        ["**120**", "Ambulans"],
+        ["**119**", "Pemadam kebakaran"],
+        ["**122**", "Kecelakaan lalu lintas"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **Simpan alamat tempat tinggalmu dalam aksara Han di telepon.** Dalam keadaan panik, menunjukkan tulisan jauh lebih cepat dan jauh lebih pasti daripada berusaha mengucapkannya.",
+      "Kedutaan Besar Republik Indonesia di Beijing: **[印度尼西亚共和国大使馆|Yìndùníxīyà Gònghéguó Dàshǐguǎn]**. Simpan nama itu, bukan terjemahannya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Rangkuman dua belas unit",
+   "blocks": [
+    { "type": "p", "text": "Ini bukan daftar materi — ini daftar **kemampuan**. Bacalah pelan-pelan dan ujilah dirimu sendiri di tiap baris. Kalau ada yang membuatmu ragu, unitnya tertulis di sebelahnya." },
+    { "type": "tabel", "head": ["Kamu sekarang bisa", "Polanya", "Unit"], "rows": [
+      ["Memperkenalkan diri", "[我叫…，我是…人|Wǒ jiào…, wǒ shì… rén]", "1"],
+      ["Menunjuk dan memiliki", "[这是我的…|Zhè shì wǒ de…]", "2"],
+      ["Berbelanja dan menawar", "[多少钱？便宜一点儿吧|Duōshao qián? Piányi yìdiǎnr ba]", "3"],
+      ["Bercerita tentang keluarga", "[我家有…口人|Wǒ jiā yǒu… kǒu rén]", "4"],
+      ["Menyebut waktu dan berjanji", "[明天下午四点见|Míngtiān xiàwǔ sì diǎn jiàn]", "5"],
+      ["Mengatakan letak dan arah", "[…在…旁边|… zài… pángbiān]", "6"],
+      ["Menceritakan kebiasaan", "[我常常…|Wǒ chángcháng…]", "7"],
+      ["Menilai dan berpendapat", "[我觉得…很…|Wǒ juéde… hěn…]", "8"],
+      ["Mengajak dan menolak", "[一起…吧 / 对不起，我有事|Yìqǐ… ba / Duìbuqǐ, wǒ yǒu shì]", "9"],
+      ["Menceritakan yang sudah terjadi", "[我去了… / 我去过…|Wǒ qù le… / Wǒ qù guo…]", "10"],
+      ["Bepergian", "[我坐地铁去…|Wǒ zuò dìtiě qù…]", "11"],
+      ["Memesan makanan dan minta tolong", "[来一个… / 我不舒服|Lái yí ge… / Wǒ bù shūfu]", "12"]
+    ]},
+    { "type": "kotak", "title": "Lima aturan yang menentukan segalanya", "items": [
+      "**1. Semua keterangan berdiri sebelum kata kerja.** Waktu, tempat, alat, cara — semuanya. Yang boleh di belakang hanyalah objek, lamanya, dan berapa kali.",
+      "**2. Kalimat kata sifat tidak memakai 是, tapi memakai 很.** [他很忙|Tā hěn máng], bukan 他是忙.",
+      "**3. Angka tidak pernah langsung menempel pada kata benda.** Selalu ada kata penggolong di antaranya.",
+      "**4. 了 bukan bentuk lampau.** Ia menandai selesai atau berubah. Yang menandai masa lalu adalah keterangan waktu.",
+      "**5. Sangkalan punya dua bentuk.** 不 untuk kemauan dan kebiasaan; 没 untuk kejadian yang tidak terjadi. 有 selalu 没有."
+    ]}
+   ]
+  },
+  {
+   "title": "Ujian akhir: satu hari penuh dalam bahasa Mandarin",
+   "blocks": [
+    { "type": "p", "text": "Kerjakan ini di kepala, keras-keras, tanpa membuka catatan. Kalau kamu bisa melewati sepuluh keadaan berikut, kamu sudah menguasai isi modul ini — bukan sekadar membacanya." },
+    { "type": "list", "items": [
+      "**07.00** Kamu bertemu tetangga di lift. Sapa dia dan jawab pertanyaannya tentang kabarmu.",
+      "**07.30** Kamu sarapan di warung. Pesan bakpau dua dan satu susu kedelai, lalu tanyakan harganya.",
+      "**08.15** Kamu naik taksi. Sebutkan tujuanmu, tanyakan berapa lama, dan minta berhenti di seberang bank.",
+      "**10.00** Kamu diperkenalkan kepada rekan baru. Sebutkan nama, asal, dan pekerjaanmu, lalu tanyakan hal yang sama.",
+      "**12.30** Kamu makan siang bersama. Sebutkan pantangan makananmu, dan pesan sesuatu yang tidak pedas.",
+      "**14.00** Kamu mencari toilet di gedung asing. Bertanya, lalu ulangi arah yang kamu dengar untuk memastikan.",
+      "**16.00** Rekanmu mengajak makan malam. Terima ajakannya, lalu sepakati jam dan tempatnya.",
+      "**18.00** Kamu berbelanja baju. Tanyakan harga, minta dicoba, lalu tawar sekali.",
+      "**20.00** Kamu bercerita tentang akhir pekan lalu dalam enam kalimat, memakai 了 dan 过.",
+      "**22.00** Perutmu sakit. Jelaskan keluhanmu ke apotek, tanyakan berapa kali sehari obatnya diminum."
+     ]},
+    { "type": "kotak", "title": "Kalau ada yang macet", "items": [
+      "Catat keadaan mana yang membuatmu berhenti, lalu buka unitnya lagi — bukan seluruh modulnya.",
+      "Berhenti di tengah kalimat adalah hal yang wajar bahkan bagi orang yang sudah belajar bertahun-tahun. Yang membedakan pemula dari orang yang lancar bukanlah tidak pernah macet, melainkan punya kalimat cadangan: [请再说一遍|Qǐng zài shuō yí biàn]。[这个用中文怎么说|Zhège yòng Zhōngwén zěnme shuō]？",
+      "Ulangi ujian ini seminggu lagi. Perbedaannya akan mengejutkanmu.",
+      "[加油|Jiāyóu]！"
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "服务员", "baca": "fúwùyuán", "id": "pelayan" },
+  { "zh": "菜单", "baca": "càidān", "id": "daftar menu" },
+  { "zh": "位", "baca": "wèi", "id": "penggolong orang (hormat)" },
+  { "zh": "位子", "baca": "wèizi", "id": "tempat duduk" },
+  { "zh": "来", "baca": "lái", "id": "datang; memesan" },
+  { "zh": "再", "baca": "zài", "id": "lagi" },
+  { "zh": "碗", "baca": "wǎn", "id": "mangkuk" },
+  { "zh": "杯", "baca": "bēi", "id": "gelas, cangkir" },
+  { "zh": "瓶", "baca": "píng", "id": "botol" },
+  { "zh": "米饭", "baca": "mǐfàn", "id": "nasi putih" },
+  { "zh": "面条", "baca": "miàntiáo", "id": "mi" },
+  { "zh": "饺子", "baca": "jiǎozi", "id": "pangsit" },
+  { "zh": "包子", "baca": "bāozi", "id": "bakpau" },
+  { "zh": "青菜", "baca": "qīngcài", "id": "sayur hijau" },
+  { "zh": "鸡肉", "baca": "jīròu", "id": "daging ayam" },
+  { "zh": "牛肉", "baca": "niúròu", "id": "daging sapi" },
+  { "zh": "羊肉", "baca": "yángròu", "id": "daging kambing" },
+  { "zh": "猪肉", "baca": "zhūròu", "id": "daging babi" },
+  { "zh": "鱼", "baca": "yú", "id": "ikan" },
+  { "zh": "汤", "baca": "tāng", "id": "sup" },
+  { "zh": "茶", "baca": "chá", "id": "teh" },
+  { "zh": "热水", "baca": "rè shuǐ", "id": "air panas" },
+  { "zh": "买单", "baca": "mǎidān", "id": "membayar" },
+  { "zh": "打包", "baca": "dǎbāo", "id": "membungkus" },
+  { "zh": "过敏", "baca": "guòmǐn", "id": "alergi" },
+  { "zh": "有名", "baca": "yǒumíng", "id": "terkenal" },
+  { "zh": "舒服", "baca": "shūfu", "id": "nyaman, enak badan" },
+  { "zh": "疼", "baca": "téng", "id": "sakit, nyeri" },
+  { "zh": "头", "baca": "tóu", "id": "kepala" },
+  { "zh": "肚子", "baca": "dùzi", "id": "perut" },
+  { "zh": "嗓子", "baca": "sǎngzi", "id": "tenggorokan" },
+  { "zh": "牙", "baca": "yá", "id": "gigi" },
+  { "zh": "眼睛", "baca": "yǎnjing", "id": "mata" },
+  { "zh": "手", "baca": "shǒu", "id": "tangan" },
+  { "zh": "脚", "baca": "jiǎo", "id": "kaki" },
+  { "zh": "发烧", "baca": "fāshāo", "id": "demam" },
+  { "zh": "感冒", "baca": "gǎnmào", "id": "flu" },
+  { "zh": "咳嗽", "baca": "késou", "id": "batuk" },
+  { "zh": "拉肚子", "baca": "lā dùzi", "id": "diare" },
+  { "zh": "药", "baca": "yào", "id": "obat" },
+  { "zh": "药店", "baca": "yàodiàn", "id": "apotek" },
+  { "zh": "片", "baca": "piàn", "id": "butir, keping" },
+  { "zh": "医生", "baca": "yīshēng", "id": "dokter" },
+  { "zh": "医院", "baca": "yīyuàn", "id": "rumah sakit" },
+  { "zh": "得", "baca": "děi", "id": "harus" },
+  { "zh": "需要", "baca": "xūyào", "id": "perlu" },
+  { "zh": "如果", "baca": "rúguǒ", "id": "jika" },
+  { "zh": "救命", "baca": "jiùmìng", "id": "tolong (bahaya)" },
+  { "zh": "警察", "baca": "jǐngchá", "id": "polisi" },
+  { "zh": "丢", "baca": "diū", "id": "hilang" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan kata penggolong yang tepat: 位, 碗, 杯, 瓶, 片, 个.",
+   "items": [
+    "[两|liǎng] ___ [米饭|mǐfàn]",
+    "[一|yì] ___ [茶|chá]",
+    "[三|sān] ___ [人|rén]",
+    "[两|liǎng] ___ [药|yào]",
+    "[一|yì] ___ [水|shuǐ]",
+    "[一|yí] ___ [青菜|qīngcài]"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bagian tubuh atau keluhan yang tepat: 头, 肚子, 发烧, 感冒, 嗓子.",
+   "items": [
+    "[我昨天吃了很辣的东西，今天|Wǒ zuótiān chī le hěn là de dōngxi, jīntiān] ___ [疼|téng]。",
+    "[我|Wǒ] ___ [了，三十八度|le, sānshíbā dù]。",
+    "[我|Wǒ] ___ [疼，不能说话|téng, bù néng shuōhuà]。",
+    "[外边很冷，我|Wàibian hěn lěng, wǒ] ___ [了|le]。",
+    "[我|Wǒ] ___ [疼，想休息一下|téng, xiǎng xiūxi yíxià]。"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "来 / 一 / 个 / 不辣 / 的 / 菜",
+    "我 / 不 / 吃 / 猪肉",
+    "我 / 肚子 / 疼",
+    "这 / 个 / 药 / 一 / 天 / 三 / 次",
+    "有 / 中文 / 菜单 / 吗",
+    "请 / 叫 / 救护车"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[你们这儿什么最好吃|Nǐmen zhèr shénme zuì hǎochī]？",
+    "[请不要放辣椒|Qǐng bú yào fàng làjiāo]。",
+    "[这个药饭后吃，一次两片|Zhège yào fàn hòu chī, yí cì liǎng piàn]。",
+    "[如果明天还疼，就去医院|Rúguǒ míngtiān hái téng, jiù qù yīyuàn]。",
+    "[我的护照丢了|Wǒ de hùzhào diū le]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Dua orang, ada tempat?",
+    "Saya tidak makan daging babi.",
+    "Saya tidak enak badan.",
+    "Kepala saya sakit.",
+    "Tolong panggil polisi."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[我的肚子是疼|Wǒ de dùzi shì téng]。",
+    "[我买一个水煮鱼|Wǒ mǎi yí ge shuǐzhǔ yú]。",
+    "[我两碗米饭要|Wǒ liǎng wǎn mǐfàn yào]。",
+    "[我没发烧了|Wǒ méi fāshāo le]。",
+    "[我不能说中文|Wǒ bù néng shuō Zhōngwén]。"
+   ]
+  }
+ ],
+ "answers": [
+  "碗 — 杯 — 位 — 片 — 瓶 — 个",
+  "肚子 — 发烧 — 嗓子 — 感冒 — 头",
+  "来 一 个 不辣 的 菜 — 我 不 吃 猪肉 — 我 肚子 疼 — 这 个 药 一 天 三 次 — 有 中文 菜单 吗 — 请 叫 救护车",
+  "Di sini apa yang paling enak? — Tolong jangan diberi cabai. — Obat ini diminum sesudah makan, sekali dua butir. — Kalau besok masih sakit, pergilah ke rumah sakit. — Paspor saya hilang.",
+  "Liǎng wèi, yǒu wèizi ma? — Wǒ bù chī zhūròu. — Wǒ bù shūfu. — Wǒ tóu téng. — Qǐng jiào jǐngchá.",
+  "Wǒ dùzi téng. — Wǒ yào yí ge shuǐzhǔ yú. — Wǒ yào liǎng wǎn mǐfàn. — Wǒ méi fāshāo. — Wǒ bú huì shuō Zhōngwén."
+ ],
+ "wave": "Ulangi seluruh modul: kerjakan “Ujian akhir” di bagian sebelumnya dari pukul tujuh pagi sampai sepuluh malam, satu keadaan setiap kali kamu berpindah ruangan hari ini. Dua belas unit yang dipakai dalam satu hari akan menempel lebih kuat daripada dua belas unit yang dibaca dalam satu minggu."
+}
