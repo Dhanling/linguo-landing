@@ -3094,7 +3094,7 @@ export default function AkunPage() {
      yang jadi rumahnya — dan kepemilikan ini juga yang menentukan siswa disebut
      "belum punya apa pun" atau tidak. */
   const [produkDigital, setProdukDigital] = useState<
-    { id: string; purchaseId: string; type: "ebook" | "elearning"; title: string; language: string | null; link: string | null }[]
+    { id: string; purchaseId: string; type: "ebook" | "elearning"; title: string; language: string | null; cover: string | null; link: string | null }[]
   >([]);
   useEffect(() => {
     if (!user?.id) return;
@@ -3104,13 +3104,13 @@ export default function AkunPage() {
       const milikSaya = await orMilikSaya(supabase, user.id);
       const base = supabase
         .from("digital_purchases")
-        .select("id, registration_id, digital_products(id, type, title, language, file_url, video_playlist_url)");
+        .select("id, registration_id, digital_products(id, type, title, language, cover_url, file_url, video_playlist_url)");
       const { data } = await (milikSaya ? base.or(milikSaya) : base.eq("auth_user_id", user.id))
         .eq("payment_status", "Lunas")
         .is("archived_at", null);
       if (batal || !data) return;
       const map: Record<string, string> = {};
-      const punya: { id: string; purchaseId: string; type: "ebook" | "elearning"; title: string; language: string | null; link: string | null }[] = [];
+      const punya: { id: string; purchaseId: string; type: "ebook" | "elearning"; title: string; language: string | null; cover: string | null; link: string | null }[] = [];
       const sudah = new Set<string>();
       for (const row of data as any[]) {
         const prod = row?.digital_products;
@@ -3128,6 +3128,10 @@ export default function AkunPage() {
             type: prod.type === "ebook" ? "ebook" : "elearning",
             title: prod.title || "Produk digital",
             language: prod.language || null,
+            /* [lingbook-sampul-kartu-v1] Sampul asli produk buat kartu "Lanjutkan
+               Belajar" — ikon buku generik tak memberi tahu BUKU YANG MANA yang
+               terakhir dibaca. Kosong → jatuh ke foto stok bahasa. */
+            cover: prod.cover_url || null,
             // E-Book dibaca di dalam Perpustakaan (EbookReader), bukan lewat tautan luar.
             link: prod.type === "ebook" ? null : linkSiap,
           });
@@ -4692,7 +4696,7 @@ export default function AkunPage() {
                                       )}
                                       <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-[#16796E]">
                                         {isBook ? <BookMarked className="h-3 w-3" strokeWidth={2.5} /> : <GraduationCap className="h-3 w-3" strokeWidth={2.5} />}
-                                        {isBook ? "E-Book" : "E-Learning"}
+                                        {isBook ? "Lingbook" : "E-Learning"}
                                       </span>
                                     </div>
                                     <div className="px-2 pb-1.5 pt-3">
@@ -5279,7 +5283,7 @@ export default function AkunPage() {
                             <p className="text-[14px] font-semibold text-gray-600">{tt("Belum ada kelas live aktif")}</p>
                             {/* [produk-digital-bukan-kelas-v1] e-book ikut disebut — sejak kartunya keluar
                                 dari sini, siswa perlu diberi tahu ke mana perginya. */}
-                            <p className="mt-1 text-[12px] font-medium text-gray-400">{tt("Punya paket e-learning? Buka tab Belajar Mandiri di atas. E-book kamu ada di menu Perpustakaan. Atau daftar kelas live di bawah.")}</p>
+                            <p className="mt-1 text-[12px] font-medium text-gray-400">{tt("Punya paket e-learning? Buka tab Belajar Mandiri di atas. Lingbook kamu ada di menu Perpustakaan. Atau daftar kelas live di bawah.")}</p>
                             <button onClick={openEnrollWizard} className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl bg-[#16796E] px-5 text-[13px] font-bold text-white transition hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} />{tt("Daftar Kelas")}</button>
                           </div>
                         </div>

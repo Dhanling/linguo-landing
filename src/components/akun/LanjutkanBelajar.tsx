@@ -150,7 +150,9 @@ export default function LanjutkanBelajar({
       out.push({
         key: `ebook-${d.purchaseId}`,
         ts: b.ts,
-        kind: "E-Book",
+        /* [lingbook-nama-ebook-v1] Kartu e-book memakai nama produknya: "Lingbook".
+           Sumber datanya tetap produk digital bertipe `ebook`. */
+        kind: "Lingbook",
         title: d.title,
         sub: b.total ? `${t("Halaman")} ${b.page}/${b.total}` : `${t("Halaman")} ${b.page}`,
         icon: BookMarked,
@@ -165,7 +167,10 @@ export default function LanjutkanBelajar({
       out.push({
         key: "lingbook",
         ts: lingbook.ts,
-        kind: "Lingbook",
+        /* [lingbook-nama-ebook-v1] Nama "Lingbook" sekarang milik e-book, jadi
+           bacaan CMS bab-per-bab dipanggil "Interaktif" — sama persis dengan
+           nama raknya di Perpustakaan, supaya kartu dan rak saling menunjuk. */
+        kind: "Interaktif",
         title: lingbook.book.replace(/-/g, " "),
         sub: `${t("Bab")} ${lingbook.chapter.replace(/-/g, " ")}`,
         icon: BookText,

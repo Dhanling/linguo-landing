@@ -34,7 +34,7 @@ const POSTER_ALT =
 // Siswa sudah login → arahkan ke katalog Perpustakaan di dalam dashboard
 // (di situ e-book-nya bisa langsung dibeli), bukan ke toko publik.
 const CTA_HREF = "/akun/perpustakaan";
-const CTA_LABEL = "Lihat E-Book";
+const CTA_LABEL = "Lihat Lingbook";
 
 const DELAY_MS = 1200;
 

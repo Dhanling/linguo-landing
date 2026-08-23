@@ -137,15 +137,18 @@ const EN: Record<string, string> = {
 
   /* Perpustakaan */
   "Perpustakaan Saya": "My Library",
-  "E-Book & E-Learning yang sudah kamu beli · buka kapan saja":
-    "E-Books & E-Learning you've purchased · open them anytime",
+  "Lingbook & E-Learning yang sudah kamu beli · buka kapan saja":
+    "Lingbook & E-Learning you've purchased · open them anytime",
   "Perpustakaan masih kosong": "Your library is still empty",
-  "Kamu belum punya E-Book atau E-Learning. Jelajahi toko untuk mulai belajar mandiri kapan saja.":
-    "You don't have any E-Book or E-Learning yet. Browse the store to start learning on your own, anytime.",
+  "Kamu belum punya Lingbook atau E-Learning. Jelajahi toko untuk mulai belajar mandiri kapan saja.":
+    "You don't have any Lingbook or E-Learning yet. Browse the store to start learning on your own, anytime.",
   "Jelajahi Toko Digital": "Browse the Digital Store",
   "Cari produk…": "Search products…",
   "Semua": "All",
   "E-Learning": "E-Learning",
+  /* [lingbook-nama-ebook-v1] Rak e-book di Perpustakaan sekarang bernama
+     "Lingbook" — nama merek, sama di ID & EN. Baris "E-Book" ditahan karena
+     enum program di DB masih memakainya (riwayat tagihan, sertifikat). */
   "E-Book": "E-Book",
   "produk": "products",
   "sedang berjalan": "in progress",
@@ -459,6 +462,8 @@ const EN: Record<string, string> = {
   "Sesi Selesai": "Sessions Completed",
   "Sesi & Rekaman": "Sessions & Recordings",
   "Silabus Level": "Level Syllabus",
+  "Punya paket e-learning? Buka tab Belajar Mandiri di atas. Lingbook kamu ada di menu Perpustakaan. Atau daftar kelas live di bawah.":
+    "Got an e-learning package? Open the Self-Study tab above. Your Lingbook lives in the Library menu. Or sign up for a live class below.",
   "Punya paket e-learning? Buka tab Belajar Mandiri di atas. Atau daftar kelas live di bawah.":
     "Have an e-learning package? Open the Self-Study tab above. Or enroll in a live class below.",
 

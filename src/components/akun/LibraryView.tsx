@@ -250,7 +250,9 @@ function TypeBadge({ type }: { type: ProductType }) {
   return (
     <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-bold text-[#12172B] shadow-sm">
       <Icon className="h-3.5 w-3.5" strokeWidth={2.4} />
-      {type === "ebook" ? "E-Book" : "E-Learning"}
+      {/* [lingbook-nama-ebook-v1] "E-Book" diganti "Lingbook" — nama produknya
+          sendiri, bukan format berkasnya. Kunci datanya TETAP `ebook`. */}
+      {type === "ebook" ? "Lingbook" : "E-Learning"}
     </span>
   );
 }
@@ -876,7 +878,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
             {t("Perpustakaan Saya")}
           </h1>
           <p className="mt-1 text-[14px] font-medium text-slate-500">
-            {t("E-Book & E-Learning yang sudah kamu beli · buka kapan saja")}
+            {t("Lingbook & E-Learning yang sudah kamu beli · buka kapan saja")}
           </p>
 
           {/* stats chips */}
@@ -962,7 +964,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
             [
               ["all", "Semua"],
               ["elearning", "E-Learning"],
-              ["ebook", "E-Book"],
+              ["ebook", "Lingbook"],
               /* [lingbook-lebur-pustaka-v1] rak ketiga. Sengaja TANPA angka:
                  daftar bukunya datang dari CMS dan dimuat oleh BookLibrary
                  sendiri — badge di sini cuma bisa menjanjikan jumlah yang salah. */
@@ -1702,7 +1704,7 @@ function LockedCard({
           <h3 title={item.title} className="truncate text-[15px] font-extrabold leading-snug text-[#12172B]">{judulRingkas(item.title)}</h3>
         </div>
         <p className="mt-1 text-[12.5px] font-medium text-slate-500">
-          {[item.language, item.level].filter(Boolean).join(" · ") || (item.type === "ebook" ? "E-Book" : "E-Learning")}
+          {[item.language, item.level].filter(Boolean).join(" · ") || (item.type === "ebook" ? "Lingbook" : "E-Learning")}
         </p>
 
         <div className="mt-4 flex items-center justify-between gap-3 pt-1">
@@ -1874,7 +1876,7 @@ function CartModal({
                     {judulRingkas(x.title)}
                   </p>
                   <p className="mt-0.5 truncate text-[11.5px] font-semibold text-slate-500">
-                    {[x.type === "ebook" ? "E-Book" : "E-Learning", x.tierLabel].filter(Boolean).join(" · ")}
+                    {[x.type === "ebook" ? "Lingbook" : "E-Learning", x.tierLabel].filter(Boolean).join(" · ")}
                   </p>
                 </div>
                 <span className="shrink-0 text-[13.5px] font-extrabold text-[#12172B]">{fmtRupiah(x.price)}</span>
@@ -2213,7 +2215,7 @@ function EmptyState() {
       <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-3xl bg-[#12A37E]/10 text-[#12A37E]"><BookOpen className="h-9 w-9" strokeWidth={2} /></div>
       <h3 className="text-[20px] font-extrabold text-[#12172B]">{t("Perpustakaan masih kosong")}</h3>
       <p className="mx-auto mt-1 max-w-sm text-[14px] font-medium text-slate-500">
-        {t("Kamu belum punya E-Book atau E-Learning. Jelajahi toko untuk mulai belajar mandiri kapan saja.")}
+        {t("Kamu belum punya Lingbook atau E-Learning. Jelajahi toko untuk mulai belajar mandiri kapan saja.")}
       </p>
       <a
         href="/toko"
