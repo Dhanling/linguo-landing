@@ -222,10 +222,15 @@ export default function LanjutkanBelajar({
       });
     });
 
+    /* [lanjutkan-satu-lingbook-v1] Berapa pun Lingbook yang pernah dibuka, blok ini
+       cuma memuat SATU: yang terakhir dibuka. Baris ini janjinya "lanjutkan yang tadi",
+       bukan rak buku — dua kartu Lingbook berjajar cuma menggeser sumber lain (Watch &
+       Learn) keluar layar. Rak lengkapnya ada di menu Perpustakaan. */
+    const kartuEbook: Item[] = [];
     kandidat.forEach((m, purchaseId) => {
       const b = bacaanEbook(purchaseId);
       if (!b || !m.title) return;
-      out.push({
+      kartuEbook.push({
         key: `ebook-${purchaseId}`,
         ts: b.ts,
         /* [lingbook-nama-ebook-v1] Kartu e-book memakai nama produknya: "Lingbook".
@@ -252,6 +257,8 @@ export default function LanjutkanBelajar({
         run: () => onOpenEbook(purchaseId),
       });
     });
+    kartuEbook.sort((a, b) => b.ts - a.ts);
+    if (kartuEbook[0]) out.push(kartuEbook[0]);
 
     if (watch) {
       out.push({
