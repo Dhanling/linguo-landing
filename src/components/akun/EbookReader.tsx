@@ -49,6 +49,7 @@ import {
 // [ebook-popup-kata-v1]
 import { artiKataEbook, artiTersimpan, type HasilArti } from "@/lib/ebookKata";
 import { langLabel } from "@/lib/quiz/language";
+import { kunciJejak } from "@/lib/jejakPemilik"; // [jejak-belajar-per-siswa-v1]
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type PdfDoc = any;
@@ -85,14 +86,18 @@ const SWIPE_SERET = 70;
     diangkat, dan tanpa kunci ini satu ayunan bisa melompat 5 halaman. */
 const SWIPE_RESET = 320;
 
-const halamanKey = (purchaseId: string) => `ebook-hal:${purchaseId}`;
+/* [jejak-belajar-per-siswa-v1] Semua kunci jejak e-book diberi ekor identitas
+   pemiliknya (lihat lib/jejakPemilik) — satu perangkat bisa dipakai beberapa siswa,
+   dan posisi baca / kartu "Lanjutkan Belajar" milik satu orang tak boleh muncul di
+   dashboard orang lain. */
+const halamanKey = (purchaseId: string) => kunciJejak(`ebook-hal:${purchaseId}`);
 /* [lingbook-sampul-kartu-v1] Sampul modul sebagai gambar kecil, buat kartu
    "Lanjutkan Belajar" di Beranda. Diambil dari halaman 1 yang MEMANG sudah
    dirender reader — `digital_products.cover_url` kosong untuk semua e-book, dan
    sampulnya cuma hidup sebagai halaman pertama di dalam PDF. Efeknya: sampul
    tersedia persis untuk buku yang pernah dibuka siswa, yaitu satu-satunya buku
    yang bisa muncul di blok "lanjutkan". */
-export const sampulKey = (purchaseId: string) => `ebook-sampul:${purchaseId}`;
+export const sampulKey = (purchaseId: string) => kunciJejak(`ebook-sampul:${purchaseId}`);
 const SAMPUL_LEBAR = 220;
 
 function simpanSampul(purchaseId: string, sumber: HTMLCanvasElement): void {
@@ -111,13 +116,13 @@ function simpanSampul(purchaseId: string, sumber: HTMLCanvasElement): void {
   }
 }
 // [lanjutkan-belajar-v1] kapan terakhir modul ini dibaca (epoch ms).
-export const halamanTsKey = (purchaseId: string) => `ebook-hal-ts:${purchaseId}`;
+export const halamanTsKey = (purchaseId: string) => kunciJejak(`ebook-hal-ts:${purchaseId}`);
 /* [lanjutkan-ebook-jejak-lokal-v1] Judul & bahasa modulnya ikut dititipkan ke
    perangkat. Kartu "Lanjutkan Belajar" merakit dirinya dari jejak ini kalau baris
    pembeliannya tak ikut terbawa daftar produk digital Beranda (mis. pembelian yang
    diarsipkan admin) — tanpa ini kartunya hilang diam-diam padahal bukunya barusan
    dibaca. */
-export const jejakKey = (purchaseId: string) => `ebook-jejak:${purchaseId}`;
+export const jejakKey = (purchaseId: string) => kunciJejak(`ebook-jejak:${purchaseId}`);
 
 /* [ebook-panduan-tour-v1] Panduan itu milik ORANGNYA, bukan milik modulnya:
    siswa yang sudah paham cara pakai reader tidak perlu diajari lagi waktu

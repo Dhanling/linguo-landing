@@ -4460,7 +4460,7 @@ export default function AkunPage() {
                                         di tepi gambar. Sekarang: warna cuma dipakai kalau tak ada
                                         foto, wadahnya dilapis sendiri (isolate + transform-gpu)
                                         supaya repaint bersih. */}
-                                    <div className={`relative isolate flex h-44 items-end overflow-hidden rounded-2xl transform-gpu [backface-visibility:hidden] sm:h-48 ${photo ? "bg-[#0E1526]" : bg} ${selesai ? "grayscale" : ""}`}>
+                                    <div className={`relative isolate flex h-44 items-end overflow-hidden rounded-2xl transform-gpu [backface-visibility:hidden] sm:h-48 xl:h-44 ${photo ? "bg-[#0E1526]" : bg} ${selesai ? "grayscale" : ""}`}>
                                       {photo ? (
                                         <img src={photo} alt={reg.language} className="absolute inset-0 h-full w-full object-cover transform-gpu scale-[1.02] transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
                                       ) : (
@@ -4544,8 +4544,11 @@ export default function AkunPage() {
                                         </div>
                                         {/* [beranda-kartu-kompak-v1] 3 kartu per baris mulai lg —
                                             dulu baru 3 kolom di 2xl, jadi di layar laptop kartunya
-                                            melebar & tinggi banget (cuma 4 kelas keliatan sekali layar). */}
-                                        <div className="mt-3 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
+                                            melebar & tinggi banget (cuma 4 kelas keliatan sekali layar).
+                                            [beranda-kartu-kompak-v2] Di layar lebar jadi 4 per baris:
+                                            siswa dengan 5+ kelas dulu harus scroll dua baris penuh
+                                            padahal separuh lebar layar cuma jadi ruang kosong. */}
+                                        <div className={`mt-3 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3 ${sesiMendatangCards.length ? "2xl:grid-cols-4" : "xl:grid-cols-4"}`}>
                                           {items.map((reg: any) => renderKelasCard(reg, cardIdx++))}
                                           {/* [beranda-riwayat-kelas-v1] kartu "Tambah Kelas" cuma di
                                               view Aktif — ditaruh di seksi terakhir supaya cuma muncul

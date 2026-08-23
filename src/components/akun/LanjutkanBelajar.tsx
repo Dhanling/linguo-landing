@@ -21,6 +21,7 @@ import { baseLanguage } from "@/lib/classLanguage";
 import { CEFR_STYLE, type CefrLevel } from "@/lib/cefr";
 import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
 import { useT } from "@/lib/uiLang";
+import { kunciJejak, sufiksJejak } from "@/lib/jejakPemilik"; // [jejak-belajar-per-siswa-v1]
 import { BookMarked, Clapperboard, ArrowRight, type LucideIcon } from "lucide-react";
 
 export interface ProdukDigital {
@@ -84,7 +85,7 @@ function jamMenit(detik: number): string {
 function sampulEbook(purchaseId: string): string | null {
   if (typeof window === "undefined") return null;
   try {
-    return localStorage.getItem(`ebook-sampul:${purchaseId}`);
+    return localStorage.getItem(kunciJejak(`ebook-sampul:${purchaseId}`));
   } catch {
     return null;
   }
@@ -94,7 +95,7 @@ function sampulEbook(purchaseId: string): string | null {
 function bacaanEbook(purchaseId: string): { page: number; total: number; ts: number } | null {
   if (typeof window === "undefined") return null;
   try {
-    const mentah = localStorage.getItem(`ebook-hal:${purchaseId}`);
+    const mentah = localStorage.getItem(kunciJejak(`ebook-hal:${purchaseId}`));
     if (!mentah) return null;
     const [halTeks, totalTeks] = mentah.split("/");
     const page = Number(halTeks);
@@ -105,7 +106,7 @@ function bacaanEbook(purchaseId: string): { page: number; total: number; ts: num
        Dulu halaman 1 dianggap "masih di sampul, belum dibaca" dan kartunya tak
        pernah lahir — padahal modul yang barusan dibuka justru yang paling ingin
        dilanjutkan siswa. */
-    const ts = Number(localStorage.getItem(`ebook-hal-ts:${purchaseId}`) || 0);
+    const ts = Number(localStorage.getItem(kunciJejak(`ebook-hal-ts:${purchaseId}`)) || 0);
     if (!Number.isFinite(ts) || ts <= 0) return null;
     return { page, total: Number.isFinite(total) ? total : 0, ts };
   } catch {
@@ -123,16 +124,22 @@ type JejakEbook = { purchaseId: string; title: string | null; language: string |
 function jejakEbookLokal(): JejakEbook[] {
   if (typeof window === "undefined") return [];
   const out: JejakEbook[] = [];
+  /* [jejak-belajar-per-siswa-v1] Cuma jejak BER-EKOR akun yang sedang login yang
+     dipungut. Jejak siswa lain di perangkat yang sama (dan jejak lawas tanpa ekor,
+     yang tak ketahuan milik siapa) dilewati — kartu "lanjutkan" harus milik orang
+     yang sedang melihat dashboardnya. */
+  const sufiks = sufiksJejak();
+  const awalan = "ebook-hal-ts:";
   try {
     for (let i = 0; i < localStorage.length; i++) {
       const k = localStorage.key(i);
-      if (!k || !k.startsWith("ebook-hal-ts:")) continue;
-      const purchaseId = k.slice("ebook-hal-ts:".length);
+      if (!k || !k.startsWith(awalan) || !k.endsWith(sufiks)) continue;
+      const purchaseId = k.slice(awalan.length, k.length - sufiks.length);
       if (!purchaseId) continue;
       let title: string | null = null;
       let language: string | null = null;
       try {
-        const j = JSON.parse(localStorage.getItem(`ebook-jejak:${purchaseId}`) || "null");
+        const j = JSON.parse(localStorage.getItem(kunciJejak(`ebook-jejak:${purchaseId}`)) || "null");
         if (j && typeof j.title === "string" && j.title.trim()) title = j.title;
         if (j && typeof j.language === "string" && j.language.trim()) language = j.language;
       } catch { /* jejak rusak → judulnya nanti dicari di daftar pembelian */ }

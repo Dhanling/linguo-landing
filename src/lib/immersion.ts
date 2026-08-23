@@ -3,6 +3,8 @@
 // konten yang disukai. Search jalan lewat Edge Function `yt-search` (project
 // Supabase yang sama dengan app mobile), jadi gak butuh API key di client.
 
+import { kunciJejak } from "./jejakPemilik";
+
 const SUPABASE_URL =
   process.env.NEXT_PUBLIC_SUPABASE_URL || "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
@@ -517,13 +519,18 @@ export interface WatchHistoryItem {
   ts: number;
 }
 
-const HISTORY_KEY = "linguo:watch:history:v1";
+/* [jejak-belajar-per-siswa-v1] Riwayat tonton dikunci ke akun yang sedang login:
+   satu perangkat bisa dipakai bergantian (siswa pinjam laptop, admin "lihat sebagai
+   siswa"), dan dulu riwayat orang sebelumnya ikut muncul di kartu "Lanjutkan
+   Belajar" dashboard siswa berikutnya. */
+const HISTORY_BASE = "linguo:watch:history:v1";
+const historyKey = () => kunciJejak(HISTORY_BASE);
 const HISTORY_MAX = 24;
 
 export function getWatchHistory(): WatchHistoryItem[] {
   if (typeof window === "undefined") return [];
   try {
-    const raw = window.localStorage.getItem(HISTORY_KEY);
+    const raw = window.localStorage.getItem(historyKey());
     if (!raw) return [];
     const arr = JSON.parse(raw) as WatchHistoryItem[];
     return Array.isArray(arr) ? arr : [];
@@ -548,7 +555,7 @@ export function pushWatchHistory(item: WatchHistoryItem): WatchHistoryItem[] {
     ...list,
   ].slice(0, HISTORY_MAX);
   try {
-    window.localStorage.setItem(HISTORY_KEY, JSON.stringify(next));
+    window.localStorage.setItem(historyKey(), JSON.stringify(next));
   } catch {
     /* storage penuh/diblokir — abaikan */
   }
@@ -584,7 +591,7 @@ export function saveWatchPosition(videoId: string, seconds: number, duration?: n
   // Belajar" membaca elemen pertama.
   const next = [entri, ...list.filter((_, n) => n !== i)].slice(0, HISTORY_MAX);
   try {
-    window.localStorage.setItem(HISTORY_KEY, JSON.stringify(next));
+    window.localStorage.setItem(historyKey(), JSON.stringify(next));
   } catch {
     /* storage penuh/diblokir — abaikan */
   }
@@ -604,11 +611,11 @@ export function clearWatchHistory(lang?: string): WatchHistoryItem[] {
   if (typeof window === "undefined") return [];
   try {
     if (!lang) {
-      window.localStorage.removeItem(HISTORY_KEY);
+      window.localStorage.removeItem(historyKey());
       return [];
     }
     const next = getWatchHistory().filter((h) => h.lang !== lang);
-    window.localStorage.setItem(HISTORY_KEY, JSON.stringify(next));
+    window.localStorage.setItem(historyKey(), JSON.stringify(next));
     return next;
   } catch {
     /* abaikan */
