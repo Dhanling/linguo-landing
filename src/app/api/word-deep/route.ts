@@ -4,8 +4,8 @@
 // (lewat Edge Function word-info yang dipakai bareng app mobile). Untuk mode layar
 // penuh kita butuh yang lebih kaya — tingkat kesopanan (register), kapan dipakai,
 // nuansa, dan perbandingan dengan kata mirip — plus tanya-jawab lanjutan bebas.
-// Semua digenerate di sini (Gemini, cadangan Claude) biar tak perlu ubah Edge
-// Function bersama.
+// Semua digenerate di sini (DeepSeek utama; cadangan Gemini → Groq → Claude) biar
+// tak perlu ubah Edge Function bersama.
 //
 // Dua mode:
 //   overview → JSON terstruktur (register + usage + nuance + similar + examples)
@@ -18,6 +18,19 @@ import { NextRequest, NextResponse } from "next/server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 30;
+
+// [word-deep-deepseek-first-v1] Lapis PERTAMA sejak 23 Agu 2026. Alasannya dua:
+// (a) biaya — per 1000 analisa kata ongkosnya jauh di bawah Gemini/Claude, dan
+// (b) tagihannya kantong TERPISAH dari Gemini, Groq, maupun Anthropic, jadi ia
+// tak ikut tumbang saat kredit prepaid Gemini habis — persis insiden 23 Agu 2026
+// (semua model Gemini 429 "prepayment credits are depleted" → drawer analisa kata
+// mati total, "Gagal memuat materi"). API-nya ala OpenAI, jadi bentuk panggilannya
+// sama dengan Groq di bawah. Model bawaan `deepseek-chat` (alias; per Agu 2026
+// dilayani deepseek-v4-flash) — bisa ditimpa lewat env DEEPSEEK_MODEL.
+// ⚠️ Tanpa DEEPSEEK_API_KEY di Vercel, lapis ini dilewati DIAM-DIAM dan rantainya
+// balik seperti sebelumnya (Gemini → Groq → Claude).
+const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY || "";
+const DEEPSEEK_MODEL = process.env.DEEPSEEK_MODEL || "deepseek-chat";
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
 // Rantai model fallback. Kuota free-tier Gemini dihitung PER-MODEL per hari
@@ -184,6 +197,50 @@ async function callGemini(prompt: string, json: boolean): Promise<string> {
   return "";
 }
 
+// [word-deep-deepseek-first-v1] Panggilan DeepSeek (API ala OpenAI). Kontraknya SAMA
+// dengan jalur lain — balikin teks mentah (JSON mentah saat json=true) — jadi parser di
+// bawah tak perlu tahu siapa yang menjawab. Dikasih batas waktu 20 dtk sendiri: route ini
+// maxDuration 30, dan kalau DeepSeek menggantung, lapis cadangan tak akan kebagian
+// giliran sebelum Vercel memutus permintaan (gejalanya sama: "Gagal memuat materi").
+async function callDeepSeek(prompt: string, json: boolean): Promise<string> {
+  if (!DEEPSEEK_API_KEY) return "";
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 20_000);
+  try {
+    const res = await fetch("https://api.deepseek.com/chat/completions", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${DEEPSEEK_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      signal: ctrl.signal,
+      body: JSON.stringify({
+        model: DEEPSEEK_MODEL,
+        temperature: 0.4,
+        max_tokens: 4000,
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are a language tutor API. Reply with ONLY the JSON object requested — " +
+              "no prose, no explanation, no markdown fences.",
+          },
+          { role: "user", content: prompt },
+        ],
+        ...(json ? { response_format: { type: "json_object" } } : {}),
+      }),
+    });
+    if (!res.ok) return "";
+    const data = await res.json();
+    const text = data?.choices?.[0]?.message?.content;
+    return typeof text === "string" ? text : "";
+  } catch {
+    return "";
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 // [word-deep-groq-tier-v1] Lapis tengah: Groq (API ala OpenAI). Sama seperti jalur
 // lain, balikin teks mentah — parser di bawah tak peduli asalnya. Mode JSON dipakai
 // saat json=true; prompt kita sudah menyebut "Return ONLY a JSON object" (syarat
@@ -262,12 +319,13 @@ async function callClaude(prompt: string, json: boolean): Promise<string> {
   }
 }
 
-// Satu pintu untuk semua pemanggil, tiga lapis lintas-akun: Gemini (utama) →
-// Groq/open-weight (murah, akun terpisah) → Claude (jaring terakhir). Tiap lapis
-// baru dicoba kalau lapis di atasnya balik kosong, jadi saat semuanya sehat
-// perilakunya persis seperti sebelumnya.
+// Satu pintu untuk semua pemanggil, EMPAT lapis lintas-akun:
+// DeepSeek (utama, termurah) → Gemini → Groq/open-weight → Claude (jaring terakhir).
+// Tiap lapis baru dicoba kalau lapis di atasnya balik kosong, jadi satu penyedia
+// tumbang tak lagi mematikan drawer analisa kata/kalimat.
 async function generate(prompt: string, json: boolean): Promise<string> {
   return (
+    (await callDeepSeek(prompt, json)) ||
     (await callGemini(prompt, json)) ||
     (await callGroq(prompt, json)) ||
     (await callClaude(prompt, json))
@@ -377,7 +435,7 @@ export async function POST(req: NextRequest) {
     // [word-deep-claude-fallback-v1] Cukup SALAH SATU provider terpasang — dulu
     // gerbang ini cuma cek kunci Gemini, jadi cadangan tak akan pernah kebagian
     // giliran kalau kunci Gemini hilang/dicabut.
-    if (!GEMINI_API_KEY && !GROQ_API_KEY && !ANTHROPIC_API_KEY) {
+    if (!DEEPSEEK_API_KEY && !GEMINI_API_KEY && !GROQ_API_KEY && !ANTHROPIC_API_KEY) {
       return NextResponse.json({ error: "not_configured" }, { status: 200 });
     }
 

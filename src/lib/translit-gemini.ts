@@ -16,6 +16,12 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
 // ANTHROPIC_API_KEY sudah ada di Vercel (dipakai chat Ling & Lingbook) dan
 // romanisasi itu tugas mekanis — Haiku (model termurah) sudah lebih dari cukup.
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || "";
+// [word-deep-deepseek-first-v1] Cadangan KETIGA (bukan pertama — beda dari
+// /api/word-deep): mutu alih aksara non-Latin itu hal halus, dan rantai Gemini
+// sudah terbukti untuk pekerjaan ini, jadi DeepSeek dipasang DI BAWAH Gemini —
+// murah, akun terpisah, dan menyelamatkan transliterasi saat kredit Gemini habis.
+const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY || "";
+const DEEPSEEK_MODEL = process.env.DEEPSEEK_MODEL || "deepseek-chat";
 const CLAUDE_MODEL = "claude-haiku-4-5";
 
 // Rantai model fallback. Kuota free-tier Gemini dihitung PER-MODEL per hari
@@ -109,6 +115,47 @@ async function callGemini(prompt: string): Promise<string> {
   return "";
 }
 
+// [word-deep-deepseek-first-v1] Cadangan tengah: DeepSeek (API ala OpenAI).
+// Kontraknya SAMA — balas objek berkunci-nomor — jadi parser di bawah tak berubah.
+async function callDeepSeek(prompt: string): Promise<string> {
+  if (!DEEPSEEK_API_KEY) return "";
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 20_000);
+  try {
+    const res = await fetch("https://api.deepseek.com/chat/completions", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${DEEPSEEK_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      signal: ctrl.signal,
+      body: JSON.stringify({
+        model: DEEPSEEK_MODEL,
+        temperature: 0.2,
+        max_tokens: 4000,
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are a transliteration API. Reply with ONLY the JSON object requested — " +
+              "no prose, no markdown fences.",
+          },
+          { role: "user", content: prompt },
+        ],
+        response_format: { type: "json_object" },
+      }),
+    });
+    if (!res.ok) return "";
+    const data = await res.json();
+    const text = data?.choices?.[0]?.message?.content;
+    return typeof text === "string" ? text : "";
+  } catch {
+    return "";
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 // [watch-translit-claude-fallback-v1] Jaring terakhir: Claude (Messages API).
 // Kontraknya SAMA persis dengan jalur Gemini — balas objek berkunci-nomor — jadi
 // parser di bawah tak perlu tahu hasilnya datang dari provider yang mana.
@@ -157,7 +204,7 @@ export async function transliterateBatch(lines: string[], langCode: string): Pro
   // [watch-translit-claude-fallback-v1] Cukup SALAH SATU provider yang terpasang —
   // dulu gerbang ini cuma cek kunci Gemini, jadi cadangan Claude tak akan pernah
   // kebagian giliran kalau kunci Gemini hilang/dicabut.
-  if ((!GEMINI_API_KEY && !ANTHROPIC_API_KEY) || !lines.length) return out;
+  if ((!GEMINI_API_KEY && !DEEPSEEK_API_KEY && !ANTHROPIC_API_KEY) || !lines.length) return out;
 
   // Hanya baris non-kosong yang dikirim ke Gemini; simpan indeks aslinya supaya
   // hasil bisa dikembalikan ke posisi yang benar. Batasi jumlah yang diromanisasi
@@ -204,7 +251,10 @@ export async function transliterateBatch(lines: string[], langCode: string): Pro
   // utama yang mentok kuota harian (429 → "") jadi sinyal untuk coba cadangan.
   // [watch-translit-claude-fallback-v1] …dan kalau SELURUH rantai Gemini kosong
   // (kuota seakun habis), lanjut ke Claude — bukan menyerah dengan diam.
-  const text = (await callGemini(prompt)) || (await callClaude(prompt, items.length));
+  const text =
+    (await callGemini(prompt)) ||
+    (await callDeepSeek(prompt)) ||
+    (await callClaude(prompt, items.length));
 
   // Petakan hasil kembali ke posisi asli. Utamakan objek {nomor: translit}
   // (tahan baris hilang). Fallback array polos HANYA bila panjangnya PERSIS sama

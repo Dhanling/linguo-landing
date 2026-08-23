@@ -14,6 +14,12 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 30;
 
+// [word-deep-deepseek-first-v1] Lapis PERTAMA: DeepSeek — termurah per token dan
+// tagihannya kantong TERPISAH dari Gemini/Groq/Anthropic, jadi deck flashcard tak
+// ikut mati saat kredit prepaid Gemini habis (gejalanya "AI tidak mengembalikan JSON.").
+const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY || "";
+const DEEPSEEK_MODEL = process.env.DEEPSEEK_MODEL || "deepseek-chat";
+
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
 // Rantai model fallback — samakan dengan /api/word-deep. Kuota free-tier Gemini
 // dihitung PER-MODEL per hari; saat model utama kena 429 RESOURCE_EXHAUSTED
@@ -113,6 +119,48 @@ async function callGemini(prompt: string): Promise<string> {
   return "";
 }
 
+// [word-deep-deepseek-first-v1] Lapis pertama: DeepSeek (API ala OpenAI), kontrak
+// balasan sama (JSON mentah). Batas waktu sendiri 20 dtk supaya lapis cadangan masih
+// kebagian giliran kalau DeepSeek menggantung.
+async function callDeepSeek(prompt: string): Promise<string> {
+  if (!DEEPSEEK_API_KEY) return "";
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 20_000);
+  try {
+    const res = await fetch("https://api.deepseek.com/chat/completions", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${DEEPSEEK_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      signal: ctrl.signal,
+      body: JSON.stringify({
+        model: DEEPSEEK_MODEL,
+        temperature: 0.5,
+        max_tokens: 8000,
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are a language tutor API. Reply with ONLY the JSON requested — " +
+              "no prose, no markdown fences.",
+          },
+          { role: "user", content: prompt },
+        ],
+        response_format: { type: "json_object" },
+      }),
+    });
+    if (!res.ok) return "";
+    const data = await res.json();
+    const text = data?.choices?.[0]?.message?.content;
+    return typeof text === "string" ? text : "";
+  } catch {
+    return "";
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 // [word-deep-groq-tier-v1] Lapis tengah: Groq (API ala OpenAI), kontrak balasan sama.
 async function callGroq(prompt: string): Promise<string> {
   if (!GROQ_API_KEY) return "";
@@ -186,7 +234,12 @@ async function callClaude(prompt: string): Promise<string> {
 
 // Satu pintu, tiga lapis lintas-akun: Gemini → Groq/open-weight → Claude.
 async function generate(prompt: string): Promise<string> {
-  return (await callGemini(prompt)) || (await callGroq(prompt)) || (await callClaude(prompt));
+  return (
+    (await callDeepSeek(prompt)) ||
+    (await callGemini(prompt)) ||
+    (await callGroq(prompt)) ||
+    (await callClaude(prompt))
+  );
 }
 
 export interface GeneratedCard {
@@ -200,7 +253,7 @@ export interface GeneratedCard {
 export async function POST(req: NextRequest) {
   try {
     // Cukup salah satu provider terpasang (Gemini utama / Groq / Claude cadangan).
-    if (!GEMINI_API_KEY && !GROQ_API_KEY && !ANTHROPIC_API_KEY) {
+    if (!DEEPSEEK_API_KEY && !GEMINI_API_KEY && !GROQ_API_KEY && !ANTHROPIC_API_KEY) {
       return NextResponse.json({ error: "Kunci AI belum diset." }, { status: 500 });
     }
     const body = (await req.json()) as {
