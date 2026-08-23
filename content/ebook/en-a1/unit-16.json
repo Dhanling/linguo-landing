@@ -1,0 +1,208 @@
+{
+ "title": "Hari ini panas",
+ "title_target": "It's hot today",
+ "goal": "Berbicara tentang cuaca dan musim — dan mengenal *it*, kata yang harus ada meski tak berarti apa-apa.",
+ "bekal": [
+  "menyebut cuaca hari ini",
+  "menanyakan cuaca dengan benar",
+  "memakai *it* sebagai pelaku kosong",
+  "menyebut musim dan suhu"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — A message from Canada",
+   "intro": "Sarah pulang ke Kanada dan mengirim pesan suara. Perhatikan kata *it* di hampir setiap kalimat — dan perhatikan bahwa tak satu pun bisa diterjemahkan.",
+   "lines": [
+    { "speaker": "Sarah:", "text": "Hi Budi! How's the weather in Surabaya?", "id": "Hai Budi! Cuaca di Surabaya bagaimana?", "literal": "hai Budi! bagaimana-adalah itu cuaca di Surabaya?" },
+    { "speaker": "Budi:", "text": "It's very hot. Thirty-four degrees, and it's only ten in the morning.", "id": "Panas sekali. Tiga puluh empat derajat, dan ini baru jam sepuluh pagi.", "literal": "itu-adalah sangat panas. tiga-puluh-empat derajat, dan itu-adalah hanya sepuluh di itu pagi." },
+    { "speaker": "Sarah:", "text": "Wow. Here it's snowing! It's minus five.", "id": "Wah. Di sini lagi turun salju! Minus lima.", "literal": "wah. di-sini itu-adalah sedang-bersalju! itu-adalah minus lima." },
+    { "speaker": "Budi:", "text": "Minus five? Is it always this cold in winter?", "id": "Minus lima? Musim dingin selalu sedingin ini?", "literal": "minus lima? adalah itu selalu ini dingin di musim-dingin?" },
+    { "speaker": "Sarah:", "text": "Usually. In January it's sometimes minus twenty.", "id": "Biasanya. Bulan Januari kadang minus dua puluh.", "literal": "biasanya. di Januari itu-adalah kadang-kadang minus dua-puluh." },
+    { "speaker": "Budi:", "text": "I can't imagine it. Here we only have two seasons.", "id": "Saya tidak bisa membayangkan. Di sini cuma ada dua musim.", "literal": "saya tidak-bisa membayangkan itu. di-sini kami hanya punya dua musim-musim." },
+    { "speaker": "Sarah:", "text": "Really? Which ones?", "id": "Serius? Apa saja?", "literal": "sungguh? yang-mana satu-satu?" },
+    { "speaker": "Budi:", "text": "The dry season and the rainy season. Right now it's the rainy season, so it rains every afternoon.", "id": "Musim kemarau dan musim hujan. Sekarang musim hujan, jadi tiap sore hujan.", "literal": "itu kering musim dan itu hujan-punya musim. tepat sekarang itu-adalah itu hujan-punya musim, jadi itu hujan setiap sore." },
+    { "speaker": "Sarah:", "text": "Is it raining now?", "id": "Sekarang lagi hujan?", "literal": "adalah itu sedang-hujan sekarang?" },
+    { "speaker": "Budi:", "text": "Not yet. But look at the sky — it's very dark. It's going to rain soon.", "id": "Belum. Tapi lihat langitnya — gelap sekali. Sebentar lagi hujan.", "literal": "tidak belum. tetapi lihat pada itu langit — itu-adalah sangat gelap. itu-adalah akan hujan segera." },
+    { "speaker": "Sarah:", "text": "Take an umbrella!", "id": "Bawa payung!", "literal": "ambil sebuah payung!" }
+   ],
+   "notes": [
+    "⚠️ **It di kalimat cuaca tidak berarti apa-apa.** Bahasa Indonesia bilang \"panas\" atau \"hujan\" begitu saja, tanpa pelaku. Bahasa Inggris tidak boleh: setiap kalimat wajib punya pelaku, jadi ketika tak ada pelaku sungguhan, tempatnya diisi kata kosong *it*. *It's hot*, *It's raining*, *It's five o'clock*, *It's Monday*. Jangan cari artinya — tidak ada.",
+    "**Pelaku kosong ini juga dipakai untuk waktu, tanggal, dan jarak.** *It's ten in the morning*, *It's the fifth of May*, *It's two kilometres from here*. Semuanya kalimat yang dalam bahasa Indonesia berdiri tanpa subjek.",
+    "⚠️ **How's the weather? atau What's the weather like?** — dua-duanya benar. Yang **salah** adalah menggabungkannya jadi *How is the weather like?*, kesalahan yang sangat umum. Kalau memakai *like*, kata tanyanya *what*; kalau memakai *how*, tanpa *like*.",
+    "**It's raining, tapi it rains every afternoon.** Bentuk -ing untuk hujan yang sedang turun, bentuk biasa untuk hujan yang rutin — persis pelajaran Unit 15, dan cuaca adalah tempat terbaik melatihnya.",
+    "**It's going to rain** menyebut ramalan berdasarkan tanda yang terlihat sekarang (langit gelap). Bentuk ini dibedah di Unit 20; untuk saat ini hafalkan sebagai satu potongan: *It's going to rain.*",
+    "**Rain, snow, dan wind adalah kata benda sekaligus kata kerja.** *The rain is heavy* (benda) dan *It's raining* (kerja). Karena itu ada dua cara mengatakan hal yang sama: *It's raining* dan *There's a lot of rain today*.",
+    "**Kalimat cuaca adalah pembuka percakapan yang paling aman** di negara berbahasa Inggris, terutama di Inggris. Menyapa orang asing dengan *Lovely day, isn't it?* dianggap ramah dan sama sekali tidak aneh — kebiasaan yang tidak punya padanan langsung dalam budaya kita."
+   ],
+   "grammars": [
+    {
+     "title": "It — pelaku yang tidak menunjuk apa-apa",
+     "body": [
+      "Selain menggantikan benda (*Where's my bag? — It's here*), kata *it* punya pekerjaan kedua: mengisi tempat pelaku yang dalam bahasa Indonesia memang kosong."
+     ],
+     "table": {
+      "head": ["Dipakai untuk", "Contoh", "Bahasa Indonesia"],
+      "rows": [
+       ["cuaca", "*It's hot today.*", "Hari ini panas."],
+       ["", "*It's raining.*", "Sedang hujan."],
+       ["jam", "*It's half past seven.*", "Jam setengah delapan."],
+       ["hari & tanggal", "*It's Monday.* · *It's the first of May.*", "Hari Senin. · Tanggal 1 Mei."],
+       ["jarak", "*It's two kilometres from here.*", "Dua kilometer dari sini."],
+       ["keadaan umum", "*It's difficult to learn Japanese.*", "Sulit belajar bahasa Jepang."]
+      ]
+     },
+     "after": [
+      "Baris terakhir adalah pola yang sangat berguna: *It's + kata sifat + to + kata kerja*. *It's easy to say*, *It's hard to explain*, *It's nice to meet you* — kalimat terakhir itu sudah kamu pakai sejak Unit 1 tanpa tahu bentuknya.",
+      "⚠️ Jangan membuang *it*-nya. *Is hot today* dan *Raining now* bukan kalimat, sama seperti \"adalah panas\" bukan kalimat dalam bahasa Indonesia."
+     ]
+    },
+    {
+     "title": "Menanyakan dan menyebut cuaca",
+     "body": [
+      "Ada dua jalur yang tidak boleh dicampur — satu memakai kata sifat, satu memakai kata kerja -ing:"
+     ],
+     "table": {
+      "head": ["Pola", "Contoh", "Arti"],
+      "rows": [
+       ["*It's + kata sifat*", "*It's hot / cold / warm / cool / windy / cloudy / sunny.*", "panas / dingin / hangat / sejuk / berangin / mendung / cerah"],
+       ["*It's + kerja-ing*", "*It's raining / snowing.*", "sedang hujan / turun salju"],
+       ["*There's + benda*", "*There's a lot of rain.* · *There's a storm.*", "hujannya deras · ada badai"],
+       ["Menanyakan", "*What's the weather like?* · *How's the weather?*", "Cuacanya bagaimana?"],
+       ["Ramalan", "*What's the weather going to be like tomorrow?*", "Besok cuacanya bagaimana?"]
+      ]
+     },
+     "after": [
+      "⚠️ *It's raining* benar, tapi *It's rainy* juga benar dan artinya sedikit berbeda: yang pertama hujan sekarang, yang kedua sifat cuacanya secara umum. Sedangkan *It's rain* salah — *rain* di situ kata benda, dan kalimatnya jadi berarti \"itu adalah hujan\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Cuaca, musim, dan suhu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["English", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["hot", "hot", "panas"],
+      ["warm", "worm", "hangat"],
+      ["cool", "kuul", "sejuk"],
+      ["cold", "kould", "dingin"],
+      ["freezing", "FRII-zing", "dingin sekali"],
+      ["sunny", "SA-ni", "cerah / terik"],
+      ["cloudy", "KLAU-di", "mendung"],
+      ["windy", "WIN-di", "berangin"],
+      ["humid", "HYUU-mid", "lembap"],
+      ["rain", "réin", "hujan"],
+      ["snow", "snou", "salju"],
+      ["storm", "storm", "badai"],
+      ["thunder", "THAN-der", "guruh"],
+      ["lightning", "LAIT-ning", "petir"],
+      ["fog", "fog", "kabut"],
+      ["umbrella", "am-BRÉ-le", "payung"]
+     ]
+    },
+    { "type": "sub", "text": "Musim" },
+    {
+     "type": "tabel",
+     "head": ["English", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["spring", "spring", "musim semi"],
+      ["summer", "SA-mer", "musim panas"],
+      ["autumn / fall", "OO-tem / fool", "musim gugur"],
+      ["winter", "WIN-ter", "musim dingin"],
+      ["the dry season", "dhe DRAI SII-zen", "musim kemarau"],
+      ["the rainy season", "dhe RÉI-ni SII-zen", "musim hujan"]
+     ]
+    },
+    { "type": "p", "text": "⚠️ Musim memakai *in*: *in summer*, *in the rainy season*. Dan *autumn* adalah kata Inggris-Britania, *fall* kata Inggris-Amerika — keduanya dimengerti di mana-mana." },
+    { "type": "sub", "text": "Suhu" },
+    { "type": "p", "text": "Suhu dibaca dengan *degrees*: 30°C = *thirty degrees*. Suhu di bawah nol memakai *minus*: −5°C = *minus five degrees*. Amerika Serikat memakai Fahrenheit, jadi *ninety degrees* di sana berarti sekitar 32°C — panas Surabaya, bukan panas neraka." },
+    {
+     "type": "kotak",
+     "title": "Kalimat cuaca yang siap pakai",
+     "items": [
+      "*It's a nice day today.* — Hari ini cuacanya enak.",
+      "*It's boiling!* — Panas banget!",
+      "*It's freezing in here.* — Dingin banget di sini.",
+      "*It looks like rain.* — Kelihatannya mau hujan.",
+      "*Do I need an umbrella?* — Perlu bawa payung tidak?",
+      "*The weather is terrible today.* — Cuacanya buruk sekali hari ini."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "en": "weather", "baca": "WÉ-dher", "id": "cuaca" },
+  { "en": "season", "baca": "SII-zen", "id": "musim" },
+  { "en": "degree", "baca": "di-GRII", "id": "derajat" },
+  { "en": "sky", "baca": "skai", "id": "langit" },
+  { "en": "sun", "baca": "san", "id": "matahari" },
+  { "en": "to rain", "baca": "réin", "id": "hujan" },
+  { "en": "to snow", "baca": "snou", "id": "turun salju" },
+  { "en": "hot", "baca": "hot", "id": "panas" },
+  { "en": "cold", "baca": "kould", "id": "dingin" },
+  { "en": "warm", "baca": "worm", "id": "hangat" },
+  { "en": "dry", "baca": "drai", "id": "kering" },
+  { "en": "wet", "baca": "wét", "id": "basah" },
+  { "en": "dark", "baca": "dark", "id": "gelap" },
+  { "en": "soon", "baca": "suun", "id": "segera / sebentar lagi" },
+  { "en": "to imagine", "baca": "i-MÆ-jin", "id": "membayangkan" },
+  { "en": "to look like", "baca": "LUK laik", "id": "kelihatannya" },
+  { "en": "terrible", "baca": "TÉ-re-bel", "id": "buruk sekali" },
+  { "en": "lovely", "baca": "LAV-li", "id": "menyenangkan" },
+  { "en": "minus", "baca": "MAI-nes", "id": "minus" },
+  { "en": "a lot of", "baca": "e LOT ev", "id": "banyak" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris. Perhatikan kata *it*.",
+   "items": [
+    "Hari ini panas.",
+    "Sedang hujan.",
+    "Jam setengah delapan.",
+    "Hari Senin.",
+    "Sulit belajar bahasa Jepang."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata cuaca yang tepat.",
+   "items": [
+    "The sun is shining. It's ____.",
+    "There are a lot of clouds. It's ____.",
+    "It's minus ten degrees. It's ____.",
+    "The wind is very strong. It's ____.",
+    "Take an umbrella, it's ____."
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk yang tepat: bentuk biasa atau bentuk -ing.",
+   "items": [
+    "Look outside! It ____ (rain).",
+    "In Indonesia it ____ (rain) every afternoon in the rainy season.",
+    "It ____ (snow) in Canada in winter.",
+    "Be careful, it ____ (snow) right now.",
+    "It usually ____ (be) hot in Surabaya."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat berikut. Semuanya mengandung satu kesalahan khas.",
+   "items": [
+    "How is the weather like?",
+    "Is hot today.",
+    "It's rain now.",
+    "Raining outside.",
+    "In summer is very hot here."
+   ]
+  }
+ ],
+ "answers": [
+  "It's hot today. — It's raining. — It's half past seven. — It's Monday. — It's difficult to learn Japanese.",
+  "sunny — cloudy — freezing — windy — raining",
+  "is raining — rains — snows — is snowing — is",
+  "What's the weather like? — It's hot today. — It's raining now. — It's raining outside. — In summer it's very hot here."
+ ]
+}

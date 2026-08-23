@@ -1,0 +1,198 @@
+{
+ "title": "Kemarin kamu di mana?",
+ "title_target": "Where were you yesterday?",
+ "goal": "Berbicara tentang masa lalu dengan bentuk lampau dari *to be* — perubahan bentuk pertama yang tidak dikenal bahasa Indonesia.",
+ "bekal": [
+  "memakai *was* dan *were*",
+  "menyangkal dan bertanya tentang masa lalu",
+  "menyebut kapan (*yesterday*, *last night*, *two days ago*)",
+  "mengatakan tahun dan tempat kelahiranmu"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — I called you three times",
+   "intro": "Mei mencari Budi seharian kemarin. Perhatikan bahwa setiap kalimat tentang kemarin **mengubah bentuk kata kerjanya**, bukan cuma menambahkan keterangan waktu.",
+   "lines": [
+    { "speaker": "Mei:", "text": "Where were you yesterday? I called you three times.", "id": "Kemarin kamu di mana? Saya telepon tiga kali.", "literal": "di-mana adalah-lampau kamu kemarin? saya menelepon kamu tiga kali." },
+    { "speaker": "Budi:", "text": "Sorry! I was at the hospital all day.", "id": "Maaf! Saya di rumah sakit seharian.", "literal": "maaf! saya adalah-lampau di itu rumah-sakit seluruh hari." },
+    { "speaker": "Mei:", "text": "Oh no. Were you sick?", "id": "Ya ampun. Kamu sakit?", "literal": "oh tidak. adalah-lampau kamu sakit?" },
+    { "speaker": "Budi:", "text": "No, I wasn't. My grandmother was ill. She's better now.", "id": "Tidak. Nenek saya yang sakit. Sekarang sudah membaik.", "literal": "tidak, saya adalah-lampau-tidak. punyaku nenek adalah-lampau sakit. dia-adalah lebih-baik sekarang." },
+    { "speaker": "Mei:", "text": "I'm glad. Was it serious?", "id": "Syukurlah. Parah?", "literal": "saya-adalah senang. adalah-lampau itu serius?" },
+    { "speaker": "Budi:", "text": "A little. She's seventy-eight. She was born in 1948.", "id": "Sedikit. Umurnya tujuh puluh delapan. Lahir tahun 1948.", "literal": "se-sedikit. dia-adalah tujuh-puluh-delapan. dia adalah-lampau dilahirkan di 1948." },
+    { "speaker": "Mei:", "text": "Was anyone with you?", "id": "Ada yang menemani?", "literal": "adalah-lampau siapa-pun dengan kamu?" },
+    { "speaker": "Budi:", "text": "My sister and my brother were there too. We were all very tired.", "id": "Adik dan kakak saya juga di sana. Kami semua capek sekali.", "literal": "punyaku saudara-perempuan dan punyaku saudara-laki-laki adalah-lampau di-sana juga. kami adalah-lampau semua sangat lelah." },
+    { "speaker": "Mei:", "text": "Of course. Was the hospital far from your house?", "id": "Wajar. Rumah sakitnya jauh dari rumahmu?", "literal": "tentu saja. adalah-lampau itu rumah-sakit jauh dari punyamu rumah?" },
+    { "speaker": "Budi:", "text": "Not very. About twenty minutes. There weren't any taxis, so we walked.", "id": "Tidak terlalu. Sekitar dua puluh menit. Tidak ada taksi, jadi kami jalan kaki.", "literal": "tidak sangat. kira-kira dua-puluh menit. di-sana adalah-lampau-tidak sembarang taksi-taksi, jadi kami berjalan." },
+    { "speaker": "Mei:", "text": "You must be exhausted. Let me buy you lunch.", "id": "Pasti capek banget. Biar saya traktir makan siang.", "literal": "kamu pasti adalah kelelahan. biarkan aku membeli kamu makan-siang." }
+   ],
+   "notes": [
+    "⚠️ **Bahasa Inggris mengubah kata kerjanya, bahkan ketika keterangan waktunya sudah jelas.** Dalam bahasa Indonesia, \"kemarin saya di rumah sakit\" cukup — kata \"kemarin\" yang menandai waktunya, kata kerjanya tak berubah. Bahasa Inggris menuntut keduanya: *Yesterday I **was** at the hospital*. Membiarkannya *am* adalah salah, sekalipun ada *yesterday* di depannya.",
+    "**Was untuk I/he/she/it, were untuk you/we/they.** Perhatikan bahwa polanya **tidak sama** dengan bentuk sekarang: di masa kini *I* memakai *am* sendirian, sedangkan di masa lampau *I* bergabung dengan *he/she/it* memakai *was*.",
+    "**She was born in 1948.** Bentuk \"lahir\" dalam bahasa Inggris selalu memakai *to be* + *born* — harfiahnya \"dilahirkan\". ⚠️ *I born in 1999* dan *I was borned* dua-duanya salah; yang benar *I **was born** in 1999*. Hafalkan utuh, jangan diurai.",
+    "**Tahun dibaca berpasangan:** 1948 = *nineteen forty-eight*, 1999 = *nineteen ninety-nine*. Tahun 2000-an dibaca biasa: 2005 = *two thousand and five*, 2026 = *twenty twenty-six*.",
+    "**There was / there were** adalah bentuk lampau dari Unit 12, dan aturannya sama: mengikuti benda sesudahnya. *There **was** a taxi* (satu), *There **weren't** any taxis* (jamak).",
+    "**Sick dan ill sama artinya.** *Ill* lebih sering di Inggris, *sick* lebih sering di Amerika. ⚠️ Tapi di Inggris *I'm sick* bisa berarti \"saya mual/muntah\", jadi untuk sakit biasa lebih aman *I'm ill* atau *I'm not feeling well*.",
+    "**You must be exhausted** bukan perintah. *Must* di sini berarti \"pasti\" — sebuah dugaan yang kuat, bukan kewajiban. Bentuk ini akan kamu temui terus, dan artinya justru lebih sering \"pasti\" daripada \"harus\"."
+   ],
+   "grammars": [
+    {
+     "title": "Was dan were",
+     "body": [
+      "Bentuk lampau dari *am*, *is*, dan *are* hanya ada dua — jauh lebih sederhana daripada bentuk sekarangnya:"
+     ],
+     "table": {
+      "head": ["Pelaku", "Sekarang", "Lampau", "Sangkal"],
+      "rows": [
+       ["I", "am", "**was**", "*wasn't*"],
+       ["you", "are", "**were**", "*weren't*"],
+       ["he / she / it", "is", "**was**", "*wasn't*"],
+       ["we / they", "are", "**were**", "*weren't*"]
+      ]
+     },
+     "after": [
+      "Pertanyaannya dibuat dengan membalik, persis seperti bentuk sekarang: *You were there* → ***Were** you there?* Tidak butuh *did* sama sekali, karena *was/were* adalah kata bantu yang bisa melompat sendiri.",
+      "Jawaban pendeknya: *Yes, I was. / No, I wasn't. / Yes, they were. / No, they weren't.*",
+      "⚠️ Bunyinya: *was* diucapkan \"woz\" dan *were* diucapkan \"weer\" — tapi di tengah kalimat cepat keduanya melemah jadi \"wez\" dan \"wer\". Yang jelas terdengar justru bentuk sangkalnya, *wasn't* dan *weren't*."
+     ]
+    },
+    {
+     "title": "Menyebut kapan",
+     "body": [
+      "Keterangan waktu lampau hampir selalu berdiri di **ujung** kalimat, dan sebagian besar tidak memakai kata depan sama sekali:"
+     ],
+     "table": {
+      "head": ["English", "Cara baca", "Bahasa Indonesia"],
+      "rows": [
+       ["yesterday", "YÉS-ter-déi", "kemarin"],
+       ["last night", "læst NAIT", "tadi malam"],
+       ["last week / month / year", "læst WIIK", "minggu / bulan / tahun lalu"],
+       ["last Monday", "læst MAN-déi", "Senin kemarin"],
+       ["two days ago", "tuu DÉIZ e-gou", "dua hari yang lalu"],
+       ["a long time ago", "e long TAIM e-gou", "dulu sekali"],
+       ["in 2020", "in twén-ti TWÉN-ti", "tahun 2020"],
+       ["when I was a child", "wén ai woz e CHAILD", "waktu saya kecil"]
+      ]
+     },
+     "after": [
+      "⚠️ *Ago* berdiri **sesudah** jumlah waktunya, bukan sebelum: *two days **ago***, bukan *ago two days*. Ini kebalikan dari \"dua hari yang lalu\" — kata \"lalu\" kita memang di belakang, jadi susunannya kebetulan sama. Yang sering keliru adalah menerjemahkan \"sejak dua hari lalu\" menjadi *since two days ago*; yang benar cukup *two days ago*.",
+      "⚠️ *Last* tidak pernah memakai kata depan. *Last Monday*, bukan *on last Monday*. Begitu juga *yesterday* — bukan *in yesterday*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata sifat untuk menceritakan keadaan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["English", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["happy", "HÆ-pi", "senang"],
+      ["sad", "sæd", "sedih"],
+      ["angry", "ÆNG-gri", "marah"],
+      ["worried", "WA-rid", "khawatir"],
+      ["tired", "TAI-erd", "lelah"],
+      ["exhausted", "ig-ZOOS-tid", "kelelahan"],
+      ["ill / sick", "il / sik", "sakit"],
+      ["better", "BÉ-ter", "lebih baik / membaik"],
+      ["glad", "glæd", "lega / senang"],
+      ["afraid", "e-FRÉID", "takut"],
+      ["surprised", "ser-PRAIZD", "kaget"],
+      ["bored", "bord", "bosan"],
+      ["excited", "ik-SAI-tid", "antusias"],
+      ["serious", "SII-ri-es", "serius / parah"],
+      ["quiet", "KWAI-et", "sepi / diam"],
+      ["crowded", "KRAU-did", "ramai / penuh"]
+     ]
+    },
+    { "type": "p", "text": "⚠️ *Bored* dan *boring* dua hal berbeda: *I'm bored* berarti saya bosan, *I'm boring* berarti saya orang yang membosankan. Pasangan seperti ini banyak — *tired/tiring*, *excited/exciting*, *interested/interesting*. Yang berakhiran **-ed** menyebut perasaanmu, yang berakhiran **-ing** menyebut penyebabnya." },
+    {
+     "type": "kotak",
+     "title": "Menanyakan kabar yang sudah lewat",
+     "items": [
+      "*How was your day?* — Gimana harimu?",
+      "*How was the exam?* — Ujiannya gimana?",
+      "*Where were you?* — Kamu tadi di mana?",
+      "*Was it good?* — Bagus tidak?",
+      "*I'm sorry to hear that.* — Turut prihatin.",
+      "*I'm glad to hear that.* — Syukurlah."
+     ]
+    },
+    { "type": "p", "text": "Dua kalimat terakhir adalah tanggapan baku untuk kabar buruk dan kabar baik. Keduanya dipakai sangat sering dan hampir tak pernah terdengar berlebihan — bahasa Inggris memang menyediakan kalimat jadi untuk momen-momen ini." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "en": "was / were", "baca": "woz / weer", "id": "adalah (lampau)" },
+  { "en": "yesterday", "baca": "YÉS-ter-déi", "id": "kemarin" },
+  { "en": "last night", "baca": "læst NAIT", "id": "tadi malam" },
+  { "en": "ago", "baca": "e-GOU", "id": "yang lalu" },
+  { "en": "to be born", "baca": "bi BORN", "id": "lahir" },
+  { "en": "ill / sick", "baca": "il / sik", "id": "sakit" },
+  { "en": "grandmother", "baca": "GRÆND-ma-dher", "id": "nenek" },
+  { "en": "hospital", "baca": "HOS-pi-tel", "id": "rumah sakit" },
+  { "en": "all day", "baca": "ool DÉI", "id": "seharian" },
+  { "en": "anyone", "baca": "É-ni-wan", "id": "siapa pun" },
+  { "en": "to walk", "baca": "wook", "id": "berjalan kaki" },
+  { "en": "taxi", "baca": "TÆK-si", "id": "taksi" },
+  { "en": "tired", "baca": "TAI-erd", "id": "lelah" },
+  { "en": "exhausted", "baca": "ig-ZOOS-tid", "id": "kelelahan" },
+  { "en": "serious", "baca": "SII-ri-es", "id": "serius / parah" },
+  { "en": "better", "baca": "BÉ-ter", "id": "lebih baik" },
+  { "en": "glad", "baca": "glæd", "id": "lega" },
+  { "en": "must be", "baca": "MAST bi", "id": "pasti" },
+  { "en": "so", "baca": "sou", "id": "jadi / maka" },
+  { "en": "three times", "baca": "thrii TAIMZ", "id": "tiga kali" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan *was* atau *were*.",
+   "items": [
+    "I ____ at home yesterday.",
+    "They ____ very tired.",
+    "She ____ born in 1999.",
+    "You ____ late this morning.",
+    "It ____ very hot last week.",
+    "We ____ at the beach on Sunday."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat sangkal. Contoh: *I was tired.* → *I wasn't tired.*",
+   "items": [
+    "She was at school.",
+    "They were happy.",
+    "It was expensive.",
+    "We were late.",
+    "He was my teacher."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat berikut. Semuanya mengandung satu kesalahan khas.",
+   "items": [
+    "Yesterday I am at the hospital.",
+    "I born in 1999.",
+    "We was very tired.",
+    "I saw her ago two days.",
+    "Where you were last night?"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Kemarin kamu di mana?",
+    "Nenek saya sakit tadi malam.",
+    "Tidak ada taksi, jadi kami jalan kaki.",
+    "Saya lahir tahun 2001.",
+    "Kami semua capek sekali."
+   ]
+  }
+ ],
+ "answers": [
+  "was — were — was — were — was — were",
+  "She wasn't at school. — They weren't happy. — It wasn't expensive. — We weren't late. — He wasn't my teacher.",
+  "Yesterday I was at the hospital. — I was born in 1999. — We were very tired. — I saw her two days ago. — Where were you last night?",
+  "Where were you yesterday? — My grandmother was ill last night. — There weren't any taxis, so we walked. — I was born in 2001. — We were all very tired."
+ ]
+}

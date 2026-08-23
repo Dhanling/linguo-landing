@@ -1,0 +1,215 @@
+{
+ "title": "Kamu suka pedas?",
+ "title_target": "Do you like spicy food?",
+ "goal": "Menyangkal dan bertanya dengan *do* dan *does* — dua kata bantu yang tidak punya padanan dalam bahasa Indonesia.",
+ "bekal": [
+  "menyangkal kebiasaan (*I don't eat meat*)",
+  "bertanya tentang kebiasaan (*Do you like it?*)",
+  "menjawab pendek dengan benar (*Yes, I do* / *No, she doesn't*)",
+  "membedakan kapan memakai *do* dan kapan memakai *am/is/are*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — Where do you want to eat?",
+   "intro": "Sarah dan Budi mencari tempat makan siang. Hitung berapa kali kata *do* dan *does* muncul — dan perhatikan bahwa tak satu pun bisa diterjemahkan ke bahasa Indonesia.",
+   "lines": [
+    { "speaker": "Sarah:", "text": "Do you like Indian food?", "id": "Kamu suka masakan India?", "literal": "apakah kamu suka India makanan?" },
+    { "speaker": "Budi:", "text": "I don't know. I don't eat it very often.", "id": "Kurang tahu. Saya jarang makan itu.", "literal": "saya tidak tahu. saya tidak makan itu sangat sering." },
+    { "speaker": "Sarah:", "text": "Do you eat spicy food?", "id": "Kamu makan pedas?", "literal": "apakah kamu makan pedas makanan?" },
+    { "speaker": "Budi:", "text": "Yes, I do! I'm Indonesian. We eat chili with everything.", "id": "Suka dong! Saya orang Indonesia. Kami makan cabai sama apa saja.", "literal": "ya, saya lakukan! saya-adalah Indonesia-punya-orang. kami makan cabai dengan segalanya." },
+    { "speaker": "Sarah:", "text": "Then you'll be fine. What about Tom? Does he eat spicy food?", "id": "Kalau begitu aman. Kalau Tom? Dia makan pedas?", "literal": "kalau-begitu kamu-akan menjadi baik. apa tentang Tom? apakah dia makan pedas makanan?" },
+    { "speaker": "Budi:", "text": "I don't think so. He doesn't even eat pepper.", "id": "Kayaknya tidak. Merica saja dia tidak makan.", "literal": "saya tidak pikir begitu. dia tidak bahkan makan merica." },
+    { "speaker": "Sarah:", "text": "Really? Why doesn't he like it?", "id": "Serius? Kenapa dia tidak suka?", "literal": "sungguh? kenapa tidak-apakah dia suka itu?" },
+    { "speaker": "Budi:", "text": "He says it hurts. Where does the restaurant open?", "id": "Katanya perih. Restorannya buka di mana?", "literal": "dia berkata itu menyakiti. di-mana apakah itu restoran buka?" },
+    { "speaker": "Sarah:", "text": "It's near the station. But it doesn't open until twelve.", "id": "Dekat stasiun. Tapi bukanya jam dua belas.", "literal": "itu-adalah dekat itu stasiun. tetapi itu tidak buka sampai dua-belas." },
+    { "speaker": "Budi:", "text": "Don't you want to go now?", "id": "Kamu tidak mau berangkat sekarang?", "literal": "tidak-apakah kamu mau untuk pergi sekarang?" },
+    { "speaker": "Sarah:", "text": "No, I don't. I'm not hungry yet.", "id": "Belum. Saya belum lapar.", "literal": "tidak, saya tidak. saya-adalah tidak lapar belum." }
+   ],
+   "notes": [
+    "**Do dan does tidak punya arti.** Keduanya kata bantu — pekerjaannya cuma membentuk sangkalan dan pertanyaan. Itu sebabnya baris harfiah di atas terasa aneh: *apakah kamu suka* memang tak bisa diterjemahkan kata per kata. Berhentilah mencari artinya, dan perlakukan *do* sebagai alat, bukan kata.",
+    "⚠️ **Do untuk kata kerja biasa, is/am/are untuk to be.** Inilah simpang jalan yang paling sering salah dibelokkan: *Are you like spicy food?* salah, karena *like* kata kerja biasa — yang benar *Do you like…?* Sebaliknya, *Do you hungry?* juga salah, karena *hungry* bukan kata kerja — yang benar *Are you hungry?* Aturannya cuma satu: **satu kalimat, satu kata bantu**. Kalau sudah ada *am/is/are*, tidak butuh *do*.",
+    "**Huruf s pindah ke does.** Bandingkan *He eats* dengan *He **doesn't** eat* dan ***Does** he eat?* Begitu *does* muncul, kata kerjanya kembali polos. *Does he eats?* dan *He doesn't eats* adalah kesalahan yang sangat khas pemula — huruf s tak boleh muncul dua kali.",
+    "**Jawaban pendek memantulkan kata bantunya.** *Do you…?* → *Yes, I do* / *No, I don't*. *Does she…?* → *Yes, she does* / *No, she doesn't*. Jawaban *Yes, I like* terdengar terpotong, dan *Yes* sendirian terdengar dingin.",
+    "⚠️ **Pertanyaan negatif dijawab terbalik dari kebiasaan kita.** *Don't you want to go?* — kalau kamu memang tidak mau, jawabannya ***No**, I don't*, bukan \"iya\". Dalam bahasa Indonesia kita menjawab \"iya\" untuk membenarkan **dugaan penanya**; dalam bahasa Inggris jawaban selalu mengikuti **kenyataannya**, bukan dugaannya. Kalau kamu memang mau pergi, jawabannya *Yes, I do* — meskipun terasa seperti membantah.",
+    "**I don't think so** adalah cara halus mengatakan \"kayaknya tidak\". Menjawab *No* saja terdengar tegas dan agak dingin; menambahkan *I don't think so* atau *Not really* melunakkannya. Bahasa Inggris memakai kalimat panjang untuk kesopanan, persis seperti bahasa Indonesia memakai partikel \"sih\", \"ya\", dan \"kok\".",
+    "**Not yet** berarti \"belum\", bukan \"tidak\". Bahasa Inggris tak punya satu kata untuk \"belum\", jadi ia menyusunnya dari dua: *I'm not hungry **yet***, *He isn't here **yet***."
+   ],
+   "grammars": [
+    {
+     "title": "Menyangkal: don't dan doesn't",
+     "body": [
+      "Untuk menyangkal kata kerja biasa, sisipkan *don't* atau *doesn't* **sebelum** kata kerjanya — dan kembalikan kata kerjanya ke bentuk dasar:"
+     ],
+     "table": {
+      "head": ["Pelaku", "Positif", "Sangkal"],
+      "rows": [
+       ["I / you / we / they", "*I **like** coffee.*", "*I **don't like** coffee.*"],
+       ["he / she / it", "*She **likes** coffee.*", "*She **doesn't like** coffee.*"],
+       ["", "*He **goes** to work.*", "*He **doesn't go** to work.*"],
+       ["", "*It **opens** at nine.*", "*It **doesn't open** at nine.*"]
+      ]
+     },
+     "after": [
+      "*Don't* adalah bentuk pendek dari *do not*, dan *doesn't* dari *does not*. Bentuk panjangnya hampir hanya dipakai kalau kamu sedang menekankan: *I do **not** agree.*",
+      "⚠️ Perhatikan kolom kanan pada tiga baris terakhir: *likes* → *like*, *goes* → *go*, *opens* → *open*. Huruf s-nya sudah diambil alih *doesn't*."
+     ]
+    },
+    {
+     "title": "Bertanya: do dan does di depan",
+     "body": [
+      "Pertanyaan dibentuk dengan menaruh *do* atau *does* di paling depan. Urutan sisanya tidak berubah sama sekali:"
+     ],
+     "table": {
+      "head": ["Bentuk", "Contoh", "Jawaban pendek"],
+      "rows": [
+       ["***Do** + I/you/we/they + kerja*", "*Do you like it?*", "*Yes, I do. / No, I don't.*"],
+       ["***Does** + he/she/it + kerja*", "*Does he work here?*", "*Yes, he does. / No, he doesn't.*"],
+       ["*kata tanya + **do** + …*", "*Where do you live?*", "*In Surabaya.*"],
+       ["*kata tanya + **does** + …*", "*What does she do?*", "*She's a nurse.*"],
+       ["*Why + **doesn't** + …*", "*Why doesn't he like it?*", "*Because it hurts.*"]
+      ]
+     },
+     "after": [
+      "Bandingkan dengan pertanyaan *to be* dari Unit 2, yang cukup dibalik tanpa tambahan apa pun: *You are a student* → *Are you a student?* Kata kerja biasa tidak bisa melompat sendiri; ia butuh *do* untuk mewakilinya di depan.",
+      "⚠️ *What does she do?* memakai *do* dua kali — yang pertama kata bantu, yang kedua kata kerja sungguhan (\"melakukan\"). Terlihat aneh di kertas, tapi inilah bentuk baku untuk menanyakan pekerjaan."
+     ]
+    },
+    {
+     "title": "Peta cepat: to be atau do?",
+     "body": [
+      "Kalau kamu ragu harus memakai yang mana, jawab satu pertanyaan: **apakah kalimatnya punya kata kerja sungguhan?**"
+     ],
+     "table": {
+      "head": ["Kalimat berisi", "Tanya", "Sangkal"],
+      "rows": [
+       ["kata sifat (*hungry*, *tired*, *late*)", "***Are** you hungry?*", "*I'm **not** hungry.*"],
+       ["kata benda (*a student*, *a doctor*)", "***Is** she a doctor?*", "*She **isn't** a doctor.*"],
+       ["tempat (*here*, *at home*)", "***Are** they at home?*", "*They **aren't** at home.*"],
+       ["kata kerja (*eat*, *work*, *like*, *go*)", "***Do** you eat rice?*", "*I **don't** eat rice.*"],
+       ["*have* (punya)", "***Do** you have a car?*", "*I **don't** have a car.*"]
+      ]
+     },
+     "after": [
+      "Baris terakhir sering mengagetkan: *have* berarti \"punya\" tapi tetap kata kerja biasa, jadi ia memakai *do*. *Have you a car?* adalah bentuk lama yang masih terdengar di Inggris, tapi bukan yang perlu kamu pakai."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata kerja yang paling sering dipakai sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["English", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["to like", "laik", "suka"],
+      ["to love", "lav", "suka sekali"],
+      ["to want", "wont", "mau / ingin"],
+      ["to need", "niid", "butuh"],
+      ["to know", "nou", "tahu"],
+      ["to think", "think", "berpikir / mengira"],
+      ["to understand", "an-der-STÆND", "mengerti"],
+      ["to remember", "ri-MÉM-ber", "ingat"],
+      ["to forget", "fer-GÉT", "lupa"],
+      ["to hate", "héit", "benci"],
+      ["to prefer", "pri-FEER", "lebih suka"],
+      ["to agree", "e-GRII", "setuju"]
+     ]
+    },
+    { "type": "p", "text": "⚠️ *Know* dibunyikan \"nou\" — huruf k di depannya bisu, sama seperti pada *knife* dan *knee*. Dan *to hate* jauh lebih keras dari \"benci\" dalam pemakaian sehari-hari kita; untuk sekadar tidak suka, pakai *I don't like it* atau *I'm not a fan of it*." },
+    { "type": "sub", "text": "Sepuluh pertanyaan yang akan kamu pakai seumur hidup" },
+    {
+     "type": "tabel",
+     "head": ["English", "Bahasa Indonesia"],
+     "rows": [
+      ["*Do you like it?*", "Kamu suka?"],
+      ["*Do you want some?*", "Mau, tidak?"],
+      ["*Do you understand?*", "Kamu mengerti?"],
+      ["*Do you know him?*", "Kamu kenal dia?"],
+      ["*Do you have a minute?*", "Ada waktu sebentar?"],
+      ["*Where do you live?*", "Kamu tinggal di mana?"],
+      ["*What do you think?*", "Menurutmu bagaimana?"],
+      ["*What time does it start?*", "Mulainya jam berapa?"],
+      ["*How much does it cost?*", "Harganya berapa?"],
+      ["*Why don't we go together?*", "Bagaimana kalau kita pergi bareng?"]
+     ]
+    },
+    { "type": "p", "text": "Baris terakhir tidak benar-benar bertanya. *Why don't we…?* adalah cara paling wajar mengusulkan sesuatu dalam bahasa Inggris — setara dengan \"gimana kalau kita…\". Jangan dijawab dengan alasan." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "en": "food", "baca": "fuud", "id": "makanan" },
+  { "en": "spicy", "baca": "SPAI-si", "id": "pedas" },
+  { "en": "chili", "baca": "CHI-li", "id": "cabai" },
+  { "en": "pepper", "baca": "PÉ-per", "id": "merica / lada" },
+  { "en": "restaurant", "baca": "RÉS-te-rent", "id": "restoran" },
+  { "en": "everything", "baca": "É-vri-thing", "id": "segalanya" },
+  { "en": "often", "baca": "O-fen", "id": "sering" },
+  { "en": "really", "baca": "RII-li", "id": "sungguh / benar-benar" },
+  { "en": "even", "baca": "II-ven", "id": "bahkan" },
+  { "en": "yet", "baca": "yét", "id": "belum (dalam kalimat sangkal)" },
+  { "en": "together", "baca": "te-GÉ-dher", "id": "bersama" },
+  { "en": "to hurt", "baca": "heert", "id": "menyakiti / perih" },
+  { "en": "to cost", "baca": "kost", "id": "berharga (sekian)" },
+  { "en": "to open", "baca": "OU-pen", "id": "buka" },
+  { "en": "to close", "baca": "klouz", "id": "tutup" },
+  { "en": "minute", "baca": "MI-nit", "id": "menit" },
+  { "en": "I don't think so", "baca": "ai dount THINK sou", "id": "kayaknya tidak" },
+  { "en": "not really", "baca": "not RII-li", "id": "tidak juga" },
+  { "en": "why not?", "baca": "wai NOT", "id": "kenapa tidak?" },
+  { "en": "because", "baca": "bi-KOZ", "id": "karena" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan *don't* atau *doesn't*.",
+   "items": [
+    "I ____ like coffee.",
+    "She ____ eat meat.",
+    "They ____ live here.",
+    "My father ____ speak English.",
+    "We ____ have a car.",
+    "It ____ open on Sunday."
+   ]
+  },
+  {
+   "prompt": "Isi dengan *Do*, *Does*, *Are*, atau *Is*.",
+   "items": [
+    "____ you like spicy food?",
+    "____ you hungry?",
+    "____ she work here?",
+    "____ he a teacher?",
+    "____ they have children?",
+    "____ it expensive?"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat berikut. Semuanya mengandung satu kesalahan khas.",
+   "items": [
+    "Are you like spicy food?",
+    "Does he eats rice?",
+    "She doesn't likes coffee.",
+    "Do you hungry?",
+    "I not know."
+   ]
+  },
+  {
+   "prompt": "Jawab pendek sesuai petunjuk dalam kurung.",
+   "items": [
+    "Do you like tea? (ya)",
+    "Does she work here? (tidak)",
+    "Do they have a car? (tidak)",
+    "Are you a student? (ya)",
+    "Does it open at nine? (ya)"
+   ]
+  }
+ ],
+ "answers": [
+  "don't — doesn't — don't — doesn't — don't — doesn't",
+  "Do — Are — Does — Is — Do — Is",
+  "Do you like spicy food? — Does he eat rice? — She doesn't like coffee. — Are you hungry? — I don't know.",
+  "Yes, I do. — No, she doesn't. — No, they don't. — Yes, I am. — Yes, it does."
+ ]
+}

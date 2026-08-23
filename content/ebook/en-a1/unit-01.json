@@ -1,0 +1,188 @@
+{
+ "title": "Halo, siapa namamu?",
+ "title_target": "Hello! What's your name?",
+ "goal": "Menyapa sesuai waktu hari, memperkenalkan diri, dan mengatakan kamu ini siapa.",
+ "bekal": [
+  "menyapa dan berpamitan",
+  "menyebut namamu sendiri",
+  "mengatakan kamu ini siapa (*I am a student*)",
+  "menyangkal dengan *not*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — At the language school",
+   "intro": "Dua orang asing bertemu di lorong sekolah bahasa. Baca dulu bahasa Inggrisnya dengan suara keras, baru lirik terjemahannya.",
+   "lines": [
+    { "speaker": "Sarah:", "text": "Hello! Good morning.", "id": "Halo! Selamat pagi.", "literal": "halo! baik pagi." },
+    { "speaker": "Budi:", "text": "Good morning. What's your name?", "id": "Selamat pagi. Siapa namamu?", "literal": "baik pagi. apa-adalah punyamu nama?" },
+    { "speaker": "Sarah:", "text": "My name is Sarah. And you?", "id": "Nama saya Sarah. Dan kamu?", "literal": "punyaku nama adalah Sarah. dan kamu?" },
+    { "speaker": "Budi:", "text": "I'm Budi. Nice to meet you.", "id": "Saya Budi. Senang berkenalan.", "literal": "saya-adalah Budi. menyenangkan untuk bertemu kamu." },
+    { "speaker": "Sarah:", "text": "Nice to meet you too. Are you a student?", "id": "Senang berkenalan juga. Kamu pelajar?", "literal": "menyenangkan untuk bertemu kamu juga. adalah kamu sebuah pelajar?" },
+    { "speaker": "Budi:", "text": "Yes, I am. I'm a student here. Are you a teacher?", "id": "Ya. Saya pelajar di sini. Kamu guru?", "literal": "ya, saya adalah. saya-adalah sebuah pelajar di-sini. adalah kamu seorang guru?" },
+    { "speaker": "Sarah:", "text": "No, I'm not. I'm a student too.", "id": "Bukan. Saya pelajar juga.", "literal": "tidak, saya-adalah tidak. saya-adalah sebuah pelajar juga." },
+    { "speaker": "Budi:", "text": "How are you today?", "id": "Apa kabarmu hari ini?", "literal": "bagaimana adalah kamu hari-ini?" },
+    { "speaker": "Sarah:", "text": "I'm fine, thank you. A little tired, but fine.", "id": "Baik, terima kasih. Agak lelah, tapi baik.", "literal": "saya-adalah baik, terima kasih. se-sedikit lelah, tetapi baik." },
+    { "speaker": "Budi:", "text": "Oh, good! See you later, Sarah.", "id": "Oh, bagus! Sampai jumpa, Sarah.", "literal": "oh, baik! lihat kamu nanti, Sarah." },
+    { "speaker": "Sarah:", "text": "Goodbye, Budi. See you tomorrow.", "id": "Dah, Budi. Sampai besok.", "literal": "selamat-tinggal, Budi. lihat kamu besok." }
+   ],
+   "notes": [
+    "**Kata gantinya tidak boleh dibuang.** Dalam bahasa Indonesia \"lelah\" saja sudah jadi kalimat. Dalam bahasa Inggris tidak: setiap kalimat wajib punya pelaku yang disebut. *Am tired* bukan kalimat — yang benar *I am tired*. Ini kebalikan dari kebiasaan kita, dan menjadi sumber kesalahan nomor satu penutur Indonesia sepanjang hidupnya berbahasa Inggris.",
+    "**Setiap kalimat juga wajib punya kata kerja.** \"Saya pelajar\" tidak punya kata kerja dan tetap benar dalam bahasa Indonesia. Versi Inggrisnya harus menyelipkan *am*: *I am a student*. Itulah gunanya baris harfiah di atas — supaya kelihatan bahwa *am* menempati tempat yang dalam bahasa Indonesia memang kosong.",
+    "**A student, bukan student.** Pekerjaan dan identitas dalam bahasa Inggris hampir selalu didahului *a* atau *an*. *I am student* terdengar seperti \"saya adalah pelajar\" yang kehilangan satu kata — mengerti sih, tapi langsung ketahuan bukan penutur asli. Kata kecil ini dibedah tuntas di Unit 5.",
+    "**I selalu huruf besar,** di mana pun letaknya: *Yes, I am*, *Sarah and I*. Bahasa Inggris satu-satunya bahasa besar yang begitu, dan menulisnya kecil terlihat seperti salah ketik.",
+    "**Jawaban pendek punya bentuk baku.** Pertanyaan *Are you a student?* dijawab *Yes, I am* atau *No, I'm not* — bukan *Yes* saja (terdengar dingin), bukan pula *Yes, I am a student* (terdengar seperti mengulang soal). Pola ini berlaku untuk semua pertanyaan yang dimulai dengan kata kerja.",
+    "**How are you? bukan pertanyaan sungguhan.** Ia basa-basi, sedekat \"apa kabar\" yang tak menunggu laporan kesehatan. Jawaban wajarnya pendek: *Fine, thanks*, *Good, thanks*, *Not bad*. Lalu kembalikan: *And you?*",
+    "**Nice to meet you** hanya dipakai pada pertemuan **pertama**. Pada pertemuan kedua, mengucapkannya lagi justru memberi tahu lawan bicara bahwa kamu lupa pernah bertemu. Untuk pertemuan berikutnya: *Good to see you*."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja to be — am, is, are",
+     "body": [
+      "*To be* berarti \"adalah\", dan ia satu-satunya kata kerja dalam bahasa Inggris yang bentuknya berubah sebanyak ini. Tiga bentuk berikut sudah cukup untuk sepuluh unit ke depan:"
+     ],
+     "table": {
+      "head": ["Pelaku", "Bentuk", "Cara baca", "Contoh"],
+      "rows": [
+       ["I", "**am**", "æm", "*I am Budi.*"],
+       ["you", "**are**", "ar", "*You are a student.*"],
+       ["he / she / it", "**is**", "iz", "*She is a teacher.*"],
+       ["we / you / they", "**are**", "ar", "*They are students.*"]
+      ]
+     },
+     "after": [
+      "Cara mengingatnya: hanya *I* yang memakai *am*, hanya orang ketiga tunggal yang memakai *is*, dan **sisanya semua** *are*. Tidak ada pengecualian sama sekali — ini salah satu dari sedikit aturan bahasa Inggris yang benar-benar rapi.",
+      "Menyangkalnya cukup dengan menambahkan *not* **sesudah** bentuk to be: *I am not*, *she is not*, *they are not*. Perhatikan urutannya — *not* tidak pernah berdiri di depan, dan tidak pernah butuh kata bantu tambahan seperti *do*."
+     ]
+    },
+    {
+     "title": "Bentuk pendek: I'm, you're, she's",
+     "body": [
+      "Penutur bahasa Inggris hampir tidak pernah mengucapkan *I am* lengkap dalam percakapan biasa. Yang keluar dari mulut adalah bentuk pendeknya, dan tanda petik satu menandai huruf yang dibuang:"
+     ],
+     "table": {
+      "head": ["Panjang", "Pendek", "Cara baca", "Bentuk sangkal"],
+      "rows": [
+       ["I am", "**I'm**", "aim", "*I'm not*"],
+       ["you are", "**you're**", "yur", "*you aren't* / *you're not*"],
+       ["he is", "**he's**", "hiiz", "*he isn't* / *he's not*"],
+       ["she is", "**she's**", "shiiz", "*she isn't* / *she's not*"],
+       ["it is", "**it's**", "its", "*it isn't* / *it's not*"],
+       ["we are", "**we're**", "wir", "*we aren't* / *we're not*"],
+       ["they are", "**they're**", "dhér", "*they aren't* / *they're not*"]
+      ]
+     },
+     "after": [
+      "Bentuk pendek bukan bahasa malas atau bahasa gaul. Justru sebaliknya: bentuk panjang dipakai kalau kamu sedang **menekankan** atau sedang membantah — *I AM tired* (\"saya benar-benar lelah\"). Memakai bentuk panjang terus-menerus membuat kalimatmu terdengar kaku, seolah kamu sedang membaca dokumen.",
+      "⚠️ Satu jebakan yang tak pernah hilang: *it's* berarti \"itu adalah\", sedangkan *its* tanpa tanda petik berarti \"miliknya\". Penutur asli pun keliru soal ini setiap hari."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Salam dan pamit",
+   "blocks": [
+    { "type": "p", "text": "Daftar ini sebaiknya dihafal utuh, bukan dipahami kata per kata. Semuanya frasa jadi yang tak pernah berubah bentuk." },
+    {
+     "type": "tabel",
+     "head": ["English", "Cara baca", "Arti", "Kapan"],
+     "rows": [
+      ["Hello", "he-LOU", "Halo", "kapan saja, ke siapa saja"],
+      ["Hi", "hai", "Hai", "santai, ke teman sebaya"],
+      ["Good morning", "gud MOR-ning", "Selamat pagi", "sampai sekitar pukul 12"],
+      ["Good afternoon", "gud af-ter-NUUN", "Selamat siang/sore", "12 sampai matahari terbenam"],
+      ["Good evening", "gud IIV-ning", "Selamat malam", "sesudah gelap, waktu **datang**"],
+      ["Good night", "gud nait", "Selamat malam", "hanya waktu **pergi** atau mau tidur"],
+      ["How are you?", "hau ar yu", "Apa kabar?", "sopan, ke siapa pun"],
+      ["How's it going?", "hauz it GOU-ing", "Gimana kabarnya?", "santai, antar teman"],
+      ["Goodbye", "gud-BAI", "Selamat tinggal", "pamit umum"],
+      ["Bye", "bai", "Dah", "santai, paling sering dipakai"],
+      ["See you later", "sii yu LÉI-ter", "Sampai jumpa", "pamit umum"],
+      ["See you tomorrow", "sii yu te-MO-rou", "Sampai besok", "kalau memang besok bertemu"]
+     ]
+    },
+    { "type": "p", "text": "⚠️ Perhatikan dua baris di tengah. *Good evening* dan *good night* sama-sama \"selamat malam\" dalam bahasa Indonesia, tapi tidak bisa ditukar: yang pertama untuk **menyapa** orang saat tiba, yang kedua hanya untuk **berpisah**. Menyapa tamu yang baru datang dengan *good night* sama janggalnya dengan menyambut tamu dengan \"selamat tidur\"." },
+    { "type": "p", "text": "Menjawab *how are you?* tidak perlu panjang: *Fine, thanks* sudah cukup, dan hampir selalu ditutup dengan *And you?* — mengembalikan pertanyaan itu dianggap sopan, membiarkannya menggantung dianggap dingin." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "en": "hello", "baca": "he-LOU", "id": "halo" },
+  { "en": "good morning", "baca": "gud MOR-ning", "id": "selamat pagi" },
+  { "en": "good night", "baca": "gud nait", "id": "selamat malam (waktu pamit)" },
+  { "en": "what", "baca": "wot", "id": "apa" },
+  { "en": "how", "baca": "hau", "id": "bagaimana" },
+  { "en": "your", "baca": "yor", "id": "punyamu" },
+  { "en": "my", "baca": "mai", "id": "punyaku" },
+  { "en": "name", "baca": "néim", "id": "nama" },
+  { "en": "and", "baca": "ænd", "id": "dan" },
+  { "en": "but", "baca": "bat", "id": "tetapi" },
+  { "en": "you", "baca": "yu", "id": "kamu" },
+  { "en": "I", "baca": "ai", "id": "saya" },
+  { "en": "nice to meet you", "baca": "nais tu MIIT yu", "id": "senang berkenalan" },
+  { "en": "student", "baca": "STUU-dent", "id": "pelajar" },
+  { "en": "teacher", "baca": "TII-cher", "id": "guru" },
+  { "en": "yes / no", "baca": "yés / nou", "id": "ya / tidak" },
+  { "en": "too", "baca": "tuu", "id": "juga" },
+  { "en": "very", "baca": "VÉ-ri", "id": "sangat" },
+  { "en": "a little", "baca": "e LI-tel", "id": "sedikit / agak" },
+  { "en": "fine", "baca": "fain", "id": "baik" },
+  { "en": "thank you", "baca": "thængk yu", "id": "terima kasih" },
+  { "en": "tired", "baca": "TAI-erd", "id": "lelah" },
+  { "en": "here", "baca": "hiir", "id": "di sini" },
+  { "en": "today", "baca": "te-DÉI", "id": "hari ini" },
+  { "en": "tomorrow", "baca": "te-MO-rou", "id": "besok" },
+  { "en": "see you later", "baca": "sii yu LÉI-ter", "id": "sampai jumpa" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "My name is Carlos.",
+    "Are you a teacher?",
+    "I am not a student.",
+    "She is a teacher too.",
+    "How are you today?",
+    "See you tomorrow!"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk *to be* yang tepat (*am*, *is*, *are*).",
+   "items": [
+    "I ____ a student.",
+    "____ you Sarah?",
+    "He ____ a teacher.",
+    "No, I ____ not a teacher.",
+    "Mrs. Green ____ very nice.",
+    "They ____ students here."
+   ]
+  },
+  {
+   "prompt": "Sapaan mana yang tepat? Isi titik-titiknya.",
+   "items": [
+    "Pukul 08.00 kamu bertemu tetangga: ____",
+    "Pukul 17.00 kamu masuk toko: ____",
+    "Pukul 22.00 kamu pamit tidur: ____",
+    "Kamu menyapa teman sebaya, santai: ____"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk pendek. Contoh: *I am* → *I'm*.",
+   "items": [
+    "You are",
+    "She is",
+    "It is",
+    "They are",
+    "We are",
+    "He is not"
+   ]
+  }
+ ],
+ "answers": [
+  "Nama saya Carlos. — Kamu guru? — Saya bukan pelajar. — Dia guru juga. — Apa kabarmu hari ini? — Sampai besok!",
+  "am — Are — is — am — is — are",
+  "good morning — good afternoon — good night — hi",
+  "You're — She's — It's — They're — We're — He isn't"
+ ]
+}

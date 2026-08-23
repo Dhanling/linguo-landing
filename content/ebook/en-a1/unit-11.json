@@ -1,0 +1,458 @@
+{
+ "title": "Berapa harganya?",
+ "title_target": "How much is it?",
+ "goal": "Berbelanja: menanyakan harga, menyebut warna dan ukuran, dan menaruh kata sifat di tempat yang benar.",
+ "bekal": [
+  "menanyakan dan memahami harga",
+  "menyebut warna, ukuran, dan bahan",
+  "menaruh kata sifat di depan bendanya (*a big blue bag*)",
+  "meminta ukuran lain dan mencoba barang"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — In a clothes shop",
+   "intro": "Budi mencari kemeja untuk wawancara kerja. Perhatikan urutan kata sifat dan kata bendanya — dalam bahasa Indonesia urutannya persis terbalik.",
+   "lines": [
+    {
+     "speaker": "Assistant:",
+     "text": "Hello. Can I help you?",
+     "id": "Halo. Ada yang bisa saya bantu?",
+     "literal": "halo. bisakah saya menolong kamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Yes, please. I'm looking for a white shirt.",
+     "id": "Iya. Saya cari kemeja putih.",
+     "literal": "ya, silakan. saya-sedang mencari untuk sebuah putih kemeja."
+    },
+    {
+     "speaker": "Assistant:",
+     "text": "What size are you?",
+     "id": "Ukurannya berapa?",
+     "literal": "apa ukuran adalah kamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Medium, I think. How much is this one?",
+     "id": "Sedang, kayaknya. Yang ini berapa?",
+     "literal": "sedang, saya pikir. seberapa banyak adalah ini satu?"
+    },
+    {
+     "speaker": "Assistant:",
+     "text": "That's two hundred and fifty thousand rupiah.",
+     "id": "Yang itu dua ratus lima puluh ribu rupiah.",
+     "literal": "itu-adalah dua ratus dan lima-puluh ribu rupiah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hmm, it's a bit expensive. Do you have a cheaper one?",
+     "id": "Hmm, agak mahal. Ada yang lebih murah?",
+     "literal": "hmm, itu-adalah sedikit mahal. apakah kamu punya sebuah lebih-murah satu?"
+    },
+    {
+     "speaker": "Assistant:",
+     "text": "These blue shirts are cheaper. A hundred and eighty thousand.",
+     "id": "Kemeja biru ini lebih murah. Seratus delapan puluh ribu.",
+     "literal": "ini-jamak biru kemeja-kemeja adalah lebih-murah. sebuah ratus dan delapan-puluh ribu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nice. Can I try it on?",
+     "id": "Bagus. Boleh dicoba?",
+     "literal": "bagus. bisakah saya mencoba itu pada?"
+    },
+    {
+     "speaker": "Assistant:",
+     "text": "Of course. The fitting room is over there.",
+     "id": "Tentu. Kamar pasnya di sebelah sana.",
+     "literal": "tentu saja. itu pas kamar adalah di-atas sana."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "It's too small. Do you have a bigger size?",
+     "id": "Kekecilan. Ada ukuran yang lebih besar?",
+     "literal": "itu-adalah terlalu kecil. apakah kamu punya sebuah lebih-besar ukuran?"
+    },
+    {
+     "speaker": "Assistant:",
+     "text": "Here's a large. How is it?",
+     "id": "Ini yang L. Bagaimana?",
+     "literal": "di-sini-adalah sebuah besar. bagaimana adalah itu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Perfect. I'll take it.",
+     "id": "Pas. Saya ambil.",
+     "literal": "sempurna. saya-akan mengambil itu."
+    }
+   ],
+   "notes": [
+    "⚠️ **Kata sifat berdiri di DEPAN bendanya.** *A white shirt*, bukan *a shirt white*. Ini kebalikan mutlak dari bahasa Indonesia (\"kemeja putih\"), dan salah satu kebiasaan yang paling lama menempel. Latih dengan membalik pelan-pelan: kemeja putih → putih kemeja → *white shirt*.",
+    "⚠️ **Kata sifat tidak pernah jamak.** *Two blue shirts*, bukan *two blues shirts*. Yang menerima huruf s hanya kata bendanya. Sekali lagi ini kebalikan dari kebiasaan bahasa yang menyesuaikan sifat dengan bendanya, seperti Spanyol atau Arab.",
+    "**How much is this?** untuk satu barang, *How much are these?* untuk beberapa. Kata kerjanya ikut jumlah barangnya, bukan ikut harga.",
+    "**Too berbeda dari very.** *Very small* berarti \"kecil sekali\" — bisa jadi bagus. *Too small* berarti \"terlalu kecil\" — selalu buruk, karena *too* mengandung keluhan. Menyebut *This shirt is too nice* justru membingungkan penjual.",
+    "**Try it on**, bukan *try it*. Untuk pakaian, kata kecil *on* wajib ada — tanpa itu, *try it* berarti mencoba secara umum (mencicipi makanan, mencoba aplikasi). Perhatikan juga letaknya: kalau yang dicoba disebut dengan *it*, ia menyelip di tengah — *try **it** on*, bukan *try on it*.",
+    "**A bit expensive** melunakkan keluhan. Mengatakan *It's expensive* di depan penjual terdengar seperti menuduh; *It's a bit expensive* adalah cara halus meminta pilihan lain, dan hampir selalu dijawab dengan tawaran yang lebih murah.",
+    "⚠️ **Menawar bukan kebiasaan di toko resmi** di kebanyakan negara berbahasa Inggris — harga di label adalah harga akhir, dan menawar bisa membuat penjual bingung. Yang wajar adalah menanyakan *Do you have a cheaper one?* atau *Is this on sale?*"
+   ],
+   "grammars": [
+    {
+     "title": "Kata sifat: di depan, dan tak pernah berubah",
+     "body": [
+      "Kata sifat dalam bahasa Inggris punya dua tempat, dan bentuknya sama di keduanya:"
+     ],
+     "table": {
+      "head": [
+       "Letak",
+       "Pola",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "di depan benda",
+        "*sifat + benda*",
+        "*a **white** shirt*, *two **big** bags*"
+       ],
+       [
+        "sesudah to be",
+        "*benda + to be + sifat*",
+        "*The shirt **is white**.*, *These bags **are big**.*"
+       ]
+      ]
+     },
+     "after": [
+      "Kalau kata sifatnya lebih dari satu, urutannya mengikuti pola tetap yang jarang disadari penutur asli sendiri: **pendapat → ukuran → umur → warna → asal → bahan**. Jadi *a nice big old blue Italian cotton shirt* — dan hampir tak ada orang yang memakai enam sekaligus. Untuk A1 cukup ingat dua yang paling sering berdampingan: **ukuran sebelum warna**. *A big blue bag*, bukan *a blue big bag*.",
+      "Untuk membandingkan, tambahkan **-er** pada kata sifat pendek: *cheap → cheap**er***, *big → big**ger***, *small → small**er***. Untuk kata sifat panjang, pakai *more*: *more expensive*, *more beautiful*. Aturan lengkapnya di luar level A1, tapi bentuk *-er* akan sering kamu butuhkan saat berbelanja."
+     ]
+    },
+    {
+     "title": "Menyebut harga",
+     "body": [
+      "Angka besar dibaca menurun dari satuan terbesar, dan *and* muncul sebelum dua angka terakhir:"
+     ],
+     "table": {
+      "head": [
+       "Angka",
+       "Dibaca"
+      ],
+      "rows": [
+       [
+        "Rp 25.000",
+        "*twenty-five thousand rupiah*"
+       ],
+       [
+        "Rp 150.000",
+        "*a hundred and fifty thousand rupiah*"
+       ],
+       [
+        "Rp 250.000",
+        "*two hundred and fifty thousand rupiah*"
+       ],
+       [
+        "Rp 1.500.000",
+        "*one and a half million rupiah*"
+       ],
+       [
+        "$4.99",
+        "*four ninety-nine* atau *four dollars ninety-nine*"
+       ],
+       [
+        "£12.50",
+        "*twelve fifty* atau *twelve pounds fifty*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Satuan uang **tidak dijamakkan** kalau berdiri sesudah angka dalam bahasa Inggris sehari-hari: *twenty thousand rupiah*, bukan *rupiahs*. Tapi *dollars* dan *pounds* memang berakhiran -s: *twenty dollars*.",
+      "⚠️ Ingat kembali Unit 4: bahasa Inggris memakai **koma untuk ribuan** dan **titik untuk desimal**. Harga $1,250.00 berarti seribu dua ratus lima puluh dolar — bukan satu dolar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Warna, ukuran, dan barang belanjaan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Warna",
+      "Cara baca",
+      "Barang",
+      "Cara baca"
+     ],
+     "rows": [
+      [
+       "white",
+       "wait",
+       "a shirt",
+       "e sheert"
+      ],
+      [
+       "black",
+       "blæk",
+       "a T-shirt",
+       "e TII-sheert"
+      ],
+      [
+       "red",
+       "réd",
+       "trousers / pants",
+       "TRAU-zerz / pænts"
+      ],
+      [
+       "blue",
+       "bluu",
+       "jeans",
+       "jiinz"
+      ],
+      [
+       "green",
+       "griin",
+       "a dress",
+       "e drés"
+      ],
+      [
+       "yellow",
+       "YÉ-lou",
+       "a jacket",
+       "e JÆ-ket"
+      ],
+      [
+       "brown",
+       "braun",
+       "shoes",
+       "shuuz"
+      ],
+      [
+       "grey",
+       "gréi",
+       "socks",
+       "soks"
+      ],
+      [
+       "orange",
+       "O-rinj",
+       "a hat",
+       "e hæt"
+      ],
+      [
+       "pink",
+       "pink",
+       "a bag",
+       "e bæg"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Trousers*, *jeans*, *shoes*, *socks*, dan *glasses* **selalu jamak** — bendanya sepasang. Jadi *these trousers are nice*, bukan *this trouser is nice*. Untuk menghitungnya: *a pair of shoes*, *two pairs of jeans*."
+    },
+    {
+     "type": "sub",
+     "text": "Ukuran dan kalimat toko"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "English",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*small / medium / large*",
+       "kecil / sedang / besar (S, M, L)"
+      ],
+      [
+       "*What size are you?*",
+       "Ukuran kamu berapa?"
+      ],
+      [
+       "*Do you have this in blue?*",
+       "Ada yang warna biru?"
+      ],
+      [
+       "*Do you have a bigger size?*",
+       "Ada ukuran lebih besar?"
+      ],
+      [
+       "*Can I try it on?*",
+       "Boleh dicoba?"
+      ],
+      [
+       "*Where's the fitting room?*",
+       "Kamar pasnya di mana?"
+      ],
+      [
+       "*Is this on sale?*",
+       "Ini lagi diskon?"
+      ],
+      [
+       "*I'll take it.*",
+       "Saya ambil."
+      ],
+      [
+       "*I'm just looking, thanks.*",
+       "Lihat-lihat dulu, terima kasih."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris terakhir adalah kalimat penyelamat. Di banyak negara, penjaga toko akan mendekatimu dalam sepuluh detik pertama; *I'm just looking, thanks* mengakhiri percakapan itu dengan sopan dan tanpa perlu alasan."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "en": "to buy",
+   "baca": "bai",
+   "id": "membeli"
+  },
+  {
+   "en": "to sell",
+   "baca": "sél",
+   "id": "menjual"
+  },
+  {
+   "en": "to pay",
+   "baca": "péi",
+   "id": "membayar"
+  },
+  {
+   "en": "price",
+   "baca": "prais",
+   "id": "harga"
+  },
+  {
+   "en": "money",
+   "baca": "MA-ni",
+   "id": "uang"
+  },
+  {
+   "en": "cheap",
+   "baca": "chiip",
+   "id": "murah"
+  },
+  {
+   "en": "expensive",
+   "baca": "ik-SPÉN-siv",
+   "id": "mahal"
+  },
+  {
+   "en": "size",
+   "baca": "saiz",
+   "id": "ukuran"
+  },
+  {
+   "en": "colour / color",
+   "baca": "KA-ler",
+   "id": "warna"
+  },
+  {
+   "en": "shirt",
+   "baca": "sheert",
+   "id": "kemeja"
+  },
+  {
+   "en": "shoes",
+   "baca": "shuuz",
+   "id": "sepatu"
+  },
+  {
+   "en": "too",
+   "baca": "tuu",
+   "id": "terlalu"
+  },
+  {
+   "en": "a bit",
+   "baca": "e BIT",
+   "id": "agak / sedikit"
+  },
+  {
+   "en": "to help",
+   "baca": "hélp",
+   "id": "menolong"
+  },
+  {
+   "en": "to look for",
+   "baca": "LUK for",
+   "id": "mencari"
+  },
+  {
+   "en": "to try on",
+   "baca": "TRAI on",
+   "id": "mencoba (pakaian)"
+  },
+  {
+   "en": "over there",
+   "baca": "OU-ver dhér",
+   "id": "di sebelah sana"
+  },
+  {
+   "en": "sale",
+   "baca": "séil",
+   "id": "diskon / obral"
+  },
+  {
+   "en": "a pair of",
+   "baca": "e PÉR ev",
+   "id": "sepasang"
+  },
+  {
+   "en": "million",
+   "baca": "MIL-yen",
+   "id": "juta"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Susun jadi frasa yang benar.",
+   "items": [
+    "shirt / white / a",
+    "bag / big / blue / a",
+    "shoes / black / of / two / pairs",
+    "dress / expensive / an",
+    "jeans / blue / these"
+   ]
+  },
+  {
+   "prompt": "Isi dengan *how much* atau *how many*.",
+   "items": [
+    "____ is this shirt?",
+    "____ are these shoes?",
+    "____ shirts do you have?",
+    "____ money do you need?",
+    "____ pairs of jeans do you want?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk pembanding. Contoh: *cheap* → *cheaper*",
+   "items": [
+    "big",
+    "small",
+    "cheap",
+    "expensive",
+    "nice"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat berikut. Semuanya mengandung satu kesalahan khas.",
+   "items": [
+    "I want a shirt white.",
+    "These are two blues bags.",
+    "How much are this shoes?",
+    "This shirt is very small for me. I need a bigger size.",
+    "Can I try on it?"
+   ]
+  }
+ ],
+ "answers": [
+  "a white shirt — a big blue bag — two pairs of black shoes — an expensive dress — these blue jeans",
+  "How much — How much — How many — How much — How many",
+  "bigger — smaller — cheaper — more expensive — nicer",
+  "I want a white shirt. — These are two blue bags. — How much are these shoes? — This shirt is too small for me. I need a bigger size. — Can I try it on?"
+ ]
+}

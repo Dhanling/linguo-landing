@@ -1,0 +1,192 @@
+{
+ "title": "Rumahku",
+ "title_target": "This is my place",
+ "goal": "Menggambarkan tempat tinggal, dan memakai kata ganti pada posisi sasaran (*me*, *him*, *them*).",
+ "bekal": [
+  "menyebut ruangan dan perabot",
+  "memakai *me*, *him*, *her*, *us*, *them*",
+  "mengatakan sesuatu itu milik siapa (*It's mine*)",
+  "menanyakan pemilik dengan *whose*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — Come in, have a look",
+   "intro": "Mei mengantar Budi pulang dan mampir sebentar. Perhatikan kata ganti yang muncul sesudah kata kerja dan sesudah kata depan — bentuknya berubah.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Come in. It's small, but I like it.", "id": "Masuk. Kecil sih, tapi saya suka.", "literal": "datang ke-dalam. itu-adalah kecil, tetapi saya suka itu." },
+    { "speaker": "Mei:", "text": "It's nice! How many rooms are there?", "id": "Bagus, kok! Ada berapa kamar?", "literal": "itu-adalah bagus! seberapa banyak kamar-kamar adalah di-sana?" },
+    { "speaker": "Budi:", "text": "Two. This is the living room, and my bedroom is next to it.", "id": "Dua. Ini ruang tamu, dan kamar tidur saya di sebelahnya.", "literal": "dua. ini adalah itu tinggal kamar, dan punyaku tidur-kamar adalah sebelah ke itu." },
+    { "speaker": "Mei:", "text": "Do you live here alone?", "id": "Kamu tinggal sendiri di sini?", "literal": "apakah kamu tinggal di-sini sendirian?" },
+    { "speaker": "Budi:", "text": "No, I share it with two friends. They're at work now.", "id": "Tidak, saya berbagi dengan dua teman. Mereka lagi kerja.", "literal": "tidak, saya berbagi itu dengan dua teman-teman. mereka-adalah di kerja sekarang." },
+    { "speaker": "Mei:", "text": "Whose books are these? Are they yours?", "id": "Ini buku siapa? Punyamu?", "literal": "punya-siapa buku-buku adalah ini-jamak? adalah mereka punyamu?" },
+    { "speaker": "Budi:", "text": "No, they aren't mine. They're Andi's. He studies medicine.", "id": "Bukan, bukan punya saya. Punya Andi. Dia kuliah kedokteran.", "literal": "tidak, mereka adalah-tidak punyaku. mereka-adalah Andi-punya. dia belajar kedokteran." },
+    { "speaker": "Mei:", "text": "And the guitar? Is that his too?", "id": "Dan gitarnya? Punya dia juga?", "literal": "dan itu gitar? adalah itu punya-dia juga?" },
+    { "speaker": "Budi:", "text": "No, that one's mine. My father gave it to me.", "id": "Bukan, yang itu punya saya. Ayah saya yang memberikannya.", "literal": "tidak, itu satu-adalah punyaku. punyaku ayah memberi itu ke saya." },
+    { "speaker": "Mei:", "text": "Can you play something for us?", "id": "Bisa mainkan sesuatu buat kami?", "literal": "bisakah kamu memainkan sesuatu untuk kami?" },
+    { "speaker": "Budi:", "text": "Maybe later. Sit down, I'll make you some tea.", "id": "Nanti saja. Duduk dulu, saya buatkan teh.", "literal": "mungkin nanti. duduk turun, saya-akan membuat kamu sebagian teh." }
+   ],
+   "notes": [
+    "⚠️ **Kata ganti berubah bentuk kalau ia jadi sasaran.** *I* menjadi *me*, *he* menjadi *him*, *they* menjadi *them*. Bandingkan: ***I** like **him*** dan ***He** likes **me***. Bahasa Indonesia tidak pernah mengubah \"saya\" dan \"dia\" karena posisinya, jadi bentuk kedua ini harus dihafal terpisah.",
+    "**Sesudah kata depan, selalu bentuk sasaran.** *with **me***, *for **us***, *to **them***. *With I* dan *for we* salah. ⚠️ Termasuk dalam rangkaian: *between you and **me***, bukan *between you and I* — kesalahan yang bahkan sering dilakukan penutur asli karena terdengar lebih \"sopan\".",
+    "**Mine tidak diikuti kata benda.** Dua cara mengatakan hal yang sama: *It's **my** book* dan *It's **mine***. Yang salah adalah menggabungkannya — *It's mine book* tidak pernah benar.",
+    "**Whose berbeda dari who's.** Keduanya dibunyikan sama persis (huuz), tapi *whose* berarti \"milik siapa\" dan *who's* adalah bentuk pendek dari *who is*. *Whose book is this?* melawan *Who's your teacher?*",
+    "**House, home, dan place.** *House* adalah bangunannya, *home* adalah tempat kamu pulang, dan *place* adalah kata paling santai untuk keduanya. Karena itu *I'm going home* (tanpa *to*), tapi *I'm going to my house*. Orang yang tinggal di apartemen tetap bilang *home*, tak pernah *house*.",
+    "**I'll make you some tea** — dua sasaran berturut-turut, dan urutannya orang dulu baru bendanya. Bentuk panjangnya *I'll make some tea **for** you*, dengan arti yang sama persis.",
+    "**Come in** adalah undangan masuk, bukan perintah. Dalam bahasa Inggris bentuk perintah terdengar ramah selama nadanya ramah — *Sit down*, *Take a seat*, *Have a look*. Menambahkan *please* membuatnya lebih halus lagi."
+   ],
+   "grammars": [
+    {
+     "title": "Dua bentuk kata ganti",
+     "body": [
+      "Kolom kiri dipakai kalau ia **pelaku** (di depan kata kerja), kolom kanan kalau ia **sasaran** (sesudah kata kerja atau kata depan):"
+     ],
+     "table": {
+      "head": ["Pelaku", "Sasaran", "Cara baca", "Contoh"],
+      "rows": [
+       ["I", "**me**", "mii", "*She knows **me**.*"],
+       ["you", "**you**", "yu", "*I know **you**.*"],
+       ["he", "**him**", "him", "*I saw **him** yesterday.*"],
+       ["she", "**her**", "heer", "*Give it to **her**.*"],
+       ["it", "**it**", "it", "*I like **it**.*"],
+       ["we", "**us**", "as", "*Come with **us**.*"],
+       ["they", "**them**", "dhém", "*I work with **them**.*"]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa *you* dan *it* tidak berubah — dua dari tujuh yang tidak menuntut hafalan tambahan.",
+      "⚠️ Bahasa Inggris jarang membiarkan kata kerja berdiri tanpa sasaran. \"Saya suka\" harus jadi *I like **it***; \"dia tahu\" harus jadi *He knows*, atau lebih sering *He knows **it***. Kebiasaan bahasa Indonesia membuang sasaran yang sudah jelas justru membuat kalimat Inggris terdengar menggantung."
+     ]
+    },
+    {
+     "title": "Milik siapa: whose, mine, yours",
+     "body": [
+      "Kata milik dari Unit 3 (*my*, *your*, *his*) selalu diikuti benda. Bentuk di bawah ini justru menggantikan bendanya:"
+     ],
+     "table": {
+      "head": ["Di depan benda", "Berdiri sendiri", "Contoh"],
+      "rows": [
+       ["my book", "**mine**", "*This book is **mine**.*"],
+       ["your book", "**yours**", "*Is this **yours**?*"],
+       ["his book", "**his**", "*It's **his**.*"],
+       ["her book", "**hers**", "*The blue one is **hers**.*"],
+       ["our book", "**ours**", "*Those seats are **ours**.*"],
+       ["their book", "**theirs**", "*This house is **theirs**.*"]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa **tidak satu pun memakai tanda petik**: *yours*, bukan *your's*. Ini kesalahan tulis yang sangat sering, karena *'s* memang penanda milik untuk nama orang (*Andi's*) — tapi tidak untuk kata ganti.",
+      "Menanyakannya dengan *whose*: *Whose book is this?* atau *Whose is this?* Keduanya benar, yang kedua lebih santai."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Ruangan dan perabot",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Ruangan", "Cara baca", "Perabot", "Cara baca"],
+     "rows": [
+      ["a living room", "e LI-ving ruum", "a bed", "e béd"],
+      ["a bedroom", "e BÉD-ruum", "a table", "e TÉI-bel"],
+      ["a kitchen", "e KI-chen", "a chair", "e chér"],
+      ["a bathroom", "e BÆTH-ruum", "a sofa", "e SOU-fe"],
+      ["a toilet", "e TOI-let", "a cupboard", "e KA-berd"],
+      ["a dining room", "e DAI-ning ruum", "a fridge", "e frij"],
+      ["a garden", "e GAR-den", "a lamp", "e læmp"],
+      ["a garage", "e ge-RAAZH", "a mirror", "e MI-rer"],
+      ["a balcony", "e BÆL-ke-ni", "a window", "e WIN-dou"],
+      ["a floor", "e flor", "a carpet", "e KAR-pet"]
+     ]
+    },
+    { "type": "p", "text": "⚠️ *Cupboard* dibaca \"KA-berd\" — huruf p-nya bisu dan suku kata keduanya nyaris hilang. *Garage* dibaca dengan tekanan di belakang, ge-RAAZH. Dua kata ini nyaris tak pernah ditebak benar pada percobaan pertama." },
+    { "type": "p", "text": "*Floor* punya dua arti sekaligus: lantai sebagai permukaan (*the book is on the floor*) dan lantai sebagai tingkat (*the third floor*). ⚠️ Di Inggris, *the first floor* berarti lantai **dua** — lantai dasarnya disebut *the ground floor*. Di Amerika, *the first floor* adalah lantai dasar. Perbedaan ini rutin membuat orang tersesat di gedung." },
+    {
+     "type": "kotak",
+     "title": "Menggambarkan tempat tinggalmu",
+     "items": [
+      "*I live in a small house with my family.* — Saya tinggal di rumah kecil bersama keluarga.",
+      "*I rent a room near the campus.* — Saya kos dekat kampus.",
+      "*There are two bedrooms and one bathroom.* — Ada dua kamar tidur dan satu kamar mandi.",
+      "*My room is on the second floor.* — Kamar saya di lantai dua.",
+      "*It's not big, but it's comfortable.* — Tidak besar, tapi nyaman.",
+      "*I share the kitchen with my neighbours.* — Dapurnya berbagi dengan tetangga."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "en": "house", "baca": "haus", "id": "rumah (bangunan)" },
+  { "en": "home", "baca": "houm", "id": "rumah (tempat pulang)" },
+  { "en": "room", "baca": "ruum", "id": "kamar / ruangan" },
+  { "en": "kitchen", "baca": "KI-chen", "id": "dapur" },
+  { "en": "bedroom", "baca": "BÉD-ruum", "id": "kamar tidur" },
+  { "en": "bathroom", "baca": "BÆTH-ruum", "id": "kamar mandi" },
+  { "en": "floor", "baca": "flor", "id": "lantai / tingkat" },
+  { "en": "furniture", "baca": "FEER-ni-cher", "id": "perabot" },
+  { "en": "to share", "baca": "shér", "id": "berbagi" },
+  { "en": "to rent", "baca": "rént", "id": "menyewa" },
+  { "en": "alone", "baca": "e-LOUN", "id": "sendirian" },
+  { "en": "whose", "baca": "huuz", "id": "milik siapa" },
+  { "en": "mine", "baca": "main", "id": "punyaku" },
+  { "en": "yours", "baca": "yorz", "id": "punyamu" },
+  { "en": "comfortable", "baca": "KAMF-te-bel", "id": "nyaman" },
+  { "en": "neighbour", "baca": "NÉI-ber", "id": "tetangga" },
+  { "en": "to give", "baca": "giv", "id": "memberi" },
+  { "en": "to make", "baca": "méik", "id": "membuat" },
+  { "en": "maybe", "baca": "MÉI-bi", "id": "mungkin" },
+  { "en": "later", "baca": "LÉI-ter", "id": "nanti" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ganti dengan kata ganti sasaran. Contoh: *I know Budi.* → *I know ____.*",
+   "items": [
+    "I know Budi. → I know ____.",
+    "She likes Mei and Sarah. → She likes ____.",
+    "Come with my brother and me. → Come with ____.",
+    "He teaches Rina. → He teaches ____.",
+    "Give the book to Andi. → Give the book to ____.",
+    "I don't understand this word. → I don't understand ____."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk milik yang berdiri sendiri (*mine*, *yours*, *his*, *hers*, *ours*, *theirs*).",
+   "items": [
+    "This is my bag. It's ____.",
+    "Is this your pen? Yes, it's ____.",
+    "That car belongs to Andi. It's ____.",
+    "These books belong to Rina. They're ____.",
+    "This house belongs to my parents. It's ____."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat berikut. Semuanya mengandung satu kesalahan khas.",
+   "items": [
+    "Come with I.",
+    "It's mine book.",
+    "This bag is your's.",
+    "Between you and I, the film was bad.",
+    "She gave the money to he."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Ini buku siapa?",
+    "Saya tinggal bersama dua teman.",
+    "Kamar tidur saya di lantai dua.",
+    "Ayah saya memberikannya kepada saya.",
+    "Bisa mainkan sesuatu buat kami?"
+   ]
+  }
+ ],
+ "answers": [
+  "him — them — us — her — him — it",
+  "mine — yours — his — hers — theirs",
+  "Come with me. — It's my book. — This bag is yours. — Between you and me, the film was bad. — She gave the money to him.",
+  "Whose book is this? — I live with two friends. — My bedroom is on the second floor. — My father gave it to me. — Can you play something for us?"
+ ]
+}

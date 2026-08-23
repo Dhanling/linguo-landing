@@ -1,0 +1,215 @@
+{
+ "title": "Kamu kerja apa?",
+ "title_target": "What do you do?",
+ "goal": "Menyebutkan pekerjaan dan tempat kerja, serta menanyakannya dengan sopan.",
+ "bekal": [
+  "menyebut pekerjaanmu (*I'm a nurse*)",
+  "menyebut tempat kerjamu (*I work in a hospital*)",
+  "memilih antara *work in*, *work at*, *work for*, dan *work as*",
+  "menanyakan pekerjaan orang lain tanpa terdengar mengintrogasi"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — At a friend's party",
+   "intro": "Budi diajak Sarah ke pesta ulang tahun temannya. Percakapan basa-basi pertama di negara berbahasa Inggris hampir selalu bermuara ke pertanyaan yang sama.",
+   "lines": [
+    { "speaker": "Tom:", "text": "Hi, I'm Tom. I'm a friend of Sarah's.", "id": "Hai, saya Tom. Saya temannya Sarah.", "literal": "hai, saya-adalah Tom. saya-adalah seorang teman dari Sarah-punya." },
+    { "speaker": "Budi:", "text": "Nice to meet you, Tom. I'm Budi.", "id": "Senang berkenalan, Tom. Saya Budi.", "literal": "menyenangkan untuk bertemu kamu, Tom. saya-adalah Budi." },
+    { "speaker": "Tom:", "text": "So, what do you do, Budi?", "id": "Jadi, kamu kerja apa, Budi?", "literal": "jadi, apa apakah kamu lakukan, Budi?" },
+    { "speaker": "Budi:", "text": "I'm a student. And I work part-time in a café.", "id": "Saya pelajar. Dan saya kerja paruh waktu di kafe.", "literal": "saya-adalah sebuah pelajar. dan saya bekerja paruh-waktu di sebuah kafe." },
+    { "speaker": "Tom:", "text": "Oh, nice. Which café?", "id": "Oh, bagus. Kafe yang mana?", "literal": "oh, bagus. yang-mana kafe?" },
+    { "speaker": "Budi:", "text": "The one near the station. What about you?", "id": "Yang dekat stasiun. Kalau kamu?", "literal": "itu satu dekat itu stasiun. apa tentang kamu?" },
+    { "speaker": "Tom:", "text": "I'm an engineer. I work for a small company downtown.", "id": "Saya insinyur. Saya kerja di perusahaan kecil di pusat kota.", "literal": "saya-adalah seorang insinyur. saya bekerja untuk sebuah kecil perusahaan pusat-kota." },
+    { "speaker": "Budi:", "text": "Do you like your job?", "id": "Kamu suka pekerjaanmu?", "literal": "apakah kamu suka punyamu pekerjaan?" },
+    { "speaker": "Tom:", "text": "Yes, I do. The hours are long, but the people are great.", "id": "Suka. Jamnya panjang, tapi orang-orangnya asyik.", "literal": "ya, saya lakukan. itu jam-jam adalah panjang, tetapi itu orang-orang adalah hebat." },
+    { "speaker": "Budi:", "text": "And Sarah? What does she do?", "id": "Kalau Sarah? Dia kerja apa?", "literal": "dan Sarah? apa apakah dia lakukan?" },
+    { "speaker": "Tom:", "text": "She works as a nurse at the city hospital.", "id": "Dia perawat di rumah sakit kota.", "literal": "dia bekerja sebagai seorang perawat di itu kota rumah-sakit." },
+    { "speaker": "Budi:", "text": "That's a hard job.", "id": "Itu pekerjaan berat.", "literal": "itu-adalah sebuah keras pekerjaan." },
+    { "speaker": "Tom:", "text": "It is. But she loves it.", "id": "Memang. Tapi dia suka.", "literal": "itu adalah. tetapi dia mencintai itu." }
+   ],
+   "notes": [
+    "**What do you do? berarti \"apa pekerjaanmu\"**, bukan \"kamu sedang apa\". Bentuk lengkapnya *What do you do for a living?* — \"apa yang kamu lakukan untuk hidup\" — tapi hampir tak ada yang mengucapkannya selengkap itu. Kalau kamu ingin bertanya seseorang sedang apa saat ini, kalimatnya lain: *What are you doing?* (Unit 15). Dua kalimat yang nyaris kembar dengan arti yang jauh berbeda.",
+    "**Pekerjaan selalu didahului a atau an.** *I'm a student*, *I'm an engineer*, *she's a nurse*. Ini pemakaian *a* yang paling sering terlupa oleh penutur Indonesia, karena dalam bahasa kita \"saya guru\" sudah lengkap. Tanpa *a*, kalimatnya terdengar seperti judul, bukan kalimat.",
+    "**I work, bukan I am work.** *Work* di sini kata kerja, dan satu kalimat hanya boleh punya satu kata kerja utama. Kalau kamu terlanjur menempelkan *am*, artinya berubah: *I'm working* berarti \"saya sedang bekerja saat ini\" — bentuk lain yang dibahas di Unit 15.",
+    "**A friend of Sarah's** — dua penanda milik dalam satu frasa, dan itu memang benar. Bentuk ini dipakai untuk mengatakan \"salah satu temannya Sarah\", bukan satu-satunya. Jangan pusingkan sekarang; hafalkan saja sebagai frasa perkenalan yang sopan.",
+    "**Yes, I do** — sekali lagi, jawaban pendek memantulkan kata bantu pertanyaannya. *Do you like…?* → *Yes, I do.* *Are you…?* → *Yes, I am.* *Does she…?* → *Yes, she does.* Menjawab *Yes, I like* justru terdengar terpotong.",
+    "**She works** dengan -s di ujung, karena pelakunya *she*. Kamu akan melihat huruf s ini di mana-mana mulai Unit 7. Perhatikan juga *she loves it* di baris terakhir — bukan *she loves*, karena dalam bahasa Inggris kata kerja *love* butuh sasaran yang disebut. \"Dia suka\" saja tidak cukup; harus \"dia menyukai **itu**\".",
+    "⚠️ **Jangan menanyakan gaji.** Di Indonesia \"gajinya berapa\" bisa jadi basa-basi wajar; di hampir semua negara berbahasa Inggris pertanyaan itu terasa sangat pribadi, setara dengan menanyakan isi rekening. Pertanyaan aman sesudah *What do you do?* adalah *Do you like it?* atau *How long have you been there?*"
+   ],
+   "grammars": [
+    {
+     "title": "Work in, work at, work for, work as",
+     "body": [
+      "Empat kata depan, empat maksud berbeda. Salah pilih tidak akan membuatmu tak dimengerti, tapi memilih yang tepat langsung terdengar rapi:"
+     ],
+     "table": {
+      "head": ["Pola", "Yang disebut sesudahnya", "Contoh"],
+      "rows": [
+       ["*work **in***", "jenis tempat atau bidangnya", "*I work in a café.* · *She works in education.*"],
+       ["*work **at***", "tempat tertentu yang jelas", "*He works at the city hospital.*"],
+       ["*work **for***", "perusahaan atau orang yang menggajimu", "*I work for Telkom.*"],
+       ["*work **as***", "jabatan atau perannya", "*She works as a nurse.*"]
+      ]
+     },
+     "after": [
+      "Kalau ragu, *work at* dan *work for* hampir selalu aman untuk nama perusahaan: *I work at Google* dan *I work for Google* dua-duanya terdengar wajar.",
+      "⚠️ Sesudah *work as* selalu ada *a* atau *an*, karena yang disebut adalah pekerjaan: *work as **a** teacher*, bukan *work as teacher*."
+     ]
+    },
+    {
+     "title": "Tiga cara menjawab \"What do you do?\"",
+     "body": [
+      "Jawaban yang wajar hampir selalu dua kalimat: pekerjaannya dulu, lalu tempatnya."
+     ],
+     "table": {
+      "head": ["Kalau kamu…", "Kalimatnya"],
+      "rows": [
+       ["punya pekerjaan tetap", "*I'm a teacher. I work at a high school.*"],
+       ["masih kuliah atau sekolah", "*I'm a student. I study economics.*"],
+       ["kerja sendiri", "*I'm self-employed. I have a small business.*"],
+       ["ibu rumah tangga", "*I'm a stay-at-home mum.*"],
+       ["sedang mencari kerja", "*I'm between jobs at the moment.*"],
+       ["sudah pensiun", "*I'm retired.*"]
+      ]
+     },
+     "after": [
+      "Baris kelima layak dihafal apa adanya. *I'm between jobs* secara harfiah berarti \"saya sedang di antara dua pekerjaan\" — cara halus mengatakan sedang menganggur, dan jauh lebih enak didengar daripada *I'm unemployed*, yang benar tapi terdengar muram.",
+      "Sesudah menjawab, kembalikan pertanyaannya: *What about you?* atau *And you?* Sama seperti *And you?* pada *How are you?*, membiarkannya menggantung terasa dingin."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pekerjaan dan tempat kerja",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["English", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["a teacher", "e TII-cher", "guru"],
+      ["a student", "e STUU-dent", "pelajar / mahasiswa"],
+      ["a doctor", "e DOK-ter", "dokter"],
+      ["a nurse", "e neers", "perawat"],
+      ["an engineer", "en én-je-NIIR", "insinyur"],
+      ["a driver", "e DRAI-ver", "sopir"],
+      ["a waiter", "e WÉI-ter", "pelayan restoran"],
+      ["a cook / a chef", "e kuk / e shéf", "juru masak"],
+      ["a shop assistant", "e SHOP e-sis-tent", "penjaga toko"],
+      ["an accountant", "en e-KAUN-tent", "akuntan"],
+      ["a lawyer", "e LOO-yer", "pengacara"],
+      ["a police officer", "e pe-LIIS O-fi-ser", "polisi"],
+      ["a soldier", "e SOUL-jer", "tentara"],
+      ["a farmer", "e FAR-mer", "petani"],
+      ["a businessman", "e BIZ-nes-mæn", "pengusaha"],
+      ["a housewife", "e HAUS-waif", "ibu rumah tangga"],
+      ["a journalist", "e JEER-ne-list", "wartawan"],
+      ["a programmer", "e PROU-græ-mer", "pemrogram"]
+     ]
+    },
+    { "type": "sub", "text": "Tempatnya" },
+    {
+     "type": "tabel",
+     "head": ["English", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["an office", "en O-fis", "kantor"],
+      ["a hospital", "e HOS-pi-tel", "rumah sakit"],
+      ["a school", "e skuul", "sekolah"],
+      ["a bank", "e bængk", "bank"],
+      ["a factory", "e FÆK-te-ri", "pabrik"],
+      ["a restaurant", "e RÉS-te-rent", "restoran"],
+      ["a shop / a store", "e shop / e stor", "toko"],
+      ["a company", "e KAM-pe-ni", "perusahaan"]
+     ]
+    },
+    { "type": "p", "text": "⚠️ Perhatikan *a**n** office* dan *a**n** engineer*, *a**n** accountant* — semuanya dimulai bunyi vokal. Sedangkan *a university* memakai *a* meski hurufnya vokal, karena bunyinya \"yu\"." },
+    {
+     "type": "kotak",
+     "title": "Kata kerja yang menyertai pekerjaan",
+     "items": [
+      "*to work* — bekerja · *I work eight hours a day.*",
+      "*to study* — belajar/kuliah · *I study economics.*",
+      "*to teach* — mengajar · *She teaches English.*",
+      "*to earn* — mendapat penghasilan · *He earns enough.*",
+      "*to look for a job* — mencari kerja · *I'm looking for a job.*",
+      "*to start / to finish work* — mulai / selesai kerja · *I start work at eight.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "en": "job", "baca": "job", "id": "pekerjaan" },
+  { "en": "work", "baca": "weerk", "id": "kerja / bekerja" },
+  { "en": "to study", "baca": "STA-di", "id": "belajar / kuliah" },
+  { "en": "company", "baca": "KAM-pe-ni", "id": "perusahaan" },
+  { "en": "office", "baca": "O-fis", "id": "kantor" },
+  { "en": "hospital", "baca": "HOS-pi-tel", "id": "rumah sakit" },
+  { "en": "café", "baca": "kæ-FÉI", "id": "kafe" },
+  { "en": "station", "baca": "STÉI-shen", "id": "stasiun" },
+  { "en": "part-time", "baca": "PART-taim", "id": "paruh waktu" },
+  { "en": "full-time", "baca": "FUL-taim", "id": "penuh waktu" },
+  { "en": "engineer", "baca": "én-je-NIIR", "id": "insinyur" },
+  { "en": "nurse", "baca": "neers", "id": "perawat" },
+  { "en": "hard", "baca": "hard", "id": "berat / keras / sulit" },
+  { "en": "long", "baca": "long", "id": "panjang / lama" },
+  { "en": "great", "baca": "gréit", "id": "hebat / asyik" },
+  { "en": "near", "baca": "niir", "id": "dekat" },
+  { "en": "downtown", "baca": "daun-TAUN", "id": "pusat kota" },
+  { "en": "so", "baca": "sou", "id": "jadi / begitu" },
+  { "en": "what about you?", "baca": "wot e-BAUT yu", "id": "kalau kamu?" },
+  { "en": "to love", "baca": "lav", "id": "mencintai / suka sekali" },
+  { "en": "to like", "baca": "laik", "id": "suka" },
+  { "en": "people", "baca": "PII-pel", "id": "orang-orang" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan *in*, *at*, *for*, atau *as*.",
+   "items": [
+    "She works ____ a nurse.",
+    "I work ____ a small company.",
+    "He works ____ the city hospital.",
+    "They work ____ a factory.",
+    "My sister works ____ a teacher.",
+    "I work ____ Telkom."
+   ]
+  },
+  {
+   "prompt": "Isi dengan pekerjaan yang tepat, lengkap dengan *a* atau *an*.",
+   "items": [
+    "She works in a hospital. She is ____.",
+    "He teaches at a school. He is ____.",
+    "He drives a bus. He is ____.",
+    "She works in an office with numbers and money. She is ____.",
+    "He cooks in a restaurant. He is ____."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat berikut. Semuanya mengandung satu kesalahan khas.",
+   "items": [
+    "I am work in a bank.",
+    "She is teacher.",
+    "He works as engineer.",
+    "What do you doing? (maksudnya: apa pekerjaanmu)",
+    "I am a student and I working part-time."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "do / what / you / do / ?",
+    "a / café / I / in / work",
+    "nurse / as / she / a / works",
+    "job / like / you / do / your / ?",
+    "an / I / engineer / am"
+   ]
+  }
+ ],
+ "answers": [
+  "as — for — at — in — as — for",
+  "a nurse — a teacher — a driver — an accountant — a cook",
+  "I work in a bank. — She is a teacher. — He works as an engineer. — What do you do? — I am a student and I work part-time.",
+  "What do you do? — I work in a café. — She works as a nurse. — Do you like your job? — I am an engineer."
+ ]
+}

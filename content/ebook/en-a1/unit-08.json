@@ -1,0 +1,543 @@
+{
+ "title": "Jam berapa sekarang?",
+ "title_target": "What time is it?",
+ "goal": "Menyebut jam, hari, dan bulan — serta memilih di antara tiga kata depan waktu yang paling sering tertukar.",
+ "bekal": [
+  "menyebut dan menanyakan jam",
+  "menyebut hari dan bulan",
+  "memilih antara *at*, *on*, dan *in* untuk waktu",
+  "membuat dan mengubah janji temu"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — Making an appointment",
+   "intro": "Budi ingin pindah jadwal kelas. Perhatikan kata depan di depan setiap keterangan waktu — itu bagian tersulit unit ini, dan tidak bisa ditebak dari bahasa Indonesia.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Excuse me, what time is it?",
+     "id": "Permisi, sekarang jam berapa?",
+     "literal": "maafkan saya, apa waktu adalah itu?"
+    },
+    {
+     "speaker": "Clerk:",
+     "text": "It's a quarter past ten.",
+     "id": "Jam sepuluh lewat seperempat.",
+     "literal": "itu-adalah se-perempat lewat sepuluh."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thank you. I have a question about my class. It's on Tuesday at seven in the evening, right?",
+     "id": "Terima kasih. Saya mau tanya soal kelas saya. Hari Selasa jam tujuh malam, kan?",
+     "literal": "terima kasih. saya punya sebuah pertanyaan tentang punyaku kelas. itu-adalah pada Selasa pada tujuh di itu malam, benar?"
+    },
+    {
+     "speaker": "Clerk:",
+     "text": "Let me see… Yes. Tuesday and Thursday, from seven to nine.",
+     "id": "Coba saya lihat… Ya. Selasa dan Kamis, dari jam tujuh sampai sembilan.",
+     "literal": "biarkan aku lihat… ya. Selasa dan Kamis, dari tujuh ke sembilan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Is there a morning class? I start work at four in the afternoon.",
+     "id": "Ada kelas pagi? Saya mulai kerja jam empat sore.",
+     "literal": "adalah di-sana sebuah pagi kelas? saya mulai kerja pada empat di itu siang."
+    },
+    {
+     "speaker": "Clerk:",
+     "text": "Yes, there's one at half past nine on Monday and Wednesday.",
+     "id": "Ada, jam setengah sepuluh hari Senin dan Rabu.",
+     "literal": "ya, di-sana-adalah satu pada setengah lewat sembilan pada Senin dan Rabu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Half past nine — that's nine thirty?",
+     "id": "Half past nine — itu jam sembilan tiga puluh?",
+     "literal": "setengah lewat sembilan — itu-adalah sembilan tiga-puluh?"
+    },
+    {
+     "speaker": "Clerk:",
+     "text": "Exactly. Nine thirty in the morning.",
+     "id": "Betul. Jam sembilan tiga puluh pagi.",
+     "literal": "tepat sekali. sembilan tiga-puluh di itu pagi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Perfect. And when does the new term start?",
+     "id": "Bagus. Dan semester barunya mulai kapan?",
+     "literal": "sempurna. dan kapan apakah itu baru semester mulai?"
+    },
+    {
+     "speaker": "Clerk:",
+     "text": "On the fifth of September. In two weeks.",
+     "id": "Tanggal 5 September. Dua minggu lagi.",
+     "literal": "pada itu kelima dari September. dalam dua minggu-minggu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Great. See you on Monday, then.",
+     "id": "Bagus. Kalau begitu sampai jumpa hari Senin.",
+     "literal": "hebat. lihat kamu pada Senin, kalau-begitu."
+    }
+   ],
+   "notes": [
+    "⚠️ **Half past nine berarti 9.30, bukan 8.30.** Ini jebakan terbesar bagi penutur Indonesia, dan satu-satunya kesalahan di unit ini yang bisa membuatmu benar-benar terlambat satu jam. \"Setengah sepuluh\" dalam bahasa kita berarti setengah jalan **menuju** pukul sepuluh, yaitu 9.30 — kebetulan sama. Tapi \"setengah tujuh\" kita = 6.30, sedangkan *half past seven* = 7.30. Aturan bahasa Inggris: *half past* selalu berarti **tiga puluh menit sesudah** jam yang disebut. Kalau ragu, pakai cara digital: *nine thirty*. Tidak ada yang akan salah paham.",
+    "**Past berarti lewat, to berarti kurang.** *A quarter past ten* = 10.15. *A quarter to ten* = 09.45. Perhatikan bahwa *to* menyebut jam yang **akan datang** — persis seperti \"seperempat lagi jam sepuluh\".",
+    "**Cara digital selalu aman.** *Nine thirty*, *seven forty-five*, *ten fifteen*. Penutur asli memakai kedua cara, dan yang digital semakin lazim. Kalau kamu sedang menyepakati janji penting, pakai yang digital.",
+    "**At seven, on Tuesday, in the evening** — tiga kata depan berbeda dalam satu kalimat. Bahasa Indonesia memakai \"jam\", \"hari\", dan \"pada\" tanpa pola tetap, jadi ini harus dihafal. Tabel di bawah menampung semuanya.",
+    "**From seven to nine** untuk rentang waktu. Kalau yang kamu maksud lamanya, bukan jamnya, kata depannya *for*: *for two hours*. ⚠️ Bandingkan *at two o'clock* (jam dua) dengan *for two hours* (selama dua jam) — dalam bahasa Indonesia keduanya memakai kata \"jam\", dan tertukarnya sering.",
+    "**The fifth of September**, bukan *the five September*. Tanggal memakai bilangan tingkat: *first*, *second*, *third*, *fourth*, *fifth*. Orang Amerika juga menulisnya terbalik dari kebiasaan kita — *September 5* — jadi tanggal 5/9 bisa berarti 5 September atau 9 Mei. Tuliskan nama bulannya kalau penting.",
+    "**Hari dan bulan selalu berhuruf besar.** *Monday*, *September*. Sama seperti nama bangsa dan bahasa di Unit 2."
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut jam — dua cara",
+     "body": [
+      "Cara pertama memakai *past* dan *to*, cara kedua tinggal membaca angkanya. Keduanya benar dan sama-sama sering terdengar:"
+     ],
+     "table": {
+      "head": [
+       "Jam",
+       "Cara klasik",
+       "Cara digital"
+      ],
+      "rows": [
+       [
+        "7.00",
+        "*seven o'clock*",
+        "*seven*"
+       ],
+       [
+        "7.05",
+        "*five past seven*",
+        "*seven oh five*"
+       ],
+       [
+        "7.15",
+        "*a quarter past seven*",
+        "*seven fifteen*"
+       ],
+       [
+        "7.30",
+        "*half past seven*",
+        "*seven thirty*"
+       ],
+       [
+        "7.40",
+        "*twenty to eight*",
+        "*seven forty*"
+       ],
+       [
+        "7.45",
+        "*a quarter to eight*",
+        "*seven forty-five*"
+       ],
+       [
+        "8.00",
+        "*eight o'clock*",
+        "*eight*"
+       ],
+       [
+        "12.00 siang",
+        "*midday / noon*",
+        "*twelve*"
+       ],
+       [
+        "00.00",
+        "*midnight*",
+        "*twelve*"
+       ]
+      ]
+     },
+     "after": [
+      "*O'clock* hanya dipakai untuk jam bulat. *Seven o'clock* benar; *seven thirty o'clock* tidak pernah ada.",
+      "Untuk membedakan pagi dan malam, penutur Inggris memakai *a.m.* (tengah malam sampai siang) dan *p.m.* (siang sampai tengah malam), atau menambahkan *in the morning / in the afternoon / in the evening / at night*. Jam 24 (\"pukul sembilan belas\") hampir tak pernah dipakai dalam percakapan — hanya di jadwal kereta dan tiket pesawat.",
+      "⚠️ Menanyakannya: *What time is it?* atau *Do you have the time?* Yang kedua terdengar lebih halus. Jangan tanya *Do you have time?* tanpa *the* — itu berarti \"kamu ada waktu luang?\", pertanyaan yang sama sekali berbeda dan bisa terdengar seperti ajakan kencan."
+     ]
+    },
+    {
+     "title": "At, on, in — kata depan waktu",
+     "body": [
+      "Tiga kata, satu aturan yang rapi: semakin **tepat** waktunya, semakin pendek katanya."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Dipakai untuk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**at**",
+        "jam tertentu",
+        "*at seven, at half past ten, at midnight*"
+       ],
+       [
+        "**at**",
+        "beberapa frasa tetap",
+        "*at night, at the weekend, at Christmas*"
+       ],
+       [
+        "**on**",
+        "hari dan tanggal",
+        "*on Monday, on Friday morning, on the fifth of May*"
+       ],
+       [
+        "**in**",
+        "bagian hari",
+        "*in the morning, in the afternoon, in the evening*"
+       ],
+       [
+        "**in**",
+        "bulan, musim, tahun, abad",
+        "*in July, in summer, in 2026*"
+       ],
+       [
+        "**in**",
+        "jangka ke depan",
+        "*in two weeks* (dua minggu lagi)"
+       ],
+       [
+        "— (tanpa kata depan)",
+        "*today, tomorrow, yesterday, every day, next, last*",
+        "*I work **every day**.* · *See you **tomorrow**.*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Dua jebakan yang paling sering: **at night** tapi **in the morning** — bagian hari yang satu ini memang mengikuti aturannya sendiri. Dan begitu sebuah hari disebut, *on* mengalahkan *in*: *in the morning*, tapi ***on** Monday morning*.",
+      "⚠️ Baris terakhir sama pentingnya: *tomorrow*, *yesterday*, *next week*, dan *last year* berdiri **tanpa** kata depan. *In tomorrow* dan *on yesterday* dua-duanya salah — kesalahan yang lahir dari kebiasaan kita menempelkan \"pada\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Hari, bulan, dan tanggal",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Hari",
+      "Cara baca",
+      "Bulan",
+      "Cara baca"
+     ],
+     "rows": [
+      [
+       "Monday",
+       "MAN-déi",
+       "January",
+       "JÆ-nyu-e-ri"
+      ],
+      [
+       "Tuesday",
+       "TUUZ-déi",
+       "February",
+       "FÉ-bru-e-ri"
+      ],
+      [
+       "Wednesday",
+       "WÉNZ-déi",
+       "March",
+       "march"
+      ],
+      [
+       "Thursday",
+       "THEERZ-déi",
+       "April",
+       "ÉI-prel"
+      ],
+      [
+       "Friday",
+       "FRAI-déi",
+       "May",
+       "méi"
+      ],
+      [
+       "Saturday",
+       "SÆ-ter-déi",
+       "June",
+       "juun"
+      ],
+      [
+       "Sunday",
+       "SAN-déi",
+       "July",
+       "ju-LAI"
+      ],
+      [
+       "",
+       "",
+       "August",
+       "OO-gest"
+      ],
+      [
+       "the weekend",
+       "dhe WIIK-énd",
+       "September",
+       "sép-TÉM-ber"
+      ],
+      [
+       "a week",
+       "e wiik",
+       "October",
+       "ok-TOU-ber"
+      ],
+      [
+       "a month",
+       "e manth",
+       "November",
+       "nou-VÉM-ber"
+      ],
+      [
+       "a year",
+       "e yiir",
+       "December",
+       "di-SÉM-ber"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Wednesday* ditulis dengan d yang tidak dibunyikan sama sekali — yang terdengar cuma \"WÉNZ-déi\". Begitu juga *February*, yang hampir selalu diucapkan \"FÉ-bru-e-ri\" dengan r pertama yang nyaris hilang."
+    },
+    {
+     "type": "sub",
+     "text": "Bilangan tingkat untuk tanggal"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tanggal",
+      "English",
+      "Tanggal",
+      "English"
+     ],
+     "rows": [
+      [
+       "1",
+       "the first",
+       "12",
+       "the twelfth"
+      ],
+      [
+       "2",
+       "the second",
+       "13",
+       "the thirteenth"
+      ],
+      [
+       "3",
+       "the third",
+       "20",
+       "the twentieth"
+      ],
+      [
+       "4",
+       "the fourth",
+       "21",
+       "the twenty-first"
+      ],
+      [
+       "5",
+       "the fifth",
+       "22",
+       "the twenty-second"
+      ],
+      [
+       "8",
+       "the eighth",
+       "30",
+       "the thirtieth"
+      ],
+      [
+       "9",
+       "the ninth",
+       "31",
+       "the thirty-first"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Polanya: tambahkan **-th** pada hampir semua angka. Yang tidak mengikuti cuma empat — *first*, *second*, *third*, dan *fifth* — beserta seluruh keturunannya (*twenty-first*, *thirty-second*)."
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat janji temu yang siap pakai",
+     "items": [
+      "*Are you free on Friday?* — Kamu kosong hari Jumat?",
+      "*What time works for you?* — Enaknya jam berapa?",
+      "*Let's meet at three.* — Ketemu jam tiga, ya.",
+      "*Can we make it a bit later?* — Bisa agak siangan?",
+      "*Sorry, I can't make it on Tuesday.* — Maaf, hari Selasa saya tidak bisa.",
+      "*See you on Monday at nine.* — Sampai jumpa Senin jam sembilan."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "en": "time",
+   "baca": "taim",
+   "id": "waktu"
+  },
+  {
+   "en": "o'clock",
+   "baca": "e-KLOK",
+   "id": "(penanda jam bulat)"
+  },
+  {
+   "en": "past",
+   "baca": "pæst",
+   "id": "lewat"
+  },
+  {
+   "en": "to (dalam jam)",
+   "baca": "tu",
+   "id": "kurang"
+  },
+  {
+   "en": "half",
+   "baca": "hæf",
+   "id": "setengah"
+  },
+  {
+   "en": "a quarter",
+   "baca": "e KWOR-ter",
+   "id": "seperempat"
+  },
+  {
+   "en": "midday / noon",
+   "baca": "MID-déi / nuun",
+   "id": "tengah hari"
+  },
+  {
+   "en": "midnight",
+   "baca": "MID-nait",
+   "id": "tengah malam"
+  },
+  {
+   "en": "week",
+   "baca": "wiik",
+   "id": "minggu"
+  },
+  {
+   "en": "month",
+   "baca": "manth",
+   "id": "bulan"
+  },
+  {
+   "en": "weekend",
+   "baca": "WIIK-énd",
+   "id": "akhir pekan"
+  },
+  {
+   "en": "today",
+   "baca": "te-DÉI",
+   "id": "hari ini"
+  },
+  {
+   "en": "tomorrow",
+   "baca": "te-MO-rou",
+   "id": "besok"
+  },
+  {
+   "en": "yesterday",
+   "baca": "YÉS-ter-déi",
+   "id": "kemarin"
+  },
+  {
+   "en": "next",
+   "baca": "nékst",
+   "id": "berikutnya / depan"
+  },
+  {
+   "en": "last",
+   "baca": "læst",
+   "id": "lalu / terakhir"
+  },
+  {
+   "en": "free",
+   "baca": "frii",
+   "id": "kosong / senggang"
+  },
+  {
+   "en": "busy",
+   "baca": "BI-zi",
+   "id": "sibuk"
+  },
+  {
+   "en": "appointment",
+   "baca": "e-POINT-ment",
+   "id": "janji temu"
+  },
+  {
+   "en": "exactly",
+   "baca": "ig-ZÆKT-li",
+   "id": "tepat sekali"
+  },
+  {
+   "en": "about",
+   "baca": "e-BAUT",
+   "id": "tentang / kira-kira"
+  },
+  {
+   "en": "term",
+   "baca": "teerm",
+   "id": "semester / masa"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis jamnya dengan cara klasik. Contoh: 3.15 → *a quarter past three*",
+   "items": [
+    "7.00",
+    "8.30",
+    "10.15",
+    "5.45",
+    "12.00 siang"
+   ]
+  },
+  {
+   "prompt": "Isi dengan *at*, *on*, atau *in*.",
+   "items": [
+    "The class starts ____ nine o'clock.",
+    "I work ____ Monday and Friday.",
+    "She reads ____ the evening.",
+    "My birthday is ____ July.",
+    "I don't work ____ night.",
+    "I go to the beach ____ the weekend."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat berikut. Semuanya mengandung satu kesalahan khas.",
+   "items": [
+    "Half past seven means 6.30.",
+    "I have class in Monday.",
+    "See you in tomorrow.",
+    "The film starts on eight o'clock.",
+    "I work for eight o'clock every day."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Sekarang jam berapa?",
+    "Kelasnya hari Selasa jam tujuh malam.",
+    "Ulang tahun saya bulan Mei.",
+    "Kamu kosong hari Jumat?",
+    "Sampai jumpa Senin jam setengah sepuluh."
+   ]
+  }
+ ],
+ "answers": [
+  "seven o'clock — half past eight — a quarter past ten — a quarter to six — midday",
+  "at — on — in — in — at — at",
+  "Half past seven means 7.30. — I have class on Monday. — See you tomorrow. — The film starts at eight o'clock. — I work for eight hours every day.",
+  "What time is it? — The class is on Tuesday at seven in the evening. — My birthday is in May. — Are you free on Friday? — See you on Monday at half past nine."
+ ]
+}

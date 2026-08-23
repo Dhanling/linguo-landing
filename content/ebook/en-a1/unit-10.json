@@ -1,0 +1,214 @@
+{
+ "title": "Saya pesan yang ini",
+ "title_target": "I'd like this one, please",
+ "goal": "Memesan makanan dan minuman, serta membedakan benda yang bisa dihitung dari yang tidak.",
+ "bekal": [
+  "memesan dengan sopan (*I'd like…*, *Can I have…?*)",
+  "membedakan *a coffee* dari *some coffee*",
+  "memakai *some* dan *any* pada tempatnya",
+  "menanyakan jumlah dengan *how much* dan *how many*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — At the café",
+   "intro": "Budi dan Mei makan siang. Perhatikan mana kata benda yang dipasangi *a* dan mana yang tidak — di situlah letak seluruh pelajaran unit ini.",
+   "lines": [
+    { "speaker": "Waiter:", "text": "Good afternoon. Are you ready to order?", "id": "Selamat siang. Sudah siap pesan?", "literal": "baik siang. adalah kalian siap untuk memesan?" },
+    { "speaker": "Mei:", "text": "Yes. I'd like a chicken sandwich and a coffee, please.", "id": "Ya. Saya pesan roti isi ayam dan kopi.", "literal": "ya. saya akan-suka sebuah ayam roti-isi dan sebuah kopi, silakan." },
+    { "speaker": "Waiter:", "text": "Of course. And for you, sir?", "id": "Baik. Dan untuk Anda, Pak?", "literal": "tentu saja. dan untuk kamu, tuan?" },
+    { "speaker": "Budi:", "text": "Can I have some rice with chicken? And a glass of water.", "id": "Boleh minta nasi ayam? Dan segelas air.", "literal": "bisakah saya punya sebagian nasi dengan ayam? dan sebuah gelas dari air." },
+    { "speaker": "Waiter:", "text": "Sure. Do you want any vegetables with that?", "id": "Baik. Mau pakai sayur?", "literal": "tentu. apakah kamu mau sembarang sayur-sayuran dengan itu?" },
+    { "speaker": "Budi:", "text": "Yes, please. But no onions.", "id": "Iya. Tapi tanpa bawang.", "literal": "ya, silakan. tetapi tidak bawang-bawang." },
+    { "speaker": "Mei:", "text": "How much is the sandwich?", "id": "Roti isinya berapa?", "literal": "seberapa banyak adalah itu roti-isi?" },
+    { "speaker": "Waiter:", "text": "Forty-five thousand rupiah.", "id": "Empat puluh lima ribu rupiah.", "literal": "empat-puluh-lima ribu rupiah." },
+    { "speaker": "Mei:", "text": "And how many pieces of chicken are there?", "id": "Ayamnya ada berapa potong?", "literal": "dan seberapa banyak potongan dari ayam adalah di-sana?" },
+    { "speaker": "Waiter:", "text": "Two. Anything else?", "id": "Dua. Ada lagi?", "literal": "dua. sesuatu lain?" },
+    { "speaker": "Budi:", "text": "No, that's all, thank you.", "id": "Tidak, itu saja, terima kasih.", "literal": "tidak, itu-adalah semua, terima kasih." },
+    { "speaker": "Waiter:", "text": "I'll bring it right away.", "id": "Segera saya antar.", "literal": "saya-akan membawa itu tepat jauh." }
+   ],
+   "notes": [
+    "⚠️ **A coffee, tapi some rice.** Bahasa Inggris membagi benda menjadi dua golongan yang tidak dikenal bahasa Indonesia: yang **bisa dihitung** satu-dua-tiga (*sandwich*, *apple*, *chair*) dan yang **tidak** (*rice*, *water*, *money*, *time*). Golongan kedua tak boleh dipasangi *a* dan tak boleh dijamakkan. *A rice* dan *two waters* terdengar seperti bahasa robot.",
+    "**Tapi a coffee memang benar** — karena yang dimaksud \"secangkir kopi\". Begitu sebuah benda tak terhitung dijual dalam wadah, penutur Inggris memperlakukannya sebagai terhitung: *two coffees*, *three beers*. Ini kelonggaran khusus untuk memesan, bukan aturan umum.",
+    "**A glass of water, a piece of chicken, a cup of tea.** Untuk menghitung benda tak terhitung, sisipkan wadah atau satuannya. Persis seperti kita: \"segelas air\", \"sepotong ayam\", \"sebutir telur\".",
+    "**I'd like adalah bentuk pendek dari I would like**, dan artinya \"saya mau\" versi sopan. Bandingkan dengan *I want a coffee*, yang secara tata bahasa benar tapi terdengar seperti anak kecil menuntut. Di restoran, toko, dan kantor, pakai *I'd like* atau *Can I have*.",
+    "**No onions dengan -s.** Kalau bendanya bisa dihitung dan kamu bicara umum, bentuknya jamak: *I don't eat onions*, *I like apples*. Menyebut *I don't eat onion* terdengar seperti kamu menolak satu bawang tertentu.",
+    "**That's all** untuk menutup pesanan, dan *Anything else?* untuk menanyakannya. Dua frasa ini akan kamu dengar di setiap kasir di dunia berbahasa Inggris."
+   ],
+   "grammars": [
+    {
+     "title": "Bisa dihitung dan tidak bisa dihitung",
+     "body": [
+      "Golongan sebuah kata benda menentukan tiga hal sekaligus: boleh tidaknya dipasangi *a*, boleh tidaknya dijamakkan, dan kata tanya mana yang dipakai untuk menanyakan jumlahnya."
+     ],
+     "table": {
+      "head": ["", "Bisa dihitung", "Tidak bisa dihitung"],
+      "rows": [
+       ["Contoh", "*sandwich, apple, egg, chair, book*", "*rice, water, coffee, money, time, bread*"],
+       ["Sandang", "***a** sandwich*", "*(tanpa a)* · *some rice*"],
+       ["Jamak", "*two sandwich**es***", "tidak pernah jamak"],
+       ["Menanyakan jumlah", "***How many** sandwiches?*", "***How much** rice?*"],
+       ["Sedikit", "*a few apples*", "*a little water*"],
+       ["Banyak", "*many apples*", "*much water*"]
+      ]
+     },
+     "after": [
+      "Beberapa kata yang mengejutkan karena tak terhitung dalam bahasa Inggris: *bread* (roti), *rice*, *money*, *information*, *advice*, *furniture*, *news*, *work*. Semuanya harus diberi satuan kalau mau dihitung: *a piece of bread*, *a piece of advice*.",
+      "⚠️ *Information* dan *advice* tidak pernah berakhiran -s. *Informations* dan *advices* adalah dua kesalahan yang bertahan sampai level lanjut, dan keduanya langsung terdengar."
+     ]
+    },
+    {
+     "title": "Some dan any",
+     "body": [
+      "Keduanya berarti \"sebagian\" atau \"beberapa\", dan sering tak perlu diterjemahkan sama sekali. Yang menentukan pilihannya adalah **jenis kalimatnya**:"
+     ],
+     "table": {
+      "head": ["Kalimat", "Pakai", "Contoh"],
+      "rows": [
+       ["positif", "**some**", "*I have **some** money.*"],
+       ["sangkal", "**any**", "*I don't have **any** money.*"],
+       ["tanya", "**any**", "*Do you have **any** money?*"],
+       ["tawaran & permintaan", "**some**", "*Would you like **some** tea?* · *Can I have **some** water?*"]
+      ]
+     },
+     "after": [
+      "Baris terakhir adalah pengecualian yang penting: pertanyaan biasanya memakai *any*, tapi pertanyaan yang isinya **menawarkan** atau **meminta** memakai *some*. *Do you have any tea?* menanyakan ketersediaan; *Would you like some tea?* menawarkan.",
+      "Keduanya dipakai untuk benda jamak maupun benda tak terhitung — tak pernah untuk benda tunggal. *Some apples* dan *some water* benar; *some apple* tidak."
+     ]
+    },
+    {
+     "title": "Cara memesan yang sopan",
+     "body": [
+      "Diurutkan dari yang paling santai ke yang paling halus. Semuanya benar; yang di bawah lebih aman dipakai pada orang yang belum kamu kenal:"
+     ],
+     "table": {
+      "head": ["Kalimat", "Nadanya"],
+      "rows": [
+       ["*I want a coffee.*", "terdengar menuntut — hindari"],
+       ["*A coffee, please.*", "singkat, wajar di kedai cepat saji"],
+       ["*Can I have a coffee, please?*", "sopan, paling sering dipakai"],
+       ["*I'd like a coffee, please.*", "sopan dan sedikit formal"],
+       ["*Could I have a coffee, please?*", "paling halus"]
+      ]
+     },
+     "after": [
+      "Kata *please* menempel di ujung hampir semua permintaan, dan ketiadaannya sangat terasa. Dalam bahasa Indonesia kesopanan dibawa oleh nada suara dan partikel; dalam bahasa Inggris ia dibawa oleh kata yang benar-benar diucapkan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Makanan dan minuman",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Bisa dihitung", "Cara baca", "Tidak bisa dihitung", "Cara baca"],
+     "rows": [
+      ["an egg", "en ég", "rice", "rais"],
+      ["an apple", "en Æ-pel", "bread", "bréd"],
+      ["a banana", "e be-NÆ-ne", "meat", "miit"],
+      ["a tomato", "e te-MÉI-tou", "chicken", "CHI-ken"],
+      ["a potato", "e pe-TÉI-tou", "fish", "fish"],
+      ["a sandwich", "e SÆND-wich", "cheese", "chiiz"],
+      ["a biscuit", "e BIS-kit", "sugar", "SHU-ger"],
+      ["a bottle", "e BO-tel", "salt", "solt"],
+      ["a glass", "e glæs", "water", "WO-ter"],
+      ["a cup", "e kap", "tea", "tii"],
+      ["a plate", "e pléit", "milk", "milk"],
+      ["a spoon", "e spuun", "juice", "juus"]
+     ]
+    },
+    { "type": "p", "text": "⚠️ *Fish* dan *chicken* pindah golongan tergantung maksudnya: sebagai **daging** keduanya tak terhitung (*I eat chicken*), sebagai **hewan** keduanya terhitung (*two chickens in the garden*). Bahasa Inggris membedakan hewan hidup dan dagingnya, kadang bahkan dengan kata yang sama sekali berbeda: *cow* → *beef*, *pig* → *pork*." },
+    { "type": "sub", "text": "Kalimat siap pakai di restoran" },
+    {
+     "type": "tabel",
+     "head": ["English", "Bahasa Indonesia"],
+     "rows": [
+      ["*A table for two, please.*", "Meja untuk dua orang."],
+      ["*Can I see the menu, please?*", "Boleh lihat menunya?"],
+      ["*What do you recommend?*", "Rekomendasinya apa?"],
+      ["*Is it spicy?*", "Pedas tidak?"],
+      ["*I'm allergic to seafood.*", "Saya alergi makanan laut."],
+      ["*No sugar, please.*", "Tanpa gula."],
+      ["*Can I have the bill, please?*", "Minta bonnya."],
+      ["*Can I pay by card?*", "Boleh bayar pakai kartu?"],
+      ["*It was delicious.*", "Enak sekali."]
+     ]
+    },
+    { "type": "p", "text": "Di Amerika, *bill* biasanya disebut *check*. Keduanya dimengerti di mana-mana. Dan *delicious* adalah pujian yang jauh lebih kuat dari \"enak\" — untuk sekadar enak, penutur asli lebih sering bilang *It's really good*." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "en": "to order", "baca": "OR-der", "id": "memesan" },
+  { "en": "menu", "baca": "MÉN-yu", "id": "menu" },
+  { "en": "bill / check", "baca": "bil / chék", "id": "bon / tagihan" },
+  { "en": "some", "baca": "sam", "id": "sebagian / beberapa" },
+  { "en": "any", "baca": "É-ni", "id": "sembarang / apa pun" },
+  { "en": "how much", "baca": "hau MACH", "id": "berapa banyak (tak terhitung)" },
+  { "en": "how many", "baca": "hau MÉ-ni", "id": "berapa banyak (terhitung)" },
+  { "en": "a piece of", "baca": "e PIIS ev", "id": "sepotong" },
+  { "en": "a glass of", "baca": "e GLÆS ev", "id": "segelas" },
+  { "en": "a cup of", "baca": "e KAP ev", "id": "secangkir" },
+  { "en": "vegetables", "baca": "VÉJ-te-belz", "id": "sayuran" },
+  { "en": "onion", "baca": "A-nyen", "id": "bawang" },
+  { "en": "chicken", "baca": "CHI-ken", "id": "ayam" },
+  { "en": "water", "baca": "WO-ter", "id": "air" },
+  { "en": "ready", "baca": "RÉ-di", "id": "siap" },
+  { "en": "delicious", "baca": "di-LI-shes", "id": "lezat" },
+  { "en": "anything else?", "baca": "É-ni-thing ÉLS", "id": "ada lagi?" },
+  { "en": "that's all", "baca": "dhæts OOL", "id": "itu saja" },
+  { "en": "right away", "baca": "rait e-WÉI", "id": "segera" },
+  { "en": "to bring", "baca": "bring", "id": "membawa" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan *a*, *an*, atau *some*.",
+   "items": [
+    "I'd like ____ coffee.",
+    "Can I have ____ rice?",
+    "She wants ____ apple.",
+    "We need ____ water.",
+    "He's eating ____ sandwich.",
+    "Do you want ____ sugar?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan *how much* atau *how many*.",
+   "items": [
+    "____ money do you have?",
+    "____ eggs do we need?",
+    "____ rice is there?",
+    "____ people are coming?",
+    "____ time do you need?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan *some* atau *any*.",
+   "items": [
+    "I have ____ money.",
+    "I don't have ____ money.",
+    "Do you have ____ questions?",
+    "Would you like ____ tea?",
+    "There aren't ____ eggs in the fridge."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat berikut. Semuanya mengandung satu kesalahan khas.",
+   "items": [
+    "Can I have a rice, please?",
+    "How much apples do you want?",
+    "I need some informations.",
+    "I want a coffee.",
+    "I don't have some money."
+   ]
+  }
+ ],
+ "answers": [
+  "a — some — an — some — a — some",
+  "How much — How many — How much — How many — How much",
+  "some — any — any — some — any",
+  "Can I have some rice, please? — How many apples do you want? — I need some information. — I'd like a coffee, please. — I don't have any money."
+ ]
+}

@@ -1,0 +1,587 @@
+{
+ "title": "Berapa umurmu?",
+ "title_target": "How old are you?",
+ "goal": "Menyebut angka, umur, dan nomor telepon; mengeja nama; serta membuat kata jadi jamak.",
+ "bekal": [
+  "menghitung dari 0 sampai 1.000",
+  "menanyakan dan menyebut umur (*I'm twenty-five*)",
+  "mengeja nama dengan alfabet Inggris",
+  "membentuk jamak (*one book, two books*)"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — At the reception desk",
+   "intro": "Budi mendaftar kelas malam. Petugasnya harus mengisi formulir, jadi semuanya ditanya satu per satu.",
+   "lines": [
+    {
+     "speaker": "Clerk:",
+     "text": "Good afternoon. Can I have your name, please?",
+     "id": "Selamat siang. Boleh saya minta nama Anda?",
+     "literal": "baik siang. bisakah saya punya punyamu nama, silakan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Yes, it's Budi Santoso.",
+     "id": "Ya, Budi Santoso.",
+     "literal": "ya, itu-adalah Budi Santoso."
+    },
+    {
+     "speaker": "Clerk:",
+     "text": "How do you spell that?",
+     "id": "Ejaannya bagaimana?",
+     "literal": "bagaimana apakah kamu mengeja itu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "B-U-D-I. And Santoso: S-A-N-T-O-S-O.",
+     "id": "B-U-D-I. Dan Santoso: S-A-N-T-O-S-O.",
+     "literal": "B-U-D-I. dan Santoso: S-A-N-T-O-S-O."
+    },
+    {
+     "speaker": "Clerk:",
+     "text": "Thank you. And how old are you?",
+     "id": "Terima kasih. Dan umur Anda berapa?",
+     "literal": "terima kasih. dan seberapa tua adalah kamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "I'm twenty-three.",
+     "id": "Dua puluh tiga.",
+     "literal": "saya-adalah dua-puluh-tiga."
+    },
+    {
+     "speaker": "Clerk:",
+     "text": "Twenty-three. What's your phone number?",
+     "id": "Dua puluh tiga. Nomor telepon Anda?",
+     "literal": "dua-puluh-tiga. apa-adalah punyamu telepon nomor?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "It's oh-eight-one-two, double three, five, seven, nine, four.",
+     "id": "0812-3357-94.",
+     "literal": "itu-adalah nol-delapan-satu-dua, dobel tiga, lima, tujuh, sembilan, empat."
+    },
+    {
+     "speaker": "Clerk:",
+     "text": "Slowly, please. Zero, eight, one, two…",
+     "id": "Pelan-pelan. Nol, delapan, satu, dua…",
+     "literal": "pelan, silakan. nol, delapan, satu, dua…"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Three, three, five, seven, nine, four.",
+     "id": "Tiga, tiga, lima, tujuh, sembilan, empat.",
+     "literal": "tiga, tiga, lima, tujuh, sembilan, empat."
+    },
+    {
+     "speaker": "Clerk:",
+     "text": "Perfect. The class has fifteen students. It's on Monday and Thursday.",
+     "id": "Sempurna. Kelasnya ada lima belas siswa. Hari Senin dan Kamis.",
+     "literal": "sempurna. itu kelas punya lima-belas siswa-siswa. itu-adalah pada Senin dan Kamis."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Fifteen? Or fifty?",
+     "id": "Lima belas? Atau lima puluh?",
+     "literal": "lima-belas? atau lima-puluh?"
+    },
+    {
+     "speaker": "Clerk:",
+     "text": "Fif-TEEN. One five.",
+     "id": "Lima be-LAS. Satu lima.",
+     "literal": "lima-BELAS. satu lima."
+    }
+   ],
+   "notes": [
+    "**Umur memakai to be, bukan have.** *I **am** twenty-three* — harfiahnya \"saya adalah dua puluh tiga\", yang memang terdengar ganjil. Tapi begitulah bentuknya. Kesalahan *I have twenty-three years* datang dari bahasa Spanyol dan Prancis; kesalahan *My age is twenty-three years old* datang dari terjemahan langsung \"umur saya\". Keduanya terdengar salah. Yang benar cuma dua: *I'm twenty-three* atau *I'm twenty-three years old*.",
+    "**Years old, bukan year old.** Kalau kamu menyebutkan katanya, ia harus jamak — kecuali untuk bayi berumur satu tahun: *one year old*.",
+    "**Fifteen atau fifty?** Pertanyaan Budi di baris terakhir bukan lelucon; ini kebingungan sungguhan yang dialami semua pemula. Bedanya cuma **tekanan**: *fif-TEEN* menekan suku kata belakang, *FIF-ty* menekan suku kata depan. Kalau lawan bicaramu ragu, sebutkan angkanya satu per satu — *one five* — persis seperti yang dilakukan petugas itu.",
+    "**Nomor telepon dibaca satu per satu**, bukan sebagai bilangan. 0812 bukan \"eight hundred twelve\" melainkan *oh-eight-one-two*. Angka nol boleh dibaca *zero* (jelas, formal) atau *oh* (cepat, sehari-hari). Dua angka kembar berturut-turut sering diringkas: 33 → *double three*.",
+    "**How old are you?** boleh ditanyakan pada anak-anak dan pada teman sebaya, tapi menanyakannya pada orang dewasa yang baru kamu kenal — terutama perempuan — dianggap kurang sopan di banyak negara berbahasa Inggris. Ini kebalikan dari kebiasaan Indonesia, tempat umur ditanyakan lebih dulu justru supaya tahu harus memanggil apa.",
+    "**Can I have your name, please?** adalah cara sopan meminta sesuatu. Menanyakannya sebagai *What is your name?* di meja resepsi terdengar seperti pemeriksaan polisi. Semakin panjang permintaannya, semakin sopan bunyinya — pola yang berlaku umum dalam bahasa Inggris.",
+    "**How do you spell that?** akan sering kamu dengar dan sering kamu butuhkan, karena nama Indonesia hampir selalu asing di telinga mereka. Kalimat balasannya juga berguna: *Let me spell it for you.*"
+   ],
+   "grammars": [
+    {
+     "title": "Angka 0 sampai 1.000",
+     "body": [
+      "Angka 1 sampai 12 harus dihafal utuh. Sesudah itu polanya rapi dan bisa diramalkan:"
+     ],
+     "tables": [
+      {
+       "head": [
+        "Angka",
+        "English",
+        "Cara baca",
+        "Angka",
+        "English",
+        "Cara baca"
+       ],
+       "rows": [
+        [
+         "0",
+         "zero / oh",
+         "ZII-rou / ou",
+         "11",
+         "eleven",
+         "i-LÉ-ven"
+        ],
+        [
+         "1",
+         "one",
+         "wan",
+         "12",
+         "twelve",
+         "twélv"
+        ],
+        [
+         "2",
+         "two",
+         "tuu",
+         "13",
+         "thirteen",
+         "theer-TIIN"
+        ],
+        [
+         "3",
+         "three",
+         "thrii",
+         "14",
+         "fourteen",
+         "for-TIIN"
+        ],
+        [
+         "4",
+         "four",
+         "for",
+         "15",
+         "fifteen",
+         "fif-TIIN"
+        ],
+        [
+         "5",
+         "five",
+         "faiv",
+         "16",
+         "sixteen",
+         "siks-TIIN"
+        ],
+        [
+         "6",
+         "six",
+         "siks",
+         "17",
+         "seventeen",
+         "sé-ven-TIIN"
+        ],
+        [
+         "7",
+         "seven",
+         "SÉ-ven",
+         "18",
+         "eighteen",
+         "éi-TIIN"
+        ],
+        [
+         "8",
+         "eight",
+         "éit",
+         "19",
+         "nineteen",
+         "nain-TIIN"
+        ],
+        [
+         "9",
+         "nine",
+         "nain",
+         "20",
+         "twenty",
+         "TWÉN-ti"
+        ],
+        [
+         "10",
+         "ten",
+         "tén",
+         "21",
+         "twenty-one",
+         "twén-ti-WAN"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Angka",
+        "English",
+        "Cara baca",
+        "Angka",
+        "English",
+        "Cara baca"
+       ],
+       "rows": [
+        [
+         "30",
+         "thirty",
+         "THEER-ti",
+         "80",
+         "eighty",
+         "ÉI-ti"
+        ],
+        [
+         "40",
+         "forty",
+         "FOR-ti",
+         "90",
+         "ninety",
+         "NAIN-ti"
+        ],
+        [
+         "50",
+         "fifty",
+         "FIF-ti",
+         "100",
+         "a hundred",
+         "e HAN-dred"
+        ],
+        [
+         "60",
+         "sixty",
+         "SIKS-ti",
+         "101",
+         "a hundred and one",
+         "e HAN-dred end wan"
+        ],
+        [
+         "70",
+         "seventy",
+         "SÉ-ven-ti",
+         "1.000",
+         "a thousand",
+         "e THAU-zend"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "Angka puluhan digabung dengan **tanda hubung**: *twenty-one*, *thirty-five*, *ninety-nine*. Angka ratusan disambung dengan *and*: *two hundred and fifty*.",
+      "⚠️ Tiga ejaan yang menjebak: *four* punya u, tapi ***forty* tidak** (bukan *fourty*). *Five* menjadi ***fifteen*** dan ***fifty***, bukan *fiveteen*. *Nine* menjadi *nineteen* tapi ***ninety*** kehilangan e-nya.",
+      "⚠️ Bahasa Inggris memakai **titik untuk desimal dan koma untuk ribuan** — persis kebalikan dari kebiasaan Indonesia. *1,500* berarti seribu lima ratus; *1.5* berarti satu setengah. Salah membaca angka di harga atau tagihan berawal di sini."
+     ]
+    },
+    {
+     "title": "Bentuk jamak: satu buku, dua buku",
+     "body": [
+      "Bahasa Indonesia tidak mengubah bentuk kata bendanya — \"dua buku\", bukan \"dua buku-buku\". Bahasa Inggris **wajib** mengubahnya, dan lupa satu huruf s adalah kesalahan yang paling sering muncul dalam tulisan pemula:"
+     ],
+     "table": {
+      "head": [
+       "Aturan",
+       "Contoh",
+       "Jamak"
+      ],
+      "rows": [
+       [
+        "biasanya tambah **-s**",
+        "book, student, friend",
+        "book**s**, student**s**, friend**s**"
+       ],
+       [
+        "berakhiran -s, -sh, -ch, -x → **-es**",
+        "class, dish, watch, box",
+        "class**es**, dish**es**, watch**es**, box**es**"
+       ],
+       [
+        "konsonan + -y → **-ies**",
+        "city, family, country",
+        "cit**ies**, famil**ies**, countr**ies**"
+       ],
+       [
+        "vokal + -y → **-s** saja",
+        "boy, day, key",
+        "boy**s**, day**s**, key**s**"
+       ],
+       [
+        "berakhiran -f / -fe → **-ves**",
+        "wife, knife, life",
+        "wi**ves**, kni**ves**, li**ves**"
+       ]
+      ]
+     },
+     "after": [
+      "Lalu ada segelintir kata yang tak mau mengikuti aturan apa pun. Jumlahnya sedikit, jadi hafalkan sekaligus: *man → **men***, *woman → **women*** (dibaca WI-min), *child → **children***, *person → **people***, *foot → **feet***, *tooth → **teeth***, *mouse → **mice***.",
+      "Dan tiga kata yang bentuk jamaknya sama dengan tunggalnya: *fish*, *sheep*, *deer*. *Two fish*, bukan *two fishes*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Alfabet dan cara mengejanya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Nama Indonesia hampir selalu asing di telinga penutur Inggris, jadi kamu akan mengeja namamu jauh lebih sering daripada yang kamu bayangkan. Hafalkan bunyi hurufnya, bukan hurufnya — sebagian besar berbeda dari alfabet yang kamu pelajari di SD."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Huruf",
+      "Cara baca",
+      "Huruf",
+      "Cara baca",
+      "Huruf",
+      "Cara baca"
+     ],
+     "rows": [
+      [
+       "A",
+       "éi",
+       "J",
+       "jéi",
+       "S",
+       "és"
+      ],
+      [
+       "B",
+       "bii",
+       "K",
+       "kéi",
+       "T",
+       "tii"
+      ],
+      [
+       "C",
+       "sii",
+       "L",
+       "él",
+       "U",
+       "yuu"
+      ],
+      [
+       "D",
+       "dii",
+       "M",
+       "ém",
+       "V",
+       "vii"
+      ],
+      [
+       "E",
+       "ii",
+       "N",
+       "én",
+       "W",
+       "DA-bel-yuu"
+      ],
+      [
+       "F",
+       "éf",
+       "O",
+       "ou",
+       "X",
+       "éks"
+      ],
+      [
+       "G",
+       "jii",
+       "P",
+       "pii",
+       "Y",
+       "wai"
+      ],
+      [
+       "H",
+       "éich",
+       "Q",
+       "kyuu",
+       "Z",
+       "zii (AS) / zéd (Inggris)"
+      ],
+      [
+       "I",
+       "ai",
+       "R",
+       "ar",
+       "",
+       ""
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat huruf yang paling sering bikin salah paham",
+     "items": [
+      "**A** dibaca \"éi\", bukan \"a\". Kalau kamu mengeja \"a\", yang terdengar di seberang adalah huruf **R**.",
+      "**E** dibaca \"ii\" dan **I** dibaca \"ai\" — persis terbalik dari kebiasaan kita. Ini penyebab nomor satu nama yang salah tulis di formulir.",
+      "**G** (jii) dan **J** (jéi) berdempetan bunyinya. Kalau ragu, bantu dengan kata: *G for golf*, *J for July*.",
+      "**Z** dibaca \"zii\" di Amerika dan \"zéd\" di Inggris, Australia, dan Singapura. Keduanya benar."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalau satu huruf tetap tidak tertangkap, penutur asli akan menyebut sebuah kata sebagai contoh: *B for Bravo*, *D for David*. Kamu boleh melakukan hal yang sama dengan kata apa pun yang kamu tahu ejaannya."
+    },
+    {
+     "type": "sub",
+     "text": "Huruf dobel"
+    },
+    {
+     "type": "p",
+     "text": "Untuk huruf yang berulang, penutur Inggris jarang menyebutnya dua kali. *Anna* dieja *A - double N - A*, dan nomor 077 dibaca *oh - double seven*. Menyebutnya satu-satu juga benar, cuma terdengar lebih lambat."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "en": "number",
+   "baca": "NAM-ber",
+   "id": "nomor / angka"
+  },
+  {
+   "en": "phone number",
+   "baca": "FOUN nam-ber",
+   "id": "nomor telepon"
+  },
+  {
+   "en": "how old",
+   "baca": "hau OULD",
+   "id": "berapa umur"
+  },
+  {
+   "en": "year",
+   "baca": "yiir",
+   "id": "tahun"
+  },
+  {
+   "en": "to spell",
+   "baca": "spél",
+   "id": "mengeja"
+  },
+  {
+   "en": "letter",
+   "baca": "LÉ-ter",
+   "id": "huruf / surat"
+  },
+  {
+   "en": "word",
+   "baca": "weerd",
+   "id": "kata"
+  },
+  {
+   "en": "class",
+   "baca": "klæs",
+   "id": "kelas"
+  },
+  {
+   "en": "slowly",
+   "baca": "SLOU-li",
+   "id": "pelan-pelan"
+  },
+  {
+   "en": "again",
+   "baca": "e-GÉN",
+   "id": "lagi"
+  },
+  {
+   "en": "double",
+   "baca": "DA-bel",
+   "id": "dobel / dua kali"
+  },
+  {
+   "en": "zero",
+   "baca": "ZII-rou",
+   "id": "nol"
+  },
+  {
+   "en": "hundred",
+   "baca": "HAN-dred",
+   "id": "ratus"
+  },
+  {
+   "en": "thousand",
+   "baca": "THAU-zend",
+   "id": "ribu"
+  },
+  {
+   "en": "perfect",
+   "baca": "PEER-fikt",
+   "id": "sempurna"
+  },
+  {
+   "en": "or",
+   "baca": "or",
+   "id": "atau"
+  },
+  {
+   "en": "can I…?",
+   "baca": "kæn ai",
+   "id": "boleh saya…?"
+  },
+  {
+   "en": "man / men",
+   "baca": "mæn / mén",
+   "id": "laki-laki (tunggal/jamak)"
+  },
+  {
+   "en": "woman / women",
+   "baca": "WU-men / WI-min",
+   "id": "perempuan (tunggal/jamak)"
+  },
+  {
+   "en": "person / people",
+   "baca": "PEER-sen / PII-pel",
+   "id": "orang / orang-orang"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angkanya dengan huruf. Contoh: 7 → *seven*",
+   "items": [
+    "12",
+    "15",
+    "30",
+    "44",
+    "68",
+    "100"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk jamak.",
+   "items": [
+    "book",
+    "class",
+    "city",
+    "boy",
+    "wife",
+    "child"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Umur saya dua puluh tahun.",
+    "Berapa umurmu?",
+    "Kelasnya ada lima belas siswa.",
+    "Ejaannya bagaimana?",
+    "Nomor teleponku 0813."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat berikut. Semuanya mengandung satu kesalahan khas.",
+   "items": [
+    "I have twenty years.",
+    "She is fourty.",
+    "I have two childs.",
+    "There are five citys.",
+    "My age is 20 years old."
+   ]
+  }
+ ],
+ "answers": [
+  "twelve — fifteen — thirty — forty-four — sixty-eight — a hundred",
+  "books — classes — cities — boys — wives — children",
+  "I am twenty years old. — How old are you? — The class has fifteen students. — How do you spell that? — My phone number is oh-eight-one-three.",
+  "I am twenty years old. — She is forty. — I have two children. — There are five cities. — I am 20 years old."
+ ]
+}

@@ -1,0 +1,227 @@
+{
+ "title": "Hari biasa saya",
+ "title_target": "A normal day",
+ "goal": "Menceritakan kebiasaan sehari-hari, dan memasang huruf s yang selalu hilang pada *he*, *she*, dan *it*.",
+ "bekal": [
+  "menceritakan rutinitas harianmu",
+  "memakai bentuk kata kerja untuk kebiasaan (*I work*, *she works*)",
+  "mengeja dan membunyikan akhiran -s dengan benar",
+  "mengatakan seberapa sering (*always*, *usually*, *never*)"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — Tell me about your day",
+   "intro": "Sarah penasaran dengan hari-hari Budi. Perhatikan huruf s kecil yang muncul dan menghilang sepanjang dialog ini — itulah seluruh isi unitnya.",
+   "lines": [
+    { "speaker": "Sarah:", "text": "Tell me about your day. What time do you get up?", "id": "Cerita dong soal harimu. Kamu bangun jam berapa?", "literal": "ceritakan aku tentang punyamu hari. apa waktu apakah kamu bangun?" },
+    { "speaker": "Budi:", "text": "I get up at five thirty. I always pray first.", "id": "Saya bangun jam setengah enam. Saya selalu salat dulu.", "literal": "saya bangun pada lima tiga-puluh. saya selalu berdoa pertama." },
+    { "speaker": "Sarah:", "text": "Five thirty! That's early. And then?", "id": "Setengah enam! Pagi sekali. Lalu?", "literal": "lima tiga-puluh! itu-adalah pagi. dan kemudian?" },
+    { "speaker": "Budi:", "text": "Then I take a shower and have breakfast. I usually eat rice.", "id": "Lalu saya mandi dan sarapan. Biasanya saya makan nasi.", "literal": "kemudian saya ambil sebuah mandi dan punya sarapan. saya biasanya makan nasi." },
+    { "speaker": "Sarah:", "text": "Rice for breakfast? Every day?", "id": "Nasi buat sarapan? Tiap hari?", "literal": "nasi untuk sarapan? setiap hari?" },
+    { "speaker": "Budi:", "text": "Every day. My sister never eats rice in the morning, but I do.", "id": "Tiap hari. Adik saya tidak pernah makan nasi pagi-pagi, tapi saya iya.", "literal": "setiap hari. punyaku saudara-perempuan tidak-pernah makan nasi di itu pagi, tetapi saya lakukan." },
+    { "speaker": "Sarah:", "text": "What does she eat?", "id": "Dia makan apa?", "literal": "apa apakah dia makan?" },
+    { "speaker": "Budi:", "text": "She just drinks coffee. She says she isn't hungry in the morning.", "id": "Dia cuma minum kopi. Katanya dia tidak lapar pagi-pagi.", "literal": "dia hanya minum kopi. dia berkata dia adalah-tidak lapar di itu pagi." },
+    { "speaker": "Sarah:", "text": "And what time do you go to work?", "id": "Dan kamu berangkat kerja jam berapa?", "literal": "dan apa waktu apakah kamu pergi ke kerja?" },
+    { "speaker": "Budi:", "text": "I go to class at eight and I start work at four. I finish at nine in the evening.", "id": "Saya masuk kelas jam delapan dan mulai kerja jam empat. Selesai jam sembilan malam.", "literal": "saya pergi ke kelas pada delapan dan saya mulai kerja pada empat. saya selesai pada sembilan di itu malam." },
+    { "speaker": "Sarah:", "text": "That's a long day. When do you sleep?", "id": "Panjang juga harimu. Kapan tidurnya?", "literal": "itu-adalah sebuah panjang hari. kapan apakah kamu tidur?" },
+    { "speaker": "Budi:", "text": "I go to bed at eleven. On Sundays I sleep until nine!", "id": "Saya tidur jam sebelas. Hari Minggu saya tidur sampai jam sembilan!", "literal": "saya pergi ke tempat-tidur pada sebelas. pada Minggu-Minggu saya tidur sampai sembilan!" }
+   ],
+   "notes": [
+    "**Huruf s untuk he, she, dan it.** Bandingkan *I eat* dengan *she eat**s***, *I drink* dengan *she drink**s***. Bahasa Indonesia tidak pernah mengubah kata kerja karena pelakunya, jadi huruf ini terasa tidak berguna — dan memang, secara makna, ia memang tidak menambah apa pun. Tetap saja: menghilangkannya adalah tanda paling cepat dikenali bahwa seseorang belum menguasai bahasa Inggris. Kabar baiknya, ini satu-satunya perubahan bentuk yang perlu kamu hafal untuk seluruh level A1.",
+    "**She says**, bukan *she say*. Kata kerja apa pun kena aturannya — termasuk kata kerja yang tidak berhubungan dengan kegiatan fisik.",
+    "**But I do** di baris keenam berarti \"tapi saya iya\". Bahasa Inggris tidak mengulang kata kerjanya, cukup memakai *do* sebagai penggantinya. Sama seperti kita bilang \"tapi saya iya\", bukan \"tapi saya makan nasi pagi-pagi\".",
+    "**Never sudah bermakna negatif.** *She never eats rice* — tidak boleh ditambah *doesn't*. *She doesn't never eat* salah, dan bagi telinga Inggris terdengar seperti dua sangkalan yang saling meniadakan.",
+    "**Have breakfast**, bukan *eat breakfast* (walau yang kedua tidak salah). *Have* dipakai untuk semua waktu makan: *have breakfast*, *have lunch*, *have dinner*. Perhatikan juga tidak ada sandang di depannya.",
+    "**Go to work, go to bed, go to class** — semuanya tanpa *the*. Kalau yang kamu maksud bangunan atau bendanya, sandangnya kembali: *go to **the** office* (gedungnya), *sit on **the** bed* (ranjangnya). Tanpa sandang, yang dimaksud adalah kegiatannya, bukan tempatnya.",
+    "**On Sundays** dengan -s berarti \"setiap hari Minggu\", sebagai kebiasaan. *On Sunday* tanpa -s berarti hari Minggu yang satu itu saja. Satu huruf, dua arti yang cukup jauh."
+   ],
+   "grammars": [
+    {
+     "title": "Bentuk kebiasaan: satu perubahan, satu pengecualian",
+     "body": [
+      "Untuk menceritakan hal yang **rutin, biasa, atau selalu benar**, bahasa Inggris memakai bentuk dasar kata kerjanya apa adanya — kecuali kalau pelakunya *he*, *she*, atau *it*:"
+     ],
+     "table": {
+      "head": ["Pelaku", "Bentuk", "Contoh"],
+      "rows": [
+       ["I", "work", "*I work in a café.*"],
+       ["you", "work", "*You work too much.*"],
+       ["**he / she / it**", "**works**", "*She work**s** at a hospital.*"],
+       ["we", "work", "*We work together.*"],
+       ["they", "work", "*They work at night.*"]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa yang berubah cuma satu baris. Cara mengingatnya: **orang ketiga tunggal makan huruf s**. Kalau pelakunya bisa diganti dengan *he*, *she*, atau *it*, pasang -s — termasuk kalau pelakunya nama orang (*Budi work**s***), benda (*The shop open**s** at nine*), atau kata benda tunggal (*My father work**s** in Jakarta*).",
+      "⚠️ Bentuk ini **tidak** berarti \"sedang\". *I work* bukan \"saya sedang bekerja\" melainkan \"saya bekerja (sebagai kebiasaan)\". Untuk kejadian yang sedang berlangsung, bahasa Inggris punya bentuk sendiri di Unit 15."
+     ]
+    },
+    {
+     "title": "Ejaan dan bunyi akhiran -s",
+     "body": [
+      "Ejaannya mengikuti aturan yang sama persis dengan bentuk jamak kata benda di Unit 4:"
+     ],
+     "tables": [
+      {
+       "head": ["Aturan ejaan", "Contoh"],
+       "rows": [
+        ["biasanya tambah **-s**", "work → work**s**, eat → eat**s**, live → live**s**"],
+        ["berakhiran -s, -sh, -ch, -x, -o → **-es**", "watch → watch**es**, go → go**es**, do → do**es**"],
+        ["konsonan + -y → **-ies**", "study → stud**ies**, fly → fl**ies**"],
+        ["tidak beraturan", "have → **has**"]
+       ]
+      },
+      {
+       "head": ["Bunyinya", "Kalau kata dasarnya berakhir", "Contoh"],
+       "rows": [
+        ["s", "bunyi tak bersuara: p, t, k, f", "*works* → weerk**s**, *eats* → iit**s**"],
+        ["z", "bunyi bersuara: b, d, g, l, m, n, r, vokal", "*lives* → liv**z**, *goes* → gou**z**"],
+        ["iz", "bunyi mendesis: s, z, sh, ch, ge", "*watches* → WOT-ch**iz**, *uses* → YUU-z**iz**"]
+       ]
+      }
+     ],
+     "after": [
+      "Tabel bunyi di atas tidak perlu dihafal. Ia bekerja sendiri kalau kamu mengucapkannya cepat — mulut manusia memang memilih bunyi yang paling mudah disambung. Yang penting cuma satu: **jangan hilangkan bunyinya sama sekali**, kebiasaan yang datang dari bahasa Indonesia dan membuat *works* terdengar seperti *work*."
+     ]
+    },
+    {
+     "title": "Seberapa sering: always, usually, never",
+     "body": [
+      "Kata keterangan kekerapan punya tempat tetap dalam kalimat, dan tempatnya bukan di ujung:"
+     ],
+     "table": {
+      "head": ["Kata", "Cara baca", "Kira-kira", "Contoh"],
+      "rows": [
+       ["**always**", "OOL-wéiz", "100%", "*I **always** get up at five.*"],
+       ["**usually**", "YUU-zhu-e-li", "80%", "*She **usually** walks to work.*"],
+       ["**often**", "O-fen", "60%", "*We **often** eat out.*"],
+       ["**sometimes**", "SAM-taimz", "40%", "*He **sometimes** works at night.*"],
+       ["**rarely**", "RÉR-li", "10%", "*They **rarely** watch TV.*"],
+       ["**never**", "NÉ-ver", "0%", "*I **never** drink coffee.*"]
+      ]
+     },
+     "after": [
+      "Aturan tempatnya cuma dua, dan keduanya berlawanan: **sebelum** kata kerja biasa (*I **always** eat*), tapi **sesudah** *to be* (*I am **always** late*). Kalau kamu lupa yang mana, ucapkan pelan-pelan — versi yang salah biasanya terasa tersandung.",
+      "*Sometimes* adalah satu-satunya yang boleh pindah ke awal kalimat: *Sometimes I work on Saturday.* Yang lain terdengar aneh kalau dipindah."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kegiatan sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["English", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["to wake up", "wéik ap", "terbangun"],
+      ["to get up", "gét ap", "bangkit dari tempat tidur"],
+      ["to take a shower", "téik e SHAU-er", "mandi"],
+      ["to brush my teeth", "brash mai tiith", "menggosok gigi"],
+      ["to get dressed", "gét drést", "berpakaian"],
+      ["to have breakfast", "hæv BRÉK-fest", "sarapan"],
+      ["to have lunch", "hæv lanch", "makan siang"],
+      ["to have dinner", "hæv DI-ner", "makan malam"],
+      ["to go to work", "gou tu weerk", "berangkat kerja"],
+      ["to start work", "start weerk", "mulai kerja"],
+      ["to finish work", "FI-nish weerk", "selesai kerja"],
+      ["to come home", "kam houm", "pulang"],
+      ["to cook", "kuk", "memasak"],
+      ["to watch TV", "woch tii-VII", "menonton TV"],
+      ["to go to bed", "gou tu béd", "pergi tidur"],
+      ["to sleep", "sliip", "tidur"]
+     ]
+    },
+    { "type": "p", "text": "⚠️ *Wake up* dan *get up* bukan hal yang sama. Yang pertama berarti matamu terbuka, yang kedua berarti badanmu keluar dari tempat tidur. Jarak antara keduanya bisa panjang, dan penutur Inggris memang menganggapnya dua peristiwa berbeda." },
+    {
+     "type": "kotak",
+     "title": "Cerita satu hari, utuh",
+     "items": [
+      "*I get up at half past five and take a shower.*",
+      "*I have breakfast with my family at six.*",
+      "*I go to class at eight. Classes finish at two.*",
+      "*I start work at four in the afternoon.*",
+      "*I come home at nine and have dinner.*",
+      "*I usually go to bed at eleven, but on Fridays I stay up late.*"
+     ]
+    },
+    { "type": "p", "text": "Enam kalimat itu adalah kerangka yang bisa kamu isi ulang dengan hidupmu sendiri. Tulis versimu di buku catatan, lalu ucapkan keras-keras sampai keluar tanpa berhenti. Kemampuan menceritakan satu hari biasa adalah ujian paling jujur untuk level A1." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "en": "day", "baca": "déi", "id": "hari" },
+  { "en": "morning", "baca": "MOR-ning", "id": "pagi" },
+  { "en": "afternoon", "baca": "af-ter-NUUN", "id": "siang / sore" },
+  { "en": "evening", "baca": "IIV-ning", "id": "malam (awal)" },
+  { "en": "night", "baca": "nait", "id": "malam" },
+  { "en": "early", "baca": "EER-li", "id": "awal / pagi-pagi" },
+  { "en": "late", "baca": "léit", "id": "terlambat / larut" },
+  { "en": "then", "baca": "dhén", "id": "lalu / kemudian" },
+  { "en": "first", "baca": "feerst", "id": "pertama / dulu" },
+  { "en": "every day", "baca": "É-vri déi", "id": "setiap hari" },
+  { "en": "to eat", "baca": "iit", "id": "makan" },
+  { "en": "to drink", "baca": "drink", "id": "minum" },
+  { "en": "to go", "baca": "gou", "id": "pergi" },
+  { "en": "to come", "baca": "kam", "id": "datang" },
+  { "en": "to start", "baca": "start", "id": "mulai" },
+  { "en": "to finish", "baca": "FI-nish", "id": "selesai" },
+  { "en": "to say", "baca": "séi", "id": "berkata" },
+  { "en": "to tell", "baca": "tél", "id": "menceritakan" },
+  { "en": "rice", "baca": "rais", "id": "nasi" },
+  { "en": "coffee", "baca": "KO-fi", "id": "kopi" },
+  { "en": "hungry", "baca": "HANG-gri", "id": "lapar" },
+  { "en": "until", "baca": "an-TIL", "id": "sampai" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+   "items": [
+    "She ____ (work) in a hospital.",
+    "I ____ (get up) at six.",
+    "He ____ (go) to school by bus.",
+    "They ____ (live) in Jakarta.",
+    "My sister ____ (study) English.",
+    "It ____ (finish) at nine."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat berikut. Semuanya mengandung satu kesalahan khas.",
+   "items": [
+    "He go to work at seven.",
+    "She don't never eat rice.",
+    "My father work in a bank.",
+    "I am work every day.",
+    "She study English on Monday."
+   ]
+  },
+  {
+   "prompt": "Sisipkan kata dalam kurung ke tempat yang benar.",
+   "items": [
+    "I get up at five. (always)",
+    "She is late. (never)",
+    "We eat out on Saturday. (often)",
+    "He drinks coffee in the morning. (usually)",
+    "They are hungry at ten. (sometimes)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Saya bangun jam lima.",
+    "Dia sarapan jam tujuh.",
+    "Adik saya tidak pernah minum kopi.",
+    "Kami pulang jam sembilan malam.",
+    "Dia biasanya kerja sampai larut."
+   ]
+  }
+ ],
+ "answers": [
+  "works — get up — goes — live — studies — finishes",
+  "He goes to work at seven. — She never eats rice. — My father works in a bank. — I work every day. — She studies English on Monday.",
+  "I always get up at five. — She is never late. — We often eat out on Saturday. — He usually drinks coffee in the morning. — They are sometimes hungry at ten.",
+  "I get up at five. — She has breakfast at seven. — My sister never drinks coffee. — We come home at nine in the evening. — She usually works late."
+ ]
+}

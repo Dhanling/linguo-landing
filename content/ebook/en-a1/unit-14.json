@@ -1,0 +1,522 @@
+{
+ "title": "Saya bisa nyetir",
+ "title_target": "I can drive",
+ "goal": "Mengatakan apa yang bisa dan tidak bisa kamu lakukan, meminta izin, dan meminta tolong.",
+ "bekal": [
+  "menyatakan kemampuan (*I can cook*)",
+  "meminta izin (*Can I sit here?*)",
+  "meminta tolong dengan sopan (*Could you help me?*)",
+  "membedakan bunyi *can* dan *can't*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — A job interview at the café",
+   "intro": "Budi melamar kerja paruh waktu. Seluruh wawancara ini bertumpu pada satu kata kerja bantu, dan bentuknya tak pernah berubah sekali pun.",
+   "lines": [
+    {
+     "speaker": "Manager:",
+     "text": "So, Budi. Can you work in the evenings?",
+     "id": "Jadi, Budi. Bisa kerja malam?",
+     "literal": "jadi, Budi. bisakah kamu bekerja di itu malam-malam?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Yes, I can. I have classes in the morning only.",
+     "id": "Bisa. Kelas saya cuma pagi.",
+     "literal": "ya, saya bisa. saya punya kelas-kelas di itu pagi hanya."
+    },
+    {
+     "speaker": "Manager:",
+     "text": "Good. Can you make coffee?",
+     "id": "Bagus. Bisa bikin kopi?",
+     "literal": "baik. bisakah kamu membuat kopi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A little. I can make espresso, but I can't do latte art.",
+     "id": "Sedikit. Saya bisa bikin espresso, tapi tidak bisa latte art.",
+     "literal": "se-sedikit. saya bisa membuat espresso, tetapi saya tidak-bisa melakukan latte seni."
+    },
+    {
+     "speaker": "Manager:",
+     "text": "That's fine, we can teach you. Can you use a computer?",
+     "id": "Tidak apa-apa, bisa kami ajari. Bisa pakai komputer?",
+     "literal": "itu-adalah baik, kami bisa mengajar kamu. bisakah kamu memakai sebuah komputer?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Yes. I can type quite fast, and I can use spreadsheets.",
+     "id": "Bisa. Saya bisa mengetik cukup cepat, dan bisa pakai spreadsheet.",
+     "literal": "ya. saya bisa mengetik cukup cepat, dan saya bisa memakai lembar-sebar."
+    },
+    {
+     "speaker": "Manager:",
+     "text": "And can you drive? Sometimes we need someone for deliveries.",
+     "id": "Dan bisa nyetir? Kadang kami butuh orang untuk antar pesanan.",
+     "literal": "dan bisakah kamu menyetir? kadang-kadang kami butuh seseorang untuk pengantaran-pengantaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "I can ride a motorbike, but I can't drive a car.",
+     "id": "Saya bisa naik motor, tapi tidak bisa nyetir mobil.",
+     "literal": "saya bisa mengendarai sebuah motor, tetapi saya tidak-bisa menyetir sebuah mobil."
+    },
+    {
+     "speaker": "Manager:",
+     "text": "A motorbike is fine. Can you start on Monday?",
+     "id": "Motor juga tidak apa-apa. Bisa mulai hari Senin?",
+     "literal": "sebuah motor adalah baik. bisakah kamu mulai pada Senin?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Yes, I can. Could I ask one question?",
+     "id": "Bisa. Boleh saya tanya satu hal?",
+     "literal": "ya, saya bisa. bisakah saya bertanya satu pertanyaan?"
+    },
+    {
+     "speaker": "Manager:",
+     "text": "Of course.",
+     "id": "Silakan.",
+     "literal": "tentu saja."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Can I leave early on Fridays? I have a class at four.",
+     "id": "Boleh pulang lebih awal tiap Jumat? Saya ada kelas jam empat.",
+     "literal": "bisakah saya pergi awal pada Jumat-Jumat? saya punya sebuah kelas pada empat."
+    },
+    {
+     "speaker": "Manager:",
+     "text": "That can work. See you on Monday.",
+     "id": "Bisa diatur. Sampai jumpa Senin.",
+     "literal": "itu bisa bekerja. lihat kamu pada Senin."
+    }
+   ],
+   "notes": [
+    "⚠️ **Can tidak pernah berubah bentuk.** Tidak ada *cans*, tidak ada *canned*, tidak ada *to can*. *He **can** swim*, bukan *he cans swim*. Ini kabar baik: satu-satunya kata kerja penting yang bebas dari aturan huruf s di Unit 7.",
+    "⚠️ **Kata kerja sesudah can selalu polos.** *I can **swim***, bukan *I can to swim* dan bukan *I can swimming*. Kesalahan *can to* datang dari kebiasaan menerjemahkan \"bisa untuk\"; kata *to* tidak pernah muncul di antara keduanya.",
+    "⚠️ **Can't, bukan don't can.** Menyangkalnya cukup dengan *not*, sama seperti *to be*: *cannot* → *can't*. Kata bantu tidak butuh kata bantu lagi. Perhatikan juga ejaannya: *cannot* ditulis **satu kata**, satu-satunya kata bantu yang begitu.",
+    "**Can punya tiga pekerjaan.** Di dialog ini ketiganya muncul: *Can you work in the evenings?* menanyakan **kemampuan**, *Can I leave early?* meminta **izin**, dan *Can you make coffee?* di mulut manajer sebenarnya juga menanyakan kemampuan — tapi kalimat yang sama di mulut pelanggan berarti **permintaan tolong**. Yang membedakan cuma keadaannya.",
+    "**Could lebih halus dari can**, dan bukan bentuk lampau di sini. *Could I ask one question?* terdengar lebih sopan daripada *Can I…?* Untuk meminta tolong pada orang yang tidak kamu kenal, pakai *Could*.",
+    "**Yes, I can** — sekali lagi jawaban pendek memantulkan kata bantunya. Perhatikan bunyinya: pada jawaban pendek, *can* diucapkan penuh dan jelas (kæn), sedangkan di tengah kalimat ia hampir menghilang jadi \"ken\".",
+    "**I can ride a motorbike, but I can't drive a car.** Bahasa Inggris memakai kata kerja berbeda: *ride* untuk kendaraan yang ditunggangi (motor, sepeda, kuda), *drive* untuk yang dikemudikan dari dalam (mobil, truk, bus). Bahasa Indonesia memakai satu kata \"naik\" atau \"nyetir\" untuk keduanya."
+   ],
+   "grammars": [
+    {
+     "title": "Can — satu bentuk untuk semua pelaku",
+     "body": [
+      "Bandingkan tabel ini dengan tabel *to be* di Unit 1: di sini tidak ada satu pun perubahan bentuk."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Pola",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "Positif",
+        "*pelaku + **can** + kerja*",
+        "*She **can** speak English.*"
+       ],
+       [
+        "Sangkal",
+        "*pelaku + **can't** + kerja*",
+        "*He **can't** drive.*"
+       ],
+       [
+        "Tanya",
+        "***Can** + pelaku + kerja?*",
+        "***Can** you swim?*"
+       ],
+       [
+        "Kata tanya",
+        "*kata tanya + **can** + pelaku + kerja?*",
+        "*What **can** you cook?*"
+       ],
+       [
+        "Jawaban pendek",
+        "—",
+        "*Yes, I can. / No, I can't.*"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa pertanyaan dengan *can* tidak butuh *do* sama sekali — *can* melompat sendiri ke depan, persis seperti *am/is/are*. Aturan umumnya: **kata bantu bisa melompat, kata kerja biasa tidak**.",
+      "⚠️ *Can't* juga dipakai untuk mengatakan sesuatu **tidak boleh**: *You can't park here.* Sama seperti \"tidak bisa\" dalam bahasa Indonesia yang sering berarti \"tidak boleh\"."
+     ]
+    },
+    {
+     "title": "Meminta izin dan meminta tolong",
+     "body": [
+      "Perbedaannya di **siapa yang bekerja**: kalau kamu yang ingin melakukan sesuatu, pakai *Can I*; kalau kamu ingin orang lain melakukannya, pakai *Can you*."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Maksudnya",
+       "Nadanya"
+      ],
+      "rows": [
+       [
+        "*Can I sit here?*",
+        "minta izin",
+        "wajar"
+       ],
+       [
+        "*Could I sit here?*",
+        "minta izin",
+        "lebih halus"
+       ],
+       [
+        "*Can you help me?*",
+        "minta tolong",
+        "wajar"
+       ],
+       [
+        "*Could you help me, please?*",
+        "minta tolong",
+        "lebih halus"
+       ],
+       [
+        "*Can I help you?*",
+        "menawarkan bantuan",
+        "wajar"
+       ],
+       [
+        "*Sure. / Of course. / Go ahead.*",
+        "menyetujui",
+        "—"
+       ],
+       [
+        "*Sorry, I'm afraid you can't.*",
+        "menolak",
+        "halus"
+       ]
+      ]
+     },
+     "after": [
+      "Baris terakhir layak dihafal. Menolak dengan *No* saja terdengar keras; *I'm afraid* (\"saya khawatir\") adalah bantalan yang dipasang penutur Inggris di depan hampir semua kabar buruk — setara dengan \"maaf, sepertinya\" dalam bahasa kita."
+     ]
+    },
+    {
+     "title": "Membedakan bunyi can dan can't",
+     "body": [
+      "Ini masalah mendengar, bukan masalah tata bahasa, dan ia menjebak pemula setiap hari: dua kata yang berlawanan arti hanya berbeda satu bunyi t yang sering nyaris tak terdengar."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Di tengah kalimat",
+       "Petunjuknya"
+      ],
+      "rows": [
+       [
+        "**can**",
+        "ken — pendek, lemah, cepat berlalu",
+        "vokalnya kabur"
+       ],
+       [
+        "**can't**",
+        "kænt (AS) / kaant (Inggris) — panjang dan jelas",
+        "vokalnya tegas, kalimatnya sedikit melambat"
+       ]
+      ]
+     },
+     "after": [
+      "Jadi kalau kamu mendengar vokal yang **jelas dan kuat**, kemungkinan besar itu *can't*. Kalau kata itu meluncur cepat hampir tanpa vokal, itu *can*.",
+      "Kalau tetap ragu, tanya balik: *Sorry, can or can't?* Tidak ada penutur asli yang tersinggung oleh pertanyaan ini — mereka sendiri sering menanyakannya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kemampuan yang sering ditanyakan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "English",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "to swim",
+       "swim",
+       "berenang"
+      ],
+      [
+       "to drive",
+       "draiv",
+       "menyetir"
+      ],
+      [
+       "to ride a motorbike",
+       "raid e MOU-ter-baik",
+       "naik motor"
+      ],
+      [
+       "to cook",
+       "kuk",
+       "memasak"
+      ],
+      [
+       "to type",
+       "taip",
+       "mengetik"
+      ],
+      [
+       "to sing",
+       "sing",
+       "menyanyi"
+      ],
+      [
+       "to dance",
+       "dæns",
+       "menari"
+      ],
+      [
+       "to play the guitar",
+       "pléi dhe gi-TAR",
+       "main gitar"
+      ],
+      [
+       "to play football",
+       "pléi FUT-bool",
+       "main sepak bola"
+      ],
+      [
+       "to draw",
+       "droo",
+       "menggambar"
+      ],
+      [
+       "to fix things",
+       "fiks thingz",
+       "membetulkan barang"
+      ],
+      [
+       "to use a computer",
+       "yuuz e kem-PYUU-ter",
+       "memakai komputer"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan dua baris *play*: alat musik memakai *the* (*play **the** guitar*), olahraga tidak (*play football*). Aturan kecil yang tak ada alasannya, tapi sangat terdengar kalau salah."
+    },
+    {
+     "type": "sub",
+     "text": "Sepuluh permintaan yang paling sering kamu butuhkan"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "English",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Can you help me, please?*",
+       "Bisa tolong saya?"
+      ],
+      [
+       "*Could you speak more slowly?*",
+       "Bisa bicara lebih pelan?"
+      ],
+      [
+       "*Could you repeat that?*",
+       "Bisa diulang?"
+      ],
+      [
+       "*Can I ask you something?*",
+       "Boleh tanya sesuatu?"
+      ],
+      [
+       "*Can I use your phone?*",
+       "Boleh pinjam teleponmu?"
+      ],
+      [
+       "*Can I pay by card?*",
+       "Boleh bayar pakai kartu?"
+      ],
+      [
+       "*Could you take a photo of us?*",
+       "Bisa tolong fotokan kami?"
+      ],
+      [
+       "*Can you say that again, please?*",
+       "Bisa diulangi?"
+      ],
+      [
+       "*Could you write it down?*",
+       "Bisa tolong tuliskan?"
+      ],
+      [
+       "*Can I come in?*",
+       "Boleh masuk?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kesepuluhnya berbentuk pertanyaan, dan itu bukan kebetulan. Bahasa Inggris menyampaikan permintaan sebagai pertanyaan, bukan sebagai perintah yang diperhalus. *Help me* terdengar seperti teriakan darurat; *Can you help me?* adalah permintaan biasa."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "en": "can / can't",
+   "baca": "kæn / kænt",
+   "id": "bisa / tidak bisa"
+  },
+  {
+   "en": "could",
+   "baca": "kud",
+   "id": "bisa (lebih sopan)"
+  },
+  {
+   "en": "to drive",
+   "baca": "draiv",
+   "id": "menyetir"
+  },
+  {
+   "en": "to ride",
+   "baca": "raid",
+   "id": "mengendarai / naik"
+  },
+  {
+   "en": "to swim",
+   "baca": "swim",
+   "id": "berenang"
+  },
+  {
+   "en": "to type",
+   "baca": "taip",
+   "id": "mengetik"
+  },
+  {
+   "en": "to use",
+   "baca": "yuuz",
+   "id": "memakai"
+  },
+  {
+   "en": "to leave",
+   "baca": "liiv",
+   "id": "pergi / meninggalkan"
+  },
+  {
+   "en": "to ask",
+   "baca": "æsk",
+   "id": "bertanya / meminta"
+  },
+  {
+   "en": "to need",
+   "baca": "niid",
+   "id": "membutuhkan"
+  },
+  {
+   "en": "someone",
+   "baca": "SAM-wan",
+   "id": "seseorang"
+  },
+  {
+   "en": "something",
+   "baca": "SAM-thing",
+   "id": "sesuatu"
+  },
+  {
+   "en": "fast",
+   "baca": "fæst",
+   "id": "cepat"
+  },
+  {
+   "en": "quite",
+   "baca": "kwait",
+   "id": "cukup / lumayan"
+  },
+  {
+   "en": "car",
+   "baca": "kar",
+   "id": "mobil"
+  },
+  {
+   "en": "motorbike",
+   "baca": "MOU-ter-baik",
+   "id": "sepeda motor"
+  },
+  {
+   "en": "delivery",
+   "baca": "di-LI-ve-ri",
+   "id": "pengantaran"
+  },
+  {
+   "en": "of course",
+   "baca": "ev KORS",
+   "id": "tentu saja"
+  },
+  {
+   "en": "go ahead",
+   "baca": "gou e-HÉD",
+   "id": "silakan"
+  },
+  {
+   "en": "I'm afraid",
+   "baca": "aim e-FRÉID",
+   "id": "maaf, sepertinya"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "can / swim / I",
+    "drive / can't / she / car / a",
+    "you / can / cook / ?",
+    "guitar / can / play / he / the",
+    "can / what / you / cook / ?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan *can* atau *can't* sesuai petunjuk dalam kurung.",
+   "items": [
+    "She ____ speak four languages. (bisa)",
+    "I ____ drive a car. (tidak bisa)",
+    "____ you help me, please? (permintaan)",
+    "You ____ park here. (tidak boleh)",
+    "He ____ ride a motorbike. (bisa)"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat berikut. Semuanya mengandung satu kesalahan khas.",
+   "items": [
+    "He cans swim.",
+    "I can to drive.",
+    "She don't can cook.",
+    "Can you swimming?",
+    "He can plays the guitar."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Saya bisa naik motor, tapi tidak bisa nyetir mobil.",
+    "Boleh saya duduk di sini?",
+    "Bisa bicara lebih pelan?",
+    "Dia tidak bisa memasak.",
+    "Boleh saya tanya sesuatu?"
+   ]
+  }
+ ],
+ "answers": [
+  "I can swim. — She can't drive a car. — Can you cook? — He can play the guitar. — What can you cook?",
+  "can — can't — Can — can't — can",
+  "He can swim. — I can drive. — She can't cook. — Can you swim? — He can play the guitar.",
+  "I can ride a motorbike, but I can't drive a car. — Can I sit here? — Could you speak more slowly? — She can't cook. — Can I ask you something?"
+ ]
+}

@@ -1,0 +1,192 @@
+{
+ "title": "Kamu dari mana?",
+ "title_target": "Where are you from?",
+ "goal": "Menyebutkan asal negara dan kota, menanyakan asal orang lain, dan menyebut bahasa yang kamu pakai.",
+ "bekal": [
+  "menanyakan dan menyebut asal (*I'm from Indonesia*)",
+  "menyebut kebangsaan (*I'm Indonesian*)",
+  "menyusun pertanyaan dengan *where*, *what*, *who*",
+  "mengatakan bahasa apa yang kamu bisa"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — In the school canteen",
+   "intro": "Budi duduk semeja dengan dua orang yang belum ia kenal. Perhatikan urutan kata di setiap pertanyaan — di situ letak pelajaran unit ini.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Excuse me, is this seat free?", "id": "Permisi, kursi ini kosong?", "literal": "maafkan saya, adalah ini kursi bebas?" },
+    { "speaker": "Mei:", "text": "Yes, of course. Please sit down.", "id": "Ya, tentu. Silakan duduk.", "literal": "ya, tentu saja. silakan duduk turun." },
+    { "speaker": "Budi:", "text": "Thank you. I'm Budi. Where are you from?", "id": "Terima kasih. Saya Budi. Kamu dari mana?", "literal": "terima kasih. saya-adalah Budi. di-mana adalah kamu dari?" },
+    { "speaker": "Mei:", "text": "I'm from Singapore. And you?", "id": "Saya dari Singapura. Dan kamu?", "literal": "saya-adalah dari Singapura. dan kamu?" },
+    { "speaker": "Budi:", "text": "I'm Indonesian. I'm from Surabaya.", "id": "Saya orang Indonesia. Saya dari Surabaya.", "literal": "saya-adalah Indonesia-punya-orang. saya-adalah dari Surabaya." },
+    { "speaker": "Mei:", "text": "Oh, nice. This is my friend Lucas. He's from Brazil.", "id": "Oh, bagus. Ini teman saya Lucas. Dia dari Brasil.", "literal": "oh, bagus. ini adalah punyaku teman Lucas. dia-adalah dari Brasil." },
+    { "speaker": "Lucas:", "text": "Hi, Budi. Nice to meet you.", "id": "Hai, Budi. Senang berkenalan.", "literal": "hai, Budi. menyenangkan untuk bertemu kamu." },
+    { "speaker": "Budi:", "text": "Nice to meet you too. Are you a student here?", "id": "Senang berkenalan juga. Kamu pelajar di sini?", "literal": "menyenangkan untuk bertemu kamu juga. adalah kamu sebuah pelajar di-sini?" },
+    { "speaker": "Lucas:", "text": "No, I'm not. I'm a teacher. I teach Portuguese.", "id": "Bukan. Saya guru. Saya mengajar bahasa Portugis.", "literal": "tidak, saya-adalah tidak. saya-adalah seorang guru. saya mengajar Portugis." },
+    { "speaker": "Budi:", "text": "Wow! And what languages do you speak, Mei?", "id": "Wah! Dan kamu bisa bahasa apa saja, Mei?", "literal": "wah! dan apa bahasa-bahasa apakah kamu bicara, Mei?" },
+    { "speaker": "Mei:", "text": "English, Chinese, and a little Malay.", "id": "Inggris, Mandarin, dan sedikit Melayu.", "literal": "Inggris, Cina, dan se-sedikit Melayu." },
+    { "speaker": "Budi:", "text": "That's amazing. My English is not very good.", "id": "Hebat. Bahasa Inggris saya tidak terlalu bagus.", "literal": "itu-adalah menakjubkan. punyaku Inggris adalah tidak sangat baik." },
+    { "speaker": "Mei:", "text": "It's good! Don't worry.", "id": "Bagus, kok! Jangan khawatir.", "literal": "itu-adalah baik! jangan khawatir." }
+   ],
+   "notes": [
+    "**I'm from, bukan I from.** Ini kesalahan yang paling sering terdengar dari penutur Indonesia dan paling cepat diperbaiki: *from* bukan kata kerja, ia cuma kata depan. Kalimatnya tetap butuh *am*. Ingat aturan Unit 1 — tak ada kalimat Inggris tanpa kata kerja.",
+    "**Jangan menggabung dua kata kerja.** *I am come from Indonesia* keliru karena *am* dan *come* dua-duanya kata kerja. Pilih satu: *I am from Indonesia* atau *I come from Indonesia*. Yang pertama jauh lebih sering dipakai.",
+    "**Where are you from?** — perhatikan *from* nangkring di ujung kalimat, jauh dari *where*. Bagi telinga Indonesia ini terasa terbalik (\"dari mana\" → \"mana … dari\"), tapi begitulah bentuk bakunya. Yang benar-benar salah justru *From where are you?*",
+    "**Pertanyaan membalik urutan.** *You are a student* → *Are you a student?* Kata kerja *to be* melompat ke depan pelakunya. Selama kalimatnya memakai *am/is/are*, membuat pertanyaan cukup dengan membalik dua kata pertama — tanpa tambahan apa pun.",
+    "**Nama negara, bangsa, dan bahasa selalu berhuruf besar.** *Indonesia*, *Indonesian*, *English*, *Chinese* — di tengah kalimat sekalipun. Bahasa Indonesia menulis \"bahasa inggris\" dengan huruf kecil, bahasa Inggris tidak pernah.",
+    "**This is my friend Lucas** adalah cara baku memperkenalkan orang ketiga. Perhatikan *this*, bukan *he*: waktu memperkenalkan seseorang yang berdiri di depanmu, bahasa Inggris memakai *this*, sama seperti kita bilang \"ini teman saya\", bukan \"dia teman saya\".",
+    "**Excuse me** dipakai untuk **membuka** — menyela, bertanya, meminta jalan. *Sorry* dipakai untuk **meminta maaf** atas sesuatu yang sudah terjadi. Tertukar sedikit-sedikit tidak fatal, tapi *Sorry, is this seat free?* terdengar seolah kamu sudah menumpahkan sesuatu di kursi itu."
+   ],
+   "grammars": [
+    {
+     "title": "Negara, bangsa, bahasa — tiga kata yang mirip",
+     "body": [
+      "Dalam bahasa Indonesia satu kata cukup: \"saya dari Jepang\", \"orang Jepang\", \"bahasa Jepang\". Bahasa Inggris memakai dua bentuk berbeda, dan bentuk kedua kebetulan merangkap sebagai nama bahasanya:"
+     ],
+     "table": {
+      "head": ["Negara", "Bangsa / bahasa", "Cara baca", "Contoh kalimat"],
+      "rows": [
+       ["Indonesia", "**Indonesian**", "in-de-NII-zhen", "*I'm Indonesian.*"],
+       ["Japan", "**Japanese**", "jæ-pe-NIIZ", "*She speaks Japanese.*"],
+       ["China", "**Chinese**", "chai-NIIZ", "*He's Chinese.*"],
+       ["Korea", "**Korean**", "ke-RII-en", "*They're Korean.*"],
+       ["England", "**English**", "ING-glish", "*My English is bad.*"],
+       ["France", "**French**", "frénch", "*I speak French.*"],
+       ["Germany", "**German**", "JEER-men", "*She's German.*"],
+       ["Brazil", "**Brazilian**", "bre-ZIL-yen", "*He's Brazilian.*"],
+       ["Australia", "**Australian**", "os-TRÉIL-yen", "*We're Australian.*"],
+       ["Singapore", "**Singaporean**", "sing-e-POR-ien", "*I'm from Singapore.*"]
+      ]
+     },
+     "after": [
+      "Ada dua cara mengatakan hal yang sama, dan keduanya benar: *I'm from Indonesia* (menyebut **negaranya**) dan *I'm Indonesian* (menyebut **bangsanya**). Jangan digabung jadi *I'm from Indonesian* — itu seperti bilang \"saya dari orang Indonesia\".",
+      "⚠️ *England* bukan sinonim *Britain* atau *the UK*, dan orang Skotlandia bisa tersinggung kalau disebut *English*. Tapi **bahasanya** tetap bernama *English* di mana pun ia dipakai."
+     ]
+    },
+    {
+     "title": "Kata tanya: where, what, who, how",
+     "body": [
+      "Kata tanya berdiri paling depan, lalu urutan berikutnya sama persis dengan pertanyaan biasa — kata kerja dulu, baru pelakunya:"
+     ],
+     "table": {
+      "head": ["Kata tanya", "Arti", "Contoh", "Terjemahan"],
+      "rows": [
+       ["**where**", "di mana / ke mana", "*Where are you from?*", "Kamu dari mana?"],
+       ["**what**", "apa", "*What is your name?*", "Siapa namamu?"],
+       ["**who**", "siapa (orangnya)", "*Who is she?*", "Dia siapa?"],
+       ["**how**", "bagaimana", "*How are you?*", "Apa kabar?"],
+       ["**why**", "kenapa", "*Why are you here?*", "Kenapa kamu di sini?"],
+       ["**when**", "kapan", "*When is the class?*", "Kapan kelasnya?"]
+      ]
+     },
+     "after": [
+      "⚠️ Perhatikan baris kedua: menanyakan nama memakai *what*, bukan *who*. *Who is your name?* terdengar seolah namamu adalah seorang manusia. Bahasa Inggris menganggap nama itu **benda**, jadi ditanya dengan *what*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyebut kota dan negara tempat tinggal",
+   "blocks": [
+    { "type": "p", "text": "Tiga kalimat berikut sering tertukar padahal maksudnya berbeda. Hafalkan ketiganya sekaligus, dengan kata depannya:" },
+    {
+     "type": "tabel",
+     "head": ["Kalimat", "Artinya", "Kapan dipakai"],
+     "rows": [
+      ["*I'm **from** Surabaya.*", "Saya berasal dari Surabaya", "tempat kamu tumbuh besar"],
+      ["*I live **in** Jakarta.*", "Saya tinggal di Jakarta", "tempatmu sekarang"],
+      ["*I'm **in** Bali now.*", "Saya sedang di Bali", "posisimu saat ini, sementara"]
+     ]
+    },
+    { "type": "p", "text": "Kata depan tempat dalam bahasa Inggris tak bisa ditebak dari bahasa Indonesia — \"di\" bisa jadi *in*, *at*, atau *on* tergantung bendanya. Untuk sekarang cukup satu aturan: **kota dan negara selalu memakai *in***. *In Jakarta*, *in Indonesia*, *in Asia*. Seluruh keluarga kata depan dibedah di Unit 12." },
+    {
+     "type": "kotak",
+     "title": "Kalau kamu tidak menangkap ucapan orang",
+     "items": [
+      "*Sorry?* — paling pendek dan paling sopan, nada naik di ujung.",
+      "*Could you repeat that, please?* — kalau kamu ingin seluruh kalimatnya diulang.",
+      "*Could you speak more slowly, please?* — permintaan yang paling berguna sepanjang tahun pertamamu.",
+      "⚠️ Jangan pakai *What?* sendirian. Artinya memang \"apa?\", tapi nadanya terdengar seperti membentak."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "en": "where", "baca": "wér", "id": "di mana" },
+  { "en": "from", "baca": "from", "id": "dari" },
+  { "en": "who", "baca": "huu", "id": "siapa" },
+  { "en": "why", "baca": "wai", "id": "kenapa" },
+  { "en": "when", "baca": "wén", "id": "kapan" },
+  { "en": "country", "baca": "KAN-tri", "id": "negara" },
+  { "en": "city", "baca": "SI-ti", "id": "kota" },
+  { "en": "language", "baca": "LÆNG-gwij", "id": "bahasa" },
+  { "en": "to speak", "baca": "spiik", "id": "berbicara" },
+  { "en": "to live", "baca": "liv", "id": "tinggal" },
+  { "en": "to teach", "baca": "tiich", "id": "mengajar" },
+  { "en": "friend", "baca": "frénd", "id": "teman" },
+  { "en": "seat", "baca": "siit", "id": "kursi (tempat duduk)" },
+  { "en": "free", "baca": "frii", "id": "kosong / bebas / gratis" },
+  { "en": "excuse me", "baca": "ék-SKYUUZ mi", "id": "permisi" },
+  { "en": "sorry", "baca": "SO-ri", "id": "maaf" },
+  { "en": "of course", "baca": "ev KORS", "id": "tentu saja" },
+  { "en": "please", "baca": "pliiz", "id": "silakan / tolong" },
+  { "en": "this", "baca": "dhis", "id": "ini" },
+  { "en": "that", "baca": "dhæt", "id": "itu" },
+  { "en": "good", "baca": "gud", "id": "bagus / baik" },
+  { "en": "amazing", "baca": "e-MÉI-zing", "id": "menakjubkan" },
+  { "en": "don't worry", "baca": "dount WA-ri", "id": "jangan khawatir" },
+  { "en": "now", "baca": "nau", "id": "sekarang" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "Where are you from?",
+    "She is from Japan.",
+    "I am not Australian.",
+    "What languages do you speak?",
+    "This is my friend Rina.",
+    "My English is not very good."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kebangsaan atau bahasanya. Contoh: *He is from Japan. He is ____.* → *Japanese*",
+   "items": [
+    "She is from China. She is ____.",
+    "They are from Korea. They are ____.",
+    "I am from Indonesia. I am ____.",
+    "He is from France. He speaks ____.",
+    "We are from Germany. We are ____.",
+    "You are from Brazil. You are ____."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi pertanyaan. Contoh: *You are a student.* → *Are you a student?*",
+   "items": [
+    "You are from Bandung.",
+    "She is a teacher.",
+    "They are here.",
+    "He is Indonesian.",
+    "It is free."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "from / where / you / are / ?",
+    "friend / this / my / is / Lucas",
+    "not / I / Japanese / am",
+    "speak / do / what / you / languages / ?",
+    "in / live / I / Jakarta"
+   ]
+  }
+ ],
+ "answers": [
+  "Kamu dari mana? — Dia dari Jepang. — Saya bukan orang Australia. — Kamu bisa bahasa apa saja? — Ini teman saya Rina. — Bahasa Inggris saya tidak terlalu bagus.",
+  "Chinese — Korean — Indonesian — French — German — Brazilian",
+  "Are you from Bandung? — Is she a teacher? — Are they here? — Is he Indonesian? — Is it free?",
+  "Where are you from? — This is my friend Lucas. — I am not Japanese. — What languages do you speak? — I live in Jakarta."
+ ]
+}

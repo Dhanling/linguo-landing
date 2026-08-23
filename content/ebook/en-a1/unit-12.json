@@ -1,0 +1,222 @@
+{
+ "title": "Belok kiri di lampu merah",
+ "title_target": "Turn left at the traffic lights",
+ "goal": "Mengatakan ada apa di suatu tempat, menyebut letak benda, dan menunjukkan arah.",
+ "bekal": [
+  "mengatakan \"ada\" dengan *there is* dan *there are*",
+  "menyebut letak (*on*, *under*, *next to*, *behind*)",
+  "menanyakan arah dengan sopan",
+  "memberi petunjuk jalan sederhana"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — Excuse me, how do I get there?",
+   "intro": "Budi tersesat mencari kantor pos. Kalimat pertama dialog ini layak dihafal sekarang juga — ia bekerja di kota mana pun di dunia.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Excuse me, is there a post office near here?", "id": "Permisi, ada kantor pos di dekat sini?", "literal": "maafkan saya, adalah di-sana sebuah pos kantor dekat di-sini?" },
+    { "speaker": "Woman:", "text": "Yes, there's one on Green Street. It's not far.", "id": "Ada, di Jalan Green. Tidak jauh.", "literal": "ya, di-sana-adalah satu di Green Jalan. itu-adalah tidak jauh." },
+    { "speaker": "Budi:", "text": "How do I get there?", "id": "Ke sananya bagaimana?", "literal": "bagaimana apakah saya sampai ke-sana?" },
+    { "speaker": "Woman:", "text": "Go straight on for about two hundred metres, then turn left at the traffic lights.", "id": "Jalan lurus sekitar dua ratus meter, lalu belok kiri di lampu merah.", "literal": "pergi lurus terus untuk kira-kira dua ratus meter, kemudian belok kiri pada itu lalu-lintas lampu-lampu." },
+    { "speaker": "Budi:", "text": "Turn left at the traffic lights. And then?", "id": "Belok kiri di lampu merah. Lalu?", "literal": "belok kiri pada itu lalu-lintas lampu-lampu. dan kemudian?" },
+    { "speaker": "Woman:", "text": "Take the second street on the right. The post office is opposite a bank.", "id": "Ambil jalan kedua di sebelah kanan. Kantor posnya di seberang bank.", "literal": "ambil itu kedua jalan pada itu kanan. itu pos kantor adalah berseberangan sebuah bank." },
+    { "speaker": "Budi:", "text": "Is it next to the market?", "id": "Sebelah pasar?", "literal": "adalah itu sebelah ke itu pasar?" },
+    { "speaker": "Woman:", "text": "No, the market is behind it. There's a small park in front of the post office.", "id": "Bukan, pasarnya di belakangnya. Ada taman kecil di depan kantor pos.", "literal": "tidak, itu pasar adalah di-belakang itu. di-sana-adalah sebuah kecil taman di depan dari itu pos kantor." },
+    { "speaker": "Budi:", "text": "How long does it take?", "id": "Berapa lama jalannya?", "literal": "seberapa lama apakah itu mengambil?" },
+    { "speaker": "Woman:", "text": "About ten minutes on foot. There aren't any buses on that street.", "id": "Sekitar sepuluh menit jalan kaki. Tidak ada bus di jalan itu.", "literal": "kira-kira sepuluh menit pada kaki. di-sana adalah-tidak sembarang bus-bus di itu jalan." },
+    { "speaker": "Budi:", "text": "Thank you very much!", "id": "Terima kasih banyak!", "literal": "terima kasih sangat banyak!" },
+    { "speaker": "Woman:", "text": "You're welcome. Have a nice day.", "id": "Sama-sama. Selamat beraktivitas.", "literal": "kamu-adalah disambut. punya sebuah menyenangkan hari." }
+   ],
+   "notes": [
+    "⚠️ **Kalimat Inggris tidak bisa dimulai dengan \"ada\".** Bahasa Indonesia bilang \"ada kantor pos di sana\"; bahasa Inggris wajib menaruh sesuatu di posisi pelaku lebih dulu, dan yang dipakai adalah kata kosong *there*. Jadi *There is a post office there* — dua kali *there*, yang pertama tanpa arti, yang kedua berarti \"di sana\". Kalimat *Is a post office near here?* terdengar seperti bahasa telegram.",
+    "**There is/are bukan have.** Salah satu kesalahan paling sering: *In my city have many restaurants*. Kata \"ada\" dalam bahasa Indonesia menutupi dua hal berbeda — keberadaan (*there is*) dan kepemilikan (*have*). Yang benar: *In my city **there are** many restaurants.*",
+    "**Get there berarti \"sampai ke sana\".** *How do I get there?* adalah pertanyaan arah yang paling sering dipakai, jauh lebih sering daripada *Where is…?* Sebutkan tempatnya kalau perlu: *How do I get to the station?*",
+    "**Take the second street** — perhatikan bilangan tingkat dari Unit 8 muncul lagi. *The first, the second, the third turning on the left*. Petunjuk jalan hampir selalu memakainya.",
+    "**Opposite berarti di seberang, bukan berlawanan arah.** Dan ia tidak butuh *to*: *opposite the bank*, bukan *opposite to the bank*. Kata yang sering tertukar dengannya adalah *in front of* — yang berarti di depan, di sisi yang sama.",
+    "**How long does it take?** menanyakan lamanya perjalanan. Jawabannya memakai *It takes…*: *It takes ten minutes.* Kata kerja *take* di sini tidak ada hubungannya dengan mengambil — hafalkan utuh sebagai satu pola.",
+    "**You're welcome** adalah jawaban baku untuk terima kasih. Alternatifnya: *No problem*, *Sure*, *Any time*. ⚠️ Membalas *thank you* dengan diam saja terasa dingin dalam budaya berbahasa Inggris, bahkan untuk hal kecil."
+   ],
+   "grammars": [
+    {
+     "title": "There is dan there are",
+     "body": [
+      "Satu pola untuk mengatakan sesuatu **ada** di suatu tempat. Bentuknya mengikuti benda yang disebut sesudahnya, bukan tempatnya:"
+     ],
+     "table": {
+      "head": ["Bentuk", "Tunggal / tak terhitung", "Jamak"],
+      "rows": [
+       ["Positif", "*There **is** a park.* (*There's*)", "*There **are** two parks.*"],
+       ["Sangkal", "*There **isn't** a park.*", "*There **aren't** any parks.*"],
+       ["Tanya", "***Is there** a park?*", "***Are there** any parks?*"],
+       ["Jawaban pendek", "*Yes, there is. / No, there isn't.*", "*Yes, there are. / No, there aren't.*"]
+      ]
+     },
+     "after": [
+      "Perhatikan *any* pada kolom kanan baris sangkal dan tanya — persis aturan Unit 10, dan ia berlaku di sini juga.",
+      "⚠️ Kalau bendanya berderet, kata kerjanya mengikuti benda **pertama**: *There **is** a park and two shops.* Aneh, tapi begitulah kebiasaannya."
+     ]
+    },
+    {
+     "title": "Kata depan letak",
+     "body": [
+      "Tiga yang pertama adalah yang paling sering salah pilih, karena bahasa Indonesia memakai satu kata \"di\" untuk ketiganya:"
+     ],
+     "tables": [
+      {
+       "head": ["Kata", "Dipakai untuk", "Contoh"],
+       "rows": [
+        ["**in**", "di dalam ruang tertutup atau batas wilayah", "*in the room, in Jakarta, in the bag*"],
+        ["**on**", "menempel di permukaan", "*on the table, on the wall, on the second floor*"],
+        ["**at**", "satu titik atau kegiatan di tempat itu", "*at the bus stop, at home, at work, at school*"]
+       ]
+      },
+      {
+       "head": ["Kata", "Cara baca", "Arti"],
+       "rows": [
+        ["**under**", "AN-der", "di bawah"],
+        ["**behind**", "bi-HAIND", "di belakang"],
+        ["**in front of**", "in FRANT ev", "di depan"],
+        ["**next to**", "NÉKST tu", "di sebelah"],
+        ["**between**", "bi-TWIIN", "di antara (dua)"],
+        ["**opposite**", "O-pe-zit", "di seberang"],
+        ["**near**", "niir", "dekat"],
+        ["**far from**", "FAR from", "jauh dari"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ *At home*, *at work*, *at school* — tiga frasa tetap tanpa sandang, sama seperti *go to bed* di Unit 7. Menyebut *at the home* berarti kamu sedang di sebuah panti."
+     ]
+    },
+    {
+     "title": "Memberi petunjuk jalan",
+     "body": [
+      "Petunjuk arah memakai bentuk perintah: kata kerja polos tanpa pelaku sama sekali. Dalam bahasa Inggris ini tidak terdengar kasar selama nadanya ramah."
+     ],
+     "table": {
+      "head": ["English", "Bahasa Indonesia"],
+      "rows": [
+       ["*Go straight on.*", "Jalan lurus terus."],
+       ["*Turn left / right.*", "Belok kiri / kanan."],
+       ["*Take the first street on the left.*", "Ambil jalan pertama di kiri."],
+       ["*Go past the bank.*", "Lewati banknya."],
+       ["*Cross the road.*", "Seberangi jalannya."],
+       ["*It's on your right.*", "Ada di sebelah kananmu."],
+       ["*You can't miss it.*", "Pasti kelihatan."]
+      ]
+     },
+     "after": [
+      "Kalau kamu yang ditanya dan tidak tahu jawabannya: *Sorry, I'm not from here.* Kalimat ini menyelamatkan banyak percakapan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tempat-tempat di kota",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["English", "Cara baca", "English", "Cara baca"],
+     "rows": [
+      ["a street", "e striit", "a market", "e MAR-ket"],
+      ["a road", "e roud", "a supermarket", "e SUU-per-mar-ket"],
+      ["a corner", "e KOR-ner", "a post office", "e POUST o-fis"],
+      ["traffic lights", "TRÆ-fik laits", "a bank", "e bængk"],
+      ["a bus stop", "e BAS stop", "a pharmacy", "e FAR-me-si"],
+      ["a station", "e STÉI-shen", "a hotel", "e hou-TÉL"],
+      ["an airport", "en ÉR-port", "a hospital", "e HOS-pi-tel"],
+      ["a park", "e park", "a mosque", "e mosk"],
+      ["a bridge", "e brij", "a church", "e cheerch"],
+      ["a square", "e skwér", "a museum", "e myu-ZII-em"]
+     ]
+    },
+    { "type": "p", "text": "⚠️ *Hotel* dibaca dengan tekanan di belakang — hou-TÉL, bukan HO-tel. Begitu juga *museum* (myu-ZII-em) dan *police* (pe-LIIS). Kata serapan yang sudah kita kenal justru paling sering salah tekanan, karena mulut kita terlanjur hafal versi Indonesianya." },
+    {
+     "type": "kotak",
+     "title": "Bertanya arah dengan sopan",
+     "items": [
+      "*Excuse me, is there a bank near here?* — Permisi, ada bank di dekat sini?",
+      "*How do I get to the station?* — Ke stasiun lewat mana?",
+      "*Is it far?* — Jauh tidak?",
+      "*How long does it take on foot?* — Kalau jalan kaki berapa lama?",
+      "*Can you show me on the map?* — Bisa tunjukkan di peta?",
+      "*Sorry, could you say that again?* — Maaf, bisa diulang?"
+     ]
+    },
+    { "type": "p", "text": "Kalimat terakhir sama pentingnya dengan yang pertama. Petunjuk arah diucapkan cepat oleh orang yang hafal jalannya, dan meminta pengulangan sekali jauh lebih baik daripada berjalan sepuluh menit ke arah yang keliru." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "en": "there is / there are", "baca": "dhér IZ / dhér AR", "id": "ada" },
+  { "en": "to get to", "baca": "GÉT tu", "id": "sampai ke" },
+  { "en": "to turn", "baca": "teern", "id": "belok" },
+  { "en": "left / right", "baca": "léft / rait", "id": "kiri / kanan" },
+  { "en": "straight on", "baca": "stréit ON", "id": "lurus terus" },
+  { "en": "to cross", "baca": "kros", "id": "menyeberang" },
+  { "en": "near", "baca": "niir", "id": "dekat" },
+  { "en": "far", "baca": "far", "id": "jauh" },
+  { "en": "next to", "baca": "NÉKST tu", "id": "di sebelah" },
+  { "en": "opposite", "baca": "O-pe-zit", "id": "di seberang" },
+  { "en": "behind", "baca": "bi-HAIND", "id": "di belakang" },
+  { "en": "in front of", "baca": "in FRANT ev", "id": "di depan" },
+  { "en": "between", "baca": "bi-TWIIN", "id": "di antara" },
+  { "en": "under", "baca": "AN-der", "id": "di bawah" },
+  { "en": "corner", "baca": "KOR-ner", "id": "sudut / pojok" },
+  { "en": "on foot", "baca": "on FUT", "id": "jalan kaki" },
+  { "en": "how long", "baca": "hau LONG", "id": "berapa lama" },
+  { "en": "about", "baca": "e-BAUT", "id": "kira-kira" },
+  { "en": "you're welcome", "baca": "yur WÉL-kem", "id": "sama-sama" },
+  { "en": "to miss", "baca": "mis", "id": "melewatkan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan *There is*, *There are*, *Is there*, atau *Are there*.",
+   "items": [
+    "____ a bank near here?",
+    "____ two parks in my city.",
+    "____ a post office on Green Street.",
+    "____ any buses on this road?",
+    "____ a hospital opposite the market."
+   ]
+  },
+  {
+   "prompt": "Isi dengan *in*, *on*, atau *at*.",
+   "items": [
+    "The book is ____ the table.",
+    "She lives ____ Jakarta.",
+    "I'm ____ the bus stop.",
+    "My keys are ____ my bag.",
+    "He's ____ home today.",
+    "The office is ____ the third floor."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Ada taman kecil di depan kantor pos.",
+    "Tidak ada bus di jalan itu.",
+    "Belok kiri di lampu merah.",
+    "Banknya di seberang pasar.",
+    "Berapa lama kalau jalan kaki?"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat berikut. Semuanya mengandung satu kesalahan khas.",
+   "items": [
+    "In my city have many restaurants.",
+    "Is a bank near here?",
+    "There is two parks in this street.",
+    "The post office is opposite to the bank.",
+    "I am at the home."
+   ]
+  }
+ ],
+ "answers": [
+  "Is there — There are — There is — Are there — There is",
+  "on — in — at — in — at — on",
+  "There is a small park in front of the post office. — There aren't any buses on that street. — Turn left at the traffic lights. — The bank is opposite the market. — How long does it take on foot?",
+  "In my city there are many restaurants. — Is there a bank near here? — There are two parks in this street. — The post office is opposite the bank. — I am at home."
+ ]
+}

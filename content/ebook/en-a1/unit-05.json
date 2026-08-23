@@ -1,0 +1,553 @@
+{
+ "title": "Ini apa namanya?",
+ "title_target": "What's this in English?",
+ "goal": "Menanyakan nama benda, dan memakai dua kata terkecil yang paling sering hilang dari kalimat orang Indonesia: *a* dan *the*.",
+ "bekal": [
+  "menanyakan nama benda (*What's this in English?*)",
+  "memilih antara *a* dan *an*",
+  "tahu kapan memakai *the* dan kapan tidak memakai apa-apa",
+  "menunjuk benda dekat dan jauh (*this*, *that*, *these*, *those*)"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — In the classroom",
+   "intro": "Hari pertama kelas. Budi kehabisan alat tulis dan tidak tahu satu pun namanya dalam bahasa Inggris.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Excuse me, what's this in English?",
+     "id": "Permisi, ini bahasa Inggrisnya apa?",
+     "literal": "maafkan saya, apa-adalah ini dalam Inggris?"
+    },
+    {
+     "speaker": "Teacher:",
+     "text": "That's an eraser. And this one is a pencil.",
+     "id": "Itu penghapus. Dan yang ini pensil.",
+     "literal": "itu-adalah sebuah penghapus. dan ini satu adalah sebuah pensil."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "An eraser. How do you spell it?",
+     "id": "Penghapus. Ejaannya bagaimana?",
+     "literal": "sebuah penghapus. bagaimana apakah kamu mengeja itu?"
+    },
+    {
+     "speaker": "Teacher:",
+     "text": "E-R-A-S-E-R. Do you have a pen?",
+     "id": "E-R-A-S-E-R. Kamu punya pulpen?",
+     "literal": "E-R-A-S-E-R. apakah kamu punya sebuah pulpen?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "No, I don't. But I have a pencil in my bag.",
+     "id": "Tidak. Tapi saya punya pensil di tas saya.",
+     "literal": "tidak, saya tidak. tetapi saya punya sebuah pensil di punyaku tas."
+    },
+    {
+     "speaker": "Teacher:",
+     "text": "Take the pen on my desk. It's for you.",
+     "id": "Ambil pulpen di meja saya. Untuk kamu.",
+     "literal": "ambil itu pulpen di punyaku meja. itu-adalah untuk kamu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thank you. And what are those on the wall?",
+     "id": "Terima kasih. Dan yang di dinding itu apa?",
+     "literal": "terima kasih. dan apa adalah itu-jamak di itu dinding?"
+    },
+    {
+     "speaker": "Teacher:",
+     "text": "Those are maps. This is a map of Indonesia, and that one is a map of the world.",
+     "id": "Itu peta. Ini peta Indonesia, dan yang itu peta dunia.",
+     "literal": "itu-jamak adalah peta-peta. ini adalah sebuah peta dari Indonesia, dan itu satu adalah sebuah peta dari itu dunia."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "The map of Indonesia is very big!",
+     "id": "Peta Indonesianya besar sekali!",
+     "literal": "itu peta dari Indonesia adalah sangat besar!"
+    },
+    {
+     "speaker": "Teacher:",
+     "text": "Yes, it's a big country. Now, open your books at page ten.",
+     "id": "Ya, negara besar. Sekarang, buka bukumu di halaman sepuluh.",
+     "literal": "ya, itu-adalah sebuah besar negara. sekarang, buka punyamu buku-buku pada halaman sepuluh."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sorry, which page?",
+     "id": "Maaf, halaman berapa?",
+     "literal": "maaf, yang-mana halaman?"
+    },
+    {
+     "speaker": "Teacher:",
+     "text": "Page ten. One zero.",
+     "id": "Halaman sepuluh. Satu nol.",
+     "literal": "halaman sepuluh. satu nol."
+    }
+   ],
+   "notes": [
+    "**Bahasa Indonesia tidak punya a dan the, dan itulah masalahnya.** Karena tak ada padanannya, otak kita cenderung melewatkannya sama sekali: *I have pencil*, *Open book*. Bagi penutur Inggris, kalimat tanpa kata sandang terdengar seperti kabar telegram — dimengerti, tapi terus-menerus terasa timpang. Dua kata terkecil ini adalah tanda paling jelas antara bahasa Inggris yang benar dan bahasa Inggris yang 'kira-kira'.",
+    "**An eraser, bukan a eraser.** Yang menentukan bukan hurufnya, melainkan **bunyi pertamanya**. Karena *eraser* dimulai bunyi vokal, sandangnya *an*. Ini juga sebabnya *an hour* (h-nya bisu, yang terdengar \"au-er\") dan *a university* (u-nya berbunyi \"yu\", yang sebenarnya konsonan).",
+    "**Take the pen on my desk** — kenapa *the*, bukan *a*? Karena gurunya menunjuk pulpen **tertentu** yang keduanya sudah tahu letaknya. Sedangkan *Do you have a pen?* memakai *a* karena pulpen apa saja boleh. Perbedaan itulah seluruh isi pelajaran hari ini.",
+    "**A map of Indonesia**, tapi *a map of **the** world*. Nama negara tidak memakai *the*, sedangkan *the world*, *the sun*, dan *the moon* selalu memakainya — karena benda-benda itu cuma ada satu.",
+    "**Which page?** bukan *what page?* Kalau pilihannya terbatas dan bisa dihitung — halaman, warna, ukuran, jurusan — bahasa Inggris memakai *which*. Kalau pilihannya terbuka lebar, *what*. Keduanya sering tertukar dan jarang berakibat fatal, tapi *which* terdengar lebih tepat.",
+    "**Your books, bukan your book.** Guru itu bicara pada seluruh kelas, jadi bukunya banyak. Bahasa Inggris menghitung, sekalipun konteksnya sudah jelas — kebiasaan yang butuh waktu paling lama untuk dipasang di kepala penutur Indonesia.",
+    "**No, I don't** — jawaban pendek untuk pertanyaan yang memakai *do*. Bandingkan dengan Unit 1: pertanyaan dengan *are* dijawab *No, I'm not*. Jawabannya selalu memantulkan kata bantunya. Polanya dibedah tuntas di Unit 9."
+   ],
+   "grammars": [
+    {
+     "title": "A atau an — yang menentukan bunyinya",
+     "body": [
+      "*A* dan *an* artinya sama persis: \"sebuah\", \"seorang\", \"satu\". Yang membedakan hanyalah bunyi kata sesudahnya:"
+     ],
+     "table": {
+      "head": [
+       "Sandang",
+       "Dipakai kalau kata berikutnya…",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**a**",
+        "dimulai bunyi konsonan",
+        "*a book*, *a pen*, *a teacher*, *a house*"
+       ],
+       [
+        "**an**",
+        "dimulai bunyi vokal (a, e, i, o, u)",
+        "*an apple*, *an eraser*, *an office*, *an umbrella*"
+       ],
+       [
+        "**a**",
+        "u yang berbunyi \"yu\"",
+        "*a university*, *a uniform*, *a European*"
+       ],
+       [
+        "**an**",
+        "h yang tidak dibunyikan",
+        "*an hour*, *an honest man*"
+       ]
+      ]
+     },
+     "after": [
+      "Dua baris terakhir adalah alasan kenapa aturan ini soal **bunyi**, bukan huruf. Ucapkan katanya pelan-pelan; kalau lidahmu tersandung antara sandang dan katanya, kemungkinan besar kamu butuh *an*.",
+      "⚠️ *A* dan *an* hanya untuk benda **tunggal yang bisa dihitung**. Tidak ada *a books* (jamak) dan tidak ada *a water* (tak terhitung — dibahas di Unit 10)."
+     ]
+    },
+    {
+     "title": "A atau the — baru disebut, atau sudah jelas yang mana",
+     "body": [
+      "Bedanya bukan soal jauh-dekat atau tunggal-jamak, melainkan soal **apakah lawan bicaramu sudah tahu benda yang mana**:"
+     ],
+     "table": {
+      "head": [
+       "Pakai",
+       "Kalau",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**a / an**",
+        "benda disebut **pertama kali**, atau mana saja boleh",
+        "*I have **a** question.*"
+       ],
+       [
+        "**the**",
+        "keduanya sudah tahu **yang mana**",
+        "***The** question is difficult.*"
+       ],
+       [
+        "**the**",
+        "bendanya cuma ada satu di dunia",
+        "*the sun, the moon, the world*"
+       ],
+       [
+        "**the**",
+        "bendanya cuma ada satu di tempat itu",
+        "*Close **the** door.* (pintu ruangan ini)"
+       ],
+       [
+        "— (tanpa sandang)",
+        "benda jamak yang dibicarakan **umum**",
+        "*I like **books**.*"
+       ],
+       [
+        "— (tanpa sandang)",
+        "nama orang, kota, negara, bahasa",
+        "*Budi, Jakarta, Indonesia, English*"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan pola dua baris pertama, karena begitulah cerita mengalir dalam bahasa Inggris: benda **masuk** ke percakapan dengan *a*, lalu **tinggal** di dalamnya dengan *the*. *I have a car. The car is red.* Dalam bahasa Indonesia perpindahan yang sama dilakukan dengan kata \"itu\" — \"saya punya mobil. Mobilnya merah.\"",
+      "⚠️ Dua baris terakhir sama pentingnya: **jangan** memasang *the* di depan sesuatu yang kamu maksud secara umum. *I like the music* berarti \"saya suka musik itu\" (yang sedang diputar). Yang kamu maksud hampir pasti *I like music*.",
+      "⚠️ Bahasa jangan pakai *the*: *I study English*, bukan *the English*."
+     ]
+    },
+    {
+     "title": "This, that, these, those",
+     "body": [
+      "Empat kata penunjuk, dibedakan oleh jarak dan jumlah:"
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Cara baca",
+       "Jarak",
+       "Jumlah",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**this**",
+        "dhis",
+        "dekat",
+        "satu",
+        "*This is my pen.*"
+       ],
+       [
+        "**that**",
+        "dhæt",
+        "jauh",
+        "satu",
+        "*That is your book.*"
+       ],
+       [
+        "**these**",
+        "dhiiz",
+        "dekat",
+        "banyak",
+        "*These are my pens.*"
+       ],
+       [
+        "**those**",
+        "dhouz",
+        "jauh",
+        "banyak",
+        "*Those are maps.*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *This* (dhis) dan *these* (dhiiz) hampir tak terbedakan di telinga pemula, padahal yang satu tunggal dan yang satu jamak. Kuncinya di panjang vokalnya — dan pada kata kerjanya: *this **is*** melawan *these **are***. Kalau telingamu ragu, dengarkan kata keduanya.",
+      "Keempatnya juga bisa berdiri di depan benda, bukan cuma sendirian: *this book*, *that man*, *these students*, *those maps*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Benda di sekitarmu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "English",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "a book",
+       "e buk",
+       "buku"
+      ],
+      [
+       "a pen",
+       "e pén",
+       "pulpen"
+      ],
+      [
+       "a pencil",
+       "e PÉN-sel",
+       "pensil"
+      ],
+      [
+       "an eraser",
+       "en i-RÉI-ser",
+       "penghapus"
+      ],
+      [
+       "a notebook",
+       "e NOUT-buk",
+       "buku catatan"
+      ],
+      [
+       "a bag",
+       "e bæg",
+       "tas"
+      ],
+      [
+       "a table",
+       "e TÉI-bel",
+       "meja"
+      ],
+      [
+       "a chair",
+       "e chér",
+       "kursi"
+      ],
+      [
+       "a desk",
+       "e désk",
+       "meja tulis"
+      ],
+      [
+       "a door",
+       "e dor",
+       "pintu"
+      ],
+      [
+       "a window",
+       "e WIN-dou",
+       "jendela"
+      ],
+      [
+       "a wall",
+       "e wool",
+       "dinding"
+      ],
+      [
+       "a phone",
+       "e foun",
+       "telepon"
+      ],
+      [
+       "a computer",
+       "e kem-PYUU-ter",
+       "komputer"
+      ],
+      [
+       "a map",
+       "e mæp",
+       "peta"
+      ],
+      [
+       "a page",
+       "e péij",
+       "halaman"
+      ],
+      [
+       "a key",
+       "e kii",
+       "kunci"
+      ],
+      [
+       "a wallet",
+       "e WO-let",
+       "dompet"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kalimat yang paling berguna di kelas bahasa"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "English",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*What's this in English?*",
+       "Ini bahasa Inggrisnya apa?"
+      ],
+      [
+       "*How do you say \"tas\" in English?*",
+       "Bahasa Inggrisnya \"tas\" apa?"
+      ],
+      [
+       "*How do you spell it?*",
+       "Ejaannya bagaimana?"
+      ],
+      [
+       "*What does \"desk\" mean?*",
+       "\"Desk\" itu apa artinya?"
+      ],
+      [
+       "*Can you repeat that, please?*",
+       "Bisa diulang?"
+      ],
+      [
+       "*I don't understand.*",
+       "Saya tidak mengerti."
+      ],
+      [
+       "*Which page?*",
+       "Halaman berapa?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Tujuh kalimat ini sebaiknya dihafal utuh minggu ini juga. Semuanya berfungsi sebagai alat, bukan sebagai bahan pelajaran: selama kamu bisa mengucapkan ketujuhnya, kamu tidak akan pernah benar-benar mandek di tengah percakapan."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "en": "a / an",
+   "baca": "e / en",
+   "id": "sebuah / seorang"
+  },
+  {
+   "en": "the",
+   "baca": "dhe / dhi",
+   "id": "(penunjuk benda tertentu)"
+  },
+  {
+   "en": "this / these",
+   "baca": "dhis / dhiiz",
+   "id": "ini (tunggal / jamak)"
+  },
+  {
+   "en": "that / those",
+   "baca": "dhæt / dhouz",
+   "id": "itu (tunggal / jamak)"
+  },
+  {
+   "en": "which",
+   "baca": "wich",
+   "id": "yang mana"
+  },
+  {
+   "en": "to take",
+   "baca": "téik",
+   "id": "mengambil"
+  },
+  {
+   "en": "to open",
+   "baca": "OU-pen",
+   "id": "membuka"
+  },
+  {
+   "en": "to close",
+   "baca": "klouz",
+   "id": "menutup"
+  },
+  {
+   "en": "to say",
+   "baca": "séi",
+   "id": "mengatakan"
+  },
+  {
+   "en": "to mean",
+   "baca": "miin",
+   "id": "berarti"
+  },
+  {
+   "en": "to understand",
+   "baca": "an-der-STÆND",
+   "id": "mengerti"
+  },
+  {
+   "en": "book",
+   "baca": "buk",
+   "id": "buku"
+  },
+  {
+   "en": "pen",
+   "baca": "pén",
+   "id": "pulpen"
+  },
+  {
+   "en": "bag",
+   "baca": "bæg",
+   "id": "tas"
+  },
+  {
+   "en": "door",
+   "baca": "dor",
+   "id": "pintu"
+  },
+  {
+   "en": "wall",
+   "baca": "wool",
+   "id": "dinding"
+  },
+  {
+   "en": "map",
+   "baca": "mæp",
+   "id": "peta"
+  },
+  {
+   "en": "page",
+   "baca": "péij",
+   "id": "halaman"
+  },
+  {
+   "en": "world",
+   "baca": "weerld",
+   "id": "dunia"
+  },
+  {
+   "en": "for",
+   "baca": "for",
+   "id": "untuk"
+  },
+  {
+   "en": "hour",
+   "baca": "AU-er",
+   "id": "jam (lamanya)"
+  },
+  {
+   "en": "apple",
+   "baca": "Æ-pel",
+   "id": "apel"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan *a* atau *an*.",
+   "items": [
+    "____ book",
+    "____ eraser",
+    "____ university",
+    "____ hour",
+    "____ umbrella",
+    "____ teacher"
+   ]
+  },
+  {
+   "prompt": "Isi dengan *a*, *an*, atau *the*.",
+   "items": [
+    "I have ____ question.",
+    "Sorry, ____ question is very difficult.",
+    "Please close ____ door.",
+    "She is ____ doctor.",
+    "Look at ____ moon!",
+    "He is ____ honest man."
+   ]
+  },
+  {
+   "prompt": "Isi dengan *this*, *that*, *these*, atau *those*.",
+   "items": [
+    "____ is my pen (di tanganku).",
+    "____ are maps (di dinding seberang).",
+    "____ are my books (di mejaku).",
+    "____ is your bag (di kursi seberang)."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Ini bahasa Inggrisnya apa?",
+    "Saya punya pensil di tas saya.",
+    "Itu peta dunia.",
+    "Saya suka musik.",
+    "Saya tidak mengerti."
+   ]
+  }
+ ],
+ "answers": [
+  "a — an — a — an — an — a",
+  "a — the — the — a — the — an",
+  "This — Those — These — That",
+  "What's this in English? — I have a pencil in my bag. — That is a map of the world. — I like music. — I don't understand."
+ ]
+}
