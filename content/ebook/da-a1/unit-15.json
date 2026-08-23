@@ -1,0 +1,240 @@
+{
+ "title": "Kata sifat dan kepastian ganda",
+ "title_target": "Hvordan ser han ud?",
+ "goal": "Memakai kata sifat dalam ketiga bentuknya, menguasai kepastian ganda, dan menggambarkan orang dan benda.",
+ "bekal": [
+  "memilih antara *stor*, *stort*, dan *store*",
+  "memakai kepastian ganda: *den store bil*, bukan *den store bilen*",
+  "membandingkan dengan *-ere* dan *-est*"
+ ],
+ "wave": "Ulangi **unit 13** dulu: buat sepuluh kalimat memakai kelima kata kerja bantu, lima di antaranya menyangkal. Periksa lagi arti *må ikke*.",
+ "dialogs": [
+  {
+   "title": "Dialog — Han står ved indgangen",
+   "intro": "Mette akan menjemput sepupunya di stasiun, tapi belum pernah bertemu. Ia menelepon Budi yang sudah di sana.",
+   "lines": [
+    { "speaker": "Mette:", "text": "Budi, kan du se ham? Han skulle stå ved indgangen.", "id": "Budi, kelihatan dia? Katanya berdiri di pintu masuk.", "literal": "Budi, bisa kamu melihat dia? dia harus-lampau berdiri dekat pintu-masuk-itu." },
+    { "speaker": "Budi:", "text": "Hvordan ser han ud?", "id": "Bentuknya seperti apa?", "literal": "bagaimana melihat dia keluar?" },
+    { "speaker": "Mette:", "text": "Han er høj og tynd. Og han har en rød jakke på.", "id": "Dia tinggi dan kurus. Pakai jaket merah.", "literal": "dia adalah tinggi dan kurus. dan dia punya satu merah jaket pada." },
+    { "speaker": "Budi:", "text": "Der står to høje mænd. Én med rød jakke, én med sort.", "id": "Ada dua laki-laki tinggi. Satu jaket merah, satu hitam.", "literal": "di-sana berdiri dua tinggi laki-laki. satu dengan merah jaket, satu dengan hitam." },
+    { "speaker": "Mette:", "text": "Har den røde jakke en stor rygsæk?", "id": "Yang jaket merah bawa ransel besar?", "literal": "punya itu merah jaket satu besar ransel?" },
+    { "speaker": "Budi:", "text": "Ja! En kæmpestor grøn rygsæk.", "id": "Ya! Ransel hijau besar sekali.", "literal": "ya! satu raksasa-besar hijau ransel." },
+    { "speaker": "Mette:", "text": "Det er ham. Han har altid den grimmeste rygsæk i familien.", "id": "Itu dia. Ranselnya selalu yang paling jelek di keluarga.", "literal": "itu adalah dia. dia punya selalu itu paling-jelek ransel di keluarga-itu." },
+    { "speaker": "Budi:", "text": "Han ser meget venlig ud. Skal jeg sige noget?", "id": "Kelihatannya ramah. Perlu saya sapa?", "literal": "dia melihat sangat ramah keluar. harus saya mengatakan sesuatu?" },
+    { "speaker": "Mette:", "text": "Ja, sig at hans kusine kommer om fem minutter.", "id": "Ya, bilang sepupunya datang lima menit lagi.", "literal": "ya, katakan bahwa milik-dia sepupu datang dalam lima menit." },
+    { "speaker": "Budi:", "text": "Fem minutter i dansk tid, eller fem minutter i rigtig tid?", "id": "Lima menit waktu Denmark, atau lima menit sungguhan?", "literal": "lima menit di denmark waktu, atau lima menit di betul waktu?" },
+    { "speaker": "Mette:", "text": "Frækt sagt. Fem rigtige minutter.", "id": "Berani juga. Lima menit sungguhan.", "literal": "kurang-ajar dikatakan. lima betul menit." }
+   ],
+   "notes": [
+    "**Hvordan ser han ud?** = \"seperti apa penampilannya?\" *At se ud* adalah kata kerja bersambung, dan bagian *ud*-nya berdiri jauh di belakang: *Han ser meget venlig **ud**.* Semua yang menerangkan menyelip di antaranya.",
+    "**Han har en rød jakke på** — *at have på* = mengenakan. Sama polanya: *på* terlempar ke ujung. Bandingkan *at tage på* (memakai, sebagai kegiatan): *Jeg tager min jakke på.*",
+    "**Den røde jakke** — perhatikan tiga hal sekaligus: ada *den* di depan, kata sifatnya berakhiran *-e*, dan *jakke* **tanpa** ekor *-n*. Inilah kepastian ganda, dan ia inti unit ini.",
+    "**Kæmpestor** = besar sekali. Awalan *kæmpe-* (raksasa) ditempelkan ke kata sifat mana pun untuk melebih-lebihkan: *kæmpestor*, *kæmpegodt*, *kæmpedyrt*. Sangat sehari-hari dan sangat berguna.",
+    "**Den grimmeste** = yang paling jelek. Bentuk paling selalu memakai *den/det/de* di depan dan berakhiran *-e*: *den største*, *det bedste*, *de flotteste*.",
+    "**Sig** adalah bentuk perintah dari *at sige* — jangan tertukar dengan *sig* kata pantul dari unit 9. Dua kata yang ditulis sama persis, artinya berjauhan, dan konteks yang memisahkan.",
+    "**Frækt sagt** = \"berani juga bilang begitu\". *Fræk* berarti nakal, kurang ajar, kadang genit — kata dengan rentang yang lebar dan sering dipakai sambil bercanda.",
+    "**Dansk tid** — lelucon dalam negeri. Justru kebalikannya yang benar: waktu Denmark berarti tepat waktu. Budi sedang bercanda dengan membaliknya."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga bentuk kata sifat",
+     "body": [
+      "Kata sifat bahasa Denmark punya tiga bentuk saja, dan aturan memilihnya bisa diringkas jadi tiga baris."
+     ],
+     "table": {
+      "head": ["Keadaan", "Bentuk", "Contoh"],
+      "rows": [
+       ["menerangkan en-ord tunggal tak tentu", "**dasar**", "en **stor** bil / Bilen er **stor**."],
+       ["menerangkan et-ord tunggal tak tentu", "dasar + **t**", "et **stort** hus / Huset er **stort**."],
+       ["jamak — semuanya", "dasar + **e**", "**store** biler / Bilerne er **store**."],
+       ["sesudah den/det/de", "dasar + **e**", "**den store** bil"],
+       ["sesudah min/din/hans/…", "dasar + **e**", "**min store** bil"],
+       ["sesudah nama orang berakhiran -s", "dasar + **e**", "**Mettes store** bil"]
+      ]
+     },
+     "after": [
+      "Tiga baris terakhir bisa diringkas jadi satu kalimat: **kalau kata bendanya sudah pasti, kata sifatnya selalu -e.** Tidak peduli tunggal atau jamak, en-ord atau et-ord.",
+      "Kekecualian yang perlu dihafal: kata sifat yang sudah berakhiran **-t**, **-sk**, atau **-ed** tidak menambah *t* lagi — *et sort bord*, *et dansk hus*, *et lukket vindue*. Kata sifat berakhiran vokal juga tidak: *et blå hus*, *et nyt hus* (perkecualian dari perkecualian — *ny* memang menambah *t*).",
+      "Kata sifat berakhiran **-el, -en, -er** membuang huruf *e* di tengah saat ditambah *-e*: *gammel → gamle*, *sulten → sultne*, *lækker → lækre*."
+     ]
+    },
+    {
+     "title": "Kepastian ganda",
+     "body": [
+      "Ini bentuk yang tidak dipunyai bahasa Inggris maupun Indonesia, dan ia sering terasa berlebihan pada awalnya.",
+      "Aturannya: **begitu ada kata sifat, kata sandang pindah ke depan sebagai kata terpisah, dan kata bendanya kehilangan ekornya.**"
+     ],
+     "table": {
+      "head": ["Tanpa kata sifat", "Dengan kata sifat", "Arti"],
+      "rows": [
+       ["bil**en**", "**den** stor**e** bil", "mobil besar itu"],
+       ["hus**et**", "**det** stor**e** hus", "rumah besar itu"],
+       ["bil**erne**", "**de** stor**e** biler", "mobil-mobil besar itu"],
+       ["jakke**n**", "**den** rød**e** jakke", "jaket merah itu"],
+       ["barn**et**", "**det** lille barn", "anak kecil itu"]
+      ]
+     },
+     "after": [
+      "⚠️ **Den store bilen** salah. Ekornya dilepas begitu *den* muncul. Ini kebalikan dari bahasa Norwegia dan Swedia yang justru memasang keduanya — jadi kalau kamu pernah menyentuh bahasa itu, hati-hati.",
+      "Kalau kata bendanya tetap tak tentu, tidak ada perubahan sama sekali: *en stor bil* (sebuah mobil besar).",
+      "Baris terakhir memperlihatkan *lille* tetap *lille* — ia satu dari sedikit kata sifat yang tidak pernah menambah apa-apa di bentuk tunggal. Bentuk jamaknya berganti kata: *små*."
+     ]
+    },
+    {
+     "title": "Membandingkan",
+     "body": [
+      "Dua akhiran, dan sekelompok kecil kata yang membangkang."
+     ],
+     "table": {
+      "head": ["Dasar", "Lebih", "Paling", "Arti"],
+      "rows": [
+       ["stor", "større", "størst", "besar"],
+       ["billig", "billigere", "billigst", "murah"],
+       ["ung", "yngre", "yngst", "muda"],
+       ["god", "**bedre**", "**bedst**", "baik"],
+       ["dårlig", "**værre**", "**værst**", "buruk"],
+       ["lille", "**mindre**", "**mindst**", "kecil"],
+       ["gammel", "**ældre**", "**ældst**", "tua"],
+       ["mange", "**flere**", "**flest**", "banyak"],
+       ["interessant", "**mere** interessant", "**mest** interessant", "menarik"]
+      ]
+     },
+     "after": [
+      "Kata sifat panjang — biasanya lebih dari dua suku kata dan berasal dari bahasa asing — memakai *mere* dan *mest*, bukan akhiran.",
+      "Kata pembandingnya **end**: *Han er højere **end** mig.* Untuk kesamaan: *lige så høj **som** mig* (sama tinggi dengan saya).",
+      "Bentuk paling selalu memakai *den/det/de* kalau ia menerangkan kata benda: *den bedste bog*. Kalau berdiri sendiri sesudah *er*, ia telanjang: *Den bog er bedst.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menggambarkan orang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Dansk", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["høj / lav", "hoi / lau", "tinggi / pendek"],
+      ["tynd / tyk", "tön / tük", "kurus / gemuk"],
+      ["ung / gammel", "ong / GAM-el", "muda / tua"],
+      ["smuk / flot", "smok / flot", "cantik / ganteng, keren"],
+      ["grim", "grim", "jelek"],
+      ["venlig / sød", "VÈN-li / södh", "ramah / manis, baik"],
+      ["sjov / kedelig", "sjou / KÈ-dhe-li", "lucu / membosankan"],
+      ["stille / larmende", "STI-le", "pendiam / berisik"],
+      ["dygtig", "DÖG-ti", "cakap, pandai"],
+      ["doven / flittig", "DOU-en / FLI-ti", "malas / rajin"],
+      ["et hår", "èt hor", "rambut"],
+      ["blå / brune øjne", "blo / BRU-ne OI-ne", "mata biru / cokelat"],
+      ["et skæg", "èt skèg", "jenggot"],
+      ["briller", "BRI-la", "kacamata"]
+     ]
+    },
+    { "type": "p", "text": "*Sød* dipakai jauh lebih luas daripada \"manis\" dalam bahasa Indonesia: untuk orang (baik hati), untuk anak (menggemaskan), untuk rasa (manis), dan untuk perbuatan (*hvor sødt af dig!* = baik sekali kamu)." },
+    { "type": "p", "text": "Warna: *rød* (merah), *blå* (biru), *grøn* (hijau), *gul* (kuning), *sort* (hitam), *hvid* (putih), *grå* (abu-abu), *brun* (cokelat), *lyserød* (merah muda), *lilla* (ungu). Perhatikan *sort*, *hvid*, dan *lilla* tidak menambah *t* untuk et-ord." }
+   ]
+  },
+  {
+   "title": "Latihan mata: satu kata sifat, empat keadaan",
+   "blocks": [
+    { "type": "p", "text": "Baca tiap baris utuh dari kiri ke kanan, keras-keras. Ini latihan yang paling cepat memindahkan aturan ini ke telinga." },
+    {
+     "type": "tabel",
+     "head": ["en-ord", "et-ord", "Jamak", "Dengan den/det/de"],
+     "rows": [
+      ["en stor bil", "et stort hus", "store biler", "den store bil"],
+      ["en ny bog", "et nyt bord", "nye bøger", "det nye bord"],
+      ["en gammel mand", "et gammelt hus", "gamle mænd", "den gamle mand"],
+      ["en rød jakke", "et rødt æble", "røde jakker", "den røde jakke"],
+      ["en dansk film", "et dansk hus", "danske film", "den danske film"],
+      ["en sort taske", "et sort bord", "sorte tasker", "den sorte taske"],
+      ["en lille by", "et lille hus", "små byer", "den lille by"],
+      ["en god ven", "et godt svar", "gode venner", "den gode ven"]
+     ]
+    },
+    { "type": "kotak", "title": "Kesalahan yang paling sering", "items": [
+      "**Lupa -t untuk et-ord.** *Et stor hus* — ini kesalahan nomor satu, karena telinga tidak selalu mendengar bedanya.",
+      "**Memasang ekor sesudah den.** *Den store bilen* — bawaan dari bahasa Norwegia atau dari logika \"lebih pasti lebih baik\".",
+      "**Lupa -e di jamak.** *To stor huse* — mudah terlewat waktu bicara cepat.",
+      "Ketiganya tidak menghalangi pengertian, tapi ketiganya juga terdengar jelas. Kabar baiknya: ketiganya hilang dengan latihan tabel di atas, bukan dengan membaca aturannya berulang kali."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "da": "at se ud", "baca": "at sè UDH", "id": "kelihatan, tampak" },
+  { "da": "at have på", "baca": "at ha PO", "id": "mengenakan" },
+  { "da": "at tage på", "baca": "at TA PO", "id": "memakai (mengenakan)" },
+  { "da": "høj / lav", "baca": "hoi / lau", "id": "tinggi / rendah" },
+  { "da": "tynd / tyk", "baca": "tön / tük", "id": "kurus / tebal, gemuk" },
+  { "da": "smuk", "baca": "smok", "id": "cantik, indah" },
+  { "da": "flot", "baca": "flot", "id": "keren, tampan" },
+  { "da": "grim", "baca": "grim", "id": "jelek" },
+  { "da": "venlig", "baca": "VÈN-li", "id": "ramah" },
+  { "da": "sød", "baca": "södh", "id": "manis; baik hati" },
+  { "da": "sjov", "baca": "sjou", "id": "lucu, seru" },
+  { "da": "kedelig", "baca": "KÈ-dhe-li", "id": "membosankan" },
+  { "da": "dygtig", "baca": "DÖG-ti", "id": "cakap, pandai" },
+  { "da": "en indgang", "baca": "èn IN-gang", "id": "pintu masuk" },
+  { "da": "en rygsæk", "baca": "èn RÜG-sèk", "id": "ransel" },
+  { "da": "en kusine", "baca": "èn ku-SI-ne", "id": "sepupu perempuan" },
+  { "da": "bedre / bedst", "baca": "BÈ-dre / bèst", "id": "lebih baik / terbaik" },
+  { "da": "større / størst", "baca": "STÖR-e / störst", "id": "lebih besar / terbesar" },
+  { "da": "end", "baca": "èn", "id": "daripada" },
+  { "da": "lige så … som", "baca": "LI-e so … som", "id": "sama … dengan" },
+  { "da": "kæmpe-", "baca": "KÈM-be", "id": "raksasa, sangat" },
+  { "da": "fræk", "baca": "frèk", "id": "nakal, berani" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan bentuk kata sifat yang tepat.",
+   "items": [
+    "en ____ bil (stor)",
+    "et ____ hus (stor)",
+    "tre ____ huse (stor)",
+    "den ____ bil (stor)",
+    "et ____ bord (ny)",
+    "de ____ bøger (god)"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi bentuk pasti dengan kata sifat.",
+   "items": [
+    "en rød jakke → ____",
+    "et gammelt hus → ____",
+    "to små byer → ____",
+    "en god ven → ____",
+    "et sort bord → ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Denmark.",
+   "items": [
+    "Dia tinggi dan kurus.",
+    "Dia pakai jaket merah.",
+    "Rumah besar itu mahal.",
+    "Buku ini lebih bagus daripada yang itu.",
+    "Dia yang paling muda di keluarga.",
+    "Seperti apa penampilannya?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ud / hvordan / han / ser / ?",
+    "tynd / høj / han / og / er",
+    "jakke / rød / har / en / han / på",
+    "hus / det / dyrt / store / er",
+    "familien / er / yngste / hun / i / den"
+   ]
+  }
+ ],
+ "answers": [
+  "stor — stort — store — store — nyt — gode",
+  "den røde jakke — det gamle hus — de små byer — den gode ven — det sorte bord",
+  "Han er høj og tynd. — Han har en rød jakke på. — Det store hus er dyrt. — Denne bog er bedre end den der. — Hun er den yngste i familien. — Hvordan ser han ud?",
+  "Hvordan ser han ud? — Han er høj og tynd. — Han har en rød jakke på. — Det store hus er dyrt. — Hun er den yngste i familien."
+ ]
+}

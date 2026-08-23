@@ -1,0 +1,219 @@
+{
+ "title": "Jam berapa sekarang?",
+ "title_target": "Hvad er klokken?",
+ "goal": "Membaca jam dalam bahasa Denmark, menyebut hari dan bulan, dan membuat janji temu.",
+ "bekal": [
+  "membaca jam dengan *kvart over*, *halv*, dan *kvart i*",
+  "menyebut hari, bulan, dan bagian hari",
+  "membuat dan menerima janji temu"
+ ],
+ "wave": "Ulangi **unit 6** dulu: bacakan lima harga dan satu nomor telepon dalam bahasa Denmark, keras-keras, tanpa melihat tabel.",
+ "dialogs": [
+  {
+   "title": "Dialog — En aftale i kalenderen",
+   "intro": "Budi dan Mette mengatur waktu untuk belajar bersama.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Skal vi læse sammen i denne uge?", "id": "Mau belajar bareng minggu ini?", "literal": "harus kami membaca bersama di ini minggu?" },
+    { "speaker": "Mette:", "text": "Gerne! Hvornår passer det dig?", "id": "Boleh! Kapan kamu bisa?", "literal": "senang-hati! kapan cocok itu kamu?" },
+    { "speaker": "Budi:", "text": "Onsdag eftermiddag? Klokken to?", "id": "Rabu siang? Jam dua?", "literal": "rabu sore? jam-itu dua?" },
+    { "speaker": "Mette:", "text": "Onsdag kan jeg ikke. Jeg har time til fire.", "id": "Rabu saya tidak bisa. Saya ada kelas sampai jam empat.", "literal": "rabu bisa saya tidak. saya punya jam sampai empat." },
+    { "speaker": "Budi:", "text": "Hvad med torsdag? Kvart over fem?", "id": "Kalau Kamis? Jam lima lewat seperempat?", "literal": "apa dengan kamis? seperempat atas lima?" },
+    { "speaker": "Mette:", "text": "Det passer fint. Hvor mødes vi?", "id": "Pas sekali. Ketemu di mana?", "literal": "itu cocok bagus. di-mana bertemu kami?" },
+    { "speaker": "Budi:", "text": "På biblioteket. Det åbner klokken otte og lukker klokken syv.", "id": "Di perpustakaan. Buka jam delapan, tutup jam tujuh.", "literal": "pada perpustakaan-itu. ia membuka jam-itu delapan dan menutup jam-itu tujuh." },
+    { "speaker": "Mette:", "text": "Perfekt. Men jeg kommer måske lidt for sent.", "id": "Sempurna. Tapi mungkin saya agak telat.", "literal": "sempurna. tapi saya datang mungkin sedikit terlalu terlambat." },
+    { "speaker": "Budi:", "text": "Hvor sent?", "id": "Telat berapa?", "literal": "berapa terlambat?" },
+    { "speaker": "Mette:", "text": "Halv seks, måske. Bussen er aldrig til tiden.", "id": "Setengah enam, mungkin. Busnya tidak pernah tepat waktu.", "literal": "setengah enam, mungkin. bus-itu adalah tidak-pernah ke waktu-itu." },
+    { "speaker": "Budi:", "text": "Det er i orden. Vi ses på torsdag!", "id": "Tidak apa-apa. Sampai ketemu Kamis!", "literal": "itu adalah dalam urutan. kami terlihat pada kamis!" }
+   ],
+   "notes": [
+    "**Halv seks = 05.30, bukan 06.30.** Bahasa Denmark menghitung setengah menuju jam berikutnya — *halv seks* berarti \"setengah (jalan menuju) enam\". Ini kabar bagus yang tak terduga bagi penutur Indonesia: kita juga bilang \"setengah enam\" untuk 05.30. Penutur bahasa Inggris justru tersandung parah di sini, karena *half six* dalam bahasa Inggris berarti 06.30.",
+    "**Klokken** = \"jamnya\", dari *en klokke* (lonceng, jam) dengan ekor tentu. Dalam percakapan cepat sering dipendekkan jadi *kl.* di tulisan dan hampir hilang di ucapan.",
+    "**Passer** dari *at passe* = cocok, pas. *Det passer fint* = pas sekali. Kata ini juga berarti \"menjaga\" (*at passe børn* = menjaga anak) dan \"benar\" (*det passer ikke* = itu tidak benar).",
+    "**Jeg har time** — *en time* berarti dua hal: satu jam waktu, dan satu jam pelajaran. *Jeg har time til fire* = saya ada kelas sampai jam empat.",
+    "**For sent** = terlambat. Ingat *for* berarti \"terlalu\", jadi harfiahnya \"terlalu larut\". Datang tepat waktu di Denmark bukan kesopanan tambahan, melainkan bawaan — janji jam dua berarti jam dua, bukan jam dua lewat sepuluh.",
+    "**Mødes** — bentuk berakhiran *-s* yang berarti saling: *at møde* (bertemu seseorang) → *at mødes* (saling bertemu). Pola yang sama ada di *vi ses* (kita saling melihat = sampai jumpa) dan *vi snakkes ved* (kita saling bicara nanti).",
+    "**Aldrig** = tidak pernah. Perhatikan tidak ada *ikke* di kalimat itu — *aldrig* sudah mengandung penyangkalan, seperti *never* dalam bahasa Inggris.",
+    "**På torsdag** = Kamis yang akan datang. Tanpa *på*, *torsdag* saja berarti hari Kamis pada umumnya. Dan *om torsdagen* berarti \"tiap hari Kamis\"."
+   ],
+   "grammars": [
+    {
+     "title": "Membaca jam",
+     "body": [
+      "Bahasa Denmark memakai sistem dua belas jam dalam percakapan, dengan empat titik acuan tiap jamnya: tepat, lewat seperempat, setengah, dan kurang seperempat."
+     ],
+     "table": {
+      "head": ["Jam", "Dansk", "Harfiahnya"],
+      "rows": [
+       ["05.00", "klokken fem", "jam lima"],
+       ["05.05", "fem minutter over fem", "lima menit di atas lima"],
+       ["05.15", "**kvart over** fem", "seperempat di atas lima"],
+       ["05.20", "tyve minutter over fem", "dua puluh menit di atas lima"],
+       ["05.25", "fem minutter i **halv seks**", "lima menit menuju setengah enam"],
+       ["05.30", "**halv seks**", "setengah enam"],
+       ["05.35", "fem minutter over halv seks", "lima menit di atas setengah enam"],
+       ["05.45", "**kvart i** seks", "seperempat menuju enam"],
+       ["05.50", "ti minutter i seks", "sepuluh menit menuju enam"],
+       ["06.00", "klokken seks", "jam enam"]
+      ]
+     },
+     "after": [
+      "⚠️ Baris 05.25 dan 05.35 adalah yang paling menjebak. Bahasa Denmark tidak menghitung dari jam penuh di rentang itu, melainkan dari **setengah**: *fem minutter i halv seks* (lima menit sebelum setengah enam) dan *fem minutter over halv seks*. Ini kebiasaan yang sama dengan bahasa Jerman dan Belanda.",
+      "Jadwal resmi — kereta, bus, bioskop, jam buka — memakai sistem 24 jam dan dibaca lurus: *sytten tredive* untuk 17.30. Jangan mencampur keduanya.",
+      "Untuk menanyakan: *Hvad er klokken?* (jam berapa sekarang?) dan *Hvornår…?* (kapan…?). Untuk menjawab pukul berapa sesuatu terjadi, pakai *klokken* tanpa kata depan: *Toget kommer klokken ni.*"
+     ]
+    },
+    {
+     "title": "Hari, bulan, bagian hari",
+     "body": [
+      "Semuanya ditulis dengan **huruf kecil** — tidak seperti bahasa Inggris. Nama-nama harinya berasal dari dewa-dewa Nordik, dan sebagian masih terasa jelas asalnya."
+     ],
+     "table": {
+      "head": ["Hari", "Cara baca", "Bulan", "Bulan"],
+      "rows": [
+       ["mandag", "MAN-dæ", "januar", "juli"],
+       ["tirsdag", "TIRS-dæ", "februar", "august"],
+       ["onsdag", "ONS-dæ", "marts", "september"],
+       ["torsdag", "TORS-dæ", "april", "oktober"],
+       ["fredag", "FRÈ-dæ", "maj", "november"],
+       ["lørdag", "LÖR-dæ", "juni", "december"],
+       ["søndag", "SÖN-dæ", "", ""]
+      ]
+     },
+     "after": [
+      "*Onsdag* = hari Odin, *torsdag* = hari Thor, *fredag* = hari Freja. *Lørdag* justru berarti \"hari mandi\" (*løre* = mencuci) — kebiasaan Viking yang mandi sekali seminggu, dan namanya bertahan seribu tahun.",
+      "Bagian hari: *om morgenen* (pagi), *om formiddagen* (menjelang siang), *om eftermiddagen* (siang-sore), *om aftenen* (malam), *om natten* (larut malam). Perhatikan semuanya memakai **om** + bentuk berekor.",
+      "⚠️ Tiga cara memakai nama hari yang berbeda artinya: *på mandag* (Senin depan), *om mandagen* (tiap hari Senin), *i mandags* (Senin lalu)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Waktu dan janji",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Dansk", "Bahasa Indonesia"],
+     "rows": [
+      ["Hvad er klokken?", "Jam berapa sekarang?"],
+      ["Klokken er halv otte.", "Sekarang jam setengah delapan."],
+      ["Hvornår mødes vi?", "Kapan kita ketemu?"],
+      ["Hvornår passer det dig?", "Kapan kamu bisa?"],
+      ["Har du tid på fredag?", "Ada waktu hari Jumat?"],
+      ["Det passer fint.", "Pas sekali."],
+      ["Det kan jeg desværre ikke.", "Sayangnya saya tidak bisa."],
+      ["Skal vi sige klokken to?", "Kita sepakati jam dua?"],
+      ["Jeg kommer for sent.", "Saya akan telat."],
+      ["Vi ses på torsdag!", "Sampai ketemu Kamis!"]
+     ]
+    },
+    { "type": "p", "text": "*Desværre* = sayangnya. Kata ini melunakkan penolakan dan hampir selalu ikut kalau kamu menolak ajakan. Tanpa ia, *det kan jeg ikke* terdengar datar dan agak dingin." },
+    { "type": "kotak", "title": "Waktu di Denmark bukan perkiraan", "items": [
+      "Janji jam dua berarti jam dua. Datang jam dua lewat sepuluh tanpa mengabari dianggap tidak sopan, bukan santai.",
+      "Kalau kamu akan telat, kirim pesan. Kalimat siap pakai: *Jeg kommer ti minutter for sent — undskyld!*",
+      "Sebaliknya, jangan datang terlalu awal ke rumah orang. Datang lima belas menit sebelum waktunya justru merepotkan tuan rumah yang belum siap."
+     ] },
+    { "type": "p", "text": "Kata *i orden* (harfiah: \"dalam urutan\") berarti \"tidak apa-apa, beres\". Dipakai sangat sering sebagai jawaban santai: *Det er i orden.*" }
+   ]
+  },
+  {
+   "title": "Keterangan waktu yang sering dipakai",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Dansk", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["i dag", "i DÆ", "hari ini"],
+      ["i går", "i GOR", "kemarin"],
+      ["i morgen", "i MORN", "besok"],
+      ["i overmorgen", "i O-a-morn", "lusa"],
+      ["i forgårs", "i FOR-gors", "kemarin dulu"],
+      ["i denne uge", "i DÈ-ne U-e", "minggu ini"],
+      ["i næste uge", "i NÈS-de U-e", "minggu depan"],
+      ["i sidste uge", "i SIS-de U-e", "minggu lalu"],
+      ["om et øjeblik", "om èt OI-e-blik", "sebentar lagi"],
+      ["altid / aldrig", "AL-tidh / AL-dri", "selalu / tidak pernah"],
+      ["ofte / sommetider", "OF-de / SOM-e-ti-dha", "sering / kadang-kadang"],
+      ["tidligt / sent", "TI-lit / sènt", "awal / larut"]
+     ]
+    },
+    { "type": "p", "text": "*Et øjeblik* harfiahnya \"satu kedipan mata\" — sepupu langsung dari *Augenblick* bahasa Jerman. Dipakai sendirian sebagai \"tunggu sebentar\": *Et øjeblik!*" }
+   ]
+  }
+ ],
+ "vocab": [
+  { "da": "en klokke", "baca": "èn KLO-ge", "id": "jam, lonceng" },
+  { "da": "et minut", "baca": "èt mi-NUT", "id": "menit" },
+  { "da": "en time", "baca": "èn TI-me", "id": "jam (durasi); jam pelajaran" },
+  { "da": "en uge", "baca": "èn U-e", "id": "minggu" },
+  { "da": "en måned", "baca": "èn MO-nedh", "id": "bulan" },
+  { "da": "kvart over", "baca": "kvart O-a", "id": "lewat seperempat" },
+  { "da": "kvart i", "baca": "kvart i", "id": "kurang seperempat" },
+  { "da": "halv", "baca": "hal", "id": "setengah" },
+  { "da": "at passe", "baca": "at PA-se", "id": "cocok, pas; menjaga" },
+  { "da": "at mødes", "baca": "at MÖ-dhes", "id": "saling bertemu" },
+  { "da": "at åbne / at lukke", "baca": "at OB-ne / at LO-ge", "id": "buka / tutup" },
+  { "da": "en kalender", "baca": "èn ka-LÈN-da", "id": "kalender" },
+  { "da": "et bibliotek", "baca": "èt bi-bli-o-TÈK", "id": "perpustakaan" },
+  { "da": "en bus", "baca": "èn bus", "id": "bus" },
+  { "da": "desværre", "baca": "des-VÈR-e", "id": "sayangnya" },
+  { "da": "måske", "baca": "mos-KÈ", "id": "mungkin" },
+  { "da": "aldrig", "baca": "AL-dri", "id": "tidak pernah" },
+  { "da": "ofte", "baca": "OF-de", "id": "sering" },
+  { "da": "sent / tidligt", "baca": "sènt / TI-lit", "id": "larut / awal" },
+  { "da": "i orden", "baca": "i OR-den", "id": "beres, tidak apa-apa" },
+  { "da": "et øjeblik", "baca": "èt OI-e-blik", "id": "sesaat" },
+  { "da": "til tiden", "baca": "til TI-dhen", "id": "tepat waktu" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis jamnya dalam bahasa Denmark.",
+   "items": [
+    "08.00",
+    "09.15",
+    "10.30",
+    "11.45",
+    "14.25",
+    "16.35"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Denmark.",
+   "items": [
+    "Jam berapa sekarang?",
+    "Sekarang jam setengah delapan.",
+    "Kapan kita ketemu?",
+    "Ada waktu hari Jumat?",
+    "Sayangnya saya tidak bisa.",
+    "Sampai ketemu Kamis!"
+   ]
+  },
+  {
+   "prompt": "Isi dengan på, om, atau i.",
+   "items": [
+    "Vi ses ____ mandag. (Senin depan)",
+    "Jeg arbejder ____ mandagen. (tiap Senin)",
+    "Jeg var syg ____ mandags. (Senin lalu)",
+    "Hun læser ____ aftenen. (tiap malam)",
+    "Vi mødes ____ næste uge. (minggu depan)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "klokken / hvad / er / ?",
+    "halv / er / otte / klokken",
+    "torsdag / på / ses / vi",
+    "sent / kommer / for / jeg",
+    "dig / hvornår / det / passer / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "klokken otte — kvart over ni — halv elleve — kvart i tolv — fem minutter i halv tre — fem minutter over halv fem",
+  "Hvad er klokken? — Klokken er halv otte. — Hvornår mødes vi? — Har du tid på fredag? — Det kan jeg desværre ikke. — Vi ses på torsdag!",
+  "på — om — i — om — i",
+  "Hvad er klokken? — Klokken er halv otte. — Vi ses på torsdag. — Jeg kommer for sent. — Hvornår passer det dig?"
+ ]
+}

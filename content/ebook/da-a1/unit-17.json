@@ -1,0 +1,229 @@
+{
+ "title": "Kemarin kamu ngapain?",
+ "title_target": "Hvad lavede du i går?",
+ "goal": "Membentuk kalimat lampau beraturan — dua golongan, dua akhiran — dan menceritakan apa yang sudah terjadi.",
+ "bekal": [
+  "membentuk lampau golongan 1 (**-ede**) dan golongan 2 (**-te**)",
+  "menceritakan kegiatan kemarin dan minggu lalu",
+  "memakai keterangan waktu lampau: *i går*, *i sidste uge*, *for to dage siden*"
+ ],
+ "wave": "Ulangi **unit 15** dulu: gambarkan tiga orang yang kamu kenal, tiga kalimat masing-masing, dan pastikan bentuk kata sifatnya benar.",
+ "dialogs": [
+  {
+   "title": "Dialog — En lang mandag",
+   "intro": "Selasa pagi di kelas. Guru bertanya tentang hari Senin yang baru lewat.",
+   "lines": [
+    { "speaker": "Læreren:", "text": "Hvad lavede I i går? Ahmad?", "id": "Kemarin kalian ngapain? Ahmad?", "literal": "apa membuat-lampau kalian di kemarin? Ahmad?" },
+    { "speaker": "Ahmad:", "text": "Jeg arbejdede hele dagen. Fra otte til seks.", "id": "Saya kerja seharian. Dari jam delapan sampai enam.", "literal": "saya bekerja-lampau seluruh hari-itu. dari delapan ke enam." },
+    { "speaker": "Læreren:", "text": "Og bagefter?", "id": "Sesudahnya?", "literal": "dan sesudah?" },
+    { "speaker": "Ahmad:", "text": "Jeg lavede mad, spiste, og så kiggede jeg fjernsyn.", "id": "Saya masak, makan, lalu nonton TV.", "literal": "saya membuat-lampau makanan, makan-lampau, dan lalu melihat-lampau saya jauh-lihat." },
+    { "speaker": "Læreren:", "text": "Mette, hvad med dig?", "id": "Mette, kamu bagaimana?", "literal": "Mette, apa dengan kamu?" },
+    { "speaker": "Mette:", "text": "Jeg cyklede til Amager og besøgte min bedstemor.", "id": "Saya bersepeda ke Amager dan menjenguk nenek saya.", "literal": "saya bersepeda-lampau ke Amager dan mengunjungi-lampau milik-saya nenek." },
+    { "speaker": "Mette:", "text": "Vi snakkede i to timer, og hun fortalte om krigen.", "id": "Kami mengobrol dua jam, dan dia bercerita tentang perang.", "literal": "kami mengobrol-lampau di dua jam, dan dia menceritakan-lampau tentang perang-itu." },
+    { "speaker": "Læreren:", "text": "Det lyder interessant. Og Budi?", "id": "Kedengarannya menarik. Budi?", "literal": "itu berbunyi menarik. dan Budi?" },
+    { "speaker": "Budi:", "text": "Jeg studerede til klokken to om natten.", "id": "Saya belajar sampai jam dua dini hari.", "literal": "saya belajar-lampau ke jam-itu dua pada malam-itu." },
+    { "speaker": "Læreren:", "text": "Til klokken to? Hvorfor?", "id": "Sampai jam dua? Kenapa?", "literal": "ke jam-itu dua? kenapa?" },
+    { "speaker": "Budi:", "text": "Jeg glemte, at vi havde prøve i dag.", "id": "Saya lupa hari ini ada ujian.", "literal": "saya lupa-lampau, bahwa kami punya-lampau ujian di hari." },
+    { "speaker": "Læreren:", "text": "Vi har ikke prøve i dag, Budi.", "id": "Hari ini tidak ada ujian, Budi.", "literal": "kami punya tidak ujian di hari, Budi." },
+    { "speaker": "Budi:", "text": "…Det var en meget lang nat.", "id": "…Panjang sekali malam itu.", "literal": "…itu adalah-lampau satu sangat panjang malam." }
+   ],
+   "notes": [
+    "**Dua golongan, dua akhiran.** Kata kerja beraturan bahasa Denmark membentuk lampau dengan **-ede** (golongan 1) atau **-te** (golongan 2). Tidak ada aturan yang bisa dipegang untuk menebak golongannya — tapi golongan 1 sedikit lebih besar, dan hampir semua kata kerja baru yang masuk ke bahasa Denmark ikut golongan 1.",
+    "**Kata kerjanya tetap tidak berubah menurut pelaku.** *Jeg arbejdede, du arbejdede, de arbejdede*. Keunggulan bahasa Denmark dari unit 2 tetap berlaku penuh di masa lampau.",
+    "**Spiste, fortalte, glemte, havde, var** — lima bentuk lampau di dialog ini yang **tidak** beraturan. Sebagian tampak seperti golongan 2 (*spiste*, *glemte*), sebagian jelas membangkang (*fortalte*, *havde*, *var*). Unit 18 mengurusnya.",
+    "**Så kiggede jeg** — perhatikan lagi aturan tempat kedua dari unit 10. *Så* menempati tempat pertama, jadi pelakunya melompat ke belakang kata kerja.",
+    "**At besøge** = mengunjungi, menjenguk. Kata kerja golongan 2: *besøgte*.",
+    "**Krigen** = perang itu — di Denmark, tanpa keterangan tambahan, ini hampir selalu berarti pendudukan Jerman 1940-1945. Percakapan dengan orang Denmark berusia lanjut sering menyentuhnya.",
+    "**Det lyder interessant** = kedengarannya menarik. *At lyde* (berbunyi, terdengar) dipakai persis seperti *to sound* di bahasa Inggris.",
+    "**En prøve** = ujian, tes. Ujian resmi bahasa Denmark untuk pendatang juga memakai kata ini: *Prøve i Dansk 1, 2, 3*."
+   ],
+   "grammars": [
+    {
+     "title": "Golongan 1: akhiran -ede",
+     "body": [
+      "Golongan terbesar. Ambil bentuk dasar, buang *-e* kalau ada, tambahkan **-ede**."
+     ],
+     "table": {
+      "head": ["Dasar", "Sekarang", "Lampau", "Arti"],
+      "rows": [
+       ["at snakke", "snakker", "snakk**ede**", "mengobrol"],
+       ["at arbejde", "arbejder", "arbejd**ede**", "bekerja"],
+       ["at lave", "laver", "lav**ede**", "membuat"],
+       ["at kigge", "kigger", "kigg**ede**", "melihat"],
+       ["at vente", "venter", "vent**ede**", "menunggu"],
+       ["at cykle", "cykler", "cykl**ede**", "bersepeda"],
+       ["at bo", "bor", "bo**ede**", "tinggal"],
+       ["at hente", "henter", "hent**ede**", "menjemput"],
+       ["at åbne", "åbner", "åbn**ede**", "membuka"],
+       ["at studere", "studerer", "studer**ede**", "kuliah"],
+       ["at danse", "danser", "dans**ede**", "menari"],
+       ["at elske", "elsker", "elsk**ede**", "mencintai"]
+      ]
+     },
+     "after": [
+      "Akhiran *-ede* diucapkan sebagai satu embusan **-edhe** yang cepat, hampir *-ede* menjadi \"-e-dhe\". Dalam percakapan cepat ia sering menyusut sampai nyaris hilang.",
+      "Kata dasar berhuruf mati tunggal sesudah vokal pendek menggandakannya sebelum akhiran: *at snakke → snakkede* (dua k), *at stoppe → stoppede*."
+     ]
+    },
+    {
+     "title": "Golongan 2: akhiran -te",
+     "body": [
+      "Golongan yang lebih kecil, tapi memuat banyak kata yang sangat sering dipakai — jadi harus dikuasai sama baiknya."
+     ],
+     "table": {
+      "head": ["Dasar", "Sekarang", "Lampau", "Arti"],
+      "rows": [
+       ["at tale", "taler", "tal**te**", "berbicara"],
+       ["at købe", "køber", "køb**te**", "membeli"],
+       ["at læse", "læser", "læs**te**", "membaca"],
+       ["at høre", "hører", "hør**te**", "mendengar"],
+       ["at køre", "kører", "kør**te**", "mengemudi"],
+       ["at spise", "spiser", "spis**te**", "makan"],
+       ["at rejse", "rejser", "rejs**te**", "bepergian"],
+       ["at bruge", "bruger", "brug**te**", "memakai"],
+       ["at besøge", "besøger", "besøg**te**", "mengunjungi"],
+       ["at glemme", "glemmer", "glem**te**", "lupa"],
+       ["at tænke", "tænker", "tænk**te**", "berpikir"],
+       ["at hjælpe", "hjælper", "hjalp*", "menolong"]
+      ]
+     },
+     "after": [
+      "*Baris terakhir sengaja diselipkan sebagai peringatan: *at hjælpe* terlihat seperti golongan 2 tapi sebenarnya tak beraturan — lampaunya *hjalp*. Jangan menebak dari bentuknya.",
+      "Sejumlah kata golongan 2 juga mengubah vokalnya sedikit: *at fortælle → fortalte*, *at sælge → solgte*, *at vælge → valgte*, *at bringe → bragte*, *at spørge → spurgte*. Kelompok kecil ini paling baik dihafal sebagai daftar tersendiri.",
+      "Cara menghafal yang berhasil: jangan menghafal \"golongan 1\" atau \"golongan 2\" sebagai label. Hafalkan **pasangan** — *arbejder / arbejdede*, *taler / talte* — sebagai satu bunyi utuh. Otak menyimpan bunyi jauh lebih baik daripada kategori."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Keterangan waktu lampau",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Dansk", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["i går", "i GOR", "kemarin"],
+      ["i forgårs", "i FOR-gors", "kemarin dulu"],
+      ["i går aftes", "i gor AF-des", "tadi malam"],
+      ["i morges", "i MOR-es", "tadi pagi"],
+      ["i sidste uge", "i SIS-de U-e", "minggu lalu"],
+      ["i sidste måned", "i SIS-de MO-nedh", "bulan lalu"],
+      ["sidste år", "SIS-de or", "tahun lalu"],
+      ["for to dage siden", "for to DA-e SI-dhen", "dua hari yang lalu"],
+      ["for længe siden", "for LÈNG-e SI-dhen", "lama sekali yang lalu"],
+      ["dengang", "dèn-GANG", "waktu itu, dulu"],
+      ["engang", "èn-GANG", "suatu waktu, dahulu kala"],
+      ["i mandags", "i MAN-dæs", "Senin lalu"]
+     ]
+    },
+    { "type": "p", "text": "⚠️ Perhatikan pola nama hari yang berbeda-beda: **i mandags** (Senin lalu), **på mandag** (Senin depan), **om mandagen** (tiap Senin). Ketiganya sudah muncul di unit 8; sekarang yang pertama baru benar-benar terpakai." },
+    { "type": "p", "text": "*For … siden* mengapit angkanya: *for tre dage siden*, *for en uge siden*, *for mange år siden*. Dua kata yang tidak bisa dipisahkan dari susunannya." },
+    { "type": "p", "text": "Ingat semua keterangan ini boleh berdiri di depan kalimat — dan begitu berdiri di depan, pelakunya melompat: *I går **arbejdede jeg** hele dagen.*" }
+   ]
+  },
+  {
+   "title": "Bercerita dengan urutan",
+   "blocks": [
+    { "type": "p", "text": "Bercerita bukan cuma soal bentuk lampau, tapi soal menyambung peristiwa. Kata-kata berikut yang mengerjakan pekerjaan itu." },
+    {
+     "type": "tabel",
+     "head": ["Dansk", "Bahasa Indonesia", "Contoh"],
+     "rows": [
+      ["først", "pertama-tama", "Først spiste vi morgenmad."],
+      ["så / derefter", "lalu, setelah itu", "Så cyklede vi til stranden."],
+      ["bagefter", "sesudahnya", "Bagefter besøgte vi Mette."],
+      ["senere", "belakangan", "Senere begyndte det at regne."],
+      ["til sidst", "akhirnya, terakhir", "Til sidst tog vi hjem."],
+      ["pludselig", "tiba-tiba", "Pludselig ringede telefonen."],
+      ["heldigvis", "untungnya", "Heldigvis havde jeg en paraply."],
+      ["desværre", "sayangnya", "Desværre var butikken lukket."]
+     ]
+    },
+    { "type": "p", "text": "Semua kata ini menempati tempat pertama dan **memicu pertukaran**: *Så **cyklede vi**…*, *Pludselig **ringede telefonen**…* Kalau kamu menulis *Så vi cyklede*, aturan unit 10 dilanggar." },
+    { "type": "kotak", "title": "Latihan bercerita pertamamu", "items": [
+      "Ceritakan hari kemarin dalam sepuluh kalimat lampau. Pakai *først*, *så*, *bagefter*, dan *til sidst* untuk menyambungnya.",
+      "Lalu ulangi ceritanya tentang **orang lain** — teman atau anggota keluarga. Perhatikan bahwa kata kerjanya tidak berubah sedikit pun. Ini penghematan yang tidak dipunyai hampir semua bahasa Eropa lain.",
+      "Lalu tulis ceritanya. Menulis memperlihatkan kesalahan bentuk lampau yang lolos waktu bicara — terutama pilihan *-ede* dan *-te*."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "da": "at snakke", "baca": "at SNA-ge", "id": "mengobrol" },
+  { "da": "at besøge", "baca": "at be-SÖ-e", "id": "mengunjungi" },
+  { "da": "at glemme", "baca": "at GLÈM-e", "id": "lupa" },
+  { "da": "at huske", "baca": "at HUS-ge", "id": "ingat" },
+  { "da": "at hente", "baca": "at HÈN-de", "id": "menjemput, mengambil" },
+  { "da": "at begynde", "baca": "at be-GÖN-e", "id": "mulai" },
+  { "da": "at slutte", "baca": "at SLU-de", "id": "berakhir" },
+  { "da": "at lyde", "baca": "at LÜ-dhe", "id": "terdengar" },
+  { "da": "at ringe", "baca": "at RING-e", "id": "menelepon; berdering" },
+  { "da": "en prøve", "baca": "èn PRÖ-ve", "id": "ujian, tes" },
+  { "da": "en krig", "baca": "èn kri", "id": "perang" },
+  { "da": "en nat", "baca": "èn nat", "id": "malam (larut)" },
+  { "da": "i går", "baca": "i GOR", "id": "kemarin" },
+  { "da": "for … siden", "baca": "for … SI-dhen", "id": "… yang lalu" },
+  { "da": "først", "baca": "först", "id": "pertama-tama" },
+  { "da": "derefter", "baca": "dèa-ÈF-da", "id": "setelah itu" },
+  { "da": "senere", "baca": "SÈ-ne-a", "id": "belakangan" },
+  { "da": "til sidst", "baca": "til SIST", "id": "akhirnya" },
+  { "da": "pludselig", "baca": "PLUD-se-li", "id": "tiba-tiba" },
+  { "da": "heldigvis", "baca": "HÈL-di-vis", "id": "untungnya" },
+  { "da": "dengang", "baca": "dèn-GANG", "id": "waktu itu" },
+  { "da": "lang", "baca": "lang", "id": "panjang" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk lampau.",
+   "items": [
+    "at arbejde → jeg ____",
+    "at tale → hun ____",
+    "at cykle → vi ____",
+    "at købe → de ____",
+    "at bo → han ____",
+    "at læse → I ____",
+    "at snakke → jeg ____",
+    "at høre → du ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Denmark.",
+   "items": [
+    "Kemarin saya kerja seharian.",
+    "Saya masak lalu nonton TV.",
+    "Kami mengobrol dua jam.",
+    "Saya bersepeda ke Amager.",
+    "Dua hari yang lalu saya menjenguk nenek saya.",
+    "Saya lupa hari ini ada ujian."
+   ]
+  },
+  {
+   "prompt": "Tulis ulang dengan keterangan waktu di depan — ingat menukar pelakunya.",
+   "items": [
+    "Jeg arbejdede hele dagen i går.",
+    "Vi cyklede til stranden bagefter.",
+    "Hun besøgte sin bedstemor i sidste uge.",
+    "Det begyndte at regne pludselig.",
+    "Vi tog hjem til sidst."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "lavede / i / hvad / du / går / ?",
+    "dagen / arbejdede / hele / jeg",
+    "timer / snakkede / to / vi / i",
+    "bedstemor / besøgte / min / jeg",
+    "prøve / at / glemte / vi / jeg / havde"
+   ]
+  }
+ ],
+ "answers": [
+  "arbejdede — talte — cyklede — købte — boede — læste — snakkede — hørte",
+  "I går arbejdede jeg hele dagen. — Jeg lavede mad og kiggede fjernsyn. — Vi snakkede i to timer. — Jeg cyklede til Amager. — For to dage siden besøgte jeg min bedstemor. — Jeg glemte, at vi havde prøve i dag.",
+  "I går arbejdede jeg hele dagen. — Bagefter cyklede vi til stranden. — I sidste uge besøgte hun sin bedstemor. — Pludselig begyndte det at regne. — Til sidst tog vi hjem.",
+  "Hvad lavede du i går? — Jeg arbejdede hele dagen. — Vi snakkede i to timer. — Jeg besøgte min bedstemor. — Jeg glemte, at vi havde prøve."
+ ]
+}

@@ -1,0 +1,218 @@
+{
+ "title": "Halo, siapa namamu?",
+ "title_target": "Hej! Hvad hedder du?",
+ "goal": "Menyapa pada waktu yang tepat, menyebut nama sendiri, menanyakan kabar, dan mengenali kenapa kata kerja bahasa Denmark tidak pernah berubah.",
+ "bekal": [
+  "menyapa dengan *hej*, *goddag*, dan *godmorgen* pada tempatnya masing-masing",
+  "menyebut nama sendiri dengan *jeg hedder* dan menanyakan nama orang lain",
+  "memakai *er* untuk semua orang, tanpa satu pun perubahan bentuk"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Første dag på sprogskolen",
+   "intro": "Hari pertama kursus bahasa di Københavns Sprogcenter. Dua peserta baru duduk bersebelahan.",
+   "lines": [
+    { "speaker": "Mette:", "text": "Hej! Hvad hedder du?", "id": "Halo! Siapa namamu?", "literal": "halo! apa kamu-dinamai?" },
+    { "speaker": "Budi:", "text": "Hej! Jeg hedder Budi. Og du?", "id": "Halo! Nama saya Budi. Dan kamu?", "literal": "halo! saya dinamai Budi. dan kamu?" },
+    { "speaker": "Mette:", "text": "Jeg hedder Mette. Hyggeligt at møde dig!", "id": "Nama saya Mette. Senang berkenalan!", "literal": "saya dinamai Mette. menyenangkan untuk bertemu kamu!" },
+    { "speaker": "Budi:", "text": "I lige måde. Hvordan går det?", "id": "Sama-sama. Apa kabar?", "literal": "dalam sama cara. bagaimana berjalan itu?" },
+    { "speaker": "Mette:", "text": "Det går godt, tak. Og dig?", "id": "Baik-baik saja, terima kasih. Kamu?", "literal": "itu berjalan baik, terima-kasih. dan kamu?" },
+    { "speaker": "Budi:", "text": "Jeg har det også godt. Er du dansker?", "id": "Saya juga baik. Kamu orang Denmark?", "literal": "saya punya itu juga baik. adalah kamu orang-Denmark?" },
+    { "speaker": "Mette:", "text": "Ja, jeg er fra Odense. Er du kineser?", "id": "Ya, saya dari Odense. Kamu orang Cina?", "literal": "ya, saya adalah dari Odense. adalah kamu orang-Cina?" },
+    { "speaker": "Budi:", "text": "Nej, jeg er indoneser. Jeg er fra Jakarta.", "id": "Bukan, saya orang Indonesia. Saya dari Jakarta.", "literal": "tidak, saya adalah orang-Indonesia. saya adalah dari Jakarta." },
+    { "speaker": "Mette:", "text": "Hvor spændende! Velkommen til Danmark!", "id": "Wah, menarik sekali! Selamat datang di Denmark!", "literal": "betapa menegangkan! selamat-datang ke Denmark!" },
+    { "speaker": "Budi:", "text": "Mange tak! Vi ses i morgen, Mette.", "id": "Terima kasih banyak! Sampai jumpa besok, Mette.", "literal": "banyak terima-kasih! kita terlihat pada besok, Mette." },
+    { "speaker": "Mette:", "text": "Vi ses! Hej hej!", "id": "Sampai jumpa! Dah!", "literal": "kita terlihat! halo halo!" }
+   ],
+   "notes": [
+    "**Hej dipakai dua arah.** Satu kata yang sama untuk \"halo\" dan \"dah\" — dan kalau diulang (*hej hej*), artinya selalu perpisahan. Persis kebalikan dari dugaan orang: pengulangan bukan penekanan sapaan, melainkan penanda pamit.",
+    "**Hvad hedder du bukan \"apa namamu\".** Harfiahnya \"apa kamu dinamai\". *At hedde* adalah kata kerja penuh, bukan gabungan \"nama\" + \"kamu\". Karena itu jawabannya juga kata kerja: *jeg hedder Budi*, bukan *mit navn er Budi* — bentuk kedua ini benar secara tata bahasa tapi terdengar kaku, seperti mengisi formulir.",
+    "**Hvordan går det** harfiahnya \"bagaimana itu berjalan\". Jawaban bakunya *det går godt*. Ada juga jawaban lengkap dengan *have*: *jeg har det godt* — \"saya punya keadaan itu baik\". Dua-duanya benar dan sama-sama sering dipakai.",
+    "**Kata kerjanya tidak berubah.** Perhatikan baik-baik: *jeg hedder*, *du hedder*, *hun hedder* — bentuknya sama persis. Begitu juga *er*, *går*, *har*. Ini bukan kebetulan di unit ini; bahasa Denmark memang tidak punya perubahan bentuk kata kerja menurut pelaku sama sekali. Kalau kamu pernah belajar bahasa Inggris, Jerman, atau Arab, ini penghematan yang besar sekali.",
+    "**Kebangsaan ditulis huruf kecil.** *dansker*, *indoneser*, *kineser* — tidak seperti bahasa Inggris. Nama negaranya tetap huruf besar: *Danmark*, *Indonesien*. Perhatikan juga bahwa kebangsaan tidak berubah menurut jenis kelamin: laki-laki dan perempuan sama-sama *dansker*.",
+    "**Mange tak** harfiahnya \"banyak terima kasih\". Ada tangga kesopanan yang bertingkat: *tak* (biasa) → *mange tak* (banyak) → *tusind tak* (seribu terima kasih, sangat hangat). Jawabannya *selv tak* atau *det var så lidt* (\"itu tadi begitu sedikit\").",
+    "**Vi ses** harfiahnya \"kita terlihat\" — bentuk pasif yang dipakai sebagai ucapan pamit paling umum di antara teman. Yang lebih resmi: *farvel*.",
+    "**Hyggeligt.** Kata ini akar dari *hygge*, kata Denmark yang paling terkenal ke seluruh dunia. Di sini artinya sederhana: \"menyenangkan\". Tapi ingat bentuknya — *hyggelig* jadi *hyggeligt* karena menerangkan \"hal\" yang tidak bernama. Aturannya menyusul di unit 15."
+   ],
+   "grammars": [
+    {
+     "title": "At være — kata kerja \"adalah\"",
+     "body": [
+      "Kata kerja pertama yang wajib kamu kuasai — dan pelajaran terpentingnya bukan bentuknya, melainkan betapa sedikit bentuk yang ada."
+     ],
+     "table": {
+      "head": ["Pelaku", "Cara baca", "at være", "arti"],
+      "rows": [
+       ["jeg", "yai", "**er**", "saya adalah"],
+       ["du", "du", "**er**", "kamu adalah"],
+       ["han / hun / den / det", "han / hun / dèn / dè", "**er**", "dia / itu adalah"],
+       ["vi", "vi", "**er**", "kami adalah"],
+       ["I", "i", "**er**", "kalian adalah"],
+       ["de", "di", "**er**", "mereka adalah"]
+      ]
+     },
+     "after": [
+      "Satu kolom yang sama dari atas ke bawah. Tidak ada yang perlu dihafal selain kata *er* itu sendiri, dan hal yang sama berlaku untuk **semua** kata kerja bahasa Denmark tanpa kecuali.",
+      "⚠️ *I* (kalian) selalu ditulis dengan **huruf besar**, di posisi mana pun dalam kalimat. Ini satu-satunya cara membedakannya dari *i* (di), yang selalu huruf kecil. Bandingkan: *I er i Danmark* = kalian ada di Denmark.",
+      "*Han* dan *hun* hanya untuk orang. Untuk benda dipakai *den* (untuk en-ord) atau *det* (untuk et-ord) — aturannya di unit 3 dan 4."
+     ]
+    },
+    {
+     "title": "Menyapa menurut jam",
+     "body": [
+      "Bahasa Denmark memilih sapaan menurut waktu dan menurut seberapa akrab kamu dengan lawan bicara. Salah pilih di sini bukan salah tata bahasa, tapi salah suasana — dan itu lebih terasa."
+     ],
+     "table": {
+      "head": ["Sapaan", "Cara baca", "Waktu", "Suasana"],
+      "rows": [
+       ["Hej", "hai", "kapan saja", "akrab, tapi dipakai luas — juga ke petugas toko"],
+       ["Godmorgen", "go-MORN", "sampai ~10 pagi", "netral"],
+       ["Goddag", "go-DÆ", "siang", "agak resmi; ke orang yang tak dikenal"],
+       ["Godaften", "go-AF-den", "malam", "agak resmi"],
+       ["Godnat", "go-NAT", "saat berpisah malam", "sebelum tidur"],
+       ["Farvel", "fa-VÈL", "berpisah", "resmi"],
+       ["Vi ses", "vi sès", "berpisah", "akrab, paling umum"],
+       ["Hej hej", "hai hai", "berpisah", "akrab dan hangat"]
+      ]
+     },
+     "after": [
+      "Denmark masyarakat yang datar. *Hej* dipakai jauh lebih luas daripada dugaan pendatang: ke pelayan toko, ke sopir bus, ke dosen. *Goddag* justru terdengar agak kaku di banyak keadaan.",
+      "Bahasa Denmark **tidak lagi memakai bentuk hormat** dalam percakapan sehari-hari. Bentuk *De* (Anda) masih ada di surat resmi dan kepada keluarga kerajaan, tapi dalam hidup normal semua orang saling *du* — termasuk murid kepada guru dan pegawai kepada direktur. Ini melegakan bagi pelajar Indonesia yang biasa menakar sapaan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalimat yang menolongmu bertahan",
+   "blocks": [
+    { "type": "p", "text": "Sebelas kalimat berikut bukan bahan hafalan tata bahasa — ia perkakas darurat. Hafalkan bentuk utuhnya sekarang, pahami susunannya nanti." },
+    {
+     "type": "tabel",
+     "head": ["Dansk", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["Ja / Nej", "ya / nai", "Ya / Tidak"],
+      ["Tak", "t'ak", "Terima kasih"],
+      ["Selv tak", "sèl t'ak", "Sama-sama"],
+      ["Undskyld", "ON-skül", "Maaf; permisi"],
+      ["Værsgo", "VÈRS-go", "Silakan (sambil memberikan sesuatu)"],
+      ["Jeg forstår ikke", "yai for-STOR I-ge", "Saya tidak mengerti"],
+      ["Det ved jeg ikke", "dè vèdh yai I-ge", "Saya tidak tahu"],
+      ["Kan du gentage det?", "kan du gèn-TÆ dè", "Bisa diulang?"],
+      ["Taler du engelsk?", "TA-la du ÈNG-elsk", "Kamu bisa bahasa Inggris?"],
+      ["Hvad hedder det på dansk?", "vadh HÈ-dha dè po dansk", "Apa namanya dalam bahasa Denmark?"],
+      ["Lidt langsommere, tak", "lit LANG-som-a t'ak", "Pelan-pelan sedikit, tolong"]
+     ]
+    },
+    { "type": "p", "text": "*Undskyld* melakukan dua pekerjaan sekaligus: meminta maaf dan menarik perhatian orang. Untuk minta maaf sungguhan yang lebih dalam ada *undskyld* juga — bahasa Denmark tidak membedakannya sekuat bahasa Indonesia membedakan \"permisi\" dan \"maaf\"." },
+    { "type": "kotak", "title": "Satu kalimat yang mengubah pengalamanmu di Denmark", "items": [
+      "*Må vi tale dansk? Jeg er ved at lære.* — \"Boleh kita bicara bahasa Denmark? Saya sedang belajar.\"",
+      "Masalah khas belajar bahasa Denmark bukan orangnya galak, melainkan sebaliknya: begitu mendengar aksenmu, hampir semua orang Denmark otomatis pindah ke bahasa Inggris karena mengira sedang menolong. Kalimat di atas menghentikannya dengan sopan, dan hampir semua orang akan senang hati bertahan di bahasa Denmark."
+     ] }
+   ]
+  },
+  {
+   "title": "Kata ganti orang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Pelaku", "Cara baca", "Sasaran", "Arti"],
+     "rows": [
+      ["jeg", "yai", "mig (mai)", "saya"],
+      ["du", "du", "dig (dai)", "kamu"],
+      ["han", "han", "ham (ham)", "dia (laki-laki)"],
+      ["hun", "hun", "hende (HÈ-ne)", "dia (perempuan)"],
+      ["den / det", "dèn / dè", "den / det", "itu (benda)"],
+      ["vi", "vi", "os (os)", "kami, kita"],
+      ["I", "i", "jer (yèa)", "kalian"],
+      ["de", "di", "dem (dèm)", "mereka"]
+     ]
+    },
+    { "type": "p", "text": "Bentuk sasaran dipakai kalau kata gantinya bukan pelaku: *hyggeligt at møde **dig***, *jeg kender **hende***. Bahasa Indonesia tidak membedakan ini sama sekali — \"saya\" tetap \"saya\" di mana pun letaknya — jadi bagian ini butuh perhatian ekstra di awal." },
+    { "type": "p", "text": "Perhatikan *mig* dan *dig* dibaca **mai** dan **dai**, bukan \"mig\" dan \"dig\". Ini pola yang sama dengan *jeg* → **yai**: gabungan huruf *-eg* dan *-ig* di ujung kata berbunyi \"ai\"." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "da": "hej", "baca": "hai", "id": "halo; dah" },
+  { "da": "goddag", "baca": "go-DÆ", "id": "selamat siang" },
+  { "da": "godmorgen", "baca": "go-MORN", "id": "selamat pagi" },
+  { "da": "godaften", "baca": "go-AF-den", "id": "selamat malam" },
+  { "da": "farvel", "baca": "fa-VÈL", "id": "selamat tinggal" },
+  { "da": "vi ses", "baca": "vi sès", "id": "sampai jumpa" },
+  { "da": "at hedde", "baca": "at HÈ-dhe", "id": "bernama" },
+  { "da": "at være", "baca": "at VÈ-a", "id": "adalah" },
+  { "da": "at have", "baca": "at HA-ve", "id": "punya" },
+  { "da": "hvad", "baca": "vadh", "id": "apa" },
+  { "da": "hvordan", "baca": "vor-DAN", "id": "bagaimana" },
+  { "da": "hvor", "baca": "vor", "id": "di mana" },
+  { "da": "og", "baca": "o", "id": "dan" },
+  { "da": "ja / nej", "baca": "ya / nai", "id": "ya / tidak" },
+  { "da": "ikke", "baca": "I-ge", "id": "tidak (menyangkal)" },
+  { "da": "tak", "baca": "t'ak", "id": "terima kasih" },
+  { "da": "mange tak", "baca": "MANG-e t'ak", "id": "terima kasih banyak" },
+  { "da": "godt", "baca": "got", "id": "baik" },
+  { "da": "også", "baca": "OS-se", "id": "juga" },
+  { "da": "fra", "baca": "fra", "id": "dari" },
+  { "da": "en dansker", "baca": "èn DAN-ska", "id": "orang Denmark" },
+  { "da": "en indoneser", "baca": "èn in-do-NÈ-sa", "id": "orang Indonesia" },
+  { "da": "Danmark", "baca": "DAN-mark", "id": "Denmark" },
+  { "da": "Indonesien", "baca": "in-do-NÈ-sien", "id": "Indonesia" },
+  { "da": "hyggelig", "baca": "HÜ-ge-li", "id": "menyenangkan, akrab" },
+  { "da": "velkommen", "baca": "vèl-KOM-en", "id": "selamat datang" },
+  { "da": "spændende", "baca": "SPÈN-e-ne", "id": "menarik, mengasyikkan" },
+  { "da": "i morgen", "baca": "i MORN", "id": "besok" },
+  { "da": "undskyld", "baca": "ON-skül", "id": "maaf; permisi" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Denmark.",
+   "items": [
+    "Halo! Siapa namamu?",
+    "Nama saya Budi.",
+    "Saya orang Indonesia.",
+    "Apa kabar?",
+    "Baik-baik saja, terima kasih.",
+    "Kamu dari Odense?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata ganti orang yang tepat.",
+   "items": [
+    "____ hedder Mette. (dia, perempuan)",
+    "____ er fra Jakarta. (saya)",
+    "Hyggeligt at møde ____. (kamu, sebagai sasaran)",
+    "____ er dansker. (dia, laki-laki)",
+    "____ er i Danmark. (kalian)",
+    "____ ses i morgen. (kami)"
+   ]
+  },
+  {
+   "prompt": "Pilih sapaan yang tepat. Tulis ulang kalimatnya lengkap.",
+   "items": [
+    "Kamu masuk toko roti jam delapan pagi. Kepada penjualnya kamu bilang ____.",
+    "Kamu bertemu teman sekelas di kantin jam sebelas. Kamu bilang ____.",
+    "Kamu masuk restoran jam tujuh malam. Kepada pelayannya kamu bilang ____.",
+    "Kamu berpisah dengan dosenmu di ujung koridor, dengan cara resmi. Kamu bilang ____.",
+    "Kamu berpamitan dengan teman sekelas, akrab. Kamu bilang ____."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "hedder / jeg / Mette",
+    "er / fra / jeg / Jakarta",
+    "det / går / hvordan / ?",
+    "dansker / du / er / ?",
+    "tak / det / godt / går"
+   ]
+  }
+ ],
+ "answers": [
+  "Hej! Hvad hedder du? — Jeg hedder Budi. — Jeg er indoneser. — Hvordan går det? — Det går godt, tak. — Er du fra Odense?",
+  "Hun — Jeg — dig — Han — I — Vi",
+  "Godmorgen. — Hej. — Godaften. — Farvel. — Hej hej.",
+  "Jeg hedder Mette. — Jeg er fra Jakarta. — Hvordan går det? — Er du dansker? — Det går godt, tak."
+ ]
+}

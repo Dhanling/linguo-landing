@@ -1,0 +1,220 @@
+{
+ "title": "Di kafe",
+ "title_target": "På café",
+ "goal": "Memesan makanan dan minuman dengan sopan, memakai *jeg vil gerne have*, dan mengenali budaya *tak* yang mengatur hampir seluruh sopan santun Denmark.",
+ "bekal": [
+  "memesan dengan *jeg vil gerne have…* dan *må jeg få…?*",
+  "memakai *gerne* untuk memperhalus permintaan",
+  "mengenali tujuh ungkapan *tak* yang punya tempatnya masing-masing"
+ ],
+ "wave": "Ulangi **unit 5** dulu: ceritakan keluargamu sendiri keras-keras, lima kalimat, tanpa melihat catatan. Perhatikan pilihan *min* dan *mit*.",
+ "dialogs": [
+  {
+   "title": "Dialog — Frokost på caféen",
+   "intro": "Makan siang di sebuah kafe di Vesterbro. Mette dan Budi baru duduk.",
+   "lines": [
+    { "speaker": "Tjener:", "text": "Hej! Har I fundet ud af, hvad I vil have?", "id": "Halo! Sudah tahu mau pesan apa?", "literal": "halo! punya kalian menemukan keluar dari, apa kalian mau punya?" },
+    { "speaker": "Mette:", "text": "Ja. Jeg vil gerne have en kop kaffe og et stykke kage.", "id": "Ya. Saya mau kopi dan sepotong kue.", "literal": "ya. saya mau senang-hati punya satu cangkir kopi dan satu potong kue." },
+    { "speaker": "Tjener:", "text": "Meget gerne. Og til dig?", "id": "Baik sekali. Untukmu?", "literal": "sangat senang-hati. dan untuk kamu?" },
+    { "speaker": "Budi:", "text": "Må jeg få smørrebrød med laks?", "id": "Boleh minta roti lapis dengan salmon?", "literal": "boleh saya mendapat mentega-roti dengan salmon?" },
+    { "speaker": "Tjener:", "text": "Selvfølgelig. Vil du have noget at drikke?", "id": "Tentu. Mau minum sesuatu?", "literal": "tentu-saja. mau kamu punya sesuatu untuk minum?" },
+    { "speaker": "Budi:", "text": "Bare et glas vand, tak.", "id": "Segelas air saja, terima kasih.", "literal": "cuma satu gelas air, terima-kasih." },
+    { "speaker": "Tjener:", "text": "Postevand er gratis. Kommer om lidt!", "id": "Air keran gratis. Sebentar lagi datang!", "literal": "pipa-air adalah gratis. datang dalam sedikit!" },
+    { "speaker": "Mette:", "text": "Godt valgt. Smørrebrød er meget dansk.", "id": "Pilihan bagus. Smørrebrød itu Denmark banget.", "literal": "baik dipilih. mentega-roti adalah sangat denmark." },
+    { "speaker": "Budi:", "text": "Hvad drikker man normalt til?", "id": "Biasanya diminum dengan apa?", "literal": "apa minum orang biasanya ke?" },
+    { "speaker": "Mette:", "text": "Øl eller snaps. Men ikke til frokost på en tirsdag.", "id": "Bir atau snaps. Tapi bukan untuk makan siang di hari Selasa.", "literal": "bir atau snaps. tapi tidak ke makan-siang pada satu selasa." },
+    { "speaker": "Budi:", "text": "Forstået. Så vand.", "id": "Paham. Jadi air saja.", "literal": "dimengerti. maka air." }
+   ],
+   "notes": [
+    "**Jeg vil gerne have** adalah rangka pemesanan yang paling penting dalam seluruh modul ini. Harfiahnya \"saya mau dengan senang hati punya\". Tanpa *gerne*, kalimat *jeg vil have* terdengar seperti tuntutan anak kecil — kasar. Kata kecil itu yang mengubah seluruh nadanya.",
+    "**Må jeg få…?** = \"boleh saya minta…?\" Sedikit lebih sopan lagi, dan yang paling sering dipakai kalau kamu meminta sesuatu yang diberikan orang lain. *At få* = mendapat.",
+    "**Bare** = \"cuma, saja\". Kata pelunak yang sangat sering dipakai untuk memperkecil permintaan: *bare et glas vand*. Orang Denmark memakainya terus-menerus.",
+    "**Postevand** harfiahnya \"air pipa\" — air keran, yang di Denmark bisa langsung diminum dan di kafe hampir selalu gratis. Kata ini tidak akan kamu temukan di buku frasa turis, padahal berguna tiap hari.",
+    "**Man** = \"orang\" dalam arti umum, seperti \"orang bilang…\" atau *one* di bahasa Inggris. *Hvad drikker man?* = \"apa yang biasanya diminum orang?\" Bahasa Denmark sangat sering memakainya untuk menghindari menyebut pelaku tertentu.",
+    "**Om lidt** = \"sebentar lagi\". Perhatikan *om* dipakai untuk waktu yang akan datang: *om ti minutter*, *om en uge*, *om et år*. Ini bukan \"tentang\".",
+    "**Smørrebrød** bukan sekadar roti lapis. Ia satu potong roti gandum hitam (*rugbrød*) dengan lapisan yang disusun rapi di atasnya, dimakan dengan pisau dan garpu, dan punya aturan urutan yang serius: ikan dulu, baru daging, baru keju. Kata ini akan kamu dengar di mana-mana."
+   ],
+   "grammars": [
+    {
+     "title": "Empat cara meminta, dari paling langsung ke paling halus",
+     "body": [
+      "Pilihannya bukan soal benar dan salah, melainkan soal nada. Perhatikan urutan tangganya."
+     ],
+     "table": {
+      "head": ["Bentuk", "Contoh", "Nadanya"],
+      "rows": [
+       ["Jeg vil have…", "Jeg vil have en kaffe.", "⚠️ terlalu langsung; hindari"],
+       ["Jeg vil gerne have…", "Jeg vil gerne have en kaffe.", "sopan baku — pakai ini"],
+       ["Må jeg få…?", "Må jeg få en kaffe?", "sopan, sedikit lebih meminta"],
+       ["Kunne jeg få…?", "Kunne jeg få en kaffe?", "paling halus, agak resmi"],
+       ["En kaffe, tak.", "En kaffe, tak.", "singkat tapi berterima di kedai cepat"]
+      ]
+     },
+     "after": [
+      "Bahasa Denmark **tidak punya kata untuk \"tolong\"** seperti *please* atau *por favor*. Kesopanan dibawa oleh *gerne*, oleh nada suara, dan oleh *tak* di ujung kalimat. Pendatang yang mencari padanan \"please\" akan mencarinya selamanya dan tidak menemukannya.",
+      "Sebagai gantinya, *tak* dipakai jauh lebih sering daripada \"terima kasih\" dalam bahasa Indonesia — termasuk di tempat yang bagi kita terasa berlebihan."
+     ]
+    },
+    {
+     "title": "Tujuh ungkapan tak",
+     "body": [
+      "Kata *tak* adalah tulang punggung sopan santun Denmark, dan ia punya lebih banyak pekerjaan daripada yang bisa ditebak dari terjemahannya."
+     ],
+     "table": {
+      "head": ["Ungkapan", "Kapan dipakai"],
+      "rows": [
+       ["**Tak**", "serba guna: terima kasih, ya, dan kadang tidak"],
+       ["**Ja tak**", "menerima tawaran — wajib, *ja* saja terasa kasar"],
+       ["**Nej tak**", "menolak tawaran dengan sopan"],
+       ["**Mange tak / tusind tak**", "terima kasih yang lebih hangat"],
+       ["**Selv tak**", "sama-sama"],
+       ["**Tak for mad**", "sesudah makan, diucapkan ke yang memasak — hampir wajib"],
+       ["**Tak for sidst**", "saat bertemu lagi orang yang terakhir kali menjamumu"]
+      ]
+     },
+     "after": [
+      "⚠️ *Tak for sidst* tidak punya padanan dalam bahasa Indonesia dan mengejutkan banyak pendatang. Kalau seseorang mengundangmu makan malam, lalu kamu bertemu dia dua minggu kemudian di jalan, kalimat pertamamu semestinya *tak for sidst*. Melewatkannya terasa dingin.",
+      "Ada juga *tak for i dag* (di akhir kelas atau rapat), *tak for hjælpen* (terima kasih atas bantuannya), dan *tak for i aften*. Polanya: **tak for** + apa pun yang baru saja terjadi."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Makanan dan minuman",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Dansk", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["en kaffe", "èn KA-fe", "kopi"],
+      ["en te", "èn tè", "teh"],
+      ["et glas vand", "èt glas van", "segelas air"],
+      ["en øl", "èn öl", "bir"],
+      ["en juice", "èn dyus", "jus"],
+      ["en mælk", "èn mèlk", "susu"],
+      ["et rugbrød", "èt RU-bröd", "roti gandum hitam"],
+      ["et smørrebrød", "èt SMÖR-e-bröd", "roti lapis khas Denmark"],
+      ["en kage", "èn KA-e", "kue"],
+      ["et stykke", "èt STÖ-ge", "potong, buah"],
+      ["en laks", "èn laks", "salmon"],
+      ["en fisk", "èn fisk", "ikan"],
+      ["et kød", "èt ködh", "daging"],
+      ["en kylling", "èn KÜ-ling", "ayam"],
+      ["en ost", "èn ost", "keju"],
+      ["en salat", "èn sa-LAT", "salad"],
+      ["en suppe", "èn SU-be", "sup"],
+      ["kartofler", "kar-TOF-la", "kentang"],
+      ["en morgenmad", "èn MORN-madh", "sarapan"],
+      ["en frokost", "èn FRO-kost", "makan siang"],
+      ["en aftensmad", "èn AF-dens-madh", "makan malam"]
+     ]
+    },
+    { "type": "p", "text": "⚠️ *Frokost* berarti **makan siang**, bukan sarapan — meskipun terlihat mirip *Frühstück* di bahasa Jerman yang justru berarti sarapan. Sarapan bahasa Denmark adalah *morgenmad* (\"makanan pagi\"). Kesalahan ini membuat banyak orang datang di jam yang salah." },
+    { "type": "p", "text": "*Et stykke* dipakai untuk menghitung benda yang tidak punya satuan sendiri: *et stykke kage* (sepotong kue), *to stykker smørrebrød*. Perhatikan kata bendanya tidak berekor dan tidak berjamak — bentuknya tetap tunggal telanjang." }
+   ]
+  },
+  {
+   "title": "Di kafe dan restoran",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Dansk", "Bahasa Indonesia"],
+     "rows": [
+      ["Er der et ledigt bord?", "Ada meja kosong?"],
+      ["Må jeg få menuen?", "Boleh minta daftar menunya?"],
+      ["Hvad kan du anbefale?", "Apa yang kamu sarankan?"],
+      ["Jeg er vegetar.", "Saya vegetarian."],
+      ["Jeg spiser ikke svinekød.", "Saya tidak makan daging babi."],
+      ["Er der nødder i?", "Ada kacangnya?"],
+      ["Det smager rigtig godt.", "Rasanya enak sekali."],
+      ["Må vi bede om regningen?", "Boleh minta bonnya?"],
+      ["Skal vi dele?", "Kita bagi dua?"],
+      ["Tak for mad!", "Terima kasih makanannya!"]
+     ]
+    },
+    { "type": "p", "text": "*Jeg spiser ikke svinekød* adalah kalimat yang perlu kamu bisa ucapkan tanpa berpikir. Di Denmark ia dipahami tanpa penjelasan tambahan; makanan halal juga makin mudah ditemukan, terutama di Nørrebro dan di sekitar Aarhus." },
+    { "type": "p", "text": "**Uang tip tidak wajib di Denmark.** Upah pelayan sudah termasuk dalam harga, dan tidak memberi tip sama sekali tidak dianggap kasar. Kalau pelayanannya sangat baik, membulatkan ke atas sudah lebih dari cukup." },
+    { "type": "kotak", "title": "Hygge di meja", "items": [
+      "*Hygge* sering diterjemahkan \"kenyamanan\", tapi lebih tepat: suasana hangat yang sengaja dibuat bersama-sama. Lilin di siang bolong, meja yang tidak diburu-buru, obrolan yang tidak tegang.",
+      "Kata sifatnya *hyggelig*: *en hyggelig café*, *et hyggeligt værelse*, *Det var hyggeligt!* — kalimat perpisahan sesudah kumpul-kumpul yang menyenangkan.",
+      "Kalau tuan rumah Denmark bilang *Skal vi hygge os?*, ia sedang mengajakmu bersantai bersama tanpa acara. Jawaban yang benar selalu *ja tak*."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "da": "at ville", "baca": "at VI-le", "id": "mau (vil)" },
+  { "da": "at få", "baca": "at fo", "id": "mendapat" },
+  { "da": "at drikke", "baca": "at DRI-ge", "id": "minum" },
+  { "da": "at spise", "baca": "at SPI-se", "id": "makan" },
+  { "da": "at smage", "baca": "at SMA-e", "id": "berasa, mencicipi" },
+  { "da": "at bestille", "baca": "at be-STI-le", "id": "memesan" },
+  { "da": "at anbefale", "baca": "at AN-be-fa-le", "id": "menyarankan" },
+  { "da": "at dele", "baca": "at DÈ-le", "id": "membagi" },
+  { "da": "en tjener", "baca": "èn TYÈ-na", "id": "pelayan" },
+  { "da": "en menu", "baca": "èn me-NÜ", "id": "menu" },
+  { "da": "en regning", "baca": "èn RAI-ning", "id": "bon, tagihan" },
+  { "da": "et bord", "baca": "èt boa", "id": "meja" },
+  { "da": "ledig", "baca": "LÈ-dhi", "id": "kosong, tersedia" },
+  { "da": "gratis", "baca": "GRA-tis", "id": "gratis" },
+  { "da": "bare", "baca": "BA-a", "id": "cuma, saja" },
+  { "da": "gerne", "baca": "GÈR-ne", "id": "dengan senang hati" },
+  { "da": "man", "baca": "man", "id": "orang (umum)" },
+  { "da": "normalt", "baca": "nor-MALT", "id": "biasanya" },
+  { "da": "om lidt", "baca": "om LIT", "id": "sebentar lagi" },
+  { "da": "en vegetar", "baca": "èn ve-ge-TAR", "id": "vegetarian" },
+  { "da": "et svinekød", "baca": "èt SVI-ne-ködh", "id": "daging babi" },
+  { "da": "hyggelig", "baca": "HÜ-ge-li", "id": "nyaman, hangat" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Denmark.",
+   "items": [
+    "Saya mau secangkir kopi.",
+    "Boleh minta segelas air?",
+    "Ada meja kosong?",
+    "Saya tidak makan daging babi.",
+    "Boleh minta bonnya?",
+    "Rasanya enak sekali."
+   ]
+  },
+  {
+   "prompt": "Isi dengan ungkapan tak yang tepat.",
+   "items": [
+    "Seseorang menawarkan kopi dan kamu mau: ____.",
+    "Seseorang menawarkan bir dan kamu menolak: ____.",
+    "Kamu baru selesai makan di rumah temanmu: ____.",
+    "Temanmu bilang terima kasih, kamu menjawab: ____.",
+    "Kamu bertemu lagi orang yang minggu lalu menjamumu: ____."
+   ]
+  },
+  {
+   "prompt": "Perhalus kalimat-kalimat kasar berikut. Tulis ulang lengkap.",
+   "items": [
+    "Jeg vil have en øl.",
+    "Giv mig menuen.",
+    "Regningen.",
+    "Jeg vil have kage.",
+    "Vand."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "gerne / kaffe / vil / jeg / en / have",
+    "menuen / jeg / få / må / ?",
+    "vand / bare / glas / et / tak",
+    "godt / smager / det / rigtig",
+    "mad / tak / for"
+   ]
+  }
+ ],
+ "answers": [
+  "Jeg vil gerne have en kop kaffe. — Må jeg få et glas vand? — Er der et ledigt bord? — Jeg spiser ikke svinekød. — Må vi bede om regningen? — Det smager rigtig godt.",
+  "Ja tak — Nej tak — Tak for mad — Selv tak — Tak for sidst",
+  "Jeg vil gerne have en øl. — Må jeg få menuen? — Må jeg bede om regningen? — Jeg vil gerne have et stykke kage. — Må jeg få et glas vand?",
+  "Jeg vil gerne have en kaffe. — Må jeg få menuen? — Bare et glas vand, tak. — Det smager rigtig godt. — Tak for mad."
+ ]
+}

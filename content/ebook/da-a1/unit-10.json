@@ -1,0 +1,215 @@
+{
+ "title": "Kata kerja di tempat kedua",
+ "title_target": "Verbet på plads nummer to",
+ "goal": "Menguasai aturan urutan kata terpenting dalam bahasa Denmark: kata kerja selalu duduk di tempat kedua, dan apa pun yang mendahuluinya mendorong pelaku ke belakang.",
+ "bekal": [
+  "menyusun kalimat berita, pertanyaan, dan kalimat berketerangan di depan",
+  "menempatkan *ikke* di tempat yang benar",
+  "mengenali kenapa *I morgen jeg går* terdengar salah bagi telinga Denmark"
+ ],
+ "wave": "Ulangi **unit 8** dulu: baca sepuluh jam berbeda keras-keras, termasuk yang memakai *halv* dan *kvart i*.",
+ "dialogs": [
+  {
+   "title": "Dialog — Weekendplaner",
+   "intro": "Jumat sore. Ahmad, Mette, dan Budi mengatur rencana akhir pekan sambil berjalan pulang.",
+   "lines": [
+    { "speaker": "Ahmad:", "text": "I morgen tager jeg til Malmø. Vil I med?", "id": "Besok saya ke Malmö. Kalian mau ikut?", "literal": "pada besok mengambil saya ke Malmö. mau kalian dengan?" },
+    { "speaker": "Mette:", "text": "Til Sverige? Hvor længe tager toget?", "id": "Ke Swedia? Keretanya berapa lama?", "literal": "ke Swedia? berapa lama mengambil kereta-itu?" },
+    { "speaker": "Ahmad:", "text": "Kun femogtredive minutter. Så er man der.", "id": "Cuma tiga puluh lima menit. Sudah sampai.", "literal": "hanya tiga-puluh-lima menit. lalu adalah orang di-sana." },
+    { "speaker": "Budi:", "text": "Desværre kan jeg ikke. Jeg arbejder på lørdag.", "id": "Sayangnya saya tidak bisa. Sabtu saya kerja.", "literal": "sayangnya bisa saya tidak. saya bekerja pada sabtu." },
+    { "speaker": "Mette:", "text": "Hvad med søndag? Om søndagen har du fri, ikke?", "id": "Kalau Minggu? Hari Minggu kamu libur, kan?", "literal": "apa dengan minggu? pada minggu-itu punya kamu bebas, tidak?" },
+    { "speaker": "Budi:", "text": "Jo, om søndagen har jeg fri.", "id": "Iya, hari Minggu saya libur.", "literal": "ya-justru, pada minggu-itu punya saya bebas." },
+    { "speaker": "Ahmad:", "text": "Så tager vi på søndag i stedet.", "id": "Kalau begitu kita pergi hari Minggu saja.", "literal": "maka mengambil kami pada minggu di tempat-itu ganti." },
+    { "speaker": "Mette:", "text": "Perfekt. Klokken ni mødes vi på hovedbanegården.", "id": "Sempurna. Jam sembilan kita ketemu di stasiun pusat.", "literal": "sempurna. jam-itu sembilan bertemu kami pada pusat-jalur-halaman-itu." },
+    { "speaker": "Budi:", "text": "Ni? Det er tidligt for en søndag.", "id": "Sembilan? Itu pagi sekali untuk hari Minggu.", "literal": "sembilan? itu adalah awal untuk satu minggu." },
+    { "speaker": "Mette:", "text": "Derfor er det en god idé. Så har vi hele dagen.", "id": "Justru karena itu ide bagus. Jadi kita punya seharian penuh.", "literal": "karena-itu adalah itu satu baik ide. maka punya kami seluruh hari-itu." },
+    { "speaker": "Ahmad:", "text": "Hun har ret. Vi ses på søndag klokken ni!", "id": "Dia benar. Sampai ketemu Minggu jam sembilan!", "literal": "dia punya benar. kami terlihat pada minggu jam-itu sembilan!" }
+   ],
+   "notes": [
+    "**Hitung kata kerjanya.** Di hampir tiap kalimat dialog ini, kata kerja utamanya berdiri di **tempat kedua** — bukan sesudah pelaku, tapi sesudah apa pun yang menempati tempat pertama. Baca ulang dialognya sekarang sambil menghitung; ini yang sedang dilatih unit ini.",
+    "**I morgen tager jeg…** — perhatikan pelakunya (*jeg*) berdiri di **belakang** kata kerja. Bahasa Indonesia bilang \"Besok saya pergi\"; bahasa Denmark bilang \"Besok pergi saya\". Kalau kamu menulis *I morgen jeg tager*, kalimatnya tidak salah paham tapi langsung terdengar asing.",
+    "**Vil I med?** — *med* di ujung berarti \"ikut serta\". Ungkapan pendek yang dipakai terus-menerus: *Skal du med?*, *Jeg vil gerne med.*",
+    "**Jo, bukan ja.** Kalau pertanyaannya mengandung penyangkalan (*har du ikke fri?*, *…ikke?*) dan jawabanmu membenarkan yang positif, bahasa Denmark memakai **jo**, bukan *ja*. Bahasa Indonesia tidak punya kata ini; bahasa Jerman punya (*doch*) dan Prancis punya (*si*).",
+    "**…, ikke?** di ujung kalimat = \"kan?\". Ada juga *…, vel?* dan *…, ikke også?*. Sangat sering dipakai untuk meminta persetujuan.",
+    "**At have fri** = libur, harfiahnya \"punya bebas\". Perhatikan *fri* berdiri telanjang tanpa kata sandang.",
+    "**Hovedbanegården** = stasiun kereta pusat, tersusun dari *hoved* (kepala/utama) + *bane* (jalur) + *gård* (halaman) + ekor tentu *-en*. Di Kopenhagen orang menyebutnya *Hovedbanen* atau cukup *Hovedbanegården*.",
+    "**Hun har ret** = \"dia benar\". Bahasa Denmark memakai *have* di sini, bukan *være* — *hun er ret* tidak berarti apa-apa."
+   ],
+   "grammars": [
+    {
+     "title": "Aturan tempat kedua",
+     "body": [
+      "Ini aturan tunggal yang paling menentukan apakah bahasa Denmarkmu terdengar wajar atau tidak, dan sayangnya ia sama sekali tidak punya padanan dalam bahasa Indonesia.",
+      "Bunyinya: **dalam kalimat berita, kata kerja yang ditasrifkan selalu menempati tempat kedua.** Tempat pertama boleh diisi apa saja — pelaku, keterangan waktu, keterangan tempat, bahkan seluruh anak kalimat — tapi begitu tempat pertama diisi oleh sesuatu selain pelaku, pelakunya terdorong ke tempat ketiga."
+     ],
+     "table": {
+      "head": ["1", "2 (kata kerja)", "3", "sisanya"],
+      "rows": [
+       ["Jeg", "**tager**", "til Malmø", "i morgen."],
+       ["I morgen", "**tager**", "jeg", "til Malmø."],
+       ["Til Malmø", "**tager**", "jeg", "i morgen."],
+       ["Desværre", "**kan**", "jeg", "ikke komme."],
+       ["Om søndagen", "**har**", "jeg", "fri."],
+       ["Klokken ni", "**mødes**", "vi", "på stationen."]
+      ]
+     },
+     "after": [
+      "Perhatikan kolom kedua tidak pernah bergeser. Apa pun yang terjadi di kolom pertama, kata kerjanya tetap di tempat yang sama.",
+      "⚠️ Kesalahan yang paling sering dibuat penutur Indonesia: memasang keterangan di depan **lalu tetap** menaruh pelaku sesudahnya — *I morgen jeg tager til Malmø.* Ini tiga kata kerja jauhnya dari benar, dan telinga Denmark langsung menangkapnya.",
+      "Cara melatihnya: ambil kalimat biasa yang kamu sudah bisa, lalu pindahkan keterangan waktunya ke depan dan **paksa dirimu menukar** pelaku dan kata kerjanya. Ulangi sepuluh kali dengan kalimat berbeda. Sesudah beberapa hari, telingamu yang akan mengoreksi, bukan kepalamu."
+     ]
+    },
+    {
+     "title": "Pertanyaan: kata kerja pindah ke depan",
+     "body": [
+      "Karena aturan tempat kedua, pertanyaan bahasa Denmark tidak butuh kata bantu sama sekali — cukup pindahkan kata kerjanya."
+     ],
+     "table": {
+      "head": ["Jenis", "Susunan", "Contoh"],
+      "rows": [
+       ["Berita", "pelaku + kerja", "Du **taler** dansk."],
+       ["Pertanyaan ya/tidak", "kerja + pelaku", "**Taler** du dansk?"],
+       ["Pertanyaan berkata tanya", "kata tanya + kerja + pelaku", "Hvor **bor** du?"],
+       ["Pertanyaan menyangkal", "kerja + pelaku + ikke", "**Kommer** du ikke?"]
+      ]
+     },
+     "after": [
+      "Bandingkan dengan bahasa Inggris yang harus menambahkan *do*: *Do you speak Danish?* Bahasa Denmark tidak punya perkakas semacam itu, dan itu justru menyederhanakan.",
+      "Kata tanya menempati tempat pertama, jadi kata kerjanya tetap di tempat kedua — aturannya konsisten, bukan pengecualian."
+     ]
+    },
+    {
+     "title": "Di mana ikke berdiri",
+     "body": [
+      "*Ikke* punya tempat tetap, dan tempat itu **sesudah** kata kerja yang ditasrifkan dalam kalimat utama."
+     ],
+     "table": {
+      "head": ["Kalimat", "Letak ikke"],
+      "rows": [
+       ["Jeg taler **ikke** dansk.", "sesudah kata kerja"],
+       ["Han kommer **ikke** i dag.", "sesudah kata kerja"],
+       ["Jeg kan **ikke** tale dansk.", "sesudah kata kerja bantu, sebelum kata kerja utama"],
+       ["I morgen kommer jeg **ikke**.", "sesudah pelaku yang sudah pindah"],
+       ["**Kommer** du **ikke**?", "sesudah pelaku dalam pertanyaan"],
+       ["Jeg har **ikke** set filmen.", "sesudah *har*, sebelum bentuk sudah"]
+      ]
+     },
+     "after": [
+      "Keterangan lain berperilaku sama dengan *ikke*: *altid*, *aldrig*, *også*, *måske*, *tit*, *heller ikke*. Semuanya berdiri sesudah kata kerja: *Jeg cykler **altid** til skole.*",
+      "⚠️ Ada satu tempat di mana *ikke* pindah ke **depan** kata kerja: di dalam anak kalimat. *Jeg ved, at han **ikke kommer**.* Aturannya dibahas tuntas di unit 20; untuk sekarang cukup tahu bahwa perkecualian itu ada."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata penyambung yang tidak mengubah urutan",
+   "blocks": [
+    { "type": "p", "text": "Lima kata sambung berikut berdiri **di luar hitungan** — ia tidak menempati tempat pertama, jadi kalimat sesudahnya tetap berurutan pelaku-kerja seperti biasa." },
+    {
+     "type": "tabel",
+     "head": ["Kata sambung", "Contoh", "Arti"],
+     "rows": [
+      ["**og** (dan)", "Jeg spiser, og jeg drikker kaffe.", "dan"],
+      ["**men** (tapi)", "Jeg vil gerne, men jeg kan ikke.", "tetapi"],
+      ["**eller** (atau)", "Vi tager toget, eller vi cykler.", "atau"],
+      ["**for** (sebab)", "Jeg bliver hjemme, for jeg er træt.", "sebab, karena"],
+      ["**så** (jadi)", "Det regner, så vi tager bussen.", "jadi, maka"]
+     ]
+    },
+    { "type": "p", "text": "Bandingkan dengan **derfor** (karena itu), yang justru **ikut** hitungan dan karenanya memicu pertukaran: *Det regner, **derfor tager vi** bussen.* Dua kata yang artinya berdekatan tapi akibat tata bahasanya berlawanan — perhatikan baik-baik." },
+    { "type": "kotak", "title": "Uji tiga detik", "items": [
+      "Setiap kali kamu menulis kalimat bahasa Denmark, hitung: apa yang berdiri di tempat pertama? Kalau bukan pelaku, pelakunya **harus** berada sesudah kata kerja.",
+      "Kalau kalimatmu dimulai dengan *og*, *men*, *eller*, *for*, atau *så* — kata itu tidak dihitung. Mulai menghitung dari kata sesudahnya.",
+      "Tiga detik pemeriksaan ini, diulang beberapa ratus kali, adalah cara tercepat memindahkan aturan ini dari kepala ke telinga."
+     ] }
+   ]
+  },
+  {
+   "title": "Ja, jo, atau nej?",
+   "blocks": [
+    { "type": "p", "text": "Bahasa Denmark punya **tiga** kata untuk menjawab pertanyaan tertutup, sementara bahasa Indonesia punya dua. Pilihannya bergantung pada apakah pertanyaannya mengandung penyangkalan." },
+    {
+     "type": "tabel",
+     "head": ["Pertanyaan", "Jawaban positif", "Jawaban negatif"],
+     "rows": [
+      ["Taler du dansk? (biasa)", "**Ja**, det gør jeg.", "**Nej**, det gør jeg ikke."],
+      ["Taler du ikke dansk? (menyangkal)", "**Jo**, det gør jeg.", "**Nej**, det gør jeg ikke."],
+      ["Du kommer vel? (mengharap)", "**Jo**, jeg kommer.", "**Nej**, desværre."]
+     ]
+    },
+    { "type": "p", "text": "Aturannya sederhana: kalau pertanyaannya memuat *ikke* dan jawabanmu membantahnya, pakai **jo**. Memakai *ja* di situ tidak akan disalahpahami, tapi ia salah satu tanda paling cepat bahwa seseorang belum lama belajar." },
+    { "type": "p", "text": "Perhatikan juga jawaban pendek Denmark memakai *det gør jeg* (\"itu saya lakukan\") — mirip *I do* dalam bahasa Inggris. Bentuknya menyesuaikan kata kerjanya: *Er du træt? — Ja, **det er jeg**.* / *Har du tid? — Nej, **det har jeg ikke**.*" }
+   ]
+  }
+ ],
+ "vocab": [
+  { "da": "et tog", "baca": "èt tou", "id": "kereta" },
+  { "da": "en station", "baca": "èn sta-SJON", "id": "stasiun" },
+  { "da": "en hovedbanegård", "baca": "èn HO-edh-ba-ne-gor", "id": "stasiun pusat" },
+  { "da": "en plan", "baca": "èn plan", "id": "rencana" },
+  { "da": "en idé", "baca": "èn i-DÈ", "id": "ide" },
+  { "da": "at have fri", "baca": "at ha FRI", "id": "libur" },
+  { "da": "at have ret", "baca": "at ha RÈT", "id": "benar" },
+  { "da": "at tage med", "baca": "at TA mèdh", "id": "ikut serta" },
+  { "da": "jo", "baca": "yo", "id": "ya (membantah penyangkalan)" },
+  { "da": "derfor", "baca": "DÈR-for", "id": "karena itu" },
+  { "da": "fordi", "baca": "for-DI", "id": "karena" },
+  { "da": "i stedet", "baca": "i STÈ-dhedh", "id": "sebagai gantinya" },
+  { "da": "hele", "baca": "HÈ-le", "id": "seluruh" },
+  { "da": "træt", "baca": "trèt", "id": "lelah" },
+  { "da": "en weekend", "baca": "èn WI-kend", "id": "akhir pekan" },
+  { "da": "Sverige", "baca": "SVÈR-i-e", "id": "Swedia" },
+  { "da": "en plads", "baca": "èn plas", "id": "tempat, lapangan" },
+  { "da": "vel", "baca": "vèl", "id": "kan? (mencari persetujuan)" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis ulang kalimatnya dengan keterangan waktu di depan.",
+   "items": [
+    "Jeg tager til Malmø i morgen.",
+    "Hun arbejder på en café om lørdagen.",
+    "Vi mødes på stationen klokken ni.",
+    "Han cykler til skole hver dag.",
+    "De spiser sammen om aftenen."
+   ]
+  },
+  {
+   "prompt": "Ubah jadi pertanyaan.",
+   "items": [
+    "Du taler dansk.",
+    "Hun bor i Aarhus.",
+    "De kommer i morgen.",
+    "Han har fri på søndag.",
+    "I arbejder her."
+   ]
+  },
+  {
+   "prompt": "Sisipkan ikke di tempat yang benar. Tulis ulang lengkap.",
+   "items": [
+    "Jeg taler dansk.",
+    "Han kommer i dag.",
+    "Jeg kan tale dansk.",
+    "I morgen kommer jeg.",
+    "Kommer du?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan ja, jo, atau nej.",
+   "items": [
+    "Taler du dansk? — ____, lidt.",
+    "Kommer du ikke i morgen? — ____, jeg kommer.",
+    "Har du tid? — ____, desværre ikke.",
+    "Er du ikke træt? — ____, meget.",
+    "Bor hun i København? — ____, hun bor i Aarhus."
+   ]
+  }
+ ],
+ "answers": [
+  "I morgen tager jeg til Malmø. — Om lørdagen arbejder hun på en café. — Klokken ni mødes vi på stationen. — Hver dag cykler han til skole. — Om aftenen spiser de sammen.",
+  "Taler du dansk? — Bor hun i Aarhus? — Kommer de i morgen? — Har han fri på søndag? — Arbejder I her?",
+  "Jeg taler ikke dansk. — Han kommer ikke i dag. — Jeg kan ikke tale dansk. — I morgen kommer jeg ikke. — Kommer du ikke?",
+  "Ja — Jo — Nej — Jo — Nej"
+ ]
+}

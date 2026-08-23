@@ -1,0 +1,230 @@
+{
+ "title": "Di mana kantor posnya?",
+ "title_target": "Hvor er posthuset?",
+ "goal": "Menanyakan dan memberi arah, memakai kata depan tempat, dan membentuk kalimat perintah.",
+ "bekal": [
+  "menanyakan arah dengan sopan dan mengerti jawabannya",
+  "memilih antara *i*, *på*, *til*, dan *hos*",
+  "membentuk kalimat perintah: kata dasar tanpa *-r*"
+ ],
+ "wave": "Ulangi **unit 9** dulu: ceritakan harimu dari bangun sampai tidur, sepuluh kalimat, dan mulai lima di antaranya dengan keterangan waktu — ingat menukar pelakunya.",
+ "dialogs": [
+  {
+   "title": "Dialog — Undskyld, jeg er faret vild",
+   "intro": "Budi tersesat di Aarhus dan bertanya kepada seorang perempuan di halte bus.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Undskyld, kan du hjælpe mig? Jeg er faret vild.", "id": "Permisi, bisa bantu saya? Saya tersesat.", "literal": "maaf, bisa kamu menolong saya? saya adalah berjalan liar." },
+    { "speaker": "Kvinden:", "text": "Selvfølgelig. Hvor skal du hen?", "id": "Tentu. Mau ke mana?", "literal": "tentu-saja. di-mana harus kamu ke-sana?" },
+    { "speaker": "Budi:", "text": "Jeg leder efter posthuset. Ligger det langt herfra?", "id": "Saya cari kantor pos. Jauh dari sini?", "literal": "saya mencari sesudah pos-rumah-itu. terletak itu jauh dari-sini?" },
+    { "speaker": "Kvinden:", "text": "Nej, kun fem minutter. Gå ligeud til lyskrydset.", "id": "Tidak, cuma lima menit. Jalan lurus sampai lampu merah.", "literal": "tidak, hanya lima menit. berjalan lurus-keluar ke lampu-persimpangan-itu." },
+    { "speaker": "Budi:", "text": "Til lyskrydset. Og så?", "id": "Sampai lampu merah. Lalu?", "literal": "ke lampu-persimpangan-itu. dan lalu?" },
+    { "speaker": "Kvinden:", "text": "Så drejer du til højre ad Nørregade.", "id": "Lalu belok kanan ke Nørregade.", "literal": "lalu memutar kamu ke kanan sepanjang Nørregade." },
+    { "speaker": "Budi:", "text": "Til højre. Er det den gade med kirken?", "id": "Ke kanan. Itu jalan yang ada gerejanya?", "literal": "ke kanan. adalah itu itu jalan dengan gereja-itu?" },
+    { "speaker": "Kvinden:", "text": "Præcis. Posthuset ligger lige over for kirken.", "id": "Tepat. Kantor posnya persis di seberang gereja.", "literal": "tepat. pos-rumah-itu terletak lurus atas untuk gereja-itu." },
+    { "speaker": "Budi:", "text": "Ved siden af hvad? Der er så mange bygninger.", "id": "Sebelah apa? Bangunannya banyak sekali.", "literal": "dekat sisi dari apa? di-sana adalah begitu banyak bangunan." },
+    { "speaker": "Kvinden:", "text": "Mellem apoteket og en bank. Du kan ikke overse det — det er rødt.", "id": "Di antara apotek dan bank. Tidak mungkin terlewat — warnanya merah.", "literal": "antara apotek-itu dan satu bank. kamu bisa tidak melewati itu — itu adalah merah." },
+    { "speaker": "Budi:", "text": "Tusind tak for hjælpen!", "id": "Terima kasih banyak atas bantuannya!", "literal": "seribu terima-kasih untuk bantuan-itu!" },
+    { "speaker": "Kvinden:", "text": "Det var så lidt. Held og lykke!", "id": "Sama-sama. Semoga berhasil!", "literal": "itu adalah begitu sedikit. keberuntungan dan kebahagiaan!" }
+   ],
+   "notes": [
+    "**Hvor skal du hen?** = \"mau ke mana?\" Perhatikan *hen* di ujung — bahasa Denmark menandai **arah** dengan kata kecil di akhir kalimat. Bandingkan *Hvor er du?* (kamu di mana — tempat) dengan *Hvor skal du hen?* (kamu mau ke mana — arah). Bahasa Indonesia menyelesaikan keduanya dengan \"di mana\" dan \"ke mana\".",
+    "**Jeg er faret vild** = saya tersesat, harfiahnya \"saya sudah berjalan liar\". Salah satu ungkapan yang harus dihafal utuh; bagian-bagiannya tidak menolong.",
+    "**At lede efter** = mencari. Wajib memakai *efter*; *jeg leder posthuset* tidak berarti apa-apa. Ada juga *at søge*, yang lebih resmi dan dipakai untuk mencari kerja atau mencari di internet.",
+    "**At ligge** = terletak, untuk benda diam dan bangunan. Bahasa Denmark memilih kata kerja menurut bentuk bendanya: *at ligge* (berbaring, untuk yang mendatar), *at stå* (berdiri, untuk yang tegak), *at sidde* (duduk, untuk yang menempel). *Bogen ligger på bordet*, tapi *flasken står på bordet*.",
+    "**Ad** dipakai untuk gerak menyusuri: *ad Nørregade* = menyusuri jalan Nørregade. Kata depan kecil yang jarang diajarkan tapi sering terdengar dalam petunjuk arah.",
+    "**Lige over for** = tepat di seberang. *Lige* memperkuat jadi \"tepat, persis\" — bandingkan *lige her* (tepat di sini), *lige nu* (sekarang juga).",
+    "**Det var så lidt** adalah jawaban baku untuk terima kasih, harfiahnya \"itu tadi begitu sedikit\". Bandingkan dengan *selv tak*. Keduanya sama-sama lazim.",
+    "**Held og lykke** = semoga berhasil. Diucapkan sebelum ujian, wawancara, atau apa pun yang butuh keberuntungan."
+   ],
+   "grammars": [
+    {
+     "title": "Kalimat perintah: kata dasar telanjang",
+     "body": [
+      "Salah satu bentuk paling mudah dalam bahasa Denmark. Ambil bentuk dasarnya, buang *at*, buang *-e* di ujung kalau ada — dan itulah perintahnya."
+     ],
+     "table": {
+      "head": ["Bentuk dasar", "Perintah", "Arti"],
+      "rows": [
+       ["at gå", "**gå!**", "jalan!"],
+       ["at komme", "**kom!**", "datang!"],
+       ["at dreje", "**drej!**", "belok!"],
+       ["at tage", "**tag!**", "ambil!"],
+       ["at vente", "**vent!**", "tunggu!"],
+       ["at lukke", "**luk!**", "tutup!"],
+       ["at være", "**vær!**", "jadilah!"],
+       ["at have", "**hav!**", "punyailah!"],
+       ["at sætte sig", "**sæt dig!**", "duduklah!"]
+      ]
+     },
+     "after": [
+      "Kata kerja berpantul tetap membawa pantulannya, dan pantulannya menyesuaikan lawan bicara: *sæt dig!* (satu orang), *sæt jer!* (banyak orang), *skynd dig!* (bergegaslah).",
+      "Perintah menyangkal: *ikke* berdiri sesudah kata kerjanya — *Kom ikke for sent!*, *Glem det ikke!*",
+      "⚠️ Perintah dalam bahasa Denmark terdengar lebih tegas daripada dalam bahasa Indonesia. Untuk permintaan sehari-hari, orang Denmark lebih sering memakai pertanyaan: *Kan du lukke døren?* jauh lebih lazim daripada *Luk døren!* Perintah telanjang dipakai untuk petunjuk arah, resep, tanda-tanda, dan keadaan darurat."
+     ]
+    },
+    {
+     "title": "Kata depan tempat",
+     "body": [
+      "Bagian ini tidak sulit dipahami tapi sulit ditebak, karena pilihannya sering tidak masuk akal dan harus dihafal per ungkapan."
+     ],
+     "table": {
+      "head": ["Kata depan", "Arti dasarnya", "Contoh"],
+      "rows": [
+       ["**i**", "di dalam", "i huset, i bilen, i Danmark, i København"],
+       ["**på**", "di atas permukaan", "på bordet, på gaden, **på hotellet**, **på arbejde**"],
+       ["**til**", "ke (arah)", "til Aarhus, til lyskrydset, til højre"],
+       ["**fra**", "dari", "fra stationen, fra Indonesien"],
+       ["**hos**", "di tempat seseorang", "hos lægen, hos min mor"],
+       ["**ved**", "di dekat", "ved døren, ved siden af banken"],
+       ["**over for**", "di seberang", "over for kirken"],
+       ["**mellem**", "di antara", "mellem apoteket og banken"],
+       ["**bag**", "di belakang", "bag huset"],
+       ["**foran**", "di depan", "foran stationen"],
+       ["**under / over**", "di bawah / di atas", "under bordet / over sengen"],
+       ["**gennem**", "menembus", "gennem parken"]
+      ]
+     },
+     "after": [
+      "⚠️ **på** untuk tempat umum adalah kejutan terbesar buat pemula: *på skolen*, *på universitetet*, *på hospitalet*, *på biblioteket*, *på posthuset*, *på arbejde*, *på café*, *på restaurant*. Tidak ada alasan yang bisa dijelaskan; hafalkan sebagai kelompok.",
+      "Bandingkan pasangan ini: *at gå **i** skole* (bersekolah, sebagai kegiatan) dengan *at være **på** skolen* (berada di gedung sekolah). Perbedaan halus yang sama muncul di *i seng* (pergi tidur) dan *på sengen* (di atas kasur).",
+      "**hos** khusus untuk orang: *Jeg er hos lægen* (saya di tempat dokter), *Vi spiser hos Mette*. Memakai *i* atau *på* untuk orang selalu salah."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menanyakan dan memberi arah",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Dansk", "Bahasa Indonesia"],
+     "rows": [
+      ["Undskyld, hvor er…?", "Permisi, di mana…?"],
+      ["Hvordan kommer jeg til…?", "Bagaimana caranya ke…?"],
+      ["Er det langt herfra?", "Jauh dari sini?"],
+      ["Kan du vise mig det på kortet?", "Bisa tunjukkan di peta?"],
+      ["Gå ligeud.", "Jalan lurus."],
+      ["Drej til højre / til venstre.", "Belok kanan / kiri."],
+      ["Tag første vej til højre.", "Ambil jalan pertama ke kanan."],
+      ["Gå over gaden.", "Seberangi jalannya."],
+      ["Det ligger over for banken.", "Letaknya di seberang bank."],
+      ["Det tager cirka ti minutter.", "Kira-kira sepuluh menit."],
+      ["Du kan tage bus nummer fem.", "Kamu bisa naik bus nomor lima."],
+      ["Jeg er ikke herfra.", "Saya bukan orang sini."]
+     ]
+    },
+    { "type": "p", "text": "*Jeg er ikke herfra* adalah kalimat yang perlu kamu kenali **saat mendengarnya**, karena itulah jawaban yang mungkin kamu terima. Kalimat lain yang perlu dikenali: *Det ved jeg desværre ikke.*" }
+   ]
+  },
+  {
+   "title": "Tempat di kota",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Dansk", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["en gade", "èn GA-dhe", "jalan"],
+      ["en vej", "èn vai", "jalan (besar)"],
+      ["et torv", "èt torv", "alun-alun, lapangan"],
+      ["et lyskryds", "èt LÜS-krüs", "perempatan berlampu"],
+      ["et hjørne", "èt YÖR-ne", "sudut, pojok"],
+      ["et posthus", "èt POST-hus", "kantor pos"],
+      ["en bank", "èn bangk", "bank"],
+      ["et apotek", "èt a-po-TÈK", "apotek"],
+      ["et supermarked", "èt SU-pa-mar-kedh", "supermarket"],
+      ["en kirke", "èn KIR-ge", "gereja"],
+      ["et hospital", "èt hos-pi-TAL", "rumah sakit"],
+      ["et bibliotek", "èt bi-bli-o-TÈK", "perpustakaan"],
+      ["en park", "èn park", "taman"],
+      ["et museum", "èt mu-SÈ-om", "museum"],
+      ["et rådhus", "èt ROD-hus", "balai kota"],
+      ["et stoppested", "èt STOP-e-stèdh", "halte"],
+      ["en bygning", "èn BÜG-ning", "bangunan"],
+      ["et hjørne", "èt YÖR-ne", "pojok"]
+     ]
+    },
+    { "type": "kotak", "title": "Nama jalan Denmark bisa dibaca", "items": [
+      "*-gade* = jalan dalam kota (Nørregade, Vestergade). *-vej* = jalan yang lebih besar atau di pinggir kota (Amagerbrogade, Ringvej).",
+      "*Nørre-* = utara, *Søndre-* = selatan, *Øster-* = timur, *Vester-* = barat. Jadi *Nørregade* = Jalan Utara, dan hampir tiap kota Denmark punya keempatnya.",
+      "*-borg* = benteng, *-havn* = pelabuhan, *-by* = kota, *-lund* = hutan kecil. *København* harfiahnya \"pelabuhan pedagang\"."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "da": "at hjælpe", "baca": "at YÈL-be", "id": "menolong" },
+  { "da": "at lede efter", "baca": "at LÈ-dhe èf-da", "id": "mencari" },
+  { "da": "at ligge", "baca": "at LI-ge", "id": "terletak, berbaring" },
+  { "da": "at dreje", "baca": "at DRAI-e", "id": "berbelok" },
+  { "da": "at vise", "baca": "at VI-se", "id": "menunjukkan" },
+  { "da": "ligeud", "baca": "LI-e-udh", "id": "lurus terus" },
+  { "da": "til højre", "baca": "til HOI-a", "id": "ke kanan" },
+  { "da": "til venstre", "baca": "til VÈNS-dre", "id": "ke kiri" },
+  { "da": "over for", "baca": "O-a for", "id": "di seberang" },
+  { "da": "mellem", "baca": "MÈL-em", "id": "di antara" },
+  { "da": "bag", "baca": "bæ", "id": "di belakang" },
+  { "da": "foran", "baca": "FOR-an", "id": "di depan" },
+  { "da": "gennem", "baca": "GÈN-em", "id": "menembus, lewat" },
+  { "da": "hos", "baca": "hos", "id": "di tempat (orang)" },
+  { "da": "langt", "baca": "langt", "id": "jauh" },
+  { "da": "tæt på", "baca": "tèt PO", "id": "dekat" },
+  { "da": "herfra", "baca": "hèa-FRA", "id": "dari sini" },
+  { "da": "et kort", "baca": "èt kort", "id": "peta; kartu" },
+  { "da": "cirka", "baca": "SIR-ka", "id": "kira-kira" },
+  { "da": "præcis", "baca": "prè-SIS", "id": "tepat" },
+  { "da": "rød", "baca": "rödh", "id": "merah" },
+  { "da": "Held og lykke", "baca": "hèl o LÖ-ge", "id": "semoga berhasil" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan i, på, til, atau hos.",
+   "items": [
+    "Jeg arbejder ____ et hotel.",
+    "Vi bor ____ Aarhus.",
+    "Hun er ____ lægen.",
+    "Drej ____ højre.",
+    "Bogen ligger ____ bordet.",
+    "Han går ____ skole hver dag."
+   ]
+  },
+  {
+   "prompt": "Ubah jadi kalimat perintah.",
+   "items": [
+    "at gå ligeud → ____",
+    "at dreje til venstre → ____",
+    "at komme her → ____",
+    "at vente et øjeblik → ____",
+    "at lukke døren → ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Denmark.",
+   "items": [
+    "Permisi, di mana kantor posnya?",
+    "Saya tersesat.",
+    "Jalan lurus sampai lampu merah.",
+    "Lalu belok kanan.",
+    "Letaknya di seberang gereja.",
+    "Jauh dari sini?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "posthuset / hvor / er / ?",
+    "ligeud / lyskrydset / gå / til",
+    "højre / drej / til",
+    "kirken / for / ligger / over / det",
+    "hjælpen / tak / for"
+   ]
+  }
+ ],
+ "answers": [
+  "på — i — hos — til — på — i",
+  "Gå ligeud! — Drej til venstre! — Kom her! — Vent et øjeblik! — Luk døren!",
+  "Undskyld, hvor er posthuset? — Jeg er faret vild. — Gå ligeud til lyskrydset. — Så drej til højre. — Det ligger over for kirken. — Er det langt herfra?",
+  "Hvor er posthuset? — Gå ligeud til lyskrydset. — Drej til højre. — Det ligger over for kirken. — Tak for hjælpen."
+ ]
+}

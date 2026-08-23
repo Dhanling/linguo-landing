@@ -1,0 +1,214 @@
+{
+ "title": "Bisa, harus, mau, boleh",
+ "title_target": "Kan du hjælpe mig?",
+ "goal": "Menguasai lima kata kerja bantu Denmark dan menghindari jebakan terbesarnya: *må ikke* yang berarti \"tidak boleh\", bukan \"tidak perlu\".",
+ "bekal": [
+  "memakai *kan*, *skal*, *vil*, *må*, dan *bør* dengan tepat",
+  "meminta bantuan dan menawarkan bantuan",
+  "membedakan *må ikke*, *skal ikke*, dan *behøver ikke*"
+ ],
+ "wave": "Ulangi **unit 11** dulu: beri petunjuk arah dari tempatmu sekarang ke tempat terdekat yang kamu kenal, keras-keras, memakai bentuk perintah.",
+ "dialogs": [
+  {
+   "title": "Dialog — Flyttedag",
+   "intro": "Budi pindah kamar. Ahmad dan Mette datang membantu mengangkut barang.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Kan I hjælpe mig med sofaen? Den er tung.", "id": "Bisa bantu saya angkat sofanya? Berat.", "literal": "bisa kalian menolong saya dengan sofa-itu? ia adalah berat." },
+    { "speaker": "Ahmad:", "text": "Selvfølgelig. Skal vi tage den ud ad døren først?", "id": "Tentu. Kita keluarkan lewat pintu dulu?", "literal": "tentu-saja. harus kami mengambil ia keluar lewat pintu-itu pertama?" },
+    { "speaker": "Mette:", "text": "Vent — vi må ikke bruge elevatoren til møbler.", "id": "Tunggu — kita tidak boleh pakai lift untuk perabot.", "literal": "tunggu — kami boleh tidak memakai lift-itu ke perabot." },
+    { "speaker": "Budi:", "text": "Hvorfor ikke?", "id": "Kenapa tidak?", "literal": "kenapa tidak?" },
+    { "speaker": "Mette:", "text": "Det står i husordenen. Vi skal bruge trappen.", "id": "Ada di aturan gedungnya. Kita harus lewat tangga.", "literal": "itu berdiri di rumah-aturan-itu. kami harus memakai tangga-itu." },
+    { "speaker": "Ahmad:", "text": "Fire etager. Vi bør nok tage en pause undervejs.", "id": "Empat lantai. Sebaiknya kita istirahat di tengah jalan.", "literal": "empat lantai. kami sebaiknya mungkin mengambil satu istirahat sepanjang-jalan." },
+    { "speaker": "Budi:", "text": "I behøver ikke bære alt. Jeg kan tage kasserne.", "id": "Kalian tidak perlu angkat semuanya. Saya bisa bawa kardusnya.", "literal": "kalian perlu tidak membawa semua. saya bisa mengambil kardus-kardus-itu." },
+    { "speaker": "Mette:", "text": "Vil du have en øl bagefter?", "id": "Mau bir setelah ini?", "literal": "mau kamu punya satu bir sesudah?" },
+    { "speaker": "Budi:", "text": "Jeg vil hellere give jer middag. I har hjulpet hele dagen.", "id": "Saya lebih mau mentraktir kalian makan malam. Kalian bantu seharian.", "literal": "saya mau lebih-suka memberi kalian makan-malam. kalian punya menolong seluruh hari-itu." },
+    { "speaker": "Ahmad:", "text": "Det må du gerne. Men først: sofaen.", "id": "Boleh saja. Tapi pertama: sofanya.", "literal": "itu boleh kamu senang-hati. tapi pertama: sofa-itu." },
+    { "speaker": "Mette:", "text": "På tre. En, to, tre — løft!", "id": "Hitungan tiga. Satu, dua, tiga — angkat!", "literal": "pada tiga. satu, dua, tiga — angkat!" }
+   ],
+   "notes": [
+    "**Kan du hjælpe mig?** adalah cara paling wajar meminta tolong di Denmark — jauh lebih lazim daripada bentuk perintah. Bandingkan dengan *hjælp mig!*, yang terdengar seperti keadaan darurat.",
+    "**Sesudah kata kerja bantu, kata kerja berikutnya telanjang.** *Kan I hjælpe*, bukan *kan I at hjælpe*. Ini berlaku untuk kelima kata kerja bantu tanpa kecuali, dan aturannya sederhana sekali — tapi mudah lupa kalau kamu terbiasa dengan bahasa yang memakai penanda bentuk dasar.",
+    "**Vi må ikke** = kami **tidak boleh**. Inilah jebakannya. *Må* berarti \"boleh\", jadi menyangkalnya berarti melarang. Untuk \"tidak perlu\" dipakai kata yang lain sama sekali: *behøver ikke*. Salah memilih di sini bisa berarti perbedaan antara \"kamu tidak perlu bayar\" dan \"kamu dilarang bayar\".",
+    "**Det står i husordenen** — *at stå* dipakai untuk sesuatu yang tertulis: *det står i avisen* (ada di koran), *hvad står der?* (tulisannya apa?). Bahasa Indonesia bilang \"tertulis\", bahasa Denmark bilang \"berdiri\".",
+    "**Bør nok** — *bør* (sebaiknya) dilunakkan lagi dengan *nok* (mungkin, agaknya). Orang Denmark sangat gemar melunakkan saran dengan kata-kata kecil semacam ini: *nok*, *vist*, *måske*, *lige*, *bare*.",
+    "**Jeg vil hellere** = \"saya lebih mau\". *Hellere* adalah bentuk pembanding dari *gerne*: *gerne → hellere → helst*. Jadi *jeg vil helst* = \"yang paling saya mau\".",
+    "**Det må du gerne** = \"boleh saja\", harfiahnya \"itu boleh kamu dengan senang hati\". Jawaban baku untuk permintaan izin, dan salah satu ungkapan Denmark yang paling khas.",
+    "**En etage** dibaca **e-TA-sje**, dari bahasa Prancis. Perlu dicatat: lantai dasar disebut *stuen*, dan *første sal* berarti lantai **dua** menurut hitungan Indonesia."
+   ],
+   "grammars": [
+    {
+     "title": "Lima kata kerja bantu",
+     "body": [
+      "Kelimanya tidak mengikuti pola \"dasar + -r\", dan kelimanya wajib dihafal. Sebagai gantinya, kelimanya juga tidak berubah menurut pelaku — seperti semua kata kerja Denmark."
+     ],
+     "table": {
+      "head": ["Dasar", "Sekarang", "Lampau", "Arti pokok"],
+      "rows": [
+       ["at kunne", "**kan**", "kunne", "bisa, mampu; boleh (santai)"],
+       ["at skulle", "**skal**", "skulle", "harus; akan (rencana)"],
+       ["at ville", "**vil**", "ville", "mau, ingin"],
+       ["at måtte", "**må**", "måtte", "boleh; terpaksa harus"],
+       ["at burde", "**bør**", "burde", "sebaiknya"]
+      ]
+     },
+     "after": [
+      "Perhatikan tak satu pun berakhiran *-r* di kolom \"sekarang\". Itu penanda paling cepat untuk mengenali kata kerja bantu dalam kalimat.",
+      "*Må* punya dua arti yang tampak bertentangan — \"boleh\" dan \"terpaksa\" — dan konteks yang memutuskan. *Må jeg komme ind?* (boleh saya masuk?) vs *Jeg må gå nu* (saya harus pergi sekarang). Dalam prakteknya, bentuk pertanyaan hampir selalu \"boleh\", bentuk berita hampir selalu \"harus\".",
+      "*Skal* juga menyatakan rencana yang sudah diatur, bukan cuma kewajiban: *Jeg skal til tandlægen i morgen* = besok saya ada janji ke dokter gigi."
+     ]
+    },
+    {
+     "title": "Menyangkal kata kerja bantu — jebakan besarnya",
+     "body": [
+      "Bagian ini pantas dibaca dua kali. Arti sebuah larangan bahasa Denmark sering berbalik dari dugaan penutur bahasa Inggris maupun Indonesia."
+     ],
+     "table": {
+      "head": ["Bentuk", "Artinya", "Contoh"],
+      "rows": [
+       ["**må ikke**", "TIDAK BOLEH (dilarang)", "Du **må ikke** ryge her."],
+       ["**behøver ikke**", "tidak perlu", "Du **behøver ikke** at betale."],
+       ["**skal ikke**", "tidak akan; jangan", "Du **skal ikke** være bange."],
+       ["**kan ikke**", "tidak bisa (tidak mampu)", "Jeg **kan ikke** svømme."],
+       ["**vil ikke**", "tidak mau", "Han **vil ikke** komme."],
+       ["**bør ikke**", "sebaiknya jangan", "Du **bør ikke** spise så sent."]
+      ]
+     },
+     "after": [
+      "⚠️ Baris pertama dan kedua adalah sumber kesalahpahaman yang paling sering. *Du må ikke betale* berarti \"kamu dilarang membayar\" — bukan \"kamu tidak perlu membayar\". Kalau maksudmu yang kedua, kalimatnya *du behøver ikke betale*.",
+      "*Behøver* boleh diikuti *at* atau tanpa *at* — dua-duanya berterima. Ia satu-satunya di daftar ini yang berperilaku begitu, karena sebenarnya ia kata kerja biasa, bukan kata kerja bantu penuh.",
+      "Tanda larangan di Denmark hampir selalu memakai bentuk ini: *Der må ikke parkeres*, *Man må ikke ryge*. Kalau kamu melihat *må ikke* di papan, itu larangan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Meminta, menawarkan, mengizinkan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Dansk", "Bahasa Indonesia"],
+     "rows": [
+      ["Kan du hjælpe mig?", "Bisa bantu saya?"],
+      ["Kan du gøre mig en tjeneste?", "Bisa minta tolong?"],
+      ["Vil du med?", "Mau ikut?"],
+      ["Skal jeg hjælpe dig?", "Perlu saya bantu?"],
+      ["Har du brug for hjælp?", "Butuh bantuan?"],
+      ["Må jeg låne din telefon?", "Boleh pinjam teleponmu?"],
+      ["Må jeg spørge om noget?", "Boleh saya tanya sesuatu?"],
+      ["Det må du gerne.", "Boleh saja."],
+      ["Ja, det kan jeg godt.", "Ya, saya bisa."],
+      ["Det kan jeg desværre ikke.", "Sayangnya saya tidak bisa."],
+      ["Jeg vil hellere…", "Saya lebih mau…"],
+      ["Vi bør nok gå nu.", "Sebaiknya kita pergi sekarang."]
+     ]
+    },
+    { "type": "p", "text": "*At have brug for* = butuh. Ungkapan tiga kata yang tidak bisa dipendekkan: *jeg har brug for hjælp*, *har du brug for noget?*. Ini cara paling umum mengatakan \"butuh\" dalam bahasa Denmark." },
+    { "type": "p", "text": "*Godt* dalam *det kan jeg godt* bukan berarti \"baik\" — ia sekadar memperkuat, seperti \"kok\" atau \"memang\" dalam bahasa Indonesia. Pola ini muncul lagi di *jeg kan godt lide* (saya suka) yang datang di unit 16." },
+    { "type": "kotak", "title": "Kata-kata kecil yang melunakkan", "items": [
+      "**lige** — \"sebentar\": *Kan du lige hjælpe mig?* Menjadikan permintaan terdengar kecil dan mudah dipenuhi.",
+      "**bare** — \"cuma\": *Jeg vil bare spørge.*",
+      "**nok** — \"agaknya\": *Vi bør nok gå.* Melunakkan saran jadi tidak menggurui.",
+      "**vist** — \"sepertinya\": *Det er vist for sent.* Memberi ruang untuk salah.",
+      "Orang Denmark memakai kata-kata ini terus-menerus. Kalimat tanpa kata pelunak terdengar lebih tegas daripada yang kamu maksudkan — dan itu kesan yang sering tak sengaja dibuat pemula."
+     ] }
+   ]
+  },
+  {
+   "title": "Kata kerja bantu dalam pertanyaan dan penyangkalan",
+   "blocks": [
+    { "type": "p", "text": "Semua aturan urutan kata dari unit 10 tetap berlaku persis. Yang bergeser cuma tempat *ikke*: ia berdiri sesudah kata kerja bantunya, sebelum kata kerja utamanya." },
+    {
+     "type": "tabel",
+     "head": ["Jenis", "Contoh"],
+     "rows": [
+      ["Berita", "Jeg **kan** tale dansk."],
+      ["Menyangkal", "Jeg **kan ikke** tale dansk."],
+      ["Pertanyaan", "**Kan** du tale dansk?"],
+      ["Pertanyaan menyangkal", "**Kan** du **ikke** tale dansk?"],
+      ["Keterangan di depan", "I morgen **kan** jeg **ikke** komme."],
+      ["Dengan kata tanya", "Hvorfor **kan** du **ikke** komme?"]
+     ]
+    },
+    { "type": "p", "text": "Perhatikan kata kerja utamanya (*tale*, *komme*) selalu berdiri di **ujung**, jauh dari kata kerja bantunya. Ini akan terasa makin wajar sesudah unit 19, di mana bentuk \"sudah\" juga menempati posisi ujung yang sama." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "da": "at kunne (kan)", "baca": "at KU-ne", "id": "bisa" },
+  { "da": "at skulle (skal)", "baca": "at SKU-le", "id": "harus; akan" },
+  { "da": "at ville (vil)", "baca": "at VI-le", "id": "mau" },
+  { "da": "at måtte (må)", "baca": "at MO-de", "id": "boleh; terpaksa" },
+  { "da": "at burde (bør)", "baca": "at BUR-de", "id": "sebaiknya" },
+  { "da": "at behøve", "baca": "at be-HÖ-ve", "id": "perlu" },
+  { "da": "at hjælpe", "baca": "at YÈL-be", "id": "menolong" },
+  { "da": "at bruge", "baca": "at BRU-e", "id": "memakai" },
+  { "da": "at låne", "baca": "at LO-ne", "id": "meminjam" },
+  { "da": "at spørge", "baca": "at SPÖR-ye", "id": "bertanya" },
+  { "da": "at bære", "baca": "at BÈ-a", "id": "membawa, mengangkat" },
+  { "da": "at løfte", "baca": "at LÖF-de", "id": "mengangkat" },
+  { "da": "at ryge", "baca": "at RÜ-e", "id": "merokok" },
+  { "da": "at have brug for", "baca": "at ha BRU for", "id": "butuh" },
+  { "da": "en trappe", "baca": "èn TRA-be", "id": "tangga" },
+  { "da": "en elevator", "baca": "èn e-le-VA-tor", "id": "lift" },
+  { "da": "en etage", "baca": "èn e-TA-sje", "id": "lantai (tingkat)" },
+  { "da": "en kasse", "baca": "èn KA-se", "id": "kardus, kotak" },
+  { "da": "møbler", "baca": "MÖB-la", "id": "perabot" },
+  { "da": "tung / let", "baca": "tong / lèt", "id": "berat / ringan" },
+  { "da": "hellere / helst", "baca": "HÈL-a / hèlst", "id": "lebih suka / paling suka" },
+  { "da": "bagefter", "baca": "BA-èf-da", "id": "sesudahnya" },
+  { "da": "nok", "baca": "nok", "id": "agaknya; cukup" },
+  { "da": "lige", "baca": "LI-e", "id": "sebentar; tepat" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan kan, skal, vil, må, atau bør.",
+   "items": [
+    "____ du hjælpe mig? (kemampuan)",
+    "Jeg ____ til tandlægen i morgen. (janji yang sudah diatur)",
+    "____ jeg låne din telefon? (izin)",
+    "Jeg ____ gerne have en kaffe. (keinginan)",
+    "Du ____ ikke spise så sent. (saran)",
+    "Man ____ ikke ryge her. (larangan)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Denmark — perhatikan bedanya.",
+   "items": [
+    "Kamu tidak boleh merokok di sini.",
+    "Kamu tidak perlu membayar.",
+    "Saya tidak bisa berenang.",
+    "Dia tidak mau datang.",
+    "Sebaiknya kita pergi sekarang.",
+    "Boleh saya tanya sesuatu?"
+   ]
+  },
+  {
+   "prompt": "Sisipkan ikke di tempat yang benar. Tulis ulang lengkap.",
+   "items": [
+    "Jeg kan tale dansk.",
+    "Han vil komme i dag.",
+    "I morgen kan jeg komme.",
+    "Du må ryge her.",
+    "Vi skal arbejde i weekenden."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "hjælpe / du / kan / mig / ?",
+    "telefon / jeg / låne / din / må / ?",
+    "ikke / ryge / man / her / må",
+    "gerne / du / det / må",
+    "nu / bør / gå / vi / nok"
+   ]
+  }
+ ],
+ "answers": [
+  "Kan — skal — Må — vil — bør — må",
+  "Du må ikke ryge her. — Du behøver ikke betale. — Jeg kan ikke svømme. — Han vil ikke komme. — Vi bør gå nu. — Må jeg spørge om noget?",
+  "Jeg kan ikke tale dansk. — Han vil ikke komme i dag. — I morgen kan jeg ikke komme. — Du må ikke ryge her. — Vi skal ikke arbejde i weekenden.",
+  "Kan du hjælpe mig? — Må jeg låne din telefon? — Man må ikke ryge her. — Det må du gerne. — Vi bør nok gå nu."
+ ]
+}

@@ -1,0 +1,963 @@
+{
+  "brand": "LINGUO",
+  "title": "Dansk 101",
+  "subtitle": "Modul belajar mandiri bahasa Denmark untuk pemula",
+  "level": "Level A1 (CEFR)",
+  "edition": "Edisi Bahasa Indonesia",
+  "ruby": false,
+  "font_size": "9.4pt",
+  "page_margin": "12mm 11mm 10mm",
+  "vocab_columns": [
+    {
+      "head": "Dansk",
+      "key": "da"
+    },
+    {
+      "head": "Cara baca",
+      "key": "baca"
+    },
+    {
+      "head": "Bahasa Indonesia",
+      "key": "id"
+    }
+  ],
+  "cover_design": {
+    "bg": "#7B1526",
+    "accent": "#F3C969",
+    "label": "BAHASA DENMARK",
+    "judul": "Dansk",
+    "cap": "ø",
+    "pola_opacity": 0.45,
+    "pola": "background-image:repeating-linear-gradient(0deg, rgba(255,255,255,.12) 0 3px, transparent 3px 46px),repeating-linear-gradient(90deg, rgba(255,255,255,.07) 0 3px, transparent 3px 46px);",
+    "ringkas": "Modul belajar mandiri bahasa Denmark untuk pemula — dari menyapa di København sampai menceritakan akhir pekan yang sudah lewat.",
+    "catatan": "Tiap baris dialog dilengkapi terjemahan harfiah dan cara baca."
+  },
+  "product": {
+    "slug": "dansk-101-a1-id",
+    "title": "Dansk 101 new edition",
+    "type": "ebook",
+    "language": "Danish",
+    "level": "A1",
+    "file": "dansk-101-a1-id.pdf",
+    "description": "Dua puluh unit belajar mandiri bergaya Assimil untuk bahasa Denmark dari nol: dialog pendek, terjemahan harfiah yang memperlihatkan cara bahasa Denmark menyusun kalimat, catatan tata bahasa, kosakata lengkap dengan cara baca, latihan, dan kunci jawaban. Ditulis khusus untuk penutur bahasa Indonesia — tiap unit menyasar satu titik yang paling sering menjegal, dari kata sandang yang menempel di ekor kata benda sampai kata kerja yang wajib duduk di tempat kedua.",
+    "pages": 150
+  },
+  "front": [
+    {
+      "title": "Kata pengantar",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bahasa Denmark punya reputasi buruk yang setengahnya tidak adil. Orang bilang bahasa ini mustahil diucapkan, bahwa orang Denmark sendiri menelan separuh katanya, bahwa bayi Denmark belajar bicara lebih lambat daripada bayi Norwegia. Sebagian dari cerita itu benar."
+        },
+        {
+          "type": "p",
+          "text": "Yang jarang diceritakan adalah bagian yang justru mudah — dan bagian itu besar sekali. Kata kerja bahasa Denmark **tidak berubah sama sekali** mengikuti pelakunya: *jeg er, du er, han er, vi er, I er, de er*. Satu bentuk untuk semua orang, di semua waktu. Setelah bertahun-tahun menghafal tabel konjugasi bahasa Inggris atau Jerman, ini terasa seperti hadiah."
+        },
+        {
+          "type": "p",
+          "text": "Jadi kesulitan bahasa Denmark tidak terletak di tempat yang kamu kira. Ia terletak di tiga hal: **bunyi** yang tidak cocok dengan tulisannya, **kata sandang yang menempel di ekor kata benda** (*en bil* → *bilen*, mobil itu), dan **kata kerja yang wajib duduk di posisi kedua** dalam kalimat, apa pun yang berdiri di depannya."
+        },
+        {
+          "type": "p",
+          "text": "Tiga-tiganya tidak punya padanan dalam bahasa Indonesia. Karena itu modul ini menghadapinya sejak awal, bukan menundanya sampai bab terakhir: bunyi dibahas sebelum unit pertama, kata sandang ekor dipasang di unit 4, dan urutan kata dapat satu unit penuh untuk dirinya sendiri di unit 10."
+        },
+        {
+          "type": "p",
+          "text": "Penjelasannya sengaja pendek. Yang panjang bukan teorinya, melainkan latihannya."
+        },
+        {
+          "type": "kotak",
+          "title": "Sebelum mulai",
+          "items": [
+            "Sediakan 20-30 menit tanpa gangguan, bukan dua jam yang terpotong-potong. Bahasa menempel lewat pengulangan pendek yang sering, bukan lewat satu serangan panjang.",
+            "Baca dengan suara keras — dan di bahasa Denmark ini bukan saran, melainkan syarat. Tulisan bahasa Denmark menyimpan huruf yang sudah lama tidak dibunyikan; kalau kamu cuma membaca dalam hati, kamu menghafal ejaan, bukan bahasa.",
+            "Sejak unit pertama, hafalkan kata benda **bersama en atau et**-nya: bukan *bil*, tapi *en bil*. Pilihan satu kata kecil itu menentukan bentuk kata sandang, kata sifat, dan kata milik di seluruh kalimat nanti.",
+            "Jangan menunggu bunyimu sempurna sebelum berani bicara. Orang Denmark terbiasa mendengar aksen asing, dan mereka jauh lebih senang menolongmu daripada mengoreksimu."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Selamat belajar. *Held og lykke!*"
+        }
+      ]
+    },
+    {
+      "type": "isi",
+      "title": "Daftar isi",
+      "intro": "Modul ini paling baik dikerjakan berurutan — tiap unit memakai ulang apa yang dipasang unit sebelumnya."
+    },
+    {
+      "title": "Cara memakai modul ini",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Modul ini disusun untuk **belajar sendiri**. Tiap unit dirancang selesai dalam satu kali duduk, sekitar 20-30 menit. Yang penting bukan seberapa cepat kamu maju, tapi seberapa sering kamu kembali."
+        },
+        {
+          "type": "p",
+          "text": "Setiap unit punya susunan yang sama, dan urutannya sengaja begitu:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Dialog** — baca dulu bahasa Denmarknya dengan suara keras, jangan lihat artinya. Biarkan telinga bekerja sebelum otak menuntut penjelasan.",
+            "**Terjemahan harfiah** — baris kecil miring di bawah arti. Ini bagian yang paling sering dilewati orang, padahal di sinilah kamu melihat cara bahasa Denmark *berpikir*. Contoh: *Jeg hedder Budi* secara harfiah berarti \"saya dinamai Budi\", bukan \"nama saya Budi\".",
+            "**Catatan** — penjelasan pendek atas hal-hal yang tadi terasa aneh.",
+            "**Kosakata** — kata baru unit itu, lengkap dengan cara bacanya. Kata benda selalu ditulis bersama *en* atau *et*, supaya jenisnya ikut terhafal.",
+            "**Latihan** — kerjakan tanpa melihat kunci. Salah itu bagian dari prosesnya.",
+            "**Kunci jawaban** — baru dibuka setelah kamu benar-benar mencoba."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Ulangan berjenjang",
+          "items": [
+            "Mulai unit 3, tiap unit menyuruhmu mengulang satu unit yang sudah lewat — biasanya dua langkah ke belakang, jarak yang pas untuk membuat ingatan bekerja tanpa terasa seperti mengulang dari nol. Caranya dibalik: tutup bahasa Denmarknya, lihat terjemahan Indonesianya, lalu susun kembali kalimat Denmarknya dari ingatan.",
+            "Bagian ini yang mengubah \"pernah paham\" jadi \"bisa dipakai\". Jangan dilewati."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Satu aturan terakhir: **suarakan**. Bahasa Denmark adalah bahasa yang paling tidak jujur ejaannya di antara bahasa-bahasa Skandinavia. Kolom \"cara baca\" di tiap tabel kosakata bukan hiasan — ia bagian utama pelajarannya."
+        }
+      ]
+    },
+    {
+      "title": "Pelafalan bahasa Denmark",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bagian ini yang paling penting di seluruh modul, dan ia ada di depan karena memang harus dibaca lebih dulu. Bahasa Denmark ditulis dengan ejaan yang membeku sekitar 400 tahun lalu, sementara bunyinya terus berjalan. Akibatnya: banyak huruf yang tertulis sudah tidak dibunyikan, dan beberapa huruf berubah jadi bunyi yang sama sekali lain."
+        },
+        {
+          "type": "p",
+          "text": "Kolom **cara baca** di seluruh modul memakai ejaan Indonesia, dengan huruf besar menandai suku kata yang ditekan. Contoh: *hedder* → **HÈ-dha**, tekanan di suku kata pertama."
+        },
+        {
+          "type": "sub",
+          "text": "Tiga huruf tambahan"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Huruf",
+            "Dibaca",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "**æ**",
+              "è — seperti \"e\" pada **bebek**",
+              "*træ* (trè) = pohon"
+            ],
+            [
+              "**ø**",
+              "ö — bentuk mulut seperti \"o\", lidah di posisi \"e\"",
+              "*øl* (öl) = bir"
+            ],
+            [
+              "**å**",
+              "o panjang — seperti \"o\" pada **bola**",
+              "*år* (or) = tahun"
+            ],
+            [
+              "**y**",
+              "ü — bentuk mulut seperti \"u\", lidah di posisi \"i\"",
+              "*by* (bü) = kota"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*æ*, *ø*, dan *å* bukan variasi *a* dan *o* — ia huruf tersendiri, dan letaknya di **ujung** abjad Denmark, sesudah *z*. Berguna kalau kamu mencari kata di kamus."
+        },
+        {
+          "type": "sub",
+          "text": "Huruf yang menghilang"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tertulis",
+            "Yang terjadi",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "**hv-** di awal",
+              "h-nya bisu",
+              "*hvad* (vadh), *hvor* (vor), *hvem* (vèm)"
+            ],
+            [
+              "**-g** di ujung",
+              "hampir selalu bisu",
+              "*og* (o), *dag* (dæ), *jeg* (yai)"
+            ],
+            [
+              "**-d** sesudah l, n, r",
+              "bisu",
+              "*hold* (hol), *hun**d*** (hun), *jord* (yor)"
+            ],
+            [
+              "**-t** pada akhiran -et",
+              "melembek jadi dh",
+              "*huset* (HU-sedh)"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Dua bunyi yang tidak ada di bahasa Indonesia"
+        },
+        {
+          "type": "p",
+          "text": "**Blødt d (\"d lembut\").** Huruf *d* di tengah atau di ujung kata sesudah vokal tidak dibaca \"d\". Lidah menempel ringan di belakang gigi bawah dan udara lolos di sampingnya — hasilnya bunyi antara *d*, *l*, dan *th* pada kata Inggris *the*. Di modul ini ditulis **dh**."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kata",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "mad",
+              "madh",
+              "makanan"
+            ],
+            [
+              "gade",
+              "GA-dhe",
+              "jalan"
+            ],
+            [
+              "med",
+              "medh",
+              "dengan"
+            ],
+            [
+              "hvad",
+              "vadh",
+              "apa"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Stød.** Semacam sentakan atau jeda kecil di tengah bunyi vokal, seperti hentakan di tengah kata \"a-ah\" ketika kita terkejut. Ia bisa membedakan arti: *hun* (dia perempuan) tanpa stød, *hund* (anjing) dengan stød — padahal keduanya terdengar \"hun\". Kabar baiknya: mengabaikan stød tidak membuatmu tidak dimengerti, cuma membuatmu terdengar seperti orang asing. Jangan jadikan ia penghalang di tahun pertama."
+        },
+        {
+          "type": "sub",
+          "text": "Huruf mati yang berubah bunyi"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Huruf",
+            "Dibaca",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "**r** di awal kata",
+              "di pangkal tenggorokan, seperti *r* bahasa Prancis — bukan *r* Indonesia yang bergetar di ujung lidah",
+              "*rød* (rödh) = merah"
+            ],
+            [
+              "**r** sesudah vokal",
+              "melebur jadi bunyi vokal \"a\" samar",
+              "*her* (hèa) = di sini"
+            ],
+            [
+              "**v** sesudah vokal",
+              "melembek jadi u",
+              "*hav* (hau) = laut"
+            ],
+            [
+              "**k, p, t** di awal",
+              "berembus, seperti ada h kecil sesudahnya",
+              "*tak* (t'ak) = terima kasih"
+            ],
+            [
+              "**k, p, t** di tengah/ujung",
+              "melembek jadi g, b, d",
+              "*ikke* (I-ge) = tidak"
+            ],
+            [
+              "**j**",
+              "y",
+              "*ja* (ya) = ya"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Empat kata yang mesti benar sejak hari pertama",
+          "items": [
+            "*jeg* = **yai**, bukan \"jeg\". Ini kata yang paling sering kamu pakai seumur hidup berbahasa Denmark.",
+            "*og* (dan) = **o**, sedangkan *at* sebagai penanda bentuk dasar = **å**. Dua kata pendek yang bunyinya nyaris tertukar.",
+            "*ikke* (tidak) = **I-ge**, dengan tekanan di depan.",
+            "*tak* = **t'ak** dengan embusan. Kata ini akan kamu ucapkan puluhan kali sehari di Denmark."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Jangan berusaha menghafal seluruh tabel ini sekarang. Bacalah sekali dengan tenang, lalu kembali ke halaman ini tiap kali sebuah kata di unit terasa dibaca aneh. Sesudah lima unit, sebagian besar aturannya akan terasa wajar dengan sendirinya."
+        }
+      ]
+    }
+  ],
+  "back": [
+    {
+      "title": "Ringkasan tata bahasa A1",
+      "blocks": [
+        {
+          "type": "sub",
+          "text": "Kata benda: en-ord dan et-ord"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "Tak tentu",
+            "Tentu (ekor)",
+            "Jamak",
+            "Jamak tentu"
+          ],
+          "rows": [
+            [
+              "en-ord",
+              "en bil",
+              "bil**en**",
+              "bil**er**",
+              "bil**erne**"
+            ],
+            [
+              "en-ord",
+              "en stol",
+              "stol**en**",
+              "stol**e**",
+              "stol**ene**"
+            ],
+            [
+              "et-ord",
+              "et hus",
+              "hus**et**",
+              "hus**e**",
+              "hus**ene**"
+            ],
+            [
+              "et-ord",
+              "et æble",
+              "æbl**et**",
+              "æbl**er**",
+              "æbl**erne**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Sekitar **75%** kata benda Denmark adalah *en*-ord. Kalau benar-benar tidak tahu, tebak *en* — peluangnya tiga banding satu. Bentuk jamak tak tentu punya tiga akhiran (**-er**, **-e**, atau tanpa akhiran) yang harus dihafal per kata; yang paling umum **-er**."
+        },
+        {
+          "type": "p",
+          "text": "Kata yang tidak berubah di jamak: *et år → to år*, *en ting → to ting*, *en sko → to sko*. Yang berubah vokalnya: *en mand → mænd*, *en bog → bøger*, *en hånd → hænder*, *et barn → børn*, *en nat → nætter*, *en bonde → bønder*."
+        },
+        {
+          "type": "sub",
+          "text": "Kata sifat"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "Bentuk",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "en-ord tunggal",
+              "dasar",
+              "en **stor** bil"
+            ],
+            [
+              "et-ord tunggal",
+              "+ **t**",
+              "et **stort** hus"
+            ],
+            [
+              "jamak",
+              "+ **e**",
+              "**store** biler"
+            ],
+            [
+              "sesudah den/det/de/min/din",
+              "+ **e**",
+              "den **store** bil"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Kepastian ganda**: \"mobil besar itu\" = *den store bil* — kata *den* di depan **dan** kata sifat berakhiran *-e*, tapi *bil* tetap telanjang tanpa ekor *-en*. Tanpa kata sifat, ekornya kembali: *bilen*."
+        },
+        {
+          "type": "p",
+          "text": "Kata sifat berakhiran *-sk*, *-t*, dan *-ed* tidak menambah *t* lagi: *et dansk hus*, *et sort bord*, *et lukket vindue*. Kata sifat berakhiran vokal juga tidak: *et blå hus* (tapi bentuk jamaknya *blå* saja, tanpa *-e*)."
+        },
+        {
+          "type": "p",
+          "text": "Membandingkan: **-ere** dan **-est** — *stor → større → størst*, *billig → billigere → billigst*. Tak beraturan: *god → bedre → bedst*, *dårlig → værre → værst*, *mange → flere → flest*, *lille → mindre → mindst*, *gammel → ældre → ældst*. Kata panjang memakai *mere* dan *mest*: *mere interessant*."
+        },
+        {
+          "type": "sub",
+          "text": "Kata milik"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pemilik",
+            "en-ord",
+            "et-ord",
+            "Jamak"
+          ],
+          "rows": [
+            [
+              "saya",
+              "min",
+              "mit",
+              "mine"
+            ],
+            [
+              "kamu",
+              "din",
+              "dit",
+              "dine"
+            ],
+            [
+              "dia (lk)",
+              "hans",
+              "hans",
+              "hans"
+            ],
+            [
+              "dia (pr)",
+              "hendes",
+              "hendes",
+              "hendes"
+            ],
+            [
+              "kami",
+              "vores",
+              "vores",
+              "vores"
+            ],
+            [
+              "kalian",
+              "jeres",
+              "jeres",
+              "jeres"
+            ],
+            [
+              "mereka",
+              "deres",
+              "deres",
+              "deres"
+            ],
+            [
+              "diri sendiri (org ke-3)",
+              "sin",
+              "sit",
+              "sine"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Han ringer til **sin** mor* = menelepon ibunya **sendiri**. *Han ringer til **hans** mor* = menelepon ibu **orang lain**. *Sin/sit/sine* hanya dipakai kalau pemiliknya adalah pelaku kalimat itu sendiri, dan tidak pernah menjadi pelaku."
+        },
+        {
+          "type": "sub",
+          "text": "Kata kerja"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Waktu",
+            "Bentuk",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "sekarang (nutid)",
+              "dasar + **-r**",
+              "jeg tale**r**, du tale**r**, de tale**r**"
+            ],
+            [
+              "lampau gol. 1 (datid)",
+              "+ **-ede**",
+              "jeg snakk**ede**, jeg arbejd**ede**"
+            ],
+            [
+              "lampau gol. 2 (datid)",
+              "+ **-te**",
+              "jeg tal**te**, jeg køb**te**"
+            ],
+            [
+              "sudah (førnutid)",
+              "har/er + **-et / -t**",
+              "jeg har tal**t**, jeg er komm**et**"
+            ],
+            [
+              "bentuk dasar",
+              "**at** + dasar",
+              "at tale, at spise"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Satu bentuk untuk semua orang — tidak ada yang berubah mengikuti *jeg/du/han/vi/I/de*. Ini keunggulan terbesar bahasa Denmark, dan berlaku di semua waktu."
+        },
+        {
+          "type": "p",
+          "text": "**har atau er?** Sebagian besar memakai *har*. Yang memakai *er* adalah kata kerja perpindahan tempat atau perubahan keadaan, ketika yang ditekankan hasilnya: *jeg **er** gået* (saya sudah pergi), *hun **er** kommet*, *de **er** rejst*, *det **er** blevet koldt*. Kalau yang ditekankan kegiatannya, *har* tetap dipakai: *jeg **har** gået i to timer* (saya sudah berjalan dua jam)."
+        },
+        {
+          "type": "sub",
+          "text": "Kata kerja bantu"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sekarang",
+            "Lampau",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "kan",
+              "kunne",
+              "bisa, mampu"
+            ],
+            [
+              "skal",
+              "skulle",
+              "harus, akan"
+            ],
+            [
+              "vil",
+              "ville",
+              "mau, ingin"
+            ],
+            [
+              "må",
+              "måtte",
+              "boleh; terpaksa"
+            ],
+            [
+              "bør",
+              "burde",
+              "sebaiknya"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Sesudah kata kerja bantu, kata kerja berikutnya berbentuk **dasar tanpa at**: *jeg kan tale dansk*, bukan *at tale*. ⚠️ *Jeg må ikke ryge* = saya **tidak boleh** merokok, bukan \"tidak perlu\". \"Tidak perlu\" = *jeg behøver ikke*."
+        },
+        {
+          "type": "sub",
+          "text": "Urutan kata"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Kata kerja selalu di tempat kedua** dalam kalimat berita. Kalau tempat pertama diisi keterangan, pelakunya melompat ke belakang kata kerja: *I morgen **tager** jeg til Aarhus*.",
+            "**Pertanyaan tanpa kata tanya**: kata kerja pindah ke depan — *Taler du dansk?*",
+            "**Pertanyaan dengan kata tanya**: kata tanya, lalu kata kerja, lalu pelaku — *Hvor **bor** du?*",
+            "**ikke** berdiri **sesudah** kata kerja di anak kalimat utama: *Jeg taler ikke dansk.*",
+            "⚠️ Di **anak kalimat** (sesudah *at, fordi, hvis, når, som*), *ikke* pindah ke **depan** kata kerja: *Jeg ved, at han **ikke kommer***.",
+            "Keterangan cara-tempat-waktu berurutan begitu: *Jeg kører **med bus** **til arbejde** **hver dag***."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Kata tanya"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Denmark",
+            "Cara baca",
+            "Indonesia"
+          ],
+          "rows": [
+            [
+              "hvad",
+              "vadh",
+              "apa"
+            ],
+            [
+              "hvem",
+              "vèm",
+              "siapa"
+            ],
+            [
+              "hvor",
+              "vor",
+              "di mana"
+            ],
+            [
+              "hvorfor",
+              "VOR-for",
+              "kenapa"
+            ],
+            [
+              "hvordan",
+              "vor-DAN",
+              "bagaimana"
+            ],
+            [
+              "hvornår",
+              "vor-NOR",
+              "kapan"
+            ],
+            [
+              "hvilken / hvilket / hvilke",
+              "VIL-gen",
+              "yang mana"
+            ],
+            [
+              "hvor mange",
+              "vor MANG-e",
+              "berapa banyak (bisa dihitung)"
+            ],
+            [
+              "hvor meget",
+              "vor MAI-edh",
+              "berapa banyak (tak terhitung)"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Angka"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "0 nul",
+              "1 en/et",
+              "2 to",
+              "3 tre"
+            ],
+            [
+              "4 fire",
+              "5 fem",
+              "6 seks",
+              "7 syv"
+            ],
+            [
+              "8 otte",
+              "9 ni",
+              "10 ti",
+              "11 elleve"
+            ],
+            [
+              "12 tolv",
+              "13 tretten",
+              "14 fjorten",
+              "15 femten"
+            ],
+            [
+              "16 seksten",
+              "17 sytten",
+              "18 atten",
+              "19 nitten"
+            ],
+            [
+              "20 tyve",
+              "30 tredive",
+              "40 fyrre",
+              "50 halvtreds"
+            ],
+            [
+              "60 tres",
+              "70 halvfjerds",
+              "80 firs",
+              "90 halvfems"
+            ],
+            [
+              "100 hundrede",
+              "1000 tusind",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Satuan disebut **lebih dulu**, disambung *og*: *enogtyve* (21), *femogtredive* (35), *tooghalvfems* (92). Angka 50-90 dibangun dari kelipatan **dua puluh**, bukan sepuluh — warisan cara berhitung kuno yang tidak dimiliki bahasa Skandinavia lain."
+        },
+        {
+          "type": "sub",
+          "text": "Kata depan yang paling sering keliru"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**i** = di dalam, dan untuk negara & kota besar: *i Danmark*, *i København*, *i bilen*.",
+            "**på** = di atas permukaan, dan — ini yang tak terduga — untuk banyak tempat umum: *på arbejde*, *på skolen*, *på hotellet*, *på café*.",
+            "**til** = ke (arah): *til Aarhus*, *til arbejde*. ⚠️ *at gå **til** skole* (berangkat) vs *at være **på** skolen* (berada).",
+            "**hos** = di tempat seseorang: *hos lægen*, *hos min mor*.",
+            "**med** = dengan, dan juga untuk alat transportasi: *med bus*, *med tog*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kata kerja yang paling sering dipakai",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tiga puluh kata kerja di bawah menutup sebagian besar percakapan sehari-hari. Kolom yang perlu dihafal cuma dua yang terakhir — bentuk sekarangnya selalu bisa ditebak."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Dasar",
+            "Sekarang",
+            "Lampau",
+            "Sudah",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "at være",
+              "er",
+              "var",
+              "har været",
+              "adalah"
+            ],
+            [
+              "at have",
+              "har",
+              "havde",
+              "har haft",
+              "punya"
+            ],
+            [
+              "at gøre",
+              "gør",
+              "gjorde",
+              "har gjort",
+              "melakukan"
+            ],
+            [
+              "at gå",
+              "går",
+              "gik",
+              "er gået",
+              "berjalan, pergi"
+            ],
+            [
+              "at komme",
+              "kommer",
+              "kom",
+              "er kommet",
+              "datang"
+            ],
+            [
+              "at tage",
+              "tager",
+              "tog",
+              "har taget",
+              "mengambil, naik"
+            ],
+            [
+              "at få",
+              "får",
+              "fik",
+              "har fået",
+              "mendapat"
+            ],
+            [
+              "at se",
+              "ser",
+              "så",
+              "har set",
+              "melihat"
+            ],
+            [
+              "at sige",
+              "siger",
+              "sagde",
+              "har sagt",
+              "berkata"
+            ],
+            [
+              "at vide",
+              "ved",
+              "vidste",
+              "har vidst",
+              "tahu"
+            ],
+            [
+              "at give",
+              "giver",
+              "gav",
+              "har givet",
+              "memberi"
+            ],
+            [
+              "at blive",
+              "bliver",
+              "blev",
+              "er blevet",
+              "menjadi, tinggal"
+            ],
+            [
+              "at stå",
+              "står",
+              "stod",
+              "har stået",
+              "berdiri"
+            ],
+            [
+              "at sidde",
+              "sidder",
+              "sad",
+              "har siddet",
+              "duduk"
+            ],
+            [
+              "at ligge",
+              "ligger",
+              "lå",
+              "har ligget",
+              "berbaring, terletak"
+            ],
+            [
+              "at sove",
+              "sover",
+              "sov",
+              "har sovet",
+              "tidur"
+            ],
+            [
+              "at drikke",
+              "drikker",
+              "drak",
+              "har drukket",
+              "minum"
+            ],
+            [
+              "at skrive",
+              "skriver",
+              "skrev",
+              "har skrevet",
+              "menulis"
+            ],
+            [
+              "at finde",
+              "finder",
+              "fandt",
+              "har fundet",
+              "menemukan"
+            ],
+            [
+              "at løbe",
+              "løber",
+              "løb",
+              "er løbet",
+              "berlari"
+            ],
+            [
+              "at synge",
+              "synger",
+              "sang",
+              "har sunget",
+              "menyanyi"
+            ],
+            [
+              "at spise",
+              "spiser",
+              "spiste",
+              "har spist",
+              "makan"
+            ],
+            [
+              "at tale",
+              "taler",
+              "talte",
+              "har talt",
+              "berbicara"
+            ],
+            [
+              "at købe",
+              "køber",
+              "købte",
+              "har købt",
+              "membeli"
+            ],
+            [
+              "at bo",
+              "bor",
+              "boede",
+              "har boet",
+              "tinggal (menetap)"
+            ],
+            [
+              "at hedde",
+              "hedder",
+              "hed",
+              "har heddet",
+              "bernama"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Apa selanjutnya",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kalau kamu sampai di halaman ini setelah benar-benar mengerjakan dua puluh unitnya, kamu sudah memegang seluruh kerangka A1: kamu bisa memperkenalkan diri, menanyakan dan menyebut harga dan waktu, memesan sesuatu, menanyakan arah, menceritakan hari biasa, dan bercerita tentang apa yang sudah lewat. Itu bukan sedikit."
+        },
+        {
+          "type": "p",
+          "text": "Yang paling menentukan sekarang bukan bab berikutnya, melainkan **kebiasaan**."
+        },
+        {
+          "type": "kotak",
+          "title": "Empat langkah yang benar-benar memindahkan jarum",
+          "items": [
+            "**Ulangi modul ini sekali lagi, terbalik.** Tutup kolom bahasa Denmark, baca terjemahan Indonesianya, susun kembali kalimatnya. Putaran kedua ini biasanya menghasilkan lebih banyak daripada putaran pertama.",
+            "**Dengarkan lebih banyak daripada yang kamu mengerti.** Radio DR P4, berita *Nyheder på let dansk*, atau serial Denmark dengan teks Denmark — bukan teks Indonesia. Telinga butuh jam terbang sebelum otak bisa ikut.",
+            "**Tulis lima kalimat sehari** tentang harimu, pakai hanya kata yang sudah kamu punya. Lebih baik lima kalimat sederhana yang benar daripada satu paragraf berbantuan mesin penerjemah.",
+            "**Cari lawan bicara.** Bahasa Denmark punya masalah khas: begitu orang Denmark mendengar aksenmu, mereka pindah ke bahasa Inggris karena mengira sedang menolongmu. Katakan sekali di depan: *Må vi tale dansk? Jeg er ved at lære.* Hampir semua orang akan senang hati bertahan."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Langkah resmi berikutnya adalah **A2**: kalimat majemuk yang lebih panjang, bentuk pasif, kata kerja bertautan (*at se frem til*, *at holde op med*), serta membaca teks pendek yang utuh. Kalau tujuanmu bekerja atau kuliah di Denmark, target yang biasanya diminta adalah **Prøve i Dansk 2 atau 3** — dan dari titik ini ke sana jaraknya jauh lebih pendek daripada dari nol ke sini."
+        },
+        {
+          "type": "p",
+          "text": "*Held og lykke — og husk at tale højt.*"
+        }
+      ]
+    }
+  ]
+}

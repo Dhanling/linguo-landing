@@ -1,0 +1,233 @@
+{
+ "title": "Saya sudah pernah ke Denmark",
+ "title_target": "Jeg har været i Danmark",
+ "goal": "Membentuk kalimat \"sudah\" dengan *har* dan *er*, dan tahu kapan memakai yang mana.",
+ "bekal": [
+  "membentuk bentuk sudah: *har* + bentuk ketiga",
+  "memilih antara *har* dan *er* — dan tahu kenapa pilihannya bukan hafalan buta",
+  "membedakan kapan memakai bentuk lampau dan kapan bentuk sudah"
+ ],
+ "wave": "Ulangi **unit 17** dulu: ceritakan kemarin dalam sepuluh kalimat lampau, disambung *først*, *så*, *bagefter*, *til sidst*.",
+ "dialogs": [
+  {
+   "title": "Dialog — Har du prøvet det?",
+   "intro": "Malam di apartemen Mette. Mereka bertiga menyusun rencana liburan musim panas.",
+   "lines": [
+    { "speaker": "Mette:", "text": "Har I været i Jylland?", "id": "Kalian pernah ke Jylland?", "literal": "punya kalian adalah di Jylland?" },
+    { "speaker": "Ahmad:", "text": "Jeg har boet i Aarhus i to år, så ja.", "id": "Saya tinggal di Aarhus dua tahun, jadi ya.", "literal": "saya punya tinggal di Aarhus di dua tahun, maka ya." },
+    { "speaker": "Budi:", "text": "Jeg har aldrig været uden for Sjælland.", "id": "Saya belum pernah keluar dari Sjælland.", "literal": "saya punya tidak-pernah adalah luar untuk Sjælland." },
+    { "speaker": "Mette:", "text": "Aldrig? Du har boet her i halvandet år!", "id": "Belum pernah? Kamu sudah tinggal di sini satu setengah tahun!", "literal": "tidak-pernah? kamu punya tinggal di-sini di satu-setengah tahun!" },
+    { "speaker": "Budi:", "text": "Jeg ved det. Jeg er ikke kommet ret langt.", "id": "Saya tahu. Saya belum ke mana-mana.", "literal": "saya tahu itu. saya adalah tidak datang betul jauh." },
+    { "speaker": "Ahmad:", "text": "Så skal du med i sommer. Har du set Skagen?", "id": "Kalau begitu ikut musim panas nanti. Kamu sudah lihat Skagen?", "literal": "maka harus kamu dengan pada musim-panas. punya kamu melihat Skagen?" },
+    { "speaker": "Budi:", "text": "Nej. Hvad er der i Skagen?", "id": "Belum. Ada apa di Skagen?", "literal": "tidak. apa adalah di-sana di Skagen?" },
+    { "speaker": "Mette:", "text": "To have mødes der. Man kan se linjen i vandet.", "id": "Dua lautan bertemu di sana. Garisnya kelihatan di air.", "literal": "dua laut bertemu di-sana. orang bisa melihat garis-itu di air-itu." },
+    { "speaker": "Budi:", "text": "Det har jeg aldrig hørt om.", "id": "Saya belum pernah dengar itu.", "literal": "itu punya saya tidak-pernah mendengar tentang." },
+    { "speaker": "Ahmad:", "text": "Og har du smagt rigtig dansk sommermad? Nye kartofler og sild?", "id": "Dan kamu sudah coba makanan musim panas Denmark yang asli? Kentang baru dan ikan haring?", "literal": "dan punya kamu mencicipi betul denmark musim-panas-makanan? baru kentang dan haring?" },
+    { "speaker": "Budi:", "text": "Jeg har prøvet sild én gang. Det var… en oplevelse.", "id": "Saya pernah coba haring sekali. Itu… sebuah pengalaman.", "literal": "saya punya mencoba haring satu kali. itu adalah-lampau… satu pengalaman." },
+    { "speaker": "Mette:", "text": "Så er du blevet halvt dansk. Resten kommer af sig selv.", "id": "Berarti kamu sudah setengah Denmark. Sisanya datang sendiri.", "literal": "maka adalah kamu menjadi setengah denmark. sisa-itu datang dari diri sendiri." }
+   ],
+   "notes": [
+    "**Har været, har boet, har set** — bentuk \"sudah\" dipakai untuk pengalaman yang **waktunya tidak disebutkan**. *Har du været i Jylland?* menanyakan apakah kamu pernah, bukan kapan.",
+    "**Jeg er ikke kommet** — perhatikan *er*, bukan *har*. *At komme* adalah kata kerja perpindahan tempat, dan kelompok itu memakai *er*. Aturannya di bawah.",
+    "**Halvandet** = satu setengah. Kata tunggal untuk 1,5 yang tidak punya padanan sepadat itu dalam bahasa Indonesia. Bentuk et-ord-nya *halvandet*, en-ord-nya *halvanden*: *halvanden time* (satu setengah jam), *halvandet år*.",
+    "**Ret langt** — *ret* di sini berarti \"cukup, agak\", bukan \"benar\". *Ikke ret langt* = tidak seberapa jauh. Salah satu kata yang artinya berpindah menurut tempatnya.",
+    "**Det har jeg aldrig hørt om** — perhatikan urutannya. *Det* di tempat pertama, *har* di tempat kedua, pelakunya melompat. Aturan unit 10 tetap berlaku tanpa perubahan, dan bentuk ketiganya (*hørt*) terlempar ke ujung.",
+    "**To have** = dua lautan — jamak dari *et hav*. Di Skagen, Skagerrak dan Kattegat bertemu, dan perbedaan warna airnya benar-benar terlihat. Ini salah satu tempat yang paling sering direkomendasikan orang Denmark kepada pendatang.",
+    "**Sild** (ikan haring dalam cuka) adalah ujian budaya Denmark kedua sesudah lakrids. Reaksi Budi — \"sebuah pengalaman\" — adalah cara Denmark yang sangat halus untuk bilang tidak suka.",
+    "**Af sig selv** = dengan sendirinya. Ungkapan tetap; perhatikan *sig* kata pantul dari unit 9 muncul lagi di sini."
+   ],
+   "grammars": [
+    {
+     "title": "Membentuk bentuk sudah",
+     "body": [
+      "Susunannya: **har** atau **er** + bentuk ketiga. Bentuk ketiga kata kerja beraturan mudah ditebak dari bentuk lampaunya."
+     ],
+     "table": {
+      "head": ["Golongan", "Lampau", "Bentuk ketiga", "Contoh"],
+      "rows": [
+       ["golongan 1 (-ede)", "arbejd**ede**", "arbejd**et**", "Jeg har arbejd**et**."],
+       ["golongan 1 (-ede)", "snakk**ede**", "snakk**et**", "Vi har snakk**et**."],
+       ["golongan 1 (-ede)", "bo**ede**", "bo**et**", "Han har bo**et** her."],
+       ["golongan 2 (-te)", "tal**te**", "tal**t**", "Jeg har tal**t** med hende."],
+       ["golongan 2 (-te)", "køb**te**", "køb**t**", "Vi har køb**t** en bil."],
+       ["golongan 2 (-te)", "spis**te**", "spis**t**", "Har du spis**t**?"]
+      ]
+     },
+     "after": [
+      "Aturannya rapi: **-ede → -et**, dan **-te → -t**. Kalau kamu tahu bentuk lampaunya, kamu tahu bentuk ketiganya.",
+      "Kata kerja tak beraturan harus dihafal, tapi daftarnya sudah kamu punya — kolom keempat tabel besar di unit 18. Sebagian besar berakhiran *-et*: *taget*, *fået*, *givet*, *fundet*, *drukket*. Sebagian pendek: *set*, *sagt*, *gjort*, *haft*, *været*."
+     ]
+    },
+    {
+     "title": "Har atau er?",
+     "body": [
+      "Pilihannya bukan hafalan buta — ada logika di baliknya, dan sekali kamu melihatnya, ia jarang salah lagi.",
+      "**er** dipakai kalau yang ditekankan adalah **hasil perpindahan atau perubahan keadaan**. **har** dipakai untuk semua yang lain, termasuk untuk kegiatannya sendiri."
+     ],
+     "table": {
+      "head": ["Dengan er", "Arti", "Dengan har", "Arti"],
+      "rows": [
+       ["Jeg **er** gået.", "Saya sudah pergi (tidak di sini lagi).", "Jeg **har** gået i to timer.", "Saya sudah berjalan dua jam."],
+       ["Hun **er** kommet.", "Dia sudah sampai.", "—", "—"],
+       ["De **er** rejst.", "Mereka sudah berangkat.", "De **har** rejst meget.", "Mereka sudah banyak bepergian."],
+       ["Det **er** blevet koldt.", "Sudah jadi dingin.", "—", "—"],
+       ["Han **er** løbet hjem.", "Dia sudah lari pulang (sampai).", "Han **har** løbet i en time.", "Dia sudah lari sejam."]
+      ]
+     },
+     "after": [
+      "Perhatikan kolom kiri dan kanan memakai **kata kerja yang sama** dengan arti yang bergeser: kiri menekankan hasil (di mana dia sekarang), kanan menekankan kegiatannya (berapa lama, seberapa banyak).",
+      "Kata kerja yang paling sering memakai *er*: **at gå, at komme, at rejse, at blive, at flytte, at ankomme, at dø, at falde, at løbe**. Daftarnya pendek; sisanya *har*.",
+      "⚠️ *At være* sendiri memakai *har*: *jeg **har** været i Danmark*. Ini terlihat berlawanan dengan logikanya, dan memang harus dihafal apa adanya."
+     ]
+    },
+    {
+     "title": "Bentuk lampau atau bentuk sudah?",
+     "body": [
+      "Kedua bentuk itu tidak bisa saling ditukar, dan aturannya lebih sederhana daripada di bahasa Inggris."
+     ],
+     "table": {
+      "head": ["Pakai", "Kalau", "Contoh"],
+      "rows": [
+       ["**bentuk lampau** (datid)", "waktunya disebut", "Jeg **så** filmen **i går**."],
+       ["**bentuk sudah** (førnutid)", "waktunya tidak disebut", "Jeg **har set** filmen."],
+       ["**bentuk sudah**", "pengalaman seumur hidup", "**Har** du nogensinde **været** i Skagen?"],
+       ["**bentuk sudah**", "masih berlangsung sampai sekarang", "Jeg **har boet** her i to år."],
+       ["**bentuk lampau**", "bercerita berurutan", "Jeg **stod** op, **spiste** og **gik**."]
+      ]
+     },
+     "after": [
+      "Uji cepatnya: **kalau ada keterangan waktu lampau yang tertutup — *i går*, *i sidste uge*, *klokken to* — pakai bentuk lampau.** Kalau tidak ada, hampir selalu bentuk sudah.",
+      "*Jeg har set filmen i går* salah, karena *i går* adalah waktu tertutup. Bentuknya harus *jeg så filmen i går*. Ini kesalahan yang sama persis dengan yang dibuat orang di bahasa Inggris.",
+      "Baris keempat penting dan berbeda dari bahasa Indonesia: *jeg har boet her i to år* berarti saya masih tinggal di sini. Kalau sudah pindah, bentuknya *jeg boede her i to år*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalimat bentuk sudah yang sering dipakai",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Dansk", "Bahasa Indonesia"],
+     "rows": [
+      ["Har du spist?", "Sudah makan?"],
+      ["Har du været i Danmark før?", "Pernah ke Denmark sebelumnya?"],
+      ["Jeg har aldrig prøvet det.", "Saya belum pernah coba."],
+      ["Jeg har boet her i to år.", "Saya sudah tinggal di sini dua tahun."],
+      ["Har du hørt nyheden?", "Sudah dengar kabarnya?"],
+      ["Jeg har glemt hans navn.", "Saya lupa namanya."],
+      ["Toget er kørt.", "Keretanya sudah berangkat."],
+      ["Hun er ikke kommet endnu.", "Dia belum datang."],
+      ["Det er blevet sent.", "Sudah larut."],
+      ["Jeg har lige spist.", "Saya baru saja makan."],
+      ["Har du nogensinde set nordlys?", "Pernah lihat aurora?"],
+      ["Vi har kendt hinanden længe.", "Kami sudah lama saling kenal."]
+     ]
+    },
+    { "type": "p", "text": "*Endnu* = belum, masih. *Ikke endnu* = belum. Ada juga *stadig* (masih): *Han er stadig her.*" },
+    { "type": "p", "text": "*Jeg har lige spist* — *lige* di sini berarti \"baru saja\", bukan \"sebentar\" seperti di unit 13. Kata yang sama, dua pekerjaan, dipisahkan oleh letaknya." }
+   ]
+  },
+  {
+   "title": "Bercerita tentang pengalaman",
+   "blocks": [
+    { "type": "p", "text": "Bentuk sudah adalah bentuk cerita pengalaman — apa yang pernah dan belum pernah kamu lakukan. Ini bahan percakapan paling sering ketika kamu bertemu orang baru." },
+    {
+     "type": "tabel",
+     "head": ["Rangka", "Contoh"],
+     "rows": [
+      ["Har du nogensinde…?", "Har du nogensinde spist sild?"],
+      ["Jeg har aldrig…", "Jeg har aldrig set sne før."],
+      ["Jeg har prøvet at…", "Jeg har prøvet at lave dansk mad."],
+      ["Jeg har lige…", "Jeg har lige lært det."],
+      ["Jeg har allerede…", "Jeg har allerede spist."],
+      ["Jeg har ikke … endnu.", "Jeg har ikke set Skagen endnu."],
+      ["Hvor længe har du…?", "Hvor længe har du boet i Danmark?"]
+     ]
+    },
+    { "type": "kotak", "title": "Tiga hal yang mungkin belum pernah kamu lakukan di Denmark", "items": [
+      "*Jeg har aldrig svømmet i havet i maj.* Orang Denmark melakukannya. Airnya sekitar sepuluh derajat, dan mereka menyebutnya menyegarkan.",
+      "*Jeg har aldrig været til en julefrokost.* Makan siang Natal kantor Denmark adalah lembaga sosial tersendiri, berlangsung dari siang sampai larut, dan sering diceritakan berbulan-bulan sesudahnya.",
+      "*Jeg har aldrig cyklet i sne.* Ini akan berubah. Kota Denmark membersihkan jalur sepeda sebelum membersihkan jalan mobil."
+     ] },
+    { "type": "p", "text": "Perhatikan *aldrig*, *allerede*, dan *lige* berdiri di antara kata bantu dan bentuk ketiganya: *jeg har **aldrig** set*, *jeg har **allerede** spist*. Ini tempat yang sama dengan *ikke* — aturan unit 10 dipakai ulang tanpa perubahan." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "da": "at prøve", "baca": "at PRÖ-ve", "id": "mencoba" },
+  { "da": "at smage", "baca": "at SMA-e", "id": "mencicipi" },
+  { "da": "at opleve", "baca": "at OP-lè-ve", "id": "mengalami" },
+  { "da": "en oplevelse", "baca": "èn OP-lè-vel-se", "id": "pengalaman" },
+  { "da": "at flytte", "baca": "at FLÖ-de", "id": "pindah" },
+  { "da": "at ankomme", "baca": "at AN-kom-e", "id": "tiba" },
+  { "da": "et hav / have", "baca": "èt hau", "id": "laut" },
+  { "da": "et vand", "baca": "èt van", "id": "air" },
+  { "da": "en linje", "baca": "èn LIN-ye", "id": "garis" },
+  { "da": "en sild", "baca": "èn sil", "id": "ikan haring" },
+  { "da": "en kartoffel", "baca": "èn kar-TOF-el", "id": "kentang" },
+  { "da": "en nyhed", "baca": "èn NÜ-hèdh", "id": "kabar, berita" },
+  { "da": "et navn", "baca": "èt naun", "id": "nama" },
+  { "da": "halvanden / halvandet", "baca": "hal-AN-en", "id": "satu setengah" },
+  { "da": "nogensinde", "baca": "NO-en-sin-e", "id": "pernah" },
+  { "da": "allerede", "baca": "al-e-RÈ-dhe", "id": "sudah" },
+  { "da": "endnu", "baca": "è-NU", "id": "belum; masih" },
+  { "da": "stadig", "baca": "STA-dhi", "id": "masih" },
+  { "da": "lige", "baca": "LI-e", "id": "baru saja" },
+  { "da": "ret", "baca": "rèt", "id": "cukup, agak; benar" },
+  { "da": "uden for", "baca": "U-dhen for", "id": "di luar" },
+  { "da": "en rest", "baca": "èn rèst", "id": "sisa" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk sudah (har atau er + bentuk ketiga).",
+   "items": [
+    "Jeg arbejder. → Jeg ____ ____.",
+    "Hun taler med ham. → Hun ____ ____ med ham.",
+    "Vi køber en bil. → Vi ____ ____ en bil.",
+    "Han går hjem. → Han ____ ____ hjem.",
+    "De kommer. → De ____ ____.",
+    "Jeg ser filmen. → Jeg ____ ____ filmen."
+   ]
+  },
+  {
+   "prompt": "Isi dengan har atau er.",
+   "items": [
+    "Jeg ____ boet her i to år.",
+    "Toget ____ kørt.",
+    "Hun ____ ikke kommet endnu.",
+    "Vi ____ spist.",
+    "Det ____ blevet koldt.",
+    "Jeg ____ været i Danmark."
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk lampau atau bentuk sudah.",
+   "items": [
+    "Jeg ____ filmen i går. (at se)",
+    "____ du nogensinde ____ i Skagen? (at være)",
+    "Vi ____ til Aarhus i sidste uge. (at tage)",
+    "Jeg ____ her i tre år, og jeg bor her stadig. (at bo)",
+    "Hun ____ op klokken syv i morges. (at stå)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "været / har / Danmark / du / i / ?",
+    "prøvet / aldrig / har / det / jeg",
+    "år / boet / har / i / her / to / jeg",
+    "kommet / ikke / hun / endnu / er",
+    "spist / lige / har / jeg"
+   ]
+  }
+ ],
+ "answers": [
+  "har arbejdet — har talt — har købt — er gået — er kommet — har set",
+  "har — er — er — har — er — har",
+  "så — Har … været — tog — har boet — stod",
+  "Har du været i Danmark? — Jeg har aldrig prøvet det. — Jeg har boet her i to år. — Hun er ikke kommet endnu. — Jeg har lige spist."
+ ]
+}

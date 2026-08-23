@@ -1,0 +1,215 @@
+{
+ "title": "En dan et — dua jenis kata benda",
+ "title_target": "En bil og et hus",
+ "goal": "Mengenali pembagian kata benda Denmark jadi en-ord dan et-ord, memakai kata sandang tak tentu, dan menyebut benda-benda di sekitarmu.",
+ "bekal": [
+  "membedakan **en**-ord dan **et**-ord dan tahu kenapa perbedaan ini menentukan segalanya",
+  "memakai *der er* untuk menyatakan \"ada\"",
+  "menyebut isi ruangan dan barang yang kamu bawa sehari-hari"
+ ],
+ "wave": "Ulangi **unit 1** dulu: tutup kolom bahasa Denmark, lihat terjemahan Indonesianya, lalu susun kembali seluruh dialognya dari ingatan. Ucapkan keras-keras.",
+ "dialogs": [
+  {
+   "title": "Dialog — Et nyt værelse",
+   "intro": "Budi baru pindah ke kamar sewa di Nørrebro. Mette datang melihat.",
+   "lines": [
+    { "speaker": "Mette:", "text": "Sikke et hyggeligt værelse! Er det dyrt?", "id": "Kamarnya nyaman sekali! Mahal?", "literal": "betapa satu menyenangkan kamar! adalah itu mahal?" },
+    { "speaker": "Budi:", "text": "Nej, det er billigt. Men det er lille.", "id": "Tidak, murah. Tapi kecil.", "literal": "tidak, itu adalah murah. tapi itu adalah kecil." },
+    { "speaker": "Mette:", "text": "Hvad har du i værelset?", "id": "Ada apa saja di kamarmu?", "literal": "apa punya kamu di kamar-itu?" },
+    { "speaker": "Budi:", "text": "Der er en seng, et bord og to stole.", "id": "Ada satu tempat tidur, satu meja, dan dua kursi.", "literal": "di-sana adalah satu ranjang, satu meja dan dua kursi." },
+    { "speaker": "Mette:", "text": "Og et vindue! Det er vigtigt.", "id": "Dan satu jendela! Itu penting.", "literal": "dan satu jendela! itu adalah penting." },
+    { "speaker": "Budi:", "text": "Ja, men jeg har ikke et køleskab.", "id": "Ya, tapi saya tidak punya kulkas.", "literal": "ya, tapi saya punya tidak satu kulkas." },
+    { "speaker": "Mette:", "text": "Er der et køkken?", "id": "Ada dapur?", "literal": "adalah di-sana satu dapur?" },
+    { "speaker": "Budi:", "text": "Der er et fælleskøkken nede i gården.", "id": "Ada dapur bersama di bawah, di halaman dalam.", "literal": "di-sana adalah satu bersama-dapur bawah di halaman-itu." },
+    { "speaker": "Mette:", "text": "Det er meget almindeligt i København.", "id": "Itu biasa sekali di Kopenhagen.", "literal": "itu adalah sangat biasa di Kopenhagen." },
+    { "speaker": "Budi:", "text": "Vil du have en kop kaffe?", "id": "Mau kopi?", "literal": "mau kamu punya satu cangkir kopi?" },
+    { "speaker": "Mette:", "text": "Ja tak, gerne!", "id": "Ya, boleh, dengan senang hati!", "literal": "ya terima-kasih, senang-hati!" }
+   ],
+   "notes": [
+    "**Sikke** = \"betapa\", untuk berseru. *Sikke et værelse!*, *Sikke en dag!* Perhatikan *en* atau *et* tetap ikut — bahasa Denmark tidak membuangnya seperti bahasa Inggris (*what a room!*).",
+    "**Der er** = \"ada\". Harfiahnya \"di sana adalah\", persis seperti *there is* di bahasa Inggris. Jangan diterjemahkan jadi *det er* — *det er en seng* berarti \"itu (adalah) sebuah ranjang\", menunjuk benda tertentu; *der er en seng* berarti \"ada sebuah ranjang\", menyatakan keberadaan.",
+    "**Kata sifat ikut jenis kata bendanya.** Perhatikan *dyrt*, *billigt*, *vigtigt*, *almindeligt* — semuanya berakhiran *-t* karena menerangkan *det*, dan *det* itu et-ord. Kalau yang diterangkan en-ord, huruf *t*-nya hilang: *en dyr bil*. Aturan lengkapnya di unit 15; untuk sekarang cukup sadari polanya ada.",
+    "**Lille** tidak pernah berubah di bentuk tunggal — tidak ada *lillet*. Ia salah satu dari segelintir kata sifat yang membangkang, dan bentuk jamaknya bahkan berganti kata sama sekali: *små*.",
+    "**Vil du have…?** = \"mau…?\" — harfiahnya \"maukah kamu punya\". Ini rangka tawaran yang paling umum di Denmark, dari kopi sampai kursi.",
+    "**Gerne** adalah kata Denmark yang sulit diterjemahkan dan sangat sering dipakai. Ia berarti \"dengan senang hati\" atau \"kalau boleh\". *Ja tak, gerne* adalah cara paling wajar menerima tawaran. Nanti di unit 7 ia muncul lagi di *jeg vil gerne have…*",
+    "**Nede** = \"di bawah\" sebagai keterangan tempat. Bahasa Denmark punya sepasang kata untuk tiap arah: *ned* (bergerak turun) dan *nede* (berada di bawah). Begitu juga *op/oppe*, *ud/ude*, *hjem/hjemme*, *ind/inde*. Bahasa Indonesia tidak membedakan ini sama sekali."
+   ],
+   "grammars": [
+    {
+     "title": "En-ord dan et-ord",
+     "body": [
+      "Semua kata benda bahasa Denmark termasuk salah satu dari dua golongan. Ini bukan soal laki-laki dan perempuan — bahasa Denmark modern sudah meninggalkan pembagian itu — melainkan dua golongan yang penamaannya diambil begitu saja dari kata sandangnya.",
+      "Kenapa ini penting sekali: pilihan *en* atau *et* menentukan bentuk kata sandang ekor, bentuk kata sifat, bentuk kata milik, dan kata ganti yang menggantikannya. Salah menebak di sini menular ke seluruh kalimat."
+     ],
+     "table": {
+      "head": ["", "en-ord (fælleskøn)", "et-ord (intetkøn)"],
+      "rows": [
+       ["Kata sandang", "**en**", "**et**"],
+       ["Contoh", "en bil, en stol, en kop", "et hus, et bord, et barn"],
+       ["Diganti dengan", "**den**", "**det**"],
+       ["Kata sifat tunggal", "en stor bil", "et stor**t** hus"],
+       ["Kata milik", "min bil", "mit hus"],
+       ["Perbandingan jumlah", "sekitar **75%** kata benda", "sekitar **25%**"]
+      ]
+     },
+     "after": [
+      "Tidak ada aturan yang benar-benar bisa dipegang untuk menebak golongan sebuah kata. Yang ada cuma kecenderungan lemah: kata benda dari bahasa asing sering *en* (*en computer*, *en bus*), kata untuk zat dan bahan sering *et* (*et brød*, *et glas*), dan hampir semua kata bernyawa *en* (*en mand*, *en hund*) — dengan satu pengecualian besar yang harus dihafal: **et barn**, **et menneske**, **et dyr**.",
+      "Karena itu jalan satu-satunya adalah **selalu menghafal kata benda bersama kata sandangnya**. Di seluruh modul ini, kolom kosakata tidak pernah menulis *bil* saja; ia selalu menulis *en bil*. Ikuti kebiasaan itu di catatanmu sendiri.",
+      "Kalau kamu betul-betul buntu dan harus menebak sekarang juga: pilih **en**. Peluangnya tiga banding satu."
+     ]
+    },
+    {
+     "title": "Der er — menyatakan ada",
+     "body": [
+      "Rangka yang dipakai untuk memperkenalkan sesuatu yang baru dalam percakapan."
+     ],
+     "table": {
+      "head": ["Bentuk", "Contoh", "Arti"],
+      "rows": [
+       ["Der er …", "Der er en seng i værelset.", "Ada sebuah ranjang di kamar itu."],
+       ["Der er ikke …", "Der er ikke et køleskab.", "Tidak ada kulkas."],
+       ["Er der …?", "Er der et køkken?", "Ada dapur?"],
+       ["Der er mange …", "Der er mange cykler i København.", "Ada banyak sepeda di Kopenhagen."]
+      ]
+     },
+     "after": [
+      "Perhatikan pertanyaannya dibentuk dengan menukar tempat *er* dan *der*, tanpa kata bantu apa pun. Bahasa Denmark tidak punya padanan *do* seperti bahasa Inggris — pertanyaan dibuat murni dengan memindahkan kata kerja ke depan. Ini akan kita lihat lagi berkali-kali."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Benda di sekitarmu",
+   "blocks": [
+    { "type": "p", "text": "Hafalkan tiap baris **lengkap dengan en atau et**-nya. Menghafal *bord* saja tidak ada gunanya; yang berguna adalah *et bord*." },
+    {
+     "type": "tabel",
+     "head": ["en-ord", "Cara baca", "et-ord", "Cara baca"],
+     "rows": [
+      ["en seng (ranjang)", "èn sèng", "et bord (meja)", "èt boa"],
+      ["en stol (kursi)", "èn stol", "et vindue (jendela)", "èt VIN-du"],
+      ["en dør (pintu)", "èn dör", "et gulv (lantai)", "èt gol"],
+      ["en lampe (lampu)", "èn LAM-pe", "et tæppe (karpet)", "èt TÈ-be"],
+      ["en bog (buku)", "èn bou", "et billede (gambar)", "èt BI-le-dhe"],
+      ["en taske (tas)", "èn TAS-ge", "et køkken (dapur)", "èt KÖ-gen"],
+      ["en nøgle (kunci)", "èn NOI-le", "et badeværelse (kamar mandi)", "èt BA-dhe-vèr-el-se"],
+      ["en telefon (telepon)", "èn te-le-FON", "et køleskab (kulkas)", "èt KÖ-le-skab"],
+      ["en computer (komputer)", "èn kom-PYU-ta", "et ur (jam)", "èt ur"],
+      ["en cykel (sepeda)", "èn SÜ-gel", "et bad (kamar mandi, mandi)", "èt badh"],
+      ["en kop (cangkir)", "èn kop", "et glas (gelas)", "èt glas"],
+      ["en lejlighed (apartemen)", "èn LAI-li-hèdh", "et værelse (kamar)", "èt VÈR-el-se"]
+     ]
+    },
+    { "type": "kotak", "title": "Cara menghafal yang benar-benar berhasil", "items": [
+      "Tulis kata bendanya di catatanmu **dengan warna berbeda** untuk en-ord dan et-ord. Otak mengingat warna jauh lebih baik daripada mengingat label \"fælleskøn\".",
+      "Atau: hafalkan bukan katanya, melainkan **kalimat pendek** yang memuatnya. *Jeg har et bord* menempel lebih kuat daripada \"bord = meja (et)\".",
+      "Jangan menghafal dua kata bertentangan berdampingan (*en stol* / *et bord*) di sesi yang sama — otak justru mencampurnya. Pisahkan waktunya."
+     ] }
+   ]
+  },
+  {
+   "title": "Angka 0-20",
+   "blocks": [
+    { "type": "p", "text": "Bagian yang mudah dari sistem angka Denmark. Bagian yang sulit menunggu di unit 6." },
+    {
+     "type": "tabel",
+     "head": ["", "", "", ""],
+     "rows": [
+      ["0 nul (nol)", "1 en / et (èn / èt)", "2 to (to)", "3 tre (tre)"],
+      ["4 fire (FI-a)", "5 fem (fèm)", "6 seks (sèks)", "7 syv (süu)"],
+      ["8 otte (Å-de)", "9 ni (ni)", "10 ti (ti)", "11 elleve (ÈL-ve)"],
+      ["12 tolv (tol)", "13 tretten (TRÈT-en)", "14 fjorten (FYOR-ten)", "15 femten (FÈM-ten)"],
+      ["16 seksten (SAIS-ten)", "17 sytten (SÖT-en)", "18 atten (AT-en)", "19 nitten (NIT-en)"],
+      ["20 tyve (TÜ-ve)", "", "", ""]
+     ]
+    },
+    { "type": "p", "text": "⚠️ Angka **1** punya dua bentuk, dan pilihannya mengikuti golongan kata bendanya — persis seperti kata sandangnya: *en bil* (satu mobil), *et hus* (satu rumah). Ini bukan kebetulan; kata sandang *en/et* memang berasal dari angka satu. Mulai angka dua ke atas, tidak ada perbedaan lagi." },
+    { "type": "p", "text": "*Seksten* dibaca **SAIS-ten**, bukan \"seks-ten\" — huruf *k*-nya bisu. Ini kata angka yang paling sering salah dibaca pemula." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "da": "et værelse", "baca": "èt VÈR-el-se", "id": "kamar" },
+  { "da": "en seng", "baca": "èn sèng", "id": "tempat tidur" },
+  { "da": "et bord", "baca": "èt boa", "id": "meja" },
+  { "da": "en stol", "baca": "èn stol", "id": "kursi" },
+  { "da": "et vindue", "baca": "èt VIN-du", "id": "jendela" },
+  { "da": "en dør", "baca": "èn dör", "id": "pintu" },
+  { "da": "et køkken", "baca": "èt KÖ-gen", "id": "dapur" },
+  { "da": "et køleskab", "baca": "èt KÖ-le-skab", "id": "kulkas" },
+  { "da": "en kop", "baca": "èn kop", "id": "cangkir" },
+  { "da": "en bog", "baca": "èn bou", "id": "buku" },
+  { "da": "en cykel", "baca": "èn SÜ-gel", "id": "sepeda" },
+  { "da": "en nøgle", "baca": "èn NOI-le", "id": "kunci" },
+  { "da": "en lejlighed", "baca": "èn LAI-li-hèdh", "id": "apartemen" },
+  { "da": "en gård", "baca": "èn gor", "id": "halaman dalam, pekarangan" },
+  { "da": "der er", "baca": "dèa èa", "id": "ada" },
+  { "da": "dyr", "baca": "dür", "id": "mahal" },
+  { "da": "billig", "baca": "BI-li", "id": "murah" },
+  { "da": "stor", "baca": "stoa", "id": "besar" },
+  { "da": "lille", "baca": "LI-le", "id": "kecil" },
+  { "da": "ny", "baca": "nü", "id": "baru" },
+  { "da": "gammel", "baca": "GAM-el", "id": "tua, lama" },
+  { "da": "vigtig", "baca": "VEK-ti", "id": "penting" },
+  { "da": "almindelig", "baca": "al-MIN-e-li", "id": "biasa, lazim" },
+  { "da": "meget", "baca": "MAI-edh", "id": "sangat; banyak" },
+  { "da": "gerne", "baca": "GÈR-ne", "id": "dengan senang hati" },
+  { "da": "nede", "baca": "NÈ-dhe", "id": "di bawah" },
+  { "da": "en kaffe", "baca": "èn KA-fe", "id": "kopi" },
+  { "da": "sikke", "baca": "SI-ge", "id": "betapa (seruan)" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan en atau et.",
+   "items": [
+    "____ bord",
+    "____ stol",
+    "____ hus",
+    "____ cykel",
+    "____ vindue",
+    "____ bog",
+    "____ køkken",
+    "____ telefon"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Denmark.",
+   "items": [
+    "Ada sebuah meja di kamar itu.",
+    "Saya tidak punya kulkas.",
+    "Ada dapur?",
+    "Kamarnya kecil tapi murah.",
+    "Mau kopi?",
+    "Ada dua kursi dan satu jendela."
+   ]
+  },
+  {
+   "prompt": "Pilih der er atau det er.",
+   "items": [
+    "____ en seng i værelset.",
+    "____ meget dyrt.",
+    "____ ikke et køleskab her.",
+    "____ en god bog.",
+    "____ mange cykler i København."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "er / et / der / vindue",
+    "har / køleskab / jeg / et / ikke",
+    "billigt / er / værelset",
+    "kaffe / have / du / vil / en / kop / ?",
+    "stole / og / en / to / seng / er / der"
+   ]
+  }
+ ],
+ "answers": [
+  "et — en — et — en — et — en — et — en",
+  "Der er et bord i værelset. — Jeg har ikke et køleskab. — Er der et køkken? — Værelset er lille, men billigt. — Vil du have en kop kaffe? — Der er to stole og et vindue.",
+  "Der er — Det er — Der er — Det er — Der er",
+  "Der er et vindue. — Jeg har ikke et køleskab. — Værelset er billigt. — Vil du have en kop kaffe? — Der er en seng og to stole."
+ ]
+}

@@ -1,0 +1,564 @@
+{
+ "title": "Di supermarket",
+ "title_target": "I supermarkedet",
+ "goal": "Berbelanja bahan makanan, menyebut jumlah dan takaran, dan memakai kata *nogle*, *noget*, dan *nogen*.",
+ "bekal": [
+  "menyebut takaran: *et kilo*, *en liter*, *et par*, *en pakke*",
+  "membedakan *nogle* (beberapa), *noget* (sedikit/sesuatu), dan *ingen* (tidak ada)",
+  "berbelanja di toko dan bertanya letak barang"
+ ],
+ "wave": "Ulangi **unit 12** dulu: ceritakan cuaca hari ini, cuaca kemarin, dan cuaca musim dingin di negaramu — enam kalimat, keras-keras.",
+ "dialogs": [
+  {
+   "title": "Dialog — Indkøb til aftensmad",
+   "intro": "Budi berbelanja di Netto. Ia mencari beberapa barang dan bertanya kepada pegawai.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Undskyld, hvor står risen?",
+     "id": "Permisi, berasnya di mana?",
+     "literal": "maaf, di-mana berdiri beras-itu?"
+    },
+    {
+     "speaker": "Ansat:",
+     "text": "Ris? Reol fire, sammen med pasta og mel.",
+     "id": "Beras? Rak empat, bareng pasta dan tepung.",
+     "literal": "beras? rak empat, bersama dengan pasta dan tepung."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tak. Har I også kokosmælk?",
+     "id": "Terima kasih. Ada santan juga?",
+     "literal": "terima-kasih. punya kalian juga kelapa-susu?"
+    },
+    {
+     "speaker": "Ansat:",
+     "text": "Ja, i den asiatiske afdeling. Nederste hylde.",
+     "id": "Ya, di bagian Asia. Rak paling bawah.",
+     "literal": "ya, di itu asia bagian. paling-bawah rak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Perfekt. Og hvad koster kyllingen?",
+     "id": "Sempurna. Berapa harga ayamnya?",
+     "literal": "sempurna. dan apa berharga ayam-itu?"
+    },
+    {
+     "speaker": "Ansat:",
+     "text": "Niogfyrre kroner per kilo. Den er på tilbud i dag.",
+     "id": "Empat puluh sembilan kroner per kilo. Hari ini lagi diskon.",
+     "literal": "empat-puluh-sembilan kroner per kilo. ia adalah pada penawaran di hari."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Så tager jeg to. Har I nogle friske grøntsager?",
+     "id": "Kalau begitu saya ambil dua. Ada sayuran segar?",
+     "literal": "maka mengambil saya dua. punya kalian beberapa segar sayuran?"
+    },
+    {
+     "speaker": "Ansat:",
+     "text": "Ja, lige derovre. Men vi har ingen mango i dag.",
+     "id": "Ya, di sebelah sana. Tapi hari ini tidak ada mangga.",
+     "literal": "ya, tepat di-sana-seberang. tapi kami punya tidak-ada mangga di hari."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Det gør ikke noget. Jeg tager nogle løg i stedet.",
+     "id": "Tidak apa-apa. Saya ambil bawang saja.",
+     "literal": "itu membuat tidak sesuatu. saya mengambil beberapa bawang di tempat ganti."
+    },
+    {
+     "speaker": "Ansat:",
+     "text": "Skal du bruge en pose?",
+     "id": "Perlu kantong?",
+     "literal": "harus kamu memakai satu kantong?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nej tak, jeg har min egen med.",
+     "id": "Tidak, terima kasih, saya bawa punya sendiri.",
+     "literal": "tidak terima-kasih, saya punya milik-saya sendiri dengan."
+    }
+   ],
+   "notes": [
+    "**Hvor står risen?** — ingat dari unit 11: *at stå* untuk benda yang berdiri tegak di rak. Kalau bendanya mendatar, *at ligge*: *Hvor ligger brødet?*",
+    "**Det gør ikke noget** = \"tidak apa-apa\", harfiahnya \"itu tidak membuat sesuatu\". Ungkapan tetap yang sangat sering dipakai; jangan diurai.",
+    "**Vi har ingen mango** — *ingen* berarti \"tidak ada\" dan sudah mengandung penyangkalan, jadi tidak perlu *ikke*. Bisa juga ditulis *vi har ikke nogen mango*; dua-duanya benar, yang pertama lebih ringkas.",
+    "**Per kilo.** Semua barang di Denmark dijual per kilogram atau per satuan, dan harga per kilo wajib tercantum di rak — berguna sekali untuk membandingkan.",
+    "**En pose** = kantong plastik. Di Denmark kantong belanja **berbayar** dan cukup mahal (2-5 kroner), dan hampir semua orang membawa tas sendiri. *Jeg har min egen med* adalah kalimat yang akan sering kamu pakai.",
+    "**Egen** = sendiri. Ia berubah bentuk seperti kata sifat: *min egen bil*, *mit eget hus*, *mine egne bøger*. Salah satu dari sedikit kata sifat yang bentuk et-ord-nya menggandakan huruf.",
+    "**Nederste hylde** — *nederst* (paling bawah) dan *øverst* (paling atas) berguna sekali di supermarket dan di lift.",
+    "**Asiatiske** — perhatikan akhiran *-e* karena berdiri sesudah *den*. Kepastian ganda lagi; unit 15 menuntaskannya."
+   ],
+   "grammars": [
+    {
+     "title": "Nogle, noget, nogen, ingen",
+     "body": [
+      "Empat kata yang bunyinya berdekatan dan sering tertukar. Pembagiannya sebenarnya rapi: yang menentukan adalah **bisa dihitung atau tidak**, dan **kalimatnya positif atau bukan**."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Dipakai untuk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**nogle**",
+        "beberapa (bisa dihitung, kalimat positif)",
+        "Jeg har **nogle** venner i Aarhus."
+       ],
+       [
+        "**noget**",
+        "sedikit / sesuatu (tak terhitung)",
+        "Vil du have **noget** vand?"
+       ],
+       [
+        "**nogen**",
+        "ada (dalam pertanyaan & penyangkalan)",
+        "Har du **nogen** penge? / Jeg har ikke **nogen** penge."
+       ],
+       [
+        "**ingen**",
+        "tidak ada (satu kata, tanpa ikke)",
+        "Jeg har **ingen** penge."
+       ],
+       [
+        "**intet**",
+        "tidak ada apa-apa (tak terhitung, agak resmi)",
+        "Der er **intet** at gøre."
+       ],
+       [
+        "**alle / alt**",
+        "semua (terhitung / tak terhitung)",
+        "**Alle** kommer. / **Alt** er klar."
+       ]
+      ]
+     },
+     "after": [
+      "Jalan pintas yang bekerja untuk hampir semua keadaan sehari-hari: **nogle** kalau bisa dihitung dan kalimatnya positif, **noget** kalau tidak bisa dihitung, **nogen** kalau kalimatnya bertanya atau menyangkal.",
+      "*Nogle* dan *nogen* dibaca **hampir sama** dalam percakapan — keduanya terdengar \"NO-en\". Bedanya cuma di tulisan, dan bahkan orang Denmark sering keliru menuliskannya.",
+      "*Noget* juga berarti \"sesuatu\" berdiri sendiri: *Vil du have noget?* (mau sesuatu?), dan *ingenting* berarti \"tidak ada apa-apa\": *Jeg har ingenting.*"
+     ]
+    },
+    {
+     "title": "Takaran dan jumlah",
+     "body": [
+      "Sesudah kata takaran, kata bendanya berdiri **telanjang** — tanpa kata sandang, dan biasanya tanpa akhiran jamak."
+     ],
+     "table": {
+      "head": [
+       "Takaran",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "et kilo",
+        "et kilo **ris**",
+        "sekilo beras"
+       ],
+       [
+        "et halvt kilo",
+        "et halvt kilo **kød**",
+        "setengah kilo daging"
+       ],
+       [
+        "en liter",
+        "en liter **mælk**",
+        "seliter susu"
+       ],
+       [
+        "et gram",
+        "hundrede gram **ost**",
+        "seratus gram keju"
+       ],
+       [
+        "en pakke",
+        "en pakke **smør**",
+        "sebungkus mentega"
+       ],
+       [
+        "en flaske",
+        "en flaske **vand**",
+        "sebotol air"
+       ],
+       [
+        "en dåse",
+        "en dåse **tomater**",
+        "sekaleng tomat"
+       ],
+       [
+        "et par",
+        "et par **æbler**",
+        "beberapa apel"
+       ],
+       [
+        "en pose",
+        "en pose **kartofler**",
+        "sekantong kentang"
+       ],
+       [
+        "et stykke",
+        "et stykke **kage**",
+        "sepotong kue"
+       ],
+       [
+        "en skive",
+        "to skiver **brød**",
+        "dua iris roti"
+       ]
+      ]
+     },
+     "after": [
+      "*Et par* harfiahnya \"sepasang\", tapi dalam pemakaian sehari-hari berarti \"dua atau tiga\" — persis seperti \"beberapa\". *Et par dage* = beberapa hari.",
+      "⚠️ Denmark memakai satuan metrik sepenuhnya. Yang tidak metrik cuma satu: *en pægl* dan sejenisnya sudah lama hilang. Tapi hati-hati dengan koma dan titik — Denmark menulis *1.000* untuk seribu dan *1,5* untuk satu setengah, kebalikan dari kebiasaan bahasa Inggris."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Belanjaan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Dansk",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "et brød",
+       "èt brödh",
+       "roti"
+      ],
+      [
+       "en ris",
+       "èn ris",
+       "beras, nasi"
+      ],
+      [
+       "et sukker",
+       "èt SU-ga",
+       "gula"
+      ],
+      [
+       "et salt / en peber",
+       "èt salt / èn PÈ-ba",
+       "garam / lada"
+      ],
+      [
+       "en olie",
+       "èn O-lye",
+       "minyak"
+      ],
+      [
+       "et smør",
+       "èt smör",
+       "mentega"
+      ],
+      [
+       "en ost",
+       "èn ost",
+       "keju"
+      ],
+      [
+       "et æg / æg",
+       "èt èg",
+       "telur"
+      ],
+      [
+       "en mælk",
+       "èn mèlk",
+       "susu"
+      ],
+      [
+       "grøntsager",
+       "GRÖNT-sa-a",
+       "sayuran"
+      ],
+      [
+       "frugt",
+       "frogt",
+       "buah"
+      ],
+      [
+       "en tomat",
+       "èn to-MAT",
+       "tomat"
+      ],
+      [
+       "et løg",
+       "èt loi",
+       "bawang"
+      ],
+      [
+       "en kartoffel",
+       "èn kar-TOF-el",
+       "kentang"
+      ],
+      [
+       "et æble / en banan",
+       "èt È-ble / èn ba-NAN",
+       "apel / pisang"
+      ],
+      [
+       "en kylling",
+       "èn KÜ-ling",
+       "ayam"
+      ],
+      [
+       "en fisk",
+       "èn fisk",
+       "ikan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Æg* tidak berubah di jamak: *et æg, to æg*. Begitu juga *en fisk, to fisk* — walaupun *fisker* juga dipakai kalau maksudnya beberapa jenis ikan yang berbeda."
+    }
+   ]
+  },
+  {
+   "title": "Kalimat di toko",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Dansk",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Hvor står / ligger…?",
+       "Di mana letak…?"
+      ],
+      [
+       "Har I…?",
+       "Ada…?"
+      ],
+      [
+       "Jeg leder efter…",
+       "Saya mencari…"
+      ],
+      [
+       "Er den her frisk?",
+       "Ini segar?"
+      ],
+      [
+       "Hvor meget skal du bruge?",
+       "Perlu berapa banyak?"
+      ],
+      [
+       "Et halvt kilo, tak.",
+       "Setengah kilo, terima kasih."
+      ],
+      [
+       "Er det alt?",
+       "Sudah itu saja?"
+      ],
+      [
+       "Ja tak, det var det.",
+       "Ya, itu saja."
+      ],
+      [
+       "Skal du bruge en pose?",
+       "Perlu kantong?"
+      ],
+      [
+       "Har du et medlemskort?",
+       "Punya kartu anggota?"
+      ],
+      [
+       "Kan jeg betale med MobilePay?",
+       "Bisa bayar pakai MobilePay?"
+      ],
+      [
+       "Hvornår lukker I?",
+       "Tutup jam berapa?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Det var det* harfiahnya \"itu tadi itu\" — cara baku menutup pesanan, di toko maupun di kafe. Bunyinya aneh diterjemahkan, tapi ia salah satu ungkapan yang paling sering kamu dengar di kasir."
+    },
+    {
+     "type": "kotak",
+     "title": "Berbelanja di Denmark: yang tak tertulis di buku frasa",
+     "items": [
+      "**Pant.** Botol dan kaleng minuman punya uang jaminan (1-3 kroner) yang kembali kalau kamu memasukkannya ke mesin *pantautomat* di supermarket. Jangan buang botol kosong.",
+      "**Kantong berbayar.** Bawa tas sendiri. Kalimatnya: *Nej tak, jeg har min egen med.*",
+      "**Kasir cepat.** Kasir Denmark bekerja sangat cepat dan mengharapkan kamu mengemas belanjaan sambil dia memindai. Berdiri diam menunggu akan membuat antrean menumpuk."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "da": "et supermarked",
+   "baca": "èt SU-pa-mar-kedh",
+   "id": "supermarket"
+  },
+  {
+   "da": "at handle",
+   "baca": "at HAN-le",
+   "id": "berbelanja"
+  },
+  {
+   "da": "et indkøb",
+   "baca": "èt IN-köb",
+   "id": "belanjaan"
+  },
+  {
+   "da": "en hylde",
+   "baca": "èn HÜ-le",
+   "id": "rak"
+  },
+  {
+   "da": "en afdeling",
+   "baca": "èn AU-dè-ling",
+   "id": "bagian, seksi"
+  },
+  {
+   "da": "en pose",
+   "baca": "èn PO-se",
+   "id": "kantong"
+  },
+  {
+   "da": "en flaske",
+   "baca": "èn FLAS-ge",
+   "id": "botol"
+  },
+  {
+   "da": "en pakke",
+   "baca": "èn PA-ge",
+   "id": "bungkus"
+  },
+  {
+   "da": "et kilo",
+   "baca": "èt KI-lo",
+   "id": "kilogram"
+  },
+  {
+   "da": "en liter",
+   "baca": "èn LI-da",
+   "id": "liter"
+  },
+  {
+   "da": "et par",
+   "baca": "èt par",
+   "id": "sepasang; beberapa"
+  },
+  {
+   "da": "nogle",
+   "baca": "NO-en",
+   "id": "beberapa"
+  },
+  {
+   "da": "noget",
+   "baca": "NO-edh",
+   "id": "sesuatu; sedikit"
+  },
+  {
+   "da": "nogen",
+   "baca": "NO-en",
+   "id": "ada (dalam tanya/sangkal)"
+  },
+  {
+   "da": "ingen / ingenting",
+   "baca": "ING-en",
+   "id": "tidak ada / tidak apa-apa"
+  },
+  {
+   "da": "alt / alle",
+   "baca": "alt / A-le",
+   "id": "semua"
+  },
+  {
+   "da": "frisk",
+   "baca": "frisk",
+   "id": "segar"
+  },
+  {
+   "da": "egen / eget / egne",
+   "baca": "AI-en",
+   "id": "sendiri"
+  },
+  {
+   "da": "nederst / øverst",
+   "baca": "NÈ-dhast / Ö-vast",
+   "id": "paling bawah / paling atas"
+  },
+  {
+   "da": "derovre",
+   "baca": "dèa-OU-re",
+   "id": "di sebelah sana"
+  },
+  {
+   "da": "per",
+   "baca": "pèr",
+   "id": "per"
+  },
+  {
+   "da": "en ansat",
+   "baca": "èn AN-sat",
+   "id": "pegawai"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan nogle, noget, nogen, atau ingen.",
+   "items": [
+    "Jeg har ____ venner i Aarhus.",
+    "Vil du have ____ kaffe?",
+    "Har du ____ penge?",
+    "Vi har ____ mælk i dag. (tidak ada)",
+    "Jeg køber ____ æbler.",
+    "Er der ____ hjemme?"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Denmark.",
+   "items": [
+    "Permisi, berasnya di mana?",
+    "Ada sayuran segar?",
+    "Setengah kilo daging, terima kasih.",
+    "Berapa harga ayamnya per kilo?",
+    "Tidak, terima kasih, saya bawa tas sendiri.",
+    "Tutup jam berapa?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan takaran yang tepat.",
+   "items": [
+    "____ mælk (seliter)",
+    "____ ris (sekilo)",
+    "____ smør (sebungkus)",
+    "____ vand (sebotol)",
+    "____ brød (dua iris)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "risen / hvor / står / ?",
+    "grøntsager / friske / I / har / ?",
+    "kilo / tak / halvt / et",
+    "pose / bruge / skal / en / du / ?",
+    "med / egen / har / jeg / min"
+   ]
+  }
+ ],
+ "answers": [
+  "nogle — noget — nogen — ingen — nogle — nogen",
+  "Undskyld, hvor står risen? — Har I friske grøntsager? — Et halvt kilo kød, tak. — Hvad koster kyllingen per kilo? — Nej tak, jeg har min egen med. — Hvornår lukker I?",
+  "en liter mælk — et kilo ris — en pakke smør — en flaske vand — to skiver brød",
+  "Hvor står risen? — Har I friske grøntsager? — Et halvt kilo, tak. — Skal du bruge en pose? — Jeg har min egen med."
+ ]
+}

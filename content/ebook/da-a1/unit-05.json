@@ -1,0 +1,215 @@
+{
+ "title": "Keluargaku",
+ "title_target": "Min familie",
+ "goal": "Menyebut anggota keluarga, memakai kata milik yang ikut golongan kata bendanya, dan menanyakan umur.",
+ "bekal": [
+  "memakai *min/mit/mine* dan *din/dit/dine* dengan benar",
+  "membedakan *hans*, *hendes*, dan *sin* — jebakan paling terkenal bahasa Denmark",
+  "menanyakan dan menyebut umur"
+ ],
+ "wave": "Ulangi **unit 3** dulu: tunjuk sepuluh benda di sekitarmu, sebut namanya lengkap dengan *en* atau *et*, lalu ubah jadi bentuk berekor.",
+ "dialogs": [
+  {
+   "title": "Dialog — Billeder på telefonen",
+   "intro": "Mette memperlihatkan foto keluarganya kepada Budi.",
+   "lines": [
+    { "speaker": "Mette:", "text": "Se her — det er min familie.", "id": "Lihat ini — ini keluarga saya.", "literal": "lihat di-sini — itu adalah milik-saya keluarga." },
+    { "speaker": "Budi:", "text": "Hvem er manden med skægget?", "id": "Siapa laki-laki yang berjenggot itu?", "literal": "siapa adalah laki-laki-itu dengan jenggot-itu?" },
+    { "speaker": "Mette:", "text": "Det er min far. Han hedder Jens.", "id": "Itu ayah saya. Namanya Jens.", "literal": "itu adalah milik-saya ayah. dia dinamai Jens." },
+    { "speaker": "Budi:", "text": "Og kvinden ved siden af?", "id": "Dan perempuan di sebelahnya?", "literal": "dan perempuan-itu dekat sisi-itu dari?" },
+    { "speaker": "Mette:", "text": "Det er min mor, Anne. Og det er mine to brødre.", "id": "Itu ibu saya, Anne. Dan itu dua saudara laki-laki saya.", "literal": "itu adalah milik-saya ibu, Anne. dan itu adalah milik-saya dua saudara-laki-laki." },
+    { "speaker": "Budi:", "text": "Hvor gamle er de?", "id": "Berapa umur mereka?", "literal": "berapa tua adalah mereka?" },
+    { "speaker": "Mette:", "text": "Lars er nitten, og Peter er fjorten. Jeg er den ældste.", "id": "Lars sembilan belas, Peter empat belas. Saya yang paling tua.", "literal": "Lars adalah sembilan-belas, dan Peter adalah empat-belas. saya adalah itu paling-tua." },
+    { "speaker": "Budi:", "text": "Har du også en søster?", "id": "Kamu punya saudara perempuan juga?", "literal": "punya kamu juga satu saudara-perempuan?" },
+    { "speaker": "Mette:", "text": "Nej. Men min bror har en kæreste — hende der.", "id": "Tidak. Tapi saudara laki-laki saya punya pacar — yang itu.", "literal": "tidak. tapi milik-saya saudara punya satu kekasih — dia di-sana." },
+    { "speaker": "Budi:", "text": "Bor de sammen?", "id": "Mereka tinggal serumah?", "literal": "tinggal mereka bersama?" },
+    { "speaker": "Mette:", "text": "Ja, i hendes lejlighed i Aarhus. Han elsker sin cykel mere end hende.", "id": "Ya, di apartemen dia (perempuan) di Aarhus. Dia lebih sayang sepedanya sendiri daripada pacarnya.", "literal": "ya, di milik-dia apartemen di Aarhus. dia mencintai miliknya-sendiri sepeda lebih dari dia." },
+    { "speaker": "Budi:", "text": "Meget dansk.", "id": "Denmark sekali.", "literal": "sangat denmark." }
+   ],
+   "notes": [
+    "**Kata milik ikut kata bendanya, bukan pemiliknya.** *Min far* tapi *mit hus* — dan yang menentukan bukan siapa pemiliknya, melainkan apakah *far* dan *hus* itu en-ord atau et-ord. Ini kebalikan dari bahasa Indonesia, dan juga berbeda dari bahasa Inggris yang cuma punya satu *my*.",
+    "**Ved siden af** = \"di sebelah\". Harfiahnya \"di sisi dari\". Ungkapan tempat bahasa Denmark sering berupa tiga kata begini; hafalkan utuh, jangan diurai.",
+    "**Hvor gamle er de?** Perhatikan *gamle*, bukan *gammel* — karena yang ditanyakan lebih dari satu orang, kata sifatnya berakhiran *-e*. Untuk satu orang: *Hvor gammel er du?*",
+    "**Umur tanpa kata kerja tambahan.** *Jeg er femogtyve* sudah cukup; boleh juga lengkap *jeg er femogtyve år gammel*. Bahasa Denmark memakai *er* seperti bahasa Inggris (*I am 25*), bukan *har* seperti bahasa Prancis atau Spanyol.",
+    "**Den ældste** = \"yang paling tua\". Bentuk paling-nya: *gammel → ældre → ældst*, tak beraturan. Perhatikan lagi kepastian ganda: *den* di depan, akhiran *-e* di kata sifatnya.",
+    "**Sin cykel — inilah jebakannya.** *Han elsker **sin** cykel* = dia mencintai sepeda **miliknya sendiri**. Kalau ditulis *han elsker **hans** cykel*, artinya berubah jadi dia mencintai sepeda **orang lain**. Bahasa Indonesia tidak bisa membedakan ini tanpa menambah kata \"sendiri\"; bahasa Denmark wajib membedakannya.",
+    "**En kæreste** dipakai untuk pacar laki-laki maupun perempuan — bahasa Denmark tidak membedakannya. Harfiahnya \"yang paling disayang\". Untuk yang sudah menikah: *en mand* (suami) dan *en kone* (istri)."
+   ],
+   "grammars": [
+    {
+     "title": "Kata milik",
+     "body": [
+      "Hanya tiga baris pertama yang berubah bentuk. Sisanya satu bentuk untuk semua — kelegaan yang tak terduga."
+     ],
+     "table": {
+      "head": ["Pemilik", "en-ord", "et-ord", "Jamak", "Contoh"],
+      "rows": [
+       ["saya", "**min**", "**mit**", "**mine**", "min far, mit hus, mine bøger"],
+       ["kamu", "**din**", "**dit**", "**dine**", "din mor, dit værelse, dine nøgler"],
+       ["diri sendiri (org ke-3)", "**sin**", "**sit**", "**sine**", "han tager sin cykel"],
+       ["dia (lk)", "hans", "hans", "hans", "hans bil, hans hus, hans børn"],
+       ["dia (pr)", "hendes", "hendes", "hendes", "hendes bil, hendes hus"],
+       ["kami", "vores", "vores", "vores", "vores lejlighed"],
+       ["kalian", "jeres", "jeres", "jeres", "jeres lærer"],
+       ["mereka", "deres", "deres", "deres", "deres børn"]
+      ]
+     },
+     "after": [
+      "*Hans*, *hendes*, *vores*, *jeres*, *deres* tidak pernah berubah, apa pun kata bendanya. Yang perlu diperhatikan cuma *min/din/sin* dan turunannya.",
+      "Bahasa Denmark juga punya bentuk kepemilikan dengan **-s**, persis seperti bahasa Inggris tapi tanpa tanda kutip: *Mettes far* (ayah Mette), *Danmarks hovedstad* (ibu kota Denmark), *min brors cykel* (sepeda saudara saya). Ini justru bentuk yang paling sering dipakai untuk nama orang."
+     ]
+    },
+    {
+     "title": "Sin, hans, atau hendes?",
+     "body": [
+      "Satu-satunya aturan yang perlu kamu ingat: **sin/sit/sine dipakai kalau pemiliknya adalah pelaku kalimat itu sendiri.** Kalau bukan, pakai *hans* atau *hendes*."
+     ],
+     "table": {
+      "head": ["Kalimat", "Artinya"],
+      "rows": [
+       ["Peter ringer til **sin** mor.", "Peter menelepon ibunya **sendiri**."],
+       ["Peter ringer til **hans** mor.", "Peter menelepon ibu **laki-laki lain**."],
+       ["Mette tager **sin** cykel.", "Mette naik sepedanya **sendiri**."],
+       ["Mette tager **hendes** cykel.", "Mette naik sepeda **perempuan lain**."],
+       ["**Hans** mor ringer til Peter.", "Ibunya menelepon Peter. (*sin* mustahil di sini)"]
+      ]
+     },
+     "after": [
+      "Baris terakhir memperlihatkan pagar keduanya: **sin tidak pernah boleh menjadi bagian dari pelaku kalimat**. Kalau kata miliknya berdiri di depan kata kerja sebagai pelaku, ia pasti *hans* atau *hendes*.",
+      "Untuk jamak berlaku hal yang sama: *De tager **deres** cykler* — tapi kalau maksudnya milik mereka sendiri, dalam bahasa Denmark modern *deres* juga tetap dipakai. Jadi jebakan ini praktis hanya berlaku untuk orang ketiga tunggal.",
+      "Kesalahan ini tidak membuatmu tidak dimengerti, tapi ia langsung menandaimu sebagai pemula. Sebaliknya, memakainya dengan benar adalah salah satu tanda paling cepat bahwa seseorang belajar dengan serius."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Anggota keluarga",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Dansk", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["en familie", "èn fa-MI-lye", "keluarga"],
+      ["en far / en mor", "èn far / èn mor", "ayah / ibu"],
+      ["forældre", "for-ÈL-dre", "orang tua"],
+      ["en søn / en datter", "èn sön / èn DA-da", "anak laki-laki / anak perempuan"],
+      ["en bror / en søster", "èn bror / èn SÖS-da", "saudara laki-laki / perempuan"],
+      ["søskende", "SÖS-ge-ne", "saudara kandung (jamak)"],
+      ["en bedstefar / en bedstemor", "èn BÈS-de-far", "kakek / nenek"],
+      ["en onkel / en tante", "èn ONG-gel / èn TAN-de", "paman / bibi"],
+      ["en fætter / en kusine", "èn FÈ-da / èn ku-SI-ne", "sepupu lk / sepupu pr"],
+      ["en mand / en kone", "èn man / èn KO-ne", "suami / istri"],
+      ["en kæreste", "èn KÈ-as-de", "pacar (lk atau pr)"],
+      ["en ven / en veninde", "èn vèn / èn ve-NIN-e", "teman lk / teman pr"]
+     ]
+    },
+    { "type": "p", "text": "*Brødre* (jamak dari *bror*) dan *søstre* (jamak dari *søster*) berubah bentuknya. Kalau bicara tentang saudara kandung tanpa membedakan jenis kelamin, bahasa Denmark punya satu kata yang sangat berguna dan tak berpadanan dalam bahasa Indonesia: **søskende** — \"saudara-saudara sekandung\"." },
+    { "type": "p", "text": "Keluarga tiri dan sambung dibentuk dengan awalan *sted-*: *en stedfar*, *en stedmor*, *en stedsøster*. Keluarga Denmark modern sering rumit susunannya, dan kata-kata ini dipakai tanpa canggung." }
+   ]
+  },
+  {
+   "title": "Umur",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Dansk", "Bahasa Indonesia"],
+     "rows": [
+      ["Hvor gammel er du?", "Berapa umurmu?"],
+      ["Jeg er femogtyve.", "Saya dua puluh lima."],
+      ["Jeg er femogtyve år gammel.", "Saya berumur dua puluh lima tahun."],
+      ["Hvor gamle er dine børn?", "Berapa umur anak-anakmu?"],
+      ["Han er lige fyldt tredive.", "Dia baru saja berumur tiga puluh."],
+      ["Hun har fødselsdag i dag.", "Hari ini dia berulang tahun."]
+     ]
+    },
+    { "type": "p", "text": "*At fylde* harfiahnya \"mengisi\" — *at fylde tredive* = genap tiga puluh. *En fødselsdag* harfiahnya \"hari kelahiran\", tersusun dari *fødsel* + *dag*. Bahasa Denmark gemar sekali menempelkan kata jadi satu kata panjang; kalau kamu menemukan kata yang tampak mustahil, cobalah memecahnya dulu." },
+    { "type": "kotak", "title": "Kata gabungan: kunci membaca bahasa Denmark", "items": [
+      "*køleskab* = *køle* (mendinginkan) + *skab* (lemari) = kulkas.",
+      "*sprogskole* = *sprog* (bahasa) + *skole* (sekolah).",
+      "*bedsteforældre* = *bedste* (terbaik) + *forældre* (orang tua) = kakek-nenek.",
+      "⚠️ Golongan kata gabungan selalu ditentukan oleh **kata terakhir**: *et skab* → *et køleskab*. Ini satu-satunya aturan penebak golongan yang benar-benar bisa diandalkan."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "da": "min / mit / mine", "baca": "min / mit / MI-ne", "id": "milik saya" },
+  { "da": "din / dit / dine", "baca": "din / dit / DI-ne", "id": "milik kamu" },
+  { "da": "sin / sit / sine", "baca": "sin / sit / SI-ne", "id": "miliknya sendiri" },
+  { "da": "hans / hendes", "baca": "hans / HÈN-es", "id": "miliknya (lk / pr)" },
+  { "da": "vores / jeres / deres", "baca": "VO-as / YÈ-as / DÈ-as", "id": "milik kami / kalian / mereka" },
+  { "da": "en familie", "baca": "èn fa-MI-lye", "id": "keluarga" },
+  { "da": "en far", "baca": "èn far", "id": "ayah" },
+  { "da": "en mor", "baca": "èn mor", "id": "ibu" },
+  { "da": "en bror", "baca": "èn bror", "id": "saudara laki-laki" },
+  { "da": "en søster", "baca": "èn SÖS-da", "id": "saudara perempuan" },
+  { "da": "søskende", "baca": "SÖS-ge-ne", "id": "saudara kandung" },
+  { "da": "et barn / børn", "baca": "èt barn / börn", "id": "anak / anak-anak" },
+  { "da": "en kæreste", "baca": "èn KÈ-as-de", "id": "pacar" },
+  { "da": "en ven", "baca": "èn vèn", "id": "teman" },
+  { "da": "hvem", "baca": "vèm", "id": "siapa" },
+  { "da": "hvor gammel", "baca": "vor GAM-el", "id": "berapa umur" },
+  { "da": "en fødselsdag", "baca": "èn FÖ-sels-dæ", "id": "hari ulang tahun" },
+  { "da": "at elske", "baca": "at ÈLS-ge", "id": "mencintai" },
+  { "da": "at se", "baca": "at sè", "id": "melihat" },
+  { "da": "at ringe til", "baca": "at RING-e til", "id": "menelepon" },
+  { "da": "et skæg", "baca": "èt skèg", "id": "jenggot" },
+  { "da": "ved siden af", "baca": "vèdh SI-dhen a", "id": "di sebelah" },
+  { "da": "ældst", "baca": "ÈLST", "id": "paling tua" },
+  { "da": "yngst", "baca": "ÜNGST", "id": "paling muda" },
+  { "da": "mere end", "baca": "MÈ-a èn", "id": "lebih daripada" },
+  { "da": "i dag", "baca": "i DÆ", "id": "hari ini" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan min, mit, atau mine.",
+   "items": [
+    "____ far",
+    "____ hus",
+    "____ søskende",
+    "____ værelse",
+    "____ cykel",
+    "____ bøger"
+   ]
+  },
+  {
+   "prompt": "Pilih sin, hans, atau hendes.",
+   "items": [
+    "Peter tager ____ cykel. (sepedanya sendiri)",
+    "Mette ringer til ____ mor. (ibunya sendiri)",
+    "Lars bor i ____ lejlighed. (apartemen Mette)",
+    "____ far er lærer. (ayah Peter, sebagai pelaku)",
+    "Hun elsker ____ børn. (anak-anaknya sendiri)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Denmark.",
+   "items": [
+    "Ini keluarga saya.",
+    "Berapa umurmu?",
+    "Saya berumur dua puluh lima tahun.",
+    "Saya punya dua saudara laki-laki dan satu saudara perempuan.",
+    "Siapa perempuan itu?",
+    "Dia menelepon ibunya sendiri."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "familie / min / er / det",
+    "gammel / du / hvor / er / ?",
+    "brødre / to / har / jeg",
+    "cykel / tager / sin / han",
+    "lejlighed / bor / i / hendes / de"
+   ]
+  }
+ ],
+ "answers": [
+  "min — mit — mine — mit — min — mine",
+  "sin — sin — hendes — Hans — sine",
+  "Det er min familie. — Hvor gammel er du? — Jeg er femogtyve år gammel. — Jeg har to brødre og en søster. — Hvem er kvinden? — Hun ringer til sin mor.",
+  "Det er min familie. — Hvor gammel er du? — Jeg har to brødre. — Han tager sin cykel. — De bor i hendes lejlighed."
+ ]
+}

@@ -1,0 +1,221 @@
+{
+ "title": "Kata sandang yang menempel di ekor",
+ "title_target": "Bilen og huset",
+ "goal": "Memakai kata sandang tentu bahasa Denmark — yang tidak berdiri di depan kata benda, melainkan menempel di belakangnya — dan membentuk jamak.",
+ "bekal": [
+  "mengubah *en bil* jadi *bilen* dan *et hus* jadi *huset*",
+  "membentuk jamak dengan tiga akhiran: **-er**, **-e**, atau tanpa akhiran",
+  "memakai *den*, *det*, *de*, *her*, dan *der* untuk menunjuk"
+ ],
+ "wave": "Ulangi **unit 2** dulu: tutup bahasa Denmarknya, lihat terjemahan Indonesianya, susun kembali dialognya. Perhatikan berapa banyak kata kerja yang cuma berakhiran **-r**.",
+ "dialogs": [
+  {
+   "title": "Dialog — Hvor er nøglerne?",
+   "intro": "Pagi hari, Budi terburu-buru mau berangkat kuliah. Ahmad menginap semalam di sofa.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Ahmad, har du set nøglerne?", "id": "Ahmad, kamu lihat kunci-kuncinya?", "literal": "Ahmad, punya kamu melihat kunci-kunci-itu?" },
+    { "speaker": "Ahmad:", "text": "Nøglerne? Nej. Er de ikke på bordet?", "id": "Kuncinya? Tidak. Bukannya ada di meja?", "literal": "kunci-kunci-itu? tidak. adalah mereka tidak pada meja-itu?" },
+    { "speaker": "Budi:", "text": "Bordet er tomt. Og stolen også.", "id": "Mejanya kosong. Kursinya juga.", "literal": "meja-itu adalah kosong. dan kursi-itu juga." },
+    { "speaker": "Ahmad:", "text": "Kig i tasken. Eller i jakken.", "id": "Coba lihat di tasnya. Atau di jaketnya.", "literal": "lihat di tas-itu. atau di jaket-itu." },
+    { "speaker": "Budi:", "text": "Jakken hænger ved døren… Nej, den er tom.", "id": "Jaketnya tergantung di pintu… Tidak, kosong.", "literal": "jaket-itu menggantung dekat pintu-itu… tidak, ia adalah kosong." },
+    { "speaker": "Ahmad:", "text": "Hvad med vinduet? Du åbnede det i går.", "id": "Bagaimana dengan jendelanya? Kemarin kamu buka.", "literal": "apa dengan jendela-itu? kamu membuka itu di kemarin." },
+    { "speaker": "Budi:", "text": "Vent… Her er de! Under avisen.", "id": "Tunggu… Ini dia! Di bawah korannya.", "literal": "tunggu… di-sini adalah mereka! bawah koran-itu." },
+    { "speaker": "Ahmad:", "text": "Selvfølgelig. Det er altid det sidste sted.", "id": "Tentu saja. Selalu di tempat terakhir.", "literal": "tentu-saja. itu adalah selalu itu terakhir tempat." },
+    { "speaker": "Budi:", "text": "Tak! Kan du lukke vinduet, når du går?", "id": "Terima kasih! Bisa tutup jendelanya kalau kamu pergi?", "literal": "terima-kasih! bisa kamu menutup jendela-itu, ketika kamu pergi?" },
+    { "speaker": "Ahmad:", "text": "Ja ja. Og lyset og døren. Jeg kender rutinen.", "id": "Iya iya. Dan lampunya dan pintunya. Saya hafal.", "literal": "ya ya. dan lampu-itu dan pintu-itu. saya kenal rutin-itu." }
+   ],
+   "notes": [
+    "**Inilah unit yang paling menentukan.** Bahasa Denmark tidak punya kata terpisah untuk \"itu\" di depan kata benda. Kata sandangnya **menempel di ekor**: *en bil* (sebuah mobil) → *bilen* (mobil itu). Tidak ada bahasa besar lain yang begini kecuali sesama Skandinavia, dan bahasa Indonesia sama sekali tidak punya padanannya.",
+    "**-en untuk en-ord, -et untuk et-ord.** Kata sandangnya sama persis dengan bentuk tak tentunya, cuma pindah tempat: *en* → *-en*, *et* → *-et*. Kalau kamu sudah tahu golongan katanya, kamu sudah tahu ekornya.",
+    "**Ejaan -et, bunyi -edh.** *Huset* dibaca **HU-sedh**, *bordet* dibaca **BOR-edh**, *vinduet* dibaca **VIN-du-edh**. Huruf *t* di akhiran ini melembek jadi bunyi *d* lembut. Ini salah satu jebakan bunyi terbesar buat pemula.",
+    "**Kig i tasken.** *Kig* adalah bentuk perintah — dan bentuk perintah bahasa Denmark selalu berupa **kata dasar tanpa -r dan tanpa at**: *at kigge* → *kig!*, *at komme* → *kom!*, *at lukke* → *luk!* Aturan lengkapnya di unit 11.",
+    "**Den er tom** — perhatikan *den*, bukan *det*. *Jakken* adalah en-ord, jadi kata ganti penggantinya *den*. Kalau bendanya et-ord, penggantinya *det*: *vinduet… det er lukket*. Bahasa Indonesia cuma punya satu \"itu\" untuk semuanya.",
+    "**Selvfølgelig** dibaca **sel-FÖL-i** — tiga huruf terakhirnya praktis lenyap. Kata panjang bahasa Denmark hampir selalu lebih pendek di mulut daripada di kertas.",
+    "**Det sidste sted** — perhatikan ada *det* di depan **dan** kata sifat berakhiran *-e*, tapi *sted* sendiri telanjang tanpa ekor. Ini yang disebut kepastian ganda; aturannya menunggu di unit 15."
+   ],
+   "grammars": [
+    {
+     "title": "Kata sandang tentu: menempel di belakang",
+     "body": [
+      "Empat baris ini adalah inti seluruh unit. Salin ke catatanmu dan tempel di tempat yang sering kamu lihat."
+     ],
+     "table": {
+      "head": ["", "Tak tentu", "Tentu", "Jamak", "Jamak tentu"],
+      "rows": [
+       ["en-ord", "**en** bil", "bil**en**", "bil**er**", "bil**erne**"],
+       ["en-ord", "**en** stol", "stol**en**", "stol**e**", "stol**ene**"],
+       ["et-ord", "**et** hus", "hus**et**", "hus**e**", "hus**ene**"],
+       ["et-ord", "**et** æble", "æbl**et**", "æbl**er**", "æbl**erne**"]
+      ]
+     },
+     "after": [
+      "Baca kolomnya dari kiri ke kanan: sebuah mobil → mobil itu → mobil-mobil → mobil-mobil itu.",
+      "Kata yang sudah berakhiran *-e* tidak menambah *e* lagi: *en pige* → *pigen*, bukan *pigeen*. Dan kata berakhiran *-el*, *-en*, *-er* membuang huruf *e* di tengah saat ditambah akhiran: *en cykel* → *cyklen* → *cykler*; *et vindue* tetap *vinduet*; *en søster* → *søsteren* → *søstre*.",
+      "Kata berhuruf mati tunggal di ujung sesudah vokal pendek menggandakannya: *et rum* → *rummet*; *en ven* → *vennen* → *venner*."
+     ]
+    },
+    {
+     "title": "Membentuk jamak: tiga kemungkinan",
+     "body": [
+      "Bahasa Denmark punya tiga akhiran jamak, dan sayangnya tidak ada aturan yang bisa dipegang untuk memilihnya. Yang paling umum jauh adalah **-er** — kalau harus menebak, tebak itu."
+     ],
+     "table": {
+      "head": ["Golongan", "Akhiran", "Contoh", "Seberapa umum"],
+      "rows": [
+       ["1", "**-er**", "en bil → bil**er**; et æble → æbl**er**", "paling umum (~65%)"],
+       ["2", "**-e**", "en stol → stol**e**; et hus → hus**e**", "cukup umum (~25%)"],
+       ["3", "tanpa akhiran", "et år → to **år**; en ting → to **ting**", "sedikit tapi sering dipakai"]
+      ]
+     },
+     "after": [
+      "Golongan 3 hampir semuanya kata yang sangat sering dipakai, jadi worth dihafal sekaligus: *et år*, *en ting*, *en sko*, *en mus*, *et fjernsyn*, *en fisk*, *et menneske* (→ *mennesker*, ini justru golongan 1).",
+      "Beberapa kata mengubah vokalnya, seperti bahasa Inggris *man → men*: *en mand → **mænd***, *en bog → **bøger***, *en hånd → **hænder***, *et barn → **børn***, *en nat → **nætter***, *en bonde → **bønder***, *en ko → **køer***.",
+      "Jamak tentu selalu **-ne** ditambahkan ke bentuk jamaknya: *biler* → *bilerne*, *huse* → *husene*, *år* → *årene*, *børn* → *børnene*. Ini bagian yang justru tanpa kejutan."
+     ]
+    },
+    {
+     "title": "Den, det, de — menunjuk",
+     "body": [
+      "Sesudah kata benda punya ekor, kamu masih butuh cara untuk menunjuk \"yang ini\" dan \"yang itu\"."
+     ],
+     "table": {
+      "head": ["", "en-ord", "et-ord", "Jamak"],
+      "rows": [
+       ["ini", "**denne** bil", "**dette** hus", "**disse** biler"],
+       ["itu", "**den** bil", "**det** hus", "**de** biler"],
+       ["ini (sehari-hari)", "**den her** bil", "**det her** hus", "**de her** biler"],
+       ["itu (sehari-hari)", "**den der** bil", "**det der** hus", "**de der** biler"]
+      ]
+     },
+     "after": [
+      "Dua baris terakhir jauh lebih sering terdengar dalam percakapan daripada *denne/dette/disse*, yang terasa agak tertulis. Kalau kamu mau terdengar wajar, pakai *den her* dan *den der*.",
+      "⚠️ Begitu *den/det/de* dipakai untuk menunjuk, kata bendanya **kehilangan ekornya**: *den bil*, bukan *den bilen*. Ini kebalikan dari bahasa Norwegia dan Swedia, yang justru memasang keduanya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Latihan mata: satu kata, empat bentuk",
+   "blocks": [
+    { "type": "p", "text": "Bacalah tabel ini keras-keras, satu baris penuh sekaligus, dari kiri ke kanan. Ini latihan yang tampak membosankan dan justru paling berhasil." },
+    {
+     "type": "tabel",
+     "head": ["Sebuah…", "…itu", "Beberapa…", "…itu (jamak)"],
+     "rows": [
+      ["en bil", "bilen", "biler", "bilerne"],
+      ["en stol", "stolen", "stole", "stolene"],
+      ["en bog", "bogen", "bøger", "bøgerne"],
+      ["en nøgle", "nøglen", "nøgler", "nøglerne"],
+      ["en cykel", "cyklen", "cykler", "cyklerne"],
+      ["en mand", "manden", "mænd", "mændene"],
+      ["et hus", "huset", "huse", "husene"],
+      ["et bord", "bordet", "borde", "bordene"],
+      ["et vindue", "vinduet", "vinduer", "vinduerne"],
+      ["et barn", "barnet", "børn", "børnene"],
+      ["et år", "året", "år", "årene"],
+      ["et æble", "æblet", "æbler", "æblerne"]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kenapa hal ini terasa aneh bagi penutur Indonesia",
+   "blocks": [
+    { "type": "p", "text": "Bahasa Indonesia menandai kepastian dengan cara yang sama sekali lain — lewat kata tunjuk (\"buku **itu**\"), lewat akhiran *-nya* (\"buku**nya**\"), atau tidak menandainya sama sekali dan menyerahkannya pada keadaan. Karena itu ada dua kesalahan khas yang berulang di kelas:" },
+    {
+     "type": "list",
+     "items": [
+      "**Membiarkan kata benda telanjang.** *Jeg åbner vindue* terasa wajar bagi telinga Indonesia, tapi di bahasa Denmark itu tidak berterima — harus *vinduet* (jendela yang sudah kita ketahui) atau *et vindue* (sembarang jendela). Kata benda tunggal bahasa Denmark hampir tidak pernah berdiri tanpa penanda.",
+      "**Memasang kata sandang dua kali.** *Den bilen* salah. Kalau *den* sudah ada di depan, ekornya dilepas.",
+      "Kekecualian yang membuat pola pertama tidak mutlak: pekerjaan (*jeg er lærer*), bahasa (*jeg taler dansk*), dan sejumlah ungkapan tetap (*på arbejde*, *i skole*, *til fods*) memang berdiri telanjang. Hafalkan ungkapan-ungkapan itu utuh."
+     ]
+    },
+    { "type": "kotak", "title": "Uji cepat untuk dirimu sendiri", "items": [
+      "Tunjuk lima benda di sekitarmu sekarang. Sebutkan masing-masing dalam empat bentuk: *en stol — stolen — stole — stolene*.",
+      "Kalau ada yang tersendat, itu bukan karena kamu belum hafal aturannya, melainkan karena kamu belum tahu golongan katanya. Kembali ke daftar kosakata unit 3."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "da": "en nøgle", "baca": "èn NOI-le", "id": "kunci" },
+  { "da": "en jakke", "baca": "èn YA-ge", "id": "jaket" },
+  { "da": "en taske", "baca": "èn TAS-ge", "id": "tas" },
+  { "da": "en avis", "baca": "èn a-VIS", "id": "koran" },
+  { "da": "et lys", "baca": "èt lüs", "id": "lampu, cahaya; lilin" },
+  { "da": "et sted", "baca": "èt stèdh", "id": "tempat" },
+  { "da": "en ting", "baca": "èn ting", "id": "benda, hal" },
+  { "da": "en mand", "baca": "èn man", "id": "laki-laki; suami" },
+  { "da": "en kvinde", "baca": "èn KVI-ne", "id": "perempuan" },
+  { "da": "et barn", "baca": "èt barn", "id": "anak" },
+  { "da": "et æble", "baca": "èt È-ble", "id": "apel" },
+  { "da": "at kigge", "baca": "at KI-ge", "id": "melihat, mengintip" },
+  { "da": "at åbne", "baca": "at OB-ne", "id": "membuka" },
+  { "da": "at lukke", "baca": "at LO-ge", "id": "menutup" },
+  { "da": "at hænge", "baca": "at HÈNG-e", "id": "menggantung" },
+  { "da": "at vente", "baca": "at VÈN-de", "id": "menunggu" },
+  { "da": "at kende", "baca": "at KÈN-e", "id": "kenal" },
+  { "da": "at gå", "baca": "at go", "id": "berjalan; pergi" },
+  { "da": "tom", "baca": "tom", "id": "kosong" },
+  { "da": "sidste", "baca": "SIS-de", "id": "terakhir" },
+  { "da": "under", "baca": "ON-a", "id": "di bawah" },
+  { "da": "ved", "baca": "vèdh", "id": "di dekat" },
+  { "da": "eller", "baca": "ÈL-a", "id": "atau" },
+  { "da": "i går", "baca": "i GOR", "id": "kemarin" },
+  { "da": "selvfølgelig", "baca": "sel-FÖL-i", "id": "tentu saja" },
+  { "da": "hvad med…?", "baca": "vadh mèdh", "id": "bagaimana dengan…?" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah jadi bentuk tentu (kata sandang ekor).",
+   "items": [
+    "en bil → ____",
+    "et hus → ____",
+    "en nøgle → ____",
+    "et vindue → ____",
+    "en cykel → ____",
+    "et barn → ____"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi jamak tak tentu.",
+   "items": [
+    "en bil → to ____",
+    "et hus → to ____",
+    "en bog → to ____",
+    "et år → to ____",
+    "en mand → to ____",
+    "et æble → to ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Denmark.",
+   "items": [
+    "Mejanya kosong.",
+    "Kuncinya ada di bawah koran.",
+    "Bisa tutup jendelanya?",
+    "Buku-buku itu ada di kursi.",
+    "Jaket itu tergantung di pintu.",
+    "Anak-anak itu ada di dapur."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "er / bordet / tomt",
+    "nøglerne / avisen / under / er",
+    "vinduet / du / lukke / kan / ?",
+    "ved / hænger / døren / jakken",
+    "køkkenet / er / børnene / i"
+   ]
+  }
+ ],
+ "answers": [
+  "bilen — huset — nøglen — vinduet — cyklen — barnet",
+  "biler — huse — bøger — år — mænd — æbler",
+  "Bordet er tomt. — Nøglerne er under avisen. — Kan du lukke vinduet? — Bøgerne er på stolen. — Jakken hænger ved døren. — Børnene er i køkkenet.",
+  "Bordet er tomt. — Nøglerne er under avisen. — Kan du lukke vinduet? — Jakken hænger ved døren. — Børnene er i køkkenet."
+ ]
+}

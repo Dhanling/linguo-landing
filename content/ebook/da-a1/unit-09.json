@@ -1,0 +1,217 @@
+{
+ "title": "Satu hari biasa",
+ "title_target": "En helt almindelig dag",
+ "goal": "Menceritakan rutinitas harian dari bangun sampai tidur, memakai kata kerja berpantul, dan menyusun keterangan waktu.",
+ "bekal": [
+  "menceritakan urutan kegiatan sehari penuh",
+  "memakai kata kerja berpantul: *jeg vasker mig*, *hun skynder sig*",
+  "memakai *plejer at* untuk kebiasaan"
+ ],
+ "wave": "Ulangi **unit 7** dulu: pesan makan siang lengkap untuk dua orang, keras-keras, dengan *jeg vil gerne have* dan *må jeg få*.",
+ "dialogs": [
+  {
+   "title": "Dialog — Hvordan ser din dag ud?",
+   "intro": "Di kelas, guru meminta tiap peserta menceritakan hari biasanya. Giliran Budi.",
+   "lines": [
+    { "speaker": "Læreren:", "text": "Budi, fortæl om din dag. Hvornår står du op?", "id": "Budi, ceritakan harimu. Jam berapa kamu bangun?", "literal": "Budi, ceritakan tentang milik-kamu hari. kapan berdiri kamu naik?" },
+    { "speaker": "Budi:", "text": "Jeg står op klokken halv syv. Så vasker jeg mig og barberer mig.", "id": "Saya bangun jam setengah tujuh. Lalu saya cuci muka dan bercukur.", "literal": "saya berdiri naik jam-itu setengah tujuh. lalu mencuci saya diri-saya dan mencukur diri-saya." },
+    { "speaker": "Læreren:", "text": "Og spiser du morgenmad?", "id": "Kamu sarapan?", "literal": "dan makan kamu pagi-makanan?" },
+    { "speaker": "Budi:", "text": "Ja, jeg plejer at spise rugbrød med ost. Og drikke kaffe.", "id": "Ya, saya biasanya makan roti gandum dengan keju. Dan minum kopi.", "literal": "ya, saya biasa untuk makan gandum-roti dengan keju. dan minum kopi." },
+    { "speaker": "Læreren:", "text": "Hvordan kommer du på universitetet?", "id": "Bagaimana kamu pergi ke kampus?", "literal": "bagaimana datang kamu pada universitas-itu?" },
+    { "speaker": "Budi:", "text": "Jeg cykler. Det tager tyve minutter.", "id": "Saya naik sepeda. Dua puluh menit.", "literal": "saya bersepeda. itu mengambil dua-puluh menit." },
+    { "speaker": "Læreren:", "text": "Også når det regner?", "id": "Bahkan waktu hujan?", "literal": "juga ketika itu hujan?" },
+    { "speaker": "Budi:", "text": "Også når det regner. Jeg er dansker nu.", "id": "Bahkan waktu hujan. Sekarang saya orang Denmark.", "literal": "juga ketika itu hujan. saya adalah orang-Denmark sekarang." },
+    { "speaker": "Læreren:", "text": "Godt svar! Hvad laver du om aftenen?", "id": "Jawaban bagus! Apa yang kamu lakukan malam hari?", "literal": "baik jawaban! apa membuat kamu pada malam-itu?" },
+    { "speaker": "Budi:", "text": "Jeg laver mad, læser lidt og ser fjernsyn.", "id": "Saya masak, baca sedikit, dan nonton TV.", "literal": "saya membuat makanan, membaca sedikit dan melihat jauh-lihat." },
+    { "speaker": "Budi:", "text": "Og klokken elleve går jeg i seng. Men jeg falder først i søvn klokken tolv.", "id": "Dan jam sebelas saya tidur. Tapi baru benar-benar terlelap jam dua belas.", "literal": "dan jam-itu sebelas berjalan saya di ranjang. tapi saya jatuh pertama dalam tidur jam-itu dua-belas." }
+   ],
+   "notes": [
+    "**At stå op** = bangun dari tempat tidur, harfiahnya \"berdiri ke atas\". Bahasa Denmark punya banyak sekali kata kerja bersambung seperti ini: *at stå op*, *at gå ud*, *at komme ind*, *at tage af sted*. Bagian keduanya (*op*, *ud*, *ind*) tidak bisa dilepas tanpa mengubah artinya.",
+    "**Jeg vasker mig** — harfiahnya \"saya mencuci diri saya\". Bahasa Denmark memakai kata pantul di sini, bahasa Indonesia tidak. Kalau *mig* dibuang, kalimatnya menuntut sasaran lain: *jeg vasker tøjet* (saya mencuci baju).",
+    "**Jeg plejer at spise** = \"saya biasanya makan\". *At pleje at* + bentuk dasar adalah cara paling wajar menyatakan kebiasaan, dan lebih sering dipakai daripada *normalt* atau *som regel*.",
+    "**Det tager tyve minutter** — *at tage* dipakai untuk lama waktu, persis seperti *to take* di bahasa Inggris.",
+    "**Jeg cykler.** Bahasa Denmark punya kata kerja tersendiri untuk bersepeda, dan itu bukan kebetulan: di Kopenhagen lebih banyak sepeda daripada penduduk. *At cykle* dipakai sesering *at gå*.",
+    "**At lave mad** = memasak, harfiahnya \"membuat makanan\". Bahasa Denmark tidak punya satu kata kerja untuk \"memasak\" dalam pemakaian sehari-hari; *at koge* berarti merebus secara khusus.",
+    "**At falde i søvn** = tertidur, harfiahnya \"jatuh ke dalam tidur\" — sama gambarannya dengan *fall asleep*. Bedakan dari *at sove* (sedang tidur) dan *at gå i seng* (pergi ke tempat tidur).",
+    "**Først** di sini bukan \"pertama\" melainkan \"baru\": *jeg falder først i søvn klokken tolv* = saya baru terlelap jam dua belas. Pemakaian ini sangat umum dan sering membingungkan."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja berpantul",
+     "body": [
+      "Sejumlah kata kerja bahasa Denmark wajib membawa kata ganti yang menunjuk balik ke pelakunya. Bahasa Indonesia biasanya menyelesaikannya tanpa kata tambahan sama sekali, jadi bagian ini gampang terlupa."
+     ],
+     "table": {
+      "head": ["Pelaku", "Kata pantul", "Contoh"],
+      "rows": [
+       ["jeg", "**mig**", "jeg vasker **mig**"],
+       ["du", "**dig**", "du skynder **dig**"],
+       ["han / hun / den / det", "**sig**", "hun glæder **sig**"],
+       ["vi", "**os**", "vi sætter **os**"],
+       ["I", "**jer**", "I klæder **jer** på"],
+       ["de", "**sig**", "de morer **sig**"]
+      ]
+     },
+     "after": [
+      "Perhatikan orang ketiga — tunggal maupun jamak — memakai bentuk khusus **sig**, bukan *ham* atau *hende*. Ini kerabat dekat *sin/sit/sine* dari unit 5, dan aturannya sejalan: *sig* selalu menunjuk balik ke pelaku.",
+      "Yang paling sering dipakai: *at vaske sig* (mandi/cuci), *at skynde sig* (bergegas), *at sætte sig* (duduk), *at klæde sig på* (berpakaian), *at glæde sig til* (menantikan), *at more sig* (bersenang-senang), *at føle sig* (merasa), *at kede sig* (bosan).",
+      "⚠️ *Jeg glæder mig til weekenden* = \"saya menantikan akhir pekan\". Ungkapan ini dipakai orang Denmark hampir tiap hari dan tidak punya padanan sepadat itu dalam bahasa Indonesia."
+     ]
+    },
+    {
+     "title": "Urutan keterangan: cara — tempat — waktu",
+     "body": [
+      "Kalau satu kalimat memuat lebih dari satu keterangan, bahasa Denmark punya urutan bakunya sendiri. Bahasa Indonesia jauh lebih longgar di sini, jadi urutan ini perlu dilatih."
+     ],
+     "table": {
+      "head": ["Kalimat", "Cara", "Tempat", "Waktu"],
+      "rows": [
+       ["Jeg cykler **hurtigt** **til skole** **hver dag**.", "hurtigt", "til skole", "hver dag"],
+       ["Hun kører **med bus** **til arbejde** **om morgenen**.", "med bus", "til arbejde", "om morgenen"],
+       ["Vi spiser **sammen** **hjemme** **om aftenen**.", "sammen", "hjemme", "om aftenen"]
+      ]
+     },
+     "after": [
+      "Ingat singkatannya: **CTW** — cara, tempat, waktu.",
+      "Tapi keterangan waktu boleh dipindahkan ke **depan** kalimat untuk menekankannya — dan begitu itu terjadi, pelakunya melompat ke belakang kata kerja: *Om morgenen **kører hun** med bus til arbejde.* Aturan lompatan ini yang dibahas tuntas di unit berikutnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Sehari penuh, berurutan",
+   "blocks": [
+    { "type": "p", "text": "Bacalah kolom ini dari atas ke bawah keras-keras, lalu tutup dan ceritakan harimu sendiri. Ini latihan bicara pertama yang benar-benar panjang dalam modul ini." },
+    {
+     "type": "tabel",
+     "head": ["Dansk", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["at vågne", "at VOU-ne", "terbangun"],
+      ["at stå op", "at sto OP", "bangun dari tempat tidur"],
+      ["at vaske sig", "at VAS-ge sai", "mandi, cuci muka"],
+      ["at gå i bad", "at go i BADH", "mandi (di kamar mandi)"],
+      ["at børste tænder", "at BÖRS-de TÈN-a", "menyikat gigi"],
+      ["at klæde sig på", "at KLÈ-dhe sai PO", "berpakaian"],
+      ["at spise morgenmad", "at SPI-se MORN-madh", "sarapan"],
+      ["at tage af sted", "at TA a STÈDH", "berangkat"],
+      ["at cykle", "at SÜ-gle", "bersepeda"],
+      ["at tage bussen", "at TA BU-sen", "naik bus"],
+      ["at arbejde", "at AR-bai-dhe", "bekerja"],
+      ["at holde pause", "at HO-le PAU-se", "istirahat"],
+      ["at komme hjem", "at KOM-e YÈM", "pulang"],
+      ["at lave mad", "at LA-ve MADH", "memasak"],
+      ["at se fjernsyn", "at sè FYÈRN-sün", "menonton TV"],
+      ["at gå en tur", "at go èn TUR", "jalan-jalan"],
+      ["at gå i seng", "at go i SÈNG", "pergi tidur"],
+      ["at falde i søvn", "at FA-le i SÖUN", "tertidur"]
+     ]
+    },
+    { "type": "p", "text": "*At tage af sted* (berangkat) adalah salah satu ungkapan yang paling sering dipakai dan paling sulit ditebak dari bagian-bagiannya. Hafalkan utuh." }
+   ]
+  },
+  {
+   "title": "Seberapa sering",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Dansk", "Bahasa Indonesia"],
+     "rows": [
+      ["altid", "selalu"],
+      ["næsten altid", "hampir selalu"],
+      ["tit / ofte", "sering"],
+      ["nogle gange", "beberapa kali, kadang"],
+      ["sommetider", "kadang-kadang"],
+      ["sjældent", "jarang"],
+      ["næsten aldrig", "hampir tidak pernah"],
+      ["aldrig", "tidak pernah"],
+      ["hver dag / hver uge", "tiap hari / tiap minggu"],
+      ["en gang om ugen", "seminggu sekali"],
+      ["to gange om måneden", "dua kali sebulan"]
+     ]
+    },
+    { "type": "p", "text": "⚠️ Kata-kata ini berdiri **sesudah** kata kerja dalam kalimat berita: *Jeg cykler **altid** til skole.* Kalau kamu meletakkannya sebelum kata kerja (*jeg altid cykler*), kalimatnya langsung terdengar salah — dan itu kesalahan yang paling sering dibuat pemula." },
+    { "type": "kotak", "title": "Latihan yang mengubah unit ini jadi kemampuan", "items": [
+      "Ceritakan harimu kemarin — tapi dalam bentuk sekarang, karena bentuk lampau baru datang di unit 17. Sepuluh kalimat, berurutan, keras-keras.",
+      "Lalu ulangi, kali ini dengan satu keterangan seberapa sering di tiap kalimat: *Jeg står **altid** op klokken syv.*",
+      "Lalu ulangi lagi, kali ini tentang orang lain: *Han står op…* Perhatikan bahwa kata kerjanya sama sekali tidak berubah. Rasakan betapa hematnya bahasa ini."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "da": "at stå op", "baca": "at sto OP", "id": "bangun tidur" },
+  { "da": "at vaske sig", "baca": "at VAS-ge sai", "id": "mandi, cuci" },
+  { "da": "at skynde sig", "baca": "at SKÖN-e sai", "id": "bergegas" },
+  { "da": "at sætte sig", "baca": "at SÈ-de sai", "id": "duduk" },
+  { "da": "at glæde sig til", "baca": "at GLÈ-dhe sai til", "id": "menantikan" },
+  { "da": "at føle sig", "baca": "at FÖ-le sai", "id": "merasa" },
+  { "da": "at pleje at", "baca": "at PLAI-e at", "id": "biasanya" },
+  { "da": "at cykle", "baca": "at SÜ-gle", "id": "bersepeda" },
+  { "da": "at køre", "baca": "at KÖ-a", "id": "mengemudi, berkendara" },
+  { "da": "at lave mad", "baca": "at LA-ve madh", "id": "memasak" },
+  { "da": "at fortælle", "baca": "at for-TÈ-le", "id": "menceritakan" },
+  { "da": "at regne", "baca": "at RAI-ne", "id": "hujan" },
+  { "da": "et fjernsyn", "baca": "èt FYÈRN-sün", "id": "televisi" },
+  { "da": "et universitet", "baca": "èt u-ni-vèr-si-TÈT", "id": "universitas" },
+  { "da": "en pause", "baca": "èn PAU-se", "id": "istirahat" },
+  { "da": "en tur", "baca": "èn tur", "id": "jalan-jalan, perjalanan" },
+  { "da": "hjem / hjemme", "baca": "yèm / YÈM-e", "id": "pulang / di rumah" },
+  { "da": "hver dag", "baca": "vèa DÆ", "id": "setiap hari" },
+  { "da": "tit", "baca": "tit", "id": "sering" },
+  { "da": "sjældent", "baca": "SYÈL-ent", "id": "jarang" },
+  { "da": "først", "baca": "först", "id": "pertama; baru" },
+  { "da": "et svar", "baca": "èt svar", "id": "jawaban" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan kata pantul yang tepat (mig, dig, sig, os, jer).",
+   "items": [
+    "Jeg vasker ____.",
+    "Hun skynder ____.",
+    "Vi sætter ____.",
+    "Du glæder ____ til weekenden.",
+    "De morer ____.",
+    "I klæder ____ på."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Denmark.",
+   "items": [
+    "Saya bangun jam setengah tujuh.",
+    "Saya biasanya sarapan roti gandum.",
+    "Saya naik sepeda ke kampus setiap hari.",
+    "Malam hari saya masak dan nonton TV.",
+    "Jam sebelas saya tidur.",
+    "Saya menantikan akhir pekan."
+   ]
+  },
+  {
+   "prompt": "Susun ulang dengan urutan cara-tempat-waktu yang benar.",
+   "items": [
+    "hver dag / cykler / jeg / til skole",
+    "om morgenen / kører / med bus / hun / til arbejde",
+    "om aftenen / spiser / hjemme / vi / sammen",
+    "hver uge / arbejder / på en café / han",
+    "om søndagen / går / i parken / de / en tur"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "op / klokken / står / syv / jeg",
+    "mad / laver / aftenen / om / jeg",
+    "seng / går / i / elleve / klokken / jeg",
+    "skole / cykler / til / altid / jeg",
+    "til / glæder / weekenden / mig / jeg"
+   ]
+  }
+ ],
+ "answers": [
+  "mig — sig — os — dig — sig — jer",
+  "Jeg står op klokken halv syv. — Jeg plejer at spise rugbrød til morgenmad. — Jeg cykler til universitetet hver dag. — Om aftenen laver jeg mad og ser fjernsyn. — Klokken elleve går jeg i seng. — Jeg glæder mig til weekenden.",
+  "Jeg cykler til skole hver dag. — Hun kører med bus til arbejde om morgenen. — Vi spiser sammen hjemme om aftenen. — Han arbejder på en café hver uge. — De går en tur i parken om søndagen.",
+  "Jeg står op klokken syv. — Jeg laver mad om aftenen. — Jeg går i seng klokken elleve. — Jeg cykler altid til skole. — Jeg glæder mig til weekenden."
+ ]
+}

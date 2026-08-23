@@ -1,0 +1,235 @@
+{
+ "title": "Berapa harganya?",
+ "title_target": "Hvad koster det?",
+ "goal": "Menguasai sistem angka Denmark yang terkenal aneh, menyebut dan menanyakan harga, serta membaca nomor telepon dan tanggal.",
+ "bekal": [
+  "menghitung sampai seribu, termasuk angka 50-90 yang dibangun dari kelipatan dua puluh",
+  "menyebut satuan lebih dulu: *enogtyve* = satu-dan-dua-puluh",
+  "menanyakan harga dan membayar"
+ ],
+ "wave": "Ulangi **unit 4** dulu: ambil sepuluh kata benda, sebutkan keempat bentuknya berturut-turut — *en bil, bilen, biler, bilerne*.",
+ "dialogs": [
+  {
+   "title": "Dialog — På loppemarkedet",
+   "intro": "Pasar loakan hari Minggu di Israels Plads. Budi menawar sebuah sepeda bekas.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Undskyld, hvad koster cyklen?", "id": "Permisi, berapa harga sepedanya?", "literal": "maaf, apa berharga sepeda-itu?" },
+    { "speaker": "Sælger:", "text": "Den koster otte hundrede kroner.", "id": "Delapan ratus kroner.", "literal": "ia berharga delapan ratus kroner." },
+    { "speaker": "Budi:", "text": "Otte hundrede? Det er lidt dyrt.", "id": "Delapan ratus? Agak mahal.", "literal": "delapan ratus? itu adalah sedikit mahal." },
+    { "speaker": "Sælger:", "text": "Den er kun to år gammel. Se på bremserne.", "id": "Baru dua tahun. Lihat remnya.", "literal": "ia adalah hanya dua tahun tua. lihat pada rem-rem-itu." },
+    { "speaker": "Budi:", "text": "Kan du tage seks hundrede?", "id": "Bisa enam ratus?", "literal": "bisa kamu mengambil enam ratus?" },
+    { "speaker": "Sælger:", "text": "Syvhundrede og halvtreds. Så er der en lås med.", "id": "Tujuh ratus lima puluh. Sudah termasuk kuncinya.", "literal": "tujuh-ratus dan lima-puluh. lalu adalah di-sana satu gembok dengan." },
+    { "speaker": "Budi:", "text": "Syvhundrede. Jeg har kun kontanter.", "id": "Tujuh ratus. Saya cuma punya uang tunai.", "literal": "tujuh-ratus. saya punya hanya uang-tunai." },
+    { "speaker": "Sælger:", "text": "Okay, det er en aftale. Syvhundrede.", "id": "Oke, setuju. Tujuh ratus.", "literal": "oke, itu adalah satu kesepakatan. tujuh-ratus." },
+    { "speaker": "Budi:", "text": "Værsgo. Her er syv hundredekronesedler.", "id": "Silakan. Ini tujuh lembar seratus kroner.", "literal": "silakan. di-sini adalah tujuh ratus-kroner-lembar." },
+    { "speaker": "Sælger:", "text": "Perfekt. Og her er nøglen til låsen.", "id": "Sempurna. Dan ini kunci gemboknya.", "literal": "sempurna. dan di-sini adalah kunci-itu ke gembok-itu." },
+    { "speaker": "Budi:", "text": "Tusind tak. Hav en god dag!", "id": "Terima kasih banyak. Semoga harimu menyenangkan!", "literal": "seribu terima-kasih. punya satu baik hari!" }
+   ],
+   "notes": [
+    "**Hvad koster det?** adalah pertanyaan harga yang paling umum. Ada juga *Hvor meget koster det?* — sama artinya, sedikit lebih panjang.",
+    "**Kroner, bukan krone.** Mata uang Denmark adalah *en krone* (jamak *kroner*), disingkat **kr.** atau **DKK**. Seratus *øre* = satu krone, tapi koin *øre* sudah lama tidak dipakai; harga selalu dibulatkan.",
+    "**Kun** = \"hanya\". Jangan tertukar dengan *kan* (bisa). Dua kata pendek yang bunyinya berdekatan tapi artinya jauh.",
+    "**Så** punya banyak pekerjaan: \"lalu\", \"begitu\", \"kalau begitu\", dan sebagai penekan (*så dyrt!* = mahal sekali!). Ia salah satu kata yang paling sering muncul dalam percakapan Denmark.",
+    "**Kontanter** = uang tunai, selalu jamak. Perlu dicatat: Denmark hampir sepenuhnya tak bertunai. Di luar pasar loak, kamu akan membayar hampir semuanya dengan *Dankort* atau *MobilePay*. Kalimat yang lebih sering kamu butuhkan justru *Kan jeg betale med kort?*",
+    "**Hav en god dag** — bentuk perintah dari *at have* adalah *hav*. Ucapan ini agak baru dalam bahasa Denmark, terbawa dari bahasa Inggris, tapi sekarang lazim di toko.",
+    "**Hundredekronesedler** — kata gabungan bertingkat tiga: *hundrede* + *krone* + *sedler* (lembaran uang). Kalau kamu bisa memecahnya, kamu sudah menguasai cara membaca bahasa Denmark tertulis."
+   ],
+   "grammars": [
+    {
+     "title": "Angka 20-100: sistem yang membuat orang menyerah",
+     "body": [
+      "Ini bagian yang paling terkenal aneh dari bahasa Denmark, dan reputasinya memang pantas. Bahasa Norwegia dan Swedia membangun angka 50-90 dari kelipatan **sepuluh**, seperti hampir semua bahasa dunia. Bahasa Denmark mempertahankan cara berhitung kuno yang berbasis **dua puluh**.",
+      "Kabar baiknya: kamu cuma perlu menghafal lima kata. Cara kerja di baliknya boleh kamu abaikan sepenuhnya — bahkan orang Denmark tidak memikirkannya."
+     ],
+     "table": {
+      "head": ["Angka", "Dansk", "Cara baca", "Asal-usulnya"],
+      "rows": [
+       ["20", "tyve", "TÜ-ve", "dua puluh"],
+       ["30", "tredive", "TRÈDH-ve", "tiga puluh"],
+       ["40", "fyrre", "FÖR-e", "empat puluh"],
+       ["50", "**halvtreds**", "hal-TRÈS", "setengah-ketiga × 20 = 2½ × 20"],
+       ["60", "**tres**", "très", "tiga × 20"],
+       ["70", "**halvfjerds**", "hal-FYÈRS", "setengah-keempat × 20 = 3½ × 20"],
+       ["80", "**firs**", "firs", "empat × 20"],
+       ["90", "**halvfems**", "hal-FÈMS", "setengah-kelima × 20 = 4½ × 20"],
+       ["100", "hundrede", "HUN-re-dhe", "seratus"],
+       ["1000", "tusind", "TU-sen", "seribu"]
+      ]
+     },
+     "after": [
+      "Kolom terakhir cuma untuk memuaskan rasa penasaran. \"Setengah-ketiga\" berarti dua setengah — cara berhitung yang juga pernah ada dalam bahasa Jerman kuno. Jangan hafalkan kolom itu; hafalkan kolom kedua.",
+      "⚠️ Ada bentuk resmi yang lebih panjang untuk cek dan dokumen keuangan: *halvtredsindstyve*, *tresindstyve*, dan seterusnya. Kamu tidak akan pernah mengucapkannya, tapi kamu mungkin membacanya."
+     ]
+    },
+    {
+     "title": "Satuan disebut lebih dulu",
+     "body": [
+      "Sesudah 20, bahasa Denmark menyebut **satuan dulu, baru puluhan**, disambung *og* (dan). Kalau kamu pernah belajar bahasa Jerman atau Belanda, pola ini sudah kamu kenal. Kalau tidak, ia butuh latihan yang sungguh-sungguh."
+     ],
+     "table": {
+      "head": ["Angka", "Dansk", "Harfiahnya"],
+      "rows": [
+       ["21", "enogtyve", "satu-dan-dua-puluh"],
+       ["35", "femogtredive", "lima-dan-tiga-puluh"],
+       ["47", "syvogfyrre", "tujuh-dan-empat-puluh"],
+       ["52", "tooghalvtreds", "dua-dan-lima-puluh"],
+       ["68", "otteogtres", "delapan-dan-enam-puluh"],
+       ["76", "seksoghalvfjerds", "enam-dan-tujuh-puluh"],
+       ["84", "fireogfirs", "empat-dan-delapan-puluh"],
+       ["99", "nioghalvfems", "sembilan-dan-sembilan-puluh"],
+       ["234", "tohundrede og fireogtredive", "dua-ratus dan empat-dan-tiga-puluh"],
+       ["1.500", "tusind fem hundrede", "seribu lima ratus"]
+      ]
+     },
+     "after": [
+      "Semuanya ditulis **serangkai tanpa spasi** sampai angka 99: *seksoghalvfjerds*. Mulai ratusan, ditulis terpisah dengan *og* sebelum bagian puluhannya.",
+      "Yang paling menyita tenaga di awal bukan mengucapkannya, melainkan **mendengarnya**. Ketika kasir bilang *toogfirs*, otakmu mendengar \"dua\" duluan dan sudah telanjur menebak angka dua puluhan. Latihannya: dengarkan sampai habis sebelum menerjemahkan.",
+      "Trik darurat di kasir: hampir semua mesin kasir Denmark punya layar yang menampilkan angkanya. Tidak ada salahnya melirik sambil belajar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Harga dan pembayaran",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Dansk", "Bahasa Indonesia"],
+     "rows": [
+      ["Hvad koster det?", "Berapa harganya?"],
+      ["Hvor meget koster den?", "Berapa harganya (benda en-ord)?"],
+      ["Det koster halvfjerds kroner.", "Harganya tujuh puluh kroner."],
+      ["Det er for dyrt.", "Itu terlalu mahal."],
+      ["Har I noget billigere?", "Ada yang lebih murah?"],
+      ["Kan jeg betale med kort?", "Bisa bayar pakai kartu?"],
+      ["Jeg tager den.", "Saya ambil yang ini."],
+      ["Må jeg få en kvittering?", "Boleh minta struknya?"],
+      ["Er der rabat?", "Ada diskon?"],
+      ["Det er på tilbud.", "Itu sedang diskon."]
+     ]
+    },
+    { "type": "p", "text": "⚠️ *For* di depan kata sifat berarti \"terlalu\", bukan \"untuk\": *for dyrt* = terlalu mahal, *for lille* = terlalu kecil. Ini kata pendek yang artinya berubah total menurut tempatnya." },
+    { "type": "p", "text": "Perhatikan *Har **I** noget billigere?* — huruf besar, artinya \"kalian\". Di toko, orang Denmark memang menyapa staf sebagai \"kalian\" mewakili tokonya, persis seperti kita bilang \"ada yang lebih murah?\" tanpa menyebut siapa." }
+   ]
+  },
+  {
+   "title": "Nomor telepon dan tanggal",
+   "blocks": [
+    { "type": "p", "text": "Nomor telepon Denmark selalu delapan angka, dan dibacakan **berpasangan dua-dua** — yang berarti seluruh keanehan angka tadi langsung terpakai." },
+    {
+     "type": "tabel",
+     "head": ["Ditulis", "Dibaca", "Harfiahnya"],
+     "rows": [
+      ["28 45 91 63", "otteogtyve — femogfyrre — enoghalvfems — treogtres", "28-45-91-63"],
+      ["12 34 56 78", "tolv — fireogtredive — seksoghalvtreds — otteoghalvfjerds", "12-34-56-78"]
+     ]
+    },
+    { "type": "p", "text": "Tanggal memakai bilangan tingkat, yang dibentuk dengan menambah **-ende** atau **-te**. Sebelas bilangan pertama tak beraturan dan harus dihafal:" },
+    {
+     "type": "tabel",
+     "head": ["", "", "", ""],
+     "rows": [
+      ["1. første", "2. anden", "3. tredje", "4. fjerde"],
+      ["5. femte", "6. sjette", "7. syvende", "8. ottende"],
+      ["9. niende", "10. tiende", "11. ellevte", "12. tolvte"],
+      ["13. trettende", "20. tyvende", "21. enogtyvende", "31. enogtredivte"]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": ["Dansk", "Bahasa Indonesia"],
+     "rows": [
+      ["Hvad er datoen i dag?", "Tanggal berapa hari ini?"],
+      ["Det er den tredje maj.", "Tanggal 3 Mei."],
+      ["Jeg har fødselsdag den syttende august.", "Ulang tahun saya tanggal 17 Agustus."],
+      ["Hvilket år?", "Tahun berapa?"],
+      ["I nittenhundredefireoghalvfems.", "Tahun 1994."]
+     ]
+    },
+    { "type": "kotak", "title": "Latihan angka yang benar-benar bekerja", "items": [
+      "Baca nomor teleponmu sendiri keras-keras dalam bahasa Denmark, tiap hari, sekali. Delapan angka, empat pasang — dan hampir pasti memuat setidaknya satu angka 50-90.",
+      "Setiap kali kamu melihat harga di mana pun hari ini, sebutkan dalam hati dalam bahasa Denmark. Harga barang di sekitarmu adalah bahan latihan yang tak habis-habis dan gratis.",
+      "Angka adalah satu-satunya bagian bahasa yang harus **otomatis**. Kalau kamu masih menghitung di kepala saat mendengar *halvfjerds*, kamu sudah ketinggalan tiga kalimat berikutnya."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "da": "at koste", "baca": "at KOS-de", "id": "berharga, seharga" },
+  { "da": "at betale", "baca": "at be-TA-le", "id": "membayar" },
+  { "da": "en krone / kroner", "baca": "èn KRO-ne", "id": "kroner (mata uang)" },
+  { "da": "kontanter", "baca": "kon-TAN-da", "id": "uang tunai" },
+  { "da": "et kort", "baca": "èt kort", "id": "kartu" },
+  { "da": "en kvittering", "baca": "èn kvi-TÈ-ring", "id": "struk, kuitansi" },
+  { "da": "en rabat", "baca": "èn ra-BAT", "id": "diskon" },
+  { "da": "et tilbud", "baca": "èt TIL-budh", "id": "penawaran, promo" },
+  { "da": "et loppemarked", "baca": "èt LO-be-mar-kedh", "id": "pasar loak" },
+  { "da": "en lås", "baca": "èn los", "id": "gembok, kunci" },
+  { "da": "en bremse", "baca": "èn BRÈM-se", "id": "rem" },
+  { "da": "en aftale", "baca": "èn AU-ta-le", "id": "kesepakatan; janji temu" },
+  { "da": "en dato", "baca": "èn DA-to", "id": "tanggal" },
+  { "da": "kun", "baca": "kon", "id": "hanya" },
+  { "da": "for", "baca": "for", "id": "terlalu; untuk" },
+  { "da": "så", "baca": "so", "id": "lalu; begitu; kalau begitu" },
+  { "da": "noget", "baca": "NO-edh", "id": "sesuatu" },
+  { "da": "billigere", "baca": "BI-li-a", "id": "lebih murah" },
+  { "da": "perfekt", "baca": "pèr-FÈKT", "id": "sempurna" },
+  { "da": "tusind tak", "baca": "TU-sen t'ak", "id": "terima kasih banyak sekali" },
+  { "da": "hvor meget", "baca": "vor MAI-edh", "id": "berapa banyak" },
+  { "da": "hvor mange", "baca": "vor MANG-e", "id": "berapa buah" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis dengan huruf dalam bahasa Denmark.",
+   "items": [
+    "24",
+    "38",
+    "51",
+    "67",
+    "72",
+    "89",
+    "95",
+    "150"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Denmark.",
+   "items": [
+    "Berapa harga sepedanya?",
+    "Harganya tujuh ratus kroner.",
+    "Itu terlalu mahal.",
+    "Bisa bayar pakai kartu?",
+    "Ada yang lebih murah?",
+    "Saya ambil yang ini."
+   ]
+  },
+  {
+   "prompt": "Tulis angka berikut dengan angka biasa.",
+   "items": [
+    "seksoghalvtreds = ____",
+    "niogfirs = ____",
+    "treoghalvfjerds = ____",
+    "toogtyve = ____",
+    "femoghalvfems = ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "koster / hvad / det / ?",
+    "kroner / halvfjerds / koster / den",
+    "dyrt / for / er / det",
+    "kort / betale / med / jeg / kan / ?",
+    "den / tager / jeg"
+   ]
+  }
+ ],
+ "answers": [
+  "fireogtyve — otteogtredive — enoghalvtreds — syvogtres — tooghalvfjerds — niogfirs — femoghalvfems — hundrede og halvtreds",
+  "Hvad koster cyklen? — Den koster syv hundrede kroner. — Det er for dyrt. — Kan jeg betale med kort? — Har I noget billigere? — Jeg tager den.",
+  "56 — 89 — 73 — 22 — 95",
+  "Hvad koster det? — Den koster halvfjerds kroner. — Det er for dyrt. — Kan jeg betale med kort? — Jeg tager den."
+ ]
+}
