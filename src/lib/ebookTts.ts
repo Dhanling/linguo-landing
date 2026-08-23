@@ -394,12 +394,34 @@ const BUANG_NOMOR = /^\s*(?:\d{1,3}[.):]|[-–—•·*])\s*/u;
    kolom terpisah selebar 6 mm, dan jarak sesempit itu tak selalu terbaca
    sebagai batas kolom. Sengaja hanya dibuang kalau yang menyusul memang nama
    penutur (kata berawal huruf besar lalu titik dua), supaya kalimat yang
-   sungguh dimulai angka — "24 horas al día" — tidak ikut terpangkas. */
-const BUANG_NOMOR_DIALOG = /^\s*\d{1,2}\s+(?=\p{Lu}[\p{L}'’.\-]{0,14}\s*:)/u;
+   sungguh dimulai angka — "24 horas al día" — tidak ikut terpangkas. Aksara
+   Jepang tak mengenal huruf besar, jadi \p{Lo} ikut dihitung nama penutur —
+   tanpa itu nomor baris dialog modul Jepang tak pernah terpangkas. */
+const BUANG_NOMOR_DIALOG = /^\s*\d{1,2}\s+(?=[\p{Lu}\p{Lo}][\p{L}'’.\-]{0,14}\s*[:：])/u;
 /* Hanya "=" dan "→". Titik dua SENGAJA tidak ikut: baris dialog modul ditulis
    "Ana: Hola, ¿qué tal?" — memenggalnya di titik dua menyisakan nama tokohnya
    saja. Baris "harfiah: …" tetap tersaring oleh penjagaan bahasa Indonesia. */
 const PISAH_ARTI = /\s*(?:=|→)\s*/;
+
+/* [ebook-tts-tanpa-penutur-v1] Nama penutur di kepala baris dialog ("たなか:",
+   "Ana:") BUKAN bagian kalimatnya. Dulu ikut terbaca, jadi tiap kali siswa
+   memutar baris dialog ia mendengar nama tokohnya dulu — dan di modul Jepang
+   namanya malah ikut terserap jadi "kata" yang diketuk.
+
+   Yang dibuang cuma kepala baris yang benar-benar berbentuk penutur: satu-dua
+   patah kata pendek tanpa spasi berlebih, ditutup titik dua, dan masih ada
+   kalimat yang tersisa sesudahnya. Baris penjelasan seperti "Bunyinya: です
+   dibaca des" ikut terpangkas kepalanya — itu justru benar, kepalanya bahasa
+   Indonesia. */
+const BUANG_PENUTUR = /^\s*[^\s:：\d][^\s:：]{0,15}(?:\s[^\s:：]{1,16})?\s*[:：]\s*(?=\S)/u;
+
+/** Nama penutur baris dialog, tanpa titik duanya. "" = barisnya bukan dialog. */
+export function penuturBaris(baris: string): string {
+  const s = String(baris || "").replace(BUANG_NOMOR_DIALOG, "").replace(BUANG_NOMOR, "");
+  const m = s.match(BUANG_PENUTUR);
+  if (!m) return "";
+  return m[0].replace(/[:：]\s*$/u, "").trim();
+}
 
 /**
  * [ebook-tts-kalimat-v1] Satu baris halaman → kalimat bahasa target yang layak
@@ -409,7 +431,8 @@ export function kalimatTarget(baris: string, kode: string): string {
   let s = String(baris || "")
     .replace(BUANG_KURUNG, " ")
     .replace(BUANG_NOMOR_DIALOG, "")
-    .replace(BUANG_NOMOR, "");
+    .replace(BUANG_NOMOR, "")
+    .replace(BUANG_PENUTUR, "");   // [ebook-tts-tanpa-penutur-v1]
   // "casa = rumah" → yang dibunyikan sisi KIRI. Di modul bahasa, sisi kanan
   // "=" praktis selalu kolom arti; kalimat yang benar-benar memuat tanda sama
   // dengan tidak ada di materi A1.

@@ -44,7 +44,7 @@ import EbookPanduan, { type LangkahPanduan } from "./EbookPanduan";
 // [ebook-tts-ketuk-kata-v1]
 import {
   bisaDibunyikan, kodeBahasaEbook, kataIndonesia, kalimatTarget, ucapkanEbook,
-  hentikanEbookTts, bukaKunciAudio, siapkanEbook,
+  hentikanEbookTts, bukaKunciAudio, siapkanEbook, penuturBaris,
 } from "@/lib/ebookTts";
 // [ebook-popup-kata-v1]
 import { artiKataEbook, artiTersimpan, type HasilArti } from "@/lib/ebookKata";
@@ -490,6 +490,16 @@ function kalimatLayakDibunyikan(kata: string, kalimat: string) {
 
    Kembalinya "" = tak ada frasa, pakai katanya sendiri. */
 const FRASA_MAKS_KATA = 4;
+/* [ebook-tts-kata-aksara-v1] Aksara yang menulis kalimat TANPA spasi — Jepang,
+   Mandarin, Thai, Korea. Di sana penggabungan sel jadi frasa salah arah: satu
+   baris dialog Jepang cuma berisi tiga-empat "kata" menurut hitungan pemisah
+   spasi, jadi seluruh barisnya (nama penutur sekalian) lolos jadi satu frasa
+   dan berbunyi utuh. Yang dicari siswa justru sebaliknya — satu satuan kata
+   beserta partikelnya: がくせい, じゃありません, わたしは. Modulnya sudah
+   memenggalnya di tempat yang benar lewat ruby [aksara|cara baca], dan jarak
+   antar penggalan itulah yang dibaca kembali di sini. */
+const AKSARA_TANPA_SPASI =
+  /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Thai}\p{Script=Hangul}]/u;
 const FRASA_MAKS_HURUF = 34;
 /* Kolom "cara baca" ("BUE-nos DI-as") bukan bahasa target — membunyikannya
    utuh cuma menghasilkan ejaan Indonesia berlogat aneh. */
@@ -2222,7 +2232,17 @@ export default function EbookReader({
     /* [ebook-tts-frasa-v1] "buenos días" dibunyikan sebagai satu satuan, bukan
        "buenos" saja — lihat catatan pada frasaSel. Sorotannya ikut melebar ke
        seluruh sel supaya jelas yang dibunyikan memang keduanya. */
-    let frasa = sel ? frasaSel(sel.teks, kata.kata) : "";
+    /* [ebook-tts-tanpa-penutur-v1] Nama penutur ("たなか:") bukan bahasa yang
+       dipelajari — mengetuknya dulu membunyikan nama tokoh dan memunculkan
+       artinya di popup. Sekarang ketukannya diabaikan diam-diam. Yang diadu
+       nama penuturnya sendiri, bukan sembarang kata di kepala baris: nama yang
+       muncul lagi di tengah kalimat ("たなかさんは") tetap berbunyi. */
+    const penutur = penuturBaris(barisKena?.teks ?? kena.str);
+    if (penutur && kata.kata === penutur.replace(/[^\p{L}\p{M}\p{N}]/gu, "")) {
+      const awal = barisKena?.segmen.find((g) => /\p{L}/u.test(g.teks));
+      if (awal && kata.x <= awal.x0 + 2) return "kosong";
+    }
+    let frasa = sel && !AKSARA_TANPA_SPASI.test(kata.kata) ? frasaSel(sel.teks, kata.kata) : "";
     // Satu kata Indonesia di dalamnya sudah cukup membatalkan frasa: kolom arti
     // ("senang berkenalan") tak boleh ikut dibunyikan berlogat bahasa target.
     if (frasa && frasa.split(/[^\p{L}\p{N}'’-]+/u).some((w) => w && kataIndonesia(w, kodeBahasa, frasa))) frasa = "";
