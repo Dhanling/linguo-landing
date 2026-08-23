@@ -1,7 +1,7 @@
 /* linguo-patch:akun-onboarding-gate-v1 — Lewati gating + WaGate profile completion */
 "use client";
 
-import { useState, useEffect, useMemo, useRef, type ReactNode } from "react";
+import { useState, useEffect, useMemo, useRef, Fragment, type ReactNode } from "react";
 import { useRouter } from "next/navigation"; // [perf:sidebar-nav-v1]
 import Link from "next/link"; // [kelas-detail-page-v1] card kelas → halaman /akun/kelas/[id]
 import { classRoomUrl, isJoinable } from "@/lib/classRoom"; // [kelas-video-siswa-v1]
@@ -4929,7 +4929,13 @@ export default function AkunPage() {
                    tak pernah cocok dengan isi chip "Berjalan".
                    Sekarang satu definisi dipakai bertiga — chip, angka, dan urutan daftar:
                    selesai = sesi penuh 100% ATAU registrasinya sudah tidak aktif. */
-                const isSelesai = (r: any) => pctOf(r) >= 100 || (r.status ? r.status !== "Aktif" : false);
+                const isSelesai = (r: any) => {
+                  const st = String(r.status || "").trim().toLowerCase();
+                  /* "Dorman" = kelas dijeda, BUKAN tamat — dia masih berjalan (kasus nyata:
+                     Cantonese A1.1 baru 1/16 sesi). Hanya paket yang benar-benar ditutup
+                     yang dihitung selesai. */
+                  return pctOf(r) >= 100 || st === "non aktif" || st === "selesai";
+                };
                 const liveClasses = liveClassesRaw
                   .slice()
                   .sort((a: any, b: any) => (isSelesai(a) ? 1 : 0) - (isSelesai(b) ? 1 : 0));
@@ -4946,6 +4952,14 @@ export default function AkunPage() {
                   if (materiFilter === "done") return isSelesai(r);
                   return true;
                 });
+                /* [materi-filter-selesai-v1] Angka di tiap chip. Tanpa ini pindahnya kelas
+                   yang tamat ke "Selesai" tak kelihatan sama sekali dari tab "Semua" —
+                   kartunya cuma ikut turun ke bawah, persis seperti sebelum ada filter. */
+                const chipCount = {
+                  all: liveClasses.filter(matchQ).length,
+                  run: liveClasses.filter((r: any) => matchQ(r) && !isSelesai(r)).length,
+                  done: liveClasses.filter((r: any) => matchQ(r) && isSelesai(r)).length,
+                };
                 const selected = shown.find((r: any) => r.id === materiSel) || shown[0] || liveClasses[0];
                 const palOf = (r: any) => PAL[Math.max(0, liveClasses.findIndex((x: any) => x.id === r.id)) % PAL.length];
 
@@ -5033,12 +5047,25 @@ export default function AkunPage() {
                             </p>
                             <div className="mt-4 flex gap-2">
                               {([["all", tt("Semua")], ["run", tt("Berjalan")], ["done", tt("Selesai")]] as const).map(([k, label]) => (
-                                <button key={k} onClick={() => setMateriFilter(k)} className={`h-8 rounded-full px-3 text-[12px] font-bold transition ${materiFilter === k ? "bg-[#16796E] text-white" : "bg-[#F5F6F8] text-gray-500 hover:text-[#12172B]"}`}>{label}</button>
+                                <button key={k} onClick={() => setMateriFilter(k)} className={`flex h-8 items-center gap-1.5 rounded-full px-3 text-[12px] font-bold transition ${materiFilter === k ? "bg-[#16796E] text-white" : "bg-[#F5F6F8] text-gray-500 hover:text-[#12172B]"}`}>
+                                  {label}
+                                  <span className={`tabular-nums ${materiFilter === k ? "text-white/70" : "text-gray-400"}`}>{chipCount[k]}</span>
+                                </button>
                               ))}
                             </div>
                           </div>
                           <div className="flex flex-col gap-2.5 overflow-y-auto px-4 pb-6">
-                            {shown.length > 0 ? shown.map((r: any) => <ClassItem key={r.id} r={r} />) : (
+                            {shown.length > 0 ? shown.map((r: any, i: number) => (
+                              <Fragment key={r.id}>
+                                {/* [materi-filter-selesai-v1] Di tab "Semua", kelas yang tamat
+                                    dipisah pakai judul kecil — supaya jelas dia sudah pindah
+                                    kelompok, bukan sekadar kebetulan ada di urutan bawah. */}
+                                {materiFilter === "all" && isSelesai(r) && (i === 0 || !isSelesai(shown[i - 1])) ? (
+                                  <p className="mt-1.5 px-2 pb-0.5 text-[11px] font-bold uppercase tracking-wider text-gray-400">{tt("Selesai")}</p>
+                                ) : null}
+                                <ClassItem r={r} />
+                              </Fragment>
+                            )) : (
                               <p className="px-2 py-6 text-center text-[13px] font-medium text-gray-400">{tt("Tidak ada kelas di filter ini")}</p>
                             )}
                           </div>
