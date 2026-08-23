@@ -1064,7 +1064,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
           </div>
         ) : null
       ) : view === "grid" ? (
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 sm:gap-x-5 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
           {shown.map((p) => (
             <ProductCard
               key={p.id}
@@ -1121,7 +1121,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
             </span>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 sm:gap-x-5 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
             {terkunci.map((k) => (
               <LockedCard
                 key={k.id}
@@ -1232,11 +1232,28 @@ function StatChip({ icon, label }: { icon: React.ReactNode; label: string }) {
   );
 }
 
-function Cover({ p, prog, big }: { p: DProduct; prog: Prog | null; big?: boolean }) {
-  const resuming = prog && prog.pct > 0 && prog.pct < 100;
+// [pustaka-rak-sampul-v1] Rak buku: kartu Perpustakaan sekarang SAMPUL saja.
+//
+// Kartu lama itu kotak lanskap 16:10 + badan teks (tanggal beli, jumlah halaman,
+// chip akses, tombol) — empat baris tulisan untuk tiap produk. Dengan 40+ modul di
+// rak, layarnya terbaca seperti tabel, bukan perpustakaan; dan sampul e-book yang
+// digambar potret 1:√2 dipotong jadi seliweran gambar tanpa judul.
+//
+// Sekarang kotaknya PERSIS seperti sampul aslinya (1:√2), jadi tidak ada yang
+// terpotong, dan seluruh keterangan yang tidak dipakai sekilas (tanggal beli,
+// chip "Selamanya", tombol) dipindah: yang mendesak saja — sisa hari, materi
+// belum siap, akses berakhir — tampil sebagai satu baris kecil di bawah judul.
+// Rinciannya masih utuh di tampilan Daftar (tombol list di kanan atas).
+function ShelfCover({
+  p, prog, locked = false, dim = false,
+}: { p: DProduct; prog?: Prog | null; locked?: boolean; dim?: boolean }) {
   const foto = fotoSampul(p); // [pustaka-kartu-foto-v1]
+  const pct = prog && prog.pct > 0 && prog.pct < 100 ? prog.pct : 0;
   return (
-    <div className="relative aspect-[16/10] w-full overflow-hidden" style={{ background: gradFor(p.id) }}>
+    <div
+      className={`relative aspect-[1/1.414] w-full overflow-hidden rounded-xl shadow-[0_14px_30px_-16px_rgba(18,23,43,0.6)] ring-1 ring-black/[0.06] ${dim ? "saturate-[0.55]" : ""}`}
+      style={{ background: gradFor(p.id) }}
+    >
       {foto ? (
         <>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -1246,29 +1263,50 @@ function Cover({ p, prog, big }: { p: DProduct; prog: Prog | null; big?: boolean
             className={`absolute inset-0 h-full w-full object-cover${jangkarSampul(p)}`}
             onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
           />
-          {/* scrim: label bahasa & ikon putih di atas foto wajib tetap kebaca */}
-          <span className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-black/10" />
         </>
       ) : (
-        <span className={`absolute -bottom-4 right-3 font-black leading-none text-white/15 ${big ? "text-[120px]" : "text-[96px]"}`}>
-          {glyphFor(p)}
+        /* tanpa berkas sampul: gambar sampul tiruan — glyph bahasa + judul ringkas,
+           supaya rak tetap terbaca sebagai deretan buku, bukan kotak warna kosong. */
+        <span className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-3 text-center">
+          <span className="text-[38px] font-black leading-none text-white/90">{glyphFor(p)}</span>
+          <span className="line-clamp-3 text-[11px] font-bold uppercase leading-snug tracking-wide text-white/75">
+            {judulRingkas(p.title)}
+          </span>
         </span>
       )}
-      {/* [pustaka-sampul-bersih-v1] Dulu ada lingkaran ikon buku/play di tengah
-          sampul. Jenis produknya SUDAH dikatakan lencana "E-Book"/"E-Learning"
-          di pojok kiri atas dan tombol aksinya di badan kartu, jadi ikon itu
-          cuma menutupi foto sampul — apalagi sesudah kartu punya foto kota. */}
-      {/* lang label bottom-left */}
-      {p.language && (
-        <span className="absolute bottom-2.5 left-3 text-[13px] font-bold text-white/90">{p.language}</span>
-      )}
-      {/* resume tag */}
-      {resuming && (
-        <span className="absolute bottom-2.5 right-3 inline-flex items-center gap-1 rounded-full bg-white/95 px-2 py-0.5 text-[11px] font-bold text-[#0C8163] shadow-sm">
-          <Play className="h-3 w-3" fill="currentColor" /> Lanjut
+
+      {/* punggung buku + kilau tepi: bikin sampul datar terbaca sebagai benda */}
+      <span className="pointer-events-none absolute inset-y-0 left-0 w-[9px] bg-gradient-to-r from-black/40 via-black/12 to-transparent" />
+      <span className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10" />
+
+      {locked && <span className="absolute inset-0 bg-slate-900/45 backdrop-blur-[1.5px]" />}
+
+      {/* progres e-learning: garis tipis di kaki sampul, bukan bilah + angka di badan kartu */}
+      {pct > 0 && (
+        <span className="absolute inset-x-0 bottom-0 h-[5px] bg-black/25">
+          <span
+            className="block h-full transition-all"
+            style={{ width: `${Math.max(pct, 4)}%`, background: "linear-gradient(90deg,#1FA98A,#0C8163)" }}
+          />
         </span>
       )}
     </div>
+  );
+}
+
+// ikon jenis produk di pojok sampul — versi ringkas TypeBadge (tanpa teks) supaya
+// rak tidak penuh label; judul lengkapnya tetap ada di atribut title.
+function TypeDot({ type }: { type: ProductType }) {
+  const Icon = type === "ebook" ? BookOpen : Film;
+  const nama = type === "ebook" ? "Lingbook" : "E-Learning";
+  return (
+    <span
+      title={nama}
+      aria-label={nama}
+      className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/95 text-[#12172B] shadow-sm"
+    >
+      <Icon className="h-[15px] w-[15px]" strokeWidth={2.4} />
+    </span>
   );
 }
 
@@ -1299,81 +1337,86 @@ function ProductCard({
   // di tengah tombol teal.
   const BtnIcon = prod.type === "ebook" && !isExternal ? BookOpen : verb === "Buka" ? ExternalLink : Play;
 
+  const meta =
+    prod.type === "ebook"
+      ? (prod.pages ? `${prod.pages} halaman` : "Lingbook")
+      : langCount > 1
+        ? `${langCount} bahasa`
+        : prog
+          ? `${prog.total} pelajaran`
+          : prod.modules_count
+            ? `${prod.modules_count} modul`
+            : "Materi video";
+
   return (
-    <div
-      onPointerEnter={onPrefetch}
-      onTouchStart={onPrefetch}
-      className={`group flex flex-col overflow-hidden rounded-3xl bg-white shadow-[0_18px_40px_-30px_rgba(18,23,43,0.5)] transition hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-30px_rgba(18,23,43,0.55)] ${expired ? "opacity-70" : ""}`}
-    >
-      {/* cover (clickable) */}
-      <button onClick={onOpen} disabled={expired} className="relative block text-left disabled:cursor-not-allowed">
-        <Cover p={prod} prog={prog} />
-        <span className="absolute left-3 top-3"><TypeBadge type={prod.type} /></span>
-        <span
-          role="button"
-          tabIndex={0}
-          onClick={(e) => { e.stopPropagation(); onToggleBookmark(); }}
-          onKeyDown={(e) => { if (e.key === "Enter") { e.stopPropagation(); onToggleBookmark(); } }}
-          className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-xl bg-white/95 text-[#12A37E] shadow-sm transition hover:scale-105"
+    <div onPointerEnter={onPrefetch} onTouchStart={onPrefetch} className="group">
+      <div className="relative">
+        <button
+          onClick={onOpen}
+          disabled={expired || busy}
+          className={`block w-full text-left transition duration-300 disabled:cursor-not-allowed ${expired ? "opacity-70" : "group-hover:-translate-y-1.5"}`}
         >
-          {bookmarked ? <BookmarkCheck className="h-[18px] w-[18px]" fill="currentColor" /> : <Bookmark className="h-[18px] w-[18px]" />}
+          <ShelfCover p={prod} prog={prog} dim={expired} />
+
+          {/* aksi tampil saat kursor di atas sampul; di HP sampulnya tinggal disentuh */}
+          {!expired && (
+            <span className="pointer-events-none absolute inset-0 flex items-end justify-center rounded-xl bg-gradient-to-t from-black/55 via-transparent to-transparent pb-3 opacity-0 transition duration-300 group-hover:opacity-100">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#12A37E] px-3.5 py-2 text-[12px] font-bold text-white shadow-lg">
+                {busy ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <BtnIcon className="h-3.5 w-3.5" fill={BtnIcon === Play ? "currentColor" : "none"} />}
+                {ready ? label : "Belum siap"}
+              </span>
+            </span>
+          )}
+        </button>
+
+        <span className="pointer-events-none absolute left-2 top-2 transition duration-300 group-hover:-translate-y-1.5">
+          <TypeDot type={prod.type} />
         </span>
-      </button>
 
-      {/* body */}
-      <div className="flex flex-1 flex-col gap-3 p-4">
-        <div className="flex items-center justify-between gap-2">
-          <span className="text-[11px] font-semibold text-slate-400">Dibeli {fmtDate(p.created_at)}</span>
-        </div>
-        {/* [pustaka-judul-ringkas-v1] satu baris — judul panjang dipotong, bukan dilipat */}
-        <div className="flex min-w-0 items-center gap-2">
-          <TitleFlag language={prod.language} h={16} />
-          <h3 title={prod.title} className="truncate text-[16px] font-extrabold leading-snug text-[#12172B]">{judulRingkas(prod.title)}</h3>
-        </div>
+        {/* penanda: selalu kelihatan di HP, muncul saat hover di layar lebar */}
+        <button
+          type="button"
+          onClick={(e) => { e.stopPropagation(); onToggleBookmark(); }}
+          aria-label={bookmarked ? "Hapus penanda" : "Tandai"}
+          title={bookmarked ? "Hapus penanda" : "Tandai"}
+          className={`absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-lg bg-white/95 text-[#12A37E] shadow-sm transition duration-300 hover:scale-105 group-hover:-translate-y-1.5 ${
+            bookmarked ? "" : "sm:opacity-0 sm:group-hover:opacity-100 sm:focus-visible:opacity-100"
+          }`}
+        >
+          {bookmarked ? <BookmarkCheck className="h-4 w-4" fill="currentColor" /> : <Bookmark className="h-4 w-4" />}
+        </button>
+      </div>
 
-        <p className="text-[12px] font-medium text-slate-500">
-          {prod.type === "ebook"
-            ? `${prod.pages ? `${prod.pages} halaman` : "PDF"}`
-            : langCount > 1
-              ? `${langCount} bahasa · materi video`
-              : `${prog ? `${prog.total} pelajaran` : prod.modules_count ? `${prod.modules_count} modul` : "Materi video"}`}
+      {/* judul di bawah sampul — satu baris, judul panjang dipotong */}
+      <div className="mt-2.5 px-0.5">
+        <div className="flex min-w-0 items-center gap-1.5">
+          <TitleFlag language={prod.language} h={13} />
+          <h3 title={prod.title} className="truncate text-[13.5px] font-extrabold leading-snug text-[#12172B]">
+            {judulRingkas(prod.title)}
+          </h3>
+        </div>
+        <p className="mt-0.5 truncate text-[11.5px] font-semibold text-slate-400">
+          {meta}
+          {prog && prog.pct > 0 ? ` · ${prog.pct}%` : ""}
         </p>
 
-        {/* [materi-belum-siap-v1] Akses sudah dibeli, materinya belum dipasang.
-            Dikatakan di kartu supaya tidak terbaca sebagai produk rusak waktu
-            tombolnya ditekan dan cuma keluar pesan error. */}
-        {!ready && !expired && (
-          <p className="rounded-lg bg-amber-50 px-2.5 py-1.5 text-[11px] font-semibold text-amber-700">
-            Materi sedang disiapkan tim Linguo — akses kamu tetap aman.
-          </p>
-        )}
-
-        {prog && (
-          <div className="flex items-center gap-2">
-            <div className="flex-1"><ProgressBar pct={prog.pct} /></div>
-            <span className="shrink-0 text-[11px] font-bold text-slate-400">{prog.pct}%</span>
-          </div>
-        )}
-
-        <div className="mt-auto flex items-center justify-between gap-2 pt-1">
-          <AccessChip a={a} />
-          {expired && !bolehPerpanjang ? null : expired ? (
-            <button onClick={onRenew} className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-xl bg-amber-500 px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-amber-600 active:scale-[0.98]">
-              <Sparkles className="h-4 w-4" strokeWidth={2.4} /> Perpanjang
+        {/* cuma yang mendesak yang naik ke rak: sisa hari, materi belum siap, akses habis */}
+        {expired ? (
+          bolehPerpanjang ? (
+            <button
+              onClick={onRenew}
+              className="mt-1.5 inline-flex items-center gap-1 text-[11.5px] font-bold text-amber-600 hover:text-amber-700"
+            >
+              <Sparkles className="h-3.5 w-3.5" strokeWidth={2.4} /> Perpanjang
             </button>
           ) : (
-            <button
-              onClick={onOpen}
-              disabled={busy}
-              className={`inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-xl px-3.5 py-2 text-[13px] font-bold text-white transition active:scale-[0.98] disabled:opacity-50 ${
-                ready ? "bg-[#12A37E] hover:bg-[#0C8163]" : "bg-slate-400 hover:bg-slate-500"
-              }`}
-            >
-              {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <BtnIcon className="h-4 w-4" fill={BtnIcon === Play ? "currentColor" : "none"} />}
-              {ready ? label : "Belum siap"}
-            </button>
-          )}
-        </div>
+            <p className="mt-1.5 text-[11.5px] font-bold text-rose-500">Akses berakhir</p>
+          )
+        ) : a.kind === "soon" ? (
+          <p className="mt-1.5 text-[11.5px] font-bold text-amber-600">Sisa {a.days} hari</p>
+        ) : !ready ? (
+          <p className="mt-1.5 text-[11.5px] font-bold text-amber-600">Materi disiapkan</p>
+        ) : null}
       </div>
     </div>
   );
@@ -1657,102 +1700,74 @@ function LockedCard({
 }) {
   const mulai = hargaMulai(item);
   const bisaBeli = ready && mulai !== null;
-  const foto = fotoSampul(item); // [pustaka-kartu-foto-v1]
 
-  // [pustaka-kartu-tanpa-garis-v1] Tanpa garis tepi: di mode gelap border abu-abu jadi
-  // kotak yang menonjol di sekeliling foto, sementara kartu "sudah dimiliki" di atasnya
-  // cuma pakai bayangan. Sekarang dua-duanya seragam — bayangan saja.
+  // [pustaka-rak-sampul-v1] Seragam dengan rak "sudah dimiliki": sampul potret,
+  // judul kecil di bawahnya. Bedanya sampul di sini diredam + digembok, dan di
+  // bawah judul ada harga + dua tombol (Beli / Keranjang) yang tetap bisa disentuh
+  // di HP — bukan ikon kecil di pojok sampul.
   return (
-    <div className="group flex flex-col overflow-hidden rounded-3xl bg-white shadow-[0_18px_40px_-30px_rgba(18,23,43,0.5)] transition hover:shadow-[0_24px_50px_-30px_rgba(18,23,43,0.55)]">
-      {/* cover teredam + gembok */}
-      <button
-        onClick={bisaBeli ? onBuy : undefined}
-        disabled={!bisaBeli}
-        className="relative h-[132px] w-full shrink-0 overflow-hidden disabled:cursor-default"
-        style={{ background: gradFor(item.id) }}
-      >
-        {foto ? (
-          <>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={foto}
-              alt={item.title}
-              className={`absolute inset-0 h-full w-full object-cover${jangkarSampul(item)}`}
-              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
-            />
-          </>
-        ) : (
-          <span className="absolute -bottom-3 right-3 text-[74px] font-black leading-none text-white/15">
-            {glyphFor(item)}
+    <div className="group">
+      <div className="relative">
+        <button
+          onClick={bisaBeli ? onBuy : undefined}
+          disabled={!bisaBeli}
+          className={`block w-full text-left transition duration-300 disabled:cursor-default ${bisaBeli ? "group-hover:-translate-y-1.5" : ""}`}
+        >
+          <ShelfCover p={item} locked dim />
+          <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
+            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-500 shadow-lg transition duration-300 group-hover:scale-105">
+              <Lock className="h-[18px] w-[18px]" strokeWidth={2.4} />
+            </span>
           </span>
-        )}
-        <span className="absolute inset-0 bg-slate-900/45 backdrop-blur-[1.5px]" />
-        <span className="absolute left-3 top-3"><TypeBadge type={item.type} /></span>
-        <span className="absolute inset-0 flex items-center justify-center">
-          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-slate-500 shadow-lg transition group-hover:scale-105">
-            <Lock className="h-5 w-5" strokeWidth={2.4} />
-          </span>
+        </button>
+        <span className="pointer-events-none absolute left-2 top-2 transition duration-300 group-hover:-translate-y-1.5">
+          <TypeDot type={item.type} />
         </span>
-      </button>
+      </div>
 
-      {/* body */}
-      <div className="flex flex-1 flex-col p-4">
-        {/* [pustaka-judul-ringkas-v1] satu baris, tanpa penggal "Modul Belajar Bahasa … Linguo" */}
-        <div className="flex min-w-0 items-center gap-2">
-          <TitleFlag language={item.language} />
-          <h3 title={item.title} className="truncate text-[15px] font-extrabold leading-snug text-[#12172B]">{judulRingkas(item.title)}</h3>
+      <div className="mt-2.5 px-0.5">
+        <div className="flex min-w-0 items-center gap-1.5">
+          <TitleFlag language={item.language} h={13} />
+          <h3 title={item.title} className="truncate text-[13.5px] font-extrabold leading-snug text-[#12172B]">
+            {judulRingkas(item.title)}
+          </h3>
         </div>
-        <p className="mt-1 text-[12.5px] font-medium text-slate-500">
-          {[item.language, item.level].filter(Boolean).join(" · ") || (item.type === "ebook" ? "Lingbook" : "E-Learning")}
+        <p className="mt-0.5 truncate text-[11.5px] font-semibold text-slate-400">
+          {mulai !== null
+            ? `${item.pricing.length > 1 ? "mulai " : ""}${fmtRupiah(mulai)}`
+            : "Harga menyusul"}
         </p>
 
-        <div className="mt-4 flex items-center justify-between gap-3 pt-1">
-          <div className="min-w-0">
-            {mulai !== null ? (
-              <>
-                {item.pricing.length > 1 && <p className="text-[11px] font-bold uppercase tracking-wide text-slate-400">mulai</p>}
-                <p className="text-[16px] font-extrabold text-[#12172B]">{fmtRupiah(mulai)}</p>
-              </>
-            ) : (
-              <p className="text-[13px] font-bold text-slate-400">Harga menyusul</p>
-            )}
-          </div>
-          {/* [pustaka-segera-hadir-kontras-v1] Dulu tombol nonaktif memakai varian
-              `disabled:bg-slate-300` + teks putih: kelas varian itu tidak kena aturan
-              mode gelap dashboard, jadi tulisannya putih di atas abu terang — nyaris
-              tak terbaca. Sekarang warnanya kelas biasa (ikut aturan gelap) dan
-              teksnya gelap/tebal supaya kontras di terang maupun gelap. */}
+        <div className="mt-2 flex items-center gap-1.5">
+          {/* [pustaka-segera-hadir-kontras-v1] tombol nonaktif pakai kelas biasa +
+              teks gelap supaya tetap terbaca di mode gelap dashboard. */}
           <button
             onClick={onBuy}
             disabled={!bisaBeli}
-            className={`inline-flex shrink-0 items-center gap-1.5 rounded-xl px-3.5 py-2 text-[13px] font-bold transition active:scale-[0.98] ${
+            className={`inline-flex h-8 flex-1 items-center justify-center gap-1.5 rounded-lg text-[12px] font-bold transition active:scale-[0.98] ${
               bisaBeli
                 ? "bg-[#12A37E] text-white hover:bg-[#0C8163]"
                 : "cursor-default bg-slate-200 text-slate-700 ring-1 ring-slate-300 active:scale-100"
             }`}
           >
-            {bisaBeli ? <><ShoppingBag className="h-4 w-4" strokeWidth={2.4} /> Beli</> : <><Clock className="h-4 w-4" strokeWidth={2.4} /> Segera hadir</>}
+            {bisaBeli ? <><ShoppingBag className="h-3.5 w-3.5" strokeWidth={2.4} /> Beli</> : <><Clock className="h-3.5 w-3.5" strokeWidth={2.4} /> Segera</>}
           </button>
+          {/* [pustaka-keranjang-v1] jalur kedua: kumpulkan dulu, bayar sekalian */}
+          {bisaBeli && (
+            <button
+              onClick={onKeranjang}
+              aria-label={diKeranjang ? "Sudah di keranjang" : "Masukkan keranjang"}
+              title={diKeranjang ? "Sudah di keranjang" : "Masukkan keranjang"}
+              className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition active:scale-[0.98] ${
+                diKeranjang
+                  ? "bg-[#12A37E]/10 text-[#0C8163] ring-1 ring-[#12A37E]/40 hover:bg-[#12A37E]/15"
+                  : "bg-slate-100 text-slate-600 ring-1 ring-slate-200 hover:bg-slate-200"
+              }`}
+            >
+              {diKeranjang ? <Check className="h-4 w-4" strokeWidth={3} /> : <Plus className="h-4 w-4" strokeWidth={2.6} />}
+            </button>
+          )}
         </div>
-
-        {/* [pustaka-keranjang-v1] Jalur kedua: kumpulkan dulu, bayar sekalian.
-            Ditaruh sebagai tombol lebar di bawah harga — bukan ikon kecil di
-            pojok sampul — supaya di layar HP tetap kena jari dan jelas apa
-            bedanya dengan "Beli" (yang langsung ke halaman pembayaran). */}
-        {bisaBeli && (
-          <button
-            onClick={onKeranjang}
-            className={`mt-2.5 inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-xl text-[12.5px] font-bold transition active:scale-[0.99] ${
-              diKeranjang
-                ? "bg-[#12A37E]/10 text-[#0C8163] ring-1 ring-[#12A37E]/40 hover:bg-[#12A37E]/15"
-                : "bg-slate-100 text-slate-700 ring-1 ring-slate-200 hover:bg-slate-200"
-            }`}
-          >
-            {diKeranjang
-              ? <><Check className="h-4 w-4" strokeWidth={3} /> Di keranjang</>
-              : <><Plus className="h-4 w-4" strokeWidth={2.6} /> Keranjang</>}
-          </button>
-        )}
       </div>
     </div>
   );
