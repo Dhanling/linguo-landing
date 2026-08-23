@@ -89,6 +89,35 @@ function bacaanEbook(purchaseId: string): { page: number; total: number; ts: num
   }
 }
 
+/* [lanjutkan-ebook-jejak-lokal-v1] E-book yang PERNAH dibuka di perangkat ini,
+   dipungut dari jejak localStorage (`ebook-hal-ts:<purchaseId>`) — bukan dari daftar
+   pembelian. Kenapa perlu: daftar pembelian di Beranda pernah lebih ketat daripada
+   Perpustakaan, jadi modul yang barusan dibaca bisa tak punya pasangan di sana dan
+   kartunya lenyap tanpa jejak. Judul & bahasanya dititipkan EbookReader lewat
+   `ebook-jejak:<purchaseId>`. */
+type JejakEbook = { purchaseId: string; title: string | null; language: string | null };
+function jejakEbookLokal(): JejakEbook[] {
+  if (typeof window === "undefined") return [];
+  const out: JejakEbook[] = [];
+  try {
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (!k || !k.startsWith("ebook-hal-ts:")) continue;
+      const purchaseId = k.slice("ebook-hal-ts:".length);
+      if (!purchaseId) continue;
+      let title: string | null = null;
+      let language: string | null = null;
+      try {
+        const j = JSON.parse(localStorage.getItem(`ebook-jejak:${purchaseId}`) || "null");
+        if (j && typeof j.title === "string" && j.title.trim()) title = j.title;
+        if (j && typeof j.language === "string" && j.language.trim()) language = j.language;
+      } catch { /* jejak rusak → judulnya nanti dicari di daftar pembelian */ }
+      out.push({ purchaseId, title, language });
+    }
+  } catch { /* localStorage diblokir → tak ada yang bisa dilanjutkan dari perangkat ini */ }
+  return out;
+}
+
 /* [lanjutkan-watch-preview-v2] Pratinjau hover memakai BINGKAI video (mq1–mq3 =
    cuplikan di 1/4, 1/2, 3/4 durasi), bukan player YouTube yang ditanam.
    Kenapa bukan iframe: embed YouTube menggambar tombol pause besar miliknya
@@ -135,6 +164,10 @@ export default function LanjutkanBelajar({
     });
   }, []);
 
+  /* Jejak baca dibaca sesudah mount — localStorage tak ada di server. */
+  const [jejak, setJejak] = useState<JejakEbook[]>([]);
+  useEffect(() => { setJejak(jejakEbookLokal()); }, []);
+
   /* [lanjutkan-watch-preview-v1] Pratinjau bisu ala YouTube: kursor menetap
      sebentar di kartu → thumbnail digantikan video yang jalan tanpa suara.
      Jeda 700 ms itu sengaja — tanpa itu, kursor yang cuma lewat sudah cukup
@@ -174,17 +207,31 @@ export default function LanjutkanBelajar({
        "Self-Study" tepat di bawah blok ini — dua kartu yang sama persis, satu di
        atas yang lain, cuma membuang baris teratas Beranda. */
 
+    /* Gabungan dua sumber: jejak lokal (bukti modulnya benar-benar dibuka) +
+       daftar pembelian (judul rapi, sampul resmi, bahasa). Yang tak punya jejak
+       baca tidak ikut — blok ini menjanjikan "lanjutkan", bukan "coba mulai". */
+    const kandidat = new Map<string, { title: string | null; language: string | null; cover: string | null }>();
+    jejak.forEach((j) => kandidat.set(j.purchaseId, { title: j.title, language: j.language, cover: null }));
     produkDigital.forEach((d) => {
       if (d.type !== "ebook") return;
-      const b = bacaanEbook(d.purchaseId);
-      if (!b) return;
+      const lama = kandidat.get(d.purchaseId);
+      kandidat.set(d.purchaseId, {
+        title: d.title || lama?.title || null,
+        language: d.language || lama?.language || null,
+        cover: d.cover || null,
+      });
+    });
+
+    kandidat.forEach((m, purchaseId) => {
+      const b = bacaanEbook(purchaseId);
+      if (!b || !m.title) return;
       out.push({
-        key: `ebook-${d.purchaseId}`,
+        key: `ebook-${purchaseId}`,
         ts: b.ts,
         /* [lingbook-nama-ebook-v1] Kartu e-book memakai nama produknya: "Lingbook".
            Sumber datanya tetap produk digital bertipe `ebook`. */
         kind: "Lingbook",
-        title: d.title,
+        title: m.title,
         /* Sudah sampai mana — halaman DAN persennya. Angka halaman saja tak
            menjawab "tinggal berapa lagi" kalau modulnya 130 halaman. */
         sub: b.total
@@ -197,12 +244,12 @@ export default function LanjutkanBelajar({
            ditangkap reader dari halaman 1, lalu `cover_url` produk (kosong di semua
            e-book hari ini), terakhir foto stok bahasa — masih lebih menjelaskan
            daripada kotak kosong. */
-        photo: sampulEbook(d.purchaseId) || d.cover || (d.language ? getLangPhoto(d.language) : null),
+        photo: sampulEbook(purchaseId) || m.cover || (m.language ? getLangPhoto(m.language) : null),
         fitTop: true,
         pct: b.total ? Math.min(100, Math.round((b.page / b.total) * 100)) : null,
         /* [lanjutkan-ebook-buka-langsung-v1] Langsung ke readernya, bukan ke
            daftar Perpustakaan: kartunya menjanjikan SATU modul yang tadi dibaca. */
-        run: () => onOpenEbook(d.purchaseId),
+        run: () => onOpenEbook(purchaseId),
       });
     });
 
@@ -233,7 +280,7 @@ export default function LanjutkanBelajar({
     }
 
     return out.sort((a, b) => b.ts - a.ts).slice(0, 3);
-  }, [produkDigital, watch, onOpenEbook, router, t]);
+  }, [produkDigital, jejak, watch, onOpenEbook, router, t]);
 
   if (items.length === 0) return null;
 

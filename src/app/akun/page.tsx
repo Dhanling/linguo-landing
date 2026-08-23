@@ -3102,9 +3102,13 @@ export default function AkunPage() {
       const base = supabase
         .from("digital_purchases")
         .select("id, registration_id, digital_products(id, type, title, language, cover_url, file_url, video_playlist_url)");
+      /* [lanjutkan-ebook-arsip-v1] `archived_at` SENGAJA tidak disaring di sini —
+         Perpustakaan (LibraryView) juga tidak menyaringnya, jadi baris pembelian
+         yang diarsipkan admin tetap bisa dibaca siswa. Waktu Beranda lebih ketat
+         daripada Perpustakaan, modul yang barusan dibaca tak punya pasangan di
+         daftar ini dan kartunya di "Lanjutkan Belajar" hilang diam-diam. */
       const { data } = await (milikSaya ? base.or(milikSaya) : base.eq("auth_user_id", user.id))
-        .eq("payment_status", "Lunas")
-        .is("archived_at", null);
+        .eq("payment_status", "Lunas");
       if (batal || !data) return;
       const map: Record<string, string> = {};
       const punya: { id: string; purchaseId: string; type: "ebook" | "elearning"; title: string; language: string | null; cover: string | null; link: string | null }[] = [];

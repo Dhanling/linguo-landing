@@ -88,6 +88,12 @@ const SWIPE_RESET = 320;
 const halamanKey = (purchaseId: string) => `ebook-hal:${purchaseId}`;
 // [lanjutkan-belajar-v1] kapan terakhir modul ini dibaca (epoch ms).
 export const halamanTsKey = (purchaseId: string) => `ebook-hal-ts:${purchaseId}`;
+/* [lanjutkan-ebook-jejak-lokal-v1] Judul & bahasa modulnya ikut dititipkan ke
+   perangkat. Kartu "Lanjutkan Belajar" merakit dirinya dari jejak ini kalau baris
+   pembeliannya tak ikut terbawa daftar produk digital Beranda (mis. pembelian yang
+   diarsipkan admin) — tanpa ini kartunya hilang diam-diam padahal bukunya barusan
+   dibaca. */
+export const jejakKey = (purchaseId: string) => `ebook-jejak:${purchaseId}`;
 
 /* [ebook-panduan-tour-v1] Panduan itu milik ORANGNYA, bukan milik modulnya:
    siswa yang sudah paham cara pakai reader tidak perlu diajari lagi waktu
@@ -1338,8 +1344,11 @@ export default function EbookReader({
        menambah ruas ketiga akan membuat pembacaan lama menyimpulkan modulnya
        terbit ulang lalu memulai dari sampul lagi. Dipakai blok "Lanjutkan
        Belajar" di Beranda buat mengurutkan e-book bersama sumber lain. */
-    try { localStorage.setItem(halamanTsKey(purchaseId), String(Date.now())); } catch {}
-  }, [page, purchaseId, doc]);
+    try {
+      localStorage.setItem(halamanTsKey(purchaseId), String(Date.now()));
+      localStorage.setItem(jejakKey(purchaseId), JSON.stringify({ title, language: language || null }));
+    } catch {}
+  }, [page, purchaseId, doc, title, language]);
 
   /* ── membalik halaman ──────────────────────────────────────────────────── */
   const kurangGerak = () =>
