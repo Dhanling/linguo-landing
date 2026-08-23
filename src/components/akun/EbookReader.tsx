@@ -212,7 +212,11 @@ const simpanBuf = (id: string, buf: ArrayBuffer) => {
 const CACHE_MODUL = "ebook-modul-v1";
 /** Berapa modul yang boleh menumpuk di perangkat. */
 const CACHE_MODUL_MAX = 3;
-/** Selang pemeriksaan "modulnya sudah terbit ulang belum?" */
+/** Selang penyegaran CAP WAKTU simpanan — bukan pemeriksaan edisinya.
+ *  ⚠️ Edisi baru diperiksa TIAP kali reader dibuka: dulu pemeriksaannya ikut
+ *  selang ini, dan modul yang baru diterbitkan ulang masih terbaca edisi lama
+ *  sampai 12 jam. Cap waktunya sendiri tetap ditulis jarang-jarang karena
+ *  menulis ulang 6 MB ke Cache Storage tiap buka itu mahal. */
 const CACHE_SEGAR_MS = 12 * 60 * 60 * 1000;
 
 const kunciModul = (id: string) => `https://ebook.linguo.id/modul/${encodeURIComponent(id)}`;
@@ -344,23 +348,40 @@ async function unduhModul(purchaseId: string, accessToken: string): Promise<Arra
   return buf;
 }
 
-/** Modul di laci sudah lama → cek diam-diam apakah edisinya sudah diganti.
- *  Yang sedang dibaca TIDAK diusik; salinan barunya dipakai pembukaan berikut. */
-async function segarkanLaci(purchaseId: string, accessToken: string, simpanan: SimpananModul) {
-  if (Date.now() - simpanan.waktu < CACHE_SEGAR_MS) return;
+/** Cek diam-diam apakah edisi modulnya sudah diganti sejak disimpan.
+ *
+ *  Balasannya = byte edisi BARU kalau memang ada, atau null kalau simpanannya
+ *  masih edisi terbaru. Pemanggilnya yang memutuskan mau menukar dokumen yang
+ *  sedang dibaca atau tidak.
+ *
+ *  ⚠️ Perbandingan etag-nya TIDAK menambah perjalanan jaringan: `ambilMeta`
+ *  memang sudah dipanggil pembukaan reader (untuk `urlPotong` + berkas soal)
+ *  dan hasilnya dipakai ulang selama tanda tangannya belum kedaluwarsa. */
+async function segarkanLaci(
+  purchaseId: string,
+  accessToken: string,
+  simpanan: SimpananModul,
+): Promise<ArrayBuffer | null> {
   try {
     const meta = await ambilMeta(purchaseId, accessToken);
     if (!meta.versi || meta.versi === simpanan.versi) {
-      // Isinya masih sama — cap waktunya saja yang disegarkan supaya
-      // pemeriksaan ini tidak terulang tiap kali reader dibuka.
-      await keLaci(purchaseId, simpanan.buf, simpanan.versi);
-      return;
+      // Isinya masih sama — cap waktunya saja yang disegarkan, dan itu pun
+      // seperlunya: `keLaci` menulis ulang seluruh bytenya.
+      if (Date.now() - simpanan.waktu >= CACHE_SEGAR_MS) {
+        await keLaci(purchaseId, simpanan.buf, simpanan.versi);
+      }
+      return null;
     }
     const res = await fetch(meta.url, { cache: "no-store" });
-    if (!res.ok) return;
+    if (!res.ok) return null;
     const buf = await res.arrayBuffer();
-    if (buf.byteLength) await keLaci(purchaseId, buf, meta.versi);
-  } catch { /* diam: ini kerja latar, bukan kerja siswa */ }
+    if (!buf.byteLength) return null;
+    await keLaci(purchaseId, buf, meta.versi);
+    // Simpanan di memori ikut diganti — kalau tidak, `ambilBerkas` masih
+    // menyodorkan edisi lama sampai tabnya ditutup.
+    simpanBuf(purchaseId, buf);
+    return buf;
+  } catch { /* diam: ini kerja latar, bukan kerja siswa */ return null; }
 }
 
 /** Byte yang SUDAH ada di perangkat (memori atau laci) — tanpa jaringan sama
@@ -761,6 +782,8 @@ export default function EbookReader({
   const [layarPenuh, setLayarPenuh] = useState(false);
 
   const wadahRef = useRef<HTMLDivElement | null>(null);
+  /** Tepi tujuan setelah halaman terbalik gara-gara gulir mentok — lihat panah ↑/↓. */
+  const mendaratDiRef = useRef<1 | -1 | null>(null);
   const kiriRef = useRef<HTMLCanvasElement | null>(null);
   const kananRef = useRef<HTMLCanvasElement | null>(null);
   const depanRef = useRef<HTMLCanvasElement | null>(null);
@@ -864,6 +887,30 @@ export default function EbookReader({
         lama.destroy?.();
       } catch { /* gagal = tetap pakai dokumen potongan, bukan kiamat */ }
     };
+    /* [ebook-edisi-baru-v1] Modul yang tersimpan di perangkat ternyata edisi
+       lama → dokumennya ditukar SEKARANG, bukan pembukaan berikutnya. Beda
+       dengan `gantiKeUtuh`: di sana isinya sama persis sehingga halaman yang
+       sudah tergambar boleh tetap dipakai; di sini isinya BEDA, jadi bitmap
+       yang tersimpan wajib dibuang dan bacanya mulai dari sampul lagi —
+       nomor halaman lama menunjuk ke tempat yang salah. */
+    const gantiKeEdisiBaru = async (buf: ArrayBuffer) => {
+      try {
+        const pdfjs = pdfjsRef.current;
+        const lama = docRef.current;
+        if (!hidup || !pdfjs || !lama) return;
+        const baru = await pdfjs.getDocument({ data: new Uint8Array(buf.slice(0)) }).promise;
+        if (!hidup) { baru.destroy?.(); return; }
+        docRef.current = baru;
+        bitmapRef.current.clear();
+        setDoc(baru);
+        setTotal(baru.numPages);
+        setPage(1);
+        if (docCache && docCache.id !== purchaseId) docCache.doc.destroy?.();
+        docCache = { id: purchaseId, doc: baru };
+        await Promise.allSettled([...antreRef.current.values()]);
+        lama.destroy?.();
+      } catch { /* gagal = tetap pakai edisi yang tersimpan */ }
+    };
 
     (async () => {
       try {
@@ -880,13 +927,15 @@ export default function EbookReader({
 
         let d = simpananDoc;
         let dariPotongan = false;
+        /** Byte edisi baru, kalau simpanan di perangkat ternyata sudah basi. */
+        let edisiBaru: Promise<ArrayBuffer | null> | null = null;
         if (!d) {
           const lokal = await lokalJanji;
           if (!hidup) return;
           if (lokal) {
             // Berkasnya sudah ada di perangkat: tak ada jaringan yang ditunggu.
             simpanBuf(purchaseId, lokal.buf);
-            void segarkanLaci(purchaseId, accessToken, lokal);
+            edisiBaru = segarkanLaci(purchaseId, accessToken, lokal);
             // Salinan byte: pdf.js "memindahkan" buffer yang diberikan ke worker,
             // jadi kalau aslinya dipakai langsung, entri bufCache jadi kosong dan
             // buka-ulang reader malah gagal.
@@ -944,6 +993,9 @@ export default function EbookReader({
         const sahih =
           Number.isFinite(simpanan) && simpanan >= 1 && totalLama === d.numPages;
         setPage(sahih ? Math.min(simpanan, d.numPages) : 1);
+        // [ebook-edisi-baru-v1] Pemeriksaan edisi berjalan di latar sejak tadi;
+        // kalau ternyata sudah terbit ulang, dokumennya ditukar di tempat.
+        if (edisiBaru) void edisiBaru.then((buf) => { if (buf) void gantiKeEdisiBaru(buf); });
       } catch (e: any) {
         if (hidup) setGalat(e?.message || tr("Gagal memuat modul"));
       } finally {
@@ -1398,6 +1450,29 @@ export default function EbookReader({
     pageRef.current = hal;
   }, [total, dua]);
 
+  /** Gulir wadah halaman satu langkah; false = sudah mentok tepi. */
+  const gulirTegak = useCallback((arah: 1 | -1, beruntun = false) => {
+    const w = wadahRef.current;
+    if (!w) return false;
+    const sisa = arah > 0 ? w.scrollHeight - w.clientHeight - w.scrollTop : w.scrollTop;
+    if (sisa <= 1) return false;
+    const langkah = Math.min(sisa, Math.max(96, w.clientHeight * 0.22));
+    // Tombol yang DITAHAN memakai gulir langsung: animasi halus yang bertumpuk
+    // saling membatalkan, jadi tahanan panjang malah terasa tersendat.
+    w.scrollBy({ top: arah * langkah, behavior: beruntun ? "auto" : "smooth" });
+    return true;
+  }, []);
+
+  // Halaman sudah berganti setelah gulir mentok → dudukkan di tepi tujuan.
+  useEffect(() => {
+    const arah = mendaratDiRef.current;
+    if (!arah) return;
+    mendaratDiRef.current = null;
+    const w = wadahRef.current;
+    if (!w) return;
+    w.scrollTop = arah > 0 ? 0 : Math.max(0, w.scrollHeight - w.clientHeight);
+  }, [page]);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       // Jangan bajak tombol panah waktu siswa sedang mengetik di suatu tempat.
@@ -1420,6 +1495,24 @@ export default function EbookReader({
         else aturZoom(zoomLiveRef.current + (e.key === "-" || e.key === "_" ? -ZOOM_STEP : ZOOM_STEP), true);
         return;
       }
+      /* [ebook-panah-gulir-v1] Waktu zoom > 100% satu halaman lebih tinggi dari
+         layar, tapi ↑/↓ dulu tak melakukan apa-apa: wadah gulirnya bukan elemen
+         yang bisa difokus, jadi gulir bawaan browser tak pernah sampai ke sana —
+         satu-satunya jalan melihat bagian bawah halaman cuma seret tetikus.
+         Sekarang ↑/↓ menggulir isi halaman dulu, baru pindah halaman kalau sudah
+         mentok tepi. */
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        const arah: 1 | -1 = e.key === "ArrowDown" ? 1 : -1;
+        if (!gulirTegak(arah, e.repeat)) {
+          // Halaman baru dibuka dari tepi yang berlawanan, bukan dari posisi
+          // gulir yang lama — kalau tidak, halaman berikutnya muncul sudah
+          // separuh terlewat.
+          mendaratDiRef.current = arah;
+          void balikKe(arah);
+        }
+        return;
+      }
       // preventDefault: tanpa ini panah & spasi JUGA menggulir wadah halaman,
       // jadi terasa "pindah halamannya nyangkut" padahal cuma ikut tergulir.
       if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " " || e.key === "Spacebar") {
@@ -1434,7 +1527,7 @@ export default function EbookReader({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [balikKe, ke, total, onClose, aturZoom, daftarBuka]);
+  }, [balikKe, ke, total, onClose, aturZoom, daftarBuka, gulirTegak]);
 
   // Layar penuh: dicoba begitu reader terbuka, dilepas lagi saat ditutup.
   useEffect(() => {
