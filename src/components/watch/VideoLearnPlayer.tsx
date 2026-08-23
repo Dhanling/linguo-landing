@@ -4489,11 +4489,16 @@ type KaraokeState = "sung" | "active" | "future";
 // sorotan kata malah TELAT ~0.5s di hampir semua video (dulu ditambal manual dgn geser
 // sinkron +0.50s tiap video). Sempat dinolkan, tapi sapuan masih terasa NGEKOR audio.
 // [watch-karaoke-lag-v3] Dimajukan (lag negatif → evaluasi frac di time+|lag|s) supaya
-// sapuan kata memimpin/pas audio secara global untuk semua video & bahasa. -0.5s masih
-// terasa ngekor (getCurrentTime YouTube sendiri sedikit telat dari audio nyata), jadi
-// dinaikkan ke -0.8s. Hanya menggeser sapuan KATA di dalam baris; pemilihan baris aktif
-// tetap pakai syncedTime.
-const KARAOKE_LAG_SEC = -0.8;
+// sapuan kata memimpin/pas audio secara global untuk semua video & bahasa. Hanya
+// menggeser sapuan KATA di dalam baris; pemilihan baris aktif tetap pakai syncedTime.
+// [watch-karaoke-speech-rate-v1] Dulu -0.8s: angka sebesar itu sebenarnya menambal
+// SEBAB LAIN — sapuan diregang sepenuh window caption, jadi lajunya di bawah tempo
+// bicara dan ketinggalannya menumpuk makin ke ujung kalimat. Offset tetap tak pernah
+// bisa menutup selisih yang menumpuk (awal baris kelewat maju, ujung baris tetap
+// ngekor). Sekarang lajunya sendiri sudah dipacu kecepatan bicara di karaokeFrac, jadi
+// offset ini balik ke fungsi aslinya: menambal telatnya getCurrentTime YouTube dari
+// audio nyata (~0.3s) saja.
+const KARAOKE_LAG_SEC = -0.35;
 
 function karaokeTokens(
   cue: LearnCue,
@@ -4510,7 +4515,7 @@ function karaokeTokens(
   // [watch-karaoke-anchor-v2] Cue gabungan beberapa window caption bawa anchor batas
   // window ASLI → karaokeFrac menyandarkan sapuan ke timing sebenarnya video (seirama
   // audio & caption bawaan), bukan rata linear yang melenceng saat tempo tak rata (lagu).
-  const frac = karaokeFrac(cue, time - KARAOKE_LAG_SEC);
+  const frac = karaokeFrac(cue, time - KARAOKE_LAG_SEC, langCode);
   const played = frac * total; // jumlah karakter yang "sudah" terucap
   let acc = 0;
   const out = toks.map((t) => {
@@ -4929,7 +4934,7 @@ function KaraokeTranslit({
   // [watch-karaoke-anchor-v2] Ikuti anchor window caption asli (sama dgn karaokeTokens)
   // biar sorotan translit tetap seirama audio pada cue gabungan beberapa window.
   // [watch-karaoke-lag-v1] Lag sama dgn karaokeTokens supaya sorotan translit sejajar.
-  const frac = karaokeFrac(cue, time - KARAOKE_LAG_SEC);
+  const frac = karaokeFrac(cue, time - KARAOKE_LAG_SEC, langCode);
   const charToks = useMemo(() => translitStateTokens(translit, frac), [translit, frac]);
   if (!translit) return null;
 
