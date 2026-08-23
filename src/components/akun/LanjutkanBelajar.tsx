@@ -18,8 +18,7 @@ import { supabase } from "@/lib/supabase-client";
 import { getWatchHistory, youtubeThumb, youtubeThumbMax } from "@/lib/immersion";
 import { getLangPhoto } from "@/lib/lang-visuals";
 import { useT } from "@/lib/uiLang";
-import { loadLastReadMeta, type LastReadMeta } from "@/data/lingbook/remote";
-import { GraduationCap, BookMarked, Clapperboard, BookText, ArrowRight, type LucideIcon } from "lucide-react";
+import { GraduationCap, BookMarked, Clapperboard, ArrowRight, type LucideIcon } from "lucide-react";
 
 export interface MandiriResume {
   native: string; label: string; photo: string | null; slug: string;
@@ -49,8 +48,6 @@ type Item = {
   fitTop?: boolean;
   /** Ada isinya = kartu ini bisa memutar pratinjau bisu saat kursor menetap. */
   videoId?: string;
-  /** Kover Lingbook: gradien warna buku + glyph — sama persis dengan rak Lingbook. */
-  cover?: { accent: string; glyph: string };
   pct: number | null;
   run: () => void;
 };
@@ -106,70 +103,22 @@ function youtubeFrame(videoId: string, n: number): string {
 export default function LanjutkanBelajar({
   mandiri,
   produkDigital,
-  lingbookOk,
   onOpenSesi,
-  onOpenPustaka,
+  onOpenEbook,
 }: {
   mandiri: MandiriResume | null;
   produkDigital: ProdukDigital[];
-  lingbookOk: boolean;
   onOpenSesi: (lessonId: string) => void;
-  onOpenPustaka: () => void;
+  /** Buka reader e-book itu langsung (Perpustakaan yang menampungnya). */
+  onOpenEbook: (purchaseId: string) => void;
 }) {
   const t = useT();
   const router = useRouter();
 
-  /* Bab Lingbook terakhir disentuh. Tabel `lingbook_progress` boleh belum ada
-     (migrasinya opsional) — gagal apa pun = sumber ini diam saja.
-
-     [lanjutkan-lingbook-kartu-v1] Baris progres saja tidak cukup untuk kartunya:
-     yang tersimpan cuma slug. Jadi sesudah baris terakhir ketemu, metadatanya
-     (judul buku, kover, label bab, jumlah langkah) diambil terpisah — itu yang
-     mengubah "hajime no ippo · Bab kafe de" jadi judul & bab seperti tertulis
-     di bukunya, lengkap dengan persentase langkah yang sudah dikerjakan. */
-  const [lingbook, setLingbook] = useState<
-    { book: string; chapter: string; ts: number; pct: number | null; meta: LastReadMeta | null } | null
-  >(null);
-  useEffect(() => {
-    if (!lingbookOk) { setLingbook(null); return; }
-    let alive = true;
-    (async () => {
-      try {
-        const { data: auth } = await supabase.auth.getUser();
-        const uid = auth?.user?.id;
-        if (!uid) return;
-        const { data, error } = await supabase
-          .from("lingbook_progress")
-          .select("book_slug,chapter_slug,steps_done,is_done,updated_at")
-          .eq("user_id", uid)
-          .order("updated_at", { ascending: false })
-          .limit(1);
-        if (!alive || error || !data?.length) return;
-        const row = data[0] as any;
-        const dasar = {
-          book: row.book_slug as string,
-          chapter: row.chapter_slug as string,
-          ts: new Date(row.updated_at).getTime() || 0,
-        };
-        setLingbook({ ...dasar, pct: null, meta: null }); // tampil dulu, metadata menyusul
-        const meta = await loadLastReadMeta(dasar.book, dasar.chapter);
-        if (!alive) return;
-        const langkah = Array.isArray(row.steps_done) ? row.steps_done.length : 0;
-        /* Persentase = langkah unit yang sudah dikerjakan. Bab tanpa stepper
-           (mode baca datar) tak punya penyebut → bilah progresnya disembunyikan,
-           bukan ditebak. Bab yang sudah tuntas selalu 100%. */
-        const pct = row.is_done
-          ? 100
-          : meta && meta.stepCount > 0
-            ? Math.min(100, Math.round((langkah / meta.stepCount) * 100))
-            : null;
-        setLingbook({ ...dasar, pct, meta });
-      } catch {
-        /* tabel belum ada / RLS — abaikan */
-      }
-    })();
-    return () => { alive = false; };
-  }, [lingbookOk]);
+  /* [lingbook-rak-buku-tunggal-v1] Sumber "Lingbook interaktif" (buku contoh CMS
+     Hajime no Ippo / Paso a Paso) DICABUT dari blok ini. Yang disebut Lingbook
+     sekarang cuma satu: e-book berkas yang benar-benar dibeli siswa — kartunya
+     dirakit dari `produkDigital` di bawah. */
 
   /* Riwayat tonton hidup di localStorage (lihat lib/immersion). Dibaca sesudah
      mount supaya render server & klien tidak berbeda. */
@@ -249,7 +198,11 @@ export default function LanjutkanBelajar({
            Sumber datanya tetap produk digital bertipe `ebook`. */
         kind: "Lingbook",
         title: d.title,
-        sub: b.total ? `${t("Halaman")} ${b.page}/${b.total}` : `${t("Halaman")} ${b.page}`,
+        /* Sudah sampai mana — halaman DAN persennya. Angka halaman saja tak
+           menjawab "tinggal berapa lagi" kalau modulnya 130 halaman. */
+        sub: b.total
+          ? `${t("Halaman")} ${b.page} ${t("dari")} ${b.total} \u00B7 ${Math.min(100, Math.round((b.page / b.total) * 100))}%`
+          : `${t("Halaman")} ${b.page}`,
         icon: BookMarked,
         /* [lingbook-sampul-kartu-v1] Sampul bukunya sendiri, bukan ikon buku generik:
            siswa yang punya beberapa Lingbook perlu tahu YANG MANA yang tadi dibaca —
@@ -260,37 +213,11 @@ export default function LanjutkanBelajar({
         photo: sampulEbook(d.purchaseId) || d.cover || (d.language ? getLangPhoto(d.language) : null),
         fitTop: true,
         pct: b.total ? Math.min(100, Math.round((b.page / b.total) * 100)) : null,
-        // E-Book dibaca di dalam Perpustakaan (EbookReader), bukan lewat tautan luar.
-        run: onOpenPustaka,
+        /* [lanjutkan-ebook-buka-langsung-v1] Langsung ke readernya, bukan ke
+           daftar Perpustakaan: kartunya menjanjikan SATU modul yang tadi dibaca. */
+        run: () => onOpenEbook(d.purchaseId),
       });
     });
-
-    if (lingbook) {
-      const babel = lingbook.meta?.chapterLabel || lingbook.chapter.replace(/-/g, " ");
-      out.push({
-        key: "lingbook",
-        ts: lingbook.ts,
-        /* [lanjutkan-lingbook-kartu-v1] Ditulis "Lingbook" — itu nama yang dilihat
-           siswa di sidebar & rak. Label "Interaktif" cuma nama tab di dalam
-           Perpustakaan, dan sebagai kepala kartu di beranda dia tak menjelaskan
-           barangnya buku. */
-        kind: "Lingbook",
-        title: lingbook.meta?.bookTitle || lingbook.book.replace(/-/g, " "),
-        /* Bab seperti tertulis di bukunya (label sudah memuat kata "Bab"), plus
-           persen langkah yang sudah dikerjakan — angka itu yang dicari siswa
-           sebelum memutuskan melanjutkan atau tidak. */
-        sub:
-          (/^bab/i.test(babel) ? babel : `${t("Bab")} ${babel}`) +
-          (lingbook.pct != null ? ` \u00B7 ${lingbook.pct}%` : ""),
-        icon: BookText,
-        photo: null,
-        cover: lingbook.meta
-          ? { accent: lingbook.meta.accent, glyph: lingbook.meta.glyph }
-          : undefined,
-        pct: lingbook.pct,
-        run: () => router.push(`/akun/lingbook/${lingbook.book}/${lingbook.chapter}`),
-      });
-    }
 
     if (watch) {
       out.push({
@@ -319,7 +246,7 @@ export default function LanjutkanBelajar({
     }
 
     return out.sort((a, b) => b.ts - a.ts).slice(0, 3);
-  }, [mandiri, produkDigital, lingbook, watch, onOpenSesi, onOpenPustaka, router, t]);
+  }, [mandiri, produkDigital, watch, onOpenSesi, onOpenEbook, router, t]);
 
   if (items.length === 0) return null;
 
@@ -351,18 +278,6 @@ export default function LanjutkanBelajar({
                   it.wide ? "h-14 w-[6.25rem]" : "h-14 w-14"
                 }`}
               >
-                {/* [lanjutkan-lingbook-kartu-v1] Kover Lingbook digambar, bukan difoto:
-                    bukunya memang tak punya berkas sampul — di rak pun ia gradien
-                    warna buku + glyph. Kartu beranda meniru persis rak itu supaya
-                    siswa mengenali buku yang sama. */}
-                {it.cover ? (
-                  <span
-                    className="absolute inset-0 z-10 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 motion-reduce:transform-none"
-                    style={{ background: `linear-gradient(135deg, ${it.cover.accent}, ${it.cover.accent}CC)` }}
-                  >
-                    <span className="select-none text-2xl font-black text-white/90">{it.cover.glyph}</span>
-                  </span>
-                ) : null}
                 {it.photo ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img

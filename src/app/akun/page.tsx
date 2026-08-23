@@ -39,7 +39,7 @@ import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
 import LanjutkanBelajar from '@/components/akun/LanjutkanBelajar';
 // [shell-mobile-drawer-v1] TopBarMinimal & MobileBottomNav sekarang dirender StudentShell.
 import StudentShell from '@/components/akun/StudentShell';
-import { canAccessMateri as canAccessMateriGate, canAccessLingbook } from '@/lib/materiGate';
+import { canAccessMateri as canAccessMateriGate } from '@/lib/materiGate';
 // [lms-content-readiness-v1] sesi Belajar Mandiri yang materinya belum ditulis jangan ikut dihitung
 import { fetchLessonStats, keepReady } from '@/lib/lmsContent';
 import { externalLinkFor, isPlaceholderLink } from "@/lib/digitalAccess"; // [elearning-kartu-langsung-youtube-v1]
@@ -2597,6 +2597,9 @@ export default function AkunPage() {
   const [streak, setStreak] = useState(() => akunSnapshot?.streak ?? 0);
   const [dataLoading, setDataLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"pustaka"|"simulasi"|"grup">("beranda"); // [linguo-patch:akun-pustaka-tab-v1] [simulasi-inshell-v1]
+  /* [lanjutkan-ebook-buka-langsung-v1] Modul yang readernya harus dibuka begitu
+     tab Perpustakaan tampil — dititipkan kartu "Lanjutkan Belajar" di beranda. */
+  const [bukaEbook, setBukaEbook] = useState<string | null>(null);
   // [perf:akun-snapshot-mount-v1] simpan keadaan terakhir ke snapshot modul. Mode
   // pratinjau dilewati: datanya punya cache sendiri per siswa & bukan milik yang login.
   useEffect(() => {
@@ -3074,7 +3077,6 @@ export default function AkunPage() {
   /* [lingbook-lebur-pustaka-v1] Lingbook masih development — gerbangnya email
      allowlist yang sama dengan tab "Interaktif" di Perpustakaan. Dipakai blok
      "Lanjutkan Belajar" biar tak menawarkan bab ke siswa yang tak bisa membukanya. */
-  const bolehLingbook = useMemo(() => canAccessLingbook(user?.email), [user?.email]);
 
   // ── [elearning-kartu-langsung-youtube-v1] ────────────────────────────────
   // Kelas E-Learning itu rekaman, bukan kelas live: tak ada pengajar, tak ada
@@ -4362,13 +4364,14 @@ export default function AkunPage() {
                       <LanjutkanBelajar
                         mandiri={mandiri}
                         produkDigital={produkDigital}
-                        lingbookOk={bolehLingbook}
                         onOpenSesi={(id) => {
                           setLmsSesi(id);
                           setMateriView("mandiri");
                           if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${id}`);
                         }}
-                        onOpenPustaka={() => setActiveTab("pustaka")}
+                        /* [lanjutkan-ebook-buka-langsung-v1] Pindah ke Perpustakaan SAMBIL
+                           menitipkan modul mana yang readernya harus terbuka. */
+                        onOpenEbook={(purchaseId) => { setBukaEbook(purchaseId); setActiveTab("pustaka"); }}
                       />
 
                       {/* [beranda-layout-v3] Baris pertama beranda: "Kelas Kamu" (kiri)
@@ -5372,7 +5375,13 @@ export default function AkunPage() {
           {tabShown("pustaka") && (
             <motion.div key="pustaka" initial={false} animate={{ opacity: 1 }} className="w-full" style={tabHidden("pustaka")}>
               {(user?.id || previewId) && (
-                <LibraryView userId={user?.id ?? ""} supabase={supabase} previewStudentId={previewId} />
+                <LibraryView
+                  userId={user?.id ?? ""}
+                  supabase={supabase}
+                  previewStudentId={previewId}
+                  autoOpenEbookId={bukaEbook}
+                  onAutoOpened={() => setBukaEbook(null)}
+                />
               )}
             </motion.div>
           )}

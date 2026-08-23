@@ -44,10 +44,8 @@ import {
   sinkronkanKeranjang, type ItemKeranjang,
 } from "@/lib/keranjangPustaka";
 /* [lingbook-lebur-pustaka-v1] Lingbook tidak lagi jadi menu sendiri di sidebar —
-   dia tab di sini. Alasannya: siswa tidak berpikir "ini e-book atau lingbook",
+   dia rak di sini. Alasannya: siswa tidak berpikir "ini e-book atau lingbook",
    dia berpikir "di mana bahan bacaanku". Satu rumah, tiga rak. */
-import BookLibrary from "@/components/lingbook/BookLibrary";
-import { canAccessLingbook } from "@/lib/materiGate";
 
 /* ---------------- types ---------------- */
 type ProductType = "elearning" | "ebook";
@@ -472,8 +470,11 @@ let libPreviewCache: { student: string; purchases: Purchase[] } | null = null;
 // dicocokkan dan policy digital_purchases (role authenticated) memblokir semua
 // baris → dulu halamannya memantul ke /akun. Di mode ini isinya dari
 // /api/preview-library (service role, dikunci cookie pratinjau) & read-only.
-export default function LibraryView({ userId, supabase, previewStudentId = null }: {
+export default function LibraryView({ userId, supabase, previewStudentId = null, autoOpenEbookId = null, onAutoOpened }: {
   userId: string; supabase: SupabaseClient; previewStudentId?: string | null;
+  /** [lanjutkan-ebook-buka-langsung-v1] purchaseId yang readernya harus langsung dibuka. */
+  autoOpenEbookId?: string | null;
+  onAutoOpened?: () => void;
 }) {
   const t = useT(); // [ui-lang-switcher-v1]
   const preview = !!previewStudentId;
@@ -491,20 +492,11 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
   const [loading, setLoading] = useState(preview ? !pvCached : !cached);
   const [busy, setBusy] = useState<string | null>(null);
 
-  const [tab, setTab] = useState<"all" | "elearning" | "ebook" | "lingbook">("all");
-  /* [lingbook-lebur-pustaka-v1] Lingbook masih development → tabnya cuma tampil
-     buat email allowlist (lib/materiGate), gerbang yang persis sama dengan yang
-     dulu menjaga item sidebar-nya. Default SEMBUNYI sampai terbukti boleh. */
-  const [bolehLingbook, setBolehLingbook] = useState(false);
-  useEffect(() => {
-    if (preview) return; // pratinjau staf: tab development tak perlu ikut
-    let alive = true;
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (alive) setBolehLingbook(canAccessLingbook(session?.user?.email));
-    });
-    return () => { alive = false; };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [preview]);
+  /* [lingbook-rak-buku-tunggal-v1] Rak "Interaktif" (buku contoh CMS: Hajime no
+     Ippo, Paso a Paso) DICABUT. Nama "Lingbook" sekarang menunjuk satu barang
+     saja — e-book berkas yang benar-benar dibeli siswa. Dua rak yang sama-sama
+     mengaku Lingbook cuma bikin siswa mengira modulnya hilang. */
+  const [tab, setTab] = useState<"all" | "elearning" | "ebook">("all");
   // [pustaka-filter-edisi-v1] "all" = kedua edisi (plus produk tanpa edisi)
   const [edisi, setEdisi] = useState<"all" | Edisi>("all");
   const [view, setView] = useState<"grid" | "list">("grid");
@@ -754,6 +746,23 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
     }
   }
 
+  /* [lanjutkan-ebook-buka-langsung-v1] Kartu "Lanjutkan Belajar" di beranda
+     menunjuk SATU modul; mendaratkan siswa di daftar Perpustakaan lalu menyuruh
+     dia mencarinya lagi itu langkah mundur. Beranda mengoper purchaseId-nya dan
+     readernya dibuka sendiri begitu daftar belian selesai dimuat. Sekali saja —
+     menutup reader tidak boleh membukanya kembali. */
+  const autoDibuka = useRef<string | null>(null);
+  useEffect(() => {
+    if (!autoOpenEbookId || loading) return;
+    if (autoDibuka.current === autoOpenEbookId) return;
+    const target = purchases.find((x) => x.id === autoOpenEbookId);
+    if (!target) return;
+    autoDibuka.current = autoOpenEbookId;
+    onAutoOpened?.();
+    void openProduct(target);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoOpenEbookId, purchases, loading]);
+
   /* [ebook-buka-instan-v1] Byte modul mulai diunduh begitu kursor/jari
      menyentuh kartunya. Waktu tombol Baca benar-benar ditekan, isinya biasanya
      sudah utuh di memori — readernya terbuka tanpa layar "Menyiapkan modul…".
@@ -903,7 +912,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
       </header>
 
       {/* ===== CONTINUE HERO ===== */}
-      {tab !== "lingbook" && hero && (
+      {hero && (
         <section className="overflow-hidden rounded-3xl border border-[#12A37E]/15 bg-[#12A37E]/[0.04] p-4 sm:p-5">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
             {/* cover */}
@@ -965,10 +974,6 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
               ["all", "Semua"],
               ["elearning", "E-Learning"],
               ["ebook", "Lingbook"],
-              /* [lingbook-lebur-pustaka-v1] rak ketiga. Sengaja TANPA angka:
-                 daftar bukunya datang dari CMS dan dimuat oleh BookLibrary
-                 sendiri — badge di sini cuma bisa menjanjikan jumlah yang salah. */
-              ...(bolehLingbook ? ([["lingbook", "Interaktif"]] as const) : []),
             ] as readonly (readonly [typeof tab, string])[]
           ).map(([k, label]) => (
             <button
@@ -979,20 +984,15 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
               }`}
             >
               {t(label)}
-              {k !== "lingbook" && (
-                <span className={`rounded-full px-1.5 py-0.5 text-[11px] ${tab === k ? "bg-[#12A37E]/10 text-[#0C8163]" : "bg-slate-200 text-slate-500"}`}>
-                  {counts[k as "all" | "elearning" | "ebook"]}
-                </span>
-              )}
+              <span className={`rounded-full px-1.5 py-0.5 text-[11px] ${tab === k ? "bg-[#12A37E]/10 text-[#0C8163]" : "bg-slate-200 text-slate-500"}`}>
+                {counts[k]}
+              </span>
             </button>
           ))}
         </div>
 
         {/* [pustaka-filter-edisi-v1] edisi bahasa pengantar — tiap modul terbit
-            dalam dua versi, tanpa saringan ini daftarnya terbaca dobel semua.
-            [lingbook-lebur-pustaka-v1] Lingbook tak punya edisi → chip disembunyikan
-            di rak itu, bukan dibiarkan jadi tombol yang tak mengubah apa pun. */}
-        {tab !== "lingbook" && (
+            dalam dua versi, tanpa saringan ini daftarnya terbaca dobel semua. */}
         <div className="inline-flex items-center gap-1 rounded-2xl bg-slate-100 p-1">
           {([["all", "Semua edisi"], ["id", "Indonesia"], ["en", "English"]] as const).map(([k, label]) => (
             <button
@@ -1006,13 +1006,8 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
             </button>
           ))}
         </div>
-        )}
         </div>
 
-        {/* [lingbook-lebur-pustaka-v1] Kotak cari & pilihan grid/list menyaring
-            daftar PRODUK; di rak Interaktif daftarnya milik BookLibrary, jadi
-            keduanya ikut sembunyi ketimbang jadi kontrol yang diam. */}
-        {tab !== "lingbook" && (
         <div className="flex items-center gap-2">
           <div className="relative flex-1 sm:w-[280px] sm:flex-none">
             <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
@@ -1046,15 +1041,10 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
             </button>
           </div>
         </div>
-        )}
       </div>
 
       {/* ===== EMPTY ===== */}
-      {/* [lingbook-lebur-pustaka-v1] rak "Interaktif" punya sumber datanya sendiri
-          (CMS Lingbook), jadi seluruh cabang daftar-produk di bawah dilewati. */}
-      {tab === "lingbook" ? (
-        <BookLibrary hideHeader />
-      ) : purchases.length === 0 && terkunci.length === 0 ? (
+      {purchases.length === 0 && terkunci.length === 0 ? (
         <EmptyState />
       ) : shown.length === 0 ? (
         /* [pustaka-katalog-terkunci-v1] tanpa produk yang cocok, seksi terkunci
@@ -1105,7 +1095,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
       )}
 
       {/* ===== [pustaka-katalog-terkunci-v1] KATALOG TERGEMBOK ===== */}
-      {tab !== "lingbook" && terkunci.length > 0 && (
+      {terkunci.length > 0 && (
         <section className="space-y-4 pt-2">
           <div className="flex items-end justify-between gap-3">
             <div className="min-w-0">
