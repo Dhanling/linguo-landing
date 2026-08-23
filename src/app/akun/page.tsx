@@ -116,7 +116,6 @@ const SesiTimeline = dynamic(() => import('@/components/akun/SesiTimeline'), { s
 const JadwalCalendar = dynamic(() => import('@/components/akun/JadwalCalendar'), { ssr: false, loading: TabLoading }); // linguo-patch:akun-jadwal-tab-v1
 // jadwal-gcal-v1: daftar "Sesi Mendatang" — pindahan dari kolom kiri kalender ke Beranda.
 const SesiMendatangCard = dynamic(() => import('@/components/akun/SesiMendatangCard'), { ssr: false });
-const LmsKatalog = dynamic(() => import('@/components/lms/LmsKatalog'), { ssr: false, loading: TabLoading });
 const LessonPlayer = dynamic(() => import('@/components/akun/LessonPlayer'), { ssr: false, loading: TabLoading }); // [linguo-patch:akun-inplace-lessonplayer-v1] immersive player tunggal
 // [beranda-insights-v1] kartu ringkasan belajar (skill+delta, PR, materi, beban minggu, peringkat).
 // ssr:false — semua isinya butuh sesi Supabase klien, tak ada gunanya dirender di server.
@@ -2620,8 +2619,6 @@ export default function AkunPage() {
 
   // [profil-sidebar-collapse-v1] sidebar profil default collapsed; dibuka via avatar di topbar
   const [profileOpen, setProfileOpen] = useState(false);
-  // [beranda-kelas-tabs-v1] tab "Kelas Live" vs "Belajar Mandiri" di beranda biar rapi
-  const [berandaTab, setBerandaTab] = useState<"live" | "mandiri">("live");
   // [beranda-riwayat-kelas-v1] Kelas Live cuma tampilin yang aktif; yang selesai pindah ke view "Riwayat"
   const [liveView, setLiveView] = useState<"aktif" | "riwayat">("aktif");
   const [lmsSesi, setLmsSesi] = useState<string | null>(null);
@@ -2629,7 +2626,6 @@ export default function AkunPage() {
   const [materiSel, setMateriSel] = useState<string | null>(null);
   const [materiTab, setMateriTab] = useState<"sesi" | "materi">("sesi");
   const [materiFilter, setMateriFilter] = useState<"all" | "run" | "done">("all");
-  const [materiView, setMateriView] = useState<"live" | "mandiri">("live");
   const [materiSearch, setMateriSearch] = useState("");
   // [beranda-ringkas-v2] state seksi "Jelajahi Bahasa" (jelajahiQ, jelajahiAll,
   // materiLang) ikut dibuang bersama blok katalognya.
@@ -2645,8 +2641,8 @@ export default function AkunPage() {
     const sesi = sp.get("sesi");
     const view = sp.get("view");
     let resolved: "beranda" | "jadwal" | "materi" | "akun" | "sertifikat" | "pustaka" | "simulasi" | "grup" | null = null;
-    if (sesi) { setLmsSesi(sesi); setMateriView("mandiri"); resolved = "materi"; } // [linguo-patch:akun-inplace-lessonplayer-v1] deep-link sesi → balik ke sub-tab mandiri pas player ditutup
-    if (view === "live" || view === "mandiri") { setMateriView(view); resolved = "materi"; }
+    if (sesi) { setLmsSesi(sesi); resolved = "materi"; } // [linguo-patch:akun-inplace-lessonplayer-v1] deep-link sesi → overlay player
+    if (view === "live" || view === "mandiri") { resolved = "materi"; } // [beranda-tanpa-tab-mandiri-v1] view lama tetap mendarat di Kelas & Materi
     if (view === "jelajahi") { resolved = "beranda"; } // [linguo-patch:beranda-jelajahi-v1] tab lama dipindah ke Beranda
     if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat" || menu === "pustaka" || menu === "simulasi" || menu === "grup")) resolved = menu;
     // [akun-open-beranda-v1] Buka dashboard = SELALU mendarat di Beranda. Dulu tab
@@ -2711,7 +2707,6 @@ export default function AkunPage() {
       import("@/components/akun/LibraryView").then((m) => {
         if (!previewMode && warmUid) m.prewarmLibrary?.(supabase, warmUid);
       });
-      import("@/components/lms/LmsKatalog");
     };
     const ric = (window as any).requestIdleCallback as undefined | ((cb: () => void, o?: any) => number);
     if (ric) { const id = ric(warm, { timeout: 4000 }); return () => (window as any).cancelIdleCallback?.(id); }
@@ -3513,27 +3508,6 @@ export default function AkunPage() {
     (r.payment_status === "Lunas" || r.payment_status === "Cicilan")
   ) || [], [student]);
 
-  /* [produk-digital-bukan-kelas-v1] Siswa yang cuma punya e-book/e-learning tak lagi
-     punya isi di tab "Kelas Live" — kalau dibiarkan, layar pertamanya jadi kotak
-     kosong padahal barangnya ada di tab sebelah. Sekali saja, tab dibuka di
-     "Belajar Mandiri". Ref-guard supaya klik siswa ke "Kelas Live" tidak dipentalkan
-     balik tiap kali data ter-refresh. */
-  const berandaTabDipilihOtomatis = useRef(false);
-  useEffect(() => {
-    if (berandaTabDipilihOtomatis.current) return;
-    /* Cocokkan PERSIS dengan saringan `liveRegsAll` di bawah: bahasa placeholder
-       ("All Languages"/"TBD") juga tak pernah tampil di tab Kelas Live, jadi
-       kalau cuma itu yang dipunya siswa, tabnya tetap kosong. */
-    const punyaKelasLive = activeRegs.some((r: any) => {
-      const lang = (r.language || "").trim().toLowerCase();
-      const langSah = lang !== "" && lang !== "all languages" && lang !== "tbd";
-      return langSah && !isProdukDigital(r.product);
-    });
-    if (punyaKelasLive) return;
-    if (produkDigital.length === 0 && !mandiri) return;
-    berandaTabDipilihOtomatis.current = true;
-    setBerandaTab("mandiri");
-  }, [activeRegs, produkDigital, mandiri]);
 
   // [materi-bahasa-siswa-v1] Bahasa yang BENAR-BENAR diambil siswa (slug kanonik) —
   // dipakai menyaring isi menu "Kelas & Materi" biar tak ada bahasa lain yang nongol.
@@ -4374,41 +4348,31 @@ export default function AkunPage() {
                           melompong, sementara daftar sesi terdorong jauh ke bawah lipatan. */}
                       <div className={`grid gap-5 xl:items-start ${sesiMendatangCards.length ? "xl:grid-cols-[minmax(0,1fr)_360px]" : ""}`}>
                         <div className="min-w-0">
-                        {/* [beranda-kelas-tabs-v1] Kelas Kamu jadi tab: Kelas Live vs Belajar Mandiri biar rapi */}
+                        {/* [beranda-tanpa-tab-mandiri-v1] Tab "Kelas Live" vs "Belajar Mandiri"
+                            dicabut — beranda cuma menampilkan kelas live. Materi mandiri
+                            (e-learning/LMS) tak lagi punya pintu masuk di dashboard siswa. */}
                         <div>
                           <div className="flex flex-wrap items-center justify-between gap-3">
-                            <div className="inline-flex items-center gap-1 rounded-2xl bg-white p-1">
-                              {([["live", "Kelas Live", Video], ["mandiri", "Belajar Mandiri", GraduationCap]] as const).map(([k, label, Icon]) => (
-                                <button
-                                  key={k}
-                                  onClick={() => setBerandaTab(k)}
-                                  className={`inline-flex items-center gap-2 rounded-xl px-3.5 py-1.5 text-[13.5px] font-bold transition ${berandaTab === k ? "bg-[#16796E] text-white" : "text-gray-500 hover:text-[#16796E]"}`}
-                                >
-                                  <Icon className="h-4 w-4" strokeWidth={2.4} /> {tt(label)}
-                                </button>
-                              ))}
+                            <h2 className="text-[18px] font-extrabold text-[#12172B]">{tt("Kelas Kamu")}</h2>
+                            <div className="flex items-center gap-3">
+                              {/* [beranda-riwayat-kelas-v1] toggle Aktif / Riwayat — hanya muncul kalau ada kelas selesai */}
+                              {riwayatRegs.length > 0 && (
+                                <div className="inline-flex items-center gap-1 rounded-xl bg-white p-1">
+                                  {([["aktif", tt("Aktif")], ["riwayat", `${tt("Riwayat")} (${riwayatRegs.length})`]] as const).map(([k, label]) => (
+                                    <button
+                                      key={k}
+                                      onClick={() => setLiveView(k)}
+                                      className={`rounded-lg px-3 py-1.5 text-[12px] font-bold transition ${liveView === k ? "bg-[#16796E] text-white" : "text-gray-500 hover:text-[#16796E]"}`}
+                                    >
+                                      {label}
+                                    </button>
+                                  ))}
+                                </div>
+                              )}
+                              {liveView === "aktif" && liveRegs.length > 0 && (
+                                <button onClick={openEnrollWizard} className="text-[13px] font-bold text-[#16796E] hover:text-[#0F5A52]">+ {tt("Tambah")}</button>
+                              )}
                             </div>
-                            {berandaTab === "live" && (
-                              <div className="flex items-center gap-3">
-                                {/* [beranda-riwayat-kelas-v1] toggle Aktif / Riwayat — hanya muncul kalau ada kelas selesai */}
-                                {riwayatRegs.length > 0 && (
-                                  <div className="inline-flex items-center gap-1 rounded-xl bg-white p-1">
-                                    {([["aktif", tt("Aktif")], ["riwayat", `${tt("Riwayat")} (${riwayatRegs.length})`]] as const).map(([k, label]) => (
-                                      <button
-                                        key={k}
-                                        onClick={() => setLiveView(k)}
-                                        className={`rounded-lg px-3 py-1.5 text-[12px] font-bold transition ${liveView === k ? "bg-[#16796E] text-white" : "text-gray-500 hover:text-[#16796E]"}`}
-                                      >
-                                        {label}
-                                      </button>
-                                    ))}
-                                  </div>
-                                )}
-                                {liveView === "aktif" && liveRegs.length > 0 && (
-                                  <button onClick={openEnrollWizard} className="text-[13px] font-bold text-[#16796E] hover:text-[#0F5A52]">+ {tt("Tambah")}</button>
-                                )}
-                              </div>
-                            )}
                           </div>
 
                           {/* ── Tab: Kelas Live — dikelompokkan per JENIS KELAS ──
@@ -4419,8 +4383,7 @@ export default function AkunPage() {
                               sendiri (judul + jumlah + satu baris penjelasan). Produk yang
                               belum terdaftar di LIVE_SECTION_ORDER tetap tampil — masuk
                               seksi bernama produknya sendiri, di paling bawah. */}
-                          {berandaTab === "live" && (
-                          (liveView === "riwayat" ? riwayatRegs.length > 0 : liveRegs.length > 0) ? (
+                          {(liveView === "riwayat" ? riwayatRegs.length > 0 : liveRegs.length > 0) ? (
                             (() => {
                               const list = (liveView === "riwayat" ? riwayatRegs : liveRegs) as any[];
                               const groups = new Map<string, any[]>();
@@ -4615,105 +4578,6 @@ export default function AkunPage() {
                                   dgn tujuan sama saling rebutan di satu layar. */}
                               <button onClick={openEnrollWizard} className={`inline-flex h-11 items-center gap-2 rounded-2xl px-6 text-sm font-bold transition-colors ${belumPunyaApaPun ? "border border-slate-200 bg-white text-[#12172B] hover:border-[#16796E] hover:text-[#16796E]" : "bg-[#16796E] text-white hover:bg-[#0F5A52]"}`}><Plus className="h-4 w-4" strokeWidth={2.5} /> {tt("Daftar Kelas")}</button>
                             </div>
-                          )
-                          )}
-
-                          {/* ── Tab: Belajar Mandiri (e-learning / LMS) ── [beranda-kelas-tabs-v1] */}
-                          {berandaTab === "mandiri" && (
-                          /* [produk-digital-bukan-kelas-v1] Tab ini sekarang memuat DUA hal:
-                             kartu lanjut-sesi LMS (seperti dulu) DAN produk digital yang
-                             sudah dibeli — e-book & e-learning yang tadinya nyasar ke tab
-                             "Kelas Live". Jadi tak ada yang hilang waktu mereka disaring
-                             dari sana. */
-                          (mandiri || produkDigital.length > 0) ? (
-                            <div className="mt-3 grid grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-3">
-                              {/* [linguo-patch:beranda-mandiri-resume-v2] kartu self-study — klik buka sesi via OVERLAY (instan) */}
-                              {mandiri && (
-                              <button
-                                key="mandiri-resume"
-                                onClick={() => {
-                                  setLmsSesi(mandiri.resumeId);
-                                  setMateriView("mandiri");
-                                  if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${mandiri.resumeId}`);
-                                }}
-                                className="group rounded-3xl bg-white p-3 text-left ring-1 ring-slate-200 transition-transform hover:-translate-y-1"
-                              >
-                                <div className="relative isolate flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-[#16796E] transform-gpu [backface-visibility:hidden]">
-                                  {mandiri.photo ? (
-                                    <>
-                                      <img src={mandiri.photo} alt={mandiri.label} className="h-full w-full object-cover transform-gpu scale-[1.02] transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                                      <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
-                                    </>
-                                  ) : (
-                                    <span className="text-[56px] font-extrabold tracking-tight text-white/95 transform-gpu scale-[1.02] transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]">{mandiri.native.slice(0, 2)}</span>
-                                  )}
-                                  <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-[#16796E]">
-                                    <GraduationCap className="h-3 w-3" strokeWidth={2.5} /> {tt("Belajar Mandiri")}
-                                  </span>
-                                </div>
-                                <div className="px-2 pb-1.5 pt-3">
-                                  <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{mandiri.native} <span className="font-bold text-gray-500">· {mandiri.label}</span></h3>
-                                  <p className="mt-0.5 truncate text-[13px] font-medium text-gray-500">{mandiri.fresh ? tt("Lanjut") : tt("Ulangi")}: {mandiri.resumeTitle}</p>
-                                  <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#E8EAEE]">
-                                    <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${mandiri.pct}%` }} />
-                                  </div>
-                                  <div className="mt-3 flex items-center justify-between text-[12px] font-semibold">
-                                    <span className="text-gray-500">{tt("Selesai")}: <span className="text-[#12172B]">{mandiri.pct}%</span></span>
-                                    <span className="text-gray-500">{tt("Sesi")}: <span className="text-[#12172B]">{mandiri.done}/{mandiri.total}</span></span>
-                                  </div>
-                                </div>
-                              </button>
-                              )}
-
-                              {/* [produk-digital-bukan-kelas-v1] Kartu produk digital.
-                                  E-Learning yang playlistnya sudah diisi admin dibuka
-                                  langsung; sisanya (termasuk SEMUA e-book, yang dibaca
-                                  lewat EbookReader) mendarat di Perpustakaan. */}
-                              {produkDigital.map((d) => {
-                                const foto = d.language ? getLangPhoto(d.language) : null;
-                                const isBook = d.type === "ebook";
-                                const buka = () => {
-                                  if (d.link) { window.open(d.link, "_blank", "noopener,noreferrer"); return; }
-                                  setActiveTab("pustaka");
-                                };
-                                return (
-                                  <button
-                                    key={`digital-${d.id}`}
-                                    onClick={buka}
-                                    className="group rounded-3xl bg-white p-3 text-left ring-1 ring-slate-200 transition-transform hover:-translate-y-1"
-                                  >
-                                    <div className="relative isolate flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-[#0E1526] transform-gpu [backface-visibility:hidden]">
-                                      {foto ? (
-                                        <>
-                                          <img src={foto} alt={d.title} className="h-full w-full object-cover transform-gpu scale-[1.02] transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                                        </>
-                                      ) : (
-                                        <span className="text-[52px] font-extrabold tracking-tight text-white/95">{(d.title || "?").slice(0, 2)}</span>
-                                      )}
-                                      <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-[#16796E]">
-                                        {isBook ? <BookMarked className="h-3 w-3" strokeWidth={2.5} /> : <GraduationCap className="h-3 w-3" strokeWidth={2.5} />}
-                                        {isBook ? "Lingbook" : "E-Learning"}
-                                      </span>
-                                    </div>
-                                    <div className="px-2 pb-1.5 pt-3">
-                                      <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{d.title}</h3>
-                                      <p className="mt-0.5 truncate text-[13px] font-medium text-gray-500">
-                                        {d.link ? tt("Buka materi") : tt("Buka di Perpustakaan")}
-                                      </p>
-                                    </div>
-                                  </button>
-                                );
-                              })}
-                            </div>
-                          ) : (
-                            <div className="mt-3 rounded-3xl bg-white p-8 text-center">
-                              <GraduationCap className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
-                              <h3 className="mb-1 font-bold text-[#12172B]">{tt("Belum ada paket belajar mandiri")}</h3>
-                              <p className="mb-4 text-sm text-gray-500">{tt("Belajar sendiri kapan saja lewat paket E-Learning.")}</p>
-                              <button onClick={openEnrollWizard} className="inline-flex h-11 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-sm font-bold text-white transition-colors hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} /> Lihat Paket</button>
-                            </div>
-                          )
                           )}
                         </div>
                         </div>
@@ -5104,11 +4968,6 @@ export default function AkunPage() {
                     <div>
                       <p className="flex items-center gap-1.5 text-[12px] font-bold text-gray-500"><span>{tt("Dashboard")}</span><ChevronRight className="h-3.5 w-3.5" /><span className="text-[#16796E]">{tt("Kelas & Materi")}</span></p>
                       <h1 className="mt-1 text-[24px] font-extrabold leading-tight text-[#12172B]">{tt("Kelas & Materi")}</h1>
-                      <div className="mt-3 inline-flex gap-1 rounded-2xl bg-[#EEF1F4] p-1">
-                        {([["live", "Kelas Live"], ["mandiri", "Belajar Mandiri"]] as const).map(([k, label]) => (
-                          <button key={k} onClick={() => { setMateriView(k); if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&view=${k}`); }} className={`rounded-xl px-3.5 py-1.5 text-[12px] font-bold transition ${materiView === k ? "bg-[#16796E] text-white" : "text-gray-500 hover:text-[#12172B]"}`}>{tt(label)}</button>
-                        ))}
-                      </div>
                     </div>
                     <div className="flex items-center gap-3">
                       {/* [materi-search-live-v1] kotak cari ini dulu nol fungsi: nilainya disimpan
@@ -5119,7 +4978,7 @@ export default function AkunPage() {
                         <input
                           value={materiSearch}
                           onChange={(e) => setMateriSearch(e.target.value)}
-                          placeholder={materiView === "mandiri" ? tt("Cari bahasa…") : tt("Cari kelas, pengajar, atau bahasa…")}
+                          placeholder={tt("Cari kelas, pengajar, atau bahasa…")}
                           className="w-full bg-transparent text-[13px] font-medium outline-none placeholder:text-slate-400"
                         />
                         {materiSearch ? (
@@ -5138,9 +4997,8 @@ export default function AkunPage() {
                 return (
                   <div className="flex flex-col gap-5 p-4 lg:min-h-0 lg:flex-1 lg:gap-0 lg:p-0">
                     {/* [linguo-patch:materi-frame-ref-v1] wrapper isi penuh canvas (no padding di lg) */}
-                    {/* ════ SUB-TAB ════ */}
                     {/* ════ VIEW: KELAS LIVE ════ */}
-                    {materiView === "live" && (liveClasses.length > 0 && selected ? (
+                    {liveClasses.length > 0 && selected ? (
                       <div className="materi-flat overflow-hidden rounded-3xl bg-white lg:grid lg:grid-rows-1 lg:grid-cols-[320px_minmax(0,1fr)] lg:min-h-0 lg:flex-1 lg:rounded-none lg:border-0 lg:shadow-none">
 
                         {/* LEFT list — desktop */}
@@ -5271,36 +5129,20 @@ export default function AkunPage() {
                         </main>
                       </div>
                     ) : (
-                      /* [linguo-patch:materi-empty-subtabs-v1] empty Kelas Live wajib tetep render MateriTopBar — kalau ngga, sub-tab (Belajar Mandiri / Jelajahi Bahasa) ilang & user e-learning ke-trap di layar kosong */
+                      /* [beranda-tanpa-tab-mandiri-v1] empty Kelas Live wajib tetep render MateriTopBar — biar judul & kotak cari ga ikut ilang */
                       <div className="flex flex-col lg:min-h-0 lg:flex-1">
                         {MateriTopBar}
                         <div className="flex flex-1 flex-col items-center justify-center px-4 pb-10 pt-8 lg:pt-0">
                           <div className="materi-flat w-full max-w-md rounded-3xl bg-white p-10 text-center lg:border-0 lg:bg-transparent lg:shadow-none">
                             <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
                             <p className="text-[14px] font-semibold text-gray-600">{tt("Belum ada kelas live aktif")}</p>
-                            {/* [produk-digital-bukan-kelas-v1] e-book ikut disebut — sejak kartunya keluar
+                            {/* [beranda-tanpa-tab-mandiri-v1] e-book ikut disebut — sejak kartunya keluar
                                 dari sini, siswa perlu diberi tahu ke mana perginya. */}
-                            <p className="mt-1 text-[12px] font-medium text-gray-400">{tt("Punya paket e-learning? Buka tab Belajar Mandiri di atas. Lingbook kamu ada di menu Perpustakaan. Atau daftar kelas live di bawah.")}</p>
+                            <p className="mt-1 text-[12px] font-medium text-gray-400">{tt("Lingbook kamu ada di menu Perpustakaan. Atau daftar kelas live di bawah.")}</p>
                             <button onClick={openEnrollWizard} className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl bg-[#16796E] px-5 text-[13px] font-bold text-white transition hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} />{tt("Daftar Kelas")}</button>
                           </div>
                         </div>
                       </div>
-                    ))}
-
-                    {/* ════ VIEW: BELAJAR MANDIRI ════ */}
-                    {/* [linguo-patch:akun-pustaka-tab-v1] Perpustakaan dipindah ke tab top-level "pustaka" → mandiri = kartu LmsKatalog aja (no trailing empty space) */}
-                    {materiView === "mandiri" && (
-                      <LmsKatalog
-                        topBar={MateriTopBar}
-                        query={materiSearch}
-                        /* [materi-bahasa-siswa-v1] daftar bahasa dibatasi ke bahasa yang
-                           diambil siswa (kelas live) + yang sudah dibeli e-learning-nya. */
-                        languages={myLanguageSlugs}
-                        onOpen={(id) => {
-                          setLmsSesi(id);
-                          if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${id}`);
-                        }}
-                      />
                     )}
 
                     {/* [linguo-patch:beranda-jelajahi-v1] tab "Jelajahi Bahasa" dipindah ke menu Beranda */}
@@ -5683,7 +5525,7 @@ export default function AkunPage() {
         <div className="fixed inset-0 z-[60] overflow-y-auto bg-[#F5F6F8]">
           <LessonPlayer
             lessonId={lmsSesi}
-            onBack={() => { setLmsSesi(null); setActiveTab("materi"); setMateriView("mandiri"); if (typeof window !== "undefined") window.history.replaceState(null, "", "/akun?menu=materi&view=mandiri"); }}
+            onBack={() => { setLmsSesi(null); setActiveTab("materi"); if (typeof window !== "undefined") window.history.replaceState(null, "", "/akun?menu=materi"); }}
             onOpenLesson={(id) => setLmsSesi(id)}
           />
         </div>

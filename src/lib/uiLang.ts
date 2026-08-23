@@ -462,10 +462,10 @@ const EN: Record<string, string> = {
   "Sesi Selesai": "Sessions Completed",
   "Sesi & Rekaman": "Sessions & Recordings",
   "Silabus Level": "Level Syllabus",
-  "Punya paket e-learning? Buka tab Belajar Mandiri di atas. Lingbook kamu ada di menu Perpustakaan. Atau daftar kelas live di bawah.":
-    "Got an e-learning package? Open the Self-Study tab above. Your Lingbook lives in the Library menu. Or sign up for a live class below.",
-  "Punya paket e-learning? Buka tab Belajar Mandiri di atas. Atau daftar kelas live di bawah.":
-    "Have an e-learning package? Open the Self-Study tab above. Or enroll in a live class below.",
+  /* [beranda-tanpa-tab-mandiri-v1] tab "Belajar Mandiri" dicabut — copy-nya tak lagi
+     boleh menyuruh siswa membuka tab yang sudah tak ada. */
+  "Lingbook kamu ada di menu Perpustakaan. Atau daftar kelas live di bawah.":
+    "Your Lingbook lives in the Library menu. Or sign up for a live class below.",
 
   /* ── Pengaturan, Kosakata Saya & Deck ───────────────────────────────────── */
   "+ artinya sendiri. Baris tanpa kata/arti dilewati.": "+ its meaning yourself. Rows without a word/meaning are skipped.",
