@@ -18,13 +18,7 @@ import { supabase } from "@/lib/supabase-client";
 import { getWatchHistory, youtubeThumb, youtubeThumbMax } from "@/lib/immersion";
 import { getLangPhoto } from "@/lib/lang-visuals";
 import { useT } from "@/lib/uiLang";
-import { GraduationCap, BookMarked, Clapperboard, ArrowRight, type LucideIcon } from "lucide-react";
-
-export interface MandiriResume {
-  native: string; label: string; photo: string | null; slug: string;
-  total: number; done: number; pct: number;
-  resumeId: string; resumeTitle: string; fresh: boolean; ts: number;
-}
+import { BookMarked, Clapperboard, ArrowRight, type LucideIcon } from "lucide-react";
 
 export interface ProdukDigital {
   id: string; purchaseId: string;
@@ -81,9 +75,15 @@ function bacaanEbook(purchaseId: string): { page: number; total: number; ts: num
     const [halTeks, totalTeks] = mentah.split("/");
     const page = Number(halTeks);
     const total = Number(totalTeks);
-    if (!Number.isFinite(page) || page < 2) return null; // masih di sampul = belum dibaca
+    if (!Number.isFinite(page) || page < 1) return null;
+    /* [lanjutkan-ebook-halaman-satu-v1] Stempel waktu = buktinya readernya PERNAH
+       dibuka (EbookReader menulisnya begitu PDF-nya siap, termasuk di halaman 1).
+       Dulu halaman 1 dianggap "masih di sampul, belum dibaca" dan kartunya tak
+       pernah lahir — padahal modul yang barusan dibuka justru yang paling ingin
+       dilanjutkan siswa. */
     const ts = Number(localStorage.getItem(`ebook-hal-ts:${purchaseId}`) || 0);
-    return { page, total: Number.isFinite(total) ? total : 0, ts: Number.isFinite(ts) ? ts : 0 };
+    if (!Number.isFinite(ts) || ts <= 0) return null;
+    return { page, total: Number.isFinite(total) ? total : 0, ts };
   } catch {
     return null;
   }
@@ -101,14 +101,10 @@ function youtubeFrame(videoId: string, n: number): string {
 }
 
 export default function LanjutkanBelajar({
-  mandiri,
   produkDigital,
-  onOpenSesi,
   onOpenEbook,
 }: {
-  mandiri: MandiriResume | null;
   produkDigital: ProdukDigital[];
-  onOpenSesi: (lessonId: string) => void;
   /** Buka reader e-book itu langsung (Perpustakaan yang menampungnya). */
   onOpenEbook: (purchaseId: string) => void;
 }) {
@@ -173,19 +169,10 @@ export default function LanjutkanBelajar({
   const items = useMemo<Item[]>(() => {
     const out: Item[] = [];
 
-    if (mandiri && mandiri.ts > 0) {
-      out.push({
-        key: "mandiri",
-        ts: mandiri.ts,
-        kind: t("Belajar Mandiri"),
-        title: `${mandiri.native} · ${mandiri.label}`,
-        sub: `${mandiri.fresh ? t("Lanjut") : t("Ulangi")}: ${mandiri.resumeTitle}`,
-        icon: GraduationCap,
-        photo: mandiri.photo,
-        pct: mandiri.pct,
-        run: () => onOpenSesi(mandiri.resumeId),
-      });
-    }
+    /* [lanjutkan-tanpa-kartu-mandiri-v1] Belajar Mandiri TIDAK ikut di sini:
+       kartunya sudah berdiri sendiri (dan jauh lebih informatif) di tab
+       "Self-Study" tepat di bawah blok ini — dua kartu yang sama persis, satu di
+       atas yang lain, cuma membuang baris teratas Beranda. */
 
     produkDigital.forEach((d) => {
       if (d.type !== "ebook") return;
@@ -246,7 +233,7 @@ export default function LanjutkanBelajar({
     }
 
     return out.sort((a, b) => b.ts - a.ts).slice(0, 3);
-  }, [mandiri, produkDigital, watch, onOpenSesi, onOpenEbook, router, t]);
+  }, [produkDigital, watch, onOpenEbook, router, t]);
 
   if (items.length === 0) return null;
 

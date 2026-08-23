@@ -4362,13 +4362,7 @@ export default function AkunPage() {
                           pertanyaan "tadi aku buka dari menu mana ya". Menyembunyikan
                           diri sendiri kalau belum ada riwayat apa pun. */}
                       <LanjutkanBelajar
-                        mandiri={mandiri}
                         produkDigital={produkDigital}
-                        onOpenSesi={(id) => {
-                          setLmsSesi(id);
-                          setMateriView("mandiri");
-                          if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${id}`);
-                        }}
                         /* [lanjutkan-ebook-buka-langsung-v1] Pindah ke Perpustakaan SAMBIL
                            menitipkan modul mana yang readernya harus terbuka. */
                         onOpenEbook={(purchaseId) => { setBukaEbook(purchaseId); setActiveTab("pustaka"); }}
