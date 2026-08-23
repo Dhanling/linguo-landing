@@ -16,8 +16,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase-client";
 import { getWatchHistory, youtubeThumb, youtubeThumbMax } from "@/lib/immersion";
+import { getLangPhoto } from "@/lib/lang-visuals";
 import { useT } from "@/lib/uiLang";
-import { GraduationCap, BookMarked, Clapperboard, BookText, ArrowRight, Play, type LucideIcon } from "lucide-react";
+import { GraduationCap, BookMarked, Clapperboard, BookText, ArrowRight, type LucideIcon } from "lucide-react";
 
 export interface MandiriResume {
   native: string; label: string; photo: string | null; slug: string;
@@ -29,6 +30,8 @@ export interface ProdukDigital {
   id: string; purchaseId: string;
   type: "ebook" | "elearning";
   title: string; language: string | null; link: string | null;
+  /** Sampul produk (`digital_products.cover_url`); null → foto stok bahasa. */
+  cover?: string | null;
 }
 
 type Item = {
@@ -41,11 +44,33 @@ type Item = {
   photo: string | null;
   /** Gambar lebar 16:9 (thumbnail video) — dipakai ganti kotak ikon persegi. */
   wide?: boolean;
+  /** Sampul buku itu potret — dipotong dari ATAS supaya judul di sampulnya tetap terbaca. */
+  fitTop?: boolean;
   /** Ada isinya = kartu ini bisa memutar pratinjau bisu saat kursor menetap. */
   videoId?: string;
   pct: number | null;
   run: () => void;
 };
+
+/** Detik → "7:12" / "1:04:30". Dipakai label "Lanjut dari …" kartu Watch & Learn. */
+function jamMenit(detik: number): string {
+  const d = Math.max(0, Math.floor(detik));
+  const j = Math.floor(d / 3600);
+  const m = Math.floor((d % 3600) / 60);
+  const s = d % 60;
+  const dua = (n: number) => String(n).padStart(2, "0");
+  return j > 0 ? `${j}:${dua(m)}:${dua(s)}` : `${m}:${dua(s)}`;
+}
+
+/** Sampul modul (halaman 1 yang dititipkan EbookReader saat dibaca). */
+function sampulEbook(purchaseId: string): string | null {
+  if (typeof window === "undefined") return null;
+  try {
+    return localStorage.getItem(`ebook-sampul:${purchaseId}`);
+  } catch {
+    return null;
+  }
+}
 
 /** Posisi baca e-book, dari localStorage yang ditulis EbookReader. */
 function bacaanEbook(purchaseId: string): { page: number; total: number; ts: number } | null {
@@ -62,6 +87,17 @@ function bacaanEbook(purchaseId: string): { page: number; total: number; ts: num
   } catch {
     return null;
   }
+}
+
+/* [lanjutkan-watch-preview-v2] Pratinjau hover memakai BINGKAI video (mq1–mq3 =
+   cuplikan di 1/4, 1/2, 3/4 durasi), bukan player YouTube yang ditanam.
+   Kenapa bukan iframe: embed YouTube menggambar tombol pause besar miliknya
+   sendiri di tengah, dan dari luar iframe itu tak bisa dimatikan — pratinjau
+   jadi kotor. Bingkai mq* berukuran 320×180 (16:9 tanpa pita hitam), publik,
+   dan tak menyeret unduhan player. */
+const FRAMES = [1, 2, 3] as const;
+function youtubeFrame(videoId: string, n: number): string {
+  return `https://i.ytimg.com/vi/${videoId}/mq${n}.jpg`;
 }
 
 export default function LanjutkanBelajar({
@@ -114,7 +150,7 @@ export default function LanjutkanBelajar({
   /* Riwayat tonton hidup di localStorage (lihat lib/immersion). Dibaca sesudah
      mount supaya render server & klien tidak berbeda. */
   const [watch, setWatch] = useState<
-    { videoId: string; title: string; thumbnail: string | null; lang: string; ts: number } | null
+    { videoId: string; title: string; thumbnail: string | null; lang: string; ts: number; position: number } | null
   >(null);
   useEffect(() => {
     const h = getWatchHistory();
@@ -125,6 +161,8 @@ export default function LanjutkanBelajar({
       thumbnail: h[0].thumbnail,
       lang: h[0].lang,
       ts: h[0].ts || 0,
+      // [watch-lanjut-menit-v1] entri lama tak punya `position` → mulai dari awal
+      position: typeof h[0].position === "number" && h[0].position > 5 ? h[0].position : 0,
     });
   }, []);
 
@@ -133,16 +171,30 @@ export default function LanjutkanBelajar({
      Jeda 700 ms itu sengaja — tanpa itu, kursor yang cuma lewat sudah cukup
      untuk menyuruh browser mengunduh player YouTube. */
   const [preview, setPreview] = useState<string | null>(null);
+  const [frame, setFrame] = useState(0);
   const previewTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  useEffect(() => () => { if (previewTimer.current) clearTimeout(previewTimer.current); }, []);
+  const frameTimer = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  function mulaiPratinjau(key: string) {
-    if (previewTimer.current) clearTimeout(previewTimer.current);
-    previewTimer.current = setTimeout(() => setPreview(key), 700);
+  function bersihkanTimer() {
+    if (previewTimer.current) { clearTimeout(previewTimer.current); previewTimer.current = null; }
+    if (frameTimer.current) { clearInterval(frameTimer.current); frameTimer.current = null; }
+  }
+  useEffect(() => bersihkanTimer, []);
+
+  function mulaiPratinjau(key: string, videoId: string) {
+    bersihkanTimer();
+    previewTimer.current = setTimeout(() => {
+      // Bingkai dimuat dulu di belakang layar supaya pergantiannya tak berkedip.
+      FRAMES.forEach((n) => { const im = new window.Image(); im.src = youtubeFrame(videoId, n); });
+      setFrame(0);
+      setPreview(key);
+      frameTimer.current = setInterval(() => setFrame((f) => (f + 1) % FRAMES.length), 900);
+    }, 450);
   }
   function setopPratinjau() {
-    if (previewTimer.current) clearTimeout(previewTimer.current);
+    bersihkanTimer();
     setPreview(null);
+    setFrame(0);
   }
 
   const items = useMemo<Item[]>(() => {
@@ -175,7 +227,14 @@ export default function LanjutkanBelajar({
         title: d.title,
         sub: b.total ? `${t("Halaman")} ${b.page}/${b.total}` : `${t("Halaman")} ${b.page}`,
         icon: BookMarked,
-        photo: null,
+        /* [lingbook-sampul-kartu-v1] Sampul bukunya sendiri, bukan ikon buku generik:
+           siswa yang punya beberapa Lingbook perlu tahu YANG MANA yang tadi dibaca —
+           judulnya saja terpotong di kartu selebar ini. Urutannya: sampul yang
+           ditangkap reader dari halaman 1, lalu `cover_url` produk (kosong di semua
+           e-book hari ini), terakhir foto stok bahasa — masih lebih menjelaskan
+           daripada kotak kosong. */
+        photo: sampulEbook(d.purchaseId) || d.cover || (d.language ? getLangPhoto(d.language) : null),
+        fitTop: true,
         pct: b.total ? Math.min(100, Math.round((b.page / b.total) * 100)) : null,
         // E-Book dibaca di dalam Perpustakaan (EbookReader), bukan lewat tautan luar.
         run: onOpenPustaka,
@@ -205,7 +264,7 @@ export default function LanjutkanBelajar({
         ts: watch.ts,
         kind: "Watch & Learn",
         title: watch.title,
-        sub: t("Lanjut menonton"),
+        sub: watch.position > 0 ? `${t("Lanjut dari")} ${jamMenit(watch.position)}` : t("Lanjut menonton"),
         icon: Clapperboard,
         /* Thumbnail video asli — sama seperti layar diam waktu videonya dijeda.
            Riwayat lama kadang menyimpan thumbnail null → rakit sendiri dari
@@ -214,10 +273,14 @@ export default function LanjutkanBelajar({
         wide: true,
         videoId: watch.videoId,
         pct: null,
-        /* Mendarat di BERANDA Watch & Learn, bukan langsung memutar videonya:
-           rail "Keep Watching" di sana sudah memuat video ini di posisi pertama,
-           sekalian siswa bisa memilih tontonan lain. */
-        run: () => router.push("/watch"),
+        /* [watch-lanjut-menit-v1] Langsung memutar videonya: `?v=` (plus `vl=`
+           bahasa) memang dibaca WatchAndLearn saat boot, dan `t=` menaruh jarumnya
+           di detik terakhir yang tercatat — jadi tak ada yang perlu diulang. */
+        run: () =>
+          router.push(
+            `/watch?v=${encodeURIComponent(watch.videoId)}&vl=${encodeURIComponent(watch.lang || "en")}` +
+              (watch.position > 0 ? `&t=${Math.floor(watch.position)}` : "")
+          ),
       });
     }
 
@@ -228,8 +291,8 @@ export default function LanjutkanBelajar({
 
   return (
     <section className="mb-5">
-      {/* Pratinjau muncul melembut, bukan berkedip. Ditulis global karena
-          animasinya dipakai iframe yang lahir-mati mengikuti kursor. */}
+      {/* Bingkai pratinjau muncul melembut, bukan berkedip. Ditulis global karena
+          dipakai gambar yang lahir-mati mengikuti kursor. */}
       <style jsx global>{`
         @keyframes lanjutFade { from { opacity: 0 } to { opacity: 1 } }
       `}</style>
@@ -245,7 +308,7 @@ export default function LanjutkanBelajar({
             <button
               key={it.key}
               onClick={it.run}
-              onMouseEnter={it.videoId ? () => mulaiPratinjau(it.key) : undefined}
+              onMouseEnter={it.videoId ? () => mulaiPratinjau(it.key, it.videoId!) : undefined}
               onMouseLeave={it.videoId ? setopPratinjau : undefined}
               className="group flex items-center gap-3 rounded-2xl bg-white p-3 text-left ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:ring-[#16796E]/40"
             >
@@ -259,7 +322,7 @@ export default function LanjutkanBelajar({
                   <img
                     src={it.photo}
                     alt=""
-                    className="relative z-10 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110 motion-reduce:transform-none"
+                    className={`relative z-10 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110 motion-reduce:transform-none ${it.fitTop ? "object-top" : ""}`}
                     /* maxresdefault sering 404 → turun ke hqdefault dulu; kalau
                        itu pun gagal, biarkan ikon di belakangnya yang kelihatan */
                     onError={(e) => {
@@ -272,23 +335,18 @@ export default function LanjutkanBelajar({
                 ) : null}
                 <Icon className="absolute -z-0 h-5 w-5 text-[#16796E]" strokeWidth={2.4} />
 
-                {/* Lencana ▶ menyala saat kursor masuk — penanda "ini bisa diputar",
-                    sekaligus pengisi jeda 700 ms sebelum pratinjau muncul. */}
-                {it.videoId && preview !== it.key && (
-                  <span className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center bg-black/25 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                    <Play className="h-4 w-4 fill-white text-white drop-shadow" strokeWidth={1.5} />
-                  </span>
-                )}
-
-                {/* Pratinjau bisu. `pointer-events-none` wajib: iframe menelan klik,
-                    dan kartunya sendiri sebuah <button> yang harus tetap bisa ditekan. */}
+                {/* Pratinjau bisu: bingkai video berganti tiap 0,9 detik selama
+                    kursor menetap. Sengaja tanpa tombol apa pun di atasnya —
+                    gambarnya sendiri yang bergerak, itu cukup jadi tanda. */}
                 {it.videoId && preview === it.key && (
-                  <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(it.videoId)}?autoplay=1&mute=1&controls=0&loop=1&playlist=${encodeURIComponent(it.videoId)}&modestbranding=1&rel=0&playsinline=1&disablekb=1`}
-                    title=""
-                    allow="autoplay; encrypted-media"
-                    tabIndex={-1}
-                    className="pointer-events-none absolute inset-0 z-30 h-full w-full scale-[1.35] border-0 opacity-0 animate-[lanjutFade_.35s_ease-out_forwards]"
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    key={frame}
+                    src={youtubeFrame(it.videoId, FRAMES[frame])}
+                    alt=""
+                    className="pointer-events-none absolute inset-0 z-20 h-full w-full scale-110 object-cover opacity-0 animate-[lanjutFade_.35s_ease-out_forwards] motion-reduce:transform-none"
+                    /* bingkai tak tersedia → biarkan thumbnail di bawahnya */
+                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = "0"; }}
                   />
                 )}
               </span>
