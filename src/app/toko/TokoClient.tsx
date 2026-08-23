@@ -54,9 +54,12 @@ function formatRupiah(price: number): string {
 }
 
 function getDisplayPrice(product: Product): { price: number; label: string } {
-  const tiers = [...(product.digital_product_pricing ?? [])].sort(
-    (a, b) => a.sort_order - b.sort_order
-  );
+  // [harga-tier-arsip-v1] Tier yang sudah tidak dijual (is_active=false) tetap
+  // ada di tabel demi pembeli lama — jangan dipakai jadi "harga mulai", karena
+  // etalase bakal memasang harga/paket yang tak ada lagi di halaman produknya.
+  const tiers = [...(product.digital_product_pricing ?? [])]
+    .filter((t) => t.is_active !== false)
+    .sort((a, b) => a.sort_order - b.sort_order);
   if (tiers.length === 0) return { price: 0, label: '' };
   const cheapest = tiers[0];
   return {

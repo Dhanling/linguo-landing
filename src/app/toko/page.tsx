@@ -18,6 +18,7 @@ export type PricingTier = {
   display_label: string;
   sort_order: number;
   duration_days: number | null;
+  is_active: boolean | null;
 };
 
 export type Product = {
@@ -52,7 +53,8 @@ export default async function TokoPage() {
         price,
         display_label,
         sort_order,
-        duration_days
+        duration_days,
+        is_active
       )
     `
     )
