@@ -1,0 +1,192 @@
+{
+  "title": "Boleh, harus, mau",
+  "title_target": "Posso, devo, voglio",
+  "goal": "Menguasai tiga kata kerja bantu yang membuka ratusan kalimat baru: minta izin, menyatakan kewajiban, dan menyatakan kehendak.",
+  "bekal": [
+    "meminta izin dengan *posso*",
+    "menyatakan keharusan dengan *devo*",
+    "menolak dan menerima ajakan dengan halus"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Non posso, devo lavorare",
+      "intro": "Marco mengajak Budi. Budi harus menolak — dan menolak dengan sopan adalah keterampilan tersendiri.",
+      "lines": [
+        { "speaker": "Marco:", "text": "Budi, stasera vuoi venire a cena da noi?", "id": "Budi, malam ini mau makan malam di tempat kami?", "literal": "Budi, malam-ini kamu-mau datang untuk makan-malam dari kami?" },
+        { "speaker": "Budi:", "text": "Vorrei tanto, ma non posso. Devo studiare.", "id": "Saya mau sekali, tapi tidak bisa. Saya harus belajar.", "literal": "saya-ingin banyak, tetapi tidak saya-bisa. saya-harus belajar." },
+        { "speaker": "Marco:", "text": "Dai, puoi studiare domani!", "id": "Ayolah, belajarnya besok saja!", "literal": "ayo, kamu-bisa belajar besok!" },
+        { "speaker": "Budi:", "text": "Domani devo lavorare tutto il giorno. Ho un esame venerdì.", "id": "Besok saya harus kerja seharian. Saya ada ujian Jumat.", "literal": "besok saya-harus bekerja semua si hari. saya-punya sebuah ujian jumat." },
+        { "speaker": "Marco:", "text": "Va bene, capisco. Possiamo fare sabato?", "id": "Baik, saya mengerti. Bisa Sabtu?", "literal": "pergi baik, saya-mengerti. kami-bisa melakukan sabtu?" },
+        { "speaker": "Budi:", "text": "Sabato sì, volentieri! A che ora devo venire?", "id": "Sabtu bisa, dengan senang hati! Saya harus datang jam berapa?", "literal": "sabtu ya, dengan-senang-hati! pada apa jam saya-harus datang?" },
+        { "speaker": "Marco:", "text": "Verso le otto. Non devi portare niente.", "id": "Sekitar jam delapan. Tidak usah bawa apa-apa.", "literal": "sekitar si delapan. tidak kamu-harus membawa tidak-ada." },
+        { "speaker": "Budi:", "text": "Posso portare almeno il vino?", "id": "Boleh saya bawa anggurnya saja?", "literal": "saya-bisa membawa setidaknya si anggur?" },
+        { "speaker": "Marco:", "text": "Se vuoi. Ma davvero non devi.", "id": "Kalau kamu mau. Tapi sungguh tidak perlu.", "literal": "jika kamu-mau. tetapi sungguh tidak kamu-harus." },
+        { "speaker": "Budi:", "text": "Voglio portare qualcosa. È la mia educazione.", "id": "Saya mau bawa sesuatu. Itu didikan saya.", "literal": "saya-mau membawa sesuatu. adalah si milik-saya didikan." },
+        { "speaker": "Marco:", "text": "Allora porta il vino. Ma non devi portare tutto il negozio!", "id": "Kalau begitu bawa anggurnya. Tapi jangan bawa satu toko!", "literal": "kalau-begitu bawa si anggur. tetapi tidak kamu-harus membawa semua si toko!" },
+        { "speaker": "Budi:", "text": "Prometto. A sabato, allora!", "id": "Saya janji. Sampai Sabtu, kalau begitu!", "literal": "saya-janji. sampai sabtu, kalau-begitu!" }
+      ],
+      "notes": [
+        "**Ketiganya diikuti kata kerja bentuk dasar.** *Posso venire*, *devo studiare*, *voglio portare* — kata kerja kedua tidak berubah sama sekali. Ini kabar baik: cuma kata pertama yang perlu dihafal bentuknya.",
+        "**Non devo bukan \"saya tidak boleh\".** *Non devo portare niente* berarti \"saya tidak perlu bawa apa-apa\". Untuk \"tidak boleh\", pakai *non posso* atau *non si può*. Perbedaan ini sering menimbulkan salah paham yang tidak lucu.",
+        "**Vorrei adalah bentuk halus dari voglio.** Sudah kamu pakai sejak unit 4. Sekarang jelas dari mana asalnya: ia bentuk sopan *volere*. Untuk meminta sesuatu, selalu pilih *vorrei*.",
+        "**Dai! berarti \"ayolah\".** Salah satu kata paling sering terdengar dalam percakapan Italia, dipakai untuk membujuk, menyemangati, atau menyatakan tidak percaya. Dibaca \"dai\", satu suku kata.",
+        "**Menolak dengan sopan punya polanya sendiri.** *Vorrei tanto, ma non posso* — sebut dulu keinginannya, baru halangannya. Menjawab *no, non posso* saja terasa dingin dalam adat Italia.",
+        "**Verso le otto** = \"sekitar jam delapan\". Kata *verso* melembutkan janji jam, dan orang Italia memakainya terus-menerus. Dalam praktik, *verso le otto* berarti antara delapan dan setengah sembilan.",
+        "**Niente dan nulla dua-duanya \"tidak ada apa-apa\"**, dan keduanya butuh *non* di depan kata kerja: *non porto niente*. Penyangkalan ganda ini wajib, sama seperti *non… mai* di unit 7.",
+        "**Se vuoi** = \"kalau kamu mau\". Bentuk hormatnya *se vuole*. Cara menyerahkan pilihan yang halus, sepasang dengan *come vuoi* di unit 4."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga kata kerja bantu",
+          "body": ["Ketiganya tidak beraturan dan ketiganya wajib. Perhatikan kemiripan pola di antara mereka: bentuk *noi* dan *voi* selalu paling teratur."],
+          "table": {
+            "head": ["", "potere (bisa, boleh)", "dovere (harus)", "volere (mau)"],
+            "rows": [
+              ["io", "**posso**", "**devo**", "**voglio**"],
+              ["tu", "puoi", "devi", "vuoi"],
+              ["lui / lei / Lei", "può", "deve", "vuole"],
+              ["noi", "possiamo", "dobbiamo", "vogliamo"],
+              ["voi", "potete", "dovete", "volete"],
+              ["loro", "possono", "devono", "vogliono"]
+            ]
+          },
+          "after": [
+            "*Può* memakai aksen; tanpa aksen kata itu tidak ada. Begitu pula *può darsi* (bisa jadi), ungkapan yang sering dipakai.",
+            "Bentuk halus ketiganya: *potrei* (bisakah saya), *dovrei* (semestinya saya), *vorrei* (saya ingin). Ketiganya tingkat B1, tapi *vorrei* sudah wajib sejak sekarang."
+          ]
+        },
+        {
+          "title": "Kapan memakai yang mana",
+          "body": [],
+          "table": {
+            "head": ["Maksud", "Italiano", "Contoh"],
+            "rows": [
+              ["Minta izin", "Posso…?", "Posso entrare?"],
+              ["Kemampuan", "Posso / Non posso", "Non posso venire."],
+              ["Kewajiban", "Devo…", "Devo lavorare."],
+              ["Tidak perlu", "Non devo…", "Non devi portare niente."],
+              ["Tidak boleh", "Non posso / Non si può", "Qui non si può fumare."],
+              ["Kehendak", "Voglio…", "Voglio imparare l'italiano."],
+              ["Permintaan halus", "Vorrei…", "Vorrei un caffè."],
+              ["Ajakan", "Vuoi…?", "Vuoi venire con noi?"]
+            ]
+          },
+          "after": ["*Si può* dan *non si può* berarti \"boleh\" dan \"tidak boleh\" secara umum, tanpa menyebut siapa. Tanda larangan di Italia sering berbunyi begitu: *Non si può parcheggiare qui.*"]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menerima dan menolak",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Mengajak",
+          "items": [
+            "*Vuoi venire con me?* — Mau ikut saya?",
+            "*Andiamo a bere qualcosa?* — Minum-minum yuk?",
+            "*Ti va di andare al cinema?* — Mau ke bioskop?",
+            "*Che ne dici di sabato?* — Bagaimana kalau Sabtu?"
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Menerima",
+          "items": [
+            "*Sì, volentieri!* — Ya, dengan senang hati!",
+            "*Certo!* — Tentu!",
+            "*Perché no?* — Kenapa tidak?",
+            "*Ottima idea!* — Ide bagus!"
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Menolak dengan sopan",
+          "items": [
+            "*Mi dispiace, ma non posso.* — Maaf, saya tidak bisa.",
+            "*Vorrei tanto, ma devo lavorare.* — Mau sekali, tapi harus kerja.",
+            "*Magari un'altra volta.* — Lain kali saja.",
+            "*Purtroppo ho già un impegno.* — Sayangnya saya sudah ada acara."
+          ]
+        },
+        { "type": "p", "text": "*Magari* adalah kata Italia yang sangat sulit diterjemahkan. Ia bisa berarti \"mungkin\", \"kalau saja\", atau — diucapkan sendirian dengan nada mendesah — \"andai saja begitu\". Kalau seseorang menjawab ajakanmu dengan *magari!*, artinya ia sangat ingin tapi tidak bisa." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "potere", "baca": "po-TE-re", "id": "bisa, boleh" },
+    { "it": "dovere", "baca": "do-VE-re", "id": "harus" },
+    { "it": "volere", "baca": "vo-LE-re", "id": "mau" },
+    { "it": "l'esame", "baca": "le-ZA-me", "id": "ujian" },
+    { "it": "l'impegno", "baca": "lim-PE-nyo", "id": "acara, kesibukan" },
+    { "it": "promettere", "baca": "pro-MET-te-re", "id": "berjanji" },
+    { "it": "entrare", "baca": "en-TRA-re", "id": "masuk" },
+    { "it": "fumare", "baca": "fu-MA-re", "id": "merokok" },
+    { "it": "aiutare", "baca": "aiu-TA-re", "id": "membantu" },
+    { "it": "qualcosa", "baca": "kual-KO-za", "id": "sesuatu" },
+    { "it": "niente", "baca": "NIEN-te", "id": "tidak ada apa-apa" },
+    { "it": "nessuno", "baca": "nes-SU-no", "id": "tidak ada seorang pun" },
+    { "it": "verso", "baca": "VER-so", "id": "sekitar (jam)" },
+    { "it": "almeno", "baca": "al-ME-no", "id": "setidaknya" },
+    { "it": "davvero", "baca": "dav-VE-ro", "id": "sungguh" },
+    { "it": "purtroppo", "baca": "pur-TROP-po", "id": "sayangnya" },
+    { "it": "magari", "baca": "ma-GA-ri", "id": "andai, mungkin" },
+    { "it": "dai!", "baca": "dai", "id": "ayolah!" },
+    { "it": "mi dispiace", "baca": "mi dis-PIA-ce", "id": "maaf, saya menyesal" },
+    { "it": "l'idea", "baca": "li-DE-a", "id": "ide" },
+    { "it": "l'educazione", "baca": "le-du-ka-TSIO-ne", "id": "didikan, sopan santun" },
+    { "it": "un'altra volta", "baca": "u-NAL-tra VOL-ta", "id": "lain kali" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk potere, dovere, atau volere yang diminta dalam kurung.",
+      "items": [
+        "Io non ____ venire stasera. (potere)",
+        "Tu ____ studiare per l'esame. (dovere)",
+        "Marco ____ imparare l'italiano. (volere)",
+        "Noi ____ andare al cinema? (potere)",
+        "Voi ____ lavorare domani? (dovere)",
+        "I bambini ____ giocare fuori. (volere)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Boleh saya masuk?",
+        "Saya harus kerja besok.",
+        "Tidak usah bawa apa-apa.",
+        "Mau ikut kami?",
+        "Maaf, saya tidak bisa.",
+        "Mau sekali, tapi saya ada ujian."
+      ]
+    },
+    {
+      "prompt": "Pilih non posso atau non devo, lalu tulis kalimat lengkapnya.",
+      "items": [
+        "Saya tidak perlu bayar, sudah gratis. ____ pagare.",
+        "Saya tidak bisa datang, saya sakit. ____ venire.",
+        "Kamu tidak perlu bawa apa-apa. ____ portare niente.",
+        "Di sini tidak boleh merokok. Qui ____ fumare.",
+        "Kami tidak perlu bangun pagi hari Minggu. La domenica ____ alzarci presto."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "posso / non / venire",
+        "lavorare / devo / domani",
+        "italiano / imparare / voglio / l'",
+        "niente / non / portare / devi",
+        "entrare / posso / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "posso — devi — vuole — possiamo — dovete — vogliono",
+    "Posso entrare? — Devo lavorare domani. — Non devi portare niente. — Vuoi venire con noi? — Mi dispiace, ma non posso. — Vorrei tanto, ma ho un esame.",
+    "Non devo — Non posso — Non devi — non si può — non dobbiamo",
+    "Non posso venire. — Devo lavorare domani. — Voglio imparare l'italiano. — Non devi portare niente. — Posso entrare?"
+  ],
+  "wave": "Ulangi **unit 14** dulu: beli satu jaket dan satu pasang sepatu dari ingatan — ukuran, warna, mencoba, harga."
+}

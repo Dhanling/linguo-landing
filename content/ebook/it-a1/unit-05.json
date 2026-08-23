@@ -1,0 +1,213 @@
+{
+  "title": "Keluargaku",
+  "title_target": "La mia famiglia",
+  "goal": "Menyebut anggota keluarga, memakai *avere*, dan menguasai aturan ganjil kata milik: kata sandangnya dibuang untuk anggota keluarga tunggal.",
+  "bekal": [
+    "menyebut anggota keluarga inti dan luas",
+    "memakai *avere* untuk kepemilikan",
+    "memakai *mio*, *tuo*, *suo* dengan atau tanpa kata sandang, sesuai aturannya"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Le foto sul telefono",
+      "intro": "Giulia menunjukkan foto keluarga di teleponnya kepada Budi.",
+      "lines": [
+        { "speaker": "Giulia:", "text": "Guarda, questa è la mia famiglia.", "id": "Lihat, ini keluargaku.", "literal": "lihat, ini adalah si milik-saya keluarga." },
+        { "speaker": "Budi:", "text": "Che bella foto! Chi è questa signora?", "id": "Fotonya bagus! Ibu ini siapa?", "literal": "betapa indah foto! siapa adalah ini nyonya?" },
+        { "speaker": "Giulia:", "text": "È mia madre. Si chiama Anna, ha cinquantadue anni.", "id": "Itu ibuku. Namanya Anna, umurnya lima puluh dua tahun.", "literal": "adalah milik-saya ibu. diri-menamai Anna, punya lima-puluh-dua tahun." },
+        { "speaker": "Budi:", "text": "E lui accanto a lei?", "id": "Dan yang di sebelahnya?", "literal": "dan dia di-samping pada dia?" },
+        { "speaker": "Giulia:", "text": "Mio padre, Paolo. E questi sono i miei fratelli.", "id": "Ayahku, Paolo. Dan ini saudara-saudaraku.", "literal": "milik-saya ayah, Paolo. dan ini adalah si milik-saya saudara-saudara." },
+        { "speaker": "Budi:", "text": "Quanti fratelli hai?", "id": "Kamu punya berapa saudara?", "literal": "berapa saudara kamu-punya?" },
+        { "speaker": "Giulia:", "text": "Ho un fratello e due sorelle. Io sono la più piccola.", "id": "Saya punya satu saudara laki-laki dan dua saudara perempuan. Saya yang paling kecil.", "literal": "saya-punya satu saudara dan dua saudari. saya adalah si lebih kecil." },
+        { "speaker": "Budi:", "text": "Anche tua sorella abita a Bologna?", "id": "Saudara perempuanmu juga tinggal di Bologna?", "literal": "juga milik-kamu saudari tinggal di Bologna?" },
+        { "speaker": "Giulia:", "text": "No, lei vive a Milano. È sposata e ha un bambino.", "id": "Tidak, dia tinggal di Milan. Sudah menikah dan punya satu anak.", "literal": "tidak, dia hidup di Milan. adalah menikah dan punya sebuah anak." },
+        { "speaker": "Budi:", "text": "Allora sei zia! E tu, sei sposata?", "id": "Berarti kamu bibi! Dan kamu, sudah menikah?", "literal": "kalau-begitu kamu-adalah bibi! dan kamu, kamu-adalah menikah?" },
+        { "speaker": "Giulia:", "text": "No, sono single. Ho solo un gatto molto grasso.", "id": "Belum, saya lajang. Saya cuma punya seekor kucing yang sangat gendut.", "literal": "tidak, adalah lajang. saya-punya hanya seekor kucing banyak gemuk." },
+        { "speaker": "Budi:", "text": "Ah, allora avete la stessa passione: mangiare!", "id": "Ah, berarti kalian punya kegemaran yang sama: makan!", "literal": "ah, kalau-begitu kalian-punya si sama kegemaran: makan!" }
+      ],
+      "notes": [
+        "**Umur memakai avere, bukan essere.** *Ho ventidue anni* harfiahnya \"saya punya dua puluh dua tahun\". Mengatakan *sono ventidue* adalah salah yang paling sering dibuat pelajar Indonesia dan Inggris, dan langsung terdengar. Bahasa Italia sepakat dengan bahasa Prancis dan Spanyol di sini: umur itu dimiliki, bukan disandang.",
+        "**Kata anni tidak boleh dibuang.** Dalam bahasa Indonesia \"umur saya dua puluh dua\" sudah lengkap. Dalam bahasa Italia *ho ventidue* menggantung tanpa arti — kata *anni* wajib ada.",
+        "**Aturan ganjil kata milik.** Biasanya kata milik memakai kata sandang: *il mio libro*, *la mia casa*. Tapi untuk anggota keluarga **tunggal**, kata sandangnya dibuang: *mia madre*, *mio padre*, *tua sorella*.",
+        "**Begitu jamak, kata sandangnya kembali.** *I miei fratelli*, *le mie sorelle*. Jadi aturannya: keluarga + tunggal = tanpa kata sandang; selebihnya pakai.",
+        "**Dan begitu ada tambahan, ia kembali juga.** *La mia sorella maggiore* (kakak perempuanku) memakai kata sandang, karena kata bendanya sudah diberi keterangan. Begitu pula bentuk sayang: *la mia mamma*.",
+        "**Abitare dan vivere dua-duanya \"tinggal\".** *Abitare* lebih menunjuk alamat, *vivere* lebih menunjuk kehidupan. *Abito a Bologna* dan *vivo a Bologna* sama-sama benar dan sama-sama sering.",
+        "**A untuk kota, in untuk negara.** *A Bologna*, *a Giacarta*, tapi *in Italia*, *in Indonesia*. Ini pasangan yang wajib dihafal sejak awal; kesalahan di sini sangat mencolok.",
+        "**Che bella foto!** Untuk memuji, *che* + kata sifat + kata benda, tanpa kata sandang. *Che bel ragazzo!*, *Che buona pizza!* Polanya sederhana dan sangat sering dipakai."
+      ],
+      "grammars": [
+        {
+          "title": "Avere — kata kerja \"punya\"",
+          "body": ["Tidak beraturan seperti *essere*, dan sama seringnya dipakai. Perhatikan huruf **h** di empat bentuk: ia sama sekali bisu, hanya penanda tulisan agar tak tertukar dengan kata lain."],
+          "table": {
+            "head": ["", "avere", "contoh"],
+            "rows": [
+              ["io", "**ho**", "Ho un fratello."],
+              ["tu", "**hai**", "Quanti anni hai?"],
+              ["lui / lei / Lei", "**ha**", "Ha due figli."],
+              ["noi", "**abbiamo**", "Abbiamo fame."],
+              ["voi", "**avete**", "Avete l'acqua?"],
+              ["loro", "**hanno**", "Hanno una casa grande."]
+            ]
+          },
+          "after": [
+            "*Ho* dibaca \"o\", *hai* dibaca \"ai\", *ha* dibaca \"a\", *hanno* dibaca \"AN-no\". Tanpa h, kata-kata itu akan bertabrakan dengan *o* (atau), *ai* (kepada si), *a* (di), *anno* (tahun).",
+            "*Avere* juga dipakai untuk keadaan badan: *ho fame* (saya lapar), *ho sete* (haus), *ho freddo* (kedinginan), *ho caldo* (kepanasan), *ho sonno* (mengantuk), *ho paura* (takut). Semuanya \"punya\", bukan \"adalah\"."
+          ]
+        },
+        {
+          "title": "Kata milik",
+          "body": ["Kata milik Italia ikut jenis kelamin **bendanya**, bukan pemiliknya. *Il suo libro* bisa berarti bukunya laki-laki maupun bukunya perempuan; yang menentukan bentuknya adalah *libro*."],
+          "table": {
+            "head": ["Pemilik", "Mask. tunggal", "Fem. tunggal", "Mask. jamak", "Fem. jamak"],
+            "rows": [
+              ["saya", "il mio", "la mia", "i miei", "le mie"],
+              ["kamu", "il tuo", "la tua", "i tuoi", "le tue"],
+              ["dia / Anda", "il suo", "la sua", "i suoi", "le sue"],
+              ["kami", "il nostro", "la nostra", "i nostri", "le nostre"],
+              ["kalian", "il vostro", "la vostra", "i vostri", "le vostre"],
+              ["mereka", "il loro", "la loro", "i loro", "le loro"]
+            ]
+          },
+          "after": [
+            "Baris *loro* satu-satunya yang tidak pernah berubah bentuk — cuma kata sandangnya yang menyesuaikan.",
+            "Karena bentuknya ikut benda, kalimat *Marco ama la sua città* bisa berarti kota Marco atau kota orang lain. Kalau perlu ditegaskan, tambahkan *di lui* atau *di lei*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Anggota keluarga",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Laki-laki", "Perempuan", "Bahasa Indonesia"],
+          "rows": [
+            ["il padre / papà", "la madre / mamma", "ayah / ibu"],
+            ["il figlio", "la figlia", "anak"],
+            ["il fratello", "la sorella", "saudara kandung"],
+            ["il nonno", "la nonna", "kakek / nenek"],
+            ["il nipote", "la nipote", "cucu, keponakan"],
+            ["lo zio", "la zia", "paman / bibi"],
+            ["il cugino", "la cugina", "sepupu"],
+            ["il marito", "la moglie", "suami / istri"],
+            ["il ragazzo", "la ragazza", "pacar (juga: anak muda)"],
+            ["il suocero", "la suocera", "mertua"],
+            ["il genero", "la nuora", "menantu"],
+            ["i genitori", "—", "orang tua"],
+            ["i parenti", "—", "sanak saudara"]
+          ]
+        },
+        { "type": "p", "text": "Waspadai *i parenti*: ia berarti \"sanak saudara\", **bukan** \"orang tua\". Orang tua adalah *i genitori*. Ini jebakan klasik bagi siapa pun yang tahu bahasa Inggris." },
+        { "type": "p", "text": "Kelompok campur selalu memakai bentuk maskulin jamak: dua saudara laki-laki dan tiga perempuan tetap disebut *i fratelli*. Karena itu *Quanti fratelli hai?* sebetulnya menanyakan seluruh saudara kandung, bukan cuma yang laki-laki." },
+        {
+          "type": "kotak",
+          "title": "Bicara tentang umur dan status",
+          "items": [
+            "*Quanti anni hai?* — Umurmu berapa? (akrab) / *Quanti anni ha?* (hormat)",
+            "*Ho trent'anni.* — Umur saya tiga puluh. Perhatikan pemangkasan *trenta anni* jadi *trent'anni*.",
+            "*Sei sposato / sposata?* — Sudah menikah?",
+            "*Sono single.* / *Sono sposato.* / *Sono divorziato.*",
+            "*Hai figli?* — Punya anak? Jawab: *Sì, ho due figli.* atau *No, non ho figli.*"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Angka 20-100",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["", "", ""],
+          "rows": [
+            ["20 venti", "30 trenta", "40 quaranta"],
+            ["50 cinquanta", "60 sessanta", "70 settanta"],
+            ["80 ottanta", "90 novanta", "100 cento"]
+          ]
+        },
+        { "type": "p", "text": "Menggabungkannya tinggal menempel: *ventitré*, *trentacinque*, *sessantotto*. Dua penyesuaian kecil: di depan *uno* dan *otto*, huruf terakhir puluhannya dibuang — *ventuno* (bukan *ventiuno*), *ventotto*, *trentuno*, *quarantotto*. Dan angka tiga di ekor memakai aksen: *ventitré*, *trentatré*." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "la famiglia", "baca": "la fa-MI-lya", "id": "keluarga" },
+    { "it": "il padre", "baca": "il PA-dre", "id": "ayah" },
+    { "it": "la madre", "baca": "la MA-dre", "id": "ibu" },
+    { "it": "il fratello", "baca": "il fra-TEL-lo", "id": "saudara laki-laki" },
+    { "it": "la sorella", "baca": "la so-REL-la", "id": "saudara perempuan" },
+    { "it": "il figlio", "baca": "il FI-lyo", "id": "anak laki-laki" },
+    { "it": "i genitori", "baca": "i je-ni-TO-ri", "id": "orang tua" },
+    { "it": "il nonno", "baca": "il NON-no", "id": "kakek" },
+    { "it": "lo zio", "baca": "lo TSI-o", "id": "paman" },
+    { "it": "il marito", "baca": "il ma-RI-to", "id": "suami" },
+    { "it": "la moglie", "baca": "la MO-lye", "id": "istri" },
+    { "it": "avere", "baca": "a-VE-re", "id": "punya" },
+    { "it": "l'anno", "baca": "LAN-no", "id": "tahun" },
+    { "it": "abitare", "baca": "a-bi-TA-re", "id": "tinggal, berdomisili" },
+    { "it": "vivere", "baca": "VI-ve-re", "id": "hidup, tinggal" },
+    { "it": "sposato / sposata", "baca": "spo-ZA-to", "id": "sudah menikah" },
+    { "it": "il bambino", "baca": "il bam-BI-no", "id": "anak kecil" },
+    { "it": "il gatto", "baca": "il GAT-to", "id": "kucing" },
+    { "it": "il cane", "baca": "il KA-ne", "id": "anjing" },
+    { "it": "piccolo", "baca": "PIK-ko-lo", "id": "kecil" },
+    { "it": "grande", "baca": "GRAN-de", "id": "besar" },
+    { "it": "accanto a", "baca": "ak-KAN-to a", "id": "di samping" },
+    { "it": "solo", "baca": "SO-lo", "id": "hanya" },
+    { "it": "stesso / stessa", "baca": "STES-so", "id": "sama" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Ini keluargaku.",
+        "Umur saya dua puluh lima tahun.",
+        "Kamu punya berapa saudara?",
+        "Saya punya satu saudara laki-laki dan dua saudara perempuan.",
+        "Ibuku tinggal di Milan.",
+        "Saya tidak punya anak."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk avere yang tepat.",
+      "items": [
+        "Io ____ due sorelle.",
+        "Tu quanti anni ____?",
+        "Mio padre ____ sessant'anni.",
+        "Noi ____ una casa a Roma.",
+        "Voi ____ figli?",
+        "I miei nonni ____ un gatto."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata milik yang tepat. Ingat aturan kata sandang untuk keluarga tunggal.",
+      "items": [
+        "Questa è ____ madre. (saya)",
+        "____ fratelli abitano a Roma. (saya)",
+        "Dov'è ____ sorella? (kamu)",
+        "____ casa è molto grande. (kami)",
+        "Marco ama ____ città. (dia)",
+        "____ genitori sono italiani. (kamu)"
+      ]
+    },
+    {
+      "prompt": "Tulis angkanya dengan huruf.",
+      "items": [
+        "21",
+        "28",
+        "33",
+        "45",
+        "68",
+        "90"
+      ]
+    }
+  ],
+  "answers": [
+    "Questa è la mia famiglia. — Ho venticinque anni. — Quanti fratelli hai? — Ho un fratello e due sorelle. — Mia madre abita a Milano. — Non ho figli.",
+    "ho — hai — ha — abbiamo — avete — hanno",
+    "mia — I miei — tua — La nostra — la sua — I tuoi",
+    "ventuno — ventotto — trentatré — quarantacinque — sessantotto — novanta"
+  ],
+  "wave": "Ulangi **unit 3** dulu: tunjuk sepuluh benda di sekitarmu dan sebut namanya lengkap dengan kata sandangnya, lalu jamakkan."
+}

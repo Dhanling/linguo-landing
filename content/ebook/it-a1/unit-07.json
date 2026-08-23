@@ -1,0 +1,198 @@
+{
+  "title": "Jam berapa sekarang?",
+  "title_target": "Che ore sono?",
+  "goal": "Membaca jam dalam bahasa Italia, membuat janji pada jam tertentu, dan menghadapi kebiasaan jam 24 di jadwal resmi.",
+  "bekal": [
+    "menyebut jam dengan *sono le* dan pengecualian *è l'una*",
+    "membedakan *che ore sono* (jam berapa) dan *a che ora* (jam berapa acaranya)",
+    "membaca jadwal kereta dan bioskop yang memakai jam 24"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Un appuntamento",
+      "intro": "Giulia dan Budi mengatur janji nonton. Perhatikan dua pertanyaan berbeda tentang jam di baris pertama dan baris keempat.",
+      "lines": [
+        { "speaker": "Budi:", "text": "Scusa, che ore sono?", "id": "Maaf, jam berapa sekarang?", "literal": "maaf, apa jam-jam adalah?" },
+        { "speaker": "Giulia:", "text": "Sono le tre e mezza.", "id": "Setengah empat.", "literal": "adalah si tiga dan setengah." },
+        { "speaker": "Budi:", "text": "Così tardi! Il film comincia presto?", "id": "Sudah selarut itu! Filmnya mulai cepat?", "literal": "begitu terlambat! si film mulai cepat?" },
+        { "speaker": "Giulia:", "text": "A che ora vuoi andare? C'è alle sei e alle otto e un quarto.", "id": "Kamu mau pergi jam berapa? Ada yang jam enam dan jam delapan lewat seperempat.", "literal": "pada apa jam kamu-mau pergi? ada pada-si enam dan pada-si delapan dan se perempat." },
+        { "speaker": "Budi:", "text": "Alle otto è meglio. Finisco di lavorare alle sette.", "id": "Yang jam delapan lebih baik. Saya selesai kerja jam tujuh.", "literal": "pada-si delapan adalah lebih-baik. saya-selesai dari bekerja pada-si tujuh." },
+        { "speaker": "Giulia:", "text": "Perfetto. Ci vediamo alle otto meno dieci davanti al cinema.", "id": "Sempurna. Kita ketemu jam delapan kurang sepuluh di depan bioskop.", "literal": "sempurna. kita melihat-diri pada-si delapan kurang sepuluh di-depan pada-si bioskop." },
+        { "speaker": "Budi:", "text": "Va bene. E dopo? I bar chiudono a mezzanotte?", "id": "Oke. Dan sesudahnya? Bar tutup tengah malam?", "literal": "pergi baik. dan sesudah? si bar-bar mereka-menutup pada tengah-malam?" },
+        { "speaker": "Giulia:", "text": "Alcuni sì. Ma il locale vicino chiude all'una.", "id": "Sebagian ya. Tapi tempat yang dekat sini tutup jam satu.", "literal": "sebagian ya. tetapi si tempat dekat menutup pada-si satu." },
+        { "speaker": "Budi:", "text": "Ah, il biglietto dice ventidue e trenta. Che ora è?", "id": "Ah, di tiketnya tertulis 22.30. Itu jam berapa?", "literal": "ah, si tiket mengatakan dua-puluh-dua dan tiga-puluh. apa jam adalah?" },
+        { "speaker": "Giulia:", "text": "Le dieci e mezza di sera. Gli orari ufficiali usano le ventiquattro ore.", "id": "Setengah sebelas malam. Jadwal resmi memakai jam 24.", "literal": "si sepuluh dan setengah dari sore. si jadwal resmi mereka-memakai si dua-puluh-empat jam." },
+        { "speaker": "Budi:", "text": "Capito. Allora a stasera, alle otto meno dieci!", "id": "Paham. Kalau begitu sampai nanti malam, jam delapan kurang sepuluh!", "literal": "dimengerti. kalau-begitu sampai malam-ini, pada-si delapan kurang sepuluh!" },
+        { "speaker": "Giulia:", "text": "A stasera! E non fare tardi!", "id": "Sampai nanti malam! Dan jangan telat!", "literal": "sampai malam-ini! dan tidak lakukan terlambat!" }
+      ],
+      "notes": [
+        "**Sono le, bukan è le.** Jam disebut jamak karena yang dimaksud sebetulnya *le ore* — jam-jamnya. Karena itu bentuk kata kerjanya jamak: *sono le tre*, *sono le otto*.",
+        "**Kecuali tiga jam yang tunggal.** *È l'una* (jam satu), *è mezzogiorno* (tengah hari), *è mezzanotte* (tengah malam). Ketiganya memakai *è*, karena memang cuma satu.",
+        "**Che ore sono vs a che ora.** Yang pertama menanyakan jam sekarang. Yang kedua menanyakan jam sebuah acara: *A che ora comincia il film?* Menukar keduanya adalah kesalahan yang langsung terdengar. *Che ora è?* juga benar dan sama artinya dengan *che ore sono?*.",
+        "**Menjawab jam acara memakai alle.** *Alle otto*, *all'una*, *a mezzogiorno*. Perhatikan bahwa *a* melebur dengan kata sandangnya — persis peleburan yang akan dibongkar di unit 10.",
+        "**Menit ditambahkan dengan e, dikurangi dengan meno.** *Le otto e dieci* (delapan lewat sepuluh), *le otto meno dieci* (delapan kurang sepuluh). Sesudah lewat setengah, orang Italia lebih sering menghitung mundur ke jam berikutnya.",
+        "**Setengah empat bukan le tre e mezza dalam pikiran kita.** Dalam bahasa Indonesia \"setengah empat\" berarti setengah jam **menuju** empat. Dalam bahasa Italia *le tre e mezza* berarti tiga **lewat** setengah. Angka yang disebut berbeda meski jamnya sama — sumber salah janji yang klasik.",
+        "**Jam 24 dipakai di semua jadwal resmi.** Kereta, pesawat, bioskop, kantor: *le quattordici e trenta* untuk 14.30. Dalam percakapan sehari-hari orang tetap memakai jam 12 dan menambahkan *di mattina*, *di pomeriggio*, *di sera*, *di notte*.",
+        "**Non fare tardi** = jangan telat. Ini bentuk perintah menyangkal yang, dalam bentuk akrab, memakai *non* + bentuk dasar kata kerjanya. Bentuk perintah dibongkar di unit 16."
+      ],
+      "grammars": [
+        {
+          "title": "Membaca jam",
+          "body": ["Satu pola untuk hampir semuanya, tiga pengecualian yang harus dihafal."],
+          "table": {
+            "head": ["Jam", "Italiano", "Catatan"],
+            "rows": [
+              ["01.00", "**È l'una.**", "tunggal"],
+              ["12.00", "**È mezzogiorno.**", "tunggal"],
+              ["00.00", "**È mezzanotte.**", "tunggal"],
+              ["02.00", "Sono le due.", ""],
+              ["03.15", "Sono le tre e un quarto.", "juga: *e quindici*"],
+              ["03.30", "Sono le tre e mezza.", "juga: *e trenta*"],
+              ["03.45", "Sono le quattro meno un quarto.", "juga: *le tre e quarantacinque*"],
+              ["07.50", "Sono le otto meno dieci.", "dihitung mundur"],
+              ["19.20", "Sono le sette e venti di sera.", "sehari-hari"],
+              ["19.20", "Sono le diciannove e venti.", "jadwal resmi"]
+            ]
+          },
+          "after": ["Bentuk *e quindici*, *e trenta*, *e quarantacinque* selalu aman dan tidak pernah salah. Kalau kamu belum yakin dengan *meno* dan *mezza*, pakai angka saja dulu."]
+        },
+        {
+          "title": "Bagian hari",
+          "body": ["Untuk memperjelas jam 12 pagi atau malam, orang Italia menempelkan bagian harinya."],
+          "table": {
+            "head": ["Italiano", "Kira-kira", "Contoh"],
+            "rows": [
+              ["di mattina", "05.00 - 12.00", "le nove di mattina"],
+              ["di pomeriggio", "12.00 - 17.00", "le tre di pomeriggio"],
+              ["di sera", "17.00 - 23.00", "le nove di sera"],
+              ["di notte", "23.00 - 05.00", "le due di notte"]
+            ]
+          },
+          "after": [
+            "Batasnya tidak baku dan orang Italia sendiri berbeda pendapat, terutama soal kapan *pomeriggio* berakhir. Yang penting maksudmu tersampaikan.",
+            "Perhatikan bahwa *sera* menutupi jam yang dalam bahasa Indonesia sudah disebut malam. Undangan makan *alle otto di sera* adalah makan malam biasa, bukan larut."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata waktu yang wajib punya",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Italiano", "Bahasa Indonesia", "Contoh"],
+          "rows": [
+            ["adesso / ora", "sekarang", "Adesso studio."],
+            ["oggi", "hari ini", "Oggi lavoro."],
+            ["stamattina", "pagi ini", "Stamattina dormo."],
+            ["stasera", "malam ini", "A stasera!"],
+            ["stanotte", "malam nanti", "Stanotte parto."],
+            ["domani", "besok", "A domani!"],
+            ["dopodomani", "lusa", "Dopodomani torno."],
+            ["ieri", "kemarin", "Ieri ero a casa."],
+            ["presto", "cepat, awal", "Comincia presto."],
+            ["tardi", "terlambat, larut", "È tardi!"],
+            ["sempre", "selalu", "Arrivo sempre tardi."],
+            ["mai", "tidak pernah", "Non arrivo mai tardi."],
+            ["spesso", "sering", "Mangio spesso fuori."],
+            ["ogni giorno", "setiap hari", "Studio ogni giorno."]
+          ]
+        },
+        { "type": "p", "text": "Perhatikan *mai*: ia butuh *non* di depan kata kerjanya. *Non arrivo mai tardi* harfiahnya \"saya tidak datang tidak pernah terlambat\". Penyangkalan ganda ini benar dan wajib dalam bahasa Italia — sama seperti \"tidak pernah\" kita yang juga memuat dua kata." },
+        {
+          "type": "kotak",
+          "title": "Membuat janji",
+          "items": [
+            "*A che ora ci vediamo?* — Ketemu jam berapa?",
+            "*Ci vediamo alle otto.* — Ketemu jam delapan.",
+            "*Va bene alle sette?* — Jam tujuh oke?",
+            "*Sono in ritardo, scusa.* — Saya telat, maaf.",
+            "*Arrivo tra dieci minuti.* — Saya sampai sepuluh menit lagi.",
+            "*Facciamo più tardi?* — Bagaimana kalau lebih malam?"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "l'ora", "baca": "LO-ra", "id": "jam, waktu" },
+    { "it": "il minuto", "baca": "il mi-NU-to", "id": "menit" },
+    { "it": "mezzogiorno", "baca": "med-dzo-JOR-no", "id": "tengah hari" },
+    { "it": "mezzanotte", "baca": "med-dza-NOT-te", "id": "tengah malam" },
+    { "it": "il quarto", "baca": "il KUAR-to", "id": "seperempat" },
+    { "it": "mezza", "baca": "MED-dza", "id": "setengah" },
+    { "it": "meno", "baca": "ME-no", "id": "kurang" },
+    { "it": "la mattina", "baca": "la mat-TI-na", "id": "pagi" },
+    { "it": "il pomeriggio", "baca": "il po-me-RIJ-jo", "id": "siang menjelang sore" },
+    { "it": "la notte", "baca": "la NOT-te", "id": "malam" },
+    { "it": "l'appuntamento", "baca": "lap-pun-ta-MEN-to", "id": "janji temu" },
+    { "it": "il cinema", "baca": "il CI-ne-ma", "id": "bioskop" },
+    { "it": "il biglietto", "baca": "il bi-LYET-to", "id": "tiket" },
+    { "it": "l'orario", "baca": "lo-RA-rio", "id": "jadwal" },
+    { "it": "cominciare", "baca": "ko-min-CA-re", "id": "mulai" },
+    { "it": "andare", "baca": "an-DA-re", "id": "pergi" },
+    { "it": "presto", "baca": "PRES-to", "id": "cepat, awal" },
+    { "it": "in ritardo", "baca": "in ri-TAR-do", "id": "terlambat" },
+    { "it": "tra", "baca": "tra", "id": "dalam waktu, di antara" },
+    { "it": "davanti a", "baca": "da-VAN-ti a", "id": "di depan" },
+    { "it": "meglio", "baca": "ME-lyo", "id": "lebih baik" },
+    { "it": "perfetto", "baca": "per-FET-to", "id": "sempurna" },
+    { "it": "spesso", "baca": "SPES-so", "id": "sering" },
+    { "it": "mai", "baca": "mai", "id": "tidak pernah" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis jamnya dalam bahasa Italia.",
+      "items": [
+        "02.00",
+        "01.00",
+        "12.00",
+        "05.15",
+        "09.30",
+        "10.45",
+        "18.20",
+        "00.00"
+      ]
+    },
+    {
+      "prompt": "Isi dengan che ore sono atau a che ora.",
+      "items": [
+        "____? Sono le quattro.",
+        "____ comincia il film?",
+        "____ finisci di lavorare?",
+        "Scusi, ____?",
+        "____ ci vediamo domani?"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Jam berapa sekarang?",
+        "Sekarang jam setengah empat.",
+        "Filmnya mulai jam delapan.",
+        "Saya selesai kerja jam tujuh.",
+        "Kita ketemu jam sembilan kurang seperempat.",
+        "Saya telat, maaf."
+      ]
+    },
+    {
+      "prompt": "Ubah jam resmi ini jadi bentuk percakapan sehari-hari.",
+      "items": [
+        "le quattordici",
+        "le diciotto e trenta",
+        "le venti e quindici",
+        "le ventidue",
+        "le tredici e quaranta"
+      ]
+    }
+  ],
+  "answers": [
+    "Sono le due. — È l'una. — È mezzogiorno. — Sono le cinque e un quarto. — Sono le nove e mezza. — Sono le undici meno un quarto. — Sono le sei e venti di sera. — È mezzanotte.",
+    "Che ore sono — A che ora — A che ora — che ore sono — A che ora",
+    "Che ore sono? — Sono le tre e mezza. — Il film comincia alle otto. — Finisco di lavorare alle sette. — Ci vediamo alle nove meno un quarto. — Sono in ritardo, scusa.",
+    "le due di pomeriggio — le sei e mezza di sera — le otto e un quarto di sera — le dieci di sera — l'una e quaranta di pomeriggio"
+  ],
+  "wave": "Ulangi **unit 5** dulu: ceritakan keluargamu dari ingatan — berapa saudara, umur mereka, tinggal di mana."
+}

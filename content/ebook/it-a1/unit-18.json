@@ -1,0 +1,192 @@
+{
+  "title": "Cuacanya bagaimana?",
+  "title_target": "Che tempo fa?",
+  "goal": "Bicara tentang cuaca, membedakan *essere* dan *stare*, dan menyatakan apa yang sedang berlangsung sekarang juga.",
+  "bekal": [
+    "menggambarkan cuaca dengan kata kerja yang benar",
+    "membedakan *sono* dan *sto*",
+    "menyatakan kegiatan yang sedang berlangsung dengan *sto facendo*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Piove ancora",
+      "intro": "Telepon di sore hari yang basah. Perhatikan berapa kali cuaca dinyatakan dengan kata kerja *fare*.",
+      "lines": [
+        { "speaker": "Giulia:", "text": "Pronto, Budi? Che stai facendo?", "id": "Halo, Budi? Lagi ngapain?", "literal": "siap, Budi? apa kamu-berada melakukan?" },
+        { "speaker": "Budi:", "text": "Sto guardando la pioggia dalla finestra. Che tempo!", "id": "Lagi lihat hujan dari jendela. Cuaca macam apa ini!", "literal": "saya-berada menonton si hujan dari-si jendela. betapa cuaca!" },
+        { "speaker": "Giulia:", "text": "Piove ancora? Qui ha smesso mezz'ora fa.", "id": "Masih hujan? Di sini sudah berhenti setengah jam lalu.", "literal": "hujan lagi? di-sini punya berhenti setengah-jam lalu." },
+        { "speaker": "Budi:", "text": "Qui diluvia. E fa freddo, sono solo dodici gradi.", "id": "Di sini hujan deras. Dan dingin, cuma dua belas derajat.", "literal": "di-sini membanjir. dan membuat dingin, adalah hanya dua-belas derajat." },
+        { "speaker": "Giulia:", "text": "Beh, è novembre. Cosa ti aspettavi?", "id": "Ya, ini November. Kamu mengharapkan apa?", "literal": "ya, adalah november. apa kepadamu kamu-mengharapkan?" },
+        { "speaker": "Budi:", "text": "In Indonesia piove anche di più, ma fa sempre caldo.", "id": "Di Indonesia hujannya malah lebih sering, tapi selalu panas.", "literal": "di Indonesia hujan juga dari lebih, tetapi membuat selalu panas." },
+        { "speaker": "Giulia:", "text": "Ecco, il freddo è la parte difficile. Come stai, a proposito?", "id": "Nah, dinginnya yang susah. Ngomong-ngomong, kamu apa kabar?", "literal": "inilah, si dingin adalah si bagian sulit. bagaimana kamu-berada, pada maksud?" },
+        { "speaker": "Budi:", "text": "Sto bene, ma sono un po' stanco. Sto studiando da stamattina.", "id": "Baik, tapi agak capek. Saya belajar sejak pagi tadi.", "literal": "saya-berada baik, tetapi adalah se sedikit lelah. saya-berada belajar dari pagi-ini." },
+        { "speaker": "Giulia:", "text": "Allora esci! Domani fa bello, dicono.", "id": "Ya keluar dong! Besok katanya cerah.", "literal": "kalau-begitu keluarlah! besok membuat indah, mereka-mengatakan." },
+        { "speaker": "Budi:", "text": "Davvero? Sole?", "id": "Serius? Matahari?", "literal": "sungguh? matahari?" },
+        { "speaker": "Giulia:", "text": "Sole e diciotto gradi. Andiamo in collina?", "id": "Matahari dan delapan belas derajat. Ke bukit yuk?", "literal": "matahari dan delapan-belas derajat. kita-pergi di bukit?" },
+        { "speaker": "Budi:", "text": "Volentieri. Ma porto l'ombrello lo stesso.", "id": "Boleh. Tapi saya tetap bawa payung.", "literal": "dengan-senang-hati. tetapi saya-bawa si payung itu sama." }
+      ],
+      "notes": [
+        "**Cuaca memakai fare.** *Fa caldo*, *fa freddo*, *fa bello*, *fa brutto*. Harfiahnya \"ia membuat panas\". Pelakunya tidak ada — sama seperti \"hujan\" dalam bahasa Indonesia yang juga tidak punya pelaku.",
+        "**Tapi tidak semua.** *Piove* (hujan), *nevica* (turun salju), *tira vento* (berangin), dan *c'è il sole* / *c'è nebbia* memakai kata kerjanya sendiri. Yang penting diingat: jangan pernah bilang *è caldo* untuk cuaca — itu berarti benda yang panas, bukan udara.",
+        "**Essere vs stare.** *Essere* untuk sifat tetap dan jati diri: *sono italiano*, *sono stanco*. *Stare* untuk keadaan sesaat dan kesehatan: *sto bene*, *sto male*. Karena itu *come stai?* memakai *stare*, sementara *com'è?* memakai *essere*.",
+        "**Sto facendo = sedang melakukan.** Bentuknya *stare* + kata kerja berakhiran *-ando* atau *-endo*. Ia dipakai jauh lebih jarang daripada bentuk *-ing* bahasa Inggris: hanya untuk menekankan bahwa sesuatu sedang berlangsung persis sekarang.",
+        "**Kalau tidak ditekankan, bentuk biasa sudah cukup.** *Che fai?* dan *che stai facendo?* dua-duanya berarti \"lagi ngapain\". Yang pertama lebih sering terdengar.",
+        "**Pronto?** adalah sapaan telepon Italia, harfiahnya \"siap\". Dipakai oleh yang mengangkat maupun yang menelepon, dan tidak dipakai di luar telepon.",
+        "**Suhu memakai essere dan kata gradi.** *Sono dodici gradi*, *fa venti gradi*. Dua-duanya benar. Suhu minus: *sono meno cinque gradi*.",
+        "**Lo stesso** di ujung kalimat berarti \"tetap saja\", \"pokoknya\". *Porto l'ombrello lo stesso* = saya bawa payung pokoknya. Ungkapan pendek yang sangat berguna."
+      ],
+      "grammars": [
+        {
+          "title": "Cuaca — kata kerja mana untuk apa",
+          "body": [],
+          "table": {
+            "head": ["Italiano", "Bahasa Indonesia", "Kata kerjanya"],
+            "rows": [
+              ["Fa caldo.", "Udaranya panas.", "fare"],
+              ["Fa freddo.", "Udaranya dingin.", "fare"],
+              ["Fa bello / bel tempo.", "Cuacanya cerah.", "fare"],
+              ["Fa brutto tempo.", "Cuacanya buruk.", "fare"],
+              ["Fa fresco.", "Sejuk.", "fare"],
+              ["Piove.", "Hujan.", "piovere"],
+              ["Nevica.", "Turun salju.", "nevicare"],
+              ["Tira vento.", "Berangin.", "tirare"],
+              ["C'è il sole.", "Cerah, ada matahari.", "esserci"],
+              ["C'è nebbia.", "Berkabut.", "esserci"],
+              ["È nuvoloso.", "Mendung.", "essere"],
+              ["Sono venti gradi.", "Dua puluh derajat.", "essere"]
+            ]
+          },
+          "after": ["Menanyakannya: *Che tempo fa?* (cuacanya bagaimana) atau *Che tempo fa oggi a Bologna?*. Perhatikan bahwa *il tempo* berarti cuaca **dan** waktu; konteksnya yang membedakan."]
+        },
+        {
+          "title": "Stare + bentuk -ando / -endo",
+          "body": ["Membentuknya: buang akhiran kata kerjanya, tempelkan *-ando* untuk golongan *-are*, dan *-endo* untuk dua golongan lainnya."],
+          "table": {
+            "head": ["Kata kerja", "Bentuk berlangsung", "Contoh"],
+            "rows": [
+              ["parl-**are**", "parl**ando**", "Sto parlando con Marco."],
+              ["legg-**ere**", "legg**endo**", "Sta leggendo il giornale."],
+              ["dorm-**ire**", "dorm**endo**", "I bambini stanno dormendo."],
+              ["fare", "**facendo**", "Che stai facendo?"],
+              ["bere", "**bevendo**", "Sto bevendo un caffè."],
+              ["dire", "**dicendo**", "Che stai dicendo?"]
+            ]
+          },
+          "after": [
+            "Bentuk *stare*: *sto, stai, sta, stiamo, state, stanno*. Bentuk *-ando/-endo* tidak pernah berubah.",
+            "⚠️ Jangan pakai bentuk ini untuk rencana masa depan seperti dalam bahasa Inggris. *Domani sto andando a Roma* salah; yang benar *domani vado a Roma*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Essere atau stare",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Pakai essere untuk", "Pakai stare untuk"],
+          "rows": [
+            ["Jati diri: *Sono Budi.*", "Kesehatan: *Sto bene.*"],
+            ["Kebangsaan: *Sono indonesiano.*", "Kabar: *Come stai?*"],
+            ["Pekerjaan: *Sono ingegnere.*", "Kecocokan baju: *Ti sta bene.*"],
+            ["Sifat: *È simpatico.*", "Sedang berlangsung: *Sto studiando.*"],
+            ["Keadaan: *Sono stanco.*", "Diam di tempat: *Sto a casa.*"],
+            ["Letak: *La banca è in centro.*", "Ungkapan: *Stai zitto!* (diam!)"]
+          ]
+        },
+        { "type": "p", "text": "Jebakan terbesarnya ada di baris keempat dan kelima kolom kiri: *sono stanco* (saya lelah) memakai *essere* meski keadaannya jelas sementara. Bahasa Italia tidak sekonsisten bahasa Spanyol dalam hal ini — sebagian besar keadaan badan dan perasaan tetap memakai *essere*." },
+        {
+          "type": "kotak",
+          "title": "Kalimat cuaca siap pakai",
+          "items": [
+            "*Che tempo fa oggi?* — Hari ini cuacanya bagaimana?",
+            "*Fa un caldo terribile.* — Panas sekali.",
+            "*Piove a dirotto.* — Hujan deras sekali.",
+            "*Domani dovrebbe fare bello.* — Besok mestinya cerah.",
+            "*Porta l'ombrello!* — Bawa payung!",
+            "*Che bella giornata!* — Hari yang indah!"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "il tempo", "baca": "il TEM-po", "id": "cuaca, waktu" },
+    { "it": "la pioggia", "baca": "la PIOJ-ja", "id": "hujan" },
+    { "it": "piovere", "baca": "PIO-ve-re", "id": "hujan (kata kerja)" },
+    { "it": "la neve", "baca": "la NE-ve", "id": "salju" },
+    { "it": "nevicare", "baca": "ne-vi-KA-re", "id": "turun salju" },
+    { "it": "il sole", "baca": "il SO-le", "id": "matahari" },
+    { "it": "il vento", "baca": "il VEN-to", "id": "angin" },
+    { "it": "la nebbia", "baca": "la NEB-bia", "id": "kabut" },
+    { "it": "la nuvola", "baca": "la NU-vo-la", "id": "awan" },
+    { "it": "nuvoloso", "baca": "nu-vo-LO-zo", "id": "mendung" },
+    { "it": "il grado", "baca": "il GRA-do", "id": "derajat" },
+    { "it": "l'ombrello", "baca": "lom-BREL-lo", "id": "payung" },
+    { "it": "il cielo", "baca": "il CE-lo", "id": "langit" },
+    { "it": "fresco", "baca": "FRES-ko", "id": "sejuk, segar" },
+    { "it": "umido", "baca": "U-mi-do", "id": "lembap" },
+    { "it": "il giornale", "baca": "il jor-NA-le", "id": "koran" },
+    { "it": "pronto", "baca": "PRON-to", "id": "siap, halo (telepon)" },
+    { "it": "ancora", "baca": "an-KO-ra", "id": "masih, lagi" },
+    { "it": "smettere", "baca": "ZMET-te-re", "id": "berhenti" },
+    { "it": "lo stesso", "baca": "lo STES-so", "id": "tetap saja" },
+    { "it": "a proposito", "baca": "a pro-PO-zi-to", "id": "ngomong-ngomong" },
+    { "it": "terribile", "baca": "ter-RI-bi-le", "id": "mengerikan" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan fa, piove, c'è, atau sono.",
+      "items": [
+        "____ freddo oggi.",
+        "____ molto. Prendi l'ombrello!",
+        "____ il sole.",
+        "____ venti gradi.",
+        "____ bel tempo domani.",
+        "____ nebbia stamattina."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk essere atau stare yang tepat.",
+      "items": [
+        "Io ____ indonesiano.",
+        "Come ____ (tu)?",
+        "Marco ____ molto simpatico.",
+        "Noi ____ bene, grazie.",
+        "Loro ____ stanchi.",
+        "La banca ____ in centro."
+      ]
+    },
+    {
+      "prompt": "Ubah jadi bentuk sedang berlangsung dengan stare.",
+      "items": [
+        "Studio italiano.",
+        "Marco legge il giornale.",
+        "I bambini dormono.",
+        "Beviamo un caffè.",
+        "Che cosa fai?",
+        "Parlano con Giulia."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Hari ini cuacanya bagaimana?",
+        "Dingin dan hujan.",
+        "Besok cerah.",
+        "Sekarang dua belas derajat.",
+        "Lagi ngapain?",
+        "Saya lagi belajar."
+      ]
+    }
+  ],
+  "answers": [
+    "Fa — Piove — C'è — Sono — Fa — C'è",
+    "sono — stai — è — stiamo — sono — è",
+    "Sto studiando italiano. — Marco sta leggendo il giornale. — I bambini stanno dormendo. — Stiamo bevendo un caffè. — Che cosa stai facendo? — Stanno parlando con Giulia.",
+    "Che tempo fa oggi? — Fa freddo e piove. — Domani fa bello. — Adesso sono dodici gradi. — Che stai facendo? — Sto studiando."
+  ],
+  "wave": "Ulangi **unit 16** dulu: tolak tiga ajakan berbeda dengan sopan, dan terima satu — pakai *posso*, *devo*, dan *voglio*."
+}

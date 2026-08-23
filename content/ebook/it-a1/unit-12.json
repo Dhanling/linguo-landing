@@ -1,0 +1,198 @@
+{
+  "title": "Di pasar",
+  "title_target": "Al mercato",
+  "goal": "Berbelanja bahan makanan: menyebut jumlah, memakai kata sandang sebagian, dan menawar percakapan yang sesungguhnya terjadi di kios sayur.",
+  "bekal": [
+    "meminta jumlah tertentu dengan takaran Italia",
+    "memakai *del*, *della*, *dei* untuk \"sebagian, beberapa\"",
+    "menyebut bahan makanan sehari-hari"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Dal fruttivendolo",
+      "intro": "Pasar terbuka pagi hari. Budi belanja untuk seminggu. Di Italia, pembeli biasanya tidak memilih sendiri buahnya — penjualnya yang mengambil.",
+      "lines": [
+        { "speaker": "Venditore:", "text": "Buongiorno! Mi dica, cosa Le do?", "id": "Selamat pagi! Silakan, mau apa?", "literal": "selamat-pagi! kepada-saya katakan, apa kepada-Anda saya-beri?" },
+        { "speaker": "Budi:", "text": "Buongiorno. Vorrei un chilo di pomodori, per favore.", "id": "Selamat pagi. Saya mau satu kilo tomat, tolong.", "literal": "selamat-pagi. saya-ingin sebuah kilo dari tomat-tomat, untuk kebaikan." },
+        { "speaker": "Venditore:", "text": "Per l'insalata o per il sugo?", "id": "Untuk salad atau untuk saus?", "literal": "untuk si salad atau untuk si saus?" },
+        { "speaker": "Budi:", "text": "Per il sugo. Perché, sono diversi?", "id": "Untuk saus. Kenapa, beda ya?", "literal": "untuk si saus. kenapa, adalah berbeda?" },
+        { "speaker": "Venditore:", "text": "Certo che sono diversi! Prenda questi, sono più maturi.", "id": "Ya jelas beda! Ambil yang ini, lebih matang.", "literal": "tentu bahwa adalah berbeda! ambillah ini, adalah lebih matang." },
+        { "speaker": "Budi:", "text": "Va bene. Poi mezzo chilo di mele e delle banane.", "id": "Baik. Lalu setengah kilo apel dan beberapa pisang.", "literal": "pergi baik. lalu setengah kilo dari apel-apel dan dari-si pisang-pisang." },
+        { "speaker": "Venditore:", "text": "Quante banane? Tre, quattro?", "id": "Pisangnya berapa? Tiga, empat?", "literal": "berapa pisang-pisang? tiga, empat?" },
+        { "speaker": "Budi:", "text": "Quattro. E un po' di basilico, se c'è.", "id": "Empat. Dan sedikit kemangi, kalau ada.", "literal": "empat. dan se sedikit dari kemangi, jika ada." },
+        { "speaker": "Venditore:", "text": "Il basilico glielo do io. È un regalo.", "id": "Kemanginya saya kasih. Itu bonus.", "literal": "si kemangi kepada-Anda-nya saya-beri saya. adalah sebuah hadiah." },
+        { "speaker": "Budi:", "text": "Che gentile! Quant'è in tutto?", "id": "Baik sekali! Semuanya berapa?", "literal": "betapa ramah! berapa-adalah dalam semua?" },
+        { "speaker": "Venditore:", "text": "Sei euro e ottanta. Facciamo sei e cinquanta.", "id": "Enam euro delapan puluh. Kita bulatkan enam lima puluh saja.", "literal": "enam euro dan delapan-puluh. kami-lakukan enam dan lima-puluh." },
+        { "speaker": "Budi:", "text": "Grazie! A domenica prossima!", "id": "Terima kasih! Sampai Minggu depan!", "literal": "terima-kasih! sampai minggu berikut!" }
+      ],
+      "notes": [
+        "**Cosa Le do?** harfiahnya \"apa saya berikan kepada Anda?\" — ini sapaan baku penjual Italia. Kamu akan mendengarnya di setiap kios. Bentuk akrabnya *cosa ti do?*.",
+        "**Belanja memakai takaran, bukan jumlah butir.** *Un chilo di pomodori*, *mezzo chilo di mele*, *un etto di prosciutto*. Meminta \"lima buah tomat\" mungkin dimengerti, tapi terdengar asing.",
+        "**Un etto = 100 gram**, dan ia takaran paling sering dipakai untuk daging dan keju: *due etti di prosciutto* = 200 gram. Ini kata yang tidak diajarkan buku umum tapi dipakai tiap hari.",
+        "**Delle banane = beberapa pisang.** Bentuk *di* + kata sandang jamak berarti \"sebagian, beberapa\". Ini yang disebut kata sandang sebagian, dan di bahasa Italia ia jauh lebih sering dipakai daripada di bahasa Indonesia.",
+        "**Un po' di juga berarti sedikit, tapi untuk yang tak terhitung.** *Un po' di pane*, *un po' di acqua*, *un po' di basilico*. Kalau bendanya bisa dihitung, pakai *qualche* atau *alcuni*.",
+        "**Jangan pegang buahnya sendiri.** Di pasar tradisional Italia dan banyak toko sayur, memilih dengan tangan sendiri dianggap tidak sopan. Sebutkan saja apa yang kamu mau; penjualnya yang mengambil, dan biasanya ia memilih lebih baik daripada kamu.",
+        "**Facciamo sei e cinquanta** — penjual membulatkan ke bawah. Ini bukan tawar-menawar; harga di pasar Italia tetap. Pembulatan kecil dan bonus kemangi adalah bagian dari keramahan, bukan negosiasi.",
+        "**Glielo do io** memuat dua kata kecil sekaligus — *gli* + *lo*. Bentuk ini di atas tingkat A1; untuk sekarang cukup dikenali. Yang perlu kamu tangkap: penjualnya bilang kemangi itu gratis."
+      ],
+      "grammars": [
+        {
+          "title": "Kata sandang sebagian — beberapa, sedikit",
+          "body": ["Terbentuk dari *di* + kata sandang, dan artinya \"sejumlah yang tidak ditentukan\"."],
+          "table": {
+            "head": ["Bentuk", "Dipakai untuk", "Contoh"],
+            "rows": [
+              ["**del** / **dello** / **della**", "benda tak terhitung", "del pane, della carne, dell'acqua"],
+              ["**dei** / **degli** / **delle**", "benda terhitung, jamak", "dei pomodori, delle mele"],
+              ["**un po' di**", "benda tak terhitung", "un po' di sale"],
+              ["**qualche** + tunggal", "benda terhitung", "qualche mela (beberapa apel)"],
+              ["**alcuni** / **alcune** + jamak", "benda terhitung", "alcune mele"]
+            ]
+          },
+          "after": [
+            "⚠️ *Qualche* selalu diikuti kata benda **tunggal** meski artinya jamak: *qualche amico*, bukan *qualche amici*. Ini pengecualian yang harus dihafal apa adanya.",
+            "Dalam kalimat menyangkal, kata sandang sebagian dibuang: *Non ho pane* (saya tidak punya roti), bukan *non ho del pane*."
+          ]
+        },
+        {
+          "title": "Takaran dan wadah",
+          "body": ["Semuanya disambung ke kata bendanya dengan *di*, dan *di* di sini **tidak** melebur dengan kata sandang."],
+          "table": {
+            "head": ["Italiano", "Bahasa Indonesia", "Contoh"],
+            "rows": [
+              ["un chilo di", "sekilo", "un chilo di pane"],
+              ["mezzo chilo di", "setengah kilo", "mezzo chilo di mele"],
+              ["un etto di", "seratus gram", "due etti di formaggio"],
+              ["un litro di", "seliter", "un litro di latte"],
+              ["una bottiglia di", "sebotol", "una bottiglia di vino"],
+              ["un pacco di", "sebungkus", "un pacco di pasta"],
+              ["una scatola di", "sekotak", "una scatola di biscotti"],
+              ["una fetta di", "seiris", "una fetta di torta"],
+              ["un pezzo di", "sepotong", "un pezzo di formaggio"],
+              ["una decina di", "sepuluhan", "una decina di uova"]
+            ]
+          },
+          "after": ["Perhatikan *un chilo di pane*, bukan *un chilo del pane*. Sesudah takaran, kata bendanya berdiri telanjang tanpa kata sandang."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bahan makanan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Sayur & buah", "Bahasa Indonesia", "Lain-lain", "Bahasa Indonesia"],
+          "rows": [
+            ["il pomodoro", "tomat", "il pane", "roti"],
+            ["la patata", "kentang", "la pasta", "pasta, mi"],
+            ["la cipolla", "bawang bombai", "il riso", "nasi, beras"],
+            ["l'aglio", "bawang putih", "il formaggio", "keju"],
+            ["l'insalata", "selada, salad", "il latte", "susu"],
+            ["la carota", "wortel", "il burro", "mentega"],
+            ["gli spinaci", "bayam", "l'uovo / le uova", "telur"],
+            ["la mela", "apel", "la carne", "daging"],
+            ["la banana", "pisang", "il pollo", "ayam"],
+            ["l'arancia", "jeruk", "il pesce", "ikan"],
+            ["l'uva", "anggur", "il prosciutto", "ham"],
+            ["la fragola", "stroberi", "il sale", "garam"],
+            ["il limone", "lemon", "l'olio", "minyak"],
+            ["la pesca", "persik", "lo zucchero", "gula"]
+          ]
+        },
+        { "type": "p", "text": "*L'uovo* adalah kata paling ganjil di daftar ini: tunggalnya maskulin, jamaknya feminin dan berakhiran -a — *le uova*. Sekelompok kecil kata benda berperilaku begini, dan telur adalah yang paling sering kamu pakai." },
+        {
+          "type": "kotak",
+          "title": "Kalimat siap pakai di toko",
+          "items": [
+            "*Vorrei un chilo di…* — Saya mau sekilo…",
+            "*Quanto costa al chilo?* — Sekilo berapa?",
+            "*Avete del pane fresco?* — Ada roti segar?",
+            "*Basta così, grazie.* — Cukup segitu, terima kasih.",
+            "*Quant'è in tutto?* — Semuanya berapa?",
+            "*Posso avere un sacchetto?* — Boleh minta kantong?"
+          ]
+        },
+        { "type": "p", "text": "*Basta così* adalah kalimat penutup belanja yang paling sering dipakai, dan berguna juga di restoran saat kamu tidak mau tambah apa-apa lagi." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "il mercato", "baca": "il mer-KA-to", "id": "pasar" },
+    { "it": "il chilo", "baca": "il KI-lo", "id": "kilogram" },
+    { "it": "l'etto", "baca": "LET-to", "id": "seratus gram" },
+    { "it": "il litro", "baca": "il LI-tro", "id": "liter" },
+    { "it": "il pomodoro", "baca": "il po-mo-DO-ro", "id": "tomat" },
+    { "it": "la mela", "baca": "la ME-la", "id": "apel" },
+    { "it": "il pane", "baca": "il PA-ne", "id": "roti" },
+    { "it": "il formaggio", "baca": "il for-MAJ-jo", "id": "keju" },
+    { "it": "la carne", "baca": "la KAR-ne", "id": "daging" },
+    { "it": "il pesce", "baca": "il PE-sye", "id": "ikan" },
+    { "it": "l'uovo / le uova", "baca": "LUO-vo / le UO-va", "id": "telur" },
+    { "it": "il latte", "baca": "il LAT-te", "id": "susu" },
+    { "it": "l'insalata", "baca": "lin-sa-LA-ta", "id": "salad, selada" },
+    { "it": "il sugo", "baca": "il SU-go", "id": "saus" },
+    { "it": "fresco", "baca": "FRES-ko", "id": "segar" },
+    { "it": "maturo", "baca": "ma-TU-ro", "id": "matang" },
+    { "it": "il sacchetto", "baca": "il sak-KET-to", "id": "kantong belanja" },
+    { "it": "la bottiglia", "baca": "la bot-TI-lya", "id": "botol" },
+    { "it": "la fetta", "baca": "la FET-ta", "id": "iris" },
+    { "it": "qualche", "baca": "KUAL-ke", "id": "beberapa" },
+    { "it": "alcuni / alcune", "baca": "al-KU-ni", "id": "beberapa" },
+    { "it": "diverso", "baca": "di-VER-so", "id": "berbeda" },
+    { "it": "il regalo", "baca": "il re-GA-lo", "id": "hadiah" },
+    { "it": "basta", "baca": "BAS-ta", "id": "cukup" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata sandang sebagian: del, dello, della, dell', dei, degli, atau delle.",
+      "items": [
+        "Vorrei ____ pane.",
+        "Compro ____ mele.",
+        "Ho bisogno ____ acqua.",
+        "Prendiamo ____ formaggio.",
+        "Mangio ____ spinaci.",
+        "Ci sono ____ arance sul tavolo."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Saya mau sekilo tomat, tolong.",
+        "Setengah kilo apel.",
+        "Dua ratus gram keju.",
+        "Sebotol susu.",
+        "Semuanya berapa?",
+        "Cukup segitu, terima kasih."
+      ]
+    },
+    {
+      "prompt": "Isi dengan qualche, alcuni, alcune, atau un po' di.",
+      "items": [
+        "Compro ____ mela.",
+        "Ho ____ amici italiani.",
+        "Vorrei ____ sale.",
+        "Ci sono ____ farmacie in centro.",
+        "Prendo ____ zucchero nel caffè."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "chilo / di / vorrei / pomodori / un",
+        "tutto / in / quant'è / ?",
+        "pane / avete / fresco / del / ?",
+        "grazie / basta / così",
+        "sacchetto / posso / un / avere / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "del — delle — dell' — del — degli — delle",
+    "Vorrei un chilo di pomodori, per favore. — Mezzo chilo di mele. — Due etti di formaggio. — Una bottiglia di latte. — Quant'è in tutto? — Basta così, grazie.",
+    "qualche — alcuni — un po' di — alcune — un po' di",
+    "Vorrei un chilo di pomodori. — Quant'è in tutto? — Avete del pane fresco? — Basta così, grazie. — Posso avere un sacchetto?"
+  ],
+  "wave": "Ulangi **unit 10** dulu: sebut lima tempat di kotamu lengkap dengan letaknya, pakai kata depan yang sudah dilebur."
+}

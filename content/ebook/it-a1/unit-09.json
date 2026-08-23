@@ -1,0 +1,198 @@
+{
+  "title": "Hari, bulan, tanggal",
+  "title_target": "Che giorno è oggi?",
+  "goal": "Menyebut hari, bulan, tanggal, dan musim; membuat janji pada hari tertentu; serta memakai *a*, *in*, dan *da* untuk tempat dan waktu.",
+  "bekal": [
+    "menyebut tanggal lengkap dengan tahunnya",
+    "membedakan *sabato* dan *il sabato*",
+    "memakai *a* untuk kota dan *in* untuk negara tanpa ragu"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Quando parti?",
+      "intro": "Budi merencanakan perjalanan pendek. Giulia membantunya memilih tanggal.",
+      "lines": [
+        { "speaker": "Giulia:", "text": "Che giorno è oggi? Ho perso il conto.", "id": "Hari ini tanggal berapa? Saya kehilangan hitungan.", "literal": "apa hari adalah hari-ini? saya-punya kehilangan si hitungan." },
+        { "speaker": "Budi:", "text": "Oggi è giovedì, il diciotto settembre.", "id": "Hari ini Kamis, tanggal delapan belas September.", "literal": "hari-ini adalah kamis, si delapan-belas september." },
+        { "speaker": "Giulia:", "text": "Già! E quando parti per Firenze?", "id": "Sudah tanggal segitu! Dan kapan kamu berangkat ke Firenze?", "literal": "sudah! dan kapan kamu-berangkat untuk Firenze?" },
+        { "speaker": "Budi:", "text": "Sabato mattina. Torno lunedì sera.", "id": "Sabtu pagi. Pulang Senin malam.", "literal": "sabtu pagi. saya-kembali senin sore." },
+        { "speaker": "Giulia:", "text": "Quindi stai lì tre giorni. Vai in treno?", "id": "Berarti kamu di sana tiga hari. Naik kereta?", "literal": "jadi kamu-berada di-sana tiga hari. kamu-pergi dengan kereta?" },
+        { "speaker": "Budi:", "text": "Sì. Il treno parte alle sette e venti da Bologna.", "id": "Ya. Keretanya berangkat jam tujuh lewat dua puluh dari Bologna.", "literal": "ya. si kereta berangkat pada-si tujuh dan dua-puluh dari Bologna." },
+        { "speaker": "Giulia:", "text": "In agosto Firenze è insopportabile, ma a settembre è perfetta.", "id": "Di bulan Agustus Firenze tak tertahankan, tapi di September sempurna.", "literal": "dalam agustus Firenze adalah tak-tertahankan, tetapi pada september adalah sempurna." },
+        { "speaker": "Budi:", "text": "Meno turisti?", "id": "Turisnya lebih sedikit?", "literal": "kurang turis?" },
+        { "speaker": "Giulia:", "text": "Meno turisti e meno caldo. In autunno è la città più bella d'Italia.", "id": "Turisnya lebih sedikit dan tidak sepanas itu. Di musim gugur ia kota terindah di Italia.", "literal": "kurang turis dan kurang panas. dalam musim-gugur adalah si kota lebih indah dari-Italia." },
+        { "speaker": "Budi:", "text": "E tu, che fai il fine settimana?", "id": "Kalau kamu, akhir pekan ini ngapain?", "literal": "dan kamu, apa kamu-lakukan si akhir pekan?" },
+        { "speaker": "Giulia:", "text": "Il sabato lavoro sempre. La domenica dormo fino a mezzogiorno.", "id": "Tiap Sabtu saya selalu kerja. Tiap Minggu saya tidur sampai tengah hari.", "literal": "si sabtu saya-bekerja selalu. si minggu saya-tidur sampai ke tengah-hari." },
+        { "speaker": "Budi:", "text": "Allora ci vediamo martedì prossimo. Buon viaggio a me!", "id": "Kalau begitu kita ketemu Selasa depan. Selamat jalan buat saya sendiri!", "literal": "kalau-begitu kita melihat-diri selasa berikut. baik perjalanan kepada saya!" }
+      ],
+      "notes": [
+        "**Hari dan bulan ditulis huruf kecil.** *lunedì*, *settembre* — tidak seperti bahasa Inggris. Hanya di awal kalimat mereka memakai huruf besar.",
+        "**Sabato vs il sabato.** Tanpa kata sandang = Sabtu ini saja. Dengan kata sandang = setiap Sabtu. *Sabato lavoro* (Sabtu nanti saya kerja) sangat berbeda dari *il sabato lavoro* (tiap Sabtu saya kerja).",
+        "**Enam hari maskulin, satu feminin.** *Il lunedì*, *il martedì*, sampai *il sabato* semuanya maskulin. Hanya *la domenica* yang feminin — dan itu satu-satunya yang perlu diingat khusus.",
+        "**Tanggal memakai angka biasa, kecuali tanggal satu.** *Il due maggio*, *il quindici agosto*, tapi *il primo maggio*. Hanya tanggal pertama yang memakai bentuk urutan.",
+        "**Urutannya tanggal-bulan, tanpa kata penghubung.** *Il diciotto settembre*, bukan *il diciotto di settembre*. Menuliskannya: 18/09/2026 — hari dulu, seperti kebiasaan kita, bukan seperti Amerika.",
+        "**In per bulan dan musim, a per kota.** *In settembre* dan *a settembre* dua-duanya benar untuk bulan; *in autunno*, *in inverno* untuk musim; tapi *a Firenze*, *a Roma* untuk kota. Untuk negara selalu *in*: *in Italia*, *in Indonesia*.",
+        "**Da menandai titik berangkat.** *Da Bologna* (dari Bologna), *dalle sette* (sejak jam tujuh), *da lunedì* (mulai Senin). Ia juga berarti \"di tempat\": *da Marco* = di rumah Marco, *dal dottore* = di tempat dokter.",
+        "**Buon viaggio** salah satu dari sederet ucapan *buon* yang wajib dihafal utuh: *buon appetito*, *buon lavoro*, *buona fortuna*, *buon weekend*. Bentuk *buon* atau *buona* mengikuti jenis kelamin kata sesudahnya."
+      ],
+      "grammars": [
+        {
+          "title": "Hari dan bulan",
+          "body": ["Hafalkan berurutan sekali, lalu acak sendiri sampai tidak perlu menghitung dari awal."],
+          "table": {
+            "head": ["Hari", "Bulan", "Bulan"],
+            "rows": [
+              ["lunedì — Senin", "gennaio — Januari", "luglio — Juli"],
+              ["martedì — Selasa", "febbraio — Februari", "agosto — Agustus"],
+              ["mercoledì — Rabu", "marzo — Maret", "settembre — September"],
+              ["giovedì — Kamis", "aprile — April", "ottobre — Oktober"],
+              ["venerdì — Jumat", "maggio — Mei", "novembre — November"],
+              ["sabato — Sabtu", "giugno — Juni", "dicembre — Desember"],
+              ["domenica — Minggu", "", ""]
+            ]
+          },
+          "after": [
+            "Lima hari pertama ditekan di suku kata **terakhir** dan memakai aksen: *lune-DÌ*, *marte-DÌ*, *mercole-DÌ*, *giove-DÌ*, *vener-DÌ*. Dua hari akhir pekan tidak: *SA-bato*, *do-ME-nica*.",
+            "Perhatikan *mercoledì* ditekan di ujung meski panjang — bukan *mer-co-LE-dì*."
+          ]
+        },
+        {
+          "title": "A, in, da — tempat dan waktu",
+          "body": ["Tiga kata depan yang paling sering tertukar. Tabel ini menutup sembilan dari sepuluh pemakaiannya."],
+          "table": {
+            "head": ["Maksud", "Kata depan", "Contoh"],
+            "rows": [
+              ["Kota", "**a**", "a Roma, a Giacarta"],
+              ["Negara, benua", "**in**", "in Italia, in Asia"],
+              ["Alat transportasi", "**in**", "in treno, in macchina"],
+              ["Jalan kaki", "**a**", "a piedi"],
+              ["Bulan", "**a** / **in**", "a maggio, in maggio"],
+              ["Musim", "**in**", "in estate, in inverno"],
+              ["Tahun", "**nel**", "nel 2026"],
+              ["Jam", "**alle**", "alle otto"],
+              ["Titik berangkat", "**da**", "da Bologna, dalle sette"],
+              ["Di tempat seseorang", "**da**", "da Marco, dal dottore"]
+            ]
+          },
+          "after": [
+            "Pulau kecil memakai *a* seperti kota (*a Capri*), pulau besar memakai *in* seperti wilayah (*in Sicilia*, *in Sardegna*). Kalau ragu, pakai aturan kota-negara.",
+            "*In macchina* tanpa kata sandang berarti \"dengan mobil\". Kalau kata sandangnya muncul, artinya berubah jadi \"di dalam mobil itu\": *nella macchina*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Musim, tanggal, tahun",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Musim", "Italiano", "Bulan"],
+          "rows": [
+            ["Semi", "la primavera", "marzo, aprile, maggio"],
+            ["Panas", "l'estate", "giugno, luglio, agosto"],
+            ["Gugur", "l'autunno", "settembre, ottobre, novembre"],
+            ["Dingin", "l'inverno", "dicembre, gennaio, febbraio"]
+          ]
+        },
+        { "type": "p", "text": "Perhatikan *l'estate* feminin sementara tiga musim lainnya maskulin. Sekali lagi kata sandanglah yang memberi tahu, bukan akhirannya." },
+        { "type": "sub", "text": "Menyebut tahun" },
+        { "type": "p", "text": "Tahun disebut utuh sebagai satu bilangan besar, tidak dipecah dua seperti kebiasaan Inggris. 2026 = *duemilaventisei*, ditulis serangkai. 1998 = *millenovecentonovantotto*. Untuk mengatakan \"pada tahun\", pakai *nel*: *Sono nato nel millenovecentonovantotto*." },
+        {
+          "type": "kotak",
+          "title": "Kalimat siap pakai",
+          "items": [
+            "*Che giorno è oggi?* — Hari ini hari apa / tanggal berapa?",
+            "*Oggi è il tre marzo.* — Hari ini tanggal tiga Maret.",
+            "*Quando?* — Kapan?",
+            "*La settimana prossima.* — Minggu depan.",
+            "*La settimana scorsa.* — Minggu lalu.",
+            "*Fra due giorni.* — Dua hari lagi.",
+            "*Ogni lunedì.* — Setiap Senin.",
+            "*Buon compleanno!* — Selamat ulang tahun!"
+          ]
+        },
+        { "type": "p", "text": "*Prossimo* (depan) dan *scorso* (lalu) ikut jenis kelamin kata bendanya: *l'anno prossimo*, *la settimana scorsa*, *il mese prossimo*, *sabato scorso*." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "il giorno", "baca": "il JOR-no", "id": "hari" },
+    { "it": "la settimana", "baca": "la set-ti-MA-na", "id": "minggu" },
+    { "it": "il mese", "baca": "il ME-ze", "id": "bulan" },
+    { "it": "l'anno", "baca": "LAN-no", "id": "tahun" },
+    { "it": "lunedì", "baca": "lu-ne-DI", "id": "Senin" },
+    { "it": "mercoledì", "baca": "mer-ko-le-DI", "id": "Rabu" },
+    { "it": "venerdì", "baca": "ve-ner-DI", "id": "Jumat" },
+    { "it": "gennaio", "baca": "jen-NA-io", "id": "Januari" },
+    { "it": "maggio", "baca": "MAJ-jo", "id": "Mei" },
+    { "it": "agosto", "baca": "a-GOS-to", "id": "Agustus" },
+    { "it": "l'estate", "baca": "les-TA-te", "id": "musim panas" },
+    { "it": "l'inverno", "baca": "lin-VER-no", "id": "musim dingin" },
+    { "it": "la primavera", "baca": "la pri-ma-VE-ra", "id": "musim semi" },
+    { "it": "l'autunno", "baca": "lau-TUN-no", "id": "musim gugur" },
+    { "it": "partire", "baca": "par-TI-re", "id": "berangkat" },
+    { "it": "il treno", "baca": "il TRE-no", "id": "kereta" },
+    { "it": "il viaggio", "baca": "il VIAJ-jo", "id": "perjalanan" },
+    { "it": "quando", "baca": "KUAN-do", "id": "kapan" },
+    { "it": "prossimo", "baca": "PROS-si-mo", "id": "berikutnya, depan" },
+    { "it": "scorso", "baca": "SKOR-so", "id": "lalu" },
+    { "it": "il compleanno", "baca": "il kom-ple-AN-no", "id": "ulang tahun" },
+    { "it": "il turista", "baca": "il tu-RIS-ta", "id": "turis" },
+    { "it": "il caldo", "baca": "il KAL-do", "id": "panas" },
+    { "it": "già", "baca": "ja", "id": "sudah" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan a, in, atau da.",
+      "items": [
+        "Abito ____ Bologna.",
+        "Vivo ____ Italia.",
+        "Vado ____ Firenze ____ treno.",
+        "Il treno parte ____ Roma.",
+        "____ estate fa molto caldo.",
+        "Stasera andiamo ____ Marco."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Hari ini hari Kamis.",
+        "Hari ini tanggal delapan belas September.",
+        "Saya berangkat Sabtu pagi.",
+        "Tiap Minggu saya tidur sampai tengah hari.",
+        "Minggu depan saya pergi ke Roma.",
+        "Selamat ulang tahun!"
+      ]
+    },
+    {
+      "prompt": "Tulis tanggalnya dalam bahasa Italia.",
+      "items": [
+        "1 Mei",
+        "3 Maret",
+        "15 Agustus",
+        "25 Desember",
+        "21 Juni",
+        "31 Januari"
+      ]
+    },
+    {
+      "prompt": "Pilih bentuk yang tepat dan tulis kalimat lengkapnya.",
+      "items": [
+        "Setiap Sabtu saya kerja. ____ lavoro.",
+        "Sabtu nanti saya kerja. ____ lavoro.",
+        "Setiap Minggu saya istirahat. ____ mi riposo.",
+        "Senin depan saya berangkat. Parto ____.",
+        "Minggu lalu saya di Roma. ____ ero a Roma."
+      ]
+    }
+  ],
+  "answers": [
+    "a — in — a, in — da — In — da",
+    "Oggi è giovedì. — Oggi è il diciotto settembre. — Parto sabato mattina. — La domenica dormo fino a mezzogiorno. — La settimana prossima vado a Roma. — Buon compleanno!",
+    "il primo maggio — il tre marzo — il quindici agosto — il venticinque dicembre — il ventuno giugno — il trentuno gennaio",
+    "Il sabato — Sabato — La domenica — lunedì prossimo — La settimana scorsa"
+  ],
+  "wave": "Ulangi **unit 7** dulu: baca sepuluh jam acak keras-keras, lalu buat janji temu untuk tiga jam berbeda."
+}

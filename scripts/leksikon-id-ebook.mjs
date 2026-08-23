@@ -25,10 +25,15 @@ const MIRING = /(?<!\*)\*(?!\*)([^*]+)\*(?!\*)/g;
 const KEPALA_ID = /arti|makna|indonesia|terjemah/i;
 /** Kepala kolom "cara baca": bukan bahasa mana pun, jangan diperas. */
 const KEPALA_BACA = /cara baca|baca|pelafalan|romaji|rōmaji/i;
-/* Ekor kata kerja Spanyol yang sesekali lolos lewat contoh kalimat tanpa tanda
-   miring, dan kata serapan yang ejaannya sama persis di bahasa target —
-   mengunci ini berarti mengunci kata bahasa targetnya sekalian. */
-const EKOR_ASING = /(amos|emos|imos|aron|ieron|aban|ando|iendo|cion|mente|aste|aria|eron)$/;
+/* Ekor kata kerja Spanyol & Italia yang sesekali lolos lewat contoh kalimat
+   tanpa tanda miring, dan kata serapan yang ejaannya sama persis di bahasa
+   target — mengunci ini berarti mengunci kata bahasa targetnya sekalian.
+   Ekor Italia (-ano, -ono, -iamo, -are/-ere/-ire, -ato/-uto/-ito, -issimo,
+   -zione) ditambahkan bersama modul it-a1: tanpa itu kata kerja Italia di soal
+   latihan ("abitano", "addormenti", "alcune") ikut terperas jadi kata
+   Indonesia, lalu dibungkam di reader — persis kebalikan dari maunya. Tak ada
+   kata Indonesia lazim yang berekor begini, jadi risikonya sepihak. */
+const EKOR_ASING = /(amos|emos|imos|aron|ieron|aban|ando|iendo|cion|mente|aste|aria|eron|iamo|ano|ono|are|ere|ire|ato|uto|ito|issimo|issima|zione)$/;
 const BUANG = new Set([
   "middot", "kana", "bon", "sma", "yen", "jakarta", "barcelona", "tokyo", "kyoto",
   "meksiko", "korea", "argentina", "amerika", "natto", "ramen", "kari", "motor",
@@ -92,7 +97,14 @@ function unit(j) {
     for (const l of d.lines || []) { teksTarget(l.text); teksEn(l.text); teksId(l.id); teksId(l.literal); }
   }
   for (const s of j.sections || []) { teksId(s.title); (s.blocks || []).forEach(blok); }
-  for (const v of j.vocab || []) { teksTarget(v.es); teksTarget(v.ja); teksTarget(v.en); teksEn(v.en); teksId(v.id); }
+  /* Kunci kolom bahasa target per modul: es, ja, en, it, de, zh. Modul baru
+     WAJIB menambah kuncinya di sini — kalau tidak, kata bahasa targetnya tak
+     pernah terhitung di ruas target, lolos perbandingan 6:1, lalu ikut terperas
+     jadi "kata Indonesia" dan dibungkam di reader. */
+  for (const v of j.vocab || []) {
+    for (const k of ["es", "ja", "en", "it", "de", "zh"]) teksTarget(v[k]);
+    teksEn(v.en); teksId(v.id);
+  }
   for (const e of j.exercises || []) { teksId(e.title); teksId(e.prompt); daftarId(e.items); }
   daftarId(j.answers);
   for (const hal of [...(j.front || []), ...(j.back || [])]) {

@@ -1,0 +1,962 @@
+{
+  "brand": "LINGUO",
+  "title": "Italiano 101",
+  "subtitle": "Modul belajar mandiri bahasa Italia untuk pemula",
+  "level": "Level A1 (CEFR)",
+  "edition": "Edisi Bahasa Indonesia",
+  "ruby": false,
+  "vocab_columns": [
+    {
+      "head": "Italiano",
+      "key": "it"
+    },
+    {
+      "head": "Cara baca",
+      "key": "baca"
+    },
+    {
+      "head": "Bahasa Indonesia",
+      "key": "id"
+    }
+  ],
+  "cover_design": {
+    "bg": "#123B57",
+    "accent": "#5FD6CA",
+    "label": "BAHASA ITALIA",
+    "judul": "Italiano",
+    "cap": "è",
+    "pola_opacity": 0.5,
+    "pola": "background-image:repeating-linear-gradient(0deg, rgba(255,255,255,.13) 0 2px, transparent 2px 44px),repeating-linear-gradient(90deg, rgba(255,255,255,.06) 0 2px, transparent 2px 44px);",
+    "ringkas": "Modul belajar mandiri bahasa Italia untuk pemula — dari menyapa di bar sampai menceritakan akhir pekan yang sudah lewat.",
+    "catatan": "Terjemahan harfiah ditulis di bawah tiap baris dialog."
+  },
+  "product": {
+    "slug": "modul-italia-101-id",
+    "title": "Italiano 101 new edition",
+    "type": "ebook",
+    "language": "Italian",
+    "level": "A1",
+    "file": "italiano-101-a1-id.pdf",
+    "description": "Dua puluh unit belajar mandiri bergaya Assimil untuk bahasa Italia dari nol: dialog pendek, terjemahan harfiah yang memperlihatkan cara bahasa Italia menyusun kalimat, catatan tata bahasa, kosakata dengan cara baca, latihan, dan kunci jawaban. Ditulis khusus untuk penutur bahasa Indonesia — tiap unit menyasar satu titik yang selama ini paling sering keliru, dari jenis kelamin kata benda sampai pilihan essere atau avere pada kalimat lampau.",
+    "pages": 147
+  },
+  "front": [
+    {
+      "title": "Kata pengantar",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bahasa Italia biasanya jatuh cinta duluan sebelum dipelajari. Orang mendengarnya di film, di lagu, di dapur restoran, dan menyimpulkan bahwa bahasa ini pasti mudah karena bunyinya terang dan hurufnya dibaca apa adanya."
+        },
+        {
+          "type": "p",
+          "text": "Separuh kesimpulan itu benar. Bahasa Italia memang salah satu bahasa Eropa yang paling ramah pada telinga dan mulut orang Indonesia: vokalnya lima, sama seperti kita, dan hampir setiap huruf berbunyi seperti tulisannya. Yang tidak dikatakan siapa pun adalah separuh sisanya — bahwa setiap kata benda dalam bahasa Italia punya jenis kelamin, bahwa kata sandangnya berubah bentuk mengikuti huruf pertama kata sesudahnya, dan bahwa kalimat lampau memilih salah satu dari dua kata bantu dengan aturan yang tidak ada padanannya dalam bahasa Indonesia."
+        },
+        {
+          "type": "p",
+          "text": "Di tiga titik itulah pelajar Indonesia paling sering tersendat, dan tiga-tiganya bukan perkara kosakata. Modul ini disusun untuk menghadapinya secara langsung, bukan menundanya sampai bab terakhir."
+        },
+        {
+          "type": "p",
+          "text": "Dua puluh unit pendek di dalamnya menutup seluruh bahan **Level A1 (CEFR)**: menyapa, memperkenalkan diri, menyebut asal dan keluarga, memesan di bar, membaca jam, menceritakan hari biasa, menanyakan arah, berbelanja, menyatakan suka dan tidak suka, sampai menceritakan apa yang terjadi kemarin. Tiap unit berangkat dari percakapan yang bisa langsung dipakai, baru sesudahnya menjelaskan kenapa kalimatnya berbentuk begitu."
+        },
+        {
+          "type": "p",
+          "text": "Penjelasannya sengaja pendek. Yang panjang bukan teorinya, melainkan latihannya."
+        },
+        {
+          "type": "kotak",
+          "title": "Sebelum mulai",
+          "items": [
+            "Sediakan 20-30 menit tanpa gangguan, bukan dua jam yang terpotong-potong. Bahasa menempel lewat pengulangan pendek yang sering, bukan lewat satu serangan panjang.",
+            "Baca dengan suara keras. Bahasa Italia dibunyikan hampir persis seperti tulisannya, dan mulut mengingat apa yang tidak diingat mata.",
+            "Sejak unit pertama, hafalkan kata benda **bersama kata sandangnya**: bukan *libro*, tapi *il libro*. Ini kebiasaan kecil yang menghemat berbulan-bulan kebingungan nanti.",
+            "Siapkan buku catatan kecil. Kata yang kamu tulis ulang bertahan jauh lebih lama daripada kata yang cuma kamu baca."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Selamat belajar. *In bocca al lupo!*"
+        }
+      ]
+    },
+    {
+      "type": "isi",
+      "title": "Daftar isi",
+      "intro": "Modul ini paling baik dikerjakan berurutan — tiap unit memakai ulang apa yang dipasang unit sebelumnya."
+    },
+    {
+      "title": "Cara memakai modul ini",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Modul ini disusun untuk **belajar sendiri**. Tiap unit dirancang selesai dalam satu kali duduk, sekitar 20-30 menit. Yang penting bukan seberapa cepat kamu maju, tapi seberapa sering kamu kembali."
+        },
+        {
+          "type": "p",
+          "text": "Setiap unit punya susunan yang sama, dan urutannya sengaja begitu:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Dialogo** — baca dulu bahasa Italianya dengan suara keras, jangan lihat artinya. Biarkan telinga bekerja sebelum otak menuntut penjelasan.",
+            "**Terjemahan harfiah** — baris kecil miring di bawah arti. Ini bagian yang paling sering dilewati orang, padahal di sinilah kamu melihat cara bahasa Italia *berpikir*. Contoh: *Mi chiamo Ana* secara harfiah berarti \"saya menamai diri Ana\", bukan \"nama saya Ana\".",
+            "**Catatan** — penjelasan pendek atas hal-hal yang tadi terasa aneh.",
+            "**Kosakata** — kata baru unit itu, lengkap dengan cara bacanya. Kata benda selalu ditulis bersama kata sandangnya, supaya jenis kelaminnya ikut terhafal.",
+            "**Latihan** — kerjakan tanpa melihat kunci. Salah itu bagian dari prosesnya.",
+            "**Kunci jawaban** — baru dibuka setelah kamu benar-benar mencoba."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Ulangan berjenjang",
+          "items": [
+            "Mulai unit 3, tiap unit menyuruhmu mengulang satu unit yang sudah lewat — biasanya dua langkah ke belakang, jarak yang pas untuk membuat ingatan bekerja tanpa terasa seperti mengulang dari nol. Kali ini caranya dibalik: tutup bahasa Italianya, lihat terjemahan Indonesianya, lalu susun kembali kalimat Italianya dari ingatan.",
+            "Bagian ini yang mengubah \"pernah paham\" jadi \"bisa dipakai\". Jangan dilewati."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Satu aturan terakhir: **suarakan**. Bahasa Italia punya bunyi yang jujur — hampir semua huruf dibaca apa adanya, dan lima vokalnya sama persis dengan vokal bahasa Indonesia. Membaca dalam hati membuang keunggulan itu."
+        }
+      ]
+    },
+    {
+      "title": "Pelafalan bahasa Italia",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kabar baiknya: bahasa Italia ditulis seperti dibunyikan, dan vokalnya persis lima seperti bahasa Indonesia — *a, e, i, o, u*, pendek dan tegas, tidak pernah berubah jadi bunyi lain. Sekali kamu hafal tabel di bawah, kamu bisa membaca kata apa pun dengan benar, termasuk kata yang belum pernah kamu lihat."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Huruf",
+            "Dibaca",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "a, e, i, o, u",
+              "a, e, i, o, u — persis seperti bahasa Indonesia",
+              "*casa* (KA-sa) = rumah"
+            ],
+            [
+              "c + a/o/u",
+              "k",
+              "*casa*, *come*, *cucina*"
+            ],
+            [
+              "c + e/i",
+              "c seperti \"cari\"",
+              "*cena* (CE-na) = makan malam"
+            ],
+            [
+              "ch",
+              "k (h-nya cuma pengeras)",
+              "*chi* (ki) = siapa"
+            ],
+            [
+              "g + a/o/u",
+              "g",
+              "*gatto* (GAT-to) = kucing"
+            ],
+            [
+              "g + e/i",
+              "j seperti \"jam\"",
+              "*gelato* (je-LA-to) = es krim"
+            ],
+            [
+              "gh",
+              "g keras",
+              "*spaghetti* (spa-GET-ti)"
+            ],
+            [
+              "gli",
+              "li lembut, lidah menempel langit-langit",
+              "*famiglia* (fa-MI-lya) = keluarga"
+            ],
+            [
+              "gn",
+              "ny",
+              "*signora* (si-NYO-ra) = nyonya"
+            ],
+            [
+              "sc + e/i",
+              "sy",
+              "*pesce* (PE-sye) = ikan"
+            ],
+            [
+              "sc + a/o/u",
+              "sk",
+              "*scusa* (SKU-za) = maaf"
+            ],
+            [
+              "h",
+              "**selalu bisu**",
+              "*ho* (o) = saya punya"
+            ],
+            [
+              "z",
+              "ts atau dz",
+              "*grazie* (GRA-tsie) = terima kasih"
+            ],
+            [
+              "s antara dua vokal",
+              "z",
+              "*casa* (KA-za) = rumah"
+            ],
+            [
+              "r",
+              "digetarkan, seperti r bahasa Indonesia",
+              "*Roma* (RO-ma)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Huruf mati ganda",
+          "items": [
+            "*nn*, *tt*, *ll*, *ss*, *pp* bukan hiasan: huruf matinya benar-benar **ditahan lebih lama**, seperti \"n\" pada \"sinnar\" dibanding \"sinar\".",
+            "Bedanya mengubah arti: *nono* (kesembilan) vs *nonno* (kakek), *casa* (rumah) vs *cassa* (kasir), *pena* (hukuman) vs *penna* (pena).",
+            "Ini satu-satunya bunyi Italia yang tidak ada padanan persisnya di bahasa Indonesia. Sengaja tahan satu ketukan, jangan buru-buru."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tekanan kata",
+          "items": [
+            "Sebagian besar kata ditekan di suku kata **kedua dari belakang**: *ca-SA*, *ra-GAZ-zo*, *ita-LIA-no*.",
+            "Ada tanda aksen di huruf terakhir (*à*, *è*, *ì*, *ò*, *ù*) → tekanan jatuh persis di situ: *cit-TÀ*, *caf-FÈ*, *per-CHÉ*. Tandanya bukan hiasan.",
+            "Sekelompok kata ditekan di suku kata **ketiga dari belakang** dan itu harus dihafal satu-satu: *TE-le-fo-no*, *SA-ba-to*, *ME-di-co*, *A-bi-ta-no*."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dalam modul ini, kolom \"cara baca\" ditulis dengan ejaan Indonesia, dan **huruf besar menandai suku kata yang ditekan**. Huruf mati ganda ditulis ganda juga — tahan bunyinya."
+        }
+      ]
+    }
+  ],
+  "back": [
+    {
+      "title": "Ringkasan tata bahasa A1",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Semua yang dipelajari dua puluh unit di depan, dipadatkan jadi beberapa halaman. Bagian ini bukan untuk dibaca berurutan — ia untuk dibuka kembali tiap kali kamu ragu di tengah kalimat."
+        },
+        {
+          "type": "sub",
+          "text": "Kata sandang"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kata benda dimulai",
+            "Mask. tunggal",
+            "Mask. jamak",
+            "Fem. tunggal",
+            "Fem. jamak"
+          ],
+          "rows": [
+            [
+              "huruf mati",
+              "il / un",
+              "i",
+              "la / una",
+              "le"
+            ],
+            [
+              "vokal",
+              "l' / un",
+              "gli",
+              "l' / un'",
+              "le"
+            ],
+            [
+              "z, s+mati, gn, ps",
+              "lo / uno",
+              "gli",
+              "la / una",
+              "le"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Menjamakkan: **-o → -i**, **-a → -e**, **-e → -i**. Kata beraksen dan kata asing tidak berubah: *le città*, *i bar*. Pengecualian yang sering menjegal: *il problema*, *il programma*, *il cinema* (maskulin); *la mano*, *la foto*, *la moto*, *la radio* (feminin); *l'uovo → le uova*."
+        },
+        {
+          "type": "sub",
+          "text": "Peleburan kata depan"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "il",
+            "lo",
+            "la",
+            "l'",
+            "i",
+            "gli",
+            "le"
+          ],
+          "rows": [
+            [
+              "a",
+              "al",
+              "allo",
+              "alla",
+              "all'",
+              "ai",
+              "agli",
+              "alle"
+            ],
+            [
+              "di",
+              "del",
+              "dello",
+              "della",
+              "dell'",
+              "dei",
+              "degli",
+              "delle"
+            ],
+            [
+              "da",
+              "dal",
+              "dallo",
+              "dalla",
+              "dall'",
+              "dai",
+              "dagli",
+              "dalle"
+            ],
+            [
+              "in",
+              "nel",
+              "nello",
+              "nella",
+              "nell'",
+              "nei",
+              "negli",
+              "nelle"
+            ],
+            [
+              "su",
+              "sul",
+              "sullo",
+              "sulla",
+              "sull'",
+              "sui",
+              "sugli",
+              "sulle"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Con* dan *per* tidak melebur. Tempat: **a** untuk kota, **in** untuk negara dan alat transportasi, **da** untuk titik berangkat dan untuk \"di tempat seseorang\"."
+        },
+        {
+          "type": "sub",
+          "text": "Kata sifat"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Golongan **-o**: empat bentuk — *alto, alta, alti, alte*.",
+            "Golongan **-e**: dua bentuk — *grande, grandi*.",
+            "Berdiri **sesudah** kata bendanya, kecuali sekelompok kecil (*bello, buono, nuovo, vecchio, grande, piccolo, giovane*) yang sering di depan.",
+            "Kelompok campur laki-laki dan perempuan memakai bentuk maskulin jamak.",
+            "Membandingkan: *più… di*, *meno… di*, *tan… come*. Bentuk sendiri: *buono → migliore*, *cattivo → peggiore*.",
+            "*Molto* di depan kata sifat = sangat, tidak berubah. Di depan kata benda = banyak, berubah: *molti amici*, *molte cose*.",
+            "Akhiran **-issimo** = sangat sekali: *bellissimo*, *buonissimo*, *stanchissima*."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Kata milik"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pemilik",
+            "Mask. tunggal",
+            "Fem. tunggal",
+            "Mask. jamak",
+            "Fem. jamak"
+          ],
+          "rows": [
+            [
+              "saya",
+              "il mio",
+              "la mia",
+              "i miei",
+              "le mie"
+            ],
+            [
+              "kamu",
+              "il tuo",
+              "la tua",
+              "i tuoi",
+              "le tue"
+            ],
+            [
+              "dia / Anda",
+              "il suo",
+              "la sua",
+              "i suoi",
+              "le sue"
+            ],
+            [
+              "kami",
+              "il nostro",
+              "la nostra",
+              "i nostri",
+              "le nostre"
+            ],
+            [
+              "kalian",
+              "il vostro",
+              "la vostra",
+              "i vostri",
+              "le vostre"
+            ],
+            [
+              "mereka",
+              "il loro",
+              "la loro",
+              "i loro",
+              "le loro"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Anggota keluarga **tunggal** membuang kata sandangnya: *mia madre*, *tuo fratello*. Begitu jamak atau diberi keterangan, kata sandangnya kembali: *i miei fratelli*, *la mia sorella maggiore*."
+        },
+        {
+          "type": "sub",
+          "text": "Questo dan quello"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "Mask. tunggal",
+            "Fem. tunggal",
+            "Mask. jamak",
+            "Fem. jamak"
+          ],
+          "rows": [
+            [
+              "ini",
+              "questo",
+              "questa",
+              "questi",
+              "queste"
+            ],
+            [
+              "itu (huruf mati)",
+              "quel",
+              "quella",
+              "quei",
+              "quelle"
+            ],
+            [
+              "itu (vokal)",
+              "quell'",
+              "quell'",
+              "quegli",
+              "quelle"
+            ],
+            [
+              "itu (z, s+mati)",
+              "quello",
+              "—",
+              "quegli",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Menyangkal dan bertanya"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Menyangkal: **non** persis di depan kata kerja — *non capisco*, *non mi piace*, *non ho visto*.",
+            "Penyangkalan ganda wajib: *non… mai*, *non… niente*, *non… nessuno*, *non… ancora*.",
+            "Bertanya tidak mengubah susunan kata; cukup nada naik di ujung.",
+            "Kata tanya: *chi* (siapa), *che cosa* (apa), *dove* (di mana), *quando* (kapan), *perché* (kenapa), *come* (bagaimana), *quanto* (berapa), *quale* (yang mana)."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Piacere"
+        },
+        {
+          "type": "p",
+          "text": "Susunannya terbalik: yang disukai adalah pelakunya. **piace** untuk satu benda atau kegiatan, **piacciono** untuk banyak benda. Kata kecilnya: *mi, ti, gli, le, ci, vi, gli*. Menyebut orang lain memakai *a*: *a Marco piace il calcio*. Menyangkalnya: *non mi piace*."
+        },
+        {
+          "type": "sub",
+          "text": "Bentuk lampau"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Dibangun dari kata bantu + kata sifat pelaku: *ho mangiato*, *sono andato*.",
+            "Kata sifat pelaku beraturan: **-are → -ato**, **-ere → -uto**, **-ire → -ito**.",
+            "Sebagian besar kata kerja memakai **avere**, dan kata sifat pelakunya tidak berubah.",
+            "Kata kerja perpindahan dan perubahan keadaan memakai **essere** — *andare, venire, arrivare, partire, entrare, uscire, salire, scendere, tornare, restare, rimanere, nascere, morire, essere, stare, diventare, piacere* — dan huruf terakhirnya ikut jenis kelamin serta jumlah pelakunya.",
+            "Semua kata kerja balik badan memakai **essere**: *mi sono alzato*, *ci siamo svegliate*.",
+            "*Già*, *ancora*, *mai*, *sempre* diselipkan antara kata bantu dan kata sifat pelaku."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Rencana masa depan"
+        },
+        {
+          "type": "p",
+          "text": "Tingkat A1 tidak membutuhkan bentuk masa depan sama sekali. Pakai bentuk sekarang ditambah kata waktu (*domani vado al mare*), atau *andare a* + kata kerja dasar (*vado a mangiare*), atau *pensare di* + kata kerja dasar (*penso di partire lunedì*)."
+        }
+      ]
+    },
+    {
+      "title": "Kata kerja yang paling sering dipakai",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Enam belas kata kerja di bawah menutup sebagian besar percakapan sehari-hari. Sepuluh di antaranya tidak beraturan — dan justru itulah yang paling sering keluar dari mulut orang Italia."
+        },
+        {
+          "type": "sub",
+          "text": "Tiga golongan beraturan"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "parlare",
+            "prendere",
+            "dormire",
+            "capire (isc)"
+          ],
+          "rows": [
+            [
+              "io",
+              "parlo",
+              "prendo",
+              "dormo",
+              "capisco"
+            ],
+            [
+              "tu",
+              "parli",
+              "prendi",
+              "dormi",
+              "capisci"
+            ],
+            [
+              "lui / lei / Lei",
+              "parla",
+              "prende",
+              "dorme",
+              "capisce"
+            ],
+            [
+              "noi",
+              "parliamo",
+              "prendiamo",
+              "dormiamo",
+              "capiamo"
+            ],
+            [
+              "voi",
+              "parlate",
+              "prendete",
+              "dormite",
+              "capite"
+            ],
+            [
+              "loro",
+              "parlano",
+              "prendono",
+              "dormono",
+              "capiscono"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tekanan bentuk *loro* jatuh mundur: *PAR-lano*, *PREN-dono*, *DOR-mono*, *ca-PIS-cono*."
+        },
+        {
+          "type": "sub",
+          "text": "Yang tidak beraturan"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "essere",
+            "avere",
+            "fare",
+            "stare"
+          ],
+          "rows": [
+            [
+              "io",
+              "sono",
+              "ho",
+              "faccio",
+              "sto"
+            ],
+            [
+              "tu",
+              "sei",
+              "hai",
+              "fai",
+              "stai"
+            ],
+            [
+              "lui / lei",
+              "è",
+              "ha",
+              "fa",
+              "sta"
+            ],
+            [
+              "noi",
+              "siamo",
+              "abbiamo",
+              "facciamo",
+              "stiamo"
+            ],
+            [
+              "voi",
+              "siete",
+              "avete",
+              "fate",
+              "state"
+            ],
+            [
+              "loro",
+              "sono",
+              "hanno",
+              "fanno",
+              "stanno"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "andare",
+            "venire",
+            "uscire",
+            "bere"
+          ],
+          "rows": [
+            [
+              "io",
+              "vado",
+              "vengo",
+              "esco",
+              "bevo"
+            ],
+            [
+              "tu",
+              "vai",
+              "vieni",
+              "esci",
+              "bevi"
+            ],
+            [
+              "lui / lei",
+              "va",
+              "viene",
+              "esce",
+              "beve"
+            ],
+            [
+              "noi",
+              "andiamo",
+              "veniamo",
+              "usciamo",
+              "beviamo"
+            ],
+            [
+              "voi",
+              "andate",
+              "venite",
+              "uscite",
+              "bevete"
+            ],
+            [
+              "loro",
+              "vanno",
+              "vengono",
+              "escono",
+              "bevono"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "potere",
+            "dovere",
+            "volere",
+            "sapere"
+          ],
+          "rows": [
+            [
+              "io",
+              "posso",
+              "devo",
+              "voglio",
+              "so"
+            ],
+            [
+              "tu",
+              "puoi",
+              "devi",
+              "vuoi",
+              "sai"
+            ],
+            [
+              "lui / lei",
+              "può",
+              "deve",
+              "vuole",
+              "sa"
+            ],
+            [
+              "noi",
+              "possiamo",
+              "dobbiamo",
+              "vogliamo",
+              "sappiamo"
+            ],
+            [
+              "voi",
+              "potete",
+              "dovete",
+              "volete",
+              "sapete"
+            ],
+            [
+              "loro",
+              "possono",
+              "devono",
+              "vogliono",
+              "sanno"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Kata sifat pelaku tak beraturan"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Dasar",
+            "Lampau",
+            "Dasar",
+            "Lampau",
+            "Dasar",
+            "Lampau"
+          ],
+          "rows": [
+            [
+              "fare",
+              "fatto",
+              "aprire",
+              "aperto",
+              "essere",
+              "stato"
+            ],
+            [
+              "dire",
+              "detto",
+              "offrire",
+              "offerto",
+              "nascere",
+              "nato"
+            ],
+            [
+              "vedere",
+              "visto",
+              "chiudere",
+              "chiuso",
+              "morire",
+              "morto"
+            ],
+            [
+              "prendere",
+              "preso",
+              "scrivere",
+              "scritto",
+              "venire",
+              "venuto"
+            ],
+            [
+              "leggere",
+              "letto",
+              "rispondere",
+              "risposto",
+              "rimanere",
+              "rimasto"
+            ],
+            [
+              "bere",
+              "bevuto",
+              "mettere",
+              "messo",
+              "scendere",
+              "sceso"
+            ],
+            [
+              "chiedere",
+              "chiesto",
+              "perdere",
+              "perso",
+              "vincere",
+              "vinto"
+            ],
+            [
+              "scegliere",
+              "scelto",
+              "conoscere",
+              "conosciuto",
+              "spegnere",
+              "spento"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Angka"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "1 uno",
+              "2 due",
+              "3 tre",
+              "4 quattro"
+            ],
+            [
+              "5 cinque",
+              "6 sei",
+              "7 sette",
+              "8 otto"
+            ],
+            [
+              "9 nove",
+              "10 dieci",
+              "11 undici",
+              "12 dodici"
+            ],
+            [
+              "13 tredici",
+              "14 quattordici",
+              "15 quindici",
+              "16 sedici"
+            ],
+            [
+              "17 diciassette",
+              "18 diciotto",
+              "19 diciannove",
+              "20 venti"
+            ],
+            [
+              "30 trenta",
+              "40 quaranta",
+              "50 cinquanta",
+              "60 sessanta"
+            ],
+            [
+              "70 settanta",
+              "80 ottanta",
+              "90 novanta",
+              "100 cento"
+            ],
+            [
+              "200 duecento",
+              "1.000 mille",
+              "2.000 duemila",
+              "1.000.000 un milione"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Di depan *uno* dan *otto*, huruf terakhir puluhannya dibuang: *ventuno*, *ventotto*, *trentuno*, *quarantotto*. Angka tiga di ekor memakai aksen: *ventitré*, *trentatré*."
+        }
+      ]
+    },
+    {
+      "title": "Apa selanjutnya",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kamu baru saja menutup Level A1. Yang kamu punya sekarang bukan pengetahuan tentang bahasa Italia, melainkan sejumlah kalimat yang bisa keluar dari mulutmu tanpa disusun dulu. Itu perbedaan yang menentukan."
+        },
+        {
+          "type": "sub",
+          "text": "Yang menanti di A2"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Imperfetto** — bentuk lampau untuk kebiasaan dan gambaran: *da bambino giocavo a calcio*.",
+            "**Futuro** — bentuk masa depan sesungguhnya, terutama untuk ramalan dan dugaan.",
+            "**Kata ganti sasaran** — *lo, la, li, le, ne, ci*: *lo prendo*, *non ne ho*.",
+            "**Condizionale** — pengandaian dan permintaan halus, yang sudah kamu cicipi lewat *vorrei*.",
+            "**Kata ganti gabungan** — *glielo do*, *me lo dai*: bentuk yang muncul di unit 12 dan sengaja belum dibongkar."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Cara merawat apa yang sudah ada"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Ulangi dialognya keras-keras**, satu unit sehari, sampai kamu bisa mengucapkannya tanpa membaca. Sepuluh menit sehari mengalahkan tiga jam sekali seminggu.",
+            "**Ubah isinya, bukan polanya.** Ambil dialog unit 5, ganti nama dan angkanya dengan keluargamu sendiri. Pola yang dipakai untuk cerita sendiri jauh lebih lengket.",
+            "**Dengarkan tanpa memahami semuanya.** Radio, lagu, atau siaran berita Italia lima belas menit sehari. Yang dilatih bukan pemahaman, melainkan telinga.",
+            "**Cari lawan bicara sekarang, bukan nanti.** Seratus kata yang dipakai mengalahkan seribu kata yang disimpan.",
+            "**Catat kesalahanmu, bukan kata barumu.** Kata baru datang sendiri; kesalahan yang tidak dicatat akan diulang bertahun-tahun."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dan satu hal terakhir yang tidak bisa diberikan buku mana pun: bahasa Italia hidup di antara orang-orang, di meja makan, di antrean bar, di percakapan yang bertumpuk-tumpuk. Pergilah ke sana."
+        },
+        {
+          "type": "p",
+          "text": "*In bocca al lupo — e buon proseguimento!*"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "title": "Ada apotek di dekat sini?",
+  "title_target": "C'è una farmacia qui vicino?",
+  "goal": "Menyatakan keberadaan sesuatu dengan *c'è* dan *ci sono*, menyebut tempat-tempat di kota, dan menguasai peleburan kata depan dengan kata sandang.",
+  "bekal": [
+    "bertanya apakah sesuatu ada di sekitar",
+    "menyebut letak benda dengan *sopra*, *sotto*, *dentro*, *accanto a*",
+    "melebur *a*, *di*, *da*, *in*, *su* dengan kata sandangnya"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — In cerca di una farmacia",
+      "intro": "Budi kurang enak badan dan mencari apotek. Perhatikan kata-kata gabungan seperti *nella*, *del*, *sulla* — itulah isi utama unit ini.",
+      "lines": [
+        { "speaker": "Budi:", "text": "Scusi, c'è una farmacia qui vicino?", "id": "Permisi, ada apotek di dekat sini?", "literal": "maaf, di-sana-adalah sebuah apotek sini dekat?" },
+        { "speaker": "Signora:", "text": "Sì, ce n'è una nella piazza, davanti alla banca.", "id": "Ada, satu di alun-alun, di depan bank.", "literal": "ya, di-sana dari-nya-ada satu dalam-si alun-alun, di-depan pada-si bank." },
+        { "speaker": "Budi:", "text": "È lontana?", "id": "Jauh?", "literal": "adalah jauh?" },
+        { "speaker": "Signora:", "text": "No, cinque minuti a piedi. Vada dritto fino al semaforo.", "id": "Tidak, lima menit jalan kaki. Jalan lurus sampai lampu merah.", "literal": "tidak, lima menit dengan kaki. pergilah lurus sampai pada-si lampu-lalu-lintas." },
+        { "speaker": "Budi:", "text": "E poi?", "id": "Lalu?", "literal": "dan lalu?" },
+        { "speaker": "Signora:", "text": "Poi a destra. La farmacia è accanto al supermercato.", "id": "Lalu ke kanan. Apoteknya di sebelah supermarket.", "literal": "lalu ke kanan. si apotek adalah di-samping pada-si supermarket." },
+        { "speaker": "Budi:", "text": "Ci sono anche altre farmacie in centro?", "id": "Ada apotek lain juga di pusat kota?", "literal": "di-sana adalah juga lain apotek-apotek di pusat?" },
+        { "speaker": "Signora:", "text": "Ce ne sono tre, ma la domenica sono chiuse quasi tutte.", "id": "Ada tiga, tapi hari Minggu hampir semuanya tutup.", "literal": "di-sana dari-nya ada tiga, tetapi si minggu adalah tertutup hampir semua." },
+        { "speaker": "Budi:", "text": "E se è chiusa? Non c'è niente di aperto?", "id": "Kalau tutup bagaimana? Tidak ada yang buka?", "literal": "dan jika adalah tertutup? tidak di-sana-adalah tidak-ada dari terbuka?" },
+        { "speaker": "Signora:", "text": "C'è sempre una farmacia di turno. L'elenco è sulla porta.", "id": "Selalu ada apotek yang bergiliran jaga. Daftarnya ada di pintu.", "literal": "di-sana-adalah selalu sebuah apotek dari giliran. si daftar adalah di-atas-si pintu." },
+        { "speaker": "Budi:", "text": "Che gentile, grazie mille!", "id": "Baik sekali, terima kasih banyak!", "literal": "betapa ramah, terima-kasih seribu!" },
+        { "speaker": "Signora:", "text": "Si figuri. Guarisca presto!", "id": "Tidak apa-apa. Semoga cepat sembuh!", "literal": "diri bayangkan. sembuhlah cepat!" }
+      ],
+      "notes": [
+        "**C'è dan ci sono adalah satu pasangan, bukan dua kata terpisah.** *C'è* untuk satu benda, *ci sono* untuk banyak. *C'è una farmacia*, *ci sono tre farmacie*. Yang menentukan jumlahnya adalah benda sesudahnya, bukan pembicaranya.",
+        "**Jangan tertukar dengan è.** *È una farmacia* berarti \"itu (adalah) apotek\". *C'è una farmacia* berarti \"ada apotek\". Menghilangkan *ci* mengubah arti kalimat sepenuhnya.",
+        "**Ce n'è dan ce ne sono.** Kalau bendanya sudah disebut sebelumnya, ia diganti *ne*: *Ce n'è una* (ada satu), *ce ne sono tre* (ada tiga). Bentuk ini terdengar rumit tapi sangat sering dipakai — hafalkan dua kalimat itu utuh dulu.",
+        "**Peleburan kata depan.** *A + la* jadi *alla*, *in + la* jadi *nella*, *su + la* jadi *sulla*. Ini bukan pilihan gaya melainkan wajib: menulis *a la banca* salah, sama salahnya dengan menulis \"di pada bank\".",
+        "**Vada dan guarisca adalah bentuk perintah hormat.** Kepada orang asing, perintah memakai bentuk khusus yang dibongkar di unit 16. Untuk sekarang cukup kenali maksudnya.",
+        "**Si figuri** = \"jangan sungkan\", jawaban sopan atas ucapan terima kasih. Bentuk akrabnya *figurati*. Sederet dengan *prego* dan *di niente*.",
+        "**Farmacia di turno.** Apotek di Italia bergiliran buka di luar jam kerja dan hari libur, dan daftar gilirannya ditempel di pintu tiap apotek. Ini pengetahuan praktis yang menyelamatkan malam minggu.",
+        "**Quasi tutte** = hampir semua. *Tutto* ikut jenis kelamin dan jumlah: *tutto il giorno*, *tutta la notte*, *tutti i giorni*, *tutte le farmacie*."
+      ],
+      "grammars": [
+        {
+          "title": "Peleburan kata depan dengan kata sandang",
+          "body": ["Lima kata depan wajib melebur. Tabel ini dihafal sekali, lalu dipakai seumur hidup."],
+          "table": {
+            "head": ["", "il", "lo", "la", "l'", "i", "gli", "le"],
+            "rows": [
+              ["**a** (ke, pada)", "al", "allo", "alla", "all'", "ai", "agli", "alle"],
+              ["**di** (dari, milik)", "del", "dello", "della", "dell'", "dei", "degli", "delle"],
+              ["**da** (dari, di tempat)", "dal", "dallo", "dalla", "dall'", "dai", "dagli", "dalle"],
+              ["**in** (di dalam)", "nel", "nello", "nella", "nell'", "nei", "negli", "nelle"],
+              ["**su** (di atas)", "sul", "sullo", "sulla", "sull'", "sui", "sugli", "sulle"]
+            ]
+          },
+          "after": [
+            "Polanya sangat teratur: ambil kata depannya, tempelkan kata sandangnya, buang huruf yang bertabrakan. *Di + il* → *del*, *in + il* → *nel*, *su + il* → *sul*.",
+            "*Con* (dengan) dan *per* (untuk) **tidak** melebur dalam bahasa Italia masa kini: *con il treno*, *per il fine settimana*. Bentuk *col* masih terdengar tapi terasa kuno.",
+            "⚠️ Peleburan wajib hanya kalau kata sandangnya memang muncul. *Vado a Roma* tetap *a Roma* karena nama kota tidak memakai kata sandang; tapi *vado al mercato* wajib melebur."
+          ]
+        },
+        {
+          "title": "Menyatakan letak",
+          "body": ["Sebagian kata letak diikuti *a* atau *di*, dan kata itu ikut melebur."],
+          "table": {
+            "head": ["Italiano", "Bahasa Indonesia", "Contoh"],
+            "rows": [
+              ["sopra", "di atas", "sopra il tavolo"],
+              ["sotto", "di bawah", "sotto la sedia"],
+              ["dentro", "di dalam", "dentro la borsa"],
+              ["fuori", "di luar", "fuori casa"],
+              ["davanti **a**", "di depan", "davanti alla banca"],
+              ["dietro", "di belakang", "dietro la chiesa"],
+              ["accanto **a**", "di samping", "accanto al bar"],
+              ["vicino **a**", "dekat", "vicino alla stazione"],
+              ["lontano **da**", "jauh dari", "lontano dal centro"],
+              ["tra / fra", "di antara", "tra la banca e il bar"],
+              ["in fondo **a**", "di ujung", "in fondo alla strada"],
+              ["di fronte **a**", "berhadapan dengan", "di fronte al cinema"]
+            ]
+          },
+          "after": ["Enam kata yang menempel pada *a* atau *da* adalah yang paling sering salah dipakai. Hafalkan bersama kata depannya, sama seperti kamu menghafal kata benda bersama kata sandangnya."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tempat-tempat di kota",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Italiano", "Bahasa Indonesia", "Italiano", "Bahasa Indonesia"],
+          "rows": [
+            ["la farmacia", "apotek", "la banca", "bank"],
+            ["il supermercato", "supermarket", "la posta", "kantor pos"],
+            ["il mercato", "pasar", "l'ospedale", "rumah sakit"],
+            ["la stazione", "stasiun", "la chiesa", "gereja"],
+            ["l'aeroporto", "bandara", "il museo", "museum"],
+            ["la piazza", "alun-alun", "il parco", "taman"],
+            ["la strada / la via", "jalan", "il ponte", "jembatan"],
+            ["il centro", "pusat kota", "la periferia", "pinggiran"],
+            ["il negozio", "toko", "il ristorante", "restoran"],
+            ["la biblioteca", "perpustakaan", "la scuola", "sekolah"],
+            ["l'albergo", "hotel", "il cinema", "bioskop"],
+            ["il bagno", "toilet", "il semaforo", "lampu lalu lintas"]
+          ]
+        },
+        { "type": "p", "text": "Waspadai *la libreria*: itu toko buku, **bukan** perpustakaan. Perpustakaan adalah *la biblioteca*. Jebakan yang sama menimpa siapa pun yang tahu bahasa Inggris." },
+        {
+          "type": "kotak",
+          "title": "Kalimat siap pakai",
+          "items": [
+            "*C'è un bagno qui?* — Ada toilet di sini?",
+            "*Dov'è la stazione?* — Stasiun di mana?",
+            "*È lontano da qui?* — Jauh dari sini?",
+            "*Quanto tempo ci vuole?* — Butuh berapa lama?",
+            "*È aperto adesso?* — Sekarang buka?",
+            "*A che ora chiude?* — Tutup jam berapa?"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "la farmacia", "baca": "la far-ma-CI-a", "id": "apotek" },
+    { "it": "la banca", "baca": "la BAN-ka", "id": "bank" },
+    { "it": "la piazza", "baca": "la PIAT-tsa", "id": "alun-alun" },
+    { "it": "il supermercato", "baca": "il su-per-mer-KA-to", "id": "supermarket" },
+    { "it": "l'ospedale", "baca": "los-pe-DA-le", "id": "rumah sakit" },
+    { "it": "la chiesa", "baca": "la KIE-za", "id": "gereja" },
+    { "it": "il centro", "baca": "il CEN-tro", "id": "pusat kota" },
+    { "it": "la via", "baca": "la VI-a", "id": "jalan" },
+    { "it": "il semaforo", "baca": "il se-MA-fo-ro", "id": "lampu lalu lintas" },
+    { "it": "la biblioteca", "baca": "la bi-blio-TE-ka", "id": "perpustakaan" },
+    { "it": "la libreria", "baca": "la li-bre-RI-a", "id": "toko buku" },
+    { "it": "l'albergo", "baca": "lal-BER-go", "id": "hotel" },
+    { "it": "il bagno", "baca": "il BA-nyo", "id": "kamar mandi, toilet" },
+    { "it": "sopra", "baca": "SO-pra", "id": "di atas" },
+    { "it": "sotto", "baca": "SOT-to", "id": "di bawah" },
+    { "it": "dentro", "baca": "DEN-tro", "id": "di dalam" },
+    { "it": "fuori", "baca": "FUO-ri", "id": "di luar" },
+    { "it": "dietro", "baca": "DIE-tro", "id": "di belakang" },
+    { "it": "lontano", "baca": "lon-TA-no", "id": "jauh" },
+    { "it": "aperto", "baca": "a-PER-to", "id": "buka" },
+    { "it": "chiuso", "baca": "KIU-zo", "id": "tutup" },
+    { "it": "a destra", "baca": "a DES-tra", "id": "ke kanan" },
+    { "it": "a sinistra", "baca": "a si-NIS-tra", "id": "ke kiri" },
+    { "it": "dritto", "baca": "DRIT-to", "id": "lurus" },
+    { "it": "gentile", "baca": "jen-TI-le", "id": "ramah, baik hati" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan c'è atau ci sono.",
+      "items": [
+        "____ una farmacia qui vicino?",
+        "In centro ____ molti negozi.",
+        "____ un bagno in questo bar?",
+        "Nella piazza ____ due banche.",
+        "Non ____ nessuno in ufficio.",
+        "____ tre farmacie in città."
+      ]
+    },
+    {
+      "prompt": "Lebur kata depan dan kata sandangnya.",
+      "items": [
+        "a + il = ____",
+        "di + la = ____",
+        "in + il = ____",
+        "su + la = ____",
+        "da + lo = ____",
+        "a + le = ____",
+        "in + gli = ____",
+        "di + l' = ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk leburan yang tepat.",
+      "items": [
+        "La farmacia è accanto ____ supermercato.",
+        "Il libro è ____ tavolo.",
+        "Abito vicino ____ stazione.",
+        "Vengo ____ Indonesia.",
+        "L'elenco è ____ porta.",
+        "Andiamo ____ cinema stasera."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Ada apotek di dekat sini?",
+        "Apoteknya di sebelah bank.",
+        "Jalan lurus sampai lampu merah.",
+        "Jauh dari sini?",
+        "Di pusat kota ada banyak toko.",
+        "Sekarang buka?"
+      ]
+    }
+  ],
+  "answers": [
+    "C'è — ci sono — C'è — ci sono — c'è — Ci sono",
+    "al — della — nel — sulla — dallo — alle — negli — dell'",
+    "al — sul — alla — dall' — sulla — al",
+    "C'è una farmacia qui vicino? — La farmacia è accanto alla banca. — Vada dritto fino al semaforo. — È lontano da qui? — In centro ci sono molti negozi. — È aperto adesso?"
+  ],
+  "wave": "Ulangi **unit 8** dulu: ceritakan seluruh harimu dari bangun sampai tidur tanpa melihat buku, pakai *prima*, *poi*, *dopo*, *infine*."
+}

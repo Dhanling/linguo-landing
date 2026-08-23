@@ -1,0 +1,205 @@
+{
+  "title": "Setiap benda punya jenis kelamin",
+  "title_target": "Il, lo, la — che cos'è?",
+  "goal": "Menghadapi langsung hal yang paling sering menjegal pelajar Indonesia: kata benda Italia berjenis kelamin, dan kata sandangnya berubah bentuk mengikuti bunyi awal kata sesudahnya.",
+  "bekal": [
+    "menebak jenis kelamin kata benda dari akhirannya",
+    "memilih *il*, *lo*, *la*, atau *l'* dengan benar",
+    "menjamakkan kata benda dan kata sandangnya sekaligus"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Che cos'è questo?",
+      "intro": "Di ruang kelas. Budi menunjuk benda-benda dan bertanya. Perhatikan kata kecil di depan tiap benda — itu yang sedang dipelajari unit ini.",
+      "lines": [
+        { "speaker": "Budi:", "text": "Scusa Giulia, che cos'è questo?", "id": "Maaf Giulia, ini apa?", "literal": "maaf Giulia, apa benda-adalah ini?" },
+        { "speaker": "Giulia:", "text": "È una penna. E quello è un libro.", "id": "Itu pena. Dan yang itu buku.", "literal": "adalah sebuah pena. dan itu adalah sebuah buku." },
+        { "speaker": "Budi:", "text": "Perché una penna e un libro? Non capisco.", "id": "Kenapa una penna tapi un libro? Saya tidak mengerti.", "literal": "kenapa sebuah pena dan sebuah buku? tidak saya-mengerti." },
+        { "speaker": "Giulia:", "text": "Perché la penna è femminile e il libro è maschile.", "id": "Karena penna itu feminin dan libro itu maskulin.", "literal": "karena si pena adalah feminin dan si buku adalah maskulin." },
+        { "speaker": "Budi:", "text": "Anche le cose hanno un genere?", "id": "Benda pun punya jenis kelamin?", "literal": "juga si benda-benda mereka-punya sebuah jenis?" },
+        { "speaker": "Giulia:", "text": "Sì, tutte. Non c'è una ragione, è così e basta.", "id": "Ya, semuanya. Tidak ada alasannya, memang begitu saja.", "literal": "ya, semua. tidak ada sebuah alasan, adalah begitu dan cukup." },
+        { "speaker": "Budi:", "text": "E come faccio a saperlo?", "id": "Lalu bagaimana saya tahu?", "literal": "dan bagaimana saya-lakukan untuk mengetahui-nya?" },
+        { "speaker": "Giulia:", "text": "Guarda l'ultima lettera. In -o di solito è maschile, in -a femminile.", "id": "Lihat huruf terakhirnya. Yang berakhiran -o biasanya maskulin, yang -a feminin.", "literal": "lihat si terakhir huruf. dalam -o biasanya adalah maskulin, dalam -a feminin." },
+        { "speaker": "Budi:", "text": "E lo zaino? Perché non il zaino?", "id": "Kalau lo zaino? Kenapa bukan il zaino?", "literal": "dan si tas-punggung? kenapa tidak si tas-punggung?" },
+        { "speaker": "Giulia:", "text": "Bravo, hai visto bene. Davanti a z e s+consonante si usa lo.", "id": "Bagus, kamu jeli. Di depan z dan s+huruf mati dipakai lo.", "literal": "bagus, kamu-punya melihat baik. di-depan pada z dan s+huruf-mati orang memakai lo." },
+        { "speaker": "Budi:", "text": "Ah, è una questione di suono, non di significato!", "id": "Ah, jadi ini soal bunyi, bukan soal arti!", "literal": "ah, adalah sebuah perkara dari bunyi, tidak dari arti!" },
+        { "speaker": "Giulia:", "text": "Esatto! Impara sempre il nome con l'articolo. Sempre.", "id": "Tepat! Selalu hafalkan kata benda bersama kata sandangnya. Selalu.", "literal": "tepat! pelajari selalu si nama dengan si kata-sandang. selalu." }
+      ],
+      "notes": [
+        "**Jenis kelamin di sini bukan soal makna.** *Il libro* maskulin dan *la penna* feminin bukan karena buku lebih jantan daripada pena. Ini murni penggolongan tata bahasa, warisan bahasa Latin. Jangan cari logikanya; carilah polanya.",
+        "**Pola akhirannya menutup sebagian besar kasus.** Berakhiran **-o** hampir selalu maskulin, berakhiran **-a** hampir selalu feminin. Yang berakhiran **-e** bisa dua-duanya dan harus dihafal satu per satu — di situlah kamus jadi teman.",
+        "**Bentuk kata sandang ditentukan bunyi, bukan arti.** *Il* berubah jadi *lo* di depan kata yang mulai dengan *z*, *s* + huruf mati, *gn*, *ps*, *y*, dan *x* — semata-mata karena *il zaino* susah diucapkan. Ini alasan yang sama kenapa bahasa Inggris punya *a* dan *an*.",
+        "**Di depan vokal semuanya jadi l'.** *L'amico* (maskulin), *l'amica* (feminin) — bentuknya sama, jenis kelaminnya berbeda. Yang membedakan baru kelihatan saat dijamakkan: *gli amici* vs *le amiche*.",
+        "**Che cos'è** adalah bentuk pendek dari *che cosa è*. Kamu juga akan mendengar *cos'è?* saja atau *che è?* di percakapan cepat — semuanya berarti \"apa itu?\".",
+        "**Questo dan quello** = ini dan itu. Keduanya ikut berubah menurut jenis kelamin: *questo libro*, *questa penna*, *quel libro*, *quella penna*. Bentuk lengkapnya dibongkar di unit 14.",
+        "**È così e basta** — \"memang begitu, sudah\". Ungkapan yang sangat berguna dan sangat Italia. *Basta* sendiri berarti \"cukup\", dan sering dipakai berdiri sendiri untuk menghentikan sesuatu.",
+        "**Bravo** dipuji-ubah juga: *bravo* untuk laki-laki, *brava* untuk perempuan, *bravi* untuk kelompok. Kalau kamu bertepuk tangan untuk penyanyi perempuan, yang benar adalah *brava*."
+      ],
+      "grammars": [
+        {
+          "title": "Kata sandang tertentu — si, itu",
+          "body": ["Empat bentuk untuk tunggal, tiga untuk jamak. Yang menentukan bukan arti kata bendanya, melainkan huruf pertamanya."],
+          "table": {
+            "head": ["Kata benda dimulai dengan", "Maskulin tunggal", "Maskulin jamak", "Feminin tunggal", "Feminin jamak"],
+            "rows": [
+              ["huruf mati biasa", "**il** libro", "**i** libri", "**la** casa", "**le** case"],
+              ["vokal", "**l'** amico", "**gli** amici", "**l'** amica", "**le** amiche"],
+              ["z, s+mati, gn, ps, y, x", "**lo** zaino", "**gli** zaini", "—", "—"]
+            ]
+          },
+          "after": [
+            "Feminin jauh lebih mudah: cuma *la* dan *le*, dengan *l'* di depan vokal. Semua kerumitan ada di sisi maskulin.",
+            "Baris ketiga hanya berlaku maskulin — kata feminin yang mulai dengan *s*+huruf mati tetap *la*: *la stazione*, *la strada*."
+          ]
+        },
+        {
+          "title": "Kata sandang tak tentu — sebuah, seorang",
+          "body": ["Polanya mengikuti logika yang sama, dengan bentuk yang sedikit berbeda."],
+          "table": {
+            "head": ["Kata benda dimulai dengan", "Maskulin", "Feminin"],
+            "rows": [
+              ["huruf mati biasa", "**un** libro", "**una** penna"],
+              ["vokal", "**un** amico", "**un'** amica"],
+              ["z, s+mati, gn, ps", "**uno** zaino", "**una** studentessa"]
+            ]
+          },
+          "after": [
+            "Perhatikan jebakan kecil: maskulin di depan vokal ditulis *un amico* **tanpa** tanda kutip, tapi feminin ditulis *un'amica* **dengan** tanda kutip. Satu tanda baca inilah yang membedakan jenis kelaminnya dalam tulisan.",
+            "*Uno* dipakai persis di tempat *lo* dipakai. Kalau kamu hafal satu, kamu otomatis hafal yang lain."
+          ]
+        },
+        {
+          "title": "Menjamakkan",
+          "body": ["Bahasa Italia tidak menambahkan -s. Ia **mengganti huruf terakhirnya**."],
+          "table": {
+            "head": ["Tunggal", "Jamak", "Contoh"],
+            "rows": [
+              ["-o (maskulin)", "-i", "il libr**o** → i libr**i**"],
+              ["-a (feminin)", "-e", "la cas**a** → le cas**e**"],
+              ["-e (mask. atau fem.)", "-i", "il fior**e** → i fior**i**; la chiav**e** → le chiav**i**"],
+              ["beraksen (città)", "tidak berubah", "la citt**à** → le citt**à**"],
+              ["kata asing (bar, sport)", "tidak berubah", "il bar → i bar"]
+            ]
+          },
+          "after": ["Karena kata berakhiran **-e** menjadi **-i** saat jamak tanpa peduli jenis kelaminnya, kata sandanglah satu-satunya petunjuk yang tersisa: *i fiori* maskulin, *le chiavi* feminin. Sekali lagi: hafalkan kata benda bersama kata sandangnya."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pengecualian yang paling sering menjegal",
+      "blocks": [
+        { "type": "p", "text": "Pola -o/-a menutup mungkin sembilan dari sepuluh kata. Sisanya harus dihafal, dan sialnya justru sisa itu yang sering dipakai." },
+        {
+          "type": "tabel",
+          "head": ["Kata", "Kelihatannya", "Sebenarnya"],
+          "rows": [
+            ["il problema", "feminin (-a)", "**maskulin**"],
+            ["il programma", "feminin (-a)", "**maskulin**"],
+            ["il cinema", "feminin (-a)", "**maskulin**"],
+            ["il clima", "feminin (-a)", "**maskulin**"],
+            ["la mano", "maskulin (-o)", "**feminin** — jamaknya *le mani*"],
+            ["la foto", "maskulin (-o)", "**feminin** — pendek dari *fotografia*"],
+            ["la moto", "maskulin (-o)", "**feminin** — pendek dari *motocicletta*"],
+            ["la radio", "maskulin (-o)", "**feminin**"]
+          ]
+        },
+        { "type": "p", "text": "Empat kata di baris bawah semuanya feminin karena bentuk panjangnya feminin, lalu dipendekkan tanpa mengubah jenisnya. Begitu kamu tahu asal-usulnya, keempatnya tidak perlu dihafal lagi." },
+        {
+          "type": "kotak",
+          "title": "Kebiasaan yang menghemat berbulan-bulan",
+          "items": [
+            "Jangan pernah mencatat *casa*. Catat *la casa*.",
+            "Jangan pernah mencatat *zaino*. Catat *lo zaino*.",
+            "Kalau kamu bertemu kata berakhiran **-e**, cari kata sandangnya di kamus sebelum menutup halaman. Tanpa itu, kamu baru menghafal setengah kata.",
+            "Kata berakhiran **-zione** dan **-tà** selalu feminin: *la stazione*, *la lezione*, *la città*, *la libertà*. Dua akhiran ini saja sudah menyelamatkan ratusan kata."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "la cosa", "baca": "la KO-za", "id": "benda, hal" },
+    { "it": "il libro", "baca": "il LI-bro", "id": "buku" },
+    { "it": "la penna", "baca": "la PEN-na", "id": "pena" },
+    { "it": "lo zaino", "baca": "lo DZAI-no", "id": "tas punggung" },
+    { "it": "il quaderno", "baca": "il kua-DER-no", "id": "buku tulis" },
+    { "it": "il tavolo", "baca": "il TA-vo-lo", "id": "meja" },
+    { "it": "la sedia", "baca": "la SE-dia", "id": "kursi" },
+    { "it": "la porta", "baca": "la POR-ta", "id": "pintu" },
+    { "it": "la finestra", "baca": "la fi-NES-tra", "id": "jendela" },
+    { "it": "la chiave", "baca": "la KIA-ve", "id": "kunci" },
+    { "it": "il telefono", "baca": "il te-LE-fo-no", "id": "telepon" },
+    { "it": "la casa", "baca": "la KA-za", "id": "rumah" },
+    { "it": "la città", "baca": "la cit-TA", "id": "kota" },
+    { "it": "la stazione", "baca": "la sta-TSIO-ne", "id": "stasiun" },
+    { "it": "la lezione", "baca": "la le-TSIO-ne", "id": "pelajaran" },
+    { "it": "il fiore", "baca": "il FIO-re", "id": "bunga" },
+    { "it": "la mano", "baca": "la MA-no", "id": "tangan" },
+    { "it": "il problema", "baca": "il pro-BLE-ma", "id": "masalah" },
+    { "it": "questo / questa", "baca": "KUES-to", "id": "ini" },
+    { "it": "quello / quella", "baca": "KUEL-lo", "id": "itu" },
+    { "it": "perché", "baca": "per-KE", "id": "kenapa, karena" },
+    { "it": "guardare", "baca": "guar-DA-re", "id": "melihat, memandang" },
+    { "it": "imparare", "baca": "im-pa-RA-re", "id": "mempelajari" },
+    { "it": "sempre", "baca": "SEM-pre", "id": "selalu" },
+    { "it": "esatto", "baca": "e-ZAT-to", "id": "tepat, betul" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata sandang tertentu: il, lo, la, atau l'.",
+      "items": [
+        "____ libro",
+        "____ zaino",
+        "____ casa",
+        "____ amico",
+        "____ studente",
+        "____ amica",
+        "____ stazione",
+        "____ problema"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata sandang tak tentu: un, uno, una, atau un'.",
+      "items": [
+        "____ penna",
+        "____ zaino",
+        "____ amico",
+        "____ amica",
+        "____ studentessa",
+        "____ telefono"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi jamak, kata sandangnya sekalian.",
+      "items": [
+        "il libro",
+        "la casa",
+        "lo zaino",
+        "l'amica",
+        "la chiave",
+        "il fiore",
+        "la città",
+        "la mano"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Ini apa?",
+        "Itu sebuah buku.",
+        "Buku itu maskulin.",
+        "Saya tidak mengerti.",
+        "Selalu hafalkan kata bendanya bersama kata sandangnya."
+      ]
+    }
+  ],
+  "answers": [
+    "il — lo — la — l' — lo — l' — la — il",
+    "una — uno — un — un' — una — un",
+    "i libri — le case — gli zaini — le amiche — le chiavi — i fiori — le città — le mani",
+    "Che cos'è questo? — Quello è un libro. — Il libro è maschile. — Non capisco. — Impara sempre il nome con l'articolo."
+  ],
+  "wave": "Ulangi **unit 1** dulu: tutup kolom Italianya, lihat terjemahan Indonesianya, lalu susun ulang seluruh dialog perkenalan dari ingatan — keras-keras."
+}

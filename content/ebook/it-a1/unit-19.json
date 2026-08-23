@@ -1,0 +1,192 @@
+{
+  "title": "Kemarin saya sudah…",
+  "title_target": "Ieri ho fatto…",
+  "goal": "Membuka pintu ke masa lampau: bentuk lampau yang dipakai orang Italia setiap hari, dibangun dengan *avere* dan kata sifat pelaku.",
+  "bekal": [
+    "membentuk kalimat lampau dengan *avere* + kata sifat pelaku",
+    "membentuk kata sifat pelaku beraturan dari tiga golongan",
+    "mengenali sepuluh kata sifat pelaku tak beraturan yang paling sering dipakai"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Che cosa hai fatto ieri?",
+      "intro": "Senin pagi di kantin kampus. Semua kalimat lampau di bawah memakai satu pola yang sama.",
+      "lines": [
+        { "speaker": "Giulia:", "text": "Allora, che cosa hai fatto ieri?", "id": "Nah, kemarin kamu ngapain?", "literal": "kalau-begitu, apa benda kamu-punya dilakukan kemarin?" },
+        { "speaker": "Budi:", "text": "Ho studiato tutta la mattina. Poi ho pranzato con Marco.", "id": "Saya belajar sepanjang pagi. Lalu makan siang dengan Marco.", "literal": "saya-punya dipelajari semua si pagi. lalu saya-punya dimakan-siang dengan Marco." },
+        { "speaker": "Giulia:", "text": "Dove avete mangiato?", "id": "Kalian makan di mana?", "literal": "di-mana kalian-punya dimakan?" },
+        { "speaker": "Budi:", "text": "In quella trattoria vicino alla stazione. Ho preso le lasagne.", "id": "Di trattoria dekat stasiun itu. Saya pesan lasagna.", "literal": "di itu trattoria dekat pada-si stasiun. saya-punya diambil si lasagna." },
+        { "speaker": "Giulia:", "text": "E com'erano?", "id": "Enak?", "literal": "dan bagaimana-mereka-adalah?" },
+        { "speaker": "Budi:", "text": "Buonissime. Ho mangiato troppo, però. Poi ho dormito due ore.", "id": "Enak sekali. Tapi saya kebanyakan makan. Habis itu tidur dua jam.", "literal": "sangat-enak. saya-punya dimakan terlalu, namun. lalu saya-punya ditidur dua jam." },
+        { "speaker": "Giulia:", "text": "Ah, la pennichella! Sei già italiano.", "id": "Ah, tidur siang! Kamu sudah jadi orang Italia.", "literal": "ah, si tidur-siang! kamu-adalah sudah italia." },
+        { "speaker": "Budi:", "text": "E tu? Hai lavorato anche domenica?", "id": "Kamu sendiri? Hari Minggu kerja juga?", "literal": "dan kamu? kamu-punya dikerjakan juga minggu?" },
+        { "speaker": "Giulia:", "text": "No, per fortuna. Ho letto un libro e ho visto un film.", "id": "Tidak, untung saja. Saya baca buku dan nonton film.", "literal": "tidak, untuk keberuntungan. saya-punya dibaca sebuah buku dan saya-punya dilihat sebuah film." },
+        { "speaker": "Budi:", "text": "Che film hai visto?", "id": "Nonton film apa?", "literal": "apa film kamu-punya dilihat?" },
+        { "speaker": "Giulia:", "text": "Un vecchio film di Fellini. L'ho già visto tre volte.", "id": "Film Fellini yang lama. Saya sudah nonton tiga kali.", "literal": "sebuah tua film dari Fellini. itu-saya-punya sudah dilihat tiga kali." },
+        { "speaker": "Budi:", "text": "Tre volte lo stesso film? Non hai capito niente la prima volta?", "id": "Tiga kali film yang sama? Yang pertama tidak paham ya?", "literal": "tiga kali itu sama film? tidak kamu-punya dimengerti tidak-ada si pertama kali?" }
+      ],
+      "notes": [
+        "**Bentuk lampau Italia dibangun dari dua bagian.** Kata bantu (*avere* atau *essere*) ditambah kata sifat pelaku — bentuk kata kerja yang menyatakan perbuatan sudah selesai. *Ho studiato* = \"saya punya (perbuatan) dipelajari\".",
+        "**Sebagian besar kata kerja memakai avere.** Semua kata kerja yang punya sasaran — makan sesuatu, membaca sesuatu, melakukan sesuatu — memakai *avere*. Golongan yang memakai *essere* dibongkar di unit 20.",
+        "**Kata sifat pelaku dengan avere tidak berubah bentuk.** *Ho mangiato*, *abbiamo mangiato*, *hanno mangiato* — huruf terakhirnya tetap *-o* apa pun pelakunya. Ini jauh lebih mudah daripada kelihatannya.",
+        "**Bentuk ini dipakai untuk apa pun yang sudah selesai.** Baik kemarin, tadi pagi, tahun lalu, maupun barusan. Bahasa Italia sehari-hari nyaris tidak memakai bentuk lampau lain — itulah kenapa unit ini penting.",
+        "**Non ho capito** sekarang jelas: bentuk lampau dari *capire*. Orang Italia mengatakannya alih-alih *non capisco* karena yang dimaksud adalah \"tadi saya tidak menangkapnya\".",
+        "**Kata keterangan berdiri di tengah.** *Ho già visto*, *ho sempre detto*, *non ho mai mangiato*. Kata seperti *già*, *sempre*, *mai*, *ancora* diselipkan antara kata bantu dan kata sifat pelaku, bukan di ujung kalimat.",
+        "**Per fortuna** = untung saja. Sepasang dengan *purtroppo* (sayangnya) dari unit 16. Dua kata yang membingkai hampir semua cerita.",
+        "**La pennichella** adalah tidur siang sesudah makan — kata yang hangat dan sedikit menggoda. Padanan resminya *il riposino* atau *la siesta*, tapi yang ini yang dipakai orang."
+      ],
+      "grammars": [
+        {
+          "title": "Membentuk kata sifat pelaku beraturan",
+          "body": ["Tiga golongan, tiga akhiran. Sepenuhnya teratur."],
+          "table": {
+            "head": ["Golongan", "Akhiran", "Contoh"],
+            "rows": [
+              ["**-are**", "**-ato**", "parlare → parl**ato**; mangiare → mangi**ato**"],
+              ["**-ere**", "**-uto**", "credere → cred**uto**; potere → pot**uto**"],
+              ["**-ire**", "**-ito**", "dormire → dorm**ito**; capire → cap**ito**"]
+            ]
+          },
+          "after": [
+            "Golongan *-are* dan *-ire* hampir seluruhnya teratur. Yang banyak menyimpang justru golongan *-ere* — dan sialnya di situlah kata-kata paling sering dipakai berada.",
+            "Bentuk lengkapnya: *ho parlato, hai parlato, ha parlato, abbiamo parlato, avete parlato, hanno parlato.* Cuma kata bantunya yang berubah."
+          ]
+        },
+        {
+          "title": "Kata sifat pelaku tak beraturan yang wajib dihafal",
+          "body": ["Dua puluh kata ini menutup sebagian besar percakapan sehari-hari. Hafalkan berpasangan dengan bentuk dasarnya."],
+          "table": {
+            "head": ["Dasar", "Lampau", "Dasar", "Lampau"],
+            "rows": [
+              ["fare", "**fatto**", "aprire", "**aperto**"],
+              ["dire", "**detto**", "offrire", "**offerto**"],
+              ["vedere", "**visto**", "chiudere", "**chiuso**"],
+              ["prendere", "**preso**", "scrivere", "**scritto**"],
+              ["leggere", "**letto**", "rispondere", "**risposto**"],
+              ["bere", "**bevuto**", "mettere", "**messo**"],
+              ["chiedere", "**chiesto**", "perdere", "**perso**"],
+              ["scegliere", "**scelto**", "vincere", "**vinto**"],
+              ["conoscere", "**conosciuto**", "spegnere", "**spento**"],
+              ["essere", "**stato**", "rimanere", "**rimasto**"]
+            ]
+          },
+          "after": [
+            "Perhatikan pola samar di dalamnya: banyak yang berakhir *-tto* (*fatto*, *detto*, *letto*, *scritto*) atau *-so* (*preso*, *chiuso*, *perso*, *messo*). Mengenali dua pola ini membuat sisanya lebih mudah ditebak.",
+            "Menyangkalnya: *non* berdiri di depan kata bantu — *non ho visto*, bukan *ho non visto*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata waktu lampau",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Italiano", "Bahasa Indonesia", "Italiano", "Bahasa Indonesia"],
+          "rows": [
+            ["ieri", "kemarin", "l'altro ieri", "kemarin lusa"],
+            ["ieri sera", "tadi malam", "stamattina", "tadi pagi"],
+            ["la settimana scorsa", "minggu lalu", "il mese scorso", "bulan lalu"],
+            ["l'anno scorso", "tahun lalu", "sabato scorso", "Sabtu lalu"],
+            ["due giorni fa", "dua hari lalu", "un'ora fa", "sejam yang lalu"],
+            ["poco fa", "barusan", "già", "sudah"],
+            ["non… ancora", "belum", "non… mai", "belum pernah"]
+          ]
+        },
+        { "type": "p", "text": "*Fa* di sini berarti \"yang lalu\" dan selalu berdiri **sesudah** jumlah waktunya: *due ore fa*, *tre anni fa*. Ia kebetulan berbentuk sama dengan *fa* dari *fare*, tapi sama sekali kata lain." },
+        {
+          "type": "kotak",
+          "title": "Bertanya tentang yang sudah lewat",
+          "items": [
+            "*Che cosa hai fatto ieri?* — Kemarin ngapain?",
+            "*Dove hai mangiato?* — Makan di mana?",
+            "*Hai già mangiato?* — Sudah makan?",
+            "*Non ho ancora mangiato.* — Saya belum makan.",
+            "*Hai mai provato…?* — Pernah coba…?",
+            "*Non ho mai visto…* — Saya belum pernah lihat…",
+            "*Com'è andata?* — Bagaimana hasilnya?"
+          ]
+        },
+        { "type": "p", "text": "Perhatikan letak *già*, *ancora*, dan *mai*: ketiganya masuk ke tengah, antara kata bantu dan kata sifat pelaku. Menaruhnya di ujung kalimat adalah kesalahan yang paling sering terdengar dari pelajar yang berpikir dalam bahasa Inggris." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "ieri", "baca": "IE-ri", "id": "kemarin" },
+    { "it": "fa", "baca": "fa", "id": "yang lalu" },
+    { "it": "già", "baca": "ja", "id": "sudah" },
+    { "it": "ancora", "baca": "an-KO-ra", "id": "masih, belum (dengan non)" },
+    { "it": "la volta", "baca": "la VOL-ta", "id": "kali" },
+    { "it": "pranzare", "baca": "pran-DZA-re", "id": "makan siang" },
+    { "it": "cenare", "baca": "ce-NA-re", "id": "makan malam" },
+    { "it": "vedere", "baca": "ve-DE-re", "id": "melihat" },
+    { "it": "dire", "baca": "DI-re", "id": "mengatakan" },
+    { "it": "chiedere", "baca": "KIE-de-re", "id": "bertanya, meminta" },
+    { "it": "rispondere", "baca": "ris-PON-de-re", "id": "menjawab" },
+    { "it": "mettere", "baca": "MET-te-re", "id": "menaruh" },
+    { "it": "perdere", "baca": "PER-de-re", "id": "kehilangan, kalah" },
+    { "it": "vincere", "baca": "VIN-ce-re", "id": "menang" },
+    { "it": "scegliere", "baca": "SE-lye-re", "id": "memilih" },
+    { "it": "conoscere", "baca": "ko-NO-sye-re", "id": "mengenal" },
+    { "it": "per fortuna", "baca": "per for-TU-na", "id": "untung saja" },
+    { "it": "troppo", "baca": "TROP-po", "id": "terlalu, kebanyakan" },
+    { "it": "la pennichella", "baca": "la pen-ni-KEL-la", "id": "tidur siang" },
+    { "it": "poco fa", "baca": "PO-ko fa", "id": "barusan" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi bentuk lampau dengan avere.",
+      "items": [
+        "Studio italiano.",
+        "Mangiamo al ristorante.",
+        "Marco dorme otto ore.",
+        "Capisco la lezione.",
+        "Lavorate tutto il giorno.",
+        "Parlano con il professore."
+      ]
+    },
+    {
+      "prompt": "Tulis kata sifat pelaku dari kata kerja ini.",
+      "items": [
+        "fare",
+        "vedere",
+        "prendere",
+        "leggere",
+        "dire",
+        "aprire",
+        "scrivere",
+        "bere"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Kemarin saya belajar sepanjang pagi.",
+        "Kami makan di restoran.",
+        "Saya baca buku dan nonton film.",
+        "Kamu sudah makan?",
+        "Saya belum makan.",
+        "Saya belum pernah coba."
+      ]
+    },
+    {
+      "prompt": "Sisipkan kata dalam kurung di tempat yang benar, lalu tulis kalimat lengkapnya.",
+      "items": [
+        "Ho mangiato. (già)",
+        "Non ho visto quel film. (mai)",
+        "Non ho finito. (ancora)",
+        "Ho detto la verità. (sempre)",
+        "Abbiamo capito. (non… niente)"
+      ]
+    }
+  ],
+  "answers": [
+    "Ho studiato italiano. — Abbiamo mangiato al ristorante. — Marco ha dormito otto ore. — Ho capito la lezione. — Avete lavorato tutto il giorno. — Hanno parlato con il professore.",
+    "fatto — visto — preso — letto — detto — aperto — scritto — bevuto",
+    "Ieri ho studiato tutta la mattina. — Abbiamo mangiato al ristorante. — Ho letto un libro e ho visto un film. — Hai già mangiato? — Non ho ancora mangiato. — Non ho mai provato.",
+    "Ho già mangiato. — Non ho mai visto quel film. — Non ho ancora finito. — Ho sempre detto la verità. — Non abbiamo capito niente."
+  ],
+  "wave": "Ulangi **unit 17** dulu: tanyakan arah ke tiga tempat berbeda dan jawab sendiri petunjuknya dengan bentuk perintah hormat."
+}

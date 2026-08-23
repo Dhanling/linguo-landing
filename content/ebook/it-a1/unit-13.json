@@ -1,0 +1,196 @@
+{
+  "title": "Makan malam di restoran",
+  "title_target": "Al ristorante",
+  "goal": "Menghadapi menu Italia yang tersusun bertingkat, memesan tiap tahapnya, dan meminta bon tanpa salah kaprah soal tip.",
+  "bekal": [
+    "membaca menu dan mengerti urutan hidangannya",
+    "memesan dengan *per me*, *mi porta*, dan *vorrei*",
+    "meminta bon dan mengerti apa itu *coperto*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Una cena in trattoria",
+      "intro": "Trattoria adalah restoran keluarga yang lebih sederhana dan lebih murah daripada *ristorante*. Budi dan Giulia makan malam.",
+      "lines": [
+        { "speaker": "Cameriere:", "text": "Buonasera. Avete prenotato?", "id": "Selamat malam. Sudah pesan tempat?", "literal": "selamat-malam. kalian-punya memesan?" },
+        { "speaker": "Giulia:", "text": "Sì, un tavolo per due a nome Rossi.", "id": "Ya, meja untuk dua atas nama Rossi.", "literal": "ya, sebuah meja untuk dua pada nama Rossi." },
+        { "speaker": "Cameriere:", "text": "Prego, accomodatevi. Ecco il menù.", "id": "Silakan, duduk. Ini menunya.", "literal": "silakan, dudukkan-diri-kalian. inilah si menu." },
+        { "speaker": "Budi:", "text": "Grazie. Che cosa mi consiglia?", "id": "Terima kasih. Anda menyarankan apa?", "literal": "terima-kasih. apa benda kepada-saya Anda-sarankan?" },
+        { "speaker": "Cameriere:", "text": "Stasera i tortellini sono ottimi. Fatti in casa.", "id": "Malam ini tortellini-nya bagus sekali. Buatan sendiri.", "literal": "malam-ini si tortellini adalah sangat-baik. dibuat di rumah." },
+        { "speaker": "Budi:", "text": "Allora per me i tortellini. E come secondo?", "id": "Kalau begitu saya tortellini. Untuk hidangan utamanya?", "literal": "kalau-begitu untuk saya si tortellini. dan sebagai kedua?" },
+        { "speaker": "Cameriere:", "text": "Il pesce del giorno è branzino al forno.", "id": "Ikan hari ini kakap panggang.", "literal": "si ikan dari-si hari adalah kakap pada-si oven." },
+        { "speaker": "Budi:", "text": "Perfetto, prendo quello. Con un contorno di verdure.", "id": "Bagus, saya ambil itu. Dengan pendamping sayur.", "literal": "sempurna, saya-ambil itu. dengan sebuah pendamping dari sayur-sayuran." },
+        { "speaker": "Giulia:", "text": "Per me solo un primo: risotto ai funghi. Non ho molta fame.", "id": "Saya cukup hidangan pertama saja: risotto jamur. Saya tidak begitu lapar.", "literal": "untuk saya hanya sebuah pertama: risotto pada-si jamur. tidak saya-punya banyak lapar." },
+        { "speaker": "Cameriere:", "text": "Da bere? Acqua, vino?", "id": "Minumnya? Air, anggur?", "literal": "untuk minum? air, anggur?" },
+        { "speaker": "Giulia:", "text": "Una bottiglia d'acqua naturale e mezzo litro di vino rosso della casa.", "id": "Sebotol air tanpa gas dan setengah liter anggur merah rumah.", "literal": "sebuah botol dari-air alami dan setengah liter dari anggur merah dari-si rumah." },
+        { "speaker": "Budi:", "text": "E dopo, il conto per favore. Insieme, non separato.", "id": "Dan sesudahnya, bonnya tolong. Digabung, jangan dipisah.", "literal": "dan sesudah, si bon untuk kebaikan. bersama, tidak terpisah." }
+      ],
+      "notes": [
+        "**Menu Italia bertingkat, dan tak seorang pun wajib memesan semuanya.** *Antipasto* (pembuka), *primo* (pasta, risotto, sup), *secondo* (daging atau ikan), *contorno* (sayur pendamping), *dolce* (manisan). Memesan hanya *primo* seperti Giulia sama sekali lumrah.",
+        "**Contorno dipesan terpisah.** Hidangan utama datang telanjang di piringnya — sayur atau kentang tidak otomatis ikut. Ini kejutan pertama bagi banyak pendatang.",
+        "**Per me** adalah cara paling ringkas memesan: *per me i tortellini* = \"untuk saya tortellini\". Tidak perlu kata kerja sama sekali. Pelayan Italia justru lebih sering mendengar ini daripada kalimat lengkap.",
+        "**Cosa mi consiglia?** = \"Anda menyarankan apa?\" Pertanyaan yang selalu menghasilkan jawaban jujur di restoran keluarga, dan sering menghasilkan hidangan terbaik malam itu.",
+        "**Coperto adalah biaya tempat, bukan tip.** Satu sampai tiga euro per orang, tercantum di menu, untuk roti dan taplak. Ia wajib dan resmi. Tip tambahan tidak diharapkan di Italia; membulatkan ke atas sudah lebih dari cukup.",
+        "**Vino della casa** adalah anggur rumah — dituang dari tong, dijual per seperempat, setengah, atau satu liter. Jauh lebih murah daripada botol dan biasanya cukup baik.",
+        "**Il conto, per favore.** Bon di Italia tidak pernah datang sendiri; menunggu diam-diam bisa berlangsung sampai restoran tutup. Meminta bon bukan ketidaksopanan, melainkan satu-satunya cara.",
+        "**Avete prenotato** dan *fatti in casa* memakai bentuk lampau yang baru dipelajari di unit 19. Untuk sekarang cukup dikenali sebagai kalimat utuh."
+      ],
+      "grammars": [
+        {
+          "title": "Memesan — pola yang cukup untuk seumur hidup",
+          "body": ["Empat pola, dari paling pendek ke paling lengkap. Semuanya sopan."],
+          "table": {
+            "head": ["Pola", "Contoh", "Catatan"],
+            "rows": [
+              ["**Per me…**", "Per me i tortellini.", "paling ringkas"],
+              ["**Prendo…**", "Prendo il pesce.", "sehari-hari"],
+              ["**Vorrei…**", "Vorrei un contorno di verdure.", "sopan, aman"],
+              ["**Mi porta…?**", "Mi porta un altro bicchiere?", "meminta dibawakan"],
+              ["**Posso avere…?**", "Posso avere il sale?", "meminta sesuatu"],
+              ["**Che cosa mi consiglia?**", "—", "minta saran"]
+            ]
+          },
+          "after": ["*Mi porta* harfiahnya \"Anda membawakan kepada saya\", diucapkan sebagai pertanyaan. Nada suaranya yang membuatnya sopan, bukan tambahan kata apa pun."]
+        },
+        {
+          "title": "Bere — kata kerja \"minum\"",
+          "body": ["Tidak beraturan dan sangat sering dipakai. Perhatikan bahwa huruf pertamanya berubah dari *be-* jadi *bev-*."],
+          "table": {
+            "head": ["", "bere", "contoh"],
+            "rows": [
+              ["io", "**bevo**", "Bevo solo acqua."],
+              ["tu", "bevi", "Che cosa bevi?"],
+              ["lui / lei", "beve", "Non beve vino."],
+              ["noi", "beviamo", "Beviamo un caffè?"],
+              ["voi", "bevete", "Bevete qualcosa?"],
+              ["loro", "bevono", "Bevono birra."]
+            ]
+          },
+          "after": ["*Da bere* berarti \"untuk diminum\" — pertanyaan baku pelayan. Padanannya *da mangiare* (untuk dimakan): *Qualcosa da mangiare?*"]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Membaca menu",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Bagian menu", "Isinya biasanya"],
+          "rows": [
+            ["**Antipasti**", "prosciutto e melone, bruschetta, affettati misti"],
+            ["**Primi**", "spaghetti, tortellini, risotto, lasagne, zuppa"],
+            ["**Secondi**", "bistecca, pollo, branzino, vitello, cotoletta"],
+            ["**Contorni**", "insalata mista, patate al forno, verdure grigliate, spinaci"],
+            ["**Dolci**", "tiramisù, panna cotta, gelato, torta"],
+            ["**Bevande**", "acqua, vino, birra, caffè"]
+          ]
+        },
+        { "type": "sub", "text": "Cara memasak" },
+        {
+          "type": "tabel",
+          "head": ["Italiano", "Bahasa Indonesia", "Italiano", "Bahasa Indonesia"],
+          "rows": [
+            ["al forno", "dipanggang oven", "fritto", "digoreng"],
+            ["alla griglia", "dibakar", "crudo", "mentah"],
+            ["bollito", "direbus", "cotto", "matang"],
+            ["al vapore", "dikukus", "ripieno", "berisi"],
+            ["arrosto", "dipanggang", "misto", "campur"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kalimat yang menyelamatkan makan malam",
+          "items": [
+            "*Sono vegetariano / vegetariana.* — Saya vegetarian.",
+            "*Non mangio carne di maiale.* — Saya tidak makan daging babi.",
+            "*C'è del maiale in questo piatto?* — Ada babinya di hidangan ini?",
+            "*Sono allergico ai frutti di mare.* — Saya alergi makanan laut.",
+            "*Senza formaggio, per favore.* — Tanpa keju, tolong.",
+            "*Il conto, per favore.* — Bonnya, tolong.",
+            "*Posso pagare con la carta?* — Bisa bayar pakai kartu?"
+          ]
+        },
+        { "type": "p", "text": "Dua kalimat di baris tengah pantas dihafal utuh oleh pembaca yang tidak makan babi: babi masuk ke banyak hidangan Italia lewat pintu belakang — *prosciutto*, *pancetta*, *guanciale*, *salame*, *speck*, *lardo*, *salsiccia*, *mortadella* semuanya babi meski namanya tidak berbunyi *maiale*." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "il ristorante", "baca": "il ris-to-RAN-te", "id": "restoran" },
+    { "it": "la trattoria", "baca": "la trat-to-RI-a", "id": "restoran keluarga" },
+    { "it": "il cameriere", "baca": "il ka-me-RIE-re", "id": "pelayan" },
+    { "it": "il menù", "baca": "il me-NU", "id": "menu" },
+    { "it": "il piatto", "baca": "il PIAT-to", "id": "piring, hidangan" },
+    { "it": "l'antipasto", "baca": "lan-ti-PAS-to", "id": "hidangan pembuka" },
+    { "it": "il primo", "baca": "il PRI-mo", "id": "hidangan pertama" },
+    { "it": "il secondo", "baca": "il se-KON-do", "id": "hidangan utama" },
+    { "it": "il contorno", "baca": "il kon-TOR-no", "id": "pendamping sayur" },
+    { "it": "il dolce", "baca": "il DOL-ce", "id": "manisan, pencuci mulut" },
+    { "it": "la bevanda", "baca": "la be-VAN-da", "id": "minuman" },
+    { "it": "bere", "baca": "BE-re", "id": "minum" },
+    { "it": "il vino", "baca": "il VI-no", "id": "anggur" },
+    { "it": "la birra", "baca": "la BIR-ra", "id": "bir" },
+    { "it": "il bicchiere", "baca": "il bik-KIE-re", "id": "gelas" },
+    { "it": "consigliare", "baca": "kon-si-LYA-re", "id": "menyarankan" },
+    { "it": "prenotare", "baca": "pre-no-TA-re", "id": "memesan tempat" },
+    { "it": "portare", "baca": "por-TA-re", "id": "membawa" },
+    { "it": "la fame", "baca": "la FA-me", "id": "lapar" },
+    { "it": "la sete", "baca": "la SE-te", "id": "haus" },
+    { "it": "il coperto", "baca": "il ko-PER-to", "id": "biaya tempat" },
+    { "it": "la mancia", "baca": "la MAN-ca", "id": "tip" },
+    { "it": "ottimo", "baca": "OT-ti-mo", "id": "bagus sekali" },
+    { "it": "insieme", "baca": "in-SIE-me", "id": "bersama" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Meja untuk dua orang, tolong.",
+        "Anda menyarankan apa?",
+        "Untuk saya risotto jamur.",
+        "Sebotol air tanpa gas.",
+        "Saya tidak makan daging babi.",
+        "Bonnya, tolong."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk bere yang tepat.",
+      "items": [
+        "Io ____ solo acqua.",
+        "Tu che cosa ____?",
+        "Marco non ____ vino.",
+        "Noi ____ un caffè dopo cena.",
+        "Loro ____ sempre birra."
+      ]
+    },
+    {
+      "prompt": "Cocokkan hidangan ini dengan bagian menunya. Tulis: antipasto, primo, secondo, contorno, atau dolce.",
+      "items": [
+        "tiramisù",
+        "spaghetti alla carbonara",
+        "insalata mista",
+        "bruschetta",
+        "branzino al forno",
+        "risotto ai funghi"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "due / tavolo / per / un",
+        "consiglia / cosa / mi / che / ?",
+        "favore / conto / il / per",
+        "bere / da / cosa / ?",
+        "carne / mangio / non"
+      ]
+    }
+  ],
+  "answers": [
+    "Un tavolo per due, per favore. — Che cosa mi consiglia? — Per me risotto ai funghi. — Una bottiglia d'acqua naturale. — Non mangio carne di maiale. — Il conto, per favore.",
+    "bevo — bevi — beve — beviamo — bevono",
+    "dolce — primo — contorno — antipasto — secondo — primo",
+    "Un tavolo per due. — Che cosa mi consiglia? — Il conto per favore. — Cosa da bere? — Non mangio carne."
+  ],
+  "wave": "Ulangi **unit 11** dulu: gambarkan tiga orang yang kamu kenal — perawakan, rambut, mata, sifat — tanpa melihat buku."
+}

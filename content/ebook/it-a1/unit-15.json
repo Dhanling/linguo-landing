@@ -1,0 +1,199 @@
+{
+  "title": "Saya suka, saya tidak suka",
+  "title_target": "Mi piace, non mi piace",
+  "goal": "Menguasai kata kerja yang susunannya terbalik — *piacere* — dan menyatakan selera, kegemaran, serta kegiatan waktu luang.",
+  "bekal": [
+    "memakai *mi piace* dan *mi piacciono* tanpa keliru",
+    "menyatakan suka pada kegiatan, bukan cuma benda",
+    "menyebut hobi dan cara mengisi waktu luang"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Che cosa ti piace fare?",
+      "intro": "Makan siang di taman. Percakapan santai tentang kesukaan masing-masing — dan satu kata kerja yang bekerja terbalik.",
+      "lines": [
+        { "speaker": "Giulia:", "text": "Ti piace vivere qui a Bologna?", "id": "Kamu suka tinggal di Bologna?", "literal": "kepadamu menyenangkan hidup di-sini di Bologna?" },
+        { "speaker": "Budi:", "text": "Sì, molto. Mi piace la città, mi piacciono i portici.", "id": "Ya, sangat. Saya suka kotanya, saya suka koridor-koridornya.", "literal": "ya, banyak. kepadaku menyenangkan si kota, kepadaku menyenangkan-jamak si koridor-koridor." },
+        { "speaker": "Giulia:", "text": "E il cibo? Ti piace la cucina italiana?", "id": "Kalau makanannya? Kamu suka masakan Italia?", "literal": "dan si makanan? kepadamu menyenangkan si masakan italia?" },
+        { "speaker": "Budi:", "text": "Mi piace tantissimo. Ma non mi piace il caffè amaro.", "id": "Saya suka sekali. Tapi saya tidak suka kopi pahit.", "literal": "kepadaku menyenangkan sangat-banyak. tetapi tidak kepadaku menyenangkan si kopi pahit." },
+        { "speaker": "Giulia:", "text": "Ah, allora metti lo zucchero come tutti gli italiani.", "id": "Ah, kalau begitu kasih gula seperti semua orang Italia.", "literal": "ah, kalau-begitu taruh si gula seperti semua si orang-italia." },
+        { "speaker": "Budi:", "text": "Lo faccio già. E a te, che cosa piace fare il weekend?", "id": "Sudah saya lakukan. Kalau kamu, suka ngapain kalau akhir pekan?", "literal": "itu saya-lakukan sudah. dan kepada kamu, apa benda menyenangkan melakukan si akhir-pekan?" },
+        { "speaker": "Giulia:", "text": "Mi piace camminare in collina e leggere al sole.", "id": "Saya suka jalan-jalan di bukit dan baca sambil berjemur.", "literal": "kepadaku menyenangkan berjalan di bukit dan membaca pada-si matahari." },
+        { "speaker": "Budi:", "text": "Non ti piace lo sport?", "id": "Kamu tidak suka olahraga?", "literal": "tidak kepadamu menyenangkan si olahraga?" },
+        { "speaker": "Giulia:", "text": "Guardare sì, praticare no. Odio correre.", "id": "Nonton iya, main tidak. Saya benci lari.", "literal": "menonton ya, mempraktikkan tidak. saya-benci berlari." },
+        { "speaker": "Budi:", "text": "Neanche a me piace correre. Preferisco nuotare.", "id": "Saya juga tidak suka lari. Saya lebih suka berenang.", "literal": "juga-tidak kepada saya menyenangkan berlari. saya-lebih-suka berenang." },
+        { "speaker": "Giulia:", "text": "A mia sorella piace nuotare. Andate insieme, no?", "id": "Saudara perempuanku suka berenang. Pergi bareng saja, ya?", "literal": "kepada milik-saya saudari menyenangkan berenang. pergilah bersama, tidak?" },
+        { "speaker": "Budi:", "text": "Volentieri! Ma solo se non nuota più veloce di me.", "id": "Boleh saja! Tapi asal dia tidak berenang lebih cepat dari saya.", "literal": "dengan-senang-hati! tetapi hanya jika tidak berenang lebih cepat dari saya." }
+      ],
+      "notes": [
+        "**Piacere bekerja terbalik.** *Mi piace la pizza* harfiahnya \"pizza menyenangkan kepada saya\". Yang jadi pelaku kalimat adalah **benda yang disukai**, bukan orang yang menyukai. Ini titik tersulit unit ini, dan sekaligus yang paling sering salah seumur hidup kalau tidak dibereskan sekarang.",
+        "**Karena itu bentuknya cuma dua: piace dan piacciono.** Satu benda → *piace*. Banyak benda → *piacciono*. *Mi piace la pizza*, *mi piacciono gli spaghetti*. Yang menentukan bukan berapa orang yang suka, melainkan berapa benda yang disukai.",
+        "**Kegiatan selalu memakai piace.** *Mi piace leggere*, *mi piace nuotare*, *mi piace camminare e leggere*. Kata kerja dasar dihitung satu, bahkan kalau disebut tiga sekaligus.",
+        "**Yang berubah adalah kata kecil di depan.** *Mi* (kepadaku), *ti* (kepadamu), *gli* (kepadanya, laki-laki), *le* (kepadanya, perempuan), *ci* (kepada kami), *vi* (kepada kalian), *gli* (kepada mereka).",
+        "**Menyebut orang lain memakai a.** *A Giulia piace nuotare*, *a mia sorella piace il caffè*, *a Marco piacciono i film*. Kata depan *a* di depan namanya wajib — tanpa itu kalimatnya rusak.",
+        "**Neanche a me** = \"saya juga tidak\". Sepasang dengan *anche a me* (\"saya juga\", untuk kalimat positif). Menjawab *anche io* pada kalimat *non mi piace* adalah kesalahan yang sangat sering terdengar.",
+        "**Odiare adalah lawan yang bekerja normal.** *Odio correre* = saya benci lari — pelakunya saya, susunannya biasa. Begitu pula *amare* (mencintai) dan *preferire* (lebih suka). Cuma *piacere* yang terbalik.",
+        "**Volentieri** = \"dengan senang hati\". Jawaban baku untuk ajakan, dan jauh lebih hangat daripada sekadar *sì*."
+      ],
+      "grammars": [
+        {
+          "title": "Piacere — susunan terbalik",
+          "body": ["Baca tabelnya dari kanan ke kiri: yang disukai adalah pelakunya."],
+          "table": {
+            "head": ["Kepada siapa", "satu benda / kegiatan", "banyak benda"],
+            "rows": [
+              ["**mi** (saya)", "mi piace il caffè", "mi piacciono i dolci"],
+              ["**ti** (kamu)", "ti piace leggere", "ti piacciono i libri"],
+              ["**gli** (dia, lk)", "gli piace la pizza", "gli piacciono gli spaghetti"],
+              ["**le** (dia, pr)", "le piace nuotare", "le piacciono i film"],
+              ["**ci** (kami)", "ci piace Bologna", "ci piacciono i portici"],
+              ["**vi** (kalian)", "vi piace il vino", "vi piacciono le canzoni"],
+              ["**gli** (mereka)", "gli piace viaggiare", "gli piacciono i viaggi"]
+            ]
+          },
+          "after": [
+            "Bentuk panjangnya memakai *a*: *a me piace*, *a te piace*, *a lui piace*, *a lei piace*, *a noi piace*, *a voi piace*, *a loro piace*. Dipakai untuk menekankan atau membandingkan: *A me piace, a lui no.*",
+            "Menyangkalnya: *non* berdiri paling depan — *non mi piace*, bukan *mi non piace*.",
+            "⚠️ Kesalahan paling umum: *io piaccio la pizza*. Itu berarti \"saya menyenangkan kepada pizza\" — yang tentu tidak masuk akal. Bentuk *piaccio* memang ada, tapi artinya \"saya disukai\": *Piaccio a Giulia* (Giulia suka saya)."
+          ]
+        },
+        {
+          "title": "Menyatakan tingkat suka",
+          "body": ["Dari benci sampai cinta mati."],
+          "table": {
+            "head": ["Italiano", "Bahasa Indonesia"],
+            "rows": [
+              ["Odio…", "Saya benci…"],
+              ["Non mi piace per niente.", "Saya sama sekali tidak suka."],
+              ["Non mi piace molto.", "Saya kurang suka."],
+              ["Mi piace abbastanza.", "Lumayan suka."],
+              ["Mi piace.", "Saya suka."],
+              ["Mi piace molto / tanto.", "Saya suka sekali."],
+              ["Mi piace tantissimo.", "Suka banget."],
+              ["Adoro…", "Saya cinta mati sama…"]
+            ]
+          },
+          "after": ["*Adoro* dan *odio* dipakai jauh lebih ringan dalam bahasa Italia daripada terjemahan harfiahnya. *Odio il lunedì* tidak berarti kebencian mendalam pada hari Senin — cukup berarti hari Senin menyebalkan."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Waktu luang dan hobi",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Italiano", "Bahasa Indonesia", "Italiano", "Bahasa Indonesia"],
+          "rows": [
+            ["leggere", "membaca", "il libro", "buku"],
+            ["ascoltare musica", "dengar musik", "la canzone", "lagu"],
+            ["guardare la TV", "nonton TV", "la serie", "serial"],
+            ["andare al cinema", "ke bioskop", "il film", "film"],
+            ["cucinare", "memasak", "la ricetta", "resep"],
+            ["viaggiare", "bepergian", "il viaggio", "perjalanan"],
+            ["camminare", "berjalan kaki", "la passeggiata", "jalan-jalan"],
+            ["correre", "berlari", "la corsa", "lari"],
+            ["nuotare", "berenang", "la piscina", "kolam renang"],
+            ["giocare a calcio", "main sepak bola", "la partita", "pertandingan"],
+            ["ballare", "menari", "la festa", "pesta"],
+            ["dipingere", "melukis", "il quadro", "lukisan"],
+            ["suonare la chitarra", "main gitar", "lo strumento", "alat musik"],
+            ["fare fotografie", "memotret", "la fotografia", "foto"]
+          ]
+        },
+        { "type": "p", "text": "⚠️ *Giocare* dan *suonare* dua-duanya diterjemahkan \"main\" tapi tidak bisa ditukar. *Giocare* untuk permainan dan olahraga: *giocare a calcio*, *giocare a carte*. *Suonare* untuk alat musik: *suonare il piano*. Menyebut *giocare il piano* adalah kesalahan khas penutur bahasa Inggris." },
+        {
+          "type": "kotak",
+          "title": "Bertanya dan menjawab tentang selera",
+          "items": [
+            "*Che cosa ti piace fare nel tempo libero?* — Waktu luang suka ngapain?",
+            "*Qual è il tuo film preferito?* — Film favoritmu apa?",
+            "*Ti piace…?* — Kamu suka…? → *Sì, molto.* / *No, per niente.*",
+            "*Anche a me!* — Saya juga! (untuk kalimat positif)",
+            "*Neanche a me.* — Saya juga tidak. (untuk kalimat menyangkal)",
+            "*A me invece sì.* — Kalau saya justru suka."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "piacere", "baca": "pia-CE-re", "id": "menyenangkan bagi" },
+    { "it": "odiare", "baca": "o-DIA-re", "id": "benci" },
+    { "it": "adorare", "baca": "a-do-RA-re", "id": "sangat menyukai" },
+    { "it": "il tempo libero", "baca": "il TEM-po LI-be-ro", "id": "waktu luang" },
+    { "it": "lo sport", "baca": "lo sport", "id": "olahraga" },
+    { "it": "nuotare", "baca": "nuo-TA-re", "id": "berenang" },
+    { "it": "correre", "baca": "KOR-re-re", "id": "berlari" },
+    { "it": "camminare", "baca": "kam-mi-NA-re", "id": "berjalan kaki" },
+    { "it": "giocare", "baca": "jo-KA-re", "id": "bermain (permainan)" },
+    { "it": "suonare", "baca": "suo-NA-re", "id": "memainkan alat musik" },
+    { "it": "ballare", "baca": "bal-LA-re", "id": "menari" },
+    { "it": "viaggiare", "baca": "viaj-JA-re", "id": "bepergian" },
+    { "it": "la cucina", "baca": "la ku-CI-na", "id": "masakan, dapur" },
+    { "it": "il cibo", "baca": "il CI-bo", "id": "makanan" },
+    { "it": "amaro", "baca": "a-MA-ro", "id": "pahit" },
+    { "it": "dolce", "baca": "DOL-ce", "id": "manis" },
+    { "it": "la canzone", "baca": "la kan-TSO-ne", "id": "lagu" },
+    { "it": "la partita", "baca": "la par-TI-ta", "id": "pertandingan" },
+    { "it": "la piscina", "baca": "la pi-SI-na", "id": "kolam renang" },
+    { "it": "la collina", "baca": "la kol-LI-na", "id": "bukit" },
+    { "it": "preferito", "baca": "pre-fe-RI-to", "id": "favorit" },
+    { "it": "volentieri", "baca": "vo-len-TIE-ri", "id": "dengan senang hati" },
+    { "it": "abbastanza", "baca": "ab-bas-TAN-tsa", "id": "lumayan, cukup" },
+    { "it": "neanche", "baca": "ne-AN-ke", "id": "juga tidak" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan piace atau piacciono.",
+      "items": [
+        "Mi ____ la pizza.",
+        "Mi ____ gli spaghetti.",
+        "Ti ____ leggere?",
+        "Non ci ____ i film horror.",
+        "Le ____ nuotare.",
+        "Vi ____ le canzoni italiane?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata kecil yang tepat: mi, ti, gli, le, ci, vi.",
+      "items": [
+        "A me ____ piace il caffè.",
+        "A te ____ piacciono i dolci?",
+        "A Marco ____ piace il calcio.",
+        "A Giulia ____ piace camminare.",
+        "A noi ____ piace Bologna.",
+        "A voi ____ piacciono i portici?"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Saya suka masakan Italia.",
+        "Saya tidak suka kopi pahit.",
+        "Kamu suka berenang?",
+        "Saudara perempuanku suka membaca.",
+        "Saya juga tidak suka lari.",
+        "Waktu luang kamu suka ngapain?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan giocare atau suonare dalam bentuk yang tepat.",
+      "items": [
+        "Marco ____ a calcio ogni domenica.",
+        "Io ____ la chitarra.",
+        "I bambini ____ in giardino.",
+        "Mia sorella ____ il piano.",
+        "Noi ____ a carte la sera."
+      ]
+    }
+  ],
+  "answers": [
+    "piace — piacciono — piace — piacciono — piace — piacciono",
+    "mi — ti — gli — le — ci — vi",
+    "Mi piace la cucina italiana. — Non mi piace il caffè amaro. — Ti piace nuotare? — A mia sorella piace leggere. — Neanche a me piace correre. — Che cosa ti piace fare nel tempo libero?",
+    "gioca — suono — giocano — suona — giochiamo"
+  ],
+  "wave": "Ulangi **unit 13** dulu: pesan makan malam lengkap tiga tahap dari ingatan, termasuk minuman dan meminta bon."
+}

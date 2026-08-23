@@ -1,0 +1,193 @@
+{
+  "title": "Mesin kata kerja",
+  "title_target": "Parlo, prendo, dormo",
+  "goal": "Memasang mesin utama bahasa Italia: tiga golongan kata kerja beraturan dan enam bentuknya, sekaligus alasan kenapa kata ganti pelaku boleh dibuang.",
+  "bekal": [
+    "membentuk kata kerja *-are*, *-ere*, dan *-ire* untuk enam pelaku",
+    "membuat kalimat menyangkal dengan *non*",
+    "bertanya tanpa mengubah susunan kalimat"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Che cosa fai la sera?",
+      "intro": "Budi dan Marco menunggu bus. Percakapan pengisi waktu yang, tanpa sengaja, memakai ketiga golongan kata kerja sekaligus.",
+      "lines": [
+        { "speaker": "Marco:", "text": "Budi, che cosa fai di solito la sera?", "id": "Budi, malam-malam kamu biasanya ngapain?", "literal": "Budi, apa benda kamu-lakukan dari biasa si sore?" },
+        { "speaker": "Budi:", "text": "Studio italiano e guardo un film. Tu?", "id": "Saya belajar bahasa Italia dan nonton film. Kamu?", "literal": "saya-belajar italia dan saya-menonton sebuah film. kamu?" },
+        { "speaker": "Marco:", "text": "Io lavoro fino alle undici. Poi torno a casa e dormo.", "id": "Saya kerja sampai jam sebelas. Lalu pulang dan tidur.", "literal": "saya saya-bekerja sampai pada-si sebelas. lalu saya-kembali ke rumah dan saya-tidur." },
+        { "speaker": "Budi:", "text": "Non mangi a casa?", "id": "Kamu tidak makan di rumah?", "literal": "tidak kamu-makan di rumah?" },
+        { "speaker": "Marco:", "text": "Mangio al ristorante, dove lavoro. È un vantaggio.", "id": "Saya makan di restoran, tempat saya kerja. Itu keuntungannya.", "literal": "saya-makan di-si restoran, di-mana saya-bekerja. adalah sebuah keuntungan." },
+        { "speaker": "Budi:", "text": "E il fine settimana? Riposate un po'?", "id": "Kalau akhir pekan? Kalian istirahat sedikit?", "literal": "dan si akhir pekan? kalian-beristirahat se sedikit?" },
+        { "speaker": "Marco:", "text": "Il sabato lavoriamo tutti. La domenica chiudiamo.", "id": "Sabtu kami semua kerja. Minggu kami tutup.", "literal": "si sabtu kami-bekerja semua. si minggu kami-menutup." },
+        { "speaker": "Budi:", "text": "E la domenica che cosa fai?", "id": "Dan hari Minggu kamu ngapain?", "literal": "dan si minggu apa benda kamu-lakukan?" },
+        { "speaker": "Marco:", "text": "Dormo fino a tardi, poi leggo e ascolto musica.", "id": "Saya tidur sampai siang, lalu baca dan dengar musik.", "literal": "saya-tidur sampai ke terlambat, lalu saya-membaca dan saya-mendengarkan musik." },
+        { "speaker": "Budi:", "text": "Anche i tuoi amici lavorano tanto?", "id": "Teman-temanmu juga kerja sebanyak itu?", "literal": "juga si milik-kamu teman-teman mereka-bekerja banyak?" },
+        { "speaker": "Marco:", "text": "Alcuni sì, altri no. Dipende dal lavoro.", "id": "Sebagian ya, sebagian tidak. Tergantung pekerjaannya.", "literal": "sebagian ya, lain tidak. tergantung dari-si pekerjaan." },
+        { "speaker": "Budi:", "text": "Capisco. Ecco il bus, finalmente!", "id": "Saya mengerti. Itu busnya, akhirnya!", "literal": "saya-mengerti. inilah si bus, akhirnya!" }
+      ],
+      "notes": [
+        "**Kata ganti pelaku hampir selalu dibuang.** *Studio italiano*, bukan *io studio italiano*. Bentuk kata kerjanya sudah unik untuk tiap pelaku, jadi kata gantinya jadi mubazir. Ia dipakai hanya untuk menekankan atau membandingkan — perhatikan *Io lavoro fino alle undici* di baris tiga, yang memang sedang membandingkan dirinya dengan Budi.",
+        "**Ini kebiasaan yang harus dilatih, bukan sekadar dipahami.** Penutur Indonesia yang belajar lewat bahasa Inggris cenderung menempelkan *io* di mana-mana. Tidak salah, tapi terdengar seperti terjemahan.",
+        "**Menyangkal cuma butuh satu kata: non**, dan ia berdiri persis di depan kata kerjanya. *Non mangio*, *non lavoro*, *non capisco*. Tidak ada kata bantu seperti *do* dalam bahasa Inggris.",
+        "**Bertanya tidak mengubah susunan apa pun.** *Mangi a casa* dan *Mangi a casa?* huruf-hurufnya sama persis; yang berbeda cuma nada suara naik di ujung. Ini kabar baik: satu hal lebih sedikit untuk dipikirkan.",
+        "**Il sabato berarti \"setiap Sabtu\".** Kata sandang di depan nama hari mengubahnya jadi kebiasaan berulang. Tanpa kata sandang, *sabato* berarti Sabtu ini saja: *sabato lavoro* (Sabtu nanti saya kerja) vs *il sabato lavoro* (tiap Sabtu saya kerja).",
+        "**Un po'** adalah bentuk pendek *un poco*, dan tanda kutipnya wajib. Artinya \"sedikit\", dan ia salah satu kata paling sering dipakai dalam percakapan sehari-hari.",
+        "**Capisco** berasal dari *capire*, kata kerja *-ire* yang menyisipkan *-isc-*. Golongan ini dibongkar di kotak tata bahasa kedua — sebaiknya jangan dilewati, karena isinya kata-kata yang sangat sering dipakai.",
+        "**Dipende da** = \"tergantung pada\". Perhatikan *dal* pada *dipende dal lavoro*: itu peleburan *da* + *il*. Peleburan semacam ini dibongkar tuntas di unit 10."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga golongan kata kerja beraturan",
+          "body": ["Semua kata kerja Italia berakhiran *-are*, *-ere*, atau *-ire*. Buang akhiran itu, lalu tempelkan akhiran di bawah pada sisa katanya."],
+          "table": {
+            "head": ["", "parl-**are** (bicara)", "prend-**ere** (ambil)", "dorm-**ire** (tidur)"],
+            "rows": [
+              ["io", "parl**o**", "prend**o**", "dorm**o**"],
+              ["tu", "parl**i**", "prend**i**", "dorm**i**"],
+              ["lui / lei / Lei", "parl**a**", "prend**e**", "dorm**e**"],
+              ["noi", "parl**iamo**", "prend**iamo**", "dorm**iamo**"],
+              ["voi", "parl**ate**", "prend**ete**", "dorm**ite**"],
+              ["loro", "parl**ano**", "prend**ono**", "dorm**ono**"]
+            ]
+          },
+          "after": [
+            "Perhatikan berapa banyak yang sebetulnya sama. Bentuk *io* selalu **-o**, bentuk *tu* selalu **-i**, bentuk *noi* selalu **-iamo**. Tiga dari enam baris tidak perlu dihafal terpisah sama sekali.",
+            "Yang benar-benar membedakan cuma tiga baris sisanya, dan *-ere* dengan *-ire* pun hampir kembar — bedanya hanya di baris *voi*.",
+            "⚠️ Tekanan pada bentuk *loro* jatuh mundur: *PAR-lano*, *PREN-dono*, *DOR-mono* — bukan *par-LA-no*. Ini salah satu penanda paling cepat antara penutur yang pernah dilatih dan yang belum."
+          ]
+        },
+        {
+          "title": "Golongan -ire yang menyisipkan -isc-",
+          "body": ["Sebagian kata kerja *-ire* menyelipkan *-isc-* di empat bentuk. Tidak ada aturan yang memberitahu mana yang begini; ia harus dihafal, tapi jumlahnya terbatas dan isinya kata-kata penting."],
+          "table": {
+            "head": ["", "cap-ire (mengerti)", "prefer-ire (lebih suka)"],
+            "rows": [
+              ["io", "cap**isc**o", "prefer**isc**o"],
+              ["tu", "cap**isc**i", "prefer**isc**i"],
+              ["lui / lei", "cap**isc**e", "prefer**isc**e"],
+              ["noi", "capiamo", "preferiamo"],
+              ["voi", "capite", "preferite"],
+              ["loro", "cap**isc**ono", "prefer**isc**ono"]
+            ]
+          },
+          "after": [
+            "Polanya rapi: sisipan muncul di empat bentuk, hilang di *noi* dan *voi*. Sekali kamu lihat bentuknya, tinggal ikuti.",
+            "Anggota golongan ini yang paling sering dipakai: *capire*, *preferire*, *finire* (selesai), *pulire* (bersihkan), *spedire* (kirim), *costruire* (bangun).",
+            "Yang **tidak** ikut pola ini dan juga sering dipakai: *dormire*, *aprire* (buka), *partire* (berangkat), *sentire* (dengar, rasa), *offrire* (menawarkan), *seguire* (mengikuti)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata kerja yang cukup untuk seratus kalimat pertama",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["-are", "-ere", "-ire"],
+          "rows": [
+            ["parlare — bicara", "prendere — ambil", "dormire — tidur"],
+            ["mangiare — makan", "leggere — baca", "aprire — buka"],
+            ["lavorare — kerja", "scrivere — tulis", "partire — berangkat"],
+            ["studiare — belajar", "vedere — lihat", "sentire — dengar"],
+            ["abitare — tinggal", "vivere — hidup", "capire (isc) — mengerti"],
+            ["guardare — menonton", "chiudere — tutup", "finire (isc) — selesai"],
+            ["ascoltare — dengarkan", "chiedere — bertanya", "preferire (isc) — lebih suka"],
+            ["comprare — beli", "rispondere — menjawab", "pulire (isc) — bersihkan"],
+            ["aspettare — menunggu", "credere — percaya", "offrire — menawarkan"],
+            ["tornare — kembali", "correre — lari", "seguire — mengikuti"]
+          ]
+        },
+        { "type": "p", "text": "Tiga puluh kata kerja ini, dikalikan enam bentuk, memberimu seratus delapan puluh kalimat yang bisa langsung dipakai. Itu jauh lebih banyak daripada yang bisa dilakukan tiga ratus kata benda tanpa satu pun kata kerja." },
+        {
+          "type": "kotak",
+          "title": "Ejaan yang menjebak",
+          "items": [
+            "Kata kerja berakhiran **-care** dan **-gare** menyisipkan **h** sebelum *i* dan *e*, supaya bunyi kerasnya tidak berubah: *cerco → cerchi*, *pago → paghi*, *paghiamo*.",
+            "Kata kerja berakhiran **-ciare** dan **-giare** justru membuang satu **i**, supaya tidak ada dua i berturutan: *mangio → mangi* (bukan *mangii*), *cominci*, *mangiamo*.",
+            "Dua aturan ini murni soal ejaan, bukan tata bahasa. Bunyinya tetap sama persis."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "parlare", "baca": "par-LA-re", "id": "berbicara" },
+    { "it": "mangiare", "baca": "man-JA-re", "id": "makan" },
+    { "it": "leggere", "baca": "LEJ-je-re", "id": "membaca" },
+    { "it": "scrivere", "baca": "SKRI-ve-re", "id": "menulis" },
+    { "it": "dormire", "baca": "dor-MI-re", "id": "tidur" },
+    { "it": "capire", "baca": "ka-PI-re", "id": "mengerti" },
+    { "it": "preferire", "baca": "pre-fe-RI-re", "id": "lebih suka" },
+    { "it": "finire", "baca": "fi-NI-re", "id": "selesai" },
+    { "it": "aprire", "baca": "a-PRI-re", "id": "membuka" },
+    { "it": "chiudere", "baca": "KIU-de-re", "id": "menutup" },
+    { "it": "ascoltare", "baca": "as-kol-TA-re", "id": "mendengarkan" },
+    { "it": "tornare", "baca": "tor-NA-re", "id": "kembali, pulang" },
+    { "it": "riposare", "baca": "ri-po-ZA-re", "id": "beristirahat" },
+    { "it": "la sera", "baca": "la SE-ra", "id": "sore, malam" },
+    { "it": "il film", "baca": "il film", "id": "film" },
+    { "it": "la musica", "baca": "la MU-zi-ka", "id": "musik" },
+    { "it": "il fine settimana", "baca": "il FI-ne set-ti-MA-na", "id": "akhir pekan" },
+    { "it": "il sabato", "baca": "il SA-ba-to", "id": "Sabtu" },
+    { "it": "la domenica", "baca": "la do-ME-ni-ka", "id": "Minggu" },
+    { "it": "poi", "baca": "poi", "id": "lalu, kemudian" },
+    { "it": "fino a", "baca": "FI-no a", "id": "sampai" },
+    { "it": "di solito", "baca": "di SO-li-to", "id": "biasanya" },
+    { "it": "un po'", "baca": "un po", "id": "sedikit" },
+    { "it": "tardi", "baca": "TAR-di", "id": "terlambat, larut" },
+    { "it": "dipende", "baca": "di-PEN-de", "id": "tergantung" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah bentuk kata kerja dalam kurung.",
+      "items": [
+        "Io (studiare) ____ italiano ogni sera.",
+        "Tu (leggere) ____ molti libri.",
+        "Marco (dormire) ____ fino a tardi.",
+        "Noi (lavorare) ____ in un ristorante.",
+        "Voi (prendere) ____ il caffè al banco?",
+        "I miei amici (parlare) ____ tre lingue."
+      ]
+    },
+    {
+      "prompt": "Ubah bentuk kata kerja -isc- dalam kurung.",
+      "items": [
+        "Io non (capire) ____ bene.",
+        "Tu (preferire) ____ il tè o il caffè?",
+        "Lei (finire) ____ alle sette.",
+        "Noi (capire) ____ tutto.",
+        "Loro (pulire) ____ la casa la domenica."
+      ]
+    },
+    {
+      "prompt": "Ubah jadi kalimat menyangkal.",
+      "items": [
+        "Mangio la carne.",
+        "Marco lavora il sabato.",
+        "Capiamo il problema.",
+        "Loro parlano indonesiano.",
+        "Tu prendi il bus."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Italia. Buang kata ganti pelakunya.",
+      "items": [
+        "Saya belajar bahasa Italia setiap malam.",
+        "Kami bekerja sampai jam sebelas.",
+        "Dia tidur sampai siang.",
+        "Kalian mengerti?",
+        "Mereka tidak makan di rumah.",
+        "Saya lebih suka teh."
+      ]
+    }
+  ],
+  "answers": [
+    "studio — leggi — dorme — lavoriamo — prendete — parlano",
+    "capisco — preferisci — finisce — capiamo — puliscono",
+    "Non mangio la carne. — Marco non lavora il sabato. — Non capiamo il problema. — Loro non parlano indonesiano. — Tu non prendi il bus.",
+    "Studio italiano ogni sera. — Lavoriamo fino alle undici. — Dorme fino a tardi. — Capite? — Non mangiano a casa. — Preferisco il tè."
+  ],
+  "wave": "Ulangi **unit 4** dulu: pesan sarapan lengkap di bar dari ingatan, termasuk menanyakan harga dan membayar."
+}

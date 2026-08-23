@@ -1,0 +1,488 @@
+{
+  "title": "Di bar",
+  "title_target": "Al bar",
+  "goal": "Memesan minuman dan makanan kecil, memakai *vorrei* dan *prendo*, dan mengerti adat bar Italia yang tak tertulis.",
+  "bekal": [
+    "memesan dengan sopan memakai *vorrei* dan *per favore*",
+    "menanyakan harga dan membayar",
+    "membedakan *un caffè*, *un cappuccino*, dan *un caffellatte* seperti orang Italia"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Al bar, alle otto di mattina",
+      "intro": "Bar di Italia bukan tempat minum bir malam hari — ia warung kopi yang buka sejak subuh. Budi memesan sarapan.",
+      "lines": [
+        {
+          "speaker": "Barista:",
+          "text": "Buongiorno! Mi dica.",
+          "id": "Selamat pagi! Silakan pesan.",
+          "literal": "selamat-pagi! kepada-saya katakan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Buongiorno. Vorrei un cappuccino e un cornetto, per favore.",
+          "id": "Selamat pagi. Saya mau cappuccino dan croissant, tolong.",
+          "literal": "selamat-pagi. saya-ingin sebuah cappuccino dan sebuah croissant, untuk kebaikan."
+        },
+        {
+          "speaker": "Barista:",
+          "text": "Il cornetto vuoto o con la crema?",
+          "id": "Croissant polos atau isi krim?",
+          "literal": "si croissant kosong atau dengan si krim?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Con la crema, grazie. Quanto costa?",
+          "id": "Isi krim, terima kasih. Berapa harganya?",
+          "literal": "dengan si krim, terima-kasih. berapa berharga?"
+        },
+        {
+          "speaker": "Barista:",
+          "text": "Tre euro e cinquanta. Al banco o al tavolo?",
+          "id": "Tiga euro lima puluh. Di meja bar atau di meja duduk?",
+          "literal": "tiga euro dan lima-puluh. di-si konter atau di-si meja?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Al banco. Perché, al tavolo costa di più?",
+          "id": "Di meja bar. Kenapa, di meja duduk lebih mahal?",
+          "literal": "di-si konter. kenapa, di-si meja berharga dari lebih?"
+        },
+        {
+          "speaker": "Barista:",
+          "text": "Sì, al tavolo c'è il servizio. Ecco il cappuccino.",
+          "id": "Ya, di meja duduk ada biaya layanan. Ini cappuccino-nya.",
+          "literal": "ya, di-si meja ada si layanan. inilah si cappuccino."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Grazie. Un'altra cosa: avete l'acqua naturale?",
+          "id": "Terima kasih. Satu lagi: ada air putih biasa?",
+          "literal": "terima-kasih. sebuah-lain benda: kalian-punya si air alami?"
+        },
+        {
+          "speaker": "Barista:",
+          "text": "Certo. Naturale o frizzante?",
+          "id": "Tentu. Tanpa gas atau bersoda?",
+          "literal": "tentu. alami atau bergelembung?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Naturale. Pago adesso o dopo?",
+          "id": "Tanpa gas. Saya bayar sekarang atau nanti?",
+          "literal": "alami. saya-bayar sekarang atau sesudah?"
+        },
+        {
+          "speaker": "Barista:",
+          "text": "Come vuole. Sono quattro e venti in tutto.",
+          "id": "Terserah Anda. Totalnya empat dua puluh.",
+          "literal": "bagaimana Anda-mau. adalah empat dan dua-puluh dalam semua."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ecco a Lei. Buona giornata!",
+          "id": "Ini untuk Anda. Selamat beraktivitas!",
+          "literal": "inilah kepada Anda. baik hari!"
+        }
+      ],
+      "notes": [
+        "**Vorrei adalah kata paling berguna di unit ini.** Artinya \"saya ingin\", tapi nadanya sopan seperti \"boleh saya minta\". Bentuk kasarnya *voglio* (saya mau) — benar secara tata bahasa, tapi terdengar seperti anak kecil menuntut. Pakai *vorrei*.",
+        "**Prendo juga lazim dan lebih santai.** Harfiahnya \"saya ambil\": *prendo un caffè*. Di antara teman ini justru yang paling sering terdengar.",
+        "**Un caffè di Italia berarti espresso.** Cangkir kecil, seteguk, diminum berdiri di konter dalam dua menit. Kalau kamu ingin kopi panjang ala Amerika, pesanlah *un caffè americano* atau *un caffè lungo*.",
+        "**Cappuccino cuma sampai jam sebelas pagi.** Bukan aturan tertulis, tapi kebiasaan yang kuat: susu dianggap makanan sarapan. Memesan cappuccino sesudah makan siang tidak akan ditolak, tapi akan langsung menandaimu sebagai turis.",
+        "**Al banco lebih murah daripada al tavolo.** Harga di konter dan harga di meja duduk memang berbeda, dan itu resmi tercantum. Selisihnya bisa dua kali lipat di kota wisata.",
+        "**Ecco** = \"ini dia\", dipakai saat menyerahkan sesuatu atau menemukan sesuatu. *Ecco a Lei* saat memberi kepada orang yang dihormati, *eccoti* kepada teman.",
+        "**Acqua naturale vs frizzante.** Ini pertanyaan yang pasti ditanyakan setiap kali kamu memesan air di Italia. *Naturale* tanpa gas, *frizzante* atau *gassata* bersoda.",
+        "**Come vuole** = \"terserah Anda\", harfiahnya \"bagaimana Anda mau\". Bentuk akrabnya *come vuoi*. Ungkapan yang halus dan sering dipakai untuk menyerahkan pilihan."
+      ],
+      "grammars": [
+        {
+          "title": "Memesan — tiga cara, dari paling santai ke paling sopan",
+          "body": [
+            "Ketiganya benar. Yang berubah cuma nadanya."
+          ],
+          "table": {
+            "head": [
+              "Bentuk",
+              "Nada",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**Un caffè, per favore.**",
+                "paling pendek, tetap sopan",
+                "Un caffè, per favore."
+              ],
+              [
+                "**Prendo…**",
+                "santai, sehari-hari",
+                "Prendo un cornetto."
+              ],
+              [
+                "**Vorrei…**",
+                "sopan, aman di mana saja",
+                "Vorrei un cappuccino."
+              ],
+              [
+                "**Voglio…**",
+                "menuntut, hindari",
+                "Voglio un caffè."
+              ]
+            ]
+          },
+          "after": [
+            "Menambahkan *per favore* di ujung membuat ketiganya lebih halus lagi, dan tidak pernah salah. Kalau kamu cuma sempat menghafal satu pola dari unit ini, hafalkan *Vorrei… per favore*."
+          ]
+        },
+        {
+          "title": "Angka 0-20",
+          "body": [
+            "Sebelas sampai enam belas punya bentuk sendiri; mulai tujuh belas polanya berbalik arah."
+          ],
+          "table": {
+            "head": [
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": [
+              [
+                "0 zero",
+                "1 uno",
+                "2 due",
+                "3 tre"
+              ],
+              [
+                "4 quattro",
+                "5 cinque",
+                "6 sei",
+                "7 sette"
+              ],
+              [
+                "8 otto",
+                "9 nove",
+                "10 dieci",
+                "11 undici"
+              ],
+              [
+                "12 dodici",
+                "13 tredici",
+                "14 quattordici",
+                "15 quindici"
+              ],
+              [
+                "16 sedici",
+                "17 diciassette",
+                "18 diciotto",
+                "19 diciannove"
+              ],
+              [
+                "20 venti",
+                "",
+                "",
+                ""
+              ]
+            ]
+          },
+          "after": [
+            "11-16 dibangun terbalik dari bahasa Indonesia: *dodici* = \"dua-sepuluh\". Mulai 17 arahnya berbalik jadi \"sepuluh-tujuh\": *diciassette*.",
+            "*Sei* berarti \"enam\" **dan** \"kamu adalah\". Konteksnya yang membedakan, dan dalam praktik tidak pernah membingungkan: *sei euro* jelas bukan \"kamu euro\"."
+          ]
+        },
+        {
+          "title": "Harga dan uang",
+          "body": [
+            "Menyebut harga di Italia memakai kata *e* di tengahnya, persis seperti \"koma\" kita."
+          ],
+          "table": {
+            "head": [
+              "Tertulis",
+              "Diucapkan",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "€ 1,00",
+                "un euro",
+                "satu euro"
+              ],
+              [
+                "€ 2,50",
+                "due euro e cinquanta",
+                "dua euro lima puluh sen"
+              ],
+              [
+                "€ 3,20",
+                "tre euro e venti",
+                "tiga euro dua puluh sen"
+              ],
+              [
+                "€ 15,00",
+                "quindici euro",
+                "lima belas euro"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa *euro* **tidak dijamakkan**: *due euro*, bukan *due euri*. Ini pengecualian resmi yang ditetapkan sejak mata uangnya lahir.",
+            "Koma dan titik terbalik dari kebiasaan Inggris tapi sama dengan kebiasaan kita: *1.500,00* berarti seribu lima ratus."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Daftar pesanan yang cukup untuk sebulan pertama",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Italiano",
+            "Apa isinya sebenarnya"
+          ],
+          "rows": [
+            [
+              "un caffè",
+              "espresso, cangkir kecil"
+            ],
+            [
+              "un caffè macchiato",
+              "espresso dengan setitik susu"
+            ],
+            [
+              "un cappuccino",
+              "espresso dengan susu berbusa banyak"
+            ],
+            [
+              "un caffellatte",
+              "espresso dengan susu banyak, tanpa busa"
+            ],
+            [
+              "un caffè americano",
+              "espresso ditambah air panas"
+            ],
+            [
+              "un tè caldo / freddo",
+              "teh panas / dingin"
+            ],
+            [
+              "una spremuta",
+              "perasan jeruk segar"
+            ],
+            [
+              "un succo di frutta",
+              "jus kemasan"
+            ],
+            [
+              "una bottiglia d'acqua",
+              "sebotol air"
+            ],
+            [
+              "un cornetto",
+              "croissant, isi krim atau selai"
+            ],
+            [
+              "un panino",
+              "roti isi"
+            ],
+            [
+              "un tramezzino",
+              "roti tawar isi, segitiga"
+            ],
+            [
+              "una pasta",
+              "kue kecil manis (bukan mi!)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan jebakan terakhir: *una pasta* di bar berarti kue, bukan spaghetti. Kalau maksudmu mi, sebut jenisnya — *gli spaghetti*, *le penne*, *le lasagne*."
+        },
+        {
+          "type": "kotak",
+          "title": "Kalimat siap pakai",
+          "items": [
+            "*Vorrei un caffè, per favore.* — Saya minta satu espresso.",
+            "*Quanto costa?* — Berapa harganya? (satu benda)",
+            "*Quant'è?* — Berapa semuanya?",
+            "*Posso pagare con la carta?* — Bisa bayar pakai kartu?",
+            "*Il conto, per favore.* — Bonnya, tolong.",
+            "*Va bene così.* — Kembaliannya ambil saja."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "it": "il bar",
+      "baca": "il bar",
+      "id": "warung kopi"
+    },
+    {
+      "it": "il caffè",
+      "baca": "il caf-FE",
+      "id": "kopi, espresso"
+    },
+    {
+      "it": "il cappuccino",
+      "baca": "il kap-pu-CI-no",
+      "id": "cappuccino"
+    },
+    {
+      "it": "il cornetto",
+      "baca": "il kor-NET-to",
+      "id": "croissant"
+    },
+    {
+      "it": "l'acqua",
+      "baca": "LAK-kua",
+      "id": "air"
+    },
+    {
+      "it": "naturale",
+      "baca": "na-tu-RA-le",
+      "id": "tanpa gas, alami"
+    },
+    {
+      "it": "frizzante",
+      "baca": "frid-DZAN-te",
+      "id": "bersoda"
+    },
+    {
+      "it": "il banco",
+      "baca": "il BAN-ko",
+      "id": "konter bar"
+    },
+    {
+      "it": "il tavolo",
+      "baca": "il TA-vo-lo",
+      "id": "meja"
+    },
+    {
+      "it": "vorrei",
+      "baca": "vor-REI",
+      "id": "saya ingin (sopan)"
+    },
+    {
+      "it": "prendere",
+      "baca": "PREN-de-re",
+      "id": "mengambil, memesan"
+    },
+    {
+      "it": "pagare",
+      "baca": "pa-GA-re",
+      "id": "membayar"
+    },
+    {
+      "it": "costare",
+      "baca": "kos-TA-re",
+      "id": "berharga"
+    },
+    {
+      "it": "quanto",
+      "baca": "KUAN-to",
+      "id": "berapa"
+    },
+    {
+      "it": "l'euro",
+      "baca": "LEU-ro",
+      "id": "euro"
+    },
+    {
+      "it": "il conto",
+      "baca": "il KON-to",
+      "id": "bon, tagihan"
+    },
+    {
+      "it": "la carta",
+      "baca": "la KAR-ta",
+      "id": "kartu"
+    },
+    {
+      "it": "ecco",
+      "baca": "EK-ko",
+      "id": "inilah"
+    },
+    {
+      "it": "certo",
+      "baca": "CER-to",
+      "id": "tentu"
+    },
+    {
+      "it": "dopo",
+      "baca": "DO-po",
+      "id": "sesudah, nanti"
+    },
+    {
+      "it": "il panino",
+      "baca": "il pa-NI-no",
+      "id": "roti isi"
+    },
+    {
+      "it": "la spremuta",
+      "baca": "la spre-MU-ta",
+      "id": "perasan jeruk segar"
+    },
+    {
+      "it": "buona giornata",
+      "baca": "BUO-na jor-NA-ta",
+      "id": "selamat beraktivitas"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Saya mau satu cappuccino, tolong.",
+        "Berapa harganya?",
+        "Ada air tanpa gas?",
+        "Saya bayar sekarang.",
+        "Bonnya, tolong.",
+        "Bisa bayar pakai kartu?"
+      ]
+    },
+    {
+      "prompt": "Tulis harganya dengan huruf.",
+      "items": [
+        "€ 2,00",
+        "€ 3,50",
+        "€ 7,20",
+        "€ 11,00",
+        "€ 15,40",
+        "€ 19,00"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "vorrei / caffè / un / favore / per",
+        "costa / quanto / ?",
+        "banco / al / prendo / lo",
+        "acqua / avete / naturale / l' / ?",
+        "conto / il / favore / per"
+      ]
+    },
+    {
+      "prompt": "Isi dengan angka Italia yang tepat.",
+      "items": [
+        "6 = ____",
+        "12 = ____",
+        "15 = ____",
+        "17 = ____",
+        "19 = ____",
+        "20 = ____"
+      ]
+    }
+  ],
+  "answers": [
+    "Vorrei un cappuccino, per favore. — Quanto costa? — Avete l'acqua naturale? — Pago adesso. — Il conto, per favore. — Posso pagare con la carta?",
+    "due euro — tre euro e cinquanta — sette euro e venti — undici euro — quindici euro e quaranta — diciannove euro",
+    "Vorrei un caffè per favore. — Quanto costa? — Lo prendo al banco. — Avete l'acqua naturale? — Il conto per favore.",
+    "sei — dodici — quindici — diciassette — diciannove — venti"
+  ],
+  "wave": "Ulangi **unit 2** dulu: perkenalkan dirimu kepada dua orang berbeda — sekali dengan *tu*, sekali dengan *Lei* — tanpa melihat buku."
+}

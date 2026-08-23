@@ -1,0 +1,180 @@
+{
+  "title": "Halo, siapa namamu?",
+  "title_target": "Ciao! Come ti chiami?",
+  "goal": "Menyapa pada waktu yang tepat, menyebut nama sendiri, menanyakan kabar, dan mengenali dua cara menyapa: akrab dan hormat.",
+  "bekal": [
+    "menyapa dengan *ciao*, *buongiorno*, dan *buonasera* pada waktunya masing-masing",
+    "menyebut nama sendiri dan menanyakan nama orang lain",
+    "memakai *sono* dan *sei* untuk mengatakan siapa kamu"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Al primo giorno di corso",
+      "intro": "Hari pertama kursus bahasa Italia di Bologna. Dua peserta baru duduk bersebelahan.",
+      "lines": [
+        { "speaker": "Giulia:", "text": "Ciao! Come ti chiami?", "id": "Halo! Siapa namamu?", "literal": "halo! bagaimana kamu-menamai-diri?" },
+        { "speaker": "Budi:", "text": "Ciao! Mi chiamo Budi. E tu?", "id": "Halo! Nama saya Budi. Dan kamu?", "literal": "halo! saya-menamai-diri Budi. dan kamu?" },
+        { "speaker": "Giulia:", "text": "Io sono Giulia. Piacere!", "id": "Saya Giulia. Senang berkenalan!", "literal": "saya adalah Giulia. kesenangan!" },
+        { "speaker": "Budi:", "text": "Piacere mio. Come stai?", "id": "Senang juga. Apa kabar?", "literal": "kesenangan milik-saya. bagaimana kamu-berada?" },
+        { "speaker": "Giulia:", "text": "Sto bene, grazie. E tu?", "id": "Saya baik, terima kasih. Dan kamu?", "literal": "saya-berada baik, terima-kasih. dan kamu?" },
+        { "speaker": "Budi:", "text": "Anch'io sto bene. Sei italiana?", "id": "Saya juga baik. Kamu orang Italia?", "literal": "juga-saya saya-berada baik. kamu-adalah italia(perempuan)?" },
+        { "speaker": "Giulia:", "text": "Sì, sono di Bologna. E tu, sei cinese?", "id": "Ya, saya dari Bologna. Dan kamu, orang Cina?", "literal": "ya, adalah dari Bologna. dan kamu, kamu-adalah cina?" },
+        { "speaker": "Budi:", "text": "No, sono indonesiano. Sono di Giacarta.", "id": "Bukan, saya orang Indonesia. Saya dari Jakarta.", "literal": "tidak, adalah indonesia(laki-laki). adalah dari Jakarta." },
+        { "speaker": "Giulia:", "text": "Che bello! Benvenuto a Bologna!", "id": "Wah bagus! Selamat datang di Bologna!", "literal": "betapa indah! selamat-datang di Bologna!" },
+        { "speaker": "Budi:", "text": "Grazie mille! A domani, Giulia.", "id": "Terima kasih banyak! Sampai besok, Giulia.", "literal": "terima-kasih seribu! sampai besok, Giulia." },
+        { "speaker": "Giulia:", "text": "A domani! Ciao ciao!", "id": "Sampai besok! Dah!", "literal": "sampai besok! halo halo!" }
+      ],
+      "notes": [
+        "**Ciao dipakai dua arah.** Satu kata yang sama untuk \"halo\" dan \"dah\" — persis seperti \"hai\" dan \"dah\" digabung jadi satu. Mengulangnya (*ciao ciao*) membuatnya terdengar ringan dan hangat, khas perpisahan santai.",
+        "**Tapi ciao itu akrab.** Kepada orang yang baru dikenal dan jelas lebih tua, kepada petugas, dokter, atau atasan, bahasa Italia memakai *buongiorno* (sampai sekitar pukul lima sore) dan *buonasera* (sesudahnya). Salah pilih di sini bukan salah tata bahasa, tapi salah sopan santun — dan itu lebih terasa.",
+        "**Mi chiamo bukan \"nama saya\".** Harfiahnya \"saya menamai diri saya\". Karena itu tidak ada kata \"nama\" di dalamnya, dan karena itu pula pertanyaannya berbunyi *come ti chiami* — \"bagaimana kamu menamai dirimu\", bukan \"apa namamu\".",
+        "**Io boleh dibuang.** *Io sono Giulia* dan *Sono Giulia* dua-duanya benar. Bentuk kata kerjanya sudah memberi tahu siapa pelakunya, jadi kata gantinya hanya dipakai kalau mau ditegaskan atau dibandingkan: *io sono di Bologna, tu sei di Giacarta*. Ini kebalikan dari bahasa Inggris, yang wajib menyebut pelaku.",
+        "**Come stai vs come sei.** Menanyakan kabar memakai *stare*, bukan *essere*. *Come stai?* = bagaimana keadaanmu. *Come sei?* justru berarti \"kamu orangnya bagaimana\" — pertanyaan tentang sifat, bukan kabar.",
+        "**Kebangsaan ditulis huruf kecil.** *italiano*, *indonesiano*, *cinese* — tidak seperti bahasa Inggris. Nama negaranya tetap huruf besar: *Italia*, *Indonesia*. Bentuknya juga ikut jenis kelamin penuturnya: laki-laki *italiano*, perempuan *italiana*.",
+        "**Anch'io** = \"saya juga\". Bentuk penuhnya *anche io*, tapi dua vokal berturutan dipangkas jadi *anch'io*. Pemangkasan seperti ini akan sering kamu temui; bahasa Italia tidak suka dua vokal bertabrakan.",
+        "**Grazie mille** harfiahnya \"terima kasih seribu\". Bahasa Italia melebih-lebihkan angka untuk menegaskan, sama seperti \"terima kasih banyak\" kita. Jawabannya *prego* — satu kata serbaguna yang berarti \"sama-sama\", \"silakan\", juga \"maaf, apa tadi?\"."
+      ],
+      "grammars": [
+        {
+          "title": "Essere — kata kerja \"adalah\"",
+          "body": ["Kata kerja pertama yang wajib kamu kuasai. Bentuknya tidak beraturan, jadi dihafal apa adanya. Di unit ini kamu cuma perlu dua baris pertama; sisanya menyusul di unit 3."],
+          "table": {
+            "head": ["", "essere", "arti"],
+            "rows": [
+              ["io", "**sono**", "saya adalah"],
+              ["tu", "**sei**", "kamu adalah"],
+              ["lui / lei / Lei", "**è**", "dia adalah / Anda adalah"],
+              ["noi", "siamo", "kami adalah"],
+              ["voi", "siete", "kalian adalah"],
+              ["loro", "sono", "mereka adalah"]
+            ]
+          },
+          "after": [
+            "Perhatikan *è* memakai aksen miring ke kiri. Tanpa aksen, *e* berarti \"dan\" — dua kata yang paling sering tertukar pemula: *lui e Giulia* (dia dan Giulia) sama sekali bukan *lui è Giulia* (dia adalah Giulia).",
+            "Baris *io* dan *loro* kebetulan sama-sama *sono*. Konteksnya yang membedakan, dan dalam praktik tidak pernah membingungkan."
+          ]
+        },
+        {
+          "title": "Menyapa menurut jam dan menurut kedekatan",
+          "body": ["Dua sumbu, bukan satu. Sumbu pertama waktu, sumbu kedua seberapa akrab kamu dengan lawan bicara."],
+          "table": {
+            "head": ["Kapan", "Akrab (teman, sebaya)", "Hormat (orang asing, atasan)"],
+            "rows": [
+              ["Pagi sampai sore", "Ciao", "Buongiorno"],
+              ["Sore sampai malam", "Ciao", "Buonasera"],
+              ["Berpisah", "Ciao / A presto", "Arrivederci"],
+              ["Malam, mau tidur", "Buonanotte", "Buonanotte"],
+              ["Menanyakan kabar", "Come stai?", "Come sta?"]
+            ]
+          },
+          "after": [
+            "*Buonanotte* bukan sapaan malam hari biasa — itu ucapan saat berpisah untuk tidur. Kalau kamu masuk restoran jam delapan malam dan mengucapkannya, kamu baru saja menyuruh semua orang tidur.",
+            "*Salve* adalah jalan tengah yang berguna: lebih sopan daripada *ciao*, lebih santai daripada *buongiorno*, dan tidak terikat jam. Kalau ragu, pakai ini."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata pertama yang wajib ada di saku",
+      "blocks": [
+        { "type": "p", "text": "Belasan kata di bawah ini menutup sebagian besar basa-basi hari pertama. Hafalkan utuh, jangan dibongkar tata bahasanya dulu." },
+        {
+          "type": "tabel",
+          "head": ["Italiano", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["Sì / No", "si / no", "Ya / Tidak"],
+            ["Grazie", "GRA-tsie", "Terima kasih"],
+            ["Prego", "PRE-go", "Sama-sama, silakan"],
+            ["Per favore", "per fa-VO-re", "Tolong, silakan"],
+            ["Scusa / Scusi", "SKU-za / SKU-zi", "Maaf (akrab / hormat)"],
+            ["Piacere", "pia-CE-re", "Senang berkenalan"],
+            ["Non capisco", "non ka-PIS-ko", "Saya tidak mengerti"],
+            ["Non lo so", "non lo so", "Saya tidak tahu"],
+            ["Puoi ripetere?", "PUOI ri-PE-te-re", "Bisa diulang?"],
+            ["Come si dice…?", "KO-me si DI-ce", "Bagaimana mengatakan…?"],
+            ["A domani", "a do-MA-ni", "Sampai besok"],
+            ["A presto", "a PRES-to", "Sampai jumpa lagi"]
+          ]
+        },
+        { "type": "p", "text": "*Scusa* untuk teman, *scusi* untuk orang yang kamu hormati. Perbedaan satu huruf terakhir ini akan muncul lagi dan lagi sepanjang modul — ia penanda hormat yang paling sering dipakai." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "ciao", "baca": "CAO", "id": "halo, dah" },
+    { "it": "buongiorno", "baca": "buon-JOR-no", "id": "selamat pagi/siang" },
+    { "it": "buonasera", "baca": "buo-na-SE-ra", "id": "selamat sore/malam" },
+    { "it": "buonanotte", "baca": "buo-na-NOT-te", "id": "selamat tidur" },
+    { "it": "arrivederci", "baca": "ar-ri-ve-DER-ci", "id": "sampai jumpa (hormat)" },
+    { "it": "salve", "baca": "SAL-ve", "id": "halo (netral)" },
+    { "it": "come", "baca": "KO-me", "id": "bagaimana" },
+    { "it": "chiamarsi", "baca": "kia-MAR-si", "id": "bernama" },
+    { "it": "il nome", "baca": "il NO-me", "id": "nama" },
+    { "it": "essere", "baca": "ES-se-re", "id": "adalah" },
+    { "it": "stare", "baca": "STA-re", "id": "berada, dalam keadaan" },
+    { "it": "bene", "baca": "BE-ne", "id": "baik" },
+    { "it": "male", "baca": "MA-le", "id": "buruk" },
+    { "it": "così così", "baca": "ko-SI ko-SI", "id": "lumayan, biasa saja" },
+    { "it": "e", "baca": "e", "id": "dan" },
+    { "it": "anche", "baca": "AN-ke", "id": "juga" },
+    { "it": "di", "baca": "di", "id": "dari, milik" },
+    { "it": "italiano / italiana", "baca": "ita-LIA-no", "id": "orang Italia" },
+    { "it": "indonesiano / indonesiana", "baca": "indo-ne-SIA-no", "id": "orang Indonesia" },
+    { "it": "benvenuto", "baca": "ben-ve-NU-to", "id": "selamat datang" },
+    { "it": "che bello!", "baca": "ke BEL-lo", "id": "bagus sekali!" },
+    { "it": "grazie mille", "baca": "GRA-tsie MIL-le", "id": "terima kasih banyak" },
+    { "it": "domani", "baca": "do-MA-ni", "id": "besok" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Halo! Siapa namamu?",
+        "Nama saya Budi.",
+        "Saya orang Indonesia.",
+        "Apa kabar?",
+        "Saya baik, terima kasih.",
+        "Kamu dari Bologna?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk essere yang tepat.",
+      "items": [
+        "Io ____ indonesiano.",
+        "Tu ____ italiana?",
+        "Giulia ____ di Bologna.",
+        "Noi ____ studenti.",
+        "Voi ____ di Roma?",
+        "Loro ____ italiani."
+      ]
+    },
+    {
+      "prompt": "Pilih sapaan yang tepat. Tulis ulang kalimatnya lengkap.",
+      "items": [
+        "Kamu masuk toko roti jam delapan pagi. Kepada penjualnya kamu bilang ____.",
+        "Kamu bertemu teman sekelas di kampus jam sepuluh. Kamu bilang ____.",
+        "Kamu masuk restoran jam tujuh malam. Kepada pelayannya kamu bilang ____.",
+        "Kamu berpisah dengan dosenmu di ujung koridor. Kamu bilang ____.",
+        "Kamu mengantar tamu ke kamarnya jam sebelas malam. Kamu bilang ____."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "chiamo / mi / Giulia",
+        "sono / di / io / Giacarta",
+        "stai / come / ?",
+        "italiana / sei / tu / ?",
+        "bene / sto / grazie"
+      ]
+    }
+  ],
+  "answers": [
+    "Ciao! Come ti chiami? — Mi chiamo Budi. — Sono indonesiano. — Come stai? — Sto bene, grazie. — Sei di Bologna?",
+    "sono — sei — è — siamo — siete — sono",
+    "Buongiorno. — Ciao. — Buonasera. — Arrivederci. — Buonanotte.",
+    "Mi chiamo Giulia. — Io sono di Giacarta. — Come stai? — Tu sei italiana? — Sto bene, grazie."
+  ]
+}

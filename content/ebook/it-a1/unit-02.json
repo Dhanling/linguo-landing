@@ -1,0 +1,190 @@
+{
+  "title": "Kenalkan, ini temanku",
+  "title_target": "Ti presento un amico",
+  "goal": "Memperkenalkan orang lain, membedakan sapaan akrab dan hormat sampai ke bentuk kata kerjanya, dan menyebut pekerjaan.",
+  "bekal": [
+    "memperkenalkan orang ketiga kepada lawan bicara",
+    "beralih dari *tu* ke *Lei* saat suasananya menuntut",
+    "menyebut pekerjaan tanpa kata sandang"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — In corridoio",
+      "intro": "Giulia bertemu Budi di koridor bersama seorang dosen. Perhatikan bagaimana caranya bicara berubah tergantung kepada siapa ia bicara.",
+      "lines": [
+        { "speaker": "Giulia:", "text": "Budi, ti presento Marco. È il mio amico.", "id": "Budi, kenalkan ini Marco. Dia temanku.", "literal": "Budi, kepadamu saya-perkenalkan Marco. adalah si teman milik-saya." },
+        { "speaker": "Budi:", "text": "Piacere, Marco. Io sono Budi.", "id": "Senang berkenalan, Marco. Saya Budi.", "literal": "kesenangan, Marco. saya adalah Budi." },
+        { "speaker": "Marco:", "text": "Piacere! Sei uno studente del corso?", "id": "Senang berkenalan! Kamu peserta kursus?", "literal": "kesenangan! kamu-adalah seorang murid dari-si kursus?" },
+        { "speaker": "Budi:", "text": "Sì. Tu che lavoro fai?", "id": "Ya. Kamu kerja apa?", "literal": "ya. kamu apa pekerjaan kamu-lakukan?" },
+        { "speaker": "Marco:", "text": "Sono cuoco. Lavoro in un ristorante qui vicino.", "id": "Saya juru masak. Saya bekerja di restoran dekat sini.", "literal": "adalah juru-masak. saya-bekerja di sebuah restoran sini dekat." },
+        { "speaker": "Giulia:", "text": "Buongiorno, professoressa! Le presento Budi.", "id": "Selamat pagi, Bu Dosen! Saya perkenalkan Budi kepada Anda.", "literal": "selamat-pagi, ibu-dosen! kepada-Anda saya-perkenalkan Budi." },
+        { "speaker": "Prof.:", "text": "Buongiorno. Piacere. Lei come si chiama?", "id": "Selamat pagi. Senang berkenalan. Siapa nama Anda?", "literal": "selamat-pagi. kesenangan. Anda bagaimana diri-menamai?" },
+        { "speaker": "Budi:", "text": "Mi chiamo Budi Santoso. Sono indonesiano.", "id": "Nama saya Budi Santoso. Saya orang Indonesia.", "literal": "saya-menamai-diri Budi Santoso. adalah indonesia." },
+        { "speaker": "Prof.:", "text": "Benvenuto. E che cosa fa nella vita?", "id": "Selamat datang. Dan apa pekerjaan Anda?", "literal": "selamat-datang. dan apa benda Anda-lakukan dalam-si kehidupan?" },
+        { "speaker": "Budi:", "text": "Sono ingegnere. Ma adesso sono qui per studiare.", "id": "Saya insinyur. Tapi sekarang saya di sini untuk belajar.", "literal": "adalah insinyur. tetapi sekarang adalah di-sini untuk belajar." },
+        { "speaker": "Prof.:", "text": "Molto bene. Ci vediamo in aula, allora.", "id": "Bagus sekali. Kalau begitu sampai jumpa di kelas.", "literal": "banyak baik. kita melihat-diri di ruang-kelas, kalau-begitu." }
+      ],
+      "notes": [
+        "**Lei bukan \"dia perempuan\" di sini.** Bahasa Italia menyatakan hormat dengan memakai bentuk orang ketiga perempuan, ditulis huruf besar: *Lei come si chiama?* harfiahnya \"beliau bagaimana menamai diri?\" — dipakai kepada laki-laki maupun perempuan. Terasa aneh pada awalnya, tapi inilah cara Italia menjaga jarak sopan.",
+        "**Akibatnya kata kerjanya ikut pindah.** *Come stai?* (akrab) jadi *Come sta?* (hormat). *Che lavoro fai?* jadi *Che lavoro fa?*. Bentuk yang dipakai adalah bentuk *lui/lei*, bukan bentuk *tu*.",
+        "**Kapan pindah ke Lei.** Kepada orang yang lebih tua, petugas, dokter, pemilik toko, dan siapa pun yang belum kamu kenal dan tampak lebih senior. Kalau lawan bicaranya mempersilakan (*diamoci del tu* = ayo pakai *tu* saja), baru turun ke bentuk akrab. Orang Italia jarang tersinggung karena kamu terlalu sopan, sering tersinggung karena sebaliknya.",
+        "**Pekerjaan tanpa kata sandang.** *Sono cuoco*, bukan *sono un cuoco*. Ini berbeda dari bahasa Inggris yang wajib memakai *a*. Kata sandangnya baru muncul kalau pekerjaannya diberi keterangan: *sono un cuoco bravo* (saya juru masak yang hebat).",
+        "**Ti presento vs Le presento.** *Ti* = kepadamu, *Le* = kepada Anda. Kata ganti kecil ini diletakkan **sebelum** kata kerjanya, kebalikan dari kebiasaan bahasa Indonesia yang menaruhnya di belakang.",
+        "**Che lavoro fai** harfiahnya \"pekerjaan apa yang kamu lakukan\". Alternatifnya *Che cosa fai?* atau, lebih lengkap, *Che cosa fai nella vita?* — \"apa yang kamu lakukan dalam hidup\". Ketiganya lazim.",
+        "**Ci vediamo** = \"sampai jumpa\", harfiahnya \"kita saling melihat\". Ini salah satu perpisahan paling sering dipakai orang Italia sehari-hari, di samping *ciao* dan *a presto*.",
+        "**Allora** adalah kata sambung serbaguna: \"kalau begitu\", \"jadi\", \"ya sudah\". Ia juga dipakai untuk mengisi jeda saat berpikir. Kamu tidak wajib memakainya, tapi wajib mengenalinya — orang Italia menaburkannya di mana-mana."
+      ],
+      "grammars": [
+        {
+          "title": "Dua tingkat bicara — akrab dan hormat",
+          "body": ["Bandingkan kolom kiri dan kanan. Yang berubah bukan cuma kata gantinya, tapi bentuk kata kerjanya."],
+          "table": {
+            "head": ["Maksud", "Akrab (tu)", "Hormat (Lei)"],
+            "rows": [
+              ["Siapa namamu?", "Come **ti** chiam**i**?", "Come **si** chiam**a**?"],
+              ["Apa kabar?", "Come st**ai**?", "Come st**a**?"],
+              ["Kamu dari mana?", "Di dove **sei**?", "Di dove **è**?"],
+              ["Kerja apa?", "Che lavoro **fai**?", "Che lavoro **fa**?"],
+              ["Kenalkan, ini…", "**Ti** presento…", "**Le** presento…"],
+              ["Maaf", "Scus**a**", "Scus**i**"]
+            ]
+          },
+          "after": [
+            "Bentuk hormat memakai baris *lui/lei* — bentuk yang sama persis dengan \"dia\". Jadi tiap kali kamu menghafal bentuk \"dia\", kamu sekaligus menghafal bentuk sopannya. Dua untung sekali hafal.",
+            "Menulis *Lei* dengan L besar adalah kebiasaan tulisan resmi. Dalam percakapan tentu tak kelihatan, tapi dalam surel dan surat tetap dipertahankan."
+          ]
+        },
+        {
+          "title": "Fare — kata kerja \"melakukan\"",
+          "body": ["Kata kerja kedua yang wajib dihafal. Tidak beraturan, dan muncul di mana-mana: menanyakan pekerjaan, cuaca, sampai membuat sesuatu."],
+          "table": {
+            "head": ["", "fare", "contoh"],
+            "rows": [
+              ["io", "**faccio**", "Faccio l'ingegnere."],
+              ["tu", "**fai**", "Che lavoro fai?"],
+              ["lui / lei / Lei", "**fa**", "Che lavoro fa?"],
+              ["noi", "facciamo", "Facciamo una pausa."],
+              ["voi", "fate", "Che cosa fate?"],
+              ["loro", "fanno", "Fanno colazione."]
+            ]
+          },
+          "after": ["Menyebut pekerjaan boleh dua cara: *sono ingegnere* (tanpa kata sandang) atau *faccio l'ingegnere* (dengan kata sandang, karena di sini pekerjaannya jadi obyek). Dua-duanya lazim; yang pertama sedikit lebih netral."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pekerjaan",
+      "blocks": [
+        { "type": "p", "text": "Sebagian besar nama pekerjaan berubah bentuk mengikuti jenis kelamin orangnya. Yang berakhiran **-e** biasanya tidak berubah sama sekali." },
+        {
+          "type": "tabel",
+          "head": ["Laki-laki", "Perempuan", "Bahasa Indonesia"],
+          "rows": [
+            ["studente", "studentessa", "murid, mahasiswa"],
+            ["insegnante", "insegnante", "pengajar"],
+            ["professore", "professoressa", "dosen, guru"],
+            ["medico / dottore", "medico / dottoressa", "dokter"],
+            ["infermiere", "infermiera", "perawat"],
+            ["ingegnere", "ingegnere", "insinyur"],
+            ["avvocato", "avvocata", "pengacara"],
+            ["impiegato", "impiegata", "pegawai kantor"],
+            ["commesso", "commessa", "penjaga toko"],
+            ["cuoco", "cuoca", "juru masak"],
+            ["cameriere", "cameriera", "pelayan"],
+            ["operaio", "operaia", "buruh"],
+            ["casalingo", "casalinga", "ibu/bapak rumah tangga"],
+            ["disoccupato", "disoccupata", "penganggur"]
+          ]
+        },
+        { "type": "p", "text": "*Dottore* dan *dottoressa* dipakai jauh lebih luas daripada \"dokter\" kita: siapa pun yang punya gelar sarjana boleh disapa begitu, dan di kantor pemerintahan sapaan ini nyaris otomatis. Bentuk singkatnya di depan nama: *dottor Rossi*." },
+        {
+          "type": "kotak",
+          "title": "Menanyakan pekerjaan",
+          "items": [
+            "Akrab: *Che lavoro fai?* / *Che cosa fai?*",
+            "Hormat: *Che lavoro fa?* / *Che cosa fa nella vita?*",
+            "Menjawab: *Sono insegnante.* atau *Faccio l'insegnante.*",
+            "Belum bekerja: *Studio ancora.* (saya masih belajar) atau *Sono disoccupato.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "presentare", "baca": "pre-zen-TA-re", "id": "memperkenalkan" },
+    { "it": "l'amico / l'amica", "baca": "la-MI-ko", "id": "teman" },
+    { "it": "il lavoro", "baca": "il la-VO-ro", "id": "pekerjaan" },
+    { "it": "fare", "baca": "FA-re", "id": "melakukan, membuat" },
+    { "it": "lavorare", "baca": "la-vo-RA-re", "id": "bekerja" },
+    { "it": "studiare", "baca": "stu-DIA-re", "id": "belajar" },
+    { "it": "lo studente", "baca": "lo stu-DEN-te", "id": "murid" },
+    { "it": "il cuoco", "baca": "il KUO-ko", "id": "juru masak" },
+    { "it": "l'ingegnere", "baca": "lin-je-NYE-re", "id": "insinyur" },
+    { "it": "il ristorante", "baca": "il ris-to-RAN-te", "id": "restoran" },
+    { "it": "il corso", "baca": "il KOR-so", "id": "kursus" },
+    { "it": "l'aula", "baca": "LAU-la", "id": "ruang kelas" },
+    { "it": "qui", "baca": "kui", "id": "di sini" },
+    { "it": "vicino", "baca": "vi-CI-no", "id": "dekat" },
+    { "it": "adesso", "baca": "a-DES-so", "id": "sekarang" },
+    { "it": "ma", "baca": "ma", "id": "tetapi" },
+    { "it": "per", "baca": "per", "id": "untuk" },
+    { "it": "allora", "baca": "al-LO-ra", "id": "kalau begitu" },
+    { "it": "molto", "baca": "MOL-to", "id": "sangat, banyak" },
+    { "it": "ci vediamo", "baca": "ci ve-DIA-mo", "id": "sampai jumpa" },
+    { "it": "la vita", "baca": "la VI-ta", "id": "kehidupan" },
+    { "it": "che cosa", "baca": "ke KO-za", "id": "apa" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah kalimat akrab ini jadi bentuk hormat.",
+      "items": [
+        "Come ti chiami?",
+        "Come stai?",
+        "Di dove sei?",
+        "Che lavoro fai?",
+        "Ti presento Marco.",
+        "Scusa, sei italiano?"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Kenalkan, ini temanku Marco.",
+        "Saya juru masak.",
+        "Saya bekerja di sebuah restoran.",
+        "Apa pekerjaan Anda?",
+        "Dia mahasiswa.",
+        "Sampai jumpa di kelas!"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk fare yang tepat.",
+      "items": [
+        "Io ____ l'ingegnere.",
+        "Tu che lavoro ____?",
+        "Lei che cosa ____ nella vita?",
+        "Noi ____ una pausa.",
+        "Loro ____ colazione al bar."
+      ]
+    },
+    {
+      "prompt": "Tulis bentuk perempuan dari nama pekerjaan ini.",
+      "items": [
+        "studente",
+        "professore",
+        "cuoco",
+        "cameriere",
+        "impiegato",
+        "ingegnere"
+      ]
+    }
+  ],
+  "answers": [
+    "Come si chiama? — Come sta? — Di dove è? — Che lavoro fa? — Le presento Marco. — Scusi, è italiano?",
+    "Ti presento il mio amico Marco. — Sono cuoco. — Lavoro in un ristorante. — Che lavoro fa? — È studente. — Ci vediamo in aula!",
+    "faccio — fai — fa — facciamo — fanno",
+    "studentessa — professoressa — cuoca — cameriera — impiegata — ingegnere"
+  ]
+}

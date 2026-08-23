@@ -1,0 +1,188 @@
+{
+  "title": "Menanyakan arah",
+  "title_target": "Scusi, dov'è la stazione?",
+  "goal": "Bertanya arah kepada orang asing, mengerti jawabannya, dan memakai bentuk perintah — termasuk bentuk hormat yang berbeda sendiri.",
+  "bekal": [
+    "menanyakan arah dan jarak dengan sopan",
+    "mengerti petunjuk arah yang diucapkan cepat",
+    "memakai bentuk perintah akrab dan hormat"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Per andare alla stazione?",
+      "intro": "Budi tersesat. Perhatikan bentuk kata kerja yang dipakai orang yang menjawab — itu bentuk perintah hormat.",
+      "lines": [
+        { "speaker": "Budi:", "text": "Scusi, signore. Per andare alla stazione?", "id": "Permisi, Pak. Ke stasiun lewat mana?", "literal": "maaf, tuan. untuk pergi pada-si stasiun?" },
+        { "speaker": "Signore:", "text": "La stazione? Allora, vada sempre dritto.", "id": "Stasiun? Begini, jalan terus lurus.", "literal": "si stasiun? kalau-begitu, pergilah selalu lurus." },
+        { "speaker": "Budi:", "text": "Sempre dritto per questa via?", "id": "Lurus terus lewat jalan ini?", "literal": "selalu lurus untuk ini jalan?" },
+        { "speaker": "Signore:", "text": "Sì. Al secondo semaforo giri a sinistra.", "id": "Ya. Di lampu merah kedua belok kiri.", "literal": "ya. pada-si kedua lampu-lalu-lintas belokkan ke kiri." },
+        { "speaker": "Budi:", "text": "A sinistra. E poi?", "id": "Ke kiri. Lalu?", "literal": "ke kiri. dan lalu?" },
+        { "speaker": "Signore:", "text": "Attraversi la piazza e prenda la prima a destra.", "id": "Seberangi alun-alun lalu ambil jalan pertama di kanan.", "literal": "seberangilah si alun-alun dan ambillah si pertama ke kanan." },
+        { "speaker": "Budi:", "text": "È lontano? Devo prendere l'autobus?", "id": "Jauh? Perlu naik bus?", "literal": "adalah jauh? saya-harus mengambil si bus?" },
+        { "speaker": "Signore:", "text": "No, no. Dieci minuti a piedi, non di più.", "id": "Tidak, tidak. Sepuluh menit jalan kaki, tidak lebih.", "literal": "tidak, tidak. sepuluh menit dengan kaki, tidak dari lebih." },
+        { "speaker": "Budi:", "text": "Scusi, può ripetere? Non ho capito bene.", "id": "Maaf, bisa diulang? Saya belum paham betul.", "literal": "maaf, Anda-bisa mengulang? tidak saya-punya mengerti baik." },
+        { "speaker": "Signore:", "text": "Dritto, sinistra al semaforo, attraversi la piazza, prima a destra.", "id": "Lurus, kiri di lampu merah, seberangi alun-alun, jalan pertama di kanan.", "literal": "lurus, kiri pada-si lampu-lalu-lintas, seberangilah si alun-alun, pertama ke kanan." },
+        { "speaker": "Budi:", "text": "Adesso ho capito. Grazie mille, molto gentile!", "id": "Sekarang saya paham. Terima kasih banyak, baik sekali!", "literal": "sekarang saya-punya mengerti. terima-kasih seribu, banyak ramah!" },
+        { "speaker": "Signore:", "text": "Di niente. Buona giornata e buon viaggio!", "id": "Sama-sama. Selamat beraktivitas dan selamat jalan!", "literal": "dari tidak-ada. baik hari dan baik perjalanan!" }
+      ],
+      "notes": [
+        "**Per andare a…?** adalah cara paling praktis menanyakan arah. Harfiahnya \"untuk pergi ke…?\", tanpa kata kerja sama sekali. Ia lebih ringkas dan lebih lazim daripada kalimat lengkap.",
+        "**Bentuk perintah hormat mengambil huruf yang \"salah\".** Kata kerja *-are* berakhir *-i* (*giri!*, *attraversi!*), sedangkan *-ere* dan *-ire* berakhir *-a* (*prenda!*, *senta!*). Persis terbalik dari bentuk biasa. Inilah kenapa petunjuk arah di jalan sering terdengar asing meski katanya kamu kenal.",
+        "**Bentuk perintah akrab justru mudah.** Ia sama persis dengan bentuk *tu*, kecuali untuk kata kerja *-are* yang berakhir *-a*: *gira!*, *prendi!*, *senti!*, *scusa!*.",
+        "**Scusi vs scusa** sekarang jelas asal-usulnya: keduanya bentuk perintah dari *scusare*, satu hormat satu akrab. Begitu pula *senta!* (permisi, hormat) dan *senti!* (eh, akrab) — dua kata yang dipakai untuk menarik perhatian.",
+        "**Può ripetere?** adalah kalimat penyelamat. Bersama *può parlare più lentamente?* (bisa bicara lebih pelan?), ia satu-satunya alat yang kamu punya saat orang Italia menjawab dengan kecepatan penuh — dan mereka selalu begitu.",
+        "**Non ho capito** memakai bentuk lampau meski maksudnya sekarang. Orang Italia hampir selalu mengatakannya begitu, bukan *non capisco*. Untuk sekarang hafalkan utuh; bentuknya sendiri dibongkar di unit 19.",
+        "**Menghitung urutan.** *Il primo*, *il secondo*, *il terzo*, *il quarto*, *il quinto*. Dipakai untuk belokan, lantai, dan tanggal satu. Bentuknya ikut jenis kelamin: *la prima a destra* karena yang dimaksud *la strada*.",
+        "**Di niente** = \"sama-sama\", sederet dengan *prego* dan *si figuri*. Ketiganya bisa saling menggantikan."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk perintah",
+          "body": ["Dua kolom yang perlu kamu kuasai sekarang. Kolom *tu* untuk teman, kolom *Lei* untuk orang asing di jalan."],
+          "table": {
+            "head": ["Kata kerja", "tu (akrab)", "Lei (hormat)", "noi (ayo)"],
+            "rows": [
+              ["girare", "gir**a**!", "gir**i**!", "gir**iamo**!"],
+              ["scusare", "scus**a**!", "scus**i**!", "—"],
+              ["prendere", "prend**i**!", "prend**a**!", "prend**iamo**!"],
+              ["sentire", "sent**i**!", "sent**a**!", "sent**iamo**!"],
+              ["andare", "va'!", "vad**a**!", "andiamo!"],
+              ["fare", "fa'!", "facci**a**!", "facciamo!"],
+              ["venire", "vieni!", "veng**a**!", "veniamo!"]
+            ]
+          },
+          "after": [
+            "Ingat pola terbaliknya: **-are** hormat pakai *-i*, **-ere/-ire** hormat pakai *-a*. Kalau kamu ragu, dengarkan petugas atau penjual — mereka memakai bentuk ini sepanjang hari.",
+            "Melarang dalam bentuk akrab memakai *non* + bentuk dasar: *non parlare!*, *non andare!*. Dalam bentuk hormat, tinggal tambahkan *non*: *non parli!*.",
+            "Bentuk *noi* dipakai sebagai ajakan dan sama persis dengan bentuk biasa: *andiamo!* (ayo), *mangiamo!* (ayo makan), *aspettiamo!* (ayo tunggu)."
+          ]
+        },
+        {
+          "title": "Kata arah dan jarak",
+          "body": [],
+          "table": {
+            "head": ["Italiano", "Bahasa Indonesia", "Italiano", "Bahasa Indonesia"],
+            "rows": [
+              ["sempre dritto", "lurus terus", "girare a destra", "belok kanan"],
+              ["a destra", "di/ke kanan", "girare a sinistra", "belok kiri"],
+              ["a sinistra", "di/ke kiri", "attraversare", "menyeberang"],
+              ["la prima a destra", "jalan pertama kanan", "il semaforo", "lampu lalu lintas"],
+              ["l'incrocio", "perempatan", "l'angolo", "sudut, pojok"],
+              ["il marciapiede", "trotoar", "la rotonda", "bundaran"],
+              ["di fronte a", "berhadapan dengan", "in fondo a", "di ujung"],
+              ["a due passi", "dekat sekali", "lontano", "jauh"]
+            ]
+          },
+          "after": ["*A due passi* harfiahnya \"dua langkah\" dan berarti sangat dekat. Waspadai optimisme orang Italia soal jarak: *a due passi* bisa berarti sepuluh menit jalan kaki."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Naik apa dan beli tiket",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Italiano", "Bahasa Indonesia", "Italiano", "Bahasa Indonesia"],
+          "rows": [
+            ["l'autobus", "bus kota", "il binario", "peron"],
+            ["il tram", "trem", "la fermata", "halte"],
+            ["la metro", "kereta bawah tanah", "il biglietto", "tiket"],
+            ["il treno", "kereta", "l'andata", "sekali jalan"],
+            ["il taxi", "taksi", "l'andata e ritorno", "pergi pulang"],
+            ["la macchina", "mobil", "in orario", "tepat waktu"],
+            ["la bici", "sepeda", "in ritardo", "terlambat"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kalimat siap pakai",
+          "items": [
+            "*Scusi, dov'è la fermata dell'autobus?* — Halte busnya di mana?",
+            "*Quale autobus va in centro?* — Bus nomor berapa yang ke pusat kota?",
+            "*Un biglietto per Firenze, andata e ritorno.* — Satu tiket ke Firenze, pergi pulang.",
+            "*Da quale binario parte?* — Berangkat dari peron berapa?",
+            "*Devo cambiare?* — Perlu ganti kendaraan?",
+            "*Quanto ci vuole?* — Butuh berapa lama?",
+            "*Mi può dire quando scendere?* — Bisa beritahu kapan saya turun?"
+          ]
+        },
+        { "type": "p", "text": "⚠️ Tiket bus dan trem di Italia harus **divalidasi** di mesin kecil di dalam kendaraan begitu naik — *timbrare il biglietto*. Tiket yang belum divalidasi dianggap tidak dipakai, dan dendanya besar. Ini aturan yang paling sering menjerat pendatang." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "la strada", "baca": "la STRA-da", "id": "jalan" },
+    { "it": "girare", "baca": "ji-RA-re", "id": "berbelok" },
+    { "it": "attraversare", "baca": "at-tra-ver-SA-re", "id": "menyeberang" },
+    { "it": "l'incrocio", "baca": "lin-KRO-co", "id": "perempatan" },
+    { "it": "l'angolo", "baca": "LAN-go-lo", "id": "sudut jalan" },
+    { "it": "la fermata", "baca": "la fer-MA-ta", "id": "halte" },
+    { "it": "il binario", "baca": "il bi-NA-rio", "id": "peron" },
+    { "it": "scendere", "baca": "SEN-de-re", "id": "turun" },
+    { "it": "salire", "baca": "sa-LI-re", "id": "naik" },
+    { "it": "cambiare", "baca": "kam-BIA-re", "id": "berganti" },
+    { "it": "ripetere", "baca": "ri-PE-te-re", "id": "mengulang" },
+    { "it": "lentamente", "baca": "len-ta-MEN-te", "id": "pelan-pelan" },
+    { "it": "primo", "baca": "PRI-mo", "id": "pertama" },
+    { "it": "secondo", "baca": "se-KON-do", "id": "kedua" },
+    { "it": "terzo", "baca": "TER-tso", "id": "ketiga" },
+    { "it": "quale", "baca": "KUA-le", "id": "yang mana" },
+    { "it": "timbrare", "baca": "tim-BRA-re", "id": "memvalidasi tiket" },
+    { "it": "l'andata e ritorno", "baca": "lan-DA-ta e ri-TOR-no", "id": "pergi pulang" },
+    { "it": "di niente", "baca": "di NIEN-te", "id": "sama-sama" },
+    { "it": "a due passi", "baca": "a DU-e PAS-si", "id": "dekat sekali" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah perintah akrab ini jadi bentuk hormat.",
+      "items": [
+        "Gira a destra!",
+        "Prendi la prima a sinistra!",
+        "Scusa!",
+        "Attraversa la piazza!",
+        "Senti!",
+        "Vai dritto!"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Permisi, stasiun di mana?",
+        "Jalan terus lurus.",
+        "Belok kiri di lampu merah.",
+        "Jauh dari sini?",
+        "Bisa diulang?",
+        "Bisa bicara lebih pelan?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata arah yang tepat.",
+      "items": [
+        "Vada sempre ____.",
+        "Giri a ____ al semaforo.",
+        "____ la piazza e prenda la prima a destra.",
+        "La banca è di ____ al cinema.",
+        "La farmacia è in ____ alla strada."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "stazione / dov'è / scusi / la / ?",
+        "dritto / vada / sempre",
+        "sinistra / giri / a",
+        "ripetere / può / ?",
+        "biglietto / Firenze / un / per"
+      ]
+    }
+  ],
+  "answers": [
+    "Giri a destra! — Prenda la prima a sinistra! — Scusi! — Attraversi la piazza! — Senta! — Vada dritto!",
+    "Scusi, dov'è la stazione? — Vada sempre dritto. — Giri a sinistra al semaforo. — È lontano da qui? — Può ripetere? — Può parlare più lentamente?",
+    "dritto — sinistra — Attraversi — fronte — fondo",
+    "Scusi, dov'è la stazione? — Vada sempre dritto. — Giri a sinistra. — Può ripetere? — Un biglietto per Firenze."
+  ],
+  "wave": "Ulangi **unit 15** dulu: sebut lima hal yang kamu suka dan lima yang tidak, pastikan memilih *piace* atau *piacciono* dengan benar."
+}

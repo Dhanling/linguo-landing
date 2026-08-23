@@ -1,0 +1,192 @@
+{
+  "title": "Di toko pakaian",
+  "title_target": "In un negozio di vestiti",
+  "goal": "Membeli pakaian: menyebut warna dan ukuran, menunjuk barang dengan *questo* dan *quello*, dan mencoba sebelum membayar.",
+  "bekal": [
+    "menyebut pakaian, warna, dan ukuran",
+    "memakai *questo* dan *quello* dengan bentuk yang benar",
+    "meminta ukuran lain, warna lain, atau ruang ganti"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Provo la taglia più grande",
+      "intro": "Budi mencari jaket untuk musim gugur. Perhatikan bagaimana *questo* dan *quello* berganti bentuk mengikuti bendanya.",
+      "lines": [
+        { "speaker": "Commessa:", "text": "Buongiorno, posso aiutarLa?", "id": "Selamat pagi, bisa saya bantu?", "literal": "selamat-pagi, saya-bisa membantu-Anda?" },
+        { "speaker": "Budi:", "text": "Sì, cerco una giacca per l'autunno.", "id": "Ya, saya cari jaket untuk musim gugur.", "literal": "ya, saya-mencari sebuah jaket untuk si musim-gugur." },
+        { "speaker": "Commessa:", "text": "Che taglia porta?", "id": "Ukuran berapa?", "literal": "apa ukuran Anda-bawa?" },
+        { "speaker": "Budi:", "text": "Non lo so, di solito la media. In Indonesia porto la L.", "id": "Saya tidak tahu, biasanya M. Di Indonesia saya pakai L.", "literal": "tidak itu saya-tahu, dari biasa si sedang. di Indonesia saya-bawa si L." },
+        { "speaker": "Commessa:", "text": "Allora provi questa. È una quarantotto.", "id": "Kalau begitu coba yang ini. Ini ukuran 48.", "literal": "kalau-begitu cobalah ini. adalah sebuah empat-puluh-delapan." },
+        { "speaker": "Budi:", "text": "Quella blu mi piace di più. Ce l'ha nella mia taglia?", "id": "Saya lebih suka yang biru itu. Ada yang ukuran saya?", "literal": "itu biru kepada-saya menyenangkan dari lebih. di-sana itu-Anda-punya dalam-si milik-saya ukuran?" },
+        { "speaker": "Commessa:", "text": "Controllo… sì, eccola. Il camerino è in fondo a destra.", "id": "Saya cek… ya, ini dia. Ruang gantinya di ujung sebelah kanan.", "literal": "saya-periksa… ya, inilah-itu. si ruang-ganti adalah di ujung ke kanan." },
+        { "speaker": "Budi:", "text": "Grazie… Allora? Come mi sta?", "id": "Terima kasih… Bagaimana? Cocok tidak?", "literal": "terima-kasih… kalau-begitu? bagaimana kepada-saya berada?" },
+        { "speaker": "Commessa:", "text": "Le sta benissimo. Ma le maniche sono un po' lunghe.", "id": "Cocok sekali. Tapi lengannya agak kepanjangan.", "literal": "kepada-Anda berada sangat-baik. tetapi si lengan-lengan adalah se sedikit panjang." },
+        { "speaker": "Budi:", "text": "Sì, ha ragione. Quanto costa?", "id": "Iya, betul. Berapa harganya?", "literal": "ya, Anda-punya kebenaran. berapa berharga?" },
+        { "speaker": "Commessa:", "text": "Novantacinque euro. Ma questa settimana c'è il venti per cento di sconto.", "id": "Sembilan puluh lima euro. Tapi minggu ini ada diskon dua puluh persen.", "literal": "sembilan-puluh-lima euro. tetapi ini minggu di-sana-adalah si dua-puluh untuk seratus dari potongan." },
+        { "speaker": "Budi:", "text": "Allora la prendo. Posso pagare con la carta?", "id": "Kalau begitu saya ambil. Bisa bayar pakai kartu?", "literal": "kalau-begitu itu saya-ambil. saya-bisa membayar dengan si kartu?" }
+      ],
+      "notes": [
+        "**Come mi sta?** = \"cocok tidak untuk saya?\" Kata kerja *stare* dipakai untuk kecocokan pakaian. Jawabannya *ti sta bene* (akrab) atau *Le sta bene* (hormat). Menanyakan *è bello?* akan dimengerti tapi menanyakan hal yang lain — bagus atau tidaknya barangnya, bukan cocok atau tidaknya untuk kamu.",
+        "**Ukuran Italia memakai angka, bukan huruf.** Baju laki-laki 46-56, baju perempuan 38-50, sepatu 35-46. Huruf S, M, L juga dipakai di toko besar, tapi angka lebih umum. Angkanya sama sekali tidak sebanding dengan ukuran Asia.",
+        "**Ha ragione** = \"Anda benar\", harfiahnya \"Anda punya kebenaran\". Sekali lagi *avere*, bukan *essere*. Lawannya *ha torto* (Anda salah). *Sono ragione* sama sekali bukan bahasa Italia.",
+        "**Ce l'ha?** = \"Anda punya?\" Bentuk pendek yang di atas tingkat A1 tapi terdengar tiap hari di toko. Hafalkan utuh; ia sepasang dengan *ce l'ho* (saya punya) dan *non ce l'ho* (saya tidak punya).",
+        "**Provare berarti mencoba**, dan mencoba baju adalah *provare*. Ruang gantinya *il camerino*. *Posso provare?* adalah kalimat yang paling sering kamu butuhkan di toko pakaian.",
+        "**Sconto berarti potongan harga**, dan *i saldi* adalah musim obral. Obral di Italia diatur negara: dua kali setahun, awal Januari dan awal Juli, tanggalnya diumumkan resmi tiap daerah.",
+        "**Blu tidak pernah berubah bentuk.** Beberapa warna kaku begitu: *blu*, *rosa*, *viola*, *beige*, *arancione* (yang ini berubah untuk jamak saja). *Una giacca blu*, *due giacche blu*.",
+        "**Mi piace di più** = \"saya lebih suka itu\". Kata kerja *piacere* punya susunan terbalik yang dibongkar tuntas di unit berikutnya. Untuk sekarang, hafalkan *mi piace* (saya suka, satu benda) dan *mi piacciono* (saya suka, banyak benda)."
+      ],
+      "grammars": [
+        {
+          "title": "Questo dan quello",
+          "body": ["*Questo* (ini) berperilaku seperti kata sifat biasa. *Quello* (itu) berperilaku seperti kata sandang *il/lo/la* — bentuknya ikut huruf pertama kata sesudahnya."],
+          "table": {
+            "head": ["", "Mask. tunggal", "Fem. tunggal", "Mask. jamak", "Fem. jamak"],
+            "rows": [
+              ["ini", "quest**o** libro", "quest**a** giacca", "quest**i** libri", "quest**e** giacche"],
+              ["itu (huruf mati)", "que**l** libro", "que**lla** giacca", "que**i** libri", "que**lle** giacche"],
+              ["itu (vokal)", "que**ll'**amico", "que**ll'**amica", "que**gli** amici", "que**lle** amiche"],
+              ["itu (z, s+mati)", "que**llo** zaino", "—", "que**gli** zaini", "—"]
+            ]
+          },
+          "after": [
+            "Bandingkan dengan tabel kata sandang di unit 3: *quel* ↔ *il*, *quello* ↔ *lo*, *quella* ↔ *la*, *quei* ↔ *i*, *quegli* ↔ *gli*, *quelle* ↔ *le*. Polanya persis sama, cuma ditempeli *que-*.",
+            "Di depan vokal, *questo* juga sering dipangkas: *quest'anno*, *quest'amica*. Ini pilihan, bukan kewajiban.",
+            "Berdiri sendiri tanpa kata benda, bentuknya lebih sederhana: *Prendo questo.* / *Preferisco quello.*"
+          ]
+        },
+        {
+          "title": "Warna",
+          "body": ["Sebagian ikut berubah bentuk, sebagian kaku selamanya."],
+          "table": {
+            "head": ["Berubah (-o/-a/-i/-e)", "Berubah (-e/-i)", "Tidak pernah berubah"],
+            "rows": [
+              ["bianco — putih", "verde — hijau", "blu — biru tua"],
+              ["nero — hitam", "marrone — cokelat", "rosa — merah muda"],
+              ["rosso — merah", "arancione — oranye", "viola — ungu"],
+              ["giallo — kuning", "celeste — biru langit", "beige — krem"],
+              ["azzurro — biru", "", ""],
+              ["grigio — abu-abu", "", ""]
+            ]
+          },
+          "after": ["*Azzurro* dan *blu* dua-duanya biru: *azzurro* biru terang seperti langit dan seragam tim nasional, *blu* biru tua. Bahasa Italia memisahkan keduanya sebagai dua warna, bukan dua tingkat dari satu warna."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pakaian",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Italiano", "Bahasa Indonesia", "Italiano", "Bahasa Indonesia"],
+          "rows": [
+            ["la camicia", "kemeja", "il vestito", "gaun, setelan"],
+            ["la maglietta", "kaus", "la gonna", "rok"],
+            ["il maglione", "sweter", "i pantaloni", "celana panjang"],
+            ["la giacca", "jaket", "i jeans", "celana jins"],
+            ["il cappotto", "mantel tebal", "i calzini", "kaus kaki"],
+            ["le scarpe", "sepatu", "la cintura", "ikat pinggang"],
+            ["gli stivali", "sepatu bot", "il cappello", "topi"],
+            ["la borsa", "tas", "gli occhiali", "kacamata"],
+            ["la sciarpa", "syal", "l'orologio", "jam tangan"]
+          ]
+        },
+        { "type": "p", "text": "Perhatikan bahwa *i pantaloni*, *gli occhiali*, dan *le scarpe* selalu jamak — sama seperti \"celana\" kita yang tidak pernah \"secelana\". Kalau perlu menyebut satuannya, pakai *un paio di*: *un paio di scarpe*, *un paio di pantaloni*." },
+        {
+          "type": "kotak",
+          "title": "Kalimat siap pakai di toko",
+          "items": [
+            "*Sto solo guardando, grazie.* — Saya cuma lihat-lihat.",
+            "*Posso provare?* — Boleh dicoba?",
+            "*Dov'è il camerino?* — Ruang gantinya di mana?",
+            "*Ce l'ha in un'altra taglia?* — Ada ukuran lain?",
+            "*Ce l'ha in nero?* — Ada yang warna hitam?",
+            "*È troppo stretto / largo / corto / lungo.* — Terlalu sempit / longgar / pendek / panjang.",
+            "*Quanto costa?* / *Quant'è?* — Berapa harganya?",
+            "*Lo prendo.* / *La prendo.* — Saya ambil."
+          ]
+        },
+        { "type": "p", "text": "Kalimat pertama menyelamatkanmu dari penjaga toko Italia yang sangat perhatian. Tanpa itu, kamu akan ditemani sepanjang kunjungan." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "il negozio", "baca": "il ne-GO-tsio", "id": "toko" },
+    { "it": "i vestiti", "baca": "i ves-TI-ti", "id": "pakaian" },
+    { "it": "la giacca", "baca": "la JAK-ka", "id": "jaket" },
+    { "it": "la camicia", "baca": "la ka-MI-ca", "id": "kemeja" },
+    { "it": "i pantaloni", "baca": "i pan-ta-LO-ni", "id": "celana panjang" },
+    { "it": "le scarpe", "baca": "le SKAR-pe", "id": "sepatu" },
+    { "it": "la taglia", "baca": "la TA-lya", "id": "ukuran baju" },
+    { "it": "il numero", "baca": "il NU-me-ro", "id": "nomor, ukuran sepatu" },
+    { "it": "il camerino", "baca": "il ka-me-RI-no", "id": "ruang ganti" },
+    { "it": "provare", "baca": "pro-VA-re", "id": "mencoba" },
+    { "it": "cercare", "baca": "cer-KA-re", "id": "mencari" },
+    { "it": "lo sconto", "baca": "lo SKON-to", "id": "potongan harga" },
+    { "it": "i saldi", "baca": "i SAL-di", "id": "obral musiman" },
+    { "it": "bianco", "baca": "BIAN-ko", "id": "putih" },
+    { "it": "nero", "baca": "NE-ro", "id": "hitam" },
+    { "it": "rosso", "baca": "ROS-so", "id": "merah" },
+    { "it": "verde", "baca": "VER-de", "id": "hijau" },
+    { "it": "blu", "baca": "blu", "id": "biru tua" },
+    { "it": "giallo", "baca": "JAL-lo", "id": "kuning" },
+    { "it": "grigio", "baca": "GRI-jo", "id": "abu-abu" },
+    { "it": "stretto", "baca": "STRET-to", "id": "sempit" },
+    { "it": "largo", "baca": "LAR-go", "id": "longgar, lebar" },
+    { "it": "troppo", "baca": "TROP-po", "id": "terlalu" },
+    { "it": "aiutare", "baca": "aiu-TA-re", "id": "membantu" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk questo yang tepat.",
+      "items": [
+        "____ libro è interessante.",
+        "____ giacca è bella.",
+        "____ scarpe sono care.",
+        "____ pantaloni sono stretti.",
+        "____ camicia mi sta bene."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk quello yang tepat.",
+      "items": [
+        "____ maglione è caldo.",
+        "____ zaino è nuovo.",
+        "____ amica è simpatica.",
+        "____ occhiali sono belli.",
+        "____ scarpe sono nere.",
+        "____ vestito è troppo lungo."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Saya cari jaket.",
+        "Ukuran berapa?",
+        "Boleh dicoba?",
+        "Ruang gantinya di mana?",
+        "Ada yang warna hitam?",
+        "Terlalu sempit."
+      ]
+    },
+    {
+      "prompt": "Sesuaikan bentuk warnanya.",
+      "items": [
+        "una camicia (bianco) ____",
+        "due giacche (nero) ____",
+        "i pantaloni (verde) ____",
+        "una borsa (blu) ____",
+        "le scarpe (rosso) ____",
+        "un maglione (grigio) ____"
+      ]
+    }
+  ],
+  "answers": [
+    "Questo — Questa — Queste — Questi — Questa",
+    "Quel — Quello — Quell' — Quegli — Quelle — Quel",
+    "Cerco una giacca. — Che taglia porta? — Posso provare? — Dov'è il camerino? — Ce l'ha in nero? — È troppo stretto.",
+    "bianca — nere — verdi — blu — rosse — grigio"
+  ],
+  "wave": "Ulangi **unit 12** dulu: belanja seminggu di pasar dari ingatan — sebut sepuluh bahan lengkap dengan takarannya."
+}
