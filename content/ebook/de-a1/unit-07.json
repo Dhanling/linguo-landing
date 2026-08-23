@@ -1,0 +1,568 @@
+{
+ "title": "Di kafe",
+ "title_target": "Im Café",
+ "goal": "Memesan makanan dan minuman — sekaligus menghadapi Akkusativ, perubahan bentuk kata sandang yang menakutkan namanya tapi hanya menyentuh satu dari empat kotak.",
+ "bekal": [
+  "memesan dengan *Ich möchte…* dan *Ich nehme…*",
+  "mengubah kata sandang maskulin menjadi Akkusativ (*einen Kaffee*)",
+  "menanyakan dan membayar tagihan",
+  "menyebut makanan dan minuman sehari-hari"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Bestellen und bezahlen",
+   "intro": "Sore hari, kafe kecil di Kreuzberg. Budi dan Lena duduk di luar. Perhatikan bentuk kata sandang setiap kali sesuatu dipesan.",
+   "lines": [
+    {
+     "speaker": "Kellner:",
+     "text": "Guten Tag. Was möchten Sie trinken?",
+     "id": "Selamat siang. Anda mau minum apa?",
+     "literal": "baik hari. apa ingin Anda minum?"
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Ich möchte einen Kaffee, bitte. Mit Milch.",
+     "id": "Saya mau kopi. Pakai susu.",
+     "literal": "aku ingin sebuah kopi, tolong. dengan susu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Und ich nehme einen Tee und ein Wasser.",
+     "id": "Dan saya ambil teh dan air putih.",
+     "literal": "dan aku mengambil sebuah teh dan sebuah air."
+    },
+    {
+     "speaker": "Kellner:",
+     "text": "Möchten Sie auch etwas essen?",
+     "id": "Mau makan sesuatu juga?",
+     "literal": "ingin Anda juga sesuatu makan?"
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Ja, ich nehme einen Apfelkuchen.",
+     "id": "Ya, saya ambil kue apel.",
+     "literal": "ya, aku mengambil sebuah apel-kue."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Haben Sie ein Sandwich?",
+     "id": "Ada roti lapis?",
+     "literal": "punya Anda sebuah roti-lapis?"
+    },
+    {
+     "speaker": "Kellner:",
+     "text": "Tut mir leid, wir haben keine Sandwiches mehr. Aber wir haben eine Suppe.",
+     "id": "Maaf, roti lapisnya habis. Tapi ada sup.",
+     "literal": "membuat kepadaku sedih, kami punya tidak-ada roti-lapis lagi. tetapi kami punya sebuah sup."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Gut, dann nehme ich die Suppe.",
+     "id": "Baik, kalau begitu saya ambil supnya.",
+     "literal": "baik, lalu mengambil aku itu sup."
+    },
+    {
+     "speaker": "Kellner:",
+     "text": "Sehr gern. Kommt sofort.",
+     "id": "Dengan senang hati. Segera datang.",
+     "literal": "sangat dengan-senang-hati. datang segera."
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Entschuldigung, wir möchten zahlen, bitte.",
+     "id": "Permisi, kami mau bayar.",
+     "literal": "permohonan-maaf, kami ingin membayar, tolong."
+    },
+    {
+     "speaker": "Kellner:",
+     "text": "Zusammen oder getrennt?",
+     "id": "Digabung atau terpisah?",
+     "literal": "bersama atau terpisah?"
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Zusammen, bitte. Wie viel macht das?",
+     "id": "Digabung. Totalnya berapa?",
+     "literal": "bersama, tolong. berapa banyak membuat itu?"
+    },
+    {
+     "speaker": "Kellner:",
+     "text": "Das macht sechzehn Euro achtzig.",
+     "id": "Totalnya enam belas euro delapan puluh.",
+     "literal": "itu membuat enam-belas euro delapan-puluh."
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Achtzehn Euro. Stimmt so.",
+     "id": "Delapan belas euro. Kembaliannya ambil saja.",
+     "literal": "delapan-belas euro. cocok begitu."
+    }
+   ],
+   "notes": [
+    "**Baris 2 dan 3: *einen*, bukan *ein*.** Begitu benda menjadi **sasaran** perbuatan — yang dipesan, dibeli, diminum, dilihat — kata sandang maskulinnya berubah: *ein → einen*, *der → den*. Kata feminin dan netral tidak berubah sedikit pun. Itulah seluruh isi Akkusativ.",
+    "***Ich möchte* dan *Ich nehme* sama-sama sopan.** *Möchte* (\"saya ingin\") terdengar lembut; *nehme* (\"saya ambil\") lebih cepat dan sama-sama lazim. Yang **tidak** dipakai adalah *Ich will* (\"saya mau\") — terdengar seperti anak kecil menuntut.",
+    "**Bentuk paling sopan: *Ich hätte gern…*** (\"saya ingin sekali\"). Ini bentuk pengandaian yang baru dibedah di A2, tapi sebagai frasa jadi ia sangat berguna sekarang: *Ich hätte gern einen Kaffee, bitte.*",
+    "***Tut mir leid*** harfiahnya \"membuat saya sedih\" = \"maaf\". Bedakan dari *Entschuldigung*, yang dipakai untuk menarik perhatian orang atau meminta maaf atas gangguan kecil.",
+    "***keine … mehr*** = \"tidak ada … lagi\", untuk barang yang habis. Polanya: *kein* di depan bendanya, *mehr* di ujung. *Wir haben keinen Kaffee mehr.*",
+    "**Baris 8: *dann nehme ich…*** Kalimatnya dimulai dengan *dann*, jadi pelakunya mundur ke belakang kata kerja. Aturan yang sama seperti *Jetzt wohne ich…* di unit 2, dan yang dibedah tuntas di unit 10."
+   ],
+   "grammars": [
+    {
+     "title": "Akkusativ: satu kotak yang berubah",
+     "body": [
+      "Bahasa Jerman menandai peran kata benda dalam kalimat lewat kata sandangnya. Pelaku memakai bentuk **Nominativ**; sasaran perbuatan memakai bentuk **Akkusativ**. Kabar baiknya sudah disebut di atas — hanya kata maskulin yang benar-benar berubah."
+     ],
+     "table": {
+      "head": [
+       "",
+       "maskulin",
+       "feminin",
+       "netral",
+       "jamak"
+      ],
+      "rows": [
+       [
+        "Nominativ (pelaku)",
+        "der / ein / kein",
+        "die / eine / keine",
+        "das / ein / kein",
+        "die / — / keine"
+       ],
+       [
+        "Akkusativ (sasaran)",
+        "**den / einen / keinen**",
+        "die / eine / keine",
+        "das / ein / kein",
+        "die / — / keine"
+       ]
+      ]
+     },
+     "after": [
+      "Bandingkan dua kalimat ini: ***Der** Kaffee ist gut* (kopi = pelaku, Nominativ) dan *Ich trinke **den** Kaffee* (kopi = yang diminum, Akkusativ). Kata yang sama, peran berbeda, bentuk berbeda.",
+      "Kata milik ikut aturan yang sama karena bentuknya mengikuti *ein*: *mein → meinen*, *dein → deinen*, *sein → seinen*, *unser → unseren*. *Ich sehe **meinen** Bruder* tapi *Ich sehe **meine** Schwester*.",
+      "Kata kerja yang menuntut Akkusativ adalah kata kerja yang punya sasaran: *haben, nehmen, kaufen, trinken, essen, sehen, lesen, brauchen, möchten, suchen, finden*. Sebaliknya, ***sein*** tak pernah memakai Akkusativ — apa pun yang mengikuti *sein* tetap Nominativ: *Das ist **ein** Kaffee*."
+     ],
+     "tables": [
+      {
+       "head": [
+        "Nominativ",
+        "→ Akkusativ",
+        "Contoh kalimat"
+       ],
+       "rows": [
+        [
+         "der Kaffee",
+         "**den** Kaffee",
+         "Ich trinke den Kaffee."
+        ],
+        [
+         "ein Tee",
+         "**einen** Tee",
+         "Ich möchte einen Tee."
+        ],
+        [
+         "kein Kuchen",
+         "**keinen** Kuchen",
+         "Ich esse keinen Kuchen."
+        ],
+        [
+         "die Suppe",
+         "die Suppe",
+         "Ich nehme die Suppe."
+        ],
+        [
+         "eine Cola",
+         "eine Cola",
+         "Ich möchte eine Cola."
+        ],
+        [
+         "das Wasser",
+         "das Wasser",
+         "Ich trinke das Wasser."
+        ],
+        [
+         "die Pommes (jamak)",
+         "die Pommes",
+         "Ich nehme die Pommes."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "title": "möchten — kata kerja pemesanan",
+     "body": [
+      "*Möchten* sebetulnya bentuk pengandaian dari *mögen*, tapi dipakai begitu sering sebagai kata tersendiri sehingga lebih baik dihafal sebagai kata kerja utuh sekarang."
+     ],
+     "table": {
+      "head": [
+       "Orang",
+       "möchten",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "ich",
+        "möchte",
+        "Ich möchte einen Kaffee."
+       ],
+       [
+        "du",
+        "möchtest",
+        "Möchtest du auch einen?"
+       ],
+       [
+        "er / sie / es",
+        "möchte",
+        "Er möchte ein Wasser."
+       ],
+       [
+        "wir",
+        "möchten",
+        "Wir möchten zahlen."
+       ],
+       [
+        "ihr",
+        "möchtet",
+        "Möchtet ihr etwas essen?"
+       ],
+       [
+        "sie / Sie",
+        "möchten",
+        "Was möchten Sie trinken?"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Perhatikan bahwa *ich* dan *er/sie/es* memakai bentuk yang **sama persis** dan tanpa akhiran *-t* di *er*. Ini ciri khas seluruh kelompok kata kerja bantu yang akan kamu temui lagi di unit 11 (*kann*, *muss*, *will*).",
+      "Kalau *möchten* diikuti kata kerja lain, kata kerja itu terlempar ke **ujung kalimat** dalam bentuk dasarnya: *Ich möchte einen Kaffee **trinken***. Susunan berkurung ini adalah salah satu ciri paling khas bahasa Jerman, dan seluruh unit 11 dikhususkan untuknya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Minuman dan makanan kecil",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Cara baca",
+      "Bahasa Indonesia",
+      "Dalam pesanan"
+     ],
+     "rows": [
+      [
+       "der Kaffee",
+       "KA-fee",
+       "kopi",
+       "einen Kaffee"
+      ],
+      [
+       "der Tee",
+       "tee",
+       "teh",
+       "einen Tee"
+      ],
+      [
+       "der Saft",
+       "zaft",
+       "jus",
+       "einen Saft"
+      ],
+      [
+       "der Wein",
+       "vain",
+       "anggur",
+       "einen Wein"
+      ],
+      [
+       "das Wasser",
+       "VA-sa",
+       "air",
+       "ein Wasser"
+      ],
+      [
+       "das Bier",
+       "biia",
+       "bir",
+       "ein Bier"
+      ],
+      [
+       "die Milch",
+       "milkh",
+       "susu",
+       "eine Milch"
+      ],
+      [
+       "die Cola",
+       "KOO-la",
+       "kola",
+       "eine Cola"
+      ],
+      [
+       "der Kuchen",
+       "KUU-khen",
+       "kue",
+       "einen Kuchen"
+      ],
+      [
+       "das Brot",
+       "broot",
+       "roti",
+       "ein Brot"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Air di Jerman hampir selalu bersoda kecuali kamu memintanya sebaliknya. *Ein Wasser* saja akan datang bergelembung; kalau kamu ingin air biasa, minta ***ein stilles Wasser***. Dan air keran gratis bukan kebiasaan — memesan *Leitungswasser* boleh saja, tapi jangan heran kalau ditagih."
+    },
+    {
+     "type": "sub",
+     "text": "Kalimat memesan dan membayar"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Ich möchte einen Kaffee, bitte.",
+       "Saya mau kopi."
+      ],
+      [
+       "Ich hätte gern eine Suppe.",
+       "Saya ingin sup. (paling sopan)"
+      ],
+      [
+       "Ich nehme den Salat.",
+       "Saya ambil saladnya."
+      ],
+      [
+       "Haben Sie …?",
+       "Ada …?"
+      ],
+      [
+       "Was möchten Sie trinken?",
+       "Mau minum apa?"
+      ],
+      [
+       "Die Rechnung, bitte.",
+       "Tolong tagihannya."
+      ],
+      [
+       "Zusammen oder getrennt?",
+       "Digabung atau terpisah?"
+      ],
+      [
+       "Wie viel macht das?",
+       "Totalnya berapa?"
+      ],
+      [
+       "Stimmt so.",
+       "Kembaliannya ambil saja."
+      ],
+      [
+       "Kann ich mit Karte zahlen?",
+       "Bisa bayar pakai kartu?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Pertanyaan terakhir lebih penting daripada kelihatannya: banyak kafe kecil di Jerman **hanya menerima uang tunai**, dan tulisan *Nur Barzahlung* di pintu berarti persis itu. Selalu bawa uang kertas."
+    }
+   ]
+  },
+  {
+   "title": "Latihan mata: Nominativ atau Akkusativ?",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Cara tercepat mengenali mana yang mana: tanyakan *wer?* (siapa yang melakukan) untuk Nominativ, dan *wen?* atau *was?* (melakukan apa/siapa) untuk Akkusativ."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Pelaku (Nom.)",
+      "Sasaran (Akk.)"
+     ],
+     "rows": [
+      [
+       "Der Kellner bringt den Kaffee.",
+       "der Kellner",
+       "den Kaffee"
+      ],
+      [
+       "Ich nehme einen Salat.",
+       "ich",
+       "einen Salat"
+      ],
+      [
+       "Meine Schwester trinkt keinen Wein.",
+       "meine Schwester",
+       "keinen Wein"
+      ],
+      [
+       "Wir möchten die Rechnung.",
+       "wir",
+       "die Rechnung"
+      ],
+      [
+       "Das Bier ist kalt.",
+       "das Bier",
+       "— (tak ada, karena *sein*)"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kalau kamu cuma sempat menghafal satu hal dari unit ini",
+     "items": [
+      "Hafalkan ini: **der → den, ein → einen, kein → keinen, mein → meinen**. Semuanya menambahkan -en, dan semuanya cuma pada kata maskulin.",
+      "Kata feminin, netral, dan jamak tidak berubah sama sekali di Akkusativ. Tiga perempat tabelnya adalah salinan.",
+      "Sesudah *sein* tak pernah ada Akkusativ: *Das ist ein Kaffee*, bukan *das ist einen Kaffee*."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "de": "möchten",
+   "baca": "MÖKH-ten",
+   "id": "ingin"
+  },
+  {
+   "de": "nehmen",
+   "baca": "NEE-men",
+   "id": "mengambil"
+  },
+  {
+   "de": "trinken",
+   "baca": "TRIN-ken",
+   "id": "minum"
+  },
+  {
+   "de": "essen",
+   "baca": "E-sen",
+   "id": "makan"
+  },
+  {
+   "de": "zahlen",
+   "baca": "TSAA-len",
+   "id": "membayar"
+  },
+  {
+   "de": "bestellen",
+   "baca": "be-SYTE-len",
+   "id": "memesan"
+  },
+  {
+   "de": "bringen",
+   "baca": "BRIN-gen",
+   "id": "membawa"
+  },
+  {
+   "de": "der Kaffee",
+   "baca": "KA-fee",
+   "id": "kopi"
+  },
+  {
+   "de": "der Tee",
+   "baca": "tee",
+   "id": "teh"
+  },
+  {
+   "de": "das Wasser",
+   "baca": "VA-sa",
+   "id": "air"
+  },
+  {
+   "de": "die Milch",
+   "baca": "milkh",
+   "id": "susu"
+  },
+  {
+   "de": "der Kuchen",
+   "baca": "KUU-khen",
+   "id": "kue"
+  },
+  {
+   "de": "die Suppe",
+   "baca": "ZU-pe",
+   "id": "sup"
+  },
+  {
+   "de": "der Salat",
+   "baca": "za-LAAT",
+   "id": "salad"
+  },
+  {
+   "de": "das Brot",
+   "baca": "broot",
+   "id": "roti"
+  },
+  {
+   "de": "die Rechnung",
+   "baca": "REKH-nung",
+   "id": "tagihan"
+  },
+  {
+   "de": "das Café",
+   "baca": "ka-FEE",
+   "id": "kafe"
+  },
+  {
+   "de": "der Kellner",
+   "baca": "KEL-na",
+   "id": "pelayan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "Was möchten Sie trinken?",
+    "Ich möchte einen Kaffee, bitte.",
+    "Wir haben keine Sandwiches mehr.",
+    "Dann nehme ich die Suppe.",
+    "Die Rechnung, bitte.",
+    "Zusammen oder getrennt?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk Akkusativ yang tepat: *einen*, *eine*, atau *ein*.",
+   "items": [
+    "Ich möchte ____ Kaffee.",
+    "Ich nehme ____ Suppe.",
+    "Sie trinkt ____ Wasser.",
+    "Er möchte ____ Tee.",
+    "Wir nehmen ____ Salat.",
+    "Ich esse ____ Brötchen."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "einen / ich / Kaffee / möchte",
+    "die Rechnung / wir / möchten",
+    "Sie / möchten / trinken / was",
+    "keinen / ich / trinke / Wein",
+    "nehme / die Suppe / ich / dann",
+    "oder / zusammen / getrennt"
+   ]
+  }
+ ],
+ "answers": [
+  "Anda mau minum apa? — Saya mau kopi. — Roti lapis kami sudah habis. — Kalau begitu saya ambil supnya. — Tolong tagihannya. — Digabung atau terpisah?",
+  "einen — eine — ein — einen — einen — ein",
+  "Ich möchte einen Kaffee. — Wir möchten die Rechnung. — Was möchten Sie trinken? — Ich trinke keinen Wein. — Dann nehme ich die Suppe. — Zusammen oder getrennt?"
+ ]
+}

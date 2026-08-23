@@ -1,0 +1,539 @@
+{
+ "title": "Di restoran",
+ "title_target": "Im Restaurant",
+ "goal": "Membaca daftar menu, memesan makan lengkap, dan menyatakan yang mana yang lebih kamu suka.",
+ "bekal": [
+  "membaca dan memahami daftar menu",
+  "menyatakan kesukaan bertingkat (*gern – lieber – am liebsten*)",
+  "membandingkan dengan *besser*, *mehr*, dan *als*",
+  "memuji, mengeluh, dan membayar"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ein Abendessen zu zweit",
+   "intro": "Budi dan Lena makan malam di restoran Jerman. Menu Jerman ditulis dengan kata majemuk panjang — dan hampir semuanya bisa dibongkar jadi dua kata pendek yang sudah kamu kenal.",
+   "lines": [
+    {
+     "speaker": "Kellner:",
+     "text": "Guten Abend. Haben Sie reserviert?",
+     "id": "Selamat malam. Sudah reservasi?",
+     "literal": "baik malam. punya Anda memesan-tempat?"
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Nein, aber ist ein Tisch für zwei frei?",
+     "id": "Belum, tapi ada meja untuk dua orang?",
+     "literal": "tidak, tetapi adalah sebuah meja untuk dua bebas?"
+    },
+    {
+     "speaker": "Kellner:",
+     "text": "Ja, dort am Fenster. Hier ist die Speisekarte.",
+     "id": "Ada, di sana dekat jendela. Ini menunya.",
+     "literal": "ya, di-sana pada-itu jendela. di-sini adalah itu makanan-kartu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Danke. Was empfehlen Sie?",
+     "id": "Terima kasih. Anda menyarankan apa?",
+     "literal": "terima kasih. apa menyarankan Anda?"
+    },
+    {
+     "speaker": "Kellner:",
+     "text": "Das Schnitzel ist heute sehr gut. Und die Gemüsesuppe als Vorspeise.",
+     "id": "Schnitzel hari ini enak sekali. Dan sup sayur sebagai hidangan pembuka.",
+     "literal": "itu schnitzel adalah hari-ini sangat baik. dan itu sayur-sup sebagai depan-hidangan."
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Ich esse gern Fisch. Haben Sie auch Fisch?",
+     "id": "Saya suka ikan. Ada ikan juga?",
+     "literal": "aku makan dengan-senang ikan. punya Anda juga ikan?"
+    },
+    {
+     "speaker": "Kellner:",
+     "text": "Ja, Forelle mit Kartoffeln.",
+     "id": "Ada, trout dengan kentang.",
+     "literal": "ya, trout dengan kentang-kentang."
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Perfekt, das nehme ich. Und als Getränk ein Glas Weißwein.",
+     "id": "Sempurna, saya ambil itu. Dan minumnya segelas anggur putih.",
+     "literal": "sempurna, itu mengambil aku. dan sebagai minuman sebuah gelas putih-anggur."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ich esse lieber Fleisch. Ich nehme das Schnitzel mit Pommes.",
+     "id": "Saya lebih suka daging. Saya ambil schnitzel dengan kentang goreng.",
+     "literal": "aku makan lebih-suka daging. aku mengambil itu schnitzel dengan kentang-goreng."
+    },
+    {
+     "speaker": "Kellner:",
+     "text": "Sehr gern. Und zu trinken?",
+     "id": "Baik. Minumnya?",
+     "literal": "sangat dengan-senang. dan untuk minum?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ein großes Bier, bitte. Kein Alkohol für mich — ein alkoholfreies.",
+     "id": "Bir besar. Tanpa alkohol untuk saya — yang bebas alkohol.",
+     "literal": "sebuah besar bir, tolong. tidak-ada alkohol untuk aku — sebuah alkohol-bebas."
+    },
+    {
+     "speaker": "Kellner:",
+     "text": "Alles klar. Guten Appetit später!",
+     "id": "Baik. Selamat makan nanti!",
+     "literal": "semuanya jelas. baik selera-makan nanti!"
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Wie schmeckt dein Schnitzel?",
+     "id": "Schnitzelmu gimana rasanya?",
+     "literal": "bagaimana terasa punyamu schnitzel?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sehr gut, danke! Besser als in Berlin.",
+     "id": "Enak sekali! Lebih enak daripada di Berlin.",
+     "literal": "sangat baik, terima kasih! lebih-baik daripada di Berlin."
+    }
+   ],
+   "notes": [
+    "**Kata majemuk panjang cuma tumpukan kata pendek.** *Speisekarte* = *Speise* (hidangan) + *Karte* (kartu). *Gemüsesuppe* = *Gemüse* + *Suppe*. Jenis kelaminnya selalu diambil dari **kata terakhir**: *die Karte* → *die Speisekarte*, *die Suppe* → *die Gemüsesuppe*. Aturan ini bekerja untuk kata sepanjang apa pun.",
+    "***gern → lieber → am liebsten*.** Tiga tingkat kesukaan: *Ich esse **gern** Fisch* (suka), *Ich esse **lieber** Fleisch* (lebih suka), *Ich esse **am liebsten** Pizza* (paling suka). Ini bentuk yang paling sering dipakai untuk menyatakan pilihan, dan sepenuhnya tak beraturan — hafalkan bertiga.",
+    "***schmecken*** dipakai khusus untuk rasa makanan: *Wie schmeckt es?* (\"bagaimana rasanya?\"), *Es schmeckt gut* (\"enak\"). Bahasa Jerman tidak memakai *gut sein* untuk rasa — *Das Essen ist gut* terdengar seperti menilai mutu, bukan rasa.",
+    "***Guten Appetit!*** diucapkan sebelum makan, dan menjawabnya cukup dengan *Danke, gleichfalls* (\"terima kasih, sama-sama\"). Di meja bersama orang Jerman, tak seorang pun mulai makan sebelum kalimat ini terucap.",
+    "**Baris 9: *Ich esse lieber Fleisch*.** Perhatikan letak *lieber* — persis di belakang kata kerja, sama seperti *gern*. Keduanya keterangan, bukan kata kerja, jadi tak pernah berdiri sendiri sebagai jawaban.",
+    "***als*** di baris terakhir berarti \"daripada\", dipakai untuk membandingkan: *besser als*, *größer als*, *teurer als*. Ini *als* yang sama yang sudah kamu lihat di unit 6 dengan arti \"sebagai\" — sekali lagi, posisinya yang menentukan artinya."
+   ],
+   "grammars": [
+    {
+     "title": "Menyatakan kesukaan: tiga tingkat",
+     "body": [
+      "Bahasa Jerman punya dua jalur untuk menyatakan suka. Yang pertama memakai *gern* di belakang kata kerja — dipakai untuk **kegiatan**. Yang kedua memakai *mögen* — dipakai untuk **benda**."
+     ],
+     "table": {
+      "head": [
+       "Tingkat",
+       "Untuk kegiatan",
+       "Untuk benda",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "suka",
+        "Ich trinke **gern** Tee.",
+        "Ich **mag** Tee.",
+        "Saya suka teh."
+       ],
+       [
+        "lebih suka",
+        "Ich trinke **lieber** Kaffee.",
+        "Ich mag Kaffee **lieber**.",
+        "Saya lebih suka kopi."
+       ],
+       [
+        "paling suka",
+        "Ich trinke **am liebsten** Wasser.",
+        "Am liebsten mag ich Wasser.",
+        "Paling suka air."
+       ],
+       [
+        "tidak suka",
+        "Ich trinke **nicht gern** Bier.",
+        "Ich **mag** kein Bier.",
+        "Saya tidak suka bir."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Perhatikan kolom terakhir baris keempat: *mögen* diingkarkan dengan ***kein***, bukan *nicht*, karena yang disangkal adalah kata bendanya. *Ich mag **keinen** Fisch*, *Ich mag **keine** Milch*.",
+      "*Mögen* dan *möchten* berkerabat tapi tak bisa ditukar: *Ich **mag** Kaffee* = saya suka kopi (secara umum); *Ich **möchte** einen Kaffee* = saya mau kopi (sekarang, di sini). Memesan dengan *Ich mag einen Kaffee* akan terdengar aneh."
+     ]
+    },
+    {
+     "title": "Membandingkan sesuatu",
+     "body": [
+      "Perbandingan dibuat dengan menambahkan **-er** pada kata sifat, dan kata pembandingnya adalah **als**. Kata sifat pendek bervokal a, o, u biasanya sekalian ber-Umlaut."
+     ],
+     "table": {
+      "head": [
+       "Kata sifat",
+       "Lebih…",
+       "Paling…",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "billig (murah)",
+        "billig**er**",
+        "am billig**sten**",
+        "Das ist billiger als das."
+       ],
+       [
+        "klein",
+        "klein**er**",
+        "am klein**sten**",
+        "Meine Wohnung ist kleiner."
+       ],
+       [
+        "groß",
+        "gr**öß**er",
+        "am größten",
+        "Berlin ist größer als Potsdam."
+       ],
+       [
+        "alt",
+        "**ä**lter",
+        "am ältesten",
+        "Mein Bruder ist älter als ich."
+       ],
+       [
+        "**gut**",
+        "**besser**",
+        "**am besten**",
+        "Das schmeckt besser."
+       ],
+       [
+        "**viel**",
+        "**mehr**",
+        "**am meisten**",
+        "Ich esse mehr als du."
+       ],
+       [
+        "**gern**",
+        "**lieber**",
+        "**am liebsten**",
+        "Ich trinke lieber Tee."
+       ]
+      ]
+     },
+     "after": [
+      "Tiga baris terakhir tak beraturan sama sekali, dan justru ketiganya yang paling sering dipakai. Kabar baiknya cuma tiga.",
+      "Untuk menyatakan **sama**, dipakai *so … wie*: *Berlin ist **so** teuer **wie** München.* Perhatikan bahwa kata pembandingnya berubah dari *als* menjadi *wie* — memakai *als* di sini adalah kesalahan yang bahkan sebagian penutur asli lakukan.",
+      "Di level A1 kamu cukup memakai bentuk-bentuk ini **sesudah kata kerja** (*Das ist billiger*). Memakainya di depan kata benda (*ein billigeres Hotel*) menuntut akhiran kata sifat, yang baru dibedah di A2."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca daftar menu",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Menu Jerman hampir selalu tersusun dalam urutan yang sama. Mengenali empat judul bagiannya sudah cukup untuk tahu di mana harus mencari."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian menu",
+      "Arti",
+      "Isi khasnya"
+     ],
+     "rows": [
+      [
+       "die Vorspeise",
+       "hidangan pembuka",
+       "Suppe, Salat"
+      ],
+      [
+       "das Hauptgericht",
+       "hidangan utama",
+       "Schnitzel, Braten, Fisch"
+      ],
+      [
+       "die Beilage",
+       "pelengkap",
+       "Pommes, Kartoffeln, Reis"
+      ],
+      [
+       "der Nachtisch",
+       "hidangan penutup",
+       "Eis, Kuchen, Apfelstrudel"
+      ],
+      [
+       "die Getränke",
+       "minuman",
+       "Bier, Wein, Wasser, Saft"
+      ],
+      [
+       "das Tagesmenü",
+       "menu hari ini",
+       "biasanya paling murah"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Makanan yang akan kamu temui"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Bahasa Indonesia",
+      "Deutsch",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "das Schnitzel",
+       "daging tipis bertepung",
+       "die Wurst",
+       "sosis"
+      ],
+      [
+       "der Braten",
+       "daging panggang",
+       "das Brötchen",
+       "roti bundar"
+      ],
+      [
+       "die Suppe",
+       "sup",
+       "der Salat",
+       "salad"
+      ],
+      [
+       "die Kartoffeln",
+       "kentang",
+       "die Pommes",
+       "kentang goreng"
+      ],
+      [
+       "die Nudeln",
+       "mi, pasta",
+       "der Reis",
+       "nasi"
+      ],
+      [
+       "das Hähnchen",
+       "ayam",
+       "das Rindfleisch",
+       "daging sapi"
+      ],
+      [
+       "das Schweinefleisch",
+       "daging babi",
+       "der Fisch",
+       "ikan"
+      ],
+      [
+       "der Nachtisch",
+       "penutup",
+       "das Eis",
+       "es krim"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Kalau kamu tidak makan daging babi, kalimat yang perlu kamu hafal adalah ***Ich esse kein Schweinefleisch*** dan pertanyaan ***Ist da Schweinefleisch drin?*** (\"ada daging babi di dalamnya?\"). Daging babi sangat lazim di masakan Jerman, termasuk di dalam sosis dan sup yang namanya tak menyebutkannya. Untuk vegetarian: *Ich bin Vegetarier / Vegetarierin*, dan *Haben Sie etwas Vegetarisches?*"
+    }
+   ]
+  },
+  {
+   "title": "Kalimat di meja makan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Haben Sie einen Tisch für zwei?",
+       "Ada meja untuk dua orang?"
+      ],
+      [
+       "Die Speisekarte, bitte.",
+       "Tolong menunya."
+      ],
+      [
+       "Was empfehlen Sie?",
+       "Anda menyarankan apa?"
+      ],
+      [
+       "Ich nehme das Schnitzel.",
+       "Saya ambil schnitzel."
+      ],
+      [
+       "Als Vorspeise nehme ich die Suppe.",
+       "Sebagai pembuka saya ambil supnya."
+      ],
+      [
+       "Guten Appetit!",
+       "Selamat makan!"
+      ],
+      [
+       "Danke, gleichfalls.",
+       "Terima kasih, sama-sama."
+      ],
+      [
+       "Wie schmeckt es?",
+       "Bagaimana rasanya?"
+      ],
+      [
+       "Es schmeckt sehr gut.",
+       "Enak sekali."
+      ],
+      [
+       "Noch ein Bier, bitte.",
+       "Tambah satu bir lagi."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kalau ada yang tidak beres",
+     "items": [
+      "*Entschuldigung, das habe ich nicht bestellt.* — Maaf, ini bukan pesanan saya.",
+      "*Die Suppe ist kalt.* — Supnya dingin.",
+      "*Können wir bitte noch Wasser haben?* — Bisa minta air lagi?",
+      "*Ich glaube, die Rechnung stimmt nicht.* — Sepertinya tagihannya keliru."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Semua keluhan di atas dibuka dengan *Entschuldigung* dan diakhiri dengan nada bertanya, bukan menuduh. Cara ini bekerja jauh lebih baik daripada terjemahan langsung dari bahasa Indonesia — yang, karena tanpa kata pelembut, mudah terdengar kasar dalam bahasa Jerman."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "de": "das Restaurant",
+   "baca": "res-to-RANG",
+   "id": "restoran"
+  },
+  {
+   "de": "die Speisekarte",
+   "baca": "SYPAI-ze-kar-te",
+   "id": "daftar menu"
+  },
+  {
+   "de": "das Gericht",
+   "baca": "ge-RIKHT",
+   "id": "hidangan"
+  },
+  {
+   "de": "die Vorspeise",
+   "baca": "FOOA-sypai-ze",
+   "id": "hidangan pembuka"
+  },
+  {
+   "de": "das Hauptgericht",
+   "baca": "HAUPT-ge-rikht",
+   "id": "hidangan utama"
+  },
+  {
+   "de": "der Nachtisch",
+   "baca": "NAAKH-tisy",
+   "id": "hidangan penutup"
+  },
+  {
+   "de": "das Getränk",
+   "baca": "ge-TRENK",
+   "id": "minuman"
+  },
+  {
+   "de": "empfehlen",
+   "baca": "emp-FEE-len",
+   "id": "menyarankan"
+  },
+  {
+   "de": "bestellen",
+   "baca": "be-SYTE-len",
+   "id": "memesan"
+  },
+  {
+   "de": "reservieren",
+   "baca": "re-zer-VII-ren",
+   "id": "memesan tempat"
+  },
+  {
+   "de": "schmecken",
+   "baca": "SYME-ken",
+   "id": "terasa (enak)"
+  },
+  {
+   "de": "mögen",
+   "baca": "MÖÖ-gen",
+   "id": "suka"
+  },
+  {
+   "de": "lieber",
+   "baca": "LII-ba",
+   "id": "lebih suka"
+  },
+  {
+   "de": "am liebsten",
+   "baca": "am LIIPS-ten",
+   "id": "paling suka"
+  },
+  {
+   "de": "besser",
+   "baca": "BE-sa",
+   "id": "lebih baik"
+  },
+  {
+   "de": "mehr",
+   "baca": "meea",
+   "id": "lebih banyak"
+  },
+  {
+   "de": "das Fleisch",
+   "baca": "flaisy",
+   "id": "daging"
+  },
+  {
+   "de": "der Fisch",
+   "baca": "fisy",
+   "id": "ikan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "Haben Sie einen Tisch für zwei?",
+    "Was empfehlen Sie?",
+    "Ich esse gern Fisch.",
+    "Ich esse lieber Fleisch.",
+    "Wie schmeckt dein Schnitzel?",
+    "Besser als in Berlin."
+   ]
+  },
+  {
+   "prompt": "Isi dengan *gern*, *lieber*, atau *am liebsten*.",
+   "items": [
+    "Ich trinke ____ Tee. (suka)",
+    "Kaffee trinke ich ____ als Tee. (lebih suka)",
+    "Ich esse ____ Pizza — das ist mein Lieblingsessen. (paling suka)",
+    "Was machst du ____ am Wochenende? (suka)",
+    "Fährst du ____ mit dem Bus oder mit dem Rad? (lebih suka)",
+    "Sie liest ____ Bücher als Zeitungen. (lebih suka)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "für zwei / haben Sie / einen Tisch",
+    "Sie / was / empfehlen",
+    "das Schnitzel / ich / nehme",
+    "gern / ich / Fisch / esse",
+    "als / besser / in Berlin / das schmeckt",
+    "bitte / die Rechnung"
+   ]
+  }
+ ],
+ "answers": [
+  "Ada meja untuk dua orang? — Anda menyarankan apa? — Saya suka ikan. — Saya lebih suka daging. — Schnitzelmu rasanya bagaimana? — Lebih enak daripada di Berlin.",
+  "gern — lieber — am liebsten — gern — lieber — lieber",
+  "Haben Sie einen Tisch für zwei? — Was empfehlen Sie? — Ich nehme das Schnitzel. — Ich esse gern Fisch. — Das schmeckt besser als in Berlin. — Die Rechnung, bitte."
+ ],
+ "wave": "Sebelum mulai unit 16, buka lagi dialog **Unit 8**. Ucapkan semua jamnya keras-keras, lalu periksa awalan kata kerja terpisahnya."
+}

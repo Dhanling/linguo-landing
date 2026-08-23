@@ -1,0 +1,522 @@
+{
+ "title": "Ini apa?",
+ "title_target": "Was ist das?",
+ "goal": "Menghadapi hal yang paling sering membuat pemula menyerah: setiap benda dalam bahasa Jerman punya jenis kelamin, dan jenis kelamin itu harus ikut dihafal bersama katanya.",
+ "bekal": [
+  "menanyakan nama benda (*Was ist das?*)",
+  "memakai *der*, *die*, *das* dan *ein*, *eine*",
+  "menebak jenis kelamin kata dari akhirannya",
+  "menyangkal kata benda dengan *kein* / *keine*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Im Klassenzimmer",
+   "intro": "Marek baru pindah dari kelas pemula. Ia tahu banyak kata, tapi selalu tersandung di kata kecil yang mendahuluinya.",
+   "lines": [
+    {
+     "speaker": "Marek:",
+     "text": "Entschuldigung, was ist das?",
+     "id": "Permisi, ini apa?",
+     "literal": "permohonan-maaf, apa adalah itu?"
+    },
+    {
+     "speaker": "Frau Weber:",
+     "text": "Das ist ein Wörterbuch. Das Wörterbuch ist neu.",
+     "id": "Itu kamus. Kamusnya baru.",
+     "literal": "itu adalah sebuah kamus. itu kamus adalah baru."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Und das hier? Ist das ein Heft?",
+     "id": "Dan yang ini? Apakah ini buku tulis?",
+     "literal": "dan itu di-sini? adalah itu sebuah buku-tulis?"
+    },
+    {
+     "speaker": "Frau Weber:",
+     "text": "Nein, das ist kein Heft. Das ist eine Zeitung.",
+     "id": "Bukan, itu bukan buku tulis. Itu koran.",
+     "literal": "tidak, itu adalah bukan buku-tulis. itu adalah sebuah koran."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Ach so. Die Zeitung ist sehr interessant.",
+     "id": "Oh begitu. Korannya menarik sekali.",
+     "literal": "ah begitu. itu koran adalah sangat menarik."
+    },
+    {
+     "speaker": "Frau Weber:",
+     "text": "Wie heißt das auf Deutsch?",
+     "id": "Ini bahasa Jermannya apa?",
+     "literal": "bagaimana bernama itu di Jerman?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Der Stuhl? Oder der Tisch?",
+     "id": "Kursi? Atau meja?",
+     "literal": "itu kursi? atau itu meja?"
+    },
+    {
+     "speaker": "Frau Weber:",
+     "text": "Genau, der Stuhl. Und die Tafel ist dort.",
+     "id": "Tepat, kursi. Dan papan tulisnya di sana.",
+     "literal": "tepat, itu kursi. dan itu papan-tulis adalah di-sana."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Sind das Fenster?",
+     "id": "Apakah itu jendela-jendela?",
+     "literal": "adalah itu jendela-jendela?"
+    },
+    {
+     "speaker": "Frau Weber:",
+     "text": "Ja, das sind Fenster. Und das sind die Türen.",
+     "id": "Ya, itu jendela-jendela. Dan itu pintu-pintunya.",
+     "literal": "ya, itu adalah jendela-jendela. dan itu adalah itu pintu-pintu."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Das ist schwer! Der, die, das — warum?",
+     "id": "Ini susah! Der, die, das — kenapa?",
+     "literal": "itu adalah berat! der, die, das — kenapa?"
+    },
+    {
+     "speaker": "Frau Weber:",
+     "text": "Keine Angst. Lernen Sie das Wort und den Artikel zusammen, immer.",
+     "id": "Jangan takut. Hafalkan katanya bersama kata sandangnya, selalu.",
+     "literal": "tidak-ada ketakutan. belajar Anda itu kata dan itu kata-sandang bersama, selalu."
+    }
+   ],
+   "notes": [
+    "***Das ist…* selalu *das*, apa pun benda yang ditunjuk.** Perhatikan baris 2: *Das ist **ein** Wörterbuch*, lalu ***Das** Wörterbuch ist neu*. *Das* yang pertama berarti \"ini/itu\" dan tak pernah berubah; *das* yang kedua adalah kata sandang milik *Wörterbuch*. Dua kata yang sama bentuknya, dua pekerjaan berbeda.",
+    "**Untuk benda jamak, *das ist* menjadi *das sind*.** *Das sind Fenster* — \"itu jendela-jendela\". Yang berubah kata kerjanya, bukan *das*-nya.",
+    "***ein* dan *eine* tak punya bentuk jamak.** *ein Stuhl* → *Stühle* (tanpa kata sandang sama sekali), persis seperti bahasa Indonesia yang tak memakai \"sebuah\" untuk benda jamak.",
+    "***kein* = *nicht* + *ein*.** Untuk menyangkal kata benda, jangan pakai *nicht*: *Das ist **kein** Heft*, bukan *das ist nicht ein Heft*. Bentuknya mengikuti jenis kelamin katanya, sama seperti *ein* — dan berbeda dari *ein*, *kein* **punya** bentuk jamak: *keine Bücher*.",
+    "***auf Deutsch*** = \"dalam bahasa Jerman\". Kalimat *Wie heißt das auf Deutsch?* akan jadi kalimat yang paling sering kamu pakai selama setahun pertama; hafalkan utuh.",
+    "***Genau*** (\"tepat\") adalah kata yang paling sering terdengar dalam percakapan Jerman sehari-hari — dipakai untuk membenarkan, menyetujui, atau sekadar mengisi jeda. Tetangganya: *ach so* (\"oh begitu\") dan *alles klar* (\"beres\")."
+   ],
+   "grammars": [
+    {
+     "title": "der, die, das — dan cara menebaknya",
+     "body": [
+      "Bahasa Jerman punya tiga jenis kata benda, dan masing-masing punya sepasang kata sandang: satu untuk benda yang sudah jelas mana (*der/die/das*, seperti \"itu\"), satu untuk benda yang baru disebut (*ein/eine*, seperti \"sebuah\")."
+     ],
+     "table": {
+      "head": [
+       "Jenis",
+       "Tertentu",
+       "Tak tentu",
+       "Ingkar",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "maskulin",
+        "**der** Tisch",
+        "**ein** Tisch",
+        "**kein** Tisch",
+        "meja"
+       ],
+       [
+        "feminin",
+        "**die** Tür",
+        "**eine** Tür",
+        "**keine** Tür",
+        "pintu"
+       ],
+       [
+        "netral",
+        "**das** Fenster",
+        "**ein** Fenster",
+        "**kein** Fenster",
+        "jendela"
+       ],
+       [
+        "jamak",
+        "**die** Fenster",
+        "— Fenster",
+        "**keine** Fenster",
+        "jendela-jendela"
+       ]
+      ]
+     },
+     "after": [
+      "Baris terakhir membawa satu kabar baik yang jarang disebut buku pelajaran: **semua kata benda jamak memakai *die***, tanpa kecuali, apa pun jenis kelamin bentuk tunggalnya. Satu aturan yang benar-benar bebas pengecualian.",
+      "Sekitar 80% kata benda bisa ditebak dari akhirannya. Daftar berikut tidak menutup semuanya, tapi menutup yang terbanyak dipakai:"
+     ],
+     "tables": [
+      {
+       "head": [
+        "Hampir selalu der",
+        "Hampir selalu die",
+        "Hampir selalu das"
+       ],
+       "rows": [
+        [
+         "-er (der Lehrer)",
+         "-ung (die Zeitung)",
+         "-chen (das Mädchen)"
+        ],
+        [
+         "-ling (der Frühling)",
+         "-heit (die Freiheit)",
+         "-lein (das Fräulein)"
+        ],
+        [
+         "-ismus (der Tourismus)",
+         "-keit (die Möglichkeit)",
+         "-ment (das Dokument)"
+        ],
+        [
+         "hari, bulan, musim (der Montag)",
+         "-schaft (die Freundschaft)",
+         "-um (das Museum)"
+        ],
+        [
+         "cuaca (der Regen, der Wind)",
+         "-ion (die Nation)",
+         "kata kerja jadi benda (das Essen)"
+        ],
+        [
+         "arah mata angin (der Norden)",
+         "-e (die Lampe, die Blume)",
+         "bahasa & warna (das Deutsch, das Rot)"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Bentuk jamak: lima pola, satu kebiasaan",
+     "body": [
+      "Bahasa Jerman tak punya satu akhiran jamak seperti *-s* dalam bahasa Inggris. Ada lima pola, dan tak ada aturan yang bisa meramalkan pola mana untuk kata mana — jadi bentuk jamaknya pun ikut dihafal bersama katanya."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Tunggal",
+       "Jamak",
+       "Sering pada"
+      ],
+      "rows": [
+       [
+        "**-e**",
+        "der Tisch",
+        "die Tisch**e**",
+        "kata maskulin pendek"
+       ],
+       [
+        "**-e + Umlaut**",
+        "der Stuhl",
+        "die St**ü**hl**e**",
+        "kata maskulin bervokal a, o, u"
+       ],
+       [
+        "**-(e)n**",
+        "die Tür",
+        "die Tür**en**",
+        "hampir semua kata feminin"
+       ],
+       [
+        "**-er + Umlaut**",
+        "das Buch",
+        "die B**ü**ch**er**",
+        "kata netral pendek"
+       ],
+       [
+        "**tanpa perubahan**",
+        "das Fenster",
+        "die Fenster",
+        "kata berakhiran -er, -en, -chen"
+       ],
+       [
+        "**-s**",
+        "das Auto",
+        "die Auto**s**",
+        "kata serapan"
+       ]
+      ]
+     },
+     "after": [
+      "Kamus menuliskannya dengan singkat: *der Stuhl, -\"e* berarti jamaknya *Stühle*; *die Tür, -en* berarti *Türen*. Begitu kamu terbiasa membaca tanda itu, satu baris kamus sudah memuat seluruh yang perlu kamu hafal.",
+      "Cara belajar yang menghemat waktu paling banyak: hafalkan **tiga hal sekaligus** dalam satu tarikan napas — *der Stuhl, die Stühle*. Menghafal kata dulu, lalu jenis kelaminnya belakangan, lalu jamaknya belakangan lagi berarti menghafal kata yang sama tiga kali."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Benda di sekitarmu",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Hafalkan seluruh baris, bukan kolom tengahnya saja. Kata sandang yang salah tidak membuat kalimatmu gagal dimengerti, tapi ia menular ke mana-mana begitu kamu sampai di Akkusativ dan Dativ."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Jamak",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "der Tisch",
+       "die Tische",
+       "tisy",
+       "meja"
+      ],
+      [
+       "der Stuhl",
+       "die Stühle",
+       "sytuul",
+       "kursi"
+      ],
+      [
+       "der Kugelschreiber",
+       "die Kugelschreiber",
+       "KUU-gel-syrai-ba",
+       "pulpen"
+      ],
+      [
+       "der Computer",
+       "die Computer",
+       "kom-PYUU-ta",
+       "komputer"
+      ],
+      [
+       "der Schlüssel",
+       "die Schlüssel",
+       "SYLÜ-sel",
+       "kunci"
+      ],
+      [
+       "die Tür",
+       "die Türen",
+       "tüür",
+       "pintu"
+      ],
+      [
+       "die Tafel",
+       "die Tafeln",
+       "TAA-fel",
+       "papan tulis"
+      ],
+      [
+       "die Zeitung",
+       "die Zeitungen",
+       "TSAI-tung",
+       "koran"
+      ],
+      [
+       "die Lampe",
+       "die Lampen",
+       "LAM-pe",
+       "lampu"
+      ],
+      [
+       "die Tasche",
+       "die Taschen",
+       "TA-sye",
+       "tas"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Das Handy* adalah kata Inggris yang tak dipakai orang Inggris — ponsel dalam bahasa Inggris adalah *mobile phone*. Bahasa Jerman penuh kata semacam ini (*das Handy*, *der Beamer*, *das Public Viewing*); orang menyebutnya *Scheinanglizismus*, \"kata Inggris palsu\"."
+    }
+   ]
+  },
+  {
+   "title": "Menyangkal: kein atau nicht?",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Indonesia memakai \"tidak\" dan \"bukan\" dengan pembagian yang mirip sekali, jadi aturan ini justru lebih mudah bagi kita daripada bagi penutur bahasa Inggris."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Yang disangkal",
+      "Kata ingkarnya",
+      "Contoh",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "kata benda",
+       "**kein**",
+       "Das ist **kein** Buch.",
+       "Itu bukan buku."
+      ],
+      [
+       "kata kerja",
+       "**nicht**",
+       "Ich arbeite **nicht**.",
+       "Saya tidak bekerja."
+      ],
+      [
+       "kata sifat",
+       "**nicht**",
+       "Das ist **nicht** neu.",
+       "Itu tidak baru."
+      ],
+      [
+       "kata benda bersandang tertentu",
+       "**nicht**",
+       "Das ist **nicht** der Lehrer.",
+       "Itu bukan gurunya."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Pegangan singkatnya: kalau kata bendanya bisa didahului *ein/eine* atau berdiri tanpa kata sandang, pakai **kein**. Kalau sudah ada *der/die/das*, *mein*, atau nama orang, pakai **nicht**."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kalimat yang menyelamatkan percakapan",
+     "items": [
+      "*Ich weiß nicht.* — Saya tidak tahu.",
+      "*Ich verstehe nicht.* — Saya tidak mengerti.",
+      "*Kein Problem!* — Tidak masalah! (perhatikan: *kein*, karena *Problem* kata benda)"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "de": "das",
+   "baca": "das",
+   "id": "ini, itu"
+  },
+  {
+   "de": "der / die / das",
+   "baca": "dea / dii / das",
+   "id": "kata sandang tertentu"
+  },
+  {
+   "de": "ein / eine",
+   "baca": "ain / AI-ne",
+   "id": "sebuah, seorang"
+  },
+  {
+   "de": "kein / keine",
+   "baca": "kain / KAI-ne",
+   "id": "bukan (untuk kata benda)"
+  },
+  {
+   "de": "nicht",
+   "baca": "nikht",
+   "id": "tidak"
+  },
+  {
+   "de": "der Tisch",
+   "baca": "tisy",
+   "id": "meja"
+  },
+  {
+   "de": "der Stuhl",
+   "baca": "sytuul",
+   "id": "kursi"
+  },
+  {
+   "de": "die Tür",
+   "baca": "tüür",
+   "id": "pintu"
+  },
+  {
+   "de": "das Fenster",
+   "baca": "FENS-ta",
+   "id": "jendela"
+  },
+  {
+   "de": "das Buch",
+   "baca": "buukh",
+   "id": "buku"
+  },
+  {
+   "de": "das Heft",
+   "baca": "heft",
+   "id": "buku tulis"
+  },
+  {
+   "de": "das Wörterbuch",
+   "baca": "VÖR-ta-buukh",
+   "id": "kamus"
+  },
+  {
+   "de": "die Zeitung",
+   "baca": "TSAI-tung",
+   "id": "koran"
+  },
+  {
+   "de": "die Tafel",
+   "baca": "TAA-fel",
+   "id": "papan tulis"
+  },
+  {
+   "de": "die Tasche",
+   "baca": "TA-sye",
+   "id": "tas"
+  },
+  {
+   "de": "das Handy",
+   "baca": "HEN-di",
+   "id": "ponsel"
+  },
+  {
+   "de": "das Wort",
+   "baca": "vort",
+   "id": "kata"
+  },
+  {
+   "de": "neu",
+   "baca": "noi",
+   "id": "baru"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "Was ist das?",
+    "Das ist ein Wörterbuch.",
+    "Das ist kein Heft.",
+    "Die Zeitung ist sehr interessant.",
+    "Das sind Fenster.",
+    "Wie heißt das auf Deutsch?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan *der*, *die*, atau *das*.",
+   "items": [
+    "____ Tisch ist neu.",
+    "____ Tür ist alt.",
+    "____ Fenster ist groß.",
+    "____ Zeitung ist interessant.",
+    "____ Buch ist schwer.",
+    "____ Stuhl ist hier."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ist / das / ein / Buch",
+    "kein / das / Heft / ist",
+    "sind / Fenster / das",
+    "neu / Wörterbuch / das / ist",
+    "auf Deutsch / heißt / wie / das",
+    "und / den Artikel / lernen Sie / zusammen / das Wort"
+   ]
+  }
+ ],
+ "answers": [
+  "Ini apa? — Itu kamus. — Itu bukan buku tulis. — Korannya menarik sekali. — Itu jendela-jendela. — Ini bahasa Jermannya apa?",
+  "Der — Die — Das — Die — Das — Der",
+  "Das ist ein Buch. — Das ist kein Heft. — Das sind Fenster. — Das Wörterbuch ist neu. — Wie heißt das auf Deutsch? — Lernen Sie das Wort und den Artikel zusammen."
+ ]
+}

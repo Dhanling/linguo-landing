@@ -1,0 +1,519 @@
+{
+ "title": "Kemarin kamu ngapain?",
+ "title_target": "Was hast du gestern gemacht?",
+ "goal": "Menceritakan kejadian yang sudah lewat memakai *Perfekt* — satu-satunya bentuk lampau yang dipakai orang Jerman dalam percakapan sehari-hari.",
+ "bekal": [
+  "membentuk Partizip II dari kata kerja biasa dan tak beraturan",
+  "menyusun kalimat lampau dengan *haben* + Partizip II",
+  "bertanya tentang masa lalu",
+  "menceritakan akhir pekanmu sendiri"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Montagmorgen",
+   "intro": "Senin pagi di kelas. Pertanyaan pertama Frau Weber selalu sama, dan jawabannya selalu berbentuk sama: *haben* di posisi kedua, kata kerja utamanya di ujung.",
+   "lines": [
+    {
+     "speaker": "Frau Weber:",
+     "text": "Guten Morgen! Was haben Sie am Wochenende gemacht?",
+     "id": "Selamat pagi! Akhir pekan Anda ngapain?",
+     "literal": "baik pagi! apa punya Anda pada akhir-pekan dibuat?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ich habe am Samstag Fußball gespielt.",
+     "id": "Sabtu saya main sepak bola.",
+     "literal": "aku punya pada Sabtu sepak-bola dimainkan."
+    },
+    {
+     "speaker": "Frau Weber:",
+     "text": "Schön! Und danach?",
+     "id": "Bagus! Lalu setelah itu?",
+     "literal": "indah! dan sesudah-itu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Danach habe ich geduscht und ein bisschen geschlafen.",
+     "id": "Setelah itu saya mandi dan tidur sebentar.",
+     "literal": "sesudah-itu punya aku dimandikan dan se sedikit ditiduri."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Ich habe am Samstag gearbeitet. Zwölf Stunden!",
+     "id": "Saya hari Sabtu kerja. Dua belas jam!",
+     "literal": "aku punya pada Sabtu dikerjakan. dua-belas jam-jam!"
+    },
+    {
+     "speaker": "Frau Weber:",
+     "text": "Zwölf Stunden? Haben Sie wenigstens gut gegessen?",
+     "id": "Dua belas jam? Setidaknya makannya enak?",
+     "literal": "dua-belas jam-jam? punya Anda setidaknya baik dimakan?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Nein. Ich habe nur einen Kaffee getrunken.",
+     "id": "Tidak. Saya cuma minum kopi.",
+     "literal": "tidak. aku punya hanya sebuah kopi diminum."
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Ich habe das ganze Wochenende gelesen. Zwei Bücher!",
+     "id": "Saya baca sepanjang akhir pekan. Dua buku!",
+     "literal": "aku punya itu seluruh akhir-pekan dibaca. dua buku-buku!"
+    },
+    {
+     "speaker": "Frau Weber:",
+     "text": "Zwei Bücher! Und was haben Sie am Sonntag gemacht, Budi?",
+     "id": "Dua buku! Dan hari Minggu Anda ngapain, Budi?",
+     "literal": "dua buku-buku! dan apa punya Anda pada Minggu dibuat, Budi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ich habe meinen Onkel besucht und wir haben zusammen gekocht.",
+     "id": "Saya mengunjungi paman saya dan kami masak bersama.",
+     "literal": "aku punya punyaku paman dikunjungi dan kami punya bersama dimasak."
+    },
+    {
+     "speaker": "Frau Weber:",
+     "text": "Und haben Sie auch Deutsch gelernt?",
+     "id": "Dan Anda belajar bahasa Jerman juga?",
+     "literal": "dan punya Anda juga Jerman dipelajari?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ähm… Ich habe die Hausaufgaben vergessen. Tut mir leid!",
+     "id": "Ehm… PR-nya saya lupa. Maaf!",
+     "literal": "ehm… aku punya itu pekerjaan-rumah dilupakan. membuat kepadaku sedih!"
+    }
+   ],
+   "notes": [
+    "**Perfekt = *haben* di posisi kedua + Partizip II di ujung.** Kalimat lampau Jerman selalu berkurung, persis seperti kalimat berkata kerja bantu di unit 11: *Ich **habe** am Samstag Fußball **gespielt**.* Yang berubah bentuk cuma *haben*-nya; Partizip II-nya tak pernah berubah sedikit pun.",
+    "**Bahasa Jerman percakapan hampir tak memakai bentuk lampau sederhana.** Ada bentuk *Präteritum* (*ich spielte*, *ich machte*), tapi itu bahasa tulis — koran, novel, dongeng. Kalau kamu bercerita dengan mulut, pakailah *Perfekt*, selalu.",
+    "**Dua perkecualian yang justru dipakai setiap hari:** *sein* dan *haben* lebih sering muncul dalam bentuk Präteritum-nya, ***war*** dan ***hatte***. *Ich **war** gestern zu Hause* terdengar jauh lebih alami daripada *ich bin gewesen*, dan *Ich **hatte** keine Zeit* lebih lazim daripada *ich habe gehabt*.",
+    "**Baris 4: *Danach habe ich geduscht*.** Kalimat dimulai dengan keterangan, jadi *haben* tetap di posisi kedua dan pelakunya mundur. Semua aturan urutan yang sudah kamu pasang tetap berlaku — Perfekt tidak menambah aturan baru, ia cuma mengisi ujung kalimat.",
+    "**Pertanyaan Perfekt menaruh *haben* di depan:** *Haben Sie gut gegessen?*, *Was hast du gemacht?* Partizip II-nya tetap di ujung, apa pun yang terjadi di depan.",
+    "***besucht*** dan ***vergessen*** (baris 10 dan 12) tidak memakai *ge-*. Kata kerja berawalan *be-*, *ver-*, *er-*, *ent-* tak pernah menerimanya — bentuk lampaunya sama persis dengan bentuk dasarnya, atau hampir."
+   ],
+   "grammars": [
+    {
+     "title": "Membentuk Partizip II",
+     "body": [
+      "Partizip II adalah bentuk mati kata kerja — ia tak pernah berubah mengikuti pelaku. Ada empat pola pembentukan, dan pola mana yang berlaku ditentukan oleh jenis kata kerjanya."
+     ],
+     "table": {
+      "head": [
+       "Jenis",
+       "Pola",
+       "Contoh",
+       "Partizip II"
+      ],
+      "rows": [
+       [
+        "biasa",
+        "**ge-** + akar + **-t**",
+        "machen, spielen, kaufen",
+        "**ge**mach**t**, **ge**spiel**t**, **ge**kauf**t**"
+       ],
+       [
+        "biasa berakar -t/-d",
+        "ge- + akar + **-et**",
+        "arbeiten, warten",
+        "**ge**arbeit**et**, **ge**wart**et**"
+       ],
+       [
+        "tak beraturan",
+        "**ge-** + akar berubah + **-en**",
+        "trinken, essen, lesen",
+        "**ge**trunk**en**, **ge**gess**en**, **ge**les**en**"
+       ],
+       [
+        "berawalan tak terpisah",
+        "**tanpa ge-**",
+        "besuchen, verstehen, bezahlen",
+        "besuch**t**, verstand**en**, bezahl**t**"
+       ],
+       [
+        "berakhiran -ieren",
+        "**tanpa ge-**",
+        "studieren, telefonieren",
+        "studier**t**, telefonier**t**"
+       ],
+       [
+        "kata kerja terpisah",
+        "awalan + **ge** + sisanya",
+        "einkaufen, anrufen, aufräumen",
+        "ein**ge**kauft, an**ge**rufen, auf**ge**räumt"
+       ]
+      ]
+     },
+     "after": [
+      "Baris terakhir adalah yang paling khas: *ge-* diselipkan **di tengah** kata, persis di antara awalan dan kata kerjanya. *Ich habe gestern **eingekauft**.* Terlihat aneh, tapi begitu kamu melihat kata kerja terpisahnya kembali menyatu di ujung kalimat, letak *ge-*-nya jadi masuk akal.",
+      "⚠️ Tidak ada cara menebak apakah suatu kata kerja beraturan atau tidak — sama seperti bahasa Inggris (*walk → walked* tapi *drink → drank*). Yang tak beraturan jumlahnya sekitar dua ratus, dan yang benar-benar sering dipakai kurang dari lima puluh. Lampiran di belakang modul ini memuat semuanya yang muncul di sini.",
+      "Cara menghafal yang paling hemat: hafalkan **bersama kata bantunya** dalam satu tarikan — *trinken, hat getrunken*. Menghafal Partizip II tanpa *hat* atau *ist*-nya berarti menghafal setengah informasi."
+     ]
+    },
+    {
+     "title": "Susunan kalimat lampau",
+     "body": [
+      "Sama seperti kalimat berkata kerja bantu: dua kutub, isi kalimat di tengahnya."
+     ],
+     "table": {
+      "head": [
+       "Posisi 1",
+       "haben",
+       "Tengah kalimat",
+       "Ujung"
+      ],
+      "rows": [
+       [
+        "Ich",
+        "**habe**",
+        "gestern Fußball",
+        "**gespielt**."
+       ],
+       [
+        "Gestern",
+        "**habe**",
+        "ich Fußball",
+        "**gespielt**."
+       ],
+       [
+        "**Hast**",
+        "",
+        "du die Hausaufgaben",
+        "**gemacht**?"
+       ],
+       [
+        "Was",
+        "**hast**",
+        "du am Wochenende",
+        "**gemacht**?"
+       ],
+       [
+        "Wir",
+        "**haben**",
+        "zusammen",
+        "**gekocht**."
+       ],
+       [
+        "Ich",
+        "**habe**",
+        "nichts",
+        "**verstanden**."
+       ]
+      ]
+     },
+     "after": [
+      "Bentuk *haben* mengikuti pelakunya seperti biasa: *ich habe*, *du hast*, *er hat*, *wir haben*, *ihr habt*, *sie/Sie haben*. Kalau kamu sudah hafal tabel di unit 4, kamu sudah menguasai separuh Perfekt.",
+      "**Letak *nicht*:** persis sebelum Partizip II. *Ich habe das **nicht** verstanden.* Aturannya sama dengan kalimat berkata kerja bantu — *nicht* selalu bersandar pada bagian kata kerja yang di ujung."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tiga puluh Partizip II yang paling sering dipakai",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Semua kata kerja di tabel ini memakai *haben*. Yang memakai *sein* dikumpulkan di unit berikutnya — jangan campur keduanya sekarang."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Infinitiv",
+      "Partizip II",
+      "Arti",
+      "Infinitiv",
+      "Partizip II",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "machen",
+       "gemacht",
+       "melakukan",
+       "trinken",
+       "getrunken",
+       "minum"
+      ],
+      [
+       "spielen",
+       "gespielt",
+       "bermain",
+       "essen",
+       "gegessen",
+       "makan"
+      ],
+      [
+       "kaufen",
+       "gekauft",
+       "membeli",
+       "lesen",
+       "gelesen",
+       "membaca"
+      ],
+      [
+       "lernen",
+       "gelernt",
+       "belajar",
+       "sehen",
+       "gesehen",
+       "melihat"
+      ],
+      [
+       "kochen",
+       "gekocht",
+       "memasak",
+       "sprechen",
+       "gesprochen",
+       "berbicara"
+      ],
+      [
+       "hören",
+       "gehört",
+       "mendengar",
+       "schreiben",
+       "geschrieben",
+       "menulis"
+      ],
+      [
+       "duschen",
+       "geduscht",
+       "mandi",
+       "nehmen",
+       "genommen",
+       "mengambil"
+      ],
+      [
+       "arbeiten",
+       "gearbeitet",
+       "bekerja",
+       "schlafen",
+       "geschlafen",
+       "tidur"
+      ],
+      [
+       "warten",
+       "gewartet",
+       "menunggu",
+       "finden",
+       "gefunden",
+       "menemukan"
+      ],
+      [
+       "suchen",
+       "gesucht",
+       "mencari",
+       "helfen",
+       "geholfen",
+       "menolong"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan *vergessen* di kolom kanan: Partizip II-nya **sama persis** dengan bentuk dasarnya. Beberapa kata kerja lain berperilaku begitu — *bekommen*, *beginnen* — dan itu selalu terjadi pada kata kerja tak beraturan yang berawalan tak terpisah."
+    }
+   ]
+  },
+  {
+   "title": "Bercerita tentang kemarin",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Was hast du gestern gemacht?",
+       "Kemarin kamu ngapain?"
+      ],
+      [
+       "Was haben Sie am Wochenende gemacht?",
+       "Akhir pekan Anda ngapain?"
+      ],
+      [
+       "Ich habe gearbeitet.",
+       "Saya bekerja."
+      ],
+      [
+       "Ich habe nichts gemacht.",
+       "Saya tidak melakukan apa-apa."
+      ],
+      [
+       "Ich war zu Hause.",
+       "Saya di rumah."
+      ],
+      [
+       "Ich hatte keine Zeit.",
+       "Saya tidak sempat."
+      ],
+      [
+       "Es hat viel Spaß gemacht!",
+       "Menyenangkan sekali!"
+      ],
+      [
+       "Wie war dein Wochenende?",
+       "Akhir pekanmu bagaimana?"
+      ],
+      [
+       "Es war sehr schön.",
+       "Menyenangkan."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kata penyambung cerita",
+     "items": [
+      "**zuerst** — mula-mula. *Zuerst habe ich gefrühstückt.*",
+      "**dann / danach** — lalu, sesudah itu. *Dann habe ich eingekauft.*",
+      "**später** — kemudian. *Später habe ich Freunde getroffen.*",
+      "**am Ende / zum Schluss** — akhirnya. *Zum Schluss habe ich ferngesehen.*"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Empat kata itu mengubah daftar kalimat menjadi cerita. Dan karena semuanya berdiri di posisi pertama, semuanya melempar pelaku ke belakang *haben* — latihan urutan kata yang datang gratis bersama latihan bentuk lampau."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "de": "gestern",
+   "baca": "GES-tan",
+   "id": "kemarin"
+  },
+  {
+   "de": "vorgestern",
+   "baca": "FOOA-ges-tan",
+   "id": "kemarin dulu"
+  },
+  {
+   "de": "letzte Woche",
+   "baca": "LETS-te VO-khe",
+   "id": "minggu lalu"
+  },
+  {
+   "de": "danach",
+   "baca": "da-NAAKH",
+   "id": "sesudah itu"
+  },
+  {
+   "de": "zuerst",
+   "baca": "tsu-EEAST",
+   "id": "mula-mula"
+  },
+  {
+   "de": "später",
+   "baca": "SYPEE-ta",
+   "id": "kemudian"
+  },
+  {
+   "de": "gemacht",
+   "baca": "ge-MAKHT",
+   "id": "(sudah) dilakukan"
+  },
+  {
+   "de": "gespielt",
+   "baca": "ge-SYPIILT",
+   "id": "(sudah) dimainkan"
+  },
+  {
+   "de": "gegessen",
+   "baca": "ge-GE-sen",
+   "id": "(sudah) dimakan"
+  },
+  {
+   "de": "getrunken",
+   "baca": "ge-TRUN-ken",
+   "id": "(sudah) diminum"
+  },
+  {
+   "de": "gelesen",
+   "baca": "ge-LEE-zen",
+   "id": "(sudah) dibaca"
+  },
+  {
+   "de": "geschlafen",
+   "baca": "ge-SYLAA-fen",
+   "id": "(sudah) tidur"
+  },
+  {
+   "de": "gearbeitet",
+   "baca": "ge-AR-bai-tet",
+   "id": "(sudah) bekerja"
+  },
+  {
+   "de": "besucht",
+   "baca": "be-ZUUKHT",
+   "id": "(sudah) dikunjungi"
+  },
+  {
+   "de": "vergessen",
+   "baca": "fea-GE-sen",
+   "id": "lupa"
+  },
+  {
+   "de": "verstanden",
+   "baca": "fea-SYTAN-den",
+   "id": "(sudah) dimengerti"
+  },
+  {
+   "de": "geschrieben",
+   "baca": "ge-SYRII-ben",
+   "id": "(sudah) ditulis"
+  },
+  {
+   "de": "getroffen",
+   "baca": "ge-TRO-fen",
+   "id": "(sudah) ditemui"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "Was hast du gestern gemacht?",
+    "Ich habe am Samstag Fußball gespielt.",
+    "Ich habe nur einen Kaffee getrunken.",
+    "Wir haben zusammen gekocht.",
+    "Ich habe die Hausaufgaben vergessen.",
+    "Es hat viel Spaß gemacht."
+   ]
+  },
+  {
+   "prompt": "Isi dengan Partizip II yang tepat.",
+   "items": [
+    "Ich habe Fußball ____. (spielen)",
+    "Er hat einen Kaffee ____. (trinken)",
+    "Wir haben zusammen ____. (kochen)",
+    "Sie hat zwei Bücher ____. (lesen)",
+    "Ich habe zwölf Stunden ____. (arbeiten)",
+    "Hast du deinen Onkel ____? (besuchen)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat lampau yang benar.",
+   "items": [
+    "gemacht / du / hast / was / gestern",
+    "gespielt / ich / Fußball / habe",
+    "habe / ich / danach / geschlafen",
+    "gekocht / wir / zusammen / haben",
+    "vergessen / die Hausaufgaben / ich / habe",
+    "gearbeitet / am Samstag / er / hat"
+   ]
+  }
+ ],
+ "answers": [
+  "Kemarin kamu ngapain? — Hari Sabtu saya main sepak bola. — Saya cuma minum kopi. — Kami masak bersama. — Saya lupa PR-nya. — Menyenangkan sekali.",
+  "gespielt — getrunken — gekocht — gelesen — gearbeitet — besucht",
+  "Was hast du gestern gemacht? — Ich habe Fußball gespielt. — Danach habe ich geschlafen. — Wir haben zusammen gekocht. — Ich habe die Hausaufgaben vergessen. — Am Samstag hat er gearbeitet."
+ ],
+ "wave": "Sebelum mulai unit 18, buka lagi dialog **Unit 10**. Periksa satu hal saja: berapa unsur yang berdiri sebelum kata kerja di tiap kalimat?"
+}

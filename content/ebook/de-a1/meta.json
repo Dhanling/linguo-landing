@@ -1,0 +1,831 @@
+{
+ "brand": "LINGUO",
+ "cover": "cover.png",
+ "title": "Deutsch 101",
+ "subtitle": "Modul belajar mandiri bahasa Jerman untuk pemula",
+ "level": "Level A1 (CEFR)",
+ "edition": "Edisi Bahasa Indonesia",
+ "ruby": false,
+ "vocab_columns": [
+  {
+   "head": "Deutsch",
+   "key": "de"
+  },
+  {
+   "head": "Cara baca",
+   "key": "baca"
+  },
+  {
+   "head": "Bahasa Indonesia",
+   "key": "id"
+  }
+ ],
+ "product": {
+  "slug": "modul-jerman-101-id",
+  "title": "German 101 new edition",
+  "type": "ebook",
+  "language": "German",
+  "level": "A1",
+  "file": "german-101-a1-id.pdf",
+  "description": "Dua puluh unit belajar mandiri bergaya Assimil untuk bahasa Jerman dari nol: dialog pendek, terjemahan harfiah yang memperlihatkan cara bahasa Jerman menyusun kalimat, catatan tata bahasa, kosakata dengan cara baca, latihan, dan kunci jawaban. Ditulis khusus untuk penutur bahasa Indonesia — der/die/das, Akkusativ, kata kerja terpisah, dan urutan kata dibedah satu per satu, bukan ditumpuk sekaligus.",
+  "pages": 149
+ },
+ "cover_design": {
+  "bg": "#1D3457",
+  "accent": "#F0B429",
+  "label": "BAHASA JERMAN",
+  "judul": "Deutsch",
+  "cap": "ß",
+  "judul_size": "180px",
+  "pola_opacity": 0.45,
+  "pola": "background-image:repeating-linear-gradient(90deg, rgba(255,255,255,.12) 0 3px, transparent 3px 52px),repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 3px, transparent 3px 52px);",
+  "ringkas": "Modul belajar mandiri bahasa Jerman untuk pemula — dari menyapa sampai menceritakan perjalanan kemarin.",
+  "catatan": "Terjemahan harfiah ditulis di bawah tiap baris dialog."
+ },
+ "front": [
+  {
+   "title": "Kata pengantar",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Jerman punya reputasi yang tidak sepenuhnya adil. Orang mendengar kata sepanjang *Geschwindigkeitsbegrenzung* lalu menyimpulkan bahasanya rumit, padahal kata panjang itu justru bagian termudah — cuma beberapa kata pendek yang didempetkan tanpa spasi."
+    },
+    {
+     "type": "p",
+     "text": "Yang benar-benar menahan pemula Indonesia ada di tempat lain, dan jumlahnya sedikit: setiap benda punya jenis kelamin yang harus ikut dihafal (**der**, **die**, **das**), kata sandangnya berubah bentuk begitu benda itu jadi sasaran perbuatan (**Akkusativ**), sebagian kata kerja pecah dua dan separuhnya terlempar ke ujung kalimat (*ich **stehe** um sechs **auf***), dan kata kerja bersikeras duduk di posisi kedua apa pun yang mendahuluinya."
+    },
+    {
+     "type": "p",
+     "text": "Modul ini menyerang empat titik itu satu per satu, bukan sekaligus. Tiap unit berangkat dari percakapan yang bisa langsung kamu pakai — memesan kopi, menyebut umur, menanyakan arah — baru sesudahnya menjelaskan kenapa kalimatnya berbentuk begitu. Penjelasannya sengaja pendek. Yang panjang bukan teorinya, melainkan latihannya."
+    },
+    {
+     "type": "p",
+     "text": "Dua puluh unit pendek di dalamnya menutup seluruh bahan **Level A1 (CEFR)** — bahan yang sama dengan ujian *Start Deutsch 1* / *Goethe-Zertifikat A1*: perkenalan, asal, keluarga, angka, jam, rutinitas, belanja, tempat tinggal, arah jalan, makan di restoran, cuaca, sampai menceritakan kejadian kemarin dengan *Perfekt*."
+    },
+    {
+     "type": "kotak",
+     "title": "Sebelum mulai",
+     "items": [
+      "Sediakan 20-30 menit tanpa gangguan, bukan dua jam yang terpotong-potong. Bahasa menempel lewat pengulangan pendek yang sering, bukan lewat satu serangan panjang.",
+      "Baca dengan suara keras. Bahasa Jerman dibunyikan jauh lebih rapi daripada bahasa Inggris — sekali kamu hafal aturan bacanya, hampir tak ada kejutan lagi.",
+      "Hafalkan kata benda **bersama kata sandangnya**. Bukan *Tisch*, tapi *der Tisch*. Ini kebiasaan kecil yang menghemat berbulan-bulan kebingungan di kemudian hari."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu hal yang tidak bisa digantikan buku mana pun: lawan bicara. Pakai modul ini untuk menyiapkan bahannya, lalu cari kesempatan memakainya dengan manusia sungguhan."
+    },
+    {
+     "type": "p",
+     "text": "Selamat belajar. *Viel Erfolg!*"
+    }
+   ]
+  },
+  {
+   "type": "isi",
+   "title": "Daftar isi",
+   "intro": "Modul ini paling baik dikerjakan berurutan — tiap unit memakai ulang apa yang dipasang unit sebelumnya."
+  },
+  {
+   "title": "Cara memakai modul ini",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Modul ini disusun untuk **belajar sendiri**. Tiap unit dirancang selesai dalam satu kali duduk, sekitar 20-30 menit. Yang penting bukan seberapa cepat kamu maju, tapi seberapa sering kamu kembali."
+    },
+    {
+     "type": "p",
+     "text": "Setiap unit punya susunan yang sama, dan urutannya sengaja begitu:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Dialog** — baca dulu bahasa Jermannya dengan suara keras, jangan lihat artinya. Biarkan telinga bekerja sebelum otak menuntut penjelasan.",
+      "**Terjemahan harfiah** — baris kecil miring di bawah arti. Ini bagian yang paling sering dilewati orang, padahal di sinilah kamu melihat cara bahasa Jerman *berpikir*. Contoh: *Wie geht es dir?* secara harfiah berarti \"bagaimana berjalan itu kepadamu?\", bukan \"apa kabarmu\".",
+      "**Catatan** — penjelasan pendek atas hal-hal yang tadi terasa aneh.",
+      "**Kotak tata bahasa** — satu aturan per unit, dengan tabelnya. Jangan dihafal mentah; kembalilah ke sini saat mengerjakan latihan.",
+      "**Kosakata** — kata baru unit itu, lengkap dengan cara bacanya. Kata benda selalu ditulis dengan *der / die / das*-nya.",
+      "**Latihan** — kerjakan tanpa melihat kunci. Salah itu bagian dari prosesnya.",
+      "**Kunci jawaban** — baru dibuka setelah kamu benar-benar mencoba."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Ulangan berjenjang",
+     "items": [
+      "Mulai unit 8, sisihkan lima menit di awal sesi untuk membaca ulang dialog dari tujuh unit sebelumnya — unit 8 mengulang unit 1, unit 9 mengulang unit 2, dan seterusnya.",
+      "Kali ini bacanya berbeda: tutup kolom bahasa Jermannya, lihat terjemahan Indonesianya saja, lalu coba bangun ulang kalimat Jermannya dari kepala.",
+      "Ini terasa mudah, dan memang harus terasa mudah. Gunanya bukan menambah bahan baru, melainkan memindahkan bahan lama dari \"pernah baca\" ke \"keluar sendiri\"."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu peringatan soal huruf besar: dalam bahasa Jerman **semua kata benda ditulis dengan huruf kapital**, di mana pun letaknya — *der Tisch*, *ein Buch*, *meine Mutter*. Ini bukan salah cetak, dan menirunya sejak hari pertama akan menghemat banyak koreksi nanti."
+    }
+   ]
+  },
+  {
+   "title": "Pelafalan bahasa Jerman",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kabar baiknya: bahasa Jerman dibaca **hampir persis seperti tulisannya**. Berbeda dari bahasa Inggris, satu huruf hampir selalu berbunyi sama di kata mana pun. Begitu daftar pendek di halaman ini kamu kuasai, kamu bisa membaca kata Jerman yang belum pernah kamu lihat sekalipun."
+    },
+    {
+     "type": "p",
+     "text": "Kolom \"cara baca\" di seluruh modul ini memakai ejaan Indonesia. Suku kata yang **DITULIS BESAR** adalah suku kata yang ditekan."
+    },
+    {
+     "type": "sub",
+     "text": "Huruf yang bunyinya berbeda dari dugaan"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Huruf",
+      "Dibaca",
+      "Contoh",
+      "Cara baca"
+     ],
+     "rows": [
+      [
+       "w",
+       "v (seperti *van*)",
+       "**w**o",
+       "voo"
+      ],
+      [
+       "v",
+       "f",
+       "**v**ier",
+       "fiir"
+      ],
+      [
+       "z",
+       "ts",
+       "**z**ehn",
+       "tseen"
+      ],
+      [
+       "s (di depan vokal)",
+       "z",
+       "**s**ieben",
+       "ZII-ben"
+      ],
+      [
+       "ß",
+       "s tajam",
+       "hei**ß**en",
+       "HAI-sen"
+      ],
+      [
+       "j",
+       "y",
+       "**j**a",
+       "yaa"
+      ],
+      [
+       "r (di akhir suku kata)",
+       "a lemah",
+       "Vate**r**",
+       "FAA-ta"
+      ],
+      [
+       "ch (sesudah a, o, u)",
+       "kh dari tenggorokan",
+       "a**ch**t",
+       "akht"
+      ],
+      [
+       "ch (sesudah i, e, ä, ö, ü, l, n, r)",
+       "kh halus, seperti mendesis",
+       "i**ch**",
+       "ikh"
+      ],
+      [
+       "sch",
+       "sy",
+       "**Sch**ule",
+       "SYUU-le"
+      ],
+      [
+       "sp- / st- (di awal kata)",
+       "syp- / syt-",
+       "**sp**rechen, **St**adt",
+       "SYPRE-khen, SYTAT"
+      ],
+      [
+       "tsch",
+       "c (seperti *cabe*)",
+       "**Tsch**üss",
+       "cüs"
+      ],
+      [
+       "-er (di akhir kata)",
+       "a",
+       "Bruder",
+       "BRUU-da"
+      ],
+      [
+       "h (sesudah vokal)",
+       "tak dibunyikan, cuma memanjangkan",
+       "Ja**h**r",
+       "yaar"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Gabungan vokal"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tulisan",
+      "Dibaca",
+      "Contoh",
+      "Cara baca"
+     ],
+     "rows": [
+      [
+       "ei / ai",
+       "ai",
+       "n**ei**n",
+       "nain"
+      ],
+      [
+       "ie",
+       "ii panjang",
+       "s**ie**",
+       "zii"
+      ],
+      [
+       "eu / äu",
+       "oi",
+       "n**eu**n",
+       "noin"
+      ],
+      [
+       "aa / ee / oo",
+       "vokal panjang",
+       "T**ee**",
+       "tee"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Tiga huruf bertitik dua (Umlaut)"
+    },
+    {
+     "type": "p",
+     "text": "Titik dua di atas huruf bukan hiasan — ia mengubah bunyinya, dan sering sekaligus mengubah arti katanya (*Mutter* = ibu, *Mütter* = ibu-ibu)."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Huruf",
+      "Cara membunyikan",
+      "Contoh",
+      "Cara baca"
+     ],
+     "rows": [
+      [
+       "ä",
+       "seperti **e** pada \"enak\"",
+       "M**ä**dchen",
+       "MEET-khen"
+      ],
+      [
+       "ö",
+       "bentuk mulut seperti **o**, tapi yang keluar bunyi **e**",
+       "sch**ö**n",
+       "syön"
+      ],
+      [
+       "ü",
+       "bentuk mulut seperti **u**, tapi yang keluar bunyi **i**",
+       "f**ü**nf",
+       "fünf"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Dua kebiasaan yang menolong sejak hari pertama",
+     "items": [
+      "**Konsonan di ujung kata jadi tuli.** *und* dibaca \"unt\", *Tag* dibaca \"taak\", *halb* dibaca \"halp\". Huruf b, d, g di posisi akhir mengeras jadi p, t, k.",
+      "**Tekanan hampir selalu di suku kata pertama** — *ARbeiten*, *DEUTSCHland*, *FREUNdin*. Perkecualiannya kata serapan (*StuDENT*, *ResTAUrant*) dan kata berawalan *ver-*, *be-*, *ge-*, *er-* yang tak pernah ditekan (*verSTEhen*, *beSUchen*)."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalau kamu ragu di suatu kata, bacalah huruf per huruf apa adanya. Sembilan dari sepuluh kali, itu sudah benar."
+    }
+   ]
+  }
+ ],
+ "back": [
+  {
+   "title": "Ringkasan tata bahasa A1",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Halaman-halaman ini bukan bahan baru. Semuanya sudah muncul di dalam unit; di sini cuma dikumpulkan supaya bisa dilirik cepat saat mengerjakan latihan."
+    },
+    {
+     "type": "sub",
+     "text": "1. Kata kerja: bentuk sekarang (Präsens)"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Orang",
+      "wohnen (biasa)",
+      "sein (adalah)",
+      "haben (punya)"
+     ],
+     "rows": [
+      [
+       "ich",
+       "wohn**e**",
+       "bin",
+       "habe"
+      ],
+      [
+       "du",
+       "wohn**st**",
+       "bist",
+       "hast"
+      ],
+      [
+       "er / sie / es",
+       "wohn**t**",
+       "ist",
+       "hat"
+      ],
+      [
+       "wir",
+       "wohn**en**",
+       "sind",
+       "haben"
+      ],
+      [
+       "ihr",
+       "wohn**t**",
+       "seid",
+       "habt"
+      ],
+      [
+       "sie / Sie",
+       "wohn**en**",
+       "sind",
+       "haben"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kata kerja beruas vokal berubah hanya pada *du* dan *er/sie/es*: *sprechen* → du spr**i**chst, er spr**i**cht; *fahren* → du f**ä**hrst, er f**ä**hrt; *lesen* → du l**ie**st, er l**ie**st; *nehmen* → du n**imm**st, er n**imm**t."
+    },
+    {
+     "type": "sub",
+     "text": "2. Kata sandang"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "",
+      "maskulin",
+      "feminin",
+      "netral",
+      "jamak"
+     ],
+     "rows": [
+      [
+       "Nominativ (pelaku)",
+       "**der** / ein",
+       "**die** / eine",
+       "**das** / ein",
+       "**die** / —"
+      ],
+      [
+       "Akkusativ (sasaran)",
+       "**den** / ein**en**",
+       "**die** / eine",
+       "**das** / ein",
+       "**die** / —"
+      ],
+      [
+       "Dativ (tempat, penerima)",
+       "**dem** / ein**em**",
+       "**der** / ein**er**",
+       "**dem** / ein**em**",
+       "**den** / —"
+      ],
+      [
+       "ingkar (kein)",
+       "kein / kein**en** / kein**em**",
+       "keine / keine / kein**er**",
+       "kein / kein / kein**em**",
+       "keine / keine / kein**en**"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan satu-satunya kotak yang benar-benar berubah di Akkusativ: **maskulin**. Semua yang lain sama persis dengan Nominativ. Inilah sebabnya Akkusativ jauh lebih mudah daripada kelihatannya."
+    },
+    {
+     "type": "sub",
+     "text": "3. Kata milik"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "",
+      "maskulin / netral",
+      "feminin / jamak"
+     ],
+     "rows": [
+      [
+       "saya",
+       "mein Vater / mein Kind",
+       "mein**e** Mutter / mein**e** Kinder"
+      ],
+      [
+       "kamu",
+       "dein",
+       "dein**e**"
+      ],
+      [
+       "dia (lk)",
+       "sein",
+       "sein**e**"
+      ],
+      [
+       "dia (pr)",
+       "ihr",
+       "ihr**e**"
+      ],
+      [
+       "kami",
+       "unser",
+       "unser**e**"
+      ],
+      [
+       "Anda (sopan)",
+       "Ihr",
+       "Ihr**e**"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "4. Urutan kata"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Kalimat berita:** kata kerja selalu di **posisi kedua**. *Ich fahre morgen nach Berlin.* / *Morgen fahre ich nach Berlin.* Kalau bagian lain maju ke depan, pelakunya mundur ke belakang kata kerja — bukan kata kerjanya yang menyingkir.",
+      "**Pertanyaan ya/tidak:** kata kerja di **posisi pertama**. *Kommst du aus Indonesien?*",
+      "**Pertanyaan berkata tanya:** kata tanya, lalu kata kerja. *Woher kommst du?*",
+      "**Perintah:** kata kerja di depan. *Geh nach links!* / *Gehen Sie nach links!*",
+      "**Kurung kalimat (Satzklammer):** kalau ada dua bagian kata kerja, yang satu di posisi kedua dan yang satu lagi terlempar ke **ujung kalimat**. *Ich **muss** heute lange **arbeiten**.* / *Ich **stehe** um sechs Uhr **auf**.* / *Ich **habe** Pizza **gegessen**.*",
+      "**Anak kalimat dengan *weil* / *dass*:** kata kerjanya pindah ke ujung. *Ich bleibe zu Hause, **weil** ich krank **bin**.*"
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "5. Kata depan yang paling sering dipakai"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Selalu Dativ",
+      "Selalu Akkusativ",
+      "Dativ kalau diam, Akkusativ kalau berpindah"
+     ],
+     "rows": [
+      [
+       "aus, bei, mit, nach, seit, von, zu",
+       "durch, für, ohne, um, gegen",
+       "in, an, auf, unter, über, vor, hinter, neben, zwischen"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Gabungan yang wajib dihafal utuh: *zu dem* → **zum**, *zu der* → **zur**, *in dem* → **im**, *an dem* → **am**, *in das* → **ins**, *bei dem* → **beim**."
+    },
+    {
+     "type": "sub",
+     "text": "6. Waktu"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata depan",
+      "Dipakai untuk",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "**um**",
+       "jam",
+       "um acht Uhr"
+      ],
+      [
+       "**am**",
+       "hari & bagian hari",
+       "am Montag, am Abend"
+      ],
+      [
+       "**im**",
+       "bulan & musim",
+       "im Mai, im Sommer"
+      ],
+      [
+       "**von … bis**",
+       "rentang",
+       "von neun bis fünf"
+      ],
+      [
+       "(tanpa kata depan)",
+       "keterangan lepas",
+       "heute, morgen, gestern, jetzt"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *morgen* (huruf kecil) = besok; *der Morgen* (huruf besar) = pagi. *Morgen früh* = besok pagi."
+    },
+    {
+     "type": "sub",
+     "text": "7. Bentuk lampau sehari-hari (Perfekt)"
+    },
+    {
+     "type": "p",
+     "text": "**haben / sein + Partizip II di ujung kalimat.** Kebanyakan kata kerja memakai *haben*. Yang memakai *sein* adalah kata kerja **perpindahan tempat** (*gehen, fahren, fliegen, kommen*) dan **perubahan keadaan** (*aufstehen, einschlafen*), ditambah *sein* dan *bleiben* sendiri."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Jenis",
+      "Pola",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "biasa",
+       "ge- + akar + -t",
+       "machen → **ge**mach**t**"
+      ],
+      [
+       "tak beraturan",
+       "ge- + akar (vokal berubah) + -en",
+       "trinken → **ge**trunk**en**"
+      ],
+      [
+       "kata kerja terpisah",
+       "awalan + ge + sisanya",
+       "aufstehen → **auf**ge**standen**"
+      ],
+      [
+       "berawalan ver-, be-, er-",
+       "tanpa ge-",
+       "verstehen → verstanden"
+      ],
+      [
+       "berakhiran -ieren",
+       "tanpa ge-",
+       "telefonieren → telefoniert"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "8. Angka"
+    },
+    {
+     "type": "p",
+     "text": "Satuan dibaca **lebih dulu** daripada puluhan: *einundzwanzig* = \"satu dan dua puluh\" = 21. Kebiasaan ini bertahan sampai 99, dan menjadi sumber salah dengar nomor telepon nomor satu bagi pemula."
+    }
+   ]
+  },
+  {
+   "title": "Kata kerja tak beraturan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Daftar ini sengaja dibatasi pada kata kerja yang benar-benar muncul di modul ini. Kolom ketiga memuat bentuk *du*/*er* kalau vokalnya berubah, kolom keempat bentuk Perfekt lengkap dengan kata bantunya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Infinitiv",
+      "Arti",
+      "du / er",
+      "Perfekt"
+     ],
+     "rows": [
+      [
+       "sein",
+       "adalah",
+       "du bist / er ist",
+       "ist **gewesen**"
+      ],
+      [
+       "haben",
+       "punya",
+       "du hast / er hat",
+       "hat **gehabt**"
+      ],
+      [
+       "werden",
+       "menjadi",
+       "du wirst / er wird",
+       "ist **geworden**"
+      ],
+      [
+       "sprechen",
+       "berbicara",
+       "du sprichst / er spricht",
+       "hat **gesprochen**"
+      ],
+      [
+       "essen",
+       "makan",
+       "du isst / er isst",
+       "hat **gegessen**"
+      ],
+      [
+       "trinken",
+       "minum",
+       "—",
+       "hat **getrunken**"
+      ],
+      [
+       "nehmen",
+       "mengambil",
+       "du nimmst / er nimmt",
+       "hat **genommen**"
+      ],
+      [
+       "lesen",
+       "membaca",
+       "du liest / er liest",
+       "hat **gelesen**"
+      ],
+      [
+       "sehen",
+       "melihat",
+       "du siehst / er sieht",
+       "hat **gesehen**"
+      ],
+      [
+       "schlafen",
+       "tidur",
+       "du schläfst / er schläft",
+       "hat **geschlafen**"
+      ],
+      [
+       "fahren",
+       "berkendara",
+       "du fährst / er fährt",
+       "ist **gefahren**"
+      ],
+      [
+       "gehen",
+       "pergi, berjalan",
+       "—",
+       "ist **gegangen**"
+      ],
+      [
+       "kommen",
+       "datang",
+       "—",
+       "ist **gekommen**"
+      ],
+      [
+       "fliegen",
+       "terbang",
+       "—",
+       "ist **geflogen**"
+      ],
+      [
+       "bleiben",
+       "tinggal, menetap",
+       "—",
+       "ist **geblieben**"
+      ],
+      [
+       "aufstehen",
+       "bangun tidur",
+       "du stehst … auf",
+       "ist **aufgestanden**"
+      ],
+      [
+       "schreiben",
+       "menulis",
+       "—",
+       "hat **geschrieben**"
+      ],
+      [
+       "finden",
+       "menemukan",
+       "—",
+       "hat **gefunden**"
+      ],
+      [
+       "helfen",
+       "menolong",
+       "du hilfst / er hilft",
+       "hat **geholfen**"
+      ],
+      [
+       "geben",
+       "memberi",
+       "du gibst / er gibt",
+       "hat **gegeben**"
+      ],
+      [
+       "treffen",
+       "menemui",
+       "du triffst / er trifft",
+       "hat **getroffen**"
+      ],
+      [
+       "verstehen",
+       "mengerti",
+       "—",
+       "hat **verstanden**"
+      ],
+      [
+       "vergessen",
+       "lupa",
+       "du vergisst / er vergisst",
+       "hat **vergessen**"
+      ],
+      [
+       "anfangen",
+       "mulai",
+       "du fängst … an",
+       "hat **angefangen**"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Cara menghafal yang paling hemat: hafalkan **tiga bentuk sekaligus** dalam satu tarikan napas — *fahren, fährt, ist gefahren*. Menghafalnya terpisah berarti menghafalnya tiga kali."
+    }
+   ]
+  },
+  {
+   "title": "Apa selanjutnya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kalau kamu sampai di halaman ini setelah mengerjakan seluruh latihannya, kemampuanmu sekarang kira-kira setara **A1 CEFR**: kamu bisa memperkenalkan diri, mengurus keperluan sehari-hari yang sederhana, dan bercerita singkat tentang kemarin dan besok — asal lawan bicaramu berbicara pelan dan mau mengulang."
+    },
+    {
+     "type": "sub",
+     "text": "Tiga hal yang paling berguna dikerjakan minggu ini"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Ulangi seluruh dialog sekali lagi, dari belakang ke depan.** Unit 20 dulu, unit 1 terakhir. Urutan terbalik memaksa otak membaca isinya, bukan mengingat urutannya.",
+      "**Tulis sepuluh kalimat tentang harimu sendiri**, memakai *Perfekt*. Bukan kalimat contoh dari buku — kalimat tentang hidupmu, dengan nama tempat yang betul-betul kamu datangi.",
+      "**Cari satu lawan bicara.** Kelas Private Linguo, teman sekelas, atau siapa pun yang mau menahan diri untuk tidak beralih ke bahasa Inggris."
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Yang menunggu di A2"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Dativ dipakai penuh** — bukan cuma di kata depan tempat, tapi juga sebagai penerima: *Ich gebe **meinem Bruder** das Buch.*",
+      "**Kata sifat yang ikut berubah** (*ein **kleines** Haus*, *die **neue** Wohnung*) — bab yang paling ditakuti pemula, dan sebetulnya cuma satu tabel.",
+      "**Präteritum** untuk bercerita tertulis: *war*, *hatte*, *ging*, *machte*.",
+      "**Anak kalimat** yang lebih panjang: *wenn*, *dass*, *obwohl*, plus kata kerja yang selalu terlempar ke ujung.",
+      "**Konjunktiv II untuk sopan santun**: *Ich hätte gern…*, *Könnten Sie bitte…* — dua kalimat yang langsung menaikkan kesan bahasamu."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalau tujuanmu ujian resmi, sasaran berikutnya adalah **Goethe-Zertifikat A2** atau **telc Deutsch A2**. Bentuk ujiannya sama: menyimak, membaca, menulis, berbicara — dan bagian berbicaranya jauh lebih pendek daripada yang orang bayangkan."
+    },
+    {
+     "type": "p",
+     "text": "*Alles Gute und viel Erfolg!*"
+    }
+   ]
+  }
+ ],
+ "font_size": "9.8pt",
+ "page_margin": "15mm 13mm 13mm"
+}

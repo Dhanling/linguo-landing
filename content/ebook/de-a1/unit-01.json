@@ -1,0 +1,533 @@
+{
+ "title": "Halo, siapa namamu?",
+ "title_target": "Hallo! Wie heißt du?",
+ "goal": "Menyapa sesuai waktu hari, memperkenalkan diri, dan memilih antara *du* dan *Sie* — keputusan pertama yang harus diambil setiap kali kamu membuka mulut dalam bahasa Jerman.",
+ "bekal": [
+  "menyapa dan berpamitan",
+  "menyebut namamu (*Ich heiße…*) dan menanyakan nama orang",
+  "mengatakan kamu ini siapa (*Ich bin Student*)",
+  "memilih antara sapaan akrab *du* dan sapaan sopan *Sie*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — In der Sprachschule",
+   "intro": "Hari pertama kursus di Berlin. Budi menunggu di lorong dan seseorang duduk di sebelahnya. Baca dulu bahasa Jermannya dengan suara keras, baru lirik terjemahannya.",
+   "lines": [
+    {
+     "speaker": "Lena:",
+     "text": "Hallo! Guten Morgen.",
+     "id": "Halo! Selamat pagi.",
+     "literal": "halo! baik pagi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Guten Morgen. Wie heißt du?",
+     "id": "Selamat pagi. Siapa namamu?",
+     "literal": "baik pagi. bagaimana kamu-menamai-diri?"
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Ich heiße Lena. Und du?",
+     "id": "Nama saya Lena. Dan kamu?",
+     "literal": "aku menamai-diri Lena. dan kamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ich bin Budi. Freut mich.",
+     "id": "Saya Budi. Senang berkenalan.",
+     "literal": "aku adalah Budi. menyenangkan aku."
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Freut mich auch. Bist du Student?",
+     "id": "Senang berkenalan juga. Kamu mahasiswa?",
+     "literal": "menyenangkan aku juga. adalah kamu mahasiswa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ja, ich bin Student. Und du? Bist du Lehrerin?",
+     "id": "Ya, saya mahasiswa. Dan kamu? Kamu guru?",
+     "literal": "ya, aku adalah mahasiswa. dan kamu? adalah kamu guru-perempuan?"
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Nein, ich bin keine Lehrerin. Ich bin auch Studentin.",
+     "id": "Bukan, saya bukan guru. Saya juga mahasiswa.",
+     "literal": "tidak, aku adalah bukan guru-perempuan. aku adalah juga mahasiswa-perempuan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Wie geht es dir?",
+     "id": "Apa kabar?",
+     "literal": "bagaimana berjalan itu kepadamu?"
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Danke, gut. Und dir?",
+     "id": "Baik, terima kasih. Dan kamu?",
+     "literal": "terima kasih, baik. dan kepadamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Auch gut, danke. Ein bisschen müde.",
+     "id": "Baik juga, terima kasih. Agak lelah.",
+     "literal": "juga baik, terima kasih. se sedikit lelah."
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Ah, verstehe. Bis später, Budi!",
+     "id": "Ah, mengerti. Sampai nanti, Budi!",
+     "literal": "ah, aku-mengerti. sampai nanti, Budi!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tschüss, Lena. Bis morgen!",
+     "id": "Dah, Lena. Sampai besok!",
+     "literal": "selamat-tinggal, Lena. sampai besok!"
+    }
+   ],
+   "notes": [
+    "**Semua kata benda ditulis dengan huruf besar.** *Student*, *Lehrerin*, *Morgen* — bukan hanya di awal kalimat, tapi di mana pun. Ini aturan yang tak punya pengecualian dalam bahasa Jerman, dan mulai menirunya sejak baris pertama jauh lebih hemat daripada memperbaikinya nanti.",
+    "**Pekerjaan tidak memakai kata sandang.** *Ich bin Student*, bukan *ich bin ein Student*. Sama seperti bahasa Indonesia (\"saya mahasiswa\"), dan justru berbeda dari bahasa Inggris yang menuntut *a student*.",
+    "**Perempuan punya bentuknya sendiri.** Hampir semua sebutan pekerjaan menambahkan **-in** untuk perempuan: *Student → Studentin*, *Lehrer → Lehrerin*, *Arzt → Ärztin*. Lena mengatakan *Studentin* karena ia perempuan; Budi mengatakan *Student*.",
+    "**Menyangkal kata benda memakai *kein*, bukan *nicht*.** *Ich bin **keine** Lehrerin* — bukan *ich bin nicht Lehrerin*. Aturan lengkapnya di unit 5; untuk sekarang hafalkan pasangannya saja: *kein Student*, *keine Lehrerin*.",
+    "***Wie geht es dir?*** harfiahnya \"bagaimana berjalan itu kepadamu?\" — dan jawabannya pun bukan tentang dirimu melainkan tentang \"itu\": *Danke, gut*. Dalam percakapan cepat orang menyingkatnya jadi *Wie geht's?* Ke orang yang kamu *Sie*-kan, bentuknya *Wie geht es Ihnen?*",
+    "**Salam ikut waktu hari.** *Guten Morgen* sampai sekitar pukul sepuluh, *Guten Tag* sepanjang siang, *Guten Abend* sesudah matahari turun. *Gute Nacht* hanya untuk berpisah menjelang tidur — bukan untuk menyapa. Di Jerman selatan dan Austria kamu akan sering mendengar *Grüß Gott* menggantikan semuanya."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja sein (adalah) — kata kerja terpenting bahasa Jerman",
+     "body": [
+      "*Sein* dipakai untuk menyatakan **identitas dan keadaan** — siapa kamu, apa pekerjaanmu, bagaimana perasaanmu. Bentuknya tak beraturan dan tak mirip satu sama lain, jadi lebih baik dihafal utuh sekarang daripada dicicil:"
+     ],
+     "table": {
+      "head": [
+       "Deutsch",
+       "Cara baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "ich **bin**",
+        "ikh bin",
+        "saya adalah"
+       ],
+       [
+        "du **bist**",
+        "duu bist",
+        "kamu adalah (akrab)"
+       ],
+       [
+        "er / sie / es **ist**",
+        "eea / zii / es ist",
+        "dia / itu adalah"
+       ],
+       [
+        "wir **sind**",
+        "viia zint",
+        "kami adalah"
+       ],
+       [
+        "ihr **seid**",
+        "iia zait",
+        "kalian adalah"
+       ],
+       [
+        "sie / Sie **sind**",
+        "zii / zii zint",
+        "mereka / Anda adalah"
+       ]
+      ]
+     },
+     "after": [
+      "Tiga bentuk terakhir sengaja ditulis sekaligus supaya kamu melihat polanya: *wir*, *sie* (mereka), dan *Sie* (Anda) selalu memakai bentuk yang sama persis di seluruh bahasa Jerman. Tak sekali pun aturan ini dilanggar, di kata kerja mana pun.",
+      "Untuk membuat pertanyaan ya/tidak, cukup **pindahkan kata kerjanya ke depan**: *Du bist Student* → *Bist du Student?* Tidak ada kata bantu seperti *do* dalam bahasa Inggris, dan tidak ada kata tambahan seperti \"apakah\"."
+     ]
+    },
+    {
+     "title": "du atau Sie? Keputusan yang tak bisa dihindari",
+     "body": [
+      "Bahasa Jerman memaksa penuturnya memilih sejak kata pertama: menyapa lawan bicara dengan **du** (akrab) atau **Sie** (sopan). Salah pilih tidak membuat kalimatmu tak dimengerti, tapi terdengar mencolok — seperti memanggil \"kamu\" ke calon mertua."
+     ],
+     "table": {
+      "head": [
+       "",
+       "du",
+       "Sie"
+      ],
+      "rows": [
+       [
+        "Dipakai kepada",
+        "teman, keluarga, sesama mahasiswa, anak-anak",
+        "orang asing dewasa, atasan, petugas, pelayan toko"
+       ],
+       [
+        "Namanya",
+        "nama depan (*Lena*)",
+        "sebutan + nama belakang (*Frau Schmidt*)"
+       ],
+       [
+        "Siapa namamu?",
+        "Wie heißt **du**?",
+        "Wie heißen **Sie**?"
+       ],
+       [
+        "Apa kabar?",
+        "Wie geht es **dir**?",
+        "Wie geht es **Ihnen**?"
+       ],
+       [
+        "Dari mana asalmu?",
+        "Woher kommst **du**?",
+        "Woher kommen **Sie**?"
+       ]
+      ]
+     },
+     "after": [
+      "**Sie** selalu ditulis dengan huruf besar, di mana pun letaknya — itulah yang membedakannya dari *sie* (\"dia perempuan\" / \"mereka\") yang bunyinya sama persis. Dalam percakapan, telingamu membedakannya dari bentuk kata kerja dan dari sopan-tidaknya suasana, bukan dari bunyinya.",
+      "Aturan praktisnya: **kalau ragu, pakai *Sie***. Orang Jerman yang merasa terlalu dituakan akan menawarkan *Wir können uns duzen* (\"kita bisa saling ber-du\"), dan sesudah itu barulah kamu pindah. Sebaliknya, memakai *du* ke orang yang mengharapkan *Sie* jarang ditegur — tapi tercatat."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Salam dan pamit",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Daftar ini sebaiknya dihafal utuh, bukan dipahami kata per kata. Semuanya frasa jadi yang tak pernah berubah bentuk."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Cara baca",
+      "Arti",
+      "Kapan"
+     ],
+     "rows": [
+      [
+       "Hallo!",
+       "HA-lo",
+       "Halo",
+       "kapan saja, ke siapa saja"
+      ],
+      [
+       "Guten Morgen",
+       "GU-ten MOR-gen",
+       "Selamat pagi",
+       "sampai sekitar pukul 10"
+      ],
+      [
+       "Guten Tag",
+       "GU-ten taak",
+       "Selamat siang",
+       "sepanjang siang; sapaan paling aman"
+      ],
+      [
+       "Guten Abend",
+       "GU-ten AA-bent",
+       "Selamat malam",
+       "sesudah matahari turun"
+      ],
+      [
+       "Gute Nacht",
+       "GU-te nakht",
+       "Selamat malam",
+       "hanya untuk pamit tidur"
+      ],
+      [
+       "Grüß Gott",
+       "grüüs got",
+       "Salam",
+       "Jerman selatan & Austria"
+      ],
+      [
+       "Wie geht's?",
+       "vii geets",
+       "Apa kabar?",
+       "akrab, versi pendek"
+      ],
+      [
+       "Auf Wiedersehen",
+       "auf VII-da-zee-en",
+       "Sampai jumpa",
+       "sopan, ke siapa pun"
+      ],
+      [
+       "Tschüss",
+       "cüs",
+       "Dah",
+       "akrab"
+      ],
+      [
+       "Bis später",
+       "bis SYPEE-ta",
+       "Sampai nanti",
+       "hari yang sama"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Menjawab \"apa kabar\""
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Sehr gut, danke.",
+       "Baik sekali, terima kasih."
+      ],
+      [
+       "Danke, gut.",
+       "Baik, terima kasih."
+      ],
+      [
+       "Es geht.",
+       "Lumayan. (harfiah: \"itu berjalan\")"
+      ],
+      [
+       "Nicht so gut.",
+       "Kurang baik."
+      ],
+      [
+       "Ein bisschen müde.",
+       "Agak lelah."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Berbeda dari kebiasaan Indonesia, *Wie geht's?* bukan sekadar basa-basi kosong. Orang Jerman cenderung menjawabnya jujur — termasuk kalau jawabannya *nicht so gut*. Jangan kaget kalau pertanyaan sopanmu dibalas cerita pendek."
+    }
+   ]
+  },
+  {
+   "title": "Mengeja nama: alfabet Jerman",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Namamu hampir pasti akan diminta dieja — di kursus, di kantor, di telepon. Pertanyaannya berbunyi *Wie schreibt man das?* (\"bagaimana orang menulisnya?\") atau *Können Sie das buchstabieren?*"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Huruf",
+      "Dibaca",
+      "Huruf",
+      "Dibaca"
+     ],
+     "rows": [
+      [
+       "A",
+       "aa",
+       "N",
+       "en"
+      ],
+      [
+       "B",
+       "bee",
+       "O",
+       "oo"
+      ],
+      [
+       "C",
+       "tsee",
+       "P",
+       "pee"
+      ],
+      [
+       "D",
+       "dee",
+       "Q",
+       "kuu"
+      ],
+      [
+       "E",
+       "ee",
+       "R",
+       "er"
+      ],
+      [
+       "F",
+       "ef",
+       "S",
+       "es"
+      ],
+      [
+       "G",
+       "gee",
+       "T",
+       "tee"
+      ],
+      [
+       "H",
+       "haa",
+       "U",
+       "uu"
+      ],
+      [
+       "I",
+       "ii",
+       "V",
+       "fau"
+      ],
+      [
+       "J",
+       "yot",
+       "W",
+       "vee"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Empat huruf tambahan: **Ä** (\"ee-umlaut\"), **Ö** (\"oo-umlaut\"), **Ü** (\"uu-umlaut\"), dan **ß** yang dieja *eszett* atau *scharfes S*. Kalau papan ketikmu tak punya ß, menulisnya sebagai **ss** diterima di mana-mana."
+    },
+    {
+     "type": "p",
+     "text": "Dua huruf yang paling sering tertukar di telinga pemula: **V** dibaca \"fau\" tapi berbunyi *f*, sedangkan **W** dibaca \"vee\" dan berbunyi *v*. Jadi *Wagen* berbunyi \"VAA-gen\", dan *Vater* berbunyi \"FAA-ta\"."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "de": "hallo",
+   "baca": "HA-lo",
+   "id": "halo"
+  },
+  {
+   "de": "guten Morgen",
+   "baca": "GU-ten MOR-gen",
+   "id": "selamat pagi"
+  },
+  {
+   "de": "guten Tag",
+   "baca": "GU-ten taak",
+   "id": "selamat siang"
+  },
+  {
+   "de": "guten Abend",
+   "baca": "GU-ten AA-bent",
+   "id": "selamat malam"
+  },
+  {
+   "de": "tschüss",
+   "baca": "cüs",
+   "id": "dah"
+  },
+  {
+   "de": "auf Wiedersehen",
+   "baca": "auf VII-da-zee-en",
+   "id": "sampai jumpa (sopan)"
+  },
+  {
+   "de": "ich",
+   "baca": "ikh",
+   "id": "saya"
+  },
+  {
+   "de": "du",
+   "baca": "duu",
+   "id": "kamu (akrab)"
+  },
+  {
+   "de": "Sie",
+   "baca": "zii",
+   "id": "Anda (sopan)"
+  },
+  {
+   "de": "sein",
+   "baca": "zain",
+   "id": "adalah"
+  },
+  {
+   "de": "heißen",
+   "baca": "HAI-sen",
+   "id": "bernama"
+  },
+  {
+   "de": "wie",
+   "baca": "vii",
+   "id": "bagaimana"
+  },
+  {
+   "de": "und",
+   "baca": "unt",
+   "id": "dan"
+  },
+  {
+   "de": "ja",
+   "baca": "yaa",
+   "id": "ya"
+  },
+  {
+   "de": "nein",
+   "baca": "nain",
+   "id": "tidak, bukan"
+  },
+  {
+   "de": "auch",
+   "baca": "aukh",
+   "id": "juga"
+  },
+  {
+   "de": "danke",
+   "baca": "DAN-ke",
+   "id": "terima kasih"
+  },
+  {
+   "de": "bitte",
+   "baca": "BI-te",
+   "id": "silakan, sama-sama, tolong"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "Ich heiße Lena.",
+    "Bist du Student?",
+    "Nein, ich bin keine Lehrerin.",
+    "Wie geht es dir?",
+    "Guten Abend! Bis morgen.",
+    "Sie ist auch Studentin."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk *sein* yang tepat.",
+   "items": [
+    "Ich ____ Budi.",
+    "Du ____ Studentin.",
+    "Er ____ Lehrer.",
+    "Wir ____ müde.",
+    "Ihr ____ auch hier.",
+    "Sie ____ Frau Schmidt."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "wie / du / heißt",
+    "ich / Student / bin",
+    "auch / bin / müde / ich",
+    "du / bist / Lehrerin",
+    "geht / wie / es / dir",
+    "Lena / heiße / ich"
+   ]
+  }
+ ],
+ "answers": [
+  "Nama saya Lena. — Kamu mahasiswa? — Bukan, saya bukan guru. — Apa kabar? — Selamat malam! Sampai besok. — Dia juga mahasiswa.",
+  "bin — bist — ist — sind — seid — sind",
+  "Wie heißt du? — Ich bin Student. — Ich bin auch müde. — Du bist Lehrerin. — Wie geht es dir? — Ich heiße Lena."
+ ]
+}

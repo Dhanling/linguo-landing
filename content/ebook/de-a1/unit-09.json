@@ -1,0 +1,577 @@
+{
+ "title": "Hari apa? Tanggal berapa?",
+ "title_target": "Welcher Tag ist heute?",
+ "goal": "Membuat janji: menyebut hari, bulan, dan tanggal, lalu menyepakati waktu lewat telepon.",
+ "bekal": [
+  "menyebut hari dalam seminggu dan bulan",
+  "membaca dan mengucapkan tanggal (*am dritten Mai*)",
+  "memilih antara *am*, *im*, dan *um*",
+  "membuat, memindahkan, dan membatalkan janji"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Einen Termin machen",
+   "intro": "Budi menelepon praktik dokter gigi. Percakapan telepon di Jerman punya pola yang tetap — dan dimulai dengan menyebut nama sendiri, bukan \"halo\".",
+   "lines": [
+    {
+     "speaker": "Praxis:",
+     "text": "Zahnarztpraxis Dr. Beck, Schneider, guten Morgen.",
+     "id": "Praktik gigi Dr. Beck, dengan Schneider, selamat pagi.",
+     "literal": "gigi-dokter-praktik Dr. Beck, Schneider, baik pagi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Guten Morgen, hier ist Budi Santoso. Ich möchte einen Termin machen.",
+     "id": "Selamat pagi, ini Budi Santoso. Saya mau membuat janji.",
+     "literal": "baik pagi, di-sini adalah Budi Santoso. aku ingin sebuah janji membuat."
+    },
+    {
+     "speaker": "Praxis:",
+     "text": "Gern. Haben Sie Schmerzen?",
+     "id": "Boleh. Anda sakit?",
+     "literal": "dengan-senang-hati. punya Anda rasa-sakit-jamak?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nein, es ist nur eine Kontrolle.",
+     "id": "Tidak, cuma kontrol.",
+     "literal": "tidak, itu adalah hanya sebuah kontrol."
+    },
+    {
+     "speaker": "Praxis:",
+     "text": "Gut. Können Sie am Dienstag um zehn Uhr?",
+     "id": "Baik. Bisa hari Selasa jam sepuluh?",
+     "literal": "baik. bisa Anda pada Selasa pada sepuluh jam?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Am Dienstag habe ich leider Kurs bis zwölf.",
+     "id": "Hari Selasa saya ada kursus sampai jam dua belas.",
+     "literal": "pada Selasa punya aku sayangnya kursus sampai dua-belas."
+    },
+    {
+     "speaker": "Praxis:",
+     "text": "Und am Donnerstag um halb vier?",
+     "id": "Kalau hari Kamis jam setengah empat?",
+     "literal": "dan pada Kamis pada setengah empat?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Am Donnerstag passt gut. Der wievielte ist das?",
+     "id": "Kamis cocok. Itu tanggal berapa?",
+     "literal": "pada Kamis cocok baik. yang ke-berapa adalah itu?"
+    },
+    {
+     "speaker": "Praxis:",
+     "text": "Das ist der elfte September.",
+     "id": "Itu tanggal sebelas September.",
+     "literal": "itu adalah yang ke-sebelas September."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Also am elften September um fünfzehn Uhr dreißig.",
+     "id": "Jadi tanggal sebelas September jam lima belas tiga puluh.",
+     "literal": "jadi pada ke-sebelas September pada lima-belas jam tiga-puluh."
+    },
+    {
+     "speaker": "Praxis:",
+     "text": "Genau. Bringen Sie bitte Ihre Versichertenkarte mit.",
+     "id": "Tepat. Tolong bawa kartu asuransi Anda.",
+     "literal": "tepat. bawa Anda tolong punya-Anda tertanggung-kartu bawa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mache ich. Vielen Dank und auf Wiederhören.",
+     "id": "Baik. Terima kasih banyak dan sampai jumpa.",
+     "literal": "membuat aku. banyak terima-kasih dan sampai dengar-kembali."
+    }
+   ],
+   "notes": [
+    "**Menelepon di Jerman dimulai dengan nama, bukan \"halo\".** Yang menerima menyebut nama tempat lalu nama sendiri; yang menelepon berkata *Hier ist… / Mein Name ist…* Menjawab telepon hanya dengan *Hallo?* terdengar seperti nomor asing.",
+    "***Auf Wiederhören*** menutup percakapan telepon — \"sampai dengar kembali\", karena kalian tidak saling melihat. Memakai *Auf Wiedersehen* di telepon tidak salah, tapi ini bentuk yang tepat.",
+    "***am* untuk hari dan tanggal, *im* untuk bulan dan musim, *um* untuk jam.** Tiga kata pendek, tiga wilayah berbeda: *am Montag*, *im Mai*, *um acht*. Salah satu dari tiga ini akan muncul di hampir setiap kalimat waktu yang kamu buat.",
+    "**Tanggal memakai angka urut, dan angka urut berakhiran -e atau -en.** *der elfte September* (sebagai penyebutan), tapi *am elft**en** September* (sesudah *am*). Perubahan kecil ini sulit dihindari, jadi hafalkan sepasang: *der erste / am ersten*.",
+    "***Der wievielte ist heute?*** = \"hari ini tanggal berapa?\". Kata *wievielte* memang panjang dan janggal, tapi tak ada versi yang lebih pendek — pertanyaan ini muncul di setiap kantor Jerman.",
+    "***leider*** (\"sayangnya\") melembutkan penolakan. Menolak tawaran waktu tanpa *leider* terdengar dingin: bandingkan *Am Dienstag habe ich Kurs* dengan *Am Dienstag habe ich **leider** Kurs*."
+   ],
+   "grammars": [
+    {
+     "title": "Hari, bulan, dan musim",
+     "body": [
+      "Semua nama hari **maskulin** (*der Montag*), semua nama bulan **maskulin** (*der Mai*), semua musim **maskulin** (*der Sommer*). Satu jenis kelamin untuk seluruh kalender — sekali ini bahasa Jerman berbaik hati."
+     ],
+     "table": {
+      "head": [
+       "Hari",
+       "Cara baca",
+       "Bulan",
+       "Bulan"
+      ],
+      "rows": [
+       [
+        "Montag",
+        "MOON-taak",
+        "Januar",
+        "Juli"
+       ],
+       [
+        "Dienstag",
+        "DIINS-taak",
+        "Februar",
+        "August"
+       ],
+       [
+        "Mittwoch",
+        "MIT-vokh",
+        "März",
+        "September"
+       ],
+       [
+        "Donnerstag",
+        "DO-nas-taak",
+        "April",
+        "Oktober"
+       ],
+       [
+        "Freitag",
+        "FRAI-taak",
+        "Mai",
+        "November"
+       ],
+       [
+        "Samstag",
+        "ZAMS-taak",
+        "Juni",
+        "Dezember"
+       ],
+       [
+        "Sonntag",
+        "ZON-taak",
+        "—",
+        "—"
+       ]
+      ]
+     },
+     "after": [
+      "*Mittwoch* (\"tengah minggu\") adalah satu-satunya hari yang tak berakhiran *-tag*, dan itu masuk akal: minggu Jerman dimulai hari **Senin**, jadi Rabu memang persis di tengah. ⚠️ Kalender Jerman menaruh *Montag* di kolom pertama, bukan *Sonntag* — perhatikan ini saat membaca jadwal.",
+      "Sabtu punya dua nama: *Samstag* di Jerman selatan dan barat (dan di siaran resmi), *Sonnabend* di timur laut. Keduanya benar; *Samstag* lebih aman untuk pemula.",
+      "Empat musim: *der Frühling* (semi), *der Sommer* (panas), *der Herbst* (gugur), *der Winter* (dingin). Semuanya memakai *im*: *im Sommer*, *im Winter*."
+     ],
+     "tables": [
+      {
+       "head": [
+        "Kata depan",
+        "Dipakai untuk",
+        "Contoh",
+        "Arti"
+       ],
+       "rows": [
+        [
+         "**am**",
+         "hari, tanggal, bagian hari",
+         "am Freitag, am 3. Mai, am Abend",
+         "pada hari Jumat…"
+        ],
+        [
+         "**im**",
+         "bulan, musim, tahun-an",
+         "im Juni, im Winter",
+         "di bulan Juni…"
+        ],
+        [
+         "**um**",
+         "jam",
+         "um halb acht",
+         "jam setengah delapan"
+        ],
+        [
+         "**von … bis**",
+         "rentang",
+         "von Montag bis Freitag",
+         "Senin sampai Jumat"
+        ],
+        [
+         "**ab**",
+         "mulai dari",
+         "ab Montag",
+         "mulai Senin"
+        ],
+        [
+         "(tanpa apa pun)",
+         "heute, morgen, gestern",
+         "Ich komme morgen.",
+         "Saya datang besok."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Angka urut dan tanggal",
+     "body": [
+      "Angka urut dibentuk dengan menambahkan **-te** pada angka 1-19 dan **-ste** mulai dari 20. Ditulis dengan angka, tandanya adalah **titik**: *3. Mai* dibaca *dritter Mai*."
+     ],
+     "table": {
+      "head": [
+       "Angka",
+       "Angka urut",
+       "Angka",
+       "Angka urut"
+      ],
+      "rows": [
+       [
+        "1.",
+        "**erste** (tak beraturan)",
+        "11.",
+        "elfte"
+       ],
+       [
+        "2.",
+        "zweite",
+        "12.",
+        "zwölfte"
+       ],
+       [
+        "3.",
+        "**dritte** (tak beraturan)",
+        "16.",
+        "sechzehnte"
+       ],
+       [
+        "4.",
+        "vierte",
+        "20.",
+        "zwanzig**ste**"
+       ],
+       [
+        "5.",
+        "fünfte",
+        "21.",
+        "einundzwanzig**ste**"
+       ],
+       [
+        "7.",
+        "**siebte** (tanpa -en-)",
+        "30.",
+        "dreißig**ste**"
+       ],
+       [
+        "8.",
+        "**achte** (satu t saja)",
+        "31.",
+        "einunddreißig**ste**"
+       ]
+      ]
+     },
+     "after": [
+      "Lima yang menyimpang sudah ditandai tebal: *erste*, *dritte*, *siebte*, *achte*, dan pergantian ke *-ste* mulai angka dua puluh. Sisanya seragam sepenuhnya.",
+      "Dalam kalimat, bentuknya berubah sedikit sesuai posisinya: ***Heute ist der** dritte Mai* (menyebut), tapi ***Ich komme am** dritt**en** Mai* (waktu kejadian). Pegangannya: sesudah *am*, selalu **-en**.",
+      "Tanggal ditulis dengan urutan **hari.bulan.tahun**: *11.09.2026* berarti 11 September, bukan 9 November. Kebiasaan ini sama dengan Indonesia dan berbeda dari Amerika — dan salah membacanya adalah cara paling umum melewatkan janji."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membuat janji",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Ich möchte einen Termin machen.",
+       "Saya mau membuat janji."
+      ],
+      [
+       "Haben Sie am Montag Zeit?",
+       "Hari Senin Anda ada waktu?"
+      ],
+      [
+       "Wann passt es Ihnen?",
+       "Kapan Anda bisa?"
+      ],
+      [
+       "Geht es am Mittwoch um drei?",
+       "Bisa hari Rabu jam tiga?"
+      ],
+      [
+       "Ja, das passt mir gut.",
+       "Ya, itu cocok."
+      ],
+      [
+       "Nein, das geht leider nicht.",
+       "Sayangnya tidak bisa."
+      ],
+      [
+       "Können wir den Termin verschieben?",
+       "Bisa janjinya dipindah?"
+      ],
+      [
+       "Ich muss den Termin absagen.",
+       "Saya harus membatalkan janjinya."
+      ],
+      [
+       "Bis Donnerstag!",
+       "Sampai hari Kamis!"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Janji di Jerman diperlakukan lebih serius daripada di banyak tempat lain. Datang terlambat lima belas menit tanpa kabar sudah dianggap tidak sopan, dan membatalkan janji dokter kurang dari 24 jam sebelumnya bisa ditagih. Kalimat *Ich muss den Termin absagen* sebaiknya kamu hafal sekarang, bukan nanti."
+    },
+    {
+     "type": "sub",
+     "text": "Kata waktu lain yang sering dipakai"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Arti",
+      "Deutsch",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "heute",
+       "hari ini",
+       "übermorgen",
+       "lusa"
+      ],
+      [
+       "morgen",
+       "besok",
+       "vorgestern",
+       "kemarin dulu"
+      ],
+      [
+       "gestern",
+       "kemarin",
+       "nächste Woche",
+       "minggu depan"
+      ],
+      [
+       "am Wochenende",
+       "akhir pekan",
+       "letzte Woche",
+       "minggu lalu"
+      ],
+      [
+       "jeden Tag",
+       "setiap hari",
+       "diese Woche",
+       "minggu ini"
+      ],
+      [
+       "montags",
+       "setiap Senin",
+       "am Monatsende",
+       "akhir bulan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bentuk *montags*, *dienstags*, *freitags* — huruf kecil, berakhiran -s, dan artinya \"setiap hari itu\". *Ich arbeite **montags*** = saya bekerja tiap Senin, berbeda dari *Ich arbeite **am Montag*** = saya bekerja Senin ini."
+    }
+   ]
+  },
+  {
+   "title": "Hari libur yang perlu kamu tahu",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Toko di Jerman tutup total pada hari libur dan setiap hari Minggu — bukan tutup lebih awal, melainkan tutup. Ini kejutan pertama hampir semua pendatang, dan dampaknya nyata: belanja hari Sabtu bukan pilihan, melainkan keharusan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Bahasa Indonesia",
+      "Kapan"
+     ],
+     "rows": [
+      [
+       "Neujahr",
+       "Tahun Baru",
+       "1. Januar"
+      ],
+      [
+       "Ostern",
+       "Paskah",
+       "Maret atau April"
+      ],
+      [
+       "Tag der Arbeit",
+       "Hari Buruh",
+       "1. Mai"
+      ],
+      [
+       "Tag der Deutschen Einheit",
+       "Hari Persatuan Jerman",
+       "3. Oktober"
+      ],
+      [
+       "Weihnachten",
+       "Natal",
+       "25. und 26. Dezember"
+      ],
+      [
+       "Silvester",
+       "Malam Tahun Baru",
+       "31. Dezember"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kalimat untuk dihafal utuh",
+     "items": [
+      "*Welcher Tag ist heute?* — Hari ini hari apa?",
+      "*Der wievielte ist heute?* — Hari ini tanggal berapa?",
+      "*Heute ist Donnerstag, der elfte September.* — Hari ini Kamis, tanggal sebelas September."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "de": "der Tag",
+   "baca": "taak",
+   "id": "hari"
+  },
+  {
+   "de": "die Woche",
+   "baca": "VO-khe",
+   "id": "minggu"
+  },
+  {
+   "de": "der Monat",
+   "baca": "MOO-nat",
+   "id": "bulan"
+  },
+  {
+   "de": "das Jahr",
+   "baca": "yaar",
+   "id": "tahun"
+  },
+  {
+   "de": "der Montag",
+   "baca": "MOON-taak",
+   "id": "Senin"
+  },
+  {
+   "de": "der Dienstag",
+   "baca": "DIINS-taak",
+   "id": "Selasa"
+  },
+  {
+   "de": "der Mittwoch",
+   "baca": "MIT-vokh",
+   "id": "Rabu"
+  },
+  {
+   "de": "der Donnerstag",
+   "baca": "DO-nas-taak",
+   "id": "Kamis"
+  },
+  {
+   "de": "der Freitag",
+   "baca": "FRAI-taak",
+   "id": "Jumat"
+  },
+  {
+   "de": "der Samstag",
+   "baca": "ZAMS-taak",
+   "id": "Sabtu"
+  },
+  {
+   "de": "der Sonntag",
+   "baca": "ZON-taak",
+   "id": "Minggu"
+  },
+  {
+   "de": "das Wochenende",
+   "baca": "VO-khen-en-de",
+   "id": "akhir pekan"
+  },
+  {
+   "de": "der Termin",
+   "baca": "ter-MIIN",
+   "id": "janji, jadwal"
+  },
+  {
+   "de": "passen",
+   "baca": "PA-sen",
+   "id": "cocok"
+  },
+  {
+   "de": "verschieben",
+   "baca": "fea-SYII-ben",
+   "id": "memindahkan (jadwal)"
+  },
+  {
+   "de": "absagen",
+   "baca": "AP-zaa-gen",
+   "id": "membatalkan"
+  },
+  {
+   "de": "mitbringen",
+   "baca": "MIT-brin-gen",
+   "id": "membawa serta"
+  },
+  {
+   "de": "die Praxis",
+   "baca": "PRAK-sis",
+   "id": "praktik dokter"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "Welcher Tag ist heute?",
+    "Ich möchte einen Termin machen.",
+    "Am Dienstag habe ich leider Kurs.",
+    "Das passt mir gut.",
+    "Ich komme am dritten Mai.",
+    "Können wir den Termin verschieben?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan *am*, *im*, atau *um*.",
+   "items": [
+    "Der Kurs beginnt ____ neun Uhr.",
+    "Ich komme ____ Montag.",
+    "____ Sommer fahre ich nach Bali.",
+    "Wir haben ____ Wochenende Zeit.",
+    "Mein Geburtstag ist ____ Mai.",
+    "Der Termin ist ____ halb vier."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "einen Termin / ich / machen / möchte",
+    "Zeit / haben / am Montag / Sie",
+    "gut / das / mir / passt",
+    "ist / heute / Tag / welcher",
+    "am elften September / der Termin / ist",
+    "absagen / ich / den Termin / muss"
+   ]
+  }
+ ],
+ "answers": [
+  "Hari ini hari apa? — Saya mau membuat janji. — Sayangnya hari Selasa saya ada kursus. — Itu cocok untuk saya. — Saya datang tanggal tiga Mei. — Bisa janjinya dipindah?",
+  "um — am — Im — am — im — um",
+  "Ich möchte einen Termin machen. — Haben Sie am Montag Zeit? — Das passt mir gut. — Welcher Tag ist heute? — Der Termin ist am elften September. — Ich muss den Termin absagen."
+ ],
+ "wave": "Sebelum mulai unit 10, buka lagi dialog **Unit 2**. Tutup bahasa Jermannya dan bangun ulang kalimatnya dari terjemahan Indonesianya."
+}

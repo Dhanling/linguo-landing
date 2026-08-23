@@ -1,0 +1,578 @@
+{
+ "title": "Menanyakan arah",
+ "title_target": "Wie komme ich zum Bahnhof?",
+ "goal": "Bertanya dan memberi petunjuk jalan — sekaligus memakai bentuk perintah dan memilih antara *nach*, *zu*, dan *in* untuk kata \"ke\".",
+ "bekal": [
+  "menanyakan arah dengan sopan",
+  "memberi petunjuk dengan bentuk perintah (*Gehen Sie…*)",
+  "memilih antara *nach*, *zu*, dan *in*",
+  "menyebut tempat umum di kota"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Entschuldigung, wo ist…?",
+   "intro": "Budi tersesat di kota kecil dekat Potsdam. Ia menghentikan seseorang di trotoar — dan menerima jawaban yang khas Jerman: tepat, berurutan, dan panjang.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Entschuldigung, wie komme ich zum Bahnhof?",
+     "id": "Permisi, bagaimana caranya ke stasiun?",
+     "literal": "permohonan-maaf, bagaimana datang aku ke-itu stasiun?"
+    },
+    {
+     "speaker": "Passantin:",
+     "text": "Zum Bahnhof? Gehen Sie hier geradeaus bis zur Ampel.",
+     "id": "Ke stasiun? Jalan lurus dari sini sampai lampu merah.",
+     "literal": "ke-itu stasiun? pergi Anda di-sini lurus sampai ke-itu lampu-lalu-lintas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bis zur Ampel, gut.",
+     "id": "Sampai lampu merah, baik.",
+     "literal": "sampai ke-itu lampu-lalu-lintas, baik."
+    },
+    {
+     "speaker": "Passantin:",
+     "text": "Dann biegen Sie links ab und gehen Sie über die Brücke.",
+     "id": "Lalu belok kiri dan menyeberang jembatan.",
+     "literal": "lalu belok Anda kiri belok dan pergi Anda melewati itu jembatan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Über die Brücke. Und dann?",
+     "id": "Menyeberang jembatan. Lalu?",
+     "literal": "melewati itu jembatan. dan lalu?"
+    },
+    {
+     "speaker": "Passantin:",
+     "text": "Nach der Brücke sehen Sie rechts eine Kirche. Der Bahnhof ist direkt dahinter.",
+     "id": "Sesudah jembatan Anda akan lihat gereja di kanan. Stasiunnya persis di belakangnya.",
+     "literal": "sesudah itu jembatan melihat Anda kanan sebuah gereja. itu stasiun adalah langsung di-belakang-itu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ist es weit?",
+     "id": "Jauh tidak?",
+     "literal": "adalah itu jauh?"
+    },
+    {
+     "speaker": "Passantin:",
+     "text": "Nein, zehn Minuten zu Fuß. Sie können auch den Bus nehmen, die Linie 6.",
+     "id": "Tidak, sepuluh menit jalan kaki. Bisa juga naik bus, jalur 6.",
+     "literal": "tidak, sepuluh menit ke kaki. Anda bisa juga itu bus mengambil, itu jalur 6."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Wo ist die Haltestelle?",
+     "id": "Haltenya di mana?",
+     "literal": "di-mana adalah itu halte?"
+    },
+    {
+     "speaker": "Passantin:",
+     "text": "Gleich da drüben, vor der Apotheke.",
+     "id": "Persis di seberang sana, di depan apotek.",
+     "literal": "segera di-sana di-seberang, di-depan itu apotek."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vielen Dank! Sie sind sehr nett.",
+     "id": "Terima kasih banyak! Anda baik sekali.",
+     "literal": "banyak terima-kasih! Anda adalah sangat baik."
+    },
+    {
+     "speaker": "Passantin:",
+     "text": "Nichts zu danken. Gute Reise!",
+     "id": "Sama-sama. Selamat jalan!",
+     "literal": "tidak-ada untuk berterima-kasih. baik perjalanan!"
+    }
+   ],
+   "notes": [
+    "***Wie komme ich zu…?*** adalah rumus baku untuk menanyakan jalan, dan jauh lebih berguna daripada *Wo ist…?* karena jawabannya berupa petunjuk, bukan sekadar penunjukan.",
+    "**Perintah sopan memakai *Sie* di belakang kata kerjanya.** *Gehen Sie…*, *Biegen Sie…*, *Nehmen Sie…*. Berbeda dari bahasa Inggris, kata gantinya tidak dibuang — dan justru kehadirannya yang membuat kalimat perintah itu terdengar sopan.",
+    "***abbiegen* itu kata kerja terpisah**, jadi awalannya tetap terbang ke ujung: *Biegen Sie links **ab***. Kata kerja terpisah lain yang muncul di petunjuk jalan: *einsteigen* (naik kendaraan), *aussteigen* (turun), *umsteigen* (pindah kendaraan).",
+    "**Baris 4: *über die Brücke* memakai Akkusativ.** Ada perpindahan — kamu bergerak melintasi jembatan — jadi bukan *über der Brücke*. Bandingkan dengan baris 6: *nach **der** Brücke* (Dativ), karena *nach* selalu Dativ apa pun keadaannya.",
+    "***zum* dan *zur*.** *zu dem → zum* (maskulin & netral), *zu der → zur* (feminin). *zum Bahnhof*, *zur Ampel*, *zur Apotheke*, *zum Markt*. Gabungan ini terdengar di hampir setiap petunjuk jalan.",
+    "***Nichts zu danken*** (\"tak ada yang perlu diterimakasihkan\") adalah salah satu dari beberapa cara menjawab terima kasih. Yang lain: *Bitte*, *Bitte schön*, *Gern geschehen*, *Kein Problem*. Yang paling sering terdengar justru yang paling pendek — *bitte*."
+   ],
+   "grammars": [
+    {
+     "title": "Bentuk perintah (Imperativ)",
+     "body": [
+      "Ada tiga bentuk, satu untuk tiap cara menyapa. Yang paling sering kamu pakai kepada orang asing adalah bentuk *Sie* — dan bentuk itu yang paling mudah, karena sama persis dengan bentuk biasa, hanya urutannya dibalik."
+     ],
+     "table": {
+      "head": [
+       "Kepada",
+       "Cara membentuk",
+       "gehen",
+       "nehmen",
+       "sein"
+      ],
+      "rows": [
+       [
+        "**Sie**",
+        "kata kerja + Sie",
+        "Gehen Sie!",
+        "Nehmen Sie!",
+        "Seien Sie!"
+       ],
+       [
+        "**du**",
+        "akar tanpa akhiran",
+        "Geh!",
+        "Nimm!",
+        "Sei!"
+       ],
+       [
+        "**ihr**",
+        "sama dengan bentuk ihr",
+        "Geht!",
+        "Nehmt!",
+        "Seid!"
+       ]
+      ]
+     },
+     "after": [
+      "Bentuk **du** dibuat dengan membuang *-st* dari bentuk *du* biasa: *du gehst → Geh!*, *du kommst → Komm!*, *du machst → Mach!* Kata kerja yang vokalnya berubah **tetap** memakai vokal barunya: *du nimmst → Nimm!*, *du sprichst → Sprich!* — tapi yang ber-Umlaut justru **kehilangan** Umlautnya: *du fährst → **Fahr**!*",
+      "*Bitte* melembutkan perintah apa pun, dan hampir wajib dipakai kepada orang asing: *Kommen Sie **bitte** herein!* Tanpa *bitte*, kalimat perintah Jerman memang terdengar seperti perintah.",
+      "Untuk melarang, cukup tambahkan *nicht*: *Geh **nicht** dorthin!* Bentuk yang lebih halus memakai kata bantu: *Sie dürfen hier nicht parken.*"
+     ],
+     "tables": [
+      {
+       "head": [
+        "Kalimat perintah yang akan kamu dengar",
+        "Arti"
+       ],
+       "rows": [
+        [
+         "Gehen Sie geradeaus.",
+         "Jalan lurus."
+        ],
+        [
+         "Biegen Sie rechts ab.",
+         "Belok kanan."
+        ],
+        [
+         "Nehmen Sie die zweite Straße links.",
+         "Ambil jalan kedua di kiri."
+        ],
+        [
+         "Fahren Sie mit der U-Bahn.",
+         "Naik kereta bawah tanah."
+        ],
+        [
+         "Steigen Sie am Hauptbahnhof aus.",
+         "Turun di stasiun pusat."
+        ],
+        [
+         "Warten Sie einen Moment, bitte.",
+         "Tunggu sebentar."
+        ],
+        [
+         "Sprechen Sie bitte langsamer.",
+         "Tolong bicara lebih pelan."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "title": "nach, zu, atau in? Tiga cara mengatakan \"ke\"",
+     "body": [
+      "Bahasa Indonesia memakai satu kata \"ke\" untuk semuanya; bahasa Jerman membaginya menurut jenis tujuannya. Aturannya sedikit dan tak berubah."
+     ],
+     "table": {
+      "head": [
+       "Kata depan",
+       "Dipakai untuk",
+       "Bentuk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**nach**",
+        "kota, negara tanpa sandang, arah",
+        "+ nama polos",
+        "nach Berlin, nach Hause, nach links"
+       ],
+       [
+        "**zu**",
+        "orang, gedung, tempat sebagai tujuan",
+        "+ Dativ",
+        "zum Arzt, zur Schule, zu meiner Freundin"
+       ],
+       [
+        "**in**",
+        "masuk ke dalam sesuatu",
+        "+ Akkusativ",
+        "ins Kino, in die Stadt, in den Supermarkt"
+       ],
+       [
+        "**an**",
+        "menuju tepi sesuatu",
+        "+ Akkusativ",
+        "ans Meer, an den See"
+       ],
+       [
+        "**auf**",
+        "ke atas / ke tempat terbuka",
+        "+ Akkusativ",
+        "auf den Markt, auf die Post"
+       ]
+      ]
+     },
+     "after": [
+      "Perbedaan *zu* dan *in* halus tapi nyata: *Ich gehe **zur** Schule* berarti menuju sekolah (mungkin sekadar sampai gerbangnya), sementara *Ich gehe **in die** Schule* menekankan masuk ke dalamnya. Dalam percakapan sehari-hari *zu* adalah pilihan yang paling aman.",
+      "⚠️ Negara yang bersandang tidak memakai *nach* melainkan *in*: *in **die** Schweiz*, *in **die** Türkei*, *in **die** USA*. Jumlahnya sedikit, dan semuanya sudah kamu lihat di unit 2.",
+      "Frasa beku yang wajib dihafal: ***nach Hause*** (pulang) dan ***zu Hause*** (di rumah). Keduanya tak mengikuti aturan mana pun, dan keduanya dipakai setiap hari."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tempat di kota",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Cara baca",
+      "Bahasa Indonesia",
+      "Ke sana"
+     ],
+     "rows": [
+      [
+       "der Bahnhof",
+       "BAAN-hoof",
+       "stasiun kereta",
+       "zum Bahnhof"
+      ],
+      [
+       "die Haltestelle",
+       "HAL-te-syte-le",
+       "halte",
+       "zur Haltestelle"
+      ],
+      [
+       "der Flughafen",
+       "FLUUK-haa-fen",
+       "bandara",
+       "zum Flughafen"
+      ],
+      [
+       "die Post",
+       "post",
+       "kantor pos",
+       "zur Post"
+      ],
+      [
+       "die Bank",
+       "bank",
+       "bank",
+       "zur Bank"
+      ],
+      [
+       "die Apotheke",
+       "a-po-TEE-ke",
+       "apotek",
+       "zur Apotheke"
+      ],
+      [
+       "das Krankenhaus",
+       "KRAN-ken-haus",
+       "rumah sakit",
+       "zum Krankenhaus"
+      ],
+      [
+       "die Kirche",
+       "KIR-khe",
+       "gereja",
+       "zur Kirche"
+      ],
+      [
+       "der Markt",
+       "markt",
+       "pasar",
+       "zum Markt"
+      ],
+      [
+       "das Rathaus",
+       "RAAT-haus",
+       "balai kota",
+       "zum Rathaus"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Arah dan jarak"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Arti",
+      "Deutsch",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "links",
+       "kiri",
+       "geradeaus",
+       "lurus"
+      ],
+      [
+       "rechts",
+       "kanan",
+       "zurück",
+       "kembali"
+      ],
+      [
+       "nach links",
+       "ke kiri",
+       "die erste Straße",
+       "jalan pertama"
+      ],
+      [
+       "nach rechts",
+       "ke kanan",
+       "die Ecke",
+       "sudut, pertigaan"
+      ],
+      [
+       "gegenüber",
+       "di seberang",
+       "die Ampel",
+       "lampu lalu lintas"
+      ],
+      [
+       "weit",
+       "jauh",
+       "die Kreuzung",
+       "perempatan"
+      ],
+      [
+       "in der Nähe",
+       "di dekat sini",
+       "die Brücke",
+       "jembatan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalimat penyelamat kalau kamu benar-benar tersesat: ***Ich habe mich verlaufen*** (\"saya tersesat\", untuk pejalan kaki) atau ***Ich suche diese Adresse*** sambil menunjukkan layar ponselmu. Yang kedua bekerja bahkan kalau kamu tak menangkap satu pun kata dari jawabannya."
+    }
+   ]
+  },
+  {
+   "title": "Angkutan umum",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Bahasa Indonesia",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "der Bus",
+       "bus",
+       "Ich fahre mit dem Bus."
+      ],
+      [
+       "die U-Bahn",
+       "kereta bawah tanah",
+       "Nehmen Sie die U-Bahn."
+      ],
+      [
+       "die S-Bahn",
+       "kereta kota",
+       "Die S-Bahn fährt alle 10 Minuten."
+      ],
+      [
+       "die Straßenbahn",
+       "trem",
+       "Die Straßenbahn hält hier."
+      ],
+      [
+       "der Zug",
+       "kereta antarkota",
+       "Der Zug kommt um acht an."
+      ],
+      [
+       "das Ticket / die Fahrkarte",
+       "tiket",
+       "Ich brauche eine Fahrkarte."
+      ],
+      [
+       "einsteigen / aussteigen",
+       "naik / turun",
+       "Steigen Sie hier aus."
+      ],
+      [
+       "umsteigen",
+       "pindah kendaraan",
+       "Sie müssen am Hauptbahnhof umsteigen."
+      ],
+      [
+       "die Linie",
+       "jalur",
+       "Nehmen Sie die Linie 6."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kalimat yang membuka jalan ke mana pun",
+     "items": [
+      "*Entschuldigung, wie komme ich zum/zur …?* — Permisi, bagaimana caranya ke …?",
+      "*Ist das weit von hier?* — Jauh dari sini?",
+      "*Welche Linie fährt zum Bahnhof?* — Jalur berapa yang ke stasiun?"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Tiket kereta kota di banyak tempat harus **divalidasi sendiri** di mesin kecil sebelum naik (*entwerten*). Tiket yang belum divalidasi dianggap tidak berlaku, dan dendanya enam puluh euro — tak peduli seberapa sopan bahasa Jermanmu."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "de": "der Weg",
+   "baca": "veek",
+   "id": "jalan, rute"
+  },
+  {
+   "de": "geradeaus",
+   "baca": "ge-RAA-de-aus",
+   "id": "lurus"
+  },
+  {
+   "de": "links / rechts",
+   "baca": "links / rekhts",
+   "id": "kiri / kanan"
+  },
+  {
+   "de": "abbiegen",
+   "baca": "AP-bii-gen",
+   "id": "berbelok"
+  },
+  {
+   "de": "die Ampel",
+   "baca": "AM-pel",
+   "id": "lampu lalu lintas"
+  },
+  {
+   "de": "die Kreuzung",
+   "baca": "KROI-tsung",
+   "id": "perempatan"
+  },
+  {
+   "de": "die Ecke",
+   "baca": "E-ke",
+   "id": "sudut jalan"
+  },
+  {
+   "de": "die Brücke",
+   "baca": "BRÜ-ke",
+   "id": "jembatan"
+  },
+  {
+   "de": "der Bahnhof",
+   "baca": "BAAN-hoof",
+   "id": "stasiun"
+  },
+  {
+   "de": "die Haltestelle",
+   "baca": "HAL-te-syte-le",
+   "id": "halte"
+  },
+  {
+   "de": "die Apotheke",
+   "baca": "a-po-TEE-ke",
+   "id": "apotek"
+  },
+  {
+   "de": "die Kirche",
+   "baca": "KIR-khe",
+   "id": "gereja"
+  },
+  {
+   "de": "die Stadt",
+   "baca": "sytat",
+   "id": "kota"
+  },
+  {
+   "de": "die U-Bahn",
+   "baca": "UU-baan",
+   "id": "kereta bawah tanah"
+  },
+  {
+   "de": "die Fahrkarte",
+   "baca": "FAAR-kar-te",
+   "id": "tiket"
+  },
+  {
+   "de": "einsteigen",
+   "baca": "AIN-sytai-gen",
+   "id": "naik kendaraan"
+  },
+  {
+   "de": "aussteigen",
+   "baca": "AUS-sytai-gen",
+   "id": "turun"
+  },
+  {
+   "de": "umsteigen",
+   "baca": "UM-sytai-gen",
+   "id": "pindah kendaraan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "Entschuldigung, wie komme ich zum Bahnhof?",
+    "Gehen Sie geradeaus bis zur Ampel.",
+    "Dann biegen Sie links ab.",
+    "Ist es weit?",
+    "Wo ist die Haltestelle?",
+    "Sie können auch den Bus nehmen."
+   ]
+  },
+  {
+   "prompt": "Isi dengan *nach*, *zum*, *zur*, atau *in*.",
+   "items": [
+    "Ich fahre ____ Berlin.",
+    "Wie komme ich ____ Bahnhof?",
+    "Ich gehe ____ Apotheke.",
+    "Wir gehen ____ die Stadt.",
+    "Ich fahre jetzt ____ Hause.",
+    "Sie geht ____ Arzt."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat perintah yang benar.",
+   "items": [
+    "Sie / geradeaus / gehen",
+    "ab / Sie / rechts / biegen",
+    "Sie / den Bus / nehmen",
+    "aus / am Bahnhof / Sie / steigen",
+    "bitte / Sie / langsamer / sprechen",
+    "einen Moment / Sie / warten / bitte"
+   ]
+  }
+ ],
+ "answers": [
+  "Permisi, bagaimana caranya ke stasiun? — Jalan lurus sampai lampu merah. — Lalu belok kiri. — Jauh tidak? — Haltenya di mana? — Anda bisa juga naik bus.",
+  "nach — zum — zur — in — nach — zum",
+  "Gehen Sie geradeaus. — Biegen Sie rechts ab. — Nehmen Sie den Bus. — Steigen Sie am Bahnhof aus. — Sprechen Sie bitte langsamer. — Warten Sie bitte einen Moment."
+ ],
+ "wave": "Sebelum mulai unit 15, buka lagi dialog **Unit 7**. Periksa tiap kata sandangnya: mana yang Akkusativ, dan kenapa?"
+}

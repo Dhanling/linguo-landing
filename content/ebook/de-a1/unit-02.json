@@ -1,0 +1,546 @@
+{
+ "title": "Kamu dari mana?",
+ "title_target": "Woher kommst du?",
+ "goal": "Menyebut asal, tempat tinggal, dan bahasa yang kamu kuasai — sekaligus memasang mesin kata kerja bahasa Jerman yang akan dipakai di seluruh sisa modul.",
+ "bekal": [
+  "mengatakan kamu berasal dari mana dan tinggal di mana",
+  "mengubah kata kerja mengikuti pelakunya (*ich wohne*, *du wohnst*)",
+  "menyebutkan bahasa yang kamu pakai",
+  "bertanya dengan *wo*, *woher*, *was*, dan *wer*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Die erste Stunde",
+   "intro": "Pelajaran pertama dimulai. Guru berkeliling menanyakan asal peserta, dan kalimat yang sama diulang enam kali dengan nama yang berbeda — persis seperti kelas bahasa di mana pun.",
+   "lines": [
+    {
+     "speaker": "Frau Weber:",
+     "text": "Guten Tag. Ich bin Frau Weber. Woher kommen Sie?",
+     "id": "Selamat siang. Saya Frau Weber. Anda dari mana?",
+     "literal": "baik hari. aku adalah nyonya Weber. dari-mana datang Anda?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ich komme aus Indonesien, aus Bandung.",
+     "id": "Saya dari Indonesia, dari Bandung.",
+     "literal": "aku datang dari Indonesia, dari Bandung."
+    },
+    {
+     "speaker": "Frau Weber:",
+     "text": "Und wo wohnen Sie jetzt?",
+     "id": "Dan sekarang Anda tinggal di mana?",
+     "literal": "dan di-mana tinggal Anda sekarang?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jetzt wohne ich in Berlin, in Kreuzberg.",
+     "id": "Sekarang saya tinggal di Berlin, di Kreuzberg.",
+     "literal": "sekarang tinggal aku di Berlin, di Kreuzberg."
+    },
+    {
+     "speaker": "Frau Weber:",
+     "text": "Sehr schön. Und was machen Sie hier?",
+     "id": "Bagus sekali. Dan Anda melakukan apa di sini?",
+     "literal": "sangat indah. dan apa membuat Anda di-sini?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ich studiere Informatik und ich lerne Deutsch.",
+     "id": "Saya kuliah informatika dan saya belajar bahasa Jerman.",
+     "literal": "aku kuliah informatika dan aku belajar Jerman."
+    },
+    {
+     "speaker": "Frau Weber:",
+     "text": "Welche Sprachen sprechen Sie?",
+     "id": "Anda berbicara bahasa apa saja?",
+     "literal": "bahasa-bahasa yang-mana berbicara Anda?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ich spreche Indonesisch, Englisch und ein bisschen Deutsch.",
+     "id": "Saya berbicara bahasa Indonesia, Inggris, dan sedikit bahasa Jerman.",
+     "literal": "aku berbicara Indonesia, Inggris dan se sedikit Jerman."
+    },
+    {
+     "speaker": "Frau Weber:",
+     "text": "Sie sprechen sehr gut Deutsch!",
+     "id": "Bahasa Jerman Anda bagus sekali!",
+     "literal": "Anda berbicara sangat baik Jerman!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Danke. Woher kommen Sie, Frau Weber?",
+     "id": "Terima kasih. Anda dari mana, Frau Weber?",
+     "literal": "terima kasih. dari-mana datang Anda, nyonya Weber?"
+    },
+    {
+     "speaker": "Frau Weber:",
+     "text": "Ich komme aus Österreich, aber ich lebe seit zehn Jahren hier.",
+     "id": "Saya dari Austria, tapi saya tinggal di sini sejak sepuluh tahun.",
+     "literal": "aku datang dari Austria, tetapi aku hidup sejak sepuluh tahun-tahun di-sini."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Und wer ist das dort?",
+     "id": "Dan itu siapa yang di sana?",
+     "literal": "dan siapa adalah itu di-sana?"
+    },
+    {
+     "speaker": "Frau Weber:",
+     "text": "Das ist Marek. Er kommt aus Polen.",
+     "id": "Itu Marek. Dia dari Polandia.",
+     "literal": "itu adalah Marek. dia datang dari Polandia."
+    }
+   ],
+   "notes": [
+    "**Nama negara tanpa kata sandang.** *aus Indonesien*, *aus Polen*, *in Berlin* — polos begitu saja. Segelintir negara justru wajib memakainya: *aus **der** Schweiz* (Swiss), *aus **der** Türkei* (Turki), *in **den** USA*. Jumlahnya sedikit, jadi hafalkan yang menyimpang, bukan yang normal.",
+    "***aus* untuk asal, *in* untuk tempat sekarang.** *Ich komme **aus** Indonesien* menceritakan dari mana kamu berangkat; *Ich wohne **in** Berlin* menceritakan di mana kamu berada. Keduanya tak bisa ditukar, dan pemula sering menabrakkannya jadi *ich wohne aus Berlin*.",
+    "**Nama bahasa = nama negara + akhiran.** *Deutschland → Deutsch*, *England → Englisch*, *Indonesien → Indonesisch*, *Spanien → Spanisch*. Ditulis huruf besar, dan tanpa kata sandang: *Ich spreche Deutsch*, bukan *ich spreche das Deutsch*.",
+    "**Perhatikan baris 4: *Jetzt wohne ich…*** Kalimatnya tidak dimulai dengan *ich*. Begitu ada bagian lain yang maju ke depan (*jetzt*), pelakunya mundur ke belakang kata kerja. Kata kerjanya sendiri tak bergeser sedikit pun dari posisi kedua — aturan paling khas bahasa Jerman, yang dibedah tuntas di unit 10.",
+    "***studieren* bukan *lernen*.** *Studieren* dipakai untuk kuliah di universitas (*Ich studiere Medizin*); *lernen* untuk belajar apa pun yang lain, termasuk belajar bahasa (*Ich lerne Deutsch*). Mengatakan *ich studiere Deutsch* berarti kamu mengambil jurusan Sastra Jerman.",
+    "***wohnen* dan *leben*.** *Wohnen* menunjuk alamat — di rumah mana, di kota mana. *Leben* menunjuk hidup secara keseluruhan, sering dengan rentang waktu: *Ich lebe seit zehn Jahren hier*. Kalau ragu di percakapan sehari-hari, *wohnen* hampir selalu aman."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja biasa: satu akar, enam akhiran",
+     "body": [
+      "Hampir semua kata kerja Jerman bekerja dengan cara yang sama: buang **-en** dari bentuk kamusnya, lalu tempelkan akhiran yang cocok dengan pelakunya. *wohnen* → akar *wohn-*:"
+     ],
+     "table": {
+      "head": [
+       "Orang",
+       "wohnen (tinggal)",
+       "kommen (datang)",
+       "arbeiten (bekerja)"
+      ],
+      "rows": [
+       [
+        "ich",
+        "wohn**e**",
+        "komm**e**",
+        "arbeit**e**"
+       ],
+       [
+        "du",
+        "wohn**st**",
+        "komm**st**",
+        "arbeit**est**"
+       ],
+       [
+        "er / sie / es",
+        "wohn**t**",
+        "komm**t**",
+        "arbeit**et**"
+       ],
+       [
+        "wir",
+        "wohn**en**",
+        "komm**en**",
+        "arbeit**en**"
+       ],
+       [
+        "ihr",
+        "wohn**t**",
+        "komm**t**",
+        "arbeit**et**"
+       ],
+       [
+        "sie / Sie",
+        "wohn**en**",
+        "komm**en**",
+        "arbeit**en**"
+       ]
+      ]
+     },
+     "after": [
+      "Kolom ketiga memperlihatkan satu-satunya keruwetan: kalau akarnya berakhir dengan **-t** atau **-d** (*arbeiten*, *finden*, *reden*), sebuah **-e-** disisipkan supaya bisa diucapkan. Coba sebut *arbeitst* sekali dan kamu akan mengerti kenapa.",
+      "Bandingkan dengan bahasa Indonesia yang kata kerjanya tak berubah sama sekali (\"saya tinggal\", \"kamu tinggal\", \"mereka tinggal\"). Di bahasa Jerman, akhirannya sendiri sudah menunjuk pelakunya — tapi berbeda dari bahasa Spanyol atau Italia, **kata gantinya tetap wajib ditulis**. Tidak ada *wohne in Berlin* tanpa *ich*."
+     ]
+    },
+    {
+     "title": "Bertanya: dua bentuk, satu aturan",
+     "body": [
+      "Pertanyaan **ya/tidak** dibuat dengan menaruh kata kerja di posisi paling depan. Pertanyaan **berkata tanya** menaruh kata tanyanya lebih dulu, lalu kata kerjanya. Di kedua bentuk, kata kerja tak pernah lebih jauh dari posisi kedua."
+     ],
+     "table": {
+      "head": [
+       "Kata tanya",
+       "Arti",
+       "Contoh",
+       "Arti contoh"
+      ],
+      "rows": [
+       [
+        "**wer**",
+        "siapa",
+        "Wer ist das?",
+        "Itu siapa?"
+       ],
+       [
+        "**was**",
+        "apa",
+        "Was machst du?",
+        "Kamu sedang apa?"
+       ],
+       [
+        "**wo**",
+        "di mana",
+        "Wo wohnst du?",
+        "Kamu tinggal di mana?"
+       ],
+       [
+        "**woher**",
+        "dari mana",
+        "Woher kommst du?",
+        "Kamu dari mana?"
+       ],
+       [
+        "**wohin**",
+        "ke mana",
+        "Wohin gehst du?",
+        "Kamu mau ke mana?"
+       ],
+       [
+        "**wie**",
+        "bagaimana",
+        "Wie heißt du?",
+        "Siapa namamu?"
+       ],
+       [
+        "**wann**",
+        "kapan",
+        "Wann kommst du?",
+        "Kapan kamu datang?"
+       ],
+       [
+        "**warum**",
+        "kenapa",
+        "Warum lernst du Deutsch?",
+        "Kenapa kamu belajar bahasa Jerman?"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Tiga kata tanya tempat sering tertukar karena bahasa Indonesia memakai kata \"mana\" untuk ketiganya. Pisahkan begini: **wo** = diam di suatu tempat, **woher** = berangkat dari sana, **wohin** = menuju ke sana. Kalau kamu bisa menjawabnya dengan *aus…*, pertanyaannya *woher*; kalau jawabannya *nach…*, pertanyaannya *wohin*.",
+      "Perhatikan juga bahwa bahasa Jerman **tak punya kata bantu pertanyaan sama sekali** — tidak ada *do*, tidak ada \"apakah\". *Du wohnst hier* menjadi *Wohnst du hier?* hanya dengan menukar dua kata pertamanya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Negara, orangnya, dan bahasanya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tiga kolom pertama adalah tiga kata yang berbeda, dan pemula sering memakai yang satu untuk yang lain. *Ich komme aus **Deutschland*** (negara), *er ist **Deutscher*** (orangnya), *ich spreche **Deutsch*** (bahasanya)."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Negara",
+      "Orangnya (lk / pr)",
+      "Bahasa",
+      "Cara baca negara"
+     ],
+     "rows": [
+      [
+       "Deutschland",
+       "Deutscher / Deutsche",
+       "Deutsch",
+       "DOYC-lant"
+      ],
+      [
+       "Österreich",
+       "Österreicher / -in",
+       "Deutsch",
+       "ÖS-ta-raikh"
+      ],
+      [
+       "die Schweiz",
+       "Schweizer / -in",
+       "Deutsch, Französisch",
+       "syvaits"
+      ],
+      [
+       "Indonesien",
+       "Indonesier / -in",
+       "Indonesisch",
+       "in-do-NEE-zi-en"
+      ],
+      [
+       "England",
+       "Engländer / -in",
+       "Englisch",
+       "ENG-lant"
+      ],
+      [
+       "Frankreich",
+       "Franzose / Französin",
+       "Französisch",
+       "FRANK-raikh"
+      ],
+      [
+       "Spanien",
+       "Spanier / -in",
+       "Spanisch",
+       "SYPAA-ni-en"
+      ],
+      [
+       "Italien",
+       "Italiener / -in",
+       "Italienisch",
+       "i-TAA-li-en"
+      ],
+      [
+       "die Türkei",
+       "Türke / Türkin",
+       "Türkisch",
+       "tür-KAI"
+      ],
+      [
+       "Polen",
+       "Pole / Polin",
+       "Polnisch",
+       "POO-len"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Tiga kalimat yang akan kamu ucapkan ratusan kali"
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Ich komme aus Indonesien.* — Saya berasal dari Indonesia.",
+      "*Ich wohne in Berlin.* — Saya tinggal di Berlin.",
+      "*Ich spreche Indonesisch und ein bisschen Deutsch.* — Saya berbicara bahasa Indonesia dan sedikit bahasa Jerman."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kalimat penolong di kelas bahasa",
+     "items": [
+      "*Wie bitte?* — Maaf, bagaimana? (minta diulang; jauh lebih sopan daripada *was?*)",
+      "*Können Sie das bitte wiederholen?* — Bisa tolong diulang?",
+      "*Was bedeutet das?* — Apa artinya itu?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata kerja yang paling sering dipakai pemula",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Cara baca",
+      "Arti",
+      "Bentuk ich / du"
+     ],
+     "rows": [
+      [
+       "kommen",
+       "KO-men",
+       "datang, berasal",
+       "ich komme / du kommst"
+      ],
+      [
+       "wohnen",
+       "VOO-nen",
+       "tinggal (beralamat)",
+       "ich wohne / du wohnst"
+      ],
+      [
+       "leben",
+       "LEE-ben",
+       "hidup, menetap",
+       "ich lebe / du lebst"
+      ],
+      [
+       "lernen",
+       "LER-nen",
+       "belajar",
+       "ich lerne / du lernst"
+      ],
+      [
+       "studieren",
+       "sytu-DII-ren",
+       "kuliah",
+       "ich studiere / du studierst"
+      ],
+      [
+       "arbeiten",
+       "AR-bai-ten",
+       "bekerja",
+       "ich arbeite / du arbeitest"
+      ],
+      [
+       "machen",
+       "MA-khen",
+       "membuat, melakukan",
+       "ich mache / du machst"
+      ],
+      [
+       "gehen",
+       "GEE-en",
+       "pergi, berjalan",
+       "ich gehe / du gehst"
+      ],
+      [
+       "kaufen",
+       "KAU-fen",
+       "membeli",
+       "ich kaufe / du kaufst"
+      ],
+      [
+       "hören",
+       "HÖÖ-ren",
+       "mendengar",
+       "ich höre / du hörst"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua belas kata kerja ini semuanya beraturan — begitu satu kamu kuasai, sebelas sisanya mengikuti pola yang sama persis. Kata kerja yang **tidak** patuh jumlahnya sekitar dua ratus di seluruh bahasa Jerman, dan yang benar-benar sering dipakai kurang dari tiga puluh. Semuanya ada di lampiran belakang modul ini."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "de": "woher",
+   "baca": "vo-HEEA",
+   "id": "dari mana"
+  },
+  {
+   "de": "wo",
+   "baca": "voo",
+   "id": "di mana"
+  },
+  {
+   "de": "wohin",
+   "baca": "vo-HIN",
+   "id": "ke mana"
+  },
+  {
+   "de": "wer",
+   "baca": "veea",
+   "id": "siapa"
+  },
+  {
+   "de": "was",
+   "baca": "vas",
+   "id": "apa"
+  },
+  {
+   "de": "wann",
+   "baca": "van",
+   "id": "kapan"
+  },
+  {
+   "de": "warum",
+   "baca": "va-RUM",
+   "id": "kenapa"
+  },
+  {
+   "de": "aus",
+   "baca": "aus",
+   "id": "dari (asal)"
+  },
+  {
+   "de": "in",
+   "baca": "in",
+   "id": "di, ke dalam"
+  },
+  {
+   "de": "jetzt",
+   "baca": "yetst",
+   "id": "sekarang"
+  },
+  {
+   "de": "hier",
+   "baca": "hiia",
+   "id": "di sini"
+  },
+  {
+   "de": "dort",
+   "baca": "dort",
+   "id": "di sana"
+  },
+  {
+   "de": "aber",
+   "baca": "AA-ba",
+   "id": "tetapi"
+  },
+  {
+   "de": "sehr",
+   "baca": "zeea",
+   "id": "sangat"
+  },
+  {
+   "de": "schön",
+   "baca": "syön",
+   "id": "indah, bagus"
+  },
+  {
+   "de": "die Sprache",
+   "baca": "SYPRAA-khe",
+   "id": "bahasa"
+  },
+  {
+   "de": "sprechen",
+   "baca": "SYPRE-khen",
+   "id": "berbicara"
+  },
+  {
+   "de": "wohnen",
+   "baca": "VOO-nen",
+   "id": "tinggal"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "Woher kommst du?",
+    "Ich wohne jetzt in Berlin.",
+    "Was machen Sie hier?",
+    "Er kommt aus Polen und spricht Polnisch.",
+    "Wir lernen Deutsch.",
+    "Wer ist das dort?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+   "items": [
+    "Ich ____ aus Indonesien. (kommen)",
+    "Du ____ in Bandung. (wohnen)",
+    "Er ____ Informatik. (studieren)",
+    "Wir ____ Deutsch. (lernen)",
+    "Sie ____ in Berlin. (arbeiten)",
+    "Ihr ____ nichts. (machen)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat atau pertanyaan yang benar.",
+   "items": [
+    "du / woher / kommst",
+    "aus / ich / Indonesien / komme",
+    "wohnen / wo / Sie",
+    "in / wohne / ich / Berlin / jetzt",
+    "Deutsch / wir / lernen",
+    "sprechen / Sprachen / welche / Sie"
+   ]
+  }
+ ],
+ "answers": [
+  "Kamu dari mana? — Sekarang saya tinggal di Berlin. — Anda melakukan apa di sini? — Dia dari Polandia dan berbicara bahasa Polandia. — Kami belajar bahasa Jerman. — Itu siapa yang di sana?",
+  "komme — wohnst — studiert — lernen — arbeitet — macht",
+  "Woher kommst du? — Ich komme aus Indonesien. — Wo wohnen Sie? — Jetzt wohne ich in Berlin. — Wir lernen Deutsch. — Welche Sprachen sprechen Sie?"
+ ]
+}

@@ -1,0 +1,506 @@
+{
+ "title": "Ini keluarga saya",
+ "title_target": "Das ist meine Familie",
+ "goal": "Menceritakan keluargamu, dan memakai kata milik (*mein*, *dein*, *sein*, *ihr*) yang bentuknya ikut jenis kelamin benda yang dimiliki — bukan ikut pemiliknya.",
+ "bekal": [
+  "menyebut anggota keluarga",
+  "memakai kata kerja *haben* (punya)",
+  "mengatakan sesuatu itu milik siapa (*mein Bruder*, *meine Schwester*)",
+  "menyangkal kepemilikan (*Ich habe keine Geschwister*)"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Familienfotos",
+   "intro": "Jam istirahat. Lena mengeluarkan ponselnya dan Budi terjebak dalam ritual yang sama di semua bahasa dunia: menonton foto keluarga orang lain.",
+   "lines": [
+    {
+     "speaker": "Lena:",
+     "text": "Schau mal, das ist meine Familie.",
+     "id": "Lihat deh, ini keluarga saya.",
+     "literal": "lihat sekali, itu adalah punyaku keluarga."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Oh, schön! Wer ist das?",
+     "id": "Oh, bagus! Ini siapa?",
+     "literal": "oh, indah! siapa adalah itu?"
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Das sind meine Eltern. Mein Vater heißt Thomas, meine Mutter heißt Petra.",
+     "id": "Itu orang tua saya. Ayah saya bernama Thomas, ibu saya bernama Petra.",
+     "literal": "itu adalah punyaku orang-tua. punyaku ayah bernama Thomas, punyaku ibu bernama Petra."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Und hast du Geschwister?",
+     "id": "Dan kamu punya saudara?",
+     "literal": "dan punya kamu saudara-saudara?"
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Ja, ich habe einen Bruder und zwei Schwestern.",
+     "id": "Ya, saya punya satu kakak laki-laki dan dua saudara perempuan.",
+     "literal": "ya, aku punya seorang saudara-lelaki dan dua saudara-perempuan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Wie alt ist dein Bruder?",
+     "id": "Berapa umur kakakmu?",
+     "literal": "bagaimana tua adalah punyamu saudara-lelaki?"
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Er ist zwanzig. Seine Frau heißt Mia. Sie haben ein Kind.",
+     "id": "Dia dua puluh. Istrinya bernama Mia. Mereka punya satu anak.",
+     "literal": "dia adalah dua-puluh. punyanya istri bernama Mia. mereka punya satu anak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Also bist du Tante!",
+     "id": "Berarti kamu bibi!",
+     "literal": "jadi adalah kamu bibi!"
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Genau. Und du? Wie ist deine Familie?",
+     "id": "Tepat. Dan kamu? Bagaimana keluargamu?",
+     "literal": "tepat. dan kamu? bagaimana adalah punyamu keluarga?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ich habe keine Geschwister. Ich bin Einzelkind.",
+     "id": "Saya tidak punya saudara. Saya anak tunggal.",
+     "literal": "aku punya tidak-ada saudara-saudara. aku adalah anak-tunggal."
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Und deine Eltern? Wo wohnen sie?",
+     "id": "Dan orang tuamu? Mereka tinggal di mana?",
+     "literal": "dan punyamu orang-tua? di-mana tinggal mereka?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sie wohnen in Bandung. Ihr Haus ist klein, aber sehr gemütlich.",
+     "id": "Mereka tinggal di Bandung. Rumah mereka kecil, tapi nyaman sekali.",
+     "literal": "mereka tinggal di Bandung. punya-mereka rumah adalah kecil, tetapi sangat nyaman."
+    }
+   ],
+   "notes": [
+    "***mein* atau *meine*? Yang menentukan bendanya, bukan pemiliknya.** *Mein Vater* (maskulin) tapi *meine Mutter* (feminin) — padahal pemiliknya orang yang sama. Ini kebalikan dari bahasa Inggris (*his mother*, *her father*), dan sumber salah paling awet bagi pemula.",
+    "***sein* untuk pemilik laki-laki, *ihr* untuk pemilik perempuan.** Baris 7: *Seine Frau* = istri **dia laki-laki**. Kalau Lena berbicara tentang saudara perempuannya, ia akan berkata *ihr Mann* = suami **dia perempuan**. Jadi *ihr* menandai pemilik perempuan, sementara akhirannya (*-e* atau kosong) menandai bendanya.",
+    "**Baris 5: *einen Bruder*, bukan *ein Bruder*.** Kata benda maskulin berubah bentuk begitu ia jadi sasaran perbuatan — di sini, sasaran dari \"punya\". Ini yang disebut **Akkusativ**, dan dibedah tuntas di unit 7. Untuk sekarang cukup catat polanya: *ich habe **einen** Bruder*, *ich habe **eine** Schwester*, *ich habe **ein** Kind*.",
+    "***Geschwister* selalu jamak.** Tak ada bentuk tunggalnya — kalau kamu punya satu saudara, kamu menyebut *einen Bruder* atau *eine Schwester*. Begitu juga *die Eltern* (orang tua) yang tak pernah tunggal.",
+    "***Wie alt…?*** harfiahnya \"bagaimana tua\", dan jawabannya memakai *sein*, bukan *haben*: *Ich **bin** zwanzig* — bukan \"saya punya dua puluh tahun\" seperti dalam bahasa Prancis atau Spanyol.",
+    "***Schau mal*** = \"lihat dong\". Kata *mal* di tengah kalimat memperhalus perintah jadi ajakan santai — *Komm mal!*, *Sag mal…* Tanpa *mal*, kalimatnya terdengar seperti aba-aba."
+   ],
+   "grammars": [
+    {
+     "title": "haben (punya) — kata kerja kedua yang wajib hafal",
+     "body": [
+      "Bersama *sein*, kata kerja ini menopang separuh bahasa Jerman: ia dipakai untuk kepemilikan, untuk usia benda, untuk rasa lapar dan haus, dan nanti — di unit 17 — untuk membentuk seluruh bentuk lampau."
+     ],
+     "table": {
+      "head": [
+       "Orang",
+       "haben",
+       "Cara baca",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "ich",
+        "**habe**",
+        "HAA-be",
+        "Ich habe Zeit."
+       ],
+       [
+        "du",
+        "**hast**",
+        "hast",
+        "Hast du Geschwister?"
+       ],
+       [
+        "er / sie / es",
+        "**hat**",
+        "hat",
+        "Er hat ein Kind."
+       ],
+       [
+        "wir",
+        "**haben**",
+        "HAA-ben",
+        "Wir haben Hunger."
+       ],
+       [
+        "ihr",
+        "**habt**",
+        "haapt",
+        "Habt ihr Zeit?"
+       ],
+       [
+        "sie / Sie",
+        "**haben**",
+        "HAA-ben",
+        "Sie haben ein Haus."
+       ]
+      ]
+     },
+     "after": [
+      "Yang tak beraturan cuma dua bentuk di tengah: *du hast* dan *er hat* membuang huruf **b**-nya. Sisanya patuh pada pola kata kerja biasa yang sudah kamu pasang di unit 2.",
+      "Beberapa ungkapan sehari-hari memakai *haben* di tempat bahasa Indonesia memakai kata sifat: *Ich habe Hunger* (\"saya lapar\", harfiah \"saya punya kelaparan\"), *Ich habe Durst* (haus), *Ich habe Zeit* (ada waktu), *Ich habe keine Zeit* (tidak sempat)."
+     ]
+    },
+    {
+     "title": "Kata milik: satu keluarga, dua akhiran",
+     "body": [
+      "Semua kata milik berperilaku persis seperti *ein* / *kein* — itulah sebabnya buku tata bahasa menyebutnya *ein-Wörter*. Akhirannya cuma dua: **kosong** untuk maskulin & netral, **-e** untuk feminin & jamak."
+     ],
+     "table": {
+      "head": [
+       "Pemilik",
+       "+ maskulin / netral",
+       "+ feminin / jamak",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "ich",
+        "**mein** Vater / mein Kind",
+        "**meine** Mutter / meine Eltern",
+        "saya punya"
+       ],
+       [
+        "du",
+        "**dein** Bruder",
+        "**deine** Schwester",
+        "kamu punya"
+       ],
+       [
+        "er / es",
+        "**sein** Sohn",
+        "**seine** Frau",
+        "dia (lk) punya"
+       ],
+       [
+        "sie",
+        "**ihr** Mann",
+        "**ihre** Tochter",
+        "dia (pr) punya"
+       ],
+       [
+        "wir",
+        "**unser** Haus",
+        "**unsere** Familie",
+        "kami punya"
+       ],
+       [
+        "ihr",
+        "**euer** Lehrer",
+        "**eure** Schule",
+        "kalian punya"
+       ],
+       [
+        "sie (mereka)",
+        "**ihr** Haus",
+        "**ihre** Kinder",
+        "mereka punya"
+       ],
+       [
+        "Sie (Anda)",
+        "**Ihr** Name",
+        "**Ihre** Adresse",
+        "Anda punya"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Tiga baris terakhir ditulis nyaris sama dan ini memang membingungkan sejak awal: *ihr* bisa berarti \"dia perempuan punya\", \"mereka punya\", atau — dengan huruf besar, *Ihr* — \"Anda punya\". Yang membedakannya cuma konteks dan huruf kapital. Kabar baiknya: dalam percakapan, ketiganya jarang bertabrakan dalam satu kalimat.",
+      "Perhatikan juga *euer* → *eure*: huruf **e** di tengahnya rontok begitu akhiran ditambahkan. Pola yang sama muncul di *unser* → *unsre* dalam percakapan cepat, meski *unsere* tetap bentuk tulisnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Anggota keluarga",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Jamak",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "die Familie",
+       "die Familien",
+       "fa-MII-li-e",
+       "keluarga"
+      ],
+      [
+       "die Eltern",
+       "(selalu jamak)",
+       "EL-tan",
+       "orang tua"
+      ],
+      [
+       "der Vater",
+       "die Väter",
+       "FAA-ta",
+       "ayah"
+      ],
+      [
+       "die Mutter",
+       "die Mütter",
+       "MU-ta",
+       "ibu"
+      ],
+      [
+       "der Bruder",
+       "die Brüder",
+       "BRUU-da",
+       "saudara laki-laki"
+      ],
+      [
+       "die Schwester",
+       "die Schwestern",
+       "SYVES-ta",
+       "saudara perempuan"
+      ],
+      [
+       "die Geschwister",
+       "(selalu jamak)",
+       "ge-SYVIS-ta",
+       "saudara kandung"
+      ],
+      [
+       "der Sohn",
+       "die Söhne",
+       "zoon",
+       "anak laki-laki"
+      ],
+      [
+       "die Tochter",
+       "die Töchter",
+       "TOKH-ta",
+       "anak perempuan"
+      ],
+      [
+       "das Kind",
+       "die Kinder",
+       "kint",
+       "anak"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Mein Freund* dan *meine Freundin* punya arti ganda: bisa \"teman saya\", bisa \"pacar saya\". Untuk memastikan artinya teman biasa, orang berkata *ein Freund von mir* (\"seorang teman dari saya\"). Selisih satu kata, dan salah paham yang cukup mahal."
+    },
+    {
+     "type": "sub",
+     "text": "Bertanya tentang keluarga"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Hast du Geschwister?",
+       "Kamu punya saudara?"
+      ],
+      [
+       "Wie viele Kinder hast du?",
+       "Berapa anakmu?"
+      ],
+      [
+       "Wie heißt deine Mutter?",
+       "Siapa nama ibumu?"
+      ],
+      [
+       "Wie alt ist dein Vater?",
+       "Berapa umur ayahmu?"
+      ],
+      [
+       "Bist du verheiratet?",
+       "Kamu sudah menikah?"
+      ],
+      [
+       "Ich bin ledig / verheiratet.",
+       "Saya lajang / sudah menikah."
+      ],
+      [
+       "Ich bin Einzelkind.",
+       "Saya anak tunggal."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menyusun kalimat tentang orang lain",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tiga kalimat berikut memakai seluruh isi unit ini sekaligus. Coba ubah namanya jadi nama keluargamu sendiri dan ucapkan dengan suara keras — bahan yang menempel adalah bahan yang menyangkut hidupmu, bukan hidup Lena."
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Meine Mutter heißt Siti. Sie ist fünfzig und sie arbeitet in Bandung.*",
+      "*Ich habe einen Bruder. Er heißt Rian und er ist Student.*",
+      "*Meine Eltern wohnen in Indonesien. Ihr Haus ist klein, aber sehr gemütlich.*"
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Satu kebiasaan yang menghemat berbulan-bulan",
+     "items": [
+      "Setiap kali kamu bertemu kata benda baru, ucapkan tiga hal sekaligus: kata sandangnya, katanya, dan bentuk jamaknya — *die Schwester, die Schwestern*.",
+      "Kalau kamu menulis kosakata di buku catatan, tulis kata sandangnya dengan warna berbeda per jenis. Otak mengingat warna jauh lebih baik daripada mengingat huruf d-e-r.",
+      "Jangan pernah menulis kata benda telanjang di catatanmu. *Bruder* saja adalah setengah informasi, dan setengah yang hilang justru yang akan kamu butuhkan nanti."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "de": "haben",
+   "baca": "HAA-ben",
+   "id": "punya"
+  },
+  {
+   "de": "mein / meine",
+   "baca": "main / MAI-ne",
+   "id": "saya punya"
+  },
+  {
+   "de": "dein / deine",
+   "baca": "dain / DAI-ne",
+   "id": "kamu punya"
+  },
+  {
+   "de": "sein / seine",
+   "baca": "zain / ZAI-ne",
+   "id": "dia (lk) punya"
+  },
+  {
+   "de": "ihr / ihre",
+   "baca": "iia / II-re",
+   "id": "dia (pr) / mereka punya"
+  },
+  {
+   "de": "unser / unsere",
+   "baca": "UN-za",
+   "id": "kami punya"
+  },
+  {
+   "de": "die Familie",
+   "baca": "fa-MII-li-e",
+   "id": "keluarga"
+  },
+  {
+   "de": "die Eltern",
+   "baca": "EL-tan",
+   "id": "orang tua"
+  },
+  {
+   "de": "der Vater",
+   "baca": "FAA-ta",
+   "id": "ayah"
+  },
+  {
+   "de": "die Mutter",
+   "baca": "MU-ta",
+   "id": "ibu"
+  },
+  {
+   "de": "der Bruder",
+   "baca": "BRUU-da",
+   "id": "saudara laki-laki"
+  },
+  {
+   "de": "die Schwester",
+   "baca": "SYVES-ta",
+   "id": "saudara perempuan"
+  },
+  {
+   "de": "die Geschwister",
+   "baca": "ge-SYVIS-ta",
+   "id": "saudara kandung"
+  },
+  {
+   "de": "das Kind",
+   "baca": "kint",
+   "id": "anak"
+  },
+  {
+   "de": "der Sohn",
+   "baca": "zoon",
+   "id": "anak laki-laki"
+  },
+  {
+   "de": "die Tochter",
+   "baca": "TOKH-ta",
+   "id": "anak perempuan"
+  },
+  {
+   "de": "das Haus",
+   "baca": "haus",
+   "id": "rumah"
+  },
+  {
+   "de": "die Tante",
+   "baca": "TAN-te",
+   "id": "bibi"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "Das ist meine Familie.",
+    "Hast du Geschwister?",
+    "Ich habe einen Bruder und zwei Schwestern.",
+    "Wie alt ist dein Vater?",
+    "Seine Frau heißt Mia.",
+    "Ich habe keine Zeit."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk *haben* yang tepat.",
+   "items": [
+    "Ich ____ zwei Schwestern.",
+    "____ du Geschwister?",
+    "Er ____ ein Kind.",
+    "Wir ____ Hunger.",
+    "Ihr ____ keine Zeit.",
+    "Sie ____ ein Haus in Berlin."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "das / meine / ist / Familie",
+    "Geschwister / du / hast",
+    "keine / ich / Geschwister / habe",
+    "Vater / heißt / Thomas / mein",
+    "wohnen / in Bandung / meine Eltern",
+    "ist / dein / wie alt / Bruder"
+   ]
+  }
+ ],
+ "answers": [
+  "Ini keluarga saya. — Kamu punya saudara? — Saya punya satu saudara laki-laki dan dua saudara perempuan. — Berapa umur ayahmu? — Istrinya bernama Mia. — Saya tidak punya waktu.",
+  "habe — Hast — hat — haben — habt — haben",
+  "Das ist meine Familie. — Hast du Geschwister? — Ich habe keine Geschwister. — Mein Vater heißt Thomas. — Meine Eltern wohnen in Bandung. — Wie alt ist dein Bruder?"
+ ]
+}

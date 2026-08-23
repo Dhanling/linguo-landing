@@ -1,0 +1,497 @@
+{
+ "title": "Akhir pekan",
+ "title_target": "Am Wochenende",
+ "goal": "Menguasai aturan yang paling menentukan bunyi kalimat Jermanmu: kata kerja duduk di posisi kedua, apa pun yang mendahuluinya.",
+ "bekal": [
+  "menaruh kata kerja di posisi yang benar",
+  "memulai kalimat dengan keterangan waktu atau tempat",
+  "menyusun urutan keterangan (waktu → cara → tempat)",
+  "mengatakan apa yang kamu suka lakukan dengan *gern*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Was machst du am Wochenende?",
+   "intro": "Jumat sore. Perhatikan baik-baik posisi kata kerja di setiap kalimat — beberapa kalimat dimulai dengan pelakunya, beberapa tidak, tapi kata kerjanya tak pernah bergeser.",
+   "lines": [
+    {
+     "speaker": "Lena:",
+     "text": "Was machst du am Wochenende?",
+     "id": "Akhir pekan kamu ngapain?",
+     "literal": "apa membuat kamu pada akhir-pekan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Am Samstag gehe ich ins Schwimmbad. Ich schwimme sehr gern.",
+     "id": "Sabtu saya pergi ke kolam renang. Saya suka sekali berenang.",
+     "literal": "pada Sabtu pergi aku ke-dalam kolam-renang. aku berenang sangat dengan-senang."
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Um wie viel Uhr?",
+     "id": "Jam berapa?",
+     "literal": "pada berapa banyak jam?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ich gehe morgens um acht dorthin. Dann ist es noch leer.",
+     "id": "Saya ke sana jam delapan pagi. Waktu itu masih sepi.",
+     "literal": "aku pergi pagi-pagi pada delapan ke-sana. lalu adalah itu masih kosong."
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Und am Sonntag?",
+     "id": "Dan hari Minggu?",
+     "literal": "dan pada Minggu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Am Sonntag besuche ich meinen Onkel in Potsdam.",
+     "id": "Hari Minggu saya mengunjungi paman saya di Potsdam.",
+     "literal": "pada Minggu mengunjungi aku punyaku paman di Potsdam."
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Fährst du mit dem Zug?",
+     "id": "Kamu naik kereta?",
+     "literal": "mengendarai kamu dengan itu kereta?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ja, ich fahre am Sonntag mit dem Zug nach Potsdam.",
+     "id": "Ya, hari Minggu saya naik kereta ke Potsdam.",
+     "literal": "ya, aku mengendarai pada Minggu dengan itu kereta ke Potsdam."
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Das ist schön. Ich bleibe zu Hause und lese.",
+     "id": "Bagus. Saya di rumah saja dan membaca.",
+     "literal": "itu adalah indah. aku tinggal di rumah dan membaca."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Liest du gern?",
+     "id": "Kamu suka membaca?",
+     "literal": "membaca kamu dengan-senang?"
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Sehr gern. Aber Sport mache ich nicht gern.",
+     "id": "Suka sekali. Tapi olahraga saya tidak suka.",
+     "literal": "sangat dengan-senang. tetapi olahraga membuat aku tidak dengan-senang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vielleicht kommst du am Samstag mit?",
+     "id": "Mungkin kamu mau ikut hari Sabtu?",
+     "literal": "mungkin datang kamu pada Sabtu ikut?"
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Um acht Uhr morgens? Nein danke!",
+     "id": "Jam delapan pagi? Tidak, terima kasih!",
+     "literal": "pada delapan jam pagi-pagi? tidak terima-kasih!"
+    }
+   ],
+   "notes": [
+    "**Lihat baris 2, 6, 8, dan 12.** Semuanya dimulai dengan sesuatu selain pelaku — *Am Samstag*, *Am Sonntag*, *Vielleicht* — dan di semuanya pelakunya mundur ke belakang kata kerja. Yang tidak pernah bergerak adalah kata kerjanya sendiri: selalu **kata kedua** dalam kalimat.",
+    "**Bandingkan baris 8 dan 2 kata demi kata.** *Ich fahre am Sonntag mit dem Zug nach Potsdam* dan *Am Samstag gehe ich ins Schwimmbad*. Isinya bisa disusun dua cara, dan keduanya benar. Yang di depan adalah yang ingin kamu tonjolkan.",
+    "***gern* bukan kata kerja \"suka\".** Ia keterangan yang menempel pada kata kerja lain: *Ich lese gern* = \"saya membaca dengan senang hati\" = saya suka membaca. Ingkarannya *nicht gern*: *Ich koche nicht gern*.",
+    "**Baris 11: *Sport mache ich nicht gern*.** Bahkan sasaran perbuatan (*Sport*) boleh maju ke depan kalimat untuk penekanan — dan aturannya tetap: kata kerja kedua, pelaku ketiga. Ini terdengar sangat alami di telinga orang Jerman dan mustahil dalam bahasa Inggris.",
+    "***mit dem Zug*, *mit dem Bus*, *mit dem Auto*** — alat transportasi selalu memakai *mit dem/der*. Perkecualiannya berjalan kaki: *zu Fuß*. Bentuk *dem* di sini adalah Dativ, yang dibedah di unit 13.",
+    "***zu Hause* dan *nach Hause*.** Yang pertama berarti berada di rumah (*Ich bleibe zu Hause*), yang kedua berarti pulang (*Ich gehe nach Hause*). Dua frasa beku yang wajib dihafal apa adanya."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja di posisi kedua — aturan tunggal",
+     "body": [
+      "Kalau kamu hanya boleh mengingat satu aturan tata bahasa Jerman, ini aturannya. Dalam kalimat berita, **kata kerja bernyawa selalu unsur kedua**. Bukan kata kedua secara huruf — unsur kedua: satu blok makna yang mendahuluinya boleh sepanjang apa pun."
+     ],
+     "table": {
+      "head": [
+       "Posisi 1",
+       "Posisi 2 (kata kerja)",
+       "Selebihnya"
+      ],
+      "rows": [
+       [
+        "Ich",
+        "**fahre**",
+        "am Sonntag nach Potsdam."
+       ],
+       [
+        "Am Sonntag",
+        "**fahre**",
+        "ich nach Potsdam."
+       ],
+       [
+        "Nach Potsdam",
+        "**fahre**",
+        "ich am Sonntag."
+       ],
+       [
+        "Mit dem Zug",
+        "**fahre**",
+        "ich am Sonntag nach Potsdam."
+       ],
+       [
+        "Meinen Onkel",
+        "**besuche**",
+        "ich am Sonntag."
+       ],
+       [
+        "Vielleicht",
+        "**kommst**",
+        "du mit?"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Kesalahan paling khas penutur Indonesia dan Inggris: menaruh **dua** unsur di depan kata kerja — *Am Sonntag ich fahre nach Potsdam*. Kalimat itu langsung terdengar asing bagi orang Jerman, jauh lebih mencolok daripada salah kata sandang. Kalau sesuatu maju ke depan, pelakunya **wajib** mundur.",
+      "Aturan ini punya dua saudara yang sudah kamu pakai sejak unit 1: dalam **pertanyaan ya/tidak** kata kerja pindah ke posisi **pertama** (*Fährst du mit dem Zug?*), dan dalam **perintah** juga posisi pertama (*Komm mit!*). Kata tanya tidak menghitung sebagai unsur pertama yang biasa — ia memang tempatnya di depan, dan kata kerja tetap menyusul: *Wann **fährst** du?*"
+     ]
+    },
+    {
+     "title": "Urutan keterangan: waktu, cara, tempat",
+     "body": [
+      "Kalau satu kalimat memuat lebih dari satu keterangan, urutannya tidak bebas. Bahasa Jerman menyusunnya **waktu → cara → tempat** — kebalikan dari kebiasaan bahasa Inggris, yang menaruh tempat lebih dulu."
+     ],
+     "table": {
+      "head": [
+       "",
+       "WAKTU",
+       "CARA",
+       "TEMPAT"
+      ],
+      "rows": [
+       [
+        "Ich fahre",
+        "am Sonntag",
+        "mit dem Zug",
+        "nach Potsdam."
+       ],
+       [
+        "Wir gehen",
+        "heute Abend",
+        "zu Fuß",
+        "ins Kino."
+       ],
+       [
+        "Sie kommt",
+        "morgen",
+        "mit dem Auto",
+        "nach Berlin."
+       ],
+       [
+        "Ich lerne",
+        "jeden Tag",
+        "allein",
+        "zu Hause."
+       ]
+      ]
+     },
+     "after": [
+      "Bandingkan dengan bahasa Inggris: *I'm going **to Potsdam by train on Sunday*** — persis terbalik. Menerjemahkan urutan Inggris kata demi kata adalah salah satu sumber kalimat Jerman yang \"benar tapi aneh\".",
+      "Kalau salah satu keterangan maju ke posisi pertama, sisanya tetap dalam urutan yang sama: *Am Sonntag fahre ich mit dem Zug nach Potsdam.* Yang maju biasanya keterangan **waktu**, dan itu sebabnya kalimat Jerman sehari-hari begitu sering dimulai dengan *heute*, *morgen*, *am Montag*.",
+      "Sasaran perbuatan (Akkusativ) berdiri **sebelum** keterangan tempat tapi biasanya **sesudah** keterangan waktu: *Ich besuche **am Sonntag** meinen Onkel **in Potsdam**.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kegiatan waktu luang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Sport machen",
+       "syport MA-khen",
+       "berolahraga"
+      ],
+      [
+       "schwimmen",
+       "SYVI-men",
+       "berenang"
+      ],
+      [
+       "Fußball spielen",
+       "FUUS-bal SYPII-len",
+       "bermain sepak bola"
+      ],
+      [
+       "Musik hören",
+       "mu-ZIIK HÖÖ-ren",
+       "mendengarkan musik"
+      ],
+      [
+       "fernsehen",
+       "FERN-zee-en",
+       "menonton TV"
+      ],
+      [
+       "ins Kino gehen",
+       "ins KII-no GEE-en",
+       "pergi ke bioskop"
+      ],
+      [
+       "spazieren gehen",
+       "sypa-TSII-ren",
+       "jalan-jalan"
+      ],
+      [
+       "Freunde treffen",
+       "FROIN-de TRE-fen",
+       "bertemu teman"
+      ],
+      [
+       "kochen",
+       "KO-khen",
+       "memasak"
+      ],
+      [
+       "lesen",
+       "LEE-zen",
+       "membaca"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Mengatakan suka dan tidak suka"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Arti",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "Ich lese **gern**.",
+       "Saya suka membaca.",
+       "gern menempel pada kata kerja"
+      ],
+      [
+       "Ich lese **sehr gern**.",
+       "Saya suka sekali membaca.",
+       "penegasan"
+      ],
+      [
+       "Ich lese **nicht gern**.",
+       "Saya tidak suka membaca.",
+       "ingkar"
+      ],
+      [
+       "Ich lese **nicht so gern**.",
+       "Saya kurang suka membaca.",
+       "lebih halus"
+      ],
+      [
+       "**Liest** du gern?",
+       "Kamu suka membaca?",
+       "pertanyaan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Jangan memakai *Ich liebe lesen* meniru bahasa Inggris *I love reading*. Bahasa Jerman memakai *gern* untuk kesukaan, dan *lieben* dicadangkan untuk cinta pada orang. Menyebut *Ich liebe Pizza* memang terdengar di percakapan santai, tapi terasa berlebihan — persis seperti mengatakan \"saya mencintai pizza\" dalam bahasa Indonesia."
+    }
+   ]
+  },
+  {
+   "title": "Membetulkan urutan sendiri",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Cara tercepat memeriksa kalimatmu sendiri: tunjuk kata kerjanya, lalu hitung mundur. Kalau ada lebih dari satu unsur di sebelah kirinya, kalimatnya salah."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Salah",
+      "Benar",
+      "Kenapa"
+     ],
+     "rows": [
+      [
+       "*Am Montag ich gehe zur Arbeit.*",
+       "Am Montag **gehe ich** zur Arbeit.",
+       "dua unsur sebelum kata kerja"
+      ],
+      [
+       "*Ich gehe zur Schule jeden Tag.*",
+       "Ich gehe **jeden Tag** zur Schule.",
+       "waktu sebelum tempat"
+      ],
+      [
+       "*Heute ich bin müde.*",
+       "Heute **bin ich** müde.",
+       "pelaku mundur"
+      ],
+      [
+       "*Ich fahre nach Berlin mit dem Zug.*",
+       "Ich fahre **mit dem Zug nach Berlin**.",
+       "cara sebelum tempat"
+      ],
+      [
+       "*Gern ich lese Bücher.*",
+       "Ich lese **gern** Bücher.",
+       "gern tidak memulai kalimat"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Latihan lima menit",
+     "items": [
+      "Ambil lima kalimat yang sudah kamu tulis di unit-unit sebelumnya, lalu tulis ulang masing-masing dengan keterangan waktunya di depan.",
+      "Ucapkan keduanya dengan suara keras berurutan: *Ich gehe am Samstag ins Kino* / *Am Samstag gehe ich ins Kino*. Rasakan bahwa kata kerjanya tak bergerak.",
+      "Kalau salah satu versimu terdengar janggal, cek satu hal saja: berapa unsur yang ada sebelum kata kerja."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "de": "das Wochenende",
+   "baca": "VO-khen-en-de",
+   "id": "akhir pekan"
+  },
+  {
+   "de": "der Sport",
+   "baca": "syport",
+   "id": "olahraga"
+  },
+  {
+   "de": "schwimmen",
+   "baca": "SYVI-men",
+   "id": "berenang"
+  },
+  {
+   "de": "das Schwimmbad",
+   "baca": "SYVIM-baat",
+   "id": "kolam renang"
+  },
+  {
+   "de": "spielen",
+   "baca": "SYPII-len",
+   "id": "bermain"
+  },
+  {
+   "de": "treffen",
+   "baca": "TRE-fen",
+   "id": "bertemu"
+  },
+  {
+   "de": "besuchen",
+   "baca": "be-ZUU-khen",
+   "id": "mengunjungi"
+  },
+  {
+   "de": "bleiben",
+   "baca": "BLAI-ben",
+   "id": "tinggal, tetap"
+  },
+  {
+   "de": "reisen",
+   "baca": "RAI-zen",
+   "id": "bepergian"
+  },
+  {
+   "de": "das Kino",
+   "baca": "KII-no",
+   "id": "bioskop"
+  },
+  {
+   "de": "die Musik",
+   "baca": "mu-ZIIK",
+   "id": "musik"
+  },
+  {
+   "de": "der Zug",
+   "baca": "tsuuk",
+   "id": "kereta"
+  },
+  {
+   "de": "der Bus",
+   "baca": "bus",
+   "id": "bus"
+  },
+  {
+   "de": "das Auto",
+   "baca": "AU-to",
+   "id": "mobil"
+  },
+  {
+   "de": "das Fahrrad",
+   "baca": "FAAR-raat",
+   "id": "sepeda"
+  },
+  {
+   "de": "zu Fuß",
+   "baca": "tsu fuus",
+   "id": "jalan kaki"
+  },
+  {
+   "de": "zu Hause",
+   "baca": "tsu HAU-ze",
+   "id": "di rumah"
+  },
+  {
+   "de": "nach Hause",
+   "baca": "naakh HAU-ze",
+   "id": "pulang"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "Was machst du am Wochenende?",
+    "Am Samstag gehe ich ins Schwimmbad.",
+    "Ich fahre am Sonntag mit dem Zug nach Potsdam.",
+    "Ich bleibe zu Hause und lese.",
+    "Sport mache ich nicht gern.",
+    "Vielleicht kommst du mit?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata kerja pada posisi yang benar.",
+   "items": [
+    "Am Montag ____ ich zur Arbeit. (gehen)",
+    "Heute ____ ich müde. (sein)",
+    "Morgen ____ wir nach Berlin. (fahren)",
+    "Vielleicht ____ du mit. (kommen)",
+    "Am Wochenende ____ ich Freunde. (treffen)",
+    "Jeden Tag ____ er Musik. (hören)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar. Mulailah dengan kata pertama yang diberikan.",
+   "items": [
+    "am Samstag / ich / ins Kino / gehe",
+    "mit dem Zug / ich / nach Potsdam / fahre / am Sonntag",
+    "gern / ich / lese / sehr",
+    "zu Hause / bleibe / ich / heute",
+    "jeden Tag / ich / zu Fuß / gehe / zur Schule",
+    "meinen Onkel / ich / besuche / am Sonntag"
+   ]
+  }
+ ],
+ "answers": [
+  "Akhir pekan kamu ngapain? — Hari Sabtu saya pergi ke kolam renang. — Hari Minggu saya naik kereta ke Potsdam. — Saya tinggal di rumah dan membaca. — Olahraga saya tidak suka. — Mungkin kamu mau ikut?",
+  "gehe — bin — fahren — kommst — treffe — hört",
+  "Am Samstag gehe ich ins Kino. — Am Sonntag fahre ich mit dem Zug nach Potsdam. — Ich lese sehr gern. — Heute bleibe ich zu Hause. — Ich gehe jeden Tag zu Fuß zur Schule. — Am Sonntag besuche ich meinen Onkel."
+ ],
+ "wave": "Sebelum mulai unit 11, buka lagi dialog **Unit 3**. Perhatikan khusus kata sandangnya — apakah kamu masih ingat *der*, *die*, atau *das* untuk tiap benda?"
+}

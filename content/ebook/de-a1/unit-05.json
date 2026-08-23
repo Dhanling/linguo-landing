@@ -1,0 +1,529 @@
+{
+ "title": "Angka, umur, dan nomor telepon",
+ "title_target": "Zahlen und Alter",
+ "goal": "Menguasai angka bahasa Jerman, termasuk kebiasaannya yang paling membingungkan: satuan disebut lebih dulu daripada puluhan.",
+ "bekal": [
+  "menghitung dari nol sampai seribu",
+  "menyebut umurmu dan tanggal lahirmu",
+  "mendiktekan nomor telepon dan alamat",
+  "menanyakan harga (*Wie viel kostet das?*)"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Bei der Anmeldung",
+   "intro": "Budi mendaftar ke kursus lanjutan. Petugasnya mengisi formulir, dan seluruh percakapan ini hampir tak berisi apa pun selain angka.",
+   "lines": [
+    {
+     "speaker": "Sekretärin:",
+     "text": "Guten Tag. Wie ist Ihr Name, bitte?",
+     "id": "Selamat siang. Nama Anda siapa?",
+     "literal": "baik hari. bagaimana adalah punya-Anda nama, tolong?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Budi Santoso. S-A-N-T-O-S-O.",
+     "id": "Budi Santoso. S-A-N-T-O-S-O.",
+     "literal": "Budi Santoso. S-A-N-T-O-S-O."
+    },
+    {
+     "speaker": "Sekretärin:",
+     "text": "Danke. Wie alt sind Sie?",
+     "id": "Terima kasih. Berapa umur Anda?",
+     "literal": "terima kasih. bagaimana tua adalah Anda?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ich bin vierundzwanzig Jahre alt.",
+     "id": "Saya dua puluh empat tahun.",
+     "literal": "aku adalah empat-dan-dua-puluh tahun tua."
+    },
+    {
+     "speaker": "Sekretärin:",
+     "text": "Und Ihre Adresse?",
+     "id": "Dan alamat Anda?",
+     "literal": "dan punya-Anda alamat?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Gneisenaustraße siebenundvierzig, zehntausendneunhunderteinundsechzig Berlin.",
+     "id": "Gneisenaustraße 47, 10961 Berlin.",
+     "literal": "Gneisenau-jalan tujuh-dan-empat-puluh, sepuluh-ribu-sembilan-ratus-satu-dan-enam-puluh Berlin."
+    },
+    {
+     "speaker": "Sekretärin:",
+     "text": "Langsam, bitte! Vier-sieben?",
+     "id": "Pelan-pelan! Empat-tujuh?",
+     "literal": "pelan, tolong! empat-tujuh?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ja, siebenundvierzig. Vier, sieben.",
+     "id": "Ya, empat puluh tujuh. Empat, tujuh.",
+     "literal": "ya, tujuh-dan-empat-puluh. empat, tujuh."
+    },
+    {
+     "speaker": "Sekretärin:",
+     "text": "Gut. Und Ihre Handynummer?",
+     "id": "Baik. Dan nomor ponsel Anda?",
+     "literal": "baik. dan punya-Anda ponsel-nomor?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Null eins sieben — drei zwei — acht neun — vier vier.",
+     "id": "Nol satu tujuh — tiga dua — delapan sembilan — empat empat.",
+     "literal": "nol satu tujuh — tiga dua — delapan sembilan — empat empat."
+    },
+    {
+     "speaker": "Sekretärin:",
+     "text": "Perfekt. Der Kurs kostet zweihundertfünfzig Euro.",
+     "id": "Sempurna. Kursusnya seharga dua ratus lima puluh euro.",
+     "literal": "sempurna. itu kursus berharga dua-ratus-lima-puluh euro."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Wie bitte? Wie viel kostet der Kurs?",
+     "id": "Maaf, bagaimana? Berapa harga kursusnya?",
+     "literal": "bagaimana tolong? berapa banyak berharga itu kursus?"
+    },
+    {
+     "speaker": "Sekretärin:",
+     "text": "Zweihundertfünfzig. 250 Euro für zwölf Wochen.",
+     "id": "Dua ratus lima puluh. 250 euro untuk dua belas minggu.",
+     "literal": "dua-ratus-lima-puluh. 250 euro untuk dua-belas minggu-minggu."
+    }
+   ],
+   "notes": [
+    "**Satuan sebelum puluhan.** *vierundzwanzig* harfiahnya \"empat dan dua puluh\" = 24. Begitu seterusnya sampai 99. Inilah sebabnya Budi menyebut *siebenundvierzig* dan petugasnya sempat mendengar \"empat-tujuh\" — telinga pemula menangkap angka pertama lebih dulu, padahal angka pertama justru satuannya.",
+    "**Angka ditulis menyambung tanpa spasi**, sepanjang apa pun: *einundzwanzig*, *zweihundertfünfzig*, *zehntausendneunhunderteinundsechzig*. Terlihat menakutkan di kertas, tapi diucapkan potongan demi potongan dan tak ada aturan baru yang perlu dihafal.",
+    "**Nomor telepon dibaca per angka, sering berpasangan.** *null eins sieben* untuk 017, lalu pasangan dua-dua. Jangan pernah membacanya sebagai bilangan utuh — tak seorang pun akan bisa mengikutinya.",
+    "**Kode pos disebut sebagai bilangan utuh atau per angka**, keduanya diterima. Yang lebih aman untuk pemula: per angka, seperti nomor telepon.",
+    "***Wie viel* atau *wie viele*?** *Wie viel* untuk yang tak terhitung — uang, waktu, air (*Wie viel kostet das?*). *Wie viele* untuk yang terhitung — orang, buku, anak (*Wie viele Kinder haben Sie?*).",
+    "***Langsam, bitte!*** (\"pelan-pelan\") adalah kalimat yang paling sering kamu butuhkan saat berhadapan dengan angka. Kalimat penolong lainnya: *Noch einmal, bitte* (\"sekali lagi\") dan *Können Sie das buchstabieren?* (\"bisa dieja?\")."
+   ],
+   "grammars": [
+    {
+     "title": "Angka 0 sampai 100",
+     "body": [
+      "Dua puluh angka pertama harus dihafal utuh. Sesudah itu, seluruh sistemnya cuma perkalian dan penggabungan."
+     ],
+     "table": {
+      "head": [
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      "rows": [
+       [
+        "0 null",
+        "1 eins",
+        "2 zwei",
+        "3 drei",
+        "4 vier",
+        "5 fünf"
+       ],
+       [
+        "6 sechs",
+        "7 sieben",
+        "8 acht",
+        "9 neun",
+        "10 zehn",
+        "11 elf"
+       ],
+       [
+        "12 zwölf",
+        "13 dreizehn",
+        "14 vierzehn",
+        "15 fünfzehn",
+        "16 sechzehn",
+        "17 siebzehn"
+       ],
+       [
+        "18 achtzehn",
+        "19 neunzehn",
+        "20 zwanzig",
+        "30 dreißig",
+        "40 vierzig",
+        "50 fünfzig"
+       ],
+       [
+        "60 sechzig",
+        "70 siebzig",
+        "80 achtzig",
+        "90 neunzig",
+        "100 hundert",
+        "1000 tausend"
+       ]
+      ]
+     },
+     "after": [
+      "Empat penyimpangan kecil yang wajib diperhatikan: **16** dan **60** membuang huruf s (*sechzehn*, bukan *sechszehn*), **17** dan **70** membuang suku kata *-en* (*siebzehn*, bukan *siebenzehn*), dan **30** memakai ß (*dreißig*, sendirian di antara semua puluhan yang berakhiran *-zig*).",
+      "Angka gabungan dirakit dengan satu kata perekat, **und**: satuan + *und* + puluhan, semuanya menyambung. *21 = einundzwanzig*, *45 = fünfundvierzig*, *99 = neunundneunzig*. ⚠️ Perhatikan bahwa **1** kehilangan huruf s-nya di dalam gabungan: *ein**und**zwanzig*, bukan *eins-und-zwanzig*."
+     ],
+     "tables": [
+      {
+       "head": [
+        "Angka",
+        "Jerman",
+        "Cara baca"
+       ],
+       "rows": [
+        [
+         "21",
+         "einundzwanzig",
+         "AIN-unt-tsvan-tsikh"
+        ],
+        [
+         "36",
+         "sechsunddreißig",
+         "ZEKS-unt-drai-sikh"
+        ],
+        [
+         "47",
+         "siebenundvierzig",
+         "ZII-ben-unt-fiia-tsikh"
+        ],
+        [
+         "88",
+         "achtundachtzig",
+         "AKHT-unt-akh-tsikh"
+        ],
+        [
+         "100",
+         "(ein)hundert",
+         "HUN-dat"
+        ],
+        [
+         "250",
+         "zweihundertfünfzig",
+         "TSVAI-hun-dat-fünf-tsikh"
+        ],
+        [
+         "1.000",
+         "(ein)tausend",
+         "TAU-zent"
+        ],
+        [
+         "2.024",
+         "zweitausendvierundzwanzig",
+         "TSVAI-tau-zent-fiia-unt-tsvan-tsikh"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Umur, harga, dan tahun",
+     "body": [
+      "Tiga hal yang paling sering diminta darimu dalam bahasa Jerman semuanya berupa angka, dan masing-masing punya polanya sendiri."
+     ],
+     "table": {
+      "head": [
+       "Yang ditanya",
+       "Pertanyaan",
+       "Jawaban"
+      ],
+      "rows": [
+       [
+        "umur",
+        "Wie alt bist du?",
+        "Ich bin 24 (Jahre alt)."
+       ],
+       [
+        "harga",
+        "Wie viel kostet das?",
+        "Das kostet 12 Euro 50."
+       ],
+       [
+        "nomor",
+        "Wie ist deine Nummer?",
+        "Null eins sieben, drei zwei…"
+       ],
+       [
+        "jumlah",
+        "Wie viele Kinder haben Sie?",
+        "Ich habe zwei Kinder."
+       ],
+       [
+        "tahun lahir",
+        "Wann bist du geboren?",
+        "Ich bin 1999 geboren."
+       ]
+      ]
+     },
+     "after": [
+      "**Umur memakai *sein*, bukan *haben*.** *Ich **bin** vierundzwanzig* — dan kata *Jahre alt* boleh dibuang sepenuhnya, persis seperti bahasa Indonesia yang cukup berkata \"saya dua puluh empat\".",
+      "**Harga:** *12,50 €* diucapkan *zwölf Euro fünfzig*. Perhatikan bahwa dalam bahasa Jerman tanda desimal adalah **koma**, dan pemisah ribuan adalah **titik** — kebalikan dari kebiasaan Inggris, tapi sama persis dengan kebiasaan Indonesia.",
+      "**Tahun** sampai 1999 dibaca per dua angka lewat kata *hundert*: 1990 = *neunzehnhundertneunzig* (\"sembilan belas ratus sembilan puluh\"). Sejak 2000, dibaca biasa: 2024 = *zweitausendvierundzwanzig*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Formulir: kata yang selalu muncul",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Formulir Jerman — pendaftaran kursus, kontrak ponsel, kartu perpustakaan — memakai daftar kata yang hampir tak pernah berubah. Menghafal enam belas kata ini sekali membuat semua formulir berikutnya terasa sama."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Bahasa Indonesia",
+      "Deutsch",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "der Vorname",
+       "nama depan",
+       "der Nachname",
+       "nama belakang"
+      ],
+      [
+       "die Adresse",
+       "alamat",
+       "die Straße",
+       "jalan"
+      ],
+      [
+       "die Hausnummer",
+       "nomor rumah",
+       "die Postleitzahl (PLZ)",
+       "kode pos"
+      ],
+      [
+       "der Wohnort",
+       "kota tempat tinggal",
+       "das Land",
+       "negara"
+      ],
+      [
+       "das Geburtsdatum",
+       "tanggal lahir",
+       "der Geburtsort",
+       "tempat lahir"
+      ],
+      [
+       "die Telefonnummer",
+       "nomor telepon",
+       "die Handynummer",
+       "nomor ponsel"
+      ],
+      [
+       "die E-Mail-Adresse",
+       "alamat surel",
+       "der Beruf",
+       "pekerjaan"
+      ],
+      [
+       "die Staatsangehörigkeit",
+       "kewarganegaraan",
+       "die Unterschrift",
+       "tanda tangan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Alamat surel dibacakan dengan dua kata yang wajib kamu kenal: **@** disebut *at*, dan **titik** disebut *Punkt*. Jadi *budi@mail.de* dibaca *budi at mail Punkt de*."
+    }
+   ]
+  },
+  {
+   "title": "Berhitung dengan suara keras",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Angka adalah satu-satunya bagian bahasa yang tak bisa dikuasai lewat membaca. Ia harus lewat mulut dan telinga, karena yang kamu latih bukan pengetahuannya melainkan kecepatannya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "plus",
+       "tambah",
+       "drei plus vier ist sieben"
+      ],
+      [
+       "minus",
+       "kurang",
+       "zehn minus zwei ist acht"
+      ],
+      [
+       "mal",
+       "kali",
+       "vier mal fünf ist zwanzig"
+      ],
+      [
+       "geteilt durch",
+       "bagi",
+       "zwölf geteilt durch drei ist vier"
+      ],
+      [
+       "ungefähr",
+       "kira-kira",
+       "ungefähr fünfzig Euro"
+      ],
+      [
+       "zusammen",
+       "totalnya",
+       "Das macht zusammen 18 Euro."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga latihan lima menit",
+     "items": [
+      "Hitung mundur dari 20 ke 0 dengan suara keras. Ulangi sampai tak ada jeda berpikir di angka mana pun.",
+      "Bacakan nomor telepon siapa pun di daftar kontakmu dalam bahasa Jerman, per angka. Sepuluh nomor sudah cukup untuk satu sesi.",
+      "Ucapkan harga barang di sekitarmu — belanjaan, tiket, tagihan — dalam euro. Yang dilatih bukan kursnya, melainkan lidahmu."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "de": "die Zahl",
+   "baca": "tsaal",
+   "id": "angka"
+  },
+  {
+   "de": "null",
+   "baca": "nul",
+   "id": "nol"
+  },
+  {
+   "de": "eins",
+   "baca": "ains",
+   "id": "satu"
+  },
+  {
+   "de": "zwei",
+   "baca": "tsvai",
+   "id": "dua"
+  },
+  {
+   "de": "drei",
+   "baca": "drai",
+   "id": "tiga"
+  },
+  {
+   "de": "vier",
+   "baca": "fiia",
+   "id": "empat"
+  },
+  {
+   "de": "fünf",
+   "baca": "fünf",
+   "id": "lima"
+  },
+  {
+   "de": "sechs",
+   "baca": "zeks",
+   "id": "enam"
+  },
+  {
+   "de": "sieben",
+   "baca": "ZII-ben",
+   "id": "tujuh"
+  },
+  {
+   "de": "acht",
+   "baca": "akht",
+   "id": "delapan"
+  },
+  {
+   "de": "neun",
+   "baca": "noin",
+   "id": "sembilan"
+  },
+  {
+   "de": "zehn",
+   "baca": "tseen",
+   "id": "sepuluh"
+  },
+  {
+   "de": "hundert",
+   "baca": "HUN-dat",
+   "id": "seratus"
+  },
+  {
+   "de": "tausend",
+   "baca": "TAU-zent",
+   "id": "seribu"
+  },
+  {
+   "de": "die Nummer",
+   "baca": "NU-ma",
+   "id": "nomor"
+  },
+  {
+   "de": "die Adresse",
+   "baca": "a-DRE-se",
+   "id": "alamat"
+  },
+  {
+   "de": "die Straße",
+   "baca": "SYTRAA-se",
+   "id": "jalan"
+  },
+  {
+   "de": "der Name",
+   "baca": "NAA-me",
+   "id": "nama"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angkanya dengan huruf Jerman.",
+   "items": [
+    "13",
+    "21",
+    "36",
+    "47",
+    "68",
+    "250"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang hilang.",
+   "items": [
+    "Wie ____ bist du? — Ich bin 24.",
+    "Wie viel ____ der Kurs?",
+    "Ich bin vierundzwanzig ____ alt.",
+    "Wie ist Ihre ____? — Gneisenaustraße 47.",
+    "Der Kurs kostet 250 ____.",
+    "____ bitte! Ich verstehe nicht so schnell."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "alt / wie / du / bist",
+    "vierundzwanzig / ich / bin",
+    "kostet / wie viel / das",
+    "Handynummer / ist / wie / deine",
+    "Euro / zweihundertfünfzig / kostet / der Kurs",
+    "geboren / wann / du / bist"
+   ]
+  }
+ ],
+ "answers": [
+  "dreizehn — einundzwanzig — sechsunddreißig — siebenundvierzig — achtundsechzig — zweihundertfünfzig",
+  "alt — kostet — Jahre — Adresse — Euro — Langsam",
+  "Wie alt bist du? — Ich bin vierundzwanzig. — Wie viel kostet das? — Wie ist deine Handynummer? — Der Kurs kostet zweihundertfünfzig Euro. — Wann bist du geboren?"
+ ]
+}

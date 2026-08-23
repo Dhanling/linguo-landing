@@ -1,0 +1,604 @@
+{
+ "title": "Tempat tinggal saya",
+ "title_target": "Meine Wohnung",
+ "goal": "Menggambarkan tempat tinggal — dan memasang bentuk ketiga kata sandang, **Dativ**, yang dipakai setiap kali kamu menyebut di mana sesuatu berada.",
+ "bekal": [
+  "menyebut ruangan dan perabot",
+  "mengatakan ada apa di suatu tempat (*Es gibt…*)",
+  "menyebut letak benda dengan Dativ (*in der Küche*)",
+  "memakai gabungan *im*, *am*, *beim*, *zum*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Die neue Wohnung",
+   "intro": "Lena baru pertama kali datang ke apartemen Budi. Percakapan seperti ini hampir seluruhnya berisi keterangan tempat — dan keterangan tempat berarti Dativ.",
+   "lines": [
+    {
+     "speaker": "Lena:",
+     "text": "Oh, die Wohnung ist schön! Wie viele Zimmer hast du?",
+     "id": "Oh, apartemennya bagus! Berapa kamar?",
+     "literal": "oh, itu apartemen adalah indah! berapa banyak kamar-kamar punya kamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Zwei. Es gibt ein Schlafzimmer und ein Wohnzimmer.",
+     "id": "Dua. Ada kamar tidur dan ruang tamu.",
+     "literal": "dua. itu memberi sebuah tidur-kamar dan sebuah tinggal-kamar."
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Und die Küche? Ist sie groß?",
+     "id": "Dan dapurnya? Besar?",
+     "literal": "dan itu dapur? adalah dia besar?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nein, ziemlich klein. Aber es gibt einen Balkon.",
+     "id": "Tidak, agak kecil. Tapi ada balkon.",
+     "literal": "tidak, cukup kecil. tetapi itu memberi sebuah balkon."
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Wo ist das Bad?",
+     "id": "Kamar mandinya di mana?",
+     "literal": "di-mana adalah itu kamar-mandi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Neben der Küche, hinten rechts.",
+     "id": "Di sebelah dapur, di belakang sebelah kanan.",
+     "literal": "di-samping itu dapur, di-belakang kanan."
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Und was steht im Wohnzimmer?",
+     "id": "Dan di ruang tamu ada apa?",
+     "literal": "dan apa berdiri di-dalam-itu tinggal-kamar?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ein Sofa, ein Tisch und ein Regal. Der Fernseher steht auf dem Regal.",
+     "id": "Sofa, meja, dan rak. Televisinya di atas rak.",
+     "literal": "sebuah sofa, sebuah meja dan sebuah rak. itu televisi berdiri di-atas itu rak."
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Und wo schläfst du? Auf dem Sofa?",
+     "id": "Dan kamu tidur di mana? Di sofa?",
+     "literal": "dan di-mana tidur kamu? di-atas itu sofa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nein! Mein Bett steht im Schlafzimmer, natürlich.",
+     "id": "Tidak! Tempat tidur saya di kamar tidur, tentu saja.",
+     "literal": "tidak! punyaku tempat-tidur berdiri di-dalam-itu tidur-kamar, tentu-saja."
+    },
+    {
+     "speaker": "Lena:",
+     "text": "Wie hoch ist die Miete?",
+     "id": "Sewanya berapa?",
+     "literal": "bagaimana tinggi adalah itu sewa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sechshundert Euro warm. Das ist günstig für Berlin.",
+     "id": "Enam ratus euro termasuk pemanas. Itu murah untuk Berlin.",
+     "literal": "enam-ratus euro hangat. itu adalah murah untuk Berlin."
+    }
+   ],
+   "notes": [
+    "***Es gibt* selalu diikuti Akkusativ.** Perhatikan baris 4: *es gibt **einen** Balkon*. Harfiahnya \"itu memberi sebuah balkon\", dan barangnya memang jadi sasaran perbuatan \"memberi\". Bentuk ini tak pernah berubah — bukan *es geben* meski barangnya jamak: *Es gibt zwei Zimmer.*",
+    "**Keterangan tempat memakai Dativ.** *in **der** Küche*, *auf **dem** Regal*, *neben **der** Küche*. Bentuk ketiga kata sandang ini muncul setiap kali kamu menjawab pertanyaan *wo?* — dan itu berarti ia muncul terus-menerus.",
+    "***stehen*, *liegen*, *hängen* — bukan *sein*.** Orang Jerman menyebut posisi benda dengan tepat: yang tegak *steht* (meja, botol, lemari), yang mendatar *liegt* (buku di meja, handuk), yang tergantung *hängt* (lukisan, jaket). *Der Fernseher **steht** auf dem Regal* terdengar jauh lebih alami daripada *ist*.",
+    "**Baris 7 dan 10: *im* = *in dem*.** Bahasa Jerman menggabungkan kata depan dengan kata sandang Dativ: *in dem → **im***, *an dem → **am***, *bei dem → **beim***, *zu dem → **zum***, *zu der → **zur***. Gabungan ini wajib, bukan pilihan — *in dem Wohnzimmer* terdengar aneh kecuali kamu sedang menekankan ruangan tertentu.",
+    "***Warm* dan *kalt* dalam urusan sewa** tak ada hubungannya dengan suhu: *Warmmiete* adalah sewa termasuk biaya pemanas dan air, *Kaltmiete* adalah sewa polos. Selisihnya bisa seratus euro lebih, jadi pertanyaan pertama saat melihat iklan apartemen selalu *warm oder kalt?*",
+    "***Wie hoch ist die Miete?*** harfiahnya \"seberapa tinggi sewanya\" — harga sewa, gaji, dan pajak dalam bahasa Jerman *hoch* atau *niedrig*, bukan *teuer* atau *billig*. Yang *teuer* adalah barangnya."
+   ],
+   "grammars": [
+    {
+     "title": "Dativ: bentuk ketiga kata sandang",
+     "body": [
+      "Kamu sudah memakai Nominativ (pelaku) dan Akkusativ (sasaran). Bentuk ketiga, **Dativ**, dipakai untuk dua hal di level A1: menyebut **letak** sesuatu, dan mengikuti sekelompok kata depan tertentu."
+     ],
+     "table": {
+      "head": [
+       "",
+       "maskulin",
+       "feminin",
+       "netral",
+       "jamak"
+      ],
+      "rows": [
+       [
+        "Nominativ",
+        "der / ein",
+        "die / eine",
+        "das / ein",
+        "die / —"
+       ],
+       [
+        "Akkusativ",
+        "den / einen",
+        "die / eine",
+        "das / ein",
+        "die / —"
+       ],
+       [
+        "**Dativ**",
+        "**dem / einem**",
+        "**der / einer**",
+        "**dem / einem**",
+        "**den / —**"
+       ],
+       [
+        "Contoh",
+        "in dem (im) Garten",
+        "in der Küche",
+        "in dem (im) Bad",
+        "in den Zimmern"
+       ]
+      ]
+     },
+     "after": [
+      "Pola yang menolong: di Dativ, maskulin dan netral **selalu sama** (*dem*), dan feminin memakai bentuk yang tadinya maskulin di Nominativ (*der*). ⚠️ Kata *der* karena itu bisa berarti dua hal — *der Mann* (maskulin Nominativ) dan *der Frau* (feminin Dativ). Konteksnya yang menentukan.",
+      "Jamak Dativ punya satu keanehan tambahan: kata bendanya sendiri menambahkan **-n** kalau belum berakhiran -n. *die Zimmer → in den Zimmer**n***, *die Kinder → mit den Kinder**n***.",
+      "Kata milik ikut pola *ein*: *meinem*, *meiner*, *meinem*, *meinen*. *Ich wohne bei **meiner** Schwester.*"
+     ],
+     "tables": [
+      {
+       "head": [
+        "Selalu Dativ",
+        "Arti",
+        "Contoh"
+       ],
+       "rows": [
+        [
+         "**aus**",
+         "dari",
+         "Ich komme aus der Türkei."
+        ],
+        [
+         "**bei**",
+         "di (tempat orang)",
+         "Ich wohne bei meinen Eltern."
+        ],
+        [
+         "**mit**",
+         "dengan",
+         "Ich fahre mit dem Bus."
+        ],
+        [
+         "**nach**",
+         "ke (kota, negara)",
+         "Ich fahre nach Berlin."
+        ],
+        [
+         "**seit**",
+         "sejak",
+         "Ich lerne seit einem Jahr Deutsch."
+        ],
+        [
+         "**von**",
+         "dari, milik",
+         "Das ist der Schlüssel von der Wohnung."
+        ],
+        [
+         "**zu**",
+         "ke (orang, tempat)",
+         "Ich gehe zum Arzt."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Kata depan tempat: diam atau berpindah?",
+     "body": [
+      "Sembilan kata depan berikut memakai **Dativ** kalau menjawab *wo?* (di mana — tak ada perpindahan) dan **Akkusativ** kalau menjawab *wohin?* (ke mana — ada perpindahan). Di unit ini kamu memakai yang pertama."
+     ],
+     "table": {
+      "head": [
+       "Kata depan",
+       "Arti",
+       "Wo? (Dativ)",
+       "Wohin? (Akkusativ)"
+      ],
+      "rows": [
+       [
+        "**in**",
+        "di dalam / ke dalam",
+        "in **der** Küche",
+        "in **die** Küche"
+       ],
+       [
+        "**auf**",
+        "di atas / ke atas",
+        "auf **dem** Tisch",
+        "auf **den** Tisch"
+       ],
+       [
+        "**unter**",
+        "di bawah",
+        "unter **dem** Bett",
+        "unter **das** Bett"
+       ],
+       [
+        "**neben**",
+        "di samping",
+        "neben **der** Tür",
+        "neben **die** Tür"
+       ],
+       [
+        "**vor** / **hinter**",
+        "di depan / belakang",
+        "vor **dem** Haus",
+        "vor **das** Haus"
+       ],
+       [
+        "**über**",
+        "di atas (tak menyentuh)",
+        "über **dem** Sofa",
+        "über **das** Sofa"
+       ],
+       [
+        "**zwischen**",
+        "di antara",
+        "zwischen **den** Häusern",
+        "zwischen **die** Häuser"
+       ]
+      ]
+     },
+     "after": [
+      "Cara memutuskannya dalam satu detik: **kalau bendanya bergerak dari satu tempat ke tempat lain, pakai Akkusativ; kalau tidak, pakai Dativ.** *Das Buch liegt auf **dem** Tisch* (diam) tapi *Ich lege das Buch auf **den** Tisch* (berpindah ke sana).",
+      "Untuk sekarang, cukup kuasai sisi Dativ-nya — itu yang kamu butuhkan untuk menggambarkan ruangan. Sisi Akkusativ akan datang sendiri begitu kamu mulai berbicara tentang bergerak ke suatu tempat di unit 14."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Ruangan dan perabot",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Cara baca",
+      "Bahasa Indonesia",
+      "Deutsch",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "die Wohnung",
+       "VOO-nung",
+       "apartemen",
+       "das Sofa",
+       "sofa"
+      ],
+      [
+       "das Zimmer",
+       "TSI-ma",
+       "kamar, ruangan",
+       "der Sessel",
+       "kursi santai"
+      ],
+      [
+       "das Wohnzimmer",
+       "VOON-tsi-ma",
+       "ruang tamu",
+       "der Schrank",
+       "lemari"
+      ],
+      [
+       "das Schlafzimmer",
+       "SYLAAF-tsi-ma",
+       "kamar tidur",
+       "das Regal",
+       "rak"
+      ],
+      [
+       "die Küche",
+       "KÜ-khe",
+       "dapur",
+       "das Bett",
+       "tempat tidur"
+      ],
+      [
+       "das Bad",
+       "baat",
+       "kamar mandi",
+       "der Fernseher",
+       "televisi"
+      ],
+      [
+       "der Flur",
+       "fluua",
+       "lorong, koridor",
+       "der Kühlschrank",
+       "kulkas"
+      ],
+      [
+       "der Balkon",
+       "bal-KOON",
+       "balkon",
+       "der Herd",
+       "kompor"
+      ],
+      [
+       "der Garten",
+       "GAR-ten",
+       "kebun",
+       "die Lampe",
+       "lampu"
+      ],
+      [
+       "der Keller",
+       "KE-la",
+       "ruang bawah tanah",
+       "der Teppich",
+       "karpet"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Menyebut letak"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Das Bett steht im Schlafzimmer.",
+       "Tempat tidurnya di kamar tidur."
+      ],
+      [
+       "Der Fernseher steht auf dem Regal.",
+       "Televisinya di atas rak."
+      ],
+      [
+       "Das Buch liegt auf dem Tisch.",
+       "Bukunya di atas meja."
+      ],
+      [
+       "Das Bild hängt über dem Sofa.",
+       "Lukisannya di atas sofa."
+      ],
+      [
+       "Die Schuhe stehen unter dem Bett.",
+       "Sepatunya di bawah tempat tidur."
+      ],
+      [
+       "Das Bad ist neben der Küche.",
+       "Kamar mandinya di sebelah dapur."
+      ],
+      [
+       "Der Garten ist hinter dem Haus.",
+       "Kebunnya di belakang rumah."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan kata kerjanya: *stehen* untuk yang berdiri tegak, *liegen* untuk yang berbaring, *hängen* untuk yang tergantung. Memakai *sein* di semuanya tidak salah, tapi langsung terdengar seperti bahasa buku terjemahan."
+    }
+   ]
+  },
+  {
+   "title": "Membaca iklan apartemen",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Iklan sewa di Jerman ditulis dengan singkatan padat. Mengenali sepuluh singkatan berikut membuat separuh iklannya langsung terbaca."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Singkatan",
+      "Kepanjangan",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "2 ZKB",
+       "2 Zimmer, Küche, Bad",
+       "2 kamar + dapur + kamar mandi"
+      ],
+      [
+       "qm / m²",
+       "Quadratmeter",
+       "meter persegi"
+      ],
+      [
+       "KM",
+       "Kaltmiete",
+       "sewa tanpa biaya tambahan"
+      ],
+      [
+       "WM",
+       "Warmmiete",
+       "sewa termasuk pemanas & air"
+      ],
+      [
+       "NK",
+       "Nebenkosten",
+       "biaya tambahan"
+      ],
+      [
+       "EBK",
+       "Einbauküche",
+       "dapur sudah terpasang"
+      ],
+      [
+       "EG / OG / DG",
+       "Erdgeschoss / Obergeschoss / Dachgeschoss",
+       "lantai dasar / atas / loteng"
+      ],
+      [
+       "WG",
+       "Wohngemeinschaft",
+       "rumah berbagi"
+      ],
+      [
+       "Kaution",
+       "—",
+       "uang jaminan, biasanya 3x sewa"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Menggambarkan tempat tinggalmu sendiri",
+     "items": [
+      "*Ich wohne in einer Wohnung / in einem Haus / in einem Zimmer.*",
+      "*Die Wohnung hat … Zimmer. Es gibt auch einen Balkon / einen Garten.*",
+      "*Mein Zimmer ist klein, aber gemütlich.*",
+      "*Ich wohne allein / mit meiner Familie / mit Freunden.*"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Empat kalimat itu adalah jawaban lengkap untuk *Wie wohnst du?*, salah satu pertanyaan yang paling pasti muncul di ujian lisan A1 — dan di percakapan pertama dengan tetangga barumu."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "de": "die Wohnung",
+   "baca": "VOO-nung",
+   "id": "apartemen"
+  },
+  {
+   "de": "das Zimmer",
+   "baca": "TSI-ma",
+   "id": "kamar"
+  },
+  {
+   "de": "die Küche",
+   "baca": "KÜ-khe",
+   "id": "dapur"
+  },
+  {
+   "de": "das Bad",
+   "baca": "baat",
+   "id": "kamar mandi"
+  },
+  {
+   "de": "der Balkon",
+   "baca": "bal-KOON",
+   "id": "balkon"
+  },
+  {
+   "de": "der Garten",
+   "baca": "GAR-ten",
+   "id": "kebun"
+  },
+  {
+   "de": "das Bett",
+   "baca": "bet",
+   "id": "tempat tidur"
+  },
+  {
+   "de": "der Schrank",
+   "baca": "syrank",
+   "id": "lemari"
+  },
+  {
+   "de": "das Regal",
+   "baca": "re-GAAL",
+   "id": "rak"
+  },
+  {
+   "de": "das Sofa",
+   "baca": "ZOO-fa",
+   "id": "sofa"
+  },
+  {
+   "de": "der Fernseher",
+   "baca": "FERN-zee-a",
+   "id": "televisi"
+  },
+  {
+   "de": "der Kühlschrank",
+   "baca": "KÜÜL-syrank",
+   "id": "kulkas"
+  },
+  {
+   "de": "die Miete",
+   "baca": "MII-te",
+   "id": "uang sewa"
+  },
+  {
+   "de": "es gibt",
+   "baca": "es gipt",
+   "id": "ada"
+  },
+  {
+   "de": "stehen",
+   "baca": "SYTEE-en",
+   "id": "berdiri, terletak (tegak)"
+  },
+  {
+   "de": "liegen",
+   "baca": "LII-gen",
+   "id": "terletak (mendatar)"
+  },
+  {
+   "de": "hängen",
+   "baca": "HEN-gen",
+   "id": "tergantung"
+  },
+  {
+   "de": "neben",
+   "baca": "NEE-ben",
+   "id": "di samping"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "Es gibt ein Schlafzimmer und ein Wohnzimmer.",
+    "Wo ist das Bad?",
+    "Neben der Küche, hinten rechts.",
+    "Der Fernseher steht auf dem Regal.",
+    "Mein Bett steht im Schlafzimmer.",
+    "Wie hoch ist die Miete?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata sandang Dativ yang tepat: *dem* atau *der*.",
+   "items": [
+    "Das Bad ist neben ____ Küche.",
+    "Der Fernseher steht auf ____ Regal.",
+    "Das Buch liegt auf ____ Tisch.",
+    "Die Schuhe stehen unter ____ Bett.",
+    "Ich fahre mit ____ Bus.",
+    "Der Garten ist hinter ____ Haus."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "einen / es gibt / Balkon",
+    "das Bad / wo / ist",
+    "im Schlafzimmer / mein Bett / steht",
+    "auf dem Tisch / das Buch / liegt",
+    "die Miete / wie hoch / ist",
+    "in einer Wohnung / ich / wohne / allein"
+   ]
+  }
+ ],
+ "answers": [
+  "Ada kamar tidur dan ruang tamu. — Kamar mandinya di mana? — Di sebelah dapur, di belakang sebelah kanan. — Televisinya di atas rak. — Tempat tidur saya di kamar tidur. — Sewanya berapa?",
+  "der — dem — dem — dem — dem — dem",
+  "Es gibt einen Balkon. — Wo ist das Bad? — Mein Bett steht im Schlafzimmer. — Das Buch liegt auf dem Tisch. — Wie hoch ist die Miete? — Ich wohne allein in einer Wohnung."
+ ],
+ "wave": "Sebelum mulai unit 14, buka lagi dialog **Unit 6**. Perhatikan kata kerja yang vokalnya berubah — masih ingat bentuk *du* dan *er*-nya?"
+}

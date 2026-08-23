@@ -1,0 +1,571 @@
+{
+ "title": "Belanja",
+ "title_target": "Einkaufen im Supermarkt",
+ "goal": "Berbelanja bahan makanan: menyebut takaran, menanyakan harga, dan menunjuk barang yang kamu maksud.",
+ "bekal": [
+  "menyebut takaran (*ein Kilo*, *eine Flasche*, *ein Stück*)",
+  "menanyakan harga dan ketersediaan barang",
+  "memakai *welcher* dan *dieser* untuk memilih",
+  "menyebut bahan makanan sehari-hari"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — An der Käsetheke",
+   "intro": "Sabtu pagi, supermarket penuh. Budi berbelanja untuk seminggu dan berhenti di konter keju — satu-satunya tempat di supermarket Jerman yang masih dilayani manusia.",
+   "lines": [
+    {
+     "speaker": "Verkäuferin:",
+     "text": "Der Nächste, bitte! Was darf es sein?",
+     "id": "Berikutnya! Mau apa?",
+     "literal": "yang berikutnya, tolong! apa boleh itu adalah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ich hätte gern zweihundert Gramm Käse.",
+     "id": "Saya mau dua ratus gram keju.",
+     "literal": "aku punya-akan dengan-senang dua-ratus gram keju."
+    },
+    {
+     "speaker": "Verkäuferin:",
+     "text": "Welchen Käse möchten Sie? Wir haben Gouda, Emmentaler und Bergkäse.",
+     "id": "Keju yang mana? Kami punya Gouda, Emmentaler, dan Bergkäse.",
+     "literal": "keju yang-mana ingin Anda? kami punya Gouda, Emmentaler dan gunung-keju."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Diesen hier, bitte. Wie viel kostet er?",
+     "id": "Yang ini. Berapa harganya?",
+     "literal": "ini di-sini, tolong. berapa banyak berharga dia?"
+    },
+    {
+     "speaker": "Verkäuferin:",
+     "text": "Zwei Euro neunzig pro hundert Gramm. Sonst noch etwas?",
+     "id": "Dua euro sembilan puluh per seratus gram. Ada lagi?",
+     "literal": "dua euro sembilan-puluh per seratus gram. selain-itu masih sesuatu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ja, ein Kilo Tomaten und drei Bananen.",
+     "id": "Ya, satu kilo tomat dan tiga pisang.",
+     "literal": "ya, satu kilo tomat-tomat dan tiga pisang-pisang."
+    },
+    {
+     "speaker": "Verkäuferin:",
+     "text": "Obst und Gemüse müssen Sie selbst wiegen. Dort hinten.",
+     "id": "Buah dan sayur harus Anda timbang sendiri. Di sana di belakang.",
+     "literal": "buah dan sayur harus Anda sendiri menimbang. di-sana di-belakang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ach so. Und haben Sie noch Milch?",
+     "id": "Oh begitu. Dan susunya masih ada?",
+     "literal": "ah begitu. dan punya Anda masih susu?"
+    },
+    {
+     "speaker": "Verkäuferin:",
+     "text": "Ja, hinten links. Eine Flasche oder eine Packung?",
+     "id": "Ya, di belakang kiri. Botol atau kotak?",
+     "literal": "ya, di-belakang kiri. sebuah botol atau sebuah bungkus?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Zwei Packungen, bitte. Das ist alles.",
+     "id": "Dua kotak. Itu saja.",
+     "literal": "dua bungkus-bungkus, tolong. itu adalah semuanya."
+    },
+    {
+     "speaker": "Verkäuferin:",
+     "text": "Gut. Dann macht das zusammen vierzehn Euro zwanzig.",
+     "id": "Baik. Kalau begitu totalnya empat belas euro dua puluh.",
+     "literal": "baik. lalu membuat itu bersama empat-belas euro dua-puluh."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Brauche ich eine Tüte?",
+     "id": "Perlu kantong tidak ya?",
+     "literal": "membutuhkan aku sebuah kantong?"
+    },
+    {
+     "speaker": "Verkäuferin:",
+     "text": "Die kostet extra. Die meisten Leute bringen eine Tasche mit.",
+     "id": "Kantongnya bayar. Kebanyakan orang membawa tas sendiri.",
+     "literal": "itu berharga tambahan. itu terbanyak orang-orang membawa sebuah tas bawa."
+    }
+   ],
+   "notes": [
+    "***Ich hätte gern…*** adalah bentuk paling sopan untuk meminta barang, dan di toko ia hampir menggantikan *Ich möchte*. Bentuknya pengandaian, tapi pakailah sebagai frasa jadi — tata bahasanya baru dibedah di A2.",
+    "***Was darf es sein?*** harfiahnya \"apa boleh itu jadi?\" dan artinya \"mau apa?\". Kalimat baku di setiap konter roti, daging, dan keju di Jerman. Jawabannya cukup: *Ich hätte gern…*",
+    "**Satuan tak dijamakkan sesudah angka.** *zwei **Kilo***, *drei **Stück***, *fünf **Euro***, *hundert **Gramm*** — tanpa akhiran jamak. Yang **dijamakkan** adalah wadah: *zwei **Packungen***, *drei **Flaschen***. Aturan yang tampak sepele ini terdengar jelas di telinga orang Jerman.",
+    "**Baris 4: *Diesen hier*.** *Dieser* (\"ini\") berperilaku persis seperti *der*, termasuk berubah jadi *diesen* di Akkusativ. Menunjuk barang sambil berkata *Diesen hier, bitte* adalah cara paling aman berbelanja saat kosakatamu belum cukup.",
+    "**Baris 4 juga memakai *er* untuk keju.** Karena *der Käse* maskulin, kata gantinya *er*, bukan *es*. Dalam bahasa Jerman benda mati pun ber-*er* atau ber-*sie* mengikuti kata sandangnya — dan ini terdengar wajar sekali begitu kamu terbiasa.",
+    "***Obst und Gemüse*** hampir selalu disebut sebagai pasangan, dan keduanya kata **tak terhitung**: tak ada *zwei Obst*. Kamu membeli *ein Kilo Obst* atau menyebut jenisnya: *drei Äpfel*, *zwei Bananen*."
+   ],
+   "grammars": [
+    {
+     "title": "Takaran dan wadah",
+     "body": [
+      "Belanja bahan makanan hampir seluruhnya berupa angka + satuan + barang, tanpa kata depan apa pun di antaranya: *ein Kilo Tomaten*, *eine Flasche Wasser*, *zweihundert Gramm Käse*."
+     ],
+     "table": {
+      "head": [
+       "Satuan",
+       "Cara baca",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "das Gramm",
+        "gram",
+        "gram",
+        "200 Gramm Käse"
+       ],
+       [
+        "das Kilo",
+        "KII-lo",
+        "kilogram",
+        "ein Kilo Tomaten"
+       ],
+       [
+        "das Pfund",
+        "pfunt",
+        "setengah kilo",
+        "ein Pfund Butter"
+       ],
+       [
+        "der Liter",
+        "LII-ta",
+        "liter",
+        "ein Liter Milch"
+       ],
+       [
+        "das Stück",
+        "sytük",
+        "buah, potong",
+        "drei Stück Kuchen"
+       ],
+       [
+        "die Flasche",
+        "FLA-sye",
+        "botol",
+        "eine Flasche Wein"
+       ],
+       [
+        "die Packung",
+        "PA-kung",
+        "bungkus, kotak",
+        "zwei Packungen Milch"
+       ],
+       [
+        "die Dose",
+        "DOO-ze",
+        "kaleng",
+        "eine Dose Tomaten"
+       ],
+       [
+        "das Glas",
+        "glaas",
+        "toples, gelas",
+        "ein Glas Honig"
+       ],
+       [
+        "die Scheibe",
+        "SYAI-be",
+        "iris",
+        "fünf Scheiben Schinken"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *Ein Pfund* di Jerman berarti **500 gram**, bukan pound Inggris (454 gram). Di pasar dan konter daging, takaran ini masih dipakai setiap hari meski secara resmi sudah lama diganti kilogram.",
+      "Menanyakan harga punya dua bentuk yang harus dibedakan: ***Wie viel kostet** das?* untuk satu barang, dan ***Wie viel kosten** die Tomaten?* untuk barang jamak. Yang berubah kata kerjanya, mengikuti barangnya."
+     ]
+    },
+    {
+     "title": "welcher dan dieser — memilih dan menunjuk",
+     "body": [
+      "Dua kata ini berperilaku persis seperti *der/die/das*: akhirannya ikut jenis kelamin dan ikut Akkusativ. Kalau kamu sudah hafal *der → den*, kamu sudah hafal *dieser → diesen*."
+     ],
+     "table": {
+      "head": [
+       "",
+       "maskulin",
+       "feminin",
+       "netral",
+       "jamak"
+      ],
+      "rows": [
+       [
+        "Nominativ",
+        "welch**er** / dies**er**",
+        "welch**e** / dies**e**",
+        "welch**es** / dies**es**",
+        "welch**e** / dies**e**"
+       ],
+       [
+        "Akkusativ",
+        "welch**en** / dies**en**",
+        "welch**e** / dies**e**",
+        "welch**es** / dies**es**",
+        "welch**e** / dies**e**"
+       ],
+       [
+        "Contoh",
+        "Welchen Käse?",
+        "Welche Milch?",
+        "Welches Brot?",
+        "Welche Äpfel?"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa akhirannya sama persis dengan huruf terakhir *der*, *die*, *das*: **-er**, **-e**, **-es**. Begitu kamu melihat pola itu, seluruh tabel di atas berhenti terasa seperti hafalan baru.",
+      "Dalam percakapan sehari-hari orang lebih sering menyingkatnya: *Welchen?* (\"yang mana?\") dan *Diesen hier* (\"yang ini\") tanpa mengulang kata bendanya sama sekali. Dua kata itu, ditambah jari telunjuk, sudah cukup untuk berbelanja apa pun."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Isi keranjang belanja",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Cara baca",
+      "Bahasa Indonesia",
+      "Deutsch",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "das Brot",
+       "broot",
+       "roti",
+       "der Apfel",
+       "apel"
+      ],
+      [
+       "die Butter",
+       "BU-ta",
+       "mentega",
+       "die Banane",
+       "pisang"
+      ],
+      [
+       "der Käse",
+       "KEE-ze",
+       "keju",
+       "die Orange",
+       "jeruk"
+      ],
+      [
+       "das Ei / die Eier",
+       "ai / AI-a",
+       "telur",
+       "die Tomate",
+       "tomat"
+      ],
+      [
+       "die Milch",
+       "milkh",
+       "susu",
+       "die Kartoffel",
+       "kentang"
+      ],
+      [
+       "das Fleisch",
+       "flaisy",
+       "daging",
+       "die Zwiebel",
+       "bawang"
+      ],
+      [
+       "das Hähnchen",
+       "HEEN-khen",
+       "ayam",
+       "die Karotte",
+       "wortel"
+      ],
+      [
+       "der Fisch",
+       "fisy",
+       "ikan",
+       "der Salat",
+       "selada"
+      ],
+      [
+       "der Reis",
+       "rais",
+       "nasi, beras",
+       "das Gemüse",
+       "sayuran"
+      ],
+      [
+       "die Nudeln",
+       "NUU-deln",
+       "mi, pasta",
+       "das Obst",
+       "buah"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kalimat berbelanja"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Ich hätte gern ein Kilo Tomaten.",
+       "Saya mau satu kilo tomat."
+      ],
+      [
+       "Haben Sie Milch?",
+       "Ada susu?"
+      ],
+      [
+       "Wo finde ich Reis?",
+       "Berasnya di mana?"
+      ],
+      [
+       "Wie viel kostet das?",
+       "Berapa harganya?"
+      ],
+      [
+       "Was kosten die Äpfel?",
+       "Apelnya berapa?"
+      ],
+      [
+       "Das ist alles, danke.",
+       "Itu saja, terima kasih."
+      ],
+      [
+       "Sonst noch etwas?",
+       "Ada lagi?"
+      ],
+      [
+       "Nein, danke. Das war's.",
+       "Tidak, terima kasih. Sudah."
+      ],
+      [
+       "Kann ich mit Karte zahlen?",
+       "Bisa bayar pakai kartu?"
+      ],
+      [
+       "Brauchen Sie eine Tüte?",
+       "Perlu kantong?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Di kasir kamu juga akan sering mendengar ***Haben Sie es passend?*** — \"punya uang pas?\". Menjawab *Nein, tut mir leid* sepenuhnya baik-baik saja; pertanyaannya cuma soal kembalian."
+    }
+   ]
+  },
+  {
+   "title": "Di mana orang Jerman berbelanja",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Nama tokonya sekaligus menjelaskan apa yang dijualnya, dan hampir semuanya dibentuk dengan cara yang sama: barang + *-ei* atau + *Laden/Geschäft*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Bahasa Indonesia",
+      "Ciri khas"
+     ],
+     "rows": [
+      [
+       "der Supermarkt",
+       "supermarket",
+       "tutup Minggu, seperti semua toko"
+      ],
+      [
+       "die Bäckerei",
+       "toko roti",
+       "buka pagi buta, sering juga Minggu pagi"
+      ],
+      [
+       "die Metzgerei",
+       "toko daging",
+       "juga menjual makanan siap santap"
+      ],
+      [
+       "die Apotheke",
+       "apotek",
+       "obat, termasuk yang tanpa resep"
+      ],
+      [
+       "die Drogerie",
+       "toko kebutuhan harian",
+       "sabun, kosmetik — bukan obat"
+      ],
+      [
+       "der Wochenmarkt",
+       "pasar mingguan",
+       "sekali atau dua kali seminggu di alun-alun"
+      ],
+      [
+       "der Kiosk / der Späti",
+       "warung kecil",
+       "buka larut, penyelamat malam Minggu"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang mengejutkan pendatang baru",
+     "items": [
+      "**Botol punya uang jaminan (*Pfand*).** Kamu membayar 8-25 sen ekstra per botol dan mendapatkannya kembali saat mengembalikannya ke mesin di supermarket. Jangan buang botolmu — itu uang.",
+      "**Kasir Jerman sangat cepat.** Barang meluncur dan kamu diharapkan memasukkannya sendiri ke tas dengan kecepatan yang sama. Banyak orang memasukkan dulu, membayar belakangan.",
+      "**Minggu benar-benar tutup.** Kecuali Bäckerei tertentu, stasiun kereta, dan Späti. Belanja mingguan hari Sabtu bukan saran, melainkan rencana."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "de": "einkaufen",
+   "baca": "AIN-kau-fen",
+   "id": "berbelanja"
+  },
+  {
+   "de": "der Supermarkt",
+   "baca": "ZUU-pa-markt",
+   "id": "supermarket"
+  },
+  {
+   "de": "die Bäckerei",
+   "baca": "be-ke-RAI",
+   "id": "toko roti"
+  },
+  {
+   "de": "kosten",
+   "baca": "KOS-ten",
+   "id": "berharga"
+  },
+  {
+   "de": "brauchen",
+   "baca": "BRAU-khen",
+   "id": "membutuhkan"
+  },
+  {
+   "de": "finden",
+   "baca": "FIN-den",
+   "id": "menemukan"
+  },
+  {
+   "de": "wiegen",
+   "baca": "VII-gen",
+   "id": "menimbang"
+  },
+  {
+   "de": "das Kilo",
+   "baca": "KII-lo",
+   "id": "kilogram"
+  },
+  {
+   "de": "das Gramm",
+   "baca": "gram",
+   "id": "gram"
+  },
+  {
+   "de": "der Liter",
+   "baca": "LII-ta",
+   "id": "liter"
+  },
+  {
+   "de": "das Stück",
+   "baca": "sytük",
+   "id": "buah, potong"
+  },
+  {
+   "de": "die Flasche",
+   "baca": "FLA-sye",
+   "id": "botol"
+  },
+  {
+   "de": "die Packung",
+   "baca": "PA-kung",
+   "id": "bungkus"
+  },
+  {
+   "de": "die Tüte",
+   "baca": "TÜÜ-te",
+   "id": "kantong"
+  },
+  {
+   "de": "das Obst",
+   "baca": "oopst",
+   "id": "buah"
+  },
+  {
+   "de": "das Gemüse",
+   "baca": "ge-MÜÜ-ze",
+   "id": "sayuran"
+  },
+  {
+   "de": "der Käse",
+   "baca": "KEE-ze",
+   "id": "keju"
+  },
+  {
+   "de": "das Fleisch",
+   "baca": "flaisy",
+   "id": "daging"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "Ich hätte gern zweihundert Gramm Käse.",
+    "Welchen Käse möchten Sie?",
+    "Wie viel kostet das?",
+    "Ein Kilo Tomaten und drei Bananen, bitte.",
+    "Sonst noch etwas?",
+    "Das ist alles, danke."
+   ]
+  },
+  {
+   "prompt": "Isi dengan satuan yang tepat.",
+   "items": [
+    "Ich möchte ein ____ Tomaten. (1 kg)",
+    "Bitte zweihundert ____ Käse.",
+    "Wir brauchen einen ____ Milch.",
+    "Ich nehme zwei ____ Wasser. (botol)",
+    "Drei ____ Kuchen, bitte. (potong)",
+    "Zwei ____ Milch, bitte. (kotak)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "Käse / ich / gern / hätte / zweihundert Gramm",
+    "kostet / wie viel / das",
+    "möchten / welchen / Sie / Käse",
+    "eine Tüte / ich / brauche",
+    "Tomaten / ein Kilo / bitte / und / drei Bananen",
+    "alles / das / ist"
+   ]
+  }
+ ],
+ "answers": [
+  "Saya mau dua ratus gram keju. — Keju yang mana yang Anda mau? — Berapa harganya? — Satu kilo tomat dan tiga pisang. — Ada lagi? — Itu saja, terima kasih.",
+  "Kilo — Gramm — Liter — Flaschen — Stück — Packungen",
+  "Ich hätte gern zweihundert Gramm Käse. — Wie viel kostet das? — Welchen Käse möchten Sie? — Ich brauche eine Tüte. — Ein Kilo Tomaten und drei Bananen, bitte. — Das ist alles."
+ ],
+ "wave": "Sebelum mulai unit 13, buka lagi dialog **Unit 5**. Ucapkan semua angkanya dengan suara keras — terutama yang di atas dua puluh."
+}

@@ -1,0 +1,595 @@
+{
+ "title": "Kerja apa kamu?",
+ "title_target": "Was machst du beruflich?",
+ "goal": "Menceritakan pekerjaan dan tempat kerja — sambil memasang satu kelompok kata kerja yang vokalnya berubah diam-diam pada *du* dan *er/sie*.",
+ "bekal": [
+  "menyebutkan pekerjaan (*Ich bin Lehrer*, *Ich arbeite als…*)",
+  "memakai kata kerja beruas vokal (*du sprichst*, *er fährt*)",
+  "menyebut tempat kerja dengan *bei* dan *in*",
+  "memakai *man* untuk berbicara tentang orang pada umumnya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — In der Kantine",
+   "intro": "Makan siang di kantin kursus. Marek, yang datang dari Polandia dua tahun lalu, bercerita tentang pekerjaannya — dan tentang keluarganya yang bekerja di mana-mana.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Marek, was machst du beruflich?",
+     "id": "Marek, kerja apa kamu?",
+     "literal": "Marek, apa membuat kamu secara-pekerjaan?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Ich arbeite als Koch. Ich arbeite in einem Restaurant in Mitte.",
+     "id": "Saya bekerja sebagai koki. Saya bekerja di sebuah restoran di Mitte.",
+     "literal": "aku bekerja sebagai koki. aku bekerja di sebuah restoran di Mitte."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Interessant! Und deine Frau? Arbeitet sie auch?",
+     "id": "Menarik! Dan istrimu? Dia bekerja juga?",
+     "literal": "menarik! dan punyamu istri? bekerja dia juga?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Ja, sie ist Ärztin. Sie arbeitet bei der Charité.",
+     "id": "Ya, dia dokter. Dia bekerja di rumah sakit Charité.",
+     "literal": "ya, dia adalah dokter-perempuan. dia bekerja pada itu Charité."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sie spricht sicher sehr gut Deutsch.",
+     "id": "Bahasa Jermannya pasti bagus sekali.",
+     "literal": "dia berbicara pasti sangat baik Jerman."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Sie spricht besser als ich. Sie liest jeden Abend deutsche Bücher.",
+     "id": "Bahasa Jermannya lebih bagus daripada saya. Dia membaca buku Jerman setiap malam.",
+     "literal": "dia berbicara lebih-baik daripada aku. dia membaca setiap malam Jerman buku-buku."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Und dein Bruder? Was macht er?",
+     "id": "Dan saudaramu? Dia kerja apa?",
+     "literal": "dan punyamu saudara-lelaki? apa membuat dia?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Er fährt Taxi in Warschau. Er fährt jeden Tag zehn Stunden.",
+     "id": "Dia sopir taksi di Warsawa. Dia menyetir sepuluh jam setiap hari.",
+     "literal": "dia mengendarai taksi di Warsawa. dia mengendarai setiap hari sepuluh jam-jam."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Zehn Stunden! Das ist viel.",
+     "id": "Sepuluh jam! Itu banyak.",
+     "literal": "sepuluh jam-jam! itu adalah banyak."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Ja. Er schläft wenig und isst schlecht. Aber er verdient gut.",
+     "id": "Ya. Dia kurang tidur dan makannya buruk. Tapi penghasilannya bagus.",
+     "literal": "ya. dia tidur sedikit dan makan buruk. tetapi dia menghasilkan baik."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "In Deutschland arbeitet man auch viel, oder?",
+     "id": "Di Jerman orang juga banyak bekerja, kan?",
+     "literal": "di Jerman bekerja orang juga banyak, atau?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Nein, hier macht man Feierabend. Um fünf ist Schluss.",
+     "id": "Tidak, di sini orang berhenti tepat waktu. Jam lima selesai.",
+     "literal": "tidak, di-sini membuat orang selesai-kerja. pada lima adalah penutup."
+    }
+   ],
+   "notes": [
+    "***Ich bin Lehrer* atau *Ich arbeite als Lehrer*** — keduanya benar. Yang pertama menyebut identitas, yang kedua menyebut peran yang sedang dijalani. Kalau kamu bekerja di luar bidangmu, *als* lebih tepat: *Ich bin Ingenieur, aber ich arbeite als Kellner*.",
+    "***bei* untuk perusahaan/orang, *in* untuk gedung/tempat.** *Ich arbeite **bei** Siemens*, *Ich arbeite **bei** der Charité*, tapi *Ich arbeite **in** einem Restaurant*, *Ich arbeite **im** Büro*. Kalau namanya nama perusahaan, hampir selalu *bei*.",
+    "**Baris 6 dan 8: *spricht*, *liest*, *fährt*.** Vokal di tengah kata berubah, tapi hanya pada *du* dan *er/sie/es*. *Ich spreche* tapi *er spricht*; *ich fahre* tapi *er fährt*. Kotak tata bahasa di bawah membedah kelompoknya.",
+    "***man*** berarti \"orang pada umumnya\", seperti \"orang\" dalam \"orang Jerman kerjanya rajin\". Ia selalu memakai bentuk kata kerja *er/sie/es*: *man arbeitet*, *man sagt*, *man macht*. ⚠️ Jangan tertukar dengan *der Mann* (laki-laki) yang bunyinya nyaris sama — bedanya cuma satu huruf n dan huruf besar.",
+    "***besser als*** = \"lebih baik daripada\". Kata *als* di sini artinya \"daripada\", berbeda dari *als* di baris 2 yang berarti \"sebagai\". Bahasa Jerman memakai satu kata untuk dua pekerjaan; posisinya dalam kalimat yang membedakan.",
+    "***Feierabend*** tak punya padanan dalam bahasa Indonesia: saat kerja selesai dan hari milikmu sendiri dimulai. *Feierabend machen* = berhenti bekerja untuk hari itu. Kata ini menjelaskan banyak hal tentang budaya kerja Jerman, termasuk kenapa kantor benar-benar kosong pukul lima."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja yang vokalnya berubah",
+     "body": [
+      "Sekitar lima puluh kata kerja Jerman mengubah vokal akarnya — dan hanya pada dua bentuk: **du** dan **er/sie/es**. Bentuk yang lain patuh seperti biasa. Ada tiga pola, dan semua kata kerja yang berubah masuk ke salah satunya."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Infinitiv",
+       "ich",
+       "du",
+       "er / sie / es",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "**e → i**",
+        "sprechen",
+        "spreche",
+        "spr**i**chst",
+        "spr**i**cht",
+        "berbicara"
+       ],
+       [
+        "",
+        "essen",
+        "esse",
+        "**isst**",
+        "**isst**",
+        "makan"
+       ],
+       [
+        "",
+        "helfen",
+        "helfe",
+        "h**i**lfst",
+        "h**i**lft",
+        "menolong"
+       ],
+       [
+        "",
+        "nehmen",
+        "nehme",
+        "n**imm**st",
+        "n**imm**t",
+        "mengambil"
+       ],
+       [
+        "**e → ie**",
+        "lesen",
+        "lese",
+        "l**ie**st",
+        "l**ie**st",
+        "membaca"
+       ],
+       [
+        "",
+        "sehen",
+        "sehe",
+        "s**ie**hst",
+        "s**ie**ht",
+        "melihat"
+       ],
+       [
+        "**a → ä**",
+        "fahren",
+        "fahre",
+        "f**ä**hrst",
+        "f**ä**hrt",
+        "berkendara"
+       ],
+       [
+        "",
+        "schlafen",
+        "schlafe",
+        "schl**ä**fst",
+        "schl**ä**ft",
+        "tidur"
+       ],
+       [
+        "",
+        "tragen",
+        "trage",
+        "tr**ä**gst",
+        "tr**ä**gt",
+        "membawa, memakai"
+       ],
+       [
+        "",
+        "waschen",
+        "wasche",
+        "w**ä**schst",
+        "w**ä**scht",
+        "mencuci"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa **akhirannya tetap normal** — *-st* untuk *du*, *-t* untuk *er*. Yang berubah cuma vokalnya. Jadi kamu tidak sedang menghafal kata kerja baru, melainkan satu ejaan alternatif untuk dua bentuk saja.",
+      "⚠️ *essen* dan *lesen* menghasilkan bentuk *du* dan *er* yang **sama persis** (*du isst / er isst*, *du liest / er liest*), karena akarnya sudah berakhiran s. Hanya kata gantinya yang membedakan artinya.",
+      "Kamus menandai kelompok ini dengan mencantumkan bentuk *er*-nya: *sprechen (spricht)*. Kalau tanda itu tak ada, kata kerjanya beraturan."
+     ]
+    },
+    {
+     "title": "Berbicara tentang pekerjaan",
+     "body": [
+      "Empat pola kalimat berikut menutup hampir semua yang perlu kamu katakan tentang pekerjaan di level A1."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "**sein** + pekerjaan (tanpa sandang)",
+        "Ich bin Lehrer.",
+        "Saya guru."
+       ],
+       [
+        "**arbeiten als** + pekerjaan",
+        "Ich arbeite als Kellner.",
+        "Saya bekerja sebagai pelayan."
+       ],
+       [
+        "**arbeiten bei** + perusahaan",
+        "Ich arbeite bei Siemens.",
+        "Saya bekerja di Siemens."
+       ],
+       [
+        "**arbeiten in** + tempat",
+        "Ich arbeite in einer Schule.",
+        "Saya bekerja di sebuah sekolah."
+       ],
+       [
+        "pertanyaannya",
+        "Was machst du beruflich?",
+        "Kerja apa kamu?"
+       ],
+       [
+        "pertanyaan resminya",
+        "Was sind Sie von Beruf?",
+        "Apa pekerjaan Anda?"
+       ]
+      ]
+     },
+     "after": [
+      "Untuk keadaan yang bukan pekerjaan berbayar, dipakai kata sifat, bukan kata benda: *Ich bin **arbeitslos*** (menganggur), *Ich bin **Rentner*** (pensiunan), *Ich bin **Hausfrau/Hausmann*** (mengurus rumah), *Ich bin noch **Schüler*** (masih pelajar sekolah).",
+      "⚠️ *Student* hanya untuk mahasiswa perguruan tinggi. Anak sekolah adalah *Schüler / Schülerin*. Menyebut anak SMA sebagai *Student* akan terdengar salah di telinga orang Jerman."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pekerjaan yang paling sering disebut",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Laki-laki",
+      "Perempuan",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "der Lehrer",
+       "die Lehrerin",
+       "LEE-ra",
+       "guru"
+      ],
+      [
+       "der Arzt",
+       "die Ärztin",
+       "aatst",
+       "dokter"
+      ],
+      [
+       "der Krankenpfleger",
+       "die Krankenschwester",
+       "KRAN-ken-pflee-ga",
+       "perawat"
+      ],
+      [
+       "der Ingenieur",
+       "die Ingenieurin",
+       "in-sye-NIÖÖA",
+       "insinyur"
+      ],
+      [
+       "der Koch",
+       "die Köchin",
+       "kokh",
+       "koki"
+      ],
+      [
+       "der Kellner",
+       "die Kellnerin",
+       "KEL-na",
+       "pelayan"
+      ],
+      [
+       "der Verkäufer",
+       "die Verkäuferin",
+       "fea-KOI-fa",
+       "penjual"
+      ],
+      [
+       "der Fahrer",
+       "die Fahrerin",
+       "FAA-ra",
+       "sopir"
+      ],
+      [
+       "der Programmierer",
+       "die Programmiererin",
+       "pro-gra-MII-ra",
+       "pemrogram"
+      ],
+      [
+       "der Student",
+       "die Studentin",
+       "sytu-DENT",
+       "mahasiswa"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Tempat kerja"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Bahasa Indonesia",
+      "Contoh kalimat"
+     ],
+     "rows": [
+      [
+       "das Büro",
+       "kantor",
+       "Ich arbeite im Büro."
+      ],
+      [
+       "die Schule",
+       "sekolah",
+       "Sie arbeitet in einer Schule."
+      ],
+      [
+       "das Krankenhaus",
+       "rumah sakit",
+       "Er arbeitet im Krankenhaus."
+      ],
+      [
+       "das Restaurant",
+       "restoran",
+       "Wir arbeiten in einem Restaurant."
+      ],
+      [
+       "die Firma",
+       "perusahaan",
+       "Meine Firma ist klein."
+      ],
+      [
+       "die Fabrik",
+       "pabrik",
+       "Mein Vater arbeitet in einer Fabrik."
+      ],
+      [
+       "der Laden",
+       "toko",
+       "Sie arbeitet in einem Laden."
+      ],
+      [
+       "zu Hause",
+       "di rumah",
+       "Ich arbeite oft zu Hause."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Seberapa sering, seberapa banyak",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kata-kata ini menempel di hampir semua kalimat tentang pekerjaan dan rutinitas, dan letaknya dalam kalimat cukup bebas — biasanya sesudah kata kerja."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Deutsch",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "immer",
+       "I-ma",
+       "selalu"
+      ],
+      [
+       "oft",
+       "oft",
+       "sering"
+      ],
+      [
+       "manchmal",
+       "MANKH-maal",
+       "kadang-kadang"
+      ],
+      [
+       "selten",
+       "ZEL-ten",
+       "jarang"
+      ],
+      [
+       "nie",
+       "nii",
+       "tidak pernah"
+      ],
+      [
+       "jeden Tag",
+       "YEE-den taak",
+       "setiap hari"
+      ],
+      [
+       "viel",
+       "fiil",
+       "banyak"
+      ],
+      [
+       "wenig",
+       "VEE-nikh",
+       "sedikit"
+      ],
+      [
+       "gut / schlecht",
+       "guut / sylekht",
+       "baik / buruk"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat kalimat tentang dirimu sendiri",
+     "items": [
+      "*Ich bin …* — sebutkan pekerjaanmu, tanpa *ein*.",
+      "*Ich arbeite bei / in …* — sebutkan tempatnya.",
+      "*Ich arbeite jeden Tag … Stunden.* — sebutkan berapa jam.",
+      "*Meine Arbeit ist interessant / schwer / gut.* — sebutkan pendapatmu tentangnya."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Empat kalimat itu adalah jawaban lengkap untuk pertanyaan *Was machst du beruflich?* Latih sampai keluar tanpa jeda, karena ini pertanyaan kedua yang akan kamu terima dari setiap orang Jerman yang baru kamu kenal — persis sesudah *Woher kommst du?*"
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "de": "der Beruf",
+   "baca": "be-RUUF",
+   "id": "pekerjaan"
+  },
+  {
+   "de": "beruflich",
+   "baca": "be-RUUF-likh",
+   "id": "secara pekerjaan"
+  },
+  {
+   "de": "arbeiten",
+   "baca": "AR-bai-ten",
+   "id": "bekerja"
+  },
+  {
+   "de": "die Arbeit",
+   "baca": "AR-bait",
+   "id": "pekerjaan, kerja"
+  },
+  {
+   "de": "als",
+   "baca": "als",
+   "id": "sebagai; daripada"
+  },
+  {
+   "de": "bei",
+   "baca": "bai",
+   "id": "di (perusahaan), pada"
+  },
+  {
+   "de": "die Firma",
+   "baca": "FIR-ma",
+   "id": "perusahaan"
+  },
+  {
+   "de": "das Büro",
+   "baca": "bü-ROO",
+   "id": "kantor"
+  },
+  {
+   "de": "das Krankenhaus",
+   "baca": "KRAN-ken-haus",
+   "id": "rumah sakit"
+  },
+  {
+   "de": "der Arzt / die Ärztin",
+   "baca": "aatst / ERTS-tin",
+   "id": "dokter"
+  },
+  {
+   "de": "der Koch / die Köchin",
+   "baca": "kokh / KÖ-khin",
+   "id": "koki"
+  },
+  {
+   "de": "sprechen",
+   "baca": "SYPRE-khen",
+   "id": "berbicara"
+  },
+  {
+   "de": "lesen",
+   "baca": "LEE-zen",
+   "id": "membaca"
+  },
+  {
+   "de": "sehen",
+   "baca": "ZEE-en",
+   "id": "melihat"
+  },
+  {
+   "de": "essen",
+   "baca": "E-sen",
+   "id": "makan"
+  },
+  {
+   "de": "fahren",
+   "baca": "FAA-ren",
+   "id": "berkendara"
+  },
+  {
+   "de": "schlafen",
+   "baca": "SYLAA-fen",
+   "id": "tidur"
+  },
+  {
+   "de": "helfen",
+   "baca": "HEL-fen",
+   "id": "menolong"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "Was machst du beruflich?",
+    "Ich arbeite als Koch.",
+    "Sie ist Ärztin und arbeitet im Krankenhaus.",
+    "Er fährt jeden Tag zehn Stunden.",
+    "Sie liest jeden Abend deutsche Bücher.",
+    "In Deutschland arbeitet man viel."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+   "items": [
+    "Er ____ sehr gut Deutsch. (sprechen)",
+    "Du ____ jeden Abend ein Buch. (lesen)",
+    "Sie ____ jeden Tag Taxi. (fahren)",
+    "Was ____ du zum Frühstück? (essen)",
+    "Er ____ nur fünf Stunden. (schlafen)",
+    "Du ____ mir sehr. (helfen)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "als / ich / arbeite / Koch",
+    "im Krankenhaus / sie / arbeitet",
+    "du / machst / beruflich / was",
+    "Taxi / fährt / er / in Warschau",
+    "sehr gut / spricht / Deutsch / meine Frau",
+    "viel / man / in Deutschland / arbeitet"
+   ]
+  }
+ ],
+ "answers": [
+  "Kerja apa kamu? — Saya bekerja sebagai koki. — Dia dokter dan bekerja di rumah sakit. — Dia menyetir sepuluh jam setiap hari. — Dia membaca buku Jerman setiap malam. — Di Jerman orang banyak bekerja.",
+  "spricht — liest — fährt — isst — schläft — hilfst",
+  "Ich arbeite als Koch. — Sie arbeitet im Krankenhaus. — Was machst du beruflich? — Er fährt Taxi in Warschau. — Meine Frau spricht sehr gut Deutsch. — In Deutschland arbeitet man viel."
+ ]
+}
