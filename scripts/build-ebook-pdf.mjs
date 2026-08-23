@@ -158,6 +158,17 @@ const tabel = (b) => `
    cukup "Español · Cara baca · Bahasa Indonesia", modul beraksara asing perlu
    kolom kana/aksara tersendiri — jadi susunannya ditulis di meta.json
    (`vocab_columns: [{head, key}, …]`) dan bentuk lama tetap jadi bawaan. */
+/* [ebook-fon-cjk-v1] Ekor tumpukan fon untuk aksara CJK ikut modulnya.
+
+   Ratusan aksara Han dipakai bersama bahasa Jepang dan Mandarin, tapi bentuk
+   cetaknya BERBEDA (直, 骨, 令 …). Ekor bawaan tumpukan fon berisi fon Jepang,
+   jadi modul Mandarin yang dibiarkan memakainya tercetak dengan bentuk aksara
+   Jepang — benar terbaca, tapi salah di mata pembaca Mandarin. Modul memilih
+   ekornya sendiri lewat `meta.font_cjk_serif` / `meta.font_cjk_sans`; nilai
+   bawaannya persis seperti sebelumnya, jadi modul Jepang & Latin tak berubah. */
+const FON_CJK_SERIF = meta.font_cjk_serif ?? `"Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP"`;
+const FON_CJK_SANS = meta.font_cjk_sans ?? `"Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP"`;
+
 const KOLOM_KOSAKATA = meta.vocab_columns ?? [
   { head: "Español", key: "es" },
   { head: "Cara baca", key: "baca" },
@@ -257,10 +268,10 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
      fon pertama yang PUNYA glifnya, jadi modul beraksara Latin tak berubah
      sedikit pun sementara aksara asing tidak lagi jatuh ke fon darurat. */
   body { margin: 0; font-family: "Charter", "Georgia", "Times New Roman", serif,
-         "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP";
+         ${FON_CJK_SERIF};
          font-size: ${esc(meta.font_size ?? "10.5pt")}; line-height: 1.55; color: #1B2233; }
   h1, h2, h3, h4, .unit-no, .sampul-tanda, th { font-family: "Helvetica Neue", Arial, sans-serif,
-         "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP"; }
+         ${FON_CJK_SANS}; }
 
   /* [ebook-translit-ruby-v1] Cara baca di atas aksara. ruby-position over wajib
      ditulis — bawaan Chromium sudah begitu untuk tulisan mendatar, tapi tanpa
