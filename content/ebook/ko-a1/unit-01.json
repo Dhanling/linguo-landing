@@ -1,0 +1,450 @@
+{
+  "title": "Halo, saya orang Indonesia",
+  "title_target": "안녕하세요 — Annyeonghaseyo",
+  "goal": "Menyapa siapa pun dengan aman, menyebut nama dan asal, menanyakan hal yang sama kepada lawan bicara, dan mengenali dua bentuk sopan yang akan dipakai sepanjang modul.",
+  "bekal": [
+    "menyapa dengan 안녕하세요 kapan pun, siang atau malam",
+    "memperkenalkan diri dengan 저는 …이에요/예요",
+    "menyebut kebangsaan dan pekerjaan",
+    "membedakan bentuk 입니다 dan bentuk 이에요/예요",
+    "berpamitan dengan kata yang tepat menurut siapa yang pergi"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Hari pertama di kelas bahasa",
+      "intro": "Ani, pelajar dari Indonesia, duduk di sebelah seseorang yang belum dikenalnya di kelas bahasa Korea di Seoul. Perhatikan bahwa keduanya tidak pernah menyebut kata \"kamu\" satu kali pun.",
+      "lines": [
+        {
+          "speaker": "아니:",
+          "text": "[안녕하세요|Annyeonghaseyo].",
+          "id": "Halo.",
+          "literal": "damai — ada — kah (hormat)."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[안녕하세요|Annyeonghaseyo]. [처음|Cheoeum] [뵙겠습니다|boepgetseumnida].",
+          "id": "Halo. Senang berkenalan.",
+          "literal": "damai-ada-kah. pertama-kali — akan-berjumpa (sangat hormat)."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[저는|Jeoneun] [아니예요|Ani-yeyo]. [이름이|Ireumi] [뭐예요|mwoyeyo]?",
+          "id": "Saya Ani. Siapa nama Anda?",
+          "literal": "saya — mengenai — Ani — adalah. nama — yang — apa — adalah?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[제|Je] [이름은|ireumeun] [김민준입니다|Gim Minjun-imnida].",
+          "id": "Nama saya Kim Minjun.",
+          "literal": "saya-punya — nama — mengenai — Kim Minjun — adalah (resmi)."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[민준|Minjun] [씨는|ssineun] [한국|Hanguk] [사람이에요|saramieyo]?",
+          "id": "Minjun orang Korea?",
+          "literal": "Minjun — tuan — mengenai — Korea — orang — adalah?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[네|Ne], [한국|Hanguk] [사람이에요|saramieyo]. [아니|Ani] [씨는요|ssineunyo]?",
+          "id": "Ya, orang Korea. Kalau Ani?",
+          "literal": "ya, Korea — orang — adalah. Ani — tuan — mengenai — nya?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[저는|Jeoneun] [한국|Hanguk] [사람이|sarami] [아니에요|anieyo]. [인도네시아|Indonesia] [사람이에요|saramieyo].",
+          "id": "Saya bukan orang Korea. Saya orang Indonesia.",
+          "literal": "saya — mengenai — Korea — orang — yang — bukan. Indonesia — orang — adalah."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[아|A], [그래요|geuraeyo]? [학생이에요|Haksaengieyo]?",
+          "id": "Oh, begitu? Anda pelajar?",
+          "literal": "ah, begitu — adalah? pelajar — adalah?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne], [학생이에요|haksaengieyo]. [민준|Minjun] [씨도|ssido] [학생이에요|haksaengieyo]?",
+          "id": "Ya, saya pelajar. Minjun juga pelajar?",
+          "literal": "ya, pelajar — adalah. Minjun — tuan — juga — pelajar — adalah?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[아니요|Aniyo], [저는|jeoneun] [회사원이에요|hoesawonieyo].",
+          "id": "Bukan, saya karyawan.",
+          "literal": "tidak, saya — mengenai — karyawan — adalah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[반갑습니다|Bangapseumnida]. [잘|Jal] [부탁합니다|butakamnida].",
+          "id": "Senang bertemu. Mohon bantuannya.",
+          "literal": "gembira — adalah (resmi). baik — memohon — adalah."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[네|Ne], [안녕히|annyeonghi] [가세요|gaseyo].",
+          "id": "Ya, selamat jalan.",
+          "literal": "ya, dengan-damai — pergilah (hormat)."
+        }
+      ],
+      "notes": [
+        "**안녕하세요 tidak punya jam.** Tidak ada \"selamat pagi\", \"selamat siang\", dan \"selamat malam\" yang terpisah seperti dalam bahasa Indonesia. Satu kata ini dipakai dari subuh sampai tengah malam, kepada siapa pun. Harfiahnya \"apakah Anda dalam keadaan damai?\" — dan itu sebabnya bentuknya kalimat tanya, meski nadanya turun seperti pernyataan.",
+        "**Bahasa Korea menghindari kata \"kamu\".** Di seluruh dialog di atas tidak ada satu pun kata ganti orang kedua. Yang dipakai adalah **nama + 씨**: 민준 씨는…? Menyebut lawan bicara dengan 당신 (\"kamu\") terdengar seperti menantang berkelahi, meski buku pelajaran lama sering mencantumkannya. Buang kata itu dari kepalamu sekarang juga.",
+        "**씨 menempel pada nama, bukan pada gelar.** 민준 씨 aman untuk sesama orang dewasa yang setara. Tapi ⚠️ jangan memakai 씨 kepada atasan atau guru — untuk mereka pakai jabatannya: 선생님 (guru), 사장님 (direktur). Menyebut bos dengan 씨 sama kikuknya dengan memanggil rektor dengan nama panggilan.",
+        "**저 dan 나 dua-duanya berarti \"saya\".** 저 adalah bentuk merendah dan itulah yang dipakai di modul ini; 나 adalah bentuk biasa yang cuma aman di antara teman dekat sebaya. Karena partikel topiknya menempel, bentuknya jadi 저는 dan 제 (bukan 저의) untuk \"punya saya\".",
+        "**씨는요? adalah cara balik bertanya tanpa mengulang.** Akhiran 요 yang ditempel ke partikel berarti \"…nya bagaimana?\". Sangat sering dipakai dan sangat berguna: begitu kamu ditanya sesuatu, jawab lalu balikkan dengan 씨는요?",
+        "**아니요 berarti \"tidak\" sebagai jawaban, 아니에요 berarti \"bukan\" sebagai kata kerja.** Dua kata yang mirip dan sering tertukar. 아니요 berdiri sendiri di depan kalimat; 아니에요 menutup kalimat dan butuh subjek berpartikel 이/가 di depannya: 한국 사람**이** 아니에요.",
+        "**Berpamitan punya dua bentuk, dan yang menentukan adalah siapa yang bergerak.** 안녕히 **가**세요 (\"pergilah dengan damai\") diucapkan kepada orang yang **meninggalkan** tempat. 안녕히 **계**세요 (\"tinggallah dengan damai\") diucapkan kepada orang yang **tetap** di tempat. Kalau dua-duanya pergi, dua-duanya mengucapkan 안녕히 가세요. Salah pilih di sini langsung terdengar sebagai kesalahan orang asing.",
+        "**잘 부탁합니다 tidak ada padanannya dalam bahasa Indonesia.** Harfiahnya \"mohon diperlakukan dengan baik\", diucapkan saat memulai hubungan apa pun: kelas baru, kantor baru, tim baru. Bukan basa-basi kosong — tidak mengucapkannya di perkenalan resmi justru terasa dingin."
+      ],
+      "grammars": [
+        {
+          "title": "이에요 / 예요 — \"adalah\"",
+          "body": [
+            "Kata kerja pertama yang wajib kamu kuasai. Ia menempel **langsung di belakang** kata bendanya tanpa spasi, dan bentuknya ditentukan oleh huruf terakhir kata benda itu."
+          ],
+          "table": {
+            "head": [
+              "Kata benda berakhir",
+              "Bentuk",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "Konsonan",
+                "**이에요**",
+                "학생 → 학생**이에요**",
+                "adalah pelajar"
+              ],
+              [
+                "Konsonan",
+                "**이에요**",
+                "선생님 → 선생님**이에요**",
+                "adalah guru"
+              ],
+              [
+                "Vokal",
+                "**예요**",
+                "아니 → 아니**예요**",
+                "adalah Ani"
+              ],
+              [
+                "Vokal",
+                "**예요**",
+                "의사 → 의사**예요**",
+                "adalah dokter"
+              ]
+            ]
+          },
+          "after": [
+            "Alasannya semata kemudahan ucapan: sesudah konsonan perlu vokal penyambung, sesudah vokal tidak. Aturan \"vokal atau konsonan\" ini akan muncul lagi pada hampir setiap partikel Korea, jadi biasakan sejak sekarang memeriksa huruf terakhir kata bendanya.",
+            "Bentuk tanyanya **sama persis**, cuma nadanya dinaikkan di akhir: 학생이에요. (pernyataan) dan 학생이에요? (pertanyaan). Bahasa Korea tidak membalik urutan kata untuk bertanya.",
+            "Bentuk sangkalnya bukan menempel, melainkan kata terpisah **아니에요**, dan kata benda di depannya memakai partikel 이/가: 학생**이** 아니에요 (bukan pelajar), 의사**가** 아니에요 (bukan dokter)."
+          ]
+        },
+        {
+          "title": "Dua tingkat sopan yang dipakai sepanjang modul",
+          "body": [
+            "Satu kalimat yang sama punya beberapa wujud tergantung siapa lawan bicaramu. Di tingkat A1 kamu cukup mengenali dua, dan cuma satu yang perlu dilatih sampai otomatis."
+          ],
+          "table": {
+            "head": [
+              "",
+              "합쇼체 (resmi)",
+              "해요체 (sopan sehari-hari)"
+            ],
+            "rows": [
+              [
+                "Saya Ani",
+                "저는 아니**입니다**",
+                "저는 아니**예요**"
+              ],
+              [
+                "Anda pelajar?",
+                "학생**입니까**?",
+                "학생**이에요**?"
+              ],
+              [
+                "Terima kasih",
+                "감사**합니다**",
+                "고마워**요**"
+              ],
+              [
+                "Terasa seperti",
+                "Pengumuman, berita, laporan",
+                "Percakapan sopan biasa"
+              ],
+              [
+                "Dipakai kepada",
+                "Pelanggan, hadirin, atasan jauh",
+                "Hampir semua orang dewasa"
+              ]
+            ]
+          },
+          "after": [
+            "**Modul ini memakai 해요체 sebagai bentuk utama** karena itulah yang akan kamu pakai sembilan puluh persen waktu. 합쇼체 diperkenalkan supaya kamu mengenalinya di pengumuman stasiun dan di berita, bukan supaya dilatih.",
+            "Yang tidak boleh kamu pakai kepada orang yang baru dikenal adalah **반말** — bentuk akrab tanpa 요 yang terdengar di serial: 아니야, 어디 가? Ia terdengar wajar antara tokoh yang bersahabat, dan terdengar kasar dari mulut orang asing yang baru bertemu. Tunda sampai lawan bicaramu sendiri yang menawarkan.",
+            "⚠️ Perhatikan bahwa 감사합니다 dan 안녕하세요 tetap dipakai apa adanya di kedua tingkat. Keduanya sudah membeku sebagai satu kata utuh dan tidak perlu diubah."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata yang wajib ada di saku hari pertama",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sebelas ungkapan di bawah menutup sebagian besar basa-basi hari pertama. Hafalkan utuh dan jangan dibongkar tata bahasanya dulu — semuanya akan dijelaskan pada waktunya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "한국어",
+            "Baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "네 / 아니요",
+              "ne / aniyo",
+              "Ya / Tidak"
+            ],
+            [
+              "감사합니다",
+              "gamsahamnida",
+              "Terima kasih (resmi)"
+            ],
+            [
+              "고마워요",
+              "gomawoyo",
+              "Terima kasih (sehari-hari)"
+            ],
+            [
+              "죄송합니다",
+              "joesonghamnida",
+              "Maaf (resmi, minta maaf sungguhan)"
+            ],
+            [
+              "실례합니다",
+              "sillyehamnida",
+              "Permisi (menyela, lewat)"
+            ],
+            [
+              "괜찮아요",
+              "gwaenchanayo",
+              "Tidak apa-apa, saya baik-baik saja"
+            ],
+            [
+              "잘 모르겠어요",
+              "jal moreugesseoyo",
+              "Saya kurang tahu"
+            ],
+            [
+              "다시 한번 말해 주세요",
+              "dasi hanbeon malhae juseyo",
+              "Tolong ulangi sekali lagi"
+            ],
+            [
+              "천천히 말해 주세요",
+              "cheoncheonhi malhae juseyo",
+              "Tolong bicara lebih pelan"
+            ],
+            [
+              "이게 뭐예요?",
+              "ige mwoyeyo",
+              "Ini apa?"
+            ],
+            [
+              "한국어로 뭐예요?",
+              "hangugeoro mwoyeyo",
+              "Bahasa Koreanya apa?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dua kalimat terakhir adalah alat belajar, bukan sekadar kosakata. Sekali kamu bisa menanyakan \"ini apa\" dan \"bahasa Koreanya apa\", setiap orang Korea di sekitarmu berubah menjadi kamus berjalan."
+        },
+        {
+          "type": "kotak",
+          "title": "죄송합니다 lawan 실례합니다",
+          "items": [
+            "**죄송합니다** dipakai ketika kamu benar-benar bersalah: menyenggol orang, datang terlambat, melakukan kesalahan.",
+            "**실례합니다** dipakai ketika kamu akan merepotkan orang sedikit: menyela pembicaraan, lewat di depan orang, bertanya kepada orang asing di jalan.",
+            "Memakai 죄송합니다 hanya untuk lewat di depan orang terdengar berlebihan; memakai 실례합니다 setelah menumpahkan kopi ke baju orang terdengar tidak tahu diri."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "안녕하세요",
+      "baca": "annyeonghaseyo",
+      "id": "halo, salam (kapan saja)"
+    },
+    {
+      "ko": "안녕히 가세요",
+      "baca": "annyeonghi gaseyo",
+      "id": "selamat jalan (kepada yang pergi)"
+    },
+    {
+      "ko": "안녕히 계세요",
+      "baca": "annyeonghi gyeseyo",
+      "id": "selamat tinggal (kepada yang tinggal)"
+    },
+    {
+      "ko": "저",
+      "baca": "jeo",
+      "id": "saya (merendah)"
+    },
+    {
+      "ko": "제",
+      "baca": "je",
+      "id": "punya saya"
+    },
+    {
+      "ko": "이름",
+      "baca": "ireum",
+      "id": "nama"
+    },
+    {
+      "ko": "뭐",
+      "baca": "mwo",
+      "id": "apa"
+    },
+    {
+      "ko": "사람",
+      "baca": "saram",
+      "id": "orang"
+    },
+    {
+      "ko": "한국",
+      "baca": "Hanguk",
+      "id": "Korea"
+    },
+    {
+      "ko": "인도네시아",
+      "baca": "Indonesia",
+      "id": "Indonesia"
+    },
+    {
+      "ko": "학생",
+      "baca": "haksaeng",
+      "id": "pelajar, mahasiswa"
+    },
+    {
+      "ko": "회사원",
+      "baca": "hoesawon",
+      "id": "karyawan"
+    },
+    {
+      "ko": "선생님",
+      "baca": "seonsaengnim",
+      "id": "guru"
+    },
+    {
+      "ko": "의사",
+      "baca": "uisa",
+      "id": "dokter"
+    },
+    {
+      "ko": "네",
+      "baca": "ne",
+      "id": "ya"
+    },
+    {
+      "ko": "아니요",
+      "baca": "aniyo",
+      "id": "tidak, bukan (jawaban)"
+    },
+    {
+      "ko": "아니에요",
+      "baca": "anieyo",
+      "id": "bukan (kata kerja)"
+    },
+    {
+      "ko": "씨",
+      "baca": "ssi",
+      "id": "sebutan hormat sesudah nama"
+    },
+    {
+      "ko": "도",
+      "baca": "do",
+      "id": "juga"
+    },
+    {
+      "ko": "반갑습니다",
+      "baca": "bangapseumnida",
+      "id": "senang bertemu"
+    },
+    {
+      "ko": "처음 뵙겠습니다",
+      "baca": "cheoeum boepgetseumnida",
+      "id": "senang berkenalan"
+    },
+    {
+      "ko": "잘 부탁합니다",
+      "baca": "jal butakamnida",
+      "id": "mohon bantuannya"
+    },
+    {
+      "ko": "그래요",
+      "baca": "geuraeyo",
+      "id": "begitu ya, benar"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Korea. Pakai bentuk 해요체.",
+      "items": [
+        "Halo.",
+        "Saya Ani.",
+        "Saya orang Indonesia.",
+        "Siapa nama Anda?",
+        "Saya pelajar.",
+        "Saya bukan karyawan."
+      ]
+    },
+    {
+      "prompt": "Isi dengan 이에요 atau 예요 sesuai huruf terakhir kata bendanya.",
+      "items": [
+        "저는 학생____.",
+        "제 이름은 아니____.",
+        "민준 씨는 회사원____.",
+        "그분은 의사____.",
+        "저는 한국 사람____.",
+        "여기는 학교____."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "저는 / 사람이에요 / 인도네시아",
+        "뭐예요 / 이름이 / ?",
+        "학생이에요 / 씨도 / 민준 / ?",
+        "아니에요 / 사람이 / 한국 / 저는",
+        "부탁합니다 / 잘"
+      ]
+    },
+    {
+      "prompt": "Pilih ucapan yang tepat. Tulis jawabannya dalam hangeul.",
+      "items": [
+        "Kamu bertemu guru di lorong pukul tujuh pagi. Kamu bilang ____.",
+        "Temanmu pulang duluan dari kafe, kamu masih tinggal. Kamu bilang ____.",
+        "Kamu pamit dari kantor, rekanmu masih bekerja. Kamu bilang ____.",
+        "Kamu tidak sengaja menabrak orang di kereta. Kamu bilang ____.",
+        "Kamu mau lewat di depan orang yang sedang duduk. Kamu bilang ____."
+      ]
+    }
+  ],
+  "answers": [
+    "안녕하세요. — 저는 아니예요. — 저는 인도네시아 사람이에요. — 이름이 뭐예요? — 저는 학생이에요. — 저는 회사원이 아니에요.",
+    "이에요 — 예요 — 이에요 — 예요 — 이에요 — 예요",
+    "저는 인도네시아 사람이에요. — 이름이 뭐예요? — 민준 씨도 학생이에요? — 저는 한국 사람이 아니에요. — 잘 부탁합니다.",
+    "안녕하세요 — 안녕히 가세요 — 안녕히 계세요 — 죄송합니다 — 실례합니다"
+  ]
+}

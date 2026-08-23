@@ -1,0 +1,508 @@
+{
+  "title": "Menelepon dan sedang melakukan",
+  "title_target": "여보세요 — Yeoboseyo",
+  "goal": "Menelepon dalam bahasa Korea — situasi tersulit bagi pemula karena tidak ada wajah untuk dibaca — dan memasang bentuk \"sedang\" -고 있어요 yang sampai sekarang belum muncul.",
+  "bekal": [
+    "membuka dan menutup panggilan telepon dengan benar",
+    "memakai -고 있어요 untuk perbuatan yang sedang berlangsung",
+    "meminta berbicara dengan orang lain",
+    "meninggalkan pesan dan menjanjikan menelepon balik",
+    "memahami kalimat baku yang diucapkan orang Korea di telepon"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Menelepon teman",
+      "intro": "Ani menelepon Suji. Perhatikan bahwa pembukaan dan penutupan telepon di Korea hampir seluruhnya terdiri dari kalimat baku yang bisa kamu hafal apa adanya.",
+      "lines": [
+        {
+          "speaker": "수지:",
+          "text": "[여보세요|Yeoboseyo]?",
+          "id": "Halo?",
+          "literal": "halo (khusus telepon)?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[여보세요|Yeoboseyo], [수지|Suji] [씨|ssi]? [저|Jeo] [아니예요|Ani-yeyo].",
+          "id": "Halo, Suji? Ini Ani.",
+          "literal": "halo, Suji — tuan? saya — Ani — adalah."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[아|A], [아니|Ani] [씨|ssi]! [지금|Jigeum] [뭐|mwo] [하고|hago] [있어요|isseoyo]?",
+          "id": "Ah, Ani! Sekarang lagi ngapain?",
+          "literal": "ah, Ani — tuan! sekarang — apa — melakukan — sedang-ada?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[도서관에서|Doseogwaneseo] [공부하고|gongbuhago] [있어요|isseoyo]. [수지|Suji] [씨는요|ssineunyo]?",
+          "id": "Sedang belajar di perpustakaan. Kalau Suji?",
+          "literal": "perpustakaan-di — belajar — sedang-ada. Suji — tuan — mengenai — nya?"
+        },
+        {
+          "speaker": "수지:",
+          "text": "[저는|Jeoneun] [지금|jigeum] [밥|bap] [먹고|meokgo] [있어요|isseoyo]. [무슨|Museun] [일|il] [있어요|isseoyo]?",
+          "id": "Saya sedang makan. Ada apa?",
+          "literal": "saya — mengenai — sekarang — nasi — makan — sedang-ada. apa — urusan — ada?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[내일|Naeil] [약속|yaksok] [기억하고|gieokago] [있어요|isseoyo]? [한|Han] [시에|sie] [만나기로|mannagiro] [했어요|haesseoyo].",
+          "id": "Ingat janji besok? Kita sepakat bertemu jam satu.",
+          "literal": "besok — janji — mengingat — sedang-ada? satu — jam-pada — bertemu-untuk — melakukan-sudah."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[아|A], [맞다|matda]! [까먹을|Kkameogeul] [뻔했어요|ppeonhaesseoyo]. [고마워요|Gomawoyo]!",
+          "id": "Ah iya! Hampir saja lupa. Terima kasih!",
+          "literal": "ah, benar! lupa-akan — hampir-melakukan-sudah. terima-kasih!"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[혹시|Hoksi] [시간|sigan] [바꿀|bakkul] [수|su] [있어요|isseoyo]? [두|Du] [시는|sineun] [어때요|eottaeyo]?",
+          "id": "Kalau boleh, bisa ganti waktunya? Jam dua bagaimana?",
+          "literal": "kalau-boleh — waktu — mengganti-akan — kemungkinan — ada? dua — jam — mengenai — bagaimana?"
+        },
+        {
+          "speaker": "수지:",
+          "text": "[네|Ne], [괜찮아요|gwaenchanayo]. [그런데|Geureonde] [지금|jigeum] [친구가|chinguga] [기다리고|gidarigo] [있어요|isseoyo].",
+          "id": "Ya, tidak apa-apa. Tapi sekarang teman saya sedang menunggu.",
+          "literal": "ya, tidak-apa-apa. omong-omong, sekarang — teman — yang — menunggu — sedang-ada."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[아|A], [죄송해요|joesonghaeyo]. [이따가|Ittaga] [다시|dasi] [전화할게요|jeonhwahalgeyo].",
+          "id": "Ah, maaf. Nanti saya telepon lagi.",
+          "literal": "ah, maaf. nanti — lagi — akan-menelepon."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[아니에요|Anieyo]. [그럼|Geureom] [내일|naeil] [두|du] [시에|sie] [봐요|bwayo]!",
+          "id": "Tidak apa-apa. Kalau begitu besok jam dua ya!",
+          "literal": "bukan. kalau-begitu, besok — dua — jam-pada — bertemu!"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne], [들어가세요|deureogaseyo]!",
+          "id": "Ya, sampai nanti!",
+          "literal": "ya, masuklah!"
+        }
+      ],
+      "notes": [
+        "**여보세요 hanya dipakai di telepon.** Ia bukan \"halo\" biasa — mengucapkannya kepada orang yang berdiri di depanmu terdengar lucu. Asal katanya \"lihat ke sini\", dan ia dipakai baik oleh yang menelepon maupun yang menerima.",
+        "**들어가세요 sebagai penutup telepon berarti \"masuklah\", dan itu memang aneh.** Ia peninggalan zaman ketika telepon umum dipakai di luar rumah, sehingga menutup pembicaraan berarti mempersilakan lawan bicara pulang. Sekarang ia sekadar penutup baku, sepenuhnya sopan, dan sangat sering dipakai.",
+        "**-고 있어요 menyatakan perbuatan yang sedang berlangsung.** 공부해요 = saya belajar (kebiasaan atau umum). 공부하**고 있어요** = saya sedang belajar (sekarang juga, saat ini). Bahasa Indonesia membedakan keduanya dengan kata \"sedang\"; bahasa Korea dengan bentuk kata kerjanya.",
+        "**⚠️ Bentuk -고 있어요 jauh lebih jarang dipakai daripada yang diduga pelajar.** Untuk sebagian besar keadaan sekarang, bentuk 해요 biasa sudah cukup dan lebih alami. Pakai -고 있어요 hanya kalau kamu benar-benar ingin menekankan \"tepat saat ini\", persis seperti di pertanyaan telepon 지금 뭐 하고 있어요?",
+        "**약속 berarti janji bertemu, bukan sekadar janji.** 약속이 있어요 = \"saya ada janji\" adalah alasan yang lengkap dan tidak perlu dijelaskan lebih lanjut — sama seperti 일이 있어요. Menanyakan janji dengan siapa dianggap agak mendesak.",
+        "**-기로 했어요 berarti \"sudah sepakat untuk\".** 만나기로 했어요 = kita sepakat bertemu. Bentuknya mengubah kata kerja jadi kata benda dengan -기, lalu \"memutuskan\" dengan 로 하다. Untuk sekarang hafalkan utuh; ia sering muncul di percakapan tentang rencana bersama.",
+        "**혹시 berarti \"kalau-kalau\" atau \"barangkali\", dan ia memperhalus pertanyaan apa pun.** 혹시 시간 있어요? terdengar jauh lebih sopan daripada 시간 있어요?, karena ia sudah menyiapkan tempat bagi lawan bicara untuk menolak. Kata ini bekerja persis seperti 좀.",
+        "**까먹다 berarti \"lupa\" dalam bahasa santai** — harfiahnya \"mengupas dan memakan\". Bentuk netralnya 잊어버리다. Ungkapan -(으)ㄹ 뻔했어요 (\"hampir saja\") juga layak dikenali: 늦을 뻔했어요 = hampir saja terlambat."
+      ],
+      "grammars": [
+        {
+          "title": "-고 있어요 — sedang",
+          "body": [
+            "Tempelkan **-고 있어요** langsung ke akar. Tidak ada pilihan bentuk, sama seperti -고 싶어요 dan -고."
+          ],
+          "table": {
+            "head": [
+              "Kamus",
+              "Bentuk biasa",
+              "Bentuk sedang",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "먹다",
+                "먹어요",
+                "먹**고 있어요**",
+                "sedang makan"
+              ],
+              [
+                "공부하다",
+                "공부해요",
+                "공부하**고 있어요**",
+                "sedang belajar"
+              ],
+              [
+                "기다리다",
+                "기다려요",
+                "기다리**고 있어요**",
+                "sedang menunggu"
+              ],
+              [
+                "보다",
+                "봐요",
+                "보**고 있어요**",
+                "sedang menonton"
+              ],
+              [
+                "Bentuk lampau",
+                "",
+                "먹**고 있었어요**",
+                "sedang makan (waktu itu)"
+              ],
+              [
+                "Bentuk hormat",
+                "",
+                "드시**고 계세요**",
+                "sedang makan (hormat)"
+              ]
+            ]
+          },
+          "after": [
+            "**Bentuk hormatnya mengganti 있다 menjadi 계시다:** 뭐 하고 **계세요**? = \"Anda sedang apa?\". Ini terapan langsung dari kata kerja hormat di unit 8.",
+            "⚠️ **Kata sifat tidak bisa memakai -고 있어요.** 예쁘고 있어요 bukan kalimat. Kata sifat menggambarkan keadaan yang memang sedang berlaku, jadi bentuk 해요 biasa sudah cukup: 예뻐요.",
+            "**Beberapa kata kerja berubah arti dengan -고 있어요:** 입고 있어요 berarti \"sedang mengenakan\" (keadaan), bukan \"sedang memakai baju\" (perbuatan). Sama untuk 알고 있어요 (\"tahu\") dan 기억하고 있어요 (\"ingat\")."
+          ]
+        },
+        {
+          "title": "Kalimat telepon yang baku",
+          "body": [
+            "Menelepon adalah situasi tersulit bagi pemula karena tidak ada wajah dan gerak tangan yang membantu. Untungnya, hampir seluruh pembukaan dan penutupannya berupa kalimat tetap."
+          ],
+          "table": {
+            "head": [
+              "Situasi",
+              "Kalimat",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "Membuka",
+                "여보세요?",
+                "Halo?"
+              ],
+              [
+                "Menyebut diri",
+                "저 아니예요.",
+                "Ini Ani."
+              ],
+              [
+                "Menanyakan lawan",
+                "누구세요?",
+                "Siapa ya?"
+              ],
+              [
+                "Meminta orang lain",
+                "민준 씨 좀 바꿔 주세요.",
+                "Tolong sambungkan ke Minjun."
+              ],
+              [
+                "Orangnya tidak ada",
+                "지금 안 계세요.",
+                "Sekarang beliau tidak ada."
+              ],
+              [
+                "Meninggalkan pesan",
+                "메시지 남길 수 있어요?",
+                "Bisa tinggalkan pesan?"
+              ],
+              [
+                "Salah sambung",
+                "전화 잘못 거셨어요.",
+                "Anda salah sambung."
+              ],
+              [
+                "Tidak terdengar",
+                "잘 안 들려요.",
+                "Tidak terdengar jelas."
+              ],
+              [
+                "Menelepon balik",
+                "다시 전화할게요.",
+                "Saya telepon lagi nanti."
+              ],
+              [
+                "Menutup",
+                "들어가세요.",
+                "Sampai nanti."
+              ]
+            ]
+          },
+          "after": [
+            "**잘 안 들려요 adalah kalimat penyelamat.** Ia jujur, sopan, dan langsung membuat lawan bicara memperlambat serta memperjelas ucapannya — jauh lebih berguna daripada berpura-pura mengerti.",
+            "**Untuk urusan resmi, orang Korea lebih suka telepon daripada pesan teks**, termasuk untuk memesan tempat dan bertanya jam buka. Beberapa kalimat di atas akan lebih sering kamu pakai daripada yang kamu duga."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pesan tertulis dan singkatannya",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sebagian besar percakapan tertulis di Korea terjadi di KakaoTalk, dan bahasanya jauh lebih pendek daripada bahasa lisan. Mengenali singkatannya membuat pesan yang kamu terima berhenti terlihat seperti kode."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Singkatan",
+            "Bentuk penuh",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "ㅇㅇ",
+              "응 / 네",
+              "ya, oke"
+            ],
+            [
+              "ㄴㄴ",
+              "노노",
+              "tidak"
+            ],
+            [
+              "ㅋㅋㅋ",
+              "크크크",
+              "tertawa (seperti \"wkwk\")"
+            ],
+            [
+              "ㅎㅎ",
+              "하하",
+              "tertawa kecil, ramah"
+            ],
+            [
+              "ㄱㅅ",
+              "감사",
+              "terima kasih"
+            ],
+            [
+              "ㅈㅅ",
+              "죄송",
+              "maaf"
+            ],
+            [
+              "ㅇㅋ",
+              "오케이",
+              "oke"
+            ],
+            [
+              "ㅂㅂ",
+              "바이바이",
+              "dah"
+            ],
+            [
+              "담에",
+              "다음에",
+              "lain kali"
+            ],
+            [
+              "넘",
+              "너무",
+              "sangat"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Singkatan ini **hanya** untuk teman sebaya dan lebih muda. Mengirim ㅇㅇ kepada atasan atau guru sama tidak sopannya dengan menjawab \"y\" kepada dosen."
+        },
+        {
+          "type": "sub",
+          "text": "Menulis pesan yang sopan"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "안녕하세요, 아니입니다.",
+              "Halo, saya Ani."
+            ],
+            [
+              "혹시 지금 통화 괜찮으세요?",
+              "Kalau boleh, sekarang bisa bicara di telepon?"
+            ],
+            [
+              "늦게 연락드려서 죄송합니다.",
+              "Maaf menghubungi terlambat."
+            ],
+            [
+              "확인 부탁드립니다.",
+              "Mohon dicek."
+            ],
+            [
+              "감사합니다. 좋은 하루 되세요.",
+              "Terima kasih. Semoga harinya menyenangkan."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "좋은 하루 되세요",
+          "items": [
+            "Kalimat penutup pesan yang paling aman dan paling sering dipakai — setara \"semoga harimu menyenangkan\". Aman untuk siapa pun, termasuk atasan.",
+            "Untuk sore dan malam: 좋은 저녁 되세요, 좋은 밤 되세요. Untuk akhir pekan: 좋은 주말 보내세요.",
+            "Membalasnya cukup dengan 네, 감사합니다 — atau mengulang kalimat yang sama kembali."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "여보세요",
+      "baca": "yeoboseyo",
+      "id": "halo (telepon)"
+    },
+    {
+      "ko": "전화",
+      "baca": "jeonhwa",
+      "id": "telepon"
+    },
+    {
+      "ko": "전화해요",
+      "baca": "jeonhwahaeyo",
+      "id": "menelepon"
+    },
+    {
+      "ko": "고 있어요",
+      "baca": "go isseoyo",
+      "id": "sedang"
+    },
+    {
+      "ko": "바꿔 주세요",
+      "baca": "bakkwo juseyo",
+      "id": "tolong sambungkan"
+    },
+    {
+      "ko": "메시지",
+      "baca": "mesiji",
+      "id": "pesan"
+    },
+    {
+      "ko": "남겨요",
+      "baca": "namgyeoyo",
+      "id": "meninggalkan (pesan)"
+    },
+    {
+      "ko": "들려요",
+      "baca": "deullyeoyo",
+      "id": "terdengar"
+    },
+    {
+      "ko": "약속",
+      "baca": "yaksok",
+      "id": "janji bertemu"
+    },
+    {
+      "ko": "기억해요",
+      "baca": "gieokaeyo",
+      "id": "mengingat"
+    },
+    {
+      "ko": "잊어버려요",
+      "baca": "ijeobeoryeoyo",
+      "id": "lupa"
+    },
+    {
+      "ko": "바꿔요",
+      "baca": "bakkwoyo",
+      "id": "mengganti"
+    },
+    {
+      "ko": "혹시",
+      "baca": "hoksi",
+      "id": "kalau-kalau, barangkali"
+    },
+    {
+      "ko": "다시",
+      "baca": "dasi",
+      "id": "lagi"
+    },
+    {
+      "ko": "잘못",
+      "baca": "jalmot",
+      "id": "salah, keliru"
+    },
+    {
+      "ko": "통화",
+      "baca": "tonghwa",
+      "id": "pembicaraan telepon"
+    },
+    {
+      "ko": "확인",
+      "baca": "hwagin",
+      "id": "pengecekan"
+    },
+    {
+      "ko": "연락",
+      "baca": "yeollak",
+      "id": "hubungan, kontak"
+    },
+    {
+      "ko": "들어가세요",
+      "baca": "deureogaseyo",
+      "id": "sampai nanti (penutup telepon)"
+    },
+    {
+      "ko": "죄송해요",
+      "baca": "joesonghaeyo",
+      "id": "maaf"
+    },
+    {
+      "ko": "기다려요",
+      "baca": "gidaryeoyo",
+      "id": "menunggu"
+    },
+    {
+      "ko": "맞다",
+      "baca": "matda",
+      "id": "benar, iya juga"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah menjadi bentuk sedang dengan -고 있어요.",
+      "items": [
+        "먹다 → ____",
+        "공부하다 → ____",
+        "기다리다 → ____",
+        "보다 → ____",
+        "일하다 → ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kalimat telepon yang tepat dalam hangeul.",
+      "items": [
+        "Membuka telepon: ____?",
+        "Menanyakan siapa yang menelepon: ____?",
+        "Menutup telepon dengan sopan: ____.",
+        "Tidak terdengar jelas: 잘 안 ____.",
+        "Saya telepon lagi nanti: 다시 ____."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Korea.",
+      "items": [
+        "Halo, ini Ani.",
+        "Sekarang lagi ngapain?",
+        "Saya sedang belajar di perpustakaan.",
+        "Ingat janji besok?",
+        "Bisa ganti waktunya?",
+        "Nanti saya telepon lagi."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "있어요 / 뭐 / 하고 / 지금 / ?",
+        "있어요 / 공부하고 / 도서관에서",
+        "있어요 / 기다리고 / 친구가",
+        "전화할게요 / 다시 / 이따가",
+        "봐요 / 두 / 내일 / 시에"
+      ]
+    }
+  ],
+  "answers": [
+    "먹고 있어요 — 공부하고 있어요 — 기다리고 있어요 — 보고 있어요 — 일하고 있어요",
+    "여보세요 — 누구세요 — 들어가세요 — 들려요 — 전화할게요",
+    "여보세요, 저 아니예요. — 지금 뭐 하고 있어요? — 도서관에서 공부하고 있어요. — 내일 약속 기억하고 있어요? — 시간 바꿀 수 있어요? — 이따가 다시 전화할게요.",
+    "지금 뭐 하고 있어요? — 도서관에서 공부하고 있어요. — 친구가 기다리고 있어요. — 이따가 다시 전화할게요. — 내일 두 시에 봐요."
+  ]
+}

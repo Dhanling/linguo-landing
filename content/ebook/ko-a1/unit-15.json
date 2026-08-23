@@ -1,0 +1,527 @@
+{
+  "title": "Kalau sedang sakit",
+  "title_target": "어디가 아파요 — Eodiga apayo",
+  "goal": "Menjelaskan keluhan badan di apotek atau klinik, memahami nasihat yang diberikan, dan memakai bentuk larangan -지 마세요 yang sampai sekarang belum muncul.",
+  "bekal": [
+    "menyebut bagian tubuh dan mengatakan bagian mana yang sakit",
+    "menjelaskan gejala umum di apotek",
+    "memahami nasihat berbentuk -(으)세요",
+    "melarang dengan -지 마세요",
+    "menyampaikan simpati dengan ungkapan yang tepat"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Di apotek",
+      "intro": "Ani merasa tidak enak badan sejak kemarin. Perhatikan bahwa nasihat apoteker seluruhnya berbentuk perintah sopan, dan larangannya memakai bentuk yang baru.",
+      "lines": [
+        {
+          "speaker": "약사:",
+          "text": "[어서|Eoseo] [오세요|oseyo]. [어디가|Eodiga] [아프세요|apeuseyo]?",
+          "id": "Selamat datang. Bagian mana yang sakit?",
+          "literal": "cepat — datanglah. mana — yang — sakit (hormat)?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[어제부터|Eojebuteo] [목이|mogi] [아파요|apayo]. [그리고|Geurigo] [열도|yeoldo] [조금|jogeum] [있어요|isseoyo].",
+          "id": "Sejak kemarin tenggorokan saya sakit. Lalu ada demam sedikit juga.",
+          "literal": "kemarin-dari — tenggorokan — yang — sakit. lalu — demam — juga — sedikit — ada."
+        },
+        {
+          "speaker": "약사:",
+          "text": "[기침도|Gichimdo] [해요|haeyo]?",
+          "id": "Batuk juga?",
+          "literal": "batuk — juga — melakukan?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne], [밤에|bame] [기침이|gichimi] [심해요|simhaeyo]. [잠을|Jameul] [못|mot] [잤어요|jasseoyo].",
+          "id": "Ya, malamnya batuknya parah. Saya tidak bisa tidur.",
+          "literal": "ya, malam-pada — batuk — yang — parah. tidur — objek — tidak-bisa — tidur-sudah."
+        },
+        {
+          "speaker": "약사:",
+          "text": "[감기인|Gamgiin] [것|geot] [같아요|gatayo]. [이|I] [약을|yageul] [하루에|harue] [세|se] [번|beon] [드세요|deuseyo].",
+          "id": "Sepertinya masuk angin. Minum obat ini tiga kali sehari.",
+          "literal": "flu-yang — hal — seperti. ini — obat — objek — sehari-pada — tiga — kali — minumlah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[식사|Siksa] [전에|jeone] [먹어요|meogeoyo], [후에|hue] [먹어요|meogeoyo]?",
+          "id": "Diminum sebelum makan atau sesudah makan?",
+          "literal": "makan — sebelum-pada — makan, sesudah-pada — makan?"
+        },
+        {
+          "speaker": "약사:",
+          "text": "[식사|Siksa] [후에|hue] [드세요|deuseyo]. [빈|Bin] [속에|soge] [먹지|meokji] [마세요|maseyo].",
+          "id": "Diminum sesudah makan. Jangan diminum saat perut kosong.",
+          "literal": "makan — sesudah-pada — minumlah. kosong-yang — perut-pada — makan — janganlah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[알겠습니다|Algetseumnida]. [내일|Naeil] [일해도|ilhaedo] [돼요|dwaeyo]?",
+          "id": "Baik. Besok boleh kerja?",
+          "literal": "mengerti. besok — bekerja-juga — boleh?"
+        },
+        {
+          "speaker": "약사:",
+          "text": "[오늘은|Oneureun] [푹|puk] [쉬세요|swiseyo]. [찬|Chan] [물|mul] [마시지|masiji] [마세요|maseyo].",
+          "id": "Hari ini istirahatlah yang cukup. Jangan minum air dingin.",
+          "literal": "hari-ini — mengenai — nyenyak — istirahatlah. dingin-yang — air — minum — janganlah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne]. [얼마예요|Eolmayeyo]?",
+          "id": "Baik. Berapa?",
+          "literal": "ya. berapa — adalah?"
+        },
+        {
+          "speaker": "약사:",
+          "text": "[사천|Sacheon] [원이에요|wonieyo]. [빨리|Ppalli] [나으세요|naeuseyo].",
+          "id": "Empat ribu won. Semoga cepat sembuh.",
+          "literal": "empat-ribu — won — adalah. cepat — sembuhlah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[감사합니다|Gamsahamnida]!",
+          "id": "Terima kasih!",
+          "literal": "terima-kasih!"
+        }
+      ],
+      "notes": [
+        "**아프다 dipakai untuk bagian tubuh yang sakit, bukan untuk orangnya.** Yang benar 목**이** 아파요 (\"tenggorokannya sakit\"), bukan 저는 목을 아파요. Bagian tubuhnya menjadi subjek kalimat, memakai 이/가. Ini pola yang sama dengan 배가 고파요 (\"perutnya lapar\" = saya lapar).",
+        "**어디가 아파요? bukan 어디 아파요?** Partikel 가 di sini wajib karena bagian tubuhnya adalah subjek. Bandingkan dengan unit 3: 어디에 있어요? memakai 에 karena menanyakan letak. Dua pertanyaan yang mirip bunyinya, dua partikel yang berbeda.",
+        "**감기 dipakai jauh lebih luas daripada \"flu\" dalam bahasa Indonesia.** Ia menutup pilek, batuk, radang tenggorokan, dan demam ringan — semua yang oleh orang Indonesia biasa disebut \"masuk angin\". 감기에 걸렸어요 = \"kena flu\", memakai 걸리다 yang di unit 13 berarti \"memakan waktu\". Kata yang sama, pekerjaan yang berbeda.",
+        "**약을 먹다, bukan 약을 마시다.** Obat di Korea \"dimakan\", bahkan yang berbentuk cair. Bentuk hormatnya 약을 드세요, dan itulah yang akan kamu dengar dari apoteker.",
+        "**하루에 세 번 = tiga kali sehari.** Perhatikan susunannya: satuan waktunya lebih dulu dengan 에, baru jumlahnya. 일주일에 두 번 (dua kali seminggu), 한 달에 한 번 (sekali sebulan). Kebalikan dari urutan Indonesia.",
+        "**전에 dan 후에 diletakkan sesudah kata bendanya.** 식사 **전에** (sebelum makan), 식사 **후에** (sesudah makan). Sama seperti kata tempat di unit 3, kata waktu Korea juga datang di belakang acuannya.",
+        "**푹 쉬세요 adalah ucapan simpati baku.** 푹 berarti \"dengan nyenyak, sepenuhnya\", dan ia hampir selalu berpasangan dengan 쉬다 dan 자다. Bersama 빨리 나으세요 (\"semoga cepat sembuh\"), keduanya adalah kalimat yang wajib kamu punya.",
+        "**나으세요 datang dari 낫다 (sembuh), kata kerja tak beraturan jenis ㅅ.** ㅅ luruh di depan vokal: 낫다 → 나아요 → 나으세요. Kelompok ini kecil tapi berisi kata yang sering: 짓다 (membangun) → 지어요, 붓다 (bengkak) → 부어요."
+      ],
+      "grammars": [
+        {
+          "title": "-지 마세요 — jangan",
+          "body": [
+            "Bentuk larangan sopan. Tempelkan **-지 마세요** langsung ke akar kata kerjanya, tanpa memandang vokal atau konsonan."
+          ],
+          "table": {
+            "head": [
+              "Kamus",
+              "Perintah",
+              "Larangan",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "가다",
+                "가세요",
+                "가**지 마세요**",
+                "jangan pergi"
+              ],
+              [
+                "먹다",
+                "드세요",
+                "먹**지 마세요**",
+                "jangan makan"
+              ],
+              [
+                "마시다",
+                "드세요",
+                "마시**지 마세요**",
+                "jangan minum"
+              ],
+              [
+                "하다",
+                "하세요",
+                "하**지 마세요**",
+                "jangan lakukan"
+              ],
+              [
+                "걱정하다",
+                "—",
+                "걱정하**지 마세요**",
+                "jangan khawatir"
+              ],
+              [
+                "Bentuk akrab",
+                "—",
+                "가**지 마**",
+                "jangan pergi (kepada teman dekat)"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Jangan memakai 안 untuk melarang.** 안 가세요 bukan \"jangan pergi\" melainkan \"Anda tidak pergi\" — sebuah pernyataan, bukan larangan. Untuk melarang, satu-satunya bentuk yang benar adalah -지 마세요.",
+            "**Untuk melarang diri sendiri dan orang lain sekaligus** (\"jangan kita…\") dipakai -지 맙시다, tapi bentuk itu jarang di percakapan. Lebih sering orang berkata 하지 말까요? (\"jangan saja ya?\").",
+            "**걱정하지 마세요** (\"jangan khawatir\") layak dihafal utuh — ia salah satu kalimat penghibur yang paling sering dipakai."
+          ]
+        },
+        {
+          "title": "Bagian tubuh dan gejala",
+          "body": [
+            "Susunannya selalu **bagian tubuh + 이/가 + 아파요**."
+          ],
+          "table": {
+            "head": [
+              "Bagian",
+              "Baca",
+              "Arti",
+              "Bagian",
+              "Baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "머리",
+                "meori",
+                "kepala",
+                "배",
+                "bae",
+                "perut"
+              ],
+              [
+                "눈",
+                "nun",
+                "mata",
+                "등",
+                "deung",
+                "punggung"
+              ],
+              [
+                "코",
+                "ko",
+                "hidung",
+                "허리",
+                "heori",
+                "pinggang"
+              ],
+              [
+                "입",
+                "ip",
+                "mulut",
+                "다리",
+                "dari",
+                "kaki"
+              ],
+              [
+                "귀",
+                "gwi",
+                "telinga",
+                "발",
+                "bal",
+                "telapak kaki"
+              ],
+              [
+                "목",
+                "mok",
+                "leher, tenggorokan",
+                "팔",
+                "pal",
+                "lengan"
+              ],
+              [
+                "이",
+                "i",
+                "gigi",
+                "손",
+                "son",
+                "tangan"
+              ],
+              [
+                "어깨",
+                "eokkae",
+                "bahu",
+                "몸",
+                "mom",
+                "badan"
+              ]
+            ]
+          },
+          "after": [
+            "**Gejala umum:** 열이 있어요 (demam), 기침을 해요 (batuk), 콧물이 나요 (ingus keluar), 어지러워요 (pusing), 토할 것 같아요 (mual), 설사를 해요 (diare), 몸살이 났어요 (badan pegal karena kelelahan).",
+            "**몸살 tidak punya padanan dalam bahasa Indonesia.** Ia berarti rasa nyeri seluruh badan akibat kelelahan atau stres, dianggap penyakit tersendiri di Korea, dan sepenuhnya sah sebagai alasan tidak masuk kerja."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Di klinik dan di apotek",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "어디가 아파요?",
+              "Bagian mana yang sakit?"
+            ],
+            [
+              "머리가 아파요.",
+              "Kepala saya sakit."
+            ],
+            [
+              "열이 있어요.",
+              "Saya demam."
+            ],
+            [
+              "감기에 걸렸어요.",
+              "Saya kena flu."
+            ],
+            [
+              "어제부터 아팠어요.",
+              "Sakit sejak kemarin."
+            ],
+            [
+              "약 있어요?",
+              "Ada obatnya?"
+            ],
+            [
+              "하루에 몇 번 먹어요?",
+              "Diminum berapa kali sehari?"
+            ],
+            [
+              "식사 후에 드세요.",
+              "Diminum sesudah makan."
+            ],
+            [
+              "푹 쉬세요.",
+              "Istirahatlah yang cukup."
+            ],
+            [
+              "빨리 나으세요.",
+              "Semoga cepat sembuh."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Menyampaikan simpati"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Korea",
+            "Baca",
+            "Kapan dipakai"
+          ],
+          "rows": [
+            [
+              "괜찮아요?",
+              "gwaenchanayo",
+              "Kamu tidak apa-apa? — pertanyaan pertama"
+            ],
+            [
+              "많이 아파요?",
+              "mani apayo",
+              "Sakitnya parah?"
+            ],
+            [
+              "힘내세요",
+              "himnaeseyo",
+              "Semangat! Untuk orang yang sedang berat"
+            ],
+            [
+              "걱정하지 마세요",
+              "geokjeonghaji maseyo",
+              "Jangan khawatir"
+            ],
+            [
+              "몸조리 잘하세요",
+              "momjori jalhaseyo",
+              "Jaga kesehatan baik-baik"
+            ],
+            [
+              "무리하지 마세요",
+              "murihaji maseyo",
+              "Jangan memaksakan diri"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Apotek dan klinik di Korea",
+          "items": [
+            "**약국** (apotek) ditandai papan hijau bertuliskan 약. Untuk keluhan ringan — flu, sakit kepala, luka kecil — apoteker boleh memberi obat tanpa resep, dan itulah jalur tercepat.",
+            "**병원** dipakai untuk klinik maupun rumah sakit; klinik kecil biasanya bernama 의원 atau memakai nama bidangnya: 내과 (penyakit dalam), 이비인후과 (THT), 치과 (gigi), 피부과 (kulit).",
+            "⚠️ Sebagai pelajar atau pekerja asing dengan visa jangka panjang, kamu wajib ikut asuransi kesehatan nasional (**건강보험**) — dan dengan itu biaya berobat menjadi sangat murah. Bawa kartu identitas asingmu (외국인등록증) setiap kali berobat."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "아파요",
+      "baca": "apayo",
+      "id": "sakit"
+    },
+    {
+      "ko": "약",
+      "baca": "yak",
+      "id": "obat"
+    },
+    {
+      "ko": "약국",
+      "baca": "yakguk",
+      "id": "apotek"
+    },
+    {
+      "ko": "병원",
+      "baca": "byeongwon",
+      "id": "rumah sakit, klinik"
+    },
+    {
+      "ko": "감기",
+      "baca": "gamgi",
+      "id": "flu, masuk angin"
+    },
+    {
+      "ko": "열",
+      "baca": "yeol",
+      "id": "demam"
+    },
+    {
+      "ko": "기침",
+      "baca": "gichim",
+      "id": "batuk"
+    },
+    {
+      "ko": "머리",
+      "baca": "meori",
+      "id": "kepala"
+    },
+    {
+      "ko": "목",
+      "baca": "mok",
+      "id": "leher, tenggorokan"
+    },
+    {
+      "ko": "배",
+      "baca": "bae",
+      "id": "perut"
+    },
+    {
+      "ko": "다리",
+      "baca": "dari",
+      "id": "kaki"
+    },
+    {
+      "ko": "몸",
+      "baca": "mom",
+      "id": "badan"
+    },
+    {
+      "ko": "지 마세요",
+      "baca": "ji maseyo",
+      "id": "jangan"
+    },
+    {
+      "ko": "쉬세요",
+      "baca": "swiseyo",
+      "id": "istirahatlah"
+    },
+    {
+      "ko": "푹",
+      "baca": "puk",
+      "id": "dengan nyenyak"
+    },
+    {
+      "ko": "심해요",
+      "baca": "simhaeyo",
+      "id": "parah"
+    },
+    {
+      "ko": "번",
+      "baca": "beon",
+      "id": "kali"
+    },
+    {
+      "ko": "하루",
+      "baca": "haru",
+      "id": "sehari"
+    },
+    {
+      "ko": "식사",
+      "baca": "siksa",
+      "id": "makan, santapan"
+    },
+    {
+      "ko": "전에",
+      "baca": "jeone",
+      "id": "sebelum"
+    },
+    {
+      "ko": "후에",
+      "baca": "hue",
+      "id": "sesudah"
+    },
+    {
+      "ko": "걱정해요",
+      "baca": "geokjeonghaeyo",
+      "id": "khawatir"
+    },
+    {
+      "ko": "힘내세요",
+      "baca": "himnaeseyo",
+      "id": "semangat"
+    },
+    {
+      "ko": "나으세요",
+      "baca": "naeuseyo",
+      "id": "semoga sembuh"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah menjadi bentuk larangan dengan -지 마세요.",
+      "items": [
+        "가다 → ____",
+        "먹다 → ____",
+        "마시다 → ____",
+        "걱정하다 → ____",
+        "무리하다 → ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bagian tubuh yang tepat dalam hangeul.",
+      "items": [
+        "Kepala saya sakit: ____가 아파요.",
+        "Tenggorokan saya sakit: ____이 아파요.",
+        "Perut saya sakit: ____가 아파요.",
+        "Kaki saya sakit: ____가 아파요.",
+        "Gigi saya sakit: ____가 아파요."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Korea.",
+      "items": [
+        "Bagian mana yang sakit?",
+        "Sejak kemarin tenggorokan saya sakit.",
+        "Saya demam sedikit.",
+        "Minum obat ini tiga kali sehari.",
+        "Jangan minum air dingin.",
+        "Semoga cepat sembuh."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "아파요 / 목이 / 어제부터",
+        "있어요 / 열도 / 조금",
+        "드세요 / 세 / 하루에 / 번",
+        "마세요 / 마시지 / 찬 / 물",
+        "쉬세요 / 푹 / 오늘은"
+      ]
+    }
+  ],
+  "answers": [
+    "가지 마세요 — 먹지 마세요 — 마시지 마세요 — 걱정하지 마세요 — 무리하지 마세요",
+    "머리 — 목 — 배 — 다리 — 이",
+    "어디가 아파요? — 어제부터 목이 아파요. — 열이 조금 있어요. — 이 약을 하루에 세 번 드세요. — 찬 물 마시지 마세요. — 빨리 나으세요.",
+    "어제부터 목이 아파요. — 열도 조금 있어요. — 하루에 세 번 드세요. — 찬 물 마시지 마세요. — 오늘은 푹 쉬세요."
+  ]
+}

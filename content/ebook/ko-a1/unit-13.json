@@ -1,0 +1,550 @@
+{
+  "title": "Menanyakan jalan",
+  "title_target": "어떻게 가요 — Eotteoke gayo",
+  "goal": "Menemukan jalan di kota Korea: menanyakan arah, memahami jawabannya, naik kendaraan yang benar, dan menanyakan berapa lama perjalanannya.",
+  "bekal": [
+    "menanyakan arah dengan 어떻게 가요",
+    "memakai partikel (으)로 untuk alat dan arah",
+    "memakai 에서 … 까지 untuk jarak antar tempat",
+    "memahami petunjuk arah: lurus, kiri, kanan, menyeberang",
+    "menanyakan lama perjalanan dengan 얼마나 걸려요"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Tersesat di dekat stasiun",
+      "intro": "Ani mencari Istana Gyeongbokgung. Perhatikan bahwa jawaban orang Korea untuk pertanyaan arah hampir selalu berbentuk rangkaian perintah sopan berakhiran -(으)세요.",
+      "lines": [
+        {
+          "speaker": "아니:",
+          "text": "[실례합니다|Sillyehamnida]. [경복궁에|Gyeongbokgunge] [어떻게|eotteoke] [가요|gayo]?",
+          "id": "Permisi. Bagaimana caranya ke Gyeongbokgung?",
+          "literal": "permisi. Gyeongbokgung-ke — bagaimana — pergi?"
+        },
+        {
+          "speaker": "행인:",
+          "text": "[지하철로|Jihacheollo] [가세요|gaseyo]. [삼호선을|Samhoseoneul] [타세요|taseyo].",
+          "id": "Naik kereta bawah tanah. Naik jalur tiga.",
+          "literal": "kereta-bawah-tanah-dengan — pergilah. tiga-jalur — objek — naiklah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[지하철역이|Jihacheollyeogi] [어디에|eodie] [있어요|isseoyo]?",
+          "id": "Stasiunnya di mana?",
+          "literal": "kereta-stasiun — yang — mana-di — ada?"
+        },
+        {
+          "speaker": "행인:",
+          "text": "[여기에서|Yeogieseo] [쭉|jjuk] [가세요|gaseyo]. [그리고|Geurigo] [사거리에서|sageorieseo] [왼쪽으로|oenjjogeuro] [가세요|gaseyo].",
+          "id": "Dari sini jalan lurus. Lalu di perempatan belok kiri.",
+          "literal": "sini-dari — lurus — pergilah. lalu — perempatan-di — kiri-ke — pergilah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[여기에서|Yeogieseo] [멀어요|meoreoyo]?",
+          "id": "Jauh dari sini?",
+          "literal": "sini-dari — jauh?"
+        },
+        {
+          "speaker": "행인:",
+          "text": "[아니요|Aniyo], [가까워요|gakkawoyo]. [걸어서|Georeoseo] [오|o] [분쯤|bunjjeum] [걸려요|geollyeoyo].",
+          "id": "Tidak, dekat. Jalan kaki sekitar lima menit.",
+          "literal": "tidak, dekat. berjalan-dengan — lima — menit-kira-kira — makan-waktu."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[경복궁까지|Gyeongbokgungkkaji] [얼마나|eolmana] [걸려요|geollyeoyo]?",
+          "id": "Sampai Gyeongbokgung berapa lama?",
+          "literal": "Gyeongbokgung-sampai — seberapa — makan-waktu?"
+        },
+        {
+          "speaker": "행인:",
+          "text": "[지하철로|Jihacheollo] [이십|isip] [분쯤|bunjjeum] [걸려요|geollyeoyo]. [세|Se] [정거장이에요|jeonggeojangieyo].",
+          "id": "Naik kereta sekitar dua puluh menit. Tiga stasiun.",
+          "literal": "kereta-dengan — dua-puluh — menit-kira-kira — makan-waktu. tiga — pemberhentian — adalah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[어느|Eoneu] [출구로|chulguro] [나가야|nagaya] [돼요|dwaeyo]?",
+          "id": "Harus keluar lewat pintu keluar yang mana?",
+          "literal": "yang-mana — pintu-keluar-dengan — keluar-harus — jadi?"
+        },
+        {
+          "speaker": "행인:",
+          "text": "[오번|Obeon] [출구로|chulguro] [나가세요|nagaseyo]. [바로|Baro] [앞이에요|apieyo].",
+          "id": "Keluar lewat pintu nomor lima. Persis di depannya.",
+          "literal": "lima-nomor — pintu-keluar-dengan — keluarlah. persis — depan — adalah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[정말|Jeongmal] [감사합니다|gamsahamnida]!",
+          "id": "Terima kasih banyak!",
+          "literal": "sungguh — terima-kasih!"
+        },
+        {
+          "speaker": "행인:",
+          "text": "[아니에요|Anieyo]. [조심해서|Josimhaeseo] [가세요|gaseyo].",
+          "id": "Tidak apa-apa. Hati-hati di jalan.",
+          "literal": "bukan. hati-hati-dengan — pergilah."
+        }
+      ],
+      "notes": [
+        "**Partikel (으)로 menutup tiga pekerjaan sekaligus: alat, arah, dan hasil.** 지하철**로** 가요 (pergi dengan kereta — alat), 왼쪽**으로** 가세요 (pergi ke arah kiri — arah), 한국어**로** 말하세요 (berbicara dalam bahasa Korea — cara). Satu partikel, tiga arti yang dibedakan konteks.",
+        "**Bentuknya 로 sesudah vokal dan sesudah ㄹ, 으로 sesudah konsonan lain.** 지하철 berakhir ㄹ, jadi 지하철**로** (bukan 지하철으로). Ini satu-satunya partikel yang memperlakukan ㄹ seperti vokal, dan itu sering membuat pemula ragu.",
+        "**타다 memakai partikel 을/를, bukan 에.** 버스**를** 타요 (naik bus), 지하철**을** 타요. Ini salah satu pasangan kata kerja dan partikel yang wajib dihafal karena tidak bisa ditebak dari bahasa Indonesia. Lawannya 내리다 (turun), yang justru memakai 에서: 여기**에서** 내려요.",
+        "**걸리다 berarti \"memakan waktu\" dan tidak punya padanan satu kata.** 이십 분 걸려요 = memakan waktu dua puluh menit. Ia selalu dipakai dengan lama waktu, tidak pernah dengan jam tertentu.",
+        "**얼마나 berarti \"seberapa\" dan berbeda dari 얼마 (\"berapa harganya\").** 얼마예요? = berapa harganya? 얼마나 걸려요? = berapa lama? 얼마나 멀어요? = seberapa jauh? Satu suku kata bedanya.",
+        "**쯤 berarti \"kira-kira\" dan menempel di belakang angkanya.** 오 분**쯤**, 삼십 분**쯤**, 세 시**쯤**. Orang Korea hampir selalu menambahkannya ketika menyebut perkiraan — menyebut waktu tanpa 쯤 terdengar seperti janji yang mengikat.",
+        "**걸어서 berarti \"dengan berjalan kaki\".** Ini bentuk -아서/어서 yang berarti \"dengan cara\", sama seperti 조심해서 di unit sebelumnya. Alternatifnya 도보로, yang lebih tulis dan lebih sering muncul di papan petunjuk.",
+        "**아니에요 sebagai jawaban atas terima kasih berarti \"tidak apa-apa\".** Ia bukan penyangkalan, melainkan bentuk merendah — semacam \"ah, bukan apa-apa\". Padanan lainnya 별말씀을요 (lebih sopan) dan 괜찮아요."
+      ],
+      "grammars": [
+        {
+          "title": "Partikel (으)로",
+          "body": [
+            "Satu partikel yang menutup alat, arah, cara, dan bahan."
+          ],
+          "table": {
+            "head": [
+              "Peran",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "Alat, kendaraan",
+                "버스**로** 가요",
+                "pergi naik bus"
+              ],
+              [
+                "Arah",
+                "오른쪽**으로** 가세요",
+                "belok kanan"
+              ],
+              [
+                "Bahasa, cara",
+                "한국어**로** 말해요",
+                "bicara dalam bahasa Korea"
+              ],
+              [
+                "Alat tulis",
+                "볼펜**으로** 쓰세요",
+                "tulis dengan bolpoin"
+              ],
+              [
+                "Pilihan",
+                "이걸**로** 할게요",
+                "saya ambil yang ini"
+              ],
+              [
+                "Bahan",
+                "쌀**로** 만들어요",
+                "dibuat dari beras"
+              ]
+            ]
+          },
+          "after": [
+            "**Sesudah ㄹ, bentuknya tetap 로.** 지하철로, 이걸로, 서울로. Kalau kamu menulis 지하철으로, ia langsung terdengar seperti kesalahan orang asing.",
+            "⚠️ **Jangan tertukar dengan 에.** 학교**에** 가요 = pergi ke sekolah (tujuan akhir). 학교 쪽**으로** 가요 = pergi ke arah sekolah (arah, belum tentu sampai). 에 menunjuk tujuan, 로 menunjuk arah."
+          ]
+        },
+        {
+          "title": "Kata petunjuk arah",
+          "body": [
+            "Jawaban orang Korea atas pertanyaan arah hampir selalu berupa rangkaian perintah sopan -(으)세요. Kenali kata kuncinya dan kamu sudah bisa mengikuti."
+          ],
+          "table": {
+            "head": [
+              "Korea",
+              "Baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "쭉 가세요",
+                "jjuk gaseyo",
+                "jalan lurus terus"
+              ],
+              [
+                "직진하세요",
+                "jikjinhaseyo",
+                "jalan lurus (lebih resmi)"
+              ],
+              [
+                "왼쪽으로 가세요",
+                "oenjjogeuro gaseyo",
+                "belok kiri"
+              ],
+              [
+                "오른쪽으로 가세요",
+                "oreunjjogeuro gaseyo",
+                "belok kanan"
+              ],
+              [
+                "건너세요",
+                "geonneoseyo",
+                "menyeberang"
+              ],
+              [
+                "돌아가세요",
+                "doragaseyo",
+                "berbelok, memutar"
+              ],
+              [
+                "사거리에서",
+                "sageorieseo",
+                "di perempatan"
+              ],
+              [
+                "신호등에서",
+                "sinhodeungeseo",
+                "di lampu lalu lintas"
+              ],
+              [
+                "횡단보도",
+                "hoengdanbodo",
+                "penyeberangan"
+              ],
+              [
+                "출구",
+                "chulgu",
+                "pintu keluar"
+              ],
+              [
+                "입구",
+                "ipgu",
+                "pintu masuk"
+              ],
+              [
+                "정거장",
+                "jeonggeojang",
+                "halte, pemberhentian"
+              ]
+            ]
+          },
+          "after": [
+            "**Pintu keluar stasiun bernomor, dan nomornya penting.** Stasiun bawah tanah Seoul bisa punya lebih dari sepuluh pintu keluar yang berjauhan ratusan meter. 몇 번 출구예요? (\"pintu keluar nomor berapa?\") adalah pertanyaan yang akan sering kamu ajukan dan sering ditanyakan kepadamu.",
+            "**Alamat Korea memakai patokan, bukan nomor.** Orang Korea menjelaskan letak dengan menyebut bangunan terkenal di dekatnya: 스타벅스 옆에 있어요. Jangan berharap petunjuk berbentuk nama jalan dan nomor rumah."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kendaraan dan perjalanan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "한국어",
+            "Baca",
+            "Indonesia",
+            "한국어",
+            "Baca",
+            "Indonesia"
+          ],
+          "rows": [
+            [
+              "지하철",
+              "jihacheol",
+              "kereta bawah tanah",
+              "택시",
+              "taeksi",
+              "taksi"
+            ],
+            [
+              "버스",
+              "beoseu",
+              "bus",
+              "자전거",
+              "jajeongeo",
+              "sepeda"
+            ],
+            [
+              "기차",
+              "gicha",
+              "kereta api",
+              "오토바이",
+              "otobai",
+              "sepeda motor"
+            ],
+            [
+              "비행기",
+              "bihaenggi",
+              "pesawat",
+              "차",
+              "cha",
+              "mobil"
+            ],
+            [
+              "역",
+              "yeok",
+              "stasiun",
+              "공항",
+              "gonghang",
+              "bandara"
+            ],
+            [
+              "정류장",
+              "jeongnyujang",
+              "halte bus",
+              "표",
+              "pyo",
+              "tiket"
+            ],
+            [
+              "갈아타요",
+              "garatayo",
+              "berganti kendaraan",
+              "내려요",
+              "naeryeoyo",
+              "turun"
+            ],
+            [
+              "멀어요",
+              "meoreoyo",
+              "jauh",
+              "가까워요",
+              "gakkawoyo",
+              "dekat"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Kalimat perjalanan yang layak dihafal utuh"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "여기가 어디예요?",
+              "Ini di mana?"
+            ],
+            [
+              "경복궁에 어떻게 가요?",
+              "Bagaimana caranya ke Gyeongbokgung?"
+            ],
+            [
+              "얼마나 걸려요?",
+              "Berapa lama?"
+            ],
+            [
+              "여기에서 멀어요?",
+              "Jauh dari sini?"
+            ],
+            [
+              "어디에서 갈아타요?",
+              "Ganti kereta di mana?"
+            ],
+            [
+              "몇 번 출구예요?",
+              "Pintu keluar nomor berapa?"
+            ],
+            [
+              "여기에서 세워 주세요.",
+              "Tolong berhenti di sini."
+            ],
+            [
+              "이 버스가 시청에 가요?",
+              "Bus ini ke Balai Kota?"
+            ],
+            [
+              "길을 잃어버렸어요.",
+              "Saya tersesat."
+            ],
+            [
+              "여기로 가 주세요.",
+              "Tolong ke sini. Sambil menunjukkan alamatnya."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "여기로 가 주세요 dan layar ponselmu",
+          "items": [
+            "Cara paling aman naik taksi di Korea sebagai orang asing adalah menunjukkan alamat di layar ponsel sambil mengucapkan 여기로 가 주세요.",
+            "Nama tempat yang diucapkan dengan lafal yang belum pas sering tidak tertangkap, dan itu bukan salahmu — nama tempat Korea rapat bunyinya. Layar menyelesaikan masalah yang lafal belum bisa selesaikan.",
+            "⚠️ Peta Google hampir tidak berguna untuk petunjuk jalan di Korea karena pembatasan data pemetaan. Yang dipakai penduduk setempat adalah 네이버 지도 dan 카카오맵."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "어떻게",
+      "baca": "eotteoke",
+      "id": "bagaimana"
+    },
+    {
+      "ko": "얼마나",
+      "baca": "eolmana",
+      "id": "seberapa, berapa lama"
+    },
+    {
+      "ko": "걸려요",
+      "baca": "geollyeoyo",
+      "id": "memakan waktu"
+    },
+    {
+      "ko": "타요",
+      "baca": "tayo",
+      "id": "naik (kendaraan)"
+    },
+    {
+      "ko": "내려요",
+      "baca": "naeryeoyo",
+      "id": "turun"
+    },
+    {
+      "ko": "갈아타요",
+      "baca": "garatayo",
+      "id": "berganti kendaraan"
+    },
+    {
+      "ko": "지하철",
+      "baca": "jihacheol",
+      "id": "kereta bawah tanah"
+    },
+    {
+      "ko": "버스",
+      "baca": "beoseu",
+      "id": "bus"
+    },
+    {
+      "ko": "택시",
+      "baca": "taeksi",
+      "id": "taksi"
+    },
+    {
+      "ko": "역",
+      "baca": "yeok",
+      "id": "stasiun"
+    },
+    {
+      "ko": "출구",
+      "baca": "chulgu",
+      "id": "pintu keluar"
+    },
+    {
+      "ko": "쭉",
+      "baca": "jjuk",
+      "id": "lurus terus"
+    },
+    {
+      "ko": "왼쪽",
+      "baca": "oenjjok",
+      "id": "kiri"
+    },
+    {
+      "ko": "오른쪽",
+      "baca": "oreunjjok",
+      "id": "kanan"
+    },
+    {
+      "ko": "사거리",
+      "baca": "sageori",
+      "id": "perempatan"
+    },
+    {
+      "ko": "건너요",
+      "baca": "geonneoyo",
+      "id": "menyeberang"
+    },
+    {
+      "ko": "멀어요",
+      "baca": "meoreoyo",
+      "id": "jauh"
+    },
+    {
+      "ko": "가까워요",
+      "baca": "gakkawoyo",
+      "id": "dekat"
+    },
+    {
+      "ko": "쯤",
+      "baca": "jjeum",
+      "id": "kira-kira"
+    },
+    {
+      "ko": "바로",
+      "baca": "baro",
+      "id": "persis, langsung"
+    },
+    {
+      "ko": "어느",
+      "baca": "eoneu",
+      "id": "yang mana"
+    },
+    {
+      "ko": "정거장",
+      "baca": "jeonggeojang",
+      "id": "pemberhentian"
+    },
+    {
+      "ko": "실례합니다",
+      "baca": "sillyehamnida",
+      "id": "permisi"
+    },
+    {
+      "ko": "길",
+      "baca": "gil",
+      "id": "jalan"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Korea.",
+      "items": [
+        "Bagaimana caranya ke Gyeongbokgung?",
+        "Naik kereta bawah tanah.",
+        "Jalan lurus dari sini.",
+        "Di perempatan belok kiri.",
+        "Berapa lama?",
+        "Jauh dari sini?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan 로 atau 으로.",
+      "items": [
+        "버스____ 가요.",
+        "지하철____ 가요.",
+        "왼쪽____ 가세요.",
+        "한국어____ 말해요.",
+        "오른쪽____ 가세요.",
+        "이걸____ 할게요."
+      ]
+    },
+    {
+      "prompt": "Isi dengan partikel yang tepat.",
+      "items": [
+        "버스____ 타요.",
+        "여기____ 내려요.",
+        "집____ 학교____ 삼십 분 걸려요.",
+        "경복궁____ 어떻게 가요?",
+        "오번 출구____ 나가세요."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "가요 / 어떻게 / 경복궁에 / ?",
+        "타세요 / 삼호선을",
+        "가세요 / 왼쪽으로 / 사거리에서",
+        "걸려요 / 얼마나 / ?",
+        "나가세요 / 출구로 / 오번"
+      ]
+    }
+  ],
+  "answers": [
+    "경복궁에 어떻게 가요? — 지하철로 가세요. — 여기에서 쭉 가세요. — 사거리에서 왼쪽으로 가세요. — 얼마나 걸려요? — 여기에서 멀어요?",
+    "로 — 로 — 으로 — 로 — 으로 — 로",
+    "를 — 에서 — 에서 까지 — 에 — 로",
+    "경복궁에 어떻게 가요? — 삼호선을 타세요. — 사거리에서 왼쪽으로 가세요. — 얼마나 걸려요? — 오번 출구로 나가세요."
+  ]
+}

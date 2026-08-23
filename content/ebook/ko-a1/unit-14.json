@@ -1,0 +1,561 @@
+{
+  "title": "Cuaca dan musim",
+  "title_target": "날씨가 어때요 — Nalssiga eottaeyo",
+  "goal": "Membicarakan cuaca — bahan basa-basi nomor satu di Korea — sekaligus memasang dua alat baru: kalimat bersyarat -(으)면 dan dugaan -(으)ㄹ 것 같아요.",
+  "bekal": [
+    "menanyakan dan menyebut keadaan cuaca",
+    "menyebut empat musim dan apa yang terjadi di masing-masing",
+    "memakai -(으)면 untuk kalimat bersyarat",
+    "menyatakan dugaan dengan -(으)ㄹ 것 같아요",
+    "membicarakan cuaca sebagai basa-basi pembuka"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Pagi yang mendung",
+      "intro": "Ani dan Minjun bertemu di halte. Perhatikan bahwa hampir seluruh percakapan ini adalah basa-basi cuaca — dan bahwa itu sepenuhnya normal di Korea.",
+      "lines": [
+        {
+          "speaker": "민준:",
+          "text": "[오늘|Oneul] [날씨가|nalssiga] [좀|jom] [흐리네요|heurineyo].",
+          "id": "Hari ini cuacanya agak mendung ya.",
+          "literal": "hari-ini — cuaca — yang — sedikit — mendung — ya."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne], [비가|biga] [올|ol] [것|geot] [같아요|gatayo]. [우산|Usan] [가져왔어요|gajyeowasseoyo]?",
+          "id": "Iya, sepertinya akan hujan. Bawa payung?",
+          "literal": "ya, hujan — yang — datang-akan — hal — seperti. payung — membawa-datang-sudah?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[아니요|Aniyo], [안|an] [가져왔어요|gajyeowasseoyo]. [비가|Biga] [오면|omyeon] [편의점에서|pyeonuijeomeseo] [살|sal] [거예요|geoyeyo].",
+          "id": "Tidak, tidak bawa. Kalau hujan, nanti beli di minimarket.",
+          "literal": "tidak, tidak — membawa-datang-sudah. hujan — yang — datang-kalau — minimarket-di — beli-akan — hal — adalah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[요즘|Yojeum] [한국|Hanguk] [날씨가|nalssiga] [진짜|jinjja] [이상해요|isanghaeyo].",
+          "id": "Belakangan ini cuaca Korea benar-benar aneh.",
+          "literal": "akhir-akhir-ini — Korea — cuaca — yang — sungguh — aneh."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[맞아요|Majayo]. [어제는|Eojeneun] [더웠는데|deowonneunde] [오늘은|oneureun] [추워요|chuwoyo].",
+          "id": "Betul. Kemarin panas, tapi hari ini dingin.",
+          "literal": "benar. kemarin — mengenai — panas-sudah-tapi — hari-ini — mengenai — dingin."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[인도네시아는|Indonesianeun] [일년|illyeon] [내내|naenae] [더워요|deowoyo]. [사계절이|Sagyejeori] [없어요|eopseoyo].",
+          "id": "Indonesia panas sepanjang tahun. Tidak ada empat musim.",
+          "literal": "Indonesia — mengenai — satu-tahun — sepanjang — panas. empat-musim — yang — tidak-ada."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[그럼|Geureom] [겨울이|gyeouri] [처음이에요|cheoeumieyo]? [한국|Hanguk] [겨울은|gyeoureun] [정말|jeongmal] [추워요|chuwoyo].",
+          "id": "Berarti musim dingin pertama kali? Musim dingin Korea benar-benar dingin.",
+          "literal": "kalau-begitu, musim-dingin — yang — pertama — adalah? Korea — musim-dingin — mengenai — sungguh — dingin."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[눈을|Nuneul] [보고|bogo] [싶어요|sipeoyo]. [눈이|Nuni] [오면|omyeon] [사진을|sajineul] [찍을|jjigeul] [거예요|geoyeyo].",
+          "id": "Saya ingin melihat salju. Kalau turun salju, saya akan memotret.",
+          "literal": "salju — objek — melihat — ingin. salju — yang — datang-kalau — foto — objek — memotret-akan — hal — adalah."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[십이월에|Sibiwore] [올|ol] [것|geot] [같아요|gatayo]. [그런데|Geureonde] [옷을|oseul] [따뜻하게|ttatteutage] [입어야|ibeoya] [돼요|dwaeyo].",
+          "id": "Sepertinya turun bulan Desember. Tapi harus pakai baju yang hangat.",
+          "literal": "Desember-pada — datang-akan — hal — seperti. omong-omong, baju — objek — hangat-dengan — pakai-harus — jadi."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[알겠어요|Algesseoyo]. [가을은|Gaeureun] [어때요|eottaeyo]?",
+          "id": "Baik. Kalau musim gugur bagaimana?",
+          "literal": "mengerti. musim-gugur — mengenai — bagaimana?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[가을이|Gaeuri] [제일|jeil] [좋아요|joayo]. [안|An] [덥고|deopgo] [안|an] [추워요|chuwoyo].",
+          "id": "Musim gugur paling enak. Tidak panas dan tidak dingin.",
+          "literal": "musim-gugur — yang — paling — baik. tidak — panas-dan — tidak — dingin."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[빨리|Ppalli] [가을이|gaeuri] [왔으면|wasseumyeon] [좋겠어요|jokesseoyo].",
+          "id": "Semoga musim gugur cepat datang.",
+          "literal": "cepat — musim-gugur — yang — datang-kalau — baik-akan."
+        }
+      ],
+      "notes": [
+        "**Cuaca adalah pembuka percakapan nomor satu di Korea**, sama seperti \"sudah makan?\" — bukan basa-basi kosong, melainkan cara membuka pembicaraan tanpa memaksa. Kalau kamu tidak tahu harus bilang apa kepada tetangga di lift, 날씨가 좋네요 selalu benar.",
+        "**비가 와요 memakai 오다 (datang), bukan 내리다 atau 있다.** Hujan dan salju di bahasa Korea \"datang\": 비가 와요, 눈이 와요. Bentuk 비가 내려요 juga benar tapi terdengar lebih puitis dan lebih tulis. ⚠️ 비가 있어요 sama sekali bukan kalimat.",
+        "**-네요 menyatakan sesuatu yang baru kamu sadari.** 흐리네요 = \"eh, mendung ya\" — berbeda dari 흐려요 yang sekadar melaporkan. Akhiran ini membuat kalimatmu terdengar hidup dan mengundang tanggapan, dan orang Korea memakainya terus-menerus.",
+        "**맞아요 berarti \"betul\" sebagai persetujuan.** Ia lebih hangat daripada 네 dan jauh lebih sering dipakai untuk menyetujui pendapat orang. Lawannya 아니에요 atau 글쎄요 (\"entahlah\") kalau kamu ragu tapi tidak mau membantah.",
+        "**-는데 di 더웠는데 berarti \"padahal\" atau \"tapi\" dengan latar.** Ia salah satu penghubung paling sering dipakai orang Korea dan sekaligus paling sulit dijelaskan — bentuk lengkapnya menunggu di tingkat B1. Untuk sekarang cukup kenali bahwa ia menyiapkan pertentangan yang lembut.",
+        "**따뜻하게 berarti \"dengan hangat\".** Akhiran **-게** mengubah kata sifat menjadi kata keterangan: 따뜻하다 (hangat) → 따뜻하게 (dengan hangat), 맵다 (pedas) → 맵게 (secara pedas), 크다 (besar) → 크게 (dengan besar). Sangat produktif dan mudah: 안 맵게 해 주세요 (\"tolong jangan pedas\") memakainya.",
+        "**-았으면 좋겠어요 berarti \"semoga\" atau \"andai saja\".** Harfiahnya \"kalau sudah terjadi, akan bagus\". Ini bentuk baku untuk menyatakan harapan dalam bahasa Korea, dan bentuknya tidak masuk akal kalau diterjemahkan kata per kata. Hafalkan utuh: 빨리 왔으면 좋겠어요, 비가 안 왔으면 좋겠어요.",
+        "**일년 내내 berarti \"sepanjang tahun\".** 내내 berarti \"terus-menerus selama\", dan ia menempel pada rentang waktu: 하루 종일 (sepanjang hari), 일주일 내내 (sepanjang minggu)."
+      ],
+      "grammars": [
+        {
+          "title": "-(으)면 — kalau",
+          "body": [
+            "Tempelkan **-면** ke akar bervokal, **-으면** ke akar berkonsonan. Sama seperti pola -(으)ㄹ yang sudah kamu kuasai."
+          ],
+          "table": {
+            "head": [
+              "Akar berakhir",
+              "Bentuk",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "Vokal",
+                "**-면**",
+                "오다 → 오**면**",
+                "kalau datang"
+              ],
+              [
+                "Vokal",
+                "**-면**",
+                "가다 → 가**면**",
+                "kalau pergi"
+              ],
+              [
+                "Konsonan",
+                "**-으면**",
+                "먹다 → 먹**으면**",
+                "kalau makan"
+              ],
+              [
+                "Konsonan",
+                "**-으면**",
+                "있다 → 있**으면**",
+                "kalau ada"
+              ],
+              [
+                "하다",
+                "**-하면**",
+                "공부하다 → 공부**하면**",
+                "kalau belajar"
+              ],
+              [
+                "Bentuk lampau",
+                "**-았/었으면**",
+                "오다 → **왔으면**",
+                "kalau sudah datang"
+              ]
+            ]
+          },
+          "after": [
+            "**Syaratnya selalu di depan, akibatnya di belakang** — sama seperti bahasa Indonesia. 비가 오면 택시를 탈 거예요 = kalau hujan, saya akan naik taksi.",
+            "**Berbeda dengan -아서/어서, -(으)면 boleh diikuti perintah dan ajakan:** 시간이 있으면 오세요 (kalau ada waktu, datanglah). Inilah salah satu alasan ia begitu berguna untuk permintaan halus.",
+            "**-(으)면 juga dipakai untuk kebiasaan:** 주말이 되면 늦게 일어나요 (kalau akhir pekan, saya bangun siang). Di sini ia lebih dekat ke \"setiap kali\" daripada ke \"kalau\"."
+          ]
+        },
+        {
+          "title": "-(으)ㄹ 것 같아요 — sepertinya",
+          "body": [
+            "Menyatakan dugaan yang tidak pasti. Bentuknya memakai pola -(으)ㄹ yang sama, ditambah 것 같아요 (\"tampaknya begitu\")."
+          ],
+          "table": {
+            "head": [
+              "Maksud",
+              "Pola",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "Dugaan ke depan",
+                "**-(으)ㄹ 것 같아요**",
+                "비가 **올** 것 같아요",
+                "sepertinya akan hujan"
+              ],
+              [
+                "Dugaan sekarang",
+                "**-는 것 같아요**",
+                "비가 **오는** 것 같아요",
+                "sepertinya sedang hujan"
+              ],
+              [
+                "Dugaan kata sifat",
+                "**-(으)ㄴ 것 같아요**",
+                "**좋은** 것 같아요",
+                "sepertinya bagus"
+              ],
+              [
+                "Dugaan lampau",
+                "**-(으)ㄴ 것 같아요**",
+                "비가 **온** 것 같아요",
+                "sepertinya tadi hujan"
+              ],
+              [
+                "Bentuk pendek",
+                "**같아요**",
+                "학생인 것 같아요",
+                "sepertinya pelajar"
+              ]
+            ]
+          },
+          "after": [
+            "**Orang Korea memakai bentuk ini jauh lebih sering daripada yang diduga pelajar asing.** Menyatakan pendapat secara langsung (맛있어요! — enak!) terdengar lebih tegas daripada yang biasa dianggap sopan; menghaluskannya (맛있는 것 같아요 — sepertinya enak) adalah cara baku menyampaikan pendapat tanpa memaksakannya.",
+            "⚠️ Karena itu jangan menerjemahkan 것 같아요 secara harfiah setiap kali. Sering kali ia bukan berarti penuturnya ragu, melainkan sekadar ia sedang bersikap sopan.",
+            "Di tingkat A1 cukup kuasai bentuk pertama, **-(으)ㄹ 것 같아요**. Sisanya cukup dikenali."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Cuaca dan empat musim",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "한국어",
+            "Baca",
+            "Indonesia",
+            "한국어",
+            "Baca",
+            "Indonesia"
+          ],
+          "rows": [
+            [
+              "날씨",
+              "nalssi",
+              "cuaca",
+              "비",
+              "bi",
+              "hujan"
+            ],
+            [
+              "맑아요",
+              "malgayo",
+              "cerah",
+              "눈",
+              "nun",
+              "salju"
+            ],
+            [
+              "흐려요",
+              "heuryeoyo",
+              "mendung",
+              "바람",
+              "baram",
+              "angin"
+            ],
+            [
+              "더워요",
+              "deowoyo",
+              "panas",
+              "구름",
+              "gureum",
+              "awan"
+            ],
+            [
+              "추워요",
+              "chuwoyo",
+              "dingin",
+              "햇빛",
+              "haetbit",
+              "sinar matahari"
+            ],
+            [
+              "따뜻해요",
+              "ttatteutaeyo",
+              "hangat",
+              "천둥",
+              "cheondung",
+              "guruh"
+            ],
+            [
+              "시원해요",
+              "siwonhaeyo",
+              "sejuk",
+              "태풍",
+              "taepung",
+              "topan"
+            ],
+            [
+              "습해요",
+              "seuphaeyo",
+              "lembap",
+              "장마",
+              "jangma",
+              "musim hujan panjang"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Musim",
+            "Korea",
+            "Baca",
+            "Bulan",
+            "Yang khas"
+          ],
+          "rows": [
+            [
+              "Semi",
+              "봄",
+              "bom",
+              "Maret–Mei",
+              "벚꽃 (bunga sakura), 미세먼지 (kabut debu)"
+            ],
+            [
+              "Panas",
+              "여름",
+              "yeoreum",
+              "Juni–Agustus",
+              "장마 (hujan panjang), 태풍, sangat lembap"
+            ],
+            [
+              "Gugur",
+              "가을",
+              "gaeul",
+              "September–November",
+              "단풍 (daun merah), langit paling bersih"
+            ],
+            [
+              "Dingin",
+              "겨울",
+              "gyeoul",
+              "Desember–Februari",
+              "눈, suhu bisa turun sampai −15 °C"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Kalimat cuaca yang layak dihafal"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "오늘 날씨가 어때요?",
+              "Hari ini cuacanya bagaimana?"
+            ],
+            [
+              "날씨가 좋네요.",
+              "Cuacanya bagus ya."
+            ],
+            [
+              "비가 와요.",
+              "Hujan."
+            ],
+            [
+              "비가 올 것 같아요.",
+              "Sepertinya akan hujan."
+            ],
+            [
+              "너무 더워요.",
+              "Panas sekali."
+            ],
+            [
+              "감기 조심하세요.",
+              "Hati-hati masuk angin."
+            ],
+            [
+              "우산 가져가세요.",
+              "Bawa payung ya."
+            ],
+            [
+              "어느 계절을 제일 좋아해요?",
+              "Musim apa yang paling kamu suka?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Musim dingin Korea untuk orang Indonesia",
+          "items": [
+            "Suhu di Seoul pada Januari sering berada di bawah nol sepanjang hari, dan angin membuatnya terasa jauh lebih dingin daripada angkanya. Bagi tubuh yang tumbuh di daerah tropis, ini bukan sekadar tidak nyaman — ia melelahkan.",
+            "Kata yang akan sering kamu dengar: **내복** (pakaian dalam penghangat), **핫팩** (kantong penghangat sekali pakai), dan **패딩** (jaket tebal berisi bulu angsa). Ketiganya dijual di mana-mana dan ketiganya sepadan harganya.",
+            "⚠️ Ruangan di Korea justru sangat hangat karena lantainya dipanaskan (**온돌**). Berpakaian berlapis adalah caranya: tebal di luar, tipis di dalam."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "날씨",
+      "baca": "nalssi",
+      "id": "cuaca"
+    },
+    {
+      "ko": "비",
+      "baca": "bi",
+      "id": "hujan"
+    },
+    {
+      "ko": "눈",
+      "baca": "nun",
+      "id": "salju, mata"
+    },
+    {
+      "ko": "바람",
+      "baca": "baram",
+      "id": "angin"
+    },
+    {
+      "ko": "맑아요",
+      "baca": "malgayo",
+      "id": "cerah"
+    },
+    {
+      "ko": "흐려요",
+      "baca": "heuryeoyo",
+      "id": "mendung"
+    },
+    {
+      "ko": "따뜻해요",
+      "baca": "ttatteutaeyo",
+      "id": "hangat"
+    },
+    {
+      "ko": "시원해요",
+      "baca": "siwonhaeyo",
+      "id": "sejuk"
+    },
+    {
+      "ko": "봄",
+      "baca": "bom",
+      "id": "musim semi"
+    },
+    {
+      "ko": "여름",
+      "baca": "yeoreum",
+      "id": "musim panas"
+    },
+    {
+      "ko": "가을",
+      "baca": "gaeul",
+      "id": "musim gugur"
+    },
+    {
+      "ko": "겨울",
+      "baca": "gyeoul",
+      "id": "musim dingin"
+    },
+    {
+      "ko": "계절",
+      "baca": "gyejeol",
+      "id": "musim"
+    },
+    {
+      "ko": "면 / 으면",
+      "baca": "myeon / eumyeon",
+      "id": "kalau"
+    },
+    {
+      "ko": "것 같아요",
+      "baca": "geot gatayo",
+      "id": "sepertinya"
+    },
+    {
+      "ko": "네요",
+      "baca": "neyo",
+      "id": "ya (baru disadari)"
+    },
+    {
+      "ko": "게",
+      "baca": "ge",
+      "id": "dengan (mengubah sifat jadi keterangan)"
+    },
+    {
+      "ko": "요즘",
+      "baca": "yojeum",
+      "id": "akhir-akhir ini"
+    },
+    {
+      "ko": "맞아요",
+      "baca": "majayo",
+      "id": "betul"
+    },
+    {
+      "ko": "이상해요",
+      "baca": "isanghaeyo",
+      "id": "aneh"
+    },
+    {
+      "ko": "빨리",
+      "baca": "ppalli",
+      "id": "cepat"
+    },
+    {
+      "ko": "감기",
+      "baca": "gamgi",
+      "id": "masuk angin, flu"
+    },
+    {
+      "ko": "처음",
+      "baca": "cheoeum",
+      "id": "pertama kali"
+    },
+    {
+      "ko": "좋겠어요",
+      "baca": "jokesseoyo",
+      "id": "semoga, pasti enak"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah menjadi bentuk bersyarat dengan -(으)면.",
+      "items": [
+        "오다 → ____",
+        "가다 → ____",
+        "먹다 → ____",
+        "있다 → ____",
+        "공부하다 → ____"
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi bentuk dugaan dengan -(으)ㄹ 것 같아요.",
+      "items": [
+        "오다 → ____ 것 같아요",
+        "가다 → ____ 것 같아요",
+        "먹다 → ____ 것 같아요",
+        "좋다 → ____ 것 같아요",
+        "하다 → ____ 것 같아요"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Korea.",
+      "items": [
+        "Hari ini cuacanya bagaimana?",
+        "Sepertinya akan hujan.",
+        "Kalau hujan, saya akan naik taksi.",
+        "Musim dingin Korea benar-benar dingin.",
+        "Saya ingin melihat salju.",
+        "Musim gugur paling enak."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "같아요 / 비가 / 올 / 것",
+        "거예요 / 오면 / 살 / 비가 / 편의점에서",
+        "추워요 / 겨울은 / 정말 / 한국",
+        "싶어요 / 눈을 / 보고",
+        "좋아요 / 가을이 / 제일"
+      ]
+    }
+  ],
+  "answers": [
+    "오면 — 가면 — 먹으면 — 있으면 — 공부하면",
+    "올 — 갈 — 먹을 — 좋을 — 할",
+    "오늘 날씨가 어때요? — 비가 올 것 같아요. — 비가 오면 택시를 탈 거예요. — 한국 겨울은 정말 추워요. — 눈을 보고 싶어요. — 가을이 제일 좋아요.",
+    "비가 올 것 같아요. — 비가 오면 편의점에서 살 거예요. — 한국 겨울은 정말 추워요. — 눈을 보고 싶어요. — 가을이 제일 좋아요."
+  ]
+}

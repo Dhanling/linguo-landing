@@ -1,0 +1,543 @@
+{
+  "title": "Dua sistem angka",
+  "title_target": "몇 개예요 — Myeot gaeyeyo",
+  "goal": "Menguasai kekeliruan terbesar pelajar asing: bahasa Korea punya dua himpunan angka yang tidak saling menggantikan. Menghitung benda, menyebut umur, dan membaca harga.",
+  "bekal": [
+    "menyebut angka asli Korea dari satu sampai dua puluh",
+    "menyebut angka serapan Tionghoa dan membaca harga",
+    "memilih himpunan yang benar menurut apa yang dihitung",
+    "memakai kata penggolong 개, 명, 잔, 병, 살",
+    "menanyakan jumlah dengan 몇 dan harga dengan 얼마"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Di minimarket depan kampus",
+      "intro": "Ani membeli beberapa barang. Dengarkan baik-baik: dalam satu percakapan pendek ini kedua sistem angka dipakai bergantian, dan tidak ada satu pun yang tertukar.",
+      "lines": [
+        {
+          "speaker": "점원:",
+          "text": "[어서|Eoseo] [오세요|oseyo].",
+          "id": "Selamat datang.",
+          "literal": "cepat — datanglah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[안녕하세요|Annyeonghaseyo]. [물|Mul] [두|du] [병|byeong] [주세요|juseyo].",
+          "id": "Halo. Tolong dua botol air.",
+          "literal": "halo. air — dua — botol — berikan."
+        },
+        {
+          "speaker": "점원:",
+          "text": "[네|Ne], [여기|yeogi] [있습니다|itseumnida]. [더|Deo] [필요한|piryohan] [거|geo] [있으세요|isseuseyo]?",
+          "id": "Ya, ini dia. Ada lagi yang dibutuhkan?",
+          "literal": "ya, sini — ada. lebih — perlu-yang — barang — ada (hormat)?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[커피|Keopi] [한|han] [잔|jan] [하고|hago] [빵|ppang] [세|se] [개|gae] [주세요|juseyo].",
+          "id": "Tolong satu gelas kopi dan tiga roti.",
+          "literal": "kopi — satu — gelas — dan — roti — tiga — buah — berikan."
+        },
+        {
+          "speaker": "점원:",
+          "text": "[모두|Modu] [팔천|palcheon] [원이에요|wonieyo].",
+          "id": "Semuanya delapan ribu won.",
+          "literal": "semua — delapan-ribu — won — adalah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[여기|Yeogi] [있어요|isseoyo]. [아|A], [그런데|geureonde] [저|jeo] [빵은|ppangeun] [얼마예요|eolmayeyo]?",
+          "id": "Ini dia. Ah, ngomong-ngomong, roti yang di sana itu berapa?",
+          "literal": "sini — ada. ah, omong-omong, itu-jauh — roti — mengenai — berapa — adalah?"
+        },
+        {
+          "speaker": "점원:",
+          "text": "[그거는|Geugeoneun] [천오백|cheonobaek] [원이에요|wonieyo]. [좀|Jom] [비싸요|bissayo].",
+          "id": "Yang itu seribu lima ratus won. Agak mahal.",
+          "literal": "itu — mengenai — seribu-lima-ratus — won — adalah. sedikit — mahal."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[괜찮아요|Gwaenchanayo]. [하나|Hana] [주세요|juseyo].",
+          "id": "Tidak apa-apa. Tolong satu.",
+          "literal": "tidak-apa-apa. satu — berikan."
+        },
+        {
+          "speaker": "점원:",
+          "text": "[네|Ne]. [학생이세요|Haksaengiseyo]? [학생|Haksaeng] [할인이|harini] [있어요|isseoyo].",
+          "id": "Baik. Anda pelajar? Ada potongan harga pelajar.",
+          "literal": "ya. pelajar — adalah (hormat)? pelajar — potongan — yang — ada."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne], [학생이에요|haksaengieyo]. [감사합니다|Gamsahamnida]!",
+          "id": "Ya, saya pelajar. Terima kasih!",
+          "literal": "ya, pelajar — adalah. terima-kasih!"
+        },
+        {
+          "speaker": "점원:",
+          "text": "[모두|Modu] [구천|gucheon] [원입니다|wonimnida]. [안녕히|Annyeonghi] [가세요|gaseyo].",
+          "id": "Semuanya sembilan ribu won. Selamat jalan.",
+          "literal": "semua — sembilan-ribu — won — adalah. dengan-damai — pergilah."
+        }
+      ],
+      "notes": [
+        "**Dua sistem angka bukan pilihan gaya.** 물 두 병 memakai angka asli Korea karena botol dihitung; 팔천 원 memakai angka serapan Tionghoa karena uang dibaca sebagai bilangan. Menukar keduanya bukan sekadar terdengar aneh — sering kali sama sekali tidak dipahami.",
+        "**Susunannya benda + angka + penggolong.** 커피 한 잔, bukan 한 잔 커피. Ini kebalikan dari bahasa Indonesia (\"satu gelas kopi\") dan perlu dilatih sadar-sadar sampai otomatis. Kalau kamu terbalik, orang Korea akan mengerti — tapi kamu akan terdengar seperti sedang menerjemahkan di kepala.",
+        "**Empat angka pertama berubah bentuk di depan penggolong.** 하나→한, 둘→두, 셋→세, 넷→네. Ditambah 스물→스무. Di luar itu bentuknya tetap. Ini kelima-limanya wajib hafal, karena kelima-limanya adalah angka yang paling sering dipakai.",
+        "**하나 berdiri sendiri boleh dipakai tanpa penggolong.** 하나 주세요 = \"tolong satu\" — sah dan sangat umum ketika bendanya sudah jelas. Tapi begitu ada penggolongnya, ia wajib jadi 한: 한 개 주세요.",
+        "**어서 오세요 bukan sapaan biasa.** Ia diucapkan pemilik toko kepada pembeli, bukan sebaliknya. Kamu tidak pernah mengucapkannya kecuali kamu yang punya tokonya. Balasannya cukup 안녕하세요, atau langsung menyebut yang kamu mau.",
+        "**주세요 adalah kata paling berguna di seluruh unit ini.** Harfiahnya \"tolong berikan\", dan ia menutup hampir semua permintaan barang: 물 주세요, 계산서 주세요, 이거 주세요. Bentuk dasarnya 주다 (memberi).",
+        "**좀 melembutkan apa pun yang ada di sekitarnya.** Harfiahnya \"sedikit\" (dari 조금), tapi kegunaan utamanya adalah memperhalus. 비싸요 = mahal (terdengar seperti keluhan). 좀 비싸요 = agak mahal (terdengar seperti pengamatan sopan). Sisipkan 좀 dan seluruh kalimatmu langsung terdengar lebih ramah.",
+        "**학생이세요? memakai bentuk hormat 시.** Petugas toko menghormati pelanggannya, jadi ia tidak berkata 학생이에요? melainkan 학생이세요?. Kamu tidak perlu memakainya sekarang — cukup mengenalinya, karena kamu akan mendengarnya di setiap toko di Korea."
+      ],
+      "grammars": [
+        {
+          "title": "Angka asli Korea",
+          "body": [
+            "Dipakai untuk **menghitung**: jumlah benda, jumlah orang, umur, dan jam. Berhenti berguna di atas 99, dan dalam praktik jarang dipakai di atas 40."
+          ],
+          "table": {
+            "head": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "rows": [
+              [
+                "하나 *hana*",
+                "둘 *dul*",
+                "셋 *set*",
+                "넷 *net*",
+                "다섯 *daseot*"
+              ],
+              [
+                "**6**",
+                "**7**",
+                "**8**",
+                "**9**",
+                "**10**"
+              ],
+              [
+                "여섯 *yeoseot*",
+                "일곱 *ilgop*",
+                "여덟 *yeodeol*",
+                "아홉 *ahop*",
+                "열 *yeol*"
+              ],
+              [
+                "**11**",
+                "**12**",
+                "**20**",
+                "**30**",
+                "**40**"
+              ],
+              [
+                "열하나",
+                "열둘",
+                "스물 *seumul*",
+                "서른 *seoreun*",
+                "마흔 *maheun*"
+              ]
+            ]
+          },
+          "after": [
+            "Sebelas sampai sembilan belas dibentuk dengan menempelkan 열 di depan: 열하나, 열둘, 열셋 … 열아홉. Dua puluh satu = 스물하나. Polanya sama seperti bahasa Indonesia \"dua puluh satu\".",
+            "여덟 (delapan) ditulis dengan dua konsonan di akhir tapi dibaca *yeodeol* — ㅂ-nya tidak berbunyi sama sekali kecuali kalau ada partikel vokal di belakangnya."
+          ]
+        },
+        {
+          "title": "Angka serapan Tionghoa",
+          "body": [
+            "Dipakai untuk **membaca bilangan**: uang, menit, tanggal, nomor telepon, alamat, ukuran. Ini satu-satunya sistem yang sanggup naik sampai jutaan."
+          ],
+          "table": {
+            "head": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "rows": [
+              [
+                "일 *il*",
+                "이 *i*",
+                "삼 *sam*",
+                "사 *sa*",
+                "오 *o*"
+              ],
+              [
+                "**6**",
+                "**7**",
+                "**8**",
+                "**9**",
+                "**10**"
+              ],
+              [
+                "육 *yuk*",
+                "칠 *chil*",
+                "팔 *pal*",
+                "구 *gu*",
+                "십 *sip*"
+              ],
+              [
+                "**100**",
+                "**1.000**",
+                "**10.000**",
+                "**100.000**",
+                "**1.000.000**"
+              ],
+              [
+                "백 *baek*",
+                "천 *cheon*",
+                "만 *man*",
+                "십만 *simman*",
+                "백만 *baengman*"
+              ]
+            ]
+          },
+          "after": [
+            "**Bahasa Korea menghitung angka besar dalam kelipatan sepuluh ribu, bukan seribu.** 만 = 10.000. Seratus ribu bukan kata baru, melainkan \"sepuluh 만\" = 십만. Satu juta = \"seratus 만\" = 백만. Ini terasa asing di awal dan penting sekali di Korea, karena harga sehari-hari memang berada di kisaran itu.",
+            "⚠️ **일 tidak diucapkan di depan 백, 천, dan 만.** Seratus adalah 백, bukan 일백. Seribu adalah 천, bukan 일천. Tapi sepuluh ribu tetap **만**, dan seratus juta punya kata sendiri: 억.",
+            "Harga di dialog: 팔천 원 = 8.000 won, 천오백 원 = 1.500 won, 구천 원 = 9.000 won. Perhatikan bahwa tidak ada spasi di dalam angkanya, dan 원 dipisah."
+          ]
+        },
+        {
+          "title": "Kata penggolong yang paling sering",
+          "body": [
+            "Bahasa Korea tidak bisa menghitung benda secara langsung — selalu ada kata penggolong di antara angka dan bendanya, seperti \"dua **ekor** kucing\" dalam bahasa Indonesia."
+          ],
+          "table": {
+            "head": [
+              "Penggolong",
+              "Untuk",
+              "Sistem angka",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**개**",
+                "benda umum — kalau ragu pakai ini",
+                "asli Korea",
+                "빵 세 개"
+              ],
+              [
+                "**명**",
+                "orang",
+                "asli Korea",
+                "학생 두 명"
+              ],
+              [
+                "**분**",
+                "orang (hormat)",
+                "asli Korea",
+                "손님 네 분"
+              ],
+              [
+                "**잔**",
+                "gelas, cangkir",
+                "asli Korea",
+                "커피 한 잔"
+              ],
+              [
+                "**병**",
+                "botol",
+                "asli Korea",
+                "물 두 병"
+              ],
+              [
+                "**권**",
+                "buku",
+                "asli Korea",
+                "책 다섯 권"
+              ],
+              [
+                "**마리**",
+                "binatang",
+                "asli Korea",
+                "고양이 세 마리"
+              ],
+              [
+                "**살**",
+                "umur",
+                "asli Korea",
+                "스무 살"
+              ],
+              [
+                "**원**",
+                "mata uang",
+                "Tionghoa",
+                "오천 원"
+              ],
+              [
+                "**분**",
+                "menit",
+                "Tionghoa",
+                "십 분"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **분 punya dua arti yang memakai sistem angka berbeda.** 세 **분** (tiga orang, hormat) memakai angka asli Korea; 삼십 **분** (tiga puluh menit) memakai angka Tionghoa. Sistem angkanya sendiri yang memberi tahu arti mana yang dimaksud.",
+            "Kalau kamu benar-benar lupa penggolongnya, **개 hampir selalu bisa diterima** untuk benda mati. Ia tidak selalu paling tepat, tapi tidak pernah membuatmu tak dipahami."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Umur, dan kenapa ia sering ditanyakan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Pertanyaan 몇 살이에요? (\"berapa umurmu?\") datang jauh lebih cepat dalam perkenalan Korea daripada yang biasa dianggap sopan di Indonesia. Alasannya bukan basa-basi: umur menentukan bentuk bahasa yang dipakai kedua belah pihak, sebutan yang dipakai, dan siapa yang membayar makan siang. Tanpa mengetahuinya, orang Korea tidak tahu harus bicara bagaimana kepadamu."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Umur",
+            "Korea",
+            "Umur",
+            "Korea"
+          ],
+          "rows": [
+            [
+              "15",
+              "열다섯 살",
+              "30",
+              "서른 살"
+            ],
+            [
+              "19",
+              "열아홉 살",
+              "35",
+              "서른다섯 살"
+            ],
+            [
+              "20",
+              "**스무** 살",
+              "40",
+              "마흔 살"
+            ],
+            [
+              "21",
+              "스물한 살",
+              "45",
+              "마흔다섯 살"
+            ],
+            [
+              "25",
+              "스물다섯 살",
+              "50",
+              "쉰 살"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Bentuk hormatnya berbeda dan kamu akan mendengarnya dari orang tua: 연세가 어떻게 되세요? Jawabannya tetap sama."
+        },
+        {
+          "type": "kotak",
+          "title": "Sebutan yang bergantung umur",
+          "items": [
+            "Perempuan memanggil laki-laki yang lebih tua **오빠**, laki-laki memanggil laki-laki yang lebih tua **형**.",
+            "Perempuan memanggil perempuan yang lebih tua **언니**, laki-laki memanggil perempuan yang lebih tua **누나**.",
+            "Yang lebih muda dipanggil **동생** (atau namanya saja). Sesama umur cukup nama + 씨 sampai kalian sepakat memakai bentuk akrab.",
+            "⚠️ Empat sebutan pertama itu dipakai kepada orang **dekat**, bukan kepada siapa saja yang lebih tua. Memanggil kasir minimarket 오빠 bukan sopan, melainkan salah tempat."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "하나 / 한",
+      "baca": "hana / han",
+      "id": "satu"
+    },
+    {
+      "ko": "둘 / 두",
+      "baca": "dul / du",
+      "id": "dua"
+    },
+    {
+      "ko": "셋 / 세",
+      "baca": "set / se",
+      "id": "tiga"
+    },
+    {
+      "ko": "넷 / 네",
+      "baca": "net / ne",
+      "id": "empat"
+    },
+    {
+      "ko": "다섯",
+      "baca": "daseot",
+      "id": "lima"
+    },
+    {
+      "ko": "열",
+      "baca": "yeol",
+      "id": "sepuluh"
+    },
+    {
+      "ko": "스물 / 스무",
+      "baca": "seumul / seumu",
+      "id": "dua puluh"
+    },
+    {
+      "ko": "백",
+      "baca": "baek",
+      "id": "seratus"
+    },
+    {
+      "ko": "천",
+      "baca": "cheon",
+      "id": "seribu"
+    },
+    {
+      "ko": "만",
+      "baca": "man",
+      "id": "sepuluh ribu"
+    },
+    {
+      "ko": "개",
+      "baca": "gae",
+      "id": "buah (penggolong umum)"
+    },
+    {
+      "ko": "명",
+      "baca": "myeong",
+      "id": "orang (penggolong)"
+    },
+    {
+      "ko": "잔",
+      "baca": "jan",
+      "id": "gelas"
+    },
+    {
+      "ko": "병",
+      "baca": "byeong",
+      "id": "botol"
+    },
+    {
+      "ko": "살",
+      "baca": "sal",
+      "id": "tahun umur"
+    },
+    {
+      "ko": "원",
+      "baca": "won",
+      "id": "won (mata uang Korea)"
+    },
+    {
+      "ko": "몇",
+      "baca": "myeot",
+      "id": "berapa (jumlah)"
+    },
+    {
+      "ko": "얼마",
+      "baca": "eolma",
+      "id": "berapa (harga)"
+    },
+    {
+      "ko": "주세요",
+      "baca": "juseyo",
+      "id": "tolong berikan"
+    },
+    {
+      "ko": "물",
+      "baca": "mul",
+      "id": "air"
+    },
+    {
+      "ko": "빵",
+      "baca": "ppang",
+      "id": "roti"
+    },
+    {
+      "ko": "커피",
+      "baca": "keopi",
+      "id": "kopi"
+    },
+    {
+      "ko": "좀",
+      "baca": "jom",
+      "id": "sedikit, tolong (pelembut)"
+    },
+    {
+      "ko": "비싸요",
+      "baca": "bissayo",
+      "id": "mahal"
+    },
+    {
+      "ko": "싸요",
+      "baca": "ssayo",
+      "id": "murah"
+    },
+    {
+      "ko": "모두",
+      "baca": "modu",
+      "id": "semuanya"
+    },
+    {
+      "ko": "괜찮아요",
+      "baca": "gwaenchanayo",
+      "id": "tidak apa-apa"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis dalam hangeul dengan sistem angka yang benar.",
+      "items": [
+        "dua botol air",
+        "satu gelas kopi",
+        "tiga roti",
+        "lima ribu won",
+        "dua puluh tahun (umur)",
+        "empat orang"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk angka yang benar di depan penggolongnya.",
+      "items": [
+        "커피 ____ 잔 주세요. (satu)",
+        "학생 ____ 명이에요. (dua)",
+        "빵 ____ 개 주세요. (tiga)",
+        "고양이 ____ 마리 있어요. (empat)",
+        "저는 ____ 살이에요. (dua puluh)"
+      ]
+    },
+    {
+      "prompt": "Baca harga berikut dalam hangeul.",
+      "items": [
+        "3.000원",
+        "1.500원",
+        "8.000원",
+        "12.000원",
+        "50.000원"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "주세요 / 물 / 병 / 두",
+        "얼마예요 / 이거 / ?",
+        "있어요 / 명 / 학생이 / 세",
+        "살이에요 / 스무 / 저는",
+        "주세요 / 세 / 빵 / 개"
+      ]
+    }
+  ],
+  "answers": [
+    "물 두 병 — 커피 한 잔 — 빵 세 개 — 오천 원 — 스무 살 — 네 명",
+    "한 — 두 — 세 — 네 — 스무",
+    "삼천 원 — 천오백 원 — 팔천 원 — 만이천 원 — 오만 원",
+    "물 두 병 주세요. — 이거 얼마예요? — 학생이 세 명 있어요. — 저는 스무 살이에요. — 빵 세 개 주세요."
+  ]
+}

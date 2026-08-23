@@ -1,0 +1,518 @@
+{
+  "title": "Mengucapkan selamat dan hari besar",
+  "title_target": "축하해요 — Chukahaeyo",
+  "goal": "Mengucapkan selamat, memberi hadiah, dan mengenali dua hari besar yang menghentikan seluruh Korea — sekaligus memasang partikel 에게/한테 yang sampai sekarang belum dilatih.",
+  "bekal": [
+    "mengucapkan selamat untuk ulang tahun dan pencapaian",
+    "memakai 에게 dan 한테 untuk menyatakan penerima",
+    "membedakan 주다 dari 드리다 dan 받다",
+    "mengenali 설날 dan 추석 beserta ucapannya",
+    "menulis pesan ucapan yang wajar"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Ulang tahun Suji",
+      "intro": "Ani datang membawa hadiah. Perhatikan bahwa memberi kepada orang yang setara memakai kata kerja yang berbeda dari memberi kepada orang yang lebih tua.",
+      "lines": [
+        {
+          "speaker": "아니:",
+          "text": "[수지|Suji] [씨|ssi], [생일|saengil] [축하해요|chukahaeyo]!",
+          "id": "Suji, selamat ulang tahun!",
+          "literal": "Suji — tuan, ulang-tahun — merayakan!"
+        },
+        {
+          "speaker": "수지:",
+          "text": "[어머|Eomeo], [고마워요|gomawoyo]! [어떻게|Eotteoke] [알았어요|arasseoyo]?",
+          "id": "Wah, terima kasih! Bagaimana kamu tahu?",
+          "literal": "aduh, terima-kasih! bagaimana — tahu-sudah?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[민준|Minjun] [씨가|ssiga] [알려|allyeo] [줬어요|jwosseoyo]. [이거|Igeo] [작은|jageun] [선물이에요|seonmurieyo].",
+          "id": "Minjun yang memberi tahu. Ini hadiah kecil.",
+          "literal": "Minjun — tuan — yang — memberitahu — memberi-sudah. ini — kecil-yang — hadiah — adalah."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[뭐|Mwo] [이런|ireon] [걸|geol] [다|da]… [열어|Yeoreo] [봐도|bwado] [돼요|dwaeyo]?",
+          "id": "Aduh, tidak usah repot-repot… Boleh dibuka?",
+          "literal": "apa — begini-yang — hal — semua… buka — coba-juga — boleh?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne], [열어|yeoreo] [보세요|boseyo]. [인도네시아|Indonesia] [커피예요|keopiyeyo].",
+          "id": "Ya, silakan dibuka. Kopi Indonesia.",
+          "literal": "ya, buka — cobalah. Indonesia — kopi — adalah."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[와|Wa], [진짜|jinjja] [고마워요|gomawoyo]! [커피|Keopi] [정말|jeongmal] [좋아해요|joahaeyo].",
+          "id": "Wah, terima kasih banyak! Saya benar-benar suka kopi.",
+          "literal": "wah, sungguh — terima-kasih! kopi — sungguh — menyukai."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[다행이에요|Dahaengieyo]. [부모님께도|Bumonimkkedo] [선물|seonmul] [드렸어요|deuryeosseoyo]?",
+          "id": "Syukurlah. Sudah memberi hadiah kepada orang tua juga?",
+          "literal": "syukur — adalah. orang-tua-kepada — juga — hadiah — memberi (hormat) — sudah?"
+        },
+        {
+          "speaker": "수지:",
+          "text": "[네|Ne], [어머니께|eomeonikke] [꽃을|kkocheul] [드렸어요|deuryeosseoyo]. [생일에는|Saengireneun] [부모님께|bumonimkke] [감사|gamsa] [인사를|insareul] [드려요|deuryeoyo].",
+          "id": "Ya, saya beri bunga kepada ibu. Di hari ulang tahun kami berterima kasih kepada orang tua.",
+          "literal": "ya, ibu-kepada — bunga — objek — memberi-sudah. ulang-tahun-pada — mengenai — orang-tua-kepada — terima-kasih — salam — objek — memberi."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[아|A], [그래요|geuraeyo]? [인도네시아하고|Indonesia-hago] [다르네요|dareuneyo].",
+          "id": "Oh begitu? Berbeda dengan Indonesia ya.",
+          "literal": "ah, begitu — adalah? Indonesia — dengan — berbeda — ya."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[네|Ne]. [낳아|Naa] [주셔서|jusyeoseo] [감사하니까요|gamsahanikkayo].",
+          "id": "Iya. Karena kami berterima kasih sudah dilahirkan.",
+          "literal": "ya. melahirkan — memberi (hormat) — karena — berterima-kasih — sebab — nya."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[좋은|Joeun] [문화예요|munhwayeyo]. [미역국|Miyeokguk] [먹었어요|meogeosseoyo]?",
+          "id": "Budaya yang bagus. Sudah makan sup rumput laut?",
+          "literal": "baik-yang — budaya — adalah. rumput-laut-sup — makan-sudah?"
+        },
+        {
+          "speaker": "수지:",
+          "text": "[당연하죠|Dangyeonhajyo]! [아침에|Achime] [엄마가|eommaga] [끓여|kkeuryeo] [주셨어요|jusyeosseoyo].",
+          "id": "Tentu saja! Pagi tadi ibu memasakkannya untuk saya.",
+          "literal": "tentu-saja! pagi-pada — ibu — yang — merebus — memberi (hormat) — sudah."
+        }
+      ],
+      "notes": [
+        "**축하해요 dipakai untuk semua ucapan selamat**, bukan hanya ulang tahun: 생일 축하해요, 졸업 축하해요, 결혼 축하해요, 합격 축하해요. Bentuk resminya 축하드립니다, dan itulah yang dipakai kepada atasan.",
+        "**에게 dan 한테 sama artinya, beda nadanya.** Keduanya berarti \"kepada\" untuk orang atau binatang. 한테 lisan dan sehari-hari; 에게 sedikit lebih tulis. ⚠️ Untuk benda mati dipakai **에**, bukan 에게: 회사**에** 전화했어요 (menelepon kantor).",
+        "**께 adalah bentuk hormat dari 에게.** 어머니**께** 드렸어요 = memberi kepada ibu. Ia berpasangan dengan kata kerja hormat 드리다, dan keduanya wajib muncul bersama — memakai 께 dengan 줬어요 terdengar setengah jadi.",
+        "**주다 dan 드리다 dua-duanya berarti \"memberi\", dan pilihannya bergantung penerimanya.** 친구**한테** **줬어요** (memberi kepada teman) tapi 부모님**께** **드렸어요** (memberi kepada orang tua). Ini terapan langsung dari bentuk merendah di unit 18: kamu merendahkan perbuatanmu sendiri untuk meninggikan penerimanya.",
+        "**-아/어 주다 berarti melakukan sesuatu untuk orang lain.** 알려 **줬어요** = memberi tahu (untukku). 끓여 **주셨어요** = memasakkan (untukku, oleh orang yang dihormati). Pola inilah yang sudah kamu pakai di 주세요 sejak unit 10 — kini ia muncul dalam bentuk lampau dan hormat.",
+        "**뭐 이런 걸 다… adalah penolakan sopan yang wajib.** Diucapkan saat menerima hadiah, berarti kira-kira \"aduh, tidak usah repot-repot\". Menerima hadiah tanpa berbasa-basi menolak sedikit dianggap kurang santun — dan pemberi hadiah memang mengharapkan kalimat ini.",
+        "**Hadiah di Korea sering tidak dibuka di depan pemberinya**, terutama di situasi resmi. Karena itu Suji bertanya 열어 봐도 돼요? lebih dulu. Di antara teman dekat, membukanya langsung sepenuhnya normal.",
+        "**미역국 adalah sup wajib di hari ulang tahun.** Rumput laut dipercaya membantu pemulihan ibu sesudah melahirkan, sehingga memakannya di hari ulang tahun adalah cara mengingat hari kelahiran. ⚠️ Karena itu pula, memakannya di hari ujian dianggap sial: 미역 licin, dan orang bisa \"tergelincir\" dari ujiannya."
+      ],
+      "grammars": [
+        {
+          "title": "Kepada siapa: 에게, 한테, 께",
+          "body": [
+            "Tiga bentuk untuk satu peran, dibedakan oleh siapa penerimanya dan seberapa resmi kalimatnya."
+          ],
+          "table": {
+            "head": [
+              "Partikel",
+              "Penerima",
+              "Nada",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**한테**",
+                "orang, binatang",
+                "lisan, sehari-hari",
+                "친구**한테** 줬어요"
+              ],
+              [
+                "**에게**",
+                "orang, binatang",
+                "tulis, netral",
+                "친구**에게** 줬어요"
+              ],
+              [
+                "**께**",
+                "orang yang dihormati",
+                "hormat",
+                "선생님**께** 드렸어요"
+              ],
+              [
+                "**에**",
+                "benda, lembaga",
+                "netral",
+                "회사**에** 전화했어요"
+              ],
+              [
+                "**한테서 / 에게서**",
+                "dari orang",
+                "asal",
+                "친구**한테서** 받았어요"
+              ],
+              [
+                "**께**",
+                "dari orang yang dihormati",
+                "hormat",
+                "선생님**께** 받았어요"
+              ]
+            ]
+          },
+          "after": [
+            "**Kata kerja yang berpasangan dengan partikel ini:** 주다 (memberi), 드리다 (memberi, hormat), 받다 (menerima), 보내다 (mengirim), 전화하다 (menelepon), 말하다 (berkata), 가르치다 (mengajari), 물어보다 (bertanya).",
+            "⚠️ **말하다 memakai 한테, bukan 을/를 untuk orangnya.** 친구**한테** 말했어요 = berkata kepada teman. 친구를 말했어요 berarti \"menyebut teman sebagai topik\", sesuatu yang lain sama sekali."
+          ]
+        },
+        {
+          "title": "Memberi, menerima, dan melakukan untuk orang lain",
+          "body": [
+            "Tiga kata kerja yang berputar di sekitar satu gagasan, dan dua di antaranya berubah bentuk mengikuti siapa lawannya."
+          ],
+          "table": {
+            "head": [
+              "Arah",
+              "Kata kerja",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "Saya → orang setara",
+                "**주다**",
+                "친구한테 **줬어요**",
+                "memberi kepada teman"
+              ],
+              [
+                "Saya → orang dihormati",
+                "**드리다**",
+                "선생님께 **드렸어요**",
+                "memberi kepada guru"
+              ],
+              [
+                "Orang → saya",
+                "**받다**",
+                "선물을 **받았어요**",
+                "menerima hadiah"
+              ],
+              [
+                "Orang dihormati → saya",
+                "**주시다**",
+                "어머니가 **주셨어요**",
+                "ibu memberi"
+              ],
+              [
+                "Perbuatan untuk saya",
+                "**-아/어 주다**",
+                "알려 **줬어요**",
+                "memberitahukan untukku"
+              ],
+              [
+                "Perbuatan untuk saya (hormat)",
+                "**-아/어 주시다**",
+                "끓여 **주셨어요**",
+                "memasakkan untukku"
+              ],
+              [
+                "Perbuatan untuk orang lain",
+                "**-아/어 드리다**",
+                "도와 **드릴게요**",
+                "saya akan membantu Anda"
+              ]
+            ]
+          },
+          "after": [
+            "**도와드릴까요? (\"boleh saya bantu?\") adalah kalimat yang akan sering kamu dengar di toko dan di jalan.** Ia gabungan 돕다 + -아 드리다 + -(으)ㄹ까요, dan seluruh bagiannya sudah kamu pelajari.",
+            "**Bahasa Korea sangat memperhatikan arah pemberian**, jauh lebih daripada bahasa Indonesia. Kalimat yang benar tata bahasanya tapi salah arahnya akan terdengar aneh, bahkan kalau semua katanya tepat."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ucapan selamat dan hari besar",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Korea",
+            "Baca",
+            "Kapan dipakai"
+          ],
+          "rows": [
+            [
+              "생일 축하해요",
+              "saengil chukahaeyo",
+              "Selamat ulang tahun"
+            ],
+            [
+              "결혼 축하해요",
+              "gyeolhon chukahaeyo",
+              "Selamat menikah"
+            ],
+            [
+              "졸업 축하해요",
+              "joreop chukahaeyo",
+              "Selamat lulus"
+            ],
+            [
+              "합격 축하해요",
+              "hapgyeok chukahaeyo",
+              "Selamat lulus ujian atau seleksi"
+            ],
+            [
+              "새해 복 많이 받으세요",
+              "saehae bok mani badeuseyo",
+              "Selamat tahun baru"
+            ],
+            [
+              "메리 크리스마스",
+              "meri keuriseumaseu",
+              "Selamat Natal"
+            ],
+            [
+              "수고하셨습니다",
+              "sugohasyeotseumnida",
+              "Terima kasih atas jerih payahnya"
+            ],
+            [
+              "잘 먹겠습니다",
+              "jal meokgetseumnida",
+              "Ucapan sebelum makan"
+            ],
+            [
+              "건강하세요",
+              "geonganghaseyo",
+              "Semoga sehat selalu"
+            ],
+            [
+              "행복하세요",
+              "haengbokaseyo",
+              "Semoga bahagia"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Dua hari besar yang menghentikan seluruh Korea"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "설날",
+            "추석"
+          ],
+          "rows": [
+            [
+              "Baca",
+              "Seollal",
+              "Chuseok"
+            ],
+            [
+              "Apa itu",
+              "Tahun baru menurut penanggalan bulan",
+              "Perayaan panen musim gugur"
+            ],
+            [
+              "Kapan",
+              "Januari atau Februari",
+              "September atau Oktober"
+            ],
+            [
+              "Yang dilakukan",
+              "Pulang kampung, 세배 (sujud hormat kepada orang tua)",
+              "Pulang kampung, ziarah ke makam leluhur"
+            ],
+            [
+              "Makanan",
+              "떡국 (sup kue beras)",
+              "송편 (kue beras berisi)"
+            ],
+            [
+              "Ucapan",
+              "새해 복 많이 받으세요",
+              "추석 잘 보내세요"
+            ],
+            [
+              "Yang perlu kamu tahu",
+              "Semua orang bepergian sekaligus — jalan tol macet total",
+              "Sama, dan toko banyak yang tutup"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**떡국 punya arti khusus**: memakannya di 설날 berarti kamu bertambah satu tahun umur. Ini sisa dari perhitungan umur lama yang dijelaskan di unit 8 — di Korea, dulu semua orang bertambah umur bersamaan di tahun baru, bukan di hari ulang tahunnya sendiri."
+        },
+        {
+          "type": "kotak",
+          "title": "Menulis pesan ucapan",
+          "items": [
+            "**Kepada teman:** 생일 축하해요! 좋은 하루 보내세요 ㅎㅎ",
+            "**Kepada atasan atau guru:** 생신 축하드립니다. 항상 건강하세요. — perhatikan 생신, bentuk hormat dari 생일.",
+            "**Tahun baru kepada siapa pun:** 새해 복 많이 받으세요. 올해도 잘 부탁드립니다.",
+            "⚠️ Ucapan kepada orang yang lebih tua hampir selalu memakai **-드립니다** dan **-(으)세요**, tidak pernah bentuk akrab. Kalau ragu, tiru contoh kedua di atas."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "축하해요",
+      "baca": "chukahaeyo",
+      "id": "selamat, mengucapkan selamat"
+    },
+    {
+      "ko": "생일",
+      "baca": "saengil",
+      "id": "ulang tahun"
+    },
+    {
+      "ko": "생신",
+      "baca": "saengsin",
+      "id": "ulang tahun (hormat)"
+    },
+    {
+      "ko": "선물",
+      "baca": "seonmul",
+      "id": "hadiah"
+    },
+    {
+      "ko": "꽃",
+      "baca": "kkot",
+      "id": "bunga"
+    },
+    {
+      "ko": "에게 / 한테",
+      "baca": "ege / hante",
+      "id": "kepada"
+    },
+    {
+      "ko": "께",
+      "baca": "kke",
+      "id": "kepada (hormat)"
+    },
+    {
+      "ko": "줘요",
+      "baca": "jwoyo",
+      "id": "memberi"
+    },
+    {
+      "ko": "드려요",
+      "baca": "deuryeoyo",
+      "id": "memberi (hormat)"
+    },
+    {
+      "ko": "받아요",
+      "baca": "badayo",
+      "id": "menerima"
+    },
+    {
+      "ko": "보내요",
+      "baca": "bonaeyo",
+      "id": "mengirim, melewatkan waktu"
+    },
+    {
+      "ko": "알려 줘요",
+      "baca": "allyeo jwoyo",
+      "id": "memberi tahu"
+    },
+    {
+      "ko": "열어요",
+      "baca": "yeoreoyo",
+      "id": "membuka"
+    },
+    {
+      "ko": "설날",
+      "baca": "Seollal",
+      "id": "tahun baru penanggalan bulan"
+    },
+    {
+      "ko": "추석",
+      "baca": "Chuseok",
+      "id": "perayaan panen musim gugur"
+    },
+    {
+      "ko": "새해",
+      "baca": "saehae",
+      "id": "tahun baru"
+    },
+    {
+      "ko": "복",
+      "baca": "bok",
+      "id": "berkah, keberuntungan"
+    },
+    {
+      "ko": "미역국",
+      "baca": "miyeokguk",
+      "id": "sup rumput laut"
+    },
+    {
+      "ko": "떡국",
+      "baca": "tteokguk",
+      "id": "sup kue beras"
+    },
+    {
+      "ko": "결혼",
+      "baca": "gyeolhon",
+      "id": "pernikahan"
+    },
+    {
+      "ko": "졸업",
+      "baca": "joreop",
+      "id": "kelulusan"
+    },
+    {
+      "ko": "건강하세요",
+      "baca": "geonganghaseyo",
+      "id": "semoga sehat selalu"
+    },
+    {
+      "ko": "다르네요",
+      "baca": "dareuneyo",
+      "id": "berbeda ya"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan 한테, 께, atau 에.",
+      "items": [
+        "친구____ 선물을 줬어요.",
+        "선생님____ 선물을 드렸어요.",
+        "회사____ 전화했어요.",
+        "부모님____ 감사 인사를 드려요.",
+        "동생____ 책을 줬어요."
+      ]
+    },
+    {
+      "prompt": "Isi dengan 줬어요 atau 드렸어요.",
+      "items": [
+        "친구한테 커피를 ____.",
+        "어머니께 꽃을 ____.",
+        "선생님께 선물을 ____.",
+        "동생한테 돈을 ____.",
+        "사장님께 서류를 ____."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Korea.",
+      "items": [
+        "Selamat ulang tahun!",
+        "Ini hadiah kecil.",
+        "Boleh dibuka?",
+        "Saya beri bunga kepada ibu.",
+        "Selamat tahun baru.",
+        "Semoga sehat selalu."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "축하해요 / 생일 / 수지 씨",
+        "선물이에요 / 작은 / 이거",
+        "돼요 / 봐도 / 열어 / ?",
+        "드렸어요 / 꽃을 / 어머니께",
+        "받으세요 / 복 / 새해 / 많이"
+      ]
+    }
+  ],
+  "answers": [
+    "한테 — 께 — 에 — 께 — 한테",
+    "줬어요 — 드렸어요 — 드렸어요 — 줬어요 — 드렸어요",
+    "생일 축하해요! — 이거 작은 선물이에요. — 열어 봐도 돼요? — 어머니께 꽃을 드렸어요. — 새해 복 많이 받으세요. — 건강하세요.",
+    "수지 씨 생일 축하해요. — 이거 작은 선물이에요. — 열어 봐도 돼요? — 어머니께 꽃을 드렸어요. — 새해 복 많이 받으세요."
+  ]
+}

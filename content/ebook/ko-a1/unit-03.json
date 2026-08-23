@@ -1,0 +1,491 @@
+{
+  "title": "Ada di mana, dan tidak ada",
+  "title_target": "어디에 있어요 — Eodie isseoyo",
+  "goal": "Menyatakan sesuatu ada atau tidak ada, menanyakan letaknya, menyebut posisi dengan kata tempat, dan mengenali perbedaan 에 dengan 에서 sejak awal.",
+  "bekal": [
+    "memakai 있어요 dan 없어요 untuk keberadaan dan kepemilikan",
+    "menanyakan letak dengan 어디에 있어요",
+    "menyebut posisi: di atas, di bawah, di depan, di sebelah",
+    "membedakan partikel 에 dari 에서",
+    "menyebut tempat-tempat umum di kota"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Mencari kunci yang hilang",
+      "intro": "Ani tidak menemukan kunci kamarnya. Perhatikan bahwa kata tempat Korea diletakkan **di belakang** benda acuannya, kebalikan penuh dari bahasa Indonesia.",
+      "lines": [
+        {
+          "speaker": "아니:",
+          "text": "[민준|Minjun] [씨|ssi], [제|je] [열쇠|yeolsoe] [있어요|isseoyo]?",
+          "id": "Minjun, kunci saya ada padamu?",
+          "literal": "Minjun — tuan, saya-punya — kunci — ada?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[아니요|Aniyo], [없어요|eopseoyo]. [가방|Gabang] [안에|ane] [없어요|eopseoyo]?",
+          "id": "Tidak ada. Tidak ada di dalam tas?",
+          "literal": "tidak, tidak-ada. tas — dalam-di — tidak-ada?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[없어요|Eopseoyo]. [책상|Chaeksang] [위에도|wiedo] [없어요|eopseoyo].",
+          "id": "Tidak ada. Di atas meja juga tidak ada.",
+          "literal": "tidak-ada. meja — atas-di — juga — tidak-ada."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[의자|Uija] [밑을|miteul] [봤어요|bwasseoyo]?",
+          "id": "Sudah lihat bawah kursi?",
+          "literal": "kursi — bawah — objek — melihat-sudah?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[아|A]! [여기|Yeogi] [있어요|isseoyo]! [의자|Uija] [밑에|mite] [있어요|isseoyo].",
+          "id": "Ah! Ada di sini! Ada di bawah kursi.",
+          "literal": "ah! sini — ada! kursi — bawah-di — ada."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[다행이에요|Dahaengieyo]. [그런데|Geureonde] [사전은|sajeoneun] [어디에|eodie] [있어요|isseoyo]?",
+          "id": "Syukurlah. Ngomong-ngomong, kamusnya ada di mana?",
+          "literal": "syukur — adalah. omong-omong, kamus — mengenai — mana-di — ada?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[교실에|Gyosire] [있어요|isseoyo]. [책상|Chaeksang] [위에|wie] [있어요|isseoyo].",
+          "id": "Ada di ruang kelas. Di atas meja.",
+          "literal": "kelas-di — ada. meja — atas-di — ada."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[아니|Ani] [씨|ssi], [오늘|oneul] [어디에서|eodieseo] [공부해요|gongbuhaeyo]?",
+          "id": "Ani, hari ini belajar di mana?",
+          "literal": "Ani — tuan, hari-ini — mana-di-tempat — belajar?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[도서관에서|Doseogwaneseo] [공부해요|gongbuhaeyo]. [민준|Minjun] [씨는요|ssineunyo]?",
+          "id": "Belajar di perpustakaan. Kalau Minjun?",
+          "literal": "perpustakaan-di-tempat — belajar. Minjun — tuan — mengenai — nya?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[저는|Jeoneun] [집에|jibe] [가요|gayo]. [집에서|Jibeseo] [일해요|ilhaeyo].",
+          "id": "Saya pulang ke rumah. Kerja di rumah.",
+          "literal": "saya — mengenai — rumah-ke — pergi. rumah-di-tempat — bekerja."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[도서관은|Doseogwaneun] [학교|hakgyo] [옆에|yeope] [있어요|isseoyo]. [같이|Gachi] [가요|gayo]?",
+          "id": "Perpustakaan ada di sebelah sekolah. Mau pergi bersama?",
+          "literal": "perpustakaan — mengenai — sekolah — samping-di — ada. bersama — pergi?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[네|Ne], [좋아요|joayo]!",
+          "id": "Ya, boleh!",
+          "literal": "ya, baik!"
+        }
+      ],
+      "notes": [
+        "**있어요 mengerjakan dua pekerjaan sekaligus.** Ia berarti \"ada\" (keberadaan di suatu tempat) dan sekaligus \"punya\" (kepemilikan). 열쇠 있어요? bisa berarti \"kuncinya ada?\" maupun \"kamu punya kunci?\" — konteks yang menentukan. Bahasa Indonesia membedakan keduanya; bahasa Korea tidak merasa perlu.",
+        "**없어요 bukan 안 있어요.** Bahasa Korea punya kata tersendiri untuk \"tidak ada\", dan bentuk sangkalan biasa (안) tidak dipakai di sini. Pasangan 있다/없다 ini akan muncul terus sampai unit terakhir, termasuk di dalam ungkapan besar seperti \"bisa\" dan \"tidak bisa\".",
+        "**Kata tempat datang SESUDAH bendanya.** 책상 위 = \"meja atas\" = di atas meja. 가방 안 = \"tas dalam\" = di dalam tas. Ini kebalikan penuh dari bahasa Indonesia dan salah satu hal yang paling lama terasa janggal. Latih dengan menyebut benda di kamarmu: 침대 옆, 문 앞, 의자 밑.",
+        "**Kata tempat itu sendiri adalah kata benda, jadi ia perlu partikel.** 위 (atas) ditambah 에 menjadi 위**에**. Tanpa 에 kalimatnya belum selesai: 책상 위 있어요 salah, 책상 위**에** 있어요 benar.",
+        "**여기, 거기, 저기** mengikuti pola tiga jarak yang sama dengan 이거/그거/저거: sini (dekat saya), situ (dekat kamu), sana (jauh dari kita berdua). Untuk menanyakannya: 어디.",
+        "**다행이에요 tidak punya padanan satu kata.** Ia diucapkan ketika sesuatu yang buruk ternyata tidak terjadi — paling dekat dengan \"syukurlah\" atau \"untunglah\". Sangat sering dipakai, dan terdengar jauh lebih hangat daripada 좋아요 dalam situasi seperti ini.",
+        "**그런데 membuka pergantian topik.** Harfiahnya \"tapi\", tapi dalam percakapan ia lebih sering berarti \"ngomong-ngomong\" — cara halus membelokkan pembicaraan. Bentuk pendeknya 근데, dan itulah yang akan paling sering kamu dengar.",
+        "**같이 dibaca *gachi*, bukan *gatti*.** Huruf ㅌ yang bertemu 이 berubah bunyi jadi *chi*. Perubahan ini punya nama sendiri (구개음화) dan cuma terjadi pada ㄷ dan ㅌ di depan 이: 굳이 *guji*, 같이 *gachi*."
+      ],
+      "grammars": [
+        {
+          "title": "에 lawan 에서 — dua partikel tempat yang tidak boleh tertukar",
+          "body": [
+            "Bahasa Indonesia memakai satu kata \"di\" untuk dua hal yang bagi bahasa Korea sama sekali berbeda: **tempat sesuatu berada** dan **tempat sesuatu terjadi**. Ini kesalahan partikel nomor satu pelajar Indonesia, dan ia tidak pernah hilang sendiri — harus disadari sekali lalu dilatih."
+          ],
+          "table": {
+            "head": [
+              "Partikel",
+              "Dipakai untuk",
+              "Kata kerja pasangannya",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**에**",
+                "letak — sesuatu *ada* di sana",
+                "있다, 없다, 살다",
+                "집**에** 있어요 — ada di rumah"
+              ],
+              [
+                "**에**",
+                "tujuan — pergi *ke* sana",
+                "가다, 오다, 다니다",
+                "학교**에** 가요 — pergi ke sekolah"
+              ],
+              [
+                "**에**",
+                "waktu — *pada* jam sekian",
+                "semua",
+                "세 시**에** 만나요 — bertemu pukul tiga"
+              ],
+              [
+                "**에서**",
+                "tempat kegiatan berlangsung",
+                "먹다, 공부하다, 일하다, 만나다",
+                "집**에서** 일해요 — bekerja di rumah"
+              ],
+              [
+                "**에서**",
+                "titik asal — *dari* sana",
+                "오다, 출발하다",
+                "인도네시아**에서** 왔어요 — datang dari Indonesia"
+              ]
+            ]
+          },
+          "after": [
+            "**Uji cepatnya satu kalimat: apakah ada kegiatan yang sedang dikerjakan di tempat itu?** Kalau ya → 에서. Kalau tempat itu cuma menjadi lokasi keberadaan atau tujuan perpindahan → 에.",
+            "Perhatikan pasangan di dialog: 집**에** 가요 (pergi ke rumah — perpindahan) tapi 집**에서** 일해요 (bekerja di rumah — kegiatan). Kata bendanya sama, partikelnya berbeda, artinya jauh berbeda.",
+            "⚠️ Kesalahan yang paling sering: 식당**에** 먹어요. Makan adalah kegiatan, jadi yang benar 식당**에서** 먹어요. Kalau kamu ragu, ingat bahwa 에 hanya berteman dengan 있다, 없다, 가다, dan 오다."
+          ]
+        },
+        {
+          "title": "Kata tempat",
+          "body": [
+            "Semuanya diletakkan sesudah kata benda acuannya dan ditambahi 에."
+          ],
+          "table": {
+            "head": [
+              "Korea",
+              "Baca",
+              "Arti",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "위",
+                "wi",
+                "atas",
+                "책상 위에 — di atas meja"
+              ],
+              [
+                "밑 / 아래",
+                "mit / arae",
+                "bawah",
+                "의자 밑에 — di bawah kursi"
+              ],
+              [
+                "안",
+                "an",
+                "dalam",
+                "가방 안에 — di dalam tas"
+              ],
+              [
+                "밖",
+                "bak",
+                "luar",
+                "집 밖에 — di luar rumah"
+              ],
+              [
+                "앞",
+                "ap",
+                "depan",
+                "학교 앞에 — di depan sekolah"
+              ],
+              [
+                "뒤",
+                "dwi",
+                "belakang",
+                "은행 뒤에 — di belakang bank"
+              ],
+              [
+                "옆",
+                "yeop",
+                "samping",
+                "저 옆에 — di sebelah saya"
+              ],
+              [
+                "사이",
+                "sai",
+                "antara",
+                "은행과 학교 사이에 — di antara bank dan sekolah"
+              ]
+            ]
+          },
+          "after": [
+            "**밑 dan 아래 sama-sama \"bawah\", tapi tidak persis sama.** 밑 berarti tepat di bawahnya dan menyentuh atau tertutup olehnya; 아래 lebih umum, berarti di arah bawah. Untuk kunci yang jatuh di kolong kursi, 밑 yang tepat.",
+            "**밖에 punya arti kedua yang menjebak.** Ditempel pada kata benda dan diikuti bentuk sangkal, ia berarti \"hanya\": 물**밖에** 없어요 = \"tidak ada apa-apa selain air\" = \"cuma ada air\". Sama tulisannya dengan \"di luar\", beda pekerjaan sepenuhnya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tempat-tempat di kota",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kosakata yang paling cepat berguna kalau kamu benar-benar berada di Korea, dan yang paling sering muncul di soal ujian TOPIK tingkat pertama."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "한국어",
+            "Baca",
+            "Indonesia",
+            "한국어",
+            "Baca",
+            "Indonesia"
+          ],
+          "rows": [
+            [
+              "집",
+              "jip",
+              "rumah",
+              "은행",
+              "eunhaeng",
+              "bank"
+            ],
+            [
+              "학교",
+              "hakgyo",
+              "sekolah",
+              "우체국",
+              "ucheguk",
+              "kantor pos"
+            ],
+            [
+              "교실",
+              "gyosil",
+              "ruang kelas",
+              "병원",
+              "byeongwon",
+              "rumah sakit"
+            ],
+            [
+              "도서관",
+              "doseogwan",
+              "perpustakaan",
+              "약국",
+              "yakguk",
+              "apotek"
+            ],
+            [
+              "식당",
+              "sikdang",
+              "rumah makan",
+              "시장",
+              "sijang",
+              "pasar"
+            ],
+            [
+              "카페",
+              "kape",
+              "kafe",
+              "백화점",
+              "baekhwajeom",
+              "pusat perbelanjaan"
+            ],
+            [
+              "회사",
+              "hoesa",
+              "kantor, perusahaan",
+              "편의점",
+              "pyeonuijeom",
+              "minimarket"
+            ],
+            [
+              "화장실",
+              "hwajangsil",
+              "kamar kecil",
+              "지하철역",
+              "jihacheollyeok",
+              "stasiun kereta bawah tanah"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "화장실이 어디예요?",
+          "items": [
+            "Kalimat ini pantas dihafal sebelum kalimat mana pun yang lain. Perhatikan bahwa di sini dipakai **이/가**, bukan 은/는 — karena kamu sedang meminta lawan bicara memilih satu tempat dari sekian banyak.",
+            "Perhatikan juga bahwa ia memakai **예요**, bukan 있어요. 화장실이 어디예요? (kamar kecilnya di mana?) dan 화장실이 어디에 있어요? dua-duanya benar; yang pertama lebih pendek dan lebih sering dipakai."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "있어요",
+      "baca": "isseoyo",
+      "id": "ada, punya"
+    },
+    {
+      "ko": "없어요",
+      "baca": "eopseoyo",
+      "id": "tidak ada, tidak punya"
+    },
+    {
+      "ko": "어디",
+      "baca": "eodi",
+      "id": "di mana"
+    },
+    {
+      "ko": "여기",
+      "baca": "yeogi",
+      "id": "sini"
+    },
+    {
+      "ko": "거기",
+      "baca": "geogi",
+      "id": "situ"
+    },
+    {
+      "ko": "저기",
+      "baca": "jeogi",
+      "id": "sana"
+    },
+    {
+      "ko": "위",
+      "baca": "wi",
+      "id": "atas"
+    },
+    {
+      "ko": "밑",
+      "baca": "mit",
+      "id": "bawah"
+    },
+    {
+      "ko": "안",
+      "baca": "an",
+      "id": "dalam"
+    },
+    {
+      "ko": "밖",
+      "baca": "bak",
+      "id": "luar"
+    },
+    {
+      "ko": "앞",
+      "baca": "ap",
+      "id": "depan"
+    },
+    {
+      "ko": "뒤",
+      "baca": "dwi",
+      "id": "belakang"
+    },
+    {
+      "ko": "옆",
+      "baca": "yeop",
+      "id": "samping"
+    },
+    {
+      "ko": "집",
+      "baca": "jip",
+      "id": "rumah"
+    },
+    {
+      "ko": "도서관",
+      "baca": "doseogwan",
+      "id": "perpustakaan"
+    },
+    {
+      "ko": "식당",
+      "baca": "sikdang",
+      "id": "rumah makan"
+    },
+    {
+      "ko": "화장실",
+      "baca": "hwajangsil",
+      "id": "kamar kecil"
+    },
+    {
+      "ko": "공부해요",
+      "baca": "gongbuhaeyo",
+      "id": "belajar"
+    },
+    {
+      "ko": "일해요",
+      "baca": "ilhaeyo",
+      "id": "bekerja"
+    },
+    {
+      "ko": "가요",
+      "baca": "gayo",
+      "id": "pergi"
+    },
+    {
+      "ko": "같이",
+      "baca": "gachi",
+      "id": "bersama"
+    },
+    {
+      "ko": "그런데",
+      "baca": "geureonde",
+      "id": "ngomong-ngomong, tapi"
+    },
+    {
+      "ko": "다행이에요",
+      "baca": "dahaengieyo",
+      "id": "syukurlah"
+    },
+    {
+      "ko": "오늘",
+      "baca": "oneul",
+      "id": "hari ini"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Korea.",
+      "items": [
+        "Kunci saya ada di dalam tas.",
+        "Kamusnya tidak ada.",
+        "Ada di mana?",
+        "Perpustakaan ada di sebelah sekolah.",
+        "Saya belajar di perpustakaan.",
+        "Saya pergi ke rumah."
+      ]
+    },
+    {
+      "prompt": "Isi dengan 에 atau 에서.",
+      "items": [
+        "저는 학교____ 가요.",
+        "도서관____ 공부해요.",
+        "책이 책상 위____ 있어요.",
+        "집____ 일해요.",
+        "인도네시아____ 왔어요.",
+        "세 시____ 만나요."
+      ]
+    },
+    {
+      "prompt": "Isi dengan 있어요 atau 없어요 sesuai artinya.",
+      "items": [
+        "Ada di dalam tas: 가방 안에 ____.",
+        "Tidak ada di atas meja: 책상 위에 ____.",
+        "Saya punya teman Korea: 한국 친구가 ____.",
+        "Saya tidak punya uang: 돈이 ____.",
+        "Kamar kecilnya ada di sana: 화장실은 저기에 ____."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "있어요 / 열쇠가 / 안에 / 가방",
+        "어디에 / 사전은 / ? / 있어요",
+        "공부해요 / 도서관에서 / 저는",
+        "옆에 / 학교 / 도서관은 / 있어요",
+        "없어요 / 위에 / 책상 / 아무것도"
+      ]
+    }
+  ],
+  "answers": [
+    "제 열쇠가 가방 안에 있어요. — 사전이 없어요. — 어디에 있어요? — 도서관은 학교 옆에 있어요. — 저는 도서관에서 공부해요. — 저는 집에 가요.",
+    "에 — 에서 — 에 — 에서 — 에서 — 에",
+    "있어요 — 없어요 — 있어요 — 없어요 — 있어요",
+    "열쇠가 가방 안에 있어요. — 사전은 어디에 있어요? — 저는 도서관에서 공부해요. — 도서관은 학교 옆에 있어요. — 책상 위에 아무것도 없어요."
+  ]
+}

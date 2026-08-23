@@ -1,0 +1,507 @@
+{
+  "title": "Jam berapa, hari apa",
+  "title_target": "몇 시예요 — Myeot siyeyo",
+  "goal": "Menyebut jam dengan dua sistem angka sekaligus, menyebut hari dan tanggal, membuat janji, dan memakai 부터 … 까지 untuk rentang waktu.",
+  "bekal": [
+    "membaca jam dengan angka asli Korea dan menit dengan angka Tionghoa",
+    "menyebut tujuh hari dalam seminggu",
+    "membaca tanggal dari yang besar ke yang kecil",
+    "memakai 에 untuk waktu dan mengetahui kapan ia dibuang",
+    "membuat janji sederhana dengan 언제 dan 몇 시에"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Membuat janji",
+      "intro": "Suji mengajak Ani belajar bersama. Perhatikan bahwa dalam satu kalimat waktu, kedua sistem angka bekerja bersamaan tanpa saling mengganggu.",
+      "lines": [
+        {
+          "speaker": "수지:",
+          "text": "[아니|Ani] [씨|ssi], [오늘|oneul] [몇|myeot] [시에|sie] [수업이|sueobi] [끝나요|kkeunnayo]?",
+          "id": "Ani, hari ini kelasnya selesai jam berapa?",
+          "literal": "Ani — tuan, hari-ini — berapa — jam-pada — kelas — yang — selesai?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne] [시에|sie] [끝나요|kkeunnayo]. [왜요|Waeyo]?",
+          "id": "Selesai jam empat. Kenapa?",
+          "literal": "empat — jam-pada — selesai. kenapa — nya?"
+        },
+        {
+          "speaker": "수지:",
+          "text": "[같이|Gachi] [공부해요|gongbuhaeyo]. [네|Ne] [시|si] [반에|bane] [어때요|eottaeyo]?",
+          "id": "Ayo belajar bersama. Jam setengah lima bagaimana?",
+          "literal": "bersama — belajar. empat — jam — setengah-pada — bagaimana?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[좋아요|Joayo]. [어디에서|Eodieseo] [만나요|mannayo]?",
+          "id": "Boleh. Ketemu di mana?",
+          "literal": "baik. mana-di-tempat — bertemu?"
+        },
+        {
+          "speaker": "수지:",
+          "text": "[도서관|Doseogwan] [앞에서|apeseo] [만나요|mannayo]. [도서관은|Doseogwaneun] [아홉|ahop] [시부터|sibuteo] [열|yeol] [시까지|sikkaji] [열어요|yeoreoyo].",
+          "id": "Ketemu di depan perpustakaan. Perpustakaan buka dari pukul sembilan sampai pukul sepuluh.",
+          "literal": "perpustakaan — depan-di-tempat — bertemu. perpustakaan — mengenai — sembilan — jam-dari — sepuluh — jam-sampai — buka."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[알겠어요|Algesseoyo]. [그런데|Geureonde] [내일은|naeireun] [무슨|museun] [요일이에요|yoirieyo]?",
+          "id": "Baik. Ngomong-ngomong, besok hari apa?",
+          "literal": "mengerti-sudah. omong-omong, besok — mengenai — apa — hari — adalah?"
+        },
+        {
+          "speaker": "수지:",
+          "text": "[내일은|Naeireun] [금요일이에요|geumyoirieyo]. [모레는|Moreneun] [토요일이에요|toyoirieyo].",
+          "id": "Besok Jumat. Lusa Sabtu.",
+          "literal": "besok — mengenai — Jumat — adalah. lusa — mengenai — Sabtu — adalah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[토요일에|Toyoire] [시험이|siheomi] [있어요|isseoyo]?",
+          "id": "Sabtu ada ujian?",
+          "literal": "Sabtu-pada — ujian — yang — ada?"
+        },
+        {
+          "speaker": "수지:",
+          "text": "[아니요|Aniyo], [시험은|siheomeun] [다음|daeum] [주|ju] [월요일이에요|woryoirieyo]. [유월|Yuwol] [십오일이에요|sibo-irieyo].",
+          "id": "Bukan, ujiannya Senin minggu depan. Tanggal lima belas Juni.",
+          "literal": "tidak, ujian — mengenai — berikut — minggu — Senin — adalah. Juni — lima-belas-hari — adalah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[아직|Ajik] [시간이|sigani] [있어요|isseoyo]. [다행이에요|Dahaengieyo].",
+          "id": "Masih ada waktu. Syukurlah.",
+          "literal": "masih — waktu — yang — ada. syukur — adalah."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[그럼|Geureom] [이따가|ittaga] [봐요|bwayo]!",
+          "id": "Kalau begitu, sampai nanti!",
+          "literal": "kalau-begitu, nanti — bertemu!"
+        }
+      ],
+      "notes": [
+        "**Satu kalimat jam memakai kedua sistem angka.** 네 시 십 분 = pukul empat lewat sepuluh menit. **네** angka asli Korea untuk jamnya, **십** angka Tionghoa untuk menitnya. Ini bukan kekacauan: jam dihitung sebagai *jumlah*, menit dibaca sebagai *bilangan*. Sekali kamu menerimanya, ia tidak pernah membingungkan lagi.",
+        "**반 berarti setengah, dan diletakkan sesudah 시.** 네 시 반 = setengah lima. ⚠️ Perhatikan bahwa Korea menghitung dari jam yang **sudah lewat** (\"empat jam setengah\"), sedangkan Indonesia menyebut jam yang **akan datang** (\"setengah lima\"). Angkanya selalu selisih satu, dan itu jebakan yang halus.",
+        "**Partikel waktu 에 dipakai untuk jam, hari, dan tanggal — tapi tidak untuk semua kata waktu.** 세 시**에**, 월요일**에**, 유월**에** semuanya memakai 에. Tetapi **오늘, 내일, 어제, 지금, 언제, 매일** tidak pernah memakainya. 오늘에 만나요 salah; yang benar 오늘 만나요.",
+        "**부터 … 까지 untuk waktu, 에서 … 까지 untuk tempat.** 아홉 시**부터** 열 시**까지** (dari jam sembilan sampai jam sepuluh); 집**에서** 학교**까지** (dari rumah sampai sekolah). Dua pasangan yang mudah tertukar dan langsung terdengar salah kalau tertukar.",
+        "**무슨 요일이에요? adalah cara baku menanyakan hari.** Perhatikan bahwa 무슨 (\"apa\") dipakai di depan kata benda, sedangkan 뭐 berdiri sendiri. 무슨 책이에요? (buku apa?) tapi 이거 뭐예요? (ini apa?).",
+        "**알겠어요 berarti \"saya mengerti\" atau \"baik\".** Ia bentuk lampau dari 알다 (tahu) tapi artinya sekarang — semacam \"sudah tertangkap\". Lawannya 모르겠어요 (\"saya kurang tahu\"), yang jauh lebih halus daripada 몰라요 (\"tidak tahu\") yang bisa terdengar ketus.",
+        "**어때요? adalah pisau lipat percakapan.** Berarti \"bagaimana?\", dipakai untuk menawarkan (네 시 반에 어때요?), menanyakan pendapat (이거 어때요?), dan menanyakan keadaan (한국 생활 어때요?). Satu kata, tiga pekerjaan.",
+        "**이따가 dan 나중에 dua-duanya berarti \"nanti\".** 이따가 berarti nanti **hari ini juga**, dalam hitungan jam. 나중에 berarti nanti yang tak tentu — bisa minggu depan, bisa tidak pernah. Berjanji 나중에 봐요 kepada seseorang tidak mengikat siapa pun."
+      ],
+      "grammars": [
+        {
+          "title": "Membaca jam",
+          "body": [
+            "Jam memakai **angka asli Korea + 시**. Menit memakai **angka Tionghoa + 분**. Tidak ada pengecualian."
+          ],
+          "table": {
+            "head": [
+              "Jam",
+              "Korea",
+              "Baca"
+            ],
+            "rows": [
+              [
+                "01.00",
+                "한 시",
+                "han si"
+              ],
+              [
+                "02.00",
+                "두 시",
+                "du si"
+              ],
+              [
+                "03.30",
+                "세 시 반",
+                "se si ban"
+              ],
+              [
+                "04.10",
+                "네 시 십 분",
+                "ne si sip bun"
+              ],
+              [
+                "07.15",
+                "일곱 시 십오 분",
+                "ilgop si sibo bun"
+              ],
+              [
+                "09.45",
+                "아홉 시 사십오 분",
+                "ahop si sasibo bun"
+              ],
+              [
+                "12.00 siang",
+                "낮 열두 시",
+                "nat yeoldu si"
+              ],
+              [
+                "Jam berapa?",
+                "몇 시예요?",
+                "myeot siyeyo"
+              ],
+              [
+                "Pukul berapa (bertemu)?",
+                "몇 시에 만나요?",
+                "myeot sie mannayo"
+              ]
+            ]
+          },
+          "after": [
+            "**오전 dan 오후 diletakkan di depan**, bukan di belakang: 오전 아홉 시 (pukul sembilan pagi), 오후 세 시 (pukul tiga sore). Untuk malam dipakai 저녁 atau 밤: 밤 열 시.",
+            "Korea tidak memakai penanda pagi/sore sesering Indonesia karena jam 24 lebih umum di jadwal tertulis. Di percakapan, konteks biasanya sudah cukup."
+          ]
+        },
+        {
+          "title": "Hari dan tanggal",
+          "body": [
+            "Tujuh hari dibentuk dari satu pola: unsur alam + 요일. Tanggal memakai angka Tionghoa sepenuhnya."
+          ],
+          "table": {
+            "head": [
+              "Hari",
+              "Korea",
+              "Unsurnya",
+              "Hari",
+              "Korea",
+              "Unsurnya"
+            ],
+            "rows": [
+              [
+                "Senin",
+                "월요일",
+                "월 = bulan",
+                "Jumat",
+                "금요일",
+                "금 = emas"
+              ],
+              [
+                "Selasa",
+                "화요일",
+                "화 = api",
+                "Sabtu",
+                "토요일",
+                "토 = tanah"
+              ],
+              [
+                "Rabu",
+                "수요일",
+                "수 = air",
+                "Minggu",
+                "일요일",
+                "일 = matahari"
+              ],
+              [
+                "Kamis",
+                "목요일",
+                "목 = kayu",
+                "akhir pekan",
+                "주말",
+                "주 = minggu"
+              ]
+            ]
+          },
+          "after": [
+            "**Tanggal ditulis dari yang besar ke yang kecil: tahun – bulan – hari.** 2026년 6월 15일 = 15 Juni 2026. Kebalikan penuh dari kebiasaan Indonesia, dan ini berlaku juga untuk alamat: negara, kota, jalan, nomor.",
+            "⚠️ **Dua bulan menyimpang dari polanya.** Juni seharusnya 육월 tapi ditulis dan dibaca **유월**; Oktober seharusnya 십월 tapi menjadi **시월**. Alasannya semata kemudahan ucapan. Hafalkan dua ini terpisah — semua bulan lain mengikuti pola angka + 월."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata waktu yang paling sering dipakai",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "한국어",
+            "Baca",
+            "Indonesia",
+            "한국어",
+            "Baca",
+            "Indonesia"
+          ],
+          "rows": [
+            [
+              "그저께",
+              "geujeokke",
+              "kemarin lusa",
+              "지난주",
+              "jinanju",
+              "minggu lalu"
+            ],
+            [
+              "어제",
+              "eoje",
+              "kemarin",
+              "이번 주",
+              "ibeon ju",
+              "minggu ini"
+            ],
+            [
+              "오늘",
+              "oneul",
+              "hari ini",
+              "다음 주",
+              "daeum ju",
+              "minggu depan"
+            ],
+            [
+              "내일",
+              "naeil",
+              "besok",
+              "지난달",
+              "jinandal",
+              "bulan lalu"
+            ],
+            [
+              "모레",
+              "more",
+              "lusa",
+              "다음 달",
+              "daeum dal",
+              "bulan depan"
+            ],
+            [
+              "아침",
+              "achim",
+              "pagi",
+              "지금",
+              "jigeum",
+              "sekarang"
+            ],
+            [
+              "점심",
+              "jeomsim",
+              "tengah hari",
+              "이따가",
+              "ittaga",
+              "nanti (hari ini)"
+            ],
+            [
+              "저녁",
+              "jeonyeok",
+              "petang",
+              "나중에",
+              "najunge",
+              "nanti (tak tentu)"
+            ],
+            [
+              "밤",
+              "bam",
+              "malam",
+              "언제",
+              "eonje",
+              "kapan"
+            ],
+            [
+              "주말",
+              "jumal",
+              "akhir pekan",
+              "시간",
+              "sigan",
+              "waktu, jam (lama)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "시 lawan 시간",
+          "items": [
+            "**시** menyebut titik waktu: 세 시 = pukul tiga.",
+            "**시간** menyebut lamanya: 세 시간 = tiga jam.",
+            "세 시에 만나요 = bertemu pukul tiga. 세 시간 공부해요 = belajar selama tiga jam. Satu suku kata bedanya, dan artinya jauh berbeda.",
+            "Pola yang sama berlaku untuk 분: 십 분 bisa berarti \"pukul sepuluh menit\" maupun \"sepuluh menit lamanya\" — di sini konteks yang menyelamatkan."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "시",
+      "baca": "si",
+      "id": "jam, pukul"
+    },
+    {
+      "ko": "분",
+      "baca": "bun",
+      "id": "menit"
+    },
+    {
+      "ko": "반",
+      "baca": "ban",
+      "id": "setengah"
+    },
+    {
+      "ko": "시간",
+      "baca": "sigan",
+      "id": "waktu, jam (lamanya)"
+    },
+    {
+      "ko": "몇 시",
+      "baca": "myeot si",
+      "id": "jam berapa"
+    },
+    {
+      "ko": "언제",
+      "baca": "eonje",
+      "id": "kapan"
+    },
+    {
+      "ko": "요일",
+      "baca": "yoil",
+      "id": "hari (dalam minggu)"
+    },
+    {
+      "ko": "무슨",
+      "baca": "museun",
+      "id": "apa (di depan kata benda)"
+    },
+    {
+      "ko": "월요일",
+      "baca": "woryoil",
+      "id": "Senin"
+    },
+    {
+      "ko": "금요일",
+      "baca": "geumyoil",
+      "id": "Jumat"
+    },
+    {
+      "ko": "토요일",
+      "baca": "toyoil",
+      "id": "Sabtu"
+    },
+    {
+      "ko": "일요일",
+      "baca": "iryoil",
+      "id": "Minggu"
+    },
+    {
+      "ko": "주말",
+      "baca": "jumal",
+      "id": "akhir pekan"
+    },
+    {
+      "ko": "내일",
+      "baca": "naeil",
+      "id": "besok"
+    },
+    {
+      "ko": "모레",
+      "baca": "more",
+      "id": "lusa"
+    },
+    {
+      "ko": "다음 주",
+      "baca": "daeum ju",
+      "id": "minggu depan"
+    },
+    {
+      "ko": "부터",
+      "baca": "buteo",
+      "id": "dari (waktu)"
+    },
+    {
+      "ko": "까지",
+      "baca": "kkaji",
+      "id": "sampai"
+    },
+    {
+      "ko": "수업",
+      "baca": "sueop",
+      "id": "kelas, pelajaran"
+    },
+    {
+      "ko": "시험",
+      "baca": "siheom",
+      "id": "ujian"
+    },
+    {
+      "ko": "끝나요",
+      "baca": "kkeunnayo",
+      "id": "selesai"
+    },
+    {
+      "ko": "열어요",
+      "baca": "yeoreoyo",
+      "id": "buka"
+    },
+    {
+      "ko": "어때요",
+      "baca": "eottaeyo",
+      "id": "bagaimana"
+    },
+    {
+      "ko": "알겠어요",
+      "baca": "algesseoyo",
+      "id": "saya mengerti, baik"
+    },
+    {
+      "ko": "이따가",
+      "baca": "ittaga",
+      "id": "nanti (hari ini)"
+    },
+    {
+      "ko": "아직",
+      "baca": "ajik",
+      "id": "masih, belum"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis jam berikut dalam hangeul.",
+      "items": [
+        "pukul 02.00",
+        "pukul 04.30",
+        "pukul 07.20",
+        "pukul 09.00",
+        "pukul 12.15"
+      ]
+    },
+    {
+      "prompt": "Isi dengan 에 atau tanda hubung kosong kalau partikelnya tidak dipakai. Tulis 에 atau X.",
+      "items": [
+        "세 시____ 만나요.",
+        "오늘____ 수업이 있어요.",
+        "월요일____ 시험이 있어요.",
+        "내일____ 도서관에 가요.",
+        "저녁____ 드라마를 봐요.",
+        "지금____ 뭐 해요?"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Korea.",
+      "items": [
+        "Sekarang jam berapa?",
+        "Besok hari apa?",
+        "Ujiannya hari Senin.",
+        "Perpustakaan buka dari pukul sembilan sampai pukul sepuluh.",
+        "Ayo bertemu pukul setengah lima."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "만나요 / 시에 / 네 / 도서관에서",
+        "시험이 / 다음 주 / 있어요 / 월요일에",
+        "끝나요 / 몇 / 수업이 / 시에 / ?",
+        "열어요 / 열 / 아홉 / 시까지 / 시부터",
+        "요일이에요 / 내일은 / 무슨 / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "두 시 — 네 시 반 — 일곱 시 이십 분 — 아홉 시 — 열두 시 십오 분",
+    "에 — X — 에 — X — 에 — X",
+    "지금 몇 시예요? — 내일은 무슨 요일이에요? — 시험은 월요일이에요. — 도서관은 아홉 시부터 열 시까지 열어요. — 네 시 반에 만나요.",
+    "네 시에 도서관에서 만나요. — 다음 주 월요일에 시험이 있어요. — 수업이 몇 시에 끝나요? — 아홉 시부터 열 시까지 열어요. — 내일은 무슨 요일이에요?"
+  ]
+}

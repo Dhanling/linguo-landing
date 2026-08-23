@@ -1,0 +1,465 @@
+{
+  "title": "Ini apa, dan punya siapa",
+  "title_target": "이거 뭐예요 — Igeo mwoyeyo",
+  "goal": "Menunjuk benda menurut jaraknya, menanyakan namanya dalam bahasa Korea, menyatakan kepemilikan, dan — yang paling penting — mulai membedakan partikel 은/는 dari 이/가.",
+  "bekal": [
+    "membedakan 이거, 그거, dan 저거 menurut siapa yang dekat dengannya",
+    "memakai 이, 그, 저 di depan kata benda",
+    "menyatakan milik dengan 의 dan membuangnya seperti orang Korea",
+    "bertanya *punya siapa* dengan 누구 거",
+    "mengenali kapan sebuah kalimat memakai 이/가 dan bukan 은/는"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Barang tertinggal di ruang kelas",
+      "intro": "Sesudah kelas usai, Ani menemukan beberapa barang di atas meja. Perhatikan bagaimana kata tunjuknya berganti mengikuti siapa yang lebih dekat dengan bendanya, bukan sekadar jauh atau dekat.",
+      "lines": [
+        {
+          "speaker": "아니:",
+          "text": "[민준|Minjun] [씨|ssi], [이거|igeo] [뭐예요|mwoyeyo]?",
+          "id": "Minjun, ini apa?",
+          "literal": "Minjun — tuan, ini — apa — adalah?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[그거는|Geugeoneun] [사전이에요|sajeonieyo]. [한국어|Hangugeo] [사전이에요|sajeonieyo].",
+          "id": "Itu kamus. Kamus bahasa Korea.",
+          "literal": "itu — mengenai — kamus — adalah. Korea-bahasa — kamus — adalah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[그럼|Geureom] [저거는|jeogeoneun] [뭐예요|mwoyeyo]?",
+          "id": "Kalau begitu, yang di sana itu apa?",
+          "literal": "kalau-begitu, itu-jauh — mengenai — apa — adalah?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[저거는|Jeogeoneun] [시계예요|sigyeyeyo]. [교실|Gyosil] [시계예요|sigyeyeyo].",
+          "id": "Yang di sana itu jam. Jam ruang kelas.",
+          "literal": "itu-jauh — mengenai — jam — adalah. kelas — jam — adalah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[이|I] [책은|chaegeun] [누구|nugu] [거예요|geoyeyo]?",
+          "id": "Buku ini punya siapa?",
+          "literal": "ini — buku — mengenai — siapa — punya — adalah?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[그거는|Geugeoneun] [제|je] [거예요|geoyeyo]. [고맙습니다|Gomapseumnida].",
+          "id": "Itu punya saya. Terima kasih.",
+          "literal": "itu — mengenai — saya-punya — barang — adalah. terima-kasih."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[이|I] [가방도|gabangdo] [민준|Minjun] [씨|ssi] [거예요|geoyeyo]?",
+          "id": "Tas ini juga punya Minjun?",
+          "literal": "ini — tas — juga — Minjun — tuan — punya — adalah?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[아니요|Aniyo], [제|je] [가방이|gabangi] [아니에요|anieyo]. [수지|Suji] [씨|ssi] [거예요|geoyeyo].",
+          "id": "Bukan, itu bukan tas saya. Punya Suji.",
+          "literal": "tidak, saya-punya — tas — yang — bukan. Suji — tuan — punya — adalah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[수지|Suji] [씨가|ssiga] [누구예요|nuguyeyo]?",
+          "id": "Suji itu siapa?",
+          "literal": "Suji — tuan — yang — siapa — adalah?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[제|Je] [친구예요|chinguyeyo]. [저|Jeo] [사람이|sarami] [수지|Suji] [씨예요|ssiyeyo].",
+          "id": "Teman saya. Orang yang di sana itu Suji.",
+          "literal": "saya-punya — teman — adalah. itu-jauh — orang — yang — Suji — tuan — adalah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[아|A], [그래요|geuraeyo]? [저도|Jeodo] [친구가|chinguga] [되고|doego] [싶어요|sipeoyo].",
+          "id": "Oh begitu? Saya juga ingin jadi teman.",
+          "literal": "ah, begitu — adalah? saya — juga — teman — yang — menjadi — ingin."
+        }
+      ],
+      "notes": [
+        "**Jaraknya diukur dari dua orang, bukan satu.** 이거 = dekat **pembicara**. 그거 = dekat **lawan bicara**. 저거 = jauh dari **keduanya**. Itulah sebabnya Ani bertanya 이거 (benda di tangannya) dan Minjun menjawab 그거 (benda itu jauh darinya). Dua kata berbeda untuk benda yang sama. Pemula Indonesia sering mengira 그거 berarti \"itu yang agak jauh\"; sebenarnya artinya \"yang di sisimu\".",
+        "**이거/그거/저거 adalah bentuk lisan yang dipendekkan.** Bentuk lengkapnya 이것/그것/저것. Di percakapan hampir selalu dipendekkan; di tulisan resmi dan ujian dipakai bentuk panjangnya. Begitu ditempeli partikel, ada dua kemungkinan: 이거는 (lisan santai) atau 이것은 (tulis). Modul ini memakai bentuk lisan.",
+        "**이/그/저 tanpa 거 dipakai di depan kata benda.** 이 책 = buku ini, 그 가방 = tas itu, 저 사람 = orang di sana. ⚠️ Jangan menulis 이거 책 — itu berarti \"ini buku\" sebagai dua benda terpisah. Kalau ada kata bendanya, pakai 이 saja.",
+        "**거 di 제 거 berarti \"barang milik\".** Bentuk lengkapnya 것. 제 거 = punya saya, 민준 씨 거 = punya Minjun, 누구 거 = punya siapa. Kata bendanya boleh dibuang kalau sudah jelas: 그거는 제 거예요 = \"itu punyaku\", tanpa perlu mengulang \"buku\".",
+        "**Partikel milik 의 hampir selalu dibuang.** 제 친구의 가방 secara tata bahasa benar, tapi orang Korea mengucapkannya 제 친구 가방. Dua kata benda yang berdempetan sudah dianggap hubungan milik. Simpan 의 untuk tulisan resmi; di lisan buang saja. Perhatikan juga bahwa 의 di sini dibaca *e*, bukan *ui*.",
+        "**도 menggantikan partikel, tidak menumpuk padanya.** 이 가방**은** → 이 가방**도** (tas ini juga). ⚠️ Jangan menulis 이 가방은도. Aturan yang sama berlaku untuk 이/가 dan 을/를: 제가 → 저도, 책을 → 책도.",
+        "**고맙습니다 dan 감사합니다 sama-sama \"terima kasih\".** 감사합니다 berasal dari kata serapan Tionghoa dan terdengar sedikit lebih resmi; 고맙습니다 kata asli Korea dan terdengar sedikit lebih hangat. Keduanya aman kepada siapa pun. Bentuk sehari-harinya 고마워요.",
+        "**저 sebagai \"saya\" dan 저 sebagai \"yang di sana\" adalah dua kata yang kebetulan sama.** Konteksnya yang membedakan, dan dalam praktik tidak pernah membingungkan: 저 사람 hampir mustahil berarti \"orang saya\"."
+      ],
+      "grammars": [
+        {
+          "title": "은/는 lawan 이/가 — perbedaan yang paling menentukan",
+          "body": [
+            "Ini pelajaran terpenting di seluruh modul, dan ia tidak akan tuntas hari ini. Yang perlu kamu bawa dari unit ini bukan penguasaan, melainkan **kesadaran bahwa keduanya bukan hal yang sama**.",
+            "Bahasa Indonesia hanya punya satu \"subjek\", bahasa Korea membelahnya jadi dua peran berbeda: apa yang sedang **dibicarakan** (topik, 은/는) dan siapa yang **melakukan atau dipilih** (subjek, 이/가)."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Sesudah vokal",
+              "Sesudah konsonan",
+              "Pekerjaannya"
+            ],
+            "rows": [
+              [
+                "Topik",
+                "**는**",
+                "**은**",
+                "menetapkan apa yang sedang dibahas"
+              ],
+              [
+                "Subjek",
+                "**가**",
+                "**이**",
+                "menunjuk pelaku atau yang dipilih"
+              ],
+              [
+                "Contoh topik",
+                "저**는** 학생이에요",
+                "이 책**은** 제 거예요",
+                "\"mengenai saya…\", \"mengenai buku ini…\""
+              ],
+              [
+                "Contoh subjek",
+                "수지 씨**가** 누구예요?",
+                "누구**가** 왔어요?",
+                "\"siapa itu Suji?\", \"siapa yang datang?\""
+              ]
+            ]
+          },
+          "after": [
+            "**Patokan pertama yang bisa langsung dipakai: pertanyaan dengan 누구, 뭐, 어느 memakai 이/가, bukan 은/는.** 수지 씨**가** 누구예요? benar; 수지 씨는 누구예요? terdengar seperti sedang membandingkan Suji dengan orang lain.",
+            "**Patokan kedua: 은/는 selalu membawa nuansa membandingkan, walau tidak diucapkan.** Ketika Minjun berkata 그거는 제 거예요, tersirat \"yang itu punya saya (yang lain belum tentu)\". Nuansa itulah yang hilang kalau kamu memakai 이/가.",
+            "**Patokan ketiga: kalimat perkenalan diri hampir selalu memakai 은/는.** 저**는** 아니예요. Kamu sedang menetapkan dirimu sebagai topik pembicaraan, bukan memilih dirimu dari sekumpulan orang.",
+            "⚠️ Jangan mencoba menghafal aturan lengkapnya sekarang. Orang Korea sendiri tidak bisa menjelaskannya. Yang berhasil adalah memperhatikan mana yang dipakai di tiap dialog modul ini, dan meniru."
+          ]
+        },
+        {
+          "title": "Kata tanya dasar",
+          "body": [
+            "Enam kata tanya berikut sudah cukup untuk bertahan di percakapan sehari-hari. Semuanya diletakkan **di tempat jawabannya akan berada**, bukan dipindah ke depan kalimat seperti bahasa Inggris."
+          ],
+          "table": {
+            "head": [
+              "Korea",
+              "Baca",
+              "Arti",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "뭐 / 무엇",
+                "mwo / mueot",
+                "apa",
+                "이거 **뭐**예요?"
+              ],
+              [
+                "누구",
+                "nugu",
+                "siapa",
+                "**누구** 거예요?"
+              ],
+              [
+                "어디",
+                "eodi",
+                "di mana",
+                "화장실이 **어디**예요?"
+              ],
+              [
+                "언제",
+                "eonje",
+                "kapan",
+                "시험이 **언제**예요?"
+              ],
+              [
+                "왜",
+                "wae",
+                "kenapa",
+                "**왜** 안 와요?"
+              ],
+              [
+                "몇",
+                "myeot",
+                "berapa (jumlah)",
+                "**몇** 개예요?"
+              ],
+              [
+                "얼마",
+                "eolma",
+                "berapa (harga)",
+                "**얼마**예요?"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan 이거 뭐예요? — kata tanyanya berada persis di tempat kata bendanya akan muncul di jawaban: 이거 사전이에요. Susunan kalimatnya tidak berubah sedikit pun antara tanya dan jawab.",
+            "누구 berubah bentuk jadi **누가** ketika ia menjadi subjek: 누**가** 왔어요? (siapa yang datang?), bukan 누구가. Ini satu-satunya kata tanya yang bentuknya berubah, dan ia sering muncul."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Benda-benda di sekitarmu",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kosakata benda yang paling sering ditunjuk di kelas, di kamar, dan di tas. Latih dengan menunjuk benda sungguhan di sekitarmu sambil mengucapkan 이거 …이에요."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "한국어",
+            "Baca",
+            "Indonesia",
+            "한국어",
+            "Baca",
+            "Indonesia"
+          ],
+          "rows": [
+            [
+              "책",
+              "chaek",
+              "buku",
+              "가방",
+              "gabang",
+              "tas"
+            ],
+            [
+              "공책",
+              "gongchaek",
+              "buku tulis",
+              "지갑",
+              "jigap",
+              "dompet"
+            ],
+            [
+              "펜",
+              "pen",
+              "pena",
+              "우산",
+              "usan",
+              "payung"
+            ],
+            [
+              "연필",
+              "yeonpil",
+              "pensil",
+              "휴대폰",
+              "hyudaepon",
+              "ponsel"
+            ],
+            [
+              "사전",
+              "sajeon",
+              "kamus",
+              "컴퓨터",
+              "keompyuteo",
+              "komputer"
+            ],
+            [
+              "시계",
+              "sigye",
+              "jam",
+              "안경",
+              "angyeong",
+              "kacamata"
+            ],
+            [
+              "의자",
+              "uija",
+              "kursi",
+              "열쇠",
+              "yeolsoe",
+              "kunci"
+            ],
+            [
+              "책상",
+              "chaeksang",
+              "meja belajar",
+              "창문",
+              "changmun",
+              "jendela"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "휴대폰 dan saudara-saudaranya",
+          "items": [
+            "Ponsel punya tiga nama yang sama-sama dipakai: **휴대폰** (yang paling netral), **핸드폰** (dari *hand phone*, sangat umum di lisan), dan **폰** saja di antara anak muda.",
+            "Bahasa Korea penuh serapan Inggris yang bunyinya digeser mengikuti hangeul: 컴퓨터 (*computer*), 펜 (*pen*), 커피 (*coffee*), 버스 (*bus*), 택시 (*taxi*). Menebaknya sering berhasil — tapi jangan terlalu percaya diri: 아르바이트 (kerja paruh waktu) datang dari bahasa Jerman, dan 원피스 berarti gaun, bukan gulat."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "이거",
+      "baca": "igeo",
+      "id": "ini (dekat saya)"
+    },
+    {
+      "ko": "그거",
+      "baca": "geugeo",
+      "id": "itu (dekat kamu)"
+    },
+    {
+      "ko": "저거",
+      "baca": "jeogeo",
+      "id": "itu (jauh dari kita berdua)"
+    },
+    {
+      "ko": "거 / 것",
+      "baca": "geo / geot",
+      "id": "barang, milik"
+    },
+    {
+      "ko": "누구",
+      "baca": "nugu",
+      "id": "siapa"
+    },
+    {
+      "ko": "누가",
+      "baca": "nuga",
+      "id": "siapa (sebagai subjek)"
+    },
+    {
+      "ko": "책",
+      "baca": "chaek",
+      "id": "buku"
+    },
+    {
+      "ko": "가방",
+      "baca": "gabang",
+      "id": "tas"
+    },
+    {
+      "ko": "사전",
+      "baca": "sajeon",
+      "id": "kamus"
+    },
+    {
+      "ko": "시계",
+      "baca": "sigye",
+      "id": "jam"
+    },
+    {
+      "ko": "교실",
+      "baca": "gyosil",
+      "id": "ruang kelas"
+    },
+    {
+      "ko": "친구",
+      "baca": "chingu",
+      "id": "teman"
+    },
+    {
+      "ko": "한국어",
+      "baca": "hangugeo",
+      "id": "bahasa Korea"
+    },
+    {
+      "ko": "그럼",
+      "baca": "geureom",
+      "id": "kalau begitu"
+    },
+    {
+      "ko": "의",
+      "baca": "e",
+      "id": "partikel milik"
+    },
+    {
+      "ko": "고맙습니다",
+      "baca": "gomapseumnida",
+      "id": "terima kasih"
+    },
+    {
+      "ko": "휴대폰",
+      "baca": "hyudaepon",
+      "id": "ponsel"
+    },
+    {
+      "ko": "컴퓨터",
+      "baca": "keompyuteo",
+      "id": "komputer"
+    },
+    {
+      "ko": "지갑",
+      "baca": "jigap",
+      "id": "dompet"
+    },
+    {
+      "ko": "우산",
+      "baca": "usan",
+      "id": "payung"
+    },
+    {
+      "ko": "안경",
+      "baca": "angyeong",
+      "id": "kacamata"
+    },
+    {
+      "ko": "열쇠",
+      "baca": "yeolsoe",
+      "id": "kunci"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Korea.",
+      "items": [
+        "Ini apa?",
+        "Itu kamus.",
+        "Buku ini punya siapa?",
+        "Itu punya saya.",
+        "Tas itu bukan tas saya.",
+        "Orang yang di sana itu teman saya."
+      ]
+    },
+    {
+      "prompt": "Isi dengan 이거, 그거, atau 저거.",
+      "items": [
+        "Benda ada di tanganmu, kamu bertanya: ____ 뭐예요?",
+        "Benda ada di tangan lawan bicaramu: ____ 뭐예요?",
+        "Benda ada di ujung ruangan, jauh dari kalian berdua: ____ 뭐예요?",
+        "Lawan bicaramu memegang buku, kamu bertanya milik siapa: ____ 누구 거예요?",
+        "Kamu memegang pena, kamu bilang itu punyamu: ____ 제 거예요."
+      ]
+    },
+    {
+      "prompt": "Isi dengan 은, 는, 이, atau 가.",
+      "items": [
+        "저____ 인도네시아 사람이에요.",
+        "수지 씨____ 누구예요?",
+        "이 책____ 제 거예요.",
+        "누____ 선생님이에요?",
+        "그 가방____ 민준 씨 거예요.",
+        "이름____ 뭐예요?"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "뭐예요 / 이거 / ?",
+        "제 / 그거는 / 거예요",
+        "누구 / 이 / 거예요 / 책은 / ?",
+        "친구예요 / 사람이 / 저 / 제",
+        "아니에요 / 가방이 / 제"
+      ]
+    }
+  ],
+  "answers": [
+    "이거 뭐예요? — 그거는 사전이에요. — 이 책은 누구 거예요? — 그거는 제 거예요. — 그 가방은 제 가방이 아니에요. — 저 사람이 제 친구예요.",
+    "이거 — 그거 — 저거 — 그거 — 이거",
+    "는 — 가 — 은 — 가 — 은 — 이",
+    "이거 뭐예요? — 그거는 제 거예요. — 이 책은 누구 거예요? — 저 사람이 제 친구예요. — 제 가방이 아니에요."
+  ]
+}

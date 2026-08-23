@@ -1,0 +1,521 @@
+{
+  "title": "Bisa, tidak bisa, boleh, harus",
+  "title_target": "할 수 있어요 — Hal su isseoyo",
+  "goal": "Menyatakan kemampuan, izin, dan keharusan — dan menolak sesuatu dengan cara yang tidak membuat orang tersinggung, yang di Korea sama pentingnya dengan tata bahasanya sendiri.",
+  "bekal": [
+    "menyatakan kemampuan dengan -(으)ㄹ 수 있어요 dan -(으)ㄹ 수 없어요",
+    "membedakan 못 dari 안 dan dari -지 않아요",
+    "meminta dan memberi izin dengan -아도/어도 돼요",
+    "menyatakan keharusan dengan -아야/어야 돼요",
+    "menolak ajakan dengan halus"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Menolak ajakan tanpa menyakiti",
+      "intro": "Suji mengajak Ani ke pesta. Perhatikan bahwa Ani tidak pernah mengucapkan kata \"tidak\" satu kali pun, dan penolakannya tetap sepenuhnya jelas.",
+      "lines": [
+        {
+          "speaker": "수지:",
+          "text": "[아니|Ani] [씨|ssi], [금요일에|geumyoire] [파티|pati] [갈|gal] [수|su] [있어요|isseoyo]?",
+          "id": "Ani, Jumat bisa datang ke pesta?",
+          "literal": "Ani — tuan, Jumat-pada — pesta — pergi-akan — kemungkinan — ada?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[금요일이요|Geumyoiriyo]? [잠깐만요|Jamkkanmanyo]… [아|a], [금요일은|geumyoireun] [좀|jom] [어려워요|eoryeowoyo].",
+          "id": "Jumat ya? Sebentar… ah, kalau Jumat agak sulit.",
+          "literal": "Jumat — nya? sebentar-saja — nya… ah, Jumat — mengenai — sedikit — sulit."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[왜요|Waeyo]? [일이|Iri] [있어요|isseoyo]?",
+          "id": "Kenapa? Ada urusan?",
+          "literal": "kenapa — nya? kerja — yang — ada?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne], [저녁에|jeonyeoge] [일해야|ilhaeya] [돼요|dwaeyo]. [그래서|Geuraeseo] [못|mot] [가요|gayo].",
+          "id": "Ya, malamnya saya harus kerja. Jadi tidak bisa datang.",
+          "literal": "ya, petang-pada — bekerja-harus — jadi. karena-itu — tidak-bisa — pergi."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[아|A], [아쉬워요|aswiwoyo]. [토요일은|Toyoireun] [어때요|eottaeyo]?",
+          "id": "Ah, sayang sekali. Kalau Sabtu bagaimana?",
+          "literal": "ah, sayang. Sabtu — mengenai — bagaimana?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[토요일은|Toyoireun] [괜찮아요|gwaenchanayo]! [몇|Myeot] [시에|sie] [가야|gaya] [돼요|dwaeyo]?",
+          "id": "Sabtu bisa! Harus datang jam berapa?",
+          "literal": "Sabtu — mengenai — tidak-apa-apa! berapa — jam-pada — pergi-harus — jadi?"
+        },
+        {
+          "speaker": "수지:",
+          "text": "[일곱|Ilgop] [시요|siyo]. [늦게|Neutge] [와도|wado] [돼요|dwaeyo].",
+          "id": "Jam tujuh. Boleh datang terlambat kok.",
+          "literal": "tujuh — jam — nya. terlambat — datang-juga — boleh."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[뭐|Mwo] [가져가야|gajyeogaya] [돼요|dwaeyo]?",
+          "id": "Harus bawa apa?",
+          "literal": "apa — membawa-pergi-harus — jadi?"
+        },
+        {
+          "speaker": "수지:",
+          "text": "[아무것도|Amugeotdo] [안|an] [가져와도|gajyeowado] [돼요|dwaeyo]. [그냥|Geunyang] [오세요|oseyo].",
+          "id": "Tidak usah bawa apa-apa. Datang saja.",
+          "literal": "apa-pun — tidak — membawa-datang-juga — boleh. begitu-saja — datanglah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[알겠어요|Algesseoyo]. [아|A], [저는|jeoneun] [술을|sureul] [못|mot] [마셔요|masyeoyo]. [괜찮아요|Gwaenchanayo]?",
+          "id": "Baik. Ah, saya tidak bisa minum alkohol. Tidak apa-apa?",
+          "literal": "mengerti. ah, saya — mengenai — arak — objek — tidak-bisa — minum. tidak-apa-apa?"
+        },
+        {
+          "speaker": "수지:",
+          "text": "[당연히|Dangyeonhi] [괜찮아요|gwaenchanayo]. [안|An] [마셔도|masyeodo] [돼요|dwaeyo].",
+          "id": "Tentu saja tidak apa-apa. Boleh tidak minum kok.",
+          "literal": "tentu-saja — tidak-apa-apa. tidak — minum-juga — boleh."
+        }
+      ],
+      "notes": [
+        "**Menolak secara langsung sangat jarang dalam bahasa Korea.** Perhatikan bahwa Ani tidak pernah berkata 안 가요. Yang ia pakai adalah 좀 어려워요 (\"agak sulit\") — dan itu dipahami sepenuhnya sebagai penolakan. Ungkapan yang sama berlaku untuk 좀 힘들어요 dan 다음에 할게요. Menolak dengan 안 돼요 secara langsung terdengar tajam kecuali kepada teman dekat.",
+        "**좀 muncul lagi sebagai peredam.** 어려워요 sendirian terdengar seperti pernyataan tegas; 좀 어려워요 terdengar seperti permintaan maaf yang halus. Di percakapan penolakan, 좀 hampir wajib.",
+        "**못 diletakkan di depan kata kerja, dan menyatakan halangan dari luar.** 술을 못 마셔요 berarti \"saya tidak bisa minum\" — badan tidak kuat, agama melarang, atau sedang minum obat. Kalau Ani berkata 술을 안 마셔요, artinya \"saya memilih tidak minum\". Di Korea, di mana ajakan minum adalah bagian dari kehidupan sosial, membedakan keduanya berguna sekali.",
+        "**못 dibaca *mon* di depan ㅁ dan ㄴ.** 못 마셔요 dibaca *mon masyeoyo*, bukan *mot masyeoyo*. Aturan asimilasi sengau yang sudah dijelaskan di halaman depan.",
+        "**아쉬워요 berarti \"sayang sekali\".** Ia bukan kesedihan, melainkan rasa kehilangan kesempatan yang ringan — dipakai ketika rencana batal, ketika liburan berakhir, ketika teman pindah kota. Salah satu kata yang paling sering dipakai orang Korea dan paling jarang diajarkan buku pelajaran.",
+        "**당연히 berarti \"tentu saja\".** Ia menjawab pertanyaan yang jawabannya sudah jelas, dan sekaligus menenangkan lawan bicara bahwa ia tidak perlu khawatir. Padanan santainya 그럼요.",
+        "**Bentuk -아도/어도 돼요 dipakai baik untuk meminta maupun memberi izin.** 늦게 와도 돼요? = boleh saya datang terlambat? 늦게 와도 돼요. = boleh kok datang terlambat. Sama persis bentuknya, dibedakan nada di akhir.",
+        "**아무것도 안 가져와도 돼요 memakai dua sangkalan sekaligus** dan tetap berarti positif: \"tidak apa-apa kalau tidak membawa apa-apa\". Susunan bertumpuk seperti ini terasa berat di awal — bacalah dari dalam ke luar: 안 가져오다 (tidak membawa) + -아도 되다 (boleh) = boleh tidak membawa."
+      ],
+      "grammars": [
+        {
+          "title": "-(으)ㄹ 수 있어요 / 없어요 — bisa dan tidak bisa",
+          "body": [
+            "Harfiahnya \"ada/tidak ada kemungkinan untuk…\". 수 adalah kata benda yang berarti \"cara, kemungkinan\", dan itulah sebabnya ia berpasangan dengan 있다/없다."
+          ],
+          "table": {
+            "head": [
+              "Akar berakhir",
+              "Bentuk",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "Vokal",
+                "**-ㄹ 수 있어요**",
+                "가다 → **갈** 수 있어요",
+                "bisa pergi"
+              ],
+              [
+                "Vokal",
+                "**-ㄹ 수 없어요**",
+                "가다 → **갈** 수 없어요",
+                "tidak bisa pergi"
+              ],
+              [
+                "Konsonan",
+                "**-을 수 있어요**",
+                "먹다 → **먹을** 수 있어요",
+                "bisa makan"
+              ],
+              [
+                "Konsonan",
+                "**-을 수 없어요**",
+                "읽다 → **읽을** 수 없어요",
+                "tidak bisa membaca"
+              ],
+              [
+                "하다",
+                "**-할 수 있어요**",
+                "운전하다 → 운전**할** 수 있어요",
+                "bisa menyetir"
+              ],
+              [
+                "Bentuk lampau",
+                "",
+                "**갈** 수 있었어요",
+                "tadinya bisa pergi"
+              ]
+            ]
+          },
+          "after": [
+            "**Bentuknya persis sama dengan -(으)ㄹ 거예요** yang baru kamu pelajari — ㄹ untuk akar bervokal, 을 untuk akar berkonsonan. Sekali kamu kuasai satu, kamu dapat semua bentuk berbasis -(으)ㄹ secara gratis.",
+            "**-(으)ㄹ 수 없어요 dan 못 sama artinya, beda nadanya.** 갈 수 없어요 lebih tulis dan lebih netral; 못 가요 lebih lisan dan lebih pendek. Di percakapan sehari-hari, 못 jauh lebih sering."
+          ]
+        },
+        {
+          "title": "Izin dan keharusan",
+          "body": [
+            "Dua pola yang dibangun dari bentuk 해요 yang sudah kamu punya. Buang 요, lalu tempelkan."
+          ],
+          "table": {
+            "head": [
+              "Maksud",
+              "Pola",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "Boleh",
+                "**-아도/어도 돼요**",
+                "가**도 돼요**",
+                "boleh pergi"
+              ],
+              [
+                "Boleh?",
+                "**-아도/어도 돼요?**",
+                "먹**어도 돼요?**",
+                "boleh makan?"
+              ],
+              [
+                "Harus",
+                "**-아야/어야 돼요**",
+                "가**야 돼요**",
+                "harus pergi"
+              ],
+              [
+                "Harus (varian)",
+                "**-아야/어야 해요**",
+                "먹**어야 해요**",
+                "harus makan"
+              ],
+              [
+                "Tidak boleh",
+                "**-(으)면 안 돼요**",
+                "가**면 안 돼요**",
+                "tidak boleh pergi"
+              ],
+              [
+                "Tidak perlu",
+                "**안 -아도/어도 돼요**",
+                "**안** 가**도 돼요**",
+                "tidak usah pergi"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **\"Tidak boleh\" dan \"tidak perlu\" adalah dua hal yang sama sekali berbeda, dan bentuknya mudah tertukar.** 가면 안 돼요 = kamu dilarang pergi. 안 가도 돼요 = kamu tidak wajib pergi. Menukar keduanya bisa mengubah larangan jadi keringanan, atau sebaliknya.",
+            "**돼요 dan 해요 pada bentuk keharusan sama saja.** 가야 돼요 sedikit lebih lisan, 가야 해요 sedikit lebih tulis. Pakai mana pun.",
+            "**되다 sendirian berarti \"jadi, boleh, berhasil\".** 돼요? = boleh? bisa? 안 돼요 = tidak boleh, tidak bisa, tidak jadi. Ini salah satu kata paling serbaguna dalam bahasa Korea, dan kamu akan mendengarnya puluhan kali sehari."
+          ]
+        },
+        {
+          "title": "Tiga cara menyangkal, satu tabel",
+          "body": [
+            "Ketiganya sudah muncul di modul ini. Halaman ini merapikannya."
+          ],
+          "table": {
+            "head": [
+              "Bentuk",
+              "Contoh",
+              "Arti",
+              "Nada"
+            ],
+            "rows": [
+              [
+                "**안** + kata kerja",
+                "안 가요",
+                "tidak pergi (memilih)",
+                "lisan, pendek"
+              ],
+              [
+                "**못** + kata kerja",
+                "못 가요",
+                "tidak bisa pergi (terhalang)",
+                "lisan, pendek"
+              ],
+              [
+                "**-지 않아요**",
+                "가지 않아요",
+                "tidak pergi",
+                "lebih tulis, lebih halus"
+              ],
+              [
+                "**-지 못해요**",
+                "가지 못해요",
+                "tidak bisa pergi",
+                "tulis, resmi"
+              ],
+              [
+                "**-(으)ㄹ 수 없어요**",
+                "갈 수 없어요",
+                "tidak bisa pergi",
+                "netral"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Kata kerja 하다 memisah pada bentuk 안 dan 못.** 공부 **안** 해요, 공부 **못** 해요 — bukan 안 공부해요. Tapi bentuk -지 않다 tidak memisah: 공부하지 않아요.",
+            "Untuk sehari-hari, **안 dan 못 sudah cukup**. Dua bentuk lainnya cukup dikenali supaya kamu paham ketika membacanya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menolak tanpa mengucapkan tidak",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Di Korea, cara menolak lebih diperhatikan daripada isi penolakannya. Kalimat-kalimat di bawah semuanya berarti \"tidak\", tapi tidak satu pun berbunyi seperti itu — dan itulah yang membuatnya bisa dipakai."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Arti harfiah",
+            "Yang sebenarnya dimaksud"
+          ],
+          "rows": [
+            [
+              "좀 어려워요.",
+              "agak sulit",
+              "Maaf, tidak bisa."
+            ],
+            [
+              "좀 힘들 것 같아요.",
+              "sepertinya agak berat",
+              "Tidak, tapi saya tidak enak bilang."
+            ],
+            [
+              "다음에 할게요.",
+              "lain kali saja",
+              "Tidak sekarang, mungkin tidak pernah."
+            ],
+            [
+              "생각해 볼게요.",
+              "saya pikirkan dulu",
+              "Kemungkinan besar tidak."
+            ],
+            [
+              "일이 좀 있어서요.",
+              "ada urusan sedikit",
+              "Alasan yang sopan dan tidak perlu dijelaskan."
+            ],
+            [
+              "미안해요, 못 가요.",
+              "maaf, tidak bisa datang",
+              "Penolakan langsung tapi tetap sopan."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa hampir semuanya berakhir dengan alasan yang samar — dan itu disengaja. Menjelaskan alasan penolakan secara rinci justru dianggap berlebihan; lawan bicara Korea tidak akan mengejar."
+        },
+        {
+          "type": "sub",
+          "text": "Menerima ajakan"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Arti",
+            "Nada"
+          ],
+          "rows": [
+            [
+              "네, 좋아요!",
+              "Ya, boleh!",
+              "hangat, biasa"
+            ],
+            [
+              "당연히 가야죠!",
+              "Tentu saja harus datang!",
+              "antusias"
+            ],
+            [
+              "좋죠!",
+              "Boleh dong!",
+              "santai"
+            ],
+            [
+              "감사합니다, 갈게요.",
+              "Terima kasih, saya akan datang.",
+              "sopan, resmi"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "술 dan cara menolaknya",
+          "items": [
+            "Ajakan minum adalah bagian besar dari kehidupan sosial dan kerja di Korea, dan menolaknya butuh kalimat yang tepat.",
+            "**저는 술을 못 마셔요** (\"saya tidak bisa minum\") jauh lebih mudah diterima daripada 안 마셔요 (\"saya tidak minum\"), karena ia menunjuk halangan, bukan pilihan. Alasan agama, kesehatan, atau obat semuanya masuk ke dalam 못.",
+            "Sebagai gantinya bisa ditawarkan 사이다 (minuman bersoda bening) — dan menuangkan minuman untuk orang lain, apa pun isinya, tetap membuatmu ikut serta.",
+            "⚠️ Menuang minuman untuk diri sendiri dianggap kurang sopan di meja Korea; orang saling menuangkan. Botolnya dipegang dua tangan kalau menuang untuk yang lebih tua."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "수 있어요",
+      "baca": "su isseoyo",
+      "id": "bisa"
+    },
+    {
+      "ko": "수 없어요",
+      "baca": "su eopseoyo",
+      "id": "tidak bisa"
+    },
+    {
+      "ko": "돼요",
+      "baca": "dwaeyo",
+      "id": "boleh, jadi, bisa"
+    },
+    {
+      "ko": "안 돼요",
+      "baca": "an dwaeyo",
+      "id": "tidak boleh, tidak bisa"
+    },
+    {
+      "ko": "아도 돼요",
+      "baca": "ado dwaeyo",
+      "id": "boleh melakukan"
+    },
+    {
+      "ko": "야 돼요",
+      "baca": "ya dwaeyo",
+      "id": "harus melakukan"
+    },
+    {
+      "ko": "지 않아요",
+      "baca": "ji anayo",
+      "id": "tidak (bentuk halus)"
+    },
+    {
+      "ko": "파티",
+      "baca": "pati",
+      "id": "pesta"
+    },
+    {
+      "ko": "술",
+      "baca": "sul",
+      "id": "minuman beralkohol"
+    },
+    {
+      "ko": "운전해요",
+      "baca": "unjeonhaeyo",
+      "id": "menyetir"
+    },
+    {
+      "ko": "가져가요",
+      "baca": "gajyeogayo",
+      "id": "membawa pergi"
+    },
+    {
+      "ko": "가져와요",
+      "baca": "gajyeowayo",
+      "id": "membawa datang"
+    },
+    {
+      "ko": "늦게",
+      "baca": "neutge",
+      "id": "terlambat"
+    },
+    {
+      "ko": "일찍",
+      "baca": "iljjik",
+      "id": "lebih awal"
+    },
+    {
+      "ko": "어려워요",
+      "baca": "eoryeowoyo",
+      "id": "sulit"
+    },
+    {
+      "ko": "아쉬워요",
+      "baca": "aswiwoyo",
+      "id": "sayang sekali"
+    },
+    {
+      "ko": "당연히",
+      "baca": "dangyeonhi",
+      "id": "tentu saja"
+    },
+    {
+      "ko": "미안해요",
+      "baca": "mianhaeyo",
+      "id": "maaf (sehari-hari)"
+    },
+    {
+      "ko": "생각해요",
+      "baca": "saenggakaeyo",
+      "id": "berpikir"
+    },
+    {
+      "ko": "다음에",
+      "baca": "daeume",
+      "id": "lain kali"
+    },
+    {
+      "ko": "잠깐만요",
+      "baca": "jamkkanmanyo",
+      "id": "sebentar ya"
+    },
+    {
+      "ko": "그냥",
+      "baca": "geunyang",
+      "id": "begitu saja"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah menjadi bentuk kemampuan dengan -(으)ㄹ 수 있어요.",
+      "items": [
+        "가다 → ____ 수 있어요",
+        "먹다 → ____ 수 있어요",
+        "읽다 → ____ 수 있어요",
+        "운전하다 → ____ 수 있어요",
+        "보다 → ____ 수 있어요"
+      ]
+    },
+    {
+      "prompt": "Isi dengan 안 atau 못.",
+      "items": [
+        "저는 술을 ____ 마셔요. Alasannya kesehatan.",
+        "고기를 ____ 먹어요. Saya memang tidak mau.",
+        "시간이 없어서 ____ 갔어요.",
+        "오늘 공부 ____ 했어요. Saya malas.",
+        "다리가 아파서 ____ 걸어요."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Korea.",
+      "items": [
+        "Jumat bisa datang?",
+        "Kalau Jumat agak sulit.",
+        "Saya harus kerja.",
+        "Boleh datang terlambat.",
+        "Tidak usah bawa apa-apa.",
+        "Saya tidak bisa minum alkohol."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "있어요 / 갈 / 수 / 금요일에 / ?",
+        "돼요 / 일해야 / 저녁에",
+        "돼요 / 와도 / 늦게",
+        "어려워요 / 좀 / 금요일은",
+        "못 / 술을 / 마셔요 / 저는"
+      ]
+    }
+  ],
+  "answers": [
+    "갈 — 먹을 — 읽을 — 운전할 — 볼",
+    "못 — 안 — 못 — 안 — 못",
+    "금요일에 갈 수 있어요? — 금요일은 좀 어려워요. — 일해야 돼요. — 늦게 와도 돼요. — 아무것도 안 가져와도 돼요. — 저는 술을 못 마셔요.",
+    "금요일에 갈 수 있어요? — 저녁에 일해야 돼요. — 늦게 와도 돼요. — 금요일은 좀 어려워요. — 저는 술을 못 마셔요."
+  ]
+}

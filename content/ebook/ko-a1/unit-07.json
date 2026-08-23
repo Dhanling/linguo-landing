@@ -1,0 +1,462 @@
+{
+  "title": "Kemarin saya melakukan apa",
+  "title_target": "어제 뭐 했어요 — Eoje mwo haesseoyo",
+  "goal": "Menceritakan kejadian yang sudah lewat dengan bentuk lampau, dan menyadari bahwa bahasa Korea menandai waktu di kata kerjanya — bukan lewat kata keterangan seperti bahasa Indonesia.",
+  "bekal": [
+    "membentuk bentuk lampau -았어요/었어요 dari akar kata kerja",
+    "membuat bentuk lampau dari 이에요 dan 있어요",
+    "menyangkal kejadian lampau dengan 안 dan 못",
+    "menceritakan akhir pekan dalam beberapa kalimat berurutan",
+    "memakai 그리고, 그래서, dan 하지만 untuk merangkai cerita"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Senin pagi di kelas",
+      "intro": "Suji menanyakan akhir pekan Ani. Perhatikan bahwa kata \"sudah\" tidak muncul satu kali pun — bahasa Korea menaruh keterangan waktu itu di dalam kata kerjanya.",
+      "lines": [
+        {
+          "speaker": "수지:",
+          "text": "[아니|Ani] [씨|ssi], [주말에|jumare] [뭐|mwo] [했어요|haesseoyo]?",
+          "id": "Ani, akhir pekan ngapain?",
+          "literal": "Ani — tuan, akhir-pekan-pada — apa — melakukan-sudah?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[토요일에|Toyoire] [친구를|chingureul] [만났어요|mannasseoyo]. [같이|Gachi] [명동에|Myeongdonge] [갔어요|gasseoyo].",
+          "id": "Sabtu saya bertemu teman. Kami pergi ke Myeongdong bersama.",
+          "literal": "Sabtu-pada — teman — objek — bertemu-sudah. bersama — Myeongdong-ke — pergi-sudah."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[뭐|Mwo] [샀어요|sasseoyo]?",
+          "id": "Beli apa?",
+          "literal": "apa — membeli-sudah?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[옷을|Oseul] [조금|jogeum] [샀어요|sasseoyo]. [그리고|Geurigo] [떡볶이를|tteokbokkireul] [먹었어요|meogeosseoyo].",
+          "id": "Beli baju sedikit. Lalu makan tteokbokki.",
+          "literal": "baju — objek — sedikit — membeli-sudah. lalu — tteokbokki — objek — makan-sudah."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[맛있었어요|Masisseosseoyo]?",
+          "id": "Enak?",
+          "literal": "enak-ada-sudah?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[너무|Neomu] [맛있었어요|masisseosseoyo]! [그런데|Geureonde] [조금|jogeum] [매웠어요|maewosseoyo].",
+          "id": "Enak sekali! Tapi agak pedas.",
+          "literal": "sangat — enak-sudah! omong-omong, sedikit — pedas-sudah."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[일요일에는|Iryoireneun] [뭐|mwo] [했어요|haesseoyo]?",
+          "id": "Kalau Minggu ngapain?",
+          "literal": "Minggu-pada — mengenai — apa — melakukan-sudah?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[아무것도|Amugeotdo] [안|an] [했어요|haesseoyo]. [집에서|Jibeseo] [쉬었어요|swieosseoyo].",
+          "id": "Tidak melakukan apa-apa. Istirahat di rumah.",
+          "literal": "apa-pun — tidak — melakukan-sudah. rumah-di-tempat — istirahat-sudah."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[숙제는|Sukjeneun] [했어요|haesseoyo]?",
+          "id": "PR-nya sudah dikerjakan?",
+          "literal": "PR — mengenai — melakukan-sudah?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[아|A]… [못|mot] [했어요|haesseoyo]. [시간이|Sigani] [없었어요|eopseosseoyo].",
+          "id": "Ah… belum sempat. Tidak ada waktu.",
+          "literal": "ah… tidak-bisa — melakukan-sudah. waktu — yang — tidak-ada-sudah."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[괜찮아요|Gwaenchanayo]. [저도|Jeodo] [안|an] [했어요|haesseoyo].",
+          "id": "Tidak apa-apa. Saya juga belum.",
+          "literal": "tidak-apa-apa. saya — juga — tidak — melakukan-sudah."
+        }
+      ],
+      "notes": [
+        "**Bentuk lampau Korea menempel di kata kerjanya, bukan berdiri sebagai kata terpisah.** Bahasa Indonesia menambahkan \"sudah\", \"tadi\", \"kemarin\"; bahasa Korea mengubah bentuk kata kerjanya sendiri. 먹어요 (makan) → 먹**었**어요 (sudah makan). Kata keterangan waktu boleh ada, boleh tidak — yang wajib adalah bentuk kata kerjanya.",
+        "**Bentuk lampaunya dibangun dari bentuk 해요 yang sudah kamu punya**, jadi tidak ada aturan baru yang perlu dihafal. Copot 요 dari bentuk 해요, tambahkan ㅆ어요. 가요 → 가**ㅆ**어요 → 갔어요. 먹어요 → 먹었어요. 마셔요 → 마셨어요. Sekali kamu lihat polanya, ia berlaku untuk semua kata kerja tanpa kecuali.",
+        "**안 dan 못 dua-duanya menyangkal, tapi alasannya berbeda.** 안 했어요 = tidak melakukannya (memilih tidak, tidak berniat). 못 했어요 = tidak sempat, tidak bisa (ada yang menghalangi). Ketika Ani berkata 못 했어요 tentang PR-nya, ia sedang bilang \"bukan karena malas\" — dan itu perbedaan yang terasa.",
+        "**아무것도 selalu berpasangan dengan bentuk sangkal.** 아무것도 **안** 했어요 = tidak melakukan apa-apa. ⚠️ 아무것도 했어요 bukan kalimat. Pola \"kata sangkal ganda\" ini sama seperti bahasa Indonesia (\"tidak apa-apa\") dan berlaku juga untuk 아무도 (siapa pun) dan 아무 데도 (ke mana pun).",
+        "**Kata sifat juga berubah bentuk lampau, persis seperti kata kerja.** 맛있어요 → 맛있**었**어요, 매워요 → 매**웠**어요. Dalam bahasa Korea, kata sifat berperilaku seperti kata kerja: ia bisa dilampaukan, disangkal, dan berdiri sendiri sebagai predikat tanpa perlu \"adalah\".",
+        "**매워요 datang dari 맵다, bukan 매우다.** Ini kata kerja tak beraturan jenis ㅂ: ㅂ luruh jadi 우 ketika bertemu vokal. 맵다 → 매워요 → 매웠어요. Kelompok ini berisi banyak kata sifat penting: 덥다 (panas) → 더워요, 춥다 (dingin) → 추워요, 쉽다 (mudah) → 쉬워요, 어렵다 (sulit) → 어려워요.",
+        "**너무 dulunya berarti \"terlalu\" dan sekarang lebih sering berarti \"sangat\".** 너무 맛있어요 tidak berarti \"terlalu enak\" melainkan \"enak sekali\". Untuk pujian ini sepenuhnya wajar. Kalau kamu benar-benar ingin bilang \"terlalu\", tambahkan nada mengeluh atau pakai 너무 … 아서 problem-nya.",
+        "**떡볶이 dibaca *tteokbokki*, bukan *tteokbokgi*.** Aturan pengerasan sesudah bunyi tertahan yang sudah dijelaskan di halaman depan. Kata ini akan sering kamu lihat, dan sering salah dibaca pemula."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk lampau -았어요 / -었어요",
+          "body": [
+            "Aturannya persis sama dengan bentuk 해요 yang sudah kamu kuasai — cuma akhirannya yang berbeda. Lihat vokal terakhir di dalam akar."
+          ],
+          "table": {
+            "head": [
+              "Aturan",
+              "Bentuk kamus",
+              "해요체",
+              "Bentuk lampau"
+            ],
+            "rows": [
+              [
+                "ㅏ atau ㅗ → **-았어요**",
+                "살다",
+                "살아요",
+                "살**았**어요"
+              ],
+              [
+                "",
+                "좋다",
+                "좋아요",
+                "좋**았**어요"
+              ],
+              [
+                "Vokal lain → **-었어요**",
+                "먹다",
+                "먹어요",
+                "먹**었**어요"
+              ],
+              [
+                "",
+                "읽다",
+                "읽어요",
+                "읽**었**어요"
+              ],
+              [
+                "하다 → **했어요**",
+                "공부하다",
+                "공부해요",
+                "공부**했**어요"
+              ],
+              [
+                "Akar berakhir vokal",
+                "가다",
+                "가요",
+                "**갔**어요"
+              ],
+              [
+                "",
+                "보다",
+                "봐요",
+                "**봤**어요"
+              ],
+              [
+                "",
+                "마시다",
+                "마셔요",
+                "**마셨**어요"
+              ],
+              [
+                "",
+                "배우다",
+                "배워요",
+                "**배웠**어요"
+              ]
+            ]
+          },
+          "after": [
+            "**Jalan pintas yang selalu berhasil:** ambil bentuk 해요-nya, buang 요, tempelkan ㅆ어요. 봐요 → 봐 + ㅆ어요 → 봤어요. Tidak ada satu pun kata kerja yang melanggar jalan pintas ini.",
+            "**Bentuk lampau dari \"adalah\" dan \"ada\":** 이에요 → **이었어요**, 예요 → **였어요**, 있어요 → **있었어요**, 없어요 → **없었어요**. Empat ini dihafal apa adanya.",
+            "⚠️ Bahasa Korea tidak punya bentuk \"sudah pernah\" dan \"baru saja\" yang terpisah seperti bahasa Inggris. Satu bentuk lampau ini menutup semuanya, dan bedanya diberikan oleh kata keterangan: 아까 (tadi), 벌써 (sudah), 방금 (barusan)."
+          ]
+        },
+        {
+          "title": "안 dan 못 — dua cara menyangkal",
+          "body": [
+            "Keduanya diletakkan **tepat di depan kata kerjanya**, dan keduanya berlaku sama untuk bentuk sekarang maupun lampau."
+          ],
+          "table": {
+            "head": [
+              "",
+              "안",
+              "못"
+            ],
+            "rows": [
+              [
+                "Arti",
+                "tidak (memilih tidak)",
+                "tidak bisa, tidak sempat"
+              ],
+              [
+                "Sekarang",
+                "안 가요 — tidak pergi",
+                "못 가요 — tidak bisa pergi"
+              ],
+              [
+                "Lampau",
+                "안 갔어요 — tidak pergi",
+                "못 갔어요 — tidak sempat pergi"
+              ],
+              [
+                "Kata kerja 하다",
+                "공부 **안** 해요",
+                "공부 **못** 해요"
+              ],
+              [
+                "Nuansanya",
+                "netral atau tidak berniat",
+                "ada yang menghalangi"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Kata kerja berakhiran 하다 memisah di tengah.** Yang benar 공부 안 해요, bukan 안 공부해요. Kata bendanya berdiri sendiri, 안 masuk di antaranya, lalu 해요. Aturan ini berlaku untuk semua kata kerja 하다: 일 안 해요, 운동 안 해요, 요리 안 해요.",
+            "**못 lebih sopan dipakai untuk menolak ajakan.** 안 가요 terdengar seperti \"saya memang tidak mau\"; 못 가요 terdengar seperti \"maaf, saya berhalangan\". Untuk menolak undangan, hampir selalu 못 yang dipakai.",
+            "Ada bentuk sangkal ketiga yang lebih halus dan lebih tulis: **-지 않다**. 가지 않아요 = 안 가요. Ia akan muncul lagi di unit 12."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menceritakan satu hari yang sudah lewat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kemampuan bercerita tidak datang dari kalimat panjang, melainkan dari beberapa kalimat pendek yang disambung dengan benar. Tiga penghubung berikut sudah cukup untuk seluruh tingkat A1."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Penghubung",
+            "Arti",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "그리고",
+              "lalu, dan",
+              "친구를 만났어요. **그리고** 밥을 먹었어요."
+            ],
+            [
+              "그래서",
+              "karena itu, jadi",
+              "비가 왔어요. **그래서** 집에 있었어요."
+            ],
+            [
+              "하지만",
+              "tetapi",
+              "숙제를 했어요. **하지만** 어려웠어요."
+            ],
+            [
+              "그런데",
+              "ngomong-ngomong, tapi",
+              "재미있었어요. **그런데** 조금 비쌌어요."
+            ],
+            [
+              "그다음에",
+              "sesudah itu",
+              "영화를 봤어요. **그다음에** 커피를 마셨어요."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Contoh cerita akhir pekan"
+        },
+        {
+          "type": "p",
+          "text": "토요일에 친구를 만났어요. 같이 명동에 갔어요. 거기에서 옷을 샀어요. 그리고 떡볶이를 먹었어요. 너무 맛있었어요. 하지만 조금 매웠어요. 일요일에는 아무것도 안 했어요. 집에서 쉬었어요. 그래서 지금 괜찮아요."
+        },
+        {
+          "type": "p",
+          "text": "Sembilan kalimat, semuanya pendek, semuanya memakai bahan yang sudah kamu punya. Inilah bentuk cerita yang diharapkan di TOPIK tingkat pertama — bukan kalimat berlapis, melainkan kalimat sederhana yang benar dan tersambung."
+        },
+        {
+          "type": "kotak",
+          "title": "Latihan yang paling berguna dari seluruh unit ini",
+          "items": [
+            "Tiap malam sebelum tidur, ceritakan harimu dalam lima kalimat Korea. Keras-keras, bukan di kepala.",
+            "Jangan mencari kata yang belum kamu punya. Ceritakan hanya yang bisa kamu ceritakan dengan bahan yang ada — itu justru yang melatih kelenturan.",
+            "Kalau ada satu kata yang benar-benar kamu butuhkan tiap hari, itulah kata yang layak dicari di kamus. Kosakata yang datang dari kebutuhan sendiri jauh lebih lengket daripada daftar hafalan."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "했어요",
+      "baca": "haesseoyo",
+      "id": "sudah melakukan"
+    },
+    {
+      "ko": "갔어요",
+      "baca": "gasseoyo",
+      "id": "sudah pergi"
+    },
+    {
+      "ko": "왔어요",
+      "baca": "wasseoyo",
+      "id": "sudah datang"
+    },
+    {
+      "ko": "먹었어요",
+      "baca": "meogeosseoyo",
+      "id": "sudah makan"
+    },
+    {
+      "ko": "만났어요",
+      "baca": "mannasseoyo",
+      "id": "sudah bertemu"
+    },
+    {
+      "ko": "샀어요",
+      "baca": "sasseoyo",
+      "id": "sudah membeli"
+    },
+    {
+      "ko": "봤어요",
+      "baca": "bwasseoyo",
+      "id": "sudah melihat"
+    },
+    {
+      "ko": "쉬었어요",
+      "baca": "swieosseoyo",
+      "id": "sudah beristirahat"
+    },
+    {
+      "ko": "안",
+      "baca": "an",
+      "id": "tidak (memilih tidak)"
+    },
+    {
+      "ko": "못",
+      "baca": "mot",
+      "id": "tidak bisa, tidak sempat"
+    },
+    {
+      "ko": "아무것도",
+      "baca": "amugeotdo",
+      "id": "apa pun (dengan sangkalan)"
+    },
+    {
+      "ko": "숙제",
+      "baca": "sukje",
+      "id": "pekerjaan rumah"
+    },
+    {
+      "ko": "옷",
+      "baca": "ot",
+      "id": "baju"
+    },
+    {
+      "ko": "영화",
+      "baca": "yeonghwa",
+      "id": "film"
+    },
+    {
+      "ko": "떡볶이",
+      "baca": "tteokbokki",
+      "id": "tteokbokki"
+    },
+    {
+      "ko": "맛있어요",
+      "baca": "masisseoyo",
+      "id": "enak"
+    },
+    {
+      "ko": "매워요",
+      "baca": "maewoyo",
+      "id": "pedas"
+    },
+    {
+      "ko": "더워요",
+      "baca": "deowoyo",
+      "id": "panas (cuaca)"
+    },
+    {
+      "ko": "추워요",
+      "baca": "chuwoyo",
+      "id": "dingin (cuaca)"
+    },
+    {
+      "ko": "어려워요",
+      "baca": "eoryeowoyo",
+      "id": "sulit"
+    },
+    {
+      "ko": "쉬워요",
+      "baca": "swiwoyo",
+      "id": "mudah"
+    },
+    {
+      "ko": "너무",
+      "baca": "neomu",
+      "id": "sangat, terlalu"
+    },
+    {
+      "ko": "벌써",
+      "baca": "beolsseo",
+      "id": "sudah (lebih cepat dari dikira)"
+    },
+    {
+      "ko": "아까",
+      "baca": "akka",
+      "id": "tadi"
+    },
+    {
+      "ko": "그다음에",
+      "baca": "geudaeume",
+      "id": "sesudah itu"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah menjadi bentuk lampau.",
+      "items": [
+        "먹어요 → ____",
+        "가요 → ____",
+        "봐요 → ____",
+        "공부해요 → ____",
+        "마셔요 → ____",
+        "있어요 → ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan 안 atau 못 sesuai keterangannya.",
+      "items": [
+        "Saya memang tidak mau pergi: 저는 ____ 가요.",
+        "Saya tidak sempat mengerjakan PR: 숙제를 ____ 했어요.",
+        "Saya tidak makan daging: 고기를 ____ 먹어요.",
+        "Saya tidak bisa datang karena sakit: ____ 왔어요.",
+        "Hari ini saya tidak belajar: 오늘 공부 ____ 했어요."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Korea dengan bentuk lampau.",
+      "items": [
+        "Akhir pekan ngapain?",
+        "Saya bertemu teman kemarin.",
+        "Kami makan tteokbokki bersama.",
+        "Enak sekali.",
+        "Saya tidak melakukan apa-apa.",
+        "Tidak ada waktu."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "만났어요 / 친구를 / 토요일에",
+        "갔어요 / 명동에 / 같이",
+        "했어요 / 안 / 아무것도",
+        "매웠어요 / 조금 / 하지만",
+        "없었어요 / 시간이"
+      ]
+    }
+  ],
+  "answers": [
+    "먹었어요 — 갔어요 — 봤어요 — 공부했어요 — 마셨어요 — 있었어요",
+    "안 — 못 — 안 — 못 — 안",
+    "주말에 뭐 했어요? — 어제 친구를 만났어요. — 같이 떡볶이를 먹었어요. — 너무 맛있었어요. — 아무것도 안 했어요. — 시간이 없었어요.",
+    "토요일에 친구를 만났어요. — 같이 명동에 갔어요. — 아무것도 안 했어요. — 하지만 조금 매웠어요. — 시간이 없었어요."
+  ]
+}

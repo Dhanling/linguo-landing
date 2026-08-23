@@ -1,0 +1,589 @@
+{
+  "title": "Berbelanja dan membandingkan",
+  "title_target": "이거 얼마예요 — Igeo eolmayeyo",
+  "goal": "Bertahan di pasar dan di toko: menanyakan harga, meminta ukuran atau warna lain, membandingkan dua barang, dan meminta sesuatu dikerjakan dengan -아/어 주세요.",
+  "bekal": [
+    "menanyakan harga dan memahami jawabannya",
+    "meminta sesuatu dikerjakan dengan pola -아/어 주세요",
+    "membandingkan dua hal dengan 보다 dan 제일",
+    "menyebut warna dan ukuran",
+    "menawar dengan sopan tanpa terdengar memaksa"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Di pasar Namdaemun",
+      "intro": "Ani mencari jaket. Perhatikan pola -아/어 주세요, yang muncul empat kali dalam percakapan sepanjang ini dan akan kamu pakai setiap hari.",
+      "lines": [
+        {
+          "speaker": "아니:",
+          "text": "[저기요|Jeogiyo], [이|i] [자켓|jaket] [얼마예요|eolmayeyo]?",
+          "id": "Permisi, jaket ini berapa?",
+          "literal": "permisi, ini — jaket — berapa — adalah?"
+        },
+        {
+          "speaker": "주인:",
+          "text": "[그거|Geugeo] [사만|saman] [오천|ocheon] [원이에요|wonieyo]. [좋은|Joeun] [거예요|geoyeyo].",
+          "id": "Yang itu empat puluh lima ribu won. Barang bagus.",
+          "literal": "itu — empat-puluh-ribu — lima-ribu — won — adalah. baik-yang — barang — adalah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[조금|Jogeum] [비싸요|bissayo]. [좀|Jom] [깎아|kkakka] [주세요|juseyo].",
+          "id": "Agak mahal. Tolong dikurangi sedikit.",
+          "literal": "sedikit — mahal. sedikit — potong — berikan."
+        },
+        {
+          "speaker": "주인:",
+          "text": "[음|Eum]… [그럼|geureom] [사만|saman] [원|won] [하세요|haseyo].",
+          "id": "Hmm… kalau begitu empat puluh ribu won saja.",
+          "literal": "mm… kalau-begitu, empat-puluh-ribu — won — lakukanlah."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[감사합니다|Gamsahamnida]! [그런데|Geureonde] [다른|dareun] [색|saek] [있어요|isseoyo]?",
+          "id": "Terima kasih! Tapi ada warna lain?",
+          "literal": "terima-kasih! omong-omong, lain — warna — ada?"
+        },
+        {
+          "speaker": "주인:",
+          "text": "[검은색|Geomeunsaek][하고|hago] [흰색|huinsaek] [있어요|isseoyo]. [뭐가|Mwoga] [좋아요|joayo]?",
+          "id": "Ada hitam dan putih. Mana yang bagus?",
+          "literal": "hitam-warna — dan — putih-warna — ada. apa — yang — baik?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[검은색이|Geomeunsaegi] [흰색보다|huinsaekboda] [좋아요|joayo]. [입어|Ibeo] [봐도|bwado] [돼요|dwaeyo]?",
+          "id": "Hitam lebih bagus daripada putih. Boleh dicoba?",
+          "literal": "hitam-warna — yang — putih-warna — daripada — baik. pakai — coba — juga — boleh?"
+        },
+        {
+          "speaker": "주인:",
+          "text": "[네|Ne], [입어|ibeo] [보세요|boseyo]. [사이즈는|Saijeuneun] [어떠세요|eotteoseyo]?",
+          "id": "Ya, silakan dicoba. Ukurannya bagaimana?",
+          "literal": "ya, pakai — cobalah. ukuran — mengenai — bagaimana (hormat)?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[조금|Jogeum] [커요|keoyo]. [더|Deo] [작은|jageun] [거|geo] [있어요|isseoyo]?",
+          "id": "Agak besar. Ada yang lebih kecil?",
+          "literal": "sedikit — besar. lebih — kecil-yang — barang — ada?"
+        },
+        {
+          "speaker": "주인:",
+          "text": "[잠깐만|Jamkkanman] [기다려|gidaryeo] [주세요|juseyo]. [여기|Yeogi] [있어요|isseoyo].",
+          "id": "Tolong tunggu sebentar. Ini dia.",
+          "literal": "sebentar-saja — tunggu — berikan. sini — ada."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[이게|Ige] [제일|jeil] [좋아요|joayo]. [이거|Igeo] [주세요|juseyo].",
+          "id": "Yang ini paling bagus. Saya ambil yang ini.",
+          "literal": "ini — yang — paling — baik. ini — berikan."
+        },
+        {
+          "speaker": "주인:",
+          "text": "[네|Ne], [카드로|kadeuro] [하시겠어요|hasigesseoyo]?",
+          "id": "Baik, mau bayar dengan kartu?",
+          "literal": "ya, kartu-dengan — akan-melakukan?"
+        }
+      ],
+      "notes": [
+        "**-아/어 주세요 berarti \"tolong lakukan untuk saya\".** Ia dibentuk dari bentuk 해요 kata kerjanya dengan 요 dibuang, lalu ditambah 주세요. 깎다 → 깎아 → 깎아 **주세요**. 기다리다 → 기다려 → 기다려 **주세요**. Pola ini menutup hampir semua permintaan dalam bahasa Korea, dan ia jauh lebih sopan daripada bentuk perintah -(으)세요 saja.",
+        "**주세요 sendirian dipakai untuk barang, -아/어 주세요 untuk perbuatan.** 물 주세요 (tolong airnya) tapi 기다려 주세요 (tolong tunggu). Membedakan keduanya adalah satu langkah kecil yang langsung membuat bahasa Koreamu terdengar lebih matang.",
+        "**보다 berarti \"daripada\" dan diletakkan sesudah pembandingnya.** 흰색**보다** 좋아요 = lebih bagus daripada putih. Perhatikan bahwa Korea tidak punya kata terpisah untuk \"lebih\" dalam perbandingan — 보다 sudah cukup, meski 더 sering ditambahkan untuk menegaskan: 흰색보다 **더** 좋아요.",
+        "**제일 dan 가장 dua-duanya berarti \"paling\".** 제일 lebih sering di percakapan, 가장 lebih tulis. Keduanya diletakkan tepat sebelum kata sifatnya: 이게 **제일** 좋아요.",
+        "**-아/어 봐도 돼요? berarti \"boleh saya coba?\"** Ia gabungan dua pola: -아/어 보다 (mencoba melakukan) dan -아도 되다 (boleh). Belum perlu kamu bongkar sekarang; hafalkan utuh sebagai kalimat toko: 입어 봐도 돼요? (boleh dicoba pakai?), 먹어 봐도 돼요? (boleh dicicip?).",
+        "**Menawar di Korea punya batasnya.** Di pasar tradisional seperti Namdaemun atau Dongdaemun, menawar wajar dan diharapkan. Di toko biasa, minimarket, dan pusat perbelanjaan, harga adalah harga — menawar di sana bukan cerdik, melainkan memalukan. 좀 깎아 주세요 adalah kalimat pasar, bukan kalimat mal.",
+        "**이게 adalah 이거 + 이 yang dilebur.** 이거**가** tidak pernah diucapkan; bentuk yang dipakai adalah 이게. Begitu juga 그게 dan 저게. Untuk objek: 이걸 (dari 이거를), 그걸, 저걸.",
+        "**사만 오천 원 = 45.000 won.** Perhatikan sekali lagi bahwa Korea menghitung dalam kelipatan 만 (sepuluh ribu): empat puluh lima ribu bukan \"empat puluh lima ribu\", melainkan \"empat 만 lima 천\". Latih membaca harga sampai otomatis — ini keterampilan yang paling cepat terpakai kalau kamu benar-benar pergi ke Korea."
+      ],
+      "grammars": [
+        {
+          "title": "-아/어 주세요 — meminta dengan sopan",
+          "body": [
+            "Ambil bentuk 해요 kata kerjanya, buang 요, tempelkan 주세요. Tidak ada aturan baru."
+          ],
+          "table": {
+            "head": [
+              "Kamus",
+              "해요체",
+              "Permintaan",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "기다리다",
+                "기다려요",
+                "기다려 **주세요**",
+                "tolong tunggu"
+              ],
+              [
+                "깎다",
+                "깎아요",
+                "깎아 **주세요**",
+                "tolong dikurangi (harga)"
+              ],
+              [
+                "말하다",
+                "말해요",
+                "말해 **주세요**",
+                "tolong katakan"
+              ],
+              [
+                "보여주다",
+                "보여줘요",
+                "보여 **주세요**",
+                "tolong perlihatkan"
+              ],
+              [
+                "도와주다",
+                "도와줘요",
+                "도와 **주세요**",
+                "tolong bantu"
+              ],
+              [
+                "가르치다",
+                "가르쳐요",
+                "가르쳐 **주세요**",
+                "tolong ajarkan"
+              ],
+              [
+                "천천히 말하다",
+                "천천히 말해요",
+                "천천히 말해 **주세요**",
+                "tolong bicara pelan"
+              ],
+              [
+                "다시 하다",
+                "다시 해요",
+                "다시 해 **주세요**",
+                "tolong ulangi"
+              ]
+            ]
+          },
+          "after": [
+            "**Bentuk yang lebih hormat lagi: -아/어 주시겠어요?** Harfiahnya \"maukah Anda melakukannya untuk saya?\". Dipakai kepada orang asing di situasi yang lebih resmi, atau ketika permintaanmu merepotkan: 도와주시겠어요?",
+            "**Tambahkan 좀 di depan dan permintaanmu langsung terdengar lebih ramah.** 좀 기다려 주세요 jauh lebih halus daripada 기다려 주세요. Hampir semua penutur asli menyisipkannya."
+          ]
+        },
+        {
+          "title": "Perbandingan",
+          "body": [
+            "Tiga pola yang menutup seluruh kebutuhan perbandingan di tingkat A1."
+          ],
+          "table": {
+            "head": [
+              "Pola",
+              "Bentuk",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "Lebih … daripada",
+                "A가 B**보다** …",
+                "커피가 차**보다** 비싸요",
+                "kopi lebih mahal daripada teh"
+              ],
+              [
+                "Lebih (menegaskan)",
+                "**더**",
+                "이게 **더** 좋아요",
+                "yang ini lebih bagus"
+              ],
+              [
+                "Kurang",
+                "**덜**",
+                "이게 **덜** 매워요",
+                "yang ini kurang pedas"
+              ],
+              [
+                "Paling",
+                "**제일 / 가장**",
+                "이게 **제일** 커요",
+                "yang ini paling besar"
+              ],
+              [
+                "Sama",
+                "A는 B**와 같아요**",
+                "이거는 그거와 같아요",
+                "yang ini sama dengan itu"
+              ],
+              [
+                "Berbeda",
+                "A는 B**와 달라요**",
+                "이거는 그거와 달라요",
+                "yang ini berbeda dengan itu"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Urutannya kebalikan dari bahasa Indonesia.** Indonesia: \"kopi lebih mahal **daripada teh**\". Korea: \"kopi **teh-daripada** mahal\" — pembandingnya datang lebih dulu, kata sifatnya di belakang. Kalau kamu menyusunnya mengikuti urutan Indonesia, kalimatnya akan terbalik artinya.",
+            "**Jawaban baku untuk pertanyaan \"mana yang lebih…?\"** adalah mengulang pilihannya: 커피하고 차 중에 뭐가 더 좋아요? → 커피가 더 좋아요. Kata 중에 berarti \"di antara\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Warna, ukuran, dan kata yang dipakai di toko",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Warna",
+            "Baca",
+            "Indonesia",
+            "Warna",
+            "Baca",
+            "Indonesia"
+          ],
+          "rows": [
+            [
+              "빨간색",
+              "ppalgansaek",
+              "merah",
+              "검은색",
+              "geomeunsaek",
+              "hitam"
+            ],
+            [
+              "파란색",
+              "paransaek",
+              "biru",
+              "흰색",
+              "huinsaek",
+              "putih"
+            ],
+            [
+              "노란색",
+              "noransaek",
+              "kuning",
+              "회색",
+              "hoesaek",
+              "abu-abu"
+            ],
+            [
+              "초록색",
+              "choroksaek",
+              "hijau",
+              "갈색",
+              "galsaek",
+              "cokelat"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "한국어",
+            "Baca",
+            "Indonesia",
+            "한국어",
+            "Baca",
+            "Indonesia"
+          ],
+          "rows": [
+            [
+              "옷",
+              "ot",
+              "baju",
+              "값",
+              "gap",
+              "harga"
+            ],
+            [
+              "바지",
+              "baji",
+              "celana",
+              "돈",
+              "don",
+              "uang"
+            ],
+            [
+              "치마",
+              "chima",
+              "rok",
+              "카드",
+              "kadeu",
+              "kartu"
+            ],
+            [
+              "신발",
+              "sinbal",
+              "sepatu",
+              "현금",
+              "hyeongeum",
+              "uang tunai"
+            ],
+            [
+              "가방",
+              "gabang",
+              "tas",
+              "영수증",
+              "yeongsujeung",
+              "struk"
+            ],
+            [
+              "모자",
+              "moja",
+              "topi",
+              "사이즈",
+              "saijeu",
+              "ukuran"
+            ],
+            [
+              "자켓",
+              "jaket",
+              "jaket",
+              "다른",
+              "dareun",
+              "yang lain"
+            ],
+            [
+              "선물",
+              "seonmul",
+              "hadiah",
+              "봉투",
+              "bongtu",
+              "kantong"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Kalimat toko yang layak dihafal utuh"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "이거 얼마예요?",
+              "Ini berapa?"
+            ],
+            [
+              "좀 깎아 주세요.",
+              "Tolong dikurangi sedikit."
+            ],
+            [
+              "다른 색 있어요?",
+              "Ada warna lain?"
+            ],
+            [
+              "더 큰 거 있어요?",
+              "Ada yang lebih besar?"
+            ],
+            [
+              "입어 봐도 돼요?",
+              "Boleh dicoba pakai?"
+            ],
+            [
+              "이걸로 할게요.",
+              "Saya ambil yang ini."
+            ],
+            [
+              "카드 돼요?",
+              "Bisa pakai kartu?"
+            ],
+            [
+              "봉투 주세요.",
+              "Tolong kantongnya."
+            ],
+            [
+              "영수증 주세요.",
+              "Tolong struknya."
+            ],
+            [
+              "그냥 볼게요.",
+              "Saya lihat-lihat dulu."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "그냥 볼게요 — kalimat pelarian",
+          "items": [
+            "Pelayan toko Korea akan mendekat dan menawarkan bantuan hampir seketika. Kalau kamu cuma ingin melihat-lihat, kalimatnya 그냥 볼게요 (\"saya lihat-lihat saja\").",
+            "Ia sopan, baku, dan langsung dipahami. Tanpa kalimat ini, satu-satunya jalan keluar yang tersisa biasanya adalah keluar dari tokonya."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "얼마",
+      "baca": "eolma",
+      "id": "berapa (harga)"
+    },
+    {
+      "ko": "값",
+      "baca": "gap",
+      "id": "harga"
+    },
+    {
+      "ko": "돈",
+      "baca": "don",
+      "id": "uang"
+    },
+    {
+      "ko": "깎아 주세요",
+      "baca": "kkakka juseyo",
+      "id": "tolong dikurangi harganya"
+    },
+    {
+      "ko": "기다려 주세요",
+      "baca": "gidaryeo juseyo",
+      "id": "tolong tunggu"
+    },
+    {
+      "ko": "도와주세요",
+      "baca": "dowajuseyo",
+      "id": "tolong bantu"
+    },
+    {
+      "ko": "보여 주세요",
+      "baca": "boyeo juseyo",
+      "id": "tolong perlihatkan"
+    },
+    {
+      "ko": "보다",
+      "baca": "boda",
+      "id": "daripada"
+    },
+    {
+      "ko": "더",
+      "baca": "deo",
+      "id": "lebih"
+    },
+    {
+      "ko": "덜",
+      "baca": "deol",
+      "id": "kurang"
+    },
+    {
+      "ko": "제일",
+      "baca": "jeil",
+      "id": "paling"
+    },
+    {
+      "ko": "다른",
+      "baca": "dareun",
+      "id": "yang lain"
+    },
+    {
+      "ko": "색",
+      "baca": "saek",
+      "id": "warna"
+    },
+    {
+      "ko": "사이즈",
+      "baca": "saijeu",
+      "id": "ukuran"
+    },
+    {
+      "ko": "커요",
+      "baca": "keoyo",
+      "id": "besar"
+    },
+    {
+      "ko": "작아요",
+      "baca": "jagayo",
+      "id": "kecil"
+    },
+    {
+      "ko": "옷",
+      "baca": "ot",
+      "id": "baju"
+    },
+    {
+      "ko": "신발",
+      "baca": "sinbal",
+      "id": "sepatu"
+    },
+    {
+      "ko": "카드",
+      "baca": "kadeu",
+      "id": "kartu"
+    },
+    {
+      "ko": "현금",
+      "baca": "hyeongeum",
+      "id": "uang tunai"
+    },
+    {
+      "ko": "영수증",
+      "baca": "yeongsujeung",
+      "id": "struk"
+    },
+    {
+      "ko": "선물",
+      "baca": "seonmul",
+      "id": "hadiah"
+    },
+    {
+      "ko": "잠깐만",
+      "baca": "jamkkanman",
+      "id": "sebentar saja"
+    },
+    {
+      "ko": "그냥",
+      "baca": "geunyang",
+      "id": "begitu saja, sekadar"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Korea.",
+      "items": [
+        "Ini berapa?",
+        "Agak mahal.",
+        "Tolong dikurangi sedikit.",
+        "Ada warna lain?",
+        "Ada yang lebih kecil?",
+        "Saya ambil yang ini."
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi bentuk permintaan dengan 주세요.",
+      "items": [
+        "기다리다 → ____ 주세요",
+        "말하다 → ____ 주세요",
+        "가르치다 → ____ 주세요",
+        "깎다 → ____ 주세요",
+        "보여주다 → ____ 주세요"
+      ]
+    },
+    {
+      "prompt": "Buat kalimat perbandingan dalam hangeul.",
+      "items": [
+        "Kopi lebih mahal daripada teh.",
+        "Yang ini lebih bagus.",
+        "Yang ini paling besar.",
+        "Hitam lebih bagus daripada putih.",
+        "Yang ini kurang pedas."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "얼마예요 / 이거 / ?",
+        "주세요 / 깎아 / 좀",
+        "있어요 / 색 / 다른 / ?",
+        "좋아요 / 흰색보다 / 검은색이",
+        "할게요 / 이걸로"
+      ]
+    }
+  ],
+  "answers": [
+    "이거 얼마예요? — 조금 비싸요. — 좀 깎아 주세요. — 다른 색 있어요? — 더 작은 거 있어요? — 이걸로 할게요.",
+    "기다려 — 말해 — 가르쳐 — 깎아 — 보여",
+    "커피가 차보다 비싸요. — 이게 더 좋아요. — 이게 제일 커요. — 검은색이 흰색보다 좋아요. — 이게 덜 매워요.",
+    "이거 얼마예요? — 좀 깎아 주세요. — 다른 색 있어요? — 검은색이 흰색보다 좋아요. — 이걸로 할게요."
+  ]
+}
