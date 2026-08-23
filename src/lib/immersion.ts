@@ -508,6 +508,8 @@ export interface WatchHistoryItem {
   channel?: string | null;
   /** Durasi detik — buat badge durasi di kartu "Lanjut Menonton". Entri lama: undefined. */
   duration?: number | null;
+  /** [watch-lanjut-menit-v1] Detik terakhir ditonton. Entri lama: undefined = mulai dari awal. */
+  position?: number | null;
   lang: string;
   ts: number;
 }
