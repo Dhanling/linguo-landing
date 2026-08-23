@@ -1,0 +1,194 @@
+{
+  "title": "Keluarga saya — dan \"punya\" yang terbalik",
+  "title_target": "Моя семья — Maya semya",
+  "goal": "Memperkenalkan anggota keluargamu, mengatakan kamu punya apa dan siapa, dan memahami dua hal yang membingungkan sekaligus: posesif yang ikut jenis bendanya, dan kalimat \"punya\" yang susunannya terbalik dari bahasa Indonesia.",
+  "bekal": [
+    "menyebut anggota keluarga inti",
+    "memakai мой / моя / моё / мои dengan benar",
+    "mengatakan \"saya punya …\" lewat susunan У меня есть …",
+    "menyangkal kepemilikan dengan У меня нет …",
+    "bertanya tentang keluarga orang lain"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Foto di dompet",
+      "intro": "Ani dan Марко duduk di kantin kampus. Марко mengeluarkan ponselnya dan memperlihatkan foto keluarga. Perhatikan bahwa kata \"punya\" tidak muncul sama sekali dalam bahasa Rusia — yang muncul adalah kata \"di\".",
+      "lines": [
+        { "speaker": "Марко:", "text": "[Смотри|Smat-RI], [это|E-ta] [моя|ma-YA] [семья|si-M'YA].", "id": "Lihat, ini keluarga saya.", "literal": "lihatlah, ini — saya-punya (fem) — keluarga." },
+        { "speaker": "Ани:", "text": "[Какая|Ka-KA-ya] [большая|bal'-SHA-ya] [семья|si-M'YA]! [Кто|Kto] [это|E-ta]?", "id": "Keluarga besar sekali! Ini siapa?", "literal": "betapa — besar — keluarga! siapa — ini?" },
+        { "speaker": "Марко:", "text": "[Это|E-ta] [мой|moy] [отец|a-TYETS] [и|i] [моя|ma-YA] [мать|mat']. [А|A] [это|E-ta] [мои|ma-I] [сёстры|SYOS-try].", "id": "Ini ayah saya dan ibu saya. Dan ini saudari-saudari saya.", "literal": "ini — saya-punya (mask) — ayah — dan — saya-punya (fem) — ibu. dan — ini — saya-punya (jamak) — saudari-saudari." },
+        { "speaker": "Ани:", "text": "[Сколько|SKOL'-ka] [у|u] [вас|vas] [сестёр|sis-TYOR]?", "id": "Anda punya berapa saudari?", "literal": "berapa — di — Anda — saudari-saudari?" },
+        { "speaker": "Марко:", "text": "[У|U] [меня|mi-NYA] [три|tri] [сестры|sist-RY] [и|i] [один|a-DIN] [брат|brat]. [А|A] [у|u] [вас|vas]?", "id": "Saya punya tiga saudari dan satu saudara. Kalau Anda?", "literal": "di — saya — tiga — saudari — dan — satu — saudara. dan — di — Anda?" },
+        { "speaker": "Ани:", "text": "[У|U] [меня|mi-NYA] [есть|yest'] [старший|STAR-shiy] [брат|brat]. [Сестры|Sist-RY] [нет|nyet].", "id": "Saya punya kakak laki-laki. Saudari tidak punya.", "literal": "di — saya — ada — lebih-tua — saudara. saudari — tidak-ada." },
+        { "speaker": "Марко:", "text": "[Он|On] [тоже|TO-zhy] [студент|stu-DYENT]?", "id": "Dia juga mahasiswa?", "literal": "dia — juga — mahasiswa?" },
+        { "speaker": "Ани:", "text": "[Нет|Nyet], [он|on] [инженер|in-zhy-NYER]. [Он|On] [работает|ra-BO-ta-yit] [в|v] [Джакарте|dzha-KAR-tye].", "id": "Bukan, dia insinyur. Dia bekerja di Jakarta.", "literal": "tidak, dia — insinyur. dia — bekerja — di — Jakarta." },
+        { "speaker": "Марко:", "text": "[А|A] [ваши|VA-shy] [родители|ra-DI-ti-li]?", "id": "Kalau orang tua Anda?", "literal": "dan — Anda-punya (jamak) — orang-tua?" },
+        { "speaker": "Ани:", "text": "[Мой|Moy] [папа|PA-pa] — [учитель|u-CHI-til'], [а|a] [мама|MA-ma] [дома|DO-ma].", "id": "Ayah saya guru, sedangkan ibu di rumah.", "literal": "saya-punya — papa — guru, sedangkan — mama — di-rumah." },
+        { "speaker": "Марко:", "text": "[У|U] [вас|vas] [есть|yest'] [собака|sa-BA-ka]?", "id": "Anda punya anjing?", "literal": "di — Anda — ada — anjing?" },
+        { "speaker": "Ани:", "text": "[Нет|Nyet], [но|no] [у|u] [нас|nas] [есть|yest'] [кошка|KOSH-ka]. [Её|Yi-YO] [зовут|za-VUT] [Луна|Lu-NA].", "id": "Tidak, tapi kami punya kucing. Namanya Luna.", "literal": "tidak, tapi — di — kami — ada — kucing. dia-pr (objek) — mereka-memanggil — Luna." }
+      ],
+      "notes": [
+        "**\"Saya punya\" dalam bahasa Rusia berbunyi \"di saya ada\".** ⚠️ Ini salah satu susunan paling asing bagi penutur Indonesia. *У меня есть брат* harfiahnya \"di saya ada abang\". Yang jadi **subjek kalimat bukan aku, melainkan abangnya** — dan itu sebabnya kata bendanya tetap dalam bentuk kamus, sementara \"aku\" berubah jadi меня.",
+        "**Есть boleh dibuang kalau yang ditanyakan bukan keberadaannya.** *У меня есть брат* menekankan bahwa abang itu **ada**. Tapi kalau abangnya sudah diketahui ada dan yang dibicarakan sifatnya, есть menghilang: *У меня **старший** брат* — abang saya yang lebih tua. Aturan praktis untuk A1: pakai есть kalau menjawab \"punya atau tidak\", buang kalau menjelaskan \"punya yang seperti apa\".",
+        "**Menyangkal kepemilikan memakai нет, dan kata bendanya ikut berubah.** *У меня **нет** сестр**ы*** — saya tidak punya saudari. Harfiahnya \"di saya tiada saudari\". ⚠️ Sesudah нет, kata benda **wajib** masuk genitif: сестра → сестры, брат → брата, время → времени. Ini pemakaian genitif kedua yang kamu temui, sesudah из di Unit 3.",
+        "**Posesif ikut jenis kelamin BENDA yang dimiliki, bukan pemiliknya.** ⚠️ Ini titik keliru besar kedua di unit ini. Dalam bahasa Indonesia \"saya punya\" tidak pernah berubah: buku saya, adik saya, rumah saya. Dalam bahasa Rusia: *мой брат* (mask), *моя сестра* (fem), *моё окно* (netral), *мои сёстры* (jamak). Yang menentukan adalah kata sesudahnya, bukan siapa yang bicara.",
+        "**Его, её, их tidak pernah berubah.** Ini hadiah kecil: posesif orang ketiga kaku. *его брат*, *его сестра*, *его окно* — semuanya его. Sama untuk её (dia perempuan punya) dan их (mereka punya). Jadi dari enam pemilik, tiga di antaranya tidak perlu dihafal bentuknya sama sekali.",
+        "**Отец/мать resmi, папа/мама sehari-hari.** Keduanya dipakai orang dewasa. Отец dan мать terdengar sedikit lebih jauh dan sering muncul di dokumen; папа dan мама yang dipakai dalam obrolan biasa, oleh orang berumur berapa pun. ⚠️ Ingat: **папа** berakhir -а tapi tetap maskulin — *мой папа*, bukan *моя папа*.",
+        "**Какая большая семья! adalah pola seruan.** Какой / какая / какое / какие + kata sifat = \"betapa …!\". *Какой красивый город!* — kota yang indah sekali!"
+      ],
+      "grammars": [
+        {
+          "title": "Posesif — tabel yang perlu kamu kuasai",
+          "body": [
+            "Baris atas adalah pemiliknya, lajur adalah jenis benda yang dimiliki. Yang berubah cuma tiga baris pertama."
+          ],
+          "table": {
+            "head": ["Pemilik", "+ mask (брат)", "+ fem (сестра)", "+ netral (окно)", "+ jamak (друзья)"],
+            "rows": [
+              ["saya", "**мой** брат", "**моя** сестра", "**моё** окно", "**мои** друзья"],
+              ["kamu (ты)", "**твой** брат", "**твоя** сестра", "**твоё** окно", "**твои** друзья"],
+              ["Anda/kalian (вы)", "**ваш** брат", "**ваша** сестра", "**ваше** окно", "**ваши** друзья"],
+              ["kami", "**наш** брат", "**наша** сестра", "**наше** окно", "**наши** друзья"],
+              ["dia lk", "**его** брат", "**его** сестра", "**его** окно", "**его** друзья"],
+              ["dia pr", "**её** брат", "**её** сестра", "**её** окно", "**её** друзья"],
+              ["mereka", "**их** брат", "**их** сестра", "**их** окно", "**их** друзья"]
+            ]
+          },
+          "after": [
+            "Perhatikan polanya, bukan tiap selnya: bentuk maskulin berakhir huruf mati atau **-й**, feminin berakhir **-а/-я**, netral berakhir **-ё/-е**, jamak berakhir **-и**. Pola yang sama akan muncul lagi di kata sifat (Unit 16).",
+            "⚠️ **его** dibaca *ye-VO*, bukan *ye-GO*. Huruf г di ekor -его/-ого selalu berbunyi *v*."
+          ]
+        },
+        {
+          "title": "У меня есть — kalimat \"punya\"",
+          "body": [
+            "Susunannya tetap: **У + orang (bentuk objek) + есть + benda (bentuk kamus)**."
+          ],
+          "table": {
+            "head": ["Siapa", "Bentuk sesudah У", "Contoh"],
+            "rows": [
+              ["я", "у **меня**", "У меня есть брат. — Saya punya abang."],
+              ["ты", "у **тебя**", "У тебя есть время? — Kamu ada waktu?"],
+              ["он", "у **него**", "У него есть машина. — Dia punya mobil."],
+              ["она", "у **неё**", "У неё есть собака. — Dia punya anjing."],
+              ["мы", "у **нас**", "У нас есть кошка. — Kami punya kucing."],
+              ["вы", "у **вас**", "У вас есть вопрос? — Anda ada pertanyaan?"],
+              ["они", "у **них**", "У них есть дом. — Mereka punya rumah."]
+            ]
+          },
+          "after": [
+            "⚠️ Sesudah kata depan, его/её/их menyusulkan huruf **н**: его → у **н**его, её → у **н**её, их → у **н**их. Aturan ini berlaku untuk semua kata depan, bukan cuma у.",
+            "Untuk menyangkal: ganti **есть** dengan **нет** dan ubah bendanya ke genitif. *У меня есть брат* → *У меня **нет брата***. *У неё есть собака* → *У неё **нет собаки***."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Keluarga",
+      "blocks": [
+        { "type": "tabel", "head": ["Русский", "Baca", "Bahasa Indonesia"], "rows": [
+          ["семья", "si-M'YA", "keluarga"],
+          ["родители", "ra-DI-ti-li", "orang tua"],
+          ["отец / папа", "a-TYETS / PA-pa", "ayah / papa"],
+          ["мать (f) / мама", "mat' / MA-ma", "ibu / mama"],
+          ["брат", "brat", "saudara laki-laki"],
+          ["сестра", "sist-RA", "saudara perempuan"],
+          ["сын", "syn", "anak laki-laki"],
+          ["дочь (f)", "doch'", "anak perempuan"],
+          ["муж", "mush", "suami"],
+          ["жена", "zhy-NA", "istri"],
+          ["дедушка", "DYE-dush-ka", "kakek"],
+          ["бабушка", "BA-bush-ka", "nenek"],
+          ["дядя / тётя", "DYA-dya / TYO-tya", "paman / bibi"],
+          ["друг / подруга", "druk / pad-RU-ga", "teman lk / teman pr"],
+          ["старший / младший", "STAR-shiy / MLAT-shiy", "lebih tua / lebih muda"]
+        ]},
+        { "type": "kotak", "title": "Yang tidak ada padanannya", "items": [
+          "⚠️ Bahasa Rusia **tidak membedakan kakak dan adik** dengan kata tersendiri seperti bahasa Indonesia. Брат berarti saudara laki-laki, titik. Kalau umurnya perlu disebut, ditambahkan **старший** (lebih tua) atau **младший** (lebih muda): *старший брат* = kakak laki-laki.",
+          "Sebaliknya, bahasa Rusia punya sesuatu yang tidak ada dalam bahasa Indonesia: **отчество**, nama tengah dari nama ayah. Иван Петрович berarti \"Ivan anak Pyotr\". Menyapa orang dengan nama + отчество (*Ольга Петровна*) adalah bentuk hormat sehari-hari, setara dengan \"Bu Ольга\" tapi lebih formal.",
+          "**дядя** dan **тётя** juga dipakai anak-anak untuk memanggil orang dewasa yang tidak dikenal, mirip \"om\" dan \"tante\" dalam bahasa Indonesia. Kesejajaran yang jarang sekali muncul antara dua bahasa ini — nikmati selagi ada."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    { "ru": "мой / моя / моё / мои", "baca": "moy / ma-YA / ma-YO / ma-I", "id": "saya punya" },
+    { "ru": "ваш / ваша / ваше / ваши", "baca": "vash / VA-sha / VA-shy / VA-shy", "id": "Anda punya" },
+    { "ru": "его / её / их", "baca": "ye-VO / yi-YO / ikh", "id": "dia lk / dia pr / mereka punya" },
+    { "ru": "у меня есть", "baca": "u mi-NYA yest'", "id": "saya punya" },
+    { "ru": "у меня нет", "baca": "u mi-NYA nyet", "id": "saya tidak punya" },
+    { "ru": "сколько", "baca": "SKOL'-ka", "id": "berapa" },
+    { "ru": "семья", "baca": "si-M'YA", "id": "keluarga" },
+    { "ru": "родители", "baca": "ra-DI-ti-li", "id": "orang tua" },
+    { "ru": "отец", "baca": "a-TYETS", "id": "ayah" },
+    { "ru": "мать (f)", "baca": "mat'", "id": "ibu" },
+    { "ru": "брат / сестра", "baca": "brat / sist-RA", "id": "saudara / saudari" },
+    { "ru": "муж / жена", "baca": "mush / zhy-NA", "id": "suami / istri" },
+    { "ru": "сын / дочь (f)", "baca": "syn / doch'", "id": "anak lk / anak pr" },
+    { "ru": "друг", "baca": "druk", "id": "teman" },
+    { "ru": "старший / младший", "baca": "STAR-shiy / MLAT-shiy", "id": "lebih tua / lebih muda" },
+    { "ru": "инженер", "baca": "in-zhy-NYER", "id": "insinyur" },
+    { "ru": "учитель", "baca": "u-CHI-til'", "id": "guru" },
+    { "ru": "работать", "baca": "ra-BO-tat'", "id": "bekerja" },
+    { "ru": "дома", "baca": "DO-ma", "id": "di rumah" },
+    { "ru": "собака / кошка", "baca": "sa-BA-ka / KOSH-ka", "id": "anjing / kucing" },
+    { "ru": "машина", "baca": "ma-SHY-na", "id": "mobil" },
+    { "ru": "время", "baca": "VRYE-mya", "id": "waktu" },
+    { "ru": "вопрос", "baca": "va-PROS", "id": "pertanyaan" },
+    { "ru": "какой / какая", "baca": "ka-KOY / ka-KA-ya", "id": "yang mana; betapa" },
+    { "ru": "смотри / смотрите", "baca": "smat-RI / smat-RI-tye", "id": "lihat! (akrab / hormat)" },
+    { "ru": "а", "baca": "a", "id": "dan, sedangkan (mempertentangkan)" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan мой, моя, моё, atau мои.",
+      "items": [
+        "____ брат",
+        "____ сестра",
+        "____ окно",
+        "____ родители",
+        "____ папа",
+        "____ семья"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi kalimat menyangkal. Ingat ekor genitifnya.",
+      "items": [
+        "У меня есть брат. → У меня ____",
+        "У неё есть собака. → У неё ____",
+        "У нас есть машина. → У нас ____",
+        "У него есть сестра. → У него ____",
+        "У вас есть время. → У вас ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "есть / у / брат / меня",
+        "семья / это / моя",
+        "у / сколько / вас / сестёр / ?",
+        "инженер / он",
+        "кошка / у / есть / нас"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Rusia.",
+      "items": [
+        "Ini keluarga saya.",
+        "Saya punya kakak laki-laki.",
+        "Saya tidak punya saudari.",
+        "Ayah saya guru.",
+        "Anda punya anjing?",
+        "Kami punya kucing."
+      ]
+    }
+  ],
+  "answers": [
+    "мой — моя — моё — мои — мой — моя",
+    "нет брата — нет собаки — нет машины — нет сестры — нет времени",
+    "У меня есть брат. — Это моя семья. — Сколько у вас сестёр? — Он инженер. — У нас есть кошка.",
+    "Это моя семья. — У меня есть старший брат. — У меня нет сестры. — Мой папа учитель. — У вас есть собака? — У нас есть кошка."
+  ]
+}

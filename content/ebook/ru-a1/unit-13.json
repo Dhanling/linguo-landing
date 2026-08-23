@@ -1,0 +1,470 @@
+{
+  "title": "Ke mana kamu pergi? — jalan kaki atau naik kendaraan",
+  "title_target": "Куда ты идёшь? — Kuda ty idyosh?",
+  "goal": "Menyebut tujuan perjalanan, dan menghadapi dua hal sekaligus: bahasa Rusia punya kata kerja berbeda untuk pergi jalan kaki dan pergi naik kendaraan, dan kata depan yang sama berubah arti tergantung ekor kata bendanya.",
+  "bekal": [
+    "membedakan идти dan ехать",
+    "membedakan где (di mana) dan куда (ke mana)",
+    "memakai в/на + akusatif untuk arah",
+    "menyebut alat transportasi",
+    "menanyakan cara pergi ke suatu tempat"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Salah naik metro",
+      "intro": "Ani tersesat di stasiun metro dan bertanya kepada seorang perempuan. Perhatikan pergantian antara где dan куда — dan bahwa ekor kata bendanya ikut berganti.",
+      "lines": [
+        {
+          "speaker": "Ани:",
+          "text": "[Извините|Iz-vi-NI-tye], [вы|vy] [не|nye] [знаете|ZNA-yi-tye], [где|gdye] [Красная|KRAS-na-ya] [площадь|PLO-schat']?",
+          "id": "Maaf, Anda tahu Lapangan Merah di mana?",
+          "literal": "maafkan, Anda — tidak — tahu, di-mana — Merah — lapangan?"
+        },
+        {
+          "speaker": "Женщина:",
+          "text": "[Красная|KRAS-na-ya] [площадь|PLO-schat']? [Вам|Vam] [нужна|nuzh-NA] [станция|STAN-tsy-ya] [Охотный|A-KHOT-nyy] [ряд|ryat].",
+          "id": "Lapangan Merah? Anda perlu stasiun Okhotny Ryad.",
+          "literal": "Merah — lapangan? kepada-Anda — perlu — stasiun — Okhotny — Ryad."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[А|A] [куда|ku-DA] [идёт|i-DYOT] [этот|E-tat] [поезд|PO-yist]?",
+          "id": "Kereta ini ke mana?",
+          "literal": "dan — ke-mana — berjalan — ini — kereta?"
+        },
+        {
+          "speaker": "Женщина:",
+          "text": "[Этот|E-tat] [едет|YE-dit] [в|v] [другую|dru-GU-yu] [сторону|STO-ra-nu]. [Вам|Vam] [надо|NA-da] [на|na] [ту|tu] [платформу|plat-FOR-mu].",
+          "id": "Yang ini jalan ke arah lain. Anda harus ke peron sebelah.",
+          "literal": "ini — berkendara — ke — lain — sisi. kepada-Anda — perlu — ke — itu — peron."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Спасибо|Spa-SI-ba]! [А|A] [сколько|SKOL'-ka] [остановок|as-ta-NO-vak]?",
+          "id": "Terima kasih! Berapa halte?",
+          "literal": "terima-kasih! dan — berapa — perhentian-perhentian?"
+        },
+        {
+          "speaker": "Женщина:",
+          "text": "[Три|Tri]. [Потом|Pa-TOM] [идите|i-DI-tye] [пешком|pish-KOM], [пять|pyat'] [минут|mi-NUT].",
+          "id": "Tiga. Lalu jalan kaki, lima menit.",
+          "literal": "tiga. lalu — berjalanlah — dengan-kaki, lima — menit."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Вы|Vy] [тоже|TO-zhy] [едете|YE-di-tye] [в|f] [центр|tsentr]?",
+          "id": "Anda juga ke pusat kota?",
+          "literal": "Anda — juga — berkendara — ke — pusat?"
+        },
+        {
+          "speaker": "Женщина:",
+          "text": "[Нет|Nyet], [я|ya] [еду|YE-du] [домой|da-MOY]. [Я|Ya] [живу|zhy-VU] [на|na] [юге|YU-gye].",
+          "id": "Tidak, saya pulang. Saya tinggal di selatan.",
+          "literal": "tidak, saya — berkendara — ke-rumah. saya — tinggal — di — selatan."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Понятно|Pa-NYAT-na]. [Ещё|Yi-SCHO] [раз|ras] [спасибо|spa-SI-ba]!",
+          "id": "Paham. Sekali lagi terima kasih!",
+          "literal": "jelas. lagi — kali — terima-kasih!"
+        },
+        {
+          "speaker": "Женщина:",
+          "text": "[Не|Nye] [за|za] [что|shto]. [Вы|Vy] [хорошо|kha-ra-SHO] [говорите|ga-va-RI-tye] [по-русски|pa-RUS-ki].",
+          "id": "Sama-sama. Bahasa Rusia Anda bagus.",
+          "literal": "tidak — untuk — apa. Anda — bagus — berbicara — secara-Rusia."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Спасибо|Spa-SI-ba], [но|no] [я|ya] [ещё|yi-SCHO] [учусь|u-CHUS'].",
+          "id": "Terima kasih, tapi saya masih belajar.",
+          "literal": "terima-kasih, tapi — saya — masih — belajar."
+        }
+      ],
+      "notes": [
+        "**Bahasa Rusia memisahkan pergi jalan kaki dari pergi naik kendaraan.** ⚠️ Bahasa Indonesia punya satu kata \"pergi\" untuk keduanya, jadi pemilihan ini benar-benar baru. **идти** = bergerak dengan kaki sendiri. **ехать** = bergerak dengan kendaraan apa pun — bus, mobil, kereta, sepeda, kuda. Memakai идти untuk perjalanan ke kota lain terdengar seperti kamu berjalan kaki ratusan kilometer.",
+        "**Aturan praktis: di dalam kota yang dekat pakai идти, ke luar kota atau naik kendaraan pakai ехать.** *Я иду в магазин* (saya ke toko, jalan kaki). *Я еду в Москву* (saya ke Moskow, dengan kendaraan). Kalau ragu di dalam kota, tanyakan pada dirimu: apakah kakiku yang membawaku?",
+        "**Где bertanya \"di mana\", куда bertanya \"ke mana\" — dan ekor kata bendanya ikut berbeda.** ⚠️ Ini titik keliru terbesar unit ini. Bandingkan: *Я **в** Москв**е*** (saya **di** Moskow, preposisional -е) lawan *Я еду **в** Москв**у*** (saya **ke** Moskow, akusatif -у). Kata depannya sama persis. Yang membedakan **hanya ekor kata bendanya**, dan artinya berubah dari diam jadi bergerak.",
+        "**Kata depan tetap mengikuti pasangan в/на dari Unit 10.** Kalau tempat itu memakai *на* untuk \"di\" (на работе), ia juga memakai *на* untuk \"ke\" (на работу). Kalau memakai *в* (в магазине), maka *в магазин*. Jadi kamu tidak perlu menghafal daftar kedua — cukup ubah ekornya.",
+        "**Домой adalah pengecualian yang menyenangkan.** \"Ke rumah\" bukan *в дом* melainkan **домой**, satu kata tanpa kata depan. Sepasang dengan **дома** (di rumah) dari Unit 10. *Я еду домой* — saya pulang.",
+        "**Пешком berarti \"dengan berjalan kaki\".** *Идите пешком* — jalan kaki saja. Kata ini sering ditambahkan meski kata kerjanya sudah идти, untuk menegaskan.",
+        "**Не за что** (*nye za shto*) adalah jawaban atas terima kasih, harfiahnya \"tidak untuk apa\" — setara \"tidak usah dipikirkan\". Lebih hangat daripada пожалуйста dan sangat khas Rusia."
+      ],
+      "grammars": [
+        {
+          "title": "Идти dan ехать",
+          "body": [
+            "Dua kata kerja yang paling sering dipakai dalam bahasa Rusia sehari-hari, dan dua-duanya menyimpang dari pola."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "идти (jalan kaki)",
+              "Baca",
+              "ехать (berkendara)",
+              "Baca"
+            ],
+            "rows": [
+              [
+                "я",
+                "иду",
+                "i-DU",
+                "еду",
+                "YE-du"
+              ],
+              [
+                "ты",
+                "идёшь",
+                "i-DYOSH",
+                "едешь",
+                "YE-dish"
+              ],
+              [
+                "он / она",
+                "идёт",
+                "i-DYOT",
+                "едет",
+                "YE-dit"
+              ],
+              [
+                "мы",
+                "идём",
+                "i-DYOM",
+                "едем",
+                "YE-dim"
+              ],
+              [
+                "вы",
+                "идёте",
+                "i-DYO-tye",
+                "едете",
+                "YE-di-tye"
+              ],
+              [
+                "они",
+                "идут",
+                "i-DUT",
+                "едут",
+                "YE-dut"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Bentuk lampaunya juga menyimpang: идти → **шёл** (lk), **шла** (pr), **шли** (jamak). Ехать → **ехал, ехала, ехали** (patuh). Bentuk lampau dibahas penuh di Unit 14.",
+            "Идти juga dipakai untuk hal yang bergerak tanpa kaki: *Поезд идёт* (kereta jalan), *Дождь идёт* (hujan turun), *Фильм идёт* (film sedang diputar). Jadi ia tidak selalu berarti kaki manusia."
+          ]
+        },
+        {
+          "title": "Где lawan Куда — satu tabel yang menutup semuanya",
+          "body": [
+            "Pertanyaan berbeda, ekor berbeda, arti berbeda. Kata depannya sama."
+          ],
+          "table": {
+            "head": [
+              "",
+              "ГДЕ — di mana (diam)",
+              "КУДА — ke mana (bergerak)"
+            ],
+            "rows": [
+              [
+                "Ekornya",
+                "preposisional **-е**",
+                "akusatif **-у / sama**"
+              ],
+              [
+                "Moskow",
+                "в Москв**е**",
+                "в Москв**у**"
+              ],
+              [
+                "kampus",
+                "в университет**е**",
+                "в университет"
+              ],
+              [
+                "kerja",
+                "на работ**е**",
+                "на работ**у**"
+              ],
+              [
+                "toko",
+                "в магазин**е**",
+                "в магазин"
+              ],
+              [
+                "rumah",
+                "**дома**",
+                "**домой**"
+              ],
+              [
+                "perpustakaan",
+                "в библиотек**е**",
+                "в библиотек**у**"
+              ],
+              [
+                "Contoh",
+                "Я живу в Москве.",
+                "Я еду в Москву."
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa kata benda maskulin (университет, магазин, центр) **tidak berubah** di lajur kanan — sama seperti akusatif benda mati di Unit 8. Jadi separuh dari kalimat arah gratis.",
+            "⚠️ Pertanyaannya juga wajib cocok. *Где ты?* dijawab *В университете*. *Куда ты?* dijawab *В университет*. Menjawab dengan ekor yang salah adalah salah satu kesalahan yang paling cepat dikenali penutur asli."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Alat transportasi",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Untuk menyebut naik apa, pakai **на + preposisional** — bentuk yang sama dengan \"di\". Logikanya: kamu berada *di atas* kendaraan itu."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Русский",
+            "Baca",
+            "Bahasa Indonesia",
+            "Naik dengan …"
+          ],
+          "rows": [
+            [
+              "автобус",
+              "af-TO-bus",
+              "bus",
+              "на автобусе"
+            ],
+            [
+              "метро",
+              "mit-RO",
+              "metro",
+              "на метро"
+            ],
+            [
+              "трамвай",
+              "tram-VAY",
+              "trem",
+              "на трамвае"
+            ],
+            [
+              "маршрутка",
+              "mar-SHRUT-ka",
+              "angkot",
+              "на маршрутке"
+            ],
+            [
+              "такси",
+              "tak-SI",
+              "taksi",
+              "на такси"
+            ],
+            [
+              "машина",
+              "ma-SHY-na",
+              "mobil",
+              "на машине"
+            ],
+            [
+              "поезд",
+              "PO-yist",
+              "kereta",
+              "на поезде"
+            ],
+            [
+              "самолёт",
+              "sa-ma-LYOT",
+              "pesawat",
+              "на самолёте"
+            ],
+            [
+              "велосипед",
+              "vi-la-si-PYET",
+              "sepeda",
+              "на велосипеде"
+            ],
+            [
+              "пешком",
+              "pish-KOM",
+              "jalan kaki",
+              "пешком (tanpa на)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kalimat siap pakai untuk bepergian",
+          "items": [
+            "**Как доехать до …?** (*kak da-YE-khat' da*) — Bagaimana caranya sampai ke …? Kalimat baku untuk bertanya arah dengan kendaraan. Sesudah до pakai genitif: *до центра*, *до вокзала*.",
+            "**Как пройти до …?** — Bagaimana caranya jalan ke …? Versi jalan kakinya.",
+            "**Сколько остановок?** — Berapa halte?",
+            "**Мне надо выходить?** (*mnye NA-da vy-kha-DIT'*) — Saya harus turun?",
+            "**Вы выходите?** — Anda turun? ⚠️ Kalimat wajib di metro Moskow yang penuh sesak: sebelum pintu terbuka, orang bertanya ini kepada yang berdiri di depannya. Tidak bertanya lalu mendorong dianggap kasar.",
+            "**Я заблудился / Я заблудилась** — Saya tersesat (lk / pr)."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "куда",
+      "baca": "ku-DA",
+      "id": "ke mana"
+    },
+    {
+      "ru": "идти",
+      "baca": "it-TI",
+      "id": "pergi (jalan kaki)"
+    },
+    {
+      "ru": "ехать",
+      "baca": "YE-khat'",
+      "id": "pergi (naik kendaraan)"
+    },
+    {
+      "ru": "пешком",
+      "baca": "pish-KOM",
+      "id": "jalan kaki"
+    },
+    {
+      "ru": "домой",
+      "baca": "da-MOY",
+      "id": "ke rumah, pulang"
+    },
+    {
+      "ru": "поезд",
+      "baca": "PO-yist",
+      "id": "kereta"
+    },
+    {
+      "ru": "автобус",
+      "baca": "af-TO-bus",
+      "id": "bus"
+    },
+    {
+      "ru": "самолёт",
+      "baca": "sa-ma-LYOT",
+      "id": "pesawat"
+    },
+    {
+      "ru": "остановка",
+      "baca": "as-ta-NOF-ka",
+      "id": "halte, perhentian"
+    },
+    {
+      "ru": "станция",
+      "baca": "STAN-tsy-ya",
+      "id": "stasiun (metro)"
+    },
+    {
+      "ru": "платформа",
+      "baca": "plat-FOR-ma",
+      "id": "peron"
+    },
+    {
+      "ru": "площадь (f)",
+      "baca": "PLO-schat'",
+      "id": "lapangan, alun-alun"
+    },
+    {
+      "ru": "центр",
+      "baca": "tsentr",
+      "id": "pusat kota"
+    },
+    {
+      "ru": "сторона",
+      "baca": "sta-ra-NA",
+      "id": "sisi, arah"
+    },
+    {
+      "ru": "другой",
+      "baca": "dru-GOY",
+      "id": "lain"
+    },
+    {
+      "ru": "нужен / нужна / надо",
+      "baca": "NU-zhyn / nuzh-NA / NA-da",
+      "id": "perlu, butuh"
+    },
+    {
+      "ru": "выходить",
+      "baca": "vy-kha-DIT'",
+      "id": "keluar, turun"
+    },
+    {
+      "ru": "юг / север",
+      "baca": "yuk / SYE-vir",
+      "id": "selatan / utara"
+    },
+    {
+      "ru": "не за что",
+      "baca": "nye za shto",
+      "id": "sama-sama, tidak usah"
+    },
+    {
+      "ru": "красный",
+      "baca": "KRAS-nyy",
+      "id": "merah"
+    },
+    {
+      "ru": "заблудиться",
+      "baca": "za-blu-DI-tsa",
+      "id": "tersesat"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih идти atau ехать dalam bentuk yang tepat.",
+      "items": [
+        "Я ____ в магазин пешком.",
+        "Мы ____ в Москву на поезде.",
+        "Он ____ в университет на автобусе.",
+        "Ты ____ домой?",
+        "Они ____ в Индонезию на самолёте."
+      ]
+    },
+    {
+      "prompt": "Ubah ke bentuk sesudah в atau на untuk arah (куда).",
+      "items": [
+        "Москва → Я еду в ____",
+        "университет → Я иду в ____",
+        "работа → Я еду на ____",
+        "библиотека → Я иду в ____",
+        "дом → Я еду ____",
+        "центр → Я еду в ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "идёшь / куда / ты / ?",
+        "еду / я / домой",
+        "остановок / сколько / ?",
+        "пешком / идите",
+        "до / доехать / центра / как / ?"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Rusia.",
+      "items": [
+        "Kamu mau ke mana?",
+        "Saya ke toko. (jalan kaki)",
+        "Kami ke Moskow naik kereta.",
+        "Saya pulang.",
+        "Berapa halte?",
+        "Bagaimana caranya sampai ke pusat kota?"
+      ]
+    }
+  ],
+  "answers": [
+    "иду — едем — едет — идёшь — едут",
+    "Москву — университет — работу — библиотеку — домой — центр",
+    "Куда ты идёшь? — Я еду домой. — Сколько остановок? — Идите пешком. — Как доехать до центра?",
+    "Куда ты идёшь? — Я иду в магазин. — Мы едем в Москву на поезде. — Я еду домой. — Сколько остановок? — Как доехать до центра?"
+  ]
+}

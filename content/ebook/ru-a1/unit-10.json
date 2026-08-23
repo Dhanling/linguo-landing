@@ -1,0 +1,194 @@
+{
+  "title": "Kamu tinggal di mana?",
+  "title_target": "Где ты живёшь? — Gde ty zhivyosh?",
+  "goal": "Menyebutkan tempat: kota, rumah, kantor, kampus. Dan menguasai kasus preposisional — ekor yang muncul setiap kali kata benda didahului \"di\".",
+  "bekal": [
+    "menjawab Где вы живёте? dan Где вы работаете?",
+    "mengubah kata benda ke bentuk preposisional",
+    "memilih antara в dan на",
+    "menyebut bagian-bagian rumah dan tempat umum",
+    "bertanya di mana sesuatu berada"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Mencari tempat kos",
+      "intro": "Ani ingin pindah dari asrama. Ia bertanya kepada Сергей, tetangga dari Unit 5. Perhatikan bahwa setiap kata benda sesudah в dan на berubah ekornya jadi -е.",
+      "lines": [
+        { "speaker": "Ани:", "text": "[Сергей|Sir-GYEY], [где|gdye] [вы|vy] [живёте|zhy-VYO-tye]?", "id": "Sergey, Anda tinggal di mana?", "literal": "Sergey, di-mana — Anda — tinggal?" },
+        { "speaker": "Сергей:", "text": "[В|V] [этом|E-tam] [доме|DO-mye], [на|na] [пятом|PYA-tam] [этаже|e-ta-ZHE]. [А|A] [почему|pa-chi-MU]?", "id": "Di gedung ini, di lantai lima. Kenapa?", "literal": "di — ini — rumah, pada — kelima — lantai. dan — kenapa?" },
+        { "speaker": "Ани:", "text": "[Я|Ya] [ищу|i-SCHU] [квартиру|kvar-TI-ru]. [В|V] [общежитии|ap-schy-ZHY-ti-i] [шумно|SHUM-na].", "id": "Saya cari apartemen. Di asrama berisik.", "literal": "saya — mencari — apartemen. di — asrama — berisik." },
+        { "speaker": "Сергей:", "text": "[Понимаю|Pa-ni-MA-yu]. [В|V] [нашем|NA-shym] [районе|ra-YO-nye] [есть|yest'] [хорошие|kha-RO-shy-ye] [квартиры|kvar-TI-ry].", "id": "Paham. Di daerah kami ada apartemen bagus.", "literal": "mengerti-saya. di — kami-punya — daerah — ada — bagus — apartemen-apartemen." },
+        { "speaker": "Ани:", "text": "[Это|E-ta] [далеко|da-li-KO] [от|at] [университета|u-ni-vir-si-TYE-ta]?", "id": "Itu jauh dari kampus?", "literal": "ini — jauh — dari — universitas?" },
+        { "speaker": "Сергей:", "text": "[Нет|Nyet], [близко|BLIS-ka]. [Пятнадцать|Pit-NA-tsat'] [минут|mi-NUT] [на|na] [метро|mit-RO].", "id": "Tidak, dekat. Lima belas menit naik metro.", "literal": "tidak, dekat. lima-belas — menit — pada — metro." },
+        { "speaker": "Ани:", "text": "[А|A] [магазины|ma-ga-ZI-ny]? [Аптека|Ap-TYE-ka]?", "id": "Kalau toko? Apotek?", "literal": "dan — toko-toko? apotek?" },
+        { "speaker": "Сергей:", "text": "[Всё|Fsyo] [рядом|RYA-dam]. [Магазин|Ma-ga-ZIN] [на|na] [углу|ug-LU], [аптека|ap-TYE-ka] [напротив|na-PRO-tif].", "id": "Semuanya dekat. Toko di pojokan, apotek di seberang.", "literal": "semua — bersebelahan. toko — pada — sudut, apotek — berhadapan." },
+        { "speaker": "Ани:", "text": "[Звучит|Zvu-CHIT] [отлично|at-LICH-na]. [Сколько|SKOL'-ka] [стоит|STO-it] [квартира|kvar-TI-ra] [здесь|zdyes']?", "id": "Kedengaran bagus. Apartemen di sini harganya berapa?", "literal": "terdengar — hebat. berapa — berharga — apartemen — di-sini?" },
+        { "speaker": "Сергей:", "text": "[Однокомнатная|Ad-na-KOM-nat-na-ya] — [около|O-ka-la] [сорока|sa-ra-KA] [тысяч|TY-sich] [в|v] [месяц|MYE-sits].", "id": "Yang satu kamar sekitar empat puluh ribu sebulan.", "literal": "satu-kamar — sekitar — empat-puluh — ribu — dalam — bulan." },
+        { "speaker": "Ани:", "text": "[Хм|Khm]. [Может|MO-zhyt] [быть|byt'], [в|v] [общежитии|ap-schy-ZHY-ti-i] [не|nye] [так|tak] [шумно|SHUM-na].", "id": "Hmm. Mungkin di asrama tidak seberisik itu.", "literal": "hmm. mungkin — jadi, di — asrama — tidak — begitu — berisik." }
+      ],
+      "notes": [
+        "**Sesudah в dan на untuk menyatakan tempat, kata benda berubah ekornya jadi -е.** ⚠️ Москва → в Москв**е**, дом → в дом**е**, работа → на работ**е**, стол → на стол**е**. Itu kasus preposisional, dan namanya memang begitu karena ia **hanya** muncul sesudah kata depan — tidak pernah berdiri sendiri.",
+        "**Ekornya hampir selalu -е, dan itu membuatnya kasus paling mudah.** Maskulin, feminin, netral: semuanya **-е**. Yang menyimpang cuma kata berakhir **-ия/-ие** (Россия → в Росси**и**, общежитие → в общежити**и**) dan sedikit kata maskulin yang memakai **-у** bertekanan (в углу, в саду, в аэропорту).",
+        "**В berarti \"di dalam\", на berarti \"di atas\" atau \"di permukaan\" — tapi pembagian sungguhannya sebagian harus dihafal.** *в доме* (di dalam rumah), *на столе* (di atas meja) masuk akal. Tapi *на работе* (di tempat kerja), *на почте* (di kantor pos), *на вокзале* (di stasiun) tidak bisa diterangkan dengan logika \"di atas\". Kotak tata bahasa di bawah memuat daftar yang perlu dihafal.",
+        "**⚠️ Jangan tertukar dengan в + akusatif.** *Я живу в Москв**е*** (saya tinggal di Moskow, preposisional) tapi *Я еду в Москв**у*** (saya pergi ke Moskow, akusatif). Kata depannya sama persis, yang membedakan cuma ekor kata bendanya — dan artinya berubah total dari \"di\" jadi \"ke\". Unit 13 membahasnya penuh; untuk sekarang cukup sadari bahwa **-е berarti diam di tempat**.",
+        "**Далеко от dan близко от memakai genitif.** *далеко от университет**а*** (jauh dari kampus), *близко от дом**а*** (dekat dari rumah). Kata depan **от** selalu diikuti genitif, sama seperti из dan без.",
+        "**Однокомнатная квартира berarti apartemen satu kamar** — dan di Rusia hitungannya tidak memasukkan dapur. Однокомнатная = satu kamar plus dapur plus kamar mandi. Двухкомнатная = dua kamar. ⚠️ Sistem yang berbeda dari Indonesia, tempat \"dua kamar\" biasanya berarti dua kamar tidur.",
+        "**Может быть berarti \"mungkin\", dan sering dipendekkan jadi может saja.** *Может, завтра?* — mungkin besok?"
+      ],
+      "grammars": [
+        {
+          "title": "Preposisional — ekor -е untuk hampir semuanya",
+          "body": ["Dipakai sesudah **в** (di dalam), **на** (di, pada), dan **о** (tentang)."],
+          "table": {
+            "head": ["Bentuk kamus", "Preposisional", "Contoh"],
+            "rows": [
+              ["дом (mask)", "в дом**е**", "Я в доме. — Saya di dalam rumah."],
+              ["стол (mask)", "на стол**е**", "Книга на столе. — Buku di atas meja."],
+              ["Москва (fem)", "в Москв**е**", "Я живу в Москве."],
+              ["работа (fem)", "на работ**е**", "Он на работе. — Dia di tempat kerja."],
+              ["окно (netral)", "в окн**е**", "Кошка в окне."],
+              ["Россия (fem -ия) ⚠️", "в Росси**и**", "Я живу в России."],
+              ["общежитие (netral -ие) ⚠️", "в общежити**и**", "Я живу в общежитии."],
+              ["угол, сад, аэропорт ⚠️", "в угл**у**, в сад**у**, в аэропорт**у**", "Магазин на углу."]
+            ]
+          },
+          "after": [
+            "Kasus ini juga dipakai untuk \"tentang\": *Мы говорим **о работе*** — kami bicara tentang pekerjaan. *Книга **о России*** — buku tentang Rusia.",
+            "⚠️ Kata depan **о** berubah jadi **об** di depan vokal: *об Ани*, *об Италии*. Sekadar supaya enak diucapkan."
+          ]
+        },
+        {
+          "title": "В atau на — daftar yang perlu dihafal",
+          "body": ["Untuk sebagian besar tempat tertutup, pakai **в**. Daftar berikut adalah tempat yang memakai **на** meskipun logikanya tidak jelas."],
+          "tables": [
+            {
+              "head": ["Memakai В", "Memakai НА ⚠️"],
+              "rows": [
+                ["в доме — di rumah", "на работе — di tempat kerja"],
+                ["в квартире — di apartemen", "на почте — di kantor pos"],
+                ["в комнате — di kamar", "на вокзале — di stasiun kereta"],
+                ["в магазине — di toko", "на остановке — di halte"],
+                ["в кафе — di kafe", "на улице — di jalan, di luar"],
+                ["в университете — di kampus", "на уроке — di pelajaran"],
+                ["в театре — di teater", "на концерте — di konser"],
+                ["в больнице — di rumah sakit", "на рынке — di pasar"],
+                ["в банке — di bank", "на этаже — di lantai (tingkat)"],
+                ["в Москве — di Moskow", "на кухне — di dapur"]
+              ]
+            }
+          ],
+          "after": [
+            "Tidak ada aturan tunggal yang menerangkan seluruh lajur kanan. Pola yang agak membantu: **на** dipakai untuk tempat yang dibayangkan sebagai bidang terbuka atau kegiatan (улица, площадь, урок, концерт), sementara **в** untuk ruang tertutup. Sisanya hafalan.",
+            "Kesalahan di sini tidak mematikan komunikasi — *в работе* akan tetap dimengerti — tapi langsung menandai penutur asing. Hafalkan sepuluh baris kanan itu dan kamu sudah menutup sebagian besar percakapan sehari-hari."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Rumah dan tempat umum",
+      "blocks": [
+        { "type": "tabel", "head": ["Русский", "Baca", "Bahasa Indonesia"], "rows": [
+          ["дом", "dom", "rumah, gedung"],
+          ["квартира", "kvar-TI-ra", "apartemen"],
+          ["общежитие", "ap-schy-ZHY-ti-ye", "asrama"],
+          ["кухня", "KUKH-nya", "dapur"],
+          ["ванная", "VA-na-ya", "kamar mandi"],
+          ["туалет", "tu-a-LYET", "toilet"],
+          ["спальня", "SPAL'-nya", "kamar tidur"],
+          ["балкон", "bal-KON", "balkon"],
+          ["этаж", "e-TASH", "lantai (tingkat)"],
+          ["улица", "U-li-tsa", "jalan"],
+          ["район", "ra-YON", "daerah, kawasan"],
+          ["центр", "tsentr", "pusat kota"],
+          ["метро", "mit-RO", "metro, kereta bawah tanah"],
+          ["вокзал", "vag-ZAL", "stasiun kereta"],
+          ["остановка", "as-ta-NOF-ka", "halte"],
+          ["университет", "u-ni-vir-si-TYET", "universitas"],
+          ["почта", "POCH-ta", "kantor pos"],
+          ["банк", "bank", "bank"]
+        ]},
+        { "type": "kotak", "title": "Kata tempat yang tidak butuh kata depan", "items": [
+          "**дома** (*DO-ma*) — di rumah. Bukan *в доме*: kalau maksudmu \"berada di rumah\" (bukan \"di dalam bangunan rumah\"), kata yang dipakai adalah дома. *Я дома* — saya di rumah.",
+          "**здесь / там / тут** — di sini / di sana / di sini (santai). Tidak pernah butuh kata depan.",
+          "**рядом** (*RYA-dam*) — di sebelah, dekat sekali. *Магазин рядом* — tokonya dekat.",
+          "**напротив** (*na-PRO-tif*) — di seberang. Butuh genitif kalau menyebut apanya: *напротив дом**а***.",
+          "⚠️ **домой** (*da-MOY*) berbeda dari **дома**: домой berarti \"ke rumah\", дома berarti \"di rumah\". *Я иду домой* — saya pulang. *Я дома* — saya di rumah."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    { "ru": "где", "baca": "gdye", "id": "di mana" },
+    { "ru": "жить", "baca": "zhyt'", "id": "tinggal, hidup" },
+    { "ru": "в / на", "baca": "v / na", "id": "di (dua kata depan tempat)" },
+    { "ru": "от", "baca": "at", "id": "dari (jarak)" },
+    { "ru": "далеко / близко", "baca": "da-li-KO / BLIS-ka", "id": "jauh / dekat" },
+    { "ru": "рядом", "baca": "RYA-dam", "id": "di sebelah, dekat" },
+    { "ru": "напротив", "baca": "na-PRO-tif", "id": "di seberang" },
+    { "ru": "искать", "baca": "is-KAT'", "id": "mencari" },
+    { "ru": "шумно / тихо", "baca": "SHUM-na / TI-kha", "id": "berisik / tenang" },
+    { "ru": "около", "baca": "O-ka-la", "id": "sekitar, kira-kira" },
+    { "ru": "тысяча", "baca": "TY-si-cha", "id": "seribu" },
+    { "ru": "месяц", "baca": "MYE-sits", "id": "bulan" },
+    { "ru": "минута", "baca": "mi-NU-ta", "id": "menit" },
+    { "ru": "угол", "baca": "U-gal", "id": "sudut, pojok" },
+    { "ru": "может быть", "baca": "MO-zhyt byt'", "id": "mungkin" },
+    { "ru": "звучит", "baca": "zvu-CHIT", "id": "kedengarannya" },
+    { "ru": "дома / домой", "baca": "DO-ma / da-MOY", "id": "di rumah / ke rumah" },
+    { "ru": "хороший", "baca": "kha-RO-shyy", "id": "bagus, baik" },
+    { "ru": "о / об", "baca": "a / ab", "id": "tentang" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah ke bentuk preposisional sesudah в atau на.",
+      "items": [
+        "Москва → Я живу в ____",
+        "дом → Я в ____",
+        "работа → Он на ____",
+        "Россия → Мы в ____",
+        "стол → Книга на ____",
+        "общежитие → Я живу в ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan в atau на.",
+      "items": [
+        "Я работаю ____ офисе.",
+        "Она ____ работе.",
+        "Мы ____ университете.",
+        "Магазин ____ улице.",
+        "Он ____ кухне.",
+        "Книга ____ сумке."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "живёте / вы / где / ?",
+        "в / живу / я / Москве",
+        "рядом / всё",
+        "от / это / университета / далеко / ?",
+        "на / магазин / углу"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Rusia.",
+      "items": [
+        "Anda tinggal di mana?",
+        "Saya tinggal di Moskow.",
+        "Dia sedang di tempat kerja.",
+        "Di asrama berisik.",
+        "Itu jauh dari kampus?",
+        "Tokonya di pojokan."
+      ]
+    }
+  ],
+  "answers": [
+    "Москве — доме — работе — России — столе — общежитии",
+    "в — на — в — на — на — в",
+    "Где вы живёте? — Я живу в Москве. — Всё рядом. — Это далеко от университета? — Магазин на углу.",
+    "Где вы живёте? — Я живу в Москве. — Он на работе. — В общежитии шумно. — Это далеко от университета? — Магазин на углу."
+  ]
+}

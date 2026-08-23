@@ -1,0 +1,194 @@
+{
+  "title": "Cuaca: dingin, dan dingin yang lain lagi",
+  "title_target": "Погода и времена года — Pogoda i vremena goda",
+  "goal": "Bicara tentang cuaca dan musim — topik pembuka percakapan nomor satu di Rusia — sambil memisahkan dua hal yang dalam bahasa Indonesia sama-sama disebut \"dingin\".",
+  "bekal": [
+    "menggambarkan cuaca hari ini",
+    "membedakan холодно (cuacanya dingin) dan мне холодно (saya kedinginan)",
+    "menyebut empat musim dan bulan",
+    "membaca suhu di bawah nol",
+    "membuat basa-basi cuaca yang wajar"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Minus dua puluh",
+      "intro": "Januari di Moskow. Ani dan Сергей berpapasan di depan gedung. Perhatikan bahwa \"dingin\" muncul dalam dua susunan yang berbeda dan artinya tidak sama.",
+      "lines": [
+        { "speaker": "Сергей:", "text": "[Ани|A-ni]! [Вы|Vy] [живы|ZHY-vy]?", "id": "Ani! Anda masih hidup?", "literal": "Ani! Anda — hidup (jamak)?" },
+        { "speaker": "Ани:", "text": "[Едва|Yid-VA]. [Мне|Mnye] [очень|O-chin'] [холодно|KHO-lad-na]. [Сколько|SKOL'-ka] [градусов|GRA-du-saf]?", "id": "Nyaris tidak. Saya kedinginan banget. Berapa derajat?", "literal": "nyaris. kepada-saya — sangat — dingin. berapa — derajat-derajat?" },
+        { "speaker": "Сергей:", "text": "[Минус|MI-nus] [двадцать|DVA-tsat'] [два|dva]. [Сегодня|Si-VOD-nya] [тепло|tip-LO]!", "id": "Minus dua puluh dua. Hari ini hangat!", "literal": "minus — dua-puluh — dua. hari-ini — hangat!" },
+        { "speaker": "Ани:", "text": "[Тепло|Tip-LO]?! [Минус|MI-nus] [двадцать|DVA-tsat'] [два|dva] — [это|E-ta] [тепло|tip-LO]?", "id": "Hangat?! Minus dua puluh dua itu hangat?", "literal": "hangat?! minus — dua-puluh — dua — ini — hangat?" },
+        { "speaker": "Сергей:", "text": "[На|Na] [прошлой|PROSH-lay] [неделе|ni-DYE-lye] [было|BY-la] [минус|MI-nus] [тридцать|TRI-tsat']. [Вот|Vot] [это|E-ta] [было|BY-la] [холодно|KHO-lad-na].", "id": "Minggu lalu minus tiga puluh. Nah itu baru dingin.", "literal": "pada — lalu — minggu — ada — minus — tiga-puluh. inilah — ini — ada — dingin." },
+        { "speaker": "Ани:", "text": "[В|V] [Индонезии|In-da-NE-zi-i] [самая|SA-ma-ya] [низкая|NIS-ka-ya] [температура|tim-pi-ra-TU-ra] — [плюс|plyus] [восемнадцать|va-sim-NA-tsat'].", "id": "Di Indonesia suhu terendahnya plus delapan belas.", "literal": "di — Indonesia — paling — rendah — suhu — plus — delapan-belas." },
+        { "speaker": "Сергей:", "text": "[Восемнадцать|Va-sim-NA-tsat']?! [Это|E-ta] [же|zhy] [лето|LYE-ta]! [У|U] [нас|nas] [в|v] [мае|MA-ye] [так|tak].", "id": "Delapan belas?! Itu kan musim panas! Di sini bulan Mei begitu.", "literal": "delapan-belas?! ini — kan — musim-panas! di — kami — pada — Mei — begitu." },
+        { "speaker": "Ани:", "text": "[Как|Kak] [вы|vy] [здесь|zdyes'] [живёте|zhy-VYO-tye]?", "id": "Bagaimana kalian hidup di sini?", "literal": "bagaimana — kalian — di-sini — hidup?" },
+        { "speaker": "Сергей:", "text": "[Одежда|A-DYEZH-da]. [Термобельё|Ter-ma-bil'-YO], [шапка|SHAP-ka], [хорошие|kha-RO-shy-ye] [сапоги|sa-pa-GI]. [И|I] [чай|chay].", "id": "Pakaian. Baju termal, topi, sepatu bot yang bagus. Dan teh.", "literal": "pakaian. baju-termal, topi, bagus — sepatu-bot. dan — teh." },
+        { "speaker": "Ани:", "text": "[У|U] [меня|mi-NYA] [нет|nyet] [шапки|SHAP-ki].", "id": "Saya tidak punya topi.", "literal": "di — saya — tiada — topi." },
+        { "speaker": "Сергей:", "text": "[Ани|A-ni]. [Идите|I-DI-tye] [в|v] [магазин|ma-ga-ZIN]. [Сейчас|Si-CHAS]. [Это|E-ta] [не|nye] [шутка|SHUT-ka].", "id": "Ani. Pergi ke toko. Sekarang. Ini bukan bercanda.", "literal": "Ani. pergilah — ke — toko. sekarang. ini — bukan — lelucon." },
+        { "speaker": "Ани:", "text": "[Хорошо|Kha-ra-SHO], [хорошо|kha-ra-SHO]. [Иду|I-DU].", "id": "Iya, iya. Saya pergi.", "literal": "bagus, bagus. berjalan-saya." }
+      ],
+      "notes": [
+        "**Холодно tanpa datif berarti cuacanya dingin; dengan datif berarti orangnya kedinginan.** ⚠️ *Сегодня холодно* = hari ini dingin (pernyataan tentang dunia). *Мне холодно* = saya kedinginan (pernyataan tentang saya). Bahasa Indonesia memakai satu kata untuk keduanya dan mengandalkan konteks; bahasa Rusia memisahkannya dengan tegas. Kalimat *Я холодный* ada, tapi artinya \"saya orang yang dingin sifatnya\" — bukan yang kamu maksud.",
+        "**Kalimat cuaca tidak punya subjek sama sekali.** *Холодно*, *Тепло*, *Жарко*, *Идёт дождь* — tidak ada \"itu\" atau \"cuaca\" yang jadi pelaku. Bandingkan dengan bahasa Inggris yang wajib menyisipkan *it*. Dalam hal ini bahasa Rusia justru lebih dekat ke bahasa Indonesia: \"dingin\" saja sudah kalimat utuh.",
+        "**Suhu di bawah nol disebut минус, bukan \"kurang\".** *Минус двадцать* (−20). Kata **градус** mengikuti aturan angka: 1 градус, 2–4 градуса, 5+ градусов.",
+        "**Идёт дождь harfiahnya \"hujan berjalan\".** Bahasa Rusia memakai kata kerja gerak untuk cuaca: *Идёт дождь* (hujan turun), *Идёт снег* (salju turun). Kalau sudah berhenti: *Дождь кончился*. ⚠️ Jangan pakai падает (jatuh) — kedengarannya seperti sesuatu yang jatuh dari meja.",
+        "**Bulan memakai в + preposisional dan ekornya -е.** *в январ**е***, *в ма**е***, *в июл**е***. Perhatikan tekanan bergeser di beberapa bulan: январь (yin-VAR') → в январе (v yin-va-RYE).",
+        "**Самый + kata sifat berarti \"paling\".** *самая низкая температура* (suhu paling rendah), *самый большой город* (kota paling besar). Самый ikut berubah ekornya mengikuti kata bendanya, sama seperti kata sifat lain.",
+        "**Cuaca adalah pembuka percakapan nomor satu di Rusia, dan bukan basa-basi kosong.** Di negeri tempat suhu bergerak lima puluh derajat sepanjang tahun, *Ну и холод сегодня!* (dinginnya hari ini!) adalah pembuka yang sungguhan dan selalu berhasil — dengan tetangga, sopir taksi, atau orang di antrean."
+      ],
+      "grammars": [
+        {
+          "title": "Cuaca hari ini",
+          "body": ["Semua kalimat berikut lengkap tanpa subjek dan tanpa kata kerja."],
+          "table": {
+            "head": ["Русский", "Baca", "Bahasa Indonesia"],
+            "rows": [
+              ["Сегодня холодно.", "si-VOD-nya KHO-lad-na", "Hari ini dingin."],
+              ["Сегодня тепло.", "tip-LO", "Hari ini hangat."],
+              ["Сегодня жарко.", "ZHAR-ka", "Hari ini panas."],
+              ["Сегодня прохладно.", "pra-KHLAD-na", "Hari ini sejuk."],
+              ["Идёт дождь.", "i-DYOT dozhd'", "Hujan."],
+              ["Идёт снег.", "i-DYOT snyek", "Turun salju."],
+              ["Дует ветер.", "DU-yit VYE-tir", "Anginnya kencang."],
+              ["Светит солнце.", "SVYE-tit SON-tsy", "Mataharinya bersinar."],
+              ["Пасмурно.", "PAS-mur-na", "Mendung."],
+              ["Скользко.", "SKOL'-ska", "Licin. ⚠️ kata terpenting musim dingin"]
+            ]
+          },
+          "after": [
+            "Untuk waktu lampau tambahkan **было**, untuk masa depan tambahkan **будет**: *Вчера **было** холодно*, *Завтра **будет** тепло*. Bentuknya selalu netral.",
+            "Untuk kalimat berkata kerja (идёт дождь), bentuk lampaunya mengikuti kata bendanya: *Шёл дождь* (mask), *Шёл снег* (mask)."
+          ]
+        },
+        {
+          "title": "Musim dan bulan",
+          "body": ["Empat musim, dua belas bulan. Lajur kanan adalah bentuk \"pada bulan itu\"."],
+          "tables": [
+            {
+              "head": ["Musim", "Baca", "Bulannya", "\"pada musim itu\""],
+              "rows": [
+                ["зима", "zi-MA", "Desember–Februari", "зимой (zi-MOY)"],
+                ["весна", "vis-NA", "Maret–Mei", "весной (vis-NOY)"],
+                ["лето", "LYE-ta", "Juni–Agustus", "летом (LYE-tam)"],
+                ["осень (f)", "O-sin'", "September–November", "осенью (O-sin'-yu)"]
+              ]
+            },
+            {
+              "head": ["Bulan", "pada bulan …", "Bulan", "pada bulan …"],
+              "rows": [
+                ["январь", "в январе", "июль", "в июле"],
+                ["февраль", "в феврале", "август", "в августе"],
+                ["март", "в марте", "сентябрь", "в сентябре"],
+                ["апрель", "в апреле", "октябрь", "в октябре"],
+                ["май", "в мае", "ноябрь", "в ноябре"],
+                ["июнь", "в июне", "декабрь", "в декабре"]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Nama bulan **tidak** ditulis dengan huruf besar dalam bahasa Rusia: *в январе*, bukan *в Январе*. Aturan yang sama dengan nama hari dan nama kebangsaan.",
+            "Bulan-bulan Rusia mudah dikenali penutur Indonesia karena berasal dari akar Latin yang sama: январь/Januari, февраль/Februari, март/Maret. Yang perlu dilatih hanya tekanannya, yang hampir selalu di suku kata terakhir."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bertahan hidup di musim dingin Rusia",
+      "blocks": [
+        { "type": "p", "text": "Bagian ini tidak ada di buku bahasa Rusia mana pun, tapi setiap pelajar Indonesia yang datang ke Rusia membutuhkannya di minggu pertama." },
+        { "type": "tabel", "head": ["Русский", "Baca", "Bahasa Indonesia"], "rows": [
+          ["шапка", "SHAP-ka", "topi hangat ⚠️ wajib"],
+          ["термобельё", "ter-ma-bil'-YO", "baju termal"],
+          ["пуховик", "pu-kha-VIK", "jaket bulu angsa"],
+          ["варежки / перчатки", "VA-rish-ki / pir-CHAT-ki", "sarung tangan"],
+          ["сапоги", "sa-pa-GI", "sepatu bot"],
+          ["гололёд", "ga-la-LYOT", "jalan berlapis es"],
+          ["сосулька", "sa-SUL'-ka", "es menggantung dari atap"],
+          ["сугроб", "su-GROP", "gundukan salju"],
+          ["мороз", "ma-ROS", "cuaca beku"],
+          ["оттепель (f)", "O-ti-pil'", "cuaca mencair"]
+        ]},
+        { "type": "kotak", "title": "Tiga hal yang perlu diketahui orang Indonesia di musim dingin pertamanya", "items": [
+          "**Шапка bukan pilihan.** Orang Rusia — terutama ibu-ibu dan nenek-nenek — akan menegurmu di jalan kalau kepalamu terbuka pada suhu minus. Kalimat yang akan kamu dengar: *Где ваша шапка?!* Anggap itu bentuk perhatian, karena memang begitu.",
+          "**Гололёд lebih berbahaya daripada мороз.** Trotoar berlapis es tipis adalah penyebab cedera nomor satu bagi pendatang. Kata yang perlu dikenali: **Осторожно, скользко!** — Hati-hati, licin!",
+          "**Di dalam ruangan justru sangat panas.** Pemanas gedung Rusia dinyalakan pusat dan tidak bisa dimatikan; suhu di dalam sering 25 derajat. Karena itu orang berpakaian berlapis: mantel dilepas begitu masuk. ⚠️ Masuk ke rumah orang atau ke kelas dengan mantel masih dipakai dianggap tidak sopan — ada **гардероб** (tempat penitipan mantel) di hampir setiap gedung umum, dan memakainya wajib di teater dan museum."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    { "ru": "погода", "baca": "pa-GO-da", "id": "cuaca" },
+    { "ru": "холодно / тепло / жарко", "baca": "KHO-lad-na / tip-LO / ZHAR-ka", "id": "dingin / hangat / panas" },
+    { "ru": "градус", "baca": "GRA-dus", "id": "derajat" },
+    { "ru": "температура", "baca": "tim-pi-ra-TU-ra", "id": "suhu" },
+    { "ru": "минус / плюс", "baca": "MI-nus / plyus", "id": "minus / plus" },
+    { "ru": "дождь (m)", "baca": "dozhd'", "id": "hujan" },
+    { "ru": "снег", "baca": "snyek", "id": "salju" },
+    { "ru": "ветер", "baca": "VYE-tir", "id": "angin" },
+    { "ru": "солнце", "baca": "SON-tsy", "id": "matahari" },
+    { "ru": "небо", "baca": "NYE-ba", "id": "langit" },
+    { "ru": "скользко", "baca": "SKOL'-ska", "id": "licin" },
+    { "ru": "осторожно", "baca": "as-ta-ROZH-na", "id": "hati-hati" },
+    { "ru": "зима / весна", "baca": "zi-MA / vis-NA", "id": "musim dingin / musim semi" },
+    { "ru": "лето / осень (f)", "baca": "LYE-ta / O-sin'", "id": "musim panas / musim gugur" },
+    { "ru": "зимой / летом", "baca": "zi-MOY / LYE-tam", "id": "pada musim dingin / musim panas" },
+    { "ru": "самый", "baca": "SA-myy", "id": "paling" },
+    { "ru": "низкий / высокий", "baca": "NIS-kiy / vy-SO-kiy", "id": "rendah / tinggi" },
+    { "ru": "шапка", "baca": "SHAP-ka", "id": "topi hangat" },
+    { "ru": "мороз", "baca": "ma-ROS", "id": "cuaca beku" },
+    { "ru": "шутка", "baca": "SHUT-ka", "id": "lelucon" },
+    { "ru": "едва", "baca": "yid-VA", "id": "nyaris tidak" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih холодно atau мне холодно sesuai artinya.",
+      "items": [
+        "Hari ini dingin. → Сегодня ____",
+        "Saya kedinginan. → ____",
+        "Kamu kedinginan? → Тебе ____ ?",
+        "Kemarin dingin. → Вчера было ____",
+        "Dia (perempuan) kedinginan. → Ей ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk \"pada bulan …\".",
+      "items": [
+        "январь → ____",
+        "май → ____",
+        "июль → ____",
+        "сентябрь → ____",
+        "декабрь → ____",
+        "март → ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "холодно / сегодня / очень",
+        "дождь / идёт",
+        "градусов / минус / двадцать",
+        "было / вчера / тепло",
+        "скользко / осторожно"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Rusia.",
+      "items": [
+        "Hari ini dingin sekali.",
+        "Saya kedinginan.",
+        "Berapa derajat?",
+        "Minus dua puluh dua.",
+        "Turun salju.",
+        "Hati-hati, licin!"
+      ]
+    }
+  ],
+  "answers": [
+    "холодно — Мне холодно — холодно — холодно — холодно",
+    "в январе — в мае — в июле — в сентябре — в декабре — в марте",
+    "Сегодня очень холодно. — Идёт дождь. — Минус двадцать градусов. — Вчера было тепло. — Осторожно, скользко.",
+    "Сегодня очень холодно. — Мне холодно. — Сколько градусов? — Минус двадцать два. — Идёт снег. — Осторожно, скользко!"
+  ]
+}

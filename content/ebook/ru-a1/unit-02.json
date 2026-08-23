@@ -1,0 +1,170 @@
+{
+  "title": "Ini apa? Lemari itu laki-laki",
+  "title_target": "Что это? — Shto eta?",
+  "goal": "Menanyakan dan menyebutkan nama benda di sekitarmu, lalu menerima kenyataan besar pertama bahasa Rusia: setiap benda punya jenis kelamin, termasuk meja, jendela, dan susu.",
+  "bekal": [
+    "bertanya \"ini apa?\" dan \"ini siapa?\"",
+    "menyebutkan benda-benda di dalam ruangan",
+    "mengenali jenis kelamin kata benda dari huruf akhirnya",
+    "memakai он / она / оно untuk benda mati",
+    "membedakan это dan вот"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Melihat kamar kos",
+      "intro": "Ani baru pindah ke asrama. Penjaga asrama, Ольга Петровна, mengantarnya ke kamar. Perhatikan bahwa benda-benda di kamar itu disebut \"dia\" — dan bukan selalu \"dia\" yang sama.",
+      "lines": [
+        { "speaker": "Ольга:", "text": "[Вот|Vot] [ваша|VA-sha] [комната|KOM-na-ta].", "id": "Ini kamar Anda.", "literal": "inilah — Anda-punya (fem) — kamar." },
+        { "speaker": "Ани:", "text": "[Спасибо|Spa-SI-ba]! [А|A] [что|shto] [это|E-ta]?", "id": "Terima kasih! Dan ini apa?", "literal": "terima-kasih! dan — apa — ini?" },
+        { "speaker": "Ольга:", "text": "[Это|E-ta] [шкаф|shkaf]. [Он|On] [большой|bal'-SHOY].", "id": "Ini lemari. Lemarinya besar.", "literal": "ini — lemari. dia (lk) — besar." },
+        { "speaker": "Ани:", "text": "[Он|On]? [Шкаф|Shkaf] — [он|on]?", "id": "Dia? Lemari itu \"dia laki-laki\"?", "literal": "dia (lk)? lemari — dia (lk)?" },
+        { "speaker": "Ольга:", "text": "[Да|Da], [шкаф|shkaf] — [он|on]. [А|A] [кровать|kra-VAT'] — [она|a-NA]. [А|A] [окно|ak-NO] — [оно|a-NO].", "id": "Ya, lemari itu \"dia laki-laki\". Ranjang \"dia perempuan\". Jendela \"dia netral\".", "literal": "ya, lemari — dia-lk. dan — ranjang — dia-pr. dan — jendela — dia-netral." },
+        { "speaker": "Ани:", "text": "[Понятно|Pa-NYAT-na]… [кажется|KA-zhy-tsa].", "id": "Paham… sepertinya.", "literal": "jelas… tampaknya." },
+        { "speaker": "Ольга:", "text": "[Не|Nye] [волнуйтесь|val-NUY-tyes']. [Это|E-ta] [просто|PROS-ta]: [смотрите|smat-RI-tye] [на|na] [последнюю|pas-LYED-nyu-yu] [букву|BUK-vu].", "id": "Jangan khawatir. Ini sederhana: lihat huruf terakhirnya.", "literal": "tidak — khawatirlah. ini — sederhana: lihatlah — pada — terakhir — huruf." },
+        { "speaker": "Ани:", "text": "[А|A] [кто|kto] [это|E-ta]? [На|Na] [фотографии|fa-ta-GRA-fi-i].", "id": "Dan ini siapa? Di foto itu.", "literal": "dan — siapa — ini? pada — foto." },
+        { "speaker": "Ольга:", "text": "[Это|E-ta] [Пушкин|PUSH-kin]. [Он|On] [поэт|pa-ET].", "id": "Itu Pushkin. Dia penyair.", "literal": "ini — Pushkin. dia — penyair." },
+        { "speaker": "Ани:", "text": "[Он|On] [здесь|zdyes'] [жил|zhyl]?", "id": "Dia pernah tinggal di sini?", "literal": "dia — di-sini — tinggal (lampau lk)?" },
+        { "speaker": "Ольга:", "text": "[Нет|Nyet]! [Он|On] [везде|viz-DYE]. [Это|E-ta] [Россия|ra-SI-ya].", "id": "Tidak! Dia ada di mana-mana. Ini Rusia.", "literal": "tidak! dia — di-mana-mana. ini — Rusia." }
+      ],
+      "notes": [
+        "**Что это? untuk benda, Кто это? untuk orang.** Bahasa Indonesia memakai \"ini apa\" dan \"ini siapa\" dengan cara yang sama persis, jadi pembagiannya langsung terasa wajar. ⚠️ Yang menipu adalah bacanya: **что** dibaca *shto*, bukan *chto*. Huruf ч di kata ini — dan di **конечно** (*ka-NYESH-na*, tentu saja) — dibaca *sh*. Cuma dua kata itu yang perlu kamu ingat di A1.",
+        "**Это berarti \"ini/itu\" sebagai penunjuk umum, dan bentuknya tidak pernah berubah.** *Это шкаф*, *Это кровать*, *Это окно* — это-nya sama saja untuk ketiga jenis. Ia baru berubah kalau dipakai sebagai kata sifat penunjuk (*этот шкаф* — lemari ini), yang tidak dibahas di unit ini.",
+        "**Вот berbeda dari Это.** Вот dipakai sambil menunjuk atau menyerahkan sesuatu — \"nih\", \"inilah\", \"itu dia\". Это dipakai untuk mengidentifikasi — \"ini adalah\". *Вот ваша комната* = \"nih kamar Anda\" (sambil membuka pintu). *Это ваша комната* = \"ini kamar Anda\" (menjelaskan).",
+        "**Benda mati pun dipanggil \"dia\".** ⚠️ Inilah kejutan besar bagi penutur Indonesia, yang bahasanya tidak mengenal jenis kelamin sama sekali. Dalam bahasa Rusia, lemari adalah *он*, ranjang adalah *она*, jendela adalah *оно* — dan kamu wajib mengikutinya kalau ingin dimengerti. Tak ada makna tersembunyi di baliknya: tak ada yang menganggap lemari lebih jantan daripada ranjang. Ini murni tata bahasa.",
+        "**Kabar baiknya: jenis kelaminnya bisa dibaca dari huruf terakhir**, dan aturannya menutup lebih dari sembilan puluh persen kata benda. Kotak tata bahasa berikut memuat seluruh aturannya — sungguh sesingkat itu.",
+        "**Понятно** (*pa-NYAT-na*) adalah kata yang akan sangat sering kamu pakai: \"paham\", \"jelas\", \"oh begitu\". Lawannya **Непонятно** — \"tidak jelas\".",
+        "**Он жил — kata kerja lampau ikut jenis kelamin pelakunya.** Belum saatnya dibahas penuh (Unit 14), tapi perhatikan sekarang: kalau yang tinggal itu perempuan, kalimatnya jadi *она жи**ла***. Ekor **-л** untuk laki-laki, **-ла** untuk perempuan."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga jenis kata benda — dibaca dari huruf terakhir",
+          "body": [
+            "Lihat huruf **paling akhir** dari bentuk kamusnya. Itu saja. Tidak perlu tahu artinya, tidak perlu tahu asal katanya."
+          ],
+          "table": {
+            "head": ["Berakhir dengan", "Jenis", "Kata gantinya", "Contoh"],
+            "rows": [
+              ["huruf mati (б, в, г, д, к, м, н, п, р, с, т, ф…)", "maskulin", "он", "шкаф (lemari), стол (meja), дом (rumah), журнал (majalah)"],
+              ["-а atau -я", "feminin", "она", "комната (kamar), книга (buku), Россия (Rusia), неделя (minggu)"],
+              ["-о atau -е", "netral", "оно", "окно (jendela), молоко (susu), море (laut), кафе (kafe)"],
+              ["-ь (tanda lunak)", "bisa dua-duanya ⚠️", "он atau она", "кровать (ranjang, **fem**), словарь (kamus, **mask**)"]
+            ]
+          },
+          "after": [
+            "⚠️ Kata berakhir **-ь** adalah satu-satunya lubang dalam sistem ini: huruf terakhirnya tidak memberi tahu apa-apa, jadi jenisnya harus dihafal bersama katanya. Untungnya jumlahnya tidak banyak di tingkat A1. Di modul ini kata semacam itu selalu diberi tanda **(f)** atau **(m)** di tabel kosakata.",
+            "Untuk orang, jenis katanya mengikuti jenis kelamin orangnya, dan itu mengalahkan huruf terakhir: **папа** (ayah) berakhir -а tapi tetap **он**. **мужчина** (laki-laki) sama.",
+            "Kenapa ini penting sejak sekarang: semua yang datang berikutnya — kata sifat, posesif, ekor kasus, bentuk lampau — bergantung pada jenis kata bendanya. Salah jenis di sini, salah semua di hilir."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Benda di sekitarmu",
+      "blocks": [
+        { "type": "p", "text": "Latihan paling berguna untuk unit ini: berjalan keliling kamarmu sendiri sambil menyebut setiap benda beserta kata gantinya. *Стол — он. Дверь — она. Окно — оно.* Lima menit sehari selama seminggu, dan jenis kelamin kata benda berhenti terasa asing." },
+        { "type": "tabel", "head": ["Русский", "Baca", "Bahasa Indonesia", "Jenis"], "rows": [
+          ["стол", "stol", "meja", "он"],
+          ["стул", "stul", "kursi", "он"],
+          ["шкаф", "shkaf", "lemari", "он"],
+          ["телефон", "ti-li-FON", "telepon", "он"],
+          ["компьютер", "kam-P'YU-ter", "komputer", "он"],
+          ["дом", "dom", "rumah", "он"],
+          ["комната", "KOM-na-ta", "kamar", "она"],
+          ["книга", "KNI-ga", "buku", "она"],
+          ["ручка", "RUCH-ka", "pulpen", "она"],
+          ["сумка", "SUM-ka", "tas", "она"],
+          ["дверь (f)", "dvyer'", "pintu", "она"],
+          ["кровать (f)", "kra-VAT'", "ranjang", "она"],
+          ["окно", "ak-NO", "jendela", "оно"],
+          ["письмо", "pis'-MO", "surat", "оно"],
+          ["море", "MO-rye", "laut", "оно"]
+        ]},
+        { "type": "kotak", "title": "Kata pinjaman: hadiah gratis", "items": [
+          "Bahasa Rusia menyerap ribuan kata internasional, dan banyak di antaranya sudah kamu tahu artinya sebelum belajar apa pun: **телефон**, **компьютер**, **такси**, **банк**, **отель**, **интернет**, **офис**, **кофе**, **аэропорт**, **паспорт**, **музыка**, **студент**.",
+          "Yang perlu dilatih hanya membacanya dalam Kiril dan menaruh tekanannya di tempat yang benar — sering kali **tidak** di tempat yang sama dengan bahasa Indonesia. Bandingkan *TE-le-fon* (Indonesia) dengan **ti-li-FON** (Rusia), *KOM-pu-ter* dengan **kam-P'YU-ter**.",
+          "⚠️ Satu jebakan: **кофе** (kopi) berakhir -е, jadi menurut aturan seharusnya netral — tapi ia **maskulin**, warisan bentuk lamanya кофей. Orang Rusia sendiri berdebat soal ini. Pakai *он* dan kamu aman."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    { "ru": "что", "baca": "shto", "id": "apa" },
+    { "ru": "кто", "baca": "kto", "id": "siapa" },
+    { "ru": "это", "baca": "E-ta", "id": "ini, itu (penunjuk)" },
+    { "ru": "вот", "baca": "vot", "id": "inilah, nih (sambil menunjuk)" },
+    { "ru": "здесь", "baca": "zdyes'", "id": "di sini" },
+    { "ru": "там", "baca": "tam", "id": "di sana" },
+    { "ru": "комната", "baca": "KOM-na-ta", "id": "kamar" },
+    { "ru": "шкаф", "baca": "shkaf", "id": "lemari" },
+    { "ru": "кровать (f)", "baca": "kra-VAT'", "id": "ranjang" },
+    { "ru": "окно", "baca": "ak-NO", "id": "jendela" },
+    { "ru": "дверь (f)", "baca": "dvyer'", "id": "pintu" },
+    { "ru": "стол", "baca": "stol", "id": "meja" },
+    { "ru": "стул", "baca": "stul", "id": "kursi" },
+    { "ru": "книга", "baca": "KNI-ga", "id": "buku" },
+    { "ru": "словарь (m)", "baca": "sla-VAR'", "id": "kamus" },
+    { "ru": "фотография", "baca": "fa-ta-GRA-fi-ya", "id": "foto" },
+    { "ru": "буква", "baca": "BUK-va", "id": "huruf" },
+    { "ru": "последний", "baca": "pas-LYED-niy", "id": "terakhir" },
+    { "ru": "большой", "baca": "bal'-SHOY", "id": "besar" },
+    { "ru": "маленький", "baca": "MA-lin'-kiy", "id": "kecil" },
+    { "ru": "поэт", "baca": "pa-ET", "id": "penyair" },
+    { "ru": "понятно", "baca": "pa-NYAT-na", "id": "paham, jelas" },
+    { "ru": "просто", "baca": "PROS-ta", "id": "sederhana, gampang" },
+    { "ru": "кажется", "baca": "KA-zhy-tsa", "id": "sepertinya, rasanya" },
+    { "ru": "везде", "baca": "viz-DYE", "id": "di mana-mana" },
+    { "ru": "Россия", "baca": "ra-SI-ya", "id": "Rusia" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis kata gantinya: он, она, atau оно.",
+      "items": [
+        "стол — ____",
+        "книга — ____",
+        "окно — ____",
+        "телефон — ____",
+        "комната — ____",
+        "море — ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan что atau кто.",
+      "items": [
+        "____ это? — Это Пушкин.",
+        "____ это? — Это шкаф.",
+        "____ это? — Это моя сестра.",
+        "____ это? — Это письмо.",
+        "____ это? — Это врач."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "это / что / ?",
+        "шкаф / это",
+        "большой / он",
+        "комната / ваша / вот",
+        "поэт / он"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Rusia.",
+      "items": [
+        "Ini apa?",
+        "Ini pintu.",
+        "Pintunya kecil.",
+        "Ini siapa?",
+        "Itu dokter.",
+        "Nih bukumu."
+      ]
+    }
+  ],
+  "answers": [
+    "он — она — оно — он — она — оно",
+    "Кто — Что — Кто — Что — Кто",
+    "Что это? — Это шкаф. — Он большой. — Вот ваша комната. — Он поэт.",
+    "Что это? — Это дверь. — Она маленькая. — Кто это? — Это врач. — Вот твоя книга."
+  ]
+}

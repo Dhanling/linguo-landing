@@ -1,0 +1,181 @@
+{
+  "title": "Bagaimana caranya ke sana?",
+  "title_target": "Как пройти? — Kak proyti?",
+  "goal": "Bertanya arah kepada orang asing dan — yang lebih sulit — memahami jawabannya. Sekaligus menguasai bentuk perintah, yang dalam bahasa Rusia dipakai jauh lebih sering daripada dalam bahasa Indonesia.",
+  "bekal": [
+    "menanyakan arah dengan kalimat baku",
+    "memahami petunjuk arah: kanan, kiri, lurus, belok",
+    "membentuk dan memakai kata perintah",
+    "menyebut jarak dan patokan",
+    "meminta orang mengulang atau memperlambat"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Mencari kantor pos",
+      "intro": "Ani perlu mengirim paket ke Indonesia dan tidak tahu kantor pos di mana. Perhatikan bentuk perintah yang dipakai orang yang menjawab — semuanya berakhir -ите.",
+      "lines": [
+        { "speaker": "Ани:", "text": "[Извините|Iz-vi-NI-tye], [скажите|ska-ZHY-tye], [пожалуйста|pa-ZHA-lus-ta], [где|gdye] [здесь|zdyes'] [почта|POCH-ta]?", "id": "Maaf, tolong beri tahu, kantor pos di sini di mana?", "literal": "maafkan, katakanlah, silakan, di-mana — di-sini — kantor-pos?" },
+        { "speaker": "Прохожий:", "text": "[Почта|POCH-ta]? [Идите|I-DI-tye] [прямо|PRYA-ma] [до|da] [светофора|svi-ta-FO-ra].", "id": "Kantor pos? Jalan lurus sampai lampu merah.", "literal": "kantor-pos? berjalanlah — lurus — sampai — lampu-lalu-lintas." },
+        { "speaker": "Ани:", "text": "[До|Da] [светофора|svi-ta-FO-ra]… [хорошо|kha-ra-SHO].", "id": "Sampai lampu merah… baik.", "literal": "sampai — lampu-lalu-lintas… bagus." },
+        { "speaker": "Прохожий:", "text": "[Потом|Pa-TOM] [поверните|pa-vir-NI-tye] [налево|na-LYE-va]. [Там|Tam] [будет|BU-dit] [аптека|ap-TYE-ka].", "id": "Lalu belok kiri. Di situ ada apotek.", "literal": "lalu — beloklah — ke-kiri. di-sana — akan-ada — apotek." },
+        { "speaker": "Ани:", "text": "[Аптека|Ap-TYE-ka]. [А|A] [потом|pa-TOM]?", "id": "Apotek. Lalu?", "literal": "apotek. dan — kemudian?" },
+        { "speaker": "Прохожий:", "text": "[Почта|POCH-ta] [напротив|na-PRO-tif] [аптеки|ap-TYE-ki]. [Большое|Bal'-SHO-ye] [синее|SI-ni-ye] [здание|ZDA-ni-ye].", "id": "Kantor posnya di seberang apotek. Gedung biru besar.", "literal": "kantor-pos — berhadapan — apotek. besar — biru — gedung." },
+        { "speaker": "Ани:", "text": "[Это|E-ta] [далеко|da-li-KO]?", "id": "Itu jauh?", "literal": "ini — jauh?" },
+        { "speaker": "Прохожий:", "text": "[Нет|Nyet], [минут|mi-NUT] [пять|pyat'] [пешком|pish-KOM].", "id": "Tidak, sekitar lima menit jalan kaki.", "literal": "tidak, menit — lima — dengan-kaki." },
+        { "speaker": "Ани:", "text": "[Извините|Iz-vi-NI-tye], [повторите|paf-ta-RI-tye], [пожалуйста|pa-ZHA-lus-ta]. [Прямо|PRYA-ma], [потом|pa-TOM]…?", "id": "Maaf, tolong ulangi. Lurus, lalu…?", "literal": "maafkan, ulangilah, silakan. lurus, kemudian…?" },
+        { "speaker": "Прохожий:", "text": "[Прямо|PRYA-ma] [до|da] [светофора|svi-ta-FO-ra], [налево|na-LYE-va], [и|i] [почта|POCH-ta] [справа|SPRA-va].", "id": "Lurus sampai lampu merah, kiri, dan kantor posnya di sebelah kanan.", "literal": "lurus — sampai — lampu-lalu-lintas, ke-kiri, dan — kantor-pos — di-sebelah-kanan." },
+        { "speaker": "Ани:", "text": "[Спасибо|Spa-SI-ba] [большое|bal'-SHO-ye]!", "id": "Terima kasih banyak!", "literal": "terima-kasih — besar!" },
+        { "speaker": "Прохожий:", "text": "[Не|Nye] [за|za] [что|shto]. [Если|YES-li] [заблудитесь|za-blu-DI-tyes'], [спросите|spra-SI-tye] [ещё|yi-SCHO] [раз|ras].", "id": "Sama-sama. Kalau tersesat, tanya lagi saja.", "literal": "tidak — untuk — apa. jika — tersesat-Anda, tanyalah — lagi — kali." }
+      ],
+      "notes": [
+        "**Kata perintah dalam bahasa Rusia sopan, bukan kasar.** ⚠️ *Идите прямо* (jalan lurus), *Скажите* (beri tahu), *Повторите* (ulangi) — semuanya bentuk perintah, dan semuanya sepenuhnya sopan begitu ditambah **пожалуйста**. Penutur Indonesia sering menghindarinya karena terasa memerintah; dalam bahasa Rusia justru menghindarinya yang terdengar aneh dan berbelit.",
+        "**Bentuk perintahnya dua: -и/-й untuk ты, -ите/-йте untuk вы.** *Скажи* (kepada teman) lawan *Скажите* (kepada orang asing). *Иди* lawan *Идите*. Pilihannya mengikuti aturan ты/вы yang sama dengan Unit 1.",
+        "**Налево / направо berarti \"ke kiri / ke kanan\"; слева / справа berarti \"di sebelah kiri / kanan\".** ⚠️ Perbedaan bergerak lawan diam yang sama dengan куда lawan где di Unit 13. *Поверните налево* (belok ke kiri) tapi *Почта справа* (kantor posnya di sebelah kanan).",
+        "**Минут пять berarti \"sekitar lima menit\".** Membalik urutan angka dan kata bendanya mengubahnya jadi perkiraan — trik yang sudah kamu temui di Unit 12. Sangat sering dipakai dalam petunjuk arah, karena tidak ada yang mengukur dengan tepat.",
+        "**Как пройти untuk jalan kaki, как доехать untuk kendaraan.** Sepasang dengan идти/ехать dari Unit 13. *Как пройти до почты?* (bagaimana jalan ke kantor pos), *Как доехать до вокзала?* (bagaimana sampai ke stasiun). Sesudah до selalu genitif.",
+        "**Спасибо большое lebih hangat daripada спасибо saja.** Bentuk lain: *Огромное спасибо* (terima kasih banyak sekali), *Спасибо вам большое*. Untuk pertolongan yang sungguhan berarti, orang Rusia memakai bentuk panjang.",
+        "**Jangan berharap petunjuk arah yang pendek.** Orang Rusia cenderung memberi petunjuk lengkap dengan patokan, dan mereka jarang menyederhanakannya untuk orang asing. Dua kalimat yang menyelamatkan: *Повторите, пожалуйста* dan *Помедленнее, пожалуйста* (lebih pelan sedikit)."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk perintah",
+          "body": ["Ambil bentuk **они** dari kata kerjanya, buang ekornya, lalu tempel **-и / -ите** (kalau sisanya berakhir huruf mati) atau **-й / -йте** (kalau berakhir huruf hidup)."],
+          "table": {
+            "head": ["Kata kerja", "Bentuk они", "Kepada ты", "Kepada вы", "Arti"],
+            "rows": [
+              ["говорить", "говор-ят", "говор**и**", "говор**ите**", "bicara"],
+              ["сказать", "скаж-ут", "скаж**и**", "скаж**ите**", "beri tahu"],
+              ["идти", "ид-ут", "ид**и**", "ид**ите**", "jalan, pergi"],
+              ["повернуть", "поверн-ут", "поверн**и**", "поверн**ите**", "belok"],
+              ["повторить", "повтор-ят", "повтор**и**", "повтор**ите**", "ulangi"],
+              ["читать", "читаj-ут", "чита**й**", "чита**йте**", "baca"],
+              ["слушать", "слушаj-ут", "слуша**й**", "слуша**йте**", "dengarkan"],
+              ["извинить", "извин-ят", "извин**и**", "извин**ите**", "maafkan"]
+            ]
+          },
+          "after": [
+            "Sekarang kamu tahu kenapa **извините**, **скажите**, **повторите**, **подождите**, dan **смотрите** semuanya berakhir sama: semuanya bentuk perintah kepada вы. Kata-kata yang sudah kamu pakai sejak Unit 1 ternyata satu keluarga.",
+            "⚠️ Untuk melarang, pakai **не** + bentuk perintah: *Не беспокойтесь* (jangan khawatir), *Не спешите* (jangan buru-buru). Untuk mengajak, pakai **давайте**: *Давайте пойдём* (ayo kita pergi)."
+          ]
+        },
+        {
+          "title": "Kata arah",
+          "body": ["Perhatikan pasangan bergerak / diam — kesalahan paling umum ada di sini."],
+          "table": {
+            "head": ["Bergerak (ke arah)", "Diam (di posisi)", "Arti"],
+            "rows": [
+              ["налево", "слева", "kiri"],
+              ["направо", "справа", "kanan"],
+              ["прямо", "прямо", "lurus (sama)"],
+              ["назад", "сзади", "belakang"],
+              ["вперёд", "впереди", "depan"],
+              ["наверх", "наверху", "atas"],
+              ["вниз", "внизу", "bawah"]
+            ]
+          },
+          "after": [
+            "*Поверните **направо*** — belok kanan. *Магазин **справа*** — tokonya di sebelah kanan.",
+            "Kata patokan lain yang sering muncul: **напротив** (di seberang), **рядом с** (di sebelah), **между** (di antara), **за углом** (di balik pojok), **через дорогу** (di seberang jalan)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kalimat bertanya arah",
+      "blocks": [
+        { "type": "tabel", "head": ["Русский", "Baca", "Bahasa Indonesia"], "rows": [
+          ["Скажите, пожалуйста, где …?", "ska-ZHY-tye pa-ZHA-lus-ta gdye", "Tolong beri tahu, di mana …?"],
+          ["Как пройти до …?", "kak pray-TI da", "Bagaimana jalan ke …?"],
+          ["Как доехать до …?", "kak da-YE-khat' da", "Bagaimana sampai ke …? (kendaraan)"],
+          ["Это далеко?", "E-ta da-li-KO", "Itu jauh?"],
+          ["Сколько идти пешком?", "SKOL'-ka it-TI pish-KOM", "Berapa lama jalan kakinya?"],
+          ["Я заблудился / заблудилась.", "za-blu-DIL-sya / -DI-las'", "Saya tersesat. (lk / pr)"],
+          ["Повторите, пожалуйста.", "paf-ta-RI-tye", "Tolong ulangi."],
+          ["Помедленнее, пожалуйста.", "pa-MYED-li-ni-ye", "Lebih pelan sedikit, tolong."],
+          ["Покажите на карте.", "pa-ka-ZHY-tye na KAR-tye", "Tunjukkan di peta."],
+          ["Спасибо большое!", "spa-SI-ba bal'-SHO-ye", "Terima kasih banyak!"]
+        ]},
+        { "type": "kotak", "title": "Покажите на карте — kalimat penyelamat sesungguhnya", "items": [
+          "Petunjuk arah lisan dalam bahasa Rusia panjang dan cepat, dan pemula hampir selalu kehilangan jejak di kalimat kedua. **Покажите на карте, пожалуйста** memindahkan seluruh percakapan ke gambar, dan hampir semua orang Rusia bersedia melakukannya.",
+          "Pasangan keduanya: **Напишите, пожалуйста** (tolong tuliskan). Nama jalan dan stasiun jauh lebih mudah dibaca daripada didengar.",
+          "⚠️ Jangan berpura-pura mengerti. Mengangguk lalu berjalan ke arah yang salah adalah cara paling umum turis tersesat di Moskow. Bertanya dua kali sepenuhnya biasa dan tidak ada yang tersinggung."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    { "ru": "как пройти", "baca": "kak pray-TI", "id": "bagaimana jalan ke" },
+    { "ru": "прямо", "baca": "PRYA-ma", "id": "lurus" },
+    { "ru": "налево / направо", "baca": "na-LYE-va / na-PRA-va", "id": "ke kiri / ke kanan" },
+    { "ru": "слева / справа", "baca": "SLYE-va / SPRA-va", "id": "di kiri / di kanan" },
+    { "ru": "повернуть", "baca": "pa-vir-NUT'", "id": "belok" },
+    { "ru": "светофор", "baca": "svi-ta-FOR", "id": "lampu lalu lintas" },
+    { "ru": "перекрёсток", "baca": "pi-ri-KRYOS-tak", "id": "persimpangan" },
+    { "ru": "угол / за углом", "baca": "U-gal / za ug-LOM", "id": "pojok / di balik pojok" },
+    { "ru": "здание", "baca": "ZDA-ni-ye", "id": "gedung" },
+    { "ru": "напротив", "baca": "na-PRO-tif", "id": "di seberang" },
+    { "ru": "рядом с", "baca": "RYA-dam s", "id": "di sebelah" },
+    { "ru": "между", "baca": "MYEZH-du", "id": "di antara" },
+    { "ru": "через дорогу", "baca": "CHE-ris da-RO-gu", "id": "menyeberang jalan" },
+    { "ru": "мост", "baca": "most", "id": "jembatan" },
+    { "ru": "парк", "baca": "park", "id": "taman" },
+    { "ru": "почта", "baca": "POCH-ta", "id": "kantor pos" },
+    { "ru": "повторите", "baca": "paf-ta-RI-tye", "id": "ulangi (perintah sopan)" },
+    { "ru": "покажите", "baca": "pa-ka-ZHY-tye", "id": "tunjukkan" },
+    { "ru": "напишите", "baca": "na-pi-SHY-tye", "id": "tuliskan" },
+    { "ru": "спросить", "baca": "spra-SIT'", "id": "bertanya" },
+    { "ru": "прохожий", "baca": "pra-KHO-zhyy", "id": "orang yang lewat" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah ke bentuk perintah kepada вы.",
+      "items": [
+        "говорить → ____",
+        "повторить → ____",
+        "идти → ____",
+        "читать → ____",
+        "слушать → ____",
+        "повернуть → ____"
+      ]
+    },
+    {
+      "prompt": "Pilih налево/направо atau слева/справа.",
+      "items": [
+        "Поверните ____ (kiri).",
+        "Аптека ____ (di kanan).",
+        "Идите ____ (kanan), потом прямо.",
+        "Магазин ____ (di kiri).",
+        "Поверните ____ (kanan) на перекрёстке."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "почта / где / пожалуйста / скажите / ?",
+        "прямо / светофора / идите / до",
+        "налево / потом / поверните",
+        "далеко / это / ?",
+        "пожалуйста / повторите"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Rusia.",
+      "items": [
+        "Tolong beri tahu, kantor pos di mana?",
+        "Jalan lurus sampai lampu merah.",
+        "Lalu belok kiri.",
+        "Apoteknya di sebelah kanan.",
+        "Itu jauh?",
+        "Tolong tunjukkan di peta."
+      ]
+    }
+  ],
+  "answers": [
+    "говорите — повторите — идите — читайте — слушайте — поверните",
+    "налево — справа — направо — слева — направо",
+    "Скажите, пожалуйста, где почта? — Идите прямо до светофора. — Потом поверните налево. — Это далеко? — Повторите, пожалуйста.",
+    "Скажите, пожалуйста, где почта? — Идите прямо до светофора. — Потом поверните налево. — Аптека справа. — Это далеко? — Покажите на карте, пожалуйста."
+  ]
+}

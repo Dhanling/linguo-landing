@@ -1,0 +1,201 @@
+{
+  "title": "Di kafe: memesan tanpa menunjuk",
+  "title_target": "В кафе — V kafe",
+  "goal": "Memesan makanan dan minuman dengan kalimat utuh, dan mempelajari kasus akusatif — ekor yang dipakai kata benda begitu ia jadi sasaran perbuatan.",
+  "bekal": [
+    "memesan dengan Я хочу … dan Я буду …",
+    "mengubah kata benda feminin ke bentuk akusatif",
+    "tahu kapan kata benda maskulin TIDAK berubah",
+    "menyebut makanan dan minuman Rusia yang paling umum",
+    "meminta bon dan mengucapkan terima kasih ke pelayan"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Makan siang pertama",
+      "intro": "Ani dan Марко masuk ke kafe kampus. Perhatikan ekor kata benda sesudah хочу dan буду: yang feminin berubah, yang maskulin benda mati tidak.",
+      "lines": [
+        { "speaker": "Официант:", "text": "[Добрый|DOB-ryy] [день|dyen']! [Вы|Vy] [готовы|ga-TO-vy]?", "id": "Selamat siang! Sudah siap pesan?", "literal": "baik — hari! Anda — siap?" },
+        { "speaker": "Марко:", "text": "[Да|Da]. [Я|Ya] [буду|BU-du] [борщ|borsch] [и|i] [чёрный|CHOR-nyy] [чай|chay].", "id": "Ya. Saya pesan borsch dan teh hitam.", "literal": "ya. saya — akan — borsch — dan — hitam — teh." },
+        { "speaker": "Официант:", "text": "[А|A] [вам|vam]?", "id": "Untuk Anda?", "literal": "dan — kepada-Anda?" },
+        { "speaker": "Ани:", "text": "[Я|Ya] [хочу|kha-CHU] [пиццу|PI-tsu] [и|i] [воду|VO-du], [пожалуйста|pa-ZHA-lus-ta].", "id": "Saya mau pizza dan air, tolong.", "literal": "saya — ingin — pizza (akusatif) — dan — air (akusatif), silakan." },
+        { "speaker": "Официант:", "text": "[Воду|VO-du] [с|s] [газом|GA-zam] [или|I-li] [без|byes] [газа|GA-za]?", "id": "Air bersoda atau tanpa soda?", "literal": "air — dengan — gas — atau — tanpa — gas?" },
+        { "speaker": "Ани:", "text": "[Без|Byes] [газа|GA-za], [пожалуйста|pa-ZHA-lus-ta].", "id": "Tanpa soda, tolong.", "literal": "tanpa — gas, silakan." },
+        { "speaker": "Официант:", "text": "[Хорошо|Kha-ra-SHO]. [Десерт|Di-SYERT]?", "id": "Baik. Pencuci mulut?", "literal": "bagus. hidangan-penutup?" },
+        { "speaker": "Марко:", "text": "[Нет|Nyet], [спасибо|spa-SI-ba]. [Только|TOL'-ka] [счёт|schot], [когда|kag-DA] [можно|MOZH-na].", "id": "Tidak, terima kasih. Bonnya saja, kalau sudah bisa.", "literal": "tidak, terima-kasih. hanya — bon, ketika — boleh." },
+        { "speaker": "Ани:", "text": "[Подожди|Pa-dazh-DI]! [Я|Ya] [хочу|kha-CHU] [мороженое|ma-RO-zhy-na-ye].", "id": "Tunggu! Saya mau es krim.", "literal": "tunggulah! saya — ingin — es-krim." },
+        { "speaker": "Марко:", "text": "[Мороженое|Ma-RO-zhy-na-ye] [зимой|zi-MOY]? [Ты|Ty] [уже|u-ZHE] [русская|RUS-ka-ya].", "id": "Es krim di musim dingin? Kamu sudah jadi orang Rusia.", "literal": "es-krim — pada-musim-dingin? kamu — sudah — Rusia (pr)." },
+        { "speaker": "Ани:", "text": "[Здесь|Zdyes'] [все|fsye] [едят|yi-DYAT] [мороженое|ma-RO-zhy-na-ye] [зимой|zi-MOY]. [Я|Ya] [просто|PROS-ta] [учусь|u-CHUS'].", "id": "Di sini semua orang makan es krim di musim dingin. Saya cuma belajar.", "literal": "di-sini — semua — makan — es-krim — pada-musim-dingin. saya — sekadar — belajar." }
+      ],
+      "notes": [
+        "**Akusatif adalah ekor untuk sasaran perbuatan.** Dalam kalimat *Я хочу пиццу*, pizza-lah yang diinginkan — ia sasaran, bukan pelaku. Kata benda feminin **-а/-я** berubah jadi **-у/-ю**: пицц**а** → пицц**у**, вод**а** → вод**у**, книг**а** → книг**у**. ⚠️ Ini ekor yang paling sering dilupakan pemula Indonesia, karena dalam bahasa Indonesia \"pizza\" sama saja mau ia pelaku atau sasaran.",
+        "**Kata benda maskulin benda mati TIDAK berubah di akusatif.** *Я хочу борщ* — борщ tetap борщ. *Я читаю журнал* — журнал tetap журнал. Kabar baik yang besar: separuh dari objek yang akan kamu pakai tidak perlu diapa-apakan sama sekali.",
+        "**Kata benda netral juga tidak berubah.** *Я хочу мороженое* — bentuknya sama persis dengan bentuk kamus. Jadi dari empat jenis kata benda, cuma **satu** yang berubah di akusatif tunggal: yang feminin.",
+        "**Я буду … adalah cara paling khas Rusia untuk memesan.** Harfiahnya \"saya akan\" — bentuk masa depan dari быть, tanpa kata kerja lain. Orang Rusia memakainya persis seperti orang Indonesia memakai \"saya pesan …\". *Я буду кофе.* — Saya pesan kopi. Sepenuhnya wajar dan terdengar lebih halus daripada *Я хочу*.",
+        "**Я хочу sedikit lebih langsung, tapi tidak kasar.** ⚠️ Berbeda dari bahasa Inggris, tempat *I want* terdengar kurang sopan di restoran, dalam bahasa Rusia *Я хочу* biasa saja — asal ditutup dengan пожалуйста. Yang benar-benar terasa kasar justru menyebut nama makanannya saja tanpa kalimat.",
+        "**С berarti \"dengan\", без berarti \"tanpa\", dan keduanya mengubah ekor kata bendanya.** *с газ**ом*** (dengan soda, instrumental), *без газ**а*** (tanpa soda, genitif). Untuk sekarang hafalkan sepasang ini sebagai bongkahan — dua ungkapan yang akan kamu pakai setiap kali memesan air di Rusia.",
+        "**Счёт berarti bon, dan meminta bon punya tata caranya sendiri.** Kalimat baku: *Счёт, пожалуйста* atau *Можно счёт?*. ⚠️ Di Rusia pelayan biasanya **tidak** membawakan bon sebelum diminta, karena itu dianggap mengusir tamu — kebalikan dari kebiasaan di banyak restoran Indonesia."
+      ],
+      "grammars": [
+        {
+          "title": "Akusatif tunggal — cuma satu baris yang berubah",
+          "body": ["Bandingkan lajur kedua dengan lajur pertama. Hanya baris feminin yang berbeda."],
+          "table": {
+            "head": ["Jenis", "Bentuk kamus", "Akusatif", "Contoh"],
+            "rows": [
+              ["maskulin benda mati", "борщ, чай, журнал", "**sama**", "Я хочу борщ."],
+              ["maskulin bernyawa ⚠️", "брат, друг, студент", "**-а** (seperti genitif)", "Я знаю брат**а**."],
+              ["feminin -а", "пицца, вода, книга", "**-у**", "Я хочу пицц**у**."],
+              ["feminin -я", "неделя, кухня", "**-ю**", "Я жду недел**ю**."],
+              ["netral", "мороженое, окно, молоко", "**sama**", "Я хочу молоко."],
+              ["feminin -ь", "дверь, кровать", "**sama**", "Я вижу дверь."]
+            ]
+          },
+          "after": [
+            "⚠️ Baris kedua adalah satu-satunya tempat di tingkat A1 di mana \"hidup atau mati\" penting. Kata benda maskulin yang menunjuk makhluk hidup memakai ekor genitif **-а** saat jadi objek: *Я знаю Иван**а***, *Я вижу брат**а***, *Я люблю кот**а***.",
+            "Kata kerja yang objeknya masuk akusatif adalah kata kerja perbuatan yang paling sering dipakai: **хотеть** (ingin), **есть** (makan), **пить** (minum), **читать** (membaca), **смотреть** (menonton), **знать** (kenal), **любить** (suka), **покупать** (membeli), **делать** (melakukan)."
+          ]
+        },
+        {
+          "title": "Хотеть — kata kerja yang tidak patuh pada kelompok mana pun",
+          "body": ["Setengah pertamanya ikut kelompok I, setengah kedua ikut kelompok II. Hafalkan utuh; kamu akan memakainya setiap hari."],
+          "table": {
+            "head": ["Pelaku", "Bentuk", "Baca"],
+            "rows": [
+              ["я", "хочу", "kha-CHU"],
+              ["ты", "хочешь", "KHO-chish"],
+              ["он / она", "хочет", "KHO-chit"],
+              ["мы", "хотим", "kha-TIM"],
+              ["вы", "хотите", "kha-TI-tye"],
+              ["они", "хотят", "kha-TYAT"]
+            ]
+          },
+          "after": ["Sesudah хотеть boleh datang kata benda (*Я хочу чай*) atau kata kerja bentuk kamus (*Я хочу есть* — saya lapar, harfiahnya \"saya ingin makan\"). *Я хочу пить* berarti \"saya haus\"."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Makanan dan minuman",
+      "blocks": [
+        { "type": "tabel", "head": ["Русский", "Baca", "Bahasa Indonesia"], "rows": [
+          ["хлеб", "khlyep", "roti"],
+          ["суп", "sup", "sup"],
+          ["борщ", "borsch", "sup bit merah khas Rusia"],
+          ["салат", "sa-LAT", "salad"],
+          ["мясо", "MYA-sa", "daging"],
+          ["курица", "KU-ri-tsa", "ayam"],
+          ["рыба", "RY-ba", "ikan"],
+          ["рис", "ris", "nasi, beras"],
+          ["картошка", "kar-TOSH-ka", "kentang"],
+          ["овощи", "O-va-schi", "sayuran"],
+          ["фрукты", "FRUK-ty", "buah-buahan"],
+          ["яблоко", "YA-bla-ka", "apel"],
+          ["сыр", "syr", "keju"],
+          ["яйцо", "yiy-TSO", "telur"],
+          ["мороженое", "ma-RO-zhy-na-ye", "es krim"],
+          ["чай / кофе", "chay / KO-fye", "teh / kopi"],
+          ["вода", "va-DA", "air"],
+          ["сок", "sok", "jus"],
+          ["молоко", "ma-la-KO", "susu"],
+          ["сахар", "SA-khar", "gula"]
+        ]},
+        { "type": "kotak", "title": "Tiga hal tentang makan di Rusia yang mengejutkan orang Indonesia", "items": [
+          "**Sup dimakan setiap hari, bukan sesekali.** Makan siang Rusia yang lengkap punya susunan tetap: первое (hidangan pertama, selalu sup), второе (hidangan kedua, daging atau ikan dengan kentang atau bubur), dan компот atau чай. Menolak sup di rumah orang Rusia bisa terasa aneh.",
+          "**Teh diminum panas dan tanpa henti, tapi hampir selalu tanpa susu.** Orang Rusia minum чай dengan gula, lemon, atau selai — bukan dengan susu seperti teh tarik. ⚠️ Memesan *чай с молоком* akan dilayani, tapi kamu akan dipandang sebagai orang Inggris.",
+          "**Nasi bukan makanan pokok.** Rusia punya картошка (kentang), хлеб (roti hitam), dan гречка (soba). Nasi ada, tapi ia lauk, bukan pusat piring. Pemula Indonesia yang mencari nasi setiap makan akan cepat kelaparan — atau cepat belajar mencintai roti hitam."
+        ]}
+      ]
+    },
+    {
+      "title": "Kalimat siap pakai di kafe",
+      "blocks": [
+        { "type": "tabel", "head": ["Русский", "Baca", "Bahasa Indonesia"], "rows": [
+          ["Меню, пожалуйста.", "mi-NYU pa-ZHA-lus-ta", "Menunya, tolong."],
+          ["Что вы посоветуете?", "shto vy pa-sa-VYE-tu-yi-tye", "Apa yang Anda sarankan?"],
+          ["Я буду борщ.", "ya BU-du borsch", "Saya pesan borsch."],
+          ["Без мяса, пожалуйста.", "byes MYA-sa", "Tanpa daging, tolong."],
+          ["Это острое?", "E-ta OST-ra-ye", "Ini pedas?"],
+          ["Очень вкусно!", "O-chin' FKUS-na", "Enak sekali!"],
+          ["Счёт, пожалуйста.", "schot pa-ZHA-lus-ta", "Bonnya, tolong."],
+          ["Можно картой?", "MOZH-na KAR-tay", "Boleh pakai kartu?"]
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    { "ru": "кафе", "baca": "ka-FE", "id": "kafe" },
+    { "ru": "меню", "baca": "mi-NYU", "id": "menu" },
+    { "ru": "официант", "baca": "a-fi-tsy-ANT", "id": "pelayan" },
+    { "ru": "счёт", "baca": "schot", "id": "bon, tagihan" },
+    { "ru": "хотеть", "baca": "kha-TYET'", "id": "ingin, mau" },
+    { "ru": "буду", "baca": "BU-du", "id": "saya akan (juga: saya pesan)" },
+    { "ru": "готовый", "baca": "ga-TO-vyy", "id": "siap" },
+    { "ru": "с / без", "baca": "s / byes", "id": "dengan / tanpa" },
+    { "ru": "вкусно", "baca": "FKUS-na", "id": "enak" },
+    { "ru": "острый", "baca": "OST-ryy", "id": "pedas, tajam" },
+    { "ru": "чёрный / белый", "baca": "CHOR-nyy / BYE-lyy", "id": "hitam / putih" },
+    { "ru": "десерт", "baca": "di-SYERT", "id": "hidangan penutup" },
+    { "ru": "зимой", "baca": "zi-MOY", "id": "pada musim dingin" },
+    { "ru": "уже", "baca": "u-ZHE", "id": "sudah" },
+    { "ru": "все", "baca": "fsye", "id": "semua orang" },
+    { "ru": "подожди / подождите", "baca": "pa-dazh-DI / -DI-tye", "id": "tunggu (akrab / hormat)" },
+    { "ru": "пицца", "baca": "PI-tsa", "id": "pizza" },
+    { "ru": "борщ", "baca": "borsch", "id": "borsch" },
+    { "ru": "мороженое", "baca": "ma-RO-zhy-na-ye", "id": "es krim" },
+    { "ru": "курица", "baca": "KU-ri-tsa", "id": "ayam" },
+    { "ru": "картошка", "baca": "kar-TOSH-ka", "id": "kentang" },
+    { "ru": "яблоко", "baca": "YA-bla-ka", "id": "apel" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah ke bentuk akusatif. Ingat: cuma yang feminin berubah.",
+      "items": [
+        "пицца → Я хочу ____",
+        "борщ → Я хочу ____",
+        "вода → Я хочу ____",
+        "мороженое → Я хочу ____",
+        "курица → Я хочу ____",
+        "чай → Я хочу ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk хотеть yang tepat.",
+      "items": [
+        "Я ____ кофе.",
+        "Ты ____ есть?",
+        "Он ____ пиццу.",
+        "Мы ____ воду.",
+        "Вы ____ десерт?",
+        "Они ____ борщ."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "буду / борщ / я",
+        "пожалуйста / счёт",
+        "воду / хочу / без / я / газа",
+        "посоветуете / что / вы / ?",
+        "вкусно / очень"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Rusia.",
+      "items": [
+        "Saya pesan teh hitam.",
+        "Saya mau pizza, tolong.",
+        "Air tanpa soda.",
+        "Apa yang Anda sarankan?",
+        "Enak sekali!",
+        "Bonnya, tolong."
+      ]
+    }
+  ],
+  "answers": [
+    "пиццу — борщ — воду — мороженое — курицу — чай",
+    "хочу — хочешь — хочет — хотим — хотите — хотят",
+    "Я буду борщ. — Счёт, пожалуйста. — Я хочу воду без газа. — Что вы посоветуете? — Очень вкусно.",
+    "Я буду чёрный чай. — Я хочу пиццу, пожалуйста. — Вода без газа. — Что вы посоветуете? — Очень вкусно! — Счёт, пожалуйста."
+  ]
+}

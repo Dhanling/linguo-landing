@@ -1,0 +1,183 @@
+{
+  "title": "Saya dari Indonesia",
+  "title_target": "Я из Индонезии — Ya iz Indonezii",
+  "goal": "Mengatakan kamu dari mana, menyebut kebangsaan dan kota asal, dan mengalami untuk pertama kalinya ekor kata benda yang berubah karena kata depan.",
+  "bekal": [
+    "menjawab pertanyaan Откуда вы?",
+    "menyebut kebangsaanmu dengan bentuk yang benar untuk laki-laki dan perempuan",
+    "menyebut nama negara dan kota dalam bahasa Rusia",
+    "mengatakan bahasa apa yang kamu bicarakan",
+    "memakai kata depan из dengan ekor kata benda yang berubah"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Di antrean pendaftaran",
+      "intro": "Hari kedua kursus. Ani mengantre di meja pendaftaran bersama seorang pelajar lain, Марко. Perhatikan bahwa nama negara berubah ekornya begitu didahului kata из.",
+      "lines": [
+        { "speaker": "Марко:", "text": "[Извините|Iz-vi-NI-tye], [вы|vy] [тоже|TO-zhy] [здесь|zdyes'] [учитесь|u-CHI-tyes']?", "id": "Maaf, Anda juga belajar di sini?", "literal": "maafkan, Anda — juga — di-sini — belajar?" },
+        { "speaker": "Ани:", "text": "[Да|Da]. [Меня|Mi-NYA] [зовут|za-VUT] [Ани|A-ni]. [Откуда|At-KU-da] [вы|vy]?", "id": "Ya. Nama saya Ani. Anda dari mana?", "literal": "ya. saya — mereka-memanggil — Ani. dari-mana — Anda?" },
+        { "speaker": "Марко:", "text": "[Я|Ya] [из|is] [Италии|i-TA-li-i], [из|is] [Милана|mi-LA-na]. [Я|Ya] [итальянец|i-ta-L'YA-nyets]. [А|A] [вы|vy]?", "id": "Saya dari Italia, dari Milan. Saya orang Italia. Kalau Anda?", "literal": "saya — dari — Italia. dari — Milan. saya — orang-Italia (lk). dan — Anda?" },
+        { "speaker": "Ани:", "text": "[Я|Ya] [из|is] [Индонезии|in-da-NE-zi-i]. [Я|Ya] [индонезийка|in-da-ni-ZIY-ka].", "id": "Saya dari Indonesia. Saya orang Indonesia (perempuan).", "literal": "saya — dari — Indonesia. saya — orang-Indonesia (pr)." },
+        { "speaker": "Марко:", "text": "[Индонезийка|In-da-ni-ZIY-ka]? [А|A] [почему|pa-chi-MU] [не|nye] [индонезиец|in-da-ni-ZI-yets]?", "id": "Indonesiyka? Kenapa bukan indoneziyets?", "literal": "orang-Indonesia-pr? dan — kenapa — tidak — orang-Indonesia-lk?" },
+        { "speaker": "Ани:", "text": "[Потому|Pa-ta-MU] [что|shto] [я|ya] [женщина|ZHEN-schi-na]! [Вы|Vy] — [итальянец|i-ta-L'YA-nyets], [ваша|VA-sha] [сестра|sist-RA] — [итальянка|i-ta-L'YAN-ka].", "id": "Karena saya perempuan! Anda itaLyanets, saudari Anda itaLyanka.", "literal": "karena — bahwa — saya — perempuan! Anda — orang-Italia-lk, Anda-punya — saudari — orang-Italia-pr." },
+        { "speaker": "Марко:", "text": "[Ах|Akh], [точно|TOCH-na]. [Русский|RUS-kiy] [язык|yi-ZYK] [трудный|TRUD-nyy].", "id": "Ah, benar. Bahasa Rusia sulit.", "literal": "ah, tepat. Rusia — bahasa — sulit." },
+        { "speaker": "Ани:", "text": "[Трудный|TRUD-nyy], [но|no] [интересный|in-ti-RYES-nyy]. [Вы|Vy] [говорите|ga-va-RI-tye] [по-русски|pa-RUS-ki]?", "id": "Sulit, tapi menarik. Anda bisa bahasa Rusia?", "literal": "sulit, tapi — menarik. Anda — berbicara — secara-Rusia?" },
+        { "speaker": "Марко:", "text": "[Немного|Ni-MNO-ga]. [А|A] [по-английски|pa-an-GLIY-ski]?", "id": "Sedikit. Kalau bahasa Inggris?", "literal": "sedikit. dan — secara-Inggris?" },
+        { "speaker": "Ани:", "text": "[Да|Da], [хорошо|kha-ra-SHO]. [И|I] [по-индонезийски|pa-in-da-ni-ZIY-ski], [конечно|ka-NYESH-na].", "id": "Ya, lancar. Dan bahasa Indonesia, tentu saja.", "literal": "ya, bagus. dan — secara-Indonesia, tentu-saja." },
+        { "speaker": "Марко:", "text": "[Отлично|At-LICH-na]! [Значит|ZNA-chit], [мы|my] [коллеги|ka-LYE-gi].", "id": "Bagus sekali! Berarti kita rekan.", "literal": "hebat! berarti, kami — rekan-rekan." }
+      ],
+      "notes": [
+        "**Kebangsaan berubah menurut jenis kelamin ORANGNYA.** ⚠️ Ini titik keliru khas penutur Indonesia, yang bahasanya cuma punya satu bentuk: \"orang Indonesia\" untuk siapa saja. Dalam bahasa Rusia perempuan **tidak boleh** menyebut dirinya индонезиец. Polanya rapi: bentuk laki-laki + **-ка** untuk perempuan. *итальянец → итальян**ка***, *американец → американ**ка***, *японец → япон**ка***.",
+        "**Nama bahasa dan nama kebangsaan adalah dua kata yang berbeda.** *Я индонезийка* (saya orang Indonesia) tapi *Я говорю по-индонезийски* (saya berbicara bahasa Indonesia). Bentuk **по-…-ски** itu sebenarnya kata keterangan — harfiahnya \"secara Rusia\", \"secara Inggris\". Ia tidak pernah berubah, jadi begitu kamu hafal polanya, semua bahasa selesai sekaligus.",
+        "**Из berarti \"dari\", dan kata sesudahnya WAJIB berubah ekornya.** Inilah perkenalan pertamamu dengan kasus. Индонези**я** → из Индонези**и**. Итали**я** → из Итали**и**. Москв**а** → из Москв**ы**. Kata bendanya tidak pernah dibiarkan dalam bentuk kamus setelah из.",
+        "**Kenapa Милана, bukan Милан?** Kota maskulin juga berubah: Милан → из Милан**а**, Лондон → из Лондон**а**. Yang tidak berubah hanya nama asing yang tidak bisa diubah, seperti Джакарта… yang justru bisa: из Джакарт**ы**. Nama yang benar-benar kaku hanya yang berakhir bunyi asing: из Токио, из Осло.",
+        "**Почему bertanya \"kenapa\", потому что menjawab \"karena\".** Keduanya sepasang dan hampir selalu muncul berurutan. ⚠️ Perhatikan bahwa что di потому что juga dibaca *shto*.",
+        "**Конечно dibaca ka-NYESH-na.** Kata kedua — setelah что — di mana ч berbunyi *sh*. Setelah dua kata ini, kamu boleh menganggap ч selalu berbunyi *ch*.",
+        "**Тоже berarti \"juga\".** Letaknya luwes, tapi paling sering langsung sesudah kata yang ditambahi: *Вы **тоже** здесь учитесь?* — Anda juga belajar di sini?"
+      ],
+      "grammars": [
+        {
+          "title": "Из + genitif — kasus pertamamu",
+          "body": [
+            "Sesudah kata depan **из** (dari), kata benda berpindah ke kasus genitif. Untuk sekarang cukup hafal tiga pola ekornya; namanya boleh kamu lupakan dulu."
+          ],
+          "table": {
+            "head": ["Bentuk kamus", "Sesudah из", "Contoh utuh"],
+            "rows": [
+              ["berakhir **-а** (Москва)", "**-ы**", "Я из Москв**ы**."],
+              ["berakhir **-я** atau **-ия** (Россия, Индонезия)", "**-и**", "Я из Росси**и**. Я из Индонези**и**."],
+              ["berakhir huruf mati (Милан, Лондон)", "**-а**", "Я из Милан**а**. Я из Лондон**а**."],
+              ["berakhir **-о** (Токио, Осло)", "tidak berubah", "Я из Токио."]
+            ]
+          },
+          "after": [
+            "Karena bunyinya, ejaan **из** sering terdengar seperti *is*: *из Италии* → *i-si-TA-li-i*. Itu bukan kesalahanmu mendengar; з memang meluruh di depan huruf tak bersuara.",
+            "⚠️ Jangan tergoda memakai **от** untuk \"dari\". От juga berarti \"dari\", tapi untuk **orang**, bukan tempat: *письмо от мамы* (surat dari ibu). Untuk tempat asal, selalu из."
+          ]
+        },
+        {
+          "title": "Negara, orangnya, dan bahasanya",
+          "body": [
+            "Tiga lajur untuk satu negara. Yang paling sering dibutuhkan pemula Indonesia ada di baris paling atas."
+          ],
+          "table": {
+            "head": ["Negara", "Laki-laki", "Perempuan", "Bahasanya"],
+            "rows": [
+              ["Индонезия", "индонезиец", "индонезийка", "по-индонезийски"],
+              ["Россия", "русский", "русская", "по-русски"],
+              ["Англия", "англичанин", "англичанка", "по-английски"],
+              ["Америка", "американец", "американка", "по-английски"],
+              ["Италия", "итальянец", "итальянка", "по-итальянски"],
+              ["Германия", "немец", "немка", "по-немецки"],
+              ["Франция", "француз", "француженка", "по-французски"],
+              ["Китай", "китаец", "китаянка", "по-китайски"],
+              ["Япония", "японец", "японка", "по-японски"],
+              ["Корея", "кореец", "кореянка", "по-корейски"]
+            ]
+          },
+          "after": [
+            "⚠️ **русский** menyimpang dari pola: bentuknya kata sifat, bukan kata benda, jadi perempuannya **русская** (bukan русскийка). Sisa daftarnya patuh pada pola -ец / -ка.",
+            "Nama kebangsaan **tidak** ditulis dengan huruf besar dalam bahasa Rusia: *я индонезийка*, bukan *я Индонезийка*. Nama negaranya baru pakai huruf besar."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bertanya asal dengan tiga tingkat kedalaman",
+      "blocks": [
+        { "type": "p", "text": "Pertanyaan asal punya tiga tingkat, dan orang Rusia biasanya menuruninya satu per satu dalam percakapan pertama." },
+        { "type": "tabel", "head": ["Pertanyaan", "Baca", "Menanyakan"], "rows": [
+          ["Откуда вы?", "at-KU-da vy", "dari mana asalmu (negara/kota, paling umum)"],
+          ["Вы откуда?", "vy at-KU-da", "sama, susunan lebih santai"],
+          ["Из какой вы страны?", "is ka-KOY vy stra-NY", "dari negara mana (lebih resmi, di formulir)"],
+          ["В каком городе вы живёте?", "f ka-KOM GO-ra-dye vy zhy-VYO-tye", "kamu tinggal di kota mana"]
+        ]},
+        { "type": "kotak", "title": "Dua jawaban yang selalu berhasil", "items": [
+          "**Я из Индонезии.** — jawaban aman untuk siapa pun, di mana pun.",
+          "**Я из Индонезии, из Джакарты.** — sekaligus menjawab kota, dan hampir selalu memancing pertanyaan berikutnya. Orang Rusia umumnya tahu Bali jauh lebih baik daripada Jakarta; *Вы знаете Бали? Это Индонезия.* adalah kalimat yang membuka banyak percakapan.",
+          "⚠️ Jangan menjawab *Я Индонезия* — itu berarti \"saya adalah negara Indonesia\". Yang benar **Я из Индонезии** (dari) atau **Я индонезийка** (orangnya)."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    { "ru": "откуда", "baca": "at-KU-da", "id": "dari mana" },
+    { "ru": "из", "baca": "is", "id": "dari (tempat asal)" },
+    { "ru": "страна", "baca": "stra-NA", "id": "negara" },
+    { "ru": "город", "baca": "GO-rat", "id": "kota" },
+    { "ru": "Индонезия", "baca": "in-da-NE-zi-ya", "id": "Indonesia" },
+    { "ru": "индонезиец / индонезийка", "baca": "in-da-ni-ZI-yets / -ZIY-ka", "id": "orang Indonesia (lk / pr)" },
+    { "ru": "русский / русская", "baca": "RUS-kiy / RUS-ka-ya", "id": "orang Rusia (lk / pr)" },
+    { "ru": "язык", "baca": "yi-ZYK", "id": "bahasa, lidah" },
+    { "ru": "по-русски", "baca": "pa-RUS-ki", "id": "dalam bahasa Rusia" },
+    { "ru": "по-английски", "baca": "pa-an-GLIY-ski", "id": "dalam bahasa Inggris" },
+    { "ru": "говорить", "baca": "ga-va-RIT'", "id": "berbicara" },
+    { "ru": "учиться", "baca": "u-CHI-tsa", "id": "belajar, bersekolah" },
+    { "ru": "тоже", "baca": "TO-zhy", "id": "juga" },
+    { "ru": "немного", "baca": "ni-MNO-ga", "id": "sedikit" },
+    { "ru": "почему", "baca": "pa-chi-MU", "id": "kenapa" },
+    { "ru": "потому что", "baca": "pa-ta-MU shto", "id": "karena" },
+    { "ru": "женщина / мужчина", "baca": "ZHEN-schi-na / mu-SCHI-na", "id": "perempuan / laki-laki" },
+    { "ru": "сестра / брат", "baca": "sist-RA / brat", "id": "saudari / saudara" },
+    { "ru": "трудный", "baca": "TRUD-nyy", "id": "sulit" },
+    { "ru": "интересный", "baca": "in-ti-RYES-nyy", "id": "menarik" },
+    { "ru": "но", "baca": "no", "id": "tapi" },
+    { "ru": "и", "baca": "i", "id": "dan" },
+    { "ru": "конечно", "baca": "ka-NYESH-na", "id": "tentu saja" },
+    { "ru": "точно", "baca": "TOCH-na", "id": "tepat, betul" },
+    { "ru": "значит", "baca": "ZNA-chit", "id": "berarti, jadi" },
+    { "ru": "отлично", "baca": "at-LICH-na", "id": "bagus sekali" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah nama tempat ke bentuk sesudah из.",
+      "items": [
+        "Россия → Я из ____",
+        "Москва → Я из ____",
+        "Индонезия → Я из ____",
+        "Лондон → Я из ____",
+        "Джакарта → Я из ____",
+        "Италия → Я из ____"
+      ]
+    },
+    {
+      "prompt": "Tulis bentuk kebangsaan yang tepat untuk orang di dalam kurung.",
+      "items": [
+        "Ани (perempuan, Indonesia) — Она ____",
+        "Марко (laki-laki, Italia) — Он ____",
+        "Джон (laki-laki, Amerika) — Он ____",
+        "Мария (perempuan, Rusia) — Она ____",
+        "Юки (perempuan, Jepang) — Она ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "вы / откуда / ?",
+        "Индонезии / я / из",
+        "по-русски / немного / я / говорю",
+        "трудный / русский / язык",
+        "индонезийка / я"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Rusia.",
+      "items": [
+        "Anda dari mana?",
+        "Saya dari Rusia, dari Moskow.",
+        "Dia (perempuan) orang Italia.",
+        "Saya sedikit bisa bahasa Rusia.",
+        "Bahasa Rusia sulit, tapi menarik.",
+        "Kenapa? Karena saya perempuan."
+      ]
+    }
+  ],
+  "answers": [
+    "России — Москвы — Индонезии — Лондона — Джакарты — Италии",
+    "индонезийка — итальянец — американец — русская — японка",
+    "Откуда вы? — Я из Индонезии. — Я немного говорю по-русски. — Русский язык трудный. — Я индонезийка.",
+    "Откуда вы? — Я из России, из Москвы. — Она итальянка. — Я немного говорю по-русски. — Русский язык трудный, но интересный. — Почему? Потому что я женщина."
+  ]
+}

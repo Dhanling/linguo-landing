@@ -1,0 +1,205 @@
+{
+  "title": "Jam berapa? — dan satu kejutan menyenangkan",
+  "title_target": "Который час? — Kotoryy chas?",
+  "goal": "Menyebut jam, hari, dan janji temu. Sekaligus menemukan satu hal langka: cara orang Rusia menyebut \"setengah sembilan\" sama persis dengan cara orang Indonesia.",
+  "bekal": [
+    "menanyakan dan menyebut jam",
+    "memakai час / часа / часов dengan benar",
+    "menyebut hari dalam seminggu dan \"pada hari …\"",
+    "membuat janji temu sederhana",
+    "menyebut bagian hari: pagi, siang, sore, malam"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Membuat janji",
+      "intro": "Ani dan Марко mengatur waktu belajar bersama lewat pesan singkat, lalu bertemu langsung. Perhatikan baris kesembilan: susunan \"setengah\" Rusia ternyata sama dengan bahasa Indonesia.",
+      "lines": [
+        { "speaker": "Марко:", "text": "[Привет|Pri-VYET]! [Когда|Kag-DA] [у|u] [тебя|ti-BYA] [свободное|sva-BOD-na-ye] [время|VRYE-mya]?", "id": "Hai! Kapan kamu ada waktu luang?", "literal": "hai! kapan — di — kamu — bebas — waktu?" },
+        { "speaker": "Ани:", "text": "[В|V] [среду|SRYE-du] [и|i] [в|f] [пятницу|PYAT-ni-tsu]. [А|A] [что|shto]?", "id": "Hari Rabu dan Jumat. Kenapa?", "literal": "pada — Rabu — dan — pada — Jumat. dan — apa?" },
+        { "speaker": "Марко:", "text": "[Давай|Da-VAY] [заниматься|za-ni-MA-tsa] [вместе|VMYES-tye]. [В|V] [среду|SRYE-du] [нормально|nar-MAL'-na]?", "id": "Ayo belajar bareng. Rabu oke?", "literal": "mari — belajar — bersama. pada — Rabu — normal?" },
+        { "speaker": "Ани:", "text": "[Да|Da]. [Во|Va] [сколько|SKOL'-ka]?", "id": "Ya. Jam berapa?", "literal": "ya. pada — berapa?" },
+        { "speaker": "Марко:", "text": "[В|V] [три|tri] [часа|chi-SA]? [Или|I-li] [позже|POZ-zhy]?", "id": "Jam tiga? Atau lebih siang?", "literal": "pada — tiga — jam? atau — lebih-lambat?" },
+        { "speaker": "Ани:", "text": "[В|V] [три|tri] [у|u] [меня|mi-NYA] [урок|u-ROK]. [Давай|Da-VAY] [в|f] [пять|pyat'].", "id": "Jam tiga saya ada kelas. Jam lima saja.", "literal": "pada — tiga — di — saya — pelajaran. mari — pada — lima." },
+        { "speaker": "Марко:", "text": "[Хорошо|Kha-ra-SHO]. [Где|Gdye]?", "id": "Baik. Di mana?", "literal": "bagus. di-mana?" },
+        { "speaker": "Ани:", "text": "[В|V] [библиотеке|bib-li-a-TYE-kye]. [Она|A-NA] [работает|ra-BO-ta-yit] [до|da] [девяти|di-vi-TI].", "id": "Di perpustakaan. Bukanya sampai jam sembilan.", "literal": "di — perpustakaan. dia — bekerja — sampai — sembilan." },
+        { "speaker": "Марко:", "text": "[Отлично|At-LICH-na]. [Кстати|KSTA-ti], [сейчас|si-CHAS] [сколько|SKOL'-ka] [времени|VRYE-mi-ni]?", "id": "Bagus. Ngomong-ngomong, sekarang jam berapa?", "literal": "hebat. omong-omong, sekarang — berapa — waktu?" },
+        { "speaker": "Ани:", "text": "[Половина|Pa-la-VI-na] [девятого|di-VYA-ta-va]. [Полдевятого|Pol-di-VYA-ta-va], [если|YES-li] [коротко|KO-rat-ka].", "id": "Setengah sembilan. Poldevyatovo, kalau disingkat.", "literal": "separuh — kesembilan. setengah-kesembilan, jika — pendek." },
+        { "speaker": "Марко:", "text": "[Половина|Pa-la-VI-na] [девятого|di-VYA-ta-va] — [это|E-ta] [восемь|VO-sim'] [тридцать|TRI-tsat']?", "id": "Setengah sembilan itu delapan tiga puluh?", "literal": "separuh — kesembilan — ini — delapan — tiga-puluh?" },
+        { "speaker": "Ани:", "text": "[Да|Da]! [В|V] [индонезийском|in-da-ni-ZIY-skam] [языке|yi-zy-KYE] [точно|TOCH-na] [так|tak] [же|zhy]. [Наконец-то|Na-ka-NYETS-ta] [что-то|SHTO-ta] [лёгкое|LYOKH-ka-ye]!", "id": "Ya! Dalam bahasa Indonesia persis sama. Akhirnya ada yang gampang!", "literal": "ya! dalam — Indonesia — bahasa — tepat — begitu — juga. akhirnya — sesuatu — ringan!" }
+      ],
+      "notes": [
+        "**Ini keberuntungan yang tak terduga: \"setengah sembilan\" Rusia dan Indonesia berarti hal yang sama.** *Половина девятого* harfiahnya \"separuh menuju yang kesembilan\" = **08.30**, persis seperti \"setengah sembilan\" dalam bahasa Indonesia. ⚠️ Penutur bahasa Inggris tersandung parah di sini, karena *half nine* dalam bahasa Inggris Britania berarti 09.30. Pelajar Indonesia bisa melewatinya tanpa berpikir dua kali. Nikmati — jarang sekali bahasa Rusia memberi hadiah seperti ini.",
+        "**Bentuk singkatnya ditulis serangkai: полдевятого, полшестого, полодиннадцатого.** Itulah yang sebenarnya dipakai orang dalam obrolan. Bentuk panjang *половина девятого* terdengar sedikit lebih resmi.",
+        "**Час / часа / часов mengikuti aturan angka Unit 7.** 1 час, 2–4 часа, 5+ часов. Jadi: *час* (jam satu), *два часа* (jam dua), *пять часов* (jam lima), *двенадцать часов* (jam dua belas). ⚠️ Perhatikan bahwa jam satu **tidak** memakai один: cukup *час*.",
+        "**Untuk menyebut kapan sesuatu terjadi, pakai в + angka.** *В три часа* (jam tiga), *в пять* (jam lima), *в час* (jam satu). Kalau angkanya dimulai bunyi yang sulit, в jadi **во**: *во сколько?* (jam berapa?), *во вторник* (hari Selasa).",
+        "**Hari dalam seminggu memakai в + akusatif.** *в понедельник*, *в среду*, *в пятницу*. Perhatikan среда → сред**у** dan пятница → пятниц**у** — ekor akusatif feminin dari Unit 8. Hari yang berakhir huruf mati (понедельник, вторник, четверг) tidak berubah.",
+        "**До berarti \"sampai\" dan memakai genitif.** *до девяти* (sampai jam sembilan), *до субботы* (sampai hari Sabtu), *до свидания* (sampai perjumpaan — sekarang kamu tahu kenapa свидание berubah jadi свидания).",
+        "**Кстати berarti \"ngomong-ngomong\", dan orang Rusia memakainya terus-menerus.** Cara paling luwes mengubah topik pembicaraan."
+      ],
+      "grammars": [
+        {
+          "title": "Menyebut jam",
+          "body": ["Ada dua cara: cara resmi (seperti jadwal kereta) dan cara sehari-hari."],
+          "tables": [
+            {
+              "head": ["Jam", "Cara sehari-hari", "Baca"],
+              "rows": [
+                ["1.00", "час", "chas"],
+                ["2.00", "два часа", "dva chi-SA"],
+                ["5.00", "пять часов", "pyat' chi-SOF"],
+                ["12.00", "двенадцать часов", "dvi-NA-tsat' chi-SOF"],
+                ["8.30", "полдевятого", "pol-di-VYA-ta-va"],
+                ["1.30", "полвторого", "pol-fta-RO-va"],
+                ["3.15", "пятнадцать минут четвёртого", "…chit-VYOR-ta-va"],
+                ["4.45", "без пятнадцати пять", "byes pit-NA-tsa-ti pyat'"]
+              ]
+            },
+            {
+              "head": ["Pertanyaan", "Baca", "Arti"],
+              "rows": [
+                ["Который час?", "ka-TO-ryy chas", "Jam berapa? (agak resmi)"],
+                ["Сколько времени?", "SKOL'-ka VRYE-mi-ni", "Jam berapa? (paling umum)"],
+                ["Во сколько?", "va SKOL'-ka", "Jam berapa? (menanyakan waktu acara)"],
+                ["Когда?", "kag-DA", "Kapan?"]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Bentuk 3.15 dan 4.45 memakai kata bilangan bertingkat (четвёртого = \"yang keempat\") dan bukan keharusan di A1. Kalau ragu, pakai cara resmi yang selalu benar: **три пятнадцать** (3.15), **четыре сорок пять** (4.45). Orang Rusia memakainya juga, terutama untuk jadwal.",
+            "Rusia memakai jam 24 dalam tulisan resmi (18:00) tapi jam 12 dalam ucapan, dengan penjelas: *шесть часов **вечера*** (jam enam sore), *шесть часов **утра*** (jam enam pagi)."
+          ]
+        },
+        {
+          "title": "Hari dan bagian hari",
+          "body": ["Hari memakai **в + akusatif**; bagian hari memakai bentuk instrumental yang tinggal dihafal."],
+          "tables": [
+            {
+              "head": ["Hari", "Baca", "Pada hari itu"],
+              "rows": [
+                ["понедельник", "pa-ni-DYEL'-nik", "в понедельник"],
+                ["вторник", "FTOR-nik", "во вторник"],
+                ["среда", "sri-DA", "в **среду**"],
+                ["четверг", "chit-VYERK", "в четверг"],
+                ["пятница", "PYAT-ni-tsa", "в **пятницу**"],
+                ["суббота", "su-BO-ta", "в **субботу**"],
+                ["воскресенье", "vas-kri-SYEN'-ye", "в воскресенье"]
+              ]
+            },
+            {
+              "head": ["Bagian hari", "Baca", "Pada waktu itu", "Baca"],
+              "rows": [
+                ["утро — pagi", "U-tra", "утром", "U-tram"],
+                ["день — siang", "dyen'", "днём", "dnyom"],
+                ["вечер — sore/malam", "VYE-chir", "вечером", "VYE-chi-ram"],
+                ["ночь (f) — dini hari", "noch'", "ночью", "NOCH-yu"]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Pembagian hari Rusia tidak sama dengan Indonesia. **День** berlangsung kira-kira pukul 12 sampai 17, **вечер** dari 17 sampai tidur, dan **ночь** adalah waktu orang sudah tidur — kira-kira tengah malam sampai subuh. Jadi *спокойной ночи* (selamat malam) diucapkan saat berpisah untuk tidur, bukan saat bertemu pukul delapan malam. Untuk bertemu pukul delapan malam, ucapkan **добрый вечер**.",
+            "**Сегодня** hari ini, **завтра** besok, **вчера** kemarin, **послезавтра** lusa, **позавчера** kemarin dulu."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Membuat janji",
+      "blocks": [
+        { "type": "tabel", "head": ["Русский", "Baca", "Bahasa Indonesia"], "rows": [
+          ["Когда у тебя свободное время?", "kag-DA u ti-BYA sva-BOD-na-ye VRYE-mya", "Kapan kamu ada waktu luang?"],
+          ["Во сколько?", "va SKOL'-ka", "Jam berapa?"],
+          ["Давай в пять.", "da-VAY f pyat'", "Jam lima saja, ya."],
+          ["Мне удобно.", "mnye u-DOB-na", "Buat saya cocok."],
+          ["Мне неудобно.", "mnye ni-u-DOB-na", "Buat saya kurang cocok."],
+          ["Я занят / Я занята.", "ya ZA-nit / ya za-ni-TA", "Saya sibuk (lk / pr)"],
+          ["Я свободен / Я свободна.", "ya sva-BO-din / sva-BOD-na", "Saya luang (lk / pr)"],
+          ["Договорились!", "da-ga-va-RI-lis'", "Sepakat! Deal!"],
+          ["Я опаздываю.", "ya a-PAZ-dy-va-yu", "Saya terlambat."],
+          ["Подожди пять минут.", "pa-dazh-DI pyat' mi-NUT", "Tunggu lima menit."]
+        ]},
+        { "type": "kotak", "title": "Занят, свободен — kata sifat pendek yang ikut jenis kelamin", "items": [
+          "⚠️ Perempuan berkata **Я занята** (*za-ni-TA*), laki-laki berkata **Я занят** (*ZA-nit*). Ekornya berbeda dan tekanannya pindah. Sama untuk **свободен / свободна**, **готов / готова** (siap), **должен / должна** (harus).",
+          "Ini keluarga kata sifat pendek — bentuk yang hanya dipakai sebagai predikat, tidak pernah di depan kata benda. Kamu tidak perlu menguasainya sekarang; hafalkan empat pasang di atas sebagai bongkahan.",
+          "**Договорились** harfiahnya \"kita sudah bersepakat\" — kata penutup yang sangat khas Rusia untuk mengakhiri pengaturan janji. Setara dengan \"oke, deal\"."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    { "ru": "который час?", "baca": "ka-TO-ryy chas", "id": "jam berapa?" },
+    { "ru": "сколько времени?", "baca": "SKOL'-ka VRYE-mi-ni", "id": "jam berapa?" },
+    { "ru": "во сколько?", "baca": "va SKOL'-ka", "id": "jam berapa (acara)?" },
+    { "ru": "час / часа / часов", "baca": "chas / chi-SA / chi-SOF", "id": "jam (tiga bentuk)" },
+    { "ru": "минута", "baca": "mi-NU-ta", "id": "menit" },
+    { "ru": "половина / пол-", "baca": "pa-la-VI-na / pol", "id": "setengah" },
+    { "ru": "до", "baca": "da", "id": "sampai" },
+    { "ru": "после", "baca": "POS-lye", "id": "sesudah" },
+    { "ru": "раньше / позже", "baca": "RAN'-shy / POZ-zhy", "id": "lebih awal / lebih lambat" },
+    { "ru": "сегодня", "baca": "si-VOD-nya", "id": "hari ini" },
+    { "ru": "завтра / вчера", "baca": "ZAF-tra / fchi-RA", "id": "besok / kemarin" },
+    { "ru": "неделя", "baca": "ni-DYE-lya", "id": "minggu" },
+    { "ru": "выходные", "baca": "vy-khad-NY-ye", "id": "akhir pekan" },
+    { "ru": "свободное время", "baca": "sva-BOD-na-ye VRYE-mya", "id": "waktu luang" },
+    { "ru": "занят / занята", "baca": "ZA-nit / za-ni-TA", "id": "sibuk (lk / pr)" },
+    { "ru": "заниматься", "baca": "za-ni-MA-tsa", "id": "belajar, berlatih" },
+    { "ru": "вместе", "baca": "VMYES-tye", "id": "bersama" },
+    { "ru": "урок", "baca": "u-ROK", "id": "pelajaran, kelas" },
+    { "ru": "библиотека", "baca": "bib-li-a-TYE-ka", "id": "perpustakaan" },
+    { "ru": "кстати", "baca": "KSTA-ti", "id": "ngomong-ngomong" },
+    { "ru": "договорились", "baca": "da-ga-va-RI-lis'", "id": "sepakat!" },
+    { "ru": "опаздывать", "baca": "a-PAZ-dy-vat'", "id": "terlambat" },
+    { "ru": "наконец-то", "baca": "na-ka-NYETS-ta", "id": "akhirnya" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih час, часа, atau часов.",
+      "items": [
+        "1 ____",
+        "2 ____",
+        "4 ____",
+        "6 ____",
+        "11 ____",
+        "12 ____"
+      ]
+    },
+    {
+      "prompt": "Tulis jamnya dengan huruf Kiril, cara sehari-hari.",
+      "items": [
+        "3.00 — ____",
+        "5.00 — ____",
+        "8.30 — ____",
+        "1.30 — ____",
+        "10.00 — ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "сколько / во / ?",
+        "в / давай / пять",
+        "среду / в / нормально / ?",
+        "занята / я / сегодня",
+        "времени / сколько / сейчас / ?"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Rusia.",
+      "items": [
+        "Sekarang jam berapa?",
+        "Sekarang setengah sembilan.",
+        "Hari Rabu jam lima.",
+        "Saya sibuk hari ini. (perempuan)",
+        "Kapan kamu ada waktu luang?",
+        "Sepakat!"
+      ]
+    }
+  ],
+  "answers": [
+    "час — часа — часа — часов — часов — часов",
+    "три часа — пять часов — полдевятого — полвторого — десять часов",
+    "Во сколько? — Давай в пять. — В среду нормально? — Я занята сегодня. — Сколько сейчас времени?",
+    "Сколько сейчас времени? — Сейчас полдевятого. — В среду в пять. — Я сегодня занята. — Когда у тебя свободное время? — Договорились!"
+  ]
+}

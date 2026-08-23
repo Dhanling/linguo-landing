@@ -1,0 +1,450 @@
+{
+  "title": "Halo, nama saya Ani",
+  "title_target": "Здравствуйте — Zdrastvuyte",
+  "goal": "Menyapa dengan aman kepada siapa pun, menyebut nama, menanyakan nama lawan bicara, dan mengucapkan kalimat Rusia pertama yang benar — kalimat yang tidak punya kata \"adalah\" sama sekali.",
+  "bekal": [
+    "menyapa resmi dan santai, dan tahu bedanya",
+    "menyebut namamu dengan dua cara",
+    "menanyakan nama orang lain",
+    "mengucapkan terima kasih dan permisi",
+    "menyusun kalimat \"saya X\" tanpa kata kerja"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Hari pertama di kursus",
+      "intro": "Ani, pelajar dari Indonesia, masuk ke kelas bahasa Rusia di Moskow dan duduk di sebelah seseorang yang belum dikenalnya. Perhatikan bahwa tidak satu pun kalimat di bawah ini memakai kata yang berarti \"adalah\".",
+      "lines": [
+        {
+          "speaker": "Ани:",
+          "text": "[Здравствуйте|ZDRAST-vuy-tye]!",
+          "id": "Halo!",
+          "literal": "sehat-lah-Anda!"
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Здравствуйте|ZDRAST-vuy-tye]! [Меня|Mi-NYA] [зовут|za-VUT] [Иван|i-VAN]. [А|A] [вас|vas]?",
+          "id": "Halo! Nama saya Ivan. Dan Anda?",
+          "literal": "sehat-lah-Anda! saya (objek) — mereka-memanggil — Ivan. dan — Anda (objek)?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Очень|O-chin'] [приятно|pri-YAT-na]. [Я|Ya] [Ани|A-ni].",
+          "id": "Senang berkenalan. Saya Ani.",
+          "literal": "sangat — menyenangkan. saya — Ani."
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Ани|A-ni]? [Красивое|Kra-SI-va-ye] [имя|I-mya]. [Вы|Vy] [студентка|stu-DYENT-ka]?",
+          "id": "Ani? Nama yang indah. Anda mahasiswi?",
+          "literal": "Ani? indah (netral) — nama. Anda — mahasiswi?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Да|Da], [я|ya] [студентка|stu-DYENT-ka]. [А|A] [вы|vy]?",
+          "id": "Ya, saya mahasiswi. Kalau Anda?",
+          "literal": "ya, saya — mahasiswi. dan — Anda?"
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Я|Ya] [не|nye] [студент|stu-DYENT]. [Я|Ya] [преподаватель|pri-pa-da-VA-til'].",
+          "id": "Saya bukan mahasiswa. Saya pengajar.",
+          "literal": "saya — tidak — mahasiswa. saya — pengajar."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Ой|Oy], [извините|iz-vi-NI-tye]!",
+          "id": "Oh, maaf!",
+          "literal": "oh, maafkan-lah-Anda!"
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Ничего|Ni-chi-VO]! [Всё|Fsyo] [хорошо|kha-ra-SHO].",
+          "id": "Tidak apa-apa! Semuanya baik.",
+          "literal": "tidak-apa-apa! semua — bagus."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Спасибо|Spa-SI-ba].",
+          "id": "Terima kasih.",
+          "literal": "terima-kasih."
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Пожалуйста|Pa-ZHA-lus-ta]. [До|Da] [свидания|svi-DA-ni-ya], [Ани|A-ni]!",
+          "id": "Sama-sama. Sampai jumpa, Ani!",
+          "literal": "silakan / sama-sama. sampai — perjumpaan, Ani!"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[До|Da] [свидания|svi-DA-ni-ya]!",
+          "id": "Sampai jumpa!",
+          "literal": "sampai — perjumpaan!"
+        }
+      ],
+      "notes": [
+        "**Bahasa Rusia tidak punya kata \"adalah\" di waktu sekarang.** *Я студентка* secara harfiah cuma \"saya mahasiswi\" — dua kata, tanpa penghubung apa pun. Dalam tulisan tempat penghubung itu kadang ditandai tanda hubung: *Москва — город* (Moskow adalah kota). ⚠️ Pemula Indonesia sering mencari kata untuk \"adalah\" dan akhirnya memaksakan есть, yang di sini **salah**. Есть berarti \"ada\", bukan \"adalah\", dan pemakaiannya diajarkan di Unit 4.",
+        "**Bahasa Rusia juga tidak punya \"a\" dan \"the\".** Tidak ada kata sandang sama sekali. Ini kabar baik yang jarang disebut: bagi penutur Indonesia, yang juga tak punya kata sandang, satu beban besar bahasa Inggris hilang begitu saja di sini.",
+        "**Здравствуйте itu resmi, Привет itu santai.** Здравствуйте dipakai kepada orang yang belum dikenal, orang yang lebih tua, guru, petugas, siapa pun yang kamu panggil \"Anda\". Привет (*pri-VYET*) hanya untuk teman dan sebaya. ⚠️ Memakai Привет kepada dosen atau petugas imigrasi terdengar seperti anak kecil menepuk bahu orang dewasa.",
+        "**Здравствуйте memang sulit diucapkan — dan orang Rusia pun memendekkannya.** Huruf в yang pertama praktis hilang dalam ucapan cepat: *ZDRAST-vuy-tye*, bahkan *ZDRAS-tye* dalam obrolan sangat santai. Jangan mengeja huruf per huruf.",
+        "**Меня зовут harfiahnya \"mereka memanggil saya\".** Bukan \"nama saya\". Orang Rusia menyebut namanya lewat kalimat tanpa pelaku yang jelas — siapa \"mereka\" itu tidak pernah dijelaskan. Terima saja sebagai satu bongkah: *Меня зовут ___*. Untuk bertanya balik cukup **А вас?** (\"dan Anda?\"), tidak perlu mengulang seluruh kalimatnya.",
+        "**Извините dan Простите dua-duanya \"maaf\", tapi tidak sama beratnya.** Извините (*iz-vi-NI-tye*) untuk gangguan kecil: menyela, lewat, salah sebut. Простите (*pra-STI-tye*) untuk kesalahan yang sungguhan — harfiahnya \"ampunilah\". Memakai Простите karena salah menebak profesi orang terdengar berlebihan.",
+        "**Пожалуйста satu kata, tiga pekerjaan.** Ia berarti \"silakan\", \"tolong\", dan \"sama-sama\" sekaligus. Kamu akan memakainya puluhan kali sehari. ⚠️ Ejaannya menipu: ditulis по-жа-луй-ста tapi dibaca *pa-ZHA-lus-ta* — huruf й dan bagian tengahnya luruh."
+      ],
+      "grammars": [
+        {
+          "title": "Kalimat tanpa kata kerja",
+          "body": [
+            "Pada waktu sekarang, kalimat \"X adalah Y\" dalam bahasa Rusia hanya menempelkan X dan Y. Tidak ada yang perlu ditambahkan, dan menambahkan sesuatu justru salah."
+          ],
+          "table": {
+            "head": [
+              "Rusia",
+              "Baca",
+              "Indonesia",
+              "Harfiah"
+            ],
+            "rows": [
+              [
+                "Я студент.",
+                "ya stu-DYENT",
+                "Saya mahasiswa.",
+                "saya mahasiswa"
+              ],
+              [
+                "Он врач.",
+                "on vrach",
+                "Dia dokter.",
+                "dia dokter"
+              ],
+              [
+                "Она дома.",
+                "a-NA DO-ma",
+                "Dia di rumah.",
+                "dia di-rumah"
+              ],
+              [
+                "Это Москва.",
+                "E-ta mask-VA",
+                "Ini Moskow.",
+                "ini Moskow"
+              ],
+              [
+                "Всё хорошо.",
+                "fsyo kha-ra-SHO",
+                "Semuanya baik.",
+                "semua bagus"
+              ]
+            ]
+          },
+          "after": [
+            "Untuk menyangkal, sisipkan **не** (*nye*) tepat di depan bagian yang disangkal: *Я **не** студент* — saya bukan mahasiswa. Satu kata, selalu di depan, tidak pernah berubah."
+          ]
+        },
+        {
+          "title": "Ты dan Вы — dua kata untuk \"kamu\"",
+          "body": [
+            "Bahasa Rusia memisahkan kamu-akrab dari Anda-hormat, persis seperti bahasa Indonesia memisahkan *kamu* dari *Anda*. Bedanya, dalam bahasa Rusia pilihan itu **wajib** dan langsung terdengar di kata kerjanya."
+          ],
+          "table": {
+            "head": [
+              "",
+              "ты (ty)",
+              "вы (vy)"
+            ],
+            "rows": [
+              [
+                "Dipakai kepada",
+                "teman, sebaya, keluarga, anak-anak",
+                "orang asing, orang yang lebih tua, atasan, petugas — dan kepada lebih dari satu orang"
+              ],
+              [
+                "Salamnya",
+                "Привет!",
+                "Здравствуйте!"
+              ],
+              [
+                "\"Siapa namamu?\"",
+                "Как тебя зовут?",
+                "Как вас зовут?"
+              ],
+              [
+                "\"Apa kabar?\"",
+                "Как дела?",
+                "Как вы поживаете?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Aturan praktis untuk pendatang: **pakai вы sampai orang Rusia sendiri menawarkan ты**. Tawaran itu biasanya berbunyi *Давай на ты* (\"ayo pakai ty saja\"). Memakai вы kepada teman sebaya terdengar sedikit kaku; memakai ты kepada orang yang tak dikenal terdengar kasar. Dari dua kesalahan itu, yang pertama jauh lebih murah.",
+            "Вы juga berarti \"kalian\" untuk banyak orang, jadi satu bentuk ini menutup dua kebutuhan sekaligus."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ungkapan yang wajib ada di saku hari pertama",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sepuluh ungkapan berikut menutup hampir semua basa-basi hari pertama. Hafalkan utuh sebagai bongkahan; tata bahasanya akan terurai sendiri di unit-unit berikutnya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Русский",
+            "Baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Да / Нет",
+              "da / nyet",
+              "Ya / Tidak"
+            ],
+            [
+              "Спасибо",
+              "spa-SI-ba",
+              "Terima kasih"
+            ],
+            [
+              "Большое спасибо",
+              "bal'-SHO-ye spa-SI-ba",
+              "Terima kasih banyak"
+            ],
+            [
+              "Пожалуйста",
+              "pa-ZHA-lus-ta",
+              "Silakan / Tolong / Sama-sama"
+            ],
+            [
+              "Извините",
+              "iz-vi-NI-tye",
+              "Maaf, permisi"
+            ],
+            [
+              "Я не понимаю",
+              "ya nye pa-ni-MA-yu",
+              "Saya tidak mengerti"
+            ],
+            [
+              "Повторите, пожалуйста",
+              "paf-ta-RI-tye pa-ZHA-lus-ta",
+              "Tolong ulangi"
+            ],
+            [
+              "Говорите медленно, пожалуйста",
+              "ga-va-RI-tye MYED-li-na",
+              "Tolong bicara pelan-pelan"
+            ],
+            [
+              "Что это?",
+              "shto E-ta",
+              "Ini apa?"
+            ],
+            [
+              "Как это по-русски?",
+              "kak E-ta pa-RUS-ki",
+              "Bahasa Rusianya apa?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dua kalimat terakhir bukan sekadar kosakata — itu alat belajar. Begitu kamu bisa menanyakan \"ini apa\" dan \"bahasa Rusianya apa\", setiap orang Rusia di sekitarmu berubah jadi kamus berjalan."
+        },
+        {
+          "type": "kotak",
+          "title": "Как дела? dan jebakan kecilnya",
+          "items": [
+            "**Как дела?** (*kak di-LA*) harfiahnya \"bagaimana urusan-urusan?\" — sapaan sehari-hari kepada orang yang sudah dikenal.",
+            "Jawaban baku: **Хорошо** (bagus), **Нормально** (biasa saja), **Неплохо** (lumayan), **Так себе** (begitulah).",
+            "⚠️ Berbeda dari *How are you?* dalam bahasa Inggris, Как дела? **bukan** basa-basi kosong yang dilontarkan ke kasir atau orang asing. Ia ditanyakan kepada orang yang kamu kenal, dan jawabannya benar-benar didengarkan. Menanyakannya ke petugas loket akan membuat orang bingung."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "здравствуйте",
+      "baca": "ZDRAST-vuy-tye",
+      "id": "halo (resmi, kepada siapa pun)"
+    },
+    {
+      "ru": "привет",
+      "baca": "pri-VYET",
+      "id": "hai (santai, ke teman)"
+    },
+    {
+      "ru": "до свидания",
+      "baca": "da svi-DA-ni-ya",
+      "id": "sampai jumpa"
+    },
+    {
+      "ru": "пока",
+      "baca": "pa-KA",
+      "id": "dah (santai)"
+    },
+    {
+      "ru": "меня зовут",
+      "baca": "mi-NYA za-VUT",
+      "id": "nama saya"
+    },
+    {
+      "ru": "как вас зовут?",
+      "baca": "kak vas za-VUT",
+      "id": "siapa nama Anda?"
+    },
+    {
+      "ru": "очень приятно",
+      "baca": "O-chin' pri-YAT-na",
+      "id": "senang berkenalan"
+    },
+    {
+      "ru": "я",
+      "baca": "ya",
+      "id": "saya"
+    },
+    {
+      "ru": "вы",
+      "baca": "vy",
+      "id": "Anda, kalian"
+    },
+    {
+      "ru": "ты",
+      "baca": "ty",
+      "id": "kamu (akrab)"
+    },
+    {
+      "ru": "он / она",
+      "baca": "on / a-NA",
+      "id": "dia (laki-laki) / dia (perempuan)"
+    },
+    {
+      "ru": "да / нет",
+      "baca": "da / nyet",
+      "id": "ya / tidak"
+    },
+    {
+      "ru": "не",
+      "baca": "nye",
+      "id": "tidak, bukan (di depan kata)"
+    },
+    {
+      "ru": "студент / студентка",
+      "baca": "stu-DYENT / stu-DYENT-ka",
+      "id": "mahasiswa / mahasiswi"
+    },
+    {
+      "ru": "преподаватель",
+      "baca": "pri-pa-da-VA-til'",
+      "id": "pengajar, dosen"
+    },
+    {
+      "ru": "врач",
+      "baca": "vrach",
+      "id": "dokter"
+    },
+    {
+      "ru": "имя",
+      "baca": "I-mya",
+      "id": "nama"
+    },
+    {
+      "ru": "красивый",
+      "baca": "kra-SI-vyy",
+      "id": "indah, cantik"
+    },
+    {
+      "ru": "спасибо",
+      "baca": "spa-SI-ba",
+      "id": "terima kasih"
+    },
+    {
+      "ru": "пожалуйста",
+      "baca": "pa-ZHA-lus-ta",
+      "id": "silakan, tolong, sama-sama"
+    },
+    {
+      "ru": "извините",
+      "baca": "iz-vi-NI-tye",
+      "id": "maaf, permisi"
+    },
+    {
+      "ru": "ничего",
+      "baca": "ni-chi-VO",
+      "id": "tidak apa-apa"
+    },
+    {
+      "ru": "хорошо",
+      "baca": "kha-ra-SHO",
+      "id": "bagus, baik"
+    },
+    {
+      "ru": "всё",
+      "baca": "fsyo",
+      "id": "semua, semuanya"
+    },
+    {
+      "ru": "это",
+      "baca": "E-ta",
+      "id": "ini, itu"
+    },
+    {
+      "ru": "как дела?",
+      "baca": "kak di-LA",
+      "id": "apa kabar?"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Rusia. Ingat: tidak ada kata untuk \"adalah\".",
+      "items": [
+        "Halo! (resmi)",
+        "Nama saya Ani.",
+        "Saya mahasiswi.",
+        "Dia bukan dokter.",
+        "Siapa nama Anda?",
+        "Sampai jumpa!"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk ты atau вы yang tepat (тебя/вас, твои/ваши).",
+      "items": [
+        "Kepada dosen di kelas: Как ____ зовут?",
+        "Kepada teman sekamar: Как ____ дела?",
+        "Kepada petugas di bandara: Извините, ____ говорите по-английски?",
+        "Kepada anak tetangga umur tujuh tahun: Как ____ зовут?",
+        "Kepada tiga orang teman sekaligus: Как ____ дела?"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "зовут / меня / Ани",
+        "не / я / студент",
+        "приятно / очень",
+        "хорошо / всё",
+        "вас / как / зовут / ?"
+      ]
+    },
+    {
+      "prompt": "Pilih ucapan yang tepat. Tulis jawabannya dalam huruf Kiril.",
+      "items": [
+        "Kamu masuk ke ruang dosen pukul delapan pagi. Kamu bilang ____.",
+        "Kamu tidak menangkap yang dikatakan orang. Kamu bilang ____.",
+        "Kamu menginjak kaki orang di kereta bawah tanah. Kamu bilang ____.",
+        "Seseorang baru saja menolongmu. Kamu bilang ____.",
+        "Kamu berpamitan dari kantor secara resmi. Kamu bilang ____."
+      ]
+    }
+  ],
+  "answers": [
+    "Здравствуйте! — Меня зовут Ани. — Я студентка. — Он не врач. — Как вас зовут? — До свидания!",
+    "вас — твои — вы — тебя — ваши",
+    "Меня зовут Ани. — Я не студент. — Очень приятно. — Всё хорошо. — Как вас зовут?",
+    "Здравствуйте — Повторите, пожалуйста — Извините — Спасибо — До свидания"
+  ]
+}

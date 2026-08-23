@@ -1,0 +1,211 @@
+{
+  "title": "Kata sifat: warna, ukuran, dan ekor yang ikut",
+  "title_target": "В магазине одежды — V magazine odezhdy",
+  "goal": "Menggambarkan benda dan orang — warna, ukuran, sifat — sambil menguasai kata sifat, yang ekornya wajib cocok dengan kata benda yang disifatinya.",
+  "bekal": [
+    "mengubah kata sifat ke bentuk maskulin, feminin, netral, dan jamak",
+    "menyebut warna dan ukuran",
+    "berbelanja pakaian: mencoba, meminta ukuran lain",
+    "memakai какой / какая / какое untuk bertanya \"yang seperti apa\"",
+    "menggambarkan orang dan tempat"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Mencari mantel musim dingin",
+      "intro": "Ani belum punya mantel yang cukup tebal. Даша menemaninya ke toko. Perhatikan bahwa setiap kata sifat berganti ekor mengikuti kata benda di belakangnya.",
+      "lines": [
+        { "speaker": "Продавщица:", "text": "[Здравствуйте|Zdrast-vuy-tye]! [Вам|Vam] [помочь|pa-MOCH']?", "id": "Halo! Perlu dibantu?", "literal": "halo! kepada-Anda — menolong?" },
+        { "speaker": "Ани:", "text": "[Да|Da], [я|ya] [ищу|i-SCHU] [тёплое|TYOP-la-ye] [пальто|pal'-TO].", "id": "Ya, saya cari mantel yang hangat.", "literal": "ya, saya — mencari — hangat (netral) — mantel." },
+        { "speaker": "Продавщица:", "text": "[Какой|Ka-KOY] [цвет|tsvyet] [вы|vy] [хотите|kha-TI-tye]?", "id": "Warna apa yang Anda mau?", "literal": "yang-mana — warna — Anda — ingin?" },
+        { "speaker": "Ани:", "text": "[Чёрный|CHOR-nyy] [или|I-li] [серый|SYE-ryy]. [Не|Nye] [очень|O-chin'] [яркий|YAR-kiy].", "id": "Hitam atau abu-abu. Yang tidak terlalu mencolok.", "literal": "hitam — atau — abu-abu. tidak — sangat — cerah." },
+        { "speaker": "Даша:", "text": "[А|A] [почему|pa-chi-MU] [не|nye] [красное|KRAS-na-ye]? [Зима|Zi-MA] [серая|SYE-ra-ya], [ты|ty] [будешь|BU-dish] [яркая|YAR-ka-ya].", "id": "Kenapa tidak yang merah? Musim dinginnya kelabu, kamu jadi yang mencolok.", "literal": "dan — kenapa — tidak — merah (netral)? musim-dingin — kelabu (fem), kamu — akan — cerah (fem)." },
+        { "speaker": "Ани:", "text": "[Хм|Khm]… [Можно|MOZH-na] [примерить|pri-MYE-rit'] [красное|KRAS-na-ye]?", "id": "Hmm… Boleh coba yang merah?", "literal": "hmm… boleh — mencoba — merah?" },
+        { "speaker": "Продавщица:", "text": "[Конечно|Ka-NYESH-na]. [Какой|Ka-KOY] [у|u] [вас|vas] [размер|raz-MYER]?", "id": "Tentu. Ukuran Anda berapa?", "literal": "tentu-saja. yang-mana — di — Anda — ukuran?" },
+        { "speaker": "Ани:", "text": "[Не|Nye] [знаю|ZNA-yu]. [В|V] [Индонезии|In-da-NE-zi-i] [другие|dru-GI-ye] [размеры|raz-MYE-ry].", "id": "Tidak tahu. Di Indonesia ukurannya beda.", "literal": "tidak — tahu. di — Indonesia — lain — ukuran-ukuran." },
+        { "speaker": "Продавщица:", "text": "[Думаю|DU-ma-yu], [сорок|SO-rak] [четвёртый|chit-VYOR-tyy]. [Примерочная|Pri-MYE-rach-na-ya] [там|tam].", "id": "Kira-kira empat puluh empat. Kamar pasnya di sana.", "literal": "berpikir-saya, empat-puluh — keempat. kamar-pas — di-sana." },
+        { "speaker": "Ани:", "text": "[Ну|Nu] [как|kak]?", "id": "Gimana?", "literal": "nah — bagaimana?" },
+        { "speaker": "Даша:", "text": "[Отлично|At-LICH-na]! [Красное|KRAS-na-ye] [пальто|pal'-TO], [чёрная|CHOR-na-ya] [сумка|SUM-ka], [чёрные|CHOR-ny-ye] [сапоги|sa-pa-GI]. [Ты|Ty] [настоящая|nas-ta-YA-scha-ya] [москвичка|mask-VICH-ka].", "id": "Bagus! Mantel merah, tas hitam, sepatu bot hitam. Kamu benar-benar orang Moskow.", "literal": "hebat! merah — mantel, hitam (fem) — tas, hitam (jamak) — sepatu-bot. kamu — sungguhan — perempuan-Moskow." },
+        { "speaker": "Ани:", "text": "[Только|TOL'-ka] [очень|O-chin'] [замёрзшая|za-MYORZ-sha-ya] [москвичка|mask-VICH-ka].", "id": "Cuma orang Moskow yang kedinginan banget.", "literal": "hanya — sangat — membeku (fem) — perempuan-Moskow." }
+      ],
+      "notes": [
+        "**Kata sifat wajib cocok dengan kata bendanya.** ⚠️ Dalam bahasa Indonesia \"merah\" tidak pernah berubah: baju merah, tas merah, sepatu merah. Dalam bahasa Rusia ia berubah tiga kali: *красн**ый** шарф* (mask), *красн**ая** сумка* (fem), *красн**ое** пальто* (netral), *красн**ые** сапоги* (jamak). Yang menentukan adalah kata benda, dan kata sifatnya selalu datang **di depannya**.",
+        "**Ekornya rapi dan mudah dikenali:** maskulin **-ый / -ий / -ой**, feminin **-ая**, netral **-ое**, jamak **-ые / -ие**. Kalau kamu bisa menyebut jenis kata bendanya (Unit 2), kamu bisa memilih ekor kata sifatnya.",
+        "**Ekor maskulin -ой selalu bertekanan.** *больш**ой***, *плох**ой***, *друг**ой***, *как**ой***. Bandingkan dengan *нов**ый*** dan *красн**ый*** yang tekanannya di akar. Cara membedakannya: kalau ekornya -ой, tekanannya pasti di situ.",
+        "**Какой bukan cuma \"yang mana\", tapi juga \"seperti apa\".** *Какой у вас размер?* (ukuran Anda berapa?), *Какая погода?* (cuacanya bagaimana?), *Какое пальто?* (mantel yang seperti apa?). Ia sendiri berubah ekornya mengikuti kata bendanya, persis seperti kata sifat lain.",
+        "**Пальто tidak pernah berubah bentuk.** Kata pinjaman dari Prancis yang berakhir -о tetap kaku di semua kasus: *в пальто*, *без пальто*, *красное пальто*. Sama dengan **кафе**, **метро**, **такси**, **кино**, **радио**. Kelompok kecil yang menyenangkan.",
+        "**Вам помочь? adalah kalimat baku penjaga toko Rusia.** Harfiahnya \"membantu kepada Anda?\". Jawabannya: *Да, спасибо* atau *Нет, спасибо, я просто смотрю* (tidak, saya cuma lihat-lihat). ⚠️ Kalimat terakhir itu wajib dihafal siapa pun yang tidak suka diikuti pramuniaga.",
+        "**Ну adalah kata pengisi yang paling sering terdengar dalam bahasa Rusia sehari-hari.** Ia berarti \"nah\", \"jadi\", \"ya\", tergantung nada. *Ну как?* — gimana? *Ну ладно* — ya sudah."
+      ],
+      "grammars": [
+        {
+          "title": "Ekor kata sifat",
+          "body": ["Empat ekor untuk empat jenis. Lihat kata bendanya, pilih ekornya."],
+          "table": {
+            "head": ["Jenis kata benda", "Ekor", "новый (baru)", "большой (besar)", "хороший (bagus)"],
+            "rows": [
+              ["maskulin (шарф)", "**-ый / -ой / -ий**", "нов**ый** шарф", "больш**ой** шарф", "хорош**ий** шарф"],
+              ["feminin (сумка)", "**-ая**", "нов**ая** сумка", "больш**ая** сумка", "хорош**ая** сумка"],
+              ["netral (пальто)", "**-ое / -ее**", "нов**ое** пальто", "больш**ое** пальто", "хорош**ее** пальто"],
+              ["jamak (сапоги)", "**-ые / -ие**", "нов**ые** сапоги", "больш**ие** сапоги", "хорош**ие** сапоги"]
+            ]
+          },
+          "after": [
+            "⚠️ Sesudah huruf **г, к, х, ж, ч, ш, щ**, huruf **ы** tidak boleh ditulis dan diganti **и**: хорош**ий**, хорош**ие**, больш**ие**, русск**ий**, русск**ие**. Ini aturan ejaan yang berlaku di seluruh bahasa Rusia, bukan cuma di kata sifat. Hafalkan tujuh huruf itu — ia akan muncul lagi dan lagi.",
+            "Kata sifat juga berubah menurut kasus (*в больш**ом** доме*), tapi itu di luar A1. Untuk sekarang cukup bentuk nominatif — bentuk yang dipakai saat kata bendanya jadi pelaku atau berdiri sendiri."
+          ]
+        },
+        {
+          "title": "Warna",
+          "body": ["Semua warna adalah kata sifat, jadi semuanya berubah ekornya. Di bawah ditulis dalam bentuk maskulin."],
+          "table": {
+            "head": ["Русский", "Baca", "Bahasa Indonesia", "Feminin"],
+            "rows": [
+              ["белый", "BYE-lyy", "putih", "белая"],
+              ["чёрный", "CHOR-nyy", "hitam", "чёрная"],
+              ["красный", "KRAS-nyy", "merah", "красная"],
+              ["синий", "SI-niy", "biru tua", "синяя ⚠️"],
+              ["голубой", "ga-lu-BOY", "biru muda", "голубая"],
+              ["зелёный", "zi-LYO-nyy", "hijau", "зелёная"],
+              ["жёлтый", "ZHOL-tyy", "kuning", "жёлтая"],
+              ["коричневый", "ka-RICH-ni-vyy", "cokelat", "коричневая"],
+              ["серый", "SYE-ryy", "abu-abu", "серая"],
+              ["розовый", "RO-za-vyy", "merah muda", "розовая"],
+              ["оранжевый", "a-RAN-zhy-vyy", "oranye", "оранжевая"]
+            ]
+          },
+          "after": [
+            "⚠️ Bahasa Rusia memisahkan **синий** (biru tua) dari **голубой** (biru muda) sebagai dua warna yang berbeda, bukan dua tingkat dari warna yang sama. Ini pembagian yang tidak ada dalam bahasa Indonesia maupun Inggris, dan penelitian menunjukkan penutur Rusia benar-benar membedakan keduanya lebih cepat daripada penutur bahasa lain. Langit adalah голубой; laut dalam adalah синий.",
+            "**Синий** ikut pola kata sifat lunak, jadi femininnya **синяя** dan netralnya **синее**, bukan синая/синое."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pakaian dan berbelanja",
+      "blocks": [
+        { "type": "tabel", "head": ["Русский", "Baca", "Bahasa Indonesia"], "rows": [
+          ["одежда", "a-DYEZH-da", "pakaian"],
+          ["пальто", "pal'-TO", "mantel"],
+          ["куртка", "KURT-ka", "jaket"],
+          ["рубашка", "ru-BASH-ka", "kemeja"],
+          ["футболка", "fud-BOL-ka", "kaus"],
+          ["платье", "PLAT'-ye", "gaun"],
+          ["брюки", "BRYU-ki", "celana panjang"],
+          ["джинсы", "DZHYN-sy", "celana jins"],
+          ["юбка", "YUP-ka", "rok"],
+          ["свитер", "SVI-ter", "sweter"],
+          ["шапка", "SHAP-ka", "topi hangat"],
+          ["шарф", "sharf", "syal"],
+          ["перчатки", "pir-CHAT-ki", "sarung tangan"],
+          ["обувь (f)", "O-buf'", "alas kaki"],
+          ["сапоги", "sa-pa-GI", "sepatu bot"],
+          ["кроссовки", "kra-SOF-ki", "sepatu kets"],
+          ["размер", "raz-MYER", "ukuran"],
+          ["примерочная", "pri-MYE-rach-na-ya", "kamar pas"]
+        ]},
+        { "type": "kotak", "title": "Kalimat siap pakai di toko pakaian", "items": [
+          "**Можно примерить?** — Boleh dicoba?",
+          "**Есть размер побольше / поменьше?** — Ada ukuran yang lebih besar / lebih kecil?",
+          "**Есть другой цвет?** — Ada warna lain?",
+          "**Мне велико / Мне мало.** — Kebesaran / kekecilan buat saya.",
+          "**Я просто смотрю.** — Saya cuma lihat-lihat.",
+          "**Я беру.** — Saya ambil ini.",
+          "⚠️ Ukuran pakaian Rusia memakai angka Eropa (42, 44, 46 …) dan sepatu memakai skala tersendiri yang **berbeda** dari Indonesia dan Eropa. Sepatu ukuran 39 Indonesia kira-kira 39 Rusia juga, tapi selisih satu nomor sering terjadi. Selalu coba dulu."
+        ]}
+      ]
+    },
+    {
+      "title": "Kata sifat yang paling sering dipakai",
+      "blocks": [
+        { "type": "tabel", "head": ["Русский", "Lawannya", "Arti"], "rows": [
+          ["большой", "маленький", "besar / kecil"],
+          ["новый", "старый", "baru / lama, tua"],
+          ["хороший", "плохой", "bagus / buruk"],
+          ["дорогой", "дешёвый", "mahal / murah"],
+          ["длинный", "короткий", "panjang / pendek"],
+          ["тёплый", "холодный", "hangat / dingin"],
+          ["красивый", "некрасивый", "cantik / tidak cantik"],
+          ["интересный", "скучный", "menarik / membosankan"],
+          ["лёгкий", "трудный", "mudah, ringan / sulit, berat"],
+          ["молодой", "старый", "muda / tua"],
+          ["весёлый", "грустный", "ceria / sedih"],
+          ["яркий", "тёмный", "cerah, mencolok / gelap"]
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    { "ru": "какой / какая / какое", "baca": "ka-KOY / ka-KA-ya / ka-KO-ye", "id": "yang mana, seperti apa" },
+    { "ru": "цвет", "baca": "tsvyet", "id": "warna" },
+    { "ru": "размер", "baca": "raz-MYER", "id": "ukuran" },
+    { "ru": "примерить", "baca": "pri-MYE-rit'", "id": "mencoba (pakaian)" },
+    { "ru": "одежда", "baca": "a-DYEZH-da", "id": "pakaian" },
+    { "ru": "пальто", "baca": "pal'-TO", "id": "mantel" },
+    { "ru": "сумка", "baca": "SUM-ka", "id": "tas" },
+    { "ru": "сапоги", "baca": "sa-pa-GI", "id": "sepatu bot" },
+    { "ru": "белый / чёрный", "baca": "BYE-lyy / CHOR-nyy", "id": "putih / hitam" },
+    { "ru": "красный / зелёный", "baca": "KRAS-nyy / zi-LYO-nyy", "id": "merah / hijau" },
+    { "ru": "синий / голубой", "baca": "SI-niy / ga-lu-BOY", "id": "biru tua / biru muda" },
+    { "ru": "жёлтый / серый", "baca": "ZHOL-tyy / SYE-ryy", "id": "kuning / abu-abu" },
+    { "ru": "тёплый / холодный", "baca": "TYOP-lyy / kha-LOD-nyy", "id": "hangat / dingin" },
+    { "ru": "яркий / тёмный", "baca": "YAR-kiy / TYOM-nyy", "id": "mencolok / gelap" },
+    { "ru": "длинный / короткий", "baca": "DLI-nyy / ka-ROT-kiy", "id": "panjang / pendek" },
+    { "ru": "дорогой / дешёвый", "baca": "da-ra-GOY / di-SHO-vyy", "id": "mahal / murah" },
+    { "ru": "настоящий", "baca": "nas-ta-YA-schiy", "id": "sungguhan, asli" },
+    { "ru": "помочь", "baca": "pa-MOCH'", "id": "menolong" },
+    { "ru": "ну", "baca": "nu", "id": "nah, jadi (kata pengisi)" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk красный yang tepat.",
+      "items": [
+        "____ шарф",
+        "____ сумка",
+        "____ пальто",
+        "____ сапоги",
+        "____ площадь",
+        "____ платье"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk большой atau хороший sesuai kata dalam kurung.",
+      "items": [
+        "____ (большой) дом",
+        "____ (большой) комната",
+        "____ (хороший) книга",
+        "____ (хороший) фильм",
+        "____ (большой) окно",
+        "____ (хороший) друзья"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "тёплое / ищу / пальто / я",
+        "цвет / какой / хотите / вы / ?",
+        "примерить / можно / ?",
+        "размер / у / какой / вас / ?",
+        "просто / смотрю / я"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Rusia.",
+      "items": [
+        "Saya cari mantel hangat.",
+        "Warna apa yang Anda mau?",
+        "Tas hitam dan sepatu bot hitam.",
+        "Boleh dicoba?",
+        "Ada ukuran yang lebih besar?",
+        "Saya cuma lihat-lihat."
+      ]
+    }
+  ],
+  "answers": [
+    "красный — красная — красное — красные — красная — красное",
+    "большой — большая — хорошая — хороший — большое — хорошие",
+    "Я ищу тёплое пальто. — Какой цвет вы хотите? — Можно примерить? — Какой у вас размер? — Я просто смотрю.",
+    "Я ищу тёплое пальто. — Какой цвет вы хотите? — Чёрная сумка и чёрные сапоги. — Можно примерить? — Есть размер побольше? — Я просто смотрю."
+  ]
+}

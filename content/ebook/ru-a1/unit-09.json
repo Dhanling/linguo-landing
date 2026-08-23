@@ -1,0 +1,187 @@
+{
+  "title": "Di toko: harga, jumlah, dan ketiadaan",
+  "title_target": "В магазине — V magazine",
+  "goal": "Berbelanja dengan percaya diri: menanyakan harga, menyebut jumlah, dan mengatakan bahwa sesuatu tidak ada — yang dalam bahasa Rusia menuntut ekor kata benda yang berubah lagi.",
+  "bekal": [
+    "menanyakan dan memahami harga",
+    "memakai много, мало, немного dengan bentuk yang benar",
+    "mengatakan \"tidak ada\" dengan нет + genitif",
+    "menyebut kemasan dan takaran yang lazim di toko Rusia",
+    "menawar sopan di pasar"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Belanja mingguan",
+      "intro": "Ani berbelanja di toko kecil dekat asrama. Perhatikan tiga kali kata benda berubah ekornya: sesudah angka, sesudah много, dan sesudah нет.",
+      "lines": [
+        { "speaker": "Ани:", "text": "[Здравствуйте|Zdrast-vuy-tye]! [Сколько|SKOL'-ka] [стоит|STO-it] [хлеб|khlyep]?", "id": "Halo! Roti harganya berapa?", "literal": "halo! berapa — berharga — roti?" },
+        { "speaker": "Продавец:", "text": "[Чёрный|CHOR-nyy] — [сорок|SO-rak] [пять|pyat'] [рублей|rub-LYEY], [белый|BYE-lyy] — [пятьдесят|pi-di-SYAT].", "id": "Yang hitam 45 rubel, yang putih 50.", "literal": "hitam — empat-puluh — lima — rubel-rubel, putih — lima-puluh." },
+        { "speaker": "Ани:", "text": "[Один|A-DIN] [чёрный|CHOR-nyy], [пожалуйста|pa-ZHA-lus-ta]. [И|I] [молоко|ma-la-KO] [есть|yest']?", "id": "Satu yang hitam, tolong. Dan ada susu?", "literal": "satu — hitam, silakan. dan — susu — ada?" },
+        { "speaker": "Продавец:", "text": "[Молока|Ma-la-KA] [нет|nyet]. [Есть|Yest'] [кефир|ki-FIR].", "id": "Susu tidak ada. Ada kefir.", "literal": "susu (genitif) — tiada. ada — kefir." },
+        { "speaker": "Ани:", "text": "[Кефир|Ki-FIR]? [Что|Shto] [это|E-ta] [такое|ta-KO-ye]?", "id": "Kefir? Itu apa?", "literal": "kefir? apa — ini — semacam-itu?" },
+        { "speaker": "Продавец:", "text": "[Это|E-ta] [как|kak] [молоко|ma-la-KO], [но|no] [кислое|KIS-la-ye]. [Очень|O-chin'] [полезно|pa-LYEZ-na].", "id": "Mirip susu, tapi asam. Sangat menyehatkan.", "literal": "ini — seperti — susu, tapi — asam. sangat — bermanfaat." },
+        { "speaker": "Ани:", "text": "[Хорошо|Kha-ra-SHO], [давайте|da-VAY-tye] [один|a-DIN]. [И|I] [сколько|SKOL'-ka] [стоят|STO-yat] [яблоки|YA-bla-ki]?", "id": "Baik, satu saja. Dan apel harganya berapa?", "literal": "bagus, mari-lah — satu. dan — berapa — berharga (jamak) — apel-apel?" },
+        { "speaker": "Продавец:", "text": "[Сто|Sto] [двадцать|DVA-tsat'] [за|za] [килограмм|ki-la-GRAM].", "id": "Seratus dua puluh per kilogram.", "literal": "seratus — dua-puluh — untuk — kilogram." },
+        { "speaker": "Ани:", "text": "[Полкило|Pol-ki-LO], [пожалуйста|pa-ZHA-lus-ta]. [Сколько|SKOL'-ka] [всего|fsi-VO]?", "id": "Setengah kilo, tolong. Semuanya berapa?", "literal": "setengah-kilo, silakan. berapa — semuanya?" },
+        { "speaker": "Продавец:", "text": "[Сто|Sto] [шестьдесят|shys-di-SYAT] [пять|pyat'] [рублей|rub-LYEY].", "id": "Seratus enam puluh lima rubel.", "literal": "seratus — enam-puluh — lima — rubel-rubel." },
+        { "speaker": "Ани:", "text": "[Вот|Vot], [пожалуйста|pa-ZHA-lus-ta]. [Можно|MOZH-na] [пакет|pa-KYET]?", "id": "Ini, silakan. Boleh minta kantong?", "literal": "inilah, silakan. boleh — kantong?" },
+        { "speaker": "Продавец:", "text": "[Пакет|Pa-KYET] [пять|pyat'] [рублей|rub-LYEY]. [Берёте|Bi-RYO-tye]?", "id": "Kantongnya lima rubel. Mau?", "literal": "kantong — lima — rubel. mengambil-Anda?" }
+      ],
+      "notes": [
+        "**Нет + genitif berarti \"tidak ada\".** ⚠️ *Молока нет* harfiahnya \"susu-nya tiada\", dan susunya wajib masuk genitif: молок**о** → молок**а**. Bandingkan dengan *Молоко есть* (susu ada), di mana bentuknya normal. Jadi begitu sesuatu dinyatakan tidak ada, ekornya berubah. Ini pola yang sama dengan *У меня нет брата* di Unit 4.",
+        "**Сколько стоит untuk satu barang, сколько стоят untuk banyak barang.** *Сколько стоит хлеб?* (tunggal) tapi *Сколько стоят яблоки?* (jamak). Perbedaannya cuma satu huruf dan orang Rusia akan tetap mengerti kalau kamu salah — tapi mudah dibetulkan.",
+        "**Рубль / рубля / рублей mengikuti aturan angka dari Unit 7.** 1 рубль, 2–4 рубля, 5+ рублей. Karena harga hampir selalu di atas lima, bentuk yang paling sering kamu dengar adalah **рублей**. Dalam ucapan sehari-hari orang Rusia sering membuangnya sama sekali: *Сто двадцать* — seratus dua puluh, titik.",
+        "**Что это такое? lebih penasaran daripada Что это?** Tambahan такое memberi nada \"itu barang apa sih?\". Sangat berguna di toko Rusia, tempat kamu akan bertemu banyak benda yang tidak ada padanannya di Indonesia.",
+        "**Давайте berarti \"ayo\" atau \"mari\", dan di toko berarti \"kasih saya\".** *Давайте один* — kasih satu. *Давайте два килограмма* — dua kilo ya. Bentuk akrabnya **давай**. Kata ini juga dipakai untuk mengajak: *Давай пойдём!* — ayo kita pergi!",
+        "**За berarti \"per\" atau \"untuk\" saat menyebut harga.** *Сто двадцать за килограмм* — 120 per kilogram. *Сколько за всё?* — berapa untuk semuanya?",
+        "**Пакет tidak gratis, dan itu berlaku di seluruh Rusia.** Kasir akan bertanya *Пакет нужен?* (perlu kantong?) dan menambahkan lima sampai dua puluh rubel ke tagihan. Jawaban singkatnya *Да, нужен* atau *Нет, спасибо*."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga tempat genitif muncul di toko",
+          "body": ["Genitif adalah kasus yang paling sering kamu temui sesudah nominatif. Di unit ini ia muncul di tiga tempat sekaligus."],
+          "table": {
+            "head": ["Muncul sesudah", "Contoh", "Arti"],
+            "rows": [
+              ["**нет** (tidak ada)", "Молок**а** нет.", "Susu tidak ada."],
+              ["**сколько / много / мало / немного**", "много книг, мало времени, немного сахар**а**", "banyak buku, sedikit waktu, sedikit gula"],
+              ["**angka 2–4** dan **5+**", "два рубл**я**, пять рубл**ей**", "dua rubel, lima rubel"],
+              ["**без** (tanpa)", "без сахар**а**, без газ**а**", "tanpa gula, tanpa soda"],
+              ["**из** (dari)", "из Москв**ы**", "dari Moskow"],
+              ["**у** (di, pada — untuk kepemilikan)", "у брат**а**", "pada abang"]
+            ]
+          },
+          "after": [
+            "Ekor genitif tunggal: maskulin & netral → **-а/-я** (хлеб → хлеба, молоко → молока), feminin → **-ы/-и** (вода → воды, Москва → Москвы).",
+            "⚠️ Genitif **jamak** jauh lebih rumit dan tidak perlu dikuasai di A1. Cukup kenali beberapa bentuk yang paling sering muncul di toko: рублей, книг, яблок, денег, лет, человек."
+          ]
+        },
+        {
+          "title": "Banyak dan sedikit",
+          "body": ["Semua kata ini diikuti genitif, jadi kata bendanya selalu berubah."],
+          "table": {
+            "head": ["Русский", "Baca", "Arti", "Contoh"],
+            "rows": [
+              ["много", "MNO-ga", "banyak", "много работы — banyak pekerjaan"],
+              ["мало", "MA-la", "terlalu sedikit", "мало времени — waktunya kurang"],
+              ["немного", "ni-MNO-ga", "sedikit (cukup)", "немного сахара — gula sedikit"],
+              ["несколько", "NYE-skal'-ka", "beberapa", "несколько минут — beberapa menit"],
+              ["достаточно", "das-TA-tach-na", "cukup", "достаточно — cukup, sudah"],
+              ["ещё", "yi-SCHO", "lagi, tambah", "ещё один — satu lagi"]
+            ]
+          },
+          "after": [
+            "⚠️ **мало** dan **немного** dua-duanya berarti \"sedikit\", tapi nadanya berlawanan. *Мало времени* mengeluh — waktunya kurang. *Немного времени* netral — ada sedikit waktu. Salah pilih di sini mengubah arti kalimatnya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Di toko dan di pasar",
+      "blocks": [
+        { "type": "tabel", "head": ["Русский", "Baca", "Bahasa Indonesia"], "rows": [
+          ["магазин", "ma-ga-ZIN", "toko"],
+          ["рынок", "RY-nak", "pasar"],
+          ["супермаркет", "su-pir-MAR-kit", "supermarket"],
+          ["аптека", "ap-TYE-ka", "apotek"],
+          ["продавец", "pra-da-VYETS", "penjual"],
+          ["касса", "KA-sa", "kasir"],
+          ["цена", "tsy-NA", "harga"],
+          ["скидка", "SKIT-ka", "diskon"],
+          ["дорого / дёшево", "DO-ra-ga / DYO-shy-va", "mahal / murah"],
+          ["килограмм", "ki-la-GRAM", "kilogram"],
+          ["полкило", "pol-ki-LO", "setengah kilo"],
+          ["штука", "SHTU-ka", "buah, biji (satuan)"],
+          ["бутылка", "bu-TYL-ka", "botol"],
+          ["пакет", "pa-KYET", "kantong, bungkus"],
+          ["сдача", "ZDA-cha", "kembalian"]
+        ]},
+        { "type": "kotak", "title": "Kalimat yang menyelamatkan di kasir", "items": [
+          "**Сколько стоит?** — Berapa harganya? Bisa dipakai sambil menunjuk, tanpa menyebut nama barangnya.",
+          "**Это дорого.** — Ini mahal. Di pasar (рынок) kalimat ini membuka tawar-menawar; di supermarket ia cuma pernyataan.",
+          "**Можно скидку?** — Boleh diskon? ⚠️ Hanya di pasar dan toko kecil. Menawar di supermarket akan dianggap lelucon.",
+          "**У вас есть сдача?** — Anda punya kembalian? Berguna karena penjual Rusia sering meminta uang pas: *Мельче нет?* (tidak ada yang lebih kecil?).",
+          "**Картой можно?** — Boleh pakai kartu? Jawabannya hampir selalu ya; Rusia adalah salah satu negara yang paling jarang memakai uang tunai."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    { "ru": "магазин", "baca": "ma-ga-ZIN", "id": "toko" },
+    { "ru": "сколько стоит", "baca": "SKOL'-ka STO-it", "id": "berapa harganya" },
+    { "ru": "цена", "baca": "tsy-NA", "id": "harga" },
+    { "ru": "рубль / рубля / рублей", "baca": "rubl' / rub-LYA / rub-LYEY", "id": "rubel (tiga bentuk)" },
+    { "ru": "нет + genitif", "baca": "nyet", "id": "tidak ada" },
+    { "ru": "много / мало", "baca": "MNO-ga / MA-la", "id": "banyak / terlalu sedikit" },
+    { "ru": "немного", "baca": "ni-MNO-ga", "id": "sedikit" },
+    { "ru": "несколько", "baca": "NYE-skal'-ka", "id": "beberapa" },
+    { "ru": "достаточно", "baca": "das-TA-tach-na", "id": "cukup" },
+    { "ru": "ещё", "baca": "yi-SCHO", "id": "lagi, tambah, masih" },
+    { "ru": "давайте / давай", "baca": "da-VAY-tye / da-VAY", "id": "mari, ayo; kasih" },
+    { "ru": "дорого / дёшево", "baca": "DO-ra-ga / DYO-shy-va", "id": "mahal / murah" },
+    { "ru": "скидка", "baca": "SKIT-ka", "id": "diskon" },
+    { "ru": "килограмм", "baca": "ki-la-GRAM", "id": "kilogram" },
+    { "ru": "пакет", "baca": "pa-KYET", "id": "kantong belanja" },
+    { "ru": "сдача", "baca": "ZDA-cha", "id": "kembalian" },
+    { "ru": "касса", "baca": "KA-sa", "id": "kasir" },
+    { "ru": "кефир", "baca": "ki-FIR", "id": "kefir, susu asam" },
+    { "ru": "кислый", "baca": "KIS-lyy", "id": "asam" },
+    { "ru": "полезно", "baca": "pa-LYEZ-na", "id": "menyehatkan, berguna" },
+    { "ru": "за", "baca": "za", "id": "per, untuk (harga)" },
+    { "ru": "всего", "baca": "fsi-VO", "id": "semuanya, totalnya" },
+    { "ru": "брать", "baca": "brat'", "id": "mengambil" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah ke bentuk sesudah нет.",
+      "items": [
+        "молоко → ____ нет",
+        "хлеб → ____ нет",
+        "вода → ____ нет",
+        "время → ____ нет",
+        "сахар → ____ нет",
+        "работа → ____ нет"
+      ]
+    },
+    {
+      "prompt": "Pilih рубль, рубля, atau рублей.",
+      "items": [
+        "1 ____",
+        "3 ____",
+        "5 ____",
+        "22 ____",
+        "45 ____",
+        "101 ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "стоит / хлеб / сколько / ?",
+        "нет / молока",
+        "пожалуйста / полкило",
+        "пакет / можно / ?",
+        "дорого / это"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Rusia.",
+      "items": [
+        "Roti harganya berapa?",
+        "Susu tidak ada.",
+        "Seratus dua puluh rubel per kilo.",
+        "Setengah kilo, tolong.",
+        "Semuanya berapa?",
+        "Boleh pakai kartu?"
+      ]
+    }
+  ],
+  "answers": [
+    "молока — хлеба — воды — времени — сахара — работы",
+    "рубль — рубля — рублей — рубля — рублей — рубль",
+    "Сколько стоит хлеб? — Молока нет. — Полкило, пожалуйста. — Можно пакет? — Это дорого.",
+    "Сколько стоит хлеб? — Молока нет. — Сто двадцать рублей за килограмм. — Полкило, пожалуйста. — Сколько всего? — Картой можно?"
+  ]
+}
