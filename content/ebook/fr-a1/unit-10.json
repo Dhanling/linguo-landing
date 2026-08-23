@@ -1,0 +1,208 @@
+{
+  "title": "Ada apotek di dekat sini?",
+  "title_target": "Il y a une pharmacie près d'ici ?",
+  "goal": "Menyatakan keberadaan sesuatu, menyebut letak benda, dan menanyakan tempat di sekitar.",
+  "bekal": [
+    "memakai *il y a* dan sangkalannya *il n'y a pas de*",
+    "menyebut letak: *sur, sous, dans, devant, derrière, à côté de*",
+    "melebur *de* dengan kata sandang: *du, de la, des*"
+  ],
+  "wave": "Ulangi **unit 8** dulu: ceritakan harimu sendiri dari bangun sampai tidur, pakai *d'abord, ensuite, après, enfin*.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Dans le quartier",
+      "intro": "Budi baru pindah kamar dan bertanya kepada tetangganya tentang lingkungan sekitar.",
+      "lines": [
+        { "speaker": "Budi:", "text": "Excusez-moi, il y a une pharmacie près d'ici ?", "id": "Permisi, ada apotek di dekat sini?", "literal": "maafkan-saya, itu ada sebuah apotek dekat dari-sini?" },
+        { "speaker": "Voisine:", "text": "Oui, il y en a une au bout de la rue.", "id": "Ada, satu di ujung jalan.", "literal": "ya, itu darinya ada satu di ujung dari jalan." },
+        { "speaker": "Budi:", "text": "Et une boulangerie ?", "id": "Kalau toko roti?", "literal": "dan sebuah toko-roti?" },
+        { "speaker": "Voisine:", "text": "Juste en face de la pharmacie. Elle est excellente.", "id": "Persis di depan apotek. Enak sekali rotinya.", "literal": "tepat di muka dari apotek. dia adalah sangat-baik." },
+        { "speaker": "Budi:", "text": "Parfait. Et un supermarché ?", "id": "Bagus. Kalau supermarket?", "literal": "sempurna. dan sebuah supermarket?" },
+        { "speaker": "Voisine:", "text": "Il y a un petit magasin à côté de la banque.", "id": "Ada toko kecil di samping bank.", "literal": "itu ada sebuah kecil toko di sisi dari bank." },
+        { "speaker": "Budi:", "text": "Il n'y a pas de grand supermarché dans le quartier ?", "id": "Tidak ada supermarket besar di lingkungan ini?", "literal": "itu tidak-ada tidak dari besar supermarket dalam lingkungan?" },
+        { "speaker": "Voisine:", "text": "Non, mais il y en a un derrière la gare.", "id": "Tidak ada, tapi ada satu di belakang stasiun.", "literal": "tidak, tapi itu darinya ada satu di-belakang stasiun." },
+        { "speaker": "Budi:", "text": "C'est loin d'ici ?", "id": "Jauh dari sini?", "literal": "itu-adalah jauh dari-sini?" },
+        { "speaker": "Voisine:", "text": "Non, à dix minutes à pied. Vous avez un plan ?", "id": "Tidak, sepuluh menit jalan kaki. Anda punya peta?", "literal": "tidak, pada sepuluh menit dengan kaki. kalian punya sebuah peta?" },
+        { "speaker": "Budi:", "text": "Non, mais j'ai mon téléphone. Merci beaucoup !", "id": "Tidak, tapi saya punya HP. Terima kasih banyak!", "literal": "tidak, tapi saya-punya milikku telepon. terima-kasih banyak!" },
+        { "speaker": "Voisine:", "text": "Je vous en prie. Bienvenue dans le quartier !", "id": "Sama-sama. Selamat datang di lingkungan ini!", "literal": "saya kepada-kalian darinya memohon. selamat-datang dalam lingkungan!" }
+      ],
+      "notes": [
+        "**Il y a berarti \"ada\", untuk tunggal maupun jamak.** *Il y a une pharmacie*, *il y a trois pharmacies* — bentuknya tidak pernah berubah. Bahasa Inggris membedakan *there is* dan *there are*; bahasa Prancis tidak repot.",
+        "**Sangkalannya merontokkan kata sandang.** *Il y a un supermarché* → *il n'y a pas **de** supermarché*. Ini aturan lama dari unit 4 dan 6 yang kembali lagi — dan akan terus kembali sampai kamu tidak perlu berpikir lagi.",
+        "**Il y en a un** = \"ada satu (dari benda itu)\". Kata kecil *en* menggantikan barang yang sudah disebut, supaya kamu tidak perlu mengulangnya. Belum wajib kamu produksi sendiri di A1, tapi kamu akan mendengarnya terus-menerus, jadi kenali bentuknya.",
+        "**Je vous en prie** adalah bentuk sopan dari \"sama-sama\". Kembarannya yang lebih santai: *de rien*, dan yang paling santai *pas de problème*.",
+        "**En face de, à côté de, près de, loin de** semuanya berakhiran *de*, dan *de* itu akan melebur dengan kata sandang yang mengikutinya: *à côté **du** parc*, *en face **de la** gare*, *près **des** magasins*.",
+        "**Le quartier** adalah kata yang sangat Prancis: bukan sekadar \"lingkungan\" tapi wilayah kecil kota dengan toko roti, kafe, dan apoteknya sendiri. Kehidupan sehari-hari orang Prancis berputar di dalamnya.",
+        "**À dix minutes à pied** — perhatikan *à* dipakai untuk jarak berdasarkan waktu tempuh. *À cinq minutes en voiture*, *à une heure de Paris*."
+      ],
+      "grammars": [
+        {
+          "title": "Il y a dan c'est",
+          "body": ["Dua-duanya sering diterjemahkan \"ada\" atau \"itu\", tapi tugasnya berbeda. *Il y a* memperkenalkan keberadaan; *c'est* menunjuk dan menerangkan."],
+          "table": {
+            "head": ["Tugas", "Bentuk", "Contoh"],
+            "rows": [
+              ["Menyatakan ada", "**il y a**", "*Il y a une banque ici.*"],
+              ["Menyatakan tidak ada", "**il n'y a pas de**", "*Il n'y a pas de banque ici.*"],
+              ["Bertanya apakah ada", "**il y a … ?**", "*Il y a une pharmacie ?*"],
+              ["Menunjuk benda", "**c'est**", "*C'est la banque.*"],
+              ["Menerangkan sifat", "**c'est**", "*C'est loin.*"],
+              ["Menyebut jumlah tertentu", "**il y a**", "*Il y a trois chaises.*"]
+            ]
+          },
+          "after": [
+            "*Il y a* juga dipakai untuk waktu yang lewat: *il y a deux ans* = dua tahun yang lalu. Konteksnya yang membedakan.",
+            "Bertanya berapa banyak: *Combien de chaises est-ce qu'il y a ?* atau, lebih santai, *Il y a combien de chaises ?*"
+          ]
+        },
+        {
+          "title": "Menyebut letak",
+          "body": ["Kata depan tempat yang menutup hampir semua kebutuhan sehari-hari. Yang berakhiran *de* akan melebur dengan kata sandang."],
+          "table": {
+            "head": ["Français", "Bahasa Indonesia", "Contoh"],
+            "rows": [
+              ["dans", "di dalam", "*dans le sac*"],
+              ["sur", "di atas (menempel)", "*sur la table*"],
+              ["sous", "di bawah", "*sous la chaise*"],
+              ["devant", "di depan", "*devant la maison*"],
+              ["derrière", "di belakang", "*derrière la gare*"],
+              ["entre", "di antara", "*entre la banque et la poste*"],
+              ["à côté **de**", "di samping", "*à côté du parc*"],
+              ["en face **de**", "berhadapan dengan", "*en face de la pharmacie*"],
+              ["près **de**", "dekat dengan", "*près de l'école*"],
+              ["loin **de**", "jauh dari", "*loin des magasins*"],
+              ["au-dessus **de**", "di atas (tak menempel)", "*au-dessus de la porte*"],
+              ["au bout **de**", "di ujung", "*au bout de la rue*"]
+            ]
+          },
+          "after": [
+            "⚠️ Peleburan *de* wajib, persis seperti peleburan *à* di unit 8: **de + le = du**, **de + les = des**. Dengan *la* dan *l'* tidak berubah.",
+            "Menulis *à côté de le parc* adalah kesalahan mutlak. Yang benar *à côté du parc*."
+          ]
+        },
+        {
+          "title": "Peleburan à dan de, lengkap",
+          "body": ["Dua tabel kecil yang menopang ratusan kalimat. Hafalkan sekaligus."],
+          "table": {
+            "head": ["", "+ le", "+ la", "+ l'", "+ les"],
+            "rows": [
+              ["**à** (ke, di)", "**au**", "à la", "à l'", "**aux**"],
+              ["**de** (dari, milik)", "**du**", "de la", "de l'", "**des**"]
+            ]
+          },
+          "after": [
+            "Contoh sepasang: *Je vais **au** marché et je reviens **du** marché.*",
+            "*Des* punya dua nyawa: peleburan *de + les* (*je parle des enfants*) dan kata sandang jamak tak tentu (*j'ai des amis*). Bentuknya sama, dan konteksnya yang membedakan — jadi jangan bingung kalau menemukannya di dua tempat berbeda."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tempat di sekitar kita",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Français", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["une pharmacie", "ün far-ma-SI", "apotek"],
+            ["une boulangerie", "ün bu-lan-j'-RI", "toko roti"],
+            ["une banque", "ün BANK", "bank"],
+            ["la poste", "la POST", "kantor pos"],
+            ["une gare", "ün GAR", "stasiun kereta"],
+            ["un supermarché", "an sü-pèr-mar-SYE", "supermarket"],
+            ["un magasin", "an ma-ga-ZAN", "toko"],
+            ["un parc", "an PARK", "taman"],
+            ["une école", "ün-ne-KOL", "sekolah"],
+            ["un hôpital", "an-no-pi-TAL", "rumah sakit"],
+            ["une église", "ün-ne-GLIZ", "gereja"],
+            ["un restaurant", "an res-to-RAN", "restoran"],
+            ["un marché", "an mar-SYE", "pasar"],
+            ["une place", "ün PLAS", "alun-alun"],
+            ["un arrêt de bus", "an-na-rè d' BÜS", "halte bus"],
+            ["une station de métro", "ün sta-SION d' me-TRO", "stasiun metro"]
+          ]
+        },
+        { "type": "kotak", "title": "Kalimat yang menyelamatkan", "items": [
+          "*Il y a une pharmacie près d'ici ?* — Ada apotek di dekat sini?",
+          "*C'est loin ?* — Jauh?",
+          "*C'est à combien de minutes à pied ?* — Berapa menit jalan kaki?",
+          "*Où sont les toilettes ?* — Toiletnya di mana?",
+          "*Est-ce que c'est ouvert le dimanche ?* — Buka hari Minggu?"
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "fr": "il y a", "baca": "i-lia", "id": "ada" },
+    { "fr": "le quartier", "baca": "l' kar-TIE", "id": "lingkungan, kawasan" },
+    { "fr": "près de", "baca": "prè d'", "id": "dekat dengan" },
+    { "fr": "loin de", "baca": "lwan d'", "id": "jauh dari" },
+    { "fr": "à côté de", "baca": "a ko-TE d'", "id": "di samping" },
+    { "fr": "en face de", "baca": "an FAS d'", "id": "berhadapan dengan" },
+    { "fr": "devant", "baca": "d'-VAN", "id": "di depan" },
+    { "fr": "derrière", "baca": "dè-RIÈR", "id": "di belakang" },
+    { "fr": "dans", "baca": "dan", "id": "di dalam" },
+    { "fr": "sur", "baca": "sür", "id": "di atas" },
+    { "fr": "sous", "baca": "su", "id": "di bawah" },
+    { "fr": "entre", "baca": "ANTR'", "id": "di antara" },
+    { "fr": "au bout de", "baca": "o BU d'", "id": "di ujung" },
+    { "fr": "juste", "baca": "JÜST", "id": "tepat, persis" },
+    { "fr": "excellent", "baca": "ex-se-LAN", "id": "sangat baik" },
+    { "fr": "un voisin / une voisine", "baca": "an vwa-ZAN", "id": "tetangga" },
+    { "fr": "un plan", "baca": "an PLAN", "id": "peta kota" },
+    { "fr": "je vous en prie", "baca": "zyö vu-zan PRI", "id": "sama-sama (sopan)" },
+    { "fr": "où", "baca": "u", "id": "di mana" },
+    { "fr": "les toilettes", "baca": "le twa-LÈT", "id": "toilet" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan au, à la, à l', aux, du, de la, de l' atau des.",
+      "items": [
+        "Je vais ____ marché.",
+        "La pharmacie est à côté ____ banque.",
+        "Il revient ____ université.",
+        "Nous allons ____ toilettes.",
+        "C'est en face ____ parc.",
+        "Elle parle ____ enfants."
+      ]
+    },
+    {
+      "prompt": "Ubah jadi kalimat sangkalan.",
+      "items": [
+        "Il y a une banque ici.",
+        "Il y a des restaurants dans le quartier.",
+        "Il y a un supermarché près d'ici.",
+        "Il y a de la place.",
+        "Il y a un problème."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata depan tempat yang tepat.",
+      "items": [
+        "Le livre est ____ la table.",
+        "Le chat dort ____ la chaise.",
+        "La banque est ____ la poste et l'école.",
+        "Il y a un parc ____ la gare.",
+        "Mes clés sont ____ mon sac."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Ada apotek di dekat sini?",
+        "Tidak ada supermarket di lingkungan ini.",
+        "Toko rotinya persis di depan bank.",
+        "Sepuluh menit jalan kaki.",
+        "Toiletnya di mana?"
+      ]
+    }
+  ],
+  "answers": [
+    "au marché — de la banque — de l'université — aux toilettes — du parc — des enfants",
+    "Il n'y a pas de banque ici. — Il n'y a pas de restaurants dans le quartier. — Il n'y a pas de supermarché près d'ici. — Il n'y a pas de place. — Il n'y a pas de problème.",
+    "sur — sous — entre — derrière — dans",
+    "Il y a une pharmacie près d'ici ? — Il n'y a pas de supermarché dans le quartier. — La boulangerie est juste en face de la banque. — À dix minutes à pied. — Où sont les toilettes ?"
+  ]
+}

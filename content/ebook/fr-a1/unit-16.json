@@ -1,0 +1,206 @@
+{
+  "title": "Boleh, harus, mau",
+  "title_target": "Je peux, je dois, je veux",
+  "goal": "Meminta izin, menyatakan keharusan dan keinginan, serta menyusun rencana dengan aller + kata kerja dasar.",
+  "bekal": [
+    "memakai *pouvoir*, *devoir*, *vouloir* + kata kerja dasar",
+    "menyatakan keharusan umum dengan *il faut*",
+    "berbicara tentang masa depan dengan *je vais* + kata kerja dasar"
+  ],
+  "wave": "Ulangi **unit 14** dulu: pilih lima potong pakaian di lemarimu, sebutkan warnanya dengan bentuk yang benar, lalu tunjuk masing-masing dengan *ce*, *cet*, *cette*, atau *ces*.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Les papiers de l'étranger",
+      "intro": "Budi mengurus izin tinggal. Camille menemaninya ke kantor prefektur.",
+      "lines": [
+        { "speaker": "Budi:", "text": "Je dois renouveler mon titre de séjour ce mois-ci.", "id": "Bulan ini saya harus perpanjang izin tinggal.", "literal": "saya harus memperbarui milikku surat dari tinggal ini bulan-sini." },
+        { "speaker": "Camille:", "text": "Tu peux prendre rendez-vous en ligne, c'est plus simple.", "id": "Kamu bisa bikin janji online, lebih gampang.", "literal": "kamu bisa mengambil janji dalam jaringan, itu-adalah lebih sederhana." },
+        { "speaker": "Budi:", "text": "J'ai essayé, mais il n'y a pas de place avant mai.", "id": "Sudah saya coba, tapi tidak ada slot sebelum Mei.", "literal": "saya sudah mencoba, tapi itu tidak-ada tidak dari tempat sebelum Mei." },
+        { "speaker": "Camille:", "text": "Alors il faut y aller très tôt le matin.", "id": "Kalau begitu harus datang pagi-pagi sekali.", "literal": "maka itu perlu ke-sana pergi sangat awal pagi." },
+        { "speaker": "Budi:", "text": "À quelle heure ? Je ne veux pas rater le cours.", "id": "Jam berapa? Saya tidak mau ketinggalan kelas.", "literal": "pada berapa jam? saya tidak mau tidak melewatkan kursus." },
+        { "speaker": "Camille:", "text": "Vers sept heures. Tu dois apporter tous tes papiers.", "id": "Sekitar jam tujuh. Kamu harus bawa semua berkasmu.", "literal": "sekitar tujuh jam. kamu harus membawa semua milikmu kertas." },
+        { "speaker": "Budi:", "text": "Quels papiers exactement ?", "id": "Berkas apa saja tepatnya?", "literal": "yang-mana kertas persisnya?" },
+        { "speaker": "Camille:", "text": "Ton passeport, ton attestation, et une photo récente.", "id": "Paspor, surat keterangan, dan foto terbaru.", "literal": "milikmu paspor, milikmu keterangan, dan sebuah foto terbaru." },
+        { "speaker": "Budi:", "text": "Je peux faire une photo à la gare, je crois.", "id": "Saya bisa foto di stasiun, kayaknya.", "literal": "saya bisa membuat sebuah foto di stasiun, saya percaya." },
+        { "speaker": "Camille:", "text": "Oui. Et n'oublie pas : il ne faut pas arriver en retard.", "id": "Iya. Dan ingat: jangan sampai telat.", "literal": "ya. dan jangan-lupa tidak: itu tidak perlu tidak tiba dalam keterlambatan." },
+        { "speaker": "Budi:", "text": "Je vais mettre trois réveils. Promis.", "id": "Saya bakal pasang tiga alarm. Janji.", "literal": "saya akan memasang tiga alarm. dijanjikan." },
+        { "speaker": "Camille:", "text": "Je vais venir avec toi. On va y arriver.", "id": "Saya akan ikut sama kamu. Pasti beres.", "literal": "saya akan datang dengan kamu. orang akan ke-sana tiba." }
+      ],
+      "notes": [
+        "**Tiga kata kerja ini selalu diikuti kata kerja bentuk dasar.** *Je peux **partir***, *je dois **travailler***, *je veux **manger***. Bentuk dasarnya tidak pernah berubah, apa pun pelakunya — susunan yang jauh lebih sederhana daripada yang ditakutkan pemula.",
+        "**Il faut = harus, tapi tanpa pelaku.** Harfiahnya \"itu perlu\". Dipakai untuk keharusan umum yang berlaku bagi siapa saja: *il faut arriver tôt* (harus datang awal — siapa pun). Bandingkan *tu dois arriver tôt* (kamu yang harus).",
+        "**⚠️ Il ne faut pas berarti \"tidak boleh\", bukan \"tidak perlu\".** Ini jebakan besar. *Il ne faut pas fumer* = dilarang merokok. Untuk mengatakan \"tidak perlu\", pakai *ce n'est pas nécessaire* atau *tu n'as pas besoin de*.",
+        "**Je ne dois pas juga berarti \"tidak boleh\"** dalam banyak konteks, sama seperti bahasa Inggris *must not*. Kalau maksudmu \"tidak wajib\", katakan *je ne suis pas obligé de*.",
+        "**Je vais + kata kerja dasar** adalah cara paling umum berbicara tentang masa depan di bahasa Prancis sehari-hari. Bentuk masa depan yang sesungguhnya (*futur simple*) baru dipelajari di A2, dan orang Prancis sendiri lebih sering memakai *aller* di percakapan.",
+        "**En ligne** = online, daring. Kata modern yang sudah masuk kamus resmi. Kembarannya *sur Internet*, *sur le site*.",
+        "**On va y arriver** = \"kita akan berhasil\". Ungkapan penyemangat yang sangat sering dipakai, harfiahnya \"orang akan tiba ke sana\"."
+      ],
+      "grammars": [
+        {
+          "title": "Pouvoir, devoir, vouloir",
+          "body": ["Tiga kata kerja yang bentuknya mirip satu sama lain — dan ketiganya berubah pangkalnya di bentuk *nous* dan *vous*."],
+          "table": {
+            "head": ["", "pouvoir (bisa)", "devoir (harus)", "vouloir (mau)"],
+            "rows": [
+              ["je", "peux", "dois", "veux"],
+              ["tu", "peux", "dois", "veux"],
+              ["il / elle / on", "peut", "doit", "veut"],
+              ["nous", "pouvons", "devons", "voulons"],
+              ["vous", "pouvez", "devez", "voulez"],
+              ["ils / elles", "peuvent", "doivent", "veulent"]
+            ]
+          },
+          "after": [
+            "Perhatikan polanya: tiga bentuk tunggal berbunyi sama (*peux, peux, peut* = PÖ), lalu pangkalnya berubah di *nous* dan *vous*, lalu berubah lagi di *ils*. Pola yang sama persis untuk ketiganya.",
+            "Menyangkalnya mengapit **kata kerja pertama** saja: *je ne peux pas venir*, bukan *je ne peux venir pas*.",
+            "Bentuk halus yang wajib dikuasai: *je voudrais* (saya ingin), *pourriez-vous…?* (bisakah Anda…?), *est-ce que je pourrais…?* (bolehkah saya…?)."
+          ]
+        },
+        {
+          "title": "Empat cara menyatakan keharusan",
+          "body": ["Semuanya diterjemahkan \"harus\" dalam bahasa Indonesia, tapi nadanya berbeda-beda."],
+          "table": {
+            "head": ["Bentuk", "Nada", "Contoh"],
+            "rows": [
+              ["**devoir** + dasar", "kewajiban pribadi", "*Je dois partir.*"],
+              ["**il faut** + dasar", "keharusan umum", "*Il faut réserver.*"],
+              ["**il faut que** + …", "keharusan pada orang tertentu", "*Il faut que tu viennes.*"],
+              ["**avoir besoin de**", "kebutuhan", "*J'ai besoin d'aide.*"],
+              ["**il ne faut pas**", "larangan", "*Il ne faut pas fumer.*"],
+              ["**ne pas être obligé de**", "tidak wajib", "*Tu n'es pas obligé de venir.*"]
+            ]
+          },
+          "after": [
+            "Baris ketiga memakai bentuk *subjonctif* yang belum dipelajari di A1. Kenali saja sebagai ungkapan; jangan susun sendiri.",
+            "*Avoir besoin de* memakai *de*, dan *de* itu melebur seperti biasa: *j'ai besoin **du** livre*, *j'ai besoin **des** clés*."
+          ]
+        },
+        {
+          "title": "Berbicara tentang masa depan",
+          "body": ["Satu susunan yang menutup seluruh kebutuhan A1: bentuk *aller* + kata kerja dasar."],
+          "table": {
+            "head": ["", "aller", "+ dasar", "Arti"],
+            "rows": [
+              ["je", "vais", "partir", "saya akan berangkat"],
+              ["tu", "vas", "manger", "kamu akan makan"],
+              ["il / elle / on", "va", "venir", "dia akan datang"],
+              ["nous", "allons", "sortir", "kami akan keluar"],
+              ["vous", "allez", "travailler", "kalian akan bekerja"],
+              ["ils / elles", "vont", "arriver", "mereka akan tiba"]
+            ]
+          },
+          "after": [
+            "Menyangkalnya mengapit *aller*: *je ne vais pas partir*.",
+            "Kata waktu masa depan yang berguna: *demain*, *après-demain*, *la semaine prochaine*, *l'année prochaine*, *bientôt* (sebentar lagi), *plus tard* (nanti).",
+            "Untuk masa depan yang sangat dekat, bentuk sekarang saja sudah cukup: *je pars dans cinq minutes*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Meminta dengan sopan",
+      "blocks": [
+        { "type": "p", "text": "Tingkat kesopanan bahasa Prancis diukur dari panjang kalimatnya. Semakin panjang dan berputar, semakin sopan. Ini kebalikan dari bahasa Indonesia, yang justru melembutkan dengan kata-kata kecil." },
+        {
+          "type": "tabel",
+          "head": ["Kalimat", "Tingkat", "Dipakai kepada"],
+          "rows": [
+            ["*Donne-moi ça.*", "perintah langsung", "adik, teman dekat"],
+            ["*Tu peux me donner ça ?*", "santai", "teman"],
+            ["*Est-ce que tu peux m'aider ?*", "netral", "teman, sebaya"],
+            ["*Vous pouvez m'aider, s'il vous plaît ?*", "sopan", "orang asing"],
+            ["*Pourriez-vous m'aider, s'il vous plaît ?*", "sangat sopan", "petugas, atasan"],
+            ["*Je voudrais…*", "sopan", "toko, restoran, loket"]
+          ]
+        },
+        { "type": "kotak", "title": "Meminta izin", "items": [
+          "*Je peux entrer ?* — Boleh masuk?",
+          "*Est-ce que je peux ouvrir la fenêtre ?* — Boleh saya buka jendela?",
+          "*Ça vous dérange si je m'assois ici ?* — Apa mengganggu kalau saya duduk di sini?",
+          "Jawaban: *Bien sûr.* / *Allez-y.* (silakan) / *Non, désolé.*"
+        ] },
+        { "type": "kotak", "title": "Larangan yang sering terlihat", "items": [
+          "*Défense de fumer.* — Dilarang merokok.",
+          "*Interdit aux chiens.* — Anjing dilarang masuk.",
+          "*Ne pas toucher.* — Jangan disentuh.",
+          "*Il est interdit de…* — Dilarang…",
+          "Perhatikan bahwa papan larangan memakai bentuk dasar, bukan bentuk perintah."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "fr": "pouvoir", "baca": "pu-VWAR", "id": "bisa, boleh" },
+    { "fr": "devoir", "baca": "d'-VWAR", "id": "harus" },
+    { "fr": "vouloir", "baca": "vu-LWAR", "id": "mau, ingin" },
+    { "fr": "il faut", "baca": "il FO", "id": "harus, perlu" },
+    { "fr": "interdit", "baca": "an-tèr-DI", "id": "dilarang" },
+    { "fr": "obligé", "baca": "o-bli-JE", "id": "diwajibkan" },
+    { "fr": "renouveler", "baca": "r'-nu-v'-LE", "id": "memperbarui" },
+    { "fr": "un titre de séjour", "baca": "an titr' d' se-JUR", "id": "izin tinggal" },
+    { "fr": "en ligne", "baca": "an LINY", "id": "daring, online" },
+    { "fr": "une place", "baca": "ün PLAS", "id": "tempat, slot" },
+    { "fr": "avant / après", "baca": "a-VAN / a-PRÈ", "id": "sebelum / sesudah" },
+    { "fr": "rater", "baca": "ra-TE", "id": "melewatkan, ketinggalan" },
+    { "fr": "apporter", "baca": "a-por-TE", "id": "membawa" },
+    { "fr": "les papiers", "baca": "le pa-PIE", "id": "berkas, dokumen" },
+    { "fr": "un passeport", "baca": "an pas-POR", "id": "paspor" },
+    { "fr": "récent", "baca": "re-SAN", "id": "terbaru" },
+    { "fr": "oublier", "baca": "u-bli-YE", "id": "melupakan" },
+    { "fr": "un réveil", "baca": "an re-VÈY", "id": "jam beker" },
+    { "fr": "bientôt", "baca": "bien-TO", "id": "sebentar lagi" },
+    { "fr": "plus tard", "baca": "plü TAR", "id": "nanti" },
+    { "fr": "déranger", "baca": "de-ran-JE", "id": "mengganggu" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+      "items": [
+        "Je ____ (pouvoir) venir demain.",
+        "Tu ____ (devoir) partir maintenant.",
+        "Elle ____ (vouloir) un café.",
+        "Nous ____ (pouvoir) vous aider.",
+        "Vous ____ (devoir) apporter vos papiers.",
+        "Ils ____ (vouloir) sortir ce soir."
+      ]
+    },
+    {
+      "prompt": "Ubah jadi rencana masa depan dengan aller.",
+      "items": [
+        "Je pars demain.",
+        "Elle mange au restaurant.",
+        "Nous sortons ce soir.",
+        "Tu travailles samedi.",
+        "Ils arrivent lundi."
+      ]
+    },
+    {
+      "prompt": "Pilih il faut atau il ne faut pas.",
+      "items": [
+        "____ arriver à l'heure.",
+        "____ fumer ici.",
+        "____ réserver une table.",
+        "____ oublier ses papiers.",
+        "____ apporter une photo."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Saya harus perpanjang izin tinggal.",
+        "Kamu bisa bikin janji online.",
+        "Saya tidak mau ketinggalan kelas.",
+        "Jangan sampai telat.",
+        "Saya akan ikut sama kamu."
+      ]
+    }
+  ],
+  "answers": [
+    "peux — dois — veut — pouvons — devez — veulent",
+    "Je vais partir demain. — Elle va manger au restaurant. — Nous allons sortir ce soir. — Tu vas travailler samedi. — Ils vont arriver lundi.",
+    "Il faut — Il ne faut pas — Il faut — Il ne faut pas — Il faut",
+    "Je dois renouveler mon titre de séjour. — Tu peux prendre rendez-vous en ligne. — Je ne veux pas rater le cours. — Il ne faut pas arriver en retard. — Je vais venir avec toi."
+  ]
+}

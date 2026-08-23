@@ -1,0 +1,206 @@
+{
+  "title": "Hari biasa saya",
+  "title_target": "Ma journée",
+  "goal": "Menceritakan kegiatan sehari-hari berurutan dan memakai kata kerja balik badan seperti se lever dan se coucher.",
+  "bekal": [
+    "menyusun cerita satu hari dengan kata urutan waktu",
+    "memakai kata kerja balik badan: *je me lève*, *tu te couches*",
+    "memakai *aller* dan *faire* yang muncul di mana-mana"
+  ],
+  "wave": "Ulangi **unit 6** dulu: ambil sepuluh kata kerja dari tabelnya, ucapkan enam bentuknya keras-keras, lalu sangkal bentuk *je*-nya.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Une journée ordinaire",
+      "intro": "Thomas penasaran bagaimana Budi mengatur harinya.",
+      "lines": [
+        { "speaker": "Thomas:", "text": "Tu te lèves à quelle heure d'habitude ?", "id": "Kamu biasanya bangun jam berapa?", "literal": "kamu kamu-membangunkan-diri pada berapa jam dari-kebiasaan?" },
+        { "speaker": "Budi:", "text": "Je me lève à six heures et demie.", "id": "Saya bangun jam setengah tujuh.", "literal": "saya diriku membangunkan pada enam jam dan setengah." },
+        { "speaker": "Thomas:", "text": "Si tôt ? Et après ?", "id": "Sepagi itu? Terus?", "literal": "begitu awal? dan sesudah?" },
+        { "speaker": "Budi:", "text": "Je me douche, je m'habille et je prends mon petit-déjeuner.", "id": "Saya mandi, berpakaian, lalu sarapan.", "literal": "saya diriku memandikan, saya diriku memakaikan dan saya mengambil milikku kecil-sarapan." },
+        { "speaker": "Thomas:", "text": "Tu manges quoi le matin ?", "id": "Sarapannya apa?", "literal": "kamu makan apa pagi?" },
+        { "speaker": "Budi:", "text": "Du pain et du café. Ensuite je vais à l'université.", "id": "Roti dan kopi. Habis itu saya ke kampus.", "literal": "sebagian roti dan sebagian kopi. kemudian saya pergi ke universitas." },
+        { "speaker": "Thomas:", "text": "Tu y vas comment ?", "id": "Ke sananya naik apa?", "literal": "kamu ke-sana pergi bagaimana?" },
+        { "speaker": "Budi:", "text": "En bus. Le trajet dure vingt minutes.", "id": "Naik bus. Perjalanannya dua puluh menit.", "literal": "dalam bus. perjalanan berlangsung dua-puluh menit." },
+        { "speaker": "Thomas:", "text": "Et le soir, qu'est-ce que tu fais ?", "id": "Kalau malam ngapain?", "literal": "dan sore, apa itu-yang kamu membuat?" },
+        { "speaker": "Budi:", "text": "Je travaille, puis je rentre et je dîne vers vingt-trois heures.", "id": "Saya kerja, lalu pulang dan makan malam sekitar jam sebelas.", "literal": "saya bekerja, lalu saya pulang dan saya makan-malam sekitar dua-puluh-tiga jam." },
+        { "speaker": "Thomas:", "text": "Tu te couches tard, alors !", "id": "Berarti kamu tidurnya larut!", "literal": "kamu kamu-membaringkan-diri larut, maka!" },
+        { "speaker": "Budi:", "text": "Oui. Le week-end, je ne fais rien. C'est sacré.", "id": "Iya. Kalau akhir pekan, saya tidak ngapa-ngapain. Itu wajib.", "literal": "ya. akhir-pekan, saya tidak membuat apa-apa. itu-adalah keramat." }
+      ],
+      "notes": [
+        "**Kata kerja balik badan punya kata ganti kembar.** *Je me lève* harfiahnya \"saya membangunkan diriku\". Bahasa Indonesia cukup berkata \"saya bangun\", jadi kata *me* itu terasa berlebihan bagi telinga kita — tapi tanpa ia, *je lève* berarti \"saya mengangkat (sesuatu)\".",
+        "**Kata gantinya ikut pelakunya:** *je **me**, tu **te**, il **se**, nous **nous**, vous **vous**, ils **se***. Di depan vokal, *me/te/se* dipangkas: *je m'habille*, *tu t'appelles*, *il s'appelle*.",
+        "**Le petit-déjeuner** harfiahnya \"sarapan kecil\" — sebab *déjeuner* sendiri berarti makan siang. Urutannya: *petit-déjeuner* (pagi), *déjeuner* (siang), *dîner* (malam). Ketiganya juga bisa jadi kata kerja: *je déjeune à midi*.",
+        "**Tu y vas** — huruf *y* menggantikan tempat yang sudah disebut, seperti \"ke sana\" dalam bahasa Indonesia. Dibaca i, dan diletakkan di depan kata kerja. Belum perlu kamu kuasai penuh di A1; kenali saja.",
+        "**En bus, à pied.** Alat transportasi yang kamu masuki memakai **en** (*en bus, en voiture, en train, en avion*); yang kamu naiki di atasnya memakai **à** (*à pied, à vélo, à cheval*).",
+        "**Le week-end** dipakai apa adanya dari bahasa Inggris dan sudah resmi masuk kamus Prancis. Dengan kata sandang *le*, ia berarti \"setiap akhir pekan\" — sama seperti *le matin* berarti \"tiap pagi\".",
+        "**Je ne fais rien** — perhatikan bahwa *rien* menggantikan *pas*, tidak menambahnya. Ini pola yang sudah kamu pasang di unit 6."
+      ],
+      "grammars": [
+        {
+          "title": "Kata kerja balik badan",
+          "body": ["Disebut *verbes pronominaux*. Sekelompok kata kerja yang perbuatannya kembali ke pelakunya sendiri — dan sebagian besar kegiatan sehari-hari termasuk di dalamnya."],
+          "table": {
+            "head": ["", "se lever (bangun)", "s'habiller (berpakaian)", "se coucher (tidur)"],
+            "rows": [
+              ["je", "**me** lève", "**m'**habille", "**me** couche"],
+              ["tu", "**te** lèves", "**t'**habilles", "**te** couches"],
+              ["il / elle / on", "**se** lève", "**s'**habille", "**se** couche"],
+              ["nous", "**nous** levons", "**nous** habillons", "**nous** couchons"],
+              ["vous", "**vous** levez", "**vous** habillez", "**vous** couchez"],
+              ["ils / elles", "**se** lèvent", "**s'**habillent", "**se** couchent"]
+            ]
+          },
+          "after": [
+            "Menyangkalnya mengapit **kata ganti dan kata kerjanya sekaligus**: *je **ne** me lève **pas** tôt*. Kata gantinya ikut masuk ke dalam pelukan *ne … pas*.",
+            "Yang paling sering dipakai: *se réveiller* (terbangun), *se lever* (bangkit dari tempat tidur), *se doucher* (mandi), *se laver* (membasuh), *se brosser les dents* (menyikat gigi), *se préparer* (bersiap), *se reposer* (beristirahat), *se dépêcher* (bergegas), *s'amuser* (bersenang-senang), *se coucher* (berbaring tidur), *s'endormir* (tertidur).",
+            "⚠️ *Se lever* mengubah huruf e jadi è di empat bentuk: *je lève, tu lèves, il lève, ils lèvent* — tapi *nous levons, vous levez*. Tandanya bukan hiasan; tanpa itu huruf e-nya jadi bisu."
+          ]
+        },
+        {
+          "title": "Aller dan faire",
+          "body": ["Dua kata kerja yang muncul di hampir setiap percakapan, dan dua-duanya sangat tidak beraturan. Tidak ada jalan lain selain menghafalnya."],
+          "table": {
+            "head": ["", "aller (pergi)", "faire (membuat, melakukan)"],
+            "rows": [
+              ["je", "vais", "fais"],
+              ["tu", "vas", "fais"],
+              ["il / elle / on", "va", "fait"],
+              ["nous", "allons", "faisons"],
+              ["vous", "allez", "faites"],
+              ["ils / elles", "vont", "font"]
+            ]
+          },
+          "after": [
+            "⚠️ *Nous faisons* dibaca nu f'-ZON, bukan nu fè-ZON. Satu-satunya kata dalam bahasa Prancis di mana *ai* dibaca seperti e pepet.",
+            "*Vous faites* dan *vous êtes* adalah dua dari tiga kata kerja yang bentuk *vous*-nya tidak berakhiran -ez. Yang ketiga *vous dites* (kalian berkata).",
+            "*Faire* menutup banyak sekali kegiatan yang di bahasa Indonesia memakai kata kerja sendiri-sendiri: *faire les courses* (belanja), *faire la cuisine* (memasak), *faire le ménage* (bersih-bersih), *faire du sport* (berolahraga), *faire attention* (berhati-hati)."
+          ]
+        },
+        {
+          "title": "Menyusun urutan waktu",
+          "body": ["Kata penghubung yang mengubah daftar kegiatan jadi cerita."],
+          "table": {
+            "head": ["Français", "Bahasa Indonesia", "Contoh"],
+            "rows": [
+              ["d'abord", "pertama-tama", "*D'abord je me lève.*"],
+              ["ensuite / puis", "kemudian, lalu", "*Ensuite je prends le bus.*"],
+              ["après", "sesudah itu", "*Après, je travaille.*"],
+              ["enfin", "akhirnya", "*Enfin je me couche.*"],
+              ["d'habitude", "biasanya", "*D'habitude je dîne à sept heures.*"],
+              ["toujours / souvent", "selalu / sering", "*Je suis toujours en retard.*"],
+              ["quelquefois / parfois", "kadang-kadang", "*Parfois je rentre tard.*"],
+              ["ne … jamais", "tidak pernah", "*Je ne me lève jamais tôt.*"]
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Satu hari dari pagi ke malam",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Français", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["se réveiller", "s' re-vè-YE", "terbangun"],
+            ["se lever", "s' l'-VE", "bangun, bangkit"],
+            ["se doucher", "s' du-SYE", "mandi"],
+            ["s'habiller", "sa-bi-YE", "berpakaian"],
+            ["prendre le petit-déjeuner", "prandr' l' p'-ti-de-jö-NE", "sarapan"],
+            ["aller au travail", "a-le o tra-VAY", "berangkat kerja"],
+            ["déjeuner", "de-jö-NE", "makan siang"],
+            ["rentrer", "ran-TRE", "pulang"],
+            ["faire les courses", "fèr le KURS", "belanja"],
+            ["dîner", "di-NE", "makan malam"],
+            ["se reposer", "s' r'-po-ZE", "beristirahat"],
+            ["se coucher", "s' ku-SYE", "tidur, berbaring"]
+          ]
+        },
+        { "type": "kotak", "title": "Ke mana? — au, à la, à l'", "items": [
+          "*à* melebur dengan *le* jadi **au**, dan dengan *les* jadi **aux**. Dengan *la* dan *l'* ia tidak berubah.",
+          "*Je vais **au** cinéma, **au** travail, **au** restaurant.* (maskulin)",
+          "*Je vais **à la** bibliothèque, **à la** maison, **à la** gare.* (feminin)",
+          "*Je vais **à l'**université, **à l'**hôpital.* (di depan vokal)",
+          "*Je vais **aux** toilettes.* (jamak)",
+          "⚠️ Menulis *à le cinéma* adalah kesalahan tata bahasa yang mutlak — peleburan ini wajib, bukan pilihan."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "fr": "une journée", "baca": "ün jur-NE", "id": "hari (sepanjang harinya)" },
+    { "fr": "se lever", "baca": "s' l'-VE", "id": "bangun" },
+    { "fr": "se coucher", "baca": "s' ku-SYE", "id": "tidur" },
+    { "fr": "s'habiller", "baca": "sa-bi-YE", "id": "berpakaian" },
+    { "fr": "se doucher", "baca": "s' du-SYE", "id": "mandi" },
+    { "fr": "d'habitude", "baca": "da-bi-TÜD", "id": "biasanya" },
+    { "fr": "tôt / tard", "baca": "to / tar", "id": "awal / larut" },
+    { "fr": "le petit-déjeuner", "baca": "l' p'-ti-de-jö-NE", "id": "sarapan" },
+    { "fr": "le pain", "baca": "l' PAN", "id": "roti" },
+    { "fr": "ensuite / puis", "baca": "an-SÜIT / püi", "id": "kemudian, lalu" },
+    { "fr": "d'abord", "baca": "da-BOR", "id": "pertama-tama" },
+    { "fr": "enfin", "baca": "an-FAN", "id": "akhirnya" },
+    { "fr": "aller", "baca": "a-LE", "id": "pergi" },
+    { "fr": "faire", "baca": "FÈR", "id": "membuat, melakukan" },
+    { "fr": "l'université (f)", "baca": "lü-ni-vèr-si-TE", "id": "universitas" },
+    { "fr": "le trajet", "baca": "l' tra-JÈ", "id": "perjalanan" },
+    { "fr": "durer", "baca": "dü-RE", "id": "berlangsung" },
+    { "fr": "une minute", "baca": "ün mi-NÜT", "id": "menit" },
+    { "fr": "rentrer", "baca": "ran-TRE", "id": "pulang" },
+    { "fr": "dîner", "baca": "di-NE", "id": "makan malam" },
+    { "fr": "le week-end", "baca": "l' wi-KEND", "id": "akhir pekan" },
+    { "fr": "à pied", "baca": "a PIE", "id": "jalan kaki" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata ganti balik badan yang tepat.",
+      "items": [
+        "Je ____ lève à sept heures.",
+        "Tu ____ couches tard.",
+        "Il ____ douche le matin.",
+        "Nous ____ levons tôt.",
+        "Vous ____ habillez vite.",
+        "Elles ____ reposent."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk aller atau faire yang tepat.",
+      "items": [
+        "Je ____ (aller) à l'université.",
+        "Tu ____ (faire) quoi ce soir ?",
+        "Elle ____ (aller) au travail en bus.",
+        "Nous ____ (faire) les courses.",
+        "Vous ____ (aller) au cinéma ?",
+        "Ils ____ (faire) du sport."
+      ]
+    },
+    {
+      "prompt": "Isi dengan au, à la, à l' atau aux.",
+      "items": [
+        "Je vais ____ cinéma.",
+        "Elle va ____ bibliothèque.",
+        "Nous allons ____ université.",
+        "Il va ____ restaurant.",
+        "Tu vas ____ toilettes ?"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Saya bangun jam setengah tujuh.",
+        "Kemudian saya pergi ke kampus.",
+        "Perjalanannya dua puluh menit.",
+        "Saya tidur larut.",
+        "Kalau akhir pekan, saya tidak melakukan apa-apa."
+      ]
+    }
+  ],
+  "answers": [
+    "me — te — se — nous — vous — se",
+    "vais — fais — va — faisons — allez — font",
+    "au cinéma — à la bibliothèque — à l'université — au restaurant — aux toilettes",
+    "Je me lève à six heures et demie. — Ensuite je vais à l'université. — Le trajet dure vingt minutes. — Je me couche tard. — Le week-end, je ne fais rien."
+  ]
+}

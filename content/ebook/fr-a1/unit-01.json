@@ -1,0 +1,187 @@
+{
+  "title": "Halo, siapa namamu?",
+  "title_target": "Bonjour ! Comment tu t'appelles ?",
+  "goal": "Menyapa pada waktu yang tepat, menyebut nama sendiri, menanyakan kabar, dan mengenali dua cara menyapa: akrab dan hormat.",
+  "bekal": [
+    "menyapa dengan *bonjour*, *bonsoir*, dan *salut* pada tempatnya masing-masing",
+    "menyebut nama sendiri dan menanyakan nama orang lain",
+    "memakai *je suis* dan *tu es* untuk mengatakan siapa kamu"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Le premier jour de cours",
+      "intro": "Hari pertama kursus bahasa Prancis di Lyon. Dua peserta baru duduk bersebelahan.",
+      "lines": [
+        { "speaker": "Camille:", "text": "Bonjour ! Comment tu t'appelles ?", "id": "Halo! Siapa namamu?", "literal": "hari-baik! bagaimana kamu kamu-menamai-diri?" },
+        { "speaker": "Budi:", "text": "Bonjour ! Je m'appelle Budi. Et toi ?", "id": "Halo! Nama saya Budi. Dan kamu?", "literal": "hari-baik! saya saya-menamai-diri Budi. dan kamu?" },
+        { "speaker": "Camille:", "text": "Moi, c'est Camille. Enchantée !", "id": "Saya Camille. Senang berkenalan!", "literal": "saya, itu-adalah Camille. terpesona(perempuan)!" },
+        { "speaker": "Budi:", "text": "Enchanté. Comment ça va ?", "id": "Senang juga. Apa kabar?", "literal": "terpesona. bagaimana itu berjalan?" },
+        { "speaker": "Camille:", "text": "Ça va bien, merci. Et toi ?", "id": "Baik, terima kasih. Dan kamu?", "literal": "itu berjalan baik, terima-kasih. dan kamu?" },
+        { "speaker": "Budi:", "text": "Ça va aussi. Tu es française ?", "id": "Baik juga. Kamu orang Prancis?", "literal": "itu berjalan juga. kamu kamu-adalah prancis(perempuan)?" },
+        { "speaker": "Camille:", "text": "Oui, je suis de Lyon. Et toi, tu es chinois ?", "id": "Ya, saya dari Lyon. Dan kamu, orang Cina?", "literal": "ya, saya saya-adalah dari Lyon. dan kamu, kamu kamu-adalah cina?" },
+        { "speaker": "Budi:", "text": "Non, je suis indonésien. Je suis de Jakarta.", "id": "Bukan, saya orang Indonesia. Saya dari Jakarta.", "literal": "tidak, saya saya-adalah indonesia(laki-laki). saya saya-adalah dari Jakarta." },
+        { "speaker": "Camille:", "text": "Ah, super ! Bienvenue à Lyon !", "id": "Wah, keren! Selamat datang di Lyon!", "literal": "ah, hebat! selamat-datang di Lyon!" },
+        { "speaker": "Budi:", "text": "Merci beaucoup ! À demain, Camille.", "id": "Terima kasih banyak! Sampai besok, Camille.", "literal": "terima-kasih banyak! sampai besok, Camille." },
+        { "speaker": "Camille:", "text": "À demain ! Salut !", "id": "Sampai besok! Dah!", "literal": "sampai besok! salam!" }
+      ],
+      "notes": [
+        "**Bonjour dipakai sepanjang siang, dan wajib.** Di Prancis, masuk toko atau naik taksi tanpa mengucapkan *bonjour* dianggap kasar — jauh lebih kasar daripada salah tata bahasa. Ucapkan dulu, urusan belakangan. Sesudah kira-kira pukul enam sore, gantinya *bonsoir*.",
+        "**Salut dipakai dua arah, tapi cuma untuk teman.** Satu kata yang sama untuk \"hai\" dan \"dah\", persis seperti *ciao* dalam bahasa Italia. Kepada petugas, dokter, atau orang yang lebih tua, jangan pakai — pakai *bonjour* dan *au revoir*.",
+        "**Je m'appelle bukan \"nama saya\".** Harfiahnya \"saya menamai diri saya\". Karena itu tidak ada kata \"nama\" di dalamnya, dan karena itu pula pertanyaannya berbunyi *comment tu t'appelles* — \"bagaimana kamu menamai dirimu\", bukan \"apa namamu\".",
+        "**Moi, c'est Camille** adalah jalan pintas yang sangat sering dipakai orang Prancis untuk memperkenalkan diri — lebih santai daripada *je m'appelle*. Harfiahnya \"saya, itu Camille\".",
+        "**Enchanté berubah huruf.** Laki-laki menulis *enchanté*, perempuan *enchantée*. Bunyinya sama persis (an-syan-TE) — huruf **e** tambahan itu bisu. Ini contoh pertama dari kebiasaan bahasa Prancis: menulis pembedaan yang tidak terdengar.",
+        "**Je tidak boleh dibuang.** Berbeda dari bahasa Italia atau Spanyol, bahasa Prancis **wajib** menyebut pelakunya. *Suis de Lyon* salah; harus *je suis de Lyon*. Sebabnya justru bunyi: karena akhiran kata kerjanya banyak yang bisu, tanpa kata ganti tidak ada yang menandai siapa pelakunya.",
+        "**Comment ça va** harfiahnya \"bagaimana itu berjalan\". Jawabannya memakai kalimat yang sama: *ça va bien*, *ça va*, atau kalau sedang tidak enak, *ça ne va pas très bien*. Bentuk hormatnya *comment allez-vous ?*",
+        "**Kebangsaan ditulis huruf kecil.** *français*, *indonésien*, *chinois* — tidak seperti bahasa Inggris. Nama negaranya tetap huruf besar: *la France*, *l'Indonésie*. Bentuknya juga ikut jenis kelamin penuturnya: laki-laki *indonésien*, perempuan *indonésienne*."
+      ],
+      "grammars": [
+        {
+          "title": "Être — kata kerja \"adalah\"",
+          "body": ["Kata kerja pertama yang wajib kamu kuasai, dan yang paling tidak beraturan di seluruh bahasa Prancis. Di unit ini kamu cuma perlu dua baris pertama; sisanya menyusul di unit 3."],
+          "table": {
+            "head": ["", "être", "cara baca", "arti"],
+            "rows": [
+              ["je", "**suis**", "zyö SÜI", "saya adalah"],
+              ["tu", "**es**", "tü E", "kamu adalah"],
+              ["il / elle / on", "**est**", "il E", "dia adalah"],
+              ["nous", "sommes", "nu SOM", "kami adalah"],
+              ["vous", "êtes", "vu-ZÈT", "kalian / Anda adalah"],
+              ["ils / elles", "sont", "il SON", "mereka adalah"]
+            ]
+          },
+          "after": [
+            "*es* dan *est* dibunyikan **persis sama** (E). Huruf terakhirnya bisu — dan ini bukan kekecualian, melainkan aturan umum bahasa Prancis yang akan kamu temui di setiap halaman.",
+            "*Vous êtes* dibaca menyambung: vu-ZÈT, bukan vu ÈT. Huruf **s** di ujung *vous* bangun karena kata berikutnya dimulai vokal. Inilah liaison yang dijelaskan di bab pelafalan."
+          ]
+        },
+        {
+          "title": "Menyapa menurut jam dan menurut kedekatan",
+          "body": ["Dua sumbu, bukan satu. Sumbu pertama waktu, sumbu kedua seberapa akrab kamu dengan lawan bicara."],
+          "table": {
+            "head": ["Kapan", "Akrab (teman, sebaya)", "Hormat (orang asing, atasan)"],
+            "rows": [
+              ["Pagi sampai sore", "Salut", "Bonjour"],
+              ["Sore sampai malam", "Salut", "Bonsoir"],
+              ["Berpisah", "Salut / À plus", "Au revoir"],
+              ["Malam, mau tidur", "Bonne nuit", "Bonne nuit"],
+              ["Menanyakan kabar", "Ça va ?", "Comment allez-vous ?"]
+            ]
+          },
+          "after": [
+            "*Bonne nuit* bukan sapaan malam hari biasa — itu ucapan saat berpisah untuk tidur. Kalau kamu masuk restoran jam delapan malam dan mengucapkannya, kamu baru saja menyuruh semua orang tidur. Yang benar *bonsoir*.",
+            "*Bonjour* diucapkan sekali sehari kepada orang yang sama. Bertemu lagi sore harinya, orang Prancis akan bilang *rebonjour* — atau cukup tersenyum."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata pertama yang wajib ada di saku",
+      "blocks": [
+        { "type": "p", "text": "Belasan kata di bawah ini menutup sebagian besar basa-basi hari pertama. Hafalkan utuh, jangan dibongkar tata bahasanya dulu." },
+        {
+          "type": "tabel",
+          "head": ["Français", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["Oui / Non", "wi / non", "Ya / Tidak"],
+            ["Merci", "mèr-SI", "Terima kasih"],
+            ["De rien", "d' RIEN", "Sama-sama"],
+            ["S'il vous plaît", "sil vu PLÈ", "Tolong, silakan (hormat)"],
+            ["S'il te plaît", "sil t' PLÈ", "Tolong, silakan (akrab)"],
+            ["Pardon / Excusez-moi", "par-DON / ex-kü-ze-MWA", "Maaf, permisi"],
+            ["Enchanté(e)", "an-syan-TE", "Senang berkenalan"],
+            ["Je ne comprends pas", "zyö n' kom-pran PA", "Saya tidak mengerti"],
+            ["Je ne sais pas", "zyö n' sè PA", "Saya tidak tahu"],
+            ["Vous pouvez répéter ?", "vu pu-VE re-pe-TE", "Bisa diulang?"],
+            ["Comment on dit… ?", "ko-MAN on DI", "Bagaimana mengatakan…?"],
+            ["À demain", "a d'-MAN", "Sampai besok"],
+            ["À bientôt", "a bien-TO", "Sampai jumpa lagi"]
+          ]
+        },
+        { "type": "p", "text": "*S'il te plaît* untuk teman, *s'il vous plaît* untuk orang yang kamu hormati. Perbedaan *te* dan *vous* ini akan muncul lagi dan lagi sepanjang modul — ia penanda hormat yang paling sering dipakai dalam bahasa Prancis." },
+        { "type": "kotak", "title": "Tu atau vous?", "items": [
+          "**Tu** untuk teman, keluarga, sesama pelajar, anak-anak, dan orang yang sudah mempersilakanmu.",
+          "**Vous** untuk orang asing, petugas, penjual, atasan, dan siapa pun yang lebih tua. *Vous* juga bentuk jamak — jadi satu kata yang sama dipakai untuk \"Anda\" dan \"kalian\".",
+          "Kalau ragu, pakai **vous**. Salah pakai *vous* pada teman cuma terdengar kaku; salah pakai *tu* pada orang asing terdengar kurang ajar.",
+          "Kalau orangnya ingin lebih akrab, dia akan bilang *on peut se tutoyer* — \"kita boleh saling ber-tu\"."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "fr": "bonjour", "baca": "bon-JUR", "id": "selamat pagi/siang" },
+    { "fr": "bonsoir", "baca": "bon-SWAR", "id": "selamat sore/malam" },
+    { "fr": "bonne nuit", "baca": "bon NÜI", "id": "selamat tidur" },
+    { "fr": "salut", "baca": "sa-LÜ", "id": "hai, dah (akrab)" },
+    { "fr": "au revoir", "baca": "o r'-VWAR", "id": "sampai jumpa (hormat)" },
+    { "fr": "comment", "baca": "ko-MAN", "id": "bagaimana" },
+    { "fr": "s'appeler", "baca": "sa-p'-LE", "id": "bernama" },
+    { "fr": "le nom", "baca": "l' NON", "id": "nama" },
+    { "fr": "être", "baca": "È-tr'", "id": "adalah" },
+    { "fr": "ça va", "baca": "sa VA", "id": "baik-baik saja" },
+    { "fr": "bien", "baca": "bien", "id": "baik" },
+    { "fr": "mal", "baca": "mal", "id": "buruk" },
+    { "fr": "comme ci comme ça", "baca": "kom SI kom SA", "id": "lumayan, biasa saja" },
+    { "fr": "et", "baca": "e", "id": "dan" },
+    { "fr": "aussi", "baca": "o-SI", "id": "juga" },
+    { "fr": "de", "baca": "d'", "id": "dari, milik" },
+    { "fr": "moi / toi", "baca": "mwa / twa", "id": "saya / kamu (bentuk tegas)" },
+    { "fr": "français / française", "baca": "fran-SÈ / fran-SÈZ", "id": "orang Prancis" },
+    { "fr": "indonésien / indonésienne", "baca": "in-do-ne-ZIEN", "id": "orang Indonesia" },
+    { "fr": "bienvenue", "baca": "bien-v'-NÜ", "id": "selamat datang" },
+    { "fr": "super !", "baca": "sü-PÈR", "id": "hebat!, keren!" },
+    { "fr": "merci beaucoup", "baca": "mèr-SI bo-KU", "id": "terima kasih banyak" },
+    { "fr": "demain", "baca": "d'-MAN", "id": "besok" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Halo! Siapa namamu?",
+        "Nama saya Budi.",
+        "Saya orang Indonesia.",
+        "Apa kabar?",
+        "Baik, terima kasih.",
+        "Kamu dari Lyon?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk être yang tepat.",
+      "items": [
+        "Je ____ indonésien.",
+        "Tu ____ française ?",
+        "Camille ____ de Lyon.",
+        "Nous ____ étudiants.",
+        "Vous ____ de Paris ?",
+        "Ils ____ français."
+      ]
+    },
+    {
+      "prompt": "Pilih sapaan yang tepat. Tulis ulang kalimatnya lengkap.",
+      "items": [
+        "Kamu masuk toko roti jam delapan pagi. Kepada penjualnya kamu bilang ____.",
+        "Kamu bertemu teman sekelas di kampus jam sepuluh. Kamu bilang ____.",
+        "Kamu masuk restoran jam tujuh malam. Kepada pelayannya kamu bilang ____.",
+        "Kamu berpisah dengan dosenmu di ujung koridor. Kamu bilang ____.",
+        "Kamu mengantar tamu ke kamarnya jam sebelas malam. Kamu bilang ____."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "appelle / je / Camille / m'",
+        "suis / de / je / Jakarta",
+        "va / ça / ?",
+        "française / es / tu / ?",
+        "bien / va / ça / merci"
+      ]
+    }
+  ],
+  "answers": [
+    "Bonjour ! Comment tu t'appelles ? — Je m'appelle Budi. — Je suis indonésien. — Comment ça va ? — Ça va bien, merci. — Tu es de Lyon ?",
+    "suis — es — est — sommes — êtes — sont",
+    "Bonjour. — Salut. — Bonsoir. — Au revoir. — Bonne nuit.",
+    "Je m'appelle Camille. — Je suis de Jakarta. — Ça va ? — Tu es française ? — Ça va bien, merci."
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "title": "Jam berapa sekarang?",
+  "title_target": "Quelle heure est-il ?",
+  "goal": "Membaca dan menyebut jam dalam dua sistem, membuat janji, dan bertanya dengan tiga cara berbeda.",
+  "bekal": [
+    "menyebut jam dengan *il est … heures*",
+    "membedakan jam percakapan dan jam resmi 24 jam",
+    "bertanya dengan nada, dengan *est-ce que*, dan dengan urutan terbalik"
+  ],
+  "wave": "Ulangi **unit 5** dulu: ceritakan keluargamu sendiri dari ingatan — siapa saja, umur berapa, tinggal di mana.",
+  "dialogs": [
+    {
+      "title": "Dialogue — On se donne rendez-vous",
+      "intro": "Camille dan Budi mengatur waktu bertemu untuk belajar bersama.",
+      "lines": [
+        { "speaker": "Camille:", "text": "Excuse-moi, quelle heure est-il ?", "id": "Maaf, jam berapa sekarang?", "literal": "maafkan-saya, berapa jam adalah-dia?" },
+        { "speaker": "Budi:", "text": "Il est dix heures et quart.", "id": "Jam sepuluh lewat seperempat.", "literal": "itu adalah sepuluh jam dan seperempat." },
+        { "speaker": "Camille:", "text": "Déjà ? Le cours commence à onze heures.", "id": "Sudah? Kelasnya mulai jam sebelas.", "literal": "sudah? kursus memulai pada sebelas jam." },
+        { "speaker": "Budi:", "text": "On a le temps. Il finit à quelle heure ?", "id": "Masih ada waktu. Selesainya jam berapa?", "literal": "orang punya waktu. dia menyelesaikan pada berapa jam?" },
+        { "speaker": "Camille:", "text": "À midi et demi. Tu es libre cet après-midi ?", "id": "Setengah satu. Kamu senggang siang ini?", "literal": "pada tengah-hari dan setengah. kamu adalah bebas ini sesudah-tengah-hari?" },
+        { "speaker": "Budi:", "text": "Oui. Est-ce que tu veux réviser ensemble ?", "id": "Ya. Mau belajar bareng?", "literal": "ya. apakah kamu mau mengulang bersama?" },
+        { "speaker": "Camille:", "text": "Avec plaisir. À quatorze heures à la bibliothèque ?", "id": "Boleh banget. Jam dua di perpustakaan?", "literal": "dengan kesenangan. pada empat-belas jam di perpustakaan?" },
+        { "speaker": "Budi:", "text": "Quatorze heures, donc deux heures de l'après-midi.", "id": "Empat belas, berarti jam dua siang.", "literal": "empat-belas jam, jadi dua jam dari sesudah-tengah-hari." },
+        { "speaker": "Camille:", "text": "Voilà. Ne sois pas en retard !", "id": "Betul. Jangan telat ya!", "literal": "itu-dia. jangan jadi tidak dalam keterlambatan!" },
+        { "speaker": "Budi:", "text": "Je suis toujours à l'heure, moi !", "id": "Saya selalu tepat waktu kok!", "literal": "saya adalah selalu pada jam, saya!" },
+        { "speaker": "Camille:", "text": "Ah bon ? Hier tu es arrivé à midi moins dix.", "id": "Oh ya? Kemarin kamu datang jam dua belas kurang sepuluh.", "literal": "ah baik? kemarin kamu adalah tiba pada tengah-hari kurang sepuluh." },
+        { "speaker": "Budi:", "text": "Le bus, encore le bus. Ce n'est pas ma faute !", "id": "Busnya, lagi-lagi busnya. Bukan salah saya!", "literal": "bus, lagi bus. itu tidak-adalah tidak milikku kesalahan!" }
+      ],
+      "notes": [
+        "**Il est … heures**, dan kata *heures* tidak boleh dibuang. *Il est dix* saja tidak berarti apa-apa. Bandingkan dengan bahasa Indonesia yang cukup berkata \"jam sepuluh\".",
+        "**Il di sini tidak menunjuk siapa-siapa.** Sama seperti *il y a*, ini *il* kosong yang cuma menyandang kata kerja. Kata kerja cuaca di unit 18 memakai *il* yang sama.",
+        "**Une heure tunggal, deux heures jamak.** *Il est une heure* (jam satu), *il est deux heures* (jam dua). Huruf s di *heures* memang bisu, tapi penulisannya tetap wajib.",
+        "**Midi dan minuit tidak memakai kata heures.** *Il est midi* (jam dua belas siang), *il est minuit* (tengah malam). Dan dua-duanya maskulin, jadi setengahnya *midi et demi*, bukan *demie*.",
+        "**Et quart, et demie, moins le quart.** Lewat seperempat, lewat setengah, kurang seperempat. Perhatikan bahwa *demie* ikut *heure* yang feminin — kecuali sesudah *midi* dan *minuit*.",
+        "**Jam resmi memakai 24 jam.** Jadwal kereta, bioskop, dan janji resmi selalu memakai *quatorze heures*, *dix-neuf heures trente*. Dalam percakapan sehari-hari orang memakai 12 jam dan menambahkan *du matin*, *de l'après-midi*, *du soir*.",
+        "**Ne sois pas** adalah bentuk perintah sangkalan dari *être*. Bentuk perintah akan dibongkar penuh di unit 17; untuk sekarang cukup kenali *ne sois pas en retard* sebagai satu potong utuh."
+      ],
+      "grammars": [
+        {
+          "title": "Menyebut jam",
+          "body": ["Dua sistem yang hidup berdampingan. Sistem percakapan dipakai antar teman; sistem 24 jam dipakai di segala hal yang tertulis."],
+          "table": {
+            "head": ["Jam", "Percakapan", "Resmi (24 jam)"],
+            "rows": [
+              ["08.00", "*huit heures*", "*huit heures*"],
+              ["08.15", "*huit heures et quart*", "*huit heures quinze*"],
+              ["08.30", "*huit heures et demie*", "*huit heures trente*"],
+              ["08.45", "*neuf heures moins le quart*", "*huit heures quarante-cinq*"],
+              ["08.50", "*neuf heures moins dix*", "*huit heures cinquante*"],
+              ["12.00", "*midi*", "*douze heures*"],
+              ["14.00", "*deux heures de l'après-midi*", "*quatorze heures*"],
+              ["20.30", "*huit heures et demie du soir*", "*vingt heures trente*"],
+              ["00.00", "*minuit*", "*zéro heure*"]
+            ]
+          },
+          "after": [
+            "⚠️ *Moins* menghitung mundur dari jam **berikutnya**: 08.45 bukan \"delapan lewat empat puluh lima\" melainkan \"sembilan kurang seperempat\". Bahasa Indonesia melakukan hal yang sama (\"jam sembilan kurang seperempat\"), jadi ini justru mudah.",
+            "Menanyakan waktu kegiatan memakai **à**: *à quelle heure ?* — *à huit heures*. Jangan tertukar dengan *quelle heure est-il ?* yang menanyakan jam sekarang.",
+            "Kata bantu waktu: *du matin* (pagi, sampai ±11), *de l'après-midi* (siang-sore), *du soir* (malam), *de la nuit* (larut)."
+          ]
+        },
+        {
+          "title": "Tiga cara bertanya",
+          "body": ["Bahasa Prancis punya tiga tingkat keresmian untuk pertanyaan yang sama. Semuanya benar; yang membedakan cuma suasana."],
+          "table": {
+            "head": ["Cara", "Contoh", "Suasana"],
+            "rows": [
+              ["Nada naik saja", "*Tu viens ?*", "Percakapan santai"],
+              ["Est-ce que di depan", "*Est-ce que tu viens ?*", "Netral, paling aman"],
+              ["Urutan dibalik", "*Viens-tu ?*", "Resmi, tulisan"],
+              ["Dengan kata tanya", "*Quand est-ce que tu viens ?*", "Netral"],
+              ["Kata tanya di ujung", "*Tu viens quand ?*", "Sangat santai"]
+            ]
+          },
+          "after": [
+            "*Est-ce que* tidak punya arti sendiri sama sekali — ia cuma penanda bahwa yang berikutnya adalah pertanyaan. Dibaca es-kö, dan di depan vokal jadi *est-ce qu'* (*est-ce qu'il vient ?*).",
+            "Urutan terbalik menyisipkan **-t-** kalau dua vokal bertabrakan: *a-t-il ?*, *va-t-elle ?*, *parle-t-on ?* Huruf t itu semata-mata demi bunyi.",
+            "Kalau ragu, pakai *est-ce que*. Ia benar di segala suasana dan tidak pernah salah bentuk."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Angka 1 sampai 60",
+      "blocks": [
+        { "type": "p", "text": "Untuk membaca jam kamu cuma butuh sampai 60. Angka di atas itu punya kejutannya sendiri dan ditunda sampai unit 9." },
+        {
+          "type": "tabel",
+          "head": ["", "", "", ""],
+          "rows": [
+            ["1 un", "2 deux", "3 trois", "4 quatre"],
+            ["5 cinq", "6 six", "7 sept", "8 huit"],
+            ["9 neuf", "10 dix", "11 onze", "12 douze"],
+            ["13 treize", "14 quatorze", "15 quinze", "16 seize"],
+            ["17 dix-sept", "18 dix-huit", "19 dix-neuf", "20 vingt"],
+            ["21 vingt et un", "22 vingt-deux", "30 trente", "31 trente et un"],
+            ["40 quarante", "41 quarante et un", "50 cinquante", "60 soixante"]
+          ]
+        },
+        { "type": "kotak", "title": "Jebakan bunyi angka", "items": [
+          "*Six* dan *dix* berdiri sendiri dibaca SIS dan DIS. Di depan kata benda berhuruf mati, huruf terakhirnya bisu: *six livres* (si LIVR'). Di depan vokal, jadi bunyi z: *dix ans* (di-ZAN).",
+          "*Neuf* dibaca NÖF, tapi di depan *ans* dan *heures* huruf f-nya jadi v: *neuf ans* (nö-VAN), *neuf heures* (nö-VÖR). Cuma dua kata itu.",
+          "*Huit* dibaca ÜIT dan huruf h-nya menghalangi liaison: *les huit livres* (le ÜI LIVR'), bukan le-ZÜIT.",
+          "*Vingt* sendirian dibaca VAN, tapi dari 21 sampai 29 huruf t-nya bangun: *vingt-deux* (van-T'-DÖ)."
+        ] },
+        { "type": "p", "text": "Angka 21, 31, 41, 51, 61 menyelipkan **et** tanpa tanda hubung: *vingt et un*, *trente et un*. Yang lain memakai tanda hubung: *vingt-deux*, *trente-trois*." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "fr": "l'heure (f)", "baca": "LÖR", "id": "jam, waktu" },
+    { "fr": "quelle heure est-il ?", "baca": "kè-LÖR è-TIL", "id": "jam berapa sekarang?" },
+    { "fr": "midi", "baca": "mi-DI", "id": "tengah hari, jam 12 siang" },
+    { "fr": "minuit", "baca": "mi-NÜI", "id": "tengah malam" },
+    { "fr": "et quart", "baca": "e KAR", "id": "lewat seperempat" },
+    { "fr": "et demie", "baca": "e d'-MI", "id": "lewat setengah" },
+    { "fr": "moins le quart", "baca": "mwan l' KAR", "id": "kurang seperempat" },
+    { "fr": "le matin", "baca": "l' ma-TAN", "id": "pagi" },
+    { "fr": "l'après-midi", "baca": "la-prè-mi-DI", "id": "siang, sore" },
+    { "fr": "la nuit", "baca": "la NÜI", "id": "malam" },
+    { "fr": "le temps", "baca": "l' TAN", "id": "waktu" },
+    { "fr": "commencer", "baca": "ko-man-SE", "id": "memulai" },
+    { "fr": "libre", "baca": "LIBR'", "id": "senggang, bebas" },
+    { "fr": "réviser", "baca": "re-vi-ZE", "id": "mengulang pelajaran" },
+    { "fr": "la bibliothèque", "baca": "la bi-bli-o-TÈK", "id": "perpustakaan" },
+    { "fr": "un rendez-vous", "baca": "an ran-de-VU", "id": "janji temu" },
+    { "fr": "en retard", "baca": "an r'-TAR", "id": "terlambat" },
+    { "fr": "en avance", "baca": "an-na-VANS", "id": "lebih awal" },
+    { "fr": "à l'heure", "baca": "a LÖR", "id": "tepat waktu" },
+    { "fr": "hier", "baca": "i-YÈR", "id": "kemarin" },
+    { "fr": "avec plaisir", "baca": "a-vek plè-ZIR", "id": "dengan senang hati" },
+    { "fr": "voilà", "baca": "vwa-LA", "id": "itu dia, nah" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis jamnya dengan huruf, gaya percakapan.",
+      "items": [
+        "07.00",
+        "09.15",
+        "11.30",
+        "13.45",
+        "18.50",
+        "00.00"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi pertanyaan dengan est-ce que.",
+      "items": [
+        "Tu viens ce soir.",
+        "Il travaille le samedi.",
+        "Vous parlez français.",
+        "Elle habite à Lyon.",
+        "Nous commençons à huit heures."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata yang tepat.",
+      "items": [
+        "Il ____ dix heures et quart.",
+        "Le cours commence ____ neuf heures.",
+        "____ heure est-il ?",
+        "Je suis toujours ____ l'heure.",
+        "Il est midi et ____."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Jam berapa sekarang?",
+        "Jam sepuluh lewat seperempat.",
+        "Kelasnya mulai jam sebelas.",
+        "Kamu senggang siang ini?",
+        "Jangan telat!"
+      ]
+    }
+  ],
+  "answers": [
+    "Il est sept heures. — Il est neuf heures et quart. — Il est onze heures et demie. — Il est deux heures moins le quart. — Il est sept heures moins dix. — Il est minuit.",
+    "Est-ce que tu viens ce soir ? — Est-ce qu'il travaille le samedi ? — Est-ce que vous parlez français ? — Est-ce qu'elle habite à Lyon ? — Est-ce que nous commençons à huit heures ?",
+    "est — à — Quelle — à — demi",
+    "Quelle heure est-il ? — Il est dix heures et quart. — Le cours commence à onze heures. — Tu es libre cet après-midi ? — Ne sois pas en retard !"
+  ]
+}

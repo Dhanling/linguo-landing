@@ -1,0 +1,191 @@
+{
+  "title": "Saya suka, saya tidak suka",
+  "title_target": "J'aime, je n'aime pas",
+  "goal": "Menyatakan suka dan tidak suka dengan tingkat yang berbeda, dan memilih kata sandang yang benar sesudah kata kerja rasa.",
+  "bekal": [
+    "menyusun tangga rasa dari *adorer* sampai *détester*",
+    "memakai **le, la, les** sesudah kata kerja rasa — selalu",
+    "menyambung dua kata kerja tanpa perubahan bentuk"
+  ],
+  "wave": "Ulangi **unit 13** dulu: pesan makan malam tiga babak lengkap dari ingatan, lalu berikan pendapatmu tentang tiap hidangannya.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Les goûts et les couleurs",
+      "intro": "Camille dan Budi membicarakan selera masing-masing sambil menunggu bus.",
+      "lines": [
+        { "speaker": "Camille:", "text": "Tu aimes le cinéma français ?", "id": "Kamu suka film Prancis?", "literal": "kamu suka bioskop prancis?" },
+        { "speaker": "Budi:", "text": "J'aime bien, mais je préfère les films d'action.", "id": "Suka sih, tapi saya lebih suka film aksi.", "literal": "saya-suka baik, tapi saya lebih-suka film dari-aksi." },
+        { "speaker": "Camille:", "text": "Moi, j'adore les vieux films. Surtout en noir et blanc.", "id": "Saya sih suka banget film lama. Apalagi yang hitam putih.", "literal": "saya, saya-mencintai film tua. terutama dalam hitam dan putih." },
+        { "speaker": "Budi:", "text": "Vraiment ? Moi, je trouve ça un peu lent.", "id": "Serius? Saya rasa agak lambat.", "literal": "sungguh? saya, saya menemukan itu sedikit lambat." },
+        { "speaker": "Camille:", "text": "Et la musique ? Tu écoutes quoi ?", "id": "Kalau musik? Kamu dengerin apa?", "literal": "dan musik? kamu mendengarkan apa?" },
+        { "speaker": "Budi:", "text": "J'aime beaucoup le jazz. Je déteste le rap.", "id": "Saya suka banget jazz. Saya benci rap.", "literal": "saya-suka banyak jazz. saya membenci rap." },
+        { "speaker": "Camille:", "text": "Tu détestes tout le rap ? C'est sévère !", "id": "Kamu benci semua rap? Keras banget!", "literal": "kamu membenci semua rap? itu-adalah keras!" },
+        { "speaker": "Budi:", "text": "Bon, disons que je n'aime pas trop. Et toi ?", "id": "Ya, katakanlah saya kurang suka. Kamu sendiri?", "literal": "baik, katakanlah bahwa saya tidak-suka tidak terlalu. dan kamu?" },
+        { "speaker": "Camille:", "text": "J'aime tout, sauf le métal. Ça me fatigue.", "id": "Saya suka semua, kecuali metal. Bikin capek.", "literal": "saya-suka semua, kecuali metal. itu kepada-saya melelahkan." },
+        { "speaker": "Budi:", "text": "Tu aimes cuisiner ? On pourrait faire un dîner.", "id": "Kamu suka masak? Kita bisa bikin makan malam.", "literal": "kamu suka memasak? orang bisa-akan membuat sebuah makan-malam." },
+        { "speaker": "Camille:", "text": "J'adore cuisiner ! Mais je déteste faire la vaisselle.", "id": "Suka banget masak! Tapi benci cuci piring.", "literal": "saya-mencintai memasak! tapi saya membenci membuat cucian." },
+        { "speaker": "Budi:", "text": "Alors c'est parfait. Tu cuisines, je lave.", "id": "Kalau begitu pas. Kamu masak, saya cuci.", "literal": "maka itu-adalah sempurna. kamu memasak, saya mencuci." }
+      ],
+      "notes": [
+        "**Sesudah kata kerja rasa, selalu le, la, les.** *J'aime **le** café*, bukan *j'aime du café*. Sebabnya masuk akal begitu dipikirkan: yang kamu sukai adalah kopi sebagai keseluruhan, bukan sejumlah kopi tertentu. Bandingkan dengan *je bois **du** café* (saya minum sebagian kopi).",
+        "**Dan kata sandangnya bertahan di kalimat sangkalan.** *Je n'aime pas **le** café* — di sini *le* tidak rontok jadi *de*, berbeda dari *je ne bois pas **de** café*. Inilah satu-satunya kekecualian besar dari aturan yang kamu pasang di unit 4.",
+        "**Aimer punya dua wajah.** Untuk benda dan kegiatan, ia berarti \"suka\". Untuk orang, *je t'aime* berarti \"aku mencintaimu\" — jadi berhati-hatilah. Untuk mengatakan suka pada orang tanpa kesalahpahaman, tambahkan *bien*: *je t'aime **bien*** = aku suka kamu (sebagai teman).",
+        "**Adorer bukan berlebihan.** Dalam bahasa Prancis sehari-hari, *j'adore* setara dengan \"suka banget\", bukan \"memuja\". Ia dipakai untuk kopi, film, dan kaus kaki tanpa terdengar aneh sama sekali.",
+        "**Dua kata kerja berturutan: yang kedua tetap bentuk dasar.** *J'aime **cuisiner***, *je déteste **faire** la vaisselle*, *je préfère **regarder** un film*. Bentuk dasar itu tidak pernah berubah, apa pun pelakunya.",
+        "**Ça me fatigue** — harfiahnya \"itu melelahkan saya\". Susunan yang sangat sering dipakai untuk menyatakan perasaan: *ça m'énerve* (itu menjengkelkan saya), *ça me plaît* (itu menyenangkan saya), *ça m'intéresse* (itu menarik bagi saya).",
+        "**Sauf** = kecuali. Kata kecil yang menyelamatkan banyak percakapan: *j'aime tout, sauf…*"
+      ],
+      "grammars": [
+        {
+          "title": "Tangga rasa",
+          "body": ["Dari yang paling suka sampai yang paling tidak. Semuanya diikuti *le, la, les* atau kata kerja bentuk dasar."],
+          "table": {
+            "head": ["Français", "Kekuatan", "Contoh"],
+            "rows": [
+              ["j'adore", "suka sekali", "*J'adore le chocolat.*"],
+              ["j'aime beaucoup", "suka banget", "*J'aime beaucoup la musique.*"],
+              ["j'aime bien", "cukup suka", "*J'aime bien ce film.*"],
+              ["j'aime", "suka", "*J'aime le café.*"],
+              ["je préfère", "lebih suka", "*Je préfère le thé.*"],
+              ["ça va", "biasa saja", "*Le sport, ça va.*"],
+              ["je n'aime pas trop", "kurang suka", "*Je n'aime pas trop le rap.*"],
+              ["je n'aime pas", "tidak suka", "*Je n'aime pas le froid.*"],
+              ["je déteste", "benci", "*Je déteste attendre.*"]
+            ]
+          },
+          "after": [
+            "⚠️ *J'aime bien* justru **lebih lemah** daripada *j'aime* — kebalikan dari yang diduga penutur Indonesia. Menambahkan *bien* melunakkan, tidak menguatkan. Yang menguatkan adalah *beaucoup*.",
+            "*Préférer* mengubah huruf é jadi è di empat bentuk: *je préfère, tu préfères, il préfère, ils préfèrent*, tapi *nous préférons, vous préférez*. Pola yang sama seperti *se lever* di unit 8."
+          ]
+        },
+        {
+          "title": "Kegemaran dan waktu luang",
+          "body": ["Kata kerja yang dipakai untuk kegiatan luang. Perhatikan kata depannya — masing-masing punya kesukaan sendiri."],
+          "table": {
+            "head": ["Kegiatan", "Bentuk", "Contoh"],
+            "rows": [
+              ["olahraga dengan bola", "**jouer au**", "*Je joue au foot.*"],
+              ["alat musik", "**jouer du / de la**", "*Je joue de la guitare.*"],
+              ["olahraga umum", "**faire du / de la**", "*Je fais du sport.*"],
+              ["kegiatan seni", "**faire de la**", "*Je fais de la peinture.*"],
+              ["membaca, menulis, memasak", "kata kerja langsung", "*J'aime lire, écrire, cuisiner.*"],
+              ["menonton", "**regarder**", "*Je regarde des séries.*"]
+            ]
+          },
+          "after": [
+            "*Jouer à* untuk permainan, *jouer de* untuk alat musik. Perbedaan satu huruf yang sepenuhnya mengubah artinya: *je joue du piano* (saya main piano) versus *je joue au piano* — yang tidak berarti apa-apa.",
+            "Peleburannya berlaku seperti biasa: *jouer à + le = au*, *jouer de + le = du*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kegemaran yang paling sering disebut",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Français", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["lire", "LIR", "membaca"],
+            ["écrire", "e-KRIR", "menulis"],
+            ["cuisiner", "küi-zi-NE", "memasak"],
+            ["voyager", "vwa-ya-JE", "bepergian"],
+            ["danser", "dan-SE", "menari"],
+            ["chanter", "syan-TE", "menyanyi"],
+            ["dessiner", "dè-si-NE", "menggambar"],
+            ["nager", "na-JE", "berenang"],
+            ["courir", "ku-RIR", "berlari"],
+            ["jouer au foot", "jü-e o FUT", "main sepak bola"],
+            ["jouer de la guitare", "jü-e d' la gi-TAR", "main gitar"],
+            ["faire du vélo", "fèr dü ve-LO", "bersepeda"],
+            ["faire du sport", "fèr dü SPOR", "berolahraga"],
+            ["regarder des séries", "r'-gar-de de se-RI", "menonton serial"],
+            ["écouter de la musique", "e-ku-te d' la mü-ZIK", "mendengarkan musik"],
+            ["sortir avec des amis", "sor-tir a-vek de-za-MI", "keluar dengan teman"]
+          ]
+        },
+        { "type": "kotak", "title": "Menanyakan selera", "items": [
+          "*Qu'est-ce que tu aimes faire ?* — Kamu suka melakukan apa?",
+          "*Tu aimes le sport ?* — Kamu suka olahraga?",
+          "*Qu'est-ce que tu préfères, le thé ou le café ?* — Kamu lebih suka teh atau kopi?",
+          "*Ça te plaît ?* — Kamu suka itu?",
+          "*Moi aussi.* / *Moi non plus.* — Saya juga. / Saya juga tidak.",
+          "⚠️ Menyetujui kalimat sangkalan memakai *moi non plus*, bukan *moi aussi*. \"Saya tidak suka kopi.\" — \"*Moi non plus.*\""
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "fr": "aimer", "baca": "è-ME", "id": "menyukai, mencintai" },
+    { "fr": "adorer", "baca": "a-do-RE", "id": "sangat menyukai" },
+    { "fr": "détester", "baca": "de-tes-TE", "id": "membenci" },
+    { "fr": "préférer", "baca": "pre-fe-RE", "id": "lebih menyukai" },
+    { "fr": "le goût", "baca": "l' GU", "id": "selera, rasa" },
+    { "fr": "un film", "baca": "an FILM", "id": "film" },
+    { "fr": "la musique", "baca": "la mü-ZIK", "id": "musik" },
+    { "fr": "le cinéma", "baca": "l' si-ne-MA", "id": "bioskop, perfilman" },
+    { "fr": "lent / rapide", "baca": "lan / ra-PID", "id": "lambat / cepat" },
+    { "fr": "surtout", "baca": "sür-TU", "id": "terutama" },
+    { "fr": "sauf", "baca": "SOF", "id": "kecuali" },
+    { "fr": "trouver", "baca": "tru-VE", "id": "menemukan, merasa" },
+    { "fr": "cuisiner", "baca": "küi-zi-NE", "id": "memasak" },
+    { "fr": "faire la vaisselle", "baca": "fèr la vè-SÈL", "id": "mencuci piring" },
+    { "fr": "laver", "baca": "la-VE", "id": "mencuci" },
+    { "fr": "jouer", "baca": "jü-E", "id": "bermain" },
+    { "fr": "lire", "baca": "LIR", "id": "membaca" },
+    { "fr": "voyager", "baca": "vwa-ya-JE", "id": "bepergian" },
+    { "fr": "le temps libre", "baca": "l' tan LIBR'", "id": "waktu luang" },
+    { "fr": "plaire", "baca": "PLÈR", "id": "menyenangkan hati" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan le, la, les, du, de la atau des.",
+      "items": [
+        "J'aime ____ café.",
+        "Je bois ____ café le matin.",
+        "Elle adore ____ musique classique.",
+        "Nous écoutons ____ musique.",
+        "Il déteste ____ légumes.",
+        "Tu manges ____ légumes ?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan au, à la, du atau de la.",
+      "items": [
+        "Je joue ____ foot.",
+        "Elle joue ____ guitare.",
+        "Nous faisons ____ sport.",
+        "Il joue ____ piano.",
+        "Tu fais ____ natation ?"
+      ]
+    },
+    {
+      "prompt": "Susun kalimat sesuai tingkat rasa yang diminta.",
+      "items": [
+        "le chocolat (suka sekali)",
+        "le rap (benci)",
+        "ce film (cukup suka)",
+        "le thé (lebih suka daripada kopi)",
+        "attendre (tidak suka)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Saya suka banget jazz.",
+        "Saya tidak suka rap.",
+        "Kamu suka masak?",
+        "Saya lebih suka teh.",
+        "Saya juga tidak."
+      ]
+    }
+  ],
+  "answers": [
+    "le café — du café — la musique classique — de la musique — les légumes — des légumes",
+    "au foot — de la guitare — du sport — du piano — de la natation",
+    "J'adore le chocolat. — Je déteste le rap. — J'aime bien ce film. — Je préfère le thé au café. — Je n'aime pas attendre.",
+    "J'aime beaucoup le jazz. — Je n'aime pas le rap. — Tu aimes cuisiner ? — Je préfère le thé. — Moi non plus."
+  ]
+}

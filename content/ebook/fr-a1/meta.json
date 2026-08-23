@@ -1,0 +1,917 @@
+{
+  "brand": "LINGUO",
+  "title": "Français 101",
+  "subtitle": "Modul belajar mandiri bahasa Prancis untuk pemula",
+  "level": "Level A1 (CEFR)",
+  "edition": "Edisi Bahasa Indonesia",
+  "ruby": false,
+  "font_size": "9.8pt",
+  "page_margin": "15mm 13mm 13mm",
+  "vocab_columns": [
+    {
+      "head": "Français",
+      "key": "fr"
+    },
+    {
+      "head": "Cara baca",
+      "key": "baca"
+    },
+    {
+      "head": "Bahasa Indonesia",
+      "key": "id"
+    }
+  ],
+  "cover_design": {
+    "bg": "#26265E",
+    "accent": "#EE8B6B",
+    "label": "BAHASA PRANCIS",
+    "judul": "Français",
+    "judul_size": "180px",
+    "cap": "ç",
+    "pola_opacity": 0.45,
+    "pola": "background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.10) 0 2px, transparent 2px 46px),repeating-linear-gradient(45deg, rgba(255,255,255,.05) 0 2px, transparent 2px 46px);",
+    "ringkas": "Modul belajar mandiri bahasa Prancis untuk pemula — dari menyapa di boulangerie sampai menceritakan akhir pekan yang sudah lewat.",
+    "catatan": "Terjemahan harfiah ditulis di bawah tiap baris dialog."
+  },
+  "product": {
+    "slug": "modul-prancis-101-id",
+    "title": "Français 101 new edition",
+    "type": "ebook",
+    "language": "French",
+    "level": "A1",
+    "file": "francais-101-a1-id.pdf",
+    "description": "Dua puluh unit belajar mandiri bergaya Assimil untuk bahasa Prancis dari nol: dialog pendek, terjemahan harfiah yang memperlihatkan cara bahasa Prancis menyusun kalimat, catatan tata bahasa, kosakata dengan cara baca, latihan, dan kunci jawaban. Ditulis khusus untuk penutur bahasa Indonesia — tiap unit menyasar satu titik yang selama ini paling sering keliru, dari huruf yang tidak dibunyikan sampai pilihan avoir atau être pada kalimat lampau.",
+    "pages": 144
+  },
+  "front": [
+    {
+      "title": "Kata pengantar",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bahasa Prancis punya reputasi ganda. Orang menyebutnya bahasa paling indah di dunia, lalu di kalimat berikutnya menyebutnya bahasa paling sulit dibaca di dunia. Dua-duanya berangkat dari sebab yang sama: bahasa Prancis menulis lebih banyak daripada yang dibunyikannya."
+        },
+        {
+          "type": "p",
+          "text": "Bagi pelajar Indonesia, di situlah letak kejutan pertama. Kita terbiasa pada bahasa yang jujur — apa yang tertulis, itu yang keluar dari mulut. Bahasa Prancis tidak begitu. *Beaucoup* ditulis delapan huruf dan dibunyikan tiga suku kata pendek. *Ils parlent* dan *il parle* tertulis jauh berbeda tapi terdengar persis sama. Huruf terakhir sebuah kata lebih sering bisu daripada berbunyi."
+        },
+        {
+          "type": "p",
+          "text": "Kejutan kedua datang belakangan dan lebih membandel: setiap kata benda dalam bahasa Prancis punya jenis kelamin yang tidak bisa ditebak dari artinya, dan hampir tidak ada kata benda yang boleh berdiri tanpa kata sandang. Bahasa Indonesia tidak punya dua-duanya. \"Saya makan roti\" cuma tiga kata; padanannya dalam bahasa Prancis butuh satu kata tambahan yang tidak ada terjemahannya sama sekali — *je mange **du** pain*."
+        },
+        {
+          "type": "p",
+          "text": "Modul ini menghadapi ketiga titik itu — bunyi, jenis kelamin, dan kata sandang — sejak unit-unit pertama, bukan menundanya sampai bab terakhir. Dua puluh unit pendek di dalamnya menutup seluruh bahan **Level A1 (CEFR)**: menyapa, memperkenalkan diri, menyebut keluarga dan umur, memesan di kafe, membaca jam, menceritakan hari biasa, menanyakan arah, berbelanja, menyatakan suka dan tidak suka, sampai menceritakan apa yang terjadi kemarin."
+        },
+        {
+          "type": "p",
+          "text": "Tiap unit berangkat dari percakapan yang bisa langsung dipakai, baru sesudahnya menjelaskan kenapa kalimatnya berbentuk begitu. Penjelasannya sengaja pendek. Yang panjang bukan teorinya, melainkan latihannya."
+        },
+        {
+          "type": "kotak",
+          "title": "Sebelum mulai",
+          "items": [
+            "Sediakan 20-30 menit tanpa gangguan, bukan dua jam yang terpotong-potong. Bahasa menempel lewat pengulangan pendek yang sering, bukan lewat satu serangan panjang.",
+            "Baca dengan suara keras — dan untuk bahasa Prancis ini bukan anjuran, melainkan syarat. Kalau kamu belajar diam-diam, kamu sedang menghafal ejaan, bukan bahasa.",
+            "Sejak unit pertama, hafalkan kata benda **bersama kata sandangnya**: bukan *maison*, tapi *une maison*. Ini kebiasaan kecil yang menghemat berbulan-bulan kebingungan nanti.",
+            "Jangan percaya mata. Kalau ragu bunyinya, percayai kolom \"cara baca\" — mata orang Indonesia dilatih membaca apa adanya, dan bahasa Prancis akan menipunya berkali-kali."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Selamat belajar. *Bon courage !*"
+        }
+      ]
+    },
+    {
+      "type": "isi",
+      "title": "Daftar isi",
+      "intro": "Modul ini paling baik dikerjakan berurutan — tiap unit memakai ulang apa yang dipasang unit sebelumnya."
+    },
+    {
+      "title": "Cara memakai modul ini",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Modul ini disusun untuk **belajar sendiri**. Tiap unit dirancang selesai dalam satu kali duduk, sekitar 20-30 menit. Yang penting bukan seberapa cepat kamu maju, tapi seberapa sering kamu kembali."
+        },
+        {
+          "type": "p",
+          "text": "Setiap unit punya susunan yang sama, dan urutannya sengaja begitu:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Dialogue** — baca dulu bahasa Prancisnya dengan suara keras, jangan lihat artinya. Biarkan telinga bekerja sebelum otak menuntut penjelasan.",
+            "**Terjemahan harfiah** — baris kecil miring di bawah arti. Ini bagian yang paling sering dilewati orang, padahal di sinilah kamu melihat cara bahasa Prancis *berpikir*. Contoh: *Je m'appelle Ana* secara harfiah berarti \"saya menamai diri saya Ana\", bukan \"nama saya Ana\".",
+            "**Catatan** — penjelasan pendek atas hal-hal yang tadi terasa aneh.",
+            "**Kosakata** — kata baru unit itu, lengkap dengan cara bacanya. Kata benda selalu ditulis bersama kata sandangnya, supaya jenis kelaminnya ikut terhafal.",
+            "**Latihan** — kerjakan tanpa melihat kunci. Salah itu bagian dari prosesnya.",
+            "**Kunci jawaban** — baru dibuka setelah kamu benar-benar mencoba."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Ulangan berjenjang",
+          "items": [
+            "Mulai unit 3, tiap unit menyuruhmu mengulang satu unit yang sudah lewat — biasanya dua langkah ke belakang, jarak yang pas untuk membuat ingatan bekerja tanpa terasa seperti mengulang dari nol. Kali ini caranya dibalik: tutup bahasa Prancisnya, lihat terjemahan Indonesianya, lalu susun kembali kalimat Prancisnya dari ingatan.",
+            "Bagian ini yang mengubah \"pernah paham\" jadi \"bisa dipakai\". Jangan dilewati."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Satu aturan terakhir, dan untuk bahasa Prancis aturan ini lebih keras daripada bahasa mana pun: **suarakan**. Jarak antara tulisan dan bunyi begitu lebar sehingga membaca dalam hati akan menanam ejaan yang salah di kepalamu, dan mencabutnya nanti jauh lebih mahal daripada membunyikannya benar sekarang."
+        }
+      ]
+    },
+    {
+      "title": "Pelafalan bahasa Prancis",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kabar buruknya sudah kamu dengar: tulisan dan bunyi bahasa Prancis berjarak jauh. Kabar baiknya jarang disebut orang — jaraknya **teratur**. Bahasa Prancis hampir tidak punya pengecualian liar seperti bahasa Inggris; sekali kamu hafal tabel di bawah, kamu bisa membaca kata yang belum pernah kamu lihat dengan benar."
+        },
+        {
+          "type": "sub",
+          "text": "Huruf terakhir yang bisu"
+        },
+        {
+          "type": "p",
+          "text": "Aturan tunggal yang paling banyak menolong: **huruf mati di ujung kata umumnya tidak dibunyikan** — *petit* (p'TI), *grand* (gRAN), *vous* (vu), *parlez* (par-LE), *beaucoup* (bo-KU). Yang selamat cuma empat huruf, gampang diingat lewat kata **C-a-R-e-F-u-L**: **c, r, f, l** — *avec* (a-VEK), *bonjour* (bon-JUR), *neuf* (n'F), *il* (il)."
+        },
+        {
+          "type": "p",
+          "text": "Huruf **e** di ujung kata juga bisu, dan justru itulah yang membuat kata sebelumnya berbunyi: *petit* (p'TI) tapi *petite* (p'TIT); *grand* (gRAN) tapi *grande* (gRAND). Inilah cara telinga orang Prancis membedakan laki-laki dan perempuan."
+        },
+        {
+          "type": "sub",
+          "text": "Gabungan huruf"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tulisan",
+            "Dibaca",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "ou",
+              "u",
+              "*vous* (vu) = kalian, Anda"
+            ],
+            [
+              "u",
+              "ü — bibir bulat seperti \"u\", lidah di posisi \"i\"",
+              "*tu* (tü) = kamu"
+            ],
+            [
+              "au, eau",
+              "o",
+              "*beau* (bo) = indah"
+            ],
+            [
+              "ai, ei",
+              "è (e seperti \"nenek\")",
+              "*mais* (mè) = tapi"
+            ],
+            [
+              "oi",
+              "wa",
+              "*moi* (mwa) = saya"
+            ],
+            [
+              "eu, œu",
+              "ö — bibir bulat, lidah di posisi \"e\"",
+              "*deux* (dö) = dua"
+            ],
+            [
+              "é",
+              "e seperti \"sore\"",
+              "*café* (ka-FE)"
+            ],
+            [
+              "è, ê",
+              "è seperti \"nenek\"",
+              "*père* (pèr) = ayah"
+            ],
+            [
+              "ch",
+              "sy",
+              "*chat* (sya) = kucing"
+            ],
+            [
+              "gn",
+              "ny",
+              "*montagne* (mon-TA-ny) = gunung"
+            ],
+            [
+              "qu",
+              "k",
+              "*qui* (ki) = siapa"
+            ],
+            [
+              "j, g + e/i",
+              "zy — seperti \"j\" tapi mendesis",
+              "*je* (zyö), *girafe* (zyi-RAF)"
+            ],
+            [
+              "h",
+              "**selalu bisu**",
+              "*hôtel* (o-TEL)"
+            ],
+            [
+              "r",
+              "digetarkan di **pangkal** lidah, bukan ujungnya",
+              "*Paris* (pa-RI)"
+            ],
+            [
+              "ill",
+              "iy",
+              "*famille* (fa-MIY) = keluarga"
+            ],
+            [
+              "s antara dua vokal",
+              "z",
+              "*maison* (mè-ZON) = rumah"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Bunyi sengau",
+          "items": [
+            "Vokal + **n** atau **m** di ujung suku kata tidak dibunyikan sebagai \"n\", melainkan melebur jadi satu bunyi sengau — udaranya keluar lewat hidung, dan huruf n-nya tidak pernah terdengar.",
+            "Ada tiga saja: **an/en/am/em** (bunyi \"an\" tanpa n — *dans*, *temps*), **on/om** (*bon*, *nom*), **in/im/ain/ein/un** (*vin*, *pain*, *matin*).",
+            "Begitu huruf n-nya diikuti vokal atau digandakan, sengaunya batal: *bon* sengau, tapi *bonne* dibaca BON dengan n yang jelas. *An* sengau, *année* tidak.",
+            "Ini bunyi yang tidak ada padanannya di bahasa Indonesia. Dalam modul ini ditulis *an*, *on*, *in* di kolom cara baca — tapi jangan pernah menutup mulut dengan huruf n."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Liaison — huruf bisu yang tiba-tiba bangun",
+          "items": [
+            "Kalau kata berikutnya dimulai vokal atau h, huruf mati bisu tadi menyeberang dan dibunyikan di depan kata itu: *vous* (vu) tapi *vous avez* (vu-za-VE); *les* (le) tapi *les amis* (le-za-MI); *un* (an) tapi *un ami* (an-na-MI).",
+            "**s** dan **x** menyeberang jadi bunyi **z**; **d** jadi **t**: *un grand homme* (an gran-TOM).",
+            "Ini bukan hiasan. Tanpa liaison, kalimatmu terdengar dieja satu-satu, dan justru di situ orang Prancis paling cepat mengenali penutur asing."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tekanan kata",
+          "items": [
+            "Kabar paling melegakan di seluruh bab ini: bahasa Prancis hampir tidak punya tekanan kata. Semua suku kata diucapkan hampir sama kuat, dengan sedikit dorongan di **suku kata terakhir yang berbunyi**.",
+            "Karena itu jangan menirukan pola bahasa Inggris atau Italia yang naik-turun. Bahasa Prancis mengalir rata, lalu naik sedikit di ujung."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dalam modul ini, kolom \"cara baca\" ditulis dengan ejaan Indonesia, dan **huruf besar menandai suku kata yang sedikit ditekan**. Tanda **'** menandai bunyi *e* pepet yang nyaris hilang, seperti \"e\" pada \"emas\"."
+        }
+      ]
+    }
+  ],
+  "back": [
+    {
+      "title": "Ringkasan tata bahasa A1",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Semua yang dipelajari dua puluh unit di depan, dipadatkan jadi beberapa halaman. Bagian ini bukan untuk dibaca berurutan — ia untuk dibuka kembali tiap kali kamu ragu di tengah kalimat."
+        },
+        {
+          "type": "sub",
+          "text": "Kata sandang"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "Mask. tunggal",
+            "Fem. tunggal",
+            "Di depan vokal / h",
+            "Jamak"
+          ],
+          "rows": [
+            [
+              "Tertentu (itu, yang tadi)",
+              "le",
+              "la",
+              "l'",
+              "les"
+            ],
+            [
+              "Tak tentu (sebuah, seorang)",
+              "un",
+              "une",
+              "un / une",
+              "des"
+            ],
+            [
+              "Sebagian (tak terhitung)",
+              "du",
+              "de la",
+              "de l'",
+              "des"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Kata benda bahasa Prancis nyaris tidak pernah berdiri tanpa kata sandang. *Je mange du pain*, bukan *je mange pain*. Sesudah kalimat sangkalan, semua kata sandang tak tentu dan sebagian rontok jadi **de**: *je n'ai pas de voiture*, *je ne bois pas de café*. Sesudah kata takaran juga: *un kilo de riz*, *beaucoup d'amis*."
+        },
+        {
+          "type": "p",
+          "text": "Menjamakkan: tambahkan **-s** yang tidak dibunyikan. Akhiran **-al → -aux** (*journal → journaux*), **-eau → -eaux** (*bateau → bateaux*). Kata yang sudah berakhir -s, -x, -z tidak berubah: *le fils → les fils*."
+        },
+        {
+          "type": "sub",
+          "text": "Peleburan à dan de"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "le",
+            "la",
+            "l'",
+            "les"
+          ],
+          "rows": [
+            [
+              "à",
+              "**au**",
+              "à la",
+              "à l'",
+              "**aux**"
+            ],
+            [
+              "de",
+              "**du**",
+              "de la",
+              "de l'",
+              "**des**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tempat: **à** untuk kota (*à Paris*), **en** untuk negara feminin dan yang berawal vokal (*en France*, *en Indonésie*), **au** untuk negara maskulin (*au Japon*), **aux** untuk negara jamak (*aux États-Unis*)."
+        },
+        {
+          "type": "sub",
+          "text": "Kata sifat"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Ikut jenis kelamin dan jumlah: **+e** untuk perempuan, **+s** untuk jamak — *petit, petite, petits, petites*.",
+            "Huruf tambahan itu sering **mengubah bunyi**: *petit* (p'TI) → *petite* (p'TIT). Kata sifat yang sudah berakhir -e tidak berubah bentuk perempuannya: *rouge, jeune, facile*.",
+            "Bentuk tak beraturan yang sering: *beau/belle*, *nouveau/nouvelle*, *vieux/vieille*, *blanc/blanche*, *long/longue*, *heureux/heureuse*, *cher/chère*, *bon/bonne*, *gros/grosse*.",
+            "Berdiri **sesudah** kata bendanya — *une voiture rouge*. Yang di depan cuma sekelompok kecil: *beau, bon, grand, gros, jeune, joli, mauvais, nouveau, petit, vieux*.",
+            "Kelompok campur laki-laki dan perempuan memakai bentuk maskulin jamak.",
+            "Membandingkan: *plus… que*, *moins… que*, *aussi… que*. Bentuk sendiri: *bon → meilleur*, *bien → mieux*.",
+            "*Très* di depan kata sifat = sangat (*très beau*); *beaucoup* dipakai untuk kata kerja dan kata benda (*j'aime beaucoup*, *beaucoup de livres*), tidak pernah untuk kata sifat."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Kata milik"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pemilik",
+            "Mask. tunggal",
+            "Fem. tunggal",
+            "Jamak"
+          ],
+          "rows": [
+            [
+              "saya",
+              "mon",
+              "ma",
+              "mes"
+            ],
+            [
+              "kamu",
+              "ton",
+              "ta",
+              "tes"
+            ],
+            [
+              "dia",
+              "son",
+              "sa",
+              "ses"
+            ],
+            [
+              "kami",
+              "notre",
+              "notre",
+              "nos"
+            ],
+            [
+              "kalian / Anda",
+              "votre",
+              "votre",
+              "vos"
+            ],
+            [
+              "mereka",
+              "leur",
+              "leur",
+              "leurs"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Bentuknya ikut **benda yang dimiliki**, bukan pemiliknya: *son père* bisa berarti ayahnya (laki-laki) maupun ayahnya (perempuan). Dan di depan kata feminin yang berawal vokal, *ma* berubah jadi **mon** demi bunyi: *mon amie*, *mon école*."
+        },
+        {
+          "type": "sub",
+          "text": "Ce, cet, cette, ces"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Mask. tunggal",
+            "Mask. di depan vokal / h",
+            "Fem. tunggal",
+            "Jamak"
+          ],
+          "rows": [
+            [
+              "ce livre",
+              "cet homme",
+              "cette table",
+              "ces livres / ces tables"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Menyangkal dan bertanya"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Menyangkal butuh **dua** kata yang mengapit kata kerja: **ne … pas** — *je ne comprends pas*. Dalam percakapan sehari-hari *ne* sering hilang (*je comprends pas*), tapi dalam tulisan ia wajib.",
+            "Di depan vokal, *ne* jadi *n'*: *je n'ai pas*, *il n'est pas*.",
+            "Kembarannya: *ne… jamais* (tak pernah), *ne… rien* (tak ada apa-apa), *ne… personne* (tak seorang pun), *ne… plus* (tidak lagi), *ne… pas encore* (belum).",
+            "Tiga cara bertanya: nada naik saja (*Tu viens ?*), pasang *est-ce que* di depan (*Est-ce que tu viens ?*), atau balik urutan (*Viens-tu ?* — paling resmi).",
+            "Kata tanya: *qui* (siapa), *que / quoi* (apa), *où* (di mana), *quand* (kapan), *pourquoi* (kenapa), *comment* (bagaimana), *combien* (berapa), *quel/quelle* (yang mana)."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Bentuk lampau — passé composé"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Dibangun dari kata bantu bentuk sekarang + kata sifat pelaku: *j'ai mangé*, *je suis allé*.",
+            "Kata sifat pelaku beraturan: **-er → -é**, **-ir → -i**, **-re → -u**.",
+            "Sebagian besar kata kerja memakai **avoir**, dan kata sifat pelakunya tidak berubah.",
+            "Empat belas kata kerja perpindahan dan perubahan keadaan memakai **être** — *aller, venir, arriver, partir, entrer, sortir, monter, descendre, rester, retourner, tomber, naître, mourir, devenir* — dan huruf terakhirnya ikut jenis kelamin serta jumlah pelakunya: *elle est allée*, *ils sont partis*.",
+            "Semua kata kerja balik badan memakai **être**: *je me suis levé*, *nous nous sommes réveillés*.",
+            "*Déjà*, *encore*, *jamais*, *toujours*, *bien* diselipkan antara kata bantu dan kata sifat pelaku: *j'ai déjà mangé*.",
+            "Menyangkalnya mengapit **kata bantunya saja**: *je n'ai pas mangé*, *elle n'est pas venue*."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Rencana masa depan"
+        },
+        {
+          "type": "p",
+          "text": "Tingkat A1 tidak membutuhkan bentuk masa depan sesungguhnya. Pakai **aller + kata kerja dasar**: *je vais manger* (saya akan makan), *on va partir demain*. Atau cukup bentuk sekarang ditambah kata waktu: *demain je travaille*."
+        }
+      ]
+    },
+    {
+      "title": "Kata kerja yang paling sering dipakai",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Enam belas kata kerja di bawah menutup sebagian besar percakapan sehari-hari. Sebagian besar tidak beraturan — dan justru itulah yang paling sering keluar dari mulut orang Prancis."
+        },
+        {
+          "type": "sub",
+          "text": "Tiga golongan beraturan"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "parler (-er)",
+            "finir (-ir)",
+            "attendre (-re)"
+          ],
+          "rows": [
+            [
+              "je",
+              "parle",
+              "finis",
+              "attends"
+            ],
+            [
+              "tu",
+              "parles",
+              "finis",
+              "attends"
+            ],
+            [
+              "il / elle / on",
+              "parle",
+              "finit",
+              "attend"
+            ],
+            [
+              "nous",
+              "parlons",
+              "finissons",
+              "attendons"
+            ],
+            [
+              "vous",
+              "parlez",
+              "finissez",
+              "attendez"
+            ],
+            [
+              "ils / elles",
+              "parlent",
+              "finissent",
+              "attendent"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Empat bentuk golongan **-er** (*parle, parles, parle, parlent*) dibunyikan **persis sama**: PARL. Bedanya cuma di tulisan. Yang terdengar berbeda hanya *parlons* dan *parlez*."
+        },
+        {
+          "type": "sub",
+          "text": "Yang tidak beraturan"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "être",
+            "avoir",
+            "aller",
+            "faire"
+          ],
+          "rows": [
+            [
+              "je / j'",
+              "suis",
+              "ai",
+              "vais",
+              "fais"
+            ],
+            [
+              "tu",
+              "es",
+              "as",
+              "vas",
+              "fais"
+            ],
+            [
+              "il / elle",
+              "est",
+              "a",
+              "va",
+              "fait"
+            ],
+            [
+              "nous",
+              "sommes",
+              "avons",
+              "allons",
+              "faisons"
+            ],
+            [
+              "vous",
+              "êtes",
+              "avez",
+              "allez",
+              "faites"
+            ],
+            [
+              "ils / elles",
+              "sont",
+              "ont",
+              "vont",
+              "font"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "venir",
+            "prendre",
+            "voir",
+            "boire"
+          ],
+          "rows": [
+            [
+              "je",
+              "viens",
+              "prends",
+              "vois",
+              "bois"
+            ],
+            [
+              "tu",
+              "viens",
+              "prends",
+              "vois",
+              "bois"
+            ],
+            [
+              "il / elle",
+              "vient",
+              "prend",
+              "voit",
+              "boit"
+            ],
+            [
+              "nous",
+              "venons",
+              "prenons",
+              "voyons",
+              "buvons"
+            ],
+            [
+              "vous",
+              "venez",
+              "prenez",
+              "voyez",
+              "buvez"
+            ],
+            [
+              "ils / elles",
+              "viennent",
+              "prennent",
+              "voient",
+              "boivent"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "pouvoir",
+            "devoir",
+            "vouloir",
+            "savoir"
+          ],
+          "rows": [
+            [
+              "je",
+              "peux",
+              "dois",
+              "veux",
+              "sais"
+            ],
+            [
+              "tu",
+              "peux",
+              "dois",
+              "veux",
+              "sais"
+            ],
+            [
+              "il / elle",
+              "peut",
+              "doit",
+              "veut",
+              "sait"
+            ],
+            [
+              "nous",
+              "pouvons",
+              "devons",
+              "voulons",
+              "savons"
+            ],
+            [
+              "vous",
+              "pouvez",
+              "devez",
+              "voulez",
+              "savez"
+            ],
+            [
+              "ils / elles",
+              "peuvent",
+              "doivent",
+              "veulent",
+              "savent"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Kata sifat pelaku tak beraturan"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Dasar",
+            "Lampau",
+            "Dasar",
+            "Lampau",
+            "Dasar",
+            "Lampau"
+          ],
+          "rows": [
+            [
+              "être",
+              "été",
+              "prendre",
+              "pris",
+              "venir",
+              "venu"
+            ],
+            [
+              "avoir",
+              "eu",
+              "mettre",
+              "mis",
+              "naître",
+              "né"
+            ],
+            [
+              "faire",
+              "fait",
+              "écrire",
+              "écrit",
+              "mourir",
+              "mort"
+            ],
+            [
+              "voir",
+              "vu",
+              "dire",
+              "dit",
+              "ouvrir",
+              "ouvert"
+            ],
+            [
+              "boire",
+              "bu",
+              "lire",
+              "lu",
+              "offrir",
+              "offert"
+            ],
+            [
+              "pouvoir",
+              "pu",
+              "connaître",
+              "connu",
+              "partir",
+              "parti"
+            ],
+            [
+              "vouloir",
+              "voulu",
+              "recevoir",
+              "reçu",
+              "descendre",
+              "descendu"
+            ],
+            [
+              "devoir",
+              "dû",
+              "répondre",
+              "répondu",
+              "attendre",
+              "attendu"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Angka"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "1 un",
+              "2 deux",
+              "3 trois",
+              "4 quatre"
+            ],
+            [
+              "5 cinq",
+              "6 six",
+              "7 sept",
+              "8 huit"
+            ],
+            [
+              "9 neuf",
+              "10 dix",
+              "11 onze",
+              "12 douze"
+            ],
+            [
+              "13 treize",
+              "14 quatorze",
+              "15 quinze",
+              "16 seize"
+            ],
+            [
+              "17 dix-sept",
+              "18 dix-huit",
+              "19 dix-neuf",
+              "20 vingt"
+            ],
+            [
+              "30 trente",
+              "40 quarante",
+              "50 cinquante",
+              "60 soixante"
+            ],
+            [
+              "70 soixante-dix",
+              "80 quatre-vingts",
+              "90 quatre-vingt-dix",
+              "100 cent"
+            ],
+            [
+              "200 deux cents",
+              "1.000 mille",
+              "2.000 deux mille",
+              "1.000.000 un million"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Tiga puluhan terakhir tidak punya nama sendiri dan dihitung: **70** = 60+10 (*soixante-dix*), **71** = 60+11 (*soixante et onze*), **80** = 4×20 (*quatre-vingts*), **90** = 4×20+10 (*quatre-vingt-dix*), **97** = 4×20+17 (*quatre-vingt-dix-sept*). Angka 21, 31, 41, 51, 61 menyelipkan *et*: *vingt et un*, *trente et un*."
+        }
+      ]
+    },
+    {
+      "title": "Apa selanjutnya",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kamu baru saja menutup Level A1. Yang kamu punya sekarang bukan pengetahuan tentang bahasa Prancis, melainkan sejumlah kalimat yang bisa keluar dari mulutmu tanpa disusun dulu. Itu perbedaan yang menentukan."
+        },
+        {
+          "type": "sub",
+          "text": "Yang menanti di A2"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Imparfait** — bentuk lampau untuk kebiasaan dan gambaran, dan pembagian kerjanya dengan *passé composé*: *quand j'étais petit, je jouais au foot*.",
+            "**Futur simple** — bentuk masa depan sesungguhnya, terutama untuk janji dan ramalan.",
+            "**Kata ganti sasaran** — *le, la, les, lui, leur, y, en*: *je le vois*, *j'en ai deux*.",
+            "**Conditionnel** — pengandaian dan permintaan halus, yang sudah kamu cicipi lewat *je voudrais*.",
+            "**Anak kalimat dengan *qui* dan *que*** — cara menyambung dua kalimat jadi satu, langkah yang memisahkan kalimat pemula dari kalimat dewasa."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Cara merawat apa yang sudah ada"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Ulangi dialognya keras-keras**, satu unit sehari, sampai kamu bisa mengucapkannya tanpa membaca. Untuk bahasa Prancis ini bukan latihan hafalan, tapi latihan mulut: bunyi *u*, *eu*, dan *r* butuh otot yang belum pernah kamu pakai.",
+            "**Ubah isinya, bukan polanya.** Ambil dialog unit 5, ganti nama dan angkanya dengan keluargamu sendiri. Pola yang dipakai untuk cerita sendiri jauh lebih lengket.",
+            "**Dengarkan tanpa memahami semuanya.** Radio, lagu, atau siaran berita Prancis lima belas menit sehari. Yang dilatih bukan pemahaman, melainkan telinga — dan telinga bahasa Prancis butuh waktu paling lama.",
+            "**Cari lawan bicara sekarang, bukan nanti.** Seratus kata yang dipakai mengalahkan seribu kata yang disimpan.",
+            "**Catat kesalahanmu, bukan kata barumu.** Kata baru datang sendiri; kesalahan yang tidak dicatat akan diulang bertahun-tahun."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dan satu hal terakhir yang tidak bisa diberikan buku mana pun: bahasa Prancis hidup di antara orang-orang, di antrean boulangerie, di meja teras kafe, di percakapan yang bertumpuk-tumpuk. Pergilah ke sana."
+        },
+        {
+          "type": "p",
+          "text": "*Bon courage — et bonne continuation !*"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,528 @@
+{
+  "title": "Hari, bulan, tanggal",
+  "title_target": "On est quel jour aujourd'hui ?",
+  "goal": "Menyebut hari dan tanggal, menulis angka besar termasuk tujuh puluhan dan delapan puluhan, dan menyebut tanggal lahir.",
+  "bekal": [
+    "menyebut hari, bulan, dan tanggal lengkap",
+    "membaca angka 70, 80, 90 yang dihitung, bukan dinamai",
+    "membedakan *le lundi* (tiap Senin) dan *lundi* (Senin ini)"
+  ],
+  "wave": "Ulangi **unit 7** dulu: baca sepuluh jam acak dari jam dindingmu dengan gaya percakapan, lalu ulangi dengan gaya 24 jam.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Le formulaire",
+      "intro": "Budi mengisi formulir pendaftaran perpustakaan. Petugas membantunya.",
+      "lines": [
+        {
+          "speaker": "Employée:",
+          "text": "Bonjour. Votre date de naissance, s'il vous plaît ?",
+          "id": "Selamat siang. Tanggal lahir Anda?",
+          "literal": "hari-baik. milik-kalian tanggal dari kelahiran, tolong?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Le quinze mars deux mille cinq.",
+          "id": "Lima belas Maret dua ribu lima.",
+          "literal": "tanggal lima-belas Maret dua ribu lima."
+        },
+        {
+          "speaker": "Employée:",
+          "text": "Très bien. Et votre adresse à Lyon ?",
+          "id": "Baik. Alamat Anda di Lyon?",
+          "literal": "sangat baik. dan milik-kalian alamat di Lyon?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Soixante-douze, rue Victor Hugo.",
+          "id": "Nomor tujuh puluh dua, Jalan Victor Hugo.",
+          "literal": "enam-puluh-dua-belas, jalan Victor Hugo."
+        },
+        {
+          "speaker": "Employée:",
+          "text": "Soixante-douze. Et le code postal ?",
+          "id": "Tujuh puluh dua. Kode posnya?",
+          "literal": "enam-puluh-dua-belas. dan kode pos?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Six neuf zéro zéro trois.",
+          "id": "Enam sembilan nol nol tiga.",
+          "literal": "enam sembilan nol nol tiga."
+        },
+        {
+          "speaker": "Employée:",
+          "text": "Parfait. La bibliothèque ouvre du mardi au samedi.",
+          "id": "Bagus. Perpustakaan buka Selasa sampai Sabtu.",
+          "literal": "sempurna. perpustakaan membuka dari selasa ke sabtu."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Elle est fermée le lundi, alors ?",
+          "id": "Jadi tutup tiap Senin?",
+          "literal": "dia adalah tertutup senin, maka?"
+        },
+        {
+          "speaker": "Employée:",
+          "text": "Oui, et le dimanche aussi. Voici votre carte.",
+          "id": "Ya, dan tiap Minggu juga. Ini kartu Anda.",
+          "literal": "ya, dan minggu juga. ini milik-kalian kartu."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Merci. Elle est valable jusqu'à quand ?",
+          "id": "Terima kasih. Berlaku sampai kapan?",
+          "literal": "terima-kasih. dia adalah berlaku sampai kapan?"
+        },
+        {
+          "speaker": "Employée:",
+          "text": "Jusqu'au trente et un décembre. Un an complet.",
+          "id": "Sampai tiga puluh satu Desember. Satu tahun penuh.",
+          "literal": "sampai tiga-puluh dan satu Desember. satu tahun lengkap."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Parfait. Bonne journée, madame !",
+          "id": "Bagus sekali. Selamat beraktivitas, Bu!",
+          "literal": "sempurna. baik hari, nyonya!"
+        }
+      ],
+      "notes": [
+        "**Hari dan bulan ditulis huruf kecil.** *lundi*, *mars*, *décembre* — tidak seperti bahasa Inggris. Huruf besar cuma di awal kalimat.",
+        "**Le lundi berarti \"setiap Senin\".** Tanpa kata sandang, *lundi* berarti \"Senin ini\" atau \"Senin kemarin\", tergantung kalimatnya. *Je travaille le lundi* = tiap Senin saya kerja; *je travaille lundi* = Senin nanti saya kerja. Perbedaan satu kata kecil yang mengubah seluruh jadwalmu.",
+        "**Tanggal memakai le + angka biasa.** *Le quinze mars*, bukan *le quinzième mars*. Satu-satunya kekecualian adalah tanggal 1: *le premier mars*.",
+        "**Tahun dibaca utuh.** 2005 = *deux mille cinq*, 1998 = *mille neuf cent quatre-vingt-dix-huit*. Bahasa Prancis tidak memecahnya jadi dua angka seperti bahasa Inggris (\"nineteen ninety-eight\").",
+        "**Soixante-douze = 72**, harfiahnya \"enam puluh dua belas\". Bahasa Prancis kehabisan nama angka di 69 dan mulai menghitung. Ini bagian bahasa Prancis yang paling sering ditertawakan orang asing — dan orang Belgia serta Swiss memang memakai *septante* dan *nonante* yang lebih waras. Tapi di Prancis, yang berlaku adalah sistem hitung.",
+        "**Du mardi au samedi** = dari Selasa sampai Sabtu. Perhatikan peleburan: *de + le = du*, *à + le = au*. Peleburan yang sama sudah kamu pakai di unit 8.",
+        "**Bonne journée** diucapkan saat berpisah di pagi atau siang hari, artinya \"semoga harimu baik\". Kembarannya: *bonne soirée* (sore/malam), *bon week-end*, *bonne semaine*, *bonnes vacances*."
+      ],
+      "grammars": [
+        {
+          "title": "Angka di atas 60 — sistem yang menghitung",
+          "body": [
+            "Sampai 69, semuanya masuk akal. Dari 70 ke atas, bahasa Prancis berhenti menamai dan mulai menjumlah."
+          ],
+          "table": {
+            "head": [
+              "Angka",
+              "Bahasa Prancis",
+              "Hitungannya"
+            ],
+            "rows": [
+              [
+                "70",
+                "soixante-dix",
+                "60 + 10"
+              ],
+              [
+                "71",
+                "soixante et onze",
+                "60 + 11"
+              ],
+              [
+                "75",
+                "soixante-quinze",
+                "60 + 15"
+              ],
+              [
+                "79",
+                "soixante-dix-neuf",
+                "60 + 19"
+              ],
+              [
+                "80",
+                "quatre-vingts",
+                "4 × 20"
+              ],
+              [
+                "81",
+                "quatre-vingt-un",
+                "4 × 20 + 1"
+              ],
+              [
+                "90",
+                "quatre-vingt-dix",
+                "4 × 20 + 10"
+              ],
+              [
+                "95",
+                "quatre-vingt-quinze",
+                "4 × 20 + 15"
+              ],
+              [
+                "99",
+                "quatre-vingt-dix-neuf",
+                "4 × 20 + 19"
+              ],
+              [
+                "100",
+                "cent",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Quatre-vingts* memakai huruf s hanya kalau berdiri sendiri di ujung. Begitu ada angka di belakangnya, huruf s-nya hilang: *quatre-vingt-un*, *quatre-vingt-cinq*.",
+            "*Et* muncul hanya di 21, 31, 41, 51, 61, dan **71**. Tidak di 81 dan 91: *quatre-vingt-un*, bukan *quatre-vingt-et-un*.",
+            "Ratusan: *cent, deux cents, trois cents*. Huruf s-nya juga hilang kalau ada angka di belakang: *deux cent cinquante*. *Mille* tidak pernah memakai s: *deux mille*, *dix mille*."
+          ]
+        },
+        {
+          "title": "Menyebut tanggal",
+          "body": [
+            "Satu susunan yang dipakai untuk segalanya: le + angka + bulan + tahun."
+          ],
+          "table": {
+            "head": [
+              "Ditulis",
+              "Dibaca",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "1/3/2026",
+                "*le premier mars deux mille vingt-six*",
+                "1 Maret 2026"
+              ],
+              [
+                "15/3/2026",
+                "*le quinze mars deux mille vingt-six*",
+                "15 Maret 2026"
+              ],
+              [
+                "21/8/2026",
+                "*le vingt et un août*",
+                "21 Agustus"
+              ],
+              [
+                "31/12",
+                "*le trente et un décembre*",
+                "31 Desember"
+              ],
+              [
+                "hari ini",
+                "*Nous sommes le quinze mars.*",
+                "Hari ini tanggal 15 Maret"
+              ],
+              [
+                "hari apa",
+                "*On est quel jour aujourd'hui ?*",
+                "Hari ini hari apa?"
+              ]
+            ]
+          },
+          "after": [
+            "Menanyakan tanggal: *Quelle est la date aujourd'hui ?* atau *On est le combien ?* Jawabannya *on est le quinze* atau *nous sommes le quinze*.",
+            "Bulan memakai **en** atau **au mois de**: *en mars*, *au mois de mars*. Tahun memakai **en**: *en 2026*. Musim memakai *en* kecuali musim semi: *en été, en automne, en hiver*, tapi *au printemps*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Hari, bulan, dan kata waktu",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hari",
+            "Cara baca",
+            "Bulan",
+            "Cara baca"
+          ],
+          "rows": [
+            [
+              "lundi",
+              "lan-DI",
+              "janvier",
+              "jan-VIE"
+            ],
+            [
+              "mardi",
+              "mar-DI",
+              "février",
+              "fe-vri-YE"
+            ],
+            [
+              "mercredi",
+              "mèr-kr'-DI",
+              "mars",
+              "MARS"
+            ],
+            [
+              "jeudi",
+              "jö-DI",
+              "avril",
+              "a-VRIL"
+            ],
+            [
+              "vendredi",
+              "van-dr'-DI",
+              "mai",
+              "MÈ"
+            ],
+            [
+              "samedi",
+              "sam-DI",
+              "juin",
+              "JÜAN"
+            ],
+            [
+              "dimanche",
+              "di-MANSY",
+              "juillet",
+              "jüi-YÈ"
+            ],
+            [
+              "—",
+              "—",
+              "août",
+              "UT"
+            ],
+            [
+              "—",
+              "—",
+              "septembre",
+              "sep-TANBR'"
+            ],
+            [
+              "—",
+              "—",
+              "octobre",
+              "ok-TOBR'"
+            ],
+            [
+              "—",
+              "—",
+              "novembre",
+              "no-VANBR'"
+            ],
+            [
+              "—",
+              "—",
+              "décembre",
+              "de-SANBR'"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Minggu Prancis dimulai hari **lundi**, bukan Minggu. Kalender, jadwal, dan agenda semuanya menaruh Senin di kolom pertama."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Français",
+            "Bahasa Indonesia",
+            "Français",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "aujourd'hui",
+              "hari ini",
+              "cette semaine",
+              "minggu ini"
+            ],
+            [
+              "hier",
+              "kemarin",
+              "la semaine dernière",
+              "minggu lalu"
+            ],
+            [
+              "demain",
+              "besok",
+              "la semaine prochaine",
+              "minggu depan"
+            ],
+            [
+              "avant-hier",
+              "kemarin lusa",
+              "ce mois-ci",
+              "bulan ini"
+            ],
+            [
+              "après-demain",
+              "lusa",
+              "l'année dernière",
+              "tahun lalu"
+            ],
+            [
+              "ce matin",
+              "pagi ini",
+              "l'année prochaine",
+              "tahun depan"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Musim dan hari besar",
+          "items": [
+            "*le printemps* (musim semi), *l'été* (musim panas), *l'automne* (musim gugur), *l'hiver* (musim dingin).",
+            "*au printemps*, tapi *en été*, *en automne*, *en hiver*. Cuma musim semi yang memakai *au*.",
+            "*Noël* (Natal), *le Nouvel An* (Tahun Baru), *Pâques* (Paskah), *la fête nationale* (14 Juli).",
+            "*Bonnes vacances !* — selamat berlibur. *Bonne année !* — selamat tahun baru."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fr": "le jour",
+      "baca": "l' JUR",
+      "id": "hari"
+    },
+    {
+      "fr": "la semaine",
+      "baca": "la s'-MÈN",
+      "id": "minggu"
+    },
+    {
+      "fr": "le mois",
+      "baca": "l' MWA",
+      "id": "bulan"
+    },
+    {
+      "fr": "l'année (f)",
+      "baca": "la-NE",
+      "id": "tahun"
+    },
+    {
+      "fr": "la date",
+      "baca": "la DAT",
+      "id": "tanggal"
+    },
+    {
+      "fr": "la naissance",
+      "baca": "la nè-SANS",
+      "id": "kelahiran"
+    },
+    {
+      "fr": "aujourd'hui",
+      "baca": "o-jur-DÜI",
+      "id": "hari ini"
+    },
+    {
+      "fr": "l'adresse (f)",
+      "baca": "la-DRÈS",
+      "id": "alamat"
+    },
+    {
+      "fr": "la rue",
+      "baca": "la RÜ",
+      "id": "jalan"
+    },
+    {
+      "fr": "le code postal",
+      "baca": "l' kod pos-TAL",
+      "id": "kode pos"
+    },
+    {
+      "fr": "ouvrir",
+      "baca": "u-VRIR",
+      "id": "membuka"
+    },
+    {
+      "fr": "fermer",
+      "baca": "fèr-ME",
+      "id": "menutup"
+    },
+    {
+      "fr": "ouvert / fermé",
+      "baca": "u-VÈR / fèr-ME",
+      "id": "buka / tutup"
+    },
+    {
+      "fr": "jusqu'à",
+      "baca": "jüs-KA",
+      "id": "sampai"
+    },
+    {
+      "fr": "valable",
+      "baca": "va-LABL'",
+      "id": "berlaku"
+    },
+    {
+      "fr": "complet",
+      "baca": "kom-PLÈ",
+      "id": "lengkap, penuh"
+    },
+    {
+      "fr": "parfait",
+      "baca": "par-FÈ",
+      "id": "sempurna, bagus"
+    },
+    {
+      "fr": "un formulaire",
+      "baca": "an for-mü-LÈR",
+      "id": "formulir"
+    },
+    {
+      "fr": "prochain / dernier",
+      "baca": "pro-SYAN / dèr-NIE",
+      "id": "berikutnya / lalu"
+    },
+    {
+      "fr": "les vacances",
+      "baca": "le va-KANS",
+      "id": "liburan"
+    },
+    {
+      "fr": "l'anniversaire (m)",
+      "baca": "la-ni-vèr-SÈR",
+      "id": "ulang tahun"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis angkanya dengan huruf.",
+      "items": [
+        "72",
+        "80",
+        "91",
+        "68",
+        "99",
+        "250"
+      ]
+    },
+    {
+      "prompt": "Tulis tanggalnya lengkap dengan huruf.",
+      "items": [
+        "1/1",
+        "14/7",
+        "21/8",
+        "31/12",
+        "15/3/2026"
+      ]
+    },
+    {
+      "prompt": "Isi dengan le, atau tulis « rien » kalau kata sandangnya tidak dipakai.",
+      "items": [
+        "Je travaille ____ lundi, tous les lundis.",
+        "____ mardi prochain, je vais à Paris.",
+        "La bibliothèque est fermée ____ dimanche.",
+        "____ samedi, je suis allé au cinéma.",
+        "Je fais du sport ____ mercredi, chaque semaine."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Hari ini hari apa?",
+        "Tanggal lahir saya lima belas Maret.",
+        "Perpustakaan buka Selasa sampai Sabtu.",
+        "Berlaku sampai tiga puluh satu Desember.",
+        "Minggu depan saya berlibur."
+      ]
+    }
+  ],
+  "answers": [
+    "soixante-douze — quatre-vingts — quatre-vingt-onze — soixante-huit — quatre-vingt-dix-neuf — deux cent cinquante",
+    "le premier janvier — le quatorze juillet — le vingt et un août — le trente et un décembre — le quinze mars deux mille vingt-six",
+    "le — rien — le — rien — le",
+    "On est quel jour aujourd'hui ? — Ma date de naissance est le quinze mars. — La bibliothèque ouvre du mardi au samedi. — C'est valable jusqu'au trente et un décembre. — La semaine prochaine, je suis en vacances."
+  ]
+}

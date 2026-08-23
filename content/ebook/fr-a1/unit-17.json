@@ -1,0 +1,194 @@
+{
+  "title": "Menanyakan arah",
+  "title_target": "Pardon, où est la gare ?",
+  "goal": "Menanyakan dan memberi petunjuk jalan dengan bentuk perintah, serta memakai kendaraan umum.",
+  "bekal": [
+    "membentuk perintah dari tiga bentuk kata kerja",
+    "memberi petunjuk arah: belok, lurus, sampai",
+    "bertanya dan memahami jawaban di jalan"
+  ],
+  "wave": "Ulangi **unit 15** dulu: sebutkan lima hal yang kamu sukai dan lima yang tidak, masing-masing dengan tingkat rasa yang berbeda.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Perdu dans le centre-ville",
+      "intro": "Budi tersesat mencari museum. Ia bertanya kepada seorang bapak di trotoar.",
+      "lines": [
+        { "speaker": "Budi:", "text": "Pardon, monsieur. Je cherche le musée des Beaux-Arts.", "id": "Permisi, Pak. Saya cari Museum Seni Rupa.", "literal": "maaf, tuan. saya mencari museum dari-jamak indah-seni." },
+        { "speaker": "Passant:", "text": "Ah, ce n'est pas loin. Continuez tout droit.", "id": "Oh, tidak jauh. Terus lurus saja.", "literal": "ah, itu tidak-adalah tidak jauh. lanjutkan semua lurus." },
+        { "speaker": "Budi:", "text": "Tout droit jusqu'où ?", "id": "Lurus sampai mana?", "literal": "semua lurus sampai-di-mana?" },
+        { "speaker": "Passant:", "text": "Jusqu'au feu rouge. Puis tournez à gauche.", "id": "Sampai lampu merah. Lalu belok kiri.", "literal": "sampai-pada lampu merah. lalu beloklah pada kiri." },
+        { "speaker": "Budi:", "text": "À gauche au feu. D'accord.", "id": "Kiri di lampu merah. Baik.", "literal": "pada kiri pada lampu. setuju." },
+        { "speaker": "Passant:", "text": "Prenez la deuxième rue à droite, après la pharmacie.", "id": "Ambil jalan kedua sebelah kanan, sesudah apotek.", "literal": "ambillah jalan kedua pada kanan, sesudah apotek." },
+        { "speaker": "Budi:", "text": "Et le musée est dans cette rue ?", "id": "Museumnya ada di jalan itu?", "literal": "dan museum adalah dalam ini jalan?" },
+        { "speaker": "Passant:", "text": "Oui, au bout, sur la place. Vous ne pouvez pas le rater.", "id": "Ya, di ujungnya, di alun-alun. Pasti kelihatan.", "literal": "ya, di ujung, di atas alun-alun. kalian tidak bisa tidak dia melewatkan." },
+        { "speaker": "Budi:", "text": "C'est loin à pied ?", "id": "Jauh kalau jalan kaki?", "literal": "itu-adalah jauh dengan kaki?" },
+        { "speaker": "Passant:", "text": "Dix minutes, pas plus. Sinon, prenez le tram, ligne deux.", "id": "Sepuluh menit, tidak lebih. Kalau tidak, naik trem jalur dua.", "literal": "sepuluh menit, tidak lebih. jika-tidak, ambillah trem, jalur dua." },
+        { "speaker": "Budi:", "text": "Merci beaucoup, monsieur. Vous êtes très gentil.", "id": "Terima kasih banyak, Pak. Anda baik sekali.", "literal": "terima-kasih banyak, tuan. kalian adalah sangat baik-hati." },
+        { "speaker": "Passant:", "text": "Je vous en prie. Bonne visite !", "id": "Sama-sama. Selamat berkunjung!", "literal": "saya kepada-kalian darinya memohon. baik kunjungan!" }
+      ],
+      "notes": [
+        "**Bentuk perintah dibuat dengan membuang kata gantinya.** *Tu tournes* → *Tourne !*; *vous tournez* → *Tournez !*; *nous tournons* → *Tournons !* Tidak ada bentuk baru yang perlu dihafal — cukup hapus *tu*, *vous*, atau *nous*.",
+        "**⚠️ Kata kerja -er membuang huruf s di bentuk tu.** *Tu parles* → *Parle !*, *tu vas* → *Va !*. Cuma golongan -er (dan *aller*) yang begini; golongan lain menyimpan s-nya: *tu finis* → *Finis !*",
+        "**Kepada orang asing, selalu bentuk vous.** *Tournez*, *prenez*, *continuez*. Memakai bentuk *tu* kepada orang yang baru ditemui di jalan terdengar kurang ajar — dan bentuk perintah membuatnya terasa dua kali lebih kasar.",
+        "**Pardon adalah cara membuka percakapan di jalan.** Kembarannya *excusez-moi*. Sesudahnya wajib menyebut *monsieur* atau *madame* — orang Prancis merasa disapa dengan benar, dan jawabannya biasanya jadi lebih panjang dan membantu.",
+        "**Jusqu'au feu rouge** — *jusqu'à* melebur dengan kata sandang seperti *à* biasa: *jusqu'**au** feu*, *jusqu'**à la** gare*, *jusqu'**aux** feux*.",
+        "**La deuxième rue** — bilangan urutan dibentuk dengan menambahkan **-ième**: *deux → deuxième*, *trois → troisième*. Kekecualiannya cuma yang pertama: *premier / première*.",
+        "**Vous ne pouvez pas le rater** = \"Anda tidak mungkin melewatkannya\", yaitu \"pasti kelihatan\". Ungkapan baku pemberi petunjuk jalan di seluruh Prancis, dan sayangnya tidak selalu benar."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk perintah",
+          "body": ["Tiga bentuk saja, dan semuanya diambil dari bentuk sekarang yang sudah kamu kuasai."],
+          "table": {
+            "head": ["Kata kerja", "tu", "vous", "nous"],
+            "rows": [
+              ["tourner (-er)", "Tourne !", "Tournez !", "Tournons !"],
+              ["prendre (-re)", "Prends !", "Prenez !", "Prenons !"],
+              ["finir (-ir)", "Finis !", "Finissez !", "Finissons !"],
+              ["aller", "Va !", "Allez !", "Allons !"],
+              ["être", "Sois !", "Soyez !", "Soyons !"],
+              ["avoir", "Aie !", "Ayez !", "Ayons !"]
+            ]
+          },
+          "after": [
+            "Menyangkalnya mengapit seperti biasa: *Ne tourne pas !*, *N'ayez pas peur !*",
+            "*Être* dan *avoir* punya bentuk perintah sendiri yang harus dihafal — tapi keduanya jarang dipakai kecuali dalam ungkapan baku: *Sois sage !* (jadilah anak baik), *N'aie pas peur !* (jangan takut), *Soyez le bienvenu !* (selamat datang).",
+            "Kata kerja balik badan menaruh kata gantinya **di belakang** dengan tanda hubung: *Lève-**toi** !*, *Asseyez-**vous** !*, *Dépêche-**toi** !* Tapi dalam bentuk sangkalan, ia kembali ke depan: *Ne te lève pas !*"
+          ]
+        },
+        {
+          "title": "Kosakata petunjuk jalan",
+          "body": ["Yang benar-benar diucapkan orang Prancis saat menunjukkan arah."],
+          "table": {
+            "head": ["Français", "Cara baca", "Bahasa Indonesia"],
+            "rows": [
+              ["tout droit", "tu DRWA", "lurus terus"],
+              ["à droite", "a DRWAT", "ke kanan"],
+              ["à gauche", "a GOSY", "ke kiri"],
+              ["tournez", "tur-NE", "beloklah"],
+              ["continuez", "kon-ti-nü-E", "lanjutkan"],
+              ["traversez", "tra-vèr-SE", "seberangi"],
+              ["prenez la rue…", "pr'-NE la RÜ", "ambil jalan…"],
+              ["jusqu'à", "jüs-KA", "sampai"],
+              ["au coin de", "o KWAN d'", "di pojok"],
+              ["le feu rouge", "l' fö RUJ", "lampu merah"],
+              ["le carrefour", "l' kar-FUR", "persimpangan"],
+              ["le rond-point", "l' ron-PWAN", "bundaran"]
+            ]
+          },
+          "after": [
+            "⚠️ *À droite* (ke kanan) dan *tout droit* (lurus) hanya berbeda satu kata dan sering tertukar. Salah dengar di persimpangan bisa membawamu ke ujung kota yang salah.",
+            "Bilangan urutan: *premier/première, deuxième, troisième, quatrième, cinquième*. Dari *cinq* ke atas cukup tambahkan -ième, dengan sedikit penyesuaian ejaan (*neuf → neuvième*)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kendaraan umum",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Français", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["le métro", "l' me-TRO", "kereta bawah tanah"],
+            ["le bus", "l' BÜS", "bus"],
+            ["le tram", "l' TRAM", "trem"],
+            ["le train", "l' TRAN", "kereta"],
+            ["un billet", "an bi-YÈ", "tiket"],
+            ["un ticket", "an ti-KÈ", "karcis"],
+            ["une ligne", "ün LINY", "jalur"],
+            ["une station", "ün sta-SION", "stasiun metro"],
+            ["un arrêt", "an-na-RÈ", "halte"],
+            ["une correspondance", "ün ko-res-pon-DANS", "ganti jalur"],
+            ["un aller simple", "an-na-le SANPL'", "tiket sekali jalan"],
+            ["un aller-retour", "an-na-le r'-TUR", "tiket pulang pergi"],
+            ["le quai", "l' KÈ", "peron"],
+            ["composter", "kom-pos-TE", "memvalidasi tiket"]
+          ]
+        },
+        { "type": "kotak", "title": "Kalimat yang menyelamatkan", "items": [
+          "*Pardon, où est la gare, s'il vous plaît ?* — Permisi, stasiunnya di mana?",
+          "*Je cherche cette adresse.* — Saya cari alamat ini.",
+          "*Je suis perdu / perdue.* — Saya tersesat.",
+          "*C'est loin d'ici ?* — Jauh dari sini?",
+          "*Quel bus va au centre-ville ?* — Bus mana yang ke pusat kota?",
+          "*Vous pouvez répéter plus lentement, s'il vous plaît ?* — Bisa diulang lebih pelan?",
+          "*Un aller-retour pour Paris, s'il vous plaît.* — Tiket pulang pergi ke Paris."
+        ] },
+        { "type": "p", "text": "Kalimat terakhir di kotak itu — *plus lentement* — mungkin yang paling berguna dari seluruh unit ini. Orang Prancis berbicara cepat, dan meminta mereka melambat sepenuhnya wajar." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "fr": "pardon", "baca": "par-DON", "id": "permisi, maaf" },
+    { "fr": "tout droit", "baca": "tu DRWA", "id": "lurus terus" },
+    { "fr": "à droite / à gauche", "baca": "a DRWAT / a GOSY", "id": "ke kanan / ke kiri" },
+    { "fr": "tourner", "baca": "tur-NE", "id": "berbelok" },
+    { "fr": "continuer", "baca": "kon-ti-nü-E", "id": "melanjutkan" },
+    { "fr": "traverser", "baca": "tra-vèr-SE", "id": "menyeberangi" },
+    { "fr": "le feu rouge", "baca": "l' fö RUJ", "id": "lampu merah" },
+    { "fr": "le carrefour", "baca": "l' kar-FUR", "id": "persimpangan" },
+    { "fr": "le coin", "baca": "l' KWAN", "id": "pojok, sudut" },
+    { "fr": "le centre-ville", "baca": "l' santr'-VIL", "id": "pusat kota" },
+    { "fr": "un musée", "baca": "an mü-ZE", "id": "museum" },
+    { "fr": "perdu", "baca": "pèr-DÜ", "id": "tersesat, hilang" },
+    { "fr": "deuxième", "baca": "dö-ZIÈM", "id": "kedua" },
+    { "fr": "sinon", "baca": "si-NON", "id": "kalau tidak" },
+    { "fr": "un plan", "baca": "an PLAN", "id": "peta" },
+    { "fr": "lentement", "baca": "lant'-MAN", "id": "pelan-pelan" },
+    { "fr": "répéter", "baca": "re-pe-TE", "id": "mengulang" },
+    { "fr": "une visite", "baca": "ün vi-ZIT", "id": "kunjungan" },
+    { "fr": "un passant", "baca": "an pa-SAN", "id": "orang yang lewat" },
+    { "fr": "à pied", "baca": "a PIE", "id": "jalan kaki" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi bentuk perintah vous.",
+      "items": [
+        "Vous tournez à gauche.",
+        "Vous prenez la deuxième rue.",
+        "Vous continuez tout droit.",
+        "Vous traversez la place.",
+        "Vous allez jusqu'au feu."
+      ]
+    },
+    {
+      "prompt": "Ubah jadi bentuk perintah tu.",
+      "items": [
+        "Tu parles plus lentement.",
+        "Tu finis ton travail.",
+        "Tu vas à la gare.",
+        "Tu attends ici.",
+        "Tu te lèves."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata petunjuk arah yang tepat.",
+      "items": [
+        "Continuez ____ droit.",
+        "Tournez ____ gauche au feu.",
+        "Allez ____ au carrefour.",
+        "Prenez la ____ rue à droite.",
+        "Le musée est ____ bout de la rue."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Permisi, stasiunnya di mana?",
+        "Terus lurus sampai lampu merah.",
+        "Lalu belok kiri.",
+        "Saya tersesat.",
+        "Bisa diulang lebih pelan?"
+      ]
+    }
+  ],
+  "answers": [
+    "Tournez à gauche. — Prenez la deuxième rue. — Continuez tout droit. — Traversez la place. — Allez jusqu'au feu.",
+    "Parle plus lentement. — Finis ton travail. — Va à la gare. — Attends ici. — Lève-toi.",
+    "tout — à — jusqu' — deuxième — au",
+    "Pardon, où est la gare, s'il vous plaît ? — Continuez tout droit jusqu'au feu rouge. — Puis tournez à gauche. — Je suis perdu. — Vous pouvez répéter plus lentement, s'il vous plaît ?"
+  ]
+}

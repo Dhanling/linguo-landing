@@ -1,0 +1,199 @@
+{
+  "title": "Makan malam di restoran",
+  "title_target": "Au restaurant",
+  "goal": "Memesan makanan lengkap dari pembuka sampai penutup, bertanya tentang menu, dan membayar.",
+  "bekal": [
+    "memesan tiga babak makanan Prancis dengan bahasa yang tepat",
+    "memakai *je prends* dan *pour moi* saat memesan",
+    "menyatakan pendapat tentang makanan: *c'est délicieux*"
+  ],
+  "wave": "Ulangi **unit 11** dulu: gambarkan tiga orang yang kamu kenal — tinggi badan, rambut, sifat — dan bandingkan mereka satu sama lain.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Le menu du soir",
+      "intro": "Budi dan Camille makan malam di sebuah bistro kecil.",
+      "lines": [
+        { "speaker": "Serveuse:", "text": "Bonsoir. Vous avez choisi ?", "id": "Selamat malam. Sudah pilih?", "literal": "sore-baik. kalian sudah memilih?" },
+        { "speaker": "Camille:", "text": "Oui. Je prends le menu à vingt-deux euros.", "id": "Sudah. Saya ambil paket dua puluh dua euro.", "literal": "ya. saya ambil menu pada dua-puluh-dua euro." },
+        { "speaker": "Serveuse:", "text": "Très bien. En entrée ?", "id": "Baik. Pembukanya?", "literal": "sangat baik. dalam masuk?" },
+        { "speaker": "Camille:", "text": "Une soupe à l'oignon, s'il vous plaît.", "id": "Sup bawang, tolong.", "literal": "sebuah sup pada bawang, tolong." },
+        { "speaker": "Serveuse:", "text": "Et comme plat principal ?", "id": "Untuk menu utamanya?", "literal": "dan sebagai hidangan utama?" },
+        { "speaker": "Camille:", "text": "Le poulet rôti avec des frites.", "id": "Ayam panggang dengan kentang goreng.", "literal": "ayam panggang dengan beberapa kentang-goreng." },
+        { "speaker": "Serveuse:", "text": "Et pour monsieur ?", "id": "Untuk Bapak?", "literal": "dan untuk tuan?" },
+        { "speaker": "Budi:", "text": "Pour moi, une salade de chèvre chaud, puis du poisson.", "id": "Untuk saya, salad keju kambing hangat, lalu ikan.", "literal": "untuk saya, sebuah salad dari kambing panas, lalu sebagian ikan." },
+        { "speaker": "Serveuse:", "text": "Et comme boisson ?", "id": "Minumnya?", "literal": "dan sebagai minuman?" },
+        { "speaker": "Budi:", "text": "Une carafe d'eau, s'il vous plaît. C'est gratuit, non ?", "id": "Sekendi air putih, tolong. Gratis, kan?", "literal": "sebuah kendi dari-air, tolong. itu-adalah gratis, tidak?" },
+        { "speaker": "Serveuse:", "text": "Bien sûr. Je vous apporte ça tout de suite.", "id": "Tentu. Saya bawakan sekarang.", "literal": "baik pasti. saya kepada-kalian membawa itu segera." },
+        { "speaker": "Camille:", "text": "Merci. Et l'addition à la fin, s'il vous plaît.", "id": "Terima kasih. Dan bonnya nanti di akhir, tolong.", "literal": "terima-kasih. dan tagihan pada akhir, tolong." }
+      ],
+      "notes": [
+        "**Makan malam Prancis punya tiga babak.** *L'entrée* (hidangan pembuka), *le plat principal* (menu utama), *le dessert* (penutup). ⚠️ *Entrée* berarti pembuka, **bukan** menu utama seperti dalam bahasa Inggris Amerika — jebakan yang menjatuhkan banyak turis.",
+        "**Le menu bukan daftar makanan.** Daftar makanan adalah *la carte*. *Le menu* berarti paket dengan harga tetap. Karena itu memesan \"à la carte\" berarti memilih satu-satu di luar paket.",
+        "**Une carafe d'eau gratis dan itu hak pelanggan.** Restoran Prancis wajib menyediakan air keran gratis kalau diminta. Kalau kamu cuma berkata *de l'eau*, kamu bisa disodori air botol berbayar.",
+        "**Pour moi** adalah cara paling ringan menyebut pesanan sendiri saat pelayannya berpindah orang. Kembarannya *je prends…* dan *je vais prendre…* Ketiganya dipakai bergantian.",
+        "**Comme entrée, comme boisson** — kata *comme* di sini berarti \"sebagai\", bukan \"seperti\". Susunan yang dipakai pelayan di seluruh Prancis.",
+        "**Tout de suite** (tu d' SÜIT) = segera, sekarang juga. Salah satu ungkapan waktu yang paling sering terdengar di restoran dan toko.",
+        "**Bien sûr** = tentu saja. Jangan tertukar dengan *bien* (baik) saja. Kembaran santainya *évidemment* dan *bien entendu*."
+      ],
+      "grammars": [
+        {
+          "title": "Kata kerja yang dipakai memesan",
+          "body": ["Empat kata kerja yang menutup seluruh percakapan restoran. Dua di antaranya sudah kamu kenal."],
+          "table": {
+            "head": ["", "prendre", "vouloir", "boire", "servir"],
+            "rows": [
+              ["je", "prends", "veux", "bois", "sers"],
+              ["tu", "prends", "veux", "bois", "sers"],
+              ["il / elle", "prend", "veut", "boit", "sert"],
+              ["nous", "prenons", "voulons", "buvons", "servons"],
+              ["vous", "prenez", "voulez", "buvez", "servez"],
+              ["ils / elles", "prennent", "veulent", "boivent", "servent"]
+            ]
+          },
+          "after": [
+            "⚠️ *Je veux* terdengar kasar di restoran — seperti anak kecil menuntut. Yang dipakai orang dewasa adalah *je voudrais* (bentuk halusnya) atau *je prends*.",
+            "*Vouloir* dipakai untuk keinginan yang kuat, dan bentuk halusnya adalah satu-satunya bentuk *conditionnel* yang perlu kamu kuasai di A1: *je voudrais, tu voudrais, il voudrait, nous voudrions, vous voudriez, ils voudraient*."
+          ]
+        },
+        {
+          "title": "Menyatakan pendapat tentang makanan",
+          "body": ["Kata sifat yang paling sering terdengar di meja makan Prancis, disusun dari yang paling memuji sampai yang paling menolak."],
+          "table": {
+            "head": ["Français", "Cara baca", "Bahasa Indonesia"],
+            "rows": [
+              ["C'est délicieux !", "sè de-li-SIÖ", "Enak sekali!"],
+              ["C'est excellent.", "sè-tex-se-LAN", "Sangat baik."],
+              ["C'est très bon.", "sè trè BON", "Enak sekali."],
+              ["Ce n'est pas mal.", "s' nè pa MAL", "Lumayan."],
+              ["C'est un peu fade.", "sè-tan pö FAD", "Agak hambar."],
+              ["C'est trop salé.", "sè tro sa-LE", "Terlalu asin."],
+              ["C'est trop épicé.", "sè tro-pe-pi-SE", "Terlalu pedas."],
+              ["Je n'aime pas ça.", "zyö nèm pa SA", "Saya tidak suka ini."]
+            ]
+          },
+          "after": [
+            "⚠️ *Bon* untuk rasa, *bien* untuk perbuatan. Makanannya *bon*, tapi kokinya memasak *bien*. Menukar keduanya adalah salah satu kesalahan yang paling sering terdengar dari pelajar asing.",
+            "*Ce n'est pas mal* terdengar lemah kalau diterjemahkan harfiah, tapi bagi orang Prancis itu pujian yang cukup hangat."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Membaca daftar makanan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Bagian", "Français", "Contoh isinya"],
+          "rows": [
+            ["Pembuka", "l'entrée", "*soupe, salade, terrine, charcuterie*"],
+            ["Utama", "le plat principal", "*poulet, bœuf, poisson, pâtes*"],
+            ["Pendamping", "l'accompagnement", "*frites, riz, légumes, purée*"],
+            ["Keju", "le fromage", "*plateau de fromages*"],
+            ["Penutup", "le dessert", "*tarte, glace, mousse au chocolat*"],
+            ["Minuman", "la boisson", "*eau, vin, jus, café*"]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": ["Français", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["une soupe", "ün SUP", "sup"],
+            ["le poulet rôti", "l' pu-lè ro-TI", "ayam panggang"],
+            ["le bœuf", "l' BÖF", "daging sapi"],
+            ["le poisson", "l' pwa-SON", "ikan"],
+            ["les frites", "le FRIT", "kentang goreng"],
+            ["les légumes", "le le-GÜM", "sayuran"],
+            ["une tarte", "ün TART", "pai"],
+            ["une glace", "ün GLAS", "es krim"],
+            ["le vin rouge / blanc", "l' van RUJ / BLAN", "anggur merah / putih"],
+            ["une carafe d'eau", "ün ka-raf DO", "kendi air putih"],
+            ["saignant / à point / bien cuit", "sè-NYAN / a PWAN / bien KÜI", "setengah matang / sedang / matang"],
+            ["l'addition", "la-di-SION", "tagihan"]
+          ]
+        },
+        { "type": "kotak", "title": "Kalimat yang menyelamatkan", "items": [
+          "*Une table pour deux, s'il vous plaît.* — Meja untuk dua orang.",
+          "*Qu'est-ce que vous me conseillez ?* — Anda menyarankan yang mana?",
+          "*Je suis végétarien / végétarienne.* — Saya vegetarian.",
+          "*Je suis allergique aux fruits de mer.* — Saya alergi makanan laut.",
+          "*C'est sans porc ?* — Ini tanpa babi?",
+          "*L'addition, s'il vous plaît.* — Bonnya, tolong.",
+          "*On peut payer séparément ?* — Boleh bayar terpisah?"
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "fr": "un restaurant", "baca": "an res-to-RAN", "id": "restoran" },
+    { "fr": "la carte", "baca": "la KART", "id": "daftar makanan" },
+    { "fr": "le menu", "baca": "l' m'-NÜ", "id": "paket makanan" },
+    { "fr": "une entrée", "baca": "ün-nan-TRE", "id": "hidangan pembuka" },
+    { "fr": "le plat principal", "baca": "l' pla pran-si-PAL", "id": "menu utama" },
+    { "fr": "le dessert", "baca": "l' de-SÈR", "id": "hidangan penutup" },
+    { "fr": "une boisson", "baca": "ün bwa-SON", "id": "minuman" },
+    { "fr": "commander", "baca": "ko-man-DE", "id": "memesan" },
+    { "fr": "servir", "baca": "sèr-VIR", "id": "melayani, menyajikan" },
+    { "fr": "apporter", "baca": "a-por-TE", "id": "membawakan" },
+    { "fr": "délicieux", "baca": "de-li-SIÖ", "id": "lezat" },
+    { "fr": "salé / sucré", "baca": "sa-LE / sü-KRE", "id": "asin / manis" },
+    { "fr": "épicé", "baca": "e-pi-SE", "id": "pedas" },
+    { "fr": "fade", "baca": "FAD", "id": "hambar" },
+    { "fr": "gratuit", "baca": "gra-TÜI", "id": "gratis" },
+    { "fr": "bien sûr", "baca": "bien SÜR", "id": "tentu saja" },
+    { "fr": "tout de suite", "baca": "tu d' SÜIT", "id": "segera" },
+    { "fr": "la fin", "baca": "la FAN", "id": "akhir" },
+    { "fr": "conseiller", "baca": "kon-sè-YE", "id": "menyarankan" },
+    { "fr": "un pourboire", "baca": "an pur-BWAR", "id": "uang tip" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+      "items": [
+        "Je ____ (prendre) le menu.",
+        "Tu ____ (vouloir) un dessert ?",
+        "Elle ____ (boire) du vin rouge.",
+        "Nous ____ (prendre) une entrée.",
+        "Vous ____ (vouloir) l'addition ?",
+        "Ils ____ (boire) de l'eau."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata yang tepat dari unit ini.",
+      "items": [
+        "Vous avez ____ ? (sudah pilih)",
+        "Et comme ____ principal ?",
+        "Une ____ d'eau, s'il vous plaît.",
+        "L'____, s'il vous plaît.",
+        "C'est ____ ! (enak sekali)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "prends / je / menu / le",
+        "moi / une / pour / salade",
+        "plaît / l' / s'il / vous / addition",
+        "délicieux / c' / est",
+        "boisson / comme / et / ?"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Meja untuk dua orang, tolong.",
+        "Untuk saya, ikan.",
+        "Anda menyarankan yang mana?",
+        "Saya alergi makanan laut.",
+        "Boleh bayar terpisah?"
+      ]
+    }
+  ],
+  "answers": [
+    "prends — veux — boit — prenons — voulez — boivent",
+    "choisi — plat — carafe — addition — délicieux",
+    "Je prends le menu. — Pour moi, une salade. — L'addition, s'il vous plaît. — C'est délicieux. — Et comme boisson ?",
+    "Une table pour deux, s'il vous plaît. — Pour moi, du poisson. — Qu'est-ce que vous me conseillez ? — Je suis allergique aux fruits de mer. — On peut payer séparément ?"
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "title": "Cuacanya bagaimana?",
+  "title_target": "Quel temps fait-il ?",
+  "goal": "Membicarakan cuaca dan musim, menyatakan keadaan badan, dan menguasai kata kerja tanpa pelaku.",
+  "bekal": [
+    "memakai *il fait*, *il y a*, dan *il pleut* untuk cuaca",
+    "menyebut musim dan suhu",
+    "menyatakan keadaan badan dengan *avoir* dan *être*"
+  ],
+  "wave": "Ulangi **unit 16** dulu: susun lima kalimat rencana dengan *je vais* + kata kerja dasar, lalu ubah tiga di antaranya jadi keharusan dengan *je dois*.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Un dimanche gris",
+      "intro": "Camille menelepon Budi untuk mengajaknya jalan-jalan, tapi cuacanya belum pasti.",
+      "lines": [
+        { "speaker": "Camille:", "text": "Allô Budi ? Quel temps fait-il chez toi ?", "id": "Halo Budi? Cuacanya bagaimana di tempatmu?", "literal": "halo Budi? berapa cuaca membuat-dia di-tempat kamu?" },
+        { "speaker": "Budi:", "text": "Il fait gris et il y a du vent. Et chez toi ?", "id": "Mendung dan berangin. Di tempatmu?", "literal": "itu membuat abu-abu dan itu ada sebagian angin. dan di-tempat kamu?" },
+        { "speaker": "Camille:", "text": "Ici il pleut depuis ce matin. C'est déprimant.", "id": "Di sini hujan dari pagi. Bikin lesu.", "literal": "di-sini itu hujan sejak ini pagi. itu-adalah menekan." },
+        { "speaker": "Budi:", "text": "On annule la promenade, alors ?", "id": "Jadi jalan-jalannya dibatalkan?", "literal": "orang membatalkan jalan-jalan, maka?" },
+        { "speaker": "Camille:", "text": "Attends. La météo dit qu'il va faire beau cet après-midi.", "id": "Tunggu. Ramalan cuaca bilang siang nanti cerah.", "literal": "tunggulah. cuaca mengatakan bahwa itu akan membuat indah ini sesudah-tengah-hari." },
+        { "speaker": "Budi:", "text": "Vraiment ? Il fait quelle température ?", "id": "Serius? Suhunya berapa?", "literal": "sungguh? itu membuat berapa suhu?" },
+        { "speaker": "Camille:", "text": "Quinze degrés. C'est doux pour un mois d'octobre.", "id": "Lima belas derajat. Hangat untuk bulan Oktober.", "literal": "lima-belas derajat. itu-adalah lembut untuk sebuah bulan dari-Oktober." },
+        { "speaker": "Budi:", "text": "Chez moi il fait toujours trente degrés en octobre.", "id": "Di negara saya Oktober selalu tiga puluh derajat.", "literal": "di-tempat saya itu membuat selalu tiga-puluh derajat dalam Oktober." },
+        { "speaker": "Camille:", "text": "Trente ! Tu dois avoir froid ici tout le temps.", "id": "Tiga puluh! Kamu pasti kedinginan terus di sini.", "literal": "tiga-puluh! kamu harus punya dingin di-sini semua waktu." },
+        { "speaker": "Budi:", "text": "J'ai froid, oui. Mais je m'habitue lentement.", "id": "Kedinginan, memang. Tapi saya pelan-pelan terbiasa.", "literal": "saya-punya dingin, ya. tapi saya diriku membiasakan pelan-pelan." },
+        { "speaker": "Camille:", "text": "Prends une écharpe. Et un parapluie, on ne sait jamais.", "id": "Bawa syal ya. Dan payung, siapa tahu.", "literal": "ambillah sebuah syal. dan sebuah payung, orang tidak tahu tak-pernah." },
+        { "speaker": "Budi:", "text": "D'accord. À quatorze heures devant le parc ?", "id": "Oke. Jam dua di depan taman?", "literal": "setuju. pada empat-belas jam di-depan taman?" }
+      ],
+      "notes": [
+        "**Cuaca memakai il yang tidak menunjuk siapa-siapa.** *Il fait beau*, *il pleut*, *il neige* — kata *il* di situ kosong, persis seperti pada *il y a* dan *il est dix heures*. Bahasa Indonesia tidak butuh pelaku sama sekali (\"hujan\"), sedangkan bahasa Prancis selalu butuh sesuatu di kursi pelaku.",
+        "**Tiga pola cuaca yang harus dibedakan.** *Il **fait*** + kata sifat (*il fait beau, il fait froid*); *il y a* + kata benda (*il y a du vent, il y a du soleil*); dan kata kerja sendiri (*il pleut, il neige*). Memilih pola yang salah — *il fait du pluie* — langsung terdengar keliru.",
+        "**⚠️ Cuaca dingin memakai faire, badan dingin memakai avoir.** *Il **fait** froid* = udaranya dingin. *J'**ai** froid* = saya kedinginan. Menukarnya menghasilkan kalimat yang lucu: *je suis froid* berarti \"saya orangnya dingin\", yaitu tidak ramah.",
+        "**Chez toi, chez moi** = di tempatmu, di tempatku. Kata *chez* berarti \"di rumah/tempat\" seseorang, dan tidak punya padanan satu kata dalam bahasa Indonesia. Juga dipakai untuk toko: *chez le boulanger*, *chez le médecin*.",
+        "**Il va faire beau** — rencana masa depan dari unit 16 yang dipakai untuk ramalan cuaca. Perhatikan bahwa *faire* tetap bentuk dasar sesudah *aller*.",
+        "**Quinze degrés** — suhu memakai *degrés* dan tidak pernah dibuang. Di bawah nol: *moins cinq degrés* atau *cinq degrés en dessous de zéro*.",
+        "**On ne sait jamais** = \"siapa tahu\", harfiahnya \"orang tak pernah tahu\". Ungkapan yang dipakai persis seperti dalam bahasa Indonesia."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga pola cuaca",
+          "body": ["Pilih polanya menurut kata yang mengikutinya, bukan menurut artinya."],
+          "table": {
+            "head": ["Pola", "Contoh", "Bahasa Indonesia"],
+            "rows": [
+              ["**il fait** + kata sifat", "*Il fait beau.*", "Cuacanya bagus"],
+              ["", "*Il fait mauvais.*", "Cuacanya buruk"],
+              ["", "*Il fait chaud / froid.*", "Panas / dingin"],
+              ["", "*Il fait gris.*", "Mendung"],
+              ["**il y a** + kata benda", "*Il y a du vent.*", "Berangin"],
+              ["", "*Il y a du soleil.*", "Cerah, ada matahari"],
+              ["", "*Il y a des nuages.*", "Berawan"],
+              ["", "*Il y a du brouillard.*", "Berkabut"],
+              ["**kata kerja sendiri**", "*Il pleut.*", "Hujan"],
+              ["", "*Il neige.*", "Bersalju"],
+              ["", "*Il gèle.*", "Membeku"]
+            ]
+          },
+          "after": [
+            "Menanyakan cuaca: *Quel temps fait-il ?* atau, lebih santai, *Il fait quel temps ?* Jawabannya selalu memakai salah satu dari tiga pola di atas.",
+            "⚠️ Kata *le temps* punya dua arti: \"cuaca\" dan \"waktu\". *Je n'ai pas le temps* = saya tidak punya waktu; *le temps est beau* = cuacanya bagus. Konteksnya yang membedakan."
+          ]
+        },
+        {
+          "title": "Keadaan badan: avoir atau être",
+          "body": ["Salah satu tempat di mana pelajar Indonesia paling sering memilih kata kerja yang keliru."],
+          "table": {
+            "head": ["Français", "Bahasa Indonesia", "Kata kerjanya"],
+            "rows": [
+              ["j'ai froid", "saya kedinginan", "avoir"],
+              ["j'ai chaud", "saya kepanasan", "avoir"],
+              ["j'ai faim / soif", "saya lapar / haus", "avoir"],
+              ["j'ai sommeil", "saya mengantuk", "avoir"],
+              ["j'ai mal à la tête", "kepala saya sakit", "avoir"],
+              ["je suis fatigué", "saya lelah", "être"],
+              ["je suis malade", "saya sakit", "être"],
+              ["je suis en forme", "saya sehat bugar", "être"]
+            ]
+          },
+          "after": [
+            "Polanya kasar tapi berguna: kalau yang dirasakan bisa dibayangkan sebagai **sesuatu yang dimiliki** (rasa lapar, rasa dingin, rasa sakit), pakai *avoir*. Kalau ia **keadaan diri**, pakai *être*.",
+            "*Avoir mal à* + bagian tubuh: *j'ai mal **à la** tête*, *au ventre*, *aux dents*, *à la gorge*. Peleburannya seperti biasa."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Cuaca, musim, dan tubuh",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Musim", "Cara baca", "Kata depannya", "Cuaca khasnya"],
+          "rows": [
+            ["le printemps", "l' pran-TAN", "**au** printemps", "*il fait doux, il pleut*"],
+            ["l'été", "le-TE", "**en** été", "*il fait chaud, il y a du soleil*"],
+            ["l'automne", "lo-TON", "**en** automne", "*il fait gris, il y a du vent*"],
+            ["l'hiver", "li-VÈR", "**en** hiver", "*il fait froid, il neige*"]
+          ]
+        },
+        { "type": "p", "text": "Cuma musim semi yang memakai *au*; tiga sisanya memakai *en*. Tidak ada alasannya — hafalkan saja." },
+        {
+          "type": "tabel",
+          "head": ["Bagian tubuh", "Cara baca", "Bagian tubuh", "Cara baca"],
+          "rows": [
+            ["la tête", "la TÈT", "le ventre", "l' VANTR'"],
+            ["les yeux", "le-ZIÖ", "le dos", "l' DO"],
+            ["le nez", "l' NE", "la main", "la MAN"],
+            ["la bouche", "la BUSY", "le bras", "l' BRA"],
+            ["les dents", "le DAN", "la jambe", "la JANB"],
+            ["la gorge", "la GORJ", "le pied", "l' PIE"]
+          ]
+        },
+        { "type": "kotak", "title": "Di apotek dan dokter", "items": [
+          "*J'ai mal à la tête.* — Kepala saya sakit.",
+          "*Je suis malade depuis hier.* — Saya sakit sejak kemarin.",
+          "*J'ai de la fièvre.* — Saya demam.",
+          "*Vous avez quelque chose contre le rhume ?* — Ada obat flu?",
+          "*Je voudrais prendre rendez-vous chez le médecin.* — Saya mau bikin janji dengan dokter.",
+          "*Ça va mieux.* — Sudah membaik."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "fr": "le temps", "baca": "l' TAN", "id": "cuaca, waktu" },
+    { "fr": "la météo", "baca": "la me-te-O", "id": "ramalan cuaca" },
+    { "fr": "il fait beau", "baca": "il fè BO", "id": "cuacanya bagus" },
+    { "fr": "il pleut", "baca": "il PLÖ", "id": "hujan" },
+    { "fr": "il neige", "baca": "il NÈJ", "id": "bersalju" },
+    { "fr": "le vent", "baca": "l' VAN", "id": "angin" },
+    { "fr": "le soleil", "baca": "l' so-LÈY", "id": "matahari" },
+    { "fr": "un nuage", "baca": "an nü-AJ", "id": "awan" },
+    { "fr": "le brouillard", "baca": "l' bru-YAR", "id": "kabut" },
+    { "fr": "un degré", "baca": "an d'-GRE", "id": "derajat" },
+    { "fr": "la température", "baca": "la tan-pe-ra-TÜR", "id": "suhu" },
+    { "fr": "doux", "baca": "DU", "id": "sejuk, lembut" },
+    { "fr": "chez", "baca": "sye", "id": "di tempat, di rumah" },
+    { "fr": "annuler", "baca": "a-nü-LE", "id": "membatalkan" },
+    { "fr": "une promenade", "baca": "ün prom-NAD", "id": "jalan-jalan" },
+    { "fr": "un parapluie", "baca": "an pa-ra-PLÜI", "id": "payung" },
+    { "fr": "s'habituer", "baca": "sa-bi-tü-E", "id": "membiasakan diri" },
+    { "fr": "malade", "baca": "ma-LAD", "id": "sakit" },
+    { "fr": "avoir mal à", "baca": "a-vwar MAL a", "id": "merasa sakit di" },
+    { "fr": "la fièvre", "baca": "la FIÈVR'", "id": "demam" },
+    { "fr": "le rhume", "baca": "l' RÜM", "id": "pilek" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan il fait, il y a atau kata kerja cuaca yang tepat.",
+      "items": [
+        "____ beau aujourd'hui.",
+        "____ du vent.",
+        "____ depuis ce matin. (hujan)",
+        "____ froid en hiver.",
+        "____ du soleil.",
+        "____ en janvier. (bersalju)"
+      ]
+    },
+    {
+      "prompt": "Pilih avoir atau être. Tulis bentuknya yang tepat.",
+      "items": [
+        "J' ____ froid.",
+        "Je ____ fatigué.",
+        "Elle ____ mal à la tête.",
+        "Ils ____ malades.",
+        "Nous ____ faim.",
+        "Tu ____ en forme ?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan au atau en.",
+      "items": [
+        "____ printemps",
+        "____ été",
+        "____ automne",
+        "____ hiver",
+        "____ octobre"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Cuacanya bagaimana?",
+        "Mendung dan berangin.",
+        "Di sini hujan sejak pagi.",
+        "Lima belas derajat.",
+        "Kepala saya sakit."
+      ]
+    }
+  ],
+  "answers": [
+    "Il fait — Il y a — Il pleut — Il fait — Il y a — Il neige",
+    "ai — suis — a — sont — avons — es",
+    "au printemps — en été — en automne — en hiver — en octobre",
+    "Quel temps fait-il ? — Il fait gris et il y a du vent. — Ici il pleut depuis ce matin. — Quinze degrés. — J'ai mal à la tête."
+  ]
+}

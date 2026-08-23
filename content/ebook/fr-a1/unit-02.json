@@ -1,0 +1,181 @@
+{
+  "title": "Kenalkan, ini temanku",
+  "title_target": "Je te présente un ami",
+  "goal": "Memperkenalkan orang lain, menyebut pekerjaan dan tempat tinggal, serta membedakan dua cara mengatakan \"dia\": c'est dan il est.",
+  "bekal": [
+    "memperkenalkan orang ketiga dengan *voici* dan *je te présente*",
+    "menyebut pekerjaan tanpa kata sandang: *il est professeur*",
+    "membedakan *c'est* (menunjuk orangnya) dan *il est* (menerangkan sifatnya)"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — À la cafétéria",
+      "intro": "Camille memperkenalkan Budi kepada temannya di kantin kampus.",
+      "lines": [
+        { "speaker": "Camille:", "text": "Budi, je te présente Thomas. C'est un ami.", "id": "Budi, kenalkan ini Thomas. Dia teman saya.", "literal": "Budi, saya kepada-kamu memperkenalkan Thomas. itu-adalah seorang teman." },
+        { "speaker": "Budi:", "text": "Bonjour Thomas, enchanté.", "id": "Halo Thomas, senang berkenalan.", "literal": "hari-baik Thomas, terpesona." },
+        { "speaker": "Thomas:", "text": "Enchanté. Tu es dans la classe de Camille ?", "id": "Senang juga. Kamu sekelas dengan Camille?", "literal": "terpesona. kamu kamu-adalah dalam kelas dari Camille?" },
+        { "speaker": "Budi:", "text": "Oui, on est ensemble. Et toi, tu es étudiant ?", "id": "Ya, kami sekelas. Dan kamu, mahasiswa juga?", "literal": "ya, orang adalah bersama. dan kamu, kamu kamu-adalah mahasiswa?" },
+        { "speaker": "Thomas:", "text": "Non, je travaille. Je suis architecte.", "id": "Bukan, saya bekerja. Saya arsitek.", "literal": "tidak, saya saya-bekerja. saya saya-adalah arsitek." },
+        { "speaker": "Budi:", "text": "Ah, c'est intéressant ! Tu habites à Lyon ?", "id": "Wah, menarik! Kamu tinggal di Lyon?", "literal": "ah, itu-adalah menarik! kamu kamu-tinggal di Lyon?" },
+        { "speaker": "Thomas:", "text": "Oui, j'habite ici depuis trois ans. Et toi ?", "id": "Ya, saya tinggal di sini sejak tiga tahun lalu. Dan kamu?", "literal": "ya, saya-tinggal di-sini sejak tiga tahun. dan kamu?" },
+        { "speaker": "Budi:", "text": "Moi, je suis ici depuis deux semaines seulement.", "id": "Saya baru dua minggu di sini.", "literal": "saya, saya saya-adalah di-sini sejak dua minggu saja." },
+        { "speaker": "Camille:", "text": "Il parle déjà bien français, non ?", "id": "Bahasa Prancisnya sudah bagus, kan?", "literal": "dia berbicara sudah baik prancis, tidak?" },
+        { "speaker": "Thomas:", "text": "Oui, vraiment ! Tu apprends vite.", "id": "Iya, sungguh! Kamu cepat belajar.", "literal": "ya, benar-benar! kamu kamu-belajar cepat." },
+        { "speaker": "Budi:", "text": "Merci ! Mais je fais encore beaucoup de fautes.", "id": "Terima kasih! Tapi saya masih banyak salah.", "literal": "terima-kasih! tapi saya membuat masih banyak dari kesalahan." },
+        { "speaker": "Camille:", "text": "Ce n'est pas grave. C'est normal !", "id": "Tidak apa-apa. Itu wajar!", "literal": "itu tidak-adalah tidak parah. itu-adalah normal!" }
+      ],
+      "notes": [
+        "**Pekerjaan tidak memakai kata sandang.** *Je suis architecte*, bukan *je suis un architecte*. Ini salah satu dari sedikit tempat di mana bahasa Prancis membuang kata sandangnya — dan justru di sinilah pelajar Indonesia sering menambahkannya karena terpengaruh bahasa Inggris (*I am an architect*).",
+        "**On dipakai untuk \"kami\".** Secara tata bahasa *on* berarti \"orang\" dan bentuk kata kerjanya sama dengan *il/elle*, tapi dalam percakapan sehari-hari ia hampir selalu berarti *nous*. *On est ensemble* = kami bersama. *Nous* terdengar lebih resmi; di jalanan, orang Prancis memakai *on*.",
+        "**Depuis = sejak, dan kalimatnya tetap bentuk sekarang.** *J'habite ici depuis trois ans* — harfiahnya \"saya tinggal di sini sejak tiga tahun\". Bahasa Indonesia menambahkan \"sudah\" atau \"lalu\", bahasa Inggris memakai bentuk lampau, tapi bahasa Prancis memakai bentuk sekarang apa adanya.",
+        "**J'habite, bukan je habite.** Kalau kata kerjanya dimulai vokal atau h bisu, *je* dipangkas jadi *j'*. Hal yang sama terjadi pada *le → l'*, *ne → n'*, *de → d'*. Bahasa Prancis tidak suka dua vokal bertabrakan.",
+        "**Non? di ujung kalimat** adalah cara paling ringan meminta persetujuan, sama seperti \"kan?\" dalam bahasa Indonesia. Kembarannya yang lebih sering terdengar: *n'est-ce pas ?* dan, di percakapan santai, *hein ?*",
+        "**Beaucoup de fautes**, bukan *beaucoup fautes*. Sesudah kata takaran seperti *beaucoup*, *peu*, *assez*, *trop*, bahasa Prancis selalu menyelipkan **de** dan membuang kata sandangnya. Aturan ini akan kembali dengan lebih lengkap di unit 12.",
+        "**Ce n'est pas grave** harfiahnya \"itu tidak parah\" — ungkapan paling berguna di seluruh bahasa Prancis. Dipakai untuk memaafkan, menenangkan, dan menutup percakapan yang canggung. Bentuk pendeknya di jalanan: *c'est pas grave*."
+      ],
+      "grammars": [
+        {
+          "title": "C'est atau il est?",
+          "body": ["Dua-duanya diterjemahkan \"dia\" atau \"itu\", dan pelajar Indonesia hampir selalu memilih yang salah. Pembaginya sederhana: lihat kata yang mengikutinya."],
+          "table": {
+            "head": ["Yang mengikuti", "Pakai", "Contoh"],
+            "rows": [
+              ["kata benda + kata sandang", "**c'est**", "*C'est un ami.*"],
+              ["nama orang", "**c'est**", "*C'est Thomas.*"],
+              ["kata sifat yang menerangkan keadaan umum", "**c'est**", "*C'est intéressant.*"],
+              ["pekerjaan (tanpa kata sandang)", "**il / elle est**", "*Il est architecte.*"],
+              ["kebangsaan", "**il / elle est**", "*Elle est française.*"],
+              ["kata sifat tentang orang tertentu", "**il / elle est**", "*Il est grand.*"]
+            ]
+          },
+          "after": [
+            "Jalan pintas yang jarang meleset: **ada kata sandang di belakangnya → c'est**. Tidak ada → *il est*.",
+            "Bentuk jamaknya *ce sont* (*ce sont mes amis*) dan *ils sont* (*ils sont étudiants*). Dalam percakapan, *ce sont* sering diganti *c'est* saja."
+          ]
+        },
+        {
+          "title": "Kata kerja golongan -er, yang pertama",
+          "body": ["Sembilan dari sepuluh kata kerja bahasa Prancis berakhiran **-er** dan semuanya berkelakuan sama. Buang -er-nya, pasang akhiran di bawah."],
+          "table": {
+            "head": ["", "parler (bicara)", "cara baca", "habiter (tinggal)"],
+            "rows": [
+              ["je / j'", "parl**e**", "PARL", "j'habite"],
+              ["tu", "parl**es**", "PARL", "tu habites"],
+              ["il / elle / on", "parl**e**", "PARL", "il habite"],
+              ["nous", "parl**ons**", "par-LON", "nous habitons"],
+              ["vous", "parl**ez**", "par-LE", "vous habitez"],
+              ["ils / elles", "parl**ent**", "PARL", "ils habitent"]
+            ]
+          },
+          "after": [
+            "⚠️ Empat bentuk — *parle, parles, parle, parlent* — dibunyikan **persis sama**: PARL. Akhiran *-es* dan *-ent* sepenuhnya bisu. Yang benar-benar terdengar berbeda cuma *parlons* dan *parlez*.",
+            "Artinya: telingamu tidak akan pernah bisa membedakan *il parle* dari *ils parlent*. Yang membedakan adalah kata gantinya — dan itulah alasan kata ganti tidak pernah boleh dibuang dalam bahasa Prancis.",
+            "Kata kerja lain yang berkelakuan sama dan langsung berguna: *travailler* (bekerja), *aimer* (menyukai), *étudier* (belajar), *regarder* (menonton), *écouter* (mendengarkan), *manger* (makan)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Memperkenalkan orang, tiga cara",
+      "blocks": [
+        { "type": "p", "text": "Bahasa Prancis punya tiga tingkat keresmian untuk perbuatan sesederhana memperkenalkan teman. Pilih menurut siapa lawan bicaramu, bukan menurut siapa yang diperkenalkan." },
+        {
+          "type": "tabel",
+          "head": ["Kalimat", "Cara baca", "Dipakai kepada"],
+          "rows": [
+            ["Voici Thomas.", "vwa-SI to-MA", "Siapa saja — netral, sedikit resmi"],
+            ["Je te présente Thomas.", "zyö t' pre-ZANT", "Teman, sebaya (akrab)"],
+            ["Je vous présente Thomas.", "zyö vu pre-ZANT", "Orang yang dihormati, atau lebih dari satu orang"],
+            ["C'est Thomas, un ami.", "sè to-MA an-na-MI", "Paling santai"]
+          ]
+        },
+        { "type": "p", "text": "Jawaban bakunya *enchanté(e)*. Kalau suasananya santai, cukup *bonjour* sambil menyebut namanya sendiri. Dalam percakapan sehari-hari orang Prancis sering menjawab dengan *salut*." },
+        { "type": "kotak", "title": "Pekerjaan yang paling sering disebut", "items": [
+          "*étudiant / étudiante* (mahasiswa), *professeur* (guru, dosen — tetap sama untuk perempuan), *médecin* (dokter), *ingénieur* (insinyur), *architecte* (arsitek).",
+          "*infirmier / infirmière* (perawat), *serveur / serveuse* (pelayan), *vendeur / vendeuse* (penjual), *cuisinier / cuisinière* (juru masak), *employé / employée* (karyawan).",
+          "Ingat: tanpa kata sandang sesudah *être*. Tapi dengan kata sandang sesudah *c'est* — *c'est un médecin*."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "fr": "présenter", "baca": "pre-zan-TE", "id": "memperkenalkan" },
+    { "fr": "voici", "baca": "vwa-SI", "id": "ini (menunjuk)" },
+    { "fr": "un ami / une amie", "baca": "an-na-MI", "id": "teman" },
+    { "fr": "la classe", "baca": "la KLAS", "id": "kelas" },
+    { "fr": "ensemble", "baca": "an-SAN-bl'", "id": "bersama" },
+    { "fr": "un étudiant", "baca": "an-ne-tü-DIAN", "id": "mahasiswa" },
+    { "fr": "travailler", "baca": "tra-va-YE", "id": "bekerja" },
+    { "fr": "un architecte", "baca": "an-nar-syi-TEKT", "id": "arsitek" },
+    { "fr": "intéressant", "baca": "an-te-re-SAN", "id": "menarik" },
+    { "fr": "habiter", "baca": "a-bi-TE", "id": "tinggal, berdiam" },
+    { "fr": "ici", "baca": "i-SI", "id": "di sini" },
+    { "fr": "depuis", "baca": "d'-PÜI", "id": "sejak" },
+    { "fr": "un an / une année", "baca": "an-NAN / ü-na-NE", "id": "tahun" },
+    { "fr": "une semaine", "baca": "ün s'-MÈN", "id": "minggu" },
+    { "fr": "seulement", "baca": "söl-MAN", "id": "saja, hanya" },
+    { "fr": "déjà", "baca": "de-ZYA", "id": "sudah" },
+    { "fr": "vraiment", "baca": "vrè-MAN", "id": "sungguh, benar-benar" },
+    { "fr": "apprendre", "baca": "a-PRAN-dr'", "id": "belajar, mempelajari" },
+    { "fr": "vite", "baca": "VIT", "id": "cepat" },
+    { "fr": "mais", "baca": "mè", "id": "tapi" },
+    { "fr": "encore", "baca": "an-KOR", "id": "masih, lagi" },
+    { "fr": "une faute", "baca": "ün FOT", "id": "kesalahan" },
+    { "fr": "grave", "baca": "GRAV", "id": "parah, gawat" },
+    { "fr": "normal", "baca": "nor-MAL", "id": "wajar, biasa" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih c'est atau il/elle est.",
+      "items": [
+        "____ un ami de Camille.",
+        "____ architecte.",
+        "____ intéressant, ce livre.",
+        "____ française.",
+        "____ Thomas.",
+        "____ étudiante à Lyon."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+      "items": [
+        "Je ____ (parler) français.",
+        "Tu ____ (habiter) à Lyon ?",
+        "Camille ____ (travailler) à Paris.",
+        "Nous ____ (étudier) ensemble.",
+        "Vous ____ (aimer) le café ?",
+        "Ils ____ (regarder) un film."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Kenalkan, ini Thomas.",
+        "Dia arsitek.",
+        "Saya tinggal di Lyon sejak dua tahun lalu.",
+        "Kamu mahasiswa?",
+        "Bahasa Prancisnya sudah bagus.",
+        "Tidak apa-apa, itu wajar."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "présente / je / Thomas / te",
+        "est / architecte / il",
+        "habite / j' / Lyon / à",
+        "parles / tu / bien / français",
+        "grave / n' / ce / est / pas"
+      ]
+    }
+  ],
+  "answers": [
+    "C'est — Il est — C'est — Elle est — C'est — Elle est",
+    "parle — habites — travaille — étudions — aimez — regardent",
+    "Je te présente Thomas. — Il est architecte. — J'habite à Lyon depuis deux ans. — Tu es étudiant ? — Tu parles déjà bien français. — Ce n'est pas grave, c'est normal.",
+    "Je te présente Thomas. — Il est architecte. — J'habite à Lyon. — Tu parles bien français. — Ce n'est pas grave."
+  ]
+}

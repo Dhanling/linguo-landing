@@ -1,0 +1,192 @@
+{
+  "title": "Di pasar",
+  "title_target": "Au marché",
+  "goal": "Berbelanja bahan makanan, menyebut takaran dan harga, serta memilih antara kata sandang sebagian dan kata takaran.",
+  "bekal": [
+    "menyebut jumlah dengan *un kilo de*, *une bouteille de*, *un peu de*",
+    "menanyakan dan memahami harga",
+    "membedakan *du pain* dan *un kilo de pain*"
+  ],
+  "wave": "Ulangi **unit 10** dulu: gambarkan letak lima tempat di lingkunganmu sendiri memakai *à côté de*, *en face de*, *près de*, *derrière*, *entre*.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Chez le marchand de fruits",
+      "intro": "Sabtu pagi di pasar terbuka. Camille mengajari Budi berbelanja.",
+      "lines": [
+        { "speaker": "Marchand:", "text": "Bonjour messieurs-dames ! Vous désirez ?", "id": "Selamat pagi! Mau beli apa?", "literal": "hari-baik tuan-nyonya! kalian menginginkan?" },
+        { "speaker": "Camille:", "text": "Bonjour. Un kilo de pommes, s'il vous plaît.", "id": "Selamat pagi. Satu kilo apel, tolong.", "literal": "hari-baik. satu kilo dari apel, tolong." },
+        { "speaker": "Marchand:", "text": "Voilà. Et avec ça ?", "id": "Ini. Ada lagi?", "literal": "itu-dia. dan dengan itu?" },
+        { "speaker": "Camille:", "text": "Une demi-livre de fraises et trois bananes.", "id": "Setengah pon stroberi dan tiga pisang.", "literal": "sebuah setengah-pon dari stroberi dan tiga pisang." },
+        { "speaker": "Budi:", "text": "Est-ce que vous avez des mangues ?", "id": "Ada mangga?", "literal": "apakah kalian punya beberapa mangga?" },
+        { "speaker": "Marchand:", "text": "Non, désolé. Ce n'est pas la saison.", "id": "Tidak ada, maaf. Bukan musimnya.", "literal": "tidak, menyesal. itu tidak-adalah tidak musim." },
+        { "speaker": "Budi:", "text": "Tant pis. Alors un peu de raisin.", "id": "Ya sudah. Kalau begitu anggur sedikit.", "literal": "sangat buruk. maka sedikit dari anggur." },
+        { "speaker": "Marchand:", "text": "Combien ? Une grappe ou deux ?", "id": "Berapa? Satu tandan atau dua?", "literal": "berapa? satu tandan atau dua?" },
+        { "speaker": "Budi:", "text": "Une seule, merci. Ça fait combien ?", "id": "Satu saja, terima kasih. Semuanya berapa?", "literal": "satu tunggal, terima-kasih. itu membuat berapa?" },
+        { "speaker": "Marchand:", "text": "Ça fait douze euros quatre-vingts.", "id": "Semuanya dua belas euro delapan puluh.", "literal": "itu membuat dua-belas euro empat-dua-puluh." },
+        { "speaker": "Budi:", "text": "Voilà quinze euros.", "id": "Ini lima belas euro.", "literal": "itu-dia lima-belas euro." },
+        { "speaker": "Marchand:", "text": "Et deux euros vingt. Merci, bonne journée !", "id": "Kembaliannya dua euro dua puluh. Terima kasih, selamat beraktivitas!", "literal": "dan dua euro dua-puluh. terima-kasih, baik hari!" }
+      ],
+      "notes": [
+        "**Takaran selalu memakai de tanpa kata sandang.** *Un kilo **de** pommes*, bukan *un kilo des pommes*. Sesudah kata takaran apa pun — *kilo, litre, bouteille, paquet, morceau, tranche, peu, beaucoup, assez, trop* — kata sandangnya hilang dan tinggal *de*.",
+        "**Bandingkan tiga kalimat yang di bahasa Indonesia sama saja.** *Je mange **des** pommes* (saya makan apel, tidak tertentu berapa), *je mange **un kilo de** pommes* (satu kilo), *j'aime **les** pommes* (saya suka apel, secara umum). Memilih yang salah tidak membuat kalimatmu tak dimengerti, tapi langsung menandaimu sebagai pemula.",
+        "**Et avec ça ?** adalah kalimat baku pedagang Prancis. Harfiahnya \"dan dengan itu?\" — artinya \"ada lagi?\" Jawablah *c'est tout, merci* kalau sudah cukup.",
+        "**Ça fait combien ?** = berapa semuanya. Kembarannya: *c'est combien ?* (untuk satu barang) dan *je vous dois combien ?* (berapa saya harus bayar — paling sopan).",
+        "**Harga dibaca dengan euro di tengah.** *Douze euros quatre-vingts* = 12,80 €. Kata *centimes* biasanya tidak diucapkan. Perhatikan juga bahwa Prancis memakai koma untuk desimal, bukan titik.",
+        "**Tant pis** = \"ya sudahlah\", ungkapan pasrah yang sangat sering dipakai. Lawannya *tant mieux* = \"malah bagus\".",
+        "**Une demi-livre** = setengah pon, kira-kira 250 gram. *La livre* di pasar Prancis berarti 500 gram, bukan pon Inggris. Pedagang pasar masih memakainya walaupun satuan resminya kilogram."
+      ],
+      "grammars": [
+        {
+          "title": "Kata sandang sebagian versus kata takaran",
+          "body": ["Satu pohon keputusan yang menyelesaikan hampir semua keraguan di depan kata benda makanan."],
+          "table": {
+            "head": ["Maksudmu", "Pakai", "Contoh"],
+            "rows": [
+              ["sejumlah yang tidak ditentukan", "du / de la / des", "*Je veux du pain.*"],
+              ["takaran yang disebut", "**angka/takaran + de**", "*Un kilo de pommes.*"],
+              ["barangnya secara umum", "le / la / les", "*J'aime le pain.*"],
+              ["satu buah yang bisa dihitung", "un / une", "*Je veux une pomme.*"],
+              ["sesudah sangkalan", "**de**", "*Je ne veux pas de pain.*"],
+              ["sesudah beaucoup, peu, trop", "**de**", "*Beaucoup de pain.*"]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa tiga baris terakhir sama-sama menghasilkan **de** telanjang. Ini pola besar bahasa Prancis: begitu jumlahnya dibatasi atau disangkal, kata sandangnya menyingkir.",
+            "⚠️ Satu kekecualian yang sering menjegal: sesudah *bien* (dalam arti \"banyak\") kata sandangnya tetap — *bien **du** monde*, *bien **des** fois*."
+          ]
+        },
+        {
+          "title": "Takaran yang dipakai sehari-hari",
+          "body": ["Semuanya diikuti *de*, tanpa kata sandang."],
+          "table": {
+            "head": ["Français", "Bahasa Indonesia", "Contoh"],
+            "rows": [
+              ["un kilo de", "satu kilo", "*un kilo de riz*"],
+              ["cinq cents grammes de", "lima ratus gram", "*500 g de viande*"],
+              ["une livre de", "setengah kilo", "*une livre de fraises*"],
+              ["un litre de", "satu liter", "*un litre de lait*"],
+              ["une bouteille de", "satu botol", "*une bouteille d'eau*"],
+              ["un paquet de", "satu bungkus", "*un paquet de pâtes*"],
+              ["une boîte de", "satu kaleng/kotak", "*une boîte de thon*"],
+              ["une tranche de", "satu iris", "*une tranche de jambon*"],
+              ["un morceau de", "satu potong", "*un morceau de fromage*"],
+              ["une douzaine de", "satu lusin", "*une douzaine d'œufs*"],
+              ["un peu de", "sedikit", "*un peu de sucre*"],
+              ["beaucoup de", "banyak", "*beaucoup de légumes*"]
+            ]
+          },
+          "after": [
+            "Di depan vokal, *de* jadi *d'*: *une bouteille d'eau*, *une douzaine d'œufs*, *beaucoup d'amis*.",
+            "*Combien de…?* memakai aturan yang sama: *Combien de pommes ?*, bukan *combien des pommes*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Belanja bahan makanan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Buah & sayur", "Cara baca", "Daging & lain-lain", "Cara baca"],
+          "rows": [
+            ["une pomme", "ün POM", "le poulet", "l' pu-LÈ"],
+            ["une banane", "ün ba-NAN", "le bœuf", "l' BÖF"],
+            ["une orange", "ün-no-RANJ", "le poisson", "l' pwa-SON"],
+            ["une fraise", "ün FRÈZ", "le jambon", "l' jan-BON"],
+            ["le raisin", "l' rè-ZAN", "un œuf", "an-NÖF"],
+            ["une tomate", "ün to-MAT", "le fromage", "l' fro-MAJ"],
+            ["une carotte", "ün ka-ROT", "le beurre", "l' BÖR"],
+            ["une pomme de terre", "ün pom d' TÈR", "le riz", "l' RI"],
+            ["une salade", "ün sa-LAD", "les pâtes", "le PAT"],
+            ["un oignon", "an-no-NYON", "le sucre", "l' SÜKR'"],
+            ["un légume", "an le-GÜM", "le sel", "l' SÈL"],
+            ["un fruit", "an FRÜI", "l'huile", "LÜIL"]
+          ]
+        },
+        { "type": "p", "text": "⚠️ *Un œuf* dibaca an-NÖF, tapi jamaknya *des œufs* dibaca de-ZÖ — huruf f-nya hilang. Kekecualian bunyi yang cuma berlaku untuk kata ini." },
+        { "type": "kotak", "title": "Kalimat berbelanja", "items": [
+          "*Je voudrais un kilo de tomates, s'il vous plaît.* — Saya mau satu kilo tomat.",
+          "*Vous avez des fraises ?* — Ada stroberi?",
+          "*C'est combien le kilo ?* — Sekilo berapa?",
+          "*Ça fait combien ?* — Semuanya berapa?",
+          "*Je peux payer par carte ?* — Boleh bayar pakai kartu?",
+          "*C'est trop cher.* — Itu terlalu mahal."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "fr": "le marché", "baca": "l' mar-SYE", "id": "pasar" },
+    { "fr": "un marchand", "baca": "an mar-SYAN", "id": "pedagang" },
+    { "fr": "un kilo", "baca": "an ki-LO", "id": "kilogram" },
+    { "fr": "un gramme", "baca": "an GRAM", "id": "gram" },
+    { "fr": "un litre", "baca": "an LITR'", "id": "liter" },
+    { "fr": "une bouteille", "baca": "ün bu-TÈY", "id": "botol" },
+    { "fr": "un paquet", "baca": "an pa-KÈ", "id": "bungkus" },
+    { "fr": "une tranche", "baca": "ün TRANSY", "id": "irisan" },
+    { "fr": "un morceau", "baca": "an mor-SO", "id": "potongan" },
+    { "fr": "une douzaine", "baca": "ün du-ZÈN", "id": "lusin" },
+    { "fr": "un peu de", "baca": "an PÖ d'", "id": "sedikit" },
+    { "fr": "la saison", "baca": "la sè-ZON", "id": "musim" },
+    { "fr": "désolé", "baca": "de-zo-LE", "id": "menyesal, maaf" },
+    { "fr": "tant pis", "baca": "tan PI", "id": "ya sudahlah" },
+    { "fr": "l'argent (m)", "baca": "lar-JAN", "id": "uang" },
+    { "fr": "un euro", "baca": "an-nö-RO", "id": "euro" },
+    { "fr": "cher", "baca": "syèr", "id": "mahal" },
+    { "fr": "pas cher", "baca": "pa SYÈR", "id": "murah" },
+    { "fr": "acheter", "baca": "asy-TE", "id": "membeli" },
+    { "fr": "coûter", "baca": "ku-TE", "id": "berharga, seharga" },
+    { "fr": "la monnaie", "baca": "la mo-NÈ", "id": "uang kembalian" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan du, de la, de l', des atau de.",
+      "items": [
+        "Je voudrais ____ pain.",
+        "Un kilo ____ tomates.",
+        "Elle achète ____ fromage.",
+        "Beaucoup ____ légumes.",
+        "Une bouteille ____ eau.",
+        "Je ne veux pas ____ sucre."
+      ]
+    },
+    {
+      "prompt": "Isi dengan takaran yang masuk akal.",
+      "items": [
+        "____ de lait",
+        "____ de jambon",
+        "____ d'œufs",
+        "____ de pâtes",
+        "____ de fromage"
+      ]
+    },
+    {
+      "prompt": "Pilih le/la/les, du/de la/des, atau un/une.",
+      "items": [
+        "J'aime ____ chocolat.",
+        "Je mange ____ chocolat tous les jours.",
+        "Je voudrais ____ chocolat chaud.",
+        "Elle n'aime pas ____ poisson.",
+        "Nous achetons ____ poisson au marché."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Satu kilo apel, tolong.",
+        "Ada stroberi?",
+        "Semuanya berapa?",
+        "Itu terlalu mahal.",
+        "Saya tidak mau gula."
+      ]
+    }
+  ],
+  "answers": [
+    "du pain — de tomates — du fromage — de légumes — d'eau — de sucre",
+    "un litre — une tranche — une douzaine — un paquet — un morceau",
+    "le chocolat — du chocolat — un chocolat chaud — le poisson — du poisson",
+    "Un kilo de pommes, s'il vous plaît. — Vous avez des fraises ? — Ça fait combien ? — C'est trop cher. — Je ne veux pas de sucre."
+  ]
+}

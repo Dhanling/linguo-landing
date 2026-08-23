@@ -1,0 +1,187 @@
+{
+  "title": "Di kafe",
+  "title_target": "Au café",
+  "goal": "Memesan minuman dan makanan ringan dengan sopan, memakai je voudrais, dan mengenal kata sandang sebagian du / de la.",
+  "bekal": [
+    "memesan dengan *je voudrais* dan *je prends*",
+    "memakai *du*, *de la*, *de l'* untuk barang yang tak terhitung",
+    "meminta bon dan membayar: *l'addition, s'il vous plaît*"
+  ],
+  "wave": "Ulangi **unit 2** dulu: tutup kolom Prancisnya, lalu perkenalkan Thomas kepada temanmu dari ingatan — sebutkan pekerjaannya dan berapa lama dia tinggal di Lyon.",
+  "dialogs": [
+    {
+      "title": "Dialogue — À la terrasse",
+      "intro": "Budi dan Camille duduk di teras kafe. Pelayan datang.",
+      "lines": [
+        { "speaker": "Serveur:", "text": "Bonjour ! Vous désirez ?", "id": "Selamat siang! Mau pesan apa?", "literal": "hari-baik! kalian menginginkan?" },
+        { "speaker": "Camille:", "text": "Bonjour. Un café, s'il vous plaît.", "id": "Selamat siang. Satu kopi, tolong.", "literal": "hari-baik. sebuah kopi, jika-itu kepada-kalian menyenangkan." },
+        { "speaker": "Serveur:", "text": "Très bien. Et pour vous, monsieur ?", "id": "Baik. Dan untuk Anda, Tuan?", "literal": "sangat baik. dan untuk kalian, tuan?" },
+        { "speaker": "Budi:", "text": "Je voudrais un thé au lait, s'il vous plaît.", "id": "Saya mau teh susu, tolong.", "literal": "saya ingin-akan sebuah teh dengan susu, tolong." },
+        { "speaker": "Serveur:", "text": "D'accord. Vous prenez quelque chose à manger ?", "id": "Baik. Mau pesan makanan juga?", "literal": "setuju. kalian mengambil sesuatu untuk makan?" },
+        { "speaker": "Camille:", "text": "Oui, deux croissants, s'il vous plaît.", "id": "Ya, dua croissant, tolong.", "literal": "ya, dua croissant, tolong." },
+        { "speaker": "Serveur:", "text": "Très bien. Ce sera tout ?", "id": "Baik. Ada lagi?", "literal": "sangat baik. itu akan-jadi semua?" },
+        { "speaker": "Budi:", "text": "Oui, c'est tout, merci.", "id": "Sudah, itu saja, terima kasih.", "literal": "ya, itu-adalah semua, terima-kasih." },
+        { "speaker": "Camille:", "text": "Tu ne bois pas de café le matin ?", "id": "Kamu tidak minum kopi pagi-pagi?", "literal": "kamu tidak minum tidak dari kopi pagi?" },
+        { "speaker": "Budi:", "text": "Non, je bois du thé. Le café, c'est trop fort.", "id": "Tidak, saya minum teh. Kopi terlalu kuat.", "literal": "tidak, saya minum sebagian teh. kopi, itu-adalah terlalu kuat." },
+        { "speaker": "Camille:", "text": "Ah, moi je ne peux pas travailler sans café !", "id": "Wah, saya tidak bisa kerja tanpa kopi!", "literal": "ah, saya saya tidak bisa tidak bekerja tanpa kopi!" },
+        { "speaker": "Budi:", "text": "L'addition, s'il vous plaît ! Je t'invite.", "id": "Bonnya, tolong! Saya yang traktir.", "literal": "tagihan, tolong! saya kamu-mengundang." }
+      ],
+      "notes": [
+        "**Je voudrais adalah kata ajaib.** Harfiahnya \"saya ingin akan\" — bentuk halus dari *je veux* (saya mau). *Je veux un café* terdengar seperti perintah anak kecil; *je voudrais un café* terdengar seperti orang dewasa. Pakai selalu bentuk ini di toko, restoran, dan loket.",
+        "**Un café berarti espresso.** Kalau kamu ingin kopi susu besar, pesan *un café au lait* atau *un crème*. *Un café américain* untuk kopi encer bergaya Amerika. Memesan \"kopi\" begitu saja di Prancis akan menghasilkan cangkir kecil yang habis dalam dua tegukan.",
+        "**S'il vous plaît bukan hiasan.** Menghilangkannya di Prancis bukan sekadar kurang sopan, tapi terdengar kasar. Bentuk penuhnya \"jika itu menyenangkan bagi Anda\". Untuk teman: *s'il te plaît*.",
+        "**Vous désirez ?** adalah cara pelayan bertanya. Kembarannya *Vous prenez quelque chose ?* dan *Qu'est-ce que je vous sers ?* Tidak perlu kamu hafal untuk diucapkan — cukup dikenali saat didengar.",
+        "**Ce sera tout ?** memakai bentuk masa depan yang belum kamu pelajari, dan tidak perlu dibongkar sekarang. Cukup kenali sebagai \"ada lagi?\" dan jawab *c'est tout* (itu saja) atau *non, aussi…*",
+        "**Sangkalannya membuang kata sandang.** *Je bois du café* → *je ne bois pas **de** café*. Ini bukan pengecualian kecil melainkan aturan besar: sesudah sangkalan, *du*, *de la*, *des*, *un*, *une* semuanya rontok jadi **de**. Satu-satunya yang selamat adalah *le, la, les*.",
+        "**Je t'invite** harfiahnya \"saya mengundangmu\" dan itulah cara orang Prancis mengatakan \"saya yang bayar\". Jawaban sopannya: *non, c'est moi !* atau *on partage* (kita bagi dua)."
+      ],
+      "grammars": [
+        {
+          "title": "Du, de la, de l' — kata sandang untuk yang tak terhitung",
+          "body": ["Bahasa Indonesia bisa berkata \"saya minum kopi\" tanpa tambahan apa pun. Bahasa Prancis tidak bisa: ia harus menandai bahwa yang diminum adalah *sebagian* kopi, bukan seluruh kopi di dunia."],
+          "table": {
+            "head": ["Jenis kata benda", "Kata sandang", "Contoh"],
+            "rows": [
+              ["maskulin tak terhitung", "**du**", "*Je bois du thé.*"],
+              ["feminin tak terhitung", "**de la**", "*Je mange de la salade.*"],
+              ["di depan vokal / h", "**de l'**", "*Je bois de l'eau.*"],
+              ["jamak tak tentu", "**des**", "*Je mange des frites.*"],
+              ["sesudah sangkalan", "**de / d'**", "*Je ne bois pas de thé.*"]
+            ]
+          },
+          "after": [
+            "Tiga kata sandang, tiga arti berbeda untuk kalimat yang di bahasa Indonesia sama saja: *j'aime **le** café* (saya suka kopi, secara umum), *je bois **du** café* (saya minum kopi, sebagian), *je voudrais **un** café* (saya mau satu cangkir kopi).",
+            "Sesudah *aimer*, *adorer*, *détester* selalu **le / la / les** — sebab yang disukai adalah barangnya secara keseluruhan. Ini akan kembali dengan lebih lengkap di unit 15.",
+            "⚠️ Membuang kata sandang sama sekali (*je bois café*) adalah kesalahan yang paling cepat menandai penutur asing. Pilih salah satu, tapi jangan kosong."
+          ]
+        },
+        {
+          "title": "Prendre dan boire",
+          "body": ["Dua kata kerja yang tidak bisa dihindari di kafe. Dua-duanya tak beraturan, dan dua-duanya menggandakan huruf mati di bentuk *ils*."],
+          "table": {
+            "head": ["", "prendre (ambil, pesan)", "boire (minum)", "manger (makan)"],
+            "rows": [
+              ["je", "prends", "bois", "mange"],
+              ["tu", "prends", "bois", "manges"],
+              ["il / elle / on", "prend", "boit", "mange"],
+              ["nous", "prenons", "buvons", "mangeons"],
+              ["vous", "prenez", "buvez", "mangez"],
+              ["ils / elles", "prennent", "boivent", "mangent"]
+            ]
+          },
+          "after": [
+            "*Prendre* dipakai jauh lebih luas daripada \"mengambil\": memesan makanan (*je prends une salade*), naik kendaraan (*je prends le bus*), dan minum obat (*je prends un médicament*).",
+            "*Mangeons* menyisipkan huruf **e** yang tidak berbunyi supaya huruf g tetap dibaca lembut. Kata kerja lain berakhiran -ger melakukan hal yang sama: *nous voyageons*, *nous changeons*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Daftar menu kafe",
+      "blocks": [
+        { "type": "p", "text": "Yang benar-benar dipesan orang di kafe Prancis. Hafalkan bersama kata sandangnya seperti biasa." },
+        {
+          "type": "tabel",
+          "head": ["Français", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["un café", "an ka-FE", "espresso"],
+            ["un café au lait", "an ka-FE o LÈ", "kopi susu"],
+            ["un thé", "an TE", "teh"],
+            ["un chocolat chaud", "an syo-ko-LA SYO", "cokelat panas"],
+            ["un jus d'orange", "an jü do-RANJ", "jus jeruk"],
+            ["une eau minérale", "ün-no mi-ne-RAL", "air mineral"],
+            ["un verre de vin", "an vèr d' VAN", "segelas anggur"],
+            ["une bière", "ün BIÈR", "bir"],
+            ["un croissant", "an krwa-SAN", "croissant"],
+            ["un sandwich", "an sand-WIC", "roti isi"],
+            ["une salade", "ün sa-LAD", "salad"],
+            ["une glace", "ün GLAS", "es krim"]
+          ]
+        },
+        { "type": "kotak", "title": "Kalimat yang menyelamatkan", "items": [
+          "*Une table pour deux, s'il vous plaît.* — Meja untuk dua orang.",
+          "*Qu'est-ce que vous avez comme dessert ?* — Ada apa saja untuk pencuci mulut?",
+          "*C'est combien ?* — Berapa harganya?",
+          "*L'addition, s'il vous plaît.* — Minta bonnya. Di Prancis, bon tidak pernah datang sendiri; kamu harus memintanya.",
+          "*Je peux payer par carte ?* — Boleh bayar pakai kartu?"
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "fr": "un café", "baca": "an ka-FE", "id": "kopi, kedai kopi" },
+    { "fr": "un serveur / une serveuse", "baca": "an sèr-VÖR", "id": "pelayan" },
+    { "fr": "désirer", "baca": "de-zi-RE", "id": "menginginkan" },
+    { "fr": "je voudrais", "baca": "zyö vu-DRÈ", "id": "saya ingin (halus)" },
+    { "fr": "prendre", "baca": "PRAN-dr'", "id": "mengambil, memesan" },
+    { "fr": "boire", "baca": "BWAR", "id": "minum" },
+    { "fr": "manger", "baca": "man-JE", "id": "makan" },
+    { "fr": "le lait", "baca": "l' LÈ", "id": "susu" },
+    { "fr": "l'eau (f)", "baca": "LO", "id": "air" },
+    { "fr": "le thé", "baca": "l' TE", "id": "teh" },
+    { "fr": "quelque chose", "baca": "kèl-kö SYOZ", "id": "sesuatu" },
+    { "fr": "d'accord", "baca": "da-KOR", "id": "setuju, baiklah" },
+    { "fr": "tout", "baca": "tu", "id": "semua, seluruhnya" },
+    { "fr": "le matin", "baca": "l' ma-TAN", "id": "pagi" },
+    { "fr": "trop", "baca": "tro", "id": "terlalu" },
+    { "fr": "fort", "baca": "for", "id": "kuat" },
+    { "fr": "sans", "baca": "san", "id": "tanpa" },
+    { "fr": "l'addition (f)", "baca": "la-di-SION", "id": "tagihan, bon" },
+    { "fr": "inviter", "baca": "an-vi-TE", "id": "mengundang, mentraktir" },
+    { "fr": "payer", "baca": "pè-YE", "id": "membayar" },
+    { "fr": "une carte", "baca": "ün KART", "id": "kartu, daftar menu" },
+    { "fr": "combien", "baca": "kom-BIEN", "id": "berapa" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan du, de la, de l' atau des.",
+      "items": [
+        "Je bois ____ café.",
+        "Elle mange ____ salade.",
+        "Nous buvons ____ eau.",
+        "Tu prends ____ frites ?",
+        "Il mange ____ pain.",
+        "Vous voulez ____ bière ?"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi kalimat sangkalan.",
+      "items": [
+        "Je bois du thé.",
+        "Elle mange de la viande.",
+        "Nous prenons des croissants.",
+        "Il a une voiture.",
+        "Tu veux un café."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+      "items": [
+        "Je ____ (prendre) un café.",
+        "Tu ____ (boire) du thé ?",
+        "Nous ____ (manger) au restaurant.",
+        "Ils ____ (prendre) le bus.",
+        "Vous ____ (boire) du vin ?",
+        "Elle ____ (manger) une glace."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Saya mau teh susu, tolong.",
+        "Dua croissant, tolong.",
+        "Saya tidak minum kopi.",
+        "Bonnya, tolong.",
+        "Berapa harganya?"
+      ]
+    }
+  ],
+  "answers": [
+    "du — de la — de l' — des — du — de la",
+    "Je ne bois pas de thé. — Elle ne mange pas de viande. — Nous ne prenons pas de croissants. — Il n'a pas de voiture. — Tu ne veux pas de café.",
+    "prends — bois — mangeons — prennent — buvez — mange",
+    "Je voudrais un thé au lait, s'il vous plaît. — Deux croissants, s'il vous plaît. — Je ne bois pas de café. — L'addition, s'il vous plaît. — C'est combien ?"
+  ]
+}

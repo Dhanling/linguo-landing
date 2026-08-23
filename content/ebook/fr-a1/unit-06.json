@@ -1,0 +1,202 @@
+{
+  "title": "Mesin kata kerja",
+  "title_target": "Je parle, je finis, j'attends",
+  "goal": "Menguasai tiga golongan kata kerja bentuk sekarang dan menyangkal kalimat dengan ne … pas yang berpasangan.",
+  "bekal": [
+    "membentuk kata kerja -er, -ir, dan -re bentuk sekarang",
+    "menyangkal dengan dua kata yang mengapit kata kerja",
+    "mengenali bahwa empat bentuk -er berbunyi sama persis"
+  ],
+  "wave": "Ulangi **unit 4** dulu: pesan tiga minuman berbeda dengan *je voudrais*, lalu sangkal masing-masing dengan *je ne bois pas de…*",
+  "dialogs": [
+    {
+      "title": "Dialogue — Après le cours",
+      "intro": "Thomas menanyakan kebiasaan Budi sesudah kelas berakhir.",
+      "lines": [
+        { "speaker": "Thomas:", "text": "Tu travailles ou tu étudies seulement ?", "id": "Kamu kerja atau kuliah saja?", "literal": "kamu bekerja atau kamu belajar saja?" },
+        { "speaker": "Budi:", "text": "J'étudie le jour et je travaille le soir.", "id": "Saya kuliah siang dan kerja malam.", "literal": "saya-belajar siang dan saya bekerja sore." },
+        { "speaker": "Thomas:", "text": "Tu finis à quelle heure ?", "id": "Kamu selesai jam berapa?", "literal": "kamu menyelesaikan pada berapa jam?" },
+        { "speaker": "Budi:", "text": "Je finis vers vingt-deux heures. C'est fatigant.", "id": "Selesai sekitar jam sepuluh malam. Melelahkan.", "literal": "saya menyelesaikan sekitar dua-puluh-dua jam. itu-adalah melelahkan." },
+        { "speaker": "Thomas:", "text": "Tu ne dors pas beaucoup, alors.", "id": "Berarti kamu kurang tidur.", "literal": "kamu tidak tidur tidak banyak, maka." },
+        { "speaker": "Budi:", "text": "Non, je ne dors pas assez. Mais ça va.", "id": "Iya, saya kurang tidur. Tapi tidak apa-apa.", "literal": "tidak, saya tidak tidur tidak cukup. tapi itu berjalan." },
+        { "speaker": "Thomas:", "text": "Tu attends le bus ici ?", "id": "Kamu menunggu bus di sini?", "literal": "kamu menunggu bus di-sini?" },
+        { "speaker": "Budi:", "text": "Oui, mais il n'arrive jamais à l'heure.", "id": "Ya, tapi busnya tidak pernah tepat waktu.", "literal": "ya, tapi dia tidak tiba tak-pernah pada jam." },
+        { "speaker": "Thomas:", "text": "Je comprends. Moi, je prends le vélo.", "id": "Saya paham. Saya sih naik sepeda.", "literal": "saya memahami. saya, saya mengambil sepeda." },
+        { "speaker": "Budi:", "text": "Tu n'as pas de voiture ?", "id": "Kamu tidak punya mobil?", "literal": "kamu tidak-punya tidak dari mobil?" },
+        { "speaker": "Thomas:", "text": "Non, je n'ai rien. Le vélo, c'est plus simple.", "id": "Tidak, saya tidak punya apa-apa. Sepeda lebih praktis.", "literal": "tidak, saya tidak-punya apa-apa. sepeda, itu-adalah lebih sederhana." },
+        { "speaker": "Budi:", "text": "Tu as raison. Je réfléchis à ça aussi.", "id": "Betul juga. Saya sedang memikirkan itu juga.", "literal": "kamu punya alasan. saya memikirkan pada itu juga." }
+      ],
+      "notes": [
+        "**Sangkalan bahasa Prancis butuh dua kata.** *Ne* di depan kata kerja, *pas* di belakangnya. Bahasa Indonesia cuma butuh satu (\"tidak\"), dan pelajar Indonesia hampir selalu lupa memasang *pas*-nya. *Je ne travaille* saja tidak berarti apa-apa.",
+        "**Di depan vokal, ne jadi n'.** *Je n'ai pas*, *il n'arrive pas*, *elle n'étudie pas*. Sama seperti *je → j'* dan *le → l'*.",
+        "**Dalam percakapan, ne sering hilang.** Orang Prancis benar-benar berkata *je sais pas*, *j'ai pas faim*, *c'est pas grave*. Kenali saat mendengarnya, tapi jangan tirukan dalam tulisan — dalam ujian dan surat, *ne* wajib ada.",
+        "**Ne… jamais, ne… rien.** Kembaran *pas* yang lain: *jamais* (tak pernah), *rien* (tak ada apa-apa), *personne* (tak seorang pun), *plus* (tidak lagi). Yang berubah cuma kata keduanya; *ne*-nya tetap. ⚠️ Jangan pasang *pas* bersamaan: *je n'ai rien*, bukan *je n'ai pas rien*.",
+        "**Étudier berakhiran -ier** tapi tetap golongan -er biasa: *j'étudie*, *tu étudies*, *nous étudions*. Yang perlu diperhatikan cuma dua vokal berturutan di bentuk *nous* — dan itu memang dibunyikan dua-duanya.",
+        "**Tu as raison** harfiahnya \"kamu punya alasan\" dan berarti \"kamu benar\". Lawannya *tu as tort* (kamu salah). Dua-duanya memakai *avoir*, bukan *être* — sama seperti umur di unit 5.",
+        "**À l'heure** = tepat waktu. Kembarannya: *en avance* (lebih awal), *en retard* (terlambat). Tiga ungkapan ini akan langsung berguna di unit 7."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga golongan kata kerja",
+          "body": ["Semua kata kerja bahasa Prancis berakhiran -er, -ir, atau -re. Buang akhiran itu, lalu pasang ekor menurut kolomnya."],
+          "table": {
+            "head": ["", "parler (-er)", "finir (-ir)", "attendre (-re)"],
+            "rows": [
+              ["je / j'", "parl**e**", "fin**is**", "attend**s**"],
+              ["tu", "parl**es**", "fin**is**", "attend**s**"],
+              ["il / elle / on", "parl**e**", "fin**it**", "attend"],
+              ["nous", "parl**ons**", "fin**issons**", "attend**ons**"],
+              ["vous", "parl**ez**", "fin**issez**", "attend**ez**"],
+              ["ils / elles", "parl**ent**", "fin**issent**", "attend**ent**"]
+            ]
+          },
+          "after": [
+            "Golongan **-er** adalah yang terbesar — sekitar sembilan dari sepuluh kata kerja. Ia juga golongan yang paling menipu telinga: *parle, parles, parle, parlent* dibunyikan **sama persis**.",
+            "Golongan **-ir** yang menyisipkan **-iss-** di tiga bentuk jamak adalah golongan besar kedua: *finir, choisir, réfléchir, réussir, grandir, rougir*. Tapi hati-hati — banyak kata kerja berakhiran -ir yang **tidak** ikut pola ini (*dormir, partir, sortir, venir*), dan itu harus dihafal terpisah.",
+            "Golongan **-re** paling kecil dan paling teratur di bentuk tunggal: bentuk *il* tidak menambah apa-apa sama sekali (*il attend*, *il répond*, *il vend*)."
+          ]
+        },
+        {
+          "title": "Kata kerja -ir yang membangkang",
+          "body": ["Sekelompok kata kerja berakhiran -ir yang membuang huruf mati terakhir di bentuk tunggal. Sangat sering dipakai, jadi dihafal sekarang lebih murah daripada nanti."],
+          "table": {
+            "head": ["", "dormir (tidur)", "partir (berangkat)", "sortir (keluar)"],
+            "rows": [
+              ["je", "dors", "pars", "sors"],
+              ["tu", "dors", "pars", "sors"],
+              ["il / elle", "dort", "part", "sort"],
+              ["nous", "dormons", "partons", "sortons"],
+              ["vous", "dormez", "partez", "sortez"],
+              ["ils / elles", "dorment", "partent", "sortent"]
+            ]
+          },
+          "after": [
+            "Polanya: huruf mati sebelum -ir **hilang** di tiga bentuk tunggal (dor-mir → *je dors*), lalu **kembali** di tiga bentuk jamak (*nous dormons*).",
+            "Kata kerja lain yang berkelakuan sama: *servir* (melayani), *mentir* (berbohong), *sentir* (merasa, mencium bau)."
+          ]
+        },
+        {
+          "title": "Menyangkal",
+          "body": ["Dua kata yang selalu berpasangan mengapit kata kerja. Yang di dalam pelukannya cuma kata kerjanya sendiri, bukan seluruh kalimat."],
+          "table": {
+            "head": ["Arti", "Bentuk", "Contoh"],
+            "rows": [
+              ["tidak", "ne … **pas**", "*Je ne travaille pas.*"],
+              ["tidak pernah", "ne … **jamais**", "*Il ne fume jamais.*"],
+              ["tidak ada apa-apa", "ne … **rien**", "*Je ne mange rien.*"],
+              ["tidak seorang pun", "ne … **personne**", "*Je ne vois personne.*"],
+              ["tidak lagi", "ne … **plus**", "*Elle ne travaille plus.*"],
+              ["belum", "ne … **pas encore**", "*Je n'ai pas encore fini.*"]
+            ]
+          },
+          "after": [
+            "⚠️ Sesudah sangkalan, *un*, *une*, *du*, *de la*, *des* semuanya rontok jadi **de**: *j'ai une voiture* → *je n'ai pas **de** voiture*. Aturan yang sudah kamu temui di unit 4, dan yang akan terus kembali.",
+            "*Le, la, les* tidak ikut rontok: *je n'aime pas **le** café*.",
+            "Kalau ada kata kerja kedua, pasangannya mengapit **kata kerja pertama** saja: *je ne veux pas manger*, bukan *je ne veux manger pas*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Dua puluh kata kerja pertama",
+      "blocks": [
+        { "type": "p", "text": "Kalau kamu hafal dua puluh kata kerja ini beserta polanya, kamu sudah bisa menyusun ratusan kalimat. Perhatikan huruf terakhirnya untuk tahu golongannya." },
+        {
+          "type": "tabel",
+          "head": ["-er", "-ir", "-re", "Tak beraturan"],
+          "rows": [
+            ["parler — bicara", "finir — selesai", "attendre — menunggu", "être — adalah"],
+            ["habiter — tinggal", "choisir — memilih", "répondre — menjawab", "avoir — punya"],
+            ["travailler — bekerja", "réfléchir — berpikir", "vendre — menjual", "aller — pergi"],
+            ["aimer — suka", "réussir — berhasil", "entendre — mendengar", "faire — membuat"],
+            ["regarder — menonton", "dormir — tidur", "descendre — turun", "prendre — mengambil"],
+            ["écouter — mendengarkan", "partir — berangkat", "perdre — kehilangan", "venir — datang"]
+          ]
+        },
+        { "type": "kotak", "title": "Tiga jebakan bunyi", "items": [
+          "*Il parle* dan *ils parlent* berbunyi sama persis. Yang membedakan cuma *il* (il) versus *ils* di depan vokal (*ils aiment* = il-ZÈM). Tanpa vokal, telinga tidak punya petunjuk sama sekali.",
+          "*Je finis* dan *il finit* juga sama: fi-NI. Huruf s dan t di ujungnya sama-sama bisu.",
+          "*Nous* dan *vous* adalah dua bentuk yang **selalu** terdengar berbeda dari yang lain. Kalau kamu ingin memastikan orang mendengar siapa pelakunya, dua bentuk inilah yang menolong."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "fr": "finir", "baca": "fi-NIR", "id": "menyelesaikan, selesai" },
+    { "fr": "choisir", "baca": "sywa-ZIR", "id": "memilih" },
+    { "fr": "réfléchir", "baca": "re-fle-SYIR", "id": "berpikir, merenung" },
+    { "fr": "attendre", "baca": "a-TAN-dr'", "id": "menunggu" },
+    { "fr": "répondre", "baca": "re-PON-dr'", "id": "menjawab" },
+    { "fr": "vendre", "baca": "VAN-dr'", "id": "menjual" },
+    { "fr": "dormir", "baca": "dor-MIR", "id": "tidur" },
+    { "fr": "partir", "baca": "par-TIR", "id": "berangkat, pergi" },
+    { "fr": "sortir", "baca": "sor-TIR", "id": "keluar" },
+    { "fr": "comprendre", "baca": "kom-PRAN-dr'", "id": "memahami" },
+    { "fr": "étudier", "baca": "e-tü-DIE", "id": "belajar, mempelajari" },
+    { "fr": "le jour", "baca": "l' JUR", "id": "hari, siang" },
+    { "fr": "le soir", "baca": "l' SWAR", "id": "sore, malam" },
+    { "fr": "vers", "baca": "vèr", "id": "sekitar, menuju" },
+    { "fr": "fatigant", "baca": "fa-ti-GAN", "id": "melelahkan" },
+    { "fr": "assez", "baca": "a-SE", "id": "cukup" },
+    { "fr": "beaucoup", "baca": "bo-KU", "id": "banyak" },
+    { "fr": "jamais", "baca": "ja-MÈ", "id": "tak pernah" },
+    { "fr": "rien", "baca": "rien", "id": "tak ada apa-apa" },
+    { "fr": "personne", "baca": "pèr-SON", "id": "tak seorang pun" },
+    { "fr": "le bus", "baca": "l' BÜS", "id": "bus" },
+    { "fr": "le vélo", "baca": "l' ve-LO", "id": "sepeda" },
+    { "fr": "une voiture", "baca": "ün vwa-TÜR", "id": "mobil" },
+    { "fr": "avoir raison", "baca": "a-vwar rè-ZON", "id": "benar" },
+    { "fr": "simple", "baca": "SANPL'", "id": "sederhana, praktis" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+      "items": [
+        "Je ____ (finir) à six heures.",
+        "Tu ____ (attendre) le bus ?",
+        "Il ____ (dormir) beaucoup.",
+        "Nous ____ (choisir) un restaurant.",
+        "Vous ____ (répondre) en français ?",
+        "Elles ____ (partir) demain."
+      ]
+    },
+    {
+      "prompt": "Ubah jadi kalimat sangkalan dengan ne … pas.",
+      "items": [
+        "Je travaille le soir.",
+        "Il comprend la question.",
+        "Nous avons une voiture.",
+        "Tu écoutes la radio.",
+        "Elle habite à Paris."
+      ]
+    },
+    {
+      "prompt": "Sangkal dengan kata dalam kurung.",
+      "items": [
+        "Il fume. (jamais)",
+        "Je mange. (rien)",
+        "Elle travaille ici. (plus)",
+        "Je vois quelqu'un. (personne)",
+        "J'ai fini. (pas encore)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Saya selesai sekitar jam sepuluh.",
+        "Dia tidak tidur cukup.",
+        "Saya tidak punya mobil.",
+        "Busnya tidak pernah tepat waktu.",
+        "Kami memilih sebuah restoran."
+      ]
+    }
+  ],
+  "answers": [
+    "finis — attends — dort — choisissons — répondez — partent",
+    "Je ne travaille pas le soir. — Il ne comprend pas la question. — Nous n'avons pas de voiture. — Tu n'écoutes pas la radio. — Elle n'habite pas à Paris.",
+    "Il ne fume jamais. — Je ne mange rien. — Elle ne travaille plus ici. — Je ne vois personne. — Je n'ai pas encore fini.",
+    "Je finis vers dix heures. — Il ne dort pas assez. — Je n'ai pas de voiture. — Le bus n'arrive jamais à l'heure. — Nous choisissons un restaurant."
+  ]
+}

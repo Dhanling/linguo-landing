@@ -1,0 +1,193 @@
+{
+  "title": "Di toko pakaian",
+  "title_target": "Dans un magasin de vêtements",
+  "goal": "Membeli pakaian, menyebut ukuran dan warna, serta menunjuk barang dengan ce, cet, cette, ces.",
+  "bekal": [
+    "menunjuk barang dengan *ce, cet, cette, ces*",
+    "menyebut warna dan ukuran yang ikut jenis kelamin",
+    "mencoba, membandingkan, dan menolak dengan sopan"
+  ],
+  "wave": "Ulangi **unit 12** dulu: susun daftar belanja sepuluh barang lengkap dengan takarannya, lalu ucapkan harganya masing-masing.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Je peux essayer ?",
+      "intro": "Budi mencari jaket untuk musim gugur. Penjaga toko mendekat.",
+      "lines": [
+        { "speaker": "Vendeuse:", "text": "Bonjour, je peux vous aider ?", "id": "Selamat siang, ada yang bisa saya bantu?", "literal": "hari-baik, saya bisa kepada-kalian membantu?" },
+        { "speaker": "Budi:", "text": "Oui, je cherche une veste pour l'automne.", "id": "Ya, saya cari jaket untuk musim gugur.", "literal": "ya, saya mencari sebuah jaket untuk musim-gugur." },
+        { "speaker": "Vendeuse:", "text": "Cette veste bleue est très populaire. Quelle taille ?", "id": "Jaket biru ini laris sekali. Ukuran berapa?", "literal": "ini jaket biru adalah sangat populer. berapa ukuran?" },
+        { "speaker": "Budi:", "text": "Je fais du quarante, je crois.", "id": "Ukuran empat puluh, kalau tidak salah.", "literal": "saya membuat dari empat-puluh, saya percaya." },
+        { "speaker": "Vendeuse:", "text": "Voilà. Vous pouvez essayer, la cabine est là-bas.", "id": "Ini. Silakan dicoba, kamar pasnya di sana.", "literal": "itu-dia. kalian bisa mencoba, kamar adalah di-sana." },
+        { "speaker": "Budi:", "text": "Merci… Elle est un peu grande, non ?", "id": "Terima kasih… Agak kebesaran ya?", "literal": "terima-kasih… dia adalah sedikit besar, tidak?" },
+        { "speaker": "Vendeuse:", "text": "Un peu. Vous voulez essayer ce modèle en trente-huit ?", "id": "Sedikit. Mau coba model ini ukuran tiga puluh delapan?", "literal": "sedikit. kalian mau mencoba ini model dalam tiga-puluh-delapan?" },
+        { "speaker": "Budi:", "text": "Volontiers. Vous l'avez en noir aussi ?", "id": "Boleh. Ada yang warna hitam juga?", "literal": "dengan-senang-hati. kalian dia-punya dalam hitam juga?" },
+        { "speaker": "Vendeuse:", "text": "Oui, en noir et en gris. Le noir est plus élégant.", "id": "Ada, hitam dan abu-abu. Yang hitam lebih elegan.", "literal": "ya, dalam hitam dan dalam abu-abu. hitam adalah lebih elegan." },
+        { "speaker": "Budi:", "text": "Elle coûte combien, cette veste noire ?", "id": "Berapa harganya, jaket hitam ini?", "literal": "dia berharga berapa, ini jaket hitam?" },
+        { "speaker": "Vendeuse:", "text": "Quatre-vingt-neuf euros. Il y a une réduction cette semaine.", "id": "Delapan puluh sembilan euro. Minggu ini ada diskon.", "literal": "empat-dua-puluh-sembilan euro. itu ada sebuah potongan ini minggu." },
+        { "speaker": "Budi:", "text": "Parfait, je la prends. Vous acceptez la carte ?", "id": "Bagus, saya ambil. Terima kartu?", "literal": "sempurna, saya dia mengambil. kalian menerima kartu?" }
+      ],
+      "notes": [
+        "**Je fais du quarante** adalah cara orang Prancis menyebut ukuran badan. Harfiahnya \"saya membuat empat puluh\". Untuk sepatu: *je fais du quarante-deux* atau *je chausse du quarante-deux*.",
+        "**Warna ikut jenis kelamin bendanya.** *Une veste **bleue**, un pantalon **bleu**, des chaussures **bleues**.* ⚠️ Tiga warna tidak pernah berubah karena aslinya nama benda: *marron* (kastanye), *orange* (jeruk), dan warna majemuk seperti *bleu clair*, *vert foncé*.",
+        "**Je la prends** — kata *la* di sini menggantikan *la veste*. Kata ganti sasaran seperti ini adalah bahan A2 dan belum wajib kamu kuasai, tapi di toko ia terdengar terus, jadi kenali polanya: kata gantinya berdiri **di depan** kata kerjanya, bukan di belakang.",
+        "**Volontiers** (vo-lon-TIE) = dengan senang hati, boleh. Jawaban positif yang sopan dan sangat Prancis. Kembarannya: *avec plaisir*, *je veux bien*.",
+        "**Essayer** butuh objek atau tidak sama sekali: *je peux essayer ?* sudah cukup di kamar pas. Bentuknya sedikit menyimpang karena huruf y: *j'essaie, tu essaies, nous essayons*.",
+        "**Une réduction** = potongan harga. Kata lain yang akan kamu lihat di etalase: *les soldes* (obral resmi dua kali setahun), *une promo*, *moins 30 %*.",
+        "**Vous pouvez essayer** — bentuk sopan menawarkan. Perhatikan bahwa kata kerja kedua selalu berbentuk dasar sesudah *pouvoir*, *vouloir*, *devoir*. Ini akan dibongkar penuh di unit berikutnya."
+      ],
+      "grammars": [
+        {
+          "title": "Ce, cet, cette, ces — menunjuk barang",
+          "body": ["Satu kata yang menggantikan *le/la/les* saat kamu menunjuk barang tertentu di depan mata. Bahasa Indonesia memakai \"ini\" dan \"itu\"; bahasa Prancis memakai satu bentuk untuk dua-duanya."],
+          "table": {
+            "head": ["Kata benda", "Bentuk", "Contoh"],
+            "rows": [
+              ["maskulin tunggal", "**ce**", "*ce pantalon*"],
+              ["maskulin di depan vokal / h", "**cet**", "*cet homme, cet imperméable*"],
+              ["feminin tunggal", "**cette**", "*cette veste*"],
+              ["jamak (dua-duanya)", "**ces**", "*ces chaussures*"]
+            ]
+          },
+          "after": [
+            "*Cet* dan *cette* dibunyikan **sama persis**: sèt. Bedanya cuma di tulisan — jebakan ejaan yang menjatuhkan banyak pelajar di ujian.",
+            "Kalau perlu membedakan \"ini\" dari \"itu\", tambahkan **-ci** dan **-là** di ujung kata bendanya: *cette veste-**ci*** (jaket ini) versus *cette veste-**là*** (jaket itu). Dipakai hanya kalau memang perlu dibandingkan."
+          ]
+        },
+        {
+          "title": "Warna",
+          "body": ["Kata sifat biasa, jadi ikut aturan unit 11. Yang menarik justru kekecualiannya."],
+          "table": {
+            "head": ["Maskulin", "Feminin", "Bahasa Indonesia"],
+            "rows": [
+              ["blanc", "blanche", "putih"],
+              ["noir", "noire", "hitam"],
+              ["rouge", "rouge", "merah"],
+              ["bleu", "bleue", "biru"],
+              ["vert", "verte", "hijau"],
+              ["jaune", "jaune", "kuning"],
+              ["gris", "grise", "abu-abu"],
+              ["violet", "violette", "ungu"],
+              ["rose", "rose", "merah muda"],
+              ["marron", "marron", "cokelat"],
+              ["orange", "orange", "jingga"],
+              ["beige", "beige", "krem"]
+            ]
+          },
+          "after": [
+            "⚠️ *Marron* dan *orange* tidak pernah berubah: *des chaussures marron*, *une veste orange*. Sebabnya keduanya nama buah yang dipinjam jadi warna.",
+            "Warna majemuk juga membeku: *une veste bleu clair*, *des yeux vert foncé*. Begitu ada kata kedua, seluruh gabungannya berhenti berubah."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pakaian dan ukuran",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Français", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["un pantalon", "an pan-ta-LON", "celana panjang"],
+            ["une chemise", "ün sy'-MIZ", "kemeja"],
+            ["un tee-shirt", "an ti-SYÖRT", "kaus"],
+            ["un pull", "an PÜL", "sweter"],
+            ["une veste", "ün VÈST", "jaket"],
+            ["un manteau", "an man-TO", "mantel"],
+            ["une robe", "ün ROB", "gaun"],
+            ["une jupe", "ün JÜP", "rok"],
+            ["des chaussures", "de syo-SÜR", "sepatu"],
+            ["des chaussettes", "de syo-SÈT", "kaus kaki"],
+            ["une écharpe", "ün-ne-SYARP", "syal"],
+            ["un chapeau", "an sya-PO", "topi"],
+            ["une ceinture", "ün san-TÜR", "ikat pinggang"],
+            ["un sac à main", "an sa-ka-MAN", "tas tangan"]
+          ]
+        },
+        { "type": "kotak", "title": "Kalimat di toko", "items": [
+          "*Je cherche un pull.* — Saya cari sweter.",
+          "*Je peux essayer ?* — Boleh dicoba?",
+          "*Quelle taille faites-vous ?* — Ukuran berapa?",
+          "*C'est trop grand / trop petit / trop serré.* — Kebesaran / kekecilan / terlalu sempit.",
+          "*Vous l'avez en bleu ?* — Ada yang warna biru?",
+          "*Ça vous va très bien.* — Cocok sekali di Anda.",
+          "*Je vais réfléchir.* — Saya pikir-pikir dulu. (cara halus menolak)"
+        ] },
+        { "type": "p", "text": "*Je vais réfléchir* adalah kalimat penolakan paling berguna di seluruh bahasa Prancis. Sopan, tidak melukai, dan dipahami semua penjual sebagai \"tidak jadi\" tanpa perlu diucapkan." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "fr": "un vêtement", "baca": "an vèt-MAN", "id": "pakaian" },
+    { "fr": "un vendeur / une vendeuse", "baca": "an van-DÖR", "id": "penjaga toko" },
+    { "fr": "chercher", "baca": "syèr-SYE", "id": "mencari" },
+    { "fr": "essayer", "baca": "e-sè-YE", "id": "mencoba" },
+    { "fr": "la taille", "baca": "la TAY", "id": "ukuran" },
+    { "fr": "la cabine", "baca": "la ka-BIN", "id": "kamar pas" },
+    { "fr": "là-bas", "baca": "la-BA", "id": "di sana" },
+    { "fr": "un modèle", "baca": "an mo-DÈL", "id": "model" },
+    { "fr": "aider", "baca": "è-DE", "id": "membantu" },
+    { "fr": "volontiers", "baca": "vo-lon-TIE", "id": "dengan senang hati" },
+    { "fr": "élégant", "baca": "e-le-GAN", "id": "elegan" },
+    { "fr": "coûter", "baca": "ku-TE", "id": "berharga" },
+    { "fr": "une réduction", "baca": "ün re-dük-SION", "id": "potongan harga" },
+    { "fr": "les soldes", "baca": "le SOLD", "id": "obral" },
+    { "fr": "accepter", "baca": "ak-sep-TE", "id": "menerima" },
+    { "fr": "serré", "baca": "sè-RE", "id": "sempit, ketat" },
+    { "fr": "croire", "baca": "KRWAR", "id": "percaya, mengira" },
+    { "fr": "l'automne (m)", "baca": "lo-TON", "id": "musim gugur" },
+    { "fr": "populaire", "baca": "po-pü-LÈR", "id": "populer, laris" },
+    { "fr": "porter", "baca": "por-TE", "id": "memakai (pakaian)" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan ce, cet, cette atau ces.",
+      "items": [
+        "____ pantalon",
+        "____ veste",
+        "____ chaussures",
+        "____ homme",
+        "____ jupe",
+        "____ pull"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk warna yang tepat.",
+      "items": [
+        "une veste ____ (bleu)",
+        "des chaussures ____ (noir)",
+        "une robe ____ (blanc)",
+        "un pull ____ (vert)",
+        "des chaussettes ____ (marron)",
+        "une jupe ____ (violet)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "cherche / je / veste / une",
+        "essayer / peux / je / ?",
+        "prends / la / je",
+        "en / avez / l' / vous / noir / ?",
+        "réfléchir / vais / je"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Saya cari sweter untuk musim dingin.",
+        "Ukuran berapa?",
+        "Boleh dicoba?",
+        "Agak kebesaran.",
+        "Berapa harganya, jaket hitam ini?"
+      ]
+    }
+  ],
+  "answers": [
+    "ce pantalon — cette veste — ces chaussures — cet homme — cette jupe — ce pull",
+    "bleue — noires — blanche — vert — marron — violette",
+    "Je cherche une veste. — Je peux essayer ? — Je la prends. — Vous l'avez en noir ? — Je vais réfléchir.",
+    "Je cherche un pull pour l'hiver. — Quelle taille faites-vous ? — Je peux essayer ? — C'est un peu grand. — Elle coûte combien, cette veste noire ?"
+  ]
+}
