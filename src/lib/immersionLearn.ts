@@ -767,6 +767,32 @@ function interpTime(cue: LearnCue, chars: number, total: number): number {
   return end;
 }
 
+// [watch-karaoke-speech-rate-v1] Berapa lama sebenarnya sepotong teks itu DIUCAPKAN.
+// Window caption YouTube hampir selalu lebih panjang dari ucapannya (window bersambung
+// ke baris berikutnya, plus hening/napas di ekor). Kalau sapuan karaoke diregang rata
+// sepenuh window, lajunya lebih pelan dari mulut penutur → makin ke belakang makin
+// ketinggalan ("audio lebih cepat dari karaoke"), dan itu TAK bisa ditambal offset tetap
+// karena selisihnya menumpuk, bukan konstan.
+//
+// Jadi: durasi sapuan = perkiraan waktu bicara (jumlah karakter ÷ laju), dibatasi window,
+// dan tak pernah lebih pendek dari SAPUAN_MIN_RASIO window supaya perkiraan yang meleset
+// tak bikin sapuan "kecepeten" (rampung jauh sebelum kalimatnya habis diucap). Sisa
+// window setelah kata terakhir = sapuan diam menunggu — persis kelakuan karaoke betulan.
+const CPS_LATIN = 15; // karakter/detik ucapan normal (id/en/it/es/…)
+const CPS_PADAT = 6.5; // aksara padat: 1 karakter ≈ 1 suku kata (ja/zh/ko)
+const SAPUAN_MIN_RASIO = 0.6;
+
+function cpsBahasa(langCode?: string): number {
+  const l = (langCode || "").slice(0, 2).toLowerCase();
+  return l === "ja" || l === "zh" || l === "ko" || l === "yue" ? CPS_PADAT : CPS_LATIN;
+}
+
+/** Durasi efektif sapuan untuk `chars` karakter di dalam window `windowDur` detik. */
+function segmenSapuan(windowDur: number, chars: number, langCode?: string): number {
+  const perlu = Math.max(0, chars) / cpsBahasa(langCode);
+  return Math.max(windowDur * SAPUAN_MIN_RASIO, Math.min(windowDur, perlu)) || windowDur;
+}
+
 /**
  * [watch-karaoke-anchor-v2] Fraksi karakter target (0..1) yang sudah terucap pada
  * detik `time` — KEBALIKAN interpTime. Cue gabungan beberapa window caption membawa
@@ -775,14 +801,14 @@ function interpTime(cue: LearnCue, chars: number, total: number): number {
  * yang melenceng saat tempo ucapan tak rata (lagu, jeda napas panjang).
  * Cue tanpa anchor tetap linear seperti sebelumnya.
  */
-export function karaokeFrac(cue: LearnCue, time: number): number {
+export function karaokeFrac(cue: LearnCue, time: number, langCode?: string): number {
   const { start, end } = cue;
+  const total = cue.target.length || 1;
   const anc = (cue as TimedCue)._anc;
   if (!anc?.length) {
-    const dur = Math.max(0.4, end - start);
+    const dur = segmenSapuan(Math.max(0.4, end - start), total, langCode);
     return Math.min(1, Math.max(0, (time - start) / dur));
   }
-  const total = cue.target.length || 1;
   // Titik kontrol (detik → fraksi-karakter), dijaga monotonic naik dua arah.
   const pts: Array<[number, number]> = [[start, 0]];
   for (const [c, t] of anc) {
@@ -794,7 +820,12 @@ export function karaokeFrac(cue: LearnCue, time: number): number {
   for (let i = 1; i < pts.length; i++) {
     const [t0, f0] = pts[i - 1];
     const [t1, f1] = pts[i];
-    if (time <= t1) return t1 <= t0 ? f1 : f0 + (f1 - f0) * ((time - t0) / (t1 - t0));
+    if (time <= t1) {
+      if (t1 <= t0) return f1;
+      // Sapuan dipacu KECEPATAN BICARA, bukan diregang rata sepanjang window.
+      const dur = segmenSapuan(t1 - t0, (f1 - f0) * total, langCode);
+      return f0 + (f1 - f0) * Math.min(1, (time - t0) / dur);
+    }
   }
   return 1;
 }
