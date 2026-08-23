@@ -133,3 +133,63 @@ describe("kataIndonesia — hanya bahasa yang dipelajari yang boleh diketuk", ()
     expect(klausaKata("Jawabnya lengkap: Hoy es martes", "hoy")).toBe("Hoy es martes");
   });
 });
+
+/* [ebook-jaga-bahasa-en-v1] Modul Inggris diuji terpisah, dengan kode "en".
+   Alasannya bukan kerapian: bahasa Inggris satu-satunya bahasa target kita yang
+   ditulis dengan huruf Latin polos, jadi `kataTargetJelas` tak pernah menemukan
+   bukti apa pun di dalamnya dan seluruh penjagaan bergantung pada LEKSIKON_EN.
+   Uji dengan kode "es" — seperti blok di atas — tak akan menyentuh jalur itu
+   sama sekali. */
+const EN = path.join(AKAR, "en-a1");
+const enTarget: Contoh[] = [];
+const enId: Contoh[] = [];
+if (fs.existsSync(EN)) {
+  for (const berkas of fs.readdirSync(EN)) {
+    if (!berkas.endsWith(".json")) continue;
+    const j = JSON.parse(fs.readFileSync(path.join(EN, berkas), "utf8"));
+    /* Ruas yang dijamin skema, bukan hasil terkaan: baris dialog & kolom
+       `vocab[].en` pasti bahasa Inggris, `l.id`/`l.literal`/`goal` pasti
+       bahasa Indonesia. Dua-duanya harus benar sekaligus — daftar yang
+       membebaskan bahasa Inggris tak boleh sekalian membebaskan prosanya. */
+    kumpul(enTarget, j.title_target);
+    for (const d of j.dialogs || []) {
+      for (const l of d.lines || []) { kumpul(enTarget, l.text); kumpul(enId, l.id); kumpul(enId, l.literal); }
+    }
+    for (const v of j.vocab || []) { kumpul(enTarget, v.en); kumpul(enId, v.id); }
+    kumpul(enId, j.goal);
+  }
+}
+
+describe("modul Inggris — huruf Latin polos, tanpa bukti aksara", () => {
+  it("modulnya terbaca", () => {
+    expect(enTarget.length).toBeGreaterThan(1500);
+    expect(enId.length).toBeGreaterThan(1500);
+  });
+
+  it("kalimat bahasa Inggris tetap boleh diketuk", () => {
+    const terkunci = enTarget.filter((c) => kataIndonesia(c.kata, "en", c.konteks));
+    console.log("kata Inggris ikut terkunci:", (terkunci.length / enTarget.length * 100).toFixed(2) + "%");
+    expect(terkunci.length / enTarget.length).toBeLessThan(0.02);
+  });
+
+  it("penjelasan Indonesianya tetap bisu", () => {
+    const lolos = enId.filter((c) => !kataIndonesia(c.kata, "en", c.konteks));
+    console.log("kata Indonesia masih bisa diketuk (modul Inggris):", (lolos.length / enId.length * 100).toFixed(2) + "%");
+    expect(lolos.length / enId.length).toBeLessThan(0.10);
+  });
+
+  it("kata serapan di kalimat Inggris berbunyi, di kalimat Indonesia bisu", () => {
+    // Sama persis ejaannya; yang membedakan cuma kalimat tempatnya duduk.
+    expect(kataIndonesia("bank", "en", "Is there a bank near here?")).toBe(false);
+    expect(kataIndonesia("film", "en", "I watched a film last night.")).toBe(false);
+    expect(kataIndonesia("bank", "en", "Kata *bank* dipakai untuk tempat menyimpan uang.")).toBe(true);
+  });
+
+  it("imbuhan Indonesia tak menelan kata Inggris yang mirip", () => {
+    // "member" berekor "memb-", "berries" berekor "ber-": dua pola imbuhan
+    // Indonesia yang kebetulan menyerempet bahasa Inggris.
+    for (const kata of ["member", "berries", "pedestrian"]) {
+      expect(kataIndonesia(kata, "en", `The ${kata} is here.`)).toBe(false);
+    }
+  });
+});

@@ -91,176 +91,226 @@ const HURUF_ASING = /[^\u0000-\u007F]/u;
    Sengaja disimpan sebagai satu string: 800+ kata sebagai literal array
    membengkakkan berkasnya tanpa guna. */
 const LEKSIKON_ID = `
-  abjad absen abu acak acara ada adalah adanya adik aduh agak agar agus agustus air akan
-  akhir akhirnya akibat aksara aksaranya aksen ala alamat alasan alasannya alat
-  alhamdulillah alkohol alun alurnya ambang ambil anak anda aneh anggota anggukan anggur
-  angin angka angkanya angkat anime anna antara antaranya antrean apa apakah apartemen api
-  aplikasi apotek apoteknya april arah arahkan arti artinya asalmu aslinya atas atasnya
-  atau aturan aturannya awal awet ayah ayahku ayahmu ayam ayo ayudarme bab baca bacaan
-  bacalah bacanya badan badannya bagaimana bagian bagiannya bagus bahan bahannya bahasa
-  bahasanya bahwa baik baiklah baiknya bakal baku balai balikkan bandara bandingkan bandon
-  banget bangkit bangsa bangun bank bantu bantuan bantuannya banyak bapak barat baris
-  barisan baru basi basket batasnya bawa bawah bawang bayangan bayangkan bayar bayarnya
-  bayi beban bebas beberapa bedanya beddo begitu bekas bekerja belajar belakang belakangan
-  belakangnya belanja belas beli belok belokkan benar benci bendanya bentuk benua
-  bepergian berada berakhir berangin berangkat berapa berarti berasal berat beraturan
-  berawan berbahasa berbalik berbaring berbasa berbeda berbelok berbentuk berbicara
-  berbuah bercampur bercerai bercerita berdatangan berdekatan berdiam berdiri berdua
-  berenang berfungsi berganti bergantian bergantung bergeser berguna berharap berharga
-  berhasil berhenti berhubungan beri berikut berisi berisik beristirahat berita berjalan
-  berjanji berjenjangnya berkat berkata berkelakuan berkembang berkenalan berlaku
-  berlebihan berlima berlin bermunculan bernama berolahraga berpakaian berpamitan
-  berpasangan berpindah berpola bersama bersamamu bersandar bersaudara bersejarah
-  berselang berselera bersih bertahan bertambah bertanya bertiga bertukar berulang berumur
-  berupa berurutan berusaha berwarna besar besarnya besok betapa betul biarkan biasa
-  biasanya biayanya bicara bicarakan bicaramu bicaranya bikin bingung bioskop bisa boleh
-  bombai bonnya buah buat buatkan buatmu budaya buddha bue bujur buka bukan buktinya buku
-  bulan bunga bungkukan bungkukannya bungkus bunyinya buru bus butuh butuhkan campurannya
-  canggung cansados cantik capek cara caranya cari carlos caros catatan cefr celana cepat
-  cerah cerdas ceria cerita ceritakan ceritamu cermat cerrados cirinya ciuman coba cobalah
-  cocok cokelat contoh coretan cuaca cuacanya cuarta cucu cuestan cukup cuma dadar daftar
-  daging dah dalam dalamnya dan dari daripada darurat dashboard datang dekat dekatnya
-  delapan demi dengan dengar dengarkan depan depanmu departemen derajat deretan desember
-  detektif detik dewi dia diabaikan diadakan dialog dian dianggap dibaca dibalas dibalik
-  dibangun dibatalkan dibawa dibeli diberi diberikan dibuat dibuka dibutuhkan dicari
-  dicetak didahului didahulukan digantikan digit dihafal dihangatkan diharapkan dihormati
-  diikuti diingat diinginkan dijaga dijanjikan dijelaskan dikejar dikerjakan dilatih
-  diletakkan dilewati diliburkan dilihat dilunakkan dilupakan diminta dimuat dimulai
-  dingin dipadatkan dipahami dipakainya dipaksa dipanggil dipastikan dipelajari diperiksa
-  dipikir dirancang dirangkai diri dirimu dirinya disambung disambut disarankan disebut
-  disentuh diseret disertai disesuaikan diskon diskonnya disuruh disusun ditambahkan
-  ditanya ditanyakan ditawar ditebak ditekan ditekankan ditukar dituliskan ditumpuk
-  ditunjukkan diturunkan ditutup diubah diucapkan diuji diulang dokter dompet dosen drama
-  dua duanya duda duduk duermen dugaanmu dulu dunia durasi easy efektif ejaan elang emas
-  empat enak enam episode era eropa fakta februari feminin film filmnya formulir frasa
-  frekuensi fuera furigana gagal galak gambarkan gampang gangguan ganti gantilah garis
-  gaun gedung gelombang gerakan gerbang gereja giliran glosarium goreng goresan gram
-  granada guapas gula gunanya gunung guru gurumu gurunya habis hafal hafalan hafalkan hal
-  halaman halo halte haltenya halus ham hampir hanya harga harganya hari harinya harus
-  hasilnya hasrat hati hebat hiasan hidangan hidup hidupku hijau hijos hilang hilangnya
-  hiragana hitam hitungan hormat hujan hurufnya ibu ibuku ibumu icoca ide identitas ikan
-  ikat ikut ikuti indah indonesia indonesiamu indonesianya industri info ingat ingatan
-  inggris ingin inginkan ini inilah insinyur interaktif ipar iri isi isian isinya
-  istirahat istri itu itulah jabat jadi jadwal jadwalmu jago jaket jalan jam jamak jamnya
-  janda jangan janggal janji janjian januari jarak jaraknya jarang jaringan jatuh jauh
-  jawab jawabanmu jawabannya jembatan jendela jepang jepangnya jeruk jins jlpt juga jujur
-  juli jumat jumlahnya jumpa juni juru jus justru kabar kabari kabarmu kadang kaget kah
-  kain kaisar kaiwa kakak kakaknya kakarimashita kakek kaki kalau kali kalimat kalimatmu
-  kalimatnya kalinya kamar kamarmu kamarnya kami kamis kamu kamus kamusnya kanan kanannya
-  kandung kanji kantin kantong kantor kantornya kapas karena kartu karyawan kasih kasir
-  kata katakana katanya katedral katedralnya katun kayu keadaan kebangsaan kebangsaannya
-  kebanyakan kebenaran keberangkatan kebesaran kebetulan kebiasaan kebutuhan kecepatan
-  kecil kecilnya kecuali kedatangan kedekatan kedengarannya kedua keduanya keempat keenam
-  kegiatannya kehilangan keigo keinginan kejadian keju kekecilan kelas kelompok keluar
-  keluarga keluargaku kemampuanmu kemarau kemarin kembali kembalian kembaliannya
-  kembalilah kembang kemeja kemejanya kemewahan kemewahanku kemudian kemungkinan kenal
-  kenalan kenali kenalkan kenapa kendaraan kentang kepada kepadamu kepala kepalamu
-  kepemilikan kepingan keponakan keponakanmu kerangka kerangkanya keras kereta keretanya
-  kerjaan kerjakan kerjanya kesalahan kesan kesempatan kesenangan kesopanannya ketat
+  abjad absen abu acak acara ada adalah adanya adik aduh agak agar age agus agustus air
+  aja ajari akan akhir akhirnya akibat aksara aksaranya aksen aku akuntan ala alamat
+  alasan alasannya alat alergi alfabet alhamdulillah alih alkohol alun alurnya ambang
+  ambil ampun anak anda aneh anggota anggukan anggur angin angka angkanya angkat anime
+  answer antara antaranya antrean antusias apa apakah apartemen api aplikasi apotek
+  apoteknya apples arah arahkan arti artinya asalmu asing aslinya asyik atas atasnya atau
+  aturan aturannya australia australian awal awet ayah ayahku ayahmu ayam ayamnya ayo
+  ayudarme bab baby baca bacaan bacalah bacamu bacanya bad badai badan badanmu badannya
+  bagaimana bagi bagian bagiannya bagus bahan bahannya bahasa bahasanya bahwa baik baiklah
+  baiknya baju bakal baku balai balik balikkan bandara bandon banget bangkit bangsa bangun
+  bank banknya bantu bantuan bantuannya bantuin banyak bapak barang barat bareng baris
+  barisan baru barunya basa basah basi basket batasnya bawa bawah bawang bayangan
+  bayangkan bayar bayarnya bayi beban bebas beberapa bedakan bedanya beddo begitu bekas
+  bekerja beku belajar belakang belakangan belakangnya belanja belanjaan belas beli belok
+  belokkan belong belongs benar benci benda bendanya bentuk bentuknya benua berada
+  berakhir beraktivitas berangin berangkat berapa berarti berasal berat berawan berbagi
+  berbahasa berbalik berbaring berbasa berbeda berbelanja berbelok berbentuk berbicara
+  berbuah bercampur bercerai bercerita berd berdampingan berdatangan berdekatan
+  berdempetan berdiam berdiri berdoa berdua bereaksi berenang berfungsi berganti
+  bergantian bergantung bergeser berguna berharap berharga berhasil berhenti berhubungan
+  beri berikut berisi berisik beristirahat berita berjalan berjanji berjenjangnya berkat
+  berkata berkebun berkelakuan berkelompok berkembang berkenalan berlaku berlangsung
+  berlari berlatih berlebihan berlima berlin bermakna bermuara bermunculan bernama
+  berolahraga berpakaian berpamitan berpasangan berpindah berpola bersalju bersama
+  bersamamu bersandar bersaudara berseberangan bersejarah berselancar berselang berselera
+  bersiap bersih bersihin bertahan bertahun bertambah bertanya bertiga bertukar bertumpu
+  berubah berulang berumur berupa berurutan berusaha berwarna besar besarnya beserta besok
+  betapa betul biar biarkan biasa biasanya biaya biayanya bicara bicarakan bicaramu
+  bicaranya bikin bingung bioskop birthday bisa bisakah blues boleh bombai bonnya boot
+  bosan boys brazilian britania bru buah buat buatkan buatmu budaya buddha bue bujur buk
+  buka bukan bukanya buktinya buku bukumu bulan bunga bungkukan bungkukannya bungkus
+  bunyikan bunyinya buru buruk bus butuh cabai campurannya canggung cans cansados cantik
+  capek cara caranya careful cari carlos caros catatan cefr celana cepat cerah cerdas
+  ceria cerita ceritakan ceritamu cermat cerrados chat cina cinta cirinya citys ciuman
+  clouds coba cobalah cocok cokelat coming contoh conversation cooks coretan cuaca
+  cuacanya cuarta cuci cucu cuestan cukup cuma dadar daging dagingnya dah dalam dalamnya
+  dan dapur dapurnya dari daripada darurat dasarnya dashboard datang dekat dekatnya
+  delapan demi dengan dengar dengarkan depan depanmu depannya departemen derajat deretan
+  desember detektif detik dewi dia diabaikan diadakan diajak dialog dialognya diam diambil
+  dian dianggap diatur dibaca dibalas dibalik dibangun dibatalkan dibawa dibedah dibedakan
+  dibeli diberi diberikan dibicarakan dibuat dibuka dibunyikan dibutuhkan dicari dicetak
+  dicoba didahului didahulukan dieja difficult digandeng digantikan digit digitalmu
+  dihafal dihangatkan diharapkan dihormati diikuti diingat diinginkan dijaga dijanjikan
+  dijawab dijelaskan dikejar dikerjakan dilahirkan dilatih diletakkan dilewati diliburkan
+  dilihat dilunakkan dilupakan dimiliki diminta dimuat dinding dingin dipadatkan dipahami
+  dipakainya dipaksa dipaksakan dipanggil dipasangi dipastikan dipegang dipelajari
+  diperhalus diperiksa dipikir dirancang dirangkai direncanakan diri dirimu dirinya
+  disambung disambut disarankan disebut disentuh diseret disertai disesuaikan disingkat
+  diskon diskonnya disorot disuruh disusun ditambah ditambahkan ditanya ditanyakan ditawar
+  ditebak ditekankan diterjemahkan ditinggalkan ditukar dituliskan ditumpuk ditunjukkan
+  dituntut diturunkan ditutup diubah diucapkan diuji diulang diulangi diurutkan dokter
+  dompet dong dosen drama drives dua duanya duda duduk duermen dugaanmu dulu dunia durasi
+  easy efektif eggs ejaan ejaannya elang empat enak enaknya enam episode era eropa
+  fahrenheit fakta februari feminin film filmnya finishes fondasi fonetik formulir fotokan
+  fourty france frasa frekuensi french fuera furigana gagal galak gambarkan gampang
+  gangguan ganti gantilah garis gaun gedung gelombang gerakan gerbang gereja german
+  germany giliran gim gimana gitar gitarnya glosarium goes golongan goreng goresan gram
+  granada guapas gula gunanya gunung guru guruh gurumu gurunya habis habiskan hadiah hafal
+  hafalan hafalkan hal halaman halo halte haltenya halus ham hampir hanya harga harganya
+  hari harian harianmu harimu harinya harus hasilnya hasrat hates hati heavy hebat hei
+  hewan hiasan hidangan hidup hidupku hidupmu hijau hijos hilang hilangnya hiragana hitam
+  hitung hitungan hobi hormat hou hujan hurufnya ibu ibuku ibumu icoca ide identitas ielts
+  ikan ikat ikut ikuti indah india indonesia indonesiamu indonesianya industri info
+  informations ingat ingatan inggris inggrisnya ingin inginkan ini inilah insinyur
+  interaktif internasional interogasi inti ipar iri isi isian isinya iskul istadi istilah
+  istimewa istirahat istri istrinya itu itulah iya izin jabat jadi jadwal jadwalmu jaga
+  jago jaket jalan jalannya jam jamak jamnya janda jangan janggal janggalnya janjian
+  januari jarak jaraknya jarang jaringan jatuh jauh jawab jawabanmu jawabannya jembatan
+  jendela jepang jepangnya jeruk jii jins jlpt juga jujur juli jumat jumlahnya jumpa juni
+  juru jus justru juta kabar kabari kabarmu kabarnya kabut kadang kafe kaget kah kain
+  kaisar kaiwa kakak kakaknya kakarimashita kakek kaki kalau kali kalimat kalimatmu
+  kalimatnya kalinya kamar kamarmu kamarnya kami kamis kampung kampus kamu kamus kamusnya
+  kanada kanan kanannya kandung kanji kantin kantong kantor kantornya kapas karena kartu
+  karyawan kasih kasihan kasir kata katakana katanya katedral katedralnya katun kayaknya
+  kayu keadaan kebangsaan kebangsaannya kebanyakan kebenaran keberangkatan kebesaran
+  kebetulan kebiasaan kebutuhan kebutuhanmu kecepatan kecil kecilnya kecuali kedatangan
+  kedekatan kedengaran kedengarannya kedokteran kedua keduanya keempat keempatnya keenam
+  kegiatannya kehabisan kehilangan keigo keinginan kejadian keju kekecilan kekurangan
+  kelahiranmu kelas kelasnya kelelahan kelihatan kelihatannya kelima keliru kelompok
+  keluar keluarga keluargaku kemajuan kemampuan kemampuanmu kemarau kemarin kembali
+  kembalian kembaliannya kembalilah kembang kemeja kemejanya kemewahan kemewahanku
+  kemudian kemungkinan kenal kenalan kenali kenalkan kenapa kendaraan kentang kepada
+  kepadamu kepala kepalamu kepemilikan kepingan keponakan keponakanmu kerangka kerangkanya
+  keras kereta keretanya kering kerja kerjaan kerjakan kerjamu kerjanya kesalahan kesan
+  kesempatan kesenangan kesepakatan kesepuluh kesepuluhnya kesopanannya kesukaan ketat
   ketemu ketemuan keterangan ketergesaan keterlambatan ketersediaan ketidaksopanan ketiga
-  ketiganya ketinggalan ketukannya keunggulan khas khusus kira kiri kita kok kolom
-  kolombia koma konkretnya konteks kopi kosakata kosakatanya kosong kota kotak kotamu
-  kotanya kotor krim kuasai kuat kuil kunci kuning kurang kurs kursi kurung kurus label
-  lagi lagu lahir lain lajang laki lakiku lakimu lakukan lalu lama lambat lampau lampu
-  lancar langkah langsung lanjutkan lantai lapar laptop larangan largas larut latar
-  latihan latihannya latin laut layar lebih lekat lelah lelaki lelucon lembap lembar
-  lembaran lembut lengkapi lengkungnya leo letak letaknya level levelmu lewat lewati lho
-  libro libur lift lihat lihatlah lima lingkaran linguo lintas lirik listrik liter loket
-  longgar lorong luar luas lucu lurus lusa lusin maaf maafkan macet mahal mahasiswa mahir
-  main maju maka makan makanan makanannya makanya makhluk makin maksud malam malamnya mana
-  mandi manis mantap mantel maret mari masak masakan masalah masih masing masjid maskulin
-  masuk matamu matang matte mau maupun mawar mayores mei meja melainkan melakukan
-  melampaukan melanjutkan melatih melebur meleburkan melelahkan melengkapi meleset
-  meletakkan melihat melihatnya melirik melompati melupakan memahami memakai memakan
-  memaksamu memandikan memanggil memasak memasang memastikan membaca membacanya membagi
-  membalik membandingkan membantu membaringkan membawa membawakan membayar membedakan
-  membedakannya membela membeli membelinya membentuk memberi membetulkan membiarkannya
-  membuang membuat membuatnya membuka membulatkan membungkuk membunyikan membutuhkan
-  memeriksa memesan meminta memisahkan memotret memperbaiki mempercepatmu memperhitungkan
-  memperkenalkan mempertimbangkan memuat memulai memutus menahan menaikkan menakutkan
-  menambahkan menandakan menang menangkap menanyakan menanyakannya menarik menawar
-  menawarkan menceritakan mencicipi mencoba mendadak mendaftar mendatar mendengar
-  mendengarkan mendung menebak menekankan menemani menempel menempelkan menemukan
-  menentukan menerima menerus menetap mengajak mengaku mengalahkan mengalihkan mengambil
-  mengangkat mengapa mengatakan mengatur mengecilkan mengejar mengelilingi mengembalikan
-  mengenai mengenal mengenali mengenalinya mengeras mengerjakan mengerjakannya mengerti
-  mengetik mengetuk menggabungkannya menggambar menggambarkan mengganti menggantung
-  menggesernya menggurui menghadang menghafal menghafalnya menghemat menghindari
-  menghitung menghujan mengikuti mengikutinya mengincar mengingat mengingatnya
-  menginginkan mengobrol mengubahnya mengucapkan mengucapkannya mengulang mengunci
-  mengunjungi mengusir menilai meninggalkan menipu menit menitnya menjadi menjaga
-  menjatuhkan menjawab menjebak menjegal menjelaskan menjual menolak menolong menonton
-  menulis menulisnya menumpuk menunggu menunjuk menunjukkan menuntaskan menuntut menurut
-  menutup menyalin menyambung menyambungnya menyangkal menyapa menyatakan menyeberang
-  menyebut menyebutkan menyebutkannya menyebutnya menyelamatkan menyelesaikan menyenangkan
-  menyepakati menyesali menyesuaikan menyiapkan menyiapkanmu menyinggung menyisakan
-  menyuruhmu menyusun mepet merah merangkai merangkum mereka merekomendasikan merendah
-  merespons meriah mertua meski mewah milikku mimasen minggu mingguan minimal minimarket
-  minta minum minuman minumnya minyak miring mobil modern modul mohon muda mudah mula
-  mulai mulut mulutmu mulutnya muncul mundur mungkin murah murid museos museum museumnya
-  musik mutlak nadanya naik naiklah nama namamu namanya nanti narimashita nasi nasional
-  negara negaramu negaranya negatif negeri nenek nenekku netral ngapain nhk nihonjin nilai
-  nilainya node nol nomimasen nomor nonton november nyasar nyata nyonya objeknya oke
-  oktober olahraga oleh orang orangnya oranye osaka otak otomatis oyoide pacar pada
-  padahal pagi paham pajak pak pakai pakaian paman pamanku panas panggang panggilan panik
-  panjangnya pantai pantainya papan paraguas paris partikel partikelnya pas pasang
-  pasangan pasangkan pasarnya pasmo pasnya paspor patah patokan payung pecahannya pedas
-  pedasnya pegawai pekan pekanmu pekannya pekerjaan pelafalan pelajar pelajaran pelajari
-  pelaku pelan pelayan peleburan pelemah pelindung pemahaman pemakaiannya pemandian
-  pembaca pembeda pembelajar pembeli pembicara pemula penanda penanggalan penanya pencuci
-  pendaftaran pendapat pendek pengajar pengajarnya pengalamanmu pengantar pengecualian
-  pengenal pengganti penggolongnya penguat pengucapan pengulangan penilaian penilaiannya
-  penjaga penjelasan penjelasannya penopang penting penuh penumpang penutur penuturnya
-  penyambung penyambungnya per peran perasaan perawat perbedaan perbelanjaan percakapan
-  percakapannya perempuan perempuanku perempuanmu pergantian pergaulan pergi perhatikan
-  periksa perintah perjalanan perjalanannya perkenalan perkumpulan perlakuan perlu
-  permintaan permisi pernah pernikahan perpustakaan persegi persis pertama pertamamu
-  pertamanya pertanyaannya pertemuan perubahan perusahaan perut pesan pesanan pesanannya
-  pesawat peserta pesta peta petugas petunjuk petunjuknya pierre pihak pilih pilihannya
-  pinggang pintar pintas pintu pipi pirang pisang plastik podcast poin pokok pola polanya
-  polisi ponsel ponselmu porsi posisi potong praktis praktisnya primas privat pro
-  produktif profesi programmer prosesnya pueden pukul pula pulang pulangnya puluh puluhan
-  pun punggung punya pusat putih quinto rabu rahmat rajin rak raksasa ramah ramai rambut
-  rambutnya rangka rangkaian rangkuman ranjang rantainya rapi rapikan rasa rata ratus
-  ratusan receh reguler reiwa rekomendasikan rencana rencanamu rendah repot reputasi resmi
-  restoran ribu ribuan ringkasan risiko rok roti ruangan rubios rujukan rumah rumpang
-  rumusnya runtut rupiah rutinitas rutinitasmu sabtu sah sakit saku salah salam salin
-  saling salju sama sambil sampai samuku sana sandangnya sangat sanggup sangkar santap
-  santo sarapan sari satu satunya saudara saya sayang sebagai sebagian sebaiknya
-  sebaliknya sebaya sebeda sebelah sebelahnya sebelas sebelum sebenarnya sebentar seberang
-  seberangi seberapa sebotol sebuah sebut sebutan secara sedang sedangkan sederhana
-  sediakan sedikit segera segitu sehari seharian sehat sehingga sejak sejarah sejenak
-  sejuta sekadar sekaleng sekali sekaligus sekarang sekelas sekelasnya seketika sekilas
-  sekilo sekilonya sekitar sekitarmu sekitarnya sekolah sekolahnya selain selalu selama
-  selamat selanjutnya selasa selatan selesai seling seluruh seluruhnya selusin semacamnya
-  semangat semata sembarangan sembilan sembuh sementara seminggu semoga sempat sempit
-  sempurna semua semuanya senang sendiri sendirinya sengaja senggang senin senti seoul
-  sepak sepanjang separuh sepatu sepenuhnya seperempat seperti september sepuh sepuluh
-  sepupu serangan seratus serialmu seribu serikat sering serius serta sertifikat seru
-  sesuai sesuaikan sesuatu sesudahnya setahun setara setelah setengah seterusnya setiap
-  shinto siang siapkan siaran sibuk sifatnya silakan singkat sini sinilah sisanya sisi
-  sistem siti situ situasi situlah soal soalnya soda sopan sopir sor sorenya spanyol
-  spanyolmu spanyolnya stasiun stasiunnya status stroberi struk struknya suami suara
-  suarakan suatu sudah sudut suica suka suku sulit sulung sumpit sungai sungguh sungguhan
-  supaya susu susun susunannya suwatte swalayan swasta syarat syukurlah tabel tabelnya
-  tadi tagihan tahu tahun tahunannya takarannya takarir taksi tam taman tambahan tampak
-  tampan tamu tanah tanda tandanya tangan tanganmu tangga tanggal tanggalnya tanjakan
-  tanpa tanya tanyakan tapi tas tata tawaran tebak ted tegak tegas teh tekanan tekanannya
-  teks tekun telanjang telat telepon televisi telinga telingamu teman temanku temannya
-  tempati tempo temu temui tenang tenggat tentang tenteram tentu teorinya tepat terakhir
-  teratur terbaca terbaik terbalik terbang terbangun terbatas terbiasa terbuka terburu
-  tercepat tercer tercera terdengar terendah tergagap tergantung terhadap terhormat
-  terikat terima terjadi terjemahan terjemahannya terjemahkan terkenal terlalu terlambat
-  termasuk termudah ternyata terpesona terpisah terpotong tersedia tersendat tersering
-  tersesat tertawa tertera tertolong tertukar tertutup terus tetangga tetangganya tetap
-  tetapi tetesan tiap tiba tidak tidur tiga timur tinggal tinggalnya tinggi tingkat tip
-  tiru titik titiknya toilet toko tolong tombol tooo topi total tradisional transaksi
-  transportasi tua tuaku tuamu tuan tugas tugasnya tujuanmu tujuh tulang tulis tulisan
-  tulisanmu tulisannya tulus tumbuh tunai tunangan tunggal tunggu tunjuk tunjuknya tuntas
-  turis turun turunannya tutup ubah ucapkan udara ujiannya ukuran ukurannya ulang ulangi
-  umumnya umur umurnya undangan ungkapan ungu unit unitnya universitas untuk urutan
-  urutannya usah utama utara utuh varian veinticuatro veis versimu visitan vokalnya
-  vuelven wajib walau warna warnanya wartawan warung wisata wortel yaitu yang yokute yuko
+  ketiganya ketinggalan ketujuhnya ketuk ketukannya keturunannya keunggulan keys khas
+  khawatir khusus kini kira kiri kita klasik knowing kok kolom kolombia koma komputer
+  konkretnya konteks kopi korean kos kosakata kosakatanya kosong kota kotak kotamu kotanya
+  kotor krim kuasai kuat kuil kuliah kunci kuning kurang kurs kursi kurung kurus label
+  lada lagi lagu lahir lain lajang laki lakiku lakimu lakukan lalu lama lambang lambat
+  lampau lampaunya lampu lancar langitnya langkah langsung lanjutkan lantai lapar laptop
+  larangan largas lari larut latar latihan latihannya latin laut lawan layak layar learn
+  lebih lega lekat lelah lelaki lelucon lembap lembar lembaran lembut lengkapi lengkapnya
+  lengkungnya leo letak letaknya level levelmu lewat lewati lezat lho libro libur liburan
+  lift lihat lihatlah liis liked lima lingkaran lingkarannya linguo lintas lirik listrik
+  liter lives loket longgar lorong luang luar luas lucu lumayan lupakan lurus lusa lusin
+  maaf maafkan macet mahal mahasiswa mahir main mainkan maju maka makan makanan makanannya
+  makanya makhluk makin maksud maksudnya malam malamnya malang mama mampir mana mandarin
+  mandek mandi manis mantap mantel marah maret mari masak masakan masalah masih masing
+  masjid maskulin masuk matamu matang matte mau maupun mawar mayores means mei meja mejaku
+  melainkan melakukan melamar melampaukan melanggar melanjutkan melatih melayu melebur
+  meleburkan melelahkan melengkapi melepaskannya meleset meletakkan melewatkan melihat
+  melihatnya melirik melompati melupakan memahami memahamimu memainkan memakai memakan
+  memaksamu memancing memandikan memanggil memangnya memasak memasang memastikan membaca
+  membacanya membagi membaik membalik membandingkan membangun membantu membaringkan
+  membawa membawakan membayangkan membayar membedakan membedakannya membeku membela
+  membeli membelinya membentak membentuk memberi memberikannya membersihkan membetulkan
+  membiarkan membiarkannya membicarakan membingungkan membuang membuat membuatnya membuka
+  membulatkan membungkuk membunyikan membutuhkan memecahkan memegang memeriksa memesan
+  memilih meminta memisahkan memotong memotret memperbaiki mempercepatmu memperhitungkan
+  memperkenalkan memperlihatkan mempersembahkan mempertimbangkan memuat memulai memutus
+  menabung menahan menaikkan menakjubkan menakutkan menambahkan menandakan menang
+  menangkap menanyakan menanyakannya menari menarik menaruh menawar menawarkan mencari
+  mencarinya menceritakan mencicipi mencintai mencoba mencuci mendaftar mendapat mendatar
+  mendekatimu mendengar mendengarkan mendung menebak menekankan menelepon menemani
+  menempel menempelkan menemukan menerima menerjemahkannya menerus menetap mengajak
+  mengajar mengakhiri mengaku mengalahkan mengalihkan mengambil mengandung menganggapnya
+  mengangkat mengantar mengapa mengatakan mengatur mengecilkan mengeja mengejanya mengejar
+  mengelilingi mengeluarkan mengembalikan mengenai mengenal mengenali mengenalinya
+  mengendarai mengeras mengerjakan mengerjakannya mengerti mengetik mengetuk
+  menggabungkannya menggambar menggambarkan mengganti menggesernya menggosok menggurui
+  menghadang menghafal menghafalnya menghalangi menghemat menghilang menghindari
+  menghitung menghitungnya menghujan mengikutinya mengincar mengingat mengingatnya
+  menginginkan mengintrogasi mengira mengirim mengisi mengobrol menguap mengubahnya
+  mengucapkan mengucapkannya mengulang mengunci mengunjungi mengusir mengusulkan menikah
+  menikmati menilai meninggalkan menipu menit menitnya menjadi menjaga menjatuhkan
+  menjawab menjebak menjegal menjelaskan menjual menolak menolong menonton menulis
+  menulisnya menumpuk menunggu menunjuk menunjukkan menuntaskan menuntut menunya menurut
+  menurutmu menutup menutupi menyakiti menyalin menyamarkan menyambung menyambungnya
+  menyambut menyampaikan menyangkal menyanyi menyapa menyatakan menyeberang menyebut
+  menyebutkan menyebutkannya menyebutnya menyediakan menyelamatkan menyelesaikan
+  menyelesaikannya menyenangkan menyepakati menyerah menyertai menyesali menyesuaikan
+  menyetir menyewa menyiapkan menyiapkanmu menyimpan menyinggung menyisakan menyuruhmu
+  menyusun mepet merah merangkai merangkum merasa mereka merekomendasikan merendah
+  merespons meriah merica mertua mesinnya meski mewah milik milikku mimasen minggu
+  mingguan minimal minimarket minta minum minuman minumnya minyak mobil modern modul mohon
+  momen moon mrs muda mudah muka mula mulai mulailah mulainya mulut mulutmu mulutnya
+  muncul mundur mungkin murah murid museos museumnya musik musim mutlak nadanya naik
+  naikkan naiklah nama namamu namanya namun nanti narimashita nasi nasional negara
+  negaramu negaranya negatif negeri nenek nenekku neraka netral ngapa ngapain ngobrol nhk
+  nicer nihonjin nilai nilainya node nol nomimasen nomor nongkrong nonton nou novel
+  numbers nyaman nyasar nyata nyetir nyonya objeknya obral oke oktober oleh orang orangnya
+  oranye osaka otak otomatis outside oyoide pabrik pacar pada padahal padanan padanannya
+  pagi paham pajak pak pakai pakaian paman pamanku panas panggang panggilan panik panjang
+  panjangnya pantai pantainya pantas papan paparan paraguas parah paris partikel
+  partikelnya paruh pas pasang pasangan pasangkan pasarnya pasif pasmo pasnya paspor pasti
+  patah patokan payung pecahannya pedas pedasnya pegawai pekan pekanmu pekannya pekerjaan
+  pekerjaanmu pelafalannya pelajar pelajaran pelajarannya pelajari pelaku pelan pelayan
+  peleburan pelemah pelindung pemahaman pemakaian pemakaiannya pemandian pembaca
+  pembanding pembeda pembelajar pembeli pembicara pemilik pemrogram pemula penanda
+  penanggalan penanya penasaran pencuci pendaftaran pendapat pendek penderitaan pengajar
+  pengajarnya pengalamanmu pengandaian pengantar pengantaran pengecualian pengenal
+  pengganti penggolongnya penghapus penghasilan pengin penguat pengucapan pengulangan
+  pengusaha penilaian penilaiannya penjaga penjelasan penjelasannya penopang pensil
+  pentingnya penuh penumpang penutur penuturnya penyambung penyambungnya penyebab
+  penyebabnya per perabot peran perasaan perasaanmu perawat perawatan perbaikan perbaiki
+  perbedaan perbedaannya perbelanjaan percakapan percakapannya percobaan perempat
+  perempuan perempuanku perempuanmu pergantian pergaulan pergi perhatikan perih periksa
+  perintah peristiwa perjalanan perjalanannya perkenalan perkumpulan perlakuan perlu
+  permintaan permisi pernah pernikahan perpisahan perpustakaan persegi persiapan persis
+  pertama pertamamu pertamanya pertanyaan pertanyaannya pertemuan perubahan perusahaan
+  perut pesan pesanan pesanannya pesawat peserta pesta peta petani petir petugas
+  petugasnya petunjuk petunjuknya pierre pihak pikir pilih pilihannya pindah pinggang
+  pinjam pintar pintas pintu pipi pirang pisang plastik plays podcast poin pojok pokok
+  pola polanya polisi ponsel ponselmu porsi portugis positif posnya potong potongan
+  praktis praktisnya prihatin primas privat private pro produktif profesi prosesnya pueden
+  pujian pukul pula pulang pulangnya pulpen puluh puluhan pun punggung punya punyaku
+  punyamu pusat putih questions quinto raazh rabu rahmat raining rajin rak raksasa ramah
+  ramai rambut rambutnya rangka rangkaian rangkuman ranjang rantainya rapi rapikan rasa
+  rata ratus ratusan reads receh reguler reiwa rekomendasikan rekomendasinya rencana
+  rencanamu rencananya rendah repot reputasi resmi restoran restorannya ribu ribuan riid
+  rina ringkasan risiko rok roti ruang ruangan rubios rujukan rumah rumahku rumahmu
+  rumpang rumusnya runtut rusak rutin rutinitas rutinitasmu sabtu sah sakit sakitnya saku
+  salah salam salat salin saling salju sama sambil sampai sampaikan samuku sana sanalah
+  sananya sandangnya sangat sanggup sangkar santap santo sarapan sari satu satunya saudara
+  saya sayang sayur sayuran sebabnya sebagai sebagian sebaiknya sebaliknya sebar sebeda
+  sebelah sebelahnya sebelas sebelum sebenarnya sebentar seberang seberangi seberapa
+  sebotol sebuah sebulan sebut sebutan sebutkan secangkir secara sedang sederhana sediakan
+  sedih sedikit sedingin segalanya segelas segera segitu sehari seharian sehat sehingga
+  sejak sejarah sejenak sejuta sekadar sekaleng sekali sekaligus sekalipun sekarang
+  sekelas sekelasnya seketika sekian sekilas sekilo sekilonya sekitar sekitarmu sekitarnya
+  sekolah sekolahnya selain selalu selama selamat selancar selanjutnya selasa selatan
+  selesai seling seluruh seluruhnya selusin semacamnya semangat semata sembarang
+  sembarangan sembilan sembuh semeja semester seminggu semoga sempat sempit sempurna semua
+  semuanya senang sendiri sendirian sendirinya sengaja senggang seni senin senti seorang
+  seoul sepak sepanjang separuh sepasang sepatu sepeda sepenuhnya seperempat sepertinya
+  sepi sepotong sepuh sepuluh sepupu serangan seratus serialmu seribu serikat sering
+  serius serta sertifikat seru servis sesekali seseorang sesuai sesuaikan sesuatu
+  sesudahnya setahun setara setelah setengah seterusnya setiap shining shinto siang
+  siangan siap siapkan siaran sibuk sifatnya sih silakan singapura singkat sini sinilah
+  sip sisanya sisi sisipkan sistem siswa siti siting sitting situ situasi situlah sixty
+  skor sleeping smaller snows soal soalnya soda sopan sopir sor sorenya spanyol spanyolmu
+  spanyolnya speaks spreadsheet starts stasiun stasiunnya status stopped stroberi strong
+  struk struknya studied suami suara suarakan suaranya suatu sudah sudut suica suka suku
+  sulit sulung sumpit sungai sungguh sungguhan supaya susu susun susunan susunannya
+  suwatte swalayan swasta syarat syukurlah tabel tabelnya tadi tagihan tahu tahun
+  tahunannya takarannya takarir taksi takut tam taman tambahan tambahkan tampak tampan
+  tamu tanah tandanya tangan tanganku tanganmu tangga tanggal tanggalnya tanggapan
+  tanjakan tanpa tante tanyakan tapi taruhannya tas tata tatap teachers tebak ted tegak
+  tegas teh tekanan tekanannya teks tekun tel telanjang telat telepon teleponku teleponmu
+  televisi telinga telingamu telkom teman temanku temannya tempat tempati tempo temu temui
+  tenang tengah tengahnya tenggat tenses tentang tentara tenteram tentu teorinya tepat
+  terakhir terasa teratur terbaca terbaik terbalik terbang terbangun terbatas terbiasa
+  terbuka terburu tercepat tercer tercera terdengar terendah tergagap tergantung terhadap
+  terhitung terhormat teriakan terik terikat terima terjadi terjadwal terjemahan
+  terjemahannya terjemahkan terkenal terlalu terlambat terlanjur termasuk termudah
+  ternyata terpesona terpikir terpisah terpotong tersedia tersendat tersering tersesat
+  tersimpan tersulit tertangkap tertawa tertera tertolong tertukar tertutup terus tetangga
+  tetangganya tetap tetapi tetesan thoot tiap tiba tid tidak tidur tidurnya tiga tiganya
+  tiketnya timur tinggal tinggalmu tinggalnya tinggi tingkat tip tirai tiru titik titiknya
+  toefl toko tolong tombol tombolnya tooo topi total tradisional traktir transaksi
+  transportasi tua tuaku tuamu tuan tugas tugasnya tujuanmu tujuannya tujuh tukang tulang
+  tulis tulisan tulisanmu tulisannya tuliskan tulus tunai tunangan tunggal tunggu tunjuk
+  tunjukkan tunjuknya tuntas turis turun turunannya turut tutup ubah ucapan ucapkan udara
+  ujiannya ukuran ukurannya ulang ulangi umumnya umur umurmu umurnya undangan ungkapan
+  ungu unit unitnya universitas untuk urutan urutannya usah usaha utama utara utuh varian
+  veinticuatro veis versi versimu video visitan visited vokalnya vuelven wah wajar wajib
+  waktumu walau wants warna warnanya wartawan warung wash wawancara weerkt willn wind
+  wisata wortel writing yah yaitu yang years yokute yuko zii
 `;
 
 /* Kata umum yang jarang muncul di modul tapi pasti ditemui siswa di halaman
@@ -295,6 +345,88 @@ function kataDaftar(teks: string): Set<string> {
 }
 const SET_ID = new Set([...kataDaftar(LEKSIKON_ID), ...kataDaftar(TAMBAHAN_ID)]);
 
+/* [ebook-jaga-bahasa-en-v1] Leksikon Inggris — bukan untuk membungkam, tapi
+   untuk MEMBEBASKAN.
+
+   Penjagaan di berkas ini bertumpu pada satu asumsi diam-diam: bahasa target
+   punya huruf yang tak dipakai bahasa Indonesia, jadi `kataTargetJelas` selalu
+   punya bukti tandingan. Bahasa Inggris mematahkan asumsi itu — ia ditulis
+   dengan huruf Latin polos, tanpa satu pun aksen. Akibatnya, satu kata serapan
+   di tengah kalimat Inggris ("Is there a bank near here?") membuat seluruh
+   klausanya terbaca Indonesia, dan kalimat yang justru mau didengar siswa jadi
+   bisu. Daftar ini yang mengembalikan keseimbangannya: kata yang ada di sini
+   dianggap bahasa target, sekalipun ejaannya sama persis dengan kata Indonesia.
+
+   Diperas dari isi modul oleh `scripts/leksikon-id-ebook.mjs`, dari ruas yang
+   TIDAK MUNGKIN berbahasa Indonesia. Jalankan ulang skripnya tiap kali modul
+   Inggris berubah, jangan menambah kata dengan tangan. */
+const LEKSIKON_EN = `
+  about accountant afraid afternoon again ago agree ahead airport all allergic alone
+  already always am amazing an and andi angry anna any anyone anything anyway apple
+  appointment are aren around art as asia ask assistant at ate aunt autumn away back bag
+  bags bandingkan bank bathroom be beach because bed bedroom bedrooms beef been behind
+  believe berpikir better between big bigger bigs bill bit blue boiling book books bored
+  boring born bought boy bravo brazil breakfast bridge bring brother brothers brought
+  brush budi bus buses businessman busy but buy by bye call called calling campus can
+  cannot car card care catch caught chair cheap cheaper check chef chicken chickens child
+  children childs chili chinese church city class classes clean cleaning clock close
+  cloudy coffee cold color colour come comfortable company computer congratulations cook
+  cooking cool corner cost could country course cousin cow cross crowded cup cupboard cut
+  dad dalam dance dark daughter david day days deal degree degrees delicious deliveries
+  delivery deni desk did didn dimulai dinner dishes do doctor does doesn doing don door
+  double down downtown draw drawing dressed drink drinks drive driver driving dry early
+  earn earns eat eating eats economics eight eighth eighty eleven else engineer english
+  enjoy enough eraser espresso even evening evenings ever every everyone everything
+  exactly exam excited exciting excuse exhausted expensive factory fall family fan far
+  farmer fast father february fif fifteen fifth fifty film films fine finish first fish
+  fishing fitting five fix floor fog food foot football for forget forty four fourth free
+  freezing friday fridays friend friends from front full furniture games garage garden
+  gardening gave get getting girl give glad glass glasses go going golf good goodbye
+  granddaughter grandfather grandmother grandson great green ground guitar had half
+  hanging happen happening happens happy hard hardly has hate have having he hear hello
+  help helping her here hers hey hi hiking him his history hit hmm hobby holiday holidays
+  home hometown honest hospital hot hotel hour hours house housewife how humid hundred
+  hungry hurt hurts husband idea ill imagine in indian indonesia indonesian ing inside
+  interested interesting is isn it jakarta jam january japan japanese jeans job journalist
+  july just kalimatnya keep key kind kitchen knee knife know language languages large last
+  late later latte lawyer leave left lesson let letter lightning lights like likes listen
+  listening little live living ll long look looking looks lot love lovely loves lucas luck
+  lunch ma machine machines make making malay man many map maps march market married maybe
+  me mean meat medicine medium meet meeting mei men menggantung menu met metres midday
+  midnight million mine minus minute minutes miss moment monday money month more morning
+  mosque most mostly mother motorbike movie much mum museum music must my name names near
+  need neighbour neighbours nephew nephews never new next nice niece nieces night nine
+  nineteen ninety ninth no nobody noise noon normal not notebook nothing novels now number
+  nurse of office officer often oh ok olahraga old older omw on once one ones onion onions
+  only open opposite or order our ours out over page pair pairs parents park part past pay
+  pelafalan pen pencil people pepper perfect person pharmacy phone photo photos piece
+  pieces pig place plan plans play played playing please police poor pork portuguese post
+  practise pray pre prefer present price programmer put quarter question quiet quite rain
+  rained raining rains rainy rarely re read reading ready really recommend remember rent
+  repairman repeat restaurant restaurants rice ride right rina rio road room rooms running
+  rupiah sad safe said sale sandwich santoso sarah saturday save saw say says school
+  seafood season seasons seat second sedangkan see sell sent september serious seven
+  seventy share she shirt shirts shoes shop shopping should show shower sick sing
+  singapore sir sister sit six size sky sleep slowly small snow snowing so socks soldier
+  some someone something sometimes son sons soon sorry sounds speak special spell spicy
+  spreadsheets spring square stand start station stay stayed staying stop store storm
+  straight strange street student students studies study studying sugar summer sun sundays
+  sunny supermarket surabaya sure surfing surprised swam swim swimming table tables take
+  taking talk talking tas taught taxi taxis tea teach teacher teaches teen teeth tell ten
+  tenth term terrible thank thanks that the their theirs them then there these they things
+  think third thirteenth thirtieth thirty this those though thought thousand three through
+  thunder thursday ticket time times tired tiring to today together tom tomorrow tonight
+  too touch tough traffic travel travelling tried trip trouser trousers try trying tuesday
+  turn tv twelfth twelve twentieth twenty twice two type umbrella uncle under understand
+  university until up us use usually vegetables very visit vokal wait waiter waiting wake
+  walk walked wall wallet want wanted warm was washing wasn watch watched watching water
+  way we weather wednesday week weekend weeks welcome well went were weren wet what when
+  where which white who whose why wife will window windy winter with woman women won word
+  work worked working works world worried worry wow write year yes yesterday yet you young
+  younger your yours zero
+`;
+const SET_EN = new Set(kataDaftar(LEKSIKON_EN));
+
 /* Imbuhan yang praktis cuma milik bahasa Indonesia. Tiap pola dipilih supaya
    TIDAK menyentuh bahasa target yang kita jual: "menú" & "mensaje" tak kena
    karena polanya minta "meng-"/"meny-"/"memb-"/"memp-", bukan "men-" telanjang;
@@ -315,10 +447,24 @@ const MORFOLOGI_ID: RegExp[] = [
 const AKSARA_SUKU_KATA = new Set(["ja", "ko", "zh", "th"]);
 const MORFOLOGI_AMAN = MORFOLOGI_ID.map((p, i) => (i === 0 ? /^\p{L}{3,}(?:nya|kah|lah)$/u : p));
 
+/* [ebook-jaga-bahasa-en-v1] Tiga pola berawalan di atas menyerempet bahasa
+   Inggris dan harus dilepas untuk modul Inggris: "memb-" menelan *member* &
+   *membership*, "ber-" menelan *berries* & *Berlin*, dan "pe…an" menelan
+   *pedestrian* & *pelican*. Kata Indonesia yang tadinya tertangkap pola-pola
+   itu ("mengambil", "berkenalan", "pekerjaan") tetap terjaring, hanya lewat
+   jalur lain — semuanya sudah ada di LEKSIKON_ID karena diperas dari prosa
+   modulnya sendiri. Akhiran (-nya, -kan, -kah, -lah, -pun) dan ke…an tetap
+   dipakai: tak ada kata Inggris yang berbentuk begitu. */
+const MORFOLOGI_EN = MORFOLOGI_ID.filter((p) => {
+  const src = p.source;
+  return !src.startsWith("^(?:peng") && !src.startsWith("^(?:meng") && !src.startsWith("^ber");
+});
+
 /** Kata ini bahasa Indonesia dilihat dari dirinya sendiri (tanpa konteks)? */
 function kataIdMurni(k: string, kode: string): boolean {
   if (SET_ID.has(k)) return true;
-  const morfologi = AKSARA_SUKU_KATA.has(kode) ? MORFOLOGI_AMAN : MORFOLOGI_ID;
+  const morfologi = kode === "en" ? MORFOLOGI_EN
+    : AKSARA_SUKU_KATA.has(kode) ? MORFOLOGI_AMAN : MORFOLOGI_ID;
   if (morfologi.some((p) => p.test(k))) return true;
   /* Baris terjemahan harfiah menyambung kata dengan tanda hubung — "terima-kasih",
      "kalau-begitu", "saya-mengangkat-diri". Satu penggal Indonesia di dalamnya
@@ -360,8 +506,13 @@ function klausaIndonesia(klausa: string, kode: string): boolean {
   let target = 0;
   for (const w of String(klausa || "").toLowerCase().split(PECAH_KATA)) {
     if (!w) continue;
-    if (kataTargetJelas(w)) target++;
-    else if (kataIdMurni(w, kode)) id++;
+    if (kataTargetJelas(w)) { target++; continue; }
+    const idMurni = kataIdMurni(w, kode);
+    /* Kata serapan tidak dihitung ke pihak mana pun: memihakkannya berarti
+       kalimat Inggris yang penuh serapan ("The bank near the hotel") menang
+       terus, dan kalimat Indonesia yang penuh serapan ikut menang bersamanya. */
+    if (kode === "en" && SET_EN.has(w)) { if (!idMurni) target++; continue; }
+    if (idMurni) id++;
   }
   return id > 0 && id >= target;
 }
@@ -377,6 +528,16 @@ export function kataIndonesia(kata: string, kode: string, konteks?: string): boo
   const k = kata.trim().toLowerCase();
   if (!k) return true;
   if (kataTargetJelas(k)) return false;
+  /* Kata serapan — "bank", "film", "jam" — duduk di KEDUA daftar sekaligus, dan
+     tak ada jawaban yang benar untuk kata itu sendirian: di *Is there a bank
+     near here?* ia bahasa Inggris, di "uang disimpan di bank" ia bahasa
+     Indonesia. Jadi ia tidak diputus di sini, melainkan diserahkan ke klausanya.
+     Yang murni Inggris (tak dikenal daftar Indonesia) lolos langsung. */
+  if (kode === "en" && SET_EN.has(k)) {
+    if (!kataIdMurni(k, kode)) return false;
+    if (!konteks) return false;
+    return klausaIndonesia(klausaKata(konteks, k) || konteks, kode);
+  }
   if (kataIdMurni(k, kode)) return true;
   if (!konteks) return false;
   return klausaIndonesia(klausaKata(konteks, k) || konteks, kode);

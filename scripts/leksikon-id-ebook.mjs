@@ -38,13 +38,27 @@ const BUANG = new Set([
 
 const idF = new Map();
 const tgF = new Map();
+/* [ebook-jaga-bahasa-en-v1] Modul Inggris butuh daftar KEDUA. Bahasa Inggris
+   ditulis dengan huruf Latin polos, jadi `kataTargetJelas` di ebookTts.ts tak
+   pernah menemukan bukti bahasa target di dalamnya — dan satu kata serapan
+   ("bank", "film", "bus", "video") sudah cukup untuk membungkam seluruh
+   klausanya. Daftar ini yang jadi bukti tandingannya, diperas dari ruas yang
+   TIDAK MUNGKIN berbahasa Indonesia: baris dialog, `title_target`, dan kolom
+   `vocab[].en`. */
+const enKuat = new Map();   // ruas yang dijamin skema: dialog, title_target, vocab[].en, kolom "English"
+const enLemah = new Map();  // ruas yang dijamin kebiasaan saja: penggalan *miring* di dalam prosa
+let modulEn = false;
+const teksEn = (s) => { if (modulEn && typeof s === "string") catat(enKuat, s); };
+const teksEnMiring = (s) => { if (modulEn && typeof s === "string") catat(enLemah, s); };
 const pecah = (s) => String(s).toLowerCase().split(/[^\p{L}]+/u).filter(Boolean);
 const catat = (m, s) => pecah(s).forEach((w) => m.set(w, (m.get(w) || 0) + 1));
 
 /** Teks Indonesia: penggalan *miring* di dalamnya justru bahasa target. */
 function teksId(s) {
   if (typeof s !== "string") return;
-  catat(tgF, [...s.matchAll(MIRING)].map((m) => m[1]).join(" "));
+  const miring = [...s.matchAll(MIRING)].map((m) => m[1]).join(" ");
+  catat(tgF, miring);
+  teksEnMiring(miring);                             // *miring* = bahasa target, menurut aturan modul
   catat(idF, s.replace(MIRING, " "));
 }
 const teksTarget = (s) => { if (typeof s === "string") catat(tgF, s); };
@@ -59,7 +73,7 @@ function blok(b) {
         const judul = String(kepala[i] ?? "");
         if (KEPALA_BACA.test(judul)) return;                 // kolom cara baca: bukan bahasa mana pun
         if (KEPALA_ID.test(judul) || (!kepala.length && i > 0)) teksId(sel);
-        else teksTarget(sel);
+        else { teksTarget(sel); if (/^english$/i.test(judul.trim())) teksEn(sel); }
       });
     }
     teksId(b.title);
@@ -72,13 +86,13 @@ function blok(b) {
 }
 
 function unit(j) {
-  teksId(j.title); teksTarget(j.title_target); teksId(j.goal); daftarId(j.bekal);
+  teksId(j.title); teksTarget(j.title_target); teksEn(j.title_target); teksId(j.goal); daftarId(j.bekal);
   for (const d of j.dialogs || []) {
     teksTarget(d.title); teksId(d.intro);
-    for (const l of d.lines || []) { teksTarget(l.text); teksId(l.id); teksId(l.literal); }
+    for (const l of d.lines || []) { teksTarget(l.text); teksEn(l.text); teksId(l.id); teksId(l.literal); }
   }
   for (const s of j.sections || []) { teksId(s.title); (s.blocks || []).forEach(blok); }
-  for (const v of j.vocab || []) { teksTarget(v.es); teksTarget(v.ja); teksId(v.id); }
+  for (const v of j.vocab || []) { teksTarget(v.es); teksTarget(v.ja); teksTarget(v.en); teksEn(v.en); teksId(v.id); }
   for (const e of j.exercises || []) { teksId(e.title); teksId(e.prompt); daftarId(e.items); }
   daftarId(j.answers);
   for (const hal of [...(j.front || []), ...(j.back || [])]) {
@@ -89,6 +103,7 @@ function unit(j) {
 for (const modul of fs.readdirSync(AKAR)) {
   const dir = path.join(AKAR, modul);
   if (!fs.statSync(dir).isDirectory()) continue;
+  modulEn = /^en-/.test(modul);
   for (const berkas of fs.readdirSync(dir)) {
     if (!berkas.endsWith(".json")) continue;
     unit(JSON.parse(fs.readFileSync(path.join(dir, berkas), "utf8")));
@@ -112,5 +127,37 @@ for (const w of kata) {
   else kini += " " + w;
 }
 baris.push("  " + kini.trim());
+console.log("/* ── LEKSIKON_ID ─────────────────────────────────────────── */");
 console.log(baris.join("\n"));
-console.error(`${kata.length} kata`);
+
+/* Tidak disaring dengan perbandingan seperti daftar Indonesia di atas, dan itu
+   disengaja: ruas sumbernya sudah dijamin bahasa Inggris oleh skema modul
+   (baris dialog, `title_target`, `vocab[].en`), sementara kata yang PALING
+   butuh diselamatkan justru kata serapan seperti "bank" & "film" — yang memang
+   jauh lebih sering tercetak di penjelasan Indonesianya. Menyaringnya dengan
+   perbandingan berarti membuang persis kata yang jadi alasan daftar ini ada.
+   Yang ikut terbawa cuma nama diri (Budi, Surabaya, Indonesia), dan nama diri
+   memang tak apa-apa dibunyikan. */
+/* Dua tingkat kepercayaan, dan itu yang membuat daftarnya bisa longgar tanpa
+   bocor. Ruas KUAT dijamin oleh skema modul — baris dialog, `title_target`,
+   `vocab[].en`, kolom bertajuk "English" — jadi isinya diterima apa adanya,
+   termasuk kata serapan seperti "bank" & "film" yang di prosa Indonesia justru
+   jauh lebih sering tercetak. Ruas LEMAH cuma dijamin kebiasaan menulis
+   (*miring* = bahasa target), dan di situlah frasa Indonesia sesekali ikut
+   terbawa — maka ia disaring 20:1 lawan prosa Indonesianya. */
+const kataEn = [...new Set([
+  ...[...enKuat.keys()],
+  ...[...enLemah.entries()].filter(([w, n]) => n * 20 >= (idF.get(w) || 0)).map(([w]) => w),
+])]
+  .filter((w) => w.length >= 2 && /^[a-z']+$/.test(w))
+  .sort();
+const barisEn = [];
+let kiniEn = "";
+for (const w of kataEn) {
+  if ((kiniEn + " " + w).trim().length > 88) { barisEn.push("  " + kiniEn.trim()); kiniEn = w; }
+  else kiniEn += " " + w;
+}
+barisEn.push("  " + kiniEn.trim());
+console.log("\n/* ── LEKSIKON_EN ─────────────────────────────────────────── */");
+console.log(barisEn.join("\n"));
+console.error(`${kata.length} kata Indonesia · ${kataEn.length} kata Inggris`);
