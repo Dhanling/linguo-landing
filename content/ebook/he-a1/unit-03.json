@@ -1,0 +1,202 @@
+{
+  "title": "Ini apa?",
+  "title_target": "מַה זֶּה?",
+  "goal": "Menunjuk dan menamai benda di sekitarmu, mengenali jenis kelamin benda, dan memasang kata sandang הַ־ yang menempel.",
+  "bekal": [
+    "menanyakan nama benda yang tidak kamu ketahui",
+    "membedakan benda laki-laki dari benda perempuan",
+    "membedakan \"buku\" dari \"buku itu\""
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — בַּחֲנוּת סְפָרִים",
+      "intro": "Budi dan Noa di toko buku kampus. Budi menunjuk barang satu per satu.",
+      "lines": [
+        { "speaker": "בּוּדִי:", "text": "נֹעָה, מַה זֶּה?", "baca": "no'ah, mah zeh?", "id": "Noa, ini apa?", "literal": "noa, apa ini?" },
+        { "speaker": "נֹעָה:", "text": "זֶה מִלּוֹן. מִלּוֹן עִבְרִי־אַנְגְּלִי.", "baca": "zeh milon. milon ivri-angli.", "id": "Ini kamus. Kamus Ibrani-Inggris.", "literal": "ini kamus. kamus ibrani-inggris." },
+        { "speaker": "בּוּדִי:", "text": "וְזֹאת? זֹאת מַחְבֶּרֶת?", "baca": "vezot? zot makhberet?", "id": "Dan yang ini? Ini buku tulis?", "literal": "dan-ini (pr)? ini (pr) buku-tulis?" },
+        { "speaker": "נֹעָה:", "text": "כֵּן. מַחְבֶּרֶת גְּדוֹלָה.", "baca": "ken. makhberet gdolah.", "id": "Ya. Buku tulis besar.", "literal": "ya. buku-tulis besar (pr)." },
+        { "speaker": "בּוּדִי:", "text": "לָמָּה גְּדוֹלָה וְלֹא גָּדוֹל?", "baca": "lamah gdolah velo gadol?", "id": "Kenapa gdolah, bukan gadol?", "literal": "kenapa besar (pr) dan-tidak besar (lk)?" },
+        { "speaker": "נֹעָה:", "text": "כִּי מַחְבֶּרֶת הִיא מִלָּה נְקֵבָה.", "baca": "ki makhberet hi milah nekevah.", "id": "Karena makhberet itu kata berjenis perempuan.", "literal": "karena buku-tulis dia (pr) kata perempuan." },
+        { "speaker": "בּוּדִי:", "text": "אָה. וְאֵיךְ אֲנִי יוֹדֵעַ?", "baca": "ah. ve'eikh ani yode'a?", "id": "Oh. Dan bagaimana saya tahu?", "literal": "ah. dan-bagaimana saya tahu?" },
+        { "speaker": "נֹעָה:", "text": "בְּדֶרֶךְ כְּלָל ־ָה אוֹ ־ֶת בַּסּוֹף — נְקֵבָה.", "baca": "bederekh klal ah o et basof — nekevah.", "id": "Biasanya berakhiran -ah atau -et — itu perempuan.", "literal": "pada jalan umum ah atau et di-ujung — perempuan." },
+        { "speaker": "בּוּדִי:", "text": "וְהַסֵּפֶר הַזֶּה? כַּמָּה הוּא עוֹלֶה?", "baca": "vehasefer hazeh? kamah hu oleh?", "id": "Dan buku ini? Berapa harganya?", "literal": "dan-buku yang-ini? berapa dia naik?" },
+        { "speaker": "נֹעָה:", "text": "רֶגַע... שִׁשִּׁים שֶׁקֶל.", "baca": "rega... shishim shekel.", "id": "Sebentar... enam puluh shekel.", "literal": "sesaat... enam-puluh shekel." },
+        { "speaker": "בּוּדִי:", "text": "בְּסֵדֶר. אֲנִי לוֹקֵחַ אֶת הַסֵּפֶר.", "baca": "beseder. ani loke'akh et hasefer.", "id": "Oke. Saya ambil bukunya.", "literal": "baik. saya mengambil (obj) buku-itu." },
+        { "speaker": "נֹעָה:", "text": "וְהַמִּלּוֹן? הוּא בֶּאֱמֶת טוֹב.", "baca": "vehamilon? hu be'emet tov.", "id": "Dan kamusnya? Kamus itu benar-benar bagus.", "literal": "dan-kamus-itu? dia sungguh baik." }
+      ],
+      "notes": [
+        "**זֶה** dan **זֹאת** dua-duanya berarti \"ini\", tapi dipilih menurut **jenis kelamin benda** yang ditunjuk. זֶה untuk benda laki-laki, זֹאת untuk benda perempuan. Kalau kamu belum tahu benda apa itu — seperti Budi di baris 1 — pakai זֶה; itulah bentuk bawaan untuk pertanyaan מַה זֶּה?",
+        "⚠️ **Semua benda punya jenis kelamin, tanpa kecuali dan tanpa alasan.** סֵפֶר (buku) laki-laki, מַחְבֶּרֶת (buku tulis) perempuan. Tidak ada logika yang bisa kamu turunkan; yang ada cuma dua petunjuk bentuk kata (lihat kotak berikutnya) dan kebiasaan. **Hafalkan kata benda BERSAMA jenis kelaminnya sejak hari pertama** — memperbaiki kebiasaan ini setahun kemudian jauh lebih mahal.",
+        "**הַ־ = \"yang itu\".** סֵפֶר = buku (mana saja); הַסֵּפֶר = buku itu. Bahasa Indonesia memakai \"itu\" di belakang; bahasa Ibrani menempelkan הַ־ di depan, dan **tidak** punya padanan \"sebuah\".",
+        "⚠️ **\"Buku ini\" butuh הַ־ DUA KALI.** הַסֵּפֶר הַזֶּה — harfiahnya \"buku-itu yang-ini\". Melupakan הַ־ yang kedua adalah kesalahan A1 paling sering. Bandingkan: זֶה סֵפֶר (ini buku) ≠ הַסֵּפֶר הַזֶּה (buku ini).",
+        "**כַּמָּה זֶה עוֹלֶה?** (*kamah zeh oleh?*) — \"berapa harganya?\", harfiahnya \"berapa ini naik?\". Kata kerja עוֹלֶה memang berarti \"naik\" dan juga \"berharga\". Hafalkan kalimatnya utuh; unit 11 membedahnya.",
+        "**רֶגַע** (*rega*) harfiahnya \"sesaat\", dipakai persis seperti \"sebentar ya\" dalam bahasa Indonesia. Bentuk manisnya: רֶגַע אֶחָד (*rega ekhad*, satu detik).",
+        "**כִּי** (*ki*) = karena. Perhatikan bahwa jawabannya lengkap: כִּי מַחְבֶּרֶת הִיא מִלָּה נְקֵבָה. Kata הִיא di tengah kalimat itu bukan \"dia\" melainkan penghubung — bahasa Ibrani memakai kata ganti sebagai pengganti \"adalah\" waktu kedua sisinya sama-sama kata benda. Kamu akan melihatnya lagi di unit 6.",
+        "**אֶת הַסֵּפֶר** — inilah אֶת yang muncul di unit 2. Karena bukunya **tertentu** (ada הַ־), objeknya wajib didahului אֶת. Kalau tak tentu, אֶת hilang: אֲנִי לוֹקֵחַ סֵפֶר."
+      ],
+      "grammars": [
+        {
+          "title": "Menebak jenis kelamin kata benda",
+          "body": [
+            "Tidak ada aturan yang berlaku seratus persen, tapi dua petunjuk ini menutup sekitar sembilan dari sepuluh kata."
+          ],
+          "table": {
+            "head": ["Petunjuk", "Jenis", "Contoh", "Arti"],
+            "rows": [
+              ["berakhiran ־ָה", "perempuan", "מִשְׁפָּחָה, שָׂפָה, מוֹרָה", "keluarga, bahasa, guru"],
+              ["berakhiran ־ֶת / ־ִית", "perempuan", "מַחְבֶּרֶת, כַּפִּית", "buku tulis, sendok teh"],
+              ["anggota tubuh berpasangan", "perempuan", "יָד, רֶגֶל, עַיִן, אֹזֶן", "tangan, kaki, mata, telinga"],
+              ["nama kota & negara", "perempuan", "תֵּל אָבִיב, יִשְׂרָאֵל", "Tel Aviv, Israel"],
+              ["selain itu", "laki-laki", "סֵפֶר, שֻׁלְחָן, חַלּוֹן", "buku, meja, jendela"]
+            ]
+          },
+          "after": [
+            "⚠️ Kecuali yang wajib kamu hafal sekarang juga, karena kelimanya sangat sering dipakai: **אֶרֶץ** (negeri), **עִיר** (kota), **דֶּרֶךְ** (jalan), **אֶבֶן** (batu), dan **רוּחַ** (angin) semuanya **perempuan** walau tidak berakhiran ־ָה."
+          ]
+        },
+        {
+          "title": "Menunjuk: ini, itu, ini-ini",
+          "body": [
+            "Empat bentuk saja, dan pemilihannya cuma bergantung pada jenis kelamin serta jumlah."
+          ],
+          "table": {
+            "head": ["Bentuk", "Cara baca", "Dipakai untuk", "Contoh"],
+            "rows": [
+              ["זֶה", "zeh", "1 benda laki-laki", "זֶה סֵפֶר — ini buku"],
+              ["זֹאת", "zot", "1 benda perempuan", "זֹאת מַחְבֶּרֶת — ini buku tulis"],
+              ["אֵלֶּה", "eleh", "banyak benda (lk & pr)", "אֵלֶּה סְפָרִים — ini buku-buku"],
+              ["הַזֶּה / הַזֹּאת / הָאֵלֶּה", "hazeh / hazot / ha'eleh", "menempel pada benda tertentu", "הַסֵּפֶר הַזֶּה — buku ini"]
+            ]
+          },
+          "after": [
+            "Bahasa Ibrani modern tidak membedakan \"ini\" dan \"itu\" dengan tegas seperti bahasa Indonesia. Untuk benda yang jauh, orang menambahkan **שָׁם** (di sana): הַסֵּפֶר שָׁם — buku yang di sana itu."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Benda di sekitarmu",
+      "blocks": [
+        { "type": "tabel", "head": ["Ibrani", "Cara baca", "Arti", "Jenis"], "rows": [
+          ["סֵפֶר", "sefer", "buku", "lk"],
+          ["מַחְבֶּרֶת", "makhberet", "buku tulis", "pr"],
+          ["מִלּוֹן", "milon", "kamus", "lk"],
+          ["עֵט", "et", "pulpen", "lk"],
+          ["עִפָּרוֹן", "iparon", "pensil", "lk"],
+          ["שֻׁלְחָן", "shulkhan", "meja", "lk"],
+          ["כִּסֵּא", "kise", "kursi", "lk"],
+          ["חַלּוֹן", "khalon", "jendela", "lk"],
+          ["דֶּלֶת", "delet", "pintu", "pr"],
+          ["תִּיק", "tik", "tas", "lk"],
+          ["מַפְתֵּחַ", "mafte'akh", "kunci", "lk"],
+          ["טֶלֶפוֹן", "telefon", "telepon", "lk"],
+          ["מַחְשֵׁב", "makhshev", "komputer", "lk"],
+          ["שָׁעוֹן", "sha'on", "jam", "lk"],
+          ["כּוֹס", "kos", "gelas", "pr"],
+          ["מִטָּה", "mitah", "tempat tidur", "pr"],
+          ["חֶדֶר", "kheder", "kamar", "lk"],
+          ["תְּמוּנָה", "tmunah", "gambar, foto", "pr"]
+        ]},
+        { "type": "p", "text": "⚠️ **כּוֹס** dan **דֶּלֶת** perempuan walau tidak berakhiran ־ָה — dua kata yang paling sering salah dipasangi kata sifat oleh pemula. כּוֹס גְּדוֹלָה, bukan כּוֹס גָּדוֹל." }
+      ]
+    },
+    {
+      "title": "Warna: satu kata sifat, empat bentuk",
+      "blocks": [
+        { "type": "tabel", "head": ["Lk", "Pr", "Cara baca", "Warna"], "rows": [
+          ["אָדֹם", "אֲדֻמָּה", "adom / adumah", "merah"],
+          ["כָּחֹל", "כְּחֻלָּה", "kakhol / kkhulah", "biru"],
+          ["יָרֹק", "יְרֻקָּה", "yarok / yerukah", "hijau"],
+          ["צָהֹב", "צְהֻבָּה", "tsahov / tsehubah", "kuning"],
+          ["שָׁחֹר", "שְׁחֹרָה", "shakhor / shkhorah", "hitam"],
+          ["לָבָן", "לְבָנָה", "lavan / levanah", "putih"],
+          ["חוּם", "חוּמָה", "khum / khumah", "cokelat"],
+          ["אָפֹר", "אֲפֹרָה", "afor / aforah", "abu-abu"]
+        ]},
+        { "type": "p", "text": "Kata sifat berdiri **di belakang** kata bendanya, persis seperti bahasa Indonesia: סֵפֶר אָדֹם = \"buku merah\". Kalau bendanya tertentu, kata sifatnya ikut memakai הַ־: הַסֵּפֶר הָאָדֹם = \"buku merah itu\". Aturan \"הַ־ dua kali\" ini sama dengan aturan הַזֶּה tadi." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "he": "זֶה / זֹאת", "baca": "zeh / zot", "id": "ini (lk / pr)" },
+    { "he": "אֵלֶּה", "baca": "eleh", "id": "ini (jamak)" },
+    { "he": "מַה זֶּה?", "baca": "mah zeh?", "id": "ini apa?" },
+    { "he": "סֵפֶר", "baca": "sefer", "id": "buku (lk)" },
+    { "he": "מַחְבֶּרֶת", "baca": "makhberet", "id": "buku tulis (pr)" },
+    { "he": "מִלּוֹן", "baca": "milon", "id": "kamus (lk)" },
+    { "he": "מִלָּה", "baca": "milah", "id": "kata (pr)" },
+    { "he": "שֻׁלְחָן", "baca": "shulkhan", "id": "meja (lk)" },
+    { "he": "כִּסֵּא", "baca": "kise", "id": "kursi (lk)" },
+    { "he": "דֶּלֶת", "baca": "delet", "id": "pintu (pr)" },
+    { "he": "חַלּוֹן", "baca": "khalon", "id": "jendela (lk)" },
+    { "he": "כּוֹס", "baca": "kos", "id": "gelas (pr)" },
+    { "he": "תִּיק", "baca": "tik", "id": "tas (lk)" },
+    { "he": "חֲנוּת", "baca": "khanut", "id": "toko (pr)" },
+    { "he": "זָכָר / נְקֵבָה", "baca": "zakhar / nekevah", "id": "laki-laki / perempuan (jenis kata)" },
+    { "he": "גָּדוֹל / גְּדוֹלָה", "baca": "gadol / gdolah", "id": "besar" },
+    { "he": "קָטָן / קְטַנָּה", "baca": "katan / ktanah", "id": "kecil" },
+    { "he": "אָדֹם / אֲדֻמָּה", "baca": "adom / adumah", "id": "merah" },
+    { "he": "לָבָן / לְבָנָה", "baca": "lavan / levanah", "id": "putih" },
+    { "he": "לָמָּה", "baca": "lamah", "id": "kenapa" },
+    { "he": "כִּי", "baca": "ki", "id": "karena" },
+    { "he": "אֵיךְ", "baca": "eikh", "id": "bagaimana" },
+    { "he": "רֶגַע", "baca": "rega", "id": "sebentar" },
+    { "he": "כַּמָּה זֶה עוֹלֶה?", "baca": "kamah zeh oleh?", "id": "berapa harganya?" },
+    { "he": "שֶׁקֶל", "baca": "shekel", "id": "shekel (mata uang Israel)" },
+    { "he": "לוֹקֵחַ / לוֹקַחַת", "baca": "loke'akh / lokakhat", "id": "mengambil (lk / pr)" },
+    { "he": "בֶּאֱמֶת", "baca": "be'emet", "id": "sungguh, benar-benar" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan זֶה atau זֹאת.",
+      "items": [
+        "____ סֵפֶר.",
+        "____ מַחְבֶּרֶת.",
+        "____ כּוֹס.",
+        "____ מַפְתֵּחַ.",
+        "____ דֶּלֶת.",
+        "____ שֻׁלְחָן."
+      ]
+    },
+    {
+      "prompt": "Ubah jadi bentuk tertentu dengan menambahkan הַ־.",
+      "items": [
+        "סֵפֶר ____",
+        "מַחְבֶּרֶת ____",
+        "חַלּוֹן ____",
+        "חֲנוּת ____",
+        "מַחְשֵׁב ____"
+      ]
+    },
+    {
+      "prompt": "Pasangkan kata sifat dengan bentuk yang cocok.",
+      "items": [
+        "סֵפֶר ____ (besar)",
+        "מַחְבֶּרֶת ____ (kecil)",
+        "כּוֹס ____ (merah)",
+        "שֻׁלְחָן ____ (putih)",
+        "דֶּלֶת ____ (besar)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ibrani.",
+      "items": [
+        "Ini kamus baru.",
+        "Ini bukan tas saya.",
+        "Buku ini merah.",
+        "Meja itu besar.",
+        "Berapa harga buku tulis ini?"
+      ]
+    }
+  ],
+  "answers": [
+    "זֶה — זֹאת — זֹאת — זֶה — זֹאת — זֶה",
+    "הַסֵּפֶר — הַמַּחְבֶּרֶת — הַחַלּוֹן — הַחֲנוּת — הַמַּחְשֵׁב",
+    "גָּדוֹל — קְטַנָּה — אֲדֻמָּה — לָבָן — גְּדוֹלָה",
+    "זֶה מִלּוֹן חָדָשׁ. — זֶה לֹא הַתִּיק שֶׁלִּי. — הַסֵּפֶר הַזֶּה אָדֹם. — הַשֻּׁלְחָן גָּדוֹל. — כַּמָּה עוֹלָה הַמַּחְבֶּרֶת הַזֹּאת?"
+  ],
+  "wave": "Berjalanlah keliling kamarmu dan sebutkan sepuluh benda dengan pola זֶה ... atau זֹאת .... Kalau ragu jenis kelaminnya, cek kata itu berakhiran ־ָה atau ־ֶת."
+}

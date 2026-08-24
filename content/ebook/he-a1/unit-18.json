@@ -1,0 +1,215 @@
+{
+  "title": "Saya kurang enak badan",
+  "title_target": "אֲנִי לֹא מַרְגִּישׁ טוֹב",
+  "goal": "Menjelaskan keluhan, menyebut bagian tubuh, dan meminta obat — memakai satu pola khas Ibrani: rasa sakit yang \"terjadi kepadamu\", bukan yang kamu punya.",
+  "bekal": [
+    "menyebut bagian tubuh yang sakit",
+    "menjelaskan keluhan di apotek atau ke dokter",
+    "memahami anjuran sederhana"
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — בְּבֵית מִרְקַחַת",
+      "intro": "Budi masuk ke apotek dengan wajah lesu. Apotekernya, Tamar, menyapa.",
+      "lines": [
+        { "speaker": "תָּמָר:", "text": "שָׁלוֹם, אֵיךְ אֲנִי יְכוֹלָה לַעֲזֹר?", "baca": "shalom, eikh ani yekholah la'azor?", "id": "Halo, ada yang bisa saya bantu?", "literal": "halo, bagaimana saya bisa (pr) untuk-menolong?" },
+        { "speaker": "בּוּדִי:", "text": "אֲנִי לֹא מַרְגִּישׁ טוֹב. כּוֹאֵב לִי הָרֹאשׁ.", "baca": "ani lo margish tov. ko'ev li harosh.", "id": "Saya kurang enak badan. Kepala saya sakit.", "literal": "saya tidak merasa baik. sakit kepada-saya kepala-itu." },
+        { "speaker": "תָּמָר:", "text": "מִמָּתַי? יֵשׁ לְךָ חֹם?", "baca": "mimatai? yesh lekha khom?", "id": "Sejak kapan? Kamu demam?", "literal": "dari-kapan? ada kepada-mu panas?" },
+        { "speaker": "בּוּדִי:", "text": "מֵאֶתְמוֹל. אֲנִי חוֹשֵׁב שֶׁכֵּן, קְצָת.", "baca": "me'etmol. ani khoshev sheken, ktsat.", "id": "Sejak kemarin. Sepertinya iya, sedikit.", "literal": "dari-kemarin. saya berpikir bahwa-ya, sedikit." },
+        { "speaker": "תָּמָר:", "text": "כּוֹאֵב לְךָ גַּם הַגָּרוֹן?", "baca": "ko'ev lekha gam hagaron?", "id": "Tenggorokanmu sakit juga?", "literal": "sakit kepada-mu juga tenggorokan-itu?" },
+        { "speaker": "בּוּדִי:", "text": "כֵּן, וְקָשֶׁה לִי לִבְלֹעַ.", "baca": "ken, vekasheh li livlo'a.", "id": "Ya, dan susah menelan.", "literal": "ya, dan-sulit kepada-saya untuk-menelan." },
+        { "speaker": "תָּמָר:", "text": "כַּנִּרְאֶה שַׁפַּעַת. יֵשׁ לְךָ אֲלֶרְגְיָה לְמַשֶּׁהוּ?", "baca": "kanir'eh shapa'at. yesh lekha alergyah lemashehu?", "id": "Kemungkinan flu. Kamu punya alergi terhadap sesuatu?", "literal": "tampaknya influenza. ada kepada-mu alergi kepada-sesuatu?" },
+        { "speaker": "בּוּדִי:", "text": "לֹא, אֵין לִי.", "baca": "lo, ein li.", "id": "Tidak ada.", "literal": "tidak, tidak-ada kepada-saya." },
+        { "speaker": "תָּמָר:", "text": "קַח אֶת זֶה, כַּדּוּר כָּל שֵׁשׁ שָׁעוֹת.", "baca": "kakh et zeh, kadur kol shesh sha'ot.", "id": "Ambil ini, satu tablet tiap enam jam.", "literal": "ambillah (obj) ini, tablet setiap enam jam." },
+        { "speaker": "בּוּדִי:", "text": "לִפְנֵי הָאֹכֶל אוֹ אַחֲרֵי?", "baca": "lifnei ha'okhel o akharei?", "id": "Sebelum makan atau sesudah?", "literal": "sebelum makanan-itu atau sesudah?" },
+        { "speaker": "תָּמָר:", "text": "אַחֲרֵי. וְתִשְׁתֶּה הַרְבֵּה מַיִם וְתָנוּחַ.", "baca": "akharei. vetishteh harbeh mayim vetanu'akh.", "id": "Sesudah. Dan banyak minum air dan istirahat.", "literal": "sesudah. dan-kamu-akan-minum banyak air dan-kamu-akan-istirahat." },
+        { "speaker": "בּוּדִי:", "text": "תּוֹדָה. וְאִם לֹא יַעֲבֹר?", "baca": "todah. ve'im lo ya'avor?", "id": "Terima kasih. Kalau tidak sembuh?", "literal": "terima kasih. dan-jika tidak akan-lewat?" },
+        { "speaker": "תָּמָר:", "text": "אָז לֵךְ לְרוֹפֵא. תִּרְגִּישׁ טוֹב!", "baca": "az lekh lerofe. targish tov!", "id": "Kalau begitu ke dokter. Semoga cepat sembuh!", "literal": "maka pergilah ke-dokter. kamu-akan-merasa baik!" }
+      ],
+      "notes": [
+        "⚠️ **כּוֹאֵב לִי הָרֹאשׁ** harfiahnya **\"kepala itu sakit kepada saya\"** — bagian tubuhnya yang jadi pelaku, bukan kamu. Bahasa Indonesia berkata \"kepala saya sakit\", yang cukup dekat; bahasa Inggris berkata *I have a headache*, yang jauh sekali. Kamu punya keuntungan di sini.",
+        "**כּוֹאֵב berubah bentuk mengikuti bagian tubuhnya**, karena ia kata kerja: כּוֹאֵב לִי הָרֹאשׁ (kepala, lk), כּוֹאֶבֶת לִי הַבֶּטֶן (perut, pr), כּוֹאֲבוֹת לִי הָרַגְלַיִם (kaki, jamak). Bagian tubuh yang menentukan, bukan kamu.",
+        "**Bagian tubuh yang berpasangan berjenis perempuan** — יָד (tangan), רֶגֶל (kaki), עַיִן (mata), אֹזֶן (telinga) — dan jamaknya memakai bentuk berpasangan ־ַיִם: יָדַיִם, רַגְלַיִם, עֵינַיִם, אָזְנַיִם. Aturan ini sudah kamu lihat di unit 11 dan 17; sekarang alasannya lengkap.",
+        "**מַרְגִּישׁ** (merasa) dipakai untuk keadaan badan maupun perasaan: אֲנִי מַרְגִּישׁ טוֹב / רַע / עָיֵף. Perempuan: מַרְגִּישָׁה.",
+        "**קָשֶׁה לִי לְ...** = \"sulit bagi saya untuk...\". Pola yang sangat berguna dan berlaku jauh di luar urusan kesehatan: קָשֶׁה לִי לְדַבֵּר עִבְרִית, קָשֶׁה לִי לָקוּם מֻקְדָּם. Kebalikannya: קַל לִי לְ...",
+        "**כַּנִּרְאֶה** (*kanir'eh*) = \"tampaknya, sepertinya\". Kata yang membuatmu bisa menduga tanpa memastikan — berguna sekali untuk pelajar yang belum yakin.",
+        "**תִּשְׁתֶּה וְתָנוּחַ** memakai bentuk **akan datang sebagai perintah halus** — cara paling sopan memberi saran dalam bahasa Ibrani, lebih lembut daripada bentuk perintah langsung. Sama seperti bahasa Indonesia berkata \"nanti minum banyak air ya\" alih-alih \"minum!\".",
+        "**תִּרְגִּישׁ טוֹב!** (\"semoga kamu merasa baik\") adalah ucapan standar untuk orang sakit. Ke perempuan: תַּרְגִּישִׁי טוֹב. Sepadan yang lebih formal: רְפוּאָה שְׁלֵמָה (\"kesembuhan yang utuh\")."
+      ],
+      "grammars": [
+        {
+          "title": "Rasa sakit dan keadaan yang \"terjadi kepadamu\"",
+          "body": [
+            "Sekelompok kalimat Ibrani memakai לְ + akhiran, bukan subjek biasa. Semuanya tentang hal yang menimpa seseorang."
+          ],
+          "table": {
+            "head": ["Ibrani", "Cara baca", "Harfiah", "Arti"],
+            "rows": [
+              ["כּוֹאֵב לִי הָרֹאשׁ", "ko'ev li harosh", "sakit kepada saya kepala itu", "Kepala saya sakit"],
+              ["כּוֹאֶבֶת לִי הַבֶּטֶן", "ko'evet li habeten", "sakit kepada saya perut itu", "Perut saya sakit"],
+              ["קַר לִי", "kar li", "dingin kepada saya", "Saya kedinginan"],
+              ["חַם לִי", "kham li", "panas kepada saya", "Saya kepanasan"],
+              ["נָעִים לִי", "na'im li", "nyaman kepada saya", "Saya merasa nyaman"],
+              ["קָשֶׁה לִי", "kasheh li", "sulit kepada saya", "Saya kesulitan"],
+              ["נִמְאַס לִי", "nim'as li", "membosankan kepada saya", "Saya sudah muak"],
+              ["בָּא לִי", "ba li", "datang kepada saya", "Saya lagi pengin"],
+              ["אִכְפַּת לִי", "ikhpat li", "penting kepada saya", "Saya peduli"]
+            ]
+          },
+          "after": [
+            "⚠️ **בָּא לִי** dan **נִמְאַס לִי** adalah dua ungkapan Israel sehari-hari yang paling sering. בָּא לִי קָפֶה = \"lagi pengin kopi\". לֹא בָּא לִי = \"lagi nggak mood\". Keduanya tidak punya terjemahan yang pas, dan justru karena itu terasa sangat Israel."
+          ]
+        },
+        {
+          "title": "Bagian tubuh",
+          "body": [
+            "Kolom jenis penting karena ia menentukan bentuk כּוֹאֵב."
+          ],
+          "table": {
+            "head": ["Ibrani", "Cara baca", "Arti", "Jenis", "Jamak"],
+            "rows": [
+              ["רֹאשׁ", "rosh", "kepala", "lk", "רָאשִׁים"],
+              ["פָּנִים", "panim", "wajah", "jamak", "—"],
+              ["עַיִן", "ayin", "mata", "pr", "עֵינַיִם"],
+              ["אֹזֶן", "ozen", "telinga", "pr", "אָזְנַיִם"],
+              ["אַף", "af", "hidung", "lk", "—"],
+              ["פֶּה", "peh", "mulut", "lk", "—"],
+              ["שֵׁן", "shen", "gigi", "pr", "שִׁנַּיִם"],
+              ["גָּרוֹן", "garon", "tenggorokan", "lk", "—"],
+              ["יָד", "yad", "tangan", "pr", "יָדַיִם"],
+              ["רֶגֶל", "regel", "kaki", "pr", "רַגְלַיִם"],
+              ["בֶּטֶן", "beten", "perut", "pr", "—"],
+              ["גַּב", "gav", "punggung", "lk", "—"],
+              ["לֵב", "lev", "hati, jantung", "lk", "—"],
+              ["גּוּף", "guf", "badan", "lk", "—"]
+            ]
+          },
+          "after": [
+            "⚠️ **פָּנִים (wajah) selalu jamak** dalam bahasa Ibrani, tanpa bentuk tunggal — seperti מַיִם dan שָׁמַיִם. Kata sifatnya ikut jamak: פָּנִים יָפוֹת."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Keluhan dan obat",
+      "blocks": [
+        { "type": "tabel", "head": ["Ibrani", "Cara baca", "Arti", "Ibrani", "Cara baca", "Arti"], "rows": [
+          ["רוֹפֵא", "rofe", "dokter", "תְּרוּפָה", "trufah", "obat"],
+          ["בֵּית מִרְקַחַת", "beit mirkakhat", "apotek", "כַּדּוּר", "kadur", "tablet"],
+          ["בֵּית חוֹלִים", "beit kholim", "rumah sakit", "מִרְשָׁם", "mirsham", "resep"],
+          ["חוֹלֶה", "kholeh", "sakit", "חִסּוּן", "khisun", "vaksin"],
+          ["חֹם", "khom", "demam", "אֲלֶרְגְיָה", "alergyah", "alergi"],
+          ["שַׁפַּעַת", "shapa'at", "flu", "כְּאֵב", "ke'ev", "rasa sakit"],
+          ["שִׁעוּל", "shi'ul", "batuk", "פֶּצַע", "petsa", "luka"],
+          ["נַזֶּלֶת", "nazelet", "pilek", "בְּחִילָה", "bkhilah", "mual"],
+          ["מַרְגִּישׁ", "margish", "merasa", "עָיֵף", "ayef", "lelah"],
+          ["נָח", "nakh", "beristirahat", "בָּרִיא", "bari", "sehat"]
+        ]},
+        { "type": "kotak", "title": "Kalimat yang perlu kamu bawa ke apotek", "items": [
+          "**אֲנִי לֹא מַרְגִּישׁ / מַרְגִּישָׁה טוֹב** — saya kurang enak badan.",
+          "**כּוֹאֵב לִי ...** — ... saya sakit. Tinggal sebutkan bagian tubuhnya.",
+          "**יֵשׁ לִי חֹם / שִׁעוּל / נַזֶּלֶת** — saya demam / batuk / pilek.",
+          "**יֵשׁ לִי אֲלֶרְגְיָה לְ...** — saya alergi terhadap...",
+          "**זֶה בְּלִי מִרְשָׁם?** — ini tanpa resep?",
+          "**כַּמָּה פְּעָמִים בְּיוֹם?** — berapa kali sehari?",
+          "**זֶה דָּחוּף** *(zeh dakhuf)* — ini mendesak."
+        ]},
+        { "type": "p", "text": "⚠️ **Nomor darurat Israel: 101 untuk ambulans (מָגֵן דָּוִד אָדֹם), 100 polisi, 102 pemadam kebakaran.** Kalimat yang perlu kamu bisa tanpa berpikir: **צָרִיךְ אַמְבּוּלַנְס!** *(tsarikh ambulans)* dan **קִרְאוּ לְרוֹפֵא!** *(kir'u lerofe — panggil dokter!)*." }
+      ]
+    },
+    {
+      "title": "Menanyakan kabar orang sakit",
+      "blocks": [
+        { "type": "tabel", "head": ["Ibrani", "Cara baca", "Arti"], "rows": [
+          ["אֵיךְ אַתָּה מַרְגִּישׁ?", "eikh atah margish?", "Bagaimana perasaanmu (lk)?"],
+          ["מָה קָרָה?", "mah karah?", "Apa yang terjadi?"],
+          ["מִמָּתַי?", "mimatai?", "Sejak kapan?"],
+          ["זֶה עָבַר?", "zeh avar?", "Sudah hilang? Sudah lewat?"],
+          ["תִּרְגִּישׁ טוֹב!", "targish tov!", "Semoga cepat sembuh! (ke lk)"],
+          ["רְפוּאָה שְׁלֵמָה", "refu'ah shlemah", "Semoga sembuh sepenuhnya"],
+          ["תִּשְׁמֹר עַל עַצְמְךָ", "tishmor al atsmekha", "Jaga dirimu (ke lk)"],
+          ["אַל תִּדְאַג", "al tid'ag", "Jangan khawatir"],
+          ["זֶה יַעֲבֹר", "zeh ya'avor", "Nanti juga sembuh"]
+        ]},
+        { "type": "p", "text": "**זֶה יַעֲבֹר** harfiahnya \"ini akan lewat\". Bahasa Ibrani menggambarkan penyakit sebagai sesuatu yang **berjalan melewatimu**, bukan sesuatu yang kamu kalahkan. Gambaran yang menenangkan, dan sangat sering diucapkan." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "he": "מַרְגִּישׁ / מַרְגִּישָׁה", "baca": "margish / margishah", "id": "merasa" },
+    { "he": "כּוֹאֵב לִי", "baca": "ko'ev li", "id": "... saya sakit" },
+    { "he": "כְּאֵב", "baca": "ke'ev", "id": "rasa sakit" },
+    { "he": "רֹאשׁ", "baca": "rosh", "id": "kepala" },
+    { "he": "בֶּטֶן", "baca": "beten", "id": "perut (pr)" },
+    { "he": "גָּרוֹן", "baca": "garon", "id": "tenggorokan" },
+    { "he": "יָד / יָדַיִם", "baca": "yad / yadayim", "id": "tangan (pr)" },
+    { "he": "רֶגֶל / רַגְלַיִם", "baca": "regel / raglayim", "id": "kaki (pr)" },
+    { "he": "עַיִן / עֵינַיִם", "baca": "ayin / einayim", "id": "mata (pr)" },
+    { "he": "שֵׁן / שִׁנַּיִם", "baca": "shen / shinayim", "id": "gigi (pr)" },
+    { "he": "פָּנִים", "baca": "panim", "id": "wajah (selalu jamak)" },
+    { "he": "גּוּף", "baca": "guf", "id": "badan" },
+    { "he": "חוֹלֶה / חוֹלָה", "baca": "kholeh / kholah", "id": "sakit" },
+    { "he": "בָּרִיא / בְּרִיאָה", "baca": "bari / bri'ah", "id": "sehat" },
+    { "he": "חֹם", "baca": "khom", "id": "demam" },
+    { "he": "שִׁעוּל / נַזֶּלֶת", "baca": "shi'ul / nazelet", "id": "batuk / pilek" },
+    { "he": "תְּרוּפָה", "baca": "trufah", "id": "obat" },
+    { "he": "כַּדּוּר", "baca": "kadur", "id": "tablet" },
+    { "he": "מִרְשָׁם", "baca": "mirsham", "id": "resep" },
+    { "he": "בֵּית מִרְקַחַת", "baca": "beit mirkakhat", "id": "apotek" },
+    { "he": "רוֹפֵא / רוֹפְאָה", "baca": "rofe / rof'ah", "id": "dokter" },
+    { "he": "נָח / נָחָה", "baca": "nakh / nakhah", "id": "beristirahat" },
+    { "he": "קָשֶׁה לִי", "baca": "kasheh li", "id": "sulit bagi saya" },
+    { "he": "כַּנִּרְאֶה", "baca": "kanir'eh", "id": "tampaknya" },
+    { "he": "תִּרְגִּישׁ טוֹב", "baca": "targish tov", "id": "semoga cepat sembuh" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih bentuk כּוֹאֵב yang cocok dengan bagian tubuhnya.",
+      "items": [
+        "____ לִי הָרֹאשׁ.",
+        "____ לִי הַבֶּטֶן.",
+        "____ לִי הָרַגְלַיִם.",
+        "____ לִי הַגָּרוֹן.",
+        "____ לִי הָעֵינַיִם."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ibrani.",
+      "items": [
+        "Saya (pr) kurang enak badan.",
+        "Gigi saya sakit.",
+        "Saya demam sejak kemarin.",
+        "Saya alergi obat ini.",
+        "Berapa kali sehari?"
+      ]
+    },
+    {
+      "prompt": "Lengkapi dengan bagian tubuh yang tepat.",
+      "items": [
+        "אֲנִי רוֹאֶה עִם הָ____.",
+        "אֲנִי שׁוֹמֵעַ עִם הָ____.",
+        "אֲנִי אוֹכֵל עִם הַ____.",
+        "אֲנִי הוֹלֵךְ עִם הָ____.",
+        "אֲנִי כּוֹתֵב עִם הַ____."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "טוֹב / מַרְגִּישׁ / לֹא / אֲנִי",
+        "הָרֹאשׁ / לִי / כּוֹאֵב",
+        "מַיִם / תִּשְׁתֶּה / הַרְבֵּה",
+        "לְרוֹפֵא / לֵךְ / אָז"
+      ]
+    }
+  ],
+  "answers": [
+    "כּוֹאֵב — כּוֹאֶבֶת — כּוֹאֲבוֹת — כּוֹאֵב — כּוֹאֲבוֹת",
+    "אֲנִי לֹא מַרְגִּישָׁה טוֹב. — כּוֹאֶבֶת לִי הַשֵּׁן. — יֵשׁ לִי חֹם מֵאֶתְמוֹל. — יֵשׁ לִי אֲלֶרְגְיָה לַתְּרוּפָה הַזֹּאת. — כַּמָּה פְּעָמִים בְּיוֹם?",
+    "עֵינַיִם — אָזְנַיִם — פֶּה — רַגְלַיִם — יָד",
+    "אֲנִי לֹא מַרְגִּישׁ טוֹב — כּוֹאֵב לִי הָרֹאשׁ — תִּשְׁתֶּה הַרְבֵּה מַיִם — אָז לֵךְ לְרוֹפֵא"
+  ],
+  "wave": "Tunjuk sepuluh bagian tubuhmu sendiri dan sebutkan namanya dalam bahasa Ibrani. Lalu susun lima kalimat כּוֹאֵב לִי dengan bentuk yang benar — periksa jenis kelamin tiap bagian tubuhnya."
+}

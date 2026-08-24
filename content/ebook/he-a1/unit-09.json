@@ -1,0 +1,203 @@
+{
+  "title": "Jam berapa sekarang?",
+  "title_target": "מָה הַשָּׁעָה?",
+  "goal": "Membaca jam, menyebut hari dalam seminggu, dan membuat janji — sekaligus menghindari satu salah hitung yang membuat orang Indonesia datang satu jam terlalu awal.",
+  "bekal": [
+    "menanyakan dan menyebut jam",
+    "menyebut hari dan bagian hari",
+    "membuat janji sederhana"
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — קוֹבְעִים פְּגִישָׁה",
+      "intro": "Noa dan Budi mengatur waktu belajar bersama.",
+      "lines": [
+        { "speaker": "נֹעָה:", "text": "בּוּדִי, מָתַי אַתָּה חָפְשִׁי הַשָּׁבוּעַ?", "baca": "budi, matai atah khofshi hashavu'a?", "id": "Budi, kapan kamu senggang minggu ini?", "literal": "budi, kapan kamu bebas minggu-ini?" },
+        { "speaker": "בּוּדִי:", "text": "בְּיוֹם שְׁלִישִׁי אַחֲרֵי הַצָּהֳרַיִם.", "baca": "beyom shlishi akharei hatsohorayim.", "id": "Hari Selasa sore.", "literal": "pada-hari ketiga sesudah tengah-hari." },
+        { "speaker": "נֹעָה:", "text": "מְצֻיָּן. בְּאֵיזוֹ שָׁעָה?", "baca": "metsuyan. be'eizo sha'ah?", "id": "Bagus. Jam berapa?", "literal": "luar-biasa. pada-yang-mana jam?" },
+        { "speaker": "בּוּדִי:", "text": "בְּאַרְבַּע? אוֹ אוּלַי בְּאַרְבַּע וָחֵצִי.", "baca": "be'arba? o ulai be'arba vakhetsi.", "id": "Jam empat? Atau mungkin setengah lima.", "literal": "pada-empat? atau mungkin pada-empat dan-setengah." },
+        { "speaker": "נֹעָה:", "text": "אַרְבַּע וָחֵצִי טוֹב. אֵיפֹה נִפְגָּשׁ?", "baca": "arba vakhetsi tov. eifoh nipagesh?", "id": "Setengah lima bagus. Ketemu di mana?", "literal": "empat dan-setengah baik. di-mana kita-bertemu?" },
+        { "speaker": "בּוּדִי:", "text": "בַּסִּפְרִיָּה. הִיא פְּתוּחָה עַד שְׁמוֹנֶה.", "baca": "basifriyah. hi ptukhah ad shmoneh.", "id": "Di perpustakaan. Bukanya sampai jam delapan.", "literal": "di-perpustakaan-itu. dia terbuka sampai delapan." },
+        { "speaker": "נֹעָה:", "text": "רֶגַע — מָה הַשָּׁעָה עַכְשָׁו?", "baca": "rega — mah hasha'ah akhshav?", "id": "Sebentar — sekarang jam berapa?", "literal": "sesaat — apa jam-itu sekarang?" },
+        { "speaker": "בּוּדִי:", "text": "עֶשֶׂר וְרֶבַע. לָמָּה?", "baca": "eser vareva. lamah?", "id": "Sepuluh lewat seperempat. Kenapa?", "literal": "sepuluh dan-seperempat. kenapa?" },
+        { "speaker": "נֹעָה:", "text": "יֵשׁ לִי שִׁעוּר בְּעוֹד חֲמֵשׁ עֶשְׂרֵה דַּקּוֹת!", "baca": "yesh li shi'ur be'od khamesh esreh dakot!", "id": "Saya ada kelas lima belas menit lagi!", "literal": "ada kepada-saya pelajaran dalam-lagi lima belas menit!" },
+        { "speaker": "בּוּדִי:", "text": "אָז רוּצִי. נִדַּבֵּר אַחַר כָּךְ.", "baca": "az rutsi. nedaber akhar kakh.", "id": "Kalau begitu lari. Kita bicara nanti.", "literal": "maka larilah (pr). kita-akan-bicara sesudah begitu." },
+        { "speaker": "נֹעָה:", "text": "יוֹם שְׁלִישִׁי, אַרְבַּע וָחֵצִי. אַל תִּשְׁכַּח!", "baca": "yom shlishi, arba vakhetsi. al tishkakh!", "id": "Selasa, setengah lima. Jangan lupa!", "literal": "hari ketiga, empat dan-setengah. jangan kamu-lupa!" },
+        { "speaker": "בּוּדִי:", "text": "לֹא אֶשְׁכַּח. לְהִתְרָאוֹת!", "baca": "lo eshkakh. lehitra'ot!", "id": "Tidak akan lupa. Sampai jumpa!", "literal": "tidak saya-akan-lupa. sampai-jumpa!" }
+      ],
+      "notes": [
+        "⚠️ **Inilah perangkap yang paling sering membuat orang Indonesia salah datang.** אַרְבַּע וָחֵצִי harfiahnya \"empat dan setengah\", dan artinya **16.30** — bukan \"setengah empat\". Bahasa Ibrani menghitung **maju** dari jam yang sudah lewat; bahasa Indonesia menghitung **mundur** menuju jam berikutnya. \"Setengah lima\" dalam bahasa Indonesia = 16.30 = אַרְבַּע וָחֵצִי. Selisihnya satu jam penuh, dan itu cukup untuk melewatkan janji.",
+        "**Ingat dengan satu kalimat: bahasa Ibrani menyebut jam yang SUDAH lewat, lalu menambah.** שֶׁבַע וָחֵצִי = 07.30. תֵּשַׁע וְרֶבַע = 09.15. Kalau kamu ragu, ubah dulu ke angka, jangan ke kalimat Indonesia.",
+        "**Jam memakai angka bentuk PEREMPUAN** — שָׁעָה (jam) adalah kata perempuan. Jadi בְּאַרְבַּע (bukan בְּאַרְבָּעָה), בְּשָׁלוֹשׁ, בְּשֶׁבַע.",
+        "**Untuk waktu menjelang jam berikutnya, dipakai רֶבַע לְ־** (\"seperempat menuju\"): רֶבַע לְחָמֵשׁ = 16.45. Di sini bahasa Ibrani menghitung mundur, sama seperti bahasa Indonesia — tapi cuma untuk sisa kurang dari setengah jam.",
+        "⚠️ **Hari dalam seminggu bernomor, bukan bernama.** יוֹם רִאשׁוֹן (hari pertama) = **Minggu**, יוֹם שֵׁנִי = Senin, dan seterusnya sampai יוֹם שִׁשִּׁי = Jumat. Cuma Sabtu yang punya nama sendiri: שַׁבָּת. Jadi \"hari kedua\" adalah **Senin**, bukan Selasa — pelajar Indonesia sering menggeser satu hari.",
+        "**Minggu kerja Israel dimulai hari Minggu dan berakhir Kamis.** Jumat setengah hari, Sabtu libur penuh. Kalau kamu mengatur janji \"akhir pekan\", yang dimaksud orang Israel adalah **Jumat-Sabtu**, bukan Sabtu-Minggu.",
+        "**בְּעוֹד** (*be'od*) = \"dalam waktu ... lagi\": בְּעוֹד חָמֵשׁ דַּקּוֹת (lima menit lagi), בְּעוֹד שָׁבוּעַ (seminggu lagi).",
+        "**אַל תִּשְׁכַּח!** = \"jangan lupa!\". Larangan dalam bahasa Ibrani memakai **אַל** + bentuk akan datang, bukan לֹא. Ke perempuan: אַל תִּשְׁכְּחִי."
+      ],
+      "grammars": [
+        {
+          "title": "Membaca jam",
+          "body": [
+            "Susunannya selalu: angka jam (bentuk perempuan) + tambahan. Kata שָׁעָה sendiri hampir tidak pernah disebut."
+          ],
+          "table": {
+            "head": ["Waktu", "Ibrani", "Cara baca", "Harfiah"],
+            "rows": [
+              ["07.00", "שֶׁבַע", "sheva", "tujuh"],
+              ["07.05", "שֶׁבַע וְחָמֵשׁ", "sheva vekhamesh", "tujuh dan lima"],
+              ["07.15", "שֶׁבַע וָרֶבַע", "sheva vareva", "tujuh dan seperempat"],
+              ["07.30", "שֶׁבַע וָחֵצִי", "sheva vakhetsi", "tujuh dan setengah"],
+              ["07.45", "רֶבַע לִשְׁמוֹנֶה", "reva lishmoneh", "seperempat menuju delapan"],
+              ["07.50", "עֲשָׂרָה לִשְׁמוֹנֶה", "asarah lishmoneh", "sepuluh menuju delapan"],
+              ["12.00", "שְׁתֵּים עֶשְׂרֵה", "shteim esreh", "dua belas"],
+              ["13.00", "אַחַת", "akhat", "satu"],
+              ["20.30", "שְׁמוֹנֶה וָחֵצִי בָּעֶרֶב", "shmoneh vakhetsi ba'erev", "delapan setengah di malam"]
+            ]
+          },
+          "after": [
+            "⚠️ Bandingkan baris 07.30 dan bahasa Indonesia \"setengah delapan\": dua-duanya berarti 07.30, tapi bahasa Ibrani memakai angka **tujuh** dan bahasa Indonesia memakai angka **delapan**. Ini bukan hafalan, ini cara menghitung yang berbeda. Latih dengan mengubah lima jam sehari-harimu ke bahasa Ibrani."
+          ]
+        },
+        {
+          "title": "Hari dan bagian hari",
+          "body": [
+            "Hari bernomor, dan penomorannya dimulai dari **Minggu**."
+          ],
+          "table": {
+            "head": ["Ibrani", "Cara baca", "Hari", "Harfiah"],
+            "rows": [
+              ["יוֹם רִאשׁוֹן", "yom rishon", "Minggu", "hari pertama"],
+              ["יוֹם שֵׁנִי", "yom sheni", "Senin", "hari kedua"],
+              ["יוֹם שְׁלִישִׁי", "yom shlishi", "Selasa", "hari ketiga"],
+              ["יוֹם רְבִיעִי", "yom revi'i", "Rabu", "hari keempat"],
+              ["יוֹם חֲמִישִׁי", "yom khamishi", "Kamis", "hari kelima"],
+              ["יוֹם שִׁשִּׁי", "yom shishi", "Jumat", "hari keenam"],
+              ["שַׁבָּת", "shabat", "Sabtu", "istirahat"]
+            ]
+          },
+          "after": [
+            "Bagian hari: **בֹּקֶר** (pagi), **צָהֳרַיִם** (tengah hari), **אַחֲרֵי הַצָּהֳרַיִם** (sore), **עֶרֶב** (petang/malam), **לַיְלָה** (malam larut). Dipakai dengan בַּ־: בַּבֹּקֶר, בָּעֶרֶב, בַּלַּיְלָה.",
+            "⚠️ Hari Yahudi dimulai **saat matahari terbenam**, bukan tengah malam. Karena itu Sabat mulai Jumat petang. Kalau seseorang mengundangmu לְשַׁבָּת, yang dimaksud sering kali makan malam Jumat."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Waktu: kata yang perlu kamu punya",
+      "blocks": [
+        { "type": "tabel", "head": ["Ibrani", "Cara baca", "Arti", "Ibrani", "Cara baca", "Arti"], "rows": [
+          ["שָׁעָה", "sha'ah", "jam (satuan)", "אֶתְמוֹל", "etmol", "kemarin"],
+          ["דַּקָּה", "dakah", "menit", "הַיּוֹם", "hayom", "hari ini"],
+          ["שְׁנִיָּה", "shniyah", "detik", "מָחָר", "makhar", "besok"],
+          ["יוֹם", "yom", "hari", "עַכְשָׁו", "akhshav", "sekarang"],
+          ["שָׁבוּעַ", "shavu'a", "minggu", "תָּמִיד", "tamid", "selalu"],
+          ["חֹדֶשׁ", "khodesh", "bulan", "לִפְעָמִים", "lif'amim", "kadang-kadang"],
+          ["שָׁנָה", "shanah", "tahun", "אַף פַּעַם לֹא", "af pa'am lo", "tidak pernah"],
+          ["בֹּקֶר", "boker", "pagi", "מֻקְדָּם", "mukdam", "awal, pagi-pagi"],
+          ["עֶרֶב", "erev", "petang", "מְאֻחָר", "me'ukhar", "terlambat, larut"],
+          ["לַיְלָה", "laylah", "malam", "בִּזְמַן", "bizman", "tepat waktu"]
+        ]},
+        { "type": "p", "text": "⚠️ **אַף פַּעַם לֹא** memakai לֹא **dua kali makna**: harfiahnya \"bahkan sekali tidak\". Bahasa Ibrani, seperti bahasa Indonesia, membiarkan pengingkaran menumpuk tanpa saling membatalkan. אֲנִי אַף פַּעַם לֹא שׁוֹתֶה קָפֶה = saya tidak pernah minum kopi." }
+      ]
+    },
+    {
+      "title": "Membuat janji",
+      "blocks": [
+        { "type": "tabel", "head": ["Ibrani", "Cara baca", "Arti"], "rows": [
+          ["מָה הַשָּׁעָה?", "mah hasha'ah?", "Jam berapa sekarang?"],
+          ["בְּאֵיזוֹ שָׁעָה?", "be'eizo sha'ah?", "Jam berapa? (untuk acara)"],
+          ["מָתַי אַתָּה חָפְשִׁי?", "matai atah khofshi?", "Kapan kamu senggang?"],
+          ["יֵשׁ לְךָ זְמַן?", "yesh lekha zman?", "Kamu ada waktu?"],
+          ["בּוֹא נִפְגָּשׁ בְּ...", "bo nipagesh be...", "Ayo kita bertemu jam..."],
+          ["אֲנִי מְאַחֵר / מְאַחֶרֶת", "ani me'akher / me'akheret", "Saya terlambat"],
+          ["סְלִיחָה עַל הָאִחוּר", "slikhah al ha'ikhur", "Maaf atas keterlambatannya"],
+          ["מָתַי זֶה פָּתוּחַ?", "matai zeh patu'akh?", "Kapan bukanya?"],
+          ["זֶה סָגוּר בְּשַׁבָּת", "zeh sagur beshabat", "Ini tutup hari Sabtu"],
+          ["אַחַר כָּךְ", "akhar kakh", "nanti, sesudah itu"]
+        ]},
+        { "type": "kotak", "title": "Jam berapa Israel hidup", "items": [
+          "Toko dan kantor umumnya buka **08.00–19.00**, banyak yang tutup siang beberapa jam di kota kecil.",
+          "**Jumat siang semuanya menutup lebih awal** — sekitar 14.00–15.00 — dan tidak buka lagi sampai Sabtu petang. Angkutan umum di sebagian besar kota berhenti total selama Sabat.",
+          "Kalau kamu perlu sesuatu di akhir pekan, urus **sebelum Jumat siang**. Ini pelajaran yang hampir semua pendatang pelajari dengan cara yang mahal."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    { "he": "שָׁעָה", "baca": "sha'ah", "id": "jam" },
+    { "he": "דַּקָּה", "baca": "dakah", "id": "menit" },
+    { "he": "חֵצִי", "baca": "khetsi", "id": "setengah" },
+    { "he": "רֶבַע", "baca": "reva", "id": "seperempat" },
+    { "he": "יוֹם", "baca": "yom", "id": "hari" },
+    { "he": "שָׁבוּעַ", "baca": "shavu'a", "id": "minggu" },
+    { "he": "שַׁבָּת", "baca": "shabat", "id": "Sabtu; Sabat" },
+    { "he": "בֹּקֶר / עֶרֶב / לַיְלָה", "baca": "boker / erev / laylah", "id": "pagi / petang / malam" },
+    { "he": "צָהֳרַיִם", "baca": "tsohorayim", "id": "tengah hari" },
+    { "he": "אַחֲרֵי הַצָּהֳרַיִם", "baca": "akharei hatsohorayim", "id": "sore" },
+    { "he": "אֶתְמוֹל / הַיּוֹם / מָחָר", "baca": "etmol / hayom / makhar", "id": "kemarin / hari ini / besok" },
+    { "he": "זְמַן", "baca": "zman", "id": "waktu" },
+    { "he": "פְּגִישָׁה", "baca": "pgishah", "id": "pertemuan, janji" },
+    { "he": "פָּתוּחַ / סָגוּר", "baca": "patu'akh / sagur", "id": "buka / tutup" },
+    { "he": "עַד", "baca": "ad", "id": "sampai" },
+    { "he": "מִן / מִ־", "baca": "min / mi", "id": "dari (waktu & tempat)" },
+    { "he": "בְּעוֹד", "baca": "be'od", "id": "dalam ... lagi" },
+    { "he": "אַחַר כָּךְ", "baca": "akhar kakh", "id": "nanti, sesudah itu" },
+    { "he": "לִפְעָמִים", "baca": "lif'amim", "id": "kadang-kadang" },
+    { "he": "תָּמִיד", "baca": "tamid", "id": "selalu" },
+    { "he": "אַף פַּעַם לֹא", "baca": "af pa'am lo", "id": "tidak pernah" },
+    { "he": "מְאֻחָר / מֻקְדָּם", "baca": "me'ukhar / mukdam", "id": "terlambat / awal" },
+    { "he": "אוּלַי", "baca": "ulai", "id": "mungkin" },
+    { "he": "אַל", "baca": "al", "id": "jangan (larangan)" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis waktu berikut dalam bahasa Ibrani.",
+      "items": [
+        "08.00 ____",
+        "09.30 ____",
+        "11.15 ____",
+        "14.45 ____",
+        "18.30 ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan waktu Ibrani ini ke angka.",
+      "items": [
+        "חָמֵשׁ וָחֵצִי ____",
+        "שָׁלוֹשׁ וָרֶבַע ____",
+        "רֶבַע לְשֶׁבַע ____",
+        "תֵּשַׁע וְעֶשְׂרִים ____"
+      ]
+    },
+    {
+      "prompt": "Tulis nama hari dalam bahasa Ibrani.",
+      "items": [
+        "Senin ____",
+        "Rabu ____",
+        "Jumat ____",
+        "Minggu ____",
+        "Sabtu ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ibrani.",
+      "items": [
+        "Sekarang jam berapa?",
+        "Kita bertemu hari Selasa jam empat.",
+        "Perpustakaan buka sampai jam delapan.",
+        "Saya tidak pernah bangun pagi-pagi.",
+        "Maaf, saya terlambat."
+      ]
+    }
+  ],
+  "answers": [
+    "שְׁמוֹנֶה — תֵּשַׁע וָחֵצִי — אַחַת עֶשְׂרֵה וָרֶבַע — רֶבַע לְשָׁלוֹשׁ — שֵׁשׁ וָחֵצִי בָּעֶרֶב",
+    "05.30 — 03.15 — 06.45 — 09.20",
+    "יוֹם שֵׁנִי — יוֹם רְבִיעִי — יוֹם שִׁשִּׁי — יוֹם רִאשׁוֹן — שַׁבָּת",
+    "מָה הַשָּׁעָה? — נִפְגָּשׁ בְּיוֹם שְׁלִישִׁי בְּאַרְבַּע. — הַסִּפְרִיָּה פְּתוּחָה עַד שְׁמוֹנֶה. — אֲנִי אַף פַּעַם לֹא קָם מֻקְדָּם. — סְלִיחָה, אֲנִי מְאַחֵר."
+  ],
+  "wave": "Ubah lima waktu penting dalam harimu — bangun, sarapan, mulai kerja, makan malam, tidur — ke bahasa Ibrani. Periksa dua kali yang berakhiran setengah: jam Ibrani menghitung MAJU."
+}

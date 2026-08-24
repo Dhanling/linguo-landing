@@ -106,7 +106,12 @@ const FON_RTL = meta.font_rtl ?? `"Geeza Pro", "Al Bayan", "Baghdad", "Noto Nask
    utuh (termasuk spasi & tanda baca di tengahnya) dibungkus sekaligus. Kalau
    tiap katanya dibungkus sendiri-sendiri, untaiannya justru tersusun terbalik —
    dua pagar yang bersebelahan diurutkan kiri-ke-kanan seperti huruf Latin. */
-const AKSARA_RTL = "\\u0600-\\u06FF\\u0750-\\u077F\\u08A0-\\u08FF\\uFB50-\\uFDFF\\uFE70-\\uFEFF";
+/* Rentangnya memuat Arab DAN Ibrani sekaligus. Ibrani ditambahkan waktu modul
+   עברית 101 dirakit: blok Ibrani (U+0590–05FF, termasuk niqqud & ta'amim) dan
+   bentuk sajiannya (U+FB1D–FB4F) berdiri sendiri di luar rentang Arab, jadi
+   tanpa ini teksnya lolos dari pemagar — tak kebagian fon Ibrani, dan tanda
+   bacanya melompat ke ujung yang salah begitu bersanding dengan huruf Latin. */
+const AKSARA_RTL = "\\u0590-\\u05FF\\u0600-\\u06FF\\u0750-\\u077F\\u08A0-\\u08FF\\uFB1D-\\uFDFF\\uFE70-\\uFEFF";
 const NETRAL_RTL = " \\u00A0.,\\u060C\\u061B\\u061F!?:;()\\[\\]/\\-\\u2013\\u2014\\u00AB\\u00BB0-9\\u0660-\\u0669";
 const UNTAIAN_RTL = new RegExp(`[${AKSARA_RTL}](?:[${AKSARA_RTL}${NETRAL_RTL}]*[${AKSARA_RTL}])?`, "g");
 const pagariRtl = (s) => s.replace(UNTAIAN_RTL, (m) => `<span class="rtl" dir="rtl">${m}</span>`);
@@ -114,6 +119,17 @@ const pagariRtl = (s) => s.replace(UNTAIAN_RTL, (m) => `<span class="rtl" dir="r
 /** *miring* dan **tebal** ala markdown ringan — cukup untuk teks pelajaran. */
 const teksDasar = (s) => ruby(esc(s)).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\*(.+?)\*/g, "<i>$1</i>");
 const teks = (s) => (RTL ? pagariRtl(teksDasar(s)) : teksDasar(s));
+
+/* Baris yang huruf kuat PERTAMA-nya beraksara kanan-ke-kiri dibungkus sendiri —
+   lihat catatan [ebook-rtl-baris-plaintext-v1] di CSS. Tanda markdown (*, **),
+   nomor, dan tanda baca di depannya dilewati; begitu bertemu huruf Latin lebih
+   dulu, barisnya dibiarkan kiri-ke-kanan seperti kalimat Indonesia lain. */
+const BARIS_RTL = new RegExp(`^[^A-Za-z\\u00C0-\\u024F${AKSARA_RTL}]*[${AKSARA_RTL}]`);
+const barisTeks = (s) => {
+  const isi = teks(s);
+  return RTL && meta.rtl_baris_plaintext && BARIS_RTL.test(String(s ?? ""))
+    ? `<span class="baris-rtl" dir="rtl">${isi}</span>` : isi;
+};
 
 /* [ebook-bahasa-pengantar-v1] Judul tetap di dalam unit ("Catatan", "Latihan",
    "Kunci jawaban") ikut BAHASA PENGANTAR modulnya, bukan bahasa targetnya.
@@ -187,10 +203,10 @@ const halamanIsi = (h, nomor) => `
 /** Satu blok isi bebas — dipakai halaman pengantar/penutup DAN bagian di
  *  dalam unit (lihat `sections`), supaya penulisnya cuma menghafal satu skema. */
 const blok = (b) => {
-  if (b.type === "p") return `<p>${teks(b.text)}</p>`;
-  if (b.type === "list") return `<ul>${b.items.map((i) => `<li>${teks(i)}</li>`).join("")}</ul>`;
+  if (b.type === "p") return `<p>${barisTeks(b.text)}</p>`;
+  if (b.type === "list") return `<ul>${b.items.map((i) => `<li>${barisTeks(i)}</li>`).join("")}</ul>`;
   if (b.type === "tabel") return tabel(b);
-  if (b.type === "kotak") return `<div class="kotak"><h4>${teks(b.title)}</h4>${b.items.map((i) => `<p>${teks(i)}</p>`).join("")}</div>`;
+  if (b.type === "kotak") return `<div class="kotak"><h4>${teks(b.title)}</h4>${b.items.map((i) => `<p>${barisTeks(i)}</p>`).join("")}</div>`;
   if (b.type === "sub") return `<h4 class="anak-judul">${teks(b.text)}</h4>`;
   return "";
 };
@@ -236,10 +252,10 @@ const KOLOM_KOSAKATA = meta.vocab_columns ?? [
 const kotakTata = (g) => `
   <div class="kotak">
     <h4>${teks(g.title)}</h4>
-    ${(g.body ?? []).map((b) => `<p>${teks(b)}</p>`).join("")}
+    ${(g.body ?? []).map((b) => `<p>${barisTeks(b)}</p>`).join("")}
     ${g.table ? tabel(g.table) : ""}
     ${(g.tables ?? []).map(tabel).join("")}
-    ${(g.after ?? []).map((b) => `<p>${teks(b)}</p>`).join("")}
+    ${(g.after ?? []).map((b) => `<p>${barisTeks(b)}</p>`).join("")}
   </div>`;
 
 const dialogHtml = (d) => `
@@ -259,7 +275,7 @@ const dialogHtml = (d) => `
   </div>
   ${d.notes?.length ? `
   <h3>${teks(d.notes_title ?? LABEL.notes)}</h3>
-  <ol class="catatan">${d.notes.map((n) => `<li>${teks(n)}</li>`).join("")}</ol>` : ""}
+  <ol class="catatan">${d.notes.map((n) => `<li>${barisTeks(n)}</li>`).join("")}</ol>` : ""}
   ${(d.grammars ?? (d.grammar ? [d.grammar] : [])).map(kotakTata).join("")}`;
 
 const unitHal = (u, i) => `
@@ -275,7 +291,7 @@ const unitHal = (u, i) => `
 
   ${u.notes?.length ? `
   <h3>${esc(LABEL.notes)}</h3>
-  <ol class="catatan">${u.notes.map((n) => `<li>${teks(n)}</li>`).join("")}</ol>` : ""}
+  <ol class="catatan">${u.notes.map((n) => `<li>${barisTeks(n)}</li>`).join("")}</ol>` : ""}
 
   ${(u.grammars ?? (u.grammar ? [u.grammar] : [])).map(kotakTata).join("")}
 
@@ -292,13 +308,13 @@ const unitHal = (u, i) => `
   ${u.exercises.map((e, k) => `
     <div class="latihan">
       <p class="latihan-judul">${k + 1}. ${teks(e.prompt)}</p>
-      <ol class="soal">${e.items.map((it) => `<li>${teks(it)}</li>`).join("")}</ol>
+      <ol class="soal">${e.items.map((it) => `<li>${barisTeks(it)}</li>`).join("")}</ol>
     </div>`).join("")}` : ""}
 
   ${u.answers?.length ? `
   <div class="kunci">
     <h4>${esc(LABEL.answers)}</h4>
-    ${u.answers.map((a, k) => `<p><b>${k + 1}.</b> ${teks(a)}</p>`).join("")}
+    ${u.answers.map((a, k) => `<p><b>${k + 1}.</b> ${barisTeks(a)}</p>`).join("")}
   </div>` : ""}
 
   ${u.wave ? `<p class="ombak"><b>${esc(LABEL.wave)}</b> ${teks(u.wave)}</p>` : ""}
@@ -460,6 +476,21 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
   .rtl-modul .baca { margin-bottom: .4mm; }
   /* Cara baca turun jadi barisnya sendiri — lihat catatan ruby di atas. */
   .rtl-modul .baca { font-size: 8.8pt; color: #12776F; letter-spacing: .01em; }
+  /* [ebook-rtl-baris-plaintext-v1] Satu baris latihan yang MEMUAT bahasa target
+     di tengahnya — "נֹעָה, ____ מוֹרָה?" — pecah jadi dua pagar karena garis
+     isian bukan aksara Ibrani. Dua pagar bersebelahan diurutkan kiri-ke-kanan
+     seperti huruf Latin, jadi barisnya tercetak terbalik dan tanda tanyanya
+     mendarat di ujung yang salah. Obatnya: baris yang DIBUKA kata bahasa target
+     dibungkus satu pagar sendiri, jadi seluruh isinya (termasuk garis isian dan
+     tanda tanya di ujungnya) tersusun kanan-ke-kiri sebagai satu paragraf.
+     unicode-bidi: plaintext TIDAK bisa dipakai di sini: pagar bagian dalam
+     sudah unicode-bidi: isolate, dan isi pagar isolate tak terlihat sama sekali
+     oleh induknya waktu arah paragraf ditentukan — induknya cuma melihat koma
+     dan garis bawah, semuanya netral, lalu jatuh ke kiri-ke-kanan. Nomor daftar
+     tetap di kiri karena yang dibalik cuma isi barisnya, bukan li-nya.
+     Dinyalakan per modul (meta.rtl_baris_plaintext) supaya modul Arab yang
+     sudah terbit tetap tercetak byte demi byte sama. */
+  .rtl-modul .baris-rtl { display: inline-block; max-width: 100%; direction: rtl; unicode-bidi: isolate; text-align: right; }
   .rtl-modul .unit-asing, .rtl-modul .isi-asing { font-style: normal; }
 </style></head><body class="${[meta.ruby ? "beraksara" : "", RTL ? "rtl-modul" : ""].filter(Boolean).join(" ")}">
 ${sampul()}

@@ -1,0 +1,215 @@
+{
+  "title": "Di mana tempatnya?",
+  "title_target": "אֵיפֹה זֶה?",
+  "goal": "Menanyakan dan memberi arah, menyebut tempat di kota — dan menyeberangi jembatan terpenting modul ini: membaca tulisan Ibrani tanpa niqqud, seperti di papan nama sungguhan.",
+  "bekal": [
+    "menanyakan jalan dan memahami jawabannya",
+    "menyebut letak benda dengan kata depan",
+    "membaca tulisan Ibrani tanpa niqqud"
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — מְחַפְּשִׂים אֶת הַתַּחֲנָה",
+      "intro": "Budi tersesat di pusat kota Yerusalem dan bertanya pada seorang perempuan yang lewat.",
+      "lines": [
+        { "speaker": "בּוּדִי:", "text": "סְלִיחָה, אֵיפֹה תַּחֲנַת הָאוֹטוֹבּוּס?", "baca": "slikhah, eifoh takhanat ha'otobus?", "id": "Permisi, halte busnya di mana?", "literal": "maaf, di-mana halte bus-itu?" },
+        { "speaker": "אִשָּׁה:", "text": "לֵךְ יָשָׁר עַד הָרַמְזוֹר.", "baca": "lekh yashar ad haramzor.", "id": "Jalan lurus sampai lampu merah.", "literal": "pergilah lurus sampai lampu-lalu-lintas-itu." },
+        { "speaker": "בּוּדִי:", "text": "וְאָז?", "baca": "ve'az?", "id": "Lalu?", "literal": "dan-maka?" },
+        { "speaker": "אִשָּׁה:", "text": "אָז פְּנֵה שְׂמֹאלָה, לִרְחוֹב יָפוֹ.", "baca": "az pneh smolah, lirkhov yafo.", "id": "Lalu belok kiri, ke Jalan Yafo.", "literal": "maka beloklah ke-kiri, ke-jalan yafo." },
+        { "speaker": "בּוּדִי:", "text": "זֶה רָחוֹק?", "baca": "zeh rakhok?", "id": "Jauh?", "literal": "ini jauh?" },
+        { "speaker": "אִשָּׁה:", "text": "לֹא, חָמֵשׁ דַּקּוֹת בְּרֶגֶל.", "baca": "lo, khamesh dakot beregel.", "id": "Tidak, lima menit jalan kaki.", "literal": "tidak, lima menit dengan-kaki." },
+        { "speaker": "בּוּדִי:", "text": "הַתַּחֲנָה מוּל הַבַּנְק?", "baca": "hatakhanah mul habank?", "id": "Haltenya di depan bank?", "literal": "halte-itu berhadapan bank-itu?" },
+        { "speaker": "אִשָּׁה:", "text": "לֹא, לְיַד הַדֹּאַר, אַחֲרֵי הָרְחוֹב.", "baca": "lo, leyad hado'ar, akharei harkhov.", "id": "Bukan, di sebelah kantor pos, setelah jalan itu.", "literal": "tidak, di-samping pos-itu, sesudah jalan-itu." },
+        { "speaker": "בּוּדִי:", "text": "וְאֵיזֶה אוֹטוֹבּוּס נוֹסֵעַ לַתַּחֲנָה הַמֶּרְכָּזִית?", "baca": "ve'eizeh otobus nose'a latakhanah hamerkazit?", "id": "Bus mana yang ke terminal pusat?", "literal": "dan-yang-mana bus pergi ke-halte pusat?" },
+        { "speaker": "אִשָּׁה:", "text": "מִסְפָּר שְׁמוֹנֶה עֶשְׂרֵה אוֹ עֶשְׂרִים וְאַחַת.", "baca": "mispar shmoneh esreh o esrim ve'akhat.", "id": "Nomor delapan belas atau dua puluh satu.", "literal": "nomor delapan belas atau dua-puluh dan-satu." },
+        { "speaker": "בּוּדִי:", "text": "תּוֹדָה רַבָּה! עָזַרְתְּ לִי מְאוֹד.", "baca": "todah rabah! azart li me'od.", "id": "Terima kasih banyak! Kamu sangat menolong.", "literal": "terima kasih banyak! kamu-menolong (pr) kepada-saya sangat." },
+        { "speaker": "אִשָּׁה:", "text": "בְּכֵיף. שֶׁיִּהְיֶה לְךָ יוֹם טוֹב!", "baca": "bekeif. sheyihyeh lekha yom tov!", "id": "Sama-sama. Semoga harimu menyenangkan!", "literal": "dengan-senang. semoga-ada kepada-mu hari baik!" }
+      ],
+      "notes": [
+        "**לֵךְ יָשָׁר** dan **פְּנֵה שְׂמֹאלָה** adalah bentuk **perintah**. Ke perempuan bentuknya berubah: לְכִי, פְּנִי. Perintah lengkap dibahas di unit 19; untuk sekarang cukup kenali bentuk yang kamu **dengar**, karena kamu lebih sering menerima arah daripada memberinya.",
+        "**Akhiran ־ָה untuk arah muncul lagi di sini**: שְׂמֹאלָה (ke kiri), יָמִינָה (ke kanan), יָשָׁר (lurus, tanpa akhiran). Sama seperti הַבַּיְתָה di unit 10.",
+        "**Kata depan letak berdiri sendiri, tidak menempel**: לְיַד (di samping), מוּל (berhadapan), בֵּין (di antara), מֵאֲחוֹרֵי (di belakang), לִפְנֵי (di depan). Cuma בְּ (di) dan עַל (di atas) yang menempel.",
+        "⚠️ **לִפְנֵי berarti \"sebelum\" DAN \"di depan\"** — dua-duanya, dan kalimatnya yang memisahkan. לִפְנֵי הַשִּׁעוּר = sebelum pelajaran; לִפְנֵי הַבַּיִת = di depan rumah. Bahasa Ibrani memakai satu gambaran ruang untuk waktu dan tempat sekaligus, seperti bahasa Indonesia memakai \"di depan\" untuk keduanya.",
+        "**בְּרֶגֶל** (\"dengan kaki\") = jalan kaki. Kata sepadan: בְּאוֹטוֹבּוּס (naik bus), בְּמוֹנִית (naik taksi), בְּרַכֶּבֶת (naik kereta). Semua alat pergi memakai בְּ־.",
+        "**עָזַרְתְּ** di baris 11 adalah **bentuk lampau** — kata kerja lampau pertama yang kamu temui. Unit 15 membongkarnya; untuk sekarang cukup tahu bahwa akhiran ־ְתְּ menandai \"kamu (pr) telah\".",
+        "**בְּכֵיף** (*bekeif*, \"dengan senang\") adalah jawaban santai untuk terima kasih. Yang lebih baku: **בְּבַקָּשָׁה** — kata yang sama untuk \"tolong\" dan \"sama-sama\", persis seperti bahasa Jerman *bitte*.",
+        "**הַתַּחֲנָה הַמֶּרְכָּזִית** = terminal pusat. Perhatikan הַ־ dua kali: benda tertentu + sifat tertentu, aturan dari unit 6."
+      ],
+      "grammars": [
+        {
+          "title": "Kata depan letak",
+          "body": [
+            "Sepuluh kata ini menutup hampir semua keterangan tempat tingkat A1."
+          ],
+          "table": {
+            "head": ["Ibrani", "Cara baca", "Arti", "Contoh"],
+            "rows": [
+              ["בְּ־", "be", "di, di dalam", "בַּחֶדֶר — di kamar"],
+              ["עַל", "al", "di atas", "עַל הַשֻּׁלְחָן — di atas meja"],
+              ["מִתַּחַת לְ־", "mitakhat le", "di bawah", "מִתַּחַת לַכִּסֵּא — di bawah kursi"],
+              ["לְיַד", "leyad", "di samping", "לְיַד הַבַּנְק — di samping bank"],
+              ["מוּל", "mul", "berhadapan dengan", "מוּל הַבַּיִת — di depan rumah"],
+              ["בֵּין", "bein", "di antara", "בֵּין הַחַלּוֹן וְהַדֶּלֶת"],
+              ["לִפְנֵי", "lifnei", "di depan; sebelum", "לִפְנֵי הַחֲנוּת"],
+              ["אַחֲרֵי", "akharei", "di belakang; sesudah", "אַחֲרֵי הָרַמְזוֹר"],
+              ["בְּתוֹךְ", "betokh", "di dalam", "בְּתוֹךְ הַתִּיק — di dalam tas"],
+              ["מֵאֲחוֹרֵי", "me'akhorei", "di belakang", "מֵאֲחוֹרֵי הַבַּיִת"]
+            ]
+          },
+          "after": [
+            "⚠️ Kata depan yang berakhiran לְ (מִתַּחַת לְ־) melebur dengan הַ־ jadi לַ: מִתַּחַת **לַ**שֻּׁלְחָן. Peleburan yang sama dengan בְּ + הַ = בַּ."
+          ]
+        },
+        {
+          "title": "Membaca tanpa niqqud: jembatan ke Ibrani sungguhan",
+          "body": [
+            "Papan nama, menu, dan pesan WhatsApp di Israel tidak punya satu titik pun. Yang berubah bukan hurufnya — melainkan bahwa ו dan י mulai dipakai sebagai penanda vokal (disebut כְּתִיב מָלֵא, *ktiv male*, ejaan penuh)."
+          ],
+          "table": {
+            "head": ["Ber-niqqud", "Tanpa niqqud", "Cara baca", "Arti"],
+            "rows": [
+              ["שָׁלוֹם", "שלום", "shalom", "halo"],
+              ["תּוֹדָה", "תודה", "todah", "terima kasih"],
+              ["בֹּקֶר טוֹב", "בוקר טוב", "boker tov", "selamat pagi"],
+              ["כְּתֹבֶת", "כתובת", "ktovet", "alamat"],
+              ["שֻׁלְחָן", "שולחן", "shulkhan", "meja"],
+              ["רְחוֹב", "רחוב", "rekhov", "jalan"],
+              ["מִסְעָדָה", "מסעדה", "mis'adah", "restoran"],
+              ["שֵׁרוּתִים", "שירותים", "sherutim", "toilet"],
+              ["יְצִיאָה", "יציאה", "yetsi'ah", "keluar"],
+              ["כְּנִיסָה", "כניסה", "knisah", "masuk"]
+            ]
+          },
+          "after": [
+            "⚠️ **Perhatikan pola yang berulang: setiap bunyi *o* dan *u* mendapat ו tambahan, setiap bunyi *i* mendapat י.** שֻׁלְחָן jadi שולחן; שֵׁרוּתִים jadi שירותים. Sisanya kamu tebak dari kata yang sudah kamu kenal — dan kamu sudah mengenal lebih dari tiga ratus kata sekarang.",
+            "Kabar yang menenangkan: **kamu tidak menebak sebanyak yang kamu kira.** Kata Ibrani tumbuh dari akar tiga huruf dengan pola vokal yang terbatas, jadi begitu kamu melihat כתב kamu tahu pilihannya cuma segelintir. Ini sama persis dengan membaca \"mngkn\" dalam bahasa Indonesia dan langsung tahu itu \"mungkin\", bukan \"mangkuk\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tempat di kota",
+      "blocks": [
+        { "type": "tabel", "head": ["Ibrani", "Cara baca", "Arti", "Ibrani", "Cara baca", "Arti"], "rows": [
+          ["רְחוֹב", "rekhov", "jalan", "בַּנְק", "bank", "bank"],
+          ["כִּכָּר", "kikar", "alun-alun", "דֹּאַר", "do'ar", "kantor pos"],
+          ["תַּחֲנָה", "takhanah", "halte, stasiun", "בֵּית חוֹלִים", "beit kholim", "rumah sakit"],
+          ["רַמְזוֹר", "ramzor", "lampu lalu lintas", "בֵּית סֵפֶר", "beit sefer", "sekolah"],
+          ["פִּנָּה", "pinah", "sudut, pojok", "מִשְׂרָד", "misrad", "kantor"],
+          ["גַּן", "gan", "taman", "מוּזֵאוֹן", "muze'on", "museum"],
+          ["חוֹף", "khof", "pantai", "קוֹלְנוֹעַ", "kolno'a", "bioskop"],
+          ["מָלוֹן", "malon", "hotel", "מִסְעָדָה", "mis'adah", "restoran"],
+          ["שְׁדֵרָה", "sderah", "boulevard", "מִשְׁטָרָה", "mishtarah", "kantor polisi"],
+          ["גֶּשֶׁר", "gesher", "jembatan", "בֵּית כְּנֶסֶת", "beit knesset", "sinagoga"]
+        ]},
+        { "type": "p", "text": "⚠️ **בֵּית** di depan kata lain berarti \"rumah/gedung\": בֵּית סֵפֶר (\"rumah buku\" = sekolah), בֵּית חוֹלִים (\"rumah orang sakit\" = rumah sakit), בֵּית קָפֶה (kedai kopi), בֵּית מִרְקַחַת (\"rumah ramuan\" = apotek). Begitu kamu mengenali pola ini, sepuluh kata baru terbuka sekaligus." }
+      ]
+    },
+    {
+      "title": "Papan nama yang akan kamu temui — tanpa niqqud",
+      "blocks": [
+        { "type": "p", "text": "Bacalah kolom kiri dulu tanpa melihat artinya. Semua kata di bawah sudah pernah muncul di modul ini, cuma sekarang tanpa titik." },
+        { "type": "tabel", "head": ["Papan nama", "Cara baca", "Arti"], "rows": [
+          ["כניסה", "knisah", "MASUK"],
+          ["יציאה", "yetsi'ah", "KELUAR"],
+          ["פתוח / סגור", "patu'akh / sagur", "BUKA / TUTUP"],
+          ["שירותים", "sherutim", "TOILET"],
+          ["גברים / נשים", "gvarim / nashim", "PRIA / WANITA"],
+          ["מדרגות", "madregot", "TANGGA"],
+          ["מעלית", "ma'alit", "LIFT"],
+          ["קופה", "kupah", "KASIR"],
+          ["מבצע", "mivtsa", "PROMO"],
+          ["תחנה מרכזית", "takhanah merkazit", "TERMINAL PUSAT"],
+          ["רכבת", "rakevet", "KERETA"],
+          ["שדה תעופה", "sdeh te'ufah", "BANDARA"],
+          ["אסור לעשן", "asur le'ashen", "DILARANG MEROKOK"],
+          ["זהירות", "zehirut", "AWAS"]
+        ]},
+        { "type": "kotak", "title": "Kalimat menanyakan jalan", "items": [
+          "**סְלִיחָה, אֵיפֹה ...?** — permisi, di mana ...?",
+          "**אֵיךְ מַגִּיעִים לְ...?** *(eikh magi'im le...?)* — bagaimana caranya sampai ke...? Harfiahnya \"bagaimana mereka tiba ke\" — bentuk tanpa pelaku yang sering dipakai orang Israel.",
+          "**זֶה רָחוֹק מִכָּאן?** — apakah jauh dari sini?",
+          "**אֶפְשָׁר לָלֶכֶת בְּרֶגֶל?** — bisa jalan kaki?",
+          "**אֲנִי הָלַכְתִּי לְאִבּוּד** *(ani halakhti le'ibud)* — saya tersesat. Kalimat yang semoga tidak kamu perlukan, tapi lebih baik kamu punya."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    { "he": "אֵיפֹה", "baca": "eifoh", "id": "di mana" },
+    { "he": "רְחוֹב", "baca": "rekhov", "id": "jalan" },
+    { "he": "תַּחֲנָה", "baca": "takhanah", "id": "halte, stasiun" },
+    { "he": "רַמְזוֹר", "baca": "ramzor", "id": "lampu lalu lintas" },
+    { "he": "פִּנָּה", "baca": "pinah", "id": "pojok, sudut" },
+    { "he": "יָשָׁר", "baca": "yashar", "id": "lurus" },
+    { "he": "יָמִינָה / שְׂמֹאלָה", "baca": "yaminah / smolah", "id": "ke kanan / ke kiri" },
+    { "he": "לְיַד", "baca": "leyad", "id": "di samping" },
+    { "he": "מוּל", "baca": "mul", "id": "berhadapan dengan" },
+    { "he": "בֵּין", "baca": "bein", "id": "di antara" },
+    { "he": "מִתַּחַת לְ־", "baca": "mitakhat le", "id": "di bawah" },
+    { "he": "בְּתוֹךְ", "baca": "betokh", "id": "di dalam" },
+    { "he": "רָחוֹק / קָרוֹב", "baca": "rakhok / karov", "id": "jauh / dekat" },
+    { "he": "בְּרֶגֶל", "baca": "beregel", "id": "jalan kaki" },
+    { "he": "בַּנְק", "baca": "bank", "id": "bank" },
+    { "he": "דֹּאַר", "baca": "do'ar", "id": "kantor pos" },
+    { "he": "בֵּית חוֹלִים", "baca": "beit kholim", "id": "rumah sakit" },
+    { "he": "בֵּית סֵפֶר", "baca": "beit sefer", "id": "sekolah" },
+    { "he": "כְּנִיסָה / יְצִיאָה", "baca": "knisah / yetsi'ah", "id": "masuk / keluar" },
+    { "he": "שֵׁרוּתִים", "baca": "sherutim", "id": "toilet" },
+    { "he": "כְּתֹבֶת", "baca": "ktovet", "id": "alamat" },
+    { "he": "עוֹזֵר / עוֹזֶרֶת", "baca": "ozer / ozeret", "id": "menolong" },
+    { "he": "בְּכֵיף", "baca": "bekeif", "id": "sama-sama (santai)" },
+    { "he": "זְהִירוּת", "baca": "zehirut", "id": "awas, hati-hati" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Lengkapi dengan kata depan letak yang tepat.",
+      "items": [
+        "הַסֵּפֶר ____ הַשֻּׁלְחָן. (di atas)",
+        "הַתִּיק ____ הַכִּסֵּא. (di bawah)",
+        "הַבַּנְק ____ הַדֹּאַר. (di samping)",
+        "הַתַּחֲנָה ____ הַבַּיִת. (berhadapan)",
+        "הַמַּפְתֵּחַ ____ הַתִּיק. (di dalam)"
+      ]
+    },
+    {
+      "prompt": "Bacalah tulisan tanpa niqqud ini dan tulis artinya.",
+      "items": [
+        "כניסה ____",
+        "שירותים ____",
+        "רחוב ____",
+        "בית קפה ____",
+        "תודה רבה ____",
+        "אסור לעשן ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ibrani.",
+      "items": [
+        "Permisi, halte busnya di mana?",
+        "Jalan lurus sampai lampu merah.",
+        "Belok kiri di pojok.",
+        "Apakah jauh dari sini?",
+        "Lima menit jalan kaki."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "הַבַּנְק / מוּל / הַתַּחֲנָה",
+        "בְּרֶגֶל / דַּקּוֹת / חָמֵשׁ / זֶה",
+        "לִי / מְאוֹד / עָזַרְתְּ",
+        "לַתַּחֲנָה / מַגִּיעִים / אֵיךְ"
+      ]
+    }
+  ],
+  "answers": [
+    "עַל — מִתַּחַת לְ — לְיַד — מוּל — בְּתוֹךְ",
+    "masuk — toilet — jalan — kedai kopi — terima kasih banyak — dilarang merokok",
+    "סְלִיחָה, אֵיפֹה תַּחֲנַת הָאוֹטוֹבּוּס? — לֵךְ יָשָׁר עַד הָרַמְזוֹר. — פְּנֵה שְׂמֹאלָה בַּפִּנָּה. — זֶה רָחוֹק מִכָּאן? — חָמֵשׁ דַּקּוֹת בְּרֶגֶל.",
+    "הַתַּחֲנָה מוּל הַבַּנְק — זֶה חָמֵשׁ דַּקּוֹת בְּרֶגֶל — עָזַרְתְּ לִי מְאוֹד — אֵיךְ מַגִּיעִים לַתַּחֲנָה"
+  ],
+  "wave": "Tulis ulang sepuluh kosakata unit 1 tanpa niqqud, lalu baca kembali besok pagi tanpa melihat aslinya. Ini latihan tunggal yang paling menaikkan tingkat membacamu."
+}

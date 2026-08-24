@@ -1,0 +1,210 @@
+{
+  "title": "Di pasar",
+  "title_target": "בַּשּׁוּק",
+  "goal": "Berbelanja, menanyakan harga, menawar, dan menghitung kembalian — di tempat yang paling ramai dan paling menyenangkan untuk melatih bahasa Ibrani.",
+  "bekal": [
+    "menanyakan harga dan jumlah",
+    "meminta takaran dan menyebut satuan",
+    "menawar dan membayar dengan sopan"
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — שׁוּק הַכַּרְמֶל",
+      "intro": "Budi berbelanja di pasar Karmel, Tel Aviv. Penjualnya, Moshe, berteriak menawarkan dagangan.",
+      "lines": [
+        { "speaker": "מֹשֶׁה:", "text": "עַגְבָנִיּוֹת! חָמֵשׁ שֶׁקֶל לְקִילוֹ!", "baca": "agvaniyot! khamesh shekel lekilo!", "id": "Tomat! Lima shekel sekilo!", "literal": "tomat-tomat! lima shekel untuk-kilo!" },
+        { "speaker": "בּוּדִי:", "text": "סְלִיחָה, כַּמָּה עוֹלוֹת הַתַּפּוּזִים?", "baca": "slikhah, kamah olot hatapuzim?", "id": "Permisi, berapa harga jeruknya?", "literal": "maaf, berapa naik (jamak pr) jeruk-jeruk-itu?" },
+        { "speaker": "מֹשֶׁה:", "text": "שְׁמוֹנָה שֶׁקֶל לְקִילוֹ. הֵם מְתוּקִים!", "baca": "shmonah shekel lekilo. hem metukim!", "id": "Delapan shekel sekilo. Manis-manis!", "literal": "delapan shekel untuk-kilo. mereka manis (jamak)!" },
+        { "speaker": "בּוּדִי:", "text": "אֶפְשָׁר שְׁנֵי קִילוֹ, בְּבַקָּשָׁה?", "baca": "efshar shnei kilo, bevakashah?", "id": "Boleh minta dua kilo?", "literal": "mungkin dua kilo, dengan-permohonan?" },
+        { "speaker": "מֹשֶׁה:", "text": "בְּוַדַּאי. עוֹד מַשֶּׁהוּ?", "baca": "bevadai. od mashehu?", "id": "Tentu saja. Ada lagi?", "literal": "dengan-pasti. lagi sesuatu?" },
+        { "speaker": "בּוּדִי:", "text": "חֲצִי קִילוֹ עַגְבָנִיּוֹת וּשְׁלוֹשָׁה מְלָפְפוֹנִים.", "baca": "khatsi kilo agvaniyot ushloshah melafefonim.", "id": "Setengah kilo tomat dan tiga timun.", "literal": "setengah kilo tomat-tomat dan-tiga timun-timun." },
+        { "speaker": "מֹשֶׁה:", "text": "הַכֹּל בְּיַחַד עֶשְׂרִים וְאַרְבָּעָה שֶׁקֶל.", "baca": "hakol beyakhad esrim ve'arba'ah shekel.", "id": "Semuanya dua puluh empat shekel.", "literal": "semua bersama dua-puluh dan-empat shekel." },
+        { "speaker": "בּוּדִי:", "text": "זֶה קְצָת יָקָר, לֹא?", "baca": "zeh ktsat yakar, lo?", "id": "Agak mahal, ya?", "literal": "ini sedikit mahal, tidak?" },
+        { "speaker": "מֹשֶׁה:", "text": "טוֹב, עֶשְׂרִים. רַק בִּשְׁבִילְךָ.", "baca": "tov, esrim. rak bishvilkha.", "id": "Baiklah, dua puluh. Khusus untukmu.", "literal": "baik, dua-puluh. hanya untuk-mu." },
+        { "speaker": "בּוּדִי:", "text": "תּוֹדָה! הִנֵּה חֲמִשִּׁים.", "baca": "todah! hineh khamishim.", "id": "Terima kasih! Ini lima puluh.", "literal": "terima kasih! inilah lima-puluh." },
+        { "speaker": "מֹשֶׁה:", "text": "וְהָעֹדֶף — שְׁלוֹשִׁים שֶׁקֶל. בְּתֵאָבוֹן!", "baca": "veha'odef — shloshim shekel. bete'avon!", "id": "Dan kembaliannya — tiga puluh shekel. Selamat menikmati!", "literal": "dan-kembalian-itu — tiga-puluh shekel. selamat-makan!" },
+        { "speaker": "בּוּדִי:", "text": "תּוֹדָה רַבָּה. יוֹם טוֹב!", "baca": "todah rabah. yom tov!", "id": "Terima kasih banyak. Selamat siang!", "literal": "terima kasih banyak. hari baik!" }
+      ],
+      "notes": [
+        "**כַּמָּה עוֹלֶה?** (\"berapa harganya?\") berubah bentuk mengikuti barangnya, karena עוֹלֶה adalah kata kerja. Satu benda laki-laki: כַּמָּה עוֹלֶה הַסֵּפֶר? Satu benda perempuan: כַּמָּה עוֹלָה הַמַּחְבֶּרֶת? Jamak: כַּמָּה עוֹלִים / עוֹלוֹת. Kalau kamu belum tahu barangnya apa, pakai bentuk bawaan: **כַּמָּה זֶה עוֹלֶה?**",
+        "⚠️ **Satuan harga memakai לְ־, bukan angka pembagi.** חָמֵשׁ שֶׁקֶל לְקִילוֹ = \"lima shekel per kilo\". Sama persis dengan pola לְחֹדֶשׁ (per bulan) dan לְשִׁעוּר (per pelajaran) yang sudah kamu lihat.",
+        "**שֶׁקֶל tidak dijamakkan waktu menyebut harga.** Orang berkata עֶשְׂרִים שֶׁקֶל, bukan עֶשְׂרִים שְׁקָלִים — walau bentuk jamaknya ada dan dipakai di konteks resmi. Kebiasaan pasar mengalahkan tata bahasa di sini.",
+        "**Nama sayur-buah hampir semuanya jamak perempuan (־וֹת) atau jamak laki-laki (־ִים)** karena kamu membelinya banyak: עַגְבָנִיּוֹת (tomat), מְלָפְפוֹנִים (timun), תַּפּוּזִים (jeruk). Tunggalnya jarang dipakai kecuali kamu benar-benar membeli satu.",
+        "**בִּשְׁבִיל** (*bishvil*, \"untuk\") juga menerima akhiran: בִּשְׁבִילִי (untuk saya), בִּשְׁבִילְךָ (untukmu). Mesin akhiran yang sama lagi — ketiga kalinya kamu melihatnya, sesudah שֶׁל dan אֶת.",
+        "**Menawar di Israel punya batasnya.** Di שׁוּק (pasar terbuka) menawar wajar, terutama menjelang Sabat waktu penjual ingin menghabiskan dagangan. Di toko, supermarket, dan restoran menawar **tidak dilakukan** sama sekali. Kalimat halus untuk membuka tawaran: זֶה קְצָת יָקָר, לֹא? — persis yang dipakai Budi.",
+        "**עֹדֶף** (*odef*) = kembalian. Kalimat lengkapnya kalau kamu mau kembalian pas: אֵין לִי עֹדֶף (saya tidak punya uang kecil).",
+        "**הִנֵּה** (*hineh*) = \"ini dia, nih\". Dipakai waktu menyerahkan sesuatu. Sangat sering, dan tidak berubah bentuk sama sekali."
+      ],
+      "grammars": [
+        {
+          "title": "Menanyakan harga dan jumlah",
+          "body": [
+            "Empat pola pertanyaan menutup hampir seluruh urusan belanja."
+          ],
+          "table": {
+            "head": ["Ibrani", "Cara baca", "Arti", "Catatan"],
+            "rows": [
+              ["כַּמָּה זֶה עוֹלֶה?", "kamah zeh oleh?", "Berapa harganya?", "bentuk bawaan, selalu aman"],
+              ["כַּמָּה עוֹלָה הַחֻלְצָה?", "kamah olah hakhultsah?", "Berapa harga kemejanya?", "benda perempuan"],
+              ["כַּמָּה עוֹלִים הַנַּעֲלַיִם?", "kamah olim hana'alayim?", "Berapa harga sepatunya?", "jamak"],
+              ["כַּמָּה הַכֹּל?", "kamah hakol?", "Berapa semuanya?", "waktu membayar"],
+              ["יֵשׁ הַנָּחָה?", "yesh hanakhah?", "Ada diskon?", "sopan, tidak memaksa"],
+              ["אֶפְשָׁר לְשַׁלֵּם בְּמְזֻמָּן?", "efshar leshalem bimzuman?", "Bisa bayar tunai?", ""],
+              ["יֵשׁ לְךָ עֹדֶף?", "yesh lekha odef?", "Ada kembalian?", ""]
+            ]
+          },
+          "after": [
+            "⚠️ Perhatikan bahwa **kata kerja mendahului subjeknya** di beberapa pertanyaan ini: כַּמָּה עוֹלָה הַחֻלְצָה. Bahasa Ibrani lebih longgar soal urutan daripada bahasa Indonesia; dalam pertanyaan, kata kerja sering naik ke depan."
+          ]
+        },
+        {
+          "title": "Satuan dan takaran",
+          "body": [
+            "Semuanya dipakai langsung di depan barangnya, tanpa kata penghubung."
+          ],
+          "table": {
+            "head": ["Ibrani", "Cara baca", "Arti", "Contoh"],
+            "rows": [
+              ["קִילוֹ", "kilo", "kilogram", "קִילוֹ עַגְבָנִיּוֹת"],
+              ["חֲצִי קִילוֹ", "khatsi kilo", "setengah kilo", "חֲצִי קִילוֹ גְּבִינָה"],
+              ["גְּרַם", "gram", "gram", "מָאתַיִם גְּרַם"],
+              ["לִיטֶר", "liter", "liter", "לִיטֶר חָלָב"],
+              ["בַּקְבּוּק", "bakbuk", "botol", "בַּקְבּוּק מַיִם"],
+              ["חֲבִילָה", "khavilah", "bungkus, paket", "חֲבִילַת אֹרֶז"],
+              ["קֻפְסָה", "kufsah", "kaleng, kotak", "קֻפְסַת טוּנָה"],
+              ["פְּרוּסָה", "prusah", "iris", "פְּרוּסַת לֶחֶם"],
+              ["מָנָה", "manah", "porsi", "מָנַת פָלָאפֶל"],
+              ["שְׁקִית", "shkit", "kantong plastik", "שְׁקִית אַחַת"]
+            ]
+          },
+          "after": [
+            "⚠️ Perhatikan **חֲבִילַת, קֻפְסַת, פְּרוּסַת, מָנַת** — akhiran ־ָה berubah jadi ־ַת waktu kata itu menempel ke kata berikutnya. Ini yang disebut **bentuk sandingan** (סְמִיכוּת, *smikhut*), dan ia adalah cara bahasa Ibrani mengatakan \"X-nya Y\" tanpa memakai שֶׁל. Dibahas penuh di unit 17."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Yang dijual di pasar",
+      "blocks": [
+        { "type": "tabel", "head": ["Ibrani", "Cara baca", "Arti", "Ibrani", "Cara baca", "Arti"], "rows": [
+          ["עַגְבָנִיָּה", "agvaniyah", "tomat", "תַּפּוּז", "tapuz", "jeruk"],
+          ["מְלָפְפוֹן", "melafefon", "timun", "תַּפּוּחַ", "tapu'akh", "apel"],
+          ["בָּצָל", "batsal", "bawang", "בָּנָנָה", "bananah", "pisang"],
+          ["שׁוּם", "shum", "bawang putih", "עֲנָבִים", "anavim", "anggur"],
+          ["גֶּזֶר", "gezer", "wortel", "אֲבַטִּיחַ", "avati'akh", "semangka"],
+          ["תַּפּוּחַ אֲדָמָה", "tapu'akh adamah", "kentang", "תְּמָרִים", "tmarim", "kurma"],
+          ["חָסָה", "khasah", "selada", "לִימוֹן", "limon", "lemon"],
+          ["פִּלְפֵּל", "pilpel", "paprika, cabai", "רִמּוֹן", "rimon", "delima"],
+          ["חַצִּיל", "khatsil", "terong", "זֵיתִים", "zeitim", "zaitun"],
+          ["פֶּטְרוֹזִילְיָה", "petrozilyah", "peterseli", "אֱגוֹזִים", "egozim", "kacang-kacangan"]
+        ]},
+        { "type": "p", "text": "⚠️ **תַּפּוּחַ אֲדָמָה** harfiahnya \"apel tanah\" — itulah kentang. Bahasa Ibrani modern sering merangkai dua kata lama untuk benda baru: תַּפּוּז (jeruk) sendiri adalah gabungan תַּפּוּחַ + זָהָב, \"apel emas\"." },
+        { "type": "p", "text": "Pasar tersibuk Israel: **שׁוּק הַכַּרְמֶל** di Tel Aviv, **מַחֲנֵה יְהוּדָה** di Yerusalem, dan **שׁוּק הָעִיר הָעַתִּיקָה** di Akko. Semuanya jauh lebih ramai — dan jauh lebih murah — **hari Jumat pagi**." }
+      ]
+    },
+    {
+      "title": "Belanja di luar pasar",
+      "blocks": [
+        { "type": "tabel", "head": ["Ibrani", "Cara baca", "Arti"], "rows": [
+          ["חֲנוּת", "khanut", "toko"],
+          ["סוּפֶּרְמַרְקֶט", "supermarket", "supermarket"],
+          ["מַכֹּלֶת", "makolet", "warung kelontong"],
+          ["בֵּית מִרְקַחַת", "beit mirkakhat", "apotek"],
+          ["קַנְיוֹן", "kanyon", "mal"],
+          ["חֻלְצָה", "khultsah", "kemeja, kaus"],
+          ["מִכְנָסַיִם", "mikhnasayim", "celana"],
+          ["נַעֲלַיִם", "na'alayim", "sepatu"],
+          ["שִׂמְלָה", "simlah", "gaun"],
+          ["מְעִיל", "me'il", "jaket, mantel"],
+          ["הַנָּחָה", "hanakhah", "diskon"],
+          ["מְזֻמָּן", "mezuman", "uang tunai"],
+          ["עֹדֶף", "odef", "kembalian"],
+          ["קַבָּלָה", "kabalah", "struk, kuitansi"]
+        ]},
+        { "type": "kotak", "title": "Empat kalimat untuk mencoba pakaian", "items": [
+          "**אֶפְשָׁר לִמְדֹּד?** *(efshar limdod?)* — boleh saya coba?",
+          "**יֵשׁ בְּמִדָּה יוֹתֵר גְּדוֹלָה?** *(yesh bemidah yoter gdolah?)* — ada ukuran yang lebih besar?",
+          "**יֵשׁ בְּצֶבַע אַחֵר?** *(yesh betseva akher?)* — ada warna lain?",
+          "**אֲנִי לוֹקֵחַ אֶת זֶה** *(ani loke'akh et zeh)* — saya ambil yang ini. Perhatikan אֶת: \"yang ini\" itu tertentu."
+        ]},
+        { "type": "p", "text": "⚠️ **מִכְנָסַיִם** dan **נַעֲלַיִם** berakhiran ־ַיִם, tanda **berpasangan** — sisa bentuk khusus untuk benda yang selalu datang berdua. Sama seperti יָדַיִם (dua tangan), עֵינַיִם (dua mata), אָזְנַיִם (dua telinga). Bahasa Indonesia memakai \"sepasang\"; bahasa Ibrani memasangnya ke dalam kata." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "he": "שׁוּק", "baca": "shuk", "id": "pasar" },
+    { "he": "חֲנוּת", "baca": "khanut", "id": "toko" },
+    { "he": "כַּמָּה זֶה עוֹלֶה?", "baca": "kamah zeh oleh?", "id": "berapa harganya?" },
+    { "he": "עוֹלֶה / עוֹלָה", "baca": "oleh / olah", "id": "berharga; naik" },
+    { "he": "מְחִיר", "baca": "mekhir", "id": "harga" },
+    { "he": "הַנָּחָה", "baca": "hanakhah", "id": "diskon" },
+    { "he": "עֹדֶף", "baca": "odef", "id": "kembalian" },
+    { "he": "מְזֻמָּן", "baca": "mezuman", "id": "tunai" },
+    { "he": "קִילוֹ", "baca": "kilo", "id": "kilogram" },
+    { "he": "חֲצִי", "baca": "khatsi", "id": "setengah" },
+    { "he": "בַּקְבּוּק", "baca": "bakbuk", "id": "botol" },
+    { "he": "שְׁקִית", "baca": "shkit", "id": "kantong plastik" },
+    { "he": "הַכֹּל בְּיַחַד", "baca": "hakol beyakhad", "id": "semuanya jadi" },
+    { "he": "הִנֵּה", "baca": "hineh", "id": "ini dia, nih" },
+    { "he": "בְּוַדַּאי", "baca": "bevadai", "id": "tentu saja" },
+    { "he": "בִּשְׁבִיל", "baca": "bishvil", "id": "untuk" },
+    { "he": "מָתוֹק / מְתוּקָה", "baca": "matok / metukah", "id": "manis" },
+    { "he": "טָרִי / טְרִיָּה", "baca": "tari / triyah", "id": "segar" },
+    { "he": "עַגְבָנִיָּה", "baca": "agvaniyah", "id": "tomat" },
+    { "he": "תַּפּוּז", "baca": "tapuz", "id": "jeruk" },
+    { "he": "לֶחֶם", "baca": "lekhem", "id": "roti" },
+    { "he": "חֻלְצָה", "baca": "khultsah", "id": "kemeja, kaus" },
+    { "he": "נַעֲלַיִם", "baca": "na'alayim", "id": "sepatu" },
+    { "he": "מִדָּה", "baca": "midah", "id": "ukuran" },
+    { "he": "צֶבַע", "baca": "tseva", "id": "warna" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih bentuk עוֹלֶה yang cocok dengan barangnya.",
+      "items": [
+        "כַּמָּה ____ הַסֵּפֶר?",
+        "כַּמָּה ____ הַחֻלְצָה?",
+        "כַּמָּה ____ הַנַּעֲלַיִם?",
+        "כַּמָּה ____ הָעַגְבָנִיּוֹת?",
+        "כַּמָּה ____ זֶה?"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ibrani.",
+      "items": [
+        "Berapa harga jeruknya?",
+        "Setengah kilo tomat, tolong.",
+        "Ini agak mahal.",
+        "Ada diskon?",
+        "Semuanya berapa?"
+      ]
+    },
+    {
+      "prompt": "Hitung dan tulis jawabannya dalam huruf Ibrani.",
+      "items": [
+        "Kilo jeruk 8 shekel. Dua kilo = ____ shekel.",
+        "Kamu bayar 50, belanjanya 32. Kembalian = ____ shekel.",
+        "Tiga botol air, satu botol 6 shekel = ____ shekel.",
+        "Diskon 10 dari harga 40 = ____ shekel."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "בְּבַקָּשָׁה / קִילוֹ / שְׁנֵי / אֶפְשָׁר",
+        "יָקָר / זֶה / קְצָת",
+        "לִי / עֹדֶף / אֵין",
+        "בְּיַחַד / עֶשְׂרִים / הַכֹּל / שֶׁקֶל"
+      ]
+    }
+  ],
+  "answers": [
+    "עוֹלֶה — עוֹלָה — עוֹלִים — עוֹלוֹת — עוֹלֶה",
+    "כַּמָּה עוֹלִים הַתַּפּוּזִים? — חֲצִי קִילוֹ עַגְבָנִיּוֹת, בְּבַקָּשָׁה. — זֶה קְצָת יָקָר. — יֵשׁ הַנָּחָה? — כַּמָּה הַכֹּל?",
+    "שִׁשָּׁה עָשָׂר — שְׁמוֹנֶה עֶשְׂרֵה — שְׁמוֹנָה עָשָׂר — שְׁלוֹשִׁים",
+    "אֶפְשָׁר שְׁנֵי קִילוֹ בְּבַקָּשָׁה — זֶה קְצָת יָקָר — אֵין לִי עֹדֶף — הַכֹּל בְּיַחַד עֶשְׂרִים שֶׁקֶל"
+  ],
+  "wave": "Tulis daftar belanja untuk seminggu dalam bahasa Ibrani — sepuluh barang lengkap dengan takarannya. Lalu hitung total kira-kiranya keras-keras dalam bahasa Ibrani."
+}

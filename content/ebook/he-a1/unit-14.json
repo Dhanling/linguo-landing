@@ -1,0 +1,199 @@
+{
+  "title": "Saya punya, saya tidak punya",
+  "title_target": "יֵשׁ לִי, אֵין לִי",
+  "goal": "Menguasai kepemilikan sepenuhnya — dan mesin yang menggerakkannya: kata depan yang menerima akhiran orang, pola yang mengulang di seluruh bahasa Ibrani.",
+  "bekal": [
+    "mengatakan apa yang kamu punya dan tidak punya",
+    "memakai לִי, לְךָ, לוֹ dan kerabatnya",
+    "menyusun kalimat dengan אִתִּי, אֶצְלִי, בִּשְׁבִילִי"
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — מִי לָקַח אֶת הַמַּפְתֵּחַ?",
+      "intro": "Sore hari di apartemen. Budi tidak menemukan kuncinya.",
+      "lines": [
+        { "speaker": "בּוּדִי:", "text": "דָּנָה, יֵשׁ לָךְ אֶת הַמַּפְתֵּחַ שֶׁלִּי?", "baca": "danah, yesh lakh et hamafte'akh sheli?", "id": "Dana, kunci saya ada padamu?", "literal": "dana, ada kepada-mu (obj) kunci-itu milik-saya?" },
+        { "speaker": "דָּנָה:", "text": "לֹא, אֵין לִי. בָּדַקְתָּ בַּתִּיק?", "baca": "lo, ein li. badakta batik?", "id": "Tidak, tidak ada. Sudah cek di tas?", "literal": "tidak, tidak-ada kepada-saya. kamu-periksa di-tas-itu?" },
+        { "speaker": "בּוּדִי:", "text": "כֵּן. יֵשׁ לִי רַק אֶת הַטֶּלֶפוֹן וְהָאַרְנָק.", "baca": "ken. yesh li rak et hatelefon veha'arnak.", "id": "Sudah. Yang ada cuma telepon dan dompet.", "literal": "ya. ada kepada-saya hanya (obj) telepon-itu dan-dompet-itu." },
+        { "speaker": "דָּנָה:", "text": "אוּלַי הוּא אֵצֶל יוֹסִי?", "baca": "ulai hu etsel yosi?", "id": "Mungkin ada di tempat Yossi?", "literal": "mungkin dia di-tempat yossi?" },
+        { "speaker": "בּוּדִי:", "text": "אֲנִי חוֹשֵׁב שֶׁלֹּא. הוּא לֹא הָיָה אִתִּי.", "baca": "ani khoshev shelo. hu lo hayah iti.", "id": "Rasanya tidak. Dia tidak bersama saya.", "literal": "saya berpikir bahwa-tidak. dia tidak ada bersama-saya." },
+        { "speaker": "דָּנָה:", "text": "יֵשׁ לְךָ מַפְתֵּחַ נוֹסָף?", "baca": "yesh lekha mafte'akh nosaf?", "id": "Kamu punya kunci cadangan?", "literal": "ada kepada-mu kunci tambahan?" },
+        { "speaker": "בּוּדִי:", "text": "יֵשׁ אֶחָד אֵצֶל הַשְּׁכֵנָה.", "baca": "yesh ekhad etsel hashkhenah.", "id": "Ada satu di tempat tetangga.", "literal": "ada satu di-tempat tetangga-itu." },
+        { "speaker": "דָּנָה:", "text": "אָז אֵין בְּעָיָה. יֵשׁ לָךְ אֶת הַמִּסְפָּר שֶׁלָּהּ?", "baca": "az ein be'ayah. yesh lakh et hamispar shelah?", "id": "Kalau begitu tidak masalah. Kamu punya nomornya?", "literal": "maka tidak-ada masalah. ada kepada-mu (obj) nomor-itu milik-nya (pr)?" },
+        { "speaker": "בּוּדִי:", "text": "יֵשׁ לִי, אֲבָל אֵין לִי סוֹלְלָה.", "baca": "yesh li, aval ein li solelah.", "id": "Ada, tapi baterai saya habis.", "literal": "ada kepada-saya, tapi tidak-ada kepada-saya baterai." },
+        { "speaker": "דָּנָה:", "text": "קְחִי — קַח אֶת הַטֶּלֶפוֹן שֶׁלִּי.", "baca": "kkhi — kakh et hatelefon sheli.", "id": "Ambil — pakai telepon saya.", "literal": "ambillah (pr) — ambillah (lk) (obj) telepon-itu milik-saya." },
+        { "speaker": "בּוּדִי:", "text": "תּוֹדָה! אַתְּ מַצִּילָה אוֹתִי.", "baca": "todah! at matsilah oti.", "id": "Terima kasih! Kamu penyelamat.", "literal": "terima kasih! kamu (pr) menyelamatkan saya." },
+        { "speaker": "דָּנָה:", "text": "בִּשְׁבִיל זֶה יֵשׁ שְׁכֵנִים, לֹא?", "baca": "bishvil zeh yesh shkhenim, lo?", "id": "Untuk itulah ada tetangga, kan?", "literal": "untuk ini ada tetangga-tetangga, tidak?" }
+      ],
+      "notes": [
+        "⚠️ **Bahasa Ibrani tidak punya kata kerja \"memiliki\" sama sekali.** Untuk \"saya punya buku\", ia berkata יֵשׁ לִי סֵפֶר — harfiahnya **\"ada kepada saya buku\"**. Perhatikan siapa yang jadi subjek kalimatnya: bukan \"saya\", melainkan **bukunya**. Kalimat ini tidak punya pemilik sebagai pelaku; yang ada cuma benda yang berada di dekat seseorang.",
+        "**Ini bukan keanehan Ibrani semata.** Bahasa Arab, Rusia, dan Irlandia melakukan hal yang sama, dan bahasa Indonesia pun punya jejaknya: \"ada padaku\", \"padanya ada\". Kalau kamu memakai terjemahan \"ada padaku\" alih-alih \"aku punya\", seluruh unit ini langsung terasa wajar.",
+        "⚠️ **Kalau bendanya tertentu, אֶת wajib muncul**: יֵשׁ לִי אֶת הַמַּפְתֵּחַ (kunci itu ada pada saya). Kalau tak tentu, tanpa אֶת: יֵשׁ לִי מַפְתֵּחַ. Aturan אֶת dari unit 7 berlaku di sini tanpa perubahan. Banyak orang Israel sendiri berdebat soal ini di ragam baku — tapi di percakapan sehari-hari, אֶת dipakai.",
+        "**אֵין adalah ingkarannya, dan ia tidak pernah dipasangi לֹא.** אֵין לִי כֶּסֶף. Berkata לֹא יֵשׁ adalah kesalahan yang langsung menandai pemula.",
+        "**אֵצֶל** (*etsel*) = \"di tempat (seseorang)\", persis seperti *chez* dalam bahasa Prancis. אֵצֶל יוֹסִי = di rumah/tempat Yossi. אֲנִי אֵצֶל הָרוֹפֵא = saya sedang di dokter.",
+        "**אִתִּי** = \"bersama saya\". Kata dasarnya עִם (dengan), tapi begitu menerima akhiran bentuknya berubah jadi אִתִּ־: אִתִּי, אִתְּךָ, אִתּוֹ, אִתָּהּ, אִתָּנוּ. Kekecualian yang perlu dihafal utuh.",
+        "**קַח / קְחִי** = \"ambillah\" (ke lk / ke pr). Bentuk perintah muncul lagi; unit 19 membongkarnya.",
+        "**בִּשְׁבִיל זֶה** = \"untuk itulah\". Kalimat penutup Dana adalah contoh bagus bahwa ungkapan Ibrani sehari-hari sering lebih hangat daripada terjemahan harfiahnya."
+      ],
+      "grammars": [
+        {
+          "title": "Kata depan yang menerima akhiran — mesin yang berulang",
+          "body": [
+            "Kamu sudah bertemu mesin ini tiga kali: שֶׁל (unit 4), אֶת (unit 7), בִּשְׁבִיל (unit 11). Sekarang lengkapnya, dengan kata depan yang paling sering."
+          ],
+          "table": {
+            "head": ["Orang", "לְ (kepada)", "עִם (bersama)", "אֵצֶל (di tempat)", "בִּשְׁבִיל (untuk)"],
+            "rows": [
+              ["saya", "לִי *li*", "אִתִּי *iti*", "אֶצְלִי *etsli*", "בִּשְׁבִילִי *bishvili*"],
+              ["kamu (lk)", "לְךָ *lekha*", "אִתְּךָ *itkha*", "אֶצְלְךָ *etslekha*", "בִּשְׁבִילְךָ *bishvilkha*"],
+              ["kamu (pr)", "לָךְ *lakh*", "אִתָּךְ *itakh*", "אֶצְלֵךְ *etslekh*", "בִּשְׁבִילֵךְ *bishvilekh*"],
+              ["dia (lk)", "לוֹ *lo*", "אִתּוֹ *ito*", "אֶצְלוֹ *etslo*", "בִּשְׁבִילוֹ *bishvilo*"],
+              ["dia (pr)", "לָהּ *lah*", "אִתָּהּ *itah*", "אֶצְלָהּ *etslah*", "בִּשְׁבִילָהּ *bishvilah*"],
+              ["kami", "לָנוּ *lanu*", "אִתָּנוּ *itanu*", "אֶצְלֵנוּ *etslenu*", "בִּשְׁבִילֵנוּ *bishvilenu*"],
+              ["kalian", "לָכֶם *lakhem*", "אִתְּכֶם *itkhem*", "אֶצְלְכֶם *etslekhem*", "בִּשְׁבִילְכֶם *bishvilkhem*"],
+              ["mereka", "לָהֶם *lahem*", "אִתָּם *itam*", "אֶצְלָם *etslam*", "בִּשְׁבִילָם *bishvilam*"]
+            ]
+          },
+          "after": [
+            "⚠️ Perhatikan bahwa **akhirannya persis sama di keempat kolom**: ־ִי, ־ְךָ, ־ֵךְ, ־וֹ, ־ָהּ, ־ֵנוּ, ־ְכֶם, ־ָם. Kamu tidak menghafal empat tabel — kamu menghafal **satu deret akhiran**, lalu menempelkannya ke kata depan mana pun. Inilah cara bahasa Ibrani menghemat: satu mesin, dipakai berulang.",
+            "Bahasa Indonesia punya deret yang mirip, cuma lebih pendek: ־ku, ־mu, ־nya. Bedanya, bahasa Ibrani membedakan laki-laki dan perempuan di setiap tingkat."
+          ]
+        },
+        {
+          "title": "יֵשׁ dan אֵין dalam kalimat penuh",
+          "body": [
+            "Empat susunan ini menutup hampir semua kalimat kepemilikan A1."
+          ],
+          "table": {
+            "head": ["Ibrani", "Cara baca", "Arti", "Catatan"],
+            "rows": [
+              ["יֵשׁ לִי סֵפֶר", "yesh li sefer", "Saya punya buku", "benda tak tentu"],
+              ["יֵשׁ לִי אֶת הַסֵּפֶר", "yesh li et hasefer", "Buku itu ada pada saya", "benda tertentu → אֶת"],
+              ["אֵין לִי סֵפֶר", "ein li sefer", "Saya tidak punya buku", ""],
+              ["יֵשׁ לְךָ זְמַן?", "yesh lekha zman?", "Kamu ada waktu?", "pertanyaan, ke lk"],
+              ["לְמִי יֵשׁ עֵט?", "lemi yesh et?", "Siapa yang punya pulpen?", "harfiah: kepada siapa ada"],
+              ["יֵשׁ פֹּה מִסְעָדָה?", "yesh poh mis'adah?", "Di sini ada restoran?", "keberadaan, bukan milik"],
+              ["הָיָה לִי", "hayah li", "Saya dulu punya", "bentuk lampau"],
+              ["יִהְיֶה לִי", "yihyeh li", "Saya akan punya", "bentuk akan datang"]
+            ]
+          },
+          "after": [
+            "⚠️ Dua baris terakhir memperlihatkan bahwa **יֵשׁ berubah bentuk untuk waktu lain**: הָיָה לִי (dulu ada pada saya), יִהְיֶה לִי (akan ada pada saya). Bentuk lampau dan akan datang dibahas penuh di unit 15 dan 16 — tapi dua kalimat ini boleh kamu hafal utuh mulai sekarang, karena keduanya sangat sering."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Barang yang kamu bawa",
+      "blocks": [
+        { "type": "tabel", "head": ["Ibrani", "Cara baca", "Arti", "Ibrani", "Cara baca", "Arti"], "rows": [
+          ["מַפְתֵּחַ", "mafte'akh", "kunci", "מִשְׁקָפַיִם", "mishkafayim", "kacamata"],
+          ["אַרְנָק", "arnak", "dompet", "מִטְרִיָּה", "mitriyah", "payung"],
+          ["טֶלֶפוֹן", "telefon", "telepon", "כּוֹבַע", "kova", "topi"],
+          ["סוֹלְלָה", "solelah", "baterai", "שָׁעוֹן", "sha'on", "jam tangan"],
+          ["מַטְעֵן", "mat'en", "pengisi daya", "דַּרְכּוֹן", "darkon", "paspor"],
+          ["כֶּסֶף", "kesef", "uang", "תְּעוּדַת זֶהוּת", "te'udat zehut", "kartu identitas"],
+          ["כַּרְטִיס", "kartis", "kartu; tiket", "כַּרְטִיס אַשְׁרַאי", "kartis ashrai", "kartu kredit"],
+          ["תִּיק", "tik", "tas", "מַחְשֵׁב נַיָּד", "makhshev nayad", "laptop"]
+        ]},
+        { "type": "p", "text": "⚠️ **מִשְׁקָפַיִם** berakhiran ־ַיִם, tanda berpasangan — sama seperti מִכְנָסַיִם dan נַעֲלַיִם di unit 11. Bahasa Ibrani melihat kacamata sebagai sepasang lensa, bukan satu benda." }
+      ]
+    },
+    {
+      "title": "Kalimat yang lahir dari mesin akhiran",
+      "blocks": [
+        { "type": "tabel", "head": ["Ibrani", "Cara baca", "Arti"], "rows": [
+          ["יֵשׁ לְךָ רֶגַע?", "yesh lekha rega?", "Ada waktu sebentar?"],
+          ["אֵין לִי מֻשָּׂג", "ein li musag", "Saya tidak tahu sama sekali"],
+          ["יֵשׁ לִי רַעְיוֹן", "yesh li ra'ayon", "Saya punya ide"],
+          ["אֵין לִי כֹּחַ", "ein li ko'akh", "Saya tidak ada tenaga, malas"],
+          ["בּוֹא אִתִּי", "bo iti", "Ikut saya"],
+          ["זֶה בִּשְׁבִילְךָ", "zeh bishvilkha", "Ini untukmu"],
+          ["אֲנִי אֵצֶל הָרוֹפֵא", "ani etsel harofe", "Saya sedang di dokter"],
+          ["תֵּן לִי", "ten li", "Berikan pada saya"],
+          ["תַּגִּיד לִי", "tagid li", "Bilang dong (ke lk)"],
+          ["אֲנִי מְחַכֶּה לְךָ", "ani mekhakeh lekha", "Saya menunggumu"]
+        ]},
+        { "type": "kotak", "title": "Dua ungkapan yang akan membuatmu terdengar seperti orang Israel", "items": [
+          "**אֵין לִי כֹּחַ** *(ein li ko'akh)* — harfiahnya \"tidak ada kekuatan pada saya\", artinya \"aku males banget\". Salah satu ungkapan paling sering di Israel, dan hampir mustahil diterjemahkan dengan tepat.",
+          "**אֵין לִי מֻשָּׂג** *(ein li musag)* — \"aku tidak punya bayangan sama sekali\", untuk pertanyaan yang benar-benar tidak kamu ketahui jawabannya. Lebih jujur dan lebih hangat daripada אֲנִי לֹא יוֹדֵעַ."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    { "he": "יֵשׁ לִי / אֵין לִי", "baca": "yesh li / ein li", "id": "saya punya / tidak punya" },
+    { "he": "לְךָ / לָךְ", "baca": "lekha / lakh", "id": "kepadamu (lk / pr)" },
+    { "he": "לוֹ / לָהּ", "baca": "lo / lah", "id": "kepadanya (lk / pr)" },
+    { "he": "לָנוּ / לָהֶם", "baca": "lanu / lahem", "id": "kepada kami / mereka" },
+    { "he": "עִם", "baca": "im", "id": "dengan, bersama" },
+    { "he": "אִתִּי / אִתְּךָ / אִתּוֹ", "baca": "iti / itkha / ito", "id": "bersama saya / kamu / dia" },
+    { "he": "אֵצֶל", "baca": "etsel", "id": "di tempat (seseorang)" },
+    { "he": "בִּשְׁבִיל", "baca": "bishvil", "id": "untuk" },
+    { "he": "מַפְתֵּחַ", "baca": "mafte'akh", "id": "kunci" },
+    { "he": "אַרְנָק", "baca": "arnak", "id": "dompet" },
+    { "he": "סוֹלְלָה", "baca": "solelah", "id": "baterai" },
+    { "he": "מַטְעֵן", "baca": "mat'en", "id": "pengisi daya" },
+    { "he": "כַּרְטִיס", "baca": "kartis", "id": "kartu, tiket" },
+    { "he": "דַּרְכּוֹן", "baca": "darkon", "id": "paspor" },
+    { "he": "מִשְׁקָפַיִם", "baca": "mishkafayim", "id": "kacamata" },
+    { "he": "מִטְרִיָּה", "baca": "mitriyah", "id": "payung" },
+    { "he": "נוֹסָף / נוֹסֶפֶת", "baca": "nosaf / nosefet", "id": "tambahan, cadangan" },
+    { "he": "בּוֹדֵק / בּוֹדֶקֶת", "baca": "bodek / bodeket", "id": "memeriksa" },
+    { "he": "מְחַכֶּה / מְחַכָּה", "baca": "mekhakeh / mekhakah", "id": "menunggu" },
+    { "he": "כֹּחַ", "baca": "ko'akh", "id": "tenaga, kekuatan" },
+    { "he": "מֻשָּׂג", "baca": "musag", "id": "gagasan, bayangan" },
+    { "he": "רַעְיוֹן", "baca": "ra'ayon", "id": "ide" },
+    { "he": "לְמִי", "baca": "lemi", "id": "kepada siapa" },
+    { "he": "דָּבָר", "baca": "davar", "id": "hal, benda" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Lengkapi dengan bentuk לְ yang tepat.",
+      "items": [
+        "יֵשׁ ____ סֵפֶר. (saya)",
+        "אֵין ____ זְמַן. (dia lk)",
+        "יֵשׁ ____ כֶּסֶף? (kamu pr)",
+        "אֵין ____ מַפְתֵּחַ. (kami)",
+        "יֵשׁ ____ שְׁלוֹשָׁה יְלָדִים. (mereka)"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi kalimat ingkar dengan אֵין.",
+      "items": [
+        "יֵשׁ לִי כֶּסֶף.",
+        "יֵשׁ לָנוּ זְמַן.",
+        "יֵשׁ לָהּ מְכוֹנִית.",
+        "יֵשׁ לָהֶם בַּיִת גָּדוֹל."
+      ]
+    },
+    {
+      "prompt": "Lengkapi dengan עִם, אֵצֶל, atau בִּשְׁבִיל dengan akhiran yang tepat.",
+      "items": [
+        "בּוֹא ____. (bersama saya)",
+        "הַסֵּפֶר ____. (di tempat dia lk)",
+        "זֶה ____. (untukmu, lk)",
+        "הִיא בָּאָה ____. (bersama kami)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ibrani.",
+      "items": [
+        "Kamu (lk) punya waktu?",
+        "Saya tidak punya uang tunai.",
+        "Kunci itu ada padanya (pr).",
+        "Ini untuk kalian.",
+        "Saya tidak tahu sama sekali."
+      ]
+    }
+  ],
+  "answers": [
+    "לִי — לוֹ — לָךְ — לָנוּ — לָהֶם",
+    "אֵין לִי כֶּסֶף. — אֵין לָנוּ זְמַן. — אֵין לָהּ מְכוֹנִית. — אֵין לָהֶם בַּיִת גָּדוֹל.",
+    "אִתִּי — אֶצְלוֹ — בִּשְׁבִילְךָ — אִתָּנוּ",
+    "יֵשׁ לְךָ זְמַן? — אֵין לִי מְזֻמָּן. — יֵשׁ לָהּ אֶת הַמַּפְתֵּחַ. — זֶה בִּשְׁבִילְכֶם. — אֵין לִי מֻשָּׂג."
+  ],
+  "wave": "Kosongkan tasmu di atas meja dan sebutkan tiap benda dengan יֵשׁ לִי .... Lalu sebutkan lima benda yang TIDAK kamu bawa dengan אֵין לִי .... Sepuluh kalimat, tiga menit."
+}
