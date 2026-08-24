@@ -1,0 +1,598 @@
+{
+  "title": "Di mana? Akhiran -da dan kalimat \"punya\" yang tidak ada",
+  "title_target": "Qayerda? -da qoʻshimchasi va \"bor\"",
+  "goal": "Menyatakan tempat dengan akhiran *-da*, memakai *bor* dan *yoʻq*, dan menyusun kepemilikan lewat kalimat keberadaan — karena bahasa Uzbek sama sekali tidak punya kata kerja \"memiliki\".",
+  "bekal": [
+    "bertanya *Qayerda?* dan menjawab dengan *-da*",
+    "memakai *bor* / *yoʻq* untuk menyatakan ada dan tidak ada",
+    "mengucapkan \"saya punya\" sebagai *Menda … bor* — harfiahnya \"pada saya … ada\""
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Chorsu bozori qayerda?",
+      "intro": "Budi tersesat di dekat kota tua Tashkent. Ia menghampiri seorang bapak yang sedang duduk di depan tokonya.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Kechirasiz, aka. Chorsu bozori qayerda?",
+          "id": "Permisi, Pak. Di mana Pasar Chorsu?",
+          "literal": "maaf, kakak. Chorsu pasar-nya di-mana?"
+        },
+        {
+          "speaker": "Aka:",
+          "text": "Bozor bu yerdan uzoq emas. Metro bekati yonida.",
+          "id": "Pasarnya tidak jauh dari sini. Di sebelah stasiun metro.",
+          "literal": "pasar ini tempat-dari jauh bukan. metro halte-nya samping-nya-di."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Metro bekati qayerda?",
+          "id": "Stasiun metronya di mana?",
+          "literal": "metro halte-nya di-mana?"
+        },
+        {
+          "speaker": "Aka:",
+          "text": "Anavi katta masjid oldida. Koʻring, gumbazi koʻk.",
+          "id": "Di depan masjid besar itu. Lihat, kubahnya biru.",
+          "literal": "itu-sana besar masjid depan-nya-di. lihatlah, kubah-nya biru."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tushundim. Yaqinda bank bormi?",
+          "id": "Saya mengerti. Apakah ada bank di dekat sini?",
+          "literal": "mengerti-saya. dekat-di bank ada-kah?"
+        },
+        {
+          "speaker": "Aka:",
+          "text": "Ha, bor. Bozorning ichida bank ham bor, dorixona ham.",
+          "id": "Ya, ada. Di dalam pasar ada bank, ada apotek juga.",
+          "literal": "ya, ada. pasar-milik dalam-nya-di bank juga ada, apotek juga."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rahmat! Sizda telefon raqami bormi?",
+          "id": "Terima kasih! Apakah Anda punya nomor telepon?",
+          "literal": "terima-kasih! Anda-pada telepon nomor-nya ada-kah?"
+        },
+        {
+          "speaker": "Aka:",
+          "text": "Menda telefon bor, lekin raqamim yodimda yoʻq.",
+          "id": "Saya punya telepon, tapi nomor saya tidak ingat.",
+          "literal": "saya-pada telepon ada, tetapi nomor-ku ingatan-ku-di tidak-ada."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Muammo yoʻq. Bu yerda doʻkoningiz bormi?",
+          "id": "Tidak masalah. Toko Anda ada di sini?",
+          "literal": "masalah tidak-ada. ini tempat-di toko-Anda ada-kah?"
+        },
+        {
+          "speaker": "Aka:",
+          "text": "Ha, mana — eshik yonida. Choy bor, marhamat!",
+          "id": "Ya, itu dia — di sebelah pintu. Ada teh, silakan!",
+          "literal": "ya, nah — pintu samping-nya-di. teh ada, silakan!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Katta rahmat, aka. Siz juda mehribonsiz.",
+          "id": "Terima kasih banyak, Pak. Anda baik sekali.",
+          "literal": "besar terima-kasih, kakak. Anda sangat baik-hati-Anda."
+        }
+      ],
+      "notes": [
+        "**Chorsu bozori, bukan \"bozor Chorsu\".** Ketika dua kata benda dirangkai — pasar Chorsu, stasiun metro, nomor telepon — yang **kedua** mendapat akhiran *-i*: *bozor**i***, *bekat**i***, *raqam**i***. Susunannya kebalikan bahasa Indonesia, tapi menempel cepat karena polanya cuma satu.",
+        "**Kata tempat menempel di belakang bendanya.** *Yon* (samping) → *yonida* (di sampingnya), *old* (depan) → *oldida*, *ich* (dalam) → *ichida*. Semuanya kata benda yang diberi akhiran milik *-i* lalu akhiran tempat *-da* — bukan kata depan.",
+        "**Anavi = \"itu yang di sana\".** Bentuk penunjuk yang lebih jauh dan lebih menonjol daripada *u*. Sering dipakai sambil menunjuk dengan dagu atau tangan. Sepupunya *manavi* (\"ini yang di sini\").",
+        "**Yodimda yoʻq = \"tidak ada di ingatanku\".** Bahasa Uzbek meletakkan ingatan sebagai tempat: *yodimda bor* (saya ingat), *yodimda yoʻq* (saya lupa). Cara berpikir yang sama muncul lagi di unit 17 untuk rasa sakit.",
+        "**Mehribonsiz = \"Anda baik hati\".** Akhiran predikat unit 1 langsung terpakai di sini. *Mehribon* datang dari bahasa Persia: *mehr* (kasih sayang) + *bon* (yang menjaga) — harfiahnya \"penjaga kasih sayang\"."
+      ],
+      "grammars": [
+        {
+          "title": "-da: satu akhiran untuk \"di\", \"pada\", dan \"dalam\"",
+          "body": [
+            "Akhiran pertama dari enam yang menggantikan seluruh kata depan bahasa Indonesia. Bentuknya **tidak pernah berubah** — tak peduli vokal kata dasarnya, ia selalu *-da*."
+          ],
+          "table": {
+            "head": [
+              "Kata dasar",
+              "Dengan -da",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "*uy* (rumah)",
+                "*uy**da***",
+                "uy-DÅ",
+                "di rumah"
+              ],
+              [
+                "*bozor* (pasar)",
+                "*bozor**da***",
+                "bå-zår-DÅ",
+                "di pasar"
+              ],
+              [
+                "*xona* (kamar)",
+                "*xona**da***",
+                "khå-nå-DÅ",
+                "di kamar"
+              ],
+              [
+                "*Toshkent*",
+                "*Toshkent**da***",
+                "tåsy-ként-DÅ",
+                "di Tashkent"
+              ],
+              [
+                "*men* (saya)",
+                "*men**da***",
+                "mén-DÅ",
+                "pada saya"
+              ],
+              [
+                "*stol* (meja)",
+                "*stol**da***",
+                "stål-DÅ",
+                "di meja"
+              ]
+            ]
+          },
+          "after": [
+            "Kalau kata bendanya sudah memakai akhiran milik, *-da* datang **paling belakang**: *xona-m-da* (di kamarku), *uy-ingiz-da* (di rumah Anda), *qishloq-lar-i-da* (di desa-desa mereka). Urutannya tetap: **benda → jamak → milik → tempat**.",
+            "Kata tanyanya *qayerda* — harfiahnya \"tempat-mana-di\". Menjawabnya cukup dengan satu kata bertempelan *-da*: *Qayerdasiz?* — *Uydaman.* (Anda di mana? — Saya di rumah.)",
+            "Untuk menyusun \"di atas meja\" dan sejenisnya, dipakai dua lapis: **[benda]-ning [tempat]-i-da**. *stolning ustida* (di atas meja), *uyning oldida* (di depan rumah), *bozorning ichida* (di dalam pasar). Kelihatan panjang, tapi bentuknya selalu sama."
+          ]
+        },
+        {
+          "title": "Bor, yoʻq, dan kepemilikan yang disamarkan jadi keberadaan",
+          "body": [
+            "Bahasa Uzbek tidak punya kata kerja \"memiliki\" — bukan karena kurang, tetapi karena ia memilih cara lain. Kepemilikan diucapkan sebagai keberadaan di suatu tempat, dan \"tempat\" itu adalah orangnya."
+          ],
+          "table": {
+            "head": [
+              "Kalimat Uzbek",
+              "Harfiah",
+              "Arti sebenarnya"
+            ],
+            "rows": [
+              [
+                "*Menda pul bor.*",
+                "pada-saya uang ada",
+                "Saya punya uang."
+              ],
+              [
+                "*Sizda vaqt bormi?*",
+                "pada-Anda waktu ada-kah?",
+                "Anda punya waktu?"
+              ],
+              [
+                "*Unda mashina yoʻq.*",
+                "pada-dia mobil tidak-ada",
+                "Dia tidak punya mobil."
+              ],
+              [
+                "*Bizda muammo yoʻq.*",
+                "pada-kami masalah tidak-ada",
+                "Kami tidak ada masalah."
+              ],
+              [
+                "*Mening akam bor.*",
+                "milik-saya kakak-ku ada",
+                "Saya punya kakak."
+              ],
+              [
+                "*Xonada stol yoʻq.*",
+                "kamar-di meja tidak-ada",
+                "Tidak ada meja di kamar."
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan dua baris terakhir: untuk **benda yang bisa dibawa** dipakai *[orang]-da … bor*, tetapi untuk **keluarga, bagian tubuh, dan hal-hal yang melekat** dipakai akhiran milik saja: *akam bor*, *vaqtim bor*, *ishim bor*. Batasnya longgar dan orang Uzbek pun memakai keduanya bergantian.",
+            "*Bor* dan *yoʻq* adalah kata sifat, bukan kata kerja — jadi keduanya bisa langsung menerima akhiran unit 1: *Men bu yerdaman* (saya ada di sini), *Bormisiz?* (Anda ada di situ?), *Yoʻqman* (saya tidak ada / saya berhalangan).",
+            "⚠️ Jangan campur *yoʻq* dengan *emas*. *Yoʻq* = tidak ada; *emas* = bukan. *Kitob yoʻq* (tidak ada buku) berbeda dari *Bu kitob emas* (ini bukan buku)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tempat-tempat di kota",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ucapkan tiap kata dua kali: sekali telanjang, sekali dengan *-da*. *Bozor — bozorda. Bank — bankda.* Sepuluh detik per kata, dan akhiran tempat berhenti jadi teori."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**bozor**",
+              "bå-ZÅR",
+              "pasar"
+            ],
+            [
+              "**doʻkon**",
+              "do-KÅN",
+              "toko"
+            ],
+            [
+              "**magazin**",
+              "må-gå-ZIN",
+              "toko, minimarket"
+            ],
+            [
+              "**restoran**",
+              "rés-tå-RAN",
+              "restoran"
+            ],
+            [
+              "**choyxona**",
+              "cåy-khå-NÅ",
+              "kedai teh"
+            ],
+            [
+              "**mehmonxona**",
+              "méh-mån-khå-NÅ",
+              "hotel"
+            ],
+            [
+              "**kasalxona**",
+              "kå-sål-khå-NÅ",
+              "rumah sakit"
+            ],
+            [
+              "**dorixona**",
+              "då-ri-khå-NÅ",
+              "apotek"
+            ],
+            [
+              "**bank**",
+              "bånk",
+              "bank"
+            ],
+            [
+              "**pochta**",
+              "PÅC-tå",
+              "kantor pos"
+            ],
+            [
+              "**bekat**",
+              "bé-KAT",
+              "halte, stasiun"
+            ],
+            [
+              "**koʻcha**",
+              "ko-CÅ",
+              "jalan"
+            ],
+            [
+              "**maydon**",
+              "måy-DÅN",
+              "alun-alun, lapangan"
+            ],
+            [
+              "**masjid**",
+              "mås-JID",
+              "masjid"
+            ],
+            [
+              "**muzey**",
+              "mu-ZÉY",
+              "museum"
+            ],
+            [
+              "**universitet**",
+              "u-ni-vér-si-TÉT",
+              "universitas"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan akhiran **-xona**: ia berarti \"rumah, tempat\" dan datang dari bahasa Persia (*khāna*). *Choy* + *xona* = tempat teh. *Kasal* (sakit) + *xona* = rumah sakit. *Mehmon* (tamu) + *xona* = tempat tamu, hotel. Sekali kamu tahu ini, selusin kata baru terbuka sendiri: *oshxona* (dapur, kantin), *kutubxona* (perpustakaan), *yotoqxona* (asrama)."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Doʻkon* berarti **toko**, bukan \"dukun\". Keduanya berasal dari kata Arab *dukkān* (kios), tetapi bahasa Indonesia membelokkan artinya sampai jauh sekali. Kalau kamu masuk *doʻkon* di Tashkent, yang kamu temui adalah rak barang, bukan orang pintar."
+        }
+      ]
+    },
+    {
+      "title": "Menunjuk posisi: delapan kata yang cukup",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Semuanya memakai bentuk yang sama: **[benda]-ning [posisi]-ida**."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kata dasar",
+            "Bentuk terpakai",
+            "Arti",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "*ust*",
+              "**ustida**",
+              "di atas",
+              "*stolning ustida* = di atas meja"
+            ],
+            [
+              "*tag* / *ost*",
+              "**tagida**",
+              "di bawah",
+              "*stolning tagida*"
+            ],
+            [
+              "*ich*",
+              "**ichida**",
+              "di dalam",
+              "*sumkaning ichida*"
+            ],
+            [
+              "*old*",
+              "**oldida**",
+              "di depan",
+              "*uyning oldida*"
+            ],
+            [
+              "*orqa*",
+              "**orqasida**",
+              "di belakang",
+              "*bankning orqasida*"
+            ],
+            [
+              "*yon*",
+              "**yonida**",
+              "di samping",
+              "*masjid yonida*"
+            ],
+            [
+              "*oʻrta*",
+              "**oʻrtasida**",
+              "di tengah",
+              "*maydonning oʻrtasida*"
+            ],
+            [
+              "*roʻpara*",
+              "**roʻparasida**",
+              "di seberang",
+              "*bekatning roʻparasida*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dalam percakapan cepat, *-ning* sering dijatuhkan: *masjid yonida* terdengar sama benarnya dengan *masjidning yonida*. Yang **tidak boleh** dijatuhkan adalah akhiran *-i-da* di kata posisinya."
+        },
+        {
+          "type": "p",
+          "text": "Dua kata jarak yang melengkapinya: *yaqin* (dekat) dan *uzoq* (jauh). *Bu yerdan uzoq emas* = tidak jauh dari sini. *Bozor yaqin* = pasarnya dekat."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uz": "qayerda",
+      "baca": "qå-YÉR-då",
+      "id": "di mana"
+    },
+    {
+      "uz": "bu yerda",
+      "baca": "bu YÉR-då",
+      "id": "di sini"
+    },
+    {
+      "uz": "u yerda",
+      "baca": "u YÉR-då",
+      "id": "di sana"
+    },
+    {
+      "uz": "bozor",
+      "baca": "bå-ZÅR",
+      "id": "pasar"
+    },
+    {
+      "uz": "doʻkon",
+      "baca": "do-KÅN",
+      "id": "toko"
+    },
+    {
+      "uz": "mehmonxona",
+      "baca": "méh-mån-khå-NÅ",
+      "id": "hotel"
+    },
+    {
+      "uz": "kasalxona",
+      "baca": "kå-sål-khå-NÅ",
+      "id": "rumah sakit"
+    },
+    {
+      "uz": "dorixona",
+      "baca": "då-ri-khå-NÅ",
+      "id": "apotek"
+    },
+    {
+      "uz": "choyxona",
+      "baca": "cåy-khå-NÅ",
+      "id": "kedai teh"
+    },
+    {
+      "uz": "oshxona",
+      "baca": "åsy-khå-NÅ",
+      "id": "dapur; kantin"
+    },
+    {
+      "uz": "kutubxona",
+      "baca": "ku-tub-khå-NÅ",
+      "id": "perpustakaan"
+    },
+    {
+      "uz": "bekat",
+      "baca": "bé-KAT",
+      "id": "halte, stasiun"
+    },
+    {
+      "uz": "koʻcha",
+      "baca": "ko-CÅ",
+      "id": "jalan"
+    },
+    {
+      "uz": "maydon",
+      "baca": "måy-DÅN",
+      "id": "alun-alun"
+    },
+    {
+      "uz": "masjid",
+      "baca": "mås-JID",
+      "id": "masjid"
+    },
+    {
+      "uz": "yonida",
+      "baca": "yå-ni-DÅ",
+      "id": "di samping"
+    },
+    {
+      "uz": "oldida",
+      "baca": "ål-di-DÅ",
+      "id": "di depan"
+    },
+    {
+      "uz": "orqasida",
+      "baca": "år-qå-si-DÅ",
+      "id": "di belakang"
+    },
+    {
+      "uz": "ichida",
+      "baca": "i-ci-DÅ",
+      "id": "di dalam"
+    },
+    {
+      "uz": "ustida",
+      "baca": "us-ti-DÅ",
+      "id": "di atas"
+    },
+    {
+      "uz": "tagida",
+      "baca": "tå-gi-DÅ",
+      "id": "di bawah"
+    },
+    {
+      "uz": "yaqin",
+      "baca": "yå-QIN",
+      "id": "dekat"
+    },
+    {
+      "uz": "uzoq",
+      "baca": "u-ZÅQ",
+      "id": "jauh; lama"
+    },
+    {
+      "uz": "pul",
+      "baca": "pul",
+      "id": "uang"
+    },
+    {
+      "uz": "vaqt",
+      "baca": "våqt",
+      "id": "waktu"
+    },
+    {
+      "uz": "raqam",
+      "baca": "rå-QAM",
+      "id": "nomor, angka"
+    },
+    {
+      "uz": "muammo",
+      "baca": "mu-åm-MÅ",
+      "id": "masalah"
+    },
+    {
+      "uz": "mashina",
+      "baca": "må-SYI-nå",
+      "id": "mobil"
+    },
+    {
+      "uz": "mehribon",
+      "baca": "méh-ri-BÅN",
+      "id": "baik hati"
+    },
+    {
+      "uz": "anavi",
+      "baca": "å-nå-VI",
+      "id": "itu (di sana)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Uzbek.",
+      "items": [
+        "Pasarnya di mana?",
+        "Saya di rumah.",
+        "Bank ada di sebelah masjid.",
+        "Saya punya uang.",
+        "Dia tidak punya mobil.",
+        "Apakah Anda punya waktu?"
+      ]
+    },
+    {
+      "prompt": "Tempelkan akhiran -da pada kata yang diberikan.",
+      "items": [
+        "bozor → ____",
+        "xonam → ____",
+        "Toshkent → ____",
+        "uyingiz → ____",
+        "men → ____",
+        "koʻcha → ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bor, yoʻq, atau emas.",
+      "items": [
+        "Menda pul ____. (punya)",
+        "Bu kitob ____. (bukan buku)",
+        "Xonada stol ____. (tidak ada)",
+        "Yaqinda dorixona ____mi? (ada)",
+        "U shifokor ____. (bukan dokter)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "qayerda / bozor / ?",
+        "bor / menda / pul",
+        "yonida / bank / masjid",
+        "yoʻq / xonada / stol",
+        "uzoq / bu yerdan / emas"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 2. Terjemahkan ke bahasa Uzbek tanpa melihat unitnya.",
+      "items": [
+        "Ini apa?",
+        "Buku-buku ini baru.",
+        "Kamar itu sangat besar.",
+        "Kamusnya tidak mahal.",
+        "Ini punya siapa?"
+      ]
+    }
+  ],
+  "answers": [
+    "Bozor qayerda? — Men uydaman. — Bank masjid yonida. — Menda pul bor. — Unda mashina yoʻq. — Sizda vaqt bormi?",
+    "bozorda — xonamda — Toshkentda — uyingizda — menda — koʻchada",
+    "bor — emas — yoʻq — bor — emas",
+    "Bozor qayerda? — Menda pul bor. — Bank masjid yonida. — Xonada stol yoʻq. — Bu yerdan uzoq emas.",
+    "Bu nima? — Bu kitoblar yangi. — U xona juda katta. — Lugʻat qimmat emas. — Bu kimniki?"
+  ]
+}

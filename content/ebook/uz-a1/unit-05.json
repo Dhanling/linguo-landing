@@ -1,0 +1,229 @@
+{
+  "title": "Angka, harga, dan tawar-menawar di bozor",
+  "title_target": "Sonlar va bozorda savdo",
+  "goal": "Menghitung sampai seribu, menanyakan harga dengan *qancha*, memakai akhiran hitung *-ta*, dan menawar tanpa terdengar kasar.",
+  "bekal": [
+    "menyebut angka 1-100 dan kelipatan seribu",
+    "membedakan *nechta* (berapa buah) dari *qancha* (berapa harganya)",
+    "menawar dengan *arzonroq boʻladimi?* — kalimat yang akan menghemat uangmu tiap hari"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Chorsu bozorida",
+      "intro": "Budi berdiri di depan gunungan buah. Penjualnya, seorang perempuan paruh baya, sudah memperhatikannya sejak tadi.",
+      "lines": [
+        { "speaker": "Sotuvchi:", "text": "Keling, uka! Meva juda shirin!", "id": "Mari, Dik! Buahnya manis sekali!", "literal": "datanglah, adik! buah sangat manis!" },
+        { "speaker": "Budi:", "text": "Assalomu alaykum, opa. Bu uzum qancha turadi?", "id": "Assalamualaikum, Bu. Anggur ini berapa harganya?", "literal": "salam, kakak-perempuan. ini anggur berapa berdiri?" },
+        { "speaker": "Sotuvchi:", "text": "Bir kilosi yigirma besh ming soʻm.", "id": "Satu kilonya dua puluh lima ribu som.", "literal": "satu kilo-nya dua-puluh lima ribu som." },
+        { "speaker": "Budi:", "text": "Voy, qimmat-ku! Arzonroq boʻladimi?", "id": "Wah, mahal! Tidak bisa lebih murah?", "literal": "wah, mahal-lah! lebih-murah menjadi-kah?" },
+        { "speaker": "Sotuvchi:", "text": "Mayli, sizga yigirma ming. Nechta kilo olasiz?", "id": "Baiklah, untuk Anda dua puluh ribu. Mau ambil berapa kilo?", "literal": "baiklah, Anda-kepada dua-puluh ribu. berapa-buah kilo ambil-Anda?" },
+        { "speaker": "Budi:", "text": "Ikki kilo, iltimos. Anor ham bormi?", "id": "Dua kilo, tolong. Ada delima juga?", "literal": "dua kilo, tolong. delima juga ada-kah?" },
+        { "speaker": "Sotuvchi:", "text": "Albatta. Anor donasi olti ming soʻm.", "id": "Tentu. Delimanya enam ribu som per buah.", "literal": "tentu. delima biji-nya enam ribu som." },
+        { "speaker": "Budi:", "text": "Uchta anor bering. Hammasi qancha boʻldi?", "id": "Tolong tiga delima. Semuanya jadi berapa?", "literal": "tiga-buah delima berilah. semua-nya berapa menjadi?" },
+        { "speaker": "Sotuvchi:", "text": "Qirq ming plus oʻn sakkiz ming — ellik sakkiz ming soʻm.", "id": "Empat puluh ribu tambah delapan belas ribu — lima puluh delapan ribu som.", "literal": "empat-puluh ribu tambah sepuluh delapan ribu — lima-puluh delapan ribu som." },
+        { "speaker": "Budi:", "text": "Mana, oltmish ming. Qaytimi bor?", "id": "Ini, enam puluh ribu. Ada kembaliannya?", "literal": "nah, enam-puluh ribu. kembalian-nya ada?" },
+        { "speaker": "Sotuvchi:", "text": "Bor, ikki ming. Rahmat, yana keling!", "id": "Ada, dua ribu. Terima kasih, datang lagi ya!", "literal": "ada, dua ribu. terima-kasih, lagi datanglah!" }
+      ],
+      "notes": [
+        "**Qancha turadi? harfiahnya \"berapa ia berdiri?\".** Kata kerja *turmoq* (berdiri) dipakai untuk harga, persis seperti bahasa Inggris memakai *cost* yang aslinya berarti \"berdiri di sisi\". Bentuk yang lebih pendek dan sama benarnya: *Bu necha pul?* — \"ini berapa uang?\".",
+        "**-ku menempel di ujung untuk menyatakan kaget.** *Qimmat-ku!* = \"Mahal, dong!\" Ia bukan kata, cuma bumbu; membuangnya tetap benar, memakainya membuatmu terdengar seperti orang yang sudah lama di sana.",
+        "**Mayli = \"baiklah\".** Satu kata untuk menyetujui, menyerah, atau menutup tawar-menawar. Di Uzbekistan ia muncul puluhan kali sehari, dan sering diulang: *mayli-mayli*.",
+        "**Bir kilosi = \"satu kilonya\".** Akhiran *-si* di sini bukan milik, melainkan penunjuk bagian: \"yang satu kilo itu\". Pola yang sama: *donasi* (per bijinya), *bittasi* (satuannya).",
+        "**Angka besar diucapkan tanpa \"dan\".** *Ellik sakkiz ming* = 58.000, harfiahnya \"lima puluh delapan ribu\". Uang Uzbekistan berangka besar — makan siang bisa 40.000 som — jadi latihan angka di unit ini bukan latihan sekolah, melainkan bekal harian."
+      ],
+      "grammars": [
+        {
+          "title": "Angka: sepuluh kata dasar, sisanya susunan",
+          "body": [
+            "Hafalkan sepuluh baris pertama dan sembilan kelipatan puluhan. Semua angka lain dirangkai dari keduanya, tanpa kekecualian sama sekali."
+          ],
+          "table": {
+            "head": ["Angka", "Oʻzbekcha", "Cara baca", "Angka", "Oʻzbekcha", "Cara baca"],
+            "rows": [
+              ["1", "*bir*", "bir", "10", "*oʻn*", "on"],
+              ["2", "*ikki*", "ik-KI", "20", "*yigirma*", "yi-gir-MÅ"],
+              ["3", "*uch*", "uc", "30", "*oʻttiz*", "ot-TIZ"],
+              ["4", "*toʻrt*", "tort", "40", "*qirq*", "qirq"],
+              ["5", "*besh*", "bésy", "50", "*ellik*", "él-LIK"],
+              ["6", "*olti*", "ål-TI", "60", "*oltmish*", "ålt-MISY"],
+              ["7", "*yetti*", "yét-TI", "70", "*yetmish*", "yét-MISY"],
+              ["8", "*sakkiz*", "såk-KIZ", "80", "*sakson*", "såk-SÅN"],
+              ["9", "*toʻqqiz*", "toq-QIZ", "90", "*toʻqson*", "tåq-SÅN"],
+              ["0", "*nol*", "nål", "100", "*yuz*", "yuz"]
+            ]
+          },
+          "after": [
+            "**Angka belasan = *oʻn* + satuan**, ditulis terpisah: *oʻn bir* (11), *oʻn besh* (15), *oʻn toʻqqiz* (19). Puluhan lain persis sama: *yigirma uch* (23), *qirq yetti* (47), *toʻqson toʻqqiz* (99).",
+            "Di atas seratus: *yuz* (100), *ikki yuz* (200), *ming* (1.000), *besh ming* (5.000), *million* (1.000.000). Perhatikan bahwa **tidak ada kata \"satu\"** di depan *yuz* dan *ming* kalau jumlahnya memang satu: 100 = *yuz*, 1.000 = *ming*.",
+            "⚠️ Enam angka mengandung huruf yang mudah tertukar. *Toʻrt* memakai *oʻ*; *oʻn* dan *oʻttiz* juga. Sementara *olti*, *oltmish*, *nol* memakai *o* biasa yang dibaca **å**. Baca deretan ini keras-keras sampai bedanya terdengar: *oʻn — olti — oʻttiz — oltmish*."
+          ]
+        },
+        {
+          "title": "-ta: akhiran yang muncul saat kamu menghitung benda",
+          "body": [
+            "Bahasa Indonesia menyisipkan kata bantu — tiga **buah** buku, dua **ekor** kucing. Bahasa Uzbek melakukan hal yang sama, tetapi dengan satu akhiran yang menempel pada angkanya."
+          ],
+          "table": {
+            "head": ["Angka", "+ -ta", "Contoh", "Arti"],
+            "rows": [
+              ["*bir*", "**bitta**", "*bitta kitob*", "satu buku"],
+              ["*ikki*", "**ikkita**", "*ikkita stol*", "dua meja"],
+              ["*uch*", "**uchta**", "*uchta anor*", "tiga delima"],
+              ["*toʻrt*", "**toʻrtta**", "*toʻrtta qalam*", "empat pensil"],
+              ["*besh*", "**beshta**", "*beshta bola*", "lima anak"],
+              ["*oʻn*", "**oʻnta**", "*oʻnta kishi*", "sepuluh orang"]
+            ]
+          },
+          "after": [
+            "⚠️ **Sesudah angka, kata bendanya tetap tunggal.** *Uchta kitob*, bukan *uchta kitoblar*. Angkanya sudah menyatakan jumlah — sama persis dengan \"tiga buku\" dalam bahasa Indonesia.",
+            "*-ta* dipakai ketika bendanya **dihitung satuan**. Untuk ukuran dan takaran, angkanya berdiri telanjang: *ikki kilo uzum*, *uch soat*, *besh ming soʻm*. Jadi *bitta non* (satu roti) tetapi *bir kilo non* (satu kilo roti).",
+            "Untuk orang, ada bentuk hormat *nafar*: *besh nafar talaba* (lima orang mahasiswa). Ia dipakai di tulisan resmi dan pengumuman; di jalanan *beshta talaba* sudah cukup."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kalimat wajib di bozor",
+      "blocks": [
+        { "type": "p", "text": "Tawar-menawar di Uzbekistan bukan pertengkaran, melainkan basa-basi yang menyenangkan kedua pihak. Menawar dengan senyum dianggap sopan; membayar harga pertama tanpa bertanya justru dianggap aneh." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**Bu qancha turadi?**", "bu QÅN-cå tu-rå-DI", "Ini berapa harganya?"],
+            ["**Bu necha pul?**", "bu né-CÅ pul", "Ini berapa uang? (sehari-hari)"],
+            ["**Qimmat!**", "qim-MAT", "Mahal!"],
+            ["**Arzonroq boʻladimi?**", "år-zån-RÅQ bo-lå-di-MI", "Bisa lebih murah?"],
+            ["**Chegirma bormi?**", "cé-gir-MÅ bår-MI", "Ada diskon?"],
+            ["**Mayli, olaman.**", "MÅY-li å-lå-MAN", "Baiklah, saya ambil."],
+            ["**Hammasi qancha boʻldi?**", "håm-må-si QÅN-cå bol-DI", "Semuanya jadi berapa?"],
+            ["**Qaytimi bormi?**", "QÅY-ti-mi bår-MI", "Ada kembaliannya?"],
+            ["**Kerak emas, rahmat.**", "ké-RAK é-MÅS", "Tidak perlu, terima kasih."],
+            ["**Bir koʻray.**", "bir ko-RÅY", "Coba saya lihat dulu."]
+          ]
+        },
+        { "type": "p", "text": "Satu kalimat pamungkas kalau harganya benar-benar tak masuk akal: *Boshqa joyda arzonroq* — \"di tempat lain lebih murah\". Ucapkan sambil melangkah pergi setengah langkah, dan lihat apa yang terjadi." }
+      ]
+    },
+    {
+      "title": "Buah, roti, dan yang lain di rak",
+      "blocks": [
+        { "type": "p", "text": "Uzbekistan adalah negeri buah. Melon dan anggurnya terkenal sejak zaman Jalur Sutra, dan orang Uzbek betul-betul bangga akan hal itu — memuji buahnya adalah cara tercepat memenangkan hati penjualnya." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**non**", "nån", "roti (bundar khas Uzbek)"],
+            ["**meva**", "mé-VÅ", "buah"],
+            ["**olma**", "ÅL-må", "apel"],
+            ["**uzum**", "u-ZUM", "anggur"],
+            ["**anor**", "å-NÅR", "delima"],
+            ["**qovun**", "qå-VUN", "melon"],
+            ["**tarvuz**", "tår-VUZ", "semangka"],
+            ["**shaftoli**", "syåf-tå-LI", "persik"],
+            ["**sabzavot**", "såb-zå-VÅT", "sayuran"],
+            ["**kartoshka**", "kår-TÅSY-kå", "kentang"],
+            ["**piyoz**", "pi-YÅZ", "bawang bombai"],
+            ["**goʻsht**", "gosyt", "daging"],
+            ["**tuxum**", "tu-KHUM", "telur"],
+            ["**sut**", "sut", "susu"],
+            ["**shakar**", "syå-KAR", "gula"],
+            ["**tuz**", "tuz", "garam"]
+          ]
+        },
+        { "type": "p", "text": "*Non* bukan sekadar roti. Ia bundar, dicap di tengahnya, dan diperlakukan dengan hormat: tidak boleh diletakkan terbalik, tidak boleh dibuang, dan dipecah dengan tangan — tidak pernah dipotong dengan pisau. Kalau kamu tamu di rumah orang Uzbek, memecah non adalah bagian pertama dari makan bersama." },
+        { "type": "p", "text": "⚠️ *Anor* (delima) dan *shakar* (gula) adalah kata Persia dan Arab yang juga sampai ke bahasa Indonesia — \"sakar\" dalam \"sakarin\", dan delima dalam bahasa Melayu klasik disebut \"anar\" di beberapa naskah. Modal lamamu bekerja lagi." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "uz": "bir", "baca": "bir", "id": "satu" },
+    { "uz": "ikki", "baca": "ik-KI", "id": "dua" },
+    { "uz": "uch", "baca": "uc", "id": "tiga" },
+    { "uz": "toʻrt", "baca": "tort", "id": "empat" },
+    { "uz": "besh", "baca": "bésy", "id": "lima" },
+    { "uz": "olti", "baca": "ål-TI", "id": "enam" },
+    { "uz": "yetti", "baca": "yét-TI", "id": "tujuh" },
+    { "uz": "sakkiz", "baca": "såk-KIZ", "id": "delapan" },
+    { "uz": "toʻqqiz", "baca": "toq-QIZ", "id": "sembilan" },
+    { "uz": "oʻn", "baca": "on", "id": "sepuluh" },
+    { "uz": "yigirma", "baca": "yi-gir-MÅ", "id": "dua puluh" },
+    { "uz": "ellik", "baca": "él-LIK", "id": "lima puluh" },
+    { "uz": "yuz", "baca": "yuz", "id": "seratus" },
+    { "uz": "ming", "baca": "ming", "id": "seribu" },
+    { "uz": "soʻm", "baca": "som", "id": "som (mata uang)" },
+    { "uz": "qancha", "baca": "QÅN-cå", "id": "berapa (harga/jumlah)" },
+    { "uz": "turmoq", "baca": "tur-MÅQ", "id": "berdiri; berharga" },
+    { "uz": "meva", "baca": "mé-VÅ", "id": "buah" },
+    { "uz": "uzum", "baca": "u-ZUM", "id": "anggur" },
+    { "uz": "anor", "baca": "å-NÅR", "id": "delima" },
+    { "uz": "olma", "baca": "ÅL-må", "id": "apel" },
+    { "uz": "qovun", "baca": "qå-VUN", "id": "melon" },
+    { "uz": "non", "baca": "nån", "id": "roti" },
+    { "uz": "kilo", "baca": "ki-LÅ", "id": "kilogram" },
+    { "uz": "dona", "baca": "då-NÅ", "id": "biji, buah (satuan)" },
+    { "uz": "shirin", "baca": "syi-RIN", "id": "manis" },
+    { "uz": "arzonroq", "baca": "år-zån-RÅQ", "id": "lebih murah" },
+    { "uz": "chegirma", "baca": "cé-gir-MÅ", "id": "diskon" },
+    { "uz": "qaytim", "baca": "QÅY-tim", "id": "kembalian" },
+    { "uz": "mayli", "baca": "MÅY-li", "id": "baiklah" },
+    { "uz": "yana", "baca": "yå-NÅ", "id": "lagi" },
+    { "uz": "hammasi", "baca": "håm-må-SI", "id": "semuanya" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis angkanya dalam bahasa Uzbek.",
+      "items": ["7", "13", "24", "40", "58", "99", "300", "5.000"]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Uzbek.",
+      "items": [
+        "Ini berapa harganya?",
+        "Dua kilo anggur, tolong.",
+        "Bisa lebih murah?",
+        "Saya mau tiga delima.",
+        "Semuanya jadi berapa?",
+        "Ada kembaliannya?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk -ta atau angka telanjang, mana yang benar.",
+      "items": [
+        "____ kitob bor. (3)",
+        "____ kilo uzum, iltimos. (2)",
+        "Xonada ____ stol bor. (5)",
+        "Bu ____ ming soʻm. (20)",
+        "Bizning oilamiz ____ kishi. (10)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "turadi / bu / qancha / ?",
+        "boʻladimi / arzonroq / ?",
+        "bering / anor / uchta",
+        "soʻm / ming / yigirma / besh",
+        "bormi / qaytimi / ?"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 3. Terjemahkan ke bahasa Uzbek tanpa melihat unitnya.",
+      "items": [
+        "Ini keluarga saya.",
+        "Ayah saya dokter.",
+        "Saya punya satu kakak laki-laki.",
+        "Adik perempuan Anda berumur berapa?",
+        "Buku ini punya saya."
+      ]
+    }
+  ],
+  "answers": [
+    "yetti — oʻn uch — yigirma toʻrt — qirq — ellik sakkiz — toʻqson toʻqqiz — uch yuz — besh ming",
+    "Bu qancha turadi? — Ikki kilo uzum, iltimos. — Arzonroq boʻladimi? — Uchta anor olaman. — Hammasi qancha boʻldi? — Qaytimi bormi?",
+    "Uchta — Ikki — beshta — yigirma — oʻn",
+    "Bu qancha turadi? — Arzonroq boʻladimi? — Uchta anor bering. — Yigirma besh ming soʻm. — Qaytimi bormi?",
+    "Bu mening oilam. — Otam shifokor. — Bitta akam bor. — Singlingiz necha yoshda? — Bu kitob meniki."
+  ]
+}

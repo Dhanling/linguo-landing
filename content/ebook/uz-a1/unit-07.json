@@ -1,0 +1,213 @@
+{
+  "title": "Akhiran -ni: sasaran yang tertentu",
+  "title_target": "Tushum kelishigi: -ni",
+  "goal": "Mengenali kapan sebuah objek harus memakai *-ni* dan kapan ia berdiri telanjang — satu-satunya beda tata bahasa yang sama sekali tidak ditandai oleh bahasa Indonesia.",
+  "bekal": [
+    "membedakan *kitob oʻqiyman* dari *kitobni oʻqiyman*",
+    "memasang *-ni* wajib pada nama orang, kata ganti, dan benda yang sudah disebut",
+    "memakai *-ni* bersama akhiran milik: *kitobimni*, *uyingizni*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Kitobni topa olmayapman",
+      "intro": "Di perpustakaan kampus. Budi mengaduk-aduk tasnya dengan panik.",
+      "lines": [
+        { "speaker": "Budi:", "text": "Nilufar, kitobimni koʻrmadingizmi?", "id": "Nilufar, apa Anda melihat buku saya?", "literal": "Nilufar, buku-ku-sasaran lihat-tidak-Anda-kah?" },
+        { "speaker": "Nilufar:", "text": "Qaysi kitobni? Lugʻatnimi?", "id": "Buku yang mana? Kamusnya?", "literal": "yang-mana buku-sasaran? kamus-sasaran-kah?" },
+        { "speaker": "Budi:", "text": "Ha, lugʻatni. Ertalab stolga qoʻydim.", "id": "Ya, kamusnya. Tadi pagi saya taruh di meja.", "literal": "ya, kamus-sasaran. pagi meja-ke taruh-saya." },
+        { "speaker": "Nilufar:", "text": "Men bir lugʻat koʻrdim, lekin sizniki emas edi.", "id": "Saya melihat sebuah kamus, tapi bukan punya Anda.", "literal": "saya satu kamus lihat-saya, tetapi Anda-punya bukan adalah." },
+        { "speaker": "Budi:", "text": "Farqi bor: mening lugʻatim eski va qizil.", "id": "Bedanya ada: kamus saya lama dan merah.", "literal": "beda-nya ada: milik-saya kamus-ku lama dan merah." },
+        { "speaker": "Nilufar:", "text": "Unda anavi javonni koʻring. Men Anvarni chaqiraman.", "id": "Kalau begitu lihat rak yang di sana. Saya panggilkan Anvar.", "literal": "itu-di sana rak-sasaran lihatlah. saya Anvar-sasaran panggil-saya." },
+        { "speaker": "Budi:", "text": "Anvar kim?", "id": "Anvar siapa?", "literal": "Anvar siapa?" },
+        { "speaker": "Nilufar:", "text": "Kutubxonachi. U hamma kitobni biladi.", "id": "Petugas perpustakaan. Dia tahu semua buku.", "literal": "perpustakaan-orang. dia semua buku-sasaran tahu." },
+        { "speaker": "Anvar:", "text": "Qizil lugʻatmi? Uni men oldim — muqovasi yirtiq edi.", "id": "Kamus merah? Itu saya ambil — sampulnya sobek.", "literal": "merah kamus-kah? itu-sasaran saya ambil-saya — sampul-nya sobek adalah." },
+        { "speaker": "Budi:", "text": "Voy, rahmat! Sizni butun kun qidirdim!", "id": "Wah, terima kasih! Saya mencari Anda sepanjang hari!", "literal": "wah, terima-kasih! Anda-sasaran seluruh hari cari-saya!" },
+        { "speaker": "Anvar:", "text": "Arzimaydi. Endi kitoblarni stolga qoʻymang!", "id": "Sama-sama. Lain kali jangan taruh buku di meja!", "literal": "tak-berarti. sekarang buku-buku-sasaran meja-ke jangan-taruh!" }
+      ],
+      "notes": [
+        "**Lugʻatni, bukan lugʻat.** Di baris ketiga Budi memakai *-ni* karena keduanya sudah tahu kamus mana yang dimaksud — ia baru saja disebut. Di baris keempat Nilufar memakai *lugʻat* telanjang karena yang ia lihat adalah *sebuah* kamus, belum tentu kamus itu.",
+        "**Nama orang dan kata ganti selalu memakai -ni.** *Anvarni chaqiraman* (saya memanggil Anvar), *Sizni qidirdim* (saya mencari Anda). Orang tidak pernah \"tak tentu\" — kamu selalu memanggil orang tertentu.",
+        "**Uni = \"itu\" sebagai sasaran.** Bentuk *-ni* dari *u*. Lengkapnya: *meni* (saya), *seni*, *uni*, *bizni*, *sizni*, *ularni*. Perhatikan bahwa *men* dan *sen* memendek jadi *me-* dan *se-*.",
+        "**Edi menandai keadaan lampau.** *Sizniki emas edi* = \"bukan punya Anda (waktu itu)\". Ia pasangan lampau dari kalimat tanpa kata kerja unit 1, dan akan dibongkar penuh di unit 11."
+      ],
+      "grammars": [
+        {
+          "title": "Kapan -ni dipakai, kapan tidak",
+          "body": [
+            "Bahasa Indonesia menyerahkan urusan ini seluruhnya kepada konteks. Bahasa Uzbek menandainya. Aturannya bisa diringkas dalam satu pertanyaan: **apakah lawan bicaraku tahu persis benda mana yang kumaksud?**"
+          ],
+          "table": {
+            "head": ["Kalimat", "Arti", "Kenapa"],
+            "rows": [
+              ["*Men kitob oʻqiyman.*", "Saya membaca buku.", "buku apa saja — kegiatan, bukan benda tertentu"],
+              ["*Men kitobni oʻqiyman.*", "Saya membaca buku itu.", "buku yang sudah kita bicarakan"],
+              ["*Choy ichaman.*", "Saya minum teh.", "teh secara umum"],
+              ["*Choyni iching!*", "Minumlah tehnya!", "teh yang ada di depanmu"],
+              ["*Anvarni chaqir.*", "Panggil Anvar.", "nama orang — selalu tertentu"],
+              ["*Kitobimni topdim.*", "Saya menemukan buku saya.", "sudah bermilik → pasti tertentu"]
+            ]
+          },
+          "after": [
+            "**Empat hal yang selalu memakai -ni:** nama diri, kata ganti orang, kata benda yang sudah memakai akhiran milik, dan kata benda yang ditunjuk dengan *bu/shu/u*. Kalau salah satunya ada, jangan ragu — pasang *-ni*.",
+            "**Yang tidak memakai -ni** adalah objek tak tentu yang berdiri tepat di depan kata kerja dan hampir menyatu dengannya: *kitob oʻqimoq* (membaca-buku), *choy ichmoq* (minum-teh), *ish qilmoq* (bekerja). Perhatikan bahwa bahasa Indonesia pun menyatukan keduanya: \"membaca buku\" terasa seperti satu kegiatan.",
+            "⚠️ Begitu objeknya **berpindah dari tempat tepat sebelum kata kerja**, ia hampir selalu butuh *-ni*: *Kitobni men oʻqiyman* (Buku itu, sayalah yang membacanya)."
+          ]
+        },
+        {
+          "title": "Urutan akhiran: jamak → milik → sasaran",
+          "body": [
+            "Akhiran bahasa Uzbek berbaris, tidak pernah menyalip. Sekali kamu hafal urutannya, kata sepanjang apa pun bisa kamu bongkar."
+          ],
+          "table": {
+            "head": ["Bentuk", "Bongkarannya", "Arti"],
+            "rows": [
+              ["*kitobni*", "kitob + ni", "buku itu (sasaran)"],
+              ["*kitobimni*", "kitob + im + ni", "buku saya (sasaran)"],
+              ["*kitoblarni*", "kitob + lar + ni", "buku-buku itu"],
+              ["*kitoblarimni*", "kitob + lar + im + ni", "buku-buku saya"],
+              ["*doʻstingizni*", "doʻst + ingiz + ni", "teman Anda"],
+              ["*uylarimizni*", "uy + lar + imiz + ni", "rumah-rumah kami"]
+            ]
+          },
+          "after": [
+            "Urutannya **tidak pernah** berubah: kata dasar → *-lar* → akhiran milik → akhiran kasus. Aturan yang sama berlaku untuk *-da*, *-ga*, dan *-dan* yang sudah dan akan kamu pelajari.",
+            "Latihan yang paling menolong bukan menghafal tabel, melainkan **membongkar** kata panjang yang kamu temui. Lihat *doʻstlarimizda* dan pisahkan: *doʻst-lar-imiz-da* = \"pada teman-teman kami\". Lima detik, dan kata itu berhenti menakutkan."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Warna",
+      "blocks": [
+        { "type": "p", "text": "Semuanya kata sifat, jadi semuanya berdiri di depan kata bendanya dan tidak pernah berubah bentuk." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Arti", "Oʻzbekcha", "Cara baca", "Arti"],
+          "rows": [
+            ["**qizil**", "qi-ZIL", "merah", "**yashil**", "yå-SYIL", "hijau"],
+            ["**koʻk**", "kok", "biru", "**sariq**", "så-RIQ", "kuning"],
+            ["**oq**", "åq", "putih", "**qora**", "qå-RÅ", "hitam"],
+            ["**jigarrang**", "ji-går-RANG", "cokelat", "**kulrang**", "kul-RANG", "abu-abu"],
+            ["**pushti**", "pusy-TI", "merah muda", "**siyoh**", "si-YÅH", "biru tua, tinta"]
+          ]
+        },
+        { "type": "p", "text": "⚠️ *Koʻk* berarti **biru**, tetapi juga **langit** dan **hijau muda** untuk tumbuhan: *koʻk choy* adalah teh hijau, bukan teh biru. Bahasa Turki lama tidak memisahkan biru dari hijau, dan sisa kebiasaan itu masih terlihat di sini." },
+        { "type": "p", "text": "*Jigarrang* harfiahnya \"warna hati\" (*jigar* = hati, sepupu kata \"jigar\" dalam \"jigar-mu\"), dan *kulrang* berarti \"warna abu\". Akhiran *-rang* datang dari bahasa Persia dan berarti warna — sepupu dari \"ragam\" dan \"warna-warni\" dalam pemakaian klasik." }
+      ]
+    },
+    {
+      "title": "Kata tanya lengkap",
+      "blocks": [
+        { "type": "p", "text": "Sepuluh kata tanya menutup hampir seluruh percakapan A1. Perhatikan bahwa semuanya boleh menerima akhiran, persis seperti kata benda biasa: *kimga* (kepada siapa), *nimada* (pada apa), *qayerdan* (dari mana)." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Arti", "Contoh"],
+          "rows": [
+            ["**kim**", "kim", "siapa", "*Bu kim?*"],
+            ["**nima**", "NI-må", "apa", "*Bu nima?*"],
+            ["**qayer**", "qå-YÉR", "mana (tempat)", "*Qayerda yashaysiz?*"],
+            ["**qachon**", "qå-CÅN", "kapan", "*Qachon kelasiz?*"],
+            ["**nega**", "né-GÅ", "kenapa", "*Nega bormaysiz?*"],
+            ["**qanday**", "QÅN-dåy", "bagaimana", "*Qanday oʻqiysiz?*"],
+            ["**qanaqa**", "qå-NÅ-qå", "macam apa", "*Qanaqa kitob?*"],
+            ["**qaysi**", "QÅY-si", "yang mana", "*Qaysi kitobni?*"],
+            ["**nechta**", "néc-TÅ", "berapa buah", "*Nechta kitob?*"],
+            ["**qancha**", "QÅN-cå", "berapa banyak", "*Qancha turadi?*"]
+          ]
+        },
+        { "type": "p", "text": "⚠️ Kata tanya bahasa Uzbek **tidak memindahkan apa pun**. Kalimat tanya tersusun sama persis dengan kalimat berita, kata kerjanya tetap di ujung: *Siz qayerda ishlaysiz?* Bandingkan dengan bahasa Inggris yang harus membalik urutannya." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "uz": "topmoq", "baca": "tåp-MÅQ", "id": "menemukan" },
+    { "uz": "qidirmoq", "baca": "qi-dir-MÅQ", "id": "mencari" },
+    { "uz": "qoʻymoq", "baca": "qoy-MÅQ", "id": "meletakkan" },
+    { "uz": "chaqirmoq", "baca": "cå-qir-MÅQ", "id": "memanggil" },
+    { "uz": "muqova", "baca": "mu-qå-VÅ", "id": "sampul" },
+    { "uz": "farq", "baca": "fårq", "id": "beda, perbedaan" },
+    { "uz": "butun", "baca": "bu-TUN", "id": "seluruh, utuh" },
+    { "uz": "endi", "baca": "én-DI", "id": "sekarang, lain kali" },
+    { "uz": "unda", "baca": "un-DÅ", "id": "kalau begitu" },
+    { "uz": "qaysi", "baca": "QÅY-si", "id": "yang mana" },
+    { "uz": "qanaqa", "baca": "qå-NÅ-qå", "id": "macam apa" },
+    { "uz": "qachon", "baca": "qå-CÅN", "id": "kapan" },
+    { "uz": "nega", "baca": "né-GÅ", "id": "kenapa" },
+    { "uz": "qanday", "baca": "QÅN-dåy", "id": "bagaimana" },
+    { "uz": "qizil", "baca": "qi-ZIL", "id": "merah" },
+    { "uz": "koʻk", "baca": "kok", "id": "biru; hijau (daun)" },
+    { "uz": "yashil", "baca": "yå-SYIL", "id": "hijau" },
+    { "uz": "sariq", "baca": "så-RIQ", "id": "kuning" },
+    { "uz": "oq", "baca": "åq", "id": "putih" },
+    { "uz": "qora", "baca": "qå-RÅ", "id": "hitam" },
+    { "uz": "meni", "baca": "mé-NI", "id": "saya (sasaran)" },
+    { "uz": "sizni", "baca": "siz-NI", "id": "Anda (sasaran)" },
+    { "uz": "uni", "baca": "u-NI", "id": "dia, itu (sasaran)" },
+    { "uz": "edi", "baca": "é-DI", "id": "adalah (lampau)" },
+    { "uz": "arzimaydi", "baca": "år-zi-MÅY-di", "id": "sama-sama" },
+    { "uz": "yirtiq", "baca": "yir-TIQ", "id": "sobek" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pasang -ni kalau perlu; kalau tidak perlu, tulis kata bendanya apa adanya.",
+      "items": [
+        "Men ____ oʻqiyman. (kitob — buku apa saja)",
+        "Men ____ oʻqiyman. (kitob — buku yang tadi disebut)",
+        "____ chaqiring! (Anvar)",
+        "Har kuni ____ ichaman. (choy — teh secara umum)",
+        "____ topdim. (kalitim)",
+        "Biz ____ kutamiz. (siz)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Uzbek.",
+      "items": [
+        "Saya mencari buku saya.",
+        "Anda melihat kamus itu?",
+        "Panggil Nilufar!",
+        "Saya menunggu Anda.",
+        "Dia tahu semua buku.",
+        "Jangan taruh buku-buku itu di meja."
+      ]
+    },
+    {
+      "prompt": "Bongkar kata panjang berikut menjadi bagian-bagiannya, lalu terjemahkan. Contoh: kitobimni = kitob + im + ni = buku saya.",
+      "items": [
+        "doʻstlarimni",
+        "uyingizni",
+        "kitoblarni",
+        "xonamizda",
+        "oilangizni"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "qidirdim / men / sizni",
+        "koʻrmadingizmi / kitobimni / ?",
+        "biladi / kitobni / u / hamma",
+        "oʻqiyman / kitob / men / har kuni",
+        "chaqiraman / Anvarni / men"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 5. Terjemahkan ke bahasa Uzbek tanpa melihat unitnya.",
+      "items": [
+        "Ini berapa harganya?",
+        "Dua kilo apel, tolong.",
+        "Bisa lebih murah?",
+        "Semuanya jadi berapa?",
+        "Ada kembaliannya?"
+      ]
+    }
+  ],
+  "answers": [
+    "kitob — kitobni — Anvarni — choy — Kalitimni — sizni",
+    "Men kitobimni qidiraman. — Siz lugʻatni koʻrdingizmi? — Nilufarni chaqiring! — Men sizni kutaman. — U hamma kitobni biladi. — Kitoblarni stolga qoʻymang.",
+    "doʻst + lar + im + ni = teman-teman saya — uy + ingiz + ni = rumah Anda — kitob + lar + ni = buku-buku itu — xona + miz + da = di kamar kami — oila + ngiz + ni = keluarga Anda",
+    "Men sizni qidirdim. — Kitobimni koʻrmadingizmi? — U hamma kitobni biladi. — Men har kuni kitob oʻqiyman. — Men Anvarni chaqiraman.",
+    "Bu qancha turadi? — Ikki kilo olma, iltimos. — Arzonroq boʻladimi? — Hammasi qancha boʻldi? — Qaytimi bormi?"
+  ]
+}

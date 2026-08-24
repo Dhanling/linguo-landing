@@ -1,0 +1,205 @@
+{
+  "title": "Membandingkan: -roq, eng, dan belanja pakaian",
+  "title_target": "Qiyoslash: -roq va eng",
+  "goal": "Membandingkan dua hal tanpa kata \"lebih\", menyebut yang paling dengan *eng*, dan menawar pakaian di toko dengan ukuran yang benar.",
+  "bekal": [
+    "membentuk *kattaroq*, *arzonroq*, *yaxshiroq* dengan satu akhiran",
+    "membandingkan memakai *-dan*: *Bu undan qimmatroq*",
+    "menyebut nomor urut dengan *-inchi*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Bu koʻylak menga toʻgʻri keladimi?",
+      "intro": "Di sebuah toko pakaian di pusat kota. Budi mencari kemeja untuk acara pernikahan teman.",
+      "lines": [
+        { "speaker": "Sotuvchi:", "text": "Xush kelibsiz! Nima qidiryapsiz?", "id": "Selamat datang! Sedang cari apa?", "literal": "senang datang-Anda! apa cari-sedang-Anda?" },
+        { "speaker": "Budi:", "text": "Oq koʻylak kerak. Toʻyga boraman.", "id": "Saya perlu kemeja putih. Saya mau ke pesta pernikahan.", "literal": "putih kemeja perlu. pesta-ke pergi-saya." },
+        { "speaker": "Sotuvchi:", "text": "Oʻlchamingiz nechchi?", "id": "Ukuran Anda berapa?", "literal": "ukuran-Anda berapa?" },
+        { "speaker": "Budi:", "text": "Bilmayman. Indoneziyada M kiyaman.", "id": "Tidak tahu. Di Indonesia saya pakai M.", "literal": "tahu-tidak-saya. Indonesia-di M pakai-saya." },
+        { "speaker": "Sotuvchi:", "text": "Bu yerda oʻlchamlar kichikroq. L oling.", "id": "Di sini ukurannya lebih kecil. Ambil L.", "literal": "ini tempat-di ukuran-ukuran lebih-kecil. L ambillah." },
+        { "speaker": "Budi:", "text": "Kiyib koʻrsam boʻladimi?", "id": "Boleh saya coba pakai?", "literal": "pakai lihat-jika-saya jadi-kah?" },
+        { "speaker": "Sotuvchi:", "text": "Albatta, marhamat. Kiyinish xonasi u yerda.", "id": "Tentu, silakan. Ruang gantinya di sana.", "literal": "tentu, silakan. berpakaian kamar-nya itu tempat-di." },
+        { "speaker": "Budi:", "text": "Bu yaxshiroq. Lekin qora rangi bormi?", "id": "Ini lebih bagus. Tapi ada warna hitamnya?", "literal": "ini lebih-baik. tetapi hitam warna-nya ada-kah?" },
+        { "speaker": "Sotuvchi:", "text": "Bor, ammo qoraroq koʻylak biroz qimmatroq.", "id": "Ada, tapi yang hitam sedikit lebih mahal.", "literal": "ada, tetapi lebih-hitam kemeja sedikit lebih-mahal." },
+        { "speaker": "Budi:", "text": "Eng arzoni qaysi?", "id": "Yang paling murah yang mana?", "literal": "paling murah-nya yang-mana?" },
+        { "speaker": "Sotuvchi:", "text": "Manavi — ikkinchi javondagi. Sifati ham yomon emas.", "id": "Yang ini — yang di rak kedua. Kualitasnya juga tidak buruk.", "literal": "ini-sini — kedua rak-di-yang. mutu-nya juga buruk bukan." }
+      ],
+      "notes": [
+        "**-roq berarti \"lebih\", dan tidak ada kata terpisah untuk itu.** *Katta* (besar) → *kattaroq* (lebih besar). *Arzon* → *arzonroq*. Bahasa Uzbek tidak punya *more* atau *lebih* yang berdiri sendiri; semuanya menempel.",
+        "**Toʻgʻri kelmoq = \"cocok, pas\".** Harfiahnya \"datang dengan lurus\". *Bu menga toʻgʻri keladi* = ini cocok untuk saya. Kata kerja majemuk lagi, dan seperti biasa artinya tidak bisa ditebak dari potongannya.",
+        "**Kiyib koʻrsam boʻladimi? = \"boleh saya coba?\"** Bentuk *-sa* di dalamnya adalah bentuk syarat yang akan dipasang di unit 19. Untuk sekarang hafalkan pola *…-sam boʻladimi?* utuh — ia adalah cara paling sopan meminta izin.",
+        "**Eng arzoni, bukan eng arzon.** Ketika kata sifat dipakai sebagai kata benda (\"yang paling murah\"), ia mendapat akhiran *-i*. Begitu juga *kattasi* (yang besar), *yangisi* (yang baru), *qizili* (yang merah)."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga tingkat perbandingan",
+          "body": [
+            "Perbandingan bahasa Uzbek dibangun dari dua perkakas yang sudah kamu punya: akhiran *-roq*, dan akhiran asal *-dan* dari unit 8."
+          ],
+          "table": {
+            "head": ["Tingkat", "Bentuk", "Contoh", "Arti"],
+            "rows": [
+              ["Biasa", "kata sifat", "*Bu koʻylak qimmat.*", "Kemeja ini mahal."],
+              ["Lebih", "**-roq**", "*Bu koʻylak qimmatroq.*", "Kemeja ini lebih mahal."],
+              ["Lebih dari X", "**X-dan … -roq**", "*Bu undan qimmatroq.*", "Ini lebih mahal daripada itu."],
+              ["Paling", "**eng**", "*Bu eng qimmat koʻylak.*", "Ini kemeja paling mahal."],
+              ["Yang paling", "**eng … -i**", "*Eng qimmati bu.*", "Yang paling mahal adalah ini."],
+              ["Agak", "**biroz / -roq**", "*biroz qimmat*", "agak mahal"]
+            ]
+          },
+          "after": [
+            "**Pembandingnya memakai -dan, bukan kata \"daripada\".** *Sendan kattaman* = \"saya lebih tua darimu\" — harfiahnya \"dari-kamu besar-saya\". Perhatikan bahwa *-roq* bahkan boleh dibuang di sini; *-dan* saja sudah membawa arti perbandingan.",
+            "*Eng* adalah satu-satunya kata perbandingan yang berdiri terpisah, dan ia selalu di depan: *eng yaxshi* (paling baik), *eng katta* (paling besar), *eng birinchi* (paling pertama).",
+            "Untuk kesamaan dipakai *xuddi … kabi* atau *-day/-dek*: *Bu xuddi u kabi* (ini seperti itu), *muzday sovuq* (dingin seperti es), *asalday shirin* (manis seperti madu)."
+          ]
+        },
+        {
+          "title": "Nomor urut: -inchi",
+          "body": [
+            "Satu akhiran mengubah semua angka menjadi urutan. Ia dipakai untuk tanggal, lantai, nomor bus, dan tingkat kelas."
+          ],
+          "table": {
+            "head": ["Angka", "Urutan", "Cara baca", "Arti"],
+            "rows": [
+              ["*bir*", "**birinchi**", "bi-rin-CI", "pertama"],
+              ["*ikki*", "**ikkinchi**", "ik-kin-CI", "kedua"],
+              ["*uch*", "**uchinchi**", "u-cin-CI", "ketiga"],
+              ["*toʻrt*", "**toʻrtinchi**", "tor-tin-CI", "keempat"],
+              ["*besh*", "**beshinchi**", "bé-syin-CI", "kelima"],
+              ["*oʻn*", "**oʻninchi**", "o-nin-CI", "kesepuluh"]
+            ]
+          },
+          "after": [
+            "Aturannya: **angka berakhir huruf mati → -inchi; berakhir huruf hidup → -nchi.** *besh* → *beshinchi*, tetapi *ikki* → *ikki**nchi***, *olti* → *olti**nchi***, *yetti* → *yetti**nchi***.",
+            "Untuk tanggal, urutan Uzbek adalah **bulan lalu tanggal**: *mart oyining beshinchi kuni* atau, lebih pendek, *5-mart* (dibaca *beshinchi mart*). Tahunnya: *2026-yil* (dibaca *ikki ming yigirma oltinchi yil*).",
+            "*Birinchi* juga berarti \"mula-mula\" di awal kalimat: *Birinchi, non oling* = \"pertama-tama, ambil rotinya\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pakaian dan ukuran",
+      "blocks": [
+        { "type": "p", "text": "Sebagian besar kata di bawah ini dipakai dengan kata kerja *kiymoq* (memakai) — dan seperti kebanyakan objek tertentu, ia menuntut *-ni*: *koʻylakni kiying*." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Arti", "Oʻzbekcha", "Cara baca", "Arti"],
+          "rows": [
+            ["**koʻylak**", "koy-LAK", "kemeja; gaun", "**shim**", "syim", "celana"],
+            ["**kurtka**", "KURT-kå", "jaket", "**paypoq**", "påy-PÅQ", "kaus kaki"],
+            ["**etik**", "é-TIK", "sepatu bot", "**tufli**", "TUF-li", "sepatu"],
+            ["**doʻppi**", "dop-PI", "peci khas Uzbek", "**roʻmol**", "ro-MÅL", "kerudung, syal"],
+            ["**kamar**", "kå-MAR", "ikat pinggang", "**soat**", "så-AT", "arloji"]
+          ]
+        },
+        { "type": "p", "text": "*Doʻppi* adalah peci hitam bersulam putih yang dipakai laki-laki Uzbek di acara resmi dan hari raya. Motifnya berbeda-beda menurut daerah — yang bermotif cabai empat sisi berasal dari Chust di lembah Fergana, dan itulah yang paling terkenal. Membeli satu adalah oleh-oleh paling khas dari Uzbekistan." },
+        { "type": "p", "text": "Kalimat yang berguna di toko: *Oʻlchamingiz nechchi?* (ukuran Anda berapa), *Kattarogʻi bormi?* (ada yang lebih besar?), *Bu menga toʻgʻri kelmadi* (ini tidak pas untuk saya), *Boshqa rangi bormi?* (ada warna lain?)." }
+      ]
+    },
+    {
+      "title": "Sifat yang sering dibandingkan",
+      "blocks": [
+        { "type": "p", "text": "Latih dengan cara ini: ambil dua benda di sekitarmu, lalu buat satu kalimat perbandingan untuk tiap baris." },
+        {
+          "type": "tabel",
+          "head": ["Dasar", "Lebih", "Paling", "Arti"],
+          "rows": [
+            ["*katta*", "*kattaroq*", "*eng katta*", "besar"],
+            ["*arzon*", "*arzonroq*", "*eng arzon*", "murah"],
+            ["*yaxshi*", "*yaxshiroq*", "*eng yaxshi*", "baik"],
+            ["*tez*", "*tezroq*", "*eng tez*", "cepat"],
+            ["*qulay*", "*qulayroq*", "*eng qulay*", "nyaman, praktis"],
+            ["*mashhur*", "*mashhurroq*", "*eng mashhur*", "terkenal"]
+          ]
+        },
+        { "type": "p", "text": "⚠️ *-roq* juga menempel pada kata keterangan: *sekinroq gapiring* (bicara lebih pelan), *tezroq yuring* (jalan lebih cepat), *keyinroq* (nanti saja). Bentuk terakhir itu sangat sering dipakai untuk menunda sesuatu dengan sopan." },
+        { "type": "p", "text": "*Qulay* adalah salah satu kata paling berguna yang tidak punya padanan tunggal dalam bahasa Indonesia: ia menutup \"nyaman\", \"praktis\", dan \"pas waktunya\". *Sizga qachon qulay?* = \"kapan Anda enaknya?\"" }
+      ]
+    }
+  ],
+  "vocab": [
+    { "uz": "koʻylak", "baca": "koy-LAK", "id": "kemeja; gaun" },
+    { "uz": "shim", "baca": "syim", "id": "celana" },
+    { "uz": "kurtka", "baca": "KURT-kå", "id": "jaket" },
+    { "uz": "tufli", "baca": "TUF-li", "id": "sepatu" },
+    { "uz": "doʻppi", "baca": "dop-PI", "id": "peci Uzbek" },
+    { "uz": "roʻmol", "baca": "ro-MÅL", "id": "kerudung, syal" },
+    { "uz": "oʻlcham", "baca": "ol-CAM", "id": "ukuran" },
+    { "uz": "rang", "baca": "rång", "id": "warna" },
+    { "uz": "sifat", "baca": "si-FAT", "id": "mutu; sifat" },
+    { "uz": "kiymoq", "baca": "kiy-MÅQ", "id": "memakai (pakaian)" },
+    { "uz": "kiyinish xonasi", "baca": "ki-yi-NISY khå-nå-SI", "id": "ruang ganti" },
+    { "uz": "toʻgʻri kelmoq", "baca": "TOGH-ri kél-MÅQ", "id": "cocok, pas" },
+    { "uz": "toʻy", "baca": "toy", "id": "pesta pernikahan" },
+    { "uz": "eng", "baca": "éng", "id": "paling" },
+    { "uz": "biroz", "baca": "bi-RÅZ", "id": "agak, sedikit" },
+    { "uz": "boshqa", "baca": "båsy-QÅ", "id": "lain" },
+    { "uz": "qulay", "baca": "qu-LAY", "id": "nyaman, praktis" },
+    { "uz": "mashhur", "baca": "måsy-HUR", "id": "terkenal" },
+    { "uz": "birinchi", "baca": "bi-rin-CI", "id": "pertama" },
+    { "uz": "ikkinchi", "baca": "ik-kin-CI", "id": "kedua" },
+    { "uz": "uchinchi", "baca": "u-cin-CI", "id": "ketiga" },
+    { "uz": "nechchi", "baca": "néc-CI", "id": "berapa (nomor)" },
+    { "uz": "manavi", "baca": "må-nå-VI", "id": "yang ini" },
+    { "uz": "xuddi", "baca": "KHUD-di", "id": "persis, seperti" },
+    { "uz": "kabi", "baca": "kå-BI", "id": "seperti" },
+    { "uz": "keyinroq", "baca": "ké-yin-RÅQ", "id": "nanti saja" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi bentuk perbandingan (-roq).",
+      "items": [
+        "katta → ____",
+        "arzon → ____",
+        "tez → ____",
+        "yaxshi → ____",
+        "sekin → ____",
+        "qimmat → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Uzbek.",
+      "items": [
+        "Kemeja ini lebih mahal.",
+        "Ini lebih murah daripada itu.",
+        "Yang paling murah yang mana?",
+        "Boleh saya coba pakai?",
+        "Ada yang lebih besar?",
+        "Ini tidak pas untuk saya."
+      ]
+    },
+    {
+      "prompt": "Tulis nomor urutnya.",
+      "items": ["1", "2", "3", "5", "10", "20"]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "qidiryapsiz / nima / ?",
+        "kerak / oq / menga / koʻylak",
+        "qimmatroq / undan / bu",
+        "qaysi / eng / arzoni / ?",
+        "boʻladimi / kiyib / koʻrsam / ?"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 13. Terjemahkan ke bahasa Uzbek tanpa melihat unitnya.",
+      "items": [
+        "Mau pesan apa?",
+        "Saya mau makan plov.",
+        "Saya perlu air.",
+        "Saya harus pergi.",
+        "Bon, tolong."
+      ]
+    }
+  ],
+  "answers": [
+    "kattaroq — arzonroq — tezroq — yaxshiroq — sekinroq — qimmatroq",
+    "Bu koʻylak qimmatroq. — Bu undan arzonroq. — Eng arzoni qaysi? — Kiyib koʻrsam boʻladimi? — Kattarogʻi bormi? — Bu menga toʻgʻri kelmadi.",
+    "birinchi — ikkinchi — uchinchi — beshinchi — oʻninchi — yigirmanchi",
+    "Nima qidiryapsiz? — Menga oq koʻylak kerak. — Bu undan qimmatroq. — Eng arzoni qaysi? — Kiyib koʻrsam boʻladimi?",
+    "Nima buyurtma qilmoqchisiz? — Men osh yemoqchiman. — Menga suv kerak. — Borishim kerak. — Hisob, iltimos."
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "title": "Bisa, boleh, tidak perlu",
+  "title_target": "Ola olmoq, mumkin, kerak emas",
+  "goal": "Menyatakan kemampuan dengan *-a olmoq*, meminta izin dengan *mumkin*, dan membedakan \"tidak boleh\" dari \"tidak perlu\" — dua hal yang sering tertukar.",
+  "bekal": [
+    "membentuk *bora olaman* (saya bisa pergi) dan *bora olmayman*",
+    "meminta izin dengan *…-sam boʻladimi?* dan *mumkinmi?*",
+    "membedakan *mumkin emas* (tidak boleh) dari *kerak emas* (tidak perlu)"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Kirsam boʻladimi?",
+      "intro": "Budi mengetuk pintu ruang dosen. Ia butuh tanda tangan untuk formulir beasiswa.",
+      "lines": [
+        { "speaker": "Budi:", "text": "Assalomu alaykum, ustoz. Kirsam boʻladimi?", "id": "Assalamualaikum, Pak. Boleh saya masuk?", "literal": "salam, guru. masuk-jika-saya jadi-kah?" },
+        { "speaker": "Ustoz:", "text": "Vaalaykum assalom. Kiring, mumkin.", "id": "Waalaikumsalam. Masuk, boleh.", "literal": "dan-atas-kalian salam. masuklah, boleh." },
+        { "speaker": "Budi:", "text": "Bir savolim bor edi. Vaqtingiz bormi?", "id": "Saya ada satu pertanyaan. Anda ada waktu?", "literal": "satu pertanyaan-ku ada adalah. waktu-Anda ada-kah?" },
+        { "speaker": "Ustoz:", "text": "Bor, ammo koʻp emas. Oʻn daqiqadan keyin majlisim bor.", "id": "Ada, tapi tidak banyak. Sepuluh menit lagi saya ada rapat.", "literal": "ada, tetapi banyak bukan. sepuluh menit-dari sesudah rapat-ku ada." },
+        { "speaker": "Budi:", "text": "Tez boʻladi. Bu hujjatga imzo qoʻya olasizmi?", "id": "Cepat kok. Bisakah Anda menandatangani dokumen ini?", "literal": "cepat jadi. ini dokumen-ke tanda-tangan taruh bisa-Anda-kah?" },
+        { "speaker": "Ustoz:", "text": "Koʻrsating... Bu bugun kerakmi?", "id": "Coba lihat... Ini perlu hari ini?", "literal": "tunjukkanlah... ini hari-ini perlu-kah?" },
+        { "speaker": "Budi:", "text": "Bugun kerak emas, ertaga topshiraman.", "id": "Tidak perlu hari ini, besok saya serahkan.", "literal": "hari-ini perlu bukan, besok serahkan-saya." },
+        { "speaker": "Ustoz:", "text": "Yaxshi. Lekin bu yerga qalam bilan yozish mumkin emas.", "id": "Baik. Tapi di bagian ini tidak boleh ditulis dengan pensil.", "literal": "baik. tetapi ini tempat-ke pensil dengan menulis boleh bukan." },
+        { "speaker": "Budi:", "text": "Ruchkangizni bir daqiqaga olsam boʻladimi?", "id": "Boleh saya pinjam pulpen Anda sebentar?", "literal": "pulpen-Anda-sasaran satu menit-ke ambil-jika-saya jadi-kah?" },
+        { "speaker": "Ustoz:", "text": "Marhamat. Mana, imzo ham qoʻydim.", "id": "Silakan. Nah, tanda tangannya juga sudah saya bubuhkan.", "literal": "silakan. nah, tanda-tangan juga taruh-saya." },
+        { "speaker": "Budi:", "text": "Katta rahmat, ustoz! Endi ketsam boʻladimi?", "id": "Terima kasih banyak, Pak! Saya boleh permisi sekarang?", "literal": "besar terima-kasih, guru! sekarang pergi-jika-saya jadi-kah?" }
+      ],
+      "notes": [
+        "**Kirsam boʻladimi? adalah cara paling sopan meminta izin.** Susunannya: akar + *-sa* + akhiran milik + *boʻladimi*. Harfiahnya \"kalau saya masuk, apakah jadi?\". Bentuk *-sa* dibongkar penuh di unit 19; untuk sekarang hafalkan polanya.",
+        "**Kerak emas ≠ mumkin emas.** *Bugun kerak emas* berarti \"tidak perlu hari ini\" — kamu boleh, tetapi tidak wajib. *Yozish mumkin emas* berarti \"tidak boleh ditulis\" — dilarang. Menukar keduanya bisa membuatmu melanggar aturan sambil merasa sopan.",
+        "**Imzo qoʻymoq = menandatangani**, harfiahnya \"meletakkan tanda tangan\". Kata kerja majemuk lagi, dan seperti biasa *qoʻymoq* di sini kehilangan arti aslinya.",
+        "**Majlis berarti rapat** — kata Arab yang sama dengan \"majelis\" dalam bahasa Indonesia. Di Uzbekistan ia juga nama kamar rendah parlemen: *Oliy Majlis*."
+      ],
+      "grammars": [
+        {
+          "title": "-a olmoq: mampu melakukan",
+          "body": [
+            "Rumusnya: akar + *-a* (atau *-y* setelah huruf hidup) + *olmoq* yang dikonjugasikan. Dua kata terpisah, tetapi diucapkan menyatu."
+          ],
+          "table": {
+            "head": ["Bentuk", "Contoh", "Ingkarnya", "Arti"],
+            "rows": [
+              ["akar + **-a olaman**", "*bora olaman*", "*bora olmayman*", "saya bisa pergi"],
+              ["", "*qila olaman*", "*qila olmayman*", "saya bisa melakukan"],
+              ["akar + **-y olaman**", "*oʻqiy olaman*", "*oʻqiy olmayman*", "saya bisa membaca"],
+              ["", "*ishlay olaman*", "*ishlay olmayman*", "saya bisa bekerja"],
+              ["lampau", "*bora oldim*", "*bora olmadim*", "saya sempat / tidak sempat pergi"],
+              ["pertanyaan", "*bora olasizmi?*", "—", "bisakah Anda pergi?"]
+            ]
+          },
+          "after": [
+            "⚠️ **Ingkarnya menempel pada *olmoq*, bukan pada akarnya.** *Bora olmayman* — bukan *bormay olaman*. Kesalahan ini terdengar langsung, jadi latih bentuk ingkarnya sebanyak bentuk positifnya.",
+            "Bedakan dari *bilmoq* + *-(i)sh* di unit 16. *Suzishni bilaman* = \"saya bisa berenang\" (saya sudah belajar, itu keterampilan saya). *Suza olaman* = \"saya bisa berenang\" (sekarang, dalam keadaan ini, saya mampu).",
+            "Bentuk lampau *-a olmadim* sangat berguna untuk minta maaf: *Kela olmadim, kechirasiz* = \"saya tidak bisa datang, maaf\"."
+          ]
+        },
+        {
+          "title": "Mumkin, kerak emas, mumkin emas",
+          "body": [
+            "Tiga ungkapan yang menutup seluruh urusan izin dan larangan pada tingkat A1."
+          ],
+          "table": {
+            "head": ["Ungkapan", "Contoh", "Arti"],
+            "rows": [
+              ["**mumkin**", "*Kirish mumkin.*", "Boleh masuk."],
+              ["**mumkinmi?**", "*Kirsam mumkinmi?*", "Boleh saya masuk?"],
+              ["**mumkin emas**", "*Chekish mumkin emas.*", "Dilarang merokok."],
+              ["**kerak**", "*Borish kerak.*", "Harus pergi."],
+              ["**kerak emas**", "*Borish kerak emas.*", "Tidak perlu pergi."],
+              ["**shart emas**", "*Toʻlash shart emas.*", "Tidak wajib bayar."]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa semuanya memakai bentuk *-(i)sh* dari unit 16: *kirish*, *chekish*, *borish*, *toʻlash*. Kata kerja harus jadi kata benda dulu sebelum *mumkin* atau *kerak* bisa menutupnya.",
+            "Untuk izin yang lebih santai, cukup *boʻladimi?* — \"boleh?\". Untuk menolak dengan halus: *Kechirasiz, boʻlmaydi* (maaf, tidak bisa).",
+            "Papan pengumuman di Uzbekistan sering memakai bentuk pendek: *Chekish taqiqlanadi* (dilarang merokok), *Kirish taqiqlangan* (dilarang masuk), *Ehtiyot boʻling!* (hati-hati)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mengurus surat dan kantor",
+      "blocks": [
+        { "type": "p", "text": "Kosakata yang tidak romantis tetapi tak terhindarkan bagi siapa pun yang tinggal, kuliah, atau bekerja di Uzbekistan." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Arti", "Oʻzbekcha", "Cara baca", "Arti"],
+          "rows": [
+            ["**hujjat**", "huj-JAT", "dokumen", "**imzo**", "im-ZÅ", "tanda tangan"],
+            ["**pasport**", "PÅS-pårt", "paspor", "**viza**", "VI-zå", "visa"],
+            ["**ariza**", "å-ri-ZÅ", "surat permohonan", "**ruxsat**", "rukh-SAT", "izin"],
+            ["**idora**", "i-då-RÅ", "kantor", "**majlis**", "måj-LIS", "rapat"],
+            ["**muhr**", "muhr", "stempel", "**nusxa**", "NUS-khå", "salinan"]
+          ]
+        },
+        { "type": "p", "text": "⚠️ Hampir semua kata di tabel ini kata Arab yang juga hidup di bahasa Indonesia: *hujjat* (hujah → dokumen bukti), *ariza* (arida → permohonan), *ruxsat* (rukhsah → izin), *idora* (idarah → pengelolaan, kantor), *muhr* (mohor, meterai), *nusxa* (nuskhah → naskah, salinan). Sekali lagi modal lamamu bekerja." },
+        { "type": "p", "text": "Kalimat yang berguna: *Bu hujjatga imzo kerakmi?* (dokumen ini perlu tanda tangan?), *Nusxasini olsam boʻladimi?* (boleh saya ambil salinannya?), *Ruxsat bering, iltimos* (mohon izinnya)." }
+      ]
+    },
+    {
+      "title": "Papan pengumuman yang akan kamu baca",
+      "blocks": [
+        { "type": "p", "text": "Sepuluh tulisan yang menempel di pintu, dinding, dan jendela di seluruh Uzbekistan." },
+        {
+          "type": "tabel",
+          "head": ["Tulisan", "Cara baca", "Arti"],
+          "rows": [
+            ["**OCHIQ**", "å-CIQ", "BUKA"],
+            ["**YOPIQ**", "yå-PIQ", "TUTUP"],
+            ["**KIRISH**", "ki-RISY", "MASUK"],
+            ["**CHIQISH**", "ci-QISY", "KELUAR"],
+            ["**ITARING**", "i-tå-RING", "DORONG"],
+            ["**TORTING**", "tår-TING", "TARIK"],
+            ["**CHEKISH MUMKIN EMAS**", "cé-KISY mum-KIN é-MÅS", "DILARANG MEROKOK"],
+            ["**KIRISH TAQIQLANADI**", "ki-RISY tå-qiq-lå-nå-DI", "DILARANG MASUK"],
+            ["**BEPUL**", "bé-PUL", "GRATIS"],
+            ["**SOTILADI**", "så-ti-lå-DI", "DIJUAL"]
+          ]
+        },
+        { "type": "p", "text": "*Bepul* harfiahnya \"tanpa uang\" — awalan *be-* dari bahasa Persia berarti \"tanpa\", sepupu dari *-siz*. Kamu akan menemuinya lagi di *bechora* (malang, \"tanpa jalan keluar\") dan *behuda* (sia-sia)." },
+        { "type": "p", "text": "Perhatikan juga bahwa banyak papan masih ditulis dengan huruf Sirilik, terutama di gedung tua dan kota kecil: **ОЧИҚ** = *ochiq*, **ЁПИҚ** = *yopiq*. Kalau kamu bertemu papan yang tidak terbaca, kemungkinan besar itu bukan bahasa lain — cuma abjad lain." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "uz": "olmoq", "baca": "ål-MÅQ", "id": "mengambil; bisa (bantu)" },
+    { "uz": "mumkin", "baca": "mum-KIN", "id": "boleh" },
+    { "uz": "mumkin emas", "baca": "mum-KIN é-MÅS", "id": "tidak boleh" },
+    { "uz": "kerak emas", "baca": "ké-RAK é-MÅS", "id": "tidak perlu" },
+    { "uz": "shart emas", "baca": "syårt é-MÅS", "id": "tidak wajib" },
+    { "uz": "taqiqlanadi", "baca": "tå-qiq-lå-nå-DI", "id": "dilarang" },
+    { "uz": "hujjat", "baca": "huj-JAT", "id": "dokumen" },
+    { "uz": "imzo", "baca": "im-ZÅ", "id": "tanda tangan" },
+    { "uz": "ariza", "baca": "å-ri-ZÅ", "id": "surat permohonan" },
+    { "uz": "ruxsat", "baca": "rukh-SAT", "id": "izin" },
+    { "uz": "idora", "baca": "i-då-RÅ", "id": "kantor" },
+    { "uz": "majlis", "baca": "måj-LIS", "id": "rapat" },
+    { "uz": "nusxa", "baca": "NUS-khå", "id": "salinan" },
+    { "uz": "pasport", "baca": "PÅS-pårt", "id": "paspor" },
+    { "uz": "topshirmoq", "baca": "tåp-syir-MÅQ", "id": "menyerahkan" },
+    { "uz": "chekmoq", "baca": "cék-MÅQ", "id": "merokok" },
+    { "uz": "ochiq", "baca": "å-CIQ", "id": "buka, terbuka" },
+    { "uz": "yopiq", "baca": "yå-PIQ", "id": "tutup, tertutup" },
+    { "uz": "kirish", "baca": "ki-RISY", "id": "masuk (pintu masuk)" },
+    { "uz": "chiqish", "baca": "ci-QISY", "id": "keluar (pintu keluar)" },
+    { "uz": "itarmoq", "baca": "i-tår-MÅQ", "id": "mendorong" },
+    { "uz": "bepul", "baca": "bé-PUL", "id": "gratis" },
+    { "uz": "savol", "baca": "så-VÅL", "id": "pertanyaan" },
+    { "uz": "koʻp", "baca": "kop", "id": "banyak" },
+    { "uz": "kam", "baca": "kåm", "id": "sedikit" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi bentuk \"bisa\" (-a/-y olmoq) sesuai pelakunya.",
+      "items": [
+        "bormoq + men → ____",
+        "qilmoq + siz → ____",
+        "oʻqimoq + u → ____",
+        "ishlamoq + biz → ____",
+        "kelmoq + men, ingkar → ____",
+        "suzmoq + sen → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Uzbek.",
+      "items": [
+        "Boleh saya masuk?",
+        "Dilarang merokok di sini.",
+        "Tidak perlu bayar hari ini.",
+        "Bisakah Anda menandatangani ini?",
+        "Saya tidak bisa datang, maaf.",
+        "Boleh saya pinjam pulpen Anda?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan mumkin, mumkin emas, kerak, atau kerak emas.",
+      "items": [
+        "Bu yerda chekish ____. (dilarang)",
+        "Ertaga borish ____. (tidak perlu)",
+        "Kirish ____mi? (boleh?)",
+        "Dori ichish ____. (harus)",
+        "Toʻlash ____. (tidak perlu)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "boʻladimi / kirsam / ?",
+        "emas / mumkin / chekish / bu yerda",
+        "olasizmi / imzo / qoʻya / ?",
+        "olmadim / kela / men",
+        "emas / kerak / bugun"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 16. Terjemahkan ke bahasa Uzbek tanpa melihat unitnya.",
+      "items": [
+        "Saya suka plov.",
+        "Saya suka membaca buku.",
+        "Dia tidak suka cuaca dingin.",
+        "Apa yang Anda lakukan di waktu luang?",
+        "Menurut saya, bagus."
+      ]
+    }
+  ],
+  "answers": [
+    "bora olaman — qila olasiz — oʻqiy oladi — ishlay olamiz — kela olmayman — suza olasan",
+    "Kirsam boʻladimi? — Bu yerda chekish mumkin emas. — Bugun toʻlash kerak emas. — Bunga imzo qoʻya olasizmi? — Kela olmadim, kechirasiz. — Ruchkangizni olsam boʻladimi?",
+    "mumkin emas — kerak emas — mumkin — kerak — kerak emas",
+    "Kirsam boʻladimi? — Bu yerda chekish mumkin emas. — Imzo qoʻya olasizmi? — Men kela olmadim. — Bugun kerak emas.",
+    "Menga osh yoqadi. — Men kitob oʻqishni yoqtiraman. — Unga sovuq havo yoqmaydi. — Boʻsh vaqtingizda nima qilasiz? — Menimcha, yaxshi."
+  ]
+}

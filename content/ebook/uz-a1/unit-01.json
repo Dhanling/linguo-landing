@@ -1,0 +1,213 @@
+{
+  "title": "Salam, siapa nama Anda?",
+  "title_target": "Assalomu alaykum! Ismingiz nima?",
+  "goal": "Menyapa dengan cara yang tepat, menyebut nama dan asal, menanyakan kabar, dan mengenali kenapa kata \"adalah\" bahasa Uzbek menempel di ekor kata — bukan berdiri sendiri.",
+  "bekal": [
+    "menyapa dengan *assalomu alaykum*, *salom*, dan *xayrli tong* pada tempatnya masing-masing",
+    "menyebut nama dan kebangsaan dengan akhiran *-man*, dan menanyakannya dengan *-misiz*",
+    "menyusun kalimat orang ketiga tanpa kata kerja sama sekali — persis seperti bahasa Indonesia"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Toshkentda birinchi kun",
+      "intro": "Hari pertama di Tashkent. Budi, mahasiswa dari Jakarta, duduk di sebelah seorang perempuan muda di ruang tunggu kampus.",
+      "lines": [
+        { "speaker": "Nilufar:", "text": "Assalomu alaykum!", "id": "Assalamualaikum!", "literal": "keselamatan atas-kalian!" },
+        { "speaker": "Budi:", "text": "Vaalaykum assalom!", "id": "Waalaikumsalam!", "literal": "dan-atas-kalian keselamatan!" },
+        { "speaker": "Nilufar:", "text": "Mening ismim Nilufar. Ismingiz nima?", "id": "Nama saya Nilufar. Siapa nama Anda?", "literal": "milik-saya nama-ku Nilufar. nama-Anda apa?" },
+        { "speaker": "Budi:", "text": "Ismim Budi. Tanishganimdan xursandman.", "id": "Nama saya Budi. Senang berkenalan.", "literal": "nama-ku Budi. berkenalan-ku-dari gembira-saya." },
+        { "speaker": "Nilufar:", "text": "Men ham xursandman. Qalaysiz?", "id": "Saya juga senang. Apa kabar?", "literal": "saya juga gembira-saya. bagaimana-Anda?" },
+        { "speaker": "Budi:", "text": "Rahmat, yaxshiman. Siz-chi?", "id": "Terima kasih, saya baik. Anda sendiri?", "literal": "terima-kasih, baik-saya. Anda-pun?" },
+        { "speaker": "Nilufar:", "text": "Men ham yaxshiman. Siz oʻzbekmisiz?", "id": "Saya juga baik. Apakah Anda orang Uzbek?", "literal": "saya juga baik-saya. Anda Uzbek-kah-Anda?" },
+        { "speaker": "Budi:", "text": "Yoʻq, men oʻzbek emasman. Men indoneziyalikman.", "id": "Bukan, saya bukan orang Uzbek. Saya orang Indonesia.", "literal": "tidak, saya Uzbek bukan-saya. saya Indonesia-asal-saya." },
+        { "speaker": "Nilufar:", "text": "Voy, juda qiziq! U ham indoneziyalikmi?", "id": "Wah, menarik sekali! Dia juga orang Indonesia?", "literal": "wah, sangat menarik! dia juga Indonesia-asal-kah?" },
+        { "speaker": "Budi:", "text": "Ha, u mening doʻstim. Uning ismi Rina.", "id": "Ya, dia teman saya. Namanya Rina.", "literal": "ya, dia milik-saya teman-ku. milik-dia nama-nya Rina." },
+        { "speaker": "Nilufar:", "text": "Oʻzbekistonga xush kelibsiz! Koʻrishguncha!", "id": "Selamat datang di Uzbekistan! Sampai jumpa!", "literal": "Uzbekistan-ke senang datang-Anda! saling-lihat-sampai!" }
+      ],
+      "notes": [
+        "**Assalomu alaykum dipakai sepanjang hari.** Kamu sudah mengucapkannya seumur hidup, dan di Uzbekistan bunyinya sama persis. Ini sapaan paling aman untuk siapa pun, kapan pun, di mana pun — dan jawabannya juga sama: *vaalaykum assalom*. Yang lebih santai, kepada teman sebaya, cukup *salom*.",
+        "**Ismingiz nima? harfiahnya \"nama-Anda apa?\".** Tidak ada kata \"siapa\" di sana. Bahasa Uzbek bertanya *nima* (apa) untuk nama, persis seperti bahasa Inggris *what is your name*. Menjawabnya cukup *Ismim Budi* — dua kata, tanpa \"adalah\".",
+        "**Emas adalah satu-satunya cara bilang \"bukan\" untuk kata benda.** *Men oʻzbek emasman* = \"saya Uzbek bukan-saya\". Perhatikan bahwa akhiran *-man* pindah ke *emas*, bukan tinggal di kata bendanya. Ini pola yang akan kamu pakai ratusan kali.",
+        "**Siz-chi? artinya \"kalau Anda sendiri?\".** Akhiran *-chi* melemparkan pertanyaan yang sama kembali ke lawan bicara tanpa mengulang kalimatnya. *Men yaxshiman. Siz-chi?* Sepotong kecil yang membuat percakapanmu langsung terdengar hidup.",
+        "**Tidak ada laki-laki dan perempuan.** *U* berarti \"dia\", entah laki-laki entah perempuan. Bahasa Uzbek tidak punya *he/she*, tidak punya kata sandang, dan tidak punya kata sifat yang berubah bentuk. Sekali lagi: sama seperti bahasa Indonesia."
+      ],
+      "grammars": [
+        {
+          "title": "Akhiran predikat — \"adalah\" yang menempel di ekor",
+          "body": [
+            "Bahasa Uzbek tidak punya kata terpisah untuk \"adalah\". Yang ada adalah akhiran pendek yang ditempelkan ke kata terakhir kalimat. Hafalkan enam baris ini sekarang; ia dipakai di setiap unit sesudah ini."
+          ],
+          "table": {
+            "head": ["Pelaku", "Cara baca", "Akhiran", "*talaba* (mahasiswa)", "Arti"],
+            "rows": [
+              ["**men**", "mén", "**-man**", "*talabaman*", "saya mahasiswa"],
+              ["**sen**", "sén", "**-san**", "*talabasan*", "kamu mahasiswa"],
+              ["**u**", "u", "— *(kosong)*", "*talaba*", "dia mahasiswa"],
+              ["**biz**", "biz", "**-miz**", "*talabamiz*", "kami mahasiswa"],
+              ["**siz**", "siz", "**-siz**", "*talabasiz*", "Anda mahasiswa"],
+              ["**ular**", "u-LÅR", "**-lar**", "*talabalar*", "mereka mahasiswa"]
+            ]
+          },
+          "after": [
+            "Baris ketiga sengaja kosong: **untuk \"dia\" tidak ada akhiran apa pun**. *U talaba* = \"Dia mahasiswa\", dua kata, titik. Ini persis susunan bahasa Indonesia — dan justru bagian inilah yang paling membingungkan pelajar dari Inggris atau Jerman, sementara kamu sudah melakukannya sejak kecil.",
+            "*Men*, *sen*, *biz*, *siz* boleh dibuang, karena akhirannya sudah menyimpan pelakunya: *Yaxshiman* sudah pasti berarti \"saya baik\". Kata gantinya dipakai kalau kamu ingin **menekankan**: *Men yaxshiman* = \"Kalau saya sih baik-baik saja\".",
+            "⚠️ *Siz* berarti \"Anda\" **dan** \"kalian\". *Sen* dipakai kepada teman dekat, adik, dan anak kecil saja. Kalau ragu, pakai *siz* — di Uzbekistan memakai *sen* kepada orang yang baru dikenal terdengar seperti menepuk bahu orang asing."
+          ]
+        },
+        {
+          "title": "Bertanya dengan -mi, mengingkar dengan emas",
+          "body": [
+            "Dua perkakas dasar. Keduanya bekerja dengan cara yang sama: mereka menyisip di antara kata benda dan akhiran orangnya."
+          ],
+          "table": {
+            "head": ["Bentuk", "Contoh", "Arti"],
+            "rows": [
+              ["Pernyataan", "*Men talabaman.*", "Saya mahasiswa."],
+              ["Pertanyaan", "*Siz talaba**mi**siz?*", "Apakah Anda mahasiswa?"],
+              ["Ingkar", "*Men talaba **emas**man.*", "Saya bukan mahasiswa."],
+              ["Ingkar + tanya", "*U talaba **emasmi**?*", "Apakah dia bukan mahasiswa?"],
+              ["Jawaban singkat", "*Ha, talabaman. / Yoʻq, emasman.*", "Ya, saya mahasiswa. / Bukan."]
+            ]
+          },
+          "after": [
+            "Urutannya tidak pernah berubah: **kata benda + -mi + akhiran orang**. Jadi *oʻzbek* + *-mi* + *-siz* → *oʻzbekmisiz*. Kelihatan panjang di tulisan, tetapi di mulut ia satu tarikan napas.",
+            "Untuk *u* dan *ular* yang akhirannya kosong, pertanyaannya berhenti di *-mi*: *U oʻzbekmi?* — itu sudah kalimat lengkap.",
+            "⚠️ *Yoʻq* berarti \"tidak\" sebagai jawaban dan \"tidak ada\" di dalam kalimat. Ia **tidak** dipakai untuk mengingkari kata benda; untuk itu ada *emas*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kalimat yang menolongmu bertahan",
+      "blocks": [
+        { "type": "p", "text": "Sepuluh kalimat berikut bukan bahan hafalan tata bahasa — ia perkakas darurat. Hafalkan bentuk utuhnya sekarang, pahami susunannya nanti." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["Ha / Yoʻq", "hå / yoq", "Ya / Tidak"],
+            ["Rahmat", "rah-MAT", "Terima kasih"],
+            ["Katta rahmat", "kåt-TÅ rah-MAT", "Terima kasih banyak"],
+            ["Arzimaydi", "år-zi-MÅY-di", "Sama-sama"],
+            ["Kechirasiz", "ké-ci-rå-SIZ", "Maaf; permisi"],
+            ["Iltimos", "il-ti-MÅS", "Tolong; silakan"],
+            ["Marhamat", "mår-hå-MAT", "Silakan; ini dia"],
+            ["Tushunmadim", "tu-syun-må-DIM", "Saya tidak mengerti"],
+            ["Bilmayman", "bil-MÅY-mån", "Saya tidak tahu"],
+            ["Sekin gapiring", "sé-KIN gå-pi-RING", "Tolong bicara pelan-pelan"]
+          ]
+        },
+        { "type": "p", "text": "*Marhamat* adalah kata paling serbaguna di halaman ini. Ia berarti \"silakan\" saat mempersilakan duduk, \"ini dia\" saat menyerahkan sesuatu, dan \"mari, ayo\" saat mengajak masuk rumah. Kalau kamu cuma boleh menghafal satu kata dari unit ini, hafalkan yang ini." },
+        { "type": "p", "text": "⚠️ *Rahmat* bukan hanya \"rahmat\" — di Uzbekistan ia berarti **terima kasih**, dan kamu akan mengucapkannya lima puluh kali sehari. Ia juga nama orang yang umum, jadi jangan bingung kalau ada yang memperkenalkan diri sebagai Rahmat." }
+      ]
+    },
+    {
+      "title": "Sapaan menurut waktu dan tingkat kesopanan",
+      "blocks": [
+        { "type": "p", "text": "Bahasa Uzbek memilah sapaan pada dua sumbu sekaligus: jam berapa, dan seberapa dekat kamu dengan lawan bicara. Tabel ini menutup keduanya." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Dipakai kapan"],
+          "rows": [
+            ["**Assalomu alaykum!**", "ås-så-LÅ-mu å-låy-KUM", "Sapaan paling aman — sepanjang hari, kepada siapa pun"],
+            ["**Salom!**", "så-LÅM", "Halo — akrab, kepada teman sebaya"],
+            ["**Xayrli tong!**", "KHÅYR-li tång", "Selamat pagi — sampai sekitar pukul 10"],
+            ["**Xayrli kun!**", "KHÅYR-li kun", "Selamat siang"],
+            ["**Xayrli kech!**", "KHÅYR-li kéc", "Selamat sore/malam — mulai senja"],
+            ["**Xayrli tun!**", "KHÅYR-li tun", "Selamat malam — hanya saat berpisah untuk tidur"],
+            ["**Xayr!**", "khåyr", "Dah — akrab, saat berpisah"],
+            ["**Koʻrishguncha!**", "ko-risy-gun-CÅ", "Sampai jumpa — harfiahnya \"sampai kita saling lihat\""]
+          ]
+        },
+        { "type": "p", "text": "Perhatikan *xayrli*: satu kata itu berarti \"yang membawa kebaikan\", dan ia dipakai untuk keempat waktu. Bandingkan dengan kata Indonesia \"khair\" dalam *khairan* atau nama *Khairul* — akarnya sama persis." },
+        { "type": "p", "text": "Satu kebiasaan yang perlu ditiru: di Uzbekistan, orang yang **lebih muda menyapa lebih dulu**, dan yang **masuk ke ruangan menyapa yang sudah ada di dalamnya**. Lift, ruang tunggu, kantor kecil — mengucapkan *assalomu alaykum* kepada orang yang tidak dikenal itu biasa, dan diam justru terasa dingin." },
+        { "type": "p", "text": "Menyapa orang yang jauh lebih tua sering ditambah panggilan hormat: *aka* (kepada laki-laki, harfiahnya \"kakak\"), *opa* (kepada perempuan), *amaki* atau *ota* (kepada bapak-bapak). Bukan nama, tetapi sapaan — persis seperti \"Mas\", \"Mbak\", dan \"Pak\" dalam bahasa Indonesia." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "uz": "assalomu alaykum", "baca": "ås-så-LÅ-mu å-låy-KUM", "id": "assalamualaikum" },
+    { "uz": "salom", "baca": "så-LÅM", "id": "halo; salam" },
+    { "uz": "xayrli tong", "baca": "KHÅYR-li tång", "id": "selamat pagi" },
+    { "uz": "xayrli kun", "baca": "KHÅYR-li kun", "id": "selamat siang" },
+    { "uz": "xayrli kech", "baca": "KHÅYR-li kéc", "id": "selamat sore/malam" },
+    { "uz": "xayr", "baca": "khåyr", "id": "dah, selamat tinggal" },
+    { "uz": "koʻrishguncha", "baca": "ko-risy-gun-CÅ", "id": "sampai jumpa" },
+    { "uz": "ism", "baca": "ism", "id": "nama" },
+    { "uz": "nima", "baca": "NI-må", "id": "apa" },
+    { "uz": "kim", "baca": "kim", "id": "siapa" },
+    { "uz": "men", "baca": "mén", "id": "saya" },
+    { "uz": "sen", "baca": "sén", "id": "kamu (akrab)" },
+    { "uz": "u", "baca": "u", "id": "dia; itu" },
+    { "uz": "biz", "baca": "biz", "id": "kami, kita" },
+    { "uz": "siz", "baca": "siz", "id": "Anda; kalian" },
+    { "uz": "ular", "baca": "u-LÅR", "id": "mereka" },
+    { "uz": "talaba", "baca": "tå-lå-BÅ", "id": "mahasiswa" },
+    { "uz": "oʻqituvchi", "baca": "o-qi-tuv-CI", "id": "guru, pengajar" },
+    { "uz": "doʻst", "baca": "dost", "id": "teman" },
+    { "uz": "oʻzbek", "baca": "oz-BÉK", "id": "orang Uzbek" },
+    { "uz": "indoneziyalik", "baca": "in-då-né-zi-yå-LIK", "id": "orang Indonesia" },
+    { "uz": "yaxshi", "baca": "yåkh-SYI", "id": "baik, bagus" },
+    { "uz": "ham", "baca": "håm", "id": "juga" },
+    { "uz": "xursand", "baca": "khur-SAND", "id": "senang, gembira" },
+    { "uz": "qiziq", "baca": "qi-ZIQ", "id": "menarik; lucu" },
+    { "uz": "juda", "baca": "ju-DÅ", "id": "sangat" },
+    { "uz": "emas", "baca": "é-MÅS", "id": "bukan" },
+    { "uz": "ha", "baca": "hå", "id": "ya" },
+    { "uz": "yoʻq", "baca": "yoq", "id": "tidak; tidak ada" },
+    { "uz": "rahmat", "baca": "rah-MAT", "id": "terima kasih" },
+    { "uz": "kechirasiz", "baca": "ké-ci-rå-SIZ", "id": "maaf; permisi" },
+    { "uz": "qalaysiz", "baca": "qå-låy-SIZ", "id": "apa kabar? (kepada Anda)" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Uzbek.",
+      "items": [
+        "Assalamualaikum! Siapa nama Anda?",
+        "Nama saya Budi.",
+        "Saya orang Indonesia.",
+        "Apa kabar?",
+        "Terima kasih, saya baik.",
+        "Apakah Anda orang Uzbek?"
+      ]
+    },
+    {
+      "prompt": "Lengkapi dengan akhiran predikat yang tepat (-man, -san, -miz, -siz, -lar, atau kosong).",
+      "items": [
+        "Men talaba____.",
+        "Siz oʻqituvchi____.",
+        "U oʻzbek____.",
+        "Biz doʻst____.",
+        "Sen yaxshi____.",
+        "Ular talaba____."
+      ]
+    },
+    {
+      "prompt": "Ubah jadi pertanyaan dengan -mi, lalu jawab dengan ingkar memakai emas. Tulis keduanya.",
+      "items": [
+        "Siz oʻzbeksiz. → ____",
+        "U talaba. → ____",
+        "Sen oʻqituvchisan. → ____",
+        "Ular indoneziyalik. → ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "Budi / ismim",
+        "emasman / men / oʻzbek",
+        "nima / ismingiz / ?",
+        "xursandman / men / ham",
+        "doʻstim / u / mening"
+      ]
+    }
+  ],
+  "answers": [
+    "Assalomu alaykum! Ismingiz nima? — Ismim Budi. — Men indoneziyalikman. — Qalaysiz? — Rahmat, yaxshiman. — Siz oʻzbekmisiz?",
+    "talabaman — oʻqituvchisiz — oʻzbek — doʻstmiz — yaxshisan — talabalar",
+    "Siz oʻzbekmisiz? Yoʻq, men oʻzbek emasman. — U talabami? Yoʻq, u talaba emas. — Sen oʻqituvchimisan? Yoʻq, men oʻqituvchi emasman. — Ular indoneziyalikmi? Yoʻq, ular indoneziyalik emas.",
+    "Ismim Budi. — Men oʻzbek emasman. — Ismingiz nima? — Men ham xursandman. — U mening doʻstim."
+  ]
+}

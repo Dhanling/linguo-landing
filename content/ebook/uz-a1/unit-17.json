@@ -1,0 +1,219 @@
+{
+  "title": "Badan dan kesehatan: sakit yang \"bertempat\"",
+  "title_target": "Tana va salomatlik: boshim ogʻriyapti",
+  "goal": "Menyebut bagian tubuh, mengeluh sakit dengan susunan khas bahasa Uzbek, dan mengurus diri di apotek atau di ruang periksa.",
+  "bekal": [
+    "menyusun *boshim ogʻriyapti* — \"kepala-ku sedang sakit\"",
+    "memakai *boʻlmoq* untuk perubahan keadaan: *kasal boʻldim*",
+    "membeli obat dan menjelaskan keluhan kepada dokter"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Nima boʻldi?",
+      "intro": "Budi tidak masuk kelas dua hari. Nilufar datang ke asrama membawa sekantong buah.",
+      "lines": [
+        { "speaker": "Nilufar:", "text": "Budi, nima boʻldi? Ikki kundan beri koʻrinmaysiz.", "id": "Budi, kenapa? Dua hari ini Anda tidak kelihatan.", "literal": "Budi, apa jadi? dua hari-dari sejak terlihat-tidak-Anda." },
+        { "speaker": "Budi:", "text": "Kasal boʻldim. Boshim ogʻriyapti.", "id": "Saya sakit. Kepala saya sakit.", "literal": "sakit jadi-saya. kepala-ku sakit-sedang." },
+        { "speaker": "Nilufar:", "text": "Isitmangiz bormi?", "id": "Anda demam?", "literal": "demam-Anda ada-kah?" },
+        { "speaker": "Budi:", "text": "Kecha bor edi. Bugun tomogʻim ham ogʻriyapti.", "id": "Kemarin ada. Hari ini tenggorokan saya juga sakit.", "literal": "kemarin ada adalah. hari-ini tenggorokan-ku juga sakit-sedang." },
+        { "speaker": "Nilufar:", "text": "Dori ichdingizmi?", "id": "Anda sudah minum obat?", "literal": "obat minum-Anda-kah?" },
+        { "speaker": "Budi:", "text": "Yoʻq, dorixonaga borolmadim. Kuchim yoʻq edi.", "id": "Belum, saya tidak sempat ke apotek. Saya tidak ada tenaga.", "literal": "tidak, apotek-ke pergi-bisa-tidak-saya. tenaga-ku tidak-ada adalah." },
+        { "speaker": "Nilufar:", "text": "Men olib kelaman. Shifokorga bordingizmi?", "id": "Saya belikan. Anda sudah ke dokter?", "literal": "saya bawa datang-saya. dokter-ke pergi-Anda-kah?" },
+        { "speaker": "Budi:", "text": "Hali yoʻq. Ertaga borsam boʻladimi deb oʻylayapman.", "id": "Belum. Saya sedang berpikir besok saja ke sana.", "literal": "masih tidak. besok pergi-jika-saya jadi-kah berkata pikir-sedang-saya." },
+        { "speaker": "Nilufar:", "text": "Kechiktirmang! Issiq choy iching, koʻp uxlang.", "id": "Jangan ditunda! Minum teh hangat, tidur yang banyak.", "literal": "jangan-tunda! panas teh minumlah, banyak tidurlah." },
+        { "speaker": "Budi:", "text": "Rahmat, opa. Sizsiz nima qilardim!", "id": "Terima kasih. Tanpa Anda saya bisa apa!", "literal": "terima-kasih, kakak. Anda-tanpa apa lakukan-akan-saya!" },
+        { "speaker": "Nilufar:", "text": "Tezroq tuzaling. Ertaga yana kelaman.", "id": "Cepat sembuh ya. Besok saya datang lagi.", "literal": "lebih-cepat sembuhlah. besok lagi datang-saya." }
+      ],
+      "notes": [
+        "**Boshim ogʻriyapti — kepala yang sakit, bukan kamu.** Bahasa Uzbek menempatkan rasa sakit **di bagian tubuhnya**, dan bagian tubuh itulah yang jadi pelaku kalimat. Harfiahnya \"kepalaku sedang sakit\". Bandingkan dengan bahasa Indonesia yang bilang \"saya sakit kepala\" — pelakunya kamu.",
+        "**Kasal boʻldim = \"saya jatuh sakit\".** *Boʻlmoq* menandai **perubahan** keadaan: *kasal boʻldim* (jadi sakit), *charchadim* (jadi lelah), *katta boʻldi* (jadi besar). Sedangkan *kasalman* berarti \"saya sedang sakit\" tanpa menyebut kapan mulainya.",
+        "**Ikki kundan beri = \"sejak dua hari lalu\".** *-dan beri* berarti \"sejak\", dan ia berpasangan dengan bentuk sedang: *Ikki kundan beri yomgʻir yogʻyapti* (sudah dua hari hujan terus).",
+        "**Sizsiz = \"tanpa Anda\".** Akhiran *-siz* dari unit 13 dipasang pada kata ganti. Perhatikan bahwa ia sebentuk dengan akhiran predikat *-siz* (Anda) — yang membedakan hanya letaknya dan artinya dalam kalimat."
+      ],
+      "grammars": [
+        {
+          "title": "Mengeluh sakit: tiga pola",
+          "body": [
+            "Ketiganya dipakai bergantian dalam percakapan sehari-hari. Yang pertama paling sering."
+          ],
+          "table": {
+            "head": ["Pola", "Contoh", "Arti harfiah"],
+            "rows": [
+              ["**[tubuh]+milik ogʻriyapti**", "*Boshim ogʻriyapti.*", "kepalaku sedang sakit"],
+              ["", "*Qornim ogʻriyapti.*", "perutku sedang sakit"],
+              ["", "*Tishim ogʻriyapti.*", "gigiku sedang sakit"],
+              ["**[orang]da [penyakit] bor**", "*Menda isitma bor.*", "pada saya ada demam"],
+              ["**[orang] kasal**", "*Men kasalman.*", "saya sakit"],
+              ["", "*U kasal boʻldi.*", "dia jatuh sakit"]
+            ]
+          },
+          "after": [
+            "⚠️ Bagian tubuh **wajib memakai akhiran milik**. *Bosh ogʻriyapti* terdengar seperti \"ada kepala yang sedang sakit\" tanpa pemilik — aneh. Selalu *boshim*, *boshingiz*, *boshi*.",
+            "Ingat pembuangan vokal dari unit 3, yang justru banyak terjadi pada nama bagian tubuh: *ogʻiz* → *ogʻzim*, *burun* → *burnim*, *qorin* → *qornim*, *koʻngil* → *koʻnglim*.",
+            "Bentuk lampaunya untuk menceritakan sakit yang sudah lewat: *Kecha boshim ogʻridi* (kemarin kepala saya sakit). Bentuk kebiasaan untuk sakit menahun: *Qishda tizzam ogʻriydi* (kalau musim dingin lutut saya sakit)."
+          ]
+        },
+        {
+          "title": "Boʻlmoq: kata kerja yang mengubah keadaan",
+          "body": [
+            "Satu kata kerja, banyak tugas. Ia menutup \"menjadi\", \"terjadi\", \"boleh\", dan \"jadi\" dalam arti setuju."
+          ],
+          "table": {
+            "head": ["Bentuk", "Contoh", "Arti"],
+            "rows": [
+              ["menjadi", "*Shifokor boʻldim.*", "Saya menjadi dokter."],
+              ["terjadi", "*Nima boʻldi?*", "Apa yang terjadi? / Kenapa?"],
+              ["boleh", "*Boʻladimi?*", "Boleh? / Bisa?"],
+              ["setuju", "*Boʻladi!*", "Boleh! / Oke!"],
+              ["akan ada", "*Ertaga yomgʻir boʻladi.*", "Besok akan hujan."],
+              ["larangan", "*Bu yerda boʻlmaydi.*", "Di sini tidak boleh."]
+            ]
+          },
+          "after": [
+            "*Boʻladi* sendirian adalah salah satu kata paling sering terdengar di Uzbekistan. Ia berarti \"oke\", \"boleh\", \"beres\" — jawaban serbaguna yang selalu aman.",
+            "*Boʻlsin* berarti \"semoga menjadi\": *Salomat boʻling!* (semoga sehat), *Omadingiz boʻlsin!* (semoga beruntung), *Osh boʻlsin!* (selamat menikmati).",
+            "⚠️ Jangan campur *boʻlmoq* dengan *bor*. *Bor* menyatakan sesuatu **sudah ada**; *boʻlmoq* menyatakan sesuatu **menjadi ada** atau **berubah**."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bagian tubuh",
+      "blocks": [
+        { "type": "p", "text": "Ucapkan tiap kata sambil menunjuk bagiannya, lalu ulangi dengan akhiran *-im*. Dua putaran dan daftar ini menempel." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Arti", "Oʻzbekcha", "Cara baca", "Arti"],
+          "rows": [
+            ["**bosh**", "båsy", "kepala", "**qoʻl**", "qol", "tangan"],
+            ["**koʻz**", "koz", "mata", "**oyoq**", "å-YÅQ", "kaki"],
+            ["**quloq**", "qu-LÅQ", "telinga", "**barmoq**", "bår-MÅQ", "jari"],
+            ["**burun**", "bu-RUN", "hidung", "**qorin**", "qå-RIN", "perut"],
+            ["**ogʻiz**", "å-GHIZ", "mulut", "**yurak**", "yu-RAK", "jantung, hati"],
+            ["**tish**", "tisy", "gigi", "**orqa**", "år-QÅ", "punggung"],
+            ["**til**", "til", "lidah", "**tomoq**", "tå-MÅQ", "tenggorokan"],
+            ["**boʻyin**", "bo-YIN", "leher", "**tizza**", "tiz-ZÅ", "lutut"]
+          ]
+        },
+        { "type": "p", "text": "⚠️ *Yurak* berarti **jantung** sebagai organ dan **hati** sebagai tempat perasaan — persis seperti \"hati\" dalam bahasa Indonesia. Sementara *jigar* adalah hati sebagai organ, dan ia juga dipakai sebagai panggilan sayang kepada anak: *jigarim* = \"buah hatiku\"." },
+        { "type": "p", "text": "*Koʻngil* adalah kata yang perlu kamu kenal walau bukan bagian tubuh: ia berarti \"hati, batin, perasaan\". *Koʻnglim toʻq* (hati saya tenang), *koʻngil ochmoq* (menghibur diri), *koʻnglingizga olmang* (jangan tersinggung)." }
+      ]
+    },
+    {
+      "title": "Di apotek dan di ruang periksa",
+      "blocks": [
+        { "type": "p", "text": "Apotek di Uzbekistan menjual banyak obat tanpa resep, dan apotekernya biasa memberi saran langsung — sering kali itu perhentian pertama sebelum ke dokter." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**Oʻzimni yomon his qilyapman.**", "o-zim-NI yå-MÅN his qil-YÅP-mån", "Saya merasa tidak enak badan."],
+            ["**Isitmam bor.**", "i-sit-MAM bår", "Saya demam."],
+            ["**Yoʻtalyapman.**", "yo-tål-YÅP-mån", "Saya batuk."],
+            ["**Tumov boʻldim.**", "tu-MÅV bol-DIM", "Saya pilek."],
+            ["**Bosh ogʻrigʻiga dori bormi?**", "båsy åg-hri-ghi-GÅ då-RI bår-MI", "Ada obat sakit kepala?"],
+            ["**Bu dori retseptsizmi?**", "bu då-RI rét-sépt-SIZ-mi", "Obat ini tanpa resep?"],
+            ["**Kuniga necha marta?**", "ku-ni-GÅ né-CÅ mår-TÅ", "Sehari berapa kali?"],
+            ["**Allergiyam bor.**", "ål-lér-gi-YAM bår", "Saya punya alergi."],
+            ["**Tez yordam chaqiring!**", "téz yår-DAM cå-qi-RING", "Panggil ambulans!"],
+            ["**Tezroq tuzaling!**", "téz-RÅQ tu-zå-LING", "Cepat sembuh ya!"]
+          ]
+        },
+        { "type": "p", "text": "*Tez yordam* harfiahnya \"bantuan cepat\" dan berarti ambulans; nomornya 103. Nomor darurat lain: polisi 102, pemadam 101, gas 104." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "uz": "salomatlik", "baca": "så-lå-måt-LIK", "id": "kesehatan" },
+    { "uz": "kasal", "baca": "kå-SAL", "id": "sakit" },
+    { "uz": "ogʻrimoq", "baca": "åg-hri-MÅQ", "id": "terasa sakit" },
+    { "uz": "isitma", "baca": "i-sit-MÅ", "id": "demam" },
+    { "uz": "yoʻtal", "baca": "yo-TAL", "id": "batuk" },
+    { "uz": "tumov", "baca": "tu-MÅV", "id": "pilek" },
+    { "uz": "dori", "baca": "då-RI", "id": "obat" },
+    { "uz": "retsept", "baca": "rét-SÉPT", "id": "resep" },
+    { "uz": "shifokor", "baca": "syi-få-KÅR", "id": "dokter" },
+    { "uz": "tez yordam", "baca": "téz yår-DAM", "id": "ambulans" },
+    { "uz": "bosh", "baca": "båsy", "id": "kepala" },
+    { "uz": "koʻz", "baca": "koz", "id": "mata" },
+    { "uz": "quloq", "baca": "qu-LÅQ", "id": "telinga" },
+    { "uz": "burun", "baca": "bu-RUN", "id": "hidung" },
+    { "uz": "tish", "baca": "tisy", "id": "gigi" },
+    { "uz": "tomoq", "baca": "tå-MÅQ", "id": "tenggorokan" },
+    { "uz": "qorin", "baca": "qå-RIN", "id": "perut" },
+    { "uz": "qoʻl", "baca": "qol", "id": "tangan" },
+    { "uz": "oyoq", "baca": "å-YÅQ", "id": "kaki" },
+    { "uz": "yurak", "baca": "yu-RAK", "id": "jantung, hati" },
+    { "uz": "koʻngil", "baca": "kon-GIL", "id": "hati, batin" },
+    { "uz": "kuch", "baca": "kuc", "id": "tenaga, kekuatan" },
+    { "uz": "tuzalmoq", "baca": "tu-zål-MÅQ", "id": "sembuh" },
+    { "uz": "uxlamoq", "baca": "ukh-lå-MÅQ", "id": "tidur" },
+    { "uz": "his qilmoq", "baca": "his qil-MÅQ", "id": "merasa" },
+    { "uz": "oʻylamoq", "baca": "oy-lå-MÅQ", "id": "berpikir" },
+    { "uz": "hali", "baca": "hå-LI", "id": "masih; belum" },
+    { "uz": "-dan beri", "baca": "-dån bé-RI", "id": "sejak" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Uzbek.",
+      "items": [
+        "Kepala saya sakit.",
+        "Perut saya sakit.",
+        "Saya demam.",
+        "Saya jatuh sakit.",
+        "Anda sudah minum obat?",
+        "Cepat sembuh ya!"
+      ]
+    },
+    {
+      "prompt": "Pasang akhiran milik \"-ku\" pada bagian tubuh berikut. Hati-hati dengan vokal yang hilang.",
+      "items": [
+        "bosh → ____",
+        "qorin → ____",
+        "burun → ____",
+        "ogʻiz → ____",
+        "tish → ____",
+        "koʻngil → ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bor, boʻldi, atau ogʻriyapti.",
+      "items": [
+        "Menda isitma ____.",
+        "Kecha u kasal ____.",
+        "Boshim ____.",
+        "Nima ____?",
+        "Tomogʻim ____."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "ogʻriyapti / boshim",
+        "boʻldim / kasal / men",
+        "bormi / dori / bosh ogʻrigʻiga / ?",
+        "iching / choy / issiq",
+        "tuzaling / tezroq"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 15. Terjemahkan ke bahasa Uzbek tanpa melihat unitnya.",
+      "items": [
+        "Kemeja ini lebih mahal.",
+        "Yang paling murah yang mana?",
+        "Boleh saya coba pakai?",
+        "Ada warna lain?",
+        "Ini tidak pas untuk saya."
+      ]
+    }
+  ],
+  "answers": [
+    "Boshim ogʻriyapti. — Qornim ogʻriyapti. — Menda isitma bor. — Kasal boʻldim. — Dori ichdingizmi? — Tezroq tuzaling!",
+    "boshim — qornim — burnim — ogʻzim — tishim — koʻnglim",
+    "bor — boʻldi — ogʻriyapti — boʻldi — ogʻriyapti",
+    "Boshim ogʻriyapti. — Men kasal boʻldim. — Bosh ogʻrigʻiga dori bormi? — Issiq choy iching. — Tezroq tuzaling.",
+    "Bu koʻylak qimmatroq. — Eng arzoni qaysi? — Kiyib koʻrsam boʻladimi? — Boshqa rangi bormi? — Bu menga toʻgʻri kelmadi."
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "title": "Kata kerja yang berdiri di ujung kalimat",
+  "title_target": "Feʼl gap oxirida turadi",
+  "goal": "Menyusun kalimat lengkap dengan kata kerja, menghafal enam akhiran orang untuk bentuk kebiasaan, dan membiasakan telinga pada susunan yang menahan kata kerjanya sampai akhir.",
+  "bekal": [
+    "menyusun kalimat dengan urutan **subjek — keterangan — objek — kata kerja**",
+    "membentuk *-aman, -asan, -adi, -amiz, -asiz, -adilar* dari kata dasar mana pun",
+    "mengingkari kata kerja dengan menyisipkan *-ma-* tepat setelah akarnya"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Har kuni nima qilasiz?",
+      "intro": "Nilufar dan Budi berjalan pulang dari kampus. Nilufar penasaran seperti apa hari-hari Budi di Tashkent.",
+      "lines": [
+        { "speaker": "Nilufar:", "text": "Budi, siz har kuni nima qilasiz?", "id": "Budi, setiap hari Anda melakukan apa?", "literal": "Budi, Anda tiap hari apa lakukan-Anda?" },
+        { "speaker": "Budi:", "text": "Ertalab universitetga boraman, kechqurun kitob oʻqiyman.", "id": "Pagi saya pergi ke kampus, malam saya membaca buku.", "literal": "pagi universitas-ke pergi-saya, sore buku baca-saya." },
+        { "speaker": "Nilufar:", "text": "Qayerda yashaysiz?", "id": "Anda tinggal di mana?", "literal": "di-mana tinggal-Anda?" },
+        { "speaker": "Budi:", "text": "Yotoqxonada yashayman. U yerda uchta indoneziyalik bor.", "id": "Saya tinggal di asrama. Di sana ada tiga orang Indonesia.", "literal": "asrama-di tinggal-saya. itu tempat-di tiga-buah Indonesia-orang ada." },
+        { "speaker": "Nilufar:", "text": "Uyda oʻzbekcha gapirasizmi?", "id": "Di rumah Anda berbicara bahasa Uzbek?", "literal": "rumah-di Uzbek-bahasa bicara-Anda-kah?" },
+        { "speaker": "Budi:", "text": "Yoʻq, uyda indonezcha gapiramiz. Lekin bozorda oʻzbekcha gapiraman.", "id": "Tidak, di rumah kami berbicara bahasa Indonesia. Tapi di pasar saya berbicara bahasa Uzbek.", "literal": "tidak, rumah-di Indonesia-bahasa bicara-kami. tetapi pasar-di Uzbek-bahasa bicara-saya." },
+        { "speaker": "Nilufar:", "text": "Zoʻr! Men ham inglizcha oʻrganaman, lekin yaxshi bilmayman.", "id": "Hebat! Saya juga belajar bahasa Inggris, tapi belum bisa dengan baik.", "literal": "hebat! saya juga Inggris-bahasa pelajari-saya, tetapi baik tahu-tidak-saya." },
+        { "speaker": "Budi:", "text": "Siz juda yaxshi gapirasiz. Har kuni mashq qilasizmi?", "id": "Anda berbicara dengan sangat baik. Anda berlatih setiap hari?", "literal": "Anda sangat baik bicara-Anda. tiap hari latihan lakukan-Anda-kah?" },
+        { "speaker": "Nilufar:", "text": "Har kuni emas. Dam olish kunlari ishlayman.", "id": "Tidak setiap hari. Di akhir pekan saya bekerja.", "literal": "tiap hari bukan. istirahat mengambil hari-hari-nya bekerja-saya." },
+        { "speaker": "Budi:", "text": "Qayerda ishlaysiz?", "id": "Anda bekerja di mana?", "literal": "di-mana bekerja-Anda?" },
+        { "speaker": "Nilufar:", "text": "Bir choyxonada. Ustozim u yerda choy quyadi.", "id": "Di sebuah kedai teh. Guru saya menuangkan teh di sana.", "literal": "satu kedai-teh-di. guru-ku itu tempat-di teh tuang-dia." }
+      ],
+      "notes": [
+        "**Perhatikan tiap baris: kata kerjanya selalu terakhir.** *Ertalab universitetga boraman* = \"pagi kampus-ke pergi-saya\". Bahkan kalimat tanya tidak memindahkannya: *Qayerda yashaysiz?* — kata tanyanya di depan, kata kerjanya tetap di ujung.",
+        "**Nama bahasa dibentuk dengan -cha.** *Oʻzbek* → *oʻzbekcha* (bahasa Uzbek), *ingliz* → *inglizcha*, *rus* → *ruscha*, *indonez* → *indonezcha*. Akhiran yang sama berarti \"secara, dengan cara\": *mencha* = \"menurut saya\".",
+            "**Har kuni = setiap hari.** *Har* berarti \"tiap\": *har kuni*, *har hafta* (tiap minggu), *har oy* (tiap bulan), *har doim* (selalu). Kata keterangan waktu diletakkan **di depan**, sebelum objek.",
+        "**Dam olish kunlari = akhir pekan**, harfiahnya \"hari-hari mengambil istirahat\". *Dam olmoq* (beristirahat) adalah salah satu kata kerja majemuk yang paling sering dipakai; polanya sama dengan *ish qilmoq* (bekerja), *mashq qilmoq* (berlatih), *yordam bermoq* (menolong).",
+        "**Zoʻr! = \"Hebat!\"** Kata gaul yang dipakai semua umur, sepadan dengan \"keren\" atau \"mantap\". Sepupunya yang lebih resmi: *ajoyib*, *juda yaxshi*."
+      ],
+      "grammars": [
+        {
+          "title": "Susunan kalimat: kata kerja menunggu di ujung",
+          "body": [
+            "Inilah kebiasaan baru terbesar yang harus kamu pasang. Bukan hafalan — melainkan urutan berpikir."
+          ],
+          "table": {
+            "head": ["Subjek", "Keterangan", "Objek", "Kata kerja"],
+            "rows": [
+              ["*Men*", "*ertalab*", "*non*", "***yeyman***"],
+              ["*Nilufar*", "*choyxonada*", "*choy*", "***quyadi***"],
+              ["*Biz*", "*har kuni*", "*oʻzbekcha*", "***oʻrganamiz***"],
+              ["*Siz*", "*kechqurun*", "*kitob*", "***oʻqiysiz***"],
+              ["*Ular*", "*bozorda*", "*meva*", "***sotadilar***"]
+            ]
+          },
+          "after": [
+            "Bacalah kolomnya dari kiri ke kanan dan kamu mendapat kalimat Uzbek yang benar. Terjemahkan ke bahasa Indonesia dan kata kerjanya melompat ke tengah: \"Saya makan roti pagi-pagi.\" Perbedaan itulah yang harus dilatih mulut, bukan mata.",
+            "Urutan subjek dan keterangan boleh ditukar untuk menekankan: *Ertalab men non yeyman* menyorot \"paginya\". Yang **tidak pernah** berpindah adalah kata kerjanya.",
+            "Bagian kalimat yang paling penting berdiri **tepat sebelum kata kerja**. *Men bozorda meva sotib olaman* (yang penting: buah); *Men mevani bozorda sotib olaman* (yang penting: di pasarnya). Perkakas halus yang akan sangat berguna setelah unit 7."
+          ]
+        },
+        {
+          "title": "Bentuk kebiasaan: akar + -a/-y + orang",
+          "body": [
+            "Bentuk kata kerja pertama, dan yang paling sering dipakai. Ia menutup tiga hal sekaligus: kebiasaan, kenyataan umum, dan rencana yang sudah pasti — persis seperti \"saya pergi\" dalam bahasa Indonesia."
+          ],
+          "table": {
+            "head": ["Pelaku", "Akhiran", "*bormoq* → *bor-*", "*ishlamoq* → *ishla-*", "Arti"],
+            "rows": [
+              ["*men*", "**-aman / -yman**", "*boraman*", "*ishlayman*", "saya pergi / bekerja"],
+              ["*sen*", "**-asan / -ysan**", "*borasan*", "*ishlaysan*", "kamu pergi"],
+              ["*u*", "**-adi / -ydi**", "*boradi*", "*ishlaydi*", "dia pergi"],
+              ["*biz*", "**-amiz / -ymiz**", "*boramiz*", "*ishlaymiz*", "kami pergi"],
+              ["*siz*", "**-asiz / -ysiz**", "*borasiz*", "*ishlaysiz*", "Anda pergi"],
+              ["*ular*", "**-adilar / -ydilar**", "*boradilar*", "*ishlaydilar*", "mereka pergi"]
+            ]
+          },
+          "after": [
+            "Aturannya satu baris: **akar berakhir huruf mati → pakai -a; berakhir huruf hidup → pakai -y.** Buang *-moq* dari bentuk kamusnya dan yang tersisa adalah akarnya: *bor-moq* → *bor-*, *oʻqi-moq* → *oʻqi-*, *yasha-moq* → *yasha-*.",
+            "**Ingkarnya menyisipkan -ma- tepat setelah akar**, dan huruf *a* di belakangnya berubah jadi *y*: *bor-**ma**-y-man* = *bormayman* (saya tidak pergi). Seluruh barisnya: *bormayman, bormaysan, bormaydi, bormaymiz, bormaysiz, bormaydilar*.",
+            "**Pertanyaannya menempelkan -mi di ujung**: *Borasizmi?* (Anda pergi?), *Bilmaysizmi?* (Anda tidak tahu?). Sama seperti unit 1, tekanan tetap jatuh di *-mi*.",
+            "⚠️ Tiga kata kerja berperilaku sedikit lain karena akarnya sangat pendek: *demoq* (berkata) → *deyman*, *yemoq* (makan) → *yeyman*, *qoʻymoq* (meletakkan) → *qoʻyaman*. Hafalkan apa adanya; jumlahnya cuma segitu."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Dua puluh kata kerja untuk memulai",
+      "blocks": [
+        { "type": "p", "text": "Bentuk kamusnya selalu berakhir *-moq*. Untuk memakainya, buang *-moq* itu dan tempelkan akhiran orangnya." },
+        {
+          "type": "tabel",
+          "head": ["Bentuk kamus", "Akar", "saya …", "Arti"],
+          "rows": [
+            ["*bormoq*", "*bor-*", "*boraman*", "pergi"],
+            ["*kelmoq*", "*kel-*", "*kelaman*", "datang"],
+            ["*qilmoq*", "*qil-*", "*qilaman*", "melakukan"],
+            ["*bilmoq*", "*bil-*", "*bilaman*", "tahu"],
+            ["*koʻrmoq*", "*koʻr-*", "*koʻraman*", "melihat"],
+            ["*oʻqimoq*", "*oʻqi-*", "*oʻqiyman*", "membaca, belajar"],
+            ["*yozmoq*", "*yoz-*", "*yozaman*", "menulis"],
+            ["*ishlamoq*", "*ishla-*", "*ishlayman*", "bekerja"],
+            ["*yashamoq*", "*yasha-*", "*yashayman*", "tinggal"],
+            ["*gapirmoq*", "*gapir-*", "*gapiraman*", "berbicara"],
+            ["*tushunmoq*", "*tushun-*", "*tushunaman*", "mengerti"],
+            ["*oʻrganmoq*", "*oʻrgan-*", "*oʻrganaman*", "mempelajari"],
+            ["*ichmoq*", "*ich-*", "*ichaman*", "minum"],
+            ["*yemoq*", "*ye-*", "*yeyman*", "makan"],
+            ["*olmoq*", "*ol-*", "*olaman*", "mengambil, membeli"],
+            ["*bermoq*", "*ber-*", "*beraman*", "memberi"],
+            ["*sotmoq*", "*sot-*", "*sotaman*", "menjual"],
+            ["*kutmoq*", "*kut-*", "*kutaman*", "menunggu"],
+            ["*sevmoq*", "*sev-*", "*sevaman*", "mencintai"],
+            ["*istamoq*", "*ista-*", "*istayman*", "menginginkan"]
+          ]
+        },
+        { "type": "p", "text": "Kebiasaan yang dianjurkan modul ini: jangan pernah menghafal kata kerja sendirian. Hafalkan *boraman* di dalam kalimat utuh — *Men bozorga boraman* — supaya susunan SOV ikut menempel bersama katanya." }
+      ]
+    },
+    {
+      "title": "Keterangan waktu yang paling sering muncul",
+      "blocks": [
+        { "type": "p", "text": "Semuanya diletakkan di depan objek, sesudah subjek. Tidak satu pun memindahkan kata kerjanya dari ujung." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**ertalab**", "ér-tå-LAB", "pagi hari"],
+            ["**tushda**", "tusy-DÅ", "siang hari"],
+            ["**kechqurun**", "kéc-qu-RUN", "sore, petang"],
+            ["**kechasi**", "ké-cå-SI", "malam hari"],
+            ["**bugun**", "bu-GUN", "hari ini"],
+            ["**ertaga**", "ér-tå-GÅ", "besok"],
+            ["**kecha**", "ké-CÅ", "kemarin"],
+            ["**har kuni**", "hår ku-NI", "setiap hari"],
+            ["**har doim**", "hår då-IM", "selalu"],
+            ["**baʼzan**", "bå'-ZAN", "kadang-kadang"],
+            ["**hech qachon**", "héc qå-CÅN", "tidak pernah"],
+            ["**hozir**", "hå-ZIR", "sekarang"]
+          ]
+        },
+        { "type": "p", "text": "⚠️ *Kecha* berarti **kemarin**, sedangkan *kechasi* berarti **malam hari**, dan *kech* berarti **terlambat**. Tiga kata berdekatan yang mudah tertukar; bacanya keras-keras berturut-turut sampai bedanya terdengar jelas." },
+        { "type": "p", "text": "*Hech qachon* selalu berpasangan dengan kata kerja ingkar: *Men hech qachon bormayman* — harfiahnya \"saya tidak pernah tidak pergi\". Ingkar ganda semacam ini juga ada di bahasa Rusia dan Spanyol, dan di bahasa Uzbek ia **wajib**, bukan pilihan." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "uz": "qilmoq", "baca": "qil-MÅQ", "id": "melakukan, membuat" },
+    { "uz": "bormoq", "baca": "bår-MÅQ", "id": "pergi" },
+    { "uz": "kelmoq", "baca": "kél-MÅQ", "id": "datang" },
+    { "uz": "oʻqimoq", "baca": "o-qi-MÅQ", "id": "membaca, belajar" },
+    { "uz": "yozmoq", "baca": "yåz-MÅQ", "id": "menulis" },
+    { "uz": "ishlamoq", "baca": "isy-lå-MÅQ", "id": "bekerja" },
+    { "uz": "yashamoq", "baca": "yå-syå-MÅQ", "id": "tinggal, hidup" },
+    { "uz": "gapirmoq", "baca": "gå-pir-MÅQ", "id": "berbicara" },
+    { "uz": "bilmoq", "baca": "bil-MÅQ", "id": "tahu" },
+    { "uz": "tushunmoq", "baca": "tu-syun-MÅQ", "id": "mengerti" },
+    { "uz": "oʻrganmoq", "baca": "or-gån-MÅQ", "id": "mempelajari" },
+    { "uz": "yemoq", "baca": "yé-MÅQ", "id": "makan" },
+    { "uz": "ichmoq", "baca": "ic-MÅQ", "id": "minum" },
+    { "uz": "quymoq", "baca": "quy-MÅQ", "id": "menuang" },
+    { "uz": "kutmoq", "baca": "kut-MÅQ", "id": "menunggu" },
+    { "uz": "oʻzbekcha", "baca": "oz-bék-CÅ", "id": "bahasa Uzbek" },
+    { "uz": "inglizcha", "baca": "in-gliz-CÅ", "id": "bahasa Inggris" },
+    { "uz": "ruscha", "baca": "rus-CÅ", "id": "bahasa Rusia" },
+    { "uz": "yotoqxona", "baca": "yå-tåq-khå-NÅ", "id": "asrama" },
+    { "uz": "ustoz", "baca": "us-TÅZ", "id": "guru, ustaz" },
+    { "uz": "mashq", "baca": "måsyq", "id": "latihan" },
+    { "uz": "dam olmoq", "baca": "dåm ål-MÅQ", "id": "beristirahat" },
+    { "uz": "har kuni", "baca": "hår ku-NI", "id": "setiap hari" },
+    { "uz": "har doim", "baca": "hår då-IM", "id": "selalu" },
+    { "uz": "baʼzan", "baca": "bå'-ZAN", "id": "kadang-kadang" },
+    { "uz": "hech qachon", "baca": "héc qå-CÅN", "id": "tidak pernah" },
+    { "uz": "ertalab", "baca": "ér-tå-LAB", "id": "pagi hari" },
+    { "uz": "kechqurun", "baca": "kéc-qu-RUN", "id": "sore, petang" },
+    { "uz": "bugun", "baca": "bu-GUN", "id": "hari ini" },
+    { "uz": "hozir", "baca": "hå-ZIR", "id": "sekarang" },
+    { "uz": "zoʻr", "baca": "zor", "id": "hebat, keren" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Uzbek. Ingat: kata kerja di ujung.",
+      "items": [
+        "Saya pergi ke pasar.",
+        "Setiap hari saya membaca buku.",
+        "Anda tinggal di mana?",
+        "Kami berbicara bahasa Uzbek.",
+        "Dia bekerja di kedai teh.",
+        "Saya tidak mengerti."
+      ]
+    },
+    {
+      "prompt": "Ubah jadi bentuk kebiasaan sesuai pelaku yang diminta.",
+      "items": [
+        "bormoq + men → ____",
+        "ishlamoq + siz → ____",
+        "oʻqimoq + u → ____",
+        "kelmoq + biz → ____",
+        "yashamoq + sen → ____",
+        "bilmoq + ular → ____"
+      ]
+    },
+    {
+      "prompt": "Jadikan ingkar.",
+      "items": [
+        "Men bozorga boraman. → ____",
+        "U oʻzbekcha gapiradi. → ____",
+        "Biz kitob oʻqiymiz. → ____",
+        "Siz bilasiz. → ____",
+        "Ular bu yerda ishlaydilar. → ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "boraman / men / universitetga / ertalab",
+        "gapirasizmi / oʻzbekcha / siz / ?",
+        "ishlaydi / choyxonada / u",
+        "oʻqiymiz / kitob / biz / har kuni",
+        "tushunmayman / men"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 4. Terjemahkan ke bahasa Uzbek tanpa melihat unitnya.",
+      "items": [
+        "Pasarnya di mana?",
+        "Bank ada di sebelah masjid.",
+        "Saya punya uang.",
+        "Tidak ada meja di kamar.",
+        "Apakah Anda punya waktu?"
+      ]
+    }
+  ],
+  "answers": [
+    "Men bozorga boraman. — Har kuni kitob oʻqiyman. — Siz qayerda yashaysiz? — Biz oʻzbekcha gapiramiz. — U choyxonada ishlaydi. — Men tushunmayman.",
+    "boraman — ishlaysiz — oʻqiydi — kelamiz — yashaysan — biladilar",
+    "Men bozorga bormayman. — U oʻzbekcha gapirmaydi. — Biz kitob oʻqimaymiz. — Siz bilmaysiz. — Ular bu yerda ishlamaydilar.",
+    "Ertalab men universitetga boraman. — Siz oʻzbekcha gapirasizmi? — U choyxonada ishlaydi. — Biz har kuni kitob oʻqiymiz. — Men tushunmayman.",
+    "Bozor qayerda? — Bank masjid yonida. — Menda pul bor. — Xonada stol yoʻq. — Sizda vaqt bormi?"
+  ]
+}

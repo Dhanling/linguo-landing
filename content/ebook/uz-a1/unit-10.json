@@ -1,0 +1,212 @@
+{
+  "title": "Sedang berlangsung: -yap",
+  "title_target": "Hozirgi zamon davom feʼli: -yap",
+  "goal": "Membedakan \"saya membaca\" dari \"saya sedang membaca\", memakai bentuk *-yap* di telepon dan percakapan cepat, dan mengenali bentuk tulisannya *-moqda*.",
+  "bekal": [
+    "membentuk *oʻqiyapman, oʻqiyapsan, oʻqiyapti…* dari kata dasar mana pun",
+    "memilih antara bentuk kebiasaan dan bentuk sedang dengan benar",
+    "menelepon dalam bahasa Uzbek dari salam sampai pamit"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Alo, hozir nima qilyapsiz?",
+      "intro": "Telepon berdering. Nilufar menelepon Budi yang sedang di jalan.",
+      "lines": [
+        { "speaker": "Nilufar:", "text": "Alo, Budi? Eshityapsizmi?", "id": "Halo, Budi? Anda dengar?", "literal": "halo, Budi? dengar-sedang-Anda-kah?" },
+        { "speaker": "Budi:", "text": "Ha, eshityapman. Salom, Nilufar!", "id": "Ya, saya dengar. Halo, Nilufar!", "literal": "ya, dengar-sedang-saya. halo, Nilufar!" },
+        { "speaker": "Nilufar:", "text": "Hozir nima qilyapsiz?", "id": "Sekarang Anda sedang apa?", "literal": "sekarang apa lakukan-sedang-Anda?" },
+        { "speaker": "Budi:", "text": "Bekatga ketyapman. Avtobus kutyapman.", "id": "Saya sedang menuju halte. Sedang menunggu bus.", "literal": "halte-ke berangkat-sedang-saya. bus tunggu-sedang-saya." },
+        { "speaker": "Nilufar:", "text": "Yomgʻir yogʻyaptimi?", "id": "Apakah sedang hujan?", "literal": "hujan turun-sedang-kah?" },
+        { "speaker": "Budi:", "text": "Yoʻq, yogʻmayapti. Lekin shamol kuchli.", "id": "Tidak, tidak sedang hujan. Tapi anginnya kencang.", "literal": "tidak, turun-tidak-sedang. tetapi angin kuat." },
+        { "speaker": "Nilufar:", "text": "Men choyxonada oʻtiribman. Ustozim ham keldi.", "id": "Saya sedang duduk di kedai teh. Guru saya juga sudah datang.", "literal": "saya kedai-teh-di duduk-sedang-saya. guru-ku juga datang." },
+        { "speaker": "Budi:", "text": "Ular nima qilyaptilar?", "id": "Mereka sedang apa?", "literal": "mereka apa lakukan-sedang-mereka?" },
+        { "speaker": "Nilufar:", "text": "Choy ichyaptilar va gaplashyaptilar.", "id": "Mereka sedang minum teh dan mengobrol.", "literal": "teh minum-sedang-mereka dan mengobrol-sedang-mereka." },
+        { "speaker": "Budi:", "text": "Yaxshi. Yigirma daqiqadan keyin yetib boraman.", "id": "Baik. Dua puluh menit lagi saya sampai.", "literal": "baik. dua-puluh menit-dari sesudah sampai pergi-saya." },
+        { "speaker": "Nilufar:", "text": "Kutamiz. Ehtiyot boʻling!", "id": "Kami tunggu. Hati-hati ya!", "literal": "tunggu-kami. hati-hati jadilah!" }
+      ],
+      "notes": [
+        "**-yap adalah bentuk lisan; -moqda bentuk tulisan.** Keduanya berarti sama. *Ketyapman* dan *ketmoqdaman* sama-sama \"saya sedang berangkat\", tetapi yang pertama kamu dengar di jalan dan yang kedua kamu baca di koran. Modul ini memakai *-yap* karena itulah yang akan kamu pakai.",
+        "**Orang ketiga berakhir -yapti, bukan -yapdi.** *U ketyapti* (dia sedang pergi), *Yomgʻir yogʻyapti* (hujan sedang turun). Ini satu-satunya bentuk yang perlu dihafal terpisah.",
+        "**Oʻtiribman = \"saya sedang duduk\".** Beberapa kata kerja keadaan — duduk, berdiri, berbaring, memakai — memakai bentuk *-ib* + akhiran orang, bukan *-yap*: *oʻtiribman*, *turibman*, *yotibman*. Bentuk *oʻtiryapman* juga dipakai, tetapi menekankan proses duduknya, bukan keadaan sudah duduk.",
+        "**Yetib bormoq = \"sampai\".** Salah satu kata kerja majemuk: *yetmoq* (mencapai) + *bormoq* (pergi). Bahasa Uzbek merangkai dua kata kerja untuk menambahkan warna arah dan selesai — perkakas yang akan kamu kenali sendiri seiring waktu."
+      ],
+      "grammars": [
+        {
+          "title": "Akar + -yap + orang",
+          "body": [
+            "Rumusnya sependek itu. Ambil akarnya, tempelkan *-yap*, lalu akhiran orang yang sudah kamu hafal sejak unit 1."
+          ],
+          "table": {
+            "head": ["Pelaku", "Akhiran", "*ket-* (berangkat)", "*oʻqi-* (membaca)", "Arti"],
+            "rows": [
+              ["*men*", "**-yapman**", "*ketyapman*", "*oʻqiyapman*", "saya sedang…"],
+              ["*sen*", "**-yapsan**", "*ketyapsan*", "*oʻqiyapsan*", "kamu sedang…"],
+              ["*u*", "**-yapti**", "*ketyapti*", "*oʻqiyapti*", "dia sedang…"],
+              ["*biz*", "**-yapmiz**", "*ketyapmiz*", "*oʻqiyapmiz*", "kami sedang…"],
+              ["*siz*", "**-yapsiz**", "*ketyapsiz*", "*oʻqiyapsiz*", "Anda sedang…"],
+              ["*ular*", "**-yaptilar**", "*ketyaptilar*", "*oʻqiyaptilar*", "mereka sedang…"]
+            ]
+          },
+          "after": [
+            "Berbeda dengan bentuk kebiasaan, di sini **tidak ada pilihan -a atau -y**: *-yap* langsung menempel pada akar, apa pun huruf terakhirnya. *bor-yapman*, *ishla-yapman*, *ich-yapman*.",
+            "**Ingkarnya menyisipkan -ma- sebelum -yap**: *bormayapman* (saya sedang tidak pergi), *yogʻmayapti* (tidak sedang hujan). Perhatikan bahwa urutannya tetap: akar → *-ma-* → *-yap* → orang.",
+            "Pertanyaannya seperti biasa dengan *-mi* di ujung: *Eshityapsizmi?* (Anda dengar?), *Nima qilyapti?* (Dia sedang apa?)."
+          ]
+        },
+        {
+          "title": "Kebiasaan atau sedang? Satu pertanyaan yang memutuskan",
+          "body": [
+            "Bahasa Indonesia memakai \"sedang\" hanya kalau perlu; bahasa Uzbek memilihnya dengan lebih tegas. Tanyakan: **apakah ini sedang terjadi tepat sekarang?**"
+          ],
+          "table": {
+            "head": ["Bentuk kebiasaan", "Arti", "Bentuk sedang", "Arti"],
+            "rows": [
+              ["*Men kitob oʻqiyman.*", "Saya (suka) membaca buku.", "*Men kitob oʻqiyapman.*", "Saya sedang membaca buku."],
+              ["*U Toshkentda ishlaydi.*", "Dia bekerja di Tashkent.", "*U hozir ishlayapti.*", "Dia sedang bekerja sekarang."],
+              ["*Yomgʻir yogʻadi.*", "Di sini sering hujan.", "*Yomgʻir yogʻyapti.*", "Sedang hujan."],
+              ["*Ertaga boraman.*", "Besok saya pergi.", "—", "(rencana tak pakai -yap)"]
+            ]
+          },
+          "after": [
+            "Perhatikan baris terakhir: **rencana masa depan memakai bentuk kebiasaan**, bukan bentuk sedang. *Ertaga boraman* = \"besok saya pergi\". Bentuk *-yap* hanya untuk yang benar-benar berlangsung saat kalimatnya diucapkan.",
+            "Kata keterangan yang biasanya menyertai *-yap*: *hozir* (sekarang), *ayni paytda* (saat ini), *hozirda*. Yang menyertai bentuk kebiasaan: *har kuni*, *odatda* (biasanya), *har doim*.",
+            "Kalau ragu, pilih bentuk kebiasaan. Ia lebih luas dan jarang terdengar salah; bentuk *-yap* yang dipakai di tempat yang keliru justru langsung terasa aneh."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menelepon dari awal sampai akhir",
+      "blocks": [
+        { "type": "p", "text": "Telepon adalah tempat paling menakutkan bagi pemula karena tidak ada wajah yang bisa dibaca. Sepuluh kalimat berikut menutup hampir seluruhnya." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**Alo!**", "å-LÅ", "Halo!"],
+            ["**Kim gapiryapti?**", "kim gå-pir-YÅP-ti", "Ini siapa yang bicara?"],
+            ["**Men Budiman.**", "mén BU-di-mån", "Ini Budi."],
+            ["**Eshityapsizmi?**", "é-syit-YÅP-si-zmi", "Anda dengar?"],
+            ["**Yaxshi eshitilmayapti.**", "yåkh-SYI é-syi-til-må-YÅP-ti", "Suaranya tidak jelas."],
+            ["**Bir daqiqa kuting.**", "bir då-qi-QÅ ku-TING", "Tunggu sebentar."],
+            ["**Band ekansiz, keyin qilaman.**", "bånd é-KAN-siz", "Anda sibuk, nanti saya telepon lagi."],
+            ["**Qoʻngʻiroq qiling.**", "qon-ghi-RÅQ qi-LING", "Telepon saya."],
+            ["**Xabar yuboraman.**", "khå-BAR yu-bå-rå-MAN", "Saya kirim pesan."],
+            ["**Ehtiyot boʻling!**", "éh-ti-YÅT bo-LING", "Hati-hati!"]
+          ]
+        },
+        { "type": "p", "text": "*Qoʻngʻiroq* harfiahnya \"lonceng\", dan *qoʻngʻiroq qilmoq* berarti \"membunyikan lonceng\" — cara bahasa Uzbek berkata \"menelepon\". Bentuk pendeknya *telefon qilmoq* juga umum." }
+      ]
+    },
+    {
+      "title": "Cuaca: bahan obrolan yang selalu aman",
+      "blocks": [
+        { "type": "p", "text": "Uzbekistan beriklim gurun benua: musim panasnya bisa 45 derajat, musim dinginnya bisa di bawah nol. Karena itu cuaca bukan basa-basi kosong di sana — ia betul-betul menentukan hari orang." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Arti", "Oʻzbekcha", "Cara baca", "Arti"],
+          "rows": [
+            ["**havo**", "hå-VÅ", "cuaca, udara", "**yomgʻir**", "yåm-GHIR", "hujan"],
+            ["**issiq**", "is-SIQ", "panas", "**qor**", "qår", "salju"],
+            ["**sovuq**", "så-VUQ", "dingin", "**shamol**", "syå-MÅL", "angin"],
+            ["**iliq**", "i-LIQ", "hangat", "**quyosh**", "qu-YÅSY", "matahari"],
+            ["**bulutli**", "bu-lut-LI", "berawan", "**ochiq**", "å-CIQ", "cerah, terbuka"]
+          ]
+        },
+        { "type": "p", "text": "Kalimat yang paling sering dipakai: *Bugun havo qanday?* (Bagaimana cuaca hari ini?) — jawabannya *Havo issiq*, *Havo sovuq*, *Yomgʻir yogʻyapti*, *Qor yogʻyapti*. Perhatikan bahwa hujan dan salju memakai kata kerja yang sama, *yogʻmoq* (turun dari langit)." },
+        { "type": "p", "text": "⚠️ *Havo* berarti **udara dan cuaca** sekaligus — kata Arab yang sama dengan \"hawa\" dalam \"hawa panas\". Sementara *issiq* (panas) dan *sovuq* (dingin) adalah kata Turki asli yang tidak punya sepupu di bahasa Indonesia." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "uz": "hozir", "baca": "hå-ZIR", "id": "sekarang" },
+    { "uz": "eshitmoq", "baca": "é-syit-MÅQ", "id": "mendengar" },
+    { "uz": "gaplashmoq", "baca": "gåp-låsy-MÅQ", "id": "mengobrol" },
+    { "uz": "qoʻngʻiroq qilmoq", "baca": "qon-ghi-RÅQ qil-MÅQ", "id": "menelepon" },
+    { "uz": "xabar", "baca": "khå-BAR", "id": "kabar, pesan" },
+    { "uz": "yubormoq", "baca": "yu-bår-MÅQ", "id": "mengirim" },
+    { "uz": "yetib bormoq", "baca": "yé-TIB bår-MÅQ", "id": "sampai, tiba" },
+    { "uz": "ehtiyot", "baca": "éh-ti-YÅT", "id": "hati-hati, waspada" },
+    { "uz": "havo", "baca": "hå-VÅ", "id": "cuaca, udara" },
+    { "uz": "yomgʻir", "baca": "yåm-GHIR", "id": "hujan" },
+    { "uz": "qor", "baca": "qår", "id": "salju" },
+    { "uz": "shamol", "baca": "syå-MÅL", "id": "angin" },
+    { "uz": "quyosh", "baca": "qu-YÅSY", "id": "matahari" },
+    { "uz": "issiq", "baca": "is-SIQ", "id": "panas" },
+    { "uz": "sovuq", "baca": "så-VUQ", "id": "dingin" },
+    { "uz": "iliq", "baca": "i-LIQ", "id": "hangat" },
+    { "uz": "bulutli", "baca": "bu-lut-LI", "id": "berawan" },
+    { "uz": "yogʻmoq", "baca": "yågh-MÅQ", "id": "turun (hujan/salju)" },
+    { "uz": "kuchli", "baca": "kuc-LI", "id": "kuat, kencang" },
+    { "uz": "turmoq", "baca": "tur-MÅQ", "id": "berdiri; bangun" },
+    { "uz": "odatda", "baca": "å-dåt-DÅ", "id": "biasanya" },
+    { "uz": "ovqatlanmoq", "baca": "åv-qåt-lån-MÅQ", "id": "makan (bersantap)" },
+    { "uz": "tayyorlamoq", "baca": "tåy-yår-lå-MÅQ", "id": "menyiapkan" },
+    { "uz": "alo", "baca": "å-LÅ", "id": "halo (di telepon)" },
+    { "uz": "ayni paytda", "baca": "åy-NI påyt-DÅ", "id": "saat ini" },
+    { "uz": "ekan", "baca": "é-KAN", "id": "ternyata" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Uzbek dengan bentuk -yap.",
+      "items": [
+        "Saya sedang membaca buku.",
+        "Dia sedang bekerja.",
+        "Sedang hujan.",
+        "Mereka sedang minum teh.",
+        "Anda sedang apa?",
+        "Saya sedang tidak makan."
+      ]
+    },
+    {
+      "prompt": "Ubah ke bentuk sedang (-yap) sesuai pelakunya.",
+      "items": [
+        "bormoq + men → ____",
+        "ishlamoq + u → ____",
+        "kutmoq + biz → ____",
+        "oʻqimoq + siz → ____",
+        "gaplashmoq + ular → ____",
+        "ichmoq + sen → ____"
+      ]
+    },
+    {
+      "prompt": "Pilih bentuk yang benar: kebiasaan atau sedang. Tulis kalimat lengkapnya.",
+      "items": [
+        "Har kuni men kitob (oʻqiyman atau oʻqiyapman).",
+        "Hozir u choy (ichadi atau ichyapti).",
+        "Ertaga biz bozorga (boramiz atau boryapmiz).",
+        "Odatda yomgʻir kam (yogʻadi atau yogʻyapti).",
+        "Kuting, men (kelaman atau kelayapman)."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "qilyapsiz / nima / hozir / ?",
+        "ketyapman / bekatga / men",
+        "yogʻyapti / yomgʻir",
+        "ichyaptilar / choy / ular",
+        "boʻling / ehtiyot"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 8. Terjemahkan ke bahasa Uzbek tanpa melihat unitnya.",
+      "items": [
+        "Saya pergi ke bandara.",
+        "Dia datang dari Jakarta.",
+        "Saya naik bus.",
+        "Belok kiri.",
+        "Terima kasih atas bantuan Anda."
+      ]
+    }
+  ],
+  "answers": [
+    "Men kitob oʻqiyapman. — U ishlayapti. — Yomgʻir yogʻyapti. — Ular choy ichyaptilar. — Siz nima qilyapsiz? — Men ovqatlanmayapman.",
+    "boryapman — ishlayapti — kutyapmiz — oʻqiyapsiz — gaplashyaptilar — ichyapsan",
+    "Har kuni men kitob oʻqiyman. — Hozir u choy ichyapti. — Ertaga biz bozorga boramiz. — Odatda yomgʻir kam yogʻadi. — Kuting, men kelayapman.",
+    "Hozir nima qilyapsiz? — Men bekatga ketyapman. — Yomgʻir yogʻyapti. — Ular choy ichyaptilar. — Ehtiyot boʻling.",
+    "Men aeroportga boraman. — U Jakartadan keladi. — Men avtobus bilan boraman. — Chapga buriling. — Yordamingiz uchun rahmat."
+  ]
+}

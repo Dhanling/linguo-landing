@@ -1,0 +1,218 @@
+{
+  "title": "Ini apa? Benda-benda di sekitarmu",
+  "title_target": "Bu nima? Atrofdagi narsalar",
+  "goal": "Menunjuk benda dekat dan jauh, membentuk jamak dengan *-lar*, memasang kata sifat di depan kata benda, dan menikmati kenyataan bahwa bahasa Uzbek tidak punya *a*, *the*, maupun jenis kelamin.",
+  "bekal": [
+    "bertanya *Bu nima?* dan menjawabnya dengan satu kata",
+    "membedakan *bu* (ini), *shu* (itu, dekat), dan *u* (itu, jauh)",
+    "menempelkan *-lar* untuk jamak, dan tahu kapan ia justru **tidak** dipakai"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Yotoqxonadagi xona",
+      "intro": "Nilufar mengantar Budi ke kamar asrama yang baru. Ia menunjuk benda-benda satu per satu, seperti sedang memberi pelajaran pertama.",
+      "lines": [
+        { "speaker": "Nilufar:", "text": "Mana, bu sizning xonangiz.", "id": "Nah, ini kamar Anda.", "literal": "nah, ini milik-Anda kamar-Anda." },
+        { "speaker": "Budi:", "text": "Juda chiroyli! Bu nima?", "id": "Bagus sekali! Ini apa?", "literal": "sangat indah! ini apa?" },
+        { "speaker": "Nilufar:", "text": "Bu stol, bu esa stul. Ular yangi.", "id": "Ini meja, dan ini kursi. Keduanya baru.", "literal": "ini meja, ini adapun kursi. mereka baru." },
+        { "speaker": "Budi:", "text": "U nima? U yerda, derazaning yonida.", "id": "Itu apa? Di sana, di dekat jendela.", "literal": "itu apa? itu tempat-di, jendela-milik samping-nya-di." },
+        { "speaker": "Nilufar:", "text": "U kitob javoni. Bu yerda kitoblar bor.", "id": "Itu rak buku. Di sini ada buku-buku.", "literal": "itu buku rak-nya. ini tempat-di buku-buku ada." },
+        { "speaker": "Budi:", "text": "Bu kitoblar oʻzbekchami?", "id": "Buku-buku ini berbahasa Uzbek?", "literal": "ini buku-buku Uzbek-bahasa-kah?" },
+        { "speaker": "Nilufar:", "text": "Ha, hammasi oʻzbekcha. Bu lugʻat, bular darsliklar.", "id": "Ya, semuanya bahasa Uzbek. Ini kamus, ini buku-buku pelajaran.", "literal": "ya, semua-nya Uzbek-bahasa. ini kamus, ini-ini pelajaran-buku-buku." },
+        { "speaker": "Budi:", "text": "Lugʻat eskimi yoki yangimi?", "id": "Kamusnya lama atau baru?", "literal": "kamus lama-kah atau baru-kah?" },
+        { "speaker": "Nilufar:", "text": "Eski, lekin juda yaxshi. U qimmat emas.", "id": "Lama, tapi bagus sekali. Harganya tidak mahal.", "literal": "lama, tetapi sangat baik. dia mahal bukan." },
+        { "speaker": "Budi:", "text": "Ajoyib! Bu xona menga yoqadi.", "id": "Luar biasa! Saya suka kamar ini.", "literal": "luar-biasa! ini kamar kepada-saya menyenangkan." },
+        { "speaker": "Nilufar:", "text": "Xursandman. Mana kalit — bu sizniki.", "id": "Saya senang. Ini kuncinya — ini milik Anda.", "literal": "gembira-saya. nah kunci — ini Anda-punya." }
+      ],
+      "notes": [
+        "**Tidak ada a, an, atau the.** *Kitob* bisa berarti \"buku\", \"sebuah buku\", atau \"buku itu\" — konteks yang memutuskan, persis seperti bahasa Indonesia. Kalau kamu benar-benar perlu menegaskan \"buku itu\", tinggal tunjuk: *bu kitob*, *shu kitob*, *u kitob*.",
+            "**Bu esa artinya \"sedangkan ini\".** Kata kecil *esa* dipakai untuk membandingkan dua hal berturut-turut: *Bu stol, bu esa stul*. Ia sopan, netral, dan sangat sering muncul dalam tulisan.",
+        "**Hammasi = \"semuanya\".** Akarnya *hamma* (semua) ditambah akhiran *-si* (\"-nya\"). Kamu akan bertemu akhiran itu lagi di unit 3, di mana ia menjadi salah satu perkakas terpenting bahasa Uzbek.",
+        "**Yoki berarti \"atau\", dan pertanyaan pilihan menempelkan -mi dua kali.** *Eskimi yoki yangimi?* — harfiahnya \"lama-kah atau baru-kah?\". Bahasa Uzbek menanyai kedua pilihan sekaligus, tidak seperti bahasa Indonesia yang cukup sekali.",
+        "**Sizniki berarti \"milik Anda\" sebagai kata benda utuh.** *Bu sizniki* = \"Ini punya Anda\". Bentuknya: kata ganti + *-niki*. Jadi *meniki* (punyaku), *seniki*, *uniki*, *bizniki*, *sizniki*, *ularniki*."
+      ],
+      "grammars": [
+        {
+          "title": "Bu, shu, u — tiga jarak, bukan dua",
+          "body": [
+            "Bahasa Indonesia punya \"ini\" dan \"itu\". Bahasa Uzbek menyisipkan satu tingkat di tengah, dan begitu kamu melihat polanya, ia mudah."
+          ],
+          "table": {
+            "head": ["Bentuk", "Cara baca", "Jarak", "Contoh"],
+            "rows": [
+              ["**bu**", "bu", "ini — di tangan, di depan mata", "*Bu kitob* = buku ini"],
+              ["**shu**", "syu", "itu — dekat, atau yang baru saja disebut", "*Shu kun* = hari itu"],
+              ["**u**", "u", "itu — jauh, di sana", "*U uy* = rumah itu"],
+              ["**bular**", "bu-LÅR", "ini semua", "*Bular darsliklar*"],
+              ["**shular**", "syu-LÅR", "itu semua (dekat)", "*Shular meniki*"],
+              ["**ular**", "u-LÅR", "itu semua (jauh); mereka", "*Ular talabalar*"]
+            ]
+          },
+          "after": [
+            "Perhatikan baris terakhir: **u dan ular sekaligus berarti \"dia\" dan \"mereka\"**. Bahasa Uzbek tidak membedakan orang dan benda di sini. *U kim?* = \"Dia siapa?\"; *U nima?* = \"Itu apa?\". Yang membedakan cuma kata tanyanya.",
+            "*Shu* adalah pilihan paling aman ketika kamu menunjuk sesuatu yang **baru saja disebut dalam percakapan**, bukan yang sedang ditunjuk jari. Dalam bahasa Indonesia keduanya sama-sama \"itu\".",
+            "Untuk tempat, ketiganya dapat ekor *yer* (tempat): *bu yerda* (di sini), *shu yerda* (di situ), *u yerda* (di sana). Bentuk ini muncul terus mulai unit 4."
+          ]
+        },
+        {
+          "title": "-lar untuk jamak, dan kata sifat yang tidak pernah berubah",
+          "body": [
+            "Dua aturan pendek yang menghemat berbulan-bulan dibanding bahasa Eropa mana pun."
+          ],
+          "table": {
+            "head": ["Tunggal", "Jamak", "Dengan kata sifat", "Arti"],
+            "rows": [
+              ["*kitob*", "*kitoblar*", "*yangi kitoblar*", "buku-buku baru"],
+              ["*talaba*", "*talabalar*", "*yaxshi talabalar*", "mahasiswa-mahasiswa yang baik"],
+              ["*uy*", "*uylar*", "*katta uylar*", "rumah-rumah besar"],
+              ["*doʻst*", "*doʻstlar*", "*eski doʻstlar*", "teman-teman lama"],
+              ["*bola*", "*bolalar*", "*kichik bolalar*", "anak-anak kecil"]
+            ]
+          },
+          "after": [
+            "**Kata sifat selalu di depan kata benda, dan bentuknya tidak pernah berubah.** *Katta uy*, *katta uylar*, *katta uyda* — *katta* tetap *katta* selamanya. Tidak ada penyesuaian jenis kelamin, jumlah, atau kasus seperti dalam bahasa Rusia atau Prancis.",
+            "⚠️ **Sesudah angka, -lar dibuang.** *Uch kitob* (tiga buku), bukan *uch kitoblar*. Alasannya masuk akal: angkanya sudah menyatakan jumlah, jadi menandainya dua kali dianggap mubazir. Bahasa Indonesia melakukan hal yang sama — kita bilang \"tiga buku\", bukan \"tiga buku-buku\".",
+            "*-lar* juga dipakai untuk menghormati orang: *ustozlar keldilar* = \"Bapak guru datang\" (satu orang, tetapi dijamakkan sebagai tanda hormat). Kebiasaan ini akan muncul lagi di unit 10."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Benda-benda yang mengelilingimu",
+      "blocks": [
+        { "type": "p", "text": "Tunjuk tiap benda di ruanganmu sekarang dan sebutkan namanya keras-keras. Sepuluh menit sekarang menghemat sepuluh jam nanti." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**kitob**", "ki-TÅB", "buku"],
+            ["**daftar**", "dåf-TAR", "buku tulis"],
+            ["**qalam**", "qå-LAM", "pensil, pena"],
+            ["**ruchka**", "RUC-kå", "pulpen"],
+            ["**stol**", "stål", "meja"],
+            ["**stul**", "stul", "kursi"],
+            ["**eshik**", "é-SYIK", "pintu"],
+            ["**deraza**", "dé-rå-ZÅ", "jendela"],
+            ["**xona**", "khå-NÅ", "kamar, ruangan"],
+            ["**uy**", "uy", "rumah"],
+            ["**sumka**", "SUM-kå", "tas"],
+            ["**telefon**", "té-lé-FÅN", "telepon"],
+            ["**kalit**", "kå-LIT", "kunci"],
+            ["**lugʻat**", "lu-GHAT", "kamus"],
+            ["**darslik**", "dårs-LIK", "buku pelajaran"],
+            ["**narsa**", "når-SÅ", "benda, hal"]
+          ]
+        },
+        { "type": "p", "text": "Empat di antaranya datang dari bahasa Rusia dan bentuknya nyaris tak berubah: *stol*, *stul*, *ruchka*, *sumka*. Uzbekistan tujuh puluh tahun berada di dalam Uni Soviet, dan bekasnya paling terlihat di kosakata benda modern — *avtobus*, *magazin*, *kompyuter*, *bank*, *pochta*. Kalau kamu tidak tahu satu kata benda modern, coba ucapkan versi Rusianya; peluangnya besar itu memang katanya." }
+      ]
+    },
+    {
+      "title": "Kata sifat yang paling sering dipakai",
+      "blocks": [
+        { "type": "p", "text": "Delapan pasang berlawanan. Menghafalnya berpasangan jauh lebih cepat daripada satu-satu." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Arti", "Lawannya"],
+          "rows": [
+            ["**katta**", "kåt-TÅ", "besar", "**kichik** (ki-CIK) kecil"],
+            ["**yangi**", "yån-GI", "baru", "**eski** (és-KI) lama"],
+            ["**yaxshi**", "yåkh-SYI", "baik", "**yomon** (yå-MÅN) buruk"],
+            ["**qimmat**", "qim-MAT", "mahal", "**arzon** (år-ZÅN) murah"],
+            ["**uzun**", "u-ZUN", "panjang", "**qisqa** (qis-QÅ) pendek"],
+            ["**issiq**", "is-SIQ", "panas", "**sovuq** (så-VUQ) dingin"],
+            ["**oson**", "å-SÅN", "mudah", "**qiyin** (qi-YIN) sulit"],
+            ["**chiroyli**", "ci-råy-LI", "cantik, indah", "**xunuk** (khu-NUK) jelek"]
+          ]
+        },
+        { "type": "p", "text": "⚠️ Perhatikan **katta**: ia berarti **besar**, bukan \"kata\". Dan **qimmat** berarti **mahal** — akarnya sama dengan \"kimat\" atau \"nilai\" dalam bahasa Arab, jadi harfiahnya \"bernilai tinggi\"." },
+        { "type": "p", "text": "Untuk menguatkan, cukup pasang *juda* (sangat) di depannya: *juda katta*, *juda arzon*, *juda chiroyli*. Untuk melemahkan, pakai *biroz* (agak): *biroz qimmat* = agak mahal." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "uz": "bu", "baca": "bu", "id": "ini" },
+    { "uz": "shu", "baca": "syu", "id": "itu (dekat)" },
+    { "uz": "bular", "baca": "bu-LÅR", "id": "ini semua" },
+    { "uz": "mana", "baca": "MÅ-nå", "id": "nah, ini dia" },
+    { "uz": "kitob", "baca": "ki-TÅB", "id": "buku" },
+    { "uz": "daftar", "baca": "dåf-TAR", "id": "buku tulis" },
+    { "uz": "qalam", "baca": "qå-LAM", "id": "pensil, pena" },
+    { "uz": "stol", "baca": "stål", "id": "meja" },
+    { "uz": "stul", "baca": "stul", "id": "kursi" },
+    { "uz": "eshik", "baca": "é-SYIK", "id": "pintu" },
+    { "uz": "deraza", "baca": "dé-rå-ZÅ", "id": "jendela" },
+    { "uz": "xona", "baca": "khå-NÅ", "id": "kamar, ruangan" },
+    { "uz": "uy", "baca": "uy", "id": "rumah" },
+    { "uz": "kalit", "baca": "kå-LIT", "id": "kunci" },
+    { "uz": "lugʻat", "baca": "lu-GHAT", "id": "kamus" },
+    { "uz": "darslik", "baca": "dårs-LIK", "id": "buku pelajaran" },
+    { "uz": "javon", "baca": "jå-VÅN", "id": "rak, lemari" },
+    { "uz": "narsa", "baca": "når-SÅ", "id": "benda, hal" },
+    { "uz": "bola", "baca": "bå-LÅ", "id": "anak" },
+    { "uz": "katta", "baca": "kåt-TÅ", "id": "besar" },
+    { "uz": "kichik", "baca": "ki-CIK", "id": "kecil" },
+    { "uz": "yangi", "baca": "yån-GI", "id": "baru" },
+    { "uz": "eski", "baca": "és-KI", "id": "lama, tua (benda)" },
+    { "uz": "chiroyli", "baca": "ci-råy-LI", "id": "cantik, indah" },
+    { "uz": "qimmat", "baca": "qim-MAT", "id": "mahal" },
+    { "uz": "arzon", "baca": "år-ZÅN", "id": "murah" },
+    { "uz": "yomon", "baca": "yå-MÅN", "id": "buruk, jelek" },
+    { "uz": "ajoyib", "baca": "å-jå-YIB", "id": "luar biasa, hebat" },
+    { "uz": "hamma", "baca": "håm-MÅ", "id": "semua" },
+    { "uz": "lekin", "baca": "lé-KIN", "id": "tetapi" },
+    { "uz": "yoki", "baca": "yå-KI", "id": "atau" },
+    { "uz": "esa", "baca": "é-SÅ", "id": "sedangkan, adapun" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Uzbek.",
+      "items": [
+        "Ini apa?",
+        "Ini buku.",
+        "Itu (jauh) pintu.",
+        "Buku-buku ini baru.",
+        "Kamar itu besar.",
+        "Kamus ini tidak mahal."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bu, shu, u, bular, atau ular.",
+      "items": [
+        "____ nima? — Bu qalam.",
+        "____ yerda kitoblar bor. (di sini)",
+        "____ uy juda katta. (rumah jauh di sana)",
+        "____ darsliklar meniki. (yang ada di tanganku)",
+        "____ talabalar oʻzbek. (yang jauh di sana)"
+      ]
+    },
+    {
+      "prompt": "Jadikan jamak, lalu tambahkan satu kata sifat yang cocok. Contoh: kitob → yangi kitoblar.",
+      "items": [
+        "talaba",
+        "uy",
+        "eshik",
+        "doʻst",
+        "bola",
+        "xona"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "nima / bu / ?",
+        "kitoblar / bu / yangi",
+        "emas / lugʻat / qimmat / bu",
+        "chiroyli / xona / juda / u",
+        "meniki / kalit / bu"
+      ]
+    }
+  ],
+  "answers": [
+    "Bu nima? — Bu kitob. — U eshik. — Bu kitoblar yangi. — U xona katta. — Bu lugʻat qimmat emas.",
+    "Bu — Bu — U — Bular — Ular",
+    "yaxshi talabalar — katta uylar — yangi eshiklar — eski doʻstlar — kichik bolalar — chiroyli xonalar",
+    "Bu nima? — Bu kitoblar yangi. — Bu lugʻat qimmat emas. — U xona juda chiroyli. — Bu kalit meniki."
+  ]
+}

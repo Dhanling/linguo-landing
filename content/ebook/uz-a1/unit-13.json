@@ -1,0 +1,219 @@
+{
+  "title": "Di restoran: mau, perlu, dan harus",
+  "title_target": "Restoranda: -moqchi va kerak",
+  "goal": "Memesan makan dari awal sampai membayar, menyatakan niat dengan *-moqchi*, dan menyatakan keperluan dengan *kerak* — dua bentuk yang menutup hampir semua kalimat \"saya mau\" dan \"saya harus\".",
+  "bekal": [
+    "memakai *bormoqchiman* untuk \"saya mau/berniat pergi\"",
+    "membedakan *Menga suv kerak* dari *Borishim kerak*",
+    "memesan, meminta tambahan, dan meminta bon"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Nima buyurtma qilmoqchisiz?",
+      "intro": "Sebuah restoran plov di Tashkent, jam satu siang — jam paling sibuk. Pelayan datang dengan buku menu.",
+      "lines": [
+        { "speaker": "Ofitsiant:", "text": "Xush kelibsiz! Nima buyurtma qilmoqchisiz?", "id": "Selamat datang! Mau pesan apa?", "literal": "senang datang-Anda! apa pesanan lakukan-mau-Anda?" },
+        { "speaker": "Budi:", "text": "Menyuni koʻrmoqchiman. Bugun nima bor?", "id": "Saya mau lihat menunya. Hari ini ada apa?", "literal": "menu-sasaran lihat-mau-saya. hari-ini apa ada?" },
+        { "speaker": "Ofitsiant:", "text": "Osh bor, shoʻrva bor, manti ham bor.", "id": "Ada plov, ada sup, ada manti juga.", "literal": "plov ada, sup ada, manti juga ada." },
+        { "speaker": "Budi:", "text": "Bitta osh va bitta shoʻrva bering, iltimos.", "id": "Tolong satu plov dan satu sup.", "literal": "satu plov dan satu sup berilah, tolong." },
+        { "speaker": "Ofitsiant:", "text": "Ichimlik nima olasiz?", "id": "Minumnya mau apa?", "literal": "minuman apa ambil-Anda?" },
+        { "speaker": "Budi:", "text": "Menga koʻk choy kerak. Muzli suv ham kerak.", "id": "Saya perlu teh hijau. Perlu air es juga.", "literal": "saya-kepada hijau teh perlu. es-ber air juga perlu." },
+        { "speaker": "Ofitsiant:", "text": "Xoʻp. Osh goʻshtli boʻlsinmi?", "id": "Baik. Plovnya pakai daging?", "literal": "baik. plov daging-ber jadi-lah-kah?" },
+        { "speaker": "Budi:", "text": "Ha, lekin achchiq boʻlmasin. Men achchiq yey olmayman.", "id": "Ya, tapi jangan pedas. Saya tidak bisa makan pedas.", "literal": "ya, tetapi pedas jangan-jadi. saya pedas makan bisa-tidak-saya." },
+        { "speaker": "Ofitsiant:", "text": "Tushunarli. Yana biror narsa kerakmi?", "id": "Mengerti. Perlu sesuatu yang lain?", "literal": "dapat-dimengerti. lagi sesuatu benda perlu-kah?" },
+        { "speaker": "Budi:", "text": "Yoʻq, rahmat. Hisobni ham olib kelmoqchimisiz?", "id": "Tidak, terima kasih. Sekalian bawakan bonnya?", "literal": "tidak, terima-kasih. bon-sasaran juga bawa datang-mau-Anda-kah?" },
+        { "speaker": "Ofitsiant:", "text": "Ovqatdan keyin olib kelaman. Yoqimli ishtaha!", "id": "Saya bawakan setelah makan. Selamat makan!", "literal": "makanan-dari sesudah bawa datang-saya. menyenangkan selera!" }
+      ],
+      "notes": [
+        "**Buyurtma qilmoq = memesan.** Salah satu dari puluhan kata kerja majemuk berpola *[kata benda] + qilmoq*. Yang lain: *ish qilmoq* (bekerja), *xarid qilmoq* (berbelanja), *taklif qilmoq* (mengundang), *hazil qilmoq* (bercanda).",
+        "**Menga … kerak berarti \"saya perlu\".** Harfiahnya \"kepada saya … diperlukan\". Perhatikan bahwa yang jadi subjek adalah **bendanya**, bukan kamu — susunan yang sama dengan *menga yoqadi* (saya suka) di unit 16 dan *boshim ogʻriyapti* (kepala saya sakit) di unit 17.",
+        "**Boʻlsinmi? = \"apakah (sebaiknya) jadi begitu?\"** Bentuk *-sin* untuk orang ketiga, dipakai pelayan untuk menawarkan pilihan. Jawabannya cukup *ha* atau *boʻlmasin* (jangan).",
+        "**Yoqimli ishtaha! = \"selamat makan\".** Harfiahnya \"selera yang menyenangkan\", terjemahan dari ungkapan Rusia. Kalau kamu ingin versi yang lebih Uzbek: *Osh boʻlsin!* — \"semoga jadi santapan yang baik\"."
+      ],
+      "grammars": [
+        {
+          "title": "-moqchi: niat, rencana, kemauan",
+          "body": [
+            "Rumusnya: ambil bentuk kamus *-moq*, tambahkan *-chi*, lalu akhiran orang unit 1. Tidak ada perubahan bunyi sama sekali."
+          ],
+          "table": {
+            "head": ["Pelaku", "Bentuk", "*bormoq*", "*yemoq*", "Arti"],
+            "rows": [
+              ["*men*", "**-moqchiman**", "*bormoqchiman*", "*yemoqchiman*", "saya mau pergi"],
+              ["*sen*", "**-moqchisan**", "*bormoqchisan*", "*yemoqchisan*", "kamu mau pergi"],
+              ["*u*", "**-moqchi**", "*bormoqchi*", "*yemoqchi*", "dia mau pergi"],
+              ["*biz*", "**-moqchimiz**", "*bormoqchimiz*", "*yemoqchimiz*", "kami mau pergi"],
+              ["*siz*", "**-moqchisiz**", "*bormoqchisiz*", "*yemoqchisiz*", "Anda mau pergi"],
+              ["*ular*", "**-moqchilar**", "*bormoqchilar*", "*yemoqchilar*", "mereka mau pergi"]
+            ]
+          },
+          "after": [
+            "**Ingkarnya tidak memakai -ma-, melainkan emas**: *bormoqchi **emasman*** (saya tidak berniat pergi). Ini satu-satunya bentuk kata kerja di modul ini yang diingkari dengan cara kalimat benda.",
+            "Bedakan dari bentuk kebiasaan: *Ertaga boraman* = \"besok saya pergi\" (sudah pasti, terjadwal). *Ertaga bormoqchiman* = \"besok saya mau pergi\" (niat, belum tentu jadi).",
+            "Bentuk lampaunya menyatakan niat yang tak jadi: *Bormoqchi edim* = \"tadinya saya mau pergi\". Kalimat yang sangat berguna untuk minta maaf."
+          ]
+        },
+        {
+          "title": "Kerak: perlu benda, atau perlu melakukan",
+          "body": [
+            "Satu kata, dua susunan. Bedanya ditentukan oleh apa yang kamu perlukan: sebuah benda, atau sebuah perbuatan."
+          ],
+          "table": {
+            "head": ["Susunan", "Contoh", "Arti"],
+            "rows": [
+              ["**[orang]ga [benda] kerak**", "*Menga suv kerak.*", "Saya perlu air."],
+              ["", "*Sizga yordam kerakmi?*", "Anda perlu bantuan?"],
+              ["**akar + -(i)sh + milik + kerak**", "*Borishim kerak.*", "Saya harus pergi."],
+              ["", "*Ishlashingiz kerak.*", "Anda harus bekerja."],
+              ["", "*Kutishimiz kerak.*", "Kami harus menunggu."],
+              ["**kerak emas**", "*Bunga pul kerak emas.*", "Untuk ini tidak perlu uang."]
+            ]
+          },
+          "after": [
+            "Bentuk kedua dibangun dari **kata benda kata kerja**: akar + *-(i)sh* menghasilkan \"perbuatan\". *bor-ish* = kepergian, *ishla-sh* = pekerjaan, *kut-ish* = penantian. Tempelkan akhiran milik dan kamu mendapat \"kepergianku\", \"pekerjaanmu\" — lalu *kerak* menutupnya.",
+            "Sepupu *kerak* yang lebih halus adalah *lozim* (kata Arab, sepupu \"lazim\") untuk tulisan resmi, dan *shart* (sepupu \"syarat\") untuk kewajiban yang tak bisa ditawar: *Borish shart* = \"wajib pergi\".",
+            "Untuk \"tidak boleh\", dipakai *mumkin emas*: *Bu yerda chekish mumkin emas* = dilarang merokok di sini."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Makanan Uzbekistan yang wajib dicoba",
+      "blocks": [
+        { "type": "p", "text": "Dapur Uzbekistan berat, hangat, dan berpusat pada satu hidangan nasional yang bahkan punya hari peringatannya sendiri." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Apa itu"],
+          "rows": [
+            ["**osh / palov**", "åsy / på-LÅV", "plov — nasi berlemak dengan wortel, daging, dan bawang"],
+            ["**somsa**", "såm-SÅ", "pastel panggang berisi daging, dari tandir"],
+            ["**manti**", "mån-TI", "pangsit besar kukus"],
+            ["**shoʻrva**", "syor-VÅ", "sup daging dan sayur"],
+            ["**lagʻmon**", "lågh-MÅN", "mi tarik berkuah, warisan Uighur"],
+            ["**shashlik**", "syåsy-LIK", "sate daging bakar"],
+            ["**norin**", "nå-RIN", "mi potong dingin dengan daging kuda"],
+            ["**chuchvara**", "cuc-vå-RÅ", "pangsit kecil dalam kuah"],
+            ["**non**", "nån", "roti bundar dari tandir"],
+            ["**qatiq**", "qå-TIQ", "yoghurt asam"]
+          ]
+        },
+        { "type": "p", "text": "*Osh* dimasak di kuali besar bernama *qozon*, dan di banyak keluarga memasaknya adalah pekerjaan laki-laki. Ada juga adat *nahorgi osh* — plov pagi yang dihidangkan mulai pukul enam untuk ratusan tamu sebagai bagian dari pernikahan. Kalau kamu diundang, datanglah lapar." },
+        { "type": "p", "text": "⚠️ *Halol* dan *harom* dipakai persis seperti bahasa Indonesia, dan hampir semua daging di Uzbekistan halal secara bawaan. Yang perlu ditanyakan justru *choʻchqa goʻshti bormi?* (ada daging babi?) di restoran Rusia atau Korea, yang jumlahnya cukup banyak di Tashkent." }
+      ]
+    },
+    {
+      "title": "Kalimat di restoran",
+      "blocks": [
+        { "type": "p", "text": "Sepuluh kalimat, urut dari masuk sampai keluar." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**Menyuni bering.**", "mén-yu-NI bé-RING", "Minta menunya."],
+            ["**Nima maslahat berasiz?**", "NI-må mås-lå-HAT bé-rå-siz", "Apa yang Anda sarankan?"],
+            ["**Bu nima?**", "bu NI-må", "Ini apa?"],
+            ["**Bitta osh, iltimos.**", "bit-TÅ åsy", "Satu plov, tolong."],
+            ["**Achchiq boʻlmasin.**", "åc-CIQ bol-må-SIN", "Jangan pedas."],
+            ["**Goʻshtsiz boʻladimi?**", "gosyt-SIZ bo-lå-di-mi", "Bisa tanpa daging?"],
+            ["**Yana bir piyola choy.**", "yå-NÅ bir pi-yå-LÅ cåy", "Tambah satu cangkir teh."],
+            ["**Hisob, iltimos.**", "hi-SÅB il-ti-MÅS", "Bon, tolong."],
+            ["**Karta bilan toʻlasam boʻladimi?**", "KÅR-tå bi-LAN", "Boleh bayar pakai kartu?"],
+            ["**Juda mazali edi, rahmat!**", "ju-DÅ må-zå-LI é-DI", "Tadi enak sekali, terima kasih!"]
+          ]
+        },
+        { "type": "p", "text": "Perhatikan akhiran **-siz** pada *goʻshtsiz* (tanpa daging): ia berarti \"tanpa\", dan pasangannya *-li* berarti \"ber-\". *Goʻshtli* (berdaging), *muzli* (ber-es), *shakarsiz* (tanpa gula), *tuzsiz* (tanpa garam). Dua akhiran ini membuka puluhan kata sekaligus." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "uz": "restoran", "baca": "rés-tå-RAN", "id": "restoran" },
+    { "uz": "menyu", "baca": "MÉN-yu", "id": "menu" },
+    { "uz": "buyurtma qilmoq", "baca": "bu-yurt-MÅ qil-MÅQ", "id": "memesan" },
+    { "uz": "hisob", "baca": "hi-SÅB", "id": "bon, hitungan" },
+    { "uz": "ovqat", "baca": "åv-QAT", "id": "makanan" },
+    { "uz": "ichimlik", "baca": "i-cim-LIK", "id": "minuman" },
+    { "uz": "osh", "baca": "åsy", "id": "plov" },
+    { "uz": "shoʻrva", "baca": "syor-VÅ", "id": "sup" },
+    { "uz": "somsa", "baca": "såm-SÅ", "id": "somsa, pastel panggang" },
+    { "uz": "manti", "baca": "mån-TI", "id": "manti, pangsit kukus" },
+    { "uz": "lagʻmon", "baca": "lågh-MÅN", "id": "mi tarik berkuah" },
+    { "uz": "shashlik", "baca": "syåsy-LIK", "id": "sate" },
+    { "uz": "goʻsht", "baca": "gosyt", "id": "daging" },
+    { "uz": "suv", "baca": "suv", "id": "air" },
+    { "uz": "muz", "baca": "muz", "id": "es" },
+    { "uz": "achchiq", "baca": "åc-CIQ", "id": "pedas; pahit" },
+    { "uz": "shirin", "baca": "syi-RIN", "id": "manis" },
+    { "uz": "nordon", "baca": "når-DÅN", "id": "asam" },
+    { "uz": "kerak", "baca": "ké-RAK", "id": "perlu, harus" },
+    { "uz": "mumkin", "baca": "mum-KIN", "id": "boleh, mungkin" },
+    { "uz": "shart", "baca": "syårt", "id": "wajib; syarat" },
+    { "uz": "toʻlamoq", "baca": "to-lå-MÅQ", "id": "membayar" },
+    { "uz": "karta", "baca": "KÅR-tå", "id": "kartu" },
+    { "uz": "maslahat", "baca": "mås-lå-HAT", "id": "saran" },
+    { "uz": "biror narsa", "baca": "bi-RÅR når-SÅ", "id": "sesuatu" },
+    { "uz": "olib kelmoq", "baca": "å-LIB kél-MÅQ", "id": "membawakan" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Uzbek.",
+      "items": [
+        "Mau pesan apa?",
+        "Saya mau makan plov.",
+        "Saya perlu air.",
+        "Saya harus pergi.",
+        "Jangan pedas.",
+        "Bon, tolong."
+      ]
+    },
+    {
+      "prompt": "Ubah ke bentuk -moqchi sesuai pelakunya.",
+      "items": [
+        "bormoq + men → ____",
+        "yemoq + biz → ____",
+        "koʻrmoq + siz → ____",
+        "olmoq + u → ____",
+        "oʻqimoq + sen → ____",
+        "qaytmoq + ular → ____"
+      ]
+    },
+    {
+      "prompt": "Pilih susunan kerak yang benar dan lengkapi.",
+      "items": [
+        "____ suv kerak. (saya perlu air)",
+        "____ kerak. (saya harus pergi — bormoq)",
+        "____ yordam kerakmi? (Anda perlu bantuan?)",
+        "____ kerak. (kami harus menunggu — kutmoq)",
+        "____ kerak. (Anda harus bekerja — ishlamoq)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "qilmoqchisiz / nima / buyurtma / ?",
+        "kerak / menga / choy / koʻk",
+        "bering / iltimos / osh / bitta / ,",
+        "boʻlmasin / achchiq",
+        "iltimos / hisob / ,"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 11. Terjemahkan ke bahasa Uzbek tanpa melihat unitnya.",
+      "items": [
+        "Saya pergi ke Samarkand.",
+        "Kami makan plov dua kali.",
+        "Saya tidak membeli oleh-oleh.",
+        "Waktu itu hotelnya murah.",
+        "Dia kembali hari Minggu."
+      ]
+    }
+  ],
+  "answers": [
+    "Nima buyurtma qilmoqchisiz? — Men osh yemoqchiman. — Menga suv kerak. — Borishim kerak. — Achchiq boʻlmasin. — Hisob, iltimos.",
+    "bormoqchiman — yemoqchimiz — koʻrmoqchisiz — olmoqchi — oʻqimoqchisan — qaytmoqchilar",
+    "Menga — Borishim — Sizga — Kutishimiz — Ishlashingiz",
+    "Nima buyurtma qilmoqchisiz? — Menga koʻk choy kerak. — Bitta osh bering, iltimos. — Achchiq boʻlmasin. — Hisob, iltimos.",
+    "Men Samarqandga bordim. — Biz ikki marta osh yedik. — Men sovgʻa sotib olmadim. — Mehmonxona arzon edi. — U yakshanba kuni qaytdi."
+  ]
+}

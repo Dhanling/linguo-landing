@@ -1,0 +1,213 @@
+{
+  "title": "Perintah dan permintaan: dari \"kel\" sampai \"kelingiz\"",
+  "title_target": "Buyruq mayli: kel, keling, kelingiz",
+  "goal": "Menyuruh, mengajak, mempersilakan, dan melarang pada tingkat kesopanan yang tepat — perkakas yang paling sering dipakai orang Uzbek ketika menjamu tamu.",
+  "bekal": [
+    "membentuk tiga tingkat perintah: *kel*, *keling*, *kelingiz*",
+    "melarang dengan *-mang* dan mengajak dengan *-aylik*",
+    "melunakkan perintah dengan *iltimos*, *marhamat*, dan akhiran *-chi*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Mehmon boʻling!",
+      "intro": "Budi datang ke rumah keluarga Nilufar untuk pertama kalinya. Ibu Nilufar membuka pintu.",
+      "lines": [
+        { "speaker": "Ona:", "text": "Keling, keling! Xush kelibsiz!", "id": "Mari, silakan masuk! Selamat datang!", "literal": "datanglah, datanglah! senang datang-Anda!" },
+        { "speaker": "Budi:", "text": "Rahmat, opa. Mana, kichkina sovgʻa.", "id": "Terima kasih, Bu. Ini, sedikit oleh-oleh.", "literal": "terima-kasih, kakak-perempuan. nah, kecil hadiah." },
+        { "speaker": "Ona:", "text": "Voy, ovora boʻlmang! Kiring, oyoq kiyimni yeching.", "id": "Aduh, tidak usah repot-repot! Masuklah, lepas sepatunya.", "literal": "wah, repot jangan-jadi! masuklah, kaki pakaian-sasaran lepaslah." },
+        { "speaker": "Budi:", "text": "Xoʻp. Qayerga oʻtiray?", "id": "Baik. Saya duduk di mana?", "literal": "baik. mana-ke duduk-saya?" },
+        { "speaker": "Ona:", "text": "Toʻrga oʻting! Dasturxonga marhamat.", "id": "Duduklah di tempat utama! Silakan ke meja makan.", "literal": "tempat-utama-ke lewatlah! taplak-makan-ke silakan." },
+        { "speaker": "Nilufar:", "text": "Choy quyay. Koʻk choymi yoki qora choymi?", "id": "Saya tuangkan teh. Teh hijau atau teh hitam?", "literal": "teh tuang-saya. hijau teh-kah atau hitam teh-kah?" },
+        { "speaker": "Budi:", "text": "Koʻk choy, iltimos. Rahmat!", "id": "Teh hijau, tolong. Terima kasih!", "literal": "hijau teh, tolong. terima-kasih!" },
+        { "speaker": "Ona:", "text": "Nondan oling, uyalmang. Oshni ham torting.", "id": "Ambil rotinya, jangan sungkan. Cicipi plovnya juga.", "literal": "roti-dari ambillah, jangan-malu. plov-sasaran juga tariklah." },
+        { "speaker": "Budi:", "text": "Juda mazali! Retseptini bering-chi?", "id": "Enak sekali! Boleh minta resepnya?", "literal": "sangat lezat! resep-nya-sasaran berilah-lah?" },
+        { "speaker": "Ona:", "text": "Albatta. Lekin avval yeng, keyin yozing!", "id": "Tentu. Tapi makan dulu, tulisnya nanti!", "literal": "tentu. tetapi mula-mula makanlah, kemudian tulislah!" },
+        { "speaker": "Budi:", "text": "Xoʻp boʻladi. Yana keling deb aytmang — men oʻzim kelaman!", "id": "Baiklah. Jangan bilang \"datang lagi\" — saya pasti datang sendiri!", "literal": "baik jadi. lagi datanglah berkata jangan-katakan — saya sendiri datang-saya!" }
+      ],
+      "notes": [
+        "**Keling diucapkan dua kali, dan itu sengaja.** Mengulang perintah adalah cara bahasa Uzbek menghangatkannya: *keling-keling*, *oling-oling*, *mayli-mayli*. Sekali saja terdengar seperti perintah; dua kali terdengar seperti sambutan.",
+        "**Toʻr adalah tempat duduk paling terhormat**, yaitu sisi ruangan yang paling jauh dari pintu. Tamu diarahkan ke sana, dan menolaknya justru merepotkan tuan rumah. Kalau kamu disuruh *toʻrga oʻting*, jalan saja ke sana.",
+        "**Dasturxon** bukan meja, melainkan taplak yang dibentangkan berisi makanan — dan sekaligus nama untuk seluruh jamuan itu. *Dasturxonga marhamat* adalah undangan makan yang paling khas.",
+        "**Ovora boʻlmang = \"jangan repot-repot\".** Dipasangkan dengan *uyalmang* (jangan sungkan), keduanya kalimat wajib bagi tamu di Uzbekistan. Tuan rumah akan terus menawarkan; menolak sekali dianggap basa-basi, jadi kalau kamu benar-benar kenyang katakan *rahmat, toʻydim* (terima kasih, saya kenyang)."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga tingkat perintah, dan satu ajakan",
+          "body": [
+            "Bentuk dasarnya adalah akar kata kerja telanjang — tanpa akhiran apa pun. Tingkat kesopanan ditambahkan dari situ."
+          ],
+          "table": {
+            "head": ["Tingkat", "Bentuk", "*kelmoq*", "*oʻtirmoq*", "Dipakai kepada"],
+            "rows": [
+              ["Akrab", "akar telanjang", "*kel!*", "*oʻtir!*", "adik, anak, teman dekat"],
+              ["Sopan", "akar + **-ing**", "*keling!*", "*oʻtiring!*", "semua orang lain — bentuk paling aman"],
+              ["Sangat sopan", "akar + **-ingiz**", "*kelingiz!*", "*oʻtiringiz!*", "orang tua, atasan, tulisan resmi"],
+              ["Ajakan", "akar + **-aylik**", "*kelaylik!*", "*oʻtiraylik!*", "\"ayo kita…\""],
+              ["Diri sendiri", "akar + **-ay**", "*kelay*", "*oʻtiray*", "\"biar saya…\", meminta izin"]
+            ]
+          },
+          "after": [
+            "**Pakai -ing sampai kamu benar-benar yakin.** Bentuk telanjang terdengar kasar kepada orang yang baru dikenal, dan tidak ada ruginya terdengar sedikit terlalu sopan.",
+            "Baris terakhir sangat berguna: *Choy quyay* (biar saya tuangkan teh), *Kiray?* (boleh saya masuk?), *Koʻray* (coba saya lihat). Bentuk *-ay* adalah cara paling halus menawarkan diri.",
+            "⚠️ Akar berakhir huruf hidup menyisipkan *-y-*: *oʻqi-* → *oʻqi**y**ing*, *ishla-* → *ishla**y**ing*. Dan *-ing* pada akar berakhir *-k/-q* melunakkannya: *yoq-* → *yoqing*, tetapi *toʻk-* → *toʻking*."
+          ]
+        },
+        {
+          "title": "Melarang, dan melunakkan",
+          "body": [
+            "Larangan memakai *-ma-* yang sama dengan ingkar biasa, disisipkan sebelum akhiran perintahnya."
+          ],
+          "table": {
+            "head": ["Bentuk", "Contoh", "Arti"],
+            "rows": [
+              ["akar + **-ma**", "*kelma!*", "jangan datang (akrab)"],
+              ["akar + **-mang**", "*kelmang!*", "jangan datang (sopan)"],
+              ["akar + **-mangiz**", "*kelmangiz!*", "jangan datang (sangat sopan)"],
+              ["+ **iltimos**", "*Iltimos, kuting.*", "tolong, tunggu"],
+              ["+ **-chi**", "*Ayting-chi.*", "coba katakan, dong"],
+              ["+ **marhamat**", "*Marhamat, oling.*", "silakan, ambillah"]
+            ]
+          },
+          "after": [
+            "**-chi adalah pelunak paling khas bahasa Uzbek.** Ia mengubah perintah jadi permintaan berteman: *Bering* (berikan) → *Bering-chi* (boleh minta?). Dalam bahasa Indonesia padanannya kira-kira \"dong\" atau \"ya\".",
+            "*Iltimos* boleh berdiri di depan atau di belakang: *Iltimos, kuting* atau *Kuting, iltimos*. Keduanya sama sopan.",
+            "Untuk larangan yang lebih halus, dipakai bentuk *kerak emas*: *Bormasangiz ham boʻladi* (tidak pergi pun tidak apa-apa). Bentuk ini menunggu unit 18; untuk sekarang *-mang* sudah cukup untuk semua keadaan."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menjadi tamu di rumah orang Uzbek",
+      "blocks": [
+        { "type": "p", "text": "Menjamu tamu di Uzbekistan bukan keramahan tambahan, melainkan kewajiban yang dianggap suci. Ada pepatahnya: *Mehmon otangdan ulugʻ* — \"tamu lebih agung daripada ayahmu\". Sepuluh kalimat berikut menutup seluruh kunjungan pertama." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**Xush kelibsiz!**", "khusy ké-LIB-siz", "Selamat datang!"],
+            ["**Kiring, marhamat.**", "ki-RING mår-hå-MAT", "Masuklah, silakan."],
+            ["**Ovora boʻlmang.**", "å-vå-RÅ bol-MANG", "Jangan repot-repot."],
+            ["**Uyalmang, oling.**", "u-yål-MANG å-LING", "Jangan sungkan, ambillah."],
+            ["**Juda mazali!**", "ju-DÅ må-zå-LI", "Enak sekali!"],
+            ["**Rahmat, toʻydim.**", "rah-MAT TOY-dim", "Terima kasih, saya kenyang."],
+            ["**Qoʻlingiz dard koʻrmasin!**", "QO-lin-giz dård kor-må-SIN", "Semoga tangan Anda tak pernah sakit (pujian untuk masakan)"],
+            ["**Uyingiz obod boʻlsin!**", "u-YIN-giz å-BÅD bol-SIN", "Semoga rumah Anda makmur."],
+            ["**Endi ketaman.**", "én-DI ké-tå-MAN", "Saya pamit sekarang."],
+            ["**Yana keling!**", "yå-NÅ ké-LING", "Datang lagi ya!"]
+          ]
+        },
+        { "type": "p", "text": "Dua kalimat doa di tengah tabel — *Qoʻlingiz dard koʻrmasin* dan *Uyingiz obod boʻlsin* — memakai bentuk *-sin*, yaitu perintah untuk orang ketiga (\"semoga ia…\"). Ia tidak dipasang sebagai tata bahasa di modul ini; hafalkan saja utuh, dan orang akan terkesan." }
+      ]
+    },
+    {
+      "title": "Di rumah: benda dan ruangan",
+      "blocks": [
+        { "type": "p", "text": "Kosakata yang langsung terpakai begitu kamu diundang." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Arti", "Oʻzbekcha", "Cara baca", "Arti"],
+          "rows": [
+            ["**dasturxon**", "dås-tur-KHÅN", "taplak jamuan", "**choynak**", "cåy-NAK", "teko"],
+            ["**piyola**", "pi-yå-LÅ", "cangkir teh", "**likop**", "li-KÅP", "piring"],
+            ["**qoshiq**", "qå-SYIQ", "sendok", "**pichoq**", "pi-CÅQ", "pisau"],
+            ["**oshxona**", "åsy-khå-NÅ", "dapur", "**hammom**", "håm-MÅM", "kamar mandi"],
+            ["**hovli**", "håv-LI", "halaman", "**gilam**", "gi-LAM", "karpet"]
+          ]
+        },
+        { "type": "p", "text": "*Piyola* adalah cangkir teh tanpa gagang, dan cara menuangnya punya aturan sendiri: tuan rumah mengisinya **hanya sepertiga**. Bukan pelit — makin sering ia menuang, makin sering ia memperhatikanmu, dan itulah bentuk hormatnya. Cangkir penuh justru berarti \"silakan pulang\"." },
+        { "type": "p", "text": "⚠️ *Hammom* (kamar mandi) sepupu kata \"hamam\" Turki dan \"hammam\" Arab. Tapi kalau yang kamu cari adalah toilet, kata yang tepat adalah *hojatxona* atau, di tempat umum, cukup *tualet*." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "uz": "mehmon", "baca": "méh-MÅN", "id": "tamu" },
+    { "uz": "xush kelibsiz", "baca": "khusy ké-LIB-siz", "id": "selamat datang" },
+    { "uz": "kirmoq", "baca": "kir-MÅQ", "id": "masuk" },
+    { "uz": "yechmoq", "baca": "yéc-MÅQ", "id": "melepas (pakaian)" },
+    { "uz": "oyoq kiyim", "baca": "å-YÅQ ki-YIM", "id": "alas kaki, sepatu" },
+    { "uz": "toʻr", "baca": "tor", "id": "tempat duduk terhormat" },
+    { "uz": "dasturxon", "baca": "dås-tur-KHÅN", "id": "jamuan; taplak makan" },
+    { "uz": "piyola", "baca": "pi-yå-LÅ", "id": "cangkir teh" },
+    { "uz": "choynak", "baca": "cåy-NAK", "id": "teko" },
+    { "uz": "qoshiq", "baca": "qå-SYIQ", "id": "sendok" },
+    { "uz": "pichoq", "baca": "pi-CÅQ", "id": "pisau" },
+    { "uz": "likop", "baca": "li-KÅP", "id": "piring" },
+    { "uz": "hovli", "baca": "håv-LI", "id": "halaman rumah" },
+    { "uz": "gilam", "baca": "gi-LAM", "id": "karpet" },
+    { "uz": "hammom", "baca": "håm-MÅM", "id": "kamar mandi" },
+    { "uz": "mazali", "baca": "må-zå-LI", "id": "lezat" },
+    { "uz": "toʻymoq", "baca": "toy-MÅQ", "id": "kenyang" },
+    { "uz": "uyalmoq", "baca": "u-yål-MÅQ", "id": "malu, sungkan" },
+    { "uz": "ovora", "baca": "å-vå-RÅ", "id": "repot" },
+    { "uz": "tortmoq", "baca": "tårt-MÅQ", "id": "menarik; mencicipi" },
+    { "uz": "retsept", "baca": "rét-SÉPT", "id": "resep" },
+    { "uz": "iltimos", "baca": "il-ti-MÅS", "id": "tolong" },
+    { "uz": "marhamat", "baca": "mår-hå-MAT", "id": "silakan" },
+    { "uz": "xoʻp", "baca": "khop", "id": "baik, oke" },
+    { "uz": "oʻzim", "baca": "o-ZIM", "id": "saya sendiri" },
+    { "uz": "kichkina", "baca": "kic-ki-NÅ", "id": "kecil" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi perintah sopan (-ing).",
+      "items": [
+        "kelmoq → ____",
+        "oʻtirmoq → ____",
+        "olmoq → ____",
+        "kutmoq → ____",
+        "yozmoq → ____",
+        "oʻqimoq → ____"
+      ]
+    },
+    {
+      "prompt": "Jadikan larangan sopan (-mang).",
+      "items": [
+        "Kelmoq → ____",
+        "Kechikmoq → ____",
+        "Uyalmoq → ____",
+        "Ovora boʻlmoq → ____",
+        "Unutmoq → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Uzbek.",
+      "items": [
+        "Silakan masuk!",
+        "Tunggu sebentar, tolong.",
+        "Jangan sungkan, ambillah.",
+        "Ayo kita pergi ke pasar.",
+        "Biar saya tuangkan teh.",
+        "Jangan terlambat!"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "keling / marhamat / ,",
+        "boʻlmang / ovora",
+        "oling / uyalmang / ,",
+        "quyay / choy / men",
+        "bering-chi / retseptini"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 10. Terjemahkan ke bahasa Uzbek tanpa melihat unitnya.",
+      "items": [
+        "Sekarang Anda sedang apa?",
+        "Saya sedang menunggu bus.",
+        "Sedang hujan.",
+        "Mereka sedang mengobrol.",
+        "Hati-hati!"
+      ]
+    }
+  ],
+  "answers": [
+    "keling — oʻtiring — oling — kuting — yozing — oʻqiying",
+    "Kelmang — Kechikmang — Uyalmang — Ovora boʻlmang — Unutmang",
+    "Kiring, marhamat! — Iltimos, bir daqiqa kuting. — Uyalmang, oling. — Bozorga boraylik. — Choy quyay. — Kechikmang!",
+    "Marhamat, keling. — Ovora boʻlmang. — Uyalmang, oling. — Men choy quyay. — Retseptini bering-chi.",
+    "Hozir nima qilyapsiz? — Men avtobus kutyapman. — Yomgʻir yogʻyapti. — Ular gaplashyaptilar. — Ehtiyot boʻling!"
+  ]
+}

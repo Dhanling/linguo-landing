@@ -1,0 +1,218 @@
+{
+  "title": "Ke mana dan dari mana: -ga dan -dan",
+  "title_target": "Qayerga, qayerdan: -ga va -dan",
+  "goal": "Menyatakan arah dan asal dengan dua akhiran, menyebut alat transportasi dengan *bilan*, dan menanyakan jalan tanpa tersesat.",
+  "bekal": [
+    "memasang *-ga* untuk tujuan dan *-dan* untuk asal",
+    "mengenali pengerasan *-ga* menjadi *-ka* dan *-qa* setelah k, q, dan gʻ",
+    "mengatakan \"naik bus\" sebagai *avtobus bilan* — harfiahnya \"dengan bus\""
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Aeroportga qanday boraman?",
+      "intro": "Budi harus menjemput temannya di bandara. Ia bertanya kepada resepsionis asrama.",
+      "lines": [
+        { "speaker": "Budi:", "text": "Kechirasiz, aeroportga qanday boraman?", "id": "Permisi, bagaimana caranya saya pergi ke bandara?", "literal": "maaf, bandara-ke bagaimana pergi-saya?" },
+        { "speaker": "Xodim:", "text": "Metro bilan boring. Bu yerdan oʻn besh daqiqa.", "id": "Naik metro saja. Lima belas menit dari sini.", "literal": "metro dengan pergilah. ini tempat-dari sepuluh lima menit." },
+        { "speaker": "Budi:", "text": "Qaysi bekatdan chiqaman?", "id": "Saya turun di stasiun mana?", "literal": "yang-mana halte-dari keluar-saya?" },
+        { "speaker": "Xodim:", "text": "Toshkent bekatidan chiqing, keyin taksiga oʻtiring.", "id": "Keluar di stasiun Toshkent, lalu naik taksi.", "literal": "Toshkent halte-nya-dari keluarlah, kemudian taksi-ke duduklah." },
+        { "speaker": "Budi:", "text": "Taksi qancha turadi?", "id": "Taksinya berapa?", "literal": "taksi berapa berdiri?" },
+        { "speaker": "Xodim:", "text": "Yigirma ming atrofida. Aeroportdan qaytasizmi?", "id": "Sekitar dua puluh ribu. Anda kembali dari bandara?", "literal": "dua-puluh ribu sekitar-nya-di. bandara-dari kembali-Anda-kah?" },
+        { "speaker": "Budi:", "text": "Ha, doʻstim bilan qaytaman. U Jakartadan keladi.", "id": "Ya, saya kembali bersama teman saya. Dia datang dari Jakarta.", "literal": "ya, teman-ku dengan kembali-saya. dia Jakarta-dari datang." },
+        { "speaker": "Xodim:", "text": "Samolyot qachon qoʻnadi?", "id": "Pesawatnya mendarat kapan?", "literal": "pesawat kapan mendarat?" },
+        { "speaker": "Budi:", "text": "Kechqurun. Ammo yoʻlni bilmayman.", "id": "Sore. Tapi saya tidak tahu jalannya.", "literal": "sore. tetapi jalan-sasaran tahu-tidak-saya." },
+        { "speaker": "Xodim:", "text": "Xavotir olmang. Haydovchiga manzilni koʻrsating.", "id": "Jangan khawatir. Tunjukkan alamatnya kepada sopir.", "literal": "khawatir jangan-ambil. sopir-kepada alamat-sasaran tunjukkanlah." },
+        { "speaker": "Budi:", "text": "Yaxshi fikr. Yordamingiz uchun rahmat!", "id": "Ide bagus. Terima kasih atas bantuan Anda!", "literal": "baik pikiran. bantuan-Anda untuk terima-kasih!" }
+      ],
+      "notes": [
+        "**-ga menutup tiga arti sekaligus: ke, kepada, dan untuk.** *Aeroportga* (ke bandara), *haydovchiga* (kepada sopir), *menga* (untuk saya). Bahasa Indonesia memakai tiga kata berbeda; bahasa Uzbek memakai satu akhiran.",
+        "**Taksiga oʻtirmoq harfiahnya \"duduk ke taksi\".** Bahasa Uzbek memakai *-ga* untuk masuk ke dalam kendaraan, dan *-dan* untuk keluar darinya: *avtobusdan tushmoq* (turun dari bus).",
+        "**Bilan berarti \"dengan\" dan \"naik\".** *Doʻstim bilan* (dengan teman saya), *metro bilan* (naik metro), *qalam bilan* (dengan pena). Ia berdiri **setelah** kata bendanya, seperti hampir semua kata bantu bahasa Uzbek.",
+        "**Xavotir olmang = \"jangan khawatir\"**, harfiahnya \"jangan ambil kecemasan\". Bahasa Uzbek sering menyusun kata kerja dari kata benda + *olmoq/qilmoq/bermoq*: *dam olmoq* (istirahat), *ish qilmoq* (bekerja), *yordam bermoq* (menolong)."
+      ],
+      "grammars": [
+        {
+          "title": "-ga: tujuan, penerima, dan waktu batas",
+          "body": [
+            "Akhiran kedua dari enam. Bentuk dasarnya *-ga*, tetapi ia mengeras kalau kata sebelumnya berakhir dengan bunyi tenggorokan."
+          ],
+          "table": {
+            "head": ["Kata dasar", "Bentuk", "Cara baca", "Arti"],
+            "rows": [
+              ["*uy*", "*uy**ga***", "uy-GÅ", "ke rumah"],
+              ["*bozor*", "*bozor**ga***", "bå-zår-GÅ", "ke pasar"],
+              ["*men*", "*men**ga***", "mén-GÅ", "kepada saya, untuk saya"],
+              ["*siz*", "*siz**ga***", "siz-GÅ", "kepada Anda"],
+              ["*qishloq*", "*qishlo**qqa***", "qisy-låq-QÅ", "ke desa"],
+              ["*togʻ*", "*to**qqa***", "tåq-QÅ", "ke gunung"],
+              ["*tok*", "*to**kka***", "tåk-KÅ", "ke pohon anggur"]
+            ]
+          },
+          "after": [
+            "Aturan pengerasannya pendek: **setelah -q dan -gʻ, akhirannya jadi -qa; setelah -k, jadi -kka.** Perhatikan juga bahwa huruf terakhir kata dasarnya ikut lebur: *qishloq* → *qishlo**qqa***, bukan *qishloqqa* dengan tiga q.",
+            "*-ga* juga menandai **batas waktu**: *soat uchga* (sampai jam tiga), *dushanbaga* (untuk hari Senin). Dan ia dipakai untuk harga per satuan: *bir kiloga yigirma ming*.",
+            "⚠️ Kata ganti berubah sedikit: *men* → *men**ga***, *sen* → *sen**ga***, *u* → *un**ga***, *biz* → *biz**ga***, *siz* → *siz**ga***, *ular* → *ular**ga***. Hanya *u* yang tak seperti dugaan."
+          ]
+        },
+        {
+          "title": "-dan: asal, sejak, lewat, dan pembanding",
+          "body": [
+            "Akhiran ketiga. Bentuknya tidak pernah berubah — selalu *-dan*, tanpa pengecualian."
+          ],
+          "table": {
+            "head": ["Contoh", "Arti", "Fungsi"],
+            "rows": [
+              ["*Jakartadan keladi.*", "Dia datang dari Jakarta.", "asal tempat"],
+              ["*Ertalabdan ishlayman.*", "Saya bekerja sejak pagi.", "asal waktu"],
+              ["*Eshikdan kiring.*", "Masuklah lewat pintu.", "jalan yang dilalui"],
+              ["*Bekatdan tushdim.*", "Saya turun di halte.", "keluar dari sesuatu"],
+              ["*Mendan soʻrang.*", "Tanyakan kepada saya.", "sumber keterangan"],
+              ["*Sendan kattaman.*", "Saya lebih tua darimu.", "pembanding (unit 16)"]
+            ]
+          },
+          "after": [
+            "Kata tanyanya *qayerdan* (dari mana), *kimdan* (dari siapa), *nimadan* (dari apa), *qachondan* (sejak kapan).",
+            "Kata ganti mengikuti pola yang sama dengan *-ga*: *mendan, sendan, undan, bizdan, sizdan, ulardan*.",
+            "Sekarang kamu memegang tiga akhiran tempat sekaligus. Latih ketiganya sebagai satu paket untuk tiap kata benda baru: *uy — uyda — uyga — uydan*. Sepuluh detik, dan seluruh kata depan bahasa Indonesia sudah tertutup."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Perjalanan dan kendaraan",
+      "blocks": [
+        { "type": "p", "text": "Metro Tashkent dibuka pada 1977, yang pertama di Asia Tengah, dan stasiun-stasiunnya dihias seperti istana — mozaik, lampu gantung, pualam. Sampai 2018 memotretnya dilarang; sekarang justru jadi tujuan wisata tersendiri." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Arti", "Oʻzbekcha", "Cara baca", "Arti"],
+          "rows": [
+            ["**metro**", "mét-RÅ", "metro", "**avtobus**", "åv-TÅ-bus", "bus"],
+            ["**taksi**", "tåk-SI", "taksi", "**poyezd**", "på-YÉZD", "kereta api"],
+            ["**samolyot**", "så-mål-YÅT", "pesawat", "**mashina**", "må-SYI-nå", "mobil"],
+            ["**aeroport**", "å-é-rå-PÅRT", "bandara", "**vokzal**", "våk-ZAL", "stasiun kereta"],
+            ["**bekat**", "bé-KAT", "halte", "**chipta**", "CIP-tå", "tiket"],
+            ["**yoʻl**", "yol", "jalan", "**manzil**", "mån-ZIL", "alamat, tujuan"],
+            ["**piyoda**", "pi-yå-DÅ", "jalan kaki", "**safar**", "så-FAR", "perjalanan"]
+          ]
+        },
+        { "type": "p", "text": "⚠️ *Manzil* berarti **alamat** atau **tujuan** — akarnya sama dengan \"manzil\" dalam bahasa Indonesia klasik (tempat singgah), dan *safar* sama persis dengan \"safar\". Dua kata lagi yang sudah kamu punya tanpa menghafal." }
+      ]
+    },
+    {
+      "title": "Bertanya jalan",
+      "blocks": [
+        { "type": "p", "text": "Delapan kalimat yang menutup hampir semua keadaan tersesat." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**… ga qanday boraman?**", "gå QÅN-dåy bå-rå-MAN", "Bagaimana saya pergi ke …?"],
+            ["**… qayerda?**", "qå-YÉR-då", "… di mana?"],
+            ["**Toʻgʻriga yuring.**", "tog-ri-GÅ yu-RING", "Jalan lurus terus."],
+            ["**Oʻngga buriling.**", "ong-GÅ bu-ri-LING", "Belok kanan."],
+            ["**Chapga buriling.**", "cåp-GÅ bu-ri-LING", "Belok kiri."],
+            ["**Bu yerdan uzoqmi?**", "bu YÉR-dån u-ZÅQ-mi", "Jauh dari sini?"],
+            ["**Piyoda boraman.**", "pi-yå-DÅ bå-rå-MAN", "Saya jalan kaki."],
+            ["**Adashib qoldim.**", "å-då-SYIB QÅL-dim", "Saya tersesat."]
+          ]
+        },
+        { "type": "p", "text": "Dua kata arah yang perlu dihafal terpisah karena sering muncul sendirian: *oʻng* (kanan), *chap* (kiri), *toʻgʻri* (lurus, benar). Perhatikan bahwa *toʻgʻri* juga berarti \"betul\" — *Toʻgʻri!* adalah cara paling umum mengiyakan sesuatu." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "uz": "aeroport", "baca": "å-é-rå-PÅRT", "id": "bandara" },
+    { "uz": "vokzal", "baca": "våk-ZAL", "id": "stasiun kereta" },
+    { "uz": "avtobus", "baca": "åv-TÅ-bus", "id": "bus" },
+    { "uz": "poyezd", "baca": "på-YÉZD", "id": "kereta api" },
+    { "uz": "samolyot", "baca": "så-mål-YÅT", "id": "pesawat" },
+    { "uz": "taksi", "baca": "tåk-SI", "id": "taksi" },
+    { "uz": "chipta", "baca": "CIP-tå", "id": "tiket" },
+    { "uz": "yoʻl", "baca": "yol", "id": "jalan" },
+    { "uz": "manzil", "baca": "mån-ZIL", "id": "alamat, tujuan" },
+    { "uz": "piyoda", "baca": "pi-yå-DÅ", "id": "jalan kaki" },
+    { "uz": "bilan", "baca": "bi-LAN", "id": "dengan; naik" },
+    { "uz": "uchun", "baca": "u-CUN", "id": "untuk" },
+    { "uz": "keyin", "baca": "ké-YIN", "id": "kemudian, sesudah" },
+    { "uz": "oldin", "baca": "ål-DIN", "id": "sebelum, dahulu" },
+    { "uz": "ketmoq", "baca": "két-MÅQ", "id": "berangkat, pergi" },
+    { "uz": "qaytmoq", "baca": "qåyt-MÅQ", "id": "kembali" },
+    { "uz": "kirmoq", "baca": "kir-MÅQ", "id": "masuk" },
+    { "uz": "chiqmoq", "baca": "ciq-MÅQ", "id": "keluar, naik" },
+    { "uz": "tushmoq", "baca": "tusy-MÅQ", "id": "turun" },
+    { "uz": "oʻtirmoq", "baca": "o-tir-MÅQ", "id": "duduk" },
+    { "uz": "yurmoq", "baca": "yur-MÅQ", "id": "berjalan" },
+    { "uz": "burilmoq", "baca": "bu-ril-MÅQ", "id": "berbelok" },
+    { "uz": "koʻrsatmoq", "baca": "kor-såt-MÅQ", "id": "menunjukkan" },
+    { "uz": "oʻng", "baca": "ong", "id": "kanan" },
+    { "uz": "chap", "baca": "cåp", "id": "kiri" },
+    { "uz": "toʻgʻri", "baca": "TOGH-ri", "id": "lurus; benar" },
+    { "uz": "daqiqa", "baca": "då-qi-QÅ", "id": "menit" },
+    { "uz": "yordam", "baca": "yår-DAM", "id": "bantuan" },
+    { "uz": "ammo", "baca": "åm-MÅ", "id": "tetapi" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Uzbek.",
+      "items": [
+        "Saya pergi ke bandara.",
+        "Dia datang dari Jakarta.",
+        "Bagaimana saya pergi ke pasar?",
+        "Saya naik metro.",
+        "Tunjukkan alamatnya kepada sopir.",
+        "Belok kanan, lalu jalan lurus."
+      ]
+    },
+    {
+      "prompt": "Pasang -ga (atau bentuk kerasnya) pada kata berikut.",
+      "items": [
+        "uy → ____",
+        "men → ____",
+        "u → ____",
+        "qishloq → ____",
+        "togʻ → ____",
+        "bozor → ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan -da, -ga, atau -dan.",
+      "items": [
+        "Men uy____ yashayman. (di)",
+        "Ertaga bozor____ boraman. (ke)",
+        "U Jakarta____ keladi. (dari)",
+        "Kitob stol____ turibdi. (di atas → di)",
+        "Bekat____ tushing. (dari)",
+        "Bu kitob siz____. (untuk)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "boraman / aeroportga / metro bilan / men",
+        "keladi / doʻstim / Jakartadan",
+        "buriling / oʻngga",
+        "qanday / boraman / bozorga / ?",
+        "rahmat / uchun / yordamingiz"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 6. Terjemahkan ke bahasa Uzbek tanpa melihat unitnya.",
+      "items": [
+        "Setiap hari saya membaca buku.",
+        "Anda tinggal di mana?",
+        "Dia bekerja di kedai teh.",
+        "Kami tidak berbicara bahasa Rusia.",
+        "Saya tidak mengerti."
+      ]
+    }
+  ],
+  "answers": [
+    "Men aeroportga boraman. — U Jakartadan keladi. — Bozorga qanday boraman? — Men metro bilan boraman. — Haydovchiga manzilni koʻrsating. — Oʻngga buriling, keyin toʻgʻriga yuring.",
+    "uyga — menga — unga — qishloqqa — toqqa — bozorga",
+    "uyda — bozorga — Jakartadan — stolda — Bekatdan — sizga",
+    "Men metro bilan aeroportga boraman. — Doʻstim Jakartadan keladi. — Oʻngga buriling. — Bozorga qanday boraman? — Yordamingiz uchun rahmat.",
+    "Har kuni kitob oʻqiyman. — Siz qayerda yashaysiz? — U choyxonada ishlaydi. — Biz ruscha gapirmaymiz. — Men tushunmayman."
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "title": "Kalau…: bentuk syarat -sa dan kata deb",
+  "title_target": "Shart mayli: -sa va \"deb\"",
+  "goal": "Menyusun kalimat bersyarat, dan mengutip perkataan orang lain dengan *deb* — kata kecil yang menutup seluruh \"bahwa\" dalam bahasa Uzbek.",
+  "bekal": [
+    "membentuk *borsam, borsang, borsa, borsak, borsangiz*",
+    "memakai *agar … boʻlsa* untuk kalimat pengandaian",
+    "mengutip dan berpendapat dengan *… deb aytdi* dan *… deb oʻylayman*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Havo yaxshi boʻlsa, chiqamiz",
+      "intro": "Jumat sore. Rencana akhir pekan sedang disusun di grup, tetapi ramalan cuacanya meragukan.",
+      "lines": [
+        { "speaker": "Anvar:", "text": "Ertaga togʻga chiqamizmi?", "id": "Besok kita naik gunung?", "literal": "besok gunung-ke naik-kita-kah?" },
+        { "speaker": "Nilufar:", "text": "Agar havo yaxshi boʻlsa, chiqamiz.", "id": "Kalau cuacanya bagus, kita naik.", "literal": "jika cuaca baik jadi-kalau, naik-kita." },
+        { "speaker": "Budi:", "text": "Yomgʻir yogʻsa-chi?", "id": "Kalau hujan bagaimana?", "literal": "hujan turun-kalau-pun?" },
+        { "speaker": "Nilufar:", "text": "Unda uyda qolamiz. Men film koʻramiz deb oʻylayman.", "id": "Kalau begitu kita di rumah saja. Saya pikir kita nonton film.", "literal": "itu-di rumah-di tinggal-kita. saya film lihat-kita berkata pikir-saya." },
+        { "speaker": "Anvar:", "text": "Ustoz \"togʻ yoʻli yopiq\" deb aytdi.", "id": "Pak dosen bilang \"jalan gunungnya ditutup\".", "literal": "guru \"gunung jalan-nya tertutup\" berkata katakan-dia." },
+        { "speaker": "Budi:", "text": "Rostdanmi? Unda boshqa joyga borsak boʻladi.", "id": "Serius? Kalau begitu kita bisa pergi ke tempat lain.", "literal": "sungguh-kah? itu-di lain tempat-ke pergi-kalau-kita jadi." },
+        { "speaker": "Nilufar:", "text": "Chorvoqqa borsak-chi? U yerda koʻl bor.", "id": "Bagaimana kalau ke Chorvoq? Di sana ada danau.", "literal": "Chorvoq-ke pergi-kalau-kita-pun? itu tempat-di danau ada." },
+        { "speaker": "Anvar:", "text": "Zoʻr fikr! Agar erta tursak, tushga yetib boramiz.", "id": "Ide bagus! Kalau kita bangun pagi, siang sudah sampai.", "literal": "hebat pikiran! jika awal bangun-kalau-kita, siang-ke sampai pergi-kita." },
+        { "speaker": "Budi:", "text": "Soat oltida chiqsak boʻladimi? Men erta turaman.", "id": "Boleh kita berangkat jam enam? Saya biasa bangun pagi.", "literal": "jam enam-di keluar-kalau-kita jadi-kah? saya awal bangun-saya." },
+        { "speaker": "Nilufar:", "text": "Boʻladi. Agar kechiksangiz, kutmaymiz!", "id": "Boleh. Kalau Anda terlambat, kami tidak menunggu!", "literal": "jadi. jika terlambat-kalau-Anda, tunggu-tidak-kami!" },
+        { "speaker": "Budi:", "text": "Kechikmayman deb vaʼda beraman!", "id": "Saya janji tidak akan terlambat!", "literal": "terlambat-tidak-saya berkata janji beri-saya!" }
+      ],
+      "notes": [
+        "**Agar boleh dibuang.** *Agar havo yaxshi boʻlsa* dan *Havo yaxshi boʻlsa* sama-sama benar — akhiran *-sa* sudah membawa arti \"kalau\". *Agar* hanya menegaskannya, seperti \"jika\" yang dipertegas jadi \"seandainya\".",
+        "**Deb harfiahnya \"sambil berkata\".** Ia diletakkan **sesudah** kutipannya, bukan sebelum: *\"Togʻ yoʻli yopiq\" deb aytdi*. Bahasa Indonesia memakai \"bahwa\" di depan; bahasa Uzbek memakai *deb* di belakang.",
+        "**-sa-chi? berarti \"bagaimana kalau…?\"** Perpaduan bentuk syarat dengan akhiran *-chi* dari unit 12. *Borsak-chi?* = \"bagaimana kalau kita pergi?\" — cara paling halus mengusulkan sesuatu.",
+        "**Rostdanmi? = \"serius?\"** Dari *rost* (benar, sungguh). Sepupunya *chinmi?* dan *haqiqatanmi?*. Ketiganya dipakai untuk menyatakan terkejut."
+      ],
+      "grammars": [
+        {
+          "title": "-sa: bentuk syarat",
+          "body": [
+            "Rumusnya: akar + *-sa* + akhiran orang. Akhiran orangnya adalah deret yang sama dengan bentuk lampau *-di*, kecuali orang pertama tunggal."
+          ],
+          "table": {
+            "head": ["Pelaku", "Bentuk", "*bor-*", "Arti"],
+            "rows": [
+              ["*men*", "**-sam**", "*borsam*", "kalau saya pergi"],
+              ["*sen*", "**-sang**", "*borsang*", "kalau kamu pergi"],
+              ["*u*", "**-sa**", "*borsa*", "kalau dia pergi"],
+              ["*biz*", "**-sak**", "*borsak*", "kalau kami pergi"],
+              ["*siz*", "**-sangiz**", "*borsangiz*", "kalau Anda pergi"],
+              ["*ular*", "**-salar**", "*borsalar*", "kalau mereka pergi"]
+            ]
+          },
+          "after": [
+            "**Ingkarnya menyisipkan -ma- seperti biasa**: *bormasam* (kalau saya tidak pergi), *kechikmasangiz* (kalau Anda tidak terlambat).",
+            "Untuk kalimat benda dipakai *boʻlsa*: *Havo yaxshi boʻlsa* (kalau cuacanya bagus), *Vaqtingiz boʻlsa* (kalau Anda ada waktu), *Kerak boʻlsa* (kalau perlu). Tiga ungkapan yang akan kamu pakai terus-menerus.",
+            "Anak kalimat bersyarat selalu berdiri **di depan** induk kalimatnya: *Yomgʻir yogʻsa, uyda qolamiz*. Membalikkannya tidak salah, tetapi terdengar seperti tambahan yang dipikirkan belakangan."
+          ]
+        },
+        {
+          "title": "Deb: satu kata untuk \"bahwa\", \"kata\", dan \"karena\"",
+          "body": [
+            "*Deb* adalah bentuk *-ib* dari *demoq* (berkata). Ia berdiri sesudah apa pun yang dikutip, dipikirkan, atau dijadikan alasan."
+          ],
+          "table": {
+            "head": ["Pemakaian", "Contoh", "Arti"],
+            "rows": [
+              ["mengutip", "*\"Kelaman\" deb aytdi.*", "Dia bilang \"saya datang\"."],
+              ["berpendapat", "*Yaxshi deb oʻylayman.*", "Saya pikir itu bagus."],
+              ["menamai", "*Uni Anvar deb chaqirishadi.*", "Dia dipanggil Anvar."],
+              ["berniat", "*Koʻrsatay deb keldim.*", "Saya datang untuk menunjukkannya."],
+              ["berjanji", "*Kechikmayman deb vaʼda berdi.*", "Dia janji tidak akan terlambat."],
+              ["bertanya", "*Nima deb aytdi?*", "Dia bilang apa?"]
+            ]
+          },
+          "after": [
+            "⚠️ **Kutipannya tetap dalam bentuk aslinya.** Bahasa Uzbek tidak mengubah kata gantinya seperti bahasa Inggris: *\"Men kelaman\" deb aytdi* = harfiahnya \"dia bilang 'saya datang'\", dan itulah cara yang benar untuk mengatakan \"dia bilang dia akan datang\".",
+            "*Deb oʻylayman* (saya pikir) dan *deb hisoblayman* (saya menganggap) adalah dua ungkapan pendapat yang paling sering dipakai. Sepupunya yang lebih santai: *menimcha* dari unit 16.",
+            "Kata tanyanya *nima deb* — \"apa katanya\", \"disebut apa\": *Bu oʻzbekcha nima deb ataladi?* = \"ini bahasa Uzbeknya apa?\". Kalimat yang paling berguna bagi pelajar bahasa mana pun."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ungkapan bersyarat yang wajib dihafal",
+      "blocks": [
+        { "type": "p", "text": "Sepuluh bentuk siap pakai. Semuanya memakai *-sa*, dan semuanya muncul berkali-kali dalam sehari." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**Vaqtingiz boʻlsa…**", "VÅQ-tin-giz bol-SÅ", "Kalau Anda ada waktu…"],
+            ["**Kerak boʻlsa…**", "ké-RAK bol-SÅ", "Kalau perlu…"],
+            ["**Iloji boʻlsa…**", "i-lå-JI bol-SÅ", "Kalau memungkinkan…"],
+            ["**Xohlasangiz…**", "khåh-lå-SÅN-giz", "Kalau Anda mau…"],
+            ["**Mumkin boʻlsa…**", "mum-KIN bol-SÅ", "Kalau boleh…"],
+            ["**…-sam boʻladimi?**", "såm bo-lå-di-MI", "Boleh saya…?"],
+            ["**…-sak-chi?**", "såk-CI", "Bagaimana kalau kita…?"],
+            ["**Nima boʻlsa ham**", "NI-må bol-SÅ håm", "Apa pun yang terjadi"],
+            ["**Kim boʻlsa ham**", "kim bol-SÅ håm", "Siapa pun"],
+            ["**Xudo xohlasa**", "khu-DÅ khåh-lå-SÅ", "Insya Allah"]
+          ]
+        },
+        { "type": "p", "text": "*Xudo xohlasa* harfiahnya \"kalau Tuhan menghendaki\" — sepadan persis dengan \"insyaallah\", dan dipakai persis sesering itu. Bentuk Arabnya *inshaAlloh* juga dipakai. Seperti di Indonesia, ia bisa berarti janji sungguh-sungguh atau penolakan halus; nadanya yang menentukan." }
+      ]
+    },
+    {
+      "title": "Alam dan tempat wisata",
+      "blocks": [
+        { "type": "p", "text": "Uzbekistan tidak berbatasan dengan laut mana pun — salah satu dari hanya dua negara di dunia yang bahkan tetangganya pun tak berpantai. Yang ia punya justru gunung, danau buatan, dan gurun." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Arti", "Oʻzbekcha", "Cara baca", "Arti"],
+          "rows": [
+            ["**togʻ**", "tågh", "gunung", "**koʻl**", "kol", "danau"],
+            ["**daryo**", "dår-YÅ", "sungai", "**choʻl**", "col", "gurun, padang"],
+            ["**oʻrmon**", "or-MÅN", "hutan", "**bogʻ**", "bågh", "taman, kebun"],
+            ["**dala**", "då-LÅ", "ladang", "**dengiz**", "dén-GIZ", "laut"],
+            ["**osmon**", "ås-MÅN", "langit", "**yulduz**", "yul-DUZ", "bintang"]
+          ]
+        },
+        { "type": "p", "text": "⚠️ *Daryo* berarti **sungai**, bukan laut — sementara \"darya\" dalam bahasa Persia berarti laut, dan nama dua sungai besar Asia Tengah, *Amudaryo* dan *Sirdaryo*, memakai kata itu. *Osmon* (langit) sepupu \"asmani\", dan *dengiz* adalah kata Turki asli." },
+        { "type": "p", "text": "Chorvoq adalah waduk di kaki Pegunungan Tian Shan, sekitar satu setengah jam dari Tashkent — tempat pelarian akhir pekan yang paling populer. Kalimat yang berguna: *Chorvoqqa qanday boriladi?* (bagaimana caranya ke Chorvoq?)." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "uz": "agar", "baca": "å-GAR", "id": "jika, kalau" },
+    { "uz": "deb", "baca": "déb", "id": "bahwa; katanya" },
+    { "uz": "demoq", "baca": "dé-MÅQ", "id": "berkata" },
+    { "uz": "aytmoq", "baca": "åyt-MÅQ", "id": "mengatakan" },
+    { "uz": "oʻylamoq", "baca": "oy-lå-MÅQ", "id": "berpikir" },
+    { "uz": "xohlamoq", "baca": "khåh-lå-MÅQ", "id": "mau, menghendaki" },
+    { "uz": "vaʼda bermoq", "baca": "våʼ-DÅ bér-MÅQ", "id": "berjanji" },
+    { "uz": "iloj", "baca": "i-LÅJ", "id": "jalan keluar, kemungkinan" },
+    { "uz": "rost", "baca": "råst", "id": "benar, sungguh" },
+    { "uz": "qolmoq", "baca": "qål-MÅQ", "id": "tinggal, tetap" },
+    { "uz": "chiqmoq", "baca": "ciq-MÅQ", "id": "naik, keluar" },
+    { "uz": "togʻ", "baca": "tågh", "id": "gunung" },
+    { "uz": "koʻl", "baca": "kol", "id": "danau" },
+    { "uz": "daryo", "baca": "dår-YÅ", "id": "sungai" },
+    { "uz": "dengiz", "baca": "dén-GIZ", "id": "laut" },
+    { "uz": "choʻl", "baca": "col", "id": "gurun" },
+    { "uz": "oʻrmon", "baca": "or-MÅN", "id": "hutan" },
+    { "uz": "bogʻ", "baca": "bågh", "id": "taman, kebun" },
+    { "uz": "osmon", "baca": "ås-MÅN", "id": "langit" },
+    { "uz": "yulduz", "baca": "yul-DUZ", "id": "bintang" },
+    { "uz": "Xudo", "baca": "khu-DÅ", "id": "Tuhan" },
+    { "uz": "fikr", "baca": "fikr", "id": "pikiran, ide" },
+    { "uz": "boshqa", "baca": "båsy-QÅ", "id": "lain" },
+    { "uz": "tush", "baca": "tusy", "id": "tengah hari; mimpi" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi bentuk syarat (-sa) sesuai pelakunya.",
+      "items": [
+        "bormoq + men → ____",
+        "kelmoq + siz → ____",
+        "boʻlmoq + u → ____",
+        "turmoq + biz → ____",
+        "kechikmoq + siz, ingkar → ____",
+        "xohlamoq + sen → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Uzbek.",
+      "items": [
+        "Kalau cuacanya bagus, kita naik gunung.",
+        "Kalau hujan, kita tinggal di rumah.",
+        "Kalau Anda ada waktu, telepon saya.",
+        "Bagaimana kalau kita ke danau?",
+        "Saya pikir itu bagus.",
+        "Dia bilang \"saya datang\"."
+      ]
+    },
+    {
+      "prompt": "Gabungkan dua kalimat dengan bentuk syarat. Contoh: Havo yaxshi. Chiqamiz. → Havo yaxshi boʻlsa, chiqamiz.",
+      "items": [
+        "Yomgʻir yogʻadi. Uyda qolamiz.",
+        "Vaqtingiz bor. Choy ichamiz.",
+        "Erta turamiz. Tushga yetib boramiz.",
+        "Siz kechikasiz. Kutmaymiz.",
+        "Pul bor. Sovgʻa olaman."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "chiqamiz / havo / boʻlsa / yaxshi / ,",
+        "oʻylayman / deb / yaxshi / men",
+        "aytdi / deb / \"kelaman\" / u",
+        "boʻladi / borsak / joyga / boshqa",
+        "kutmaymiz / kechiksangiz / ,"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 17. Terjemahkan ke bahasa Uzbek tanpa melihat unitnya.",
+      "items": [
+        "Kepala saya sakit.",
+        "Saya demam.",
+        "Saya jatuh sakit.",
+        "Anda sudah minum obat?",
+        "Cepat sembuh ya!"
+      ]
+    }
+  ],
+  "answers": [
+    "borsam — kelsangiz — boʻlsa — tursak — kechikmasangiz — xohlasang",
+    "Havo yaxshi boʻlsa, togʻga chiqamiz. — Yomgʻir yogʻsa, uyda qolamiz. — Vaqtingiz boʻlsa, menga qoʻngʻiroq qiling. — Koʻlga borsak-chi? — Yaxshi deb oʻylayman. — U \"kelaman\" deb aytdi.",
+    "Yomgʻir yogʻsa, uyda qolamiz. — Vaqtingiz boʻlsa, choy ichamiz. — Erta tursak, tushga yetib boramiz. — Siz kechiksangiz, kutmaymiz. — Pul boʻlsa, sovgʻa olaman.",
+    "Havo yaxshi boʻlsa, chiqamiz. — Men yaxshi deb oʻylayman. — U \"kelaman\" deb aytdi. — Boshqa joyga borsak boʻladi. — Kechiksangiz, kutmaymiz.",
+    "Boshim ogʻriyapti. — Menda isitma bor. — Kasal boʻldim. — Dori ichdingizmi? — Tezroq tuzaling!"
+  ]
+}

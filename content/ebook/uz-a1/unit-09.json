@@ -1,0 +1,216 @@
+{
+  "title": "Jam berapa? Waktu, hari, dan bulan",
+  "title_target": "Soat necha? Vaqt, kun va oy",
+  "goal": "Menyebut jam dengan benar, menghafal nama hari yang separuhnya sudah kamu kenal, dan menghindari satu jebakan setengah jam yang membuat orang Indonesia terlambat enam puluh menit.",
+  "bekal": [
+    "bertanya *Soat necha?* dan menjawabnya untuk jam bulat, lewat, dan kurang",
+    "menyebut hari dan bulan, serta memasang *-da* pada keterangan waktu",
+    "menyadari bahwa *soat besh yarim* berarti 05.30, bukan 04.30"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Ertaga soat nechada uchrashamiz?",
+      "intro": "Nilufar mengajak Budi jalan-jalan ke kota tua. Mereka mengatur waktu lewat telepon.",
+      "lines": [
+        { "speaker": "Nilufar:", "text": "Budi, ertaga band emassizmi?", "id": "Budi, besok Anda tidak sibuk, kan?", "literal": "Budi, besok sibuk bukan-Anda-kah?" },
+        { "speaker": "Budi:", "text": "Ertaga payshanba... Soat oʻngacha darsim bor.", "id": "Besok Kamis... Saya ada kuliah sampai jam sepuluh.", "literal": "besok Kamis... jam sepuluh-sampai pelajaran-ku ada." },
+        { "speaker": "Nilufar:", "text": "Yaxshi. Unda soat oʻn birda uchrashamizmi?", "id": "Bagus. Kalau begitu kita bertemu jam sebelas?", "literal": "baik. itu-di jam sepuluh satu-di bertemu-kita-kah?" },
+        { "speaker": "Budi:", "text": "Mayli. Qayerda?", "id": "Boleh. Di mana?", "literal": "baiklah. di-mana?" },
+        { "speaker": "Nilufar:", "text": "Chorsu metro bekatida. Kechikmang!", "id": "Di stasiun metro Chorsu. Jangan terlambat!", "literal": "Chorsu metro halte-nya-di. jangan-terlambat!" },
+        { "speaker": "Budi:", "text": "Xavotir olmang. Men har doim erta kelaman.", "id": "Jangan khawatir. Saya selalu datang lebih awal.", "literal": "khawatir jangan-ambil. saya selalu awal datang-saya." },
+        { "speaker": "Nilufar:", "text": "Zoʻr. Tushlikni bir yarimda qilamiz.", "id": "Bagus. Kita makan siang jam setengah dua.", "literal": "hebat. makan-siang-sasaran satu setengah-di lakukan-kita." },
+        { "speaker": "Budi:", "text": "Bir yarim — yaʼni oʻn uchdan oʻttiz daqiqa oʻtganda?", "id": "Setengah dua — maksudnya pukul tiga belas lewat tiga puluh menit?", "literal": "satu setengah — yakni sepuluh tiga-dari tiga-puluh menit lewat-ketika?" },
+        { "speaker": "Nilufar:", "text": "Ha, toʻgʻri. Soat 13:30.", "id": "Ya, benar. Pukul 13.30.", "literal": "ya, benar. jam 13:30." },
+        { "speaker": "Budi:", "text": "Tushundim! Indonezcha \"setengah dua\" ham xuddi shunday.", "id": "Saya mengerti! Dalam bahasa Indonesia \"setengah dua\" juga persis begitu.", "literal": "mengerti-saya! Indonesia-bahasa \"setengah dua\" juga persis begitu." },
+        { "speaker": "Nilufar:", "text": "Demak oson. Ertaga koʻrishguncha!", "id": "Berarti gampang. Sampai jumpa besok!", "literal": "berarti mudah. besok saling-lihat-sampai!" }
+      ],
+      "notes": [
+        "**Bir yarim, bukan \"yarim ikki\".** Perhatikan baik-baik: *bir yarim* berarti **13.30**, harfiahnya \"satu setengah\". Bahasa Uzbek menyebut jam yang **sudah lewat** lalu menambahkan setengah. Kebetulan yang sangat menolong: bahasa Indonesia justru menyebut jam yang **akan datang** — \"setengah dua\" juga berarti 13.30. Hasil akhirnya sama, tetapi jalan berpikirnya berlawanan, jadi jangan menerjemahkan kata demi kata.",
+        "**Soat oʻngacha = \"sampai jam sepuluh\".** Akhiran *-gacha* berarti \"sampai\", dan ia menempel setelah *-ga*: *uygacha* (sampai rumah), *ertalabgacha* (sampai pagi). Pasangannya *-dan* untuk \"sejak\": *ertalabdan kechgacha* (dari pagi sampai sore).",
+        "**Soat nechada? berarti \"jam berapa (waktu peristiwanya)\".** Bandingkan dengan *Soat necha?* yang menanyakan jam sekarang. Bedanya cuma akhiran *-da*, tetapi jawabannya berbeda: *Soat uch* (sekarang jam tiga) lawan *Soat uchda* (pada jam tiga).",
+        "**Demak = \"berarti, jadi\".** Kata sambung yang sangat sering dipakai untuk menyimpulkan. Sepupunya *yaʼni* (yakni) — dua-duanya kata Arab yang juga hidup di bahasa Indonesia."
+      ],
+      "grammars": [
+        {
+          "title": "Menyebut jam: tiga bentuk yang cukup",
+          "body": [
+            "Bahasa Uzbek punya cara lengkap dan cara pendek. Yang panjang dipakai di siaran berita dan pengumuman; yang pendek dipakai semua orang setiap hari."
+          ],
+          "table": {
+            "head": ["Jam", "Cara panjang", "Cara pendek (sehari-hari)"],
+            "rows": [
+              ["03.00", "*Soat uch.*", "*Uch.*"],
+              ["03.15", "*Uchdan oʻn besh daqiqa oʻtdi.*", "*Uchdan chorak oʻtdi.*"],
+              ["03.30", "*Uch yarim.*", "*Uch yarim.*"],
+              ["03.40", "*Toʻrtga yigirma daqiqa qoldi.*", "*Yigirma kam toʻrt.*"],
+              ["03.45", "*Toʻrtga chorak qoldi.*", "*Chorak kam toʻrt.*"],
+              ["12.00", "*Soat oʻn ikki.*", "*Tush* (siang) / *yarim kecha* (tengah malam)"]
+            ]
+          },
+          "after": [
+            "Polanya cuma dua: **[jam]dan [menit] oʻtdi** untuk lewat, dan **[jam berikutnya]ga [menit] qoldi** untuk kurang. Harfiahnya \"dari tiga dua puluh menit telah lewat\" dan \"menuju empat dua puluh menit tersisa\" — persis cara bahasa Indonesia berpikir dengan \"lewat\" dan \"kurang\".",
+            "*Chorak* berarti seperempat, *yarim* berarti setengah. Keduanya kata Persia; *chorak* sepupu dari *chor* (empat).",
+            "Untuk menyatakan **pada** jam berapa, tempelkan *-da*: *soat uchda* (jam tiga), *besh yarimda* (jam setengah enam), *oʻn birda* (jam sebelas). Inilah bentuk yang paling sering kamu butuhkan untuk membuat janji."
+          ]
+        },
+        {
+          "title": "Hari dalam seminggu: separuhnya sudah kamu tahu",
+          "body": [
+            "Nama hari bahasa Uzbek datang dari bahasa Persia dan dihitung mundur dari hari Sabtu. Dua di antaranya sama persis dengan bahasa Indonesia."
+          ],
+          "table": {
+            "head": ["Oʻzbekcha", "Cara baca", "Hari", "Asal-usulnya"],
+            "rows": [
+              ["**dushanba**", "du-syån-BÅ", "Senin", "*du* (dua) + *shanba* → hari kedua sesudah Sabtu"],
+              ["**seshanba**", "sé-syån-BÅ", "Selasa", "*se* (tiga) + *shanba*"],
+              ["**chorshanba**", "cår-syån-BÅ", "Rabu", "*chor* (empat) + *shanba*"],
+              ["**payshanba**", "påy-syån-BÅ", "Kamis", "*panj* (lima) + *shanba*"],
+              ["**juma**", "ju-MÅ", "Jumat", "sama persis dengan \"Jumat\""],
+              ["**shanba**", "syån-BÅ", "Sabtu", "sepupu \"Sabtu\" dan \"Sabbath\""],
+              ["**yakshanba**", "yåk-syån-BÅ", "Minggu", "*yak* (satu) + *shanba*"]
+            ]
+          },
+          "after": [
+            "Hitungannya berpusat pada *shanba* (Sabtu): Minggu adalah hari kesatu sesudahnya, Senin hari kedua, dan seterusnya sampai Kamis. Jumat punya namanya sendiri karena ia hari salat berjamaah. Sekali kamu melihat pola angka Persia ini, tujuh nama itu berhenti jadi hafalan buta.",
+            "Untuk menyebut \"pada hari Senin\", tambahkan *kuni*: *dushanba kuni* (hari Senin), *juma kuni* (hari Jumat). Bentuk pendeknya *dushanbada* juga dipakai.",
+            "*Bugun* (hari ini), *ertaga* (besok), *kecha* (kemarin), *indinga* (lusa), *oʻtgan hafta* (minggu lalu), *kelasi hafta* (minggu depan)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Satuan waktu dan bulan",
+      "blocks": [
+        { "type": "p", "text": "Nama bulan datang dari bahasa Rusia dan bentuknya nyaris tak berubah — satu lagi tempat di mana kamu bisa menebak dan hampir selalu benar." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Arti", "Oʻzbekcha", "Arti", "Oʻzbekcha", "Arti"],
+          "rows": [
+            ["*yanvar*", "Januari", "*may*", "Mei", "*sentyabr*", "September"],
+            ["*fevral*", "Februari", "*iyun*", "Juni", "*oktyabr*", "Oktober"],
+            ["*mart*", "Maret", "*iyul*", "Juli", "*noyabr*", "November"],
+            ["*aprel*", "April", "*avgust*", "Agustus", "*dekabr*", "Desember"]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Arti", "Oʻzbekcha", "Cara baca", "Arti"],
+          "rows": [
+            ["**soniya**", "så-ni-YÅ", "detik", "**hafta**", "håf-TÅ", "minggu, pekan"],
+            ["**daqiqa**", "då-qi-QÅ", "menit", "**oy**", "åy", "bulan"],
+            ["**soat**", "så-AT", "jam", "**yil**", "yil", "tahun"],
+            ["**kun**", "kun", "hari", "**asr**", "åsr", "abad"]
+          ]
+        },
+        { "type": "p", "text": "⚠️ *Oy* berarti **bulan** dalam dua arti sekaligus — bulan di langit dan bulan di kalender, persis seperti bahasa Indonesia. *Soat* berarti **jam** sebagai satuan **dan** sebagai alat penunjuk waktu; akarnya kata Arab \"saat\", yang di bahasa Indonesia berubah arti jadi \"momen\"." },
+        { "type": "p", "text": "Untuk tahun, bahasa Uzbek menambahkan *-yil*: *2026-yilda* (pada tahun 2026), dibaca *ikki ming yigirma oltinchi yilda*. Bentuk urutan (*-inchi*) dipasang di unit 16." }
+      ]
+    },
+    {
+      "title": "Membuat janji",
+      "blocks": [
+        { "type": "p", "text": "Enam kalimat yang menutup hampir seluruh urusan mengatur waktu." },
+        {
+          "type": "tabel",
+          "head": ["Oʻzbekcha", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**Soat necha?**", "så-AT né-CÅ", "Jam berapa sekarang?"],
+            ["**Soat nechada?**", "så-AT né-cå-DÅ", "Jam berapa (acaranya)?"],
+            ["**Qachon uchrashamiz?**", "qå-CÅN uc-rå-syå-MIZ", "Kapan kita bertemu?"],
+            ["**Band emasmisiz?**", "bånd é-MÅS-mi-siz", "Anda tidak sibuk?"],
+            ["**Kechikmang!**", "ké-cik-MANG", "Jangan terlambat!"],
+            ["**Vaqtim yoʻq.**", "VÅQ-tim yoq", "Saya tidak punya waktu."]
+          ]
+        },
+        { "type": "p", "text": "Satu catatan budaya yang menghemat kesalahpahaman: di Uzbekistan undangan makan hampir selalu bersungguh-sungguh. Kalau ada yang bilang *Uyimizga keling* (mari ke rumah kami), itu bukan basa-basi — dan menolaknya dua kali lalu menerima pada tawaran ketiga dianggap sopan, bukan plin-plan." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "uz": "soat", "baca": "så-AT", "id": "jam" },
+    { "uz": "daqiqa", "baca": "då-qi-QÅ", "id": "menit" },
+    { "uz": "kun", "baca": "kun", "id": "hari" },
+    { "uz": "hafta", "baca": "håf-TÅ", "id": "minggu, pekan" },
+    { "uz": "oy", "baca": "åy", "id": "bulan" },
+    { "uz": "yil", "baca": "yil", "id": "tahun" },
+    { "uz": "yarim", "baca": "yå-RIM", "id": "setengah" },
+    { "uz": "chorak", "baca": "cå-RAK", "id": "seperempat" },
+    { "uz": "dushanba", "baca": "du-syån-BÅ", "id": "Senin" },
+    { "uz": "seshanba", "baca": "sé-syån-BÅ", "id": "Selasa" },
+    { "uz": "chorshanba", "baca": "cår-syån-BÅ", "id": "Rabu" },
+    { "uz": "payshanba", "baca": "påy-syån-BÅ", "id": "Kamis" },
+    { "uz": "juma", "baca": "ju-MÅ", "id": "Jumat" },
+    { "uz": "shanba", "baca": "syån-BÅ", "id": "Sabtu" },
+    { "uz": "yakshanba", "baca": "yåk-syån-BÅ", "id": "Minggu" },
+    { "uz": "ertaga", "baca": "ér-tå-GÅ", "id": "besok" },
+    { "uz": "kecha", "baca": "ké-CÅ", "id": "kemarin" },
+    { "uz": "indinga", "baca": "in-din-GÅ", "id": "lusa" },
+    { "uz": "erta", "baca": "ér-TÅ", "id": "awal, pagi-pagi" },
+    { "uz": "kechikmoq", "baca": "ké-cik-MÅQ", "id": "terlambat" },
+    { "uz": "uchrashmoq", "baca": "uc-råsy-MÅQ", "id": "bertemu" },
+    { "uz": "band", "baca": "bånd", "id": "sibuk" },
+    { "uz": "dars", "baca": "dårs", "id": "pelajaran, kuliah" },
+    { "uz": "tushlik", "baca": "tusy-LIK", "id": "makan siang" },
+    { "uz": "demak", "baca": "dé-MAK", "id": "berarti, jadi" },
+    { "uz": "yaʼni", "baca": "yåʼ-NI", "id": "yakni" },
+    { "uz": "-gacha", "baca": "-gå-CÅ", "id": "sampai" },
+    { "uz": "oʻtmoq", "baca": "ot-MÅQ", "id": "lewat, berlalu" },
+    { "uz": "qolmoq", "baca": "qål-MÅQ", "id": "tersisa, tinggal" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis jamnya dalam bahasa Uzbek (cara sehari-hari).",
+      "items": ["05.00", "07.30", "09.15", "11.40", "14.00", "16.45"]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Uzbek.",
+      "items": [
+        "Jam berapa sekarang?",
+        "Kita bertemu jam sebelas.",
+        "Besok hari Kamis.",
+        "Saya ada kuliah sampai jam sepuluh.",
+        "Jangan terlambat!",
+        "Hari Jumat saya sibuk."
+      ]
+    },
+    {
+      "prompt": "Isi dengan nama hari yang tepat.",
+      "items": [
+        "Sesudah dushanba datang ____.",
+        "Sebelum juma datang ____.",
+        "Hari salat berjamaah adalah ____.",
+        "Hari yang namanya berarti \"hari kesatu\" adalah ____.",
+        "Hari yang jadi pusat hitungan adalah ____."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "uchrashamiz / soat / oʻn birda",
+        "bor / darsim / oʻngacha / soat",
+        "payshanba / ertaga",
+        "yoʻq / vaqtim / bugun",
+        "kechikmang / iltimos"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 7. Terjemahkan ke bahasa Uzbek tanpa melihat unitnya.",
+      "items": [
+        "Saya mencari buku saya.",
+        "Panggil Anvar!",
+        "Saya menunggu Anda.",
+        "Setiap hari saya membaca buku.",
+        "Kamus itu merah."
+      ]
+    }
+  ],
+  "answers": [
+    "Soat besh. — Besh yarim. — Toʻqqizdan chorak oʻtdi. — Yigirma kam oʻn ikki. — Soat oʻn toʻrt. — Chorak kam oʻn yetti.",
+    "Soat necha? — Soat oʻn birda uchrashamiz. — Ertaga payshanba. — Soat oʻngacha darsim bor. — Kechikmang! — Juma kuni bandman.",
+    "seshanba — payshanba — juma — yakshanba — shanba",
+    "Soat oʻn birda uchrashamiz. — Soat oʻngacha darsim bor. — Ertaga payshanba. — Bugun vaqtim yoʻq. — Iltimos, kechikmang.",
+    "Men kitobimni qidiraman. — Anvarni chaqiring! — Men sizni kutaman. — Har kuni kitob oʻqiyman. — U lugʻat qizil."
+  ]
+}
