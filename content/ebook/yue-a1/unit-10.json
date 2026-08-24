@@ -1,0 +1,301 @@
+{
+ "title": "Telepon, minta tolong, dan bisa",
+ "title_target": "可唔可以呀？ — Ho2 m4 ho2 ji5 aa3?",
+ "goal": "Membedakan empat cara mengatakan “bisa” — 得, 可以, 識, 會 — menelepon dalam bahasa Kanton, meminta tolong dengan sopan, dan menolak tanpa menyinggung.",
+ "bekal": [
+  "membedakan 得 · 可以 · 識 · 會",
+  "menelepon: 喂, 搵邊位, 等陣, 覆你",
+  "meminta tolong: 唔該, 麻煩你, 可唔可以",
+  "menolak dan menunda dengan halus",
+  "mengatur ulang janji"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 1 — Menelepon kantor",
+   "intro": "Andi menelepon kantor Pak Chan. Percakapan telepon Kanton punya kalimat baku yang hampir tidak pernah berubah — hafalkan enam kalimat ini dan kamu bisa menelepon ke mana pun di Hong Kong.",
+   "lines": [
+    { "speaker": "接線生:", "text": "[喂|Wai2]，[你好|nei5 hou2]，[新豐公司|San1 fung1 gung1 si1]。", "id": "Halo, selamat siang, PT Sun Fung.", "literal": "halo, kamu — baik, San-Fung — perusahaan." },
+    { "speaker": "安迪:", "text": "[你好|Nei5 hou2]，[唔該|m4 goi1][我搵陳生|ngo5 wan2 Can4 saang1]。", "id": "Halo, saya mau bicara dengan Pak Chan.", "literal": "kamu — baik, tolong — saya — cari — Chan — tuan." },
+    { "speaker": "接線生:", "text": "[請問|Cing2 man6][你係邊位呀|nei5 hai6 bin1 wai2 aa3]？", "id": "Boleh tahu ini siapa?", "literal": "mohon — tanya — kamu — adalah — mana — penggolong — ya." },
+    { "speaker": "安迪:", "text": "[我姓安|Ngo5 sing3 On1]，[係佢朋友|hai6 keoi5 pang4 jau5]。", "id": "Marga saya An, teman beliau.", "literal": "saya — bermarga — An, adalah — dia — teman." },
+    { "speaker": "接線生:", "text": "[等陣|Dang2 zan6]…[唔好意思|m4 hou2 ji3 si1]，[佢而家唔喺度|keoi5 ji4 gaa1 m4 hai2 dou6]。", "id": "Sebentar… maaf, beliau sedang tidak ada.", "literal": "tunggu — sebentar … maaf, dia — sekarang — tidak — di — tempat." },
+    { "speaker": "安迪:", "text": "[佢幾時返嚟呀|Keoi5 gei2 si4 faan1 lei4 aa3]？", "id": "Beliau kembali jam berapa?", "literal": "dia — berapa — waktu — kembali — datang — ya." },
+    { "speaker": "接線生:", "text": "[大概三點|Daai6 koi3 saam1 dim2]。[你要唔要留言呀|Nei5 jiu3 m4 jiu3 lau4 jin4 aa3]？", "id": "Kira-kira jam tiga. Mau titip pesan?", "literal": "kira — kira — tiga — jam. kamu — mau — tidak — mau — tinggal — kata — ya." },
+    { "speaker": "安迪:", "text": "[唔使喇|M4 sai2 laa3]。[可唔可以|Ho2 m4 ho2 ji5][畀佢電話我呀|bei2 keoi5 din6 waa2 ngo5 aa3]？", "id": "Tidak usah. Boleh minta nomor teleponnya?", "literal": "tidak — perlu — sudah. boleh — tidak — boleh — beri — dia — telepon — saya — ya." },
+    { "speaker": "接線生:", "text": "[唔好意思|M4 hou2 ji3 si1]，[我哋唔可以畀|ngo5 dei6 m4 ho2 ji5 bei2]。[但係|Daan6 hai6][我可以幫你留低口訊|ngo5 ho2 ji5 bong1 nei5 lau4 dai1 hau2 seon3]。", "id": "Maaf, kami tidak boleh memberikannya. Tapi saya bisa bantu tinggalkan pesan.", "literal": "maaf, kami — tidak — boleh — beri. tetapi — saya — boleh — bantu — kamu — tinggal — rendah — mulut — pesan." },
+    { "speaker": "安迪:", "text": "[咁麻煩你|Gam2 maa4 faan4 nei5]。[話畀佢知|Waa6 bei2 keoi5 zi1][安迪搵過佢|On1 dik1 wan2 gwo3 keoi5]。", "id": "Kalau begitu, saya merepotkan Anda. Sampaikan bahwa Andi mencarinya.", "literal": "begitu — repot — kamu. bilang — beri — dia — tahu — Andi — cari — pernah — dia." },
+    { "speaker": "接線生:", "text": "[冇問題|Mou5 man6 tai4]。[仲有咩幫到你呀|Zung6 jau5 me1 bong1 dou2 nei5 aa3]？", "id": "Tidak masalah. Ada lagi yang bisa saya bantu?", "literal": "tidak-ada — masalah. masih — ada — apa — bantu — dapat — kamu — ya." },
+    { "speaker": "安迪:", "text": "[冇喇|Mou5 laa3]，[多謝晒|do1 ze6 saai3]。[拜拜|Baai1 baai3]。", "id": "Tidak ada, terima kasih banyak. Dah.", "literal": "tidak-ada — sudah, terima-kasih — habis. bai — bai." }
+   ],
+   "notes": [
+    "**[搵|wan2] di telepon berarti “mau bicara dengan”.** [我搵陳生|Ngo5 wan2 Can4 saang1] = saya mencari Pak Chan. Penerima telepon akan menjawab [佢喺度|Keoi5 hai2 dou6] (ada) atau [佢唔喺度|Keoi5 m4 hai2 dou6] (tidak ada) — ingat 喺度 dari Unit 7.",
+    "**[你係邊位呀|Nei5 hai6 bin1 wai2 aa3]？ = “ini siapa ya?”** ⚠️ Jangan menjawab dengan [我係…|Ngo5 hai6 …] lalu nama panggilanmu saja kalau situasinya resmi — sebut marga: [我姓安|Ngo5 sing3 On1].",
+    "**[留言|lau4 jin4] dan [口訊|hau2 seon3] dua-duanya berarti pesan titipan.** [留低口訊|lau4 dai1 hau2 seon3] = meninggalkan pesan. [低|dai1] sesudah kata kerja berarti “ditinggalkan di situ”: [坐低|co5 dai1] (duduklah), [寫低|se2 dai1] (tulis dulu).",
+    "**[話畀佢知|waa6 bei2 keoi5 zi1] = “beri tahu dia”.** ⚠️ Susunannya sangat khas Kanton: 話 (bilang) + 畀 (beri) + orang + 知 (tahu). Menerjemahkan “beri tahu” secara harfiah tidak pernah menghasilkan kalimat ini; hafalkan utuh.",
+    "**[麻煩你|maa4 faan4 nei5] = “merepotkan Anda”.** Ia dipakai persis seperti “tolong ya” dalam bahasa Indonesia, dan sedikit lebih sopan daripada 唔該. 🇭🇰 Untuk permintaan yang benar-benar merepotkan, orang memakai keduanya sekaligus: [唔該晒，麻煩你|M4 goi1 saai3, maa4 faan4 nei5].",
+    "**[幫到|bong1 dou2] = “bisa membantu”.** Pola kata kerja + 到 yang berarti berhasil, seperti [睇到|tai2 dou2] dari Unit 9. [幫唔到你|Bong1 m4 dou2 nei5] = saya tidak bisa membantumu — kalimat penolakan yang sopan.",
+    "🇭🇰 **Menutup telepon: [拜拜|baai1 baai3] sudah cukup.** Menutup mendadak tanpa 拜拜 dianggap kasar, dan sebagian orang menambahkan [好，就咁先|Hou2, zau6 gam2 sin1] = “oke, segitu dulu”."
+   ],
+   "grammars": [
+    {
+     "title": "Empat cara mengatakan “bisa”",
+     "body": [
+      "Bahasa Indonesia memakai satu kata “bisa” untuk empat hal yang di Kanton dipisah tegas. Memilih yang salah tidak membuatmu gagal dimengerti, tapi langsung terdengar seperti terjemahan."
+     ],
+     "tables": [
+      {
+       "head": ["Kata", "Untuk", "Contoh"],
+       "rows": [
+        ["[得|dak1]", "keadaan mengizinkan, “boleh, oke”", "[聽日得唔得呀|Ting1 jat6 dak1 m4 dak1 aa3]？ Besok bisa tidak?"],
+        ["[可以|ho2 ji5]", "izin, kebolehan resmi", "[呢度可唔可以泊車呀|Ni1 dou6 ho2 m4 ho2 ji5 paak3 ce1 aa3]？ Di sini boleh parkir?"],
+        ["[識|sik1]", "bisa karena dipelajari — keterampilan", "[我識講廣東話|Ngo5 sik1 gong2 Gwong2 dung1 waa2]。 Saya bisa bahasa Kanton."],
+        ["[會|wui5]", "akan terjadi; kemungkinan", "[聽日會落雨|Ting1 jat6 wui5 lok6 jyu5]。 Besok akan hujan."]
+       ]
+      },
+      {
+       "head": ["Penyangkalan & pertanyaan", "Bentuknya"],
+       "rows": [
+        ["[得|dak1]", "[唔得|m4 dak1] · [得唔得|dak1 m4 dak1]？"],
+        ["[可以|ho2 ji5]", "[唔可以|m4 ho2 ji5] · [可唔可以|ho2 m4 ho2 ji5]？"],
+        ["[識|sik1]", "[唔識|m4 sik1] · [識唔識|sik1 m4 sik1]？"],
+        ["[會|wui5]", "[唔會|m4 wui5] · [會唔會|wui5 m4 wui5]？"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **Untuk keterampilan, Kanton memakai [識|sik1], bukan 會.** [我識游水|Ngo5 sik1 jau4 seoi2] = saya bisa berenang. Mandarin memakai 會 di situ, dan penutur Mandarin yang pindah ke Kanton hampir selalu tersandung di sini. 識 juga berarti “kenal”: [我識佢|Ngo5 sik1 keoi5] = saya kenal dia.",
+      "**[會|wui5] di Kanton condong ke masa depan dan kemungkinan.** [佢會嚟|Keoi5 wui5 lei4] = dia akan datang. [佢唔會嚟|Keoi5 m4 wui5 lei4] = dia tidak akan datang. 🔁 Ini yang akan kamu pakai untuk berbicara tentang rencana di Unit 12.",
+      "**[得|dak1] adalah yang paling serba guna dan paling Hong Kong.** Ia bisa berdiri sendiri sebagai jawaban: [得|Dak1]！ = boleh, oke, siap. [唔得|M4 dak1] = tidak bisa. Kalau kamu hanya bisa mengingat satu dari empat, ingat yang ini."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "對話 2 — Minta tolong dan menunda janji",
+   "intro": "Andi meminta bantuan Wong Lai, lalu terpaksa mengubah janji mereka. Dua hal yang paling sering perlu kamu lakukan dalam bahasa asing, dan dua-duanya menuntut kesopanan.",
+   "lines": [
+    { "speaker": "安迪:", "text": "[黃麗|Wong4 Lai6]，[可唔可以幫我一個忙呀|ho2 m4 ho2 ji5 bong1 ngo5 jat1 go3 mong4 aa3]？", "id": "Wong Lai, boleh minta tolong?", "literal": "Wong Lai, boleh — tidak — boleh — bantu — saya — satu — penggolong — sibuk — ya." },
+    { "speaker": "黃麗:", "text": "[乜嘢事呀|Mat1 je5 si6 aa3]？[講啦|Gong2 laa1]。", "id": "Ada apa? Bilang saja.", "literal": "apa — hal — ya. bicara — dong." },
+    { "speaker": "安迪:", "text": "[我唔識填呢張表|Ngo5 m4 sik1 tin4 ni1 zoeng1 biu2]，[全部係中文|cyun4 bou6 hai6 Zung1 man2]。", "id": "Saya tidak bisa mengisi formulir ini, semuanya bahasa Tionghoa.", "literal": "saya — tidak — bisa — isi — ini — penggolong — formulir, seluruh — bagian — adalah — Tionghoa — tulisan." },
+    { "speaker": "黃麗:", "text": "[冇問題|Mou5 man6 tai4]，[我幫你睇下|ngo5 bong1 nei5 tai2 haa5]。[攞嚟啦|Lo2 lei4 laa1]。", "id": "Tidak masalah, saya bantu lihat. Sini bawa.", "literal": "tidak-ada — masalah, saya — bantu — kamu — lihat — sebentar. ambil — datang — dong." },
+    { "speaker": "安迪:", "text": "[唔該晒|M4 goi1 saai3]！[仲有|Zung6 jau5]…[唔好意思|m4 hou2 ji3 si1]，[星期六|sing1 kei4 luk6][我可能去唔到|ngo5 ho2 nang4 heoi3 m4 dou2]。", "id": "Terima kasih banyak! Oh iya… maaf, Sabtu saya mungkin tidak bisa datang.", "literal": "terima-kasih — habis. masih — ada … maaf, minggu — enam — saya — mungkin — pergi — tidak — dapat." },
+    { "speaker": "黃麗:", "text": "[點解呀|Dim2 gaai2 aa3]？[有嘢做咩|Jau5 je5 zou6 me1]？", "id": "Kenapa? Ada urusan?", "literal": "bagaimana — jelas — ya. ada — hal — kerjakan — masa." },
+    { "speaker": "安迪:", "text": "[我老闆叫我返工|Ngo5 lou5 baan2 giu3 ngo5 faan1 gung1]。[真係好對唔住|Zan1 hai6 hou2 deoi3 m4 zyu6]。", "id": "Bos saya menyuruh saya masuk kerja. Sungguh maaf sekali.", "literal": "saya — bos — suruh — saya — kembali — kerja. benar — adalah — penyangga — maaf." },
+    { "speaker": "黃麗:", "text": "[唔緊要啦|M4 gan2 jiu3 laa1]。[咁改星期日得唔得呀|Gam2 goi2 sing1 kei4 jat6 dak1 m4 dak1 aa3]？", "id": "Tidak apa-apa. Kalau diganti Minggu, bisa?", "literal": "tidak — penting — dong. begitu — ubah — minggu — hari — bisa — tidak — bisa — ya." },
+    { "speaker": "安迪:", "text": "[星期日得|Sing1 kei4 jat6 dak1]！[但係|Daan6 hai6][可唔可以遲少少|ho2 m4 ho2 ji5 ci4 siu2 siu2]？[十一點|Sap6 jat1 dim2]？", "id": "Minggu bisa! Tapi boleh agak siangan? Jam sebelas?", "literal": "minggu — hari — bisa. tetapi — boleh — tidak — boleh — telat — sedikit — sedikit. sebelas — jam." },
+    { "speaker": "黃麗:", "text": "[得|Dak1]。[我WhatsApp你個地址|Ngo5 WhatsApp nei5 go3 dei6 zi2]。", "id": "Bisa. Saya WhatsApp alamatnya ya.", "literal": "bisa. saya — WhatsApp — kamu — penggolong — alamat." },
+    { "speaker": "安迪:", "text": "[好|Hou2]。[今次|Gam1 ci3][我一定唔會遲到|ngo5 jat1 ding6 m4 wui5 ci4 dou3]！", "id": "Oke. Kali ini saya pasti tidak akan telat!", "literal": "baik. ini — kali — saya — pasti — tidak — akan — terlambat." },
+    { "speaker": "黃麗:", "text": "[你上次都係咁講|Nei5 soeng6 ci3 dou1 hai6 gam2 gong2][㗎|gaa3]！", "id": "Kali lalu kamu juga bilang begitu, tuh!", "literal": "kamu — atas — kali — juga — adalah — begitu — bicara — penegas." }
+   ],
+   "notes": [
+    "**[幫我一個忙|bong1 ngo5 jat1 go3 mong4] = “bantu saya satu kali”.** ⚠️ Perhatikan penggolong 個 dan kata [忙|mong4] yang di tempat lain berarti “sibuk”. Ini ungkapan tetap; jangan diurai.",
+    "**[乜嘢事呀|Mat1 je5 si6 aa3]？ = “ada apa?”** Bentuk pendeknya [咩事呀|Me1 si6 aa3]？ dan itu yang paling sering kamu dengar. [有咩事|jau5 me1 si6] = ada urusan apa.",
+    "**[我唔識填|ngo5 m4 sik1 tin4] = “saya tidak bisa mengisi”, karena tidak tahu caranya.** Bandingkan dengan [我填唔到|ngo5 tin4 m4 dou2] = saya tidak berhasil mengisi (formulirnya bermasalah). Dua ketidakbisaan yang berbeda.",
+    "**[可能|ho2 nang4] = mungkin.** Ia berdiri di depan kata kerja: [我可能唔嚟|Ngo5 ho2 nang4 m4 lei4] = saya mungkin tidak datang. Padanan lain: [或者|waak6 ze2] (barangkali), [大概|daai6 koi3] (kira-kira).",
+    "**[叫|giu3] juga berarti “menyuruh”.** [老闆叫我返工|Lou5 baan2 giu3 ngo5 faan1 gung1] = bos menyuruh saya kerja. Susunannya: 叫 + orang + apa yang disuruh. Ingat 叫 “bernama” dari Unit 1 — satu aksara, dua peran, dan yang membedakan adalah apa yang mengikutinya.",
+    "**[改|goi2] = mengubah, menjadwal ulang.** [改期|goi2 kei4] = mengubah tanggal; [改時間|goi2 si4 gaan3] = mengubah jam. 🇭🇰 Menunda janji di Hong Kong lumrah, asal kamu memberi tahu dan menawarkan penggantinya dalam kalimat yang sama.",
+    "**[今次|gam1 ci3] = kali ini, [上次|soeng6 ci3] = kali lalu, [下次|haa6 ci3] = lain kali.** Pola 今/上/下 yang sama dengan minggu dan bulan di Unit 5.",
+    "🇭🇰 **WhatsApp adalah kata kerja di Hong Kong.** [我WhatsApp你|Ngo5 WhatsApp nei5] = saya WhatsApp kamu. Begitu juga [我send畀你|Ngo5 send bei2 nei5] dan [我call你|Ngo5 call nei5] — Kanton Hong Kong menyerap kata Inggris utuh sebagai kata kerja, dan itu sepenuhnya wajar."
+   ],
+   "grammars": [
+    {
+     "title": "Meminta tolong, menolak, menunda",
+     "body": [
+      "Tiga kelompok kalimat yang akan menyelamatkanmu di percakapan nyata. Susunan sopannya hampir selalu sama: pembuka lunak → permintaan → alasan."
+     ],
+     "tables": [
+      {
+       "head": ["Meminta", "Arti", "Tingkat"],
+       "rows": [
+        ["[唔該|M4 goi1]，[幫我攞嗰本書|bong1 ngo5 lo2 go2 bun2 syu1]。", "Tolong ambilkan buku itu.", "Biasa"],
+        ["[可唔可以幫我一個忙呀|Ho2 m4 ho2 ji5 bong1 ngo5 jat1 go3 mong4 aa3]？", "Boleh minta tolong?", "Sopan"],
+        ["[麻煩你幫我睇下|Maa4 faan4 nei5 bong1 ngo5 tai2 haa5]。", "Tolong ya, bantu lihatkan.", "Sopan"],
+        ["[唔知你方唔方便呢|M4 zi1 nei5 fong1 m4 fong1 bin6 ne1]？", "Tidak tahu apakah Anda sempat…", "Sangat sopan"]
+       ]
+      },
+      {
+       "head": ["Menolak / menunda", "Arti"],
+       "rows": [
+        ["[唔好意思|M4 hou2 ji3 si1]，[我今日唔得閒|ngo5 gam1 jat6 m4 dak1 haan4]。", "Maaf, hari ini saya tidak sempat."],
+        ["[我可能去唔到|Ngo5 ho2 nang4 heoi3 m4 dou2]。", "Saya mungkin tidak bisa datang."],
+        ["[我幫唔到你|Ngo5 bong1 m4 dou2 nei5]，[真係唔好意思|zan1 hai6 m4 hou2 ji3 si1]。", "Saya tidak bisa membantu, sungguh maaf."],
+        ["[改第日得唔得呀|Goi2 dai6 jat6 dak1 m4 dak1 aa3]？", "Ganti hari lain bisa?"],
+        ["[下次啦|Haa6 ci3 laa1]。", "Lain kali saja."]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **Menolak tanpa alasan terdengar dingin di Hong Kong.** Pola wajibnya: [唔好意思|m4 hou2 ji3 si1] + penolakan + alasan. Alasannya boleh samar — [我有啲嘢做|ngo5 jau5 di1 je5 zou6] (saya ada urusan) sudah cukup.",
+      "**Menanggapi penolakan orang lain: [唔緊要啦|M4 gan2 jiu3 laa1] atau [冇所謂|Mou5 so2 wai6].** Keduanya berarti “tidak apa-apa”, dan mengucapkannya menyelamatkan wajah kedua belah pihak.",
+      "**Berterima kasih atas bantuan: [唔該晒|M4 goi1 saai3].** Ingat pembagian dari Unit 1 — bantuan adalah jasa, jadi 唔該, bukan 多謝."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bahasa telepon dan pesan",
+   "blocks": [
+    { "type": "tabel", "head": ["Kalimat", "Arti"], "rows": [
+     ["[喂|Wai2]，[你好|nei5 hou2]。", "Halo, selamat siang."],
+     ["[我搵陳生|Ngo5 wan2 Can4 saang1]。", "Saya mau bicara dengan Pak Chan."],
+     ["[請問你係邊位呀|Cing2 man6 nei5 hai6 bin1 wai2 aa3]？", "Boleh tahu ini siapa?"],
+     ["[等陣|Dang2 zan6]。", "Sebentar."],
+     ["[佢唔喺度|Keoi5 m4 hai2 dou6]。", "Beliau tidak ada."],
+     ["[你打錯喇|Nei5 daa2 co3 laa3]。", "Anda salah sambung."],
+     ["[我聽唔到|Ngo5 teng1 m4 dou2]，[大聲啲|daai6 seng1 di1]。", "Saya tidak dengar, keraskan sedikit."],
+     ["[收唔到線|Sau1 m4 dou2 sin3]。", "Tidak ada sinyal."],
+     ["[遲啲覆你|Ci4 di1 fuk1 nei5]。", "Nanti saya balas."],
+     ["[我而家唔方便講嘢|Ngo5 ji4 gaa1 m4 fong1 bin6 gong2 je5]。", "Sekarang saya tidak enak bicara."],
+     ["[就咁先|Zau6 gam2 sin1]，[拜拜|baai1 baai3]。", "Segitu dulu ya, dah."]
+    ] },
+    { "type": "kotak", "title": "Kata Inggris yang jadi kata Kanton", "items": [
+     "🇭🇰 Kanton Hong Kong menyerap kata Inggris utuh dan memperlakukannya sebagai kata Kanton. Ini bukan bahasa gaul; ini cara orang berbicara setiap hari, termasuk di kantor.",
+     "[call你|call nei5] menelepon kamu · [send畀你|send bei2 nei5] kirim ke kamu · [book枱|book toi2] pesan meja · [check下|check haa5] cek dulu",
+     "[cancel咗|cancel zo2] dibatalkan · [confirm返|confirm faan1] konfirmasi lagi · [OK啦|OK laa1] oke deh · [sorry呀|sorry aa3] maaf ya",
+     "**Perhatikan bahwa penanda Kanton tetap dipasang**: [cancel咗|cancel zo2] memakai 咗 dari Unit 9, [send畀你|send bei2 nei5] memakai 畀 dari Unit 2. Kata Inggrisnya masuk ke dalam tata bahasa Kanton, bukan sebaliknya."
+    ] }
+   ]
+  },
+  {
+   "title": "識 dan 得: latihan pembeda",
+   "blocks": [
+    { "type": "p", "text": "Dua kata ini paling sering tertukar. Aturannya sederhana: [識|sik1] tentang **kamu** — sesuatu yang kamu kuasai. [得|dak1] tentang **keadaan** — apakah situasinya memungkinkan." },
+    { "type": "tabel", "head": ["Kalimat", "Arti", "Kenapa"], "rows": [
+     ["[我識講廣東話|Ngo5 sik1 gong2 Gwong2 dung1 waa2]。", "Saya bisa bahasa Kanton.", "Keterampilan"],
+     ["[我唔識游水|Ngo5 m4 sik1 jau4 seoi2]。", "Saya tidak bisa berenang.", "Keterampilan"],
+     ["[我識佢|Ngo5 sik1 keoi5]。", "Saya kenal dia.", "識 juga berarti kenal"],
+     ["[聽日得唔得呀|Ting1 jat6 dak1 m4 dak1 aa3]？", "Besok bisa tidak?", "Keadaan"],
+     ["[呢度唔得|Ni1 dou6 m4 dak1]。", "Di sini tidak bisa.", "Keadaan"],
+     ["[食得辣|Sik6 dak1 laat6]。", "Tahan pedas.", "Kemampuan menahan"],
+     ["[呢度可唔可以食嘢呀|Ni1 dou6 ho2 m4 ho2 ji5 sik6 je5 aa3]？", "Di sini boleh makan?", "Izin"],
+     ["[聽日會落雨|Ting1 jat6 wui5 lok6 jyu5]。", "Besok akan hujan.", "Kemungkinan"]
+    ] },
+    { "type": "kotak", "title": "Empat kalimat yang perlu kamu punya sebagai pemula", "items": [
+     "[我識少少廣東話|Ngo5 sik1 siu2 siu2 Gwong2 dung1 waa2]。 — Saya bisa sedikit bahasa Kanton.",
+     "[唔該講慢啲|M4 goi1 gong2 maan6 di1]。 — Tolong bicara pelan sedikit.",
+     "[我唔明|Ngo5 m4 ming4]，[可唔可以再講一次呀|ho2 m4 ho2 ji5 zoi3 gong2 jat1 ci3 aa3]？ — Saya tidak paham, boleh diulang?",
+     "[呢個廣東話點講呀|Ni1 go3 Gwong2 dung1 waa2 dim2 gong2 aa3]？ — Ini bahasa Kantonnya apa? — kalimat yang akan membuat kosakatamu tumbuh paling cepat."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "得", "baca": "dak1", "id": "bisa, boleh (keadaan)" },
+  { "zh": "可以", "baca": "ho2 ji5", "id": "boleh (izin)" },
+  { "zh": "識", "baca": "sik1", "id": "bisa (keterampilan); kenal" },
+  { "zh": "會", "baca": "wui5", "id": "akan; mungkin" },
+  { "zh": "可能", "baca": "ho2 nang4", "id": "mungkin" },
+  { "zh": "或者", "baca": "waak6 ze2", "id": "barangkali, atau" },
+  { "zh": "幫", "baca": "bong1", "id": "membantu" },
+  { "zh": "幫忙", "baca": "bong1 mong4", "id": "menolong" },
+  { "zh": "麻煩", "baca": "maa4 faan4", "id": "merepotkan; repot" },
+  { "zh": "搵", "baca": "wan2", "id": "mencari; mau bicara dengan" },
+  { "zh": "聽電話", "baca": "teng1 din6 waa2", "id": "mengangkat telepon" },
+  { "zh": "打電話", "baca": "daa2 din6 waa2", "id": "menelepon" },
+  { "zh": "留言", "baca": "lau4 jin4", "id": "pesan titipan" },
+  { "zh": "口訊", "baca": "hau2 seon3", "id": "pesan lisan" },
+  { "zh": "低", "baca": "dai1", "id": "ditinggalkan (sesudah kata kerja)" },
+  { "zh": "話畀…知", "baca": "waa6 bei2 … zi1", "id": "memberi tahu" },
+  { "zh": "打錯", "baca": "daa2 co3", "id": "salah sambung" },
+  { "zh": "大聲", "baca": "daai6 seng1", "id": "keras (suara)" },
+  { "zh": "細聲", "baca": "sai3 seng1", "id": "pelan (suara)" },
+  { "zh": "收線", "baca": "sau1 sin3", "id": "sinyal; menutup telepon" },
+  { "zh": "覆", "baca": "fuk1", "id": "membalas" },
+  { "zh": "地址", "baca": "dei6 zi2", "id": "alamat" },
+  { "zh": "表", "baca": "biu2", "id": "formulir" },
+  { "zh": "填", "baca": "tin4", "id": "mengisi" },
+  { "zh": "中文", "baca": "Zung1 man2", "id": "bahasa/tulisan Tionghoa" },
+  { "zh": "英文", "baca": "Jing1 man2", "id": "bahasa Inggris" },
+  { "zh": "廣東話", "baca": "Gwong2 dung1 waa2", "id": "bahasa Kanton" },
+  { "zh": "全部", "baca": "cyun4 bou6", "id": "seluruhnya" },
+  { "zh": "叫", "baca": "giu3", "id": "menyuruh; bernama" },
+  { "zh": "改", "baca": "goi2", "id": "mengubah" },
+  { "zh": "改期", "baca": "goi2 kei4", "id": "menjadwal ulang" },
+  { "zh": "今次", "baca": "gam1 ci3", "id": "kali ini" },
+  { "zh": "上次", "baca": "soeng6 ci3", "id": "kali lalu" },
+  { "zh": "下次", "baca": "haa6 ci3", "id": "lain kali" },
+  { "zh": "第日", "baca": "dai6 jat6", "id": "hari lain" },
+  { "zh": "冇所謂", "baca": "mou5 so2 wai6", "id": "tidak apa-apa, terserah" },
+  { "zh": "明", "baca": "ming4", "id": "paham" },
+  { "zh": "再", "baca": "zoi3", "id": "lagi, sekali lagi" },
+  { "zh": "游水", "baca": "jau4 seoi2", "id": "berenang" },
+  { "zh": "泊車", "baca": "paak3 ce1", "id": "parkir" },
+  { "zh": "事", "baca": "si6", "id": "urusan, hal" },
+  { "zh": "就咁先", "baca": "zau6 gam2 sin1", "id": "segitu dulu" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan 得, 可以, 識, atau 會.",
+   "items": [
+    "[我|Ngo5] ___ [講少少廣東話|gong2 siu2 siu2 Gwong2 dung1 waa2]。",
+    "[聽日|Ting1 jat6] ___ [唔| m4] ___ [呀|aa3]？ (bisa tidak)",
+    "[呢度| Ni1 dou6] ___ [唔| m4] ___ [食嘢呀|sik6 je5 aa3]？ (boleh makan)",
+    "[聽日| Ting1 jat6] ___ [落雨|lok6 jyu5]。",
+    "[我唔| Ngo5 m4] ___ [游水|jau4 seoi2]。",
+    "[佢唔| Keoi5 m4] ___ [嚟㗎喇|lei4 gaa3 laa3]。 (tidak akan datang)"
+   ]
+  },
+  {
+   "prompt": "Susun kalimat permintaan yang sopan dari potongan berikut.",
+   "items": [
+    "幫我 / 可唔可以 / 一個忙 / 呀",
+    "麻煩你 / 幫我 / 睇下",
+    "唔該 / 講 / 慢 / 啲",
+    "可唔可以 / 再 / 講 / 一次 / 呀",
+    "唔好意思 / 我 / 今日 / 唔得閒"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "喂 / 唔該 / 我 / 搵 / 陳生",
+    "佢 / 而家 / 唔 / 喺 / 度",
+    "話 / 畀 / 佢 / 知 / 安迪 / 搵 / 過 / 佢",
+    "我 / 可能 / 去 / 唔 / 到",
+    "改 / 星期日 / 得 / 唔 / 得 / 呀",
+    "我 / 幫 / 唔 / 到 / 你"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[請問你係邊位呀|Cing2 man6 nei5 hai6 bin1 wai2 aa3]？",
+    "[我可以幫你留低口訊|Ngo5 ho2 ji5 bong1 nei5 lau4 dai1 hau2 seon3]。",
+    "[我唔識填呢張表|Ngo5 m4 sik1 tin4 ni1 zoeng1 biu2]。",
+    "[我而家唔方便講嘢|Ngo5 ji4 gaa1 m4 fong1 bin6 gong2 je5]。",
+    "[你上次都係咁講㗎|Nei5 soeng6 ci3 dou1 hai6 gam2 gong2 gaa3]！"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Kanton. Tulis dengan jyutping.",
+   "items": [
+    "Saya bisa sedikit bahasa Kanton.",
+    "Boleh minta tolong?",
+    "Maaf, hari ini saya tidak sempat.",
+    "Tolong bicara pelan sedikit.",
+    "Ganti hari lain bisa?"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan jyutping.",
+   "items": [
+    "[我會講廣東話|Ngo5 wui5 gong2 Gwong2 dung1 waa2]。",
+    "[我識聽日嚟|Ngo5 sik1 ting1 jat6 lei4]。",
+    "[我告訴佢|Ngo5 gou3 sou3 keoi5]。",
+    "[唔得閒|M4 dak1 haan4]。 (menolak ajakan, tanpa apa pun lagi)",
+    "[我唔可以游水|Ngo5 m4 ho2 ji5 jau4 seoi2]。 (maksudnya: tidak bisa berenang)"
+   ]
+  }
+ ],
+ "answers": [
+  "識 — 得 … 得 — 可以 … 可以 — 會 — 識 — 會",
+  "可唔可以幫我一個忙呀？ — 麻煩你幫我睇下。 — 唔該講慢啲。 — 可唔可以再講一次呀？ — 唔好意思，我今日唔得閒。",
+  "喂 唔該 我 搵 陳生 — 佢 而家 唔 喺 度 — 話 畀 佢 知 安迪 搵 過 佢 — 我 可能 去 唔 到 — 改 星期日 得 唔 得 呀 — 我 幫 唔 到 你",
+  "Boleh tahu ini siapa? — Saya bisa bantu tinggalkan pesan untuk Anda. — Saya tidak bisa mengisi formulir ini. — Sekarang saya tidak enak bicara. — Kali lalu kamu juga bilang begitu, tuh!",
+  "Ngo5 sik1 siu2 siu2 Gwong2 dung1 waa2. — Ho2 m4 ho2 ji5 bong1 ngo5 jat1 go3 mong4 aa3? — M4 hou2 ji3 si1, ngo5 gam1 jat6 m4 dak1 haan4. — M4 goi1 gong2 maan6 di1. — Goi2 dai6 jat6 dak1 m4 dak1 aa3?",
+  "Ngo5 sik1 gong2 Gwong2 dung1 waa2. — Ngo5 ting1 jat6 dak1. — Ngo5 waa6 bei2 keoi5 zi1. — M4 hou2 ji3 si1, ngo5 m4 dak1 haan4. — Ngo5 m4 sik1 jau4 seoi2."
+ ],
+ "wave": "Lima menit sebelum Unit 11: telepon dirimu sendiri. Ucapkan keras-keras seluruh percakapan telepon dari 喂 sampai 拜拜, memainkan kedua peran — penerima dan penelepon. Sesudah itu, susun tiga permintaan tolong yang benar-benar kamu perlukan minggu ini, masing-masing dengan pembuka lunak, permintaan, dan alasan. Kalimat yang kamu perlukan sungguhan menempel jauh lebih cepat daripada kalimat contoh."
+}

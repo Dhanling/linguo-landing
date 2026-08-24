@@ -1,0 +1,346 @@
+{
+ "title": "Arah dan kendaraan",
+ "title_target": "點去呀？ — Dim2 heoi3 aa3?",
+ "goal": "Bertanya arah dan mengerti jawabannya, naik MTR, bus, minibus, dan taksi, serta menyusun kalimat “naik X pergi ke Y” dengan urutan Kanton yang benar.",
+ "bekal": [
+  "bertanya jalan: 點去 dan 喺邊度",
+  "menyebut arah: 直行, 轉左, 轉右, 對面",
+  "naik kendaraan dengan 搭",
+  "menyusun kalimat 搭 + kendaraan + 去 + tempat",
+  "kalimat wajib di taksi dan minibus Hong Kong"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 1 — Tersesat di Central",
+   "intro": "Andi kehilangan arah di Central dan bertanya kepada orang yang lewat. Perhatikan bahwa jawaban orang Hong Kong biasanya pendek dan penuh kata kerja gerak — bukan penjelasan panjang.",
+   "lines": [
+    { "speaker": "安迪:", "text": "[唔該|M4 goi1]，[請問|cing2 man6][中環站|Zung1 waan4 zaam6][喺邊度呀|hai2 bin1 dou6 aa3]？", "id": "Permisi, stasiun Central di mana ya?", "literal": "permisi, mohon — tanya — Central — stasiun — di — mana — tempat — ya." },
+    { "speaker": "路人:", "text": "[你直行|Nei5 zik6 haang4]，[過咗個街口|gwo3 zo2 go3 gaai1 hau2][轉左|zyun3 zo2]。", "id": "Jalan lurus, lewati perempatan lalu belok kiri.", "literal": "kamu — lurus — jalan, lewat — sudah — penggolong — jalan — mulut — putar — kiri." },
+    { "speaker": "安迪:", "text": "[轉左之後呢|Zyun3 zo2 zi1 hau6 ne1]？", "id": "Setelah belok kiri?", "literal": "putar — kiri — setelah — bagaimana." },
+    { "speaker": "路人:", "text": "[行多兩分鐘|Haang4 do1 loeng5 fan1 zung1]，[喺銀行對面|hai2 ngan4 hong4 deoi3 min6]。", "id": "Jalan dua menit lagi, ada di seberang bank.", "literal": "jalan — lebih — dua — menit, di — bank — hadap — sisi." },
+    { "speaker": "安迪:", "text": "[遠唔遠呀|Jyun5 m4 jyun5 aa3]？[使唔使搭車|Sai2 m4 sai2 daap3 ce1]？", "id": "Jauh tidak? Perlu naik kendaraan?", "literal": "jauh — tidak — jauh — ya. perlu — tidak — perlu — naik — kendaraan." },
+    { "speaker": "路人:", "text": "[唔使|M4 sai2]，[好近|hou2 kan5]，[行五分鐘就到|haang4 ng5 fan1 zung1 zau6 dou3]。", "id": "Tidak usah, dekat kok, jalan lima menit sampai.", "literal": "tidak — perlu, penyangga — dekat, jalan — lima — menit — lalu — tiba." },
+    { "speaker": "安迪:", "text": "[多謝晒|Do1 ze6 saai3]！[哦|O4]，[仲有|zung6 jau5] — [我想去尖沙咀|ngo5 soeng2 heoi3 Zim1 saa1 zeoi2]，[點去呀|dim2 heoi3 aa3]？", "id": "Terima kasih banyak! Oh, satu lagi — saya mau ke Tsim Sha Tsui, naik apa?", "literal": "terima-kasih — habis. oh, masih — ada — saya — ingin — pergi — Tsim-Sha-Tsui, bagaimana — pergi — ya." },
+    { "speaker": "路人:", "text": "[搭地鐵啦|Daap3 dei6 tit3 laa1]。[中環轉車|Zung1 waan4 zyun3 ce1]，[坐兩個站就到|co5 loeng5 go3 zaam6 zau6 dou3]。", "id": "Naik MTR saja. Ganti kereta di Central, dua stasiun sampai.", "literal": "naik — bawah-tanah — besi — dong. Central — putar — kendaraan, duduk — dua — penggolong — stasiun — lalu — tiba." },
+    { "speaker": "安迪:", "text": "[要幾耐呀|Jiu3 gei2 noi6 aa3]？", "id": "Perlu berapa lama?", "literal": "perlu — berapa — lama — ya." },
+    { "speaker": "路人:", "text": "[大概|Daai6 koi3][十分鐘啦|sap6 fan1 zung1 laa1]。[搭船都得|Daap3 syun4 dou1 dak1]，[但係慢啲|daan6 hai6 maan6 di1]。", "id": "Kira-kira sepuluh menit. Naik feri juga bisa, tapi lebih lambat.", "literal": "kira — kira — sepuluh — menit — dong. naik — kapal — juga — bisa, tetapi — lambat — sedikit." },
+    { "speaker": "安迪:", "text": "[咁我搭船|Gam2 ngo5 daap3 syun4]！[我想睇下個海|Ngo5 soeng2 tai2 haa5 go3 hoi2]。", "id": "Kalau begitu saya naik feri! Saya mau lihat lautnya.", "literal": "begitu — saya — naik — kapal. saya — ingin — lihat — sebentar — penggolong — laut." },
+    { "speaker": "路人:", "text": "[好主意|Hou2 zyu2 ji3]！[碼頭喺嗰邊|Maa5 tau4 hai2 go2 bin1]。", "id": "Ide bagus! Dermaganya di sebelah sana.", "literal": "baik — pokok — pikiran. dermaga — di — itu — sisi." }
+   ],
+   "notes": [
+    "**[喺|hai2] = di, pada.** Ini kata Kanton asli untuk lokasi (Mandarin memakai 在), dan ia akan muncul di hampir setiap kalimat mulai sekarang. ⚠️ Jangan bingung dengan [係|hai6] “adalah” dari Unit 1 — aksaranya beda (喺 memakai 口 di kiri), nadanya beda (2 vs 6), artinya beda.",
+    "**[直行|zik6 haang4] = jalan lurus, [轉左|zyun3 zo2] = belok kiri, [轉右|zyun3 jau6] = belok kanan.** [行|haang4] adalah kata Kanton untuk berjalan kaki; Mandarin memakai 走. ⚠️ Di Kanton, [走|zau2] justru berarti “pergi, kabur”, bukan berjalan.",
+    "**[街口|gaai1 hau2] = mulut jalan, yaitu persimpangan.** Aksara [口|hau2] (mulut) dipakai untuk segala bukaan: [出口|ceot1 hau2] (pintu keluar), [入口|jap6 hau2] (pintu masuk), [門口|mun4 hau2] (ambang pintu).",
+    "**[使唔使|sai2 m4 sai2]？ = “perlu tidak?”** Bentuk A-唔-A dari [使|sai2] (perlu). Jawabannya [使|Sai2] atau [唔使|M4 sai2]. 🇭🇰 Ini bentuk yang jauh lebih sering kamu dengar daripada 需唔需要.",
+    "**[就|zau6] menandai “langsung, lalu, tinggal”.** [行五分鐘就到|Haang4 ng5 fan1 zung1 zau6 dou3] = jalan lima menit langsung sampai. Ia menyambungkan syarat dengan akibatnya, dan berdiri di depan kata kerja kedua.",
+    "**[坐|co5] dipakai untuk “naik” kendaraan yang kamu duduki, [搭|daap3] untuk kendaraan umum apa pun.** Keduanya sering bisa ditukar: [搭地鐵|daap3 dei6 tit3] dan [坐地鐵|co5 dei6 tit3] sama-sama benar. 🇭🇰 搭 lebih sering di Hong Kong.",
+    "**[幾耐|gei2 noi6] = berapa lama.** Bandingkan dengan [幾時|gei2 si4] (kapan) dari Unit 1 — yang satu menanyakan durasi, yang satu menanyakan titik waktu. [好耐|hou2 noi6] = lama sekali; [好耐冇見|hou2 noi6 mou5 gin3] = lama tidak bertemu."
+   ],
+   "grammars": [
+    {
+     "title": "搭 + kendaraan + 去 + tempat",
+     "body": [
+      "Untuk mengatakan “pergi ke suatu tempat naik sesuatu”, Kanton menyusunnya persis dalam urutan itu: **cara dulu, tujuan belakangan**. Ini kebalikan dari bahasa Indonesia, dan tempat orang Indonesia paling sering tersandung di unit ini."
+     ],
+     "tables": [
+      {
+       "head": ["Kanton", "Arti"],
+       "rows": [
+        ["[我搭地鐵去旺角|Ngo5 daap3 dei6 tit3 heoi3 Wong6 gok3]。", "Saya ke Mongkok naik MTR."],
+        ["[佢搭巴士返工|Keoi5 daap3 baa1 si2 faan1 gung1]。", "Dia berangkat kerja naik bus."],
+        ["[我哋搭的士去機場|Ngo5 dei6 daap3 dik1 si2 heoi3 gei1 coeng4]。", "Kami ke bandara naik taksi."],
+        ["[我行路返屋企|Ngo5 haang4 lou6 faan1 uk1 kei2]。", "Saya pulang jalan kaki."],
+        ["[你點去呀|Nei5 dim2 heoi3 aa3]？", "Kamu perginya bagaimana?"],
+        ["[搭咩車去呀|Daap3 me1 ce1 heoi3 aa3]？", "Naik apa ke sananya?"]
+       ]
+      },
+      {
+       "head": ["Salah", "Benar"],
+       "rows": [
+        ["我去旺角搭地鐵。", "[我搭地鐵去旺角|Ngo5 daap3 dei6 tit3 heoi3 Wong6 gok3]。"],
+        ["我返工搭巴士。", "[我搭巴士返工|Ngo5 daap3 baa1 si2 faan1 gung1]。"]
+       ]
+      }
+     ],
+     "after": [
+      "**Kalau waktunya juga disebut, ia tetap paling depan**: [我聽日搭地鐵去旺角|Ngo5 ting1 jat6 daap3 dei6 tit3 heoi3 Wong6 gok3]。 Urutan penuhnya: waktu → cara → kata kerja → tujuan.",
+      "**[去|heoi3] menjauh dari tempat pembicara, [嚟|lei4] mendekat, [返|faan1] kembali ke tempat rutin.** [你去唔去呀|Nei5 heoi3 m4 heoi3 aa3]？ (kamu pergi tidak) · [佢嚟緊|Keoi5 lei4 gan2] (dia sedang datang) · [我返屋企|Ngo5 faan1 uk1 kei2] (saya pulang).",
+      "⚠️ **Berjalan kaki adalah [行路|haang4 lou6], bukan 走路.** Kalau kamu berkata 我走路去, orang Hong Kong akan mengerti maksudmu tapi mendengar bunyi Mandarin."
+     ]
+    },
+    {
+     "title": "Kata arah dan letak",
+     "body": [
+      "Kata letak Kanton hampir semuanya berakhiran [邊|bin1] (sisi) atau [面|min6] (muka). Ia berdiri **sesudah** benda acuannya — kebalikan dari bahasa Indonesia."
+     ],
+     "tables": [
+      {
+       "head": ["Letak", "Kanton", "Letak", "Kanton"],
+       "rows": [
+        ["depan", "[前面|cin4 min6]", "belakang", "[後面|hau6 min6]"],
+        ["kiri", "[左邊|zo2 bin1]", "kanan", "[右邊|jau6 bin1]"],
+        ["atas", "[上面|soeng6 min6]", "bawah", "[下面|haa6 min6]"],
+        ["dalam", "[入面|jap6 min6]", "luar", "[出面|ceot1 min6]"],
+        ["seberang", "[對面|deoi3 min6]", "sebelah", "[隔籬|gaak3 lei4]"],
+        ["tengah", "[中間|zung1 gaan1]", "dekat sini", "[附近|fu6 gan6]"]
+       ]
+      },
+      {
+       "head": ["Kanton", "Arti", "Susunannya"],
+       "rows": [
+        ["[銀行對面|ngan4 hong4 deoi3 min6]", "seberang bank", "benda + letak"],
+        ["[學校隔籬|hok6 haau6 gaak3 lei4]", "sebelah sekolah", "benda + letak"],
+        ["[車站附近|ce1 zaam6 fu6 gan6]", "dekat halte", "benda + letak"],
+        ["[喺銀行對面|hai2 ngan4 hong4 deoi3 min6]", "di seberang bank", "喺 + benda + letak"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **Urutannya terbalik dari bahasa Indonesia.** Kita bilang “seberang bank”; Kanton bilang “bank seberang”. Bacalah dari belakang ke depan sampai terbiasa.",
+      "**[隔籬|gaak3 lei4] adalah kata Kanton asli untuk “sebelah”** dan tidak ada di Mandarin. [隔籬屋|gaak3 lei4 uk1] = rumah sebelah; [坐我隔籬|co5 ngo5 gaak3 lei4] = duduk di sebelahku."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "對話 2 — Naik taksi",
+   "intro": "Andi naik taksi ke Tsim Sha Tsui. Percakapan taksi Hong Kong pendek dan penuh kalimat baku — hafalkan empat atau lima kalimat ini dan kamu akan aman di mana pun.",
+   "lines": [
+    { "speaker": "安迪:", "text": "[師傅|Si1 fu2]，[去尖沙咀|heoi3 Zim1 saa1 zeoi2][唔該|m4 goi1]。", "id": "Pak, ke Tsim Sha Tsui ya.", "literal": "guru — bapak, pergi — Tsim-Sha-Tsui — tolong." },
+    { "speaker": "司機:", "text": "[尖沙咀邊度呀|Zim1 saa1 zeoi2 bin1 dou6 aa3]？", "id": "Tsim Sha Tsui sebelah mana?", "literal": "Tsim-Sha-Tsui — mana — tempat — ya." },
+    { "speaker": "安迪:", "text": "[彌敦道|Nei4 deon1 dou6]，[近地鐵站嗰度|kan5 dei6 tit3 zaam6 go2 dou6]。", "id": "Nathan Road, yang dekat stasiun MTR.", "literal": "Nathan — jalan, dekat — MTR — stasiun — itu — tempat." },
+    { "speaker": "司機:", "text": "[好|Hou2]。[而家|Ji4 gaa1][有啲塞車|jau5 di1 sak1 ce1][喎|wo3]。", "id": "Baik. Sekarang agak macet, lho.", "literal": "baik. sekarang — ada — sedikit — macet — kendaraan — lho." },
+    { "speaker": "安迪:", "text": "[唔緊要|M4 gan2 jiu3]。[大概要幾耐呀|Daai6 koi3 jiu3 gei2 noi6 aa3]？", "id": "Tidak apa-apa. Kira-kira perlu berapa lama?", "literal": "tidak — penting. kira — kira — perlu — berapa — lama — ya." },
+    { "speaker": "司機:", "text": "[二十分鐘啦|Ji6 sap6 fan1 zung1 laa1]。[你係邊度嚟㗎|Nei5 hai6 bin1 dou6 lei4 gaa3]？", "id": "Dua puluh menit lah. Anda dari mana asalnya?", "literal": "dua — puluh — menit — dong. kamu — adalah — mana — tempat — datang — penegas." },
+    { "speaker": "安迪:", "text": "[印尼|Jan3 nei4]。[我嚟咗兩個月|Ngo5 lei4 zo2 loeng5 go3 jyut6]。", "id": "Indonesia. Saya sudah dua bulan di sini.", "literal": "Indonesia. saya — datang — sudah — dua — penggolong — bulan." },
+    { "speaker": "司機:", "text": "[你廣東話唔錯喎|Nei5 Gwong2 dung1 waa2 m4 co3 wo3]！", "id": "Bahasa Kanton Anda lumayan, lho!", "literal": "kamu — Kanton — bahasa — tidak — salah — lho." },
+    { "speaker": "安迪:", "text": "[多謝|Do1 ze6]！[我學緊|Ngo5 hok6 gan2]。[前面|Cin4 min6][有落|jau5 lok6][唔該|m4 goi1]！", "id": "Terima kasih! Saya sedang belajar. Turun di depan ya!", "literal": "terima-kasih. saya — belajar — sedang. depan — sisi — ada — turun — tolong." },
+    { "speaker": "司機:", "text": "[好|Hou2]。[一共|Jat1 gung6][八十五蚊|baat3 sap6 ng5 man1]。", "id": "Baik. Totalnya delapan puluh lima dolar.", "literal": "baik. satu — bersama — delapan — puluh — lima — dolar." },
+    { "speaker": "安迪:", "text": "[呢度一百|Ni1 dou6 jat1 baak3]，[唔使找喇|m4 sai2 zaau2 laa3]。[多謝師傅|Do1 ze6 si1 fu2]！", "id": "Ini seratus, kembaliannya ambil saja. Terima kasih, Pak!", "literal": "ini — tempat — satu — ratus, tidak — perlu — kembalian — sudah. terima-kasih — guru — bapak." }
+   ],
+   "notes": [
+    "**[師傅|si1 fu2] adalah sapaan untuk sopir taksi, tukang, dan pekerja terampil mana pun.** Harfiah “guru, ahli”. 🇭🇰 Memanggil sopir taksi dengan 師傅 langsung membuat kamu terdengar seperti orang lokal; memanggilnya 先生 terdengar aneh.",
+    "**[有落|jau5 lok6]！ = “ada yang turun!”** Kalimat wajib di minibus, dan juga dipakai di taksi. Ucapkan agak keras, sekitar sepuluh detik sebelum tempat yang kamu tuju. 🇭🇰 Di minibus hijau, kalau kamu tidak berteriak 有落, sopir tidak akan berhenti — tidak ada tombol.",
+    "**[有啲|jau5 di1] = “agak, sedikit”.** [有啲塞車|jau5 di1 sak1 ce1] = agak macet; [有啲攰|jau5 di1 gui6] = agak capek. Bentuk yang sangat sering dipakai untuk memperhalus.",
+    "**[唔錯|m4 co3] = “lumayan, tidak buruk”, dan ini pujian sungguhan.** Orang Hong Kong jarang memuji berlebihan; 唔錯 sudah berarti bagus. Menjawabnya cukup dengan [多謝|Do1 ze6] atau [邊有呀|Bin1 jau5 aa3] (“mana ada”, merendah).",
+    "**[嚟咗兩個月|lei4 zo2 loeng5 go3 jyut6] = sudah datang dua bulan.** Durasi berdiri **sesudah** kata kerjanya, berbeda dari kata waktu yang berdiri di depan. Bandingkan: [我琴日嚟|Ngo5 kam4 jat6 lei4] (kemarin saya datang) vs [我嚟咗兩日|Ngo5 lei4 zo2 loeng5 jat6] (saya sudah dua hari di sini).",
+    "**[學緊|hok6 gan2] = sedang belajar.** [緊|gan2] ditempel di belakang kata kerja untuk menandai perbuatan yang sedang berlangsung. 🔁 Ini pratinjau Unit 9; untuk sekarang cukup kenali bentuknya.",
+    "🇭🇰 **Tip di taksi Hong Kong: cukup membulatkan ke atas.** [唔使找喇|M4 sai2 zaau2 laa3] = kembaliannya ambil saja. Tidak ada kebiasaan memberi persentase tertentu; membulatkan beberapa dolar sudah sopan."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja gerak: 上, 落, 入, 出, 過",
+     "body": [
+      "Lima kata kerja pendek ini menutupi hampir semua gerakan yang perlu kamu ucapkan sehari-hari, dan semuanya bisa berdiri sendiri maupun ditempel ke kata kerja lain."
+     ],
+     "tables": [
+      {
+       "head": ["Kata", "Arti", "Contoh"],
+       "rows": [
+        ["[上|soeng5]", "naik", "[上車|soeng5 ce1] naik kendaraan · [上樓|soeng5 lau2] naik ke atas"],
+        ["[落|lok6]", "turun", "[落車|lok6 ce1] turun · [落雨|lok6 jyu5] hujan turun"],
+        ["[入|jap6]", "masuk", "[入去|jap6 heoi3] masuk ke dalam · [入閘|jap6 zaap6] masuk gerbang MTR"],
+        ["[出|ceot1]", "keluar", "[出街|ceot1 gaai1] keluar rumah · [出閘|ceot1 zaap6] keluar gerbang"],
+        ["[過|gwo3]", "menyeberang, lewat", "[過馬路|gwo3 maa5 lou6] menyeberang jalan · [過海|gwo3 hoi2] menyeberang laut"]
+       ]
+      },
+      {
+       "head": ["Gabungan", "Arti"],
+       "rows": [
+        ["[行過去|haang4 gwo3 heoi3]", "jalan menyeberang ke sana"],
+        ["[行入去|haang4 jap6 heoi3]", "jalan masuk ke dalam"],
+        ["[攞返嚟|lo2 faan1 lei4]", "ambil kembali ke sini"],
+        ["[搬出去|bun1 ceot1 heoi3]", "pindah keluar"]
+       ]
+      }
+     ],
+     "after": [
+      "🇭🇰 **[過海|gwo3 hoi2] adalah kata sehari-hari di Hong Kong** — menyeberang antara Pulau Hong Kong dan Kowloon. Taksi punya tarif tambahan untuk itu, dan sebagian sopir menolak penumpang yang mau 過海 di akhir giliran kerjanya.",
+      "**Urutan gabungannya: kata kerja utama + arah + 去/嚟.** [行入去|haang4 jap6 heoi3] = jalan + masuk + ke sana. Tiga bagian itu selalu dalam urutan ini."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "MTR dan kendaraan Hong Kong",
+   "blocks": [
+    { "type": "p", "text": "Hong Kong punya sistem angkutan umum yang rapat, dan hampir semuanya dibayar dengan satu kartu: 八達通. Kosakata di bawah ini akan kamu pakai setiap hari." },
+    { "type": "tabel", "head": ["Kendaraan", "Kanton", "Catatan"], "rows": [
+     ["MTR", "[地鐵|dei6 tit3] / [港鐵|Gong2 tit3]", "Nama resminya 港鐵, tapi orang tetap bilang 地鐵"],
+     ["bus tingkat", "[巴士|baa1 si2]", "Duduk di lantai dua paling depan — pemandangan terbaik"],
+     ["minibus hijau", "[綠van|luk6 wen1] / [小巴|siu2 baa1]", "Rute tetap, bayar naik"],
+     ["minibus merah", "[紅van|hung4 wen1]", "Rute lentur, bayar turun, harus teriak [有落|jau5 lok6]"],
+     ["taksi", "[的士|dik1 si2]", "Merah = kota · hijau = New Territories · biru = Lantau"],
+     ["tram", "[電車|din6 ce1] / [叮叮|ding1 ding1]", "Hanya di Pulau Hong Kong, murah dan lambat"],
+     ["feri", "[渡輪|dou6 leon4] / [船|syun4]", "Star Ferry menyeberang pelabuhan"],
+     ["kereta bandara", "[機場快線|Gei1 coeng4 faai3 sin3]", "Ke bandara, 24 menit dari Central"]
+    ] },
+    { "type": "tabel", "head": ["Kalimat MTR", "Arti"], "rows": [
+     ["[邊個站落呀|Bin1 go3 zaam6 lok6 aa3]？", "Turun di stasiun mana?"],
+     ["[要唔要轉車呀|Jiu3 m4 jiu3 zyun3 ce1 aa3]？", "Perlu ganti kereta tidak?"],
+     ["[喺金鐘轉車|Hai2 Gam1 zung1 zyun3 ce1]。", "Ganti kereta di Admiralty."],
+     ["[坐幾多個站呀|Co5 gei2 do1 go3 zaam6 aa3]？", "Berapa stasiun?"],
+     ["[行邊個出口呀|Haang4 bin1 go3 ceot1 hau2 aa3]？", "Lewat pintu keluar mana?"],
+     ["[B出口|B ceot1 hau2]。", "Pintu keluar B."],
+     ["[八達通冇錢喇|Baat3 daat6 tung1 mou5 cin2 laa3]。", "Saldo Octopus habis."],
+     ["[增值|Zang1 zik6]。", "Isi ulang saldo."]
+    ] }
+   ]
+  },
+  {
+   "title": "Tempat yang perlu kamu bisa sebut",
+   "blocks": [
+    { "type": "tabel", "head": ["Tempat", "Kanton", "Tempat", "Kanton"], "rows": [
+     ["stasiun MTR", "[地鐵站|dei6 tit3 zaam6]", "halte bus", "[巴士站|baa1 si2 zaam6]"],
+     ["bandara", "[機場|gei1 coeng4]", "dermaga", "[碼頭|maa5 tau4]"],
+     ["bank", "[銀行|ngan4 hong4]", "rumah sakit", "[醫院|ji1 jyun2]"],
+     ["sekolah", "[學校|hok6 haau6]", "kantor", "[寫字樓|se2 zi6 lau2]"],
+     ["pasar basah", "[街市|gaai1 si5]", "mal", "[商場|soeng1 coeng4]"],
+     ["minimarket", "[便利店|bin6 lei6 dim3]", "apotek", "[藥房|joek6 fong4]"],
+     ["taman", "[公園|gung1 jyun2]", "kantor pos", "[郵政局|jau4 zing3 guk2]"],
+     ["restoran", "[餐廳|caan1 teng1]", "hotel", "[酒店|zau2 dim3]"],
+     ["toilet", "[廁所|ci3 so2]", "toko", "[舖頭|pou3 tau2]"]
+    ] },
+    { "type": "kotak", "title": "Nama tempat Hong Kong yang paling sering disebut", "items": [
+     "[中環|Zung1 waan4] Central · [金鐘|Gam1 zung1] Admiralty · [銅鑼灣|Tung4 lo4 waan1] Causeway Bay · [灣仔|Waan1 zai2] Wan Chai",
+     "[尖沙咀|Zim1 saa1 zeoi2] Tsim Sha Tsui · [旺角|Wong6 gok3] Mongkok · [油麻地|Jau4 maa4 dei2] Yau Ma Tei · [深水埗|Sam1 seoi2 bou2] Sham Shui Po",
+     "[九龍|Gau2 lung4] Kowloon · [新界|San1 gaai3] New Territories · [大嶼山|Daai6 jyu4 saan1] Lantau",
+     "⚠️ Ejaan Latin nama tempat Hong Kong dibuat lebih dari seratus tahun lalu dan sering jauh dari bunyi jyutping-nya. Andalkan aksara dan jyutping, jangan ejaan Inggrisnya."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "去", "baca": "heoi3", "id": "pergi" },
+  { "zh": "嚟", "baca": "lei4", "id": "datang" },
+  { "zh": "返", "baca": "faan1", "id": "kembali, pulang" },
+  { "zh": "行", "baca": "haang4", "id": "berjalan kaki" },
+  { "zh": "行路", "baca": "haang4 lou6", "id": "jalan kaki" },
+  { "zh": "搭", "baca": "daap3", "id": "naik (kendaraan)" },
+  { "zh": "坐", "baca": "co5", "id": "duduk; naik" },
+  { "zh": "喺", "baca": "hai2", "id": "di, pada" },
+  { "zh": "點去", "baca": "dim2 heoi3", "id": "perginya bagaimana" },
+  { "zh": "直行", "baca": "zik6 haang4", "id": "jalan lurus" },
+  { "zh": "轉左", "baca": "zyun3 zo2", "id": "belok kiri" },
+  { "zh": "轉右", "baca": "zyun3 jau6", "id": "belok kanan" },
+  { "zh": "轉車", "baca": "zyun3 ce1", "id": "ganti kendaraan" },
+  { "zh": "上車", "baca": "soeng5 ce1", "id": "naik kendaraan" },
+  { "zh": "落車", "baca": "lok6 ce1", "id": "turun dari kendaraan" },
+  { "zh": "有落", "baca": "jau5 lok6", "id": "ada yang turun!" },
+  { "zh": "過", "baca": "gwo3", "id": "menyeberang, lewat" },
+  { "zh": "過馬路", "baca": "gwo3 maa5 lou6", "id": "menyeberang jalan" },
+  { "zh": "入", "baca": "jap6", "id": "masuk" },
+  { "zh": "出", "baca": "ceot1", "id": "keluar" },
+  { "zh": "街口", "baca": "gaai1 hau2", "id": "persimpangan" },
+  { "zh": "出口", "baca": "ceot1 hau2", "id": "pintu keluar" },
+  { "zh": "前面", "baca": "cin4 min6", "id": "depan" },
+  { "zh": "後面", "baca": "hau6 min6", "id": "belakang" },
+  { "zh": "左邊", "baca": "zo2 bin1", "id": "sebelah kiri" },
+  { "zh": "右邊", "baca": "jau6 bin1", "id": "sebelah kanan" },
+  { "zh": "對面", "baca": "deoi3 min6", "id": "seberang" },
+  { "zh": "隔籬", "baca": "gaak3 lei4", "id": "sebelah" },
+  { "zh": "入面", "baca": "jap6 min6", "id": "di dalam" },
+  { "zh": "出面", "baca": "ceot1 min6", "id": "di luar" },
+  { "zh": "附近", "baca": "fu6 gan6", "id": "dekat sini" },
+  { "zh": "遠", "baca": "jyun5", "id": "jauh" },
+  { "zh": "近", "baca": "kan5", "id": "dekat" },
+  { "zh": "使", "baca": "sai2", "id": "perlu" },
+  { "zh": "就", "baca": "zau6", "id": "lalu, langsung" },
+  { "zh": "幾耐", "baca": "gei2 noi6", "id": "berapa lama" },
+  { "zh": "大概", "baca": "daai6 koi3", "id": "kira-kira" },
+  { "zh": "有啲", "baca": "jau5 di1", "id": "agak, sedikit" },
+  { "zh": "地鐵", "baca": "dei6 tit3", "id": "MTR" },
+  { "zh": "巴士", "baca": "baa1 si2", "id": "bus" },
+  { "zh": "小巴", "baca": "siu2 baa1", "id": "minibus" },
+  { "zh": "的士", "baca": "dik1 si2", "id": "taksi" },
+  { "zh": "電車", "baca": "din6 ce1", "id": "tram" },
+  { "zh": "船", "baca": "syun4", "id": "kapal, feri" },
+  { "zh": "站", "baca": "zaam6", "id": "stasiun, halte" },
+  { "zh": "機場", "baca": "gei1 coeng4", "id": "bandara" },
+  { "zh": "碼頭", "baca": "maa5 tau4", "id": "dermaga" },
+  { "zh": "銀行", "baca": "ngan4 hong4", "id": "bank" },
+  { "zh": "醫院", "baca": "ji1 jyun2", "id": "rumah sakit" },
+  { "zh": "學校", "baca": "hok6 haau6", "id": "sekolah" },
+  { "zh": "街市", "baca": "gaai1 si5", "id": "pasar basah" },
+  { "zh": "廁所", "baca": "ci3 so2", "id": "toilet" },
+  { "zh": "師傅", "baca": "si1 fu2", "id": "Pak sopir; ahli" },
+  { "zh": "塞車", "baca": "sak1 ce1", "id": "macet" },
+  { "zh": "唔錯", "baca": "m4 co3", "id": "lumayan, tidak buruk" },
+  { "zh": "海", "baca": "hoi2", "id": "laut" },
+  { "zh": "過海", "baca": "gwo3 hoi2", "id": "menyeberang pelabuhan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan 去, 嚟, atau 返.",
+   "items": [
+    "[我聽日|Ngo5 ting1 jat6] ___ [旺角|Wong6 gok3]。",
+    "[佢| Keoi5] ___ [咗兩個月喇|zo2 loeng5 go3 jyut6 laa3]。 (datang ke sini)",
+    "[我六點|Ngo5 luk6 dim2] ___ [屋企|uk1 kei2]。",
+    "[你幾時| Nei5 gei2 si4] ___ [香港㗎|Hoeng1 gong2 gaa3]？ (datang)",
+    "[我八點|Ngo5 baat3 dim2] ___ [工|gung1]。"
+   ]
+  },
+  {
+   "prompt": "Susun ulang jadi kalimat “naik X ke Y” yang benar.",
+   "items": [
+    "[我去機場搭的士|Ngo5 heoi3 gei1 coeng4 daap3 dik1 si2]。",
+    "[佢返工搭巴士|Keoi5 faan1 gung1 daap3 baa1 si2]。",
+    "[我哋去尖沙咀搭船|Ngo5 dei6 heoi3 Zim1 saa1 zeoi2 daap3 syun4]。",
+    "[我返屋企行路|Ngo5 faan1 uk1 kei2 haang4 lou6]。",
+    "[你去邊度搭地鐵|Nei5 heoi3 bin1 dou6 daap3 dei6 tit3]？"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "中環站 / 喺 / 邊度 / 呀",
+    "你 / 直行 / 然後 / 轉左",
+    "喺 / 銀行 / 對面",
+    "我 / 搭 / 地鐵 / 去 / 旺角",
+    "前面 / 有落 / 唔該",
+    "行 / 五 / 分鐘 / 就 / 到"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[請問地鐵站喺邊度呀|Cing2 man6 dei6 tit3 zaam6 hai2 bin1 dou6 aa3]？",
+    "[遠唔遠呀？使唔使搭車|Jyun5 m4 jyun5 aa3? Sai2 m4 sai2 daap3 ce1]？",
+    "[喺金鐘轉車，坐兩個站就到|Hai2 Gam1 zung1 zyun3 ce1, co5 loeng5 go3 zaam6 zau6 dou3]。",
+    "[而家有啲塞車喎|Ji4 gaa1 jau5 di1 sak1 ce1 wo3]。",
+    "[唔使找喇，多謝師傅|M4 sai2 zaau2 laa3, do1 ze6 si1 fu2]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Kanton. Tulis dengan jyutping.",
+   "items": [
+    "Saya ke Mongkok naik MTR.",
+    "Permisi, toiletnya di mana?",
+    "Jalan lurus lalu belok kanan.",
+    "Ada di seberang bank.",
+    "Kira-kira perlu berapa lama?"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan jyutping.",
+   "items": [
+    "[我去旺角搭地鐵|Ngo5 heoi3 Wong6 gok3 daap3 dei6 tit3]。",
+    "[我走路返屋企|Ngo5 zau2 lou6 faan1 uk1 kei2]。",
+    "[地鐵站係邊度呀|Dei6 tit3 zaam6 hai6 bin1 dou6 aa3]？",
+    "[喺對面銀行|Hai2 deoi3 min6 ngan4 hong4]。",
+    "[我喺學生|Ngo5 hai2 hok6 saang1]。"
+   ]
+  }
+ ],
+ "answers": [
+  "去 — 嚟 — 返 — 嚟 — 返",
+  "我搭的士去機場。 — 佢搭巴士返工。 — 我哋搭船去尖沙咀。 — 我行路返屋企。 — 你搭地鐵去邊度？",
+  "中環站 喺 邊度 呀 — 你 直行 然後 轉左 — 喺 銀行 對面 — 我 搭 地鐵 去 旺角 — 前面 有落 唔該 — 行 五 分鐘 就 到",
+  "Permisi, stasiun MTR-nya di mana? — Jauh tidak? Perlu naik kendaraan? — Ganti kereta di Admiralty, dua stasiun sampai. — Sekarang agak macet, lho. — Kembaliannya ambil saja, terima kasih Pak.",
+  "Ngo5 daap3 dei6 tit3 heoi3 Wong6 gok3. — Cing2 man6 ci3 so2 hai2 bin1 dou6 aa3? — Zik6 haang4 jin4 hau6 zyun3 jau6. — Hai2 ngan4 hong4 deoi3 min6. — Daai6 koi3 jiu3 gei2 noi6 aa3?",
+  "Ngo5 daap3 dei6 tit3 heoi3 Wong6 gok3. — Ngo5 haang4 lou6 faan1 uk1 kei2. — Dei6 tit3 zaam6 hai2 bin1 dou6 aa3? — Hai2 ngan4 hong4 deoi3 min6. — Ngo5 hai6 hok6 saang1."
+ ],
+ "wave": "Lima menit sebelum Unit 7: buka peta di ponselmu, pilih dua tempat yang kamu kenal di kotamu sendiri, lalu jelaskan jalannya dalam bahasa Kanton — 直行, 轉左, 過馬路, 喺…對面. Sesudah itu, sebutkan cara kamu berangkat ke tempat kerja atau sekolah dengan pola 搭 + kendaraan + 去 + tempat, dan pastikan kata waktunya dari Unit 5 berdiri paling depan."
+}

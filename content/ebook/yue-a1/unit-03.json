@@ -1,0 +1,336 @@
+{
+ "title": "Belanja dan menawar",
+ "title_target": "幾多錢？ — Gei2 do1 cin2?",
+ "goal": "Menanyakan harga, menyebut uang Hong Kong dengan cara yang dipakai orang, menunjuk barang dengan 呢個 / 嗰個, meminta dengan 要, dan menawar tanpa terdengar kasar.",
+ "bekal": [
+  "menanyakan harga dengan 幾多錢",
+  "menyebut jumlah uang: 蚊, 個半, 五個一",
+  "menunjuk barang dengan 呢 dan 嗰",
+  "meminta dengan 要 dan menolak dengan 唔要",
+  "menawar dengan 平啲得唔得"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 1 — Di kaki lima Mongkok",
+   "intro": "Wong Lai menawar kaus di 女人街, pasar kaki lima paling terkenal di Mongkok. Perhatikan bahwa menawar di Hong Kong berlangsung cepat dan ramah — bukan pertengkaran.",
+   "lines": [
+    { "speaker": "店員:", "text": "[靚女|Leng3 neoi2]，[睇下啦|tai2 haa5 laa1]！", "id": "Nona, lihat-lihat dulu!", "literal": "cantik — perempuan, lihat — sebentar — dong." },
+    { "speaker": "黃麗:", "text": "[呢件|Ni1 gin6][幾多錢|gei2 do1 cin2][呀|aa3]？", "id": "Yang ini berapa?", "literal": "ini — penggolong-baju — berapa — banyak — uang — ya." },
+    { "speaker": "店員:", "text": "[一百二十蚊|Jat1 baak3 ji6 sap6 man1]。", "id": "Seratus dua puluh dolar.", "literal": "satu — ratus — dua — puluh — dolar." },
+    { "speaker": "黃麗:", "text": "[嘩|Waa4]，[太貴喇|taai3 gwai3 laa3]！[平啲|Peng4 di1][得唔得|dak1 m4 dak1][呀|aa3]？", "id": "Wah, mahal banget! Bisa kurang tidak?", "literal": "wah, terlalu — mahal — sudah. murah — sedikit — bisa — tidak — bisa — ya." },
+    { "speaker": "店員:", "text": "[一百蚊啦|Jat1 baak3 man1 laa1]，[唔可以|m4 ho2 ji5][再平喇|zoi3 peng4 laa3]。", "id": "Seratus deh, tidak bisa lebih murah lagi.", "literal": "satu — ratus — dolar — dong, tidak — boleh — lagi — murah — sudah." },
+    { "speaker": "黃麗:", "text": "[八十蚊|Baat3 sap6 man1]。[我要|Ngo5 jiu3][兩件|loeng5 gin6]。", "id": "Delapan puluh. Saya ambil dua.", "literal": "delapan — puluh — dolar. saya — mau — dua — penggolong-baju." },
+    { "speaker": "店員:", "text": "[兩件|Loeng5 gin6][一百五啦|jat1 baak3 ng5 laa1]，[好唔好|hou2 m4 hou2]？", "id": "Dua seratus lima puluh, bagaimana?", "literal": "dua — penggolong — satu — ratus — lima — dong, baik — tidak — baik." },
+    { "speaker": "黃麗:", "text": "[好|Hou2]，[就咁話|zau6 gam2 waa6]。", "id": "Oke, deal.", "literal": "baik, lalu — begitu — bilang." },
+    { "speaker": "店員:", "text": "[你要|Nei5 jiu3][邊個顏色|bin1 go3 ngaan4 sik1][呀|aa3]？", "id": "Mau warna apa?", "literal": "kamu — mau — mana — penggolong — warna — ya." },
+    { "speaker": "黃麗:", "text": "[呢個藍色|Ni1 go3 laam4 sik1]，[同埋|tung4 maai4][嗰個白色|go2 go3 baak6 sik1]。", "id": "Yang biru ini, dan yang putih itu.", "literal": "ini — penggolong — biru — warna, dan — itu — penggolong — putih — warna." },
+    { "speaker": "店員:", "text": "[好|Hou2]。[有冇|Jau5 mou5][八達通|Baat3 daat6 tung1][呀|aa3]？", "id": "Baik. Punya Octopus?", "literal": "baik. ada — tidak-ada — Octopus — ya." },
+    { "speaker": "黃麗:", "text": "[有|Jau5]，[唔該|m4 goi1]。", "id": "Ada, terima kasih.", "literal": "ada, terima-kasih." }
+   ],
+   "notes": [
+    "🇭🇰 **[靚女|leng3 neoi2] dan [靚仔|leng3 zai2] adalah sapaan biasa kepada orang asing**, bukan rayuan. Pedagang, pelayan, dan sopir taksi memakainya sepanjang hari kepada siapa pun yang kelihatan muda. Harfiah “cewek cantik” dan “cowok ganteng”, tapi rasanya di telinga orang Hong Kong lebih dekat ke “mas” dan “mbak”.",
+    "**[下|haa5] sesudah kata kerja berarti “sebentar, coba dulu”.** [睇下|tai2 haa5] = lihat-lihat; [試下|si3 haa5] = coba dulu; [諗下|nam2 haa5] = pikir dulu. Ini cara Kanton melunakkan perintah, dan dipakai terus-menerus.",
+    "**[件|gin6] adalah penggolong untuk baju atasan** — kemeja, kaus, jaket. Celana memakai [條|tiu4], sepatu memakai [對|deoi3] untuk sepasang dan [隻|zek3] untuk sebelah. ⚠️ Memakai 個 untuk baju akan dimengerti tapi langsung terdengar seperti orang asing.",
+    "**[太…喇|taai3 … laa3] = “terlalu … nih”.** Pasangan ini hampir selalu utuh: [太貴喇|taai3 gwai3 laa3] (kemahalan), [太遲喇|taai3 ci4 laa3] (kesorean), [太多喇|taai3 do1 laa3] (kebanyakan). 喇 di ujung menandakan keadaan yang **berubah jadi begitu**, dan tanpanya kalimat terdengar menggantung.",
+    "**[得唔得|dak1 m4 dak1]？ = “bisa tidak?”** — kalimat paling berguna dalam seluruh unit ini. Ia bisa ditempel di belakang hampir apa pun: [平啲得唔得|peng4 di1 dak1 m4 dak1]？ (bisa kurang tidak?), [聽日得唔得|ting1 jat6 dak1 m4 dak1]？ (besok bisa tidak?). Jawabannya [得|Dak1] atau [唔得|M4 dak1].",
+    "**[一百五|jat1 baak3 ng5] berarti seratus lima puluh, bukan seratus lima.** Dalam ucapan harga, angka terakhir yang disebut menempati tempat puluhan, dan sisanya dibuang. [三百二|saam1 baak3 ji6] = 320. ⚠️ Kalau kamu benar-benar bermaksud 105, sebutkan lengkap: [一百零五|jat1 baak3 ling4 ng5].",
+    "**[就咁話|zau6 gam2 waa6] = “deal, begitu saja”.** Kalimat penutup tawar-menawar yang menandakan kesepakatan. Setelah itu tidak sopan menawar lagi."
+   ],
+   "grammars": [
+    {
+     "title": "呢 dan 嗰 — ini dan itu",
+     "body": [
+      "Kanton menunjuk barang dengan dua kata: [呢|ni1] untuk yang dekat, [嗰|go2] untuk yang jauh. Keduanya **tidak pernah berdiri sendiri di depan kata benda** — selalu ada penggolong di antaranya."
+     ],
+     "tables": [
+      {
+       "head": ["Bentuk", "Susunan", "Contoh"],
+       "rows": [
+        ["ini (barang)", "呢 + penggolong + benda", "[呢件衫|ni1 gin6 saam1] baju ini"],
+        ["itu (barang)", "嗰 + penggolong + benda", "[嗰本書|go2 bun2 syu1] buku itu"],
+        ["yang ini", "呢 + penggolong", "[呢個|ni1 go3] yang ini"],
+        ["yang itu", "嗰 + penggolong", "[嗰個|go2 go3] yang itu"],
+        ["yang mana", "邊 + penggolong", "[邊個|bin1 go3] yang mana"],
+        ["di sini / di sana", "呢度 / 嗰度", "[呢度|ni1 dou6] di sini · [嗰度|go2 dou6] di sana"],
+        ["barang-barang ini", "呢啲 + benda", "[呢啲嘢|ni1 di1 je5] barang-barang ini"]
+       ]
+      }
+     ],
+     "after": [
+      "🇭🇰 **[呢|ni1] sering diucapkan *nei1* dalam percakapan cepat**, dan sebagian orang menulisnya 呢 tetap. Keduanya sama; jangan bingung.",
+      "⚠️ **Jangan menyisipkan angka “satu”.** [呢件衫|ni1 gin6 saam1], bukan 呢一件衫. Angka 一 hanya muncul kalau kamu benar-benar menekankan jumlahnya.",
+      "**[啲|di1] adalah penggolong jamak.** [呢啲|ni1 di1] = yang ini (beberapa); [嗰啲人|go2 di1 jan4] = orang-orang itu. Ia menggantikan penggolong biasa, bukan menemani."
+     ]
+    },
+    {
+     "title": "要 — meminta, memesan, dan menolak",
+     "body": [
+      "[要|jiu3] menutupi tiga arti yang di bahasa Indonesia dipisah: **mau** (memesan), **butuh**, dan **harus**. Di unit ini kita pakai arti pertamanya — dan ia adalah kata kerja yang paling sering kamu ucapkan di toko dan restoran."
+     ],
+     "tables": [
+      {
+       "head": ["Kalimat", "Arti"],
+       "rows": [
+        ["[我要呢個|Ngo5 jiu3 ni1 go3]。", "Saya mau yang ini."],
+        ["[我要兩件|Ngo5 jiu3 loeng5 gin6]。", "Saya ambil dua."],
+        ["[我唔要喇|Ngo5 m4 jiu3 laa3]，[多謝|do1 ze6]。", "Tidak jadi, terima kasih."],
+        ["[你要唔要袋呀|Nei5 jiu3 m4 jiu3 doi2 aa3]？", "Perlu kantong?"],
+        ["[要幾多|Jiu3 gei2 do1]？", "Perlu berapa?"],
+        ["[我要返工|Ngo5 jiu3 faan1 gung1]。", "Saya harus kerja."]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **[唔要|m4 jiu3] artinya “tidak mau”, dan bisa terdengar tegas.** Untuk menolak dengan halus, tambahkan 喇 dan 多謝: [唔使喇，多謝|M4 sai2 laa3, do1 ze6]。 — “tidak usah, terima kasih”. [唔使|m4 sai2] harfiah “tidak perlu” dan jauh lebih halus daripada 唔要.",
+      "🔁 **[要|jiu3] berbeda dari [想|soeng2] (ingin).** 要 adalah keputusan yang sudah diambil; 想 masih keinginan. Perbedaannya dipasang tuntas di Unit 4."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "對話 2 — Di toko kelontong",
+   "intro": "Andi membeli minuman dan camilan. Perhatikan cara harga dengan pecahan disebutkan — bagian yang paling sering membuat orang asing salah dengar.",
+   "lines": [
+    { "speaker": "安迪:", "text": "[唔該|M4 goi1]，[有冇|jau5 mou5][凍檸茶|dung3 ning4 caa4][呀|aa3]？", "id": "Permisi, ada es teh lemon?", "literal": "permisi, ada — tidak-ada — dingin — lemon — teh — ya." },
+    { "speaker": "店員:", "text": "[有|Jau5]，[喺後面|hai2 hau6 min6][雪櫃度|syut3 gwai6 dou6]。", "id": "Ada, di kulkas belakang.", "literal": "ada, di — belakang — sisi — es — lemari — tempat." },
+    { "speaker": "安迪:", "text": "[幾多錢|Gei2 do1 cin2][一支|jat1 zi1][呀|aa3]？", "id": "Sebotol berapa?", "literal": "berapa — banyak — uang — satu — penggolong-botol — ya." },
+    { "speaker": "店員:", "text": "[十二蚊|Sap6 ji6 man1]。", "id": "Dua belas dolar.", "literal": "sepuluh — dua — dolar." },
+    { "speaker": "安迪:", "text": "[我要兩支|Ngo5 jiu3 loeng5 zi1]，[同埋|tung4 maai4][呢包餅乾|ni1 baau1 beng2 gon1]。", "id": "Saya ambil dua, dan biskuit ini.", "literal": "saya — mau — dua — penggolong-botol, dan — ini — bungkus — biskuit." },
+    { "speaker": "店員:", "text": "[一共|Jat1 gung6][三十五個半|saam1 sap6 ng5 go3 bun3]。", "id": "Totalnya tiga puluh lima setengah.", "literal": "satu — bersama — tiga — puluh — lima — penggolong — setengah." },
+    { "speaker": "安迪:", "text": "[呢度|Ni1 dou6][一百蚊|jat1 baak3 man1]。", "id": "Ini seratus.", "literal": "ini — tempat — satu — ratus — dolar." },
+    { "speaker": "店員:", "text": "[找返你|Zaau2 faan1 nei5][六十四個半|luk6 sap6 sei3 go3 bun3]。", "id": "Kembaliannya enam puluh empat setengah.", "literal": "kembali — balik — kamu — enam — puluh — empat — penggolong — setengah." },
+    { "speaker": "安迪:", "text": "[多謝|Do1 ze6]。[唔該|M4 goi1][畀個袋我|bei2 go3 doi2 ngo5]。", "id": "Terima kasih. Minta kantongnya, ya.", "literal": "terima-kasih. tolong — beri — penggolong — kantong — saya." },
+    { "speaker": "店員:", "text": "[袋要|Doi2 jiu3][一蚊㗎|jat1 man1 gaa3]。", "id": "Kantongnya satu dolar, ya.", "literal": "kantong — perlu — satu — dolar — penegas." },
+    { "speaker": "安迪:", "text": "[冇問題|Mou5 man6 tai4]。[唔該晒|M4 goi1 saai3]。", "id": "Tidak masalah. Terima kasih banyak.", "literal": "tidak-ada — masalah. terima-kasih — habis." }
+   ],
+   "notes": [
+    "**[個半|go3 bun3] berarti “satu setengah dolar”, dan pola ini dipakai untuk semua harga berpecahan.** [三十五個半|saam1 sap6 ng5 go3 bun3] = $35,50. Yang dipakai di sini adalah penggolong 個 sebagai pengganti kata “dolar”. Kalau pecahannya bukan setengah, angka sennya disebut sesudah 個: [五個二|ng5 go3 ji6] = $5,20; [十個八|sap6 go3 baat3] = $10,80.",
+    "**[支|zi1] adalah penggolong untuk benda batangan**: botol, pena, payung, rokok. Camilan berbungkus memakai [包|baau1]. ⚠️ Penggolong bukan hafalan kosong — ia menempel pada bentuk bendanya, jadi kalau ragu, tanyakan pada dirimu: benda ini panjang seperti batang (支), datar (張), atau berbungkus (包)?",
+    "**[度|dou6] menandai tempat, dan sering ditempel di belakang benda.** [雪櫃度|syut3 gwai6 dou6] = di kulkasnya. Tanpa 度, [喺雪櫃|hai2 syut3 gwai6] masih dimengerti, tapi 度 membuatnya jelas bahwa maksudnya lokasi. 🔁 Dipasang tuntas di Unit 7.",
+    "**[一共|jat1 gung6] = totalnya.** Kata yang akan selalu kamu dengar di kasir. Padanan lain yang sama sering: [總共|zung2 gung6].",
+    "**[找返|zaau2 faan1] = mengembalikan uang kembalian.** [返|faan1] sesudah kata kerja berarti “kembali ke keadaan semula”. Kamu akan bertemu 返 lagi di [返工|faan1 gung1] (berangkat kerja), [返學|faan1 hok6] (berangkat sekolah), dan [返嚟|faan1 lei4] (pulang).",
+    "🇭🇰 **Kantong plastik di Hong Kong berbayar sejak lama** — satu dolar per lembar, diatur undang-undang. Kalau kasir bertanya [要唔要袋呀|jiu3 m4 jiu3 doi2 aa3]？ ia sedang memberitahumu bahwa itu akan ditambahkan ke total, bukan menawarkan gratis.",
+    "**[唔該晒|M4 goi1 saai3] = “terima kasih banyak” untuk jasa.** Bandingkan dengan [多謝晒|do1 ze6 saai3] untuk barang. Perbedaan 唔該 dan 多謝 yang dipasang di Unit 1 tetap berlaku bahkan ketika ditambahi 晒."
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut harga dan uang Hong Kong",
+     "body": [
+      "Mata uang Hong Kong adalah dolar Hong Kong (港幣 *gong2 bai6*). Bentuk tulisnya 元 *jyun4*, tapi **tidak ada orang yang mengucapkannya begitu** dalam percakapan biasa. Yang diucapkan adalah 蚊 *man1*."
+     ],
+     "tables": [
+      {
+       "head": ["Jumlah", "Kanton", "Catatan"],
+       "rows": [
+        ["$1", "[一蚊|jat1 man1]", "蚊 = dolar (lisan)"],
+        ["$10", "[十蚊|sap6 man1]", ""],
+        ["$100", "[一百蚊|jat1 baak3 man1]", ""],
+        ["$150", "[一百五|jat1 baak3 ng5]", "angka terakhir menempati puluhan"],
+        ["$1,50", "[個半|go3 bun3]", "個 menggantikan kata dolar"],
+        ["$5,20", "[五個二|ng5 go3 ji6]", ""],
+        ["$0,50", "[五毫|ng5 hou4]", "毫 = sepuluh sen"],
+        ["$35,50", "[三十五個半|saam1 sap6 ng5 go3 bun3]", ""]
+       ]
+      },
+      {
+       "head": ["Bertanya", "Arti"],
+       "rows": [
+        ["[幾多錢呀|Gei2 do1 cin2 aa3]？", "Berapa harganya?"],
+        ["[呢個幾錢呀|Ni1 go3 gei2 cin2 aa3]？", "🇭🇰 Bentuk pendek yang paling sering dipakai"],
+        ["[一共幾多錢呀|Jat1 gung6 gei2 do1 cin2 aa3]？", "Totalnya berapa?"],
+        ["[點賣呀|Dim2 maai6 aa3]？", "Dijual berapa? (di pasar basah)"]
+       ]
+      }
+     ],
+     "after": [
+      "🇭🇰 **Diskon di Hong Kong dihitung terbalik dari kebiasaan kita.** [九折|gau2 zit3] berarti “dibayar sembilan persepuluh”, yaitu **potongan 10%**. [八折|baat3 zit3] = potongan 20%. [半價|bun3 gaa3] = setengah harga. Jangan salah baca papan diskon.",
+      "**Cara bayar yang perlu kamu tahu**: [八達通|baat3 daat6 tung1] (kartu Octopus, dipakai di mana-mana), [現金|jin6 gam1] (tunai), [碌卡|luk1 kaat1] (gesek kartu). Kasir akan bertanya [畀現金定係碌卡呀|Bei2 jin6 gam1 ding6 hai6 luk1 kaat1 aa3]？"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menawar tanpa terdengar kasar",
+   "blocks": [
+    { "type": "p", "text": "Menawar di Hong Kong hanya berlaku di tempat tertentu: kaki lima, pasar malam, toko elektronik kecil, dan penjual di Sham Shui Po. Di supermarket, rantai toko, dan restoran, menawar akan membuat semua orang canggung. Aturan tidak tertulisnya sederhana — kalau harganya tercetak di label, harga itu final." },
+    { "type": "tabel", "head": ["Kalimat", "Jyutping", "Kapan dipakai"], "rows": [
+     ["[平啲得唔得呀|Peng4 di1 dak1 m4 dak1 aa3]？", "peng4 di1 dak1 m4 dak1 aa3", "Pembuka standar. Sopan, ringan"],
+     ["[平啲啦|Peng4 di1 laa1]", "peng4 di1 laa1", "Sedikit merajuk, ramah"],
+     ["[太貴喇|Taai3 gwai3 laa3]", "taai3 gwai3 laa3", "Menyatakan kemahalan tanpa menuduh"],
+     ["[平少少啦|Peng4 siu2 siu2 laa1]", "peng4 siu2 siu2 laa1", "“Kurangi sedikit saja”"],
+     ["[我要兩件，平啲得唔得|Ngo5 jiu3 loeng5 gin6, peng4 di1 dak1 m4 dak1]？", "…", "Menawar dengan jumlah — paling ampuh"],
+     ["[最平幾多呀|Zeoi3 peng4 gei2 do1 aa3]？", "zeoi3 peng4 gei2 do1 aa3", "“Paling murah berapa?”"],
+     ["[我諗下先|Ngo5 nam2 haa5 sin1]", "ngo5 nam2 haa5 sin1", "“Saya pikir dulu” — cara pergi tanpa menyinggung"],
+     ["[就咁話|Zau6 gam2 waa6]", "zau6 gam2 waa6", "Deal. Sesudah ini jangan menawar lagi"]
+    ] },
+    { "type": "kotak", "title": "Yang diucapkan pedagang, dan artinya", "items": [
+     "[已經好平㗎喇|Ji5 ging1 hou2 peng4 gaa3 laa3]。 — “Ini sudah murah banget.” Jawaban standar untuk tawaran pertama; jangan menyerah di sini.",
+     "[唔賺錢㗎喇|M4 zaan6 cin2 gaa3 laa3]。 — “Sudah tidak untung.” Sama saja artinya dengan di atas.",
+     "[買多件平啲|Maai5 do1 gin6 peng4 di1]。 — “Beli lebih banyak, lebih murah.” Ini tawaran sungguhan; kalau memang perlu dua, ambil.",
+     "[最多九折|Zeoi3 do1 gau2 zit3]。 — “Paling banyak potongan sepuluh persen.” Ini batas terakhir yang sungguhan.",
+     "🇭🇰 Kalau kamu berjalan pergi dan pedagang memanggilmu balik, tawaranmu diterima. Kalau tidak dipanggil, harganya memang sudah mentok."
+    ] }
+   ]
+  },
+  {
+   "title": "Warna dan barang yang sering dibeli",
+   "blocks": [
+    { "type": "tabel", "head": ["Warna", "Kanton", "Warna", "Kanton"], "rows": [
+     ["merah", "[紅色|hung4 sik1]", "biru", "[藍色|laam4 sik1]"],
+     ["kuning", "[黃色|wong4 sik1]", "hijau", "[綠色|luk6 sik1]"],
+     ["hitam", "[黑色|hak1 sik1]", "putih", "[白色|baak6 sik1]"],
+     ["abu-abu", "[灰色|fui1 sik1]", "cokelat", "[啡色|fe1 sik1]"]
+    ] },
+    { "type": "tabel", "head": ["Barang", "Kanton", "Penggolongnya"], "rows": [
+     ["baju atasan", "[衫|saam1]", "[件|gin6]"],
+     ["celana", "[褲|fu3]", "[條|tiu4]"],
+     ["sepatu", "[鞋|haai4]", "[對|deoi3] sepasang · [隻|zek3] sebelah"],
+     ["tas", "[袋|doi2]", "[個|go3]"],
+     ["ponsel", "[電話|din6 waa2]", "[部|bou6]"],
+     ["botol minuman", "[飲品|jam2 ban2]", "[支|zi1]"],
+     ["biskuit sebungkus", "[餅乾|beng2 gon1]", "[包|baau1]"],
+     ["buah", "[生果|saang1 gwo2]", "[個|go3] · [斤|gan1] per catty"]
+    ] },
+    { "type": "kotak", "title": "Satuan berat di pasar basah", "items": [
+     "🇭🇰 Pasar basah Hong Kong menjual dengan **[斤|gan1]** (catty, kira-kira 605 gram), bukan kilogram. [幾多錢一斤呀|Gei2 do1 cin2 jat1 gan1 aa3]？ = sekilo—maksudnya sekati—berapa?",
+     "Setengahnya adalah [半斤|bun3 gan1]; seperenambelasnya adalah [兩|loeng2] (tael). Angka yang tertera di timbangan digital sudah dikonversi otomatis, jadi kamu cukup menyebut jumlah yang kamu mau.",
+     "[要幾多呀|Jiu3 gei2 do1 aa3]？ dijawab dengan [一斤|jat1 gan1] atau [半斤|bun3 gan1] — atau dengan menunjuk dan berkata [咁多|gam3 do1] (segini)."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "買", "baca": "maai5", "id": "membeli" },
+  { "zh": "賣", "baca": "maai6", "id": "menjual" },
+  { "zh": "錢", "baca": "cin2", "id": "uang" },
+  { "zh": "幾多錢", "baca": "gei2 do1 cin2", "id": "berapa harganya" },
+  { "zh": "蚊", "baca": "man1", "id": "dolar" },
+  { "zh": "毫", "baca": "hou4", "id": "sepuluh sen" },
+  { "zh": "一共", "baca": "jat1 gung6", "id": "totalnya" },
+  { "zh": "貴", "baca": "gwai3", "id": "mahal" },
+  { "zh": "平", "baca": "peng4", "id": "murah" },
+  { "zh": "太", "baca": "taai3", "id": "terlalu" },
+  { "zh": "喇", "baca": "laa3", "id": "partikel perubahan keadaan" },
+  { "zh": "得", "baca": "dak1", "id": "bisa, boleh" },
+  { "zh": "得唔得", "baca": "dak1 m4 dak1", "id": "bisa tidak?" },
+  { "zh": "要", "baca": "jiu3", "id": "mau; perlu; harus" },
+  { "zh": "唔要", "baca": "m4 jiu3", "id": "tidak mau" },
+  { "zh": "唔使", "baca": "m4 sai2", "id": "tidak perlu, tidak usah" },
+  { "zh": "呢", "baca": "ni1", "id": "ini" },
+  { "zh": "嗰", "baca": "go2", "id": "itu" },
+  { "zh": "呢度", "baca": "ni1 dou6", "id": "di sini" },
+  { "zh": "嗰度", "baca": "go2 dou6", "id": "di sana" },
+  { "zh": "邊個", "baca": "bin1 go3", "id": "yang mana" },
+  { "zh": "睇", "baca": "tai2", "id": "melihat, menonton" },
+  { "zh": "下", "baca": "haa5", "id": "sebentar, coba (sesudah kata kerja)" },
+  { "zh": "試", "baca": "si3", "id": "mencoba" },
+  { "zh": "諗", "baca": "nam2", "id": "berpikir" },
+  { "zh": "件", "baca": "gin6", "id": "penggolong baju, urusan" },
+  { "zh": "條", "baca": "tiu4", "id": "penggolong benda panjang" },
+  { "zh": "對", "baca": "deoi3", "id": "penggolong sepasang" },
+  { "zh": "支", "baca": "zi1", "id": "penggolong botol, batang" },
+  { "zh": "包", "baca": "baau1", "id": "bungkus" },
+  { "zh": "衫", "baca": "saam1", "id": "baju" },
+  { "zh": "褲", "baca": "fu3", "id": "celana" },
+  { "zh": "鞋", "baca": "haai4", "id": "sepatu" },
+  { "zh": "袋", "baca": "doi2", "id": "tas, kantong" },
+  { "zh": "顏色", "baca": "ngaan4 sik1", "id": "warna" },
+  { "zh": "紅色", "baca": "hung4 sik1", "id": "merah" },
+  { "zh": "藍色", "baca": "laam4 sik1", "id": "biru" },
+  { "zh": "白色", "baca": "baak6 sik1", "id": "putih" },
+  { "zh": "黑色", "baca": "hak1 sik1", "id": "hitam" },
+  { "zh": "凍", "baca": "dung3", "id": "dingin" },
+  { "zh": "熱", "baca": "jit6", "id": "panas" },
+  { "zh": "檸茶", "baca": "ning4 caa4", "id": "teh lemon" },
+  { "zh": "餅乾", "baca": "beng2 gon1", "id": "biskuit" },
+  { "zh": "雪櫃", "baca": "syut3 gwai6", "id": "kulkas" },
+  { "zh": "後面", "baca": "hau6 min6", "id": "belakang" },
+  { "zh": "度", "baca": "dou6", "id": "tempat, di situ" },
+  { "zh": "找", "baca": "zaau2", "id": "memberi kembalian" },
+  { "zh": "返", "baca": "faan1", "id": "kembali" },
+  { "zh": "八達通", "baca": "baat3 daat6 tung1", "id": "kartu Octopus" },
+  { "zh": "現金", "baca": "jin6 gam1", "id": "uang tunai" },
+  { "zh": "碌卡", "baca": "luk1 kaat1", "id": "gesek kartu" },
+  { "zh": "折", "baca": "zit3", "id": "diskon" },
+  { "zh": "冇問題", "baca": "mou5 man6 tai4", "id": "tidak masalah" },
+  { "zh": "就咁話", "baca": "zau6 gam2 waa6", "id": "deal, begitu saja" },
+  { "zh": "靚", "baca": "leng3", "id": "cantik, bagus" },
+  { "zh": "斤", "baca": "gan1", "id": "kati (± 605 gram)" },
+  { "zh": "咁多", "baca": "gam3 do1", "id": "segini banyak" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan 呢 atau 嗰 beserta penggolong yang tepat (個, 件, 支, 本).",
+   "items": [
+    "___ [衫幾多錢呀|saam1 gei2 do1 cin2 aa3]？ (baju ini)",
+    "[我要|Ngo5 jiu3] ___。 (yang itu)",
+    "___ [書係我嘅|syu1 hai6 ngo5 ge3]。 (buku ini)",
+    "[唔該畀|M4 goi1 bei2] ___ [我|ngo5]。 (botol itu)",
+    "___ [人係我朋友|jan4 hai6 ngo5 pang4 jau5]。 (orang itu)"
+   ]
+  },
+  {
+   "prompt": "Tulis harga berikut dalam bahasa Kanton lisan.",
+   "items": [
+    "$12",
+    "$1,50",
+    "$150",
+    "$35,50",
+    "$5,20",
+    "$0,50"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "呢件 / 幾多 / 錢 / 呀",
+    "平 / 啲 / 得 / 唔 / 得 / 呀",
+    "我 / 要 / 兩 / 件",
+    "太 / 貴 / 喇",
+    "唔該 / 畀 / 個 / 袋 / 我",
+    "一共 / 三十五 / 個半"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[呢個藍色嘅幾多錢呀|Ni1 go3 laam4 sik1 ge3 gei2 do1 cin2 aa3]？",
+    "[太貴喇，平啲得唔得呀|Taai3 gwai3 laa3, peng4 di1 dak1 m4 dak1 aa3]？",
+    "[找返你六十四個半|Zaau2 faan1 nei5 luk6 sap6 sei3 go3 bun3]。",
+    "[我諗下先|Ngo5 nam2 haa5 sin1]。",
+    "[有冇八達通呀|Jau5 mou5 Baat3 daat6 tung1 aa3]？"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Kanton. Tulis dengan jyutping.",
+   "items": [
+    "Yang ini berapa?",
+    "Saya mau dua.",
+    "Bisa lebih murah tidak?",
+    "Tidak usah, terima kasih.",
+    "Totalnya berapa?"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan jyutping.",
+   "items": [
+    "[呢一件衫幾多錢|Ni1 jat1 gin6 saam1 gei2 do1 cin2]？",
+    "[我要呢衫|Ngo5 jiu3 ni1 saam1]。",
+    "[呢個太貴|Ni1 go3 taai3 gwai3]。",
+    "[我要兩個衫|Ngo5 jiu3 loeng5 go3 saam1]。",
+    "[幾多錢呢個元|Gei2 do1 cin2 ni1 go3 jyun4]？"
+   ]
+  }
+ ],
+ "answers": [
+  "呢件 — 嗰個 — 呢本 — 嗰支 — 嗰個",
+  "十二蚊 sap6 ji6 man1 — 個半 go3 bun3 — 一百五 jat1 baak3 ng5 — 三十五個半 saam1 sap6 ng5 go3 bun3 — 五個二 ng5 go3 ji6 — 五毫 ng5 hou4",
+  "呢件 幾多 錢 呀 — 平 啲 得 唔 得 呀 — 我 要 兩 件 — 太 貴 喇 — 唔該 畀 個 袋 我 — 一共 三十五 個半",
+  "Yang biru ini berapa? — Kemahalan, bisa kurang tidak? — Kembaliannya enam puluh empat setengah. — Saya pikir dulu. — Punya kartu Octopus?",
+  "Ni1 go3 gei2 do1 cin2 aa3? — Ngo5 jiu3 loeng5 gin6. — Peng4 di1 dak1 m4 dak1 aa3? — M4 sai2 laa3, do1 ze6. — Jat1 gung6 gei2 do1 cin2 aa3?",
+  "Ni1 gin6 saam1 gei2 do1 cin2? — Ngo5 jiu3 ni1 gin6 saam1. — Ni1 go3 taai3 gwai3 laa3. — Ngo5 jiu3 loeng5 gin6 saam1. — Ni1 go3 gei2 do1 cin2 aa3?"
+ ],
+ "wave": "Lima menit sebelum Unit 4: buka aplikasi belanja apa pun di ponselmu, lalu sebutkan harga sepuluh barang pertama yang kamu lihat dalam bahasa Kanton — keras-keras, lengkap dengan 蚊 dan 個半. Sesudah itu ulangi Unit 1: perkenalkan dirimu, lalu langsung sambung dengan [呢個幾多錢呀|Ni1 go3 gei2 do1 cin2 aa3]？ Dua kalimat ini yang paling sering kamu pakai di hari pertamamu di Hong Kong."
+}

@@ -1,0 +1,356 @@
+{
+ "title": "Keluarga dan angka",
+ "title_target": "屋企人 — Uk1 kei2 jan4",
+ "goal": "Mengatakan punya dan tidak punya dengan 有 / 冇, menghitung dengan kata penggolong, menyebut umur dan nomor telepon, serta menyebut anggota keluarga dengan kata yang benar-benar dipakai di Hong Kong.",
+ "bekal": [
+  "menyatakan punya dengan 有 dan tidak punya dengan 冇",
+  "bertanya dengan 有冇 dan menjawabnya",
+  "menghitung dengan pola angka + penggolong + benda",
+  "membedakan 二 dan 兩",
+  "menyebut umur, jumlah orang, dan nomor telepon"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 1 — Foto keluarga",
+   "intro": "Wong Lai menunjukkan foto keluarganya kepada Andi. Perhatikan bahwa “punya” dan “tidak punya” di Kanton adalah dua kata yang sama sekali berbeda bentuknya.",
+   "lines": [
+    { "speaker": "黃麗:", "text": "[呢張|Ni1 zoeng1][係|hai6][我屋企人|ngo5 uk1 kei2 jan4][嘅相|ge3 soeng2]。", "id": "Ini foto keluargaku.", "literal": "ini — penggolong-datar — adalah — saya — rumah — orang — punya — foto." },
+    { "speaker": "安迪:", "text": "[你屋企|Nei5 uk1 kei2][有|jau5][幾多人|gei2 do1 jan4][呀|aa3]？", "id": "Berapa orang di rumahmu?", "literal": "kamu — rumah — ada — berapa — banyak — orang — ya." },
+    { "speaker": "黃麗:", "text": "[五個人|Ng5 go3 jan4]：[爸爸|baa4 baa1]、[媽媽|maa4 maa1]、[我|ngo5]，[同埋|tung4 maai4][兩個細佬|loeng5 go3 sai3 lou2]。", "id": "Lima orang: ayah, ibu, aku, dan dua adik laki-laki.", "literal": "lima — penggolong — orang: ayah, ibu, saya, dan — dua — penggolong — adik-laki-laki." },
+    { "speaker": "安迪:", "text": "[你|Nei5][有冇|jau5 mou5][家姐|gaa1 ze1][呀|aa3]？", "id": "Kamu punya kakak perempuan?", "literal": "kamu — ada — tidak-ada — kakak-perempuan — ya." },
+    { "speaker": "黃麗:", "text": "[冇|Mou5]，[我係|ngo5 hai6][大女|daai6 neoi2]。[你呢|Nei5 ne1]？", "id": "Tidak, aku anak perempuan tertua. Kalau kamu?", "literal": "tidak-ada, saya — adalah — besar — anak-perempuan. kamu — bagaimana." },
+    { "speaker": "安迪:", "text": "[我有|Ngo5 jau5][一個家姐|jat1 go3 gaa1 ze1][同|tung4][一個細妹|jat1 go3 sai3 mui2]。", "id": "Aku punya satu kakak perempuan dan satu adik perempuan.", "literal": "saya — ada — satu — penggolong — kakak-perempuan — dan — satu — penggolong — adik-perempuan." },
+    { "speaker": "黃麗:", "text": "[你細妹|Nei5 sai3 mui2][幾多歲|gei2 do1 seoi3][呀|aa3]？", "id": "Adikmu umur berapa?", "literal": "kamu — adik-perempuan — berapa — banyak — tahun-umur — ya." },
+    { "speaker": "安迪:", "text": "[佢十九歲|Keoi5 sap6 gau2 seoi3]，[仲讀緊書|zung6 duk6 gan2 syu1]。", "id": "Dia sembilan belas tahun, masih kuliah.", "literal": "dia — sepuluh — sembilan — tahun-umur, masih — baca — sedang — buku." },
+    { "speaker": "黃麗:", "text": "[你爸爸媽媽|Nei5 baa4 baa1 maa4 maa1][喺印尼|hai2 Jan3 nei4][呀|aa3]？", "id": "Ayah ibumu di Indonesia?", "literal": "kamu — ayah — ibu — di — Indonesia — ya." },
+    { "speaker": "安迪:", "text": "[係呀|Hai6 aa3]，[佢哋喺|keoi5 dei6 hai2][雅加達|Ngaa5 gaa1 daat6]。", "id": "Iya, mereka di Jakarta.", "literal": "adalah — ya, mereka — di — Jakarta." },
+    { "speaker": "黃麗:", "text": "[你掛唔掛住|Nei5 gwaa3 m4 gwaa3 zyu6][佢哋|keoi5 dei6][呀|aa3]？", "id": "Kamu kangen mereka tidak?", "literal": "kamu — rindu — tidak — rindu — tetap — mereka — ya." },
+    { "speaker": "安迪:", "text": "[梗係|Gang2 hai6][掛住|gwaa3 zyu6][啦|laa1]！", "id": "Ya jelas kangen dong!", "literal": "tentu — adalah — rindu — tetap — dong." }
+   ],
+   "notes": [
+    "**⚠️ Lawan kata [有|jau5] adalah [冇|mou5], bukan 唔有.** Ini satu-satunya kata kerja Kanton yang menyangkalnya dengan kata lain, bukan dengan menambahkan 唔. Tidak ada bentuk 唔有 sama sekali — kalimat itu langsung terdengar salah. Perhatikan juga aksaranya: 冇 adalah 有 yang dua guratannya dicabut, seolah isinya dikosongkan.",
+    "**[屋企|uk1 kei2] berarti “rumah” sekaligus “keluarga”.** [我屋企|ngo5 uk1 kei2] = rumah saya; [我屋企人|ngo5 uk1 kei2 jan4] = orang-orang di rumah saya, yaitu keluarga saya. ⚠️ Ini kata Kanton asli — 家 dipakai dalam gabungan tapi jarang berdiri sendiri seperti 家 di Mandarin.",
+    "**[張|zoeng1] adalah penggolong untuk benda datar**: foto, kertas, kartu, meja, kursi, tempat tidur. [呢張相|ni1 zoeng1 soeng2] = foto ini. Salah penggolong tidak membuat kalimatmu gagal dipahami, tapi langsung terdengar seperti orang asing.",
+    "**[嘅|ge3] adalah penanda milik — padanan 的 Mandarin.** [我嘅相|ngo5 ge3 soeng2] = fotoku. 🇭🇰 Tapi untuk milik yang sangat dekat — keluarga, tubuh, rumah — 嘅 justru **dibuang**: [我屋企|ngo5 uk1 kei2], [我媽媽|ngo5 maa4 maa1], [你細妹|nei5 sai3 mui2]. Memasang 嘅 di situ terdengar berjarak.",
+    "**[家姐|gaa1 ze1] dan [細佬|sai3 lou2] adalah bentuk Hong Kong sehari-hari.** 🇭🇰 Buku pelajaran mengajarkan 姐姐 dan 弟弟, dan itu dimengerti — tapi yang benar-benar diucapkan orang adalah 家姐 (kakak perempuan), 大佬 *daai6 lou2* (kakak laki-laki), 細佬 (adik laki-laki), 細妹 *sai3 mui2* (adik perempuan).",
+    "**[仲|zung6] berarti “masih” atau “lagi”.** [佢仲讀緊書|Keoi5 zung6 duk6 gan2 syu1] = dia masih sekolah. Kata ini akan muncul terus-menerus, sering berpasangan dengan [未|mei6]: [仲未食|zung6 mei6 sik6] = belum makan juga.",
+    "**[梗係…啦|Gang2 hai6 … laa1] = “ya jelas dong”.** Pola berpasangan yang sangat khas Kanton: 梗係 di depan, 啦 di ujung. Ia dipakai untuk menjawab pertanyaan yang jawabannya sudah terlalu jelas. [梗係要啦|Gang2 hai6 jiu3 laa1]！ = ya jelas mau dong!"
+   ],
+   "grammars": [
+    {
+     "title": "有 / 冇 — punya, ada, dan cara bertanyanya",
+     "body": [
+      "[有|jau5] menutupi dua arti sekaligus, persis seperti “ada” dalam bahasa Indonesia: **memiliki** sesuatu, dan **keberadaan** sesuatu di suatu tempat.",
+      "Pertanyaannya dibuat dengan pola A-唔-A yang sudah kamu kenal — hanya saja bentuknya khusus, karena penyangkalnya bukan 唔有 melainkan 冇: **有冇**."
+     ],
+     "tables": [
+      {
+       "head": ["Bentuk", "Contoh", "Arti"],
+       "rows": [
+        ["punya", "[我有兩個細佬|Ngo5 jau5 loeng5 go3 sai3 lou2]。", "Saya punya dua adik laki-laki."],
+        ["tidak punya", "[我冇家姐|Ngo5 mou5 gaa1 ze1]。", "Saya tidak punya kakak perempuan."],
+        ["ada (di tempat)", "[屋企有人|Uk1 kei2 jau5 jan4]。", "Ada orang di rumah."],
+        ["tidak ada", "[屋企冇人|Uk1 kei2 mou5 jan4]。", "Tidak ada orang di rumah."],
+        ["bertanya", "[你有冇仔女呀|Nei5 jau5 mou5 zai2 neoi2 aa3]？", "Anda punya anak?"],
+        ["jawaban ya", "[有|Jau5]。", "Punya."],
+        ["jawaban tidak", "[冇|Mou5]。", "Tidak punya."]
+       ]
+      }
+     ],
+     "after": [
+      "**[冇|mou5] juga dipakai untuk “belum pernah” dan “tidak melakukan”.** [我冇去|Ngo5 mou5 heoi3] = saya tidak jadi pergi / saya tidak pergi (waktu itu). 🔁 Perbedaannya dengan [唔去|m4 heoi3] (tidak mau pergi, tidak akan pergi) dibereskan di Unit 9.",
+      "⚠️ **Jangan memakai 沒有 Mandarin.** Di Hong Kong bentuk itu terdengar seperti membaca koran. Satu suku kata 冇 sudah menampung semuanya."
+     ]
+    },
+    {
+     "title": "Angka + penggolong + benda",
+     "body": [
+      "Kanton tidak pernah menempelkan angka langsung ke kata bendanya. Di antara keduanya selalu berdiri satu **kata penggolong** — mirip *seekor, sebuah, sehelai* dalam bahasa Indonesia, tapi wajib dipakai setiap kali."
+     ],
+     "tables": [
+      {
+       "head": ["Penggolong", "Untuk", "Contoh"],
+       "rows": [
+        ["[個|go3]", "orang dan benda umum — kalau ragu, pakai ini", "[三個人|saam1 go3 jan4] tiga orang"],
+        ["[張|zoeng1]", "benda datar: foto, kertas, meja, kartu", "[兩張相|loeng5 zoeng1 soeng2] dua foto"],
+        ["[本|bun2]", "buku, majalah", "[一本書|jat1 bun2 syu1] satu buku"],
+        ["[隻|zek3]", "binatang, cangkir, sepatu sebelah, tangan", "[兩隻狗|loeng5 zek3 gau2] dua ekor anjing"],
+        ["[部|bou6]", "mesin: ponsel, mobil, komputer", "[一部電話|jat1 bou6 din6 waa2] satu ponsel"],
+        ["[間|gaan1]", "ruang: toko, rumah, sekolah", "[三間舖頭|saam1 gaan1 pou3 tau2] tiga toko"],
+        ["[啲|di1]", "jamak tak tentu: “beberapa”", "[啲人|di1 jan4] orang-orang itu"]
+       ]
+      },
+      {
+       "head": ["Pola", "Contoh", "Arti"],
+       "rows": [
+        ["angka + penggolong + benda", "[五個人|ng5 go3 jan4]", "lima orang"],
+        ["呢 / 嗰 + penggolong + benda", "[呢張相|ni1 zoeng1 soeng2]", "foto ini"],
+        ["penggolong + benda (tanpa angka)", "[部電話|bou6 din6 waa2]", "ponsel itu (yang sudah jelas)"]
+       ]
+      }
+     ],
+     "after": [
+      "**⚠️ Angka “dua” punya dua bentuk, dan keduanya tidak bisa ditukar.** [二|ji6] hanya untuk berhitung, nomor, tanggal, dan angka di dalam bilangan besar. [兩|loeng5] dipakai setiap kali angka itu berdiri di depan penggolong. Jadi: [兩個人|loeng5 go3 jan4] (dua orang), tapi [二十|ji6 sap6] (dua puluh) dan [十二號|sap6 ji6 hou6] (nomor dua belas).",
+      "**Penggolong tanpa angka berarti “yang itu”.** [部電話壞咗|Bou6 din6 waa2 waai6 zo2] = ponselnya rusak — ponsel yang sudah kita bicarakan. Ini menggantikan kata sandang, dan sangat sering dipakai.",
+      "🔁 **Daftar penggolong lengkap ada di rangkuman belakang modul.** Untuk sekarang, kuasai 個 dan 張 dulu; keduanya menutupi sebagian besar percakapan sehari-hari."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "對話 2 — Anak, umur, dan nomor telepon",
+   "intro": "Andi bertemu Pak Chan lagi. Percakapan ini adalah latihan angka yang menyamar jadi obrolan biasa — bacalah angkanya keras-keras, jangan dilewati.",
+   "lines": [
+    { "speaker": "陳生:", "text": "[你有冇|Nei5 jau5 mou5][仔女|zai2 neoi2][呀|aa3]？", "id": "Anda punya anak?", "literal": "kamu — ada — tidak-ada — anak-laki — anak-perempuan — ya." },
+    { "speaker": "安迪:", "text": "[冇|Mou5]，[我仲未|ngo5 zung6 mei6][結婚|git3 fan1]。", "id": "Belum, saya belum menikah.", "literal": "tidak-ada, saya — masih — belum — ikat — nikah." },
+    { "speaker": "陳生:", "text": "[我有|Ngo5 jau5][兩個仔|loeng5 go3 zai2]，[一個女|jat1 go3 neoi2]。", "id": "Saya punya dua anak laki-laki dan satu anak perempuan.", "literal": "saya — ada — dua — penggolong — anak-laki, satu — penggolong — anak-perempuan." },
+    { "speaker": "安迪:", "text": "[佢哋|Keoi5 dei6][幾多歲|gei2 do1 seoi3][呀|aa3]？", "id": "Mereka umur berapa?", "literal": "mereka — berapa — banyak — tahun-umur — ya." },
+    { "speaker": "陳生:", "text": "[大仔|Daai6 zai2][十二歲|sap6 ji6 seoi3]，[細仔|sai3 zai2][九歲|gau2 seoi3]，[個女|go3 neoi2][得四歲|dak1 sei3 seoi3]。", "id": "Yang besar dua belas, yang kecil sembilan, anak perempuannya baru empat.", "literal": "besar — anak-laki — dua-belas — tahun, kecil — anak-laki — sembilan — tahun, penggolong — anak-perempuan — hanya — empat — tahun." },
+    { "speaker": "安迪:", "text": "[好熱鬧|Hou2 jit6 naau6][喎|wo3]！", "id": "Wah, ramai sekali!", "literal": "penyangga — ramai — lho." },
+    { "speaker": "陳生:", "text": "[係呀|Hai6 aa3]，[屋企|uk1 kei2][成日|seng4 jat6][好嘈|hou2 cou4]。", "id": "Iya, rumah berisik terus.", "literal": "adalah — ya, rumah — sepanjang — hari — penyangga — berisik." },
+    { "speaker": "安迪:", "text": "[唔該|M4 goi1][畀|bei2][你個電話號碼|nei5 go3 din6 waa2 hou6 maa5][我|ngo5]。", "id": "Boleh minta nomor teleponmu?", "literal": "tolong — beri — kamu — penggolong — telepon — nomor — saya." },
+    { "speaker": "陳生:", "text": "[九八七六|Gau2 baat3 cat1 luk6][五四三二|ng5 sei3 saam1 ji6]。", "id": "9876 5432.", "literal": "sembilan — delapan — tujuh — enam — lima — empat — tiga — dua." },
+    { "speaker": "安迪:", "text": "[等等|Dang2 dang2]，[你講|nei5 gong2][快咗啲|faai3 zo2 di1]…[唔該|m4 goi1][講慢啲|gong2 maan6 di1]。", "id": "Tunggu, Anda bicaranya kecepatan… tolong pelan-pelan.", "literal": "tunggu — tunggu, kamu — bicara — cepat — sudah — sedikit … tolong — bicara — pelan — sedikit." },
+    { "speaker": "陳生:", "text": "[哈哈|Haa1 haa1]，[九|gau2] — [八|baat3] — [七|cat1] — [六|luk6] — [五|ng5] — [四|sei3] — [三|saam1] — [二|ji6]。", "id": "Haha — sembilan, delapan, tujuh, enam, lima, empat, tiga, dua.", "literal": "ha — ha, sembilan — delapan — tujuh — enam — lima — empat — tiga — dua." },
+    { "speaker": "安迪:", "text": "[多謝晒|Do1 ze6 saai3]！", "id": "Terima kasih banyak!", "literal": "banyak — terima-kasih — habis." }
+   ],
+   "notes": [
+    "**[仔女|zai2 neoi2] = anak-anak, gabungan [仔|zai2] (anak laki-laki) dan [女|neoi2] (anak perempuan).** Perhatikan nada 女: bentuk kamusnya *neoi5*, tapi yang diucapkan *neoi2* — inilah nada berubah yang dijelaskan di bab pembuka.",
+    "**[得|dak1] di [得四歲|dak1 sei3 seoi3] berarti “hanya”.** Ia dipasang di depan jumlah untuk menandakan bahwa jumlahnya sedikit. [得十蚊|dak1 sap6 man1] = cuma sepuluh dolar. 🔁 Kata yang sama juga berarti “boleh / bisa”, dan itu dipasang di Unit 10.",
+    "**Nomor telepon dibaca angka per angka, tidak dijadikan bilangan.** 9876 dibaca [九八七六|gau2 baat3 cat1 luk6], bukan “sembilan ribu delapan ratus…”. 🇭🇰 Nomor telepon Hong Kong selalu delapan angka, dan orang membacanya dalam dua kelompok empat.",
+    "**⚠️ Angka satu dan tujuh terdengar mirip di telinga pemula: [一|jat1] dan [七|cat1].** Bedanya cuma huruf pertama, dan keduanya nada 1. Ketika menyebut nomor telepon, orang Hong Kong sering menegaskan dengan menaikkan suara sedikit di 七. Latih pasangan ini sampai kamu bisa membedakannya tanpa berpikir.",
+    "**[晒|saai3] berarti “habis, semuanya, sepenuhnya”.** [多謝晒|Do1 ze6 saai3] = terima kasih banyak sekali. [食晒|Sik6 saai3] = habis dimakan semua. Ia selalu ditempel di belakang kata kerja. 🔁 Dipasang tuntas di Unit 9.",
+    "**[成日|seng4 jat6] harfiah “sepanjang hari”, tapi artinya “selalu, terus-menerus”.** [佢成日遲到|Keoi5 seng4 jat6 ci4 dou3] = dia selalu terlambat. Bukan berarti benar-benar sepanjang hari.",
+    "**[畀|bei2] = memberi, dan urutannya beda dari bahasa Indonesia.** Pola Kanton: 畀 + barang + orang. [畀本書我|Bei2 bun2 syu1 ngo5] = berikan buku itu kepadaku — barangnya dulu, penerimanya belakangan. ⚠️ Ini kebalikan dari 給我一本書 Mandarin, dan tempat orang Indonesia paling sering tersandung."
+   ],
+   "grammars": [
+    {
+     "title": "Umur, jumlah orang, dan cara bertanya “berapa”",
+     "body": [
+      "Kanton punya dua kata untuk “berapa”, dan pilihannya bergantung pada seberapa besar jumlah yang kamu duga."
+     ],
+     "tables": [
+      {
+       "head": ["Kata", "Dipakai kalau", "Contoh"],
+       "rows": [
+        ["[幾|gei2]", "jawabannya diduga kecil (di bawah sepuluh)", "[你有幾個仔|Nei5 jau5 gei2 go3 zai2]？ Anak Anda berapa?"],
+        ["[幾多|gei2 do1]", "jawabannya bisa besar, atau tidak terduga", "[你屋企有幾多人|Nei5 uk1 kei2 jau5 gei2 do1 jan4]？ Di rumahmu berapa orang?"]
+       ]
+      },
+      {
+       "head": ["Pertanyaan", "Jawaban"],
+       "rows": [
+        ["[你幾多歲呀|Nei5 gei2 do1 seoi3 aa3]？ (kepada orang dewasa)", "[我三十歲|Ngo5 saam1 sap6 seoi3]。"],
+        ["[你幾歲呀|Nei5 gei2 seoi3 aa3]？ (kepada anak kecil)", "[我五歲|Ngo5 ng5 seoi3]。"],
+        ["[你電話幾多號呀|Nei5 din6 waa2 gei2 do1 hou6 aa3]？", "[九八七六五四三二|Gau2 baat3 cat1 luk6 ng5 sei3 saam1 ji6]。"],
+        ["[你哋幾多位呀|Nei5 dei6 gei2 do1 wai2 aa3]？ (di restoran)", "[兩位|Loeng5 wai2]。"]
+       ]
+      }
+     ],
+     "after": [
+      "**Perhatikan bahwa umur TIDAK memakai 係.** [我三十歲|Ngo5 saam1 sap6 seoi3] — tidak ada kata kerja sama sekali. Menyisipkan 係 di situ salah: 我係三十歲 terdengar seperti “saya adalah tiga puluh tahun”.",
+      "🇭🇰 **Di restoran, jumlah orang dihitung dengan [位|wai2], bukan 個.** Pelayan akan bertanya [幾多位|gei2 do1 wai2]？ dan kamu menjawab [兩位|loeng5 wai2] — kesopanan yang sudah melekat pada penggolongnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Angka: dari nol sampai sepuluh ribu",
+   "blocks": [
+    { "type": "p", "text": "Angka Kanton bekerja seperti mesin: sekali kamu tahu satu sampai sepuluh, seluruh sisanya tersusun sendiri tanpa satu pun bentuk tak beraturan." },
+    { "type": "tabel", "head": ["Angka", "Kanton", "Jyutping", "Angka", "Kanton", "Jyutping"], "rows": [
+     ["0", "零", "ling4", "6", "六", "luk6"],
+     ["1", "一", "jat1", "7", "七", "cat1"],
+     ["2", "二", "ji6", "8", "八", "baat3"],
+     ["3", "三", "saam1", "9", "九", "gau2"],
+     ["4", "四", "sei3", "10", "十", "sap6"],
+     ["5", "五", "ng5", "100", "一百", "jat1 baak3"]
+    ] },
+    { "type": "p", "text": "Sebelas sampai sembilan belas = **十 + satuan**. Puluhan = **puluhan + 十**, lalu satuannya ditempel di belakang." },
+    { "type": "tabel", "head": ["Angka", "Susunannya", "Kanton"], "rows": [
+     ["11", "10 + 1", "[十一|sap6 jat1]"],
+     ["15", "10 + 5", "[十五|sap6 ng5]"],
+     ["20", "2 × 10", "[二十|ji6 sap6]"],
+     ["27", "2 × 10 + 7", "[二十七|ji6 sap6 cat1]"],
+     ["50", "5 × 10", "[五十|ng5 sap6]"],
+     ["99", "9 × 10 + 9", "[九十九|gau2 sap6 gau2]"],
+     ["100", "1 × 100", "[一百|jat1 baak3]"],
+     ["250", "2 × 100 + 5 × 10", "[二百五十|ji6 baak3 ng5 sap6]"],
+     ["1.000", "1 × 1.000", "[一千|jat1 cin1]"],
+     ["10.000", "1 × 10.000", "[一萬|jat1 maan6]"]
+    ] },
+    { "type": "kotak", "title": "Empat hal yang menyelamatkanmu di angka", "items": [
+     "⚠️ **二 vs 兩 sekali lagi**, karena ini kesalahan nomor satu: [二|ji6] untuk berhitung dan nomor; [兩|loeng5] di depan penggolong. [二十二|ji6 sap6 ji6] (dua puluh dua) tapi [兩個|loeng5 go3] (dua buah).",
+     "🇭🇰 **Angka besar dipotong per sepuluh ribu, bukan per seribu.** [一萬|jat1 maan6] = 10.000, [十萬|sap6 maan6] = 100.000, [一百萬|jat1 baak3 maan6] = 1.000.000. Ini titik yang membuat orang tersesat waktu membicarakan harga rumah dan gaji.",
+     "**[半|bun3] = setengah**, dipasang di tempat angka: [一個半鐘|jat1 go3 bun3 zung1] = satu setengah jam.",
+     "**Nol dibaca [零|ling4] hanya di tengah bilangan**: 105 = [一百零五|jat1 baak3 ling4 ng5]. Di nomor telepon, 0 dibaca [零|ling4] juga — sebagian orang membacanya *o* seperti huruf O bahasa Inggris."
+    ] }
+   ]
+  },
+  {
+   "title": "Keluarga Hong Kong: yang ditulis dan yang diucapkan",
+   "blocks": [
+    { "type": "p", "text": "Kanton membedakan kakak dan adik, dan membedakan pihak ayah dan pihak ibu. Kolom kanan adalah bentuk yang benar-benar kamu dengar di Hong Kong — itu yang perlu kamu hafal lebih dulu." },
+    { "type": "tabel", "head": ["Hubungan", "Bentuk buku", "Yang diucapkan 🇭🇰"], "rows": [
+     ["ayah", "[父親|fu6 can1]", "[爸爸|baa4 baa1] / [老豆|lou5 dau6]"],
+     ["ibu", "[母親|mou5 can1]", "[媽媽|maa4 maa1] / [老母|lou5 mou2]"],
+     ["kakak laki-laki", "[哥哥|go4 go1]", "[大佬|daai6 lou2]"],
+     ["kakak perempuan", "[姐姐|ze2 ze1]", "[家姐|gaa1 ze1]"],
+     ["adik laki-laki", "[弟弟|dai6 dai2]", "[細佬|sai3 lou2]"],
+     ["adik perempuan", "[妹妹|mui6 mui2]", "[細妹|sai3 mui2]"],
+     ["anak laki-laki", "[兒子|ji4 zi2]", "[仔|zai2]"],
+     ["anak perempuan", "[女兒|neoi5 ji4]", "[女|neoi2]"],
+     ["suami", "[丈夫|zoeng6 fu1]", "[老公|lou5 gung1]"],
+     ["istri", "[妻子|cai1 zi2]", "[老婆|lou5 po4]"],
+     ["kakek (pihak ayah)", "[祖父|zou2 fu6]", "[爺爺|je4 je2]"],
+     ["nenek (pihak ayah)", "[祖母|zou2 mou5]", "[嫲嫲|maa4 maa4]"],
+     ["kakek (pihak ibu)", "[外祖父|ngoi6 zou2 fu6]", "[公公|gung1 gung1]"],
+     ["nenek (pihak ibu)", "[外祖母|ngoi6 zou2 mou5]", "[婆婆|po4 po2]"]
+    ] },
+    { "type": "kotak", "title": "Tiga hal tentang keluarga yang perlu kamu tahu", "items": [
+     "⚠️ **[老豆|lou5 dau6] dan [老母|lou5 mou2] akrab, bukan kasar — tapi hanya untuk menyebut orang tua sendiri.** Menyebut orang tua orang lain begitu terdengar tidak sopan. Untuk itu pakai [你爸爸|nei5 baa4 baa1] atau [令尊|ling6 zyun1] yang sangat resmi.",
+     "**Tidak ada satu kata untuk “saudara kandung”.** Yang dipakai adalah rangkaian [兄弟姊妹|hing1 dai6 zi2 mui6] — kakak laki, adik laki, kakak perempuan, adik perempuan sekaligus. [你有冇兄弟姊妹呀|Nei5 jau5 mou5 hing1 dai6 zi2 mui6 aa3]？ = kamu punya saudara?",
+     "🇭🇰 **[阿|aa3] dipasang di depan sebutan atau nama untuk terdengar akrab**: [阿媽|aa3 maa1] (ibu), [阿哥|aa3 go1] (abang), [阿麗|Aa3 Lai6] (si Lai). Ini kebiasaan yang sangat Kanton dan tidak ada di Mandarin."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "有", "baca": "jau5", "id": "punya, ada" },
+  { "zh": "冇", "baca": "mou5", "id": "tidak punya, tidak ada" },
+  { "zh": "有冇", "baca": "jau5 mou5", "id": "apakah punya" },
+  { "zh": "屋企", "baca": "uk1 kei2", "id": "rumah; keluarga" },
+  { "zh": "屋企人", "baca": "uk1 kei2 jan4", "id": "anggota keluarga" },
+  { "zh": "相", "baca": "soeng2", "id": "foto" },
+  { "zh": "張", "baca": "zoeng1", "id": "penggolong benda datar" },
+  { "zh": "嘅", "baca": "ge3", "id": "penanda milik" },
+  { "zh": "同埋", "baca": "tung4 maai4", "id": "dan, serta" },
+  { "zh": "同", "baca": "tung4", "id": "dan; dengan" },
+  { "zh": "爸爸", "baca": "baa4 baa1", "id": "ayah" },
+  { "zh": "媽媽", "baca": "maa4 maa1", "id": "ibu" },
+  { "zh": "大佬", "baca": "daai6 lou2", "id": "kakak laki-laki" },
+  { "zh": "家姐", "baca": "gaa1 ze1", "id": "kakak perempuan" },
+  { "zh": "細佬", "baca": "sai3 lou2", "id": "adik laki-laki" },
+  { "zh": "細妹", "baca": "sai3 mui2", "id": "adik perempuan" },
+  { "zh": "兄弟姊妹", "baca": "hing1 dai6 zi2 mui6", "id": "saudara kandung" },
+  { "zh": "仔", "baca": "zai2", "id": "anak laki-laki" },
+  { "zh": "女", "baca": "neoi2", "id": "anak perempuan" },
+  { "zh": "仔女", "baca": "zai2 neoi2", "id": "anak-anak" },
+  { "zh": "老公", "baca": "lou5 gung1", "id": "suami" },
+  { "zh": "老婆", "baca": "lou5 po4", "id": "istri" },
+  { "zh": "爺爺", "baca": "je4 je2", "id": "kakek (pihak ayah)" },
+  { "zh": "婆婆", "baca": "po4 po2", "id": "nenek (pihak ibu)" },
+  { "zh": "結婚", "baca": "git3 fan1", "id": "menikah" },
+  { "zh": "歲", "baca": "seoi3", "id": "tahun (umur)" },
+  { "zh": "幾", "baca": "gei2", "id": "berapa (jumlah kecil)" },
+  { "zh": "幾多", "baca": "gei2 do1", "id": "berapa (jumlah besar)" },
+  { "zh": "大", "baca": "daai6", "id": "besar; tua" },
+  { "zh": "細", "baca": "sai3", "id": "kecil; muda" },
+  { "zh": "得", "baca": "dak1", "id": "hanya, cuma" },
+  { "zh": "仲", "baca": "zung6", "id": "masih; lagi" },
+  { "zh": "未", "baca": "mei6", "id": "belum" },
+  { "zh": "掛住", "baca": "gwaa3 zyu6", "id": "rindu, kangen" },
+  { "zh": "梗係", "baca": "gang2 hai6", "id": "tentu saja" },
+  { "zh": "啦", "baca": "laa1", "id": "partikel ajakan, penegas" },
+  { "zh": "熱鬧", "baca": "jit6 naau6", "id": "ramai (menyenangkan)" },
+  { "zh": "嘈", "baca": "cou4", "id": "berisik" },
+  { "zh": "成日", "baca": "seng4 jat6", "id": "selalu, terus-menerus" },
+  { "zh": "畀", "baca": "bei2", "id": "memberi" },
+  { "zh": "電話", "baca": "din6 waa2", "id": "telepon" },
+  { "zh": "號碼", "baca": "hou6 maa5", "id": "nomor" },
+  { "zh": "等", "baca": "dang2", "id": "menunggu" },
+  { "zh": "講", "baca": "gong2", "id": "bicara, mengatakan" },
+  { "zh": "快", "baca": "faai3", "id": "cepat" },
+  { "zh": "慢", "baca": "maan6", "id": "pelan" },
+  { "zh": "啲", "baca": "di1", "id": "sedikit; beberapa" },
+  { "zh": "晒", "baca": "saai3", "id": "habis, semuanya" },
+  { "zh": "讀書", "baca": "duk6 syu1", "id": "belajar, sekolah" },
+  { "zh": "書", "baca": "syu1", "id": "buku" },
+  { "zh": "本", "baca": "bun2", "id": "penggolong buku" },
+  { "zh": "隻", "baca": "zek3", "id": "penggolong binatang, cangkir" },
+  { "zh": "部", "baca": "bou6", "id": "penggolong mesin" },
+  { "zh": "間", "baca": "gaan1", "id": "penggolong ruang, toko" },
+  { "zh": "位", "baca": "wai2", "id": "penggolong orang (hormat)" },
+  { "zh": "兩", "baca": "loeng5", "id": "dua (dengan penggolong)" },
+  { "zh": "零", "baca": "ling4", "id": "nol" },
+  { "zh": "百", "baca": "baak3", "id": "ratus" },
+  { "zh": "千", "baca": "cin1", "id": "ribu" },
+  { "zh": "萬", "baca": "maan6", "id": "sepuluh ribu" },
+  { "zh": "半", "baca": "bun3", "id": "setengah" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan 有 atau 冇.",
+   "items": [
+    "[我|Ngo5] ___ [兩個細佬|loeng5 go3 sai3 lou2]。",
+    "[佢|Keoi5] ___ [家姐|gaa1 ze1]，[佢係大女|keoi5 hai6 daai6 neoi2]。",
+    "[屋企|Uk1 kei2] ___ [人|jan4]，[佢哋出咗去|keoi5 dei6 ceot1 zo2 heoi3]。",
+    "[你|Nei5] ___ [冇仔女呀|mou5 zai2 neoi2 aa3]？",
+    "[我|Ngo5] ___ [錢|cin2]，[我唔買喇|ngo5 m4 maai5 laa3]。",
+    "[佢|Keoi5] ___ [一部新電話|jat1 bou6 san1 din6 waa2]。"
+   ]
+  },
+  {
+   "prompt": "Pilih 二 atau 兩.",
+   "items": [
+    "[我有|Ngo5 jau5] ___ [個仔|go3 zai2]。",
+    "[今年|Gam1 nin4] ___ [十五歲|sap6 ng5 seoi3]。",
+    "[佢買咗|Keoi5 maai5 zo2] ___ [本書|bun2 syu1]。",
+    "[電話尾號係|Din6 waa2 mei5 hou6 hai6] ___。",
+    "[我哋|Ngo5 dei6] ___ [個人去|go3 jan4 heoi3]。"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "我 / 有 / 兩 / 個 / 細佬",
+    "你 / 屋企 / 有 / 幾多 / 人",
+    "佢 / 冇 / 家姐",
+    "我 / 細妹 / 十九 / 歲",
+    "唔該 / 畀 / 你 / 電話 / 我",
+    "佢哋 / 都 / 喺 / 印尼"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[我屋企有五個人|Ngo5 uk1 kei2 jau5 ng5 go3 jan4]。",
+    "[佢個女得四歲|Keoi5 go3 neoi2 dak1 sei3 seoi3]。",
+    "[你有冇兄弟姊妹呀|Nei5 jau5 mou5 hing1 dai6 zi2 mui6 aa3]？",
+    "[我仲未結婚|Ngo5 zung6 mei6 git3 fan1]。",
+    "[佢哋成日好嘈|Keoi5 dei6 seng4 jat6 hou2 cou4]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Kanton. Tulis dengan jyutping.",
+   "items": [
+    "Saya punya dua adik laki-laki.",
+    "Saya tidak punya kakak perempuan.",
+    "Adik perempuanmu umur berapa?",
+    "Di rumahmu ada berapa orang?",
+    "Tolong beri saya nomor teleponmu."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan jyutping.",
+   "items": [
+    "[我唔有家姐|Ngo5 m4 jau5 gaa1 ze1]。",
+    "[我有二個仔|Ngo5 jau5 ji6 go3 zai2]。",
+    "[我係三十歲|Ngo5 hai6 saam1 sap6 seoi3]。",
+    "[我有兩仔|Ngo5 jau5 loeng5 zai2]。",
+    "[唔該畀我一本書|M4 goi1 bei2 ngo5 jat1 bun2 syu1]。"
+   ]
+  }
+ ],
+ "answers": [
+  "有 — 冇 — 冇 — 有 — 冇 — 有",
+  "兩 — 二 — 兩 — 二 — 兩",
+  "我 有 兩 個 細佬 — 你 屋企 有 幾多 人 — 佢 冇 家姐 — 我 細妹 十九 歲 — 唔該 畀 你 電話 我 — 佢哋 都 喺 印尼",
+  "Di rumah saya ada lima orang. — Anak perempuannya baru empat tahun. — Kamu punya saudara kandung? — Saya belum menikah. — Mereka selalu berisik.",
+  "Ngo5 jau5 loeng5 go3 sai3 lou2. — Ngo5 mou5 gaa1 ze1. — Nei5 sai3 mui2 gei2 do1 seoi3 aa3? — Nei5 uk1 kei2 jau5 gei2 do1 jan4 aa3? — M4 goi1 bei2 nei5 go3 din6 waa2 hou6 maa5 ngo5.",
+  "Ngo5 mou5 gaa1 ze1. — Ngo5 jau5 loeng5 go3 zai2. — Ngo5 saam1 sap6 seoi3. — Ngo5 jau5 loeng5 go3 zai2. — M4 goi1 bei2 bun2 syu1 ngo5."
+ ],
+ "wave": "Lima menit sebelum Unit 3: gambar pohon keluargamu sendiri di selembar kertas, lalu tulis sebutan Kanton di sebelah tiap orang — pakai kolom “yang diucapkan”, bukan kolom bentuk buku. Sesudah itu, sebutkan umur tiap orang keras-keras dalam kalimat penuh: [我爸爸六十二歲|Ngo5 baa4 baa1 luk6 sap6 ji6 seoi3]。 Angka yang dipakai untuk menyebut orang sungguhan menempel jauh lebih cepat daripada angka yang dihafal dari daftar."
+}

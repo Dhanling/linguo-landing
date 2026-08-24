@@ -1,0 +1,352 @@
+{
+ "title": "Waktu, hari, dan jadwal",
+ "title_target": "幾點呀？ — Gei2 dim2 aa3?",
+ "goal": "Menyebut jam dengan cara Hong Kong (termasuk 個字 yang tidak ada di buku Mandarin), menyebut hari dan tanggal, dan memasang kata waktu di tempat yang benar — di depan kata kerja, selalu.",
+ "bekal": [
+  "menanyakan dan menyebut jam: 三點半, 三點三個字",
+  "menyebut hari dalam seminggu dan tanggal",
+  "membedakan 琴日 · 今日 · 聽日 dan seterusnya",
+  "menaruh kata waktu di depan kata kerja",
+  "membuat janji dengan jam dan tempat"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 1 — Jam berapa sekarang?",
+   "intro": "Andi bertanya jam kepada Wong Lai di halte bus. Perhatikan cara menit disebut — ini bagian yang paling khas Kanton dan paling membingungkan orang yang belajar dari buku Mandarin.",
+   "lines": [
+    { "speaker": "安迪:", "text": "[唔該|M4 goi1]，[而家|ji4 gaa1][幾點呀|gei2 dim2 aa3]？", "id": "Permisi, sekarang jam berapa?", "literal": "permisi, sekarang — berapa — jam — ya." },
+    { "speaker": "黃麗:", "text": "[而家|Ji4 gaa1][三點半|saam1 dim2 bun3]。", "id": "Sekarang setengah empat.", "literal": "sekarang — tiga — jam — setengah." },
+    { "speaker": "安迪:", "text": "[吓|Haa2]？[咁遲|Gam3 ci4][㗎|gaa3]？[我以為|Ngo5 ji5 wai4][得三點|dak1 saam1 dim2]。", "id": "Hah? Sudah selarut itu? Saya kira baru jam tiga.", "literal": "hah? se-begitu — telat — penegas. saya — mengira — hanya — tiga — jam." },
+    { "speaker": "黃麗:", "text": "[你幾點|Nei5 gei2 dim2][要返工|jiu3 faan1 gung1][呀|aa3]？", "id": "Kamu masuk kerja jam berapa?", "literal": "kamu — berapa — jam — harus — kembali — kerja — ya." },
+    { "speaker": "安迪:", "text": "[四點|Sei3 dim2]。[仲有|Zung6 jau5][半個鐘|bun3 go3 zung1]。", "id": "Jam empat. Masih setengah jam lagi.", "literal": "empat — jam. masih — ada — setengah — penggolong — jam." },
+    { "speaker": "黃麗:", "text": "[巴士|Baa1 si2][三點九|saam1 dim2 gau2][到|dou3]，[應該|jing1 goi1][趕得切|gon2 dak1 cit3]。", "id": "Busnya datang jam 3:45, harusnya masih keburu.", "literal": "bus — tiga — jam — sembilan — tiba, seharusnya — kejar — bisa — putus." },
+    { "speaker": "安迪:", "text": "[三點九|Saam1 dim2 gau2]？[即係|Zik1 hai6][幾多分|gei2 do1 fan1][呀|aa3]？", "id": "3:45? Itu berapa menit maksudnya?", "literal": "tiga — jam — sembilan? yaitu — adalah — berapa — banyak — menit — ya." },
+    { "speaker": "黃麗:", "text": "[三點四十五分|Saam1 dim2 sei3 sap6 ng5 fan1]。[一個字|Jat1 go3 zi6][係五分鐘|hai6 ng5 fan1 zung1]。", "id": "Jam 3:45. Satu “字” itu lima menit.", "literal": "tiga — jam — empat — puluh — lima — menit. satu — penggolong — huruf — adalah — lima — menit — jam." },
+    { "speaker": "安迪:", "text": "[明白喇|Ming4 baak6 laa3]！[咁|Gam2][三點一個字|saam1 dim2 jat1 go3 zi6][係三點零五|hai6 saam1 dim2 ling4 ng5]？", "id": "Paham! Jadi 三點一個字 itu jam 3:05?", "literal": "mengerti — sudah. begitu — tiga — jam — satu — penggolong — huruf — adalah — tiga — jam — nol — lima." },
+    { "speaker": "黃麗:", "text": "[啱晒|Ngaam1 saai3]！[你學得|Nei5 hok6 dak1][好快|hou2 faai3][喎|wo3]。", "id": "Betul sekali! Belajarmu cepat juga, lho.", "literal": "tepat — habis. kamu — belajar — bisa — penyangga — cepat — lho." },
+    { "speaker": "安迪:", "text": "[多謝|Do1 ze6]。[巴士嚟喇|Baa1 si2 lei4 laa3]，[我走先喇|ngo5 zau2 sin1 laa3]！", "id": "Terima kasih. Busnya datang, saya duluan ya!", "literal": "terima-kasih. bus — datang — sudah, saya — pergi — duluan — sudah." },
+    { "speaker": "黃麗:", "text": "[拜拜|Baai1 baai3]！[聽日見|Ting1 jat6 gin3]！", "id": "Dah! Sampai besok!", "literal": "bai — bai. besok — bertemu." }
+   ],
+   "notes": [
+    "**[而家|ji4 gaa1] = sekarang.** Kata Kanton asli; Mandarin memakai 現在. 🇭🇰 Sebagian orang menuliskannya 依家, dan sebagian mengucapkannya *ji4 gaa1* dengan *g* yang hampir hilang — semuanya kata yang sama.",
+    "**[吓|Haa2]？ = “hah?”** — bunyi yang kamu keluarkan ketika kaget atau tidak mendengar jelas. ⚠️ Nadanya harus naik (nada 2). Diucapkan dengan nada datar, ia berubah jadi kata lain.",
+    "**[咁|gam3] bernada 3 berarti “se-…begitu”.** [咁遲|gam3 ci4] = selarut itu; [咁貴|gam3 gwai3] = semahal itu; [咁多|gam3 do1] = sebanyak itu. Bandingkan dengan [咁|gam2] bernada 2 dari Unit 4 yang berarti “kalau begitu”. Aksaranya sama; yang membedakan hanya nada.",
+    "**[鐘|zung1] adalah satuan “jam lamanya”, [點|dim2] adalah “pukul”.** [三點|saam1 dim2] = pukul tiga; [三個鐘|saam1 go3 zung1] = tiga jam lamanya. ⚠️ Ini dua hal yang sama sekali berbeda, dan menukarnya membuat kalimatmu tidak masuk akal. Perhatikan bahwa 鐘 selalu memakai penggolong 個.",
+    "**[趕得切|gon2 dak1 cit3] = keburu, sempat.** Menyangkalnya [趕唔切|gon2 m4 cit3] = tidak keburu. Pola kata kerja + 得/唔 + hasil ini akan muncul terus: [食得晒|sik6 dak1 saai3] (habis termakan), [睇唔到|tai2 m4 dou2] (tidak kelihatan).",
+    "**[啱|ngaam1] = benar, tepat, pas.** [啱晒|Ngaam1 saai3] = betul sekali. [啱啱|ngaam1 ngaam1] = barusan. [唔啱|m4 ngaam1] = salah, tidak cocok. Kata yang sangat sering dipakai dan tidak ada di Mandarin.",
+    "**[我走先|Ngo5 zau2 sin1] = “saya duluan ya”.** ⚠️ Perhatikan tempat [先|sin1]: di Kanton ia berdiri **sesudah** kata kerja, kebalikan dari Mandarin yang menaruh 先 di depan. [你食先|Nei5 sik6 sin1] = kamu makan duluan; [等我諗下先|Dang2 ngo5 nam2 haa5 sin1] = saya pikir dulu."
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut jam: 點, 半, dan 個字",
+     "body": [
+      "Jam di Kanton dibangun dengan [點|dim2]. Menitnya bisa disebut dengan dua sistem: sistem menit biasa ([分|fan1]), dan sistem [個字|go3 zi6] yang menghitung dalam kelipatan lima. 🇭🇰 Sistem 個字 jauh lebih sering dipakai dalam percakapan, dan ia berasal dari angka di muka jam analog."
+     ],
+     "tables": [
+      {
+       "head": ["Jam", "Kanton", "Catatan"],
+       "rows": [
+        ["1:00", "[一點|jat1 dim2]", ""],
+        ["2:00", "[兩點|loeng5 dim2]", "⚠️ 兩, bukan 二"],
+        ["3:30", "[三點半|saam1 dim2 bun3]", "半 = setengah"],
+        ["3:05", "[三點一個字|saam1 dim2 jat1 go3 zi6]", "1 × 5 menit"],
+        ["3:15", "[三點三個字|saam1 dim2 saam1 go3 zi6]", "3 × 5 menit"],
+        ["3:45", "[三點九|saam1 dim2 gau2]", "🇭🇰 個字 sering dibuang"],
+        ["3:20", "[三點四|saam1 dim2 sei3]", "4 × 5 menit"],
+        ["12:00 siang", "[十二點|sap6 ji6 dim2] / [中午|zung1 ng5]", ""],
+        ["7:40", "[七點八|cat1 dim2 baat3]", "8 × 5 menit"]
+       ]
+      },
+      {
+       "head": ["Bagian hari", "Kanton", "Kira-kira"],
+       "rows": [
+        ["pagi buta / pagi", "[朝早|ziu1 zou2]", "sampai pukul 9"],
+        ["pagi menjelang siang", "[上晝|soeng6 zau3]", "9–12"],
+        ["tengah hari", "[中午|zung1 ng5]", "12"],
+        ["siang–sore", "[下晝|haa6 zau3]", "12–18"],
+        ["malam", "[夜晚|je6 maan5]", "18–24"],
+        ["tengah malam", "[半夜|bun3 je6]", "sesudah 24"]
+       ]
+      }
+     ],
+     "after": [
+      "**Bagian hari berdiri DI DEPAN jamnya**: [下晝三點|haa6 zau3 saam1 dim2] = pukul tiga sore. Kanton tidak memakai a.m./p.m., dan angka 13–24 tidak dipakai dalam percakapan.",
+      "⚠️ **Pukul dua selalu [兩點|loeng5 dim2].** Ini penerapan aturan 二 vs 兩 dari Unit 2: 點 adalah penggolong. Tapi menitnya tetap 二: [兩點二十分|loeng5 dim2 ji6 sap6 fan1].",
+      "🇭🇰 **[個字|go3 zi6] tidak ada dalam bahasa Mandarin sama sekali** dan tidak akan kamu temukan di buku Mandarin mana pun. Ia berasal dari dua belas angka di muka jam — tiap angka berjarak lima menit."
+     ]
+    },
+    {
+     "title": "Kata waktu berdiri di depan kata kerja",
+     "body": [
+      "Ini satu aturan yang, kalau kamu pegang, akan menyelamatkan ratusan kalimat. Di Kanton, **kapan** sesuatu terjadi selalu disebut sebelum **apa** yang terjadi. Kata kerjanya sendiri tidak berubah sama sekali — inilah pengganti bentuk lampau dan bentuk akan datang."
+     ],
+     "tables": [
+      {
+       "head": ["Kanton", "Arti", "Susunannya"],
+       "rows": [
+        ["[我聽日去|Ngo5 ting1 jat6 heoi3]。", "Besok saya pergi.", "pelaku + waktu + kerja"],
+        ["[聽日我去|Ting1 jat6 ngo5 heoi3]。", "Besok saya pergi.", "waktu + pelaku + kerja"],
+        ["[佢琴日返咗嚟|Keoi5 kam4 jat6 faan1 zo2 lei4]。", "Dia kemarin pulang.", "waktu tetap di depan"],
+        ["[我三點食飯|Ngo5 saam1 dim2 sik6 faan6]。", "Saya makan jam tiga.", ""],
+        ["[我星期一返工|Ngo5 sing1 kei4 jat1 faan1 gung1]。", "Saya kerja hari Senin.", ""]
+       ]
+      },
+      {
+       "head": ["Salah", "Benar"],
+       "rows": [
+        ["我去聽日。", "[我聽日去|Ngo5 ting1 jat6 heoi3]。"],
+        ["我食飯三點。", "[我三點食飯|Ngo5 saam1 dim2 sik6 faan6]。"],
+        ["佢返工星期一。", "[佢星期一返工|Keoi5 sing1 kei4 jat1 faan1 gung1]。"]
+       ]
+      }
+     ],
+     "after": [
+      "**Kata waktu boleh berdiri di dua tempat: sebelum pelaku, atau sesudah pelaku.** Keduanya benar; menaruhnya di depan kalimat sedikit menekankan waktunya. Yang **tidak pernah** benar adalah menaruhnya di belakang kata kerja seperti bahasa Indonesia.",
+      "**Kalau ada beberapa keterangan sekaligus, urutannya: waktu → tempat → cara → kata kerja.** [我聽日喺屋企食飯|Ngo5 ting1 jat6 hai2 uk1 kei2 sik6 faan6] = besok saya makan di rumah. Bahasa Indonesia menyusunnya persis terbalik.",
+      "⚠️ **Jangan mencari bentuk lampau.** [我琴日去|Ngo5 kam4 jat6 heoi3] = saya kemarin pergi. Kata kerjanya sama persis dengan [我聽日去|Ngo5 ting1 jat6 heoi3] (besok saya pergi). Yang membedakan hanya kata waktunya. 🔁 Penanda [咗|zo2] di Unit 9 bukan bentuk lampau — ia menandakan selesai, dan itu hal yang berbeda."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "對話 2 — Sehari-hari Wong Lai",
+   "intro": "Andi bertanya tentang jadwal harian Wong Lai. Seluruh percakapan ini adalah latihan menaruh kata waktu di depan kata kerja — perhatikan bahwa tidak sekali pun urutannya berubah.",
+   "lines": [
+    { "speaker": "安迪:", "text": "[你|Nei5][平時|ping4 si4][幾點起身|gei2 dim2 hei2 san1][㗎|gaa3]？", "id": "Kamu biasanya bangun jam berapa?", "literal": "kamu — biasa — waktu — berapa — jam — bangun — badan — penegas." },
+    { "speaker": "黃麗:", "text": "[七點|Cat1 dim2]。[我八點|Ngo5 baat3 dim2][要返學|jiu3 faan1 hok6]。", "id": "Jam tujuh. Jam delapan saya harus ke kampus.", "literal": "tujuh — jam. saya — delapan — jam — harus — kembali — sekolah." },
+    { "speaker": "安迪:", "text": "[咁早|Gam3 zou2]！[你幾點|Nei5 gei2 dim2][食晏呀|sik6 aan3 aa3]？", "id": "Pagi sekali! Kamu makan siang jam berapa?", "literal": "se-begitu — pagi. kamu — berapa — jam — makan — siang — ya." },
+    { "speaker": "黃麗:", "text": "[一點|Jat1 dim2][喺學校食|hai2 hok6 haau6 sik6]。[你呢|Nei5 ne1]？", "id": "Jam satu, di kampus. Kalau kamu?", "literal": "satu — jam — di — sekolah — makan. kamu — bagaimana." },
+    { "speaker": "安迪:", "text": "[我十二點半|Ngo5 sap6 ji6 dim2 bun3]。[我下晝|Ngo5 haa6 zau3][有三堂|jau5 saam1 tong4]。", "id": "Saya setengah satu. Sore ini saya ada tiga kelas.", "literal": "saya — dua-belas — jam — setengah. saya — sore — ada — tiga — penggolong-kelas." },
+    { "speaker": "黃麗:", "text": "[你星期幾|Nei5 sing1 kei4 gei2][最忙呀|zeoi3 mong4 aa3]？", "id": "Hari apa kamu paling sibuk?", "literal": "kamu — minggu — berapa — paling — sibuk — ya." },
+    { "speaker": "安迪:", "text": "[星期三|Sing1 kei4 saam1]。[朝早八點|Ziu1 zou2 baat3 dim2][做到|zou6 dou3][夜晚八點|je6 maan5 baat3 dim2]。", "id": "Rabu. Dari jam delapan pagi sampai jam delapan malam.", "literal": "minggu — tiga. pagi — delapan — jam — kerja — sampai — malam — delapan — jam." },
+    { "speaker": "黃麗:", "text": "[嘩|Waa4]，[十二個鐘|sap6 ji6 go3 zung1]！[你唔攰咩|Nei5 m4 gui6 me1]？", "id": "Wah, dua belas jam! Kamu tidak capek?", "literal": "wah, dua-belas — penggolong — jam. kamu — tidak — capek — masa." },
+    { "speaker": "安迪:", "text": "[梗係攰啦|Gang2 hai6 gui6 laa1]。[但係|Daan6 hai6][星期六日|sing1 kei4 luk6 jat6][我唔使返工|ngo5 m4 sai2 faan1 gung1]。", "id": "Ya jelas capek dong. Tapi Sabtu Minggu saya libur.", "literal": "tentu — adalah — capek — dong. tetapi — minggu — enam — hari — saya — tidak — perlu — kembali — kerja." },
+    { "speaker": "黃麗:", "text": "[咁|Gam2][今個星期六|gam1 go3 sing1 kei4 luk6][得唔得閒呀|dak1 m4 dak1 haan4 aa3]？", "id": "Kalau begitu, Sabtu ini kamu senggang tidak?", "literal": "begitu — ini — penggolong — minggu — enam — bisa — tidak — bisa — senggang — ya." },
+    { "speaker": "安迪:", "text": "[得閒|Dak1 haan4]！[去邊度呀|Heoi3 bin1 dou6 aa3]？", "id": "Senggang! Mau ke mana?", "literal": "bisa — senggang. pergi — mana — tempat — ya." }
+   ],
+   "notes": [
+    "**[平時|ping4 si4] = biasanya, sehari-hari.** Ia dipasang di tempat kata waktu, yaitu di depan kata kerja. Padanan lain: [通常|tung1 soeng4].",
+    "**[起身|hei2 san1] = bangun tidur; [瞓覺|fan3 gaau3] = tidur.** ⚠️ [瞓|fan3] adalah aksara Kanton asli yang tidak ada di Mandarin (yang memakai 睡). Perhatikan juga [瞓着咗|fan3 zoek6 zo2] = tertidur, berbeda dari sekadar berbaring.",
+    "**[返工|faan1 gung1] dan [返學|faan1 hok6] harfiah berarti “kembali kerja” dan “kembali sekolah”.** 🇭🇰 Kanton memakai 返 untuk berangkat, bukan 去 — karena tempatnya adalah tempat yang rutin kamu datangi. Lawannya [收工|sau1 gung1] (pulang kerja) dan [放學|fong3 hok6] (pulang sekolah).",
+    "**[食晏|sik6 aan3] = makan siang.** [晏晝|aan3 zau3] = siang hari. Bentuk lain: [食晏晝|sik6 aan3 zau3]. Makan pagi adalah [食早餐|sik6 zou2 caan1], makan malam [食晚飯|sik6 maan5 faan6].",
+    "**[堂|tong4] adalah penggolong untuk sesi pelajaran.** [三堂|saam1 tong4] = tiga kelas. Jangan bingung dengan [堂食|tong4 sik6] dari Unit 4 — aksaranya sama, artinya lain.",
+    "**[做到|zou6 dou3] = “bekerja sampai”.** [到|dou3] sesudah kata kerja menandai batas akhirnya. [由…到…|jau4 … dou3 …] = dari … sampai …: [由八點到六點|jau4 baat3 dim2 dou3 luk6 dim2].",
+    "**[得閒|dak1 haan4] = senggang, punya waktu.** Lawannya [唔得閒|m4 dak1 haan4] atau [忙|mong4]. 🇭🇰 [得唔得閒呀|Dak1 m4 dak1 haan4 aa3]？ adalah cara paling wajar menanyakan apakah seseorang bisa diajak — jauh lebih sering daripada bertanya langsung “bisa tidak”."
+   ],
+   "grammars": [
+    {
+     "title": "Hari, minggu, bulan, tanggal",
+     "body": [
+      "Semua satuan waktu Kanton dibangun dengan angka, tanpa satu pun nama khusus yang perlu dihafal terpisah — kecuali hari Minggu."
+     ],
+     "tables": [
+      {
+       "head": ["Hari", "Kanton", "Bentuk lisan 🇭🇰"],
+       "rows": [
+        ["Senin", "[星期一|sing1 kei4 jat1]", "[禮拜一|lai5 baai3 jat1]"],
+        ["Selasa", "[星期二|sing1 kei4 ji6]", "[禮拜二|lai5 baai3 ji6]"],
+        ["Rabu", "[星期三|sing1 kei4 saam1]", "[禮拜三|lai5 baai3 saam1]"],
+        ["Kamis", "[星期四|sing1 kei4 sei3]", "[禮拜四|lai5 baai3 sei3]"],
+        ["Jumat", "[星期五|sing1 kei4 ng5]", "[禮拜五|lai5 baai3 ng5]"],
+        ["Sabtu", "[星期六|sing1 kei4 luk6]", "[禮拜六|lai5 baai3 luk6]"],
+        ["Minggu", "[星期日|sing1 kei4 jat6]", "[禮拜日|lai5 baai3 jat6]"],
+        ["hari apa?", "[星期幾|sing1 kei4 gei2]？", "[禮拜幾|lai5 baai3 gei2]？"]
+       ]
+      },
+      {
+       "head": ["Patokan hari", "Kanton", "Patokan minggu/bulan", "Kanton"],
+       "rows": [
+        ["kemarin lusa", "[前日|cin4 jat6]", "minggu lalu", "[上個星期|soeng6 go3 sing1 kei4]"],
+        ["kemarin", "[琴日|kam4 jat6]", "minggu ini", "[今個星期|gam1 go3 sing1 kei4]"],
+        ["hari ini", "[今日|gam1 jat6]", "minggu depan", "[下個星期|haa6 go3 sing1 kei4]"],
+        ["besok", "[聽日|ting1 jat6]", "bulan lalu", "[上個月|soeng6 go3 jyut6]"],
+        ["lusa", "[後日|hau6 jat6]", "bulan ini", "[今個月|gam1 go3 jyut6]"],
+        ["setiap hari", "[日日|jat6 jat6]", "bulan depan", "[下個月|haa6 go3 jyut6]"]
+       ]
+      }
+     ],
+     "after": [
+      "**Tanggal: bulan + 月 + angka + 號.** [三月十五號|saam1 jyut6 sap6 ng5 hou6] = 15 Maret. Bertanya: [今日幾多號呀|Gam1 jat6 gei2 do1 hou6 aa3]？ dan [幾月幾號呀|Gei2 jyut6 gei2 hou6 aa3]？",
+      "⚠️ **Urutannya besar-ke-kecil, kebalikan dari bahasa Indonesia**: tahun → bulan → tanggal → hari → jam. [二零二六年三月十五號星期日下晝三點|ji6 ling4 ji6 luk6 nin4 saam1 jyut6 sap6 ng5 hou6 sing1 kei4 jat6 haa6 zau3 saam1 dim2].",
+      "**Tahun dibaca angka per angka**: 2026 = [二零二六年|ji6 ling4 ji6 luk6 nin4], bukan “dua ribu dua puluh enam”."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Sehari di Hong Kong",
+   "blocks": [
+    { "type": "p", "text": "Kosakata rutinitas ini akan kamu pakai untuk bercerita di Unit 12. Latih dengan menyebut jadwalmu sendiri, bukan dengan menghafal daftarnya." },
+    { "type": "tabel", "head": ["Kegiatan", "Kanton", "Kegiatan", "Kanton"], "rows": [
+     ["bangun tidur", "[起身|hei2 san1]", "tidur", "[瞓覺|fan3 gaau3]"],
+     ["mandi", "[沖涼|cung1 loeng4]", "gosok gigi", "[刷牙|caat3 ngaa4]"],
+     ["makan pagi", "[食早餐|sik6 zou2 caan1]", "makan siang", "[食晏|sik6 aan3]"],
+     ["makan malam", "[食晚飯|sik6 maan5 faan6]", "masak", "[煮飯|zyu2 faan6]"],
+     ["berangkat kerja", "[返工|faan1 gung1]", "pulang kerja", "[收工|sau1 gung1]"],
+     ["berangkat sekolah", "[返學|faan1 hok6]", "pulang sekolah", "[放學|fong3 hok6]"],
+     ["pulang ke rumah", "[返屋企|faan1 uk1 kei2]", "keluar", "[出街|ceot1 gaai1]"],
+     ["nonton TV", "[睇電視|tai2 din6 si6]", "olahraga", "[做運動|zou6 wan6 dung6]"],
+     ["belajar", "[讀書|duk6 syu1]", "istirahat", "[休息|jau1 sik1]"]
+    ] },
+    { "type": "kotak", "title": "Jam Hong Kong yang perlu kamu tahu", "items": [
+     "🇭🇰 **Jam sibuk MTR**: 8:00–9:30 pagi dan 18:00–19:30 sore. Di jam itu, [唔該借借|M4 goi1 ze3 ze3] adalah kalimat yang paling sering kamu ucapkan.",
+     "**Toko buka lambat, tutup malam.** Sebagian besar toko baru buka pukul sebelas dan tutup pukul sepuluh malam. Restoran yum cha justru sebaliknya: buka dari pukul enam pagi.",
+     "**[放假|fong3 gaa3] = libur.** [今日放假|Gam1 jat6 fong3 gaa3] = hari ini libur. [請假|cing2 gaa3] = mengambil cuti. [公眾假期|gung1 zung3 gaa3 kei4] = hari libur umum."
+    ] }
+   ]
+  },
+  {
+   "title": "Membuat janji",
+   "blocks": [
+    { "type": "p", "text": "Membuat janji di Kanton hampir selalu mengikuti urutan yang sama: tanya kesenggangan → sebut hari → sebut jam → sebut tempat. Empat langkah, dan tiap langkah cuma satu kalimat pendek." },
+    { "type": "tabel", "head": ["Langkah", "Kalimat", "Arti"], "rows": [
+     ["1. Kesenggangan", "[你聽日得唔得閒呀|Nei5 ting1 jat6 dak1 m4 dak1 haan4 aa3]？", "Besok kamu senggang tidak?"],
+     ["2. Usul", "[不如一齊食飯啦|Bat1 jyu4 jat1 cai4 sik6 faan6 laa1]。", "Gimana kalau makan bareng."],
+     ["3. Jam", "[幾點好呀|Gei2 dim2 hou2 aa3]？", "Jam berapa enaknya?"],
+     ["4. Tempat", "[喺邊度等呀|Hai2 bin1 dou6 dang2 aa3]？", "Ketemu di mana?"],
+     ["Menyepakati", "[七點喺旺角地鐵站等|Cat1 dim2 hai2 Wong6 gok3 dei6 tit3 zaam6 dang2]。", "Jam tujuh, tunggu di stasiun MTR Mongkok."],
+     ["Menegaskan", "[就咁話|Zau6 gam2 waa6]，[唔好遲到呀|m4 hou2 ci4 dou3 aa3]！", "Deal, jangan telat ya!"],
+     ["Membatalkan", "[唔好意思|M4 hou2 ji3 si1]，[我今日唔得閒|ngo5 gam1 jat6 m4 dak1 haan4]。", "Maaf, hari ini saya tidak sempat."],
+     ["Menunda", "[改第日得唔得呀|Goi2 dai6 jat6 dak1 m4 dak1 aa3]？", "Ganti hari lain bisa?"]
+    ] },
+    { "type": "kotak", "title": "Tiga kalimat penyelamat soal waktu", "items": [
+     "[我遲少少|Ngo5 ci4 siu2 siu2]，[等我五分鐘|dang2 ngo5 ng5 fan1 zung1]。 — Saya telat sedikit, tunggu lima menit.",
+     "[我而家喺路上|Ngo5 ji4 gaa1 hai2 lou6 soeng6]。 — Saya sedang di jalan. Kalimat yang paling sering dikirim lewat WhatsApp di Hong Kong.",
+     "[你到咗未呀|Nei5 dou3 zo2 mei6 aa3]？ — Kamu sudah sampai belum?"
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "而家", "baca": "ji4 gaa1", "id": "sekarang" },
+  { "zh": "點", "baca": "dim2", "id": "pukul, jam" },
+  { "zh": "幾點", "baca": "gei2 dim2", "id": "jam berapa" },
+  { "zh": "半", "baca": "bun3", "id": "setengah" },
+  { "zh": "個字", "baca": "go3 zi6", "id": "lima menit" },
+  { "zh": "分鐘", "baca": "fan1 zung1", "id": "menit" },
+  { "zh": "個鐘", "baca": "go3 zung1", "id": "jam (lamanya)" },
+  { "zh": "朝早", "baca": "ziu1 zou2", "id": "pagi" },
+  { "zh": "上晝", "baca": "soeng6 zau3", "id": "menjelang siang" },
+  { "zh": "中午", "baca": "zung1 ng5", "id": "tengah hari" },
+  { "zh": "下晝", "baca": "haa6 zau3", "id": "siang, sore" },
+  { "zh": "夜晚", "baca": "je6 maan5", "id": "malam" },
+  { "zh": "今日", "baca": "gam1 jat6", "id": "hari ini" },
+  { "zh": "琴日", "baca": "kam4 jat6", "id": "kemarin" },
+  { "zh": "聽日", "baca": "ting1 jat6", "id": "besok" },
+  { "zh": "前日", "baca": "cin4 jat6", "id": "kemarin lusa" },
+  { "zh": "後日", "baca": "hau6 jat6", "id": "lusa" },
+  { "zh": "日日", "baca": "jat6 jat6", "id": "setiap hari" },
+  { "zh": "星期", "baca": "sing1 kei4", "id": "minggu" },
+  { "zh": "禮拜", "baca": "lai5 baai3", "id": "minggu (lisan)" },
+  { "zh": "月", "baca": "jyut6", "id": "bulan" },
+  { "zh": "號", "baca": "hou6", "id": "tanggal; nomor" },
+  { "zh": "年", "baca": "nin4", "id": "tahun" },
+  { "zh": "平時", "baca": "ping4 si4", "id": "biasanya" },
+  { "zh": "起身", "baca": "hei2 san1", "id": "bangun tidur" },
+  { "zh": "瞓覺", "baca": "fan3 gaau3", "id": "tidur" },
+  { "zh": "沖涼", "baca": "cung1 loeng4", "id": "mandi" },
+  { "zh": "返工", "baca": "faan1 gung1", "id": "berangkat kerja" },
+  { "zh": "收工", "baca": "sau1 gung1", "id": "pulang kerja" },
+  { "zh": "返學", "baca": "faan1 hok6", "id": "berangkat sekolah" },
+  { "zh": "放學", "baca": "fong3 hok6", "id": "pulang sekolah" },
+  { "zh": "食晏", "baca": "sik6 aan3", "id": "makan siang" },
+  { "zh": "食早餐", "baca": "sik6 zou2 caan1", "id": "makan pagi" },
+  { "zh": "食晚飯", "baca": "sik6 maan5 faan6", "id": "makan malam" },
+  { "zh": "出街", "baca": "ceot1 gaai1", "id": "keluar rumah" },
+  { "zh": "睇電視", "baca": "tai2 din6 si6", "id": "nonton TV" },
+  { "zh": "休息", "baca": "jau1 sik1", "id": "istirahat" },
+  { "zh": "放假", "baca": "fong3 gaa3", "id": "libur" },
+  { "zh": "得閒", "baca": "dak1 haan4", "id": "senggang" },
+  { "zh": "忙", "baca": "mong4", "id": "sibuk" },
+  { "zh": "攰", "baca": "gui6", "id": "capek" },
+  { "zh": "遲", "baca": "ci4", "id": "terlambat, larut" },
+  { "zh": "早", "baca": "zou2", "id": "pagi, awal" },
+  { "zh": "先", "baca": "sin1", "id": "duluan (sesudah kata kerja)" },
+  { "zh": "到", "baca": "dou3", "id": "sampai, tiba" },
+  { "zh": "由", "baca": "jau4", "id": "dari" },
+  { "zh": "堂", "baca": "tong4", "id": "penggolong sesi kelas" },
+  { "zh": "啱", "baca": "ngaam1", "id": "benar, pas" },
+  { "zh": "啱啱", "baca": "ngaam1 ngaam1", "id": "barusan" },
+  { "zh": "明白", "baca": "ming4 baak6", "id": "mengerti" },
+  { "zh": "即係", "baca": "zik1 hai6", "id": "yaitu, maksudnya" },
+  { "zh": "以為", "baca": "ji5 wai4", "id": "mengira (keliru)" },
+  { "zh": "應該", "baca": "jing1 goi1", "id": "seharusnya" },
+  { "zh": "但係", "baca": "daan6 hai6", "id": "tetapi" },
+  { "zh": "巴士", "baca": "baa1 si2", "id": "bus" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis jam berikut dalam bahasa Kanton, pakai sistem 個字 kalau memungkinkan.",
+   "items": [
+    "2:00",
+    "3:30",
+    "3:05",
+    "3:45",
+    "7:20",
+    "12:15 siang"
+   ]
+  },
+  {
+   "prompt": "Susun ulang kalimat berikut supaya kata waktunya berdiri di tempat yang benar.",
+   "items": [
+    "[我去旺角聽日|Ngo5 heoi3 Wong6 gok3 ting1 jat6]。",
+    "[佢食飯三點|Keoi5 sik6 faan6 saam1 dim2]。",
+    "[我返工星期一|Ngo5 faan1 gung1 sing1 kei4 jat1]。",
+    "[我起身七點平時|Ngo5 hei2 san1 cat1 dim2 ping4 si4]。",
+    "[我哋見面下個星期|Ngo5 dei6 gin3 min6 haa6 go3 sing1 kei4]。"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "而家 / 幾 / 點 / 呀",
+    "我 / 聽日 / 八 / 點 / 返工",
+    "你 / 星期幾 / 最 / 忙 / 呀",
+    "我 / 由 / 八點 / 做 / 到 / 六點",
+    "你 / 得 / 唔 / 得閒 / 呀",
+    "唔好 / 遲到 / 呀"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[我平時七點起身|Ngo5 ping4 si4 cat1 dim2 hei2 san1]。",
+    "[巴士三點九到|Baa1 si2 saam1 dim2 gau2 dou3]。",
+    "[今個星期六你得唔得閒呀|Gam1 go3 sing1 kei4 luk6 nei5 dak1 m4 dak1 haan4 aa3]？",
+    "[我星期六日唔使返工|Ngo5 sing1 kei4 luk6 jat6 m4 sai2 faan1 gung1]。",
+    "[七點喺旺角地鐵站等|Cat1 dim2 hai2 Wong6 gok3 dei6 tit3 zaam6 dang2]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Kanton. Tulis dengan jyutping.",
+   "items": [
+    "Sekarang jam berapa?",
+    "Sekarang setengah empat.",
+    "Besok saya kerja jam delapan.",
+    "Hari ini saya libur.",
+    "Saya makan siang jam satu."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan jyutping.",
+   "items": [
+    "[而家二點|Ji4 gaa1 ji6 dim2]。",
+    "[我食飯聽日|Ngo5 sik6 faan6 ting1 jat6]。",
+    "[我做三點鐘|Ngo5 zou6 saam1 dim2 zung1]。",
+    "[我先食|Ngo5 sin1 sik6]。",
+    "[現在三點半|Jin6 zoi6 saam1 dim2 bun3]。"
+   ]
+  }
+ ],
+ "answers": [
+  "兩點 loeng5 dim2 — 三點半 saam1 dim2 bun3 — 三點一個字 saam1 dim2 jat1 go3 zi6 — 三點九 saam1 dim2 gau2 — 七點四 cat1 dim2 sei3 — 中午十二點三個字 zung1 ng5 sap6 ji6 dim2 saam1 go3 zi6",
+  "我聽日去旺角。 — 佢三點食飯。 — 我星期一返工。 — 我平時七點起身。 — 我哋下個星期見面。",
+  "而家 幾 點 呀 — 我 聽日 八 點 返工 — 你 星期幾 最 忙 呀 — 我 由 八點 做 到 六點 — 你 得 唔 得閒 呀 — 唔好 遲到 呀",
+  "Saya biasanya bangun jam tujuh. — Busnya datang jam 3:45. — Sabtu ini kamu senggang tidak? — Sabtu Minggu saya tidak perlu kerja. — Jam tujuh tunggu di stasiun MTR Mongkok.",
+  "Ji4 gaa1 gei2 dim2 aa3? — Ji4 gaa1 saam1 dim2 bun3. — Ngo5 ting1 jat6 baat3 dim2 faan1 gung1. — Ngo5 gam1 jat6 fong3 gaa3. — Ngo5 jat1 dim2 sik6 aan3.",
+  "Ji4 gaa1 loeng5 dim2. — Ngo5 ting1 jat6 sik6 faan6. — Ngo5 zou6 saam1 go3 zung1. — Ngo5 sik6 sin1. — Ji4 gaa1 saam1 dim2 bun3."
+ ],
+ "wave": "Lima menit sebelum Unit 6: tulis jadwalmu besok dalam bahasa Kanton — enam baris saja, tiap baris satu kalimat lengkap dengan jam di depan kata kerja. Bacakan keras-keras. Sesudah itu, ubah semuanya jadi bentuk kemarin dengan mengganti 聽日 jadi 琴日, dan perhatikan bahwa kata kerjanya tidak berubah sama sekali. Itulah seluruh sistem waktu Kanton, dalam lima menit."
+}

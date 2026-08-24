@@ -1,0 +1,333 @@
+{
+ "title": "Makan dan minum",
+ "title_target": "飲茶 — Jam2 caa4",
+ "goal": "Memesan di cha chaan teng dan di yum cha, membedakan 想 dan 要, mengatakan suka dengan 鍾意, dan meminta bon dengan 埋單 — semuanya dengan kalimat yang benar-benar diucapkan di Hong Kong.",
+ "bekal": [
+  "memesan makanan dan minuman dengan 要 dan 想",
+  "membedakan 食 dan 飲 — dua kata kerja yang tidak boleh tertukar",
+  "mengatakan suka dan tidak suka dengan 鍾意",
+  "memesan minuman dengan tambahan 走甜, 少冰, 熱",
+  "meminta bon: 唔該埋單"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 1 — Di cha chaan teng",
+   "intro": "Andi dan Wong Lai makan siang di 茶餐廳, kedai khas Hong Kong yang menyajikan segalanya dengan cepat. Pelayan bicara cepat dan singkat — itu bukan ketidakramahan, itu memang gayanya.",
+   "lines": [
+    { "speaker": "伙記:", "text": "[幾多位|Gei2 do1 wai2][呀|aa3]？", "id": "Berapa orang?", "literal": "berapa — banyak — penggolong-orang — ya." },
+    { "speaker": "安迪:", "text": "[兩位|Loeng5 wai2]。", "id": "Dua.", "literal": "dua — penggolong-orang." },
+    { "speaker": "伙記:", "text": "[呢邊坐|Ni1 bin1 co5]。[飲咩呀|Jam2 me1 aa3]？", "id": "Duduk sini. Minum apa?", "literal": "ini — sisi — duduk. minum — apa — ya." },
+    { "speaker": "安迪:", "text": "[我要|Ngo5 jiu3][一杯凍檸茶|jat1 bui1 dung3 ning4 caa4]，[少甜|siu2 tim4]。", "id": "Saya es teh lemon, kurang manis.", "literal": "saya — mau — satu — gelas — dingin — lemon — teh, sedikit — manis." },
+    { "speaker": "黃麗:", "text": "[我要|Ngo5 jiu3][熱奶茶|jit6 naai5 caa4]。", "id": "Saya teh susu panas.", "literal": "saya — mau — panas — susu — teh." },
+    { "speaker": "伙記:", "text": "[食咩呀|Sik6 me1 aa3]？", "id": "Makan apa?", "literal": "makan — apa — ya." },
+    { "speaker": "安迪:", "text": "[我想食|Ngo5 soeng2 sik6][叉燒飯|caa1 siu1 faan6]。", "id": "Saya mau nasi char siu.", "literal": "saya — ingin — makan — char-siu — nasi." },
+    { "speaker": "黃麗:", "text": "[我要|Ngo5 jiu3][一碗雲吞麵|jat1 wun2 wan4 tan1 min6]，[唔該|m4 goi1]。", "id": "Saya semangkuk mi pangsit, ya.", "literal": "saya — mau — satu — mangkuk — pangsit — mi, tolong." },
+    { "speaker": "伙記:", "text": "[好|Hou2]，[等陣呀|dang2 zan6 aa3]。", "id": "Oke, tunggu sebentar.", "literal": "baik, tunggu — sebentar — ya." },
+    { "speaker": "安迪:", "text": "[嘩|Waa4]，[好好味|hou2 hou2 mei6][呀|aa3]！", "id": "Wah, enak banget!", "literal": "wah, penyangga — baik — rasa — ya." },
+    { "speaker": "黃麗:", "text": "[我食飽喇|Ngo5 sik6 baau2 laa3]。[唔該埋單|M4 goi1 maai4 daan1]！", "id": "Saya sudah kenyang. Bon, ya!", "literal": "saya — makan — kenyang — sudah. tolong — tutup — bon." },
+    { "speaker": "伙記:", "text": "[一共|Jat1 gung6][一百二十蚊|jat1 baak3 ji6 sap6 man1]，[多謝|do1 ze6]。", "id": "Totalnya seratus dua puluh, terima kasih.", "literal": "satu — bersama — satu — ratus — dua — puluh — dolar, terima-kasih." }
+   ],
+   "notes": [
+    "**⚠️ [食|sik6] untuk makanan, [飲|jam2] untuk minuman — dan keduanya tidak pernah tertukar.** Ini kata Kanton asli; Mandarin memakai 吃 dan 喝. [食飯|sik6 faan6] = makan; [飲茶|jam2 caa4] = minum teh. 🇭🇰 Perhatikan juga bahwa 食 dipakai untuk hal yang di bahasa Indonesia bukan makanan: [食煙|sik6 jin1] = merokok, [食藥|sik6 joek6] = minum obat.",
+    "**[伙記|fo2 gei3] adalah sebutan untuk pelayan di kedai**, dan kamu boleh memanggilnya begitu. 🇭🇰 Tapi cara paling aman dan paling sering dipakai hanya satu kata: [唔該|M4 goi1]！ diucapkan agak keras. Itu sudah cukup untuk memanggil siapa pun di seluruh Hong Kong.",
+    "**[少甜|siu2 tim4] dan saudara-saudaranya adalah bahasa rahasia cha chaan teng.** [少甜|siu2 tim4] = kurangi gula; [走甜|zau2 tim4] = tanpa gula sama sekali; [少冰|siu2 bing1] = es sedikit; [走冰|zau2 bing1] = tanpa es; [飛邊|fei1 bin1] = roti tanpa kulit. [走|zau2] harfiah “pergi”, dan di menu berarti “hilangkan”.",
+    "**[等陣|dang2 zan6] = sebentar.** Kata yang akan kamu dengar setiap kali memesan apa pun. Bentuk lain yang sama sering: [等一陣|dang2 jat1 zan6] dan [等陣間|dang2 zan6 gaan1].",
+    "**[好味|hou2 mei6] = enak, dan perhatikan bahwa 好 muncul dua kali di [好好味|hou2 hou2 mei6].** Yang pertama adalah penyangga wajib yang sudah kamu kenal dari Unit 1; yang kedua bagian dari kata 好味 itu sendiri. Jadi 好好味 = “enak sekali”, bukan salah ketik.",
+    "**[埋單|maai4 daan1] = minta bon.** Harfiah “menutup daftar”. ⚠️ Di Mandarin kata ini menjadi 買單 dengan aksara “beli” — itu salah kaprah yang lahir dari salah dengar. Bentuk Kanton yang benar adalah 埋單, dan 埋 di sini berarti “merapatkan, menutup”.",
+    "**[飽|baau2] = kenyang, [肚餓|tou5 ngo6] = lapar.** Keduanya dipakai dengan 好: [我好肚餓|Ngo5 hou2 tou5 ngo6] = saya lapar sekali. [我食飽喇|Ngo5 sik6 baau2 laa3] = saya sudah kenyang — perhatikan 喇 yang menandai perubahan keadaan."
+   ],
+   "grammars": [
+    {
+     "title": "想 dan 要 — ingin dan mau",
+     "body": [
+      "Keduanya diterjemahkan “mau” dalam bahasa Indonesia, tapi di Kanton jaraknya jelas. [想|soeng2] adalah **keinginan** yang belum tentu jadi. [要|jiu3] adalah **keputusan** yang sudah diambil — dan itulah sebabnya 要 yang dipakai saat memesan."
+     ],
+     "tables": [
+      {
+       "head": ["Kalimat", "Arti", "Nuansanya"],
+       "rows": [
+        ["[我想食飯|Ngo5 soeng2 sik6 faan6]。", "Saya ingin makan.", "Baru terpikir, belum tentu jadi"],
+        ["[我要食飯|Ngo5 jiu3 sik6 faan6]。", "Saya mau makan.", "Sudah diputuskan"],
+        ["[我想去日本|Ngo5 soeng2 heoi3 Jat6 bun2]。", "Saya ingin ke Jepang.", "Cita-cita"],
+        ["[我要去日本|Ngo5 jiu3 heoi3 Jat6 bun2]。", "Saya harus ke Jepang.", "Sudah ada urusan di sana"],
+        ["[你想食咩呀|Nei5 soeng2 sik6 me1 aa3]？", "Kamu ingin makan apa?", "Bertanya, memberi pilihan"],
+        ["[要唔要呀|Jiu3 m4 jiu3 aa3]？", "Mau tidak?", "Meminta keputusan"]
+       ]
+      }
+     ],
+     "after": [
+      "**Menyangkalnya: [唔想|m4 soeng2] (tidak ingin) dan [唔要|m4 jiu3] (tidak mau).** Untuk menolak tawaran dengan halus, yang paling wajar justru bukan keduanya melainkan [唔使喇|m4 sai2 laa3] — “tidak usah”.",
+      "🇭🇰 **Waktu memesan, banyak orang Hong Kong bahkan membuang kata kerjanya sama sekali.** [一杯凍檸茶，唔該|Jat1 bui1 dung3 ning4 caa4, m4 goi1]。 — satu es teh lemon, terima kasih. Itu bukan bahasa yang malas; itu yang paling wajar di kedai yang ramai."
+     ]
+    },
+    {
+     "title": "鍾意 — suka",
+     "body": [
+      "[鍾意|zung1 ji3] menutupi “suka” dan “cinta” sekaligus. Ia bisa diikuti kata benda maupun kata kerja, tanpa perubahan bentuk apa pun."
+     ],
+     "tables": [
+      {
+       "head": ["Kalimat", "Arti"],
+       "rows": [
+        ["[我鍾意點心|Ngo5 zung1 ji3 dim2 sam1]。", "Saya suka dim sum."],
+        ["[我好鍾意飲茶|Ngo5 hou2 zung1 ji3 jam2 caa4]。", "Saya sangat suka yum cha."],
+        ["[我唔鍾意辣|Ngo5 m4 zung1 ji3 laat6]。", "Saya tidak suka pedas."],
+        ["[你鍾唔鍾意呀|Nei5 zung1 m4 zung1 ji3 aa3]？", "Kamu suka tidak?"],
+        ["[我最鍾意燒賣|Ngo5 zeoi3 zung1 ji3 siu1 maai2]。", "Yang paling saya suka siu mai."]
+       ]
+      }
+     ],
+     "after": [
+      "**Perhatikan bentuk pertanyaannya: [鍾唔鍾意|zung1 m4 zung1 ji3].** Kata yang dua suku kata dipecah — suku kata pertamanya diulang, disisipi 唔. Aturan ini berlaku untuk semua kata kerja dua suku kata: [識唔識|sik1 m4 sik1] (kenal tidak), [知唔知|zi1 m4 zi1] (tahu tidak), [鐘唔鍾意|zung1 m4 zung1 ji3].",
+      "⚠️ **[鍾意|zung1 ji3] kepada orang berarti suka dalam arti romantis.** [我鍾意你|Ngo5 zung1 ji3 nei5] = saya suka kamu — dan itu pernyataan yang serius. Untuk “saya suka orangnya” dalam arti biasa, pakai [佢好好人|keoi5 hou2 hou2 jan4] (dia orang baik)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "對話 2 — Diajak yum cha",
+   "intro": "Wong Lai mengajak Andi yum cha untuk pertama kalinya. Yum cha adalah acara sosial, bukan sekadar makan — dan kosakatanya sendiri sudah setengah budaya Hong Kong.",
+   "lines": [
+    { "speaker": "黃麗:", "text": "[聽日|Ting1 jat6][一齊去飲茶|jat1 cai4 heoi3 jam2 caa4]，[好唔好|hou2 m4 hou2]？", "id": "Besok yum cha bareng, yuk?", "literal": "besok — bersama — pergi — minum — teh, baik — tidak — baik." },
+    { "speaker": "安迪:", "text": "[好呀|Hou2 aa3]！[我未飲過茶|Ngo5 mei6 jam2 gwo3 caa4]。", "id": "Boleh! Saya belum pernah yum cha.", "literal": "baik — ya. saya — belum — minum — pernah — teh." },
+    { "speaker": "黃麗:", "text": "[咁|Gam2][你想食|nei5 soeng2 sik6][咩點心|me1 dim2 sam1][呀|aa3]？", "id": "Kalau begitu, mau makan dim sum apa?", "literal": "begitu — kamu — ingin — makan — apa — dim-sum — ya." },
+    { "speaker": "安迪:", "text": "[我唔知|Ngo5 m4 zi1]，[你揀啦|nei5 gaan2 laa1]。", "id": "Saya tidak tahu, kamu saja yang pilih.", "literal": "saya — tidak — tahu, kamu — pilih — dong." },
+    { "speaker": "黃麗:", "text": "[蝦餃|Haa1 gaau2]、[燒賣|siu1 maai2]、[叉燒包|caa1 siu1 baau1] — [呢三樣|ni1 saam1 joeng6][一定要食|jat1 ding6 jiu3 sik6]。", "id": "Har gow, siu mai, char siu bao — tiga ini wajib.", "literal": "har-gow, siu-mai, char-siu — bakpau — ini — tiga — macam — pasti — harus — makan." },
+    { "speaker": "安迪:", "text": "[你鍾唔鍾意|Nei5 zung1 m4 zung1 ji3][腸粉|coeng2 fan2][呀|aa3]？", "id": "Kamu suka cheung fun tidak?", "literal": "kamu — suka — tidak — suka — usus — tepung — ya." },
+    { "speaker": "黃麗:", "text": "[好鍾意|Hou2 zung1 ji3]！[我最鍾意|Ngo5 zeoi3 zung1 ji3][蝦腸|haa1 coeng2]。", "id": "Suka banget! Yang paling saya suka cheung fun udang.", "literal": "penyangga — suka. saya — paling — suka — udang — usus." },
+    { "speaker": "安迪:", "text": "[我唔食得辣|Ngo5 m4 sik6 dak1 laat6]，[得唔得呀|dak1 m4 dak1 aa3]？", "id": "Saya tidak tahan pedas, tidak apa-apa?", "literal": "saya — tidak — makan — bisa — pedas, bisa — tidak — bisa — ya." },
+    { "speaker": "黃麗:", "text": "[冇問題|Mou5 man6 tai4]，[點心唔辣㗎|dim2 sam1 m4 laat6 gaa3]。", "id": "Tidak masalah, dim sum memang tidak pedas.", "literal": "tidak-ada — masalah, dim-sum — tidak — pedas — penegas." },
+    { "speaker": "安迪:", "text": "[咁好啦|Gam2 hou2 laa1]。[幾點呀|Gei2 dim2 aa3]？", "id": "Kalau begitu oke. Jam berapa?", "literal": "begitu — baik — dong. berapa — jam — ya." },
+    { "speaker": "黃麗:", "text": "[十點|Sap6 dim2]，[喺旺角等|hai2 Wong6 gok3 dang2]。[唔好遲到呀|M4 hou2 ci4 dou3 aa3]！", "id": "Jam sepuluh, ketemu di Mongkok. Jangan telat, ya!", "literal": "sepuluh — jam, di — Mongkok — tunggu. jangan — terlambat — ya." }
+   ],
+   "notes": [
+    "**[飲茶|jam2 caa4] harfiah “minum teh”, tapi maksudnya adalah seluruh acaranya**: pergi ke restoran pagi atau siang, memesan berkeranjang-keranjang dim sum, dan duduk berjam-jam. 🇭🇰 Kalau seseorang mengajakmu 飲茶, ia tidak sedang menawarkan segelas teh — ia mengajakmu makan bersama.",
+    "**[咁|gam2] di awal kalimat = “kalau begitu”.** Ia menyambung apa yang baru dikatakan lawan bicara dengan apa yang akan kamu katakan. ⚠️ Jangan bingung dengan [咁|gam3] bernada 3 yang berarti “se-…begitu”: [咁貴|gam3 gwai3] = semahal itu. Aksaranya sama, nadanya berbeda, artinya jauh.",
+    "**[揀|gaan2] = memilih.** Kata Kanton asli yang tidak ada di Mandarin (yang memakai 選). [你揀啦|Nei5 gaan2 laa1] = kamu saja yang pilih — kalimat yang akan sering kamu ucapkan sebagai pemula.",
+    "**[樣|joeng6] adalah penggolong untuk “macam, jenis”.** [三樣嘢|saam1 joeng6 je5] = tiga macam barang. [呢三樣|ni1 saam1 joeng6] = ketiga macam ini.",
+    "**[一定|jat1 ding6] = pasti, harus.** [一定要食|jat1 ding6 jiu3 sik6] = wajib dicoba. Menyangkalnya: [唔一定|m4 jat1 ding6] = belum tentu.",
+    "**[食得辣|sik6 dak1 laat6] = tahan pedas.** Pola kata kerja + [得|dak1] + kata sifat berarti “mampu melakukannya sampai tingkat itu”. [佢跑得快|Keoi5 paau2 dak1 faai3] = dia larinya cepat. Menyangkalnya menaruh 唔 di depan kata kerjanya: [唔食得辣|m4 sik6 dak1 laat6].",
+    "**[唔好|m4 hou2] + kata kerja = “jangan”.** [唔好遲到|M4 hou2 ci4 dou3] = jangan terlambat; [唔好講嘢|M4 hou2 gong2 je5] = jangan bicara. ⚠️ Ini berbeda dari [唔好|m4 hou2] yang berarti “tidak baik”; yang membedakan adalah apa yang mengikutinya."
+   ],
+   "grammars": [
+    {
+     "title": "Mengajak dan menanggapi ajakan",
+     "body": [
+      "Ajakan di Kanton hampir selalu berakhir dengan pertanyaan A-唔-A atau partikel 啦. Berikut bentuk yang paling sering dipakai, dari yang paling ringan sampai yang paling mendesak."
+     ],
+     "tables": [
+      {
+       "head": ["Ajakan", "Arti", "Nuansanya"],
+       "rows": [
+        ["[一齊去飲茶，好唔好|Jat1 cai4 heoi3 jam2 caa4, hou2 m4 hou2]？", "Yum cha bareng, yuk?", "Sopan, memberi ruang menolak"],
+        ["[一齊去啦|Jat1 cai4 heoi3 laa1]。", "Ayo pergi bareng.", "Ramah, agak mendesak"],
+        ["[去唔去呀|Heoi3 m4 heoi3 aa3]？", "Ikut tidak?", "Netral, langsung"],
+        ["[不如我哋去飲茶|Bat1 jyu4 ngo5 dei6 heoi3 jam2 caa4]。", "Gimana kalau kita yum cha.", "Mengusulkan"]
+       ]
+      },
+      {
+       "head": ["Menanggapi", "Arti"],
+       "rows": [
+        ["[好呀|Hou2 aa3]！", "Boleh!"],
+        ["[冇問題|Mou5 man6 tai4]。", "Tidak masalah."],
+        ["[咁好啦|Gam2 hou2 laa1]。", "Kalau begitu oke."],
+        ["[唔得呀|M4 dak1 aa3]，[我要返工|ngo5 jiu3 faan1 gung1]。", "Tidak bisa, saya harus kerja."],
+        ["[遲啲啦|Ci4 di1 laa1]。", "Kapan-kapan saja."],
+        ["[等我諗下先|Dang2 ngo5 nam2 haa5 sin1]。", "Saya pikir dulu."]
+       ]
+      }
+     ],
+     "after": [
+      "**[不如|bat1 jyu4] adalah cara paling halus mengusulkan sesuatu.** Harfiah “tidak sebaik”, tapi dipakai persis seperti “gimana kalau”. [不如聽日啦|Bat1 jyu4 ting1 jat6 laa1]。 = gimana kalau besok saja.",
+      "🇭🇰 **Menolak langsung dianggap kasar; sertakan alasannya.** [唔得呀|M4 dak1 aa3] sendirian terdengar dingin. Yang wajar adalah [唔得呀，我要返工|M4 dak1 aa3, ngo5 jiu3 faan1 gung1] — dengan alasan, sekalipun alasannya samar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Cha chaan teng: memesan seperti orang lokal",
+   "blocks": [
+    { "type": "p", "text": "茶餐廳 *caa4 caan1 teng1* adalah lembaga Hong Kong: kedai yang menyajikan mi, nasi, roti panggang, teh susu, dan kopi dalam hitungan menit. Menunya ditulis singkat, pelayannya bicara cepat, dan orang lokal memesan dengan kalimat yang hampir tidak punya kata kerja." },
+    { "type": "tabel", "head": ["Menu", "Kanton", "Isinya"], "rows": [
+     ["set sarapan", "[早餐|zou2 caan1]", "Sampai kira-kira pukul sebelas"],
+     ["set siang", "[午餐|ng5 caan1]", "Nasi/mi + minuman"],
+     ["set tetap", "[常餐|soeng4 caan1]", "Tersedia sepanjang hari"],
+     ["set spesial", "[特餐|dak6 caan1]", "Ganti tiap hari"],
+     ["nasi char siu", "[叉燒飯|caa1 siu1 faan6]", "Babi panggang manis di atas nasi"],
+     ["mi pangsit", "[雲吞麵|wan4 tan1 min6]", "Kuah bening, pangsit udang"],
+     ["mi instan telur", "[餐蛋麵|caan1 daan2 min6]", "Mi instan, ham, telur"],
+     ["roti mentega gula", "[西多士|sai1 do1 si2]", "French toast versi Hong Kong"],
+     ["teh susu", "[奶茶|naai5 caa4]", "Teh susu kental khas Hong Kong"],
+     ["kopi campur teh", "[鴛鴦|jyun1 joeng1]", "Setengah kopi setengah teh susu"],
+     ["es teh lemon", "[凍檸茶|dung3 ning4 caa4]", "Lemon utuh diperas di gelas"],
+     ["air lemon panas", "[熱檸水|jit6 ning4 seoi2]", "Diminum kalau tenggorokan sakit"]
+    ] },
+    { "type": "kotak", "title": "Bahasa rahasia menu", "items": [
+     "[走甜|zau2 tim4] — tanpa gula. [少甜|siu2 tim4] — kurang manis.",
+     "[走冰|zau2 bing1] — tanpa es. [少冰|siu2 bing1] — es sedikit.",
+     "[飛邊|fei1 bin1] — kulit roti dibuang.",
+     "[加底|gaa1 dai2] — nasi/mi ditambah. [走青|zau2 ceng1] — tanpa daun bawang.",
+     "[堂食|tong4 sik6] — makan di tempat. [外賣|ngoi6 maai6] — dibungkus. Pelayan akan bertanya [堂食定外賣呀|Tong4 sik6 ding6 ngoi6 maai6 aa3]？",
+     "🇭🇰 [搭枱|daap3 toi2] — berbagi meja dengan orang asing. Di jam sibuk ini normal dan tidak bisa ditolak; kamu cukup mengangguk."
+    ] }
+   ]
+  },
+  {
+   "title": "Yum cha: nama yang perlu kamu kenal",
+   "blocks": [
+    { "type": "tabel", "head": ["Dim sum", "Kanton", "Isinya"], "rows": [
+     ["har gow", "[蝦餃|haa1 gaau2]", "Udang berbalut kulit bening"],
+     ["siu mai", "[燒賣|siu1 maai2]", "Babi dan udang, kulit kuning terbuka"],
+     ["char siu bao", "[叉燒包|caa1 siu1 baau1]", "Bakpau isi babi panggang manis"],
+     ["cheung fun", "[腸粉|coeng2 fan2]", "Gulungan tepung beras; isian udang atau daging"],
+     ["lo mai gai", "[糯米雞|no6 mai5 gai1]", "Ketan berisi ayam, dibungkus daun teratai"],
+     ["kaki ayam", "[鳳爪|fung6 zaau2]", "Direbus saus tausi — harfiah “cakar burung hong”"],
+     ["egg tart", "[蛋撻|daan6 taat1]", "Ditutup di akhir, sebagai penutup"],
+     ["bubur", "[粥|zuk1]", "Bubur beras, sering berisi ikan atau daging"]
+    ] },
+    { "type": "tabel", "head": ["Kalimat di meja", "Arti"], "rows": [
+     ["[飲咩茶呀|Jam2 me1 caa4 aa3]？", "Mau teh apa? (jawab: [普洱|pou2 nei2] / [香片|hoeng1 pin2] / [壽眉|sau6 mei4])"],
+     ["[唔該，加水|M4 goi1, gaa1 seoi2]。", "Tolong tambah air panas."],
+     ["[唔該，一籠蝦餃|M4 goi1, jat1 lung4 haa1 gaau2]。", "Minta sekeranjang har gow."],
+     ["[夠喇，多謝|Gau3 laa3, do1 ze6]。", "Sudah cukup, terima kasih."],
+     ["[唔該埋單|M4 goi1 maai4 daan1]。", "Minta bon."]
+    ] },
+    { "type": "kotak", "title": "Dua kebiasaan meja yang perlu kamu tahu", "items": [
+     "🇭🇰 **Mengetuk meja dengan dua jari = terima kasih.** Kalau seseorang menuangkan teh ke cawanmu, ketuk meja dua kali dengan telunjuk dan jari tengah. Kamu tidak perlu berkata apa-apa, dan tidak mengetuk sama sekali dianggap agak dingin.",
+     "**Tutup teko dibuka miring = minta tambah air.** Angkat tutupnya dan sandarkan di bibir teko; pelayan akan datang mengisi tanpa kamu perlu memanggil.",
+     "[加一|gaa1 jat1] — biaya layanan sepuluh persen, ditambahkan otomatis di restoran yang lebih besar. Di cha chaan teng biasanya tidak ada, dan orang Hong Kong umumnya tidak memberi tip di luar itu."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "食", "baca": "sik6", "id": "makan" },
+  { "zh": "飲", "baca": "jam2", "id": "minum" },
+  { "zh": "飲茶", "baca": "jam2 caa4", "id": "yum cha" },
+  { "zh": "飯", "baca": "faan6", "id": "nasi, makanan" },
+  { "zh": "麵", "baca": "min6", "id": "mi" },
+  { "zh": "粥", "baca": "zuk1", "id": "bubur" },
+  { "zh": "茶", "baca": "caa4", "id": "teh" },
+  { "zh": "水", "baca": "seoi2", "id": "air" },
+  { "zh": "奶茶", "baca": "naai5 caa4", "id": "teh susu" },
+  { "zh": "咖啡", "baca": "gaa3 fe1", "id": "kopi" },
+  { "zh": "凍", "baca": "dung3", "id": "dingin, es" },
+  { "zh": "熱", "baca": "jit6", "id": "panas" },
+  { "zh": "甜", "baca": "tim4", "id": "manis" },
+  { "zh": "辣", "baca": "laat6", "id": "pedas" },
+  { "zh": "鹹", "baca": "haam4", "id": "asin" },
+  { "zh": "酸", "baca": "syun1", "id": "asam" },
+  { "zh": "好味", "baca": "hou2 mei6", "id": "enak" },
+  { "zh": "飽", "baca": "baau2", "id": "kenyang" },
+  { "zh": "肚餓", "baca": "tou5 ngo6", "id": "lapar" },
+  { "zh": "想", "baca": "soeng2", "id": "ingin" },
+  { "zh": "鍾意", "baca": "zung1 ji3", "id": "suka" },
+  { "zh": "最", "baca": "zeoi3", "id": "paling" },
+  { "zh": "揀", "baca": "gaan2", "id": "memilih" },
+  { "zh": "知", "baca": "zi1", "id": "tahu" },
+  { "zh": "杯", "baca": "bui1", "id": "gelas (penggolong)" },
+  { "zh": "碗", "baca": "wun2", "id": "mangkuk (penggolong)" },
+  { "zh": "籠", "baca": "lung4", "id": "keranjang bambu (penggolong)" },
+  { "zh": "樣", "baca": "joeng6", "id": "macam, jenis" },
+  { "zh": "茶餐廳", "baca": "caa4 caan1 teng1", "id": "kedai cha chaan teng" },
+  { "zh": "伙記", "baca": "fo2 gei3", "id": "pelayan" },
+  { "zh": "點心", "baca": "dim2 sam1", "id": "dim sum" },
+  { "zh": "蝦餃", "baca": "haa1 gaau2", "id": "har gow" },
+  { "zh": "燒賣", "baca": "siu1 maai2", "id": "siu mai" },
+  { "zh": "叉燒", "baca": "caa1 siu1", "id": "char siu" },
+  { "zh": "包", "baca": "baau1", "id": "bakpau" },
+  { "zh": "腸粉", "baca": "coeng2 fan2", "id": "cheung fun" },
+  { "zh": "雲吞麵", "baca": "wan4 tan1 min6", "id": "mi pangsit" },
+  { "zh": "埋單", "baca": "maai4 daan1", "id": "minta bon" },
+  { "zh": "堂食", "baca": "tong4 sik6", "id": "makan di tempat" },
+  { "zh": "外賣", "baca": "ngoi6 maai6", "id": "dibungkus, take away" },
+  { "zh": "走", "baca": "zau2", "id": "hilangkan; pergi" },
+  { "zh": "少", "baca": "siu2", "id": "sedikit, kurangi" },
+  { "zh": "加", "baca": "gaa1", "id": "tambah" },
+  { "zh": "夠", "baca": "gau3", "id": "cukup" },
+  { "zh": "等陣", "baca": "dang2 zan6", "id": "sebentar" },
+  { "zh": "一齊", "baca": "jat1 cai4", "id": "bersama-sama" },
+  { "zh": "不如", "baca": "bat1 jyu4", "id": "bagaimana kalau" },
+  { "zh": "一定", "baca": "jat1 ding6", "id": "pasti, harus" },
+  { "zh": "咁", "baca": "gam2", "id": "kalau begitu" },
+  { "zh": "唔好", "baca": "m4 hou2", "id": "jangan" },
+  { "zh": "遲到", "baca": "ci4 dou3", "id": "terlambat" },
+  { "zh": "煙", "baca": "jin1", "id": "rokok" },
+  { "zh": "生果", "baca": "saang1 gwo2", "id": "buah" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan 食 atau 飲.",
+   "items": [
+    "[我想|Ngo5 soeng2] ___ [叉燒飯|caa1 siu1 faan6]。",
+    "[你| Nei5] ___ [咩茶呀|me1 caa4 aa3]？",
+    "[我唔|Ngo5 m4] ___ [得辣|dak1 laat6]。",
+    "[佢日日|Keoi5 jat6 jat6] ___ [咖啡|gaa3 fe1]。",
+    "[我哋去|Ngo5 dei6 heoi3] ___ [茶啦|caa4 laa1]。",
+    "[唔該|M4 goi1]，[我要一碗|ngo5 jiu3 jat1 wun2] ___ [嘅麵|ge3 min6]。"
+   ]
+  },
+  {
+   "prompt": "Pilih 想 atau 要 sesuai nuansanya.",
+   "items": [
+    "[我|Ngo5] ___ [一杯凍檸茶|jat1 bui1 dung3 ning4 caa4]，[唔該|m4 goi1]。 (memesan)",
+    "[我|Ngo5] ___ [去日本旅行|heoi3 Jat6 bun2 leoi5 hang4]。 (cita-cita)",
+    "[你|Nei5] ___ [食咩呀|sik6 me1 aa3]？ (menawarkan pilihan)",
+    "[我|Ngo5] ___ [返工喇|faan1 gung1 laa3]。 (keharusan)",
+    "[佢|Keoi5] ___ [學廣東話|hok6 Gwong2 dung1 waa2]。 (keinginan)"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "我 / 要 / 一 / 杯 / 凍 / 檸茶",
+    "你 / 鍾 / 唔 / 鍾意 / 點心 / 呀",
+    "唔該 / 埋單",
+    "我 / 最 / 鍾意 / 蝦餃",
+    "聽日 / 一齊 / 去 / 飲茶 / 好唔好",
+    "我 / 唔 / 食 / 得 / 辣"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[我食飽喇，唔該埋單|Ngo5 sik6 baau2 laa3, m4 goi1 maai4 daan1]。",
+    "[凍檸茶走甜，唔該|Dung3 ning4 caa4 zau2 tim4, m4 goi1]。",
+    "[你想食咩點心呀|Nei5 soeng2 sik6 me1 dim2 sam1 aa3]？",
+    "[堂食定外賣呀|Tong4 sik6 ding6 ngoi6 maai6 aa3]？",
+    "[我唔鍾意辣，但係好鍾意甜|Ngo5 m4 zung1 ji3 laat6, daan6 hai6 hou2 zung1 ji3 tim4]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Kanton. Tulis dengan jyutping.",
+   "items": [
+    "Saya mau semangkuk mi pangsit.",
+    "Saya sangat suka dim sum.",
+    "Enak sekali!",
+    "Besok yum cha bareng, yuk?",
+    "Minta bon, ya."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan jyutping.",
+   "items": [
+    "[我飲叉燒飯|Ngo5 jam2 caa1 siu1 faan6]。",
+    "[我食茶|Ngo5 sik6 caa4]。",
+    "[你鍾意唔鍾意呀|Nei5 zung1 ji3 m4 zung1 ji3 aa3]？",
+    "[我要買單|Ngo5 jiu3 maai5 daan1]。",
+    "[我好鍾意好味|Ngo5 hou2 zung1 ji3 hou2 mei6]。"
+   ]
+  }
+ ],
+ "answers": [
+  "食 — 飲 — 食 — 飲 — 飲 — 食",
+  "要 — 想 — 想 — 要 — 想",
+  "我 要 一 杯 凍 檸茶 — 你 鍾 唔 鍾意 點心 呀 — 唔該 埋單 — 我 最 鍾意 蝦餃 — 聽日 一齊 去 飲茶 好唔好 — 我 唔 食 得 辣",
+  "Saya sudah kenyang, minta bon. — Es teh lemon tanpa gula, ya. — Kamu mau makan dim sum apa? — Makan di tempat atau dibungkus? — Saya tidak suka pedas, tapi sangat suka manis.",
+  "Ngo5 jiu3 jat1 wun2 wan4 tan1 min6. — Ngo5 hou2 zung1 ji3 dim2 sam1. — Hou2 hou2 mei6 aa3! — Ting1 jat6 jat1 cai4 heoi3 jam2 caa4, hou2 m4 hou2? — M4 goi1 maai4 daan1.",
+  "Ngo5 sik6 caa1 siu1 faan6. — Ngo5 jam2 caa4. — Nei5 zung1 m4 zung1 ji3 aa3? — Ngo5 jiu3 maai4 daan1. — Ngo5 hou2 zung1 ji3 di1 hou2 mei6 je5."
+ ],
+ "wave": "Lima menit sebelum Unit 5: pesan makan siangmu hari ini dalam bahasa Kanton — di kepala boleh, tapi lebih baik keras-keras. Sebutkan minumannya lengkap dengan tambahan (走甜, 少冰), makanannya dengan penggolong yang benar (一碗, 一杯), lalu tutup dengan 唔該. Sesudah itu, ulangi harga dari Unit 3: berapa yang harus kamu bayar untuk pesanan itu?"
+}

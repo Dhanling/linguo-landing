@@ -1,0 +1,318 @@
+{
+ "title": "Badan, sakit, dan dokter",
+ "title_target": "邊度唔舒服呀？ — Bin1 dou6 m4 syu1 fuk6 aa3?",
+ "goal": "Menyebut bagian tubuh dan keluhan, berbicara dengan dokter dan apoteker, memberi saran dengan 應該, dan melarang dengan 唔好.",
+ "bekal": [
+  "menyebut bagian tubuh dan mengeluh sakit dengan 痛",
+  "menjawab pertanyaan dokter tentang gejala dan lamanya",
+  "memberi saran dengan 應該 dan 最好",
+  "melarang dengan 唔好 dan 唔可以",
+  "membeli obat di 藥房"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 1 — Di klinik",
+   "intro": "Andi ke klinik karena demam. Pertanyaan dokter di Hong Kong hampir selalu urutan yang sama: apa yang sakit, sejak kapan, gejala lain, alergi.",
+   "lines": [
+    { "speaker": "醫生:", "text": "[邊度唔舒服呀|Bin1 dou6 m4 syu1 fuk6 aa3]？", "id": "Bagian mana yang tidak enak?", "literal": "mana — tempat — tidak — nyaman — ya." },
+    { "speaker": "安迪:", "text": "[我頭痛|Ngo5 tau4 tung3]，[仲有啲發燒|zung6 jau5 di1 faat3 siu1]。", "id": "Kepala saya sakit, dan agak demam.", "literal": "saya — kepala — sakit, masih — ada — sedikit — keluar — panas." },
+    { "speaker": "醫生:", "text": "[幾時開始㗎|Gei2 si4 hoi1 ci2 gaa3]？", "id": "Mulai kapan?", "literal": "berapa — waktu — buka — mula — penegas." },
+    { "speaker": "安迪:", "text": "[前日開始|Cin4 jat6 hoi1 ci2]。[琴晚|Kam4 maan5][瞓唔着|fan3 m4 zoek6]。", "id": "Mulai kemarin lusa. Semalam tidak bisa tidur.", "literal": "kemarin-lusa — buka — mula. kemarin — malam — tidur — tidak — lekat." },
+    { "speaker": "醫生:", "text": "[有冇咳呀|Jau5 mou5 kat1 aa3]？[喉嚨痛唔痛|Hau4 lung4 tung3 m4 tung3]？", "id": "Batuk tidak? Tenggorokan sakit tidak?", "literal": "ada — tidak-ada — batuk — ya. tenggorokan — sakit — tidak — sakit." },
+    { "speaker": "安迪:", "text": "[有少少咳|Jau5 siu2 siu2 kat1]，[喉嚨都痛|hau4 lung4 dou1 tung3]。[仲流鼻水|Zung6 lau4 bei6 seoi2]。", "id": "Batuk sedikit, tenggorokan juga sakit. Hidung meler juga.", "literal": "ada — sedikit — sedikit — batuk, tenggorokan — juga — sakit. masih — mengalir — hidung — air." },
+    { "speaker": "醫生:", "text": "[有冇肚痛|Jau5 mou5 tou5 tung3]？[有冇嘔呀|Jau5 mou5 au2 aa3]？", "id": "Sakit perut tidak? Muntah tidak?", "literal": "ada — tidak-ada — perut — sakit. ada — tidak-ada — muntah — ya." },
+    { "speaker": "安迪:", "text": "[冇|Mou5]。[但係|Daan6 hai6][冇乜胃口|mou5 mat1 wai6 hau2]。", "id": "Tidak. Tapi tidak ada nafsu makan.", "literal": "tidak-ada. tetapi — tidak-ada — apa — lambung — mulut." },
+    { "speaker": "醫生:", "text": "[你有冇藥物敏感呀|Nei5 jau5 mou5 joek6 mat6 man5 gam2 aa3]？", "id": "Anda punya alergi obat?", "literal": "kamu — ada — tidak-ada — obat — benda — peka — rasa — ya." },
+    { "speaker": "安迪:", "text": "[冇|Mou5]。[嚴唔嚴重呀|Jim4 m4 jim4 zung6 aa3]？", "id": "Tidak ada. Parah tidak?", "literal": "tidak-ada. berat — tidak — berat — parah — ya." },
+    { "speaker": "醫生:", "text": "[唔嚴重|M4 jim4 zung6]，[係傷風|hai6 soeng1 fung1]。[你應該休息兩日|Nei5 jing1 goi1 jau1 sik1 loeng5 jat6]，[飲多啲水|jam2 do1 di1 seoi2]。", "id": "Tidak parah, cuma masuk angin. Anda harus istirahat dua hari, banyak minum air.", "literal": "tidak — berat — parah, adalah — luka — angin. kamu — seharusnya — istirahat — dua — hari, minum — lebih — sedikit — air." },
+    { "speaker": "安迪:", "text": "[要唔要食藥呀|Jiu3 m4 jiu3 sik6 joek6 aa3]？[可唔可以畀張病假紙我呀|Ho2 m4 ho2 ji5 bei2 zoeng1 beng6 gaa3 zi2 ngo5 aa3]？", "id": "Perlu minum obat? Boleh minta surat sakit?", "literal": "perlu — tidak — perlu — makan — obat — ya. boleh — tidak — boleh — beri — penggolong — sakit — cuti — kertas — saya — ya." },
+    { "speaker": "醫生:", "text": "[冇問題|Mou5 man6 tai4]。[藥一日食三次|Joek6 jat1 jat6 sik6 saam1 ci3]，[飯後食|faan6 hau6 sik6]。[唔好飲凍嘢|M4 hou2 jam2 dung3 je5]。", "id": "Tidak masalah. Obatnya sehari tiga kali, sesudah makan. Jangan minum yang dingin.", "literal": "tidak-ada — masalah. obat — satu — hari — makan — tiga — kali, nasi — sesudah — makan. jangan — minum — dingin — barang." }
+   ],
+   "notes": [
+    "**[唔舒服|m4 syu1 fuk6] adalah kata payung untuk “tidak enak badan”.** Ingat [舒服|syu1 fuk6] dari Unit 8. [邊度唔舒服呀|Bin1 dou6 m4 syu1 fuk6 aa3]？ adalah pertanyaan pembuka dokter yang hampir tidak pernah berubah.",
+    "**⚠️ [痛|tung3] adalah kata sifat, bukan kata benda, jadi susunannya adalah bagian tubuh + 痛.** [我頭痛|Ngo5 tau4 tung3] = kepala saya sakit — harfiah “saya kepala sakit”. Tidak ada 我有頭痛; kata sifat Kanton berdiri sendiri seperti yang sudah kamu pelajari di Unit 8.",
+    "**[發燒|faat3 siu1] = demam, [咳|kat1] = batuk, [流鼻水|lau4 bei6 seoi2] = pilek.** Semuanya kata kerja, bukan kata benda: [我發燒|Ngo5 faat3 siu1] = saya demam. Sekali lagi, tidak ada 我有發燒.",
+    "**[瞓唔着|fan3 m4 zoek6] = tidak bisa tidur.** [着|zoek6] sesudah 瞓 berarti benar-benar tertidur. Pola kata kerja + 唔 + hasil yang sudah kamu kenal sejak Unit 5: [睇唔到|tai2 m4 dou2], [食唔晒|sik6 m4 saai3], [瞓唔着|fan3 m4 zoek6].",
+    "**[冇乜胃口|mou5 mat1 wai6 hau2] = tidak ada nafsu makan.** [冇乜|mou5 mat1] = “tidak begitu, tidak banyak”: [冇乜錢|mou5 mat1 cin2] (tidak punya banyak uang), [冇乜時間|mou5 mat1 si4 gaan3] (tidak punya banyak waktu).",
+    "**[敏感|man5 gam2] = alergi maupun sensitif.** [藥物敏感|joek6 mat6 man5 gam2] = alergi obat. ⚠️ Ini pertanyaan yang wajib kamu mengerti dan wajib kamu jawab jujur, jadi hafalkan bentuk pertanyaannya utuh.",
+    "**[應該|jing1 goi1] = seharusnya, sebaiknya.** Ia lebih halus daripada [要|jiu3] (harus). Dokter memakai 應該 untuk memberi saran; papan peringatan memakai [唔可以|m4 ho2 ji5] untuk melarang.",
+    "**[飲多啲水|jam2 do1 di1 seoi2] = minum lebih banyak air.** Pola kata kerja + [多啲|do1 di1] / [少啲|siu2 di1] = lebih banyak / lebih sedikit. [瞓多啲|fan3 do1 di1] (tidur lebih banyak), [食少啲|sik6 siu2 di1] (makan lebih sedikit)."
+   ],
+   "grammars": [
+    {
+     "title": "Menyuruh, menyarankan, melarang",
+     "body": [
+      "Empat tingkat, dari yang paling lunak sampai yang paling keras. Yang menentukan bukan nada suaramu, melainkan kata yang kamu pilih."
+     ],
+     "tables": [
+      {
+       "head": ["Tingkat", "Kata", "Contoh"],
+       "rows": [
+        ["usul", "[不如|bat1 jyu4]", "[不如休息下啦|Bat1 jyu4 jau1 sik1 haa5 laa1]。 Istirahat dulu, gimana?"],
+        ["saran", "[最好|zeoi3 hou2]", "[最好唔好出街|Zeoi3 hou2 m4 hou2 ceot1 gaai1]。 Sebaiknya jangan keluar."],
+        ["seharusnya", "[應該|jing1 goi1]", "[你應該睇醫生|Nei5 jing1 goi1 tai2 ji1 sang1]。 Kamu harus ke dokter."],
+        ["harus", "[要|jiu3] / [一定要|jat1 ding6 jiu3]", "[你一定要食藥|Nei5 jat1 ding6 jiu3 sik6 joek6]。 Kamu wajib minum obat."],
+        ["tidak perlu", "[唔使|m4 sai2]", "[唔使擔心|M4 sai2 daam1 sam1]。 Tidak usah khawatir."],
+        ["jangan", "[唔好|m4 hou2]", "[唔好飲凍嘢|M4 hou2 jam2 dung3 je5]。 Jangan minum yang dingin."],
+        ["dilarang", "[唔可以|m4 ho2 ji5]", "[呢度唔可以食煙|Ni1 dou6 m4 ho2 ji5 sik6 jin1]。 Di sini dilarang merokok."]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **Larangan adalah [唔好|m4 hou2], bukan 唔要.** [唔好走|M4 hou2 zau2] = jangan pergi. Bentuk 唔要走 tidak ada. Ingat juga bahwa 唔好 yang berdiri di depan kata sifat berarti “tidak baik” — yang membedakan adalah apa yang mengikutinya.",
+      "🇭🇰 **Bentuk larangan yang lebih pendek: [咪|mai5].** [咪走|Mai5 zau2] = jangan pergi; [咪咁講|Mai5 gam2 gong2] = jangan bilang begitu. Ia terdengar lebih akrab dan lebih cepat, dan sangat sering dipakai di antara teman.",
+      "**[唔使|m4 sai2] menolak keharusan, bukan melarang.** [唔使去|M4 sai2 heoi3] = tidak usah pergi (boleh saja kalau mau). [唔好去|M4 hou2 heoi3] = jangan pergi (sungguh-sungguh)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "對話 2 — Di apotek, dan nasihat teman",
+   "intro": "Wong Lai menemani Andi ke 藥房. Percakapan ini penuh saran — perhatikan berapa banyak bentuk berbeda yang dipakai untuk mengatakan hal yang sama.",
+   "lines": [
+    { "speaker": "黃麗:", "text": "[你面色好差|Nei5 min6 sik1 hou2 caa1][喎|wo3]。[食咗藥未呀|Sik6 zo2 joek6 mei6 aa3]？", "id": "Muka kamu pucat banget, lho. Sudah minum obat belum?", "literal": "kamu — muka — warna — penyangga — buruk — lho. makan — sudah — obat — belum — ya." },
+    { "speaker": "安迪:", "text": "[仲未|Zung6 mei6]。[我想買啲咳藥水|Ngo5 soeng2 maai5 di1 kat1 joek6 seoi2]。", "id": "Belum. Saya mau beli obat batuk cair.", "literal": "masih — belum. saya — ingin — beli — sedikit — batuk — obat — air." },
+    { "speaker": "黃麗:", "text": "[藥房喺前面|Joek6 fong4 hai2 cin4 min6]。[你唔好行咁快|Nei5 m4 hou2 haang4 gam3 faai3]，[慢慢啦|maan6 maan2 laa1]。", "id": "Apoteknya di depan. Jangan jalan cepat-cepat, pelan-pelan saja.", "literal": "obat — rumah — di — depan — sisi. kamu — jangan — jalan — se-begitu — cepat, pelan — pelan — dong." },
+    { "speaker": "藥劑師:", "text": "[要咩藥呀|Jiu3 me1 joek6 aa3]？", "id": "Perlu obat apa?", "literal": "perlu — apa — obat — ya." },
+    { "speaker": "安迪:", "text": "[我傷風|Ngo5 soeng1 fung1]，[有咳|jau5 kat1]，[喉嚨痛|hau4 lung4 tung3]。[有冇藥介紹呀|Jau5 mou5 joek6 gaai3 siu6 aa3]？", "id": "Saya masuk angin, batuk, tenggorokan sakit. Ada obat yang bisa direkomendasikan?", "literal": "saya — luka — angin, ada — batuk, tenggorokan — sakit. ada — tidak-ada — obat — antar — kenal — ya." },
+    { "speaker": "藥劑師:", "text": "[呢支咳藥水|Ni1 zi1 kat1 joek6 seoi2][同呢啲喉糖|tung4 ni1 di1 hau4 tong2]。[一日三次|Jat1 jat6 saam1 ci3]。", "id": "Obat batuk cair ini dan permen tenggorokan ini. Sehari tiga kali.", "literal": "ini — penggolong — batuk — obat — air — dan — ini — beberapa — tenggorokan — permen. satu — hari — tiga — kali." },
+    { "speaker": "安迪:", "text": "[食完會唔會眼瞓㗎|Sik6 jyun4 wui5 m4 wui5 ngaan5 fan3 gaa3]？[我要返工|Ngo5 jiu3 faan1 gung1]。", "id": "Kalau diminum bikin ngantuk tidak? Saya harus kerja.", "literal": "makan — selesai — akan — tidak — akan — mata — tidur — penegas. saya — harus — kembali — kerja." },
+    { "speaker": "藥劑師:", "text": "[會有少少|Wui5 jau5 siu2 siu2]。[如果要揸車|Jyu4 gwo2 jiu3 zaa1 ce1]，[就唔好食|zau6 m4 hou2 sik6]。", "id": "Agak bikin ngantuk. Kalau harus menyetir, jangan diminum.", "literal": "akan — ada — sedikit — sedikit. jika — perlu — pegang — kendaraan, lalu — jangan — makan." },
+    { "speaker": "黃麗:", "text": "[佢唔揸車㗎|Keoi5 m4 zaa1 ce1 gaa3]。[但係你今日唔好返工喇|Daan6 hai6 nei5 gam1 jat6 m4 hou2 faan1 gung1 laa3]，[真係|zan1 hai6]。", "id": "Dia tidak menyetir kok. Tapi hari ini kamu jangan kerja deh, serius.", "literal": "dia — tidak — pegang — kendaraan — penegas. tetapi — kamu — ini — hari — jangan — kembali — kerja — sudah, benar — adalah." },
+    { "speaker": "安迪:", "text": "[我知喇|Ngo5 zi1 laa3]。[我返去瞓覺|Ngo5 faan1 heoi3 fan3 gaau3]。", "id": "Iya iya. Saya pulang tidur.", "literal": "saya — tahu — sudah. saya — kembali — pergi — tidur." },
+    { "speaker": "黃麗:", "text": "[記住飲多啲水|Gei3 zyu6 jam2 do1 di1 seoi2]。[保重呀|Bou2 zung6 aa3]！", "id": "Ingat banyak minum air. Jaga diri ya!", "literal": "ingat — tetap — minum — lebih — sedikit — air. jaga — berat — ya." },
+    { "speaker": "安迪:", "text": "[多謝你|Do1 ze6 nei5]。[你真係好朋友|Nei5 zan1 hai6 hou2 pang4 jau5]。", "id": "Terima kasih. Kamu memang teman yang baik.", "literal": "terima-kasih — kamu. kamu — benar — adalah — baik — teman." }
+   ],
+   "notes": [
+    "**[面色|min6 sik1] = warna muka, dan [面色好差|min6 sik1 hou2 caa1] berarti kelihatan pucat atau tidak sehat.** 🇭🇰 Ini komentar yang wajar diucapkan kepada teman di Hong Kong, dan dianggap perhatian, bukan tidak sopan.",
+    "**[差|caa1] = buruk, jelek mutunya.** Lawannya [好|hou2]. ⚠️ Jangan bingung dengan [差唔多|caa1 m4 do1] (kurang lebih sama) dari Unit 8 — aksara yang sama, ungkapan yang berbeda.",
+    "**[慢慢|maan6 maan2] = pelan-pelan.** Perhatikan nadanya berubah pada suku kata kedua — kebiasaan nada berubah yang dijelaskan di bab pembuka. Bentuk berulang ini juga muncul di [快啲快啲|faai3 di1 faai3 di1] (cepat cepat) dan [靜靜哋|zing6 zing2 dei2] (diam-diam).",
+    "**[介紹|gaai3 siu6] = memperkenalkan, merekomendasikan.** [有冇…介紹呀|Jau5 mou5 … gaai3 siu6 aa3]？ = ada rekomendasi …? Kalimat yang berguna di apotek, toko buku, dan restoran.",
+    "**[如果|jyu4 gwo2] = jika, dan pasangannya [就|zau6].** [如果落雨，就唔好去|Jyu4 gwo2 lok6 jyu5, zau6 m4 hou2 heoi3] = kalau hujan, jangan pergi. 就 berdiri di depan kata kerja di anak kalimat kedua, dan hampir selalu ada.",
+    "**[眼瞓|ngaan5 fan3] = mengantuk**, harfiah “mata tidur”. Kata Kanton asli yang tidak ada di Mandarin. [好眼瞓|hou2 ngaan5 fan3] = ngantuk sekali.",
+    "**[揸車|zaa1 ce1] = menyetir.** [揸|zaa1] berarti menggenggam. Kata lain dengan 揸: [揸住|zaa1 zyu6] (pegang terus).",
+    "**[保重|bou2 zung6] = jaga diri.** Diucapkan kepada orang yang sedang sakit atau yang akan pergi jauh. Ucapan lain: [早日康復|zou2 jat6 hong1 fuk6] (lekas sembuh, agak resmi) dan [好返啲未呀|Hou2 faan1 di1 mei6 aa3]？ (sudah agak baikan?)."
+   ],
+   "grammars": [
+    {
+     "title": "如果 … 就 … dan pasangan penyambung lainnya",
+     "body": [
+      "Kanton menyambung dua bagian kalimat dengan pasangan kata yang keduanya diucapkan — berbeda dari bahasa Indonesia yang biasanya cukup satu."
+     ],
+     "tables": [
+      {
+       "head": ["Pasangan", "Arti", "Contoh"],
+       "rows": [
+        ["[如果|jyu4 gwo2] … [就|zau6] …", "kalau … maka …", "[如果唔舒服，就唔好返工|Jyu4 gwo2 m4 syu1 fuk6, zau6 m4 hou2 faan1 gung1]。"],
+        ["[因為|jan1 wai6] … [所以|so2 ji5] …", "karena … jadi …", "[因為發燒，所以請假|Jan1 wai6 faat3 siu1, so2 ji5 cing2 gaa3]。"],
+        ["[雖然|seoi1 jin4] … [但係|daan6 hai6] …", "walaupun … tetapi …", "[雖然食咗藥，但係都仲痛|Seoi1 jin4 sik6 zo2 joek6, daan6 hai6 dou1 zung6 tung3]。"],
+        ["[一…就…|jat1 … zau6 …]", "begitu … langsung …", "[一食完藥就眼瞓|Jat1 sik6 jyun4 joek6 zau6 ngaan5 fan3]。"],
+        ["[越…越…|jyut6 … jyut6 …]", "makin … makin …", "[越食越好|Jyut6 sik6 jyut6 hou2]。"],
+        ["[先…然後…|sin1 … jin4 hau6 …]", "dulu … baru …", "[先食飯然後食藥|Sin1 sik6 faan6 jin4 hau6 sik6 joek6]。"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **[就|zau6] jarang boleh dibuang.** Kalimat [如果落雨唔好去|jyu4 gwo2 lok6 jyu5 m4 hou2 heoi3] terdengar terpotong; yang wajar adalah [如果落雨，就唔好去|Jyu4 gwo2 lok6 jyu5, zau6 m4 hou2 heoi3].",
+      "🇭🇰 **Dalam percakapan cepat, [如果|jyu4 gwo2] sering dibuang dan hanya 就 yang tersisa.** [唔舒服就唔好返工|M4 syu1 fuk6 zau6 m4 hou2 faan1 gung1] = kalau tidak enak badan, jangan kerja. Ini bentuk yang paling sering kamu dengar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bagian tubuh",
+   "blocks": [
+    { "type": "tabel", "head": ["Bagian", "Kanton", "Bagian", "Kanton"], "rows": [
+     ["badan", "[身體|san1 tai2]", "kepala", "[頭|tau4]"],
+     ["muka", "[面|min6]", "mata", "[眼|ngaan5]"],
+     ["hidung", "[鼻|bei6]", "mulut", "[口|hau2]"],
+     ["telinga", "[耳仔|ji5 zai2]", "gigi", "[牙|ngaa4]"],
+     ["leher", "[頸|geng2]", "tenggorokan", "[喉嚨|hau4 lung4]"],
+     ["bahu", "[膊頭|bok3 tau4]", "punggung", "[背脊|bui3 zek3]"],
+     ["tangan", "[手|sau2]", "jari", "[手指|sau2 zi2]"],
+     ["perut", "[肚|tou5]", "kaki", "[腳|goek3]"],
+     ["jantung, hati", "[心|sam1]", "darah", "[血|hyut3]"]
+    ] },
+    { "type": "tabel", "head": ["Keluhan", "Kanton", "Keluhan", "Kanton"], "rows": [
+     ["tidak enak badan", "[唔舒服|m4 syu1 fuk6]", "sakit", "[痛|tung3]"],
+     ["demam", "[發燒|faat3 siu1]", "batuk", "[咳|kat1]"],
+     ["masuk angin", "[傷風|soeng1 fung1]", "flu", "[感冒|gam2 mou6]"],
+     ["pilek", "[流鼻水|lau4 bei6 seoi2]", "pusing", "[頭暈|tau4 wan4]"],
+     ["mual, muntah", "[嘔|au2]", "diare", "[肚屙|tou5 o1]"],
+     ["capek", "[攰|gui6]", "mengantuk", "[眼瞓|ngaan5 fan3]"],
+     ["luka", "[受傷|sau6 soeng1]", "gatal", "[痕|han4]"],
+     ["alergi", "[敏感|man5 gam2]", "tidak bisa tidur", "[瞓唔着|fan3 m4 zoek6]"]
+    ] },
+    { "type": "kotak", "title": "Enam kalimat yang perlu kamu bisa ucapkan tanpa berpikir", "items": [
+     "[我唔舒服|Ngo5 m4 syu1 fuk6]。 — Saya tidak enak badan.",
+     "[我頭痛|Ngo5 tau4 tung3]，[仲發緊燒|zung6 faat3 gan2 siu1]。 — Kepala saya sakit, dan sedang demam.",
+     "[前日開始㗎|Cin4 jat6 hoi1 ci2 gaa3]。 — Mulai kemarin lusa.",
+     "[我冇藥物敏感|Ngo5 mou5 joek6 mat6 man5 gam2]。 — Saya tidak ada alergi obat.",
+     "[附近有冇診所呀|Fu6 gan6 jau5 mou5 can2 so2 aa3]？ — Di dekat sini ada klinik?",
+     "[叫白車|Giu3 baak6 ce1]！ — Panggil ambulans! 🇭🇰 [白車|baak6 ce1] harfiah “mobil putih”, dan nomor daruratnya **999**."
+    ] }
+   ]
+  },
+  {
+   "title": "Berobat di Hong Kong",
+   "blocks": [
+    { "type": "tabel", "head": ["Tempat / hal", "Kanton", "Catatan"], "rows": [
+     ["klinik", "[診所|can2 so2]", "Klinik swasta, tanpa janji, bayar sekaligus obat"],
+     ["rumah sakit", "[醫院|ji1 jyun2]", ""],
+     ["UGD", "[急症室|gap1 zing3 sat1]", "Antrean panjang kecuali gawat sungguhan"],
+     ["apotek", "[藥房|joek6 fong4]", "Papan hijau; apoteker bisa menyarankan obat bebas"],
+     ["daftar", "[掛號|gwaa3 hou6]", ""],
+     ["obat", "[藥|joek6]", "[食藥|sik6 joek6] = minum obat"],
+     ["obat batuk cair", "[咳藥水|kat1 joek6 seoi2]", ""],
+     ["surat sakit", "[病假紙|beng6 gaa3 zi2]", "Diminta ke dokter, dipakai untuk kantor"],
+     ["obat Tionghoa", "[中藥|zung1 joek6]", "Lawannya [西藥|sai1 joek6], obat Barat"]
+    ] },
+    { "type": "kotak", "title": "Aturan minum obat yang tertulis di kemasan", "items": [
+     "[一日三次|jat1 jat6 saam1 ci3] — sehari tiga kali",
+     "[飯後食|faan6 hau6 sik6] — diminum sesudah makan · [飯前食|faan6 cin4 sik6] — sebelum makan",
+     "[每次一粒|mui5 ci3 jat1 nap1] — sekali minum satu butir",
+     "[有需要時食|jau5 seoi1 jiu3 si4 sik6] — diminum bila perlu",
+     "⚠️ [唔好同酒一齊食|M4 hou2 tung4 zau2 jat1 cai4 sik6] — jangan diminum bersama alkohol"
+    ] },
+    { "type": "kotak", "title": "Menanyakan kabar orang sakit", "items": [
+     "[好返啲未呀|Hou2 faan1 di1 mei6 aa3]？ — Sudah agak baikan?",
+     "[睇咗醫生未呀|Tai2 zo2 ji1 sang1 mei6 aa3]？ — Sudah ke dokter belum?",
+     "[記得食藥呀|Gei3 dak1 sik6 joek6 aa3]。 — Ingat minum obat ya.",
+     "[保重|Bou2 zung6]。 / [早日康復|Zou2 jat6 hong1 fuk6]。 — Jaga diri. / Lekas sembuh."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "身體", "baca": "san1 tai2", "id": "badan" },
+  { "zh": "頭", "baca": "tau4", "id": "kepala" },
+  { "zh": "面", "baca": "min6", "id": "muka" },
+  { "zh": "眼", "baca": "ngaan5", "id": "mata" },
+  { "zh": "鼻", "baca": "bei6", "id": "hidung" },
+  { "zh": "口", "baca": "hau2", "id": "mulut" },
+  { "zh": "耳仔", "baca": "ji5 zai2", "id": "telinga" },
+  { "zh": "牙", "baca": "ngaa4", "id": "gigi" },
+  { "zh": "頸", "baca": "geng2", "id": "leher" },
+  { "zh": "喉嚨", "baca": "hau4 lung4", "id": "tenggorokan" },
+  { "zh": "手", "baca": "sau2", "id": "tangan" },
+  { "zh": "腳", "baca": "goek3", "id": "kaki" },
+  { "zh": "肚", "baca": "tou5", "id": "perut" },
+  { "zh": "痛", "baca": "tung3", "id": "sakit, nyeri" },
+  { "zh": "唔舒服", "baca": "m4 syu1 fuk6", "id": "tidak enak badan" },
+  { "zh": "發燒", "baca": "faat3 siu1", "id": "demam" },
+  { "zh": "咳", "baca": "kat1", "id": "batuk" },
+  { "zh": "傷風", "baca": "soeng1 fung1", "id": "masuk angin" },
+  { "zh": "感冒", "baca": "gam2 mou6", "id": "flu" },
+  { "zh": "流鼻水", "baca": "lau4 bei6 seoi2", "id": "pilek" },
+  { "zh": "頭暈", "baca": "tau4 wan4", "id": "pusing" },
+  { "zh": "嘔", "baca": "au2", "id": "muntah" },
+  { "zh": "肚屙", "baca": "tou5 o1", "id": "diare" },
+  { "zh": "眼瞓", "baca": "ngaan5 fan3", "id": "mengantuk" },
+  { "zh": "瞓唔着", "baca": "fan3 m4 zoek6", "id": "tidak bisa tidur" },
+  { "zh": "敏感", "baca": "man5 gam2", "id": "alergi" },
+  { "zh": "嚴重", "baca": "jim4 zung6", "id": "parah" },
+  { "zh": "醫生", "baca": "ji1 sang1", "id": "dokter" },
+  { "zh": "睇醫生", "baca": "tai2 ji1 sang1", "id": "ke dokter" },
+  { "zh": "診所", "baca": "can2 so2", "id": "klinik" },
+  { "zh": "急症室", "baca": "gap1 zing3 sat1", "id": "UGD" },
+  { "zh": "藥", "baca": "joek6", "id": "obat" },
+  { "zh": "藥房", "baca": "joek6 fong4", "id": "apotek" },
+  { "zh": "食藥", "baca": "sik6 joek6", "id": "minum obat" },
+  { "zh": "病假紙", "baca": "beng6 gaa3 zi2", "id": "surat sakit" },
+  { "zh": "請假", "baca": "cing2 gaa3", "id": "mengambil cuti" },
+  { "zh": "應該", "baca": "jing1 goi1", "id": "seharusnya" },
+  { "zh": "最好", "baca": "zeoi3 hou2", "id": "sebaiknya" },
+  { "zh": "唔好", "baca": "m4 hou2", "id": "jangan" },
+  { "zh": "咪", "baca": "mai5", "id": "jangan (akrab)" },
+  { "zh": "唔使", "baca": "m4 sai2", "id": "tidak usah" },
+  { "zh": "擔心", "baca": "daam1 sam1", "id": "khawatir" },
+  { "zh": "小心", "baca": "siu2 sam1", "id": "hati-hati" },
+  { "zh": "如果", "baca": "jyu4 gwo2", "id": "jika" },
+  { "zh": "雖然", "baca": "seoi1 jin4", "id": "walaupun" },
+  { "zh": "然後", "baca": "jin4 hau6", "id": "lalu, kemudian" },
+  { "zh": "越…越…", "baca": "jyut6 … jyut6 …", "id": "makin … makin …" },
+  { "zh": "開始", "baca": "hoi1 ci2", "id": "mulai" },
+  { "zh": "休息", "baca": "jau1 sik1", "id": "istirahat" },
+  { "zh": "介紹", "baca": "gaai3 siu6", "id": "merekomendasikan" },
+  { "zh": "揸車", "baca": "zaa1 ce1", "id": "menyetir" },
+  { "zh": "面色", "baca": "min6 sik1", "id": "rona muka" },
+  { "zh": "差", "baca": "caa1", "id": "buruk, jelek" },
+  { "zh": "保重", "baca": "bou2 zung6", "id": "jaga diri" },
+  { "zh": "多啲", "baca": "do1 di1", "id": "lebih banyak" },
+  { "zh": "冇乜", "baca": "mou5 mat1", "id": "tidak begitu banyak" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Susun keluhan berikut ke dalam bahasa Kanton dengan pola “bagian tubuh + 痛”.",
+   "items": [
+    "Kepala saya sakit.",
+    "Perut saya sakit.",
+    "Gigi saya sakit.",
+    "Tenggorokan saya sakit.",
+    "Kaki saya sakit."
+   ]
+  },
+  {
+   "prompt": "Isi dengan 應該, 唔好, 唔使, atau 一定要.",
+   "items": [
+    "[你| Nei5] ___ [睇醫生|tai2 ji1 sang1]。 (saran kuat)",
+    "___ [飲凍嘢|jam2 dung3 je5]。 (larangan)",
+    "___ [擔心|daam1 sam1]，[唔嚴重|m4 jim4 zung6]。 (tidak usah)",
+    "[你| Nei5] ___ [食藥|sik6 joek6]，[如果唔係唔會好|jyu4 gwo2 m4 hai6 m4 wui5 hou2]。 (wajib)",
+    "[你| Nei5] ___ [今日返工|gam1 jat6 faan1 gung1]。 (larangan)"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "邊度 / 唔 / 舒服 / 呀",
+    "我 / 頭痛 / 仲 / 有啲 / 發燒",
+    "前日 / 開始 / 㗎",
+    "你 / 應該 / 休息 / 兩 / 日",
+    "如果 / 要 / 揸車 / 就 / 唔好 / 食",
+    "記住 / 飲 / 多啲 / 水"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[你有冇藥物敏感呀|Nei5 jau5 mou5 joek6 mat6 man5 gam2 aa3]？",
+    "[唔嚴重，係傷風|M4 jim4 zung6, hai6 soeng1 fung1]。",
+    "[藥一日食三次，飯後食|Joek6 jat1 jat6 sik6 saam1 ci3, faan6 hau6 sik6]。",
+    "[你面色好差喎|Nei5 min6 sik1 hou2 caa1 wo3]。",
+    "[好返啲未呀|Hou2 faan1 di1 mei6 aa3]？"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Kanton. Tulis dengan jyutping.",
+   "items": [
+    "Saya tidak enak badan.",
+    "Saya demam dan batuk.",
+    "Kamu harus ke dokter.",
+    "Jangan minum yang dingin.",
+    "Ingat banyak minum air."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan jyutping.",
+   "items": [
+    "[我有頭痛|Ngo5 jau5 tau4 tung3]。",
+    "[我有發燒|Ngo5 jau5 faat3 siu1]。",
+    "[唔要飲凍嘢|M4 jiu3 jam2 dung3 je5]。",
+    "[如果落雨唔好去|Jyu4 gwo2 lok6 jyu5 m4 hou2 heoi3]。",
+    "[我係唔舒服|Ngo5 hai6 m4 syu1 fuk6]。"
+   ]
+  }
+ ],
+ "answers": [
+  "我頭痛。 Ngo5 tau4 tung3. — 我肚痛。 Ngo5 tou5 tung3. — 我牙痛。 Ngo5 ngaa4 tung3. — 我喉嚨痛。 Ngo5 hau4 lung4 tung3. — 我腳痛。 Ngo5 goek3 tung3.",
+  "應該 — 唔好 — 唔使 — 一定要 — 唔好",
+  "邊度 唔 舒服 呀 — 我 頭痛 仲 有啲 發燒 — 前日 開始 㗎 — 你 應該 休息 兩 日 — 如果 要 揸車 就 唔好 食 — 記住 飲 多啲 水",
+  "Anda punya alergi obat? — Tidak parah, cuma masuk angin. — Obatnya sehari tiga kali, sesudah makan. — Muka kamu pucat banget, lho. — Sudah agak baikan?",
+  "Ngo5 m4 syu1 fuk6. — Ngo5 faat3 siu1, jau5 kat1. — Nei5 jing1 goi1 tai2 ji1 sang1. — M4 hou2 jam2 dung3 je5. — Gei3 zyu6 jam2 do1 di1 seoi2.",
+  "Ngo5 tau4 tung3. — Ngo5 faat3 siu1. — M4 hou2 jam2 dung3 je5. — Jyu4 gwo2 lok6 jyu5, zau6 m4 hou2 heoi3. — Ngo5 m4 syu1 fuk6."
+ ],
+ "wave": "Lima menit sebelum Unit 12: bayangkan kamu duduk di depan dokter Hong Kong dan mainkan seluruh percakapannya sendiri — apa yang sakit, sejak kapan, gejala lain, alergi. Sesudah itu, beri lima saran kepada teman yang sedang sakit, masing-masing dengan bentuk yang berbeda: 不如, 最好, 應該, 一定要, dan 唔好. Kalau kelimanya keluar tanpa berhenti, kamu sudah siap untuk unit terakhir."
+}
