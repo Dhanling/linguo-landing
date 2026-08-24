@@ -85,8 +85,35 @@ const esc = (s) => String(s ?? "").replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<"
 const RUBY = /\[([^\[\]|]+)\|([^\[\]|]+)\]/g;
 const ruby = (s) => s.replace(RUBY, (_, dasar, baca) => `<ruby>${dasar}<rt>${baca}</rt></ruby>`);
 
+/* [ebook-rtl-arab-v1] Modul beraksara kanan-ke-kiri (Arab, Ibrani, Persia).
+   Yang membedakannya dari modul beraksara lain bukan fonnya, melainkan ARAHNYA:
+   satu kalimat Arab yang ditaruh apa adanya di dalam paragraf Indonesia memang
+   dibalik sendiri oleh peramban, tapi tanda bacanya ikut melompat ke ujung yang
+   salah begitu kalimatnya bersinggungan dengan teks Latin ("Ahmad:" di kepala
+   baris dialog, tanda kurung, nomor). Jadi tiap potongan bahasa target dipagari
+   sendiri: dir rtl + unicode-bidi isolate, supaya urusan arah berhenti di tepi
+   potongannya dan tak merembet ke kalimat Indonesia di sekitarnya.
+
+   Ruby TIDAK dipakai di modul begini: cara baca yang dicetak di atas aksara Arab
+   ikut tersusun kanan-ke-kiri sementara transliterasinya Latin, dan hasilnya
+   terbaca terbalik. Cara bacanya turun jadi barisnya sendiri (baca di tiap baris
+   dialog, kolom "Cara baca" di tabel kosakata). */
+const RTL = meta.rtl === true;
+const FON_RTL = meta.font_rtl ?? `"Geeza Pro", "Al Bayan", "Baghdad", "Noto Naskh Arabic", "Times New Roman"`;
+
+/* Pemagarannya OTOMATIS, bukan lewat penanda yang harus ditulis penulisnya di
+   tiap sel: aksara Arab dikenali dari rentang Unicode-nya, lalu satu untaian
+   utuh (termasuk spasi & tanda baca di tengahnya) dibungkus sekaligus. Kalau
+   tiap katanya dibungkus sendiri-sendiri, untaiannya justru tersusun terbalik —
+   dua pagar yang bersebelahan diurutkan kiri-ke-kanan seperti huruf Latin. */
+const AKSARA_RTL = "\\u0600-\\u06FF\\u0750-\\u077F\\u08A0-\\u08FF\\uFB50-\\uFDFF\\uFE70-\\uFEFF";
+const NETRAL_RTL = " \\u00A0.,\\u060C\\u061B\\u061F!?:;()\\[\\]/\\-\\u2013\\u2014\\u00AB\\u00BB0-9\\u0660-\\u0669";
+const UNTAIAN_RTL = new RegExp(`[${AKSARA_RTL}](?:[${AKSARA_RTL}${NETRAL_RTL}]*[${AKSARA_RTL}])?`, "g");
+const pagariRtl = (s) => s.replace(UNTAIAN_RTL, (m) => `<span class="rtl" dir="rtl">${m}</span>`);
+
 /** *miring* dan **tebal** ala markdown ringan — cukup untuk teks pelajaran. */
-const teks = (s) => ruby(esc(s)).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\*(.+?)\*/g, "<i>$1</i>");
+const teksDasar = (s) => ruby(esc(s)).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\*(.+?)\*/g, "<i>$1</i>");
+const teks = (s) => (RTL ? pagariRtl(teksDasar(s)) : teksDasar(s));
 
 /* ── potongan halaman ────────────────────────────────────────────────────── */
 
@@ -126,7 +153,7 @@ const halamanIsi = (h, nomor) => `
   ${h.intro ? `<p class="isi-intro">${teks(h.intro)}</p>` : ""}
   <table class="isi"><tbody>${barisIsi().map((b) => `
     <tr>
-      <td>${esc(b.label)}${b.sub ? `<span class="isi-asing">${esc(b.sub)}</span>` : ""}</td>
+      <td>${esc(b.label)}${b.sub ? `<span class="isi-asing">${teks(b.sub)}</span>` : ""}</td>
       <td class="isi-hal">${nomor.get(b.kunci) ?? "&mdash;"}</td>
     </tr>`).join("")}</tbody></table>
 </section>`;
@@ -197,7 +224,8 @@ const dialogHtml = (d) => `
       <div class="baris">
         <span class="nomor">${n + 1}</span>
         <div>
-          <p class="asing"><b>${esc(l.speaker)}</b> ${teks(l.text)}</p>
+          <p class="asing"${RTL ? ' dir="rtl"' : ""}><b>${teks(l.speaker)}</b> ${teks(l.text)}</p>
+          ${l.baca ? `<p class="baca">${teks(l.baca)}</p>` : ""}
           <p class="arti">${teks(l.id)}</p>
           ${l.literal ? `<p class="harfiah">harfiah: ${teks(l.literal)}</p>` : ""}
         </div>
@@ -212,7 +240,7 @@ const unitHal = (u, i) => `
 <section class="hal unit">
   <div class="unit-kepala">
     <span class="unit-no">Unit ${i + 1}</span>
-    <h2>${esc(u.title)}<span class="unit-asing">${esc(u.title_target ?? "")}</span></h2>
+    <h2>${esc(u.title)}<span class="unit-asing">${teks(u.title_target ?? "")}</span></h2>
     ${u.goal ? `<p class="unit-tujuan">${teks(u.goal)}</p>` : ""}
     ${u.bekal?.length ? `<p class="unit-bekal"><b>Di ujung unit ini kamu bisa:</b> ${u.bekal.map(teks).join(" &middot; ")}</p>` : ""}
   </div>
@@ -295,15 +323,20 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
   h2 rt, h3 rt, h4 rt, th rt { text-transform: none; }
 
   /* Modul beraksara: jarak antar unsur dirapatkan sekalian, karena barisnya
-     sendiri sudah tinggi. Modul Latin tidak kena kelas ini sama sekali. */
-  .beraksara .dialog .baris { margin-bottom: 1.8mm; }
-  .beraksara .arti { margin-bottom: 0.8mm; }
-  .beraksara table { font-size: 9.1pt; margin: 2.2mm 0; }
-  .beraksara td, .beraksara th { padding: 1mm 1.6mm; }
-  .beraksara h3 { margin: 5mm 0 1.5mm; }
-  .beraksara .kotak, .beraksara .kunci { padding: 3mm 4mm; margin: 3mm 0; }
-  .beraksara .catatan li, .beraksara .soal li { margin-bottom: 1.2mm; }
-  .beraksara p { margin-bottom: 1.7mm; }
+     sendiri sudah tinggi. Modul Latin tidak kena kelas ini sama sekali.
+     [ebook-rtl-arab-v1] Modul kanan-ke-kiri kena aturan yang sama: barisnya
+     tinggi karena harakat, dan tiap baris dialognya membawa satu baris cara
+     baca tambahan. */
+  .beraksara .dialog .baris, .rtl-modul .dialog .baris { margin-bottom: 1.8mm; }
+  .beraksara .arti, .rtl-modul .arti { margin-bottom: 0.8mm; }
+  .beraksara table, .rtl-modul table { font-size: 9.1pt; margin: 2.2mm 0; }
+  .beraksara td, .beraksara th, .rtl-modul td, .rtl-modul th { padding: 1mm 1.6mm; }
+  .beraksara h3, .rtl-modul h3 { margin: 5mm 0 1.5mm; }
+  .beraksara .kotak, .beraksara .kunci,
+  .rtl-modul .kotak, .rtl-modul .kunci { padding: 3mm 4mm; margin: 3mm 0; }
+  .beraksara .catatan li, .beraksara .soal li,
+  .rtl-modul .catatan li, .rtl-modul .soal li { margin-bottom: 1.2mm; }
+  .beraksara p, .rtl-modul p { margin-bottom: 1.7mm; }
 
   .sampul-gambar { page: sampul; page-break-after: always; }
   /* object-fit: cover — rancangan sampul jarang persis 1:√2, dan gambar yang
@@ -363,7 +396,32 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
   .latihan-judul { font-weight: 700; }
   .soal li { margin-bottom: 1.2mm; }
   ul, ol { margin: 0 0 2.5mm; padding-left: 5.5mm; }
-</style></head><body class="${meta.ruby ? "beraksara" : ""}">
+
+  /* [ebook-rtl-arab-v1] Aksara kanan-ke-kiri. Fonnya dipasang di span pemagar,
+     bukan di badan teks: kalau fon Arab ikut menaungi seluruh halaman, huruf
+     Latin di sekitarnya ikut berganti bentuk tanpa alasan. Ukurannya dinaikkan
+     seperlima karena tinggi huruf Arab jauh lebih kecil daripada huruf Latin
+     pada ukuran pt yang sama, dan harakatnya butuh ruang di atas-bawah. */
+  .rtl-modul .rtl { direction: rtl; unicode-bidi: isolate;
+                    font-family: ${FON_RTL}, serif; font-size: 1.2em; }
+  /* Baris dialog seluruhnya bahasa target, jadi ARAH BARISNYA sendiri yang
+     dibalik — bukan cuma potongan aksaranya. Kalau cuma potongannya, nama
+     penutur dan titik di ujung kalimat (dua-duanya "netral" bagi peramban)
+     terlempar ke tepi kiri: yang terbaca jadi nama berkolon terbalik dan titik
+     menggantung di depan kalimat. */
+  .rtl-modul .asing { direction: rtl; text-align: right; font-size: 1.24em;
+                      line-height: 1.7; font-family: ${FON_RTL}, serif; }
+  .rtl-modul .asing .rtl { font-size: 1em; }
+  /* Sel tabel memilih arahnya sendiri dari huruf pertamanya: satu tabel yang
+     sama memuat kolom Arab dan kolom Indonesia bersebelahan. */
+  .rtl-modul td, .rtl-modul th { unicode-bidi: plaintext; }
+  .rtl-modul p:has(.rtl), .rtl-modul li:has(.rtl),
+  .rtl-modul td:has(.rtl), .rtl-modul th:has(.rtl) { line-height: 1.68; }
+  .rtl-modul .baca { margin-bottom: .4mm; }
+  /* Cara baca turun jadi barisnya sendiri — lihat catatan ruby di atas. */
+  .rtl-modul .baca { font-size: 8.8pt; color: #12776F; letter-spacing: .01em; }
+  .rtl-modul .unit-asing, .rtl-modul .isi-asing { font-style: normal; }
+</style></head><body class="${[meta.ruby ? "beraksara" : "", RTL ? "rtl-modul" : ""].filter(Boolean).join(" ")}">
 ${sampul()}
 ${(meta.front ?? []).map((h) => halamanTeks(h, nomor)).join("\n")}
 ${units.map(unitHal).join("\n")}

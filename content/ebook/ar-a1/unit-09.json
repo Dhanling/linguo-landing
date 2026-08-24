@@ -1,0 +1,203 @@
+{
+  "title": "Di restoran",
+  "title_target": "فِي الْمَطْعَمِ",
+  "goal": "Memesan makanan dan minuman, meminta sesuatu dengan sopan, dan mengerti perbedaan antara meminta benda dan meminta perbuatan.",
+  "bekal": [
+    "memesan dengan *uriidu* dan *min fadhlika*",
+    "menanyakan apa yang tersedia dan meminta tagihan",
+    "menyatakan suka dan tidak suka pada makanan"
+  ],
+  "dialogs": [
+    {
+      "title": "حِوَار — اَلْغَدَاءُ فِي مَطْعَمٍ شَعْبِيٍّ",
+      "intro": "Makan siang di rumah makan sederhana. Pelayan menghampiri meja.",
+      "lines": [
+        { "speaker": "اَلنَّادِل:", "text": "أَهْلًا وَسَهْلًا! تَفَضَّلُوا. مَاذَا تُرِيدُونَ؟", "baca": "ahlan wa sahlan! tafadhdhaluu. maadzaa turiiduun?", "id": "Selamat datang! Silakan. Mau pesan apa?", "literal": "selamat datang! silakanlah kalian. apa kalian-mau?" },
+        { "speaker": "بُودِي:", "text": "مَا عِنْدَكُمُ الْيَوْمَ؟", "baca": "maa 'indakumul-yaum?", "id": "Hari ini ada apa saja?", "literal": "apa di-tempat-kalian hari-ini?" },
+        { "speaker": "اَلنَّادِل:", "text": "عِنْدَنَا دَجَاجٌ مَشْوِيٌّ وَسَمَكٌ وَأَرُزٌّ بِالْخُضَارِ.", "baca": "'indanaa dajaajun masywiyy wa samakun wa aruzzun bil-khudhaar.", "id": "Ada ayam bakar, ikan, dan nasi dengan sayur.", "literal": "di-tempat-kami ayam yang-dibakar dan ikan dan nasi dengan sayur-itu." },
+        { "speaker": "بُودِي:", "text": "أُرِيدُ دَجَاجًا مَشْوِيًّا مَعَ أَرُزٍّ، مِنْ فَضْلِكَ.", "baca": "uriidu dajaajan masywiyyan ma'a aruzz, min fadhlik.", "id": "Saya mau ayam bakar dengan nasi, tolong.", "literal": "saya-mau ayam yang-dibakar bersama nasi, dari kemurahan-kamu." },
+        { "speaker": "لَيْلَى:", "text": "وَأَنَا أُرِيدُ سَمَكًا وَسَلَطَةً.", "baca": "wa anaa uriidu samakan wa salathah.", "id": "Dan saya mau ikan dan salad.", "literal": "dan saya saya-mau ikan dan salad." },
+        { "speaker": "اَلنَّادِل:", "text": "وَمَاذَا تَشْرَبُونَ؟", "baca": "wa maadzaa tasyrabuun?", "id": "Minumnya apa?", "literal": "dan apa kalian-minum?" },
+        { "speaker": "بُودِي:", "text": "عَصِيرَ بُرْتُقَالٍ لِي، وَمَاءً لَهَا.", "baca": "'ashiira burtuqaalin lii, wa maa'an lahaa.", "id": "Jus jeruk untuk saya, dan air untuk dia.", "literal": "jus jeruk untuk-saya, dan air untuk-dia-perempuan." },
+        { "speaker": "اَلنَّادِل:", "text": "حَاضِرٌ. هَلْ تُرِيدُونَ شَيْئًا آخَرَ؟", "baca": "haadhir. hal turiiduuna syai'an aakhar?", "id": "Siap. Ada lagi yang lain?", "literal": "hadir. apakah kalian-mau sesuatu yang-lain?" },
+        { "speaker": "لَيْلَى:", "text": "لَا، شُكْرًا. هٰذَا يَكْفِي.", "baca": "laa, syukran. haadzaa yakfii.", "id": "Tidak, terima kasih. Segitu saja cukup.", "literal": "tidak, terima kasih. ini mencukupi." },
+        { "speaker": "بُودِي:", "text": "بِالْمُنَاسَبَةِ، هَلِ الطَّعَامُ حَارٌّ؟", "baca": "bil-munaasabah, halith-tha'aamu haarr?", "id": "Ngomong-ngomong, makanannya pedas?", "literal": "dengan kesempatan-itu, apakah makanan-itu pedas?" },
+        { "speaker": "اَلنَّادِل:", "text": "قَلِيلًا. إِذَا أَرَدْتَ، بِدُونِ فِلْفِلٍ.", "baca": "qaliilan. idzaa aradta, biduuni filfil.", "id": "Sedikit. Kalau mau, bisa tanpa cabai.", "literal": "sedikit. jika kamu-mau, tanpa cabai." },
+        { "speaker": "بُودِي:", "text": "لَا، أُحِبُّ الطَّعَامَ الْحَارَّ. شُكْرًا!", "baca": "laa, uhibbuth-tha'aamal-haarr. syukran!", "id": "Tidak, saya suka makanan pedas. Terima kasih!", "literal": "tidak, saya-menyukai makanan-itu yang-pedas. terima kasih!" }
+      ],
+      "notes": [
+        "**أُرِيدُ diikuti kata benda berharakat fathah.** أُرِيدُ دَجَاجًا — \"saya mau ayam\". Yang diinginkan adalah sasaran dari kata kerjanya, jadi ia bertanwin fathah. Untuk meminta **perbuatan**, susunannya berbeda: أُرِيدُ أَنْ أَشْرَبَ (\"saya mau minum\") — dibahas penuh di unit 17.",
+        "**مِنْ فَضْلِكَ harfiahnya \"dari kemurahanmu\".** Ia dipakai persis seperti \"tolong\" dan diletakkan di akhir kalimat. Kepada perempuan: مِنْ فَضْلِكِ. Kepada beberapa orang: مِنْ فَضْلِكُمْ. Alternatif yang lebih sopan lagi: لَوْ سَمَحْتَ (\"kalau kamu mengizinkan\").",
+        "**مَشْوِيٌّ — kata sifat dari kata kerja.** Pola مَفْعُول menyatakan \"yang dikenai\": شَوَى (membakar) → مَشْوِيّ (yang dibakar), كَتَبَ → مَكْتُوب (yang tertulis), فَتَحَ → مَفْتُوح (yang terbuka), قَلَى → مَقْلِيّ (yang digoreng). Pola ini akan kamu temui di mana-mana, termasuk di papan nama toko.",
+        "**دَجَاجًا مَشْوِيًّا — kata sifat ikut bertanwin fathah.** Sudah dari unit 3 kamu tahu kata sifat mengikuti kata bendanya. Sekarang tampak bahwa \"mengikuti\" juga berarti menyalin harakat ujungnya. Aturannya konsisten dan tidak ada pengecualian.",
+        "**حَاضِرٌ adalah \"siap\" versi pelayan.** Harfiahnya \"hadir\". Ia jawaban baku pegawai atas permintaan, kira-kira seperti \"baik, segera\". Yang setara: تَمَامٌ (\"beres\"), حَالًا (\"segera\").",
+        "**بِدُونِ berarti \"tanpa\".** بِدُونِ سُكَّرٍ (tanpa gula), بِدُونِ فِلْفِلٍ (tanpa cabai), بِدُونِ لَحْمٍ (tanpa daging). Kata sesudahnya selalu berkasrah karena بِدُون adalah kata depan. Kalimat penyelamat bagi yang punya pantangan makanan.",
+        "**هَلِ الطَّعَامُ — kasrah lagi.** هَلْ berakhiran sukun, dan اَلْ juga diawali huruf mati, jadi هَلْ berubah jadi هَلِ. Gejala yang sama sudah muncul pada مِنَ dan كَمِ. Aturannya satu: dua huruf mati tidak boleh bertabrakan.",
+        "**اَلطَّعَامَ الْحَارَّ — dua-duanya memakai اَلْ.** Karena makanannya sudah tertentu, kata sifatnya wajib ikut tertentu. Bandingkan dengan طَعَامٌ حَارٌّ (\"makanan pedas\", belum tentu yang mana).",
+        "**بِالْمُنَاسَبَةِ** adalah \"ngomong-ngomong\" — alat berpindah topik yang sopan, dan sangat berguna waktu kamu ingin menanyakan sesuatu yang tidak berhubungan dengan pembicaraan sebelumnya."
+      ],
+      "grammars": [
+        {
+          "title": "Meminta dengan sopan",
+          "body": [
+            "Bahasa Arab punya tangga kesopanan yang jelas, dan memilih anak tangga yang tepat lebih penting daripada memilih kosakata yang tepat."
+          ],
+          "table": {
+            "head": ["Arab", "Cara baca", "Arti", "Nadanya"],
+            "rows": [
+              ["أُرِيدُ...", "uriidu...", "Saya mau...", "netral, biasa di restoran"],
+              ["أُرِيدُ... مِنْ فَضْلِكَ", "uriidu... min fadhlik", "Saya mau... tolong", "sopan, aman di mana saja"],
+              ["مُمْكِنٌ...؟", "mumkin...?", "Boleh...?", "santai, sehari-hari"],
+              ["هَلْ يُمْكِنُ أَنْ...؟", "hal yumkinu an...?", "Bisakah...?", "sopan dan baku"],
+              ["لَوْ سَمَحْتَ", "lau samahta", "Permisi / kalau boleh", "sangat sopan"],
+              ["أَعْطِنِي...", "a'thinii...", "Beri saya...", "langsung, di antara teman"],
+              ["هَاتِ...", "haati...", "Sini...", "akrab, hati-hati memakainya"]
+            ]
+          },
+          "after": [
+            "Kalau ragu, pakai أُرِيدُ ... مِنْ فَضْلِكَ. Ia tidak pernah terdengar kasar di keadaan mana pun, dan itu lebih berharga daripada terdengar sangat halus di satu keadaan tapi kikuk di keadaan lain.",
+            "Untuk memanggil pelayan, jangan memakai يَا نَادِل — itu terdengar seperti memerintah. Yang dipakai orang: لَوْ سَمَحْتَ (\"permisi\") sambil menaikkan tangan, atau di Mesir يَا أُسْطَى."
+          ]
+        },
+        {
+          "title": "Menyatakan suka dan tidak suka",
+          "table": {
+            "head": ["Arab", "Cara baca", "Arti"],
+            "rows": [
+              ["أُحِبُّ الْقَهْوَةَ", "uhibbul-qahwah", "Saya suka kopi"],
+              ["لَا أُحِبُّ السَّمَكَ", "laa uhibbus-samak", "Saya tidak suka ikan"],
+              ["أُفَضِّلُ الشَّايَ", "ufadhdhilusy-syaay", "Saya lebih suka teh"],
+              ["أَكْرَهُ الْبَصَلَ", "akrahul-bashal", "Saya benci bawang"],
+              ["لَا بَأْسَ بِهِ", "laa ba'sa bih", "Lumayan / boleh juga"],
+              ["لَذِيذٌ جِدًّا!", "ladziidzun jiddan!", "Enak sekali!"],
+              ["أَنَا نَبَاتِيٌّ", "anaa nabaatiyy", "Saya vegetarian"],
+              ["لَا آكُلُ لَحْمَ الْخِنْزِيرِ", "laa aakulu lahmal-khinziir", "Saya tidak makan daging babi"]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa yang disukai selalu memakai اَلْ: أُحِبُّ الْقَهْوَةَ, bukan أُحِبُّ قَهْوَةً. Kalau tanpa اَلْ, artinya berubah jadi \"saya mau (secangkir) kopi\" — permintaan, bukan pernyataan selera.",
+            "أُحِبُّ juga dipakai untuk orang, dan di situ ia berarti \"cinta\" sepenuhnya. Untuk teman, yang lebih aman: هُوَ صَدِيقٌ عَزِيزٌ (\"dia teman yang berharga\")."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Makanan dan minuman",
+      "blocks": [
+        { "type": "tabel", "head": ["Arab", "Cara baca", "Arti", "Arab", "Cara baca", "Arti"], "rows": [
+          ["طَعَام", "tha'aam", "makanan", "مَاء", "maa'", "air"],
+          ["أَرُزّ", "aruzz", "nasi", "شَاي", "syaay", "teh"],
+          ["خُبْز", "khubz", "roti", "قَهْوَة", "qahwah", "kopi"],
+          ["لَحْم", "lahm", "daging", "عَصِير", "'ashiir", "jus"],
+          ["دَجَاج", "dajaaj", "ayam", "حَلِيب", "haliib", "susu"],
+          ["سَمَك", "samak", "ikan", "سُكَّر", "sukkar", "gula"],
+          ["بَيْض", "baidh", "telur", "مِلْح", "milh", "garam"],
+          ["خُضَار", "khudhaar", "sayur", "فِلْفِل", "filfil", "cabai, lada"],
+          ["فَاكِهَة", "faakihah", "buah", "زَيْت", "zait", "minyak"],
+          ["سَلَطَة", "salathah", "salad", "جُبْن", "jubn", "keju"],
+          ["شُورْبَة", "syuurbah", "sup", "زُبْدَة", "zubdah", "mentega"],
+          ["حَلْوَى", "halwaa", "makanan manis", "عَسَل", "'asal", "madu"]
+        ] },
+        { "type": "p", "text": "Beberapa kata ini sudah lama masuk bahasa Indonesia lewat jalur yang berbeda-beda: kertas dari قِرْطَاس, sabun dari صَابُون, kursi dari كُرْسِيّ, dan tentu saja halwa, kopi, dan sirup. Kalau sebuah kata Indonesia terasa \"agak asing tapi akrab\", ada peluang bagus ia memang datang dari bahasa Arab." },
+        { "type": "kotak", "title": "Halal, dan cara menanyakannya", "items": [
+          "Di negara Arab yang mayoritas Muslim, hampir semua rumah makan halal dan pertanyaan itu jarang perlu diajukan. Di Lebanon, Mesir kawasan Kristen, atau restoran hotel internasional, pertanyaannya wajar: هَلْ هٰذَا حَلَالٌ؟",
+          "Yang lebih sering berguna: هَلْ فِيهِ لَحْمُ خِنْزِيرٍ؟ (\"ada daging babinya?\") dan هَلْ فِيهِ كُحُولٌ؟ (\"ada alkoholnya?\"). Dua pertanyaan ini spesifik, jadi jawabannya juga spesifik."
+        ] }
+      ]
+    },
+    {
+      "title": "Kalimat di restoran, dari masuk sampai pulang",
+      "blocks": [
+        { "type": "tabel", "head": ["Arab", "Cara baca", "Arti"], "rows": [
+          ["طَاوِلَةٌ لِشَخْصَيْنِ، مِنْ فَضْلِكَ", "thaawilatun lisyakhshain, min fadhlik", "Meja untuk dua orang, tolong"],
+          ["اَلْقَائِمَةُ، مِنْ فَضْلِكَ", "al-qaa'imah, min fadhlik", "Menunya, tolong"],
+          ["مَاذَا تَنْصَحُنِي؟", "maadzaa tanshahunii?", "Apa yang kamu sarankan?"],
+          ["مَا هٰذَا الطَّبَقُ؟", "maa haadzath-thabaq?", "Hidangan ini apa?"],
+          ["بِدُونِ سُكَّرٍ، مِنْ فَضْلِكَ", "biduuni sukkar, min fadhlik", "Tanpa gula, tolong"],
+          ["اَلْحِسَابَ، مِنْ فَضْلِكَ", "al-hisaab, min fadhlik", "Bon, tolong"],
+          ["هَلْ يَشْمَلُ الْخِدْمَةَ؟", "hal yasymalul-khidmah?", "Sudah termasuk servis?"],
+          ["كَانَ لَذِيذًا، شُكْرًا", "kaana ladziidzan, syukran", "Enak sekali, terima kasih"],
+          ["أَيْنَ دَوْرَةُ الْمِيَاهِ؟", "aina dauratul-miyaah?", "Di mana toiletnya?"],
+          ["اِحْتَفِظْ بِالْبَاقِي", "ihtafizh bil-baaqii", "Ambil saja kembaliannya"]
+        ] },
+        { "type": "p", "text": "Satu kebiasaan yang berbeda dari Indonesia: di banyak negara Arab, tagihan **tidak** diantar sebelum diminta. Pelayan menganggap mengantarkan bon tanpa diminta sama dengan mengusir tamu. Jadi kalau kamu sudah selesai dan tidak ada yang datang, itu bukan pelayanan buruk — kamulah yang harus mengucapkan اَلْحِسَابَ، مِنْ فَضْلِكَ." },
+        { "type": "kotak", "title": "Kalau kamu ditawari makanan", "items": [
+          "Menawari makanan berkali-kali adalah bentuk keramahan yang sungguh-sungguh, bukan basa-basi. Penolakan pertama sering dianggap sopan santun belaka, jadi tuan rumah akan menawarkan lagi.",
+          "Kalau kamu benar-benar sudah kenyang: شَبِعْتُ، اَلْحَمْدُ لِلَّهِ (*syabi'tu, alhamdulillaah* — \"saya sudah kenyang\"). Kalimat ini diterima sebagai penolakan yang tulus dan sopan, tidak seperti لَا شُكْرًا yang akan diulang tawarannya."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "ar": "مَطْعَم", "baca": "math'am", "id": "restoran" },
+    { "ar": "نَادِل", "baca": "naadil", "id": "pelayan" },
+    { "ar": "قَائِمَة", "baca": "qaa'imah", "id": "menu, daftar" },
+    { "ar": "طَبَق", "baca": "thabaq", "id": "piring, hidangan" },
+    { "ar": "أُرِيدُ", "baca": "uriidu", "id": "saya mau" },
+    { "ar": "يُفَضِّلُ", "baca": "yufadhdhilu", "id": "lebih menyukai" },
+    { "ar": "يَكْرَهُ", "baca": "yakrahu", "id": "membenci" },
+    { "ar": "يَكْفِي", "baca": "yakfii", "id": "cukup" },
+    { "ar": "لَذِيذ", "baca": "ladziidz", "id": "enak" },
+    { "ar": "حَارّ", "baca": "haarr", "id": "pedas; panas" },
+    { "ar": "بَارِد", "baca": "baarid", "id": "dingin" },
+    { "ar": "حُلْو", "baca": "hulw", "id": "manis" },
+    { "ar": "مَالِح", "baca": "maalih", "id": "asin" },
+    { "ar": "مَشْوِيّ", "baca": "masywiyy", "id": "dibakar, dipanggang" },
+    { "ar": "مَقْلِيّ", "baca": "maqliyy", "id": "digoreng" },
+    { "ar": "بِدُونِ", "baca": "biduuni", "id": "tanpa" },
+    { "ar": "آخَر", "baca": "aakhar", "id": "yang lain" },
+    { "ar": "حَاضِر", "baca": "haadhir", "id": "siap, baik" },
+    { "ar": "شَبِعْتُ", "baca": "syabi'tu", "id": "saya sudah kenyang" },
+    { "ar": "جَوْعَان", "baca": "jau'aan", "id": "lapar" },
+    { "ar": "عَطْشَان", "baca": "'athsyaan", "id": "haus" },
+    { "ar": "خِدْمَة", "baca": "khidmah", "id": "pelayanan, servis" },
+    { "ar": "دَوْرَةُ الْمِيَاهِ", "baca": "dauratul-miyaah", "id": "toilet" },
+    { "ar": "شَخْص", "baca": "syakhsh", "id": "orang" },
+    { "ar": "بِالْمُنَاسَبَةِ", "baca": "bil-munaasabah", "id": "ngomong-ngomong" },
+    { "ar": "إِذَا", "baca": "idzaa", "id": "jika" },
+    { "ar": "لَوْ سَمَحْتَ", "baca": "lau samahta", "id": "permisi, kalau boleh" },
+    { "ar": "بُرْتُقَال", "baca": "burtuqaal", "id": "jeruk" }
+  ],
+  "exercises": [
+    { "prompt": "Terjemahkan ke bahasa Arab.", "items": [
+      "Saya mau ayam bakar, tolong.",
+      "Minumnya apa?",
+      "Saya tidak suka ikan.",
+      "Tanpa gula, tolong.",
+      "Bon, tolong.",
+      "Makanannya enak sekali."
+    ] },
+    { "prompt": "Ubah jadi bentuk مَفْعُول (yang dikenai).", "items": [
+      "كَتَبَ (menulis) ← ____ (tertulis)",
+      "فَتَحَ (membuka) ← ____ (terbuka)",
+      "شَوَى (membakar) ← ____ (dibakar)",
+      "قَلَى (menggoreng) ← ____ (digoreng)",
+      "طَبَخَ (memasak) ← ____ (dimasak)"
+    ] },
+    { "prompt": "Isi dengan kata yang cocok dari daftar kosakata.", "items": [
+      "أَنَا ____، أُرِيدُ أَنْ آكُلَ. (lapar)",
+      "اَلشَّايُ ____ جِدًّا، لَا أَسْتَطِيعُ شُرْبَهُ. (panas)",
+      "هٰذَا الطَّعَامُ ____! (enak)",
+      "أُرِيدُ الْقَهْوَةَ ____ سُكَّرٍ. (tanpa)",
+      "أَيْنَ ____؟ (toilet)",
+      "____، مِنْ فَضْلِكَ. (bon)"
+    ] },
+    { "prompt": "Tulis percakapan lengkap di restoran: pelayan menyapa, kamu menanyakan menu, memesan makanan dan minuman, lalu meminta bon.", "items": [
+      "Sapaan pelayan",
+      "Kamu menanyakan apa yang ada",
+      "Pelayan menyebut dua hidangan",
+      "Kamu memesan",
+      "Kamu memesan minuman",
+      "Kamu meminta bon"
+    ] }
+  ],
+  "answers": [
+    "أُرِيدُ دَجَاجًا مَشْوِيًّا، مِنْ فَضْلِكَ. — مَاذَا تَشْرَبُ؟ — لَا أُحِبُّ السَّمَكَ. — بِدُونِ سُكَّرٍ، مِنْ فَضْلِكَ. — اَلْحِسَابَ، مِنْ فَضْلِكَ. — اَلطَّعَامُ لَذِيذٌ جِدًّا.",
+    "مَكْتُوب — مَفْتُوح — مَشْوِيّ — مَقْلِيّ — مَطْبُوخ",
+    "جَوْعَانُ — حَارٌّ — لَذِيذٌ — بِدُونِ — دَوْرَةُ الْمِيَاهِ — اَلْحِسَابَ",
+    "Contoh: أَهْلًا وَسَهْلًا، مَاذَا تُرِيدُ؟ — مَا عِنْدَكُمُ الْيَوْمَ؟ — عِنْدَنَا دَجَاجٌ وَسَمَكٌ. — أُرِيدُ دَجَاجًا مَعَ أَرُزٍّ، مِنْ فَضْلِكَ. — وَعَصِيرَ بُرْتُقَالٍ. — اَلْحِسَابَ، مِنْ فَضْلِكَ."
+  ],
+  "wave": "Ulangi dialog unit 6 dan 8. Perhatikan berapa banyak kata kerja yang sekarang bisa kamu kenali pelakunya cuma dari awalannya."
+}

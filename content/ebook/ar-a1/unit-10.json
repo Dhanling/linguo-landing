@@ -1,0 +1,217 @@
+{
+  "title": "Di pasar",
+  "title_target": "فِي السُّوقِ",
+  "goal": "Berbelanja bahan makanan, menyebut jumlah dan berat, dan mengerti bagaimana bahasa Arab membentuk jamak yang tidak beraturan.",
+  "bekal": [
+    "menyebut jumlah, berat, dan satuan barang",
+    "mengenali dua jalur jamak dan tahu kapan yang mana",
+    "menawar dengan sopan dan menutup transaksi"
+  ],
+  "dialogs": [
+    {
+      "title": "حِوَار — عِنْدَ بَائِعِ الْخُضَارِ",
+      "intro": "Pasar pagi. Laila mengajak Budi belanja bahan masakan.",
+      "lines": [
+        { "speaker": "لَيْلَى:", "text": "صَبَاحَ الْخَيْرِ يَا عَمّ! كَيْفَ الْحَالُ؟", "baca": "shabaahal-khairi yaa 'amm! kaifal-haal?", "id": "Selamat pagi, Pak! Apa kabar?", "literal": "pagi kebaikan wahai paman! bagaimana keadaan-itu?" },
+        { "speaker": "اَلْبَائِع:", "text": "صَبَاحَ النُّورِ يَا بِنْتِي. تَفَضَّلِي، كُلُّ شَيْءٍ طَازَجٌ.", "baca": "shabaahan-nuuri yaa bintii. tafadhdhalii, kullu syai'in thaazaj.", "id": "Selamat pagi, Nak. Silakan, semuanya segar.", "literal": "pagi cahaya wahai anak-perempuan-saya. silakanlah, setiap sesuatu segar." },
+        { "speaker": "لَيْلَى:", "text": "أُرِيدُ كِيلُو طَمَاطِمَ وَنِصْفَ كِيلُو بَصَلٍ.", "baca": "uriidu kiiluu thamaathima wa nishfa kiiluu bashal.", "id": "Saya mau satu kilo tomat dan setengah kilo bawang.", "literal": "saya-mau kilo tomat-tomat dan setengah kilo bawang." },
+        { "speaker": "اَلْبَائِع:", "text": "حَاضِرٌ. وَالْفَاكِهَةُ؟ عِنْدِي تُفَّاحٌ وَمَوْزٌ.", "baca": "haadhir. wal-faakihah? 'indii tuffaahun wa mauz.", "id": "Siap. Buahnya? Ada apel dan pisang.", "literal": "hadir. dan buah-itu? di-tempat-saya apel dan pisang." },
+        { "speaker": "بُودِي:", "text": "بِكَمْ كِيلُو التُّفَّاحِ؟", "baca": "bikam kiiluut-tuffaah?", "id": "Sekilo apel berapa?", "literal": "dengan-berapa kilo apel-itu?" },
+        { "speaker": "اَلْبَائِع:", "text": "بِعِشْرِينَ جُنَيْهًا. وَالْمَوْزُ بِخَمْسَةَ عَشَرَ.", "baca": "bi'isyriina junaihan. wal-mauzu bikhamsata 'asyar.", "id": "Dua puluh pound. Pisangnya lima belas.", "literal": "dengan dua-puluh pound. dan pisang-itu dengan lima-belas." },
+        { "speaker": "لَيْلَى:", "text": "غَالٍ يَا عَمّ! أَمْسِ كَانَ بِثَمَانِيَةَ عَشَرَ.", "baca": "ghaalin yaa 'amm! amsi kaana bitsamaaniyata 'asyar.", "id": "Mahal, Pak! Kemarin delapan belas.", "literal": "mahal wahai paman! kemarin adalah dengan delapan-belas." },
+        { "speaker": "اَلْبَائِع:", "text": "خُذِي بِثَمَانِيَةَ عَشَرَ، لِأَنَّكِ زَبُونَةٌ قَدِيمَةٌ.", "baca": "khudzii bitsamaaniyata 'asyar, li'annaki zabuunatun qadiimah.", "id": "Ambil delapan belas saja, karena kamu pelanggan lama.", "literal": "ambillah dengan delapan-belas, karena-kamu pelanggan lama." },
+        { "speaker": "لَيْلَى:", "text": "شُكْرًا! وَكَمِ الْمَجْمُوعُ كُلُّهُ؟", "baca": "syukran! wa kamil-majmuu'u kulluh?", "id": "Terima kasih! Total semuanya berapa?", "literal": "terima kasih! dan berapa jumlah-itu semuanya?" },
+        { "speaker": "اَلْبَائِع:", "text": "سِتُّونَ جُنَيْهًا بِالتَّمَامِ.", "baca": "sittuuna junaihan bit-tamaam.", "id": "Enam puluh pound pas.", "literal": "enam-puluh pound dengan kesempurnaan." },
+        { "speaker": "بُودِي:", "text": "تَفَضَّلْ. وَهَلْ عِنْدَكَ أَكْيَاسٌ؟", "baca": "tafadhdhal. wa hal 'indaka akyaas?", "id": "Ini. Ada kantong plastik?", "literal": "silakanlah. dan apakah di-tempat-kamu kantong-kantong?" },
+        { "speaker": "اَلْبَائِع:", "text": "طَبْعًا. شُكْرًا وَإِلَى اللِّقَاءِ!", "baca": "thab'an. syukran wa ilal-liqaa'!", "id": "Tentu. Terima kasih, sampai jumpa!", "literal": "tentu. terima kasih dan sampai perjumpaan!" }
+      ],
+      "notes": [
+        "**يَا عَمّ dan يَا بِنْتِي bukan hubungan keluarga.** \"Paman\" dan \"anakku\" dipakai kepada orang asing sebagai bentuk keakraban yang sopan — persis seperti \"Pak\", \"Bu\", dan \"Nak\" dalam bahasa Indonesia. Yang setara untuk orang seusia: يَا أَخِي (saudaraku), يَا أُخْتِي.",
+        "**صَبَاحَ الْخَيْرِ — kenapa fathah, bukan dhammah?** Bentuk lengkapnya adalah doa: \"(semoga kamu mendapat) pagi kebaikan\". Karena ia sasaran dari kata kerja yang dibuang, ujungnya berfathah. Kamu tidak perlu memahami seluruh alasannya — cukup hafalkan bunyinya utuh.",
+        "**كُلُّ شَيْءٍ — \"setiap sesuatu\" = semuanya.** كُلّ selalu diikuti kata benda berkasrah: كُلُّ يَوْمٍ (setiap hari), كُلُّ النَّاسِ (semua orang). Kalau ia menempel pada kata ganti, ia berarti \"seluruh\": اَلْمَجْمُوعُ كُلُّهُ (\"totalnya seluruhnya\").",
+        "**كِيلُو طَمَاطِمَ — idhafah lagi.** \"Kilonya tomat\". Kata pertama telanjang, kata kedua berkasrah — tapi طَمَاطِم termasuk kata yang menolak tanwin, jadi kasrahnya berubah jadi fathah: طَمَاطِمَ. Kamu cukup mengenali gejalanya, jangan menghafal daftarnya di tingkat ini.",
+        "**كَانَ — \"dulu adalah\".** Kata kerja untuk masa lampau yang menggantikan ketiadaan \"adalah\": أَمْسِ كَانَ بِثَمَانِيَةَ عَشَرَ (\"kemarin harganya delapan belas\"). كَانَ akan dibongkar penuh di unit 13; untuk sekarang, kenali saja bahwa ia menandai masa lalu.",
+        "**لِأَنَّ — \"karena\".** Ia selalu diikuti kata benda atau kata ganti yang menempel: لِأَنَّكِ (karena kamu), لِأَنَّهُ (karena dia), لِأَنَّ الطَّعَامَ لَذِيذٌ (karena makanannya enak). Sama polanya dengan إِنَّ dan لٰكِنَّ.",
+        "**خُذِي — perintah kepada perempuan.** Dari أَخَذَ (mengambil): خُذْ (kepada laki-laki), خُذِي (kepada perempuan), خُذُوا (kepada beberapa orang). Menambahkan ـِي untuk perempuan berlaku untuk semua bentuk perintah.",
+        "**بِالتَّمَامِ — \"pas\", tanpa kembalian.** Ungkapan sehari-hari di pasar yang menegaskan angkanya bulat. Yang setara: بِالضَّبْطِ (\"persisnya\").",
+        "**طَبْعًا — \"tentu saja\".** Salah satu kata paling sering terdengar dalam percakapan Arab. Yang setara: بِالتَّأْكِيدِ (\"pasti\"), أَكِيد (\"sudah pasti\", lebih santai)."
+      ],
+      "grammars": [
+        {
+          "title": "Dua jalur jamak",
+          "body": [
+            "Bahasa Arab membentuk jamak dengan dua cara yang sama sekali berbeda, dan sayangnya yang tidak beraturan justru yang paling sering dipakai."
+          ],
+          "tables": [
+            {
+              "head": ["Jamak beraturan", "Tunggal", "Jamak", "Cara baca", "Arti"],
+              "rows": [
+                ["Laki-laki (+ُونَ)", "مُسْلِم", "مُسْلِمُونَ", "muslimuun", "orang-orang Muslim"],
+                ["", "مُدَرِّس", "مُدَرِّسُونَ", "mudarrisuun", "para guru"],
+                ["", "مُهَنْدِس", "مُهَنْدِسُونَ", "muhandisuun", "para insinyur"],
+                ["Perempuan (+َات)", "مُسْلِمَة", "مُسْلِمَات", "muslimaat", "muslimah-muslimah"],
+                ["", "طَالِبَة", "طَالِبَات", "thaalibaat", "para mahasiswi"],
+                ["", "سَاعَة", "سَاعَات", "saa'aat", "jam-jam"]
+              ]
+            },
+            {
+              "head": ["Jamak pecah", "Tunggal", "Jamak", "Cara baca", "Arti"],
+              "rows": [
+                ["", "كِتَاب", "كُتُب", "kutub", "buku-buku"],
+                ["", "بَيْت", "بُيُوت", "buyuut", "rumah-rumah"],
+                ["", "رَجُل", "رِجَال", "rijaal", "para lelaki"],
+                ["", "وَلَد", "أَوْلَاد", "aulaad", "anak-anak"],
+                ["", "قَلَم", "أَقْلَام", "aqlaam", "pena-pena"],
+                ["", "طَالِب", "طُلَّاب", "thullaab", "para mahasiswa"],
+                ["", "مَدْرَسَة", "مَدَارِس", "madaaris", "sekolah-sekolah"],
+                ["", "دَفْتَر", "دَفَاتِر", "dafaatir", "buku-buku tulis"]
+              ]
+            }
+          ],
+          "after": [
+            "Jamak beraturan hanya dipakai untuk **orang** (dan sebagian kata perempuan). Untuk benda, jalurnya hampir selalu jamak pecah — yang harus dihafal bersama kata tunggalnya, persis seperti vokal tengah kata kerja.",
+            "Sekali lagi: **hafalkan berpasangan.** كِتَاب — كُتُب. Menghafal tunggalnya saja berarti menunda separuh pekerjaan ke kemudian hari, waktu kamu sudah lupa konteksnya."
+          ]
+        },
+        {
+          "title": "Jamak benda mati diperlakukan sebagai perempuan tunggal",
+          "body": [
+            "Ini aturan yang paling mengejutkan pelajar Indonesia, dan sekaligus paling sering dilanggar. Kalau yang jamak adalah **benda**, kata sifat dan kata kerjanya berbentuk **perempuan tunggal**."
+          ],
+          "table": {
+            "head": ["Arab", "Cara baca", "Arti", "Perhatikan"],
+            "rows": [
+              ["اَلْكُتُبُ جَدِيدَةٌ", "al-kutubu jadiidah", "buku-buku itu baru", "جَدِيدَة, bukan جُدُد"],
+              ["اَلْبُيُوتُ كَبِيرَةٌ", "al-buyuutu kabiirah", "rumah-rumah itu besar", "kata sifat perempuan"],
+              ["هٰذِهِ الْأَقْلَامُ", "haadzihil-aqlaam", "pena-pena ini", "هٰذِهِ, bukan هٰؤُلَاءِ"],
+              ["اَلسَّيَّارَاتُ سَرِيعَةٌ", "as-sayyaaraatu sarii'ah", "mobil-mobil itu cepat", "tetap tunggal"],
+              ["اَلطُّلَّابُ مُجْتَهِدُونَ", "ath-thullaabu mujtahiduun", "para mahasiswa itu rajin", "ORANG → jamak betulan"],
+              ["اَلْمُدَرِّسَاتُ مَاهِرَاتٌ", "al-mudarrisaatu maahiraat", "para guru perempuan itu ahli", "ORANG → jamak betulan"]
+            ]
+          },
+          "after": [
+            "Pembatasnya jelas: **manusia** mendapat jamak sungguhan, **benda dan binatang** diperlakukan sebagai satu perempuan. Kalau kamu ragu, tanyakan pada dirimu: yang jamak ini bisa berbicara atau tidak?"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Di pasar: bahan makanan dan satuan",
+      "blocks": [
+        { "type": "tabel", "head": ["Arab", "Cara baca", "Arti", "Arab", "Cara baca", "Arti"], "rows": [
+          ["طَمَاطِم", "thamaathim", "tomat", "كِيلُو", "kiiluu", "kilogram"],
+          ["بَصَل", "bashal", "bawang", "نِصْفُ كِيلُو", "nishfu kiiluu", "setengah kilo"],
+          ["بَطَاطِس", "bathaathis", "kentang", "حَبَّة", "habbah", "butir, biji"],
+          ["جَزَر", "jazar", "wortel", "عُلْبَة", "'ulbah", "kotak, kaleng"],
+          ["خِيَار", "khiyaar", "mentimun", "زُجَاجَة", "zujaajah", "botol"],
+          ["تُفَّاح", "tuffaah", "apel", "كِيس", "kiis", "kantong"],
+          ["مَوْز", "mauz", "pisang", "رِبْطَة", "ribthah", "ikat"],
+          ["بُرْتُقَال", "burtuqaal", "jeruk", "قِطْعَة", "qith'ah", "potong"],
+          ["عِنَب", "'inab", "anggur", "كُوب", "kuub", "gelas"],
+          ["مَانْجُو", "maanjuu", "mangga", "لِتْر", "litr", "liter"]
+        ] },
+        { "type": "p", "text": "Perhatikan bahwa nama buah dan sayur di atas berbentuk **kolektif**: تُفَّاح berarti \"apel\" sebagai jenis, bukan satu buah apel. Untuk satu butir, tambahkan ة: تُفَّاحَة (sebuah apel), مَوْزَة (sebuah pisang), بَيْضَة (sebutir telur). Aturan ini kebalikan dari yang biasa — di sini ة justru membuatnya tunggal." },
+        { "type": "kotak", "title": "Kata yang jamaknya sudah kamu pakai tanpa sadar", "items": [
+          "Beberapa kata Arab masuk ke bahasa Indonesia dalam **bentuk jamaknya**, dan kita memakainya sebagai tunggal: \"ulama\" (عُلَمَاء, jamak dari عَالِم), \"kitab\" sebenarnya tunggal tapi \"kutub\" jamaknya, \"aurat\", \"akhlak\" (أَخْلَاق, jamak dari خُلُق), \"amal\", \"arwah\" (jamak dari رُوح).",
+          "Ini bukan sekadar hal menarik: mengenalinya memberimu puluhan kata Arab gratis, sekaligus mengajarkan pola jamak pecah lewat kata yang sudah kamu kenal seumur hidup."
+        ] }
+      ]
+    },
+    {
+      "title": "Menawar dan menutup transaksi",
+      "blocks": [
+        { "type": "tabel", "head": ["Arab", "Cara baca", "Arti"], "rows": [
+          ["بِكَمِ الْكِيلُو؟", "bikamil-kiiluu?", "Sekilo berapa?"],
+          ["هٰذَا غَالٍ جِدًّا", "haadzaa ghaalin jiddan", "Ini mahal sekali"],
+          ["أَعْطِنِي سِعْرًا أَفْضَلَ", "a'thinii si'ran afdhal", "Kasih harga yang lebih baik"],
+          ["آخِرُ سِعْرٍ؟", "aakhiru si'r?", "Harga terakhirnya?"],
+          ["مَا رَأْيُكَ فِي...؟", "maa ra'yuka fii...?", "Bagaimana kalau...?"],
+          ["اِتَّفَقْنَا", "ittafaqnaa", "Sepakat, deal"],
+          ["سَآخُذُهُ", "sa'aakhudzuh", "Saya ambil"],
+          ["لَا، شُكْرًا، غَالٍ", "laa syukran, ghaalin", "Tidak, terima kasih, mahal"],
+          ["هَلْ هٰذَا طَازَجٌ؟", "hal haadzaa thaazaj?", "Ini segar?"],
+          ["زِدْنِي قَلِيلًا", "zidnii qaliilan", "Tambah sedikit"]
+        ] },
+        { "type": "p", "text": "Satu hal yang jarang ditulis di buku pelajaran: **menawar itu percakapan, bukan pertengkaran.** Nada suaranya ringan, kadang sambil bercanda, dan berakhir dengan dua pihak sama-sama puas. Kalau kamu menawar dengan wajah tegang, penjualnya akan merasa dicurigai — dan harga justru tidak turun." },
+        { "type": "kotak", "title": "Kalimat penyelamat waktu ditawari terus", "items": [
+          "Kalau penjual terus menawarkan barang yang tidak kamu inginkan, kalimat yang sopan sekaligus tegas: شُكْرًا، أَنَا أَتَفَرَّجُ فَقَطْ (*syukran, anaa atafarraju faqath* — \"terima kasih, saya lihat-lihat saja\").",
+          "Dan kalau kamu benar-benar ingin pergi: شُكْرًا، سَأَعُودُ لَاحِقًا (\"terima kasih, saya kembali nanti\"). Dua-duanya diterima tanpa tersinggung."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "ar": "سُوق", "baca": "suuq", "id": "pasar" },
+    { "ar": "زَبُون", "baca": "zabuun", "id": "pelanggan" },
+    { "ar": "سِعْر", "baca": "si'r", "id": "harga" },
+    { "ar": "كِيلُو", "baca": "kiiluu", "id": "kilogram" },
+    { "ar": "حَبَّة", "baca": "habbah", "id": "butir, biji" },
+    { "ar": "كِيس", "baca": "kiis", "id": "kantong" },
+    { "ar": "زُجَاجَة", "baca": "zujaajah", "id": "botol" },
+    { "ar": "عُلْبَة", "baca": "'ulbah", "id": "kotak, kaleng" },
+    { "ar": "طَازَج", "baca": "thaazaj", "id": "segar" },
+    { "ar": "قَدِيم", "baca": "qadiim", "id": "lama, kuno" },
+    { "ar": "طَمَاطِم", "baca": "thamaathim", "id": "tomat" },
+    { "ar": "بَصَل", "baca": "bashal", "id": "bawang" },
+    { "ar": "بَطَاطِس", "baca": "bathaathis", "id": "kentang" },
+    { "ar": "تُفَّاح", "baca": "tuffaah", "id": "apel" },
+    { "ar": "مَوْز", "baca": "mauz", "id": "pisang" },
+    { "ar": "عِنَب", "baca": "'inab", "id": "anggur" },
+    { "ar": "كُلّ", "baca": "kull", "id": "setiap, seluruh" },
+    { "ar": "لِأَنَّ", "baca": "li'anna", "id": "karena" },
+    { "ar": "طَبْعًا", "baca": "thab'an", "id": "tentu saja" },
+    { "ar": "يَأْخُذُ", "baca": "ya'khudzu", "id": "mengambil" },
+    { "ar": "يُعْطِي", "baca": "yu'thii", "id": "memberi" },
+    { "ar": "يَشْتَرِي", "baca": "yasytarii", "id": "membeli" },
+    { "ar": "يَبِيعُ", "baca": "yabii'u", "id": "menjual" },
+    { "ar": "يَدْفَعُ", "baca": "yadfa'u", "id": "membayar" },
+    { "ar": "كُتُب", "baca": "kutub", "id": "buku-buku" },
+    { "ar": "بُيُوت", "baca": "buyuut", "id": "rumah-rumah" },
+    { "ar": "رِجَال", "baca": "rijaal", "id": "para lelaki" },
+    { "ar": "أَوْلَاد", "baca": "aulaad", "id": "anak-anak" },
+    { "ar": "طُلَّاب", "baca": "thullaab", "id": "para mahasiswa" },
+    { "ar": "نَاس", "baca": "naas", "id": "orang-orang" }
+  ],
+  "exercises": [
+    { "prompt": "Tulis bentuk jamaknya.", "items": [
+      "كِتَاب ←",
+      "بَيْت ←",
+      "قَلَم ←",
+      "طَالِبَة ←",
+      "مُهَنْدِس ←",
+      "وَلَد ←"
+    ] },
+    { "prompt": "Pilih bentuk kata sifat yang benar.", "items": [
+      "اَلْكُتُبُ ____ . (baru)",
+      "اَلطُّلَّابُ ____ . (rajin — مُجْتَهِد)",
+      "اَلْبُيُوتُ ____ . (besar)",
+      "اَلْمُدَرِّسَاتُ ____ . (baru)",
+      "اَلسَّيَّارَاتُ ____ . (kecil)"
+    ] },
+    { "prompt": "Terjemahkan ke bahasa Arab.", "items": [
+      "Saya mau satu kilo tomat.",
+      "Sekilo apel berapa?",
+      "Ini mahal sekali.",
+      "Semuanya segar.",
+      "Total semuanya berapa?",
+      "Ada kantong?"
+    ] },
+    { "prompt": "Susun percakapan di pasar: kamu ingin membeli dua kilo jeruk dan setengah kilo bawang, menanyakan harga, menawar, lalu sepakat.", "items": [
+      "Sapaan",
+      "Menanyakan harga jeruk",
+      "Menyebut yang kamu mau",
+      "Menawar",
+      "Penjual menyetujui",
+      "Penutup"
+    ] }
+  ],
+  "answers": [
+    "كُتُب — بُيُوت — أَقْلَام — طَالِبَات — مُهَنْدِسُونَ — أَوْلَاد",
+    "جَدِيدَةٌ — مُجْتَهِدُونَ — كَبِيرَةٌ — جَدِيدَاتٌ — صَغِيرَةٌ",
+    "أُرِيدُ كِيلُو طَمَاطِمَ. — بِكَمْ كِيلُو التُّفَّاحِ؟ — هٰذَا غَالٍ جِدًّا. — كُلُّ شَيْءٍ طَازَجٌ. — كَمِ الْمَجْمُوعُ كُلُّهُ؟ — هَلْ عِنْدَكَ أَكْيَاسٌ؟",
+    "Contoh: صَبَاحَ الْخَيْرِ يَا عَمّ! — بِكَمْ كِيلُو الْبُرْتُقَالِ؟ — أُرِيدُ كِيلُوَيْنِ بُرْتُقَالًا وَنِصْفَ كِيلُو بَصَلٍ. — هٰذَا غَالٍ، آخِرُ سِعْرٍ؟ — خُذْ بِأَرْبَعِينَ جُنَيْهًا. — اِتَّفَقْنَا، شُكْرًا!"
+  ],
+  "wave": "Ambil sepuluh kata benda yang sudah kamu hafal, dan cari bentuk jamaknya di daftar kosakata modul ini. Tulis berpasangan."
+}

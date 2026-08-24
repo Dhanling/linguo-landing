@@ -1,0 +1,199 @@
+{
+  "title": "Jam berapa sekarang?",
+  "title_target": "كَمِ السَّاعَةُ؟",
+  "goal": "Menyebut jam, hari, dan bulan, membuat janji, dan mengerti kenapa hari-hari dalam seminggu terdengar seperti angka.",
+  "bekal": [
+    "menanyakan dan menyebut jam berapa",
+    "menyebut hari, bulan, dan waktu dalam sehari",
+    "membuat janji sederhana dengan waktu dan tempat"
+  ],
+  "dialogs": [
+    {
+      "title": "حِوَار — مَوْعِدٌ فِي الْمَكْتَبَةِ",
+      "intro": "Budi dan Laila membuat janji belajar bersama.",
+      "lines": [
+        { "speaker": "لَيْلَى:", "text": "كَمِ السَّاعَةُ الْآنَ؟", "baca": "kamis-saa'atul-aan?", "id": "Sekarang jam berapa?", "literal": "berapa jam-itu sekarang?" },
+        { "speaker": "بُودِي:", "text": "اَلسَّاعَةُ الْعَاشِرَةُ وَالنِّصْفُ.", "baca": "as-saa'atul-'aasyiratu wan-nishf.", "id": "Jam setengah sebelas.", "literal": "jam-itu yang-kesepuluh dan setengah." },
+        { "speaker": "لَيْلَى:", "text": "مَتَى يَبْدَأُ دَرْسُ النَّحْوِ؟", "baca": "mataa yabda'u darsun-nahw?", "id": "Kapan pelajaran nahwu mulai?", "literal": "kapan memulai pelajaran nahwu?" },
+        { "speaker": "بُودِي:", "text": "يَبْدَأُ فِي السَّاعَةِ الْحَادِيَةَ عَشْرَةَ.", "baca": "yabda'u fis-saa'atil-haadiyata 'asyrah.", "id": "Mulai jam sebelas.", "literal": "memulai pada jam-itu yang-kesebelas." },
+        { "speaker": "لَيْلَى:", "text": "إِذَنْ عِنْدَنَا نِصْفُ سَاعَةٍ. هَلْ تَشْرَبُ قَهْوَةً؟", "baca": "idzan 'indanaa nishfu saa'ah. hal tasyrabu qahwah?", "id": "Kalau begitu kita punya setengah jam. Mau minum kopi?", "literal": "kalau-begitu di-tempat-kami setengah jam. apakah kamu-minum kopi?" },
+        { "speaker": "بُودِي:", "text": "بِكُلِّ سُرُورٍ. وَمَتَى نَدْرُسُ مَعًا؟", "baca": "bikulli suruur. wa mataa nadrusu ma'an?", "id": "Dengan senang hati. Dan kapan kita belajar bersama?", "literal": "dengan semua kesenangan. dan kapan kita-belajar bersama?" },
+        { "speaker": "لَيْلَى:", "text": "غَدًا؟ يَوْمَ الثُّلَاثَاءِ بَعْدَ الظُّهْرِ.", "baca": "ghadan? yaumats-tsulaatsaa'i ba'daz-zhuhr.", "id": "Besok? Hari Selasa sore.", "literal": "besok? hari Selasa sesudah tengah-hari." },
+        { "speaker": "بُودِي:", "text": "فِي أَيِّ سَاعَةٍ؟", "baca": "fii ayyi saa'ah?", "id": "Jam berapa?", "literal": "pada mana jam?" },
+        { "speaker": "لَيْلَى:", "text": "فِي الرَّابِعَةِ إِلَّا رُبْعًا، فِي الْمَكْتَبَةِ.", "baca": "fir-raabi'ati illaa rub'an, fil-maktabah.", "id": "Jam empat kurang seperempat, di perpustakaan.", "literal": "pada yang-keempat kecuali seperempat, di perpustakaan-itu." },
+        { "speaker": "بُودِي:", "text": "مُنَاسِبٌ. أَنَا حُرٌّ بَعْدَ الثَّالِثَةِ.", "baca": "munaasib. anaa hurrun ba'dats-tsaalitsah.", "id": "Pas. Saya luang setelah jam tiga.", "literal": "cocok. saya bebas sesudah yang-ketiga." },
+        { "speaker": "لَيْلَى:", "text": "اِتَّفَقْنَا. لَا تَتَأَخَّرْ!", "baca": "ittafaqnaa. laa tata'akhkhar!", "id": "Sepakat. Jangan telat!", "literal": "kami-sepakat. jangan kamu-terlambat!" },
+        { "speaker": "بُودِي:", "text": "أَبَدًا! إِلَى الْغَدِ.", "baca": "abadan! ilal-ghad.", "id": "Sama sekali tidak! Sampai besok.", "literal": "sekali-kali tidak! sampai besok." }
+      ],
+      "notes": [
+        "**سَاعَة punya dua arti sekaligus: \"jam\" (alat & satuan waktu) dan \"pukul\".** كَمِ السَّاعَةُ؟ = \"pukul berapa?\", tapi نِصْفُ سَاعَةٍ = \"setengah jam (lamanya)\". Konteks yang memisahkannya, dan dalam praktiknya tidak pernah membingungkan.",
+        "**Jam memakai bilangan tingkat, bukan bilangan biasa.** Bukan \"jam tiga\" melainkan \"jam yang ketiga\": اَلسَّاعَةُ الثَّالِثَةُ. Semuanya berbentuk perempuan, karena mengikuti سَاعَة yang perempuan. Ini kabar baik: kamu cukup menghafal satu deret bentuk.",
+        "**إِلَّا berarti \"kurang\".** اَلرَّابِعَةُ إِلَّا رُبْعًا = \"jam empat kurang seperempat\" = 15.45. Harfiahnya \"yang keempat kecuali seperempat\". Untuk \"lebih\", dipakai وَ: اَلرَّابِعَةُ وَالرُّبْعُ = 16.15.",
+        "**Nama hari sebagian besar adalah angka.** اَلْأَحَد (yang pertama), اَلِاثْنَيْنِ (yang kedua), اَلثُّلَاثَاء (yang ketiga), اَلْأَرْبِعَاء (yang keempat), اَلْخَمِيس (yang kelima). Cuma dua yang bukan angka: اَلْجُمُعَة (hari berkumpul, untuk salat Jumat) dan اَلسَّبْت (hari istirahat, serumpun dengan *sabbath*).",
+        "**يَوْمَ الثُّلَاثَاءِ — \"pada hari Selasa\".** Perhatikan يَوْم berharakat fathah tanpa kata depan: bentuk ini menyatakan keterangan waktu. Bisa juga memakai فِي: فِي يَوْمِ الثُّلَاثَاءِ. Dua-duanya benar; yang pertama lebih ringkas dan lebih umum.",
+        "**بَعْدَ الظُّهْرِ harfiahnya \"sesudah tengah hari\".** Waktu dalam sehari sering disebut dengan patokan waktu salat — bukan karena setiap kalimat bermuatan agama, melainkan karena itulah pembagian hari yang dipakai semua orang: اَلْفَجْر, اَلظُّهْر, اَلْعَصْر, اَلْمَغْرِب, اَلْعِشَاء.",
+        "**فِي أَيِّ سَاعَةٍ؟ — \"jam berapa?\" versi lengkap.** أَيّ berarti \"yang mana\", dan ia selalu diikuti kata benda tidak tertentu berkasrah: أَيُّ كِتَابٍ؟ (buku yang mana?), فِي أَيِّ يَوْمٍ؟ (hari apa?).",
+        "**لَا تَتَأَخَّرْ — larangan.** Bentuk larangan adalah لَا + kata kerja sekarang dengan ujung disukunkan: لَا تَتَأَخَّرْ (jangan telat), لَا تَنْسَ (jangan lupa), لَا تَقْلَقْ (jangan khawatir). Kepada perempuan tambahkan ـِي: لَا تَتَأَخَّرِي.",
+        "**بِكُلِّ سُرُورٍ** harfiahnya \"dengan segala kesenangan\" — persis \"dengan senang hati\". Ini jawaban baku yang sopan untuk ajakan atau permintaan tolong."
+      ],
+      "grammars": [
+        {
+          "title": "Menyebut jam",
+          "table": {
+            "head": ["Jam", "Arab", "Cara baca"],
+            "rows": [
+              ["01.00", "اَلسَّاعَةُ الْوَاحِدَةُ", "as-saa'atul-waahidah"],
+              ["02.00", "اَلسَّاعَةُ الثَّانِيَةُ", "as-saa'atuts-tsaaniyah"],
+              ["03.00", "اَلسَّاعَةُ الثَّالِثَةُ", "as-saa'atuts-tsaalitsah"],
+              ["04.00", "اَلسَّاعَةُ الرَّابِعَةُ", "as-saa'atur-raabi'ah"],
+              ["05.00", "اَلسَّاعَةُ الْخَامِسَةُ", "as-saa'atul-khaamisah"],
+              ["06.00", "اَلسَّاعَةُ السَّادِسَةُ", "as-saa'atus-saadisah"],
+              ["07.00", "اَلسَّاعَةُ السَّابِعَةُ", "as-saa'atus-saabi'ah"],
+              ["08.00", "اَلسَّاعَةُ الثَّامِنَةُ", "as-saa'atuts-tsaaminah"],
+              ["09.00", "اَلسَّاعَةُ التَّاسِعَةُ", "as-saa'atut-taasi'ah"],
+              ["10.00", "اَلسَّاعَةُ الْعَاشِرَةُ", "as-saa'atul-'aasyirah"],
+              ["11.00", "اَلسَّاعَةُ الْحَادِيَةَ عَشْرَةَ", "as-saa'atul-haadiyata 'asyrah"],
+              ["12.00", "اَلسَّاعَةُ الثَّانِيَةَ عَشْرَةَ", "as-saa'atuts-tsaaniyata 'asyrah"]
+            ]
+          },
+          "after": [
+            "Menit ditambahkan dengan وَ (lebih) atau إِلَّا (kurang): اَلثَّالِثَةُ وَالنِّصْفُ (03.30), اَلثَّالِثَةُ وَالرُّبْعُ (03.15), اَلثَّالِثَةُ إِلَّا رُبْعًا (02.45), اَلثَّالِثَةُ وَعِشْرُونَ دَقِيقَةً (03.20), اَلثَّالِثَةُ وَالثُّلْثُ (03.20 versi pendek).",
+            "Pagi atau sore ditandai di belakang: صَبَاحًا (pagi), ظُهْرًا (siang), مَسَاءً (sore/malam), لَيْلًا (malam). اَلسَّاعَةُ السَّابِعَةُ مَسَاءً = jam tujuh malam."
+          ]
+        },
+        {
+          "title": "Hari dan bulan",
+          "table": {
+            "head": ["Hari", "Cara baca", "Arti", "Asal katanya"],
+            "rows": [
+              ["اَلْأَحَد", "al-ahad", "Minggu", "satu"],
+              ["اَلِاثْنَيْن", "al-itsnain", "Senin", "dua"],
+              ["اَلثُّلَاثَاء", "ats-tsulaatsaa'", "Selasa", "tiga"],
+              ["اَلْأَرْبِعَاء", "al-arbi'aa'", "Rabu", "empat"],
+              ["اَلْخَمِيس", "al-khamiis", "Kamis", "lima"],
+              ["اَلْجُمُعَة", "al-jumu'ah", "Jumat", "berkumpul"],
+              ["اَلسَّبْت", "as-sabt", "Sabtu", "istirahat"]
+            ]
+          },
+          "after": [
+            "Kamu mungkin sudah mengenali semuanya dari bahasa Indonesia: Ahad, Senin (dari *itsnain*), Selasa (*tsulaatsaa'*), Rabu (*arbi'aa'*), Kamis (*khamiis*), Jumat, Sabtu. Nama hari kita memang dipinjam utuh dari bahasa Arab — jadi bagian ini praktis sudah kamu kuasai sebelum membaca.",
+            "Bulan Masehi juga dipinjam, tapi berbeda antar negara: يَنَايِر (Januari) di Mesir dan Teluk, كَانُون الثَّانِي di Suriah dan Lebanon. Bulan Hijriah sama di mana-mana: مُحَرَّم, رَمَضَان, شَوَّال, ذُو الْحِجَّة."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Waktu dalam sehari dan keterangan waktu",
+      "blocks": [
+        { "type": "tabel", "head": ["Arab", "Cara baca", "Arti", "Arab", "Cara baca", "Arti"], "rows": [
+          ["صَبَاح", "shabaah", "pagi", "اَلْيَوْم", "al-yaum", "hari ini"],
+          ["ظُهْر", "zhuhr", "tengah hari", "غَدًا", "ghadan", "besok"],
+          ["بَعْدَ الظُّهْرِ", "ba'daz-zhuhr", "sore", "أَمْسِ", "amsi", "kemarin"],
+          ["مَسَاء", "masaa'", "petang, malam", "اَلْآنَ", "al-aan", "sekarang"],
+          ["لَيْل", "lail", "malam", "دَائِمًا", "daa'iman", "selalu"],
+          ["يَوْم", "yaum", "hari", "أَحْيَانًا", "ahyaanan", "kadang-kadang"],
+          ["أُسْبُوع", "usbuu'", "minggu", "غَالِبًا", "ghaaliban", "sering"],
+          ["شَهْر", "syahr", "bulan", "أَبَدًا", "abadan", "tidak pernah"],
+          ["سَنَة", "sanah", "tahun", "قَبْلَ", "qabla", "sebelum"],
+          ["دَقِيقَة", "daqiiqah", "menit", "بَعْدَ", "ba'da", "sesudah"]
+        ] },
+        { "type": "p", "text": "Perhatikan bahwa banyak keterangan waktu berakhiran tanwin fathah: غَدًا, أَحْيَانًا, دَائِمًا, أَبَدًا, صَبَاحًا. Akhiran ـًا itulah penanda \"keterangan\" dalam bahasa Arab — sama seperti شُكْرًا (\"dengan berterima kasih\") dan أَهْلًا. Sekali kamu mengenali polanya, kata-kata ini berhenti terasa acak." },
+        { "type": "kotak", "title": "Hari libur di dunia Arab", "items": [
+          "Di sebagian besar negara Arab, akhir pekan jatuh pada **Jumat dan Sabtu**, bukan Sabtu–Minggu. Di Mesir, Arab Saudi, UEA, dan Yordania, hari Minggu adalah hari kerja biasa.",
+          "Ini penting kalau kamu membuat janji: عُطْلَةُ نِهَايَةِ الْأُسْبُوعِ (*'uthlatu nihaayatil-usbuu'* — akhir pekan) tidak berarti hari yang sama dengan di Indonesia. Kalimat yang aman: هَلْ أَنْتَ حُرٌّ يَوْمَ الْأَحَدِ؟ (\"apakah kamu luang hari Minggu?\")."
+        ] }
+      ]
+    },
+    {
+      "title": "Membuat janji",
+      "blocks": [
+        { "type": "tabel", "head": ["Arab", "Cara baca", "Arti"], "rows": [
+          ["مَتَى نَلْتَقِي؟", "mataa naltaqii?", "Kapan kita bertemu?"],
+          ["هَلْ أَنْتَ حُرٌّ غَدًا؟", "hal anta hurrun ghadan?", "Kamu luang besok?"],
+          ["فِي أَيِّ سَاعَةٍ؟", "fii ayyi saa'ah?", "Jam berapa?"],
+          ["أَنَا مَشْغُولٌ الْيَوْمَ", "anaa masyghuulunil-yaum", "Saya sibuk hari ini"],
+          ["هٰذَا مُنَاسِبٌ", "haadzaa munaasib", "Ini pas / cocok"],
+          ["اِتَّفَقْنَا", "ittafaqnaa", "Sepakat"],
+          ["لَا تَتَأَخَّرْ", "laa tata'akhkhar", "Jangan telat"],
+          ["أَنَا آسِفٌ، تَأَخَّرْتُ", "anaa aasif, ta'akhkhartu", "Maaf, saya telat"],
+          ["إِلَى الْغَدِ", "ilal-ghad", "Sampai besok"],
+          ["نَلْتَقِي هُنَاكَ", "naltaqii hunaak", "Kita ketemu di sana"]
+        ] },
+        { "type": "p", "text": "Satu kalimat yang paling sering dipakai dan paling sering salah diterjemahkan: إِنْ شَاءَ اللهُ. Ia bukan \"mungkin\" dan bukan penolakan halus — melainkan cara baku menyatakan rencana masa depan, seperti \"insyaallah\" dalam bahasa Indonesia. Menjawab ajakan tanpa menyebutnya justru terdengar agak sombong bagi sebagian penutur." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "ar": "سَاعَة", "baca": "saa'ah", "id": "jam" },
+    { "ar": "دَقِيقَة", "baca": "daqiiqah", "id": "menit" },
+    { "ar": "نِصْف", "baca": "nishf", "id": "setengah" },
+    { "ar": "رُبْع", "baca": "rub'", "id": "seperempat" },
+    { "ar": "إِلَّا", "baca": "illaa", "id": "kurang; kecuali" },
+    { "ar": "مَتَى", "baca": "mataa", "id": "kapan" },
+    { "ar": "أَيّ", "baca": "ayy", "id": "yang mana" },
+    { "ar": "يَوْم", "baca": "yaum", "id": "hari" },
+    { "ar": "أُسْبُوع", "baca": "usbuu'", "id": "minggu" },
+    { "ar": "شَهْر", "baca": "syahr", "id": "bulan" },
+    { "ar": "اَلْيَوْمَ", "baca": "al-yauma", "id": "hari ini" },
+    { "ar": "غَدًا", "baca": "ghadan", "id": "besok" },
+    { "ar": "أَمْسِ", "baca": "amsi", "id": "kemarin" },
+    { "ar": "صَبَاحًا", "baca": "shabaahan", "id": "pagi hari" },
+    { "ar": "مَسَاءً", "baca": "masaa'an", "id": "malam hari" },
+    { "ar": "بَعْدَ", "baca": "ba'da", "id": "sesudah" },
+    { "ar": "قَبْلَ", "baca": "qabla", "id": "sebelum" },
+    { "ar": "مَوْعِد", "baca": "mau'id", "id": "janji, jadwal" },
+    { "ar": "حُرّ", "baca": "hurr", "id": "luang, bebas" },
+    { "ar": "مَشْغُول", "baca": "masyghuul", "id": "sibuk" },
+    { "ar": "مُنَاسِب", "baca": "munaasib", "id": "cocok, pas" },
+    { "ar": "مَعًا", "baca": "ma'an", "id": "bersama-sama" },
+    { "ar": "إِذَنْ", "baca": "idzan", "id": "kalau begitu" },
+    { "ar": "دَائِمًا", "baca": "daa'iman", "id": "selalu" },
+    { "ar": "أَحْيَانًا", "baca": "ahyaanan", "id": "kadang-kadang" },
+    { "ar": "أَبَدًا", "baca": "abadan", "id": "tidak pernah, sekali-kali" },
+    { "ar": "قَهْوَة", "baca": "qahwah", "id": "kopi" },
+    { "ar": "نَحْو", "baca": "nahw", "id": "tata bahasa (nahwu)" }
+  ],
+  "exercises": [
+    { "prompt": "Tulis jamnya dengan huruf Arab.", "items": [
+      "03.00",
+      "07.30",
+      "09.15",
+      "11.45",
+      "01.00 siang",
+      "08.00 malam"
+    ] },
+    { "prompt": "Terjemahkan ke bahasa Arab.", "items": [
+      "Sekarang jam berapa?",
+      "Jam setengah lima.",
+      "Kapan pelajarannya mulai?",
+      "Hari Selasa sore.",
+      "Saya sibuk hari ini.",
+      "Sampai besok!"
+    ] },
+    { "prompt": "Urutkan hari-hari berikut dari Minggu sampai Sabtu.", "items": [
+      "اَلْخَمِيس",
+      "اَلْأَحَد",
+      "اَلسَّبْت",
+      "اَلثُّلَاثَاء",
+      "اَلِاثْنَيْن",
+      "اَلْجُمُعَة",
+      "اَلْأَرْبِعَاء"
+    ] },
+    { "prompt": "Jawab tentang dirimu sendiri, dalam kalimat lengkap.", "items": [
+      "كَمِ السَّاعَةُ الْآنَ؟",
+      "مَتَى تَبْدَأُ عَمَلَكَ؟",
+      "هَلْ أَنْتَ مَشْغُولٌ غَدًا؟",
+      "فِي أَيِّ يَوْمٍ تَدْرُسُ الْعَرَبِيَّةَ؟",
+      "مَتَى تَنَامُ؟"
+    ] }
+  ],
+  "answers": [
+    "اَلسَّاعَةُ الثَّالِثَةُ — اَلسَّاعَةُ السَّابِعَةُ وَالنِّصْفُ — اَلسَّاعَةُ التَّاسِعَةُ وَالرُّبْعُ — اَلسَّاعَةُ الثَّانِيَةَ عَشْرَةَ إِلَّا رُبْعًا — اَلسَّاعَةُ الْوَاحِدَةُ ظُهْرًا — اَلسَّاعَةُ الثَّامِنَةُ مَسَاءً",
+    "كَمِ السَّاعَةُ الْآنَ؟ — اَلسَّاعَةُ الرَّابِعَةُ وَالنِّصْفُ. — مَتَى يَبْدَأُ الدَّرْسُ؟ — يَوْمَ الثُّلَاثَاءِ بَعْدَ الظُّهْرِ. — أَنَا مَشْغُولٌ الْيَوْمَ. — إِلَى الْغَدِ!",
+    "اَلْأَحَد — اَلِاثْنَيْن — اَلثُّلَاثَاء — اَلْأَرْبِعَاء — اَلْخَمِيس — اَلْجُمُعَة — اَلسَّبْت",
+    "Contoh: اَلسَّاعَةُ الثَّامِنَةُ صَبَاحًا. — أَبْدَأُ عَمَلِي فِي السَّاعَةِ التَّاسِعَةِ. — لَا، أَنَا حُرٌّ غَدًا. — أَدْرُسُ الْعَرَبِيَّةَ يَوْمَ السَّبْتِ. — أَنَامُ فِي السَّاعَةِ الْعَاشِرَةِ."
+  ],
+  "wave": "Selama tiga hari ke depan, tiap kali melihat jam, sebutkan waktunya dalam bahasa Arab di dalam hati. Ini latihan paling murah yang ada."
+}

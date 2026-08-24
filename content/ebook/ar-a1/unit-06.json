@@ -1,0 +1,205 @@
+{
+  "title": "Berapa harganya?",
+  "title_target": "بِكَمْ هٰذَا؟",
+  "goal": "Menyebut dan memahami angka, menanyakan harga, dan mengerti aturan angka yang paling membingungkan sekaligus paling sering dipakai.",
+  "bekal": [
+    "menghitung dari satu sampai seratus",
+    "menanyakan harga dan jumlah dengan *bikam* dan *kam*",
+    "menyebut jumlah benda dengan bentuk yang benar"
+  ],
+  "dialogs": [
+    {
+      "title": "حِوَار — فِي مَحَلِّ الْقِرْطَاسِيَّةِ",
+      "intro": "Budi membeli perlengkapan kuliah di toko alat tulis dekat kampus.",
+      "lines": [
+        { "speaker": "بُودِي:", "text": "اَلسَّلَامُ عَلَيْكُمْ. عِنْدَكُمْ دَفَاتِرُ؟", "baca": "as-salaamu 'alaikum. 'indakum dafaatir?", "id": "Assalamualaikum. Ada buku tulis?", "literal": "salam atas kalian. di-tempat-kalian buku-buku-tulis?" },
+        { "speaker": "اَلْبَائِع:", "text": "وَعَلَيْكُمُ السَّلَامُ. نَعَمْ، تَفَضَّلْ.", "baca": "wa 'alaikumus-salaam. na'am, tafadhdhal.", "id": "Waalaikumsalam. Ya, silakan.", "literal": "dan atas kalian salam. ya, silakanlah." },
+        { "speaker": "بُودِي:", "text": "بِكَمْ هٰذَا الدَّفْتَرُ؟", "baca": "bikam haadzad-daftar?", "id": "Berapa harga buku tulis ini?", "literal": "dengan-berapa buku-tulis ini?" },
+        { "speaker": "اَلْبَائِع:", "text": "بِعَشَرَةِ جُنَيْهَاتٍ.", "baca": "bi'asyarati junaihaat.", "id": "Sepuluh pound.", "literal": "dengan sepuluh pound-pound." },
+        { "speaker": "بُودِي:", "text": "أُرِيدُ ثَلَاثَةَ دَفَاتِرَ وَخَمْسَةَ أَقْلَامٍ.", "baca": "uriidu tsalaatsata dafaatira wa khamsata aqlaam.", "id": "Saya mau tiga buku tulis dan lima pena.", "literal": "saya-mau tiga buku-tulis dan lima pena-pena." },
+        { "speaker": "اَلْبَائِع:", "text": "اَلْأَقْلَامُ بِخَمْسَةِ جُنَيْهَاتٍ لِلْوَاحِدِ.", "baca": "al-aqlaamu bikhamsati junaihaatin lil-waahid.", "id": "Penanya lima pound satuannya.", "literal": "pena-pena-itu dengan lima pound untuk-yang-satu." },
+        { "speaker": "بُودِي:", "text": "وَكَمِ الْمَجْمُوعُ؟", "baca": "wa kamil-majmuu'?", "id": "Jadi totalnya berapa?", "literal": "dan berapa jumlah-itu?" },
+        { "speaker": "اَلْبَائِع:", "text": "خَمْسَةٌ وَخَمْسُونَ جُنَيْهًا.", "baca": "khamsatun wa khamsuuna junaihan.", "id": "Lima puluh lima pound.", "literal": "lima dan lima-puluh pound." },
+        { "speaker": "بُودِي:", "text": "هٰذَا غَالٍ قَلِيلًا. هَلْ عِنْدَكُمْ أَرْخَصُ؟", "baca": "haadzaa ghaalin qaliilan. hal 'indakum arkhash?", "id": "Ini agak mahal. Ada yang lebih murah?", "literal": "ini mahal sedikit. apakah di-tempat-kalian lebih-murah?" },
+        { "speaker": "اَلْبَائِع:", "text": "نَعَمْ، هٰذَا بِثَلَاثَةِ جُنَيْهَاتٍ فَقَطْ.", "baca": "na'am, haadzaa bitsalaatsati junaihaatin faqath.", "id": "Ya, yang ini tiga pound saja.", "literal": "ya, ini dengan tiga pound saja." },
+        { "speaker": "بُودِي:", "text": "طَيِّبٌ. تَفَضَّلْ، هٰذِهِ خَمْسُونَ جُنَيْهًا.", "baca": "thayyib. tafadhdhal, haadzihi khamsuuna junaihan.", "id": "Baiklah. Ini, lima puluh pound.", "literal": "baik. silakanlah, ini lima-puluh pound." },
+        { "speaker": "اَلْبَائِع:", "text": "وَهٰذَا الْبَاقِي. شُكْرًا، مَعَ السَّلَامَةِ!", "baca": "wa haadzal-baaqii. syukran, ma'as-salaamah!", "id": "Dan ini kembaliannya. Terima kasih, hati-hati di jalan!", "literal": "dan ini sisa-itu. terima kasih, bersama keselamatan!" }
+      ],
+      "notes": [
+        "**بِكَمْ harfiahnya \"dengan berapa\".** Huruf بِ di sini menandai harga — sama seperti \"seharga\". Jawabannya juga memakai بِ: بِعَشَرَةِ جُنَيْهَاتٍ. Menjawab dengan angka telanjang (عَشَرَة saja) juga umum di percakapan cepat.",
+        "**كَمِ الْمَجْمُوعُ — kasrah yang muncul dari ketiadaan.** كَمْ aslinya berakhiran sukun, tapi begitu bertemu اَلْ di kata berikutnya, dua huruf mati bertabrakan dan sukunnya berubah jadi kasrah: *kamil-majmuu'*. Gejala yang sama sudah kamu lihat pada مِنَ الْمَغْرِبِ di unit 2.",
+        "**Angka 3–10 mengambil bentuk yang berlawanan jenis kelaminnya.** ثَلَاثَةَ دَفَاتِرَ — angkanya berbentuk perempuan (ثَلَاثَة) padahal دَفْتَر laki-laki. Ini bukan salah cetak melainkan aturan, dan aturan inilah yang paling banyak membingungkan pelajar. Lihat kotak tata bahasa.",
+        "**Angka 11 ke atas diikuti kata benda TUNGGAL bertanwin fathah.** خَمْسُونَ جُنَيْهًا — \"lima puluh pound\", dengan جُنَيْه tunggal, bukan جُنَيْهَات. Ini persis kebalikan dari 3–10 yang diikuti bentuk jamak. Bahasa Indonesia tidak pernah menuntut kita memikirkan ini sama sekali.",
+        "**تَفَضَّلْ dipakai jauh lebih sering daripada dugaanmu.** Ia berarti \"silakan\" dalam segala keadaan: mempersilakan masuk, menyerahkan barang, mempersilakan duduk, mempersilakan bicara. Kepada perempuan: تَفَضَّلِي. Kepada banyak orang: تَفَضَّلُوا.",
+        "**غَالٍ — kata berakhiran ي yang gugur.** Bentuk dasarnya غَالِي, tapi ي-nya menghilang saat kata itu tidak tertentu, menyisakan tanwin kasrah: غَالٍ. Kata sejenis: مُحَامٍ (pengacara), نَادٍ (klub). Kamu cukup mengenalinya, belum perlu membentuknya sendiri.",
+        "**أَرْخَص — bentuk \"lebih\".** Pola أَفْعَل menyatakan perbandingan: رَخِيص (murah) → أَرْخَص (lebih murah); كَبِير (besar) → أَكْبَر; جَيِّد (bagus) → أَجْوَد atau أَحْسَن. Bentuk ini tidak berubah menurut jenis kelamin — satu bentuk untuk semua.",
+        "**طَيِّب adalah \"oke\" versi Arab.** Harfiahnya \"baik\", tapi dalam percakapan ia berfungsi persis seperti \"baiklah\" atau \"oke\": menandai persetujuan atau peralihan topik. Di dialek Mesir bentuk pendeknya طَبْ.",
+        "**اَلْبَاقِي — kembalian.** Harfiahnya \"yang tersisa\". Kalau kamu tidak ingin kembaliannya: اِحْتَفِظْ بِالْبَاقِي (\"simpan saja kembaliannya\")."
+      ],
+      "grammars": [
+        {
+          "title": "Angka 1 sampai 10 — dan aturan terbaliknya",
+          "body": [
+            "Angka 1 dan 2 bekerja seperti kata sifat biasa dan mengikuti kata bendanya. Angka 3 sampai 10 melakukan hal yang sebaliknya, dan inilah bagian yang perlu perhatian."
+          ],
+          "table": {
+            "head": ["Angka", "Untuk benda laki-laki", "Untuk benda perempuan", "Contoh"],
+            "rows": [
+              ["1", "وَاحِد", "وَاحِدَة", "كِتَابٌ وَاحِدٌ"],
+              ["2", "اِثْنَانِ", "اِثْنَتَانِ", "كِتَابَانِ (cukup bentuk dua)"],
+              ["3", "ثَلَاثَة", "ثَلَاث", "ثَلَاثَةُ كُتُبٍ · ثَلَاثُ طَاوِلَاتٍ"],
+              ["4", "أَرْبَعَة", "أَرْبَع", "أَرْبَعَةُ أَقْلَامٍ"],
+              ["5", "خَمْسَة", "خَمْس", "خَمْسَةُ دَفَاتِرَ"],
+              ["6", "سِتَّة", "سِتّ", "سِتُّ سَاعَاتٍ"],
+              ["7", "سَبْعَة", "سَبْع", "سَبْعَةُ أَيَّامٍ"],
+              ["8", "ثَمَانِيَة", "ثَمَانٍ", "ثَمَانِيَةُ طُلَّابٍ"],
+              ["9", "تِسْعَة", "تِسْع", "تِسْعُ نَوَافِذَ"],
+              ["10", "عَشَرَة", "عَشْر", "عَشَرَةُ جُنَيْهَاتٍ"]
+            ]
+          },
+          "after": [
+            "**Aturannya: angka 3–10 memakai bentuk yang BERLAWANAN dengan kata bendanya.** Benda laki-laki (كِتَاب) diberi angka berbentuk perempuan (ثَلَاثَة); benda perempuan (طَاوِلَة) diberi angka tanpa ة (ثَلَاث). Tidak ada penjelasan yang memuaskan untuk ini — ia memang begitu, dan hafalannya jauh lebih cepat lewat contoh daripada lewat aturan.",
+            "Kata bendanya juga ikut berubah: sesudah angka 3–10 ia jadi **jamak** dan berharakat kasrah — ثَلَاثَةُ كُتُبٍ, bukan ثَلَاثَةُ كِتَابٍ.",
+            "Kabar baiknya: di percakapan sehari-hari seluruh dunia Arab, aturan ini sering dilonggarkan. Kesalahanmu tidak akan menghalangi siapa pun mengerti — tapi mengerjakannya benar membuat bahasa Arabmu terdengar terpelajar."
+          ]
+        },
+        {
+          "title": "Angka 11 ke atas",
+          "table": {
+            "head": ["Angka", "Arab", "Cara baca", "Contoh"],
+            "rows": [
+              ["11", "أَحَدَ عَشَرَ", "ahada 'asyar", "أَحَدَ عَشَرَ كِتَابًا"],
+              ["12", "اِثْنَا عَشَرَ", "itsnaa 'asyar", "اِثْنَا عَشَرَ شَهْرًا"],
+              ["13", "ثَلَاثَةَ عَشَرَ", "tsalaatsata 'asyar", "ثَلَاثَةَ عَشَرَ طَالِبًا"],
+              ["20", "عِشْرُونَ", "'isyruun", "عِشْرُونَ جُنَيْهًا"],
+              ["21", "وَاحِدٌ وَعِشْرُونَ", "waahidun wa 'isyruun", "وَاحِدٌ وَعِشْرُونَ يَوْمًا"],
+              ["50", "خَمْسُونَ", "khamsuun", "خَمْسُونَ رِيَالًا"],
+              ["100", "مِائَة", "mi'ah", "مِائَةُ دُولَارٍ"],
+              ["1000", "أَلْف", "alf", "أَلْفُ رُوبِيَّةٍ"]
+            ]
+          },
+          "after": [
+            "**Mulai 11, kata bendanya selalu TUNGGAL dan bertanwin fathah** (ـًا). Jadi عِشْرُونَ جُنَيْهًا (\"dua puluh pound\"), bukan جُنَيْهَات. Aneh bagi kita, tapi konsisten.",
+            "Ringkasnya cuma tiga keadaan: **1–2** kata benda biasa · **3–10** jamak berkasrah · **11 ke atas** tunggal berfathah. Kalau kamu cuma sempat menghafal satu hal dari halaman ini, hafalkan tiga baris itu."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Angka Arab dan mata uang",
+      "blocks": [
+        { "type": "p", "text": "Angka yang kita pakai sehari-hari (1, 2, 3) memang berasal dari dunia Arab — orang Eropa menamainya \"angka Arab\". Tapi dunia Arab bagian timur justru memakai bentuk lain, yang berasal dari India. Dua-duanya kamu temui di jalan." },
+        { "type": "tabel", "head": ["Latin", "Arab-India", "Arab", "Latin", "Arab-India", "Arab"], "rows": [
+          ["0", "٠", "صِفْر", "5", "٥", "خَمْسَة"],
+          ["1", "١", "وَاحِد", "6", "٦", "سِتَّة"],
+          ["2", "٢", "اِثْنَان", "7", "٧", "سَبْعَة"],
+          ["3", "٣", "ثَلَاثَة", "8", "٨", "ثَمَانِيَة"],
+          ["4", "٤", "أَرْبَعَة", "9", "٩", "تِسْعَة"]
+        ] },
+        { "type": "p", "text": "Perhatikan bahwa angka **tetap ditulis dari kiri ke kanan** walaupun tulisannya kanan-ke-kiri: ١٩٩٥ dibaca seribu sembilan ratus sembilan puluh lima, bukan sebaliknya. Ini menyelamatkanmu dari banyak salah baca nomor telepon dan harga." },
+        { "type": "tabel", "head": ["Mata uang", "Arab", "Cara baca", "Negara"], "rows": [
+          ["Pound", "جُنَيْه", "junaih", "Mesir, Sudan"],
+          ["Riyal", "رِيَال", "riyaal", "Arab Saudi, Qatar, Oman"],
+          ["Dirham", "دِرْهَم", "dirham", "UEA, Maroko"],
+          ["Dinar", "دِينَار", "diinaar", "Kuwait, Yordania, Irak"],
+          ["Dolar", "دُولَار", "duulaar", "—"],
+          ["Rupiah", "رُوبِيَّة", "ruubiyyah", "Indonesia"]
+        ] }
+      ]
+    },
+    {
+      "title": "Berbelanja: kalimat yang selalu terpakai",
+      "blocks": [
+        { "type": "tabel", "head": ["Arab", "Cara baca", "Arti"], "rows": [
+          ["بِكَمْ هٰذَا؟", "bikam haadzaa?", "Berapa harga ini?"],
+          ["كَمِ الْحِسَابُ؟", "kamil-hisaab?", "Berapa totalnya?"],
+          ["هٰذَا غَالٍ جِدًّا", "haadzaa ghaalin jiddan", "Ini mahal sekali"],
+          ["هَلْ عِنْدَكُمْ أَرْخَصُ؟", "hal 'indakum arkhash?", "Ada yang lebih murah?"],
+          ["أُرِيدُ هٰذَا", "uriidu haadzaa", "Saya mau yang ini"],
+          ["لَا أُرِيدُ، شُكْرًا", "laa uriid, syukran", "Tidak, terima kasih"],
+          ["هَلْ يُمْكِنُ تَخْفِيضٌ؟", "hal yumkinu takhfiidh?", "Bisa kurang?"],
+          ["سَآخُذُ هٰذَا", "sa'aakhudzu haadzaa", "Saya ambil yang ini"],
+          ["أَيْنَ الْمُحَاسِبُ؟", "ainal-muhaasib?", "Di mana kasirnya?"],
+          ["هَلْ تَقْبَلُونَ الْبِطَاقَةَ؟", "hal taqbaluunal-bithaaqah?", "Terima kartu?"]
+        ] },
+        { "type": "kotak", "title": "Menawar: yang perlu kamu tahu sebelum mencoba", "items": [
+          "Di pasar tradisional (سُوق) menawar itu wajar dan bahkan diharapkan. Di toko modern, supermarket, dan apotek, harga sudah pasti dan menawar akan terasa kikuk.",
+          "Kalimat yang sopan dan berhasil: هَلْ يُمْكِنُ تَخْفِيضٌ قَلِيلًا؟ (\"bisa kurang sedikit?\"). Yang tidak berhasil: langsung menyebut setengah harga. Tawaran wajar biasanya sekitar dua pertiga dari harga yang disebut.",
+          "Kalimat penutup kalau kamu memutuskan tidak jadi: شُكْرًا، سَأُفَكِّرُ (*syukran, sa'ufakkir* — \"terima kasih, saya pikir dulu\"). Ia sopan dan tidak mengunci apa pun."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "ar": "بِكَمْ", "baca": "bikam", "id": "berapa harganya" },
+    { "ar": "كَمْ", "baca": "kam", "id": "berapa (jumlah)" },
+    { "ar": "ثَمَن", "baca": "tsaman", "id": "harga" },
+    { "ar": "حِسَاب", "baca": "hisaab", "id": "tagihan, hitungan" },
+    { "ar": "مَجْمُوع", "baca": "majmuu'", "id": "jumlah, total" },
+    { "ar": "بَاقِي", "baca": "baaqii", "id": "sisa, kembalian" },
+    { "ar": "غَالٍ", "baca": "ghaalin", "id": "mahal" },
+    { "ar": "رَخِيص", "baca": "rakhiish", "id": "murah" },
+    { "ar": "أَرْخَص", "baca": "arkhash", "id": "lebih murah" },
+    { "ar": "أَغْلَى", "baca": "aghlaa", "id": "lebih mahal" },
+    { "ar": "بَائِع", "baca": "baa'i'", "id": "penjual" },
+    { "ar": "مَحَلّ", "baca": "mahall", "id": "toko" },
+    { "ar": "سُوق", "baca": "suuq", "id": "pasar" },
+    { "ar": "نُقُود", "baca": "nuquud", "id": "uang" },
+    { "ar": "بِطَاقَة", "baca": "bithaaqah", "id": "kartu" },
+    { "ar": "تَخْفِيض", "baca": "takhfiidh", "id": "diskon, potongan" },
+    { "ar": "تَفَضَّلْ", "baca": "tafadhdhal", "id": "silakan" },
+    { "ar": "أُرِيدُ", "baca": "uriidu", "id": "saya mau" },
+    { "ar": "طَيِّب", "baca": "thayyib", "id": "baik, oke" },
+    { "ar": "قَلِيلًا", "baca": "qaliilan", "id": "sedikit, agak" },
+    { "ar": "كَثِير", "baca": "katsiir", "id": "banyak" },
+    { "ar": "قَلِيل", "baca": "qaliil", "id": "sedikit" },
+    { "ar": "دَفْتَر / دَفَاتِر", "baca": "daftar / dafaatir", "id": "buku tulis (tunggal/jamak)" },
+    { "ar": "قَلَم / أَقْلَام", "baca": "qalam / aqlaam", "id": "pena (tunggal/jamak)" },
+    { "ar": "كِتَاب / كُتُب", "baca": "kitaab / kutub", "id": "buku (tunggal/jamak)" },
+    { "ar": "جُنَيْه", "baca": "junaih", "id": "pound (mata uang)" },
+    { "ar": "رِيَال", "baca": "riyaal", "id": "riyal" },
+    { "ar": "دُولَار", "baca": "duulaar", "id": "dolar" }
+  ],
+  "exercises": [
+    { "prompt": "Tulis angkanya dengan huruf Arab.", "items": [
+      "7 buku (كُتُب — laki-laki)",
+      "3 meja (طَاوِلَات — perempuan)",
+      "10 pena (أَقْلَام — laki-laki)",
+      "5 jam (سَاعَات — perempuan)",
+      "20 pelajar (طَالِب)",
+      "45 pound (جُنَيْه)"
+    ] },
+    { "prompt": "Terjemahkan ke bahasa Arab.", "items": [
+      "Berapa harga buku ini?",
+      "Dua puluh pound.",
+      "Ini mahal sekali.",
+      "Ada yang lebih murah?",
+      "Saya mau tiga buku tulis.",
+      "Berapa totalnya?"
+    ] },
+    { "prompt": "Bacalah harga berikut dengan huruf. Tulis jawabannya.", "items": [
+      "١٥ جُنَيْهًا",
+      "٣٠ رِيَالًا",
+      "٧ دُولَارَاتٍ",
+      "١٠٠ دِرْهَمٍ",
+      "٦٢ جُنَيْهًا"
+    ] },
+    { "prompt": "Susun percakapan pendek di toko: kamu ingin membeli dua kamus dan lima pena, menanyakan totalnya, dan merasa terlalu mahal.", "items": [
+      "Sapaan pembuka",
+      "Menanyakan harga kamus",
+      "Menyebut yang kamu inginkan",
+      "Menanyakan total",
+      "Berkomentar tentang harganya",
+      "Penutup"
+    ] }
+  ],
+  "answers": [
+    "سَبْعَةُ كُتُبٍ — ثَلَاثُ طَاوِلَاتٍ — عَشَرَةُ أَقْلَامٍ — خَمْسُ سَاعَاتٍ — عِشْرُونَ طَالِبًا — خَمْسَةٌ وَأَرْبَعُونَ جُنَيْهًا",
+    "بِكَمْ هٰذَا الْكِتَابُ؟ — بِعِشْرِينَ جُنَيْهًا. — هٰذَا غَالٍ جِدًّا. — هَلْ عِنْدَكُمْ أَرْخَصُ؟ — أُرِيدُ ثَلَاثَةَ دَفَاتِرَ. — كَمِ الْمَجْمُوعُ؟",
+    "خَمْسَةَ عَشَرَ جُنَيْهًا — ثَلَاثُونَ رِيَالًا — سَبْعَةُ دُولَارَاتٍ — مِائَةُ دِرْهَمٍ — اِثْنَانِ وَسِتُّونَ جُنَيْهًا",
+    "Contoh: اَلسَّلَامُ عَلَيْكُمْ. — بِكَمْ هٰذَا الْقَامُوسُ؟ — أُرِيدُ قَامُوسَيْنِ وَخَمْسَةَ أَقْلَامٍ. — كَمِ الْمَجْمُوعُ؟ — هٰذَا غَالٍ قَلِيلًا، هَلْ عِنْدَكُمْ أَرْخَصُ؟ — شُكْرًا، مَعَ السَّلَامَةِ."
+  ],
+  "wave": "Hari ini, hitung apa saja yang kamu lihat dalam hati: tiga kursi, lima jendela, dua puluh anak tangga. Dalam bahasa Arab."
+}
