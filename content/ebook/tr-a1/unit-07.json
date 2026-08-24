@@ -1,0 +1,197 @@
+{
+ "title": "Jam berapa?",
+ "title_target": "Saat kaç?",
+ "goal": "Menyebutkan jam, hari, dan bulan; mengatakan kapan sesuatu terjadi; dan menyusun jadwal harianmu.",
+ "bekal": [
+  "menjawab *saat kaç* dan bertanya *saat kaçta*",
+  "menyebut tujuh hari dan dua belas bulan",
+  "memakai kata keterangan frekuensi: *her gün*, *bazen*, *hiç*"
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — Ders programı",
+   "intro": "Hari pertama kursus. Ayşe menjelaskan jadwal kepada Budi di ruang guru.",
+   "lines": [
+    { "speaker": "Ayşe:", "text": "Budi, dersler pazartesi başlıyor.", "id": "Budi, pelajarannya mulai hari Senin.", "literal": "Budi, pelajaran-jamak Senin sedang-mulai." },
+    { "speaker": "Budi:", "text": "Saat kaçta?", "id": "Jam berapa?", "literal": "jam berapa-di?" },
+    { "speaker": "Ayşe:", "text": "Sabah dokuzda. Öğlene kadar devam ediyor.", "id": "Jam sembilan pagi. Berlanjut sampai tengah hari.", "literal": "pagi sembilan-di. tengah-hari-ke sampai lanjut sedang-lakukan." },
+    { "speaker": "Budi:", "text": "Her gün mü?", "id": "Setiap hari?", "literal": "tiap hari apakah?" },
+    { "speaker": "Ayşe:", "text": "Hayır. Pazartesi, çarşamba ve cuma. Haftada üç gün.", "id": "Tidak. Senin, Rabu, dan Jumat. Tiga hari seminggu.", "literal": "tidak. Senin, Rabu dan Jumat. minggu-di tiga hari." },
+    { "speaker": "Budi:", "text": "Peki salı ve perşembe ne yapıyorum?", "id": "Kalau Selasa dan Kamis saya melakukan apa?", "literal": "kalau-begitu Selasa dan Kamis apa sedang-lakukan-saya?" },
+    { "speaker": "Ayşe:", "text": "Evde çalışıyorsun! Ödev veriyorum.", "id": "Belajar di rumah! Saya kasih pekerjaan rumah.", "literal": "rumah-di sedang-belajar-kamu! tugas sedang-beri-saya." },
+    { "speaker": "Budi:", "text": "Anladım. Hafta sonu ders var mı?", "id": "Saya mengerti. Akhir pekan ada kelas?", "literal": "mengerti-saya. minggu ujung-nya pelajaran ada apakah?" },
+    { "speaker": "Ayşe:", "text": "Cumartesi bazen var, pazar hiç yok.", "id": "Sabtu kadang ada, Minggu tidak pernah ada.", "literal": "Sabtu kadang ada, Minggu sama-sekali tidak-ada." },
+    { "speaker": "Budi:", "text": "Sınav ne zaman?", "id": "Ujiannya kapan?", "literal": "ujian apa waktu?" },
+    { "speaker": "Ayşe:", "text": "Aralık ayında, ayın on beşinde.", "id": "Bulan Desember, tanggal lima belas.", "literal": "Desember bulan-nya-di, bulan-milik lima belas-nya-di." },
+    { "speaker": "Budi:", "text": "Çok vaktim var o zaman. Teşekkürler!", "id": "Berarti waktu saya masih banyak. Terima kasih!", "literal": "sangat waktu-ku ada itu waktu. terima-kasih-jamak!" }
+   ],
+   "notes": [
+    "**Saat kaç? menanyakan jamnya; saat kaçta? menanyakan waktunya.** Yang pertama minta angka (\"Saat üç\" — jam tiga). Yang kedua minta janji (\"Saat üçte\" — pada jam tiga). Beda satu akhiran, beda pertanyaan.",
+    "**Nama hari tidak berhuruf besar kalau berdiri sendiri di tengah kalimat** — tapi ditulis huruf besar kalau menunjuk tanggal tertentu. Dalam praktik sehari-hari orang Turki menulis keduanya dengan huruf besar, dan tak seorang pun keberatan.",
+    "**Haftada üç gün** — \"tiga hari di dalam seminggu\". Untuk menyatakan frekuensi, bahasa Turki memberi akhiran *-de* pada satuan waktunya: *günde iki kere* (dua kali sehari), *ayda bir* (sebulan sekali), *yılda dört kez* (empat kali setahun).",
+    "**Hiç berarti \"sama sekali tidak\" atau \"pernah\".** Dengan kalimat sangkal ia menguatkan: *hiç yok* (sama sekali tidak ada), *hiç bilmiyorum* (saya sama sekali tidak tahu). Dalam pertanyaan ia berarti \"pernah\": *Hiç İstanbul'a gittin mi?* — \"Kamu pernah ke Istanbul?\""
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyebut jam",
+   "blocks": [
+    { "type": "p", "text": "Untuk jam bulat, cukup *saat* + angka. Untuk setengah, tambahkan *buçuk*. Untuk seperempat, ada dua kata: *çeyrek geçiyor* (lewat seperempat) dan *çeyrek var* (kurang seperempat)." },
+    { "type": "tabel", "head": ["Jam", "Türkçe", "Cara baca"], "rows": [
+     ["03.00", "Saat üç.", "sa-AT üc"],
+     ["03.30", "Saat üç buçuk.", "sa-AT üc bu-CUK"],
+     ["03.15", "Üçü çeyrek geçiyor.", "ü-CÜ cey-REK ge-CI-yor"],
+     ["03.45", "Dörde çeyrek var.", "dör-DE cey-REK var"],
+     ["12.00", "Saat on iki.", "sa-AT on i-KI"],
+     ["12.30", "Yarım.", "ya-RIM"],
+     ["09.00 pagi", "Sabah dokuz.", "sa-BAH do-KUZ"],
+     ["21.00", "Akşam dokuz.", "ak-SYAM do-KUZ"]
+    ]},
+    { "type": "p", "text": "Tengah hari tepat punya kata sendiri: **yarım** (12.30) dan *öğlen* (tengah hari). Jangan bingung dengan *buçuk*, yang selalu menempel pada angka lain." },
+    { "type": "sub", "text": "Pada jam berapa — akhiran -de" },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia"], "rows": [
+     ["Saat kaçta?", "Jam berapa (acaranya)?"],
+     ["Saat üçte.", "Jam tiga."],
+     ["Saat dokuzda.", "Jam sembilan."],
+     ["Saat yedide.", "Jam tujuh."],
+     ["Üç buçukta.", "Jam setengah empat."],
+     ["Sabah erken.", "Pagi-pagi."]
+    ]},
+    { "type": "kotak", "title": "Angka yang nakal", "items": [
+     "*Bir* dan *beş* memakai *-de*: *birde*, *beşte*. *Altı* dan *yedi* jadi *altıda*, *yedide*. Angka yang berakhir konsonan keras memakai *-te*: *üçte*, *dörtte*, *altıda* — perhatikan *dörtte* dengan dua t.",
+     "Cara paling aman: sebut angkanya, dengarkan huruf terakhirnya, lalu terapkan Fıstıkçı Şahap dari unit 5."
+    ]}
+   ]
+  },
+  {
+   "title": "Hari, bulan, musim",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Asal katanya"], "rows": [
+     ["pazartesi", "Senin", "sesudah pasar"],
+     ["salı", "Selasa", "dari Ibrani"],
+     ["çarşamba", "Rabu", "dari Persia \"keempat\""],
+     ["perşembe", "Kamis", "dari Persia \"kelima\""],
+     ["cuma", "Jumat", "dari Arab \"jumat\""],
+     ["cumartesi", "Sabtu", "sesudah Jumat"],
+     ["pazar", "Minggu", "hari pasar"]
+    ]},
+    { "type": "p", "text": "Dua nama hari dibangun dengan *ertesi* (\"hari sesudahnya\"): *pazar-ertesi* → *pazartesi*, dan *cuma-ertesi* → *cumartesi*. Sekali kamu melihatnya, dua kata terpanjang di daftar itu jadi mudah." },
+    { "type": "tabel", "head": ["Bulan", "Türkçe", "Bulan", "Türkçe"], "rows": [
+     ["Januari", "Ocak", "Juli", "Temmuz"],
+     ["Februari", "Şubat", "Agustus", "Ağustos"],
+     ["Maret", "Mart", "September", "Eylül"],
+     ["April", "Nisan", "Oktober", "Ekim"],
+     ["Mei", "Mayıs", "November", "Kasım"],
+     ["Juni", "Haziran", "Desember", "Aralık"]
+    ]},
+    { "type": "tabel", "head": ["Musim", "Türkçe", "Waktu", "Türkçe"], "rows": [
+     ["musim semi", "ilkbahar", "pagi", "sabah"],
+     ["musim panas", "yaz", "siang", "öğlen"],
+     ["musim gugur", "sonbahar", "sore", "ikindi"],
+     ["musim dingin", "kış", "malam", "akşam / gece"]
+    ]}
+   ]
+  },
+  {
+   "title": "Kapan, seberapa sering",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Türkçe", "Bahasa Indonesia"], "rows": [
+     ["ne zaman", "kapan", "şimdi", "sekarang"],
+     ["bugün", "hari ini", "dün", "kemarin"],
+     ["yarın", "besok", "önce", "sebelum, dulu"],
+     ["sonra", "sesudah, nanti", "hemen", "segera"],
+     ["hafta", "minggu", "hafta sonu", "akhir pekan"],
+     ["ay", "bulan", "yıl / sene", "tahun"],
+     ["her gün", "setiap hari", "her zaman", "selalu"],
+     ["genellikle", "biasanya", "bazen", "kadang-kadang"],
+     ["nadiren", "jarang", "hiç", "tidak pernah"],
+     ["erken", "awal, pagi-pagi", "geç", "terlambat"]
+    ]},
+    { "type": "p", "text": "Keterangan waktu diletakkan **sesudah pelaku dan sebelum kata kerja**: *Ben her gün Türkçe çalışıyorum*. Urutan ini longgar — yang tidak boleh berubah hanyalah posisi kata kerja di ujung." },
+    { "type": "kotak", "title": "Ay berarti dua hal", "items": [
+     "*Ay* adalah \"bulan\" dalam kedua artinya sekaligus: benda di langit dan satuan waktu — persis seperti bahasa Indonesia. Bendera Turki punya *ay yıldız*, \"bulan bintang\".",
+     "*Ay!* juga seruan kaget atau sakit, seperti \"aduh!\". Konteks yang membedakan, dan tak pernah tertukar."
+    ]},
+    { "type": "kotak", "title": "Ulangan unit 5", "items": [
+     "Tutup bahasa Turkinya dan susun ulang dari ingatan: \"Kamu di mana?\" · \"Saya di sekolah.\" · \"Di seberang masjid ada bank.\" · \"Bukunya di atas meja.\" · \"Tidak masalah.\"",
+     "Lalu tambahkan akhiran tempat yang tepat pada: *kitap*, *sınıf*, *Ankara*, *ev*."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tr": "saat", "baca": "sa-AT", "id": "jam, waktu" },
+  { "tr": "buçuk", "baca": "bu-CUK", "id": "setengah (sesudah angka)" },
+  { "tr": "çeyrek", "baca": "cey-REK", "id": "seperempat" },
+  { "tr": "ne zaman", "baca": "ne za-MAN", "id": "kapan" },
+  { "tr": "gün", "baca": "gün", "id": "hari" },
+  { "tr": "hafta", "baca": "haf-TA", "id": "minggu" },
+  { "tr": "ay", "baca": "ay", "id": "bulan" },
+  { "tr": "yıl, sene", "baca": "yıl, se-NE", "id": "tahun" },
+  { "tr": "pazartesi", "baca": "pa-zar-TE-si", "id": "Senin" },
+  { "tr": "salı", "baca": "sa-LI", "id": "Selasa" },
+  { "tr": "çarşamba", "baca": "car-syam-BA", "id": "Rabu" },
+  { "tr": "perşembe", "baca": "per-syem-BE", "id": "Kamis" },
+  { "tr": "cuma", "baca": "ju-MA", "id": "Jumat" },
+  { "tr": "cumartesi", "baca": "ju-mar-TE-si", "id": "Sabtu" },
+  { "tr": "pazar", "baca": "pa-ZAR", "id": "Minggu; pasar" },
+  { "tr": "hafta sonu", "baca": "haf-TA so-NU", "id": "akhir pekan" },
+  { "tr": "sabah", "baca": "sa-BAH", "id": "pagi" },
+  { "tr": "öğlen", "baca": "öö-LEN", "id": "tengah hari" },
+  { "tr": "gece", "baca": "ge-JE", "id": "malam" },
+  { "tr": "dün", "baca": "dün", "id": "kemarin" },
+  { "tr": "önce / sonra", "baca": "ÖN-je / son-RA", "id": "sebelum / sesudah" },
+  { "tr": "erken / geç", "baca": "er-KEN / gec", "id": "awal / terlambat" },
+  { "tr": "her", "baca": "her", "id": "setiap" },
+  { "tr": "bazen", "baca": "BA-zen", "id": "kadang-kadang" },
+  { "tr": "genellikle", "baca": "ge-nel-lik-LE", "id": "biasanya" },
+  { "tr": "hiç", "baca": "hic", "id": "tidak pernah, sama sekali" },
+  { "tr": "ödev", "baca": "ö-DEV", "id": "pekerjaan rumah" },
+  { "tr": "sınav", "baca": "sı-NAV", "id": "ujian" },
+  { "tr": "başlamak", "baca": "basy-la-MAK", "id": "mulai" },
+  { "tr": "devam etmek", "baca": "de-VAM et-MEK", "id": "melanjutkan" },
+  { "tr": "kadar", "baca": "ka-DAR", "id": "sampai; sebanyak" },
+  { "tr": "yaz / kış", "baca": "yaz / kısy", "id": "musim panas / dingin" }
+ ],
+ "exercises": [
+  { "prompt": "Tulis jamnya dalam bahasa Turki.", "items": [
+   "05.00 → ____",
+   "07.30 → ____",
+   "10.15 → ____",
+   "12.30 → ____",
+   "02.45 → ____",
+   "20.00 → ____"
+  ]},
+  { "prompt": "Lengkapi dengan akhiran waktu *-de/-da/-te/-ta*.", "items": [
+   "Ders saat dokuz____ başlıyor.",
+   "Sınav aralık ay____.",
+   "Hafta____ üç gün ders var.",
+   "Saat üç____ buluşalım.",
+   "Sabah yedi____ kalkıyorum.",
+   "Cumartesi akşam____ maç var."
+  ]},
+  { "prompt": "Terjemahkan ke bahasa Turki.", "items": [
+   "Jam berapa sekarang?",
+   "Pelajarannya mulai hari Senin.",
+   "Saya belajar setiap hari.",
+   "Akhir pekan saya tidak bekerja.",
+   "Ujiannya kapan?",
+   "Kadang-kadang saya minum kopi."
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "kaç / saat / ?",
+   "başlıyor / ders / pazartesi",
+   "çalışıyorum / her / Türkçe / gün",
+   "var / mı / ders / hafta sonu / ?",
+   "zaman / sınav / ne / ?",
+   "kalkıyorum / yedide / sabah / ben"
+  ]}
+ ],
+ "answers": [
+  "Saat beş. — Saat yedi buçuk. — Onu çeyrek geçiyor. — Yarım. — Üçe çeyrek var. — Akşam sekiz.",
+  "dokuzda — ayında — Haftada — üçte — yedide — akşamı",
+  "Saat kaç? — Ders pazartesi başlıyor. — Her gün çalışıyorum. — Hafta sonu çalışmıyorum. — Sınav ne zaman? — Bazen kahve içiyorum.",
+  "Saat kaç? — Ders pazartesi başlıyor. — Her gün Türkçe çalışıyorum. — Hafta sonu ders var mı? — Sınav ne zaman? — Ben sabah yedide kalkıyorum."
+ ]
+}

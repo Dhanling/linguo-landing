@@ -1,0 +1,176 @@
+{
+ "title": "Ada atau tidak ada",
+ "title_target": "Var mı, yok mu?",
+ "goal": "Mengatakan sesuatu ada atau tidak ada, membuat pertanyaan ya/tidak dengan *mı*, dan menghitung dari nol sampai satu juta.",
+ "bekal": [
+  "memakai *var* dan *yok* untuk keberadaan dan kepemilikan",
+  "membuat pertanyaan ya/tidak dengan *mı/mi/mu/mü* yang ditulis terpisah",
+  "menyebut angka sampai ribuan dan menanyakan jumlah dengan *kaç*"
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — Bakkalda",
+   "intro": "Budi masuk ke warung kecil di ujung jalan. Penjaganya, Mehmet Amca, sedang menonton televisi.",
+   "lines": [
+    { "speaker": "Budi:", "text": "İyi günler! Su var mı?", "id": "Selamat siang! Ada air?", "literal": "baik hari-jamak! air ada apakah?" },
+    { "speaker": "Mehmet:", "text": "Var tabii. Küçük mü, büyük mü?", "id": "Ada tentu saja. Yang kecil atau yang besar?", "literal": "ada tentu. kecil apakah, besar apakah?" },
+    { "speaker": "Budi:", "text": "Büyük lütfen. Ekmek de var mı?", "id": "Yang besar, tolong. Roti juga ada?", "literal": "besar tolong. roti juga ada apakah?" },
+    { "speaker": "Mehmet:", "text": "Maalesef ekmek yok. Yarın var.", "id": "Sayangnya roti tidak ada. Besok ada.", "literal": "sayang-sekali roti tidak-ada. besok ada." },
+    { "speaker": "Budi:", "text": "Peki. Kaç lira?", "id": "Baiklah. Berapa lira?", "literal": "kalau-begitu. berapa lira?" },
+    { "speaker": "Mehmet:", "text": "On beş lira. Sen öğrenci misin?", "id": "Lima belas lira. Kamu pelajar?", "literal": "sepuluh lima lira. kamu pelajar apakah-kamu?" },
+    { "speaker": "Budi:", "text": "Evet, öğrenciyim. Nasıl bildiniz?", "id": "Ya, saya pelajar. Bagaimana Anda tahu?", "literal": "ya, pelajar-saya. bagaimana tahu-Anda?" },
+    { "speaker": "Mehmet:", "text": "Burada çok öğrenci var. Sen Türk değilsin, değil mi?", "id": "Di sini banyak pelajar. Kamu bukan orang Turki, kan?", "literal": "di-sini banyak pelajar ada. kamu Turki bukan-kamu, bukan apakah?" },
+    { "speaker": "Budi:", "text": "Hayır, Endonezyalıyım.", "id": "Bukan, saya orang Indonesia.", "literal": "tidak, Indonesia-orang-saya." },
+    { "speaker": "Mehmet:", "text": "Maşallah! Endonezya çok uzak. Ailen burada mı?", "id": "Masyaallah! Indonesia jauh sekali. Keluargamu di sini?", "literal": "masyaallah! Indonesia sangat jauh. keluarga-mu di-sini apakah?" },
+    { "speaker": "Budi:", "text": "Hayır, ailem Jakarta'da. Burada arkadaşım yok.", "id": "Tidak, keluarga saya di Jakarta. Di sini saya tidak punya teman.", "literal": "tidak, keluarga-ku Jakarta-di. di-sini teman-ku tidak-ada." },
+    { "speaker": "Mehmet:", "text": "Şimdi var! Buyur, çay içelim.", "id": "Sekarang ada! Mari, kita minum teh.", "literal": "sekarang ada! silakan, teh mari-minum-kita." }
+   ],
+   "notes": [
+    "**Var dan yok adalah pasangan, dan keduanya bukan kata kerja.** *Var* berarti \"ada, tersedia\", *yok* berarti \"tidak ada\". Perhatikan bahwa yang disangkal bukan *var* dengan *değil* — bahasa Turki menyediakan kata sendiri untuk itu.",
+    "**\"Punya\" tidak ada dalam bahasa Turki.** Yang ada adalah \"ada padaku\": *arkadaşım var* = \"temanku ada\" = saya punya teman. *Param yok* = \"uangku tidak ada\" = saya tidak punya uang. Bendanya dulu diberi akhiran milik, baru ditutup dengan *var* atau *yok*.",
+    "**Değil mi? adalah \"kan?\"** Ditempel di ujung kalimat untuk meminta persetujuan, dan bentuknya tidak pernah berubah — tidak peduli kalimatnya tentang siapa: *Güzel, değil mi?*, *Öğrencisin, değil mi?*",
+    "**Amca, teyze, abi, abla dipakai ke orang asing.** Harfiahnya \"paman, bibi, kakak laki-laki, kakak perempuan\", tapi orang Turki memakainya untuk siapa saja yang lebih tua sedikit atau banyak. Menyapa penjaga warung dengan *amca* jauh lebih hangat daripada memanggilnya *bey*."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bertanya dengan mı — kata yang berdiri sendiri",
+   "blocks": [
+    { "type": "p", "text": "Untuk membuat pertanyaan ya/tidak, bahasa Turki tidak membalik urutan kata dan tidak menaikkan nada. Ia menambahkan satu partikel: **mı / mi / mu / mü**, dipilih menurut keselarasan vokal, dan **ditulis terpisah** dari kata di depannya." },
+    { "type": "tabel", "head": ["Pernyataan", "Pertanyaan", "Bahasa Indonesia"], "rows": [
+     ["Su var.", "Su var **mı**?", "Ada air?"],
+     ["Ekmek yok.", "Ekmek yok **mu**?", "Roti tidak ada?"],
+     ["Bu güzel.", "Bu güzel **mi**?", "Ini bagus?"],
+     ["Türk.", "Türk **mü**?", "Dia orang Turki?"],
+     ["Öğrencisin.", "Öğrenci **misin**?", "Kamu pelajar?"],
+     ["Öğretmensiniz.", "Öğretmen **misiniz**?", "Anda guru?"]
+    ]},
+    { "type": "p", "text": "Perhatikan dua baris terakhir: akhiran orang **pindah ke partikelnya**. Bukan *öğrencisin mi*, melainkan *öğrenci misin*. Aturannya tetap: partikel tanya berdiri sendiri sebagai kata, lalu akhiran orang menempel padanya." },
+    { "type": "kotak", "title": "Letaknya menentukan artinya", "items": [
+     "*mı* ditempatkan sesudah **kata yang sedang ditanyakan**, dan memindahkannya mengubah maksud kalimat:",
+     "*Budi yarın Ankara'ya mı gidiyor?* — \"Ke ANKARA-kah Budi besok pergi?\" · *Budi yarın mı Ankara'ya gidiyor?* — \"BESOK-kah Budi ke Ankara?\" · *Budi mi yarın Ankara'ya gidiyor?* — \"BUDI-kah yang besok ke Ankara?\"",
+     "Kalau tidak ada yang perlu disorot, letakkan di ujung kalimat sebelum akhiran orang — itu bentuk netralnya."
+    ]},
+    { "type": "sub", "text": "Bertanya tanpa jawaban ya/tidak" },
+    { "type": "p", "text": "Kalau pertanyaanmu memakai kata tanya — *ne*, *kim*, *nerede*, *kaç* — partikel *mı* TIDAK dipakai. *Bu ne mi?* salah; yang benar *Bu ne?*" }
+   ]
+  },
+  {
+   "title": "Angka",
+   "blocks": [
+    { "type": "tabel", "head": ["Angka", "Türkçe", "Cara baca", "Angka", "Türkçe", "Cara baca"], "rows": [
+     ["0", "sıfır", "sı-FIR", "10", "on", "on"],
+     ["1", "bir", "bir", "20", "yirmi", "yir-MI"],
+     ["2", "iki", "i-KI", "30", "otuz", "o-TUZ"],
+     ["3", "üç", "üc", "40", "kırk", "kırk"],
+     ["4", "dört", "dört", "50", "elli", "el-LI"],
+     ["5", "beş", "besy", "60", "altmış", "alt-MISY"],
+     ["6", "altı", "al-TI", "70", "yetmiş", "yet-MISY"],
+     ["7", "yedi", "ye-DI", "80", "seksen", "sek-SEN"],
+     ["8", "sekiz", "se-KIZ", "90", "doksan", "dok-SAN"],
+     ["9", "dokuz", "do-KUZ", "100", "yüz", "yüz"]
+    ]},
+    { "type": "p", "text": "Angka gabungan dibaca **dari besar ke kecil, tanpa kata sambung apa pun**: *on bir* (11), *yirmi beş* (25), *kırk yedi* (47), *yüz elli* (150), *bin dokuz yüz doksan dokuz* (1999). Tidak ada \"dan\", tidak ada tanda hubung — cukup dijajarkan." },
+    { "type": "tabel", "head": ["Türkçe", "Angka", "Catatan"], "rows": [
+     ["bin", "1.000", "TIDAK pernah *bir bin*"],
+     ["iki bin", "2.000", ""],
+     ["on bin", "10.000", ""],
+     ["yüz bin", "100.000", ""],
+     ["bir milyon", "1.000.000", "di sini *bir* justru dipakai"],
+     ["buçuk", "setengah", "iki buçuk = dua setengah"],
+     ["yarım", "setengah (berdiri sendiri)", "yarım ekmek = setengah roti"]
+    ]},
+    { "type": "kotak", "title": "Bin tanpa bir, yüz tanpa bir", "items": [
+     "\"Seratus\" adalah *yüz*, bukan *bir yüz*. \"Seribu\" adalah *bin*, bukan *bir bin*. Menambahkan *bir* di depan keduanya terdengar seperti kesalahan orang asing — dan memang biasanya begitu.",
+     "Tapi mulai dari juta, *bir* kembali wajib: *bir milyon*, *bir milyar*."
+    ]},
+    { "type": "sub", "text": "Menanyakan jumlah dan harga" },
+    { "type": "tabel", "head": ["Pertanyaan", "Cara baca", "Artinya"], "rows": [
+     ["Kaç?", "kac", "Berapa (jumlah)?"],
+     ["Kaç tane?", "kac ta-NE", "Berapa buah?"],
+     ["Kaç lira?", "kac li-RA", "Berapa lira?"],
+     ["Ne kadar?", "ne ka-DAR", "Berapa harganya?"],
+     ["Kaç yaşındasın?", "kac ya-SYIN-da-sın", "Berapa umurmu?"],
+     ["Kaç kişi?", "kac ki-SYI", "Berapa orang?"]
+    ]},
+    { "type": "kotak", "title": "Ulangan unit 1", "items": [
+     "Tutup bahasa Turkinya dan susun ulang dari ingatan: \"Selamat malam, Bu.\" · \"Senang berkenalan.\" · \"Anda orang mana?\" · \"Saya sedang belajar bahasa Turki.\" · \"Sampai jumpa!\"",
+     "Ini kali kedua kalimat-kalimat itu kamu panggil dari ingatan. Jarak dua unit memang disengaja."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tr": "var / yok", "baca": "var / yok", "id": "ada / tidak ada" },
+  { "tr": "mı, mi, mu, mü", "baca": "mı, mi, mu, mü", "id": "partikel tanya" },
+  { "tr": "değil mi?", "baca": "de-YIL mi", "id": "kan? bukan?" },
+  { "tr": "kaç", "baca": "kac", "id": "berapa" },
+  { "tr": "tane", "baca": "ta-NE", "id": "buah (kata bantu bilangan)" },
+  { "tr": "lira", "baca": "li-RA", "id": "lira (mata uang Turki)" },
+  { "tr": "bakkal", "baca": "bak-KAL", "id": "warung, toko kelontong" },
+  { "tr": "ekmek", "baca": "ek-MEK", "id": "roti" },
+  { "tr": "su", "baca": "su", "id": "air" },
+  { "tr": "çay", "baca": "cay", "id": "teh" },
+  { "tr": "küçük / büyük", "baca": "kü-CÜK / bü-YÜK", "id": "kecil / besar" },
+  { "tr": "aile", "baca": "a-i-LE", "id": "keluarga" },
+  { "tr": "arkadaş", "baca": "ar-ka-DASY", "id": "teman" },
+  { "tr": "amca / teyze", "baca": "am-JA / tey-ZE", "id": "paman / bibi (juga sapaan)" },
+  { "tr": "abi / abla", "baca": "a-BI / AB-la", "id": "kakak laki-laki / perempuan" },
+  { "tr": "burada", "baca": "BU-ra-da", "id": "di sini" },
+  { "tr": "orada", "baca": "O-ra-da", "id": "di sana" },
+  { "tr": "şimdi", "baca": "SYIM-di", "id": "sekarang" },
+  { "tr": "yarın", "baca": "ya-RIN", "id": "besok" },
+  { "tr": "bugün", "baca": "bu-GÜN", "id": "hari ini" },
+  { "tr": "lütfen", "baca": "LÜT-fen", "id": "tolong, silakan" },
+  { "tr": "tabii", "baca": "ta-BII", "id": "tentu saja" },
+  { "tr": "maalesef", "baca": "ma-a-le-SEF", "id": "sayangnya" },
+  { "tr": "uzak / yakın", "baca": "u-ZAK / ya-KIN", "id": "jauh / dekat" },
+  { "tr": "yaş", "baca": "yasy", "id": "usia" },
+  { "tr": "kişi", "baca": "ki-SYI", "id": "orang (untuk menghitung)" },
+  { "tr": "buçuk", "baca": "bu-CUK", "id": "setengah (di belakang angka)" },
+  { "tr": "sıfır", "baca": "sı-FIR", "id": "nol" },
+  { "tr": "bin", "baca": "bin", "id": "seribu" },
+  { "tr": "yüz", "baca": "yüz", "id": "seratus; juga: wajah" }
+ ],
+ "exercises": [
+  { "prompt": "Tulis angka berikut dengan huruf.", "items": [
+   "7 → ____",
+   "13 → ____",
+   "28 → ____",
+   "45 → ____",
+   "160 → ____",
+   "2.500 → ____"
+  ]},
+  { "prompt": "Ubah jadi pertanyaan dengan partikel tanya yang tepat.", "items": [
+   "Su var. → ____",
+   "Bu güzel. → ____",
+   "Ekmek yok. → ____",
+   "Öğretmensin. → ____",
+   "O Türk. → ____",
+   "Burada okul var. → ____"
+  ]},
+  { "prompt": "Terjemahkan ke bahasa Turki. Ingat: \"punya\" = akhiran milik + *var*.", "items": [
+   "Saya punya teman.",
+   "Saya tidak punya uang.",
+   "Di sini ada banyak pelajar.",
+   "Roti tidak ada.",
+   "Anda punya kunci?",
+   "Keluarga saya di Jakarta."
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "var / su / mı / ?",
+   "yok / param / benim",
+   "lira / kaç / ?",
+   "misin / sen / öğrenci / ?",
+   "çok / burada / var / öğrenci",
+   "mi / güzel / değil / ?"
+  ]}
+ ],
+ "answers": [
+  "yedi — on üç — yirmi sekiz — kırk beş — yüz altmış — iki bin beş yüz",
+  "Su var mı? — Bu güzel mi? — Ekmek yok mu? — Öğretmen misin? — O Türk mü? — Burada okul var mı?",
+  "Arkadaşım var. — Param yok. — Burada çok öğrenci var. — Ekmek yok. — Anahtarınız var mı? — Ailem Jakarta'da.",
+  "Su var mı? — Benim param yok. — Kaç lira? — Sen öğrenci misin? — Burada çok öğrenci var. — Güzel, değil mi?"
+ ]
+}

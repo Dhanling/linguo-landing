@@ -1,0 +1,190 @@
+{
+ "title": "Besok kita akan ke mana?",
+ "title_target": "Yarın nereye gideceğiz?",
+ "goal": "Menyampaikan rencana dan janji dengan bentuk akan datang *-ecek*, dan menyusun rencana akhir pekan.",
+ "bekal": [
+  "membentuk *geleceğim, gelmeyeceğim, gelecek misin*",
+  "membedakan rencana pasti (*-ecek*) dari rencana dekat (*-yor*)",
+  "memakai *belki*, *kesinlikle*, dan *inşallah* pada tempatnya"
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — Hafta sonu planı",
+   "intro": "Jumat sore di kelas. Ayşe menuliskan sesuatu di papan; Emre menunggu Budi di pintu.",
+   "lines": [
+    { "speaker": "Emre:", "text": "Budi, hafta sonu ne yapacaksın?", "id": "Budi, akhir pekan kamu mau apa?", "literal": "Budi, minggu ujung-nya apa akan-lakukan-kamu?" },
+    { "speaker": "Budi:", "text": "Bilmiyorum. Belki ders çalışacağım.", "id": "Tidak tahu. Mungkin saya akan belajar.", "literal": "tidak-tahu-saya. mungkin pelajaran akan-kerja-saya." },
+    { "speaker": "Emre:", "text": "Olmaz! Biz Kapadokya'ya gideceğiz. Sen de geleceksin.", "id": "Jangan begitu! Kami akan pergi ke Kapadokya. Kamu ikut.", "literal": "tidak-jadi! kami Kapadokya-ke akan-pergi-kami. kamu juga akan-datang-kamu." },
+    { "speaker": "Budi:", "text": "Gerçekten mi? Nasıl gideceğiz?", "id": "Serius? Kita pergi bagaimana?", "literal": "sungguh apakah? bagaimana akan-pergi-kita?" },
+    { "speaker": "Emre:", "text": "Gece otobüsüyle. Cuma akşam kalkacak, sabah varacağız.", "id": "Naik bus malam. Berangkat Jumat malam, sampai pagi hari.", "literal": "malam bus-nya-dengan. Jumat malam akan-berangkat, pagi akan-sampai-kami." },
+    { "speaker": "Budi:", "text": "Kaç gün kalacağız?", "id": "Kita akan tinggal berapa hari?", "literal": "berapa hari akan-tinggal-kami?" },
+    { "speaker": "Emre:", "text": "İki gün. Pazar akşamı döneceğiz.", "id": "Dua hari. Minggu malam kita pulang.", "literal": "dua hari. Minggu malam-nya akan-kembali-kami." },
+    { "speaker": "Budi:", "text": "Balon turu yapacak mıyız?", "id": "Kita akan naik balon udara?", "literal": "balon tur akan-lakukan apakah-kita?" },
+    { "speaker": "Emre:", "text": "Pahalı ama deneyeceğiz. Sabah beşte kalkacağız.", "id": "Mahal, tapi kita akan coba. Kita bangun jam lima pagi.", "literal": "mahal tapi akan-coba-kami. pagi lima-di akan-bangun-kami." },
+    { "speaker": "Budi:", "text": "Beşte mi? Uyuyamayacağım!", "id": "Jam lima? Saya tidak akan bisa tidur!", "literal": "lima-di apakah? tidak-akan-bisa-tidur-saya!" },
+    { "speaker": "Emre:", "text": "Otobüste uyursun. Peki geliyor musun?", "id": "Nanti tidur di bus. Jadi kamu ikut?", "literal": "bus-di tidur-kamu. kalau-begitu sedang-datang apakah-kamu?" },
+    { "speaker": "Budi:", "text": "Geliyorum! Bileti bugün alacağım.", "id": "Ikut! Tiketnya saya beli hari ini.", "literal": "sedang-datang-saya! tiket-nya hari-ini akan-ambil-saya." }
+   ],
+   "notes": [
+    "**Gelecek jadi geleceğim.** Karena akhiran orang berawalan vokal, huruf *k* di ujung *-ecek* melunak jadi *ğ* — persis aturan unit 4. Ini berlaku untuk *ben* dan *biz* saja: *geleceğim*, *geleceğiz*; sisanya tetap *k*: *geleceksin*, *gelecek*, *gelecekler*.",
+    "**Rencana pasti pakai -ecek, rencana dekat pakai -yor.** Di akhir dialog Emre bertanya *geliyor musun?* — bukan *gelecek misin?* — karena yang dia tanyakan adalah keputusan sekarang, bukan ramalan. Bahasa Indonesia melakukan hal yang sama: \"jadi ikut?\" terasa berbeda dari \"akan ikut?\"",
+    "**Uyuyamayacağım** menumpuk empat hal sekaligus: tidur + tidak-bisa + akan + saya. Kamu belum perlu membuatnya sendiri; potongan *-ama-* (\"tidak bisa\") dibongkar di unit 14. Yang penting sekarang: perhatikan bahwa urutannya selalu akar dulu, akhiran orang terakhir.",
+    "**İnşallah dipakai jauh lebih sering daripada dugaanmu.** Ia menemani hampir setiap rencana — bukan sebagai kalimat religius, melainkan sebagai cara mengatakan \"semoga jadi\". Menjawab rencana orang lain dengan *inşallah* selalu terdengar sopan."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bentuk -ecek: akan",
+   "blocks": [
+    { "type": "p", "text": "Akhiran akan datang punya dua bentuk, *-ecek* dan *-acak*, ditambah penyambung **y** sesudah akar berakhir vokal. Akhiran orangnya kembali ke deret pertama — yang sama seperti *-yor*." },
+    { "type": "tabel", "head": ["", "gelmek", "gitmek", "yapmak", "beklemek"], "rows": [
+     ["ben", "gele**ceğim**", "gide**ceğim**", "yapa**cağım**", "bekle**yeceğim**"],
+     ["sen", "gele**ceksin**", "gide**ceksin**", "yapa**caksın**", "bekle**yeceksin**"],
+     ["o", "gele**cek**", "gide**cek**", "yapa**cak**", "bekle**yecek**"],
+     ["biz", "gele**ceğiz**", "gide**ceğiz**", "yapa**cağız**", "bekle**yeceğiz**"],
+     ["siz", "gele**ceksiniz**", "gide**ceksiniz**", "yapa**caksınız**", "bekle**yeceksiniz**"],
+     ["onlar", "gele**cekler**", "gide**cekler**", "yapa**caklar**", "bekle**yecekler**"]
+    ]},
+    { "type": "p", "text": "Perhatikan *gideceğim*: *gitmek* melunakkan *t* jadi *d* karena akhirannya berawalan vokal — sama seperti *gidiyorum*. Sekali kamu tahu dua kata kerja ini (*gitmek*, *etmek*), tidak ada lagi kejutan." },
+    { "type": "sub", "text": "Menyangkal dan bertanya" },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia"], "rows": [
+     ["Gelmeyeceğim.", "Saya tidak akan datang."],
+     ["Gitmeyeceksin.", "Kamu tidak akan pergi."],
+     ["Yapmayacak.", "Dia tidak akan melakukannya."],
+     ["Gelecek misin?", "Kamu akan datang?"],
+     ["Gidecek miyiz?", "Kita akan pergi?"],
+     ["Gelmeyecek misiniz?", "Anda tidak akan datang?"]
+    ]},
+    { "type": "p", "text": "Bentuk sangkal menyisipkan *-me/-ma* seperti biasa, lalu penyambung *y*: *gel-me-y-eceğim*. Rangkaiannya panjang, tapi tiap potongannya sudah kamu kenal satu per satu." },
+    { "type": "kotak", "title": "Dua bentuk untuk masa depan", "items": [
+     "*Yarın geliyorum* dan *Yarın geleceğim* dua-duanya benar. Yang pertama terdengar seperti kesepakatan yang sudah jadi; yang kedua seperti niat atau ramalan.",
+     "Untuk janji dan jadwal resmi, pakai *-ecek*: *Ders saat dokuzda başlayacak*. Untuk rencana yang baru saja disepakati, *-yor* justru lebih alami: *Tamam, geliyorum*."
+    ]}
+   ]
+  },
+  {
+   "title": "Berbicara tentang rencana",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Türkçe", "Bahasa Indonesia"], "rows": [
+     ["belki", "mungkin", "kesinlikle", "pasti"],
+     ["herhalde", "sepertinya", "inşallah", "semoga jadi"],
+     ["mutlaka", "harus, wajib", "galiba", "kayaknya"],
+     ["plan", "rencana", "program", "acara, jadwal"],
+     ["tatil", "libur", "gezi", "jalan-jalan"],
+     ["tur", "tur", "rezervasyon", "pemesanan"],
+     ["otel", "hotel", "pansiyon", "penginapan"],
+     ["valiz, bavul", "koper", "pasaport", "paspor"]
+    ]},
+    { "type": "sub", "text": "Kalimat rencana yang siap pakai" },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia"], "rows": [
+     ["Hafta sonu ne yapacaksın?", "Akhir pekan kamu mau apa?"],
+     ["Yarın ne zaman geleceksin?", "Besok kamu datang jam berapa?"],
+     ["Kaç gün kalacaksınız?", "Anda akan tinggal berapa hari?"],
+     ["Bir plan yapalım.", "Ayo bikin rencana."],
+     ["Sonra karar vereceğiz.", "Kita putuskan nanti."],
+     ["Söz veriyorum.", "Saya janji."]
+    ]},
+    { "type": "kotak", "title": "Kapadokya", "items": [
+     "Kapadokya di Anatolia Tengah adalah tujuan wisata paling dikenal setelah Istanbul: lembah batu lunak, rumah gua, gereja bawah tanah, dan ratusan balon udara yang naik bersamaan pada pukul enam pagi.",
+     "Jarak Istanbul-Kapadokya sekitar 730 km. Bus malam berangkat sekitar pukul delapan malam dan tiba subuh — pilihan termurah, dan cara paling Turki untuk bepergian."
+    ]}
+   ]
+  },
+  {
+   "title": "Kata kerja yang sering dipakai untuk rencana",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Bentuk -ecek", "Bahasa Indonesia"], "rows": [
+     ["gitmek", "gideceğim", "pergi"],
+     ["kalmak", "kalacağım", "menginap"],
+     ["dönmek", "döneceğim", "pulang"],
+     ["görmek", "göreceğim", "melihat"],
+     ["gezmek", "gezeceğim", "jalan-jalan"],
+     ["almak", "alacağım", "membeli"],
+     ["denemek", "deneyeceğim", "mencoba"],
+     ["başlamak", "başlayacağım", "memulai"],
+     ["beklemek", "bekleyeceğim", "menunggu"],
+     ["karar vermek", "karar vereceğim", "memutuskan"],
+     ["hazırlanmak", "hazırlanacağım", "bersiap-siap"],
+     ["dinlenmek", "dinleneceğim", "beristirahat"]
+    ]},
+    { "type": "kotak", "title": "Ulangan unit 10", "items": [
+     "Tutup bahasa Turkinya dan susun ulang dari ingatan: \"Saya ingin mencoba ini.\" · \"Isinya apa?\" · \"Dagingnya halal?\" · \"Minta bill.\" · \"Selamat makan!\"",
+     "Lalu ubah jadi kalimat \"saya ingin ...\": *gitmek*, *öğrenmek*, *çay içmek*."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tr": "yarın", "baca": "ya-RIN", "id": "besok" },
+  { "tr": "plan", "baca": "plan", "id": "rencana" },
+  { "tr": "tatil", "baca": "ta-TIL", "id": "libur" },
+  { "tr": "gezi", "baca": "ge-ZI", "id": "jalan-jalan, tamasya" },
+  { "tr": "tur", "baca": "tur", "id": "tur" },
+  { "tr": "balon", "baca": "ba-LON", "id": "balon udara" },
+  { "tr": "otel", "baca": "o-TEL", "id": "hotel" },
+  { "tr": "rezervasyon", "baca": "re-zer-vas-YON", "id": "pemesanan" },
+  { "tr": "bavul, valiz", "baca": "ba-VUL, va-LIZ", "id": "koper" },
+  { "tr": "pasaport", "baca": "pa-sa-PORT", "id": "paspor" },
+  { "tr": "belki", "baca": "bel-KI", "id": "mungkin" },
+  { "tr": "kesinlikle", "baca": "ke-sin-lik-LE", "id": "pasti" },
+  { "tr": "herhalde", "baca": "her-hal-DE", "id": "sepertinya" },
+  { "tr": "inşallah", "baca": "in-syal-LAH", "id": "semoga jadi" },
+  { "tr": "mutlaka", "baca": "mut-la-KA", "id": "harus, pasti" },
+  { "tr": "varmak", "baca": "var-MAK", "id": "sampai, tiba" },
+  { "tr": "karar vermek", "baca": "ka-RAR ver-MEK", "id": "memutuskan" },
+  { "tr": "söz vermek", "baca": "söz ver-MEK", "id": "berjanji" },
+  { "tr": "hazırlanmak", "baca": "ha-zır-lan-MAK", "id": "bersiap-siap" },
+  { "tr": "dinlenmek", "baca": "din-len-MEK", "id": "beristirahat" },
+  { "tr": "gece otobüsü", "baca": "ge-JE o-to-bü-SÜ", "id": "bus malam" },
+  { "tr": "kalkmak", "baca": "kalk-MAK", "id": "berangkat, bangun" },
+  { "tr": "uyumak", "baca": "u-yu-MAK", "id": "tidur" },
+  { "tr": "gerçekten mi?", "baca": "ger-CEK-ten mi", "id": "serius?" },
+  { "tr": "olmaz", "baca": "ol-MAZ", "id": "tidak boleh, jangan begitu" },
+  { "tr": "nasıl", "baca": "NA-sıl", "id": "bagaimana" },
+  { "tr": "kaç gün", "baca": "kac gün", "id": "berapa hari" },
+  { "tr": "sabah erken", "baca": "sa-BAH er-KEN", "id": "pagi-pagi" },
+  { "tr": "vadi", "baca": "va-DI", "id": "lembah" },
+  { "tr": "manzara", "baca": "man-za-RA", "id": "pemandangan" }
+ ],
+ "exercises": [
+  { "prompt": "Ubah ke bentuk *-ecek* sesuai pelaku dalam kurung.", "items": [
+   "gelmek (ben) → ____",
+   "gitmek (sen) → ____",
+   "yapmak (o) → ____",
+   "kalmak (biz) → ____",
+   "beklemek (siz) → ____",
+   "almak (onlar) → ____"
+  ]},
+  { "prompt": "Ubah jadi bentuk sangkal atau pertanyaan sesuai petunjuk.", "items": [
+   "geleceğim (sangkal) → ____",
+   "gideceksin (tanya) → ____",
+   "yapacak (sangkal) → ____",
+   "kalacağız (tanya) → ____",
+   "bekleyecekler (sangkal) → ____",
+   "alacaksınız (tanya) → ____"
+  ]},
+  { "prompt": "Terjemahkan ke bahasa Turki.", "items": [
+   "Akhir pekan kamu mau apa?",
+   "Kami akan pergi ke Kapadokya.",
+   "Kita akan tinggal berapa hari?",
+   "Saya tidak akan datang.",
+   "Tiketnya saya beli hari ini.",
+   "Mungkin saya akan belajar."
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "yapacaksın / hafta sonu / ne / ?",
+   "gideceğiz / Kapadokya'ya / biz",
+   "kalacağız / gün / iki",
+   "misin / gelecek / sen / ?",
+   "alacağım / bileti / bugün",
+   "çalışacağım / belki / ders"
+  ]}
+ ],
+ "answers": [
+  "geleceğim — gideceksin — yapacak — kalacağız — bekleyeceksiniz — alacaklar",
+  "gelmeyeceğim — gidecek misin? — yapmayacak — kalacak mıyız? — beklemeyecekler — alacak mısınız?",
+  "Hafta sonu ne yapacaksın? — Kapadokya'ya gideceğiz. — Kaç gün kalacağız? — Gelmeyeceğim. — Bileti bugün alacağım. — Belki ders çalışacağım.",
+  "Hafta sonu ne yapacaksın? — Biz Kapadokya'ya gideceğiz. — İki gün kalacağız. — Sen gelecek misin? — Bileti bugün alacağım. — Belki ders çalışacağım."
+ ]
+}

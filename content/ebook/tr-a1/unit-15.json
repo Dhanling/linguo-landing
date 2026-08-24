@@ -1,0 +1,181 @@
+{
+ "title": "Lurus lalu belok kanan",
+ "title_target": "Düz git, sonra sağa dön",
+ "goal": "Memberi perintah dan larangan, mengajak, dan menanyakan serta memahami petunjuk arah.",
+ "bekal": [
+  "membentuk *gel!*, *gelin!*, *gelme!*, *gelmeyin!*, dan *gidelim!*",
+  "bertanya arah dan memahami jawabannya",
+  "memakai *lütfen* dan bentuk *-ir misiniz* untuk memperhalus perintah"
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — Yol tarifi",
+   "intro": "Budi tersesat di Beyoğlu sambil mencari sebuah toko buku. Ia menghentikan seorang perempuan di trotoar.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Affedersiniz, bir şey sorabilir miyim?", "id": "Permisi, boleh saya bertanya?", "literal": "maafkan-Anda, satu hal bisa-tanya apakah-saya?" },
+    { "speaker": "Kadın:", "text": "Tabii, buyurun.", "id": "Tentu, silakan.", "literal": "tentu, silakan-Anda." },
+    { "speaker": "Budi:", "text": "Robinson Kitabevi nerede, biliyor musunuz?", "id": "Anda tahu Toko Buku Robinson di mana?", "literal": "Robinson Buku-rumah-nya di-mana, tahu apakah-Anda?" },
+    { "speaker": "Kadın:", "text": "Biliyorum. Buradan düz gidin, yaklaşık iki yüz metre.", "id": "Tahu. Dari sini jalan lurus, kira-kira dua ratus meter.", "literal": "tahu-saya. sini-dari lurus pergi-Anda, kira-kira dua ratus meter." },
+    { "speaker": "Budi:", "text": "Düz. Tamam.", "id": "Lurus. Baik.", "literal": "lurus. baik." },
+    { "speaker": "Kadın:", "text": "Sonra ikinci sokaktan sağa dönün. Köşede bir eczane var.", "id": "Lalu belok kanan di gang kedua. Di pojokan ada apotek.", "literal": "sesudah kedua gang-dari kanan-ke belok-Anda. pojok-di sebuah apotek ada." },
+    { "speaker": "Budi:", "text": "Eczaneden sonra?", "id": "Sesudah apoteknya?", "literal": "apotek-dari sesudah?" },
+    { "speaker": "Kadın:", "text": "Biraz yürüyün. Kitabevi solda, sinemanın yanında.", "id": "Jalan sedikit. Toko bukunya di kiri, di sebelah bioskop.", "literal": "sedikit berjalan-Anda. buku-rumah kiri-di, bioskop-milik samping-nya-di." },
+    { "speaker": "Budi:", "text": "Yürüyerek ne kadar sürer?", "id": "Jalan kaki makan waktu berapa lama?", "literal": "berjalan-dengan berapa banyak berlangsung?" },
+    { "speaker": "Kadın:", "text": "Beş dakika. Kaybolmayın, tabela büyük.", "id": "Lima menit. Jangan sampai tersesat, papan namanya besar.", "literal": "lima menit. jangan-tersesat-Anda, papan-nama besar." },
+    { "speaker": "Budi:", "text": "Çok teşekkür ederim, çok yardımcı oldunuz.", "id": "Terima kasih banyak, Anda sangat membantu.", "literal": "sangat terima-kasih lakukan-saya, sangat penolong jadi-Anda." },
+    { "speaker": "Kadın:", "text": "Rica ederim. Kolay gelsin!", "id": "Sama-sama. Semoga dimudahkan!", "literal": "permohonan lakukan-saya. mudah datanglah!" }
+   ],
+   "notes": [
+    "**Affedersiniz adalah kata pembuka standar untuk orang asing.** Harfiahnya \"Anda memaafkan\", dan dipakai persis seperti \"permisi\" — untuk menghentikan orang, minta lewat, atau meminta perhatian pelayan.",
+    "**Perintah dalam bentuk siz terdengar sopan, bukan memerintah.** *Gidin*, *dönün*, *yürüyün* adalah cara normal orang Turki memberi petunjuk kepada orang yang tidak dikenal. Bentuk *sen* (*git*, *dön*) hanya untuk teman, anak, atau orang yang lebih muda.",
+    "**Yürüyerek berarti \"dengan berjalan kaki\".** Akhiran *-erek* menerangkan cara melakukan sesuatu; ia bahan A2, tapi dua bentuknya sudah bisa kamu pakai sekarang sebagai kata utuh: *yürüyerek* (jalan kaki) dan *koşarak* (sambil berlari).",
+    "**Kolay gelsin** diucapkan kepada siapa pun yang sedang bekerja — kasir, tukang, sopir, pelayan, bahkan orang asing yang sedang mengangkat kardus. Tidak ada padanannya yang persis dalam bahasa Indonesia, dan tidak ada ucapan yang lebih Turki dari ini."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bentuk perintah",
+   "blocks": [
+    { "type": "p", "text": "Perintah bahasa Turki adalah bentuk paling sederhana yang ada: untuk *sen*, akarnya saja, tanpa tambahan apa pun. Untuk *siz*, tambahkan *-in / -ın / -un / -ün*." },
+    { "type": "tabel", "head": ["Kata kerja", "sen", "siz", "Bahasa Indonesia"], "rows": [
+     ["gelmek", "gel!", "gelin!", "datang!"],
+     ["gitmek", "git!", "gidin!", "pergi!"],
+     ["bakmak", "bak!", "bakın!", "lihat!"],
+     ["oturmak", "otur!", "oturun!", "duduk!"],
+     ["dönmek", "dön!", "dönün!", "belok!"],
+     ["beklemek", "bekle!", "bekleyin!", "tunggu!"],
+     ["okumak", "oku!", "okuyun!", "baca!"],
+     ["yardım etmek", "yardım et!", "yardım edin!", "tolong!"]
+    ]},
+    { "type": "p", "text": "Ada bentuk yang lebih resmi lagi, *-iniz*: *geliniz*, *buyurunuz*. Ia dipakai di papan pengumuman, pengumuman bandara, dan surat resmi — jarang dalam percakapan." },
+    { "type": "sub", "text": "Larangan" },
+    { "type": "tabel", "head": ["sen", "siz", "Bahasa Indonesia"], "rows": [
+     ["gelme!", "gelmeyin!", "jangan datang!"],
+     ["gitme!", "gitmeyin!", "jangan pergi!"],
+     ["unutma!", "unutmayın!", "jangan lupa!"],
+     ["korkma!", "korkmayın!", "jangan takut!"],
+     ["merak etme!", "merak etmeyin!", "jangan khawatir!"],
+     ["acele etme!", "acele etmeyin!", "jangan buru-buru!"]
+    ]},
+    { "type": "kotak", "title": "Mari kita — bentuk -elim", "items": [
+     "Untuk mengajak, pakai *-elim / -alım*: *gidelim!* (ayo pergi), *başlayalım!* (ayo mulai), *bakalım* (mari lihat), *görüşelim* (ayo ketemu).",
+     "*Bakalım* dipakai jauh lebih luas daripada artinya: ia menutup kalimat sebagai \"kita lihat nanti\" — *Bakalım ne olacak.*"
+    ]},
+    { "type": "sub", "text": "Perintah yang diperhalus" },
+    { "type": "p", "text": "Perintah telanjang jarang dipakai kepada orang dewasa yang tidak kamu kenal. Tiga cara memperhalusnya, dari yang paling ringan sampai paling sopan:" },
+    { "type": "tabel", "head": ["Bentuk", "Contoh", "Rasanya"], "rows": [
+     ["perintah + lütfen", "Bekleyin lütfen.", "sopan, netral"],
+     ["-ir misiniz", "Bekler misiniz?", "sopan, meminta"],
+     ["-ebilir misiniz", "Bekleyebilir misiniz?", "paling sopan"]
+    ]}
+   ]
+  },
+  {
+   "title": "Bertanya dan memberi arah",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia"], "rows": [
+     ["Affedersiniz, ... nerede?", "Permisi, ... di mana?"],
+     ["... nasıl gidebilirim?", "Bagaimana saya bisa ke ...?"],
+     ["Buraya uzak mı?", "Jauh dari sini?"],
+     ["Yürüyerek ne kadar sürer?", "Jalan kaki berapa lama?"],
+     ["Kayboldum.", "Saya tersesat."],
+     ["Burası neresi?", "Ini tempat apa?"],
+     ["Haritada gösterebilir misiniz?", "Bisa tunjukkan di peta?"]
+    ]},
+    { "type": "sub", "text": "Jawaban yang akan kamu dengar" },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Türkçe", "Bahasa Indonesia"], "rows": [
+     ["düz git / gidin", "jalan lurus", "sağa dön / dönün", "belok kanan"],
+     ["sola dön / dönün", "belok kiri", "geri dön / dönün", "putar balik"],
+     ["karşıya geç / geçin", "menyeberang", "yukarı çık / çıkın", "naik ke atas"],
+     ["aşağı in / inin", "turun ke bawah", "burada dur / durun", "berhenti di sini"],
+     ["ilk sokak", "gang pertama", "ikinci sokak", "gang kedua"],
+     ["köşe", "pojok", "trafik ışığı", "lampu lalu lintas"],
+     ["yaklaşık", "kira-kira", "metre", "meter"],
+     ["yakın / uzak", "dekat / jauh", "karşısında", "di seberangnya"]
+    ]},
+    { "type": "p", "text": "Perhatikan bahwa arah memakai akhiran *-e*: *sağ-a dön* (belok KE kanan), *sol-a*, *yukarı-ya*, *karşı-ya*. Ini akhiran arah dari unit 8, bekerja persis seperti pada nama tempat." },
+    { "type": "kotak", "title": "Angka bertingkat", "items": [
+     "\"Pertama, kedua, ketiga\" dibentuk dengan akhiran *-inci / -ıncı / -uncu / -üncü*: *birinci*, *ikinci*, *üçüncü*, *dördüncü*, *beşinci*, *altıncı*, *yedinci*, *sekizinci*, *dokuzuncu*, *onuncu*.",
+     "Bentuk ini dipakai untuk lantai (*üçüncü kat*), gang (*ikinci sokak*), dan tanggal (*ayın on beşinci günü*)."
+    ]},
+    { "type": "kotak", "title": "Ulangan unit 13", "items": [
+     "Tutup bahasa Turkinya dan susun ulang dari ingatan: \"Kalau pagi kamu biasanya ngapain?\" · \"Biasanya saya bangun pagi.\" · \"Saya tidak merokok.\" · \"Setiap hari kami minum teh.\" · \"Mau satu gelas lagi?\"",
+     "Lalu ubah ke bentuk sangkal luas: *gelirim*, *yaparsın*, *içeriz*."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tr": "affedersiniz", "baca": "af-fe-der-si-NIZ", "id": "permisi, maaf" },
+  { "tr": "yol tarifi", "baca": "yol ta-ri-FI", "id": "petunjuk arah" },
+  { "tr": "düz", "baca": "düz", "id": "lurus" },
+  { "tr": "dönmek", "baca": "dön-MEK", "id": "belok, kembali" },
+  { "tr": "geçmek", "baca": "gec-MEK", "id": "menyeberang, lewat" },
+  { "tr": "durmak", "baca": "dur-MAK", "id": "berhenti" },
+  { "tr": "çıkmak / inmek", "baca": "cık-MAK / in-MEK", "id": "naik / turun" },
+  { "tr": "köşe", "baca": "kö-SYE", "id": "pojok" },
+  { "tr": "trafik ışığı", "baca": "tra-FIK ı-syı-I", "id": "lampu lalu lintas" },
+  { "tr": "kat", "baca": "kat", "id": "lantai, tingkat" },
+  { "tr": "birinci / ikinci", "baca": "bi-rin-JI / i-kin-JI", "id": "pertama / kedua" },
+  { "tr": "üçüncü", "baca": "ü-cün-JÜ", "id": "ketiga" },
+  { "tr": "metre", "baca": "met-RE", "id": "meter" },
+  { "tr": "yaklaşık", "baca": "yak-la-SYIK", "id": "kira-kira" },
+  { "tr": "sürmek", "baca": "sür-MEK", "id": "berlangsung, memakan waktu" },
+  { "tr": "kaybolmak", "baca": "kay-bol-MAK", "id": "tersesat" },
+  { "tr": "harita", "baca": "ha-ri-TA", "id": "peta" },
+  { "tr": "göstermek", "baca": "gös-ter-MEK", "id": "menunjukkan" },
+  { "tr": "tabela", "baca": "ta-be-LA", "id": "papan nama" },
+  { "tr": "kitabevi", "baca": "ki-ta-be-VI", "id": "toko buku" },
+  { "tr": "acele etmek", "baca": "a-je-LE et-MEK", "id": "buru-buru" },
+  { "tr": "korkmak", "baca": "kork-MAK", "id": "takut" },
+  { "tr": "unutmak", "baca": "u-nut-MAK", "id": "lupa" },
+  { "tr": "beklemek", "baca": "bek-le-MEK", "id": "menunggu" },
+  { "tr": "kolay gelsin", "baca": "ko-LAY gel-SIN", "id": "semoga dimudahkan" },
+  { "tr": "bakalım", "baca": "ba-ka-LIM", "id": "mari lihat, kita lihat nanti" },
+  { "tr": "gidelim", "baca": "gi-de-LIM", "id": "ayo pergi" },
+  { "tr": "buyurun", "baca": "bu-yu-RUN", "id": "silakan" },
+  { "tr": "burası", "baca": "bu-ra-SI", "id": "tempat ini" },
+  { "tr": "yaya", "baca": "ya-YA", "id": "pejalan kaki" }
+ ],
+ "exercises": [
+  { "prompt": "Tulis bentuk perintah untuk *siz*.", "items": [
+   "gelmek → ____",
+   "gitmek → ____",
+   "beklemek → ____",
+   "dönmek → ____",
+   "oturmak → ____",
+   "okumak → ____"
+  ]},
+  { "prompt": "Ubah jadi larangan sesuai pelaku dalam kurung.", "items": [
+   "gelmek (sen) → ____",
+   "gitmek (siz) → ____",
+   "unutmak (sen) → ____",
+   "korkmak (siz) → ____",
+   "acele etmek (sen) → ____",
+   "kaybolmak (siz) → ____"
+  ]},
+  { "prompt": "Terjemahkan ke bahasa Turki. Pakai bentuk sopan.", "items": [
+   "Permisi, apoteknya di mana?",
+   "Jalan lurus dari sini.",
+   "Belok kanan di gang kedua.",
+   "Toko bukunya di sebelah kiri.",
+   "Jalan kaki berapa lama?",
+   "Saya tersesat."
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "gidin / buradan / düz",
+   "dönün / sokaktan / sağa / ikinci",
+   "var / bir / köşede / eczane",
+   "yanında / kitabevi / sinemanın",
+   "sürer / kadar / yürüyerek / ne / ?",
+   "gelsin / kolay"
+  ]}
+ ],
+ "answers": [
+  "gelin — gidin — bekleyin — dönün — oturun — okuyun",
+  "gelme — gitmeyin — unutma — korkmayın — acele etme — kaybolmayın",
+  "Affedersiniz, eczane nerede? — Buradan düz gidin. — İkinci sokaktan sağa dönün. — Kitabevi solda. — Yürüyerek ne kadar sürer? — Kayboldum.",
+  "Buradan düz gidin. — İkinci sokaktan sağa dönün. — Köşede bir eczane var. — Kitabevi sinemanın yanında. — Yürüyerek ne kadar sürer? — Kolay gelsin."
+ ]
+}

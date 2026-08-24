@@ -1,0 +1,193 @@
+{
+ "title": "Di rumah makan",
+ "title_target": "Lokantada",
+ "goal": "Membaca menu Turki, memesan makanan, dan mengatakan apa yang ingin kamu lakukan dengan pola *-mek istemek*.",
+ "bekal": [
+  "menyusun kalimat \"saya ingin ...\" dari kata kerja mana pun",
+  "memesan, meminta rekening, dan menanyakan isi masakan",
+  "mengenali nama-nama masakan yang akan kamu temui di setiap menu"
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — Akşam yemeği",
+   "intro": "Emre membawa Budi ke rumah makan kecil di Kadıköy. Pelayannya datang membawa menu.",
+   "lines": [
+    { "speaker": "Garson:", "text": "Hoş geldiniz. Buyurun, menü.", "id": "Selamat datang. Silakan, menunya.", "literal": "menyenangkan datang-Anda. silakan, menu." },
+    { "speaker": "Budi:", "text": "Teşekkürler. Ne tavsiye ediyorsunuz?", "id": "Terima kasih. Anda menyarankan apa?", "literal": "terima-kasih-jamak. apa saran sedang-lakukan-Anda?" },
+    { "speaker": "Garson:", "text": "Bugün mercimek çorbası ve İskender çok iyi.", "id": "Hari ini sup lentil dan İskender sangat bagus.", "literal": "hari-ini lentil sup-nya dan Iskender sangat baik." },
+    { "speaker": "Budi:", "text": "İskender ne demek?", "id": "İskender itu apa?", "literal": "Iskender apa berkata?" },
+    { "speaker": "Emre:", "text": "Döner, pide, domates sosu ve yoğurt. Çok lezzetli.", "id": "Döner, roti pide, saus tomat, dan yogurt. Enak sekali.", "literal": "döner, pide, tomat saus-nya dan yogurt. sangat lezat." },
+    { "speaker": "Budi:", "text": "Tamam, onu denemek istiyorum. Ama önce bir soru: eti helal mi?", "id": "Baik, saya ingin mencobanya. Tapi satu pertanyaan dulu: dagingnya halal?", "literal": "baik, itu-nya mencoba sedang-mau-saya. tapi dulu satu pertanyaan: daging-nya halal apakah?" },
+    { "speaker": "Garson:", "text": "Tabii, bütün etlerimiz helal. Domuz eti yok.", "id": "Tentu, semua daging kami halal. Tidak ada daging babi.", "literal": "tentu, seluruh daging-jamak-kami halal. babi daging-nya tidak-ada." },
+    { "speaker": "Budi:", "text": "Güzel. Bir İskender ve bir ayran lütfen.", "id": "Bagus. Satu İskender dan satu ayran, tolong.", "literal": "indah. satu Iskender dan satu ayran tolong." },
+    { "speaker": "Emre:", "text": "Bana da bir Adana kebap. Acılı olsun.", "id": "Saya juga satu Adana kebab. Yang pedas.", "literal": "saya-ke juga satu Adana kebab. pedas jadilah." },
+    { "speaker": "Garson:", "text": "Çorba istiyor musunuz?", "id": "Mau sup?", "literal": "sup sedang-mau apakah-Anda?" },
+    { "speaker": "Budi:", "text": "Evet, bir mercimek çorbası içmek istiyorum.", "id": "Ya, saya ingin sup lentil.", "literal": "ya, satu lentil sup-nya minum sedang-mau-saya." },
+    { "speaker": "Garson:", "text": "Hemen geliyor. Afiyet olsun!", "id": "Segera datang. Selamat makan!", "literal": "segera sedang-datang. afiat jadilah!" }
+   ],
+   "notes": [
+    "**Çorba diminum, bukan dimakan.** Bahasa Turki memakai *içmek* untuk sup — dan juga untuk rokok (*sigara içmek*). Yang masuk lewat tenggorokan tanpa dikunyah, diminum.",
+    "**Afiyet olsun diucapkan sebelum ATAU sesudah makan**, oleh siapa saja kepada siapa saja yang sedang makan. Jawabannya *teşekkürler*. Kepada yang memasak, ucapkan *elinize sağlık* — \"semoga tanganmu sehat\", pujian tertinggi untuk masakan di Turki.",
+    "**Acılı berarti \"berpedas\", acısız \"tanpa pedas\".** Dua akhiran ini — *-lı* (punya) dan *-sız* (tanpa) — akan dibongkar di unit 18, tapi di menu keduanya muncul lebih dulu: *şekerli* (bergula), *şekersiz*, *sütlü* (bersusu), *tuzsuz* (tanpa garam).",
+    "**Olsun berarti \"biarlah jadi\".** Di dialog, *acılı olsun* = \"jadikan yang pedas\". Kata ini muncul di banyak doa dan basa-basi: *afiyet olsun*, *geçmiş olsun* (semoga cepat sembuh), *kolay gelsin* (semoga dimudahkan), *başınız sağ olsun* (turut berdukacita)."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Saya ingin — pola -mek istemek",
+   "blocks": [
+    { "type": "p", "text": "Untuk mengatakan \"saya ingin melakukan sesuatu\", bahasa Turki memakai **bentuk kamus utuh** (yang berakhir *-mek/-mak*) diikuti *istemek* yang menerima akhiran orang. Kata kerja pertama tidak berubah sama sekali." },
+    { "type": "tabel", "head": ["Türkçe", "Bongkarannya", "Bahasa Indonesia"], "rows": [
+     ["Gitmek istiyorum.", "pergi ingin-saya", "Saya ingin pergi."],
+     ["Yemek istiyorum.", "makan ingin-saya", "Saya ingin makan."],
+     ["Denemek istiyorum.", "mencoba ingin-saya", "Saya ingin mencoba."],
+     ["Türkçe öğrenmek istiyorum.", "Turki belajar ingin-saya", "Saya ingin belajar bahasa Turki."],
+     ["Gitmek istemiyorum.", "pergi tidak-ingin-saya", "Saya tidak ingin pergi."],
+     ["Gitmek istiyor musun?", "pergi ingin apakah-kamu", "Kamu ingin pergi?"]
+    ]},
+    { "type": "p", "text": "Objek tetap berdiri di depan kata kerja pertama: *Bir çay içmek istiyorum* — \"satu teh minum ingin-saya\". Semua tambahan menumpuk di depan; hanya *istemek* yang membawa akhiran orang." },
+    { "type": "kotak", "title": "İstemek juga bisa berdiri sendiri", "items": [
+     "Dengan kata benda, *istemek* berarti \"mau\" begitu saja: *Su istiyorum* (saya mau air), *Poşet istemiyorum* (saya tidak mau kantong).",
+     "Dalam memesan, bentuk pendek justru lebih lazim daripada kalimat penuh: *Bir çay lütfen* terdengar jauh lebih alami daripada *Bir çay içmek istiyorum*. Yang panjang dipakai kalau kamu sedang menjelaskan keinginan, bukan memesan."
+    ]}
+   ]
+  },
+  {
+   "title": "Membaca menu",
+   "blocks": [
+    { "type": "p", "text": "Menu Turki hampir seluruhnya tersusun dari pola rangkaian dua kata benda yang kamu pelajari di unit 4: **bahan + masakan-nya**. Sekali polanya terlihat, kamu bisa menebak isi piring tanpa kamus." },
+    { "type": "tabel", "head": ["Menü", "Bongkarannya", "Isinya"], "rows": [
+     ["mercimek çorba**sı**", "lentil sup-nya", "sup lentil merah"],
+     ["domates çorba**sı**", "tomat sup-nya", "sup tomat"],
+     ["çoban salata**sı**", "gembala salad-nya", "salad tomat mentimun"],
+     ["Türk kahve**si**", "Turki kopi-nya", "kopi Turki"],
+     ["tavuk şiş", "ayam tusuk", "sate ayam"],
+     ["karışık ızgara", "campur panggangan", "aneka daging bakar"]
+    ]},
+    { "type": "sub", "text": "Yang akan kamu temui di mana-mana" },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Türkçe", "Bahasa Indonesia"], "rows": [
+     ["çorba", "sup", "kebap", "daging panggang"],
+     ["döner", "daging putar", "lahmacun", "pizza tipis Turki"],
+     ["pide", "roti pipih; pizza perahu", "börek", "pastri berlapis"],
+     ["köfte", "perkedel daging", "pilav", "nasi"],
+     ["menemen", "telur orak tomat", "simit", "roti cincin wijen"],
+     ["meze", "hidangan pembuka", "kahvaltı", "sarapan"],
+     ["baklava", "kue lapis sirup", "künefe", "keju manis panggang"],
+     ["sütlaç", "bubur susu", "dondurma", "es krim"],
+     ["ayran", "yogurt asin", "şalgam", "jus lobak merah"]
+    ]},
+    { "type": "sub", "text": "Bahan" },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Türkçe", "Bahasa Indonesia"], "rows": [
+     ["et", "daging", "tavuk", "ayam"],
+     ["balık", "ikan", "sebze", "sayur"],
+     ["peynir", "keju", "yumurta", "telur"],
+     ["zeytin", "zaitun", "bal", "madu"],
+     ["ekmek", "roti", "pirinç", "beras"],
+     ["domates", "tomat", "salatalık", "mentimun"],
+     ["soğan", "bawang", "biber", "cabai, paprika"],
+     ["tuz", "garam", "şeker", "gula"]
+    ]},
+    { "type": "kotak", "title": "Helal, domuz, alkol", "items": [
+     "Daging sapi, ayam, dan domba di rumah makan Turki pada umumnya disembelih secara Islam, dan *domuz eti* (daging babi) praktis tidak ada di menu biasa — kamu hanya menemukannya di beberapa toko khusus di kota besar.",
+     "Yang perlu ditanyakan justru dua hal lain: *jelatin* di makanan penutup, dan alkohol. Rumah makan berlabel *içkili* menyajikan minuman keras, yang *içkisiz* tidak. Kalimat yang berguna: *Bunun içinde alkol var mı?* — \"Di dalamnya ada alkohol?\""
+    ]}
+   ]
+  },
+  {
+   "title": "Kalimat di meja makan",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia"], "rows": [
+     ["Menü alabilir miyim?", "Boleh minta menunya?"],
+     ["Ne tavsiye edersiniz?", "Anda menyarankan apa?"],
+     ["Bir porsiyon ... lütfen.", "Satu porsi ..., tolong."],
+     ["Bu ne kadar acı?", "Ini sepedas apa?"],
+     ["İçinde ne var?", "Isinya apa?"],
+     ["Vejetaryenim.", "Saya vegetarian."],
+     ["Bir şişe su lütfen.", "Satu botol air, tolong."],
+     ["Hesap lütfen.", "Minta bill."],
+     ["Servis dahil mi?", "Sudah termasuk servis?"],
+     ["Çok lezzetliydi.", "Tadi enak sekali."],
+     ["Elinize sağlık.", "Terima kasih atas masakannya."],
+     ["Afiyet olsun.", "Selamat makan."]
+    ]},
+    { "type": "kotak", "title": "Ulangan unit 8", "items": [
+     "Tutup bahasa Turkinya dan susun ulang dari ingatan: \"Kamu pergi ke mana?\" · \"Saya pergi ke sekolah.\" · \"Kami datang dari rumah.\" · \"Kita naik trem.\" · \"Jauh dari sini?\"",
+     "Lalu tambahkan akhiran arah dan asal pada: *ev*, *okul*, *Ankara*, *iş*."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tr": "lokanta", "baca": "lo-kan-TA", "id": "rumah makan" },
+  { "tr": "garson", "baca": "gar-SON", "id": "pelayan" },
+  { "tr": "menü", "baca": "me-NÜ", "id": "menu" },
+  { "tr": "hesap", "baca": "he-SAP", "id": "rekening, bill" },
+  { "tr": "porsiyon", "baca": "por-si-YON", "id": "porsi" },
+  { "tr": "çorba", "baca": "cor-BA", "id": "sup" },
+  { "tr": "kebap", "baca": "ke-BAP", "id": "daging panggang" },
+  { "tr": "et", "baca": "et", "id": "daging" },
+  { "tr": "tavuk", "baca": "ta-VUK", "id": "ayam" },
+  { "tr": "balık", "baca": "ba-LIK", "id": "ikan" },
+  { "tr": "sebze", "baca": "seb-ZE", "id": "sayur" },
+  { "tr": "peynir", "baca": "pey-NIR", "id": "keju" },
+  { "tr": "yumurta", "baca": "yu-mur-TA", "id": "telur" },
+  { "tr": "pilav", "baca": "pi-LAV", "id": "nasi" },
+  { "tr": "salata", "baca": "sa-la-TA", "id": "salad" },
+  { "tr": "ayran", "baca": "ay-RAN", "id": "minuman yogurt asin" },
+  { "tr": "kahvaltı", "baca": "kah-val-TI", "id": "sarapan" },
+  { "tr": "tatlı", "baca": "tat-LI", "id": "makanan manis; manis" },
+  { "tr": "acı", "baca": "a-JI", "id": "pedas; pahit" },
+  { "tr": "tuz / şeker", "baca": "tuz / sye-KER", "id": "garam / gula" },
+  { "tr": "lezzetli", "baca": "lez-zet-LI", "id": "lezat" },
+  { "tr": "helal / domuz", "baca": "he-LAL / do-MUZ", "id": "halal / babi" },
+  { "tr": "içmek", "baca": "ic-MEK", "id": "minum" },
+  { "tr": "denemek", "baca": "de-ne-MEK", "id": "mencoba" },
+  { "tr": "tavsiye etmek", "baca": "tav-si-YE et-MEK", "id": "menyarankan" },
+  { "tr": "istemek", "baca": "is-te-MEK", "id": "ingin, mau" },
+  { "tr": "afiyet olsun", "baca": "a-fi-YET ol-SUN", "id": "selamat makan" },
+  { "tr": "elinize sağlık", "baca": "e-li-ni-ZE saa-LIK", "id": "terima kasih masakannya" },
+  { "tr": "şişe", "baca": "syi-SYE", "id": "botol" },
+  { "tr": "bardak", "baca": "bar-DAK", "id": "gelas" }
+ ],
+ "exercises": [
+  { "prompt": "Ubah jadi kalimat \"saya ingin ...\" dengan pola *-mek istemek*.", "items": [
+   "gitmek → ____",
+   "yemek → ____",
+   "denemek → ____",
+   "Türkçe öğrenmek → ____",
+   "çay içmek → ____",
+   "İstanbul'a gitmek → ____"
+  ]},
+  { "prompt": "Lengkapi kalimat di rumah makan.", "items": [
+   "____ alabilir miyim? (menu)",
+   "Ne ____ edersiniz? (menyarankan)",
+   "Bir ____ su lütfen. (botol)",
+   "____ lütfen. (bill)",
+   "Servis ____ mi? (termasuk)",
+   "____ olsun! (selamat makan)"
+  ]},
+  { "prompt": "Terjemahkan ke bahasa Turki.", "items": [
+   "Saya ingin mencoba İskender.",
+   "Dagingnya halal?",
+   "Saya tidak makan daging babi.",
+   "Isinya apa?",
+   "Enak sekali.",
+   "Minta bill, tolong."
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "istiyorum / denemek / bunu",
+   "lütfen / bir / ayran",
+   "mı / eti / helal / ?",
+   "var / içinde / ne / ?",
+   "istiyor / çorba / musunuz / ?",
+   "lütfen / hesap"
+  ]}
+ ],
+ "answers": [
+  "Gitmek istiyorum. — Yemek istiyorum. — Denemek istiyorum. — Türkçe öğrenmek istiyorum. — Çay içmek istiyorum. — İstanbul'a gitmek istiyorum.",
+  "Menü — tavsiye — şişe — Hesap — dahil — Afiyet",
+  "İskender denemek istiyorum. — Et helal mi? — Domuz eti yemiyorum. — İçinde ne var? — Çok lezzetli. — Hesap lütfen.",
+  "Bunu denemek istiyorum. — Bir ayran lütfen. — Et helal mi? — İçinde ne var? — Çorba istiyor musunuz? — Hesap lütfen."
+ ]
+}

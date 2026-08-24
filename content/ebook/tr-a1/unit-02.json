@@ -1,0 +1,184 @@
+{
+ "title": "Ini apa?",
+ "title_target": "Bu ne?",
+ "goal": "Menunjuk benda di sekitarmu, menyebutkan namanya, membuat jamak — dan berkenalan dengan keselarasan vokal, hukum yang mengatur seluruh bahasa ini.",
+ "bekal": [
+  "membedakan *bu*, *şu*, dan *o* menurut jarak dari pembicara",
+  "membaca vokal terakhir sebuah kata dan menebak bentuk akhiran yang akan menempel padanya",
+  "membuat jamak dengan *-ler* atau *-lar* tanpa pernah salah pilih"
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — Yeni oda",
+   "intro": "Ayşe mengantar Budi ke kamar kosnya di Kadıköy dan menunjukkan isi kamar satu per satu.",
+   "lines": [
+    { "speaker": "Ayşe:", "text": "İşte oda. Beğendiniz mi?", "id": "Ini dia kamarnya. Anda suka?", "literal": "inilah kamar. menyukai-Anda apakah?" },
+    { "speaker": "Budi:", "text": "Çok güzel! Bu ne?", "id": "Bagus sekali! Ini apa?", "literal": "sangat indah! ini apa?" },
+    { "speaker": "Ayşe:", "text": "O bir dolap. Şu da masa.", "id": "Itu lemari. Yang itu meja.", "literal": "itu sebuah lemari. itu-sana juga meja." },
+    { "speaker": "Budi:", "text": "Masa mı? Bizde \"masa\" başka bir şey!", "id": "Meja? Di tempat kami \"masa\" itu hal lain!", "literal": "meja apakah? kami-di \"masa\" lain sebuah hal!" },
+    { "speaker": "Ayşe:", "text": "Öyle mi? Peki bunlar ne, biliyor musunuz?", "id": "Oh ya? Kalau ini semua apa, Anda tahu?", "literal": "begitu apakah? kalau-begitu ini-jamak apa, tahu apakah-Anda?" },
+    { "speaker": "Budi:", "text": "Kitaplar ve defterler. Bunları biliyorum!", "id": "Buku-buku dan buku tulis. Ini saya tahu!", "literal": "kitab-jamak dan buku-tulis-jamak. ini-jamak-nya tahu-saya!" },
+    { "speaker": "Ayşe:", "text": "Aferin. Peki bu kim?", "id": "Bagus. Kalau ini siapa?", "literal": "bagus. kalau-begitu ini siapa?" },
+    { "speaker": "Budi:", "text": "Bilmiyorum. Bir kadın.", "id": "Saya tidak tahu. Seorang perempuan.", "literal": "tidak-tahu-saya. sebuah perempuan." },
+    { "speaker": "Ayşe:", "text": "O ev sahibi, Fatma Hanım. Çok iyi bir insan.", "id": "Itu pemilik rumah, Bu Fatma. Orang yang sangat baik.", "literal": "dia rumah pemilik-nya, Fatma Nyonya. sangat baik sebuah manusia." },
+    { "speaker": "Budi:", "text": "Anahtar nerede?", "id": "Kuncinya di mana?", "literal": "kunci di-mana?" },
+    { "speaker": "Ayşe:", "text": "Kapıda. İşte anahtarlar.", "id": "Di pintu. Ini kuncinya.", "literal": "pintu-di. inilah kunci-jamak." },
+    { "speaker": "Budi:", "text": "Teşekkürler Ayşe Hanım. Çok iyisiniz.", "id": "Terima kasih, Bu Ayşe. Anda baik sekali.", "literal": "terima-kasih-jamak Ayşe Nyonya. sangat baik-Anda." }
+   ],
+   "notes": [
+    "**Bahasa Turki tidak punya \"sebuah\" yang wajib.** *Dolap* sudah berarti \"lemari\" atau \"sebuah lemari\". Kata *bir* (satu) memang bisa dipakai seperti \"sebuah\", tapi ia menambahkan rasa \"salah satu, entah yang mana\": *bir kadın* = \"seorang perempuan (yang tak dikenal)\".",
+    "**Tidak ada \"the\" juga.** Kalau kamu ingin bilang \"buku ITU, yang tadi kita bicarakan\", bahasa Turki menandainya bukan di depan kata, melainkan dengan akhiran objek *-i* di belakangnya. Itu urusan unit 9 — sekarang cukup tahu bahwa penandanya ada, dan letaknya di belakang.",
+    "**Bunları, bukan bunlar.** Di dialog, *Bunları biliyorum* punya akhiran tambahan *-ı* karena benda itu jadi sasaran perbuatan \"tahu\". Jangan dihafal sekarang; cukup perhatikan bahwa kata yang sama berganti ekor tergantung tugasnya di kalimat.",
+    "**Aferin** dipakai untuk memuji anak-anak, murid, atau siapa pun yang baru berhasil melakukan sesuatu — persis seperti \"bagus!\" dalam bahasa Indonesia. Untuk memuji orang dewasa dalam urusan serius, pakai *helal olsun* atau *bravo*."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Keselarasan vokal — hukum tunggal bahasa Turki",
+   "blocks": [
+    { "type": "p", "text": "Kalau kamu hanya boleh mengingat satu halaman dari seluruh modul ini, pilih halaman ini. Akhiran bahasa Turki tidak punya bentuk tetap: ia **menyesuaikan diri dengan vokal terakhir kata yang ditempelinya**. Karena itu \"di\" bisa muncul sebagai *-de*, *-da*, *-te*, atau *-ta* — dan keempatnya adalah akhiran yang sama." },
+    { "type": "p", "text": "Delapan vokal bahasa Turki terbelah dua menurut posisi lidah. Vokal **belakang**: *a, ı, o, u*. Vokal **depan**: *e, i, ö, ü*. Aturannya: akhiran mengikuti kelompok vokal terakhir kata induknya." },
+    { "type": "sub", "text": "Akhiran dua bentuk (e / a)" },
+    { "type": "tabel", "head": ["Vokal terakhir", "Akhiran", "Contoh jamak", "Contoh \"di\""], "rows": [
+     ["a, ı, o, u", "**-a**", "masa → masa**lar**", "okul → okul**da**"],
+     ["e, i, ö, ü", "**-e**", "ev → ev**ler**", "ev → ev**de**"]
+    ]},
+    { "type": "sub", "text": "Akhiran empat bentuk (i / ı / u / ü)" },
+    { "type": "tabel", "head": ["Vokal terakhir", "Akhiran", "Contoh \"apakah\"", "Contoh \"-ku\""], "rows": [
+     ["a, ı", "**-ı**", "kadın **mı**?", "kız → kız**ım**"],
+     ["e, i", "**-i**", "ev **mi**?", "ev → ev**im**"],
+     ["o, u", "**-u**", "okul **mu**?", "okul → okul**um**"],
+     ["ö, ü", "**-ü**", "göz **mü**?", "göz → göz**üm**"]
+    ]},
+    { "type": "kotak", "title": "Cara memakainya di kepala, bukan di tabel", "items": [
+     "Jangan menghafal tabel. Latih satu kebiasaan: setiap kali bertemu kata baru, ucapkan vokal terakhirnya keras-keras. *Kitap* → **a**. *Deniz* → **i**. *Okul* → **u**. *Göz* → **ö**.",
+     "Sesudah itu, akhirannya tinggal mengikut. Vokal yang sama akan terasa nyaman di mulut, yang salah akan terasa janggal — dan setelah beberapa minggu, telingamu yang memutuskan, bukan tabelnya.",
+     "Kata serapan sesekali membangkang: *saat* → *saatler* (bukan *saatlar*), *kalp* → *kalbim*. Jumlahnya sedikit, dan modul ini menandainya setiap kali muncul."
+    ]}
+   ]
+  },
+  {
+   "title": "Ini, itu, dan itu yang di sana",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Cara baca", "Jarak", "Jamaknya"], "rows": [
+     ["bu", "bu", "dekat pembicara — \"ini\"", "bunlar"],
+     ["şu", "syu", "agak jauh, baru ditunjuk — \"itu\"", "şunlar"],
+     ["o", "o", "jauh, atau sudah dikenal — \"itu\"", "onlar"]
+    ]},
+    { "type": "p", "text": "*O* bekerja rangkap: selain \"itu\", ia juga berarti \"dia\". *O öğretmen* bisa berarti \"dia guru\" atau \"guru itu\" — konteks yang memutuskan, dan dalam praktik nyaris tak pernah membingungkan." },
+    { "type": "p", "text": "*Şu* punya rasa khusus: ia menunjuk sesuatu yang **baru saja masuk pembicaraan**, sering sambil menunjuk dengan tangan. Kalau kamu ragu antara *şu* dan *o*, pakai *o*." },
+    { "type": "sub", "text": "Dua pertanyaan yang membuka semuanya" },
+    { "type": "tabel", "head": ["Pertanyaan", "Untuk apa", "Jawaban contoh"], "rows": [
+     ["Bu ne?", "benda", "Bu bir kitap."],
+     ["Bu kim?", "orang", "Bu Fatma Hanım."],
+     ["Bunlar ne?", "benda jamak", "Bunlar defterler."],
+     ["Şu ne?", "benda agak jauh", "Şu bir dolap."],
+     ["Bu ne demek?", "arti sebuah kata", "\"Masa\" demek."]
+    ]},
+    { "type": "kotak", "title": "Jamak yang tidak dipakai", "items": [
+     "Sesudah angka, kata benda TETAP tunggal: *üç kitap* (tiga buku), bukan *üç kitaplar*. Angkanya sudah menjamakkan, jadi *-lar* jadi mubazir — dan terdengar salah bagi telinga Turki.",
+     "Hal yang sama berlaku sesudah *çok* (banyak) dan *birkaç* (beberapa): *çok insan*, *birkaç gün*."
+    ]}
+   ]
+  },
+  {
+   "title": "Benda di sekitarmu",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Türkçe", "Bahasa Indonesia"], "rows": [
+     ["oda", "kamar", "ev", "rumah"],
+     ["kapı", "pintu", "pencere", "jendela"],
+     ["masa", "meja", "sandalye", "kursi"],
+     ["yatak", "tempat tidur", "dolap", "lemari"],
+     ["anahtar", "kunci", "çanta", "tas"],
+     ["kitap", "buku", "defter", "buku tulis"],
+     ["kalem", "pena, pensil", "kâğıt", "kertas"],
+     ["telefon", "telepon", "bilgisayar", "komputer"],
+     ["su", "air", "çay", "teh"],
+     ["para", "uang", "saat", "jam, waktu"]
+    ]},
+    { "type": "p", "text": "*Bilgisayar* adalah salah satu kata Turki modern yang dibuat sendiri, bukan diserap: *bilgi* (informasi) + *saymak* (menghitung) — \"penghitung informasi\". Bahasa Turki punya lembaga yang rajin mencetak kata seperti ini, dan sebagiannya benar-benar dipakai orang." },
+    { "type": "kotak", "title": "Ulangan unit 1", "items": [
+     "Tutup halaman unit 1, lalu susun kembali kalimat Turkinya dari ingatan: \"Nama saya Budi.\" · \"Saya orang Indonesia.\" · \"Apa kabar, Bu?\" · \"Saya bukan guru.\" · \"Sampai jumpa!\"",
+     "Kalau tiga dari lima keluar tanpa berhenti berpikir, kamu boleh maju."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tr": "bu / şu / o", "baca": "bu / syu / o", "id": "ini / itu / itu (jauh)" },
+  { "tr": "bunlar", "baca": "bun-LAR", "id": "ini semua" },
+  { "tr": "kim", "baca": "kim", "id": "siapa" },
+  { "tr": "işte", "baca": "ISY-te", "id": "inilah, itulah" },
+  { "tr": "oda", "baca": "o-DA", "id": "kamar" },
+  { "tr": "ev", "baca": "ev", "id": "rumah" },
+  { "tr": "kapı", "baca": "ka-PI", "id": "pintu" },
+  { "tr": "pencere", "baca": "pen-je-RE", "id": "jendela" },
+  { "tr": "masa", "baca": "ma-SA", "id": "meja" },
+  { "tr": "sandalye", "baca": "san-dal-YE", "id": "kursi" },
+  { "tr": "yatak", "baca": "ya-TAK", "id": "tempat tidur" },
+  { "tr": "dolap", "baca": "do-LAP", "id": "lemari" },
+  { "tr": "anahtar", "baca": "a-nah-TAR", "id": "kunci" },
+  { "tr": "çanta", "baca": "can-TA", "id": "tas" },
+  { "tr": "kitap", "baca": "ki-TAP", "id": "buku" },
+  { "tr": "defter", "baca": "def-TER", "id": "buku tulis" },
+  { "tr": "kalem", "baca": "ka-LEM", "id": "pena, pensil" },
+  { "tr": "kâğıt", "baca": "kyaa-IT", "id": "kertas" },
+  { "tr": "bilgisayar", "baca": "bil-gi-sa-YAR", "id": "komputer" },
+  { "tr": "para", "baca": "pa-RA", "id": "uang" },
+  { "tr": "kadın / erkek", "baca": "ka-DIN / er-KEK", "id": "perempuan / laki-laki" },
+  { "tr": "insan", "baca": "in-SAN", "id": "manusia, orang" },
+  { "tr": "ev sahibi", "baca": "ev sa-hi-BI", "id": "pemilik rumah" },
+  { "tr": "güzel", "baca": "gü-ZEL", "id": "indah, bagus, cantik" },
+  { "tr": "yeni", "baca": "ye-NI", "id": "baru" },
+  { "tr": "bir", "baca": "bir", "id": "satu, sebuah" },
+  { "tr": "ve", "baca": "ve", "id": "dan" },
+  { "tr": "başka", "baca": "BASY-ka", "id": "lain" },
+  { "tr": "şey", "baca": "syey", "id": "hal, benda" },
+  { "tr": "peki", "baca": "pe-KI", "id": "kalau begitu, baiklah" },
+  { "tr": "öyle mi?", "baca": "ÖY-le mi", "id": "oh ya? begitu?" },
+  { "tr": "aferin", "baca": "a-fe-RIN", "id": "bagus (memuji)" },
+  { "tr": "beğenmek", "baca": "be-en-MEK", "id": "menyukai" },
+  { "tr": "ne demek?", "baca": "ne de-MEK", "id": "apa artinya?" }
+ ],
+ "exercises": [
+  { "prompt": "Tulis bentuk jamaknya (*-ler* atau *-lar*).", "items": [
+   "kitap → ____",
+   "ev → ____",
+   "okul → ____",
+   "öğrenci → ____",
+   "kapı → ____",
+   "göz → ____"
+  ]},
+  { "prompt": "Pilih bentuk akhiran empat bentuk yang tepat (*-im*, *-ım*, *-um*, *-üm* = \"-ku\").", "items": [
+   "ev → ____",
+   "kalem → ____",
+   "çanta → ____",
+   "okul → ____",
+   "göz → ____",
+   "kız → ____"
+  ]},
+  { "prompt": "Jawab pertanyaannya dengan kalimat lengkap sesuai petunjuk dalam kurung.", "items": [
+   "Bu ne? (buku)",
+   "Bu kim? (Bu Fatma)",
+   "Bunlar ne? (kunci-kunci)",
+   "Şu ne? (lemari)",
+   "O kim? (guru)",
+   "Bu ne? (tas baru)"
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "ne / bu / ?",
+   "bir / bu / kitap",
+   "güzel / oda / çok",
+   "ne / bunlar / ?",
+   "sandalye / masa / ve",
+   "kim / o / ?"
+  ]}
+ ],
+ "answers": [
+  "kitaplar — evler — okullar — öğrenciler — kapılar — gözler",
+  "evim — kalemim — çantam — okulum — gözüm — kızım",
+  "Bu bir kitap. — Bu Fatma Hanım. — Bunlar anahtarlar. — Şu bir dolap. — O bir öğretmen. — Bu yeni bir çanta.",
+  "Bu ne? — Bu bir kitap. — Oda çok güzel. — Bunlar ne? — Masa ve sandalye. — O kim?"
+ ]
+}

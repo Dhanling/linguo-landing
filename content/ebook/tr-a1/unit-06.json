@@ -1,0 +1,191 @@
+{
+ "title": "Sedang apa kamu?",
+ "title_target": "Ne yapıyorsun?",
+ "goal": "Memakai kata kerja untuk pertama kalinya — bentuk sedang berlangsung *-yor*, beserta bentuk sangkal dan tanyanya.",
+ "bekal": [
+  "membentuk *geliyorum, gelmiyorum, geliyor musun* dari akar *gel-*",
+  "menyusun kalimat dengan urutan Turki: pelaku, keterangan, objek, kata kerja",
+  "menceritakan apa yang sedang kamu lakukan sekarang"
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — Kafede",
+   "intro": "Budi menunggu di kafe tepi laut. Emre, anak Fatma Hanım, datang dan duduk di sebelahnya.",
+   "lines": [
+    { "speaker": "Emre:", "text": "Selam! Ne yapıyorsun?", "id": "Halo! Sedang apa kamu?", "literal": "halo! apa sedang-lakukan-kamu?" },
+    { "speaker": "Budi:", "text": "Türkçe çalışıyorum. Sen ne yapıyorsun?", "id": "Saya sedang belajar bahasa Turki. Kamu sedang apa?", "literal": "Turki-bahasa sedang-kerja-saya. kamu apa sedang-lakukan-kamu?" },
+    { "speaker": "Emre:", "text": "Ben de bekliyorum. Arkadaşım geliyor.", "id": "Saya juga sedang menunggu. Teman saya sedang dalam perjalanan.", "literal": "saya juga sedang-tunggu-saya. teman-ku sedang-datang." },
+    { "speaker": "Budi:", "text": "Ne içiyorsun?", "id": "Kamu minum apa?", "literal": "apa sedang-minum-kamu?" },
+    { "speaker": "Emre:", "text": "Türk kahvesi. Sen çay içmiyor musun?", "id": "Kopi Turki. Kamu tidak minum teh?", "literal": "Turki kopi-nya. kamu teh tidak-minum apakah-kamu?" },
+    { "speaker": "Budi:", "text": "İçiyorum ama şimdi su istiyorum. Hava çok sıcak.", "id": "Minum, tapi sekarang saya mau air. Cuacanya panas sekali.", "literal": "sedang-minum-saya tapi sekarang air sedang-mau-saya. udara sangat panas." },
+    { "speaker": "Emre:", "text": "Doğru. Peki nerede kalıyorsun?", "id": "Benar. Ngomong-ngomong kamu tinggal di mana?", "literal": "benar. kalau-begitu di-mana sedang-tinggal-kamu?" },
+    { "speaker": "Budi:", "text": "Sizin evde kalıyorum! Annen ev sahibim.", "id": "Saya tinggal di rumah kalian! Ibumu pemilik rumah saya.", "literal": "kalian-punya rumah-di sedang-tinggal-saya! ibu-mu rumah pemilik-ku." },
+    { "speaker": "Emre:", "text": "Ne? Sen Endonezyalı öğrenci misin? Annem hep senden bahsediyor!", "id": "Apa? Kamu mahasiswa Indonesia itu? Ibu saya terus membicarakanmu!", "literal": "apa? kamu Indonesia-orang pelajar apakah-kamu? ibu-ku selalu kamu-dari sedang-bicara!" },
+    { "speaker": "Budi:", "text": "Umarım iyi şeyler söylüyor.", "id": "Semoga yang dia bilang hal-hal baik.", "literal": "berharap-saya baik hal-jamak sedang-mengatakan." },
+    { "speaker": "Emre:", "text": "Merak etme. Bu akşam ne yapıyorsun? Maç var.", "id": "Jangan khawatir. Malam ini kamu ada acara? Ada pertandingan.", "literal": "khawatir jangan-lakukan. ini malam apa sedang-lakukan-kamu? pertandingan ada." },
+    { "speaker": "Budi:", "text": "Hiçbir şey yapmıyorum. Geliyorum!", "id": "Saya tidak melakukan apa-apa. Saya ikut!", "literal": "sama-sekali hal tidak-lakukan-saya. sedang-datang-saya!" }
+   ],
+   "notes": [
+    "**Kata kerja jatuh di ujung kalimat.** *Türkçe çalışıyorum* — \"bahasa Turki sedang-saya-kerjakan\". Selama dua puluh unit ini, kebiasaan itu tidak pernah berubah: apa pun yang kamu tambahkan ke kalimat, kata kerjanya tetap terakhir.",
+    "**Geliyorum berarti \"saya ikut\", bukan \"saya sedang datang\".** Ketika seseorang mengajak dan kamu setuju, jawabannya *geliyorum*. Bahasa Turki memakai bentuk sedang berlangsung untuk rencana dekat, persis seperti bahasa Indonesia \"aku ikut\".",
+    "**Bahsetmek menuntut -den.** \"Membicarakan sesuatu\" adalah *bir şeyden bahsetmek* — harfiahnya \"berbicara DARI sesuatu\". Beberapa kata kerja bahasa Turki menuntut akhiran tertentu di objeknya, dan pasangannya harus dihafal bersama kata kerjanya.",
+    "**Merak etme** harfiahnya \"jangan melakukan khawatir\" — bentuk larangan yang akan kamu pelajari utuh di unit 15. Untuk sekarang, hafalkan saja sebagai satu kalimat; ia terdengar tiap hari di Turki."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bentuk -yor: sedang berlangsung",
+   "blocks": [
+    { "type": "p", "text": "Bentuk kamus kata kerja selalu berakhir *-mek* atau *-mak*: *gelmek* (datang), *almak* (mengambil). Buang akhiran itu dan kamu mendapat **akar** — tempat semua akhiran lain menempel. *Gelmek* → *gel-*. *Almak* → *al-*." },
+    { "type": "p", "text": "Untuk mengatakan sesuatu sedang berlangsung, susunannya: **akar + vokal penyambung + yor + akhiran orang**. Vokal penyambungnya salah satu dari *ı, i, u, ü*, dipilih menurut keselarasan vokal." },
+    { "type": "tabel", "head": ["", "gelmek (datang)", "almak (ambil)", "görmek (lihat)", "okumak (baca)"], "rows": [
+     ["ben", "gel**iyorum**", "al**ıyorum**", "gör**üyorum**", "oku**yorum**"],
+     ["sen", "gel**iyorsun**", "al**ıyorsun**", "gör**üyorsun**", "oku**yorsun**"],
+     ["o", "gel**iyor**", "al**ıyor**", "gör**üyor**", "oku**yor**"],
+     ["biz", "gel**iyoruz**", "al**ıyoruz**", "gör**üyoruz**", "oku**yoruz**"],
+     ["siz", "gel**iyorsunuz**", "al**ıyorsunuz**", "gör**üyorsunuz**", "oku**yorsunuz**"],
+     ["onlar", "gel**iyorlar**", "al**ıyorlar**", "gör**üyorlar**", "oku**yorlar**"]
+    ]},
+    { "type": "kotak", "title": "Yor tidak pernah berubah", "items": [
+     "Perhatikan: apa pun vokal kata kerjanya, potongan **yor** selalu tertulis *yor* — tidak pernah *yör* atau *yar*. Ia satu-satunya akhiran bahasa Turki yang kebal keselarasan vokal, karena aslinya kata kerja tersendiri (*yorımak*, \"berjalan\") yang menyatu ribuan tahun lalu.",
+     "Karena itu tekanan kata juga berhenti di depannya: *ge-LI-yo-rum*, bukan *ge-li-yo-RUM*."
+    ]},
+    { "type": "sub", "text": "Akar yang berakhir vokal" },
+    { "type": "p", "text": "Kalau akar berakhir dengan *a* atau *e*, vokal itu **berubah** jadi *ı/i/u/ü* — tidak boleh ada dua vokal berdampingan:" },
+    { "type": "tabel", "head": ["Bentuk kamus", "Akar", "Bentuk -yor", "Bahasa Indonesia"], "rows": [
+     ["beklemek", "bekle-", "bekl**i**yor", "menunggu"],
+     ["anlamak", "anla-", "anl**ı**yor", "mengerti"],
+     ["başlamak", "başla-", "başl**ı**yor", "mulai"],
+     ["söylemek", "söyle-", "söyl**ü**yor", "mengatakan"],
+     ["yemek", "ye-", "y**i**yor", "makan"],
+     ["demek", "de-", "d**i**yor", "berkata"],
+     ["okumak", "oku-", "okuyor", "membaca (tetap)"],
+     ["yürümek", "yürü-", "yürüyor", "berjalan (tetap)"]
+    ]},
+    { "type": "p", "text": "Dua kata kerja melunakkan konsonannya: *gitmek* → *gi**d**iyorum* (saya sedang pergi), *etmek* → *e**d**iyorum*. Inilah seluruh daftar kata kerja \"tak beraturan\" bahasa Turki — dan daftarnya berhenti di sini." }
+   ]
+  },
+  {
+   "title": "Menyangkal dan bertanya",
+   "blocks": [
+    { "type": "p", "text": "Untuk menyangkal, sisipkan **-mı/-mi/-mu/-mü** di antara akar dan *yor*. Perhatikan bahwa vokalnya empat bentuk, dan tekanan pindah ke suku kata sebelum sisipan itu." },
+    { "type": "tabel", "head": ["Positif", "Negatif", "Bahasa Indonesia"], "rows": [
+     ["geliyorum", "gel**mi**yorum", "saya tidak datang"],
+     ["alıyorsun", "al**mı**yorsun", "kamu tidak mengambil"],
+     ["görüyor", "gör**mü**yor", "dia tidak melihat"],
+     ["okuyoruz", "oku**mu**yoruz", "kami tidak membaca"],
+     ["anlıyorsunuz", "anla**mı**yorsunuz", "Anda tidak mengerti"],
+     ["biliyorlar", "bil**mi**yorlar", "mereka tidak tahu"]
+    ]},
+    { "type": "p", "text": "Untuk bertanya, pakai partikel *mu* dari unit 3 — dan karena *yor* selalu berakhir *o*, partikelnya **selalu mu**, tanpa kecuali: *Geliyor musun?*, *Anlıyor musunuz?*, *Gelmiyor mu?*" },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia"], "rows": [
+     ["Ne yapıyorsun?", "Sedang apa kamu?"],
+     ["Nereye gidiyorsun?", "Kamu sedang pergi ke mana?"],
+     ["Anlıyor musun?", "Kamu mengerti?"],
+     ["Anlamıyorum.", "Saya tidak mengerti."],
+     ["Türkçe biliyor musunuz?", "Anda bisa bahasa Turki?"],
+     ["Neden gülüyorsun?", "Kenapa kamu tertawa?"]
+    ]},
+    { "type": "kotak", "title": "Satu bentuk, tiga pekerjaan", "items": [
+     "*-yor* tidak hanya menerangkan yang sedang berlangsung detik ini. Ia juga dipakai untuk kebiasaan yang sedang berjalan (*Bu sene Türkçe öğreniyorum* — tahun ini saya belajar bahasa Turki) dan untuk rencana dekat (*Yarın geliyorum* — besok saya datang).",
+     "Karena itu, pemula bisa bertahan lama hanya dengan bentuk ini. Bentuk-bentuk lain di unit 11 sampai 13 menambah ketepatan, bukan mengganti."
+    ]}
+   ]
+  },
+  {
+   "title": "Kata kerja untuk hari pertama",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Türkçe", "Bahasa Indonesia"], "rows": [
+     ["gelmek", "datang", "gitmek", "pergi"],
+     ["yapmak", "melakukan, membuat", "olmak", "menjadi, terjadi"],
+     ["almak", "mengambil, membeli", "vermek", "memberi"],
+     ["yemek", "makan", "içmek", "minum"],
+     ["bilmek", "tahu", "anlamak", "mengerti"],
+     ["istemek", "mau, ingin", "beklemek", "menunggu"],
+     ["çalışmak", "bekerja, belajar", "dinlenmek", "beristirahat"],
+     ["okumak", "membaca", "yazmak", "menulis"],
+     ["kalmak", "tinggal, menginap", "oturmak", "duduk, bertempat tinggal"],
+     ["konuşmak", "berbicara", "dinlemek", "mendengarkan"]
+    ]},
+    { "type": "p", "text": "*Çalışmak* menutupi dua hal yang di bahasa Indonesia terpisah: \"bekerja\" dan \"belajar dengan tekun\". *Bir bankada çalışıyorum* = saya bekerja di bank. *Türkçe çalışıyorum* = saya sedang belajar bahasa Turki. Untuk \"sekolah\" dipakai *okumak* — kata yang sama dengan \"membaca\"." },
+    { "type": "kotak", "title": "Ulangan unit 4", "items": [
+     "Tutup bahasa Turkinya dan susun ulang dari ingatan: \"Ini keluarga saya.\" · \"Saya punya seorang adik laki-laki.\" · \"Berapa umur Anda?\" · \"Rumah Ayşe bagus sekali.\" · \"Foto ini punya siapa?\"",
+     "Lalu sebutkan bentuk \"-ku\" untuk: *kitap*, *araba*, *göz*, *oğul*."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tr": "yapmak", "baca": "yap-MAK", "id": "melakukan, membuat" },
+  { "tr": "çalışmak", "baca": "ca-lısy-MAK", "id": "bekerja, belajar" },
+  { "tr": "beklemek", "baca": "bek-le-MEK", "id": "menunggu" },
+  { "tr": "içmek", "baca": "ic-MEK", "id": "minum" },
+  { "tr": "yemek", "baca": "ye-MEK", "id": "makan; makanan" },
+  { "tr": "istemek", "baca": "is-te-MEK", "id": "mau, ingin" },
+  { "tr": "kalmak", "baca": "kal-MAK", "id": "tinggal, menginap" },
+  { "tr": "gelmek / gitmek", "baca": "gel-MEK / git-MEK", "id": "datang / pergi" },
+  { "tr": "okumak", "baca": "o-ku-MAK", "id": "membaca, bersekolah" },
+  { "tr": "yazmak", "baca": "yaz-MAK", "id": "menulis" },
+  { "tr": "bilmek", "baca": "bil-MEK", "id": "tahu" },
+  { "tr": "anlamak", "baca": "an-la-MAK", "id": "mengerti" },
+  { "tr": "söylemek", "baca": "söy-le-MEK", "id": "mengatakan" },
+  { "tr": "konuşmak", "baca": "ko-nusy-MAK", "id": "berbicara" },
+  { "tr": "dinlemek", "baca": "din-le-MEK", "id": "mendengarkan" },
+  { "tr": "gülmek", "baca": "gül-MEK", "id": "tertawa" },
+  { "tr": "kahve", "baca": "kah-VE", "id": "kopi" },
+  { "tr": "hava", "baca": "ha-VA", "id": "udara, cuaca" },
+  { "tr": "sıcak / soğuk", "baca": "sı-JAK / so-UK", "id": "panas / dingin" },
+  { "tr": "maç", "baca": "mac", "id": "pertandingan" },
+  { "tr": "akşam", "baca": "ak-SYAM", "id": "malam, sore" },
+  { "tr": "ama", "baca": "a-MA", "id": "tapi" },
+  { "tr": "doğru", "baca": "do-RU", "id": "benar, lurus" },
+  { "tr": "neden, niye", "baca": "ne-DEN, ni-YE", "id": "kenapa" },
+  { "tr": "hep, her zaman", "baca": "hep, her za-MAN", "id": "selalu" },
+  { "tr": "hiçbir şey", "baca": "hic-BIR syey", "id": "tidak ada apa-apa" },
+  { "tr": "umarım", "baca": "u-ma-RIM", "id": "semoga, saya harap" },
+  { "tr": "merak etme", "baca": "me-RAK et-ME", "id": "jangan khawatir" },
+  { "tr": "bahsetmek", "baca": "bah-set-MEK", "id": "membicarakan" },
+  { "tr": "selam", "baca": "se-LAM", "id": "halo (santai)" }
+ ],
+ "exercises": [
+  { "prompt": "Ubah ke bentuk *-yor* sesuai pelaku dalam kurung.", "items": [
+   "gelmek (ben) → ____",
+   "çalışmak (sen) → ____",
+   "beklemek (o) → ____",
+   "okumak (biz) → ____",
+   "görmek (siz) → ____",
+   "anlamak (onlar) → ____"
+  ]},
+  { "prompt": "Ubah jadi bentuk sangkal.", "items": [
+   "geliyorum → ____",
+   "biliyorsun → ____",
+   "okuyor → ____",
+   "anlıyoruz → ____",
+   "çalışıyorsunuz → ____",
+   "görüyorlar → ____"
+  ]},
+  { "prompt": "Terjemahkan ke bahasa Turki.", "items": [
+   "Sedang apa kamu?",
+   "Saya sedang belajar bahasa Turki.",
+   "Kamu mengerti?",
+   "Saya tidak mengerti.",
+   "Kami sedang menunggu.",
+   "Dia tidak minum kopi."
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "yapıyorsun / ne / ?",
+   "çalışıyorum / Türkçe / ben",
+   "musun / anlıyor / ?",
+   "içmiyorum / kahve / ben",
+   "bekliyor / arkadaşım / beni",
+   "gidiyorsun / nereye / ?"
+  ]}
+ ],
+ "answers": [
+  "geliyorum — çalışıyorsun — bekliyor — okuyoruz — görüyorsunuz — anlıyorlar",
+  "gelmiyorum — bilmiyorsun — okumuyor — anlamıyoruz — çalışmıyorsunuz — görmüyorlar",
+  "Ne yapıyorsun? — Türkçe çalışıyorum. — Anlıyor musun? — Anlamıyorum. — Bekliyoruz. — Kahve içmiyor.",
+  "Ne yapıyorsun? — Ben Türkçe çalışıyorum. — Anlıyor musun? — Ben kahve içmiyorum. — Arkadaşım beni bekliyor. — Nereye gidiyorsun?"
+ ]
+}

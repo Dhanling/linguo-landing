@@ -1,0 +1,183 @@
+{
+ "title": "Bisa dan boleh",
+ "title_target": "Yapabilir miyim?",
+ "goal": "Menyatakan kemampuan, izin, dan kemungkinan dengan sisipan *-ebil*, serta ketidakmampuan dengan *-eme*.",
+ "bekal": [
+  "membentuk *gelebilirim*, *gelemem*, *gelebilir miyim*",
+  "meminta izin dan menawarkan bantuan dengan sopan",
+  "mengatakan sesuatu mungkin terjadi: *yağmur yağabilir*"
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — Okul ofisinde",
+   "intro": "Budi mengetuk pintu ruang administrasi sekolah. Ayşe sedang menyusun berkas di meja.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Ayşe Hanım, bir şey sorabilir miyim?", "id": "Bu Ayşe, boleh saya tanya sesuatu?", "literal": "Ayşe Nyonya, satu hal bisa-tanya apakah-saya?" },
+    { "speaker": "Ayşe:", "text": "Tabii, sorabilirsin. Otur.", "id": "Tentu, silakan tanya. Duduk.", "literal": "tentu, bisa-tanya-kamu. duduk." },
+    { "speaker": "Budi:", "text": "Salı günü derse gelemeyeceğim. İzin alabilir miyim?", "id": "Hari Selasa saya tidak bisa datang ke kelas. Boleh saya minta izin?", "literal": "Selasa hari-nya pelajaran-ke tidak-bisa-datang-saya. izin bisa-ambil apakah-saya?" },
+    { "speaker": "Ayşe:", "text": "Neden gelemiyorsun?", "id": "Kenapa kamu tidak bisa datang?", "literal": "kenapa tidak-bisa-datang-kamu?" },
+    { "speaker": "Budi:", "text": "Vize işlerim var. Göç İdaresine gitmem lazım.", "id": "Ada urusan visa. Saya harus ke kantor imigrasi.", "literal": "visa urusan-jamak-ku ada. migrasi Kantor-nya-ke pergi-ku perlu." },
+    { "speaker": "Ayşe:", "text": "Anlıyorum. Tabii gelmeyebilirsin. Ödevi yapabilir misin?", "id": "Saya mengerti. Tentu kamu boleh tidak datang. Tugasnya bisa kamu kerjakan?", "literal": "mengerti-saya. tentu bisa-tidak-datang-kamu. tugas-nya bisa-lakukan apakah-kamu?" },
+    { "speaker": "Budi:", "text": "Yapabilirim ama biraz zor. Yardım edebilir misiniz?", "id": "Bisa, tapi agak sulit. Bisa Anda bantu?", "literal": "bisa-lakukan-saya tapi sedikit sulit. bantuan bisa-lakukan apakah-Anda?" },
+    { "speaker": "Ayşe:", "text": "Elbette. Çarşamba erken gelebilir misin? Yarım saat çalışırız.", "id": "Tentu saja. Bisa datang lebih awal hari Rabu? Kita kerjakan setengah jam.", "literal": "tentu-saja. Rabu awal bisa-datang apakah-kamu? setengah jam kerja-kami." },
+    { "speaker": "Budi:", "text": "Gelebilirim. Saat sekiz olur mu?", "id": "Bisa. Jam delapan boleh?", "literal": "bisa-datang-saya. jam delapan jadi apakah?" },
+    { "speaker": "Ayşe:", "text": "Olur. Ama geç kalma, sekizde başlarız.", "id": "Boleh. Tapi jangan terlambat, kita mulai jam delapan.", "literal": "jadi. tapi terlambat jangan-tinggal, delapan-di mulai-kami." },
+    { "speaker": "Budi:", "text": "Söz. Bir şey daha sorabilir miyim?", "id": "Janji. Boleh saya tanya satu hal lagi?", "literal": "janji. satu hal lagi bisa-tanya apakah-saya?" },
+    { "speaker": "Ayşe:", "text": "Sorabilirsin ama çabuk — dersim var!", "id": "Boleh, tapi cepat — saya ada kelas!", "literal": "bisa-tanya-kamu tapi cepat — pelajaran-ku ada!" }
+   ],
+   "notes": [
+    "**-ebilmek aslinya dua kata kerja yang menyatu**: akar utama + *bilmek* (tahu). Karena itu \"saya bisa datang\" harfiahnya \"saya tahu cara datang\". Bahasa Indonesia melakukan hal serupa dengan \"bisa\" yang juga berarti \"terbiasa\".",
+    "**Sisipan ini tidak pernah berdiri sendiri.** Sesudah *-ebil* harus selalu ada akhiran waktu: *gelebilirim* (bisa, umum), *gelebiliyorum* (sedang bisa), *gelebildim* (tadi bisa), *gelebileceğim* (nanti bisa).",
+    "**İzin almak berarti \"mengambil izin\", bukan \"meminta\".** Bahasa Turki memakai *almak* untuk banyak hal yang di bahasa Indonesia dipakai kata lain: *ders almak* (ikut kelas), *duş almak* (mandi), *nefes almak* (bernapas), *haber almak* (mendapat kabar).",
+    "**Geç kalma!** adalah bentuk larangan yang dibongkar di unit 15. Harfiahnya \"jangan tinggal terlambat\" — bahasa Turki memakai *geç kalmak* untuk \"terlambat\", bukan satu kata sendiri."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bisa: sisipan -ebil",
+   "blocks": [
+    { "type": "p", "text": "Untuk mengatakan \"bisa\" atau \"boleh\", sisipkan **-ebil / -abil** di antara akar dan akhiran waktu. Kalau akar berakhir vokal, disisipkan penyambung *y*." },
+    { "type": "tabel", "head": ["Akar", "+ -ebil + -ir", "Bahasa Indonesia"], "rows": [
+     ["gel-", "gel**ebil**irim", "saya bisa datang"],
+     ["yap-", "yap**abil**irim", "saya bisa melakukannya"],
+     ["gör-", "gör**ebil**irim", "saya bisa melihat"],
+     ["oku-", "oku**yabil**irim", "saya bisa membaca"],
+     ["bekle-", "bekle**yebil**irim", "saya bisa menunggu"],
+     ["git-", "gid**ebil**irim", "saya bisa pergi"]
+    ]},
+    { "type": "sub", "text": "Bersama akhiran waktu lain" },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia"], "rows": [
+     ["Gelebiliyorum.", "Saya (sekarang) bisa datang."],
+     ["Gelebildim.", "Saya tadi bisa datang."],
+     ["Gelebileceğim.", "Saya nanti bisa datang."],
+     ["Gelebilir miyim?", "Boleh saya datang?"],
+     ["Yardım edebilir misiniz?", "Bisa Anda bantu?"],
+     ["Yağmur yağabilir.", "Bisa jadi turun hujan."]
+    ]},
+    { "type": "kotak", "title": "Tiga arti dalam satu bentuk", "items": [
+     "*Yapabilirim* bisa berarti tiga hal, dan konteks yang memisahkannya: **kemampuan** (saya mampu melakukannya), **izin** (saya boleh melakukannya), dan **kemungkinan** (mungkin saja saya melakukannya).",
+     "Untuk meminta izin, bentuk pertanyaan orang pertama hampir selalu yang dipakai: *Girebilir miyim?* (boleh saya masuk?), *Oturabilir miyim?* (boleh saya duduk?), *Bakabilir miyim?* (boleh saya lihat?)."
+    ]}
+   ]
+  },
+  {
+   "title": "Tidak bisa: sisipan -eme",
+   "blocks": [
+    { "type": "p", "text": "Bentuk sangkalnya bukan *-ebilme*, melainkan sisipan yang lebih pendek: **-eme / -ama**. Potongan *bil* menghilang sama sekali." },
+    { "type": "tabel", "head": ["Bisa", "Tidak bisa", "Bahasa Indonesia"], "rows": [
+     ["gelebilirim", "gel**eme**m", "saya tidak bisa datang"],
+     ["yapabilirsin", "yap**ama**zsın", "kamu tidak bisa melakukannya"],
+     ["görebilir", "gör**eme**z", "dia tidak bisa melihat"],
+     ["gelebiliyorum", "gel**emi**yorum", "saya sedang tidak bisa datang"],
+     ["gelebildim", "gel**eme**dim", "tadi saya tidak bisa datang"],
+     ["gelebileceğim", "gel**eme**yeceğim", "nanti saya tidak bisa datang"]
+    ]},
+    { "type": "p", "text": "Perhatikan baris pertama: bentuk luas sangkalnya memakai pola khusus dari unit 13 — *gelemem*, bukan *gelemezim*. Untuk *biz*: *gelemeyiz*." },
+    { "type": "kotak", "title": "Dua sangkal yang berbeda arti", "items": [
+     "*Gelmiyorum* = saya tidak datang (karena saya memilih begitu). *Gelemiyorum* = saya tidak BISA datang (ada yang menghalangi).",
+     "Satu huruf memisahkan keduanya, dan bedanya besar. Kalau kamu menolak undangan karena berhalangan, pakai bentuk kedua — ia terdengar seperti alasan, bukan penolakan."
+    ]},
+    { "type": "sub", "text": "Boleh tidak melakukan" },
+    { "type": "p", "text": "Ada bentuk ketiga yang jarang diajarkan tapi sering dipakai: *-meyebil*, \"boleh tidak\" atau \"mungkin tidak\". *Gelmeyebilirsin* = kamu boleh tidak datang. *Yağmur yağmayabilir* = bisa jadi tidak hujan." }
+   ]
+  },
+  {
+   "title": "Meminta, menawarkan, menolak",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Untuk apa"], "rows": [
+     ["Bir şey sorabilir miyim?", "Boleh saya tanya sesuatu?", "membuka percakapan"],
+     ["Girebilir miyim?", "Boleh saya masuk?", "izin"],
+     ["Buraya oturabilir miyim?", "Boleh saya duduk di sini?", "izin"],
+     ["Fotoğraf çekebilir miyim?", "Boleh saya foto?", "izin"],
+     ["Yardım edebilir miyim?", "Boleh saya bantu?", "menawarkan"],
+     ["Size nasıl yardımcı olabilirim?", "Ada yang bisa saya bantu?", "di toko/kantor"],
+     ["Maalesef yapamam.", "Sayangnya saya tidak bisa.", "menolak"],
+     ["Şimdi konuşamam.", "Sekarang saya tidak bisa bicara.", "menolak"],
+     ["Bir dakika bekleyebilir misiniz?", "Bisa tunggu sebentar?", "meminta"],
+     ["Tekrar edebilir misiniz?", "Bisa diulang?", "meminta"]
+    ]},
+    { "type": "kotak", "title": "Kata yang menemani izin", "items": [
+     "*Elbette* dan *tabii* keduanya berarti \"tentu saja\" dan bisa saling menggantikan. *Elbette* sedikit lebih tegas; *tabii* (sering ditulis *tabi*) lebih santai.",
+     "Untuk menolak dengan halus, *maalesef* (sayangnya) hampir selalu dipasang di depan: *Maalesef bugün gelemem.*"
+    ]},
+    { "type": "kotak", "title": "Ulangan unit 12", "items": [
+     "Tutup bahasa Turkinya dan susun ulang dari ingatan: \"Akhir pekan kamu mau apa?\" · \"Kami akan pergi ke Kapadokya.\" · \"Kita akan tinggal berapa hari?\" · \"Saya tidak akan datang.\" · \"Mungkin saya akan belajar.\"",
+     "Lalu ubah ke bentuk akan datang: *geliyorum*, *yapıyorsun*, *kalıyoruz*."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tr": "-ebilmek", "baca": "e-bil-MEK", "id": "bisa, boleh" },
+  { "tr": "izin", "baca": "i-ZIN", "id": "izin" },
+  { "tr": "elbette", "baca": "el-bet-TE", "id": "tentu saja" },
+  { "tr": "maalesef", "baca": "ma-a-le-SEF", "id": "sayangnya" },
+  { "tr": "yardımcı olmak", "baca": "yar-dım-JI ol-MAK", "id": "membantu" },
+  { "tr": "sormak", "baca": "sor-MAK", "id": "bertanya" },
+  { "tr": "zor / kolay", "baca": "zor / ko-LAY", "id": "sulit / mudah" },
+  { "tr": "çabuk", "baca": "ca-BUK", "id": "cepat" },
+  { "tr": "geç kalmak", "baca": "gec kal-MAK", "id": "terlambat" },
+  { "tr": "ofis", "baca": "o-FIS", "id": "kantor" },
+  { "tr": "vize", "baca": "vi-ZE", "id": "visa" },
+  { "tr": "iş", "baca": "isy", "id": "urusan, pekerjaan" },
+  { "tr": "ödev", "baca": "ö-DEV", "id": "tugas" },
+  { "tr": "tekrar etmek", "baca": "tek-RAR et-MEK", "id": "mengulang" },
+  { "tr": "fotoğraf çekmek", "baca": "fo-to-RAF cek-MEK", "id": "memotret" },
+  { "tr": "duş almak", "baca": "dusy al-MAK", "id": "mandi" },
+  { "tr": "nefes almak", "baca": "ne-FES al-MAK", "id": "bernapas" },
+  { "tr": "ders almak", "baca": "ders al-MAK", "id": "ikut kelas" },
+  { "tr": "yağmur", "baca": "yaa-MUR", "id": "hujan" },
+  { "tr": "yağmak", "baca": "yaa-MAK", "id": "turun (hujan, salju)" },
+  { "tr": "yarım saat", "baca": "ya-RIM sa-AT", "id": "setengah jam" },
+  { "tr": "söz", "baca": "söz", "id": "janji; kata" },
+  { "tr": "oturmak", "baca": "o-tur-MAK", "id": "duduk" },
+  { "tr": "girmek", "baca": "gir-MEK", "id": "masuk" },
+  { "tr": "beklemek", "baca": "bek-le-MEK", "id": "menunggu" },
+  { "tr": "konuşmak", "baca": "ko-nusy-MAK", "id": "berbicara" },
+  { "tr": "başka bir şey", "baca": "BASY-ka bir syey", "id": "sesuatu yang lain" },
+  { "tr": "daha", "baca": "da-HA", "id": "lagi" },
+  { "tr": "göç idaresi", "baca": "göc i-da-re-SI", "id": "kantor imigrasi" },
+  { "tr": "belge", "baca": "bel-GE", "id": "dokumen" }
+ ],
+ "exercises": [
+  { "prompt": "Ubah jadi bentuk \"bisa\" untuk *ben* (bentuk luas).", "items": [
+   "gelmek → ____",
+   "yapmak → ____",
+   "görmek → ____",
+   "okumak → ____",
+   "beklemek → ____",
+   "gitmek → ____"
+  ]},
+  { "prompt": "Ubah jadi bentuk \"tidak bisa\" sesuai waktu dalam kurung.", "items": [
+   "gelmek, ben (luas) → ____",
+   "yapmak, sen (luas) → ____",
+   "gelmek, ben (sedang) → ____",
+   "gitmek, o (lampau) → ____",
+   "gelmek, ben (akan) → ____",
+   "yapmak, biz (luas) → ____"
+  ]},
+  { "prompt": "Terjemahkan ke bahasa Turki.", "items": [
+   "Boleh saya tanya sesuatu?",
+   "Boleh saya masuk?",
+   "Bisa Anda bantu?",
+   "Sayangnya saya tidak bisa.",
+   "Bisa tunggu sebentar?",
+   "Bisa jadi turun hujan."
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "miyim / sorabilir / şey / bir / ?",
+   "gelemeyeceğim / salı / derse / günü",
+   "misiniz / yardım / edebilir / ?",
+   "yapamam / maalesef",
+   "gelebilirim / erken / çarşamba",
+   "yağabilir / yarın / yağmur"
+  ]}
+ ],
+ "answers": [
+  "gelebilirim — yapabilirim — görebilirim — okuyabilirim — bekleyebilirim — gidebilirim",
+  "gelemem — yapamazsın — gelemiyorum — gidemedi — gelemeyeceğim — yapamayız",
+  "Bir şey sorabilir miyim? — Girebilir miyim? — Yardım edebilir misiniz? — Maalesef yapamam. — Bir dakika bekleyebilir misiniz? — Yağmur yağabilir.",
+  "Bir şey sorabilir miyim? — Salı günü derse gelemeyeceğim. — Yardım edebilir misiniz? — Maalesef yapamam. — Çarşamba erken gelebilirim. — Yarın yağmur yağabilir."
+ ]
+}

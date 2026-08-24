@@ -1,0 +1,188 @@
+{
+ "title": "Saya sedang sakit",
+ "title_target": "Hastayım",
+ "goal": "Menyebut bagian tubuh, mengatakan apa yang sakit, dan mengurus dirimu di apotek atau klinik.",
+ "bekal": [
+  "mengatakan *başım ağrıyor* dan sepuluh keluhan lain",
+  "menjawab *neyin var* dan *geçmiş olsun*",
+  "membeli obat dan menjelaskan alergi"
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — Eczanede",
+   "intro": "Budi masuk ke apotek di dekat rumah. Suaranya serak dan hidungnya merah.",
+   "lines": [
+    { "speaker": "Eczacı:", "text": "Buyurun, nasıl yardımcı olabilirim?", "id": "Silakan, ada yang bisa saya bantu?", "literal": "silakan, bagaimana penolong bisa-jadi-saya?" },
+    { "speaker": "Budi:", "text": "İyi değilim. Galiba grip oldum.", "id": "Saya tidak enak badan. Kayaknya saya kena flu.", "literal": "baik bukan-saya. kayaknya flu jadi-saya." },
+    { "speaker": "Eczacı:", "text": "Geçmiş olsun. Neyin var?", "id": "Semoga cepat sembuh. Keluhannya apa?", "literal": "berlalu jadilah. apa-mu ada?" },
+    { "speaker": "Budi:", "text": "Boğazım ağrıyor ve başım ağrıyor. Ateşim de var.", "id": "Tenggorokan saya sakit dan kepala saya sakit. Saya juga demam.", "literal": "tenggorokan-ku sakit dan kepala-ku sakit. panas-ku juga ada." },
+    { "speaker": "Eczacı:", "text": "Kaç gündür böyle?", "id": "Sudah berapa hari begini?", "literal": "berapa hari-sejak begini?" },
+    { "speaker": "Budi:", "text": "İki gündür. Dün gece hiç uyuyamadım.", "id": "Dua hari. Semalam saya sama sekali tidak bisa tidur.", "literal": "dua hari-sejak. kemarin malam sama-sekali tidak-bisa-tidur-saya." },
+    { "speaker": "Eczacı:", "text": "Alerjin var mı? İlaç kullanıyor musun?", "id": "Kamu punya alergi? Sedang minum obat?", "literal": "alergi-mu ada apakah? obat sedang-pakai apakah-kamu?" },
+    { "speaker": "Budi:", "text": "Alerjim yok, ilaç da kullanmıyorum.", "id": "Saya tidak punya alergi, dan tidak sedang minum obat.", "literal": "alergi-ku tidak-ada, obat juga tidak-pakai-saya." },
+    { "speaker": "Eczacı:", "text": "Bu ağrı kesici, günde iki kere. Bu da boğaz için pastil.", "id": "Ini pereda nyeri, dua kali sehari. Dan ini permen pelega tenggorokan.", "literal": "ini nyeri pemotong, hari-di dua kali. ini juga tenggorokan untuk pastil." },
+    { "speaker": "Budi:", "text": "Yemekten önce mi, sonra mı?", "id": "Sebelum makan atau sesudah?", "literal": "makanan-dari sebelum apakah, sesudah apakah?" },
+    { "speaker": "Eczacı:", "text": "Yemekten sonra. Bol su iç ve dinlen. İki gün geçmezse doktora git.", "id": "Sesudah makan. Banyak minum air dan istirahat. Kalau dua hari tidak membaik, pergi ke dokter.", "literal": "makanan-dari sesudah. banyak air minum dan istirahat. dua hari kalau-tidak-berlalu dokter-ke pergi." },
+    { "speaker": "Budi:", "text": "Anladım, teşekkür ederim.", "id": "Saya mengerti, terima kasih.", "literal": "mengerti-saya, terima-kasih lakukan-saya." }
+   ],
+   "notes": [
+    "**Geçmiş olsun diucapkan kepada siapa pun yang sedang atau baru saja sakit** — juga sesudah kecelakaan, ujian yang berat, atau musibah kecil. Harfiahnya \"semoga sudah berlalu\". Jawabannya *teşekkür ederim*.",
+    "**Neyin var? harfiahnya \"apamu ada?\"** — cara Turki menanyakan keluhan. Jawabannya memakai pola yang sama: *ateşim var* (saya demam), *başım ağrıyor*, *midem bulanıyor* (saya mual).",
+    "**Grip oldum, bukan gribim.** Untuk penyakit yang MENIMPA, dipakai *olmak*: *grip oldum* (saya kena flu), *hasta oldum* (saya jatuh sakit). Untuk keadaan yang sedang berlangsung dipakai akhiran orang biasa: *hastayım* (saya sedang sakit).",
+    "**Kaç gündür** memakai akhiran *-dır* yang berarti \"sejak, selama\": *iki gündür* (sudah dua hari), *bir haftadır* (sudah seminggu), *yıllardır* (bertahun-tahun). Bentuk ini sangat sering dipakai dan mudah dihafal utuh."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tubuh",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Türkçe", "Bahasa Indonesia"], "rows": [
+     ["baş", "kepala", "saç", "rambut"],
+     ["göz", "mata", "kulak", "telinga"],
+     ["burun", "hidung", "ağız", "mulut"],
+     ["diş", "gigi", "dil", "lidah; bahasa"],
+     ["boğaz", "tenggorokan", "boyun", "leher"],
+     ["el", "tangan", "kol", "lengan"],
+     ["parmak", "jari", "ayak", "kaki"],
+     ["bacak", "tungkai", "sırt", "punggung"],
+     ["karın", "perut", "mide", "lambung"],
+     ["kalp", "jantung", "cilt", "kulit"]
+    ]},
+    { "type": "p", "text": "Beberapa kata ini merontokkan vokalnya begitu diberi akhiran: *burun → burnum* (hidungku), *ağız → ağzım*, *karın → karnım*, *boyun → boynum*. Pola yang sama seperti *oğul → oğlum* di unit 4." },
+    { "type": "kotak", "title": "Dil berarti dua hal", "items": [
+     "*Dil* adalah \"lidah\" sekaligus \"bahasa\" — persis seperti bahasa Indonesia \"lidah\" dan bahasa Arab *lisan*. *Türk dili* = bahasa Turki. *Dilim yandı* = lidahku terbakar.",
+     "Kata *göz* juga bekerja rangkap: selain \"mata\", ia berarti \"laci\" dan \"petak\". *Gözlük* (kacamata) harfiahnya \"perkakas mata\"."
+    ]}
+   ]
+  },
+  {
+   "title": "Mengatakan apa yang sakit",
+   "blocks": [
+    { "type": "p", "text": "Polanya selalu sama: **bagian tubuh + akhiran milik + ağrıyor**. Bahasa Turki tidak mengatakan \"saya sakit kepala\" melainkan \"kepalaku sedang nyeri\"." },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia"], "rows": [
+     ["Başım ağrıyor.", "Kepala saya sakit."],
+     ["Karnım ağrıyor.", "Perut saya sakit."],
+     ["Boğazım ağrıyor.", "Tenggorokan saya sakit."],
+     ["Dişim ağrıyor.", "Gigi saya sakit."],
+     ["Sırtım ağrıyor.", "Punggung saya sakit."],
+     ["Ateşim var.", "Saya demam."],
+     ["Öksürüyorum.", "Saya batuk."],
+     ["Midem bulanıyor.", "Saya mual."],
+     ["Başım dönüyor.", "Kepala saya pusing."],
+     ["Yorgunum, halsizim.", "Saya lelah, lemas."]
+    ]},
+    { "type": "p", "text": "*Başım dönüyor* harfiahnya \"kepalaku sedang berputar\" — gambaran yang sama persis dengan \"pusing\" dalam bahasa Indonesia. Bahasa memang sering sepakat tanpa pernah bertemu." },
+    { "type": "sub", "text": "Kalimat penting di klinik dan apotek" },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia"], "rows": [
+     ["Hastayım.", "Saya sakit."],
+     ["Doktora gitmem lazım.", "Saya perlu ke dokter."],
+     ["Randevu alabilir miyim?", "Boleh saya buat janji?"],
+     ["Alerjim var.", "Saya punya alergi."],
+     ["Penisiline alerjim var.", "Saya alergi penisilin."],
+     ["Bu ilaç reçeteli mi?", "Obat ini perlu resep?"],
+     ["Günde kaç kere?", "Sehari berapa kali?"],
+     ["Aç karnına mı?", "Waktu perut kosong?"],
+     ["Acil servis nerede?", "Unit gawat darurat di mana?"],
+     ["Sigortam var.", "Saya punya asuransi."]
+    ]},
+    { "type": "kotak", "title": "Nöbetçi eczane", "items": [
+     "Apotek di Turki tutup malam hari, tapi di tiap wilayah selalu ada satu yang berjaga — *nöbetçi eczane*. Daftarnya ditempel di pintu setiap apotek yang tutup, dan bisa dicari lewat internet.",
+     "Banyak obat yang di Indonesia dijual bebas di Turki memerlukan *reçete* (resep). Apoteker Turki terlatih dan biasa memberi saran untuk keluhan ringan — mereka pintu pertama, bukan dokter."
+    ]}
+   ]
+  },
+  {
+   "title": "Doa dan basa-basi yang menyertai",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Kapan dipakai", "Jawabannya"], "rows": [
+     ["Geçmiş olsun.", "kepada yang sakit atau baru sembuh", "Teşekkür ederim."],
+     ["Çok yaşa!", "kepada yang bersin", "Sen de gör."],
+     ["Kolay gelsin.", "kepada yang sedang bekerja", "Teşekkürler."],
+     ["Afiyet olsun.", "kepada yang sedang makan", "Teşekkürler."],
+     ["Elinize sağlık.", "kepada yang memasak", "Afiyet olsun."],
+     ["Sıhhatler olsun.", "kepada yang baru mandi atau potong rambut", "Teşekkürler."],
+     ["Başınız sağ olsun.", "kepada keluarga yang berduka", "Dostlar sağ olsun."],
+     ["Allah şifa versin.", "doa untuk kesembuhan", "Âmin."]
+    ]},
+    { "type": "p", "text": "Daftar ini bukan hiasan. Basa-basi doa adalah bagian besar percakapan sehari-hari Turki, dan memakainya pada tempat yang benar akan lebih cepat membuatmu terdengar wajar daripada seratus kata benda baru." },
+    { "type": "kotak", "title": "Ulangan unit 15", "items": [
+     "Tutup bahasa Turkinya dan susun ulang dari ingatan: \"Permisi, apoteknya di mana?\" · \"Jalan lurus dari sini.\" · \"Belok kanan di gang kedua.\" · \"Saya tersesat.\" · \"Semoga dimudahkan!\"",
+     "Lalu ubah jadi larangan bentuk *siz*: *gitmek*, *unutmak*, *acele etmek*."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tr": "hasta", "baca": "has-TA", "id": "sakit" },
+  { "tr": "hastane", "baca": "has-ta-NE", "id": "rumah sakit" },
+  { "tr": "eczane", "baca": "ej-za-NE", "id": "apotek" },
+  { "tr": "doktor", "baca": "dok-TOR", "id": "dokter" },
+  { "tr": "ilaç", "baca": "i-LAC", "id": "obat" },
+  { "tr": "reçete", "baca": "re-ce-TE", "id": "resep dokter" },
+  { "tr": "randevu", "baca": "ran-de-VU", "id": "janji temu" },
+  { "tr": "ağrı", "baca": "aa-RI", "id": "nyeri" },
+  { "tr": "ağrımak", "baca": "aa-rı-MAK", "id": "terasa sakit" },
+  { "tr": "ateş", "baca": "a-TESY", "id": "demam; api" },
+  { "tr": "grip", "baca": "grip", "id": "flu" },
+  { "tr": "öksürmek", "baca": "ök-sür-MEK", "id": "batuk" },
+  { "tr": "alerji", "baca": "a-ler-JI", "id": "alergi" },
+  { "tr": "baş", "baca": "basy", "id": "kepala" },
+  { "tr": "göz / kulak", "baca": "göz / ku-LAK", "id": "mata / telinga" },
+  { "tr": "burun / ağız", "baca": "bu-RUN / a-IZ", "id": "hidung / mulut" },
+  { "tr": "diş", "baca": "disy", "id": "gigi" },
+  { "tr": "boğaz", "baca": "bo-AZ", "id": "tenggorokan" },
+  { "tr": "el / ayak", "baca": "el / a-YAK", "id": "tangan / kaki" },
+  { "tr": "karın / mide", "baca": "ka-RIN / mi-DE", "id": "perut / lambung" },
+  { "tr": "sırt", "baca": "sırt", "id": "punggung" },
+  { "tr": "kalp", "baca": "kalp", "id": "jantung, hati" },
+  { "tr": "dinlenmek", "baca": "din-len-MEK", "id": "beristirahat" },
+  { "tr": "geçmiş olsun", "baca": "gec-MISY ol-SUN", "id": "semoga cepat sembuh" },
+  { "tr": "çok yaşa", "baca": "cok ya-SYA", "id": "diucapkan saat orang bersin" },
+  { "tr": "bol", "baca": "bol", "id": "banyak, berlimpah" },
+  { "tr": "kere, kez, defa", "baca": "ke-RE, kez, de-FA", "id": "kali" },
+  { "tr": "galiba", "baca": "ga-li-BA", "id": "kayaknya" },
+  { "tr": "acil", "baca": "a-JIL", "id": "darurat" },
+  { "tr": "sigorta", "baca": "si-gor-TA", "id": "asuransi" }
+ ],
+ "exercises": [
+  { "prompt": "Katakan apa yang sakit, memakai pola *... ağrıyor*.", "items": [
+   "kepala → ____",
+   "perut → ____",
+   "tenggorokan → ____",
+   "gigi → ____",
+   "punggung → ____",
+   "telinga → ____"
+  ]},
+  { "prompt": "Lengkapi kalimat di apotek.", "items": [
+   "____ olsun. (semoga cepat sembuh)",
+   "____ var. (saya demam)",
+   "____ yok. (saya tidak punya alergi)",
+   "Günde kaç ____? (kali)",
+   "Bu ilaç ____ mi? (perlu resep)",
+   "Doktora ____ lazım. (saya perlu pergi)"
+  ]},
+  { "prompt": "Terjemahkan ke bahasa Turki.", "items": [
+   "Saya sedang sakit.",
+   "Kayaknya saya kena flu.",
+   "Kepala saya sakit.",
+   "Sudah dua hari begini.",
+   "Sebelum makan atau sesudah?",
+   "Banyak minum air dan istirahat."
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "var / neyin / ?",
+   "ağrıyor / başım / benim",
+   "var / ateşim / de",
+   "olsun / geçmiş",
+   "yok / alerjim / benim",
+   "git / doktora / yarın"
+  ]}
+ ],
+ "answers": [
+  "Başım ağrıyor. — Karnım ağrıyor. — Boğazım ağrıyor. — Dişim ağrıyor. — Sırtım ağrıyor. — Kulağım ağrıyor.",
+  "Geçmiş — Ateşim — Alerjim — kere — reçeteli — gitmem",
+  "Hastayım. — Galiba grip oldum. — Başım ağrıyor. — İki gündür böyle. — Yemekten önce mi, sonra mı? — Bol su iç ve dinlen.",
+  "Neyin var? — Benim başım ağrıyor. — Ateşim de var. — Geçmiş olsun. — Benim alerjim yok. — Yarın doktora git."
+ ]
+}

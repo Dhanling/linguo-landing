@@ -1,0 +1,194 @@
+{
+ "title": "Kamu mau ke mana?",
+ "title_target": "Nereye gidiyorsun?",
+ "goal": "Menyatakan arah dengan *-e* dan asal dengan *-den*, lalu memakai keduanya untuk bepergian di kota.",
+ "bekal": [
+  "membedakan *evde* (di rumah), *eve* (ke rumah), dan *evden* (dari rumah)",
+  "mengatakan naik apa dengan *ile* atau bentuk pendeknya *-le*",
+  "membaca papan dan bertanya arah di halte, vapur, dan metro"
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — Vapurda",
+   "intro": "Budi dan Emre naik kapal penyeberangan dari Kadıköy ke Eminönü. Angin kencang, camar mengejar kapal.",
+   "lines": [
+    { "speaker": "Emre:", "text": "Bak, İstanbul'a böyle bakmak lazım.", "id": "Lihat, Istanbul memang harus dilihat begini.", "literal": "lihat, Istanbul-ke begini memandang perlu." },
+    { "speaker": "Budi:", "text": "İnanılmaz. Bu vapur nereye gidiyor?", "id": "Luar biasa. Kapal ini pergi ke mana?", "literal": "tak-terpercaya. ini kapal ke-mana sedang-pergi?" },
+    { "speaker": "Emre:", "text": "Eminönü'ye. Kadıköy'den Eminönü'ye yirmi dakika.", "id": "Ke Eminönü. Dari Kadıköy ke Eminönü dua puluh menit.", "literal": "Eminönü-ke. Kadıköy-dari Eminönü-ke dua-puluh menit." },
+    { "speaker": "Budi:", "text": "Sonra nereye gidiyoruz?", "id": "Sesudah itu kita ke mana?", "literal": "sesudah ke-mana sedang-pergi-kita?" },
+    { "speaker": "Emre:", "text": "Kapalıçarşı'ya. Tramvayla gidiyoruz.", "id": "Ke Grand Bazaar. Kita pergi naik trem.", "literal": "Pasar-Tertutup-ke. trem-dengan sedang-pergi-kita." },
+    { "speaker": "Budi:", "text": "Tramvay nereden kalkıyor?", "id": "Tremnya berangkat dari mana?", "literal": "trem dari-mana sedang-berangkat?" },
+    { "speaker": "Emre:", "text": "İskeleden. Vapurdan iniyoruz, hemen karşısında.", "id": "Dari dermaga. Kita turun dari kapal, persis di seberangnya.", "literal": "dermaga-dari. kapal-dari sedang-turun-kita, segera seberang-nya-di." },
+    { "speaker": "Budi:", "text": "Bilet nereden alıyoruz?", "id": "Tiketnya kita beli di mana?", "literal": "tiket dari-mana sedang-ambil-kita?" },
+    { "speaker": "Emre:", "text": "Bilet yok, İstanbulkart var. Sana bir tane alıyorum.", "id": "Tidak ada tiket, adanya İstanbulkart. Saya belikan satu untukmu.", "literal": "tiket tidak-ada, Istanbul-kartu ada. kamu-ke satu buah sedang-ambil-saya." },
+    { "speaker": "Budi:", "text": "Çok teşekkür ederim. Sana borcum var.", "id": "Terima kasih banyak. Saya berutang padamu.", "literal": "sangat terima-kasih lakukan-saya. kamu-ke utang-ku ada." },
+    { "speaker": "Emre:", "text": "Boş ver. Sen bana çay ısmarlıyorsun, tamam mı?", "id": "Sudahlah. Kamu traktir saya teh, oke?", "literal": "kosong beri. kamu saya-ke teh sedang-traktir-kamu, baik apakah?" },
+    { "speaker": "Budi:", "text": "Anlaştık!", "id": "Setuju!", "literal": "sepakat-kami!" }
+   ],
+   "notes": [
+    "**Tiga akhiran, satu tempat.** *Ev-de* = di rumah. *Ev-e* = ke rumah. *Ev-den* = dari rumah. Ketiganya menempel pada kata yang sama, dan bahasa Turki tidak punya kata depan sama sekali — semua urusan arah selesai di ekor kata.",
+    "**Gitmek selalu menuntut -e.** \"Pergi ke Ankara\" adalah *Ankara'ya gitmek*, tidak pernah *Ankara gitmek*. Begitu juga *binmek* (naik kendaraan): *otobüse binmek*, harfiahnya \"naik KE bus\". Sebaliknya *inmek* (turun) menuntut *-den*: *otobüsten inmek*.",
+    "**Boş ver harfiahnya \"beri kosong\"** — artinya \"sudahlah, lupakan\". Salah satu dari sedikit ungkapan yang tidak bisa ditebak dari kata-katanya, dan salah satu yang paling sering kamu dengar.",
+    "**Anlaştık** berarti \"kita sudah sepakat\", dari *anlaşmak* (saling mengerti). Bentuknya lampau karena kesepakatannya baru saja terjadi — bahasa Turki menganggapnya sudah selesai pada detik kalimat itu diucapkan."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Akhiran -e: ke, kepada, untuk",
+   "blocks": [
+    { "type": "p", "text": "Akhiran arah punya dua bentuk saja — *-e* dan *-a* — plus penyambung **y** kalau kata berakhir vokal. Konsonan keras tidak berpengaruh di sini, karena akhirannya tidak berawalan *d*." },
+    { "type": "tabel", "head": ["Kata", "+ arah", "Bahasa Indonesia"], "rows": [
+     ["ev", "ev**e**", "ke rumah"],
+     ["okul", "okul**a**", "ke sekolah"],
+     ["İstanbul", "İstanbul'**a**", "ke Istanbul"],
+     ["Ankara", "Ankara'**ya**", "ke Ankara"],
+     ["sinema", "sinema**ya**", "ke bioskop"],
+     ["sokak", "soka**ğa**", "ke jalan (k melunak)"]
+    ]},
+    { "type": "p", "text": "Kata ganti orang berubah bentuk sedikit dan harus dihafal: **bana** (kepadaku), **sana** (kepadamu), **ona**, **bize**, **size**, **onlara**. Dua yang pertama tidak mengikuti pola — bukan *bene* dan *sene*." },
+    { "type": "sub", "text": "Kata kerja yang menuntut -e" },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Contoh"], "rows": [
+     ["gitmek", "pergi ke", "Okula gidiyorum."],
+     ["gelmek", "datang ke", "Bize geliyor musun?"],
+     ["binmek", "naik", "Otobüse biniyoruz."],
+     ["bakmak", "melihat, menjaga", "Denize bakıyorum."],
+     ["sormak", "bertanya kepada", "Sana bir şey soruyorum."],
+     ["başlamak", "memulai", "Derse başlıyoruz."],
+     ["yardım etmek", "menolong", "Bana yardım eder misin?"],
+     ["inanmak", "percaya", "Sana inanıyorum."]
+    ]}
+   ]
+  },
+  {
+   "title": "Akhiran -den: dari, sejak, karena",
+   "blocks": [
+    { "type": "p", "text": "Akhiran asal punya **empat bentuk**, karena ia berawalan *d* dan tunduk pada Fıstıkçı Şahap: *-den*, *-dan*, *-ten*, *-tan*." },
+    { "type": "tabel", "head": ["Kata", "+ asal", "Bahasa Indonesia"], "rows": [
+     ["ev", "ev**den**", "dari rumah"],
+     ["okul", "okul**dan**", "dari sekolah"],
+     ["iş", "iş**ten**", "dari kantor"],
+     ["uçak", "uçak**tan**", "dari pesawat"],
+     ["Jakarta", "Jakarta'**dan**", "dari Jakarta"],
+     ["ben / sen", "ben**den** / sen**den**", "dariku / darimu"]
+    ]},
+    { "type": "p", "text": "Selain arah, *-den* juga menyatakan bahan (*tahtadan* — dari kayu), sebab (*yorgunluktan* — karena lelah), dan pembanding (*benden büyük* — lebih besar dariku, lihat unit 16)." },
+    { "type": "sub", "text": "Dari mana ke mana" },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia"], "rows": [
+     ["Nereden geliyorsun?", "Kamu datang dari mana?"],
+     ["Nereye gidiyorsun?", "Kamu pergi ke mana?"],
+     ["Evden okula gidiyorum.", "Saya pergi dari rumah ke sekolah."],
+     ["Kadıköy'den Eminönü'ye.", "Dari Kadıköy ke Eminönü."],
+     ["Saat dokuzdan üçe kadar.", "Dari jam sembilan sampai jam tiga."],
+     ["Buradan uzak mı?", "Jauh dari sini?"]
+    ]},
+    { "type": "kotak", "title": "Nereli, nereden, nerede", "items": [
+     "*Nerelisin?* menanyakan asal-usulmu — kota atau negara tempat kamu berasal. Jawabannya *Endonezyalıyım*.",
+     "*Nereden geliyorsun?* menanyakan dari mana kamu baru saja datang. Jawabannya *okuldan*, *işten*, *evden*.",
+     "*Neredesin?* menanyakan kamu sekarang ada di mana. Tiga pertanyaan, tiga akhiran, satu akar kata yang sama: *nere*."
+    ]}
+   ]
+  },
+  {
+   "title": "Dengan apa kamu pergi",
+   "blocks": [
+    { "type": "p", "text": "Kata *ile* berarti \"dengan\" dan \"dan\". Dalam percakapan ia hampir selalu menempel jadi **-le / -la**, dengan penyambung *y* sesudah vokal." },
+    { "type": "tabel", "head": ["Bentuk panjang", "Bentuk menempel", "Bahasa Indonesia"], "rows": [
+     ["otobüs ile", "otobüs**le**", "naik bus"],
+     ["araba ile", "araba**yla**", "naik mobil"],
+     ["Ayşe ile", "Ayşe'**yle**", "bersama Ayşe"],
+     ["ben ile", "**benimle**", "bersamaku"],
+     ["sen ile", "**seninle**", "bersamamu"],
+     ["o ile", "**onunla**", "bersamanya"]
+    ]},
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Türkçe", "Bahasa Indonesia"], "rows": [
+     ["otobüs", "bus", "metro", "kereta bawah tanah"],
+     ["vapur", "kapal penyeberangan", "tramvay", "trem"],
+     ["dolmuş", "angkot", "minibüs", "minibus"],
+     ["taksi", "taksi", "araba", "mobil"],
+     ["tren", "kereta", "uçak", "pesawat"],
+     ["bisiklet", "sepeda", "iskele", "dermaga"],
+     ["durak", "halte", "istasyon", "stasiun"],
+     ["bilet", "tiket", "yolcu", "penumpang"]
+    ]},
+    { "type": "p", "text": "*Dolmuş* harfiahnya \"yang sudah penuh\" — kendaraan yang berangkat begitu kursinya terisi. Kata ini lahir di Istanbul dan sekarang dipakai di banyak bahasa. Untuk berjalan kaki dipakai kata kerja sendiri: *yürüyorum*." },
+    { "type": "kotak", "title": "Ulangan unit 6", "items": [
+     "Tutup bahasa Turkinya dan susun ulang dari ingatan: \"Sedang apa kamu?\" · \"Saya sedang belajar bahasa Turki.\" · \"Saya tidak mengerti.\" · \"Kami sedang menunggu.\" · \"Kamu minum apa?\"",
+     "Lalu ubah ke bentuk sangkal: *geliyorum*, *biliyorsun*, *okuyor*, *anlıyoruz*."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tr": "nereye", "baca": "NE-re-ye", "id": "ke mana" },
+  { "tr": "nereden", "baca": "NE-re-den", "id": "dari mana" },
+  { "tr": "bana / sana", "baca": "ba-NA / sa-NA", "id": "kepadaku / kepadamu" },
+  { "tr": "ona / bize", "baca": "o-NA / bi-ZE", "id": "kepadanya / kepada kami" },
+  { "tr": "ile, -le", "baca": "i-LE, le", "id": "dengan, bersama" },
+  { "tr": "otobüs", "baca": "o-to-BÜS", "id": "bus" },
+  { "tr": "metro", "baca": "met-RO", "id": "kereta bawah tanah" },
+  { "tr": "vapur", "baca": "va-PUR", "id": "kapal penyeberangan" },
+  { "tr": "tramvay", "baca": "tram-VAY", "id": "trem" },
+  { "tr": "dolmuş", "baca": "dol-MUSY", "id": "angkot" },
+  { "tr": "taksi", "baca": "tak-SI", "id": "taksi" },
+  { "tr": "uçak", "baca": "u-CAK", "id": "pesawat" },
+  { "tr": "tren", "baca": "tren", "id": "kereta" },
+  { "tr": "bisiklet", "baca": "bi-sik-LET", "id": "sepeda" },
+  { "tr": "iskele", "baca": "is-ke-LE", "id": "dermaga" },
+  { "tr": "bilet", "baca": "bi-LET", "id": "tiket" },
+  { "tr": "yolcu", "baca": "yol-JU", "id": "penumpang" },
+  { "tr": "yol", "baca": "yol", "id": "jalan, perjalanan" },
+  { "tr": "dakika", "baca": "da-ki-KA", "id": "menit" },
+  { "tr": "binmek", "baca": "bin-MEK", "id": "naik kendaraan" },
+  { "tr": "inmek", "baca": "in-MEK", "id": "turun" },
+  { "tr": "kalkmak", "baca": "kalk-MAK", "id": "berangkat, bangun" },
+  { "tr": "yürümek", "baca": "yü-rü-MEK", "id": "berjalan kaki" },
+  { "tr": "sormak", "baca": "sor-MAK", "id": "bertanya" },
+  { "tr": "yardım etmek", "baca": "yar-DIM et-MEK", "id": "menolong" },
+  { "tr": "ısmarlamak", "baca": "ıs-mar-la-MAK", "id": "mentraktir, memesan" },
+  { "tr": "borç", "baca": "borc", "id": "utang" },
+  { "tr": "boş ver", "baca": "bosy ver", "id": "sudahlah, lupakan" },
+  { "tr": "inanılmaz", "baca": "i-na-nıl-MAZ", "id": "luar biasa" },
+  { "tr": "lazım", "baca": "LA-zım", "id": "perlu, harus" }
+ ],
+ "exercises": [
+  { "prompt": "Tambahkan akhiran arah *-e/-a* (pakai penyambung kalau perlu).", "items": [
+   "ev → ____",
+   "okul → ____",
+   "Ankara → ____",
+   "sinema → ____",
+   "İstanbul → ____",
+   "sokak → ____"
+  ]},
+  { "prompt": "Tambahkan akhiran asal *-den/-dan/-ten/-tan*.", "items": [
+   "ev → ____",
+   "okul → ____",
+   "iş → ____",
+   "uçak → ____",
+   "Jakarta → ____",
+   "ben → ____"
+  ]},
+  { "prompt": "Terjemahkan ke bahasa Turki.", "items": [
+   "Kamu pergi ke mana?",
+   "Saya pergi ke sekolah.",
+   "Kami datang dari rumah.",
+   "Kita naik trem.",
+   "Dari Kadıköy ke Eminönü dua puluh menit.",
+   "Bisa tolong saya?"
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "gidiyorsun / nereye / ?",
+   "gidiyorum / okula / ben",
+   "geliyoruz / evden / biz",
+   "biniyoruz / otobüse / hemen",
+   "gidiyoruz / tramvayla / Kapalıçarşı'ya",
+   "var / borcum / sana"
+  ]}
+ ],
+ "answers": [
+  "eve — okula — Ankara'ya — sinemaya — İstanbul'a — sokağa",
+  "evden — okuldan — işten — uçaktan — Jakarta'dan — benden",
+  "Nereye gidiyorsun? — Okula gidiyorum. — Evden geliyoruz. — Tramvayla gidiyoruz. — Kadıköy'den Eminönü'ye yirmi dakika. — Bana yardım eder misin?",
+  "Nereye gidiyorsun? — Ben okula gidiyorum. — Biz evden geliyoruz. — Hemen otobüse biniyoruz. — Tramvayla Kapalıçarşı'ya gidiyoruz. — Sana borcum var."
+ ]
+}

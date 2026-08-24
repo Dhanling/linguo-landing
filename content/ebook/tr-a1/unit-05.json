@@ -1,0 +1,184 @@
+{
+ "title": "Kamu di mana?",
+ "title_target": "Neredesin?",
+ "goal": "Mengatakan sesuatu berada di suatu tempat dengan akhiran *-de*, dan menempatkan benda relatif terhadap benda lain.",
+ "bekal": [
+  "memilih di antara *-de*, *-da*, *-te*, dan *-ta* tanpa ragu",
+  "menyebut tempat-tempat sehari-hari di kota Turki",
+  "memakai *yanında*, *karşısında*, *içinde* untuk menerangkan letak"
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — Telefonda",
+   "intro": "Budi menelepon Ayşe. Ia berdiri di suatu tempat di Kadıköy dan sama sekali tidak tahu di mana.",
+   "lines": [
+    { "speaker": "Ayşe:", "text": "Alo Budi, neredesin?", "id": "Halo Budi, kamu di mana?", "literal": "halo Budi, di-mana-kamu?" },
+    { "speaker": "Budi:", "text": "Bilmiyorum! Bir caddedeyim.", "id": "Saya tidak tahu! Saya di sebuah jalan besar.", "literal": "tidak-tahu-saya! sebuah jalan-besar-di-saya." },
+    { "speaker": "Ayşe:", "text": "Etrafında ne var? Bak biraz.", "id": "Di sekitarmu ada apa? Lihat sedikit.", "literal": "sekitar-mu-di apa ada? lihat sedikit." },
+    { "speaker": "Budi:", "text": "Sağımda büyük bir cami var.", "id": "Di sebelah kanan saya ada masjid besar.", "literal": "kanan-ku-di besar sebuah masjid ada." },
+    { "speaker": "Ayşe:", "text": "Caminin karşısında ne var?", "id": "Di seberang masjidnya ada apa?", "literal": "masjid-milik seberang-nya-di apa ada?" },
+    { "speaker": "Budi:", "text": "Bir banka ve bir eczane. Eczanenin yanında bir market.", "id": "Sebuah bank dan sebuah apotek. Di sebelah apoteknya ada minimarket.", "literal": "sebuah bank dan sebuah apotek. apotek-milik samping-nya-di sebuah pasar-swalayan." },
+    { "speaker": "Ayşe:", "text": "Tamam, anladım. Moda'dasın.", "id": "Oke, saya mengerti. Kamu di Moda.", "literal": "baik, mengerti-saya. Moda-di-kamu." },
+    { "speaker": "Budi:", "text": "Sen neredesin şimdi?", "id": "Kamu sekarang di mana?", "literal": "kamu di-mana-kamu sekarang?" },
+    { "speaker": "Ayşe:", "text": "Okuldayım, sınıftayım. Ders var.", "id": "Saya di sekolah, di kelas. Ada pelajaran.", "literal": "sekolah-di-saya, kelas-di-saya. pelajaran ada." },
+    { "speaker": "Budi:", "text": "Özür dilerim! Meşgul müsün?", "id": "Maaf! Anda sibuk?", "literal": "maaf memohon-saya! sibuk apakah-kamu?" },
+    { "speaker": "Ayşe:", "text": "Sorun değil. Deniz kenarında bir kafe var, orada buluşalım.", "id": "Tidak masalah. Ada kafe di tepi laut, mari bertemu di sana.", "literal": "masalah bukan. laut tepi-nya-di sebuah kafe ada, di-sana mari-bertemu-kita." },
+    { "speaker": "Budi:", "text": "Harika. Ben kafedeyim o zaman.", "id": "Bagus. Kalau begitu saya di kafenya.", "literal": "hebat. saya kafe-di-saya itu waktu." }
+   ],
+   "notes": [
+    "**Neredesin = nerede + sin.** Kata tanya \"di mana\" sudah mengandung akhiran *-de* di dalamnya: *ne-re-de*, harfiahnya \"di tempat apa\". Akhiran orang tinggal ditempel: *neredeyim*, *neredesin*, *nerede*, *neredeyiz*, *neredesiniz*.",
+    "**Sorun değil, bukan sorun yok.** Untuk menolak permintaan maaf orang, bahasa Turki memakai *sorun değil* (\"bukan masalah\") atau *önemli değil* (\"tidak penting\"). Keduanya sama sopan dan sama sering.",
+    "**Kata tempat memakai akhiran milik dulu, baru -de.** *Karşı* berarti \"seberang\", tapi \"di seberang masjid\" jadi *caminin karşısında*: masjid-milik + seberang-nya + di. Tiga akhiran bertumpuk, dan urutannya selalu itu.",
+    "**Bak berarti \"lihat\" sebagai perintah.** Ia juga dipakai seperti \"eh, dengar\" untuk menarik perhatian: *Bak, sana bir şey söyleyeceğim* — \"Eh, saya mau bilang sesuatu.\""
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Akhiran -de: di, pada",
+   "blocks": [
+    { "type": "p", "text": "Akhiran tempat punya **empat bentuk**: dua dari keselarasan vokal, dan dua lagi dari keselarasan konsonan. Yang kedua ini baru — dan berlaku untuk banyak akhiran lain nanti." },
+    { "type": "tabel", "head": ["Kata berakhir", "Vokal terakhir a, ı, o, u", "Vokal terakhir e, i, ö, ü"], "rows": [
+     ["huruf lunak (semua sisanya)", "**-da** — okulda, Ankara'da", "**-de** — evde, İzmir'de"],
+     ["huruf keras f s t k ç ş h p", "**-ta** — kitapta, uçakta", "**-te** — işte, sinemada → **derste**"]
+    ]},
+    { "type": "kotak", "title": "FiSTiKÇi ŞaHaP", "items": [
+     "Delapan konsonan keras bahasa Turki — **f, s, t, k, ç, ş, h, p** — dihafal oleh anak sekolah Turki sebagai satu nama karangan: *Fıstıkçı Şahap*, \"Şahap si penjual kacang pistachio\".",
+     "Kalau kata berakhir dengan salah satu dari delapan huruf itu, akhiran berawalan *d* berubah jadi *t*: *kitap-ta*, *iş-te*, *uçak-ta*, *genç-ten*.",
+     "Hafalkan nama karangan itu sekarang. Ia akan berguna lagi di unit 8 (*-den*) dan unit 11 (*-di*)."
+    ]},
+    { "type": "sub", "text": "Dipakai untuk apa saja" },
+    { "type": "tabel", "head": ["Contoh", "Bahasa Indonesia", "Keterangan"], "rows": [
+     ["Evdeyim.", "Saya di rumah.", "tempat"],
+     ["Kitap masada.", "Bukunya di meja.", "tempat"],
+     ["Saat üçte.", "Jam tiga.", "waktu"],
+     ["Bende para yok.", "Saya tidak bawa uang.", "\"pada saya\""],
+     ["Türkiye'de yağmur var.", "Di Turki sedang hujan.", "negara"],
+     ["Ne iş yapıyorsun, nerede?", "Kerja apa, di mana?", "pertanyaan"]
+    ]}
+   ]
+  },
+  {
+   "title": "Tempat di kota",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Türkçe", "Bahasa Indonesia"], "rows": [
+     ["okul", "sekolah", "sınıf", "kelas, ruang kelas"],
+     ["üniversite", "universitas", "kütüphane", "perpustakaan"],
+     ["hastane", "rumah sakit", "eczane", "apotek"],
+     ["market", "minimarket", "pazar", "pasar; hari Minggu"],
+     ["banka", "bank", "postane", "kantor pos"],
+     ["cami", "masjid", "kilise", "gereja"],
+     ["park", "taman", "meydan", "alun-alun"],
+     ["durak", "halte", "istasyon", "stasiun"],
+     ["lokanta", "rumah makan", "kafe", "kafe"],
+     ["otel", "hotel", "sinema", "bioskop"],
+     ["cadde", "jalan besar", "sokak", "jalan kecil, gang"],
+     ["deniz", "laut", "köprü", "jembatan"]
+    ]},
+    { "type": "p", "text": "Perhatikan bahwa banyak kata berakhiran *-hane* (dari Persia \"rumah\"): *eczane* (rumah obat), *postane* (rumah pos), *hastane* (rumah orang sakit), *kütüphane* (rumah buku — dan *kütüp* itu jamak Arab dari *kitap*). Sekali polanya terlihat, empat kata jadi satu." }
+   ]
+  },
+  {
+   "title": "Di sebelah, di seberang, di dalam",
+   "blocks": [
+    { "type": "p", "text": "Bahasa Turki tidak punya kata depan. Yang ia punya adalah **kata benda tempat** yang diberi akhiran milik lalu akhiran *-de*. Polanya selalu sama: *[benda]-nın [tempat]-ı-nda*." },
+    { "type": "tabel", "head": ["Kata", "Artinya", "Contoh", "Bahasa Indonesia"], "rows": [
+     ["yan", "samping", "evin yanında", "di samping rumah"],
+     ["karşı", "seberang", "caminin karşısında", "di seberang masjid"],
+     ["iç", "dalam", "çantanın içinde", "di dalam tas"],
+     ["üst", "atas", "masanın üstünde", "di atas meja"],
+     ["alt", "bawah", "masanın altında", "di bawah meja"],
+     ["ön", "depan", "okulun önünde", "di depan sekolah"],
+     ["arka", "belakang", "evin arkasında", "di belakang rumah"],
+     ["ara", "antara", "iki ev arasında", "di antara dua rumah"],
+     ["kenar", "tepi", "deniz kenarında", "di tepi laut"],
+     ["orta", "tengah", "odanın ortasında", "di tengah kamar"]
+    ]},
+    { "type": "p", "text": "Kalau pemiliknya kata ganti orang, akhiran *-in* tetap muncul dalam bentuknya sendiri: *benim yanımda* (di sebelah saya), *senin arkanda* (di belakangmu), *onun önünde* (di depannya)." },
+    { "type": "sub", "text": "Arah mata angin dan sisi" },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Türkçe", "Bahasa Indonesia"], "rows": [
+     ["sağ", "kanan", "sol", "kiri"],
+     ["kuzey", "utara", "güney", "selatan"],
+     ["doğu", "timur", "batı", "barat"],
+     ["yukarı", "atas", "aşağı", "bawah"]
+    ]},
+    { "type": "kotak", "title": "Ulangan unit 3", "items": [
+     "Tutup bahasa Turkinya dan susun ulang dari ingatan: \"Ada air?\" · \"Roti tidak ada.\" · \"Berapa lira?\" · \"Kamu pelajar?\" · \"Saya tidak punya uang.\"",
+     "Lalu sebut dengan suara keras: 14, 33, 68, 175, 1.200."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tr": "nerede", "baca": "NE-re-de", "id": "di mana" },
+  { "tr": "burada / orada", "baca": "BU-ra-da / O-ra-da", "id": "di sini / di sana" },
+  { "tr": "okul", "baca": "o-KUL", "id": "sekolah" },
+  { "tr": "sınıf", "baca": "sı-NIF", "id": "kelas" },
+  { "tr": "ders", "baca": "ders", "id": "pelajaran" },
+  { "tr": "hastane", "baca": "has-ta-NE", "id": "rumah sakit" },
+  { "tr": "eczane", "baca": "ej-za-NE", "id": "apotek" },
+  { "tr": "kütüphane", "baca": "kü-tüp-ha-NE", "id": "perpustakaan" },
+  { "tr": "market", "baca": "mar-KET", "id": "minimarket" },
+  { "tr": "banka", "baca": "ban-KA", "id": "bank" },
+  { "tr": "cami", "baca": "ja-MI", "id": "masjid" },
+  { "tr": "park", "baca": "park", "id": "taman" },
+  { "tr": "durak", "baca": "du-RAK", "id": "halte" },
+  { "tr": "cadde", "baca": "jad-DE", "id": "jalan besar" },
+  { "tr": "deniz", "baca": "de-NIZ", "id": "laut" },
+  { "tr": "köprü", "baca": "köp-RÜ", "id": "jembatan" },
+  { "tr": "yan", "baca": "yan", "id": "samping" },
+  { "tr": "karşı", "baca": "kar-SYI", "id": "seberang" },
+  { "tr": "iç / dış", "baca": "ic / dısy", "id": "dalam / luar" },
+  { "tr": "üst / alt", "baca": "üst / alt", "id": "atas / bawah" },
+  { "tr": "ön / arka", "baca": "ön / ar-KA", "id": "depan / belakang" },
+  { "tr": "arasında", "baca": "a-ra-sın-DA", "id": "di antara" },
+  { "tr": "kenar", "baca": "ke-NAR", "id": "tepi" },
+  { "tr": "sağ / sol", "baca": "saa / sol", "id": "kanan / kiri" },
+  { "tr": "etraf", "baca": "et-RAF", "id": "sekitar" },
+  { "tr": "meşgul", "baca": "mesy-GUL", "id": "sibuk" },
+  { "tr": "sorun", "baca": "so-RUN", "id": "masalah" },
+  { "tr": "özür dilerim", "baca": "ö-ZÜR di-le-RIM", "id": "maaf" },
+  { "tr": "bakmak", "baca": "bak-MAK", "id": "melihat, memandang" },
+  { "tr": "buluşmak", "baca": "bu-lusy-MAK", "id": "bertemu janjian" }
+ ],
+ "exercises": [
+  { "prompt": "Tambahkan akhiran tempat yang tepat: *-de*, *-da*, *-te*, atau *-ta*.", "items": [
+   "ev → ____",
+   "okul → ____",
+   "kitap → ____",
+   "İstanbul → ____",
+   "sınıf → ____",
+   "Ankara → ____"
+  ]},
+  { "prompt": "Lengkapi dengan kata letak yang tepat.", "items": [
+   "Kitap masanın ____. (di atas)",
+   "Eczane caminin ____. (di seberang)",
+   "Market bankanın ____. (di samping)",
+   "Çanta sandalyenin ____. (di bawah)",
+   "Kafe okulun ____. (di depan)",
+   "Anahtar çantanın ____. (di dalam)"
+  ]},
+  { "prompt": "Terjemahkan ke bahasa Turki.", "items": [
+   "Kamu di mana?",
+   "Saya di rumah.",
+   "Kami di sekolah.",
+   "Di sekitarmu ada apa?",
+   "Ada masjid besar.",
+   "Di seberang bank ada apotek."
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "neredesin / sen / ?",
+   "evdeyim / şimdi / ben",
+   "var / ne / etrafında / ?",
+   "üstünde / kitap / masanın",
+   "yanında / bir / eczanenin / market / var",
+   "değil / sorun"
+  ]}
+ ],
+ "answers": [
+  "evde — okulda — kitapta — İstanbul'da — sınıfta — Ankara'da",
+  "üstünde — karşısında — yanında — altında — önünde — içinde",
+  "Neredesin? — Evdeyim. — Okuldayız. — Etrafında ne var? — Büyük bir cami var. — Bankanın karşısında bir eczane var.",
+  "Sen neredesin? — Ben şimdi evdeyim. — Etrafında ne var? — Masanın üstünde kitap. — Eczanenin yanında bir market var. — Sorun değil."
+ ]
+}

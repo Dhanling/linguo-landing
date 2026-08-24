@@ -1,0 +1,189 @@
+{
+ "title": "Setiap hari begitu",
+ "title_target": "Her gün böyle olur",
+ "goal": "Menceritakan kebiasaan dan kebenaran umum dengan bentuk luas *-ir*, dan memakainya untuk permintaan yang sopan.",
+ "bekal": [
+  "membentuk *gelirim, gelmem, gelir misin*",
+  "membedakan kebiasaan (*-ir*) dari yang sedang berlangsung (*-yor*)",
+  "meminta sesuatu dengan sopan: *bir çay alır mısınız?*"
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — Mutfakta sohbet",
+   "intro": "Sabtu pagi. Fatma Hanım menyiapkan sarapan; Budi membantu memotong tomat.",
+   "lines": [
+    { "speaker": "Fatma:", "text": "Budi, sen sabahları ne yaparsın?", "id": "Budi, kalau pagi kamu biasanya ngapain?", "literal": "Budi, kamu pagi-jamak-nya apa lakukan-kamu?" },
+    { "speaker": "Budi:", "text": "Genellikle erken kalkarım, sonra biraz Türkçe çalışırım.", "id": "Biasanya saya bangun pagi, lalu belajar bahasa Turki sedikit.", "literal": "biasanya awal bangun-saya, sesudah sedikit Turki-bahasa kerja-saya." },
+    { "speaker": "Fatma:", "text": "Kahvaltı yapar mısın?", "id": "Kamu sarapan?", "literal": "sarapan lakukan apakah-kamu?" },
+    { "speaker": "Budi:", "text": "Bazen. Endonezya'da genellikle pirinç yeriz.", "id": "Kadang-kadang. Di Indonesia kami biasanya makan nasi.", "literal": "kadang. Indonesia-di biasanya beras makan-kami." },
+    { "speaker": "Fatma:", "text": "Sabah sabah pirinç mi? İnanmam!", "id": "Pagi-pagi nasi? Saya tidak percaya!", "literal": "pagi pagi beras apakah? tidak-percaya-saya!" },
+    { "speaker": "Budi:", "text": "Gerçek! Peki Türkler kahvaltıda ne yer?", "id": "Sungguh! Kalau orang Turki sarapan apa?", "literal": "kenyataan! kalau-begitu Turki-jamak sarapan-di apa makan?" },
+    { "speaker": "Fatma:", "text": "Peynir, zeytin, domates, ekmek. Ve tabii çay içeriz.", "id": "Keju, zaitun, tomat, roti. Dan tentu kami minum teh.", "literal": "keju, zaitun, tomat, roti. dan tentu teh minum-kami." },
+    { "speaker": "Budi:", "text": "Günde kaç bardak çay içersiniz?", "id": "Sehari Anda minum berapa gelas teh?", "literal": "hari-di berapa gelas teh minum-Anda?" },
+    { "speaker": "Fatma:", "text": "Ben mi? On, on beş. Az içerim!", "id": "Saya? Sepuluh, lima belas. Saya minumnya sedikit!", "literal": "saya apakah? sepuluh, sepuluh lima. sedikit minum-saya!" },
+    { "speaker": "Budi:", "text": "Az mı?! Ben günde iki içerim, yeter.", "id": "Sedikit?! Saya sehari dua gelas, cukup.", "literal": "sedikit apakah?! saya hari-di dua minum-saya, cukup." },
+    { "speaker": "Fatma:", "text": "Alışırsın. Herkes alışır. Bir bardak daha alır mısın?", "id": "Nanti kamu terbiasa. Semua orang terbiasa. Mau satu gelas lagi?", "literal": "terbiasa-kamu. semua-orang terbiasa. satu gelas lagi ambil apakah-kamu?" },
+    { "speaker": "Budi:", "text": "Alırım tabii. Elinize sağlık!", "id": "Mau, tentu saja. Terima kasih masakannya!", "literal": "ambil-saya tentu. tangan-Anda-ke sehat!" }
+   ],
+   "notes": [
+    "**Sabahları berarti \"kalau pagi\", bukan \"pagi-pagi\".** Akhiran jamak + *-ı* pada satuan waktu membuatnya jadi kebiasaan: *sabahları*, *akşamları*, *pazartesileri*, *kışları*. Bentuk ini selalu berpasangan dengan kata kerja *-ir*.",
+    "**İnanmam adalah bentuk sangkal, bukan salah ketik.** Bentuk luas menyangkal dengan cara sendiri yang tidak mengikuti pola lain: *ben* memakai *-mem/-mam*, *biz* memakai *-meyiz/-mayız*. Sisanya memakai *-mez/-maz*.",
+    "**Alır mısın? adalah cara sopan menawarkan.** Bentuk luas dipakai untuk permintaan halus, mirip \"maukah kamu ...\" dalam bahasa Indonesia. *Kapıyı kapatır mısın?* (tolong tutup pintunya), *Bir dakika bekler misiniz?* (bisa tunggu sebentar?).",
+    "**Çay di Turki tidak diukur dengan cangkir, tapi dengan *ince belli bardak*** — gelas kecil berpinggang. Lima belas gelas sehari memang bukan angka bercanda: Turki adalah peminum teh per kapita nomor satu di dunia."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bentuk luas -ir: kebiasaan dan kebenaran",
+   "blocks": [
+    { "type": "p", "text": "Bentuk yang orang Turki sebut *geniş zaman* — \"waktu yang luas\" — dipakai untuk hal yang **selalu, biasanya, atau pada dasarnya** benar. Ia bukan waktu tertentu; ia justru waktu yang tak berbatas." },
+    { "type": "tabel", "head": ["Jenis akar", "Akhiran", "Contoh"], "rows": [
+     ["berakhir vokal", "**-r**", "bekle-**r**, oku-**r**, başla-**r**"],
+     ["satu suku kata, berakhir konsonan", "**-ar / -er**", "yap-**ar**, git-me → gi**der**, yaz-**ar**"],
+     ["lebih dari satu suku kata", "**-ir / -ır / -ur / -ür**", "çalış-**ır**, otur-**ur**, konuş-**ur**"]
+    ]},
+    { "type": "p", "text": "Ada tiga belas kata kerja satu suku kata yang membangkang dan memakai *-ir* alih-alih *-er*. Semuanya kata yang sangat sering dipakai, jadi kamu akan menghafalnya dengan sendirinya:" },
+    { "type": "tabel", "head": ["Kata kerja", "Bentuk luas", "Kata kerja", "Bentuk luas"], "rows": [
+     ["almak", "alır", "bilmek", "bilir"],
+     ["bulmak", "bulur", "durmak", "durur"],
+     ["gelmek", "gelir", "görmek", "görür"],
+     ["kalmak", "kalır", "olmak", "olur"],
+     ["ölmek", "ölür", "sanmak", "sanır"],
+     ["varmak", "varır", "vermek", "verir"],
+     ["vurmak", "vurur", "", ""]
+    ]},
+    { "type": "sub", "text": "Akhiran orang" },
+    { "type": "tabel", "head": ["", "gelmek", "yapmak", "çalışmak", "beklemek"], "rows": [
+     ["ben", "gelir**im**", "yapar**ım**", "çalışır**ım**", "bekler**im**"],
+     ["sen", "gelir**sin**", "yapar**sın**", "çalışır**sın**", "bekler**sin**"],
+     ["o", "gelir", "yapar", "çalışır", "bekler"],
+     ["biz", "gelir**iz**", "yapar**ız**", "çalışır**ız**", "bekler**iz**"],
+     ["siz", "gelir**siniz**", "yapar**sınız**", "çalışır**sınız**", "bekler**siniz**"],
+     ["onlar", "gelir**ler**", "yapar**lar**", "çalışır**lar**", "bekler**ler**"]
+    ]}
+   ]
+  },
+  {
+   "title": "Bentuk sangkal yang berdiri sendiri",
+   "blocks": [
+    { "type": "p", "text": "Inilah satu-satunya tempat di seluruh bahasa Turki yang benar-benar perlu dihafal terpisah. Bentuk sangkal *geniş zaman* tidak memakai *-ir* sama sekali:" },
+    { "type": "tabel", "head": ["", "Positif", "Negatif", "Bahasa Indonesia"], "rows": [
+     ["ben", "gelirim", "gel**mem**", "saya tidak (pernah) datang"],
+     ["sen", "gelirsin", "gel**mezsin**", "kamu tidak datang"],
+     ["o", "gelir", "gel**mez**", "dia tidak datang"],
+     ["biz", "geliriz", "gel**meyiz**", "kami tidak datang"],
+     ["siz", "gelirsiniz", "gel**mezsiniz**", "Anda tidak datang"],
+     ["onlar", "gelirler", "gel**mezler**", "mereka tidak datang"]
+    ]},
+    { "type": "p", "text": "Untuk akar bervokal belakang, bentuknya *-mam*, *-mazsın*, *-maz*, *-mayız*, *-mazsınız*, *-mazlar*: *yapmam*, *anlamaz*, *çalışmayız*." },
+    { "type": "kotak", "title": "Olmaz — kata yang kamu dengar tiap hari", "items": [
+     "*Olmaz* adalah bentuk sangkal *geniş zaman* dari *olmak*, dan artinya \"tidak bisa, tidak boleh, tidak jadi\". Ia menolak tawaran, harga, ide, dan rencana.",
+     "Pasangannya *olur* — \"boleh, jadi, oke\". Dua kata ini adalah tombol ya dan tidak dalam kehidupan sehari-hari Turki, dan kamu sudah memakainya sejak unit 9 tanpa tahu bentuknya."
+    ]},
+    { "type": "sub", "text": "Bertanya dan meminta" },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Nadanya"], "rows": [
+     ["Çay içer misin?", "Kamu minum teh?", "kebiasaan / tawaran"],
+     ["Kapıyı kapatır mısın?", "Tolong tutup pintunya.", "permintaan sopan"],
+     ["Bir dakika bekler misiniz?", "Bisa tunggu sebentar?", "permintaan sangat sopan"],
+     ["Yardım eder misin?", "Bisa bantu?", "permintaan"],
+     ["Ne dersin?", "Bagaimana menurutmu?", "meminta pendapat"],
+     ["Olur mu?", "Boleh?", "mengusulkan"]
+    ]}
+   ]
+  },
+  {
+   "title": "-ir atau -yor?",
+   "blocks": [
+    { "type": "tabel", "head": ["Bentuk luas -ir", "Bentuk -yor", "Bedanya"], "rows": [
+     ["Her sabah çay içerim.", "Şimdi çay içiyorum.", "kebiasaan / sekarang"],
+     ["Sigara içmem.", "Sigara içmiyorum.", "tidak pernah / sedang tidak"],
+     ["Türkçe konuşurum.", "Türkçe konuşuyorum.", "bisa & biasa / sedang bicara"],
+     ["Su yüz derecede kaynar.", "Su kaynıyor.", "kebenaran umum / airnya mendidih"],
+     ["Yarın gelirim.", "Yarın geliyorum.", "kalau perlu saya datang / sudah pasti datang"]
+    ]},
+    { "type": "p", "text": "Perbedaan paling halus ada di baris terakhir. *Yarın gelirim* terdengar seperti kesediaan (\"saya bisa datang besok\"), sementara *yarın geliyorum* adalah rencana yang sudah jadi. Untuk janji yang mengikat, orang Turki memilih *-ecek*: *yarın geleceğim*." },
+    { "type": "kotak", "title": "Kata keterangan yang memanggil -ir", "items": [
+     "Beberapa kata hampir selalu berpasangan dengan bentuk luas: *her gün*, *her zaman*, *genellikle*, *bazen*, *hiç*, *sık sık* (sering), *nadiren* (jarang), *asla* (tidak akan pernah).",
+     "Kalau salah satu kata itu muncul di kalimatmu, kata kerjanya hampir pasti *-ir*, bukan *-yor*."
+    ]},
+    { "type": "kotak", "title": "Ulangan unit 11", "items": [
+     "Tutup bahasa Turkinya dan susun ulang dari ingatan: \"Kemarin kamu ngapain?\" · \"Saya pergi ke Sultanahmet.\" · \"Kamu lihat Hagia Sophia?\" · \"Kemarin saya capek sekali.\" · \"Lalu saya pulang naik kapal.\"",
+     "Lalu ubah ke bentuk lampau: *geliyorum*, *yapıyorsun*, *görüyor*, *yorgunum*."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tr": "genellikle", "baca": "ge-nel-lik-LE", "id": "biasanya" },
+  { "tr": "sık sık", "baca": "sık sık", "id": "sering" },
+  { "tr": "nadiren", "baca": "NA-di-ren", "id": "jarang" },
+  { "tr": "asla", "baca": "AS-la", "id": "tidak akan pernah" },
+  { "tr": "herkes", "baca": "HER-kes", "id": "semua orang" },
+  { "tr": "sabahları", "baca": "sa-bah-la-RI", "id": "kalau pagi" },
+  { "tr": "kahvaltı yapmak", "baca": "kah-val-TI yap-MAK", "id": "sarapan" },
+  { "tr": "pirinç", "baca": "pi-RINC", "id": "beras" },
+  { "tr": "zeytin", "baca": "zey-TIN", "id": "zaitun" },
+  { "tr": "bardak", "baca": "bar-DAK", "id": "gelas" },
+  { "tr": "mutfak", "baca": "mut-FAK", "id": "dapur" },
+  { "tr": "sohbet", "baca": "soh-BET", "id": "obrolan" },
+  { "tr": "alışmak", "baca": "a-lısy-MAK", "id": "terbiasa" },
+  { "tr": "inanmak", "baca": "i-nan-MAK", "id": "percaya" },
+  { "tr": "yetmek", "baca": "yet-MEK", "id": "cukup" },
+  { "tr": "kapatmak", "baca": "ka-pat-MAK", "id": "menutup" },
+  { "tr": "açmak", "baca": "ac-MAK", "id": "membuka, menyalakan" },
+  { "tr": "durmak", "baca": "dur-MAK", "id": "berhenti" },
+  { "tr": "vermek", "baca": "ver-MEK", "id": "memberi" },
+  { "tr": "bulmak", "baca": "bul-MAK", "id": "menemukan" },
+  { "tr": "oturmak", "baca": "o-tur-MAK", "id": "duduk, bertempat tinggal" },
+  { "tr": "kalkmak", "baca": "kalk-MAK", "id": "bangun" },
+  { "tr": "sigara", "baca": "si-ga-RA", "id": "rokok" },
+  { "tr": "gerçek", "baca": "ger-CEK", "id": "kenyataan, nyata" },
+  { "tr": "daha", "baca": "da-HA", "id": "lagi; lebih" },
+  { "tr": "böyle / şöyle", "baca": "BÖY-le / SYÖY-le", "id": "begini / begitu" },
+  { "tr": "yeter", "baca": "ye-TER", "id": "cukup" },
+  { "tr": "olur / olmaz", "baca": "o-LUR / ol-MAZ", "id": "boleh / tidak boleh" },
+  { "tr": "ne dersin?", "baca": "ne der-SIN", "id": "bagaimana menurutmu?" },
+  { "tr": "günde", "baca": "gün-DE", "id": "sehari (frekuensi)" }
+ ],
+ "exercises": [
+  { "prompt": "Ubah ke bentuk luas *-ir* untuk *ben*.", "items": [
+   "gelmek → ____",
+   "yapmak → ____",
+   "çalışmak → ____",
+   "beklemek → ____",
+   "almak → ____",
+   "içmek → ____"
+  ]},
+  { "prompt": "Ubah jadi bentuk sangkal (perhatikan bentuk khususnya).", "items": [
+   "gelirim → ____",
+   "yaparsın → ____",
+   "içer → ____",
+   "çalışırız → ____",
+   "bilirsiniz → ____",
+   "anlarlar → ____"
+  ]},
+  { "prompt": "Pilih bentuk yang tepat: *-ir* atau *-yor*. Tulis kalimat lengkapnya.", "items": [
+   "Setiap pagi saya minum teh. ____",
+   "Sekarang saya sedang minum teh. ____",
+   "Saya tidak merokok. ____",
+   "Dia sedang belajar. ____",
+   "Kami biasanya makan nasi. ____",
+   "Tolong tutup pintunya. ____"
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "yaparsın / sabahları / ne / ?",
+   "kalkarım / genellikle / erken",
+   "içeriz / çay / her gün",
+   "içmem / sigara / ben",
+   "mısın / bir / alır / bardak / daha / ?",
+   "alışırsın / sen / de"
+  ]}
+ ],
+ "answers": [
+  "gelirim — yaparım — çalışırım — beklerim — alırım — içerim",
+  "gelmem — yapmazsın — içmez — çalışmayız — bilmezsiniz — anlamazlar",
+  "Her sabah çay içerim. — Şimdi çay içiyorum. — Sigara içmem. — Ders çalışıyor. — Genellikle pirinç yeriz. — Kapıyı kapatır mısın?",
+  "Sabahları ne yaparsın? — Genellikle erken kalkarım. — Her gün çay içeriz. — Ben sigara içmem. — Bir bardak daha alır mısın? — Sen de alışırsın."
+ ]
+}

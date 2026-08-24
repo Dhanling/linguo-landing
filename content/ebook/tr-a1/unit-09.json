@@ -1,0 +1,189 @@
+{
+ "title": "Berapa harganya?",
+ "title_target": "Ne kadar?",
+ "goal": "Berbelanja: menanyakan harga, menawar, menyebut warna dan ukuran — dan menandai objek tertentu dengan akhiran *-i*.",
+ "bekal": [
+  "membedakan *kitap okuyorum* dan *kitabı okuyorum*",
+  "menanyakan harga dengan *ne kadar* dan *kaça*",
+  "menawar tanpa menyinggung siapa pun"
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — Kapalıçarşı'da",
+   "intro": "Di dalam Grand Bazaar. Budi berhenti di depan kios syal. Penjualnya, Hakan, sudah memperhatikannya dari tadi.",
+   "lines": [
+    { "speaker": "Hakan:", "text": "Buyurun abi, hoş geldiniz! Bakın, çok güzel şallar.", "id": "Silakan, Bang, selamat datang! Lihat, syal-syal yang bagus.", "literal": "silakan kakak, menyenangkan datang-Anda! lihat-Anda, sangat indah syal-jamak." },
+    { "speaker": "Budi:", "text": "Şu maviyi görebilir miyim?", "id": "Boleh saya lihat yang biru itu?", "literal": "itu biru-nya bisa-lihat apakah-saya?" },
+    { "speaker": "Hakan:", "text": "Tabii! Bu ipek. Elinize alın, çok yumuşak.", "id": "Tentu! Ini sutra. Pegang, halus sekali.", "literal": "tentu! ini sutra. tangan-Anda-ke ambil-Anda, sangat lembut." },
+    { "speaker": "Budi:", "text": "Gerçekten güzel. Ne kadar?", "id": "Memang bagus. Berapa harganya?", "literal": "sungguh indah. berapa banyak?" },
+    { "speaker": "Hakan:", "text": "Sekiz yüz lira. Ama size yedi yüz.", "id": "Delapan ratus lira. Tapi untuk Anda tujuh ratus.", "literal": "delapan ratus lira. tapi Anda-ke tujuh ratus." },
+    { "speaker": "Budi:", "text": "Pahalı. Öğrenciyim, param az.", "id": "Mahal. Saya mahasiswa, uang saya sedikit.", "literal": "mahal. pelajar-saya, uang-ku sedikit." },
+    { "speaker": "Hakan:", "text": "Öğrenci misin? Peki, altı yüz. Son fiyat.", "id": "Kamu mahasiswa? Baiklah, enam ratus. Harga terakhir.", "literal": "pelajar apakah-kamu? kalau-begitu, enam ratus. terakhir harga." },
+    { "speaker": "Budi:", "text": "Beş yüz olur mu?", "id": "Lima ratus boleh?", "literal": "lima ratus jadi apakah?" },
+    { "speaker": "Hakan:", "text": "Vallahi olmaz. Beş yüz elli, tamam mı?", "id": "Sungguh tidak bisa. Lima ratus lima puluh, oke?", "literal": "demi-Allah tidak-jadi. lima ratus lima-puluh, baik apakah?" },
+    { "speaker": "Budi:", "text": "Tamam, alıyorum. Kartla ödeyebilir miyim?", "id": "Baik, saya ambil. Boleh saya bayar pakai kartu?", "literal": "baik, sedang-ambil-saya. kartu-dengan bisa-bayar apakah-saya?" },
+    { "speaker": "Hakan:", "text": "Tabii abi. Poşet istiyor musun?", "id": "Tentu, Bang. Mau kantong?", "literal": "tentu kakak. kantong sedang-mau apakah-kamu?" },
+    { "speaker": "Budi:", "text": "İstemiyorum, çantam var. Teşekkürler!", "id": "Tidak usah, saya punya tas. Terima kasih!", "literal": "tidak-mau-saya, tas-ku ada. terima-kasih-jamak!" }
+   ],
+   "notes": [
+    "**Menawar itu diharapkan di pasar tertutup, bukan di toko biasa.** Di Kapalıçarşı, Mısır Çarşısı, dan kios turis, harga pertama memang dilebihkan. Di supermarket, apotek, restoran, dan toko berlabel harga, menawar justru dianggap aneh.",
+    "**Olur mu? adalah kunci tawar-menawar.** Harfiahnya \"jadi tidak?\" — dipakai untuk mengusulkan angka. Jawabannya *olur* (boleh) atau *olmaz* (tidak bisa). Dua kata ini menyelesaikan hampir semua negosiasi kecil di Turki.",
+    "**Abi dipakai penjual ke pembeli laki-laki, abla ke pembeli perempuan** — bahkan kalau pembelinya lebih tua. Ini bahasa keakraban dagang, bukan kekeluargaan. Jangan tersinggung, dan jangan pula merasa harus membalasnya.",
+    "**Maviyi, bukan mavi.** Karena yang dimaksud syal tertentu yang sedang ditunjuk, kata itu diberi akhiran objek *-yi*. Inilah bagian tata bahasa unit ini, dan bagian yang paling sering dilewatkan pelajar asing."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Akhiran -i: menandai objek yang tertentu",
+   "blocks": [
+    { "type": "p", "text": "Bahasa Turki tidak punya kata \"the\", tapi ia punya cara membedakan **benda tertentu** dari **benda mana saja** — dan caranya adalah akhiran *-i / -ı / -u / -ü* pada objek kalimat." },
+    { "type": "tabel", "head": ["Tanpa akhiran", "Dengan akhiran", "Bedanya"], "rows": [
+     ["Kitap okuyorum.", "Kitabı okuyorum.", "Saya membaca buku / Saya membaca buku ITU"],
+     ["Çay içiyorum.", "Çayı içiyorum.", "Saya minum teh / Saya minum teh ITU"],
+     ["Film izliyoruz.", "Filmi izliyoruz.", "Kami menonton film / film ITU"],
+     ["Ekmek alıyorum.", "Ekmeği alıyorum.", "Beli roti / beli roti ITU"]
+    ]},
+    { "type": "p", "text": "Aturan praktisnya: pakai akhiran kalau **pendengar tahu benda mana yang kamu maksud** — karena sudah disebut, sudah ditunjuk, atau karena hanya ada satu. Tanpa akhiran, kalimatnya berbicara tentang jenis, bukan barang." },
+    { "type": "sub", "text": "Selalu memakai akhiran" },
+    { "type": "list", "items": [
+     "**Nama orang dan tempat**: *Ayşe'yi görüyorum* (saya melihat Ayşe), *İstanbul'u seviyorum*.",
+     "**Kata ganti**: *beni*, *seni*, *onu*, *bizi*, *sizi*, *onları* — *Beni bekliyor musun?*",
+     "**Kata tunjuk**: *bunu*, *şunu*, *onu* — *Bunu alıyorum* (saya ambil yang ini).",
+     "**Benda yang sudah diberi akhiran milik**: *çantamı*, *evini*, *arabasını*."
+    ]},
+    { "type": "kotak", "title": "Kesalahan yang paling sering", "items": [
+     "Pemula sering memakai akhiran *-i* untuk SEMUA objek. Akibatnya *Su içiyorum* (saya minum air) jadi *Suyu içiyorum* — yang berarti \"saya minum air ITU\", dan terdengar seperti kamu sedang menunjuk gelas tertentu di depan orang.",
+     "Kalau ragu, tinggalkan tanpa akhiran. Bahasa Turki lebih memaafkan objek yang kurang ditandai daripada objek yang terlalu ditandai."
+    ]}
+   ]
+  },
+  {
+   "title": "Bertanya harga dan menawar",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Cara baca", "Bahasa Indonesia"], "rows": [
+     ["Ne kadar?", "ne ka-DAR", "Berapa harganya?"],
+     ["Kaç para?", "kac pa-RA", "Berapa uangnya? (santai)"],
+     ["Bu kaça?", "bu ka-CA", "Ini berapa?"],
+     ["Çok pahalı!", "cok pa-ha-LI", "Mahal sekali!"],
+     ["Biraz indirim var mı?", "bi-RAZ in-di-RIM var mı", "Ada diskon sedikit?"],
+     ["Son fiyat ne?", "son fi-YAT ne", "Harga terakhirnya berapa?"],
+     ["Olur mu?", "o-LUR mu", "Boleh (segitu)?"],
+     ["Düşünüyorum.", "dü-SYÜ-nü-yo-rum", "Saya pikir-pikir dulu."],
+     ["Kartla ödeyebilir miyim?", "kart-LA ö-de-ye-bi-LIR mi-yim", "Boleh bayar pakai kartu?"],
+     ["Fiş alabilir miyim?", "fisy a-la-bi-LIR mi-yim", "Boleh minta struknya?"]
+    ]},
+    { "type": "p", "text": "*Düşünüyorum* — \"saya sedang berpikir\" — adalah cara paling sopan untuk pergi tanpa membeli. Ia dipahami sebagai penolakan halus, dan penjual yang baik tidak akan mengejarmu sesudah itu." },
+    { "type": "sub", "text": "Ukuran dan jumlah" },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Türkçe", "Bahasa Indonesia"], "rows": [
+     ["kilo", "kilogram", "yarım kilo", "setengah kilo"],
+     ["gram", "gram", "adet, tane", "buah, biji"],
+     ["paket", "bungkus", "şişe", "botol"],
+     ["poşet", "kantong plastik", "kutu", "kotak"],
+     ["beden", "ukuran baju", "numara", "ukuran sepatu"],
+     ["büyük / küçük", "besar / kecil", "orta", "sedang"]
+    ]}
+   ]
+  },
+  {
+   "title": "Warna dan sifat barang",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Türkçe", "Bahasa Indonesia"], "rows": [
+     ["kırmızı", "merah", "mavi", "biru"],
+     ["yeşil", "hijau", "sarı", "kuning"],
+     ["siyah", "hitam", "beyaz", "putih"],
+     ["kahverengi", "cokelat", "gri", "abu-abu"],
+     ["turuncu", "oranye", "mor", "ungu"],
+     ["pembe", "merah muda", "lacivert", "biru dongker"]
+    ]},
+    { "type": "p", "text": "*Kahverengi* harfiahnya \"warna kopi\" — *kahve* + *rengi*. Pola yang sama dipakai untuk warna lain yang diturunkan dari benda: *gül rengi* (warna mawar), *deniz mavisi* (biru laut)." },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Türkçe", "Bahasa Indonesia"], "rows": [
+     ["pahalı / ucuz", "mahal / murah", "yeni / eski", "baru / lama"],
+     ["güzel / çirkin", "bagus / jelek", "temiz / kirli", "bersih / kotor"],
+     ["yumuşak / sert", "lembut / keras", "ağır / hafif", "berat / ringan"],
+     ["uzun / kısa", "panjang / pendek", "kalın / ince", "tebal / tipis"]
+    ]},
+    { "type": "kotak", "title": "Kata sifat selalu di depan bendanya", "items": [
+     "*Mavi şal* (syal biru), *büyük ev* (rumah besar), *güzel bir gün* (hari yang indah). Perhatikan bahwa *bir* masuk di ANTARA sifat dan benda, bukan di depan keduanya: *güzel bir gün*, bukan *bir güzel gün*.",
+     "Kalau sifatnya jadi predikat, ia pindah ke belakang dan memakai akhiran orang: *Bu şal mavi.* (Syal ini biru.) *Yorgunum.* (Saya lelah.)"
+    ]},
+    { "type": "kotak", "title": "Ulangan unit 7", "items": [
+     "Tutup bahasa Turkinya dan susun ulang dari ingatan: \"Jam berapa sekarang?\" · \"Pelajarannya mulai hari Senin.\" · \"Saya belajar setiap hari.\" · \"Ujiannya kapan?\" · \"Akhir pekan saya tidak bekerja.\"",
+     "Lalu sebut jam 07.30, 10.15, dan 02.45 dalam bahasa Turki."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tr": "ne kadar", "baca": "ne ka-DAR", "id": "berapa harganya" },
+  { "tr": "kaça", "baca": "ka-CA", "id": "berapa (harganya)" },
+  { "tr": "fiyat", "baca": "fi-YAT", "id": "harga" },
+  { "tr": "pahalı / ucuz", "baca": "pa-ha-LI / u-JUZ", "id": "mahal / murah" },
+  { "tr": "indirim", "baca": "in-di-RIM", "id": "diskon" },
+  { "tr": "ödemek", "baca": "ö-de-MEK", "id": "membayar" },
+  { "tr": "kart", "baca": "kart", "id": "kartu" },
+  { "tr": "nakit", "baca": "na-KIT", "id": "tunai" },
+  { "tr": "fiş", "baca": "fisy", "id": "struk" },
+  { "tr": "poşet", "baca": "po-SYET", "id": "kantong plastik" },
+  { "tr": "kilo", "baca": "ki-LO", "id": "kilogram" },
+  { "tr": "tane, adet", "baca": "ta-NE, a-DET", "id": "buah, biji" },
+  { "tr": "beden", "baca": "be-DEN", "id": "ukuran baju" },
+  { "tr": "şal", "baca": "syal", "id": "syal" },
+  { "tr": "ipek", "baca": "i-PEK", "id": "sutra" },
+  { "tr": "çarşı", "baca": "car-SYI", "id": "pasar, bazar" },
+  { "tr": "kırmızı", "baca": "kır-mı-ZI", "id": "merah" },
+  { "tr": "mavi", "baca": "ma-VI", "id": "biru" },
+  { "tr": "yeşil", "baca": "ye-SYIL", "id": "hijau" },
+  { "tr": "sarı", "baca": "sa-RI", "id": "kuning" },
+  { "tr": "siyah / beyaz", "baca": "si-YAH / be-YAZ", "id": "hitam / putih" },
+  { "tr": "kahverengi", "baca": "kah-ve-ren-GI", "id": "cokelat" },
+  { "tr": "renk", "baca": "renk", "id": "warna" },
+  { "tr": "yumuşak", "baca": "yu-mu-SYAK", "id": "lembut" },
+  { "tr": "ağır / hafif", "baca": "a-IR / ha-FIF", "id": "berat / ringan" },
+  { "tr": "az / çok", "baca": "az / cok", "id": "sedikit / banyak" },
+  { "tr": "son", "baca": "son", "id": "terakhir, akhir" },
+  { "tr": "olur / olmaz", "baca": "o-LUR / ol-MAZ", "id": "boleh / tidak bisa" },
+  { "tr": "düşünmek", "baca": "dü-syün-MEK", "id": "berpikir" },
+  { "tr": "gerçekten", "baca": "ger-CEK-ten", "id": "sungguh, benar-benar" }
+ ],
+ "exercises": [
+  { "prompt": "Tambahkan akhiran objek *-i/-ı/-u/-ü* (pakai penyambung kalau perlu).", "items": [
+   "kitap → ____",
+   "çay → ____",
+   "ev → ____",
+   "araba → ____",
+   "Ayşe → ____",
+   "bu → ____"
+  ]},
+  { "prompt": "Pilih: pakai akhiran objek atau tidak? Tulis kalimat lengkapnya.", "items": [
+   "Saya minum teh (teh apa saja). ____",
+   "Saya minum teh itu. ____",
+   "Saya membaca buku itu. ____",
+   "Saya sedang menunggumu. ____",
+   "Kami membeli roti (roti apa saja). ____",
+   "Saya suka Istanbul. ____"
+  ]},
+  { "prompt": "Terjemahkan ke bahasa Turki.", "items": [
+   "Berapa harganya?",
+   "Mahal sekali!",
+   "Ada diskon?",
+   "Saya ambil yang ini.",
+   "Boleh bayar pakai kartu?",
+   "Saya pikir-pikir dulu."
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "kadar / bu / ne / ?",
+   "pahalı / çok / bu",
+   "alıyorum / bunu / ben",
+   "mı / var / indirim / ?",
+   "güzel / bir / şal / mavi",
+   "mu / olur / yüz / beş / ?"
+  ]}
+ ],
+ "answers": [
+  "kitabı — çayı — evi — arabayı — Ayşe'yi — bunu",
+  "Çay içiyorum. — Çayı içiyorum. — Kitabı okuyorum. — Seni bekliyorum. — Ekmek alıyoruz. — İstanbul'u seviyorum.",
+  "Ne kadar? — Çok pahalı! — İndirim var mı? — Bunu alıyorum. — Kartla ödeyebilir miyim? — Düşünüyorum.",
+  "Bu ne kadar? — Bu çok pahalı. — Ben bunu alıyorum. — İndirim var mı? — Güzel bir mavi şal. — Beş yüz olur mu?"
+ ]
+}

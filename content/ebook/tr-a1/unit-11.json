@@ -1,0 +1,191 @@
+{
+ "title": "Kemarin kamu ke mana?",
+ "title_target": "Dün ne yaptın?",
+ "goal": "Menceritakan apa yang sudah terjadi dengan akhiran lampau *-di*, termasuk untuk kata benda dan kata sifat.",
+ "bekal": [
+  "membentuk *geldim, geldin, geldi, geldik, geldiniz, geldiler*",
+  "memilih di antara delapan bentuk *-dı, -di, -du, -dü, -tı, -ti, -tu, -tü*",
+  "mengatakan \"tadi saya lelah\" dan \"dulu ada\" dengan *-ydi* dan *vardı*"
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — Dün akşam",
+   "intro": "Pagi hari di dapur Fatma Hanım. Budi baru bangun; Emre sudah minum teh kedua.",
+   "lines": [
+    { "speaker": "Emre:", "text": "Günaydın! Dün akşam nerede kaldın?", "id": "Selamat pagi! Kemarin malam kamu ke mana?", "literal": "selamat-pagi! kemarin malam di-mana tinggal-kamu?" },
+    { "speaker": "Budi:", "text": "Sultanahmet'e gittim. Çok yürüdüm!", "id": "Saya pergi ke Sultanahmet. Saya jalan kaki banyak sekali!", "literal": "Sultanahmet-ke pergi-saya. sangat berjalan-saya!" },
+    { "speaker": "Emre:", "text": "Ayasofya'yı gördün mü?", "id": "Kamu lihat Hagia Sophia?", "literal": "Ayasofya-nya lihat-kamu apakah?" },
+    { "speaker": "Budi:", "text": "Gördüm ama içeri girmedim. Sıra çok uzundu.", "id": "Lihat, tapi saya tidak masuk. Antreannya panjang sekali.", "literal": "lihat-saya tapi ke-dalam tidak-masuk-saya. antrean sangat panjang-lah." },
+    { "speaker": "Emre:", "text": "Anladım. Peki akşam ne yedin?", "id": "Saya mengerti. Kalau malamnya kamu makan apa?", "literal": "mengerti-saya. kalau-begitu malam apa makan-kamu?" },
+    { "speaker": "Budi:", "text": "Bir balıkçıda balık ekmek yedim. Harikaydı.", "id": "Saya makan roti ikan di warung ikan. Enak sekali.", "literal": "sebuah ikan-penjual-di ikan roti makan-saya. hebat-lah." },
+    { "speaker": "Emre:", "text": "Kaça?", "id": "Berapa?", "literal": "berapa-ke?" },
+    { "speaker": "Budi:", "text": "Yüz elli lira. Pahalı mıydı?", "id": "Seratus lima puluh lira. Mahal, ya?", "literal": "seratus lima-puluh lira. mahal apakah-lah?" },
+    { "speaker": "Emre:", "text": "Turist fiyatı! Ama sorun değil, güzeldi değil mi?", "id": "Harga turis! Tapi tidak apa-apa, enak kan?", "literal": "turis harga-nya! tapi masalah bukan, indah-lah bukan apakah?" },
+    { "speaker": "Budi:", "text": "Çok güzeldi. Sonra vapurla döndüm.", "id": "Enak sekali. Sesudah itu saya pulang naik kapal.", "literal": "sangat indah-lah. sesudah kapal-dengan kembali-saya." },
+    { "speaker": "Emre:", "text": "Yorgun musun şimdi?", "id": "Sekarang kamu capek?", "literal": "lelah apakah-kamu sekarang?" },
+    { "speaker": "Budi:", "text": "Dün çok yorgundum, bugün iyiyim.", "id": "Kemarin saya capek sekali, hari ini baik-baik saja.", "literal": "kemarin sangat lelah-lah-saya, hari-ini baik-saya." }
+   ],
+   "notes": [
+    "**Akhiran orangnya berbeda dari yang kamu kenal.** Bentuk *-di* memakai deret kedua: *-m, -n, —, -k, -niz, -ler*. Karena itu \"saya datang\" adalah *geldim*, bukan *geldiyim*. Deret ini juga dipakai untuk bentuk pengandaian nanti.",
+    "**Kata sifat pun bisa dilampaukan.** *Yorgunum* (saya lelah) → *yorgundum* (tadi saya lelah). *Güzel* → *güzeldi*. *Var* → *vardı*, *yok* → *yoktu*. Untuk kata berakhir vokal disisipkan *y*: *harika* → *harikaydı*.",
+    "**Balık ekmek** adalah roti isi ikan panggang yang dijual di dermaga Eminönü — makanan jalanan paling terkenal di Istanbul, dan pola rangkaian dua kata benda yang paling sederhana: ikan + roti.",
+    "**Pahalı mıydı?** memperlihatkan urutan yang perlu diperhatikan: kata sifat, lalu partikel tanya, lalu akhiran lampau. Bahasa Turki menumpuknya persis dalam urutan itu, dan urutannya tidak pernah dibalik."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bentuk lampau -di",
+   "blocks": [
+    { "type": "p", "text": "Akhiran lampau punya **delapan bentuk** — empat dari keselarasan vokal, dikalikan dua dari keselarasan konsonan. Kedengarannya banyak, tapi keduanya aturan yang sudah kamu pakai sejak unit 5." },
+    { "type": "tabel", "head": ["Akar berakhir", "Vokal a, ı", "Vokal e, i", "Vokal o, u", "Vokal ö, ü"], "rows": [
+     ["huruf lunak", "al**dı**m", "gel**di**m", "ol**du**m", "gör**dü**m"],
+     ["huruf keras (FiSTiKÇi ŞaHaP)", "bak**tı**m", "git**ti**m", "unut**tu**m", "öp**tü**m"]
+    ]},
+    { "type": "sub", "text": "Akhiran orang deret kedua" },
+    { "type": "tabel", "head": ["", "gelmek", "gitmek", "yapmak", "görmek"], "rows": [
+     ["ben", "gel**dim**", "git**tim**", "yap**tım**", "gör**düm**"],
+     ["sen", "gel**din**", "git**tin**", "yap**tın**", "gör**dün**"],
+     ["o", "gel**di**", "git**ti**", "yap**tı**", "gör**dü**"],
+     ["biz", "gel**dik**", "git**tik**", "yap**tık**", "gör**dük**"],
+     ["siz", "gel**diniz**", "git**tiniz**", "yap**tınız**", "gör**dünüz**"],
+     ["onlar", "gel**diler**", "git**tiler**", "yap**tılar**", "gör**düler**"]
+    ]},
+    { "type": "p", "text": "Menyangkal tetap dengan *-me/-ma* di depan akhiran waktu: *gelmedim* (saya tidak datang), *yapmadım*, *görmedim*. Bertanya tetap dengan partikel terpisah, kali ini SESUDAH akhiran lampau: *geldin mi?*, *yaptınız mı?*, *gelmedi mi?*" },
+    { "type": "kotak", "title": "Kenapa gitmek jadi gittim", "items": [
+     "Akar *git-* berakhir *t*, salah satu huruf keras — jadi akhirannya jadi *-ti*. Hasilnya dua huruf t berdampingan: *git-tim*. Ini benar dan memang ditulis begitu.",
+     "Bandingkan dengan bentuk *-yor*, di mana *t* justru MELUNAK karena akhirannya berawalan vokal: *gidiyorum*. Kata yang sama, dua arah perubahan — dan keduanya ditentukan oleh huruf pertama akhirannya."
+    ]}
+   ]
+  },
+  {
+   "title": "Dulu saya ..., tadi ada ...",
+   "blocks": [
+    { "type": "p", "text": "Akhiran lampau juga bisa ditempel pada kata benda dan kata sifat, untuk mengatakan sesuatu **dulunya begitu**. Bentuknya sama, hanya perlu penyambung *y* sesudah vokal." },
+    { "type": "tabel", "head": ["Sekarang", "Dulu", "Bahasa Indonesia"], "rows": [
+     ["öğrenciyim", "öğrenci**ydim**", "dulu saya pelajar"],
+     ["yorgunum", "yorgun**dum**", "tadi saya lelah"],
+     ["güzel", "güzel**di**", "tadi bagus"],
+     ["harika", "harika**ydı**", "tadi hebat"],
+     ["var", "var**dı**", "dulu ada"],
+     ["yok", "yok**tu**", "dulu tidak ada"],
+     ["değil", "değil**di**", "dulu bukan"],
+     ["evde", "evde**ydim**", "tadi saya di rumah"]
+    ]},
+    { "type": "p", "text": "Perhatikan *yoktu*: karena *yok* berakhir *k* — huruf keras — akhirannya jadi *-tu*, bukan *-du*. Aturan Fıstıkçı Şahap berlaku di sini persis sama seperti pada kata kerja." },
+    { "type": "sub", "text": "Kata keterangan untuk bercerita" },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Türkçe", "Bahasa Indonesia"], "rows": [
+     ["dün", "kemarin", "önceki gün", "kemarin dulu"],
+     ["geçen hafta", "minggu lalu", "geçen ay", "bulan lalu"],
+     ["geçen yıl", "tahun lalu", "az önce", "barusan"],
+     ["sonra", "lalu, sesudah itu", "önce", "sebelumnya"],
+     ["birden", "tiba-tiba", "sonunda", "akhirnya"],
+     ["ilk önce", "mula-mula", "en son", "paling akhir"]
+    ]},
+    { "type": "kotak", "title": "Menyusun cerita", "items": [
+     "Cerita bahasa Turki hampir selalu dirangkai dengan tiga kata: *önce* (mula-mula), *sonra* (lalu), *en son* (terakhir). Ketiganya berdiri di awal kalimat.",
+     "*Önce Sultanahmet'e gittim. Sonra Ayasofya'yı gördüm. En son vapurla döndüm.* — tiga kalimat pendek, satu cerita utuh. Untuk A1, ini sudah cukup untuk menceritakan seluruh harimu."
+    ]}
+   ]
+  },
+  {
+   "title": "Kata kerja untuk bercerita",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Bentuk lampau", "Bahasa Indonesia"], "rows": [
+     ["gitmek", "gittim", "pergi"],
+     ["gelmek", "geldim", "datang"],
+     ["görmek", "gördüm", "melihat"],
+     ["yemek", "yedim", "makan"],
+     ["içmek", "içtim", "minum"],
+     ["almak", "aldım", "membeli"],
+     ["yapmak", "yaptım", "melakukan"],
+     ["kalkmak", "kalktım", "bangun, berangkat"],
+     ["uyumak", "uyudum", "tidur"],
+     ["dönmek", "döndüm", "kembali, pulang"],
+     ["girmek", "girdim", "masuk"],
+     ["çıkmak", "çıktım", "keluar"],
+     ["başlamak", "başladım", "mulai"],
+     ["bitirmek", "bitirdim", "menyelesaikan"],
+     ["unutmak", "unuttum", "lupa"],
+     ["bulmak", "buldum", "menemukan"]
+    ]},
+    { "type": "kotak", "title": "Ulangan unit 9", "items": [
+     "Tutup bahasa Turkinya dan susun ulang dari ingatan: \"Berapa harganya?\" · \"Mahal sekali!\" · \"Saya ambil yang ini.\" · \"Ada diskon?\" · \"Boleh bayar pakai kartu?\"",
+     "Lalu tandai objeknya dengan benar: \"Saya membaca buku itu.\" · \"Saya sedang menunggumu.\""
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tr": "dün", "baca": "dün", "id": "kemarin" },
+  { "tr": "geçen hafta", "baca": "ge-CEN haf-TA", "id": "minggu lalu" },
+  { "tr": "az önce", "baca": "az ÖN-je", "id": "barusan" },
+  { "tr": "sonunda", "baca": "so-nun-DA", "id": "akhirnya" },
+  { "tr": "birden", "baca": "bir-DEN", "id": "tiba-tiba" },
+  { "tr": "gitmek", "baca": "git-MEK", "id": "pergi" },
+  { "tr": "dönmek", "baca": "dön-MEK", "id": "kembali, pulang" },
+  { "tr": "girmek / çıkmak", "baca": "gir-MEK / cık-MAK", "id": "masuk / keluar" },
+  { "tr": "kalkmak", "baca": "kalk-MAK", "id": "bangun, berangkat" },
+  { "tr": "uyumak", "baca": "u-yu-MAK", "id": "tidur" },
+  { "tr": "unutmak", "baca": "u-nut-MAK", "id": "lupa" },
+  { "tr": "bulmak", "baca": "bul-MAK", "id": "menemukan" },
+  { "tr": "bitirmek", "baca": "bi-tir-MEK", "id": "menyelesaikan" },
+  { "tr": "yorgun", "baca": "yor-GUN", "id": "lelah" },
+  { "tr": "sıra", "baca": "sı-RA", "id": "antrean, giliran" },
+  { "tr": "uzun / kısa", "baca": "u-ZUN / kı-SA", "id": "panjang / pendek" },
+  { "tr": "turist", "baca": "tu-RIST", "id": "turis" },
+  { "tr": "müze", "baca": "mü-ZE", "id": "museum" },
+  { "tr": "içeri / dışarı", "baca": "i-CE-ri / dı-SYA-rı", "id": "ke dalam / ke luar" },
+  { "tr": "balıkçı", "baca": "ba-lık-CI", "id": "penjual ikan" },
+  { "tr": "harika", "baca": "ha-ri-KA", "id": "hebat" },
+  { "tr": "vardı / yoktu", "baca": "var-DI / yok-TU", "id": "dulu ada / dulu tidak ada" },
+  { "tr": "hava durumu", "baca": "ha-VA du-ru-MU", "id": "keadaan cuaca" },
+  { "tr": "yürümek", "baca": "yü-rü-MEK", "id": "berjalan kaki" },
+  { "tr": "gezmek", "baca": "gez-MEK", "id": "jalan-jalan" },
+  { "tr": "beğenmek", "baca": "be-en-MEK", "id": "menyukai" },
+  { "tr": "sonra / önce", "baca": "son-RA / ÖN-je", "id": "lalu / mula-mula" },
+  { "tr": "geçmek", "baca": "gec-MEK", "id": "lewat, berlalu" },
+  { "tr": "kaldım", "baca": "kal-DIM", "id": "saya tinggal, saya menginap" },
+  { "tr": "anladım", "baca": "an-la-DIM", "id": "saya mengerti" }
+ ],
+ "exercises": [
+  { "prompt": "Ubah ke bentuk lampau sesuai pelaku dalam kurung.", "items": [
+   "gelmek (ben) → ____",
+   "gitmek (sen) → ____",
+   "görmek (o) → ____",
+   "yapmak (biz) → ____",
+   "unutmak (siz) → ____",
+   "almak (onlar) → ____"
+  ]},
+  { "prompt": "Ubah jadi bentuk sangkal atau pertanyaan sesuai petunjuk.", "items": [
+   "geldim (sangkal) → ____",
+   "gittin (tanya) → ____",
+   "gördü (sangkal) → ____",
+   "yaptınız (tanya) → ____",
+   "aldık (sangkal) → ____",
+   "geldiler (tanya) → ____"
+  ]},
+  { "prompt": "Ubah jadi bentuk lampau (kata sifat dan kata benda).", "items": [
+   "yorgunum → ____",
+   "güzel → ____",
+   "var → ____",
+   "yok → ____",
+   "öğrenciyim → ____",
+   "evdeyim → ____"
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "yaptın / dün / ne / ?",
+   "gittim / Sultanahmet'e / ben",
+   "mü / gördün / Ayasofya'yı / ?",
+   "yedim / balık / bir / ekmek",
+   "yorgundum / dün / çok",
+   "döndüm / vapurla / sonra"
+  ]}
+ ],
+ "answers": [
+  "geldim — gittin — gördü — yaptık — unuttunuz — aldılar",
+  "gelmedim — gittin mi? — görmedi — yaptınız mı? — almadık — geldiler mi?",
+  "yorgundum — güzeldi — vardı — yoktu — öğrenciydim — evdeydim",
+  "Dün ne yaptın? — Ben Sultanahmet'e gittim. — Ayasofya'yı gördün mü? — Bir balık ekmek yedim. — Dün çok yorgundum. — Sonra vapurla döndüm."
+ ]
+}

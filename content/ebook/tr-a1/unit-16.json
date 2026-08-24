@@ -1,0 +1,603 @@
+{
+ "title": "Cuacanya bagaimana?",
+ "title_target": "Hava nasıl?",
+ "goal": "Berbicara tentang cuaca dan musim, lalu membandingkan dua hal dengan *daha* dan *en*.",
+ "bekal": [
+  "menjawab *hava nasıl* untuk keempat musim",
+  "membandingkan dengan pola *X, Y'den daha ...*",
+  "menyebut yang paling dengan *en*"
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — Kar yağıyor",
+   "intro": "Awal Desember. Budi berdiri di jendela, memandang atap-atap Kadıköy yang memutih. Emre masuk membawa dua gelas teh.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Emre, bak! Kar yağıyor!",
+     "id": "Emre, lihat! Turun salju!",
+     "literal": "Emre, lihat! salju sedang-turun!"
+    },
+    {
+     "speaker": "Emre:",
+     "text": "İlk karın mı?",
+     "id": "Salju pertamamu?",
+     "literal": "pertama salju-mu apakah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Evet! Endonezya'da hiç kar yok.",
+     "id": "Ya! Di Indonesia sama sekali tidak ada salju.",
+     "literal": "ya! Indonesia-di sama-sekali salju tidak-ada."
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Hiç mi? Peki hava nasıl orada?",
+     "id": "Sama sekali? Kalau cuacanya di sana bagaimana?",
+     "literal": "sama-sekali apakah? kalau-begitu udara bagaimana di-sana?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Her zaman sıcak. Otuz derece, bazen daha fazla.",
+     "id": "Selalu panas. Tiga puluh derajat, kadang lebih.",
+     "literal": "setiap waktu panas. tiga-puluh derajat, kadang lebih banyak."
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Yazın İstanbul da sıcak olur ama Jakarta kadar değil.",
+     "id": "Kalau musim panas Istanbul juga panas, tapi tidak seperti Jakarta.",
+     "literal": "musim-panas-nya Istanbul juga panas jadi tapi Jakarta sebanyak bukan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Şimdi kaç derece?",
+     "id": "Sekarang berapa derajat?",
+     "literal": "sekarang berapa derajat?"
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Sıfır. Yarın daha soğuk olacak, eksi üç.",
+     "id": "Nol. Besok akan lebih dingin, minus tiga.",
+     "literal": "nol. besok lebih dingin akan-jadi, minus tiga."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Eksi üç mü? Donarım ben!",
+     "id": "Minus tiga? Saya bakal beku!",
+     "literal": "minus tiga apakah? membeku-saya saya!"
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Merak etme. Kalın bir mont al, bir de atkı.",
+     "id": "Jangan khawatir. Beli jaket tebal, dan satu syal.",
+     "literal": "khawatir jangan-lakukan. tebal sebuah jaket ambil, satu juga syal."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Türkiye'nin en soğuk ayı hangisi?",
+     "id": "Bulan paling dingin di Turki yang mana?",
+     "literal": "Turki-milik paling dingin bulan-nya yang-mana?"
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Ocak. Ama Erzurum'da kış İstanbul'dan çok daha zor.",
+     "id": "Januari. Tapi di Erzurum musim dingin jauh lebih berat daripada Istanbul.",
+     "literal": "Januari. tapi Erzurum-di musim-dingin Istanbul-dari sangat lebih sulit."
+    }
+   ],
+   "notes": [
+    "**Kar yağıyor, yağmur yağıyor.** Bahasa Turki memakai satu kata kerja untuk semua yang turun dari langit: *yağmak*. Salju, hujan, dan hujan es semuanya *yağar*, dan bendanya disebutkan lebih dulu.",
+    "**Yazın berarti \"kalau musim panas\".** Empat musim punya bentuk keterangan sendiri dengan akhiran *-ın*: *yazın*, *kışın*, *ilkbaharda*, *sonbaharda*. Dua yang pertama adalah sisa akhiran kuno yang bertahan hanya pada segelintir kata.",
+    "**Kadar berarti \"sebanyak, sesuai\".** *Jakarta kadar sıcak değil* = \"tidak sepanas Jakarta\". Untuk membandingkan kesetaraan, bahasa Turki memakai *kadar*; untuk perbedaan, *-den daha*.",
+    "**Donarım ben** memakai bentuk luas dari unit 13 untuk sesuatu yang belum terjadi — cara Turki melebih-lebihkan dengan lucu, mirip \"aku bisa mati kedinginan\" dalam bahasa Indonesia."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Cuaca",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Türkçe",
+      "Bahasa Indonesia",
+      "Türkçe",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Hava nasıl?",
+       "Cuacanya bagaimana?",
+       "Hava güzel.",
+       "Cuacanya bagus."
+      ],
+      [
+       "güneşli",
+       "cerah",
+       "bulutlu",
+       "berawan"
+      ],
+      [
+       "yağmurlu",
+       "hujan",
+       "karlı",
+       "bersalju"
+      ],
+      [
+       "rüzgârlı",
+       "berangin",
+       "sisli",
+       "berkabut"
+      ],
+      [
+       "sıcak",
+       "panas",
+       "soğuk",
+       "dingin"
+      ],
+      [
+       "ılık",
+       "hangat",
+       "serin",
+       "sejuk"
+      ],
+      [
+       "nemli",
+       "lembap",
+       "kuru",
+       "kering"
+      ],
+      [
+       "Yağmur yağıyor.",
+       "Hujan turun.",
+       "Kar yağıyor.",
+       "Salju turun."
+      ],
+      [
+       "Kaç derece?",
+       "Berapa derajat?",
+       "eksi",
+       "minus"
+      ],
+      [
+       "fırtına",
+       "badai",
+       "gök gürültüsü",
+       "guntur"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Akhiran *-lı* yang muncul di hampir semua kata cuaca berarti \"ber-\" atau \"punya\": *yağmur-lu* (berhujan), *kar-lı* (bersalju), *rüzgâr-lı* (berangin). Lawannya *-sız* (\"tanpa\"), dan keduanya dibongkar utuh di unit berikutnya."
+    },
+    {
+     "type": "sub",
+     "text": "Empat musim"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Musim",
+      "Türkçe",
+      "Kalau musim itu",
+      "Di Turki"
+     ],
+     "rows": [
+      [
+       "semi",
+       "ilkbahar",
+       "ilkbaharda",
+       "Maret–Mei, hujan dan hijau"
+      ],
+      [
+       "panas",
+       "yaz",
+       "yazın",
+       "Juni–Agustus, kering dan terik"
+      ],
+      [
+       "gugur",
+       "sonbahar",
+       "sonbaharda",
+       "September–November, sejuk"
+      ],
+      [
+       "dingin",
+       "kış",
+       "kışın",
+       "Desember–Februari, bersalju di banyak kota"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Turki bukan satu iklim",
+     "items": [
+      "Pantai Laut Tengah (Antalya, Alanya) hangat sepanjang tahun. Pantai Laut Hitam (Trabzon, Rize) adalah tempat terbasah di Turki — hujan hampir setiap bulan, dan di situlah kebun teh berada.",
+      "Anatolia Timur (Erzurum, Kars) bisa turun sampai minus tiga puluh derajat pada Januari. Kalau ada yang bertanya *Türkiye'de hava nasıl?*, jawaban jujurnya selalu: *Nerede?*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membandingkan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Turki tidak mengubah bentuk kata sifatnya. Untuk \"lebih\", ia menambahkan kata **daha** di depan; untuk \"paling\", kata **en**. Yang dibandingkan diberi akhiran *-den*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pola",
+      "Contoh",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**daha** + sifat",
+       "daha büyük",
+       "lebih besar"
+      ],
+      [
+       "X, Y**'den daha** + sifat",
+       "İstanbul, Ankara'dan daha büyük.",
+       "Istanbul lebih besar daripada Ankara."
+      ],
+      [
+       "X, Y**'den** + sifat",
+       "İstanbul, Ankara'dan büyük.",
+       "sama artinya — *daha* boleh dibuang"
+      ],
+      [
+       "**en** + sifat",
+       "en büyük şehir",
+       "kota terbesar"
+      ],
+      [
+       "X **kadar** + sifat",
+       "Ankara, İstanbul kadar büyük.",
+       "Ankara sebesar Istanbul."
+      ],
+      [
+       "X **kadar** + sifat **değil**",
+       "Ankara, İstanbul kadar büyük değil.",
+       "Ankara tidak sebesar Istanbul."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Untuk menguatkan, sisipkan *çok* di depan *daha*: *çok daha soğuk* (jauh lebih dingin). Untuk melemahkan: *biraz daha soğuk* (sedikit lebih dingin)."
+    },
+    {
+     "type": "sub",
+     "text": "Pertanyaan pembanding"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Türkçe",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Hangisi daha büyük?",
+       "Yang mana lebih besar?"
+      ],
+      [
+       "Hangisini seviyorsun?",
+       "Kamu suka yang mana?"
+      ],
+      [
+       "En sevdiğin şehir hangisi?",
+       "Kota favoritmu yang mana?"
+      ],
+      [
+       "Daha ucuz bir şey var mı?",
+       "Ada yang lebih murah?"
+      ],
+      [
+       "Türkçe zor mu, kolay mı?",
+       "Bahasa Turki sulit atau mudah?"
+      ],
+      [
+       "Bence Türkçe daha kolay.",
+       "Menurut saya bahasa Turki lebih mudah."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Bence, sence, ona göre",
+     "items": [
+      "\"Menurut saya\" adalah *bence* — akhiran *-ce* yang menempel pada kata ganti: *bence*, *sence*, *bizce*. Kata yang sama membentuk nama bahasa: *Türk-çe*, *İngiliz-ce*, *Endonezce*.",
+      "Untuk orang ketiga dipakai bentuk lain: *ona göre* (menurut dia), *Ayşe'ye göre* (menurut Ayşe)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pakaian untuk tiap cuaca",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Türkçe",
+      "Bahasa Indonesia",
+      "Türkçe",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "mont",
+       "jaket tebal",
+       "ceket",
+       "jas, jaket"
+      ],
+      [
+       "kazak",
+       "sweter",
+       "gömlek",
+       "kemeja"
+      ],
+      [
+       "tişört",
+       "kaus",
+       "pantolon",
+       "celana panjang"
+      ],
+      [
+       "etek",
+       "rok",
+       "elbise",
+       "gaun, baju"
+      ],
+      [
+       "ayakkabı",
+       "sepatu",
+       "çorap",
+       "kaus kaki"
+      ],
+      [
+       "şapka",
+       "topi",
+       "atkı",
+       "syal leher"
+      ],
+      [
+       "eldiven",
+       "sarung tangan",
+       "şemsiye",
+       "payung"
+      ],
+      [
+       "giymek",
+       "memakai baju",
+       "çıkarmak",
+       "melepas"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Ayakkabı* harfiahnya \"wadah kaki\" — *ayak* (kaki) + *kap* (wadah) + *-ı*. Bahasa Turki penuh kata majemuk sejenis: *buzdolabı* (lemari es, \"lemari es batu\"), *bilgisayar* (komputer), *çamaşır makinesi* (mesin cuci)."
+    },
+    {
+     "type": "kotak",
+     "title": "Ulangan unit 14",
+     "items": [
+      "Tutup bahasa Turkinya dan susun ulang dari ingatan: \"Boleh saya tanya sesuatu?\" · \"Boleh saya masuk?\" · \"Sayangnya saya tidak bisa.\" · \"Bisa Anda bantu?\" · \"Bisa jadi turun hujan.\"",
+      "Lalu ubah jadi \"tidak bisa\": *gelirim*, *yaparsın*, *gidiyorum*."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "hava",
+   "baca": "ha-VA",
+   "id": "cuaca, udara"
+  },
+  {
+   "tr": "güneşli",
+   "baca": "gü-nesy-LI",
+   "id": "cerah"
+  },
+  {
+   "tr": "bulutlu",
+   "baca": "bu-lut-LU",
+   "id": "berawan"
+  },
+  {
+   "tr": "yağmurlu",
+   "baca": "yaa-mur-LU",
+   "id": "berhujan"
+  },
+  {
+   "tr": "karlı",
+   "baca": "kar-LI",
+   "id": "bersalju"
+  },
+  {
+   "tr": "rüzgâr",
+   "baca": "rüz-GYAR",
+   "id": "angin"
+  },
+  {
+   "tr": "kar",
+   "baca": "kar",
+   "id": "salju"
+  },
+  {
+   "tr": "yağmak",
+   "baca": "yaa-MAK",
+   "id": "turun (hujan/salju)"
+  },
+  {
+   "tr": "derece",
+   "baca": "de-re-JE",
+   "id": "derajat"
+  },
+  {
+   "tr": "eksi",
+   "baca": "ek-SI",
+   "id": "minus"
+  },
+  {
+   "tr": "ılık / serin",
+   "baca": "ı-LIK / se-RIN",
+   "id": "hangat / sejuk"
+  },
+  {
+   "tr": "ilkbahar",
+   "baca": "ilk-ba-HAR",
+   "id": "musim semi"
+  },
+  {
+   "tr": "yaz / kış",
+   "baca": "yaz / kısy",
+   "id": "musim panas / dingin"
+  },
+  {
+   "tr": "sonbahar",
+   "baca": "son-ba-HAR",
+   "id": "musim gugur"
+  },
+  {
+   "tr": "daha",
+   "baca": "da-HA",
+   "id": "lebih"
+  },
+  {
+   "tr": "en",
+   "baca": "en",
+   "id": "paling"
+  },
+  {
+   "tr": "kadar",
+   "baca": "ka-DAR",
+   "id": "sebanyak, sampai"
+  },
+  {
+   "tr": "hangisi",
+   "baca": "han-gi-SI",
+   "id": "yang mana"
+  },
+  {
+   "tr": "bence",
+   "baca": "ben-JE",
+   "id": "menurut saya"
+  },
+  {
+   "tr": "fazla",
+   "baca": "faz-LA",
+   "id": "lebih, berlebih"
+  },
+  {
+   "tr": "mont",
+   "baca": "mont",
+   "id": "jaket tebal"
+  },
+  {
+   "tr": "kazak",
+   "baca": "ka-ZAK",
+   "id": "sweter"
+  },
+  {
+   "tr": "ayakkabı",
+   "baca": "a-yak-ka-BI",
+   "id": "sepatu"
+  },
+  {
+   "tr": "şemsiye",
+   "baca": "syem-si-YE",
+   "id": "payung"
+  },
+  {
+   "tr": "atkı",
+   "baca": "at-KI",
+   "id": "syal leher"
+  },
+  {
+   "tr": "giymek",
+   "baca": "giy-MEK",
+   "id": "memakai baju"
+  },
+  {
+   "tr": "kalın / ince",
+   "baca": "ka-LIN / in-JE",
+   "id": "tebal / tipis"
+  },
+  {
+   "tr": "donmak",
+   "baca": "don-MAK",
+   "id": "membeku"
+  },
+  {
+   "tr": "şehir",
+   "baca": "sye-HIR",
+   "id": "kota"
+  },
+  {
+   "tr": "ülke",
+   "baca": "ül-KE",
+   "id": "negara"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Jawab dengan satu kalimat sesuai petunjuk.",
+   "items": [
+    "Hava nasıl? (cerah)",
+    "Hava nasıl? (hujan)",
+    "Hava nasıl? (dingin sekali)",
+    "Kaç derece? (25)",
+    "Kaç derece? (minus 3)",
+    "Hava nasıl? (turun salju)"
+   ]
+  },
+  {
+   "prompt": "Bandingkan dengan pola *-den daha*. Kata pertama jadi pokok kalimat.",
+   "items": [
+    "İstanbul + Ankara + büyük → ____",
+    "yaz + kış + sıcak → ____",
+    "Türkçe + Arapça + kolay → ____",
+    "bu şal + o şal + pahalı → ____",
+    "otobüs + taksi + ucuz → ____",
+    "bugün + dün + soğuk → ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Turki.",
+   "items": [
+    "Cuacanya bagaimana?",
+    "Hari ini lebih dingin dari kemarin.",
+    "Bulan paling dingin yang mana?",
+    "Ada yang lebih murah?",
+    "Menurut saya bahasa Turki lebih mudah.",
+    "Ankara tidak sebesar Istanbul."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "nasıl / hava / ?",
+    "yağıyor / kar / bugün",
+    "soğuk / yarın / olacak / daha",
+    "ayı / en / hangisi / soğuk / ?",
+    "değil / kadar / Jakarta / sıcak / İstanbul",
+    "kolay / bence / daha / Türkçe"
+   ]
+  }
+ ],
+ "answers": [
+  "Hava güneşli. — Yağmur yağıyor. — Hava çok soğuk. — Yirmi beş derece. — Eksi üç derece. — Kar yağıyor.",
+  "İstanbul, Ankara'dan daha büyük. — Yaz, kıştan daha sıcak. — Türkçe, Arapçadan daha kolay. — Bu şal, o şaldan daha pahalı. — Otobüs, taksiden daha ucuz. — Bugün, dünden daha soğuk.",
+  "Hava nasıl? — Bugün dünden daha soğuk. — En soğuk ay hangisi? — Daha ucuz bir şey var mı? — Bence Türkçe daha kolay. — Ankara, İstanbul kadar büyük değil.",
+  "Hava nasıl? — Bugün kar yağıyor. — Yarın daha soğuk olacak. — En soğuk ay hangisi? — İstanbul, Jakarta kadar sıcak değil. — Bence Türkçe daha kolay."
+ ]
+}

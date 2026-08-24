@@ -1,0 +1,208 @@
+{
+ "title": "Rumah dan isinya",
+ "title_target": "Ev ve eşyalar",
+ "goal": "Menggambarkan tempat tinggalmu, dan membangun kata baru sendiri dengan akhiran *-lı*, *-sız*, *-ci*, dan *-lik*.",
+ "bekal": [
+  "menyebut ruangan dan perabot rumah",
+  "membentuk *şekerli*, *şekersiz*, *kitapçı*, *güzellik* dari kata yang sudah kamu punya",
+  "membaca iklan sewa rumah tanpa kamus"
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — Yeni daire",
+   "intro": "Budi mencari kamar yang lebih dekat ke kampus. Emre menemaninya melihat sebuah apartemen kecil.",
+   "lines": [
+    { "speaker": "Emlakçı:", "text": "Buyurun, girin. İki artı bir, altmış metrekare.", "id": "Silakan, masuk. Dua kamar plus ruang tamu, enam puluh meter persegi.", "literal": "silakan, masuk-Anda. dua tambah satu, enam-puluh meter-persegi." },
+    { "speaker": "Budi:", "text": "İki artı bir ne demek?", "id": "\"Dua plus satu\" itu apa artinya?", "literal": "dua tambah satu apa berkata?" },
+    { "speaker": "Emre:", "text": "İki oda ve bir salon. Türkiye'de hep böyle yazılır.", "id": "Dua kamar dan satu ruang tamu. Di Turki selalu ditulis begitu.", "literal": "dua kamar dan satu ruang-tamu. Turki-di selalu begini ditulis." },
+    { "speaker": "Budi:", "text": "Anladım. Mutfak nerede?", "id": "Saya mengerti. Dapurnya di mana?", "literal": "mengerti-saya. dapur di-mana?" },
+    { "speaker": "Emlakçı:", "text": "Şurada. Küçük ama pencereli, çok aydınlık.", "id": "Di situ. Kecil tapi ada jendelanya, terang sekali.", "literal": "di-situ. kecil tapi jendela-punya, sangat terang." },
+    { "speaker": "Budi:", "text": "Eşyalı mı, eşyasız mı?", "id": "Berperabot atau kosong?", "literal": "perabot-punya apakah, perabot-tanpa apakah?" },
+    { "speaker": "Emlakçı:", "text": "Eşyalı. Yatak, dolap, masa, buzdolabı var.", "id": "Berperabot. Ada tempat tidur, lemari, meja, kulkas.", "literal": "perabot-punya. kasur, lemari, meja, es-lemari-nya ada." },
+    { "speaker": "Budi:", "text": "Kira ne kadar?", "id": "Sewanya berapa?", "literal": "sewa berapa banyak?" },
+    { "speaker": "Emlakçı:", "text": "On sekiz bin lira, aidat dahil.", "id": "Delapan belas ribu lira, sudah termasuk iuran gedung.", "literal": "sepuluh delapan ribu lira, iuran termasuk." },
+    { "speaker": "Emre:", "text": "Su ve elektrik dahil mi?", "id": "Air dan listrik termasuk?", "literal": "air dan listrik termasuk apakah?" },
+    { "speaker": "Emlakçı:", "text": "Hayır, onlar ayrı. Ama internet bedava.", "id": "Tidak, itu terpisah. Tapi internetnya gratis.", "literal": "tidak, mereka terpisah. tapi internet gratis." },
+    { "speaker": "Budi:", "text": "Düşüneceğim. Yarın haber veririm.", "id": "Saya pikir-pikir dulu. Besok saya kabari.", "literal": "akan-berpikir-saya. besok kabar beri-saya." }
+   ],
+   "notes": [
+    "**2+1 adalah bahasa iklan rumah Turki.** Angka pertama jumlah kamar tidur, angka kedua ruang tamu (*salon*). *1+1* studio kecil, *3+1* rumah keluarga. Kamu akan melihatnya di setiap papan *kiralık* di jendela toko properti.",
+    "**Eşyalı dan eşyasız memakai dua akhiran yang berlawanan.** *-lı* berarti \"punya, ber-\"; *-sız* berarti \"tanpa\". Dua akhiran ini adalah pabrik kata sifat bahasa Turki, dan bagian tata bahasa unit ini.",
+    "**Buzdolabı** = *buz* (es) + *dolap* (lemari) + *-ı*, dengan *p* melunak jadi *b*. Pola rangkaian dua kata benda dari unit 4 membentuk hampir semua nama perkakas rumah tangga.",
+    "**Haber veririm** memakai bentuk luas untuk janji ringan — \"nanti saya kabari\". Bandingkan dengan *haber vereceğim*, yang terdengar lebih mengikat. Untuk urusan sehari-hari, bentuk luas justru lebih sopan karena lebih longgar."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Rumah",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Türkçe", "Bahasa Indonesia"], "rows": [
+     ["ev", "rumah", "daire", "apartemen"],
+     ["apartman", "gedung apartemen", "kat", "lantai"],
+     ["oda", "kamar", "salon", "ruang tamu"],
+     ["yatak odası", "kamar tidur", "mutfak", "dapur"],
+     ["banyo", "kamar mandi", "tuvalet", "toilet"],
+     ["balkon", "balkon", "bahçe", "kebun, halaman"],
+     ["asansör", "lift", "merdiven", "tangga"],
+     ["kapı", "pintu", "pencere", "jendela"],
+     ["duvar", "dinding", "yer", "lantai, tempat"],
+     ["kira", "sewa", "kiralık", "disewakan"]
+    ]},
+    { "type": "sub", "text": "Perabot dan perkakas" },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Türkçe", "Bahasa Indonesia"], "rows": [
+     ["yatak", "tempat tidur", "dolap", "lemari"],
+     ["masa", "meja", "sandalye", "kursi"],
+     ["koltuk", "sofa", "halı", "karpet"],
+     ["buzdolabı", "kulkas", "fırın", "oven"],
+     ["çamaşır makinesi", "mesin cuci", "bulaşık makinesi", "mesin cuci piring"],
+     ["televizyon", "televisi", "klima", "AC"],
+     ["lamba", "lampu", "perde", "gorden"],
+     ["ayna", "cermin", "havlu", "handuk"]
+    ]},
+    { "type": "p", "text": "*Çamaşır makinesi* dan *bulaşık makinesi* memperlihatkan pola yang sama sekali lagi: *çamaşır* (cucian) + *makine* + *-si*. Begitu kamu tahu satu, kamu bisa menebak semuanya." }
+   ]
+  },
+  {
+   "title": "Membuat kata sendiri",
+   "blocks": [
+    { "type": "p", "text": "Bahasa Turki membangun kata baru dengan menempelkan akhiran pembentuk, bukan dengan meminjam. Empat akhiran berikut adalah yang paling sering dipakai, dan semuanya bisa langsung kamu pakai pada kata yang sudah kamu punya." },
+    { "type": "sub", "text": "-lı / -li / -lu / -lü — punya, ber-" },
+    { "type": "tabel", "head": ["Kata dasar", "+ -lı", "Artinya"], "rows": [
+     ["şeker (gula)", "şekerli", "manis, bergula"],
+     ["süt (susu)", "sütlü", "bersusu"],
+     ["et (daging)", "etli", "berdaging"],
+     ["su (air)", "sulu", "berkuah"],
+     ["eşya (perabot)", "eşyalı", "berperabot"],
+     ["İstanbul", "İstanbullu", "orang Istanbul"]
+    ]},
+    { "type": "sub", "text": "-sız / -siz / -suz / -süz — tanpa" },
+    { "type": "tabel", "head": ["Kata dasar", "+ -sız", "Artinya"], "rows": [
+     ["şeker", "şekersiz", "tanpa gula"],
+     ["et", "etsiz", "tanpa daging"],
+     ["tuz (garam)", "tuzsuz", "tanpa garam"],
+     ["su", "susuz", "tanpa air, kehausan"],
+     ["iş (kerja)", "işsiz", "pengangguran"],
+     ["ev", "evsiz", "tunawisma"]
+    ]},
+    { "type": "sub", "text": "-cı / -ci / -cu / -cü — orang yang berurusan dengan" },
+    { "type": "tabel", "head": ["Kata dasar", "+ -cı", "Artinya"], "rows": [
+     ["ekmek (roti)", "ekmekçi", "tukang roti"],
+     ["kitap", "kitapçı", "penjual buku"],
+     ["balık (ikan)", "balıkçı", "nelayan, penjual ikan"],
+     ["çay", "çaycı", "penjual teh"],
+     ["yol (jalan)", "yolcu", "penumpang"],
+     ["emlak (properti)", "emlakçı", "agen properti"]
+    ]},
+    { "type": "p", "text": "Sesudah huruf keras, *c* mengeras jadi *ç*: *kitap-çı*, *simit-çi*, *sanat-çı*. Aturan Fıstıkçı Şahap lagi — dan nama hafalan itu sendiri contohnya: *fıstık* + *-çı*." },
+    { "type": "sub", "text": "-lık / -lik / -luk / -lük — ke-an, tempat, alat" },
+    { "type": "tabel", "head": ["Kata dasar", "+ -lık", "Artinya"], "rows": [
+     ["güzel (indah)", "güzellik", "kecantikan"],
+     ["iyi (baik)", "iyilik", "kebaikan"],
+     ["göz (mata)", "gözlük", "kacamata"],
+     ["tuz (garam)", "tuzluk", "tempat garam"],
+     ["kira (sewa)", "kiralık", "disewakan"],
+     ["gün (hari)", "günlük", "harian, buku harian"]
+    ]},
+    { "type": "kotak", "title": "Empat akhiran, ratusan kata", "items": [
+     "Cobalah sekarang: dari *şeker*, *su*, *ev*, dan *çay* kamu bisa membuat *şekerli*, *şekersiz*, *şekerlik*, *şekerci*, *sulu*, *susuz*, *evli*, *evsiz*, *çaylı*, *çaysız*, *çaycı*, *çaylık*.",
+     "Tidak semua kata yang bisa dibentuk benar-benar dipakai — tapi hampir semuanya akan dimengerti. Ini keterampilan yang membuat kosakatamu tumbuh jauh lebih cepat daripada menghafal daftar."
+    ]}
+   ]
+  },
+  {
+   "title": "Membaca iklan sewa",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia"], "rows": [
+     ["kiralık daire", "apartemen disewakan"],
+     ["satılık ev", "rumah dijual"],
+     ["eşyalı / eşyasız", "berperabot / kosong"],
+     ["asansörlü", "ada lift"],
+     ["balkonlu", "ada balkon"],
+     ["doğalgazlı", "ada gas alam"],
+     ["depozito", "uang jaminan"],
+     ["aidat", "iuran gedung"],
+     ["dahil / hariç", "termasuk / tidak termasuk"],
+     ["ara kat", "lantai tengah"]
+    ]},
+    { "type": "p", "text": "Semua kata dengan *-lı* di daftar itu bisa kamu bongkar sendiri sekarang: *asansör-lü* (punya lift), *balkon-lu*, *doğalgaz-lı*. Iklan properti Turki sebenarnya latihan tata bahasa yang menyamar." },
+    { "type": "kotak", "title": "Ulangan unit 16", "items": [
+     "Tutup bahasa Turkinya dan susun ulang dari ingatan: \"Cuacanya bagaimana?\" · \"Hari ini lebih dingin dari kemarin.\" · \"Ada yang lebih murah?\" · \"Menurut saya bahasa Turki lebih mudah.\" · \"Turun salju.\"",
+     "Lalu bandingkan: *İstanbul / Ankara / büyük* dan *yaz / kış / sıcak*."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tr": "daire", "baca": "da-i-RE", "id": "apartemen" },
+  { "tr": "apartman", "baca": "a-part-MAN", "id": "gedung apartemen" },
+  { "tr": "salon", "baca": "sa-LON", "id": "ruang tamu" },
+  { "tr": "mutfak", "baca": "mut-FAK", "id": "dapur" },
+  { "tr": "banyo", "baca": "ban-YO", "id": "kamar mandi" },
+  { "tr": "balkon", "baca": "bal-KON", "id": "balkon" },
+  { "tr": "bahçe", "baca": "bah-CE", "id": "kebun, halaman" },
+  { "tr": "asansör", "baca": "a-san-SÖR", "id": "lift" },
+  { "tr": "merdiven", "baca": "mer-di-VEN", "id": "tangga" },
+  { "tr": "duvar", "baca": "du-VAR", "id": "dinding" },
+  { "tr": "koltuk", "baca": "kol-TUK", "id": "sofa" },
+  { "tr": "halı", "baca": "ha-LI", "id": "karpet" },
+  { "tr": "buzdolabı", "baca": "buz-do-la-BI", "id": "kulkas" },
+  { "tr": "çamaşır makinesi", "baca": "ca-ma-SYIR ma-ki-ne-SI", "id": "mesin cuci" },
+  { "tr": "klima", "baca": "kli-MA", "id": "AC" },
+  { "tr": "perde", "baca": "per-DE", "id": "gorden" },
+  { "tr": "havlu", "baca": "hav-LU", "id": "handuk" },
+  { "tr": "ayna", "baca": "ay-NA", "id": "cermin" },
+  { "tr": "eşya", "baca": "esy-YA", "id": "perabot, barang" },
+  { "tr": "kira / kiralık", "baca": "ki-RA / ki-ra-LIK", "id": "sewa / disewakan" },
+  { "tr": "depozito", "baca": "de-po-zi-TO", "id": "uang jaminan" },
+  { "tr": "aidat", "baca": "a-i-DAT", "id": "iuran gedung" },
+  { "tr": "dahil / hariç", "baca": "da-HIL / ha-RIC", "id": "termasuk / tidak termasuk" },
+  { "tr": "elektrik", "baca": "e-lek-TRIK", "id": "listrik" },
+  { "tr": "bedava", "baca": "be-da-VA", "id": "gratis" },
+  { "tr": "aydınlık", "baca": "ay-dın-LIK", "id": "terang" },
+  { "tr": "emlakçı", "baca": "em-lak-CI", "id": "agen properti" },
+  { "tr": "metrekare", "baca": "met-re-ka-RE", "id": "meter persegi" },
+  { "tr": "haber vermek", "baca": "ha-BER ver-MEK", "id": "mengabari" },
+  { "tr": "ayrı", "baca": "ay-RI", "id": "terpisah" }
+ ],
+ "exercises": [
+  { "prompt": "Bentuk kata sifat dengan *-lı* (punya).", "items": [
+   "şeker → ____",
+   "süt → ____",
+   "et → ____",
+   "balkon → ____",
+   "asansör → ____",
+   "eşya → ____"
+  ]},
+  { "prompt": "Bentuk kata sifat dengan *-sız* (tanpa).", "items": [
+   "şeker → ____",
+   "et → ____",
+   "tuz → ____",
+   "su → ____",
+   "iş → ____",
+   "ev → ____"
+  ]},
+  { "prompt": "Bentuk kata baru dengan *-cı* atau *-lık* sesuai artinya.", "items": [
+   "kitap (penjual buku) → ____",
+   "balık (nelayan) → ____",
+   "çay (penjual teh) → ____",
+   "göz (kacamata) → ____",
+   "güzel (kecantikan) → ____",
+   "kira (disewakan) → ____"
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "kadar / kira / ne / ?",
+   "mı / eşyalı / daire / ?",
+   "var / buzdolabı / mutfakta",
+   "dahil / mi / elektrik / ?",
+   "bedava / internet / ama",
+   "veririm / yarın / haber"
+  ]}
+ ],
+ "answers": [
+  "şekerli — sütlü — etli — balkonlu — asansörlü — eşyalı",
+  "şekersiz — etsiz — tuzsuz — susuz — işsiz — evsiz",
+  "kitapçı — balıkçı — çaycı — gözlük — güzellik — kiralık",
+  "Kira ne kadar? — Daire eşyalı mı? — Mutfakta buzdolabı var. — Elektrik dahil mi? — Ama internet bedava. — Yarın haber veririm."
+ ]
+}

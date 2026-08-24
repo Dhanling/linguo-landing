@@ -1,0 +1,196 @@
+{
+ "title": "Menelepon dan mengundang",
+ "title_target": "Telefonda ve davette",
+ "goal": "Menelepon, mengundang dan menjawab undangan, serta mengatakan apa yang kamu sukai dengan pola *-meyi sevmek*.",
+ "bekal": [
+  "membuka dan menutup percakapan telepon dengan benar",
+  "mengubah kata kerja jadi kata benda: *yüzmeyi seviyorum*",
+  "mengatakan sesuatu perlu dilakukan dengan *-mek lazım* dan *-meli*"
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — Bir davet",
+   "intro": "Telepon Budi berdering pada Jumat sore. Nomornya tidak dikenal.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Alo?", "id": "Halo?", "literal": "halo?" },
+    { "speaker": "Ayşe:", "text": "Alo Budi, ben Ayşe. Rahatsız ediyor muyum?", "id": "Halo Budi, ini Ayşe. Saya mengganggu?", "literal": "halo Budi, saya Ayşe. tidak-nyaman sedang-lakukan apakah-saya?" },
+    { "speaker": "Budi:", "text": "Hiç de değil. Buyurun Ayşe Hanım.", "id": "Sama sekali tidak. Silakan, Bu Ayşe.", "literal": "sama-sekali juga bukan. silakan Ayşe Nyonya." },
+    { "speaker": "Ayşe:", "text": "Pazar günü bize gelir misin? Küçük bir yemek var.", "id": "Hari Minggu mau datang ke rumah kami? Ada makan-makan kecil.", "literal": "Minggu hari-nya kami-ke datang apakah-kamu? kecil sebuah makanan ada." },
+    { "speaker": "Budi:", "text": "Çok isterim! Saat kaçta?", "id": "Mau sekali! Jam berapa?", "literal": "sangat ingin-saya! jam berapa-di?" },
+    { "speaker": "Ayşe:", "text": "Yediye doğru. Eşim mantı yapacak.", "id": "Sekitar jam tujuh. Suami saya akan membuat mantı.", "literal": "tujuh-ke menuju. pasangan-ku mantı akan-buat." },
+    { "speaker": "Budi:", "text": "Mantı yemeyi çok seviyorum! Ne getireyim?", "id": "Saya suka sekali makan mantı! Saya bawa apa?", "literal": "mantı makan-nya sangat sedang-cinta-saya! apa bawa-saya?" },
+    { "speaker": "Ayşe:", "text": "Hiçbir şey. Sadece kendini getir.", "id": "Tidak usah apa-apa. Bawa dirimu saja.", "literal": "sama-sekali hal. hanya diri-mu-nya bawa." },
+    { "speaker": "Budi:", "text": "Olmaz, bir şey almam lazım. Tatlı getireyim mi?", "id": "Jangan begitu, saya perlu bawa sesuatu. Saya bawa makanan manis, ya?", "literal": "tidak-jadi, satu hal ambil-ku perlu. manis bawa-saya apakah?" },
+    { "speaker": "Ayşe:", "text": "Tamam, madem ısrar ediyorsun. Ama pahalı bir şey alma!", "id": "Baik, kalau kamu memaksa. Tapi jangan beli yang mahal!", "literal": "baik, karena memaksa sedang-lakukan-kamu. tapi mahal satu hal jangan-ambil!" },
+    { "speaker": "Budi:", "text": "Söz. Adresi mesaj atar mısınız?", "id": "Janji. Bisa kirim alamatnya lewat pesan?", "literal": "janji. alamat-nya pesan lempar apakah-Anda?" },
+    { "speaker": "Ayşe:", "text": "Hemen atıyorum. Pazar görüşürüz, iyi akşamlar!", "id": "Langsung saya kirim. Sampai ketemu Minggu, selamat malam!", "literal": "segera sedang-lempar-saya. Minggu saling-lihat-kita, baik malam-jamak!" }
+   ],
+   "notes": [
+    "**Alo hanya dipakai di telepon.** Untuk bertemu langsung, *merhaba*. Menyebutkan diri dengan *ben ...* di awal percakapan telepon adalah kebiasaan Turki yang hampir wajib.",
+    "**Rahatsız ediyor muyum?** — \"apakah saya mengganggu?\" — adalah pembuka telepon yang sopan, dan jawabannya hampir selalu *hiç de değil* atau *estağfurullah* (\"jangan begitu\"). Basa-basi ini diharapkan, bukan sekadar hiasan.",
+    "**Getireyim mi?** memakai bentuk *-eyim*, saudara dekat *-elim* dari unit 15: satu untuk \"biar saya\", satu untuk \"mari kita\". *Ne yapayım?* (apa yang harus saya lakukan?), *Gideyim mi?* (saya pergi saja?).",
+    "**Datang ke rumah orang Turki tanpa membawa apa-apa dianggap kurang pantas.** Yang lazim: *tatlı* (makanan manis), *çiçek* (bunga), atau sesuatu untuk anak tuan rumah. Tuan rumah akan menolak — dan kamu tetap harus membawanya."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata kerja yang jadi kata benda",
+   "blocks": [
+    { "type": "p", "text": "Untuk mengatakan \"saya suka berenang\", bahasa Turki mengubah kata kerja jadi kata benda lebih dulu, lalu memberinya akhiran objek: **akar + -me/-ma + -yi**." },
+    { "type": "tabel", "head": ["Kata kerja", "Jadi benda", "+ objek", "Kalimat"], "rows": [
+     ["yüzmek (berenang)", "yüzme", "yüzme**yi**", "Yüzmeyi seviyorum."],
+     ["okumak (membaca)", "okuma", "okuma**yı**", "Okumayı seviyorum."],
+     ["yemek (makan)", "yeme", "yeme**yi**", "Mantı yemeyi seviyorum."],
+     ["konuşmak", "konuşma", "konuşma**yı**", "Türkçe konuşmayı seviyorum."],
+     ["gezmek", "gezme", "gezme**yi**", "Gezmeyi seviyorum."],
+     ["çalışmak", "çalışma", "çalışma**yı**", "Çalışmayı sevmiyorum."]
+    ]},
+    { "type": "p", "text": "Bandingkan dengan pola unit 10: *yüzmek istiyorum* (saya ingin berenang) memakai bentuk kamus utuh, sedangkan *yüzmeyi seviyorum* (saya suka berenang) memakai bentuk benda. Kata kerja yang berbeda menuntut bentuk yang berbeda — dan pasangannya dihafal bersama kata kerjanya." },
+    { "type": "tabel", "head": ["Menuntut bentuk kamus (-mek)", "Menuntut bentuk benda (-meyi)"], "rows": [
+     ["istemek — gitmek istiyorum", "sevmek — gitmeyi seviyorum"],
+     ["-ebilmek — gidebilirim", "denemek — gitmeyi deniyorum"],
+     ["lazım — gitmem lazım", "öğrenmek — yüzmeyi öğreniyorum"],
+     ["", "unutmak — kapatmayı unuttum"]
+    ]},
+    { "type": "kotak", "title": "Hoşuma gidiyor", "items": [
+     "Ada cara kedua untuk mengatakan \"saya suka\", dan orang Turki memakainya sesering *sevmek*: *hoşuma gidiyor*, harfiahnya \"itu pergi ke kesenanganku\".",
+     "*Bu şarkı hoşuma gidiyor* (saya suka lagu ini). *Sevmek* terasa lebih dalam dan permanen; *hoşuma gitmek* lebih ringan, tentang kesan saat itu."
+    ]}
+   ]
+  },
+  {
+   "title": "Harus dan perlu",
+   "blocks": [
+    { "type": "p", "text": "Ada dua cara mengatakan sesuatu perlu dilakukan, dan keduanya sering dipakai." },
+    { "type": "sub", "text": "Cara pertama: -mem lazım" },
+    { "type": "tabel", "head": ["Türkçe", "Bongkarannya", "Bahasa Indonesia"], "rows": [
+     ["Gitmem lazım.", "pergi-ku perlu", "Saya harus pergi."],
+     ["Gitmen lazım.", "pergi-mu perlu", "Kamu harus pergi."],
+     ["Çalışmam lazım.", "kerja-ku perlu", "Saya harus belajar."],
+     ["Beklemeniz lazım.", "tunggu-Anda perlu", "Anda harus menunggu."],
+     ["Bir şey almam lazım.", "satu hal ambil-ku perlu", "Saya perlu membeli sesuatu."]
+    ]},
+    { "type": "p", "text": "Bentuknya: akar + *-me/-ma* + akhiran milik + *lazım*. Kata *gerek* bisa menggantikan *lazım* tanpa mengubah arti." },
+    { "type": "sub", "text": "Cara kedua: -meli" },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia"], "rows": [
+     ["Gitmeliyim.", "Saya harus pergi."],
+     ["Çalışmalısın.", "Kamu harus belajar."],
+     ["Dinlenmeli.", "Dia harus istirahat."],
+     ["Gitmeliyiz.", "Kita harus pergi."],
+     ["Doktora gitmelisiniz.", "Anda harus ke dokter."],
+     ["Gitmemeliyim.", "Saya sebaiknya tidak pergi."]
+    ]},
+    { "type": "p", "text": "*-meli* terasa sedikit lebih kuat dan lebih tertulis; *lazım* lebih sehari-hari. Untuk A1, kuasai satu saja dengan baik — dan pahami yang satunya saat mendengar." }
+   ]
+  },
+  {
+   "title": "Di telepon dan di undangan",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia"], "rows": [
+     ["Alo, ben Budi.", "Halo, ini Budi."],
+     ["Rahatsız ediyor muyum?", "Saya mengganggu?"],
+     ["Kiminle görüşüyorum?", "Saya bicara dengan siapa?"],
+     ["Bir dakika lütfen.", "Sebentar, tolong."],
+     ["Sesiniz iyi gelmiyor.", "Suara Anda tidak jelas."],
+     ["Şimdi müsait değilim.", "Sekarang saya tidak sempat."],
+     ["Sonra arayabilir miyim?", "Boleh saya telepon lagi nanti?"],
+     ["Mesaj atarım.", "Nanti saya kirim pesan."],
+     ["Yanlış numara.", "Salah sambung."],
+     ["Görüşmek üzere.", "Sampai jumpa."]
+    ]},
+    { "type": "sub", "text": "Mengundang dan menjawab" },
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Untuk apa"], "rows": [
+     ["Bize gelir misin?", "Mau datang ke rumah kami?", "mengundang"],
+     ["Bu akşam müsait misin?", "Malam ini kamu sempat?", "mengundang"],
+     ["Çok isterim.", "Mau sekali.", "menerima"],
+     ["Memnuniyetle.", "Dengan senang hati.", "menerima"],
+     ["Maalesef müsait değilim.", "Sayangnya saya tidak sempat.", "menolak"],
+     ["Belki başka zaman.", "Mungkin lain kali.", "menolak"],
+     ["Ne getireyim?", "Saya bawa apa?", "bertanya"],
+     ["Davet için teşekkürler.", "Terima kasih undangannya.", "menutup"]
+    ]},
+    { "type": "kotak", "title": "Bertamu di rumah orang Turki", "items": [
+     "Sepatu dilepas di depan pintu — hampir selalu, dan tuan rumah akan menyediakan sandal. Teh akan datang tanpa kamu minta, dan gelas keduamu akan diisi tanpa bertanya.",
+     "Menolak makanan sekali dianggap kesopanan, bukan penolakan; tuan rumah akan menawarkan lagi. Kalau kamu benar-benar sudah kenyang: *Çok tokum, gerçekten* — \"saya benar-benar kenyang\"."
+    ]},
+    { "type": "kotak", "title": "Ulangan unit 17", "items": [
+     "Tutup bahasa Turkinya dan susun ulang dari ingatan: \"Saya sedang sakit.\" · \"Kepala saya sakit.\" · \"Semoga cepat sembuh.\" · \"Saya tidak punya alergi.\" · \"Sehari berapa kali?\"",
+     "Lalu sebutkan lima bagian tubuh dengan akhiran \"-ku\"."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tr": "aramak", "baca": "a-ra-MAK", "id": "menelepon, mencari" },
+  { "tr": "telefon etmek", "baca": "te-le-FON et-MEK", "id": "menelepon" },
+  { "tr": "mesaj atmak", "baca": "me-SAJ at-MAK", "id": "mengirim pesan" },
+  { "tr": "müsait", "baca": "mü-sa-IT", "id": "sempat, luang" },
+  { "tr": "rahatsız etmek", "baca": "ra-hat-SIZ et-MEK", "id": "mengganggu" },
+  { "tr": "davet", "baca": "da-VET", "id": "undangan" },
+  { "tr": "misafir", "baca": "mi-sa-FIR", "id": "tamu" },
+  { "tr": "ev sahibi", "baca": "ev sa-hi-BI", "id": "tuan rumah" },
+  { "tr": "getirmek", "baca": "ge-tir-MEK", "id": "membawa (ke sini)" },
+  { "tr": "götürmek", "baca": "gö-tür-MEK", "id": "membawa (pergi)" },
+  { "tr": "sevmek", "baca": "sev-MEK", "id": "menyukai, mencintai" },
+  { "tr": "hoşuma gitmek", "baca": "ho-SYU-ma git-MEK", "id": "saya menyukainya" },
+  { "tr": "öğrenmek", "baca": "öö-ren-MEK", "id": "belajar, mengetahui" },
+  { "tr": "yüzmek", "baca": "yüz-MEK", "id": "berenang" },
+  { "tr": "lazım, gerek", "baca": "LA-zım, ge-REK", "id": "perlu, harus" },
+  { "tr": "mantı", "baca": "man-TI", "id": "pangsit khas Turki" },
+  { "tr": "çiçek", "baca": "ci-CEK", "id": "bunga" },
+  { "tr": "tok / aç", "baca": "tok / ac", "id": "kenyang / lapar" },
+  { "tr": "sadece", "baca": "sa-de-JE", "id": "hanya" },
+  { "tr": "madem", "baca": "ma-DEM", "id": "karena, kalau memang" },
+  { "tr": "ısrar etmek", "baca": "ıs-RAR et-MEK", "id": "memaksa, mendesak" },
+  { "tr": "adres", "baca": "ad-RES", "id": "alamat" },
+  { "tr": "yanlış / doğru", "baca": "yan-LISY / do-RU", "id": "salah / benar" },
+  { "tr": "ses", "baca": "ses", "id": "suara" },
+  { "tr": "memnuniyetle", "baca": "mem-nu-ni-yet-LE", "id": "dengan senang hati" },
+  { "tr": "başka zaman", "baca": "BASY-ka za-MAN", "id": "lain kali" },
+  { "tr": "şarkı", "baca": "syar-KI", "id": "lagu" },
+  { "tr": "kendi", "baca": "ken-DI", "id": "diri sendiri" },
+  { "tr": "görüşmek üzere", "baca": "gö-rüsy-MEK ü-ze-RE", "id": "sampai jumpa" },
+  { "tr": "estağfurullah", "baca": "es-taa-fu-rul-LAH", "id": "jangan begitu, ah, tidak" }
+ ],
+ "exercises": [
+  { "prompt": "Ubah jadi pola *-meyi sevmek* untuk *ben*.", "items": [
+   "yüzmek → ____",
+   "okumak → ____",
+   "gezmek → ____",
+   "yemek → ____",
+   "konuşmak → ____",
+   "çalışmak (sangkal) → ____"
+  ]},
+  { "prompt": "Ubah jadi kalimat \"harus\" dengan pola *-mem lazım*.", "items": [
+   "gitmek (ben) → ____",
+   "çalışmak (sen) → ____",
+   "beklemek (siz) → ____",
+   "almak (ben) → ____",
+   "dinlenmek (o) → ____",
+   "gitmek (biz) → ____"
+  ]},
+  { "prompt": "Terjemahkan ke bahasa Turki.", "items": [
+   "Halo, ini Budi.",
+   "Saya mengganggu?",
+   "Sekarang saya tidak sempat.",
+   "Mau datang ke rumah kami hari Minggu?",
+   "Mau sekali!",
+   "Saya bawa apa?"
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "misin / bize / gelir / ?",
+   "seviyorum / yemeyi / mantı / çok",
+   "getireyim / ne / ?",
+   "lazım / almam / şey / bir",
+   "değilim / şimdi / müsait",
+   "üzere / görüşmek"
+  ]}
+ ],
+ "answers": [
+  "Yüzmeyi seviyorum. — Okumayı seviyorum. — Gezmeyi seviyorum. — Yemeyi seviyorum. — Konuşmayı seviyorum. — Çalışmayı sevmiyorum.",
+  "Gitmem lazım. — Çalışman lazım. — Beklemeniz lazım. — Almam lazım. — Dinlenmesi lazım. — Gitmemiz lazım.",
+  "Alo, ben Budi. — Rahatsız ediyor muyum? — Şimdi müsait değilim. — Pazar günü bize gelir misin? — Çok isterim! — Ne getireyim?",
+  "Bize gelir misin? — Mantı yemeyi çok seviyorum. — Ne getireyim? — Bir şey almam lazım. — Şimdi müsait değilim. — Görüşmek üzere."
+ ]
+}

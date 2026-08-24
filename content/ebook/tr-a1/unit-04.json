@@ -1,0 +1,188 @@
+{
+ "title": "Keluarga saya",
+ "title_target": "Benim ailem",
+ "goal": "Menempelkan kepemilikan ke ujung kata benda, menyebut anggota keluarga, dan mengatakan berapa umurmu.",
+ "bekal": [
+  "membentuk *evim, evin, evi, evimiz, eviniz, evleri* tanpa melihat tabel",
+  "merangkai dua kata benda dengan pola *Ayşe'nin evi* — pemilik lalu yang dimiliki",
+  "menanyakan dan menyebutkan umur dengan *kaç yaşındasın*"
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — Aile fotoğrafı",
+   "intro": "Fatma Hanım, si pemilik rumah, mengetuk pintu membawa nampan teh. Di meja Budi ada foto keluarga.",
+   "lines": [
+    { "speaker": "Fatma:", "text": "Budi, çayın hazır. Bu fotoğraf kimin?", "id": "Budi, tehmu siap. Foto ini punya siapa?", "literal": "Budi, teh-mu siap. ini foto siapa-punya?" },
+    { "speaker": "Budi:", "text": "Benim. Bu benim ailem.", "id": "Punya saya. Ini keluarga saya.", "literal": "saya-punya. ini saya-punya keluarga-ku." },
+    { "speaker": "Fatma:", "text": "Maşallah! Bu kim? Annen mi?", "id": "Masyaallah! Ini siapa? Ibumu?", "literal": "masyaallah! ini siapa? ibu-mu apakah?" },
+    { "speaker": "Budi:", "text": "Evet, annem. Yanındaki babam.", "id": "Ya, ibu saya. Yang di sebelahnya ayah saya.", "literal": "ya, ibu-ku. samping-nya-yang ayah-ku." },
+    { "speaker": "Fatma:", "text": "Kardeşin var mı?", "id": "Kamu punya saudara?", "literal": "saudara-mu ada apakah?" },
+    { "speaker": "Budi:", "text": "Evet, bir ablam ve bir erkek kardeşim var.", "id": "Ya, saya punya seorang kakak perempuan dan seorang adik laki-laki.", "literal": "ya, satu kakak-perempuan-ku dan satu laki-laki adik-ku ada." },
+    { "speaker": "Fatma:", "text": "Ablan kaç yaşında?", "id": "Kakakmu berapa umurnya?", "literal": "kakak-mu berapa usia-nya-di?" },
+    { "speaker": "Budi:", "text": "Yirmi yedi yaşında. Evli, bir kızı var.", "id": "Dua puluh tujuh tahun. Sudah menikah, punya seorang anak perempuan.", "literal": "dua-puluh tujuh usia-nya-di. menikah, satu anak-perempuan-nya ada." },
+    { "speaker": "Fatma:", "text": "Yani sen dayısın! Peki sen kaç yaşındasın?", "id": "Berarti kamu paman! Kalau kamu berapa umurmu?", "literal": "jadi kamu paman-kamu! kalau-begitu kamu berapa usia-di-kamu?" },
+    { "speaker": "Budi:", "text": "Yirmi bir yaşındayım.", "id": "Saya dua puluh satu tahun.", "literal": "dua-puluh satu usia-di-saya." },
+    { "speaker": "Fatma:", "text": "Benim oğlum da senin yaşında. Adı Emre.", "id": "Anak laki-laki saya juga seumurmu. Namanya Emre.", "literal": "saya-punya anak-laki-ku juga kamu-punya usia-nya-di. nama-nya Emre." },
+    { "speaker": "Budi:", "text": "Aileniz büyük mü Fatma Teyze?", "id": "Keluarga Anda besar, Bu Fatma?", "literal": "keluarga-Anda besar apakah Fatma Bibi?" },
+    { "speaker": "Fatma:", "text": "Çok büyük! Beş çocuk, on iki torun.", "id": "Besar sekali! Lima anak, dua belas cucu.", "literal": "sangat besar! lima anak, sepuluh dua cucu." }
+   ],
+   "notes": [
+    "**Kepemilikan ditulis dua kali — dan itu normal.** *Benim ailem* memakai *benim* (\"milikku\") DAN akhiran *-m* di ujung *aile*. Akhirannya yang wajib; kata *benim* boleh dibuang. Ia dipakai hanya kalau kamu ingin menekankan: \"keluarga SAYA, bukan keluarga orang lain\".",
+    "**Kaç yaşında harfiahnya \"di usia berapa\".** Bahasa Turki menaruh umur sebagai tempat, bukan sebagai jumlah: *yirmi bir yaşındayım* = \"saya berada di usia dua puluh satu\". Karena itu ada akhiran *-da* di tengahnya.",
+    "**Kardeş tidak menyebut jenis kelamin.** Ia berarti \"saudara kandung\", laki-laki atau perempuan. Kalau perlu jelas: *erkek kardeş* (saudara laki-laki), *kız kardeş* (perempuan). Untuk yang lebih tua dipakai kata lain sama sekali: *abi* dan *abla*.",
+    "**Dayı dan amca dua kata berbeda.** *Amca* adalah saudara laki-laki AYAH, *dayı* saudara laki-laki IBU. Begitu juga *hala* (saudara perempuan ayah) dan *teyze* (saudara perempuan ibu). Bahasa Turki membedakan garis keturunan yang di bahasa Indonesia sama-sama disebut paman dan bibi."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Akhiran milik",
+   "blocks": [
+    { "type": "p", "text": "Sama seperti \"adalah\", kepemilikan bukan kata terpisah melainkan akhiran. Bentuknya mengikuti keselarasan vokal empat bentuk, dan menyisipkan penyambung kalau kata induknya berakhir vokal." },
+    { "type": "tabel", "head": ["Pemilik", "Akhiran", "ev (rumah)", "araba (mobil)", "göz (mata)"], "rows": [
+     ["benim (saya)", "-(i)m", "ev**im**", "araba**m**", "göz**üm**"],
+     ["senin (kamu)", "-(i)n", "ev**in**", "araba**n**", "göz**ün**"],
+     ["onun (dia)", "-(s)i", "ev**i**", "araba**sı**", "göz**ü**"],
+     ["bizim (kami)", "-(i)miz", "ev**imiz**", "araba**mız**", "göz**ümüz**"],
+     ["sizin (Anda)", "-(i)niz", "ev**iniz**", "araba**nız**", "göz**ünüz**"],
+     ["onların (mereka)", "-leri", "ev**leri**", "araba**ları**", "göz**leri**"]
+    ]},
+    { "type": "p", "text": "Perhatikan baris ketiga: kata berakhir vokal memakai penyambung **s** — *araba-s-ı*, *anne-s-i*, *kapı-s-ı*. Ini penyambung kedua dari tiga yang dijanjikan di unit 1." },
+    { "type": "sub", "text": "Konsonan yang melunak" },
+    { "type": "p", "text": "Kalau kata berakhir **p, ç, t, k** dan akhirannya mulai dengan vokal, konsonan itu melunak jadi **b, c, d, ğ**. Ini bukan pengecualian melainkan aturan yang berlaku di seluruh bahasa:" },
+    { "type": "tabel", "head": ["Kata dasar", "+ akhiran milik", "Perubahan"], "rows": [
+     ["kitap (buku)", "kita**b**ım", "p → b"],
+     ["ağaç (pohon)", "ağa**c**ım", "ç → c"],
+     ["kanat (sayap)", "kana**d**ım", "t → d"],
+     ["sokak (jalan)", "soka**ğ**ım", "k → ğ"],
+     ["renk (warna)", "ren**g**im", "k → g sesudah n"],
+     ["at (kuda)", "a**t**ım", "kata satu suku sering TIDAK melunak"]
+    ]},
+    { "type": "kotak", "title": "Kenapa aturan ini penting sejak sekarang", "items": [
+     "Pelunakan ini bekerja untuk SEMUA akhiran berawalan vokal, bukan hanya milik: *kitabı* (bukunya), *kitaba* (ke buku), *sokağa* (ke jalan), *ağacın* (milik pohon).",
+     "Kalau kamu mengucapkan *kitapım*, orang tetap mengerti — tapi telinga Turki langsung mendengar aksen asing. Melunakkannya adalah salah satu perbaikan termurah untuk terdengar wajar."
+    ]}
+   ]
+  },
+  {
+   "title": "Dua benda yang dirangkai",
+   "blocks": [
+    { "type": "p", "text": "Untuk mengatakan \"rumah Ayşe\" atau \"pintu kamar\", bahasa Turki memakai pola yang harus dilihat dua kali sebelum masuk akal: **pemilik + akhiran -in, lalu yang dimiliki + akhiran -i**. Dua-duanya ditandai." },
+    { "type": "tabel", "head": ["Bahasa Indonesia", "Türkçe", "Bongkarannya"], "rows": [
+     ["rumah Ayşe", "Ayşe'**nin** ev**i**", "Ayşe-milik rumah-nya"],
+     ["buku Budi", "Budi'**nin** kitab**ı**", "Budi-milik buku-nya"],
+     ["pintu kamar", "oda**nın** kapı**sı**", "kamar-milik pintu-nya"],
+     ["ibu guru itu", "öğretmen**in** anne**si**", "guru-milik ibu-nya"],
+     ["nomor telepon saya", "benim telefon numara**m**", "saya-milik telepon nomor-ku"]
+    ]},
+    { "type": "p", "text": "Ada pola kedua yang lebih longgar: kalau pemiliknya bukan orang atau benda tertentu melainkan **jenis**, akhiran *-in* dibuang dan hanya yang belakang yang ditandai. *Türk kahvesi* (kopi Turki), *öğrenci yurdu* (asrama mahasiswa), *ders kitabı* (buku pelajaran), *domates çorbası* (sup tomat). Kamu akan bertemu pola ini di setiap menu." },
+    { "type": "kotak", "title": "Tanda petik pada nama diri", "items": [
+     "Akhiran yang menempel pada **nama orang, kota, atau negara** dipisahkan dengan tanda petik: *Ayşe'nin*, *İstanbul'da*, *Türkiye'ye*, *Jakarta'dan*.",
+     "Aturan ejaan ini resmi dan dipakai di semua tulisan, termasuk pesan WhatsApp. Tanpa tanda petik, tulisanmu terlihat seperti belum selesai sekolah."
+    ]}
+   ]
+  },
+  {
+   "title": "Keluarga dan umur",
+   "blocks": [
+    { "type": "tabel", "head": ["Türkçe", "Bahasa Indonesia", "Türkçe", "Bahasa Indonesia"], "rows": [
+     ["anne", "ibu", "baba", "ayah"],
+     ["abla", "kakak perempuan", "abi (ağabey)", "kakak laki-laki"],
+     ["kız kardeş", "adik perempuan", "erkek kardeş", "adik laki-laki"],
+     ["oğul (oğlum)", "anak laki-laki", "kız", "anak perempuan; gadis"],
+     ["çocuk", "anak", "torun", "cucu"],
+     ["dede", "kakek", "nine", "nenek"],
+     ["eş", "pasangan", "koca / karı", "suami / istri"],
+     ["amca / dayı", "paman (dari ayah / ibu)", "hala / teyze", "bibi (dari ayah / ibu)"],
+     ["yeğen", "keponakan", "kuzen", "sepupu"],
+     ["evli / bekâr", "menikah / lajang", "akraba", "kerabat"]
+    ]},
+    { "type": "p", "text": "*Oğul* berubah bentuk begitu diberi akhiran: *oğlum*, *oğlun*, *oğlu* — vokal *u* di suku kedua rontok. Beberapa kata pendek berperilaku begini: *burun → burnum* (hidungku), *şehir → şehri* (kotanya), *akıl → aklım* (akalku)." },
+    { "type": "sub", "text": "Umur" },
+    { "type": "tabel", "head": ["Pertanyaan / jawaban", "Bahasa Indonesia"], "rows": [
+     ["Kaç yaşındasın?", "Berapa umurmu?"],
+     ["Kaç yaşındasınız?", "Berapa umur Anda?"],
+     ["Yirmi bir yaşındayım.", "Saya 21 tahun."],
+     ["Kardeşim on yaşında.", "Adik saya 10 tahun."],
+     ["Doğum günün ne zaman?", "Kapan ulang tahunmu?"]
+    ]},
+    { "type": "kotak", "title": "Ulangan unit 2", "items": [
+     "Tutup bahasa Turkinya dan susun ulang dari ingatan: \"Ini apa?\" · \"Ini buku dan buku tulis.\" · \"Itu siapa?\" · \"Kamarnya bagus sekali.\" · \"Kuncinya di mana?\"",
+     "Lalu satu tambahan yang lebih berat: sebutkan bentuk jamak dari *sokak*, *öğretmen*, *kapı*, dan *göz* tanpa melihat."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tr": "aile", "baca": "a-i-LE", "id": "keluarga" },
+  { "tr": "anne", "baca": "an-NE", "id": "ibu" },
+  { "tr": "baba", "baca": "ba-BA", "id": "ayah" },
+  { "tr": "abla", "baca": "AB-la", "id": "kakak perempuan" },
+  { "tr": "abi", "baca": "a-BI", "id": "kakak laki-laki" },
+  { "tr": "kardeş", "baca": "kar-DESY", "id": "saudara kandung" },
+  { "tr": "oğul", "baca": "o-UL", "id": "anak laki-laki" },
+  { "tr": "kız", "baca": "kız", "id": "anak perempuan, gadis" },
+  { "tr": "çocuk", "baca": "co-JUK", "id": "anak" },
+  { "tr": "torun", "baca": "to-RUN", "id": "cucu" },
+  { "tr": "dede / nine", "baca": "de-DE / ni-NE", "id": "kakek / nenek" },
+  { "tr": "eş", "baca": "esy", "id": "pasangan, suami/istri" },
+  { "tr": "dayı / hala", "baca": "da-YI / ha-LA", "id": "paman (ibu) / bibi (ayah)" },
+  { "tr": "yeğen", "baca": "ye-EN", "id": "keponakan" },
+  { "tr": "evli / bekâr", "baca": "ev-LI / be-KYAR", "id": "menikah / lajang" },
+  { "tr": "yaş", "baca": "yasy", "id": "usia, tahun umur" },
+  { "tr": "doğum günü", "baca": "do-UM gü-NÜ", "id": "ulang tahun" },
+  { "tr": "fotoğraf", "baca": "fo-to-RAF", "id": "foto" },
+  { "tr": "kimin?", "baca": "ki-MIN", "id": "punya siapa?" },
+  { "tr": "benim / senin", "baca": "be-NIM / se-NIN", "id": "milik saya / milikmu" },
+  { "tr": "onun", "baca": "o-NUN", "id": "miliknya" },
+  { "tr": "bizim / sizin", "baca": "bi-ZIM / si-ZIN", "id": "milik kami / milik Anda" },
+  { "tr": "ağaç", "baca": "a-AC", "id": "pohon" },
+  { "tr": "hazır", "baca": "ha-ZIR", "id": "siap" },
+  { "tr": "yani", "baca": "ya-NI", "id": "yaitu, berarti" },
+  { "tr": "maşallah", "baca": "ma-syal-LAH", "id": "masyaallah (memuji)" },
+  { "tr": "renk", "baca": "renk", "id": "warna" },
+  { "tr": "numara", "baca": "nu-ma-RA", "id": "nomor" },
+  { "tr": "şehir", "baca": "sye-HIR", "id": "kota" },
+  { "tr": "sokak", "baca": "so-KAK", "id": "jalan kecil" }
+ ],
+ "exercises": [
+  { "prompt": "Tambahkan akhiran milik \"-ku\" (*benim*).", "items": [
+   "ev → ____",
+   "kitap → ____",
+   "araba → ____",
+   "anne → ____",
+   "oğul → ____",
+   "sokak → ____"
+  ]},
+  { "prompt": "Rangkai dua kata benda dengan pola *-in ... -i*.", "items": [
+   "Ayşe + ev → ____",
+   "Budi + kitap → ____",
+   "oda + kapı → ____",
+   "öğretmen + araba → ____",
+   "Türkiye + başkent → ____",
+   "kardeşim + ad → ____"
+  ]},
+  { "prompt": "Terjemahkan ke bahasa Turki.", "items": [
+   "Ini ibu saya.",
+   "Kamu punya saudara?",
+   "Saya punya seorang kakak perempuan.",
+   "Berapa umurmu?",
+   "Saya dua puluh satu tahun.",
+   "Adik saya sepuluh tahun."
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "ailem / bu / benim",
+   "var / kardeşin / mı / ?",
+   "yaşındayım / bir / yirmi",
+   "evi / Ayşe'nin / güzel / çok",
+   "kimin / bu / fotoğraf / ?",
+   "yaşında / kaç / ablan / ?"
+  ]}
+ ],
+ "answers": [
+  "evim — kitabım — arabam — annem — oğlum — sokağım",
+  "Ayşe'nin evi — Budi'nin kitabı — odanın kapısı — öğretmenin arabası — Türkiye'nin başkenti — kardeşimin adı",
+  "Bu benim annem. — Kardeşin var mı? — Bir ablam var. — Kaç yaşındasın? — Yirmi bir yaşındayım. — Kardeşim on yaşında.",
+  "Bu benim ailem. — Kardeşin var mı? — Yirmi bir yaşındayım. — Ayşe'nin evi çok güzel. — Bu fotoğraf kimin? — Ablan kaç yaşında?"
+ ]
+}

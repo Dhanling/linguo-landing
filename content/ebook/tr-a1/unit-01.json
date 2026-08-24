@@ -1,0 +1,196 @@
+{
+ "title": "Halo, siapa namamu?",
+ "title_target": "Merhaba, adınız ne?",
+ "goal": "Menyapa sesuai waktu, menyebut nama dan asal, menanyakan kabar, dan memasang akhiran yang berarti \"adalah\" sejak kalimat pertama.",
+ "bekal": [
+  "menyapa dengan *günaydın*, *iyi günler*, *iyi akşamlar* pada tempatnya masing-masing",
+  "menyebut nama sendiri dengan *benim adım* dan menanyakan nama orang lain",
+  "menempelkan *-im/-sin/-siniz* untuk mengatakan \"saya/kamu/Anda adalah ...\""
+ ],
+ "dialogs": [
+  {
+   "title": "Diyalog — İstanbul'da ilk gün",
+   "intro": "Hari pertama di Istanbul. Budi baru keluar dari bandara dan bertemu Ayşe, staf sekolah bahasa yang menjemputnya.",
+   "lines": [
+    { "speaker": "Ayşe:", "text": "Merhaba! Hoş geldiniz. Ben Ayşe.", "id": "Halo! Selamat datang. Saya Ayşe.", "literal": "halo! menyenangkan datang-Anda. saya Ayşe." },
+    { "speaker": "Budi:", "text": "Merhaba, hoş bulduk. Benim adım Budi.", "id": "Halo, terima kasih. Nama saya Budi.", "literal": "halo, menyenangkan menemukan-kami. saya-punya nama-ku Budi." },
+    { "speaker": "Ayşe:", "text": "Memnun oldum Budi Bey. Nasılsınız?", "id": "Senang berkenalan, Pak Budi. Apa kabar?", "literal": "senang menjadi-saya Budi Tuan. bagaimana-Anda?" },
+    { "speaker": "Budi:", "text": "İyiyim, teşekkür ederim. Siz nasılsınız?", "id": "Saya baik, terima kasih. Anda bagaimana?", "literal": "baik-saya, terima-kasih melakukan-saya. Anda bagaimana-Anda?" },
+    { "speaker": "Ayşe:", "text": "Ben de iyiyim, sağ olun. Nerelisiniz?", "id": "Saya juga baik, terima kasih. Anda orang mana?", "literal": "saya juga baik-saya, sehat jadilah-Anda. mana-orang-Anda?" },
+    { "speaker": "Budi:", "text": "Endonezyalıyım, Jakartalıyım.", "id": "Saya orang Indonesia, orang Jakarta.", "literal": "Indonesia-orang-saya, Jakarta-orang-saya." },
+    { "speaker": "Ayşe:", "text": "Çok uzak! Türkçe biliyor musunuz?", "id": "Jauh sekali! Anda bisa bahasa Turki?", "literal": "sangat jauh! Turki-bahasa tahu apakah-Anda?" },
+    { "speaker": "Budi:", "text": "Biraz. Öğrenciyim, Türkçe öğreniyorum.", "id": "Sedikit. Saya pelajar, saya sedang belajar bahasa Turki.", "literal": "sedikit. pelajar-saya, Turki-bahasa sedang-belajar-saya." },
+    { "speaker": "Ayşe:", "text": "Harika! Ben de öğretmenim.", "id": "Hebat! Saya juga guru.", "literal": "hebat! saya juga guru-saya." },
+    { "speaker": "Budi:", "text": "Çok memnun oldum.", "id": "Senang sekali berkenalan.", "literal": "sangat senang menjadi-saya." },
+    { "speaker": "Ayşe:", "text": "Buyurun, araba burada.", "id": "Silakan, mobilnya di sini.", "literal": "silakan, mobil di-sini." },
+    { "speaker": "Budi:", "text": "Tamam, teşekkürler!", "id": "Baik, terima kasih!", "literal": "baik, terima-kasih-jamak!" }
+   ],
+   "notes": [
+    "**Hoş geldiniz menuntut jawaban tetap.** Harfiahnya \"kalian datang dengan menyenangkan\", dan jawabannya selalu *hoş bulduk* — \"kami menemukan (semuanya) menyenangkan\". Bukan *teşekkür ederim*. Pasangan ini dipakai di mana saja: di rumah orang, di toko, bahkan di pesawat.",
+    "**Ada dua kata \"kamu\", dan memilih salah menyakitkan.** *Sen* untuk teman, sebaya, anak-anak. *Siz* untuk orang yang baru dikenal, lebih tua, atau pelanggan — sama seperti \"Anda\". Kalau ragu, pakai *siz*: terlalu sopan tidak pernah menyinggung, terlalu akrab bisa.",
+    "**Bey dan Hanım dipasang sesudah nama depan, bukan nama keluarga.** *Budi Bey*, *Ayşe Hanım*. Dalam bahasa Indonesia ini kira-kira \"Pak Budi\" dan \"Bu Ayşe\" — tapi perhatikan urutannya: nama dulu, gelarnya belakangan, seperti semua hal lain dalam bahasa ini.",
+    "**\"Adalah\" tidak pernah berdiri sendiri.** *Öğrenciyim* = pelajar + saya. *İyiyim* = baik + saya. Tidak ada kata terpisah untuk \"adalah\" atau \"saya sedang\": ia ditempel ke ujung kata terakhir. Kalau kata itu berakhir vokal, disisipkan *y* penyambung — *iyi-y-im*, bukan *iyiim*."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalimat yang menolongmu bertahan",
+   "blocks": [
+    { "type": "p", "text": "Dua belas kalimat berikut bukan bahan tata bahasa — ia perkakas darurat. Hafalkan bentuk utuhnya sekarang, pahami susunannya nanti." },
+    { "type": "tabel", "head": ["Türkçe", "Cara baca", "Bahasa Indonesia"], "rows": [
+     ["Evet / Hayır", "e-VET / ha-YIR", "Ya / Tidak"],
+     ["Teşekkür ederim", "te-syek-KÜR e-de-RIM", "Terima kasih"],
+     ["Rica ederim", "ri-JA e-de-RIM", "Sama-sama"],
+     ["Özür dilerim", "ö-ZÜR di-le-RIM", "Maaf"],
+     ["Pardon", "par-DON", "Permisi (dipakai apa adanya)"],
+     ["Bilmiyorum", "bil-MI-yo-rum", "Saya tidak tahu"],
+     ["Anlamıyorum", "an-la-MI-yo-rum", "Saya tidak mengerti"],
+     ["Tekrar eder misiniz?", "tek-RAR e-DER mi-si-niz", "Bisa diulang?"],
+     ["Yavaş lütfen", "ya-VASY LÜT-fen", "Pelan-pelan, tolong"],
+     ["İngilizce biliyor musunuz?", "in-gi-LIZ-je bi-li-YOR mu-su-nuz", "Anda bisa bahasa Inggris?"],
+     ["Bu Türkçe ne demek?", "bu türk-CE ne de-MEK", "Ini bahasa Turkinya apa?"],
+     ["Yardım edin!", "yar-DIM e-DIN", "Tolong!"]
+    ]},
+    { "type": "p", "text": "*Rica ederim* harfiahnya \"saya memohon\" — dan justru itulah jawaban baku untuk terima kasih, sama anehnya dengan \"sama-sama\" kalau dipikir terlalu dalam. Bentuk lain yang sama seringnya: *bir şey değil* (\"bukan apa-apa\")." },
+    { "type": "kotak", "title": "Satu kalimat yang mengubah pengalamanmu di Turki", "items": [
+     "*Türkçe öğreniyorum. Türkçe konuşabilir miyiz?* — \"Saya sedang belajar bahasa Turki. Boleh kita bicara Turki?\"",
+     "Berbeda dengan banyak negara lain, orang Turki jarang beralih ke bahasa Inggris — sering kali karena memang tidak bisa. Yang lebih sering terjadi adalah sebaliknya: mereka berbicara terlalu cepat karena senang kamu mencoba. Kalimat di atas, ditambah *yavaş lütfen*, menyelesaikan keduanya."
+    ]}
+   ]
+  },
+  {
+   "title": "Sapaan menurut waktu",
+   "blocks": [
+    { "type": "tabel", "head": ["Sapaan", "Cara baca", "Waktu", "Catatan"], "rows": [
+     ["Günaydın", "gü-nay-DIN", "sampai tengah hari", "harfiah: harinya terang"],
+     ["İyi günler", "i-YI gün-LER", "siang, kapan saja", "juga dipakai saat berpisah"],
+     ["İyi akşamlar", "i-YI ak-syam-LAR", "sesudah matahari turun", "juga saat berpisah"],
+     ["İyi geceler", "i-YI ge-je-LER", "sebelum tidur", "hanya untuk berpisah"],
+     ["Merhaba", "mer-ha-BA", "kapan saja", "paling aman untuk semua orang"],
+     ["Selam", "se-LAM", "kapan saja", "santai, untuk teman"]
+    ]},
+    { "type": "p", "text": "Perhatikan bahwa tiga sapaan memakai bentuk jamak — *günler*, *akşamlar*, *geceler*, harfiahnya \"hari-hari yang baik\", \"malam-malam yang baik\". Bahasa Turki menganggap doa lebih hangat kalau diucapkan jamak; kamu akan bertemu pola ini lagi di *teşekkürler* dan *kolay gelsin*." },
+    { "type": "sub", "text": "Berpisah" },
+    { "type": "tabel", "head": ["Türkçe", "Cara baca", "Siapa yang mengucapkan"], "rows": [
+     ["Hoşça kal", "HOSY-ca kal", "yang pergi, kepada yang tinggal"],
+     ["Güle güle", "gü-LE gü-LE", "yang tinggal, kepada yang pergi"],
+     ["Görüşürüz", "gö-rü-syü-RÜZ", "keduanya — \"sampai jumpa\""],
+     ["Kendine iyi bak", "ken-di-NE i-YI bak", "keduanya — \"jaga dirimu\""],
+     ["İyi yolculuklar", "i-YI yol-ju-luk-LAR", "kepada yang akan bepergian"]
+    ]},
+    { "type": "kotak", "title": "Jangan tertukar", "items": [
+     "*Güle güle* TIDAK boleh diucapkan orang yang sedang pergi. Harfiahnya \"sambil tertawa, sambil tertawa\" — doa untuk perjalanan orang lain. Yang pergi mengucapkan *hoşça kal* (kepada satu orang) atau *hoşça kalın* (kepada beberapa orang atau kepada yang dihormati).",
+     "Kalau ragu di antara keduanya, *görüşürüz* selamat dipakai siapa pun ke arah mana pun."
+    ]}
+   ]
+  },
+  {
+   "title": "Ben kimim? — akhiran yang berarti \"adalah\"",
+   "blocks": [
+    { "type": "p", "text": "Bahasa Turki tidak punya kata untuk \"adalah\". Yang ada adalah **akhiran orang** yang ditempel ke kata benda atau kata sifat. Karena akhiran itu sudah menyebut siapa pelakunya, kata ganti di depannya boleh dibuang — dan biasanya memang dibuang." },
+    { "type": "tabel", "head": ["Kata ganti", "Akhiran", "öğrenci (pelajar)", "Bahasa Indonesia"], "rows": [
+     ["ben (saya)", "-im", "öğrenciyim", "saya (adalah) pelajar"],
+     ["sen (kamu)", "-sin", "öğrencisin", "kamu pelajar"],
+     ["o (dia)", "— / -dir", "öğrenci(dir)", "dia pelajar"],
+     ["biz (kami/kita)", "-iz", "öğrenciyiz", "kami pelajar"],
+     ["siz (kalian/Anda)", "-siniz", "öğrencisiniz", "kalian pelajar"],
+     ["onlar (mereka)", "-ler", "öğrenciler", "mereka pelajar"]
+    ]},
+    { "type": "p", "text": "Orang ketiga tunggal tidak berakhiran apa pun dalam percakapan: *O öğretmen* — \"dia guru\". Akhiran *-dir* ada, tapi rasanya resmi: ia muncul di papan pengumuman, kemasan, dan berita (*Kapı kapalıdır* — \"pintu tertutup\")." },
+    { "type": "sub", "text": "Menyangkal: değil" },
+    { "type": "p", "text": "Untuk mengatakan \"bukan\", tambahkan kata terpisah *değil* — dan akhiran orangnya pindah ke sana: *Öğretmen değilim* (saya bukan guru), *Türk değilsin* (kamu bukan orang Turki), *Hazır değiliz* (kami belum siap)." },
+    { "type": "sub", "text": "Dari mana kamu?" },
+    { "type": "p", "text": "Akhiran *-li/-lı/-lu/-lü* berarti \"orang dari\" atau \"yang punya\". Tempelkan ke nama tempat: *İstanbullu* (orang Istanbul), *Ankaralı*, *Jakartalı*, *Endonezyalı*. Lalu tambahkan akhiran orang di belakangnya: **Endonezyalıyım** — saya orang Indonesia." },
+    { "type": "tabel", "head": ["Pertanyaan", "Cara baca", "Artinya"], "rows": [
+     ["Adınız ne?", "a-dı-NIZ ne", "Nama Anda siapa?"],
+     ["Adın ne?", "a-DIN ne", "Namamu siapa? (akrab)"],
+     ["Nerelisiniz?", "ne-re-li-si-NIZ", "Anda orang mana?"],
+     ["Nasılsınız?", "na-SIL-sı-nız", "Apa kabar? (sopan)"],
+     ["Nasılsın?", "NA-sıl-sın", "Apa kabar? (akrab)"],
+     ["Ne iş yapıyorsunuz?", "ne isy ya-pı-yor-su-NUZ", "Anda bekerja apa?"]
+    ]},
+    { "type": "kotak", "title": "Kenapa \"iyiyim\" ada huruf y-nya", "items": [
+     "Bahasa Turki tidak suka dua vokal bertabrakan. Kalau kata berakhir vokal dan akhirannya juga mulai vokal, disisipkan konsonan penyambung — di sini **y**: *iyi + im* → *iyiyim*, *Ayşe + im* → *Ayşe'yim*.",
+     "Penyambung ini akan muncul terus sepanjang modul, dengan tiga huruf berbeda: *y*, *n*, dan *s*. Setiap kali, alasannya sama: mencegah dua vokal beradu."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tr": "merhaba", "baca": "mer-ha-BA", "id": "halo" },
+  { "tr": "günaydın", "baca": "gü-nay-DIN", "id": "selamat pagi" },
+  { "tr": "iyi günler", "baca": "i-YI gün-LER", "id": "selamat siang" },
+  { "tr": "iyi akşamlar", "baca": "i-YI ak-syam-LAR", "id": "selamat malam (sore)" },
+  { "tr": "iyi geceler", "baca": "i-YI ge-je-LER", "id": "selamat tidur" },
+  { "tr": "hoş geldiniz", "baca": "hosy gel-di-NIZ", "id": "selamat datang" },
+  { "tr": "hoş bulduk", "baca": "hosy bul-DUK", "id": "jawaban untuk \"selamat datang\"" },
+  { "tr": "nasılsınız", "baca": "na-SIL-sı-nız", "id": "apa kabar (sopan)" },
+  { "tr": "iyi", "baca": "i-YI", "id": "baik, bagus" },
+  { "tr": "teşekkür ederim", "baca": "te-syek-KÜR e-de-RIM", "id": "terima kasih" },
+  { "tr": "sağ olun", "baca": "saa o-LUN", "id": "terima kasih (santai)" },
+  { "tr": "rica ederim", "baca": "ri-JA e-de-RIM", "id": "sama-sama" },
+  { "tr": "evet / hayır", "baca": "e-VET / ha-YIR", "id": "ya / tidak" },
+  { "tr": "ben / sen", "baca": "ben / sen", "id": "saya / kamu" },
+  { "tr": "o", "baca": "o", "id": "dia" },
+  { "tr": "biz / siz", "baca": "biz / siz", "id": "kami / kalian, Anda" },
+  { "tr": "onlar", "baca": "on-LAR", "id": "mereka" },
+  { "tr": "ad, isim", "baca": "ad, i-SIM", "id": "nama" },
+  { "tr": "ne", "baca": "ne", "id": "apa" },
+  { "tr": "nerede", "baca": "NE-re-de", "id": "di mana" },
+  { "tr": "-li / -lı / -lu / -lü", "baca": "li / lı / lu / lü", "id": "orang dari (asal)" },
+  { "tr": "öğrenci", "baca": "öö-ren-JI", "id": "pelajar, mahasiswa" },
+  { "tr": "öğretmen", "baca": "öö-ret-MEN", "id": "guru" },
+  { "tr": "doktor", "baca": "dok-TOR", "id": "dokter" },
+  { "tr": "değil", "baca": "de-YIL", "id": "bukan, tidak" },
+  { "tr": "de / da", "baca": "de / da", "id": "juga" },
+  { "tr": "çok", "baca": "cok", "id": "sangat, banyak" },
+  { "tr": "biraz", "baca": "bi-RAZ", "id": "sedikit" },
+  { "tr": "memnun oldum", "baca": "mem-NUN ol-DUM", "id": "senang berkenalan" },
+  { "tr": "buyurun", "baca": "bu-yu-RUN", "id": "silakan" },
+  { "tr": "tamam", "baca": "ta-MAM", "id": "baik, oke" },
+  { "tr": "harika", "baca": "ha-ri-KA", "id": "hebat, luar biasa" },
+  { "tr": "görüşürüz", "baca": "gö-rü-syü-RÜZ", "id": "sampai jumpa" },
+  { "tr": "Türkçe", "baca": "türk-CE", "id": "bahasa Turki" }
+ ],
+ "exercises": [
+  { "prompt": "Terjemahkan ke bahasa Turki. Pakai bentuk sopan (*siz*).", "items": [
+   "Selamat pagi!",
+   "Nama saya Budi.",
+   "Saya orang Indonesia.",
+   "Apa kabar?",
+   "Saya baik, terima kasih.",
+   "Senang berkenalan."
+  ]},
+  { "prompt": "Lengkapi dengan akhiran orang yang tepat.", "items": [
+   "Öğrenci____. (saya)",
+   "Öğretmen____. (kamu)",
+   "İstanbullu____. (kami)",
+   "Doktor____. (Anda)",
+   "Hazır____. (saya)",
+   "İyi____. (kamu)"
+  ]},
+  { "prompt": "Pilih sapaan yang tepat. Tulis jawabannya lengkap.", "items": [
+   "Kamu masuk toko roti jam delapan pagi. Kamu bilang ____.",
+   "Kamu bertemu teman sekelas jam tiga sore. Kamu bilang ____.",
+   "Kamu masuk restoran jam sembilan malam. Kamu bilang ____.",
+   "Kamu pamit dari rumah temanmu. Kamu bilang ____.",
+   "Temanmu yang pamit itu kamu antar ke pintu. Kamu bilang ____.",
+   "Seseorang berterima kasih kepadamu. Kamu menjawab ____."
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "Budi / benim / adım",
+   "nerelisiniz / siz / ?",
+   "öğreniyorum / Türkçe / ben",
+   "değilim / öğretmen / ben",
+   "misiniz / Türkçe / biliyor / ?",
+   "iyiyim / teşekkür / ederim"
+  ]}
+ ],
+ "answers": [
+  "Günaydın! — Benim adım Budi. — Endonezyalıyım. — Nasılsınız? — İyiyim, teşekkür ederim. — Memnun oldum.",
+  "Öğrenciyim. — Öğretmensin. — İstanbulluyuz. — Doktorsunuz. — Hazırım. — İyisin.",
+  "Günaydın. — İyi günler. — İyi akşamlar. — Hoşça kalın. — Güle güle. — Rica ederim.",
+  "Benim adım Budi. — Siz nerelisiniz? — Ben Türkçe öğreniyorum. — Ben öğretmen değilim. — Türkçe biliyor musunuz? — İyiyim, teşekkür ederim."
+ ]
+}
