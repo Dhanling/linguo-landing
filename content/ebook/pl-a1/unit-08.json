@@ -1,0 +1,219 @@
+{
+ "title": "Di kafe",
+ "title_target": "Poproszę dużą kawę",
+ "goal": "Memesan makanan dan minuman, membayar, dan memakai *poproszę* — kata paling berguna yang dimiliki turis di Polandia.",
+ "bekal": [
+  "memesan dengan *poproszę* + bentuk sasaran",
+  "menjawab pertanyaan pelayan tentang tempat duduk dan cara bayar",
+  "meminta sesuatu dengan sopan lewat *czy mogę prosić o…*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — W kawiarni",
+   "intro": "Kafe kecil di samping kampus, jam empat sore. Pelayan datang membawa buku catatan.",
+   "lines": [
+    { "speaker": "Kelner:", "text": "Dzień dobry. Co podać?", "id": "Selamat siang. Mau pesan apa?", "literal": "hari baik. apa menyajikan?" },
+    { "speaker": "Budi:", "text": "Poproszę dużą kawę i sernik.", "id": "Saya pesan kopi besar dan sernik.", "literal": "saya-minta besar kopi dan kue-keju." },
+    { "speaker": "Kelner:", "text": "A dla pani?", "id": "Kalau untuk Ibu?", "literal": "dan untuk nyonya?" },
+    { "speaker": "Ania:", "text": "Dla mnie herbatę z cytryną, proszę.", "id": "Untuk saya teh dengan lemon.", "literal": "untuk saya teh dengan lemon, tolong." },
+    { "speaker": "Kelner:", "text": "Na miejscu czy na wynos?", "id": "Makan di sini atau dibawa pulang?", "literal": "pada tempat atau untuk bawa-keluar?" },
+    { "speaker": "Budi:", "text": "Na miejscu. Czy jest wolny stolik przy oknie?", "id": "Di sini. Ada meja kosong dekat jendela?", "literal": "pada tempat. apakah ada kosong meja dekat jendela?" },
+    { "speaker": "Kelner:", "text": "Oczywiście. Płatność kartą czy gotówką?", "id": "Tentu. Bayarnya kartu atau tunai?", "literal": "tentu-saja. pembayaran dengan-kartu atau dengan-tunai?" },
+    { "speaker": "Budi:", "text": "Kartą. Razem, na jeden rachunek.", "id": "Kartu. Digabung, satu tagihan.", "literal": "dengan-kartu. bersama, pada satu tagihan." },
+    { "speaker": "Kelner:", "text": "Dobrze. Zaraz podaję.", "id": "Baik. Segera saya antar.", "literal": "baik. segera saya-menyajikan." },
+    { "speaker": "Budi:", "text": "Przepraszam, czy mogę prosić o wodę?", "id": "Permisi, boleh minta air putih?", "literal": "maaf, apakah saya-boleh meminta tentang air?" },
+    { "speaker": "Kelner:", "text": "Gazowana czy niegazowana?", "id": "Yang bersoda atau tidak?", "literal": "bergas atau tidak-bergas?" },
+    { "speaker": "Budi:", "text": "Niegazowana, dziękuję. I rachunek, proszę.", "id": "Yang biasa, terima kasih. Sekalian tagihannya.", "literal": "tidak-bergas, terima-kasih. dan tagihan, tolong." }
+   ],
+   "notes": [
+    "**Poproszę** adalah kata sakti di Polandia. Harfiahnya \"saya akan meminta\", tapi pemakaiannya persis seperti \"saya pesan\" atau \"tolong\" — dan ia dianggap lebih sopan daripada *chcę* (saya mau), yang terdengar menuntut. Sesudahnya selalu bentuk **sasaran**: *poproszę kawę*, *poproszę rachunek*.",
+    "**Dużą kawę** — dua-duanya berubah. Kata sifat *duża* jadi *dużą*, kata benda *kawa* jadi *kawę*. Ini pemakaian nyata aturan unit 7; kalau bagian ini terasa berat, kembalilah sebentar ke sana.",
+    "**Dla mnie** berarti \"untuk saya\" dan sangat sering dipakai saat memesan bersama-sama. Kembarannya: *dla niego* (untuk dia lk), *dla niej* (untuk dia pr), *dla nas* (untuk kami).",
+    "**A dla pani?** Pelayan menyapa dengan *pan* / *pani*, tidak pernah dengan *ty*. Kamu pun sebaiknya membalas dengan *pan* / *pani* kalau ingin bertanya balik: *A pan co poleca?* (Bapak menyarankan apa?)",
+    "**Kartą, gotówką** — ekor *-ą* lagi, tapi kali ini bukan sasaran melainkan **alat**. Bentuk *narzędnik* yang kamu kenal dari *jestem studentem* juga dipakai untuk menyatakan \"dengan apa\": *piszę długopisem* (saya menulis dengan pulpen), *jadę autobusem* (saya naik bus).",
+    "**Na miejscu czy na wynos** adalah pertanyaan yang pasti kamu dengar di setiap kafe Polandia. Hafalkan jawabannya sekarang supaya tidak gugup: *na miejscu* (di sini) atau *na wynos* (bawa pulang).",
+    "**Czy mogę prosić o…** adalah rumus permintaan paling sopan yang bisa dipakai di mana saja — restoran, kantor, jalan. Sesudah *o* selalu bentuk sasaran: *o wodę*, *o rachunek*, *o pomoc*.",
+    "**Sernik** (kue keju) adalah salah satu dari tiga kue yang ada di hampir setiap kafe Polandia, bersama *szarlotka* (pai apel) dan *makowiec* (kue biji poppy). Memesannya tanpa ragu membuatmu langsung terdengar seperti orang yang tahu tempat."
+   ],
+   "grammars": [
+    {
+     "title": "Memesan: poproszę + sasaran",
+     "body": [
+      "Satu rumus yang menutup hampir semua situasi jual-beli di Polandia."
+     ],
+     "table": {
+      "head": ["Rumus", "Contoh", "Arti"],
+      "rows": [
+       ["*Poproszę* + sasaran", "*Poproszę kawę.*", "Saya pesan kopi."],
+       ["*Poproszę* + angka + sasaran", "*Poproszę dwa piwa.*", "Saya pesan dua bir."],
+       ["*Dla mnie* + sasaran", "*Dla mnie herbatę.*", "Untuk saya teh."],
+       ["*Czy mogę prosić o* + sasaran", "*Czy mogę prosić o wodę?*", "Boleh minta air?"],
+       ["*Chciałbym / Chciałabym* + sasaran", "*Chciałbym sernik.*", "Saya ingin sernik. (lk / pr)"]
+      ]
+     },
+     "after": [
+      "Baris terakhir adalah bentuk paling halus dan berbeda menurut jenis kelamin **pembicaranya**: laki-laki *chciałbym*, perempuan *chciałabym*. Ia bentuk pengandaian yang sesungguhnya masuk tingkat A2 — pakai saja sebagai bongkahan hafalan.",
+      "⚠️ Hindari *chcę kawę* saat memesan. Secara tata bahasa benar, tapi nadanya seperti \"saya mau kopi, sekarang\". Selisih kesopanannya kira-kira sebesar selisih \"minta kopi\" dan \"tolong kopinya\"."
+     ]
+    },
+    {
+     "title": "Narzędnik — dengan apa, naik apa",
+     "body": [
+      "Ekor yang sama seperti sesudah *jestem*, dipakai untuk menyatakan alat, kendaraan, dan teman."
+     ],
+     "table": {
+      "head": ["Pemakaian", "Contoh", "Arti"],
+      "rows": [
+       ["cara bayar", "*Płacę kart**ą**.*", "Saya bayar dengan kartu."],
+       ["alat", "*Piszę długopis**em**.*", "Saya menulis dengan pulpen."],
+       ["kendaraan", "*Jadę autobus**em**.*", "Saya naik bus."],
+       ["bersama siapa", "*Idę z Ani**ą**.*", "Saya pergi dengan Ania."],
+       ["siapa dirimu", "*Jestem student**em**.*", "Saya mahasiswa."]
+      ]
+     },
+     "after": [
+      "Ekornya persis seperti unit 2: **-em** untuk kata laki-laki dan netral, **-ą** untuk kata perempuan.",
+      "Perhatikan baris \"bersama siapa\": kata *z* di sini berarti \"dengan\". Kata yang sama juga berarti \"dari\" (*jestem z Indonezji*), dan yang membedakannya adalah ekor kata bendanya — bukti lain bahwa dalam bahasa Polandia ekor kata yang bekerja, bukan kata depannya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menu kafe Polandia",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Do picia (minuman)", "Arti", "Do jedzenia (makanan)", "Arti"],
+     "rows": [
+      ["*kawa czarna*", "kopi hitam", "*sernik*", "kue keju"],
+      ["*kawa z mlekiem*", "kopi susu", "*szarlotka*", "pai apel"],
+      ["*herbata z cytryną*", "teh lemon", "*makowiec*", "kue biji poppy"],
+      ["*woda niegazowana*", "air putih", "*kanapka*", "roti isi"],
+      ["*woda gazowana*", "air soda", "*zupa*", "sup"],
+      ["*sok pomarańczowy*", "jus jeruk", "*pierogi*", "pierogi"],
+      ["*piwo*", "bir", "*bigos*", "tumis kol asam"],
+      ["*wino*", "anggur", "*żurek*", "sup asam tepung rye"]
+     ]
+    },
+    { "type": "p", "text": "Tiga nama terakhir adalah hidangan yang paling sering ditanyakan turis. *Bigos* dan *żurek* hampir tidak ada padanannya dalam masakan mana pun yang kamu kenal — pesan sekali saja untuk tahu, lalu putuskan sendiri." },
+    { "type": "kotak", "title": "Kalau kamu punya pantangan makanan", "items": [
+      "*Nie jem mięsa.* — Saya tidak makan daging.",
+      "*Nie jem wieprzowiny.* — Saya tidak makan daging babi.",
+      "*Jestem wegetarianinem.* (lk) / *wegetarianką.* (pr) — Saya vegetarian.",
+      "*Czy to jest bez mięsa?* — Apakah ini tanpa daging?",
+      "*Czy w tym jest wieprzowina?* — Apakah ada daging babi di dalamnya?"
+     ] }
+   ]
+  },
+  {
+   "title": "Kalimat di kafe dan restoran",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Polski", "Cara baca", "Arti"],
+     "rows": [
+      ["*Stolik dla dwóch osób, proszę.*", "STO-lik dla dvuh O-sup", "Meja untuk dua orang."],
+      ["*Poproszę menu.*", "po-PRO-sye ME-nu", "Boleh lihat menunya."],
+      ["*Co pan poleca?*", "tso pan po-LE-tsa", "Apa yang Bapak sarankan?"],
+      ["*Poproszę to samo.*", "po-PRO-sye to SA-mo", "Saya pesan yang sama."],
+      ["*Smacznego!*", "smac-NE-go", "Selamat makan!"],
+      ["*Bardzo smaczne.*", "BAR-dzo SMAC-ne", "Enak sekali."],
+      ["*Rachunek, proszę.*", "ra-HU-nek PRO-sye", "Tagihannya, tolong."],
+      ["*Osobno czy razem?*", "o-SOB-no cy RA-zem", "Terpisah atau digabung?"],
+      ["*Reszty nie trzeba.*", "RESY-ty nye TSYE-ba", "Kembaliannya ambil saja."],
+      ["*Czy jest wi-fi?*", "cy yest VAY-fay", "Ada wifi?"]
+     ]
+    },
+    { "type": "kotak", "title": "Tiga hal yang perlu diketahui sebelum masuk", "items": [
+      "**Air putih tidak gratis.** Di restoran Polandia air selalu dipesan dan dibayar, dan pelayan akan bertanya *gazowana czy niegazowana*.",
+      "**Tip sekitar sepuluh persen** lazim di restoran, tapi bukan keharusan di kafe kecil. Ucapan *reszty nie trzeba* sudah cukup — jangan meninggalkan uang di meja tanpa berkata apa-apa.",
+      "**Smacznego** diucapkan pelayan saat mengantar makanan, dan juga oleh orang asing di meja sebelah. Jawablah *dziękuję*."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "pl": "poproszę", "baca": "po-PRO-sye", "id": "saya pesan; tolong" },
+  { "pl": "kelner / kelnerka", "baca": "KEL-ner", "id": "pelayan" },
+  { "pl": "podać", "baca": "PO-dac", "id": "menyajikan" },
+  { "pl": "menu", "baca": "ME-nu", "id": "menu" },
+  { "pl": "stolik", "baca": "STO-lik", "id": "meja (restoran)" },
+  { "pl": "wolny", "baca": "VOL-ny", "id": "kosong; bebas" },
+  { "pl": "na miejscu", "baca": "na MYEY-stsu", "id": "makan di tempat" },
+  { "pl": "na wynos", "baca": "na VY-nos", "id": "dibawa pulang" },
+  { "pl": "płacić", "baca": "PWA-cic", "id": "membayar" },
+  { "pl": "płatność", "baca": "PWAT-nosyc", "id": "pembayaran" },
+  { "pl": "karta", "baca": "KAR-ta", "id": "kartu" },
+  { "pl": "gotówka", "baca": "go-TUF-ka", "id": "uang tunai" },
+  { "pl": "rachunek", "baca": "ra-HU-nek", "id": "tagihan" },
+  { "pl": "razem / osobno", "baca": "RA-zem / o-SOB-no", "id": "digabung / terpisah" },
+  { "pl": "reszta", "baca": "RESY-ta", "id": "kembalian" },
+  { "pl": "sernik", "baca": "SER-nik", "id": "kue keju" },
+  { "pl": "szarlotka", "baca": "syar-LOT-ka", "id": "pai apel" },
+  { "pl": "cytryna", "baca": "tsyt-RY-na", "id": "lemon" },
+  { "pl": "mleko", "baca": "MLE-ko", "id": "susu" },
+  { "pl": "gazowany", "baca": "ga-zo-VA-ny", "id": "bersoda" },
+  { "pl": "smaczny", "baca": "SMAC-ny", "id": "enak" },
+  { "pl": "smacznego", "baca": "smac-NE-go", "id": "selamat makan" },
+  { "pl": "oczywiście", "baca": "o-cy-VISY-cye", "id": "tentu saja" },
+  { "pl": "zaraz", "baca": "ZA-ras", "id": "segera" },
+  { "pl": "dla", "baca": "dla", "id": "untuk" },
+  { "pl": "przy", "baca": "psyy", "id": "di dekat" },
+  { "pl": "polecać", "baca": "po-LE-tsac", "id": "menyarankan" },
+  { "pl": "osoba", "baca": "o-SO-ba", "id": "orang" },
+  { "pl": "wieprzowina", "baca": "vyep-syo-VI-na", "id": "daging babi" },
+  { "pl": "autobus", "baca": "au-TO-bus", "id": "bus" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pesan barang ini dengan *poproszę*. Perhatikan ekornya.",
+   "items": [
+    "kawa",
+    "herbata",
+    "sernik",
+    "woda",
+    "zupa",
+    "piwo"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bentuk *narzędnik* (ekor *-em* atau *-ą*).",
+   "items": [
+    "Płacę ____ . (karta)",
+    "Płacę ____ . (gotówka)",
+    "Jadę ____ . (autobus)",
+    "Idę z ____ . (Ania)",
+    "Jestem ____ . (student)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Saya pesan kopi besar.",
+    "Makan di sini, bukan dibawa pulang.",
+    "Boleh minta air putih?",
+    "Tagihannya, tolong.",
+    "Saya tidak makan daging."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "kawę / poproszę / dużą",
+    "czy / miejscu / na / wynos / na / ?",
+    "proszę / rachunek",
+    "wodę / mogę / czy / o / prosić / ?",
+    "kartą / płacę"
+   ]
+  }
+ ],
+ "answers": [
+  "Poproszę kawę. — Poproszę herbatę. — Poproszę sernik. — Poproszę wodę. — Poproszę zupę. — Poproszę piwo.",
+  "kartą — gotówką — autobusem — Anią — studentem",
+  "Poproszę dużą kawę. — Na miejscu, nie na wynos. — Czy mogę prosić o wodę? — Rachunek, proszę. — Nie jem mięsa.",
+  "Poproszę dużą kawę. — Na miejscu czy na wynos? — Rachunek, proszę. — Czy mogę prosić o wodę? — Płacę kartą."
+ ],
+ "wave": "Ulangi dialog unit 6 keras-keras, lalu pesan lima barang berbeda dengan *poproszę* — tanpa melihat tabel ekor kata."
+}

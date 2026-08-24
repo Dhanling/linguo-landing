@@ -1,0 +1,221 @@
+{
+ "title": "Dua golongan kata kerja yang lain",
+ "title_target": "Co robisz dziś wieczorem?",
+ "goal": "Memakai dua golongan kata kerja sisanya (*-ę / -esz* dan *-ę / -isz*), mengenali kata kerja berujung *-ować*, dan menceritakan rencana malam ini.",
+ "bekal": [
+  "mengubah kata kerja golongan *-ę / -esz* dan *-ę / -isz* untuk keenam pelaku",
+  "mengenali kata kerja *-ować* yang semuanya berubah jadi *-uję*",
+  "menyatakan suka dan tidak suka dengan *lubię* dan *nie lubię*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Co robisz dziś wieczorem?",
+   "intro": "Dapur asrama menjelang sore. Ania berdiri di depan kompor; Budi baru pulang kuliah.",
+   "lines": [
+    { "speaker": "Ania:", "text": "Co robisz dziś wieczorem?", "id": "Nanti malam kamu ngapain?", "literal": "apa kamu-melakukan hari-ini malam?" },
+    { "speaker": "Budi:", "text": "Jeszcze nie wiem. Może idę do kina. A ty?", "id": "Belum tahu. Mungkin saya ke bioskop. Kamu?", "literal": "masih tidak saya-tahu. mungkin saya-pergi ke bioskop. dan kamu?" },
+    { "speaker": "Ania:", "text": "Piszę e-mail do mamy, a potem gotuję kolację.", "id": "Saya menulis email ke ibu, habis itu masak makan malam.", "literal": "saya-menulis surel ke ibu, dan kemudian saya-memasak makan-malam." },
+    { "speaker": "Budi:", "text": "Co gotujesz?", "id": "Masak apa?", "literal": "apa kamu-memasak?" },
+    { "speaker": "Ania:", "text": "Pierogi. Lubisz pierogi?", "id": "Pierogi. Kamu suka pierogi?", "literal": "pierogi. kamu-suka pierogi?" },
+    { "speaker": "Budi:", "text": "Bardzo lubię! Ale nie umiem gotować.", "id": "Suka banget! Tapi saya tidak bisa masak.", "literal": "sangat saya-suka! tetapi tidak saya-mampu memasak." },
+    { "speaker": "Ania:", "text": "To proste. Uczę cię jutro.", "id": "Gampang, kok. Besok saya ajari.", "literal": "itu sederhana. saya-mengajar kamu besok." },
+    { "speaker": "Budi:", "text": "Pomagam ci, a ty mówisz, co robić.", "id": "Saya bantu, kamu yang bilang harus ngapain.", "literal": "saya-menolong kepadamu, dan kamu berkata, apa melakukan." },
+    { "speaker": "Ania:", "text": "Umowa. Tylko nie mów mojej mamie — ona myśli, że gotuję źle.", "id": "Sepakat. Tapi jangan bilang ibu saya — dia pikir masakan saya jelek.", "literal": "kesepakatan. hanya jangan katakan ibuku — dia berpikir, bahwa saya-memasak buruk." },
+    { "speaker": "Budi:", "text": "Nie wierzę. Na pewno gotujesz dobrze.", "id": "Nggak percaya. Pasti masakanmu enak.", "literal": "tidak saya-percaya. pasti kamu-memasak baik." },
+    { "speaker": "Ania:", "text": "Zobaczymy. Teraz idę do sklepu — brakuje mi mąki.", "id": "Lihat saja nanti. Sekarang saya ke toko — tepungnya kurang.", "literal": "kita-akan-melihat. sekarang saya-pergi ke toko — kurang bagiku tepung." }
+   ],
+   "notes": [
+    "**Dziś wieczorem** — \"malam ini\". *Wieczór* (malam) berubah jadi *wieczorem* untuk menyatakan **kapan**. Pola yang sama: *rano* (pagi), *w południe* (siang), *w nocy* (tengah malam).",
+    "**Idę do kina, idę do sklepu.** Kata *do* berarti \"ke\" dan selalu diikuti bentuk kata benda yang berujung *-a* atau *-u*. Bentuk itu bernama *dopełniacz* dan diurus penuh di unit 14. Sekarang cukup hafalkan tiga bongkahan: *do kina*, *do sklepu*, *do domu*.",
+    "**Piszę** dari *pisać*. Perhatikan: huruf *s* berubah jadi *sz*. Beberapa kata kerja golongan *-ę / -esz* memang mengubah satu huruf di dalam kata dasarnya. Jumlahnya terbatas dan yang sering dipakai bisa dihitung jari — daftarnya ada di bagian tambahan unit ini.",
+    "**Gotuję dari gotować.** Semua kata kerja berujung *-ować* berubah dengan cara yang sama: *-ować* dilepas, diganti *-uję, -ujesz, -uje…*. Ini golongan yang enak, karena bentuk kamusnya langsung memberi tahu cara mengubahnya.",
+    "**Umiem gotować** — kata kerja kedua tetap dalam bentuk kamus. Sama seperti bahasa Indonesia (\"bisa masak\"), bukan seperti bahasa Inggris yang perlu \"to\". Pola ini bekerja dengan *umieć* (mampu), *chcieć* (mau), *móc* (bisa), *musieć* (harus) — semuanya di unit 13.",
+    "**Uczę cię** — \"saya mengajar kamu\". Bandingkan dengan *uczę się* (saya belajar) di unit 2. Kata kecil sesudah kata kerjanya yang menentukan siapa yang diajar.",
+    "**Mówisz mi, pomagam ci** — bentuk \"kepada saya\" dan \"kepadamu\" (*mi*, *ci*). Bentuk ini bernama *celownik* dan di tingkat A1 cukup dihafal sebagai empat kata: *mi* (kepadaku), *ci* (kepadamu), *mu* (kepadanya, lk), *jej* (kepadanya, pr).",
+    "**Że** berarti \"bahwa\" dan **wajib** ada. Bahasa Indonesia boleh membuangnya (\"dia pikir masakan saya jelek\"), bahasa Polandia tidak: *ona myśli, że gotuję źle*. Perhatikan juga koma sebelum *że* — dalam bahasa Polandia koma itu aturan, bukan selera."
+   ],
+   "grammars": [
+    {
+     "title": "Golongan I: -ę / -esz",
+     "body": [
+      "Ciri golongan ini: bentuk *ja* berujung **-ę**, bentuk *ty* berujung **-esz**. Ekornya tetap; yang kadang berubah adalah huruf terakhir kata dasarnya."
+     ],
+     "table": {
+      "head": ["Pelaku", "Ekor", "*iść* (pergi)", "*pisać* (menulis)", "*gotować* (memasak)"],
+      "rows": [
+       ["ja", "**-ę**", "*id**ę***", "*pisz**ę***", "*gotuj**ę***"],
+       ["ty", "**-esz**", "*idzi**esz***", "*pisz**esz***", "*gotuj**esz***"],
+       ["on / ona / ono", "**-e**", "*idzi**e***", "*pisz**e***", "*gotuj**e***"],
+       ["my", "**-emy**", "*idzi**emy***", "*pisz**emy***", "*gotuj**emy***"],
+       ["wy", "**-ecie**", "*idzi**ecie***", "*pisz**ecie***", "*gotuj**ecie***"],
+       ["oni / one", "**-ą**", "*id**ą***", "*pisz**ą***", "*gotuj**ą***"]
+      ]
+     },
+     "after": [
+      "Perhatikan kolom *iść*: bentuk *ja* dan *oni* memakai *id-*, sedangkan empat bentuk di tengah memakai *idzi-*. Perubahan huruf mati sebelum ekor *-e* ini sangat khas bahasa Polandia; ia terjadi karena bunyi *e* melembutkan huruf sebelumnya.",
+      "**Jalan pintas yang benar-benar bekerja:** hafalkan tiap kata kerja baru dalam **dua bentuk** — *ja* dan *ty*. Dari dua bentuk itu keempat sisanya bisa disusun tanpa pernah salah: bentuk *ty* dikurangi *-sz* lalu ditambah *-my* / *-cie*, dan bentuk *ja* dikurangi *-ę* lalu ditambah *-ą*.",
+      "Kata kerja *-ować* tidak pernah bermasalah: *pracować → pracuję*, *studiować → studiuję*, *kupować → kupuję*, *dziękować → dziękuję*, *rozmawiać* — bukan yang ini, itu golongan III."
+     ]
+    },
+    {
+     "title": "Golongan II: -ę / -isz",
+     "body": [
+      "Bentuk *ja*-nya sama-sama berujung *-ę*, tapi bentuk *ty*-nya memakai **-isz** (atau **-ysz** sesudah huruf keras). Isinya banyak kata kerja sehari-hari yang paling sering dipakai."
+     ],
+     "table": {
+      "head": ["Pelaku", "Ekor", "*mówić* (berbicara)", "*robić* (melakukan)", "*lubić* (suka)"],
+      "rows": [
+       ["ja", "**-ę**", "*mówi**ę***", "*robi**ę***", "*lubi**ę***"],
+       ["ty", "**-isz**", "*mów**isz***", "*rob**isz***", "*lub**isz***"],
+       ["on / ona / ono", "**-i**", "*mów**i***", "*rob**i***", "*lub**i***"],
+       ["my", "**-imy**", "*mów**imy***", "*rob**imy***", "*lub**imy***"],
+       ["wy", "**-icie**", "*mów**icie***", "*rob**icie***", "*lub**icie***"],
+       ["oni / one", "**-ią**", "*mów**ią***", "*rob**ią***", "*lub**ią***"]
+      ]
+     },
+     "after": [
+      "Sesudah *cz*, *sz*, *ż*, *rz*, *j* ekornya ditulis **-ysz, -y, -ymy, -ycie**: *uczyć → uczę, uczysz, uczy*. Bunyinya sama; ejaannya saja yang menyesuaikan aturan bahwa *i* tidak ditulis sesudah huruf keras.",
+      "⚠️ Golongan II dan golongan III paling gampang tertukar, karena bentuk *ja*-nya berbeda tapi artinya sering mirip: *robię* (golongan II) tapi *czytam* (golongan III). Tidak ada cara menebak dari artinya — hafalkan bentuk *ja* dan *ty* bersama kata barunya, selalu."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tiga golongan berdampingan",
+   "blocks": [
+    { "type": "p", "text": "Seluruh kata kerja bahasa Polandia masuk salah satu dari tiga kolom ini. Halaman ini layak ditandai — kamu akan kembali ke sini berkali-kali." },
+    {
+     "type": "tabel",
+     "head": ["", "I: *-ę / -esz*", "II: *-ę / -isz*", "III: *-am / -asz*"],
+     "rows": [
+      ["ja", "*piszę*", "*mówię*", "*czytam*"],
+      ["ty", "*piszesz*", "*mówisz*", "*czytasz*"],
+      ["on / ona", "*pisze*", "*mówi*", "*czyta*"],
+      ["my", "*piszemy*", "*mówimy*", "*czytamy*"],
+      ["wy", "*piszecie*", "*mówicie*", "*czytacie*"],
+      ["oni / one", "*piszą*", "*mówią*", "*czytają*"],
+      ["Anggotanya", "*iść, pisać, pić, brać, gotować, kupować, pracować*", "*mówić, robić, lubić, myśleć, uczyć, płacić, widzieć*", "*czytać, mieć, znać, słuchać, czekać, mieszkać*"]
+     ]
+    },
+    { "type": "kotak", "title": "Pola yang berlaku di ketiga golongan", "items": [
+      "Bentuk **ja** selalu berujung *-m* atau *-ę*. Tidak ada kemungkinan ketiga.",
+      "Bentuk **ty** selalu berujung *-sz*. Tanpa kecuali.",
+      "Bentuk **my** selalu berujung *-my*, bentuk **wy** selalu berujung *-cie*.",
+      "Bentuk **on/ona** selalu yang paling pendek di kolomnya.",
+      "Empat pola ini berlaku untuk seluruh kata kerja bahasa Polandia kecuali *być* — dan bahkan *być* pun mengikuti tiga dari empat."
+     ] }
+   ]
+  },
+  {
+   "title": "Kata kerja yang mengubah satu huruf",
+   "blocks": [
+    { "type": "p", "text": "Sebagian kata kerja golongan I mengganti satu huruf mati di ujung kata dasarnya. Daftar ini menutup yang paling sering dipakai; sisanya bisa menunggu." },
+    {
+     "type": "tabel",
+     "head": ["Bentuk kamus", "ja", "ty", "Perubahannya", "Arti"],
+     "rows": [
+      ["*pisać*", "*piszę*", "*piszesz*", "s → sz", "menulis"],
+      ["*jechać*", "*jadę*", "*jedziesz*", "ch → d/dź", "pergi berkendara"],
+      ["*iść*", "*idę*", "*idziesz*", "ś → d/dź", "pergi jalan kaki"],
+      ["*brać*", "*biorę*", "*bierzesz*", "ra → ior/ierz", "mengambil"],
+      ["*prać*", "*piorę*", "*pierzesz*", "ra → ior/ierz", "mencuci"],
+      ["*móc*", "*mogę*", "*możesz*", "g → ż", "bisa"],
+      ["*pić*", "*piję*", "*pijesz*", "sisip j", "minum"],
+      ["*żyć*", "*żyję*", "*żyjesz*", "sisip j", "hidup"]
+     ]
+    },
+    { "type": "p", "text": "Semua perubahan ini punya satu sebab yang sama: bunyi *e* dan *i* di ekor **melembutkan** huruf sebelumnya, dan bahasa Polandia menuliskan pelembutan itu dengan huruf yang berbeda. Kamu tidak perlu menghafal sebabnya — cukup mengenali bahwa dua bentuk yang tampak berbeda (*idę / idziesz*) memang satu kata yang sama." },
+    { "type": "kotak", "title": "Suka dan tidak suka", "items": [
+      "*Lubię kawę.* — Saya suka kopi. *Nie lubię kawy.* — Saya tidak suka kopi.",
+      "Perhatikan ekornya berubah saat disangkal: *kawę* jadi *kawy*. Itu aturan besar yang menunggu di unit 14; kenali dulu bentuknya.",
+      "*Bardzo lubię…* (suka sekali) · *Nie znoszę…* (benci) · *Wolę kawę niż herbatę.* (saya lebih suka kopi daripada teh)"
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "pl": "robić", "baca": "RO-bic", "id": "melakukan" },
+  { "pl": "pisać", "baca": "PI-sac", "id": "menulis" },
+  { "pl": "iść", "baca": "isyc", "id": "pergi (jalan kaki)" },
+  { "pl": "gotować", "baca": "go-TO-vac", "id": "memasak" },
+  { "pl": "kupować", "baca": "ku-PO-vac", "id": "membeli" },
+  { "pl": "lubić", "baca": "LU-bic", "id": "suka" },
+  { "pl": "myśleć", "baca": "MYSY-lec", "id": "berpikir" },
+  { "pl": "umieć", "baca": "U-myec", "id": "mampu; bisa (terampil)" },
+  { "pl": "uczyć", "baca": "U-cyc", "id": "mengajar" },
+  { "pl": "pomagać", "baca": "po-MA-gac", "id": "menolong" },
+  { "pl": "pić", "baca": "pic", "id": "minum" },
+  { "pl": "jeść", "baca": "yesyc", "id": "makan" },
+  { "pl": "brać", "baca": "brac", "id": "mengambil" },
+  { "pl": "kino", "baca": "KI-no", "id": "bioskop" },
+  { "pl": "sklep", "baca": "sklep", "id": "toko" },
+  { "pl": "kolacja", "baca": "ko-LA-tsya", "id": "makan malam" },
+  { "pl": "pierogi", "baca": "pye-RO-gi", "id": "pierogi (pangsit Polandia)" },
+  { "pl": "mąka", "baca": "MON-ka", "id": "tepung" },
+  { "pl": "mama / tata", "baca": "MA-ma / TA-ta", "id": "ibu / ayah" },
+  { "pl": "e-mail", "baca": "I-meyl", "id": "surel" },
+  { "pl": "dziś / dzisiaj", "baca": "jyisy", "id": "hari ini" },
+  { "pl": "jeszcze", "baca": "YESY-ce", "id": "masih; belum" },
+  { "pl": "potem", "baca": "PO-tem", "id": "kemudian" },
+  { "pl": "teraz", "baca": "TE-ras", "id": "sekarang" },
+  { "pl": "na pewno", "baca": "na PEV-no", "id": "pasti" },
+  { "pl": "prosty", "baca": "PROS-ty", "id": "sederhana; gampang" },
+  { "pl": "że", "baca": "zye", "id": "bahwa" },
+  { "pl": "mi / ci", "baca": "mi / ci", "id": "kepadaku / kepadamu" },
+  { "pl": "umowa", "baca": "u-MO-va", "id": "kesepakatan" },
+  { "pl": "wolę", "baca": "VO-le", "id": "saya lebih suka" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan bentuk kata kerja yang tepat.",
+   "items": [
+    "Ja ____ e-mail. (pisać)",
+    "Ty ____ do kina. (iść)",
+    "Ona ____ kolację. (gotować)",
+    "My ____ po polsku. (mówić)",
+    "Wy ____ pierogi. (lubić)",
+    "Oni ____ w banku. (pracować)"
+   ]
+  },
+  {
+   "prompt": "Tulis golongannya: I (*-ę/-esz*), II (*-ę/-isz*), atau III (*-am/-asz*).",
+   "items": [
+    "czytać",
+    "mówić",
+    "pisać",
+    "mieszkać",
+    "lubić",
+    "kupować"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Nanti malam kamu ngapain?",
+    "Saya menulis email.",
+    "Saya tidak bisa masak.",
+    "Kamu suka pierogi?",
+    "Sekarang saya pergi ke toko."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "robisz / co / wieczorem / ?",
+    "do / idę / kina",
+    "gotować / nie / umiem",
+    "że / myśli / ona / źle / gotuję",
+    "lubię / bardzo / pierogi"
+   ]
+  }
+ ],
+ "answers": [
+  "piszę — idziesz — gotuje — mówimy — lubicie — pracują",
+  "III — II — I — III — II — I",
+  "Co robisz wieczorem? — Piszę e-mail. — Nie umiem gotować. — Lubisz pierogi? — Teraz idę do sklepu.",
+  "Co robisz wieczorem? — Idę do kina. — Nie umiem gotować. — Ona myśli, że gotuję źle. — Bardzo lubię pierogi."
+ ],
+ "wave": "Ulangi dialog unit 3 keras-keras, lalu sebutkan bentuk *ja* dan *ty* dari lima kata kerja unit 4 tanpa melihat."
+}

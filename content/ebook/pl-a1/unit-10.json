@@ -1,0 +1,240 @@
+{
+ "title": "Jam berapa sekarang?",
+ "title_target": "Która godzina?",
+ "goal": "Menyebutkan jam, membuat janji, dan mengenali kenapa jam dalam bahasa Polandia memakai bentuk perempuan.",
+ "bekal": [
+  "menjawab *która godzina?* dengan jam bulat, lewat, dan kurang",
+  "menyatakan janji dengan *o* + jam",
+  "menyebut hari dalam seminggu dan keterangan waktu yang paling sering dipakai"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Umawiamy się",
+   "intro": "Koridor kampus. Ania melirik jam di dinding sambil membereskan tasnya.",
+   "lines": [
+    { "speaker": "Ania:", "text": "Która godzina?", "id": "Jam berapa sekarang?", "literal": "yang-mana-pr jam?" },
+    { "speaker": "Budi:", "text": "Za piętnaście trzecia.", "id": "Jam tiga kurang lima belas.", "literal": "kurang lima-belas ketiga-pr." },
+    { "speaker": "Ania:", "text": "Już? Muszę iść. Mam zajęcia o trzeciej.", "id": "Sudah? Saya harus pergi. Ada kelas jam tiga.", "literal": "sudah? saya-harus pergi. saya-punya kuliah pada ketiga-pr." },
+    { "speaker": "Budi:", "text": "Kiedy kończysz?", "id": "Selesai jam berapa?", "literal": "kapan kamu-menyelesaikan?" },
+    { "speaker": "Ania:", "text": "O wpół do piątej. A ty?", "id": "Jam setengah lima. Kamu?", "literal": "pada setengah ke kelima-pr. dan kamu?" },
+    { "speaker": "Budi:", "text": "Zaczynam o czwartej i kończę o szóstej.", "id": "Saya mulai jam empat dan selesai jam enam.", "literal": "saya-memulai pada keempat-pr dan saya-menyelesaikan pada keenam-pr." },
+    { "speaker": "Ania:", "text": "To może spotkajmy się o siódmej?", "id": "Kalau begitu ketemu jam tujuh, gimana?", "literal": "jadi mungkin mari-bertemu diri pada ketujuh-pr?" },
+    { "speaker": "Budi:", "text": "Dobrze. Gdzie się spotykamy?", "id": "Boleh. Ketemu di mana?", "literal": "baik. di-mana diri kita-bertemu?" },
+    { "speaker": "Ania:", "text": "Przed biblioteką. Tylko nie spóźnij się!", "id": "Di depan perpustakaan. Awas telat, ya!", "literal": "di-depan perpustakaan. hanya jangan terlambat diri!" },
+    { "speaker": "Budi:", "text": "Nigdy się nie spóźniam.", "id": "Saya tidak pernah telat.", "literal": "tidak-pernah diri tidak saya-terlambat." },
+    { "speaker": "Ania:", "text": "Wczoraj czekałam dwadzieścia minut.", "id": "Kemarin saya nunggu dua puluh menit.", "literal": "kemarin saya-menunggu-pr dua-puluh menit." },
+    { "speaker": "Budi:", "text": "To był wyjątek. Do zobaczenia o siódmej!", "id": "Itu pengecualian. Sampai ketemu jam tujuh!", "literal": "itu adalah-lampau pengecualian. sampai penglihatan pada ketujuh-pr!" }
+   ],
+   "notes": [
+    "**Która godzina** harfiahnya \"jam yang keberapa\". Karena *godzina* (jam) adalah kata **perempuan**, semua angka jam memakai bentuk perempuan: *pierwsza*, *druga*, *trzecia*. Ini satu-satunya sebab bentuknya tampak aneh — bukan aturan baru, cuma kata sifat yang menyesuaikan diri.",
+    "**Za piętnaście trzecia** — \"kurang lima belas jam tiga\". Bahasa Polandia menyebut **sisanya dulu**, lalu jam yang dituju. Sama seperti bahasa Indonesia \"jam tiga kurang seperempat\", cuma urutannya terbalik.",
+    "**Wpół do piątej** adalah jebakan yang menjatuhkan hampir semua pemula. Harfiahnya \"setengah **menuju** yang kelima\" — artinya **04.30**, bukan 05.30. Bahasa Polandia menghitung setengah jam ke **arah** jam berikutnya, persis seperti bahasa Jerman dan Belanda.",
+    "**O trzeciej, o czwartej, o siódmej.** Untuk menyatakan **pada** jam berapa, angkanya berubah lagi — ekor *-ej*. Bentuk ini bernama *miejscownik* dan akan diurus penuh di unit berikutnya. Untuk sekarang cukup dua langkah: sebut jamnya, lalu ganti ekornya jadi *-ej*.",
+    "**Spotkajmy się** — \"mari kita bertemu\". Bentuk ajakan dibuat dengan ekor *-my* pada bentuk perintah. Contoh lain: *chodźmy* (ayo jalan), *zróbmy to* (ayo kita lakukan).",
+    "**Nigdy się nie spóźniam** — perhatikan ada **dua** penyangkal: *nigdy* (tidak pernah) dan *nie*. Bahasa Polandia menuntut penyangkalan ganda, dan membuang salah satunya justru salah. Sama untuk *nikt nie wie* (tak seorang pun tahu) dan *nic nie rozumiem* (saya tidak mengerti apa-apa).",
+    "**Czekałam** — bentuk lampau, dan ekor *-am* menandai bahwa yang berbicara **perempuan**. Kalau Budi yang mengatakannya, bentuknya *czekałem*. Ini isi unit 17; sekarang cukup diperhatikan.",
+    "**Przed biblioteką** — \"di depan perpustakaan\", memakai ekor *-ą* (*narzędnik*) karena kata depan *przed* menuntutnya. Kelompok kata depan tempat yang menuntut ekor ini: *przed* (di depan), *za* (di belakang), *nad* (di atas), *pod* (di bawah), *między* (di antara)."
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut jam",
+     "body": [
+      "Angka jam memakai bentuk **perempuan** karena mengikuti kata *godzina*. Hafalkan dua belas bentuk ini; sisanya cuma penggabungan."
+     ],
+     "table": {
+      "head": ["Jam", "Bentuknya", "Pada jam itu (*o…*)", "Cara baca"],
+      "rows": [
+       ["1", "*pierwsza*", "*o pierwszej*", "PYERF-sya"],
+       ["2", "*druga*", "*o drugiej*", "DRU-ga"],
+       ["3", "*trzecia*", "*o trzeciej*", "TSYE-cya"],
+       ["4", "*czwarta*", "*o czwartej*", "CFAR-ta"],
+       ["5", "*piąta*", "*o piątej*", "PYON-ta"],
+       ["6", "*szósta*", "*o szóstej*", "SYUS-ta"],
+       ["7", "*siódma*", "*o siódmej*", "SYUD-ma"],
+       ["8", "*ósma*", "*o ósmej*", "US-ma"],
+       ["9", "*dziewiąta*", "*o dziewiątej*", "jye-VYON-ta"],
+       ["10", "*dziesiąta*", "*o dziesiątej*", "jye-SYON-ta"],
+       ["11", "*jedenasta*", "*o jedenastej*", "ye-de-NAS-ta"],
+       ["12", "*dwunasta*", "*o dwunastej*", "dvu-NAS-ta"]
+      ]
+     },
+     "after": [
+      "Polanya seragam: bentuk dasarnya berujung **-a**, bentuk \"pada jam\" berujung **-ej**. Kalau kamu bisa satu, kamu bisa dua belas.",
+      "Untuk menyebut menit: *pierwsza dziesięć* (01.10), *druga dwadzieścia pięć* (02.25) — angka jam dulu, lalu menitnya, tanpa kata penyambung apa pun.",
+      "Kata *godzina* sendiri hampir selalu dibuang dalam percakapan: cukup *o trzeciej*, bukan *o godzinie trzeciej*."
+     ]
+    },
+    {
+     "title": "Lewat, kurang, dan setengah",
+     "body": [
+      "Tiga rumus yang menutup semua cara orang Polandia menyebut waktu tidak bulat."
+     ],
+     "table": {
+      "head": ["Jam", "Cara menyebutnya", "Harfiah"],
+      "rows": [
+       ["14.00", "*druga*", "kedua"],
+       ["14.10", "*druga dziesięć*", "kedua sepuluh"],
+       ["14.15", "*piętnaście po drugiej*", "lima belas sesudah kedua"],
+       ["14.30", "*wpół do trzeciej*", "setengah menuju ketiga"],
+       ["14.45", "*za piętnaście trzecia*", "kurang lima belas ketiga"],
+       ["14.50", "*za dziesięć trzecia*", "kurang sepuluh ketiga"]
+      ]
+     },
+     "after": [
+      "⚠️ Baris **wpół do** adalah kesalahan pemula nomor satu. *Wpół do trzeciej* = 14.30, bukan 15.30. Kalau ragu saat membuat janji, pakai cara resmi saja.",
+      "**Cara resmi** memakai sistem 24 jam dan angka biasa: *czternasta trzydzieści* (14.30). Ini yang dipakai di stasiun, bandara, dan jadwal kuliah — dan ia lebih gampang bagi pemula karena tidak perlu menghitung mundur.",
+      "Untuk membedakan pagi dan malam dalam percakapan: *rano* (pagi), *po południu* (siang–sore), *wieczorem* (malam), *w nocy* (tengah malam). *Trzecia po południu* = jam tiga sore."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Hari dan keterangan waktu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Hari", "Cara baca", "Pada hari itu"],
+     "rows": [
+      ["*poniedziałek*", "po-nye-JYA-wek", "*w poniedziałek*"],
+      ["*wtorek*", "FTO-rek", "*we wtorek*"],
+      ["*środa*", "SYRO-da", "*w środę*"],
+      ["*czwartek*", "CFAR-tek", "*w czwartek*"],
+      ["*piątek*", "PYON-tek", "*w piątek*"],
+      ["*sobota*", "so-BO-ta", "*w sobotę*"],
+      ["*niedziela*", "nye-JYE-la", "*w niedzielę*"]
+     ]
+    },
+    { "type": "p", "text": "Perhatikan *we wtorek* — kata depan *w* jadi *we* di depan kata yang dimulai dua huruf mati, semata supaya bisa diucapkan. Pola yang sama: *we Wrocławiu*, *ze mną*." },
+    {
+     "type": "tabel",
+     "head": ["Polski", "Arti", "Polski", "Arti"],
+     "rows": [
+      ["*dziś / dzisiaj*", "hari ini", "*rano*", "pagi"],
+      ["*wczoraj*", "kemarin", "*po południu*", "siang–sore"],
+      ["*jutro*", "besok", "*wieczorem*", "malam"],
+      ["*pojutrze*", "lusa", "*w nocy*", "tengah malam"],
+      ["*w tym tygodniu*", "minggu ini", "*zawsze*", "selalu"],
+      ["*w przyszłym tygodniu*", "minggu depan", "*często*", "sering"],
+      ["*w weekend*", "akhir pekan", "*czasem*", "kadang"],
+      ["*teraz*", "sekarang", "*nigdy*", "tidak pernah"]
+     ]
+    },
+    { "type": "kotak", "title": "Membuat janji", "items": [
+      "*Masz czas w piątek?* — Kamu ada waktu Jumat?",
+      "*Spotkajmy się o szóstej.* — Ketemu jam enam, yuk.",
+      "*Pasuje ci?* — Cocok buat kamu?",
+      "*Może być.* — Boleh juga.",
+      "*Niestety nie mogę.* — Sayangnya saya tidak bisa."
+     ] }
+   ]
+  },
+  {
+   "title": "Sehari penuh, berurutan",
+   "blocks": [
+    { "type": "p", "text": "Bacalah kolom Polandia keras-keras dari atas ke bawah, seolah menceritakan harimu sendiri." },
+    {
+     "type": "tabel",
+     "head": ["Jam", "Polski", "Arti"],
+     "rows": [
+      ["06.30", "*Wstaję o wpół do siódmej.*", "Saya bangun jam setengah tujuh."],
+      ["07.00", "*O siódmej jem śniadanie.*", "Jam tujuh saya sarapan."],
+      ["08.15", "*Piętnaście po ósmej wychodzę z domu.*", "Jam delapan lewat lima belas saya keluar rumah."],
+      ["09.00", "*Zajęcia zaczynają się o dziewiątej.*", "Kuliah mulai jam sembilan."],
+      ["13.00", "*O pierwszej jem obiad.*", "Jam satu saya makan siang."],
+      ["17.30", "*Wracam do domu o wpół do szóstej.*", "Saya pulang jam setengah enam."],
+      ["20.00", "*O ósmej jem kolację.*", "Jam delapan saya makan malam."],
+      ["23.00", "*Idę spać o jedenastej.*", "Saya tidur jam sebelas."]
+     ]
+    },
+    { "type": "kotak", "title": "Tiga kalimat waktu yang paling sering dipakai", "items": [
+      "*Jestem spóźniony.* (lk) / *spóźniona.* (pr) — Saya terlambat.",
+      "*Mam mało czasu.* — Waktu saya sedikit.",
+      "*Za pięć minut.* — Lima menit lagi."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "pl": "godzina", "baca": "go-JYI-na", "id": "jam" },
+  { "pl": "minuta", "baca": "mi-NU-ta", "id": "menit" },
+  { "pl": "która godzina?", "baca": "KTU-ra go-JYI-na", "id": "jam berapa?" },
+  { "pl": "wpół do", "baca": "fpuw do", "id": "setengah menuju" },
+  { "pl": "za", "baca": "za", "id": "kurang (jam)" },
+  { "pl": "po", "baca": "po", "id": "lewat; sesudah" },
+  { "pl": "zaczynać", "baca": "za-CY-nac", "id": "memulai" },
+  { "pl": "kończyć", "baca": "KONY-cyc", "id": "menyelesaikan" },
+  { "pl": "spotykać się", "baca": "spo-TY-kac sye", "id": "bertemu" },
+  { "pl": "spóźniać się", "baca": "SPUZY-nyac sye", "id": "terlambat" },
+  { "pl": "zajęcia", "baca": "za-YEN-cya", "id": "kelas; kuliah" },
+  { "pl": "musieć", "baca": "MU-syec", "id": "harus" },
+  { "pl": "wstawać", "baca": "fsta-VAC", "id": "bangun" },
+  { "pl": "śniadanie", "baca": "syna-DA-nye", "id": "sarapan" },
+  { "pl": "obiad", "baca": "O-byat", "id": "makan siang" },
+  { "pl": "kolacja", "baca": "ko-LA-tsya", "id": "makan malam" },
+  { "pl": "spać", "baca": "spac", "id": "tidur" },
+  { "pl": "poniedziałek", "baca": "po-nye-JYA-wek", "id": "Senin" },
+  { "pl": "wtorek / środa", "baca": "FTO-rek / SYRO-da", "id": "Selasa / Rabu" },
+  { "pl": "czwartek / piątek", "baca": "CFAR-tek / PYON-tek", "id": "Kamis / Jumat" },
+  { "pl": "sobota / niedziela", "baca": "so-BO-ta / nye-JYE-la", "id": "Sabtu / Minggu" },
+  { "pl": "tydzień", "baca": "TY-jyeny", "id": "minggu" },
+  { "pl": "wczoraj", "baca": "FCO-ray", "id": "kemarin" },
+  { "pl": "zawsze / często", "baca": "ZAF-sye / CENS-to", "id": "selalu / sering" },
+  { "pl": "czasem / nigdy", "baca": "CA-sem / NIG-dy", "id": "kadang / tidak pernah" },
+  { "pl": "już", "baca": "yusy", "id": "sudah" },
+  { "pl": "przed", "baca": "psyet", "id": "di depan; sebelum" },
+  { "pl": "wyjątek", "baca": "vy-YON-tek", "id": "pengecualian" },
+  { "pl": "pasować", "baca": "pa-SO-vac", "id": "cocok" },
+  { "pl": "niestety", "baca": "nye-STE-ty", "id": "sayangnya" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis jamnya dalam bahasa Polandia (cara percakapan).",
+   "items": [
+    "13.00",
+    "16.15",
+    "18.30",
+    "20.45",
+    "22.00"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bentuk *o…* yang tepat.",
+   "items": [
+    "Mam zajęcia ____ . (3)",
+    "Zaczynam pracę ____ . (8)",
+    "Jem obiad ____ . (1)",
+    "Wracam do domu ____ . (5)",
+    "Idę spać ____ . (11)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Jam berapa sekarang?",
+    "Saya bangun jam setengah tujuh.",
+    "Ketemu jam tujuh, yuk.",
+    "Saya tidak pernah terlambat.",
+    "Kamu ada waktu Jumat?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "godzina / która / ?",
+    "trzeciej / zajęcia / o / mam",
+    "siódmej / się / spotkajmy / o",
+    "się / nigdy / spóźniam / nie",
+    "czas / masz / w / piątek / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "pierwsza — piętnaście po czwartej — wpół do siódmej — za piętnaście dziewiąta — dziesiąta",
+  "o trzeciej — o ósmej — o pierwszej — o piątej — o jedenastej",
+  "Która godzina? — Wstaję o wpół do siódmej. — Spotkajmy się o siódmej. — Nigdy się nie spóźniam. — Masz czas w piątek?",
+  "Która godzina? — Mam zajęcia o trzeciej. — Spotkajmy się o siódmej. — Nigdy się nie spóźniam. — Masz czas w piątek?"
+ ],
+ "wave": "Ulangi dialog unit 8 keras-keras, lalu sebutkan jadwal harimu hari ini dari bangun sampai tidur, dengan jam."
+}

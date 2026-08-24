@@ -1,0 +1,234 @@
+{
+ "title": "Kata kerja yang paling ramah",
+ "title_target": "Co czytasz?",
+ "goal": "Memakai golongan kata kerja yang paling mudah dan paling banyak anggotanya (*-am / -asz*), lalu menyusun pertanyaan dengan *czy* dan kata tanya.",
+ "bekal": [
+  "mengubah kata kerja golongan *-am / -asz* untuk keenam pelaku tanpa berpikir",
+  "membuat pertanyaan ya-tidak dengan *czy* — dan tahu kapan ia boleh dibuang",
+  "memakai delapan kata tanya yang menutup hampir semua percakapan pemula"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — W bibliotece",
+   "intro": "Perpustakaan kampus, siang hari. Budi duduk dengan koran terbuka dan wajah bingung.",
+   "lines": [
+    { "speaker": "Ania:", "text": "Co czytasz, Budi?", "id": "Kamu lagi baca apa, Budi?", "literal": "apa kamu-membaca, Budi?" },
+    { "speaker": "Budi:", "text": "Czytam gazetę. Ale nie rozumiem wszystkiego.", "id": "Saya baca koran. Tapi saya tidak mengerti semuanya.", "literal": "saya-membaca koran. tetapi tidak saya-mengerti segalanya." },
+    { "speaker": "Ania:", "text": "To normalne. Ja też czytam po angielsku bardzo powoli.", "id": "Itu wajar. Saya juga baca bahasa Inggris pelan sekali.", "literal": "itu normal. saya juga membaca secara Inggris sangat pelan." },
+    { "speaker": "Budi:", "text": "Czy słuchasz radia po polsku?", "id": "Kamu suka dengar radio bahasa Polandia?", "literal": "apakah kamu-mendengarkan radio secara Polandia?" },
+    { "speaker": "Ania:", "text": "Codziennie rano. A ty? Oglądasz polskie filmy?", "id": "Tiap pagi. Kamu? Kamu nonton film Polandia?", "literal": "setiap-hari pagi. dan kamu? kamu-menonton Polandia film-film?" },
+    { "speaker": "Budi:", "text": "Oglądam, ale rozumiem może połowę.", "id": "Nonton, tapi saya mengerti mungkin separuhnya.", "literal": "saya-menonton, tetapi saya-mengerti mungkin separuh." },
+    { "speaker": "Ania:", "text": "Masz słownik?", "id": "Kamu punya kamus?", "literal": "kamu-punya kamus?" },
+    { "speaker": "Budi:", "text": "Mam słownik w telefonie. Pytam też kolegów.", "id": "Saya punya kamus di HP. Saya juga tanya teman-teman.", "literal": "saya-punya kamus di telepon. saya-bertanya juga teman-teman." },
+    { "speaker": "Ania:", "text": "Znasz aplikację Lingo? Wszyscy studenci jej używają.", "id": "Kamu tahu aplikasi Lingo? Semua mahasiswa pakai itu.", "literal": "kamu-kenal aplikasi Lingo? semua mahasiswa -nya memakai." },
+    { "speaker": "Budi:", "text": "Nie znam. Jak to działa?", "id": "Saya tidak tahu. Cara kerjanya bagaimana?", "literal": "tidak saya-kenal. bagaimana ini bekerja?" },
+    { "speaker": "Ania:", "text": "Pokażę ci jutro. Czekam na ciebie o piątej.", "id": "Besok saya tunjukkan. Saya tunggu kamu jam lima.", "literal": "saya-akan-menunjukkan kepadamu besok. saya-menunggu pada kamu pada lima." }
+   ],
+   "notes": [
+    "**Golongan ini yang paling ramah**, dan untung besar bagi pemula: anggotanya paling banyak, ekornya paling teratur, dan tidak satu pun huruf di dalam kata dasarnya berubah. *Czytać → czytam, czytasz, czyta…* — cukup buang *-ć*, tempelkan ekor.",
+    "**Czy** adalah tanda tanya yang diucapkan. Ia berdiri di **awal kalimat** dan mengubah pernyataan jadi pertanyaan ya-tidak, tanpa mengubah urutan kata sedikit pun: *Słuchasz radia* (kamu mendengarkan radio) → *Czy słuchasz radia?* (apakah kamu mendengarkan radio?).",
+    "**Dan ia boleh dibuang.** Dalam percakapan, *Masz słownik?* dengan nada naik sama benarnya dan lebih sering terdengar. Persis seperti bahasa Indonesia: \"kamu punya kamus?\" tanpa \"apakah\".",
+    "**Rozumieć membangkang sedikit.** Bentuknya *rozumiem, rozumiesz, rozumie, rozumiemy, rozumiecie, rozumieją* — ekor *ja* dan *my* seperti golongan ini, tapi ekor *oni* memakai *-eją*. Hafalkan apa adanya; ia terlalu sering dipakai untuk dilewati.",
+    "**Gazetę, aplikację, połowę** — semuanya berujung *-ę*. Itu bukan kebetulan: kata benda perempuan yang menjadi **sasaran** pekerjaan mendapat ekor *-ę*. Bentuk ini bernama *biernik* dan menjadi isi penuh unit 7. Untuk sekarang cukup perhatikan polanya lewat.",
+    "**Kolegów** juga bukan bentuk kamus, dan bukan *biernik* — kata benda yang menyebut **orang laki-laki** berperilaku lain lagi. Jangan cemas: ia diperkenalkan pelan-pelan mulai unit 7.",
+    "**Czekam na ciebie** — \"saya menunggu **pada** kamu\". Bahasa Polandia menuntut kata depan *na* sesudah *czekać*, sementara bahasa Indonesia tidak memakai apa pun. Kata kerja yang membawa kata depan wajib seperti ini sebaiknya dihafal sepaket: *czekać na*, *pytać o*, *dziękować za*.",
+    "**Wszyscy studenci** — bentuk jamak untuk kelompok yang ada laki-lakinya. Bandingkan *wszystkie studentki* untuk kelompok perempuan. Pola yang sudah kamu temui di *ci / te* unit 3, kembali lagi."
+   ],
+   "grammars": [
+    {
+     "title": "Golongan III: -am / -asz",
+     "body": [
+      "Buang *-ć* dari bentuk kamusnya, lalu tempelkan enam ekor ini. Tidak ada satu pun huruf lain yang berubah."
+     ],
+     "table": {
+      "head": ["Pelaku", "Ekor", "*czytać* (membaca)", "*mieszkać* (tinggal)"],
+      "rows": [
+       ["ja", "**-am**", "*czyt**am***", "*mieszk**am***"],
+       ["ty", "**-asz**", "*czyt**asz***", "*mieszk**asz***"],
+       ["on / ona / ono", "**-a**", "*czyt**a***", "*mieszk**a***"],
+       ["my", "**-amy**", "*czyt**amy***", "*mieszk**amy***"],
+       ["wy", "**-acie**", "*czyt**acie***", "*mieszk**acie***"],
+       ["oni / one", "**-ają**", "*czyt**ają***", "*mieszk**ają***"]
+      ]
+     },
+     "after": [
+      "Perhatikan bentuk **on / ona / ono**: ekornya cuma *-a*, bentuk terpendek dari semuanya. Ini pola tetap di seluruh bahasa Polandia — bentuk \"dia\" selalu yang paling pendek, dan bentuk \"ja\" selalu berujung *-m*.",
+      "*Mieć* (punya) ikut golongan ini walau bentuk kamusnya pendek: *mam, masz, ma, mamy, macie, mają*. Ia salah satu kata kerja yang paling sering kamu pakai, jadi latih sampai keluar tanpa dipikir.",
+      "⚠️ Jangan menambahkan kata ganti orang kecuali kamu memang ingin menekankan. *Czytam gazetę* sudah lengkap; *Ja czytam gazetę* berarti \"**saya**-lah yang membaca korannya\"."
+     ]
+    },
+    {
+     "title": "Bertanya dalam bahasa Polandia",
+     "body": [
+      "Dua jenis pertanyaan, dan dua-duanya lebih sederhana daripada bahasa Inggris — tidak ada kata bantu seperti *do/does* yang harus disisipkan."
+     ],
+     "tables": [
+      {
+       "head": ["Jenis", "Cara membuatnya", "Contoh"],
+       "rows": [
+        ["Ya–tidak", "tambahkan *czy* di depan, atau cukup naikkan nada", "*Czy masz czas?* / *Masz czas?*"],
+        ["Dengan kata tanya", "kata tanya di depan, sisanya tetap", "*Co czytasz?* *Gdzie mieszkasz?*"]
+       ]
+      },
+      {
+       "head": ["Kata tanya", "Cara baca", "Arti", "Contoh"],
+       "rows": [
+        ["*co*", "tso", "apa", "*Co robisz?*"],
+        ["*kto*", "kto", "siapa", "*Kto to jest?*"],
+        ["*gdzie*", "gjye", "di mana", "*Gdzie mieszkasz?*"],
+        ["*kiedy*", "KYE-dy", "kapan", "*Kiedy masz czas?*"],
+        ["*dlaczego*", "dla-CE-go", "kenapa", "*Dlaczego nie?*"],
+        ["*jak*", "yak", "bagaimana", "*Jak się masz?*"],
+        ["*ile*", "I-le", "berapa", "*Ile to kosztuje?*"],
+        ["*jaki / jaka / jakie*", "YA-ki", "yang bagaimana", "*Jaka jest pogoda?*"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ *Czy* dan *jak* gampang tertukar bagi penutur Indonesia, karena kita memakai satu kata \"apakah/bagaimana\" secara longgar. Patokannya: *czy* menuntut jawaban **tak** atau **nie**; *jak* menuntut penjelasan.",
+      "Menyangkal sama gampangnya: taruh *nie* tepat sebelum kata kerja. *Nie czytam.* *Nie mam czasu.* *Nie rozumiem.* Tidak ada kata bantu, tidak ada perubahan urutan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata kerja -am / -asz yang paling sering dipakai",
+   "blocks": [
+    { "type": "p", "text": "Semuanya berperilaku persis sama. Kalau kamu hafal *czytam*, kamu sudah bisa memakai keempat belasnya." },
+    {
+     "type": "tabel",
+     "head": ["Bentuk kamus", "ja", "ty", "Arti"],
+     "rows": [
+      ["*czytać*", "*czytam*", "*czytasz*", "membaca"],
+      ["*mieszkać*", "*mieszkam*", "*mieszkasz*", "tinggal"],
+      ["*mieć*", "*mam*", "*masz*", "punya"],
+      ["*znać*", "*znam*", "*znasz*", "kenal"],
+      ["*słuchać*", "*słucham*", "*słuchasz*", "mendengarkan"],
+      ["*oglądać*", "*oglądam*", "*oglądasz*", "menonton"],
+      ["*czekać*", "*czekam*", "*czekasz*", "menunggu"],
+      ["*pytać*", "*pytam*", "*pytasz*", "bertanya"],
+      ["*szukać*", "*szukam*", "*szukasz*", "mencari"],
+      ["*kochać*", "*kocham*", "*kochasz*", "mencintai"],
+      ["*pamiętać*", "*pamiętam*", "*pamiętasz*", "ingat"],
+      ["*zapraszać*", "*zapraszam*", "*zapraszasz*", "mengundang"],
+      ["*pomagać*", "*pomagam*", "*pomagasz*", "menolong"],
+      ["*wracać*", "*wracam*", "*wracasz*", "kembali, pulang"]
+     ]
+    },
+    { "type": "kotak", "title": "Tiga kalimat yang langsung bisa kamu pakai", "items": [
+      "*Nie pamiętam.* — Saya tidak ingat. (dipakai sepuluh kali sehari oleh pemula)",
+      "*Szukam ulicy Długiej.* — Saya mencari Jalan Długa.",
+      "*Kocham polską kuchnię.* — Saya suka sekali masakan Polandia."
+     ] }
+   ]
+  },
+  {
+   "title": "Bertanya dan menjawab pendek",
+   "blocks": [
+    { "type": "p", "text": "Jawaban pendek dalam bahasa Polandia mengulang kata kerjanya, bukan memakai kata bantu seperti \"iya, saya begitu\"." },
+    {
+     "type": "tabel",
+     "head": ["Pertanyaan", "Jawaban ya", "Jawaban tidak"],
+     "rows": [
+      ["*Masz czas?*", "*Tak, mam.*", "*Nie, nie mam.*"],
+      ["*Czytasz po polsku?*", "*Tak, czytam.*", "*Nie, nie czytam.*"],
+      ["*Znasz Anię?*", "*Tak, znam.*", "*Nie, nie znam.*"],
+      ["*Rozumiesz?*", "*Tak, rozumiem.*", "*Nie, nie rozumiem.*"]
+     ]
+    },
+    { "type": "p", "text": "Perhatikan kolom terakhir: *nie* muncul **dua kali** — sekali sebagai jawaban \"tidak\", sekali sebagai penyangkal kata kerjanya. Itu benar dan wajib; membuang salah satunya terdengar timpang." },
+    { "type": "kotak", "title": "Kalau kamu tidak menangkap pertanyaannya", "items": [
+      "*Słucham?* — \"Maaf?\" (harfiahnya \"saya mendengarkan?\") Dipakai juga saat mengangkat telepon.",
+      "*Możesz powtórzyć?* — Bisa diulang?",
+      "*Nie wiem, jak to powiedzieć.* — Saya tidak tahu cara mengatakannya.",
+      "*Chwileczkę.* — Sebentar."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "pl": "czytać", "baca": "CY-tac", "id": "membaca" },
+  { "pl": "słuchać", "baca": "SWU-hac", "id": "mendengarkan" },
+  { "pl": "oglądać", "baca": "o-GLON-dac", "id": "menonton" },
+  { "pl": "czekać (na)", "baca": "CE-kac na", "id": "menunggu" },
+  { "pl": "pytać", "baca": "PY-tac", "id": "bertanya" },
+  { "pl": "szukać", "baca": "SYU-kac", "id": "mencari" },
+  { "pl": "pamiętać", "baca": "pa-MYEN-tac", "id": "ingat" },
+  { "pl": "wracać", "baca": "VRA-tsac", "id": "pulang; kembali" },
+  { "pl": "działać", "baca": "JYA-wac", "id": "bekerja (mesin); berfungsi" },
+  { "pl": "gazeta", "baca": "ga-ZE-ta", "id": "koran" },
+  { "pl": "słownik", "baca": "SWOV-nik", "id": "kamus" },
+  { "pl": "aplikacja", "baca": "a-pli-KA-tsya", "id": "aplikasi" },
+  { "pl": "film", "baca": "film", "id": "film" },
+  { "pl": "radio", "baca": "RA-dyo", "id": "radio" },
+  { "pl": "biblioteka", "baca": "bi-blyo-TE-ka", "id": "perpustakaan" },
+  { "pl": "kolega / koleżanka", "baca": "ko-LE-ga", "id": "teman (lk / pr)" },
+  { "pl": "czy", "baca": "cy", "id": "apakah" },
+  { "pl": "kiedy", "baca": "KYE-dy", "id": "kapan" },
+  { "pl": "codziennie", "baca": "tso-JYEN-nye", "id": "setiap hari" },
+  { "pl": "rano", "baca": "RA-no", "id": "pagi" },
+  { "pl": "wieczorem", "baca": "vye-CO-rem", "id": "malam hari" },
+  { "pl": "powoli", "baca": "po-VO-li", "id": "pelan-pelan" },
+  { "pl": "szybko", "baca": "SYYP-ko", "id": "cepat" },
+  { "pl": "może", "baca": "MO-zye", "id": "mungkin" },
+  { "pl": "połowa", "baca": "po-WO-va", "id": "separuh" },
+  { "pl": "wszystko", "baca": "FSYYST-ko", "id": "semuanya" },
+  { "pl": "wszyscy", "baca": "FSYYS-tsy", "id": "semua orang" },
+  { "pl": "czas", "baca": "cas", "id": "waktu" },
+  { "pl": "chwileczkę", "baca": "hvi-LEC-ke", "id": "sebentar" },
+  { "pl": "normalne", "baca": "nor-MAL-ne", "id": "wajar" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan bentuk kata kerja yang tepat.",
+   "items": [
+    "Ja ____ gazetę. (czytać)",
+    "Ty ____ radia. (słuchać)",
+    "On ____ w Krakowie. (mieszkać)",
+    "My ____ na Anię. (czekać)",
+    "Wy ____ film. (oglądać)",
+    "Oni ____ słownik. (mieć)"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi pertanyaan dengan *czy*.",
+   "items": [
+    "Masz czas.",
+    "Czytasz po polsku.",
+    "Ania mieszka w Warszawie.",
+    "Oni znają Budiego.",
+    "Rozumiesz wszystko."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Saya tidak ingat.",
+    "Kamu lagi baca apa?",
+    "Saya tinggal di Jakarta.",
+    "Kami menunggu Ania.",
+    "Kamu punya waktu?",
+    "Saya tidak mengerti semuanya."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "czytasz / co / ?",
+    "mam / nie / czasu",
+    "radia / słucham / rano",
+    "znasz / Anię / czy / ?",
+    "mieszkamy / Krakowie / w"
+   ]
+  }
+ ],
+ "answers": [
+  "czytam — słuchasz — mieszka — czekamy — oglądacie — mają",
+  "Czy masz czas? — Czy czytasz po polsku? — Czy Ania mieszka w Warszawie? — Czy oni znają Budiego? — Czy rozumiesz wszystko?",
+  "Nie pamiętam. — Co czytasz? — Mieszkam w Dżakarcie. — Czekamy na Anię. — Masz czas? — Nie rozumiem wszystkiego.",
+  "Co czytasz? — Nie mam czasu. — Rano słucham radia. — Czy znasz Anię? — Mieszkamy w Krakowie."
+ ],
+ "wave": "Ulangi dialog unit 2 keras-keras, lalu ubah lima kalimatnya jadi pertanyaan dengan *czy*."
+}

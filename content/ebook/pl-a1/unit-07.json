@@ -1,0 +1,228 @@
+{
+ "title": "Sasaran pekerjaan: biernik",
+ "title_target": "Mam kota i lubię kawę",
+ "goal": "Mengubah kata benda saat ia menjadi sasaran pekerjaan — ekor *-ę* untuk kata perempuan, *-a* untuk makhluk hidup laki-laki, dan tanpa perubahan sama sekali untuk sisanya.",
+ "bekal": [
+  "memakai *biernik* sesudah *mam*, *lubię*, *piję*, *znam*, *kupuję*",
+  "mengenali kata benda mana yang **tidak** berubah sama sekali",
+  "menyesuaikan kata sifat yang menempel pada sasaran"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Mam kota",
+   "intro": "Sore di balkon asrama. Ania menunjukkan foto anjingnya; Budi membuka foto kucingnya.",
+   "lines": [
+    { "speaker": "Ania:", "text": "Masz zwierzę w domu?", "id": "Kamu punya hewan di rumah?", "literal": "kamu-punya hewan di rumah?" },
+    { "speaker": "Budi:", "text": "Mam kota. Nazywa się Oyen. A ty?", "id": "Saya punya kucing. Namanya Oyen. Kamu?", "literal": "saya-punya kucing. menamai diri Oyen. dan kamu?" },
+    { "speaker": "Ania:", "text": "Mam psa i dwa koty. Kocham zwierzęta.", "id": "Saya punya anjing dan dua kucing. Saya sayang binatang.", "literal": "saya-punya anjing dan dua kucing. saya-mencintai hewan-hewan." },
+    { "speaker": "Budi:", "text": "Kto karmi psa, kiedy jesteś w szkole?", "id": "Siapa yang kasih makan anjingnya waktu kamu di sekolah?", "literal": "siapa memberi-makan anjing, ketika kamu-adalah di sekolah?" },
+    { "speaker": "Ania:", "text": "Mama. Ona ma czas rano.", "id": "Ibu. Dia punya waktu pagi-pagi.", "literal": "ibu. dia punya waktu pagi." },
+    { "speaker": "Budi:", "text": "Rozumiem. Ja piję kawę rano, a siostra pije herbatę.", "id": "Saya paham. Saya minum kopi pagi-pagi, kalau adik saya minum teh.", "literal": "saya-mengerti. saya minum kopi pagi, dan saudara-perempuan minum teh." },
+    { "speaker": "Ania:", "text": "Ja też lubię kawę, ale wolę herbatę wieczorem.", "id": "Saya juga suka kopi, tapi malam lebih suka teh.", "literal": "saya juga suka kopi, tetapi lebih-suka teh malam." },
+    { "speaker": "Budi:", "text": "Znasz tę kawiarnię obok uniwersytetu?", "id": "Kamu tahu kafe di sebelah kampus?", "literal": "kamu-kenal itu-pr kafe di-samping universitas?" },
+    { "speaker": "Ania:", "text": "Znam. Mają dobrą kawę i tanie ciasto.", "id": "Tahu. Kopinya enak dan kuenya murah.", "literal": "saya-kenal. mereka-punya baik kopi dan murah kue." },
+    { "speaker": "Budi:", "text": "To idziemy tam jutro? Stawiam kawę.", "id": "Kita ke sana besok, yuk? Saya yang traktir kopi.", "literal": "jadi kita-pergi ke-sana besok? saya-mentraktir kopi." },
+    { "speaker": "Ania:", "text": "Chętnie! Biorę duże cappuccino.", "id": "Mau! Saya ambil cappuccino besar.", "literal": "dengan-senang-hati! saya-mengambil besar cappuccino." }
+   ],
+   "notes": [
+    "**Kawa jadi kawę, herbata jadi herbatę.** Kata benda perempuan berujung *-a* berubah jadi *-ę* saat ia menjadi **sasaran** pekerjaan. Inilah ekor yang sudah kamu lihat berkeliaran sejak unit 4 (*gazetę*, *aplikację*, *kolację*) dan sekarang dapat namanya: *biernik*.",
+    "**Kot jadi kota, pies jadi psa.** Kata benda laki-laki yang **bernyawa** — orang dan binatang — mendapat ekor *-a*. Perhatikan *pies → psa*: huruf *e* di dalam kata hilang. Sekelompok kecil kata memang berkelakuan begitu (*pies*, *chłopiec*, *ojciec*); jumlahnya sedikit dan bisa dihafal saat bertemu.",
+    "**Kata benda laki-laki yang bukan makhluk hidup TIDAK berubah.** *Mam telefon*, *mam samochód*, *piję sok* — bentuknya sama persis dengan bentuk kamus. Ini penghematan besar yang jarang disadari pemula: setengah dari kata benda laki-laki tak perlu diapa-apakan.",
+    "**Kata benda netral juga tidak berubah.** *Mam zwierzę*, *kupuję piwo*, *lubię ciasto*. Golongan ini paling ramah dari semuanya.",
+    "**Dobra kawa jadi dobrą kawę.** Kata sifat ikut berubah bersama kata bendanya. Untuk kata perempuan, ekor *-a* jadi **-ą**. Ingat: kata sifat dan kata benda selalu berjalan bergandengan; kalau satu berubah, yang lain ikut.",
+    "**Tę kawiarnię** — bentuk *biernik* dari *ta*. Bentuk tunjuknya juga ikut aturan: *ten → ten/tego*, *ta → tę*, *to → to*. Dalam percakapan sehari-hari banyak orang Polandia mengucapkan *tą* alih-alih *tę*; yang benar dalam tulisan tetap *tę*.",
+    "**Kto karmi psa?** Perhatikan kalimat ini punya pelaku (*kto*) dan sasaran (*psa*), dan yang membedakannya bukan urutan kata melainkan **ekornya**. Karena itulah bahasa Polandia boleh menggeser urutan kata sesuka hati tanpa kehilangan arti — sesuatu yang mustahil dalam bahasa Indonesia.",
+    "**Stawiam kawę** — \"saya mentraktir kopi\", harfiahnya \"saya mendirikan kopi\". Ungkapan tetap; jangan diurai."
+   ],
+   "grammars": [
+    {
+     "title": "Biernik — ekor sasaran",
+     "body": [
+      "Bentuk yang menjawab pertanyaan *kogo? co?* — siapa/apa yang dikenai pekerjaan. Ia bentuk kedua yang paling sering dipakai sesudah bentuk kamus."
+     ],
+     "table": {
+      "head": ["Jenis kata benda", "Bentuk kamus", "Jadi", "Contoh kalimat"],
+      "rows": [
+       ["**żeński** (-a)", "*kawa*", "*kaw**ę***", "*Piję kawę.*"],
+       ["**żeński** (-a)", "*książka*", "*książk**ę***", "*Czytam książkę.*"],
+       ["**męski** bernyawa", "*kot*", "*kot**a***", "*Mam kota.*"],
+       ["**męski** bernyawa", "*brat*", "*brat**a***", "*Znam twojego brata.*"],
+       ["**męski** benda", "*telefon*", "*telefon* (tetap)", "*Mam telefon.*"],
+       ["**nijaki**", "*piwo*", "*piwo* (tetap)", "*Kupuję piwo.*"]
+      ]
+     },
+     "after": [
+      "Ringkasnya cuma tiga baris yang perlu diingat: **perempuan → -ę**, **laki-laki bernyawa → -a**, **sisanya tidak berubah**. Dua dari tiga kelompok tidak menuntut apa pun darimu.",
+      "Kata perempuan yang berujung huruf mati (*noc*, *rzecz*, *miłość*) juga tidak berubah — golongan kecil yang enak.",
+      "⚠️ Jangan tertipu bunyi: *-ę* di ujung kata dibaca **e biasa**. *Kawę* dibaca **KA-ve**, bukan \"ka-ven\"."
+     ]
+    },
+    {
+     "title": "Kata kerja yang menuntut biernik",
+     "body": [
+      "Tidak semua kata kerja memakai bentuk ini, tapi yang paling sering dipakai sehari-hari hampir semuanya begitu."
+     ],
+     "table": {
+      "head": ["Kata kerja", "Arti", "Contoh"],
+      "rows": [
+       ["*mieć*", "punya", "*Mam siostrę.*"],
+       ["*lubić*", "suka", "*Lubię kawę.*"],
+       ["*kochać*", "mencintai", "*Kocham muzykę.*"],
+       ["*pić*", "minum", "*Piję herbatę.*"],
+       ["*jeść*", "makan", "*Jem zupę.*"],
+       ["*czytać*", "membaca", "*Czytam gazetę.*"],
+       ["*znać*", "kenal", "*Znam Anię.*"],
+       ["*kupować*", "membeli", "*Kupuję książkę.*"],
+       ["*oglądać*", "menonton", "*Oglądam telewizję.*"],
+       ["*brać*", "mengambil", "*Biorę kawę.*"]
+      ]
+     },
+     "after": [
+      "⚠️ **Satu jebakan besar menunggu di unit 14:** begitu kalimatnya disangkal, sasarannya berpindah ke bentuk lain. *Mam kawę* → *Nie mam kawy*. *Lubię herbatę* → *Nie lubię herbaty*. Kenali dulu gejalanya; aturannya menyusul.",
+      "Beberapa kata kerja justru **tidak** memakai *biernik* dan menuntut bentuk lain: *słuchać* (*słucham muzyki*), *szukać* (*szukam klucza*), *pomagać* (*pomagam mamie*). Hafalkan bersama contohnya, jangan sendirian."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Latihan mata: satu kata, dua bentuk",
+   "blocks": [
+    { "type": "p", "text": "Baca tiap baris keras-keras dua kali. Yang dilatih bukan hafalan aturan, melainkan telinga yang mulai merasa aneh kalau ekornya salah." },
+    {
+     "type": "tabel",
+     "head": ["Sebagai pelaku", "Sebagai sasaran", "Jenis"],
+     "rows": [
+      ["*Kawa jest dobra.*", "*Piję kawę.*", "żeński"],
+      ["*Herbata jest gorąca.*", "*Lubię herbatę.*", "żeński"],
+      ["*Książka jest nowa.*", "*Czytam książkę.*", "żeński"],
+      ["*Siostra jest w domu.*", "*Znam jego siostrę.*", "żeński"],
+      ["*Kot śpi.*", "*Mam kota.*", "męski bernyawa"],
+      ["*Pies je.*", "*Karmię psa.*", "męski bernyawa"],
+      ["*Brat pracuje.*", "*Znam jej brata.*", "męski bernyawa"],
+      ["*Telefon jest stary.*", "*Mam telefon.*", "męski benda"],
+      ["*Chleb jest świeży.*", "*Kupuję chleb.*", "męski benda"],
+      ["*Piwo jest zimne.*", "*Piję piwo.*", "nijaki"]
+     ]
+    },
+    { "type": "kotak", "title": "Cara memeriksa sendiri", "items": [
+      "Tanyakan pada kalimatmu: **siapa/apa yang melakukan?** Itu bentuk kamus. **Siapa/apa yang dikenai?** Itu *biernik*.",
+      "Kalau kata bendanya berujung *-a* dan ia yang dikenai, ganti jadi *-ę*. Itu satu perubahan yang menutup mayoritas kesalahan pemula.",
+      "Kalau ia laki-laki dan bernyawa, tambahkan *-a*. Kalau bukan keduanya — biarkan saja."
+     ] }
+   ]
+  },
+  {
+   "title": "Makanan, minuman, dan hewan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Polski", "Sebagai sasaran", "Cara baca", "Arti"],
+     "rows": [
+      ["*kawa*", "*kawę*", "KA-va / KA-ve", "kopi"],
+      ["*herbata*", "*herbatę*", "her-BA-ta", "teh"],
+      ["*woda*", "*wodę*", "VO-da", "air"],
+      ["*zupa*", "*zupę*", "ZU-pa", "sup"],
+      ["*kanapka*", "*kanapkę*", "ka-NAP-ka", "roti isi"],
+      ["*sok*", "*sok*", "sok", "jus"],
+      ["*chleb*", "*chleb*", "hlep", "roti"],
+      ["*ser*", "*ser*", "ser", "keju"],
+      ["*piwo*", "*piwo*", "PI-vo", "bir"],
+      ["*mleko*", "*mleko*", "MLE-ko", "susu"],
+      ["*kot*", "*kota*", "kot / KO-ta", "kucing"],
+      ["*pies*", "*psa*", "pyes / psa", "anjing"]
+     ]
+    },
+    { "type": "kotak", "title": "Kalimat yang langsung bisa dipakai", "items": [
+      "*Piję kawę bez cukru.* — Saya minum kopi tanpa gula.",
+      "*Nie jem mięsa.* — Saya tidak makan daging. (perhatikan: disangkal, ekornya lain lagi)",
+      "*Lubię polskie jedzenie.* — Saya suka makanan Polandia.",
+      "*Biorę to.* — Saya ambil yang ini."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "pl": "zwierzę", "baca": "ZVYE-zye", "id": "hewan" },
+  { "pl": "kot / kota", "baca": "kot / KO-ta", "id": "kucing (pelaku / sasaran)" },
+  { "pl": "pies / psa", "baca": "pyes / psa", "id": "anjing (pelaku / sasaran)" },
+  { "pl": "karmić", "baca": "KAR-mic", "id": "memberi makan" },
+  { "pl": "kawa", "baca": "KA-va", "id": "kopi" },
+  { "pl": "herbata", "baca": "her-BA-ta", "id": "teh" },
+  { "pl": "woda", "baca": "VO-da", "id": "air" },
+  { "pl": "sok", "baca": "sok", "id": "jus" },
+  { "pl": "piwo", "baca": "PI-vo", "id": "bir" },
+  { "pl": "ciasto", "baca": "CYAS-to", "id": "kue" },
+  { "pl": "kawiarnia", "baca": "ka-VYAR-nya", "id": "kafe" },
+  { "pl": "uniwersytet", "baca": "u-ni-VER-sy-tet", "id": "universitas" },
+  { "pl": "telewizja", "baca": "te-le-VI-zya", "id": "televisi" },
+  { "pl": "muzyka", "baca": "MU-zy-ka", "id": "musik" },
+  { "pl": "samochód", "baca": "sa-MO-hut", "id": "mobil" },
+  { "pl": "dobry / dobra", "baca": "DOB-ry / DOB-ra", "id": "baik; enak" },
+  { "pl": "tani", "baca": "TA-ni", "id": "murah" },
+  { "pl": "drogi", "baca": "DRO-gi", "id": "mahal" },
+  { "pl": "zimny / gorący", "baca": "ZIM-ny / go-RON-tsy", "id": "dingin / panas" },
+  { "pl": "świeży", "baca": "SYVYE-zyy", "id": "segar" },
+  { "pl": "tam", "baca": "tam", "id": "di sana" },
+  { "pl": "tu / tutaj", "baca": "tu / TU-tay", "id": "di sini" },
+  { "pl": "bez", "baca": "bes", "id": "tanpa" },
+  { "pl": "cukier", "baca": "TSU-kyer", "id": "gula" },
+  { "pl": "mięso", "baca": "MYEN-so", "id": "daging" },
+  { "pl": "jedzenie", "baca": "ye-DZE-nye", "id": "makanan" },
+  { "pl": "stawiać", "baca": "STA-vyac", "id": "mentraktir" },
+  { "pl": "kto", "baca": "kto", "id": "siapa" },
+  { "pl": "kogo / co", "baca": "KO-go / tso", "id": "siapa/apa (sasaran)" },
+  { "pl": "tę", "baca": "te", "id": "ini/itu (pr, sasaran)" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah kata dalam kurung jadi bentuk sasaran (*biernik*).",
+   "items": [
+    "Piję ____ . (kawa)",
+    "Mam ____ . (kot)",
+    "Czytam ____ . (książka)",
+    "Kupuję ____ . (chleb)",
+    "Znam jego ____ . (siostra)",
+    "Lubię ____ . (piwo)"
+   ]
+  },
+  {
+   "prompt": "Tandai kata benda mana yang **tidak** berubah sebagai sasaran. Tulis ulang bentuk sasarannya.",
+   "items": [
+    "telefon",
+    "herbata",
+    "mleko",
+    "brat",
+    "sok"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Saya punya kucing.",
+    "Saya minum teh pagi-pagi.",
+    "Kamu suka kopi?",
+    "Kami beli roti dan keju.",
+    "Saya kenal kakaknya. (kakak laki-laki)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "kawę / piję / rano",
+    "kota / mam / i / psa",
+    "książkę / czytam / polską",
+    "znasz / siostrę / moją / ?",
+    "kupuję / ser / chleb / i"
+   ]
+  }
+ ],
+ "answers": [
+  "kawę — kota — książkę — chleb — siostrę — piwo",
+  "telefon — herbatę — mleko — brata — sok",
+  "Mam kota. — Piję herbatę rano. — Lubisz kawę? — Kupujemy chleb i ser. — Znam jej brata.",
+  "Rano piję kawę. — Mam kota i psa. — Czytam polską książkę. — Znasz moją siostrę? — Kupuję chleb i ser."
+ ],
+ "wave": "Ulangi dialog unit 5 keras-keras, lalu ubah sepuluh kata benda unit 3 jadi bentuk sasaran sambil mengucapkan *mam…* di depannya."
+}

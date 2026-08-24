@@ -1,0 +1,601 @@
+{
+ "title": "Kemarin kamu ngapain?",
+ "title_target": "Co robiłeś wczoraj?",
+ "goal": "Menceritakan hal yang sudah lewat, dan mengenali kenapa bentuk lampau bahasa Polandia berbeda menurut jenis kelamin pelakunya.",
+ "bekal": [
+  "membentuk kalimat lampau dari bentuk kamus mana pun",
+  "memilih ekor laki-laki, perempuan, atau jamak dengan benar",
+  "memakai keterangan waktu lampau yang paling sering dipakai"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Co robiłeś wczoraj?",
+   "intro": "Pagi hari di kantin. Budi tampak kurang tidur; Ania sudah menunggu penjelasan.",
+   "lines": [
+    {
+     "speaker": "Ania:",
+     "text": "Co robiłeś wczoraj wieczorem?",
+     "id": "Kemarin malam kamu ngapain?",
+     "literal": "apa kamu-melakukan-lampau-lk kemarin malam?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Byłem w kinie z kolegami. A ty?",
+     "id": "Saya ke bioskop sama teman-teman. Kamu?",
+     "literal": "saya-adalah-lampau-lk di bioskop dengan teman-teman. dan kamu?"
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Byłam w domu. Czytałam i wcześnie poszłam spać.",
+     "id": "Saya di rumah. Baca-baca terus tidur cepat.",
+     "literal": "saya-adalah-lampau-pr di rumah. saya-membaca-lampau-pr dan awal saya-pergi-lampau-pr tidur."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nie dzwoniłaś do mnie?",
+     "id": "Kamu nggak nelepon saya?",
+     "literal": "tidak kamu-menelepon-lampau-pr ke saya?"
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Dzwoniłam dwa razy, ale nie odbierałeś.",
+     "id": "Saya telepon dua kali, tapi kamu tidak angkat.",
+     "literal": "saya-menelepon-lampau-pr dua kali, tetapi tidak kamu-mengangkat-lampau-lk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Przepraszam, telefon był wyciszony w kinie.",
+     "id": "Maaf, HP-nya saya senyapkan di bioskop.",
+     "literal": "maaf, telepon adalah-lampau disenyapkan di bioskop."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Nie szkodzi. Jaki był film?",
+     "id": "Tidak apa-apa. Filmnya gimana?",
+     "literal": "tidak merugikan. yang-bagaimana adalah-lampau film?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bardzo dobry. Śmialiśmy się przez dwie godziny.",
+     "id": "Bagus banget. Kami ketawa dua jam penuh.",
+     "literal": "sangat baik. kami-tertawa-lampau diri selama dua jam."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "A potem?",
+     "id": "Terus?",
+     "literal": "dan kemudian?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Poszliśmy na piwo. Wróciłem do domu o północy.",
+     "id": "Kami lanjut minum bir. Saya pulang tengah malam.",
+     "literal": "kami-pergi-lampau untuk bir. saya-kembali-lampau-lk ke rumah pada tengah-malam."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Dlatego wyglądasz dziś tak zmęczony.",
+     "id": "Pantas hari ini kamu kelihatan capek.",
+     "literal": "karena-itu kamu-terlihat hari-ini begitu lelah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Właśnie. Ale było warto.",
+     "id": "Nah, itu dia. Tapi sepadan kok.",
+     "literal": "tepat. tetapi adalah-lampau layak."
+    }
+   ],
+   "notes": [
+    "**Robiłeś atau robiłaś?** Bentuk lampau bahasa Polandia **membawa jenis kelamin pelakunya**. Laki-laki: *robiłem, robiłeś, robił*. Perempuan: *robiłam, robiłaś, robiła*. Ini hal yang tidak ada padanannya dalam bahasa Indonesia sama sekali, dan satu-satunya bagian sulit di unit ini.",
+    "**Artinya kamu harus memikirkan siapa yang berbicara.** Kalau kamu perempuan, kamu mengatakan *byłam*; kalau laki-laki, *byłem*. Kesalahan di sini adalah kesalahan pemula yang paling cepat ditangkap telinga orang Polandia.",
+    "**Kata ganti orangnya tetap boleh dibuang**, karena ekornya sudah menandai pelaku sekaligus jenis kelaminnya. *Byłam w domu* sudah lengkap: \"(saya, perempuan) tadi di rumah\".",
+    "**Poszłam, poszliśmy** — bentuk lampau dari *iść* tidak beraturan sama sekali: *poszedłem* (lk), *poszłam* (pr), *poszliśmy* (kami, ada lk), *poszłyśmy* (kami, semua pr). Ia terlalu sering dipakai untuk dilewati, jadi hafalkan keempatnya.",
+    "**Śmialiśmy się** — kata kerja ber-*się* tetap membawa *się*-nya di bentuk lampau, dan letaknya masih bebas: *śmialiśmy się* atau *się śmialiśmy*.",
+    "**Przez dwie godziny** — \"selama dua jam\". Kata depan *przez* menyatakan lamanya sesuatu berlangsung dan diikuti bentuk sasaran.",
+    "**Było warto** — \"sepadan\". Kata-kata tanpa pelaku (*trzeba*, *można*, *warto*) dibuat lampau dengan menambahkan *było* di depannya: *trzeba było* (seharusnya), *można było* (tadinya bisa)."
+   ],
+   "grammars": [
+    {
+     "title": "Membentuk kalimat lampau",
+     "body": [
+      "Tiga langkah, tanpa kata bantu apa pun: ambil bentuk kamus, buang *-ć*, tempelkan ekor yang cocok dengan pelakunya."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Laki-laki",
+       "Perempuan",
+       "Contoh (*robić*)"
+      ],
+      "rows": [
+       [
+        "ja",
+        "**-łem**",
+        "**-łam**",
+        "*robiłem / robiłam*"
+       ],
+       [
+        "ty",
+        "**-łeś**",
+        "**-łaś**",
+        "*robiłeś / robiłaś*"
+       ],
+       [
+        "on / ona / ono",
+        "**-ł**",
+        "**-ła** / **-ło**",
+        "*robił / robiła / robiło*"
+       ],
+       [
+        "my",
+        "**-liśmy**",
+        "**-łyśmy**",
+        "*robiliśmy / robiłyśmy*"
+       ],
+       [
+        "wy",
+        "**-liście**",
+        "**-łyście**",
+        "*robiliście / robiłyście*"
+       ],
+       [
+        "oni / one",
+        "**-li**",
+        "**-ły**",
+        "*robili / robiły*"
+       ]
+      ]
+     },
+     "after": [
+      "Kolom \"laki-laki\" dipakai juga untuk kelompok **campur** — satu laki-laki di antara sepuluh perempuan sudah cukup untuk memakai *robiliśmy*. Kolom \"perempuan\" untuk kelompok yang seluruhnya perempuan, anak-anak, atau benda.",
+      "Perhatikan huruf **ł** ada di semua bentuk. Itu tanda lampau yang sesungguhnya; ekor sesudahnya cuma menunjukkan siapa pelakunya.",
+      "Kata kerja golongan mana pun berperilaku sama di bentuk lampau: *czytać → czytałem*, *mówić → mówiłem*, *pracować → pracowałem*. Setelah rumit di bentuk sekarang, bentuk lampau justru lebih teratur."
+     ]
+    },
+    {
+     "title": "Być di masa lampau — dan lima kata kerja tak beraturan",
+     "body": [
+      "*Być* adalah yang paling sering dipakai, dan lima kata kerja berikut punya bentuk lampau yang tidak bisa ditebak dari bentuk kamusnya."
+     ],
+     "tables": [
+      {
+       "head": [
+        "Pelaku",
+        "Laki-laki",
+        "Perempuan"
+       ],
+       "rows": [
+        [
+         "ja",
+         "*byłem*",
+         "*byłam*"
+        ],
+        [
+         "ty",
+         "*byłeś*",
+         "*byłaś*"
+        ],
+        [
+         "on / ona",
+         "*był*",
+         "*była*"
+        ],
+        [
+         "my",
+         "*byliśmy*",
+         "*byłyśmy*"
+        ],
+        [
+         "wy",
+         "*byliście*",
+         "*byłyście*"
+        ],
+        [
+         "oni / one",
+         "*byli*",
+         "*były*"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Bentuk kamus",
+        "Lampau (lk)",
+        "Lampau (pr)",
+        "Arti"
+       ],
+       "rows": [
+        [
+         "*iść*",
+         "*szedłem*",
+         "*szłam*",
+         "pergi (kaki)"
+        ],
+        [
+         "*pójść*",
+         "*poszedłem*",
+         "*poszłam*",
+         "pergi (sekali)"
+        ],
+        [
+         "*jeść*",
+         "*jadłem*",
+         "*jadłam*",
+         "makan"
+        ],
+        [
+         "*móc*",
+         "*mogłem*",
+         "*mogłam*",
+         "bisa"
+        ],
+        [
+         "*znaleźć*",
+         "*znalazłem*",
+         "*znalazłam*",
+         "menemukan"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "*Byłem w…* adalah cara menyatakan \"saya pernah ke…\": *Byłem w Warszawie* — saya pernah ke Warsawa. Bahasa Polandia tidak butuh bentuk \"pernah\" yang terpisah.",
+      "Menyangkal sama seperti biasa — *nie* di depan: *Nie byłem w domu*, *Nie widziałam go*. Dan ingat sasaran yang disangkal berpindah ke *dopełniacz*: *Nie miałem czasu*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Keterangan waktu lampau",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*wczoraj*",
+       "FCO-ray",
+       "kemarin"
+      ],
+      [
+       "*przedwczoraj*",
+       "psyet-FCO-ray",
+       "kemarin lusa"
+      ],
+      [
+       "*wczoraj wieczorem*",
+       "FCO-ray vye-CO-rem",
+       "kemarin malam"
+      ],
+      [
+       "*dziś rano*",
+       "jyisy RA-no",
+       "tadi pagi"
+      ],
+      [
+       "*w zeszłym tygodniu*",
+       "v ZESY-wym",
+       "minggu lalu"
+      ],
+      [
+       "*w zeszłym miesiącu*",
+       "v ZESY-wym",
+       "bulan lalu"
+      ],
+      [
+       "*w zeszłym roku*",
+       "v ZESY-wym RO-ku",
+       "tahun lalu"
+      ],
+      [
+       "*w weekend*",
+       "v UI-kend",
+       "akhir pekan"
+      ],
+      [
+       "*dwa dni temu*",
+       "dva dni TE-mu",
+       "dua hari yang lalu"
+      ],
+      [
+       "*dawno temu*",
+       "DAV-no TE-mu",
+       "dulu sekali"
+      ],
+      [
+       "*niedawno*",
+       "nye-DAV-no",
+       "belum lama ini"
+      ],
+      [
+       "*już*",
+       "yusy",
+       "sudah"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Temu* selalu berdiri **sesudah** jangka waktunya, kebalikan dari bahasa Inggris: *tydzień temu* (seminggu lalu), *pięć minut temu* (lima menit lalu). Susunannya persis seperti bahasa Indonesia \"seminggu yang lalu\"."
+    },
+    {
+     "type": "kotak",
+     "title": "Bertanya tentang masa lalu",
+     "items": [
+      "*Co robiłeś w weekend?* (lk) / *Co robiłaś…?* (pr) — Akhir pekan kamu ngapain?",
+      "*Gdzie byłeś wczoraj?* — Kemarin kamu di mana?",
+      "*Podobało ci się?* — Kamu suka?",
+      "*Jak było?* — Gimana rasanya?",
+      "*Byłeś kiedyś w Polsce?* — Kamu pernah ke Polandia?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Cerita untuk dibaca keras-keras",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Semua kata kerjanya bentuk lampau. Bacalah dua kali: sekali pelan sambil melihat terjemahan, sekali agak cepat tanpa melihat."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*W sobotę wstałem późno, o jedenastej.*",
+       "Sabtu saya bangun kesiangan, jam sebelas."
+      ],
+      [
+       "*Zjadłem śniadanie i poszedłem do parku.*",
+       "Saya sarapan lalu jalan ke taman."
+      ],
+      [
+       "*Pogoda była piękna — słońce i osiemnaście stopni.*",
+       "Cuacanya indah — matahari dan delapan belas derajat."
+      ],
+      [
+       "*Spotkałem Anię przy fontannie.*",
+       "Saya bertemu Ania di dekat air mancur."
+      ],
+      [
+       "*Potem poszliśmy na obiad do małej restauracji.*",
+       "Lalu kami makan siang di restoran kecil."
+      ],
+      [
+       "*Zamówiłem pierogi, a Ania zupę.*",
+       "Saya pesan pierogi, Ania pesan sup."
+      ],
+      [
+       "*Wszystko było bardzo smaczne i niedrogie.*",
+       "Semuanya enak sekali dan tidak mahal."
+      ],
+      [
+       "*To był dobry dzień.*",
+       "Itu hari yang menyenangkan."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Latihan yang paling menolong minggu ini",
+     "items": [
+      "Tulis ulang cerita di atas dengan keteranganmu sendiri — hari, tempat, makanan, teman. Sepuluh kalimat, tidak lebih.",
+      "Kalau kamu perempuan, ganti semua ekor *-łem* jadi *-łam*, *-szedłem* jadi *-szłam*. Melakukan ini sekali dengan sadar mengunci aturannya lebih kuat daripada membaca tabel sepuluh kali.",
+      "Bacalah hasilnya keras-keras. Kalau ada kalimat yang tersendat, itu kalimat yang perlu kamu ulang besok."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "wczoraj",
+   "baca": "FCO-ray",
+   "id": "kemarin"
+  },
+  {
+   "pl": "temu",
+   "baca": "TE-mu",
+   "id": "yang lalu"
+  },
+  {
+   "pl": "zeszły",
+   "baca": "ZESY-wy",
+   "id": "yang lalu (minggu/bulan)"
+  },
+  {
+   "pl": "dzwonić",
+   "baca": "DZVO-nic",
+   "id": "menelepon"
+  },
+  {
+   "pl": "odbierać",
+   "baca": "od-BYE-rac",
+   "id": "mengangkat (telepon)"
+  },
+  {
+   "pl": "śmiać się",
+   "baca": "syimyac sye",
+   "id": "tertawa"
+  },
+  {
+   "pl": "rozmawiać",
+   "baca": "roz-MA-vyac",
+   "id": "mengobrol"
+  },
+  {
+   "pl": "spotkać",
+   "baca": "SPOT-kac",
+   "id": "bertemu"
+  },
+  {
+   "pl": "zamówić",
+   "baca": "za-MU-vic",
+   "id": "memesan"
+  },
+  {
+   "pl": "wrócić",
+   "baca": "VRU-cic",
+   "id": "pulang"
+  },
+  {
+   "pl": "zjeść",
+   "baca": "zyesyc",
+   "id": "menghabiskan makan"
+  },
+  {
+   "pl": "pójść",
+   "baca": "puysyc",
+   "id": "pergi (sekali)"
+  },
+  {
+   "pl": "znaleźć",
+   "baca": "ZNA-lesyc",
+   "id": "menemukan"
+  },
+  {
+   "pl": "zmęczony",
+   "baca": "zmen-CO-ny",
+   "id": "lelah"
+  },
+  {
+   "pl": "północ",
+   "baca": "PUW-nots",
+   "id": "tengah malam"
+  },
+  {
+   "pl": "pogoda",
+   "baca": "po-GO-da",
+   "id": "cuaca"
+  },
+  {
+   "pl": "słońce",
+   "baca": "SWONY-tse",
+   "id": "matahari"
+  },
+  {
+   "pl": "fontanna",
+   "baca": "fon-TAN-na",
+   "id": "air mancur"
+  },
+  {
+   "pl": "przez",
+   "baca": "psyes",
+   "id": "selama; melalui"
+  },
+  {
+   "pl": "dlatego",
+   "baca": "dla-TE-go",
+   "id": "karena itu"
+  },
+  {
+   "pl": "właśnie",
+   "baca": "VWASY-nye",
+   "id": "tepat; nah itu dia"
+  },
+  {
+   "pl": "piękny",
+   "baca": "PYENK-ny",
+   "id": "indah"
+  },
+  {
+   "pl": "kiedyś",
+   "baca": "KYE-dysy",
+   "id": "pernah; suatu saat"
+  },
+  {
+   "pl": "podobać się",
+   "baca": "po-DO-bac sye",
+   "id": "disukai"
+  },
+  {
+   "pl": "wyciszony",
+   "baca": "vy-cy-SYO-ny",
+   "id": "disenyapkan"
+  },
+  {
+   "pl": "niedrogi",
+   "baca": "nye-DRO-gi",
+   "id": "tidak mahal"
+  },
+  {
+   "pl": "dawno",
+   "baca": "DAV-no",
+   "id": "dulu sekali"
+  },
+  {
+   "pl": "niedawno",
+   "baca": "nye-DAV-no",
+   "id": "belum lama ini"
+  },
+  {
+   "pl": "restauracja",
+   "baca": "res-tau-RA-tsya",
+   "id": "restoran"
+  },
+  {
+   "pl": "warto",
+   "baca": "VAR-to",
+   "id": "sepadan; layak"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk lampau. Pelakunya **laki-laki**.",
+   "items": [
+    "Czytam książkę. →",
+    "Jestem w domu. →",
+    "Pracuję w banku. →",
+    "Idę do kina. →",
+    "Mam czas. →"
+   ]
+  },
+  {
+   "prompt": "Ubah ke bentuk lampau. Pelakunya **perempuan**.",
+   "items": [
+    "Czytam książkę. →",
+    "Jestem w domu. →",
+    "Dzwonię do mamy. →",
+    "Idę do sklepu. →",
+    "Uczę się polskiego. →"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia (pelaku laki-laki).",
+   "items": [
+    "Kemarin malam kamu ngapain?",
+    "Saya ke bioskop sama teman-teman.",
+    "Saya pulang tengah malam.",
+    "Kami mengobrol sejam.",
+    "Itu hari yang menyenangkan."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "wczoraj / robiłeś / co / ?",
+    "w / byłem / kinie",
+    "domu / do / wróciłem / o / szóstej",
+    "godzinę / rozmawialiśmy / przez",
+    "dzień / to / dobry / był"
+   ]
+  }
+ ],
+ "answers": [
+  "Czytałem książkę. — Byłem w domu. — Pracowałem w banku. — Poszedłem do kina. — Miałem czas.",
+  "Czytałam książkę. — Byłam w domu. — Dzwoniłam do mamy. — Poszłam do sklepu. — Uczyłam się polskiego.",
+  "Co robiłeś wczoraj wieczorem? — Byłem w kinie z kolegami. — Wróciłem do domu o północy. — Rozmawialiśmy przez godzinę. — To był dobry dzień.",
+  "Co robiłeś wczoraj? — Byłem w kinie. — Wróciłem do domu o szóstej. — Rozmawialiśmy przez godzinę. — To był dobry dzień."
+ ],
+ "wave": "Ulangi dialog unit 15 keras-keras, lalu ceritakan akhir pekanmu yang lalu dalam sepuluh kalimat lampau."
+}

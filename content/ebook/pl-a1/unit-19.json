@@ -1,0 +1,234 @@
+{
+ "title": "Besok dan cuaca",
+ "title_target": "Co będziesz robić w weekend?",
+ "goal": "Berbicara tentang masa depan dengan dua cara yang tersedia, membicarakan cuaca, dan menyusun rencana bersama.",
+ "bekal": [
+  "memakai *będę* + bentuk kamus untuk kegiatan yang akan berjalan",
+  "memakai bentuk tuntas untuk hasil yang akan tercapai",
+  "membicarakan cuaca dan musim, serta menyusun rencana bersyarat"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Plan na weekend",
+   "intro": "Kamis sore, kantin kampus. Ania membuka ramalan cuaca di ponselnya.",
+   "lines": [
+    { "speaker": "Ania:", "text": "Co będziesz robić w weekend?", "id": "Akhir pekan kamu mau ngapain?", "literal": "apa kamu-akan melakukan di akhir-pekan?" },
+    { "speaker": "Budi:", "text": "Jeszcze nie wiem. Jaka będzie pogoda?", "id": "Belum tahu. Cuacanya bakal gimana?", "literal": "masih tidak saya-tahu. yang-bagaimana akan-ada cuaca?" },
+    { "speaker": "Ania:", "text": "W sobotę ma być słonecznie, ale w niedzielę będzie padać.", "id": "Sabtu katanya cerah, tapi Minggu bakal hujan.", "literal": "di Sabtu punya adalah cerah, tetapi di Minggu akan jatuh." },
+    { "speaker": "Budi:", "text": "To może pojedziemy w sobotę w góry?", "id": "Kalau gitu Sabtu kita ke gunung, gimana?", "literal": "jadi mungkin kita-akan-berkendara di Sabtu ke gunung-jamak?" },
+    { "speaker": "Ania:", "text": "Świetny pomysł! Wstaniemy wcześnie i weźmiemy pociąg o siódmej.", "id": "Ide bagus! Kita bangun pagi dan naik kereta jam tujuh.", "literal": "hebat gagasan! kita-akan-bangun awal dan kita-akan-mengambil kereta pada ketujuh." },
+    { "speaker": "Budi:", "text": "Będzie zimno?", "id": "Bakal dingin nggak?", "literal": "akan-ada dingin?" },
+    { "speaker": "Ania:", "text": "W górach zawsze jest chłodniej. Weź kurtkę i czapkę.", "id": "Di gunung selalu lebih sejuk. Bawa jaket dan topi.", "literal": "di gunung-jamak selalu adalah lebih-sejuk. ambillah jaket dan topi." },
+    { "speaker": "Budi:", "text": "Dobrze. A co zrobimy, jeśli będzie padać?", "id": "Oke. Kalau ternyata hujan, kita ngapain?", "literal": "baik. dan apa kita-akan-melakukan, jika akan jatuh?" },
+    { "speaker": "Ania:", "text": "Wtedy zostaniemy w mieście i pójdziemy do muzeum.", "id": "Ya kita di kota saja terus ke museum.", "literal": "waktu-itu kita-akan-tinggal di kota dan kita-akan-pergi ke museum." },
+    { "speaker": "Budi:", "text": "Też dobrze. Kupię bilety wieczorem.", "id": "Boleh juga. Nanti malam saya beli tiketnya.", "literal": "juga baik. saya-akan-membeli tiket-jamak malam." },
+    { "speaker": "Ania:", "text": "Świetnie. Ja napiszę do reszty grupy.", "id": "Bagus. Saya yang kabari sisa rombongannya.", "literal": "hebat. saya akan-menulis ke sisa kelompok." },
+    { "speaker": "Budi:", "text": "Nie mogę się doczekać!", "id": "Nggak sabar!", "literal": "tidak saya-bisa diri menunggu-sampai!" }
+   ],
+   "notes": [
+    "**Dua cara menyatakan masa depan, dan kamu sudah punya keduanya.** Cara pertama: *będę* + bentuk kamus — untuk kegiatan yang akan **berjalan** (*będę czytać* — saya akan membaca). Cara kedua: bentuk **tuntas** dengan ekor masa sekarang — untuk hasil yang akan **tercapai** (*przeczytam* — saya akan menamatkannya).",
+    "**Pojedziemy, wstaniemy, weźmiemy, kupię, napiszę** — semuanya bentuk tuntas, dan semuanya berarti masa depan. Perhatikan bahwa dialog ini nyaris tak memakai *będę* sama sekali: dalam percakapan sehari-hari orang Polandia jauh lebih sering memakai bentuk tuntas untuk rencana yang jelas.",
+    "**Będzie padać** — \"akan hujan\". *Padać* harfiahnya \"jatuh\", dan hujan dalam bahasa Polandia memang \"jatuh\": *pada deszcz* (hujan turun), *pada śnieg* (salju turun). Sering dipersingkat jadi *pada* saja.",
+    "**Ma być słonecznie** — \"katanya sih cerah\". Rumus *ma być* dipakai untuk ramalan dan kabar yang belum pasti, persis seperti \"katanya\" dalam bahasa Indonesia.",
+    "**W góry** (ke gunung) tapi **w górach** (di gunung). Tujuan memakai bentuk sasaran, tempat memakai *miejscownik* — persis aturan unit 14 yang bekerja lagi.",
+    "**Weź kurtkę** — bentuk perintah dari *wziąć*. Bentuk perintah sepenuhnya masuk A2, tapi beberapa yang paling sering terdengar layak dikenali sekarang: *weź* (ambillah), *chodź* (ayo), *powiedz* (katakan), *poczekaj* (tunggu).",
+    "**Jeśli będzie padać** — \"kalau nanti hujan\". Perhatikan bahasa Polandia memakai bentuk **masa depan** di anak kalimatnya, sedangkan bahasa Indonesia dan Inggris memakai bentuk sekarang. Ini justru lebih masuk akal, dan gampang dibiasakan.",
+    "**Nie mogę się doczekać** — \"tidak sabar menunggu\". Ungkapan tetap; jangan diurai kata per kata."
+   ],
+   "grammars": [
+    {
+     "title": "Masa depan cara pertama: będę + bentuk kamus",
+     "body": [
+      "Dipakai dengan kata kerja **berjalan**, untuk kegiatan yang akan berlangsung atau berulang."
+     ],
+     "table": {
+      "head": ["Pelaku", "*być* masa depan", "Contoh", "Arti"],
+      "rows": [
+       ["ja", "*będę*", "*Będę czytać.*", "Saya akan membaca."],
+       ["ty", "*będziesz*", "*Będziesz pracować?*", "Kamu akan bekerja?"],
+       ["on / ona", "*będzie*", "*Będzie padać.*", "Akan hujan."],
+       ["my", "*będziemy*", "*Będziemy się uczyć.*", "Kami akan belajar."],
+       ["wy", "*będziecie*", "*Będziecie w domu?*", "Kalian akan di rumah?"],
+       ["oni / one", "*będą*", "*Będą czekać.*", "Mereka akan menunggu."]
+      ]
+     },
+     "after": [
+      "Ada bentuk kedua yang sama benarnya: *będę czytał* (lk) / *będę czytała* (pr) — memakai bentuk lampau, bukan bentuk kamus. Dua-duanya dipakai orang Polandia sehari-hari; yang memakai bentuk kamus lebih gampang bagi pemula karena tidak perlu memilih jenis kelamin.",
+      "*Będę* juga dipakai sendirian sebagai \"akan ada / akan berada\": *Będę w domu o szóstej.* — Jam enam saya sudah di rumah.",
+      "⚠️ *Będę* **tidak boleh** digabung dengan bentuk tuntas. *Będę napisać* salah; yang benar cukup *napiszę*."
+     ]
+    },
+    {
+     "title": "Masa depan cara kedua: bentuk tuntas",
+     "body": [
+      "Tidak perlu kata bantu apa pun — ekor masa sekarang yang menempel pada bentuk tuntas otomatis berarti masa depan."
+     ],
+     "table": {
+      "head": ["Berjalan (sekarang)", "Tuntas (masa depan)", "Arti"],
+      "rows": [
+       ["*piszę* — saya menulis", "*napiszę* — saya akan menulis (sampai jadi)", "menulis"],
+       ["*czytam* — saya membaca", "*przeczytam* — saya akan menamatkannya", "membaca"],
+       ["*kupuję* — saya membeli", "*kupię* — saya akan membelinya", "membeli"],
+       ["*robię* — saya melakukan", "*zrobię* — saya akan menyelesaikannya", "melakukan"],
+       ["*dzwonię* — saya menelepon", "*zadzwonię* — saya akan menelepon", "menelepon"],
+       ["*idę* — saya pergi", "*pójdę* — saya akan pergi", "pergi"]
+      ]
+     },
+     "after": [
+      "Cara memilih di antara keduanya sama seperti unit 18: kalau yang penting **hasilnya**, pakai bentuk tuntas; kalau yang penting **kegiatannya**, pakai *będę*.",
+      "Bandingkan: *Jutro będę pisać* (besok saya akan menulis-nulis, sepanjang hari) dengan *Jutro napiszę* (besok akan saya selesaikan tulisannya).",
+      "Untuk rencana yang dekat dan pasti, bahasa Polandia sering memakai **bentuk sekarang** saja, seperti bahasa Indonesia: *Jutro idę do kina.* — Besok saya ke bioskop."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Cuaca dan musim",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Polski", "Cara baca", "Arti"],
+     "rows": [
+      ["*Jaka jest pogoda?*", "YA-ka yest po-GO-da", "Cuacanya bagaimana?"],
+      ["*Jest ładnie.*", "yest WAD-nye", "Cuacanya bagus."],
+      ["*Jest słonecznie.*", "yest swo-NEC-nye", "Cerah."],
+      ["*Pada deszcz.*", "PA-da desyc", "Hujan."],
+      ["*Pada śnieg.*", "PA-da syinyek", "Turun salju."],
+      ["*Jest zimno / ciepło.*", "yest ZIM-no / CYEP-wo", "Dingin / hangat."],
+      ["*Jest gorąco.*", "yest go-RON-tso", "Panas."],
+      ["*Wieje wiatr.*", "VYE-ye vyatr", "Anginnya kencang."],
+      ["*Jest mgła.*", "yest mgwa", "Berkabut."],
+      ["*Ile jest stopni?*", "I-le yest STOP-ni", "Berapa derajat?"],
+      ["*Jest pięć stopni.*", "yest pyenc STOP-ni", "Lima derajat."],
+      ["*Jest minus dziesięć.*", "yest MI-nus", "Minus sepuluh."]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": ["Musim", "Di musim itu", "Bulannya", "Ciri khas di Polandia"],
+     "rows": [
+      ["*wiosna*", "*wiosną*", "*marzec – maj*", "hijau mendadak, hujan sebentar-sebentar"],
+      ["*lato*", "*latem*", "*czerwiec – sierpień*", "terang sampai jam sembilan malam"],
+      ["*jesień*", "*jesienią*", "*wrzesień – listopad*", "daun berwarna, mulai gelap sore"],
+      ["*zima*", "*zimą*", "*grudzień – luty*", "salju, gelap jam empat sore"]
+     ]
+    },
+    { "type": "kotak", "title": "Apa yang mengejutkan pendatang dari daerah tropis", "items": [
+      "**Panjang siang berubah drastis.** Bulan Juni matahari terbenam hampir jam sembilan malam; bulan Desember jam setengah empat sore. Ini mengubah rasa hari jauh lebih banyak daripada suhunya.",
+      "**Minus sepuluh derajat tidak seburuk kedengarannya** — kalau anginnya tenang dan pakaianmu berlapis. Yang benar-benar menyiksa justru bulan November: nol derajat, basah, dan berangin.",
+      "*Zimno mi.* (saya kedinginan) dan *gorąco mi.* (saya kepanasan) — dua kalimat yang akan sering kamu pakai. Perhatikan bentuknya: harfiahnya \"dingin bagi saya\"."
+     ] }
+   ]
+  },
+  {
+   "title": "Menyusun rencana bersama",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Polski", "Arti"],
+     "rows": [
+      ["*Co robisz w weekend?*", "Akhir pekan kamu ngapain?"],
+      ["*Masz jakieś plany?*", "Ada rencana?"],
+      ["*Może pójdziemy do kina?*", "Ke bioskop, yuk?"],
+      ["*Świetny pomysł!*", "Ide bagus!"],
+      ["*Pasuje mi.*", "Cocok buat saya."],
+      ["*Wolałbym w sobotę.*", "Saya lebih suka hari Sabtu. (lk)"],
+      ["*Muszę sprawdzić kalendarz.*", "Saya harus cek jadwal dulu."],
+      ["*Odezwę się jutro.*", "Besok saya kabari."],
+      ["*Umówmy się na szóstą.*", "Kita janjian jam enam, ya."],
+      ["*Nie mogę się doczekać!*", "Nggak sabar!"]
+     ]
+    },
+    { "type": "kotak", "title": "Merangkai syarat", "items": [
+      "*Jeśli będzie ładnie, pójdziemy do parku.* — Kalau cuacanya bagus, kita ke taman.",
+      "*Jeśli będzie padać, zostaniemy w domu.* — Kalau hujan, kita di rumah saja.",
+      "*Kiedy skończę pracę, zadzwonię.* — Begitu kerjaan saya kelar, saya telepon.",
+      "Ingat: sesudah *jeśli* dan *kiedy*, bahasa Polandia memakai bentuk **masa depan** — bukan bentuk sekarang seperti bahasa Indonesia."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "pl": "będę / będzie", "baca": "BEN-de / BEN-jye", "id": "saya akan / akan ada" },
+  { "pl": "plan", "baca": "plan", "id": "rencana" },
+  { "pl": "pomysł", "baca": "PO-myssw", "id": "gagasan" },
+  { "pl": "pogoda", "baca": "po-GO-da", "id": "cuaca" },
+  { "pl": "padać", "baca": "PA-dac", "id": "turun (hujan/salju)" },
+  { "pl": "deszcz", "baca": "desyc", "id": "hujan" },
+  { "pl": "śnieg", "baca": "syinyek", "id": "salju" },
+  { "pl": "słonecznie", "baca": "swo-NEC-nye", "id": "cerah" },
+  { "pl": "wiatr", "baca": "vyatr", "id": "angin" },
+  { "pl": "mgła", "baca": "mgwa", "id": "kabut" },
+  { "pl": "zimno / ciepło", "baca": "ZIM-no / CYEP-wo", "id": "dingin / hangat" },
+  { "pl": "gorąco", "baca": "go-RON-tso", "id": "panas" },
+  { "pl": "chłodniej", "baca": "HWOD-nyey", "id": "lebih sejuk" },
+  { "pl": "stopień", "baca": "STO-pyeny", "id": "derajat" },
+  { "pl": "wiosna / lato", "baca": "VYOS-na / LA-to", "id": "musim semi / panas" },
+  { "pl": "jesień / zima", "baca": "YE-syeny / ZI-ma", "id": "musim gugur / dingin" },
+  { "pl": "góry", "baca": "GU-ry", "id": "pegunungan" },
+  { "pl": "morze", "baca": "MO-zye", "id": "laut" },
+  { "pl": "las", "baca": "las", "id": "hutan" },
+  { "pl": "kurtka", "baca": "KURT-ka", "id": "jaket" },
+  { "pl": "czapka", "baca": "CAP-ka", "id": "topi" },
+  { "pl": "parasol", "baca": "pa-RA-sol", "id": "payung" },
+  { "pl": "jeśli", "baca": "YESY-li", "id": "jika" },
+  { "pl": "zostać", "baca": "ZOS-tac", "id": "tinggal; tetap" },
+  { "pl": "pojechać", "baca": "po-YE-hac", "id": "berangkat (kendaraan)" },
+  { "pl": "pójść", "baca": "puysyc", "id": "pergi (kaki, sekali)" },
+  { "pl": "umówić się", "baca": "u-MU-vic sye", "id": "janjian" },
+  { "pl": "odezwać się", "baca": "o-DEZ-vac sye", "id": "mengabari" },
+  { "pl": "kalendarz", "baca": "ka-LEN-dasy", "id": "kalender; jadwal" },
+  { "pl": "grupa", "baca": "GRU-pa", "id": "rombongan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke masa depan dengan *będę* + bentuk kamus.",
+   "items": [
+    "Czytam książkę. →",
+    "Pracuję w banku. →",
+    "Uczymy się polskiego. →",
+    "Oni czekają. →",
+    "Jestem w domu. →"
+   ]
+  },
+  {
+   "prompt": "Ubah ke masa depan dengan bentuk tuntas.",
+   "items": [
+    "piszę →",
+    "czytam →",
+    "kupuję →",
+    "robię →",
+    "dzwonię →"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Akhir pekan kamu mau ngapain?",
+    "Cuacanya bagaimana?",
+    "Besok akan hujan.",
+    "Kalau cuacanya bagus, kita ke taman.",
+    "Nanti malam saya beli tiketnya."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "będziesz / w / co / robić / weekend / ?",
+    "będzie / pogoda / jaka / ?",
+    "padać / jutro / będzie",
+    "do / pójdziemy / może / kina / ?",
+    "się / nie / doczekać / mogę"
+   ]
+  }
+ ],
+ "answers": [
+  "Będę czytać książkę. — Będę pracować w banku. — Będziemy się uczyć polskiego. — Oni będą czekać. — Będę w domu.",
+  "napiszę — przeczytam — kupię — zrobię — zadzwonię",
+  "Co będziesz robić w weekend? — Jaka jest pogoda? — Jutro będzie padać. — Jeśli będzie ładnie, pójdziemy do parku. — Kupię bilety wieczorem.",
+  "Co będziesz robić w weekend? — Jaka będzie pogoda? — Jutro będzie padać. — Może pójdziemy do kina? — Nie mogę się doczekać."
+ ],
+ "wave": "Ulangi dialog unit 17 keras-keras, lalu susun rencana tujuh hari ke depan dengan tujuh kalimat masa depan."
+}

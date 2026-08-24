@@ -1,0 +1,221 @@
+{
+ "title": "Bisa, harus, mau, boleh",
+ "title_target": "Możesz mi pomóc?",
+ "goal": "Memakai lima kata kerja bantu yang membuka hampir semua permintaan, izin, dan keharusan — dan mengenali bedanya *nie musisz* dan *nie możesz*.",
+ "bekal": [
+  "memakai *móc*, *chcieć*, *musieć*, *umieć*, *woleć* dengan kata kerja bentuk kamus",
+  "meminta tolong dan meminta izin dengan sopan",
+  "memakai *trzeba*, *można*, *wolno* yang tidak punya pelaku"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Możesz mi pomóc?",
+   "intro": "Dapur asrama, sore. Ania duduk di depan laptop dengan wajah putus asa.",
+   "lines": [
+    { "speaker": "Ania:", "text": "Budi, możesz mi pomóc?", "id": "Budi, bisa bantu saya?", "literal": "Budi, kamu-bisa kepadaku menolong?" },
+    { "speaker": "Budi:", "text": "Jasne. Co się stało?", "id": "Boleh. Ada apa?", "literal": "jelas. apa diri terjadi?" },
+    { "speaker": "Ania:", "text": "Muszę napisać podanie, ale nie umiem pisać oficjalnie.", "id": "Saya harus menulis surat permohonan, tapi tidak bisa menulis bahasa resmi.", "literal": "saya-harus menulis permohonan, tetapi tidak saya-mampu menulis secara-resmi." },
+    { "speaker": "Budi:", "text": "Mogę spróbować, ale nie jestem pewny.", "id": "Saya bisa coba, tapi saya tidak yakin.", "literal": "saya-bisa mencoba, tetapi tidak saya-adalah yakin." },
+    { "speaker": "Ania:", "text": "Chcesz kawę? Możemy usiąść tutaj.", "id": "Mau kopi? Kita bisa duduk di sini.", "literal": "kamu-mau kopi? kami-bisa duduk di-sini." },
+    { "speaker": "Budi:", "text": "Chętnie. Tylko muszę wyjść o piątej — mam zajęcia.", "id": "Mau. Tapi saya harus keluar jam lima — ada kelas.", "literal": "dengan-senang-hati. hanya saya-harus keluar pada kelima — saya-punya kuliah." },
+    { "speaker": "Ania:", "text": "Zdążymy. Czy mogę pożyczyć twój słownik?", "id": "Keburu, kok. Boleh pinjam kamusmu?", "literal": "kita-akan-sempat. apakah saya-boleh meminjam milikmu kamus?" },
+    { "speaker": "Budi:", "text": "Proszę. Ale nie wolno w nim pisać.", "id": "Silakan. Tapi tidak boleh dicoret-coret.", "literal": "silakan. tetapi tidak boleh di dalamnya menulis." },
+    { "speaker": "Ania:", "text": "Nie będę. A wolisz herbatę czy wodę?", "id": "Nggak kok. Kamu lebih suka teh atau air putih?", "literal": "tidak saya-akan. dan kamu-lebih-suka teh atau air?" },
+    { "speaker": "Budi:", "text": "Wolę wodę. Nie muszę pić kawy, żeby myśleć.", "id": "Lebih suka air putih. Saya tidak harus minum kopi buat mikir.", "literal": "saya-lebih-suka air. tidak saya-harus minum kopi, supaya berpikir." },
+    { "speaker": "Ania:", "text": "Umiesz pisać po polsku szybciej niż ja!", "id": "Kamu nulis bahasa Polandia lebih cepat dari saya!", "literal": "kamu-mampu menulis secara Polandia lebih-cepat daripada saya!" },
+    { "speaker": "Budi:", "text": "Nie przesadzaj. Trzeba jeszcze wszystko sprawdzić.", "id": "Jangan berlebihan. Semuanya masih harus diperiksa.", "literal": "jangan melebih-lebihkan. perlu masih segalanya memeriksa." }
+   ],
+   "notes": [
+    "**Kata kerja kedua selalu bentuk kamus.** *Muszę napisać*, *mogę spróbować*, *chcesz jeść*. Persis seperti bahasa Indonesia (\"harus menulis\"), dan lebih mudah daripada bahasa Inggris yang perlu \"to\".",
+    "**Możesz mi pomóc?** adalah permintaan tolong yang paling sering dipakai. Bentuk yang lebih sopan: *Czy mógłbyś mi pomóc?* (lk) / *Czy mogłabyś…?* (pr) — bentuk pengandaian yang boleh kamu hafal utuh sekarang, tanpa mengurai aturannya.",
+    "**Móc dan umieć tidak sama.** *Móc* = bisa karena keadaan mengizinkan (*mogę przyjść jutro* — besok saya bisa datang). *Umieć* = bisa karena terampil (*umiem gotować* — saya bisa masak). Salah pilih di sini mengubah arti, bukan sekadar nada.",
+    "**Nie muszę bukan nie mogę.** *Nie muszę pić kawy* = saya **tidak perlu** minum kopi. *Nie mogę pić kawy* = saya **tidak boleh / tidak bisa** minum kopi. Perbedaan ini juga ada dalam bahasa Inggris (*don't have to* vs *can't*) dan sama-sama sering salah dipakai pemula.",
+    "**Nie wolno** berarti \"tidak boleh\" sebagai larangan umum, tanpa pelaku: *Tu nie wolno palić* (di sini dilarang merokok). Ia sepasang dengan *można* (boleh) dan *trzeba* (perlu, harus).",
+    "**Żeby** berarti \"supaya\" dan diikuti bentuk kamus kalau pelakunya sama: *Piję kawę, żeby myśleć.* Kalau pelakunya berbeda, bentuknya lain lagi — itu urusan A2.",
+    "**Szybciej niż ja** — \"lebih cepat daripada saya\". Bentuk perbandingan dibuat dengan ekor *-iej / -ej*: *szybko → szybciej*, *dobrze → lepiej*, *dużo → więcej*. Tiga yang terakhir ini tak beraturan dan justru paling sering dipakai.",
+    "**Nie przesadzaj** — bentuk perintah larangan: *nie* + bentuk perintah. Bentuk perintah lengkap ada di A2, tapi beberapa yang paling sering terdengar layak dihafal sekarang: *proszę poczekać* (tolong tunggu), *nie martw się* (jangan khawatir), *chodź* (ayo)."
+   ],
+   "grammars": [
+    {
+     "title": "Lima kata kerja bantu",
+     "body": [
+      "Semuanya diikuti bentuk kamus, dan tiga di antaranya berkelakuan tidak beraturan — jadi tabel ini layak dihafal utuh."
+     ],
+     "table": {
+      "head": ["Pelaku", "*móc* (bisa)", "*chcieć* (mau)", "*musieć* (harus)", "*umieć* (mampu)", "*woleć* (lebih suka)"],
+      "rows": [
+       ["ja", "*mogę*", "*chcę*", "*muszę*", "*umiem*", "*wolę*"],
+       ["ty", "*możesz*", "*chcesz*", "*musisz*", "*umiesz*", "*wolisz*"],
+       ["on / ona", "*może*", "*chce*", "*musi*", "*umie*", "*woli*"],
+       ["my", "*możemy*", "*chcemy*", "*musimy*", "*umiemy*", "*wolimy*"],
+       ["wy", "*możecie*", "*chcecie*", "*musicie*", "*umiecie*", "*wolicie*"],
+       ["oni / one", "*mogą*", "*chcą*", "*muszą*", "*umieją*", "*wolą*"]
+      ]
+     },
+     "after": [
+      "Perhatikan *móc*: huruf *g* berubah jadi *ż* di empat bentuk tengah (*mogę* tapi *możesz*). Pola pergantian yang sama seperti *iść → idę / idziesz* di unit 5.",
+      "*Chcieć* dan *woleć* sering dipakai dengan kata benda langsung, tanpa kata kerja kedua: *Chcę kawę* (saya mau kopi), *Wolę herbatę* (saya lebih suka teh). Kata bendanya memakai bentuk sasaran.",
+      "⚠️ Untuk memesan, *chcę* terdengar menuntut. Pakai *poproszę* (unit 8) di toko dan restoran, dan simpan *chcę* untuk percakapan dengan teman."
+     ]
+    },
+    {
+     "title": "Kalimat tanpa pelaku: trzeba, można, wolno",
+     "body": [
+      "Tiga kata yang membuat kalimat berlaku untuk siapa saja — setara \"perlu\", \"boleh\", \"dilarang\" dalam papan pengumuman bahasa Indonesia."
+     ],
+     "table": {
+      "head": ["Kata", "Arti", "Contoh", "Terjemahan"],
+      "rows": [
+       ["*trzeba*", "perlu; harus", "*Trzeba kupić bilet.*", "Tiketnya harus dibeli."],
+       ["*można*", "boleh; bisa", "*Czy można tu usiąść?*", "Boleh duduk di sini?"],
+       ["*nie można*", "tidak bisa", "*Nie można tu parkować.*", "Di sini tidak bisa parkir."],
+       ["*wolno*", "boleh (izin)", "*Czy wolno tu palić?*", "Boleh merokok di sini?"],
+       ["*nie wolno*", "dilarang", "*Nie wolno tu wchodzić.*", "Dilarang masuk."],
+       ["*warto*", "layak", "*Warto zobaczyć Wawel.*", "Wawel layak dikunjungi."]
+      ]
+     },
+     "after": [
+      "Semuanya diikuti bentuk kamus dan **tidak pernah berubah bentuk** — tidak ada *trzebam* atau *możny*. Enam kata, nol hafalan tambahan.",
+      "*Czy można…?* adalah cara paling aman meminta izin dari orang yang belum kamu kenal: ia sopan tanpa perlu memilih antara *ty* dan *pan*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Meminta, menawarkan, mengizinkan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Polski", "Cara baca", "Arti"],
+     "rows": [
+      ["*Możesz mi pomóc?*", "MO-zyesy mi PO-muts", "Bisa bantu saya?"],
+      ["*Czy mógłbyś mi pomóc?*", "cy MUGW-bysy", "Bisa tolong saya? (lebih sopan, lk)"],
+      ["*Czy mogę…?*", "cy MO-ge", "Boleh saya…?"],
+      ["*Czy można tu usiąść?*", "cy MOZY-na tu U-syonsyc", "Boleh duduk di sini?"],
+      ["*Chcesz kawę?*", "hcesy KA-ve", "Mau kopi?"],
+      ["*Masz ochotę na…?*", "masy o-HO-te na", "Kepingin… nggak?"],
+      ["*Nie ma sprawy.*", "nye ma SPRA-vy", "Nggak masalah."],
+      ["*Z przyjemnością.*", "s psyy-yem-NOSY-cyon", "Dengan senang hati."],
+      ["*Niestety nie mogę.*", "nye-STE-ty nye MO-ge", "Sayangnya saya tidak bisa."],
+      ["*Muszę już iść.*", "MU-sye yusy isyc", "Saya harus pergi."]
+     ]
+    },
+    { "type": "kotak", "title": "Menolak tanpa terdengar kasar", "items": [
+      "Sisipkan *niestety* (sayangnya) di depan penolakan — ia melunakkan hampir semua kalimat.",
+      "Beri alasan pendek: *Niestety nie mogę, mam zajęcia.* Orang Polandia tidak menuntut alasan panjang, tapi alasan kosong terasa dingin.",
+      "Tawarkan ganti: *Może jutro?* (Besok saja, gimana?)"
+     ] }
+   ]
+  },
+  {
+   "title": "Papan pengumuman yang akan kamu temui",
+   "blocks": [
+    { "type": "p", "text": "Kalimat tanpa pelaku muncul di mana-mana di ruang publik Polandia. Mengenalinya sekali membuatmu berhenti menebak-nebak seumur hidup." },
+    {
+     "type": "tabel",
+     "head": ["Tulisan", "Arti"],
+     "rows": [
+      ["*Nie wolno palić*", "Dilarang merokok"],
+      ["*Nie wolno wchodzić*", "Dilarang masuk"],
+      ["*Proszę nie dotykać*", "Mohon jangan disentuh"],
+      ["*Wstęp wolny*", "Masuk gratis"],
+      ["*Wstęp wzbroniony*", "Dilarang masuk"],
+      ["*Uwaga!*", "Awas!"],
+      ["*Pchać / Ciągnąć*", "Dorong / Tarik"],
+      ["*Czynne / Nieczynne*", "Buka / Tutup"],
+      ["*Kasa*", "Kasir"],
+      ["*Wyjście / Wejście*", "Keluar / Masuk"]
+     ]
+    },
+    { "type": "kotak", "title": "Dua kata yang paling gampang tertukar", "items": [
+      "***Wejście*** (masuk) dan ***wyjście*** (keluar) beda satu huruf, dan salah membacanya adalah kesalahan turis paling klasik di stasiun Polandia.",
+      "Ingat lewat awalannya: *w-* seperti \"ke dalam\", *wy-* seperti \"ke luar\". Awalan yang sama bekerja di kata kerjanya: *wchodzić* (masuk), *wychodzić* (keluar)."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "pl": "móc", "baca": "muts", "id": "bisa; boleh" },
+  { "pl": "chcieć", "baca": "hcyec", "id": "mau" },
+  { "pl": "musieć", "baca": "MU-syec", "id": "harus" },
+  { "pl": "umieć", "baca": "U-myec", "id": "mampu; terampil" },
+  { "pl": "woleć", "baca": "VO-lec", "id": "lebih suka" },
+  { "pl": "trzeba", "baca": "TSYE-ba", "id": "perlu; harus" },
+  { "pl": "można", "baca": "MOZY-na", "id": "boleh; bisa" },
+  { "pl": "wolno", "baca": "VOL-no", "id": "boleh (izin)" },
+  { "pl": "warto", "baca": "VAR-to", "id": "layak" },
+  { "pl": "pomóc", "baca": "PO-muts", "id": "menolong" },
+  { "pl": "spróbować", "baca": "spru-BO-vac", "id": "mencoba" },
+  { "pl": "pożyczyć", "baca": "po-ZYY-cyc", "id": "meminjam" },
+  { "pl": "sprawdzić", "baca": "SPRAV-jyic", "id": "memeriksa" },
+  { "pl": "usiąść", "baca": "U-syonsyc", "id": "duduk" },
+  { "pl": "wyjść", "baca": "vyysyc", "id": "keluar" },
+  { "pl": "wejść", "baca": "veysyc", "id": "masuk" },
+  { "pl": "palić", "baca": "PA-lic", "id": "merokok" },
+  { "pl": "podanie", "baca": "po-DA-nye", "id": "surat permohonan" },
+  { "pl": "oficjalnie", "baca": "o-fi-TSYAL-nye", "id": "secara resmi" },
+  { "pl": "pewny", "baca": "PEV-ny", "id": "yakin" },
+  { "pl": "jasne", "baca": "YAS-ne", "id": "jelas; boleh" },
+  { "pl": "żeby", "baca": "ZYE-by", "id": "supaya" },
+  { "pl": "niż", "baca": "nisy", "id": "daripada" },
+  { "pl": "szybciej / wolniej", "baca": "SYYP-cyey", "id": "lebih cepat / lebih pelan" },
+  { "pl": "lepiej / gorzej", "baca": "LE-pyey / GO-zyey", "id": "lebih baik / lebih buruk" },
+  { "pl": "nie ma sprawy", "baca": "nye ma SPRA-vy", "id": "tidak masalah" },
+  { "pl": "ochota", "baca": "o-HO-ta", "id": "keinginan" },
+  { "pl": "uwaga", "baca": "u-VA-ga", "id": "awas; perhatian" },
+  { "pl": "czynne / nieczynne", "baca": "CYN-ne", "id": "buka / tutup" },
+  { "pl": "przesadzać", "baca": "psye-SA-dzac", "id": "melebih-lebihkan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan bentuk kata kerja bantu yang tepat.",
+   "items": [
+    "Ja ____ ci pomóc. (móc)",
+    "Ty ____ iść do lekarza. (musieć)",
+    "On ____ kawę. (chcieć)",
+    "My ____ gotować. (umieć)",
+    "Oni ____ herbatę. (woleć)",
+    "Wy ____ tu usiąść. (móc)"
+   ]
+  },
+  {
+   "prompt": "Pilih *nie muszę* atau *nie mogę*.",
+   "items": [
+    "Saya tidak perlu bayar — gratis. → ____ płacić.",
+    "Saya tidak bisa datang — saya sakit. → ____ przyjść.",
+    "Kamu tidak perlu menunggu. → ____ czekać.",
+    "Dia tidak boleh minum alkohol. → ____ pić alkoholu.",
+    "Kami tidak perlu terburu-buru. → ____ się spieszyć."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Bisa bantu saya?",
+    "Saya harus pergi sekarang.",
+    "Boleh duduk di sini?",
+    "Saya lebih suka air putih.",
+    "Dilarang merokok di sini."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "mi / możesz / pomóc / ?",
+    "iść / muszę / już",
+    "tu / można / czy / usiąść / ?",
+    "wodę / wolę",
+    "palić / nie / tu / wolno"
+   ]
+  }
+ ],
+ "answers": [
+  "mogę — musisz — chce — umiemy — wolą — możecie",
+  "Nie muszę — Nie mogę — Nie musisz — Nie może — Nie musimy",
+  "Możesz mi pomóc? — Muszę już iść. — Czy można tu usiąść? — Wolę wodę. — Tu nie wolno palić.",
+  "Możesz mi pomóc? — Muszę już iść. — Czy można tu usiąść? — Wolę wodę. — Tu nie wolno palić."
+ ],
+ "wave": "Ulangi dialog unit 11 keras-keras, lalu susun lima permintaan tolong yang benar-benar kamu butuhkan minggu ini."
+}

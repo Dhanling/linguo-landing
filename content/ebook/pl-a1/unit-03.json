@@ -1,0 +1,216 @@
+{
+ "title": "Ten, ta, to — tiga jenis kata benda",
+ "title_target": "Ten stół, ta lampa, to okno",
+ "goal": "Mengenali jenis kelamin kata benda dari ujung katanya, menunjuk benda dengan *ten / ta / to*, dan menghitung sampai dua puluh.",
+ "bekal": [
+  "menebak jenis kata benda dari huruf terakhirnya, dengan tingkat kena di atas sembilan dari sepuluh",
+  "bertanya *co to jest?* dan menjawabnya",
+  "memakai angka 0–20 dan bertanya *ile?*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Co to jest?",
+   "intro": "Ruang kelas sesudah pelajaran. Ania menunjuk benda-benda di sekeliling; Budi menebak namanya.",
+   "lines": [
+    { "speaker": "Ania:", "text": "Budi, co to jest?", "id": "Budi, ini apa?", "literal": "Budi, apa ini adalah?" },
+    { "speaker": "Budi:", "text": "To jest książka. Polska książka.", "id": "Ini buku. Buku Polandia.", "literal": "ini adalah buku. Polandia buku." },
+    { "speaker": "Ania:", "text": "Dobrze. A to?", "id": "Bagus. Kalau ini?", "literal": "baik. dan ini?" },
+    { "speaker": "Budi:", "text": "To jest… nie wiem. Jak to się nazywa po polsku?", "id": "Ini… saya nggak tahu. Namanya apa dalam bahasa Polandia?", "literal": "ini adalah… tidak saya-tahu. bagaimana ini diri menamai secara Polandia?" },
+    { "speaker": "Ania:", "text": "To jest okno. Okno jest duże.", "id": "Ini jendela. Jendelanya besar.", "literal": "ini adalah jendela. jendela adalah besar." },
+    { "speaker": "Budi:", "text": "Aha. A ten stół? Ten stół jest mały.", "id": "Oh. Kalau meja ini? Meja ini kecil.", "literal": "aha. dan ini-lk meja? ini-lk meja adalah kecil." },
+    { "speaker": "Ania:", "text": "Tak! Ten stół, ta lampa, to okno.", "id": "Betul! Meja ini, lampu ini, jendela ini.", "literal": "ya! ini-lk meja, ini-pr lampu, ini-netral jendela." },
+    { "speaker": "Budi:", "text": "Dlaczego ten, ta i to? Nie rozumiem.", "id": "Kenapa ten, ta, dan to? Saya tidak mengerti.", "literal": "kenapa ten, ta dan to? tidak saya-mengerti." },
+    { "speaker": "Ania:", "text": "Bo każdy rzeczownik ma rodzaj: męski, żeński albo nijaki.", "id": "Karena setiap kata benda punya jenis: laki-laki, perempuan, atau netral.", "literal": "karena setiap kata-benda punya jenis: laki-laki, perempuan atau netral." },
+    { "speaker": "Budi:", "text": "A jak poznać rodzaj?", "id": "Terus bagaimana mengenali jenisnya?", "literal": "dan bagaimana mengenali jenis?" },
+    { "speaker": "Ania:", "text": "Popatrz na koniec słowa. To cała tajemnica.", "id": "Lihat ujung katanya. Cuma itu rahasianya.", "literal": "lihatlah pada ujung kata. ini seluruh rahasia." }
+   ],
+   "notes": [
+    "**To jest… dipakai untuk apa saja.** Saat memperkenalkan benda — apa pun jenisnya — kalimatnya selalu *to jest*, tidak pernah *ten jest* atau *ta jest*. *To jest książka*, *to jest stół*, *to jest okno*. Ini jalan pintas terbesar di unit ini: selama kamu masih **menunjuk**, kamu tidak perlu tahu jenisnya sama sekali.",
+    "**Yang berubah adalah *ten / ta / to* saat menempel pada kata bendanya.** Bandingkan: *To jest stół* (ini meja) dengan *Ten stół jest mały* (meja ini kecil). Yang pertama menunjuk, yang kedua menerangkan.",
+    "**Jest boleh hilang.** *To cała tajemnica* di baris terakhir tanpa *jest*, dan tetap kalimat lengkap. Dalam kalimat pendek yang menyamakan dua hal, *jest* sering dibuang begitu saja — persis seperti bahasa Indonesia yang tak punya \"adalah\" wajib.",
+    "**Nie wiem** (saya tidak tahu) adalah salah satu kalimat yang paling sering kamu pakai di bulan-bulan pertama. Sepasang dengannya: *nie rozumiem* (saya tidak mengerti). *Wiedzieć* untuk tahu **fakta**; untuk kenal **orang** dipakai *znać*.",
+    "**Jak to się nazywa po polsku?** Kalimat penyelamat nomor satu. Hafalkan utuh, jangan diurai — ia akan menggantikan kamus di banyak situasi.",
+    "**Kata sifat berdiri di depan.** *Polska książka* (buku Polandia), *duże okno* (jendela besar). Sama seperti bahasa Inggris, kebalikan dari bahasa Indonesia. Perhatikan juga ekor kata sifatnya ikut jenis kata bendanya: *mały stół*, *mała lampa*, *małe okno*.",
+    "**Bo** berarti \"karena\" dan selalu berada di tengah kalimat. Untuk memulai kalimat dengan \"karena\" dipakai *ponieważ*, yang terdengar lebih resmi."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga jenis kata benda — dan cara menebaknya",
+     "body": [
+      "Setiap kata benda Polandia punya salah satu dari tiga jenis. Kabar baiknya: jenisnya hampir selalu terbaca dari **huruf terakhir**, jadi tak perlu dihafal satu-satu seperti *der/die/das* bahasa Jerman."
+     ],
+     "table": {
+      "head": ["Jenis", "Ujung katanya", "\"ini\"", "Contoh"],
+      "rows": [
+       ["**męski** (laki-laki)", "huruf mati", "*ten*", "*stół*, *dom*, *kot*, *student*"],
+       ["**żeński** (perempuan)", "**-a**", "*ta*", "*książka*, *lampa*, *kawa*, *kobieta*"],
+       ["**nijaki** (netral)", "**-o, -e, -ę**", "*to*", "*okno*, *morze*, *imię*"]
+      ]
+     },
+     "after": [
+      "Aturan ini tepat untuk lebih dari sembilan dari sepuluh kata benda. Pengecualian yang benar-benar sering ditemui cuma dua kelompok: kata berujung *-ość* (*miłość*, *radość*) yang **żeński** meski berujung huruf mati, dan kata seperti *mężczyzna* (laki-laki), *kolega* (teman), *tata* (ayah) yang berujung *-a* tapi **męski** karena artinya orang laki-laki.",
+      "⚠️ Jenis kelamin di sini adalah urusan **tata bahasa**, bukan urusan makna. *Stół* (meja) tidak jantan dalam arti apa pun; ia sekadar masuk golongan yang ekornya berperilaku begitu. Jangan mencari alasan; carilah ujung katanya.",
+      "Kenapa ini penting sejak sekarang? Karena jenis kata benda menentukan hampir semua ekor lain dalam bahasa Polandia: kata sifatnya, kata tunjuknya, kata miliknya, dan bentuknya di enam bentuk kata benda yang lain. Salah menebak jenis di sini akan menular ke semua unit berikutnya."
+     ]
+    },
+    {
+     "title": "Ten, ta, to — dan kembarannya",
+     "body": [
+      "Kata tunjuk mengikuti jenis kata bendanya, dan bentuk jamaknya cuma dua."
+     ],
+     "table": {
+      "head": ["", "Tunggal", "Contoh", "Jamak", "Contoh jamak"],
+      "rows": [
+       ["męski", "*ten*", "*ten stół*", "*te*", "*te stoły*"],
+       ["żeński", "*ta*", "*ta lampa*", "*te*", "*te lampy*"],
+       ["nijaki", "*to*", "*to okno*", "*te*", "*te okna*"],
+       ["orang lk (jamak)", "—", "—", "*ci*", "*ci studenci*"]
+      ]
+     },
+     "after": [
+      "Untuk \"itu\" (yang jauh) dipakai *tamten / tamta / tamto*, tapi dalam percakapan sehari-hari orang Polandia jauh lebih sering memakai *ten* saja sambil menunjuk.",
+      "Baris terakhir memperlihatkan satu hal yang khas bahasa Polandia: kelompok yang **ada laki-lakinya** diperlakukan berbeda dari kelompok lain. Pola ini akan muncul lagi di kata kerja lampau (unit 17). Cukup kenali; belum perlu dipakai."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Benda di sekitarmu",
+   "blocks": [
+    { "type": "p", "text": "Dikelompokkan menurut jenisnya supaya matamu terbiasa melihat polanya, bukan menghafal daftar acak." },
+    {
+     "type": "tabel",
+     "head": ["Męski — *ten*", "Żeński — *ta*", "Nijaki — *to*"],
+     "rows": [
+      ["*stół* — meja", "*lampa* — lampu", "*okno* — jendela"],
+      ["*dom* — rumah", "*książka* — buku", "*krzesło* — kursi"],
+      ["*telefon* — telepon", "*kawa* — kopi", "*mieszkanie* — apartemen"],
+      ["*komputer* — komputer", "*herbata* — teh", "*miasto* — kota"],
+      ["*klucz* — kunci", "*woda* — air", "*morze* — laut"],
+      ["*chleb* — roti", "*torba* — tas", "*jedzenie* — makanan"],
+      ["*kot* — kucing", "*gazeta* — koran", "*piwo* — bir"],
+      ["*pies* — anjing", "*szkoła* — sekolah", "*imię* — nama depan"]
+     ]
+    },
+    { "type": "kotak", "title": "Latihan mata: tiga detik per kata", "items": [
+      "Tutup kolom judulnya, lalu baca daftar itu dari atas ke bawah sambil menyebut *ten*, *ta*, atau *to* di depan tiap kata.",
+      "Kalau ragu, jangan berpikir lama — lihat huruf terakhirnya. Berujung *-a* hampir pasti *ta*; berujung *-o* atau *-e* hampir pasti *to*; sisanya *ten*.",
+      "Ulangi latihan ini sekali sehari selama seminggu. Setelah itu jenis kata benda berhenti jadi hafalan dan mulai jadi refleks."
+     ] }
+   ]
+  },
+  {
+   "title": "Angka 0–20",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Angka", "Polski", "Cara baca", "Angka", "Polski", "Cara baca"],
+     "rows": [
+      ["0", "*zero*", "ZE-ro", "11", "*jedenaście*", "ye-de-NASY-cye"],
+      ["1", "*jeden*", "YE-den", "12", "*dwanaście*", "dva-NASY-cye"],
+      ["2", "*dwa*", "dva", "13", "*trzynaście*", "tsyy-NASY-cye"],
+      ["3", "*trzy*", "tsyy", "14", "*czternaście*", "cter-NASY-cye"],
+      ["4", "*cztery*", "CTE-ry", "15", "*piętnaście*", "pyent-NASY-cye"],
+      ["5", "*pięć*", "pyenc", "16", "*szesnaście*", "syes-NASY-cye"],
+      ["6", "*sześć*", "syesyc", "17", "*siedemnaście*", "sye-dem-NASY-cye"],
+      ["7", "*siedem*", "SYE-dem", "18", "*osiemnaście*", "o-syem-NASY-cye"],
+      ["8", "*osiem*", "O-syem", "19", "*dziewiętnaście*", "jye-vyent-NASY-cye"],
+      ["9", "*dziewięć*", "JYE-vyenc", "20", "*dwadzieścia*", "dva-JYESY-cya"],
+      ["10", "*dziesięć*", "JYE-syenc", "", "", ""]
+     ]
+    },
+    { "type": "p", "text": "Pola yang menghemat hafalan: angka 11–19 semuanya berujung **-naście**, yang berasal dari \"di atas sepuluh\". Cukup kenali angka 1–10, lalu tempelkan ekornya: *cztery → czternaście*, *sześć → szesnaście*." },
+    { "type": "kotak", "title": "Angka dan kata benda — peringatan awal", "items": [
+      "Kata benda sesudah angka **berubah bentuk**, dan aturannya tidak seperti bahasa mana pun yang kamu kenal: *jeden bilet*, *dwa bilety*, tapi *pięć biletów*.",
+      "Jangan diurus sekarang. Yang perlu kamu tahu di unit ini cuma angkanya sendiri; kata bendanya diurus di unit 6 dan 15.",
+      "Untuk bertanya jumlah dipakai *ile?* — *Ile to kosztuje?* (berapa harganya?), *Ile masz lat?* (berapa umurmu?)."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "pl": "co to jest?", "baca": "tso to yest", "id": "ini apa?" },
+  { "pl": "to jest", "baca": "to yest", "id": "ini adalah" },
+  { "pl": "ten / ta / to", "baca": "ten / ta / to", "id": "ini (lk / pr / netral)" },
+  { "pl": "rzeczownik", "baca": "zye-COV-nik", "id": "kata benda" },
+  { "pl": "rodzaj", "baca": "RO-dzay", "id": "jenis (kelamin kata)" },
+  { "pl": "męski", "baca": "MENS-ki", "id": "laki-laki (jenis kata)" },
+  { "pl": "żeński", "baca": "ZYENY-ski", "id": "perempuan (jenis kata)" },
+  { "pl": "nijaki", "baca": "ni-YA-ki", "id": "netral (jenis kata)" },
+  { "pl": "stół", "baca": "stuw", "id": "meja" },
+  { "pl": "krzesło", "baca": "KSYE-swo", "id": "kursi" },
+  { "pl": "okno", "baca": "OK-no", "id": "jendela" },
+  { "pl": "lampa", "baca": "LAM-pa", "id": "lampu" },
+  { "pl": "książka", "baca": "KSYONSY-ka", "id": "buku" },
+  { "pl": "dom", "baca": "dom", "id": "rumah" },
+  { "pl": "mieszkanie", "baca": "myesy-KA-nye", "id": "apartemen" },
+  { "pl": "klucz", "baca": "kluc", "id": "kunci" },
+  { "pl": "telefon", "baca": "te-LE-fon", "id": "telepon" },
+  { "pl": "kot / pies", "baca": "kot / pyes", "id": "kucing / anjing" },
+  { "pl": "duży", "baca": "DU-zyy", "id": "besar" },
+  { "pl": "mały", "baca": "MA-wy", "id": "kecil" },
+  { "pl": "nowy / stary", "baca": "NO-vy / STA-ry", "id": "baru / lama" },
+  { "pl": "wiedzieć", "baca": "VYE-jyec", "id": "tahu (fakta)" },
+  { "pl": "znać", "baca": "znac", "id": "kenal (orang)" },
+  { "pl": "dlaczego", "baca": "dla-CE-go", "id": "kenapa" },
+  { "pl": "bo", "baca": "bo", "id": "karena" },
+  { "pl": "każdy", "baca": "KAZY-dy", "id": "setiap" },
+  { "pl": "albo", "baca": "AL-bo", "id": "atau" },
+  { "pl": "ile", "baca": "I-le", "id": "berapa" },
+  { "pl": "koniec", "baca": "KO-nyets", "id": "ujung; akhir" },
+  { "pl": "słowo", "baca": "SWO-vo", "id": "kata" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis *ten*, *ta*, atau *to* di depan kata benda berikut.",
+   "items": [
+    "____ stół",
+    "____ lampa",
+    "____ okno",
+    "____ książka",
+    "____ telefon",
+    "____ mieszkanie"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Ini apa?",
+    "Ini buku.",
+    "Jendela ini besar.",
+    "Meja ini kecil.",
+    "Saya tidak tahu.",
+    "Namanya apa dalam bahasa Polandia?"
+   ]
+  },
+  {
+   "prompt": "Tulis angkanya dengan huruf.",
+   "items": [
+    "3",
+    "7",
+    "12",
+    "15",
+    "20"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "to / co / jest / ?",
+    "jest / książka / to",
+    "mały / stół / ten / jest",
+    "rodzaj / rzeczownik / ma / każdy",
+    "wiem / nie"
+   ]
+  }
+ ],
+ "answers": [
+  "ten — ta — to — ta — ten — to",
+  "Co to jest? — To jest książka. — To okno jest duże. — Ten stół jest mały. — Nie wiem. — Jak to się nazywa po polsku?",
+  "trzy — siedem — dwanaście — piętnaście — dwadzieścia",
+  "Co to jest? — To jest książka. — Ten stół jest mały. — Każdy rzeczownik ma rodzaj. — Nie wiem."
+ ],
+ "wave": "Ulangi dialog unit 1 keras-keras sekali, lalu sebut lima kata benda dari unit 2 sambil menambahkan *ten*, *ta*, atau *to* di depannya."
+}

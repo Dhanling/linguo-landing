@@ -1,0 +1,239 @@
+{
+ "title": "Satu hari biasa",
+ "title_target": "Zwykły dzień",
+ "goal": "Menceritakan kegiatan sehari-hari, memakai kata kerja ber-*się*, dan menyatakan seberapa sering kamu melakukan sesuatu.",
+ "bekal": [
+  "memakai kata kerja ber-*się* dan tahu di mana *się* boleh berdiri",
+  "menyusun cerita satu hari penuh secara berurutan",
+  "menyatakan kekerapan: *zawsze*, *często*, *raz w tygodniu*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Jak wygląda twój dzień?",
+   "intro": "Meja panjang di kantin kampus. Percakapan bergeser ke kebiasaan masing-masing.",
+   "lines": [
+    { "speaker": "Ania:", "text": "Jak wygląda twój zwykły dzień?", "id": "Hari-harimu biasanya gimana?", "literal": "bagaimana terlihat milikmu biasa hari?" },
+    { "speaker": "Budi:", "text": "Budzę się o wpół do siódmej. Potem myję się i ubieram się.", "id": "Saya bangun jam setengah tujuh. Habis itu mandi dan ganti baju.", "literal": "saya-membangunkan diri pada setengah ke ketujuh. kemudian saya-mencuci diri dan saya-memakaikan diri." },
+    { "speaker": "Ania:", "text": "Tak wcześnie? Ja wstaję o siódmej.", "id": "Sepagi itu? Saya bangun jam tujuh.", "literal": "begitu awal? saya bangun pada ketujuh." },
+    { "speaker": "Budi:", "text": "Uczę się rano, bo wtedy najlepiej się koncentruję.", "id": "Saya belajar pagi, karena waktu itu paling bisa fokus.", "literal": "saya-mengajar diri pagi, karena waktu-itu paling-baik diri saya-memusatkan." },
+    { "speaker": "Ania:", "text": "A ja uczę się wieczorem. Rano tylko piję kawę i czytam wiadomości.", "id": "Kalau saya belajarnya malam. Pagi cuma minum kopi dan baca berita.", "literal": "dan saya mengajar diri malam. pagi hanya saya-minum kopi dan saya-membaca berita." },
+    { "speaker": "Budi:", "text": "Kiedy uprawiasz sport?", "id": "Kapan kamu olahraga?", "literal": "kapan kamu-menggarap olahraga?" },
+    { "speaker": "Ania:", "text": "Trzy razy w tygodniu, po zajęciach. A ty?", "id": "Tiga kali seminggu, habis kuliah. Kamu?", "literal": "tiga kali di minggu, sesudah kuliah. dan kamu?" },
+    { "speaker": "Budi:", "text": "Rzadko. Czasem biegam w parku w niedzielę.", "id": "Jarang. Kadang lari di taman hari Minggu.", "literal": "jarang. kadang saya-berlari di taman di Minggu." },
+    { "speaker": "Ania:", "text": "A o której się kładziesz?", "id": "Kamu tidurnya jam berapa?", "literal": "dan pada yang-mana diri kamu-membaringkan?" },
+    { "speaker": "Budi:", "text": "Zwykle o jedenastej. W weekend później.", "id": "Biasanya jam sebelas. Akhir pekan lebih malam.", "literal": "biasanya pada kesebelas. di akhir-pekan lebih-lambat." },
+    { "speaker": "Ania:", "text": "Ja też. W sobotę nie budzę się przed dziesiątą.", "id": "Saya juga. Sabtu saya tidak bangun sebelum jam sepuluh.", "literal": "saya juga. di Sabtu tidak saya-membangunkan diri sebelum kesepuluh." },
+    { "speaker": "Budi:", "text": "Brzmi rozsądnie.", "id": "Kedengarannya masuk akal.", "literal": "berbunyi masuk-akal." }
+   ],
+   "notes": [
+    "**Się bukan kata yang berarti sesuatu sendiri.** Ia menandai bahwa pekerjaannya kembali ke pelakunya: *budzę* = saya membangunkan (orang lain), *budzę się* = saya bangun (diri sendiri). Bahasa Indonesia menyelesaikan urusan ini dengan awalan \"ber-\" dan \"me-\"; bahasa Polandia dengan satu kata kecil di sebelah kata kerjanya.",
+    "**Letak się berpindah-pindah**, dan itu bukan kesalahan cetak. *Uczę się rano* dan *Rano się uczę* dua-duanya benar. Aturannya cuma satu: *się* **tidak boleh jadi kata pertama** dalam kalimat.",
+    "**Najlepiej się koncentruję** — di sini *się* berdiri sebelum kata kerjanya. Orang Polandia cenderung menaruh *się* menempel pada kata yang ditekankan, dan telinga akan menangkap kecenderungan itu jauh sebelum kepalamu bisa menjelaskannya.",
+    "**Myję się** harfiahnya \"saya mencuci diri\" dan artinya \"saya mandi\". Untuk mandi berendam dipakai *kąpię się*. Bahasa Polandia tidak punya satu kata setara \"mandi\" seperti kita.",
+    "**Trzy razy w tygodniu** — \"tiga kali dalam seminggu\". *Raz* (sekali), *dwa razy* (dua kali), *pięć razy* (lima kali) — aturan angka 2-3-4 yang sudah kamu kenal bekerja lagi di sini.",
+    "**Po zajęciach** — \"sesudah kuliah\". Kata depan *po* menuntut bentuk *miejscownik* yang baru kamu pelajari, dan di sini bentuknya jamak: *zajęcia → zajęciach*. Ekor *-ach* adalah tanda *miejscownik* jamak, dan ia berlaku untuk semua jenis kata benda tanpa kecuali — salah satu ekor termudah dalam bahasa Polandia.",
+    "**O której się kładziesz** — harfiahnya \"pada jam berapa kamu membaringkan diri\". Untuk \"tidur\" ada dua kata yang berbeda: *kłaść się spać* (pergi berbaring untuk tidur) dan *spać* (sedang tidur).",
+    "**Brzmi rozsądnie** — \"kedengarannya masuk akal\". Perhatikan tidak ada kata ganti \"itu\": kata kerja Polandia bentuk *on/ona/ono* boleh berdiri sendiri tanpa pelaku kalau yang dimaksud sudah jelas."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja ber-się",
+     "body": [
+      "Bentuknya biasa saja — yang perlu diurus cuma letak *się*-nya."
+     ],
+     "table": {
+      "head": ["Bentuk kamus", "ja", "ty", "on / ona", "Arti"],
+      "rows": [
+       ["*budzić się*", "*budzę się*", "*budzisz się*", "*budzi się*", "bangun"],
+       ["*myć się*", "*myję się*", "*myjesz się*", "*myje się*", "mandi"],
+       ["*ubierać się*", "*ubieram się*", "*ubierasz się*", "*ubiera się*", "berpakaian"],
+       ["*uczyć się*", "*uczę się*", "*uczysz się*", "*uczy się*", "belajar"],
+       ["*spieszyć się*", "*spieszę się*", "*spieszysz się*", "*spieszy się*", "buru-buru"],
+       ["*nazywać się*", "*nazywam się*", "*nazywasz się*", "*nazywa się*", "bernama"],
+       ["*spotykać się*", "*spotykam się*", "*spotykasz się*", "*spotyka się*", "bertemu"],
+       ["*kłaść się*", "*kładę się*", "*kładziesz się*", "*kładzie się*", "berbaring"]
+      ]
+     },
+     "after": [
+      "*Się* **tidak pernah berubah bentuk**, untuk pelaku mana pun. Satu kata, enam pelaku — salah satu hal termudah di seluruh bahasa Polandia.",
+      "Tiga aturan letak yang cukup untuk A1: (1) tidak boleh di awal kalimat, (2) biasanya tepat sesudah kata kerjanya, (3) dalam kalimat panjang sering meloncat ke depan kata kerja. Ketiganya benar; tidak ada yang salah.",
+      "⚠️ Sebagian kata kerja berubah arti total tanpa *się*: *uczyć* (mengajar) vs *uczyć się* (belajar), *budzić* (membangunkan) vs *budzić się* (bangun). Jangan pernah membuang *się* hanya karena kalimatnya terasa sudah lengkap."
+     ]
+    },
+    {
+     "title": "Seberapa sering",
+     "body": [
+      "Dua cara: kata keterangan tunggal, atau hitungan dengan *raz*."
+     ],
+     "tables": [
+      {
+       "head": ["Polski", "Cara baca", "Arti"],
+       "rows": [
+        ["*zawsze*", "ZAF-sye", "selalu"],
+        ["*często*", "CENS-to", "sering"],
+        ["*zwykle*", "ZVYK-le", "biasanya"],
+        ["*czasem*", "CA-sem", "kadang"],
+        ["*rzadko*", "ZYAT-ko", "jarang"],
+        ["*nigdy nie*", "NIG-dy nye", "tidak pernah"]
+       ]
+      },
+      {
+       "head": ["Hitungan", "Contoh", "Arti"],
+       "rows": [
+        ["*raz*", "*raz w tygodniu*", "sekali seminggu"],
+        ["*dwa razy*", "*dwa razy dziennie*", "dua kali sehari"],
+        ["*trzy razy*", "*trzy razy w miesiącu*", "tiga kali sebulan"],
+        ["*pięć razy*", "*pięć razy w roku*", "lima kali setahun"],
+        ["*codziennie*", "*Codziennie piję kawę.*", "setiap hari"]
+       ]
+      }
+     ],
+     "after": [
+      "Perhatikan *nigdy* selalu berpasangan dengan *nie*: *Nigdy nie piję alkoholu*. Menghilangkan *nie* membuat kalimatnya timpang, bukan lebih ringkas.",
+      "Kata keterangan kekerapan biasanya berdiri **sebelum** kata kerjanya: *Często czytam*, *Rzadko biegam*. Tapi menaruhnya di awal kalimat juga benar dan justru sering dipakai."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Sehari penuh, berurutan",
+   "blocks": [
+    { "type": "p", "text": "Bacalah keras-keras dua kali, lalu tutup kolom kanan dan ceritakan ulang harimu sendiri memakai kalimat-kalimat ini." },
+    {
+     "type": "tabel",
+     "head": ["Polski", "Arti"],
+     "rows": [
+      ["*Budzę się o wpół do siódmej.*", "Saya bangun jam setengah tujuh."],
+      ["*Wstaję i myję się.*", "Saya bangun dari tempat tidur dan mandi."],
+      ["*Ubieram się i jem śniadanie.*", "Saya berpakaian dan sarapan."],
+      ["*Wychodzę z domu o ósmej.*", "Saya keluar rumah jam delapan."],
+      ["*Jadę autobusem na uniwersytet.*", "Saya naik bus ke kampus."],
+      ["*Zajęcia zaczynają się o dziewiątej.*", "Kuliah mulai jam sembilan."],
+      ["*W przerwie piję kawę z kolegami.*", "Waktu istirahat saya minum kopi dengan teman-teman."],
+      ["*Po zajęciach wracam do domu.*", "Sesudah kuliah saya pulang."],
+      ["*Wieczorem uczę się dwie godziny.*", "Malamnya saya belajar dua jam."],
+      ["*Kładę się spać o jedenastej.*", "Saya tidur jam sebelas."]
+     ]
+    },
+    { "type": "kotak", "title": "Kata penyambung yang membuat cerita mengalir", "items": [
+      "*najpierw* — mula-mula · *potem* — kemudian · *później* — setelah itu",
+      "*zawsze najpierw…, a potem…* — selalu mula-mula…, lalu…",
+      "*w końcu* — akhirnya · *przed snem* — sebelum tidur",
+      "Lima kata ini mengubah daftar kalimat pendek jadi cerita. Pakailah sejak sekarang, bahkan saat kalimatmu masih sederhana."
+     ] }
+   ]
+  },
+  {
+   "title": "Kegiatan dan waktu luang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Polski", "Cara baca", "Arti"],
+     "rows": [
+      ["*uprawiać sport*", "u-PRA-vyac sport", "berolahraga"],
+      ["*biegać*", "BYE-gac", "berlari"],
+      ["*pływać*", "PWY-vac", "berenang"],
+      ["*grać w piłkę*", "grac f PIW-ke", "main bola"],
+      ["*grać na gitarze*", "grac na gi-TA-zye", "main gitar"],
+      ["*gotować*", "go-TO-vac", "memasak"],
+      ["*sprzątać*", "SPSYON-tac", "beres-beres"],
+      ["*odpoczywać*", "ot-po-CY-vac", "beristirahat"],
+      ["*spotykać się z przyjaciółmi*", "spo-TY-kac sye", "ketemu teman-teman"],
+      ["*oglądać seriale*", "o-GLON-dac se-RYA-le", "nonton serial"]
+     ]
+    },
+    { "type": "p", "text": "Perhatikan *grać* memakai dua kata depan berbeda: *grać **w*** untuk permainan (*w piłkę*, *w szachy*) dan *grać **na*** untuk alat musik (*na gitarze*, *na pianinie*). Ini pasangan tetap — hafalkan sepaket." },
+    { "type": "kotak", "title": "Bertanya kebiasaan orang lain", "items": [
+      "*Co robisz w wolnym czasie?* — Kalau lagi senggang ngapain?",
+      "*Jak często…?* — Seberapa sering…?",
+      "*O której wstajesz?* — Bangun jam berapa?",
+      "*Masz jakieś hobby?* — Punya hobi?"
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "pl": "budzić się", "baca": "BU-jyic sye", "id": "bangun" },
+  { "pl": "wstawać", "baca": "fsta-VAC", "id": "bangkit dari tempat tidur" },
+  { "pl": "myć się", "baca": "myc sye", "id": "mandi" },
+  { "pl": "ubierać się", "baca": "u-BYE-rac sye", "id": "berpakaian" },
+  { "pl": "kłaść się", "baca": "kwasyc sye", "id": "berbaring; tidur" },
+  { "pl": "spieszyć się", "baca": "SPYE-syyc sye", "id": "buru-buru" },
+  { "pl": "wychodzić", "baca": "vy-HO-jyic", "id": "keluar" },
+  { "pl": "wracać", "baca": "VRA-tsac", "id": "pulang" },
+  { "pl": "przerwa", "baca": "PSYER-va", "id": "istirahat (jeda)" },
+  { "pl": "wiadomości", "baca": "vya-do-MOSY-ci", "id": "berita" },
+  { "pl": "zwykły", "baca": "ZVYK-wy", "id": "biasa" },
+  { "pl": "zwykle", "baca": "ZVYK-le", "id": "biasanya" },
+  { "pl": "wcześnie / późno", "baca": "FCESY-nye / PUZY-no", "id": "awal / larut" },
+  { "pl": "później", "baca": "PUZY-nyey", "id": "lebih lambat; nanti" },
+  { "pl": "najpierw", "baca": "NAY-pyerf", "id": "mula-mula" },
+  { "pl": "wtedy", "baca": "FTE-dy", "id": "waktu itu" },
+  { "pl": "raz / razy", "baca": "ras / RA-zy", "id": "kali" },
+  { "pl": "rzadko", "baca": "ZYAT-ko", "id": "jarang" },
+  { "pl": "sport", "baca": "sport", "id": "olahraga" },
+  { "pl": "biegać", "baca": "BYE-gac", "id": "berlari" },
+  { "pl": "pływać", "baca": "PWY-vac", "id": "berenang" },
+  { "pl": "grać", "baca": "grac", "id": "bermain" },
+  { "pl": "sprzątać", "baca": "SPSYON-tac", "id": "beres-beres" },
+  { "pl": "odpoczywać", "baca": "ot-po-CY-vac", "id": "beristirahat" },
+  { "pl": "przyjaciel", "baca": "psyy-YA-cyel", "id": "sahabat" },
+  { "pl": "wolny czas", "baca": "VOL-ny cas", "id": "waktu luang" },
+  { "pl": "hobby", "baca": "HOB-bi", "id": "hobi" },
+  { "pl": "koncentrować się", "baca": "kon-tsen-TRO-vac sye", "id": "memusatkan perhatian" },
+  { "pl": "brzmieć", "baca": "bzymyec", "id": "berbunyi; terdengar" },
+  { "pl": "rozsądny", "baca": "ros-SOND-ny", "id": "masuk akal" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan bentuk kata kerja yang tepat — jangan lupa *się*.",
+   "items": [
+    "Ja ____ o siódmej. (budzić się)",
+    "Ty ____ polskiego. (uczyć się)",
+    "Ona ____ szybko. (ubierać się)",
+    "My ____ o dziesiątej. (spotykać się)",
+    "Oni ____ późno. (kłaść się)",
+    "Jak ty ____ ? (nazywać się)"
+   ]
+  },
+  {
+   "prompt": "Susun hari ini secara berurutan. Tulis ulang kalimatnya lengkap.",
+   "items": [
+    "Kładę się spać.",
+    "Budzę się.",
+    "Wracam do domu.",
+    "Jem śniadanie.",
+    "Zajęcia zaczynają się."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Saya bangun jam setengah tujuh.",
+    "Saya belajar bahasa Polandia setiap hari.",
+    "Tiga kali seminggu saya berolahraga.",
+    "Saya tidak pernah minum kopi malam-malam.",
+    "Kalau lagi senggang kamu ngapain?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "się / o / budzę / szóstej",
+    "polskiego / uczę / się / wieczorem",
+    "w / trzy / tygodniu / razy",
+    "nie / nigdy / się / spóźniam",
+    "wolnym / robisz / w / co / czasie / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "budzę się — uczysz się — ubiera się — spotykamy się — kładą się — nazywasz się",
+  "Budzę się. — Jem śniadanie. — Zajęcia zaczynają się. — Wracam do domu. — Kładę się spać.",
+  "Budzę się o wpół do siódmej. — Codziennie uczę się polskiego. — Trzy razy w tygodniu uprawiam sport. — Nigdy nie piję kawy wieczorem. — Co robisz w wolnym czasie?",
+  "Budzę się o szóstej. — Wieczorem uczę się polskiego. — trzy razy w tygodniu — Nigdy się nie spóźniam. — Co robisz w wolnym czasie?"
+ ],
+ "wave": "Ulangi dialog unit 10 keras-keras, lalu ceritakan harimu kemarin memakai sepuluh kalimat dari bagian \"Sehari penuh\"."
+}

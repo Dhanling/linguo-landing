@@ -1,0 +1,971 @@
+{
+  "brand": "LINGUO",
+  "title": "Polski 101",
+  "subtitle": "Modul belajar mandiri bahasa Polandia untuk pemula",
+  "level": "Level A1 (CEFR)",
+  "edition": "Edisi Bahasa Indonesia",
+  "ruby": false,
+  "font_size": "9.4pt",
+  "page_margin": "12mm 11mm 10mm",
+  "vocab_columns": [
+    {
+      "head": "Polski",
+      "key": "pl"
+    },
+    {
+      "head": "Cara baca",
+      "key": "baca"
+    },
+    {
+      "head": "Bahasa Indonesia",
+      "key": "id"
+    }
+  ],
+  "cover_design": {
+    "bg": "#8E1B2E",
+    "accent": "#F4D9C6",
+    "label": "BAHASA POLANDIA",
+    "judul": "Polski",
+    "cap": "ł",
+    "pola_opacity": 0.35,
+    "pola": "background-image:repeating-linear-gradient(125deg, rgba(255,255,255,.10) 0 2px, transparent 2px 40px),repeating-linear-gradient(55deg, rgba(255,255,255,.06) 0 2px, transparent 2px 40px);",
+    "ringkas": "Modul belajar mandiri bahasa Polandia untuk pemula — dari menyapa di Kraków sampai menceritakan akhir pekan yang sudah lewat.",
+    "catatan": "Tiap baris dialog dilengkapi terjemahan harfiah dan cara baca."
+  },
+  "product": {
+    "slug": "polski-101-a1-id",
+    "title": "Polski 101 new edition",
+    "type": "ebook",
+    "language": "Polish",
+    "level": "A1",
+    "file": "polski-101-a1-id.pdf",
+    "description": "Dua puluh unit belajar mandiri bergaya Assimil untuk bahasa Polandia dari nol: dialog pendek, terjemahan harfiah yang memperlihatkan cara bahasa Polandia menyusun kalimat, catatan tata bahasa, kosakata lengkap dengan cara baca, latihan, dan kunci jawaban. Ditulis khusus untuk penutur bahasa Indonesia — tiap unit menyasar satu titik yang paling sering menjegal, dari deretan huruf mati yang kelihatan mustahil dibaca sampai tujuh bentuk kata benda yang menggantikan kata depan.",
+    "pages": 152
+  },
+  "front": [
+    {
+      "title": "Kata pengantar",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bahasa Polandia punya dua reputasi, dan dua-duanya menakuti orang sebelum sempat mencoba. Yang pertama soal **tulisannya**: *szczęście*, *wszystko*, *przepraszam* — deretan huruf mati yang tampak seperti kesalahan cetak. Yang kedua soal **tata bahasanya**: tujuh bentuk kata benda, tiga jenis kelamin, kata kerja yang berubah menurut pelakunya."
+        },
+        {
+          "type": "p",
+          "text": "Reputasi pertama **salah alamat**. Ejaan bahasa Polandia justru salah satu yang paling jujur di Eropa: satu huruf (atau satu pasangan huruf) selalu berbunyi sama, di mana pun letaknya. *sz* selalu \"sy\", *cz* selalu \"c\", *w* selalu \"v\" — tanpa kecuali, tanpa huruf bisu, tanpa kejutan seperti bahasa Inggris atau Prancis. Yang bikin kata Polandia tampak mustahil hanyalah kebiasaan kita membaca huruf **satu per satu**. Begitu matamu belajar membaca *sz*, *cz*, *rz*, *dz* sebagai **satu bunyi**, kata seperti *przepraszam* langsung mengecil jadi lima suku kata biasa: pshe-PRA-syam. Dan tekanannya tidak pernah perlu dihafal — **selalu di suku kata kedua dari belakang**, persis seperti kebiasaan lidah Indonesia."
+        },
+        {
+          "type": "p",
+          "text": "Reputasi kedua **benar**, tapi bukan seperti yang dibayangkan. Tujuh bentuk kata benda bukan tujuh hafalan tambahan; ia adalah **tujuh kata depan yang menempel di ekor kata**. Bahasa Indonesia menulis \"di Warsawa\", bahasa Polandia menulis *w Warszawie*. Bahasa Indonesia menulis \"saya minum kopi\", bahasa Polandia menulis *piję kawę* — ekor *-ę* itulah yang menandai bahwa kopi adalah **yang diminum**, bukan yang minum. Isinya sama; letak penandanya saja yang pindah dari depan ke belakang."
+        },
+        {
+          "type": "p",
+          "text": "Dan ada daftar hal yang justru **lebih mudah** daripada bahasa Inggris, daftar yang jarang diceritakan. Bahasa Polandia **tidak punya kata sandang sama sekali**: tidak ada \"a\", tidak ada \"the\" — persis seperti bahasa Indonesia. Tidak punya bentuk *continuous*; \"saya makan\" dan \"saya sedang makan\" memakai satu bentuk yang sama. Urutan katanya longgar: *Ania czyta książkę* dan *Książkę czyta Ania* dua-duanya benar. Kata kerja \"adalah\" boleh hilang di kalimat pendek. Dan karena ekor kata sudah menandai siapa melakukan apa, kata ganti \"saya\", \"kamu\", \"dia\" hampir selalu **boleh dibuang** — *jestem* sudah berarti \"saya adalah\", tanpa perlu *ja*."
+        },
+        {
+          "type": "p",
+          "text": "Jadi kesulitan bahasa Polandia tidak terletak di tempat yang kamu kira. Ia terletak di tiga tempat lain: **jenis kelamin kata benda** yang menentukan hampir semua ekor lain, **bentuk kata benda yang berubah menurut perannya di kalimat**, dan **pasangan kata kerja** yang membedakan pekerjaan yang sedang berjalan dari pekerjaan yang tuntas. Ketiganya tidak punya padanan sama sekali dalam bahasa Indonesia. Karena itu modul ini menaruh jenis kelamin sejak unit 3, memperkenalkan bentuk kata benda **satu per satu** — bukan tujuh sekaligus dalam satu tabel yang bikin putus asa — dan menyimpan pasangan kata kerja sampai unit 18, setelah kamu punya cukup kalimat untuk merasakan bedanya."
+        },
+        {
+          "type": "p",
+          "text": "Penjelasannya sengaja pendek. Yang panjang bukan teorinya, melainkan latihannya — dan latihan itu ada di tanganmu, bukan di halaman ini."
+        },
+        {
+          "type": "kotak",
+          "title": "Sebelum mulai",
+          "items": [
+            "Modul ini menuntut satu hal saja: **suarakan**. Bunyi Polandia yang mirip-mirip (*s / sz / ś*, *c / cz / ć*) tidak bisa dipisahkan lewat mata, cuma lewat mulut dan telinga.",
+            "Kerjakan satu unit sekali duduk, 20–30 menit. Dua puluh unit selesai dalam kurang dari dua bulan kalau kamu berjalan lima hari seminggu.",
+            "Jangan lompati bab pelafalan di halaman berikutnya. Ia bukan pelengkap; ia pondasi yang dipakai kembali di semua unit — dan ia satu-satunya bab yang membuat *szczęśliwy* berhenti terlihat mustahil."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Selamat belajar. *Powodzenia!*"
+        }
+      ]
+    },
+    {
+      "type": "isi",
+      "title": "Daftar isi",
+      "intro": "Dua puluh unit, disusun supaya tiap unit menuntaskan satu titik yang paling sering menjegal penutur bahasa Indonesia."
+    },
+    {
+      "title": "Cara memakai modul ini",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Modul ini disusun untuk **belajar sendiri**. Tiap unit dirancang selesai dalam sekali duduk, 20 sampai 30 menit, dan tidak menuntut apa pun selain kesediaan membaca keras-keras."
+        },
+        {
+          "type": "p",
+          "text": "Setiap unit punya susunan yang sama, dan urutannya sengaja begitu:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Dialog** — bacalah dulu lajur bahasa Polandia saja, tanpa melirik ke bawah. Baru sesudah itu baca terjemahannya.",
+            "**Terjemahan harfiah** — baris kecil di bawah tiap kalimat. Ia sering terdengar aneh dalam bahasa Indonesia, dan memang itu gunanya: ia memperlihatkan bagaimana bahasa Polandia *sebenarnya* menyusun pikiran, bukan bagaimana kita menerjemahkannya rapi-rapi.",
+            "**Catatan** — hal-hal yang kelihatan di dialog tapi belum tentu kamu sadari.",
+            "**Kotak tata bahasa** — aturan yang baru saja kamu lihat bekerja, dijelaskan sesudah kamu melihatnya, bukan sebelumnya.",
+            "**Bagian tambahan** — tabel acuan, daftar kalimat siap pakai, catatan budaya.",
+            "**Kosakata** — semua kata baru unit itu, lengkap dengan cara baca.",
+            "**Latihan** dan **kunci jawaban** — empat kelompok soal; kerjakan dulu semuanya baru buka kuncinya."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Ulangan berjenjang",
+          "items": [
+            "Setelah menyelesaikan unit baru, ulangi sekilas unit **dua hari lalu** dan unit **satu minggu lalu** — cukup baca dialognya keras-keras, dua menit per unit.",
+            "Ini bukan saran hemat waktu; ini satu-satunya cara supaya unit 3 masih hidup di kepalamu saat kamu sampai di unit 15."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Satu peringatan soal ekor kata",
+          "items": [
+            "Mulai unit 8 kamu akan melihat kata yang sama muncul dengan ekor berbeda: *kawa* jadi *kawę*, *Warszawa* jadi *Warszawie*. **Itu bukan salah cetak.**",
+            "Jangan berusaha menghafal seluruh tabelnya sekaligus. Tiap unit memperkenalkan satu bentuk saja, dan lampiran di belakang modul menyatukan semuanya kalau kamu ingin melihat peta lengkapnya."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Satu aturan terakhir: **suarakan**. Bahasa Polandia membedakan arti lewat bunyi-bunyi yang bagi telinga kita nyaris sama — *proszę* (silakan) dan *proszę* diucapkan salah sedikit masih dimengerti, tapi *pasek* (sabuk) dan *pasjek* bukan kata yang sama. Bacalah tiap dialog minimal dua kali dengan suara: sekali pelan-pelan sambil melihat terjemahan, sekali agak cepat tanpa melihat."
+        }
+      ]
+    },
+    {
+      "title": "Pelafalan bahasa Polandia",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bagian ini yang paling penting di seluruh modul, dan ia ada di depan karena semua yang di dalamnya akan kamu pakai di setiap halaman berikutnya. Kabar baiknya dulu: bagian tersulit dari pelafalan bahasa lain — **menebak bunyi dari ejaan** — hampir tidak ada di sini."
+        },
+        {
+          "type": "p",
+          "text": "Ejaan bahasa Polandia setia pada bunyinya. Satu huruf selalu berbunyi sama, dan satu pasangan huruf (*sz*, *cz*, *rz*, *dz*) juga selalu berbunyi sama. Tidak ada huruf bisu, tidak ada kejutan. Yang perlu kamu lakukan cuma satu: berhenti membaca huruf satu per satu, dan mulai membaca **pasangannya sebagai satu bunyi**."
+        },
+        {
+          "type": "sub",
+          "text": "Enam huruf yang bentuknya asing"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Huruf",
+            "Cara baca kami",
+            "Bunyinya",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "**ł**",
+              "w",
+              "seperti *w* pada \"wanita\" — **bukan** *l*",
+              "*mały* → MA-wy (kecil)"
+            ],
+            [
+              "**w**",
+              "v",
+              "seperti *v* pada \"visa\" — **bukan** *w*",
+              "*woda* → VO-da (air)"
+            ],
+            [
+              "**ó**",
+              "u",
+              "sama persis dengan *u*",
+              "*mój* → muy (milikku)"
+            ],
+            [
+              "**y**",
+              "y",
+              "antara *i* dan *e*; lidah ditarik ke belakang",
+              "*ty* → ty (kamu)"
+            ],
+            [
+              "**ą**",
+              "on",
+              "*o* sengau; jadi **om** sebelum *b/p*",
+              "*są* → son (mereka adalah)"
+            ],
+            [
+              "**ę**",
+              "en",
+              "*e* sengau; di ujung kata jadi *e* biasa",
+              "*ręka* → REN-ka (tangan)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dua yang pertama adalah jebakan terbesar untuk mata Indonesia, dan dua-duanya kebalikan dari dugaan: **ł dibaca w**, sedangkan **w dibaca v**. Kata *Wisła* (sungai Vistula) dibaca **VIS-wa**. Latih dua kata ini sampai refleks, karena keduanya muncul di hampir setiap kalimat."
+        },
+        {
+          "type": "sub",
+          "text": "Pasangan huruf: baca sebagai satu bunyi"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tulisan",
+            "Cara baca kami",
+            "Seperti bunyi",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "**sz**",
+              "sy",
+              "*sy* pada \"syarat\"",
+              "*szkoła* → SYKO-wa (sekolah)"
+            ],
+            [
+              "**cz**",
+              "c",
+              "*c* pada \"cari\"",
+              "*czekam* → CE-kam (saya menunggu)"
+            ],
+            [
+              "**rz** / **ż**",
+              "zy",
+              "*j* Prancis pada \"bonjour\"",
+              "*rzeka* → ZYE-ka (sungai)"
+            ],
+            [
+              "**dz**",
+              "dz",
+              "*d* + *z* menyatu",
+              "*dzwon* → dzvon (lonceng)"
+            ],
+            [
+              "**dż**",
+              "dj",
+              "*j* pada \"jam\"",
+              "*dżem* → djem (selai)"
+            ],
+            [
+              "**ch** / **h**",
+              "h",
+              "*h* pada \"hari\"",
+              "*chleb* → hlep (roti)"
+            ],
+            [
+              "**j**",
+              "y",
+              "selalu *y*, tak pernah *j*",
+              "*jak* → yak (bagaimana)"
+            ],
+            [
+              "**c**",
+              "ts",
+              "*ts* pada \"kitsch\"",
+              "*co* → tso (apa)"
+            ],
+            [
+              "**ni**",
+              "ny",
+              "*ny* pada \"nyanyi\"",
+              "*nie* → nye (tidak)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Cara membaca kata yang tampak mustahil",
+          "items": [
+            "*przepraszam* (maaf) → **pshe-PRA-syam**. Potong: prze-pra-szam. Tiga suku kata, bukan sebelas huruf.",
+            "*szczęście* (kebahagiaan) → **SYCEN-syce**. Potong: szcz-ę-ście → sy+c, en, sy+ce.",
+            "*wszystko* (semua) → **FSYYST-ko**. Potong: wszy-stko.",
+            "**Aturannya satu:** jangan pernah membaca huruf per huruf. Cari pasangan (*sz*, *cz*, *rz*, *dz*) lebih dulu, baru baca sisanya."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Bunyi keras dan bunyi lembut"
+        },
+        {
+          "type": "p",
+          "text": "Bahasa Polandia punya tiga baris bunyi desis yang bagi telinga kita terdengar mirip: yang **keras** (*sz cz ż*), yang **lembut** (*ś ć ź*, ditulis *si ci zi* kalau diikuti vokal), dan yang **biasa** (*s c z*). Bedanya nyata bagi orang Polandia, tapi di tingkat A1 salah pilih hampir selalu tetap dimengerti."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Biasa",
+            "Keras",
+            "Lembut",
+            "Cara membedakan"
+          ],
+          "rows": [
+            [
+              "*s* — sok",
+              "*sz* — sy",
+              "*ś / si* — sy lembut",
+              "keras: lidah mundur; lembut: lidah menempel langit-langit"
+            ],
+            [
+              "*c* — ts",
+              "*cz* — c",
+              "*ć / ci* — c lembut",
+              "*czy* (apakah) vs *ci* (untukmu)"
+            ],
+            [
+              "*z* — z",
+              "*ż / rz* — zy",
+              "*ź / zi* — zy lembut",
+              "*żona* (istri) vs *zima* (musim dingin)"
+            ],
+            [
+              "*dz* — dz",
+              "*dż* — dj",
+              "*dź / dzi* — dj lembut",
+              "*dziękuję* → jyen-KU-ye"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Supaya kolom **cara baca** tetap terbaca, modul ini sengaja **tidak** membedakan keras dan lembut: *sz* dan *ś* sama-sama ditulis \"sy\", *cz* dan *ć* sama-sama \"c\". Yang membedakannya bagimu adalah **tulisannya** — tanda ´ di atas huruf, atau huruf *i* sesudahnya, selalu berarti \"lembutkan\". Ucapkan versi lembut dengan lidah lebih maju ke langit-langit dan senyum sedikit; itu sudah cukup untuk A1."
+        },
+        {
+          "type": "sub",
+          "text": "Tekanan: selalu di suku kata kedua dari belakang"
+        },
+        {
+          "type": "p",
+          "text": "Tanpa kecuali yang perlu kamu pikirkan di tingkat ini, dan tanpa perlu dihafal satu per satu: *ko-BIE-ta*, *dzię-KU-ję*, *Pol-SKA*, *stu-DENT-ka*. Ini penghematan besar dibanding bahasa Inggris atau Rusia, yang tekanannya harus dihafal per kata."
+        },
+        {
+          "type": "kotak",
+          "title": "Kabar baik untuk penutur Indonesia",
+          "items": [
+            "Kita **sudah** menekan suku kata kedua dari belakang: \"seLAmat\", \"maKAsih\", \"beLAjar\". Refleks yang di bahasa lain jadi kesalahan, di bahasa Polandia justru langsung benar.",
+            "Artinya satu beban besar pemula — menebak tekanan — tidak ada sama sekali untukmu. Pakai kebiasaanmu apa adanya."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Vokal sengau ą dan ę"
+        },
+        {
+          "type": "p",
+          "text": "Dua huruf ini tidak punya padanan dalam bahasa Indonesia, tapi ada jalan pintas yang bekerja: ucapkan **on** dan **en** dengan bunyi *n* yang ditelan setengah, seperti orang Prancis mengucapkan *bon*. Kalau kamu ucapkan *n*-nya penuh pun kamu tetap dimengerti."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Huruf",
+            "Letaknya",
+            "Dibaca",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "**ą**",
+              "umumnya",
+              "on",
+              "*wąski* → VONS-ki (sempit)"
+            ],
+            [
+              "**ą**",
+              "sebelum *b*, *p*",
+              "om",
+              "*ząb* → zomp (gigi)"
+            ],
+            [
+              "**ę**",
+              "di tengah kata",
+              "en",
+              "*język* → YEN-zyyk (bahasa)"
+            ],
+            [
+              "**ę**",
+              "sebelum *b*, *p*",
+              "em",
+              "*zęby* → ZEM-by (gigi-gigi)"
+            ],
+            [
+              "**ę**",
+              "**di ujung kata**",
+              "e biasa",
+              "*proszę* → PRO-sye (silakan)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Baris terakhir itu penting dan sering luput: *ę* di ujung kata — dan ia muncul di ujung ribuan kata kerja — diucapkan **e biasa** dalam percakapan sehari-hari. *Dziękuję* bukan \"jyen-ku-yen\", melainkan **jyen-KU-ye**."
+        },
+        {
+          "type": "sub",
+          "text": "Huruf mati yang menulikan diri"
+        },
+        {
+          "type": "p",
+          "text": "Satu pola terakhir yang menjelaskan kenapa cara baca kami kadang tampak tak cocok dengan tulisannya. Di **ujung kata**, huruf mati bersuara berubah jadi pasangan tak bersuaranya: *b→p*, *d→t*, *g→k*, *w→f*, *z→s*, *ż→sy*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tulisan",
+            "Dibaca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "*chleb*",
+              "hlep",
+              "roti"
+            ],
+            [
+              "*obiad*",
+              "O-byat",
+              "makan siang"
+            ],
+            [
+              "*Bóg*",
+              "buk",
+              "Tuhan"
+            ],
+            [
+              "*Kraków*",
+              "KRA-kuf",
+              "Kraków"
+            ],
+            [
+              "*mąż*",
+              "monsy",
+              "suami"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Pola yang sama bekerja di dalam kata saat dua huruf mati bertemu: *wszystko* → **fsyystko** (*w* jadi *f* karena bertemu *sz* yang tak bersuara). Jangan hafalkan; cukup tahu bahwa kalau kolom cara baca menulis huruf lain daripada ejaannya, ini biasanya sebabnya."
+        },
+        {
+          "type": "kotak",
+          "title": "Delapan kata yang mesti benar sejak hari pertama",
+          "items": [
+            "*cześć* → **cesyc** (halo; dah) — sapaan paling sering dipakai.",
+            "*dziękuję* → **jyen-KU-ye** (terima kasih) — *ę* di ujung jadi *e*.",
+            "*proszę* → **PRO-sye** (silakan; tolong; sama-sama) — satu kata, tiga guna.",
+            "*przepraszam* → **pshe-PRA-syam** (maaf; permisi).",
+            "*dzień dobry* → **jyeny DOB-ry** (selamat pagi/siang) — sapaan sopan.",
+            "*do widzenia* → **do vi-DZE-nya** (sampai jumpa) — pamit sopan.",
+            "*tak / nie* → **tak / nye** (ya / tidak) — awas: *tak* bukan \"tidak\".",
+            "*Polska* → **POL-ska** (Polandia) — bukan \"Polandia\", jangan tertukar."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Jangan berusaha menghafal seluruh bab ini sekarang. Bacalah sekali dengan tenang, lalu mulailah unit 1. Kamu akan kembali ke halaman ini berkali-kali sendiri, dan tiap kali kembali ia akan terasa lebih masuk akal daripada sebelumnya."
+        }
+      ]
+    }
+  ],
+  "back": [
+    {
+      "title": "Ringkasan tata bahasa A1",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Semua yang dipakai di dua puluh unit, dikumpulkan di satu tempat. Halaman ini bukan untuk dihafal — ia untuk dibuka saat kamu lupa satu ekor kata di tengah latihan."
+        },
+        {
+          "type": "sub",
+          "text": "Tiga jenis kelamin kata benda"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Jenis",
+            "Ciri ujung kata",
+            "Contoh",
+            "\"ini\""
+          ],
+          "rows": [
+            [
+              "**męski** (laki-laki)",
+              "huruf mati",
+              "*dom*, *kot*, *student*",
+              "*ten*"
+            ],
+            [
+              "**żeński** (perempuan)",
+              "-a",
+              "*kawa*, *książka*, *kobieta*",
+              "*ta*"
+            ],
+            [
+              "**nijaki** (netral)",
+              "-o, -e, -um",
+              "*okno*, *morze*, *muzeum*",
+              "*to*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Pengecualian yang paling sering ditemui: *mężczyzna* (laki-laki) dan *kolega* (teman) berujung *-a* tapi jenisnya **męski**, karena artinya orang laki-laki."
+        },
+        {
+          "type": "sub",
+          "text": "Tujuh bentuk kata benda — peta lengkap"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bentuk",
+            "Menjawab",
+            "Dipakai sesudah",
+            "Contoh (kawa)"
+          ],
+          "rows": [
+            [
+              "**mianownik**",
+              "kto? co?",
+              "bentuk kamus; pelaku kalimat",
+              "*To jest kawa.*"
+            ],
+            [
+              "**biernik**",
+              "kogo? co?",
+              "kata kerja seperti *mam*, *lubię*, *piję*",
+              "*Piję kawę.*"
+            ],
+            [
+              "**dopełniacz**",
+              "kogo? czego?",
+              "*nie ma*, *dwa kilo*, *bez*, *do*, *od*",
+              "*Nie ma kawy.*"
+            ],
+            [
+              "**miejscownik**",
+              "o kim? o czym?",
+              "*w*, *na*, *o*, *przy*",
+              "*Rozmawiamy o kawie.*"
+            ],
+            [
+              "**narzędnik**",
+              "kim? czym?",
+              "*jestem*, *z*, alat",
+              "*Jestem studentem.*"
+            ],
+            [
+              "**celownik**",
+              "komu? czemu?",
+              "*daję*, *pomagam*",
+              "*Daję kawę koledze.*"
+            ],
+            [
+              "**wołacz**",
+              "memanggil",
+              "menyapa nama orang",
+              "*Aniu!*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Di tingkat A1 kamu benar-benar butuh empat yang pertama. **Celownik** dan **wołacz** cukup dikenali; **narzędnik** cukup untuk satu pola: *jestem…* (unit 2)."
+        },
+        {
+          "type": "sub",
+          "text": "Ekor kata benda yang dipakai di modul ini"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bentuk",
+            "Męski (benda)",
+            "Męski (orang)",
+            "Żeński",
+            "Nijaki"
+          ],
+          "rows": [
+            [
+              "mianownik",
+              "*dom*",
+              "*student*",
+              "*kawa*",
+              "*okno*"
+            ],
+            [
+              "biernik",
+              "*dom* (sama)",
+              "*studenta*",
+              "*kaw**ę***",
+              "*okno* (sama)"
+            ],
+            [
+              "dopełniacz",
+              "*dom**u***",
+              "*student**a***",
+              "*kaw**y***",
+              "*okn**a***"
+            ],
+            [
+              "miejscownik",
+              "*dom**u***",
+              "*stud**encie***",
+              "*kaw**ie***",
+              "*okn**ie***"
+            ],
+            [
+              "narzędnik",
+              "*dom**em***",
+              "*student**em***",
+              "*kaw**ą***",
+              "*okn**em***"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Tiga golongan kata kerja"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pelaku",
+            "I: *-ę / -esz*",
+            "II: *-ę / -isz*",
+            "III: *-am / -asz*"
+          ],
+          "rows": [
+            [
+              "ja",
+              "*id**ę***",
+              "*mów**ię***",
+              "*czyt**am***"
+            ],
+            [
+              "ty",
+              "*idzi**esz***",
+              "*mów**isz***",
+              "*czyt**asz***"
+            ],
+            [
+              "on / ona / ono",
+              "*idzi**e***",
+              "*mów**i***",
+              "*czyt**a***"
+            ],
+            [
+              "my",
+              "*idzi**emy***",
+              "*mów**imy***",
+              "*czyt**amy***"
+            ],
+            [
+              "wy",
+              "*idzi**ecie***",
+              "*mów**icie***",
+              "*czyt**acie***"
+            ],
+            [
+              "oni / one",
+              "*id**ą***",
+              "*mów**ią***",
+              "*czyt**ają***"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Kata kerja lampau"
+        },
+        {
+          "type": "p",
+          "text": "Ambil bentuk kamusnya, buang *-ć*, tambahkan ekor yang **ikut jenis kelamin pelakunya**: laki-laki *-łem/-łeś/-ł*, perempuan *-łam/-łaś/-ła*. Jamak: orang laki-laki (atau campur) *-liśmy/-liście/-li*, selain itu *-łyśmy/-łyście/-ły*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pelaku",
+            "*być* (laki-laki)",
+            "*być* (perempuan)"
+          ],
+          "rows": [
+            [
+              "ja",
+              "*byłem*",
+              "*byłam*"
+            ],
+            [
+              "ty",
+              "*byłeś*",
+              "*byłaś*"
+            ],
+            [
+              "on / ona",
+              "*był*",
+              "*była*"
+            ],
+            [
+              "my",
+              "*byliśmy*",
+              "*byłyśmy*"
+            ],
+            [
+              "wy",
+              "*byliście*",
+              "*byłyście*"
+            ],
+            [
+              "oni / one",
+              "*byli*",
+              "*były*"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Kata kerja yang paling sering dipakai"
+        },
+        {
+          "type": "p",
+          "text": "Empat puluh kata kerja ini menutup sebagian besar percakapan sehari-hari tingkat A1. Bentuk yang ditulis adalah *ja* dan *ty*, karena dari dua bentuk itu sisanya bisa ditebak."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bentuk kamus",
+            "ja",
+            "ty",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "*być*",
+              "*jestem*",
+              "*jesteś*",
+              "adalah"
+            ],
+            [
+              "*mieć*",
+              "*mam*",
+              "*masz*",
+              "punya"
+            ],
+            [
+              "*móc*",
+              "*mogę*",
+              "*możesz*",
+              "bisa"
+            ],
+            [
+              "*chcieć*",
+              "*chcę*",
+              "*chcesz*",
+              "mau"
+            ],
+            [
+              "*musieć*",
+              "*muszę*",
+              "*musisz*",
+              "harus"
+            ],
+            [
+              "*wiedzieć*",
+              "*wiem*",
+              "*wiesz*",
+              "tahu (fakta)"
+            ],
+            [
+              "*rozumieć*",
+              "*rozumiem*",
+              "*rozumiesz*",
+              "mengerti"
+            ],
+            [
+              "*mówić*",
+              "*mówię*",
+              "*mówisz*",
+              "berbicara"
+            ],
+            [
+              "*mieszkać*",
+              "*mieszkam*",
+              "*mieszkasz*",
+              "tinggal"
+            ],
+            [
+              "*pracować*",
+              "*pracuję*",
+              "*pracujesz*",
+              "bekerja"
+            ],
+            [
+              "*studiować*",
+              "*studiuję*",
+              "*studiujesz*",
+              "kuliah"
+            ],
+            [
+              "*czytać*",
+              "*czytam*",
+              "*czytasz*",
+              "membaca"
+            ],
+            [
+              "*pisać*",
+              "*piszę*",
+              "*piszesz*",
+              "menulis"
+            ],
+            [
+              "*jeść*",
+              "*jem*",
+              "*jesz*",
+              "makan"
+            ],
+            [
+              "*pić*",
+              "*piję*",
+              "*pijesz*",
+              "minum"
+            ],
+            [
+              "*iść*",
+              "*idę*",
+              "*idziesz*",
+              "pergi (jalan kaki)"
+            ],
+            [
+              "*jechać*",
+              "*jadę*",
+              "*jedziesz*",
+              "pergi (berkendara)"
+            ],
+            [
+              "*robić*",
+              "*robię*",
+              "*robisz*",
+              "melakukan"
+            ],
+            [
+              "*lubić*",
+              "*lubię*",
+              "*lubisz*",
+              "suka"
+            ],
+            [
+              "*słuchać*",
+              "*słucham*",
+              "*słuchasz*",
+              "mendengarkan"
+            ],
+            [
+              "*kupować*",
+              "*kupuję*",
+              "*kupujesz*",
+              "membeli"
+            ],
+            [
+              "*płacić*",
+              "*płacę*",
+              "*płacisz*",
+              "membayar"
+            ],
+            [
+              "*dziękować*",
+              "*dziękuję*",
+              "*dziękujesz*",
+              "berterima kasih"
+            ],
+            [
+              "*czekać*",
+              "*czekam*",
+              "*czekasz*",
+              "menunggu"
+            ],
+            [
+              "*pytać*",
+              "*pytam*",
+              "*pytasz*",
+              "bertanya"
+            ],
+            [
+              "*wstawać*",
+              "*wstaję*",
+              "*wstajesz*",
+              "bangun"
+            ],
+            [
+              "*spać*",
+              "*śpię*",
+              "*śpisz*",
+              "tidur"
+            ],
+            [
+              "*uczyć się*",
+              "*uczę się*",
+              "*uczysz się*",
+              "belajar"
+            ],
+            [
+              "*nazywać się*",
+              "*nazywam się*",
+              "*nazywasz się*",
+              "bernama"
+            ],
+            [
+              "*podobać się*",
+              "*podoba mi się*",
+              "*podoba ci się*",
+              "menyukai (kesan)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Apa selanjutnya",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kalau kamu sampai di halaman ini setelah benar-benar mengerjakan dua puluh unitnya, kamu sudah berada di tingkat **A1 penuh**: bisa memperkenalkan diri, berbelanja, memesan makanan, menanyakan arah, bercerita tentang kemarin, dan menyusun rencana untuk besok. Itu bukan sedikit."
+        },
+        {
+          "type": "sub",
+          "text": "Tiga hal yang paling menolong sekarang"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Ulangi unit 8, 11, dan 14.** Tiga unit itu memuat tiga bentuk kata benda yang paling sering dipakai (*biernik*, *miejscownik*, *dopełniacz*). Kalau ketiganya sudah refleks, sisa jalan menuju A2 jauh lebih landai.",
+            "**Bacalah keras-keras sepuluh menit sehari.** Bukan kata baru — dialog yang sudah kamu mengerti. Yang dilatih di sini bukan pengetahuan, melainkan mulut.",
+            "**Kumpulkan pasangan kata kerja.** Mulai unit 18 kamu tahu bahwa tiap pekerjaan punya dua wajah (*robić / zrobić*). Setiap kali bertemu kata kerja baru, catat pasangannya sekalian — kebiasaan kecil ini menghemat berbulan-bulan di tingkat A2."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Yang menunggu di A2"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Celownik** (*komu?*) dan pemakaian penuhnya: *pomagam koledze*, *jest mi zimno*.",
+            "**Kata sifat dalam semua bentuk** — di modul ini kamu memakainya terutama dalam bentuk dasar.",
+            "**Bentuk perintah** (*rób!*, *zrób!*) dan bentuk pengandaian (*chciałbym* — \"saya ingin\").",
+            "**Kata kerja gerak berawalan**: *iść → przyjść, wyjść, pójść* — satu akar, sepuluh arti."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kalau kamu ingin ditemani",
+          "items": [
+            "Kelas bahasa Polandia di Linguo berjalan dalam kelompok kecil maupun privat, dan modul ini dipakai sebagai bahan pendamping di tingkat A1.",
+            "Bawa satu hal ini ke pertemuan pertamamu: kemampuan membaca keras-keras tanpa tersendat. Sisanya jauh lebih mudah diajarkan daripada itu."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Powodzenia i do zobaczenia!*"
+        }
+      ]
+    }
+  ]
+}

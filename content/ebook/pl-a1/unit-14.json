@@ -1,0 +1,223 @@
+{
+ "title": "Ke mana kamu pergi?",
+ "title_target": "Dokąd idziesz?",
+ "goal": "Membedakan jalan kaki dan berkendara, menanyakan arah di jalan, dan memakai *do*, *na*, dan *w* untuk tujuan.",
+ "bekal": [
+  "memilih antara *iść* dan *jechać* tanpa ragu",
+  "menanyakan dan memahami petunjuk arah sederhana",
+  "menyebut tujuan dengan kata depan yang benar"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Jak dojść do dworca?",
+   "intro": "Trotoar di pusat kota. Budi menghentikan seorang pejalan kaki sambil memegang ponsel yang kehabisan baterai.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Przepraszam, jak dojść do dworca?", "id": "Permisi, ke stasiun lewat mana ya?", "literal": "maaf, bagaimana sampai-jalan ke stasiun?" },
+    { "speaker": "Przechodzień:", "text": "Idzie pan prosto, a potem w lewo przy kościele.", "id": "Bapak jalan lurus, terus belok kiri di gereja.", "literal": "berjalan bapak lurus, dan kemudian ke kiri dekat gereja." },
+    { "speaker": "Budi:", "text": "Daleko stąd?", "id": "Jauh dari sini?", "literal": "jauh dari-sini?" },
+    { "speaker": "Przechodzień:", "text": "Jakieś dziesięć minut pieszo. Albo jedzie pan tramwajem numer cztery.", "id": "Sekitar sepuluh menit jalan kaki. Atau naik trem nomor empat.", "literal": "sekitar sepuluh menit dengan-kaki. atau berkendara bapak dengan-trem nomor empat." },
+    { "speaker": "Budi:", "text": "A gdzie jest przystanek?", "id": "Haltenya di mana?", "literal": "dan di-mana adalah halte?" },
+    { "speaker": "Przechodzień:", "text": "Za rogiem, po prawej stronie.", "id": "Di balik tikungan, sebelah kanan.", "literal": "di-belakang sudut, pada kanan sisi." },
+    { "speaker": "Budi:", "text": "Czy ten tramwaj jedzie też na lotnisko?", "id": "Trem itu ke bandara juga?", "literal": "apakah ini trem berkendara juga ke bandara?" },
+    { "speaker": "Przechodzień:", "text": "Nie, na lotnisko jedzie pociąg z dworca głównego.", "id": "Tidak, ke bandara naik kereta dari stasiun utama.", "literal": "tidak, ke bandara berkendara kereta dari stasiun utama." },
+    { "speaker": "Budi:", "text": "Ile kosztuje bilet na pociąg?", "id": "Tiket keretanya berapa?", "literal": "berapa berharga tiket untuk kereta?" },
+    { "speaker": "Przechodzień:", "text": "Nie wiem dokładnie. Chyba siedemnaście złotych.", "id": "Saya kurang tahu persis. Kayaknya tujuh belas złoty.", "literal": "tidak saya-tahu tepat. mungkin tujuh-belas złoty-jamak." },
+    { "speaker": "Budi:", "text": "Dziękuję bardzo za pomoc!", "id": "Terima kasih banyak bantuannya!", "literal": "terima-kasih sangat untuk bantuan!" },
+    { "speaker": "Przechodzień:", "text": "Nie ma za co. Miłego dnia!", "id": "Sama-sama. Semoga harimu menyenangkan!", "literal": "tidak ada untuk apa. menyenangkan hari!" }
+   ],
+   "notes": [
+    "**Iść atau jechać?** Bahasa Polandia tidak punya satu kata \"pergi\". *Iść* dipakai kalau kamu **berjalan kaki**, *jechać* kalau kamu **berkendara** — bus, mobil, kereta, sepeda. Memakai yang salah tidak membuatmu tak dimengerti, tapi langsung terdengar asing.",
+    "**Idzie pan prosto** — perhatikan bentuknya *idzie* (bentuk \"dia\"), bukan *idziesz*. Kepada *pan* dan *pani* selalu dipakai bentuk orang ketiga, aturan yang sudah kamu temui di unit 1. Ini juga cara halus memberi petunjuk: harfiahnya \"Bapak berjalan lurus\", bukan perintah.",
+    "**Do dworca, na lotnisko, w lewo.** Tiga kata depan untuk tiga jenis tujuan. Pola kasarnya: *do* untuk gedung dan kota (*do sklepu*, *do Krakowa*), *na* untuk tempat terbuka dan acara (*na lotnisko*, *na koncert*), dan pasangan tetapnya mengikuti aturan *w / na* yang sudah kamu pelajari di unit 11.",
+    "**Sesudah do, kata bendanya berujung -a atau -u**: *dworzec → do dworca*, *sklep → do sklepu*, *dom → do domu*. Bentuk ini bernama *dopełniacz* dan menjadi isi penuh unit 15. Sekarang cukup kenali polanya.",
+    "**Tramwajem, pociągiem, autobusem** — kendaraan memakai ekor *narzędnik* yang kamu kenal sejak unit 8: \"dengan trem\", \"dengan kereta\". Rumus siap pakai: *jadę* + kendaraan + *-em*.",
+    "**Za rogiem, po prawej stronie.** Petunjuk arah memakai campuran bentuk, dan jujur saja tidak ada gunanya menguraikannya di tingkat ini. Hafalkan sebagai bongkahan; delapan ungkapan di bagian tambahan menutup hampir semua situasi.",
+    "**Chyba** berarti \"kayaknya\" dan sangat sering dipakai orang Polandia. Ia bukan tanda ragu-ragu yang canggung; justru terdengar wajar dan jujur.",
+    "**Nie ma za co** — jawaban baku untuk \"terima kasih\", harfiahnya \"tidak ada untuk apa\". Kembarannya: *proszę bardzo* dan *drobiazg* (\"hal kecil\")."
+   ],
+   "grammars": [
+    {
+     "title": "Iść, jechać — dan pasangan rutinnya",
+     "body": [
+      "Bahasa Polandia memakai kata kerja yang berbeda untuk perjalanan yang **sedang berlangsung** dan yang **berulang**. Empat kata, dua pasang."
+     ],
+     "table": {
+      "head": ["", "Sekarang / sekali ini", "Kebiasaan / berulang"],
+      "rows": [
+       ["jalan kaki", "*iść* — *idę, idziesz, idzie*", "*chodzić* — *chodzę, chodzisz, chodzi*"],
+       ["berkendara", "*jechać* — *jadę, jedziesz, jedzie*", "*jeździć* — *jeżdżę, jeździsz, jeździ*"],
+       ["contoh", "*Idę do sklepu.* (sekarang saya ke toko)", "*Chodzę do szkoły.* (saya bersekolah)"],
+       ["contoh", "*Jadę do Warszawy.* (saya sedang ke Warsawa)", "*Jeżdżę do Warszawy co miesiąc.* (tiap bulan)"]
+      ]
+     },
+     "after": [
+      "Cara memilihnya: kalau kamu bisa menambahkan \"sekarang\" atau \"besok\" tanpa terasa aneh, pakai *iść / jechać*. Kalau kalimatnya memuat \"selalu\", \"tiap hari\", \"sering\", pakai *chodzić / jeździć*.",
+      "⚠️ *Idę* juga dipakai untuk rencana dekat, persis seperti bahasa Indonesia: *Jutro idę do kina* — besok saya ke bioskop. Bahasa Polandia tidak perlu bentuk masa depan untuk ini.",
+      "Kata kerja gerak berawalan (*przyjść*, *wyjść*, *pójść*, *dojść*) adalah dunia tersendiri yang menunggu di A2. Satu saja yang perlu sekarang: *jak dojść do…?* — bagaimana sampai ke…"
+     ]
+    },
+    {
+     "title": "Ke mana? — do, na, w",
+     "body": [
+      "Tujuan memakai kata depan yang berbeda dari tempat, dan pasangannya mudah diingat kalau dilihat berdampingan."
+     ],
+     "table": {
+      "head": ["Di mana (unit 11)", "Ke mana (unit ini)", "Arti"],
+      "rows": [
+       ["*w sklepie*", "*do sklepu*", "di toko / ke toko"],
+       ["*w domu*", "*do domu*", "di rumah / pulang"],
+       ["*w Krakowie*", "*do Krakowa*", "di Kraków / ke Kraków"],
+       ["*na poczcie*", "*na pocztę*", "di kantor pos / ke kantor pos"],
+       ["*na lotnisku*", "*na lotnisko*", "di bandara / ke bandara"],
+       ["*na zajęciach*", "*na zajęcia*", "di kelas / ke kelas"]
+      ]
+     },
+     "after": [
+      "Aturannya rapi: tempat yang memakai *w* berganti jadi **do**, tempat yang memakai *na* tetap memakai **na** — cuma ekor kata bendanya yang berubah jadi bentuk sasaran.",
+      "Karena itu kamu tidak perlu menghafal daftar baru sama sekali. Yang sudah kamu putuskan di unit 11 tetap berlaku di sini."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menanyakan dan memberi arah",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Polski", "Cara baca", "Arti"],
+     "rows": [
+      ["*Jak dojść do…?*", "yak doysyc do", "Jalan kaki ke… lewat mana?"],
+      ["*Jak dojechać do…?*", "yak do-YE-hac do", "Naik kendaraan ke… bagaimana?"],
+      ["*Gdzie jest przystanek?*", "gjye yest psyys-TA-nek", "Haltenya di mana?"],
+      ["*Prosto*", "PROS-to", "Lurus"],
+      ["*W lewo / w prawo*", "v LE-vo / f PRA-vo", "Ke kiri / ke kanan"],
+      ["*Po lewej / po prawej stronie*", "po LE-vey STRO-nye", "Di sebelah kiri / kanan"],
+      ["*Za rogiem*", "za RO-gyem", "Di balik tikungan"],
+      ["*Naprzeciwko*", "na-psye-CIF-ko", "Di seberang"],
+      ["*Obok*", "O-bok", "Di sebelah"],
+      ["*Na końcu ulicy*", "na KONY-tsu u-LI-tsy", "Di ujung jalan"],
+      ["*Pierwsza przecznica*", "PYERF-sya psyec-NI-tsa", "Perempatan pertama"],
+      ["*Zgubiłem się.*", "zgu-BI-wem sye", "Saya tersesat. (lk)"]
+     ]
+    },
+    { "type": "kotak", "title": "Kalau petunjuknya terlalu cepat", "items": [
+      "*Wolniej, proszę.* — Pelan-pelan, tolong.",
+      "*Może pan pokazać na mapie?* — Bisa tunjukkan di peta?",
+      "*Czy to daleko?* — Jauh nggak?",
+      "Jangan malu memakai ponsel: *Proszę napisać.* (tolong tuliskan) menyelamatkan lebih banyak orang asing daripada hafalan mana pun."
+     ] }
+   ]
+  },
+  {
+   "title": "Kendaraan dan cara pergi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Kendaraan", "Dengan kendaraan itu", "Arti"],
+     "rows": [
+      ["*autobus*", "*autobusem*", "bus"],
+      ["*tramwaj*", "*tramwajem*", "trem"],
+      ["*pociąg*", "*pociągiem*", "kereta"],
+      ["*samochód*", "*samochodem*", "mobil"],
+      ["*rower*", "*rowerem*", "sepeda"],
+      ["*taksówka*", "*taksówką*", "taksi"],
+      ["*metro*", "*metrem*", "MRT"],
+      ["*samolot*", "*samolotem*", "pesawat"],
+      ["— (jalan kaki)", "*pieszo / na piechotę*", "jalan kaki"]
+     ]
+    },
+    { "type": "p", "text": "Trem adalah tulang punggung transportasi kota-kota Polandia dan jauh lebih sering dipakai daripada bus di Kraków, Wrocław, dan Poznań. Tiketnya sama untuk trem dan bus, dan **harus divalidasi** di dalam kendaraan begitu naik — mesin kecil berwarna kuning atau merah di dekat pintu." },
+    { "type": "kotak", "title": "Kalimat di dalam kendaraan umum", "items": [
+      "*Czy ten autobus jedzie do centrum?* — Bus ini ke pusat kota?",
+      "*Ile przystanków?* — Berapa halte lagi?",
+      "*Wysiadam na następnym.* — Saya turun di halte berikutnya.",
+      "*Przepraszam, czy to miejsce jest wolne?* — Permisi, kursi ini kosong?",
+      "*Gdzie mogę skasować bilet?* — Tiketnya divalidasi di mana?"
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "pl": "dokąd", "baca": "DO-kont", "id": "ke mana" },
+  { "pl": "iść / jechać", "baca": "isyc / YE-hac", "id": "pergi (kaki / kendaraan)" },
+  { "pl": "chodzić / jeździć", "baca": "HO-jyic / YEZY-jyic", "id": "rutin pergi (kaki / kendaraan)" },
+  { "pl": "dojść / dojechać", "baca": "doysyc", "id": "sampai ke" },
+  { "pl": "prosto", "baca": "PROS-to", "id": "lurus" },
+  { "pl": "w lewo / w prawo", "baca": "v LE-vo", "id": "ke kiri / ke kanan" },
+  { "pl": "strona", "baca": "STRO-na", "id": "sisi" },
+  { "pl": "róg / za rogiem", "baca": "ruk", "id": "sudut / di balik tikungan" },
+  { "pl": "naprzeciwko", "baca": "na-psye-CIF-ko", "id": "di seberang" },
+  { "pl": "przystanek", "baca": "psyys-TA-nek", "id": "halte" },
+  { "pl": "tramwaj", "baca": "TRAM-vay", "id": "trem" },
+  { "pl": "pociąg", "baca": "PO-cyonk", "id": "kereta" },
+  { "pl": "samolot", "baca": "sa-MO-lot", "id": "pesawat" },
+  { "pl": "rower", "baca": "RO-ver", "id": "sepeda" },
+  { "pl": "taksówka", "baca": "tak-SUF-ka", "id": "taksi" },
+  { "pl": "dworzec główny", "baca": "DVO-zyets GWUV-ny", "id": "stasiun utama" },
+  { "pl": "pieszo", "baca": "PYE-syo", "id": "jalan kaki" },
+  { "pl": "mapa", "baca": "MA-pa", "id": "peta" },
+  { "pl": "przechodzień", "baca": "psye-HO-jyeny", "id": "pejalan kaki" },
+  { "pl": "wysiadać", "baca": "vy-SYA-dac", "id": "turun (dari kendaraan)" },
+  { "pl": "wsiadać", "baca": "FSYA-dac", "id": "naik (kendaraan)" },
+  { "pl": "skasować", "baca": "ska-SO-vac", "id": "memvalidasi tiket" },
+  { "pl": "następny", "baca": "nas-TEMP-ny", "id": "berikutnya" },
+  { "pl": "miejsce", "baca": "MYEY-stse", "id": "tempat; kursi" },
+  { "pl": "stąd", "baca": "stont", "id": "dari sini" },
+  { "pl": "chyba", "baca": "HY-ba", "id": "kayaknya" },
+  { "pl": "dokładnie", "baca": "do-KWAD-nye", "id": "tepatnya" },
+  { "pl": "jakieś", "baca": "YA-kyesy", "id": "sekitar" },
+  { "pl": "zgubić się", "baca": "ZGU-bic sye", "id": "tersesat" },
+  { "pl": "nie ma za co", "baca": "nye ma za tso", "id": "sama-sama" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih *idę* atau *jadę*.",
+   "items": [
+    "____ do sklepu obok domu. (jalan kaki)",
+    "____ do Warszawy pociągiem.",
+    "____ na uniwersytet rowerem.",
+    "____ do kuchni po wodę.",
+    "____ na lotnisko taksówką."
+   ]
+  },
+  {
+   "prompt": "Ubah keterangan tempat jadi keterangan tujuan.",
+   "items": [
+    "w sklepie → ____",
+    "w domu → ____",
+    "na poczcie → ____",
+    "w Krakowie → ____",
+    "na zajęciach → ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Permisi, ke stasiun lewat mana?",
+    "Jalan lurus, lalu belok kiri.",
+    "Haltenya di mana?",
+    "Bus ini ke pusat kota?",
+    "Terima kasih banyak bantuannya."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "do / jak / dworca / dojść / ?",
+    "prosto / lewo / potem / w / i",
+    "tramwajem / jadę / cztery / numer",
+    "przystanek / gdzie / jest / ?",
+    "za / nie / co / ma"
+   ]
+  }
+ ],
+ "answers": [
+  "Idę — Jadę — Jadę — Idę — Jadę",
+  "do sklepu — do domu — na pocztę — do Krakowa — na zajęcia",
+  "Przepraszam, jak dojść do dworca? — Prosto, potem w lewo. — Gdzie jest przystanek? — Czy ten autobus jedzie do centrum? — Dziękuję bardzo za pomoc.",
+  "Jak dojść do dworca? — Prosto i potem w lewo. — Jadę tramwajem numer cztery. — Gdzie jest przystanek? — Nie ma za co."
+ ],
+ "wave": "Ulangi dialog unit 12 keras-keras, lalu jelaskan jalan dari rumahmu ke tempat kerja atau kampus dalam lima kalimat Polandia."
+}

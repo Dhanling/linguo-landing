@@ -1,0 +1,236 @@
+{
+ "title": "Di mana? — bentuk tempat",
+ "title_target": "Mieszkam w Krakowie",
+ "goal": "Menyatakan tempat dengan *w* dan *na*, mengenali ekor *miejscownik*, dan tahu kenapa sebagian tempat memakai *w* sementara sebagian lain memakai *na*.",
+ "bekal": [
+  "membentuk *miejscownik* untuk kata benda yang paling sering dipakai",
+  "memilih antara *w* dan *na* tanpa menebak-nebak",
+  "menyebutkan alamat dan tempat kerja"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Gdzie mieszkasz?",
+   "intro": "Bangku taman kampus, jam istirahat. Ania dan Budi menukar cerita tentang tempat tinggal.",
+   "lines": [
+    { "speaker": "Ania:", "text": "Gdzie mieszkasz w Krakowie?", "id": "Kamu tinggal di mana di Kraków?", "literal": "di-mana kamu-tinggal di Kraków?" },
+    { "speaker": "Budi:", "text": "W akademiku, na kampusie. A ty?", "id": "Di asrama, di kampus. Kamu?", "literal": "di asrama, pada kampus. dan kamu?" },
+    { "speaker": "Ania:", "text": "W centrum, na ulicy Długiej.", "id": "Di pusat kota, di Jalan Długa.", "literal": "di pusat, pada jalan Długa." },
+    { "speaker": "Budi:", "text": "Daleko od uniwersytetu?", "id": "Jauh dari kampus?", "literal": "jauh dari universitas?" },
+    { "speaker": "Ania:", "text": "Nie, dwadzieścia minut na piechotę. Pracuję też w kawiarni na rynku.", "id": "Tidak, dua puluh menit jalan kaki. Saya juga kerja di kafe di alun-alun.", "literal": "tidak, dua-puluh menit pada kaki. saya-bekerja juga di kafe pada pasar." },
+    { "speaker": "Budi:", "text": "Naprawdę? W której kawiarni?", "id": "Serius? Kafe yang mana?", "literal": "sungguh? di yang-mana-pr kafe?" },
+    { "speaker": "Ania:", "text": "W Kolorowej. Jest w starym budynku przy kościele.", "id": "Di Kolorowa. Ada di gedung tua dekat gereja.", "literal": "di Kolorowa. adalah di tua gedung dekat gereja." },
+    { "speaker": "Budi:", "text": "Byłem tam raz. Siedzieliśmy na tarasie.", "id": "Saya pernah ke sana sekali. Kami duduk di teras.", "literal": "saya-adalah-lampau ke-sana sekali. kami-duduk-lampau pada teras." },
+    { "speaker": "Ania:", "text": "Latem taras jest najlepszy. Zimą siedzimy w środku.", "id": "Musim panas terasnya paling enak. Musim dingin kami duduk di dalam.", "literal": "musim-panas teras adalah paling-baik. musim-dingin kami-duduk di dalam." },
+    { "speaker": "Budi:", "text": "A gdzie jest twoja siostra? W domu?", "id": "Adikmu di mana sekarang? Di rumah?", "literal": "dan di-mana adalah milikmu saudara-perempuan? di rumah?" },
+    { "speaker": "Ania:", "text": "Nie, jest na uczelni. Ma egzamin o dziesiątej.", "id": "Bukan, dia di kampus. Ada ujian jam sepuluh.", "literal": "tidak, adalah pada perguruan-tinggi. punya ujian pada kesepuluh." },
+    { "speaker": "Budi:", "text": "To trzymam kciuki.", "id": "Kalau begitu saya doakan.", "literal": "jadi saya-memegang ibu-jari-jamak." }
+   ],
+   "notes": [
+    "**Kraków jadi Krakowie, ulica jadi ulicy, kawiarnia jadi kawiarni.** Semua kata benda sesudah *w*, *na*, *przy*, dan *o* memakai bentuk yang bernama *miejscownik* — bentuk yang tidak pernah muncul sendirian tanpa kata depan.",
+    "**Ini bentuk yang paling banyak mengubah huruf di dalam kata.** *Warszawa → w Warszawie*, *szkoła → w szkole*, *miasto → w mieście*. Sebabnya sama seperti yang kamu temui di kata kerja: bunyi *-e* melembutkan huruf sebelumnya, dan bahasa Polandia menuliskan pelembutan itu dengan huruf lain.",
+    "**W akademiku, na kampusie.** Kenapa satu *w* dan satu *na*? Aturan kasarnya: *w* untuk yang ada **di dalam** sesuatu, *na* untuk yang **di atas** atau di **permukaan terbuka**. Tapi kenyataannya sebagian sudah jadi kebiasaan tetap — daftarnya di bagian tambahan unit ini.",
+    "**Na ulicy Długiej** — alamat memakai *na*, dan nama jalannya ikut berubah ekor karena ia kata sifat (*Długa → Długiej*). Kalau kamu menyebut alamat lengkap dengan nomor: *na Długiej 15*.",
+    "**Byłem tam raz** — bentuk lampau dari *być*, dengan ekor laki-laki *-em*. Perempuan mengatakan *byłam*. Kalimat *byłem w…* (\"saya pernah ke…\") sangat sering dipakai, jadi hafalkan lebih dulu daripada aturan lampau lengkapnya di unit 17.",
+    "**Latem, zimą** — musim sebagai keterangan waktu memakai bentuk *narzędnik* yang sudah kamu kenal: *lato → latem*, *zima → zimą*, *wiosna → wiosną*, *jesień → jesienią*. Satu bentuk, dua guna — bukti lagi bahwa ekor kata dalam bahasa Polandia dipakai ulang, bukan ditambah terus.",
+    "**W której kawiarni** — kata tanya *która* (yang mana) juga ikut berubah jadi *której*. Kata sifat dan kata tanya selalu berjalan seiring kata bendanya.",
+    "**Trzymam kciuki** harfiahnya \"saya memegang ibu jari\" — ungkapan yang setara dengan \"semoga berhasil\". Orang Polandia benar-benar mengepalkan tangan dengan ibu jari di dalam, bukan menyilangkan jari seperti orang Inggris."
+   ],
+   "grammars": [
+    {
+     "title": "Miejscownik — bentuk sesudah w, na, przy, o",
+     "body": [
+      "Bentuk yang menjawab *gdzie?* (di mana) dan *o czym?* (tentang apa). Ia hanya muncul bersama kata depan — tidak pernah sendirian."
+     ],
+     "table": {
+      "head": ["Jenis", "Bentuk kamus", "Miejscownik", "Contoh"],
+      "rows": [
+       ["żeński", "*Warszawa*", "*Warszaw**ie***", "*w Warszawie*"],
+       ["żeński", "*szkoła*", "*szkol**e***", "*w szkole*"],
+       ["żeński", "*kawiarnia*", "*kawiarn**i***", "*w kawiarni*"],
+       ["żeński", "*ulica*", "*ulic**y***", "*na ulicy*"],
+       ["męski", "*Kraków*", "*Krakow**ie***", "*w Krakowie*"],
+       ["męski", "*dom*", "*dom**u***", "*w domu*"],
+       ["męski", "*sklep*", "*sklep**ie***", "*w sklepie*"],
+       ["nijaki", "*miasto*", "*mieśc**ie***", "*w mieście*"],
+       ["nijaki", "*centrum*", "*centrum* (tetap)", "*w centrum*"]
+      ]
+     },
+     "after": [
+      "Ekornya cuma tiga: **-e / -ie**, **-u**, atau **-y / -i**. Yang menentukan pilihan adalah huruf terakhir kata dasarnya, bukan jenisnya.",
+      "**Ekor -u** dipakai kata laki-laki dan netral yang berujung *k*, *g*, *ch*, dan huruf lembut: *akademik → w akademiku*, *ratusz → w ratuszu*, *dom → w domu*. Kata berujung huruf keras lain memakai *-e/-ie*.",
+      "⚠️ Perubahan huruf di dalam kata (*miasto → mieście*, *szkoła → szkole*) tidak perlu dihafal sebagai aturan. Hafalkan **kata jadinya** untuk sepuluh tempat yang kamu sebut tiap hari; polanya akan masuk sendiri lewat telinga."
+     ]
+    },
+    {
+     "title": "W atau na?",
+     "body": [
+      "Aturan pokok cukup satu kalimat, tapi ada daftar kebiasaan yang perlu diketahui — dan daftar itu pendek."
+     ],
+     "tables": [
+      {
+       "head": ["Pakai *w* untuk…", "Contoh"],
+       "rows": [
+        ["ruang tertutup", "*w domu*, *w sklepie*, *w kawiarni*, *w banku*"],
+        ["kota dan negara", "*w Krakowie*, *w Polsce*, *w Indonezji*"],
+        ["gedung tempat bekerja", "*w szkole*, *w biurze*, *w szpitalu*"]
+       ]
+      },
+      {
+       "head": ["Pakai *na* untuk…", "Contoh"],
+       "rows": [
+        ["permukaan terbuka", "*na stole*, *na ulicy*, *na tarasie*"],
+        ["ruang terbuka kota", "*na rynku*, *na dworcu*, *na lotnisku*"],
+        ["acara dan kegiatan", "*na zajęciach*, *na koncercie*, *na imprezie*"],
+        ["kebiasaan tetap", "*na poczcie*, *na uniwersytecie*, *na uczelni*"]
+       ]
+      }
+     ],
+     "after": [
+      "Baris terakhir itu yang menyebalkan: *na poczcie* (di kantor pos) dan *na uniwersytecie* (di universitas) memakai *na* tanpa alasan yang bisa diraba. Hafalkan lima yang paling sering dipakai dan sudah cukup untuk A1: *na poczcie*, *na dworcu*, *na lotnisku*, *na uniwersytecie*, *na rynku*.",
+      "Kalau kamu salah memilih, kamu tetap dimengerti — ini bukan kesalahan yang mengubah arti. Ia sekadar terdengar seperti aksen."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tempat di kota",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Polski", "Di tempat itu", "Cara baca", "Arti"],
+     "rows": [
+      ["*sklep*", "*w sklepie*", "SKLE-pye", "toko"],
+      ["*bank*", "*w banku*", "BAN-ku", "bank"],
+      ["*apteka*", "*w aptece*", "ap-TE-tse", "apotek"],
+      ["*poczta*", "*na poczcie*", "POC-cye", "kantor pos"],
+      ["*dworzec*", "*na dworcu*", "DVOR-tsu", "stasiun"],
+      ["*lotnisko*", "*na lotnisku*", "lot-NIS-ku", "bandara"],
+      ["*rynek*", "*na rynku*", "RYN-ku", "alun-alun"],
+      ["*kościół*", "*w kościele*", "kosy-CYE-le", "gereja"],
+      ["*szpital*", "*w szpitalu*", "syp-TA-lu", "rumah sakit"],
+      ["*muzeum*", "*w muzeum*", "mu-ZE-um", "museum"],
+      ["*park*", "*w parku*", "PAR-ku", "taman"],
+      ["*restauracja*", "*w restauracji*", "res-tau-RA-tsyi", "restoran"]
+     ]
+    },
+    { "type": "kotak", "title": "Bertanya letak", "items": [
+      "*Gdzie jest apteka?* — Apotek di mana?",
+      "*Czy tu jest bankomat?* — Di sini ada ATM?",
+      "*Jak daleko stąd?* — Berapa jauh dari sini?",
+      "*Jest niedaleko.* — Tidak jauh.",
+      "*Dwadzieścia minut na piechotę.* — Dua puluh menit jalan kaki."
+     ] }
+   ]
+  },
+  {
+   "title": "Bercerita tentang tempat tinggalmu",
+   "blocks": [
+    { "type": "p", "text": "Susunan berikut menjawab hampir semua pertanyaan yang akan kamu terima di bulan pertama. Ganti isinya dengan keteranganmu sendiri, lalu baca keras-keras sampai lancar." },
+    {
+     "type": "tabel",
+     "head": ["Polski", "Arti"],
+     "rows": [
+      ["*Mieszkam w Krakowie, w akademiku.*", "Saya tinggal di Kraków, di asrama."],
+      ["*Mieszkam z kolegą z Wietnamu.*", "Saya tinggal dengan teman dari Vietnam."],
+      ["*Mój pokój jest mały, ale wygodny.*", "Kamar saya kecil tapi nyaman."],
+      ["*Uniwersytet jest niedaleko, dziesięć minut na piechotę.*", "Kampusnya dekat, sepuluh menit jalan kaki."],
+      ["*W pobliżu jest sklep i apteka.*", "Di dekat sini ada toko dan apotek."],
+      ["*Wcześniej mieszkałem w Dżakarcie.*", "Sebelumnya saya tinggal di Jakarta."]
+     ]
+    },
+    { "type": "kotak", "title": "Nama kota Polandia yang paling sering disebut", "items": [
+      "*Warszawa → w Warszawie* (Warsawa, ibu kota)",
+      "*Kraków → w Krakowie* (kota tua di selatan)",
+      "*Wrocław → we Wrocławiu* — perhatikan *we*, bukan *w*",
+      "*Gdańsk → w Gdańsku* (kota pelabuhan di utara)",
+      "*Poznań → w Poznaniu* · *Łódź → w Łodzi* — bacanya **wuj**, bukan \"lodz\""
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "pl": "gdzie", "baca": "gjye", "id": "di mana" },
+  { "pl": "akademik", "baca": "a-ka-DE-mik", "id": "asrama mahasiswa" },
+  { "pl": "kampus", "baca": "KAM-pus", "id": "kampus" },
+  { "pl": "centrum", "baca": "TSEN-trum", "id": "pusat kota" },
+  { "pl": "ulica", "baca": "u-LI-tsa", "id": "jalan" },
+  { "pl": "rynek", "baca": "RY-nek", "id": "alun-alun; pasar" },
+  { "pl": "budynek", "baca": "bu-DY-nek", "id": "gedung" },
+  { "pl": "kościół", "baca": "KOSY-cyuw", "id": "gereja" },
+  { "pl": "taras", "baca": "TA-ras", "id": "teras" },
+  { "pl": "pokój", "baca": "PO-kuy", "id": "kamar" },
+  { "pl": "mieszkanie", "baca": "myesy-KA-nye", "id": "apartemen" },
+  { "pl": "dworzec", "baca": "DVO-zyets", "id": "stasiun" },
+  { "pl": "lotnisko", "baca": "lot-NIS-ko", "id": "bandara" },
+  { "pl": "poczta", "baca": "POC-ta", "id": "kantor pos" },
+  { "pl": "apteka", "baca": "ap-TE-ka", "id": "apotek" },
+  { "pl": "bankomat", "baca": "ban-KO-mat", "id": "ATM" },
+  { "pl": "uczelnia", "baca": "u-CEL-nya", "id": "perguruan tinggi" },
+  { "pl": "egzamin", "baca": "eg-ZA-min", "id": "ujian" },
+  { "pl": "daleko / niedaleko", "baca": "da-LE-ko", "id": "jauh / tidak jauh" },
+  { "pl": "na piechotę", "baca": "na pye-HO-te", "id": "jalan kaki" },
+  { "pl": "w pobliżu", "baca": "f po-BLI-zyu", "id": "di dekat sini" },
+  { "pl": "siedzieć", "baca": "SYE-jyec", "id": "duduk" },
+  { "pl": "w środku", "baca": "f SYROT-ku", "id": "di dalam" },
+  { "pl": "lato / latem", "baca": "LA-to / LA-tem", "id": "musim panas / di musim panas" },
+  { "pl": "zima / zimą", "baca": "ZI-ma / ZI-mon", "id": "musim dingin / di musim dingin" },
+  { "pl": "stary / nowy", "baca": "STA-ry / NO-vy", "id": "tua / baru" },
+  { "pl": "wygodny", "baca": "vy-GOD-ny", "id": "nyaman" },
+  { "pl": "raz", "baca": "ras", "id": "sekali" },
+  { "pl": "który / która", "baca": "KTU-ry / KTU-ra", "id": "yang mana" },
+  { "pl": "trzymać kciuki", "baca": "TSYY-mac KCYU-ki", "id": "mendoakan; semoga berhasil" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan bentuk *miejscownik* yang tepat.",
+   "items": [
+    "Mieszkam w ____ . (Kraków)",
+    "Jestem w ____ . (dom)",
+    "Pracuję w ____ . (kawiarnia)",
+    "Ona jest w ____ . (szkoła)",
+    "Byłem w ____ . (Warszawa)",
+    "Czekam na ____ . (dworzec)"
+   ]
+  },
+  {
+   "prompt": "Pilih *w* atau *na*.",
+   "items": [
+    "____ poczcie",
+    "____ sklepie",
+    "____ uniwersytecie",
+    "____ banku",
+    "____ lotnisku",
+    "____ Polsce"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Kamu tinggal di mana?",
+    "Saya tinggal di asrama.",
+    "Apotek di mana?",
+    "Tidak jauh, sepuluh menit jalan kaki.",
+    "Adik saya di kampus."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "mieszkasz / gdzie / ?",
+    "w / mieszkam / akademiku",
+    "jest / apteka / gdzie / ?",
+    "kawiarni / pracuję / w",
+    "domu / jest / w / ona"
+   ]
+  }
+ ],
+ "answers": [
+  "Krakowie — domu — kawiarni — szkole — Warszawie — dworcu",
+  "na — w — na — w — na — w",
+  "Gdzie mieszkasz? — Mieszkam w akademiku. — Gdzie jest apteka? — Niedaleko, dziesięć minut na piechotę. — Moja siostra jest na uczelni.",
+  "Gdzie mieszkasz? — Mieszkam w akademiku. — Gdzie jest apteka? — Pracuję w kawiarni. — Ona jest w domu."
+ ],
+ "wave": "Ulangi dialog unit 9 keras-keras, lalu sebutkan lima tempat yang kamu datangi minggu ini dengan *w* atau *na* yang benar."
+}

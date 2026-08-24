@@ -1,0 +1,223 @@
+{
+ "title": "Berapa harganya?",
+ "title_target": "Ile to kosztuje?",
+ "goal": "Menanyakan dan memahami harga, membaca angka besar, dan mengenali kenapa uang Polandia punya tiga bentuk: *złoty*, *złote*, dan *złotych*.",
+ "bekal": [
+  "bertanya harga dengan *ile kosztuje* dan *ile płacę*",
+  "membaca harga dalam *złoty* dan *grosz* dengan bentuk yang benar",
+  "membaca angka ratusan dan ribuan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — W kiosku z biletami",
+   "intro": "Loket tiket transportasi umum di stasiun. Budi hendak membeli tiket bulanan.",
+   "lines": [
+    { "speaker": "Sprzedawca:", "text": "Dzień dobry, w czym mogę pomóc?", "id": "Selamat siang, ada yang bisa dibantu?", "literal": "hari baik, dalam apa saya-bisa menolong?" },
+    { "speaker": "Budi:", "text": "Ile kosztuje bilet miesięczny?", "id": "Tiket bulanan berapa?", "literal": "berapa berharga tiket bulanan?" },
+    { "speaker": "Sprzedawca:", "text": "Sto dziesięć złotych. A studencki pięćdziesiąt pięć.", "id": "Seratus sepuluh złoty. Yang mahasiswa lima puluh lima.", "literal": "seratus sepuluh złoty-jamak. dan mahasiswa-punya lima-puluh lima." },
+    { "speaker": "Budi:", "text": "Mam legitymację studencką.", "id": "Saya punya kartu mahasiswa.", "literal": "saya-punya kartu-identitas mahasiswa." },
+    { "speaker": "Sprzedawca:", "text": "Świetnie. Poproszę pięćdziesiąt pięć złotych.", "id": "Bagus. Jadi lima puluh lima złoty.", "literal": "hebat. saya-minta lima-puluh lima złoty-jamak." },
+    { "speaker": "Budi:", "text": "Czy mogę zapłacić kartą?", "id": "Boleh bayar pakai kartu?", "literal": "apakah saya-boleh membayar dengan-kartu?" },
+    { "speaker": "Sprzedawca:", "text": "Oczywiście. Proszę bardzo.", "id": "Tentu. Silakan.", "literal": "tentu-saja. silakan sangat." },
+    { "speaker": "Budi:", "text": "Jeszcze jedno pytanie. Ile kosztuje bilet jednorazowy?", "id": "Satu pertanyaan lagi. Tiket sekali jalan berapa?", "literal": "masih satu pertanyaan. berapa berharga tiket sekali-pakai?" },
+    { "speaker": "Sprzedawca:", "text": "Cztery złote i czterdzieści groszy.", "id": "Empat złoty empat puluh grosz.", "literal": "empat złoty-jamak dan empat-puluh grosz-jamak." },
+    { "speaker": "Budi:", "text": "A bilet dwudziestominutowy?", "id": "Kalau tiket dua puluh menit?", "literal": "dan tiket dua-puluh-menit?" },
+    { "speaker": "Sprzedawca:", "text": "Trzy złote sześćdziesiąt. Proszę, to pana bilet.", "id": "Tiga enam puluh. Silakan, ini tiket Bapak.", "literal": "tiga złoty-jamak enam-puluh. silakan, ini milik-bapak tiket." },
+    { "speaker": "Budi:", "text": "Dziękuję za pomoc. Do widzenia!", "id": "Terima kasih bantuannya. Sampai jumpa!", "literal": "terima-kasih untuk bantuan. sampai penglihatan!" }
+   ],
+   "notes": [
+    "**Ile kosztuje** untuk satu barang, **ile kosztują** untuk banyak barang: *Ile kosztuje bilet?* tapi *Ile kosztują bilety?*. Bentuk paling aman kalau kamu ragu: *Ile to kosztuje?* — \"ini harganya berapa\", menunjuk barangnya.",
+    "**Złoty, złote, złotych.** Mata uang Polandia mengikuti aturan angka yang sudah kamu lihat di unit 6: *jeden złoty*, *dwa/trzy/cztery złote*, *pięć złotych*. Aturannya sama persis dengan *rok / lata / lat*, jadi kamu sebenarnya sudah punya polanya.",
+    "**Grosz** adalah pecahan seratusnya, dan mengikuti pola yang sama: *jeden grosz*, *dwa grosze*, *pięć groszy*. Dalam percakapan, orang Polandia sering membuang kata *grosze* sama sekali: *trzy złote sześćdziesiąt* — persis seperti kita bilang \"tiga enam puluh\".",
+    "**Bilet miesięczny, bilet jednorazowy** — kata sifat berdiri **sesudah** kata benda kalau ia menyebut jenis, bukan sifat. Bandingkan *duży bilet* (tiket yang besar) dengan *bilet miesięczny* (tiket bulanan, satu istilah tetap). Pola ini juga muncul di *woda gazowana* dan *kawa czarna* unit 8.",
+    "**Legitymacja studencka** — kartu mahasiswa. Ia berharga di Polandia: banyak potongan harga transportasi, museum, dan bioskop yang menuntutnya, dan potongannya sering separuh.",
+    "**W czym mogę pomóc** harfiahnya \"dalam apa saya bisa menolong\". Kalimat baku pegawai toko; kamu tinggal menjawab dengan *poproszę…* atau *szukam…*.",
+    "**Dziękuję za pomoc** — sesudah *za* dipakai bentuk sasaran (*pomoc* kebetulan tidak berubah). Pola siap pakai: *dziękuję za kawę*, *dziękuję za informację*.",
+    "**To pana bilet** — \"ini tiket Bapak\". Kata milik untuk orang yang disapa sopan bukan *twój*, melainkan *pana* (lk) atau *pani* (pr). Salah satu tanda kesopanan yang paling gampang dilupakan pemula."
+   ],
+   "grammars": [
+    {
+     "title": "Uang: złoty, złote, złotych",
+     "body": [
+      "Tiga bentuk yang dipilih menurut **angka terakhir**, persis seperti tahun di unit 6."
+     ],
+     "table": {
+      "head": ["Angka", "Bentuk", "Contoh", "Cara baca"],
+      "rows": [
+       ["1", "*złoty*", "*jeden złoty*", "YE-den ZWO-ty"],
+       ["2, 3, 4", "*złote*", "*trzy złote*", "tsyy ZWO-te"],
+       ["5–21", "*złotych*", "*dziesięć złotych*", "JYE-syenc ZWO-tyh"],
+       ["22, 23, 24", "*złote*", "*dwadzieścia dwa złote*", "dva-JYESY-cya dva ZWO-te"],
+       ["25 ke atas", "*złotych*", "*sto złotych*", "sto ZWO-tyh"]
+      ]
+     },
+     "after": [
+      "Aturan yang sama berlaku untuk hampir semua kata benda yang dihitung: *bilet / bilety / biletów*, *książka / książki / książek*, *osoba / osoby / osób*.",
+      "Jalan pintas yang jujur: kalau kamu ragu, **sebut angkanya saja tanpa mata uangnya**. *Ile? — Pięćdziesiąt pięć.* Orang Polandia melakukannya sepanjang hari, dan tidak seorang pun akan menyangka kamu sedang menghindari tata bahasa.",
+      "⚠️ Singkatan resminya **zł** dan ditulis sesudah angkanya: *55 zł*. Kode banknya PLN."
+     ]
+    },
+    {
+     "title": "Angka besar",
+     "body": [
+      "Ratusan dan ribuan disusun berurutan seperti bahasa Indonesia, tanpa kata penyambung."
+     ],
+     "table": {
+      "head": ["Angka", "Polski", "Cara baca"],
+      "rows": [
+       ["100", "*sto*", "sto"],
+       ["200", "*dwieście*", "DVYESY-cye"],
+       ["300", "*trzysta*", "TSYYS-ta"],
+       ["400", "*czterysta*", "cte-RYS-ta"],
+       ["500", "*pięćset*", "PYENC-set"],
+       ["600", "*sześćset*", "SYESYC-set"],
+       ["700", "*siedemset*", "SYE-dem-set"],
+       ["800", "*osiemset*", "O-syem-set"],
+       ["900", "*dziewięćset*", "JYE-vyenc-set"],
+       ["1000", "*tysiąc*", "TY-syonts"],
+       ["2000", "*dwa tysiące*", "dva ty-SYON-tse"],
+       ["5000", "*pięć tysięcy*", "pyenc ty-SYEN-tsy"]
+      ]
+     },
+     "after": [
+      "Angka 500–900 semuanya berujung *-set* dan menempel jadi satu kata. Angka 200–400 justru tidak, dan bentuknya harus dihafal apa adanya.",
+      "Contoh gabungan: *tysiąc dwieście pięćdziesiąt* (1250), *dwa tysiące dwadzieścia sześć* (2026).",
+      "Perhatikan *tysiąc* sendiri juga mengikuti aturan 2-3-4: *dwa tysiące*, tapi *pięć tysięcy*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Harga dan pembayaran",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Polski", "Cara baca", "Arti"],
+     "rows": [
+      ["*Ile to kosztuje?*", "I-le to kosy-TU-ye", "Ini harganya berapa?"],
+      ["*Ile płacę?*", "I-le PWA-tse", "Saya bayar berapa?"],
+      ["*To za drogo.*", "to za DRO-go", "Itu terlalu mahal."],
+      ["*Czy jest zniżka studencka?*", "cy yest ZNISY-ka", "Ada diskon mahasiswa?"],
+      ["*Czy mogę zapłacić kartą?*", "cy MO-ge za-PWA-cic KAR-ton", "Boleh bayar pakai kartu?"],
+      ["*Tylko gotówka.*", "TYL-ko go-TUF-ka", "Tunai saja."],
+      ["*Czy ma pan drobne?*", "cy ma pan DROB-ne", "Bapak punya uang kecil?"],
+      ["*Poproszę paragon.*", "po-PRO-sye pa-RA-gon", "Minta struknya."],
+      ["*Czy to jest w promocji?*", "cy to yest f pro-MO-tsyi", "Ini lagi promo?"],
+      ["*Biorę to.*", "BYO-re to", "Saya ambil yang ini."]
+     ]
+    },
+    { "type": "kotak", "title": "Menawar di Polandia?", "items": [
+      "Di toko, supermarket, dan kios — **tidak**. Harganya tetap dan menawar akan terasa aneh bagi penjualnya.",
+      "Di pasar barang bekas (*pchli targ*) dan pasar rakyat, menawar wajar. Kalimatnya: *Czy może być taniej?* (bisa lebih murah?).",
+      "Yang justru sering dilupakan pendatang: banyak potongan harga resmi (mahasiswa, akhir pekan, aplikasi) yang tinggal diminta — *Czy jest jakaś zniżka?*"
+     ] }
+   ]
+  },
+  {
+   "title": "Angka dalam kehidupan sehari-hari",
+   "blocks": [
+    { "type": "p", "text": "Angka tidak cuma dipakai untuk harga. Empat pemakaian berikut muncul tiap hari di Polandia." },
+    {
+     "type": "tabel",
+     "head": ["Untuk apa", "Contoh", "Arti"],
+     "rows": [
+      ["nomor telepon", "*Mój numer to 601 234 567.*", "Nomor saya 601 234 567."],
+      ["nomor rumah", "*Mieszkam na Długiej 15.*", "Saya tinggal di Jalan Długa 15."],
+      ["nomor bus", "*Jadę autobusem numer 52.*", "Saya naik bus nomor 52."],
+      ["suhu", "*Jest minus pięć stopni.*", "Suhunya minus lima derajat."]
+     ]
+    },
+    { "type": "p", "text": "Nomor telepon Polandia terdiri dari sembilan angka dan dibaca bergerombol tiga-tiga. Nomor daruratnya **112**, sama seperti seluruh Uni Eropa." },
+    { "type": "kotak", "title": "Bertanya nomor", "items": [
+      "*Jaki masz numer telefonu?* — Nomor HP-mu berapa?",
+      "*Możesz powtórzyć wolniej?* — Bisa diulang lebih pelan?",
+      "*Napiszesz mi to?* — Bisa tuliskan buat saya?",
+      "Yang terakhir ini adalah senjata pemula yang paling jujur: angka yang diucapkan cepat sulit ditangkap bahkan setelah setahun belajar."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "pl": "kosztować", "baca": "kosy-TO-vac", "id": "berharga; seharga" },
+  { "pl": "cena", "baca": "TSE-na", "id": "harga" },
+  { "pl": "złoty", "baca": "ZWO-ty", "id": "złoty (mata uang)" },
+  { "pl": "grosz", "baca": "grosy", "id": "grosz (1/100 złoty)" },
+  { "pl": "bilet", "baca": "BI-let", "id": "tiket" },
+  { "pl": "miesięczny", "baca": "mye-SYENC-ny", "id": "bulanan" },
+  { "pl": "jednorazowy", "baca": "yed-no-ra-ZO-vy", "id": "sekali pakai" },
+  { "pl": "legitymacja", "baca": "le-gi-ty-MA-tsya", "id": "kartu identitas" },
+  { "pl": "zniżka", "baca": "ZNISY-ka", "id": "diskon" },
+  { "pl": "promocja", "baca": "pro-MO-tsya", "id": "promo" },
+  { "pl": "paragon", "baca": "pa-RA-gon", "id": "struk" },
+  { "pl": "drobne", "baca": "DROB-ne", "id": "uang kecil" },
+  { "pl": "sprzedawca", "baca": "spsye-DAV-tsa", "id": "penjual" },
+  { "pl": "pomoc", "baca": "PO-mots", "id": "bantuan" },
+  { "pl": "pomóc", "baca": "PO-muts", "id": "menolong" },
+  { "pl": "pytanie", "baca": "py-TA-nye", "id": "pertanyaan" },
+  { "pl": "numer", "baca": "NU-mer", "id": "nomor" },
+  { "pl": "za drogo", "baca": "za DRO-go", "id": "terlalu mahal" },
+  { "pl": "taniej", "baca": "TA-nyey", "id": "lebih murah" },
+  { "pl": "dwieście", "baca": "DVYESY-cye", "id": "dua ratus" },
+  { "pl": "pięćset", "baca": "PYENC-set", "id": "lima ratus" },
+  { "pl": "tysiąc", "baca": "TY-syonts", "id": "seribu" },
+  { "pl": "stopień", "baca": "STO-pyeny", "id": "derajat" },
+  { "pl": "zapłacić", "baca": "za-PWA-cic", "id": "membayar (tuntas)" },
+  { "pl": "powtórzyć", "baca": "pof-TU-zyyc", "id": "mengulang" },
+  { "pl": "wolniej", "baca": "VOL-nyey", "id": "lebih pelan" },
+  { "pl": "ulica", "baca": "u-LI-tsa", "id": "jalan" },
+  { "pl": "pana / pani", "baca": "PA-na / PA-ni", "id": "milik Bapak / Ibu" },
+  { "pl": "za", "baca": "za", "id": "untuk; terlalu" },
+  { "pl": "miłego dnia", "baca": "mi-WE-go dnya", "id": "semoga harimu baik" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis harganya lengkap dengan bentuk *złoty* yang benar.",
+   "items": [
+    "1 zł",
+    "3 zł",
+    "7 zł",
+    "22 zł",
+    "100 zł"
+   ]
+  },
+  {
+   "prompt": "Tulis angkanya dengan huruf.",
+   "items": [
+    "200",
+    "500",
+    "1000",
+    "1250",
+    "2026"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Ini harganya berapa?",
+    "Tiket bulanan berapa?",
+    "Boleh bayar pakai kartu?",
+    "Itu terlalu mahal.",
+    "Ada diskon mahasiswa?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "kosztuje / to / ile / ?",
+    "złotych / pięćdziesiąt / pięć",
+    "kartą / mogę / zapłacić / czy / ?",
+    "pomoc / dziękuję / za",
+    "drogo / to / za"
+   ]
+  }
+ ],
+ "answers": [
+  "jeden złoty — trzy złote — siedem złotych — dwadzieścia dwa złote — sto złotych",
+  "dwieście — pięćset — tysiąc — tysiąc dwieście pięćdziesiąt — dwa tysiące dwadzieścia sześć",
+  "Ile to kosztuje? — Ile kosztuje bilet miesięczny? — Czy mogę zapłacić kartą? — To za drogo. — Czy jest zniżka studencka?",
+  "Ile to kosztuje? — pięćdziesiąt pięć złotych — Czy mogę zapłacić kartą? — Dziękuję za pomoc. — To za drogo."
+ ],
+ "wave": "Ulangi dialog unit 7 keras-keras, lalu sebutkan lima harga acak dari nota belanjaanmu dalam bahasa Polandia."
+}

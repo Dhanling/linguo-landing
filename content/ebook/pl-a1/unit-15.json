@@ -1,0 +1,233 @@
+{
+ "title": "Tidak ada, tanpa, dan takaran: dopełniacz",
+ "title_target": "Nie ma chleba",
+ "goal": "Memakai bentuk kata benda yang muncul sesudah penyangkalan, takaran, dan kata depan *do*, *od*, *bez*, *dla* — bentuk kedua terpenting sesudah *biernik*.",
+ "bekal": [
+  "mengubah kalimat *mam…* jadi *nie mam…* dengan ekor yang benar",
+  "menyatakan takaran: *kilo*, *pół kilo*, *butelka*, *dużo*",
+  "berbelanja di toko dan pasar dari awal sampai membayar"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — W sklepie",
+   "intro": "Toko kelontong kecil di sudut jalan. Antrean pendek; giliran Budi.",
+   "lines": [
+    { "speaker": "Sprzedawczyni:", "text": "Dzień dobry, słucham?", "id": "Selamat siang, mau beli apa?", "literal": "hari baik, saya-mendengarkan?" },
+    { "speaker": "Budi:", "text": "Poproszę kilo jabłek i pół kilo pomidorów.", "id": "Saya mau apel satu kilo dan tomat setengah kilo.", "literal": "saya-minta kilo apel-jamak dan setengah kilo tomat-jamak." },
+    { "speaker": "Sprzedawczyni:", "text": "Coś jeszcze?", "id": "Ada lagi?", "literal": "sesuatu masih?" },
+    { "speaker": "Budi:", "text": "Czy jest mleko bez laktozy?", "id": "Ada susu bebas laktosa?", "literal": "apakah ada susu tanpa laktosa?" },
+    { "speaker": "Sprzedawczyni:", "text": "Niestety nie ma. Mamy tylko zwykłe.", "id": "Sayangnya tidak ada. Adanya yang biasa.", "literal": "sayangnya tidak ada. kami-punya hanya biasa." },
+    { "speaker": "Budi:", "text": "To poproszę dwa litry zwykłego. I bochenek chleba.", "id": "Kalau begitu yang biasa dua liter. Sekalian sepotong roti.", "literal": "jadi saya-minta dua liter biasa. dan bongkah roti." },
+    { "speaker": "Sprzedawczyni:", "text": "Chleb się skończył. Będzie po drugiej.", "id": "Rotinya habis. Nanti ada lagi lewat jam dua.", "literal": "roti diri berakhir. akan-ada sesudah kedua." },
+    { "speaker": "Budi:", "text": "Szkoda. W takim razie to wszystko. Ile płacę?", "id": "Sayang. Ya sudah, itu saja. Berapa semuanya?", "literal": "sayang. dalam begitu hal ini segalanya. berapa saya-membayar?" },
+    { "speaker": "Sprzedawczyni:", "text": "Dwadzieścia trzy złote czterdzieści.", "id": "Dua puluh tiga empat puluh.", "literal": "dua-puluh tiga złoty-jamak empat-puluh." },
+    { "speaker": "Budi:", "text": "Proszę. Nie mam drobnych, przepraszam.", "id": "Ini. Maaf, saya tidak punya uang kecil.", "literal": "silakan. tidak saya-punya uang-kecil-jamak, maaf." },
+    { "speaker": "Sprzedawczyni:", "text": "Nie szkodzi. Proszę resztę i paragon.", "id": "Tidak apa-apa. Ini kembalian dan struknya.", "literal": "tidak merugikan. silakan kembalian dan struk." },
+    { "speaker": "Budi:", "text": "Dziękuję. Do widzenia!", "id": "Terima kasih. Sampai jumpa!", "literal": "terima-kasih. sampai penglihatan!" }
+   ],
+   "notes": [
+    "**Nie ma adalah kalimat terpenting di unit ini.** Ia berarti \"tidak ada\" dan **selalu** diikuti bentuk *dopełniacz*: *nie ma chleba*, *nie ma czasu*, *nie ma problemu*. Bentuknya tidak pernah berubah menurut apa pun — satu bongkahan untuk segala keadaan.",
+    "**Penyangkalan menggeser ekor.** *Mam czas* → *Nie mam czasu*. *Piję kawę* → *Nie piję kawy*. Semua sasaran yang tadinya *biernik* berpindah jadi *dopełniacz* begitu kalimatnya disangkal. Aturan ini tidak punya pengecualian dan tidak ada padanannya dalam bahasa apa pun yang kamu kenal.",
+    "**Kilo jabłek, pół kilo pomidorów.** Takaran juga menuntut bentuk ini, dan di sini bentuknya **jamak**: *jabłka → jabłek*, *pomidory → pomidorów*. Ekor jamaknya *-ów* untuk kata laki-laki, dan sering **kosong** untuk kata perempuan dan netral (*jabłka → jabłek*, *książki → książek*).",
+    "**Bez laktozy, do sklepu, od mamy, dla ciebie** — empat kata depan yang paling sering dipakai, dan keempatnya menuntut *dopełniacz*. Kalau kamu hafal empat kata ini saja, kamu sudah memakai bentuk ini dengan benar puluhan kali sehari.",
+    "**Chleb się skończył** — \"rotinya habis\", harfiahnya \"roti mengakhiri diri\". Kalimat yang akan sering kamu dengar di toko dan kedai menjelang sore.",
+    "**Będzie po drugiej** — *będzie* adalah bentuk masa depan dari *być*: \"akan ada\". Bentuk masa depan lengkap ada di unit 19; *będzie* sendiri layak dihafal sekarang karena terlalu sering dipakai.",
+    "**Nie szkodzi** — \"tidak apa-apa\", jawaban baku untuk permintaan maaf kecil. Kembarannya: *nic się nie stało* (tak terjadi apa-apa) dan *w porządku* (beres).",
+    "**W takim razie** — \"kalau begitu\", penyambung yang membuat percakapanmu terdengar jauh lebih matang daripada tingkat tata bahasamu yang sebenarnya. Pakai sesering mungkin."
+   ],
+   "grammars": [
+    {
+     "title": "Dopełniacz — ekornya",
+     "body": [
+      "Bentuk yang menjawab *kogo? czego?* — \"tidak ada apa\", \"berapa banyak apa\", \"milik siapa\"."
+     ],
+     "table": {
+      "head": ["Jenis", "Bentuk kamus", "Dopełniacz", "Contoh"],
+      "rows": [
+       ["żeński", "*kawa*", "*kaw**y***", "*Nie piję kawy.*"],
+       ["żeński", "*herbata*", "*herbat**y***", "*Nie lubię herbaty.*"],
+       ["żeński", "*kawiarnia*", "*kawiarn**i***", "*Idę do kawiarni.*"],
+       ["męski (benda)", "*chleb*", "*chleb**a***", "*Nie ma chleba.*"],
+       ["męski (benda)", "*sklep*", "*sklep**u***", "*Idę do sklepu.*"],
+       ["męski (orang)", "*brat*", "*brat**a***", "*Nie mam brata.*"],
+       ["nijaki", "*mleko*", "*mlek**a***", "*Nie ma mleka.*"],
+       ["nijaki", "*piwo*", "*piw**a***", "*Butelka piwa.*"]
+      ]
+     },
+     "after": [
+      "Kata **perempuan** memakai **-y** (atau **-i** sesudah huruf lembut). Kata **netral** selalu **-a**. Kata **laki-laki** memakai **-a** atau **-u**, dan tidak ada aturan yang benar-benar bisa dipegang — makhluk hidup hampir selalu *-a*, benda bisa dua-duanya.",
+      "Jalan pintas yang jujur untuk kata laki-laki: hafalkan bentuk *do…*-nya bersama kata barunya. *Sklep → do sklepu*, *dom → do domu*, *dworzec → do dworca*. Karena kata depan *do* sangat sering dipakai, bentuk yang benar akan menempel lewat kebiasaan.",
+      "Bentuk jamaknya: **-ów** untuk kata laki-laki (*pomidorów*, *biletów*), dan **tanpa ekor** untuk banyak kata perempuan dan netral (*jabłek*, *książek*, *piw*)."
+     ]
+    },
+    {
+     "title": "Empat pemakaian yang wajib dikenali",
+     "body": [
+      "Bentuk ini muncul di empat keadaan, dan keempatnya sering dalam satu percakapan yang sama."
+     ],
+     "table": {
+      "head": ["Keadaan", "Contoh", "Arti"],
+      "rows": [
+       ["sesudah *nie ma*", "*Nie ma mleka.*", "Susunya tidak ada."],
+       ["sasaran yang disangkal", "*Nie mam czasu.*", "Saya tidak punya waktu."],
+       ["takaran & jumlah", "*Dużo pracy. Kilo jabłek.*", "Banyak kerjaan. Sekilo apel."],
+       ["sesudah *do, od, bez, dla, u*", "*Idę do lekarza.*", "Saya ke dokter."],
+       ["kepemilikan", "*Samochód brata.*", "Mobil (milik) kakak."]
+      ]
+     },
+     "after": [
+      "Baris terakhir menjelaskan sesuatu yang sering membingungkan: bahasa Polandia menyatakan milik dengan **membalik urutan** — \"mobil kakak\" jadi *samochód brata*, bukan sebaliknya. Sama seperti bahasa Indonesia, dan justru kebalikan dari bahasa Inggris.",
+      "⚠️ *Dużo*, *mało*, *trochę*, *ile* semuanya menuntut bentuk ini: *dużo czasu*, *mało pieniędzy*, *trochę mleka*, *ile wody*. Ini salah satu tanda paling cepat yang membedakan orang asing yang sudah paham dari yang belum."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Belanjaan dan takaran",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Takaran", "Contoh", "Arti"],
+     "rows": [
+      ["*kilo*", "*kilo jabłek*", "sekilo apel"],
+      ["*pół kilo*", "*pół kilo pomidorów*", "setengah kilo"],
+      ["*deko* (10 g)", "*dwadzieścia deko sera*", "dua ons keju"],
+      ["*litr*", "*litr mleka*", "seliter susu"],
+      ["*butelka*", "*butelka wody*", "sebotol air"],
+      ["*paczka*", "*paczka herbaty*", "sebungkus teh"],
+      ["*bochenek*", "*bochenek chleba*", "sepotong roti (utuh)"],
+      ["*kawałek*", "*kawałek sera*", "sepotong keju"],
+      ["*sztuka*", "*trzy sztuki*", "tiga buah"]
+     ]
+    },
+    { "type": "p", "text": "⚠️ *Deko* adalah ukuran khas Polandia yang tidak ada di Indonesia: satu *deko* = 10 gram. Di gerai daging dan keju, orang memesan *dwadzieścia deko* (200 gram), bukan gram. Menyebut gram akan dimengerti, tapi terdengar seperti membaca label." },
+    {
+     "type": "tabel",
+     "head": ["Polski", "Arti", "Polski", "Arti"],
+     "rows": [
+      ["*chleb*", "roti", "*jabłko*", "apel"],
+      ["*bułka*", "roti bulat", "*banan*", "pisang"],
+      ["*masło*", "mentega", "*pomidor*", "tomat"],
+      ["*ser*", "keju", "*ogórek*", "mentimun"],
+      ["*jajka*", "telur", "*ziemniaki*", "kentang"],
+      ["*mleko*", "susu", "*cebula*", "bawang bombai"],
+      ["*woda*", "air", "*ryż*", "beras"],
+      ["*sok*", "jus", "*makaron*", "pasta; mi"],
+      ["*cukier*", "gula", "*kurczak*", "ayam"],
+      ["*sól*", "garam", "*ryba*", "ikan"]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kalimat di toko",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Polski", "Cara baca", "Arti"],
+     "rows": [
+      ["*Słucham?*", "SWU-ham", "Mau beli apa?"],
+      ["*Czy jest…?*", "cy yest", "Ada… nggak?"],
+      ["*Nie ma.*", "nye ma", "Tidak ada."],
+      ["*Coś jeszcze?*", "tsosy YESY-ce", "Ada lagi?"],
+      ["*To wszystko.*", "to FSYYST-ko", "Itu saja."],
+      ["*Szukam…*", "SYU-kam", "Saya mencari…"],
+      ["*Gdzie mogę znaleźć…?*", "gjye MO-ge ZNA-lesyc", "Di mana saya bisa temukan…?"],
+      ["*Ile to kosztuje za kilo?*", "I-le to kosy-TU-ye", "Sekilonya berapa?"],
+      ["*Poproszę reklamówkę.*", "re-kla-MUF-ke", "Minta kantong plastiknya."],
+      ["*Nie szkodzi.*", "nye SYKO-jyi", "Tidak apa-apa."]
+     ]
+    },
+    { "type": "kotak", "title": "Tiga hal yang mengejutkan pendatang di toko Polandia", "items": [
+      "**Kantong plastik dibayar.** Selalu ditanyakan lebih dulu, dan orang Polandia hampir selalu membawa tas sendiri.",
+      "**Sayur dan buah ditimbang sendiri** di supermarket besar, lengkap dengan menekan nomor produknya di timbangan. Di toko kecil justru penjualnya yang menimbang.",
+      "**Toko kecil tutup lebih awal** dan banyak yang tutup hari Minggu — Polandia membatasi perdagangan di hari Minggu sejak beberapa tahun terakhir. Periksa tulisan *niedziela handlowa* (Minggu berdagang) sebelum berencana belanja."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "pl": "nie ma", "baca": "nye ma", "id": "tidak ada" },
+  { "pl": "bez", "baca": "bes", "id": "tanpa" },
+  { "pl": "dla", "baca": "dla", "id": "untuk" },
+  { "pl": "od", "baca": "ot", "id": "dari" },
+  { "pl": "u", "baca": "u", "id": "di tempat (orang)" },
+  { "pl": "dużo / mało", "baca": "DU-zyo / MA-wo", "id": "banyak / sedikit" },
+  { "pl": "trochę", "baca": "TRO-he", "id": "sedikit" },
+  { "pl": "kilo", "baca": "KI-lo", "id": "kilogram" },
+  { "pl": "pół", "baca": "puw", "id": "setengah" },
+  { "pl": "litr", "baca": "litr", "id": "liter" },
+  { "pl": "butelka", "baca": "bu-TEL-ka", "id": "botol" },
+  { "pl": "paczka", "baca": "PAC-ka", "id": "bungkus" },
+  { "pl": "kawałek", "baca": "ka-VA-wek", "id": "potong" },
+  { "pl": "sklep spożywczy", "baca": "sklep spo-ZYYF-cy", "id": "toko kelontong" },
+  { "pl": "chleb / bułka", "baca": "hlep / BUW-ka", "id": "roti / roti bulat" },
+  { "pl": "masło / ser", "baca": "MAS-wo / ser", "id": "mentega / keju" },
+  { "pl": "jajko", "baca": "YAY-ko", "id": "telur" },
+  { "pl": "jabłko", "baca": "YAP-ko", "id": "apel" },
+  { "pl": "pomidor", "baca": "po-MI-dor", "id": "tomat" },
+  { "pl": "ziemniak", "baca": "ZYEM-nyak", "id": "kentang" },
+  { "pl": "kurczak", "baca": "KUR-cak", "id": "ayam" },
+  { "pl": "ryba", "baca": "RY-ba", "id": "ikan" },
+  { "pl": "warzywa / owoce", "baca": "va-ZYY-va / o-VO-tse", "id": "sayur / buah" },
+  { "pl": "reklamówka", "baca": "re-kla-MUF-ka", "id": "kantong plastik" },
+  { "pl": "skończyć się", "baca": "SKONY-cyc sye", "id": "habis" },
+  { "pl": "szkoda", "baca": "SYKO-da", "id": "sayang" },
+  { "pl": "nie szkodzi", "baca": "nye SYKO-jyi", "id": "tidak apa-apa" },
+  { "pl": "w takim razie", "baca": "f TA-kim RA-zye", "id": "kalau begitu" },
+  { "pl": "pieniądze", "baca": "pye-NYON-dze", "id": "uang" },
+  { "pl": "problem", "baca": "PROB-lem", "id": "masalah" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah jadi kalimat sangkal. Perhatikan ekornya berubah.",
+   "items": [
+    "Mam czas. →",
+    "Piję kawę. →",
+    "Lubię herbatę. →",
+    "Mam brata. →",
+    "Kupuję chleb. →"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bentuk *dopełniacz*.",
+   "items": [
+    "Nie ma ____ . (mleko)",
+    "Idę do ____ . (sklep)",
+    "Butelka ____ . (woda)",
+    "Kilo ____ . (jabłka)",
+    "Dużo ____ . (praca)",
+    "Herbata bez ____ . (cukier)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Saya mau apel satu kilo.",
+    "Rotinya tidak ada.",
+    "Saya tidak punya waktu.",
+    "Ada susu bebas laktosa?",
+    "Itu saja. Berapa semuanya?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ma / chleba / nie",
+    "jabłek / poproszę / kilo",
+    "czasu / mam / nie",
+    "sklepu / idę / do",
+    "wszystko / to"
+   ]
+  }
+ ],
+ "answers": [
+  "Nie mam czasu. — Nie piję kawy. — Nie lubię herbaty. — Nie mam brata. — Nie kupuję chleba.",
+  "mleka — sklepu — wody — jabłek — pracy — cukru",
+  "Poproszę kilo jabłek. — Nie ma chleba. — Nie mam czasu. — Czy jest mleko bez laktozy? — To wszystko. Ile płacę?",
+  "Nie ma chleba. — Poproszę kilo jabłek. — Nie mam czasu. — Idę do sklepu. — To wszystko."
+ ],
+ "wave": "Ulangi dialog unit 13 keras-keras, lalu ubah sepuluh kalimat *mam…* dari unit-unit sebelumnya jadi bentuk sangkalnya."
+}

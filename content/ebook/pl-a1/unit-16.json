@@ -1,0 +1,231 @@
+{
+ "title": "Kata sifat: menggambarkan orang dan benda",
+ "title_target": "Jaki jest twój nowy współlokator?",
+ "goal": "Menyesuaikan kata sifat dengan kata bendanya, menggambarkan orang dan tempat, serta membuat perbandingan sederhana.",
+ "bekal": [
+  "memakai ekor kata sifat *-y/-i*, *-a*, *-e* dengan benar",
+  "menggambarkan penampilan dan watak orang",
+  "membandingkan dengan *-szy* dan *bardziej*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Nowy współlokator",
+   "intro": "Bangku di depan asrama. Budi baru sepekan tinggal sekamar dengan orang baru.",
+   "lines": [
+    { "speaker": "Ania:", "text": "Jaki jest twój nowy współlokator?", "id": "Teman sekamar barumu orangnya gimana?", "literal": "yang-bagaimana adalah milikmu baru teman-sekamar?" },
+    { "speaker": "Budi:", "text": "Miły i spokojny. Trochę nieśmiały.", "id": "Baik dan kalem. Agak pemalu.", "literal": "ramah dan tenang. sedikit pemalu." },
+    { "speaker": "Ania:", "text": "Wysoki czy niski?", "id": "Tinggi atau pendek?", "literal": "tinggi atau rendah?" },
+    { "speaker": "Budi:", "text": "Wysoki, ciemne włosy, okulary. Wygląda poważnie, ale jest zabawny.", "id": "Tinggi, rambut gelap, pakai kacamata. Kelihatannya serius, tapi lucu.", "literal": "tinggi, gelap rambut, kacamata. terlihat serius, tetapi adalah lucu." },
+    { "speaker": "Ania:", "text": "Ile ma lat?", "id": "Umurnya berapa?", "literal": "berapa punya tahun?" },
+    { "speaker": "Budi:", "text": "Chyba dwadzieścia pięć. Jest z Wietnamu.", "id": "Kayaknya dua puluh lima. Dari Vietnam.", "literal": "mungkin dua-puluh lima. adalah dari Vietnam." },
+    { "speaker": "Ania:", "text": "A wasze mieszkanie? Duże?", "id": "Kalau kamar kalian? Besar?", "literal": "dan milik-kalian apartemen? besar?" },
+    { "speaker": "Budi:", "text": "Nie bardzo. Małe, ale jasne i czyste. Kuchnia jest nowa.", "id": "Nggak juga. Kecil, tapi terang dan bersih. Dapurnya baru.", "literal": "tidak sangat. kecil, tetapi terang dan bersih. dapur adalah baru." },
+    { "speaker": "Ania:", "text": "To najważniejsze. Moje mieszkanie jest tanie, ale ciemne i zimne.", "id": "Itu yang paling penting. Kamar saya murah, tapi gelap dan dingin.", "literal": "itu paling-penting. milikku apartemen adalah murah, tetapi gelap dan dingin." },
+    { "speaker": "Budi:", "text": "Zimne? To niedobrze.", "id": "Dingin? Wah, nggak enak.", "literal": "dingin? itu tidak-baik." },
+    { "speaker": "Ania:", "text": "Stary budynek. Zimą muszę nosić sweter w domu.", "id": "Gedungnya tua. Musim dingin saya harus pakai sweter di dalam rumah.", "literal": "tua gedung. musim-dingin saya-harus memakai sweter di rumah." },
+    { "speaker": "Budi:", "text": "Współczuję. Może przenieś się bliżej centrum?", "id": "Turut prihatin. Mungkin pindah lebih dekat pusat kota?", "literal": "saya-turut-merasa. mungkin pindahlah diri lebih-dekat pusat?" }
+   ],
+   "notes": [
+    "**Jaki? Jaka? Jakie?** — kata tanya \"yang bagaimana\" pun ikut jenis kata bendanya. *Jaki jest twój pokój?* (lk), *Jaka jest twoja siostra?* (pr), *Jakie jest twoje mieszkanie?* (netral).",
+    "**Ciemne włosy** — jamak. Rambut dalam bahasa Polandia selalu jamak, seperti \"rambut-rambut\", dan kata sifatnya ikut jamak. Sama halnya dengan *okulary* (kacamata) dan *drzwi* (pintu), yang tak punya bentuk tunggal.",
+    "**Wygląda poważnie** — \"kelihatan serius\". Sesudah *wyglądać* dipakai bentuk keterangan (*poważnie*), bukan kata sifat (*poważny*). Bandingkan *jest poważny* (dia serius) dengan *wygląda poważnie* (dia kelihatan serius).",
+    "**Małe, jasne, czyste** — semuanya berujung *-e* karena menerangkan *mieszkanie*, kata netral. Perhatikan bahwa kata sifat berturut-turut semuanya berubah, bukan cuma yang pertama.",
+    "**Najważniejsze** — bentuk \"paling\": awalan *naj-* ditempelkan pada bentuk pembanding. *Ważny → ważniejszy → najważniejszy*. Pola ini sama untuk hampir semua kata sifat.",
+    "**Niedobrze** — awalan *nie-* menempel jadi satu kata pada kata keterangan dan kata sifat: *dobry → niedobry*, *drogi → niedrogi*, *daleko → niedaleko*. Perhatikan bedanya dengan *nie* yang berdiri sendiri di depan kata kerja.",
+    "**Zimą** — musim dingin sebagai keterangan waktu, bentuk yang kamu kenal dari unit 11. Bandingkan *zima jest długa* (musim dinginnya panjang) dengan *zimą jest zimno* (di musim dingin dinginnya menyengat).",
+    "**Współczuję** — \"saya turut merasakan\", ungkapan simpati sehari-hari yang tidak seberat \"turut berduka\". Untuk kabar duka yang sebenarnya dipakai *moje kondolencje*."
+   ],
+   "grammars": [
+    {
+     "title": "Ekor kata sifat",
+     "body": [
+      "Kata sifat selalu menyesuaikan diri dengan kata benda yang diterangkannya — dalam jenis, jumlah, dan bentuk."
+     ],
+     "table": {
+      "head": ["Kata benda", "Ekor", "Contoh", "Arti"],
+      "rows": [
+       ["męski", "**-y / -i**", "*dobr**y** dzień*", "hari yang baik"],
+       ["męski", "**-y / -i**", "*tan**i** hotel*", "hotel murah"],
+       ["żeński", "**-a**", "*dobr**a** kawa*", "kopi enak"],
+       ["nijaki", "**-e**", "*dobr**e** piwo*", "bir enak"],
+       ["jamak (tanpa orang lk)", "**-e**", "*dobr**e** książki*", "buku-buku bagus"],
+       ["jamak (ada orang lk)", "**-i / -y**", "*dobr**zy** studenci*", "mahasiswa-mahasiswa yang baik"]
+      ]
+     },
+     "after": [
+      "Ekor **-i** dipakai kalau kata dasarnya berujung *k*, *g*, atau huruf lembut: *polski*, *drogi*, *tani*. Selain itu **-y**: *dobry*, *nowy*, *stary*.",
+      "Kata sifat juga ikut berubah saat kata bendanya berubah bentuk: *dobra kawa* → *dobrą kawę* (sasaran) → *dobrej kawy* (sangkal). Yang perlu kamu kuasai sekarang cuma bentuk dasarnya; sisanya menyusul lewat kebiasaan.",
+      "Baris terakhir adalah bentuk jamak untuk kelompok yang ada laki-lakinya — pola yang sudah kamu temui di *ci*, *wszyscy*, *moi*. Ia sering mengubah huruf terakhir kata dasarnya (*dobry → dobrzy*, *miły → mili*), dan di tingkat A1 cukup dikenali."
+     ]
+    },
+    {
+     "title": "Membandingkan",
+     "body": [
+      "Dua cara, dan yang kedua bisa dipakai untuk kata sifat mana pun kalau kamu lupa yang pertama."
+     ],
+     "table": {
+      "head": ["Dasar", "Lebih…", "Paling…", "Arti"],
+      "rows": [
+       ["*tani*", "*tańszy*", "*najtańszy*", "murah"],
+       ["*nowy*", "*nowszy*", "*najnowszy*", "baru"],
+       ["*ładny*", "*ładniejszy*", "*najładniejszy*", "cantik"],
+       ["*dobry*", "**lepszy**", "**najlepszy**", "baik"],
+       ["*zły*", "**gorszy**", "**najgorszy**", "buruk"],
+       ["*duży*", "**większy**", "**największy**", "besar"],
+       ["*mały*", "**mniejszy**", "**najmniejszy**", "kecil"],
+       ["*interesujący*", "*bardziej interesujący*", "*najbardziej interesujący*", "menarik"]
+      ]
+     },
+     "after": [
+      "Empat baris bercetak tebal tidak beraturan — dan justru itu yang paling sering dipakai. Hafalkan keempatnya sekarang; sisanya bisa dibentuk sendiri.",
+      "Baris terakhir memperlihatkan jalan keluar: kata sifat yang panjang memakai ***bardziej*** (lebih) dan ***najbardziej*** (paling) di depannya, tanpa mengubah kata sifatnya sama sekali. Kalau ragu, cara ini selalu bisa dipakai dan tetap benar.",
+      "\"Daripada\" dalam perbandingan: ***niż*** atau ***od***. *Kraków jest mniejszy niż Warszawa* — Kraków lebih kecil daripada Warsawa."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menggambarkan orang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Penampilan", "Arti", "Watak", "Arti"],
+     "rows": [
+      ["*wysoki / niski*", "tinggi / pendek", "*miły*", "ramah"],
+      ["*szczupły / gruby*", "kurus / gemuk", "*sympatyczny*", "menyenangkan"],
+      ["*młody / stary*", "muda / tua", "*spokojny*", "kalem"],
+      ["*ładny / przystojny*", "cantik / tampan", "*wesoły*", "ceria"],
+      ["*ciemne włosy*", "rambut gelap", "*zabawny*", "lucu"],
+      ["*jasne włosy*", "rambut terang", "*poważny*", "serius"],
+      ["*krótkie włosy*", "rambut pendek", "*nieśmiały*", "pemalu"],
+      ["*okulary*", "kacamata", "*pracowity*", "rajin"],
+      ["*broda*", "janggut", "*leniwy*", "malas"],
+      ["*niebieskie oczy*", "mata biru", "*mądry*", "pintar"]
+     ]
+    },
+    { "type": "kotak", "title": "Menggambarkan seseorang dalam empat kalimat", "items": [
+      "*To jest mój kolega Adam.* — Ini teman saya Adam.",
+      "*Jest wysoki i ma ciemne włosy.* — Dia tinggi dan berambut gelap.",
+      "*Ma dwadzieścia pięć lat i studiuje medycynę.* — Umurnya dua puluh lima dan kuliah kedokteran.",
+      "*Jest bardzo miły, ale trochę nieśmiały.* — Dia ramah sekali, tapi agak pemalu.",
+      "Empat kalimat ini adalah kerangka yang bisa kamu pakai untuk siapa pun. Ganti isinya saja."
+     ] }
+   ]
+  },
+  {
+   "title": "Pasangan kata sifat yang paling sering dipakai",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Polski", "Arti", "Lawannya", "Arti"],
+     "rows": [
+      ["*duży*", "besar", "*mały*", "kecil"],
+      ["*nowy*", "baru", "*stary*", "lama; tua"],
+      ["*dobry*", "baik; enak", "*zły*", "buruk"],
+      ["*tani*", "murah", "*drogi*", "mahal"],
+      ["*łatwy*", "mudah", "*trudny*", "sulit"],
+      ["*ciepły*", "hangat", "*zimny*", "dingin"],
+      ["*jasny*", "terang", "*ciemny*", "gelap"],
+      ["*czysty*", "bersih", "*brudny*", "kotor"],
+      ["*szybki*", "cepat", "*wolny*", "lambat"],
+      ["*ciekawy*", "menarik", "*nudny*", "membosankan"],
+      ["*długi*", "panjang", "*krótki*", "pendek"],
+      ["*bliski*", "dekat", "*daleki*", "jauh"]
+     ]
+    },
+    { "type": "p", "text": "⚠️ *Wolny* punya dua arti yang sama-sama sering dipakai: **lambat** (*wolny internet*) dan **kosong / bebas** (*wolny stolik*). Keadaan kalimatnya yang menentukan, dan kekeliruan di sini jarang menimbulkan masalah nyata." },
+    { "type": "kotak", "title": "Menilai sesuatu dengan sopan", "items": [
+      "*Bardzo mi się podoba.* — Saya suka banget. (untuk barang, tempat, penampilan)",
+      "*Nie bardzo.* — Nggak juga.",
+      "*Może być.* — Lumayan.",
+      "*Szkoda, że…* — Sayang sekali, …",
+      "*Najlepsze, co jest.* — Yang paling bagus dari semuanya."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "pl": "jaki / jaka / jakie", "baca": "YA-ki", "id": "yang bagaimana" },
+  { "pl": "wysoki / niski", "baca": "vy-SO-ki / NIS-ki", "id": "tinggi / pendek" },
+  { "pl": "szczupły / gruby", "baca": "SYCUP-wy / GRU-by", "id": "kurus / gemuk" },
+  { "pl": "młody / stary", "baca": "MWO-dy / STA-ry", "id": "muda / tua" },
+  { "pl": "ładny", "baca": "WAD-ny", "id": "cantik; bagus" },
+  { "pl": "przystojny", "baca": "psyys-TOY-ny", "id": "tampan" },
+  { "pl": "miły", "baca": "MI-wy", "id": "ramah" },
+  { "pl": "spokojny", "baca": "spo-KOY-ny", "id": "kalem" },
+  { "pl": "wesoły", "baca": "ve-SO-wy", "id": "ceria" },
+  { "pl": "zabawny", "baca": "za-BAV-ny", "id": "lucu" },
+  { "pl": "poważny", "baca": "po-VAZY-ny", "id": "serius" },
+  { "pl": "nieśmiały", "baca": "nye-SYMYA-wy", "id": "pemalu" },
+  { "pl": "pracowity / leniwy", "baca": "pra-tso-VI-ty", "id": "rajin / malas" },
+  { "pl": "mądry", "baca": "MOND-ry", "id": "pintar" },
+  { "pl": "włosy", "baca": "VWO-sy", "id": "rambut" },
+  { "pl": "oczy", "baca": "O-cy", "id": "mata" },
+  { "pl": "okulary", "baca": "o-ku-LA-ry", "id": "kacamata" },
+  { "pl": "broda", "baca": "BRO-da", "id": "janggut" },
+  { "pl": "czysty / brudny", "baca": "CYS-ty / BRUD-ny", "id": "bersih / kotor" },
+  { "pl": "jasny / ciemny", "baca": "YAS-ny / CYEM-ny", "id": "terang / gelap" },
+  { "pl": "łatwy / trudny", "baca": "WAT-fy / TRUD-ny", "id": "mudah / sulit" },
+  { "pl": "ciekawy / nudny", "baca": "cye-KA-vy / NUD-ny", "id": "menarik / membosankan" },
+  { "pl": "ważny", "baca": "VAZY-ny", "id": "penting" },
+  { "pl": "lepszy / gorszy", "baca": "LEP-syy / GOR-syy", "id": "lebih baik / lebih buruk" },
+  { "pl": "większy / mniejszy", "baca": "VYENK-syy / MNYEY-syy", "id": "lebih besar / lebih kecil" },
+  { "pl": "bardziej / najbardziej", "baca": "BAR-jyey", "id": "lebih / paling" },
+  { "pl": "współlokator", "baca": "fspuw-lo-KA-tor", "id": "teman sekamar" },
+  { "pl": "wyglądać", "baca": "vy-GLON-dac", "id": "terlihat; tampak" },
+  { "pl": "nosić", "baca": "NO-syic", "id": "memakai (pakaian)" },
+  { "pl": "sweter", "baca": "SFE-ter", "id": "sweter" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan ekor kata sifat yang tepat.",
+   "items": [
+    "dobr__ dzień (męski)",
+    "dobr__ kawa (żeński)",
+    "dobr__ piwo (nijaki)",
+    "now__ mieszkanie (nijaki)",
+    "mał__ pokój (męski)",
+    "tan__ hotel (męski)"
+   ]
+  },
+  {
+   "prompt": "Tulis bentuk \"lebih…\" dan \"paling…\".",
+   "items": [
+    "dobry",
+    "duży",
+    "mały",
+    "tani",
+    "zły"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Teman sekamar barumu orangnya gimana?",
+    "Dia tinggi dan berambut gelap.",
+    "Kamar saya kecil tapi terang.",
+    "Kraków lebih kecil daripada Warsawa.",
+    "Saya suka banget."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "jest / twój / jaki / pokój / ?",
+    "ciemne / ma / włosy / on",
+    "ale / małe / jasne / mieszkanie / ,",
+    "niż / mniejszy / Kraków / Warszawa / jest",
+    "podoba / mi / się / bardzo"
+   ]
+  }
+ ],
+ "answers": [
+  "dobry — dobra — dobre — nowe — mały — tani",
+  "lepszy / najlepszy — większy / największy — mniejszy / najmniejszy — tańszy / najtańszy — gorszy / najgorszy",
+  "Jaki jest twój nowy współlokator? — Jest wysoki i ma ciemne włosy. — Mój pokój jest mały, ale jasny. — Kraków jest mniejszy niż Warszawa. — Bardzo mi się podoba.",
+  "Jaki jest twój pokój? — On ma ciemne włosy. — Mieszkanie małe, ale jasne. — Kraków jest mniejszy niż Warszawa. — Bardzo mi się podoba."
+ ],
+ "wave": "Ulangi dialog unit 14 keras-keras, lalu gambarkan tiga orang yang kamu kenal dengan empat kalimat masing-masing."
+}
