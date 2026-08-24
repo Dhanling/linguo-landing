@@ -1,0 +1,490 @@
+{
+  "title": "Halo, nama saya Ana",
+  "title_target": "Γεια σας — Ya sas",
+  "goal": "Menyapa dengan aman kepada siapa pun, menyebut nama, menanyakan nama lawan bicara, dan mengucapkan kalimat Yunani pertama yang benar — kalimat yang justru **wajib** punya kata \"adalah\".",
+  "bekal": [
+    "menyapa resmi dan santai, dan tahu bedanya",
+    "menyebut namamu dan menanyakan nama orang lain",
+    "mengucapkan terima kasih, maaf, dan permisi",
+    "menyusun kalimat \"saya X\" dengan kata kerja είμαι",
+    "menyangkal dengan δεν dan menjawab dengan όχι"
+  ],
+  "dialogs": [
+    {
+      "title": "ΔΙΑΛΟΓΟΣ — Hari pertama di kursus",
+      "intro": "Ana, pelajar dari Indonesia, masuk ke kelas bahasa Yunani di Athena dan duduk di sebelah seseorang yang belum dikenalnya. Perhatikan bahwa hampir tiap kalimat di bawah ini memakai kata yang berarti \"adalah\" — dan bahwa kata itu tidak boleh dibuang.",
+      "lines": [
+        {
+          "speaker": "Γιάννης:",
+          "text": "[Γεια|Ya] [σας|sas]! [Καλημέρα|Ka-li-MÉ-ra].",
+          "id": "Halo! Selamat pagi.",
+          "literal": "kesehatan — kepada-Anda! pagi-baik."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Καλημέρα|Ka-li-MÉ-ra]!",
+          "id": "Selamat pagi!",
+          "literal": "pagi-baik!"
+        },
+        {
+          "speaker": "Γιάννης:",
+          "text": "[Με|Mé] [λένε|LÉ-né] [Γιάννη|YA-ni]. [Εσείς|É-SIS];",
+          "id": "Nama saya Yannis. Anda?",
+          "literal": "saya (objek) — mereka-panggil — Yanni. Anda?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Χαίρω|KHÉ-ro] [πολύ|po-LI]. [Με|Mé] [λένε|LÉ-né] [Άννα|A-na]. [Είμαι|I-mé] [από|a-PO] [την|tin] [Ινδονησία|in-dho-ni-SI-a].",
+          "id": "Senang berkenalan. Nama saya Ana. Saya dari Indonesia.",
+          "literal": "saya-gembira — banyak. saya (objek) — mereka-panggil — Anna. saya-adalah — dari — (sandang) — Indonesia."
+        },
+        {
+          "speaker": "Γιάννης:",
+          "text": "[Α|A], [την|tin] [Ινδονησία|in-dho-ni-SI-a]! [Είστε|I-sté] [φοιτήτρια|fi-TI-tri-a];",
+          "id": "Ah, Indonesia! Anda mahasiswi?",
+          "literal": "ah, (sandang) — Indonesia! Anda-adalah — mahasiswi?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ναι|Né], [είμαι|I-mé] [φοιτήτρια|fi-TI-tri-a]. [Εσείς|É-SIS];",
+          "id": "Ya, saya mahasiswi. Anda?",
+          "literal": "ya, saya-adalah — mahasiswi. Anda?"
+        },
+        {
+          "speaker": "Γιάννης:",
+          "text": "[Εγώ|É-GHO] [δεν|dhén] [είμαι|I-mé] [φοιτητής|fi-ti-TIS]. [Είμαι|I-mé] [δάσκαλος|DHA-ska-los].",
+          "id": "Saya bukan mahasiswa. Saya guru.",
+          "literal": "saya — tidak — saya-adalah — mahasiswa. saya-adalah — guru."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ωχ|Okh], [συγγνώμη|si-GHNO-mi]!",
+          "id": "Aduh, maaf!",
+          "literal": "aduh, maaf!"
+        },
+        {
+          "speaker": "Γιάννης:",
+          "text": "[Δεν|Dhén] [πειράζει|pi-RA-zi]! [Όλα|O-la] [καλά|ka-LA].",
+          "id": "Tidak apa-apa! Semuanya baik.",
+          "literal": "tidak — ia-mengganggu! semua — baik."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ευχαριστώ|Éf-kha-ri-STO] [πολύ|po-LI].",
+          "id": "Terima kasih banyak.",
+          "literal": "saya-berterima-kasih — banyak."
+        },
+        {
+          "speaker": "Γιάννης:",
+          "text": "[Παρακαλώ|Pa-ra-ka-LO]. [Καλή|Ka-LI] [σας|sas] [μέρα|MÉ-ra], [Άννα|A-na]!",
+          "id": "Sama-sama. Selamat beraktivitas, Ana!",
+          "literal": "silakan / sama-sama. baik — kepada-Anda — hari, Anna!"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Γεια|Ya] [σας|sas]!",
+          "id": "Sampai jumpa!",
+          "literal": "kesehatan — kepada-Anda!"
+        }
+      ],
+      "notes": [
+        "**Bahasa Yunani wajib punya kata kerja \"adalah\", dan ini kebalikan dari bahasa Indonesia.** *Είμαι φοιτήτρια* = \"saya adalah mahasiswi\". ⚠️ Kalimat *Εγώ φοιτήτρια* — yang terasa alami bagi penutur Indonesia karena persis susunan \"saya mahasiswi\" — **salah** dan terdengar seperti telegram. Kata kerja είμαι tidak pernah boleh hilang di waktu sekarang.",
+        "**Yang justru boleh dibuang adalah kata gantinya.** *Είμαι* sudah berarti \"saya adalah\" — ekor **-μαι** yang menandai pelakunya. Εγώ dipakai hanya kalau kamu ingin menegaskan atau membandingkan, persis seperti Γιάννης melakukannya: *Εγώ δεν είμαι φοιτητής* — \"saya sih bukan mahasiswa\".",
+        "**Γεια σου santai, Γεια σας resmi.** Γεια harfiahnya \"kesehatan\", jadi sapaan Yunani sebenarnya berbunyi \"sehat untukmu\". Γεια σου untuk teman dan sebaya; Γεια σας untuk orang yang belum dikenal, orang yang lebih tua, petugas — dan untuk lebih dari satu orang sekaligus. ⚠️ Satu kata ini menutup \"halo\" **dan** \"sampai jumpa\", persis seperti *ciao*.",
+        "**Με λένε harfiahnya \"mereka memanggil saya\".** Bukan \"nama saya\". Siapa \"mereka\" itu tidak pernah dijelaskan — terima saja sebagai satu bongkah: *Με λένε ___*. ⚠️ Dan namamu masuk dalam bentuk **sasaran**, jadi Γιάννη**ς** berubah jadi Γιάννη. Untunglah nama Indonesia yang berakhir bukan -ος/-ης tidak berubah sama sekali: *Με λένε Άννα, Με λένε Μπούντι.*",
+        "**Καλημέρα sampai sekitar pukul dua belas siang, Καλησπέρα sesudahnya, Καληνύχτα hanya saat berpisah untuk tidur.** ⚠️ Καληνύχτα bukan sapaan malam seperti \"selamat malam\" dalam bahasa Indonesia — mengucapkannya saat baru datang ke pesta terdengar seperti kamu langsung pamit pulang.",
+        "**Συγγνώμη dan Λυπάμαι tidak sama beratnya.** Συγγνώμη (*si-GHNO-mi*) untuk gangguan kecil: menyela, lewat, salah tebak. Λυπάμαι (*li-PA-mé*) harfiahnya \"saya bersedih\" dan dipakai untuk hal yang sungguhan menyedihkan — turut berduka, atau menolak permintaan besar. Memakai Λυπάμαι karena salah menebak profesi orang terdengar berlebihan.",
+        "**Παρακαλώ satu kata, tiga pekerjaan.** Ia berarti \"silakan\", \"tolong\", dan \"sama-sama\" sekaligus, dan kamu akan memakainya puluhan kali sehari. Di telepon ia bahkan berarti \"halo?\". Harfiahnya \"saya memohon\".",
+        "⚠️ **Perhatikan tanda tanya di dialog ini: ; bukan ?.** Εσείς**;** artinya \"Anda?\", bukan kalimat yang menggantung. Ini akan terus terlihat aneh sampai kira-kira unit kelima, lalu berhenti terasa aneh selamanya."
+      ],
+      "grammars": [
+        {
+          "title": "Είμαι — satu kata kerja yang harus hafal mati hari ini",
+          "body": [
+            "Ini kata kerja pertama dan yang paling sering dipakai dalam bahasa Yunani. Ia tidak beraturan, jadi tidak ada pola yang bisa ditebak — hafalkan enam barisnya sekaligus, keras-keras, sampai keluar tanpa berpikir."
+          ],
+          "table": {
+            "head": [
+              "Yunani",
+              "Baca",
+              "Indonesia",
+              "Catatan"
+            ],
+            "rows": [
+              [
+                "είμαι",
+                "I-mé",
+                "saya adalah",
+                "εγώ boleh dibuang"
+              ],
+              [
+                "είσαι",
+                "I-sé",
+                "kamu adalah",
+                "εσύ — ke teman"
+              ],
+              [
+                "είναι",
+                "I-né",
+                "dia adalah",
+                "juga \"mereka adalah\""
+              ],
+              [
+                "είμαστε",
+                "I-ma-sté",
+                "kami adalah",
+                "εμείς"
+              ],
+              [
+                "είστε",
+                "I-sté",
+                "kalian / Anda adalah",
+                "εσείς — bentuk hormat"
+              ],
+              [
+                "είναι",
+                "I-né",
+                "mereka adalah",
+                "sama dengan bentuk \"dia\""
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **είναι menutup dua baris sekaligus**: \"dia adalah\" dan \"mereka adalah\". Yang membedakan cuma konteks dan kata bendanya. Ini kabar baik — satu bentuk lebih sedikit untuk dihafal.",
+            "Untuk menyangkal, sisipkan **δεν** (*dhén*) tepat di depan kata kerjanya: *Δεν είμαι φοιτητής* — saya bukan mahasiswa. ⚠️ **δεν** menyangkal kata kerja, sedangkan **όχι** (*O-khi*) adalah jawaban \"tidak\" yang berdiri sendiri. Jangan tertukar: pertanyaan *Είσαι φοιτητής;* dijawab *Όχι, δεν είμαι.*"
+          ]
+        },
+        {
+          "title": "Εσύ dan εσείς — dua tingkat kesopanan",
+          "body": [
+            "Bahasa Yunani memisahkan kamu-akrab dari Anda-hormat, persis seperti bahasa Indonesia memisahkan *kamu* dari *Anda*. Bedanya, dalam bahasa Yunani pilihan itu **wajib** dan langsung terdengar di ekor kata kerjanya."
+          ],
+          "table": {
+            "head": [
+              "",
+              "ΕΣΥ (santai)",
+              "ΕΣΕΙΣ (hormat)"
+            ],
+            "rows": [
+              [
+                "Dipakai kepada",
+                "teman, sebaya, keluarga, anak-anak",
+                "orang asing, orang yang lebih tua, atasan, petugas — dan kepada lebih dari satu orang"
+              ],
+              [
+                "Salamnya",
+                "Γεια σου!",
+                "Γεια σας!"
+              ],
+              [
+                "\"Siapa namamu?\"",
+                "Πώς σε λένε;",
+                "Πώς σας λένε;"
+              ],
+              [
+                "\"Apa kabar?\"",
+                "Τι κάνεις;",
+                "Τι κάνετε;"
+              ],
+              [
+                "\"Anda dari mana?\"",
+                "Από πού είσαι;",
+                "Από πού είστε;"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Aturan praktis untuk pendatang: **pakai εσείς sampai orang Yunani sendiri beralih ke εσύ**. Peralihan itu biasanya terjadi diam-diam, tanpa diumumkan — begitu lawan bicaramu memakai εσύ, ikuti saja. Memakai εσείς kepada teman sebaya terdengar sedikit kaku; memakai εσύ kepada orang tua atau petugas terdengar kasar. Dari dua kesalahan itu, yang pertama jauh lebih murah.",
+            "Orang Yunani beralih ke εσύ jauh lebih cepat daripada orang Prancis atau Jerman. Di kalangan seumuran, εσύ sering dipakai sejak menit pertama. Kepada orang yang jelas lebih tua, εσείς bertahan lama."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ungkapan yang wajib ada di saku hari pertama",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Dua belas ungkapan berikut menutup hampir semua basa-basi hari pertama. Hafalkan utuh sebagai bongkahan; tata bahasanya akan terurai sendiri di unit-unit berikutnya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "ΕΛΛΗΝΙΚΑ",
+            "Baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Ναι / Όχι",
+              "né / O-khi",
+              "Ya / Tidak"
+            ],
+            [
+              "Ευχαριστώ",
+              "éf-kha-ri-STO",
+              "Terima kasih"
+            ],
+            [
+              "Ευχαριστώ πολύ",
+              "éf-kha-ri-STO po-LI",
+              "Terima kasih banyak"
+            ],
+            [
+              "Παρακαλώ",
+              "pa-ra-ka-LO",
+              "Silakan / Tolong / Sama-sama"
+            ],
+            [
+              "Συγγνώμη",
+              "si-GHNO-mi",
+              "Maaf, permisi"
+            ],
+            [
+              "Δεν καταλαβαίνω",
+              "dhén ka-ta-la-VÉ-no",
+              "Saya tidak mengerti"
+            ],
+            [
+              "Δεν μιλάω ελληνικά",
+              "dhén mi-LA-o é-li-ni-KA",
+              "Saya tidak bicara bahasa Yunani"
+            ],
+            [
+              "Μιλάτε αγγλικά;",
+              "mi-LA-té an-gli-KA",
+              "Anda bicara bahasa Inggris?"
+            ],
+            [
+              "Πιο αργά, παρακαλώ",
+              "pio ar-GHA pa-ra-ka-LO",
+              "Lebih pelan, tolong"
+            ],
+            [
+              "Τι είναι αυτό;",
+              "ti I-né af-TO",
+              "Ini apa?"
+            ],
+            [
+              "Πώς το λένε στα ελληνικά;",
+              "pos to LÉ-né sta é-li-ni-KA",
+              "Bahasa Yunaninya apa?"
+            ],
+            [
+              "Εντάξει",
+              "é-DA-ksi",
+              "Oke, beres"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dua kalimat menjelang akhir bukan sekadar kosakata — itu alat belajar. Begitu kamu bisa menanyakan \"ini apa\" dan \"bahasa Yunaninya apa\", setiap orang Yunani di sekitarmu berubah jadi kamus berjalan. Dan **εντάξει** akan jadi kata yang paling sering kamu ucapkan sepanjang hidupmu di Yunani."
+        },
+        {
+          "type": "kotak",
+          "title": "Τι κάνεις; dan jebakan kecilnya",
+          "items": [
+            "**Τι κάνεις;** (*ti KA-nis*) harfiahnya \"apa yang kamu lakukan?\" dan berarti \"apa kabar?\". Bentuk hormatnya **Τι κάνετε;** (*ti KA-né-té*).",
+            "Jawaban baku: **Καλά** (baik), **Μια χαρά** (bagus sekali, harfiahnya \"satu kegembiraan\"), **Έτσι κι έτσι** (biasa saja, harfiahnya \"begini dan begini\"), **Χάλια** (kacau).",
+            "Balasan sopannya menambahkan **Εσύ;** atau **Εσείς;** — \"kamu sendiri?\". Membiarkan pertanyaan itu tak dikembalikan terdengar dingin.",
+            "⚠️ Berbeda dari *How are you?* dalam bahasa Inggris, Τι κάνεις; **bukan** basa-basi kosong yang dilempar ke kasir. Ia ditanyakan kepada orang yang kamu kenal, dan jawabannya benar-benar didengarkan — kadang sampai lima menit."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "el": "γεια σου / γεια σας",
+      "baca": "ya su / ya sas",
+      "id": "halo, sampai jumpa (santai / hormat)"
+    },
+    {
+      "el": "καλημέρα",
+      "baca": "ka-li-MÉ-ra",
+      "id": "selamat pagi (sampai siang)"
+    },
+    {
+      "el": "καλησπέρα",
+      "baca": "ka-li-SPÉ-ra",
+      "id": "selamat sore/malam (saat bertemu)"
+    },
+    {
+      "el": "καληνύχτα",
+      "baca": "ka-li-NIKH-ta",
+      "id": "selamat malam (saat berpisah tidur)"
+    },
+    {
+      "el": "με λένε",
+      "baca": "mé LÉ-né",
+      "id": "nama saya"
+    },
+    {
+      "el": "πώς σε λένε;",
+      "baca": "pos sé LÉ-né",
+      "id": "siapa namamu?"
+    },
+    {
+      "el": "χαίρω πολύ",
+      "baca": "KHÉ-ro po-LI",
+      "id": "senang berkenalan"
+    },
+    {
+      "el": "εγώ",
+      "baca": "é-GHO",
+      "id": "saya"
+    },
+    {
+      "el": "εσύ",
+      "baca": "é-SI",
+      "id": "kamu (akrab)"
+    },
+    {
+      "el": "εσείς",
+      "baca": "é-SIS",
+      "id": "Anda, kalian"
+    },
+    {
+      "el": "είμαι",
+      "baca": "I-mé",
+      "id": "saya adalah"
+    },
+    {
+      "el": "είσαι / είναι",
+      "baca": "I-sé / I-né",
+      "id": "kamu adalah / dia adalah"
+    },
+    {
+      "el": "ναι / όχι",
+      "baca": "né / O-khi",
+      "id": "ya / tidak"
+    },
+    {
+      "el": "δεν",
+      "baca": "dhén",
+      "id": "tidak (di depan kata kerja)"
+    },
+    {
+      "el": "φοιτητής / φοιτήτρια",
+      "baca": "fi-ti-TIS / fi-TI-tri-a",
+      "id": "mahasiswa / mahasiswi"
+    },
+    {
+      "el": "δάσκαλος / δασκάλα",
+      "baca": "DHA-ska-los / dha-SKA-la",
+      "id": "guru laki-laki / perempuan"
+    },
+    {
+      "el": "από",
+      "baca": "a-PO",
+      "id": "dari"
+    },
+    {
+      "el": "η Ινδονησία",
+      "baca": "i in-dho-ni-SI-a",
+      "id": "Indonesia"
+    },
+    {
+      "el": "η Ελλάδα",
+      "baca": "i é-LA-dha",
+      "id": "Yunani"
+    },
+    {
+      "el": "ευχαριστώ",
+      "baca": "éf-kha-ri-STO",
+      "id": "terima kasih"
+    },
+    {
+      "el": "παρακαλώ",
+      "baca": "pa-ra-ka-LO",
+      "id": "silakan, tolong, sama-sama"
+    },
+    {
+      "el": "συγγνώμη",
+      "baca": "si-GHNO-mi",
+      "id": "maaf, permisi"
+    },
+    {
+      "el": "δεν πειράζει",
+      "baca": "dhén pi-RA-zi",
+      "id": "tidak apa-apa"
+    },
+    {
+      "el": "καλά",
+      "baca": "ka-LA",
+      "id": "baik, baik-baik saja"
+    },
+    {
+      "el": "πολύ",
+      "baca": "po-LI",
+      "id": "sangat, banyak"
+    },
+    {
+      "el": "όλα",
+      "baca": "O-la",
+      "id": "semua, semuanya"
+    },
+    {
+      "el": "εντάξει",
+      "baca": "é-DA-ksi",
+      "id": "oke, beres"
+    },
+    {
+      "el": "τι κάνεις;",
+      "baca": "ti KA-nis",
+      "id": "apa kabar?"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Yunani. Ingat: kata kerja \"adalah\" tidak boleh hilang.",
+      "items": [
+        "Halo! (hormat)",
+        "Nama saya Ana.",
+        "Saya mahasiswi.",
+        "Dia bukan guru.",
+        "Siapa nama Anda?",
+        "Saya dari Indonesia."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk είμαι yang tepat (είμαι, είσαι, είναι, είμαστε, είστε).",
+      "items": [
+        "Εγώ ____ από την Ινδονησία.",
+        "Εσύ ____ φοιτητής;",
+        "Ο Γιάννης ____ δάσκαλος.",
+        "Εμείς ____ καλά.",
+        "Εσείς ____ από την Ελλάδα;"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "λένε / με / Άννα",
+        "δεν / φοιτητής / είμαι",
+        "πολύ / χαίρω",
+        "καλά / όλα",
+        "σας / πώς / λένε"
+      ]
+    },
+    {
+      "prompt": "Pilih ucapan yang tepat. Tulis jawabannya dalam huruf Yunani.",
+      "items": [
+        "Kamu masuk ke ruang guru pukul delapan pagi. Kamu bilang ____.",
+        "Kamu tidak menangkap yang dikatakan orang. Kamu bilang ____.",
+        "Kamu menginjak kaki orang di metro. Kamu bilang ____.",
+        "Seseorang baru saja menolongmu. Kamu bilang ____.",
+        "Kamu berpamitan dari kantor kepada atasanmu. Kamu bilang ____."
+      ]
+    }
+  ],
+  "answers": [
+    "Γεια σας! — Με λένε Άννα. — Είμαι φοιτήτρια. — Δεν είναι δάσκαλος. — Πώς σας λένε; — Είμαι από την Ινδονησία.",
+    "είμαι — είσαι — είναι — είμαστε — είστε",
+    "Με λένε Άννα. — Δεν είμαι φοιτητής. — Χαίρω πολύ. — Όλα καλά. — Πώς σας λένε;",
+    "Καλημέρα — Δεν καταλαβαίνω — Συγγνώμη — Ευχαριστώ — Γεια σας"
+  ]
+}

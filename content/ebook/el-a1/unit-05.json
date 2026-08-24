@@ -1,0 +1,472 @@
+{
+  "title": "Saya punya dua saudara",
+  "title_target": "Έχω δύο αδέρφια — E-kho dhi-o a-dher-fia",
+  "goal": "Mengatakan apa yang kamu punya dan tidak punya, menyebut umur, dan menghitung sampai seratus — termasuk tiga angka yang ikut berubah menurut jenis kelamin bendanya.",
+  "bekal": [
+    "menyusun enam bentuk έχω",
+    "menghitung dari nol sampai seratus",
+    "memilih ένας, μία, atau ένα dengan benar",
+    "menanyakan dan menyebut umur",
+    "membedakan έχω dari υπάρχει"
+  ],
+  "dialogs": [
+    {
+      "title": "ΔΙΑΛΟΓΟΣ — Keluarga dan umur",
+      "intro": "Eleni dan Ana mengobrol di balkon. Perhatikan bahwa angka satu berubah tiga kali di dialog ini, sedangkan angka dua tidak berubah sama sekali.",
+      "lines": [
+        {
+          "speaker": "Ελένη:",
+          "text": "[Έχεις|É-khis] [αδέρφια|a-DHÉR-fia], [Άννα|A-na];",
+          "id": "Kamu punya saudara, Ana?",
+          "literal": "kamu-punya — saudara-saudara, Anna?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ναι|Né], [έχω|É-kho] [δύο|DHI-o]: [έναν|É-nan] [αδερφό|a-dhér-FO] [και|ké] [μία|MI-a] [αδερφή|a-dhér-FI].",
+          "id": "Ya, saya punya dua: satu adik laki-laki dan satu adik perempuan.",
+          "literal": "ya, saya-punya — dua: satu (lk) — saudara-lk — dan — satu (pr) — saudara-pr."
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Πόσων|PO-son] [χρονών|khro-NON] [είναι|I-né];",
+          "id": "Umur mereka berapa?",
+          "literal": "berapa — tahun-tahun — mereka-adalah?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ο|O] [αδερφός|a-dhér-FOS] [μου|mu] [είναι|I-né] [είκοσι|I-ko-si] [πέντε|PÉN-dé] [και|ké] [η|i] [αδερφή|a-dhér-FI] [μου|mu] [δεκαοχτώ|dhé-ka-okh-TO].",
+          "id": "Adik laki-laki saya dua puluh lima, adik perempuan saya delapan belas.",
+          "literal": "(sandang) — saudara-lk — saya — ia-adalah — dua-puluh — lima — dan — (sandang) — saudara-pr — saya — delapan-belas."
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Κι|Ki] [εσύ|é-SI];",
+          "id": "Kalau kamu?",
+          "literal": "dan — kamu?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Είμαι|I-mé] [είκοσι|I-ko-si] [δύο|DHI-o]. [Εσύ|É-SI] [πόσων|PO-son] [χρονών|khro-NON] [είσαι|I-sé];",
+          "id": "Saya dua puluh dua. Kamu berapa?",
+          "literal": "saya-adalah — dua-puluh — dua. kamu — berapa — tahun-tahun — kamu-adalah?"
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Είκοσι|I-ko-si] [εννιά|é-NIA]. [Έχω|É-kho] [μόνο|MO-no] [μία|MI-a] [αδερφή|a-dhér-FI].",
+          "id": "Dua puluh sembilan. Saya cuma punya satu saudara perempuan.",
+          "literal": "dua-puluh — sembilan. saya-punya — hanya — satu (pr) — saudara-pr."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Έχετε|É-khé-té] [σπίτι|SPI-ti] [στην|stin] [Αθήνα|a-THI-na];",
+          "id": "Kalian punya rumah di Athena?",
+          "literal": "kalian-punya — rumah — di-(sandang) — Athena?"
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Έχουμε|É-khu-mé] [ένα|É-na] [μικρό|mi-KRO] [διαμέρισμα|dhi-a-MÉ-ri-sma] [εδώ|é-DHO] [και|ké] [ένα|É-na] [σπίτι|SPI-ti] [στο|sto] [χωριό|kho-RIO].",
+          "id": "Kami punya apartemen kecil di sini dan satu rumah di kampung.",
+          "literal": "kami-punya — satu (nt) — kecil — apartemen — di-sini — dan — satu (nt) — rumah — di-(sandang) — kampung."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Τέλεια|TÉ-li-a]! [Έχεις|É-khis] [και|ké] [αυτοκίνητο|af-to-KI-ni-to];",
+          "id": "Keren! Kamu punya mobil juga?",
+          "literal": "sempurna! kamu-punya — juga — mobil?"
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Όχι|O-khi], [δεν|dhén] [έχω|É-kho] [αυτοκίνητο|af-to-KI-ni-to]. [Έχω|É-kho] [όμως|O-mos] [μια|mia] [μηχανή|mi-kha-NI]!",
+          "id": "Tidak, saya tidak punya mobil. Tapi saya punya motor!",
+          "literal": "tidak, tidak — saya-punya — mobil. saya-punya — namun — sebuah — motor!"
+        }
+      ],
+      "notes": [
+        "**Έχω adalah kata kerja golongan A biasa** — ekornya sama persis dengan μένω dari unit lalu: έχω, έχεις, έχει, έχουμε, έχετε, έχουν. Satu-satunya yang perlu diperhatikan adalah bunyi χ-nya, yang bukan h melainkan *kh* seperti pada *akhir*.",
+        "⚠️ **Umur memakai είμαι, bukan έχω.** *Είμαι είκοσι δύο* — \"saya adalah dua puluh dua\". Ini kebetulan sama dengan bahasa Indonesia (\"umur saya 22\") dan berbeda dari bahasa Prancis atau Spanyol yang memakai kata kerja \"punya\". Kalau kamu pernah belajar salah satu bahasa itu, hati-hati: *έχω είκοσι δύο* terdengar seperti kamu punya dua puluh dua ekor sesuatu.",
+        "**Πόσων χρονών είσαι;** harfiahnya \"dari berapa tahun kamu?\". Jawabannya boleh mengulang χρονών atau tidak: *Είμαι είκοσι δύο χρονών* atau cukup *Είκοσι δύο*. Yang kedua jauh lebih sering terdengar.",
+        "⚠️ **Angka satu, tiga, dan empat ikut jenis kelamin bendanya; sisanya tidak.** ένας αδερφός, μία αδερφή, ένα σπίτι. τρεις μέρες tapi τρία παιδιά. τέσσερις ώρες tapi τέσσερα ευρώ. Dua puluh dua sampai seratus tidak pernah berubah lagi — kecuali kalau berakhir dengan satu, tiga, atau empat: είκοσι **μία** ώρες.",
+        "**Έναν memakai -ν di akhir** karena kata berikutnya diawali vokal atau salah satu dari κ, π, τ, μπ, ντ, γκ, ξ, ψ: *έναν αδερφό*, *έναν καφέ*. Di depan huruf lain -ν sering luruh: *ένα φίλο*. ⚠️ Kalau ragu, tulis lengkap — tidak pernah dianggap salah, cuma sedikit lebih resmi.",
+        "**Δεν έχω αυτοκίνητο — tanpa sandang.** Ketika kamu menyatakan tidak punya sesuatu secara umum, kata bendanya berdiri telanjang. Bandingkan: *Δεν έχω **το** αυτοκίνητο* berarti \"mobil itu tidak ada padaku\", yaitu mobil tertentu yang sudah dibicarakan.",
+        "**Όμως (*O-mos*, \"namun\") ditaruh di tengah kalimat**, bukan di depan seperti αλλά. *Δεν έχω αυτοκίνητο. Έχω **όμως** μια μηχανή.* Dua kata ini bertukar tempat tapi artinya sama.",
+        "⚠️ **Έχω berarti \"punya\", bukan \"ada\".** Untuk \"ada\" dalam arti \"terdapat\", bahasa Yunani memakai **υπάρχει** (*i-PAR-khi*): *Υπάρχει μια τράπεζα εδώ κοντά;* — \"Ada bank di dekat sini?\". Jamaknya **υπάρχουν**. Menerjemahkan \"ada\" dengan έχω adalah kesalahan yang sangat khas pemula."
+      ],
+      "grammars": [
+        {
+          "title": "Έχω dan angka satu sampai dua puluh",
+          "body": [
+            "Έχω sudah dikuasai kalau kamu hafal ekor golongan A dari unit lalu. Yang benar-benar baru di sini adalah angkanya — dan tiga di antaranya menuntut perhatian."
+          ],
+          "table": {
+            "head": [
+              "Angka",
+              "Laki-laki",
+              "Perempuan",
+              "Netral"
+            ],
+            "rows": [
+              [
+                "1",
+                "**ένας** καφές",
+                "**μία / μια** μπύρα",
+                "**ένα** νερό"
+              ],
+              [
+                "2",
+                "**δύο** καφέδες",
+                "**δύο** μπύρες",
+                "**δύο** νερά"
+              ],
+              [
+                "3",
+                "**τρεις** καφέδες",
+                "**τρεις** μπύρες",
+                "**τρία** νερά"
+              ],
+              [
+                "4",
+                "**τέσσερις** καφέδες",
+                "**τέσσερις** μπύρες",
+                "**τέσσερα** νερά"
+              ],
+              [
+                "5–20",
+                "**πέντε, έξι…** — tak pernah berubah",
+                "sama",
+                "sama"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa **τρεις** dan **τέσσερις** dipakai untuk laki-laki **dan** perempuan sekaligus; hanya bentuk netralnya yang beda. Jadi yang benar-benar harus dihafal cuma dua pasang.",
+            "⚠️ **μία** dan **μια** dua-duanya benar. μία (*MI-a*, dua suku kata) sedikit lebih tegas dan dipakai saat kamu menghitung; μια (*mia*, satu suku kata) dipakai saat berarti \"sebuah\". Dalam percakapan biasa, μια menang telak."
+          ]
+        },
+        {
+          "title": "Nol sampai seratus",
+          "body": [
+            "Angka Yunani menyusun dirinya persis seperti angka Indonesia: puluhan dulu, lalu satuannya, tanpa kata penghubung. Είκοσι πέντε = dua puluh lima. Tidak ada kejutan sama sekali di sini."
+          ],
+          "table": {
+            "head": [
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": [
+              [
+                "0 μηδέν *mi-DHÉN*",
+                "1 ένα *É-na*",
+                "2 δύο *DHI-o*",
+                "3 τρία *TRI-a*"
+              ],
+              [
+                "4 τέσσερα *TÉ-sé-ra*",
+                "5 πέντε *PÉN-dé*",
+                "6 έξι *É-ksi*",
+                "7 εφτά *éf-TA*"
+              ],
+              [
+                "8 οχτώ *okh-TO*",
+                "9 εννιά *é-NIA*",
+                "10 δέκα *DHÉ-ka*",
+                "11 έντεκα *ÉN-dé-ka*"
+              ],
+              [
+                "12 δώδεκα *DHO-dhé-ka*",
+                "13 δεκατρία",
+                "14 δεκατέσσερα",
+                "15 δεκαπέντε"
+              ],
+              [
+                "16 δεκαέξι",
+                "17 δεκαεφτά",
+                "18 δεκαοχτώ",
+                "19 δεκαεννιά"
+              ],
+              [
+                "20 είκοσι *I-ko-si*",
+                "30 τριάντα *tri-AN-da*",
+                "40 σαράντα *sa-RAN-da*",
+                "50 πενήντα *pé-NIN-da*"
+              ],
+              [
+                "60 εξήντα *é-KSIN-da*",
+                "70 εβδομήντα",
+                "80 ογδόντα",
+                "90 ενενήντα"
+              ],
+              [
+                "100 εκατό *é-ka-TO*",
+                "21 είκοσι ένα",
+                "35 τριάντα πέντε",
+                "99 ενενήντα εννιά"
+              ]
+            ]
+          },
+          "after": [
+            "Angka sebelas sampai sembilan belas dibentuk dengan menempelkan δεκα- di depan: δεκα+τρία → δεκατρία. Satu-satunya yang keluar pola adalah έντεκα (11) dan δώδεκα (12), yang bentuknya sudah kuno.",
+            "⚠️ **εφτά / επτά, οχτώ / οκτώ, εννιά / εννέα** — dua-duanya dipakai. Bentuk pertama sehari-hari, bentuk kedua lebih resmi dan yang tertulis di tiket atau papan pengumuman. Kenali dua-duanya, ucapkan yang pertama."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Punya dan tidak punya",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Barang-barang yang paling sering disebut dalam kalimat berkata kerja έχω. Ingat: kata benda selalu bersama sandangnya waktu dihafal, meski dalam kalimat \"tidak punya\" sandangnya dibuang."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "ΕΛΛΗΝΙΚΑ",
+            "Baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "το διαμέρισμα",
+              "to dhi-a-MÉ-ri-sma",
+              "apartemen"
+            ],
+            [
+              "το αυτοκίνητο",
+              "to af-to-KI-ni-to",
+              "mobil"
+            ],
+            [
+              "η μηχανή",
+              "i mi-kha-NI",
+              "motor, mesin"
+            ],
+            [
+              "το ποδήλατο",
+              "to po-DHI-la-to",
+              "sepeda"
+            ],
+            [
+              "το κινητό",
+              "to ki-ni-TO",
+              "ponsel"
+            ],
+            [
+              "ο υπολογιστής",
+              "o i-po-lo-yi-STIS",
+              "komputer"
+            ],
+            [
+              "τα λεφτά",
+              "ta léf-TA",
+              "uang"
+            ],
+            [
+              "το κλειδί",
+              "to kli-DHI",
+              "kunci"
+            ],
+            [
+              "η δουλειά",
+              "i dhu-LIA",
+              "pekerjaan"
+            ],
+            [
+              "ο χρόνος",
+              "o KHRO-nos",
+              "waktu"
+            ],
+            [
+              "τα αδέρφια",
+              "ta a-DHÉR-fia",
+              "saudara-saudara"
+            ],
+            [
+              "το χωριό",
+              "to kho-RIO",
+              "kampung, desa"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Έχω, υπάρχει, dan kesalahan yang paling sering",
+          "items": [
+            "**Έχω** = punya, ada padaku. *Έχω δύο αδέρφια.* — Saya punya dua saudara.",
+            "**Υπάρχει / υπάρχουν** = ada, terdapat. *Υπάρχει τράπεζα εδώ κοντά;* — Ada bank di dekat sini? *Υπάρχουν πολλά μαγαζιά.* — Ada banyak toko.",
+            "⚠️ Karena bahasa Indonesia memakai kata **ada** untuk dua-duanya, godaannya besar sekali untuk mengatakan *Έχει τράπεζα εδώ;*. Menariknya, kalimat itu **memang** terdengar di jalanan Yunani sebagai bahasa lisan yang sangat santai — tapi di ujian, di surat, dan di depan orang yang belum kamu kenal, pakailah υπάρχει.",
+            "Untuk \"tidak ada\": **Δεν υπάρχει πρόβλημα** — tidak ada masalah. Kalimat ini akan menyelamatkanmu berkali-kali."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "el": "έχω",
+      "baca": "É-kho",
+      "id": "punya"
+    },
+    {
+      "el": "δεν έχω",
+      "baca": "dhén É-kho",
+      "id": "tidak punya"
+    },
+    {
+      "el": "υπάρχει / υπάρχουν",
+      "baca": "i-PAR-khi / i-PAR-khun",
+      "id": "ada, terdapat"
+    },
+    {
+      "el": "τα αδέρφια",
+      "baca": "ta a-DHÉR-fia",
+      "id": "saudara-saudara"
+    },
+    {
+      "el": "ο αδερφός / η αδερφή",
+      "baca": "o a-dhér-FOS / i a-dhér-FI",
+      "id": "saudara laki-laki / perempuan"
+    },
+    {
+      "el": "πόσων χρονών;",
+      "baca": "PO-son khro-NON",
+      "id": "umur berapa?"
+    },
+    {
+      "el": "ένας, μία, ένα",
+      "baca": "É-nas, MI-a, É-na",
+      "id": "satu (lk, pr, nt)"
+    },
+    {
+      "el": "δύο",
+      "baca": "DHI-o",
+      "id": "dua"
+    },
+    {
+      "el": "τρεις / τρία",
+      "baca": "tris / TRI-a",
+      "id": "tiga (lk-pr / nt)"
+    },
+    {
+      "el": "τέσσερις / τέσσερα",
+      "baca": "TÉ-sé-ris / TÉ-sé-ra",
+      "id": "empat (lk-pr / nt)"
+    },
+    {
+      "el": "πέντε, έξι, εφτά",
+      "baca": "PÉN-dé, É-ksi, éf-TA",
+      "id": "lima, enam, tujuh"
+    },
+    {
+      "el": "οχτώ, εννιά, δέκα",
+      "baca": "okh-TO, é-NIA, DHÉ-ka",
+      "id": "delapan, sembilan, sepuluh"
+    },
+    {
+      "el": "είκοσι",
+      "baca": "I-ko-si",
+      "id": "dua puluh"
+    },
+    {
+      "el": "εκατό",
+      "baca": "é-ka-TO",
+      "id": "seratus"
+    },
+    {
+      "el": "το διαμέρισμα",
+      "baca": "to dhi-a-MÉ-ri-sma",
+      "id": "apartemen"
+    },
+    {
+      "el": "το αυτοκίνητο",
+      "baca": "to af-to-KI-ni-to",
+      "id": "mobil"
+    },
+    {
+      "el": "η μηχανή",
+      "baca": "i mi-kha-NI",
+      "id": "motor, mesin"
+    },
+    {
+      "el": "το κινητό",
+      "baca": "to ki-ni-TO",
+      "id": "ponsel"
+    },
+    {
+      "el": "τα λεφτά",
+      "baca": "ta léf-TA",
+      "id": "uang"
+    },
+    {
+      "el": "το χωριό",
+      "baca": "to kho-RIO",
+      "id": "kampung, desa"
+    },
+    {
+      "el": "μόνο",
+      "baca": "MO-no",
+      "id": "hanya"
+    },
+    {
+      "el": "όμως",
+      "baca": "O-mos",
+      "id": "namun (di tengah kalimat)"
+    },
+    {
+      "el": "ο χρόνος",
+      "baca": "o KHRO-nos",
+      "id": "waktu, tahun"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih ένας, μία, atau ένα.",
+      "items": [
+        "Έχω ____ αδερφή.",
+        "Θέλω ____ καφέ.",
+        "Έχουμε ____ σπίτι στο χωριό.",
+        "Υπάρχει ____ τράπεζα εδώ;",
+        "Είναι ____ μεγάλο πρόβλημα."
+      ]
+    },
+    {
+      "prompt": "Pasang ekor έχω yang tepat.",
+      "items": [
+        "Εγώ ____ δύο αδέρφια.",
+        "Εσύ ____ αυτοκίνητο;",
+        "Η Ελένη ____ μια μηχανή.",
+        "Εμείς ____ ένα διαμέρισμα.",
+        "Αυτοί δεν ____ λεφτά."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "χρονών / πόσων / είσαι",
+        "δύο / έχω / αδέρφια",
+        "αυτοκίνητο / δεν / έχω",
+        "μία / έχω / αδερφή / μόνο",
+        "τράπεζα / υπάρχει / εδώ / ;"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Yunani.",
+      "items": [
+        "Saya punya satu adik perempuan.",
+        "Umur saya dua puluh dua.",
+        "Kami tidak punya mobil.",
+        "Ada toko di dekat sini?",
+        "Dia punya tiga anak."
+      ]
+    }
+  ],
+  "answers": [
+    "μία — έναν — ένα — μία — ένα",
+    "έχω — έχεις — έχει — έχουμε — έχουν",
+    "Πόσων χρονών είσαι; — Έχω δύο αδέρφια. — Δεν έχω αυτοκίνητο. — Έχω μόνο μία αδερφή. — Υπάρχει τράπεζα εδώ;",
+    "Έχω μία αδερφή. — Είμαι είκοσι δύο. — Δεν έχουμε αυτοκίνητο. — Υπάρχει μαγαζί εδώ κοντά; — Έχει τρία παιδιά."
+  ]
+}

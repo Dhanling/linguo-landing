@@ -1,0 +1,490 @@
+{
+  "title": "Kepala saya sakit",
+  "title_target": "Με πονάει το κεφάλι — Me po-na-i to ke-fa-li",
+  "goal": "Menjelaskan keluhan badan di apotek atau di klinik — memakai susunan yang, sekali lagi, menjadikan bagian tubuhmu sebagai pelaku dan dirimu sebagai sasaran.",
+  "bekal": [
+    "menyebut bagian tubuh",
+    "memakai με πονάει dan πονάει το … μου",
+    "menyebut gejala: demam, batuk, masuk angin",
+    "meminta obat di apotek",
+    "mendoakan kesembuhan orang"
+  ],
+  "dialogs": [
+    {
+      "title": "ΔΙΑΛΟΓΟΣ — Di ΦΑΡΜΑΚΕΙΟ",
+      "intro": "Apotek Yunani ditandai salib hijau menyala dan apotekernya boleh memberi banyak obat tanpa resep — mereka adalah tempat pertama orang Yunani datang saat sakit ringan. Ana masuk pagi-pagi.",
+      "lines": [
+        {
+          "speaker": "Φαρμακοποιός:",
+          "text": "[Καλημέρα|Ka-li-MÉ-ra]! [Τι|Ti] [κάνετε|KA-né-té];",
+          "id": "Selamat pagi! Apa kabar?",
+          "literal": "pagi-baik! apa — Anda-melakukan?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Δεν|Dhén] [είμαι|I-mé] [πολύ|po-LI] [καλά|ka-LA]. [Με|Mé] [πονάει|po-NA-i] [το|to] [κεφάλι|ké-FA-li] [μου|mu].",
+          "id": "Kurang enak badan. Kepala saya sakit.",
+          "literal": "tidak — saya-adalah — sangat — baik. saya (objek) — ia-menyakiti — (sandang) — kepala — saya."
+        },
+        {
+          "speaker": "Φαρμακοποιός:",
+          "text": "[Έχετε|É-khé-té] [πυρετό|pi-ré-TO];",
+          "id": "Ada demam?",
+          "literal": "Anda-punya — demam?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Λίγο|LI-gho]. [Και|Ké] [με|mé] [πονάει|po-NA-i] [ο|o] [λαιμός|lé-MOS] [μου|mu].",
+          "id": "Sedikit. Dan tenggorokan saya sakit.",
+          "literal": "sedikit. dan — saya (objek) — ia-menyakiti — (sandang) — tenggorokan — saya."
+        },
+        {
+          "speaker": "Φαρμακοποιός:",
+          "text": "[Πόσες|PO-sés] [μέρες|MÉ-rés] [είστε|I-sté] [έτσι|É-tsi];",
+          "id": "Sudah berapa hari begini?",
+          "literal": "berapa (jamak pr) — hari-hari — Anda-adalah — begini?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Δύο|DHI-o] [μέρες|MÉ-rés]. [Δεν|Dhén] [κοιμάμαι|ki-MA-mé] [καλά|ka-LA].",
+          "id": "Dua hari. Saya tidak bisa tidur nyenyak.",
+          "literal": "dua — hari-hari. tidak — saya-tidur — baik."
+        },
+        {
+          "speaker": "Φαρμακοποιός:",
+          "text": "[Πάρτε|PAR-té] [αυτά|af-TA] [τα|ta] [χάπια|KHA-pia], [δύο|dhi-o] [φορές|fo-RÉS] [τη|ti] [μέρα|MÉ-ra], [μετά|mé-TA] [το|to] [φαγητό|fa-yi-TO].",
+          "id": "Minum obat ini, dua kali sehari, sesudah makan.",
+          "literal": "ambillah — ini (jamak nt) — (sandang) — pil-pil, dua — kali — (sandang) — hari, sesudah — (sandang) — makanan."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Χρειάζομαι|Khri-A-zo-mé] [συνταγή|sin-da-YI];",
+          "id": "Perlu resep?",
+          "literal": "saya-membutuhkan — resep?"
+        },
+        {
+          "speaker": "Φαρμακοποιός:",
+          "text": "[Όχι|O-khi]. [Και|Ké] [πιείτε|PI-i-té] [πολύ|po-LI] [νερό|né-RO]. [Αν|An] [συνεχίσει|si-né-KHI-si], [πηγαίνετε|pi-YÉ-né-té] [στον|ston] [γιατρό|ya-TRO].",
+          "id": "Tidak. Dan minum air yang banyak. Kalau berlanjut, ke dokter ya.",
+          "literal": "tidak. dan — minumlah — banyak — air. kalau — ia-berlanjut, pergilah — ke-(sandang) — dokter."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ευχαριστώ|Éf-kha-ri-STO]. [Πόσο|PO-so] [κάνουν|KA-nun];",
+          "id": "Terima kasih. Berapa harganya?",
+          "literal": "saya-berterima-kasih. berapa — mereka-membuat?"
+        },
+        {
+          "speaker": "Φαρμακοποιός:",
+          "text": "[Πέντε|PÉN-dé] [ευρώ|év-RO]. [Περαστικά|Pé-ra-sti-KA]!",
+          "id": "Lima euro. Semoga cepat sembuh!",
+          "literal": "lima — euro. semoga-berlalu!"
+        }
+      ],
+      "notes": [
+        "⚠️ **\"Saya sakit kepala\" dalam bahasa Yunani berbunyi \"kepala menyakiti saya\".** *Με πονάει το κεφάλι μου.* Bagian tubuhnya jadi **pelaku**, kamu jadi **sasaran**. Ini susunan yang sama dengan μου αρέσει dari unit lalu — dan begitu kamu melihat polanya berulang, ia berhenti terasa aneh.",
+        "**Ada dua cara yang sama benarnya**: *Με πονάει το κεφάλι* dan *Πονάει το κεφάλι μου*. Yang pertama memakai **με** (saya sebagai sasaran), yang kedua memakai **μου** (kepala milik saya). Dalam percakapan, keduanya sering digabung: *Με πονάει το κεφάλι μου* — teknis berlebihan, tapi itu yang benar-benar diucapkan orang.",
+        "⚠️ **Πονάει untuk satu bagian, πονάνε untuk banyak bagian.** *Με πονάει το πόδι μου* (kaki saya sakit) tapi *Με πονάνε τα πόδια μου* (kaki-kaki saya sakit). Kata kerja ikut bagian tubuhnya, bukan ikut kamu.",
+        "**Έχω dipakai untuk gejala yang bisa \"dimiliki\"**: έχω πυρετό (demam), έχω βήχα (batuk), έχω γρίπη (flu), έχω αλλεργία (alergi). Sedangkan yang berupa nyeri memakai πονάει. ⚠️ Membedakan keduanya lebih mudah daripada kelihatannya: kalau bahasa Indonesia bilang \"sakit\", pakai πονάει; kalau bilang \"kena\" atau \"ada\", pakai έχω.",
+        "**Είμαι άρρωστος / άρρωστη** = \"saya sakit\", pernyataan umum. Ekornya ikut jenis kelaminmu sendiri: laki-laki **άρρωστος**, perempuan **άρρωστη**. Begitu juga *κουρασμένος / κουρασμένη*.",
+        "**Πάρτε, πιείτε, πηγαίνετε adalah bentuk perintah hormat** — persis bentuk εσείς dengan nada memerintah, dan itulah yang dipakai apoteker, dokter, dan petugas. Bentuk santainya membuang -τε: *πάρε*, *πιες*, *πήγαινε*. ⚠️ Bentuk perintah dalam bahasa Yunani tidak terdengar kasar sama sekali; ia bentuk baku untuk memberi saran dan petunjuk.",
+        "**Περαστικά!** (*pé-ra-sti-KA*) harfiahnya \"semoga ini berlalu\" dan diucapkan kepada siapa pun yang sedang sakit — oleh apoteker, tetangga, sopir taksi, siapa saja. Ini salah satu kata yang paling menghangatkan yang bisa kamu berikan. Balasannya cukup **Ευχαριστώ**.",
+        "**Χρειάζομαι** (*khri-A-zo-mé*, \"saya butuh\") berekor -ομαι tapi artinya sepenuhnya biasa — pengingat lagi bahwa golongan itu bukan bentuk pasif. *Χρειάζομαι βοήθεια.* — Saya butuh bantuan."
+      ],
+      "grammars": [
+        {
+          "title": "Menyatakan nyeri",
+          "body": [
+            "Tiga pola, dan ketiganya akan kamu dengar. Pilih satu untuk dipakai sendiri, kenali dua lainnya."
+          ],
+          "table": {
+            "head": [
+              "Yunani",
+              "Baca",
+              "Arti",
+              "Harfiah"
+            ],
+            "rows": [
+              [
+                "Με πονάει το κεφάλι.",
+                "mé po-NA-i",
+                "Kepala saya sakit.",
+                "saya menyakiti si-kepala"
+              ],
+              [
+                "Πονάει το κεφάλι μου.",
+                "po-NA-i",
+                "Kepala saya sakit.",
+                "menyakiti si-kepala saya"
+              ],
+              [
+                "Με πονάνε τα πόδια μου.",
+                "po-NA-né",
+                "Kaki saya sakit.",
+                "saya menyakiti si-kaki-kaki saya"
+              ],
+              [
+                "Σε πονάει;",
+                "sé po-NA-i",
+                "Sakit?",
+                "kamu ia-menyakiti?"
+              ],
+              [
+                "Πού πονάτε;",
+                "pu po-NA-té",
+                "Sakitnya di mana?",
+                "di-mana Anda-merasa-sakit?"
+              ],
+              [
+                "Δεν με πονάει τίποτα.",
+                "",
+                "Tidak ada yang sakit.",
+                "tidak saya menyakiti apa-apa"
+              ]
+            ]
+          },
+          "after": [
+            "**Kata kecilnya sama dengan yang kamu pakai di unit 17**, cuma bentuknya sasaran biasa: **με, σε, τον/την, μας, σας, τους**. *Τον πονάει το στομάχι του.* — Perutnya sakit.",
+            "⚠️ **Πονάω juga bisa dipakai tanpa objek** dan berarti \"saya kesakitan\" secara umum: *Πονάω πολύ.* Kalimat pendek yang berguna kalau kamu tidak sempat menjelaskan letaknya."
+          ]
+        },
+        {
+          "title": "Gejala dan permintaan di apotek",
+          "body": [
+            "Dua kata kerja pembuka — έχω dan χρειάζομαι — menutup hampir semua kebutuhan."
+          ],
+          "table": {
+            "head": [
+              "Yunani",
+              "Baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "Είμαι άρρωστος / άρρωστη.",
+                "A-ro-stos / A-ro-sti",
+                "Saya sakit."
+              ],
+              [
+                "Έχω πυρετό.",
+                "pi-ré-TO",
+                "Saya demam."
+              ],
+              [
+                "Έχω βήχα.",
+                "VI-kha",
+                "Saya batuk."
+              ],
+              [
+                "Έχω κρυώσει.",
+                "kri-O-si",
+                "Saya masuk angin."
+              ],
+              [
+                "Έχω αλλεργία σε …",
+                "a-lér-YI-a",
+                "Saya alergi …"
+              ],
+              [
+                "Δεν κοιμάμαι καλά.",
+                "",
+                "Saya sulit tidur."
+              ],
+              [
+                "Χρειάζομαι κάτι για …",
+                "khri-A-zo-mé",
+                "Saya butuh sesuatu untuk …"
+              ],
+              [
+                "Χρειάζομαι συνταγή;",
+                "sin-da-YI",
+                "Perlu resep?"
+              ],
+              [
+                "Πόσες φορές τη μέρα;",
+                "PO-sés fo-RÉS",
+                "Berapa kali sehari?"
+              ],
+              [
+                "Πριν ή μετά το φαγητό;",
+                "",
+                "Sebelum atau sesudah makan?"
+              ]
+            ]
+          },
+          "after": [
+            "**Nomor darurat di Yunani: 112** untuk segalanya, **166** untuk ambulans. Kalimat yang harus keluar tanpa berpikir: **Χρειάζομαι γιατρό!** (butuh dokter) dan **Βοήθεια!** (*vo-I-thia*, tolong!).",
+            "⚠️ **Apotek Yunani buka bergilir.** Yang tutup memasang daftar **εφημερεύοντα φαρμακεία** — apotek yang berjaga malam itu — di pintunya. Cari kata itu kalau kamu perlu obat tengah malam."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bagian tubuh",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tunggal",
+            "Jamak",
+            "Baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "το κεφάλι",
+              "τα κεφάλια",
+              "ké-FA-li",
+              "kepala"
+            ],
+            [
+              "το μάτι",
+              "τα μάτια",
+              "MA-ti",
+              "mata"
+            ],
+            [
+              "το αυτί",
+              "τα αυτιά",
+              "af-TI",
+              "telinga"
+            ],
+            [
+              "η μύτη",
+              "οι μύτες",
+              "MI-ti",
+              "hidung"
+            ],
+            [
+              "το στόμα",
+              "τα στόματα",
+              "STO-ma",
+              "mulut"
+            ],
+            [
+              "το δόντι",
+              "τα δόντια",
+              "DHON-di",
+              "gigi"
+            ],
+            [
+              "ο λαιμός",
+              "οι λαιμοί",
+              "lé-MOS",
+              "tenggorokan, leher"
+            ],
+            [
+              "το χέρι",
+              "τα χέρια",
+              "KHÉ-ri",
+              "tangan, lengan"
+            ],
+            [
+              "το πόδι",
+              "τα πόδια",
+              "PO-dhi",
+              "kaki"
+            ],
+            [
+              "η πλάτη",
+              "οι πλάτες",
+              "PLA-ti",
+              "punggung"
+            ],
+            [
+              "το στομάχι",
+              "τα στομάχια",
+              "sto-MA-khi",
+              "perut"
+            ],
+            [
+              "η καρδιά",
+              "οι καρδιές",
+              "kar-DHIA",
+              "jantung, hati"
+            ],
+            [
+              "το σώμα",
+              "τα σώματα",
+              "SO-ma",
+              "badan"
+            ],
+            [
+              "το δάχτυλο",
+              "τα δάχτυλα",
+              "DHAKH-ti-lo",
+              "jari"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Bagian tubuh yang sudah kamu kenal dari bahasa Indonesia",
+          "items": [
+            "**η καρδιά** jantung → *kardiologi*, *kardiovaskular*. **το στομάχι** perut → *stomatitis* lewat στόμα (mulut). **το δέρμα** kulit → *dermatologi*. **το αίμα** darah → *anemia*, *hemoglobin*.",
+            "**ο εγκέφαλος** otak → *ensefalitis*. **ο οφθαλμός** mata (istilah medis) → *oftalmologi*. **το οστό** tulang → *osteoporosis*. **ο πνεύμονας** paru → *pneumonia*.",
+            "⚠️ Bahasa Yunani sehari-hari memakai kata yang **berbeda** dari istilah medisnya: orang bilang *μάτι* bukan *οφθαλμός*, *καρδιά* bukan *καρδία*. Jadi kata serapan Indonesia justru mengajarkanmu lajur yang formal — berguna di rumah sakit, tapi tidak di percakapan.",
+            "**Περαστικά!** dan **Σιδερένιος!** (*si-dhé-RÉ-nios*, \"jadilah sekuat besi\") dua-duanya berarti semoga cepat sembuh. Yang kedua dipakai untuk orang yang habis dioperasi atau kecelakaan."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "el": "με πονάει",
+      "baca": "mé po-NA-i",
+      "id": "… saya sakit"
+    },
+    {
+      "el": "πονάω",
+      "baca": "po-NA-o",
+      "id": "sakit, kesakitan"
+    },
+    {
+      "el": "άρρωστος, -η",
+      "baca": "A-ro-stos",
+      "id": "sakit (kata sifat)"
+    },
+    {
+      "el": "ο πυρετός",
+      "baca": "o pi-ré-TOS",
+      "id": "demam"
+    },
+    {
+      "el": "ο βήχας",
+      "baca": "o VI-khas",
+      "id": "batuk"
+    },
+    {
+      "el": "κρυώνω / έχω κρυώσει",
+      "baca": "kri-O-no",
+      "id": "kedinginan / masuk angin"
+    },
+    {
+      "el": "το φαρμακείο",
+      "baca": "to far-ma-KI-o",
+      "id": "apotek"
+    },
+    {
+      "el": "το φάρμακο",
+      "baca": "to FAR-ma-ko",
+      "id": "obat"
+    },
+    {
+      "el": "το χάπι",
+      "baca": "to KHA-pi",
+      "id": "pil"
+    },
+    {
+      "el": "η συνταγή",
+      "baca": "i sin-da-YI",
+      "id": "resep"
+    },
+    {
+      "el": "ο γιατρός",
+      "baca": "o ya-TROS",
+      "id": "dokter"
+    },
+    {
+      "el": "χρειάζομαι",
+      "baca": "khri-A-zo-mé",
+      "id": "membutuhkan"
+    },
+    {
+      "el": "η βοήθεια",
+      "baca": "i vo-I-thia",
+      "id": "bantuan"
+    },
+    {
+      "el": "το κεφάλι",
+      "baca": "to ké-FA-li",
+      "id": "kepala"
+    },
+    {
+      "el": "ο λαιμός",
+      "baca": "o lé-MOS",
+      "id": "tenggorokan"
+    },
+    {
+      "el": "το στομάχι",
+      "baca": "to sto-MA-khi",
+      "id": "perut"
+    },
+    {
+      "el": "το πόδι / το χέρι",
+      "baca": "to PO-dhi / to KHÉ-ri",
+      "id": "kaki / tangan"
+    },
+    {
+      "el": "το μάτι / το αυτί",
+      "baca": "to MA-ti / to af-TI",
+      "id": "mata / telinga"
+    },
+    {
+      "el": "η φορά",
+      "baca": "i fo-RA",
+      "id": "kali"
+    },
+    {
+      "el": "αν",
+      "baca": "an",
+      "id": "kalau, jika"
+    },
+    {
+      "el": "περαστικά!",
+      "baca": "pé-ra-sti-KA",
+      "id": "semoga cepat sembuh"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih πονάει atau πονάνε.",
+      "items": [
+        "Με ____ το κεφάλι.",
+        "Με ____ τα πόδια.",
+        "Τον ____ το δόντι του.",
+        "Με ____ τα μάτια μου.",
+        "Σε ____ ο λαιμός;"
+      ]
+    },
+    {
+      "prompt": "Isi dengan έχω atau με πονάει.",
+      "items": [
+        "____ πυρετό.",
+        "____ το στομάχι.",
+        "____ βήχα.",
+        "____ ο λαιμός.",
+        "____ αλλεργία."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "κεφάλι / με / πονάει / το",
+        "πυρετό / έχω / λίγο",
+        "συνταγή / χρειάζομαι / ;",
+        "μέρα / φορές / τη / δύο",
+        "γιατρό / χρειάζομαι"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Yunani.",
+      "items": [
+        "Kepala saya sakit.",
+        "Saya demam sedikit.",
+        "Saya butuh obat.",
+        "Dua kali sehari, sesudah makan.",
+        "Semoga cepat sembuh!"
+      ]
+    }
+  ],
+  "answers": [
+    "πονάει — πονάνε — πονάει — πονάνε — πονάει",
+    "Έχω — Με πονάει — Έχω — Με πονάει — Έχω",
+    "Με πονάει το κεφάλι. — Έχω λίγο πυρετό. — Χρειάζομαι συνταγή; — Δύο φορές τη μέρα. — Χρειάζομαι γιατρό.",
+    "Με πονάει το κεφάλι μου. — Έχω λίγο πυρετό. — Χρειάζομαι ένα φάρμακο. — Δύο φορές τη μέρα, μετά το φαγητό. — Περαστικά!"
+  ]
+}

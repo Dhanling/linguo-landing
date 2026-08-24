@@ -1,0 +1,508 @@
+{
+  "title": "Berapa harganya?",
+  "title_target": "Πόσο κάνει; — Po-so ka-ni;",
+  "goal": "Berbelanja di pasar mingguan, menanyakan harga, memakai bentuk jamak, dan menghitung sampai seribu.",
+  "bekal": [
+    "membentuk jamak untuk ketiga jenis kelamin",
+    "membedakan Πόσο κάνει dari Πόσο κάνουν",
+    "menyebut harga per kilo dan meminta kembalian",
+    "menghitung dari seratus sampai seribu",
+    "menyebut buah dan sayur yang paling sering"
+  ],
+  "dialogs": [
+    {
+      "title": "ΔΙΑΛΟΓΟΣ — Di ΛΑΪΚΗ, pasar mingguan",
+      "intro": "Tiap kampung di Athena punya λαϊκή αγορά sekali seminggu: satu jalan penuh meja buah dan sayur, jauh lebih murah daripada supermarket. Ana pergi ke sana Selasa pagi. Perhatikan bahwa kata kerja ikut berubah begitu bendanya jamak.",
+      "lines": [
+        {
+          "speaker": "Πωλητής:",
+          "text": "[Ελάτε|É-LA-té], [ελάτε|é-LA-té]! [Φρέσκες|FRÉ-skés] [ντομάτες|do-MA-tés]!",
+          "id": "Mari, mari! Tomat segar!",
+          "literal": "datanglah, datanglah! segar (jamak pr) — tomat-tomat!"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Καλημέρα|Ka-li-MÉ-ra]. [Πόσο|PO-so] [κάνουν|KA-nun] [οι|i] [ντομάτες|do-MA-tés];",
+          "id": "Selamat pagi. Tomatnya berapa?",
+          "literal": "selamat-pagi. berapa — mereka-membuat — (sandang jamak) — tomat-tomat?"
+        },
+        {
+          "speaker": "Πωλητής:",
+          "text": "[Δύο|DHI-o] [ευρώ|év-RO] [το|to] [κιλό|ki-LO]. [Πόσα|PO-sa] [θέλετε|THÉ-lé-té];",
+          "id": "Dua euro sekilo. Mau berapa?",
+          "literal": "dua — euro — (sandang) — kilo. berapa (jamak nt) — kalian-mau?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ένα|É-na] [κιλό|ki-LO], [παρακαλώ|pa-ra-ka-LO]. [Και|Ké] [τα|ta] [πορτοκάλια|por-to-KA-lia];",
+          "id": "Satu kilo, tolong. Kalau jeruknya?",
+          "literal": "satu — kilo, tolong. dan — (sandang jamak nt) — jeruk-jeruk?"
+        },
+        {
+          "speaker": "Πωλητής:",
+          "text": "[Ενάμισι|É-NA-mi-si] [ευρώ|év-RO] [το|to] [κιλό|ki-LO]. [Είναι|I-né] [από|a-PO] [την|tin] [Κρήτη|KRI-ti].",
+          "id": "Satu setengah euro sekilo. Dari Kreta.",
+          "literal": "satu-setengah — euro — (sandang) — kilo. mereka-adalah — dari — (sandang) — Kreta."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Δύο|DHI-o] [κιλά|ki-LA] [τότε|TO-té]. [Πόσο|PO-so] [κάνουν|KA-nun] [όλα|O-la] [μαζί|ma-ZI];",
+          "id": "Dua kilo kalau begitu. Semuanya jadi berapa?",
+          "literal": "dua — kilo-kilo — kalau-begitu. berapa — mereka-membuat — semua — bersama?"
+        },
+        {
+          "speaker": "Πωλητής:",
+          "text": "[Πέντε|PÉN-dé] [ευρώ|év-RO] [ακριβώς|a-kri-VOS].",
+          "id": "Lima euro pas.",
+          "literal": "lima — euro — tepat."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ορίστε|O-RI-sté] [δέκα|DHÉ-ka].",
+          "id": "Ini sepuluh.",
+          "literal": "silakan — sepuluh."
+        },
+        {
+          "speaker": "Πωλητής:",
+          "text": "[Και|Ké] [πέντε|PÉN-dé] [ρέστα|RÉ-sta]. [Ευχαριστώ|Éf-kha-ri-STO], [κοπέλα|ko-PÉ-la] [μου|mu]!",
+          "id": "Dan lima kembaliannya. Terima kasih, Nak!",
+          "literal": "dan — lima — kembalian. saya-berterima-kasih, gadis — saya!"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Είναι|I-né] [πολύ|po-LI] [φθηνά|fthi-NA] [εδώ|é-DHO]!",
+          "id": "Murah sekali di sini!",
+          "literal": "mereka-adalah — sangat — murah (jamak nt) — di-sini!"
+        },
+        {
+          "speaker": "Πωλητής:",
+          "text": "[Στη|Sti] [λαϊκή|la-i-KI] [πάντα|PAN-da]! [Καλή|Ka-LI] [σας|sas] [μέρα|MÉ-ra]!",
+          "id": "Di pasar selalu begitu! Selamat siang!",
+          "literal": "di-(sandang) — pasar-rakyat — selalu! baik — kepada-Anda — hari!"
+        }
+      ],
+      "notes": [
+        "⚠️ **Πόσο κάνει; untuk satu barang, Πόσο κάνουν; untuk banyak barang.** Kata kerjanya ikut jamak, persis seperti kata bendanya. Ini kebiasaan yang sama sekali tidak ada dalam bahasa Indonesia, dan mengucapkan *Πόσο κάνει οι ντομάτες;* langsung terdengar salah bagi telinga Yunani.",
+        "**Harga per satuan memakai kata sandang, bukan kata \"per\".** *Δύο ευρώ **το** κιλό* — harfiahnya \"dua euro si kilo\". Begitu juga *πέντε ευρώ το άτομο* (lima euro per orang), *δέκα ευρώ η ώρα* (sepuluh euro per jam).",
+        "**Ενάμισι = 1,5.** Ia gabungan ένα + μισό dan ikut jenis kelamin: **ενάμισι** κιλό (netral), **ενάμισης** μήνας (laki-laki), **μιάμιση** ώρα (perempuan). Tiga bentuk ini sering terdengar dan jarang diajarkan.",
+        "**Ρέστα (*RÉ-sta*) = kembalian**, selalu jamak netral. *Κρατήστε τα ρέστα* berarti \"ambil saja kembaliannya\" — kalimat yang di Yunani dipakai untuk taksi, bukan untuk restoran, karena di restoran uang tip ditinggalkan di meja.",
+        "**Κοπέλα μου, παιδί μου, αγόρι μου** — \"nak\", \"anakku\", \"nak laki-laki\" — dipakai penjual, sopir taksi, dan tetangga kepada orang yang lebih muda. ⚠️ Ini **bukan** genit dan bukan merendahkan; ia sepenuhnya sepupu dari \"Mbak\", \"Dik\", dan \"Nak\" dalam bahasa Indonesia. Menanggapinya dengan kaku justru terasa aneh.",
+        "**Φρέσκος berubah jadi φρέσκες untuk jamak perempuan** dan **φρέσκα** untuk jamak netral. Kata sifat ikut jamak sama seperti ia ikut jenis kelamin — tidak ada tambahan aturan baru, cuma tabel yang sedikit lebih lebar.",
+        "**Λαϊκή αγορά harfiahnya \"pasar rakyat\"**, dari λαός (rakyat) — kata yang sama yang melahirkan *laity* dan *layman* dalam bahasa Inggris. Tiap kampung punya harinya sendiri, dan harga di jam terakhir sebelum tutup bisa turun setengah.",
+        "**Ακριβώς berarti \"tepat, persis\"** — dan ⚠️ jangan tertukar dengan **ακριβός** yang berarti \"mahal\". Bedanya cuma letak tekanan dan satu huruf: *a-kri-VOS* untuk dua-duanya, tapi ejaan dan penggunaannya berbeda. Konteks selalu menyelamatkan."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk jamak: delapan pola, semuanya bisa ditebak",
+          "body": [
+            "Kalau kamu tahu ekor tunggalnya, kamu tahu ekor jamaknya. Tidak ada bentuk jamak tak beraturan yang perlu dihafal di tingkat A1."
+          ],
+          "table": {
+            "head": [
+              "Jenis",
+              "Tunggal",
+              "Jamak",
+              "Contoh lain"
+            ],
+            "rows": [
+              [
+                "lk -ος",
+                "ο φίλ**ος**",
+                "**οι** φίλ**οι**",
+                "δρόμος → δρόμοι"
+              ],
+              [
+                "lk -ας",
+                "ο άντρ**ας**",
+                "**οι** άντρ**ες**",
+                "μήνας → μήνες"
+              ],
+              [
+                "lk -ης",
+                "ο μαθητ**ής**",
+                "**οι** μαθητ**ές**",
+                "πωλητής → πωλητές"
+              ],
+              [
+                "pr -α",
+                "η ντομάτ**α**",
+                "**οι** ντομάτ**ες**",
+                "ώρα → ώρες"
+              ],
+              [
+                "pr -η",
+                "η πόλ**η**",
+                "**οι** πόλ**εις** ⚠️",
+                "δύναμη → δυνάμεις"
+              ],
+              [
+                "nt -ο",
+                "το βιβλί**ο**",
+                "**τα** βιβλί**α**",
+                "αυτοκίνητο → αυτοκίνητα"
+              ],
+              [
+                "nt -ι",
+                "το σπίτ**ι**",
+                "**τα** σπίτ**ια**",
+                "παιδί → παιδιά"
+              ],
+              [
+                "nt -μα",
+                "το πρόβλη**μα**",
+                "**τα** προβλή**ματα**",
+                "όνομα → ονόματα"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Baris **pr -η** adalah satu-satunya yang benar-benar mengejutkan: η πόλη → **οι πόλεις**, bukan *οι πόλες*. Golongan ini kecil tapi berisi kata yang sering dipakai: πόλη (kota), λέξη (kata), τάξη (kelas), σκέψη (pikiran), δύναμη (kekuatan). Hafalkan lima kata itu dan sisanya bisa menunggu.",
+            "Kata sandang jamaknya cuma tiga: **οι** untuk laki-laki dan perempuan, **τα** untuk netral. Dalam bentuk sasaran: **τους / τις / τα**."
+          ]
+        },
+        {
+          "title": "Seratus sampai seribu",
+          "body": [
+            "Ratusan dibentuk dari angka satuan ditambah -κόσια. Satu-satunya yang perlu diperhatikan adalah bahwa ratusan **ikut jenis kelamin**, tidak seperti angka belasan dan puluhan."
+          ],
+          "table": {
+            "head": [
+              "Angka",
+              "Netral (bentuk dasar)",
+              "Perempuan",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "100",
+                "εκατό *é-ka-TO*",
+                "εκατό",
+                "εκατό ευρώ"
+              ],
+              [
+                "200",
+                "διακόσια *dhia-KO-sia*",
+                "διακόσιες",
+                "διακόσιες μέρες"
+              ],
+              [
+                "300",
+                "τριακόσια",
+                "τριακόσιες",
+                "τριακόσια ευρώ"
+              ],
+              [
+                "400",
+                "τετρακόσια",
+                "τετρακόσιες",
+                ""
+              ],
+              [
+                "500",
+                "πεντακόσια",
+                "πεντακόσιες",
+                ""
+              ],
+              [
+                "600–900",
+                "εξακόσια, εφτακόσια, οχτακόσια, εννιακόσια",
+                "…κόσιες",
+                ""
+              ],
+              [
+                "1000",
+                "χίλια *KHI-lia*",
+                "χίλιες",
+                "χίλια ευρώ"
+              ],
+              [
+                "2000",
+                "δύο χιλιάδες *khi-LIA-dhés*",
+                "",
+                "δύο χιλιάδες ευρώ"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **101 bukan εκατό ένα melainkan εκατόν ένα** — εκατό menumbuhkan -ν begitu diikuti angka lain. Ini satu-satunya kejutan di seluruh sistem bilangan Yunani.",
+            "Tahun disebut utuh seperti angka biasa: 2026 = **δύο χιλιάδες είκοσι έξι**."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Buah, sayur, dan takaran",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tunggal",
+            "Jamak",
+            "Baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "η ντομάτα",
+              "οι ντομάτες",
+              "do-MA-ta / do-MA-tés",
+              "tomat"
+            ],
+            [
+              "το πορτοκάλι",
+              "τα πορτοκάλια",
+              "por-to-KA-li",
+              "jeruk"
+            ],
+            [
+              "το μήλο",
+              "τα μήλα",
+              "MI-lo",
+              "apel"
+            ],
+            [
+              "η μπανάνα",
+              "οι μπανάνες",
+              "ba-NA-na",
+              "pisang"
+            ],
+            [
+              "το λεμόνι",
+              "τα λεμόνια",
+              "lé-MO-ni",
+              "lemon"
+            ],
+            [
+              "το σταφύλι",
+              "τα σταφύλια",
+              "sta-FI-li",
+              "anggur (buah)"
+            ],
+            [
+              "το καρπούζι",
+              "τα καρπούζια",
+              "kar-PU-zi",
+              "semangka"
+            ],
+            [
+              "η πατάτα",
+              "οι πατάτες",
+              "pa-TA-ta",
+              "kentang"
+            ],
+            [
+              "το κρεμμύδι",
+              "τα κρεμμύδια",
+              "kré-MI-dhi",
+              "bawang"
+            ],
+            [
+              "το αγγούρι",
+              "τα αγγούρια",
+              "an-GU-ri",
+              "mentimun"
+            ],
+            [
+              "η ελιά",
+              "οι ελιές",
+              "é-LIA",
+              "zaitun"
+            ],
+            [
+              "το αυγό",
+              "τα αυγά",
+              "av-GHO",
+              "telur"
+            ],
+            [
+              "το τυρί",
+              "τα τυριά",
+              "ti-RI",
+              "keju"
+            ],
+            [
+              "το κιλό",
+              "τα κιλά",
+              "ki-LO",
+              "kilo"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kalimat yang dipakai di depan meja dagangan",
+          "items": [
+            "**Πόσο κάνει;** / **Πόσο κάνουν;** — Berapa harganya? (satu barang / banyak barang)",
+            "**Ένα κιλό, παρακαλώ.** — Satu kilo, tolong. · **Μισό κιλό** — setengah kilo. · **Δύο κιλά** — dua kilo.",
+            "**Είναι φρέσκα;** — Segar? · **Από πού είναι;** — Dari mana asalnya? Penjual di λαϊκή senang ditanya begini.",
+            "**Είναι λίγο ακριβό.** — Agak mahal. ⚠️ Menawar di λαϊκή tidak lazim seperti di pasar Indonesia; yang lazim adalah menerima **bonus**: penjual sering menambahkan segenggam ekstra atau membulatkan harga ke bawah dengan sendirinya.",
+            "**Τίποτα άλλο;** — Ada lagi? Jawabannya **Όχι, αυτά.** — Tidak, segini saja."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "el": "πόσο κάνει / κάνουν;",
+      "baca": "PO-so KA-ni / KA-nun",
+      "id": "berapa harganya?"
+    },
+    {
+      "el": "το κιλό",
+      "baca": "to ki-LO",
+      "id": "kilo"
+    },
+    {
+      "el": "μισό",
+      "baca": "mi-SO",
+      "id": "setengah"
+    },
+    {
+      "el": "ενάμισι",
+      "baca": "é-NA-mi-si",
+      "id": "satu setengah"
+    },
+    {
+      "el": "τα ρέστα",
+      "baca": "ta RÉ-sta",
+      "id": "kembalian"
+    },
+    {
+      "el": "η λαϊκή αγορά",
+      "baca": "i la-i-KI a-gho-RA",
+      "id": "pasar mingguan"
+    },
+    {
+      "el": "το σουπερμάρκετ",
+      "baca": "to su-pér-MAR-két",
+      "id": "supermarket"
+    },
+    {
+      "el": "ο πωλητής",
+      "baca": "o po-li-TIS",
+      "id": "penjual"
+    },
+    {
+      "el": "φρέσκος",
+      "baca": "FRÉ-skos",
+      "id": "segar"
+    },
+    {
+      "el": "μαζί",
+      "baca": "ma-ZI",
+      "id": "bersama, semuanya"
+    },
+    {
+      "el": "ακριβώς",
+      "baca": "a-kri-VOS",
+      "id": "tepat, persis"
+    },
+    {
+      "el": "τότε",
+      "baca": "TO-té",
+      "id": "kalau begitu, waktu itu"
+    },
+    {
+      "el": "τίποτα",
+      "baca": "TI-po-ta",
+      "id": "tidak ada apa-apa"
+    },
+    {
+      "el": "η ντομάτα",
+      "baca": "i do-MA-ta",
+      "id": "tomat"
+    },
+    {
+      "el": "το πορτοκάλι",
+      "baca": "to por-to-KA-li",
+      "id": "jeruk"
+    },
+    {
+      "el": "η πατάτα",
+      "baca": "i pa-TA-ta",
+      "id": "kentang"
+    },
+    {
+      "el": "η ελιά",
+      "baca": "i é-LIA",
+      "id": "zaitun, pohon zaitun"
+    },
+    {
+      "el": "το τυρί",
+      "baca": "to ti-RI",
+      "id": "keju"
+    },
+    {
+      "el": "το αυγό",
+      "baca": "to av-GHO",
+      "id": "telur"
+    },
+    {
+      "el": "εκατό / χίλια",
+      "baca": "é-ka-TO / KHI-lia",
+      "id": "seratus / seribu"
+    },
+    {
+      "el": "οι, τα",
+      "baca": "i, ta",
+      "id": "sandang jamak (lk-pr, netral)"
+    },
+    {
+      "el": "κοπέλα μου",
+      "baca": "ko-PÉ-la mu",
+      "id": "Nak, Mbak (sapaan akrab)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah ke bentuk jamak lengkap dengan sandangnya.",
+      "items": [
+        "ο φίλος",
+        "η ντομάτα",
+        "το σπίτι",
+        "ο μήνας",
+        "το πρόβλημα",
+        "η πόλη"
+      ]
+    },
+    {
+      "prompt": "Pilih κάνει atau κάνουν.",
+      "items": [
+        "Πόσο ____ ο καφές;",
+        "Πόσο ____ οι ντομάτες;",
+        "Πόσο ____ τα πορτοκάλια;",
+        "Πόσο ____ όλα μαζί;",
+        "Πόσο ____ αυτό το βιβλίο;"
+      ]
+    },
+    {
+      "prompt": "Tulis angka berikut dengan huruf Yunani.",
+      "items": [
+        "15",
+        "40",
+        "101",
+        "250",
+        "1000"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Yunani.",
+      "items": [
+        "Berapa harga tomatnya?",
+        "Dua euro sekilo.",
+        "Satu kilo, tolong.",
+        "Semuanya jadi berapa?",
+        "Murah sekali di sini."
+      ]
+    }
+  ],
+  "answers": [
+    "οι φίλοι — οι ντομάτες — τα σπίτια — οι μήνες — τα προβλήματα — οι πόλεις",
+    "κάνει — κάνουν — κάνουν — κάνουν — κάνει",
+    "δεκαπέντε — σαράντα — εκατόν ένα — διακόσια πενήντα — χίλια",
+    "Πόσο κάνουν οι ντομάτες; — Δύο ευρώ το κιλό. — Ένα κιλό, παρακαλώ. — Πόσο κάνουν όλα μαζί; — Είναι πολύ φθηνά εδώ."
+  ]
+}

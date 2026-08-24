@@ -1,0 +1,508 @@
+{
+  "title": "Satu kopi, tolong",
+  "title_target": "Έναν καφέ, παρακαλώ — E-nan ka-fe, pa-ra-ka-lo",
+  "goal": "Memesan makan dan minum di kafe atau taverna, dan menghadapi titik keliru terbesar bahasa Yunani tingkat A1: kata benda berubah ekor begitu ia jadi sasaran perbuatan.",
+  "bekal": [
+    "mengubah kata benda laki-laki ke bentuk sasaran",
+    "mengetahui bahwa kata perempuan dan netral hampir tak berubah",
+    "memesan dengan θέλω dan θα ήθελα",
+    "meminta bon dan membayar",
+    "menyebut kopi Yunani dengan tingkat manis yang benar"
+  ],
+  "dialogs": [
+    {
+      "title": "ΔΙΑΛΟΓΟΣ — Di taverna",
+      "intro": "Ana dan Nikos duduk di taverna kecil di Psyrri. Perhatikan apa yang terjadi pada kata **ο καφές** begitu ia jadi barang yang dipesan — dan apa yang **tidak** terjadi pada **η μπύρα** dan **το νερό**.",
+      "lines": [
+        {
+          "speaker": "Σερβιτόρος:",
+          "text": "[Καλησπέρα|Ka-li-SPÉ-ra] [σας|sas]! [Τι|Ti] [θα|tha] [πάρετε|PA-ré-té];",
+          "id": "Selamat sore! Mau pesan apa?",
+          "literal": "sore-baik — kepada-Anda! apa — akan — kalian-ambil?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Καλησπέρα|Ka-li-SPÉ-ra]. [Θέλω|THÉ-lo] [έναν|É-nan] [καφέ|ka-FÉ], [παρακαλώ|pa-ra-ka-LO].",
+          "id": "Selamat sore. Saya mau kopi, tolong.",
+          "literal": "sore-baik. saya-mau — satu (lk sasaran) — kopi (sasaran), tolong."
+        },
+        {
+          "speaker": "Σερβιτόρος:",
+          "text": "[Ελληνικό|É-li-ni-KO] [ή|i] [φρέντο|FRÉN-do];",
+          "id": "Kopi Yunani atau freddo?",
+          "literal": "Yunani (nt) — atau — freddo?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Έναν|É-nan] [φρέντο|FRÉN-do] [εσπρέσο|é-SPRÉ-so], [χωρίς|kho-RIS] [ζάχαρη|ZA-kha-ri].",
+          "id": "Freddo espresso, tanpa gula.",
+          "literal": "satu (lk sasaran) — freddo — espresso, tanpa — gula."
+        },
+        {
+          "speaker": "Νίκος:",
+          "text": "[Και|Ké] [για|ya] [μένα|MÉ-na] [μία|MI-a] [μπύρα|BI-ra] [και|ké] [ένα|É-na] [νερό|né-RO].",
+          "id": "Dan buat saya satu bir dan satu air.",
+          "literal": "dan — untuk — saya — satu (pr) — bir — dan — satu (nt) — air."
+        },
+        {
+          "speaker": "Σερβιτόρος:",
+          "text": "[Θέλετε|THÉ-lé-té] [και|ké] [κάτι|KA-ti] [άλλο|A-lo];",
+          "id": "Mau tambah yang lain?",
+          "literal": "kalian-mau — juga — sesuatu — lain?"
+        },
+        {
+          "speaker": "Νίκος:",
+          "text": "[Ναι|Né], [μία|MI-a] [χωριάτικη|kho-RIA-ti-ki] [σαλάτα|sa-LA-ta] [και|ké] [μία|MI-a] [τυρόπιτα|ti-RO-pi-ta].",
+          "id": "Ya, satu salad desa dan satu tiropita.",
+          "literal": "ya, satu (pr) — desa (pr) — salad — dan — satu (pr) — pai-keju."
+        },
+        {
+          "speaker": "Σερβιτόρος:",
+          "text": "[Αμέσως|A-MÉ-sos]!",
+          "id": "Segera datang!",
+          "literal": "seketika!"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Τον|Ton] [λογαριασμό|lo-gha-ria-SMO], [παρακαλώ|pa-ra-ka-LO].",
+          "id": "Bonnya, tolong.",
+          "literal": "(sandang lk sasaran) — bon, tolong."
+        },
+        {
+          "speaker": "Σερβιτόρος:",
+          "text": "[Μάλιστα|MA-li-sta]. [Δεκατέσσερα|Dhé-ka-TÉ-sé-ra] [ευρώ|év-RO].",
+          "id": "Baik. Empat belas euro.",
+          "literal": "baiklah. empat-belas — euro."
+        },
+        {
+          "speaker": "Νίκος:",
+          "text": "[Ορίστε|O-RI-sté]. [Ευχαριστούμε|Éf-kha-ri-STU-mé] [πολύ|po-LI]!",
+          "id": "Ini. Terima kasih banyak!",
+          "literal": "silakan. kami-berterima-kasih — banyak!"
+        }
+      ],
+      "notes": [
+        "**Inilah pelajaran besar unit ini: kata benda punya dua baju.** Baju **pelaku** dipakai kalau ia yang melakukan atau yang dibicarakan: *Ο καφές είναι ζεστός.* Baju **sasaran** dipakai kalau ia yang dikenai perbuatan: *Θέλω **τον καφέ**.* Dalam bahasa Indonesia, \"kopi\" tetap \"kopi\" di dua-duanya.",
+        "⚠️ **Kabar yang sangat melegakan: cuma kata laki-laki yang benar-benar berubah.** Perempuan: η μπύρα → **τη** μπύρα, hanya sandangnya. Netral: το νερό → **το** νερό, tak berubah sama sekali. Jadi dua pertiga kata benda Yunani praktis tidak menuntut apa-apa darimu di sini.",
+        "**Ekor laki-laki yang berubah gampang dihafal karena semuanya membuang -ς**: ο καφέ**ς** → τον καφέ, ο φίλο**ς** → τον φίλο, ο άντρα**ς** → τον άντρα, ο μαθητή**ς** → τον μαθητή. Satu huruf hilang, itu saja.",
+        "**Θέλω sopan, θα ήθελα lebih sopan.** *Θέλω έναν καφέ* sudah wajar sekali di Yunani dan tidak dianggap kasar seperti *I want* dalam bahasa Inggris. Kalau ingin lebih halus: *Θα ήθελα έναν καφέ* (*tha I-thé-la*, \"saya ingin\"). Yang paling sering dipakai orang Yunani sendiri justru bentuk paling singkat: *Έναν καφέ, παρακαλώ.*",
+        "**Τι θα πάρετε; harfiahnya \"apa yang akan kalian ambil?\"** dan itulah kalimat pelayan yang paling baku. Kalau kamu belum siap, jawab *Ένα λεπτό, παρακαλώ* — sebentar, tolong.",
+        "**Ορίστε (*o-RI-sté*) adalah kata serba guna kedua sesudah παρακαλώ.** Ia berarti \"ini, silakan\" saat menyerahkan sesuatu, \"ya?\" saat menjawab panggilan, dan \"maaf, apa tadi?\" saat kamu tidak menangkap ucapan orang — yang terakhir ini akan sangat sering kamu pakai.",
+        "**Μάλιστα** berarti \"baik\" atau \"ya\" dalam nada resmi, dipakai pelayan, petugas, dan tentara. Dalam obrolan biasa cukup **εντάξει**.",
+        "⚠️ **Χωριάτικη σαλάτα bukan \"salad Yunani\" seperti yang tertulis di menu luar negeri.** Harfiahnya \"salad desa\": tomat, mentimun, bawang, zaitun, dan sebongkah feta utuh di atasnya — tanpa daun selada sama sekali. Memesannya adalah cara paling cepat memberi tahu pelayan bahwa kamu tahu apa yang kamu lakukan."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk sasaran (αιτιατική): apa yang berubah dan apa yang tidak",
+          "body": [
+            "Bandingkan dua lajur di bawah ini. Yang berubah dicetak tebal — dan perhatikan betapa sedikitnya."
+          ],
+          "table": {
+            "head": [
+              "Jenis",
+              "Pelaku",
+              "Sasaran",
+              "Yang berubah"
+            ],
+            "rows": [
+              [
+                "lk -ος",
+                "**ο** φίλ**ος**",
+                "**τον** φίλ**ο**",
+                "sandang + buang ς"
+              ],
+              [
+                "lk -ας",
+                "**ο** άντρ**ας**",
+                "**τον** άντρ**α**",
+                "sandang + buang ς"
+              ],
+              [
+                "lk -ης",
+                "**ο** μαθητ**ής**",
+                "**τον** μαθητ**ή**",
+                "sandang + buang ς"
+              ],
+              [
+                "lk -ές",
+                "**ο** καφ**ές**",
+                "**τον** καφ**έ**",
+                "sandang + buang ς"
+              ],
+              [
+                "pr -α",
+                "**η** μπύρ**α**",
+                "**τη(ν)** μπύρ**α**",
+                "sandangnya saja"
+              ],
+              [
+                "pr -η",
+                "**η** πόλ**η**",
+                "**τη(ν)** πόλ**η**",
+                "sandangnya saja"
+              ],
+              [
+                "nt -ο",
+                "**το** νερ**ό**",
+                "**το** νερ**ό**",
+                "tidak ada"
+              ],
+              [
+                "nt -ι",
+                "**το** παιδ**ί**",
+                "**το** παιδ**ί**",
+                "tidak ada"
+              ]
+            ]
+          },
+          "after": [
+            "Untuk \"sebuah\", ένας juga ikut: **ένας** → **έναν**, **μία** → **μία** (tak berubah), **ένα** → **ένα** (tak berubah). Sekali lagi cuma yang laki-laki.",
+            "⚠️ **-ν pada τον dan την sering luruh** kalau kata berikutnya diawali huruf lunak (β, γ, δ, ζ, θ, λ, μ, ν, ρ, σ, φ, χ, ψ): *τη μπύρα* tapi *την Αθήνα*. Aturannya berlaku untuk perempuan; untuk laki-laki, **τον** kini dianjurkan ditulis lengkap selalu. Kalau ragu, tulis lengkap."
+          ]
+        },
+        {
+          "title": "Kapan bentuk sasaran dipakai",
+          "body": [
+            "Ada dua keadaan saja pada tingkat A1, dan dua-duanya mudah dikenali."
+          ],
+          "table": {
+            "head": [
+              "Keadaan",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "Sesudah kata kerja yang punya sasaran",
+                "Θέλω **τον καφέ**.",
+                "Saya mau kopi itu."
+              ],
+              [
+                "",
+                "Βλέπω **τον Νίκο**.",
+                "Saya melihat Nikos."
+              ],
+              [
+                "",
+                "Ξέρω **την Ελένη**.",
+                "Saya kenal Eleni."
+              ],
+              [
+                "Sesudah semua kata depan",
+                "για **τον φίλο** μου",
+                "untuk teman saya"
+              ],
+              [
+                "",
+                "με **τον αδερφό** μου",
+                "dengan saudara saya"
+              ],
+              [
+                "",
+                "σε **την** Αθήνα → **στην** Αθήνα",
+                "di Athena"
+              ],
+              [
+                "",
+                "χωρίς **ζάχαρη**",
+                "tanpa gula"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Semua kata depan Yunani menuntut bentuk sasaran, tanpa kecuali.** Ini menyederhanakan hidup sekali: begitu kamu melihat για, με, από, σε, χωρίς, μέχρι, kamu tahu persis baju apa yang harus dipakai kata berikutnya.",
+            "Kata depan **σε** melebur dengan sandangnya jadi **στον, στη(ν), στο** — itu urusan unit 8, tapi kamu sudah melihatnya dua kali di dialog unit lalu."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menu yang cukup untuk seminggu di Yunani",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "ΕΛΛΗΝΙΚΑ",
+            "Baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "ο καφές",
+              "ka-FÉS",
+              "kopi"
+            ],
+            [
+              "ο φρέντο εσπρέσο",
+              "FRÉN-do é-SPRÉ-so",
+              "espresso dingin dikocok"
+            ],
+            [
+              "ο ελληνικός καφές",
+              "é-li-ni-KOS ka-FÉS",
+              "kopi Yunani (direbus)"
+            ],
+            [
+              "το τσάι",
+              "TSA-i",
+              "teh"
+            ],
+            [
+              "το νερό",
+              "né-RO",
+              "air"
+            ],
+            [
+              "η μπύρα",
+              "BI-ra",
+              "bir"
+            ],
+            [
+              "το κρασί",
+              "kra-SI",
+              "anggur"
+            ],
+            [
+              "ο χυμός",
+              "khi-MOS",
+              "jus"
+            ],
+            [
+              "το ψωμί",
+              "pso-MI",
+              "roti"
+            ],
+            [
+              "η σαλάτα",
+              "sa-LA-ta",
+              "salad"
+            ],
+            [
+              "η τυρόπιτα",
+              "ti-RO-pi-ta",
+              "pai keju"
+            ],
+            [
+              "ο γύρος",
+              "YI-ros",
+              "gyros"
+            ],
+            [
+              "το σουβλάκι",
+              "su-VLA-ki",
+              "souvlaki"
+            ],
+            [
+              "το ψάρι",
+              "PSA-ri",
+              "ikan"
+            ],
+            [
+              "το κοτόπουλο",
+              "ko-TO-pu-lo",
+              "ayam"
+            ],
+            [
+              "το κρέας",
+              "KRÉ-as",
+              "daging"
+            ],
+            [
+              "τα λαχανικά",
+              "la-kha-ni-KA",
+              "sayur"
+            ],
+            [
+              "το τζατζίκι",
+              "dza-DZI-ki",
+              "tzatziki"
+            ],
+            [
+              "ο λογαριασμός",
+              "lo-gha-ria-SMOS",
+              "bon, tagihan"
+            ],
+            [
+              "το γλυκό",
+              "ghli-KO",
+              "makanan manis"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kopi Yunani punya tiga tingkat manis — dan kamu harus memilih",
+          "items": [
+            "**σκέτος** (*SKÉ-tos*) tanpa gula · **μέτριος** (*MÉ-tri-os*) satu sendok · **γλυκός** (*ghli-KOS*) dua sendok. Gulanya dimasak bersama kopinya, jadi tidak bisa ditambahkan belakangan — pertanyaan pelayan bukan basa-basi.",
+            "Untuk kopi seduh biasa: **με γάλα** dengan susu, **χωρίς ζάχαρη** tanpa gula, **με λίγη ζάχαρη** sedikit gula.",
+            "⚠️ Jangan menghabiskan seluruh cangkir kopi Yunani. Sepertiga terakhir adalah ampas, dan ia memang tinggal di sana.",
+            "**Καλή όρεξη!** (*ka-LI O-ré-ksi*) — \"selamat makan\". Jawabannya **Επίσης!** (*é-PI-sis*) — \"kamu juga\". Sepasang kata ini wajib diucapkan setiap kali makanan datang di meja."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "el": "θέλω",
+      "baca": "THÉ-lo",
+      "id": "mau, ingin"
+    },
+    {
+      "el": "θα ήθελα",
+      "baca": "tha I-thé-la",
+      "id": "saya ingin (lebih sopan)"
+    },
+    {
+      "el": "παίρνω",
+      "baca": "PÉR-no",
+      "id": "mengambil, memesan"
+    },
+    {
+      "el": "ο λογαριασμός",
+      "baca": "o lo-gha-ria-SMOS",
+      "id": "bon, tagihan"
+    },
+    {
+      "el": "ο σερβιτόρος",
+      "baca": "o sér-vi-TO-ros",
+      "id": "pelayan"
+    },
+    {
+      "el": "χωρίς",
+      "baca": "kho-RIS",
+      "id": "tanpa"
+    },
+    {
+      "el": "με",
+      "baca": "mé",
+      "id": "dengan"
+    },
+    {
+      "el": "για",
+      "baca": "ya",
+      "id": "untuk"
+    },
+    {
+      "el": "η ζάχαρη",
+      "baca": "i ZA-kha-ri",
+      "id": "gula"
+    },
+    {
+      "el": "το γάλα",
+      "baca": "to GHA-la",
+      "id": "susu"
+    },
+    {
+      "el": "η μπύρα",
+      "baca": "i BI-ra",
+      "id": "bir"
+    },
+    {
+      "el": "το κρασί",
+      "baca": "to kra-SI",
+      "id": "anggur"
+    },
+    {
+      "el": "η σαλάτα",
+      "baca": "i sa-LA-ta",
+      "id": "salad"
+    },
+    {
+      "el": "το ψωμί",
+      "baca": "to pso-MI",
+      "id": "roti"
+    },
+    {
+      "el": "το φαγητό",
+      "baca": "to fa-yi-TO",
+      "id": "makanan"
+    },
+    {
+      "el": "κάτι άλλο",
+      "baca": "KA-ti A-lo",
+      "id": "sesuatu yang lain"
+    },
+    {
+      "el": "αμέσως",
+      "baca": "a-MÉ-sos",
+      "id": "segera"
+    },
+    {
+      "el": "ορίστε",
+      "baca": "o-RI-sté",
+      "id": "ini silakan / maaf, apa?"
+    },
+    {
+      "el": "μάλιστα",
+      "baca": "MA-li-sta",
+      "id": "baik (resmi)"
+    },
+    {
+      "el": "καλή όρεξη",
+      "baca": "ka-LI O-ré-ksi",
+      "id": "selamat makan"
+    },
+    {
+      "el": "επίσης",
+      "baca": "é-PI-sis",
+      "id": "kamu juga, sama-sama"
+    },
+    {
+      "el": "σκέτος / μέτριος / γλυκός",
+      "baca": "SKÉ-tos / MÉ-tri-os / ghli-KOS",
+      "id": "tanpa gula / sedang / manis"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah ke bentuk sasaran. Contoh: ο καφές → τον καφέ.",
+      "items": [
+        "ο φίλος",
+        "η μπύρα",
+        "το νερό",
+        "ο άντρας",
+        "η πόλη",
+        "ο λογαριασμός"
+      ]
+    },
+    {
+      "prompt": "Isi dengan sandang sasaran yang tepat: τον, τη(ν), atau το.",
+      "items": [
+        "Θέλω ____ καφέ.",
+        "Βλέπω ____ Ελένη.",
+        "Ξέρω ____ Νίκο.",
+        "Παίρνω ____ λεωφορείο.",
+        "Θέλω ____ σαλάτα."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "καφέ / έναν / παρακαλώ",
+        "λογαριασμό / τον / παρακαλώ",
+        "ζάχαρη / χωρίς / έναν / φρέντο",
+        "άλλο / θέλετε / κάτι / ;",
+        "μένα / μία / για / μπύρα"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Yunani.",
+      "items": [
+        "Saya mau satu kopi, tolong.",
+        "Bonnya, tolong.",
+        "Satu bir dan satu air.",
+        "Tanpa gula, tolong.",
+        "Selamat makan!"
+      ]
+    }
+  ],
+  "answers": [
+    "τον φίλο — τη μπύρα — το νερό — τον άντρα — την πόλη — τον λογαριασμό",
+    "τον — την — τον — το — τη",
+    "Έναν καφέ, παρακαλώ. — Τον λογαριασμό, παρακαλώ. — Έναν φρέντο χωρίς ζάχαρη. — Θέλετε κάτι άλλο; — Για μένα μία μπύρα.",
+    "Θέλω έναν καφέ, παρακαλώ. — Τον λογαριασμό, παρακαλώ. — Μία μπύρα και ένα νερό. — Χωρίς ζάχαρη, παρακαλώ. — Καλή όρεξη!"
+  ]
+}

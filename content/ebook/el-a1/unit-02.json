@@ -1,0 +1,452 @@
+{
+  "title": "Ini apa? Tiga jenis kelamin",
+  "title_target": "Τι είναι αυτό; — Ti i-né af-to;",
+  "goal": "Menanyakan dan menyebut nama benda, memakai kata sandang ο / η / το yang wajib ada, dan menerima kenyataan bahwa setiap kata benda Yunani punya jenis kelamin — termasuk meja, laut, dan masalah.",
+  "bekal": [
+    "menanyakan \"ini apa\" dan \"siapa itu\"",
+    "menyebut benda bersama sandangnya yang benar",
+    "mengenali jenis kelamin dari ekor kata",
+    "memakai αυτός / αυτή / αυτό sesuai bendanya",
+    "memakai sandang di depan nama orang"
+  ],
+  "dialogs": [
+    {
+      "title": "ΔΙΑΛΟΓΟΣ — Di apartemen Eleni",
+      "intro": "Ana diajak mampir ke rumah teman sekelasnya, Eleni. Perhatikan bahwa **tidak satu pun** kata benda di bawah ini berdiri sendiri: semuanya didahului ο, η, το, atau ένας, μία, ένα.",
+      "lines": [
+        {
+          "speaker": "Ελένη:",
+          "text": "[Καλώς|Ka-LOS] [ήρθες|IR-thés], [Άννα|A-na]! [Αυτό|Af-TO] [είναι|I-né] [το|to] [σπίτι|SPI-ti] [μου|mu].",
+          "id": "Selamat datang, Ana! Ini rumah saya.",
+          "literal": "baik — kamu-datang, Anna! ini — ia-adalah — (sandang) — rumah — saya."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Τι|Ti] [ωραίο|o-RÉ-o]! [Τι|Ti] [είναι|I-né] [αυτό|af-TO];",
+          "id": "Bagus sekali! Ini apa?",
+          "literal": "apa — indah! apa — ia-adalah — ini?"
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Αυτό|Af-TO] [είναι|I-né] [ένα|É-na] [φλιτζάνι|fli-DZA-ni]. [Και|Ké] [αυτή|af-TI] [είναι|I-né] [η|i] [κουζίνα|ku-ZI-na].",
+          "id": "Ini cangkir. Dan ini dapurnya.",
+          "literal": "ini — ia-adalah — sebuah — cangkir. dan — ini (pr) — ia-adalah — (sandang) — dapur."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Και|Ké] [αυτός|af-TOS]; [Ποιος|Pios] [είναι|I-né] [αυτός|af-TOS];",
+          "id": "Dan yang itu? Siapa dia?",
+          "literal": "dan — ini (lk)? siapa — ia-adalah — ini (lk)?"
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Αυτός|Af-TOS] [είναι|I-né] [ο|o] [Νίκος|NI-kos], [ο|o] [αδερφός|a-dhér-FOS] [μου|mu].",
+          "id": "Itu Nikos, kakak saya.",
+          "literal": "ini (lk) — ia-adalah — (sandang) — Nikos, (sandang) — saudara-laki-laki — saya."
+        },
+        {
+          "speaker": "Νίκος:",
+          "text": "[Γεια|Ya] [σου|su]! [Είσαι|I-sé] [η|i] [φίλη|FI-li] [της|tis] [Ελένης|É-LÉ-nis];",
+          "id": "Halo! Kamu temannya Eleni?",
+          "literal": "kesehatan — kepadamu! kamu-adalah — (sandang) — teman-perempuan — milik — Eleni?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ναι|Né]! [Είμαι|I-mé] [η|i] [Άννα|A-na]. [Χαίρω|KHÉ-ro] [πολύ|po-LI].",
+          "id": "Ya! Saya Ana. Senang berkenalan.",
+          "literal": "ya! saya-adalah — (sandang) — Anna. saya-gembira — banyak."
+        },
+        {
+          "speaker": "Νίκος:",
+          "text": "[Ο|O] [καφές|ka-FÉS] [είναι|I-né] [έτοιμος|É-ti-mos]. [Και|Ké] [το|to] [νερό|né-RO] [είναι|I-né] [κρύο|KRI-o].",
+          "id": "Kopinya sudah siap. Airnya juga dingin.",
+          "literal": "(sandang) — kopi — ia-adalah — siap. dan — (sandang) — air — ia-adalah — dingin."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Τέλεια|TÉ-li-a]! [Ένα|É-na] [λεπτό|lép-TO] — [τι|ti] [είναι|I-né] [αυτά|af-TA];",
+          "id": "Sempurna! Sebentar — itu apa?",
+          "literal": "sempurna! satu — menit — apa — ia-adalah — ini (jamak netral)?"
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Αυτά|Af-TA] [είναι|I-né] [τα|ta] [βιβλία|vi-VLI-a] [μου|mu]. [Είμαι|I-mé] [δασκάλα|dha-SKA-la].",
+          "id": "Itu buku-buku saya. Saya guru.",
+          "literal": "ini (jamak netral) — ia-adalah — (sandang jamak) — buku-buku — saya. saya-adalah — guru-perempuan."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Πολύ|Po-LI] [ωραία|o-RÉ-a]! [Η|I] [Ελλάδα|é-LA-dha] [είναι|I-né] [όμορφη|O-mor-fi].",
+          "id": "Bagus sekali! Yunani itu indah.",
+          "literal": "sangat — indah! (sandang) — Yunani — ia-adalah — cantik."
+        }
+      ],
+      "notes": [
+        "**Setiap kata benda Yunani punya salah satu dari tiga jenis kelamin, dan sandangnya menandai yang mana.** ο untuk laki-laki, η untuk perempuan, το untuk netral. ⚠️ Ini bukan soal makhluk hidup: **ο καφές** kopi itu laki-laki, **η θάλασσα** laut itu perempuan, **το νερό** air itu netral. Tidak ada logika yang bisa dicari; yang ada cuma kebiasaan tiga ribu tahun.",
+        "**Karena itu, hafalkan kata benda selalu bersama sandangnya.** Bukan *σπίτι* tapi **το σπίτι**. Bukan *καφές* tapi **ο καφές**. Ini kebiasaan kecil yang menghemat berbulan-bulan nanti, ketika kata sifat dan kata sandang harus ikut menyesuaikan diri.",
+        "⚠️ **Kata sandang juga dipakai di depan nama orang.** *Είμαι **η** Άννα.* *Αυτός είναι **ο** Νίκος.* Bagi telinga Indonesia ini terdengar seperti \"si Ana\" dan \"si Nikos\", dan memang kira-kira begitulah rasanya — hangat, sehari-hari, sama sekali tidak kasar. Membuangnya justru terdengar kaku seperti pengumuman resmi.",
+        "**Kata sandang juga menempel pada nama negara**: **η** Ελλάδα, **η** Ινδονησία, **η** Ιαπωνία, **η** Ιταλία, tetapi **ο** Καναδάς dan **τα** Ηνωμένα Έθνη. Sebagian besar nama negara kebetulan berjenis perempuan.",
+        "**Ένα φλιτζάνι berarti \"sebuah cangkir\" sekaligus \"satu cangkir\".** Bahasa Yunani memakai kata bilangan satu sebagai kata sandang tak tentu, persis seperti *un/une* dalam bahasa Prancis. Karena bahasa Indonesia tidak punya kata sandang sama sekali, godaannya adalah membuangnya — jangan.",
+        "**Καλώς ήρθες / Καλώς ήρθατε** (*ka-LOS IR-thés / IR-tha-té*) = \"selamat datang\", santai dan hormat. Jawabannya bukan \"terima kasih\" melainkan **Καλώς σε βρήκα** / **Καλώς σας βρήκα** — \"baik saya menemukanmu\". Sepasang ucapan ini terdengar sangat Yunani dan langsung membuat tuan rumah tersenyum.",
+        "**Ποιος; berarti \"siapa\" dan ikut jenis kelamin**: Ποιος είναι; (laki-laki), Ποια είναι; (perempuan), Ποιο είναι; (benda netral — di sini artinya \"yang mana\"). ⚠️ Jangan tertukar dengan **Πού;** (*pu*) yang berarti \"di mana\" — bedanya cuma satu huruf saat ditulis cepat."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga jenis kelamin dan sandangnya",
+          "body": [
+            "Tabel ini adalah kerangka seluruh bahasa Yunani. Semua yang datang belakangan — kata sifat, kata ganti, bentuk sasaran — bersandar padanya. Kabar baiknya, tabel dasarnya cuma enam kotak."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Laki-laki (ΑΡΣΕΝΙΚΟ)",
+              "Perempuan (ΘΗΛΥΚΟ)",
+              "Netral (ΟΥΔΕΤΕΡΟ)"
+            ],
+            "rows": [
+              [
+                "Tunggal",
+                "**ο** φίλος",
+                "**η** φίλη",
+                "**το** σπίτι"
+              ],
+              [
+                "Jamak",
+                "**οι** φίλοι",
+                "**οι** φίλες",
+                "**τα** σπίτια"
+              ],
+              [
+                "\"Sebuah\"",
+                "**ένας** φίλος",
+                "**μία** φίλη",
+                "**ένα** σπίτι"
+              ],
+              [
+                "Ekor yang sering",
+                "-ος, -ας, -ης",
+                "-α, -η",
+                "-ο, -ι, -μα"
+              ],
+              [
+                "Contoh",
+                "ο καφές, ο δρόμος, ο άντρας",
+                "η ώρα, η πόλη, η θάλασσα",
+                "το νερό, το παιδί, το πρόβλημα"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Bentuk jamak laki-laki dan perempuan memakai sandang yang sama: οι.** Yang membedakan cuma ekor kata bendanya (-οι lawan -ες). Ini menghemat satu hafalan.",
+            "Ekor kata itu tebakan yang benar sekitar delapan dari sepuluh kali. Yang paling sering menipu: **η οδός** (jalan) berjenis perempuan meski berakhir -ος, dan **το κορίτσι** (anak perempuan) berjenis **netral** meski jelas-jelas menyebut perempuan. Yang terakhir itu bukan penghinaan — semua kata berekor -ι kecil-kecilan memang netral, termasuk **το αγόρι** (anak laki-laki) dan **το παιδί** (anak)."
+          ]
+        },
+        {
+          "title": "Αυτός, αυτή, αυτό — \"ini\" yang ikut bendanya",
+          "body": [
+            "Bahasa Indonesia punya satu kata \"ini\" untuk segalanya. Bahasa Yunani memilihkan bentuknya menurut jenis kelamin benda yang ditunjuk — dan bentuk itu sama persis dengan kata ganti \"dia\"."
+          ],
+          "table": {
+            "head": [
+              "Bentuk",
+              "Baca",
+              "Dipakai untuk",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "αυτός",
+                "af-TOS",
+                "benda/orang laki-laki",
+                "Αυτός είναι ο Νίκος. — Ini Nikos."
+              ],
+              [
+                "αυτή",
+                "af-TI",
+                "benda/orang perempuan",
+                "Αυτή είναι η Ελένη. — Ini Eleni."
+              ],
+              [
+                "αυτό",
+                "af-TO",
+                "benda netral **dan** untuk hal yang belum diketahui",
+                "Τι είναι αυτό; — Ini apa?"
+              ],
+              [
+                "αυτοί / αυτές / αυτά",
+                "af-TI / af-TÉS / af-TA",
+                "jamak lk / pr / netral",
+                "Αυτά είναι τα βιβλία μου."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Kalau kamu belum tahu bendanya apa, pakai αυτό.** Pertanyaan *Τι είναι αυτό;* selalu netral, karena kamu belum bisa tahu jenis kelaminnya sebelum tahu namanya. Baru setelah dijawab, bentuknya menyesuaikan: *Αυτή είναι η κουζίνα.*",
+            "Untuk \"itu\" yang jauh, bahasa Yunani punya **εκείνος, εκείνη, εκείνο** (*é-KI-nos*). Dalam percakapan sehari-hari αυτός sudah menutup keduanya, jadi jangan buru-buru menghafalnya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Benda-benda yang paling sering kamu tunjuk",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa lajur pertama selalu berisi sandangnya. Tutuplah lajur itu dengan jari dan coba tebak — kalau kamu benar delapan dari dua puluh, itu sudah wajar untuk hari kedua."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Laki-laki",
+            "Perempuan",
+            "Netral"
+          ],
+          "rows": [
+            [
+              "ο καφές *ka-FÉS* — kopi",
+              "η πόρτα *POR-ta* — pintu",
+              "το νερό *né-RO* — air"
+            ],
+            [
+              "ο δρόμος *DHRO-mos* — jalan",
+              "η κουζίνα *ku-ZI-na* — dapur",
+              "το σπίτι *SPI-ti* — rumah"
+            ],
+            [
+              "ο φίλος *FI-los* — teman lk",
+              "η φίλη *FI-li* — teman pr",
+              "το βιβλίο *vi-VLI-o* — buku"
+            ],
+            [
+              "ο ήλιος *I-li-os* — matahari",
+              "η θάλασσα *THA-la-sa* — laut",
+              "το παιδί *pé-DHI* — anak"
+            ],
+            [
+              "ο άντρας *AN-dras* — laki-laki",
+              "η γυναίκα *yi-NÉ-ka* — perempuan",
+              "το κορίτσι *ko-RI-tsi* — anak perempuan"
+            ],
+            [
+              "ο ουρανός *u-ra-NOS* — langit",
+              "η πόλη *PO-li* — kota",
+              "το αγόρι *a-GHO-ri* — anak laki-laki"
+            ],
+            [
+              "ο χρόνος *KHRO-nos* — waktu, tahun",
+              "η μέρα *MÉ-ra* — hari",
+              "το τραπέζι *tra-PÉ-zi* — meja"
+            ],
+            [
+              "ο καιρός *ké-ROS* — cuaca",
+              "η ώρα *O-ra* — jam",
+              "το κρεβάτι *kré-VA-ti* — tempat tidur"
+            ],
+            [
+              "ο σκύλος *SKI-los* — anjing",
+              "η γάτα *GHA-ta* — kucing",
+              "το πρόβλημα *PRO-vli-ma* — masalah"
+            ],
+            [
+              "ο αδερφός *a-dhér-FOS* — saudara lk",
+              "η αδερφή *a-dhér-FI* — saudara pr",
+              "το όνομα *O-no-ma* — nama"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga petunjuk menebak jenis kelamin",
+          "items": [
+            "**Berakhir -ος, -ας, -ης → hampir selalu laki-laki.** ο δρόμος, ο άντρας, ο μαθητής. Pengecualian yang paling sering: η οδός, η μέθοδος, η είσοδος.",
+            "**Berakhir -α, -η → hampir selalu perempuan.** η ώρα, η πόλη, η γυναίκα. Pengecualian: ο πατέρας, ο άντρας — dua-duanya menyebut laki-laki, jadi mudah diingat.",
+            "**Berakhir -ο, -ι, -μα → netral, tanpa kecuali yang perlu kamu hafal sekarang.** το βιβλίο, το σπίτι, το πρόβλημα. ⚠️ Semua kata serapan yang sudah kamu kenal dari bahasa Indonesia — πρόβλημα, σύστημα, πρόγραμμα, θέμα, κλίμα — masuk golongan **-μα** dan semuanya netral. Itu puluhan kata gratis sekaligus."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "el": "ο, η, το",
+      "baca": "o, i, to",
+      "id": "kata sandang: lk, pr, netral"
+    },
+    {
+      "el": "ένας, μία, ένα",
+      "baca": "É-nas, MI-a, É-na",
+      "id": "sebuah / satu (lk, pr, nt)"
+    },
+    {
+      "el": "αυτός, αυτή, αυτό",
+      "baca": "af-TOS, af-TI, af-TO",
+      "id": "ini, dia, itu"
+    },
+    {
+      "el": "τι;",
+      "baca": "ti",
+      "id": "apa?"
+    },
+    {
+      "el": "ποιος; ποια; ποιο;",
+      "baca": "pios, pia, pio",
+      "id": "siapa? yang mana?"
+    },
+    {
+      "el": "το σπίτι",
+      "baca": "to SPI-ti",
+      "id": "rumah"
+    },
+    {
+      "el": "η κουζίνα",
+      "baca": "i ku-ZI-na",
+      "id": "dapur"
+    },
+    {
+      "el": "το φλιτζάνι",
+      "baca": "to fli-DZA-ni",
+      "id": "cangkir"
+    },
+    {
+      "el": "ο καφές",
+      "baca": "o ka-FÉS",
+      "id": "kopi"
+    },
+    {
+      "el": "το νερό",
+      "baca": "to né-RO",
+      "id": "air"
+    },
+    {
+      "el": "το βιβλίο",
+      "baca": "to vi-VLI-o",
+      "id": "buku"
+    },
+    {
+      "el": "το τραπέζι",
+      "baca": "to tra-PÉ-zi",
+      "id": "meja"
+    },
+    {
+      "el": "η πόρτα",
+      "baca": "i POR-ta",
+      "id": "pintu"
+    },
+    {
+      "el": "ο αδερφός / η αδερφή",
+      "baca": "o a-dhér-FOS / i a-dhér-FI",
+      "id": "saudara laki-laki / perempuan"
+    },
+    {
+      "el": "ο άντρας / η γυναίκα",
+      "baca": "o AN-dras / i yi-NÉ-ka",
+      "id": "laki-laki / perempuan"
+    },
+    {
+      "el": "το παιδί",
+      "baca": "to pé-DHI",
+      "id": "anak"
+    },
+    {
+      "el": "η θάλασσα",
+      "baca": "i THA-la-sa",
+      "id": "laut"
+    },
+    {
+      "el": "η πόλη",
+      "baca": "i PO-li",
+      "id": "kota"
+    },
+    {
+      "el": "ωραίος, ωραία, ωραίο",
+      "baca": "o-RÉ-os, o-RÉ-a, o-RÉ-o",
+      "id": "indah, bagus"
+    },
+    {
+      "el": "όμορφος, όμορφη, όμορφο",
+      "baca": "O-mor-fos, O-mor-fi, O-mor-fo",
+      "id": "cantik, elok"
+    },
+    {
+      "el": "κρύος / ζεστός",
+      "baca": "KRI-os / zé-STOS",
+      "id": "dingin / panas"
+    },
+    {
+      "el": "έτοιμος",
+      "baca": "É-ti-mos",
+      "id": "siap"
+    },
+    {
+      "el": "και",
+      "baca": "ké",
+      "id": "dan, juga"
+    },
+    {
+      "el": "καλώς ήρθες / ήρθατε",
+      "baca": "ka-LOS IR-thés / IR-tha-té",
+      "id": "selamat datang (santai / hormat)"
+    },
+    {
+      "el": "τέλεια",
+      "baca": "TÉ-li-a",
+      "id": "sempurna, keren"
+    },
+    {
+      "el": "ένα λεπτό",
+      "baca": "É-na lép-TO",
+      "id": "sebentar (harfiah: satu menit)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata sandang yang tepat: ο, η, atau το.",
+      "items": [
+        "____ καφές είναι ζεστός.",
+        "____ θάλασσα είναι όμορφη.",
+        "____ σπίτι είναι μεγάλο.",
+        "____ Νίκος είναι ο αδερφός μου.",
+        "____ πρόβλημα δεν είναι μεγάλο.",
+        "____ πόλη είναι ωραία."
+      ]
+    },
+    {
+      "prompt": "Pilih αυτός, αυτή, atau αυτό sesuai bendanya.",
+      "items": [
+        "____ είναι ο δρόμος.",
+        "____ είναι η κουζίνα.",
+        "____ είναι το βιβλίο μου.",
+        "____ είναι η Ελένη.",
+        "Τι είναι ____;"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "είναι / αυτό / τι",
+        "ο / είναι / Νίκος / αυτός",
+        "μου / το / είναι / σπίτι / αυτό",
+        "καφές / ο / έτοιμος / είναι",
+        "όμορφη / Ελλάδα / η / είναι"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Yunani. Jangan lupa sandangnya.",
+      "items": [
+        "Ini rumah saya.",
+        "Airnya dingin.",
+        "Siapa dia? (laki-laki)",
+        "Saya Ana.",
+        "Yunani itu indah."
+      ]
+    }
+  ],
+  "answers": [
+    "Ο — Η — Το — Ο — Το — Η",
+    "Αυτός — Αυτή — Αυτό — Αυτή — αυτό",
+    "Τι είναι αυτό; — Αυτός είναι ο Νίκος. — Αυτό είναι το σπίτι μου. — Ο καφές είναι έτοιμος. — Η Ελλάδα είναι όμορφη.",
+    "Αυτό είναι το σπίτι μου. — Το νερό είναι κρύο. — Ποιος είναι αυτός; — Είμαι η Άννα. — Η Ελλάδα είναι όμορφη."
+  ]
+}
