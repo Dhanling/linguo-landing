@@ -1,0 +1,563 @@
+{
+ "title": "Lebih, paling, sama",
+ "title_target": "Phở ở đây ngon hơn.",
+ "goal": "Membandingkan dua hal dengan *hơn*, menyebut yang teratas dengan *nhất*, dan menyatakan kesamaan dengan *bằng* dan *như* — semuanya dengan kata yang berdiri di BELAKANG kata sifat.",
+ "bekal": [
+  "menyusun *A + sifat + hơn + B* dan *sifat + nhất*",
+  "menyatakan kesamaan dengan *bằng*, *như*, dan *cũng … như*",
+  "menanyakan pendapat dengan *thấy … thế nào?* dan *… nào?*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Hà Nội hay Sài Gòn?",
+   "intro": "Kedai kopi, sore hari. Linh ingin tahu kesan Budi setelah dua bulan tinggal di Hà Nội, dan percakapannya berbelok ke perdebatan abadi antara utara dan selatan.",
+   "lines": [
+    {
+     "speaker": "Linh:",
+     "text": "Em thấy Hà Nội thế nào?",
+     "id": "Menurutmu Hà Nội bagaimana?",
+     "literal": "adik merasa Hà Nội bagaimana?",
+     "baca": "Em thấy Hà Nội thế nào?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em thích lắm. Nhưng Hà Nội lạnh hơn Jakarta nhiều.",
+     "id": "Aku suka sekali. Tapi Hà Nội jauh lebih dingin daripada Jakarta.",
+     "literal": "adik suka sangat. tetapi Hà Nội dingin lebih Jakarta banyak.",
+     "baca": "Em thík lắm. Nyưng Hà Nội lạng hơn Jakarta nyiều."
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Ừ, mùa đông ở đây lạnh nhất miền Bắc.",
+     "id": "Iya, musim dingin di sini paling dingin di seluruh utara.",
+     "literal": "iya, musim dingin di sini dingin paling wilayah Utara.",
+     "baca": "Ừ, mùa dông ở dây lạng nyất miền Bắk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sài Gòn có nóng như Jakarta không ạ?",
+     "id": "Sài Gòn sepanas Jakarta?",
+     "literal": "Sài Gòn ada panas seperti Jakarta tidak ya?",
+     "baca": "Sài Gòn kó nóng nyư Jakarta không ạ?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Nóng bằng — có khi còn nóng hơn.",
+     "id": "Sama panasnya — kadang malah lebih panas.",
+     "literal": "panas sama — ada kali masih panas lebih.",
+     "baca": "Nóng bằng — kó khi kòn nóng hơn."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thành phố nào đông người hơn ạ?",
+     "id": "Kota mana yang lebih ramai?",
+     "literal": "kota mana ramai orang lebih ya?",
+     "baca": "Thàng fố nào dông người hơn ạ?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Sài Gòn đông hơn Hà Nội. Nhưng Hà Nội cổ hơn.",
+     "id": "Sài Gòn lebih ramai daripada Hà Nội. Tapi Hà Nội lebih tua.",
+     "literal": "Sài Gòn ramai lebih Hà Nội. tetapi Hà Nội kuno lebih.",
+     "baca": "Sài Gòn dông hơn Hà Nội. Nyưng Hà Nội kổ hơn."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em thấy phở Hà Nội ngon nhất!",
+     "id": "Menurutku phở Hà Nội paling enak!",
+     "literal": "adik merasa phở Hà Nội enak paling!",
+     "baca": "Em thấy fở Hà Nội ngon nyất!"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Người Sài Gòn không đồng ý đâu!",
+     "id": "Orang Sài Gòn nggak setuju tuh!",
+     "literal": "orang Sài Gòn tidak setuju kok!",
+     "baca": "Người Sài Gòn không dồng ý dâu!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vậy phở ở đâu ngon bằng phở Hà Nội ạ?",
+     "id": "Kalau begitu phở di mana yang seenak phở Hà Nội?",
+     "literal": "begitu phở di mana enak sama phở Hà Nội ya?",
+     "baca": "Vậy fở ở dâu ngon bằng fở Hà Nội ạ?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Em nói giỏi hơn tuần trước nhiều đấy!",
+     "id": "Ngomongmu jauh lebih bagus daripada minggu lalu lho!",
+     "literal": "adik bicara pandai lebih minggu lalu banyak tuh!",
+     "baca": "Em nói zỏi hơn tuần cướk nyiều dấy!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Hơn berdiri di BELAKANG kata sifat**, kebalikan dari \"lebih\" kita yang berdiri di depan. *Lạnh hơn* = \"lebih dingin\", *ngon hơn* = \"lebih enak\". Ini salah satu dari sedikit tempat urutan bahasa Vietnam berbeda dari urutan bahasa Indonesia, jadi ia perlu dilatih sampai otomatis.",
+    "**Yang dibandingkan menyusul langsung sesudah *hơn*, tanpa kata \"daripada\".** *Hà Nội lạnh hơn Jakarta* — tiga bagian berturut-turut: A + sifat + *hơn* + B. Tidak ada padanan \"daripada\" sama sekali, dan tidak dibutuhkan.",
+    "**Nhất juga berdiri di belakang**: *ngon nhất* (paling enak), *lạnh nhất* (paling dingin), *nhanh nhất* (paling cepat). Kalau ada lingkupnya, lingkup itu menyusul: *lạnh nhất miền Bắc* (paling dingin di utara), *ngon nhất Hà Nội*.",
+    "**Nhiều di belakang perbandingan berarti \"jauh lebih\"**: *lạnh hơn nhiều* (jauh lebih dingin), *giỏi hơn nhiều* (jauh lebih pandai). Lawannya *một chút* — *rẻ hơn một chút* (sedikit lebih murah). Dua kata kecil yang membuat perbandinganmu terdengar berisi.",
+    "**Nào berarti \"yang mana\" dan berdiri di belakang kata bendanya**: *thành phố nào?* (kota mana?), *quyển nào?* (yang mana?), *cái nào rẻ hơn?* (mana yang lebih murah?). Sama seperti kata penunjuk *này* dan *kia* di unit 3, ia menempel di belakang.",
+    "**Thấy berarti \"merasa\" dan itulah cara menyatakan pendapat.** *Em thấy Hà Nội thế nào?* = \"menurutmu Hà Nội bagaimana?\"; *Tôi thấy ngon.* = \"menurut saya enak\". Arti aslinya \"melihat\", tapi dalam pemakaian sehari-hari ia hampir selalu \"menurut saya\" — sama seperti \"saya lihat sih…\" dalam bahasa Indonesia."
+   ],
+   "grammars": [
+    {
+     "title": "Lima cetakan perbandingan",
+     "body": [
+      "Semuanya memakai kata yang berdiri **di belakang** kata sifat. Sekali kamu terbiasa dengan letaknya, tidak ada satu pun yang perlu dihafal terpisah."
+     ],
+     "table": {
+      "head": [
+       "Cetakan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "sifat + **hơn**",
+        "*Cái này rẻ **hơn**.*",
+        "Ini lebih murah."
+       ],
+       [
+        "A + sifat + **hơn** + B",
+        "*Hà Nội lạnh **hơn** Sài Gòn.*",
+        "Hà Nội lebih dingin daripada Sài Gòn."
+       ],
+       [
+        "sifat + **nhất**",
+        "*Phở này ngon **nhất**.*",
+        "Phở ini paling enak."
+       ],
+       [
+        "A + sifat + **bằng** + B",
+        "*Sài Gòn nóng **bằng** Jakarta.*",
+        "Sài Gòn sama panasnya dengan Jakarta."
+       ],
+       [
+        "A + sifat + **như** + B",
+        "*Anh ấy cao **như** tôi.*",
+        "Dia setinggi saya."
+       ],
+       [
+        "**không** + sifat + **bằng**",
+        "*Cái này **không** đẹp **bằng** cái kia.*",
+        "Ini tidak sebagus yang itu."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Bằng dan như hampir sama artinya**, tapi rasanya berbeda: *bằng* mengukur (\"setara jumlahnya\"), *như* menyamakan (\"seperti\"). Untuk hal yang bisa diukur — panas, mahal, tinggi — pakai *bằng*; untuk perumpamaan — *đẹp như tranh* (\"cantik seperti lukisan\") — pakai *như*.",
+      "Sangkalan *không … bằng* adalah cara paling halus mengatakan bahwa sesuatu kalah bagus, tanpa harus menyebutnya jelek: *Quán này không ngon bằng quán kia.* — \"warung ini tidak seenak warung itu\". Di Vietnam, bentuk halus seperti ini jauh lebih sering dipakai daripada mengatakan *dở* (jelek) terang-terangan."
+     ]
+    },
+    {
+     "title": "Bertanya pendapat dan pilihan",
+     "body": [
+      "Dua cetakan yang akan kamu pakai setiap hari begitu percakapanmu melewati tahap perkenalan."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan",
+       "Cara baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "Anh thấy thế nào?",
+        "Ang thấy thế nào?",
+        "Menurut Kakak bagaimana?"
+       ],
+       [
+        "Anh thấy phở này thế nào?",
+        "Ang thấy fở này thế nào?",
+        "Menurut Kakak phở ini bagaimana?"
+       ],
+       [
+        "Cái nào đẹp hơn?",
+        "Kái nào dẹp hơn?",
+        "Mana yang lebih bagus?"
+       ],
+       [
+        "Anh thích cái nào hơn?",
+        "Ang thík kái nào hơn?",
+        "Kakak lebih suka yang mana?"
+       ],
+       [
+        "Quán nào ngon nhất?",
+        "Kwán nào ngon nyất?",
+        "Warung mana yang paling enak?"
+       ],
+       [
+        "Ai cao nhất?",
+        "Ai kao nyất?",
+        "Siapa yang paling tinggi?"
+       ],
+       [
+        "Cái nào rẻ hơn?",
+        "Kái nào zẻ hơn?",
+        "Mana yang lebih murah?"
+       ],
+       [
+        "Đi bằng gì nhanh nhất?",
+        "Di bằng gì nyang nyất?",
+        "Naik apa yang paling cepat?"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Thích … hơn berarti \"lebih suka\"** — *hơn* tetap di belakang, walaupun yang dibandingkan adalah kesukaan, bukan sifat: *Tôi thích cà phê hơn.* (\"saya lebih suka kopi\"). Dan *thích nhất* = \"paling suka\".",
+      "Menjawab *Anh thấy thế nào?* tidak perlu panjang. *Tôi thấy ngon.* (menurut saya enak), *Tôi thấy đẹp.* (menurut saya bagus), atau *Cũng được.* (lumayan) sudah cukup — dan yang terakhir itu jawaban yang paling sering terdengar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tiga wilayah, tiga logat",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Vietnam terbagi menjadi tiga wilayah yang bahasanya benar-benar terdengar berbeda. Modul ini memakai ragam utara, tapi kamu akan mendengar ketiganya — dan mengenali perbedaannya jauh lebih berguna daripada berpura-pura tidak ada."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "",
+      "*Miền Bắc* (utara)",
+      "*Miền Trung* (tengah)",
+      "*Miền Nam* (selatan)"
+     ],
+     "rows": [
+      [
+       "Kota utamanya",
+       "*Hà Nội*",
+       "*Huế*, *Đà Nẵng*",
+       "*Sài Gòn* / *TP. Hồ Chí Minh*"
+      ],
+      [
+       "Nada",
+       "enam nada, paling lengkap",
+       "beda jauh, paling sulit",
+       "lima nada — *hỏi* & *ngã* menyatu"
+      ],
+      [
+       "*d*, *gi*, *r*",
+       "semuanya **z**",
+       "*r* digetarkan",
+       "*r* seperti **r**, *d/gi* seperti **y**"
+      ],
+      [
+       "*ch* vs *tr*",
+       "sama, dua-duanya **c**",
+       "dibedakan",
+       "dibedakan"
+      ],
+      [
+       "\"iya\"",
+       "*vâng*",
+       "*dạ*",
+       "*dạ*"
+      ],
+      [
+       "\"ayah / ibu\"",
+       "*bố* / *mẹ*",
+       "*ba* / *mạ*",
+       "*ba* / *má*"
+      ],
+      [
+       "\"mangkuk\"",
+       "*bát*",
+       "*tô*",
+       "*tô*"
+      ],
+      [
+       "\"belok\"",
+       "*rẽ*",
+       "*quẹo*",
+       "*quẹo*"
+      ],
+      [
+       "\"sendok\"",
+       "*thìa*",
+       "*muỗng*",
+       "*muỗng*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Ragam utara dipakai siaran nasional dan buku pelajaran**, dan itu sebabnya modul ini memakainya: ia dipahami di seluruh Vietnam. Ragam selatan lebih mudah bagi pemula karena nadanya cuma lima, tapi kalau kamu belajar dari bahan ini lalu pindah ke Sài Gòn, kamu tetap akan dipahami — sebaliknya juga begitu."
+    },
+    {
+     "type": "p",
+     "text": "Ragam tengah, terutama Huế, adalah yang paling jauh dari keduanya; banyak orang Vietnam sendiri mengaku kesulitan. Jangan berkecil hati kalau kamu tidak menangkap apa pun di sana; itu bukan ukuran kemampuanmu."
+    }
+   ]
+  },
+  {
+   "title": "Kata sifat untuk membandingkan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Arti",
+      "Tiếng Việt",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "hơn",
+       "hơn",
+       "lebih",
+       "nhất",
+       "",
+       "paling"
+      ],
+      [
+       "bằng",
+       "bằng",
+       "sama dengan",
+       "như",
+       "",
+       "seperti"
+      ],
+      [
+       "giống",
+       "zống",
+       "mirip, sama",
+       "khác",
+       "",
+       "berbeda"
+      ],
+      [
+       "thành phố",
+       "thàng fố",
+       "kota",
+       "quê",
+       "",
+       "kampung halaman"
+      ],
+      [
+       "miền",
+       "miền",
+       "wilayah",
+       "cổ",
+       "",
+       "kuno, tua"
+      ],
+      [
+       "hiện đại",
+       "hiện dại",
+       "modern",
+       "yên tĩnh",
+       "",
+       "tenang"
+      ],
+      [
+       "đồng ý",
+       "dồng ý",
+       "setuju",
+       "thấy",
+       "",
+       "merasa; melihat"
+      ],
+      [
+       "có khi",
+       "kó khi",
+       "kadang-kadang",
+       "vậy / thế",
+       "",
+       "begitu, kalau begitu"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Satu perdebatan yang tidak akan pernah selesai",
+     "items": [
+      "Phở Hà Nội atau phở Sài Gòn — pertanyaan ini bisa membuat satu meja penuh orang Vietnam berdebat setengah jam, dengan senang hati. Yang utara lebih bening dan sedikit bumbu; yang selatan lebih manis dan disajikan dengan setumpuk daun dan tauge.",
+      "Kalau kamu ditanya pendapatmu, jawaban paling aman sekaligus paling disukai adalah *Cái nào cũng ngon!* (\"dua-duanya enak!\"). Tapi jauh lebih menyenangkan kalau kamu memilih satu dan siap membelanya — itu justru cara tercepat membuat orang menganggapmu teman, bukan tamu."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "hơn",
+   "id": "lebih",
+   "baca": "hơn"
+  },
+  {
+   "vi": "nhất",
+   "id": "paling",
+   "baca": "nyất"
+  },
+  {
+   "vi": "bằng",
+   "id": "sama dengan",
+   "baca": "bằng"
+  },
+  {
+   "vi": "như",
+   "id": "seperti",
+   "baca": "nyư"
+  },
+  {
+   "vi": "giống",
+   "id": "mirip, sama",
+   "baca": "zống"
+  },
+  {
+   "vi": "khác",
+   "id": "berbeda, lain",
+   "baca": "khák"
+  },
+  {
+   "vi": "nào",
+   "id": "yang mana",
+   "baca": "nào"
+  },
+  {
+   "vi": "thấy",
+   "id": "merasa; melihat",
+   "baca": "thấy"
+  },
+  {
+   "vi": "đồng ý",
+   "id": "setuju",
+   "baca": "dồng ý"
+  },
+  {
+   "vi": "thành phố",
+   "id": "kota",
+   "baca": "thàng fố"
+  },
+  {
+   "vi": "miền",
+   "id": "wilayah",
+   "baca": "miền"
+  },
+  {
+   "vi": "miền Bắc / miền Nam",
+   "id": "Vietnam utara / selatan",
+   "baca": "miền Bắk / miền Nam"
+  },
+  {
+   "vi": "quê",
+   "id": "kampung halaman",
+   "baca": "kwê"
+  },
+  {
+   "vi": "cổ",
+   "id": "kuno, tua",
+   "baca": "kổ"
+  },
+  {
+   "vi": "hiện đại",
+   "id": "modern",
+   "baca": "hiện dại"
+  },
+  {
+   "vi": "cao / thấp",
+   "id": "tinggi / rendah",
+   "baca": "kao / thấp"
+  },
+  {
+   "vi": "có khi",
+   "id": "kadang-kadang",
+   "baca": "kó khi"
+  },
+  {
+   "vi": "vậy / thế",
+   "id": "begitu; kalau begitu",
+   "baca": "vậy / thế"
+  },
+  {
+   "vi": "mùa đông",
+   "id": "musim dingin",
+   "baca": "mùa dông"
+  },
+  {
+   "vi": "thìa / muỗng",
+   "id": "sendok",
+   "baca": "thìa / muỗng"
+  },
+  {
+   "vi": "dở",
+   "id": "tidak enak, jelek",
+   "baca": "zở"
+  },
+  {
+   "vi": "một chút",
+   "id": "sedikit",
+   "baca": "một cút"
+  },
+  {
+   "vi": "nhiều",
+   "id": "banyak; jauh (lebih)",
+   "baca": "nyiều"
+  },
+  {
+   "vi": "tuần trước",
+   "id": "minggu lalu",
+   "baca": "tuần cướk"
+  },
+  {
+   "vi": "đâu",
+   "id": "mana; kok (penyangkal)",
+   "baca": "dâu"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Bandingkan dengan *hơn*. Susun kalimat lengkap.",
+   "items": [
+    "Hà Nội / lạnh / Sài Gòn",
+    "cái này / rẻ / cái kia",
+    "xe máy / nhanh / xe đạp",
+    "phở / ngon / bún",
+    "Sài Gòn / đông / Hà Nội"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Phở ini paling enak.",
+    "Sài Gòn sama panasnya dengan Jakarta.",
+    "Ini tidak sebagus yang itu.",
+    "Mana yang lebih murah?",
+    "Saya lebih suka kopi.",
+    "Menurut Kakak bagaimana?"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan *hơn*, *nhất*, *bằng*, atau *như*.",
+   "items": [
+    "Cái này đẹp ____ cái kia. (lebih)",
+    "Quán này ngon ____. (paling)",
+    "Anh ấy cao ____ tôi. (setinggi)",
+    "Sài Gòn nóng ____ Jakarta. (sama panasnya)",
+    "Cái này không đắt ____ cái kia. (tidak semahal)"
+   ]
+  },
+  {
+   "prompt": "Jawab tentang dirimu sendiri, satu kalimat penuh.",
+   "items": [
+    "Anh/chị thích cà phê hay trà hơn?",
+    "Thành phố nào đẹp nhất ở Indonesia?",
+    "Anh/chị thấy tiếng Việt thế nào?",
+    "Đi bằng gì nhanh nhất ở thành phố anh/chị?",
+    "Món nào ngon nhất ở quê anh/chị?"
+   ]
+  }
+ ],
+ "answers": [
+  "Hà Nội lạnh hơn Sài Gòn. — Cái này rẻ hơn cái kia. — Xe máy nhanh hơn xe đạp. — Phở ngon hơn bún. — Sài Gòn đông hơn Hà Nội.",
+  "Phở này ngon nhất. — Sài Gòn nóng bằng Jakarta. — Cái này không đẹp bằng cái kia. — Cái nào rẻ hơn? — Tôi thích cà phê hơn. — Anh thấy thế nào?",
+  "hơn — nhất — như — bằng — bằng",
+  "Tôi thích cà phê hơn. — Tôi thấy … đẹp nhất. — Tôi thấy tiếng Việt khó nhưng hay. — Đi bằng xe máy nhanh nhất. — Tôi thấy … ngon nhất."
+ ]
+}

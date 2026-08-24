@@ -1,0 +1,513 @@
+{
+ "title": "Halo, siapa namamu?",
+ "title_target": "Halló! Hvað heitir þú?",
+ "goal": "Menyapa dengan benar menurut waktu dan menurut jenis kelamin yang disapa, menyebut nama sendiri, menanyakan kabar, dan menghadapi kejutan pertama: kata kerja bahasa Islandia berubah menurut orangnya.",
+ "bekal": [
+  "menyapa dengan *halló*, *sæll/sæl*, *góðan daginn*, dan *gott kvöld* pada tempatnya masing-masing",
+  "menyebut nama sendiri dengan *ég heiti* dan menanyakan nama orang lain",
+  "menyusun enam bentuk kata kerja *vera* — satu-satunya kata kerja yang benar-benar wajib hafal di unit ini"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Fyrsti dagurinn í skólanum",
+   "intro": "Hari pertama kursus bahasa di sebuah sekolah di Reykjavík. Dua peserta baru duduk bersebelahan sebelum kelas dimulai.",
+   "lines": [
+    {
+     "speaker": "Anna:",
+     "text": "Halló! Ég heiti Anna. Hvað heitir þú?",
+     "id": "Halo! Nama saya Anna. Siapa namamu?",
+     "literal": "halo! saya menamai Anna. apa menamai kamu?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Sæl, Anna! Ég heiti Búdí.",
+     "id": "Hai, Anna! Nama saya Budi.",
+     "literal": "bahagia, Anna! saya menamai Budi."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Gaman að kynnast þér! Hvernig hefur þú það?",
+     "id": "Senang berkenalan! Bagaimana kabarmu?",
+     "literal": "menyenangkan untuk berkenalan kepadamu! bagaimana punya kamu itu?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Ég hef það gott, þakka þér fyrir. Og þú?",
+     "id": "Saya baik, terima kasih. Kamu?",
+     "literal": "saya punya itu baik, berterima-kasih kepadamu untuk. dan kamu?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Allt gott! Ert þú nýr hér?",
+     "id": "Semuanya baik! Kamu baru di sini?",
+     "literal": "semua baik! adalah kamu baru di-sini?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Já, ég er nýr. Ég er frá Indónesíu.",
+     "id": "Ya, saya baru. Saya dari Indonesia.",
+     "literal": "ya, saya adalah baru. saya adalah dari Indonesia."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Vá! Ert þú stúdent?",
+     "id": "Wah! Kamu mahasiswa?",
+     "literal": "wah! adalah kamu mahasiswa?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Já, ég er stúdent. Ertu Íslendingur?",
+     "id": "Ya, saya mahasiswa. Kamu orang Islandia?",
+     "literal": "ya, saya adalah mahasiswa. adalah-kamu orang-Islandia?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Ég er Íslendingur, frá Akureyri. Talar þú íslensku?",
+     "id": "Saya orang Islandia, dari Akureyri. Kamu bisa bahasa Islandia?",
+     "literal": "saya adalah orang-Islandia, dari Akureyri. berbicara kamu bahasa-Islandia?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Bara smá. Ég skil ekki vel.",
+     "id": "Cuma sedikit. Saya belum mengerti dengan baik.",
+     "literal": "hanya sedikit. saya mengerti tidak baik."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Það er allt í lagi! Sjáumst á morgun.",
+     "id": "Tidak apa-apa! Sampai jumpa besok.",
+     "literal": "itu adalah semua dalam keadaan! terlihat-kita pada pagi."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Sjáumst! Bless!",
+     "id": "Sampai jumpa! Dah!",
+     "literal": "terlihat-kita! berkat!"
+    }
+   ],
+   "notes": [
+    "**Sæll dan sæl — sapaan yang berubah menurut orang yang DISAPA, bukan yang menyapa.** Harfiahnya \"berbahagialah\". Kepada lelaki: *sæll*; kepada perempuan: *sæl*. Anna perempuan, jadi Búdí menyapanya *sæl*. Tidak ada bahasa Nordik lain yang menuntut ini, dan tidak ada padanannya dalam bahasa Indonesia — jadi biasakan melihat dulu siapa di depanmu sebelum membuka mulut.",
+    "**Hvernig hefur þú það? harfiahnya \"bagaimana kamu punya itu\".** Karena itu jawabannya juga memakai \"punya\": *ég hef það gott* — \"saya punya itu baik\". Menjawabnya dengan *ég er góður* (\"saya adalah baik\") salah, dan artinya jadi \"saya orang baik\".",
+    "**Ég heiti bukan \"nama saya adalah\".** *Heita* adalah kata kerja tersendiri yang berarti \"bernama\": *ég heiti* saya bernama, *þú heitir* kamu bernama, *hún heitir* dia bernama. Kata *nafn* (nama) tidak muncul sama sekali.",
+    "**Ertu = ert þú, disingkat.** Bahasa Islandia sehari-hari melekatkan *þú* ke ekor kata kerjanya: *ertu*, *talarðu*, *heitirðu*, *viltu*. Bentuk panjangnya tidak salah, cuma terdengar sedikit lebih hati-hati — dan di dialog ini Anna memakai dua-duanya.",
+    "**Bless berasal dari kata \"diberkati\".** Ia dipakai untuk pamit dalam segala suasana, dari kasir sampai atasan. Untuk pamit yang lebih resmi ada *vertu sæll* (kepada lelaki) dan *vertu sæl* (kepada perempuan) — sapaan yang sama, dipakai untuk berpisah.",
+    "**Inilah kejutan pertama: kata kerjanya BERUBAH menurut orangnya.** *Ég er*, *þú ert*, *hún er*, *við erum*. Bahasa Norwegia, Denmark, dan Swedia sudah membuang perubahan ini seluruhnya; bahasa Islandia menyimpannya utuh dari zaman saga. Enam bentuk untuk satu kata kerja — dan itu berlaku untuk semua kata kerja, bukan cuma yang ini."
+   ],
+   "grammars": [
+    {
+     "title": "Vera — kata kerja \"adalah\"",
+     "body": [
+      "Kata kerja pertama yang wajib kamu kuasai, dan yang paling tidak beraturan dari semuanya. Kabar baiknya: sesudah *vera*, hampir semua kata kerja lain berpola rapi."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Cara baca",
+       "vera",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "ég",
+        "yègh",
+        "**er**",
+        "saya adalah"
+       ],
+       [
+        "þú",
+        "thuu",
+        "**ert**",
+        "kamu adalah"
+       ],
+       [
+        "hann / hún / það",
+        "han / huun / thadh",
+        "**er**",
+        "dia / ia adalah"
+       ],
+       [
+        "við",
+        "vidh",
+        "**erum**",
+        "kami adalah"
+       ],
+       [
+        "þið",
+        "thidh",
+        "**erud**",
+        "kalian adalah"
+       ],
+       [
+        "þeir / þær / þau",
+        "their / thair / thöi",
+        "**eru**",
+        "mereka adalah"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Tiga kata untuk \"mereka\".** *Þeir* kalau semuanya lelaki, *þær* kalau semuanya perempuan, *þau* kalau campur atau kalau yang dibicarakan benda netral. Bahasa Indonesia cukup satu kata; di sini kamu harus melihat dulu siapa yang dimaksud.",
+      "**Kata gantinya TIDAK boleh dijatuhkan**, berbeda dari bahasa Spanyol atau Italia. *Er stúdent* saja tidak berarti apa-apa; harus *ég er stúdent*.",
+      "Bentuk *þið eruð* memakai huruf **ð** di ujung. Bunyinya \"è-rüdh\" — lembut, hampir seperti dengung, bukan \"d\" keras."
+     ]
+    },
+    {
+     "title": "Bertanya: cukup tukar urutannya",
+     "body": [
+      "Bahasa Islandia tidak punya kata seperti \"apakah\". Kalimat berita diubah jadi pertanyaan dengan **memindahkan kata kerjanya ke depan pelakunya** — dan tidak ada yang lain yang berubah."
+     ],
+     "table": {
+      "head": [
+       "Kalimat berita",
+       "Pertanyaan",
+       "Bentuk singkat",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Þú ert nýr.*",
+        "**Ert** þú nýr?",
+        "*Ertu nýr?*",
+        "Kamu baru?"
+       ],
+       [
+        "*Þú heitir Anna.*",
+        "**Heitir** þú Anna?",
+        "*Heitirðu Anna?*",
+        "Namamu Anna?"
+       ],
+       [
+        "*Þú talar íslensku.*",
+        "**Talar** þú íslensku?",
+        "*Talarðu íslensku?*",
+        "Kamu bisa bahasa Islandia?"
+       ],
+       [
+        "*Hún er hér.*",
+        "**Er** hún hér?",
+        "—",
+        "Dia di sini?"
+       ],
+       [
+        "*Þið eruð stúdentar.*",
+        "**Eruð** þið stúdentar?",
+        "*Eruð þið?*",
+        "Kalian mahasiswa?"
+       ]
+      ]
+     },
+     "after": [
+      "Kalau ada kata tanya (*hvað*, *hver*, *hvernig*, *hvaðan*), kata tanya itu yang duduk paling depan dan kata kerjanya tetap di tempat kedua: *Hvað heitir þú?* — bukan *Hvað þú heitir?*",
+      "Aturan \"kata kerja di tempat kedua\" ini bekerja di seluruh bahasa Islandia dan akan kamu temui lagi di setiap unit. Ia satu-satunya aturan urutan kata yang tidak pernah dilanggar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyapa menurut jam dan menurut siapa",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Islandia memilih sapaan menurut waktu **dan** menurut siapa yang disapa. Salah pilih bukan salah tata bahasa, melainkan salah suasana — dan itu justru lebih terasa."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Sapaan",
+      "Cara baca",
+      "Waktu",
+      "Suasana"
+     ],
+     "rows": [
+      [
+       "Halló",
+       "HA-lou",
+       "kapan saja",
+       "netral, dipakai paling luas"
+      ],
+      [
+       "Hæ",
+       "hai",
+       "kapan saja",
+       "santai, ke teman"
+      ],
+      [
+       "Sæll",
+       "saitl",
+       "kapan saja, **ke lelaki**",
+       "hangat, sedikit lebih pribadi"
+      ],
+      [
+       "Sæl",
+       "sail",
+       "kapan saja, **ke perempuan**",
+       "hangat, sedikit lebih pribadi"
+      ],
+      [
+       "Góðan daginn",
+       "GOU-dhan DA-yin",
+       "pagi sampai sore",
+       "resmi, ke petugas dan orang asing"
+      ],
+      [
+       "Gott kvöld",
+       "goht kvöld",
+       "malam",
+       "resmi"
+      ],
+      [
+       "Góða nótt",
+       "GOU-dha nouht",
+       "saat berpisah malam",
+       "= selamat tidur, bukan sapaan"
+      ],
+      [
+       "Bless",
+       "blès",
+       "pamit",
+       "netral, paling sering"
+      ],
+      [
+       "Vertu sæll / sæl",
+       "VÈR-tü saitl / sail",
+       "pamit",
+       "resmi atau hangat"
+      ],
+      [
+       "Sjáumst",
+       "SYAU-ümst",
+       "pamit",
+       "= sampai jumpa, kalau akan bertemu lagi"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Awas dua hal",
+     "items": [
+      "*Góða nótt* **bukan** sapaan malam. Ia dipakai hanya saat berpisah untuk tidur, seperti \"selamat tidur\". Menyapa orang dengan *góða nótt* saat masuk restoran akan membuatnya tersenyum bingung — pakailah *gott kvöld*.",
+      "Kepada dua orang atau lebih, *sæll/sæl* ikut berubah: *sælir* (semua lelaki), *sælar* (semua perempuan), *sæl* (campur). Kalau ragu, pakai *halló* — ia tidak pernah salah."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Delapan kalimat pertama yang harus siap di mulut",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Íslenska",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Ég heiti …",
+       "yègh HEI-ti",
+       "Nama saya …"
+      ],
+      [
+       "Ég er frá Indónesíu.",
+       "yègh èr frau IN-dou-nè-sii-ü",
+       "Saya dari Indonesia."
+      ],
+      [
+       "Ég skil ekki.",
+       "yègh skil ÈH-ki",
+       "Saya tidak mengerti."
+      ],
+      [
+       "Talar þú ensku?",
+       "TA-lar thuu ÈN-skü",
+       "Kamu bisa bahasa Inggris?"
+      ],
+      [
+       "Hvað segir þú?",
+       "kvadh SÈ-yir thuu",
+       "Apa katamu? (tolong ulangi)"
+      ],
+      [
+       "Hægar, takk.",
+       "HAI-ghar tahk",
+       "Lebih lambat, tolong."
+      ],
+      [
+       "Þakka þér fyrir.",
+       "THAH-ka thyèr FI-rir",
+       "Terima kasih."
+      ],
+      [
+       "Það er allt í lagi.",
+       "thadh èr alt ii LA-yi",
+       "Tidak apa-apa."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Delapan kalimat ini menutup sembilan dari sepuluh kebutuhan hari pertamamu di Reykjavík. Hafalkan bunyinya, bukan tulisannya — dan ucapkan keras-keras sepuluh kali masing-masing sebelum lanjut ke unit 2."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "is": "halló",
+   "baca": "HA-lou",
+   "id": "halo"
+  },
+  {
+   "is": "hæ",
+   "baca": "hai",
+   "id": "hai (akrab)"
+  },
+  {
+   "is": "sæll / sæl",
+   "baca": "saitl / sail",
+   "id": "hai (ke lelaki / ke perempuan)"
+  },
+  {
+   "is": "bless",
+   "baca": "blès",
+   "id": "dah, selamat tinggal"
+  },
+  {
+   "is": "sjáumst",
+   "baca": "SYAU-ümst",
+   "id": "sampai jumpa"
+  },
+  {
+   "is": "vera",
+   "baca": "VÈ-ra",
+   "id": "adalah, ada"
+  },
+  {
+   "is": "heita",
+   "baca": "HEI-ta",
+   "id": "bernama"
+  },
+  {
+   "is": "hvað",
+   "baca": "kvadh",
+   "id": "apa"
+  },
+  {
+   "is": "hver",
+   "baca": "kvèr",
+   "id": "siapa"
+  },
+  {
+   "is": "hvernig",
+   "baca": "KVÈR-nigh",
+   "id": "bagaimana"
+  },
+  {
+   "is": "hafa",
+   "baca": "HA-va",
+   "id": "punya"
+  },
+  {
+   "is": "gott / góður",
+   "baca": "goht / GOU-dhür",
+   "id": "baik, bagus"
+  },
+  {
+   "is": "nýr",
+   "baca": "niir",
+   "id": "baru"
+  },
+  {
+   "is": "hér",
+   "baca": "hyèr",
+   "id": "di sini"
+  },
+  {
+   "is": "frá",
+   "baca": "frau",
+   "id": "dari"
+  },
+  {
+   "is": "stúdent",
+   "baca": "STUU-dènt",
+   "id": "mahasiswa"
+  },
+  {
+   "is": "Íslendingur",
+   "baca": "IIS-lèn-din-gür",
+   "id": "orang Islandia"
+  },
+  {
+   "is": "tala",
+   "baca": "TA-la",
+   "id": "berbicara"
+  },
+  {
+   "is": "skilja",
+   "baca": "SKIL-ya",
+   "id": "mengerti"
+  },
+  {
+   "is": "ekki",
+   "baca": "ÈH-ki",
+   "id": "tidak"
+  },
+  {
+   "is": "bara smá",
+   "baca": "BA-ra smau",
+   "id": "cuma sedikit"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Islandia.",
+   "items": [
+    "Halo! Siapa namamu?",
+    "Nama saya Budi.",
+    "Saya dari Indonesia.",
+    "Bagaimana kabarmu?",
+    "Saya baik, terima kasih.",
+    "Kamu mahasiswa?"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bentuk *vera* yang tepat.",
+   "items": [
+    "Ég ____ stúdent.",
+    "Þú ____ nýr hér.",
+    "Hún ____ frá Akureyri.",
+    "Við ____ í skólanum.",
+    "Þið ____ Íslendingar.",
+    "Þau ____ ekki hér."
+   ]
+  },
+  {
+   "prompt": "Ubah jadi pertanyaan dengan menukar urutannya.",
+   "items": [
+    "Þú ert nýr hér.",
+    "Hún er Íslendingur.",
+    "Þú talar íslensku.",
+    "Þið eruð stúdentar.",
+    "Hann heitir Jón."
+   ]
+  },
+  {
+   "prompt": "Pilih sapaan yang tepat. Tulis jawabannya satu kata atau satu frasa.",
+   "items": [
+    "Kamu masuk toko roti jam delapan pagi. Kepada penjualnya kamu bilang ____.",
+    "Kamu menyapa Anna, teman sekelas perempuan, dengan hangat. Kamu bilang ____.",
+    "Kamu menyapa Jón, teman sekelas lelaki, dengan hangat. Kamu bilang ____.",
+    "Kamu masuk restoran jam delapan malam. Kepada pelayannya kamu bilang ____.",
+    "Kamu berpamitan dengan kasir di supermarket. Kamu bilang ____."
+   ]
+  }
+ ],
+ "answers": [
+  "Halló! Hvað heitir þú? — Ég heiti Búdí. — Ég er frá Indónesíu. — Hvernig hefur þú það? — Ég hef það gott, þakka þér fyrir. — Ert þú stúdent?",
+  "er — ert — er — erum — eruð — eru",
+  "Ert þú nýr hér? — Er hún Íslendingur? — Talar þú íslensku? — Eruð þið stúdentar? — Heitir hann Jón?",
+  "Góðan daginn. — Sæl. — Sæll. — Gott kvöld. — Bless."
+ ]
+}

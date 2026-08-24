@@ -1,0 +1,587 @@
+{
+ "title": "Sudah, sedang, akan",
+ "title_target": "Anh ăn cơm chưa?",
+ "goal": "Menandai waktu dengan tiga kata lepas yang sepadan satu-satu dengan *sudah*, *sedang*, *akan* — tanpa satu pun kata kerja yang berubah bentuk.",
+ "bekal": [
+  "memakai *đã*, *đang*, *sẽ* dan tahu kapan ketiganya boleh dijatuhkan",
+  "membedakan *rồi* di ujung kalimat dari *đã* di depan kata kerja",
+  "bertanya dengan *… chưa?* dan menjawab dengan *Rồi* atau *Chưa*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Gọi điện cho chị Linh",
+   "intro": "Sore hari. Budi menelepon Linh. Perhatikan bagaimana keduanya memanggil diri sendiri — Linh memakai *chị*, Budi memakai *em*, persis seperti aturan unit 1.",
+   "lines": [
+    {
+     "speaker": "Linh:",
+     "text": "A lô? Ai đấy ạ?",
+     "id": "Halo? Siapa ini?",
+     "literal": "halo? siapa sana ya?",
+     "baca": "A lô? Ai dấy ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chị Linh à? Budi đây. Chị đang làm gì đấy?",
+     "id": "Mbak Linh? Ini Budi. Mbak lagi ngapain?",
+     "literal": "kakak Linh ya? Budi sini. kakak sedang buat apa sana?",
+     "baca": "Cị Ling à? Budi dây. Cị dang làm gì dấy?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Chị đang nấu cơm. Em ăn cơm chưa?",
+     "id": "Aku lagi masak. Kamu sudah makan?",
+     "literal": "kakak sedang masak nasi. adik makan nasi belum?",
+     "baca": "Cị dang nấu kơm. Em ăn kơm cưa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em ăn rồi ạ. Lúc nãy em đã ăn phở ở quán gần nhà.",
+     "id": "Sudah. Tadi aku makan phở di warung dekat rumah.",
+     "literal": "adik makan sudah ya. waktu tadi adik telah makan phở di warung dekat rumah.",
+     "baca": "Em ăn zồi ạ. Lúk nãy em dã ăn fở ở kwán gần nyà."
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Ngon không em?",
+     "id": "Enak nggak?",
+     "literal": "enak tidak adik?",
+     "baca": "Ngon không em?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ngon lắm! Chiều nay chị có rảnh không ạ?",
+     "id": "Enak sekali! Sore ini Mbak ada waktu?",
+     "literal": "enak sangat! sore ini kakak ada senggang tidak ya?",
+     "baca": "Ngon lắm! Ciều nay cị kó zảng không ạ?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Chiều nay chị bận. Nhưng tối chị sẽ đi uống cà phê.",
+     "id": "Sore ini aku sibuk. Tapi malam aku akan pergi minum kopi.",
+     "literal": "sore ini kakak sibuk. tetapi malam kakak akan pergi minum kopi.",
+     "baca": "Ciều nay cị bận. Nyưng tối cị sẽ di uống kà fê."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em đi với chị được không ạ?",
+     "id": "Aku boleh ikut?",
+     "literal": "adik pergi dengan kakak bisa tidak ya?",
+     "baca": "Em di với cị dượk không ạ?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Được chứ! Em đã đến quán Cộng bao giờ chưa?",
+     "id": "Boleh dong! Kamu sudah pernah ke kedai Cộng?",
+     "literal": "bisa dong! adik telah datang warung Cộng kapan belum?",
+     "baca": "Dượk cứ! Em dã dến kwán Kộng bao zờ cưa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chưa ạ. Em vẫn chưa đi bao giờ.",
+     "id": "Belum. Aku belum pernah pergi.",
+     "literal": "belum ya. adik masih belum pergi kapan.",
+     "baca": "Cưa ạ. Em vẫn cưa di bao zờ."
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Thế thì tối nay đi nhé. Bảy giờ, chị sắp xong việc rồi.",
+     "id": "Kalau begitu malam ini kita pergi ya. Jam tujuh, kerjaanku sebentar lagi selesai.",
+     "literal": "begitu maka malam ini pergi ya. tujuh jam, kakak hampir selesai kerja sudah.",
+     "baca": "Thế thì tối nay di nyé. Bảy zờ, cị sắp song việk zồi."
+    }
+   ],
+   "notes": [
+    "**Kata kerjanya tidak berubah sedikit pun.** *Ăn* tetap *ăn* untuk kemarin, sekarang, dan besok. Yang berubah cuma kata kecil di depannya — dan bahkan kata kecil itu boleh dijatuhkan kalau waktunya sudah jelas dari kalimat. Persis seperti kita: \"kemarin saya makan di sana\" tidak perlu \"sudah\".",
+    "**Rồi di ujung kalimat lebih sering dipakai daripada đã di depan.** *Em ăn rồi* adalah cara paling wajar untuk mengatakan \"saya sudah makan\". *Đã* dipakai kalau kamu ingin menekankan bahwa perbuatannya benar-benar sudah lewat, sering bersama keterangan waktu lampau: *lúc nãy em đã ăn phở*.",
+    "**Đấy di ujung pertanyaan melembutkannya.** *Chị đang làm gì đấy?* terasa seperti \"lagi ngapain sih?\" — akrab dan ringan. Tanpa *đấy* pertanyaannya terdengar lebih menuntut. Kata kecil ini akan kamu temui berkali-kali sebelum dibedah tuntas di unit 17.",
+    "**Bao giờ chưa? berarti \"sudah pernah … belum?\"** — harfiahnya \"kapan belum?\". Susunannya: kata kerja + *bao giờ chưa?* Jawabannya *Rồi* (pernah) atau *Chưa* (belum pernah). Untuk mengatakan \"belum pernah\" dipakai *chưa … bao giờ*: *Em chưa đi bao giờ.*",
+    "**Sắp berarti \"sebentar lagi\", dan ia sering berpasangan dengan rồi di ujung**: *chị sắp xong rồi* = \"aku sebentar lagi selesai\". Pasangan yang kelihatannya bertabrakan — \"hampir\" bertemu \"sudah\" — tapi rasanya persis seperti \"udah mau selesai nih\" dalam bahasa Indonesia.",
+    "**Ạ di ujung kalimat adalah tanda hormat kepada yang lebih tua**, dan Budi memakainya hampir di setiap baris karena Linh lebih tua. Ia tidak punya arti sendiri dan tidak bisa diterjemahkan — ia cuma menaikkan suhu kesopanan satu tingkat. Menjatuhkannya kepada orang yang jauh lebih tua terdengar dingin."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga penanda waktu — dan padanannya yang persis",
+     "body": [
+      "Inilah bagian bahasa Vietnam yang paling melegakan bagi penutur Indonesia. Tidak ada bentuk lampau, tidak ada bentuk depan, tidak ada kata kerja tak beraturan. Ada tiga kata, ditaruh di depan kata kerja, dan ketiganya sepadan satu-satu dengan kata yang sudah kamu pakai seumur hidup."
+     ],
+     "table": {
+      "head": [
+       "Penanda",
+       "Padanan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "**đã**",
+        "sudah, telah",
+        "*Tôi **đã** ăn.*",
+        "Saya sudah makan."
+       ],
+       [
+        "**đang**",
+        "sedang, lagi",
+        "*Tôi **đang** ăn.*",
+        "Saya sedang makan."
+       ],
+       [
+        "**sẽ**",
+        "akan",
+        "*Tôi **sẽ** ăn.*",
+        "Saya akan makan."
+       ],
+       [
+        "**rồi** (di ujung)",
+        "sudah (selesai)",
+        "*Tôi ăn **rồi**.*",
+        "Saya sudah makan."
+       ],
+       [
+        "**chưa**",
+        "belum",
+        "*Tôi **chưa** ăn.*",
+        "Saya belum makan."
+       ],
+       [
+        "**vẫn**",
+        "masih",
+        "*Tôi **vẫn** ăn.*",
+        "Saya masih makan."
+       ],
+       [
+        "**mới**",
+        "baru saja",
+        "*Tôi **mới** ăn.*",
+        "Saya baru saja makan."
+       ],
+       [
+        "**sắp**",
+        "sebentar lagi",
+        "*Tôi **sắp** ăn.*",
+        "Saya sebentar lagi makan."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Ketiganya boleh dijatuhkan kalau waktunya sudah jelas.** *Hôm qua tôi ăn phở* (\"kemarin saya makan phở\") sudah lengkap tanpa *đã* — keterangan *hôm qua* sudah menjelaskan waktunya. Sama persis dengan bahasa Indonesia, dan berbeda dari bahasa Inggris yang **wajib** memakai bentuk lampau walau sudah ada \"yesterday\".",
+      "Karena itu jangan menaburkan *đã* di setiap kalimat lampau. Pemula sering melakukannya dan hasilnya terdengar berat, seperti orang yang berkata \"kemarin saya telah makan telah pergi telah pulang\"."
+     ]
+    },
+    {
+     "title": "Bertanya \"sudah … belum?\"",
+     "body": [
+      "Satu cetakan, dan ia salah satu yang paling sering kamu dengar di Vietnam — termasuk sebagai sapaan basa-basi."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan",
+       "Arti",
+       "Jawab sudah",
+       "Jawab belum"
+      ],
+      "rows": [
+       [
+        "*Anh ăn cơm **chưa**?*",
+        "Sudah makan?",
+        "*Rồi.* / *Ăn rồi.*",
+        "*Chưa.* / *Chưa ăn.*"
+       ],
+       [
+        "*Anh **đã** đi **chưa**?*",
+        "Sudah pergi?",
+        "*Rồi ạ.*",
+        "*Chưa ạ.*"
+       ],
+       [
+        "*Anh đi Huế **bao giờ chưa**?*",
+        "Sudah pernah ke Huế?",
+        "*Rồi.*",
+        "*Chưa bao giờ.*"
+       ],
+       [
+        "*Anh có gia đình **chưa**?*",
+        "Sudah berkeluarga?",
+        "*Rồi.*",
+        "*Chưa.*"
+       ],
+       [
+        "*Xong **chưa**?*",
+        "Sudah selesai?",
+        "*Xong rồi.*",
+        "*Chưa xong.*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Jangan menjawab pertanyaan *chưa?* dengan *không*.** *Không* berarti \"tidak, dan tidak akan\" — ia menutup pintu. *Chưa* berarti \"belum, tapi mungkin nanti\". Menjawab *Anh ăn cơm chưa?* dengan *Không* terdengar seperti menolak makan sama sekali.",
+      "*Xong* berarti \"selesai\" dan sangat sering dipakai sendirian: *Xong chưa?* — *Xong rồi!* Dua kalimat dua kata yang akan kamu pakai setiap hari, di kelas maupun di warung."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Keterangan waktu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Lampau",
+      "Arti",
+      "Depan",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*hôm qua*",
+       "kemarin",
+       "*ngày mai*",
+       "besok"
+      ],
+      [
+       "*hôm kia*",
+       "kemarin lusa",
+       "*ngày kia* / *ngày mốt*",
+       "lusa"
+      ],
+      [
+       "*lúc nãy*",
+       "tadi",
+       "*lát nữa*",
+       "sebentar lagi"
+      ],
+      [
+       "*sáng nay*",
+       "tadi pagi",
+       "*tối nay*",
+       "nanti malam"
+      ],
+      [
+       "*tuần trước*",
+       "minggu lalu",
+       "*tuần sau*",
+       "minggu depan"
+      ],
+      [
+       "*tháng trước*",
+       "bulan lalu",
+       "*tháng sau*",
+       "bulan depan"
+      ],
+      [
+       "*năm ngoái*",
+       "tahun lalu",
+       "*năm sau*",
+       "tahun depan"
+      ],
+      [
+       "*trước đây*",
+       "dulu",
+       "*sau này*",
+       "kelak"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan polanya: **trước** = sebelum/lalu, **sau** = sesudah/depan. Sekali kamu memegang dua kata itu, sebagian besar baris di tabel ini tidak perlu dihafal satu per satu. Kekecualiannya cuma *hôm qua*, *ngày mai*, dan *năm ngoái* — tiga kata beku yang harus dihafal apa adanya."
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Hôm nay* (hari ini) memakai *hôm*, tapi *ngày mai* (besok) memakai *ngày*. Dua-duanya berarti \"hari\"; *hôm* untuk hari yang dijalani, *ngày* untuk hari sebagai satuan. Untuk A1 cukup hafalkan pasangannya utuh."
+    }
+   ]
+  },
+  {
+   "title": "Kata kerja sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Arti",
+      "Tiếng Việt",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "ăn",
+       "ăn",
+       "makan",
+       "uống",
+       "",
+       "minum"
+      ],
+      [
+       "đi",
+       "di",
+       "pergi",
+       "về",
+       "",
+       "pulang"
+      ],
+      [
+       "đến",
+       "dến",
+       "datang, tiba",
+       "ở",
+       "",
+       "tinggal, di"
+      ],
+      [
+       "làm",
+       "làm",
+       "membuat, kerja",
+       "nấu",
+       "",
+       "memasak"
+      ],
+      [
+       "học",
+       "họk",
+       "belajar",
+       "dạy",
+       "",
+       "mengajar"
+      ],
+      [
+       "ngủ",
+       "ngủ",
+       "tidur",
+       "dậy",
+       "",
+       "bangun"
+      ],
+      [
+       "nói",
+       "nói",
+       "bicara",
+       "nghe",
+       "",
+       "mendengar"
+      ],
+      [
+       "đọc",
+       "dọk",
+       "membaca",
+       "viết",
+       "",
+       "menulis"
+      ],
+      [
+       "xem",
+       "sem",
+       "menonton, melihat",
+       "gặp",
+       "",
+       "bertemu"
+      ],
+      [
+       "mua",
+       "mua",
+       "membeli",
+       "bán",
+       "",
+       "menjual"
+      ],
+      [
+       "gọi",
+       "gọi",
+       "memanggil, menelepon",
+       "xong",
+       "",
+       "selesai"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kabar terbaik di seluruh modul ini",
+     "items": [
+      "Semua kata kerja di tabel itu **tidak akan pernah berubah bentuk**, seumur hidupmu memakai bahasa Vietnam. Tidak menurut pelaku, tidak menurut waktu, tidak menurut jumlah. Yang kamu lihat di kolom itu adalah bentuk satu-satunya.",
+      "Bandingkan dengan bahasa Prancis, tempat satu kata kerja bisa punya lebih dari tiga puluh bentuk. Waktu yang dipakai pelajar bahasa Eropa untuk menghafal daftar kata kerja tak beraturan — berbulan-bulan — bisa kamu pakai sepenuhnya untuk melatih nada. Itu pertukaran yang sangat menguntungkan."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "đã",
+   "id": "sudah, telah",
+   "baca": "dã"
+  },
+  {
+   "vi": "đang",
+   "id": "sedang",
+   "baca": "dang"
+  },
+  {
+   "vi": "sẽ",
+   "id": "akan",
+   "baca": "sẽ"
+  },
+  {
+   "vi": "vẫn",
+   "id": "masih",
+   "baca": "vẫn"
+  },
+  {
+   "vi": "mới",
+   "id": "baru saja",
+   "baca": "mới"
+  },
+  {
+   "vi": "sắp",
+   "id": "sebentar lagi",
+   "baca": "sắp"
+  },
+  {
+   "vi": "xong",
+   "id": "selesai",
+   "baca": "song"
+  },
+  {
+   "vi": "bao giờ",
+   "id": "kapan; pernah",
+   "baca": "bao zờ"
+  },
+  {
+   "vi": "lúc nãy",
+   "id": "tadi",
+   "baca": "lúk nãy"
+  },
+  {
+   "vi": "hôm qua",
+   "id": "kemarin",
+   "baca": "hôm kwa"
+  },
+  {
+   "vi": "ngày mai",
+   "id": "besok",
+   "baca": "ngày mai"
+  },
+  {
+   "vi": "sáng / trưa",
+   "id": "pagi / siang",
+   "baca": "sáng / cưa"
+  },
+  {
+   "vi": "chiều / tối",
+   "id": "sore / malam",
+   "baca": "ciều / tối"
+  },
+  {
+   "vi": "tuần / tháng / năm",
+   "id": "minggu / bulan / tahun",
+   "baca": "tuần / tháng / năm"
+  },
+  {
+   "vi": "nấu cơm",
+   "id": "memasak",
+   "baca": "nấu kơm"
+  },
+  {
+   "vi": "uống",
+   "id": "minum",
+   "baca": "uống"
+  },
+  {
+   "vi": "gọi điện",
+   "id": "menelepon",
+   "baca": "gọi diện"
+  },
+  {
+   "vi": "quán",
+   "id": "warung, kedai",
+   "baca": "kwán"
+  },
+  {
+   "vi": "gần / xa",
+   "id": "dekat / jauh",
+   "baca": "gần / sa"
+  },
+  {
+   "vi": "cà phê",
+   "id": "kopi",
+   "baca": "kà fê"
+  },
+  {
+   "vi": "phở",
+   "id": "phở (mi kuah daging)",
+   "baca": "fở"
+  },
+  {
+   "vi": "ngon",
+   "id": "enak",
+   "baca": "ngon"
+  },
+  {
+   "vi": "a lô",
+   "id": "halo (di telepon)",
+   "baca": "a lô"
+  },
+  {
+   "vi": "đấy",
+   "id": "tuh, sih (pelembut)",
+   "baca": "dấy"
+  },
+  {
+   "vi": "ạ",
+   "id": "(penanda hormat)",
+   "baca": "ạ"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan *đã*, *đang*, *sẽ*, atau *chưa*.",
+   "items": [
+    "Bây giờ tôi ____ ăn cơm. (sedang)",
+    "Hôm qua tôi ____ đi Hà Nội. (sudah)",
+    "Ngày mai tôi ____ đi Huế. (akan)",
+    "Tôi ____ ăn sáng. (belum)",
+    "Chị ấy ____ nấu cơm. (sedang)"
+   ]
+  },
+  {
+   "prompt": "Jawab dua kali — sekali *Rồi*, sekali *Chưa* — dengan kalimat penuh. Pisahkan dengan garis miring.",
+   "items": [
+    "Anh ăn cơm chưa?",
+    "Anh đi Huế bao giờ chưa?",
+    "Anh xong việc chưa?",
+    "Anh có gia đình chưa?",
+    "Anh gọi điện cho chị Linh chưa?"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Saya sedang masak.",
+    "Kemarin saya makan phở.",
+    "Nanti malam saya akan minum kopi.",
+    "Saya belum pernah pergi ke Huế.",
+    "Sebentar lagi saya selesai.",
+    "Saya baru saja bangun."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat Vietnam yang benar.",
+   "items": [
+    "cơm / chưa / anh / ăn",
+    "nay / chị / bận / chiều",
+    "đi / sẽ / tối / uống / cà phê / tôi",
+    "nãy / lúc / phở / tôi / ăn / đã",
+    "rồi / xong / tôi"
+   ]
+  }
+ ],
+ "answers": [
+  "đang — đã — sẽ — chưa — đang",
+  "Ăn rồi. / Chưa ăn. — Rồi. / Chưa bao giờ. — Xong rồi. / Chưa xong. — Rồi. / Chưa. — Gọi rồi. / Chưa gọi.",
+  "Tôi đang nấu cơm. — Hôm qua tôi ăn phở. — Tối nay tôi sẽ uống cà phê. — Tôi chưa đi Huế bao giờ. — Tôi sắp xong rồi. — Tôi mới dậy.",
+  "Anh ăn cơm chưa? — Chiều nay chị bận. — Tối tôi sẽ đi uống cà phê. — Lúc nãy tôi đã ăn phở. — Tôi xong rồi."
+ ]
+}

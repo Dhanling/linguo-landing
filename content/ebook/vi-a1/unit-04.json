@@ -1,0 +1,550 @@
+{
+ "title": "Berapa? — angka dan kata penggolong",
+ "title_target": "Cho tôi hai quyển sách.",
+ "goal": "Menghitung benda dengan kata penggolong — perkakas yang sudah kamu punya sebagai \"buah\", \"ekor\", \"orang\" — serta menguasai tiga pengecualian angka yang wajib dihafal.",
+ "bekal": [
+  "menghitung dengan susunan **angka + penggolong + benda**, sama seperti \"tiga buah buku\"",
+  "memilih *cái*, *con*, *người*, *quyển*, *chiếc*, *tờ* pada tempatnya",
+  "menyebut angka sampai seribu, termasuk *mười lăm*, *hai mươi mốt*, dan *hai mươi lăm*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ở nhà sách",
+   "intro": "Toko buku kecil di dekat kampus. Budi menyiapkan perlengkapan kuliah untuk semester baru.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Chị ơi, cho tôi hỏi một chút.",
+     "id": "Mbak, numpang tanya sebentar.",
+     "literal": "kakak hai, beri saya bertanya satu sedikit.",
+     "baca": "Cị ơi, co tôi hỏi một cút."
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Vâng, anh cần gì ạ?",
+     "id": "Ya, Kakak perlu apa?",
+     "literal": "iya, kakak perlu apa ya?",
+     "baca": "Vâng, ang kần gì ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tôi muốn mua hai quyển từ điển.",
+     "id": "Saya mau beli dua kamus.",
+     "literal": "saya mau beli dua jilid kata-buku.",
+     "baca": "Tôi muốn mua hai kwyển từ diển."
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Từ điển Việt–Anh hay Việt–Indonesia ạ?",
+     "id": "Kamus Việt–Inggris atau Việt–Indonesia?",
+     "literal": "kata-buku Việt–Inggris atau Việt–Indonesia ya?",
+     "baca": "Từ diển Việt–Ang hay Việt–Indonesia ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Việt–Anh. Và ba quyển vở nữa.",
+     "id": "Việt–Inggris. Dan tiga buku tulis lagi.",
+     "literal": "Việt–Inggris. dan tiga jilid buku-tulis lagi.",
+     "baca": "Việt–Ang. Và ba kwyển vở nữa."
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Anh có cần bút không ạ?",
+     "id": "Kakak perlu pulpen?",
+     "literal": "kakak ada perlu pena tidak ya?",
+     "baca": "Ang kó kần bút không ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Có. Cho tôi năm cái bút.",
+     "id": "Perlu. Beri saya lima pulpen.",
+     "literal": "ada. beri saya lima buah pena.",
+     "baca": "Kó. Co tôi năm kái bút."
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Vâng: hai quyển từ điển, ba quyển vở, năm cái bút.",
+     "id": "Baik: dua kamus, tiga buku tulis, lima pulpen.",
+     "literal": "iya: dua jilid kata-buku, tiga jilid buku-tulis, lima buah pena.",
+     "baca": "Vâng: hai kwyển từ diển, ba kwyển vở, năm kái bút."
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Anh mua nhiều thế! Anh có mấy người bạn cùng phòng?",
+     "id": "Kakak beli banyak amat! Kakak punya berapa teman sekamar?",
+     "literal": "kakak beli banyak begitu! kakak ada berapa orang teman sama kamar?",
+     "baca": "Ang mua nyiều thế! Ang kó mấy người bạn kùng fòng?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tôi có ba người bạn — và một con mèo nữa!",
+     "id": "Saya punya tiga teman — dan satu ekor kucing juga!",
+     "literal": "saya punya tiga orang teman — dan satu ekor kucing lagi!",
+     "baca": "Tôi kó ba người bạn — và một kon mèo nữa!"
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Thế thì mua thêm một quyển nữa nhé!",
+     "id": "Kalau begitu beli satu lagi ya!",
+     "literal": "begitu maka beli tambah satu jilid lagi ya!",
+     "baca": "Thế thì mua thêm một kwyển nữa nyé!"
+    }
+   ],
+   "notes": [
+    "**Kata penggolong bukan barang baru bagi kita.** Kita bilang \"tiga **buah** buku\", \"dua **ekor** ayam\", \"lima **orang** guru\". Bahasa Vietnam melakukan hal yang sama dengan susunan yang sama: **angka + penggolong + benda**. Bedanya cuma satu, dan bedanya penting: dalam bahasa Vietnam penggolongnya **wajib**, tidak boleh dilompati. *Hai sách* salah; *hai quyển sách* benar.",
+    "**Cái adalah penggolong serba bisa.** Kalau kamu lupa penggolong yang tepat untuk suatu benda mati, pakai *cái* — kamu akan dipahami dan tidak terdengar kasar. Untuk makhluk hidup yang bergerak dipakai *con*, untuk orang dipakai *người*. Ketiganya sudah menutup sebagian besar percakapan A1.",
+    "**Penggolong juga dipakai TANPA angka**, untuk menunjuk satu benda tertentu: *cái bàn này* (meja ini), *con mèo kia* (kucing yang di sana). Di sini fungsinya seperti \"si\" atau \"itu\" — ia mengubah kata benda umum menjadi benda tertentu yang sedang dibicarakan.",
+    "**Mấy dan bao nhiêu dua-duanya \"berapa\".** *Mấy* dipakai kalau penanya menduga jawabannya **kecil** (di bawah sepuluh): *mấy người bạn?*, *mấy giờ?* *Bao nhiêu* dipakai kalau jawabannya bisa besar atau sama sekali tidak terduga: *bao nhiêu tiền?*, *bao nhiêu tuổi?* Memakai yang keliru tidak fatal, tapi terdengar seperti orang asing.",
+    "**Nữa berarti \"lagi\" dan berdiri di ujung; thêm berarti \"tambah\" dan berdiri di depan kata kerja.** Keduanya sering muncul bersama: *mua thêm một quyển nữa* = \"beli satu lagi\". Untuk memesan makanan ini pasangan yang wajib dihafal: *cho tôi một ly nữa* = \"minta satu gelas lagi\".",
+    "**Cho tôi … harfiahnya \"beri saya …\", dan itulah cara memesan.** Ia bukan perintah kasar: dalam bahasa Vietnam inilah bentuk paling wajar untuk meminta apa pun di toko, warung, atau kedai. Menambahkan *ạ* di ujung membuatnya sopan: *Cho tôi hai cái ạ.*"
+   ],
+   "grammars": [
+    {
+     "title": "Angka — dan tiga pengecualian yang wajib dihafal",
+     "body": [
+      "Angka Vietnam berpola rapi sekali sampai angka sepuluh, lalu menyimpan tiga jebakan di puluhan. Ketiganya tidak masuk akal, tidak ada aturannya, dan harus dihafal apa adanya."
+     ],
+     "table": {
+      "head": [
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      "rows": [
+       [
+        "0 *không*",
+        "1 *một*",
+        "2 *hai*",
+        "3 *ba*",
+        "4 *bốn*"
+       ],
+       [
+        "5 *năm*",
+        "6 *sáu*",
+        "7 *bảy*",
+        "8 *tám*",
+        "9 *chín*"
+       ],
+       [
+        "10 *mười*",
+        "11 *mười một*",
+        "**15 *mười lăm***",
+        "19 *mười chín*",
+        "**20 *hai mươi***"
+       ],
+       [
+        "**21 *hai mươi mốt***",
+        "22 *hai mươi hai*",
+        "**25 *hai mươi lăm***",
+        "30 *ba mươi*",
+        "50 *năm mươi*"
+       ],
+       [
+        "100 *một trăm*",
+        "101 *một trăm linh một*",
+        "1.000 *một nghìn*",
+        "10.000 *mười nghìn*",
+        "1.000.000 *một triệu*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Tiga pengecualiannya:** (1) angka **10** berubah jadi *mươi* di dalam puluhan — *hai mươi*, bukan *hai mười*; (2) angka **5** berubah jadi *lăm* di belakang puluhan — *mười lăm*, *hai mươi lăm*; (3) angka **1** berubah jadi *mốt* di belakang puluhan selain *mười* — *hai mươi mốt*, tapi tetap *mười một* untuk 11.",
+      "Angka **4** punya dua bentuk: *bốn* dipakai untuk menghitung, *tư* dipakai dalam urutan dan tanggal — *thứ tư* (hari Rabu, harfiahnya \"urutan keempat\"), *mùng bốn* (tanggal 4). Untuk A1 pakai *bốn* saja, dan kenali *tư* saat membacanya."
+     ]
+    },
+    {
+     "title": "Kata penggolong: sepuluh yang menutup A1",
+     "body": [
+      "Bahasa Vietnam punya puluhan penggolong, tapi sepuluh berikut sudah cukup untuk seluruh percakapan sehari-hari. Sisanya bisa kamu ganti dengan *cái* tanpa terdengar salah."
+     ],
+     "table": {
+      "head": [
+       "Penggolong",
+       "Untuk",
+       "Padanan kita",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**cái**",
+        "benda mati apa pun — penggolong darurat",
+        "buah",
+        "*hai cái bàn* — dua meja"
+       ],
+       [
+        "**con**",
+        "hewan; juga sungai, pisau, jalan, angka",
+        "ekor",
+        "*một con mèo* — seekor kucing"
+       ],
+       [
+        "**người**",
+        "orang",
+        "orang",
+        "*ba người bạn* — tiga teman"
+       ],
+       [
+        "**quyển / cuốn**",
+        "buku, kamus, majalah",
+        "jilid, buah",
+        "*hai quyển sách* — dua buku"
+       ],
+       [
+        "**chiếc**",
+        "kendaraan, benda berpasangan, benda bergaya",
+        "buah",
+        "*một chiếc xe máy* — sebuah motor"
+       ],
+       [
+        "**tờ**",
+        "lembaran: kertas, koran, uang",
+        "lembar",
+        "*một tờ báo* — selembar koran"
+       ],
+       [
+        "**ly / cốc**",
+        "gelas",
+        "gelas",
+        "*hai ly cà phê* — dua gelas kopi"
+       ],
+       [
+        "**bát / tô**",
+        "mangkuk",
+        "mangkuk",
+        "*một bát phở* — semangkuk phở"
+       ],
+       [
+        "**quả / trái**",
+        "buah-buahan",
+        "buah",
+        "*ba quả chuối* — tiga pisang"
+       ],
+       [
+        "**đôi**",
+        "sepasang",
+        "pasang",
+        "*một đôi giày* — sepasang sepatu"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Beberapa penggolong berbeda antara utara dan selatan: utara memakai *quyển*, *bát*, *quả*, *cốc*; selatan memakai *cuốn*, *tô*, *trái*, *ly*. Dua-duanya dipahami di mana pun. Modul ini memakai bentuk utara, tapi menyebut pasangan selatannya karena kamu pasti akan mendengarnya.",
+      "**Con dipakai untuk beberapa benda mati yang \"bergerak atau memanjang\"**: *con sông* (sungai), *con đường* (jalan), *con dao* (pisau), *con số* (angka). Tidak ada aturan yang bisa ditebak; hafalkan sebagai kekecualian kecil, dan pakai *cái* kalau lupa."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menanyakan jumlah",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Pertanyaan",
+      "Cara baca",
+      "Arti",
+      "Kapan dipakai"
+     ],
+     "rows": [
+      [
+       "*Mấy người?*",
+       "Mấy người?",
+       "Berapa orang?",
+       "diduga di bawah sepuluh"
+      ],
+      [
+       "*Mấy giờ rồi?*",
+       "Mấy zờ zồi?",
+       "Jam berapa?",
+       "angka jam selalu kecil"
+      ],
+      [
+       "*Bao nhiêu tiền?*",
+       "Bao nyiêu tiền?",
+       "Berapa harganya?",
+       "jawabannya bisa besar"
+      ],
+      [
+       "*Bao nhiêu tuổi?*",
+       "Bao nyiêu tuổi?",
+       "Umur berapa?",
+       "bentuk sopan untuk orang dewasa"
+      ],
+      [
+       "*Mấy tuổi?*",
+       "Mấy tuổi?",
+       "Umur berapa?",
+       "hanya untuk anak kecil"
+      ],
+      [
+       "*Bao nhiêu người?*",
+       "Bao nyiêu người?",
+       "Berapa orang?",
+       "kerumunan, rombongan besar"
+      ],
+      [
+       "*Có nhiều không?*",
+       "Kó nyiều không?",
+       "Banyak nggak?",
+       "tanpa angka"
+      ],
+      [
+       "*Bao lâu?*",
+       "Bao lâu?",
+       "Berapa lama?",
+       "jangka waktu"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Menanyakan umur orang dewasa dengan *mấy tuổi* terdengar seperti bertanya kepada anak TK. Ke orang dewasa selalu *bao nhiêu tuổi*, dan ke orang yang jauh lebih tua lebih halus lagi: *Bác năm nay bao nhiêu tuổi ạ?*"
+    },
+    {
+     "type": "kotak",
+     "title": "Kenapa umur ditanyakan begitu cepat",
+     "items": [
+      "Di unit 1 kamu sudah melihat sebabnya: kata ganti Vietnam dipilih menurut umur, jadi lawan bicara **tidak bisa menyusun kalimat** sebelum tahu kamu lebih tua atau lebih muda. Pertanyaan umur di menit-menit pertama bukan kekepoan — itu keperluan tata bahasa.",
+      "Orang Vietnam juga sering menghitung umur menurut tahun kelahiran, bukan angka tahunnya: *Anh tuổi con gì?* = \"Kakak shio apa?\". Jawaban seperti *Tuổi Ngựa* (shio Kuda) sudah cukup, dan itu cara halus menyebut umur tanpa menyebut angkanya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menghitung dengan benar: enam contoh",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Tiếng Việt",
+      "Susunannya"
+     ],
+     "rows": [
+      [
+       "dua buku",
+       "*hai quyển sách*",
+       "hai (2) + quyển (jilid) + sách (buku)"
+      ],
+      [
+       "tiga orang teman",
+       "*ba người bạn*",
+       "ba (3) + người (orang) + bạn (teman)"
+      ],
+      [
+       "seekor kucing",
+       "*một con mèo*",
+       "một (1) + con (ekor) + mèo (kucing)"
+      ],
+      [
+       "lima pulpen",
+       "*năm cái bút*",
+       "năm (5) + cái (buah) + bút (pena)"
+      ],
+      [
+       "dua gelas kopi",
+       "*hai ly cà phê*",
+       "hai (2) + ly (gelas) + cà phê (kopi)"
+      ],
+      [
+       "meja baru ini",
+       "*cái bàn mới này*",
+       "cái + bàn + mới (baru) + này (ini)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris terakhir memperlihatkan urutan lengkap kata benda Vietnam, dan urutan itu tetap sama selamanya: **penggolong → benda → sifat → penunjuk**. Sama persis dengan \"meja baru ini\" — bahkan penggolongnya pun bisa kita ucapkan: \"si meja baru ini\"."
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Kalau ada angkanya, angkanya paling depan dan penunjuknya tetap paling belakang: *hai cái bàn mới này* = \"dua meja baru ini\". Tidak ada satu pun bagian yang berpindah tempat, di kalimat mana pun. Bahasa Vietnam sangat setia pada urutannya, dan itu justru yang membuatnya mudah dipelajari."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "mua",
+   "id": "membeli",
+   "baca": "mua"
+  },
+  {
+   "vi": "cần",
+   "id": "perlu",
+   "baca": "kần"
+  },
+  {
+   "vi": "muốn",
+   "id": "mau, ingin",
+   "baca": "muốn"
+  },
+  {
+   "vi": "cho",
+   "id": "memberi; untuk",
+   "baca": "co"
+  },
+  {
+   "vi": "hỏi",
+   "id": "bertanya",
+   "baca": "hỏi"
+  },
+  {
+   "vi": "sách",
+   "id": "buku",
+   "baca": "sák"
+  },
+  {
+   "vi": "từ điển",
+   "id": "kamus",
+   "baca": "từ diển"
+  },
+  {
+   "vi": "vở",
+   "id": "buku tulis",
+   "baca": "vở"
+  },
+  {
+   "vi": "bút",
+   "id": "pulpen, pena",
+   "baca": "bút"
+  },
+  {
+   "vi": "báo",
+   "id": "koran",
+   "baca": "báo"
+  },
+  {
+   "vi": "mèo",
+   "id": "kucing",
+   "baca": "mèo"
+  },
+  {
+   "vi": "chó",
+   "id": "anjing",
+   "baca": "có"
+  },
+  {
+   "vi": "xe máy",
+   "id": "sepeda motor",
+   "baca": "se máy"
+  },
+  {
+   "vi": "nhân viên",
+   "id": "pegawai, pelayan toko",
+   "baca": "nyân viên"
+  },
+  {
+   "vi": "nhà sách",
+   "id": "toko buku",
+   "baca": "nyà sák"
+  },
+  {
+   "vi": "mấy",
+   "id": "berapa (jumlah kecil)",
+   "baca": "mấy"
+  },
+  {
+   "vi": "bao nhiêu",
+   "id": "berapa (jumlah besar)",
+   "baca": "bao nyiêu"
+  },
+  {
+   "vi": "tuổi",
+   "id": "umur, tahun umur",
+   "baca": "tuổi"
+  },
+  {
+   "vi": "nhiều",
+   "id": "banyak",
+   "baca": "nyiều"
+  },
+  {
+   "vi": "ít",
+   "id": "sedikit",
+   "baca": "ít"
+  },
+  {
+   "vi": "nữa",
+   "id": "lagi",
+   "baca": "nữa"
+  },
+  {
+   "vi": "thêm",
+   "id": "tambah",
+   "baca": "thêm"
+  },
+  {
+   "vi": "một chút",
+   "id": "sedikit, sebentar",
+   "baca": "một cút"
+  },
+  {
+   "vi": "cùng",
+   "id": "bersama, se-",
+   "baca": "kùng"
+  },
+  {
+   "vi": "thế thì",
+   "id": "kalau begitu",
+   "baca": "thế thì"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angkanya dalam bahasa Vietnam.",
+   "items": [
+    "4",
+    "15",
+    "20",
+    "21",
+    "25",
+    "105"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan kata penggolong yang tepat.",
+   "items": [
+    "hai ____ sách",
+    "ba ____ bạn",
+    "một ____ mèo",
+    "năm ____ bút",
+    "hai ____ cà phê",
+    "một ____ phở"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Saya mau beli dua kamus.",
+    "Beri saya lima pulpen.",
+    "Saya punya tiga teman.",
+    "Kakak perlu apa?",
+    "Berapa orang?",
+    "Beli satu lagi ya!"
+   ]
+  },
+  {
+   "prompt": "Pilih *mấy* atau *bao nhiêu*.",
+   "items": [
+    "____ giờ rồi?",
+    "____ tiền?",
+    "Anh ____ tuổi? (orang dewasa)",
+    "____ người bạn?",
+    "Cái này ____ tiền?"
+   ]
+  }
+ ],
+ "answers": [
+  "bốn — mười lăm — hai mươi — hai mươi mốt — hai mươi lăm — một trăm linh năm",
+  "quyển — người — con — cái — ly — bát",
+  "Tôi muốn mua hai quyển từ điển. — Cho tôi năm cái bút. — Tôi có ba người bạn. — Anh cần gì? — Mấy người? — Mua thêm một cái nữa nhé!",
+  "Mấy — Bao nhiêu — bao nhiêu — Mấy — bao nhiêu"
+ ]
+}

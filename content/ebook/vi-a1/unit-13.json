@@ -1,0 +1,567 @@
+{
+ "title": "Mau, perlu, harus, sebaiknya",
+ "title_target": "Em muốn đi thăm Hạ Long.",
+ "goal": "Merangkai kata kerja tanpa penghubung apa pun — persis seperti \"mau pergi makan\" — dan memilih di antara *muốn*, *cần*, *phải*, *nên*, dan *định*.",
+ "bekal": [
+  "merangkai dua sampai empat kata kerja berturut-turut tanpa kata sambung",
+  "memilih *muốn* (mau), *cần* (perlu), *phải* (harus), *nên* (sebaiknya), *định* (berniat)",
+  "menjawab ajakan dengan mengulang kata kerja bantunya: *Muốn chứ!*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Kế hoạch cuối tuần",
+   "intro": "Jumat sore di kantin. Budi sudah dua bulan di Hà Nội dan belum ke mana-mana; Nam membantunya menyusun rencana.",
+   "lines": [
+    {
+     "speaker": "Nam:",
+     "text": "Cuối tuần này em muốn làm gì?",
+     "id": "Akhir pekan ini kamu mau ngapain?",
+     "literal": "akhir minggu ini adik mau buat apa?",
+     "baca": "Kuối tuần này em muốn làm gì?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em muốn đi thăm vịnh Hạ Long.",
+     "id": "Aku mau pergi mengunjungi Teluk Hạ Long.",
+     "literal": "adik mau pergi kunjung teluk Hạ Long.",
+     "baca": "Em muốn di thăm vịng Hạ Long."
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Hay đấy! Nhưng em phải đặt vé trước.",
+     "id": "Bagus tuh! Tapi kamu harus pesan tiket dulu.",
+     "literal": "menarik tuh! tetapi adik harus pesan tiket lebih-dulu.",
+     "baca": "Hay dấy! Nyưng em fải dặt vé cướk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em cần đặt vé sớm không anh?",
+     "id": "Perlu pesan tiket dari jauh hari?",
+     "literal": "adik perlu pesan tiket awal tidak kakak?",
+     "baca": "Em kần dặt vé sớm không ang?"
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Cần chứ. Cuối tuần đông người lắm.",
+     "id": "Perlu dong. Akhir pekan ramai sekali.",
+     "literal": "perlu dong. akhir minggu ramai orang sangat.",
+     "baca": "Kần cứ. Kuối tuần dông người lắm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em nên đi thứ bảy hay chủ nhật ạ?",
+     "id": "Aku sebaiknya pergi Sabtu atau Minggu?",
+     "literal": "adik sebaiknya pergi urutan tujuh atau minggu ya?",
+     "baca": "Em nên di thứ bảy hay củ nyật ạ?"
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Nên đi thứ bảy. Đi về trong ngày cũng được.",
+     "id": "Sebaiknya Sabtu. Pergi pulang dalam sehari juga bisa.",
+     "literal": "sebaiknya pergi urutan tujuh. pergi pulang dalam hari juga bisa.",
+     "baca": "Nên di thứ bảy. Di về cong ngày kũng dượk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nhưng em muốn đi tắm biển nữa.",
+     "id": "Tapi aku juga mau berenang di laut.",
+     "literal": "tetapi adik mau pergi mandi laut lagi.",
+     "baca": "Nyưng em muốn di tắm biển nữa."
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Thế thì em phải ở lại một đêm.",
+     "id": "Kalau begitu kamu harus menginap semalam.",
+     "literal": "begitu maka adik harus tinggal kembali satu malam.",
+     "baca": "Thế thì em fải ở lại một dêm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Anh có muốn đi cùng em không?",
+     "id": "Kakak mau ikut?",
+     "literal": "kakak ada mau pergi bersama adik tidak?",
+     "baca": "Ang kó muốn di kùng em không?"
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Muốn chứ! Nhưng anh phải hỏi vợ đã.",
+     "id": "Mau dong! Tapi aku harus tanya istri dulu.",
+     "literal": "mau dong! tetapi kakak harus tanya istri dulu.",
+     "baca": "Muốn cứ! Nyưng ang fải hỏi vợ dã."
+    }
+   ],
+   "notes": [
+    "**Kata kerja berderet langsung, tanpa penghubung apa pun.** *Em muốn đi thăm vịnh Hạ Long* — empat kata kerja berturut-turut: *muốn* (mau), *đi* (pergi), *thăm* (mengunjungi). Susunannya sama persis dengan \"aku mau pergi mengunjungi …\". Bahasa Inggris memaksa menyisipkan *to*; bahasa Vietnam dan bahasa Indonesia tidak menyisipkan apa-apa.",
+    "**Semua kata kerja bantu berdiri langsung di depan kata kerjanya dan tidak pernah berubah bentuk.** *Muốn đi*, *phải đi*, *cần đi*, *nên đi*, *định đi*. Tidak ada yang perlu dihafal selain kata-katanya sendiri — persis seperti mau/harus/perlu/sebaiknya dalam bahasa Indonesia.",
+    "**Menjawab dengan mengulang kata kerja bantunya adalah jawaban paling wajar.** *Em cần đặt vé không?* dijawab *Cần chứ.*; *Anh có muốn đi không?* dijawab *Muốn chứ!* Ini kelanjutan langsung dari aturan unit 2: bahasa Vietnam tidak punya kata \"ya\", jadi kata kerjanya sendiri yang menjawab.",
+    "**Đã di ujung kalimat berarti \"dulu\", bukan \"sudah\".** *Anh phải hỏi vợ đã* = \"aku harus tanya istri dulu\". ⚠️ Jangan tertukar dengan *đã* di **depan** kata kerja yang berarti \"sudah\" (unit 6). Letaknya yang membedakan, dan sekali lagi bahasa Vietnam memakai letak sebagai pengganti perubahan bentuk.",
+    "**Đông berarti \"ramai\" dalam arti banyak orang** — *đông người*, *quán này đông lắm*. Lawannya *vắng* (sepi). Jangan tertukar dengan *ồn* (berisik, unit 3): warung bisa *đông* tapi tidak *ồn*, dan jalan bisa *ồn* tapi *vắng*.",
+    "**Cũng được berarti \"juga boleh\" atau \"ya nggak apa-apa\"** dan ia salah satu ungkapan paling khas Vietnam — cara halus mengatakan bahwa suatu pilihan dapat diterima tanpa terlalu bersemangat. *Đi về trong ngày cũng được.* = \"pulang-pergi sehari juga boleh sih\"."
+   ],
+   "grammars": [
+    {
+     "title": "Delapan kata kerja bantu",
+     "body": [
+      "Semuanya berdiri di depan kata kerja utama, semuanya bisa disangkal dengan *không*, dan semuanya bisa ditanyakan dengan *có … không?*"
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Arti",
+       "Contoh",
+       "Sangkalannya"
+      ],
+      "rows": [
+       [
+        "**muốn**",
+        "mau, ingin",
+        "*Tôi **muốn** đi.*",
+        "*không muốn đi*"
+       ],
+       [
+        "**cần**",
+        "perlu",
+        "*Tôi **cần** đi.*",
+        "*không cần đi*"
+       ],
+       [
+        "**phải**",
+        "harus",
+        "*Tôi **phải** đi.*",
+        "⚠️ *không phải đi* = tidak perlu"
+       ],
+       [
+        "**nên**",
+        "sebaiknya",
+        "*Tôi **nên** đi.*",
+        "*không nên đi* = sebaiknya jangan"
+       ],
+       [
+        "**định**",
+        "berniat, berencana",
+        "*Tôi **định** đi.*",
+        "*không định đi*"
+       ],
+       [
+        "**thích**",
+        "suka",
+        "*Tôi **thích** đi.*",
+        "*không thích đi*"
+       ],
+       [
+        "**có thể**",
+        "mungkin bisa",
+        "*Tôi **có thể** đi.*",
+        "*không thể đi*"
+       ],
+       [
+        "**biết**",
+        "bisa (keterampilan)",
+        "*Tôi **biết** bơi.*",
+        "*không biết bơi*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Sangkalan *phải* berbalik arti.** *Phải đi* = \"harus pergi\", tapi *không phải đi* = \"**tidak perlu** pergi\" — bukan \"tidak boleh pergi\". Untuk melarang dipakai *không được đi* (unit 12) atau *đừng đi*. Kesalahan ini bisa berakibat serius, jadi hafalkan ketiganya berdampingan: *phải đi* (harus), *không phải đi* (tak perlu), *không được đi* (tak boleh).",
+      "*Nên* dan *không nên* adalah cara paling halus memberi saran — jauh lebih lembut daripada *phải*. Dalam percakapan dengan orang Vietnam, *nên* jauh lebih sering terdengar daripada *phải*, karena menyuruh secara langsung dianggap kurang sopan."
+     ]
+    },
+    {
+     "title": "Kata kerja berantai",
+     "body": [
+      "Bahasa Vietnam menyusun kata kerja seperti kereta: satu di belakang yang lain, tanpa gerbong penghubung. Bandingkan lajur Vietnam dan lajur Indonesia — panjangnya sama, urutannya sama."
+     ],
+     "table": {
+      "head": [
+       "Tiếng Việt",
+       "Bahasa Indonesia",
+       "Jumlah kata kerja"
+      ],
+      "rows": [
+       [
+        "*đi ăn*",
+        "pergi makan",
+        "2"
+       ],
+       [
+        "*đi mua sách*",
+        "pergi membeli buku",
+        "2"
+       ],
+       [
+        "*muốn đi ăn*",
+        "mau pergi makan",
+        "3"
+       ],
+       [
+        "*muốn đi mua sách*",
+        "mau pergi membeli buku",
+        "3"
+       ],
+       [
+        "*phải đi mua vé*",
+        "harus pergi membeli tiket",
+        "3"
+       ],
+       [
+        "*muốn đi thăm bạn*",
+        "mau pergi menengok teman",
+        "3"
+       ],
+       [
+        "*định đi học nấu ăn*",
+        "berniat pergi belajar memasak",
+        "4"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Karena tidak ada penghubung, **urutannya yang membawa arti** — dan urutannya tidak boleh diacak. *Đi ăn* = pergi untuk makan; *ăn đi* = \"makan gih!\" (perintah, unit 3). Dua kata yang sama, dua arti yang jauh berbeda.",
+      "Kata kerja gerak *đi* (pergi), *về* (pulang), *đến* (datang), *ra* (keluar), *vào* (masuk), *lên* (naik), *xuống* (turun) sering menempel pada kata kerja lain untuk memberi arah: *đi ra* (keluar), *đi vào* (masuk), *mang về* (bawa pulang). Sekali lagi persis seperti kita."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kegiatan waktu luang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Arti",
+      "Tiếng Việt",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "đi chơi",
+       "di cơi",
+       "jalan-jalan",
+       "đi thăm",
+       "",
+       "berkunjung"
+      ],
+      [
+       "đi du lịch",
+       "di zu lịk",
+       "berwisata",
+       "đi bơi",
+       "",
+       "berenang"
+      ],
+      [
+       "tắm biển",
+       "tắm biển",
+       "berenang di laut",
+       "leo núi",
+       "",
+       "mendaki"
+      ],
+      [
+       "xem phim",
+       "sem fim",
+       "nonton film",
+       "nghe nhạc",
+       "",
+       "dengar musik"
+      ],
+      [
+       "đọc sách",
+       "dọk sák",
+       "baca buku",
+       "chụp ảnh",
+       "",
+       "memotret"
+      ],
+      [
+       "nấu ăn",
+       "nấu ăn",
+       "memasak",
+       "đi mua sắm",
+       "",
+       "belanja"
+      ],
+      [
+       "chơi thể thao",
+       "cơi thể thao",
+       "olahraga",
+       "chơi bóng đá",
+       "",
+       "main bola"
+      ],
+      [
+       "gặp bạn",
+       "gặp bạn",
+       "ketemu teman",
+       "nghỉ ngơi",
+       "",
+       "istirahat"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Chơi* berarti \"bermain\" dan dipakai jauh lebih luas daripada dugaan kita: *đi chơi* (jalan-jalan, bukan cuma anak-anak), *chơi với bạn* (nongkrong dengan teman), *chơi thể thao* (berolahraga). Kalau seseorang mengajakmu *đi chơi*, ia tidak sedang mengajakmu bermain — ia mengajakmu keluar."
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa hampir semua kegiatan berbentuk **kata kerja + benda**, bukan satu kata utuh: *nấu ăn* (masak + makan), *nghe nhạc* (dengar + musik), *xem phim* (tonton + film). Karena itu kamu bisa menyusun kegiatan baru sendiri begitu tahu kata kerjanya."
+    }
+   ]
+  },
+  {
+   "title": "Mengajak dan menjawab ajakan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Cuối tuần này anh rảnh không?",
+       "Kuối tuần này ang zảng không?",
+       "Akhir pekan ini Kakak senggang?"
+      ],
+      [
+       "Mình đi ăn phở nhé?",
+       "Mìng di ăn fở nyé?",
+       "Kita makan phở yuk?"
+      ],
+      [
+       "Hay là mình đi xem phim?",
+       "Hay là mìng di sem fim?",
+       "Gimana kalau kita nonton?"
+      ],
+      [
+       "Anh có muốn đi cùng không?",
+       "Ang kó muốn di kùng không?",
+       "Kakak mau ikut?"
+      ],
+      [
+       "Mấy giờ mình gặp nhau?",
+       "Mấy zờ mìng gặp nyau?",
+       "Jam berapa kita ketemu?"
+      ],
+      [
+       "Ừ, đi đi!",
+       "Ừ, di di!",
+       "Ayo, jalan!"
+      ],
+      [
+       "Muốn chứ!",
+       "Muốn cứ!",
+       "Mau dong!"
+      ],
+      [
+       "Để em xem đã nhé.",
+       "Dể em sem dã nyé.",
+       "Aku lihat dulu ya."
+      ],
+      [
+       "Tiếc quá, hôm đó em bận.",
+       "Tiếk kwá, hôm dó em bận.",
+       "Sayang sekali, hari itu aku sibuk."
+      ],
+      [
+       "Lần sau nhé!",
+       "Lần sau nyé!",
+       "Lain kali ya!"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Menolak tanpa mengucapkan \"tidak\"",
+     "items": [
+      "Menolak ajakan secara langsung terasa kasar dalam budaya Vietnam, sama seperti dalam budaya kita. Bentuk yang dipakai orang: **menyesal dulu, baru beralasan** — *Tiếc quá, hôm đó em bận.* (\"sayang sekali, hari itu aku sibuk\").",
+      "**Lần sau nhé!** (\"lain kali ya!\") hampir selalu ditambahkan sesudahnya, dan itu bukan janji kosong melainkan tanda bahwa hubungannya tetap baik. Menolak tanpa menambahkan kalimat ini terdengar dingin."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "muốn",
+   "id": "mau, ingin",
+   "baca": "muốn"
+  },
+  {
+   "vi": "cần",
+   "id": "perlu",
+   "baca": "kần"
+  },
+  {
+   "vi": "phải",
+   "id": "harus",
+   "baca": "fải"
+  },
+  {
+   "vi": "nên",
+   "id": "sebaiknya",
+   "baca": "nên"
+  },
+  {
+   "vi": "định",
+   "id": "berniat, berencana",
+   "baca": "dịng"
+  },
+  {
+   "vi": "thích",
+   "id": "suka",
+   "baca": "thík"
+  },
+  {
+   "vi": "đi chơi",
+   "id": "jalan-jalan",
+   "baca": "di cơi"
+  },
+  {
+   "vi": "đi thăm",
+   "id": "berkunjung, menengok",
+   "baca": "di thăm"
+  },
+  {
+   "vi": "du lịch",
+   "id": "berwisata",
+   "baca": "zu lịk"
+  },
+  {
+   "vi": "tắm biển",
+   "id": "berenang di laut",
+   "baca": "tắm biển"
+  },
+  {
+   "vi": "biển",
+   "id": "laut",
+   "baca": "biển"
+  },
+  {
+   "vi": "núi",
+   "id": "gunung",
+   "baca": "núi"
+  },
+  {
+   "vi": "vịnh",
+   "id": "teluk",
+   "baca": "vịng"
+  },
+  {
+   "vi": "đặt",
+   "id": "memesan",
+   "baca": "dặt"
+  },
+  {
+   "vi": "vé",
+   "id": "tiket",
+   "baca": "vé"
+  },
+  {
+   "vi": "cuối tuần",
+   "id": "akhir pekan",
+   "baca": "kuối tuần"
+  },
+  {
+   "vi": "đêm",
+   "id": "malam (larut)",
+   "baca": "dêm"
+  },
+  {
+   "vi": "ở lại",
+   "id": "menginap, tinggal",
+   "baca": "ở lại"
+  },
+  {
+   "vi": "về",
+   "id": "pulang",
+   "baca": "về"
+  },
+  {
+   "vi": "đông / vắng",
+   "id": "ramai / sepi",
+   "baca": "dông / vắng"
+  },
+  {
+   "vi": "sớm / muộn",
+   "id": "awal / terlambat",
+   "baca": "sớm / muộn"
+  },
+  {
+   "vi": "cùng",
+   "id": "bersama, ikut",
+   "baca": "kùng"
+  },
+  {
+   "vi": "tiếc",
+   "id": "sayang, menyesal",
+   "baca": "tiếk"
+  },
+  {
+   "vi": "nghỉ ngơi",
+   "id": "beristirahat",
+   "baca": "ngỉ ngơi"
+  },
+  {
+   "vi": "xem phim",
+   "id": "menonton film",
+   "baca": "sem fim"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Susun jadi rantai kata kerja yang benar.",
+   "items": [
+    "ăn / muốn / đi / tôi",
+    "vé / phải / mua / đi / anh",
+    "bạn / thăm / định / đi / tôi",
+    "biển / tắm / muốn / em / đi",
+    "nấu / học / đi / tôi / định / ăn"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan *muốn*, *cần*, *phải*, atau *nên*.",
+   "items": [
+    "Em ____ đặt vé trước. (harus)",
+    "Anh ____ đi thứ bảy. (sebaiknya)",
+    "Tôi ____ đi Hạ Long. (mau)",
+    "Em ____ mua gì không? (perlu)",
+    "Anh không ____ đi hôm nay. (sebaiknya jangan)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia. Hati-hati dengan sangkalan *phải*.",
+   "items": [
+    "Anh phải đi.",
+    "Anh không phải đi.",
+    "Anh không được đi.",
+    "Anh không nên đi.",
+    "Anh có thể đi."
+   ]
+  },
+  {
+   "prompt": "Jawab ajakan berikut — sekali menerima, sekali menolak dengan sopan. Pisahkan dengan garis miring.",
+   "items": [
+    "Mình đi ăn phở nhé?",
+    "Anh có muốn đi cùng không?",
+    "Cuối tuần này em rảnh không?",
+    "Hay là mình đi xem phim?",
+    "Tối nay đi uống cà phê nhé?"
+   ]
+  }
+ ],
+ "answers": [
+  "Tôi muốn đi ăn. — Anh phải đi mua vé. — Tôi định đi thăm bạn. — Em muốn đi tắm biển. — Tôi định đi học nấu ăn.",
+  "phải — nên — muốn — cần — nên",
+  "Kakak harus pergi. — Kakak tidak perlu pergi. — Kakak tidak boleh pergi. — Kakak sebaiknya jangan pergi. — Kakak bisa pergi.",
+  "Ừ, đi đi! / Tiếc quá, hôm nay em bận. — Muốn chứ! / Để em xem đã nhé. — Rảnh chứ! / Tiếc quá, em bận rồi. — Hay đấy! / Lần sau nhé! — Được chứ! / Xin lỗi, tối nay em bận."
+ ]
+}

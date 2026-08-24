@@ -1,0 +1,602 @@
+{
+ "title": "Angka dan umur",
+ "title_target": "Tölur og aldur",
+ "goal": "Menghitung dari satu sampai seratus, menyebut umur dan nomor telepon, dan menerima kenyataan bahwa empat angka pertama bahasa Islandia berubah bentuk menurut jenis benda yang dihitung.",
+ "bekal": [
+  "menghitung 1–100 dan menyebut harga dalam króna",
+  "memilih *einn*, *ein*, atau *eitt* menurut jenis kata benda yang menyertainya",
+  "menanyakan dan menjawab umur dengan *hvað ertu gamall / gömul*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Í móttökunni",
+   "intro": "Meja pendaftaran sekolah bahasa. Búdí mendaftar untuk kursus lanjutan; petugas mengisi formulir sambil bertanya.",
+   "lines": [
+    {
+     "speaker": "Starfsmaður:",
+     "text": "Góðan daginn. Hvað heitir þú fullu nafni?",
+     "id": "Selamat siang. Siapa nama lengkapmu?",
+     "literal": "baik hari-itu. apa bernama kamu penuh nama?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Ég heiti Búdí Santoso.",
+     "id": "Nama saya Budi Santoso.",
+     "literal": "saya bernama Budi Santoso."
+    },
+    {
+     "speaker": "Starfsmaður:",
+     "text": "Hvað ertu gamall?",
+     "id": "Umurmu berapa?",
+     "literal": "apa adalah-kamu tua?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Ég er tuttugu og fimm ára.",
+     "id": "Saya dua puluh lima tahun.",
+     "literal": "saya adalah dua-puluh dan lima tahun."
+    },
+    {
+     "speaker": "Starfsmaður:",
+     "text": "Og símanúmerið þitt?",
+     "id": "Dan nomor teleponmu?",
+     "literal": "dan nomor-telepon-itu milikmu?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Sex — fjórir — tveir — níu — átta — einn — núll.",
+     "id": "Enam empat dua sembilan delapan satu nol.",
+     "literal": "enam empat dua sembilan delapan satu nol."
+    },
+    {
+     "speaker": "Starfsmaður:",
+     "text": "Takk. Hvar áttu heima?",
+     "id": "Terima kasih. Kamu tinggal di mana?",
+     "literal": "terima-kasih. di-mana punya-kamu rumah?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Á Laugavegi þrjátíu og þrjú.",
+     "id": "Di Laugavegur tiga puluh tiga.",
+     "literal": "pada Laugavegur tiga-puluh dan tiga."
+    },
+    {
+     "speaker": "Starfsmaður:",
+     "text": "Gott. Þú ert í hópi tvö. Þið eruð tólf í hópnum.",
+     "id": "Bagus. Kamu di kelompok dua. Kalian dua belas orang di kelompok itu.",
+     "literal": "baik. kamu adalah di kelompok dua. kalian adalah dua-belas di kelompok-itu."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Hvað kostar námskeiðið?",
+     "id": "Kursusnya berapa?",
+     "literal": "apa berharga kursus-itu?"
+    },
+    {
+     "speaker": "Starfsmaður:",
+     "text": "Þrjátíu og fimm þúsund krónur. Þrír tímar á viku.",
+     "id": "Tiga puluh lima ribu króna. Tiga jam seminggu.",
+     "literal": "tiga-puluh dan lima ribu króna. tiga jam pada minggu."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Fínt. Ein spurning enn: hvenær byrjar það?",
+     "id": "Baik. Satu pertanyaan lagi: kapan mulainya?",
+     "literal": "bagus. satu pertanyaan lagi: kapan mulai ia?"
+    }
+   ],
+   "notes": [
+    "**Hvað ertu gamall? harfiahnya \"berapa kamu tua?\"** — dan kata *gamall* ikut jenis kelamin orang yang ditanya. Kepada lelaki: *Hvað ertu **gamall**?*; kepada perempuan: *Hvað ertu **gömul**?* Salah memilihnya bukan cuma salah tata bahasa, tapi terdengar seperti salah menyebut orangnya.",
+    "**Ára tidak pernah berubah.** *Ég er tuttugu og fimm ára*, *hún er þriggja ára*, *hann er níutíu ára* — bentuknya satu untuk semua umur. Ini salah satu dari sedikit kata dalam bahasa Islandia yang benar-benar diam.",
+    "**Empat angka pertama berubah menurut jenis kata bendanya**, dan itu terlihat dua kali di dialog ini: *ein spurning* (*spurning* kvk) tapi *þrír tímar* (*tími* kk). Angka 5 ke atas tidak pernah berubah, jadi bebannya terbatas — tapi angka 1–4 justru yang paling sering dipakai.",
+    "**Nomor rumah dan nomor apa pun yang berdiri sendiri memakai bentuk netral**: *þrjátíu og þrjú*, bukan *þrjátíu og þrír*. Bentuk hvorugkyn adalah bentuk cadangan bahasa ini — pola yang sama sudah kamu lihat pada kata sifat di unit 3.",
+    "**Að eiga heima harfiahnya \"punya rumah\"**, dan artinya \"bertempat tinggal\". Ia bertukar bebas dengan *búa* dari unit 2: *Hvar áttu heima?* = *Hvar býrðu?*",
+    "**Krónur terdengar besar, dan memang besar angkanya.** Satu cangkir kopi sekitar 700 krónur, satu kursus 35.000. Jangan kaget mendengar angka ribuan dalam percakapan sehari-hari; itu sebabnya *þúsund* termasuk kata yang paling sering kamu dengar di kasir."
+   ],
+   "grammars": [
+    {
+     "title": "Angka 1–4 berubah menurut jenis kata",
+     "body": [
+      "Empat angka, tiga bentuk masing-masing. Sisanya — dari lima ke atas — tidak berubah sama sekali."
+     ],
+     "table": {
+      "head": [
+       "Angka",
+       "kk (hann)",
+       "kvk (hún)",
+       "hk (það)",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "1",
+        "*einn*",
+        "*ein*",
+        "*eitt*",
+        "*einn stóll*, *ein bók*, *eitt borð*"
+       ],
+       [
+        "2",
+        "*tveir*",
+        "*tvær*",
+        "*tvö*",
+        "*tveir bílar*, *tvær bækur*, *tvö börn*"
+       ],
+       [
+        "3",
+        "*þrír*",
+        "*þrjár*",
+        "*þrjú*",
+        "*þrír tímar*, *þrjár konur*, *þrjú hús*"
+       ],
+       [
+        "4",
+        "*fjórir*",
+        "*fjórar*",
+        "*fjögur*",
+        "*fjórir menn*, *fjórar myndir*, *fjögur ár*"
+       ],
+       [
+        "5 ke atas",
+        "*fimm*",
+        "*fimm*",
+        "*fimm*",
+        "tidak pernah berubah"
+       ]
+      ]
+     },
+     "after": [
+      "Karena hanya angka 1–4 yang berubah, hafalkan dua belas bentuk ini sebagai satu blok dan biarkan sisanya. Dua belas bentuk itu menutup lebih dari separuh angka yang kamu ucapkan sehari-hari.",
+      "⚠️ Kalau angkanya berdiri sendiri — menghitung, menyebut nomor, menyebut tahun — pakai bentuk **hvorugkyn**: *einn, tveir, þrír* dipakai saat menghitung berurutan, tapi *eitt, tvö, þrjú* dipakai untuk nomor dan angka lepas. Dalam praktik, dengarkan dulu bagaimana orang Islandia menghitung; keduanya terdengar."
+     ]
+    },
+    {
+     "title": "Bertanya jumlah dan harga",
+     "body": [
+      "Satu kata tanya, tiga bentuk — lagi-lagi menurut jenis kata benda yang dihitung."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan",
+       "Untuk",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Hvað margir …?*",
+        "kk",
+        "*Hvað margir tímar?*",
+        "Berapa jam?"
+       ],
+       [
+        "*Hvað margar …?*",
+        "kvk",
+        "*Hvað margar bækur?*",
+        "Berapa buku?"
+       ],
+       [
+        "*Hvað mörg …?*",
+        "hk",
+        "*Hvað mörg börn?*",
+        "Berapa anak?"
+       ],
+       [
+        "*Hvað kostar …?*",
+        "harga",
+        "*Hvað kostar þetta?*",
+        "Ini berapa?"
+       ],
+       [
+        "*Hvað ertu gamall/gömul?*",
+        "umur",
+        "—",
+        "Umurmu berapa?"
+       ]
+      ]
+     },
+     "after": [
+      "*Hvað kostar* memakai bentuk tunggal walau yang ditanya banyak: *Hvað kosta bækurnar?* dengan *kosta* jamak juga benar dan sama seringnya.",
+      "Menjawab harga cukup dengan angkanya saja: *Sjö hundruð krónur* — atau bahkan *sjö hundruð*, karena mata uangnya sudah jelas."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Angka satu sampai seratus",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Angka",
+      "Íslenska",
+      "Cara baca",
+      "Angka",
+      "Íslenska",
+      "Cara baca"
+     ],
+     "rows": [
+      [
+       "0",
+       "*núll*",
+       "nütl",
+       "11",
+       "*ellefu*",
+       "ÈT-lè-vü"
+      ],
+      [
+       "1",
+       "*einn*",
+       "eidn",
+       "12",
+       "*tólf*",
+       "toulv"
+      ],
+      [
+       "2",
+       "*tveir*",
+       "tveir",
+       "13",
+       "*þrettán*",
+       "THRÈH-taun"
+      ],
+      [
+       "3",
+       "*þrír*",
+       "thriir",
+       "14",
+       "*fjórtán*",
+       "FYOUR-taun"
+      ],
+      [
+       "4",
+       "*fjórir*",
+       "FYOU-rir",
+       "15",
+       "*fimmtán*",
+       "FIM-taun"
+      ],
+      [
+       "5",
+       "*fimm*",
+       "fim",
+       "16",
+       "*sextán*",
+       "SÈX-taun"
+      ],
+      [
+       "6",
+       "*sex*",
+       "sèx",
+       "17",
+       "*sautján*",
+       "SÖIT-yaun"
+      ],
+      [
+       "7",
+       "*sjö*",
+       "syö",
+       "18",
+       "*átján*",
+       "AUT-yaun"
+      ],
+      [
+       "8",
+       "*átta*",
+       "AUH-ta",
+       "19",
+       "*nítján*",
+       "NIIT-yaun"
+      ],
+      [
+       "9",
+       "*níu*",
+       "NII-ü",
+       "20",
+       "*tuttugu*",
+       "TÜH-tü-ghü"
+      ],
+      [
+       "10",
+       "*tíu*",
+       "TII-ü",
+       "100",
+       "*hundrað*",
+       "HÜND-radh"
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Puluhan",
+      "Íslenska",
+      "Cara baca",
+      "Contoh gabungan",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "30",
+       "*þrjátíu*",
+       "THRYAU-tii-ü",
+       "*þrjátíu og þrjú*",
+       "33"
+      ],
+      [
+       "40",
+       "*fjörutíu*",
+       "FYÖ-rü-tii-ü",
+       "*fjörutíu og fimm*",
+       "45"
+      ],
+      [
+       "50",
+       "*fimmtíu*",
+       "FIM-tii-ü",
+       "*fimmtíu og sjö*",
+       "57"
+      ],
+      [
+       "60",
+       "*sextíu*",
+       "SÈX-tii-ü",
+       "*sextíu og átta*",
+       "68"
+      ],
+      [
+       "70",
+       "*sjötíu*",
+       "SYÖ-tii-ü",
+       "*sjötíu og níu*",
+       "79"
+      ],
+      [
+       "80",
+       "*áttatíu*",
+       "AUH-ta-tii-ü",
+       "*áttatíu og einn*",
+       "81"
+      ],
+      [
+       "90",
+       "*níutíu*",
+       "NII-ü-tii-ü",
+       "*níutíu og tvö*",
+       "92"
+      ],
+      [
+       "1000",
+       "*þúsund*",
+       "THUU-sünd",
+       "*fimm þúsund*",
+       "5.000"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Gabungannya selalu memakai **og** di tengah: *tuttugu **og** fimm*, *níutíu **og** níu*. Tidak ada bentuk pendek seperti \"dua puluh lima\" tanpa \"dan\" — kata *og* wajib ada."
+    }
+   ]
+  },
+  {
+   "title": "Nomor telepon, tanggal, dan harga",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Íslenska",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Hvað er símanúmerið þitt?",
+       "kvadh èr SII-ma-nuu-mè-ridh thiht",
+       "Nomor teleponmu berapa?"
+      ],
+      [
+       "Hvað kostar þetta?",
+       "kvadh KOS-tar THÈH-ta",
+       "Ini berapa?"
+      ],
+      [
+       "Það kostar sjö hundruð krónur.",
+       "thadh KOS-tar syö HÜND-rüdh KROU-nür",
+       "Harganya tujuh ratus króna."
+      ],
+      [
+       "Hvað ertu gamall?",
+       "kvadh ÈR-tü GA-matl",
+       "Umurmu berapa? (ke lelaki)"
+      ],
+      [
+       "Hvað ertu gömul?",
+       "kvadh ÈR-tü GÖ-mül",
+       "Umurmu berapa? (ke perempuan)"
+      ],
+      [
+       "Ég er þrjátíu ára.",
+       "yègh èr THRYAU-tii-ü AU-ra",
+       "Saya tiga puluh tahun."
+      ],
+      [
+       "Hvað eruð þið mörg?",
+       "kvadh È-rüdh thidh mörgh",
+       "Kalian berapa orang?"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Nomor telepon dibaca satu-satu",
+     "items": [
+      "Nomor telepon Islandia tujuh angka dan dibaca **satu-satu**, bukan berpasangan seperti kebiasaan Indonesia: *sex, fjórir, tveir, níu, átta, einn, núll*.",
+      "Tanggal memakai bentuk urutan yang belum kamu pelajari (*fyrsti*, *annar*, *þriðji*), tapi dalam percakapan santai angka biasa juga dipakai: *þriðja mars* — tanggal tiga Maret."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "is": "tala (kk: tölur)",
+   "baca": "TA-la",
+   "id": "angka"
+  },
+  {
+   "is": "aldur",
+   "baca": "AL-dür",
+   "id": "umur"
+  },
+  {
+   "is": "gamall / gömul",
+   "baca": "GA-matl / GÖ-mül",
+   "id": "tua (kk / kvk)"
+  },
+  {
+   "is": "ára",
+   "baca": "AU-ra",
+   "id": "tahun (untuk umur)"
+  },
+  {
+   "is": "ár",
+   "baca": "aur",
+   "id": "tahun"
+  },
+  {
+   "is": "númer",
+   "baca": "NUU-mèr",
+   "id": "nomor"
+  },
+  {
+   "is": "sími",
+   "baca": "SII-mi",
+   "id": "telepon"
+  },
+  {
+   "is": "króna",
+   "baca": "KROU-na",
+   "id": "króna (mata uang)"
+  },
+  {
+   "is": "kosta",
+   "baca": "KOS-ta",
+   "id": "berharga, seharga"
+  },
+  {
+   "is": "námskeið",
+   "baca": "NAUMS-keidh",
+   "id": "kursus"
+  },
+  {
+   "is": "hópur",
+   "baca": "HOU-pür",
+   "id": "kelompok"
+  },
+  {
+   "is": "tími",
+   "baca": "TII-mi",
+   "id": "jam pelajaran; waktu"
+  },
+  {
+   "is": "vika",
+   "baca": "VI-ka",
+   "id": "minggu"
+  },
+  {
+   "is": "spurning",
+   "baca": "SPÜRD-ning",
+   "id": "pertanyaan"
+  },
+  {
+   "is": "hvenær",
+   "baca": "KVÈ-nair",
+   "id": "kapan"
+  },
+  {
+   "is": "byrja",
+   "baca": "BIR-ya",
+   "id": "mulai"
+  },
+  {
+   "is": "enn",
+   "baca": "èdn",
+   "id": "lagi, masih"
+  },
+  {
+   "is": "fínt",
+   "baca": "fiint",
+   "id": "baik, oke"
+  },
+  {
+   "is": "starfsmaður",
+   "baca": "STARFS-ma-dhür",
+   "id": "petugas, karyawan"
+  },
+  {
+   "is": "eiga heima",
+   "baca": "EI-gha HEI-ma",
+   "id": "bertempat tinggal"
+  },
+  {
+   "is": "margir / margar / mörg",
+   "baca": "MAR-yir / MAR-ghar / mörgh",
+   "id": "banyak"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angka berikut dengan huruf.",
+   "items": [
+    "7",
+    "12",
+    "20",
+    "33",
+    "58",
+    "91"
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk angka yang tepat menurut jenis kata bendanya.",
+   "items": [
+    "____ (einn, ein, eitt) bók",
+    "____ (tveir, tvær, tvö) börn",
+    "____ (þrír, þrjár, þrjú) tímar",
+    "____ (fjórir, fjórar, fjögur) myndir",
+    "____ (einn, ein, eitt) stóll",
+    "____ (tveir, tvær, tvö) bílar"
+   ]
+  },
+  {
+   "prompt": "Jawab pertanyaan berikut dengan kalimat penuh, memakai keterangan dalam kurung.",
+   "items": [
+    "Hvað ertu gamall? (25)",
+    "Hvað kostar bókin? (3.500 krónur)",
+    "Hvað eruð þið mörg? (12)",
+    "Hvað margir tímar á viku? (3)",
+    "Hvað er símanúmerið þitt? (642 9810)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Islandia.",
+   "items": [
+    "Umurmu berapa?",
+    "Saya tiga puluh tahun.",
+    "Ini berapa?",
+    "Harganya tujuh ratus króna.",
+    "Kapan mulainya?",
+    "Satu pertanyaan lagi."
+   ]
+  }
+ ],
+ "answers": [
+  "sjö — tólf — tuttugu — þrjátíu og þrjú — fimmtíu og átta — níutíu og einn",
+  "ein — tvö — þrír — fjórar — einn — tveir",
+  "Ég er tuttugu og fimm ára. — Hún kostar þrjú þúsund og fimm hundruð krónur. — Við erum tólf. — Þrír tímar á viku. — Sex fjórir tveir níu átta einn núll.",
+  "Hvað ertu gamall? — Ég er þrjátíu ára. — Hvað kostar þetta? — Það kostar sjö hundruð krónur. — Hvenær byrjar það? — Ein spurning enn."
+ ]
+}

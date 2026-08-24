@@ -1,0 +1,541 @@
+{
+ "title": "Berapa harganya? — belanja dan menawar",
+ "title_target": "Cái này bao nhiêu tiền?",
+ "goal": "Menanyakan harga, membaca angka uang Vietnam yang penuh nol, dan menawar dengan sopan — termasuk mengenali satu jebakan kecil bernama *rưỡi*.",
+ "bekal": [
+  "menanyakan dan memahami harga dalam ratusan ribu *đồng*",
+  "menawar dengan *bớt*, *trả*, dan *được không?*",
+  "menyebut warna, ukuran, dan meminta mencoba dengan *thử*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ở chợ Đồng Xuân",
+   "intro": "Pasar Đồng Xuân, Hà Nội. Budi mencari kemeja untuk oleh-oleh. Di pasar seperti ini harga tidak tertulis, dan menawar bukan cuma boleh — ia diharapkan.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Chị ơi, cái áo này bao nhiêu tiền ạ?",
+     "id": "Mbak, kemeja ini berapa?",
+     "literal": "kakak hai, buah baju ini berapa uang ya?",
+     "baca": "Cị ơi, kái áo này bao nyiêu tiền ạ?"
+    },
+    {
+     "speaker": "Người bán:",
+     "text": "Ba trăm nghìn em ạ.",
+     "id": "Tiga ratus ribu, Dik.",
+     "literal": "tiga ratus ribu adik ya.",
+     "baca": "Ba căm ngìn em ạ."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Đắt quá! Chị bớt cho em một chút được không?",
+     "id": "Mahal banget! Boleh kurangi sedikit?",
+     "literal": "mahal terlalu! kakak kurangi untuk adik satu sedikit bisa tidak?",
+     "baca": "Dắt kwá! Cị bớt co em một cút dượk không?"
+    },
+    {
+     "speaker": "Người bán:",
+     "text": "Thế em trả bao nhiêu?",
+     "id": "Terus kamu mau bayar berapa?",
+     "literal": "begitu adik bayar berapa?",
+     "baca": "Thế em cả bao nyiêu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hai trăm nghìn được không chị?",
+     "id": "Dua ratus ribu boleh, Mbak?",
+     "literal": "dua ratus ribu bisa tidak kakak?",
+     "baca": "Hai căm ngìn dượk không cị?"
+    },
+    {
+     "speaker": "Người bán:",
+     "text": "Không được đâu. Hai trăm rưỡi nhé.",
+     "id": "Nggak bisa. Dua ratus lima puluh ribu ya.",
+     "literal": "tidak bisa kok. dua ratus setengah ya.",
+     "baca": "Không dượk dâu. Hai căm zưỡi nyé."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chị bớt thêm chút nữa đi. Em mua hai cái.",
+     "id": "Kurangi lagi sedikit dong. Saya beli dua.",
+     "literal": "kakak kurangi tambah sedikit lagi lah. adik beli dua buah.",
+     "baca": "Cị bớt thêm cút nữa di. Em mua hai kái."
+    },
+    {
+     "speaker": "Người bán:",
+     "text": "Thôi được. Hai cái bốn trăm rưỡi.",
+     "id": "Ya sudah. Dua potong empat ratus lima puluh ribu.",
+     "literal": "sudahlah bisa. dua buah empat ratus setengah.",
+     "baca": "Thôi dượk. Hai kái bốn căm zưỡi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vâng, em lấy. Có màu xanh không chị?",
+     "id": "Baik, saya ambil. Ada warna biru, Mbak?",
+     "literal": "iya, adik ambil. ada warna biru tidak kakak?",
+     "baca": "Vâng, em lấy. Kó màu sang không cị?"
+    },
+    {
+     "speaker": "Người bán:",
+     "text": "Có chứ. Em mặc thử đi.",
+     "id": "Ada dong. Coba pakai.",
+     "literal": "ada dong. adik pakai coba lah.",
+     "baca": "Kó cứ. Em mặk thử di."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vừa quá! Em lấy hai cái này ạ.",
+     "id": "Pas sekali! Saya ambil dua yang ini.",
+     "literal": "pas terlalu! adik ambil dua buah ini ya.",
+     "baca": "Vừa kwá! Em lấy hai kái này ạ."
+    }
+   ],
+   "notes": [
+    "⚠️ **Rưỡi berarti \"setengah dari satuan yang baru disebut\"**, dan di dunia uang ia sangat sering muncul: *hai trăm rưỡi* = 250.000 (dua ratus **ribu** setengah), *bốn trăm rưỡi* = 450.000. Bukan 200,5 dan bukan 400,5. Ini kata yang sama dengan *hai giờ rưỡi* di unit 8 — dan sama-sama menuntut perhatian.",
+    "**Đồng hampir selalu dijatuhkan, dan nghìn sering ikut dijatuhkan.** Penjual bilang *ba trăm* dan yang dimaksud *ba trăm nghìn đồng* — 300.000. Karena harga di bawah seribu đồng praktis tidak ada lagi, tidak ada yang salah paham. Untuk orang asing ini justru menakutkan di hari pertama, jadi hafalkan: **kalau angkanya kecil, tambahkan sendiri \"ribu\" di kepalamu**.",
+    "**Bớt berarti \"mengurangi\" dan itulah kata kerja menawar.** Kalimat lengkap yang sopan: *Chị bớt cho em một chút được không?* Lebih pendek: *Bớt chút đi chị.* Perhatikan *cho em* di dalamnya — \"untuk saya\" — yang membuat permintaannya terdengar seperti minta tolong, bukan menuntut.",
+    "**Perhatikan kata gantinya berubah dari dialog-dialog sebelumnya.** Budi memanggil penjual *chị* dan menyebut dirinya *em*, bukan *tôi*. Di pasar, memakai kata kekeluargaan seperti ini membuat tawar-menawar terasa hangat dan hampir selalu berbuah harga lebih baik. *Tôi* tidak salah, tapi ia terdengar berjarak.",
+    "**Thử berarti \"coba\" dan berdiri SESUDAH kata kerjanya**: *mặc thử* (coba pakai), *ăn thử* (coba makan), *đi thử* (coba jalan). Bandingkan bahasa Indonesia yang menaruhnya di depan — \"coba pakai\". Ini salah satu dari sedikit tempat urutan kita dan urutan Vietnam berbeda, jadi perlu dilatih.",
+    "**Thôi được berarti \"ya sudah, boleh deh\"** — tanda tawar-menawar selesai dan kesepakatan tercapai. Kalau kamu mendengarnya, berhentilah menawar; menekan lebih jauh sesudah *thôi được* dianggap tidak tahu diri."
+   ],
+   "grammars": [
+    {
+     "title": "Uang Vietnam: membaca angka yang penuh nol",
+     "body": [
+      "Satuan mata uangnya *đồng*, dan pecahan terkecil yang masih beredar adalah 1.000. Karena itu hampir semua harga sehari-hari berkepala **nghìn** (ribu)."
+     ],
+     "table": {
+      "head": [
+       "Angka",
+       "Tiếng Việt",
+       "Cara pendek yang benar-benar diucapkan",
+       "Kira-kira"
+      ],
+      "rows": [
+       [
+        "10.000",
+        "*mười nghìn*",
+        "*mười nghìn*",
+        "harga es teh + kerupuk"
+       ],
+       [
+        "50.000",
+        "*năm mươi nghìn*",
+        "*năm mươi*",
+        "semangkuk phở"
+       ],
+       [
+        "100.000",
+        "*một trăm nghìn*",
+        "*một trăm*",
+        "makan berdua"
+       ],
+       [
+        "150.000",
+        "*một trăm năm mươi nghìn*",
+        "***một trăm rưỡi***",
+        "kaos"
+       ],
+       [
+        "250.000",
+        "*hai trăm năm mươi nghìn*",
+        "***hai trăm rưỡi***",
+        "kemeja pasar"
+       ],
+       [
+        "1.000.000",
+        "*một triệu*",
+        "*một triệu* / *một củ*",
+        "sewa kamar seminggu"
+       ],
+       [
+        "2.500.000",
+        "*hai triệu rưỡi*",
+        "*hai triệu rưỡi*",
+        "sewa kamar sebulan"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ ***Rưỡi* selalu berarti setengah dari satuan yang tepat sebelumnya.** *Trăm rưỡi* = seratus lima puluh ribu; *triệu rưỡi* = satu setengah juta. Kalau kamu ragu, minta penjual menuliskannya — *Chị viết ra được không?* — dan tidak ada yang menganggap itu aneh.",
+      "*Củ* adalah kata gaul untuk \"juta\" yang sering terdengar di pasar dan di antara anak muda: *ba củ* = tiga juta. Kamu tidak perlu memakainya, tapi mengenalinya akan menyelamatkanmu dari salah paham yang mahal."
+     ]
+    },
+    {
+     "title": "Menawar dalam lima kalimat",
+     "body": [
+      "Urutannya hampir selalu sama, dan seluruh tawar-menawar bisa diselesaikan dengan lima kalimat berikut."
+     ],
+     "table": {
+      "head": [
+       "Urutan",
+       "Tiếng Việt",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "1. bertanya",
+        "*Cái này bao nhiêu tiền ạ?*",
+        "Ini berapa?"
+       ],
+       [
+        "2. terkejut",
+        "*Đắt quá!*",
+        "Mahal banget!"
+       ],
+       [
+        "3. meminta",
+        "*Chị bớt cho em một chút được không?*",
+        "Boleh kurangi sedikit?"
+       ],
+       [
+        "4. menawar",
+        "*Hai trăm được không chị?*",
+        "Dua ratus ribu boleh?"
+       ],
+       [
+        "5. menutup",
+        "*Vâng, em lấy.* / *Thôi, để lần sau.*",
+        "Baik, saya ambil. / Lain kali saja."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Kalimat kelima yang kedua adalah senjata sesungguhnya.** *Thôi, để lần sau.* (\"ya sudah, lain kali saja\") diucapkan sambil melangkah pergi adalah cara paling ampuh dan paling sopan untuk menurunkan harga. Kalau penjual memanggilmu kembali, harganya benar-benar bisa turun; kalau tidak, harganya memang sudah pantas.",
+      "**Menawar itu wajar di pasar tradisional dan toko oleh-oleh, tapi TIDAK di supermarket, kedai kopi, atau tempat yang harganya tertulis.** Menawar di tempat berlabel harga terasa seperti menawar di Indomaret — bukan menyinggung, tapi janggal."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Warna, pakaian, ukuran",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Warna",
+      "Tiếng Việt",
+      "Pakaian & barang",
+      "Tiếng Việt"
+     ],
+     "rows": [
+      [
+       "merah",
+       "*màu đỏ*",
+       "kemeja, baju",
+       "*áo*"
+      ],
+      [
+       "biru; hijau",
+       "*màu xanh*",
+       "kaos",
+       "*áo phông*"
+      ],
+      [
+       "kuning",
+       "*màu vàng*",
+       "celana",
+       "*quần*"
+      ],
+      [
+       "putih",
+       "*màu trắng*",
+       "rok",
+       "*váy*"
+      ],
+      [
+       "hitam",
+       "*màu đen*",
+       "sepatu",
+       "*giày*"
+      ],
+      [
+       "cokelat",
+       "*màu nâu*",
+       "sandal",
+       "*dép*"
+      ],
+      [
+       "kelabu",
+       "*màu xám*",
+       "topi",
+       "*mũ* / *nón*"
+      ],
+      [
+       "merah muda",
+       "*màu hồng*",
+       "tas",
+       "*túi*"
+      ],
+      [
+       "ungu",
+       "*màu tím*",
+       "topi caping",
+       "*nón lá*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ ***Màu xanh* berarti biru DAN hijau sekaligus.** Untuk memisahkannya dipakai tambahan: *xanh da trời* (biru langit) dan *xanh lá cây* (hijau daun). Bahasa Vietnam bukan satu-satunya yang menyatukan keduanya, tapi bagi kita yang membedakan biru dan hijau sejak kecil, ini perlu diingat saat memesan barang."
+    },
+    {
+     "type": "p",
+     "text": "Ukuran memakai kata Inggris apa adanya — *size S*, *size M*, *size L* — atau kata Vietnam *rộng* (kebesaran), *chật* (kesempitan), *vừa* (pas). Kalimat yang kamu butuhkan: *Có size to hơn không?* (ada yang lebih besar?) dan *Cái này chật quá.* (ini kesempitan)."
+    }
+   ]
+  },
+  {
+   "title": "Kalimat belanja",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Cái này bao nhiêu tiền?",
+       "Kái này bao nyiêu tiền?",
+       "Ini berapa?"
+      ],
+      [
+       "Tất cả bao nhiêu?",
+       "Tất kả bao nyiêu?",
+       "Semuanya berapa?"
+      ],
+      [
+       "Đắt quá!",
+       "Dắt kwá!",
+       "Mahal banget!"
+      ],
+      [
+       "Bớt cho em một chút đi.",
+       "Bớt co em một cút di.",
+       "Kurangi sedikit dong."
+      ],
+      [
+       "Cho em xem cái kia.",
+       "Co em sem kái kia.",
+       "Boleh lihat yang itu."
+      ],
+      [
+       "Em mặc thử được không?",
+       "Em mặk thử dượk không?",
+       "Boleh saya coba pakai?"
+      ],
+      [
+       "Có màu khác không?",
+       "Kó màu khák không?",
+       "Ada warna lain?"
+      ],
+      [
+       "Cái này chật quá.",
+       "Kái này cật kwá.",
+       "Ini kesempitan."
+      ],
+      [
+       "Em lấy cái này.",
+       "Em lấy kái này.",
+       "Saya ambil yang ini."
+      ],
+      [
+       "Thôi, để lần sau ạ.",
+       "Thôi, dể lần sau ạ.",
+       "Lain kali saja."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Dua hal yang membuat harga turun sendiri",
+     "items": [
+      "**Membeli lebih dari satu.** *Em mua hai cái, chị bớt cho em nhé.* — kalimat ini hampir selalu berhasil, dan penjual justru senang karena barangnya berpindah lebih cepat.",
+      "**Berbahasa Vietnam sama sekali.** Ini bukan basa-basi: harga untuk orang asing yang menawar dalam bahasa Vietnam hampir selalu berbeda dari harga untuk orang asing yang menunjuk dan diam. Lima kalimat di kotak tata bahasa tadi, diucapkan dengan nada yang cukup benar untuk dipahami, sudah cukup — dan itu alasan yang sangat konkret untuk melatih nada."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "tiền",
+   "id": "uang",
+   "baca": "tiền"
+  },
+  {
+   "vi": "đồng",
+   "id": "đồng (mata uang Vietnam)",
+   "baca": "dồng"
+  },
+  {
+   "vi": "nghìn / ngàn",
+   "id": "ribu",
+   "baca": "ngìn / ngàn"
+  },
+  {
+   "vi": "trăm",
+   "id": "ratus",
+   "baca": "căm"
+  },
+  {
+   "vi": "triệu",
+   "id": "juta",
+   "baca": "ciệu"
+  },
+  {
+   "vi": "rưỡi",
+   "id": "setengah (dari satuan sebelumnya)",
+   "baca": "zưỡi"
+  },
+  {
+   "vi": "bớt",
+   "id": "mengurangi (harga)",
+   "baca": "bớt"
+  },
+  {
+   "vi": "trả",
+   "id": "membayar",
+   "baca": "cả"
+  },
+  {
+   "vi": "bán / mua",
+   "id": "menjual / membeli",
+   "baca": "bán / mua"
+  },
+  {
+   "vi": "người bán",
+   "id": "penjual",
+   "baca": "người bán"
+  },
+  {
+   "vi": "áo / quần",
+   "id": "baju / celana",
+   "baca": "áo / kwần"
+  },
+  {
+   "vi": "giày / dép",
+   "id": "sepatu / sandal",
+   "baca": "zày / zép"
+  },
+  {
+   "vi": "túi",
+   "id": "tas",
+   "baca": "túi"
+  },
+  {
+   "vi": "màu",
+   "id": "warna",
+   "baca": "màu"
+  },
+  {
+   "vi": "đỏ / xanh / vàng",
+   "id": "merah / biru-hijau / kuning",
+   "baca": "dỏ / sang / vàng"
+  },
+  {
+   "vi": "trắng / đen",
+   "id": "putih / hitam",
+   "baca": "cắng / den"
+  },
+  {
+   "vi": "mặc",
+   "id": "memakai (pakaian)",
+   "baca": "mặk"
+  },
+  {
+   "vi": "vừa",
+   "id": "pas, muat",
+   "baca": "vừa"
+  },
+  {
+   "vi": "chật / rộng",
+   "id": "sempit / longgar",
+   "baca": "cật / zộng"
+  },
+  {
+   "vi": "khác",
+   "id": "lain, berbeda",
+   "baca": "khák"
+  },
+  {
+   "vi": "xem",
+   "id": "melihat, menonton",
+   "baca": "sem"
+  },
+  {
+   "vi": "tất cả",
+   "id": "semua",
+   "baca": "tất kả"
+  },
+  {
+   "vi": "thôi được",
+   "id": "ya sudah, boleh",
+   "baca": "thôi dượk"
+  },
+  {
+   "vi": "lần sau",
+   "id": "lain kali",
+   "baca": "lần sau"
+  },
+  {
+   "vi": "đắt / rẻ",
+   "id": "mahal / murah",
+   "baca": "dắt / zẻ"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis harganya dalam bahasa Vietnam, memakai bentuk pendek yang benar-benar diucapkan.",
+   "items": [
+    "50.000",
+    "100.000",
+    "150.000",
+    "250.000",
+    "1.000.000",
+    "2.500.000"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Ini berapa?",
+    "Mahal banget!",
+    "Boleh kurangi sedikit?",
+    "Boleh saya coba pakai?",
+    "Ada warna lain?",
+    "Saya ambil yang ini."
+   ]
+  },
+  {
+   "prompt": "Berapa rupiah kira-kira? Tulis angkanya dalam angka biasa.",
+   "items": [
+    "hai trăm rưỡi",
+    "năm mươi nghìn",
+    "một triệu",
+    "ba trăm nghìn",
+    "hai triệu rưỡi"
+   ]
+  },
+  {
+   "prompt": "Susun jadi percakapan tawar-menawar yang masuk akal, urut dari 1 sampai 5.",
+   "items": [
+    "Vâng, em lấy.",
+    "Cái áo này bao nhiêu tiền ạ?",
+    "Hai trăm được không chị?",
+    "Ba trăm nghìn em ạ.",
+    "Đắt quá! Chị bớt cho em một chút đi."
+   ]
+  }
+ ],
+ "answers": [
+  "năm mươi nghìn — một trăm nghìn — một trăm rưỡi — hai trăm rưỡi — một triệu — hai triệu rưỡi",
+  "Cái này bao nhiêu tiền? — Đắt quá! — Chị bớt cho em một chút được không? — Em mặc thử được không? — Có màu khác không? — Em lấy cái này.",
+  "250.000 — 50.000 — 1.000.000 — 300.000 — 2.500.000",
+  "Cái áo này bao nhiêu tiền ạ? — Ba trăm nghìn em ạ. — Đắt quá! Chị bớt cho em một chút đi. — Hai trăm được không chị? — Vâng, em lấy."
+ ]
+}

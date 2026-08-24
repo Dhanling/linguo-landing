@@ -1,0 +1,549 @@
+{
+ "title": "Keluarga dan kepemilikan",
+ "title_target": "Fjölskyldan mín",
+ "goal": "Menyebut anggota keluarga, mengatakan \"milik saya\" dengan bentuk yang tepat, dan memahami kenapa orang Islandia tidak punya nama keluarga sama sekali.",
+ "bekal": [
+  "menyebut anggota keluarga inti beserta bentuk jamaknya yang tidak beraturan",
+  "memakai *minn / mín / mitt* dan *þinn / þín / þitt* di tempat yang benar",
+  "membaca nama Islandia dan tahu siapa ayah orangnya dari nama itu saja"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Fjölskyldumyndin",
+   "intro": "Di ruang tamu Anna tergantung sebuah foto keluarga. Búdí memperhatikannya, dan pertanyaannya berujung pada satu kebiasaan Islandia yang membuatnya terkejut.",
+   "lines": [
+    {
+     "speaker": "Búdí:",
+     "text": "Er þetta fjölskyldan þín?",
+     "id": "Ini keluargamu?",
+     "literal": "adalah ini keluarga-itu milikmu?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Já. Þetta er mamma mín og þetta er pabbi minn.",
+     "id": "Ya. Ini ibu saya dan ini ayah saya.",
+     "literal": "ya. ini adalah mama milikku dan ini adalah papa milikku."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Áttu systkini?",
+     "id": "Kamu punya saudara?",
+     "literal": "punya-kamu saudara-saudara?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Ég á eina systur og tvo bræður.",
+     "id": "Saya punya satu saudara perempuan dan dua saudara lelaki.",
+     "literal": "saya punya satu saudara-perempuan dan dua saudara-lelaki."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Hvað heita þau?",
+     "id": "Siapa nama mereka?",
+     "literal": "apa bernama mereka?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Systir mín heitir Guðrún. Bræður mínir heita Jón og Ólafur.",
+     "id": "Saudara perempuan saya bernama Guðrún. Saudara lelaki saya bernama Jón dan Ólafur.",
+     "literal": "saudara-perempuan milikku bernama Guðrún. saudara-lelaki milikku bernama Jón dan Ólafur."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Anna Jónsdóttir … svo pabbi þinn heitir líka Jón?",
+     "id": "Anna Jónsdóttir… jadi ayahmu juga bernama Jón?",
+     "literal": "Anna Jónsdóttir… jadi papa milikmu bernama juga Jón?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Rétt! Ég er dóttir Jóns. Bróðir minn heitir Jónsson.",
+     "id": "Benar! Saya putri Jón. Saudara lelaki saya bernama Jónsson.",
+     "literal": "benar! saya adalah putri Jón. saudara-lelaki milikku bernama Jónsson."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Svo þið hafið ekki sama eftirnafn?",
+     "id": "Jadi kalian tidak punya nama belakang yang sama?",
+     "literal": "jadi kalian punya tidak sama nama-belakang?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Nei, við notum ekki ættarnöfn. Í símaskránni erum við undir fornafni.",
+     "id": "Tidak, kami tidak memakai nama keluarga. Di buku telepon kami dicatat di bawah nama depan.",
+     "literal": "tidak, kami memakai tidak nama-keluarga. di buku-telepon-itu adalah kami di-bawah nama-depan."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Merkilegt! Í Indónesíu á ég bara eitt nafn.",
+     "id": "Menarik! Di Indonesia saya cuma punya satu nama.",
+     "literal": "menarik! di Indonesia punya saya hanya satu nama."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Þá erum við lík. Nafnið þitt er þitt eigið.",
+     "id": "Kalau begitu kita mirip. Namamu adalah milikmu sendiri.",
+     "literal": "maka adalah kami mirip. nama-itu milikmu adalah milikmu sendiri."
+    }
+   ],
+   "notes": [
+    "**Kata milik berdiri DI BELAKANG kata bendanya — persis seperti bahasa Indonesia.** *Mamma mín* = \"ibu saya\", *bókin mín* = \"buku saya\", *nafnið þitt* = \"nama kamu\". Penutur bahasa Inggris harus membalik kebiasaan seumur hidup (*my mother*); kamu tidak perlu membalik apa pun.",
+    "**Tapi bentuknya ikut jenis BARANG yang dimiliki, bukan jenis pemiliknya.** *Pabbi **minn*** (*pabbi* kk), *mamma **mín*** (*mamma* kvk), *nafnið **mitt*** (*nafn* hk). Yang menentukan bukan siapa pemiliknya, melainkan kata benda yang berdiri di depannya.",
+    "**Anna Jónsdóttir harfiahnya \"Anna putri Jón\".** Bukan nama keluarga, melainkan **nama ayah**. Kalau Anna punya anak perempuan bernama Sara, anak itu jadi *Sara Önnudóttir* atau — lebih sering — memakai nama ayahnya. Nama belakang berganti tiap keturunan, jadi tidak ada satu keluarga pun yang \"marganya\" sama.",
+    "**Karena itu buku telepon Islandia disusun menurut nama DEPAN**, dan orang Islandia memanggil siapa pun dengan nama depan — termasuk perdana menteri dan presiden. Menyapa *herra Jónsson* justru terdengar salah, karena \"Jónsson\" bukan nama orangnya.",
+    "**Eina systur, tvo bræður — angka dan kata bendanya ikut berubah** karena berdiri sebagai objek *eiga*. Bentuk dasarnya *ein systir*, *tveir bræður*. Perubahan ini adalah þolfall, dan namanya baru diberikan di unit 8.",
+    "**Merkilegt — kata sifat bentuk netral dipakai sebagai seruan.** Sama seperti *gott!*, *frábært!*, *leiðinlegt!* Kalau tidak ada kata benda yang jelas, bahasa Islandia selalu jatuh ke bentuk hvorugkyn."
+   ],
+   "grammars": [
+    {
+     "title": "Minn, þinn — kata milik",
+     "body": [
+      "Dua kata milik yang paling sering, masing-masing dalam tiga bentuk. Perhatikan bahwa polanya sama dengan pola kata sifat di unit 3."
+     ],
+     "table": {
+      "head": [
+       "Pemilik",
+       "kk",
+       "kvk",
+       "hk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "saya",
+        "*minn*",
+        "*mín*",
+        "*mitt*",
+        "*pabbi minn*, *mamma mín*, *nafnið mitt*"
+       ],
+       [
+        "kamu",
+        "*þinn*",
+        "*þín*",
+        "*þitt*",
+        "*bróðir þinn*, *systir þín*, *húsið þitt*"
+       ],
+       [
+        "kami",
+        "*okkar*",
+        "*okkar*",
+        "*okkar*",
+        "*húsið okkar* — tidak berubah"
+       ],
+       [
+        "kalian",
+        "*ykkar*",
+        "*ykkar*",
+        "*ykkar*",
+        "*bíllinn ykkar* — tidak berubah"
+       ],
+       [
+        "dia (lk)",
+        "*hans*",
+        "*hans*",
+        "*hans*",
+        "*bókin hans* — tidak berubah"
+       ],
+       [
+        "dia (pr)",
+        "*hennar*",
+        "*hennar*",
+        "*hennar*",
+        "*bíllinn hennar* — tidak berubah"
+       ]
+      ]
+     },
+     "after": [
+      "**Cuma *minn* dan *þinn* yang berubah bentuk**; sisanya diam saja. Jadi bebannya jauh lebih ringan daripada kelihatannya — enam bentuk untuk dipelajari, bukan delapan belas.",
+      "Kata bendanya biasanya memakai **kata sandang** kalau bukan nama kekerabatan: *bókin mín* (buku saya), *húsið mitt* (rumah saya). Tapi anggota keluarga tampil telanjang: *mamma mín*, *pabbi minn*, *systir mín* — tanpa sandang.",
+      "*Bókin hans* berarti \"buku dia (lelaki)\" dan *bókin hennar* \"buku dia (perempuan)\". Bahasa Indonesia cukup \"bukunya\" untuk dua-duanya, jadi di sini kamu harus memutuskan sesuatu yang biasanya tidak perlu kamu putuskan."
+     ]
+    },
+    {
+     "title": "Keluarga: bentuk tunggal dan jamak",
+     "body": [
+      "Kata kekerabatan termasuk kata tertua dalam bahasa Islandia, dan kata tua hampir selalu tidak beraturan. Yang berubah bukan cuma ekornya, tapi vokal di tengahnya."
+     ],
+     "table": {
+      "head": [
+       "Tunggal",
+       "Jamak",
+       "Jenis",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*faðir* / *pabbi*",
+        "*feður*",
+        "kk",
+        "ayah"
+       ],
+       [
+        "*móðir* / *mamma*",
+        "*mæður*",
+        "kvk",
+        "ibu"
+       ],
+       [
+        "*bróðir*",
+        "*bræður*",
+        "kk",
+        "saudara lelaki"
+       ],
+       [
+        "*systir*",
+        "*systur*",
+        "kvk",
+        "saudara perempuan"
+       ],
+       [
+        "*sonur*",
+        "*synir*",
+        "kk",
+        "anak lelaki"
+       ],
+       [
+        "*dóttir*",
+        "*dætur*",
+        "kvk",
+        "anak perempuan"
+       ],
+       [
+        "*barn*",
+        "*börn*",
+        "hk",
+        "anak"
+       ],
+       [
+        "*maður*",
+        "*menn*",
+        "kk",
+        "orang, lelaki"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan polanya: **a → e**, **ó → æ**, **o → ö**, **u → y**. Perubahan vokal ini disebut *hljóðvarp* dan bekerja di seluruh bahasa Islandia, bukan cuma di kata keluarga.",
+      "*Pabbi* dan *mamma* adalah bentuk sehari-hari; *faðir* dan *móðir* lebih resmi dan lebih sering muncul dalam tulisan. Dalam percakapan, pakailah *pabbi* dan *mamma*.",
+      "*Systkini* (hk, jamak) berarti \"saudara-saudara\" tanpa menyebut jenis kelaminnya — satu kata yang tidak ada padanan tunggalnya dalam bahasa Indonesia."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kenapa orang Islandia tidak punya nama keluarga",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sistem nama Islandia adalah yang tertua yang masih hidup di Eropa: nama belakang dibentuk dari **nama ayah** ditambah *-son* (anak lelaki) atau *-dóttir* (anak perempuan). Namanya berganti tiap keturunan, jadi ia bukan penanda keluarga melainkan penanda **hubungan**."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Nama ayah",
+      "Anak lelaki",
+      "Anak perempuan",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Jón",
+       "Jóns**son**",
+       "Jóns**dóttir**",
+       "anak dari Jón"
+      ],
+      [
+       "Ólafur",
+       "Ólafs**son**",
+       "Ólafs**dóttir**",
+       "anak dari Ólafur"
+      ],
+      [
+       "Guðmundur",
+       "Guðmunds**son**",
+       "Guðmunds**dóttir**",
+       "anak dari Guðmundur"
+      ],
+      [
+       "Einar",
+       "Einars**son**",
+       "Einars**dóttir**",
+       "anak dari Einar"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Akibat sehari-harinya",
+     "items": [
+      "**Buku telepon dan daftar apa pun disusun menurut nama depan.** Kalau kamu mencari \"Jónsson\", kamu tidak akan menemukan siapa-siapa.",
+      "**Semua orang dipanggil nama depan**, termasuk pejabat tertinggi. Berita menyebut perdana menteri dengan nama depannya sesudah penyebutan pertama.",
+      "**Ada panitia resmi yang mengurus nama** — *Mannanafnanefnd*. Nama bayi harus bisa ditulis dengan abjad Islandia dan bisa berubah bentuk mengikuti kasus. Nama yang tidak lolos harus diganti.",
+      "**Ibu bisa jadi rujukannya.** *Önnudóttir* (putri Anna) sah dan makin sering dipakai, walau nama ayah masih jauh lebih umum."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bagi banyak penutur bahasa Indonesia, kebiasaan ini justru terasa akrab: kita juga punya jutaan orang yang **cuma memakai satu nama** tanpa nama keluarga sama sekali. Di Islandia, nama depanmu memang benar-benar namamu."
+    }
+   ]
+  },
+  {
+   "title": "Anggota keluarga",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Íslenska",
+      "Jenis",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*fjölskylda*",
+       "kvk",
+       "FYÖL-skil-da",
+       "keluarga"
+      ],
+      [
+       "*pabbi*",
+       "kk",
+       "PA-bi",
+       "ayah"
+      ],
+      [
+       "*mamma*",
+       "kvk",
+       "MA-ma",
+       "ibu"
+      ],
+      [
+       "*bróðir*",
+       "kk",
+       "BROU-dhir",
+       "saudara lelaki"
+      ],
+      [
+       "*systir*",
+       "kvk",
+       "SIS-tir",
+       "saudara perempuan"
+      ],
+      [
+       "*sonur*",
+       "kk",
+       "SO-nür",
+       "anak lelaki"
+      ],
+      [
+       "*dóttir*",
+       "kvk",
+       "DOUH-tir",
+       "anak perempuan"
+      ],
+      [
+       "*afi*",
+       "kk",
+       "A-vi",
+       "kakek"
+      ],
+      [
+       "*amma*",
+       "kvk",
+       "A-ma",
+       "nenek"
+      ],
+      [
+       "*frændi*",
+       "kk",
+       "FRAIN-di",
+       "paman; sepupu lelaki"
+      ],
+      [
+       "*frænka*",
+       "kvk",
+       "FRAIN-ka",
+       "bibi; sepupu perempuan"
+      ],
+      [
+       "*eiginmaður*",
+       "kk",
+       "EI-yin-ma-dhür",
+       "suami"
+      ],
+      [
+       "*eiginkona*",
+       "kvk",
+       "EI-yin-ko-na",
+       "istri"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Frændi* dan *frænka* dipakai jauh lebih luas daripada \"paman\" dan \"bibi\" dalam bahasa Indonesia: ia menutup paman, sepupu, dan kerabat lelaki lain yang tidak perlu dirinci. Kalau kamu perlu tepat, sebutkan hubungannya: *bróðir pabba míns* — saudara lelaki ayah saya."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "is": "fjölskylda",
+   "baca": "FYÖL-skil-da",
+   "id": "keluarga"
+  },
+  {
+   "is": "systkini",
+   "baca": "SIST-ki-ni",
+   "id": "saudara-saudara"
+  },
+  {
+   "is": "bróðir",
+   "baca": "BROU-dhir",
+   "id": "saudara lelaki"
+  },
+  {
+   "is": "bræður",
+   "baca": "BRAI-dhür",
+   "id": "saudara-saudara lelaki"
+  },
+  {
+   "is": "systir",
+   "baca": "SIS-tir",
+   "id": "saudara perempuan"
+  },
+  {
+   "is": "sonur",
+   "baca": "SO-nür",
+   "id": "anak lelaki"
+  },
+  {
+   "is": "dóttir",
+   "baca": "DOUH-tir",
+   "id": "anak perempuan"
+  },
+  {
+   "is": "afi",
+   "baca": "A-vi",
+   "id": "kakek"
+  },
+  {
+   "is": "amma",
+   "baca": "A-ma",
+   "id": "nenek"
+  },
+  {
+   "is": "frændi",
+   "baca": "FRAIN-di",
+   "id": "paman, sepupu lelaki"
+  },
+  {
+   "is": "frænka",
+   "baca": "FRAIN-ka",
+   "id": "bibi, sepupu perempuan"
+  },
+  {
+   "is": "nafn",
+   "baca": "nabn",
+   "id": "nama"
+  },
+  {
+   "is": "fornafn",
+   "baca": "FOR-nabn",
+   "id": "nama depan"
+  },
+  {
+   "is": "eftirnafn",
+   "baca": "ÈF-tir-nabn",
+   "id": "nama belakang"
+  },
+  {
+   "is": "ættarnafn",
+   "baca": "AIH-tar-nabn",
+   "id": "nama keluarga"
+  },
+  {
+   "is": "símaskrá",
+   "baca": "SII-ma-skrau",
+   "id": "buku telepon"
+  },
+  {
+   "is": "nota",
+   "baca": "NO-ta",
+   "id": "memakai"
+  },
+  {
+   "is": "sami / sama",
+   "baca": "SA-mi / SA-ma",
+   "id": "sama, yang itu juga"
+  },
+  {
+   "is": "merkilegt",
+   "baca": "MÈR-ki-lègt",
+   "id": "menarik, luar biasa"
+  },
+  {
+   "is": "líkur",
+   "baca": "LII-kür",
+   "id": "mirip"
+  },
+  {
+   "is": "eigin",
+   "baca": "EI-yin",
+   "id": "sendiri, milik sendiri"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan *minn*, *mín*, atau *mitt*.",
+   "items": [
+    "pabbi ____",
+    "mamma ____",
+    "nafnið ____",
+    "bókin ____",
+    "bróðir ____",
+    "húsið ____"
+   ]
+  },
+  {
+   "prompt": "Tulis bentuk jamaknya.",
+   "items": [
+    "bróðir",
+    "systir",
+    "sonur",
+    "dóttir",
+    "barn",
+    "maður"
+   ]
+  },
+  {
+   "prompt": "Tulis nama belakang anak-anak berikut.",
+   "items": [
+    "Ayah bernama Jón, anaknya lelaki bernama Ólafur → Ólafur ____",
+    "Ayah bernama Jón, anaknya perempuan bernama Anna → Anna ____",
+    "Ayah bernama Einar, anaknya perempuan bernama Guðrún → Guðrún ____",
+    "Ayah bernama Ólafur, anaknya lelaki bernama Jón → Jón ____",
+    "Ibu bernama Anna, anaknya perempuan bernama Sara → Sara ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Islandia.",
+   "items": [
+    "Ini keluarga saya.",
+    "Ini ayah saya dan ini ibu saya.",
+    "Kamu punya saudara?",
+    "Saya punya satu saudara perempuan.",
+    "Siapa nama mereka?",
+    "Nama saya adalah milik saya sendiri."
+   ]
+  }
+ ],
+ "answers": [
+  "minn — mín — mitt — mín — minn — mitt",
+  "bræður — systur — synir — dætur — börn — menn",
+  "Jónsson — Jónsdóttir — Einarsdóttir — Ólafsson — Önnudóttir",
+  "Þetta er fjölskyldan mín. — Þetta er pabbi minn og þetta er mamma mín. — Áttu systkini? — Ég á eina systur. — Hvað heita þau? — Nafnið mitt er mitt eigið."
+ ]
+}

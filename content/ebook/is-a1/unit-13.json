@@ -1,0 +1,516 @@
+{
+ "title": "Boleh, harus, dan perlu",
+ "title_target": "Má ég? Verð ég að?",
+ "goal": "Menguasai enam kata kerja bantu yang menyusun hampir semua kalimat izin dan kewajiban — dan menghindari satu jebakan yang bisa membuatmu melanggar aturan tanpa sadar.",
+ "bekal": [
+  "meminta izin dengan *má ég* dan menyatakan kewajiban dengan *ég verð að*",
+  "membedakan **tidak boleh** (*má ekki*) dari **tidak perlu** (*þarf ekki*)",
+  "memberi perintah dan permintaan sopan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Reglurnar í sundlauginni",
+   "intro": "Búdí akhirnya pergi ke kolam renang. Di pintu masuk, petugas menjelaskan aturan yang ternyata lebih banyak daripada dugaannya.",
+   "lines": [
+    {
+     "speaker": "Búdí:",
+     "text": "Má ég fara í pottinn?",
+     "id": "Boleh saya masuk bak air panas?",
+     "literal": "boleh saya pergi ke bak-itu?"
+    },
+    {
+     "speaker": "Vörður:",
+     "text": "Já, en þú verður að fara í sturtu fyrst.",
+     "id": "Ya, tapi kamu harus mandi dulu.",
+     "literal": "ya, tapi kamu harus untuk pergi ke pancuran dulu."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Ég fór í sturtu heima.",
+     "id": "Saya sudah mandi di rumah.",
+     "literal": "saya pergi-dulu ke pancuran di-rumah."
+    },
+    {
+     "speaker": "Vörður:",
+     "text": "Það gildir ekki. Allir verða að fara í sturtu hér, án sundfata.",
+     "id": "Itu tidak berlaku. Semua orang harus mandi di sini, tanpa baju renang.",
+     "literal": "itu berlaku tidak. semua harus untuk pergi ke pancuran di-sini, tanpa baju-renang."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Allt í lagi. Má ég taka símann með mér?",
+     "id": "Baiklah. Boleh saya bawa telepon?",
+     "literal": "semua dalam keadaan. boleh saya mengambil telepon-itu dengan saya?"
+    },
+    {
+     "speaker": "Vörður:",
+     "text": "Nei, þú mátt ekki taka síma inn í klefann.",
+     "id": "Tidak, kamu tidak boleh membawa telepon ke dalam ruang ganti.",
+     "literal": "tidak, kamu boleh tidak mengambil telepon masuk ke ruang-ganti-itu."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Þarf ég að kaupa sundföt?",
+     "id": "Saya perlu beli baju renang?",
+     "literal": "perlu saya untuk membeli baju-renang?"
+    },
+    {
+     "speaker": "Vörður:",
+     "text": "Nei, þú þarft ekki að kaupa. Þú getur leigt þau.",
+     "id": "Tidak, kamu tidak perlu beli. Kamu bisa menyewanya.",
+     "literal": "tidak, kamu perlu tidak untuk membeli. kamu bisa menyewa mereka."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Frábært. Hvað á ég að gera við lykilinn?",
+     "id": "Bagus. Kuncinya harus saya apakan?",
+     "literal": "hebat. apa harus saya untuk melakukan dengan kunci-itu?"
+    },
+    {
+     "speaker": "Vörður:",
+     "text": "Þú átt að hafa hann á úlnliðnum.",
+     "id": "Kamu harus memakainya di pergelangan tangan.",
+     "literal": "kamu harus untuk punya dia pada pergelangan-itu."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Skilið. Ein spurning enn: kann ég að synda nógu vel?",
+     "id": "Paham. Satu pertanyaan lagi: apa saya cukup bisa berenang?",
+     "literal": "dimengerti. satu pertanyaan lagi: bisa saya untuk berenang cukup baik?"
+    },
+    {
+     "speaker": "Vörður:",
+     "text": "Það veit ég ekki — en pottarnir eru grunnir!",
+     "id": "Itu saya tidak tahu — tapi baknya dangkal!",
+     "literal": "itu tahu saya tidak — tapi bak-bak-itu adalah dangkal!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Mátt ekki berarti TIDAK BOLEH, bukan tidak perlu.** Ini jebakan paling berbahaya di seluruh modul, karena akibatnya bukan salah tata bahasa melainkan salah perbuatan. *Þú mátt ekki taka síma* = telepon **dilarang**. Kalau yang kamu maksud \"tidak perlu\", pakai *þú þarft ekki*.",
+    "**Enam kata bantu, dua golongan.** *Geta*, *mega*, *kunna*, dan *vilja* diikuti kata kerja **langsung**; *verða*, *þurfa*, *eiga*, dan *ætla* diikuti **að** dulu. Perbedaannya harus dihafal bersama katanya, dan tidak ada aturan yang menjelaskannya.",
+    "**Eiga að berarti \"seharusnya\" atau \"diminta\"**, lebih lunak daripada *verða að* (harus, tanpa pilihan). *Þú átt að hafa lykilinn á úlnliðnum* — itu instruksi, bukan hukum. *Allir verða að fara í sturtu* — itu hukum.",
+    "**Kunna að synda bukan geta synt.** *Kunna* untuk keterampilan yang sudah dikuasai (bisa berenang, bisa bahasa Islandia); *geta* untuk mampu melakukan kali ini (bisa datang besok). Bahasa Indonesia memakai satu kata \"bisa\" untuk dua-duanya.",
+    "**Það veit ég ekki — objeknya di depan.** Karena *það* menempati tempat pertama, kata kerja *veit* menyalip pelakunya. Aturan tempat kedua dari unit 1 bekerja lagi, kali ini dengan objek yang dimajukan untuk memberi penekanan.",
+    "**Aturan mandi itu benar-benar ditegakkan.** Petugas kolam Islandia berhak menegur, dan mereka melakukannya. Bukan soal kesopanan: kolam Islandia hampir tidak memakai kaporit, jadi kebersihan pengunjung adalah satu-satunya penyaringnya."
+   ],
+   "grammars": [
+    {
+     "title": "Enam kata kerja bantu",
+     "body": [
+      "Bentuk *ég* dan *þú*-nya sering tidak beraturan, jadi hafalkan tiga bentuk pertama untuk masing-masing. Kolom terakhir memberitahumu apakah *að* diperlukan."
+     ],
+     "table": {
+      "head": [
+       "Arti",
+       "ég",
+       "þú",
+       "hann",
+       "Pakai *að*?"
+      ],
+      "rows": [
+       [
+        "bisa (mampu) — *geta*",
+        "*get*",
+        "*getur*",
+        "*getur*",
+        "tidak"
+       ],
+       [
+        "boleh — *mega*",
+        "*má*",
+        "*mátt*",
+        "*má*",
+        "tidak"
+       ],
+       [
+        "bisa (menguasai) — *kunna*",
+        "*kann*",
+        "*kannt*",
+        "*kann*",
+        "**ya**"
+       ],
+       [
+        "mau — *vilja*",
+        "*vil*",
+        "*vilt*",
+        "*vill*",
+        "tidak"
+       ],
+       [
+        "harus — *verða að*",
+        "*verð*",
+        "*verður*",
+        "*verður*",
+        "**ya**"
+       ],
+       [
+        "perlu — *þurfa að*",
+        "*þarf*",
+        "*þarft*",
+        "*þarf*",
+        "**ya**"
+       ],
+       [
+        "seharusnya — *eiga að*",
+        "*á*",
+        "*átt*",
+        "*á*",
+        "**ya**"
+       ],
+       [
+        "akan (berniat) — *ætla að*",
+        "*ætla*",
+        "*ætlar*",
+        "*ætlar*",
+        "**ya**"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Perhatikan bahwa *kunna* memakai *að* walau artinya \"bisa\", sementara *geta* tidak. Ini satu-satunya pasangan yang benar-benar sering tertukar.",
+      "*Verða* punya arti kedua: **menjadi**. *Það verður kalt* = akan jadi dingin. Artinya diputuskan oleh ada tidaknya *að* + kata kerja sesudahnya."
+     ]
+    },
+    {
+     "title": "Menyangkal kata kerja bantu — dua arti yang berjauhan",
+     "body": [
+      "Tabel ini pantas kamu tandai. Menyangkal kata bantu yang berbeda menghasilkan arti yang sama sekali berbeda, dan pemula sering memilih yang salah."
+     ],
+     "table": {
+      "head": [
+       "Íslenska",
+       "Arti",
+       "Bukan berarti"
+      ],
+      "rows": [
+       [
+        "*Þú mátt ekki reykja.*",
+        "Kamu **tidak boleh** merokok.",
+        "tidak perlu merokok"
+       ],
+       [
+        "*Þú þarft ekki að reykja.*",
+        "Kamu **tidak perlu** merokok.",
+        "dilarang merokok"
+       ],
+       [
+        "*Þú getur ekki komið.*",
+        "Kamu **tidak bisa** datang.",
+        "tidak boleh datang"
+       ],
+       [
+        "*Þú átt ekki að koma.*",
+        "Kamu **sebaiknya tidak** datang.",
+        "tidak bisa datang"
+       ],
+       [
+        "*Þú verður ekki að koma.*",
+        "Kamu **tidak wajib** datang.",
+        "dilarang datang"
+       ]
+      ]
+     },
+     "after": [
+      "Cara mengingatnya: **mega** mengurus **izin**, **þurfa** mengurus **kebutuhan**, **geta** mengurus **kemampuan**. Sangkalannya menyangkal hal itu saja, bukan yang lain.",
+      "Dalam bahasa Indonesia, \"tidak boleh\" dan \"tidak perlu\" juga dua kalimat yang berbeda — jadi kamu sudah punya pembedaan ini di kepala. Yang perlu kamu latih cuma memasangkannya dengan kata Islandia yang benar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Memberi perintah dan permintaan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bentuk perintah dibuat dari kata kerja dasar, sering dengan *-ðu* menempel di ekornya — itu *þú* yang melebur, persis seperti *ertu* dan *viltu* yang sudah kamu kenal."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Dasar",
+      "Perintah",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*koma*",
+       "*komdu*",
+       "KOM-dü",
+       "datanglah, ayo"
+      ],
+      [
+       "*fara*",
+       "*farðu*",
+       "FAR-dhü",
+       "pergilah"
+      ],
+      [
+       "*tala*",
+       "*talaðu*",
+       "TA-la-dhü",
+       "bicaralah"
+      ],
+      [
+       "*gera*",
+       "*gerðu*",
+       "GÈR-dhü",
+       "lakukanlah"
+      ],
+      [
+       "*vera*",
+       "*vertu*",
+       "VÈR-tü",
+       "jadilah"
+      ],
+      [
+       "*bíða*",
+       "*bíddu*",
+       "BII-dü",
+       "tunggu"
+      ],
+      [
+       "*hlusta*",
+       "*hlustaðu*",
+       "HLÜS-ta-dhü",
+       "dengarkan"
+      ],
+      [
+       "*sjá*",
+       "*sjáðu*",
+       "SYAU-dhü",
+       "lihat"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Melarang, dan bersikap sopan",
+     "items": [
+      "**Melarang**: *ekki* berdiri **di depan** kata kerjanya, satu-satunya tempat di mana ia mendahului. *Ekki fara!* — jangan pergi. *Ekki hafa áhyggjur!* — jangan cemas.",
+      "**Melembutkan**: tambahkan *nú* atau *bara*. *Komdu nú!* terdengar mengajak, bukan memerintah. *Sestu bara!* — duduk saja.",
+      "**Dua ungkapan yang harus kamu tahu**: *Gjörðu svo vel* — silakan (saat memberikan sesuatu), dan *Gerðu það fyrir mig* — tolong lakukan itu untukku."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Tanda dan aturan di tempat umum",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Íslenska",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Bannað að reykja*",
+       "BA-nadh adh REI-kya",
+       "Dilarang merokok"
+      ],
+      [
+       "*Óheimilt*",
+       "OU-hei-milt",
+       "Tidak diizinkan"
+      ],
+      [
+       "*Aðgangur bannaður*",
+       "ADH-gaun-gür BA-na-dhür",
+       "Dilarang masuk"
+      ],
+      [
+       "*Opið / Lokað*",
+       "O-pidh / LO-kadh",
+       "Buka / Tutup"
+      ],
+      [
+       "*Sturta skylda*",
+       "STÜR-ta SKIL-da",
+       "Wajib mandi"
+      ],
+      [
+       "*Varúð*",
+       "VA-ruudh",
+       "Awas, hati-hati"
+      ],
+      [
+       "*Neyðarútgangur*",
+       "NEI-dhar-uut-gaun-gür",
+       "Pintu darurat"
+      ],
+      [
+       "*Gjörið svo vel*",
+       "GYÖ-ridh svo vèl",
+       "Silakan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Bannað að reykja* harfiahnya \"dilarang untuk merokok\" — susunan yang sama dipakai untuk semua larangan tertulis: *bannað að* + kata kerja. Kalau kamu melihat kata *bannað* di papan mana pun, kamu sudah tahu isinya."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "is": "mega",
+   "baca": "MÈ-gha",
+   "id": "boleh"
+  },
+  {
+   "is": "geta",
+   "baca": "GÈ-ta",
+   "id": "bisa, mampu"
+  },
+  {
+   "is": "kunna",
+   "baca": "KÜ-na",
+   "id": "bisa (menguasai)"
+  },
+  {
+   "is": "verða að",
+   "baca": "VÈR-dha adh",
+   "id": "harus"
+  },
+  {
+   "is": "þurfa að",
+   "baca": "THÜR-va adh",
+   "id": "perlu"
+  },
+  {
+   "is": "eiga að",
+   "baca": "EI-gha adh",
+   "id": "seharusnya"
+  },
+  {
+   "is": "regla",
+   "baca": "RÈG-la",
+   "id": "aturan"
+  },
+  {
+   "is": "vörður",
+   "baca": "VÖR-dhür",
+   "id": "penjaga, petugas"
+  },
+  {
+   "is": "pottur",
+   "baca": "POH-tür",
+   "id": "bak air panas"
+  },
+  {
+   "is": "sturta",
+   "baca": "STÜR-ta",
+   "id": "pancuran mandi"
+  },
+  {
+   "is": "fyrst",
+   "baca": "first",
+   "id": "pertama, lebih dulu"
+  },
+  {
+   "is": "gilda",
+   "baca": "GIL-da",
+   "id": "berlaku"
+  },
+  {
+   "is": "án",
+   "baca": "aun",
+   "id": "tanpa"
+  },
+  {
+   "is": "klefi",
+   "baca": "KLÈ-vi",
+   "id": "ruang ganti, bilik"
+  },
+  {
+   "is": "leigja",
+   "baca": "LEI-ya",
+   "id": "menyewa"
+  },
+  {
+   "is": "lykill",
+   "baca": "LI-kitl",
+   "id": "kunci"
+  },
+  {
+   "is": "grunnur",
+   "baca": "GRÜ-nür",
+   "id": "dangkal"
+  },
+  {
+   "is": "nógu",
+   "baca": "NOU-ghü",
+   "id": "cukup (+ kata sifat)"
+  },
+  {
+   "is": "banna",
+   "baca": "BA-na",
+   "id": "melarang"
+  },
+  {
+   "is": "reykja",
+   "baca": "REI-kya",
+   "id": "merokok"
+  },
+  {
+   "is": "bíða",
+   "baca": "BII-dha",
+   "id": "menunggu"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan bentuk kata bantu yang tepat.",
+   "items": [
+    "____ (mega) ég fara í pottinn?",
+    "Þú ____ (verða) að fara í sturtu.",
+    "Ég ____ (geta) ekki komið í dag.",
+    "Hún ____ (þurfa) að kaupa sundföt.",
+    "Við ____ (eiga) að vera hér klukkan sjö.",
+    "____ (kunna) þú að synda?"
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk sangkalan yang tepat menurut artinya.",
+   "items": [
+    "Telepon dilarang di ruang ganti: Þú ____ (mátt ekki, þarft ekki) taka síma þangað.",
+    "Baju renang tidak wajib dibeli: Þú ____ (mátt ekki, þarft ekki) að kaupa sundföt.",
+    "Merokok dilarang di sini: Þú ____ (mátt ekki, getur ekki) reykja hér.",
+    "Saya tidak mampu datang besok: Ég ____ (má ekki, get ekki) komið á morgun.",
+    "Sebaiknya kamu tidak bilang begitu: Þú ____ (átt ekki, mátt ekki) að segja þetta."
+   ]
+  },
+  {
+   "prompt": "Ubah jadi bentuk perintah.",
+   "items": [
+    "koma",
+    "fara",
+    "tala",
+    "bíða",
+    "gera"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Islandia.",
+   "items": [
+    "Boleh saya masuk?",
+    "Kamu harus mandi dulu.",
+    "Saya tidak perlu beli.",
+    "Kamu bisa menyewanya.",
+    "Jangan pergi!",
+    "Dilarang merokok."
+   ]
+  }
+ ],
+ "answers": [
+  "Má — verður — get — þarf — eigum — Kannt",
+  "mátt ekki — þarft ekki — mátt ekki — get ekki — átt ekki",
+  "komdu — farðu — talaðu — bíddu — gerðu",
+  "Má ég koma inn? — Þú verður að fara í sturtu fyrst. — Ég þarf ekki að kaupa. — Þú getur leigt þau. — Ekki fara! — Bannað að reykja."
+ ]
+}

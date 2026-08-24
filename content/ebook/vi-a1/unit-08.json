@@ -1,0 +1,547 @@
+{
+ "title": "Jam berapa? — waktu, hari, tanggal",
+ "title_target": "Bây giờ là mấy giờ rồi?",
+ "goal": "Menyebut jam, hari, dan tanggal — dan menyadari satu jebakan besar: bahasa Vietnam menghitung jam setengah dari jam yang SUDAH lewat, kebalikan dari kebiasaan kita.",
+ "bekal": [
+  "menyebut jam lengkap dengan *rưỡi*, *kém*, dan bagian hari",
+  "menyebut hari dalam seminggu — yang penomorannya mulai dari angka dua",
+  "menyebut tanggal, bulan, dan tahun dalam urutan yang sama dengan bahasa Indonesia"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Lịch học tiếng Việt",
+   "intro": "Di lorong kampus. Budi baru mendaftar kelas bahasa dan belum tahu jadwalnya.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Chị ơi, bây giờ là mấy giờ rồi ạ?",
+     "id": "Mbak, sekarang jam berapa?",
+     "literal": "kakak hai, sekarang adalah berapa jam sudah ya?",
+     "baca": "Cị ơi, bây zờ là mấy zờ zồi ạ?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Bây giờ là hai giờ rưỡi.",
+     "id": "Sekarang jam setengah tiga.",
+     "literal": "sekarang adalah dua jam setengah.",
+     "baca": "Bây zờ là hai zờ zưỡi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Lớp tiếng Việt bắt đầu lúc mấy giờ ạ?",
+     "id": "Kelas bahasa Vietnam mulai jam berapa?",
+     "literal": "kelas bahasa Việt mulai pada berapa jam ya?",
+     "baca": "Lớp tiếng Việt bắt dầu lúk mấy zờ ạ?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Ba giờ chiều, thứ hai và thứ tư.",
+     "id": "Jam tiga sore, Senin dan Rabu.",
+     "literal": "tiga jam sore, urutan dua dan urutan empat.",
+     "baca": "Ba zờ ciều, thứ hai và thứ tư."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Học đến mấy giờ ạ?",
+     "id": "Belajar sampai jam berapa?",
+     "literal": "belajar sampai berapa jam ya?",
+     "baca": "Họk dến mấy zờ ạ?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Đến bốn giờ rưỡi. Một tiếng rưỡi thôi.",
+     "id": "Sampai setengah lima. Cuma satu setengah jam.",
+     "literal": "sampai empat jam setengah. satu jam setengah saja.",
+     "baca": "Dến bốn zờ zưỡi. Một tiếng zưỡi thôi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thế thì em còn ba mươi phút nữa.",
+     "id": "Kalau begitu aku masih punya tiga puluh menit lagi.",
+     "literal": "begitu maka adik masih tiga puluh menit lagi.",
+     "baca": "Thế thì em kòn ba mươi fút nữa."
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Hôm nay là thứ mấy nhỉ?",
+     "id": "Hari ini hari apa ya?",
+     "literal": "hari ini adalah urutan berapa ya?",
+     "baca": "Hôm nay là thứ mấy nyỉ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hôm nay là thứ tư, ngày mười lăm tháng chín.",
+     "id": "Hari ini Rabu, tanggal lima belas September.",
+     "literal": "hari ini adalah urutan empat, hari lima belas bulan sembilan.",
+     "baca": "Hôm nay là thứ tư, ngày mười lăm tháng cín."
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Ồ! Chủ nhật này là sinh nhật chị đấy.",
+     "id": "Wah! Minggu ini ulang tahunku lho.",
+     "literal": "oh! minggu ini adalah lahir-hari kakak tuh.",
+     "baca": "Ồ! Củ nyật này là sing nyật cị dấy."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thật ạ? Chúc mừng sinh nhật chị trước nhé!",
+     "id": "Benarkah? Selamat ulang tahun duluan ya!",
+     "literal": "benar ya? ucap gembira lahir-hari kakak dulu ya!",
+     "baca": "Thật ạ? Cúk mừng sing nyật cị cướk nyé!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Inilah jebakan terbesar unit ini: *hai giờ rưỡi* berarti 02.30, bukan 01.30.** Bahasa Vietnam menyebut jam yang **sudah lewat** lalu menambahkan setengah — \"dua jam setengah\". Bahasa Indonesia menyebut jam yang **akan datang** — \"setengah tiga\". Angkanya selalu **berbeda satu**, dan kesalahan ini membuat orang menunggu satu jam penuh di tempat yang salah. Hafalkan: *hai giờ rưỡi* = setengah **tiga**.",
+    "**Giờ dan tiếng dua-duanya \"jam\", tapi tak bisa ditukar.** *Giờ* untuk **titik waktu**: *ba giờ* (jam tiga). *Tiếng* untuk **lamanya**: *ba tiếng* (tiga jam). Bahasa Indonesia memakai satu kata untuk dua hal ini, jadi kesalahannya wajar — tapi *tôi học ba giờ* berarti \"saya belajar jam tiga\", sedangkan *tôi học ba tiếng* berarti \"saya belajar tiga jam lamanya\".",
+    "**Bagian hari ditaruh SESUDAH jamnya**: *ba giờ chiều* (jam tiga sore), *bảy giờ tối* (jam tujuh malam), *sáu giờ sáng* (jam enam pagi). Urutannya sama dengan bahasa Indonesia, jadi tidak ada yang perlu dibalik — dan karena itu jam Vietnam hampir selalu disebut dalam sistem dua belas jam, bukan dua puluh empat.",
+    "**Lúc berarti \"pada\" untuk waktu**, dan ia wajib di depan jam dalam pertanyaan maupun jawaban: *lúc mấy giờ?* (jam berapa?), *lúc ba giờ* (pada jam tiga). Tanpa *lúc*, kalimatnya masih dipahami, tapi terdengar seperti catatan jadwal, bukan kalimat.",
+    "**Hari dalam seminggu dinomori, dan nomornya mulai dari DUA.** *Thứ hai* (harfiahnya \"urutan kedua\") adalah hari Senin, karena hari Minggu dihitung sebagai hari pertama — tapi hari Minggu punya namanya sendiri, *chủ nhật*, bukan *thứ nhất*. Jadi tidak ada *thứ nhất* dalam kalender Vietnam sama sekali.",
+    "**Chúc mừng berarti \"selamat\"** dan dipakai untuk apa pun yang patut dirayakan: *chúc mừng sinh nhật* (selamat ulang tahun), *chúc mừng năm mới* (selamat tahun baru). Sepupunya *chúc* saja berarti \"semoga\": *chúc anh ngủ ngon* (semoga tidurmu nyenyak)."
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut jam",
+     "body": [
+      "Susunannya: **angka + giờ + (menit) + bagian hari**. Untuk menit setelah setengah, bahasa Vietnam boleh memakai *kém* (\"kurang\") persis seperti kita."
+     ],
+     "table": {
+      "head": [
+       "Jam",
+       "Tiếng Việt",
+       "Harfiah",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "03.00",
+        "*ba giờ*",
+        "tiga jam",
+        "jam tiga"
+       ],
+       [
+        "03.05",
+        "*ba giờ năm phút*",
+        "tiga jam lima menit",
+        "jam tiga lewat lima"
+       ],
+       [
+        "03.15",
+        "*ba giờ mười lăm*",
+        "tiga jam lima belas",
+        "jam tiga seperempat"
+       ],
+       [
+        "03.30",
+        "*ba giờ rưỡi*",
+        "**tiga jam setengah**",
+        "**setengah empat**"
+       ],
+       [
+        "03.45",
+        "*bốn giờ kém mười lăm*",
+        "empat jam kurang lima belas",
+        "jam empat kurang seperempat"
+       ],
+       [
+        "07.00 pagi",
+        "*bảy giờ sáng*",
+        "tujuh jam pagi",
+        "jam tujuh pagi"
+       ],
+       [
+        "15.00",
+        "*ba giờ chiều*",
+        "tiga jam sore",
+        "jam tiga sore"
+       ],
+       [
+        "21.00",
+        "*chín giờ tối*",
+        "sembilan jam malam",
+        "jam sembilan malam"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Baca ulang baris **03.30**. Angka Vietnam dan angka Indonesia berbeda satu, selamanya, di setiap jam setengah. Kalau kamu cuma boleh mengingat satu hal dari unit ini, ingat baris itu.",
+      "Bagian hari: *sáng* (subuh–11), *trưa* (11–13, waktu makan siang & tidur siang), *chiều* (13–18), *tối* (18–22), *đêm* (larut malam). ⚠️ *Trưa* tidak punya padanan pas dalam bahasa Indonesia — ia bukan \"siang\" umum melainkan **puncak siang**, saat toko tutup dan orang tidur sebentar."
+     ]
+    },
+    {
+     "title": "Hari, tanggal, bulan",
+     "body": [
+      "Hari dinomori, bulan dinomori, dan tanggal ditulis dari kecil ke besar — sama seperti bahasa Indonesia."
+     ],
+     "table": {
+      "head": [
+       "Hari",
+       "Tiếng Việt",
+       "Harfiah",
+       "Susunan tanggal"
+      ],
+      "rows": [
+       [
+        "Senin",
+        "*thứ hai*",
+        "urutan dua",
+        "**ngày** 15 = tanggal 15"
+       ],
+       [
+        "Selasa",
+        "*thứ ba*",
+        "urutan tiga",
+        "**tháng** 9 = bulan 9"
+       ],
+       [
+        "Rabu",
+        "*thứ tư*",
+        "urutan empat (*tư*, bukan *bốn*)",
+        "**năm** 2026 = tahun 2026"
+       ],
+       [
+        "Kamis",
+        "*thứ năm*",
+        "urutan lima",
+        "*ngày 15 tháng 9 năm 2026*"
+       ],
+       [
+        "Jumat",
+        "*thứ sáu*",
+        "urutan enam",
+        "= 15 September 2026"
+       ],
+       [
+        "Sabtu",
+        "*thứ bảy*",
+        "urutan tujuh",
+        "*Hôm nay là thứ mấy?*"
+       ],
+       [
+        "Minggu",
+        "*chủ nhật*",
+        "hari utama — **bukan** *thứ nhất*",
+        "*Hôm nay là ngày mấy?*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Rabu memakai ***tư***, bukan *bốn* — satu-satunya hari yang angkanya berubah bentuk. Ini turunan dari kekecualian angka 4 yang sudah kamu lihat di unit 4.",
+      "Nama bulan tidak punya nama sendiri: cukup *tháng* + angkanya. *Tháng một* = Januari, *tháng chín* = September, *tháng mười hai* = Desember. Satu-satunya kekecualian: Desember kadang disebut *tháng chạp* dan Januari *tháng giêng* dalam penanggalan bulan tradisional."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Dari jam berapa sampai jam berapa",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Bây giờ là mấy giờ?",
+       "Bây zờ là mấy zờ?",
+       "Sekarang jam berapa?"
+      ],
+      [
+       "Lúc mấy giờ?",
+       "Lúk mấy zờ?",
+       "Jam berapa?"
+      ],
+      [
+       "Từ chín giờ đến năm giờ",
+       "Từ cín zờ dến năm zờ",
+       "Dari jam sembilan sampai jam lima"
+      ],
+      [
+       "Bắt đầu lúc ba giờ",
+       "Bắt dầu lúk ba zờ",
+       "Mulai jam tiga"
+      ],
+      [
+       "Kết thúc lúc năm giờ",
+       "Kết thúk lúk năm zờ",
+       "Selesai jam lima"
+      ],
+      [
+       "Mất bao lâu?",
+       "Mất bao lâu?",
+       "Berapa lama?"
+      ],
+      [
+       "Khoảng hai tiếng",
+       "Khoảng hai tiếng",
+       "Sekitar dua jam"
+      ],
+      [
+       "Đúng giờ",
+       "Dúng zờ",
+       "Tepat waktu"
+      ],
+      [
+       "Muộn / sớm",
+       "Muộn / sớm",
+       "Terlambat / awal"
+      ],
+      [
+       "Hôm nay là ngày mấy?",
+       "Hôm nay là ngày mấy?",
+       "Hari ini tanggal berapa?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Từ … đến …* (\"dari … sampai …\") bekerja untuk waktu maupun tempat: *từ Hà Nội đến Huế* = \"dari Hà Nội sampai Huế\". Satu cetakan, dua kegunaan, dan urutannya sama dengan bahasa Indonesia."
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Muộn* (utara) dan *trễ* (selatan) dua-duanya \"terlambat\". Kalau kamu terlambat, kalimat lengkapnya: *Xin lỗi, tôi đến muộn.* — dan di Vietnam kalimat ini benar-benar dipakai; ketepatan waktu untuk urusan kerja dianggap serius."
+    }
+   ]
+  },
+  {
+   "title": "Bulan dan hari besar",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bulan",
+      "Tiếng Việt",
+      "Bulan",
+      "Tiếng Việt"
+     ],
+     "rows": [
+      [
+       "Januari",
+       "*tháng một*",
+       "Juli",
+       "*tháng bảy*"
+      ],
+      [
+       "Februari",
+       "*tháng hai*",
+       "Agustus",
+       "*tháng tám*"
+      ],
+      [
+       "Maret",
+       "*tháng ba*",
+       "September",
+       "*tháng chín*"
+      ],
+      [
+       "April",
+       "*tháng tư*",
+       "Oktober",
+       "*tháng mười*"
+      ],
+      [
+       "Mei",
+       "*tháng năm*",
+       "November",
+       "*tháng mười một*"
+      ],
+      [
+       "Juni",
+       "*tháng sáu*",
+       "Desember",
+       "*tháng mười hai*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tết — satu minggu ketika Vietnam berhenti",
+     "items": [
+      "*Tết Nguyên Đán* adalah tahun baru penanggalan bulan, jatuh antara akhir Januari dan pertengahan Februari. Selama kira-kira satu minggu **hampir semua toko, kantor, dan warung tutup**, dan seluruh negeri pulang kampung. Kalau kamu merencanakan perjalanan ke Vietnam, periksa tanggalnya lebih dulu — ini bukan libur biasa.",
+      "Ucapannya: *Chúc mừng năm mới!* (Selamat tahun baru) dan *Chúc mừng năm mới, an khang thịnh vượng!* (semoga sehat dan makmur). Kepada anak-anak orang memberi *lì xì* — angpau merah — persis seperti kebiasaan Tionghoa yang juga kita kenal."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "bây giờ",
+   "id": "sekarang",
+   "baca": "bây zờ"
+  },
+  {
+   "vi": "giờ",
+   "id": "jam (titik waktu)",
+   "baca": "zờ"
+  },
+  {
+   "vi": "tiếng",
+   "id": "jam (lamanya)",
+   "baca": "tiếng"
+  },
+  {
+   "vi": "phút",
+   "id": "menit",
+   "baca": "fút"
+  },
+  {
+   "vi": "rưỡi",
+   "id": "setengah (sesudah jam)",
+   "baca": "zưỡi"
+  },
+  {
+   "vi": "kém",
+   "id": "kurang",
+   "baca": "kém"
+  },
+  {
+   "vi": "lúc",
+   "id": "pada (waktu)",
+   "baca": "lúk"
+  },
+  {
+   "vi": "từ … đến …",
+   "id": "dari … sampai …",
+   "baca": "từ … dến …"
+  },
+  {
+   "vi": "bắt đầu",
+   "id": "mulai",
+   "baca": "bắt dầu"
+  },
+  {
+   "vi": "kết thúc",
+   "id": "selesai, berakhir",
+   "baca": "kết thúk"
+  },
+  {
+   "vi": "sáng / trưa",
+   "id": "pagi / tengah hari",
+   "baca": "sáng / cưa"
+  },
+  {
+   "vi": "chiều / tối / đêm",
+   "id": "sore / malam / larut malam",
+   "baca": "ciều / tối / dêm"
+  },
+  {
+   "vi": "thứ hai",
+   "id": "Senin",
+   "baca": "thứ hai"
+  },
+  {
+   "vi": "thứ tư",
+   "id": "Rabu",
+   "baca": "thứ tư"
+  },
+  {
+   "vi": "thứ bảy",
+   "id": "Sabtu",
+   "baca": "thứ bảy"
+  },
+  {
+   "vi": "chủ nhật",
+   "id": "Minggu",
+   "baca": "củ nyật"
+  },
+  {
+   "vi": "ngày",
+   "id": "hari, tanggal",
+   "baca": "ngày"
+  },
+  {
+   "vi": "tháng",
+   "id": "bulan",
+   "baca": "tháng"
+  },
+  {
+   "vi": "năm",
+   "id": "tahun",
+   "baca": "năm"
+  },
+  {
+   "vi": "lớp",
+   "id": "kelas",
+   "baca": "lớp"
+  },
+  {
+   "vi": "lịch",
+   "id": "jadwal, kalender",
+   "baca": "lịk"
+  },
+  {
+   "vi": "sinh nhật",
+   "id": "ulang tahun",
+   "baca": "sing nyật"
+  },
+  {
+   "vi": "chúc mừng",
+   "id": "selamat (ucapan)",
+   "baca": "cúk mừng"
+  },
+  {
+   "vi": "muộn / sớm",
+   "id": "terlambat / awal",
+   "baca": "muộn / sớm"
+  },
+  {
+   "vi": "mất",
+   "id": "memakan (waktu); hilang",
+   "baca": "mất"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis jamnya dalam bahasa Vietnam.",
+   "items": [
+    "07.00 pagi",
+    "09.30",
+    "15.00",
+    "20.15",
+    "16.45",
+    "12.30"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia. Hati-hati dengan jam setengah.",
+   "items": [
+    "Bây giờ là năm giờ rưỡi.",
+    "Lớp bắt đầu lúc ba giờ chiều.",
+    "Tôi học ba tiếng.",
+    "Hôm nay là thứ tư.",
+    "Chủ nhật này là sinh nhật chị."
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan *giờ* atau *tiếng*.",
+   "items": [
+    "Bây giờ là hai ____.",
+    "Tôi học tiếng Việt hai ____ mỗi ngày.",
+    "Lớp bắt đầu lúc ba ____.",
+    "Đi từ Hà Nội đến Huế mất mười hai ____.",
+    "Anh dậy lúc mấy ____?"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Sekarang jam berapa?",
+    "Hari ini hari apa?",
+    "Hari ini tanggal lima belas September.",
+    "Dari jam sembilan sampai jam lima.",
+    "Selamat ulang tahun!",
+    "Maaf, saya terlambat."
+   ]
+  }
+ ],
+ "answers": [
+  "bảy giờ sáng — chín giờ rưỡi — ba giờ chiều — tám giờ mười lăm tối — năm giờ kém mười lăm — mười hai giờ rưỡi",
+  "Sekarang setengah enam. — Kelas mulai jam tiga sore. — Saya belajar tiga jam. — Hari ini Rabu. — Minggu ini ulang tahun Mbak.",
+  "giờ — tiếng — giờ — tiếng — giờ",
+  "Bây giờ là mấy giờ? — Hôm nay là thứ mấy? — Hôm nay là ngày mười lăm tháng chín. — Từ chín giờ đến năm giờ. — Chúc mừng sinh nhật! — Xin lỗi, tôi đến muộn."
+ ]
+}

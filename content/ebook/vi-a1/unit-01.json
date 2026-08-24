@@ -1,0 +1,615 @@
+{
+ "title": "Halo, siapa namamu?",
+ "title_target": "Xin chào! Anh tên là gì?",
+ "goal": "Menyapa dengan kata ganti yang tepat, menyebut nama dan asal, dan melihat sendiri bahwa bahasa Vietnam memilih kata ganti menurut umur — bukan menurut tingkat kesopanan.",
+ "bekal": [
+  "menyapa dengan *chào* + kata ganti, dan tahu kenapa *xin chào* saja jarang dipakai orang Vietnam",
+  "menyebut nama, bangsa, dan pekerjaan dengan *là*",
+  "memilih *anh*, *chị*, *em*, *cô*, *chú* dengan benar pada perjumpaan pertama"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ở quán cà phê Hà Nội",
+   "intro": "Sebuah kedai kopi di tepi Hồ Tây, Hà Nội. Budi, mahasiswa Indonesia yang baru dua bulan tinggal di sana, duduk sendiri. Seorang perempuan seumurannya menyapa dari meja sebelah.",
+   "lines": [
+    {
+     "speaker": "Linh:",
+     "text": "Xin chào!",
+     "baca": "Sin cào!",
+     "id": "Selamat siang!",
+     "literal": "mohon salam!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chào chị! Tôi tên là Budi.",
+     "baca": "Cào cị! Tôi tên là Budi.",
+     "id": "Halo, Mbak! Nama saya Budi.",
+     "literal": "salam kakak-perempuan! saya nama adalah Budi."
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Rất vui được gặp anh. Tôi là Linh.",
+     "baca": "Zất vui dượk gặp ang. Tôi là Ling.",
+     "id": "Senang berjumpa dengan Kakak. Saya Linh.",
+     "literal": "sangat senang boleh berjumpa kakak-lelaki. saya adalah Linh."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chị là người Việt, phải không?",
+     "baca": "Cị là người Việt, fải không?",
+     "id": "Mbak orang Vietnam, kan?",
+     "literal": "kakak-perempuan adalah orang Việt, benar tidak?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Vâng, tôi là người Hà Nội. Còn anh?",
+     "baca": "Vâng, tôi là người Hà Nội. Kòn ang?",
+     "id": "Ya, saya orang Hà Nội. Kalau Kakak?",
+     "literal": "iya, saya adalah orang Hà Nội. lalu kakak-lelaki?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tôi là người Indonesia. Tôi là sinh viên.",
+     "baca": "Tôi là người Indonesia. Tôi là sing viên.",
+     "id": "Saya orang Indonesia. Saya mahasiswa.",
+     "literal": "saya adalah orang Indonesia. saya adalah mahasiswa."
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Ồ! Anh nói tiếng Việt giỏi quá!",
+     "baca": "Ồ! Ang nói tiếng Việt zỏi kwá!",
+     "id": "Wah! Bahasa Vietnam Kakak bagus sekali!",
+     "literal": "oh! kakak berbicara bahasa Việt pandai terlalu!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Cảm ơn chị. Nhưng tôi nói còn kém lắm.",
+     "baca": "Kảm ơn cị. Nyưng tôi nói kòn kém lắm.",
+     "id": "Terima kasih, Mbak. Tapi saya masih kurang sekali.",
+     "literal": "terima budi kakak-perempuan. tetapi saya berbicara masih kurang sangat."
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Anh làm gì ở Hà Nội?",
+     "baca": "Ang làm gì ở Hà Nội?",
+     "id": "Kakak ngapain di Hà Nội?",
+     "literal": "kakak-lelaki buat apa di Hà Nội?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tôi học tiếng Việt ở đại học.",
+     "baca": "Tôi họk tiếng Việt ở dại họk.",
+     "id": "Saya belajar bahasa Vietnam di universitas.",
+     "literal": "saya belajar bahasa Việt di besar-belajar."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vâng, hẹn gặp lại chị!",
+     "baca": "Vâng, hẹn gặp lại cị!",
+     "id": "Ya, sampai jumpa, Mbak!",
+     "literal": "iya, janji jumpa kembali kakak-perempuan!"
+    }
+   ],
+   "notes": [
+    "**Xin chào adalah sapaan buku pelajaran, bukan sapaan orang.** Ia benar dan sopan, tapi penutur asli hampir selalu memakai *chào* + **kata gantinya**: *chào anh*, *chào chị*, *chào em*. Simpan *xin chào* untuk sekelompok orang atau saat kamu belum yakin harus memanggilnya apa — di hari pertama kamu akan sering memakainya.",
+    "**Chào dipakai untuk datang dan untuk pergi**, seperti *ciao* Italia. Dan lebih melegakan lagi: **tidak ada sapaan menurut jam** dalam pemakaian sehari-hari. Tidak ada \"selamat pagi\" atau \"selamat malam\" yang harus dipilih hati-hati seperti bahasa Inggris atau Jerman. *Chào* saja, dari subuh sampai tengah malam.",
+    "**Kata ganti dipilih menurut umur, dan tidak boleh dijatuhkan.** Tidak ada kata netral seperti \"kamu\": kamu **harus** memutuskan apakah lawan bicaramu lebih tua (*anh/chị*), lebih muda (*em*), atau seumuran orang tuamu (*chú/cô*). Melewatkannya bukan cuma kurang sopan — kalimatnya jadi tidak lengkap.",
+    "**Tôi tên là Budi harfiahnya \"saya nama adalah Budi\".** *Tôi* berdiri sebagai pemilik, *tên* sebagai barangnya, tanpa penghubung apa pun — sama seperti \"nama saya\", hanya urutannya terbalik. Bentuk pendek yang sangat lazim: *Tôi tên Budi*.",
+    "**Vâng, dạ, dan ừ tiga tingkat \"ya\".** *Vâng* sopan dan baku (utara); *dạ* lebih hormat lagi (khas selatan, dipahami di mana-mana) — pakai ini ke orang yang jauh lebih tua; *ừ* santai dan **hanya ke bawah**. Mengucapkan *ừ* kepada orang yang lebih tua terdengar kurang ajar.",
+    "**Quá dan lắm berdiri di BELAKANG kata sifat**, sepupunya *rất* di **depan**: *giỏi quá* = *giỏi lắm* = *rất giỏi* = \"pandai sekali\". Bedanya rasa: *rất* menerangkan, *quá* dan *lắm* keluar dari perasaan — karena itu pujian hampir selalu memakai *quá* atau *lắm*."
+   ],
+   "grammars": [
+    {
+     "title": "Kata ganti orang — pilih menurut umur",
+     "body": [
+      "Inilah satu-satunya bagian bahasa Vietnam yang benar-benar lebih rumit daripada bahasa Indonesia — tapi bahannya sudah kamu punya. Kamu memanggil orang \"mas\", \"mbak\", \"om\", \"tante\", \"pak\", \"bu\" setiap hari; bahasa Vietnam melakukan hal yang sama, hanya saja **tanpa jalan keluar netral**."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Cara baca",
+       "Untuk siapa",
+       "Rasa yang paling dekat"
+      ],
+      "rows": [
+       [
+        "**tôi**",
+        "tôi",
+        "saya, kepada siapa pun",
+        "saya (netral, agak berjarak)"
+       ],
+       [
+        "**mình**",
+        "mìng",
+        "saya, kepada orang akrab",
+        "aku"
+       ],
+       [
+        "**anh**",
+        "ang",
+        "lelaki sedikit lebih tua darimu",
+        "mas, kak"
+       ],
+       [
+        "**chị**",
+        "cị",
+        "perempuan sedikit lebih tua darimu",
+        "mbak, kak"
+       ],
+       [
+        "**em**",
+        "em",
+        "orang yang lebih muda darimu",
+        "adik, kamu"
+       ],
+       [
+        "**bạn**",
+        "bạn",
+        "teman sebaya, aman untuk sesama pelajar",
+        "kamu"
+       ],
+       [
+        "**cô**",
+        "kô",
+        "perempuan seumuran ibumu; guru perempuan",
+        "tante, bu"
+       ],
+       [
+        "**chú**",
+        "cú",
+        "lelaki seumuran ayahmu",
+        "om, pak"
+       ],
+       [
+        "**ông** / **bà**",
+        "ông / bà",
+        "kakek / nenek; juga Bapak / Ibu resmi",
+        "kakek / nenek"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Kata yang sama dipakai untuk \"saya\" dan untuk \"kamu\".** Kalau lawan bicaramu lebih tua, kamu memanggilnya *anh* dan menyebut dirimu *em*; ia memanggil dirinya *anh* dan memanggilmu *em*. Kedengarannya membingungkan di halaman; dalam percakapan justru terasa jelas, karena tiap orang cuma punya satu pilihan.",
+      "**Kalau ragu: *tôi* untuk dirimu, *anh/chị* untuk lawan bicara.** Menganggap orang sedikit lebih tua hampir selalu diterima sebagai penghormatan; kebalikannya yang menyakitkan. **Nama diri juga boleh menggantikan kata ganti** — *Linh đi đâu?* untuk \"kamu pergi ke mana?\", persis seperti kita bertanya \"Budi mau ke mana?\" langsung kepada Budi."
+     ]
+    },
+    {
+     "title": "Là — penghubung dua kata benda, dan cuma itu",
+     "body": [
+      "*Là* adalah \"adalah\", dan pekerjaannya sempit sekali: ia menyambung **kata benda dengan kata benda**. Di depan kata sifat ia **tidak dipakai** — dan di situlah pemula paling sering tersandung."
+     ],
+     "table": {
+      "head": [
+       "Susunan",
+       "Contoh",
+       "Arti",
+       "Benar?"
+      ],
+      "rows": [
+       [
+        "benda **là** benda",
+        "*Tôi **là** sinh viên.*",
+        "Saya mahasiswa.",
+        "✓"
+       ],
+       [
+        "benda **là** benda",
+        "*Đây **là** chị Linh.*",
+        "Ini Mbak Linh.",
+        "✓"
+       ],
+       [
+        "benda + sifat",
+        "*Nhà đẹp.*",
+        "Rumahnya bagus.",
+        "✓"
+       ],
+       [
+        "benda **là** sifat",
+        "*Nhà là đẹp.*",
+        "—",
+        "✗ salah"
+       ],
+       [
+        "sangkalan",
+        "*Tôi **không phải là** sinh viên.*",
+        "Saya bukan mahasiswa.",
+        "✓"
+       ],
+       [
+        "sangkalan sifat",
+        "*Nhà **không** đẹp.*",
+        "Rumahnya tidak bagus.",
+        "✓"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Menyangkal *là* butuh tiga kata: *không phải là*** — harfiahnya \"tidak benar adalah\". Bukan *không là*. Ini satu-satunya sangkalan Vietnam yang tidak cukup dengan *không*, dan bentuknya wajib dihafal utuh.",
+      "Polanya persis pola kita: \"saya **bukan** mahasiswa\" memakai kata lain daripada \"rumahnya **tidak** bagus\". Kalau kamu punya rasa bahasa untuk bedanya \"bukan\" dan \"tidak\", kamu sudah punya rasa bahasa untuk *không phải là* lawan *không*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyapa dan berpamitan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia",
+      "Kapan"
+     ],
+     "rows": [
+      [
+       "Xin chào",
+       "Sin cào",
+       "Selamat siang; halo",
+       "aman untuk siapa pun & sekelompok orang"
+      ],
+      [
+       "Chào anh / chị / em",
+       "Cào ang / cị / em",
+       "Halo, Mas / Mbak / Dik",
+       "yang benar-benar dipakai orang"
+      ],
+      [
+       "Chào các bạn",
+       "Cào kák bạn",
+       "Halo, teman-teman",
+       "ke sekelompok teman sebaya"
+      ],
+      [
+       "Rất vui được gặp anh",
+       "Zất vui dượk gặp ang",
+       "Senang berjumpa dengan Anda",
+       "perjumpaan pertama"
+      ],
+      [
+       "Hẹn gặp lại",
+       "Hẹn gặp lại",
+       "Sampai jumpa",
+       "berpisah, akan bertemu lagi"
+      ],
+      [
+       "Tạm biệt",
+       "Tạm biệt",
+       "Selamat tinggal",
+       "berpisah lama; agak resmi"
+      ],
+      [
+       "Chào nhé!",
+       "Cào nyé!",
+       "Dah!",
+       "akrab, ke sebaya atau lebih muda"
+      ],
+      [
+       "Anh đi nhé",
+       "Ang di nyé",
+       "Saya pergi dulu ya",
+       "yang pergi mengucapkannya"
+      ],
+      [
+       "Chúc ngủ ngon",
+       "Cúk ngủ ngon",
+       "Selamat tidur",
+       "hanya sebelum tidur"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Chúc ngủ ngon* harfiahnya \"semoga tidur nyenyak\" dan hanya dipakai saat orangnya benar-benar mau tidur — bukan \"selamat malam\" untuk bertemu. Untuk bertemu pada malam hari, tetap *chào*."
+    },
+    {
+     "type": "kotak",
+     "title": "Satu kebiasaan Vietnam yang perlu diketahui lebih dulu",
+     "items": [
+      "Pertanyaan tentang umur, status perkawinan, dan pekerjaan datang **jauh lebih awal** daripada di Indonesia — sering di lima menit pertama. Itu bukan usaha mengorek; itu keperluan tata bahasa. Lawan bicaramu sedang mencari tahu harus memanggilmu *anh*, *chú*, atau *em*, dan ia tidak bisa menyusun kalimat sebelum tahu.",
+      "Karena itu jawaban \"berapa umur Anda\" sebaiknya diberikan apa adanya. Menyembunyikannya justru membuat lawan bicara terjepit."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bangsa, negara, bahasa — satu pola untuk ketiganya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Negara",
+      "Orangnya",
+      "Bahasanya",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Việt Nam*",
+       "*người Việt*",
+       "*tiếng Việt*",
+       "Vietnam"
+      ],
+      [
+       "*Indonesia*",
+       "*người Indonesia*",
+       "*tiếng Indonesia*",
+       "Indonesia"
+      ],
+      [
+       "*Anh*",
+       "*người Anh*",
+       "*tiếng Anh*",
+       "Inggris"
+      ],
+      [
+       "*Nhật* (*Nhật Bản*)",
+       "*người Nhật*",
+       "*tiếng Nhật*",
+       "Jepang"
+      ],
+      [
+       "*Hàn* (*Hàn Quốc*)",
+       "*người Hàn*",
+       "*tiếng Hàn*",
+       "Korea"
+      ],
+      [
+       "*Trung Quốc*",
+       "*người Trung Quốc*",
+       "*tiếng Trung*",
+       "Tiongkok"
+      ],
+      [
+       "*Pháp*",
+       "*người Pháp*",
+       "*tiếng Pháp*",
+       "Prancis"
+      ],
+      [
+       "*Mỹ*",
+       "*người Mỹ*",
+       "*tiếng Anh*",
+       "Amerika"
+      ],
+      [
+       "*Thái Lan*",
+       "*người Thái*",
+       "*tiếng Thái*",
+       "Thailand"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan bahwa *Anh* berarti \"Inggris\" **dan** \"kakak lelaki\". Dua kata yang sama sekali berbeda, dengan ejaan dan nada yang sama persis; yang membedakannya cuma letaknya dalam kalimat. Bahasa Vietnam penuh pasangan seperti ini, dan itu harga yang harus dibayar bahasa yang hampir semua katanya satu suku kata."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Cảm ơn",
+       "Kảm ơn",
+       "Terima kasih"
+      ],
+      [
+       "Không có gì",
+       "Không kó gì",
+       "Tidak apa-apa; sama-sama"
+      ],
+      [
+       "Xin lỗi",
+       "Sin lỗi",
+       "Maaf; permisi"
+      ],
+      [
+       "Tôi không hiểu",
+       "Tôi không hiểu",
+       "Saya tidak mengerti"
+      ],
+      [
+       "Tôi không biết",
+       "Tôi không biết",
+       "Saya tidak tahu"
+      ],
+      [
+       "Xin nói lại",
+       "Sin nói lại",
+       "Tolong ulangi"
+      ],
+      [
+       "Xin nói chậm hơn",
+       "Sin nói cậm hơn",
+       "Tolong bicara lebih lambat"
+      ],
+      [
+       "Cái này là gì?",
+       "Kái này là gì?",
+       "Ini apa?"
+      ],
+      [
+       "Tiếng Việt gọi là gì?",
+       "Tiếng Việt gọi là gì?",
+       "Apa namanya dalam bahasa Vietnam?"
+      ],
+      [
+       "Anh nói tiếng Anh không?",
+       "Ang nói tiếng Ang không?",
+       "Anda bisa bahasa Inggris?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Xin* di depan sebuah kata kerja berarti \"mohon\" dan mengubah perintah menjadi permintaan sopan: *nói lại* = \"ulangi\", *xin nói lại* = \"tolong ulangi\". Ia bekerja seperti \"tolong\" dalam bahasa Indonesia, hanya letaknya selalu paling depan."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "xin chào",
+   "baca": "sin cào",
+   "id": "selamat siang; halo"
+  },
+  {
+   "vi": "chào",
+   "baca": "cào",
+   "id": "salam; halo; selamat tinggal"
+  },
+  {
+   "vi": "tôi",
+   "baca": "tôi",
+   "id": "saya"
+  },
+  {
+   "vi": "anh",
+   "baca": "ang",
+   "id": "kakak lelaki; Anda (lelaki lebih tua)"
+  },
+  {
+   "vi": "chị",
+   "baca": "cị",
+   "id": "kakak perempuan; Anda (perempuan lebih tua)"
+  },
+  {
+   "vi": "em",
+   "baca": "em",
+   "id": "adik; kamu (lebih muda)"
+  },
+  {
+   "vi": "bạn",
+   "baca": "bạn",
+   "id": "teman; kamu (sebaya)"
+  },
+  {
+   "vi": "tên",
+   "baca": "tên",
+   "id": "nama"
+  },
+  {
+   "vi": "là",
+   "baca": "là",
+   "id": "adalah"
+  },
+  {
+   "vi": "gì",
+   "baca": "gì",
+   "id": "apa"
+  },
+  {
+   "vi": "người",
+   "baca": "người",
+   "id": "orang"
+  },
+  {
+   "vi": "tiếng",
+   "baca": "tiếng",
+   "id": "bahasa; bunyi"
+  },
+  {
+   "vi": "sinh viên",
+   "baca": "sing viên",
+   "id": "mahasiswa"
+  },
+  {
+   "vi": "đại học",
+   "baca": "dại họk",
+   "id": "universitas"
+  },
+  {
+   "vi": "học",
+   "baca": "họk",
+   "id": "belajar"
+  },
+  {
+   "vi": "nói",
+   "baca": "nói",
+   "id": "berbicara, bilang"
+  },
+  {
+   "vi": "vâng",
+   "baca": "vâng",
+   "id": "ya (sopan)"
+  },
+  {
+   "vi": "cảm ơn",
+   "baca": "kảm ơn",
+   "id": "terima kasih"
+  },
+  {
+   "vi": "quá / lắm",
+   "baca": "kwá / lắm",
+   "id": "sekali (di belakang sifat)"
+  },
+  {
+   "vi": "giỏi",
+   "baca": "zỏi",
+   "id": "pandai, jago"
+  },
+  {
+   "vi": "hẹn gặp lại",
+   "baca": "hẹn gặp lại",
+   "id": "sampai jumpa"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Halo, Mbak!",
+    "Nama saya Budi.",
+    "Saya orang Indonesia.",
+    "Saya mahasiswa.",
+    "Senang berjumpa dengan Anda.",
+    "Sampai jumpa, Mas!"
+   ]
+  },
+  {
+   "prompt": "Pilih kata ganti yang tepat untuk lawan bicara. Tulis satu kata saja.",
+   "items": [
+    "Seorang lelaki kira-kira lima tahun lebih tua darimu: ____",
+    "Seorang perempuan kira-kira tiga tahun lebih tua darimu: ____",
+    "Anak SMA yang jauh lebih muda darimu: ____",
+    "Perempuan seumuran ibumu, penjual di pasar: ____",
+    "Teman satu kelas seumuranmu: ____",
+    "Sekelompok orang yang belum kamu kenal: ____"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan *là*, *không phải là*, atau **kosongkan** kalau tidak perlu kata penghubung.",
+   "items": [
+    "Tôi ____ sinh viên.",
+    "Nhà ____ đẹp.",
+    "Đây ____ chị Linh.",
+    "Tôi ____ người Việt. (sangkalan)",
+    "Phở ____ ngon.",
+    "Anh ấy ____ bác sĩ."
+   ]
+  },
+  {
+   "prompt": "Bacalah keras-keras, lalu tuliskan artinya. Perhatikan nadanya.",
+   "items": [
+    "Anh nói tiếng Việt giỏi quá!",
+    "Chị là người Việt, phải không?",
+    "Anh làm gì ở Hà Nội?",
+    "Tôi học tiếng Việt ở đại học.",
+    "Xin nói chậm hơn."
+   ]
+  }
+ ],
+ "answers": [
+  "Chào chị! — Tôi tên là Budi. — Tôi là người Indonesia. — Tôi là sinh viên. — Rất vui được gặp anh. — Hẹn gặp lại anh!",
+  "anh — chị — em — cô — bạn — các bạn (xin chào)",
+  "là — (kosong) — là — không phải là — (kosong) — là",
+  "Bahasa Vietnam Kakak bagus sekali! — Mbak orang Vietnam, kan? — Kakak ngapain di Hà Nội? — Saya belajar bahasa Vietnam di universitas. — Tolong bicara lebih lambat."
+ ]
+}

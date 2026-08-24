@@ -69,7 +69,11 @@ const html = `<!doctype html><html lang="id"><head><meta charset="utf-8"><style>
   .merek-sub{margin-top:14px;font-size:25px;letter-spacing:.28em;color:rgba(255,255,255,.62)}
   .tengah{position:absolute;left:128px;right:128px;top:640px}
   .label{font-size:31px;font-weight:700;letter-spacing:.30em;color:${esc(d.accent ?? "#5FD6CA")}}
-  .judul{margin-top:8px;font-size:${d.judul_size ?? "210px"};font-weight:700;line-height:.96;letter-spacing:-.02em}
+  /* [ebook-sampul-gambar-v1] Jarak judul dari labelnya bisa disetel per modul:
+     line-height .96 memotong ruang di atas huruf, jadi judul beraksen atas
+     (Íslenska, Ðanmörk) menabrak label kecil di atasnya. Bawaannya 8px —
+     persis seperti sebelum ada tombol ini, jadi sampul lama tak bergeser. */
+  .judul{margin-top:${d.judul_margin ?? "8px"};font-size:${d.judul_size ?? "210px"};font-weight:700;line-height:.96;letter-spacing:-.02em}
   .angka{margin-top:6px;font-size:190px;font-weight:300;line-height:1;color:${esc(d.accent ?? "#5FD6CA")};opacity:.9}
   .garis{width:200px;height:7px;margin:52px 0 44px;background:${esc(d.accent ?? "#5FD6CA")}}
   .ringkas{font-size:47px;line-height:1.42;font-weight:400;max-width:1000px}

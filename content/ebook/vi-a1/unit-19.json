@@ -1,0 +1,549 @@
+{
+ "title": "Urusan resmi",
+ "title_target": "Em muốn thuê phòng hai đêm ạ.",
+ "goal": "Menyelesaikan urusan di penginapan, kantor pos, dan bank — dan meminta bantuan dengan tiga bentuk sopan yang berbeda.",
+ "bekal": [
+  "menyewa kamar, mengisi formulir, dan menanyakan jam keluar",
+  "mengirim surat dan menukar uang",
+  "meminta dengan *giúp em*, *cho em*, dan *làm ơn*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Nhận phòng khách sạn",
+   "intro": "Penginapan kecil di Huế. Budi datang tanpa memesan, dan ini pertama kalinya ia mengurus semuanya sendiri dalam bahasa Vietnam.",
+   "lines": [
+    {
+     "speaker": "Lễ tân:",
+     "text": "Chào anh, anh cần gì ạ?",
+     "id": "Halo, ada yang bisa dibantu?",
+     "literal": "salam kakak, kakak perlu apa ya?",
+     "baca": "Cào ang, ang kần gì ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em muốn thuê phòng hai đêm ạ.",
+     "id": "Saya mau sewa kamar dua malam.",
+     "literal": "adik mau sewa kamar dua malam ya.",
+     "baca": "Em muốn thuê fòng hai dêm ạ."
+    },
+    {
+     "speaker": "Lễ tân:",
+     "text": "Anh đặt trước chưa ạ?",
+     "id": "Sudah pesan sebelumnya?",
+     "literal": "kakak pesan lebih-dulu belum ya?",
+     "baca": "Ang dặt cướk cưa ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chưa ạ. Còn phòng không chị?",
+     "id": "Belum. Masih ada kamar?",
+     "literal": "belum ya. masih kamar tidak kakak?",
+     "baca": "Cưa ạ. Kòn fòng không cị?"
+    },
+    {
+     "speaker": "Lễ tân:",
+     "text": "Còn ạ. Anh cho em xem hộ chiếu nhé.",
+     "id": "Masih ada. Boleh lihat paspornya.",
+     "literal": "masih ya. kakak beri adik lihat paspor ya.",
+     "baca": "Kòn ạ. Ang co em sem hộ ciếu nyé."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Đây ạ. Một đêm bao nhiêu tiền ạ?",
+     "id": "Ini. Semalam berapa?",
+     "literal": "sini ya. satu malam berapa uang ya?",
+     "baca": "Dây ạ. Một dêm bao nyiêu tiền ạ?"
+    },
+    {
+     "speaker": "Lễ tân:",
+     "text": "Bốn trăm nghìn một đêm, đã bao gồm ăn sáng.",
+     "id": "Empat ratus ribu semalam, sudah termasuk sarapan.",
+     "literal": "empat ratus ribu satu malam, sudah termasuk makan pagi.",
+     "baca": "Bốn căm ngìn một dêm, dã bao gồm ăn sáng."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Phòng có wifi và điều hoà không ạ?",
+     "id": "Kamarnya ada wifi dan AC?",
+     "literal": "kamar ada wifi dan pendingin tidak ya?",
+     "baca": "Fòng kó wifi và diều hoà không ạ?"
+    },
+    {
+     "speaker": "Lễ tân:",
+     "text": "Có đầy đủ ạ. Anh điền vào tờ khai này giúp em.",
+     "id": "Lengkap. Tolong isi formulir ini.",
+     "literal": "ada lengkap ya. kakak isi ke lembar keterangan ini tolong adik.",
+     "baca": "Kó dầy dủ ạ. Ang diền vào tờ khai này zúp em."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vâng. Mấy giờ phải trả phòng ạ?",
+     "id": "Baik. Jam berapa harus keluar kamar?",
+     "literal": "iya. berapa jam harus kembalikan kamar ya?",
+     "baca": "Vâng. Mấy zờ fải cả fòng ạ?"
+    },
+    {
+     "speaker": "Lễ tân:",
+     "text": "Mười hai giờ trưa ạ. Chúc anh ở vui vẻ!",
+     "id": "Jam dua belas siang. Selamat menginap!",
+     "literal": "dua belas jam siang ya. semoga kakak tinggal senang!",
+     "baca": "Mười hai zờ cưa ạ. Cúk ang ở vui vẻ!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Petugas menyebut dirinya *em* dan memanggilmu *anh*, berapa pun umurnya.** Di dunia pelayanan — resepsionis, pramuniaga, pelayan — pihak yang melayani hampir selalu memilih kata ganti yang menempatkan tamu di atas. Jangan bingung kalau perempuan berumur lima puluh tahun menyebut dirinya *em* kepadamu; itu sopan santun jabatan, bukan umur.",
+    "**Cho em xem harfiahnya \"beri saya lihat\", dan itu cara paling halus meminta melihat sesuatu.** Sepupunya *cho em hỏi* (\"boleh saya bertanya\"), *cho em mượn* (\"boleh saya pinjam\"). Cetakan *cho + orang + kata kerja* adalah salah satu yang paling sering kamu perlukan sesudah *cho tôi* di unit 4.",
+    "**Giúp em di ujung kalimat berarti \"tolong ya\"** — kamu sudah melihatnya di unit 9. Perhatikan bahwa yang meminta di sini adalah **petugasnya**: *Anh điền vào tờ khai này giúp em.* Bentuk ini bekerja dua arah, dan ia jauh lebih halus daripada perintah telanjang.",
+    "**Đã bao gồm berarti \"sudah termasuk\"**, dan ini kalimat yang wajib kamu kenali di semua urusan berbayar: *đã bao gồm ăn sáng* (termasuk sarapan), *đã bao gồm thuế* (termasuk pajak). Pertanyaannya: *Có bao gồm … không ạ?*",
+    "**Nhận phòng dan trả phòng adalah \"check in\" dan \"check out\"** — harfiahnya \"menerima kamar\" dan \"mengembalikan kamar\". Bahasa Vietnam menerjemahkan istilah asing jauh lebih sering daripada meminjamnya, dan hasilnya biasanya bisa ditebak begitu kamu tahu kata-kata dasarnya.",
+    "**Điền vào berarti \"mengisi\" untuk formulir.** *Vào* di belakangnya berarti \"ke dalam\" — kamu sudah melihat pola kata arah yang menempel di kata kerja pada unit 13. *Tờ khai* adalah formulir isian; *tờ* adalah penggolong untuk lembaran, dari unit 4."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga cara meminta dengan sopan",
+     "body": [
+      "Ketiganya sopan, tapi rasanya berbeda dan letaknya berbeda. Pilih menurut apa yang kamu minta."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Letak",
+       "Untuk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**cho em** + kata kerja",
+        "di depan",
+        "meminta **izin** melakukan sesuatu",
+        "*Cho em xem cái này.*"
+       ],
+       [
+        "**cho em** + benda",
+        "di depan",
+        "meminta **barang**",
+        "*Cho em một cái nữa.*"
+       ],
+       [
+        "kata kerja + **giúp em**",
+        "di belakang",
+        "meminta **bantuan**",
+        "*Gọi taxi giúp em nhé.*"
+       ],
+       [
+        "**làm ơn** + kata kerja",
+        "di depan",
+        "permintaan **resmi**, agak formal",
+        "*Làm ơn đợi một chút.*"
+       ],
+       [
+        "… **được không ạ?**",
+        "di ujung",
+        "melunakkan **apa pun**",
+        "*Em xem được không ạ?*"
+       ],
+       [
+        "**xin** + kata kerja",
+        "di depan",
+        "permohonan, tertulis & resmi",
+        "*Xin nói lại.*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Làm ơn terdengar lebih jauh dan lebih resmi daripada dugaan pemula.** Ia bukan \"please\" yang ditaburkan di mana-mana; di percakapan santai ia justru terasa kaku. Untuk urusan sehari-hari, *giúp em* dan *được không ạ?* jauh lebih hangat dan lebih sering dipakai.",
+      "Menambahkan *nhé* di ujung permintaan membuatnya paling lembut: *Gọi taxi giúp em nhé.* Menambahkan *ạ* membuatnya paling hormat: *Cho em hỏi một chút ạ.* Dua kata kecil dari unit 17, dipakai untuk pekerjaan yang benar-benar penting."
+     ]
+    },
+    {
+     "title": "Surat-surat dan barang bawaan",
+     "body": [
+      "Kata-kata berikut akan diminta darimu di penginapan, di bandara, dan di kantor pemerintahan. Kenali bentuk tulisannya, karena sering kamu baca sebelum kamu dengar."
+     ],
+     "table": {
+      "head": [
+       "Tiếng Việt",
+       "Arti",
+       "Tiếng Việt",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*hộ chiếu*",
+        "paspor",
+        "*thị thực* / *visa*",
+        "visa"
+       ],
+       [
+        "*chứng minh thư* / *căn cước*",
+        "KTP",
+        "*bằng lái xe*",
+        "SIM"
+       ],
+       [
+        "*vé máy bay*",
+        "tiket pesawat",
+        "*tờ khai*",
+        "formulir isian"
+       ],
+       [
+        "*giấy tờ*",
+        "surat-surat, dokumen",
+        "*chữ ký*",
+        "tanda tangan"
+       ],
+       [
+        "*hành lý*",
+        "bagasi, barang bawaan",
+        "*va li*",
+        "koper"
+       ],
+       [
+        "*tiền mặt*",
+        "uang tunai",
+        "*thẻ ngân hàng*",
+        "kartu bank"
+       ],
+       [
+        "*hoá đơn*",
+        "kuitansi, tagihan",
+        "*biên lai*",
+        "tanda terima"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *Giấy* berarti \"kertas\", dan hampir semua nama dokumen memakainya sebagai kepala: *giấy tờ* (surat-surat), *giấy phép* (izin), *giấy khám sức khoẻ* (surat sehat). Sekali kamu mengenali *giấy*, kamu bisa menebak bahwa sesuatu adalah dokumen bahkan sebelum tahu dokumen apa.",
+      "*Ký* berarti \"menandatangani\" dan *ký tên* berarti \"bubuhkan tanda tangan\": *Anh ký vào đây giúp em.* — \"tolong tanda tangan di sini\". Kalimat itu akan kamu dengar di setiap loket."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di kantor pos dan bank",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Em muốn gửi thư về Indonesia.",
+       "Em muốn gửi thư về Indonesia.",
+       "Saya mau kirim surat ke Indonesia."
+      ],
+      [
+       "Gửi bưu phẩm này bao nhiêu tiền ạ?",
+       "Gửi bưu fẩm này bao nyiêu tiền ạ?",
+       "Kirim paket ini berapa?"
+      ],
+      [
+       "Mất bao lâu ạ?",
+       "Mất bao lâu ạ?",
+       "Berapa lama sampainya?"
+      ],
+      [
+       "Em muốn đổi tiền.",
+       "Em muốn dổi tiền.",
+       "Saya mau tukar uang."
+      ],
+      [
+       "Hôm nay tỷ giá bao nhiêu ạ?",
+       "Hôm nay tỷ zá bao nyiêu ạ?",
+       "Hari ini kursnya berapa?"
+      ],
+      [
+       "Em muốn rút tiền.",
+       "Em muốn zút tiền.",
+       "Saya mau tarik uang."
+      ],
+      [
+       "Ở đây có nhận thẻ không ạ?",
+       "Ở dây kó nyận thẻ không ạ?",
+       "Di sini terima kartu?"
+      ],
+      [
+       "Em trả bằng tiền mặt.",
+       "Em cả bằng tiền mặt.",
+       "Saya bayar tunai."
+      ],
+      [
+       "Cho em xin hoá đơn ạ.",
+       "Co em sin hoá dơn ạ.",
+       "Minta kuitansinya."
+      ],
+      [
+       "Em muốn mua sim điện thoại.",
+       "Em muốn mua sim diện thoại.",
+       "Saya mau beli kartu SIM."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Gửi* berarti \"mengirim\" **dan** \"menitipkan\": *gửi thư* (kirim surat), *gửi xe* (menitipkan motor di tempat parkir). Yang kedua akan sangat sering kamu perlukan — hampir setiap gedung di Vietnam punya *nhà gửi xe*, dan karcisnya wajib disimpan."
+    },
+    {
+     "type": "p",
+     "text": "*Cho em xin …* adalah bentuk paling halus untuk meminta benda kecil: *Cho em xin hoá đơn.* (minta kuitansinya), *Cho em xin thêm đá.* (minta es lagi). Ia terdengar jauh lebih lembut daripada *cho em* saja."
+    }
+   ]
+  },
+  {
+   "title": "Kalau ada masalah",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Giúp tôi với!",
+       "Zúp tôi với!",
+       "Tolong saya!"
+      ],
+      [
+       "Tôi bị mất hộ chiếu.",
+       "Tôi bị mất hộ ciếu.",
+       "Paspor saya hilang."
+      ],
+      [
+       "Tôi bị mất ví.",
+       "Tôi bị mất ví.",
+       "Dompet saya hilang."
+      ],
+      [
+       "Tôi bị lạc đường.",
+       "Tôi bị lạk dường.",
+       "Saya tersesat."
+      ],
+      [
+       "Gọi bác sĩ giúp tôi!",
+       "Gọi bák sĩ zúp tôi!",
+       "Tolong panggilkan dokter!"
+      ],
+      [
+       "Gọi công an giúp tôi!",
+       "Gọi kông an zúp tôi!",
+       "Tolong panggilkan polisi!"
+      ],
+      [
+       "Tôi không nói được tiếng Việt nhiều.",
+       "Tôi không nói dượk tiếng Việt nyiều.",
+       "Bahasa Vietnam saya tidak banyak."
+      ],
+      [
+       "Ở đây có ai nói tiếng Anh không ạ?",
+       "Ở dây kó ai nói tiếng Ang không ạ?",
+       "Di sini ada yang bisa bahasa Inggris?"
+      ],
+      [
+       "Cho tôi gọi điện được không?",
+       "Co tôi gọi diện dượk không?",
+       "Boleh saya menelepon?"
+      ],
+      [
+       "Đại sứ quán Indonesia ở đâu ạ?",
+       "Dại sứ kwán Indonesia ở dâu ạ?",
+       "Kedutaan Indonesia di mana?"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang perlu disiapkan sebelum berangkat",
+     "items": [
+      "**Simpan salinan paspor terpisah dari paspornya.** Penginapan biasanya meminta paspor asli saat *nhận phòng* dan mengembalikannya segera; kalau ada yang menahannya lebih lama, kalimatnya *Cho em xin lại hộ chiếu ạ.*",
+      "**Nomor darurat Vietnam:** 113 polisi (*công an*), 114 pemadam kebakaran, 115 ambulans. Nomor kedutaan Indonesia di Hà Nội sebaiknya kamu simpan di dua tempat — di telepon dan di kertas.",
+      "**Uang tunai masih raja di luar kota besar.** Warung, pasar, dan ojek pangkalan hampir semuanya *tiền mặt*. Kalimat yang perlu: *Ở đây có nhận thẻ không ạ?* — dan siapkan jawaban \"tidak\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "thuê",
+   "id": "menyewa",
+   "baca": "thuê"
+  },
+  {
+   "vi": "đặt trước",
+   "id": "memesan lebih dulu",
+   "baca": "dặt cướk"
+  },
+  {
+   "vi": "nhận phòng / trả phòng",
+   "id": "check in / check out",
+   "baca": "nyận fòng / cả fòng"
+  },
+  {
+   "vi": "lễ tân",
+   "id": "resepsionis",
+   "baca": "lễ tân"
+  },
+  {
+   "vi": "hộ chiếu",
+   "id": "paspor",
+   "baca": "hộ ciếu"
+  },
+  {
+   "vi": "giấy tờ",
+   "id": "surat-surat, dokumen",
+   "baca": "zấy tờ"
+  },
+  {
+   "vi": "tờ khai",
+   "id": "formulir isian",
+   "baca": "tờ khai"
+  },
+  {
+   "vi": "điền",
+   "id": "mengisi (formulir)",
+   "baca": "diền"
+  },
+  {
+   "vi": "ký",
+   "id": "menandatangani",
+   "baca": "ký"
+  },
+  {
+   "vi": "bao gồm",
+   "id": "termasuk",
+   "baca": "bao gồm"
+  },
+  {
+   "vi": "đầy đủ",
+   "id": "lengkap",
+   "baca": "dầy dủ"
+  },
+  {
+   "vi": "điều hoà",
+   "id": "AC, pendingin",
+   "baca": "diều hoà"
+  },
+  {
+   "vi": "hành lý",
+   "id": "bagasi",
+   "baca": "hàng lý"
+  },
+  {
+   "vi": "gửi",
+   "id": "mengirim; menitipkan",
+   "baca": "gửi"
+  },
+  {
+   "vi": "thư",
+   "id": "surat",
+   "baca": "thư"
+  },
+  {
+   "vi": "bưu phẩm",
+   "id": "paket kiriman",
+   "baca": "bưu fẩm"
+  },
+  {
+   "vi": "đổi tiền",
+   "id": "menukar uang",
+   "baca": "dổi tiền"
+  },
+  {
+   "vi": "rút tiền",
+   "id": "menarik uang",
+   "baca": "zút tiền"
+  },
+  {
+   "vi": "tiền mặt",
+   "id": "uang tunai",
+   "baca": "tiền mặt"
+  },
+  {
+   "vi": "hoá đơn",
+   "id": "kuitansi, tagihan",
+   "baca": "hoá dơn"
+  },
+  {
+   "vi": "làm ơn",
+   "id": "tolong (resmi)",
+   "baca": "làm ơn"
+  },
+  {
+   "vi": "lạc đường",
+   "id": "tersesat",
+   "baca": "lạk dường"
+  },
+  {
+   "vi": "công an",
+   "id": "polisi",
+   "baca": "kông an"
+  },
+  {
+   "vi": "đại sứ quán",
+   "id": "kedutaan besar",
+   "baca": "dại sứ kwán"
+  },
+  {
+   "vi": "vui vẻ",
+   "id": "gembira, menyenangkan",
+   "baca": "vui vẻ"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Saya mau sewa kamar dua malam.",
+    "Masih ada kamar?",
+    "Semalam berapa?",
+    "Sudah termasuk sarapan?",
+    "Jam berapa harus keluar kamar?",
+    "Minta kuitansinya."
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan *cho em*, *giúp em*, atau *làm ơn*.",
+   "items": [
+    "____ xem hộ chiếu. (boleh lihat)",
+    "Gọi taxi ____ nhé. (tolong)",
+    "____ đợi một chút ạ. (resmi)",
+    "____ hỏi một chút ạ. (boleh bertanya)",
+    "Anh ký vào đây ____ . (tolong)"
+   ]
+  },
+  {
+   "prompt": "Sebutkan dokumennya dalam bahasa Vietnam.",
+   "items": [
+    "paspor",
+    "visa",
+    "SIM",
+    "formulir isian",
+    "kuitansi",
+    "tiket pesawat"
+   ]
+  },
+  {
+   "prompt": "Apa yang kamu katakan dalam keadaan berikut? Satu kalimat Vietnam.",
+   "items": [
+    "Dompetmu hilang di pasar.",
+    "Kamu tersesat dan perlu bantuan.",
+    "Kamu ingin tahu apakah toko menerima kartu.",
+    "Kamu ingin menukar uang di bank.",
+    "Kamu ingin bertanya apakah ada yang bisa bahasa Inggris."
+   ]
+  }
+ ],
+ "answers": [
+  "Em muốn thuê phòng hai đêm. — Còn phòng không ạ? — Một đêm bao nhiêu tiền ạ? — Có bao gồm ăn sáng không ạ? — Mấy giờ phải trả phòng ạ? — Cho em xin hoá đơn ạ.",
+  "Cho em — giúp em — Làm ơn — Cho em — giúp em",
+  "hộ chiếu — thị thực / visa — bằng lái xe — tờ khai — hoá đơn — vé máy bay",
+  "Tôi bị mất ví. — Tôi bị lạc đường, giúp tôi với! — Ở đây có nhận thẻ không ạ? — Em muốn đổi tiền ạ. — Ở đây có ai nói tiếng Anh không ạ?"
+ ]
+}

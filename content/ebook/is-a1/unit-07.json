@@ -1,0 +1,499 @@
+{
+ "title": "Kata kerja masa kini",
+ "title_target": "Venjulegur dagur",
+ "goal": "Menyusun enam bentuk kata kerja untuk tiga golongan yang menutup hampir semua kata kerja bahasa Islandia, lalu memakainya untuk menceritakan hari biasamu dari bangun sampai tidur.",
+ "bekal": [
+  "menyusun *tala*, *læra*, dan *koma* dalam enam bentuk masing-masing",
+  "mengenali tiga golongan kata kerja dari bentuk *ég*-nya",
+  "menceritakan kegiatan sehari-hari dari pagi sampai malam"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Venjulegur dagur",
+   "intro": "Anna dan Búdí menunggu kelas dimulai. Percakapan tentang hari biasa berujung ke satu kebiasaan Islandia yang membuat Búdí ingin ikut.",
+   "lines": [
+    {
+     "speaker": "Anna:",
+     "text": "Hvað gerir þú á morgnana?",
+     "id": "Kamu melakukan apa pada pagi hari?",
+     "literal": "apa melakukan kamu pada pagi-pagi?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Ég vakna klukkan sjö og ég borða morgunmat.",
+     "id": "Saya bangun jam tujuh dan saya sarapan.",
+     "literal": "saya bangun jam tujuh dan saya makan pagi-makanan."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Hvenær ferð þú í skólann?",
+     "id": "Kapan kamu berangkat ke sekolah?",
+     "literal": "kapan pergi kamu ke sekolah-itu?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Ég fer klukkan átta. Ég labba — ég tek ekki strætó.",
+     "id": "Saya berangkat jam delapan. Saya jalan kaki — saya tidak naik bus.",
+     "literal": "saya pergi jam delapan. saya berjalan — saya mengambil tidak bus."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Labbarðu í rigningu líka?",
+     "id": "Kamu jalan kaki waktu hujan juga?",
+     "literal": "berjalan-kamu dalam hujan juga?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Já, en ég kem oft blautur! Ég skil ekki íslenska veðrið.",
+     "id": "Ya, tapi saya sering datang dalam keadaan basah! Saya tidak mengerti cuaca Islandia.",
+     "literal": "ya, tapi saya datang sering basah! saya mengerti tidak Islandia cuaca-itu."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Enginn skilur það. Við bara klæðum okkur vel.",
+     "id": "Tidak ada yang mengerti. Kami cuma berpakaian dengan benar.",
+     "literal": "tak-seorang-pun mengerti itu. kami hanya memakaikan kami baik."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Hvað gerir þú eftir vinnu?",
+     "id": "Kamu melakukan apa sesudah kerja?",
+     "literal": "apa melakukan kamu sesudah kerja?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Ég syndi. Ég fer í sund næstum á hverjum degi.",
+     "id": "Saya berenang. Saya ke kolam hampir setiap hari.",
+     "literal": "saya berenang. saya pergi ke renang hampir pada setiap hari."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Á hverjum degi? Í köldu vatni?",
+     "id": "Setiap hari? Di air dingin?",
+     "literal": "pada setiap hari? dalam dingin air?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Nei, vatnið er heitt! Það kemur úr jörðinni.",
+     "id": "Tidak, airnya panas! Ia keluar dari dalam tanah.",
+     "literal": "tidak, air-itu adalah panas! ia datang dari tanah-itu."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Þá kem ég með þér á morgun.",
+     "id": "Kalau begitu besok saya ikut kamu.",
+     "literal": "maka datang saya dengan kamu pada besok."
+    }
+   ],
+   "notes": [
+    "**Tiga golongan kata kerja, dan bentuk *ég*-nya yang membedakan.** *Ég tal**a*** (golongan -a), *ég lær**i*** (golongan -i), *ég k**e**m* (golongan yang vokalnya berganti). Begitu kamu tahu bentuk *ég*-nya, lima bentuk lain mengikuti dengan sendirinya.",
+    "**Klukkan sjö = jam tujuh.** Kata *klukkan* (jam) selalu ada di depan angkanya, tidak boleh dijatuhkan. Cara menyebut waktu dibahas penuh di unit 10.",
+    "**Fara í sund harfiahnya \"pergi ke renang\".** Bahasa Islandia memakai kata kegiatannya, bukan tempatnya — persis seperti kita bilang \"pergi berenang\". Untuk kolamnya sendiri ada kata *sundlaug*.",
+    "**Á hverjum degi = setiap hari.** Bentuk *degi* itu kata *dagur* dalam kasus þágufall, yang dituntut kata depan *á* saat menyebut waktu. Kasusnya dibahas di unit 9; untuk sekarang hafalkan frasanya utuh — ia muncul setiap hari dalam percakapan.",
+    "**Enginn skilur það — kata kerjanya tetap bentuk tunggal.** *Enginn* berarti \"tidak seorang pun\", dan seperti dalam bahasa Indonesia ia diperlakukan sebagai satu orang. Perhatikan juga bahwa tidak ada *ekki* di kalimat itu: *enginn* sudah membawa penyangkalannya sendiri.",
+    "**Við klæðum okkur vel adalah pepatah nasional.** Orang Islandia punya kalimat *það er ekkert til sem heitir vont veður, bara vondur fatnaður* — \"tidak ada yang namanya cuaca buruk, cuma pakaian yang buruk\". Kamu akan mendengarnya berkali-kali."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga golongan kata kerja",
+     "body": [
+      "Enam bentuk untuk tiap kata kerja, tapi cuma tiga pola yang perlu kamu hafal. Perhatikan bahwa bentuk *hann/hún* selalu sama dengan bentuk *þú* pada dua golongan pertama."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "-a: *tala* (bicara)",
+       "-i: *læra* (belajar)",
+       "kuat: *koma* (datang)"
+      ],
+      "rows": [
+       [
+        "ég",
+        "tal**a**",
+        "lær**i**",
+        "k**e**m"
+       ],
+       [
+        "þú",
+        "tal**ar**",
+        "lær**ir**",
+        "k**e**mur"
+       ],
+       [
+        "hann/hún/það",
+        "tal**ar**",
+        "lær**ir**",
+        "k**e**mur"
+       ],
+       [
+        "við",
+        "t**ö**l**um**",
+        "lær**um**",
+        "k**o**m**um**"
+       ],
+       [
+        "þið",
+        "tal**ið**",
+        "lær**ið**",
+        "k**o**m**ið**"
+       ],
+       [
+        "þeir/þær/þau",
+        "tal**a**",
+        "lær**a**",
+        "k**o**m**a**"
+       ]
+      ]
+     },
+     "after": [
+      "**Golongan -a** yang paling besar dan paling ramah: *borða* (makan), *vakna* (bangun), *labba* (jalan kaki), *kalla* (memanggil), *hjálpa* (menolong), *byrja* (mulai).",
+      "**Golongan -i** juga besar: *læra*, *reyna* (mencoba), *þekkja* (mengenal), *synda* (berenang), *kaupa* (membeli), *heyra* (mendengar).",
+      "⚠️ Perhatikan **tölum**, bukan *talum*. Kalau bentuk *við* berakhir *-um*, huruf **a** di suku sebelumnya berubah jadi **ö**. Aturan ini disebut *u-hljóðvarp* dan berlaku di seluruh bahasa: *tala → tölum*, *fara → förum*, *taka → tökum*, *barn → börn*."
+     ]
+    },
+    {
+     "title": "Kata kerja yang vokalnya berganti",
+     "body": [
+      "Golongan ketiga tidak menempelkan ekor, melainkan **mengganti vokal di dalam katanya** pada tiga bentuk pertama. Semua kata kerja terpenting bahasa Islandia ada di golongan ini, jadi hafalkan yang lima ini sebagai satu blok."
+     ],
+     "table": {
+      "head": [
+       "Dasar",
+       "ég",
+       "þú / hann",
+       "við",
+       "þið",
+       "þeir"
+      ],
+      "rows": [
+       [
+        "*koma* datang",
+        "k**e**m",
+        "k**e**mur",
+        "komum",
+        "komið",
+        "koma"
+       ],
+       [
+        "*fara* pergi",
+        "f**e**r",
+        "f**e**rð",
+        "förum",
+        "farið",
+        "fara"
+       ],
+       [
+        "*taka* mengambil",
+        "t**e**k",
+        "t**e**kur",
+        "tökum",
+        "takið",
+        "taka"
+       ],
+       [
+        "*sjá* melihat",
+        "s**é**",
+        "s**é**rð",
+        "sjáum",
+        "sjáið",
+        "sjá"
+       ],
+       [
+        "*gefa* memberi",
+        "g**e**f",
+        "g**e**fur",
+        "gefum",
+        "gefið",
+        "gefa"
+       ]
+      ]
+     },
+     "after": [
+      "Polanya sama pada semuanya: vokal aslinya (**o**, **a**) berganti jadi **e** saat pelakunya tunggal. Begitu pelakunya jamak, vokal aslinya kembali.",
+      "*Fara* punya kelainan kecil: bentuk *þú*-nya *ferð*, bukan *fer**ur***. Bentuk singkatnya *ferðu* — dan itu salah satu kata yang paling sering kamu dengar: *Hvert ferðu?* — Kamu mau ke mana?"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Sehari penuh dalam bahasa Islandia",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Íslenska",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Ég vakna klukkan sjö.",
+       "yègh VAK-na KLÜH-kan syö",
+       "Saya bangun jam tujuh."
+      ],
+      [
+       "Ég fer á fætur.",
+       "yègh fèr au FAI-tür",
+       "Saya bangkit dari tempat tidur."
+      ],
+      [
+       "Ég borða morgunmat.",
+       "yègh BOR-dha MOR-gün-mat",
+       "Saya sarapan."
+      ],
+      [
+       "Ég fer í skólann.",
+       "yègh fèr ii SKOU-latn",
+       "Saya berangkat ke sekolah."
+      ],
+      [
+       "Ég vinn til fimm.",
+       "yègh vin til fim",
+       "Saya bekerja sampai jam lima."
+      ],
+      [
+       "Ég fer í sund.",
+       "yègh fèr ii sünd",
+       "Saya pergi berenang."
+      ],
+      [
+       "Ég elda kvöldmat.",
+       "yègh ÈL-da KVÖLD-mat",
+       "Saya memasak makan malam."
+      ],
+      [
+       "Ég horfi á sjónvarpið.",
+       "yègh HOR-vi au SYOUN-var-pidh",
+       "Saya menonton televisi."
+      ],
+      [
+       "Ég fer að sofa klukkan ellefu.",
+       "yègh fèr adh SO-va KLÜH-kan ÈT-lè-vü",
+       "Saya tidur jam sebelas."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Sembilan kalimat ini adalah kerangka hari siapa pun. Ganti angkanya, ganti satu-dua kata kerjanya, dan kamu sudah bisa menceritakan harimu sendiri — latihan menulis pertama yang benar-benar berguna."
+    }
+   ]
+  },
+  {
+   "title": "Kolam renang: ruang tamu bangsa Islandia",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Air panas dari dalam bumi membuat hampir setiap desa di Islandia punya kolam renang terbuka yang hangat sepanjang tahun — juga saat salju turun. *Sundlaugin* bukan tempat olahraga, melainkan tempat orang bertemu, mengobrol, dan bertengkar soal politik sambil berendam di *heitur pottur* (bak air panas)."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Íslenska",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*sundlaug*",
+       "SÜND-löigh",
+       "kolam renang"
+      ],
+      [
+       "*heitur pottur*",
+       "HEI-tür POH-tür",
+       "bak air panas"
+      ],
+      [
+       "*sundföt*",
+       "SÜND-föt",
+       "baju renang"
+      ],
+      [
+       "*handklæði*",
+       "HAND-klai-dhi",
+       "handuk"
+      ],
+      [
+       "*sturta*",
+       "STÜR-ta",
+       "pancuran mandi"
+      ],
+      [
+       "*búningsklefi*",
+       "BUU-nings-klè-vi",
+       "ruang ganti"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Satu aturan yang tidak boleh dilanggar",
+     "items": [
+      "Sebelum masuk kolam, semua orang **wajib mandi tanpa pakaian** dengan sabun di ruang ganti. Ini bukan anjuran, melainkan aturan yang diawasi petugas — dan sebabnya masuk akal: kolam Islandia hampir tidak memakai kaporit.",
+      "Bagi banyak pendatang, ini bagian paling tidak nyaman dari hari pertama. Bagi orang Islandia, melewatkannya adalah pelanggaran yang jauh lebih memalukan daripada telanjang di ruang ganti."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "is": "vakna",
+   "baca": "VAK-na",
+   "id": "bangun tidur"
+  },
+  {
+   "is": "borða",
+   "baca": "BOR-dha",
+   "id": "makan"
+  },
+  {
+   "is": "morgunmatur",
+   "baca": "MOR-gün-ma-tür",
+   "id": "sarapan"
+  },
+  {
+   "is": "fara",
+   "baca": "FA-ra",
+   "id": "pergi"
+  },
+  {
+   "is": "koma",
+   "baca": "KO-ma",
+   "id": "datang"
+  },
+  {
+   "is": "taka",
+   "baca": "TA-ka",
+   "id": "mengambil, naik (kendaraan)"
+  },
+  {
+   "is": "labba",
+   "baca": "LA-ba",
+   "id": "jalan kaki"
+  },
+  {
+   "is": "strætó",
+   "baca": "STRAI-tou",
+   "id": "bus kota"
+  },
+  {
+   "is": "rigning",
+   "baca": "RIG-ning",
+   "id": "hujan"
+  },
+  {
+   "is": "blautur",
+   "baca": "BLÖI-tür",
+   "id": "basah"
+  },
+  {
+   "is": "veður",
+   "baca": "VÈ-dhür",
+   "id": "cuaca"
+  },
+  {
+   "is": "enginn",
+   "baca": "EIN-gidn",
+   "id": "tak seorang pun"
+  },
+  {
+   "is": "klæða sig",
+   "baca": "KLAI-dha sigh",
+   "id": "berpakaian"
+  },
+  {
+   "is": "vinna",
+   "baca": "VI-na",
+   "id": "bekerja; pekerjaan"
+  },
+  {
+   "is": "synda",
+   "baca": "SIN-da",
+   "id": "berenang"
+  },
+  {
+   "is": "sund",
+   "baca": "sünd",
+   "id": "renang"
+  },
+  {
+   "is": "næstum",
+   "baca": "NAIS-tüm",
+   "id": "hampir"
+  },
+  {
+   "is": "kaldur",
+   "baca": "KAL-dür",
+   "id": "dingin"
+  },
+  {
+   "is": "heitur",
+   "baca": "HEI-tür",
+   "id": "panas"
+  },
+  {
+   "is": "vatn",
+   "baca": "vahtn",
+   "id": "air"
+  },
+  {
+   "is": "jörð",
+   "baca": "yördh",
+   "id": "bumi, tanah"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan bentuk kata kerja yang tepat.",
+   "items": [
+    "Ég ____ (tala) íslensku.",
+    "Þú ____ (læra) mikið.",
+    "Hún ____ (koma) klukkan sjö.",
+    "Við ____ (tala) saman.",
+    "Þið ____ (borða) morgunmat.",
+    "Þeir ____ (fara) í sund."
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat berikut ke bentuk *við*. Awas *u-hljóðvarp*.",
+   "items": [
+    "Ég tala íslensku.",
+    "Ég fer í skólann.",
+    "Ég tek strætó.",
+    "Ég borða morgunmat.",
+    "Ég kem klukkan átta."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "vakna / ég / sjö / klukkan",
+    "þú / hvenær / í skólann / ferð",
+    "strætó / ekki / ég / tek",
+    "sund / hún / í / fer / á hverjum degi",
+    "skilur / það / enginn"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Islandia.",
+   "items": [
+    "Kamu melakukan apa pada pagi hari?",
+    "Saya bangun jam tujuh.",
+    "Saya tidak naik bus.",
+    "Kami berenang setiap hari.",
+    "Airnya panas.",
+    "Besok saya ikut kamu."
+   ]
+  }
+ ],
+ "answers": [
+  "tala — lærir — kemur — tölum — borðið — fara",
+  "Við tölum íslensku. — Við förum í skólann. — Við tökum strætó. — Við borðum morgunmat. — Við komum klukkan átta.",
+  "Ég vakna klukkan sjö. — Hvenær ferð þú í skólann? — Ég tek ekki strætó. — Hún fer í sund á hverjum degi. — Enginn skilur það.",
+  "Hvað gerir þú á morgnana? — Ég vakna klukkan sjö. — Ég tek ekki strætó. — Við syndum á hverjum degi. — Vatnið er heitt. — Á morgun kem ég með þér."
+ ]
+}

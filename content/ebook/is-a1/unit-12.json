@@ -1,0 +1,544 @@
+{
+ "title": "Belanja dan membayar",
+ "title_target": "Í búðinni",
+ "goal": "Memesan, menanyakan harga, dan membayar — sambil bertemu untuk pertama kalinya dengan ungkapan *mig langar*, yang menaruh \"saya\" bukan sebagai pelaku melainkan sebagai sasaran.",
+ "bekal": [
+  "memesan makanan dan minuman dengan *ég ætla að fá* dan *mig langar í*",
+  "menanyakan harga dan membayar dengan kartu",
+  "menyesuaikan kata sifat saat ia menyifati objek"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Á kaffihúsinu",
+   "intro": "Sebuah kedai roti kecil di pusat kota. Búdí memesan sendiri untuk pertama kalinya, dan pulang dengan satu penemuan kuliner.",
+   "lines": [
+    {
+     "speaker": "Afgreiðslukona:",
+     "text": "Góðan daginn! Get ég aðstoðað þig?",
+     "id": "Selamat siang! Bisa saya bantu?",
+     "literal": "baik hari-itu! bisa saya membantu kamu?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Já, takk. Mig langar í kaffi og einn snúð.",
+     "id": "Ya, terima kasih. Saya mau kopi dan satu snúður.",
+     "literal": "saya-objek merindukan ke kopi dan satu snúður."
+    },
+    {
+     "speaker": "Afgreiðslukona:",
+     "text": "Viltu stóran eða lítinn bolla?",
+     "id": "Mau cangkir besar atau kecil?",
+     "literal": "mau-kamu besar atau kecil cangkir?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Stóran, takk. Hvað kostar þetta?",
+     "id": "Yang besar, terima kasih. Ini berapa?",
+     "literal": "besar, terima-kasih. apa berharga ini?"
+    },
+    {
+     "speaker": "Afgreiðslukona:",
+     "text": "Sjö hundruð og fimmtíu krónur.",
+     "id": "Tujuh ratus lima puluh króna.",
+     "literal": "tujuh ratus dan lima-puluh króna."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Get ég borgað með korti?",
+     "id": "Bisa saya bayar dengan kartu?",
+     "literal": "bisa saya membayar dengan kartu?"
+    },
+    {
+     "speaker": "Afgreiðslukona:",
+     "text": "Að sjálfsögðu. Allir borga með korti hér.",
+     "id": "Tentu saja. Semua orang di sini bayar dengan kartu.",
+     "literal": "tentu sendiri-berkata. semua membayar dengan kartu di-sini."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Gott, því ég á engan pening.",
+     "id": "Bagus, karena saya tidak punya uang tunai.",
+     "literal": "baik, karena saya punya tak-satu-pun uang."
+    },
+    {
+     "speaker": "Afgreiðslukona:",
+     "text": "Það þarf enginn. Viltu kvittun?",
+     "id": "Tidak ada yang perlu. Mau struk?",
+     "literal": "itu perlu tak-seorang-pun. mau-kamu struk?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Nei, takk. Eitt enn: hvað heitir þetta brauð?",
+     "id": "Tidak, terima kasih. Satu lagi: roti ini namanya apa?",
+     "literal": "tidak, terima-kasih. satu lagi: apa bernama ini roti?"
+    },
+    {
+     "speaker": "Afgreiðslukona:",
+     "text": "Það er rúgbrauð. Það er bakað í jörðinni!",
+     "id": "Itu rúgbrauð. Dipanggang di dalam tanah!",
+     "literal": "ia adalah gandum-hitam-roti. ia adalah dipanggang di tanah-itu."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Í jörðinni? Þá verð ég að smakka það.",
+     "id": "Di dalam tanah? Kalau begitu saya harus mencobanya.",
+     "literal": "di tanah-itu? maka harus saya untuk mencicipi ia."
+    }
+   ],
+   "notes": [
+    "**Mig langar í kaffi — dan \"saya\" di kalimat ini bukan pelaku.** Bentuknya *mig*, bukan *ég*: harfiahnya \"saya-objek merindukan ke kopi\". Bahasa Islandia punya sederet ungkapan seperti ini, dan semuanya menaruh orangnya sebagai sasaran, bukan pelaku. Unit 14 membahasnya penuh; di sini pakailah dulu sebagai satu frasa siap pakai.",
+    "**Tiga cara memesan, dari yang paling santai ke paling sopan**: *Ég ætla að fá …* (saya mau ambil …), *Mig langar í …* (saya ingin …), *Gæti ég fengið …?* (bolehkah saya dapat …?). Ketiganya sopan; yang pertama paling sering terdengar di kasir.",
+    "**Kata sifat ikut berubah saat menyifati objek**: *stór* → *stóran*, *lítill* → *lítinn*. Ekor **-an** dan **-inn** adalah penanda þolfall karlkyn — bentuk yang paling sering kamu butuhkan, karena begitu banyak benda berjenis kk.",
+    "**Engan pening — \"tidak punya uang sama sekali\".** *Enginn* (tak satu pun) ikut berubah bentuk seperti kata sifat: *enginn* → *engan* sebagai objek. Perhatikan bahwa kalimatnya **tidak** memakai *ekki*; *enginn* sudah membawa penyangkalannya sendiri.",
+    "**Islandia hampir sepenuhnya meninggalkan uang tunai.** Kartu diterima di mana saja, termasuk warung hot dog dan toilet umum. Membawa uang kertas justru sering merepotkan — banyak tempat tidak punya kembalian.",
+    "**Rúgbrauð benar-benar dipanggang di dalam tanah.** Adonan roti gandum hitam dikubur di pasir panas dekat sumber air panas selama 24 jam. Rasanya manis dan padat; disajikan dengan mentega dan ikan haring. Ia salah satu makanan yang paling patut dicoba di Islandia."
+   ],
+   "grammars": [
+    {
+     "title": "Vilja dan mig langar",
+     "body": [
+      "Dua cara mengatakan \"mau\", dan bedanya bukan sopan santun melainkan **tata bahasa**: yang satu memakai *ég*, yang lain memakai *mig*."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Contoh",
+       "Arti",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "*ég vil*",
+        "*Ég vil kaffi.*",
+        "Saya mau kopi.",
+        "pelaku biasa"
+       ],
+       [
+        "*viltu?*",
+        "*Viltu kaffi?*",
+        "Kamu mau kopi?",
+        "= *vilt þú*"
+       ],
+       [
+        "*mig langar í*",
+        "*Mig langar í kaffi.*",
+        "Saya ingin kopi.",
+        "**mig**, bukan *ég*"
+       ],
+       [
+        "*þig langar í*",
+        "*Langar þig í kaffi?*",
+        "Kamu ingin kopi?",
+        "**þig**"
+       ],
+       [
+        "*ég ætla að fá*",
+        "*Ég ætla að fá kaffi.*",
+        "Saya mau (pesan) kopi.",
+        "paling sering di kasir"
+       ],
+       [
+        "*gæti ég fengið*",
+        "*Gæti ég fengið kaffi?*",
+        "Bolehkah saya minta kopi?",
+        "paling sopan"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *Vil* berarti **mau**, bukan \"akan\". *Ég vil fara* = saya mau pergi, bukan saya akan pergi. Kesalahan ini sangat sering dilakukan pemula yang datang dari bahasa Inggris atau Jerman, dan artinya bisa berubah jauh.",
+      "Enam bentuk *vilja*: *ég vil, þú vilt, hann vill, við viljum, þið viljið, þeir vilja*. Perhatikan *vill* dengan dua l untuk *hann* — satu-satunya bentuk yang bertumpuk."
+     ]
+    },
+    {
+     "title": "Kata sifat sebagai penyifat objek",
+     "body": [
+      "Sesudah menyifati pelaku (unit 3), sekarang kata sifat menyifati objek. Yang berubah cuma bentuk karlkyn; dua jenis lain hampir diam."
+     ],
+     "table": {
+      "head": [
+       "Arti",
+       "kk objek",
+       "kvk objek",
+       "hk objek",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "besar",
+        "*stóran*",
+        "*stóra*",
+        "*stórt*",
+        "*Ég vil stóran bolla.*"
+       ],
+       [
+        "kecil",
+        "*lítinn*",
+        "*litla*",
+        "*lítið*",
+        "*Ég vil lítinn bolla.*"
+       ],
+       [
+        "baru",
+        "*nýjan*",
+        "*nýja*",
+        "*nýtt*",
+        "*Ég kaupi nýjan bíl.*"
+       ],
+       [
+        "baik",
+        "*góðan*",
+        "*góða*",
+        "*gott*",
+        "*Ég vil góðan kaffibolla.*"
+       ],
+       [
+        "hitam",
+        "*svartan*",
+        "*svarta*",
+        "*svart*",
+        "*Ég drekk svart kaffi.*"
+       ]
+      ]
+     },
+     "after": [
+      "Penanda yang perlu kamu kenali: **-an** untuk kk, **-a** untuk kvk, dan hk tetap seperti bentuk dasarnya. Kalau kamu ragu, dengarkan bunyi ekornya — dua huruf itu yang membedakan.",
+      "*Góðan daginn!* yang kamu ucapkan sejak unit 1 ternyata adalah kata sifat + kata benda dalam **þolfall**: harfiahnya \"(semoga kamu punya) hari yang baik\". Sapaan yang sudah kamu hafal itu diam-diam sudah mengajarimu tata bahasanya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalimat siap pakai di toko dan kafe",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Íslenska",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Ég ætla að fá …",
+       "yègh AIT-la adh fau",
+       "Saya mau pesan …"
+      ],
+      [
+       "Mig langar í …",
+       "migh LAUN-gar ii",
+       "Saya ingin …"
+      ],
+      [
+       "Hvað kostar þetta?",
+       "kvadh KOS-tar THÈH-ta",
+       "Ini berapa?"
+      ],
+      [
+       "Er þetta á tilboði?",
+       "èr THÈH-ta au TIL-bo-dhi",
+       "Ini sedang diskon?"
+      ],
+      [
+       "Get ég borgað með korti?",
+       "gèt yègh BOR-ghadh mèdh KOR-ti",
+       "Bisa bayar dengan kartu?"
+      ],
+      [
+       "Viltu poka?",
+       "VIL-tü PO-ka",
+       "Mau kantong?"
+      ],
+      [
+       "Nei, takk, ég er með poka.",
+       "nei tahk yègh èr mèdh PO-ka",
+       "Tidak, saya bawa kantong."
+      ],
+      [
+       "Hvar er …?",
+       "kvar èr",
+       "… di mana?"
+      ],
+      [
+       "Áttu þetta í stærri stærð?",
+       "AUH-tü THÈH-ta ii STAI-ri stairdh",
+       "Ada ukuran yang lebih besar?"
+      ],
+      [
+       "Ég er bara að skoða.",
+       "yègh èr BA-ra adh SKO-dha",
+       "Saya cuma lihat-lihat."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Makanan dan minuman",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Íslenska",
+      "Jenis",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*kaffi*",
+       "hk",
+       "KA-fi",
+       "kopi"
+      ],
+      [
+       "*te*",
+       "hk",
+       "tè",
+       "teh"
+      ],
+      [
+       "*mjólk*",
+       "kvk",
+       "myoulk",
+       "susu"
+      ],
+      [
+       "*vatn*",
+       "hk",
+       "vahtn",
+       "air"
+      ],
+      [
+       "*brauð*",
+       "hk",
+       "​​​bröidh",
+       "roti"
+      ],
+      [
+       "*smjör*",
+       "hk",
+       "smyör",
+       "mentega"
+      ],
+      [
+       "*ostur*",
+       "kk",
+       "OS-tür",
+       "keju"
+      ],
+      [
+       "*fiskur*",
+       "kk",
+       "FIS-kür",
+       "ikan"
+      ],
+      [
+       "*kjöt*",
+       "hk",
+       "kyöt",
+       "daging"
+      ],
+      [
+       "*súpa*",
+       "kvk",
+       "SUU-pa",
+       "sup"
+      ],
+      [
+       "*grænmeti*",
+       "hk",
+       "GRAIN-mè-ti",
+       "sayuran"
+      ],
+      [
+       "*ávextir*",
+       "kk",
+       "AU-vèx-tir",
+       "buah-buahan"
+      ],
+      [
+       "*skyr*",
+       "hk",
+       "skir",
+       "skyr (yoghurt Islandia)"
+      ],
+      [
+       "*pylsa*",
+       "kvk",
+       "PIL-sa",
+       "sosis, hot dog"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Dua makanan yang harus kamu tahu namanya",
+     "items": [
+      "**Skyr** bukan yoghurt melainkan keju lunak tanpa lemak, dimakan seperti yoghurt, dan sudah dibuat orang Islandia sejak zaman pemukiman. Ia sarapan nasional dan ada di setiap supermarket.",
+      "**Pylsa** adalah hot dog Islandia, dan pesanan bakunya adalah *ein með öllu* — \"satu dengan semuanya\": mustard manis, remoulade, bawang goreng, dan bawang mentah. Kalimat itu satu-satunya yang perlu kamu hafal di warung hot dog."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "is": "afgreiðslukona",
+   "baca": "AV-greidhs-lü-ko-na",
+   "id": "pramuniaga perempuan"
+  },
+  {
+   "is": "aðstoða",
+   "baca": "ADH-sto-dha",
+   "id": "membantu"
+  },
+  {
+   "is": "langa",
+   "baca": "LAUN-ga",
+   "id": "ingin, kepingin"
+  },
+  {
+   "is": "snúður",
+   "baca": "SNUU-dhür",
+   "id": "roti gulung kayu manis"
+  },
+  {
+   "is": "bolli",
+   "baca": "BOT-li",
+   "id": "cangkir"
+  },
+  {
+   "is": "borga",
+   "baca": "BOR-gha",
+   "id": "membayar"
+  },
+  {
+   "is": "kort",
+   "baca": "kort",
+   "id": "kartu"
+  },
+  {
+   "is": "peningur",
+   "baca": "PÈ-nin-gür",
+   "id": "uang"
+  },
+  {
+   "is": "kvittun",
+   "baca": "KVI-tün",
+   "id": "struk"
+  },
+  {
+   "is": "brauð",
+   "baca": "bröidh",
+   "id": "roti"
+  },
+  {
+   "is": "rúgbrauð",
+   "baca": "RUUGH-bröidh",
+   "id": "roti gandum hitam"
+  },
+  {
+   "is": "baka",
+   "baca": "BA-ka",
+   "id": "memanggang"
+  },
+  {
+   "is": "smakka",
+   "baca": "SMAH-ka",
+   "id": "mencicipi"
+  },
+  {
+   "is": "verða að",
+   "baca": "VÈR-dha adh",
+   "id": "harus"
+  },
+  {
+   "is": "að sjálfsögðu",
+   "baca": "adh SYAULV-sög-dhü",
+   "id": "tentu saja"
+  },
+  {
+   "is": "því",
+   "baca": "thvii",
+   "id": "karena"
+  },
+  {
+   "is": "tilboð",
+   "baca": "TIL-bodh",
+   "id": "penawaran, diskon"
+  },
+  {
+   "is": "poki",
+   "baca": "PO-ki",
+   "id": "kantong"
+  },
+  {
+   "is": "stærð",
+   "baca": "stairdh",
+   "id": "ukuran"
+  },
+  {
+   "is": "dýrt / ódýrt",
+   "baca": "diirt / OU-diirt",
+   "id": "mahal / murah"
+  },
+  {
+   "is": "allir",
+   "baca": "AT-lir",
+   "id": "semua orang"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan bentuk *vilja* yang tepat.",
+   "items": [
+    "Ég ____ kaffi.",
+    "____ þú te?",
+    "Hún ____ ekki mjólk.",
+    "Við ____ borga með korti.",
+    "Þið ____ poka?",
+    "Þeir ____ stóran bolla."
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk kata sifat yang tepat untuk objeknya.",
+   "items": [
+    "Ég vil ____ (stór, stóran) bolla.",
+    "Hún kaupir ____ (nýr, nýjan) bíl.",
+    "Ég drekk ____ (svart, svartan) kaffi.",
+    "Við viljum ____ (lítill, lítinn) skammt.",
+    "Ég ætla að fá ____ (góð, góða) súpu."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "langar / mig / kaffi / í",
+    "kostar / þetta / hvað",
+    "borgað / ég / get / með korti",
+    "þarf / það / enginn",
+    "fá / ég / ætla / að / snúð / einn"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Islandia.",
+   "items": [
+    "Bisa saya bantu?",
+    "Saya mau kopi.",
+    "Ini berapa?",
+    "Bisa saya bayar dengan kartu?",
+    "Saya tidak punya uang tunai.",
+    "Saya cuma lihat-lihat."
+   ]
+  }
+ ],
+ "answers": [
+  "vil — Vilt — vill — viljum — viljið — vilja",
+  "stóran — nýjan — svart — lítinn — góða",
+  "Mig langar í kaffi. — Hvað kostar þetta? — Get ég borgað með korti? — Það þarf enginn. — Ég ætla að fá einn snúð.",
+  "Get ég aðstoðað þig? — Mig langar í kaffi. — Hvað kostar þetta? — Get ég borgað með korti? — Ég á engan pening. — Ég er bara að skoða."
+ ]
+}

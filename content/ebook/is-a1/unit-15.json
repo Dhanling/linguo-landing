@@ -1,0 +1,528 @@
+{
+ "title": "Masa lampau: kata kerja lemah",
+ "title_target": "Þátíð — ég talaði, ég keyrði",
+ "goal": "Menceritakan apa yang sudah terjadi dengan golongan kata kerja terbesar — yang menambahkan ekor tanpa mengubah apa pun di dalam katanya.",
+ "bekal": [
+  "membentuk masa lampau kata kerja golongan -a dan golongan -i",
+  "memilih antara ekor *-aði*, *-di*, *-ti*, dan *-ddi*",
+  "menceritakan akhir pekanmu dalam beberapa kalimat"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Um helgina",
+   "intro": "Senin pagi di sekolah. Búdí baru kembali dari perjalanan pertamanya ke luar Reykjavík.",
+   "lines": [
+    {
+     "speaker": "Anna:",
+     "text": "Hvað gerðir þú um helgina?",
+     "id": "Kamu melakukan apa akhir pekan lalu?",
+     "literal": "apa melakukan-dulu kamu tentang akhir-pekan-itu?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Ég ferðaðist til Þingvalla með Siggu.",
+     "id": "Saya jalan-jalan ke Þingvellir bersama Sigga.",
+     "literal": "saya berjalan-dulu ke Þingvellir dengan Sigga."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Hvernig var það?",
+     "id": "Bagaimana?",
+     "literal": "bagaimana adalah-dulu itu?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Frábært! Við keyrðum í tvo tíma og gengum lengi.",
+     "id": "Hebat! Kami menyetir dua jam dan berjalan lama.",
+     "literal": "hebat! kami menyetir-dulu dalam dua jam dan berjalan-dulu lama."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Skoðuðuð þið Almannagjá?",
+     "id": "Kalian melihat Almannagjá?",
+     "literal": "melihat-lihat-dulu kalian Almannagjá?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Já. Sigga sagði mér að höfðingjar hittust þar til forna.",
+     "id": "Ya. Sigga bilang para kepala suku dulu bertemu di situ.",
+     "literal": "ya. Sigga berkata-dulu kepadaku bahwa kepala-suku bertemu-dulu di-sana sampai kuno."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Rétt. Alþingi var stofnað þar árið 930.",
+     "id": "Benar. Alþingi didirikan di situ tahun 930.",
+     "literal": "benar. Alþingi adalah-dulu didirikan di-sana tahun-itu 930."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Ég trúði því varla. Elsta þing í heimi!",
+     "id": "Saya hampir tidak percaya. Parlemen tertua di dunia!",
+     "literal": "saya percaya-dulu itu hampir-tidak. tertua parlemen di dunia!"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Og gjáin? Fannst þér hún merkileg?",
+     "id": "Dan ngarainya? Menurutmu menarik?",
+     "literal": "dan ngarai-itu? terasa-dulu kepadamu dia menarik?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Já — ég stóð á milli tveggja heimsálfa!",
+     "id": "Ya — saya berdiri di antara dua benua!",
+     "literal": "ya — saya berdiri-dulu pada antara dua benua."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Nákvæmlega. Ameríka öðrum megin, Evrópa hinum.",
+     "id": "Persis. Amerika di satu sisi, Eropa di sisi lain.",
+     "literal": "tepat-sekali. Amerika lain sisi, Eropa yang-lain."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Ég gleymi þessu aldrei. Takk fyrir ábendinguna!",
+     "id": "Saya tidak akan pernah melupakannya. Terima kasih sarannya!",
+     "literal": "saya melupakan ini tak-pernah. terima-kasih untuk saran-itu!"
+    }
+   ],
+   "notes": [
+    "**Kata kerja lemah menambahkan ekor tanpa mengubah isi katanya.** *Tala → talaði*, *keyra → keyrði*, *trúa → trúði*. Golongan ini yang terbesar, jadi begitu kamu menguasainya, sebagian besar cerita masa lalu sudah bisa kamu susun.",
+    "**Ekornya cuma dua macam**: **-aði** untuk kata kerja golongan -a (*tala*, *skoða*, *borða*), dan **-di / -ti / -ddi** untuk golongan -i (*keyra*, *læra*, *trúa*). Pilihan di antara ketiganya ditentukan bunyi yang mendahuluinya, bukan hafalan.",
+    "**Bentuk *ég* dan *hann* selalu sama** di masa lampau — persis seperti di masa kini. Yang membedakan cuma *þú* (tambah *-r*) dan bentuk jamaknya.",
+    "**Beberapa kata di dialog ini kuat, bukan lemah**: *var*, *gengum*, *stóð*, *fannst*. Vokalnya berganti, bukan ekornya bertambah. Golongan itu isi unit 16 — untuk sekarang, kenali saja bahwa mereka ada.",
+    "**Um helgina memakai þolfall** karena menyebut **jangka waktu**: *um helgina* (selama akhir pekan), *í tvo tíma* (selama dua jam). Kalau yang disebut adalah titik waktu, kasusnya berbeda: *á morgun*, *um kvöldið*.",
+    "**Þingvellir bukan sekadar tempat wisata.** Di lembah itu, tahun 930, orang-orang merdeka Islandia mendirikan *Alþingi* — parlemen yang masih berjalan sampai hari ini dan karena itu disebut yang tertua di dunia. Di tempat yang sama, tahun 1944, Islandia memproklamasikan kemerdekaannya dari Denmark."
+   ],
+   "grammars": [
+    {
+     "title": "Dua golongan kata kerja lemah",
+     "body": [
+      "Enam bentuk masing-masing, dan pola ekornya berulang persis. Perhatikan *u-hljóðvarp* muncul lagi di bentuk jamak golongan pertama: *tala → töluðum*."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "*tala* → talaði",
+       "*keyra* → keyrði",
+       "*læra* → lærði"
+      ],
+      "rows": [
+       [
+        "ég",
+        "tal**aði**",
+        "keyr**ði**",
+        "lær**ði**"
+       ],
+       [
+        "þú",
+        "tal**aðir**",
+        "keyr**ðir**",
+        "lær**ðir**"
+       ],
+       [
+        "hann/hún/það",
+        "tal**aði**",
+        "keyr**ði**",
+        "lær**ði**"
+       ],
+       [
+        "við",
+        "t**ö**l**uðum**",
+        "keyr**ðum**",
+        "lær**ðum**"
+       ],
+       [
+        "þið",
+        "t**ö**l**uðuð**",
+        "keyr**ðuð**",
+        "lær**ðuð**"
+       ],
+       [
+        "þeir/þær/þau",
+        "t**ö**l**uðu**",
+        "keyr**ðu**",
+        "lær**ðu**"
+       ]
+      ]
+     },
+     "after": [
+      "Golongan **-aði** adalah golongan yang paling ramah dan paling produktif: hampir semua kata kerja baru yang masuk bahasa Islandia ikut golongan ini. Kalau kamu tidak yakin, tebakan *-aði* punya peluang terbesar.",
+      "Bentuk masa lampau tidak pernah memakai kata bantu seperti \"sudah\" atau \"telah\". *Ég talaði* sudah berarti \"saya bicara (dulu)\" — sama seperti bahasa Indonesia yang cukup menambahkan \"kemarin\" atau \"tadi\" tanpa mengubah kata kerjanya."
+     ]
+    },
+    {
+     "title": "Memilih -di, -ti, atau -ddi",
+     "body": [
+      "Bukan hafalan, melainkan bunyi. Dengarkan huruf terakhir sebelum ekornya."
+     ],
+     "table": {
+      "head": [
+       "Huruf sebelumnya",
+       "Ekornya",
+       "Contoh",
+       "Þátíð"
+      ],
+      "rows": [
+       [
+        "bersuara: l, m, n, r, f, g, ð",
+        "**-di**",
+        "*keyra*, *dæma*",
+        "*keyrði*, *dæmdi*"
+       ],
+       [
+        "tak bersuara: p, t, k, s",
+        "**-ti**",
+        "*kaupa*, *missa*",
+        "*keypti*, *missti*"
+       ],
+       [
+        "vokal panjang / á, ú, ý",
+        "**-ddi**",
+        "*trúa*, *þýða*",
+        "*trúði*, *þýddi*"
+       ],
+       [
+        "golongan -a",
+        "**-aði**",
+        "*skoða*, *borða*",
+        "*skoðaði*, *borðaði*"
+       ]
+      ]
+     },
+     "after": [
+      "Alasannya masuk akal secara bunyi: sesudah huruf yang tenggorokannya bergetar, ekornya ikut bergetar (**-ði**); sesudah huruf yang tidak bergetar, ekornya ikut tidak bergetar (**-ti**). Kamu bisa mendengarnya sendiri kalau memegang tenggorokan sambil mengucapkannya.",
+      "⚠️ *Kaupa → keypti* sekaligus mengganti vokalnya. Beberapa kata lemah memang begitu: *segja → sagði*, *þykja → þótti*, *sækja → sótti*. Jumlahnya sedikit, tapi semuanya sering."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata kerja lemah yang paling sering",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Dasar",
+      "ég (kini)",
+      "ég (lampau)",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*tala*",
+       "tala",
+       "**talaði**",
+       "berbicara"
+      ],
+      [
+       "*borða*",
+       "borða",
+       "**borðaði**",
+       "makan"
+      ],
+      [
+       "*skoða*",
+       "skoða",
+       "**skoðaði**",
+       "melihat-lihat"
+      ],
+      [
+       "*vakna*",
+       "vakna",
+       "**vaknaði**",
+       "bangun"
+      ],
+      [
+       "*byrja*",
+       "byrja",
+       "**byrjaði**",
+       "mulai"
+      ],
+      [
+       "*hjálpa*",
+       "hjálpa",
+       "**hjálpaði**",
+       "menolong"
+      ],
+      [
+       "*ferðast*",
+       "ferðast",
+       "**ferðaðist**",
+       "bepergian"
+      ],
+      [
+       "*læra*",
+       "læri",
+       "**lærði**",
+       "belajar"
+      ],
+      [
+       "*keyra*",
+       "keyri",
+       "**keyrði**",
+       "menyetir"
+      ],
+      [
+       "*heyra*",
+       "heyri",
+       "**heyrði**",
+       "mendengar"
+      ],
+      [
+       "*trúa*",
+       "trúi",
+       "**trúði**",
+       "percaya"
+      ],
+      [
+       "*kaupa*",
+       "kaupi",
+       "**keypti**",
+       "membeli"
+      ],
+      [
+       "*segja*",
+       "segi",
+       "**sagði**",
+       "berkata"
+      ],
+      [
+       "*gera*",
+       "geri",
+       "**gerði**",
+       "melakukan"
+      ],
+      [
+       "*þekkja*",
+       "þekki",
+       "**þekkti**",
+       "mengenal"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Lima belas kata kerja ini menutup sebagian besar cerita sehari-hari. Ucapkan tiap barisnya sebagai pasangan — *tala, talaði* — sampai perpindahannya terasa otomatis; itu jauh lebih cepat daripada menghafal tabel bentuk."
+    }
+   ]
+  },
+  {
+   "title": "Þingvellir: lembah tempat sebuah negara lahir",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Empat puluh menit dari Reykjavík, sebuah lembah terbelah oleh ngarai panjang bernama *Almannagjá*. Ngarai itu bukan hasil sungai, melainkan **retakan antara dua lempeng benua** yang saling menjauh dua sentimeter setiap tahun. Berdiri di dalamnya berarti berdiri di antara Amerika dan Eropa."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Íslenska",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Þingvellir*",
+       "THING-vèt-lir",
+       "padang parlemen"
+      ],
+      [
+       "*Alþingi*",
+       "AL-thin-gi",
+       "parlemen Islandia"
+      ],
+      [
+       "*gjá*",
+       "gyau",
+       "ngarai, retakan"
+      ],
+      [
+       "*hraun*",
+       "hröin",
+       "lahar, medan lava"
+      ],
+      [
+       "*heimsálfa*",
+       "HEIMS-aul-va",
+       "benua"
+      ],
+      [
+       "*lögberg*",
+       "LÖGH-bèrgh",
+       "batu hukum, mimbar"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga tanggal di satu lembah",
+     "items": [
+      "**930** — orang-orang merdeka berkumpul untuk pertama kalinya dan mendirikan Alþingi. Hukum dihafalkan, bukan ditulis, lalu dibacakan keras-keras dari *Lögberg* setiap musim panas.",
+      "**1000** — di tempat yang sama, Islandia memutuskan memeluk agama Kristen lewat perundingan, bukan perang.",
+      "**1944** — republik Islandia diproklamasikan di lembah itu, di hadapan puluhan ribu orang yang berjalan kaki ke sana di tengah hujan."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "is": "helgi",
+   "baca": "HÈL-yi",
+   "id": "akhir pekan"
+  },
+  {
+   "is": "ferðast",
+   "baca": "FÈR-dhast",
+   "id": "bepergian"
+  },
+  {
+   "is": "keyra",
+   "baca": "KEI-ra",
+   "id": "menyetir"
+  },
+  {
+   "is": "lengi",
+   "baca": "LEIN-yi",
+   "id": "lama"
+  },
+  {
+   "is": "höfðingi",
+   "baca": "HÖV-dhin-gi",
+   "id": "kepala suku, pemuka"
+  },
+  {
+   "is": "til forna",
+   "baca": "til FOR-na",
+   "id": "pada zaman dahulu"
+  },
+  {
+   "is": "stofna",
+   "baca": "STOV-na",
+   "id": "mendirikan"
+  },
+  {
+   "is": "þing",
+   "baca": "thing",
+   "id": "parlemen, sidang"
+  },
+  {
+   "is": "trúa",
+   "baca": "TRUU-a",
+   "id": "percaya"
+  },
+  {
+   "is": "varla",
+   "baca": "VAR-la",
+   "id": "hampir tidak"
+  },
+  {
+   "is": "elstur",
+   "baca": "ÈLS-tür",
+   "id": "tertua"
+  },
+  {
+   "is": "heimur",
+   "baca": "HEI-mür",
+   "id": "dunia"
+  },
+  {
+   "is": "gjá",
+   "baca": "gyau",
+   "id": "ngarai, retakan"
+  },
+  {
+   "is": "á milli",
+   "baca": "au MIT-li",
+   "id": "di antara"
+  },
+  {
+   "is": "heimsálfa",
+   "baca": "HEIMS-aul-va",
+   "id": "benua"
+  },
+  {
+   "is": "megin",
+   "baca": "MÈ-yin",
+   "id": "sisi, pihak"
+  },
+  {
+   "is": "gleyma",
+   "baca": "GLEI-ma",
+   "id": "melupakan"
+  },
+  {
+   "is": "aldrei",
+   "baca": "AL-drei",
+   "id": "tidak pernah"
+  },
+  {
+   "is": "ábending",
+   "baca": "AU-bèn-ding",
+   "id": "saran, petunjuk"
+  },
+  {
+   "is": "ár",
+   "baca": "aur",
+   "id": "tahun"
+  },
+  {
+   "is": "hittast",
+   "baca": "HI-tast",
+   "id": "saling bertemu"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke masa lampau (bentuk *ég*).",
+   "items": [
+    "Ég tala.",
+    "Ég læri.",
+    "Ég keyri.",
+    "Ég borða.",
+    "Ég heyri.",
+    "Ég trúi."
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bentuk masa lampau yang tepat.",
+   "items": [
+    "Við ____ (tala) saman í gær.",
+    "Þú ____ (læra) mikið.",
+    "Hún ____ (keyra) til Akureyrar.",
+    "Þið ____ (skoða) safnið.",
+    "Þeir ____ (borða) klukkan sjö.",
+    "Ég ____ (kaupa) nýja bók."
+   ]
+  },
+  {
+   "prompt": "Pilih ekor yang tepat: *-aði*, *-di*, *-ti*, atau *-ddi*.",
+   "items": [
+    "keyra → keyr____",
+    "skoða → skoð____",
+    "trúa → trú____",
+    "kaupa → keyp____",
+    "heyra → heyr____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Islandia.",
+   "items": [
+    "Kamu melakukan apa akhir pekan lalu?",
+    "Saya jalan-jalan ke Þingvellir.",
+    "Kami menyetir dua jam.",
+    "Sigga bilang begitu padaku.",
+    "Saya hampir tidak percaya.",
+    "Saya tidak akan pernah melupakannya."
+   ]
+  }
+ ],
+ "answers": [
+  "Ég talaði. — Ég lærði. — Ég keyrði. — Ég borðaði. — Ég heyrði. — Ég trúði.",
+  "töluðum — lærðir — keyrði — skoðuðuð — borðuðu — keypti",
+  "-ði — -aði — -ði — -ti — -ði",
+  "Hvað gerðir þú um helgina? — Ég ferðaðist til Þingvalla. — Við keyrðum í tvo tíma. — Sigga sagði mér það. — Ég trúði því varla. — Ég gleymi þessu aldrei."
+ ]
+}

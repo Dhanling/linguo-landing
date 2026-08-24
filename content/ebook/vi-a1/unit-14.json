@@ -1,0 +1,565 @@
+{
+ "title": "Sakit apa? — badan, cuaca, dan bị",
+ "title_target": "Em bị đau đầu ạ.",
+ "goal": "Menyebut keluhan badan dan keadaan cuaca, serta menguasai pasangan *bị* dan *được* — dua kata yang menandai apakah sesuatu menimpamu dengan buruk atau dengan baik.",
+ "bekal": [
+  "menyebut keluhan dengan *bị* + keadaan dan *đau* + bagian badan",
+  "membedakan *bị* (kena yang buruk) dari *được* (mendapat yang baik)",
+  "berbicara tentang cuaca dengan *trời* sebagai pelakunya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ở hiệu thuốc",
+   "intro": "Apotek kecil di ujung gang. Sudah dua hari Budi merasa tidak enak badan, dan di Vietnam apotek adalah tempat pertama yang didatangi orang sebelum ke dokter.",
+   "lines": [
+    {
+     "speaker": "Dược sĩ:",
+     "text": "Chào anh, anh cần gì ạ?",
+     "id": "Halo, perlu apa?",
+     "literal": "salam kakak, kakak perlu apa ya?",
+     "baca": "Cào ang, ang kần gì ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em bị đau đầu và hơi sốt ạ.",
+     "id": "Saya sakit kepala dan agak demam.",
+     "literal": "adik kena sakit kepala dan agak demam ya.",
+     "baca": "Em bị dau dầu và hơi sốt ạ."
+    },
+    {
+     "speaker": "Dược sĩ:",
+     "text": "Bị mấy ngày rồi?",
+     "id": "Sudah berapa hari?",
+     "literal": "kena berapa hari sudah?",
+     "baca": "Bị mấy ngày zồi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hai ngày rồi ạ. Đêm qua em bị mất ngủ.",
+     "id": "Sudah dua hari. Semalam saya susah tidur.",
+     "literal": "dua hari sudah ya. malam lalu adik kena hilang tidur.",
+     "baca": "Hai ngày zồi ạ. Dêm kwa em bị mất ngủ."
+    },
+    {
+     "speaker": "Dược sĩ:",
+     "text": "Em có bị ho không?",
+     "id": "Batuk juga?",
+     "literal": "adik ada kena batuk tidak?",
+     "baca": "Em kó bị ho không?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Có, hơi ho ạ. Chắc tại trời lạnh.",
+     "id": "Iya, agak batuk. Mungkin karena cuacanya dingin.",
+     "literal": "ada, agak batuk ya. mungkin sebab langit dingin.",
+     "baca": "Kó, hơi ho ạ. Cắk tại cời lạng."
+    },
+    {
+     "speaker": "Dược sĩ:",
+     "text": "Ừ, mấy hôm nay trời trở lạnh. Em uống thuốc này nhé.",
+     "id": "Iya, beberapa hari ini cuaca jadi dingin. Minum obat ini ya.",
+     "literal": "iya, beberapa hari ini langit berubah dingin. adik minum obat ini ya.",
+     "baca": "Ừ, mấy hôm nay cời cở lạng. Em uống thuốk này nyé."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em uống thế nào ạ?",
+     "id": "Diminum bagaimana?",
+     "literal": "adik minum bagaimana ya?",
+     "baca": "Em uống thế nào ạ?"
+    },
+    {
+     "speaker": "Dược sĩ:",
+     "text": "Ngày hai lần, sau khi ăn. Nhớ uống nhiều nước.",
+     "id": "Dua kali sehari, sesudah makan. Ingat banyak minum air.",
+     "literal": "hari dua kali, sesudah waktu makan. ingat minum banyak air.",
+     "baca": "Ngày hai lần, sau khi ăn. Nyớ uống nyiều nướk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vâng ạ. Bao nhiêu tiền ạ?",
+     "id": "Baik. Berapa?",
+     "literal": "iya ya. berapa uang ya?",
+     "baca": "Vâng ạ. Bao nyiêu tiền ạ?"
+    },
+    {
+     "speaker": "Dược sĩ:",
+     "text": "Sáu mươi nghìn. Chúc em mau khỏi nhé!",
+     "id": "Enam puluh ribu. Semoga cepat sembuh ya!",
+     "literal": "enam puluh ribu. semoga adik cepat sembuh ya!",
+     "baca": "Sáu mươi ngìn. Cúk em mau khỏi nyé!"
+    }
+   ],
+   "notes": [
+    "**Bị menandai bahwa sesuatu yang tidak menyenangkan menimpamu**, dan ia berdiri di depan keadaannya: *bị đau đầu* (kena sakit kepala), *bị ốm* (sakit), *bị mất ví* (kehilangan dompet), *bị phạt* (kena denda). Bahasa Indonesia memakai awalan \"ke-…-an\" atau \"ter-\" untuk hal yang sama — *kehujanan*, *ketinggalan* — jadi gagasannya sudah kamu punya.",
+    "**Được adalah kembarannya untuk hal yang menyenangkan**: *được nghỉ* (dapat libur), *được khen* (dipuji), *được tăng lương* (naik gaji). Menukar keduanya membuat kalimatmu terdengar lucu: *bị tăng lương* berarti kira-kira \"apes, gaji saya naik\".",
+    "**Đau berarti \"sakit\" dalam arti nyeri, dan ia diikuti langsung bagian badannya**: *đau đầu* (sakit kepala), *đau bụng* (sakit perut), *đau răng* (sakit gigi). Susunannya sama persis dengan bahasa Indonesia. Kata *ốm* berarti \"sakit\" dalam arti tidak sehat secara umum.",
+    "**Trời berarti \"langit\" dan ia menjadi pelaku semua kalimat cuaca**: *trời mưa* (hujan), *trời nắng* (panas terik), *trời lạnh* (dingin). Harfiahnya \"langit hujan\", dan itu tidak jauh dari \"hari hujan\" kita. Bahasa Vietnam tidak punya kata kerja \"hujan\" tersendiri.",
+    "**Thế nào? berarti \"bagaimana?\"** dan ia berdiri di ujung kalimat seperti kata tanya lainnya: *Em uống thế nào?* (diminumnya bagaimana?), *Phở thế nào?* (phở-nya bagaimana?). Sepupu selatannya *sao?* — *Sao rồi?* (\"gimana?\").",
+    "**Sau khi berarti \"sesudah\" dan trước khi berarti \"sebelum\"**, dan keduanya diikuti kata kerja: *sau khi ăn* (sesudah makan), *trước khi ngủ* (sebelum tidur). *Khi* sendiri berarti \"waktu, saat\", jadi harfiahnya \"sesudah waktu makan\" — dan itu memang cara kita juga berpikir."
+   ],
+   "grammars": [
+    {
+     "title": "Bị dan được — dua pintu untuk kejadian yang menimpamu",
+     "body": [
+      "Bahasa Vietnam tidak punya bentuk pasif seperti \"di-\" kita. Yang ada adalah dua kata yang menandai **rasa** kejadiannya: buruk atau baik. Pilihannya wajib, dan salah pilih langsung terdengar."
+     ],
+     "table": {
+      "head": [
+       "Buruk — *bị*",
+       "Arti",
+       "Baik — *được*",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*bị ốm*",
+        "sakit",
+        "*được nghỉ*",
+        "dapat libur"
+       ],
+       [
+        "*bị đau đầu*",
+        "sakit kepala",
+        "*được khen*",
+        "dipuji"
+       ],
+       [
+        "*bị mất ví*",
+        "kehilangan dompet",
+        "*được tặng quà*",
+        "diberi hadiah"
+       ],
+       [
+        "*bị muộn*",
+        "terlambat",
+        "*được đi*",
+        "boleh pergi"
+       ],
+       [
+        "*bị phạt*",
+        "kena denda",
+        "*được ăn ngon*",
+        "dapat makan enak"
+       ],
+       [
+        "*bị ướt*",
+        "kebasahan",
+        "*được giúp*",
+        "ditolong"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Yang menentukan bukan tata bahasa, melainkan penilaianmu sendiri atas kejadiannya.** Kalimat yang sama bisa memakai keduanya: *được đi Hà Nội* (dapat kesempatan ke Hà Nội — senang) lawan *bị đi Hà Nội* (terpaksa ke Hà Nội — malas). Bahasa Vietnam memaksamu menyatakan perasaanmu, dan itulah sebabnya kata ini terasa hidup.",
+      "*Bị* juga dipakai untuk menyatakan lamanya keluhan: *Bị mấy ngày rồi?* (\"sudah berapa hari?\"). Perhatikan bahwa kata kerjanya tidak diulang — cukup *bị* saja, karena keluhannya sudah disebut."
+     ]
+    },
+    {
+     "title": "Bagian badan",
+     "body": [
+      "Untuk mengeluh, cukup dua kata: *đau* + bagian badannya. Tidak ada bentuk lain yang perlu dipelajari."
+     ],
+     "table": {
+      "head": [
+       "Tiếng Việt",
+       "Arti",
+       "Tiếng Việt",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*đầu*",
+        "kepala",
+        "*bụng*",
+        "perut"
+       ],
+       [
+        "*mắt*",
+        "mata",
+        "*lưng*",
+        "punggung"
+       ],
+       [
+        "*mũi*",
+        "hidung",
+        "*tay*",
+        "tangan"
+       ],
+       [
+        "*miệng*",
+        "mulut",
+        "*chân*",
+        "kaki"
+       ],
+       [
+        "*tai*",
+        "telinga",
+        "*tim*",
+        "jantung"
+       ],
+       [
+        "*răng*",
+        "gigi",
+        "*họng* / *cổ họng*",
+        "tenggorokan"
+       ],
+       [
+        "*cổ*",
+        "leher",
+        "*người*",
+        "badan"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *Người* berarti \"orang\" **dan** \"badan\": *Người tôi mệt quá.* = \"badan saya capek sekali\". Kata yang sudah kamu kenal sejak unit 1 ternyata punya pekerjaan kedua — dan pola ini khas bahasa yang hampir semua katanya satu suku kata.",
+      "*Tay* berarti tangan **dan** lengan; *chân* berarti kaki **dan** tungkai. Bahasa Vietnam tidak memisahkannya, persis seperti bahasa Indonesia. Bahasa Inggris memisahkan keduanya (*hand/arm*, *foot/leg*) — sekali lagi kita berada di pihak yang lebih sederhana."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Cuaca dan musim",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Arti",
+      "Tiếng Việt",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "trời mưa",
+       "cời mưa",
+       "hujan",
+       "trời nắng",
+       "",
+       "panas terik"
+      ],
+      [
+       "trời nóng",
+       "cời nóng",
+       "cuaca panas",
+       "trời lạnh",
+       "",
+       "cuaca dingin"
+      ],
+      [
+       "trời mát",
+       "cời mát",
+       "sejuk",
+       "trời đẹp",
+       "",
+       "cuacanya bagus"
+      ],
+      [
+       "có gió",
+       "kó zó",
+       "berangin",
+       "sương mù",
+       "",
+       "berkabut"
+      ],
+      [
+       "mùa xuân",
+       "mùa suân",
+       "musim semi",
+       "mùa hè",
+       "",
+       "musim panas"
+      ],
+      [
+       "mùa thu",
+       "mùa thu",
+       "musim gugur",
+       "mùa đông",
+       "",
+       "musim dingin"
+      ],
+      [
+       "mùa mưa",
+       "mùa mưa",
+       "musim hujan",
+       "mùa khô",
+       "",
+       "musim kemarau"
+      ],
+      [
+       "bão",
+       "bão",
+       "badai, topan",
+       "lụt",
+       "",
+       "banjir"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Vietnam utara punya empat musim, Vietnam selatan cuma dua.** Hà Nội benar-benar dingin di *mùa đông* — bisa turun ke sepuluh derajat, dan rumah di sana jarang berpemanas, jadi bawalah jaket. Sài Gòn cuma mengenal *mùa mưa* dan *mùa khô*, persis seperti Indonesia. Kalau kamu belajar bahasa untuk perjalanan, ini perbedaan yang paling terasa di badan."
+    },
+    {
+     "type": "p",
+     "text": "*Trở* berarti \"berubah menjadi\": *trời trở lạnh* (cuacanya jadi dingin), *trời trở nóng*. Dan untuk bertanya cukup *Hôm nay trời thế nào?* — \"hari ini cuacanya bagaimana?\""
+    }
+   ]
+  },
+  {
+   "title": "Di apotek dan di dokter",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Em bị đau đầu.",
+       "Em bị dau dầu.",
+       "Saya sakit kepala."
+      ],
+      [
+       "Em bị sốt.",
+       "Em bị sốt.",
+       "Saya demam."
+      ],
+      [
+       "Em bị đau bụng.",
+       "Em bị dau bụng.",
+       "Saya sakit perut."
+      ],
+      [
+       "Em bị cảm.",
+       "Em bị kảm.",
+       "Saya masuk angin, flu."
+      ],
+      [
+       "Em bị ho.",
+       "Em bị ho.",
+       "Saya batuk."
+      ],
+      [
+       "Em bị dị ứng.",
+       "Em bị zị ứng.",
+       "Saya alergi."
+      ],
+      [
+       "Em mệt quá.",
+       "Em mệt kwá.",
+       "Saya capek sekali."
+      ],
+      [
+       "Em uống thuốc thế nào ạ?",
+       "Em uống thuốk thế nào ạ?",
+       "Obatnya diminum bagaimana?"
+      ],
+      [
+       "Ngày mấy lần ạ?",
+       "Ngày mấy lần ạ?",
+       "Sehari berapa kali?"
+      ],
+      [
+       "Có cần đi bác sĩ không ạ?",
+       "Kó kần di bák sĩ không ạ?",
+       "Perlu ke dokter?"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Apotek adalah pintu pertama",
+     "items": [
+      "Di Vietnam, *hiệu thuốc* (apotek) adalah tempat pertama yang didatangi orang untuk keluhan ringan. Apotekernya biasa mendengarkan gejala dan langsung memberi obat, dan banyak obat yang di negara lain butuh resep bisa dibeli di sini. Untuk keluhan ringan ini sangat praktis; untuk keluhan yang tidak membaik dalam dua-tiga hari, tetap pergilah ke *bệnh viện* atau *phòng khám* (klinik).",
+      "Ucapan penutup yang akan kamu dengar: *Chúc em mau khỏi nhé!* — \"semoga cepat sembuh\". Jawabnya cukup *Em cảm ơn chị ạ.* Dan kalau ada temanmu yang sakit, kalimat inilah yang mereka tunggu darimu."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "bị",
+   "id": "kena (yang buruk)",
+   "baca": "bị"
+  },
+  {
+   "vi": "đau",
+   "id": "sakit, nyeri",
+   "baca": "dau"
+  },
+  {
+   "vi": "ốm",
+   "id": "sakit (tidak sehat)",
+   "baca": "ốm"
+  },
+  {
+   "vi": "sốt",
+   "id": "demam",
+   "baca": "sốt"
+  },
+  {
+   "vi": "ho",
+   "id": "batuk",
+   "baca": "ho"
+  },
+  {
+   "vi": "cảm",
+   "id": "flu, masuk angin",
+   "baca": "kảm"
+  },
+  {
+   "vi": "mệt",
+   "id": "capek",
+   "baca": "mệt"
+  },
+  {
+   "vi": "đầu / bụng",
+   "id": "kepala / perut",
+   "baca": "dầu / bụng"
+  },
+  {
+   "vi": "mắt / mũi / tai",
+   "id": "mata / hidung / telinga",
+   "baca": "mắt / mũi / tai"
+  },
+  {
+   "vi": "tay / chân",
+   "id": "tangan / kaki",
+   "baca": "tay / cân"
+  },
+  {
+   "vi": "răng",
+   "id": "gigi",
+   "baca": "zăng"
+  },
+  {
+   "vi": "thuốc",
+   "id": "obat",
+   "baca": "thuốk"
+  },
+  {
+   "vi": "hiệu thuốc",
+   "id": "apotek",
+   "baca": "hiệu thuốk"
+  },
+  {
+   "vi": "dược sĩ",
+   "id": "apoteker",
+   "baca": "zượk sĩ"
+  },
+  {
+   "vi": "khỏi",
+   "id": "sembuh",
+   "baca": "khỏi"
+  },
+  {
+   "vi": "lần",
+   "id": "kali",
+   "baca": "lần"
+  },
+  {
+   "vi": "trời",
+   "id": "langit; cuaca",
+   "baca": "cời"
+  },
+  {
+   "vi": "mưa / nắng",
+   "id": "hujan / terik",
+   "baca": "mưa / nắng"
+  },
+  {
+   "vi": "nóng / lạnh / mát",
+   "id": "panas / dingin / sejuk",
+   "baca": "nóng / lạng / mát"
+  },
+  {
+   "vi": "gió",
+   "id": "angin",
+   "baca": "zó"
+  },
+  {
+   "vi": "mùa",
+   "id": "musim",
+   "baca": "mùa"
+  },
+  {
+   "vi": "thế nào",
+   "id": "bagaimana",
+   "baca": "thế nào"
+  },
+  {
+   "vi": "sau khi / trước khi",
+   "id": "sesudah / sebelum",
+   "baca": "sau khi / cướk khi"
+  },
+  {
+   "vi": "nhớ",
+   "id": "ingat; rindu",
+   "baca": "nyớ"
+  },
+  {
+   "vi": "chắc",
+   "id": "mungkin, kira-kira",
+   "baca": "cắk"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan *bị* atau *được*.",
+   "items": [
+    "Hôm qua tôi ____ ốm.",
+    "Tuần này tôi ____ nghỉ hai ngày.",
+    "Tôi ____ mất ví rồi.",
+    "Em ____ cô giáo khen.",
+    "Trời mưa, tôi ____ ướt."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Saya sakit kepala.",
+    "Saya demam dan batuk.",
+    "Saya capek sekali.",
+    "Sudah berapa hari?",
+    "Obatnya diminum bagaimana?",
+    "Semoga cepat sembuh!"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "Hôm nay trời thế nào?",
+    "Trời trở lạnh rồi.",
+    "Ngày hai lần, sau khi ăn.",
+    "Chắc tại trời lạnh.",
+    "Có cần đi bác sĩ không ạ?"
+   ]
+  },
+  {
+   "prompt": "Sebutkan bagian badannya dalam bahasa Vietnam.",
+   "items": [
+    "kepala",
+    "perut",
+    "gigi",
+    "mata",
+    "tangan",
+    "tenggorokan"
+   ]
+  }
+ ],
+ "answers": [
+  "bị — được — bị — được — bị",
+  "Em bị đau đầu. — Em bị sốt và ho. — Em mệt quá. — Bị mấy ngày rồi? — Em uống thuốc thế nào ạ? — Chúc anh mau khỏi nhé!",
+  "Hari ini cuacanya bagaimana? — Cuacanya sudah jadi dingin. — Dua kali sehari, sesudah makan. — Mungkin karena cuacanya dingin. — Perlu ke dokter nggak?",
+  "đầu — bụng — răng — mắt — tay — họng"
+ ]
+}

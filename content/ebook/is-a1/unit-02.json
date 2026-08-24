@@ -1,0 +1,495 @@
+{
+ "title": "Kamu dari mana?",
+ "title_target": "Hvaðan ertu?",
+ "goal": "Menyebut asal, tempat tinggal, dan bahasa yang kamu bisa; lalu menghadapi satu perbedaan besar dari bahasa Indonesia: kata \"tidak\" duduk SESUDAH kata kerjanya, bukan di depannya.",
+ "bekal": [
+  "menanyakan dan menjawab asal dengan *hvaðan* dan *frá*",
+  "menyangkal kalimat apa pun dengan menaruh *ekki* di tempat yang benar",
+  "mengatakan sedang melakukan sesuatu dengan *ég er að …*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Í kaffihúsi",
+   "intro": "Sehari sesudahnya, di sebuah kafe di jalan Laugavegur. Anna sedang membaca ketika Búdí lewat dan ikut duduk.",
+   "lines": [
+    {
+     "speaker": "Anna:",
+     "text": "Hvaðan ertu, Búdí?",
+     "id": "Kamu dari mana, Budi?",
+     "literal": "dari-mana adalah-kamu, Budi?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Ég er frá Indónesíu, frá Jakarta.",
+     "id": "Saya dari Indonesia, dari Jakarta.",
+     "literal": "saya adalah dari Indonesia, dari Jakarta."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Býrðu í Reykjavík núna?",
+     "id": "Kamu tinggal di Reykjavík sekarang?",
+     "literal": "tinggal-kamu di Reykjavík sekarang?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Já, ég bý í Reykjavík. Ég bý ekki í Jakarta lengur.",
+     "id": "Ya, saya tinggal di Reykjavík. Saya tidak tinggal di Jakarta lagi.",
+     "literal": "ya, saya tinggal di Reykjavík. saya tinggal tidak di Jakarta lagi."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Hvaða mál talar þú?",
+     "id": "Bahasa apa saja yang kamu bisa?",
+     "literal": "bahasa-apa berbicara kamu?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Ég tala indónesísku og ensku. Ég tala ekki þýsku.",
+     "id": "Saya bisa bahasa Indonesia dan Inggris. Saya tidak bisa bahasa Jerman.",
+     "literal": "saya berbicara bahasa-Indonesia dan bahasa-Inggris. saya berbicara tidak bahasa-Jerman."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Talarðu ekki íslensku?",
+     "id": "Kamu tidak bisa bahasa Islandia?",
+     "literal": "berbicara-kamu tidak bahasa-Islandia?"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Ég er að læra. Það er erfitt en skemmtilegt.",
+     "id": "Saya sedang belajar. Sulit tapi menyenangkan.",
+     "literal": "saya adalah untuk belajar. itu adalah sulit tapi menyenangkan."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Íslenska er ekki erfið, hún er bara ný fyrir þig!",
+     "id": "Bahasa Islandia tidak sulit, ia cuma baru bagimu!",
+     "literal": "bahasa-Islandia adalah tidak sulit, dia adalah hanya baru untuk kamu!"
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Hvað ertu að gera hér?",
+     "id": "Kamu sedang apa di sini?",
+     "literal": "apa adalah-kamu untuk melakukan di-sini?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Ég er að lesa. Ég er íslenskukennari.",
+     "id": "Saya sedang membaca. Saya guru bahasa Islandia.",
+     "literal": "saya adalah untuk membaca. saya adalah guru-bahasa-Islandia."
+    },
+    {
+     "speaker": "Búdí:",
+     "text": "Nei, er það satt? Þá þarf ég hjálp!",
+     "id": "Ah, masa? Kalau begitu saya butuh bantuan!",
+     "literal": "tidak, adalah itu benar? maka perlu saya bantuan!"
+    }
+   ],
+   "notes": [
+    "**Ekki duduk SESUDAH kata kerjanya.** *Ég tala ekki þýsku* — harfiahnya \"saya berbicara tidak bahasa-Jerman\". Bahasa Indonesia menaruh \"tidak\" di depan (\"saya tidak bisa\"), dan itulah kesalahan paling sering penutur Indonesia di seluruh modul ini. Latih kalimatnya sebagai satu bunyi utuh: *tala-ekki*, *bý-ekki*, *er-ekki*.",
+    "**Býrðu = býr + þú.** Pelekatan *þú* muncul lagi, kali ini pada kata kerja yang berakhir -r: *býrðu*, *talarðu*, *lærirðu*. Huruf **ð** yang muncul di tengah itu bekas *þ* yang meleleh.",
+    "**Ég er að læra harfiahnya \"saya adalah untuk belajar\".** Ini bentuk \"sedang\" — dan bahasa Islandia adalah **satu-satunya bahasa Nordik** yang punya bentuk sedang seperti *-ing* bahasa Inggris. Susunannya selalu sama: *vera* + *að* + kata kerja dasar.",
+    "**Nama bahasa berubah bentuk sesudah tala.** Bentuk dasarnya *íslenska*, *enska*, *þýska*; sesudah *tala* ekornya jadi **-u**: *tala íslensku*, *tala ensku*, *tala þýsku*. Kamu baru melihat kasus **þolfall** untuk pertama kali; namanya diberikan di unit 8.",
+    "**Erfitt, erfið, erfiður — satu kata sifat, tiga bentuk.** Bentuknya ikut jenis kata yang disifati: *það er erfitt* (netral), *íslenska er erfið* (perempuan), *tími er erfiður* (lelaki). Tiga jenis kata benda inilah isi unit 3.",
+    "**Nei, er það satt? bukan penyangkalan.** Harfiahnya \"tidak, apakah itu benar?\", tapi fungsinya persis \"Ah, masa?\" — ungkapan kaget yang menyenangkan. Orang Islandia memakainya berkali-kali dalam satu percakapan."
+   ],
+   "grammars": [
+    {
+     "title": "Ekki — tempatnya tetap, artinya jelas",
+     "body": [
+      "Satu kata untuk semua penyangkalan, dan ia hampir selalu berdiri persis **sesudah kata kerja**."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Disangkal",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Ég tala íslensku.*",
+        "Ég tala **ekki** íslensku.",
+        "Saya tidak bisa bahasa Islandia."
+       ],
+       [
+        "*Hún er hér.*",
+        "Hún er **ekki** hér.",
+        "Dia tidak di sini."
+       ],
+       [
+        "*Ég bý í Jakarta.*",
+        "Ég bý **ekki** í Jakarta.",
+        "Saya tidak tinggal di Jakarta."
+       ],
+       [
+        "*Ég skil þig.*",
+        "Ég skil þig **ekki**.",
+        "Saya tidak mengerti kamu."
+       ],
+       [
+        "*Talarðu ensku?*",
+        "Talarðu **ekki** ensku?",
+        "Kamu tidak bisa bahasa Inggris?"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Kalau objeknya **kata ganti** (*þig*, *hana*, *það*), *ekki* melompat ke belakangnya: *Ég skil þig ekki*. Kalau objeknya kata benda biasa, *ekki* tetap di depan: *Ég skil bókina ekki* juga terdengar wajar, tapi *Ég skil ekki bókina* lebih sering.",
+      "Menjawab pertanyaan bernada menyangkal: kalau kamu **memang** tidak bisa, jawab *nei*; kalau kamu **bisa**, jawab **jú**, bukan *já*. *Talarðu ekki íslensku?* — *Jú, ég tala íslensku!* Bahasa Islandia punya kata khusus untuk membantah sangkalan, sesuatu yang tidak dimiliki bahasa Indonesia."
+     ]
+    },
+    {
+     "title": "Er að — bentuk \"sedang\"",
+     "body": [
+      "Susunannya *vera* + *að* + kata kerja dasar. Yang berubah cuma bentuk *vera*-nya; kata kerja utamanya tinggal diam."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Arti",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "*Ég er að læra.*",
+        "Saya sedang belajar.",
+        "*að* tidak diterjemahkan"
+       ],
+       [
+        "*Þú ert að lesa.*",
+        "Kamu sedang membaca.",
+        ""
+       ],
+       [
+        "*Hún er að tala í símann.*",
+        "Dia sedang bicara di telepon.",
+        ""
+       ],
+       [
+        "*Við erum að borða.*",
+        "Kami sedang makan.",
+        ""
+       ],
+       [
+        "*Ég er ekki að grínast.*",
+        "Saya tidak sedang bercanda.",
+        "*ekki* sesudah *vera*"
+       ]
+      ]
+     },
+     "after": [
+      "Bedanya dengan bentuk biasa tipis tapi nyata: *ég læri íslensku* berarti \"saya belajar bahasa Islandia\" (secara umum, sebagai kegiatan), sementara *ég er að læra íslensku* berarti \"saya sedang belajar bahasa Islandia\" (sekarang, di menit ini).",
+      "Bahasa Indonesia memakai \"sedang\" atau \"tengah\" untuk ini, jadi cara berpikirnya sudah kamu punya — yang baru cuma susunannya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Negara, orangnya, dan bahasanya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tiga kata untuk satu negara, dan ketiganya berbeda bentuk. Nama bahasa selalu ditulis **huruf kecil**; nama negara dan nama bangsa selalu **huruf besar**."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Negara",
+      "Orangnya",
+      "Bahasanya",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Ísland",
+       "Íslendingur",
+       "íslenska",
+       "Islandia"
+      ],
+      [
+       "Indónesía",
+       "Indónesi",
+       "indónesíska",
+       "Indonesia"
+      ],
+      [
+       "England",
+       "Englendingur",
+       "enska",
+       "Inggris"
+      ],
+      [
+       "Þýskaland",
+       "Þjóðverji",
+       "þýska",
+       "Jerman"
+      ],
+      [
+       "Danmörk",
+       "Dani",
+       "danska",
+       "Denmark"
+      ],
+      [
+       "Noregur",
+       "Norðmaður",
+       "norska",
+       "Norwegia"
+      ],
+      [
+       "Frakkland",
+       "Frakki",
+       "franska",
+       "Prancis"
+      ],
+      [
+       "Spánn",
+       "Spánverji",
+       "spænska",
+       "Spanyol"
+      ],
+      [
+       "Kína",
+       "Kínverji",
+       "kínverska",
+       "Tiongkok"
+      ],
+      [
+       "Japan",
+       "Japani",
+       "japanska",
+       "Jepang"
+      ],
+      [
+       "Bandaríkin",
+       "Bandaríkjamaður",
+       "enska",
+       "Amerika Serikat"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Dua kata yang khas Islandia",
+     "items": [
+      "*Bandaríkin* harfiahnya \"negara-negara-persekutuan\" — perhatikan bahwa orang Islandia **tidak** memakai kata \"Amerika\" untuk negaranya. Kebiasaan merakit kata sendiri yang disebut di kata pengantar bekerja bahkan pada nama negara.",
+      "*Norðmaður* harfiahnya \"orang-utara\"; *Þjóðverji* harfiahnya \"pembela-bangsa\". Kalau satu nama bangsa terasa tidak mirip nama negaranya, hampir selalu itu sebabnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bertanya asal dan tempat tinggal",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Íslenska",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Hvaðan ertu?",
+       "KVA-dhan ÈR-tü",
+       "Kamu dari mana?"
+      ],
+      [
+       "Ég er frá Indónesíu.",
+       "yègh èr frau IN-dou-nè-sii-ü",
+       "Saya dari Indonesia."
+      ],
+      [
+       "Hvar býrðu?",
+       "kvar BIIR-dhü",
+       "Kamu tinggal di mana?"
+      ],
+      [
+       "Ég bý í Reykjavík.",
+       "yègh bii ii REI-kya-viik",
+       "Saya tinggal di Reykjavík."
+      ],
+      [
+       "Hvaða mál talar þú?",
+       "KVA-dha maul TA-lar thuu",
+       "Bahasa apa saja yang kamu bisa?"
+      ],
+      [
+       "Ég tala smá íslensku.",
+       "yègh TA-la smau IIS-lèn-skü",
+       "Saya bisa sedikit bahasa Islandia."
+      ],
+      [
+       "Hvað ertu að gera?",
+       "kvadh ÈR-tü adh GÈ-ra",
+       "Kamu sedang apa?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa *hvar* (di mana) dan *hvaðan* (dari mana) adalah dua kata yang berbeda, dan tidak boleh ditukar. Bahasa Islandia juga punya *hvert* (ke mana), yang muncul di unit 11 — tiga kata untuk apa yang bahasa Indonesia sebut \"mana\" saja."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "is": "hvaðan",
+   "baca": "KVA-dhan",
+   "id": "dari mana"
+  },
+  {
+   "is": "hvar",
+   "baca": "kvar",
+   "id": "di mana"
+  },
+  {
+   "is": "búa",
+   "baca": "BUU-a",
+   "id": "tinggal, bermukim"
+  },
+  {
+   "is": "núna",
+   "baca": "NUU-na",
+   "id": "sekarang"
+  },
+  {
+   "is": "lengur",
+   "baca": "LEIN-gür",
+   "id": "lagi (dalam kalimat sangkal)"
+  },
+  {
+   "is": "mál",
+   "baca": "maul",
+   "id": "bahasa; perkara"
+  },
+  {
+   "is": "tungumál",
+   "baca": "TUN-gü-maul",
+   "id": "bahasa"
+  },
+  {
+   "is": "læra",
+   "baca": "LAI-ra",
+   "id": "belajar"
+  },
+  {
+   "is": "lesa",
+   "baca": "LÈ-sa",
+   "id": "membaca"
+  },
+  {
+   "is": "gera",
+   "baca": "GÈ-ra",
+   "id": "melakukan"
+  },
+  {
+   "is": "erfitt",
+   "baca": "ÈR-viht",
+   "id": "sulit"
+  },
+  {
+   "is": "skemmtilegt",
+   "baca": "SKÈM-ti-lègt",
+   "id": "menyenangkan"
+  },
+  {
+   "is": "en",
+   "baca": "èn",
+   "id": "tapi"
+  },
+  {
+   "is": "og",
+   "baca": "ogh",
+   "id": "dan"
+  },
+  {
+   "is": "kennari",
+   "baca": "KÈN-na-ri",
+   "id": "guru"
+  },
+  {
+   "is": "kaffihús",
+   "baca": "KA-fi-huus",
+   "id": "kafe"
+  },
+  {
+   "is": "satt",
+   "baca": "saht",
+   "id": "benar"
+  },
+  {
+   "is": "þá",
+   "baca": "thau",
+   "id": "maka, kalau begitu"
+  },
+  {
+   "is": "þurfa",
+   "baca": "THÜR-va",
+   "id": "perlu, butuh"
+  },
+  {
+   "is": "hjálp",
+   "baca": "hyaulp",
+   "id": "bantuan"
+  },
+  {
+   "is": "jú",
+   "baca": "yuu",
+   "id": "ya (membantah sangkalan)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Sangkal kalimat berikut dengan menaruh *ekki* di tempat yang benar.",
+   "items": [
+    "Ég tala þýsku.",
+    "Hún er hér.",
+    "Við búum í Jakarta.",
+    "Þú ert kennari.",
+    "Ég skil þig.",
+    "Þau eru að læra."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Islandia.",
+   "items": [
+    "Kamu dari mana?",
+    "Saya tinggal di Reykjavík.",
+    "Saya tidak bisa bahasa Jerman.",
+    "Saya sedang belajar bahasa Islandia.",
+    "Kamu sedang apa?",
+    "Bahasa apa saja yang kamu bisa?"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan nama bahasa atau nama bangsa yang tepat.",
+   "items": [
+    "Anna er frá Íslandi. Hún er ____.",
+    "Hann er frá Danmörku. Hann talar ____.",
+    "Ég er frá Indónesíu. Ég tala ____.",
+    "Þeir eru frá Þýskalandi. Þeir tala ____.",
+    "Hún er frá Frakklandi. Hún er ____."
+   ]
+  },
+  {
+   "prompt": "Ubah jadi bentuk \"sedang\" dengan *er að*.",
+   "items": [
+    "Ég læri íslensku.",
+    "Þú lest bók.",
+    "Hún talar í símann.",
+    "Við borðum.",
+    "Þeir vinna."
+   ]
+  }
+ ],
+ "answers": [
+  "Ég tala ekki þýsku. — Hún er ekki hér. — Við búum ekki í Jakarta. — Þú ert ekki kennari. — Ég skil þig ekki. — Þau eru ekki að læra.",
+  "Hvaðan ertu? — Ég bý í Reykjavík. — Ég tala ekki þýsku. — Ég er að læra íslensku. — Hvað ertu að gera? — Hvaða mál talar þú?",
+  "Íslendingur — dönsku — indónesísku — þýsku — Frakki",
+  "Ég er að læra íslensku. — Þú ert að lesa bók. — Hún er að tala í símann. — Við erum að borða. — Þeir eru að vinna."
+ ]
+}

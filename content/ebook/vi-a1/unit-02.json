@@ -1,0 +1,511 @@
+{
+ "title": "Sehat? — bertanya dan menyangkal",
+ "title_target": "Anh có khỏe không?",
+ "goal": "Membuat pertanyaan ya-atau-tidak dengan cetakan *có … không?*, menyangkal dengan *không* dan *không phải*, serta menjawab pertanyaan dalam bahasa yang tidak punya kata \"ya\".",
+ "bekal": [
+  "menyusun pertanyaan ya-atau-tidak dengan *có … không?* dan *… phải không?*",
+  "menyangkal kata kerja dengan *không* dan menyangkal kata benda dengan *không phải*",
+  "menjawab pertanyaan tanpa memakai kata \"ya\" — karena bahasa Vietnam tidak punya kata itu"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Chị làm việc ở đâu?",
+   "intro": "Seminggu kemudian, di kedai kopi yang sama. Budi bertemu Linh lagi dan mencoba bertanya lebih banyak — dan salah menduga pekerjaannya.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Chào chị Linh! Chị có khỏe không?",
+     "baca": "Cào cị Ling! Cị kó khỏe không?",
+     "id": "Halo, Mbak Linh! Mbak sehat?",
+     "literal": "salam kakak Linh! kakak ada sehat tidak?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Cảm ơn anh, tôi khỏe. Còn anh?",
+     "baca": "Kảm ơn ang, tôi khỏe. Kòn ang?",
+     "id": "Terima kasih, saya sehat. Kalau Kakak?",
+     "literal": "terima budi kakak, saya sehat. lalu kakak?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tôi cũng khỏe. Hôm nay chị có rảnh không?",
+     "baca": "Tôi kũng khỏe. Hôm nay cị kó zảng không?",
+     "id": "Saya juga sehat. Hari ini Mbak ada waktu?",
+     "literal": "saya juga sehat. hari ini kakak ada senggang tidak?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Không, hôm nay tôi không rảnh. Tôi phải đi làm.",
+     "baca": "Không, hôm nay tôi không zảng. Tôi fải di làm.",
+     "id": "Tidak, hari ini saya tidak senggang. Saya harus kerja.",
+     "literal": "tidak, hari ini saya tidak senggang. saya harus pergi kerja."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chị làm việc ở đâu? Ở trường à?",
+     "baca": "Cị làm việk ở dâu? Ở cường à?",
+     "id": "Mbak kerja di mana? Di sekolah?",
+     "literal": "kakak kerja di mana? di sekolah ya?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Không phải. Tôi làm ở bệnh viện — tôi là bác sĩ.",
+     "baca": "Không fải. Tôi làm ở bệng viện — tôi là bák sĩ.",
+     "id": "Bukan. Saya kerja di rumah sakit — saya dokter.",
+     "literal": "tidak benar. saya kerja di penyakit-lembaga — saya adalah dokter."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thật không? Tôi tưởng chị là giáo viên!",
+     "baca": "Thật không? Tôi tưởng cị là záo viên!",
+     "id": "Benarkah? Saya kira Mbak guru!",
+     "literal": "benar tidak? saya sangka kakak adalah guru!"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Không, tôi không phải là giáo viên. Chồng tôi là giáo viên.",
+     "baca": "Không, tôi không fải là záo viên. Cồng tôi là záo viên.",
+     "id": "Bukan, saya bukan guru. Suami saya guru.",
+     "literal": "tidak, saya tidak benar adalah guru. suami saya adalah guru."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "À, chị có gia đình rồi à?",
+     "baca": "À, cị kó za dìng zồi à?",
+     "id": "Oh, Mbak sudah berkeluarga?",
+     "literal": "ah, kakak punya keluarga sudah ya?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Vâng, tôi có hai con. Anh chưa có gia đình, phải không?",
+     "baca": "Vâng, tôi kó hai kon. Ang cưa kó za dìng, fải không?",
+     "id": "Ya, saya punya dua anak. Kakak belum berkeluarga, kan?",
+     "literal": "iya, saya punya dua anak. kakak belum punya keluarga, benar tidak?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ chưa. Tôi còn đi học mà!",
+     "baca": "Zạ cưa. Tôi kòn di họk mà!",
+     "id": "Belum. Saya masih sekolah kok!",
+     "literal": "iya belum. saya masih pergi belajar kok!"
+    }
+   ],
+   "notes": [
+    "**Có … không? adalah cetakan pertanyaan yang paling penting di seluruh bahasa Vietnam.** Yang ditanyakan dijepit di antara *có* dan *không*: *Chị **có** rảnh **không**?* Harfiahnya \"kakak **ada** senggang **tidak**?\" — dan itu persis pola \"ada waktu nggak?\" dalam bahasa Indonesia sehari-hari. Dalam percakapan santai *có* sering dijatuhkan: *Chị rảnh không?*",
+    "**Bahasa Vietnam tidak punya kata untuk \"ya\".** *Vâng* dan *dạ* bukan \"ya\" melainkan \"benar, sesuai katamu\" — ia menyetujui **rumusan penanyanya**, bukan kenyataannya. Cara menjawab yang paling alami adalah **mengulang kata kerjanya**: pertanyaan *Chị có rảnh không?* dijawab *Rảnh.* (senggang) atau *Không rảnh.* (tidak senggang).",
+    "**Không punya dua pekerjaan yang harus dipisah.** Di **depan kata kerja atau kata sifat** ia berarti \"tidak\": *tôi không rảnh*. Di **ujung kalimat** ia bagian dari cetakan pertanyaan. Dan untuk menyangkal **kata benda** ia tidak cukup sendiri — dipakai *không phải*: *Không phải.* = \"Bukan.\"",
+    "**Phải không? di ujung kalimat = \"kan?\"** Harfiahnya \"benar tidak?\", dan pekerjaannya sama persis dengan \"kan?\" atau \"ya?\" kita: menyodorkan dugaan dan meminta pembenaran. Sepupunya *à?* dan *hả?* — *à* melembut karena penanya baru menyadari sesuatu, *hả* lebih blak-blakan dan sedikit kaget.",
+    "**Chưa berarti \"belum\", dan ia jawaban yang utuh.** *Dạ chưa.* sudah lengkap sebagai kalimat. Perhatikan bahwa *chưa* bukan sangkalan biasa: ia menyisakan kemungkinan, persis seperti \"belum\" kita — dan sama seperti dalam bahasa Indonesia, menjawab \"belum\" untuk pertanyaan \"sudah menikah?\" terdengar jauh lebih sopan daripada menjawab \"tidak\".",
+    "**Mà di ujung kalimat = \"kok\" atau \"kan\".** Ia membantah dengan lembut, mengingatkan lawan bicara pada hal yang seharusnya sudah ia tahu: *Tôi còn đi học mà!* = \"Saya masih sekolah kok!\" Kata kecil semacam ini yang mengubah bahasa Vietnam-mu dari benar menjadi hidup; kumpulan lengkapnya di unit 17."
+   ],
+   "grammars": [
+    {
+     "title": "Empat cetakan pertanyaan ya-atau-tidak",
+     "body": [
+      "Semuanya dibuat dengan **menambah kata**, tidak satu pun dengan mengubah susunan kalimat. Susunan berita dan susunan pertanyaan sama persis — sama seperti bahasa Indonesia, dan berbeda dari bahasa Inggris yang memutar kalimatnya."
+     ],
+     "table": {
+      "head": [
+       "Cetakan",
+       "Contoh",
+       "Arti",
+       "Rasa"
+      ],
+      "rows": [
+       [
+        "**có** … **không?**",
+        "*Chị **có** rảnh **không**?*",
+        "Mbak ada waktu?",
+        "pertanyaan netral, paling lazim"
+       ],
+       [
+        "… **không?**",
+        "*Chị rảnh **không**?*",
+        "Mbak ada waktu?",
+        "sama, lebih santai"
+       ],
+       [
+        "… **phải không?**",
+        "*Chị là bác sĩ, **phải không**?*",
+        "Mbak dokter, kan?",
+        "sudah punya dugaan"
+       ],
+       [
+        "… **à?** / **hả?**",
+        "*Chị đi làm **à**?*",
+        "Mbak mau kerja, ya?",
+        "baru menyadari; *hả* lebih kaget"
+       ],
+       [
+        "… **chưa?**",
+        "*Anh ăn cơm **chưa**?*",
+        "Kakak sudah makan?",
+        "menanyakan yang sudah/belum"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Jangan campurkan *có … không?* dengan kata tanya.** Kalau kalimatnya sudah punya *gì*, *đâu*, *ai*, atau *nào*, cetakan *có … không?* **tidak dipakai**: *Chị làm việc ở đâu?* — bukan *Chị có làm việc ở đâu không?*. Aturannya sama seperti kita: \"kerja di mana?\" bukan \"apakah kerja di mana?\".",
+      "*Có* sendirian juga berarti \"ada\" dan \"punya\" — *tôi có hai con* = \"saya punya dua anak\". Jadi kalau kamu melihat *có* di tengah kalimat tanpa *không* di ujungnya, ia sedang bekerja sebagai kata kerja biasa, bukan sebagai penanda pertanyaan."
+     ]
+    },
+    {
+     "title": "Menjawab tanpa kata \"ya\"",
+     "body": [
+      "Karena tidak ada kata \"ya\", jawaban dibentuk dari **kata kerja pertanyaannya sendiri**. Ini terasa aneh dua hari, lalu terasa jauh lebih masuk akal daripada \"ya\"."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan",
+       "Jawab setuju",
+       "Jawab menyangkal"
+      ],
+      "rows": [
+       [
+        "*Chị có khỏe không?*",
+        "*Khỏe.* / *Cảm ơn, tôi khỏe.*",
+        "*Không khỏe lắm.*"
+       ],
+       [
+        "*Anh có đi không?*",
+        "*Đi.* / *Có.*",
+        "*Không đi.* / *Không.*"
+       ],
+       [
+        "*Chị là bác sĩ, phải không?*",
+        "*Vâng.* / *Phải.*",
+        "*Không phải.*"
+       ],
+       [
+        "*Anh ăn cơm chưa?*",
+        "*Rồi.* / *Ăn rồi.*",
+        "*Chưa.* / *Chưa ăn.*"
+       ],
+       [
+        "*Đây là nhà anh à?*",
+        "*Vâng.*",
+        "*Không phải.*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Vâng menyetujui rumusan penanya, bukan kenyataannya**, dan itu jebakan tersembunyi pada pertanyaan bernada sangkalan. *Anh không đi à?* (\"Kakak tidak ikut, ya?\") dijawab *Vâng* berarti \"benar, saya tidak ikut\" — bukan \"ya, saya ikut\". Kalau kamu justru ikut, jawablah *Có, tôi đi.*",
+      "Menjawab dengan mengulang kata kerja selalu aman dan selalu jelas. Kalau kamu bingung memilih antara *vâng* dan *không*, ulangi saja kata kerjanya — itulah yang paling sering dilakukan penutur asli."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Empat cara menyangkal",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Sangkalan",
+      "Letak",
+      "Menyangkal apa",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "**không**",
+       "sebelum kata kerja / sifat",
+       "perbuatan, keadaan",
+       "*Tôi **không** đi.* — Saya tidak pergi."
+      ],
+      [
+       "**không phải (là)**",
+       "sebelum kata benda",
+       "jati diri, identitas",
+       "*Tôi **không phải là** bác sĩ.* — Saya bukan dokter."
+      ],
+      [
+       "**chưa**",
+       "sebelum kata kerja",
+       "belum terjadi, masih mungkin",
+       "*Tôi **chưa** ăn.* — Saya belum makan."
+      ],
+      [
+       "**đừng**",
+       "sebelum kata kerja",
+       "larangan, perintah negatif",
+       "***Đừng** đi!* — Jangan pergi!"
+      ],
+      [
+       "**chẳng**",
+       "sebelum kata kerja",
+       "\"tidak\" yang lebih keras & santai",
+       "*Tôi **chẳng** biết.* — Saya nggak tahu."
+      ],
+      [
+       "**không … đâu**",
+       "menjepit kalimat",
+       "menegaskan sangkalan",
+       "*Không xa **đâu**!* — Nggak jauh kok!"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa keenamnya sepadan satu-satu dengan perkakas bahasa Indonesia: *không* = tidak, *không phải* = bukan, *chưa* = belum, *đừng* = jangan, *chẳng* = nggak, *không … đâu* = tidak … kok. Tidak ada satu pun yang perlu dipelajari sebagai gagasan baru — yang perlu dipelajari cuma bunyinya."
+    },
+    {
+     "type": "kotak",
+     "title": "Satu pertanyaan yang akan kamu dengar setiap hari",
+     "items": [
+      "*Ăn cơm chưa?* — harfiahnya \"sudah makan nasi belum?\". Ini sapaan, bukan pertanyaan sungguhan; sama seperti \"udah makan?\" yang kita ucapkan tanpa niat menyuguhi apa pun. Jawab *Rồi, cảm ơn.* atau *Chưa* apa adanya.",
+      "Sepupunya: *Đi đâu đấy?* — \"mau ke mana?\" — yang juga sekadar sapaan. Jawaban seperti *Đi chơi thôi.* (\"jalan-jalan aja\") sudah cukup dan tidak dianggap mengelak."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bertanya kabar dan keadaan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Anh có khỏe không?",
+       "Ang kó khỏe không?",
+       "Kakak sehat?"
+      ],
+      [
+       "Dạo này thế nào?",
+       "Zạo này thế nào?",
+       "Bagaimana belakangan ini?"
+      ],
+      [
+       "Anh có bận không?",
+       "Ang kó bận không?",
+       "Kakak sibuk?"
+      ],
+      [
+       "Anh có rảnh không?",
+       "Ang kó zảng không?",
+       "Kakak ada waktu?"
+      ],
+      [
+       "Anh có hiểu không?",
+       "Ang kó hiểu không?",
+       "Kakak mengerti?"
+      ],
+      [
+       "Anh có biết không?",
+       "Ang kó biết không?",
+       "Kakak tahu?"
+      ],
+      [
+       "Ở đây có wifi không?",
+       "Ở dây kó wifi không?",
+       "Di sini ada wifi?"
+      ],
+      [
+       "Còn chỗ không?",
+       "Kòn cỗ không?",
+       "Masih ada tempat?"
+      ],
+      [
+       "Được không?",
+       "Dượk không?",
+       "Boleh? Bisa?"
+      ],
+      [
+       "Thật không?",
+       "Thật không?",
+       "Benarkah?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Được không?* adalah salah satu kalimat paling berguna di seluruh bahasa Vietnam: dua kata, dan ia berarti \"boleh?\", \"bisa?\", \"oke?\" sekaligus. Kamu bisa menempelkannya di ujung hampir apa pun — tunjuk barangnya, sebutkan angkanya, lalu *được không?* Kata *được* punya unitnya sendiri, unit 12."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "có",
+   "baca": "kó",
+   "id": "ada, punya; penanda pertanyaan"
+  },
+  {
+   "vi": "không",
+   "baca": "không",
+   "id": "tidak; penanda pertanyaan"
+  },
+  {
+   "vi": "không phải",
+   "baca": "không fải",
+   "id": "bukan"
+  },
+  {
+   "vi": "chưa",
+   "baca": "cưa",
+   "id": "belum"
+  },
+  {
+   "vi": "rồi",
+   "baca": "zồi",
+   "id": "sudah"
+  },
+  {
+   "vi": "phải không?",
+   "baca": "fải không?",
+   "id": "kan?, ya?"
+  },
+  {
+   "vi": "khỏe",
+   "baca": "khỏe",
+   "id": "sehat, bugar"
+  },
+  {
+   "vi": "rảnh",
+   "baca": "zảng",
+   "id": "senggang, ada waktu"
+  },
+  {
+   "vi": "bận",
+   "baca": "bận",
+   "id": "sibuk"
+  },
+  {
+   "vi": "hôm nay",
+   "baca": "hôm nay",
+   "id": "hari ini"
+  },
+  {
+   "vi": "cũng",
+   "baca": "kũng",
+   "id": "juga"
+  },
+  {
+   "vi": "còn",
+   "baca": "kòn",
+   "id": "masih; lalu, kalau"
+  },
+  {
+   "vi": "phải",
+   "baca": "fải",
+   "id": "harus; benar"
+  },
+  {
+   "vi": "đi làm",
+   "baca": "di làm",
+   "id": "pergi kerja"
+  },
+  {
+   "vi": "làm việc",
+   "baca": "làm việk",
+   "id": "bekerja"
+  },
+  {
+   "vi": "trường",
+   "baca": "cường",
+   "id": "sekolah"
+  },
+  {
+   "vi": "bệnh viện",
+   "baca": "bệng viện",
+   "id": "rumah sakit"
+  },
+  {
+   "vi": "bác sĩ",
+   "baca": "bák sĩ",
+   "id": "dokter"
+  },
+  {
+   "vi": "giáo viên",
+   "baca": "záo viên",
+   "id": "guru"
+  },
+  {
+   "vi": "gia đình",
+   "baca": "za dìng",
+   "id": "keluarga"
+  },
+  {
+   "vi": "chồng / vợ",
+   "baca": "cồng / vợ",
+   "id": "suami / istri"
+  },
+  {
+   "vi": "con",
+   "baca": "kon",
+   "id": "anak"
+  },
+  {
+   "vi": "thật",
+   "baca": "thật",
+   "id": "benar, sungguh"
+  },
+  {
+   "vi": "biết",
+   "baca": "biết",
+   "id": "tahu; bisa"
+  },
+  {
+   "vi": "hiểu",
+   "baca": "hiểu",
+   "id": "mengerti"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah jadi pertanyaan dengan cetakan *có … không?*",
+   "items": [
+    "Chị rảnh.",
+    "Anh khỏe.",
+    "Anh biết chị Linh.",
+    "Ở đây có wifi.",
+    "Chị hiểu tiếng Việt."
+   ]
+  },
+  {
+   "prompt": "Sangkal dengan *không*, *không phải*, atau *chưa* — pilih yang tepat.",
+   "items": [
+    "Tôi là bác sĩ. → Tôi ____ bác sĩ.",
+    "Tôi đi làm. → Tôi ____ đi làm.",
+    "Tôi ăn cơm rồi. → Tôi ____ ăn cơm.",
+    "Đây là nhà tôi. → Đây ____ nhà tôi.",
+    "Tôi hiểu. → Tôi ____ hiểu.",
+    "Tôi có gia đình rồi. → Tôi ____ có gia đình."
+   ]
+  },
+  {
+   "prompt": "Jawablah dua kali: sekali setuju, sekali menyangkal. Pisahkan dengan garis miring.",
+   "items": [
+    "Anh có khỏe không?",
+    "Chị là giáo viên, phải không?",
+    "Anh ăn cơm chưa?",
+    "Ở đây có wifi không?",
+    "Anh có bận không?"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Hari ini saya tidak senggang.",
+    "Saya bukan guru.",
+    "Saya belum makan.",
+    "Mbak kerja di mana?",
+    "Suami saya dokter.",
+    "Saya punya dua anak."
+   ]
+  }
+ ],
+ "answers": [
+  "Chị có rảnh không? — Anh có khỏe không? — Anh có biết chị Linh không? — Ở đây có wifi không? — Chị có hiểu tiếng Việt không?",
+  "không phải là — không — chưa — không phải là — không — chưa",
+  "Khỏe. / Không khỏe lắm. — Vâng. / Không phải. — Rồi. / Chưa. — Có. / Không có. — Bận. / Không bận.",
+  "Hôm nay tôi không rảnh. — Tôi không phải là giáo viên. — Tôi chưa ăn cơm. — Chị làm việc ở đâu? — Chồng tôi là bác sĩ. — Tôi có hai con."
+ ]
+}

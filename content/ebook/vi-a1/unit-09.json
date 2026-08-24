@@ -1,0 +1,596 @@
+{
+ "title": "Enak! — makan dan memesan",
+ "title_target": "Cho tôi một bát phở.",
+ "goal": "Memesan makanan dan minuman dengan cetakan *cho tôi …*, membedakan dua kata \"atau\", dan menyebut rasa serta tingkat kenyang.",
+ "bekal": [
+  "memesan apa pun dengan susunan *cho tôi* + angka + penggolong + benda",
+  "membedakan *hay* (atau, dalam pertanyaan) dari *hoặc* (atau, dalam pernyataan)",
+  "menyebut rasa: *ngon, cay, mặn, ngọt, chua, đắng*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ở quán phở",
+   "intro": "Warung phở di trotoar, kursi plastik rendah, jam tujuh pagi. Budi sudah tiga kali ke sini tapi baru sekarang berani memesan tanpa menunjuk.",
+   "lines": [
+    {
+     "speaker": "Chủ quán:",
+     "text": "Anh ăn gì ạ?",
+     "id": "Kakak mau makan apa?",
+     "literal": "kakak makan apa ya?",
+     "baca": "Ang ăn gì ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Cho tôi một bát phở bò ạ.",
+     "id": "Minta satu mangkuk phở sapi.",
+     "literal": "beri saya satu mangkuk phở sapi ya.",
+     "baca": "Co tôi một bát fở bò ạ."
+    },
+    {
+     "speaker": "Chủ quán:",
+     "text": "Anh ăn phở tái hay phở chín?",
+     "id": "Kakak mau dagingnya setengah matang atau matang?",
+     "literal": "kakak makan phở setengah-matang atau phở matang?",
+     "baca": "Ang ăn fở tái hay fở cín?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Phở chín ạ. Chị ơi, có cay không?",
+     "id": "Yang matang. Mbak, pedas nggak?",
+     "literal": "phở matang ya. kakak hai, ada pedas tidak?",
+     "baca": "Fở cín ạ. Cị ơi, kó kay không?"
+    },
+    {
+     "speaker": "Chủ quán:",
+     "text": "Không cay. Anh muốn thêm ớt thì tự cho nhé.",
+     "id": "Nggak pedas. Kalau mau tambah cabai, ambil sendiri ya.",
+     "literal": "tidak pedas. kakak mau tambah cabai maka sendiri beri ya.",
+     "baca": "Không kay. Ang muốn thêm ớt thì tự co nyé."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vâng. Cho tôi thêm một đĩa rau nữa ạ.",
+     "id": "Baik. Minta tambah satu piring sayur lagi.",
+     "literal": "iya. beri saya tambah satu piring sayur lagi ya.",
+     "baca": "Vâng. Co tôi thêm một dĩa zau nữa ạ."
+    },
+    {
+     "speaker": "Chủ quán:",
+     "text": "Anh uống gì không?",
+     "id": "Mau minum apa?",
+     "literal": "kakak minum apa tidak?",
+     "baca": "Ang uống gì không?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Cho tôi một cốc trà đá.",
+     "id": "Minta satu gelas es teh.",
+     "literal": "beri saya satu gelas teh es.",
+     "baca": "Co tôi một kốk cà dá."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ngon quá! Phở ở đây ngon nhất.",
+     "id": "Enak sekali! Phở di sini paling enak.",
+     "literal": "enak terlalu! phở di sini enak paling.",
+     "baca": "Ngon kwá! Fở ở dây ngon nyất."
+    },
+    {
+     "speaker": "Chủ quán:",
+     "text": "Cảm ơn anh. Anh ăn no chưa?",
+     "id": "Terima kasih. Sudah kenyang?",
+     "literal": "terima budi kakak. kakak makan kenyang belum?",
+     "baca": "Kảm ơn ang. Ang ăn no cưa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "No rồi ạ. Chị tính tiền giúp tôi nhé!",
+     "id": "Sudah kenyang. Mbak, tolong hitung ya!",
+     "literal": "kenyang sudah ya. kakak hitung uang tolong saya ya!",
+     "baca": "No zồi ạ. Cị tíng tiền zúp tôi nyé!"
+    }
+   ],
+   "notes": [
+    "**Cho tôi … adalah satu-satunya kalimat yang kamu perlukan untuk memesan apa pun.** Harfiahnya \"beri saya …\", dan meskipun terdengar seperti perintah dalam terjemahan, dalam bahasa Vietnam inilah bentuk paling wajar dan paling sopan di warung, toko, dan kedai. Susunan lengkapnya persis susunan unit 4: *cho tôi* + angka + penggolong + benda.",
+    "**Hay dan hoặc dua-duanya \"atau\", tapi tidak bisa ditukar.** *Hay* dipakai dalam **pertanyaan** — *phở tái **hay** phở chín?* *Hoặc* dipakai dalam **pernyataan** — *tôi uống cà phê **hoặc** trà* (saya minum kopi atau teh). Bahasa Indonesia memakai satu kata untuk keduanya, jadi ini pembedaan yang benar-benar baru dan wajib dilatih.",
+    "**Tự berarti \"sendiri\" dan berdiri di depan kata kerja**: *tự cho* (ambil sendiri), *tự làm* (bikin sendiri), *tự học* (belajar sendiri). Di meja warung Vietnam hampir selalu ada nampan berisi cabai, jeruk nipis, tauge, dan daun-daunan — semuanya *tự*, dan tidak dihitung sebagai tambahan harga.",
+    "**Trà đá adalah minuman yang paling sering kamu temui**, dan di banyak warung ia **gratis** — teko esnya berdiri di meja dan boleh diisi ulang sendiri. Jangan bingung kalau tidak muncul di tagihan; itu memang bukan kelalaian.",
+    "**No berarti \"kenyang\" dan đói berarti \"lapar\"**, dan keduanya kata sifat, jadi ia berdiri sendiri tanpa kata kerja: *Tôi no rồi.* (saya sudah kenyang), *Tôi đói quá!* (saya lapar sekali). Pertanyaan *Ăn no chưa?* bukan basa-basi kosong — pemilik warung benar-benar akan menawarkan tambahan kalau kamu bilang belum.",
+    "**Giúp tôi berarti \"tolong saya\" dan berdiri SESUDAH kata kerjanya**: *tính tiền **giúp tôi*** (tolong hitungkan), *gọi taxi **giúp tôi*** (tolong panggilkan taksi). Ini cara paling halus meminta bantuan — lebih halus daripada *xin*, dan jauh lebih hangat."
+   ],
+   "grammars": [
+    {
+     "title": "Memesan: satu cetakan untuk semuanya",
+     "body": [
+      "Semua baris di tabel ini memakai susunan yang sama. Sekali kamu memegangnya, kamu bisa memesan apa pun di Vietnam tanpa menunjuk-nunjuk."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Angka",
+       "Penggolong",
+       "Benda",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Cho tôi **một bát phở**.*",
+        "một",
+        "bát",
+        "phở",
+        "Minta semangkuk phở."
+       ],
+       [
+        "*Cho tôi **hai cốc cà phê**.*",
+        "hai",
+        "cốc",
+        "cà phê",
+        "Minta dua gelas kopi."
+       ],
+       [
+        "*Cho tôi **một đĩa rau**.*",
+        "một",
+        "đĩa",
+        "rau",
+        "Minta sepiring sayur."
+       ],
+       [
+        "*Cho tôi **ba chai bia**.*",
+        "ba",
+        "chai",
+        "bia",
+        "Minta tiga botol bir."
+       ],
+       [
+        "*Cho tôi **một cái này**.*",
+        "một",
+        "cái",
+        "này",
+        "Minta satu yang ini."
+       ],
+       [
+        "*Cho tôi **thêm một cái nữa**.*",
+        "một",
+        "cái",
+        "—",
+        "Minta satu lagi."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Baris kelima adalah jalan darurat yang wajib kamu hafal: **Cho tôi một cái này** — \"minta satu yang ini\" — sambil menunjuk. Dengan kalimat itu saja kamu bisa makan di seluruh Vietnam sejak hari pertama, tanpa tahu satu pun nama makanan.",
+      "Menambahkan *ạ* di ujung menaikkan kesopanan satu tingkat dan selalu aman: *Cho tôi một bát phở ạ.* Kepada penjual yang jauh lebih tua, ini bukan pilihan melainkan keharusan."
+     ]
+    },
+    {
+     "title": "Hay atau hoặc?",
+     "body": [
+      "Satu-satunya pembedaan di unit ini yang benar-benar baru bagi penutur Indonesia. Aturannya pendek dan tidak ada kekecualiannya di tingkat A1."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Dipakai di",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "**hay**",
+        "pertanyaan pilihan",
+        "*Anh uống cà phê **hay** trà?*",
+        "Kakak minum kopi atau teh?"
+       ],
+       [
+        "**hay**",
+        "pertanyaan pilihan",
+        "*Phở tái **hay** phở chín?*",
+        "Setengah matang atau matang?"
+       ],
+       [
+        "**hoặc**",
+        "pernyataan",
+        "*Tôi uống cà phê **hoặc** trà.*",
+        "Saya minum kopi atau teh."
+       ],
+       [
+        "**hoặc**",
+        "pernyataan",
+        "*Thứ hai **hoặc** thứ ba đều được.*",
+        "Senin atau Selasa sama-sama bisa."
+       ],
+       [
+        "**hay là**",
+        "usul, ajakan",
+        "***Hay là** mình đi ăn phở?*",
+        "Gimana kalau kita makan phở?"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *Hay* punya arti kedua yang sama sekali berbeda: **\"menarik, bagus\"** — *Phim này hay quá!* (\"film ini bagus sekali!\"). Yang membedakannya cuma letak: *hay* di antara dua pilihan berarti \"atau\", *hay* sesudah kata benda berarti \"menarik\".",
+      "*Hay là* di **awal** kalimat adalah cara mengusulkan sesuatu dengan lembut — persis seperti \"gimana kalau\" kita. Ini salah satu kalimat pembuka paling berguna untuk mengajak teman."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Makanan dan minuman",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Arti",
+      "Tiếng Việt",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "cơm",
+       "kơm",
+       "nasi",
+       "phở",
+       "",
+       "phở (mi kuah)"
+      ],
+      [
+       "bún",
+       "bún",
+       "bihun putih",
+       "mì",
+       "",
+       "mi"
+      ],
+      [
+       "bánh mì",
+       "báng mì",
+       "roti; roti isi",
+       "xôi",
+       "",
+       "ketan"
+      ],
+      [
+       "thịt bò",
+       "thịt bò",
+       "daging sapi",
+       "thịt gà",
+       "",
+       "daging ayam"
+      ],
+      [
+       "thịt lợn",
+       "thịt lợn",
+       "daging babi",
+       "cá",
+       "",
+       "ikan"
+      ],
+      [
+       "tôm",
+       "tôm",
+       "udang",
+       "trứng",
+       "",
+       "telur"
+      ],
+      [
+       "rau",
+       "zau",
+       "sayur",
+       "hoa quả",
+       "",
+       "buah-buahan"
+      ],
+      [
+       "nước",
+       "nướk",
+       "air",
+       "nước mắm",
+       "",
+       "kecap ikan"
+      ],
+      [
+       "trà / chè",
+       "cà / cè",
+       "teh",
+       "cà phê sữa",
+       "",
+       "kopi susu"
+      ],
+      [
+       "bia",
+       "bia",
+       "bir",
+       "đá",
+       "",
+       "es"
+      ],
+      [
+       "muối / đường",
+       "muối / dường",
+       "garam / gula",
+       "ớt",
+       "",
+       "cabai"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Thịt lợn* (daging babi) dipakai di utara, *thịt heo* di selatan. Bagi pembaca yang tidak memakannya, dua kata ini penting dikenali dua-duanya — dan kalimat yang menyelamatkan adalah *Tôi không ăn thịt lợn.* atau lebih aman lagi *Tôi ăn chay.* (\"saya makan vegetarian\"), yang dipahami di mana pun karena tradisi puasa Buddha sangat lazim di Vietnam."
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan lagi susunan baloknya: *nước mắm* = air + ikan asin, *bánh mì* = kue + gandum, *cà phê sữa* = kopi + susu, *thịt bò* = daging + sapi. Kata benda Vietnam hampir selalu bisa dibongkar, dan membongkarnya jauh lebih hemat daripada menghafal bunyinya utuh."
+    }
+   ]
+  },
+  {
+   "title": "Rasa, dan meminta yang kamu mau",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Arti",
+      "Kalimat siap pakai"
+     ],
+     "rows": [
+      [
+       "ngon",
+       "ngon",
+       "enak",
+       "*Ngon quá!*"
+      ],
+      [
+       "cay",
+       "kay",
+       "pedas",
+       "*Đừng cay quá nhé.*"
+      ],
+      [
+       "mặn",
+       "mặn",
+       "asin",
+       "*Hơi mặn.*"
+      ],
+      [
+       "ngọt",
+       "ngọt",
+       "manis",
+       "*Ít đường thôi nhé.*"
+      ],
+      [
+       "chua",
+       "cua",
+       "asam",
+       "*Chua quá!*"
+      ],
+      [
+       "đắng",
+       "dắng",
+       "pahit",
+       "*Cà phê đắng lắm.*"
+      ],
+      [
+       "nóng / lạnh",
+       "nóng / lạng",
+       "panas / dingin",
+       "*Cho tôi trà nóng.*"
+      ],
+      [
+       "no / đói",
+       "no / dói",
+       "kenyang / lapar",
+       "*Tôi đói quá!*"
+      ],
+      [
+       "chay",
+       "cay",
+       "vegetarian",
+       "*Tôi ăn chay.*"
+      ],
+      [
+       "thử",
+       "thử",
+       "coba",
+       "*Cho tôi ăn thử.*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kebiasaan meja makan yang perlu diketahui",
+     "items": [
+      "**Semua lauk ditaruh di tengah dan dimakan bersama**, sementara tiap orang punya mangkuk nasinya sendiri. Persis seperti makan bersama di rumah kita, dan berbeda dari piring per orang ala Barat. Mengambil lauk untuk orang lain — terutama yang lebih tua — dianggap sangat sopan.",
+      "**Sebelum mulai, yang lebih muda mempersilakan yang lebih tua**: *Cháu mời ông bà ăn cơm ạ.* atau cukup *Mời cả nhà ăn cơm.* Melewatkannya tidak fatal untuk orang asing, tapi mengucapkannya akan sangat diperhatikan.",
+      "**Sumpit tidak boleh ditancapkan tegak di nasi** — bentuknya menyerupai dupa di altar leluhur, dan itu pertanda buruk. Letakkan melintang di atas mangkuk atau di sandaran sumpit."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "cho tôi",
+   "id": "minta, beri saya",
+   "baca": "co tôi"
+  },
+  {
+   "vi": "ăn / uống",
+   "id": "makan / minum",
+   "baca": "ăn / uống"
+  },
+  {
+   "vi": "bát / đĩa",
+   "id": "mangkuk / piring",
+   "baca": "bát / dĩa"
+  },
+  {
+   "vi": "cốc / ly",
+   "id": "gelas",
+   "baca": "kốk / ly"
+  },
+  {
+   "vi": "chai",
+   "id": "botol",
+   "baca": "cai"
+  },
+  {
+   "vi": "cơm",
+   "id": "nasi",
+   "baca": "kơm"
+  },
+  {
+   "vi": "thịt bò / thịt gà",
+   "id": "daging sapi / ayam",
+   "baca": "thịt bò / thịt gà"
+  },
+  {
+   "vi": "cá / tôm",
+   "id": "ikan / udang",
+   "baca": "ká / tôm"
+  },
+  {
+   "vi": "rau",
+   "id": "sayur",
+   "baca": "zau"
+  },
+  {
+   "vi": "trứng",
+   "id": "telur",
+   "baca": "cứng"
+  },
+  {
+   "vi": "nước",
+   "id": "air",
+   "baca": "nướk"
+  },
+  {
+   "vi": "trà đá",
+   "id": "es teh",
+   "baca": "cà dá"
+  },
+  {
+   "vi": "đá",
+   "id": "es",
+   "baca": "dá"
+  },
+  {
+   "vi": "ớt",
+   "id": "cabai",
+   "baca": "ớt"
+  },
+  {
+   "vi": "cay / mặn / ngọt",
+   "id": "pedas / asin / manis",
+   "baca": "kay / mặn / ngọt"
+  },
+  {
+   "vi": "chua / đắng",
+   "id": "asam / pahit",
+   "baca": "cua / dắng"
+  },
+  {
+   "vi": "no / đói",
+   "id": "kenyang / lapar",
+   "baca": "no / dói"
+  },
+  {
+   "vi": "chay",
+   "id": "vegetarian",
+   "baca": "cay"
+  },
+  {
+   "vi": "hay",
+   "id": "atau (dalam pertanyaan); menarik",
+   "baca": "hay"
+  },
+  {
+   "vi": "hoặc",
+   "id": "atau (dalam pernyataan)",
+   "baca": "hoặk"
+  },
+  {
+   "vi": "tự",
+   "id": "sendiri",
+   "baca": "tự"
+  },
+  {
+   "vi": "thử",
+   "id": "coba",
+   "baca": "thử"
+  },
+  {
+   "vi": "giúp",
+   "id": "menolong",
+   "baca": "zúp"
+  },
+  {
+   "vi": "tính tiền",
+   "id": "menghitung, minta bon",
+   "baca": "tíng tiền"
+  },
+  {
+   "vi": "chủ quán",
+   "id": "pemilik warung",
+   "baca": "củ kwán"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pesan dalam bahasa Vietnam.",
+   "items": [
+    "Satu mangkuk phở sapi.",
+    "Dua gelas kopi susu.",
+    "Satu piring sayur.",
+    "Tiga botol bir.",
+    "Satu gelas es teh.",
+    "Satu lagi."
+   ]
+  },
+  {
+   "prompt": "Pilih *hay* atau *hoặc*.",
+   "items": [
+    "Anh uống cà phê ____ trà?",
+    "Tôi ăn phở ____ bún đều được.",
+    "Phở tái ____ phở chín?",
+    "Thứ hai ____ thứ ba tôi rảnh.",
+    "Anh đi hôm nay ____ ngày mai?"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Enak sekali!",
+    "Saya lapar.",
+    "Saya sudah kenyang.",
+    "Saya makan vegetarian.",
+    "Jangan terlalu pedas ya.",
+    "Tolong hitung."
+   ]
+  },
+  {
+   "prompt": "Jawab pertanyaan pelayan berikut dengan kalimat penuh.",
+   "items": [
+    "Anh ăn gì ạ?",
+    "Anh uống gì không?",
+    "Anh ăn phở tái hay phở chín?",
+    "Có cay không ạ?",
+    "Anh ăn no chưa?"
+   ]
+  }
+ ],
+ "answers": [
+  "Cho tôi một bát phở bò. — Cho tôi hai cốc cà phê sữa. — Cho tôi một đĩa rau. — Cho tôi ba chai bia. — Cho tôi một cốc trà đá. — Cho tôi thêm một cái nữa.",
+  "hay — hoặc — hay — hoặc — hay",
+  "Ngon quá! — Tôi đói quá! — Tôi no rồi. — Tôi ăn chay. — Đừng cay quá nhé. — Tính tiền giúp tôi nhé.",
+  "Cho tôi một bát phở ạ. — Cho tôi một cốc trà đá. — Phở chín ạ. — Không cay ạ. / Cay một chút ạ. — No rồi ạ."
+ ]
+}

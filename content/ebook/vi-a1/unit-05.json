@@ -1,0 +1,564 @@
+{
+ "title": "Keluarga saya — kepunyaan",
+ "title_target": "Đây là gia đình của tôi.",
+ "goal": "Menyebut anggota keluarga dengan kata yang tepat, menyatakan kepunyaan dengan *của* — dan melihat bahwa *của* boleh dijatuhkan persis seperti \"milik\" dalam bahasa Indonesia.",
+ "bekal": [
+  "menyatakan kepunyaan dengan *của*, dan tahu kapan ia boleh dijatuhkan",
+  "menyebut anggota keluarga yang dibedakan menurut umur dan menurut pihak ayah atau ibu",
+  "bertanya dan menjawab tentang pekerjaan dengan *làm nghề gì?*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ảnh gia đình",
+   "intro": "Di kantin kampus. Budi memperlihatkan foto keluarganya kepada Nam, teman sekelasnya yang sudah berkeluarga.",
+   "lines": [
+    {
+     "speaker": "Nam:",
+     "text": "Ảnh này đẹp quá! Ai đây?",
+     "id": "Foto ini bagus sekali! Ini siapa?",
+     "literal": "gambar ini bagus terlalu! siapa sini?",
+     "baca": "Ảng này dẹp kwá! Ai dây?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Đây là gia đình của tôi.",
+     "id": "Ini keluarga saya.",
+     "literal": "sini adalah keluarga punya saya.",
+     "baca": "Dây là za dìng kủa tôi."
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Gia đình anh có mấy người?",
+     "id": "Keluarga Kakak berapa orang?",
+     "literal": "keluarga kakak ada berapa orang?",
+     "baca": "Za dìng ang kó mấy người?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Có năm người: bố mẹ tôi, hai chị gái và tôi.",
+     "id": "Ada lima orang: orang tua saya, dua kakak perempuan, dan saya.",
+     "literal": "ada lima orang: ayah ibu saya, dua kakak perempuan dan saya.",
+     "baca": "Kó năm người: bố mẹ tôi, hai cị gái và tôi."
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Chị gái anh làm nghề gì?",
+     "id": "Kakak perempuan Kakak kerjanya apa?",
+     "literal": "kakak perempuan kakak buat pekerjaan apa?",
+     "baca": "Cị gái ang làm ngề gì?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chị cả là kỹ sư, còn chị thứ hai là y tá.",
+     "id": "Kakak sulung insinyur, kakak yang kedua perawat.",
+     "literal": "kakak sulung adalah insinyur, lalu kakak urutan dua adalah perawat.",
+     "baca": "Cị kả là kỹ sư, kòn cị thứ hai là y tá."
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Bố mẹ anh sống ở đâu?",
+     "id": "Orang tua Kakak tinggal di mana?",
+     "literal": "ayah ibu kakak hidup di mana?",
+     "baca": "Bố mẹ ang sống ở dâu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bố mẹ tôi sống ở Bandung. Còn gia đình anh?",
+     "id": "Orang tua saya tinggal di Bandung. Kalau keluarga Kakak?",
+     "literal": "ayah ibu saya hidup di Bandung. lalu keluarga kakak?",
+     "baca": "Bố mẹ tôi sống ở Bandung. Kòn za dìng ang?"
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Nhà tôi chỉ có ba người thôi: tôi, vợ tôi và con gái.",
+     "id": "Rumah saya cuma tiga orang: saya, istri saya, dan anak perempuan.",
+     "literal": "rumah saya hanya ada tiga orang saja: saya, istri saya dan anak perempuan.",
+     "baca": "Nyà tôi cỉ kó ba người thôi: tôi, vợ tôi và kon gái."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Con gái anh mấy tuổi rồi?",
+     "id": "Anak perempuan Kakak umurnya berapa?",
+     "literal": "anak perempuan kakak berapa umur sudah?",
+     "baca": "Kon gái ang mấy tuổi zồi?"
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Cháu ba tuổi. Cháu là con một.",
+     "id": "Dia tiga tahun. Dia anak tunggal.",
+     "literal": "cucu tiga umur. cucu adalah anak satu.",
+     "baca": "Cáu ba tuổi. Cáu là kon một."
+    }
+   ],
+   "notes": [
+    "**Của berarti \"milik\", dan seperti dalam bahasa Indonesia ia sering dijatuhkan.** *Gia đình **của** tôi* dan *gia đình tôi* dua-duanya \"keluarga saya\", dan yang pendek justru lebih sering terdengar. Bandingkan dengan kita: \"rumah **milik** saya\" benar, tapi kita hampir selalu bilang \"rumah saya\".",
+    "**Kata keluarga Vietnam membedakan lebih banyak hal daripada milik kita, tapi arahnya sama.** Kita sudah membedakan kakak dan adik — bahasa Inggris tidak. Bahasa Vietnam menambah satu lapis lagi: laki-laki atau perempuan (*anh trai* / *chị gái*, *em trai* / *em gái*), dan pihak ayah atau ibu untuk kakek-nenek dan paman-bibi.",
+    "**Cháu berarti \"cucu\" dan \"keponakan\" sekaligus**, dan dipakai juga untuk menyebut anak kecil siapa pun secara halus — seperti Nam menyebut anaknya sendiri di baris terakhir. Lebih penting lagi: *cháu* adalah kata yang kamu pakai untuk **dirimu sendiri** saat berbicara kepada orang seusia kakek-nenekmu.",
+    "**Chỉ … thôi menjepit kalimat dan berarti \"cuma … aja\".** *Chỉ có ba người thôi* = \"cuma tiga orang aja\". *Chỉ* di depan, *thôi* di ujung; salah satunya boleh dijatuhkan, tapi dua-duanya sekaligus terdengar paling wajar dalam percakapan.",
+    "**Làm nghề gì? adalah cara baku menanyakan pekerjaan** — harfiahnya \"membuat pekerjaan apa?\". Jangan tertukar dengan *làm gì?* yang berarti \"sedang apa?\" pada saat itu juga. *Anh làm nghề gì?* menanyakan profesi; *Anh làm gì đấy?* menanyakan apa yang sedang kamu kerjakan sekarang.",
+    "**Chị cả berarti \"kakak sulung\"**, dan urutan anak disebut dengan *thứ*: *chị thứ hai* (kakak kedua), *em thứ ba* (adik ketiga). ⚠️ Di Vietnam selatan hitungannya bergeser satu: anak sulung disebut *thứ hai*, bukan *thứ nhất*. Kalau kamu bingung mendengar keluarga selatan menyebut \"anak kedua\" untuk anak pertama, inilah sebabnya."
+   ],
+   "grammars": [
+    {
+     "title": "Của — kepunyaan, dan kapan ia menghilang",
+     "body": [
+      "Susunannya **benda + (của) + pemilik**, dan urutan itu sama dengan bahasa Indonesia: yang dimiliki lebih dulu, pemiliknya di belakang."
+     ],
+     "table": {
+      "head": [
+       "Tiếng Việt",
+       "Arti",
+       "Boleh dijatuhkan?"
+      ],
+      "rows": [
+       [
+        "*nhà **của** tôi* → *nhà tôi*",
+        "rumah saya",
+        "✓ hampir selalu dijatuhkan"
+       ],
+       [
+        "*gia đình **của** anh* → *gia đình anh*",
+        "keluarga Kakak",
+        "✓ dijatuhkan"
+       ],
+       [
+        "*sách **của** tôi*",
+        "buku saya",
+        "✓ dijatuhkan"
+       ],
+       [
+        "*bạn **của** chị Linh*",
+        "teman Mbak Linh",
+        "✓ dijatuhkan"
+       ],
+       [
+        "*Cái này **của** ai?*",
+        "Ini punya siapa?",
+        "✗ **wajib** — jadi inti kalimat"
+       ],
+       [
+        "*Cái này **của** tôi.*",
+        "Ini punya saya.",
+        "✗ **wajib** — jadi inti kalimat"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Của tidak boleh dijatuhkan kalau ia sendiri yang jadi inti kalimat.** Kalau kalimatnya justru menyatakan \"punya siapa\", *của* wajib berdiri: *Cái này của tôi.* — bukan *Cái này tôi.* Aturannya sama dengan \"punya\" dalam bahasa Indonesia: \"ini punya saya\" tidak bisa dipendekkan jadi \"ini saya\".",
+      "*Của ai?* = \"punya siapa?\" dan *của tôi* = \"punya saya\" adalah dua bongkahan siap pakai yang sangat sering dibutuhkan — di penginapan, di bandara, di meja makan bersama."
+     ]
+    },
+    {
+     "title": "Keluarga: satu kata untuk satu tempat",
+     "body": [
+      "Tidak ada satu kata pun yang berarti \"saudara\" begitu saja, dan tidak ada \"paman\" umum. Kamu harus tahu **lebih tua atau lebih muda**, dan untuk generasi di atas, **dari pihak ayah atau ibu**."
+     ],
+     "table": {
+      "head": [
+       "Tiếng Việt",
+       "Arti",
+       "Tiếng Việt",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*bố* (utara) / *ba* (selatan)",
+        "ayah",
+        "*mẹ* / *má*",
+        "ibu"
+       ],
+       [
+        "*bố mẹ*",
+        "orang tua",
+        "*con*",
+        "anak"
+       ],
+       [
+        "*anh trai*",
+        "kakak laki-laki",
+        "*chị gái*",
+        "kakak perempuan"
+       ],
+       [
+        "*em trai*",
+        "adik laki-laki",
+        "*em gái*",
+        "adik perempuan"
+       ],
+       [
+        "*con trai*",
+        "anak laki-laki",
+        "*con gái*",
+        "anak perempuan"
+       ],
+       [
+        "*ông nội* / *bà nội*",
+        "kakek / nenek dari ayah",
+        "*ông ngoại* / *bà ngoại*",
+        "kakek / nenek dari ibu"
+       ],
+       [
+        "*chú*",
+        "adik laki-laki ayah",
+        "*cô*",
+        "adik perempuan ayah"
+       ],
+       [
+        "*cậu*",
+        "adik laki-laki ibu",
+        "*dì*",
+        "adik perempuan ibu"
+       ],
+       [
+        "*bác*",
+        "kakak ayah atau ibu (L/P)",
+        "*cháu*",
+        "cucu; keponakan"
+       ],
+       [
+        "*chồng* / *vợ*",
+        "suami / istri",
+        "*con một*",
+        "anak tunggal"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Nội berarti \"dalam\" dan ngoại berarti \"luar\"** — pihak ayah dianggap dalam, pihak ibu dianggap luar. Pembedaan itu tidak sopan menurut ukuran zaman sekarang, tapi katanya sudah telanjur beku dalam bahasa dan tetap dipakai semua orang tanpa memikirkan asal-usulnya.",
+      "Kabar baiknya: sebagian besar kata di tabel ini **juga dipakai sebagai kata ganti** kepada orang asing, persis seperti kita memanggil orang \"om\", \"tante\", \"kakek\". Jadi kamu tidak sedang menghafal dua daftar; kamu sedang memperdalam daftar yang sama dari unit 1."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pekerjaan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "giáo viên",
+       "záo viên",
+       "guru"
+      ],
+      [
+       "bác sĩ",
+       "bák sĩ",
+       "dokter"
+      ],
+      [
+       "y tá",
+       "y tá",
+       "perawat"
+      ],
+      [
+       "kỹ sư",
+       "kỹ sư",
+       "insinyur"
+      ],
+      [
+       "luật sư",
+       "luật sư",
+       "pengacara"
+      ],
+      [
+       "nhân viên",
+       "nyân viên",
+       "pegawai, karyawan"
+      ],
+      [
+       "công nhân",
+       "kông nyân",
+       "buruh"
+      ],
+      [
+       "nông dân",
+       "nông zân",
+       "petani"
+      ],
+      [
+       "sinh viên / học sinh",
+       "sing viên / họk sing",
+       "mahasiswa / pelajar"
+      ],
+      [
+       "nội trợ",
+       "nội cợ",
+       "ibu rumah tangga"
+      ],
+      [
+       "đầu bếp",
+       "dầu bếp",
+       "juru masak"
+      ],
+      [
+       "lái xe",
+       "lái se",
+       "sopir"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa banyak nama pekerjaan Vietnam adalah gabungan dua kata yang masing-masing punya arti sendiri: *nông dân* = tani + rakyat, *công nhân* = kerja + orang, *đầu bếp* = kepala + dapur. Membongkarnya seperti ini membuat kata baru jauh lebih mudah menempel daripada menghafal bunyinya utuh."
+    },
+    {
+     "type": "p",
+     "text": "Untuk menjawab, cukup *Tôi là* + pekerjaan: *Tôi là kỹ sư.* Kalau kamu belum bekerja: *Tôi còn đi học.* (\"saya masih sekolah\") atau *Tôi chưa đi làm.* (\"saya belum bekerja\")."
+    }
+   ]
+  },
+  {
+   "title": "Bertanya tentang orang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Pertanyaan",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Ai đây?",
+       "Ai dây?",
+       "Ini siapa?"
+      ],
+      [
+       "Đây là ai?",
+       "Dây là ai?",
+       "Ini siapa?"
+      ],
+      [
+       "Cái này của ai?",
+       "Kái này kủa ai?",
+       "Ini punya siapa?"
+      ],
+      [
+       "Gia đình anh có mấy người?",
+       "Za dìng ang kó mấy người?",
+       "Keluarga Kakak berapa orang?"
+      ],
+      [
+       "Anh làm nghề gì?",
+       "Ang làm ngề gì?",
+       "Kakak kerjanya apa?"
+      ],
+      [
+       "Anh có mấy anh chị em?",
+       "Ang kó mấy ang cị em?",
+       "Kakak berapa bersaudara?"
+      ],
+      [
+       "Anh có gia đình chưa?",
+       "Ang kó za dìng cưa?",
+       "Kakak sudah berkeluarga?"
+      ],
+      [
+       "Anh sống ở đâu?",
+       "Ang sống ở dâu?",
+       "Kakak tinggal di mana?"
+      ],
+      [
+       "Anh sống với ai?",
+       "Ang sống với ai?",
+       "Kakak tinggal dengan siapa?"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Satu jawaban yang menyelamatkan banyak percakapan",
+     "items": [
+      "*Anh có gia đình chưa?* akan ditanyakan kepadamu berkali-kali, dan menjawab *Chưa* saja sudah cukup dan sopan. Menambahkan *Chưa, em còn đi học ạ.* menutup pertanyaan lanjutan dengan ramah.",
+      "⚠️ Perhatikan bahwa pertanyaannya memakai *chưa* (\"belum\"), bukan *không* (\"tidak\") — bahasa Vietnam menganggap berkeluarga sebagai hal yang tinggal menunggu waktu. Menjawab dengan *không* terdengar seperti menolak gagasan itu sama sekali, dan itu bunyinya jauh lebih keras daripada yang kamu maksud."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "của",
+   "id": "punya, milik",
+   "baca": "kủa"
+  },
+  {
+   "vi": "ai",
+   "id": "siapa",
+   "baca": "ai"
+  },
+  {
+   "vi": "ảnh",
+   "id": "foto, gambar",
+   "baca": "ảng"
+  },
+  {
+   "vi": "bố / ba",
+   "id": "ayah",
+   "baca": "bố / ba"
+  },
+  {
+   "vi": "mẹ / má",
+   "id": "ibu",
+   "baca": "mẹ / má"
+  },
+  {
+   "vi": "bố mẹ",
+   "id": "orang tua",
+   "baca": "bố mẹ"
+  },
+  {
+   "vi": "anh trai",
+   "id": "kakak laki-laki",
+   "baca": "ang cai"
+  },
+  {
+   "vi": "chị gái",
+   "id": "kakak perempuan",
+   "baca": "cị gái"
+  },
+  {
+   "vi": "em trai / em gái",
+   "id": "adik laki-laki / perempuan",
+   "baca": "em cai / em gái"
+  },
+  {
+   "vi": "con trai / con gái",
+   "id": "anak laki-laki / perempuan",
+   "baca": "kon cai / kon gái"
+  },
+  {
+   "vi": "ông / bà",
+   "id": "kakek / nenek",
+   "baca": "ông / bà"
+  },
+  {
+   "vi": "cháu",
+   "id": "cucu; keponakan",
+   "baca": "cáu"
+  },
+  {
+   "vi": "cả",
+   "id": "sulung; seluruh",
+   "baca": "kả"
+  },
+  {
+   "vi": "thứ",
+   "id": "urutan ke-",
+   "baca": "thứ"
+  },
+  {
+   "vi": "con một",
+   "id": "anak tunggal",
+   "baca": "kon một"
+  },
+  {
+   "vi": "sống",
+   "id": "hidup, tinggal",
+   "baca": "sống"
+  },
+  {
+   "vi": "nghề",
+   "id": "pekerjaan, profesi",
+   "baca": "ngề"
+  },
+  {
+   "vi": "kỹ sư",
+   "id": "insinyur",
+   "baca": "kỹ sư"
+  },
+  {
+   "vi": "y tá",
+   "id": "perawat",
+   "baca": "y tá"
+  },
+  {
+   "vi": "công nhân",
+   "id": "buruh",
+   "baca": "kông nyân"
+  },
+  {
+   "vi": "nông dân",
+   "id": "petani",
+   "baca": "nông zân"
+  },
+  {
+   "vi": "nội trợ",
+   "id": "ibu rumah tangga",
+   "baca": "nội cợ"
+  },
+  {
+   "vi": "chỉ … thôi",
+   "id": "cuma … saja",
+   "baca": "cỉ … thôi"
+  },
+  {
+   "vi": "với",
+   "id": "dengan, bersama",
+   "baca": "với"
+  },
+  {
+   "vi": "tuổi",
+   "id": "umur",
+   "baca": "tuổi"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Ini keluarga saya.",
+    "Keluarga saya ada lima orang.",
+    "Orang tua saya tinggal di Bandung.",
+    "Kakak perempuan saya perawat.",
+    "Ini punya siapa?",
+    "Saya anak tunggal."
+   ]
+  },
+  {
+   "prompt": "Sebutkan kata Vietnam untuk anggota keluarga berikut.",
+   "items": [
+    "kakak laki-laki",
+    "adik perempuan",
+    "nenek dari pihak ibu",
+    "anak perempuan",
+    "istri",
+    "adik perempuan ayah"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan *của* — atau kosongkan kalau lebih wajar dijatuhkan.",
+   "items": [
+    "Đây là nhà ____ tôi. (biasa)",
+    "Cái này ____ ai?",
+    "Gia đình ____ anh có mấy người? (biasa)",
+    "Quyển sách này ____ tôi.",
+    "Bạn ____ chị Linh là bác sĩ. (biasa)"
+   ]
+  },
+  {
+   "prompt": "Jawab tentang dirimu sendiri, satu kalimat penuh.",
+   "items": [
+    "Gia đình anh/chị có mấy người?",
+    "Anh/chị làm nghề gì?",
+    "Bố mẹ anh/chị sống ở đâu?",
+    "Anh/chị có mấy anh chị em?",
+    "Anh/chị sống với ai?"
+   ]
+  }
+ ],
+ "answers": [
+  "Đây là gia đình của tôi. — Gia đình tôi có năm người. — Bố mẹ tôi sống ở Bandung. — Chị gái tôi là y tá. — Cái này của ai? — Tôi là con một.",
+  "anh trai — em gái — bà ngoại — con gái — vợ — cô",
+  "(kosong) — của — (kosong) — của — (kosong)",
+  "Gia đình tôi có … người. — Tôi là … / Tôi còn đi học. — Bố mẹ tôi sống ở … — Tôi có … anh chị em. — Tôi sống với …"
+ ]
+}

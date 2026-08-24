@@ -1,0 +1,552 @@
+{
+ "title": "Naik apa? — kendaraan dan arah",
+ "title_target": "Anh đi bằng gì?",
+ "goal": "Menyebut kendaraan dengan *bằng*, menunjukkan arah kepada pengemudi, dan bertanya berapa lama perjalanan memakan waktu.",
+ "bekal": [
+  "bertanya dan menjawab *đi bằng gì?* untuk semua jenis kendaraan",
+  "menunjukkan arah: *đi thẳng*, *rẽ trái*, *rẽ phải*, *dừng lại*",
+  "menanyakan lama perjalanan dengan *mất bao lâu?*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Đi phố cổ",
+   "intro": "Budi ingin ke kawasan kota tua Hà Nội untuk pertama kalinya. Ia bertanya kepada Nam, lalu memandu pengemudi taksi yang menjemputnya.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Anh ơi, đi phố cổ bằng gì thì nhanh nhất?",
+     "id": "Mas, ke kota tua naik apa yang paling cepat?",
+     "literal": "kakak hai, pergi kota lama dengan apa maka cepat paling?",
+     "baca": "Ang ơi, di fố kổ bằng gì thì nyang nyất?"
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Đi xe máy nhanh nhất. Nhưng anh chưa biết đường.",
+     "id": "Naik motor paling cepat. Tapi Kakak belum hafal jalan.",
+     "literal": "pergi motor cepat paling. tetapi kakak belum tahu jalan.",
+     "baca": "Di se máy nyang nyất. Nyưng ang cưa biết dường."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thế tôi đi xe buýt được không?",
+     "id": "Kalau begitu naik bus bisa?",
+     "literal": "begitu saya pergi bus bisa tidak?",
+     "baca": "Thế tôi di se buýt dượk không?"
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Được, nhưng lâu lắm. Anh gọi Grab đi.",
+     "id": "Bisa, tapi lama sekali. Pesan Grab aja.",
+     "literal": "bisa, tetapi lama sangat. kakak panggil Grab lah.",
+     "baca": "Dượk, nyưng lâu lắm. Ang gọi Grab di."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Từ đây đến phố cổ mất bao lâu?",
+     "id": "Dari sini ke kota tua berapa lama?",
+     "literal": "dari sini sampai kota lama memakan berapa lama?",
+     "baca": "Từ dây dến fố kổ mất bao lâu?"
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Khoảng hai mươi phút, nếu không tắc đường.",
+     "id": "Sekitar dua puluh menit, kalau tidak macet.",
+     "literal": "kira-kira dua puluh menit, jika tidak macet jalan.",
+     "baca": "Khoảng hai mươi fút, nếu không tắk dường."
+    },
+    {
+     "speaker": "Tài xế:",
+     "text": "Anh xuống ở đâu ạ?",
+     "id": "Kakak turun di mana?",
+     "literal": "kakak turun di mana ya?",
+     "baca": "Ang suống ở dâu ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Anh đi thẳng, đến ngã tư thì rẽ phải.",
+     "id": "Lurus saja, di perempatan belok kanan.",
+     "literal": "kakak pergi lurus, sampai simpang empat maka belok kanan.",
+     "baca": "Ang di thẳng, dến ngã tư thì zẽ fải."
+    },
+    {
+     "speaker": "Tài xế:",
+     "text": "Rồi sao nữa ạ?",
+     "id": "Lalu apa lagi?",
+     "literal": "sudah bagaimana lagi ya?",
+     "baca": "Zồi sao nữa ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Đi thêm khoảng một trăm mét, dừng trước cửa hàng màu vàng.",
+     "id": "Maju sekitar seratus meter lagi, berhenti di depan toko warna kuning.",
+     "literal": "pergi tambah kira-kira seratus meter, berhenti depan toko warna kuning.",
+     "baca": "Di thêm khoảng một căm mét, zừng cướk kửa hàng màu vàng."
+    },
+    {
+     "speaker": "Tài xế:",
+     "text": "Vâng, đến rồi. Bốn mươi lăm nghìn ạ.",
+     "id": "Baik, sudah sampai. Empat puluh lima ribu.",
+     "literal": "iya, sampai sudah. empat puluh lima ribu ya.",
+     "baca": "Vâng, dến zồi. Bốn mươi lăm ngìn ạ."
+    }
+   ],
+   "notes": [
+    "**Bằng berarti \"dengan\" dalam arti alat**, dan itulah kata untuk kendaraan: *đi **bằng** xe máy* (pergi naik motor), *viết **bằng** bút* (menulis dengan pena), *nói **bằng** tiếng Việt* (bicara dalam bahasa Vietnam). Pertanyaannya *đi bằng gì?* — \"naik apa?\".",
+    "**Dalam percakapan sehari-hari, *bằng* sering dijatuhkan**: *đi xe máy*, *đi taxi*, *đi bộ*. Yang tidak boleh dijatuhkan adalah *bằng* dalam pertanyaan *đi bằng gì?*, karena tanpa ia kalimatnya berubah jadi *đi gì?* yang terdengar seperti \"pergi apaan?\".",
+    "**Mất berarti \"memakan\" untuk waktu dan \"hilang\" untuk barang.** *Mất bao lâu?* = \"makan waktu berapa lama?\"; *mất hai tiếng* = \"makan dua jam\". Kata yang sama di *tôi bị mất ví* berarti \"dompet saya hilang\" — dan itu memang kata yang sama, dipakai dua arah.",
+    "**Tắc đường (utara) dan kẹt xe (selatan) dua-duanya \"macet\".** Kamu akan sangat sering mendengarnya, dan kalimat lengkapnya biasanya *Hôm nay tắc đường quá!* — \"hari ini macet banget!\". Di jam sibuk Hà Nội dan Sài Gòn, ini bukan basa-basi.",
+    "**Xuống berarti \"turun\" dan lên berarti \"naik\"** — untuk kendaraan maupun untuk tangga. *Anh xuống ở đâu?* (turun di mana?), *lên xe đi!* (naik, ayo!). Untuk motor dan sepeda kadang dipakai *lên xe* / *xuống xe*; untuk pesawat dan kereta, *lên máy bay*, *xuống tàu*.",
+    "**Rồi sao nữa? berarti \"lalu apa lagi?\"** dan itu kalimat yang akan diucapkan pengemudi setiap kali kamu memandunya. Siapkan jawabanmu dalam potongan pendek — satu perintah satu kalimat — karena memandu jalan dalam kalimat panjang hampir pasti gagal dipahami sambil menyetir."
+   ],
+   "grammars": [
+    {
+     "title": "Kendaraan dan bằng",
+     "body": [
+      "Semua kendaraan memakai kata *xe* (kendaraan beroda) sebagai kepalanya, lalu ditambah keterangan. Sekali lagi susunannya balok: yang diterangkan di depan, penjelasnya di belakang."
+     ],
+     "table": {
+      "head": [
+       "Tiếng Việt",
+       "Harfiah",
+       "Arti",
+       "Contoh kalimat"
+      ],
+      "rows": [
+       [
+        "*xe máy*",
+        "kendaraan mesin",
+        "sepeda motor",
+        "*Tôi đi bằng xe máy.*"
+       ],
+       [
+        "*xe đạp*",
+        "kendaraan injak",
+        "sepeda",
+        "*Tôi đi xe đạp.*"
+       ],
+       [
+        "*xe buýt*",
+        "kendaraan bus",
+        "bus kota",
+        "*Đi xe buýt lâu lắm.*"
+       ],
+       [
+        "*xe ôm*",
+        "kendaraan peluk",
+        "ojek",
+        "*Gọi xe ôm đi.*"
+       ],
+       [
+        "*ô tô* / *xe hơi*",
+        "otomobil",
+        "mobil",
+        "*Nhà tôi có ô tô.*"
+       ],
+       [
+        "*tàu hoả* / *tàu*",
+        "kapal api",
+        "kereta api",
+        "*Đi tàu ra Huế.*"
+       ],
+       [
+        "*máy bay*",
+        "mesin terbang",
+        "pesawat",
+        "*Đi máy bay nhanh nhất.*"
+       ],
+       [
+        "*đi bộ*",
+        "pergi kaki",
+        "jalan kaki",
+        "*Đi bộ mười phút thôi.*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ ***Xe ôm* harfiahnya \"kendaraan peluk\"** — ojek, dan namanya datang dari cara penumpang berpegangan. Sekarang sebagian besar sudah berpindah ke aplikasi (*Grab*, *Be*), tapi kata dan pangkalannya masih ada di setiap sudut kota, dan untuk jarak pendek sering lebih cepat.",
+      "*Tàu* saja berarti kapal maupun kereta; yang membedakan tambahannya: *tàu hoả* (kereta api), *tàu thuỷ* (kapal laut). Untuk A1 cukup ingat *tàu* = kereta, karena itu yang paling sering dipakai."
+     ]
+    },
+    {
+     "title": "Menunjukkan arah",
+     "body": [
+      "Delapan kalimat berikut sudah cukup untuk memandu pengemudi ke mana pun. Ucapkan satu per satu, pendek-pendek, dan jangan digabung."
+     ],
+     "table": {
+      "head": [
+       "Tiếng Việt",
+       "Cara baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "Đi thẳng",
+        "Di thẳng",
+        "Lurus terus"
+       ],
+       [
+        "Rẽ trái / rẽ phải",
+        "Zẽ cái / zẽ fải",
+        "Belok kiri / belok kanan"
+       ],
+       [
+        "Đến ngã tư thì rẽ phải",
+        "Dến ngã tư thì zẽ fải",
+        "Di perempatan belok kanan"
+       ],
+       [
+        "Đến ngã ba thì rẽ trái",
+        "Dến ngã ba thì zẽ cái",
+        "Di pertigaan belok kiri"
+       ],
+       [
+        "Quay lại",
+        "Kway lại",
+        "Putar balik"
+       ],
+       [
+        "Dừng lại ở đây",
+        "Zừng lại ở dây",
+        "Berhenti di sini"
+       ],
+       [
+        "Đến rồi, cảm ơn anh",
+        "Dến zồi, kảm ơn ang",
+        "Sudah sampai, terima kasih"
+       ],
+       [
+        "Chờ tôi một chút nhé",
+        "Cờ tôi một cút nyé",
+        "Tunggu saya sebentar ya"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Di Vietnam selatan *rẽ* diganti ***quẹo***: *quẹo phải*, *quẹo trái*. Dua-duanya dipahami di mana pun, tapi kalau kamu di Sài Gòn dan pengemudinya ragu, coba ganti katanya.",
+      "*Lại* di belakang kata kerja berarti \"kembali\" atau \"ulang\": *quay lại* (putar balik), *dừng lại* (berhenti), *làm lại* (bikin ulang), *nói lại* (ucapkan lagi). Satu kata kecil yang muncul di mana-mana."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di dalam kendaraan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Cho tôi đi sân bay.",
+       "Co tôi di sân bay.",
+       "Antar saya ke bandara."
+      ],
+      [
+       "Đi đường này gần hơn.",
+       "Di dường này gần hơn.",
+       "Lewat jalan ini lebih dekat."
+      ],
+      [
+       "Anh đi nhanh hơn được không?",
+       "Ang di nyang hơn dượk không?",
+       "Bisa lebih cepat?"
+      ],
+      [
+       "Anh đi chậm thôi ạ.",
+       "Ang di cậm thôi ạ.",
+       "Pelan-pelan saja."
+      ],
+      [
+       "Bao nhiêu tiền ạ?",
+       "Bao nyiêu tiền ạ?",
+       "Berapa ongkosnya?"
+      ],
+      [
+       "Anh bật đồng hồ nhé.",
+       "Ang bật dồng hồ nyé.",
+       "Argonya dinyalakan ya."
+      ],
+      [
+       "Tôi xuống đây.",
+       "Tôi suống dây.",
+       "Saya turun di sini."
+      ],
+      [
+       "Cho tôi xuống trước cửa hàng.",
+       "Co tôi suống cướk kửa hàng.",
+       "Turunkan saya di depan toko."
+      ],
+      [
+       "Chuyến xe buýt này đi đâu?",
+       "Cuyến se buýt này di dâu?",
+       "Bus ini ke mana?"
+      ],
+      [
+       "Xe này có đi Huế không?",
+       "Se này kó di Huế không?",
+       "Kendaraan ini ke Huế nggak?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Anh bật đồng hồ nhé* — \"argonya dinyalakan ya\" — adalah kalimat penyelamat bagi orang asing yang naik taksi konvensional. Diucapkan dengan ramah di awal perjalanan, ia menghindarkan tawar-menawar yang tidak menyenangkan di akhir. *Đồng hồ* harfiahnya \"jam\", dan dipakai untuk argo maupun jam tangan."
+    }
+   ]
+  },
+  {
+   "title": "Menyeberang jalan di Vietnam",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bagian ini bukan tata bahasa, tapi ia salah satu keterampilan yang paling cepat kamu butuhkan — dan aturannya berlawanan dengan naluri kebanyakan pendatang."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga aturan menyeberang",
+     "items": [
+      "**Berjalanlah pelan dan tetap**, jangan berhenti dan jangan berlari. Pengendara motor menghitung ke mana kamu akan berada satu detik lagi dan memutar di belakangmu. Berhenti mendadak justru merusak hitungan mereka — itulah yang berbahaya, bukan langkahnya.",
+      "**Jangan menunggu jalan kosong**, karena di jam sibuk ia tidak akan pernah kosong. Tunggu jeda kecil, lalu mulai dan jangan mundur. Menaikkan tangan setinggi dada membuatmu lebih terlihat.",
+      "**Mobil dan bus lain urusannya** — mereka tidak akan memutar untukmu. Beri jalan kepada apa pun yang beroda empat, dan seberangi hanya di antara motor."
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "tắc đường / kẹt xe",
+       "tắk dường / kẹt se",
+       "macet"
+      ],
+      [
+       "đèn đỏ / đèn xanh",
+       "dèn dỏ / dèn sang",
+       "lampu merah / hijau"
+      ],
+      [
+       "mũ bảo hiểm",
+       "mũ bảo hiểm",
+       "helm"
+      ],
+      [
+       "bằng lái xe",
+       "bằng lái se",
+       "SIM"
+      ],
+      [
+       "xăng",
+       "săng",
+       "bensin"
+      ],
+      [
+       "cẩn thận!",
+       "kẩn thận!",
+       "hati-hati!"
+      ],
+      [
+       "nguy hiểm",
+       "nguy hiểm",
+       "berbahaya"
+      ],
+      [
+       "vỉa hè",
+       "vỉa hè",
+       "trotoar"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Mũ bảo hiểm* (helm) wajib di Vietnam untuk pengendara maupun penumpang motor, dan polisi benar-benar menilangnya. Setiap pengemudi ojek daring membawa helm cadangan; kalau ia lupa, cukup katakan *Anh cho em mũ bảo hiểm với.*"
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "bằng",
+   "id": "dengan (alat); naik",
+   "baca": "bằng"
+  },
+  {
+   "vi": "xe máy",
+   "id": "sepeda motor",
+   "baca": "se máy"
+  },
+  {
+   "vi": "xe đạp",
+   "id": "sepeda",
+   "baca": "se dạp"
+  },
+  {
+   "vi": "xe buýt",
+   "id": "bus kota",
+   "baca": "se buýt"
+  },
+  {
+   "vi": "xe ôm",
+   "id": "ojek",
+   "baca": "se ôm"
+  },
+  {
+   "vi": "ô tô",
+   "id": "mobil",
+   "baca": "ô tô"
+  },
+  {
+   "vi": "tàu",
+   "id": "kereta; kapal",
+   "baca": "tàu"
+  },
+  {
+   "vi": "máy bay",
+   "id": "pesawat",
+   "baca": "máy bay"
+  },
+  {
+   "vi": "sân bay",
+   "id": "bandara",
+   "baca": "sân bay"
+  },
+  {
+   "vi": "tài xế",
+   "id": "pengemudi",
+   "baca": "tài sế"
+  },
+  {
+   "vi": "đi thẳng",
+   "id": "lurus terus",
+   "baca": "di thẳng"
+  },
+  {
+   "vi": "rẽ trái / rẽ phải",
+   "id": "belok kiri / kanan",
+   "baca": "zẽ cái / zẽ fải"
+  },
+  {
+   "vi": "ngã ba / ngã tư",
+   "id": "pertigaan / perempatan",
+   "baca": "ngã ba / ngã tư"
+  },
+  {
+   "vi": "dừng lại",
+   "id": "berhenti",
+   "baca": "zừng lại"
+  },
+  {
+   "vi": "quay lại",
+   "id": "putar balik",
+   "baca": "kway lại"
+  },
+  {
+   "vi": "lên / xuống",
+   "id": "naik / turun",
+   "baca": "lên / suống"
+  },
+  {
+   "vi": "chờ / đợi",
+   "id": "menunggu",
+   "baca": "cờ / dợi"
+  },
+  {
+   "vi": "mất",
+   "id": "memakan (waktu); hilang",
+   "baca": "mất"
+  },
+  {
+   "vi": "lâu",
+   "id": "lama",
+   "baca": "lâu"
+  },
+  {
+   "vi": "nhanh / chậm",
+   "id": "cepat / lambat",
+   "baca": "nyang / cậm"
+  },
+  {
+   "vi": "tắc đường",
+   "id": "macet",
+   "baca": "tắk dường"
+  },
+  {
+   "vi": "phố cổ",
+   "id": "kota tua",
+   "baca": "fố kổ"
+  },
+  {
+   "vi": "cửa hàng",
+   "id": "toko",
+   "baca": "kửa hàng"
+  },
+  {
+   "vi": "mũ bảo hiểm",
+   "id": "helm",
+   "baca": "mũ bảo hiểm"
+  },
+  {
+   "vi": "cẩn thận",
+   "id": "hati-hati",
+   "baca": "kẩn thận"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Kakak naik apa?",
+    "Saya naik motor.",
+    "Dari sini ke bandara berapa lama?",
+    "Lurus terus, di perempatan belok kanan.",
+    "Berhenti di sini.",
+    "Hari ini macet banget!"
+   ]
+  },
+  {
+   "prompt": "Sebutkan kendaraannya dalam bahasa Vietnam.",
+   "items": [
+    "sepeda motor",
+    "sepeda",
+    "bus kota",
+    "ojek",
+    "kereta api",
+    "pesawat"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan kata yang tepat.",
+   "items": [
+    "Anh đi ____ gì? (naik apa)",
+    "Từ đây đến chợ ____ bao lâu? (makan waktu)",
+    "Đến ngã tư thì ____ phải. (belok)",
+    "Cho tôi ____ ở đây. (turun)",
+    "Anh ____ tôi một chút nhé. (tunggu)"
+   ]
+  },
+  {
+   "prompt": "Bacalah keras-keras, lalu tuliskan artinya.",
+   "items": [
+    "Đi xe máy nhanh nhất.",
+    "Khoảng hai mươi phút, nếu không tắc đường.",
+    "Anh bật đồng hồ nhé.",
+    "Cho tôi xuống trước cửa hàng màu vàng.",
+    "Cẩn thận nhé!"
+   ]
+  }
+ ],
+ "answers": [
+  "Anh đi bằng gì? — Tôi đi bằng xe máy. — Từ đây đến sân bay mất bao lâu? — Đi thẳng, đến ngã tư thì rẽ phải. — Dừng lại ở đây. — Hôm nay tắc đường quá!",
+  "xe máy — xe đạp — xe buýt — xe ôm — tàu hoả — máy bay",
+  "bằng — mất — rẽ — xuống — chờ",
+  "Naik motor paling cepat. — Sekitar dua puluh menit, kalau tidak macet. — Argonya dinyalakan ya. — Turunkan saya di depan toko warna kuning. — Hati-hati ya!"
+ ]
+}
