@@ -1,0 +1,224 @@
+{
+  "title": "Getting around: ojek, taxi, train",
+  "title_target": "Naik apa ke sana?",
+  "goal": "Move around an Indonesian city: order a motorbike taxi, direct a driver, buy a train ticket and understand the two verbs that carry all of it — *naik* and *turun*.",
+  "bekal": [
+    "say how you are travelling with *naik*",
+    "give a driver instructions and stop him where you want",
+    "buy a ticket and ask how long the journey takes"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Naik ojek",
+      "intro": "Sarah has ordered a motorbike taxi through an app. The driver, Mas Anto, calls to find her.",
+      "lines": [
+        { "speaker": "Anto:", "text": "Halo, Mbak Sarah? Posisinya di mana?", "id": "Hello, Sarah? Where are you exactly?", "literal": "hello, miss Sarah? position-its at where?" },
+        { "speaker": "Sarah:", "text": "Saya di depan Indomaret, dekat halte.", "id": "I'm in front of the Indomaret, near the bus stop.", "literal": "I at front Indomaret, near bus-stop." },
+        { "speaker": "Anto:", "text": "Oh, iya. Saya lima menit lagi sampai.", "id": "Right. I'll be there in five minutes.", "literal": "oh, yes. I five minute more arrive." },
+        { "speaker": "Anto:", "text": "Mbak Sarah? Mau ke Kuningan, ya?", "id": "Sarah? To Kuningan, right?", "literal": "miss Sarah? want to Kuningan, yes?" },
+        { "speaker": "Sarah:", "text": "Betul, Mas. Berapa lama ke sana?", "id": "That's right. How long does it take?", "literal": "correct, Mr. how-much long to there?" },
+        { "speaker": "Anto:", "text": "Kalau tidak macet, dua puluh menit.", "id": "If there's no traffic jam, twenty minutes.", "literal": "if not jammed, two ten minute." },
+        { "speaker": "Sarah:", "text": "Sekarang macet?", "id": "Is it jammed now?", "literal": "now jammed?" },
+        { "speaker": "Anto:", "text": "Lumayan. Pakai helm dulu, Mbak.", "id": "Fairly. Put the helmet on first.", "literal": "fairly. use helmet first, miss." },
+        { "speaker": "Sarah:", "text": "Sudah. Tolong pelan-pelan, ya, Mas.", "id": "Done. Please go slowly.", "literal": "already. please slow-slow, yes, Mr." },
+        { "speaker": "Anto:", "text": "Siap, Mbak. Pegangan, ya!", "id": "Sure. Hold on!", "literal": "ready, miss. hold-on, yes!" },
+        { "speaker": "Sarah:", "text": "Mas, saya turun di depan gedung biru itu.", "id": "I'll get off in front of that blue building.", "literal": "Mr, I descend at front building blue that." },
+        { "speaker": "Anto:", "text": "Baik. Terima kasih, Mbak. Hati-hati!", "id": "All right. Thank you. Take care!", "literal": "good. thank you, miss. careful!" }
+      ],
+      "notes": [
+        "**Naik is \"to ride, to go by, to board\" — and also \"to go up\".** *Naik ojek*, *naik bus*, *naik pesawat*, *naik taksi*. Its partner *turun* is \"to get off\" and \"to go down\". Together they cover every journey in the country, and they never change form.",
+        "**Macet is a word you will use daily.** It means a traffic jam, and in Jakarta it is a permanent condition rather than an event. *Macet parah* is a bad one; *lumayan macet* is \"fairly jammed\"; *lancar* is the happy opposite — traffic flowing.",
+        "**Ojek is a motorbike taxi**, and app-based ones (Gojek, Grab) have transformed Indonesian cities. The driver will phone you to find you, which is why *Posisinya di mana?* — \"where exactly are you?\" — is worth memorising before you ever order one.",
+        "**Turun di… tells the driver where to stop.** You do not need a complicated sentence: *Turun di sini* (\"stop here\"), *Turun di depan* (\"stop just ahead\"), *Kiri, Mas!* (\"pull over on the left!\"). That last one is the standard shout on a public minibus.",
+        "**Lumayan** is a lovely little word meaning \"quite, fairly, not bad\". *Lumayan jauh* (fairly far), *lumayan enak* (quite tasty), and on its own, in answer to \"how was it?\", it means \"not bad at all\"."
+      ],
+      "grammars": [
+        {
+          "title": "Naik — how you travel",
+          "body": [
+            "The pattern is simply *naik* + the vehicle. No preposition, no article."
+          ],
+          "table": {
+            "head": ["Indonesian", "Word for word", "English"],
+            "rows": [
+              ["*naik ojek*", "ride motorbike-taxi", "by motorbike taxi"],
+              ["*naik taksi*", "ride taxi", "by taxi"],
+              ["*naik bus*", "ride bus", "by bus"],
+              ["*naik kereta*", "ride train", "by train"],
+              ["*naik pesawat*", "ride plane", "by plane"],
+              ["*naik motor*", "ride motorbike", "by motorbike"],
+              ["*jalan kaki*", "walk foot", "on foot"],
+              ["*Saya naik kereta ke Bandung.*", "I ride train to Bandung", "I'm going to Bandung by train."]
+            ]
+          },
+          "after": [
+            "The question is *Naik apa?* — \"how are you getting there?\", literally \"ride what?\". You will be asked this constantly, because in Indonesia the answer determines how long the journey will take far more than the distance does.",
+            "⚠️ *Naik* also keeps its literal meaning of going up: *naik tangga* (go up the stairs), *harga naik* (prices went up). Context always makes it obvious."
+          ]
+        },
+        {
+          "title": "Talking to a driver",
+          "body": [
+            "Ten sentences that cover almost every taxi and ojek ride you will ever take."
+          ],
+          "table": {
+            "head": ["Indonesian", "English"],
+            "rows": [
+              ["*Ke Bandara Soekarno-Hatta, Pak.*", "To Soekarno-Hatta airport, please."],
+              ["*Pakai argo, ya.*", "Use the meter, please."],
+              ["*Lewat tol saja.*", "Take the toll road."],
+              ["*Jangan lewat jalan itu, macet.*", "Don't take that road, it's jammed."],
+              ["*Tolong pelan-pelan.*", "Please slow down."],
+              ["*Berhenti di sini, Pak.*", "Stop here, please."],
+              ["*Turun di depan gedung itu.*", "Drop me in front of that building."],
+              ["*Tunggu sebentar, ya.*", "Wait a moment, please."],
+              ["*Berapa, Pak?*", "How much is it?"],
+              ["*Ambil kembaliannya.*", "Keep the change."]
+            ]
+          },
+          "after": [
+            "⚠️ **Argo** is the taximeter. In an ordinary metered taxi, *pakai argo* is a reasonable request; if the driver refuses and offers a fixed price, that is your cue to agree a number **before** you set off, not after.",
+            "For app-based rides none of the bargaining applies — the price is fixed in the app, and the only sentences you need are the ones about where you are and where you want to be dropped."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Trains, buses and tickets",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Indonesian", "English", "Indonesian", "English"],
+          "rows": [
+            ["*kereta*", "train", "*tiket / karcis*", "ticket"],
+            ["*kereta api*", "railway train", "*peron*", "platform"],
+            ["*KRL / commuter line*", "city train", "*jadwal*", "timetable"],
+            ["*bus*", "bus", "*berangkat*", "to depart"],
+            ["*angkot*", "minibus", "*tiba / sampai*", "to arrive"],
+            ["*becak*", "cycle rickshaw", "*pulang pergi*", "return (trip)"],
+            ["*bajaj*", "three-wheeler", "*sekali jalan*", "one way"],
+            ["*kapal*", "ship, boat", "*penuh*", "full"],
+            ["*pesawat*", "plane", "*kosong*", "empty, free"],
+            ["*bandara*", "airport", "*terlambat*", "delayed, late"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Useful sentences at a counter: *Ada tiket ke Yogyakarta untuk besok?* (Is there a ticket to Yogyakarta for tomorrow?) — *Berangkat jam berapa?* (What time does it leave?) — *Sampai jam berapa?* (What time does it arrive?) — *Berapa lama perjalanannya?* (How long is the journey?)."
+        },
+        {
+          "type": "p",
+          "text": "💬 *Jam berapa berangkat?* and *Berangkat jam berapa?* are both correct. Indonesian is relaxed about where the time question sits, which is one more piece of freedom the language hands you."
+        }
+      ]
+    },
+    {
+      "title": "Kalau — if, and when",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Anto said *Kalau tidak macet, dua puluh menit*. *Kalau* introduces a condition, and Indonesian uses it far more loosely than English uses \"if\" — it also covers \"when\", \"as for\" and \"in the case of\"."
+        },
+        {
+          "type": "tabel",
+          "head": ["Indonesian", "Word for word", "English"],
+          "rows": [
+            ["*Kalau macet, saya terlambat.*", "if jammed, I late", "If there's traffic, I'll be late."],
+            ["*Kalau hujan, kita di rumah saja.*", "if rain, we at home only", "If it rains we'll stay home."],
+            ["*Kalau begitu, besok saja.*", "if like-that, tomorrow only", "In that case, let's make it tomorrow."],
+            ["*Kalau saya, saya naik kereta.*", "if I, I ride train", "Personally, I'd take the train."],
+            ["*Kalau sudah sampai, telepon saya.*", "if already arrive, phone I", "Call me when you get there."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the last line: *kalau* plus *sudah* is how Indonesian says \"when\" about something that has not happened yet. There is no future tense to worry about — the markers you learned in Unit 5 do all of it."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "id": "naik", "baca": "NA-ik", "en": "to ride, go by; to go up" },
+    { "id": "turun", "baca": "TU-run", "en": "to get off; to go down" },
+    { "id": "ojek", "baca": "O-jék", "en": "motorbike taxi" },
+    { "id": "taksi", "baca": "TAK-si", "en": "taxi" },
+    { "id": "kereta", "baca": "kuh-RÉ-ta", "en": "train" },
+    { "id": "pesawat", "baca": "puh-SA-wat", "en": "aeroplane" },
+    { "id": "motor", "baca": "MO-tor", "en": "motorbike" },
+    { "id": "angkot", "baca": "ANG-kot", "en": "public minibus" },
+    { "id": "macet", "baca": "MA-cuht", "en": "traffic jam; jammed" },
+    { "id": "lancar", "baca": "LAN-car", "en": "flowing smoothly" },
+    { "id": "helm", "baca": "hélm", "en": "helmet" },
+    { "id": "berhenti", "baca": "buhr-HUHN-ti", "en": "to stop" },
+    { "id": "tunggu", "baca": "TUNG-gu", "en": "to wait" },
+    { "id": "gedung", "baca": "guh-DUNG", "en": "building" },
+    { "id": "tol", "baca": "tol", "en": "toll road" },
+    { "id": "argo", "baca": "AR-go", "en": "taximeter" },
+    { "id": "tiket", "baca": "TI-két", "en": "ticket" },
+    { "id": "berangkat", "baca": "buh-RANG-kat", "en": "to depart" },
+    { "id": "tiba", "baca": "TI-ba", "en": "to arrive" },
+    { "id": "perjalanan", "baca": "puhr-ja-LA-nan", "en": "journey" },
+    { "id": "jadwal", "baca": "JAD-wal", "en": "timetable" },
+    { "id": "penuh", "baca": "puh-NUH", "en": "full" },
+    { "id": "posisi", "baca": "po-SI-si", "en": "position, location" },
+    { "id": "lumayan", "baca": "lu-ma-YAN", "en": "fairly, quite, not bad" },
+    { "id": "pelan-pelan", "baca": "puh-LAN puh-LAN", "en": "slowly" },
+    { "id": "pegangan", "baca": "puh-GA-ngan", "en": "hold on" },
+    { "id": "biru", "baca": "BI-ru", "en": "blue" },
+    { "id": "hujan", "baca": "HU-jan", "en": "rain" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Indonesian.",
+      "items": [
+        "I'm going by train.",
+        "How long does it take?",
+        "It's very jammed today.",
+        "Please stop here.",
+        "I'll get off in front of that building.",
+        "Is there a ticket for tomorrow?",
+        "What time does it leave?"
+      ]
+    },
+    {
+      "prompt": "Fill in the gap.",
+      "items": [
+        "Saya ____ ojek ke kantor.",
+        "Saya ____ di depan gedung biru.",
+        "Kalau tidak ____, dua puluh menit saja.",
+        "Kereta ____ jam tujuh pagi.",
+        "Tolong ____ di sini, Pak.",
+        "____ apa ke sana? — Naik kereta."
+      ]
+    },
+    {
+      "prompt": "What would you say? Write the sentence.",
+      "items": [
+        "The driver is going too fast.",
+        "You want the taxi driver to use the meter.",
+        "The ojek driver rings and wants to know where you are.",
+        "You want to know how long the journey to Bandung is.",
+        "You want the driver to wait for a moment."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kantor / naik / saya / ke / ojek",
+        "sini / berhenti / Pak / di / ,",
+        "lama / ke / berapa / sana / ?",
+        "macet / kalau / terlambat / saya / ,",
+        "jam / berangkat / berapa / kereta / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Saya naik kereta. — Berapa lama? — Hari ini macet sekali. — Tolong berhenti di sini. — Saya turun di depan gedung itu. — Ada tiket untuk besok? — Berangkat jam berapa?",
+    "naik — turun — macet — berangkat — berhenti — Naik",
+    "Tolong pelan-pelan. — Pakai argo, ya. — Saya di depan Indomaret. — Berapa lama perjalanan ke Bandung? — Tunggu sebentar, ya.",
+    "Saya naik ojek ke kantor. — Berhenti di sini, Pak. — Berapa lama ke sana? — Kalau macet, saya terlambat. — Kereta berangkat jam berapa?"
+  ],
+  "wave": "re-read Unit 9. Order a full meal out loud, from greeting to bill."
+}

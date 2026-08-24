@@ -115,6 +115,32 @@ const pagariRtl = (s) => s.replace(UNTAIAN_RTL, (m) => `<span class="rtl" dir="r
 const teksDasar = (s) => ruby(esc(s)).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\*(.+?)\*/g, "<i>$1</i>");
 const teks = (s) => (RTL ? pagariRtl(teksDasar(s)) : teksDasar(s));
 
+/* [ebook-bahasa-pengantar-v1] Judul tetap di dalam unit ("Catatan", "Latihan",
+   "Kunci jawaban") ikut BAHASA PENGANTAR modulnya, bukan bahasa targetnya.
+
+   Sampai modul Indonesia (id-a1) semua modul berpengantar bahasa Indonesia,
+   jadi judulnya cukup ditulis mati di perakit. Modul BIPA membalik susunannya:
+   bahasa yang DIPELAJARI justru bahasa Indonesia, dan pengantarnya Inggris —
+   halaman yang seluruhnya berbahasa Inggris tak boleh menyisakan kepala
+   "Kosakata unit ini" di tengahnya. Nilai bawaannya persis seperti sebelum ada
+   tombol ini, jadi seluruh modul lama tercetak sama saja.
+
+   `label.exercises` juga dipakai waktu PDF dibaca balik untuk mencari halaman
+   latihan tiap unit — lihat [ebook-latihan-interaktif-v1] di bawah. Menggantinya
+   di meta.json saja sudah cukup; tak ada pola yang perlu disunting dua kali. */
+const LABEL = {
+  unit: "Unit",
+  dialog: "Diálogo",
+  notes: "Catatan",
+  vocab: "Kosakata unit ini",
+  exercises: "Latihan",
+  answers: "Kunci jawaban",
+  bekal: "Di ujung unit ini kamu bisa:",
+  literal: "harfiah:",
+  wave: "Ulangan berjenjang:",
+  ...(meta.labels ?? {}),
+};
+
 /* ── potongan halaman ────────────────────────────────────────────────────── */
 
 const sampul = () => (sampulGambar ? `
@@ -143,7 +169,7 @@ const sampul = () => (sampulGambar ? `
    isinya meluber jadi dua halaman, putaran ketiga yang membereskan. */
 const barisIsi = () => [
   ...(meta.front ?? []).filter((h) => h.type !== "isi").map((h) => ({ kunci: `judul:${h.title}`, label: h.title })),
-  ...units.map((u, i) => ({ kunci: `unit:${i + 1}`, label: `Unit ${i + 1} — ${u.title}`, sub: u.title_target })),
+  ...units.map((u, i) => ({ kunci: `unit:${i + 1}`, label: `${LABEL.unit} ${i + 1} — ${u.title}`, sub: u.title_target })),
   ...(meta.back ?? []).map((h) => ({ kunci: `judul:${h.title}`, label: h.title })),
 ];
 
@@ -217,7 +243,7 @@ const kotakTata = (g) => `
   </div>`;
 
 const dialogHtml = (d) => `
-  <h3>${teks(d.title ?? meta.labels?.dialog ?? "Diálogo")}</h3>
+  <h3>${teks(d.title ?? LABEL.dialog)}</h3>
   ${d.intro ? `<p class="dialog-intro">${teks(d.intro)}</p>` : ""}
   <div class="dialog">
     ${d.lines.map((l, n) => `
@@ -227,28 +253,28 @@ const dialogHtml = (d) => `
           <p class="asing"${RTL ? ' dir="rtl"' : ""}><b>${teks(l.speaker)}</b> ${teks(l.text)}</p>
           ${l.baca ? `<p class="baca">${teks(l.baca)}</p>` : ""}
           <p class="arti">${teks(l.id)}</p>
-          ${l.literal ? `<p class="harfiah">harfiah: ${teks(l.literal)}</p>` : ""}
+          ${l.literal ? `<p class="harfiah">${esc(LABEL.literal)} ${teks(l.literal)}</p>` : ""}
         </div>
       </div>`).join("")}
   </div>
   ${d.notes?.length ? `
-  <h3>${teks(d.notes_title ?? "Catatan")}</h3>
+  <h3>${teks(d.notes_title ?? LABEL.notes)}</h3>
   <ol class="catatan">${d.notes.map((n) => `<li>${teks(n)}</li>`).join("")}</ol>` : ""}
   ${(d.grammars ?? (d.grammar ? [d.grammar] : [])).map(kotakTata).join("")}`;
 
 const unitHal = (u, i) => `
 <section class="hal unit">
   <div class="unit-kepala">
-    <span class="unit-no">Unit ${i + 1}</span>
+    <span class="unit-no">${esc(LABEL.unit)} ${i + 1}</span>
     <h2>${esc(u.title)}<span class="unit-asing">${teks(u.title_target ?? "")}</span></h2>
     ${u.goal ? `<p class="unit-tujuan">${teks(u.goal)}</p>` : ""}
-    ${u.bekal?.length ? `<p class="unit-bekal"><b>Di ujung unit ini kamu bisa:</b> ${u.bekal.map(teks).join(" &middot; ")}</p>` : ""}
+    ${u.bekal?.length ? `<p class="unit-bekal"><b>${esc(LABEL.bekal)}</b> ${u.bekal.map(teks).join(" &middot; ")}</p>` : ""}
   </div>
 
   ${(u.dialogs ?? (u.dialog ? [u.dialog] : [])).map(dialogHtml).join("\n")}
 
   ${u.notes?.length ? `
-  <h3>Catatan</h3>
+  <h3>${esc(LABEL.notes)}</h3>
   <ol class="catatan">${u.notes.map((n) => `<li>${teks(n)}</li>`).join("")}</ol>` : ""}
 
   ${(u.grammars ?? (u.grammar ? [u.grammar] : [])).map(kotakTata).join("")}
@@ -258,11 +284,11 @@ const unitHal = (u, i) => `
   ${(s.blocks ?? []).map(blok).join("\n")}`).join("\n")}
 
   ${u.vocab?.length ? `
-  <h3>Kosakata unit ini</h3>
+  <h3>${esc(LABEL.vocab)}</h3>
   ${tabel({ head: KOLOM_KOSAKATA.map((k) => k.head), rows: u.vocab.map((v) => KOLOM_KOSAKATA.map((k) => v[k.key])) })}` : ""}
 
   ${u.exercises?.length ? `
-  <h3>Latihan</h3>
+  <h3>${esc(LABEL.exercises)}</h3>
   ${u.exercises.map((e, k) => `
     <div class="latihan">
       <p class="latihan-judul">${k + 1}. ${teks(e.prompt)}</p>
@@ -271,11 +297,11 @@ const unitHal = (u, i) => `
 
   ${u.answers?.length ? `
   <div class="kunci">
-    <h4>Kunci jawaban</h4>
+    <h4>${esc(LABEL.answers)}</h4>
     ${u.answers.map((a, k) => `<p><b>${k + 1}.</b> ${teks(a)}</p>`).join("")}
   </div>` : ""}
 
-  ${u.wave ? `<p class="ombak"><b>Ulangan berjenjang:</b> ${teks(u.wave)}</p>` : ""}
+  ${u.wave ? `<p class="ombak"><b>${esc(LABEL.wave)}</b> ${teks(u.wave)}</p>` : ""}
 </section>`;
 
 /* ── halaman jadi ────────────────────────────────────────────────────────── */
@@ -468,7 +494,10 @@ const cetak = () => execFileSync(chrome, [
    balik dari PDF yang barusan dicetak — sekali di sini, bukan tiap kali modulnya
    dibuka siswa. */
 
-const LABEL_UNIT = /^unit\.?(\d+)$/i;
+const LABEL_UNIT = new RegExp(`^${LABEL.unit}\\.?(\\d+)$`, "i");
+/* Kepala bagian latihan, tanpa spasi & tanpa huruf besar — dibandingkan apa
+   adanya, bukan lewat pola, supaya judul berbahasa apa pun aman. */
+const KEPALA_LATIHAN = LABEL.exercises.replace(/\s+/g, "").toLowerCase();
 
 /** Baris teks satu halaman PDF (potongan digabung per ketinggian). */
 async function barisHalaman(pdfjs, doc, n) {
@@ -533,7 +562,7 @@ async function bacaPdf() {
       const m = b.teks.replace(/\s+/g, "").match(LABEL_UNIT);
       if (m && !mulai.has(Number(m[1]))) mulai.set(Number(m[1]), n);
       if (b.h >= ambang && judulHalaman.has(b.teks) && !judul.has(b.teks)) judul.set(b.teks, n);
-      if (/^latihan$/i.test(b.teks.replace(/\s+/g, ""))) {
+      if (b.teks.replace(/\s+/g, "").toLowerCase() === KEPALA_LATIHAN) {
         // Unit yang halamannya sedang berjalan = unit terakhir yang sudah mulai.
         const no = [...mulai.entries()].filter(([, h]) => h <= n).map(([u]) => u).pop();
         if (no && !latihanHal.has(no)) latihanHal.set(no, n);

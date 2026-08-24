@@ -1,0 +1,229 @@
+{
+  "title": "Shopping, sizes and bargaining",
+  "title_target": "Boleh kurang, Bu?",
+  "goal": "Buy clothes and everyday things: ask for another size or colour, try something on, bargain properly in a market, and refuse politely when the price is silly.",
+  "bekal": [
+    "ask for a different size, colour or model with *yang*",
+    "bargain in the four moves Indonesians actually use",
+    "say a shop is closed, a thing is sold out, or you will come back later"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Beli batik di pasar",
+      "intro": "A batik stall at a big market. Sarah wants a shirt for her brother; Bu Yanti sells them.",
+      "lines": [
+        { "speaker": "Yanti:", "text": "Mari, Mbak. Cari apa?", "id": "Come in. What are you looking for?", "literal": "come, miss. seek what?" },
+        { "speaker": "Sarah:", "text": "Saya cari kemeja batik untuk laki-laki.", "id": "I'm looking for a batik shirt for a man.", "literal": "I seek shirt batik for male." },
+        { "speaker": "Yanti:", "text": "Ini bagus, Mbak. Ukuran apa?", "id": "This one's nice. What size?", "literal": "this good, miss. size what?" },
+        { "speaker": "Sarah:", "text": "Ukuran L. Ada warna lain?", "id": "Size L. Do you have another colour?", "literal": "size L. exist colour other?" },
+        { "speaker": "Yanti:", "text": "Ada biru, cokelat, hijau. Yang mana, Mbak?", "id": "Blue, brown, green. Which one?", "literal": "exist blue, brown, green. which one, miss?" },
+        { "speaker": "Sarah:", "text": "Yang biru saja. Boleh dicoba?", "id": "The blue one. May I try it on?", "literal": "which blue only. may be-tried?" },
+        { "speaker": "Yanti:", "text": "Silakan, di sana ada kamar pas.", "id": "Please do, the fitting room is over there.", "literal": "please, at there exist room fit." },
+        { "speaker": "Sarah:", "text": "Pas. Berapa harganya, Bu?", "id": "It fits. How much is it?", "literal": "fit. how-much price-its, Mrs?" },
+        { "speaker": "Yanti:", "text": "Tiga ratus ribu. Batik tulis, Mbak.", "id": "Three hundred thousand. It's hand-drawn batik.", "literal": "three hundred thousand. batik written, miss." },
+        { "speaker": "Sarah:", "text": "Wah, mahal. Boleh kurang, Bu?", "id": "That's expensive. Can you come down?", "literal": "wow, expensive. may less, Mrs?" },
+        { "speaker": "Yanti:", "text": "Boleh. Dua ratus tujuh puluh lima.", "id": "All right. Two hundred and seventy-five.", "literal": "may. two hundred seven ten five." },
+        { "speaker": "Sarah:", "text": "Dua ratus, ya? Saya ambil dua.", "id": "Two hundred? I'll take two.", "literal": "two hundred, yes? I take two." },
+        { "speaker": "Yanti:", "text": "Dua ratus dua puluh lima, deh. Sudah pas itu.", "id": "Two hundred and twenty-five, then. That's my best price.", "literal": "two hundred two ten five, then. already exact that." },
+        { "speaker": "Sarah:", "text": "Baik, saya ambil. Terima kasih, Bu!", "id": "All right, I'll take them. Thank you!", "literal": "good, I take. thank you, Mrs!" }
+      ],
+      "notes": [
+        "**Mari, Mbak! is the seller's welcome** — \"come, come in\". You are not obliged to buy anything, and *Lihat-lihat dulu* (\"just having a look first\") is a complete and polite answer.",
+        "**Pas is a small word with three uses.** As an adjective, \"a good fit\" (*Pas!*); *kamar pas* is a fitting room; and *harga pas* means a fixed price — literally \"the exact price\", the seller's way of saying the bargaining is over. Bu Yanti uses that last sense in the second-to-last line.",
+        "**Batik tulis vs batik cap.** *Tulis* means \"written\" — hand-drawn with wax, slow, expensive, and the real thing. *Cap* means \"stamped\" — printed with a copper block, much cheaper. *Batik print* is machine-printed cloth and costs a fraction. Knowing these three words is the difference between paying a fair price and paying a tourist one.",
+        "**Boleh dicoba? — \"may it be tried?\"** That *di-* in front of *coba* is the passive prefix, and Indonesian uses passives where English uses \"can I\". You do not need to build these yet; you do need to recognise *dicoba*, *dibungkus*, *dibeli* when they come at you. Unit 19 explains the pattern.",
+        "**How the bargain actually went.** The seller opened at 300, Sarah objected, the seller came to 275, Sarah countered at 200 and offered to buy two, and they landed at 225. That shape — open, object, counter, meet — is the whole dance. Smiling is part of it; walking away slowly is the last move and often produces one more offer."
+      ],
+      "grammars": [
+        {
+          "title": "Yang mana? — which one?",
+          "body": [
+            "You met *yang* in Unit 7. Shopping is where it earns its keep, because it lets you talk about things without naming them again."
+          ],
+          "table": {
+            "head": ["Indonesian", "Word for word", "English"],
+            "rows": [
+              ["*Yang mana?*", "which which?", "Which one?"],
+              ["*Yang ini.*", "which this", "This one."],
+              ["*Yang biru.*", "which blue", "The blue one."],
+              ["*Yang lebih besar.*", "which more big", "The bigger one."],
+              ["*Yang paling murah.*", "which most cheap", "The cheapest one."],
+              ["*Ada yang lain?*", "exist which other?", "Do you have another?"],
+              ["*Yang itu berapa?*", "which that how-much?", "How much is that one?"]
+            ]
+          },
+          "after": [
+            "Chain them freely: *yang biru yang kecil* — \"the small blue one\". Indonesians do this constantly and it never gets ambiguous, because the noun is understood from what you are both looking at."
+          ]
+        },
+        {
+          "title": "Colours, sizes and clothes",
+          "body": [
+            "Colours are adjectives, so they follow the noun: *baju merah*, a red shirt."
+          ],
+          "table": {
+            "head": ["Colour", "Indonesian", "Clothing", "Indonesian"],
+            "rows": [
+              ["red", "*merah*", "clothes", "*baju / pakaian*"],
+              ["blue", "*biru*", "shirt", "*kemeja*"],
+              ["green", "*hijau*", "T-shirt", "*kaus*"],
+              ["yellow", "*kuning*", "trousers", "*celana*"],
+              ["black", "*hitam*", "skirt", "*rok*"],
+              ["white", "*putih*", "dress", "*gaun*"],
+              ["brown", "*cokelat*", "shoes", "*sepatu*"],
+              ["grey", "*abu-abu*", "sandals", "*sandal*"],
+              ["pink", "*merah muda*", "bag", "*tas*"],
+              ["orange", "*oranye*", "hat", "*topi*"]
+            ]
+          },
+          "after": [
+            "*Merah muda* is literally \"young red\" — pink. The same trick makes *biru muda* (light blue) and *biru tua* (dark blue, \"old blue\"). *Muda* and *tua* are your light and dark for every colour.",
+            "Sizes are simply the English letters, pronounced Indonesian-style: *ukuran S, M, L, XL*. Shoe sizes are European numbers. And be warned that Indonesian L is usually a European M."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The four moves of a bargain",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Move", "Say", "English"],
+          "rows": [
+            ["1. Ask the price", "*Berapa harganya, Bu?*", "How much is it?"],
+            ["2. Object, warmly", "*Wah, mahal. Boleh kurang?*", "That's dear. Can you come down?"],
+            ["3. Counter", "*Dua ratus, boleh?*", "Two hundred, all right?"],
+            ["4. Close, or leave", "*Saya ambil.* / *Saya pikir dulu, ya.*", "I'll take it. / I'll think about it."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Move 4 matters more than it looks. *Saya pikir dulu* (\"let me think first\") is the polite exit, and it is also the strongest bargaining move you have. Say it with a smile, turn to go, and about half the time the price will follow you."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Rules of the game.** Bargain in markets, at street stalls, for souvenirs and for unmetered transport. Do not bargain in supermarkets, chain shops, pharmacies or restaurants. Never bargain hard over a very small amount — the few thousand rupiah you win means little to you and rather more to the seller, and Indonesians notice the difference between playing the game and squeezing."
+        },
+        {
+          "type": "p",
+          "text": "A useful sense of the range: opening prices for tourists in a market are often two to three times the local price, so a counter at half the opening figure is normal, not insulting. Where a price is written on a tag, it is a *harga pas* and there is nothing to discuss."
+        }
+      ]
+    },
+    {
+      "title": "In and out of shops",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Indonesian", "English"],
+          "rows": [
+            ["*Lihat-lihat dulu, ya.*", "Just having a look, thanks."],
+            ["*Ada ukuran yang lebih besar?*", "Do you have a bigger size?"],
+            ["*Ada warna lain?*", "Do you have another colour?"],
+            ["*Boleh dicoba?*", "May I try it on?"],
+            ["*Kekecilan.* / *Kebesaran.*", "Too small. / Too big."],
+            ["*Ini sudah termasuk?*", "Is this included?"],
+            ["*Bisa bayar pakai kartu?*", "Can I pay by card?"],
+            ["*Minta kantong plastik.*", "Could I have a bag."],
+            ["*Kapan buka?* / *Sudah tutup.*", "When do you open? / It's closed."],
+            ["*Habis, Mbak.*", "Sold out."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Kekecilan* and *kebesaran* are worth a second look: they are *kecil* and *besar* wrapped in *ke-…-an*, and the wrapper here means \"excessively\". The same shape gives *kepanasan* (too hot), *kemahalan* (too expensive) — a very handy little machine."
+        },
+        {
+          "type": "p",
+          "text": "💬 *Habis* means \"finished, used up, sold out\", and you will hear it everywhere: *Nasinya habis* (the rice is finished), *Bensin habis* (out of petrol), *Uang saya habis* (I'm out of money)."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "id": "cari", "baca": "CA-ri", "en": "to look for" },
+    { "id": "beli", "baca": "buh-LI", "en": "to buy" },
+    { "id": "jual", "baca": "JU-al", "en": "to sell" },
+    { "id": "kemeja", "baca": "kuh-MÉ-ja", "en": "shirt" },
+    { "id": "baju", "baca": "BA-ju", "en": "clothes, top" },
+    { "id": "celana", "baca": "cuh-LA-na", "en": "trousers" },
+    { "id": "sepatu", "baca": "suh-PA-tu", "en": "shoes" },
+    { "id": "topi", "baca": "TO-pi", "en": "hat" },
+    { "id": "ukuran", "baca": "u-KU-ran", "en": "size" },
+    { "id": "warna", "baca": "WAR-na", "en": "colour" },
+    { "id": "merah", "baca": "MÉ-rah", "en": "red" },
+    { "id": "hijau", "baca": "HI-jau", "en": "green" },
+    { "id": "kuning", "baca": "KU-ning", "en": "yellow" },
+    { "id": "hitam", "baca": "HI-tam", "en": "black" },
+    { "id": "putih", "baca": "PU-tih", "en": "white" },
+    { "id": "cokelat", "baca": "co-kuh-LAT", "en": "brown; chocolate" },
+    { "id": "lain", "baca": "LA-in", "en": "other, another" },
+    { "id": "pas", "baca": "pas", "en": "a good fit; exact (price)" },
+    { "id": "kamar pas", "baca": "KA-mar pas", "en": "fitting room" },
+    { "id": "coba", "baca": "CO-ba", "en": "to try" },
+    { "id": "batik", "baca": "BA-tik", "en": "batik" },
+    { "id": "kekecilan", "baca": "kuh-kuh-CI-lan", "en": "too small" },
+    { "id": "kebesaran", "baca": "kuh-buh-SA-ran", "en": "too big" },
+    { "id": "kemahalan", "baca": "kuh-ma-HA-lan", "en": "too expensive" },
+    { "id": "habis", "baca": "HA-bis", "en": "finished, sold out" },
+    { "id": "kartu", "baca": "KAR-tu", "en": "card" },
+    { "id": "kantong", "baca": "KAN-tong", "en": "bag, pocket" },
+    { "id": "pikir", "baca": "PI-kir", "en": "to think" },
+    { "id": "paling", "baca": "PA-ling", "en": "most" },
+    { "id": "mari", "baca": "MA-ri", "en": "come; let's (formal)" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Indonesian.",
+      "items": [
+        "I'm looking for a batik shirt.",
+        "Do you have another colour?",
+        "May I try it on?",
+        "It's too big.",
+        "How much is that one?",
+        "Can you come down?",
+        "I'll think about it."
+      ]
+    },
+    {
+      "prompt": "Fill in the gap.",
+      "items": [
+        "____ apa, Mbak? — Saya cari kemeja.",
+        "____ mana? — Yang biru.",
+        "Boleh ____? Dua ratus saja.",
+        "Maaf, ____, Mbak. (sold out)",
+        "Ada ukuran yang lebih ____? (bigger)",
+        "Bisa bayar pakai ____?"
+      ]
+    },
+    {
+      "prompt": "Answer with yang plus the word in brackets.",
+      "items": [
+        "Yang mana, Mbak? (the blue one)",
+        "Mau yang ini? (the cheapest one)",
+        "Ukuran apa? (the bigger one)",
+        "Warna apa? (the black one)",
+        "Ada yang lain? (the small one)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "batik / cari / saya / kemeja",
+        "lain / warna / ada / ?",
+        "dicoba / boleh / ?",
+        "Bu / kurang / boleh / ,",
+        "dulu / saya / pikir / ya / ,"
+      ]
+    }
+  ],
+  "answers": [
+    "Saya cari kemeja batik. — Ada warna lain? — Boleh dicoba? — Kebesaran. — Yang itu berapa? — Boleh kurang? — Saya pikir dulu.",
+    "Cari — Yang — kurang — habis — besar — kartu",
+    "Yang biru. — Yang paling murah. — Yang lebih besar. — Yang hitam. — Yang kecil.",
+    "Saya cari kemeja batik. — Ada warna lain? — Boleh dicoba? — Boleh kurang, Bu? — Saya pikir dulu, ya."
+  ],
+  "wave": "re-read Unit 10. Give directions out loud from your home to the nearest shop."
+}

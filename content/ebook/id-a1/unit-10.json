@@ -1,0 +1,232 @@
+{
+  "title": "Where is it? Finding your way",
+  "title_target": "Di mana? Ke mana?",
+  "goal": "Use the three little words that place everything in Indonesian — *di*, *ke*, *dari* — ask for directions in the street, and understand the answer you get back.",
+  "bekal": [
+    "tell *di* (at), *ke* (to) and *dari* (from) apart without thinking",
+    "ask where something is and follow the reply",
+    "describe where something is in relation to something else"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Cari ATM",
+      "intro": "Sarah is lost in a neighbourhood she does not know. She stops a man watering plants outside his house.",
+      "lines": [
+        { "speaker": "Sarah:", "text": "Permisi, Pak. Di sini ada ATM?", "id": "Excuse me. Is there a cash machine near here?", "literal": "excuse-me, Mr. at here exist ATM?" },
+        { "speaker": "Pria:", "text": "Ada. Di depan minimarket, dekat masjid.", "id": "Yes. In front of the minimarket, near the mosque.", "literal": "exist. at front minimarket, near mosque." },
+        { "speaker": "Sarah:", "text": "Jauh dari sini?", "id": "Is it far from here?", "literal": "far from here?" },
+        { "speaker": "Pria:", "text": "Tidak, dekat. Jalan kaki lima menit.", "id": "No, it's close. Five minutes on foot.", "literal": "not, near. walk foot five minute." },
+        { "speaker": "Sarah:", "text": "Ke sana bagaimana, Pak?", "id": "How do I get there?", "literal": "to there how, Mr?" },
+        { "speaker": "Pria:", "text": "Lurus saja, lalu belok kiri di perempatan.", "id": "Go straight, then turn left at the crossroads.", "literal": "straight only, then turn left at crossroads." },
+        { "speaker": "Sarah:", "text": "Belok kiri di perempatan. Terus?", "id": "Turn left at the crossroads. Then?", "literal": "turn left at crossroads. continue?" },
+        { "speaker": "Pria:", "text": "Terus sampai lampu merah. Minimarket di sebelah kanan.", "id": "Keep going to the traffic lights. The minimarket is on the right.", "literal": "continue until lamp red. minimarket at side right." },
+        { "speaker": "Sarah:", "text": "Di seberang masjid, ya?", "id": "Opposite the mosque, right?", "literal": "at opposite mosque, yes?" },
+        { "speaker": "Pria:", "text": "Betul. Tidak bisa salah.", "id": "That's right. You can't miss it.", "literal": "correct. not can wrong." },
+        { "speaker": "Sarah:", "text": "Terima kasih banyak, Pak!", "id": "Thank you very much!", "literal": "thank you many, Mr!" },
+        { "speaker": "Pria:", "text": "Sama-sama. Hati-hati di jalan!", "id": "You're welcome. Take care on the way!", "literal": "same-same. careful-careful at road!" }
+      ],
+      "notes": [
+        "**Di, ke, dari — three words, three questions.** *Di mana?* (where at?), *Ke mana?* (where to?), *Dari mana?* (where from?). Every place expression in Indonesian starts with one of these three, and choosing the wrong one is the mistake that most often makes a sentence unintelligible rather than merely clumsy.",
+        "**Jalan kaki means \"to walk\"** — literally \"road foot\". *Jalan* alone can mean \"to go\" by any means, so Indonesians add *kaki* when they mean on foot. *Jalan-jalan*, doubled, means \"to go out and about, to wander, to travel for fun\" — one of the most cheerful words in the language.",
+        "**Terus does double duty.** As an instruction it means \"keep going, straight on\"; as a question, *Terus?*, it means \"and then?\". You will use both in the same conversation, exactly as Sarah does here.",
+        "**Landmarks, not street names.** Indonesian directions are given by mosque, minimarket, traffic light, big tree and \"the house with the red gate\". Street names and numbers exist but are rarely used in speech, and asking for one may get you a blank look. Learn the landmark words and you can follow almost any set of directions.",
+        "**Hati-hati di jalan** — \"be careful on the road\" — is the standard parting phrase to anyone leaving. It is warm rather than alarming, and the natural answer is *Ya, terima kasih*."
+      ],
+      "grammars": [
+        {
+          "title": "Di, ke, dari",
+          "body": [
+            "One preposition per direction of movement, and none of them ever changes shape."
+          ],
+          "table": {
+            "head": ["Word", "Meaning", "Example", "English"],
+            "rows": [
+              ["**di**", "at, in, on (no movement)", "*Saya di rumah.*", "I'm at home."],
+              ["**ke**", "to (movement towards)", "*Saya ke pasar.*", "I'm going to the market."],
+              ["**dari**", "from (movement away)", "*Saya dari kantor.*", "I've come from the office."],
+              ["**di mana**", "where?", "*Toiletnya di mana?*", "Where is the toilet?"],
+              ["**ke mana**", "where to?", "*Mau ke mana?*", "Where are you going?"],
+              ["**dari mana**", "where from?", "*Dari mana?*", "Where have you been?"]
+            ]
+          },
+          "after": [
+            "Notice that *Saya ke pasar* needs no verb at all — *ke* already carries the movement. Adding *pergi* (*Saya pergi ke pasar*) is equally correct and slightly fuller.",
+            "💬 *Mau ke mana?* and *Dari mana?* are used as greetings between neighbours, roughly like \"where are you off to?\" in a small English village. A vague answer is entirely acceptable: *Ke sana saja* — \"just over there\"."
+          ]
+        },
+        {
+          "title": "Position words",
+          "body": [
+            "These follow *di* (or *ke*, *dari*) and are then followed by the landmark: *di depan masjid* = at front mosque = in front of the mosque."
+          ],
+          "table": {
+            "head": ["Indonesian", "English", "Indonesian", "English"],
+            "rows": [
+              ["*di depan*", "in front of", "*di belakang*", "behind"],
+              ["*di atas*", "above, on top of", "*di bawah*", "under, below"],
+              ["*di dalam*", "inside", "*di luar*", "outside"],
+              ["*di samping*", "beside", "*di sebelah*", "next to"],
+              ["*di antara*", "between", "*di tengah*", "in the middle of"],
+              ["*di seberang*", "opposite, across from", "*di pojok*", "in the corner"],
+              ["*dekat*", "near", "*jauh dari*", "far from"],
+              ["*di sebelah kanan*", "on the right", "*di sebelah kiri*", "on the left"]
+            ]
+          },
+          "after": [
+            "⚠️ *Dekat* takes no *di*: *dekat masjid*, not *di dekat masjid* — although you will hear both. *Jauh*, on the other hand, wants *dari*: *jauh dari sini*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking, and understanding the answer",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Asking is easy; the difficulty is always the reply. These are the words that will come back at you."
+        },
+        {
+          "type": "tabel",
+          "head": ["Indonesian", "English"],
+          "rows": [
+            ["*Lurus saja.*", "Straight ahead."],
+            ["*Belok kanan / kiri.*", "Turn right / left."],
+            ["*Terus.*", "Keep going."],
+            ["*Putar balik.*", "Turn around."],
+            ["*Di perempatan.*", "At the crossroads."],
+            ["*Di pertigaan.*", "At the T-junction."],
+            ["*Di lampu merah.*", "At the traffic lights."],
+            ["*Sekitar dua ratus meter.*", "About two hundred metres."],
+            ["*Tidak jauh, dekat kok.*", "Not far, it's close."],
+            ["*Tanya orang lagi di sana.*", "Ask someone again when you get there."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Indonesians will rarely tell you they do not know.** Being unable to help a guest feels impolite, so you may be given confident directions that are entirely invented. This is kindness misfiring, not malice. The defence is simple: ask two or three people, and trust the answer you get twice."
+        },
+        {
+          "type": "p",
+          "text": "The phrase that saves you: *Tolong tunjukkan di peta* — \"please show me on the map\". Holding out your phone converts a difficult conversation into a two-second one."
+        }
+      ]
+    },
+    {
+      "title": "Places in a town",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Indonesian", "English", "Indonesian", "English"],
+          "rows": [
+            ["*rumah*", "house", "*bank*", "bank"],
+            ["*kantor*", "office", "*ATM*", "cash machine"],
+            ["*sekolah*", "school", "*kantor pos*", "post office"],
+            ["*universitas*", "university", "*rumah sakit*", "hospital"],
+            ["*pasar*", "market", "*apotek*", "pharmacy"],
+            ["*toko*", "shop", "*polisi*", "police"],
+            ["*minimarket*", "convenience store", "*masjid*", "mosque"],
+            ["*mal*", "shopping mall", "*gereja*", "church"],
+            ["*restoran*", "restaurant", "*pura*", "Balinese temple"],
+            ["*warung*", "food stall", "*stasiun*", "station"],
+            ["*hotel*", "hotel", "*terminal*", "bus terminal"],
+            ["*bandara*", "airport", "*halte*", "bus stop"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Rumah sakit* is literally \"sick house\" — a hospital. The pattern *rumah + something* builds several place words: *rumah makan* (restaurant, \"eating house\"), *rumah sakit*, *rumah kos* (boarding house)."
+        },
+        {
+          "type": "p",
+          "text": "The two names to know for convenience stores are Indomaret and Alfamart; they are on almost every corner in urban Indonesia, they have ATMs, and their staff are used to being asked for directions."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "id": "ke", "baca": "ke", "en": "to (movement)" },
+    { "id": "dekat", "baca": "duh-KAT", "en": "near" },
+    { "id": "jauh", "baca": "JA-uh", "en": "far" },
+    { "id": "lurus", "baca": "LU-rus", "en": "straight" },
+    { "id": "belok", "baca": "BÉ-lok", "en": "to turn" },
+    { "id": "kanan", "baca": "KA-nan", "en": "right" },
+    { "id": "kiri", "baca": "KI-ri", "en": "left" },
+    { "id": "terus", "baca": "tuh-RUS", "en": "keep going; and then" },
+    { "id": "perempatan", "baca": "puh-ruhm-PA-tan", "en": "crossroads" },
+    { "id": "pertigaan", "baca": "puhr-ti-GA-an", "en": "T-junction" },
+    { "id": "lampu merah", "baca": "LAM-pu MÉ-rah", "en": "traffic lights" },
+    { "id": "seberang", "baca": "suh-buh-RANG", "en": "opposite side" },
+    { "id": "depan", "baca": "duh-PAN", "en": "front" },
+    { "id": "belakang", "baca": "buh-la-KANG", "en": "back, behind" },
+    { "id": "atas", "baca": "A-tas", "en": "above, top" },
+    { "id": "bawah", "baca": "BA-wah", "en": "below, bottom" },
+    { "id": "dalam", "baca": "DA-lam", "en": "inside" },
+    { "id": "luar", "baca": "LU-ar", "en": "outside" },
+    { "id": "samping", "baca": "SAM-ping", "en": "side, beside" },
+    { "id": "jalan kaki", "baca": "JA-lan KA-ki", "en": "to walk" },
+    { "id": "peta", "baca": "PUH-ta", "en": "map" },
+    { "id": "masjid", "baca": "MAS-jid", "en": "mosque" },
+    { "id": "bandara", "baca": "ban-DA-ra", "en": "airport" },
+    { "id": "stasiun", "baca": "STA-si-un", "en": "station" },
+    { "id": "rumah sakit", "baca": "RU-mah SA-kit", "en": "hospital" },
+    { "id": "apotek", "baca": "a-PO-ték", "en": "pharmacy" },
+    { "id": "bagaimana", "baca": "ba-gai-MA-na", "en": "how" },
+    { "id": "hati-hati", "baca": "HA-ti HA-ti", "en": "be careful" },
+    { "id": "sekitar", "baca": "suh-KI-tar", "en": "about, around" },
+    { "id": "tunjukkan", "baca": "tun-JUK-kan", "en": "show (me)" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill the gap with di, ke or dari.",
+      "items": [
+        "Saya tinggal ____ Jakarta.",
+        "Besok saya pergi ____ Bandung.",
+        "Sarah ____ Australia.",
+        "Toiletnya ____ mana?",
+        "Mau ____ mana, Mbak?",
+        "ATM ada ____ depan minimarket."
+      ]
+    },
+    {
+      "prompt": "Translate into Indonesian.",
+      "items": [
+        "Excuse me, where is the toilet?",
+        "Is there a pharmacy near here?",
+        "Go straight, then turn left.",
+        "It's opposite the mosque.",
+        "Is it far from here?",
+        "Five minutes on foot.",
+        "Please show me on the map."
+      ]
+    },
+    {
+      "prompt": "Where is it? Answer with a full sentence using the words in brackets.",
+      "items": [
+        "Kucing itu di mana? (under the table)",
+        "ATM di mana? (in front of the minimarket)",
+        "Rumah kamu di mana? (behind the school)",
+        "Bukunya di mana? (on top of the desk)",
+        "Warungnya di mana? (next to the mosque)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "mana / ATM / di / ?",
+        "saja / lurus / kiri / belok / lalu",
+        "masjid / seberang / di",
+        "sini / jauh / dari / ?",
+        "jalan / di / hati-hati / !"
+      ]
+    }
+  ],
+  "answers": [
+    "di — ke — dari — di — ke — di",
+    "Permisi, toiletnya di mana? — Di sini ada apotek? — Lurus saja, lalu belok kiri. — Di seberang masjid. — Jauh dari sini? — Jalan kaki lima menit. — Tolong tunjukkan di peta.",
+    "Kucing itu di bawah meja. — ATM di depan minimarket. — Rumah saya di belakang sekolah. — Bukunya di atas meja. — Warungnya di sebelah masjid.",
+    "ATM di mana? — Lurus saja, lalu belok kiri. — Di seberang masjid. — Jauh dari sini? — Hati-hati di jalan!"
+  ],
+  "wave": "re-read Unit 8. Say today's date and the time out loud in Indonesian."
+}

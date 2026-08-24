@@ -1,0 +1,230 @@
+{
+  "title": "At the warung",
+  "title_target": "Mau pesan apa?",
+  "goal": "Order food and drink anywhere in Indonesia, from a plastic-stool warung to a restaurant — including the two questions you will be asked every single time: how spicy, and eat in or take away.",
+  "bekal": [
+    "order a meal and a drink without pointing",
+    "say how spicy you want it, and mean it",
+    "ask for the bill, ask what a dish is, and say you liked it"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Warung nasi goreng",
+      "intro": "A busy street-side warung at eight in the evening. Mas Dedi runs the wok; Sarah has come alone.",
+      "lines": [
+        { "speaker": "Dedi:", "text": "Malam, Mbak. Mau pesan apa?", "id": "Evening. What would you like to order?", "literal": "night, miss. want order what?" },
+        { "speaker": "Sarah:", "text": "Nasi goreng satu, Mas. Pakai telur.", "id": "One fried rice, please. With an egg.", "literal": "rice fried one, Mr. use egg." },
+        { "speaker": "Dedi:", "text": "Pedas atau tidak?", "id": "Spicy or not?", "literal": "spicy or not?" },
+        { "speaker": "Sarah:", "text": "Sedikit pedas saja.", "id": "Just a little spicy.", "literal": "a-little spicy only." },
+        { "speaker": "Dedi:", "text": "Baik. Minumnya apa?", "id": "All right. And to drink?", "literal": "drink-the what?" },
+        { "speaker": "Sarah:", "text": "Es teh manis satu. Tidak pakai gula banyak, ya.", "id": "One iced sweet tea. Not too much sugar, please.", "literal": "ice tea sweet one. not use sugar many, yes." },
+        { "speaker": "Dedi:", "text": "Siap. Makan di sini atau bungkus?", "id": "Right. Eat in or take away?", "literal": "ready. eat at here or wrap?" },
+        { "speaker": "Sarah:", "text": "Makan di sini. Berapa lama, Mas?", "id": "Eat in. How long will it take?", "literal": "eat at here. how-much long, Mr?" },
+        { "speaker": "Dedi:", "text": "Lima menit saja. Silakan duduk.", "id": "Just five minutes. Please have a seat.", "literal": "five minute only. please sit." },
+        { "speaker": "Sarah:", "text": "Terima kasih. Oh ya, ini apa, Mas?", "id": "Thank you. Oh, what's this?", "literal": "thank you. oh yes, this what, Mr?" },
+        { "speaker": "Dedi:", "text": "Itu kerupuk. Gratis, silakan.", "id": "That's kerupuk. It's free, help yourself.", "literal": "that cracker. free, please." },
+        { "speaker": "Sarah:", "text": "Wah, terima kasih! Nanti saya minta bon, ya.", "id": "Thank you! I'll ask for the bill later.", "literal": "wow, thank you! later I ask-for bill, yes." }
+      ],
+      "notes": [
+        "**Nasi goreng satu — the number goes last when ordering.** You will hear this everywhere: *kopi dua*, *es teh tiga*. It is not the neutral word order (*satu nasi goreng* is also fine) but it is what people say across a counter, because the dish is the important part.",
+        "**Pakai literally means \"to use\", and in a warung it means \"with\".** *Pakai telur* (with an egg), *pakai sambal* (with chilli sauce), *tidak pakai bawang* (no onion). If you have an allergy or a dietary restriction, *tidak pakai…* is the phrase that will keep you safe.",
+        "**Makan di sini atau bungkus?** *Bungkus* means \"to wrap\", and takeaway food in Indonesia is genuinely wrapped — often in paper and a plastic bag. Answering *bungkus* is all you need to say. 💬 You will also hear the English-derived *take away* and the Javanese-flavoured *dibungkus*.",
+        "**Sedikit pedas is not the same as mild.** Indonesian chilli tolerance is high, and *sedikit pedas* to a warung cook may still be considerable. If you truly cannot manage heat, say *tidak pedas sama sekali* (\"not spicy at all\") and expect to be asked again to be sure.",
+        "**Minta bon** is how you ask for the bill in a warung or simple restaurant; in smarter places you can say *minta bill* or *minta struk*. *Minta* means \"to ask for\" and it is one of the most useful verbs in the language."
+      ],
+      "grammars": [
+        {
+          "title": "Ordering: five sentence frames",
+          "body": [
+            "Almost everything you will ever say in a restaurant fits one of these."
+          ],
+          "table": {
+            "head": ["Frame", "Example", "English"],
+            "rows": [
+              ["*Saya mau …*", "*Saya mau nasi goreng.*", "I'd like fried rice."],
+              ["*… satu / dua*", "*Kopi dua, Mas.*", "Two coffees, please."],
+              ["*Pakai …*", "*Pakai es.*", "With ice."],
+              ["*Tidak pakai …*", "*Tidak pakai sambal.*", "Without chilli sauce."],
+              ["*Minta …*", "*Minta air putih.*", "Could I have some water."],
+              ["*Ada … ?*", "*Ada menu vegetarian?*", "Do you have a vegetarian menu?"]
+            ]
+          },
+          "after": [
+            "*Minta* is softer than *mau* and is the polite way to ask for something small — water, a spoon, the bill. *Mau* announces what you want; *minta* asks for it.",
+            "Adding *ya* to the end of any of these softens it further: *Tidak pakai sambal, ya.* Indonesians do this constantly, and it is the easiest way to sound polite rather than abrupt."
+          ]
+        },
+        {
+          "title": "Food and drink you will meet in week one",
+          "body": [
+            "Learn the building blocks and you can read most menus in the country."
+          ],
+          "table": {
+            "head": ["Indonesian", "English", "Indonesian", "English"],
+            "rows": [
+              ["*nasi*", "cooked rice", "*es*", "ice; iced"],
+              ["*mie*", "noodles", "*teh*", "tea"],
+              ["*ayam*", "chicken", "*kopi*", "coffee"],
+              ["*ikan*", "fish", "*jus*", "juice"],
+              ["*sapi*", "beef", "*susu*", "milk"],
+              ["*babi*", "pork", "*air putih*", "plain water"],
+              ["*udang*", "prawn", "*goreng*", "fried"],
+              ["*telur*", "egg", "*bakar*", "grilled"],
+              ["*sayur*", "vegetable", "*rebus*", "boiled"],
+              ["*tahu*", "tofu", "*panggang*", "roasted"],
+              ["*tempe*", "tempeh", "*kuah*", "broth, sauce"],
+              ["*sambal*", "chilli sauce", "*manis*", "sweet"],
+              ["*kerupuk*", "prawn cracker", "*asin*", "salty"],
+              ["*bakso*", "meatball soup", "*asam*", "sour"]
+            ]
+          },
+          "after": [
+            "Put two together and you have a dish: *nasi goreng* (fried rice), *mie goreng* (fried noodles), *ayam bakar* (grilled chicken), *ikan goreng* (fried fish), *sayur asem* (sour vegetable soup). The cooking method follows the ingredient — the same noun-then-description order you learned in Unit 7.",
+            "⚠️ *Babi* is pork. In a country with a large Muslim majority, most warung do not serve it, and asking loudly for it can be awkward. Look for the word *halal* or, in Bali and Chinese-Indonesian areas, for *babi* on the menu."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Saying what you can and cannot eat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Indonesians take dietary restrictions seriously and will ask follow-up questions, so it pays to be able to say this clearly and calmly."
+        },
+        {
+          "type": "tabel",
+          "head": ["Indonesian", "English"],
+          "rows": [
+            ["*Saya vegetarian.*", "I'm vegetarian."],
+            ["*Saya tidak makan daging.*", "I don't eat meat."],
+            ["*Saya tidak makan babi.*", "I don't eat pork."],
+            ["*Saya alergi udang.*", "I'm allergic to prawns."],
+            ["*Ada makanan tanpa daging?*", "Is there anything without meat?"],
+            ["*Ini pakai daging?*", "Does this have meat in it?"],
+            ["*Tidak pedas sama sekali, ya.*", "Not spicy at all, please."],
+            ["*Saya tidak minum alkohol.*", "I don't drink alcohol."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Two hidden ingredients catch vegetarians out constantly: *terasi* (shrimp paste, in most sambal) and *kaldu ayam* (chicken stock, in most soup). The question to ask is *Pakai terasi?* — and asking it will earn you a nod of respect for knowing."
+        }
+      ]
+    },
+    {
+      "title": "Talking about the food",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Indonesian", "English", "When"],
+          "rows": [
+            ["*Enak sekali!*", "Delicious!", "always welcome"],
+            ["*Wah, mantap!* 💬", "That's excellent!", "casual, enthusiastic"],
+            ["*Kurang asin.*", "It needs salt.", "gentle criticism"],
+            ["*Terlalu pedas untuk saya.*", "Too spicy for me.", "honest and fine"],
+            ["*Saya sudah kenyang.*", "I'm full.", "declining more"],
+            ["*Bungkus, ya.*", "To take away, please.", "at the counter"],
+            ["*Minta bon.*", "The bill, please.", "warung, simple places"],
+            ["*Bayar di kasir?*", "Do I pay at the till?", "often yes"],
+            ["*Sudah termasuk pajak?*", "Is tax included?", "restaurants"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tipping is not expected in warung and street food. In restaurants the bill often already includes a service charge and *pajak* (tax) — look for *++* after the prices on the menu, which means both are added on top."
+        },
+        {
+          "type": "p",
+          "text": "And one piece of etiquette that costs nothing: if you are eating and someone walks past, offer them food with *Mari, makan!* They will decline. Both halves of this exchange are ritual, and skipping your half is what gets noticed."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "id": "pesan", "baca": "puh-SAN", "en": "to order" },
+    { "id": "minta", "baca": "MIN-ta", "en": "to ask for" },
+    { "id": "pakai", "baca": "PA-kai", "en": "with; to use" },
+    { "id": "bungkus", "baca": "BUNG-kus", "en": "to wrap; takeaway" },
+    { "id": "menu", "baca": "MÉ-nu", "en": "menu" },
+    { "id": "bon", "baca": "bon", "en": "the bill" },
+    { "id": "kasir", "baca": "ka-SIR", "en": "cashier, till" },
+    { "id": "pajak", "baca": "PA-jak", "en": "tax" },
+    { "id": "gratis", "baca": "GRA-tis", "en": "free of charge" },
+    { "id": "mie", "baca": "mi", "en": "noodles" },
+    { "id": "ayam", "baca": "A-yam", "en": "chicken" },
+    { "id": "sapi", "baca": "SA-pi", "en": "beef, cow" },
+    { "id": "babi", "baca": "BA-bi", "en": "pork, pig" },
+    { "id": "udang", "baca": "U-dang", "en": "prawn" },
+    { "id": "sambal", "baca": "SAM-bal", "en": "chilli sauce" },
+    { "id": "kerupuk", "baca": "kuh-RU-puk", "en": "prawn cracker" },
+    { "id": "goreng", "baca": "GO-réng", "en": "fried" },
+    { "id": "bakar", "baca": "BA-kar", "en": "grilled" },
+    { "id": "rebus", "baca": "RUH-bus", "en": "boiled" },
+    { "id": "es", "baca": "és", "en": "ice; iced" },
+    { "id": "susu", "baca": "SU-su", "en": "milk" },
+    { "id": "jus", "baca": "jus", "en": "juice" },
+    { "id": "gula", "baca": "GU-la", "en": "sugar" },
+    { "id": "garam", "baca": "GA-ram", "en": "salt" },
+    { "id": "asin", "baca": "A-sin", "en": "salty" },
+    { "id": "alergi", "baca": "a-LÉR-gi", "en": "allergic" },
+    { "id": "tanpa", "baca": "TAN-pa", "en": "without" },
+    { "id": "termasuk", "baca": "tuhr-MA-suk", "en": "included" },
+    { "id": "duduk", "baca": "DU-duk", "en": "to sit" },
+    { "id": "siap", "baca": "SI-ap", "en": "ready" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Indonesian.",
+      "items": [
+        "One fried rice, please.",
+        "Two iced sweet teas.",
+        "With an egg, please.",
+        "Without chilli sauce.",
+        "Eat in, please.",
+        "The bill, please.",
+        "I'm allergic to prawns."
+      ]
+    },
+    {
+      "prompt": "Fill in the gap.",
+      "items": [
+        "Mau ____ apa, Mbak?",
+        "Nasi goreng ____ telur, ya.",
+        "Makan di sini atau ____?",
+        "Tidak ____ sambal, saya tidak suka pedas.",
+        "Nanti saya ____ bon.",
+        "Ini ____, silakan. (no charge)"
+      ]
+    },
+    {
+      "prompt": "What do you say? Write the whole sentence.",
+      "items": [
+        "You want your food to take away.",
+        "You truly cannot eat anything spicy.",
+        "You want to know whether the sambal contains shrimp paste.",
+        "You have finished and want to pay.",
+        "The food was excellent and you want to say so."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "satu / goreng / nasi / Mas / ,",
+        "telur / pakai",
+        "sini / makan / di",
+        "sambal / pakai / tidak / ya / ,",
+        "bon / minta"
+      ]
+    }
+  ],
+  "answers": [
+    "Nasi goreng satu. — Es teh manis dua. — Pakai telur, ya. — Tidak pakai sambal. — Makan di sini. — Minta bon. — Saya alergi udang.",
+    "pesan — pakai — bungkus — pakai — minta — gratis",
+    "Bungkus, ya. — Tidak pedas sama sekali, ya. — Sambalnya pakai terasi? — Minta bon. — Enak sekali!",
+    "Nasi goreng satu, Mas. — Pakai telur. — Makan di sini. — Tidak pakai sambal, ya. — Minta bon."
+  ],
+  "wave": "re-read Unit 7. Describe three people you know out loud, in Indonesian."
+}

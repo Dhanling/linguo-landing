@@ -1,0 +1,232 @@
+{
+  "title": "This, that, and what's that?",
+  "title_target": "Ini apa? Itu apa?",
+  "goal": "Point at anything and ask what it is, say that something exists or is available, and find out that Indonesian nouns have no plural form, no gender and no articles — a single word does all the work.",
+  "bekal": [
+    "ask *Ini apa?* and answer it in a full sentence",
+    "use *ada* for \"there is\", \"they have\" and \"is in\"",
+    "say one book, two books and some books without ever changing the word *buku*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Di toko dekat kos",
+      "intro": "A small shop near Sarah's boarding house. She is holding something she has never seen before; Bu Ani is behind the counter.",
+      "lines": [
+        { "speaker": "Sarah:", "text": "Permisi, Bu. Ini apa?", "id": "Excuse me. What is this?", "literal": "excuse-me, Mrs. this what?" },
+        { "speaker": "Bu Ani:", "text": "Itu tempe. Makanan Indonesia.", "id": "That's tempeh. Indonesian food.", "literal": "that tempeh. food Indonesia." },
+        { "speaker": "Sarah:", "text": "Tempe? Enak?", "id": "Tempeh? Is it good?", "literal": "tempeh? tasty?" },
+        { "speaker": "Bu Ani:", "text": "Enak sekali! Dan murah.", "id": "Very good! And cheap.", "literal": "tasty very! and cheap." },
+        { "speaker": "Sarah:", "text": "Di sini ada nasi?", "id": "Do you have rice here?", "literal": "at here exist rice?" },
+        { "speaker": "Bu Ani:", "text": "Ada. Nasi ada di sana.", "id": "Yes. The rice is over there.", "literal": "exist. rice exist at there." },
+        { "speaker": "Sarah:", "text": "Dan itu? Itu buah apa?", "id": "And that? What fruit is that?", "literal": "and that? that fruit what?" },
+        { "speaker": "Bu Ani:", "text": "Itu salak. Buah khas Indonesia.", "id": "That's snake fruit. A typical Indonesian fruit.", "literal": "that snake-fruit. fruit typical Indonesia." },
+        { "speaker": "Sarah:", "text": "Saya mau dua salak dan satu tempe.", "id": "I'd like two snake fruits and one tempeh.", "literal": "I want two snake-fruit and one tempeh." },
+        { "speaker": "Bu Ani:", "text": "Baik. Ada lagi?", "id": "All right. Anything else?", "literal": "good. exist again?" },
+        { "speaker": "Sarah:", "text": "Tidak ada, terima kasih. Ini uangnya.", "id": "No, thank you. Here's the money.", "literal": "not exist, thank you. this money-the." },
+        { "speaker": "Bu Ani:", "text": "Terima kasih kembali. Silakan datang lagi!", "id": "Thank you. Please come again!", "literal": "thank you back. please come again!" }
+      ],
+      "notes": [
+        "**Dua salak — not \"dua salaks\".** Indonesian nouns never take a plural ending. The number already tells you there is more than one, so changing the noun as well would be repeating yourself, and the language refuses to. This holds for every noun in the book: *satu buku*, *dua buku*, *seribu buku*.",
+        "**Ada is the workhorse of the language.** It covers English \"there is / there are\", \"to have (in stock)\", \"to be present\" and \"to be located\". *Ada nasi?* can mean \"is there rice?\", \"do you have rice?\" and \"is the rice here?\" — the situation decides, and Indonesians hear no ambiguity at all.",
+        "**Ada lagi? — \"anything else?\"** *Lagi* means \"again\" or \"more\", and this two-word question is what every shopkeeper in Indonesia will ask you. The answer is *ada* (\"yes, more\") or *tidak ada* / *cukup* (\"no, that's enough\").",
+        "**Ini uangnya.** That *-nya* on the end of *uang* is a suffix you will meet constantly. Here it does roughly what English \"the\" does: not \"here is money\" but \"here is **the** money\". It is also \"his\", \"her\" and \"its\" — Unit 3 opens it up properly.",
+        "**Terima kasih kembali** is the shopkeeper's polite \"thank you in return\". Alongside *sama-sama*, you will also hear *kembali* on its own, and *terima kasih juga*. All are fine; none is wrong."
+      ],
+      "grammars": [
+        {
+          "title": "Ini and itu — this and that",
+          "body": [
+            "Two words, two jobs each. They can stand alone as \"this\" and \"that\", or follow a noun to mean \"this X\" and \"that X\" — and notice which side they sit on."
+          ],
+          "table": {
+            "head": ["Indonesian", "Word for word", "English"],
+            "rows": [
+              ["*Ini apa?*", "this what?", "What is this?"],
+              ["*Ini tempe.*", "this tempeh", "This is tempeh."],
+              ["*Itu mahal.*", "that expensive", "That is expensive."],
+              ["*buku ini*", "book this", "**this** book"],
+              ["*buku itu*", "book that", "**that** book"],
+              ["*Buku ini bagus.*", "book this good", "This book is good."]
+            ]
+          },
+          "after": [
+            "⚠️ **Word order flips against English.** \"This book\" is *buku ini*, in that order. English puts the pointer first; Indonesian puts the noun first and then points. The same rule will govern adjectives (*mobil merah*, \"red car\") and owners (*buku saya*, \"my book\"). One rule, three uses — learn it here and Units 3 and 7 cost you nothing.",
+            "*Itu* also does the job of \"the one we were just talking about\", which is why *buku itu* often translates simply as \"the book\".",
+            "Their place-partners are *di sini* (\"here\") and *di sana* (\"there\"), with *di situ* for \"right there, near you\"."
+          ]
+        },
+        {
+          "title": "Ada — there is, there are, we have",
+          "body": [
+            "One word for existence, availability and presence. Its negative is *tidak ada*, and that pair alone will get you through a hundred shop conversations."
+          ],
+          "table": {
+            "head": ["Indonesian", "Word for word", "English"],
+            "rows": [
+              ["*Ada nasi.*", "exist rice", "There is rice. / We have rice."],
+              ["*Ada nasi?*", "exist rice?", "Do you have rice?"],
+              ["*Tidak ada nasi.*", "not exist rice", "There is no rice."],
+              ["*Nasi ada di sana.*", "rice exist at there", "The rice is over there."],
+              ["*Ada orang di sini?*", "exist person at here?", "Is anybody here?"],
+              ["*Saya ada uang.* 💬", "I exist money", "I have money."]
+            ]
+          },
+          "after": [
+            "💬 The last line is everyday speech. The neutral way to say \"I have\" is *punya*: *Saya punya uang*. Both are heard everywhere; *punya* is the safer one to produce.",
+            "*Ada* is also the answer to a question. \"Do you have rice?\" — *Ada.* \"Is Budi in?\" — *Ada.* Answering by repeating the key word instead of saying \"yes\" is a deeply Indonesian habit, and it will make you sound natural faster than any amount of vocabulary."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Nouns: nothing to memorise",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Compare what an Indonesian noun asks of you with what a French or German one does. There is no gender, no article, no plural, and no case."
+        },
+        {
+          "type": "tabel",
+          "head": ["English", "Indonesian", "Notice"],
+          "rows": [
+            ["a book / the book", "*buku*", "same word; context decides"],
+            ["books / two books", "*buku* / *dua buku*", "the noun does not change"],
+            ["this book", "*buku ini*", "pointer goes after"],
+            ["my book", "*buku saya*", "owner goes after"],
+            ["the book's cover", "*sampul buku*", "possessed thing first"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "When you really must stress plurality and there is no number in the sentence, Indonesian doubles the word: *buku-buku* (\"books, various books\"), *anak-anak* (\"children\"). Use it sparingly — with a number in front it is simply wrong, and *dua buku-buku* marks you as a beginner."
+        },
+        {
+          "type": "p",
+          "text": "Other useful words instead of doubling: *banyak* (many), *beberapa* (several), *semua* (all), *setiap* (every). *Banyak orang* — \"many people\", noun untouched."
+        }
+      ]
+    },
+    {
+      "title": "Things around you",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Enough nouns to point at most of a room and most of a shop."
+        },
+        {
+          "type": "tabel",
+          "head": ["Indonesian", "English", "Indonesian", "English"],
+          "rows": [
+            ["*buku*", "book", "*air*", "water"],
+            ["*meja*", "table", "*nasi*", "cooked rice"],
+            ["*kursi*", "chair", "*roti*", "bread"],
+            ["*pintu*", "door", "*kopi*", "coffee"],
+            ["*jendela*", "window", "*teh*", "tea"],
+            ["*kamar*", "room", "*gula*", "sugar"],
+            ["*rumah*", "house", "*garam*", "salt"],
+            ["*jalan*", "street, road", "*buah*", "fruit"],
+            ["*mobil*", "car", "*sayur*", "vegetable"],
+            ["*motor*", "motorbike", "*telur*", "egg"],
+            ["*tas*", "bag", "*ikan*", "fish"],
+            ["*uang*", "money", "*ayam*", "chicken"],
+            ["*handphone / HP*", "mobile phone", "*makanan*", "food"],
+            ["*kunci*", "key", "*minuman*", "drink"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "💬 *HP* is pronounced **ha-pé**, from the English \"handphone\", and it is what everybody says. *Telepon genggam* exists in dictionaries and nowhere else."
+        },
+        {
+          "type": "p",
+          "text": "Notice *makanan* and *minuman*: they are *makan* (\"eat\") and *minum* (\"drink\") with **-an** on the end, which turns an action into the thing itself. You are not expected to build such words yet, but seeing the root inside them is exactly the skill this book is training."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "id": "ini", "baca": "I-ni", "en": "this" },
+    { "id": "itu", "baca": "I-tu", "en": "that; the" },
+    { "id": "apa", "baca": "A-pa", "en": "what" },
+    { "id": "ada", "baca": "A-da", "en": "there is; to have; to be present" },
+    { "id": "tidak ada", "baca": "TI-dak A-da", "en": "there isn't; not available" },
+    { "id": "di sini", "baca": "di SI-ni", "en": "here" },
+    { "id": "di sana", "baca": "di SA-na", "en": "over there" },
+    { "id": "toko", "baca": "TO-ko", "en": "shop" },
+    { "id": "makanan", "baca": "ma-KA-nan", "en": "food" },
+    { "id": "minuman", "baca": "mi-NU-man", "en": "drink" },
+    { "id": "nasi", "baca": "NA-si", "en": "cooked rice" },
+    { "id": "buah", "baca": "BU-ah", "en": "fruit" },
+    { "id": "tempe", "baca": "TÉM-pé", "en": "tempeh (fermented soybean cake)" },
+    { "id": "enak", "baca": "É-nak", "en": "tasty, pleasant" },
+    { "id": "murah", "baca": "MU-rah", "en": "cheap" },
+    { "id": "mahal", "baca": "MA-hal", "en": "expensive" },
+    { "id": "bagus", "baca": "BA-gus", "en": "good (of quality)" },
+    { "id": "mau", "baca": "mau", "en": "to want; to be about to" },
+    { "id": "satu", "baca": "SA-tu", "en": "one" },
+    { "id": "dua", "baca": "DU-a", "en": "two" },
+    { "id": "lagi", "baca": "LA-gi", "en": "again; more; still" },
+    { "id": "uang", "baca": "U-ang", "en": "money" },
+    { "id": "punya", "baca": "PU-nya", "en": "to have, to own" },
+    { "id": "banyak", "baca": "BA-nyak", "en": "many, much" },
+    { "id": "semua", "baca": "suh-MU-a", "en": "all" },
+    { "id": "khas", "baca": "khas", "en": "typical of, characteristic" },
+    { "id": "silakan", "baca": "si-LA-kan", "en": "please (go ahead)" },
+    { "id": "datang", "baca": "da-TANG", "en": "to come" },
+    { "id": "cukup", "baca": "CU-kup", "en": "enough" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Indonesian.",
+      "items": [
+        "What is this?",
+        "That is Indonesian food.",
+        "Is there rice?",
+        "There is no water.",
+        "This book is good.",
+        "I want two eggs.",
+        "Anything else?"
+      ]
+    },
+    {
+      "prompt": "Fill the gap with ini, itu, ada or tidak ada.",
+      "items": [
+        "____ apa? — Itu salak.",
+        "Buku ____ mahal sekali.",
+        "Di sini ____ kopi? Ada.",
+        "Maaf, ____ nasi. Habis.",
+        "____ uangnya, Bu.",
+        "Kamar ____ besar."
+      ]
+    },
+    {
+      "prompt": "Correct the mistake and write the sentence properly.",
+      "items": [
+        "Ini buku bagus. (meaning: this book is good)",
+        "Dua bukus.",
+        "Saya adalah lapar.",
+        "Ini apa itu?",
+        "Tidak ada tidak nasi."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "apa / ini / ?",
+        "makanan / itu / Indonesia",
+        "sini / ada / di / nasi / ?",
+        "buku / bagus / ini",
+        "salak / mau / dua / saya"
+      ]
+    }
+  ],
+  "answers": [
+    "Ini apa? — Itu makanan Indonesia. — Ada nasi? — Tidak ada air. — Buku ini bagus. — Saya mau dua telur. — Ada lagi?",
+    "Ini — ini — ada — tidak ada — Ini — itu",
+    "Buku ini bagus. — Dua buku. — Saya lapar. — Ini apa? — Tidak ada nasi.",
+    "Ini apa? — Itu makanan Indonesia. — Di sini ada nasi? — Buku ini bagus. — Saya mau dua salak."
+  ],
+  "wave": "re-read Unit 1 out loud today, especially the greetings table."
+}

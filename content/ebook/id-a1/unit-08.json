@@ -1,0 +1,235 @@
+{
+  "title": "Telling the time, and naming the day",
+  "title_target": "Jam berapa sekarang?",
+  "goal": "Ask and give the time, name the days and months, say a date, and handle the words that carve up an Indonesian day — which starts earlier and divides differently than yours.",
+  "bekal": [
+    "ask *Jam berapa?* and answer to the half hour and the quarter hour",
+    "name any day, month and date",
+    "arrange to meet someone at a specific time on a specific day"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Bikin janji",
+      "intro": "Rina and Sarah are trying to find a time to visit a batik exhibition.",
+      "lines": [
+        { "speaker": "Rina:", "text": "Sarah, hari Sabtu kamu sibuk?", "id": "Sarah, are you busy on Saturday?", "literal": "Sarah, day Saturday you busy?" },
+        { "speaker": "Sarah:", "text": "Sabtu pagi ada les bahasa. Siang kosong.", "id": "Saturday morning I have a language class. The afternoon is free.", "literal": "Saturday morning exist lesson language. midday empty." },
+        { "speaker": "Rina:", "text": "Bagus. Ada pameran batik di Museum Tekstil.", "id": "Good. There's a batik exhibition at the Textile Museum.", "literal": "good. exist exhibition batik at Museum Textile." },
+        { "speaker": "Sarah:", "text": "Menarik! Buka jam berapa?", "id": "Interesting! What time does it open?", "literal": "interesting! open hour how-much?" },
+        { "speaker": "Rina:", "text": "Jam sembilan sampai jam empat sore.", "id": "Nine until four in the afternoon.", "literal": "hour nine until hour four afternoon." },
+        { "speaker": "Sarah:", "text": "Kita ketemu jam berapa?", "id": "What time shall we meet?", "literal": "we meet hour how-much?" },
+        { "speaker": "Rina:", "text": "Jam satu siang di depan museum. Bisa?", "id": "One o'clock in front of the museum. Can you?", "literal": "hour one midday at front museum. can?" },
+        { "speaker": "Sarah:", "text": "Bisa. Tapi les saya selesai jam dua belas.", "id": "Yes. But my class finishes at twelve.", "literal": "can. but lesson I finish hour twelve." },
+        { "speaker": "Rina:", "text": "Kalau begitu jam setengah dua saja.", "id": "In that case let's say half past one.", "literal": "if like-that hour half two only." },
+        { "speaker": "Sarah:", "text": "Setengah dua? Jam satu tiga puluh, ya?", "id": "Half two? Meaning one thirty?", "literal": "half two? hour one three ten, yes?" },
+        { "speaker": "Rina:", "text": "Betul. Setengah jalan menuju jam dua.", "id": "Right. Halfway towards two o'clock.", "literal": "correct. half road heading hour two." },
+        { "speaker": "Sarah:", "text": "Oke, sampai Sabtu!", "id": "OK, see you Saturday!", "literal": "OK, until Saturday!" }
+      ],
+      "notes": [
+        "**Setengah dua means half past ONE.** This is the single most dangerous piece of A1 Indonesian for an English speaker. *Setengah* is \"half\", and the number after it is the hour you are heading **towards** — the German and Dutch system. *Setengah dua* = halfway to two = 1.30. Get this wrong once and you will be an hour early, which in Indonesia at least is the better mistake.",
+        "**Jam does two jobs**: \"hour\", \"o'clock\", and also \"clock/watch\". *Jam berapa?* is \"what time is it?\", *jam satu* is \"one o'clock\", and *jam saya* is \"my watch\".",
+        "**Hari Sabtu, not just Sabtu.** In careful Indonesian the word *hari* (\"day\") goes in front of the day's name: *hari Senin*, *hari Sabtu*. In speech it is often dropped, but including it is never wrong.",
+        "**Ketemu is the everyday form of bertemu.** Both mean \"to meet\"; *bertemu* is the written one you met in Unit 1, *ketemu* is what people say. You will find this pattern again and again — the spoken form is shorter.",
+        "**Kalau begitu — \"in that case\".** *Kalau* is \"if\", *begitu* is \"like that\". This phrase is the hinge of countless conversations and is worth memorising whole."
+      ],
+      "grammars": [
+        {
+          "title": "The clock",
+          "body": [
+            "Indonesian counts hours from one to twelve and adds a part of the day when it matters."
+          ],
+          "table": {
+            "head": ["Time", "Indonesian", "Word for word"],
+            "rows": [
+              ["What time is it?", "*Jam berapa sekarang?*", "hour how-much now?"],
+              ["1.00", "*jam satu*", "hour one"],
+              ["1.05", "*jam satu lewat lima*", "hour one past five"],
+              ["1.15", "*jam satu seperempat*", "hour one a-quarter"],
+              ["1.30", "*setengah dua*", "half two"],
+              ["1.45", "*jam dua kurang seperempat*", "hour two less a-quarter"],
+              ["13.00", "*jam satu siang*", "hour one midday"],
+              ["19.00", "*jam tujuh malam*", "hour seven night"],
+              ["07.30", "*setengah delapan pagi*", "half eight morning"]
+            ]
+          },
+          "after": [
+            "💬 In practice, most people now simply read the digits: *jam satu tiga puluh* or *jam tujuh belas* (17.00), especially for appointments and timetables. If you find *setengah dua* too dangerous to produce, say *jam satu tiga puluh* — it is perfectly normal Indonesian, and unambiguous.",
+            "*Lewat* (\"past\") and *kurang* (\"less\") do the same work as in English. *Seperempat* is \"a quarter\" — there is that *se-* meaning \"one\" again."
+          ]
+        },
+        {
+          "title": "The parts of an Indonesian day",
+          "body": [
+            "The day is divided differently from English, and the divisions are used constantly with times."
+          ],
+          "table": {
+            "head": ["Indonesian", "Roughly", "Example"],
+            "rows": [
+              ["*pagi*", "dawn to about 11", "*jam enam pagi* — 6 a.m."],
+              ["*siang*", "11 to about 15", "*jam satu siang* — 1 p.m."],
+              ["*sore*", "15 to sunset", "*jam lima sore* — 5 p.m."],
+              ["*malam*", "after dark", "*jam delapan malam* — 8 p.m."],
+              ["*subuh*", "before dawn", "*salat subuh* — dawn prayer"],
+              ["*tengah malam*", "midnight", "*jam dua belas tengah malam*"]
+            ]
+          },
+          "after": [
+            "Indonesia sits on the equator, so sunrise and sunset barely move all year: roughly six in the morning and six in the evening, every day, everywhere in the country. That is why these divisions are so stable — and why *sore* is a real, distinct part of the day rather than a vague \"late afternoon\".",
+            "The country has three time zones: **WIB** (Jakarta, Sumatra, Java), **WITA** (Bali, Kalimantan, Sulawesi) and **WIT** (Papua), each an hour apart. Flight times and TV listings always say which."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Days, months, dates",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Day", "Indonesian", "Month", "Indonesian"],
+          "rows": [
+            ["Monday", "*Senin*", "January", "*Januari*"],
+            ["Tuesday", "*Selasa*", "February", "*Februari*"],
+            ["Wednesday", "*Rabu*", "March", "*Maret*"],
+            ["Thursday", "*Kamis*", "April", "*April*"],
+            ["Friday", "*Jumat*", "May", "*Mei*"],
+            ["Saturday", "*Sabtu*", "June", "*Juni*"],
+            ["Sunday", "*Minggu*", "July", "*Juli*"],
+            ["week", "*minggu*", "August", "*Agustus*"],
+            ["month", "*bulan*", "September", "*September*"],
+            ["year", "*tahun*", "October", "*Oktober*"],
+            ["date", "*tanggal*", "November", "*November*"],
+            ["day", "*hari*", "December", "*Desember*"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dates run **day, month, year**, with no ordinal ending: *tanggal 17 Agustus 1945* — the seventeenth of August 1945, Indonesian independence day, and a date every Indonesian knows. Ask with *Tanggal berapa?* (\"what date?\") and *Hari apa?* (\"what day?\")."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Minggu* with a capital M is Sunday; *minggu* with a small one is a week. *Minggu depan* is \"next week\", *hari Minggu* is \"Sunday\". Speech makes no distinction, so the sentence has to."
+        },
+        {
+          "type": "tabel",
+          "head": ["Indonesian", "English", "Indonesian", "English"],
+          "rows": [
+            ["*hari ini*", "today", "*minggu lalu*", "last week"],
+            ["*besok*", "tomorrow", "*minggu depan*", "next week"],
+            ["*kemarin*", "yesterday", "*bulan lalu*", "last month"],
+            ["*lusa*", "the day after tomorrow", "*bulan depan*", "next month"],
+            ["*tadi pagi*", "this morning (past)", "*tahun lalu*", "last year"],
+            ["*nanti malam*", "tonight (to come)", "*setiap hari*", "every day"]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Making an appointment",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Indonesian", "English"],
+          "rows": [
+            ["*Jam berapa sekarang?*", "What time is it now?"],
+            ["*Kita ketemu jam berapa?*", "What time shall we meet?"],
+            ["*Besok kamu ada waktu?*", "Do you have time tomorrow?"],
+            ["*Hari Sabtu saya kosong.*", "I'm free on Saturday."],
+            ["*Maaf, saya sudah ada janji.*", "Sorry, I already have an appointment."],
+            ["*Bisa lebih pagi?*", "Could we make it earlier?"],
+            ["*Jangan terlambat, ya!*", "Don't be late!"],
+            ["*Saya akan terlambat sedikit.*", "I'll be a little late."],
+            ["*Sampai nanti!*", "See you later!"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "💬 You may hear the phrase *jam karet* — \"rubber time\" — used with a shrug when someone arrives half an hour late. It is a real and self-aware part of Indonesian social life. Business and formal appointments, however, are expected to start on time, and being punctual will never count against you."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "id": "jam", "baca": "jam", "en": "hour; o'clock; watch" },
+    { "id": "menit", "baca": "MUH-nit", "en": "minute" },
+    { "id": "setengah", "baca": "suh-tuh-NGAH", "en": "half" },
+    { "id": "seperempat", "baca": "suh-puhr-uhm-PAT", "en": "a quarter" },
+    { "id": "lewat", "baca": "LÉ-wat", "en": "past; to pass by" },
+    { "id": "hari", "baca": "HA-ri", "en": "day" },
+    { "id": "minggu", "baca": "MING-gu", "en": "week; Sunday" },
+    { "id": "bulan", "baca": "BU-lan", "en": "month; moon" },
+    { "id": "tahun", "baca": "TA-hun", "en": "year" },
+    { "id": "tanggal", "baca": "TANG-gal", "en": "date" },
+    { "id": "hari ini", "baca": "HA-ri I-ni", "en": "today" },
+    { "id": "lusa", "baca": "LU-sa", "en": "the day after tomorrow" },
+    { "id": "depan", "baca": "duh-PAN", "en": "next; front" },
+    { "id": "lalu", "baca": "LA-lu", "en": "last, ago" },
+    { "id": "setiap", "baca": "suh-TI-ap", "en": "every" },
+    { "id": "waktu", "baca": "WAK-tu", "en": "time; when" },
+    { "id": "janji", "baca": "JAN-ji", "en": "appointment; promise" },
+    { "id": "kosong", "baca": "KO-song", "en": "empty; free (of time)" },
+    { "id": "ketemu", "baca": "kuh-tuh-MU", "en": "to meet (spoken)" },
+    { "id": "terlambat", "baca": "tuhr-LAM-bat", "en": "late" },
+    { "id": "les", "baca": "lés", "en": "private class, tutoring" },
+    { "id": "pameran", "baca": "pa-MÉ-ran", "en": "exhibition" },
+    { "id": "museum", "baca": "mu-SÉ-um", "en": "museum" },
+    { "id": "menarik", "baca": "muh-NA-rik", "en": "interesting" },
+    { "id": "kalau", "baca": "KA-lau", "en": "if, when" },
+    { "id": "begitu", "baca": "buh-GI-tu", "en": "like that, so" },
+    { "id": "sampai", "baca": "SAM-pai", "en": "until; to arrive" },
+    { "id": "bisa", "baca": "BI-sa", "en": "can, to be able" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these times in Indonesian.",
+      "items": [
+        "3.00",
+        "6.30",
+        "9.15",
+        "13.00",
+        "19.00",
+        "22.30"
+      ]
+    },
+    {
+      "prompt": "Fill in the gap.",
+      "items": [
+        "____ berapa sekarang? — Jam sepuluh.",
+        "Hari ____ saya kosong. (Saturday)",
+        "Museum buka ____ sembilan pagi.",
+        "Kita ____ di depan museum, ya.",
+        "Maaf, saya sudah ada ____.",
+        "____ 17 Agustus 1945."
+      ]
+    },
+    {
+      "prompt": "Translate into Indonesian.",
+      "items": [
+        "What time is it?",
+        "I'm free on Sunday.",
+        "The class finishes at twelve.",
+        "Let's meet at half past one.",
+        "Do you have time tomorrow?",
+        "Don't be late!"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "berapa / sekarang / jam / ?",
+        "kosong / Sabtu / saya / hari",
+        "empat / buka / sampai / sembilan / jam / jam",
+        "dua / ketemu / setengah / kita",
+        "terlambat / jangan / ya / !"
+      ]
+    }
+  ],
+  "answers": [
+    "jam tiga — setengah tujuh — jam sembilan seperempat — jam satu siang — jam tujuh malam — setengah sebelas malam",
+    "Jam — Sabtu — jam — ketemu — janji — Tanggal",
+    "Jam berapa sekarang? — Hari Minggu saya kosong. — Les selesai jam dua belas. — Kita ketemu setengah dua. — Besok kamu ada waktu? — Jangan terlambat!",
+    "Jam berapa sekarang? — Hari Sabtu saya kosong. — Buka jam sembilan sampai jam empat. — Kita ketemu setengah dua. — Jangan terlambat, ya!"
+  ],
+  "wave": "re-read Unit 6. Say out loud five sentences using tidak and five using bukan."
+}

@@ -23,6 +23,10 @@ const HTML_SAJA = process.argv.includes("--html");
 
 const DIR = `content/ebook/${slug}`;
 const meta = JSON.parse(readFileSync(`${DIR}/meta.json`, "utf8"));
+/* [ebook-bahasa-pengantar-v1] Dua baris kecil di sampul ditulis dalam bahasa
+   PENGANTAR modulnya. Modul BIPA berpengantar Inggris, jadi keduanya bisa
+   ditimpa lewat cover_design.merek_sub & cover_design.kaki_sub; bawaannya
+   tetap bahasa Indonesia seperti semua modul sebelumnya. */
 const d = meta.cover_design ?? {};
 const unit = readdirSync(DIR).filter((f) => /^unit-\d+\.json$/.test(f)).length;
 
@@ -89,7 +93,7 @@ const html = `<!doctype html><html lang="id"><head><meta charset="utf-8"><style>
   ${d.cap ? `<div class="cap">${esc(d.cap)}</div>` : ""}
   <div class="isi">
     <div class="merek">${esc(meta.brand ?? "LINGUO")}</div>
-    <div class="merek-sub">MODUL BELAJAR MANDIRI</div>
+    <div class="merek-sub">${esc(d.merek_sub ?? "MODUL BELAJAR MANDIRI")}</div>
     <div class="tengah">
       ${d.label ? `<div class="label">${esc(d.label)}</div>` : ""}
       <div class="judul">${esc(d.judul ?? meta.title.replace(/\s*101$/, ""))}</div>
@@ -102,7 +106,7 @@ const html = `<!doctype html><html lang="id"><head><meta charset="utf-8"><style>
   <div class="kaki">
     <div>
       <div>${esc(meta.level ?? "")}</div>
-      <div class="tipis">${unit} unit &middot; dialog &middot; latihan &middot; kunci jawaban</div>
+      <div class="tipis">${unit} ${d.kaki_sub ? esc(d.kaki_sub) : "unit &middot; dialog &middot; latihan &middot; kunci jawaban"}</div>
     </div>
     <div class="kanan">
       <div>${esc(meta.edition ?? "")}</div>

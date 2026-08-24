@@ -1,0 +1,244 @@
+{
+  "title": "Hello — and who are you?",
+  "title_target": "Halo, siapa nama Anda?",
+  "goal": "Greet an Indonesian correctly at any hour of the day, give your name and where you are from, ask how someone is — and discover that Indonesian builds a complete sentence without any word for \"am\", \"is\" or \"are\".",
+  "bekal": [
+    "greet people with *selamat pagi*, *siang*, *sore* and *malam*, each at the right hour",
+    "say your name, your nationality and your city with no verb at all",
+    "turn any statement into a question just by lifting your voice at the end"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Di lift kantor",
+      "intro": "In the lift of an office tower in Jakarta, half past eight in the morning. Sarah has just arrived from Australia; Budi works on the eleventh floor.",
+      "lines": [
+        { "speaker": "Budi:", "text": "Selamat pagi!", "id": "Good morning!", "literal": "safe morning!" },
+        { "speaker": "Sarah:", "text": "Selamat pagi. Apa kabar?", "id": "Good morning. How are you?", "literal": "safe morning. what news?" },
+        { "speaker": "Budi:", "text": "Baik, terima kasih. Anda?", "id": "Fine, thank you. And you?", "literal": "good, thank you. you?" },
+        { "speaker": "Sarah:", "text": "Baik juga. Nama saya Sarah.", "id": "I'm fine too. My name is Sarah.", "literal": "good also. name I Sarah." },
+        { "speaker": "Budi:", "text": "Saya Budi. Senang bertemu dengan Anda.", "id": "I'm Budi. Nice to meet you.", "literal": "I Budi. happy meet with you." },
+        { "speaker": "Sarah:", "text": "Senang bertemu dengan Anda juga, Pak.", "id": "Nice to meet you too, sir.", "literal": "happy meet with you also, Mr." },
+        { "speaker": "Budi:", "text": "Anda dari mana?", "id": "Where are you from?", "literal": "you from where?" },
+        { "speaker": "Sarah:", "text": "Saya dari Australia. Dari Melbourne.", "id": "I'm from Australia. From Melbourne.", "literal": "I from Australia. from Melbourne." },
+        { "speaker": "Budi:", "text": "Oh, jauh sekali! Anda orang Australia?", "id": "Oh, that's very far! You're Australian?", "literal": "oh, far very! you person Australia?" },
+        { "speaker": "Sarah:", "text": "Ya. Bapak orang Jakarta?", "id": "Yes. Are you from Jakarta, sir?", "literal": "yes. Mr person Jakarta?" },
+        { "speaker": "Budi:", "text": "Bukan, saya orang Surabaya. Tapi saya tinggal di Jakarta.", "id": "No, I'm from Surabaya. But I live in Jakarta.", "literal": "not, I person Surabaya. but I live at Jakarta." },
+        { "speaker": "Sarah:", "text": "Begitu. Sampai jumpa, Pak Budi!", "id": "I see. See you, Pak Budi!", "literal": "like-that. until meet, Mr Budi!" }
+      ],
+      "notes": [
+        "**There is no \"am\", \"is\" or \"are\".** Look at *Nama saya Sarah* and *Saya dari Australia*. Nothing joins the two halves; the sentence is simply \"name I Sarah\" and \"I from Australia\". This is not lazy Indonesian — it is the correct and only form. Adding a word to fill the gap is the single most common beginner mistake, and it makes a sentence wrong rather than merely clumsy.",
+        "**Apa kabar? is a ritual, not a medical enquiry.** Word for word it is \"what news?\", and the answer is essentially always *baik* (\"good\"), even on a bad day — exactly like \"how are you?\" in English. *Baik-baik saja* (\"just fine\") and *kabar baik* are equally good answers.",
+        "**Anda is the formal \"you\", and Indonesians barely use it in speech.** With a man old enough to be a colleague or senior, they say *Bapak* (or *Pak*) — literally \"father\". Sarah does exactly this in line 10: *Bapak orang Jakarta?* — \"Are you from Jakarta, sir?\" Unit 3 sorts the whole system out. For now: *Anda* is always safe, if a little cool.",
+        "**Bukan, not tidak, to deny a noun.** Budi says *Bukan, saya orang Surabaya* because what he is denying is the noun phrase \"person of Jakarta\". If Sarah had asked *Anda lapar?* (\"Are you hungry?\") the answer would have been *tidak*, because *lapar* is an adjective. Unit 6 makes this permanent; noticing it now is enough.",
+        "**Orang means \"person\", and it is how nationalities are built.** *Orang Australia* = \"person Australia\" = an Australian. There is no separate adjective form to learn: *orang Indonesia*, *orang Jepang*, *orang Inggris*. The same word also means \"people\" and turns up later as a counting word."
+      ],
+      "grammars": [
+        {
+          "title": "The sentence with no verb",
+          "body": [
+            "Indonesian joins two nouns, or a noun and an adjective, by putting them next to each other. English needs a verb in the gap; Indonesian needs nothing."
+          ],
+          "table": {
+            "head": ["Indonesian", "Word for word", "English"],
+            "rows": [
+              ["*Saya Sarah.*", "I Sarah", "I am Sarah."],
+              ["*Nama saya Sarah.*", "name I Sarah", "My name is Sarah."],
+              ["*Dia guru.*", "he/she teacher", "He is a teacher."],
+              ["*Saya dari Australia.*", "I from Australia", "I am from Australia."],
+              ["*Jakarta besar.*", "Jakarta big", "Jakarta is big."],
+              ["*Kabar saya baik.*", "news I good", "I'm well."]
+            ]
+          },
+          "after": [
+            "⚠️ There *is* a word *adalah* that looks like \"is\", and beginners fall on it with relief. Resist. It belongs to formal written definitions — *Jakarta adalah ibu kota Indonesia* (\"Jakarta is the capital of Indonesia\") — and in ordinary speech it sounds like a legal document. Never use it before an adjective: *Saya adalah lapar* is simply wrong.",
+            "The gift here is bigger than it looks. Nine of the sentences in this unit's exercises need no verb at all, and every one of them would need a conjugated verb in French, German or Spanish."
+          ]
+        },
+        {
+          "title": "Greetings by the clock",
+          "body": [
+            "Indonesian sorts greetings by the hour, not by politeness. *Selamat* literally means \"safe\" — the same word as in *selamat datang*, \"welcome\"."
+          ],
+          "table": {
+            "head": ["Indonesian", "Say it", "When"],
+            "rows": [
+              ["**Selamat pagi!**", "suh-la-MAT PA-gi", "Good morning — until about 11 a.m."],
+              ["**Selamat siang!**", "suh-la-MAT SI-ang", "Good day — 11 a.m. to about 3 p.m."],
+              ["**Selamat sore!**", "suh-la-MAT SO-ré", "Good afternoon — 3 p.m. until dark"],
+              ["**Selamat malam!**", "suh-la-MAT MA-lam", "Good evening — after dark"],
+              ["**Selamat tidur!**", "suh-la-MAT TI-dur", "Sleep well (only at bedtime)"],
+              ["**Halo!**", "HA-lo", "Hello — casual, and on the phone"],
+              ["**Selamat datang!**", "suh-la-MAT da-TANG", "Welcome!"],
+              ["**Selamat jalan!**", "suh-la-MAT JA-lan", "Safe journey — said to the one leaving"],
+              ["**Selamat tinggal!**", "suh-la-MAT TING-gal", "Goodbye — said by the one leaving"]
+            ]
+          },
+          "after": [
+            "💬 In speech the *selamat* is usually dropped between people who know each other: just *Pagi!* or *Malam, Pak!*",
+            "⚠️ *Selamat malam* is a **greeting**, not a way of saying goodnight before bed. For that you need *selamat tidur*. And the pair *selamat jalan* / *selamat tinggal* is decided by who is walking away: the one who stays says *selamat jalan*, the one who leaves says *selamat tinggal*. Get it backwards and you will be gently laughed at."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Questions without moving a single word",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This is the second gift of the language, and it arrives on page one. To ask a yes/no question, say the statement and let your voice rise at the end. Nothing is added, nothing is reversed."
+        },
+        {
+          "type": "tabel",
+          "head": ["Statement", "Question", "English"],
+          "rows": [
+            ["*Anda orang Jakarta.*", "*Anda orang Jakarta?*", "Are you from Jakarta?"],
+            ["*Dia guru.*", "*Dia guru?*", "Is he a teacher?"],
+            ["*Ini enak.*", "*Ini enak?*", "Is this tasty?"],
+            ["*Sarah dari Australia.*", "*Sarah dari Australia?*", "Is Sarah from Australia?"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "In careful or written Indonesian you may see *apakah* at the front — *Apakah Anda orang Jakarta?* It is the formal yes/no marker, roughly the job English does by inverting \"you are\" into \"are you\". You should recognise it; you rarely need to say it."
+        },
+        {
+          "type": "p",
+          "text": "The question **words** are just as well behaved: they sit exactly where the answer would sit. *Anda dari mana?* is \"you from where?\", and the answer *Saya dari Australia* has the same shape with *mana* swapped for *Australia*. Nothing is fronted, nothing is inverted."
+        },
+        {
+          "type": "tabel",
+          "head": ["Question", "Word for word", "English"],
+          "rows": [
+            ["*Nama Anda siapa?*", "name you who?", "What is your name?"],
+            ["*Anda dari mana?*", "you from where?", "Where are you from?"],
+            ["*Anda tinggal di mana?*", "you live at where?", "Where do you live?"],
+            ["*Ini apa?*", "this what?", "What is this?"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Note *Nama Anda siapa?* — literally \"your name is **who**?\". Indonesian asks *siapa* (\"who\") about names, never *apa* (\"what\"). *Nama Anda apa?* is understood but sounds like you are asking what kind of object the name is."
+        }
+      ]
+    },
+    {
+      "title": "Ten phrases that keep you afloat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Not grammar — equipment. Memorise them whole today and understand their insides later."
+        },
+        {
+          "type": "tabel",
+          "head": ["Indonesian", "Say it", "English"],
+          "rows": [
+            ["*Ya / Tidak*", "ya / TI-dak", "Yes / No"],
+            ["*Terima kasih*", "tuh-RI-ma KA-sih", "Thank you"],
+            ["*Sama-sama*", "SA-ma SA-ma", "You're welcome"],
+            ["*Maaf*", "MA-af", "Sorry"],
+            ["*Permisi*", "puhr-MI-si", "Excuse me (passing, or entering)"],
+            ["*Tolong*", "TO-long", "Please (asking for help); Help!"],
+            ["*Silakan*", "si-LA-kan", "Please (go ahead, help yourself)"],
+            ["*Saya tidak mengerti.*", "SA-ya TI-dak muh-nguhr-TI", "I don't understand."],
+            ["*Tolong pelan-pelan.*", "TO-long puh-LAN puh-LAN", "Slowly, please."],
+            ["*Apa bahasa Indonesianya?*", "A-pa ba-HA-sa in-do-NÉ-si-a-nya", "What is it in Indonesian?"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Two different \"please\".** *Tolong* is for asking someone to do something for you (*Tolong ulangi* — \"please repeat\"). *Silakan* is for inviting someone to go ahead (*Silakan duduk* — \"please, sit down\"). Using *silakan* to ask for help sounds as odd as saying \"help yourself\" when you mean \"help me\"."
+        },
+        {
+          "type": "p",
+          "text": "The last two lines are worth more than fifty memorised words. *Tolong pelan-pelan* rescues a conversation that has run away from you, and *Apa bahasa Indonesianya?* turns everyone around you into a dictionary."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "id": "selamat", "baca": "suh-la-MAT", "en": "safe; congratulations (in greetings)" },
+    { "id": "pagi", "baca": "PA-gi", "en": "morning" },
+    { "id": "siang", "baca": "SI-ang", "en": "midday, early afternoon" },
+    { "id": "sore", "baca": "SO-ré", "en": "late afternoon" },
+    { "id": "malam", "baca": "MA-lam", "en": "night, evening" },
+    { "id": "halo", "baca": "HA-lo", "en": "hello" },
+    { "id": "apa kabar", "baca": "A-pa KA-bar", "en": "how are you" },
+    { "id": "baik", "baca": "BA-ik", "en": "good, fine, well" },
+    { "id": "terima kasih", "baca": "tuh-RI-ma KA-sih", "en": "thank you" },
+    { "id": "sama-sama", "baca": "SA-ma SA-ma", "en": "you're welcome" },
+    { "id": "nama", "baca": "NA-ma", "en": "name" },
+    { "id": "saya", "baca": "SA-ya", "en": "I, me (neutral)" },
+    { "id": "Anda", "baca": "AN-da", "en": "you (formal)" },
+    { "id": "bapak / pak", "baca": "BA-pak / pak", "en": "sir; Mr; father" },
+    { "id": "ibu / bu", "baca": "I-bu / bu", "en": "madam; Mrs; mother" },
+    { "id": "senang", "baca": "suh-NANG", "en": "happy, glad" },
+    { "id": "bertemu", "baca": "buhr-tuh-MU", "en": "to meet" },
+    { "id": "dengan", "baca": "duh-NGAN", "en": "with" },
+    { "id": "dari", "baca": "DA-ri", "en": "from" },
+    { "id": "mana", "baca": "MA-na", "en": "where; which" },
+    { "id": "orang", "baca": "O-rang", "en": "person; people" },
+    { "id": "tinggal", "baca": "TING-gal", "en": "to live, to stay" },
+    { "id": "di", "baca": "di", "en": "at, in, on" },
+    { "id": "tapi", "baca": "TA-pi", "en": "but" },
+    { "id": "juga", "baca": "JU-ga", "en": "also, too" },
+    { "id": "jauh", "baca": "JA-uh", "en": "far" },
+    { "id": "sekali", "baca": "suh-KA-li", "en": "very (after an adjective)" },
+    { "id": "bukan", "baca": "BU-kan", "en": "not (with nouns)" },
+    { "id": "siapa", "baca": "si-A-pa", "en": "who" },
+    { "id": "sampai jumpa", "baca": "SAM-pai JUM-pa", "en": "see you" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Indonesian.",
+      "items": [
+        "Good morning!",
+        "My name is Sarah.",
+        "I am from Australia.",
+        "Where are you from? (formal)",
+        "Nice to meet you.",
+        "I live in Jakarta.",
+        "Thank you very much."
+      ]
+    },
+    {
+      "prompt": "Fill in the missing word.",
+      "items": [
+        "Selamat ____! (said at 8 in the morning)",
+        "Apa ____? — Baik, terima kasih.",
+        "Nama ____ Sarah.",
+        "Saya ____ Australia.",
+        "Saya ____ di Jakarta.",
+        "Terima kasih. — ____!"
+      ]
+    },
+    {
+      "prompt": "Choose the greeting the situation calls for. Write the whole phrase.",
+      "items": [
+        "You walk into a shop at nine in the morning.",
+        "You meet a colleague at one in the afternoon.",
+        "You arrive at a friend's house at eight at night.",
+        "A friend is about to leave on a long journey.",
+        "You want to squeeze past someone standing in a doorway."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "saya / Sarah / nama",
+        "Anda / mana / dari / ?",
+        "Australia / saya / orang",
+        "di / tinggal / Jakarta / saya",
+        "Anda / dengan / bertemu / senang"
+      ]
+    }
+  ],
+  "answers": [
+    "Selamat pagi! — Nama saya Sarah. — Saya dari Australia. — Anda dari mana? — Senang bertemu dengan Anda. — Saya tinggal di Jakarta. — Terima kasih banyak.",
+    "pagi — kabar — saya — dari — tinggal — Sama-sama",
+    "Selamat pagi! — Selamat siang! — Selamat malam! — Selamat jalan! — Permisi.",
+    "Nama saya Sarah. — Anda dari mana? — Saya orang Australia. — Saya tinggal di Jakarta. — Senang bertemu dengan Anda."
+  ],
+  "wave": "none yet — this is where the wave starts."
+}

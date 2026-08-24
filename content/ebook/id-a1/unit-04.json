@@ -1,0 +1,227 @@
+{
+  "title": "Numbers, and what things cost",
+  "title_target": "Berapa harganya?",
+  "goal": "Count to a million, understand a price said at speed, and handle the everyday arithmetic of Indonesian life — where a bowl of noodles costs fifteen thousand and nobody blinks.",
+  "bekal": [
+    "count from nol to seratus and build any number up to sejuta",
+    "ask and understand *Berapa harganya?* and the answer",
+    "recognise *ribu*, *rebu* and the shortcut where the thousands are simply dropped"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Di pasar",
+      "intro": "A traditional market on a Saturday morning. Sarah wants mangoes; Pak Joko sells fruit.",
+      "lines": [
+        { "speaker": "Sarah:", "text": "Pak, mangga ini berapa?", "id": "How much are these mangoes?", "literal": "Mr, mango this how-much?" },
+        { "speaker": "Joko:", "text": "Dua puluh lima ribu sekilo, Mbak.", "id": "Twenty-five thousand a kilo, miss.", "literal": "two ten five thousand one-kilo, miss." },
+        { "speaker": "Sarah:", "text": "Dua puluh lima ribu? Mahal, Pak.", "id": "Twenty-five thousand? That's expensive.", "literal": "two ten five thousand? expensive, Mr." },
+        { "speaker": "Joko:", "text": "Ini manis sekali, Mbak. Coba dulu.", "id": "They're very sweet. Try one first.", "literal": "this sweet very, miss. try first." },
+        { "speaker": "Sarah:", "text": "Boleh kurang? Dua puluh ribu?", "id": "Can you come down? Twenty thousand?", "literal": "may less? two ten thousand?" },
+        { "speaker": "Joko:", "text": "Dua puluh dua, deh. Untuk Mbak saja.", "id": "Twenty-two then. Just for you.", "literal": "two ten two, then. for miss only." },
+        { "speaker": "Sarah:", "text": "Baik. Saya mau dua kilo.", "id": "All right. I'll take two kilos.", "literal": "good. I want two kilo." },
+        { "speaker": "Joko:", "text": "Dua kilo, empat puluh empat ribu.", "id": "Two kilos, forty-four thousand.", "literal": "two kilo, four ten four thousand." },
+        { "speaker": "Sarah:", "text": "Ini lima puluh ribu.", "id": "Here's fifty thousand.", "literal": "this five ten thousand." },
+        { "speaker": "Joko:", "text": "Kembaliannya enam ribu. Terima kasih, Mbak.", "id": "Six thousand change. Thank you, miss.", "literal": "change-its six thousand. thank you, miss." },
+        { "speaker": "Sarah:", "text": "Sama-sama, Pak. Sampai besok!", "id": "You're welcome. See you tomorrow!", "literal": "same-same, Mr. until tomorrow!" }
+      ],
+      "notes": [
+        "**Prices in Indonesia are large numbers, and this is the real listening challenge.** A cheap meal is *lima belas ribu* (15,000), a taxi ride *lima puluh ribu* (50,000), a month's rent might be *tiga juta* (3,000,000). Your ear has to get comfortable with *ribu* and *juta* fast, because everything you buy will be counted in them.",
+        "**Berapa on its own is a complete question.** *Mangga ini berapa?* — \"these mangoes, how much?\" You do not need *harganya*, though *Berapa harganya?* is equally correct and slightly more polite.",
+        "**Boleh kurang? is the polite way to open a bargain.** Literally \"may (it be) less?\". In a traditional market this is expected, cheerful and part of the transaction. In a supermarket, a chain café or anywhere with a printed price tag, it is not — the price is the price.",
+        "**Deh** in *Dua puluh dua, deh* is another of those toneless particles: it marks a concession, roughly \"all right then\". It is the sound of a seller giving in with good humour.",
+        "**Kembalian means change**, from *kembali* (\"to return\"). If the seller has none, you will hear *Ada uang pas?* — \"do you have the exact money?\" Carrying small notes is a genuine survival skill in Indonesia."
+      ],
+      "grammars": [
+        {
+          "title": "0 to 100 — three rules and you are done",
+          "body": [
+            "Learn one to ten, then watch what happens to them."
+          ],
+          "table": {
+            "head": ["Number", "Indonesian", "Number", "Indonesian"],
+            "rows": [
+              ["0", "*nol / kosong*", "10", "*sepuluh*"],
+              ["1", "*satu*", "11", "*sebelas*"],
+              ["2", "*dua*", "12", "*dua belas*"],
+              ["3", "*tiga*", "13", "*tiga belas*"],
+              ["4", "*empat*", "20", "*dua puluh*"],
+              ["5", "*lima*", "21", "*dua puluh satu*"],
+              ["6", "*enam*", "30", "*tiga puluh*"],
+              ["7", "*tujuh*", "50", "*lima puluh*"],
+              ["8", "*delapan*", "99", "*sembilan puluh sembilan*"],
+              ["9", "*sembilan*", "100", "*seratus*"]
+            ]
+          },
+          "after": [
+            "**Rule 1 — the teens take *belas*.** Eleven to nineteen are simply the digit plus *belas*: *dua belas*, *tiga belas*, *tujuh belas*. The only irregular one is eleven, *sebelas*.",
+            "**Rule 2 — the tens take *puluh*.** *Dua puluh* is literally \"two tens\". Then you just add: *dua puluh tiga* = 23.",
+            "**Rule 3 — *se-* means \"one\".** Instead of *satu puluh*, *satu ratus*, *satu ribu*, Indonesian glues *se-* on: *sepuluh*, *seratus*, *seribu*, *sejuta*. You will meet this *se-* again in *sekilo* (one kilo) and *sehari* (one day)."
+          ]
+        },
+        {
+          "title": "Hundreds, thousands, millions",
+          "body": [
+            "Above a hundred, nothing new happens — you keep stacking the same pieces."
+          ],
+          "table": {
+            "head": ["Figure", "Indonesian", "Word for word"],
+            "rows": [
+              ["100", "*seratus*", "one-hundred"],
+              ["250", "*dua ratus lima puluh*", "two hundred five ten"],
+              ["1.000", "*seribu*", "one-thousand"],
+              ["5.000", "*lima ribu*", "five thousand"],
+              ["15.000", "*lima belas ribu*", "fifteen thousand"],
+              ["50.000", "*lima puluh ribu*", "five ten thousand"],
+              ["100.000", "*seratus ribu*", "one-hundred thousand"],
+              ["1.000.000", "*sejuta / satu juta*", "one-million"],
+              ["2.500.000", "*dua juta lima ratus ribu*", "two million five hundred thousand"]
+            ]
+          },
+          "after": [
+            "⚠️ **The decimal point and comma are swapped compared with English.** Indonesian writes *Rp15.000* for fifteen thousand and *1,5 kg* for one and a half kilos. Misreading a price tag by a factor of a thousand is a rite of passage; do it in a shop, not at a property agent.",
+            "💬 **The thousands are often simply dropped in speech.** A seller may say *dua puluh lima* (\"twenty-five\") and mean 25,000 — everybody knows the mangoes are not twenty-five rupiah. You will also hear *seceng* (1,000) and *goceng* (5,000) in Jakarta, and *rebu* instead of *ribu* almost everywhere."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Counting things, and the word orang",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Indonesian likes a small word between the number and the noun — a classifier, of the kind Chinese and Thai also use. At A1 you can survive on three, and honestly you can survive on one."
+        },
+        {
+          "type": "tabel",
+          "head": ["Classifier", "Used for", "Example", "English"],
+          "rows": [
+            ["*orang*", "people", "*dua orang teman*", "two friends"],
+            ["*ekor*", "animals", "*tiga ekor ayam*", "three chickens"],
+            ["*buah*", "things, objects", "*empat buah buku*", "four books"],
+            ["*—* (nothing)", "everything, in speech", "*dua teman*, *empat buku*", "two friends, four books"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last row is not a shortcut this book invented: leaving the classifier out is entirely normal in conversation. What you must not do is get *orang* wrong — using *ekor* (the animal classifier, literally \"tail\") for a person is a real insult, not a cute mistake."
+        },
+        {
+          "type": "p",
+          "text": "Measures behave the same way and are far more useful day to day: *sekilo* (a kilo), *setengah kilo* (half a kilo), *seporsi* (a portion), *segelas* (a glass), *sebotol* (a bottle), *sebungkus* (a packet)."
+        }
+      ]
+    },
+    {
+      "title": "Money words you will need on day one",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Indonesian", "Say it", "English"],
+          "rows": [
+            ["*Berapa harganya?*", "buh-RA-pa HAR-ga-nya", "How much is it?"],
+            ["*Berapa semuanya?*", "buh-RA-pa suh-MU-a-nya", "How much altogether?"],
+            ["*Boleh kurang?*", "BO-léh KU-rang", "Can you make it less?"],
+            ["*Mahal sekali!*", "MA-hal suh-KA-li", "That's very expensive!"],
+            ["*Ada yang lebih murah?*", "A-da yang luh-BIH MU-rah", "Is there a cheaper one?"],
+            ["*Saya ambil ini.*", "SA-ya AM-bil I-ni", "I'll take this one."],
+            ["*Bayar di mana?*", "BA-yar di MA-na", "Where do I pay?"],
+            ["*Bisa pakai kartu?*", "BI-sa PA-kai KAR-tu", "Can I use a card?"],
+            ["*Ada uang pas?*", "A-da U-ang pas", "Do you have the exact money?"],
+            ["*Kembaliannya berapa?*", "kuhm-ba-LI-an-nya buh-RA-pa", "How much is the change?"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Bargain only where bargaining belongs.** Traditional markets, street stalls, souvenir shops, becak and unmetered transport: yes, and cheerfully. Restaurants, supermarkets, pharmacies, anywhere with a till: no. Pushing hard for a few thousand rupiah in the wrong place reads as mean rather than clever."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "id": "berapa", "baca": "buh-RA-pa", "en": "how much, how many" },
+    { "id": "nol / kosong", "baca": "nol / KO-song", "en": "zero" },
+    { "id": "tiga", "baca": "TI-ga", "en": "three" },
+    { "id": "empat", "baca": "uhm-PAT", "en": "four" },
+    { "id": "lima", "baca": "LI-ma", "en": "five" },
+    { "id": "enam", "baca": "uh-NAM", "en": "six" },
+    { "id": "tujuh", "baca": "TU-juh", "en": "seven" },
+    { "id": "delapan", "baca": "duh-LA-pan", "en": "eight" },
+    { "id": "sembilan", "baca": "suhm-BI-lan", "en": "nine" },
+    { "id": "sepuluh", "baca": "suh-PU-luh", "en": "ten" },
+    { "id": "belas", "baca": "buh-LAS", "en": "-teen" },
+    { "id": "puluh", "baca": "PU-luh", "en": "ten (in tens)" },
+    { "id": "ratus", "baca": "RA-tus", "en": "hundred" },
+    { "id": "ribu", "baca": "RI-bu", "en": "thousand" },
+    { "id": "juta", "baca": "JU-ta", "en": "million" },
+    { "id": "rupiah", "baca": "ru-PI-ah", "en": "rupiah (the currency)" },
+    { "id": "pasar", "baca": "PA-sar", "en": "market" },
+    { "id": "mangga", "baca": "MANG-ga", "en": "mango" },
+    { "id": "kilo", "baca": "KI-lo", "en": "kilo" },
+    { "id": "manis", "baca": "MA-nis", "en": "sweet" },
+    { "id": "coba", "baca": "CO-ba", "en": "to try; do try" },
+    { "id": "dulu", "baca": "DU-lu", "en": "first; earlier" },
+    { "id": "boleh", "baca": "BO-léh", "en": "may, to be allowed" },
+    { "id": "kurang", "baca": "KU-rang", "en": "less; not enough" },
+    { "id": "untuk", "baca": "UN-tuk", "en": "for" },
+    { "id": "kembalian", "baca": "kuhm-ba-LI-an", "en": "change (money)" },
+    { "id": "bayar", "baca": "BA-yar", "en": "to pay" },
+    { "id": "ambil", "baca": "AM-bil", "en": "to take" },
+    { "id": "setengah", "baca": "suh-tuh-NGAH", "en": "half" },
+    { "id": "besok", "baca": "BÉ-sok", "en": "tomorrow" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these numbers in Indonesian.",
+      "items": [
+        "7",
+        "14",
+        "38",
+        "125",
+        "3.000",
+        "25.000",
+        "1.500.000"
+      ]
+    },
+    {
+      "prompt": "Fill in the gap.",
+      "items": [
+        "____ harganya? — Lima belas ribu.",
+        "Boleh ____? Dua puluh ribu saja.",
+        "Saya mau dua ____ mangga.",
+        "____ semuanya, Pak?",
+        "____ enam ribu, Mbak. (the change)",
+        "Mahal ____!"
+      ]
+    },
+    {
+      "prompt": "Translate into Indonesian.",
+      "items": [
+        "How much is this?",
+        "Twenty-five thousand a kilo.",
+        "That's very expensive.",
+        "Can you make it less?",
+        "I'll take two kilos.",
+        "Is there a cheaper one?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "harganya / berapa / mangga / ini / ?",
+        "ribu / sekilo / lima / dua / puluh",
+        "kurang / boleh / ?",
+        "kilo / mau / dua / saya",
+        "enam / kembaliannya / ribu"
+      ]
+    }
+  ],
+  "answers": [
+    "tujuh — empat belas — tiga puluh delapan — seratus dua puluh lima — tiga ribu — dua puluh lima ribu — satu juta lima ratus ribu",
+    "Berapa — kurang — kilo — Berapa — Kembaliannya — sekali",
+    "Ini berapa? — Dua puluh lima ribu sekilo. — Mahal sekali. — Boleh kurang? — Saya ambil dua kilo. — Ada yang lebih murah?",
+    "Berapa harganya mangga ini? — Dua puluh lima ribu sekilo. — Boleh kurang? — Saya mau dua kilo. — Kembaliannya enam ribu."
+  ],
+  "wave": "re-read Unit 2 today. Point at five things in your room and name them out loud."
+}

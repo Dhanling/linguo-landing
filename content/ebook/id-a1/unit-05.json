@@ -1,0 +1,230 @@
+{
+  "title": "Verbs that never change",
+  "title_target": "Sudah, belum, sedang, akan",
+  "goal": "Meet the heart of the language: one verb form for every person and every time, and four small words that place the action in the past, the present or the future without touching the verb at all.",
+  "bekal": [
+    "use *makan*, *minum*, *pergi*, *pulang* and twenty other verbs in any sentence",
+    "say what you have done, are doing, have not yet done and will do",
+    "answer the question that every Indonesian will ask you: *Sudah makan?*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Jam satu siang di kantor",
+      "intro": "One o'clock in the afternoon. Rina finds Sarah still at her desk.",
+      "lines": [
+        { "speaker": "Rina:", "text": "Sarah, sudah makan?", "id": "Sarah, have you eaten?", "literal": "Sarah, already eat?" },
+        { "speaker": "Sarah:", "text": "Belum. Saya masih kerja.", "id": "Not yet. I'm still working.", "literal": "not-yet. I still work." },
+        { "speaker": "Rina:", "text": "Ayo makan! Saya juga belum.", "id": "Come on, let's eat! I haven't either.", "literal": "come-on eat! I also not-yet." },
+        { "speaker": "Sarah:", "text": "Sebentar, ya. Saya sedang kirim email.", "id": "Just a moment. I'm sending an email.", "literal": "a-moment, yes. I in-the-middle-of send email." },
+        { "speaker": "Rina:", "text": "Oke. Nanti kita pergi ke warung depan.", "id": "OK. Later we'll go to the food stall out front.", "literal": "OK. later we go to stall front." },
+        { "speaker": "Sarah:", "text": "Warung itu buka jam berapa?", "id": "What time does that stall open?", "literal": "stall that open hour how-much?" },
+        { "speaker": "Rina:", "text": "Sudah buka dari pagi. Tutup jam sembilan malam.", "id": "It's been open since morning. It closes at nine at night.", "literal": "already open from morning. close hour nine night." },
+        { "speaker": "Sarah:", "text": "Bagus. Saya akan pesan nasi goreng.", "id": "Good. I'll order fried rice.", "literal": "good. I will order rice fried." },
+        { "speaker": "Rina:", "text": "Kamu suka pedas?", "id": "Do you like it spicy?", "literal": "you like spicy?" },
+        { "speaker": "Sarah:", "text": "Suka, tapi tidak terlalu pedas.", "id": "I do, but not too spicy.", "literal": "like, but not too spicy." },
+        { "speaker": "Rina:", "text": "Aman. Ayo, sudah selesai?", "id": "That's fine. Come on, are you done?", "literal": "safe. come-on, already finished?" },
+        { "speaker": "Sarah:", "text": "Sudah! Ayo pergi.", "id": "Done! Let's go.", "literal": "already! come-on go." }
+      ],
+      "notes": [
+        "**Sudah makan? is a greeting as much as a question.** Asking whether someone has eaten is a standard piece of Indonesian friendliness, roughly where the British would say \"you all right?\". You may answer honestly, but nobody is planning your lunch.",
+        "**Belum, not tidak.** Sarah has not eaten *yet*, and Indonesian has a dedicated word for that. Answering *tidak* would mean \"no, I don't eat\" — a statement about your habits, not about today. This distinction is genuinely important and Unit 6 nails it down.",
+        "**Sudah and belum are complete answers.** \"Have you eaten?\" — *Sudah.* \"Are you married?\" — *Belum.* One word, no verb repeated. It is the same instinct you saw with *ada* in Unit 2.",
+        "**Ayo!** is the invitation particle: \"come on, let's\". *Ayo makan!* (let's eat), *Ayo pergi!* (let's go), *Ayo!* on its own (come on!). Its cousin *mari* is the formal version, which you will hear in announcements and speeches.",
+        "**Nasi goreng, not goreng nasi.** *Goreng* means \"fried\", and the adjective follows the noun, exactly as *buku ini* and *buku saya* did. Every Indonesian dish name you already know obeys this: *nasi goreng*, *mie goreng*, *ayam bakar*, *es teh manis*."
+      ],
+      "grammars": [
+        {
+          "title": "The verb does not move",
+          "body": [
+            "Write out any English verb in all its forms and count them: eat, eats, ate, eaten, eating. Now Indonesian:"
+          ],
+          "table": {
+            "head": ["Indonesian", "English"],
+            "rows": [
+              ["*Saya makan.*", "I eat. / I am eating. / I ate."],
+              ["*Dia makan.*", "He eats. / She is eating."],
+              ["*Mereka makan.*", "They eat."],
+              ["*Kemarin saya makan.*", "Yesterday I ate."],
+              ["*Besok saya makan di sana.*", "Tomorrow I'll eat there."]
+            ]
+          },
+          "after": [
+            "One form, *makan*, in every line. What changes is a time word elsewhere in the sentence — *kemarin*, *besok* — or nothing at all, because the situation already makes it clear.",
+            "This is why Indonesian is the fastest major language to start speaking. Every verb you learn is learned once, completely, forever. There is no conjugation table anywhere in this book, and there is none in the language."
+          ]
+        },
+        {
+          "title": "The four time markers",
+          "body": [
+            "These are Indonesian's answer to tense. Each one sits **before** the verb."
+          ],
+          "table": {
+            "head": ["Marker", "Meaning", "Example", "English"],
+            "rows": [
+              ["**sudah**", "already, have done", "*Saya sudah makan.*", "I have eaten."],
+              ["**belum**", "not yet", "*Saya belum makan.*", "I haven't eaten yet."],
+              ["**sedang** 💬 *lagi*", "in the middle of", "*Saya sedang makan.*", "I'm eating (right now)."],
+              ["**akan**", "will", "*Saya akan makan.*", "I will eat."],
+              ["**masih**", "still", "*Saya masih makan.*", "I'm still eating."],
+              ["**pernah**", "have ever", "*Saya pernah ke Bali.*", "I've been to Bali."],
+              ["**mau**", "want to; about to", "*Saya mau makan.*", "I want to eat."]
+            ]
+          },
+          "after": [
+            "💬 *Sedang* is the written form; in conversation almost everyone says *lagi*. *Lagi apa?* — \"what are you doing?\" — is one of the most common text messages in the country.",
+            "**Akan is often left out.** If the sentence already contains *besok* or *nanti*, the future is obvious and Indonesians drop *akan* entirely: *Besok saya ke Bandung* — \"tomorrow I go to Bandung\". Adding it is never wrong, just a little formal.",
+            "⚠️ Do not stack *sudah* with a past-time word thinking it makes the sentence more past. *Kemarin saya sudah makan* is fine but means \"yesterday I had already eaten\" — the *sudah* still means \"already\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Twenty verbs to own this week",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These are root forms — the shape you say, and the shape you look up. None of them will ever change."
+        },
+        {
+          "type": "tabel",
+          "head": ["Indonesian", "English", "Indonesian", "English"],
+          "rows": [
+            ["*makan*", "to eat", "*beli*", "to buy"],
+            ["*minum*", "to drink", "*jual*", "to sell"],
+            ["*pergi*", "to go", "*bayar*", "to pay"],
+            ["*datang*", "to come", "*lihat*", "to see, look"],
+            ["*pulang*", "to go home", "*dengar*", "to hear"],
+            ["*tidur*", "to sleep", "*bicara*", "to speak"],
+            ["*bangun*", "to get up", "*tanya*", "to ask"],
+            ["*mandi*", "to bathe", "*jawab*", "to answer"],
+            ["*kerja*", "to work", "*tulis*", "to write"],
+            ["*belajar*", "to study", "*baca*", "to read"],
+            ["*duduk*", "to sit", "*buka*", "to open"],
+            ["*berdiri*", "to stand", "*tutup*", "to close"],
+            ["*jalan*", "to walk, to go", "*mulai*", "to begin"],
+            ["*naik*", "to go up, to ride", "*selesai*", "to be finished"],
+            ["*turun*", "to go down, get off", "*tunggu*", "to wait"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two verbs behave slightly unusually and are worth a note. *Pulang* means specifically \"to go home\" — one word for the whole idea, and Indonesians use it constantly. *Mandi* means to bathe, and in Indonesia that usually means twice a day; *Sudah mandi?* is a perfectly normal question between family or friends."
+        }
+      ]
+    },
+    {
+      "title": "Stacking verbs, and stacking markers",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Indonesian puts verbs straight after one another with nothing in between — no \"to\", no changes."
+        },
+        {
+          "type": "tabel",
+          "head": ["Indonesian", "Word for word", "English"],
+          "rows": [
+            ["*Saya mau makan.*", "I want eat", "I want to eat."],
+            ["*Saya suka makan.*", "I like eat", "I like eating."],
+            ["*Saya bisa bicara.*", "I can speak", "I can speak."],
+            ["*Saya harus pergi.*", "I must go", "I have to go."],
+            ["*Saya mau coba makan.*", "I want try eat", "I want to try eating it."],
+            ["*Saya sudah mau pulang.*", "I already want go-home", "I was about to go home."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The markers stack in the same easy way, and their order matches the order of the English words: *sudah mau* (\"already about to\"), *belum bisa* (\"can't yet\"), *masih mau* (\"still want\"), *tidak akan* (\"will not\")."
+        },
+        {
+          "type": "p",
+          "text": "Two more time words to add now, because you will need them in every sentence: *nanti* (later today) and *tadi* (earlier today). *Tadi saya makan* — \"I ate earlier\". *Nanti saya telepon* — \"I'll call you later\"."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "id": "sudah", "baca": "SU-dah", "en": "already; have done" },
+    { "id": "belum", "baca": "buh-LUM", "en": "not yet" },
+    { "id": "sedang", "baca": "suh-DANG", "en": "in the middle of (doing)" },
+    { "id": "lagi", "baca": "LA-gi", "en": "in the middle of (spoken)" },
+    { "id": "akan", "baca": "A-kan", "en": "will" },
+    { "id": "masih", "baca": "MA-sih", "en": "still" },
+    { "id": "pernah", "baca": "PUHR-nah", "en": "to have ever (done)" },
+    { "id": "nanti", "baca": "NAN-ti", "en": "later" },
+    { "id": "tadi", "baca": "TA-di", "en": "earlier today" },
+    { "id": "kemarin", "baca": "kuh-MA-rin", "en": "yesterday" },
+    { "id": "makan", "baca": "MA-kan", "en": "to eat" },
+    { "id": "minum", "baca": "MI-num", "en": "to drink" },
+    { "id": "pergi", "baca": "PUHR-gi", "en": "to go" },
+    { "id": "pulang", "baca": "PU-lang", "en": "to go home" },
+    { "id": "kerja", "baca": "KUHR-ja", "en": "to work" },
+    { "id": "kirim", "baca": "KI-rim", "en": "to send" },
+    { "id": "pesan", "baca": "puh-SAN", "en": "to order; a message" },
+    { "id": "buka", "baca": "BU-ka", "en": "to open" },
+    { "id": "tutup", "baca": "TU-tup", "en": "to close" },
+    { "id": "selesai", "baca": "suh-luh-SAI", "en": "finished" },
+    { "id": "suka", "baca": "SU-ka", "en": "to like" },
+    { "id": "warung", "baca": "WA-rung", "en": "small food stall or shop" },
+    { "id": "nasi goreng", "baca": "NA-si GO-réng", "en": "fried rice" },
+    { "id": "pedas", "baca": "puh-DAS", "en": "spicy" },
+    { "id": "terlalu", "baca": "tuhr-LA-lu", "en": "too (much)" },
+    { "id": "sebentar", "baca": "suh-buhn-TAR", "en": "a moment" },
+    { "id": "ayo", "baca": "A-yo", "en": "come on, let's" },
+    { "id": "depan", "baca": "duh-PAN", "en": "front; in front of" },
+    { "id": "aman", "baca": "A-man", "en": "safe; that's fine" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Indonesian.",
+      "items": [
+        "I have eaten.",
+        "I haven't eaten yet.",
+        "I am working. (right now)",
+        "I will go tomorrow.",
+        "She is still sleeping.",
+        "We want to eat fried rice.",
+        "Have you eaten? (to a friend)"
+      ]
+    },
+    {
+      "prompt": "Fill the gap with sudah, belum, sedang, masih or akan.",
+      "items": [
+        "____ makan? — Sudah, terima kasih.",
+        "Saya ____ makan. Saya lapar sekali.",
+        "Maaf, saya ____ kerja. Nanti saya telepon.",
+        "Besok saya ____ pergi ke Bandung.",
+        "Jam sepuluh malam dan dia ____ di kantor.",
+        "Warungnya ____ tutup. Tadi jam sembilan."
+      ]
+    },
+    {
+      "prompt": "Answer in one word, then in a full sentence.",
+      "items": [
+        "Sudah makan? (you have)",
+        "Sudah menikah? (not yet)",
+        "Masih kerja? (yes, still)",
+        "Sudah pernah ke Bali? (yes, once)",
+        "Mau pergi sekarang? (yes)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "makan / saya / sudah",
+        "kerja / masih / saya",
+        "goreng / nasi / pesan / saya / akan",
+        "pedas / suka / kamu / ?",
+        "makan / ayo / !"
+      ]
+    }
+  ],
+  "answers": [
+    "Saya sudah makan. — Saya belum makan. — Saya sedang kerja. — Besok saya akan pergi. — Dia masih tidur. — Kami mau makan nasi goreng. — Kamu sudah makan?",
+    "Sudah — belum — sedang — akan — masih — sudah",
+    "Sudah. Saya sudah makan. — Belum. Saya belum menikah. — Masih. Saya masih kerja. — Pernah. Saya pernah ke Bali. — Mau. Saya mau pergi sekarang.",
+    "Saya sudah makan. — Saya masih kerja. — Saya akan pesan nasi goreng. — Kamu suka pedas? — Ayo makan!"
+  ],
+  "wave": "re-read Unit 3 today — the pronoun table, out loud."
+}

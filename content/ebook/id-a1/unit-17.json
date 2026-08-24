@@ -1,0 +1,235 @@
+{
+  "title": "When you are not well",
+  "title_target": "Saya sakit",
+  "goal": "Say what hurts, buy medicine, see a doctor and ask for help in an emergency — the unit you hope not to need and will be very glad to have.",
+  "bekal": [
+    "name the parts of the body and say which one hurts",
+    "describe symptoms at a pharmacy or a clinic",
+    "call for help, and understand what is asked of you"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Di apotek",
+      "intro": "Sarah has not slept well and her stomach is not right. She goes to the pharmacy on the corner.",
+      "lines": [
+        { "speaker": "Apoteker:", "text": "Selamat pagi. Ada yang bisa dibantu?", "id": "Good morning. Can I help you?", "literal": "safe morning. exist which can be-helped?" },
+        { "speaker": "Sarah:", "text": "Pagi, Mbak. Saya sakit perut sejak kemarin.", "id": "Morning. I've had a stomach ache since yesterday.", "literal": "morning, miss. I sick stomach since yesterday." },
+        { "speaker": "Apoteker:", "text": "Sakitnya seperti apa? Mual?", "id": "What sort of pain? Nauseous?", "literal": "pain-its like what? nauseous?" },
+        { "speaker": "Sarah:", "text": "Mual, dan agak diare.", "id": "Nauseous, and a bit of diarrhoea.", "literal": "nauseous, and somewhat diarrhoea." },
+        { "speaker": "Apoteker:", "text": "Kemarin makan apa? Makanan pedas?", "id": "What did you eat yesterday? Spicy food?", "literal": "yesterday eat what? food spicy?" },
+        { "speaker": "Sarah:", "text": "Ya, sate pedas di pinggir jalan.", "id": "Yes, spicy satay at a roadside stall.", "literal": "yes, satay spicy at edge road." },
+        { "speaker": "Apoteker:", "text": "Oh, mungkin itu. Ada demam?", "id": "That's probably it. Any fever?", "literal": "oh, maybe that. exist fever?" },
+        { "speaker": "Sarah:", "text": "Tidak, tapi badan saya lemas.", "id": "No, but I feel weak.", "literal": "not, but body I weak." },
+        { "speaker": "Apoteker:", "text": "Ini obat diare. Minum dua kali sehari sesudah makan.", "id": "Here's something for the diarrhoea. Twice a day after meals.", "literal": "this medicine diarrhoea. drink two time one-day after eat." },
+        { "speaker": "Sarah:", "text": "Baik. Berapa hari, Mbak?", "id": "All right. For how many days?", "literal": "good. how-many day, miss?" },
+        { "speaker": "Apoteker:", "text": "Tiga hari. Kalau belum sembuh, ke dokter, ya.", "id": "Three days. If you're not better, see a doctor.", "literal": "three day. if not-yet recover, to doctor, yes." },
+        { "speaker": "Sarah:", "text": "Terima kasih. Banyak minum air putih juga, ya?", "id": "Thank you. And drink plenty of water too?", "literal": "thank you. many drink water white also, yes?" },
+        { "speaker": "Apoteker:", "text": "Betul. Semoga cepat sembuh!", "id": "Exactly. Get well soon!", "literal": "correct. hopefully fast recover!" }
+      ],
+      "notes": [
+        "**Sakit + body part is the whole grammar of pain.** *Sakit perut* (stomach ache), *sakit kepala* (headache), *sakit gigi* (toothache). No verb, no preposition. And *Saya sakit* on its own means \"I'm ill\".",
+        "**Sejak means \"since\" and takes a point in time**: *sejak kemarin*, *sejak pagi*, *sejak minggu lalu*. Its partner *selama* means \"for (a length of time)\": *selama tiga hari*.",
+        "**Ada yang bisa dibantu?** is the standard shop and office greeting — literally \"is there something that can be helped?\". It uses the passive *dibantu*, which is why it sounds odd word-for-word. Recognise it as a fixed phrase.",
+        "**Pharmacies do a lot of the work of a doctor in Indonesia.** An *apotek* will listen to your symptoms and sell you something appropriate, and many stock antibiotics that would need a prescription elsewhere. For anything serious, or a fever that lasts, go to a *klinik* or *rumah sakit* — and if you are in Indonesia for a while, know where the nearest one is before you need it.",
+        "**Demam berdarah** (dengue fever) is the one to take seriously: high fever, aching behind the eyes, and it is spread by daytime mosquitoes. Any fever lasting more than two days deserves a blood test rather than another packet from the pharmacy."
+      ],
+      "grammars": [
+        {
+          "title": "The body",
+          "body": [
+            "You need these mainly to point and name; nobody expects grammar from a person in pain."
+          ],
+          "table": {
+            "head": ["Indonesian", "English", "Indonesian", "English"],
+            "rows": [
+              ["*kepala*", "head", "*perut*", "stomach, belly"],
+              ["*rambut*", "hair", "*punggung*", "back"],
+              ["*mata*", "eye", "*tangan*", "hand, arm"],
+              ["*hidung*", "nose", "*jari*", "finger"],
+              ["*telinga*", "ear", "*kaki*", "leg, foot"],
+              ["*mulut*", "mouth", "*lutut*", "knee"],
+              ["*gigi*", "tooth", "*dada*", "chest"],
+              ["*lidah*", "tongue", "*jantung*", "heart"],
+              ["*leher*", "neck", "*darah*", "blood"],
+              ["*bahu*", "shoulder", "*badan / tubuh*", "body"]
+            ]
+          },
+          "after": [
+            "⚠️ *Tangan* covers hand **and** arm; *kaki* covers foot **and** leg. Indonesian simply does not split them, and if the distinction matters you say *telapak tangan* (palm) or *lengan* (upper arm)."
+          ]
+        },
+        {
+          "title": "Symptoms and states",
+          "body": [
+            "All of these are adjectives, so no verb is needed: *Saya demam* is a complete sentence."
+          ],
+          "table": {
+            "head": ["Indonesian", "English", "Indonesian", "English"],
+            "rows": [
+              ["*sakit*", "ill; painful", "*batuk*", "cough"],
+              ["*demam*", "fever", "*pilek*", "runny nose"],
+              ["*pusing*", "dizzy; headachy", "*flu*", "flu"],
+              ["*mual*", "nauseous", "*alergi*", "allergic"],
+              ["*muntah*", "to vomit", "*luka*", "wound, cut"],
+              ["*diare / mencret*", "diarrhoea", "*bengkak*", "swollen"],
+              ["*lemas*", "weak, drained", "*gatal*", "itchy"],
+              ["*capek*", "tired", "*berdarah*", "bleeding"]
+            ]
+          },
+          "after": [
+            "**Pusing is not quite \"dizzy\".** It covers the whole family of head trouble — light-headedness, a dull headache, and figuratively being overwhelmed. *Saya pusing* said about work means \"my head is spinning with all this\".",
+            "**Masuk angin** deserves its own line. Literally \"wind entered\", it is a very Indonesian complaint covering bloating, chills and general malaise, and its traditional treatment is *kerokan* — coining the back with a coin until it reddens. You will meet both, and both are taken entirely seriously."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "At the doctor",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Indonesian", "English"],
+          "rows": [
+            ["*Saya mau ke dokter.*", "I'd like to see a doctor."],
+            ["*Saya sakit kepala sejak kemarin.*", "I've had a headache since yesterday."],
+            ["*Sudah tiga hari.*", "It's been three days."],
+            ["*Saya alergi antibiotik.*", "I'm allergic to antibiotics."],
+            ["*Saya minum obat ini setiap hari.*", "I take this medicine every day."],
+            ["*Apakah ini serius?*", "Is it serious?"],
+            ["*Berapa kali sehari?*", "How many times a day?"],
+            ["*Sebelum atau sesudah makan?*", "Before or after meals?"],
+            ["*Ada efek samping?*", "Are there side effects?"],
+            ["*Saya perlu istirahat berapa hari?*", "How many days should I rest?"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Minum obat* — literally \"to drink medicine\" — is how Indonesian says \"to take medicine\", even for tablets. Never *makan obat*."
+        },
+        {
+          "type": "p",
+          "text": "Practical note: many clinics and hospitals want your *asuransi* (insurance) details or payment up front, and travel insurance documents are worth having on your phone. The word for a receipt you can claim on is *kuitansi*."
+        }
+      ]
+    },
+    {
+      "title": "Emergencies",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Learn these as whole blocks. In an emergency nobody assembles grammar."
+        },
+        {
+          "type": "tabel",
+          "head": ["Indonesian", "English"],
+          "rows": [
+            ["*Tolong!*", "Help!"],
+            ["*Awas!*", "Look out!"],
+            ["*Panggil dokter!*", "Call a doctor!"],
+            ["*Panggil ambulans!*", "Call an ambulance!"],
+            ["*Ada kecelakaan.*", "There's been an accident."],
+            ["*Dia pingsan.*", "He/she has fainted."],
+            ["*Saya kehilangan paspor.*", "I've lost my passport."],
+            ["*Dompet saya dicuri.*", "My wallet has been stolen."],
+            ["*Di mana kantor polisi?*", "Where is the police station?"],
+            ["*Saya perlu bantuan.*", "I need help."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The national emergency number is **112**, which works from any phone. Police is 110 and ambulance 118, but 112 will get you all of them."
+        },
+        {
+          "type": "p",
+          "text": "*Kehilangan* (\"to lose\") and *dicuri* (\"to be stolen\") are both built from roots you can now see: *hilang* (gone, missing) wrapped in *ke-…-an*, and *curi* (steal) with the passive *di-*. Even in a crisis, the language keeps its shape."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "id": "sakit", "baca": "SA-kit", "en": "ill; painful" },
+    { "id": "obat", "baca": "O-bat", "en": "medicine" },
+    { "id": "apotek", "baca": "a-PO-ték", "en": "pharmacy" },
+    { "id": "klinik", "baca": "KLI-nik", "en": "clinic" },
+    { "id": "demam", "baca": "duh-MAM", "en": "fever" },
+    { "id": "pusing", "baca": "PU-sing", "en": "dizzy, headachy" },
+    { "id": "mual", "baca": "MU-al", "en": "nauseous" },
+    { "id": "muntah", "baca": "MUN-tah", "en": "to vomit" },
+    { "id": "diare", "baca": "di-A-ré", "en": "diarrhoea" },
+    { "id": "batuk", "baca": "BA-tuk", "en": "cough" },
+    { "id": "pilek", "baca": "PI-luhk", "en": "runny nose" },
+    { "id": "lemas", "baca": "luh-MAS", "en": "weak, drained" },
+    { "id": "luka", "baca": "LU-ka", "en": "wound" },
+    { "id": "gatal", "baca": "GA-tal", "en": "itchy" },
+    { "id": "kepala", "baca": "kuh-PA-la", "en": "head" },
+    { "id": "perut", "baca": "puh-RUT", "en": "stomach" },
+    { "id": "mata", "baca": "MA-ta", "en": "eye" },
+    { "id": "gigi", "baca": "GI-gi", "en": "tooth" },
+    { "id": "tangan", "baca": "TA-ngan", "en": "hand, arm" },
+    { "id": "kaki", "baca": "KA-ki", "en": "foot, leg" },
+    { "id": "badan", "baca": "BA-dan", "en": "body" },
+    { "id": "darah", "baca": "DA-rah", "en": "blood" },
+    { "id": "sejak", "baca": "suh-JAK", "en": "since" },
+    { "id": "selama", "baca": "suh-LA-ma", "en": "for (a period)" },
+    { "id": "sembuh", "baca": "suhm-BUH", "en": "to recover" },
+    { "id": "istirahat", "baca": "is-ti-RA-hat", "en": "to rest" },
+    { "id": "kecelakaan", "baca": "kuh-cuh-la-KA-an", "en": "accident" },
+    { "id": "pingsan", "baca": "PING-san", "en": "to faint" },
+    { "id": "kehilangan", "baca": "kuh-hi-LA-ngan", "en": "to lose" },
+    { "id": "bantuan", "baca": "ban-TU-an", "en": "help, assistance" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Indonesian.",
+      "items": [
+        "I have a headache.",
+        "I've had a stomach ache since yesterday.",
+        "I feel nauseous.",
+        "I'm allergic to antibiotics.",
+        "How many times a day?",
+        "I need to see a doctor.",
+        "Get well soon!"
+      ]
+    },
+    {
+      "prompt": "Fill in the gap.",
+      "items": [
+        "Saya ____ perut sejak kemarin.",
+        "Minum obat dua ____ sehari.",
+        "Kalau belum ____, ke dokter ya.",
+        "Saya ____ antibiotik. (allergic)",
+        "Badan saya ____. (weak)",
+        "____ dokter! Dia pingsan."
+      ]
+    },
+    {
+      "prompt": "What do you say? Write the sentence.",
+      "items": [
+        "Your wallet has been stolen.",
+        "You want to know if you take the medicine before or after eating.",
+        "Someone has fainted in the street.",
+        "You have had a fever for three days.",
+        "You have lost your passport."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kepala / saya / sakit",
+        "kemarin / sejak / sakit / saya",
+        "sehari / kali / minum / dua",
+        "makan / obat / sesudah / minum",
+        "sembuh / semoga / cepat"
+      ]
+    }
+  ],
+  "answers": [
+    "Saya sakit kepala. — Saya sakit perut sejak kemarin. — Saya mual. — Saya alergi antibiotik. — Berapa kali sehari? — Saya perlu ke dokter. — Semoga cepat sembuh!",
+    "sakit — kali — sembuh — alergi — lemas — Panggil",
+    "Dompet saya dicuri. — Sebelum atau sesudah makan? — Panggil ambulans! — Saya demam sudah tiga hari. — Saya kehilangan paspor.",
+    "Saya sakit kepala. — Saya sakit sejak kemarin. — Minum dua kali sehari. — Minum obat sesudah makan. — Semoga cepat sembuh."
+  ],
+  "wave": "re-read Unit 15. Tell the story of your last weekend out loud, in the past."
+}
