@@ -1,0 +1,527 @@
+{
+ "title": "Keluarga saya",
+ "title_target": "Minun perheeni",
+ "goal": "Menyebut anggota keluarga, menyatakan kepemilikan dengan dua cara sekaligus, dan mengucapkan \"punya\" dalam bahasa yang tidak punya kata kerja \"punya\".",
+ "bekal": [
+  "membentuk kepunyaan dengan ekor **-n** (*Ainon kirja*) dan ekor kepunyaan (*kirjani*)",
+  "memakai *minulla on* untuk menyatakan memiliki sesuatu",
+  "menyebut lima belas anggota keluarga dan menanyakan keluarga orang lain"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Perhekuva",
+   "intro": "Aino melihat foto di dinding kamar Budi.",
+   "lines": [
+    {
+     "speaker": "Aino:",
+     "text": "Kuka tuo on kuvassa? Onko hän sinun äitisi?",
+     "id": "Siapa itu di fotonya? Ibumu?",
+     "literal": "siapa itu-sana adalah di-gambar? adalah-kah dia milikmu ibu-mu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Joo, se on minun äitini. Ja tuo on isäni.",
+     "id": "Ya, itu ibu saya. Dan itu ayah saya.",
+     "literal": "ya, itu adalah milikku ibu-ku. dan itu-sana adalah ayah-ku."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "He näyttävät mukavilta. Onko sinulla sisaruksia?",
+     "id": "Kelihatan ramah. Kamu punya saudara?",
+     "literal": "mereka tampak ramah-dari. adalah-kah kepadamu saudara-bagian?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "On. Minulla on yksi isosisko ja yksi pikkuveli.",
+     "id": "Punya. Saya punya satu kakak perempuan dan satu adik laki-laki.",
+     "literal": "adalah. kepadaku adalah satu kakak-perempuan dan satu adik-laki-laki."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Missä he asuvat?",
+     "id": "Mereka tinggal di mana?",
+     "literal": "di-mana mereka tinggal-mereka?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Siskoni asuu Bandungissa. Veljeni asuu vielä vanhempien kanssa.",
+     "id": "Kakak saya tinggal di Bandung. Adik saya masih tinggal bersama orang tua.",
+     "literal": "kakak-ku tinggal di-Bandung. adik-ku tinggal masih orang-tua-punya bersama."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Onko siskosi naimisissa?",
+     "id": "Kakakmu sudah menikah?",
+     "literal": "adalah-kah kakak-mu dalam-pernikahan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "On. Hänen miehensä on opettaja, ja heillä on pieni vauva.",
+     "id": "Sudah. Suaminya guru, dan mereka punya bayi kecil.",
+     "literal": "adalah. dia-punya suami-nya adalah guru, dan kepada-mereka adalah kecil bayi."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Ihanaa! Minulla ei ole sisaruksia. Olen ainoa lapsi.",
+     "id": "Manis sekali! Saya tidak punya saudara. Saya anak tunggal.",
+     "literal": "manis! kepadaku tidak adalah saudara-bagian. adalah-saya satu-satunya anak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Onko se yksinäistä?",
+     "id": "Sepi tidak?",
+     "literal": "adalah-kah itu sepi-bagian?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Ei oikeastaan. Meillä on iso suku ja paljon serkkuja.",
+     "id": "Sebenarnya tidak. Keluarga besar kami banyak, dan sepupunya banyak sekali.",
+     "literal": "tidak sebenarnya. kepada-kami adalah besar keluarga-besar dan banyak sepupu-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sitten sinä et ole yksin ollenkaan!",
+     "id": "Kalau begitu kamu sama sekali tidak sendirian!",
+     "literal": "kemudian kamu tidak adalah sendiri sama-sekali!"
+    }
+   ],
+   "notes": [
+    "**Kepunyaan dinyatakan dua kali.** *Minun äiti**ni*** — \"milikku ibuku\". Yang di depan (*minun*) dan yang di belakang (*-ni*) mengatakan hal yang sama. Dalam bahasa baku dua-duanya dipakai; yang di **depan** boleh dijatuhkan (*äitini* sudah jelas \"ibu saya\"), yang di **belakang** tidak.",
+    "**Kecuali untuk hän dan he.** *Hänen miehe**nsä*** — di sini yang di depan wajib, karena ekor *-nsä* tidak memberi tahu siapa pemiliknya. Tanpa *hänen*, kalimat itu bisa berarti suami siapa saja.",
+    "**Onko sinulla — \"apakah kepadamu ada\".** Bahasa Finlandia tidak punya kata kerja \"punya\" sama sekali. Yang dipakai adalah *olla* (adalah/ada) ditambah pemiliknya dalam bentuk \"di\": *minulla on* = \"pada saya ada\". Susunan ini sama persis dengan bahasa Rusia dan bahasa Arab, dan sekali terbiasa ia terasa sangat masuk akal.",
+    "**Sisaruksia dan serkkuja memakai bentuk bagian.** Sesudah *onko sinulla* dan sesudah *paljon*, kata bendanya berbentuk bagian karena jumlahnya tidak dipastikan — \"saudara (beberapa? satu? nol?)\". Bandingkan dengan *minulla on **yksi** isosisko*, yang jumlahnya jelas.",
+    "**Minulla ei ole** — bentuk menyangkalnya memakai *ei ole*, bukan *ei on*. Kata kerja *olla* kembali ke batangnya begitu disangkal. Ini kejutan pertama tentang penyangkalan bahasa Finlandia; seluruh ceritanya ada di unit 7.",
+    "**Naimisissa** harfiahnya \"di dalam pernikahan\" — kata benda *naimiset* dengan ekor *-ssa*. Lawannya *naimaton* (belum menikah). Untuk \"punya pacar\": *minulla on poikaystävä / tyttöystävä*."
+   ],
+   "grammars": [
+    {
+     "title": "Ekor -n: kepunyaan",
+     "body": [
+      "Satu huruf yang menggantikan seluruh pekerjaan kata \"punya\" dan tanda petik-s bahasa Inggris. Pemiliknya berdiri **di depan** barangnya, sama seperti bahasa Inggris dan berlawanan dengan bahasa Indonesia."
+     ],
+     "table": {
+      "head": [
+       "Kata dasar",
+       "Bentuk kepunyaan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Aino*",
+        "*Aino**n***",
+        "*Ainon kirja*",
+        "buku Aino"
+       ],
+       [
+        "*Marek*",
+        "*Marekin*",
+        "*Marekin laukku*",
+        "tas Marek"
+       ],
+       [
+        "*äiti*",
+        "*äidi**n***",
+        "*äidin auto*",
+        "mobil ibu"
+       ],
+       [
+        "*opettaja*",
+        "*opettaja**n***",
+        "*opettajan nimi*",
+        "nama guru"
+       ],
+       [
+        "*minä*",
+        "*minu**n***",
+        "*minun kirjani*",
+        "buku saya"
+       ],
+       [
+        "*hän*",
+        "*häne**n***",
+        "*hänen miehensä*",
+        "suaminya"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *äiti → äidin*: huruf mati meluruh lagi. Pola yang sama: *katu → kadun*, *pöytä → pöydän*, *kauppa → kaupan*.",
+      "Ekor *-n* ini juga muncul di banyak tempat lain — di depan kata seperti *kanssa*, dan sebagai penanda obyek yang selesai (unit 11). Jadi belajar membentuknya sekarang berbayar berkali-kali.",
+      "Urutan katanya **selalu pemilik dulu**: *Ainon kirja*, tak pernah *kirja Ainon*. Refleks bahasa Indonesia (\"buku Aino\") persis terbalik, dan inilah kekeliruan yang paling sering bertahan lama."
+     ]
+    },
+    {
+     "title": "Minulla on — cara bahasa Finlandia berkata \"punya\"",
+     "body": [
+      "Bahasa Finlandia tidak punya kata kerja \"memiliki\". Yang dipakai: pemiliknya diberi ekor **-lla/-llä** (\"pada\"), lalu *on*."
+     ],
+     "table": {
+      "head": [
+       "Pemilik",
+       "Bentuk -lla",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "minä",
+        "**minulla**",
+        "*Minulla on kirja.*",
+        "Saya punya buku."
+       ],
+       [
+        "sinä",
+        "**sinulla**",
+        "*Sinulla on aikaa.*",
+        "Kamu punya waktu."
+       ],
+       [
+        "hän",
+        "**hänellä**",
+        "*Hänellä on koira.*",
+        "Dia punya anjing."
+       ],
+       [
+        "me",
+        "**meillä**",
+        "*Meillä on iso suku.*",
+        "Kami punya keluarga besar."
+       ],
+       [
+        "te",
+        "**teillä**",
+        "*Teillä on kysymys.*",
+        "Kalian punya pertanyaan."
+       ],
+       [
+        "he",
+        "**heillä**",
+        "*Heillä on vauva.*",
+        "Mereka punya bayi."
+       ]
+      ]
+     },
+     "after": [
+      "Kata kerjanya **selalu *on***, tak peduli siapa pemiliknya dan berapa jumlah barangnya: *minulla on kirja*, *minulla on kirjoja*, *heillä on vauva*. Tidak ada yang perlu diselaraskan.",
+      "Menyangkalnya: ganti *on* jadi **ei ole**, dan barangnya jadi bentuk bagian — *Minulla **ei ole** auto**a***. Perubahan bentuk barangnya wajib; ini salah satu tempat pertama di mana bentuk bagian tidak bisa dihindari.",
+      "Bertanya: *Onko sinulla…?* — *Onko sinulla aikaa?* (Kamu ada waktu?). Menjawabnya dengan mengulang kata kerja: *On.* / *Ei ole.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Anggota keluarga",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "perhe",
+       "PER-he",
+       "keluarga (inti)"
+      ],
+      [
+       "suku",
+       "SU-ku",
+       "keluarga besar, marga"
+      ],
+      [
+       "äiti",
+       "ÈI-ti",
+       "ibu"
+      ],
+      [
+       "isä",
+       "I-sè",
+       "ayah"
+      ],
+      [
+       "vanhemmat",
+       "VAN-hem-mat",
+       "orang tua"
+      ],
+      [
+       "veli",
+       "VE-li",
+       "saudara laki-laki"
+      ],
+      [
+       "sisko / sisar",
+       "SIS-ko / SI-sar",
+       "saudara perempuan"
+      ],
+      [
+       "isoveli / isosisko",
+       "I-so-ve-li",
+       "kakak laki-laki / perempuan"
+      ],
+      [
+       "pikkuveli / pikkusisko",
+       "PIK-ku-ve-li",
+       "adik laki-laki / perempuan"
+      ],
+      [
+       "sisarukset",
+       "SI-sa-ruk-set",
+       "saudara kandung (jamak)"
+      ],
+      [
+       "lapsi",
+       "LAP-si",
+       "anak"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Bahasa Finlandia membedakan dua macam paman: **setä** adalah saudara laki-laki **ayah**, **eno** adalah saudara laki-laki **ibu**. Untuk bibi tidak ada pembedaan seperti itu — *täti* untuk keduanya. Bahasa Indonesia tidak membedakan sama sekali, jadi ini pembedaan yang benar-benar baru; kalau ragu, *setä* lebih aman karena juga dipakai sebagai sapaan umum untuk pria dewasa oleh anak-anak."
+    },
+    {
+     "type": "p",
+     "text": "*Mummo* dan *vaari* adalah panggilan hangat sehari-hari; *isoäiti* dan *isoisä* lebih netral, harfiahnya \"ibu besar\" dan \"ayah besar\". Ada juga *mummi*, *pappa*, dan *ukki* yang berbeda-beda menurut daerah dan keluarga."
+    }
+   ]
+  },
+  {
+   "title": "Ekor kepunyaan lengkap",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Pemilik",
+      "Ekor",
+      "*kirja* (buku)",
+      "*äiti* (ibu)",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "minun",
+       "**-ni**",
+       "kirja**ni**",
+       "äiti**ni**",
+       "buku/ibu saya"
+      ],
+      [
+       "sinun",
+       "**-si**",
+       "kirja**si**",
+       "äiti**si**",
+       "buku/ibu kamu"
+      ],
+      [
+       "hänen",
+       "**-nsa / -nsä**",
+       "kirja**nsa**",
+       "äiti**nsä**",
+       "buku/ibu dia"
+      ],
+      [
+       "meidän",
+       "**-mme**",
+       "kirja**mme**",
+       "äiti**mme**",
+       "buku/ibu kami"
+      ],
+      [
+       "teidän",
+       "**-nne**",
+       "kirja**nne**",
+       "äiti**nne**",
+       "buku/ibu kalian"
+      ],
+      [
+       "heidän",
+       "**-nsa / -nsä**",
+       "kirja**nsa**",
+       "äiti**nsä**",
+       "buku/ibu mereka"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa *hän* dan *he* memakai ekor yang sama persis. Itulah sebabnya kata di depannya (*hänen* / *heidän*) tidak boleh dijatuhkan — ia satu-satunya yang membedakan."
+    },
+    {
+     "type": "kotak",
+     "title": "Yang sebenarnya kamu dengar di jalanan",
+     "items": [
+      "Dalam percakapan sehari-hari, ekor kepunyaannya sering **hilang sama sekali** dan yang tersisa cuma kata di depannya: *mun äiti* (bukan *minun äitini*), *sun kirja*, *sen auto*.",
+      "Jangan menirunya dulu. Modul ini memakai bentuk baku karena bentuk baku dipahami di semua situasi, sementara bentuk santai terdengar salah dalam tulisan resmi — dan ujian bahasa Finlandia menuntut bentuk baku."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalimat siap pakai untuk berkenalan lebih dalam: *Onko sinulla perhettä Suomessa?* (Kamu punya keluarga di Finlandia?), *Kuinka monta sisarusta sinulla on?* (Berapa saudaramu?), *Missä sinun perheesi asuu?* (Keluargamu tinggal di mana?)."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "perhe",
+   "baca": "PER-he",
+   "id": "keluarga"
+  },
+  {
+   "fi": "kuva",
+   "baca": "KU-va",
+   "id": "gambar, foto"
+  },
+  {
+   "fi": "äiti",
+   "baca": "ÈI-ti",
+   "id": "ibu"
+  },
+  {
+   "fi": "isä",
+   "baca": "I-sè",
+   "id": "ayah"
+  },
+  {
+   "fi": "vanhemmat",
+   "baca": "VAN-hem-mat",
+   "id": "orang tua"
+  },
+  {
+   "fi": "veli",
+   "baca": "VE-li",
+   "id": "saudara laki-laki"
+  },
+  {
+   "fi": "sisko",
+   "baca": "SIS-ko",
+   "id": "saudara perempuan"
+  },
+  {
+   "fi": "sisarukset",
+   "baca": "SI-sa-ruk-set",
+   "id": "saudara kandung"
+  },
+  {
+   "fi": "lapsi",
+   "baca": "LAP-si",
+   "id": "anak"
+  },
+  {
+   "fi": "vauva",
+   "baca": "VAU-va",
+   "id": "bayi"
+  },
+  {
+   "fi": "vaimo",
+   "baca": "VAI-mo",
+   "id": "istri"
+  },
+  {
+   "fi": "aviomies",
+   "baca": "A-vi-o-mies",
+   "id": "suami"
+  },
+  {
+   "fi": "serkku",
+   "baca": "SERK-ku",
+   "id": "sepupu"
+  },
+  {
+   "fi": "suku",
+   "baca": "SU-ku",
+   "id": "keluarga besar"
+  },
+  {
+   "fi": "opettaja",
+   "baca": "O-pet-ta-ya",
+   "id": "guru"
+  },
+  {
+   "fi": "koira",
+   "baca": "KOI-ra",
+   "id": "anjing"
+  },
+  {
+   "fi": "kissa",
+   "baca": "KIS-sa",
+   "id": "kucing"
+  },
+  {
+   "fi": "auto",
+   "baca": "AU-to",
+   "id": "mobil"
+  },
+  {
+   "fi": "aika",
+   "baca": "AI-ka",
+   "id": "waktu"
+  },
+  {
+   "fi": "kysymys",
+   "baca": "KÜ-sü-müs",
+   "id": "pertanyaan"
+  },
+  {
+   "fi": "naimisissa",
+   "baca": "NAI-mi-sis-sa",
+   "id": "sudah menikah"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Itu ibu saya.",
+    "Saya punya satu kakak perempuan.",
+    "Kakak saya tinggal di Bandung.",
+    "Suaminya guru.",
+    "Saya tidak punya saudara.",
+    "Kami punya keluarga besar."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk *-lla/-llä* dari kata ganti yang tepat.",
+   "items": [
+    "____ on kirja. (saya)",
+    "____ on aikaa. (kamu)",
+    "____ on koira. (dia)",
+    "____ on iso perhe. (kami)",
+    "____ on vauva. (mereka)",
+    "____ on kysymys. (kalian)"
+   ]
+  },
+  {
+   "prompt": "Tambahkan ekor kepunyaan yang tepat.",
+   "items": [
+    "minun kirja____",
+    "sinun äiti____",
+    "hänen veli____",
+    "meidän perhe____",
+    "teidän talo____",
+    "heidän lapsi____"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi bentuk kepunyaan dengan ekor -n.",
+   "items": [
+    "Aino / kirja",
+    "Marek / laukku",
+    "äiti / auto",
+    "opettaja / nimi",
+    "isä / puhelin"
+   ]
+  }
+ ],
+ "answers": [
+  "Se on minun äitini. — Minulla on yksi isosisko. — Siskoni asuu Bandungissa. — Hänen miehensä on opettaja. — Minulla ei ole sisaruksia. — Meillä on iso suku.",
+  "Minulla — Sinulla — Hänellä — Meillä — Heillä — Teillä",
+  "ni — si — nsä — mme — nne — nsa",
+  "Ainon kirja — Marekin laukku — äidin auto — opettajan nimi — isän puhelin"
+ ]
+}

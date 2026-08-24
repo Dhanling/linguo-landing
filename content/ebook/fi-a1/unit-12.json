@@ -1,0 +1,534 @@
+{
+ "title": "Enam golongan kata kerja",
+ "title_target": "Kuusi verbityyppiä",
+ "goal": "Menutup seluruh sistem kata kerja bahasa Finlandia masa kini — enam golongan, enam cara membuat batang, dan sesudah unit ini tidak ada kata kerja yang tak bisa kamu susun sendiri.",
+ "bekal": [
+  "mengenali golongan sebuah kata kerja hanya dari bentuk kamusnya",
+  "membuat batang untuk keenam golongan dan menempelkan ekor pelaku",
+  "menceritakan kegiatan waktu luang dan hobi"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Mitä sinä harrastat?",
+   "intro": "Akhir pekan mendekat. Marek, Aino, dan Budi membicarakan apa yang mereka lakukan di waktu luang.",
+   "lines": [
+    {
+     "speaker": "Marek:",
+     "text": "Mitä sinä harrastat, Budi?",
+     "id": "Hobi kamu apa, Budi?",
+     "literal": "apa kamu ber-hobi, Budi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Pelaan jalkapalloa ja soitan kitaraa. Entä sinä?",
+     "id": "Saya main sepak bola dan main gitar. Kalau kamu?",
+     "literal": "bermain-saya sepak-bola-bagian dan memainkan-saya gitar-bagian. lalu kamu?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Minä juoksen. Ja talvella hiihdän — yritän ainakin.",
+     "id": "Saya lari. Dan musim dingin main ski — setidaknya mencoba.",
+     "literal": "saya berlari. dan pada-musim-dingin ber-ski-saya — mencoba-saya setidaknya."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Minä valitsen aina helpomman: käyn kahvilassa ja luen.",
+     "id": "Saya selalu pilih yang lebih gampang: nongkrong di kafe dan baca.",
+     "literal": "saya memilih selalu lebih-mudah-punya: pergi-saya di-kafe dan membaca-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sekin on harrastus! Tarvitsetko sinä kirjastokorttia?",
+     "id": "Itu juga hobi! Kamu perlu kartu perpustakaan?",
+     "literal": "itu-pun adalah hobi! butuh-kah kamu perpustakaan-kartu-bagian?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Minulla on jo. Se on ilmainen — Suomessa kirjastot ovat pyhiä.",
+     "id": "Sudah punya. Gratis — di Finlandia perpustakaan itu suci.",
+     "literal": "kepadaku adalah sudah. itu adalah gratis — di-Finlandia perpustakaan-jamak adalah suci-jamak-bagian."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Totta. Tapaan usein ystäviä kirjastossa, emmekä edes lue.",
+     "id": "Betul. Saya sering ketemu teman di perpustakaan, dan kami bahkan tidak baca.",
+     "literal": "benar. bertemu-saya sering teman-jamak-bagian di-perpustakaan, dan-tidak-kami bahkan membaca."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Haluatteko te tulla lauantaina pelaamaan?",
+     "id": "Kalian mau ikut main hari Sabtu?",
+     "literal": "mau-kah kalian datang pada-Sabtu untuk-bermain?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Minä tulen katsomaan. En osaa pelata ollenkaan.",
+     "id": "Saya ikut nonton. Saya sama sekali tidak bisa main.",
+     "literal": "saya datang untuk-menonton. tidak-saya bisa bermain sama-sekali."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Minä tulen. Mutta minä vanhenen — juoksen hitaasti nykyään.",
+     "id": "Saya ikut. Tapi saya makin tua — larinya pelan sekarang.",
+     "literal": "saya datang. tetapi saya menua — berlari-saya pelan sekarang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Me kaikki vanhenemme. Se ei ole tekosyy!",
+     "id": "Kita semua makin tua. Itu bukan alasan!",
+     "literal": "kami semua menua-kami. itu tidak adalah buat-alasan!"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Hyvin sanottu. Nähdään lauantaina kentällä!",
+     "id": "Bagus itu. Sampai jumpa Sabtu di lapangan!",
+     "literal": "baik dikatakan. terlihat pada-Sabtu di-lapangan!"
+    }
+   ],
+   "notes": [
+    "**Tapaan, bukan tavaan.** Kata kerja golongan keempat meluruh **terbalik**: bentuk kamusnya lemah (*tavata*), bentuk berpelakunya kuat (*tapaan*). Ini kebalikan dari golongan pertama yang kamu pelajari di unit 8, dan ia satu-satunya bagian dari sistem kata kerja yang benar-benar bisa menjebak.",
+    "**Tarvitsen dari tarvita.** Golongan kelima menyisipkan *-tse-* yang sama sekali tidak kelihatan di bentuk kamusnya. Untungnya golongan ini kecil; yang benar-benar sering dipakai cuma *tarvita* (butuh), *valita* (memilih), dan *häiritä* (mengganggu).",
+    "**Vanhenen dari vanheta.** Golongan keenam menyisipkan *-ne-* dan hampir semuanya berarti \"menjadi semakin…\": *vanheta* (menua), *kylmetä* (mendingin), *pimetä* (menggelap). Golongan terkecil, dan kamu bisa hidup bertahun-tahun tanpa memakainya.",
+    "**Pelaamaan, katsomaan** — bentuk \"untuk melakukan\". Sesudah kata kerja gerak (*tulla*, *mennä*, *lähteä*), kata kerja berikutnya memakai ekor *-maan/-mään*: *tulen katso**maan*** (saya datang untuk menonton). Bandingkan dengan *haluan katso**a*** yang memakai bentuk kamus. Perbedaan ini bergantung pada kata kerja pertamanya, dan ia salah satu yang paling lama diperlukan untuk terbiasa.",
+    "**Emmekä edes lue** — *ja* jadi *-kä* di kalimat sangkal, seperti yang kamu pelajari di unit 7. Perhatikan juga *lue*, bentuk polos dari *lukea*.",
+    "**Soitan kitaraa** harfiahnya \"saya membunyikan gitar\". *Soittaa* dipakai untuk memainkan alat musik **dan** untuk menelepon: *soitan sinulle* (saya telepon kamu). Untuk bermain permainan dipakai *pelata*: *pelaan jalkapalloa*. Bahasa Indonesia memakai \"main\" untuk keduanya, jadi ini pembedaan yang harus dijaga."
+   ],
+   "grammars": [
+    {
+     "title": "Enam golongan kata kerja",
+     "body": [
+      "Semua kata kerja bahasa Finlandia masuk salah satu dari enam golongan ini, dan golongannya bisa dikenali langsung dari **dua huruf terakhir bentuk kamusnya**. Sesudah batangnya terbentuk, ekor pelakunya sama untuk semua golongan."
+     ],
+     "table": {
+      "head": [
+       "Gol.",
+       "Ciri bentuk kamus",
+       "Cara membuat batang",
+       "Contoh",
+       "Bentuk *minä*"
+      ],
+      "rows": [
+       [
+        "**1**",
+        "dua vokal berbeda: *-oa, -ua, -ea, -ia, -aa, -ää*",
+        "buang **-a/-ä**",
+        "*puhua, ottaa, lukea*",
+        "*puhun, otan, luen*"
+       ],
+       [
+        "**2**",
+        "**-da / -dä**",
+        "buang **-da/-dä**",
+        "*juoda, syödä, saada*",
+        "*juon, syön, saan*"
+       ],
+       [
+        "**3**",
+        "**-lla, -nna, -rra, -sta** dsb.",
+        "buang dua huruf, tambah **-e-**",
+        "*tulla, mennä, nousta*",
+        "*tulen, menen, nousen*"
+       ],
+       [
+        "**4**",
+        "**-ata, -ota, -uta** (vokal + ta)",
+        "buang **-ta/-tä**, tambah **-a-**",
+        "*tavata, haluta, siivota*",
+        "*tapaan, haluan, siivoan*"
+       ],
+       [
+        "**5**",
+        "**-ita / -itä**",
+        "buang **-ta/-tä**, tambah **-tse-**",
+        "*tarvita, valita*",
+        "*tarvitsen, valitsen*"
+       ],
+       [
+        "**6**",
+        "**-eta / -etä**",
+        "buang **-ta/-tä**, tambah **-ne-**",
+        "*vanheta, kylmetä*",
+        "*vanhenen, kylmenen*"
+       ]
+      ]
+     },
+     "after": [
+      "**Golongan 1 dan 3 menutup sebagian besar percakapan.** Golongan 2 kecil tapi frekuensinya tinggi (*juoda*, *syödä*, *saada*, *tuoda*, *viedä*, *käydä*). Golongan 5 dan 6 boleh kamu tunda; keduanya jarang.",
+      "⚠️ Golongan 3 selalu memakai batang berakhir **-e-**, jadi bentuk *hän*-nya memanjangkan *e*: *tulee*, *menee*, *nousee*, *opiskelee*. Ini bentuk yang paling sering salah diucapkan pemula — dua *e*, bukan satu.",
+      "Golongan 2 tidak memanjangkan apa pun di bentuk *hän*, karena batangnya sudah berakhir vokal panjang atau luncuran: *hän juo*, *hän syö*, *hän saa*."
+     ]
+    },
+    {
+     "title": "Peluruhan terbalik di golongan 4",
+     "body": [
+      "Golongan keempat adalah satu-satunya yang melawan naluri yang kamu bangun di unit 8. Di sini bentuk kamus yang **lemah**, dan bentuk berpelakunya yang **kuat**."
+     ],
+     "table": {
+      "head": [
+       "Bentuk kamus (lemah)",
+       "minä (kuat)",
+       "hän",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*tavata*",
+        "**tapaan**",
+        "tapaa",
+        "bertemu"
+       ],
+       [
+        "*herätä*",
+        "**herään**",
+        "herää",
+        "bangun tidur"
+       ],
+       [
+        "*hypätä*",
+        "**hyppään**",
+        "hyppää",
+        "melompat"
+       ],
+       [
+        "*pelätä*",
+        "**pelkään**",
+        "pelkää",
+        "takut"
+       ],
+       [
+        "*haluta*",
+        "**haluan**",
+        "haluaa",
+        "mau"
+       ],
+       [
+        "*siivota*",
+        "**siivoan**",
+        "siivoaa",
+        "bersih-bersih"
+       ],
+       [
+        "*pelata*",
+        "**pelaan**",
+        "pelaa",
+        "bermain"
+       ],
+       [
+        "*osata*",
+        "**osaan**",
+        "osaa",
+        "bisa, menguasai"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan *tavata → tapaan*: *v* jadi *p*, meluruh ke arah sebaliknya. Sama halnya *herätä → herään* (*t* hilang) dan *hypätä → hyppään* (*p* jadi *pp*).",
+      "Empat kata kerja golongan ini sudah kamu pakai sejak unit-unit awal tanpa tahu golongannya: *haluta*, *osata*, *tavata*, *herätä*. Sekarang kamu tahu kenapa bentuknya terasa melompat.",
+      "⚠️ Bentuk *hän*-nya tidak menambah vokal lagi karena batangnya sudah berakhir vokal ganda: *hän tapaa*, bukan *tapaaa*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata kerja yang paling sering dipakai, menurut golongan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Gol.",
+      "Kata kerja",
+      "Bentuk *minä*",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "1",
+       "*puhua, asua, lukea, ottaa, antaa, tietää, ymmärtää, katsoa, muistaa, ostaa, maksaa, sanoa, alkaa, auttaa*",
+       "puhun, asun, luen, otan, annan, tiedän, ymmärrän, katson, muistan, ostan, maksan, sanon, alan, autan",
+       "berbicara, tinggal, membaca, mengambil, memberi, tahu, mengerti, menonton, ingat, membeli, membayar, berkata, mulai, menolong"
+      ],
+      [
+       "2",
+       "*juoda, syödä, saada, tuoda, viedä, käydä, myydä, jäädä*",
+       "juon, syön, saan, tuon, vien, käyn, myyn, jään",
+       "minum, makan, dapat, membawa, mengantar, mampir, menjual, tinggal (tetap)"
+      ],
+      [
+       "3",
+       "*tulla, mennä, olla, nousta, opiskella, ajatella, kävellä, kuunnella, purra*",
+       "tulen, menen, olen, nousen, opiskelen, ajattelen, kävelen, kuuntelen, puren",
+       "datang, pergi, adalah, bangkit, belajar, berpikir, berjalan, mendengarkan, menggigit"
+      ],
+      [
+       "4",
+       "*tavata, herätä, haluta, siivota, pelata, osata, hypätä, pelätä*",
+       "tapaan, herään, haluan, siivoan, pelaan, osaan, hyppään, pelkään",
+       "bertemu, bangun, mau, bersih-bersih, bermain, bisa, melompat, takut"
+      ],
+      [
+       "5",
+       "*tarvita, valita, häiritä, mainita*",
+       "tarvitsen, valitsen, häiritsen, mainitsen",
+       "butuh, memilih, mengganggu, menyebut"
+      ],
+      [
+       "6",
+       "*vanheta, kylmetä, pimetä, lämmetä*",
+       "vanhenen, kylmenen, pimenen, lämpenen",
+       "menua, mendingin, menggelap, menghangat"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Olla* masuk golongan 3, tapi bentuknya tetap tak beraturan (*olen*, bukan *olen*… maksudnya bentuk *hän*-nya *on*, bukan *olee*). Ia satu-satunya kata kerja Finlandia yang benar-benar membangkang, dan kamu sudah menghafalnya sejak unit 1."
+    }
+   ]
+  },
+  {
+   "title": "Hobi dan waktu luang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "harrastaa",
+       "HAR-ras-taa",
+       "punya hobi, menekuni"
+      ],
+      [
+       "pelata jalkapalloa",
+       "PE-la-ta YAL-ka-pal-lo-a",
+       "main sepak bola"
+      ],
+      [
+       "soittaa kitaraa",
+       "SOIT-taa KI-ta-raa",
+       "main gitar"
+      ],
+      [
+       "laulaa",
+       "LAU-laa",
+       "bernyanyi"
+      ],
+      [
+       "tanssia",
+       "TANS-si-a",
+       "menari"
+      ],
+      [
+       "juosta",
+       "YUOS-ta",
+       "berlari"
+      ],
+      [
+       "uida",
+       "UI-da",
+       "berenang"
+      ],
+      [
+       "hiihtää",
+       "HIIH-tèè",
+       "main ski"
+      ],
+      [
+       "luistella",
+       "LUIS-tel-la",
+       "main sepatu es"
+      ],
+      [
+       "kuntosalilla käydä",
+       "KUN-to-sa-lil-la",
+       "nge-gym"
+      ],
+      [
+       "valokuvata",
+       "VA-lo-ku-va-ta",
+       "memotret"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Yang dimainkan selalu berbentuk bagian: *pelaan jalkapallo**a***, *soitan kitara**a***. Alasannya sama seperti membaca buku — bermain adalah kegiatan yang berlangsung, tak pernah \"selesai seluruhnya\"."
+    },
+    {
+     "type": "kotak",
+     "title": "Menanyakan hobi",
+     "items": [
+      "*Mitä sinä harrastat?* — Hobimu apa?",
+      "*Mitä sinä teet vapaa-ajalla?* — Ngapain kalau lagi luang?",
+      "*Käytkö sinä usein…?* — Kamu sering ke …?",
+      "*Marjastaminen* dan *sienestäminen* (memetik beri dan jamur) adalah hobi nasional yang serius. Hukum *jokamiehenoikeus* memberi siapa pun hak memetik di hutan mana pun, juga di tanah milik orang — selama tidak mendekati rumahnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "harrastus",
+   "baca": "HAR-ras-tus",
+   "id": "hobi"
+  },
+  {
+   "fi": "vapaa-aika",
+   "baca": "VA-paa-ai-ka",
+   "id": "waktu luang"
+  },
+  {
+   "fi": "pelata",
+   "baca": "PE-la-ta",
+   "id": "bermain (permainan)"
+  },
+  {
+   "fi": "soittaa",
+   "baca": "SOIT-taa",
+   "id": "memainkan; menelepon"
+  },
+  {
+   "fi": "juosta",
+   "baca": "YUOS-ta",
+   "id": "berlari"
+  },
+  {
+   "fi": "hiihtää",
+   "baca": "HIIH-tèè",
+   "id": "main ski"
+  },
+  {
+   "fi": "tavata",
+   "baca": "TA-va-ta",
+   "id": "bertemu"
+  },
+  {
+   "fi": "valita",
+   "baca": "VA-li-ta",
+   "id": "memilih"
+  },
+  {
+   "fi": "tarvita",
+   "baca": "TAR-vi-ta",
+   "id": "membutuhkan"
+  },
+  {
+   "fi": "vanheta",
+   "baca": "VAN-he-ta",
+   "id": "menua"
+  },
+  {
+   "fi": "käydä",
+   "baca": "KÈÜ-dè",
+   "id": "mampir, berkunjung"
+  },
+  {
+   "fi": "tuoda",
+   "baca": "TUO-da",
+   "id": "membawa"
+  },
+  {
+   "fi": "viedä",
+   "baca": "VIE-dè",
+   "id": "mengantar"
+  },
+  {
+   "fi": "jäädä",
+   "baca": "YÈÈ-dè",
+   "id": "tinggal, tetap"
+  },
+  {
+   "fi": "ajatella",
+   "baca": "A-ya-tel-la",
+   "id": "berpikir"
+  },
+  {
+   "fi": "alkaa",
+   "baca": "AL-kaa",
+   "id": "mulai"
+  },
+  {
+   "fi": "loppua",
+   "baca": "LOP-pu-a",
+   "id": "berakhir"
+  },
+  {
+   "fi": "ystävä",
+   "baca": "ÜS-tè-vè",
+   "id": "teman"
+  },
+  {
+   "fi": "kenttä",
+   "baca": "KENT-tè",
+   "id": "lapangan"
+  },
+  {
+   "fi": "kitara",
+   "baca": "KI-ta-ra",
+   "id": "gitar"
+  },
+  {
+   "fi": "jalkapallo",
+   "baca": "YAL-ka-pal-lo",
+   "id": "sepak bola"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Sebutkan golongannya (1–6).",
+   "items": [
+    "puhua",
+    "juoda",
+    "mennä",
+    "tavata",
+    "tarvita",
+    "vanheta"
+   ]
+  },
+  {
+   "prompt": "Buat bentuk *minä*-nya.",
+   "items": [
+    "syödä",
+    "tulla",
+    "nousta",
+    "haluta",
+    "valita",
+    "kylmetä"
+   ]
+  },
+  {
+   "prompt": "Buat bentuk *hän*-nya.",
+   "items": [
+    "opiskella",
+    "juoda",
+    "lukea",
+    "tavata",
+    "tarvita",
+    "mennä"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Hobi kamu apa?",
+    "Saya main sepak bola.",
+    "Saya perlu kartu perpustakaan.",
+    "Saya datang untuk menonton.",
+    "Saya sama sekali tidak bisa main.",
+    "Sampai jumpa Sabtu di lapangan."
+   ]
+  }
+ ],
+ "answers": [
+  "1 — 2 — 3 — 4 — 5 — 6",
+  "syön — tulen — nousen — haluan — valitsen — kylmenen",
+  "opiskelee — juo — lukee — tapaa — tarvitsee — menee",
+  "Mitä sinä harrastat? — Pelaan jalkapalloa. — Tarvitsen kirjastokortin. — Tulen katsomaan. — En osaa pelata ollenkaan. — Nähdään lauantaina kentällä."
+ ]
+}

@@ -1,0 +1,579 @@
+{
+ "title": "Sedang sakit",
+ "title_target": "Olen kipeä",
+ "goal": "Menjelaskan keluhan badan, memahami dua susunan yang membuatmu jadi sasaran dan bukan pelaku, dan menyatakan keharusan — termasuk jebakan besar tentang cara menyangkalnya.",
+ "bekal": [
+  "menyebut keluhan dengan *minulla on…* dan *minua väsyttää*",
+  "menyatakan keharusan dengan *minun täytyy* — dan menyangkalnya dengan benar",
+  "menyebut anggota tubuh dan berurusan dengan apotek serta puskesmas"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Terveyskeskuksessa",
+   "intro": "Budi sudah tiga hari tidak enak badan. Aino mengantarnya ke puskesmas.",
+   "lines": [
+    {
+     "speaker": "Hoitaja:",
+     "text": "Päivää. Mikä on vaivana?",
+     "id": "Selamat siang. Keluhannya apa?",
+     "literal": "siang. apa adalah sebagai-keluhan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Minulla on kuumetta ja kurkku on kipeä.",
+     "id": "Saya demam dan tenggorokan sakit.",
+     "literal": "kepadaku adalah demam-bagian dan tenggorokan adalah sakit."
+    },
+    {
+     "speaker": "Hoitaja:",
+     "text": "Kuinka kauan sinulla on ollut oireita?",
+     "id": "Sudah berapa lama gejalanya?",
+     "literal": "seberapa lama kepadamu adalah sudah gejala-jamak-bagian?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kolme päivää. Minua väsyttää koko ajan.",
+     "id": "Tiga hari. Saya lemas terus.",
+     "literal": "tiga hari-bagian. saya-bagian melelahkan seluruh waktu-bagian."
+    },
+    {
+     "speaker": "Hoitaja:",
+     "text": "Sattuuko päähän?",
+     "id": "Kepalanya sakit?",
+     "literal": "sakit-kah ke-kepala?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vähän. Mutta yskä on pahin. En pysty nukkumaan.",
+     "id": "Sedikit. Tapi batuknya yang paling parah. Saya tidak bisa tidur.",
+     "literal": "sedikit. tetapi batuk adalah paling-buruk. tidak-saya mampu untuk-tidur."
+    },
+    {
+     "speaker": "Hoitaja:",
+     "text": "Mitataan kuume. Kolmekymmentäkahdeksan ja kaksi.",
+     "id": "Kita ukur suhunya. Tiga puluh delapan koma dua.",
+     "literal": "diukur demam. tiga-puluh-delapan dan dua."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Onko se paha?",
+     "id": "Parah tidak?",
+     "literal": "adalah-kah itu buruk?"
+    },
+    {
+     "speaker": "Hoitaja:",
+     "text": "Ei hätää. Se on tavallinen flunssa. Sinun täytyy levätä.",
+     "id": "Tenang saja. Itu flu biasa. Kamu harus istirahat.",
+     "literal": "tidak kekhawatiran-bagian. itu adalah biasa flu. milikmu harus beristirahat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Täytyykö minun ottaa antibiootteja?",
+     "id": "Saya harus minum antibiotik?",
+     "literal": "harus-kah milikku mengambil antibiotik-jamak-bagian?"
+    },
+    {
+     "speaker": "Hoitaja:",
+     "text": "Ei tarvitse. Juo paljon vettä ja nuku. Se riittää.",
+     "id": "Tidak perlu. Minum banyak air dan tidur. Itu cukup.",
+     "literal": "tidak butuh. minumlah banyak air-bagian dan tidurlah. itu cukup."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kiitos. Milloin voin mennä takaisin töihin?",
+     "id": "Terima kasih. Kapan saya bisa kembali kerja?",
+     "literal": "terima-kasih. kapan bisa-saya pergi kembali ke-kerja?"
+    },
+    {
+     "speaker": "Hoitaja:",
+     "text": "Kun kuume on poissa kaksi päivää. Parane pian!",
+     "id": "Kalau demamnya sudah hilang dua hari. Cepat sembuh!",
+     "literal": "ketika demam adalah pergi dua hari-bagian. sembuhlah segera!"
+    }
+   ],
+   "notes": [
+    "**Minulla on kuumetta** — bentuk bagian, bukan bentuk dasar. Demam adalah sesuatu yang tak terhitung: kamu punya \"sebagian demam\", bukan seluruh demam di dunia. Sama halnya *minulla on yskää*, *minulla on kipuja*. Tapi *minulla on flunssa* memakai bentuk dasar, karena flu dianggap satu penyakit utuh.",
+    "**Minua väsyttää — kamu jadi sasaran, bukan pelaku.** Harfiahnya \"sesuatu melelahkan saya\". Bahasa Finlandia punya sekelompok kata kerja yang menyusun kalimat seperti ini, dan semuanya tentang rasa badan: *minua väsyttää* (mengantuk), *minua paleltaa* (kedinginan), *minua oksettaa* (mual), *minua janottaa* (haus). Kamu berbentuk **bagian**, dan kata kerjanya selalu bentuk *hän*.",
+    "**Sattuuko päähän?** — \"apakah sakit ke kepala\". Rasa nyeri memakai ekor arah *-Vn*: *päähän sattuu* (kepala sakit), *vatsaan sattuu* (perut sakit), *selkään sattuu* (punggung sakit). Bahasa Finlandia membayangkan nyeri sebagai sesuatu yang menghantam ke suatu tempat.",
+    "**Sinun täytyy levätä.** Keharusan disusun dengan pelaku berbentuk **kepunyaan**: *minun täytyy*, *sinun täytyy*, *hänen täytyy*. Kata kerja *täytyy* sendiri tidak pernah berubah — ia selalu bentuk *hän*, siapa pun yang harus melakukannya.",
+    "**Ei tarvitse, bukan ei täydy.** Inilah jebakan besar unit ini. Menyangkal keharusan memakai kata kerja yang **berbeda**: *minun **ei tarvitse** mennä* = saya tidak perlu pergi. Kalau kamu memakai bentuk sangkal dari *täytyy*, kalimatmu terdengar salah bagi telinga Finlandia. Perbedaannya sama pentingnya dengan \"tidak boleh\" melawan \"tidak perlu\" dalam bahasa Indonesia.",
+    "**Mitataan** — bentuk tanpa pelaku, seperti *sovitaan* dan *mennään* yang sudah kamu lihat di unit 10. Di sini artinya \"mari kita ukur\", tapi ia juga bisa berarti \"diukur\" oleh siapa pun. Bentuk ini digarap di unit berikutnya."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga cara menyebut keluhan",
+     "body": [
+      "Bahasa Finlandia menyusun keluhan badan dengan tiga susunan yang berbeda, dan pilihannya bergantung pada jenis keluhannya. Ketiganya harus dikenali karena ketiganya sering muncul dalam satu percakapan."
+     ],
+     "table": {
+      "head": [
+       "Susunan",
+       "Contoh",
+       "Harfiah",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*minulla on* + penyakit",
+        "*Minulla on flunssa.*",
+        "pada saya ada flu",
+        "Saya kena flu."
+       ],
+       [
+        "*minulla on* + bentuk bagian",
+        "*Minulla on kuumetta.*",
+        "pada saya ada demam-bagian",
+        "Saya demam."
+       ],
+       [
+        "*minua* + kata kerja rasa",
+        "*Minua väsyttää.*",
+        "saya-bagian melelahkan",
+        "Saya lemas."
+       ],
+       [
+        "bagian tubuh + *sattuu*",
+        "*Päähän sattuu.*",
+        "ke kepala sakit",
+        "Kepala saya sakit."
+       ],
+       [
+        "bagian tubuh + *on kipeä*",
+        "*Kurkku on kipeä.*",
+        "tenggorokan adalah sakit",
+        "Tenggorokan saya sakit."
+       ],
+       [
+        "*olen* + kata sifat",
+        "*Olen kipeä.*",
+        "saya adalah sakit",
+        "Saya sedang sakit."
+       ]
+      ]
+     },
+     "after": [
+      "**Kata kerja rasa yang paling sering:** *väsyttää* (mengantuk/lemas), *paleltaa* (kedinginan), *kuumottaa* (kepanasan), *janottaa* (haus), *oksettaa* (mual), *pelottaa* (takut), *harmittaa* (kesal), *naurattaa* (ingin tertawa).",
+      "⚠️ Di susunan ini kamu **selalu berbentuk bagian**: *minua*, *sinua*, *häntä*, *meitä*, *teitä*, *heitä*. Dan kata kerjanya tidak pernah berubah bentuk — selalu seperti bentuk *hän*.",
+      "Ini salah satu tempat di mana bahasa Finlandia benar-benar berpikir berbeda dari bahasa Indonesia. Kita berkata \"saya mengantuk\" — kita pelakunya. Bahasa Finlandia berkata \"kantuk mendatangi saya\" — kita sasarannya."
+     ]
+    },
+    {
+     "title": "Keharusan — dan cara menyangkalnya",
+     "body": [
+      "Susunan yang pelakunya berbentuk kepunyaan dan kata kerjanya membeku. Bagian yang menuntut perhatian adalah sangkalannya, yang memakai kata kerja lain sama sekali."
+     ],
+     "table": {
+      "head": [
+       "Suomi",
+       "Harfiah",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "*Minun **täytyy** mennä.*",
+        "milikku harus pergi",
+        "Saya harus pergi."
+       ],
+       [
+        "*Sinun **täytyy** levätä.*",
+        "milikmu harus istirahat",
+        "Kamu harus istirahat."
+       ],
+       [
+        "*Hänen **täytyy** odottaa.*",
+        "miliknya harus menunggu",
+        "Dia harus menunggu."
+       ],
+       [
+        "*Meidän **pitää** kiirehtiä.*",
+        "milik-kami harus buru-buru",
+        "Kami harus buru-buru."
+       ],
+       [
+        "*Minun **ei tarvitse** mennä.*",
+        "milikku tidak perlu pergi",
+        "Saya **tidak perlu** pergi."
+       ],
+       [
+        "*Täällä **ei saa** tupakoida.*",
+        "di sini tidak boleh merokok",
+        "Di sini **tidak boleh** merokok."
+       ],
+       [
+        "*Minun **kannattaa** levätä.*",
+        "milikku sebaiknya istirahat",
+        "Sebaiknya saya istirahat."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Tiga sangkalan yang artinya berbeda jauh:** *ei tarvitse* = tidak perlu (boleh saja tidak); *ei saa* = tidak boleh (dilarang); *ei voi* = tidak bisa (tak mungkin). Salah pilih di antara ketiganya bukan salah tata bahasa melainkan salah pesan, dan akibatnya bisa serius.",
+      "*Täytyy* dan *pitää* sama artinya; *pitää* sedikit lebih santai dan lebih sering terdengar dalam percakapan.",
+      "**Kata kerja keduanya selalu bentuk kamus**: *täytyy **mennä***, *pitää **odottaa***, *kannattaa **levätä***. Ia tidak pernah berubah bentuk apa pun."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Anggota tubuh",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Arti",
+      "Suomi",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "pää",
+       "pèè",
+       "kepala",
+       "käsi",
+       "KÈ-si",
+       "tangan"
+      ],
+      [
+       "silmä",
+       "SIL-mè",
+       "mata",
+       "sormi",
+       "SOR-mi",
+       "jari"
+      ],
+      [
+       "korva",
+       "KOR-va",
+       "telinga",
+       "jalka",
+       "YAL-ka",
+       "kaki"
+      ],
+      [
+       "nenä",
+       "NE-nè",
+       "hidung",
+       "polvi",
+       "POL-vi",
+       "lutut"
+      ],
+      [
+       "suu",
+       "suu",
+       "mulut",
+       "selkä",
+       "SEL-kè",
+       "punggung"
+      ],
+      [
+       "hammas",
+       "HAM-mas",
+       "gigi",
+       "vatsa",
+       "VAT-sa",
+       "perut"
+      ],
+      [
+       "kurkku",
+       "KURK-ku",
+       "tenggorokan",
+       "sydän",
+       "SÜ-dèn",
+       "jantung"
+      ],
+      [
+       "kaula",
+       "KAU-la",
+       "leher",
+       "iho",
+       "I-ho",
+       "kulit"
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Keluhan",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "flunssa",
+       "FLUNS-sa",
+       "flu, pilek"
+      ],
+      [
+       "kuume",
+       "KUU-me",
+       "demam"
+      ],
+      [
+       "yskä",
+       "ÜS-kè",
+       "batuk"
+      ],
+      [
+       "nuha",
+       "NU-ha",
+       "hidung meler"
+      ],
+      [
+       "päänsärky",
+       "PÈÈN-sèr-kü",
+       "sakit kepala"
+      ],
+      [
+       "vatsakipu",
+       "VAT-sa-ki-pu",
+       "sakit perut"
+      ],
+      [
+       "allergia",
+       "AL-ler-gi-a",
+       "alergi"
+      ],
+      [
+       "haava",
+       "HAA-va",
+       "luka"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Kurkku* berarti \"tenggorokan\" **dan** \"timun\". Dua kata yang sama persis. *Minulla on kurkku kipeä* jelas tentang tenggorokan; kalau ragu, orang akan tertawa dan mengerti."
+    }
+   ]
+  },
+  {
+   "title": "Di apotek dan puskesmas",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "terveyskeskus",
+       "puskesmas"
+      ],
+      [
+       "apteekki",
+       "apotek"
+      ],
+      [
+       "lääkäri",
+       "dokter"
+      ],
+      [
+       "hoitaja",
+       "perawat"
+      ],
+      [
+       "hammaslääkäri",
+       "dokter gigi"
+      ],
+      [
+       "lääke",
+       "obat"
+      ],
+      [
+       "resepti",
+       "resep"
+      ],
+      [
+       "särkylääke",
+       "obat pereda nyeri"
+      ],
+      [
+       "ajanvaraus",
+       "janji temu"
+      ],
+      [
+       "päivystys",
+       "unit gawat darurat"
+      ],
+      [
+       "Haluaisin varata ajan.",
+       "Saya mau buat janji temu."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Yang perlu diketahui pendatang",
+     "items": [
+      "Layanan kesehatan umum Finlandia murah tapi antreannya panjang untuk hal yang tidak mendesak. Nomor darurat: **112**. Nasihat kesehatan non-darurat: **116 117**.",
+      "Obat pereda nyeri (*Burana*, *Panadol*) dijual bebas di apotek, tapi **tidak** dijual di supermarket seperti di banyak negara lain. Antibiotik selalu perlu resep dokter.",
+      "Kalau kamu tinggal dan bekerja di Finlandia, kamu berhak atas layanan kesehatan umum — juga sebagai pendatang. Bawa kartu Kela kalau sudah punya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "terveys",
+   "baca": "TER-veüs",
+   "id": "kesehatan"
+  },
+  {
+   "fi": "kipeä",
+   "baca": "KI-pe-è",
+   "id": "sakit"
+  },
+  {
+   "fi": "kuume",
+   "baca": "KUU-me",
+   "id": "demam"
+  },
+  {
+   "fi": "yskä",
+   "baca": "ÜS-kè",
+   "id": "batuk"
+  },
+  {
+   "fi": "flunssa",
+   "baca": "FLUNS-sa",
+   "id": "flu"
+  },
+  {
+   "fi": "oire",
+   "baca": "OI-re",
+   "id": "gejala"
+  },
+  {
+   "fi": "sattua",
+   "baca": "SAT-tu-a",
+   "id": "terasa sakit; kebetulan"
+  },
+  {
+   "fi": "särkeä",
+   "baca": "SÈR-ke-è",
+   "id": "nyeri"
+  },
+  {
+   "fi": "väsyttää",
+   "baca": "VÈ-süt-tèè",
+   "id": "membuat lemas"
+  },
+  {
+   "fi": "levätä",
+   "baca": "LE-vè-tè",
+   "id": "beristirahat"
+  },
+  {
+   "fi": "parantua",
+   "baca": "PA-ran-tu-a",
+   "id": "sembuh"
+  },
+  {
+   "fi": "pystyä",
+   "baca": "PÜS-tü-è",
+   "id": "mampu"
+  },
+  {
+   "fi": "täytyy",
+   "baca": "TÈÜ-tüü",
+   "id": "harus"
+  },
+  {
+   "fi": "pitää",
+   "baca": "PI-tèè",
+   "id": "harus; menyukai"
+  },
+  {
+   "fi": "tarvita",
+   "baca": "TAR-vi-ta",
+   "id": "perlu"
+  },
+  {
+   "fi": "kannattaa",
+   "baca": "KAN-nat-taa",
+   "id": "sebaiknya, sepadan"
+  },
+  {
+   "fi": "lääkäri",
+   "baca": "LÈÈ-kè-ri",
+   "id": "dokter"
+  },
+  {
+   "fi": "lääke",
+   "baca": "LÈÈ-ke",
+   "id": "obat"
+  },
+  {
+   "fi": "apteekki",
+   "baca": "AP-tèèk-ki",
+   "id": "apotek"
+  },
+  {
+   "fi": "resepti",
+   "baca": "RE-sep-ti",
+   "id": "resep"
+  },
+  {
+   "fi": "pää",
+   "baca": "pèè",
+   "id": "kepala"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Saya demam.",
+    "Tenggorokan saya sakit.",
+    "Saya lemas terus.",
+    "Kepala saya sakit.",
+    "Kamu harus istirahat.",
+    "Saya tidak bisa tidur."
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan *täytyy* atau *ei tarvitse*.",
+   "items": [
+    "Minun ____ mennä lääkäriin. (harus)",
+    "Sinun ____ ottaa antibiootteja. (tidak perlu)",
+    "Hänen ____ levätä. (harus)",
+    "Meidän ____ kiirehtiä. (tidak perlu)",
+    "Teidän ____ odottaa. (harus)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk bagian dari kata gantinya (*minua*, *sinua*, *häntä*…).",
+   "items": [
+    "____ väsyttää. (saya)",
+    "____ paleltaa. (kamu)",
+    "____ oksettaa. (dia)",
+    "____ janottaa. (kami)",
+    "____ pelottaa. (mereka)"
+   ]
+  },
+  {
+   "prompt": "Pilih *ei tarvitse*, *ei saa*, atau *ei voi*.",
+   "items": [
+    "Täällä ____ tupakoida. (dilarang)",
+    "Sinun ____ tulla, jos olet kipeä. (tidak wajib)",
+    "Hän ____ kävellä, jalka on murtunut. (tak mungkin)",
+    "Bussissa ____ syödä. (dilarang)",
+    "Minun ____ maksaa tänään. (tidak wajib)"
+   ]
+  }
+ ],
+ "answers": [
+  "Minulla on kuumetta. — Kurkku on kipeä. — Minua väsyttää koko ajan. — Päähän sattuu. — Sinun täytyy levätä. — En pysty nukkumaan.",
+  "täytyy — ei tarvitse — täytyy — ei tarvitse — täytyy",
+  "Minua — Sinua — Häntä — Meitä — Heitä",
+  "ei saa — ei tarvitse — ei voi — ei saa — ei tarvitse"
+ ]
+}

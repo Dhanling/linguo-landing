@@ -1,0 +1,699 @@
+{
+ "title": "Angka dan umur",
+ "title_target": "Numerot ja ikä",
+ "goal": "Menghitung sampai seribu, menyebut umur dan tanggal lahir, dan menerima kenyataan bahwa angka dalam bahasa Finlandia membuat kata bendanya berubah bentuk.",
+ "bekal": [
+  "membangun angka 0–1000 dari sepuluh potongan saja",
+  "memakai bentuk bagian sesudah angka: *kaksi kirja**a***, bukan *kaksi kirjat*",
+  "menyebut umur, tanggal lahir, dan nomor telepon"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ilmoittautuminen",
+   "intro": "Budi mendaftar ke kursus lanjutan. Petugas kantor, Sanna, mengisi formulir sambil bertanya.",
+   "lines": [
+    {
+     "speaker": "Sanna:",
+     "text": "Hyvää päivää! Mikä sinun koko nimesi on?",
+     "id": "Selamat siang! Nama lengkap Anda?",
+     "literal": "baik hari! apa milikmu seluruh namamu adalah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Budi Santoso. Anteeksi, voitko toistaa hitaammin?",
+     "id": "Budi Santoso. Maaf, bisa diulang pelan-pelan?",
+     "literal": "Budi Santoso. maaf, bisa-kah-kamu mengulang lebih-pelan?"
+    },
+    {
+     "speaker": "Sanna:",
+     "text": "Totta kai. Kuinka vanha sinä olet?",
+     "id": "Tentu saja. Umur Anda berapa?",
+     "literal": "benar tentu. seberapa tua kamu adalah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Olen kaksikymmentäkuusi vuotta.",
+     "id": "Saya dua puluh enam tahun.",
+     "literal": "adalah-saya dua-puluh-enam tahun-bagian."
+    },
+    {
+     "speaker": "Sanna:",
+     "text": "Selvä. Milloin sinun syntymäpäiväsi on?",
+     "id": "Baik. Ulang tahun Anda kapan?",
+     "literal": "jelas. kapan milikmu ulang-tahun-mu adalah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kolmastoista maaliskuuta.",
+     "id": "Tiga belas Maret.",
+     "literal": "ketiga-belas Maret-bagian."
+    },
+    {
+     "speaker": "Sanna:",
+     "text": "Ja puhelinnumero?",
+     "id": "Dan nomor telepon?",
+     "literal": "dan telepon-nomor?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nolla neljä nolla, kaksi kuusi kolme, seitsemän yksi yhdeksän.",
+     "id": "Nol empat nol, dua enam tiga, tujuh satu sembilan.",
+     "literal": "nol empat nol, dua enam tiga, tujuh satu sembilan."
+    },
+    {
+     "speaker": "Sanna:",
+     "text": "Kiitos. Kuinka monta kieltä sinä puhut?",
+     "id": "Terima kasih. Anda menguasai berapa bahasa?",
+     "literal": "seberapa banyak bahasa-bagian kamu berbicara?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kolme kieltä hyvin ja yhtä huonosti — suomea!",
+     "id": "Tiga bahasa dengan baik dan satu dengan buruk — bahasa Finlandia!",
+     "literal": "tiga bahasa-bagian baik dan satu-bagian buruk — bahasa-Finlandia-bagian!"
+    },
+    {
+     "speaker": "Sanna:",
+     "text": "Ha! Kurssi maksaa sata euroa. Se kestää kaksitoista viikkoa.",
+     "id": "Ha! Kursusnya seratus euro. Lamanya dua belas minggu.",
+     "literal": "ha! kursus membayar seratus euro-bagian. itu berlangsung dua-belas minggu-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hyvä. Montako opiskelijaa ryhmässä on?",
+     "id": "Bagus. Berapa mahasiswa dalam satu kelompok?",
+     "literal": "berapa-banyak mahasiswa-bagian di-kelompok adalah?"
+    },
+    {
+     "speaker": "Sanna:",
+     "text": "Yhdeksän tai kymmenen. Tervetuloa kurssille!",
+     "id": "Sembilan atau sepuluh. Selamat datang di kursusnya!",
+     "literal": "sembilan atau sepuluh. selamat-datang ke-kursus!"
+    }
+   ],
+   "notes": [
+    "**Sesudah angka, kata bendanya berbentuk bagian dan TUNGGAL.** *Kaksitoista viikko**a*** — bukan *viikot*. Ini betul-betul berlawanan dengan naluri: dua belas minggu, tapi katanya tunggal. Alasannya masuk akal kalau dilihat dari dalam: angka itu sendiri sudah menyebut jumlahnya, jadi kata bendanya cuma menyebut \"jenis barangnya\" — seperti \"dua belas *helai* kertas\" dalam bahasa Indonesia, di mana \"kertas\" juga tidak berubah.",
+    "**Kecuali sesudah yksi.** *Yksi kirja* memakai bentuk dasar, karena satu barang memang barang yang utuh. Mulai dari *kaksi*, semuanya berbentuk bagian.",
+    "**Vuotta, bukan vuosia.** *Vuosi* (tahun) berubah jadi *vuotta* dalam bentuk bagian — salah satu bentuk paling tak beraturan yang akan sering kamu pakai. Sepupunya: *kuukausi → kuukautta* (bulan), *uusi → uutta* (baru).",
+    "**Kuinka monta dan montako sama artinya.** Dua-duanya \"berapa banyak\", dan dua-duanya menuntut bentuk bagian tunggal sesudahnya: *kuinka monta kiel**tä***, *montako opiskelija**a***. *Montako* lebih pendek dan lebih sering terdengar.",
+    "**Nomor telepon dibaca satu per satu.** Seperti bahasa Indonesia, bukan seperti bahasa Inggris yang suka menggabungkan (\"double four\"). *Nolla* dipakai untuk nol, bukan huruf \"o\".",
+    "**Kolmastoista maaliskuuta** memakai dua bentuk sekaligus: angka urutan (*kolmastoista* = ketiga belas) dan nama bulan berbentuk bagian (*maaliskuu → maaliskuuta*). Susunan ini tetap sama untuk semua tanggal, jadi hafalkan bentuknya sekarang; angka urutannya digarap di unit 16."
+   ],
+   "grammars": [
+    {
+     "title": "Angka 0–1000",
+     "body": [
+      "Sepuluh angka dasar plus dua potongan (*-toista* dan *-kymmentä*) sudah cukup untuk membangun semuanya sampai seratus. Perhatikan bahwa angka Finlandia ditulis **menyatu**, sepanjang apa pun jadinya."
+     ],
+     "tables": [
+      {
+       "head": [
+        "Angka",
+        "Suomi",
+        "Cara baca",
+        "Angka",
+        "Suomi",
+        "Cara baca"
+       ],
+       "rows": [
+        [
+         "0",
+         "nolla",
+         "NOL-la",
+         "10",
+         "kymmenen",
+         "KÜM-me-nen"
+        ],
+        [
+         "1",
+         "yksi",
+         "ÜK-si",
+         "11",
+         "yksitoista",
+         "ÜK-si-tois-ta"
+        ],
+        [
+         "2",
+         "kaksi",
+         "KAK-si",
+         "12",
+         "kaksitoista",
+         "KAK-si-tois-ta"
+        ],
+        [
+         "3",
+         "kolme",
+         "KOL-me",
+         "13",
+         "kolmetoista",
+         "KOL-me-tois-ta"
+        ],
+        [
+         "4",
+         "neljä",
+         "NEL-yè",
+         "14",
+         "neljätoista",
+         "NEL-yè-tois-ta"
+        ],
+        [
+         "5",
+         "viisi",
+         "VII-si",
+         "15",
+         "viisitoista",
+         "VII-si-tois-ta"
+        ],
+        [
+         "6",
+         "kuusi",
+         "KUU-si",
+         "16",
+         "kuusitoista",
+         "KUU-si-tois-ta"
+        ],
+        [
+         "7",
+         "seitsemän",
+         "SEIT-se-mèn",
+         "17",
+         "seitsemäntoista",
+         "SEIT-se-mèn-tois-ta"
+        ],
+        [
+         "8",
+         "kahdeksan",
+         "KAH-dek-san",
+         "18",
+         "kahdeksantoista",
+         "KAH-dek-san-tois-ta"
+        ],
+        [
+         "9",
+         "yhdeksän",
+         "ÜH-dek-sèn",
+         "19",
+         "yhdeksäntoista",
+         "ÜH-dek-sèn-tois-ta"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Angka",
+        "Suomi",
+        "Angka",
+        "Suomi"
+       ],
+       "rows": [
+        [
+         "20",
+         "kaksikymmentä",
+         "70",
+         "seitsemänkymmentä"
+        ],
+        [
+         "21",
+         "kaksikymmentäyksi",
+         "80",
+         "kahdeksankymmentä"
+        ],
+        [
+         "30",
+         "kolmekymmentä",
+         "90",
+         "yhdeksänkymmentä"
+        ],
+        [
+         "40",
+         "neljäkymmentä",
+         "100",
+         "sata"
+        ],
+        [
+         "50",
+         "viisikymmentä",
+         "200",
+         "kaksisataa"
+        ],
+        [
+         "60",
+         "kuusikymmentä",
+         "1000",
+         "tuhat"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "**-toista** harfiahnya \"dari yang kedua\" — maksudnya \"yang kesekian dari puluhan kedua\". Jadi *kolmetoista* = \"tiga dari puluhan kedua\" = 13. Susunan yang sama ada di bahasa Jerman dan Swedia; bahasa Indonesia memakai \"belas\" yang tak punya arti lain lagi.",
+      "⚠️ **8 dan 9 dibangun dengan pengurangan.** *Kahdeksan* dan *yhdeksän* mengandung *kaksi* dan *yksi* — asalnya \"dua kurang (dari sepuluh)\" dan \"satu kurang\". Itu sejarah, bukan aturan yang perlu kamu pakai, tapi ia menolong mengingat bentuknya yang panjang.",
+      "Puluhan memakai *-kymmentä*, yang sebenarnya bentuk bagian dari *kymmenen* — jadi *kolmekymmentä* harfiahnya \"tiga puluhan\". Angka itu sendiri sudah taat pada aturan bentuk bagian sesudah angka."
+     ]
+    },
+    {
+     "title": "Angka + bentuk bagian tunggal",
+     "body": [
+      "Aturan satu kalimat: **sesudah angka dua ke atas, kata bendanya berbentuk bagian dan tetap tunggal.** Yang perlu dilatih adalah membentuk bagiannya."
+     ],
+     "table": {
+      "head": [
+       "Bentuk dasar",
+       "Bentuk bagian",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*kirja*",
+        "*kirja**a***",
+        "*kolme kirjaa*",
+        "tiga buku"
+       ],
+       [
+        "*euro*",
+        "*euro**a***",
+        "*sata euroa*",
+        "seratus euro"
+       ],
+       [
+        "*viikko*",
+        "*viikko**a***",
+        "*kaksitoista viikkoa*",
+        "dua belas minggu"
+       ],
+       [
+        "*päivä*",
+        "*päivä**ä***",
+        "*seitsemän päivää*",
+        "tujuh hari"
+       ],
+       [
+        "*opiskelija*",
+        "*opiskelija**a***",
+        "*yhdeksän opiskelijaa*",
+        "sembilan mahasiswa"
+       ],
+       [
+        "*kieli*",
+        "*kiel**tä***",
+        "*kolme kieltä*",
+        "tiga bahasa"
+       ],
+       [
+        "*lapsi*",
+        "*las**ta***",
+        "*kaksi lasta*",
+        "dua anak"
+       ],
+       [
+        "*vuosi*",
+        "*vuo**tta***",
+        "*kaksikymmentä vuotta*",
+        "dua puluh tahun"
+       ],
+       [
+        "*ihminen*",
+        "*ihmis**tä***",
+        "*viisi ihmistä*",
+        "lima orang"
+       ]
+      ]
+     },
+     "after": [
+      "Polanya: kata yang berakhir **vokal tunggal** cukup menggandakan vokal terakhirnya (*kirja → kirjaa*). Kata yang berakhir *-i*, *-si*, atau *-nen* memakai ekor **-ta/-tä** dan sering mengubah batangnya (*kieli → kieltä*, *ihminen → ihmistä*).",
+      "⚠️ *Lapsi → lasta* dan *vuosi → vuotta* tidak bisa ditebak dari bentuk dasarnya. Kata-kata semacam ini jumlahnya terbatas tapi frekuensinya tinggi, jadi hafalkan bentuk bagiannya sekalian saat menghafal katanya.",
+      "Aturan yang sama berlaku sesudah *paljon* (banyak), *vähän* (sedikit), *monta* (banyak, terhitung), dan *kuinka monta / montako* (berapa banyak)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Umur dan ulang tahun",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Kuinka vanha sinä olet?",
+       "KUIN-ka VAN-ha SI-nè O-let",
+       "Umurmu berapa?"
+      ],
+      [
+       "Minkä ikäinen olet?",
+       "MIN-kè I-kèi-nen O-let",
+       "Umurmu berapa? (lebih halus)"
+      ],
+      [
+       "Olen kaksikymmentäkuusi.",
+       "O-len KAK-si-küm-men-tè-kuu-si",
+       "Saya dua puluh enam."
+      ],
+      [
+       "Olen 26-vuotias.",
+       "O-len KAK-si-küm-men-tè-kuu-si-vuo-ti-as",
+       "Saya berumur 26 tahun."
+      ],
+      [
+       "Milloin sinun syntymäpäiväsi on?",
+       "MIL-loin SIN-un SÜN-tü-mè-pèi-vè-si on",
+       "Ulang tahunmu kapan?"
+      ],
+      [
+       "Hyvää syntymäpäivää!",
+       "HÜ-vèè SÜN-tü-mè-pèi-vèè",
+       "Selamat ulang tahun!"
+      ],
+      [
+       "Milloin sinä olet syntynyt?",
+       "MIL-loin SI-nè O-let SÜN-tü-nüt",
+       "Kamu lahir kapan?"
+      ],
+      [
+       "Olen syntynyt vuonna 2000.",
+       "O-len SÜN-tü-nüt VUON-na KAK-si-tu-hat-ta",
+       "Saya lahir tahun 2000."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua cara menyebut umur sama-sama benar. *Olen 26* paling ringkas dan paling sering dipakai; *Olen 26-vuotias* (\"saya yang berumur 26\") sedikit lebih lengkap dan wajib dipakai kalau umurnya jadi kata sifat: *26-vuotias mies* (pria berumur 26)."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bulan",
+      "Cara baca",
+      "Bentuk tanggal",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "tammikuu",
+       "TAM-mi-kuu",
+       "tammikuuta",
+       "Januari"
+      ],
+      [
+       "helmikuu",
+       "HEL-mi-kuu",
+       "helmikuuta",
+       "Februari"
+      ],
+      [
+       "maaliskuu",
+       "MAA-lis-kuu",
+       "maaliskuuta",
+       "Maret"
+      ],
+      [
+       "huhtikuu",
+       "HUH-ti-kuu",
+       "huhtikuuta",
+       "April"
+      ],
+      [
+       "toukokuu",
+       "TOU-ko-kuu",
+       "toukokuuta",
+       "Mei"
+      ],
+      [
+       "kesäkuu",
+       "KE-sè-kuu",
+       "kesäkuuta",
+       "Juni"
+      ],
+      [
+       "heinäkuu",
+       "HEI-nè-kuu",
+       "heinäkuuta",
+       "Juli"
+      ],
+      [
+       "elokuu",
+       "E-lo-kuu",
+       "elokuuta",
+       "Agustus"
+      ],
+      [
+       "syyskuu",
+       "SÜÜS-kuu",
+       "syyskuuta",
+       "September"
+      ],
+      [
+       "lokakuu",
+       "LO-ka-kuu",
+       "lokakuuta",
+       "Oktober"
+      ],
+      [
+       "marraskuu",
+       "MAR-ras-kuu",
+       "marraskuuta",
+       "November"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Semua nama bulan berakhir *-kuu*, yang artinya \"bulan\" — baik bulan di langit maupun bulan di kalender, persis seperti bahasa Indonesia. Awalannya berasal dari apa yang terjadi di alam pada bulan itu: *heinäkuu* = bulan rumput kering, *lokakuu* = bulan lumpur, *joulukuu* = bulan Natal."
+    }
+   ]
+  },
+  {
+   "title": "Angka dalam kehidupan sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Bahasa Indonesia",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "Paljonko se maksaa?",
+       "Berapa harganya?",
+       "jawaban memakai bentuk bagian: *kymmenen euroa*"
+      ],
+      [
+       "Montako?",
+       "Berapa banyak?",
+       "diikuti bentuk bagian tunggal"
+      ],
+      [
+       "Mikä sinun numerosi on?",
+       "Nomor kamu berapa?",
+       "dibaca satu per satu"
+      ],
+      [
+       "Kaksi lippua, kiitos.",
+       "Dua tiket, tolong.",
+       "*lippu → lippua*"
+      ],
+      [
+       "Se kestää kolme tuntia.",
+       "Lamanya tiga jam.",
+       "*tunti → tuntia*"
+      ],
+      [
+       "Odota viisi minuuttia.",
+       "Tunggu lima menit.",
+       "*minuutti → minuuttia*"
+      ],
+      [
+       "Asun kerroksessa kolme.",
+       "Saya tinggal di lantai tiga.",
+       "alamat memakai angka biasa"
+      ],
+      [
+       "Numero yksi, kiitos.",
+       "Nomor satu, tolong.",
+       "memesan dari daftar menu"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Dua angka yang gampang tertukar",
+     "items": [
+      "**kuusi** = enam, tapi *kuusi* juga berarti **pohon cemara**. Dua kata yang sama persis; yang membedakan cuma keadaannya. *Kuusi kuusta* = enam pohon cemara.",
+      "**seitsemän** dan **kahdeksan** panjang-panjang dan sering tertukar di telinga. Pegangannya: *seitsemän* punya *s* di depan, seperti \"seven\" dan \"sieben\"; *kahdeksan* mengandung *kah-* dari *kaksi*."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Titik dan koma terbalik dari kebiasaan Indonesia dalam angka desimal? Tidak — kebetulan sama. Finlandia memakai koma untuk desimal (*3,5* dibaca *kolme pilkku viisi*) dan spasi untuk ribuan (*10 000*). Yang berbeda dari Indonesia justru ribuan: spasi, bukan titik."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "numero",
+   "baca": "NU-me-ro",
+   "id": "angka, nomor"
+  },
+  {
+   "fi": "nolla",
+   "baca": "NOL-la",
+   "id": "nol"
+  },
+  {
+   "fi": "kymmenen",
+   "baca": "KÜM-me-nen",
+   "id": "sepuluh"
+  },
+  {
+   "fi": "sata",
+   "baca": "SA-ta",
+   "id": "seratus"
+  },
+  {
+   "fi": "tuhat",
+   "baca": "TU-hat",
+   "id": "seribu"
+  },
+  {
+   "fi": "ikä",
+   "baca": "I-kè",
+   "id": "umur"
+  },
+  {
+   "fi": "vuosi",
+   "baca": "VUO-si",
+   "id": "tahun"
+  },
+  {
+   "fi": "kuukausi",
+   "baca": "KUU-kau-si",
+   "id": "bulan"
+  },
+  {
+   "fi": "viikko",
+   "baca": "VIIK-ko",
+   "id": "minggu"
+  },
+  {
+   "fi": "päivä",
+   "baca": "PÈI-vè",
+   "id": "hari"
+  },
+  {
+   "fi": "tunti",
+   "baca": "TUN-ti",
+   "id": "jam (lamanya)"
+  },
+  {
+   "fi": "minuutti",
+   "baca": "MI-nuut-ti",
+   "id": "menit"
+  },
+  {
+   "fi": "syntymäpäivä",
+   "baca": "SÜN-tü-mè-pèi-vè",
+   "id": "ulang tahun"
+  },
+  {
+   "fi": "puhelinnumero",
+   "baca": "PU-he-lin-nu-me-ro",
+   "id": "nomor telepon"
+  },
+  {
+   "fi": "koko nimi",
+   "baca": "KO-ko NI-mi",
+   "id": "nama lengkap"
+  },
+  {
+   "fi": "kurssi",
+   "baca": "KURS-si",
+   "id": "kursus"
+  },
+  {
+   "fi": "ryhmä",
+   "baca": "RÜH-mè",
+   "id": "kelompok"
+  },
+  {
+   "fi": "euro",
+   "baca": "EU-ro",
+   "id": "euro"
+  },
+  {
+   "fi": "lippu",
+   "baca": "LIP-pu",
+   "id": "tiket; bendera"
+  },
+  {
+   "fi": "maksaa",
+   "baca": "MAK-saa",
+   "id": "membayar; berharga"
+  },
+  {
+   "fi": "kestää",
+   "baca": "KES-tèè",
+   "id": "berlangsung, tahan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angkanya dengan huruf.",
+   "items": [
+    "7",
+    "14",
+    "23",
+    "48",
+    "95",
+    "300"
+   ]
+  },
+  {
+   "prompt": "Ubah kata bendanya ke bentuk yang benar sesudah angka.",
+   "items": [
+    "kolme (kirja)",
+    "sata (euro)",
+    "kaksitoista (viikko)",
+    "viisi (ihminen)",
+    "kaksi (lapsi)",
+    "kaksikymmentä (vuosi)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Umurmu berapa?",
+    "Saya dua puluh enam tahun.",
+    "Ulang tahunmu kapan?",
+    "Kursusnya seratus euro.",
+    "Kamu menguasai berapa bahasa?",
+    "Saya punya dua anak."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "vanha / kuinka / olet / sinä / ?",
+    "kestää / kurssi / viikkoa / kaksitoista",
+    "opiskelijaa / on / ryhmässä / yhdeksän",
+    "euroa / se / sata / maksaa",
+    "kieltä / puhun / kolme"
+   ]
+  }
+ ],
+ "answers": [
+  "seitsemän — neljätoista — kaksikymmentäkolme — neljäkymmentäkahdeksan — yhdeksänkymmentäviisi — kolmesataa",
+  "kolme kirjaa — sata euroa — kaksitoista viikkoa — viisi ihmistä — kaksi lasta — kaksikymmentä vuotta",
+  "Kuinka vanha sinä olet? — Olen kaksikymmentäkuusi vuotta. — Milloin sinun syntymäpäiväsi on? — Kurssi maksaa sata euroa. — Kuinka monta kieltä sinä puhut? — Minulla on kaksi lasta.",
+  "Kuinka vanha sinä olet? — Kurssi kestää kaksitoista viikkoa. — Ryhmässä on yhdeksän opiskelijaa. — Se maksaa sata euroa. — Puhun kolme kieltä."
+ ]
+}

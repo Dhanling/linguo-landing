@@ -1,0 +1,606 @@
+{
+ "title": "Halo, siapa namamu?",
+ "title_target": "Hei! Mikä sinun nimesi on?",
+ "goal": "Menyapa pada waktu yang tepat, menyebut nama sendiri, menanyakan kabar, dan melihat sendiri bahwa bahasa Finlandia tidak punya kata sandang maupun jenis kelamin.",
+ "bekal": [
+  "menyapa dengan *hei*, *moi*, *hyvää päivää*, dan *hyvää iltaa* pada tempatnya masing-masing",
+  "menyebut nama sendiri dengan *minun nimeni on* dan *olen*, serta menanyakan nama orang lain",
+  "menyusun enam bentuk kata kerja *olla* — satu-satunya kata kerja yang benar-benar wajib hafal di unit ini"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ensimmäinen päivä kielikurssilla",
+   "intro": "Hari pertama kursus bahasa di sebuah kampus di Helsinki. Dua peserta baru duduk bersebelahan sebelum kelas dimulai.",
+   "lines": [
+    {
+     "speaker": "Aino:",
+     "text": "Hei! Mikä sinun nimesi on?",
+     "id": "Halo! Siapa namamu?",
+     "literal": "halo! apa milikmu namamu adalah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hei! Minun nimeni on Budi. Entä sinä?",
+     "id": "Halo! Nama saya Budi. Kalau kamu?",
+     "literal": "halo! milikku namaku adalah Budi. lalu kamu?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Minä olen Aino. Hauska tutustua!",
+     "id": "Saya Aino. Senang berkenalan!",
+     "literal": "saya adalah Aino. menyenangkan berkenalan!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Samoin. Mitä kuuluu?",
+     "id": "Sama-sama. Apa kabar?",
+     "literal": "sama-cara. apa terdengar?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Kiitos, hyvää. Entä sinulle?",
+     "id": "Terima kasih, baik. Kamu bagaimana?",
+     "literal": "terima-kasih, baik. lalu kepadamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ihan hyvää, kiitos. Oletko sinä suomalainen?",
+     "id": "Cukup baik, terima kasih. Kamu orang Finlandia?",
+     "literal": "cukup baik, terima-kasih. adalah-kah kamu orang-Finlandia?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Joo, minä olen Tampereelta. Oletko sinä opiskelija?",
+     "id": "Ya, saya dari Tampere. Kamu mahasiswa?",
+     "literal": "ya, saya adalah dari-Tampere. adalah-kah kamu mahasiswa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Joo, minä olen opiskelija. Minä olen indonesialainen.",
+     "id": "Ya, saya mahasiswa. Saya orang Indonesia.",
+     "literal": "ya, saya adalah mahasiswa. saya adalah orang-Indonesia."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Vau! Puhutko sinä suomea?",
+     "id": "Wah! Kamu bisa bahasa Finlandia?",
+     "literal": "wah! berbicara-kah kamu bahasa-Finlandia?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vähän. Anteeksi, minä en ymmärrä hyvin.",
+     "id": "Sedikit. Maaf, saya belum mengerti dengan baik.",
+     "literal": "sedikit. maaf, saya tidak mengerti baik."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Ei se mitään! Nähdään huomenna, Budi.",
+     "id": "Tidak apa-apa! Sampai jumpa besok, Budi.",
+     "literal": "tidak itu apa-apa! terlihat besok, Budi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nähdään! Hei hei!",
+     "id": "Sampai jumpa! Dah!",
+     "literal": "terlihat! halo halo!"
+    }
+   ],
+   "notes": [
+    "**Hei dipakai dua arah, dan pengulangannya berarti pamit.** Satu kata yang sama untuk \"halo\" dan \"dah\"; kalau diulang (*hei hei*, *moi moi*), artinya selalu perpisahan — bukan sapaan yang lebih hangat. Polanya persis sama seperti bahasa Denmark dan Swedia, dan berlawanan dengan dugaan kebanyakan orang.",
+    "**Mikä sinun nimesi on** menyebut kepemilikan dua kali.** Harfiahnya \"apa **milikmu** nama**mu** adalah\": *sinun* (milikmu) di depan, dan ekor *-si* (-mu) di belakang *nime-*. Bahasa Finlandia sengaja mengunci dua kali, dan dalam percakapan santai yang di depan sering dijatuhkan: *Mikä nimesi on?* Yang di belakang tidak boleh hilang.",
+    "**Mitä kuuluu** harfiahnya \"apa terdengar\".** Bukan \"bagaimana kamu\". Karena itu jawabannya bukan tentang dirimu melainkan tentang kabarnya: *kiitos, hyvää* — \"terima kasih, baik\". Perhatikan urutannya: orang Finlandia hampir selalu menaruh *kiitos* **lebih dulu**, dan itu terdengar jauh lebih alami daripada sebaliknya.",
+    "**Tidak ada satu pun kata sandang di seluruh dialog ini.** Tidak ada padanan \"a\" maupun \"the\", dan tidak ada jenis kelamin kata benda. *Opiskelija* berarti \"mahasiswa\", \"seorang mahasiswa\", dan \"mahasiswa itu\" sekaligus — persis seperti bahasa Indonesia. Ini bukan penyederhanaan buku pelajaran; bahasa Finlandia memang tidak punya keduanya.",
+    "**Oletko** — pertanyaan dibuat dengan menempelkan **-ko/-kö**.** Tidak ada kata bantu seperti \"apakah\" atau \"do\". Kata kerjanya pindah ke depan lalu ditempeli: *sinä olet* (kamu adalah) → *oletko sinä?* (apakah kamu?). Ekor yang sama bekerja di *puhutko* dan *ymmärrätkö*.",
+    "**Joo dan kyllä dua-duanya \"ya\".** *Joo* santai dan jauh lebih sering terdengar; *kyllä* sedikit lebih tegas atau lebih resmi. Untuk \"tidak\" ada *ei* — dan *ei* ini bukan sekadar kata, melainkan **kata kerja** yang ikut berubah bentuk. Kejutannya disimpan sampai unit 7."
+   ],
+   "grammars": [
+    {
+     "title": "Olla — kata kerja \"adalah\"",
+     "body": [
+      "Kata kerja pertama yang wajib kamu kuasai, dan satu-satunya di unit ini yang bentuknya benar-benar tidak beraturan. Kabar baiknya: sesudah *olla*, hampir semua kata kerja lain berpola rapi."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Cara baca",
+       "olla",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "minä",
+        "MI-nè",
+        "**olen**",
+        "saya adalah"
+       ],
+       [
+        "sinä",
+        "SI-nè",
+        "**olet**",
+        "kamu adalah"
+       ],
+       [
+        "hän",
+        "hèn",
+        "**on**",
+        "dia adalah"
+       ],
+       [
+        "me",
+        "me",
+        "**olemme**",
+        "kami adalah"
+       ],
+       [
+        "te",
+        "te",
+        "**olette**",
+        "kalian adalah"
+       ],
+       [
+        "he",
+        "he",
+        "**ovat**",
+        "mereka adalah"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Hän satu kata untuk laki-laki dan perempuan.** Bahasa Finlandia tidak membedakannya sama sekali — persis seperti \"dia\". Penutur bahasa Inggris tersandung parah di sini seumur hidup; kamu tidak perlu berpikir dua kali.",
+      "Untuk benda dipakai *se* (\"itu\"), bukan *hän*: *Se on kirja* — itu buku. Dalam percakapan santai orang Finlandia justru memakai *se* juga untuk orang, tapi jangan menirunya dulu sebelum kamu tahu kapan itu terdengar akrab dan kapan terdengar kasar.",
+      "**Kata gantinya boleh dijatuhkan** untuk *minä*, *sinä*, *me*, dan *te*, karena ekor kata kerjanya sudah menyebut pelakunya: *olen opiskelija* sudah pasti berarti \"saya mahasiswa\". Tapi *hän* dan *he* **tidak** boleh dijatuhkan — bentuk *on* dan *ovat* tidak memberi tahu siapa yang dimaksud."
+     ]
+    },
+    {
+     "title": "Bertanya dengan -ko / -kö",
+     "body": [
+      "Bahasa Finlandia tidak punya kata seperti \"apakah\". Yang ditanyakan dipindahkan ke depan kalimat, lalu ditempeli ekor tanya."
+     ],
+     "table": {
+      "head": [
+       "Kalimat berita",
+       "Pertanyaan",
+       "Arti pertanyaan"
+      ],
+      "rows": [
+       [
+        "*Sinä olet suomalainen.*",
+        "**Oletko** sinä suomalainen?",
+        "Kamu orang Finlandia?"
+       ],
+       [
+        "*Hän on opiskelija.*",
+        "**Onko** hän opiskelija?",
+        "Dia mahasiswa?"
+       ],
+       [
+        "*Sinä puhut suomea.*",
+        "**Puhutko** sinä suomea?",
+        "Kamu bisa bahasa Finlandia?"
+       ],
+       [
+        "*Te olette Helsingistä.*",
+        "**Oletteko** te Helsingistä?",
+        "Kalian dari Helsinki?"
+       ],
+       [
+        "*Se on hyvä.*",
+        "**Onko** se hyvä?",
+        "Itu bagus?"
+       ]
+      ]
+     },
+     "after": [
+      "Pilih **-ko** atau **-kö** menurut keselarasan vokal: *oletko* (kata bervokal belakang) tapi *ymmärrätkö* (bervokal depan). Aturannya sama persis dengan yang di bab pelafalan.",
+      "Kalau ada kata tanya (*mikä*, *mitä*, *kuka*, *missä*), ekor *-ko* **tidak dipakai**: *Mikä sinun nimesi on?* — bukan *mikäko*.",
+      "Yang ditaruh di depan menentukan apa yang ditanyakan. *Oletko sinä opiskelija?* menanyakan statusnya; *Sinäkö olet opiskelija?* menanyakan orangnya — \"**kamu** yang mahasiswa?\". Ekornya sama, penekanannya berbeda."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyapa menurut jam",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Finlandia memilih sapaan menurut waktu dan menurut seberapa akrab kamu dengan lawan bicara. Salah pilih di sini bukan salah tata bahasa, melainkan salah suasana — dan itu justru lebih terasa."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Sapaan",
+      "Cara baca",
+      "Waktu",
+      "Suasana"
+     ],
+     "rows": [
+      [
+       "Hei",
+       "hei",
+       "kapan saja",
+       "netral, dipakai paling luas — juga ke petugas toko"
+      ],
+      [
+       "Moi",
+       "moi",
+       "kapan saja",
+       "akrab, ke teman sebaya"
+      ],
+      [
+       "Terve",
+       "TER-ve",
+       "kapan saja",
+       "santai, agak maskulin nadanya"
+      ],
+      [
+       "Huomenta",
+       "HUO-men-ta",
+       "sampai ~10 pagi",
+       "netral"
+      ],
+      [
+       "Hyvää päivää",
+       "HÜ-vèè PÈI-vèè",
+       "siang",
+       "agak resmi; ke orang tak dikenal"
+      ],
+      [
+       "Hyvää iltaa",
+       "HÜ-vèè IL-taa",
+       "sore–malam",
+       "agak resmi"
+      ],
+      [
+       "Hyvää yötä",
+       "HÜ-vèè Ü-ö-tè",
+       "saat berpisah malam",
+       "sebelum tidur"
+      ],
+      [
+       "Näkemiin",
+       "NÈ-ke-miin",
+       "saat berpisah",
+       "resmi"
+      ],
+      [
+       "Hei hei / Moi moi",
+       "hei hei / moi moi",
+       "saat berpisah",
+       "akrab"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Hyvää päivää* terdengar lebih resmi daripada kelihatannya. Ke teman sebaya ia justru terasa kaku, seperti mengucapkan \"selamat siang\" lengkap kepada teman sekamar. Ke kasir, dokter, atau petugas, ia pas."
+    },
+    {
+     "type": "kotak",
+     "title": "Satu kebiasaan Finlandia yang perlu diketahui lebih dulu",
+     "items": [
+      "Diam bukan kecanggungan. Jeda panjang di tengah percakapan dianggap wajar dan sopan — memberi lawan bicara ruang berpikir. Jangan buru-buru mengisinya seperti refleks kita.",
+      "Sebaliknya, memotong pembicaraan orang dianggap jauh lebih kasar daripada di Indonesia. Tunggu sampai betul-betul selesai, walaupun jedanya terasa lama."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kalimat yang menolongmu bertahan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sepuluh kalimat berikut bukan bahan hafalan tata bahasa — ia perkakas darurat. Hafalkan bentuk utuhnya sekarang, pahami susunannya nanti."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Kyllä / Ei",
+       "KÜL-lè / ei",
+       "Ya / Tidak"
+      ],
+      [
+       "Kiitos",
+       "KII-tos",
+       "Terima kasih"
+      ],
+      [
+       "Ole hyvä",
+       "O-le HÜ-vè",
+       "Sama-sama; silakan"
+      ],
+      [
+       "Anteeksi",
+       "AN-tèèk-si",
+       "Maaf; permisi"
+      ],
+      [
+       "En ymmärrä",
+       "en ÜM-mèr-rè",
+       "Saya tidak mengerti"
+      ],
+      [
+       "En tiedä",
+       "en TIE-dè",
+       "Saya tidak tahu"
+      ],
+      [
+       "Voitko toistaa?",
+       "VOIT-ko TOIS-taa",
+       "Bisa diulang?"
+      ],
+      [
+       "Puhutko englantia?",
+       "PU-hut-ko ENG-lan-ti-a",
+       "Kamu bisa bahasa Inggris?"
+      ],
+      [
+       "Mitä tämä on suomeksi?",
+       "MI-tè TÈ-mè on SUO-mek-si",
+       "Apa namanya dalam bahasa Finlandia?"
+      ],
+      [
+       "Vähän hitaammin, kiitos",
+       "VÈ-hèn HI-taam-min KII-tos",
+       "Pelan-pelan sedikit, tolong"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Ole hyvä* harfiahnya \"jadilah baik\", dan ia dipakai untuk dua hal: menjawab terima kasih, dan menyerahkan sesuatu kepada orang. Kepada beberapa orang bentuknya *olkaa hyvä*."
+    },
+    {
+     "type": "kotak",
+     "title": "Satu kalimat yang mengubah pengalamanmu di Finlandia",
+     "items": [
+      "*Voidaanko puhua suomea? Minä opiskelen.* — \"Boleh kita bicara bahasa Finlandia? Saya sedang belajar.\"",
+      "Masalah khas belajar bahasa Finlandia bukan orangnya galak, melainkan sebaliknya: begitu mendengar aksenmu, hampir semua orang Finlandia otomatis pindah ke bahasa Inggris karena mengira sedang menolong — dan bahasa Inggris mereka bagus sekali. Kalimat di atas menghentikannya dengan sopan, dan hampir semua orang akan senang hati bertahan di bahasa Finlandia."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata ganti orang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Pelaku",
+      "Cara baca",
+      "Sasaran",
+      "Kepunyaan",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "minä",
+       "MI-nè",
+       "minua",
+       "minun",
+       "saya"
+      ],
+      [
+       "sinä",
+       "SI-nè",
+       "sinua",
+       "sinun",
+       "kamu"
+      ],
+      [
+       "hän",
+       "hèn",
+       "häntä",
+       "hänen",
+       "dia (laki-laki & perempuan)"
+      ],
+      [
+       "se",
+       "se",
+       "sitä",
+       "sen",
+       "itu (benda)"
+      ],
+      [
+       "me",
+       "me",
+       "meitä",
+       "meidän",
+       "kami, kita"
+      ],
+      [
+       "te",
+       "te",
+       "teitä",
+       "teidän",
+       "kalian; Anda (sopan)"
+      ],
+      [
+       "he",
+       "he",
+       "heitä",
+       "heidän",
+       "mereka"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kolom \"kepunyaan\" akan dipakai penuh di unit 4; untuk sekarang cukup kenali *minun* dan *sinun* yang sudah muncul di dialog."
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Te punya dua pekerjaan.** Ia \"kalian\" sekaligus \"Anda\" yang sopan kepada satu orang, sama seperti *vous* Prancis. Tapi Finlandia jauh lebih jarang memakainya daripada Prancis atau Jerman: ke kasir, ke rekan kerja, bahkan sering ke atasan, orang Finlandia memakai *sinä* apa adanya. Simpan *te* untuk orang yang jauh lebih tua atau situasi yang benar-benar resmi."
+    },
+    {
+     "type": "p",
+     "text": "Dalam percakapan sehari-hari, *minä* sering menyusut jadi *mä* dan *sinä* jadi *sä*: *mä oon*, *sä oot*. Kamu akan mendengarnya di mana-mana di Helsinki. Modul ini memakai bentuk bakunya, karena bentuk baku dipahami di mana pun, sementara bentuk santai berbeda-beda antar daerah."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "hei",
+   "baca": "hei",
+   "id": "halo; dah"
+  },
+  {
+   "fi": "moi",
+   "baca": "moi",
+   "id": "halo (akrab)"
+  },
+  {
+   "fi": "huomenta",
+   "baca": "HUO-men-ta",
+   "id": "selamat pagi"
+  },
+  {
+   "fi": "hyvää päivää",
+   "baca": "HÜ-vèè PÈI-vèè",
+   "id": "selamat siang"
+  },
+  {
+   "fi": "hyvää iltaa",
+   "baca": "HÜ-vèè IL-taa",
+   "id": "selamat malam"
+  },
+  {
+   "fi": "näkemiin",
+   "baca": "NÈ-ke-miin",
+   "id": "selamat tinggal (resmi)"
+  },
+  {
+   "fi": "nähdään",
+   "baca": "NÈH-dèèn",
+   "id": "sampai jumpa"
+  },
+  {
+   "fi": "olla",
+   "baca": "OL-la",
+   "id": "adalah, ada"
+  },
+  {
+   "fi": "nimi",
+   "baca": "NI-mi",
+   "id": "nama"
+  },
+  {
+   "fi": "mikä",
+   "baca": "MI-kè",
+   "id": "apa (menanyakan benda/nama)"
+  },
+  {
+   "fi": "mitä",
+   "baca": "MI-tè",
+   "id": "apa (bentuk bagian)"
+  },
+  {
+   "fi": "kuka",
+   "baca": "KU-ka",
+   "id": "siapa"
+  },
+  {
+   "fi": "entä",
+   "baca": "EN-tè",
+   "id": "lalu, kalau"
+  },
+  {
+   "fi": "hauska tutustua",
+   "baca": "HAUS-ka TU-tus-tu-a",
+   "id": "senang berkenalan"
+  },
+  {
+   "fi": "samoin",
+   "baca": "SA-moin",
+   "id": "sama-sama, begitu juga"
+  },
+  {
+   "fi": "kiitos",
+   "baca": "KII-tos",
+   "id": "terima kasih"
+  },
+  {
+   "fi": "ole hyvä",
+   "baca": "O-le HÜ-vè",
+   "id": "sama-sama; silakan"
+  },
+  {
+   "fi": "anteeksi",
+   "baca": "AN-tèèk-si",
+   "id": "maaf; permisi"
+  },
+  {
+   "fi": "hyvä",
+   "baca": "HÜ-vè",
+   "id": "baik, bagus"
+  },
+  {
+   "fi": "ihan",
+   "baca": "I-han",
+   "id": "cukup, lumayan"
+  },
+  {
+   "fi": "vähän",
+   "baca": "VÈ-hèn",
+   "id": "sedikit"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Halo! Siapa namamu?",
+    "Nama saya Budi.",
+    "Saya orang Indonesia.",
+    "Apa kabar?",
+    "Terima kasih, baik.",
+    "Kamu mahasiswa?"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bentuk *olla* yang tepat.",
+   "items": [
+    "Minä ____ opiskelija.",
+    "Sinä ____ suomalainen.",
+    "Hän ____ Tampereelta.",
+    "Me ____ kielikurssilla.",
+    "Te ____ indonesialaisia.",
+    "He ____ Helsingistä."
+   ]
+  },
+  {
+   "prompt": "Ubah jadi pertanyaan dengan ekor -ko / -kö.",
+   "items": [
+    "Sinä olet opiskelija.",
+    "Hän on suomalainen.",
+    "Sinä puhut suomea.",
+    "Te olette Helsingistä.",
+    "Se on hyvä."
+   ]
+  },
+  {
+   "prompt": "Pilih sapaan yang tepat. Tulis jawabannya satu kata atau satu frasa.",
+   "items": [
+    "Kamu masuk toko roti jam delapan pagi. Kepada penjualnya kamu bilang ____.",
+    "Kamu bertemu teman sekelas di kantin jam sebelas. Kamu bilang ____.",
+    "Kamu masuk restoran jam tujuh malam. Kepada pelayannya kamu bilang ____.",
+    "Kamu berpisah dengan dosenmu di ujung koridor, dengan cara resmi. Kamu bilang ____.",
+    "Kamu berpamitan dengan teman sekelas, akrab. Kamu bilang ____."
+   ]
+  }
+ ],
+ "answers": [
+  "Hei! Mikä sinun nimesi on? — Minun nimeni on Budi. — Minä olen indonesialainen. — Mitä kuuluu? — Kiitos, hyvää. — Oletko sinä opiskelija?",
+  "olen — olet — on — olemme — olette — ovat",
+  "Oletko sinä opiskelija? — Onko hän suomalainen? — Puhutko sinä suomea? — Oletteko te Helsingistä? — Onko se hyvä?",
+  "Huomenta. — Hei. — Hyvää iltaa. — Näkemiin. — Hei hei."
+ ]
+}

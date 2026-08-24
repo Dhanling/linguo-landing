@@ -1,0 +1,624 @@
+{
+ "title": "Kamu mau ke mana?",
+ "title_target": "Mihin sinä menet?",
+ "goal": "Menguasai enam ekor tempat sekaligus dalam satu tabel — inti dari seluruh sistem kasus bahasa Finlandia, dan bagian yang membuat lima belas kasus tiba-tiba terasa masuk akal.",
+ "bekal": [
+  "menyusun enam ekor tempat: *-ssa/-sta/-Vn* dan *-lla/-lta/-lle*",
+  "menyebut alat transportasi dengan ekor *-lla*",
+  "menanyakan dan memberi arah jalan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Eksyksissä Helsingissä",
+   "intro": "Budi tersesat di pusat kota Helsinki dan bertanya kepada seorang perempuan di halte.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Anteeksi, tiedättekö te, missä rautatieasema on?",
+     "id": "Permisi, Anda tahu stasiun kereta di mana?",
+     "literal": "maaf, tahu-kah kalian, di-mana kereta-jalan-stasiun adalah?"
+    },
+    {
+     "speaker": "Nainen:",
+     "text": "Tuolla. Mene suoraan ja käänny vasemmalle.",
+     "id": "Di sana. Jalan lurus lalu belok kiri.",
+     "literal": "di-sana. pergilah lurus dan berbeloklah ke-kiri."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Onko se kaukana?",
+     "id": "Jauh tidak?",
+     "literal": "adalah-kah itu jauh?"
+    },
+    {
+     "speaker": "Nainen:",
+     "text": "Ei ole. Viisi minuuttia jalan. Mihin sinä menet?",
+     "id": "Tidak. Lima menit jalan kaki. Kamu mau ke mana?",
+     "literal": "tidak adalah. lima menit-bagian dengan-kaki. ke-mana kamu pergi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Menen Tampereelle. Sisareni asuu siellä.",
+     "id": "Saya mau ke Tampere. Kakak saya tinggal di sana.",
+     "literal": "pergi-saya ke-Tampere. kakak-ku tinggal di-sana."
+    },
+    {
+     "speaker": "Nainen:",
+     "text": "Ai, kiva! Menetkö junalla vai bussilla?",
+     "id": "Wah, asyik! Naik kereta atau bus?",
+     "literal": "ah, asyik! pergi-kah-kamu dengan-kereta atau dengan-bus?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Junalla. Se on nopeampi. Tulen takaisin sunnuntaina.",
+     "id": "Naik kereta. Lebih cepat. Saya balik hari Minggu.",
+     "literal": "dengan-kereta. itu adalah lebih-cepat. datang-saya kembali pada-Minggu."
+    },
+    {
+     "speaker": "Nainen:",
+     "text": "Muista ostaa lippu netistä. Se on halvempi.",
+     "id": "Ingat beli tiketnya dari internet. Lebih murah.",
+     "literal": "ingatlah membeli tiket dari-internet. itu adalah lebih-murah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kiitos vinkistä! Tuleeko bussi tähän pysäkille?",
+     "id": "Terima kasih tipsnya! Busnya datang ke halte ini?",
+     "literal": "terima-kasih dari-tips! datang-kah bus ke-ini ke-halte?"
+    },
+    {
+     "speaker": "Nainen:",
+     "text": "Tulee, mutta sinä et tarvitse bussia. Asema on tuossa!",
+     "id": "Datang, tapi kamu tidak perlu bus. Stasiunnya di situ!",
+     "literal": "datang, tetapi kamu tidak butuh bus-bagian. stasiun adalah di-itu!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Voi, anteeksi. Olen tosi huono kartoissa.",
+     "id": "Aduh, maaf. Saya payah sekali baca peta.",
+     "literal": "oh, maaf. adalah-saya sungguh buruk di-peta-jamak."
+    },
+    {
+     "speaker": "Nainen:",
+     "text": "Ei se mitään. Hyvää matkaa!",
+     "id": "Tidak apa-apa. Selamat jalan!",
+     "literal": "tidak itu apa-apa. baik-bagian perjalanan-bagian!"
+    }
+   ],
+   "notes": [
+    "**Missä, mistä, mihin** — satu kata, tiga arah. Ketiganya *mi-* dengan ekor tempat yang berbeda. Pola yang sama menempel di kata benda mana pun: *Helsingi**ssä*** (di), *Helsingi**stä*** (dari), *Helsinki**in*** (ke). Sekali kamu melihat pola ini, kamu tidak perlu menghafal daftar apa pun lagi — kamu tinggal memasang ekornya.",
+    "**Tampereelle, bukan Tampereeseen.** Sebagian kota Finlandia memakai golongan ekor \"luar\" alih-alih \"dalam\". Ini betul-betul harus dihafal, dan daftarnya untungnya pendek: *Tampere*, *Vantaa*, *Rovaniemi*, *Seinäjoki*, *Riihimäki*, dan segelintir lagi. Selebihnya memakai golongan \"dalam\": *Helsinkiin*, *Turkuun*, *Ouluun*.",
+    "**Junalla, bussilla, autolla** — alat transportasi memakai ekor *-lla/-llä*. Harfiahnya \"di atas kereta\", dan itu masuk akal kalau kamu membayangkan naik ke atas sesuatu. Kecualinya *jalan* (jalan kaki), yang bentuknya beku dan tak pernah berubah.",
+    "**Netistä** = *netti* + *-stä*. Perhatikan peluruhannya: dua *t* jadi satu. Membeli sesuatu \"dari\" internet, sama seperti bahasa Indonesia — dan berbeda dari bahasa Inggris yang mengatakan \"on the internet\".",
+    "**Kiitos vinkistä** — berterima kasih memakai ekor \"dari\". *Kiitos avu**sta*** (terima kasih atas bantuannya), *kiitos kahvi**sta***, *kiitos kaike**sta*** (terima kasih untuk semuanya). Bahasa Indonesia memakai \"atas\"; bahasa Finlandia memakai \"dari\".",
+    "**Tähän pysäkille** — dua ekor arah dalam satu frasa, dan keduanya \"ke\". *Tähän* dari *tämä*, *pysäkille* dari *pysäkki*. Kata penunjuk pun ikut berubah bentuk mengikuti kata bendanya, persis seperti kata sifat."
+   ],
+   "grammars": [
+    {
+     "title": "Enam ekor tempat — inti seluruh sistem",
+     "body": [
+      "Inilah tabel terpenting di seluruh modul. Bahasa Finlandia membagi \"tempat\" jadi dua golongan — **dalam** dan **luar** — lalu masing-masing punya tiga arah: diam, datang dari, pergi ke. Enam ekor, satu susunan."
+     ],
+     "tables": [
+      {
+       "head": [
+        "Golongan",
+        "Diam di",
+        "Dari",
+        "Ke"
+       ],
+       "rows": [
+        [
+         "**Dalam** (di dalam wadah)",
+         "**-ssa / -ssä**",
+         "**-sta / -stä**",
+         "**-Vn** (vokal + n)"
+        ],
+        [
+         "**Luar** (di permukaan)",
+         "**-lla / -llä**",
+         "**-lta / -ltä**",
+         "**-lle**"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Kata",
+        "Di",
+        "Dari",
+        "Ke",
+        "Arti"
+       ],
+       "rows": [
+        [
+         "*talo*",
+         "*talossa*",
+         "*talosta*",
+         "*taloon*",
+         "rumah"
+        ],
+        [
+         "*koulu*",
+         "*koulussa*",
+         "*koulusta*",
+         "*kouluun*",
+         "sekolah"
+        ],
+        [
+         "*Suomi*",
+         "*Suomessa*",
+         "*Suomesta*",
+         "*Suomeen*",
+         "Finlandia"
+        ],
+        [
+         "*Helsinki*",
+         "*Helsingissä*",
+         "*Helsingistä*",
+         "*Helsinkiin*",
+         "Helsinki"
+        ],
+        [
+         "*pöytä*",
+         "*pöydällä*",
+         "*pöydältä*",
+         "*pöydälle*",
+         "meja"
+        ],
+        [
+         "*asema*",
+         "*asemalla*",
+         "*asemalta*",
+         "*asemalle*",
+         "stasiun"
+        ],
+        [
+         "*Tampere*",
+         "*Tampereella*",
+         "*Tampereelta*",
+         "*Tampereelle*",
+         "Tampere"
+        ],
+        [
+         "*Aino*",
+         "*Ainolla*",
+         "*Ainolta*",
+         "*Ainolle*",
+         "Aino (orang)"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "**Golongan dalam dipakai untuk wadah dan ruang tertutup**: rumah, kamar, toko, tas, negara, kota. **Golongan luar untuk permukaan dan tempat terbuka**: meja, lantai, stasiun, halte, pantai, pasar. Sebagian besar bisa ditebak dengan membayangkan bentuknya.",
+      "⚠️ **Orang selalu golongan luar.** *Ainolla on kirja* (Aino punya buku), *annan kirjan Aino**lle*** (saya beri buku kepada Aino), *sain kirjan Aino**lta*** (saya dapat buku dari Aino). Ini pemakaian yang paling sering kamu butuhkan sehari-hari, dan ia tidak ada hubungannya dengan tempat sama sekali.",
+      "Yang tidak bisa ditebak dan harus dihafal: sebagian nama kota (*Tampereella*), sebagian negara (*Venäjällä* = di Rusia, golongan luar), dan sebagian benda (*torilla* = di pasar, *kadulla* = di jalan, tapi *kaupassa* = di toko)."
+     ]
+    },
+    {
+     "title": "Membuat ekor \"ke dalam\"",
+     "body": [
+      "Lima dari enam ekor tempat gampang: tinggal ditempel. Yang menuntut aturan sendiri hanya yang \"ke dalam\", karena bentuknya ikut kata dasarnya."
+     ],
+     "table": {
+      "head": [
+       "Bentuk kata dasar",
+       "Aturan",
+       "Contoh",
+       "Jadi"
+      ],
+      "rows": [
+       [
+        "berakhir vokal tunggal",
+        "gandakan vokalnya + **n**",
+        "*talo*, *koulu*, *Helsinki*",
+        "*taloon*, *kouluun*, *Helsinkiin*"
+       ],
+       [
+        "berakhir vokal ganda",
+        "tambah **-hVn**",
+        "*maa*, *työ*, *puu*",
+        "*maahan*, *työhön*, *puuhun*"
+       ],
+       [
+        "berakhir *-e*",
+        "panjangkan + **-seen**",
+        "*huone*, *Tampere*, *perhe*",
+        "*huoneeseen*, *Tampereeseen*, *perheeseen*"
+       ],
+       [
+        "berakhir *-i* asing",
+        "**-in**",
+        "*hotelli*, *Pariisi*",
+        "*hotelliin*, *Pariisiin*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Ekor \"ke dalam\" memakai derajat KUAT.** *Kauppa → kaupassa* (lemah) tapi *kauppa → kauppaan* (kuat). Ini satu-satunya ekor tempat yang tidak meluruhkan huruf matinya, dan ia sering membuat pemula ragu. Pegangannya: kalau arahnya masuk, huruf matinya utuh.",
+      "Kata yang berakhir *-i* dan mengubah batangnya jadi *-e-* tetap taat: *Suomi → Suome- → Suomeen*, *nimi → nime- → nimeen*.",
+      "Untuk *koti* (rumah sebagai tempat pulang) ada bentuk beku yang wajib dihafal: *kotona* (di rumah), *kotoa* (dari rumah), *kotiin* (ke rumah). Tiga-tiganya tidak mengikuti pola mana pun, dan tiga-tiganya kamu pakai setiap hari."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bepergian",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Dengan (-lla)",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "juna",
+       "YU-na",
+       "junalla",
+       "kereta"
+      ],
+      [
+       "bussi",
+       "BUS-si",
+       "bussilla",
+       "bus"
+      ],
+      [
+       "ratikka",
+       "RA-tik-ka",
+       "ratikalla",
+       "trem"
+      ],
+      [
+       "metro",
+       "MET-ro",
+       "metrolla",
+       "metro"
+      ],
+      [
+       "auto",
+       "AU-to",
+       "autolla",
+       "mobil"
+      ],
+      [
+       "taksi",
+       "TAK-si",
+       "taksilla",
+       "taksi"
+      ],
+      [
+       "polkupyörä",
+       "POL-ku-püö-rè",
+       "pyörällä",
+       "sepeda"
+      ],
+      [
+       "lentokone",
+       "LEN-to-ko-ne",
+       "lentokoneella",
+       "pesawat"
+      ],
+      [
+       "laiva",
+       "LAI-va",
+       "laivalla",
+       "kapal"
+      ],
+      [
+       "jalan",
+       "YA-lan",
+       "jalan",
+       "jalan kaki"
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata kerja",
+      "Cara baca",
+      "Bahasa Indonesia",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "mennä",
+       "MEN-nè",
+       "pergi",
+       "*Menen kauppaan.*"
+      ],
+      [
+       "tulla",
+       "TUL-la",
+       "datang",
+       "*Tulen kotiin.*"
+      ],
+      [
+       "lähteä",
+       "LÈH-te-è",
+       "berangkat",
+       "*Lähden Tampereelle.*"
+      ],
+      [
+       "saapua",
+       "SAA-pu-a",
+       "tiba",
+       "*Juna saapuu kello viisi.*"
+      ],
+      [
+       "kävellä",
+       "KÈ-vel-lè",
+       "berjalan kaki",
+       "*Kävelen asemalle.*"
+      ],
+      [
+       "ajaa",
+       "A-yaa",
+       "mengendarai",
+       "*Ajan autolla.*"
+      ],
+      [
+       "matkustaa",
+       "MAT-kus-taa",
+       "bepergian",
+       "*Matkustan junalla.*"
+      ],
+      [
+       "palata",
+       "PA-la-ta",
+       "kembali",
+       "*Palaan sunnuntaina.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Mennä* dan *tulla* dipakai dari sudut pandang yang berlawanan, sama seperti bahasa Indonesia: *menen* = pergi menjauh dari sini, *tulen* = datang mendekat ke situ. Kalau temanmu mengundangmu ke rumahnya, jawaban yang benar adalah *tulen*, bukan *menen* — karena kamu bergerak ke arah dia."
+    }
+   ]
+  },
+  {
+   "title": "Menanyakan arah",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Anteeksi, missä on…?",
+       "AN-tèèk-si MIS-sè on",
+       "Permisi, di mana …?"
+      ],
+      [
+       "Miten pääsen…?",
+       "MI-ten PÈÈ-sen",
+       "Bagaimana saya bisa sampai ke …?"
+      ],
+      [
+       "Onko se kaukana?",
+       "ON-ko se KAU-ka-na",
+       "Jauh tidak?"
+      ],
+      [
+       "Mene suoraan.",
+       "ME-ne SUO-raan",
+       "Jalan lurus."
+      ],
+      [
+       "Käänny oikealle.",
+       "KÈÈN-nü OI-ke-al-le",
+       "Belok kanan."
+      ],
+      [
+       "Käänny vasemmalle.",
+       "KÈÈN-nü VA-sem-mal-le",
+       "Belok kiri."
+      ],
+      [
+       "Se on oikealla.",
+       "se on OI-ke-al-la",
+       "Ada di sebelah kanan."
+      ],
+      [
+       "Ensimmäinen risteys",
+       "EN-sim-mèi-nen RIS-teüs",
+       "Persimpangan pertama"
+      ],
+      [
+       "Kadun toisella puolella",
+       "KA-dun TOI-sel-la PUO-lel-la",
+       "Di seberang jalan"
+      ],
+      [
+       "Se on aivan tässä.",
+       "se on AI-van TÈS-sè",
+       "Ada tepat di sini."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan pasangan *oikealle* (ke kanan) dan *oikealla* (di kanan) — ekor arahnya bekerja persis seperti yang baru kamu pelajari. Sama halnya *vasemmalle* dan *vasemmalla*."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kata penunjuk tempat yang dipakai setiap hari",
+     "items": [
+      "*täällä* (di sini) — *täältä* (dari sini) — *tänne* (ke sini)",
+      "*siellä* (di sana) — *sieltä* (dari sana) — *sinne* (ke sana)",
+      "*tuolla* (di sana, kelihatan) — *tuolta* (dari sana) — *tuonne* (ke sana)",
+      "Tiga baris ini mengikuti pola enam ekor yang sama, hanya bentuknya sudah membeku. Hafalkan sebagai satu kelompok, bukan sembilan kata terpisah."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "mihin / minne",
+   "baca": "MI-hin / MIN-ne",
+   "id": "ke mana"
+  },
+  {
+   "fi": "rautatieasema",
+   "baca": "RAU-ta-tie-a-se-ma",
+   "id": "stasiun kereta"
+  },
+  {
+   "fi": "pysäkki",
+   "baca": "PÜ-sèk-ki",
+   "id": "halte"
+  },
+  {
+   "fi": "juna",
+   "baca": "YU-na",
+   "id": "kereta"
+  },
+  {
+   "fi": "lentokone",
+   "baca": "LEN-to-ko-ne",
+   "id": "pesawat"
+  },
+  {
+   "fi": "polkupyörä",
+   "baca": "POL-ku-püö-rè",
+   "id": "sepeda"
+  },
+  {
+   "fi": "kartta",
+   "baca": "KART-ta",
+   "id": "peta"
+  },
+  {
+   "fi": "tori",
+   "baca": "TO-ri",
+   "id": "pasar, lapangan"
+  },
+  {
+   "fi": "netti",
+   "baca": "NET-ti",
+   "id": "internet"
+  },
+  {
+   "fi": "vinkki",
+   "baca": "VINK-ki",
+   "id": "tips, saran"
+  },
+  {
+   "fi": "suoraan",
+   "baca": "SUO-raan",
+   "id": "lurus"
+  },
+  {
+   "fi": "oikealle",
+   "baca": "OI-ke-al-le",
+   "id": "ke kanan"
+  },
+  {
+   "fi": "vasemmalle",
+   "baca": "VA-sem-mal-le",
+   "id": "ke kiri"
+  },
+  {
+   "fi": "kääntyä",
+   "baca": "KÈÈN-tü-è",
+   "id": "berbelok"
+  },
+  {
+   "fi": "päästä",
+   "baca": "PÈÈS-tè",
+   "id": "sampai, mencapai"
+  },
+  {
+   "fi": "kävellä",
+   "baca": "KÈ-vel-lè",
+   "id": "berjalan kaki"
+  },
+  {
+   "fi": "ajaa",
+   "baca": "A-yaa",
+   "id": "mengendarai"
+  },
+  {
+   "fi": "matkustaa",
+   "baca": "MAT-kus-taa",
+   "id": "bepergian"
+  },
+  {
+   "fi": "saapua",
+   "baca": "SAA-pu-a",
+   "id": "tiba"
+  },
+  {
+   "fi": "palata",
+   "baca": "PA-la-ta",
+   "id": "kembali"
+  },
+  {
+   "fi": "takaisin",
+   "baca": "TA-kai-sin",
+   "id": "kembali (arah)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi tiga arahnya: di / dari / ke.",
+   "items": [
+    "talo: talossa, talosta, ____",
+    "koulu: ____, koulusta, kouluun",
+    "Suomi: Suomessa, ____, Suomeen",
+    "pöytä: pöydällä, pöydältä, ____",
+    "asema: ____, asemalta, asemalle",
+    "Tampere: Tampereella, ____, Tampereelle"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Kamu mau ke mana?",
+    "Saya mau ke Tampere.",
+    "Saya naik kereta.",
+    "Jalan lurus lalu belok kiri.",
+    "Permisi, di mana stasiun kereta?",
+    "Saya pulang hari Minggu."
+   ]
+  },
+  {
+   "prompt": "Isi dengan ekor -lla/-llä (alat transportasi) atau *jalan*.",
+   "items": [
+    "Menen kouluun bussi____.",
+    "Matkustan Tampereelle juna____.",
+    "Ajan töihin auto____.",
+    "Kävelen asemalle ____.",
+    "Menen Indonesiaan lentokonee____."
+   ]
+  },
+  {
+   "prompt": "Isi dengan *täällä/täältä/tänne* atau *siellä/sieltä/sinne*.",
+   "items": [
+    "Tule ____! (ke sini)",
+    "Asun ____. (di sini)",
+    "Tulen ____. (dari sana)",
+    "Menen ____. (ke sana)",
+    "Sisareni asuu ____. (di sana)"
+   ]
+  }
+ ],
+ "answers": [
+  "taloon — koulussa — Suomesta — pöydälle — asemalla — Tampereelta",
+  "Mihin sinä menet? — Menen Tampereelle. — Menen junalla. — Mene suoraan ja käänny vasemmalle. — Anteeksi, missä rautatieasema on? — Tulen takaisin sunnuntaina.",
+  "lla — lla — lla — jalan — lla",
+  "tänne — täällä — sieltä — sinne — siellä"
+ ]
+}

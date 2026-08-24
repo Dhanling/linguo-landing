@@ -1,0 +1,607 @@
+{
+ "title": "Jam berapa?",
+ "title_target": "Paljonko kello on?",
+ "goal": "Menyebut jam, hari, dan janji temu — dengan satu keberuntungan besar yang cuma dimiliki penutur bahasa Indonesia: cara Finlandia menyebut setengah jam sama persis dengan cara kita.",
+ "bekal": [
+  "menyebut jam berapa pun, termasuk *puoli*, *yli*, dan *vaille*",
+  "menyebut hari dengan ekor **-na/-nä** dan waktu janji dengan ekor **-lta/-ltä**",
+  "membuat, mengubah, dan membatalkan janji temu"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Sovitaan aika",
+   "intro": "Aino dan Budi mencari waktu untuk belajar bersama sebelum ujian.",
+   "lines": [
+    {
+     "speaker": "Aino:",
+     "text": "Budi, meillä on koe ensi perjantaina. Opiskellaanko yhdessä?",
+     "id": "Budi, kita ada ujian Jumat depan. Belajar bareng, yuk?",
+     "literal": "kepada-kami adalah ujian berikut pada-Jumat. belajar-kah bersama?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mielellään! Milloin sinulle sopii?",
+     "id": "Mau banget! Kapan kamu bisa?",
+     "literal": "dengan-senang-hati! kapan kepadamu cocok?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Sopiiko keskiviikkona? Vaikka kahdelta.",
+     "id": "Rabu bagaimana? Jam dua, misalnya.",
+     "literal": "cocok-kah pada-Rabu? misalnya dari-dua."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hetkinen… Ei sovi. Minulla on työvuoro kahdesta kahdeksaan.",
+     "id": "Sebentar… Tidak bisa. Saya ada giliran kerja dari jam dua sampai delapan.",
+     "literal": "sebentar… tidak cocok. kepadaku adalah kerja-giliran dari-dua ke-delapan."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Entä aamulla? Kello puoli yksitoista?",
+     "id": "Kalau pagi? Jam setengah sebelas?",
+     "literal": "lalu pada-pagi? jam setengah sebelas?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Puoli yksitoista… eli kymmenen kolmekymmentä?",
+     "id": "Setengah sebelas… jadi jam sepuluh tiga puluh?",
+     "literal": "setengah sebelas… yaitu sepuluh tiga-puluh?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Juuri niin. Sama kuin indonesiaksi, eikö?",
+     "id": "Tepat sekali. Sama seperti dalam bahasa Indonesia, kan?",
+     "literal": "tepat begitu. sama seperti dalam-bahasa-Indonesia, tidak-kah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sama! Onneksi. Englanniksi se on aina väärin päin.",
+     "id": "Sama! Untung. Kalau bahasa Inggris selalu terbalik.",
+     "literal": "sama! untungnya. dalam-bahasa-Inggris itu adalah selalu salah arah."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Sovitaan sitten keskiviikkona puoli yksitoista. Missä?",
+     "id": "Kalau begitu kita sepakat Rabu jam setengah sebelas. Di mana?",
+     "literal": "disepakati kemudian pada-Rabu setengah sebelas. di-mana?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kirjastossa? Se aukeaa kello yhdeksän.",
+     "id": "Di perpustakaan? Bukanya jam sembilan.",
+     "literal": "di-perpustakaan? itu membuka jam sembilan."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Sopii. Nähdään kirjaston edessä varttia vaille yksitoista.",
+     "id": "Oke. Ketemu di depan perpustakaan jam sebelas kurang seperempat.",
+     "literal": "cocok. terlihat perpustakaan-punya di-depan seperempat-bagian kurang sebelas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Odota! Sanoit puoli yksitoista. Kumpi se on?",
+     "id": "Tunggu! Kamu bilang setengah sebelas. Yang mana?",
+     "literal": "tunggulah! berkata-kamu setengah sebelas. yang-mana itu adalah?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Hupsis. Puoli yksitoista. Anteeksi!",
+     "id": "Oops. Setengah sebelas. Maaf!",
+     "literal": "oops. setengah sebelas. maaf!"
+    }
+   ],
+   "notes": [
+    "**Keberuntungan besar: puoli yksitoista = 10.30.** Bahasa Finlandia menghitung setengah jam **menuju** jam berikutnya, persis seperti \"setengah sebelas\" dalam bahasa Indonesia. Penutur bahasa Inggris tersandung parah di sini seumur hidup — *half eleven* bagi mereka berarti 11.30. Kita tidak perlu belajar apa-apa; naluri kita sudah benar sejak awal.",
+    "**Kahdesta kahdeksaan** — \"dari dua ke delapan\". Rentang waktu memakai pasangan ekor *-sta … -Vn*, ekor yang persis sama dengan yang kamu pelajari untuk tempat. Bahasa Finlandia memperlakukan waktu seperti jarak yang ditempuh, dan pemakaian ulang ekor ini adalah salah satu hal paling hemat dalam bahasanya.",
+    "**Kahdelta = jam dua (waktu janji).** Ekor *-lta/-ltä*, harfiahnya \"dari\". Bandingkan dengan *kello kaksi* yang cuma menyebut angka jamnya. *Tulen kahdelta* = saya datang jam dua; *Kello on kaksi* = sekarang jam dua.",
+    "**Keskiviikkona** — hari memakai ekor *-na/-nä*. *Maanantai → maanantaina*, *perjantai → perjantaina*. Ekor ini namanya bentuk \"sebagai\", dan ia juga dipakai untuk tanggal dan untuk peran (*olen opettajana* = saya bekerja sebagai guru, unit 18).",
+    "**Sopiiko?** — \"cocok tidak?\". Kata kerja *sopia* dipakai untuk apa saja yang \"pas\": jadwal, baju, rasa. Menjawabnya dengan mengulang: *Sopii.* / *Ei sovi.* Perhatikan peluruhan pada bentuk sangkalnya: *sopii → ei sovi*.",
+    "**Sovitaan** — bentuk \"kita\" yang mengajak. Bahasa Finlandia punya bentuk tersendiri untuk ajakan: *mennään!* (ayo pergi), *opiskellaan* (ayo belajar), *sovitaan* (ayo sepakati). Bentuknya sama dengan bentuk tanpa pelaku, dan ia jauh lebih sering dipakai daripada *me menemme*."
+   ],
+   "grammars": [
+    {
+     "title": "Membaca jam",
+     "body": [
+      "Bahasa Finlandia punya dua cara: cara resmi (24 jam, dipakai di jadwal kereta dan berita) dan cara sehari-hari (12 jam, dipakai orang saat bicara). Yang harus kamu kuasai adalah yang kedua."
+     ],
+     "table": {
+      "head": [
+       "Jam",
+       "Suomi",
+       "Cara baca",
+       "Harfiahnya"
+      ],
+      "rows": [
+       [
+        "14.00",
+        "*Kello on kaksi.*",
+        "KEL-lo on KAK-si",
+        "jam adalah dua"
+       ],
+       [
+        "14.05",
+        "*Viisi yli kaksi.*",
+        "VII-si Ü-li KAK-si",
+        "lima lewat dua"
+       ],
+       [
+        "14.15",
+        "*Vartin yli kaksi.*",
+        "VAR-tin Ü-li KAK-si",
+        "seperempat lewat dua"
+       ],
+       [
+        "14.20",
+        "*Kaksikymmentä yli kaksi.*",
+        "—",
+        "dua puluh lewat dua"
+       ],
+       [
+        "14.30",
+        "*Puoli kolme.*",
+        "PUO-li KOL-me",
+        "setengah tiga"
+       ],
+       [
+        "14.40",
+        "*Kaksikymmentä vaille kolme.*",
+        "—",
+        "dua puluh kurang tiga"
+       ],
+       [
+        "14.45",
+        "*Varttia vaille kolme.*",
+        "VART-ti-a VAIL-le KOL-me",
+        "seperempat kurang tiga"
+       ],
+       [
+        "14.55",
+        "*Viisi vaille kolme.*",
+        "VII-si VAIL-le KOL-me",
+        "lima kurang tiga"
+       ],
+       [
+        "14.30 (resmi)",
+        "*Kello neljätoista kolmekymmentä.*",
+        "—",
+        "jam empat belas tiga puluh"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Puoli selalu menunjuk jam BERIKUTNYA.** *Puoli kolme* = 2.30, bukan 3.30. Kalau kamu berpikir dalam bahasa Indonesia, kamu otomatis benar; kalau kamu berpikir dalam bahasa Inggris, kamu otomatis salah satu jam.",
+      "*Yli* = lewat, *vaille* = kurang. Batasnya di menit ke-30: sampai 30 dipakai *yli*, sesudah 30 dipakai *vaille* menuju jam berikutnya.",
+      "Menanyakan: *Paljonko kello on?* atau *Mitä kello on?* — dua-duanya sama-sama umum. Menjawab: *Kello on…* atau cukup angkanya."
+     ]
+    },
+    {
+     "title": "Hari dan waktu janji",
+     "body": [
+      "Dua ekor yang menutup hampir semua urusan jadwal: **-na/-nä** untuk hari dan tanggal, **-lta/-ltä** untuk jam."
+     ],
+     "tables": [
+      {
+       "head": [
+        "Hari",
+        "Cara baca",
+        "Pada hari itu",
+        "Arti"
+       ],
+       "rows": [
+        [
+         "maanantai",
+         "MAA-nan-tai",
+         "maanantai**na**",
+         "Senin"
+        ],
+        [
+         "tiistai",
+         "TIIS-tai",
+         "tiistai**na**",
+         "Selasa"
+        ],
+        [
+         "keskiviikko",
+         "KES-ki-viik-ko",
+         "keskiviikko**na**",
+         "Rabu"
+        ],
+        [
+         "torstai",
+         "TORS-tai",
+         "torstai**na**",
+         "Kamis"
+        ],
+        [
+         "perjantai",
+         "PER-yan-tai",
+         "perjantai**na**",
+         "Jumat"
+        ],
+        [
+         "lauantai",
+         "LAU-an-tai",
+         "lauantai**na**",
+         "Sabtu"
+        ],
+        [
+         "sunnuntai",
+         "SUN-nun-tai",
+         "sunnuntai**na**",
+         "Minggu"
+        ],
+        [
+         "viikonloppu",
+         "VII-kon-lop-pu",
+         "viikonloppu**na**",
+         "akhir pekan"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Jam",
+        "Pada jam itu",
+        "Jam",
+        "Pada jam itu"
+       ],
+       "rows": [
+        [
+         "yksi",
+         "**yhdeltä**",
+         "seitsemän",
+         "**seitsemältä**"
+        ],
+        [
+         "kaksi",
+         "**kahdelta**",
+         "kahdeksan",
+         "**kahdeksalta**"
+        ],
+        [
+         "kolme",
+         "**kolmelta**",
+         "yhdeksän",
+         "**yhdeksältä**"
+        ],
+        [
+         "neljä",
+         "**neljältä**",
+         "kymmenen",
+         "**kymmeneltä**"
+        ],
+        [
+         "viisi",
+         "**viideltä**",
+         "yksitoista",
+         "**yhdeltätoista**"
+        ],
+        [
+         "kuusi",
+         "**kuudelta**",
+         "kaksitoista",
+         "**kahdeltatoista**"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ Angka juga meluruh: *yksi → yhdeltä*, *kaksi → kahdelta*, *viisi → viideltä*, *kuusi → kuudelta*. Enam angka pertama semuanya berubah batangnya; sisanya lebih jinak.",
+      "*Keskiviikko* harfiahnya \"tengah minggu\" — satu-satunya hari Finlandia yang namanya bukan pinjaman dari bahasa Skandinavia. Perhatikan bahwa minggu Finlandia mulai hari **Senin**, jadi Rabu memang benar-benar di tengah.",
+      "**Untuk waktu setengah jam, ekornya menempel di angkanya**: *puoli kolmelta* (jam setengah tiga), *varttia vaille kolmelta*. Dalam percakapan orang sering menjatuhkannya saja: *Nähdään puoli kolme.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata waktu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "tänään",
+       "TÈ-nèèn",
+       "hari ini"
+      ],
+      [
+       "huomenna",
+       "HUO-men-na",
+       "besok"
+      ],
+      [
+       "ylihuomenna",
+       "Ü-li-huo-men-na",
+       "lusa"
+      ],
+      [
+       "eilen",
+       "EI-len",
+       "kemarin"
+      ],
+      [
+       "toissapäivänä",
+       "TOIS-sa-pèi-vè-nè",
+       "kemarin dulu"
+      ],
+      [
+       "tällä viikolla",
+       "TÈL-lè VII-kol-la",
+       "minggu ini"
+      ],
+      [
+       "ensi viikolla",
+       "EN-si VII-kol-la",
+       "minggu depan"
+      ],
+      [
+       "viime viikolla",
+       "VII-me VII-kol-la",
+       "minggu lalu"
+      ],
+      [
+       "tässä kuussa",
+       "TÈS-sè KUUS-sa",
+       "bulan ini"
+      ],
+      [
+       "ensi kuussa",
+       "EN-si KUUS-sa",
+       "bulan depan"
+      ],
+      [
+       "tänä vuonna",
+       "TÈ-nè VUON-na",
+       "tahun ini"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Ensi* (depan) dan *viime* (lalu) tidak pernah berubah bentuk, tapi kata bendanya berubah: *ensi **viikolla***, *viime **vuonna***. Perhatikan bahwa minggu memakai ekor \"luar\" (*-lla*) sedangkan bulan memakai ekor \"dalam\" (*-ssa*) — sesuatu yang harus dihafal apa adanya."
+    },
+    {
+     "type": "kotak",
+     "title": "Ketepatan waktu di Finlandia",
+     "items": [
+      "Datang lima menit terlambat sudah dianggap terlambat, dan datang lima belas menit terlambat tanpa mengabari dianggap tidak sopan. Bus dan kereta pun berangkat tepat pada menitnya.",
+      "Kalau kamu akan terlambat, kabari lebih dulu — satu pesan singkat *Olen viisi minuuttia myöhässä, anteeksi* menyelesaikan seluruh masalahnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membuat janji",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Milloin sinulle sopii?",
+       "Kapan kamu bisa?"
+      ],
+      [
+       "Sopiiko keskiviikkona?",
+       "Rabu bisa?"
+      ],
+      [
+       "Sopii hyvin.",
+       "Bisa, cocok."
+      ],
+      [
+       "Valitettavasti ei sovi.",
+       "Sayangnya tidak bisa."
+      ],
+      [
+       "Mihin aikaan?",
+       "Jam berapa?"
+      ],
+      [
+       "Kahdelta, jos sopii.",
+       "Jam dua, kalau cocok."
+      ],
+      [
+       "Missä tavataan?",
+       "Ketemu di mana?"
+      ],
+      [
+       "Nähdään kirjaston edessä.",
+       "Ketemu di depan perpustakaan."
+      ],
+      [
+       "Voisitko siirtää sitä?",
+       "Bisa digeser waktunya?"
+      ],
+      [
+       "Minun täytyy perua.",
+       "Saya harus batal."
+      ],
+      [
+       "Olen vähän myöhässä.",
+       "Saya agak terlambat."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Perua* (membatalkan) sebaiknya dipakai dengan alasan pendek: *Minun täytyy perua, olen kipeä* (saya harus batal, saya sakit). Membatalkan tanpa alasan sama sekali terasa lebih dingin di Finlandia daripada di Indonesia, walaupun tak seorang pun akan menegurmu."
+    },
+    {
+     "type": "p",
+     "text": "Ajakan yang paling sering dipakai memakai bentuk \"ayo\": *Mennään kahville!* (ayo ngopi), *Nähdään huomenna!* (ketemu besok), *Sovitaan myöhemmin* (kita atur nanti). Bentuk ini sudah kamu lihat di dialog dan ia jauh lebih alami daripada menyusun kalimat lengkap dengan *me*."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "kello",
+   "baca": "KEL-lo",
+   "id": "jam (alat & waktu)"
+  },
+  {
+   "fi": "puoli",
+   "baca": "PUO-li",
+   "id": "setengah"
+  },
+  {
+   "fi": "vartti",
+   "baca": "VART-ti",
+   "id": "seperempat jam"
+  },
+  {
+   "fi": "yli",
+   "baca": "Ü-li",
+   "id": "lewat, lebih dari"
+  },
+  {
+   "fi": "vaille",
+   "baca": "VAIL-le",
+   "id": "kurang"
+  },
+  {
+   "fi": "aika",
+   "baca": "AI-ka",
+   "id": "waktu"
+  },
+  {
+   "fi": "maanantai",
+   "baca": "MAA-nan-tai",
+   "id": "Senin"
+  },
+  {
+   "fi": "keskiviikko",
+   "baca": "KES-ki-viik-ko",
+   "id": "Rabu"
+  },
+  {
+   "fi": "perjantai",
+   "baca": "PER-yan-tai",
+   "id": "Jumat"
+  },
+  {
+   "fi": "viikonloppu",
+   "baca": "VII-kon-lop-pu",
+   "id": "akhir pekan"
+  },
+  {
+   "fi": "tänään",
+   "baca": "TÈ-nèèn",
+   "id": "hari ini"
+  },
+  {
+   "fi": "eilen",
+   "baca": "EI-len",
+   "id": "kemarin"
+  },
+  {
+   "fi": "myöhemmin",
+   "baca": "MÜÖ-hem-min",
+   "id": "nanti"
+  },
+  {
+   "fi": "myöhässä",
+   "baca": "MÜÖ-hès-sè",
+   "id": "terlambat"
+  },
+  {
+   "fi": "aikaisin",
+   "baca": "AI-kai-sin",
+   "id": "awal, pagi-pagi"
+  },
+  {
+   "fi": "sopia",
+   "baca": "SO-pi-a",
+   "id": "cocok, pas"
+  },
+  {
+   "fi": "sopia (jotain)",
+   "baca": "SO-pi-a",
+   "id": "menyepakati"
+  },
+  {
+   "fi": "tavata",
+   "baca": "TA-va-ta",
+   "id": "bertemu"
+  },
+  {
+   "fi": "siirtää",
+   "baca": "SIIR-tèè",
+   "id": "menggeser"
+  },
+  {
+   "fi": "perua",
+   "baca": "PE-ru-a",
+   "id": "membatalkan"
+  },
+  {
+   "fi": "koe",
+   "baca": "KO-e",
+   "id": "ujian"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis jamnya dalam bahasa Finlandia (cara sehari-hari).",
+   "items": [
+    "14.00",
+    "14.15",
+    "14.30",
+    "14.45",
+    "10.30",
+    "11.55"
+   ]
+  },
+  {
+   "prompt": "Ubah hari jadi bentuk \"pada hari itu\".",
+   "items": [
+    "maanantai",
+    "keskiviikko",
+    "perjantai",
+    "lauantai",
+    "sunnuntai",
+    "viikonloppu"
+   ]
+  },
+  {
+   "prompt": "Ubah jam jadi bentuk waktu janji (-lta/-ltä).",
+   "items": [
+    "kaksi",
+    "viisi",
+    "kuusi",
+    "yhdeksän",
+    "yksi",
+    "kymmenen"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Jam berapa sekarang?",
+    "Sekarang jam setengah tiga.",
+    "Rabu bisa?",
+    "Sayangnya tidak bisa.",
+    "Ketemu di depan perpustakaan.",
+    "Saya agak terlambat."
+   ]
+  }
+ ],
+ "answers": [
+  "Kello on kaksi. — Vartin yli kaksi. — Puoli kolme. — Varttia vaille kolme. — Puoli yksitoista. — Viisi vaille kaksitoista.",
+  "maanantaina — keskiviikkona — perjantaina — lauantaina — sunnuntaina — viikonloppuna",
+  "kahdelta — viideltä — kuudelta — yhdeksältä — yhdeltä — kymmeneltä",
+  "Paljonko kello on? — Kello on puoli kolme. — Sopiiko keskiviikkona? — Valitettavasti ei sovi. — Nähdään kirjaston edessä. — Olen vähän myöhässä."
+ ]
+}

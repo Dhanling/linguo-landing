@@ -1,0 +1,518 @@
+{
+ "title": "Berbelanja",
+ "title_target": "Kaupassa",
+ "goal": "Berbelanja, menanyakan harga — dan menghadapi aturan yang paling khas bahasa Finlandia: kapan sesuatu diambil seutuhnya dan kapan hanya sebagiannya.",
+ "bekal": [
+  "membedakan obyek utuh (*-n*) dari obyek sebagian (*-a/-ä*)",
+  "menanyakan harga, jumlah, dan ketersediaan barang",
+  "menyebut bahan makanan dan satuan yang dipakai di toko Finlandia"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ruokakaupassa",
+   "intro": "Budi berbelanja di supermarket. Aino ikut karena Budi belum hafal nama bahan makanan.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Ostan maitoa, leipää ja kahvia. Mitä muuta tarvitsen?",
+     "id": "Saya beli susu, roti, dan kopi. Perlu apa lagi?",
+     "literal": "membeli-saya susu-bagian, roti-bagian dan kopi-bagian. apa lain butuh-saya?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Osta myös juustoa. Ja ota se iso leipä, se on parempi.",
+     "id": "Beli keju juga. Dan ambil roti yang besar itu, lebih enak.",
+     "literal": "belilah juga keju-bagian. dan ambillah itu besar roti, itu adalah lebih-baik."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Selvä. Otan leivän. Paljonko juusto maksaa?",
+     "id": "Oke. Saya ambil rotinya. Kejunya berapa?",
+     "literal": "jelas. mengambil-saya roti-punya. berapa keju berharga?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Katso hintalappua. Yhdeksän euroa kilo.",
+     "id": "Lihat label harganya. Sembilan euro sekilo.",
+     "literal": "lihatlah harga-label-bagian. sembilan euro-bagian kilo."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kallista! Otan vain vähän. Onko teillä indonesialaista riisiä?",
+     "id": "Mahal! Saya ambil sedikit saja. Ada beras Indonesia?",
+     "literal": "mahal-bagian! mengambil-saya hanya sedikit. adalah-kah kepada-kalian Indonesia-bagian beras-bagian?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Ei tässä kaupassa. Etnisessä kaupassa Hakaniemessä on.",
+     "id": "Tidak di toko ini. Di toko etnis di Hakaniemi ada.",
+     "literal": "tidak di-ini di-toko. di-etnis di-toko di-Hakaniemi adalah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hyvä tietää. Otan sitten nämä perunat ja kaksi tomaattia.",
+     "id": "Baik, saya catat. Kalau begitu saya ambil kentang ini dan dua tomat.",
+     "literal": "baik mengetahui. mengambil-saya kemudian ini-jamak kentang-jamak dan dua tomat-bagian."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Muista punnita ne itse. Vaaka on tuolla.",
+     "id": "Ingat ditimbang sendiri. Timbangannya di sana.",
+     "literal": "ingatlah menimbang itu-jamak sendiri. timbangan adalah di-sana."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ai niin, unohdin. Suomessa asiakas punnitsee itse.",
+     "id": "Oh iya, saya lupa. Di Finlandia pembeli menimbang sendiri.",
+     "literal": "ah begitu, lupa-saya. di-Finlandia pelanggan menimbang sendiri."
+    },
+    {
+     "speaker": "Kassa:",
+     "text": "Hei! Onko kanta-asiakaskorttia?",
+     "id": "Halo! Ada kartu member?",
+     "literal": "halo! adalah-kah pelanggan-tetap-kartu-bagian?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ei ole. Maksan kortilla.",
+     "id": "Tidak ada. Saya bayar pakai kartu.",
+     "literal": "tidak adalah. membayar-saya dengan-kartu."
+    },
+    {
+     "speaker": "Kassa:",
+     "text": "Kaksikymmentäkolme euroa neljäkymmentä. Kiitos ja hei!",
+     "id": "Dua puluh tiga euro empat puluh. Terima kasih dan sampai jumpa!",
+     "literal": "dua-puluh-tiga euro-bagian empat-puluh. terima-kasih dan halo!"
+    }
+   ],
+   "notes": [
+    "**Ostan maitoa, tapi otan leivän.** Inilah inti unit ini. *Maitoa* berbentuk bagian karena susu adalah barang yang tak terhitung — kamu membeli sebagian susu di dunia, bukan seluruhnya. *Leivän* berbentuk utuh karena rotinya satu, jelas, dan seluruhnya kamu ambil.",
+    "**Kaksi tomaattia** — sesudah angka selalu bentuk bagian, seperti yang sudah kamu pelajari di unit 5. Tapi *nämä perunat* berbentuk jamak biasa, karena kentangnya ditunjuk: yang **ini**, semuanya.",
+    "**Kallista, bukan kallis.** Berseru tentang harga memakai bentuk bagian karena yang dikomentari adalah keadaan, bukan benda tertentu. Sepupunya yang sudah kamu lihat: *hienoa*, *erinomaista*, *kylmää*.",
+    "**Indonesialaista riisiä** — kata sifat mengikuti kata bendanya sampai ke bentuk bagian. Sekali lagi: kata sifat Finlandia **selalu** meniru kata bendanya, tanpa pernah membangkang.",
+    "**Punnita ne itse.** Di hampir semua supermarket Finlandia, buah dan sayur ditimbang sendiri oleh pembeli di timbangan yang tersedia, lalu stikernya ditempel. Kalau kamu lupa, kasir akan menyuruhmu balik. Ini kejutan praktis yang menimpa hampir semua pendatang di minggu pertama.",
+    "**Kanta-asiakaskortti** — kartu pelanggan tetap. Dua jaringan besar (S dan K) menguasai hampir seluruh pasar, dan kartunya memberi potongan yang cukup nyata. Kalau kamu tinggal lebih dari beberapa bulan, mengambil satu sangat sepadan."
+   ],
+   "grammars": [
+    {
+     "title": "Obyek utuh dan obyek sebagian",
+     "body": [
+      "Bahasa Finlandia menandai obyek dengan dua cara, dan pilihannya mengubah arti kalimat — bukan sekadar bentuknya. Bahasa Indonesia tidak punya pembedaan ini sama sekali, jadi ia harus dipelajari dari nol."
+     ],
+     "table": {
+      "head": [
+       "Bentuk utuh (-n)",
+       "Arti",
+       "Bentuk bagian",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Ostan leivä**n**.*",
+        "Saya beli (satu) roti itu.",
+        "*Ostan leipä**ä**.*",
+        "Saya beli roti (sejumlah tak tentu)."
+       ],
+       [
+        "*Juon kahvi**n**.*",
+        "Saya minum kopi itu sampai habis.",
+        "*Juon kahvi**a**.*",
+        "Saya sedang minum kopi."
+       ],
+       [
+        "*Luen kirja**n**.*",
+        "Saya baca buku itu sampai tamat.",
+        "*Luen kirja**a**.*",
+        "Saya sedang baca buku."
+       ],
+       [
+        "*Syön omena**n**.*",
+        "Saya makan apel itu.",
+        "*Syön omena**a**.*",
+        "Saya sedang makan apel."
+       ],
+       [
+        "*Otan juusto**n**.*",
+        "Saya ambil kejunya.",
+        "*Otan juusto**a**.*",
+        "Saya ambil sedikit keju."
+       ]
+      ]
+     },
+     "after": [
+      "**Empat keadaan yang WAJIB berbentuk bagian**, tanpa kecuali: (1) barang yang tak terhitung — *vettä*, *maitoa*, *rahaa*; (2) sesudah angka dua ke atas — *kaksi tomaattia*; (3) kalimat sangkal — *en osta leipää*; (4) perbuatan yang sedang berlangsung — *luen kirjaa*.",
+      "⚠️ Membentuk bagian: vokal tunggal digandakan (*leipä → leipää*, *kahvi → kahvia*), sedangkan kata berakhir *-i*/*-nen*/huruf mati memakai ekor *-ta/-tä* (*vesi → vettä*, *ihminen → ihmistä*, *puhelin → puhelinta*).",
+      "Kalau kamu ragu, **bentuk bagian lebih aman**. Ia dipakai jauh lebih sering, dan memakainya salah tempat terdengar seperti \"belum selesai\" — jauh lebih ringan daripada bentuk utuh yang salah tempat, yang terdengar seperti kalimat cacat."
+     ]
+    },
+    {
+     "title": "Menanyakan harga dan jumlah",
+     "body": [
+      "Empat kalimat yang menutup hampir seluruh urusan di toko, dan semuanya memakai bentuk bagian."
+     ],
+     "table": {
+      "head": [
+       "Suomi",
+       "Cara baca",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "Paljonko tämä maksaa?",
+        "PAL-yon-ko TÈ-mè MAK-saa",
+        "Ini berapa?"
+       ],
+       [
+        "Paljonko se on yhteensä?",
+        "PAL-yon-ko se on ÜH-tèèn-sè",
+        "Totalnya berapa?"
+       ],
+       [
+        "Onko teillä…?",
+        "ON-ko TEIL-lè",
+        "Ada … tidak?"
+       ],
+       [
+        "Missä on…?",
+        "MIS-sè on",
+        "Di mana … ?"
+       ],
+       [
+        "Saisinko kilon perunoita?",
+        "SAI-sin-ko KI-lon PE-ru-noi-ta",
+        "Boleh minta sekilo kentang?"
+       ],
+       [
+        "Onko tämä alennuksessa?",
+        "ON-ko TÈ-mè A-len-nuk-ses-sa",
+        "Ini lagi diskon?"
+       ],
+       [
+        "Voinko maksaa kortilla?",
+        "VOIN-ko MAK-saa KOR-til-la",
+        "Bisa bayar pakai kartu?"
+       ],
+       [
+        "Saanko kuitin?",
+        "SAAN-ko KUI-tin",
+        "Boleh minta struknya?"
+       ]
+      ]
+     },
+     "after": [
+      "*Kilon perunoita* — satuan berbentuk utuh (*kilo → kilon*), isinya berbentuk bagian jamak (*peruna → perunoita*). Susunan yang sama untuk *pullon vettä* (sebotol air), *kupin kahvia* (secangkir kopi), *palan juustoa* (sepotong keju).",
+      "Harga ditulis dengan koma: *2,50 €* dibaca *kaksi viisikymmentä* — angka euronya dulu, angka sennya sesudahnya, tanpa menyebut kata *euro* di tengah."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di toko bahan makanan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Bentuk bagian",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "maito",
+       "maitoa",
+       "susu"
+      ],
+      [
+       "vesi",
+       "vettä",
+       "air"
+      ],
+      [
+       "leipä",
+       "leipää",
+       "roti"
+      ],
+      [
+       "juusto",
+       "juustoa",
+       "keju"
+      ],
+      [
+       "voi",
+       "voita",
+       "mentega"
+      ],
+      [
+       "muna",
+       "munia (jamak)",
+       "telur"
+      ],
+      [
+       "liha",
+       "lihaa",
+       "daging"
+      ],
+      [
+       "kana",
+       "kanaa",
+       "ayam"
+      ],
+      [
+       "kala",
+       "kalaa",
+       "ikan"
+      ],
+      [
+       "riisi",
+       "riisiä",
+       "beras"
+      ],
+      [
+       "peruna",
+       "perunoita (jamak)",
+       "kentang"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kolom kedua sengaja ada karena itulah bentuk yang benar-benar kamu ucapkan di toko. Perhatikan tiga yang berbentuk jamak: telur, kentang, dan stroberi hampir selalu dibeli banyak sekaligus, jadi bentuk tunggalnya jarang terdengar."
+    },
+    {
+     "type": "kotak",
+     "title": "Satuan yang dipakai",
+     "items": [
+      "*kilo* (kg), *puoli kiloa* (setengah kilo), *sata grammaa* (100 gram)",
+      "*litra* (liter), *pullo* (botol), *purkki* (kaleng, toples), *paketti* (bungkus), *pala* (potong)",
+      "Semuanya berbentuk utuh, dan isinya menyusul dalam bentuk bagian: *pullon maitoa*, *paketin kahvia*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Memerintah dengan sopan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bentuk perintah Finlandia mudah sekali dibuat: ambil bentuk *minä*, buang ekor *-n*. *Otan → Ota!*, *Katson → Katso!*, *Muistan → Muista!* Bentuknya sama persis dengan bentuk yang dipakai sesudah kata sangkal, jadi kamu sebenarnya sudah menguasainya sejak unit 7."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk *minä*",
+      "Perintah",
+      "Arti",
+      "Perintah sangkal"
+     ],
+     "rows": [
+      [
+       "otan",
+       "**Ota!**",
+       "Ambil!",
+       "*Älä ota!*"
+      ],
+      [
+       "katson",
+       "**Katso!**",
+       "Lihat!",
+       "*Älä katso!*"
+      ],
+      [
+       "muistan",
+       "**Muista!**",
+       "Ingat!",
+       "*Älä unohda!*"
+      ],
+      [
+       "tulen",
+       "**Tule!**",
+       "Ayo, datang!",
+       "*Älä tule!*"
+      ],
+      [
+       "menen",
+       "**Mene!**",
+       "Pergi!",
+       "*Älä mene!*"
+      ],
+      [
+       "odotan",
+       "**Odota!**",
+       "Tunggu!",
+       "*Älä odota!*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Menyangkal perintah memakai **älä** (kepada satu orang) atau **älkää** (kepada beberapa orang) — bukan *ei*. *Älä unohda!* = jangan lupa. Bentuk ini satu-satunya bagian dari keluarga *ei* yang harus dihafal terpisah."
+    },
+    {
+     "type": "p",
+     "text": "Kepada orang yang belum akrab, perintah telanjang terdengar agak keras. Yang lebih halus: tambahkan *ole hyvä* atau ubah jadi pertanyaan — *Voisitko odottaa hetken?* (bisa tunggu sebentar?). Di toko dan di antara teman, bentuk perintah biasa sepenuhnya wajar."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "ostaa",
+   "baca": "OS-taa",
+   "id": "membeli"
+  },
+  {
+   "fi": "myydä",
+   "baca": "MÜÜ-dè",
+   "id": "menjual"
+  },
+  {
+   "fi": "maksaa",
+   "baca": "MAK-saa",
+   "id": "membayar; berharga"
+  },
+  {
+   "fi": "ruokakauppa",
+   "baca": "RUO-ka-kaup-pa",
+   "id": "toko bahan makanan"
+  },
+  {
+   "fi": "kassa",
+   "baca": "KAS-sa",
+   "id": "kasir"
+  },
+  {
+   "fi": "asiakas",
+   "baca": "A-si-a-kas",
+   "id": "pelanggan"
+  },
+  {
+   "fi": "hinta",
+   "baca": "HIN-ta",
+   "id": "harga"
+  },
+  {
+   "fi": "hintalappu",
+   "baca": "HIN-ta-lap-pu",
+   "id": "label harga"
+  },
+  {
+   "fi": "alennus",
+   "baca": "A-len-nus",
+   "id": "diskon"
+  },
+  {
+   "fi": "kuitti",
+   "baca": "KUIT-ti",
+   "id": "struk"
+  },
+  {
+   "fi": "kilo",
+   "baca": "KI-lo",
+   "id": "kilogram"
+  },
+  {
+   "fi": "pullo",
+   "baca": "PUL-lo",
+   "id": "botol"
+  },
+  {
+   "fi": "paketti",
+   "baca": "PA-ket-ti",
+   "id": "bungkus"
+  },
+  {
+   "fi": "pala",
+   "baca": "PA-la",
+   "id": "potong"
+  },
+  {
+   "fi": "vaaka",
+   "baca": "VAA-ka",
+   "id": "timbangan"
+  },
+  {
+   "fi": "punnita",
+   "baca": "PUN-ni-ta",
+   "id": "menimbang"
+  },
+  {
+   "fi": "itse",
+   "baca": "IT-se",
+   "id": "sendiri"
+  },
+  {
+   "fi": "muuta",
+   "baca": "MUU-ta",
+   "id": "lain, lagi"
+  },
+  {
+   "fi": "vain",
+   "baca": "vain",
+   "id": "hanya"
+  },
+  {
+   "fi": "parempi",
+   "baca": "PA-rem-pi",
+   "id": "lebih baik"
+  },
+  {
+   "fi": "raha",
+   "baca": "RA-ha",
+   "id": "uang"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih bentuk utuh (-n) atau bentuk bagian.",
+   "items": [
+    "Ostan (leipä) ____. (satu roti itu)",
+    "Ostan (leipä) ____. (roti, tak tentu jumlahnya)",
+    "Juon (kahvi) ____. (sedang minum)",
+    "Luen (kirja) ____. (sampai tamat)",
+    "En osta (juusto) ____.",
+    "Otan kaksi (tomaatti) ____."
+   ]
+  },
+  {
+   "prompt": "Ubah ke bentuk bagian.",
+   "items": [
+    "maito",
+    "vesi",
+    "riisi",
+    "liha",
+    "omena",
+    "ihminen"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi bentuk perintah.",
+   "items": [
+    "otan",
+    "katson",
+    "muistan",
+    "tulen",
+    "odotan",
+    "menen"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Ini berapa?",
+    "Totalnya berapa?",
+    "Ada beras tidak?",
+    "Boleh minta sekilo kentang?",
+    "Saya bayar pakai kartu.",
+    "Jangan lupa!"
+   ]
+  }
+ ],
+ "answers": [
+  "leivän — leipää — kahvia — kirjan — juustoa — tomaattia",
+  "maitoa — vettä — riisiä — lihaa — omenaa — ihmistä",
+  "Ota! — Katso! — Muista! — Tule! — Odota! — Mene!",
+  "Paljonko tämä maksaa? — Paljonko se on yhteensä? — Onko teillä riisiä? — Saisinko kilon perunoita? — Maksan kortilla. — Älä unohda!"
+ ]
+}

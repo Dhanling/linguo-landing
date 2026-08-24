@@ -1,0 +1,551 @@
+{
+ "title": "Mencari tempat tinggal",
+ "title_target": "Asunnon etsintä",
+ "goal": "Menggambarkan rumah dan isinya, menyebut lantai berapa dan kamar keberapa, serta menyusun kalimat yang menyatakan sesuatu ada di suatu tempat.",
+ "bekal": [
+  "menyebut angka urutan: *ensimmäinen*, *toinen*, *kolmas*…",
+  "menyusun kalimat keberadaan: *Pöydällä on kirja*",
+  "membaca iklan sewa dan menanyakan hal yang penting sebelum menyewa"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Asuntonäyttö",
+   "intro": "Budi ingin pindah dari asrama. Ia melihat sebuah apartemen kecil bersama pemiliknya, Rouva Nieminen.",
+   "lines": [
+    {
+     "speaker": "Nieminen:",
+     "text": "Tervetuloa! Asunto on kolmannessa kerroksessa.",
+     "id": "Selamat datang! Apartemennya di lantai tiga.",
+     "literal": "selamat-datang! apartemen adalah di-ketiga di-lantai."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kiitos. Onko talossa hissi?",
+     "id": "Terima kasih. Gedungnya ada lift?",
+     "literal": "terima-kasih. adalah-kah di-gedung lift?"
+    },
+    {
+     "speaker": "Nieminen:",
+     "text": "On. Tässä on eteinen, ja tuolla on keittiö.",
+     "id": "Ada. Ini ruang depan, dan di sana dapurnya.",
+     "literal": "adalah. di-ini adalah ruang-depan, dan di-sana adalah dapur."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Keittiössä on jääkaappi ja liesi. Onko astianpesukonetta?",
+     "id": "Di dapur ada kulkas dan kompor. Ada mesin cuci piring?",
+     "literal": "di-dapur adalah kulkas dan kompor. adalah-kah piring-cuci-mesin-bagian?"
+    },
+    {
+     "speaker": "Nieminen:",
+     "text": "Valitettavasti ei ole. Mutta pyykkitupa on kellarissa.",
+     "id": "Sayangnya tidak. Tapi ruang cuci ada di basemen.",
+     "literal": "sayangnya tidak adalah. tetapi cucian-ruang adalah di-basemen."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Selvä. Entä sauna?",
+     "id": "Baik. Kalau sauna?",
+     "literal": "jelas. lalu sauna?"
+    },
+    {
+     "speaker": "Nieminen:",
+     "text": "Taloyhtiön sauna on kellarissa. Vuorot ovat torstaisin.",
+     "id": "Sauna bersama ada di basemen. Gilirannya tiap Kamis.",
+     "literal": "gedung-perkumpulan-punya sauna adalah di-basemen. giliran-jamak adalah-mereka pada-Kamis-jamak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hienoa. Paljonko vuokra on?",
+     "id": "Bagus. Sewanya berapa?",
+     "literal": "bagus. berapa sewa adalah?"
+    },
+    {
+     "speaker": "Nieminen:",
+     "text": "Seitsemänsataa euroa kuussa. Vesi ja lämpö sisältyvät.",
+     "id": "Tujuh ratus euro sebulan. Air dan pemanas termasuk.",
+     "literal": "tujuh-ratus euro-bagian di-bulan. air dan panas termasuk-mereka."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Onko parvekkeella aurinkoa iltapäivällä?",
+     "id": "Balkonnya kena matahari sore tidak?",
+     "literal": "adalah-kah di-balkon matahari-bagian pada-sore?"
+    },
+    {
+     "speaker": "Nieminen:",
+     "text": "On, se on länteen. Se on tämän asunnon paras puoli.",
+     "id": "Iya, menghadap barat. Itu bagian terbaik apartemen ini.",
+     "literal": "adalah, itu adalah ke-barat. itu adalah ini-punya apartemen-punya paling-baik sisi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Otan sen. Milloin voin muuttaa?",
+     "id": "Saya ambil. Kapan saya bisa pindah?",
+     "literal": "mengambil-saya itu-punya. kapan bisa-saya pindah?"
+    }
+   ],
+   "notes": [
+    "**Kolmannessa kerroksessa** — angka urutan ikut memakai ekor, sama seperti kata sifat. *Kolmas* (ketiga) → *kolmanne**ssa***. Perhatikan bahwa batangnya berubah dari *-s* jadi *-nne-*; ini pola untuk semua angka urutan mulai dari tiga.",
+    "**Keittiössä on jääkaappi** — susunan \"di suatu tempat ada sesuatu\". Tempatnya berdiri **di depan**, barangnya di belakang. Ini kebalikan dari kalimat biasa (*jääkaappi on keittiössä*), dan bedanya bukan tata bahasa melainkan apa yang sedang dibicarakan: yang pertama menceritakan isi dapur, yang kedua menceritakan letak kulkas.",
+    "**Onko astianpesukonetta?** — pertanyaan tentang keberadaan memakai bentuk bagian. Sama seperti *onko teillä teetä* di unit 6: yang belum pasti ada, disebut sebagian.",
+    "**Vuorot ovat torstaisin** — ekor **-isin** berarti \"tiap\": *torstaisin* (tiap Kamis), *aamuisin* (tiap pagi), *viikonloppuisin* (tiap akhir pekan). Ekor pendek yang sangat berguna dan jarang diajarkan di awal.",
+    "**Taloyhtiö** — perkumpulan pemilik satu gedung, lembaga yang mengatur hampir semua hunian bertingkat di Finlandia. Ia yang mengurus sauna bersama, ruang cuci, dan jadwalnya. Kata ini akan kamu temui di setiap iklan sewa.",
+    "**Sisältyvät** — \"termasuk\". Perhatikan bahwa air dan pemanas biasanya sudah masuk sewa di Finlandia, sedangkan listrik dan internet biasanya tidak. Tanyakan: *Sisältyykö sähkö vuokraan?*"
+   ],
+   "grammars": [
+    {
+     "title": "Angka urutan",
+     "body": [
+      "Dipakai untuk lantai, tanggal, urutan, dan peringkat. Dua yang pertama tak beraturan; sisanya memakai ekor **-s** yang berubah jadi **-nne-** begitu ekor lain menempel."
+     ],
+     "table": {
+      "head": [
+       "Angka",
+       "Urutan",
+       "Cara baca",
+       "Berekor (-ssa)",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "1",
+        "**ensimmäinen**",
+        "EN-sim-mèi-nen",
+        "ensimmäisessä",
+        "pertama"
+       ],
+       [
+        "2",
+        "**toinen**",
+        "TOI-nen",
+        "toisessa",
+        "kedua"
+       ],
+       [
+        "3",
+        "**kolmas**",
+        "KOL-mas",
+        "kolmannessa",
+        "ketiga"
+       ],
+       [
+        "4",
+        "**neljäs**",
+        "NEL-yès",
+        "neljännessä",
+        "keempat"
+       ],
+       [
+        "5",
+        "**viides**",
+        "VII-des",
+        "viidennessä",
+        "kelima"
+       ],
+       [
+        "6",
+        "**kuudes**",
+        "KUU-des",
+        "kuudennessa",
+        "keenam"
+       ],
+       [
+        "7",
+        "**seitsemäs**",
+        "SEIT-se-mès",
+        "seitsemännessä",
+        "ketujuh"
+       ],
+       [
+        "8",
+        "**kahdeksas**",
+        "KAH-dek-sas",
+        "kahdeksannessa",
+        "kedelapan"
+       ],
+       [
+        "9",
+        "**yhdeksäs**",
+        "ÜH-dek-sès",
+        "yhdeksännessä",
+        "kesembilan"
+       ],
+       [
+        "10",
+        "**kymmenes**",
+        "KÜM-me-nes",
+        "kymmenennessä",
+        "kesepuluh"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *Ensimmäinen* dan *toinen* tidak berhubungan sama sekali dengan *yksi* dan *kaksi*. Keduanya harus dihafal terpisah — sama seperti \"pertama\" yang tidak berhubungan dengan \"satu\" dalam bahasa Indonesia.",
+      "Tanggal memakai angka urutan plus nama bulan berbentuk bagian: *kolmastoista maaliskuuta* (13 Maret), *ensimmäinen tammikuuta* (1 Januari). Bentuk ini sudah kamu lihat sekilas di unit 5.",
+      "Lantai di Finlandia dihitung seperti di Indonesia: lantai dasar adalah *ensimmäinen kerros* (lantai satu). Ini berbeda dari Inggris dan sebagian Eropa yang memulai dari nol."
+     ]
+    },
+    {
+     "title": "Kalimat keberadaan",
+     "body": [
+      "Susunan yang menyatakan \"di suatu tempat ada sesuatu\". Tempatnya di depan, kata kerjanya selalu *on* (tunggal) atau *ovat* (jamak), barangnya di belakang."
+     ],
+     "table": {
+      "head": [
+       "Suomi",
+       "Harfiah",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "*Pöydällä on kirja.*",
+        "di-atas-meja ada buku",
+        "Di atas meja ada buku."
+       ],
+       [
+        "*Keittiössä on jääkaappi.*",
+        "di-dapur ada kulkas",
+        "Di dapur ada kulkas."
+       ],
+       [
+        "*Huoneessa on kaksi ikkunaa.*",
+        "di-kamar ada dua jendela-bagian",
+        "Di kamar ada dua jendela."
+       ],
+       [
+        "*Kaupungissa on paljon ihmisiä.*",
+        "di-kota ada banyak orang-jamak-bagian",
+        "Di kota banyak orang."
+       ],
+       [
+        "*Kellarissa ei ole saunaa.*",
+        "di-basemen tidak ada sauna-bagian",
+        "Di basemen tidak ada sauna."
+       ],
+       [
+        "*Onko täällä wc:tä?*",
+        "adakah di-sini toilet-bagian",
+        "Ada toilet di sini?"
+       ]
+      ]
+     },
+     "after": [
+      "**Kata kerjanya tetap *on* walaupun barangnya banyak**, selama barangnya berbentuk bagian: *Kaupungissa on paljon ihmisiä*. Bentuk *ovat* hanya dipakai kalau barangnya jelas dan terhitung: *Huoneessa ovat ne kirjat*.",
+      "⚠️ **Disangkal, barangnya wajib berbentuk bagian**: *Kellarissa ei ole sauna**a***. Aturan lama dari unit 7, muncul lagi di tempat baru.",
+      "Bedanya dengan kalimat biasa: *Kirja on pöydällä* menjawab \"buku itu di mana?\", sedangkan *Pöydällä on kirja* menjawab \"di atas meja ada apa?\". Yang di depan adalah yang sudah diketahui; yang di belakang adalah kabar barunya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Rumah dan isinya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "asunto",
+       "A-sun-to",
+       "apartemen, hunian"
+      ],
+      [
+       "talo",
+       "TA-lo",
+       "rumah, gedung"
+      ],
+      [
+       "kerros",
+       "KER-ros",
+       "lantai (tingkat)"
+      ],
+      [
+       "huone",
+       "HUO-ne",
+       "kamar"
+      ],
+      [
+       "olohuone",
+       "O-lo-huo-ne",
+       "ruang tamu"
+      ],
+      [
+       "makuuhuone",
+       "MA-kuu-huo-ne",
+       "kamar tidur"
+      ],
+      [
+       "keittiö",
+       "KEIT-ti-ö",
+       "dapur"
+      ],
+      [
+       "kylpyhuone",
+       "KÜL-pü-huo-ne",
+       "kamar mandi"
+      ],
+      [
+       "vessa / wc",
+       "VES-sa",
+       "toilet"
+      ],
+      [
+       "eteinen",
+       "E-tei-nen",
+       "ruang depan"
+      ],
+      [
+       "parveke",
+       "PAR-ve-ke",
+       "balkon"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Yksiö* adalah apartemen satu ruangan (studio), *kaksio* dua ruangan, *kolmio* tiga. Angkanya menghitung ruangan tinggal — dapur dan kamar mandi tidak dihitung. Ini penting saat membaca iklan: *kaksio* bukan berarti dua kamar tidur."
+    }
+   ]
+  },
+  {
+   "title": "Membaca iklan sewa",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Singkatan",
+      "Kepanjangan",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*1h + kk*",
+       "yksi huone + keittokomero",
+       "satu ruangan + dapur kecil"
+      ],
+      [
+       "*2h + k + kph*",
+       "kaksi huonetta + keittiö + kylpyhuone",
+       "dua ruangan + dapur + kamar mandi"
+      ],
+      [
+       "*m²*",
+       "neliömetriä",
+       "meter persegi"
+      ],
+      [
+       "*vuokra*",
+       "—",
+       "sewa per bulan"
+      ],
+      [
+       "*takuuvuokra*",
+       "—",
+       "uang jaminan (biasanya 1–2 bulan)"
+      ],
+      [
+       "*vapautuu*",
+       "—",
+       "kosong mulai (tanggal)"
+      ],
+      [
+       "*sis.*",
+       "sisältyy",
+       "sudah termasuk"
+      ],
+      [
+       "*sähkö*",
+       "—",
+       "listrik (biasanya TIDAK termasuk)"
+      ],
+      [
+       "*taloyhtiön sauna*",
+       "—",
+       "sauna bersama gedung"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Enam pertanyaan sebelum menandatangani",
+     "items": [
+      "*Paljonko vuokra on?* — Sewanya berapa?",
+      "*Sisältyykö sähkö ja nettiyhteys?* — Listrik dan internet termasuk?",
+      "*Kuinka suuri takuuvuokra on?* — Uang jaminannya berapa?",
+      "*Onko sopimus määräaikainen vai toistaiseksi voimassa?* — Kontraknya berjangka atau tak terbatas?",
+      "*Milloin asunto vapautuu?* — Kapan bisa ditempati?",
+      "*Saako täällä pitää lemmikkiä?* — Boleh pelihara hewan?"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Pasar sewa di Helsinki sangat ketat dan bergerak cepat. Iklan yang bagus sering habis dalam hitungan jam, jadi surat perkenalan singkat dalam bahasa Finlandia — walaupun sederhana — benar-benar membedakan. Satu paragraf sudah cukup: siapa kamu, apa pekerjaanmu, dan kapan kamu bisa pindah."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "asunto",
+   "baca": "A-sun-to",
+   "id": "tempat tinggal"
+  },
+  {
+   "fi": "vuokra",
+   "baca": "VUOK-ra",
+   "id": "sewa"
+  },
+  {
+   "fi": "kerros",
+   "baca": "KER-ros",
+   "id": "lantai (tingkat)"
+  },
+  {
+   "fi": "hissi",
+   "baca": "HIS-si",
+   "id": "lift"
+  },
+  {
+   "fi": "keittiö",
+   "baca": "KEIT-ti-ö",
+   "id": "dapur"
+  },
+  {
+   "fi": "olohuone",
+   "baca": "O-lo-huo-ne",
+   "id": "ruang tamu"
+  },
+  {
+   "fi": "parveke",
+   "baca": "PAR-ve-ke",
+   "id": "balkon"
+  },
+  {
+   "fi": "kellari",
+   "baca": "KEL-la-ri",
+   "id": "basemen"
+  },
+  {
+   "fi": "liesi",
+   "baca": "LIE-si",
+   "id": "kompor"
+  },
+  {
+   "fi": "pesukone",
+   "baca": "PE-su-ko-ne",
+   "id": "mesin cuci"
+  },
+  {
+   "fi": "sähkö",
+   "baca": "SÈH-kö",
+   "id": "listrik"
+  },
+  {
+   "fi": "lämpö",
+   "baca": "LÈM-pö",
+   "id": "pemanas, panas"
+  },
+  {
+   "fi": "sisältyä",
+   "baca": "SI-sèl-tü-è",
+   "id": "termasuk"
+  },
+  {
+   "fi": "muuttaa",
+   "baca": "MUUT-taa",
+   "id": "pindah; mengubah"
+  },
+  {
+   "fi": "sopimus",
+   "baca": "SO-pi-mus",
+   "id": "kontrak"
+  },
+  {
+   "fi": "lemmikki",
+   "baca": "LEM-mik-ki",
+   "id": "hewan peliharaan"
+  },
+  {
+   "fi": "ensimmäinen",
+   "baca": "EN-sim-mèi-nen",
+   "id": "pertama"
+  },
+  {
+   "fi": "toinen",
+   "baca": "TOI-nen",
+   "id": "kedua"
+  },
+  {
+   "fi": "kolmas",
+   "baca": "KOL-mas",
+   "id": "ketiga"
+  },
+  {
+   "fi": "pohjoinen",
+   "baca": "POH-yoi-nen",
+   "id": "utara"
+  },
+  {
+   "fi": "etelä",
+   "baca": "E-te-lè",
+   "id": "selatan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angka urutannya.",
+   "items": [
+    "1",
+    "2",
+    "3",
+    "5",
+    "7",
+    "10"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat keberadaan (tempat di depan).",
+   "items": [
+    "kirja / pöytä",
+    "jääkaappi / keittiö",
+    "sauna / kellari",
+    "kaksi ikkunaa / huone",
+    "paljon ihmisiä / kaupunki"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Apartemennya di lantai tiga.",
+    "Gedungnya ada lift?",
+    "Sewanya berapa?",
+    "Air dan pemanas termasuk.",
+    "Di basemen tidak ada sauna.",
+    "Kapan saya bisa pindah?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan ekor -ssa/-ssä yang tepat pada angka urutannya.",
+   "items": [
+    "Asun (kolmas) ____ kerroksessa.",
+    "Hän asuu (ensimmäinen) ____ kerroksessa.",
+    "Olemme (toinen) ____ huoneessa.",
+    "Kauppa on (neljäs) ____ kerroksessa.",
+    "Vessa on (viides) ____ kerroksessa."
+   ]
+  }
+ ],
+ "answers": [
+  "ensimmäinen — toinen — kolmas — viides — seitsemäs — kymmenes",
+  "Pöydällä on kirja. — Keittiössä on jääkaappi. — Kellarissa on sauna. — Huoneessa on kaksi ikkunaa. — Kaupungissa on paljon ihmisiä.",
+  "Asunto on kolmannessa kerroksessa. — Onko talossa hissi? — Paljonko vuokra on? — Vesi ja lämpö sisältyvät. — Kellarissa ei ole saunaa. — Milloin voin muuttaa?",
+  "kolmannessa — ensimmäisessä — toisessa — neljännessä — viidennessä"
+ ]
+}

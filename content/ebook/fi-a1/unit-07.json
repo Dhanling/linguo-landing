@@ -1,0 +1,538 @@
+{
+ "title": "Menyangkal",
+ "title_target": "En ymmärrä!",
+ "goal": "Menyangkal apa pun dengan benar — dan menerima kenyataan paling aneh dalam bahasa Finlandia: kata \"tidak\" adalah kata kerja, dan ia ikut berubah menurut pelakunya.",
+ "bekal": [
+  "menyusun enam bentuk kata sangkal *ei* dan memasangkannya dengan batang kata kerja",
+  "menyangkal *olla* dan *minulla on* dengan bentuk bagian yang wajib menyertainya",
+  "menolak, meminta maaf, dan mengaku tidak mengerti tanpa terdengar kasar"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Väärinkäsitys",
+   "intro": "Di koridor kampus. Marek mengira Budi ikut acara akhir pekan; ternyata tidak.",
+   "lines": [
+    {
+     "speaker": "Marek:",
+     "text": "Hei Budi! Tuletko sinä mökille lauantaina?",
+     "id": "Hei Budi! Kamu ikut ke pondok hari Sabtu?",
+     "literal": "hei Budi! datang-kah kamu ke-pondok pada-Sabtu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Anteeksi, en ymmärrä. Voitko toistaa?",
+     "id": "Maaf, saya tidak mengerti. Bisa diulang?",
+     "literal": "maaf, tidak-saya mengerti. bisa-kah-kamu mengulang?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Lauantaina. Mökille. Järven rannalla.",
+     "id": "Hari Sabtu. Ke pondok. Di tepi danau.",
+     "literal": "pada-Sabtu. ke-pondok. danau-punya di-tepi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ai, nyt ymmärrän! Mutta en voi tulla. Minulla ei ole aikaa.",
+     "id": "Oh, sekarang saya mengerti! Tapi saya tidak bisa datang. Saya tidak punya waktu.",
+     "literal": "ah, sekarang mengerti-saya! tetapi tidak-saya bisa datang. kepadaku tidak adalah waktu-bagian."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Etkö? Miksi et?",
+     "id": "Tidak bisa? Kenapa tidak?",
+     "literal": "tidak-kah-kamu? mengapa tidak-kamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Minä teen töitä lauantaina. Enkä minä osaa uida.",
+     "id": "Saya kerja hari Sabtu. Dan lagi saya tidak bisa berenang.",
+     "literal": "saya membuat kerja-jamak-bagian pada-Sabtu. dan-tidak-saya bisa berenang."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Se ei ole ongelma! Me emme ui, me saunomme.",
+     "id": "Itu bukan masalah! Kami tidak berenang, kami mandi sauna.",
+     "literal": "itu tidak adalah masalah! kami tidak-kami berenang, kami ber-sauna."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Saunotteko te talvella? Eikö se ole kylmää?",
+     "id": "Kalian sauna di musim dingin? Tidak dingin?",
+     "literal": "ber-sauna-kah kalian pada-musim-dingin? tidak-kah itu adalah dingin-bagian?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Sauna ei ole kylmä. Järvi on kylmä!",
+     "id": "Saunanya tidak dingin. Danaunya yang dingin!",
+     "literal": "sauna tidak adalah dingin. danau adalah dingin!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Voi ei. Te ette ole normaaleja.",
+     "id": "Aduh. Kalian tidak normal.",
+     "literal": "aduh tidak. kalian tidak-kalian adalah normal-jamak-bagian."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Suomalaiset eivät ole normaaleja. Se on totta!",
+     "id": "Orang Finlandia memang tidak normal. Itu betul!",
+     "literal": "orang-Finlandia-jamak tidak-mereka adalah normal-jamak-bagian. itu adalah benar."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ehkä ensi kerralla. Mutta en lupaa mitään!",
+     "id": "Mungkin lain kali. Tapi saya tidak janji apa-apa!",
+     "literal": "mungkin berikut pada-kali. tetapi tidak-saya janji apa-pun-bagian!"
+    }
+   ],
+   "notes": [
+    "**Ei adalah kata kerja, dan ia yang membawa pelakunya.** Ini bagian tersulit unit ini. Dalam *en ymmärrä*, yang menyebut \"saya\" bukan *ymmärrä* melainkan *en*. Kata kerja utamanya jadi telanjang — tanpa ekor pelaku sama sekali. Bahasa Indonesia menaruh \"tidak\" sebagai kata mati yang tak pernah berubah; bahasa Finlandia menaruhnya sebagai kata kerja penuh.",
+    "**Kata kerja utamanya jadi bentuk polos.** *Ymmärrän → en ymmärrä*, *voin → en voi*, *tulen → en tule*, *olen → en ole*. Yang tersisa adalah batang tanpa ekor apa pun. Karena itu penyangkalan sebenarnya **lebih mudah** dibanding kalimat biasa — sekali kamu hafal enam bentuk *ei*, sisanya cuma memotong ekor.",
+    "**Etkö? — pertanyaan pun bisa disangkal.** Ekor tanya *-kö* menempel di kata sangkalnya: *etkö* (tidak-kah kamu), *eikö* (tidak-kah dia/itu), *emmekö* (tidak-kah kami). Menjawabnya: *En.* / *Kyllä.* Perhatikan bahwa *kyllä* di sini berarti \"justru iya\" — membalikkan sangkalan, seperti *doch* Jerman.",
+    "**Enkä** = *en* + *-kä* (\"dan tidak\"). Kalau kalimat sangkal disambung dengan kalimat sangkal lain, *ja* diganti ekor *-kä*: *enkä minä osaa uida* (dan saya juga tidak bisa berenang). Bentuknya: *enkä, etkä, eikä, emmekä, ettekä, eivätkä*.",
+    "**Minulla ei ole aikaa** — barangnya wajib jadi bentuk bagian.** Kalimat positifnya *minulla on aika*; begitu disangkal, *aika* jadi *aikaa*. Ini bukan pilihan: penyangkalan **selalu** menuntut bentuk bagian pada barang yang disangkal. *En juo kahvi**a***, *en syö liha**a***, *minulla ei ole auto**a***.",
+    "**Se ei ole ongelma, tapi Te ette ole normaaleja.** Kenapa yang satu tidak berbentuk bagian? Karena *ongelma* di sini menyebut **jenis**, bukan jumlah — dan kata sifat yang menerangkan pelaku jamak memang selalu berbentuk bagian jamak (*normaaleja*). Perbedaannya halus; untuk A1 cukup ingat pola *ei ole + kata benda* seperti yang muncul di dialog."
+   ],
+   "grammars": [
+    {
+     "title": "Ei — kata sangkal yang ikut berubah",
+     "body": [
+      "Enam bentuk yang harus benar-benar hafal, karena mereka muncul di setiap kalimat sangkal yang akan kamu ucapkan seumur hidup berbahasa Finlandia."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Sangkal",
+       "*puhua*",
+       "*olla*",
+       "*tietää*"
+      ],
+      "rows": [
+       [
+        "minä",
+        "**en**",
+        "en puhu",
+        "en ole",
+        "en tiedä"
+       ],
+       [
+        "sinä",
+        "**et**",
+        "et puhu",
+        "et ole",
+        "et tiedä"
+       ],
+       [
+        "hän",
+        "**ei**",
+        "ei puhu",
+        "ei ole",
+        "ei tiedä"
+       ],
+       [
+        "me",
+        "**emme**",
+        "emme puhu",
+        "emme ole",
+        "emme tiedä"
+       ],
+       [
+        "te",
+        "**ette**",
+        "ette puhu",
+        "ette ole",
+        "ette tiedä"
+       ],
+       [
+        "he",
+        "**eivät**",
+        "eivät puhu",
+        "eivät ole",
+        "eivät tiedä"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa kolom kata kerjanya **tidak berubah sama sekali** dari atas ke bawah. Seluruh pekerjaan menyebut pelaku diambil alih oleh kata sangkalnya. Ini penghematan besar yang jarang disadari pemula.",
+      "**Bentuk polosnya sama dengan bentuk perintah.** *Puhu!* (bicaralah!) dan *en puhu* memakai bentuk yang sama persis. Jadi kalau kamu tahu cara memerintah, kamu tahu cara menyangkal — dan sebaliknya.",
+      "⚠️ Bentuk polosnya memakai **derajat lemah**: *lukea → luen → en lue*, *ottaa → otan → en ota*, *mennä → menen → en mene*. Pegangan praktisnya: ambil bentuk *minä*, buang ekor *-n*. Itu hampir selalu benar."
+     ]
+    },
+    {
+     "title": "Sangkalan menuntut bentuk bagian",
+     "body": [
+      "Aturan kedua unit ini, dan ia berlaku tanpa kecuali: **apa pun yang disangkal berubah jadi bentuk bagian.** Kalimat positif dan sangkalnya karena itu tidak pernah kelihatan seperti pasangan yang rapi."
+     ],
+     "table": {
+      "head": [
+       "Positif",
+       "Sangkal",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Minulla on auto.*",
+        "*Minulla ei ole auto**a**.*",
+        "Saya (tidak) punya mobil."
+       ],
+       [
+        "*Minulla on aika.*",
+        "*Minulla ei ole aika**a**.*",
+        "Saya (tidak) punya waktu."
+       ],
+       [
+        "*Juon kahvin.*",
+        "*En juo kahvi**a**.*",
+        "Saya (tidak) minum kopi."
+       ],
+       [
+        "*Syön leivän.*",
+        "*En syö leipä**ä**.*",
+        "Saya (tidak) makan roti."
+       ],
+       [
+        "*Ostan kirjan.*",
+        "*En osta kirja**a**.*",
+        "Saya (tidak) beli buku."
+       ],
+       [
+        "*Meillä on lapsia.*",
+        "*Meillä ei ole lapsi**a**.*",
+        "Kami (tidak) punya anak."
+       ],
+       [
+        "*Ymmärrän suomea.*",
+        "*En ymmärrä suome**a**.*",
+        "Saya (tidak) mengerti bahasa Finlandia."
+       ]
+      ]
+     },
+     "after": [
+      "Baris terakhir memperlihatkan sesuatu yang menghibur: kalau kalimat positifnya **sudah** berbentuk bagian (seperti nama bahasa), sangkalnya tidak berubah apa-apa. Ini terjadi lebih sering daripada dugaanmu.",
+      "⚠️ Yang **tidak** berubah adalah pelakunya. *Minä en ole opiskelija* — *minä* tetap *minä*. Yang berbentuk bagian hanya obyek atau barang yang dimiliki.",
+      "Kalau kamu lupa mengubahnya, kalimatmu tetap dimengerti — tapi ia terdengar persis seperti orang asing yang baru belajar, dan ini termasuk kesalahan yang paling cepat diketahui telinga Finlandia. Latih pasangannya berbarengan: setiap kali menghafal kalimat baru, hafalkan juga sangkalnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menolak dan mengaku tidak tahu",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Menolak dalam bahasa Finlandia tidak menuntut basa-basi panjang seperti dalam bahasa Indonesia. Jawaban langsung dianggap jujur dan sopan, bukan kasar — tapi menambahkan satu alasan pendek tetap membuatnya lebih hangat."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "En ymmärrä.",
+       "en ÜM-mèr-rè",
+       "Saya tidak mengerti."
+      ],
+      [
+       "En tiedä.",
+       "en TIE-dè",
+       "Saya tidak tahu."
+      ],
+      [
+       "En osaa.",
+       "en O-saa",
+       "Saya tidak bisa (belum menguasai)."
+      ],
+      [
+       "En voi.",
+       "en voi",
+       "Saya tidak bisa (berhalangan)."
+      ],
+      [
+       "En puhu suomea hyvin.",
+       "en PU-hu SUO-me-a HÜ-vin",
+       "Bahasa Finlandia saya belum baik."
+      ],
+      [
+       "Valitettavasti en.",
+       "VA-li-tet-ta-vas-ti en",
+       "Sayangnya tidak."
+      ],
+      [
+       "Ei kiitos.",
+       "ei KII-tos",
+       "Tidak, terima kasih."
+      ],
+      [
+       "Ei käy.",
+       "ei kèü",
+       "Tidak bisa; tidak cocok."
+      ],
+      [
+       "Ehkä ensi kerralla.",
+       "EH-kè EN-si KER-ral-la",
+       "Mungkin lain kali."
+      ],
+      [
+       "En lupaa mitään.",
+       "en LU-paa MI-tèèn",
+       "Saya tidak janji apa-apa."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Osata atau voida?",
+     "items": [
+      "**Osata** = punya kemampuannya. *En osaa uida* — saya tidak bisa berenang (memang belum pernah belajar).",
+      "**Voida** = ada kesempatannya. *En voi tulla* — saya tidak bisa datang (ada halangan).",
+      "**Saada** = punya izinnya. *En saa tulla* — saya tidak boleh datang.",
+      "Bahasa Indonesia memakai satu kata \"bisa\" untuk ketiganya, jadi pembedaan ini benar-benar baru. Salah pilih di sini mengubah arti kalimatmu, bukan sekadar nadanya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata sangkal yang lain",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Bahasa Indonesia",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "ei mitään",
+       "ei MI-tèèn",
+       "tidak apa-apa",
+       "*En sano mitään.*"
+      ],
+      [
+       "ei kukaan",
+       "ei KU-kaan",
+       "tidak seorang pun",
+       "*Kukaan ei tiedä.*"
+      ],
+      [
+       "ei koskaan",
+       "ei KOS-kaan",
+       "tidak pernah",
+       "*En koskaan juo olutta.*"
+      ],
+      [
+       "ei missään",
+       "ei MIS-sèèn",
+       "di mana pun tidak",
+       "*Se ei ole missään.*"
+      ],
+      [
+       "ei vielä",
+       "ei VIE-lè",
+       "belum",
+       "*En ole vielä valmis.*"
+      ],
+      [
+       "ei enää",
+       "ei E-nèè",
+       "tidak lagi",
+       "*En asu enää Espoossa.*"
+      ],
+      [
+       "ei ollenkaan",
+       "ei OL-len-kaan",
+       "sama sekali tidak",
+       "*En ymmärrä ollenkaan.*"
+      ],
+      [
+       "ei myöskään",
+       "ei MÜÖS-kèèn",
+       "juga tidak",
+       "*Hän ei myöskään tule.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Sangkalannya tetap wajib ada.** *Kukaan ei tiedä* memakai *ei* walaupun *kukaan* sendiri sudah berarti \"tak seorang pun\". Bahasa Finlandia memang menyangkal dua kali, persis seperti bahasa Indonesia dalam \"tidak seorang pun tahu\" — dan berbeda dari bahasa Inggris yang melarangnya."
+    },
+    {
+     "type": "p",
+     "text": "*Ei enää* dan *ei vielä* berpasangan dan sering tertukar. Pegangannya: *vielä* melihat ke depan (belum, tapi mungkin nanti), *enää* melihat ke belakang (dulu iya, sekarang tidak lagi)."
+    },
+    {
+     "type": "kotak",
+     "title": "Satu kalimat yang paling sering kamu butuhkan",
+     "items": [
+      "*Anteeksi, en ymmärrä. Voitko puhua hitaammin?* — \"Maaf, saya tidak mengerti. Bisa bicara lebih pelan?\"",
+      "Tidak ada yang tersinggung mendengarnya, dan ia jauh lebih baik daripada mengangguk-angguk pura-pura mengerti — kebiasaan yang, sayangnya, sangat kuat pada penutur Indonesia dan justru memperlambat belajar."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "ei",
+   "baca": "ei",
+   "id": "tidak"
+  },
+  {
+   "fi": "mökki",
+   "baca": "MÖK-ki",
+   "id": "pondok kayu"
+  },
+  {
+   "fi": "järvi",
+   "baca": "YÈR-vi",
+   "id": "danau"
+  },
+  {
+   "fi": "sauna",
+   "baca": "SAU-na",
+   "id": "sauna"
+  },
+  {
+   "fi": "saunoa",
+   "baca": "SAU-no-a",
+   "id": "mandi sauna"
+  },
+  {
+   "fi": "uida",
+   "baca": "UI-da",
+   "id": "berenang"
+  },
+  {
+   "fi": "lauantai",
+   "baca": "LAU-an-tai",
+   "id": "Sabtu"
+  },
+  {
+   "fi": "talvi",
+   "baca": "TAL-vi",
+   "id": "musim dingin"
+  },
+  {
+   "fi": "kylmä",
+   "baca": "KÜL-mè",
+   "id": "dingin"
+  },
+  {
+   "fi": "lämmin",
+   "baca": "LÈM-min",
+   "id": "hangat"
+  },
+  {
+   "fi": "ongelma",
+   "baca": "ON-gel-ma",
+   "id": "masalah"
+  },
+  {
+   "fi": "osata",
+   "baca": "O-sa-ta",
+   "id": "bisa (menguasai)"
+  },
+  {
+   "fi": "voida",
+   "baca": "VOI-da",
+   "id": "bisa (berkesempatan)"
+  },
+  {
+   "fi": "tulla",
+   "baca": "TUL-la",
+   "id": "datang"
+  },
+  {
+   "fi": "mennä",
+   "baca": "MEN-nè",
+   "id": "pergi"
+  },
+  {
+   "fi": "tehdä",
+   "baca": "TEH-dè",
+   "id": "membuat, melakukan"
+  },
+  {
+   "fi": "luvata",
+   "baca": "LU-va-ta",
+   "id": "berjanji"
+  },
+  {
+   "fi": "sanoa",
+   "baca": "SA-no-a",
+   "id": "berkata"
+  },
+  {
+   "fi": "ostaa",
+   "baca": "OS-taa",
+   "id": "membeli"
+  },
+  {
+   "fi": "normaali",
+   "baca": "NOR-maa-li",
+   "id": "normal"
+  },
+  {
+   "fi": "totta",
+   "baca": "TOT-ta",
+   "id": "benar, sungguh"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah jadi kalimat sangkal.",
+   "items": [
+    "Minä ymmärrän suomea.",
+    "Sinä tulet lauantaina.",
+    "Hän on opiskelija.",
+    "Me olemme Helsingissä.",
+    "Te puhutte englantia.",
+    "He tietävät sen."
+   ]
+  },
+  {
+   "prompt": "Ubah jadi sangkal. Ingat bentuk bagiannya.",
+   "items": [
+    "Minulla on auto.",
+    "Minulla on aikaa.",
+    "Juon kahvin.",
+    "Syön leivän.",
+    "Meillä on lapsia.",
+    "Ostan kirjan."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Saya tidak mengerti.",
+    "Saya tidak punya waktu.",
+    "Saya tidak bisa berenang.",
+    "Itu bukan masalah.",
+    "Kenapa tidak?",
+    "Saya tidak janji apa-apa."
+   ]
+  },
+  {
+   "prompt": "Pilih *osata*, *voida*, atau *saada* dalam bentuk sangkal.",
+   "items": [
+    "____ uida. (belum pernah belajar berenang)",
+    "____ tulla lauantaina. (ada halangan)",
+    "____ puhua tunnilla. (tidak diizinkan)",
+    "Hän ____ soittaa pianoa. (tidak menguasai)",
+    "Me ____ auttaa tänään. (berhalangan)"
+   ]
+  }
+ ],
+ "answers": [
+  "Minä en ymmärrä suomea. — Sinä et tule lauantaina. — Hän ei ole opiskelija. — Me emme ole Helsingissä. — Te ette puhu englantia. — He eivät tiedä sitä.",
+  "Minulla ei ole autoa. — Minulla ei ole aikaa. — En juo kahvia. — En syö leipää. — Meillä ei ole lapsia. — En osta kirjaa.",
+  "En ymmärrä. — Minulla ei ole aikaa. — En osaa uida. — Se ei ole ongelma. — Miksi et? — En lupaa mitään.",
+  "En osaa — En voi — En saa — ei osaa — emme voi"
+ ]
+}

@@ -1,0 +1,588 @@
+{
+ "title": "Di kafe",
+ "title_target": "Kahvilassa",
+ "goal": "Memesan makanan dan minuman dengan sopan, sekaligus menghadapi langsung pola yang paling banyak menjegal pemula: huruf mati yang meluruh saat kata berubah bentuk.",
+ "bekal": [
+  "memesan dengan *saisinko*, *otan*, dan *haluaisin* — tiga tingkat kesopanan",
+  "mengenali peluruhan **k, p, t** dan menerapkannya sendiri pada kata baru",
+  "menyebut tiga puluh makanan dan minuman yang benar-benar ada di kafe Finlandia"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Kahvilassa Kampissa",
+   "intro": "Sepulang kelas, Budi dan Aino mampir ke kafe di pusat perbelanjaan Kamppi, Helsinki.",
+   "lines": [
+    {
+     "speaker": "Aino:",
+     "text": "Tässä kahvilassa on hyvät pullat. Mitä sinä otat?",
+     "id": "Roti manis di kafe ini enak. Kamu mau ambil apa?",
+     "literal": "di-ini di-kafe adalah baik-jamak roti-jamak. apa kamu ambil?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "En tiedä vielä. Mikä tuo on?",
+     "id": "Belum tahu. Itu apa?",
+     "literal": "tidak-saya tahu masih. apa itu-sana adalah?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Se on korvapuusti. Se on kanelipulla.",
+     "id": "Itu korvapuusti. Roti kayu manis.",
+     "literal": "itu adalah korvapuusti. itu adalah kayu-manis-roti."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hyvä. Otan sen ja kahvin.",
+     "id": "Bagus. Saya ambil itu dan kopi.",
+     "literal": "ambil-saya itu-punya dan kopi-punya."
+    },
+    {
+     "speaker": "Myyjä:",
+     "text": "Hei! Mitä saisi olla?",
+     "id": "Halo! Mau pesan apa?",
+     "literal": "halo! apa boleh adalah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Saisinko yhden korvapuustin ja yhden kahvin?",
+     "id": "Boleh saya minta satu korvapuusti dan satu kopi?",
+     "literal": "boleh-kah-saya-dapat satu-punya korvapuusti-punya dan satu-punya kopi-punya?"
+    },
+    {
+     "speaker": "Myyjä:",
+     "text": "Toki. Maidon kanssa vai ilman?",
+     "id": "Tentu. Pakai susu atau tanpa?",
+     "literal": "tentu. susu-punya bersama atau tanpa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Maidon kanssa, kiitos. Onko teillä teetä?",
+     "id": "Pakai susu, terima kasih. Ada teh?",
+     "literal": "susu-punya bersama, terima-kasih. adalah-kah kepada-kalian teh-bagian?"
+    },
+    {
+     "speaker": "Myyjä:",
+     "text": "On. Vihreää teetä ja mustaa teetä.",
+     "id": "Ada. Teh hijau dan teh hitam.",
+     "literal": "adalah. hijau-bagian teh-bagian dan hitam-bagian teh-bagian."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Minä otan vihreän teen ja yhden voileivän.",
+     "id": "Saya ambil teh hijau dan satu roti lapis.",
+     "literal": "saya ambil hijau-punya teh-punya dan satu-punya roti-lapis-punya."
+    },
+    {
+     "speaker": "Myyjä:",
+     "text": "Kaksitoista euroa yhteensä. Tässä tai mukaan?",
+     "id": "Semuanya dua belas euro. Di sini atau dibawa pulang?",
+     "literal": "dua-belas euro-bagian bersama. di-ini atau ikut?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tässä, kiitos. Onko täällä vapaa pöytä?",
+     "id": "Di sini, terima kasih. Ada meja kosong?",
+     "literal": "di-ini, terima-kasih. adalah-kah di-sini bebas meja?"
+    },
+    {
+     "speaker": "Myyjä:",
+     "text": "On, ikkunan vieressä. Ole hyvä!",
+     "id": "Ada, di samping jendela. Silakan!",
+     "literal": "adalah, jendela-punya di-samping. jadilah baik!"
+    }
+   ],
+   "notes": [
+    "**Kahvila → kahvilassa, tapi kauppa → kaupassa.** Bandingkan dua kata di unit ini: yang satu tidak berubah, yang satu kehilangan satu *p*. Bedanya sederhana — *kahvila* tidak punya *k*, *p*, atau *t* di suku kata terakhir, jadi tak ada yang bisa meluruh. Aturan lengkapnya di kotak berikutnya.",
+    "**Saisinko** harfiahnya \"boleh-kah saya akan mendapat\" — bentuk pengandaian dari *saada* (mendapat) ditambah ekor tanya. Ia cara memesan yang paling sopan dan paling sering dipakai di seluruh Finlandia. Tidak perlu memahami bentuknya sekarang; hafalkan utuh dan pakai setiap hari.",
+    "**Barang yang dipesan berbentuk kepunyaan.** *Otan kahvi**n***, *saisinko yhde**n** korvapuusti**n***. Ekor *-n* di sini bukan menyatakan milik, melainkan menandai bahwa barangnya **habis diambil seluruhnya** — satu kopi utuh, bukan sebagian. Bandingkan *otan kahvi**a*** (saya ambil sebagian kopi = kopi tanpa jumlah pasti). Aturan ini digarap penuh di unit 11.",
+    "**Teetä, vihreää teetä.** Sesudah *onko teillä*, barangnya berbentuk bagian karena jumlahnya tak dipastikan. Perhatikan bahwa **kata sifatnya ikut**: *vihreä** teetä* jadi *vihreä**ä** teetä*. Sekali lagi, kata sifat selalu meniru bentuk kata bendanya.",
+    "**Ikkunan vieressä** — \"di samping jendela\". Kata seperti *vieressä* (di samping), *edessä* (di depan), *takana* (di belakang) selalu **sesudah** kata bendanya, dan kata bendanya berbentuk kepunyaan. Bahasa Indonesia menaruhnya di depan; ini terbalik.",
+    "**Mitä saisi olla?** harfiahnya \"apa boleh adalah\" — kalimat baku petugas kafe dan toko. Sepupunya: *Kuinka voin auttaa?* (bagaimana saya bisa menolong)."
+   ],
+   "grammars": [
+    {
+     "title": "Peluruhan huruf mati — astevaihtelu",
+     "body": [
+      "Inilah pola yang paling sering membuat pemula merasa kata Finlandia \"berubah-ubah semaunya\". Ia sebenarnya sangat teratur, dan aturannya satu kalimat: **kalau suku kata terakhir menjadi tertutup karena ekor menempel, huruf k/p/t di depannya melemah.**"
+     ],
+     "table": {
+      "head": [
+       "Kuat",
+       "Lemah",
+       "Contoh dasar",
+       "Berekor",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "**kk**",
+        "**k**",
+        "*kauppa*",
+        "*kaupa**ssa***",
+        "di toko"
+       ],
+       [
+        "**pp**",
+        "**p**",
+        "*kaappi*",
+        "*kaapi**ssa***",
+        "di lemari"
+       ],
+       [
+        "**tt**",
+        "**t**",
+        "*matto*",
+        "*mato**lla***",
+        "di atas karpet"
+       ],
+       [
+        "**k**",
+        "— hilang",
+        "*jalka*",
+        "*jala**ssa***",
+        "di kaki"
+       ],
+       [
+        "**p**",
+        "**v**",
+        "*leipä*",
+        "*leivä**n***",
+        "roti (kepunyaan)"
+       ],
+       [
+        "**t**",
+        "**d**",
+        "*katu*",
+        "*kadu**lla***",
+        "di jalan"
+       ],
+       [
+        "**nt**",
+        "**nn**",
+        "*ranta*",
+        "*ranna**lla***",
+        "di pantai"
+       ],
+       [
+        "**mp**",
+        "**mm**",
+        "*lampi*",
+        "*lamme**ssa***",
+        "di kolam"
+       ],
+       [
+        "**nk**",
+        "**ng**",
+        "*Helsinki*",
+        "*Helsingi**ssä***",
+        "di Helsinki"
+       ],
+       [
+        "**lt**",
+        "**ll**",
+        "*ilta*",
+        "*illa**lla***",
+        "pada malam hari"
+       ],
+       [
+        "**rt**",
+        "**rr**",
+        "*parta*",
+        "*parra**n***",
+        "janggut (kepunyaan)"
+       ]
+      ]
+     },
+     "after": [
+      "**Yang tidak punya k/p/t tidak berubah apa-apa.** *Kahvila → kahvilassa*, *talo → talossa*, *Espoo → Espoossa*. Sebagian besar kata justru masuk golongan ini, jadi jangan membayangkan seluruh bahasa Finlandia berubah-ubah.",
+      "⚠️ Yang berubah hanya k/p/t di **suku kata terakhir**, bukan di mana-mana. *Kahvi → kahvin* tidak kehilangan apa pun karena *v* bukan k/p/t; *tietokone → tietokoneen* juga aman.",
+      "Arahnya bisa terbalik untuk sebagian kata: yang dasarnya lemah menjadi kuat saat ekornya datang — *hake**a** → ha**k**een*, *sata → sadan* tapi *kaksi**sataa***. Golongan ini lebih kecil; jangan mengejarnya sekarang."
+     ]
+    },
+    {
+     "title": "Tiga cara memesan",
+     "body": [
+      "Bahasa Finlandia punya tangga kesopanan yang jelas untuk memesan, dan ketiganya sama-sama dipakai sehari-hari. Yang salah bukan tata bahasanya, melainkan nadanya."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Cara baca",
+       "Nadanya",
+       "Kapan dipakai"
+      ],
+      "rows": [
+       [
+        "*Yksi kahvi, kiitos.*",
+        "ÜK-si KAH-vi KII-tos",
+        "langsung",
+        "antrean panjang, kafe ramai"
+       ],
+       [
+        "*Otan kahvin.*",
+        "O-tan KAH-vin",
+        "biasa",
+        "paling umum, netral"
+       ],
+       [
+        "*Haluaisin kahvin.*",
+        "HA-lu-ai-sin KAH-vin",
+        "sopan",
+        "restoran, ke orang tak dikenal"
+       ],
+       [
+        "*Saisinko kahvin?*",
+        "SAI-sin-ko KAH-vin",
+        "paling sopan",
+        "aman di mana pun"
+       ],
+       [
+        "*Voisinko saada kahvin?*",
+        "VOI-sin-ko SAA-da KAH-vin",
+        "sangat sopan",
+        "situasi resmi"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *Kiitos* di ujung kalimat bukan sekadar sopan — ia yang **membuat** kalimat singkat jadi sopan. *Yksi kahvi* tanpa *kiitos* terdengar seperti perintah; dengan *kiitos*, ia sepenuhnya wajar.",
+      "Kalau ditanya *Mitä saisi olla?* dan kamu belum siap, jawab *Hetkinen* (sebentar) atau *Anteeksi, minä mietin vielä* (maaf, saya masih berpikir). Tak ada yang terburu-buru.",
+      "Membayar: *Kortilla vai käteisellä?* (pakai kartu atau tunai?). Jawaban hampir selalu *Kortilla* — Finlandia hampir sepenuhnya meninggalkan uang tunai, dan banyak kafe kecil tidak menerimanya sama sekali."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Makanan dan minuman",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Berekor (-n)",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "kahvi",
+       "KAH-vi",
+       "kahvin",
+       "kopi"
+      ],
+      [
+       "tee",
+       "tee",
+       "teen",
+       "teh"
+      ],
+      [
+       "maito",
+       "MAI-to",
+       "maidon",
+       "susu"
+      ],
+      [
+       "vesi",
+       "VE-si",
+       "veden",
+       "air"
+      ],
+      [
+       "mehu",
+       "ME-hu",
+       "mehun",
+       "jus"
+      ],
+      [
+       "olut",
+       "O-lut",
+       "oluen",
+       "bir"
+      ],
+      [
+       "leipä",
+       "LEI-pè",
+       "leivän",
+       "roti"
+      ],
+      [
+       "voileipä",
+       "VOI-lei-pè",
+       "voileivän",
+       "roti lapis"
+      ],
+      [
+       "pulla",
+       "PUL-la",
+       "pullan",
+       "roti manis"
+      ],
+      [
+       "korvapuusti",
+       "KOR-va-puus-ti",
+       "korvapuustin",
+       "roti kayu manis"
+      ],
+      [
+       "kakku",
+       "KAK-ku",
+       "kakun",
+       "kue"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kolom ketiga sengaja ada: itulah bentuk yang kamu pakai saat memesan (*otan kahvi**n***), dan sekaligus bentuk yang memperlihatkan apakah huruf matinya meluruh. Perhatikan *maito → maido**n***, *leipä → leivä**n***, *olut → olue**n***."
+    },
+    {
+     "type": "kotak",
+     "title": "Empat kata yang menyelamatkan orang yang tidak makan sembarangan",
+     "items": [
+      "*Olen kasvissyöjä.* — Saya vegetarian.",
+      "*En syö sianlihaa.* — Saya tidak makan daging babi. (*sianliha* = daging babi)",
+      "*Onko tässä maitoa?* — Ada susunya tidak di sini?",
+      "*Olen allerginen pähkinöille.* — Saya alergi kacang."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata tempat yang berdiri di belakang",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Finlandia menaruh sebagian penunjuk tempat **sesudah** kata bendanya, dan kata bendanya harus berbentuk kepunyaan (*-n*). Susunannya terbalik dari bahasa Indonesia, jadi ia butuh latihan sadar."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Contoh",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "vieressä",
+       "VIE-res-sè",
+       "*ikkunan vieressä*",
+       "di samping jendela"
+      ],
+      [
+       "edessä",
+       "E-des-sè",
+       "*talon edessä*",
+       "di depan rumah"
+      ],
+      [
+       "takana",
+       "TA-ka-na",
+       "*kaupan takana*",
+       "di belakang toko"
+      ],
+      [
+       "alla",
+       "AL-la",
+       "*pöydän alla*",
+       "di bawah meja"
+      ],
+      [
+       "päällä",
+       "PÈÈL-lè",
+       "*pöydän päällä*",
+       "di atas meja"
+      ],
+      [
+       "välissä",
+       "VÈ-lis-sè",
+       "*talojen välissä*",
+       "di antara rumah-rumah"
+      ],
+      [
+       "lähellä",
+       "LÈ-hel-lè",
+       "*aseman lähellä*",
+       "dekat stasiun"
+      ],
+      [
+       "kaukana",
+       "KAU-ka-na",
+       "*keskustasta kaukana*",
+       "jauh dari pusat kota"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa hampir semuanya sendiri mengandung ekor yang sudah kamu kenal: *viere**ssä*** (di dalam samping), *ede**ssä***, *väli**ssä***. Sekali kamu melihat pola ini, daftarnya berhenti terasa seperti hafalan acak."
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Lähellä* dan *kaukana* menuntut ekor yang berbeda pada kata bendanya: *aseman lähellä* (kepunyaan) tapi *keskusta**sta** kaukana* (dari). Kalau ragu, susun ulang kalimatnya: *Asema on lähellä* (stasiunnya dekat) selalu aman."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "kahvila",
+   "baca": "KAH-vi-la",
+   "id": "kafe"
+  },
+  {
+   "fi": "kauppa",
+   "baca": "KAUP-pa",
+   "id": "toko"
+  },
+  {
+   "fi": "myyjä",
+   "baca": "MÜÜ-yè",
+   "id": "penjual, kasir"
+  },
+  {
+   "fi": "ottaa",
+   "baca": "OT-taa",
+   "id": "mengambil"
+  },
+  {
+   "fi": "saada",
+   "baca": "SAA-da",
+   "id": "mendapat, boleh"
+  },
+  {
+   "fi": "haluta",
+   "baca": "HA-lu-ta",
+   "id": "mau, ingin"
+  },
+  {
+   "fi": "syödä",
+   "baca": "SÜÖ-dè",
+   "id": "makan"
+  },
+  {
+   "fi": "juoda",
+   "baca": "YUO-da",
+   "id": "minum"
+  },
+  {
+   "fi": "ilman",
+   "baca": "IL-man",
+   "id": "tanpa"
+  },
+  {
+   "fi": "yhteensä",
+   "baca": "ÜH-tèèn-sè",
+   "id": "seluruhnya, totalnya"
+  },
+  {
+   "fi": "mukaan",
+   "baca": "MU-kaan",
+   "id": "dibawa pulang; ikut"
+  },
+  {
+   "fi": "vapaa",
+   "baca": "VA-paa",
+   "id": "kosong, bebas"
+  },
+  {
+   "fi": "täällä",
+   "baca": "TÈÈL-lè",
+   "id": "di sini"
+  },
+  {
+   "fi": "tässä",
+   "baca": "TÈS-sè",
+   "id": "di sini (dekat sekali)"
+  },
+  {
+   "fi": "vieressä",
+   "baca": "VIE-res-sè",
+   "id": "di samping"
+  },
+  {
+   "fi": "toki",
+   "baca": "TO-ki",
+   "id": "tentu"
+  },
+  {
+   "fi": "vai",
+   "baca": "vai",
+   "id": "atau (dalam pertanyaan pilihan)"
+  },
+  {
+   "fi": "kortti",
+   "baca": "KORT-ti",
+   "id": "kartu"
+  },
+  {
+   "fi": "käteinen",
+   "baca": "KÈ-tei-nen",
+   "id": "uang tunai"
+  },
+  {
+   "fi": "hetkinen",
+   "baca": "HET-ki-nen",
+   "id": "sebentar"
+  },
+  {
+   "fi": "miettiä",
+   "baca": "MIET-ti-è",
+   "id": "berpikir, menimbang"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Boleh saya minta satu kopi?",
+    "Saya ambil teh hijau.",
+    "Ada teh?",
+    "Semuanya dua belas euro.",
+    "Ada meja kosong?",
+    "Di sini, terima kasih."
+   ]
+  },
+  {
+   "prompt": "Tambahkan ekor -ssa/-ssä. Perhatikan peluruhan huruf matinya.",
+   "items": [
+    "kauppa",
+    "kahvila",
+    "Helsinki",
+    "kaappi",
+    "talo",
+    "lampi"
+   ]
+  },
+  {
+   "prompt": "Ubah ke bentuk berekor -n (bentuk yang dipakai saat memesan).",
+   "items": [
+    "maito",
+    "leipä",
+    "olut",
+    "kahvi",
+    "voileipä",
+    "kakku"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "kahvin / saisinko / ?",
+    "teetä / on / teillä / ?",
+    "vieressä / pöytä / on / ikkunan",
+    "euroa / yhteensä / kaksitoista",
+    "otan / ja / korvapuustin / kahvin"
+   ]
+  }
+ ],
+ "answers": [
+  "Saisinko yhden kahvin? — Otan vihreän teen. — Onko teillä teetä? — Kaksitoista euroa yhteensä. — Onko täällä vapaa pöytä? — Tässä, kiitos.",
+  "kaupassa — kahvilassa — Helsingissä — kaapissa — talossa — lammessa",
+  "maidon — leivän — oluen — kahvin — voileivän — kakun",
+  "Saisinko kahvin? — Onko teillä teetä? — Pöytä on ikkunan vieressä. — Yhteensä kaksitoista euroa. — Otan kahvin ja korvapuustin."
+ ]
+}

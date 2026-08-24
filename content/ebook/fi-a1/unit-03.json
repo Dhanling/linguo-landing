@@ -1,0 +1,543 @@
+{
+ "title": "Ini apa?",
+ "title_target": "Mikä tämä on?",
+ "goal": "Menunjuk benda dekat dan jauh, menyebut warnanya, dan membentuk jamak dengan satu huruf — tanpa sekali pun berurusan dengan kata sandang atau jenis kelamin.",
+ "bekal": [
+  "membedakan *tämä*, *tuo*, dan *se* menurut jaraknya dari pembicara",
+  "membuat jamak dengan ekor **-t** dan membuat kata sifatnya ikut berubah",
+  "menyebut sekitar dua puluh benda sehari-hari beserta warnanya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Uusi huone",
+   "intro": "Budi baru pindah ke kamar asrama di Espoo. Aino datang membantu membereskan.",
+   "lines": [
+    {
+     "speaker": "Aino:",
+     "text": "Oho, huone on iso! Mikä tuo on?",
+     "id": "Wah, kamarnya besar! Itu apa?",
+     "literal": "oh, kamar adalah besar! apa itu-sana adalah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tuo on minun uusi pöytä. Ja tämä on tuoli.",
+     "id": "Itu meja baru saya. Dan ini kursinya.",
+     "literal": "itu-sana adalah milikku baru meja. dan ini adalah kursi."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Pöytä on tosi kaunis. Onko se puuta?",
+     "id": "Mejanya cantik sekali. Dari kayu?",
+     "literal": "meja adalah sungguh cantik. adalah-kah itu kayu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "On. Se on vanha, mutta se on hyvä.",
+     "id": "Iya. Sudah tua, tapi bagus.",
+     "literal": "adalah. itu adalah tua, tetapi itu adalah baik."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Mitä nämä ovat?",
+     "id": "Ini apa saja?",
+     "literal": "apa ini-jamak adalah-mereka?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ne ovat kirjoja. Suomen kirjat ovat tuossa, ja nämä ovat sanakirjat.",
+     "id": "Itu buku-buku. Buku bahasa Finlandianya di situ, dan ini kamus-kamusnya.",
+     "literal": "itu-jamak adalah-mereka buku-bagian. Finlandia-punya buku-jamak adalah di-itu, dan ini-jamak adalah-mereka kamus-jamak."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Kaksi sanakirjaa? Miksi?",
+     "id": "Dua kamus? Kenapa?",
+     "literal": "dua kamus-bagian? mengapa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Toinen on suomi–englanti, toinen suomi–indonesia.",
+     "id": "Yang satu Finlandia–Inggris, yang satu lagi Finlandia–Indonesia.",
+     "literal": "satu adalah Finlandia–Inggris, satu Finlandia–Indonesia."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Fiksua! Entä tuo sininen laukku — onko se sinun?",
+     "id": "Pintar! Kalau tas biru itu — punyamu?",
+     "literal": "pintar! lalu itu-sana biru tas — adalah-kah itu milikmu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ei ole. Se on Marekin. Minun laukku on musta.",
+     "id": "Bukan. Itu punya Marek. Tas saya yang hitam.",
+     "literal": "tidak adalah. itu adalah Marek-punya. milikku tas adalah hitam."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Missä sinun avaimet ovat?",
+     "id": "Kunci-kuncimu di mana?",
+     "literal": "di-mana milikmu kunci-jamak adalah-mereka?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Voi ei. En tiedä! Ehkä ne ovat pöydällä.",
+     "id": "Aduh. Tidak tahu! Mungkin di atas meja.",
+     "literal": "aduh tidak. tidak-saya tahu! mungkin itu-jamak adalah-mereka di-atas-meja."
+    }
+   ],
+   "notes": [
+    "**Tiga jarak, bukan dua.** Bahasa Indonesia punya \"ini\" dan \"itu\"; bahasa Finlandia punya tiga tingkat — *tämä* (dekat pembicara), *tuo* (jauh dari keduanya, tapi kelihatan), *se* (yang sudah dibicarakan, atau dekat lawan bicara). Dalam praktik *se* jugalah yang dipakai untuk merujuk balik ke sesuatu yang baru disebut, persis seperti \"itu\" dalam \"itu bagus\".",
+    "**Ne ovat kirjoja** memakai bentuk yang belum kamu pelajari.** *Kirjoja* adalah bentuk **bagian jamak** — dipakai kalau yang dimaksud \"beberapa buku\" tanpa jumlah pasti. Bandingkan dengan *sanakirjat* di baris yang sama: itu bentuk jamak biasa, karena kamusnya jelas dua-duanya. Untuk sekarang cukup rasakan bedanya; aturannya digarap di unit 11.",
+    "**Onko se puuta?** harfiahnya \"apakah itu kayu-bagian\". Bahan selalu memakai bentuk bagian, karena benda itu terbuat **dari sebagian** bahan, bukan dari seluruh kayu di dunia. *Se on puuta* (dari kayu), *se on metallia* (dari logam), *se on muovia* (dari plastik).",
+    "**On sendirian berarti \"iya\".** Lihat baris 4: pertanyaan *Onko se puuta?* dijawab *On.* Bahasa Finlandia sering menjawab pertanyaan dengan **mengulang kata kerjanya**, bukan dengan *kyllä*. Untuk menolak: *Ei ole.* Kebiasaan ini terdengar sangat Finlandia, dan menirunya membuat bahasamu langsung lebih alami.",
+    "**Marekin** — kepunyaan dibuat dengan ekor **-n**. *Marek* → *Marekin laukku* (tas Marek), *Aino* → *Ainon kirja*. Ekor yang sama yang membuat *minun* dari *minä*. Kita garap penuh di unit berikutnya.",
+    "**Kata sifat berdiri di depan, sama seperti bahasa Inggris.** *Sininen laukku*, *musta laukku*, *uusi pöytä* — bukan \"laukku sininen\". Ini berlawanan dengan bahasa Indonesia, dan ia salah satu kekeliruan yang paling sering terbawa."
+   ],
+   "grammars": [
+    {
+     "title": "Tämä, tuo, se — dan jamaknya",
+     "body": [
+      "Enam kata yang menutup semua penunjukan. Perhatikan bahwa jamaknya bukan hasil menempelkan *-t*, melainkan bentuk tersendiri yang harus dihafal — satu dari sedikit tempat di bahasa Finlandia yang benar-benar menuntut hafalan buta."
+     ],
+     "table": {
+      "head": [
+       "Tunggal",
+       "Cara baca",
+       "Jamak",
+       "Cara baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "**tämä**",
+        "TÈ-mè",
+        "**nämä**",
+        "NÈ-mè",
+        "ini (dekat pembicara)"
+       ],
+       [
+        "**tuo**",
+        "tuo",
+        "**nuo**",
+        "nuo",
+        "itu (jauh, kelihatan)"
+       ],
+       [
+        "**se**",
+        "se",
+        "**ne**",
+        "ne",
+        "itu (sudah disebut; dekat lawan bicara)"
+       ]
+      ]
+     },
+     "after": [
+      "*Mikä tämä on?* — \"ini apa?\" Jawabannya hampir selalu memakai *se*, bukan mengulang *tämä*: *Se on kirja.* Mengulang *tämä* terdengar seperti anak kecil yang menunjuk-nunjuk.",
+      "Jamaknya menuntut kata kerja jamak juga: *tämä **on*** tapi *nämä **ovat***. Bahasa Indonesia tidak menuntut ini sama sekali, jadi ia butuh perhatian ekstra.",
+      "⚠️ Dalam percakapan sehari-hari orang Finlandia memakai *se* dan *ne* untuk hampir segalanya, termasuk untuk orang — *se sanoi* (dia bilang). Itu benar-benar dipakai, tapi terdengar sangat santai; jangan menirunya di surat atau ke orang yang belum akrab."
+     ]
+    },
+    {
+     "title": "Jamak dengan -t, dan kata sifat yang ikut",
+     "body": [
+      "Membuat jamak semudah menambah satu huruf. Yang menuntut kebiasaan baru adalah kenyataan bahwa **kata sifatnya ikut berubah** — sesuatu yang tak pernah terjadi dalam bahasa Indonesia."
+     ],
+     "table": {
+      "head": [
+       "Tunggal",
+       "Jamak",
+       "Dengan kata sifat",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*kirja*",
+        "*kirja**t***",
+        "*uude**t** kirja**t***",
+        "buku-buku baru"
+       ],
+       [
+        "*tuoli*",
+        "*tuoli**t***",
+        "*musta**t** tuoli**t***",
+        "kursi-kursi hitam"
+       ],
+       [
+        "*avain*",
+        "*avaime**t***",
+        "*pienet avaime**t***",
+        "kunci-kunci kecil"
+       ],
+       [
+        "*pöytä*",
+        "*pöydä**t***",
+        "*isot pöydä**t***",
+        "meja-meja besar"
+       ],
+       [
+        "*kauppa*",
+        "*kaupa**t***",
+        "*uude**t** kauppa**t***",
+        "toko-toko baru"
+       ],
+       [
+        "*ihminen*",
+        "*ihmise**t***",
+        "*mukava**t** ihmise**t***",
+        "orang-orang yang ramah"
+       ]
+      ]
+     },
+     "after": [
+      "**Kata sifat memakai ekor yang persis sama dengan kata bendanya.** *Iso talo → isot talot*. Sekali pola ini masuk, ia berlaku juga untuk empat belas ekor lain yang akan kamu pelajari nanti — kata sifat selalu meniru kata bendanya, tanpa kecuali. Ini kesepakatan yang jauh lebih rapi daripada bahasa Jerman atau Prancis.",
+      "⚠️ Perhatikan *pöytä → pöydät* dan *kauppa → kaupat*: huruf matinya meluruh saat *-t* menempel. Sebaliknya *kirja → kirjat* tidak berubah, karena tak ada *k*, *p*, atau *t* yang bisa meluruh.",
+      "⚠️ Kata yang berakhir *-nen* (*ihminen*, *punainen*, *nainen*) mengubah ujungnya jadi *-se-* dulu: *ihminen → ihmiset*, *punainen → punaiset*. Golongan ini besar sekali dalam bahasa Finlandia, jadi polanya berbayar cepat."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Benda di sekitarmu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Jamak",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "pöytä",
+       "PÖÜ-tè",
+       "pöydät",
+       "meja"
+      ],
+      [
+       "tuoli",
+       "TUO-li",
+       "tuolit",
+       "kursi"
+      ],
+      [
+       "sänky",
+       "SÈN-kü",
+       "sängyt",
+       "tempat tidur"
+      ],
+      [
+       "ovi",
+       "O-vi",
+       "ovet",
+       "pintu"
+      ],
+      [
+       "ikkuna",
+       "IK-ku-na",
+       "ikkunat",
+       "jendela"
+      ],
+      [
+       "seinä",
+       "SEI-nè",
+       "seinät",
+       "dinding"
+      ],
+      [
+       "lattia",
+       "LAT-ti-a",
+       "lattiat",
+       "lantai"
+      ],
+      [
+       "lamppu",
+       "LAMP-pu",
+       "lamput",
+       "lampu"
+      ],
+      [
+       "kirja",
+       "KIR-ya",
+       "kirjat",
+       "buku"
+      ],
+      [
+       "sanakirja",
+       "SA-na-kir-ya",
+       "sanakirjat",
+       "kamus"
+      ],
+      [
+       "kynä",
+       "KÜ-nè",
+       "kynät",
+       "pena, pensil"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Tietokone* harfiahnya \"mesin pengetahuan\" — *tieto* (pengetahuan) + *kone* (mesin). Bahasa Finlandia sangat suka membangun kata baru dari bahan sendiri alih-alih meminjam: *puhelin* dari *puhua* (bicara), *jääkaappi* (kulkas) dari *jää* (es) + *kaappi* (lemari). Kebiasaan ini menolongmu menebak arti kata panjang yang belum pernah kamu lihat."
+    }
+   ]
+  },
+  {
+   "title": "Warna",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Jamak",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "punainen",
+       "PU-nai-nen",
+       "punaiset",
+       "merah"
+      ],
+      [
+       "sininen",
+       "SI-ni-nen",
+       "siniset",
+       "biru"
+      ],
+      [
+       "keltainen",
+       "KEL-tai-nen",
+       "keltaiset",
+       "kuning"
+      ],
+      [
+       "vihreä",
+       "VIH-re-è",
+       "vihreät",
+       "hijau"
+      ],
+      [
+       "musta",
+       "MUS-ta",
+       "mustat",
+       "hitam"
+      ],
+      [
+       "valkoinen",
+       "VAL-koi-nen",
+       "valkoiset",
+       "putih"
+      ],
+      [
+       "harmaa",
+       "HAR-maa",
+       "harmaat",
+       "abu-abu"
+      ],
+      [
+       "ruskea",
+       "RUS-ke-a",
+       "ruskeat",
+       "cokelat"
+      ],
+      [
+       "oranssi",
+       "O-rans-si",
+       "oranssit",
+       "oranye"
+      ],
+      [
+       "violetti",
+       "VI-o-let-ti",
+       "violetit",
+       "ungu"
+      ],
+      [
+       "vaaleanpunainen",
+       "VAA-le-an-pu-nai-nen",
+       "vaaleanpunaiset",
+       "merah muda"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Enam dari sebelas warna di atas berakhir *-nen*, dan itu bukan kebetulan: *-nen* adalah ekor pembentuk kata sifat yang paling produktif dalam bahasa Finlandia. Kalau kamu menemukan kata berakhir *-nen* yang belum kamu kenal, taruhan terbaikmu adalah ia kata sifat."
+    },
+    {
+     "type": "p",
+     "text": "*Vaalea* berarti \"terang/muda\" dan *tumma* berarti \"gelap/tua\". Keduanya dipasang di depan warna dengan ekor kepunyaan: *vaaleanpunainen* (merah muda, harfiah \"merah-nya yang terang\"), *tummansininen* (biru tua). Perhatikan bahwa keduanya luluh jadi satu kata."
+    },
+    {
+     "type": "kotak",
+     "title": "Menanyakan warna",
+     "items": [
+      "*Minkä värinen tämä on?* — \"Ini warna apa?\" Harfiahnya \"apa-punya berwarna ini adalah\".",
+      "*Se on sininen.* — \"Itu biru.\" Untuk jamak: *Ne ovat sinisiä* — perhatikan bahwa jamak di posisi ini memakai bentuk bagian, sama seperti *Ne ovat kirjoja* di dialog."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "tämä",
+   "baca": "TÈ-mè",
+   "id": "ini"
+  },
+  {
+   "fi": "tuo",
+   "baca": "tuo",
+   "id": "itu (jauh, kelihatan)"
+  },
+  {
+   "fi": "se",
+   "baca": "se",
+   "id": "itu (sudah disebut)"
+  },
+  {
+   "fi": "nämä / nuo / ne",
+   "baca": "NÈ-mè / nuo / ne",
+   "id": "ini / itu (jamak)"
+  },
+  {
+   "fi": "huone",
+   "baca": "HUO-ne",
+   "id": "kamar, ruangan"
+  },
+  {
+   "fi": "uusi",
+   "baca": "UU-si",
+   "id": "baru"
+  },
+  {
+   "fi": "vanha",
+   "baca": "VAN-ha",
+   "id": "tua, lama"
+  },
+  {
+   "fi": "kaunis",
+   "baca": "KAU-nis",
+   "id": "cantik, indah"
+  },
+  {
+   "fi": "ruma",
+   "baca": "RU-ma",
+   "id": "jelek"
+  },
+  {
+   "fi": "puu",
+   "baca": "puu",
+   "id": "kayu; pohon"
+  },
+  {
+   "fi": "metalli",
+   "baca": "ME-tal-li",
+   "id": "logam"
+  },
+  {
+   "fi": "muovi",
+   "baca": "MUO-vi",
+   "id": "plastik"
+  },
+  {
+   "fi": "tosi",
+   "baca": "TO-si",
+   "id": "sungguh, betul-betul"
+  },
+  {
+   "fi": "ehkä",
+   "baca": "EH-kè",
+   "id": "mungkin"
+  },
+  {
+   "fi": "miksi",
+   "baca": "MIK-si",
+   "id": "mengapa"
+  },
+  {
+   "fi": "kaksi",
+   "baca": "KAK-si",
+   "id": "dua"
+  },
+  {
+   "fi": "toinen",
+   "baca": "TOI-nen",
+   "id": "yang satu lagi; kedua"
+  },
+  {
+   "fi": "fiksu",
+   "baca": "FIK-su",
+   "id": "pintar, cerdik"
+  },
+  {
+   "fi": "mukava",
+   "baca": "MU-ka-va",
+   "id": "ramah, menyenangkan"
+  },
+  {
+   "fi": "ihminen",
+   "baca": "IH-mi-nen",
+   "id": "orang, manusia"
+  },
+  {
+   "fi": "nainen",
+   "baca": "NAI-nen",
+   "id": "perempuan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Ini apa?",
+    "Itu buku baru.",
+    "Mejanya besar dan cantik.",
+    "Tas biru itu punya Marek.",
+    "Kunci-kunci saya di mana?",
+    "Ini kamus, dan itu buku tulis."
+   ]
+  },
+  {
+   "prompt": "Ubah jadi jamak. Ubah kata sifatnya juga.",
+   "items": [
+    "uusi kirja",
+    "musta tuoli",
+    "iso pöytä",
+    "punainen laukku",
+    "pieni avain",
+    "mukava ihminen"
+   ]
+  },
+  {
+   "prompt": "Isi dengan *tämä*, *tuo*, *se*, *nämä*, *nuo*, atau *ne*.",
+   "items": [
+    "____ on minun kynä. (di tanganku)",
+    "____ on Ainon pöytä. (di ujung ruangan)",
+    "Mikä ____ on? — ____ on sanakirja. (menjawab)",
+    "____ ovat minun avaimet. (di tanganku)",
+    "____ ovat Marekin kirjat. (di seberang ruangan)"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan mengulang kata kerjanya, seperti kebiasaan orang Finlandia.",
+   "items": [
+    "Onko tämä sinun kirja? (iya)",
+    "Onko pöytä puuta? (iya)",
+    "Onko laukku sininen? (tidak)",
+    "Ovatko nämä sinun avaimet? (iya)",
+    "Onko huone pieni? (tidak)"
+   ]
+  }
+ ],
+ "answers": [
+  "Mikä tämä on? — Se on uusi kirja. — Pöytä on iso ja kaunis. — Tuo sininen laukku on Marekin. — Missä minun avaimet ovat? — Tämä on sanakirja, ja tuo on vihko.",
+  "uudet kirjat — mustat tuolit — isot pöydät — punaiset laukut — pienet avaimet — mukavat ihmiset",
+  "Tämä — Tuo — tämä; Se — Nämä — Nuo",
+  "On. — On. — Ei ole. — Ovat. — Ei ole."
+ ]
+}
