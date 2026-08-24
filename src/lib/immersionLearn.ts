@@ -1758,6 +1758,58 @@ export async function fetchReadyVideos(
 }
 
 /**
+ * [watch-ready-badge-v1] Dari sekumpulan videoId, mana saja yang transkripnya
+ * SUDAH tersimpan untuk bahasa ini — sumber centang hijau "subtitle siap" di
+ * kartu grid tab kategori. Hasilnya di-memo per (bahasa, video) supaya pindah
+ * tab / muat lainnya tak menanyakan ulang id yang sudah diketahui.
+ * Best-effort: gagal → balikin apa yang sudah diketahui saja.
+ */
+const readyFlagMemo = new Map<string, boolean>();
+
+export async function fetchReadyFlags(
+  videoIds: string[],
+  langCode: string
+): Promise<Set<string>> {
+  const known = new Set<string>();
+  const ask: string[] = [];
+  for (const id of videoIds) {
+    if (!id || !VIDEO_ID_RE.test(id)) continue;
+    const key = `${langCode}::${id}`;
+    if (readyFlagMemo.has(key)) {
+      if (readyFlagMemo.get(key)) known.add(id);
+    } else if (!ask.includes(id)) {
+      ask.push(id);
+    }
+  }
+  if (!ask.length) return known;
+  try {
+    // Batasi per panggilan biar URL-nya tak kepanjangan (server memotong di 120).
+    const CHUNK = 60;
+    for (let i = 0; i < ask.length; i += CHUNK) {
+      const slice = ask.slice(i, i + CHUNK);
+      const res = await fetchTimeout(
+        `/api/yt-transcript-cache?have=1&lang=${encodeURIComponent(langCode)}&ids=${slice.join(",")}`,
+        { method: "GET" },
+        6000
+      );
+      if (!res.ok) continue;
+      const data = (await res.json()) as { ready?: unknown };
+      const list = Array.isArray(data.ready) ? (data.ready as unknown[]) : [];
+      const hit = new Set(list.filter((v): v is string => typeof v === "string"));
+      for (const id of slice) {
+        // Negatif ikut di-memo, TAPI hanya sampai halaman di-reload — video yang
+        // transkripnya baru selesai akan dapat centang di kunjungan berikutnya.
+        readyFlagMemo.set(`${langCode}::${id}`, hit.has(id));
+        if (hit.has(id)) known.add(id);
+      }
+    }
+  } catch {
+    /* best-effort — centang cuma hiasan, jangan ganggu grid */
+  }
+  return known;
+}
+
+/**
  * Ambil jumlah video "Siap" per bahasa (kode → jumlah) — sumber badge di pemilih
  * bahasa. Instan (baca cache Supabase), best-effort: balikin {} kalau gagal.
  */

@@ -57,6 +57,7 @@ import {
 import {
   fetchReadyVideos,
   fetchReadyCounts,
+  fetchReadyFlags,
   getSavedWords,
   onSavedWordsChanged,
   prewarmTranscripts,
@@ -550,6 +551,11 @@ export default function WatchAndLearn() {
   // Berapa kartu yang ditampilkan sekarang (paginasi client-side). Mulai 2 baris.
   const [visible, setVisible] = useState(INITIAL_VISIBLE);
 
+  // [watch-ready-badge-v1] videoId yang transkripnya sudah tersimpan → kartu di
+  // tab kategori dapat centang hijau "subtitle siap". Di tab "Terjemahan Siap"
+  // tak dipakai (semua isinya memang sudah siap).
+  const [readyIds, setReadyIds] = useState<Set<string>>(new Set());
+
   const [videos, setVideos] = useState<ImmersionVideo[]>(boot.hit?.videos ?? []);
   const [nextToken, setNextToken] = useState<string | undefined>(boot.hit?.nextToken);
   // [watch-shuffle-v1] Sort order yang dipakai batch aktif. `nextToken` cuma sah
@@ -696,6 +702,31 @@ export default function WatchAndLearn() {
     // orientTick sengaja jadi dependency: memicu re-filter tiap orientasi baru masuk cache.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [videos, orientTick, durationFilter, levelFilter, category, committedText]);
+
+  // [watch-ready-badge-v1] Tanyakan ke cache transkrip: dari kartu yang SEDANG
+  // tampak, mana yang subtitle-nya sudah siap → centang hijau. Cuma untuk tab
+  // kategori/pencarian (di tab "Terjemahan Siap" semuanya siap, jadi centangnya
+  // mubazir). Best-effort & di-memo per bahasa di lib, jadi scroll/"Muat lainnya"
+  // hanya menanyakan id yang benar-benar baru.
+  useEffect(() => {
+    if (category === SIAP_ID && !committedText.trim()) return;
+    const ids = shownVideos.slice(0, visible).map((v) => v.videoId);
+    if (!ids.length) return;
+    let alive = true;
+    void fetchReadyFlags(ids, langCode).then((hit) => {
+      if (!alive || !hit.size) return;
+      setReadyIds((prev) => {
+        let added = false;
+        const next = new Set(prev);
+        for (const id of hit) if (!next.has(id)) { next.add(id); added = true; }
+        return added ? next : prev;
+      });
+    });
+    return () => {
+      alive = false;
+    };
+  }, [shownVideos, visible, langCode, category, committedText]);
+
 
   // Hidrasi riwayat (bahasa target sudah dibaca sinkron di `boot`) saat mount.
   useEffect(() => {
@@ -1919,11 +1950,18 @@ export default function WatchAndLearn() {
                     level={v.level}
                   />
                   <p className="mt-2 line-clamp-2 text-[13px] font-bold leading-snug">{v.title}</p>
-                  {(v.channel || v.views != null) && (
+                  {(v.channel || v.views != null || readyIds.has(v.videoId)) && (
                     <p
                       className="mt-0.5 line-clamp-1 flex items-center gap-1 text-[11.5px]"
                       style={{ color: SUB }}
                     >
+                      {readyIds.has(v.videoId) && (
+                        <CircleCheck
+                          className="h-3.5 w-3.5 shrink-0"
+                          color="#22C55E"
+                          aria-label={t("Subtitle siap")}
+                        />
+                      )}
                       {v.channel && <span className="truncate">{v.channel}</span>}
                       {v.channel && v.views != null && <span aria-hidden>·</span>}
                       {v.views != null && (

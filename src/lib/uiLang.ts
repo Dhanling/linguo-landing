@@ -880,6 +880,7 @@ const EN: Record<string, string> = {
   "Tak ada video cocok filter di halaman ini": "No video on this page matches the filters",
   "Terakhir dipilih": "Recently picked",
   "Terjemahan Siap": "Translation Ready",
+  "Subtitle siap": "Subtitles ready",
   "Terjemahan di bawah subtitle akan ditampilkan dalam bahasa ini. Bisa diganti kapan saja lewat tombol bendera di atas.": "Translations under the subtitles will be shown in this language. You can change it anytime with the flag button above.",
   "Tidak ada bahasa cocok.": "No matching language.",
   "Tidak ada grup yang cocok dengan": "No group matches",

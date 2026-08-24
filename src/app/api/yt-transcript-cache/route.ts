@@ -7,6 +7,7 @@
 // key tak bisa mencemari cache (tabel RLS aktif tanpa policy publik).
 //
 // GET  ?videoId=..&lang=..           → { cues } | { cues: null }
+// GET  ?have=1&lang=..&ids=a,b,c     → { ready: [videoId] } (mana yang sudah siap)
 // POST { videoId, lang, cues, source } → { ok: true }
 
 import { NextRequest, NextResponse } from "next/server";
@@ -105,6 +106,42 @@ export async function GET(req: NextRequest) {
       );
     } catch {
       return NextResponse.json({ counts: {} }, { status: 200, headers: { "Cache-Control": "no-store" } });
+    }
+  }
+
+  // [watch-ready-badge-v1] Mode HAVE: dari sekumpulan videoId, mana saja yang
+  // transkripnya SUDAH tersimpan untuk bahasa ini. Dipakai kartu grid di tab
+  // kategori (Vlog/Populer/dst) buat menempelkan centang hijau "subtitle siap"
+  // tanpa harus membuka videonya dulu. Query paling ringan (satu kolom, filter
+  // IN), best-effort: gagal → { ready: [] } (kartu cuma kehilangan centang).
+  if (params.get("have")) {
+    if (!validLang(lang)) return NextResponse.json({ ready: [] }, { status: 200 });
+    const ids = (params.get("ids") ?? "")
+      .split(",")
+      .map((s) => s.trim())
+      .filter((s) => VIDEO_RE.test(s))
+      .slice(0, 120);
+    if (!ids.length) return NextResponse.json({ ready: [] }, { status: 200 });
+    try {
+      const sb = createServerClient(0);
+      const { data, error } = await sb
+        .from("yt_transcripts")
+        .select("video_id")
+        .eq("lang", lang)
+        .in("video_id", ids)
+        .not("cues", "is", null);
+      if (error || !Array.isArray(data)) {
+        return NextResponse.json({ ready: [] }, { status: 200, headers: { "Cache-Control": "no-store" } });
+      }
+      const ready = (data as { video_id?: unknown }[])
+        .map((r) => r.video_id)
+        .filter((v): v is string => typeof v === "string");
+      return NextResponse.json(
+        { ready },
+        { status: 200, headers: { "Cache-Control": "public, s-maxage=30, stale-while-revalidate=120" } }
+      );
+    } catch {
+      return NextResponse.json({ ready: [] }, { status: 200, headers: { "Cache-Control": "no-store" } });
     }
   }
 
