@@ -1,0 +1,210 @@
+{
+  "title": "Bagaimana caranya ke sana?",
+  "title_target": "Як пройти? — Yak proyty?",
+  "goal": "Menanyakan arah kepada orang di jalan, mengerti jawabannya, dan memakai bentuk perintah — yang dalam bahasa Ukraina sama sekali tidak kasar selama disertai satu kata sopan.",
+  "bekal": [
+    "menanyakan arah dengan Як пройти / Як доїхати",
+    "menyusun bentuk perintah untuk ти dan ви",
+    "mengerti petunjuk arah yang diberikan orang",
+    "memakai kata depan letak (біля, навпроти, за, перед)",
+    "menyebut tempat umum di kota"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — Bertanya arah di trotoar Khreshchatyk",
+      "intro": "Ani mencari museum dan bertanya kepada orang yang lewat. Perhatikan bahwa semua petunjuk arah diberikan dalam bentuk perintah — dan tidak satu pun terdengar kasar.",
+      "lines": [
+        {"speaker": "Ані:", "text": "[Вибачте|VY-bach-te], [як|yak] [пройти|proy-TY] [до|do] [музею|mu-ZE-yu]?", "id": "Permisi, bagaimana caranya ke museum?", "literal": "maafkan, bagaimana — berjalan-menuju — ke — museum (родовий)?"},
+        {"speaker": "Перехожий:", "text": "[До|Do] [якого|ya-KO-ho] [музею|mu-ZE-yu]?", "id": "Museum yang mana?", "literal": "ke — yang-mana (родовий) — museum?"},
+        {"speaker": "Ані:", "text": "[До|Do] [Національного|Na-tsi-o-NAL'-no-ho] [музею|mu-ZE-yu].", "id": "Museum Nasional.", "literal": "ke — nasional (родовий) — museum."},
+        {"speaker": "Перехожий:", "text": "[Ідіть|I-dit'] [прямо|PRYA-mo] [до|do] [перехрестя|pe-re-KHRES-tya], [потім|PO-tim] [поверніть|po-ver-NIT'] [ліворуч|li-VO-ruch].", "id": "Jalan lurus sampai perempatan, lalu belok kiri.", "literal": "berjalanlah — lurus — sampai — perempatan, sesudah-itu — belokkanlah — ke-kiri."},
+        {"speaker": "Ані:", "text": "[Ліворуч|Li-VO-ruch]... [А|A] [потім|PO-tim]?", "id": "Kiri... Lalu?", "literal": "ke-kiri... dan — sesudah-itu?"},
+        {"speaker": "Перехожий:", "text": "[Потім|PO-tim] [прямо|PRYA-mo] [метрів|MET-riv] [двісті|DVIS-ti]. [Музей|Mu-ZEY] [буде|BU-de] [праворуч|pra-VO-ruch].", "id": "Lalu lurus sekitar dua ratus meter. Museumnya di sebelah kanan.", "literal": "sesudah-itu — lurus — meter (родовий) — dua-ratus. museum — akan-ada — ke-kanan."},
+        {"speaker": "Ані:", "text": "[Це|Tse] [далеко|da-LE-ko]?", "id": "Itu jauh?", "literal": "ini — jauh?"},
+        {"speaker": "Перехожий:", "text": "[Хвилин|Khvy-LYN] [десять|DE-syat'] [пішки|PISH-ky].", "id": "Sekitar sepuluh menit jalan kaki.", "literal": "menit (родовий) — sepuluh — dengan-kaki."},
+        {"speaker": "Ані:", "text": "[А|A] [можна|MOZH-na] [на|na] [автобусі|av-TO-bu-si]?", "id": "Bisa naik bus?", "literal": "dan — boleh — dengan — bus?"},
+        {"speaker": "Перехожий:", "text": "[Можна|MOZH-na], [але|A-le] [пішки|PISH-ky] [швидше|SHVYD-she].", "id": "Bisa, tapi jalan kaki lebih cepat.", "literal": "boleh, tapi — dengan-kaki — lebih-cepat."},
+        {"speaker": "Ані:", "text": "[Зрозуміла|Zro-zu-MI-la]. [Дуже|DU-zhe] [дякую|DYA-ku-yu]!", "id": "Paham. Terima kasih banyak!", "literal": "mengerti (lampau pr). sangat — terima-kasih!"},
+        {"speaker": "Перехожий:", "text": "[Будь|Bud'] [ласка|LAS-ka]. [Гарного|HAR-no-ho] [дня|dnya]!", "id": "Sama-sama. Semoga harimu menyenangkan!", "literal": "jadilah — kebaikan. bagus (родовий) — hari!"}
+      ],
+      "notes": [
+        "**Як пройти untuk jalan kaki, Як доїхати untuk kendaraan.** Pembagian yang sama seperti *йти* dan *їхати* di Unit 13, dan orang Ukraina memperhatikannya. Kalau kamu ragu, *Як дістатися до…?* (bagaimana sampai ke…) menutup dua-duanya.",
+        "**Bentuk perintah tidak kasar dalam bahasa Ukraina.** *Ідіть прямо* (jalan lurus) adalah cara normal memberi petunjuk, dan tidak seorang pun menganggapnya memerintah. Yang mengubah nadanya adalah **будь ласка** — dan itu pun sering dibuang di petunjuk arah karena tidak diperlukan.",
+        "**Perintah kepada ти dan ви berbeda satu suku kata.** *Іди / Ідіть*, *повернь / поверніть*, *скажи / скажіть*, *почекай / почекайте*. Bentuk *ви* menambahkan **-те** di belakang bentuk *ти*. Karena kamu akan bertanya kepada orang asing, bentuk **-те** yang perlu kamu kuasai.",
+        "**Ліворуч dan праворуч, bukan наліво dan направо.** Bentuk kedua adalah Rusia dan sering terdengar di Ukraina, tapi bentuk Ukraina yang baku adalah **ліворуч** (kiri) dan **праворуч** (kanan). Keduanya berasal dari *ліва рука* dan *права рука* — tangan kiri dan kanan.",
+        "**Метрів двісті berarti \"sekitar dua ratus meter\".** Membalik urutan angka dan satuannya adalah cara Ukraina mengatakan \"kira-kira\": *хвилин десять* (sekitar sepuluh menit), *днів п'ять* (sekitar lima hari). Rapi, sederhana, dan sangat sering dipakai.",
+        "**Зрозуміла, bukan зрозуміло.** Ani perempuan, jadi ia memakai bentuk lampau perempuan: \"saya sudah mengerti\". Bentuk netral *зрозуміло* berarti \"jelas\" secara umum, tanpa pelaku. Dua-duanya benar di sini, dan bedanya halus.",
+        "**Гарного дня! adalah salam perpisahan yang hangat.** Bentuknya родовий karena ia potongan dari doa, sama seperti *Доброго дня* di Unit 1. Kerabatnya: *Гарного вечора*, *Гарних вихідних* (selamat berakhir pekan), *Успіхів* (semoga berhasil)."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk perintah",
+          "body": ["Semua bentuk *ви* dibuat dengan menambahkan **-те** pada bentuk *ти*. Sesederhana itu."],
+          "table": {
+            "head": ["Dasar", "Kepada ти", "Kepada ви", "Indonesia"],
+            "rows": [
+              ["йти", "іди", "ідіть", "pergi, jalan"],
+              ["повернути", "поверни", "поверніть", "belok"],
+              ["сказати", "скажи", "скажіть", "katakan"],
+              ["чекати", "чекай", "чекайте", "tunggu"],
+              ["дати", "дай", "дайте", "beri"],
+              ["повторити", "повтори", "повторіть", "ulangi"],
+              ["написати", "напиши", "напишіть", "tuliskan"],
+              ["слухати", "слухай", "слухайте", "dengarkan"],
+              ["не запізнюватися", "не запізнюйся", "не запізнюйтеся", "jangan telat"],
+              ["ajakan", "—", "ходімо", "ayo kita jalan"]
+            ]
+          },
+          "after": ["Untuk melarang, letakkan **не** di depan: *Не йдіть туди* (jangan ke sana), *Не хвилюйтеся* (jangan khawatir)."]
+        },
+        {
+          "title": "Arah dan letak",
+          "body": [],
+          "tables": [
+            {
+              "head": ["Ukraina", "Baca", "Indonesia"],
+              "rows": [
+                ["прямо", "PRYA-mo", "lurus"],
+                ["ліворуч", "li-VO-ruch", "ke kiri, di kiri"],
+                ["праворуч", "pra-VO-ruch", "ke kanan, di kanan"],
+                ["назад", "na-ZAD", "kembali, ke belakang"],
+                ["вперед", "vpe-RED", "ke depan"],
+                ["вгору / вниз", "VHO-ru / vnyz", "ke atas / ke bawah"],
+                ["тут / там", "tut / tam", "di sini / di sana"],
+                ["перехрестя", "pe-re-KHRES-tya", "perempatan"],
+                ["світлофор", "svit-lo-FOR", "lampu lalu lintas"],
+                ["ріг", "rih", "sudut, pojok"]
+              ]
+            },
+            {
+              "head": ["Kata depan", "Kasus", "Contoh", "Indonesia"],
+              "rows": [
+                ["біля", "родовий", "біля банку", "dekat bank"],
+                ["навпроти", "родовий", "навпроти музею", "di seberang museum"],
+                ["поруч з", "орудний", "поруч з аптекою", "di sebelah apotek"],
+                ["за", "орудний", "за рогом", "di balik pojok"],
+                ["перед", "орудний", "перед школою", "di depan sekolah"],
+                ["між", "орудний", "між банком і аптекою", "di antara bank dan apotek"],
+                ["на розі", "місцевий", "на розі вулиці", "di sudut jalan"]
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tempat umum di kota",
+      "blocks": [
+        {"type": "tabel", "head": ["Українська", "Baca", "Bahasa Indonesia"], "rows": [
+          ["музей", "mu-ZEY", "museum"],
+          ["театр", "te-ATR", "teater"],
+          ["кінотеатр", "ki-no-te-ATR", "bioskop"],
+          ["банк", "bank", "bank"],
+          ["аптека", "ap-TE-ka", "apotek"],
+          ["лікарня", "li-KAR-nya", "rumah sakit"],
+          ["пошта", "POSH-ta", "kantor pos"],
+          ["парк", "park", "taman"],
+          ["площа", "PLO-shcha", "lapangan, alun-alun"],
+          ["вокзал", "vok-ZAL", "stasiun kereta"],
+          ["аеропорт", "a-e-ro-PORT", "bandara"],
+          ["готель", "ho-TEL'", "hotel"],
+          ["церква", "TSER-kva", "gereja"],
+          ["мечеть", "me-CHET'", "masjid"],
+          ["ринок", "RY-nok", "pasar"],
+          ["зупинка", "zu-PYN-ka", "halte"],
+          ["міст", "mist", "jembatan"],
+          ["річка", "RICH-ka", "sungai"],
+          ["туалет", "tu-a-LET", "toilet"],
+          ["банкомат", "ban-ko-MAT", "ATM"]
+        ]},
+        {"type": "kotak", "title": "Kalau kamu tersesat", "items": [
+          "**Я загубився / загубилася.** — saya tersesat. (lk / pr)",
+          "**Де я?** — saya di mana? Tunjukkan peta di teleponmu sambil mengucapkannya.",
+          "**Я шукаю цю адресу.** — saya mencari alamat ini.",
+          "**Ви можете показати на карті?** — bisa tunjukkan di peta?",
+          "**Я не місцевий / не місцева.** — saya bukan orang sini. Kalimat ini langsung membuat orang menjelaskan lebih pelan.",
+          "⚠️ Orang Ukraina umumnya sangat sabar terhadap orang asing yang bertanya arah. Kalau petunjuknya terlalu cepat, **Повільніше, будь ласка** selalu berhasil."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"uk": "як пройти", "baca": "yak proy-TY", "id": "bagaimana ke sana (jalan kaki)"},
+    {"uk": "як доїхати", "baca": "yak do-YI-kha-ty", "id": "bagaimana ke sana (berkendara)"},
+    {"uk": "прямо", "baca": "PRYA-mo", "id": "lurus"},
+    {"uk": "ліворуч", "baca": "li-VO-ruch", "id": "kiri"},
+    {"uk": "праворуч", "baca": "pra-VO-ruch", "id": "kanan"},
+    {"uk": "повернути", "baca": "po-ver-NU-ty", "id": "belok"},
+    {"uk": "перехрестя", "baca": "pe-re-KHRES-tya", "id": "perempatan"},
+    {"uk": "світлофор", "baca": "svit-lo-FOR", "id": "lampu lalu lintas"},
+    {"uk": "ріг", "baca": "rih", "id": "sudut, pojok"},
+    {"uk": "біля", "baca": "BI-lya", "id": "dekat"},
+    {"uk": "навпроти", "baca": "nav-PRO-ty", "id": "di seberang"},
+    {"uk": "поруч", "baca": "PO-ruch", "id": "di sebelah"},
+    {"uk": "за", "baca": "za", "id": "di balik, di belakang"},
+    {"uk": "перед", "baca": "PE-red", "id": "di depan"},
+    {"uk": "між", "baca": "mizh", "id": "di antara"},
+    {"uk": "музей", "baca": "mu-ZEY", "id": "museum"},
+    {"uk": "аптека", "baca": "ap-TE-ka", "id": "apotek"},
+    {"uk": "площа", "baca": "PLO-shcha", "id": "lapangan, alun-alun"},
+    {"uk": "готель", "baca": "ho-TEL'", "id": "hotel"},
+    {"uk": "банкомат", "baca": "ban-ko-MAT", "id": "ATM"},
+    {"uk": "метр", "baca": "metr", "id": "meter"},
+    {"uk": "карта", "baca": "KAR-ta", "id": "peta"},
+    {"uk": "показати", "baca": "po-ka-ZA-ty", "id": "menunjukkan"},
+    {"uk": "загубитися", "baca": "za-hu-BY-ty-sya", "id": "tersesat"},
+    {"uk": "перехожий", "baca": "pe-re-KHO-zhyy", "id": "orang yang lewat"},
+    {"uk": "гарного дня", "baca": "HAR-no-ho dnya", "id": "semoga harimu baik"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi bentuk perintah untuk ви.",
+      "items": [
+        "йти → ____",
+        "повернути → ____",
+        "сказати → ____",
+        "чекати → ____",
+        "повторити → ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata arah atau kata depan yang tepat.",
+      "items": [
+        "Поверніть ____ (ke kiri).",
+        "Поверніть ____ (ke kanan).",
+        "Ідіть ____ (lurus).",
+        "Музей ____ (di seberang) банку.",
+        "Аптека ____ (dekat) метро."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "пройти / як / музею / до",
+        "прямо / ідіть",
+        "ліворуч / поверніть",
+        "далеко / це",
+        "пішки / десять / хвилин"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ukraina.",
+      "items": [
+        "Permisi, bagaimana caranya ke museum?",
+        "Jalan lurus sampai perempatan.",
+        "Lalu belok kiri.",
+        "Museumnya di sebelah kanan.",
+        "Sepuluh menit jalan kaki."
+      ]
+    }
+  ],
+  "answers": [
+    "ідіть — поверніть — скажіть — чекайте — повторіть",
+    "ліворуч — праворуч — прямо — навпроти — біля",
+    "Як пройти до музею? — Ідіть прямо. — Поверніть ліворуч. — Це далеко? — Десять хвилин пішки.",
+    "Вибачте, як пройти до музею? — Ідіть прямо до перехрестя. — Потім поверніть ліворуч. — Музей буде праворуч. — Десять хвилин пішки."
+  ],
+  "wave": "Ulangi Unit 13. *Куди* dan *Де* yang kamu pisahkan di sana adalah dasar seluruh halaman ini — petunjuk arah selalu memakai yang pertama."
+}

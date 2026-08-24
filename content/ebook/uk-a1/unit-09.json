@@ -1,0 +1,191 @@
+{
+  "title": "Di toko: harga, jumlah, dan ketiadaan",
+  "title_target": "У магазині — U mahazyni",
+  "goal": "Menanyakan harga, meminta sejumlah barang, dan mengerti kalimat yang paling sering kamu dengar di toko Ukraina: \"barangnya tidak ada\" — beserta ekor kata yang selalu menyertainya.",
+  "bekal": [
+    "menanyakan harga satu barang dan beberapa barang",
+    "meminta sesuatu dengan Дайте, будь ласка",
+    "mengerti dan memakai немає + родовий",
+    "menyebut jumlah dengan satuan (кілограм, пляшка, пачка)",
+    "menanyakan total belanja"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — Pagi di pasar Bessarabska",
+      "intro": "Ani belanja di pasar. Perhatikan bahwa setiap kali penjual mengatakan sesuatu **tidak ada**, nama barangnya berubah ekornya: полуниця jadi полуниці, молоко jadi молока.",
+      "lines": [
+        {"speaker": "Продавець:", "text": "[Добрий|DOB-ryy] [день|den']! [Що|Shcho] [вам|vam]?", "id": "Selamat siang! Mau apa?", "literal": "baik — hari! apa — kepada-Anda?"},
+        {"speaker": "Ані:", "text": "[Скільки|SKIL'-ky] [коштує|KOSH-tu-ye] [кілограм|ki-lo-HRAM] [яблук|YAB-luk]?", "id": "Sekilo apel berapa?", "literal": "berapa — berharga — kilogram — apel-apel (родовий)?"},
+        {"speaker": "Продавець:", "text": "[Сорок|SO-rok] [п'ять|pyat'] [гривень|HRY-ven'].", "id": "Empat puluh lima hryvnia.", "literal": "empat-puluh — lima — hryvnia (родовий jamak)."},
+        {"speaker": "Ані:", "text": "[Дайте|DAY-te], [будь|bud'] [ласка|LAS-ka], [два|dva] [кілограми|ki-lo-HRA-my].", "id": "Tolong beri saya dua kilo.", "literal": "berilah, jadilah — kebaikan, dua — kilogram-kilogram."},
+        {"speaker": "Продавець:", "text": "[Будь|Bud'] [ласка|LAS-ka]. [Ще|Shche] [щось|shchos']?", "id": "Silakan. Ada lagi?", "literal": "jadilah — kebaikan. lagi — sesuatu?"},
+        {"speaker": "Ані:", "text": "[У|U] [вас|vas] [є|ye] [полуниця|po-lu-NY-tsya]?", "id": "Ada stroberi?", "literal": "di — Anda — ada — stroberi?"},
+        {"speaker": "Продавець:", "text": "[Полуниці|Po-lu-NY-tsi] [немає|ne-MA-ye]. [Сезон|Se-ZON] [закінчився|za-KIN-chyv-sya].", "id": "Stroberinya tidak ada. Musimnya sudah habis.", "literal": "stroberi (родовий) — tidak-ada. musim — telah-berakhir."},
+        {"speaker": "Ані:", "text": "[Шкода|Shko-DA]. [Тоді|To-DI] [дайте|DAY-te] [ще|shche] [хліб|khlib] [і|i] [молоко|mo-lo-KO].", "id": "Sayang sekali. Kalau begitu tolong roti dan susu.", "literal": "sayang. kalau-begitu — berilah — lagi — roti — dan — susu."},
+        {"speaker": "Продавець:", "text": "[Молока|Mo-lo-KA] [теж|tezh] [немає|ne-MA-ye]. [Тільки|TIL'-ky] [кефір|ke-FIR].", "id": "Susunya juga tidak ada. Cuma kefir.", "literal": "susu (родовий) — juga — tidak-ada. hanya — kefir."},
+        {"speaker": "Ані:", "text": "[Добре|DOB-re], [кефір|ke-FIR]. [Скільки|SKIL'-ky] [з|z] [мене|ME-ne]?", "id": "Baik, kefir saja. Semuanya berapa?", "literal": "baik, kefir. berapa — dari — saya?"},
+        {"speaker": "Продавець:", "text": "[Сто|Sto] [двадцять|DVAD-tsyat'] [гривень|HRY-ven'].", "id": "Seratus dua puluh hryvnia.", "literal": "seratus — dua-puluh — hryvnia."},
+        {"speaker": "Ані:", "text": "[Ось|Os'], [будь|bud'] [ласка|LAS-ka]. [Дякую|DYA-ku-yu]!", "id": "Ini, silakan. Terima kasih!", "literal": "ini-dia, jadilah — kebaikan. terima-kasih!"}
+      ],
+      "notes": [
+        "**Скільки коштує untuk satu barang, скільки коштують untuk banyak.** *Скільки коштує хліб?* (satu) — *Скільки коштують яблука?* (banyak). Kata kerjanya ikut jumlah barangnya, persis seperti dalam bahasa Inggris. Kalau kamu ragu, tunjuk barangnya dan tanya **Скільки це коштує?** — selalu benar.",
+        "**Ketiadaan selalu memakai родовий, dan inilah kalimat yang paling sering kamu dengar di toko.** *Полуниці немає*, *молока немає*, *хліба немає*. Perhatikan susunannya: barangnya di depan, *немає* di belakang — kebalikan dari urutan yang mungkin kamu duga.",
+        "**Дайте, будь ласка — bentuk perintah yang sopan.** Perintah dalam bahasa Ukraina tidak kasar selama disertai *будь ласка*. Bentuk kepada teman: **дай**. Kepada orang lain atau lebih dari satu: **дайте**. Ini rumus yang akan kamu pakai di toko, di apotek, di warung.",
+        "**Satuan berubah bentuk mengikuti angkanya, seperti тahun di Unit 7.** *Один кілограм*, *два кілограми*, *п'ять кілограмів*. Pola yang sama persis: 1 → bentuk kamus, 2–4 → jamak biasa, 5 ke atas → родовий jamak.",
+        "**Родовий jamak sering terlihat seperti kata dipotong ekornya.** *Яблука* → *яблук*, *гривні* → *гривень*, *книги* → *книг*, *хвилини* → *хвилин*. Kata perempuan berakhiran **-а** kehilangan ekornya sama sekali. Ini terasa aneh di awal, lalu jadi tanda pengenal yang mudah.",
+        "**Скільки з мене? harfiahnya \"berapa dari saya?\"** Ini cara paling lazim menanyakan total belanja. Bentuk lain yang sama benarnya: *Скільки всього?* (semuanya berapa) atau *Скільки за все?*",
+        "**Ось = ini dia.** Dipakai saat menyerahkan sesuatu, seperti \"nih\" atau \"ini\" dalam bahasa Indonesia. Untuk menunjuk sesuatu yang jauh: **он** (*он там* — itu di sana)."
+      ],
+      "grammars": [
+        {
+          "title": "Родовий: ketiadaan, jumlah, dan kepunyaan",
+          "body": ["Tiga pekerjaan yang sudah kamu temui terpisah-pisah, sekarang di satu tabel. Ekornya sama untuk ketiganya."],
+          "table": {
+            "head": ["Dipakai untuk", "Contoh", "Indonesia"],
+            "rows": [
+              ["ketiadaan (немає)", "Молока немає.", "Susunya tidak ada."],
+              ["ketiadaan (не + kata kerja)", "Я не п'ю кави.", "Saya tidak minum kopi."],
+              ["sesudah angka 5+", "п'ять гривень", "lima hryvnia"],
+              ["sesudah скільки, багато", "багато людей", "banyak orang"],
+              ["kepunyaan", "книга сестри", "buku saudari"],
+              ["sesudah з, до, від, без", "з України, без цукру", "dari Ukraina, tanpa gula"],
+              ["satuan isi", "кілограм яблук", "sekilo apel"]
+            ]
+          },
+          "after": ["Baris kedua sering terlewat pemula: **kalimat menyangkal mengubah objeknya jadi родовий**. *Я п'ю каву* (знахідний) → *Я не п'ю кави* (родовий). Aturan ini tidak wajib di percakapan modern, tapi ia terdengar rapi dan orang Ukraina memakainya."]
+        },
+        {
+          "title": "Satuan dan jumlah",
+          "body": [],
+          "table": {
+            "head": ["Satuan", "Baca", "1", "2–4", "5+"],
+            "rows": [
+              ["кілограм", "ki-lo-HRAM", "один кілограм", "два кілограми", "п'ять кілограмів"],
+              ["пляшка", "PLYASH-ka", "одна пляшка", "дві пляшки", "п'ять пляшок"],
+              ["пачка", "PACH-ka", "одна пачка", "дві пачки", "п'ять пачок"],
+              ["штука", "SHTU-ka", "одна штука", "дві штуки", "п'ять штук"],
+              ["гривня", "HRYV-nya", "одна гривня", "дві гривні", "п'ять гривень"],
+              ["грам", "hram", "один грам", "два грами", "сто грамів"]
+            ]
+          },
+          "after": ["**Штука** adalah satuan penyelamat: dipakai untuk apa saja yang dihitung satuan. *Дайте три штуки* — tolong beri tiga buah. Sama sekali tidak kasar dan sangat lazim."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Belanja mingguan",
+      "blocks": [
+        {"type": "tabel", "head": ["Українська", "Baca", "Bahasa Indonesia"], "rows": [
+          ["магазин", "ma-ha-ZYN", "toko"],
+          ["ринок", "RY-nok", "pasar"],
+          ["супермаркет", "su-per-MAR-ket", "supermarket"],
+          ["аптека", "ap-TE-ka", "apotek"],
+          ["хліб", "khlib", "roti"],
+          ["молоко", "mo-lo-KO", "susu"],
+          ["кефір", "ke-FIR", "kefir (susu asam)"],
+          ["сир", "syr", "keju"],
+          ["яйця", "YAY-tsya", "telur"],
+          ["масло", "MAS-lo", "mentega"],
+          ["олія", "o-LI-ya", "minyak goreng"],
+          ["цукор", "TSU-kor", "gula"],
+          ["сіль", "sil'", "garam"],
+          ["рис", "rys", "beras"],
+          ["яблука", "YAB-lu-ka", "apel"],
+          ["банани", "ba-NA-ny", "pisang"],
+          ["помідори", "po-mi-DO-ry", "tomat"],
+          ["огірки", "o-hir-KY", "mentimun"],
+          ["картопля", "kar-TOP-lya", "kentang"],
+          ["цибуля", "tsy-BU-lya", "bawang bombai"]
+        ]},
+        {"type": "kotak", "title": "Lima kalimat yang menutup satu kali belanja", "items": [
+          "**Скільки це коштує?** — berapa harganya? Tunjuk barangnya, ucapkan, selesai.",
+          "**Дайте, будь ласка, два кілограми.** — tolong beri dua kilo.",
+          "**У вас є ___?** — apakah ada ___? Isi dengan bentuk kamus, bukan bentuk lain.",
+          "**Це все, дякую.** — sudah itu saja, terima kasih.",
+          "**Скільки з мене?** — semuanya berapa?"
+        ]},
+        {"type": "sub", "text": "Kalau kamu tidak menangkap harganya"},
+        {"type": "p", "text": "Angka yang diucapkan cepat adalah tembok pertama semua pemula, di bahasa mana pun. Dua kalimat penolongnya: **Повторіть, будь ласка** (tolong ulangi) dan **Напишіть, будь ласка** (tolong tuliskan). Yang kedua bekerja seratus persen dan tidak ada penjual yang keberatan."}
+      ]
+    }
+  ],
+  "vocab": [
+    {"uk": "магазин", "baca": "ma-ha-ZYN", "id": "toko"},
+    {"uk": "ринок", "baca": "RY-nok", "id": "pasar"},
+    {"uk": "продавець", "baca": "pro-da-VETS'", "id": "penjaga toko"},
+    {"uk": "купувати", "baca": "ku-pu-VA-ty", "id": "membeli"},
+    {"uk": "дайте", "baca": "DAY-te", "id": "berilah (sopan)"},
+    {"uk": "кілограм", "baca": "ki-lo-HRAM", "id": "kilogram"},
+    {"uk": "пляшка", "baca": "PLYASH-ka", "id": "botol"},
+    {"uk": "пачка", "baca": "PACH-ka", "id": "bungkus, pak"},
+    {"uk": "штука", "baca": "SHTU-ka", "id": "buah (satuan)"},
+    {"uk": "яблуко", "baca": "YAB-lu-ko", "id": "apel"},
+    {"uk": "полуниця", "baca": "po-lu-NY-tsya", "id": "stroberi"},
+    {"uk": "овочі", "baca": "O-vo-chi", "id": "sayuran"},
+    {"uk": "фрукти", "baca": "FRUK-ty", "id": "buah-buahan"},
+    {"uk": "гроші", "baca": "HRO-shi", "id": "uang"},
+    {"uk": "сезон", "baca": "se-ZON", "id": "musim"},
+    {"uk": "шкода", "baca": "shko-DA", "id": "sayang sekali"},
+    {"uk": "тоді", "baca": "to-DI", "id": "kalau begitu"},
+    {"uk": "ось", "baca": "os'", "id": "ini dia"},
+    {"uk": "все", "baca": "vse", "id": "semua, sudah itu saja"},
+    {"uk": "багато", "baca": "ba-HA-to", "id": "banyak"},
+    {"uk": "мало", "baca": "MA-lo", "id": "sedikit"},
+    {"uk": "свіжий", "baca": "SVI-zhyy", "id": "segar"},
+    {"uk": "напишіть", "baca": "na-py-SHIT'", "id": "tuliskan (sopan)"},
+    {"uk": "скільки з мене", "baca": "SKIL'-ky z ME-ne", "id": "semuanya berapa"},
+    {"uk": "закінчитися", "baca": "za-KIN-chy-ty-sya", "id": "berakhir, habis"},
+    {"uk": "сир", "baca": "syr", "id": "keju"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan коштує atau коштують.",
+      "items": [
+        "Скільки ____ хліб?",
+        "Скільки ____ ці яблука?",
+        "Скільки ____ кава?",
+        "Скільки ____ ці книги?",
+        "Скільки ____ кілограм рису?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk родовий sesudah немає.",
+      "items": [
+        "У нас немає ____ (молоко).",
+        "У них немає ____ (хліб).",
+        "Тут немає ____ (вода).",
+        "У мене немає ____ (гроші).",
+        "Сьогодні немає ____ (полуниця)."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "коштує / скільки / це",
+        "будь ласка / дайте / хліб",
+        "немає / молока / у нас",
+        "мене / скільки / з",
+        "дорого / це / дуже"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ukraina.",
+      "items": [
+        "Sekilo apel berapa?",
+        "Tolong beri saya dua kilo.",
+        "Ada stroberi?",
+        "Stroberinya tidak ada.",
+        "Semuanya berapa?"
+      ]
+    }
+  ],
+  "answers": [
+    "коштує — коштують — коштує — коштують — коштує",
+    "молока — хліба — води — грошей — полуниці",
+    "Скільки це коштує? — Дайте хліб, будь ласка. — У нас немає молока. — Скільки з мене? — Це дуже дорого.",
+    "Скільки коштує кілограм яблук? — Дайте, будь ласка, два кілограми. — У вас є полуниця? — Полуниці немає. — Скільки з мене?"
+  ],
+  "wave": "Ulangi Unit 4. *У мене немає брата* dan *Молока немає* hari ini adalah kalimat yang sama persis susunannya — родовий sesudah ketiadaan."
+}

@@ -1,0 +1,571 @@
+{
+  "title": "Kemarin saya — dan kata kerja yang tahu jenis kelaminmu",
+  "title_target": "Вчора і завтра — Vchora i zavtra",
+  "goal": "Menceritakan apa yang terjadi kemarin dan apa yang akan terjadi besok — dan menghadapi satu hal yang tidak ada padanannya dalam bahasa Indonesia: kata kerja lampau yang berubah menurut jenis kelamin pembicaranya.",
+  "bekal": [
+    "menyusun waktu lampau dengan -в, -ла, -ло, -ли",
+    "memakai був, була, було, були",
+    "menyusun waktu depan dengan буду",
+    "memakai bentuk depan menyatu khas Ukraina (читатиму)",
+    "menceritakan kejadian kemarin dalam kalimat utuh"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — Senin pagi, kelas yang terlewat",
+      "intro": "Oksana menanyakan kenapa Ani tidak hadir. Perhatikan bahwa setiap kata kerja lampau yang diucapkan Ani berakhiran **-ла**, dan setiap yang menyebut Andriy berakhiran **-в**.",
+      "lines": [
+        {
+          "speaker": "Оксана:",
+          "text": "[Ані|A-ni], [де|de] [ти|ty] [була|bu-LA] [вчора|VCHO-ra]?",
+          "id": "Ani, kemarin kamu ke mana?",
+          "literal": "Ani, di-mana — kamu — ada (lampau pr) — kemarin?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Я|Ya] [була|bu-LA] [вдома|VDO-ma]. [Я|Ya] [хворіла|khvo-RI-la].",
+          "id": "Saya di rumah. Saya sakit.",
+          "literal": "saya — ada (lampau pr) — di-rumah. saya — sakit (lampau pr)."
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Шкода|Shko-DA]! [А|A] [що|shcho] [ти|ty] [робила|ro-BY-la]?",
+          "id": "Sayang sekali! Kamu ngapain aja?",
+          "literal": "sayang! dan — apa — kamu — melakukan (lampau pr)?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Спала|SPA-la], [читала|chy-TA-la], [пила|py-LA] [чай|chay].",
+          "id": "Tidur, baca, minum teh.",
+          "literal": "tidur (lampau pr), membaca (lampau pr), minum (lampau pr) — teh."
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[А|A] [Андрій|An-DRIY]? [Він|Vin] [теж|tezh] [не|ne] [був|buv] [на|na] [парі|PA-ri].",
+          "id": "Kalau Andriy? Dia juga tidak ada di kelas.",
+          "literal": "dan — Andriy? dia — juga — tidak — ada (lampau lk) — di — kelas."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Він|Vin] [працював|pra-tsyu-VAV]. [У|U] [кафе|ka-FE] [було|bu-LO] [багато|ba-HA-to] [людей|lyu-DEY].",
+          "id": "Dia kerja. Di kafe banyak orang.",
+          "literal": "dia — bekerja (lampau lk). di — kafe — ada (lampau netral) — banyak — orang (родовий)."
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Зрозуміло|Zro-zu-MI-lo]. [Ви|Vy] [обоє|o-BO-ye] [пропустили|pro-pus-TY-ly] [тему|TE-mu].",
+          "id": "Paham. Kalian berdua ketinggalan materi.",
+          "literal": "dapat-dimengerti. kalian — berdua — melewatkan (lampau jamak) — tema."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Я|Ya] [знаю|ZNA-yu]. [Але|A-le] [я|ya] [вже|vzhe] [прочитала|pro-chy-TA-la] [все|vse] [вдома|VDO-ma].",
+          "id": "Saya tahu. Tapi saya sudah baca semuanya di rumah.",
+          "literal": "saya — tahu. tapi — saya — sudah — membaca-habis (lampau pr) — semua — di-rumah."
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Молодець|Mo-lo-DETS']! [А|A] [завтра|ZAV-tra] [ти|ty] [будеш|BU-desh]?",
+          "id": "Bagus! Besok kamu datang?",
+          "literal": "orang-hebat! dan — besok — kamu — akan-ada?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Обов'язково|O-bo-VYAZ-ko-vo] [буду|BU-du].",
+          "id": "Pasti datang.",
+          "literal": "pasti — akan-ada."
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Добре|DOB-re]. [Завтра|ZAV-tra] [ми|my] [будемо|BU-de-mo] [говорити|ho-vo-RY-ty] [про|pro] [минулий|my-NU-lyy] [час|chas].",
+          "id": "Bagus. Besok kita akan membahas bentuk lampau.",
+          "literal": "baik. besok — kami — akan — berbicara — tentang — lampau — waktu."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Іронічно|I-ro-NICH-no]. [Я|Ya] [вже|vzhe] [цілий|TSI-lyy] [день|den'] [говорю|ho-vo-RYU] [про|pro] [вчора|VCHO-ra].",
+          "id": "Ironis. Saya sudah seharian bicara tentang kemarin.",
+          "literal": "ironis. saya — sudah — sepanjang — hari — berbicara — tentang — kemarin."
+        }
+      ],
+      "notes": [
+        "**Waktu lampau tidak peduli siapa yang bicara — ia peduli jenis dan jumlahnya.** Buang **-ти** dari bentuk dasar, tempelkan **-в** (lk), **-ла** (pr), **-ло** (netral), atau **-ли** (jamak). *Читати* → *читав / читала / читало / читали*. Sesederhana itu, dan berlaku untuk hampir semua kata kerja.",
+        "**Kalau kamu perempuan, kamu akan berkata -ла seumur hidupmu.** *Я була*, *я читала*, *я працювала*. Kalau laki-laki, *я був*, *я читав*, *я працював*. Tidak ada padanannya dalam bahasa Indonesia, dan tidak ada cara melewatinya: setiap kalimat lampau memaksamu memilih.",
+        "**Ekor -в dibaca seperti w.** *Був* berbunyi *buw*, *читав* berbunyi *chy-TAW*, *працював* berbunyi *pra-tsyu-VAW*. Ini bunyi Ukraina yang paling khas, dan mengucapkannya benar langsung memisahkanmu dari orang yang membaca dari kertas.",
+        "**Було dipakai untuk kalimat tanpa pelaku.** *У кафе було багато людей* — harfiahnya \"di kafe ada banyak orang\". Kalimat semacam ini memakai bentuk netral karena tidak ada pelaku yang berjenis. Sama: *Було холодно* (dulu dingin), *Було цікаво* (dulu menarik).",
+        "**Beberapa kata kerja mengubah batangnya di waktu lampau.** *Йти* → *йшов / йшла / йшли*. *Могти* → *міг / могла / могли*. *Їсти* → *їв / їла / їли*. Jumlahnya sedikit, dan semuanya kata kerja yang sering dipakai — jadi mereka akan masuk lewat pengulangan, bukan hafalan.",
+        "**Прочитала bukan sekadar читала.** Awalan **про-** menandakan bahwa perbuatannya selesai: *читала* (sedang membaca / membaca-baca), *прочитала* (selesai membaca sampai habis). Pasangan seperti ini disebut aspek, dan itu isi tingkat A2 — untuk sekarang cukup tahu bahwa awalan sering berarti \"tuntas\".",
+        "**Waktu depan Ukraina punya dua jalan, dan yang kedua tidak ada dalam bahasa Rusia.** *Буду читати* (bersusun) dan *читатиму* (menyatu) sama artinya. Bentuk menyatu terdengar lebih alami di telinga Ukraina, dan memakainya sekali-sekali langsung menandai bahwa kamu belajar bahasa Ukraina."
+      ],
+      "grammars": [
+        {
+          "title": "Waktu lampau: satu ekor, empat pilihan",
+          "body": [],
+          "table": {
+            "head": [
+              "Dasar",
+              "Laki-laki -в",
+              "Perempuan -ла",
+              "Netral -ло",
+              "Jamak -ли"
+            ],
+            "rows": [
+              [
+                "бути (ada)",
+                "був",
+                "була",
+                "було",
+                "були"
+              ],
+              [
+                "читати",
+                "читав",
+                "читала",
+                "читало",
+                "читали"
+              ],
+              [
+                "працювати",
+                "працював",
+                "працювала",
+                "працювало",
+                "працювали"
+              ],
+              [
+                "робити",
+                "робив",
+                "робила",
+                "робило",
+                "робили"
+              ],
+              [
+                "жити",
+                "жив",
+                "жила",
+                "жило",
+                "жили"
+              ],
+              [
+                "говорити",
+                "говорив",
+                "говорила",
+                "говорило",
+                "говорили"
+              ],
+              [
+                "спати",
+                "спав",
+                "спала",
+                "спало",
+                "спали"
+              ],
+              [
+                "пити",
+                "пив",
+                "пила",
+                "пило",
+                "пили"
+              ],
+              [
+                "їсти",
+                "їв",
+                "їла",
+                "їло",
+                "їли"
+              ],
+              [
+                "йти",
+                "йшов",
+                "йшла",
+                "йшло",
+                "йшли"
+              ],
+              [
+                "могти",
+                "міг",
+                "могла",
+                "могло",
+                "могли"
+              ],
+              [
+                "хотіти",
+                "хотів",
+                "хотіла",
+                "хотіло",
+                "хотіли"
+              ]
+            ]
+          },
+          "after": [
+            "Tiga baris terakhir menyimpang dan harus dihafal. Untungnya ketiganya kata kerja yang akan kamu ucapkan puluhan kali seminggu, jadi hafalannya datang sendiri."
+          ]
+        },
+        {
+          "title": "Waktu depan: dua jalan yang setara",
+          "body": [
+            "Pakai yang mana pun; keduanya benar dan keduanya lazim."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Orang",
+                "Bersusun (буду + dasar)",
+                "Menyatu",
+                "Arti"
+              ],
+              "rows": [
+                [
+                  "я",
+                  "буду читати",
+                  "читатиму",
+                  "saya akan membaca"
+                ],
+                [
+                  "ти",
+                  "будеш читати",
+                  "читатимеш",
+                  "kamu akan membaca"
+                ],
+                [
+                  "він / вона",
+                  "буде читати",
+                  "читатиме",
+                  "dia akan membaca"
+                ],
+                [
+                  "ми",
+                  "будемо читати",
+                  "читатимемо",
+                  "kami akan membaca"
+                ],
+                [
+                  "ви",
+                  "будете читати",
+                  "читатимете",
+                  "Anda akan membaca"
+                ],
+                [
+                  "вони",
+                  "будуть читати",
+                  "читатимуть",
+                  "mereka akan membaca"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Waktu",
+                "Bahasa Ukraina",
+                "Baca",
+                "Indonesia"
+              ],
+              "rows": [
+                [
+                  "lampau",
+                  "Я був удома.",
+                  "ya buv u-DO-ma",
+                  "Saya (lk) di rumah."
+                ],
+                [
+                  "sekarang",
+                  "Я вдома.",
+                  "ya VDO-ma",
+                  "Saya di rumah."
+                ],
+                [
+                  "depan",
+                  "Я буду вдома.",
+                  "ya BU-du VDO-ma",
+                  "Saya akan di rumah."
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "Perhatikan baris tengah tabel kedua: pada waktu sekarang kata kerjanya **hilang sama sekali**. Ini kembali ke pelajaran Unit 1 — hanya waktu sekarang yang boleh tanpa kata kerja."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menceritakan yang sudah lewat",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Ukraina",
+            "Baca",
+            "Indonesia"
+          ],
+          "rows": [
+            [
+              "вчора",
+              "VCHO-ra",
+              "kemarin"
+            ],
+            [
+              "позавчора",
+              "po-za-VCHO-ra",
+              "kemarin dulu"
+            ],
+            [
+              "минулого тижня",
+              "my-NU-lo-ho TYZH-nya",
+              "minggu lalu"
+            ],
+            [
+              "минулого місяця",
+              "my-NU-lo-ho MI-sya-tsya",
+              "bulan lalu"
+            ],
+            [
+              "минулого року",
+              "my-NU-lo-ho RO-ku",
+              "tahun lalu"
+            ],
+            [
+              "давно",
+              "dav-NO",
+              "dulu sekali"
+            ],
+            [
+              "нещодавно",
+              "ne-shcho-DAV-no",
+              "baru-baru ini"
+            ],
+            [
+              "сьогодні вранці",
+              "s'o-HOD-ni VRAN-tsi",
+              "tadi pagi"
+            ],
+            [
+              "завтра",
+              "ZAV-tra",
+              "besok"
+            ],
+            [
+              "післязавтра",
+              "PIS-lya-zav-tra",
+              "lusa"
+            ],
+            [
+              "наступного тижня",
+              "nas-TUP-no-ho TYZH-nya",
+              "minggu depan"
+            ],
+            [
+              "скоро",
+              "SKO-ro",
+              "sebentar lagi"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa keterangan waktu lampau memakai родовий: *минулого тижня*, *минулого року*. Ini pola yang sama dengan tanggal — dan kamu akan menemuinya lagi kalau menyebut hari lahirmu."
+        },
+        {
+          "type": "kotak",
+          "title": "Empat kalimat lampau yang akan kamu pakai terus",
+          "items": [
+            "**Я був / була…** — saya (dulu) di… *Я була в Києві.*",
+            "**Мені сподобалося** — saya suka (yang sudah lewat). Kalimat baku sesudah film, makanan, atau perjalanan.",
+            "**Я не знав / не знала** — saya tidak tahu. Kalimat penyelamat di seratus keadaan.",
+            "**Що ти робив / робила вчора?** — kamu ngapain kemarin? Pertanyaan pembuka percakapan yang paling sering dipakai.",
+            "⚠️ Perhatikan bahwa keempatnya memaksamu memilih jenis kelamin. Latih bentuk yang berlaku untukmu sampai keluar tanpa berpikir."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Kalau kamu perlu waktu untuk berpikir"
+        },
+        {
+          "type": "p",
+          "text": "Ini bukan tata bahasa, tapi ia menyelamatkan lebih banyak percakapan daripada tata bahasa mana pun: **Хвилинку** (sebentar), **Як це сказати...** (bagaimana ya bilangnya), **Я подумаю** (saya pikir dulu). Orang Ukraina memakainya juga, dan memakainya membuatmu terdengar seperti orang yang sedang berpikir dalam bahasa Ukraina — bukan orang yang sedang menerjemahkan."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uk": "вчора",
+      "baca": "VCHO-ra",
+      "id": "kemarin"
+    },
+    {
+      "uk": "завтра",
+      "baca": "ZAV-tra",
+      "id": "besok"
+    },
+    {
+      "uk": "минулий",
+      "baca": "my-NU-lyy",
+      "id": "yang lalu"
+    },
+    {
+      "uk": "наступний",
+      "baca": "nas-TUP-nyy",
+      "id": "yang berikut"
+    },
+    {
+      "uk": "був / була / було / були",
+      "baca": "buv / bu-LA",
+      "id": "adalah (lampau)"
+    },
+    {
+      "uk": "буду / будеш / буде",
+      "baca": "BU-du / BU-desh",
+      "id": "akan"
+    },
+    {
+      "uk": "хворіти",
+      "baca": "khvo-RI-ty",
+      "id": "sakit"
+    },
+    {
+      "uk": "пропустити",
+      "baca": "pro-pus-TY-ty",
+      "id": "melewatkan"
+    },
+    {
+      "uk": "тема",
+      "baca": "TE-ma",
+      "id": "tema, materi"
+    },
+    {
+      "uk": "молодець",
+      "baca": "mo-lo-DETS'",
+      "id": "bagus, hebat (pujian)"
+    },
+    {
+      "uk": "обоє",
+      "baca": "o-BO-ye",
+      "id": "berdua"
+    },
+    {
+      "uk": "люди",
+      "baca": "LYU-dy",
+      "id": "orang-orang"
+    },
+    {
+      "uk": "цілий",
+      "baca": "TSI-lyy",
+      "id": "seluruh, sepanjang"
+    },
+    {
+      "uk": "давно",
+      "baca": "dav-NO",
+      "id": "dulu sekali"
+    },
+    {
+      "uk": "нещодавно",
+      "baca": "ne-shcho-DAV-no",
+      "id": "baru-baru ini"
+    },
+    {
+      "uk": "скоро",
+      "baca": "SKO-ro",
+      "id": "sebentar lagi"
+    },
+    {
+      "uk": "спочатку",
+      "baca": "spo-CHAT-ku",
+      "id": "pertama-tama"
+    },
+    {
+      "uk": "могти",
+      "baca": "MOH-ty",
+      "id": "bisa, mampu"
+    },
+    {
+      "uk": "хотіти",
+      "baca": "kho-TI-ty",
+      "id": "mau, ingin"
+    },
+    {
+      "uk": "знав / знала",
+      "baca": "znav / ZNA-la",
+      "id": "tahu (lampau)"
+    },
+    {
+      "uk": "сподобатися",
+      "baca": "spo-DO-ba-ty-sya",
+      "id": "berkenan, disukai"
+    },
+    {
+      "uk": "подумати",
+      "baca": "po-DU-ma-ty",
+      "id": "berpikir sejenak"
+    },
+    {
+      "uk": "іронічно",
+      "baca": "i-ro-NICH-no",
+      "id": "ironis"
+    },
+    {
+      "uk": "шкода",
+      "baca": "shko-DA",
+      "id": "sayang sekali"
+    },
+    {
+      "uk": "багато",
+      "baca": "ba-HA-to",
+      "id": "banyak"
+    },
+    {
+      "uk": "все",
+      "baca": "vse",
+      "id": "semua"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk lampau yang tepat.",
+      "items": [
+        "Я ____ (бути) вдома. — kata perempuan",
+        "Він ____ (працювати) вчора.",
+        "Вона ____ (читати) книгу.",
+        "Ми ____ (бути) в кафе.",
+        "Воно ____ (бути) добре."
+      ]
+    },
+    {
+      "prompt": "Ubah kalimat berikut ke waktu lampau.",
+      "items": [
+        "Я читаю книгу. — kata perempuan",
+        "Він працює.",
+        "Ми йдемо додому.",
+        "Вона спить.",
+        "Ти живеш у Києві. — kata laki-laki"
+      ]
+    },
+    {
+      "prompt": "Ubah kalimat berikut ke waktu depan dengan буду.",
+      "items": [
+        "Завтра я ____ (читати).",
+        "Він ____ (працювати) в кафе.",
+        "Ми ____ (говорити) українською.",
+        "Вони ____ (бути) вдома.",
+        "Ти ____ (вчитися) завтра?"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ukraina. Yang berbicara dan yang diajak bicara dua-duanya perempuan.",
+      "items": [
+        "Kemarin kamu di mana?",
+        "Saya di rumah. Saya sakit.",
+        "Dia (laki-laki) bekerja di kafe.",
+        "Besok kita akan bicara tentang bentuk lampau.",
+        "Saya sudah baca semuanya."
+      ]
+    }
+  ],
+  "answers": [
+    "була — працював — читала — були — було",
+    "Я читала книгу. — Він працював. — Ми йшли додому. — Вона спала. — Ти жив у Києві.",
+    "буду читати — буде працювати — будемо говорити — будуть — будеш вчитися",
+    "Де ти була вчора? — Я була вдома. Я хворіла. — Він працював у кафе. — Завтра ми будемо говорити про минулий час. — Я вже все прочитала."
+  ],
+  "wave": "Ulangi Unit 12. Seluruh cerita harian yang kamu susun di sana bisa kamu ulang sekarang dalam bentuk lampau — dan itu latihan terbaik untuk halaman ini."
+}

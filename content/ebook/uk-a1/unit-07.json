@@ -1,0 +1,187 @@
+{
+  "title": "Berapa umur Anda?",
+  "title_target": "Скільки вам років? — Skilky vam rokiv?",
+  "goal": "Menghitung dari nol sampai seribu, menyebutkan umur dengan susunan yang dipakai orang Ukraina, dan bertemu kasus ketiga (давальний) lewat pintu yang paling sering dipakai: umur.",
+  "bekal": [
+    "menghitung nol sampai seratus",
+    "menanyakan dan menyebut umur",
+    "memilih antara рік, роки, dan років",
+    "menyebutkan nomor telepon dan nomor kamar",
+    "menanyakan harga dengan Скільки коштує?"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — Mengisi formulir di asrama",
+      "intro": "Ani mendaftar ulang di kantor asrama. Perhatikan bahwa kata *рік* muncul dalam tiga bentuk berbeda di dialog ini, dan yang menentukan bukan umurnya melainkan angka terakhirnya.",
+      "lines": [
+        {"speaker": "Секретар:", "text": "[Скажіть|Ska-ZHIT'], [будь|bud'] [ласка|LAS-ka], [скільки|SKIL'-ky] [вам|vam] [років|RO-kiv]?", "id": "Tolong beri tahu, berapa umur Anda?", "literal": "katakanlah, jadilah — kebaikan, berapa — kepada-Anda — tahun-tahun?"},
+        {"speaker": "Ані:", "text": "[Мені|Me-NI] [двадцять|DVAD-tsyat'] [один|o-DYN] [рік|rik].", "id": "Umur saya dua puluh satu tahun.", "literal": "kepada-saya — dua-puluh — satu — tahun."},
+        {"speaker": "Секретар:", "text": "[Двадцять|DVAD-tsyat'] [один|o-DYN]... [А|A] [ваш|vash] [номер|NO-mer] [телефону|te-le-FO-nu]?", "id": "Dua puluh satu... Nomor telepon Anda?", "literal": "dua-puluh — satu... dan — milik-Anda — nomor — telepon (родовий)?"},
+        {"speaker": "Ані:", "text": "[Нуль|Nul'] [сім|sim] [три|try], [вісім|VI-sim] [два|dva], [дев'ять|DE-vyat'] [один|o-DYN].", "id": "Nol tujuh tiga, delapan dua, sembilan satu.", "literal": "nol — tujuh — tiga, delapan — dua, sembilan — satu."},
+        {"speaker": "Секретар:", "text": "[Дякую|DYA-ku-yu]. [Ви|Vy] [живете|zhy-ve-TE] [в|v] [гуртожитку|hur-TO-zhyt-ku]?", "id": "Terima kasih. Anda tinggal di asrama?", "literal": "terima-kasih. Anda — tinggal — di — asrama?"},
+        {"speaker": "Ані:", "text": "[Так|Tak], [кімната|kim-NA-ta] [сорок|SO-rok] [п'ять|pyat'].", "id": "Ya, kamar empat puluh lima.", "literal": "ya, kamar — empat-puluh — lima."},
+        {"speaker": "Секретар:", "text": "[Добре|DOB-re]. [А|A] [скільки|SKIL'-ky] [коштує|KOSH-tu-ye] [ваша|VA-sha] [кімната|kim-NA-ta]?", "id": "Baik. Kamar Anda berapa harganya?", "literal": "baik. dan — berapa — berharga — milik-Anda — kamar?"},
+        {"speaker": "Ані:", "text": "[Дві|Dvi] [тисячі|TY-sya-chi] [гривень|HRY-ven'] [на|na] [місяць|MI-syats'].", "id": "Dua ribu hryvnia sebulan.", "literal": "dua — ribu — hryvnia (родовий jamak) — untuk — bulan."},
+        {"speaker": "Секретар:", "text": "[Це|Tse] [недорого|ne-DO-ro-ho]. [А|A] [ваша|VA-sha] [сестра|ses-TRA]? [Скільки|SKIL'-ky] [їй|yiy] [років|RO-kiv]?", "id": "Itu tidak mahal. Kalau saudara perempuan Anda? Berapa umurnya?", "literal": "ini — tidak-mahal. dan — milik-Anda — saudari? berapa — kepada-dia — tahun-tahun?"},
+        {"speaker": "Ані:", "text": "[Їй|Yiy] [сімнадцять|sim-NAD-tsyat']. [А|A] [брату|BRA-tu] [двадцять|DVAD-tsyat'] [три|try] [роки|RO-ky].", "id": "Umurnya tujuh belas. Kalau abang saya dua puluh tiga tahun.", "literal": "kepada-dia — tujuh-belas. dan — kepada-abang — dua-puluh — tiga — tahun-tahun."},
+        {"speaker": "Секретар:", "text": "[Зрозуміло|Zro-zu-MI-lo]. [Все|Vse] [готово|ho-TO-vo], [дякую|DYA-ku-yu]!", "id": "Jelas. Semua beres, terima kasih!", "literal": "dapat-dimengerti. semua — siap, terima-kasih!"},
+        {"speaker": "Ані:", "text": "[Дякую|DYA-ku-yu] [вам|vam]!", "id": "Terima kasih kembali!", "literal": "terima-kasih — kepada-Anda!"}
+      ],
+      "notes": [
+        "**Umur dinyatakan dengan давальний, bukan dengan \"saya\".** Bukan *Я двадцять один рік* melainkan **Мені двадцять один рік** — harfiahnya \"kepada-saya dua puluh satu tahun\". Umur digambarkan sebagai sesuatu yang **diberikan** kepadamu, bukan yang kamu miliki.",
+        "**Kata рік punya tiga baju, dan angka terakhir yang memilihnya.** Berakhir **1** (kecuali 11) → **рік**. Berakhir **2, 3, 4** (kecuali 12, 13, 14) → **роки**. Sisanya, termasuk 11–14 → **років**. Jadi *21 рік*, *22 роки*, *25 років*, *31 рік*, *44 роки*.",
+        "**Angka 11 sampai 14 adalah jebakannya.** *Одинадцять років*, *дванадцять років*, *тринадцять років*, *чотирнадцять років* — semuanya memakai **років** walau berakhir 1, 2, 3, 4. Ini satu-satunya kekecualian, dan ia berlaku juga untuk 111, 112, dan seterusnya.",
+        "**Menyebut umur boleh tanpa kata рік sama sekali.** *Їй сімнадцять* sudah cukup dan sangat lazim dalam percakapan, persis seperti \"dia tujuh belas\" dalam bahasa Indonesia. Formulir dan kalimat resmi tetap memakai bentuk lengkapnya.",
+        "**Два dan дві tidak sama.** Untuk benda laki-laki dan netral: **два** (*два брати*, *два вікна*). Untuk benda perempuan: **дві** (*дві сестри*, *дві тисячі*). Angka lain tidak punya masalah ini — hanya *один / одна / одне* dan *два / дві*.",
+        "**Гривня di tiga bentuk juga.** *Одна гривня*, *дві гривні*, *п'ять гривень*. Uang Ukraina bernama **гривня** (*HRYV-nya*), disingkat **грн**, dan pecahannya **копійка**. Tiga bentuk ini akan kamu pakai setiap hari di Unit 9.",
+        "**Номер телефону, bukan номер телефон.** Kata kedua masuk родовий karena ia menerangkan kata pertama — sama seperti *чашка кави* (secangkir kopi), *книга сестри* (buku saudari). Pola \"X-nya Y\" selalu meletakkan Y di родовий."
+      ],
+      "grammars": [
+        {
+          "title": "Umur: давальний + angka + рік/роки/років",
+          "body": ["Bentuk давальний kata ganti — hafalkan lajur kedua, sisanya menyusul."],
+          "table": {
+            "head": ["Siapa", "Bentuk давальний", "Baca", "Contoh"],
+            "rows": [
+              ["saya", "мені", "me-NI", "Мені двадцять один рік."],
+              ["kamu", "тобі", "to-BI", "Скільки тобі років?"],
+              ["dia (lk)", "йому", "yo-MU", "Йому тридцять два роки."],
+              ["dia (pr)", "їй", "yiy", "Їй сімнадцять років."],
+              ["kami", "нам", "nam", "Нам по двадцять."],
+              ["Anda", "вам", "vam", "Скільки вам років?"],
+              ["mereka", "їм", "yim", "Їм по п'ять років."]
+            ]
+          },
+          "after": ["Untuk kata benda, ekor давальний-nya: laki-laki **-ові / -у** (*брату*, *батькові*), perempuan **-і** (*сестрі*, *мамі*). *Моїй сестрі сімнадцять років.*"]
+        },
+        {
+          "title": "Nol sampai seratus",
+          "body": [],
+          "tables": [
+            {
+              "head": ["Angka", "Ukraina", "Baca", "Angka", "Ukraina", "Baca"],
+              "rows": [
+                ["0", "нуль", "nul'", "11", "одинадцять", "o-dy-NAD-tsyat'"],
+                ["1", "один / одна", "o-DYN / od-NA", "12", "дванадцять", "dva-NAD-tsyat'"],
+                ["2", "два / дві", "dva / dvi", "13", "тринадцять", "try-NAD-tsyat'"],
+                ["3", "три", "try", "14", "чотирнадцять", "cho-tyr-NAD-tsyat'"],
+                ["4", "чотири", "cho-TY-ry", "15", "п'ятнадцять", "pyat-NAD-tsyat'"],
+                ["5", "п'ять", "pyat'", "16", "шістнадцять", "shist-NAD-tsyat'"],
+                ["6", "шість", "shist'", "17", "сімнадцять", "sim-NAD-tsyat'"],
+                ["7", "сім", "sim", "18", "вісімнадцять", "vi-sim-NAD-tsyat'"],
+                ["8", "вісім", "VI-sim", "19", "дев'ятнадцять", "de-vyat-NAD-tsyat'"],
+                ["9", "дев'ять", "DE-vyat'", "20", "двадцять", "DVAD-tsyat'"],
+                ["10", "десять", "DE-syat'", "21", "двадцять один", "DVAD-tsyat' o-DYN"]
+              ]
+            },
+            {
+              "head": ["Angka", "Ukraina", "Baca", "Angka", "Ukraina", "Baca"],
+              "rows": [
+                ["30", "тридцять", "TRYD-tsyat'", "80", "вісімдесят", "vi-sim-de-SYAT"],
+                ["40", "сорок", "SO-rok", "90", "дев'яносто", "de-vya-NOS-to"],
+                ["50", "п'ятдесят", "pyat-de-SYAT", "100", "сто", "sto"],
+                ["60", "шістдесят", "shist-de-SYAT", "200", "двісті", "DVIS-ti"],
+                ["70", "сімдесят", "sim-de-SYAT", "1000", "тисяча", "TY-sya-cha"]
+              ]
+            }
+          ],
+          "after": ["Perhatikan bahwa **сорок** (40) berdiri sendiri — ia tidak mengikuti pola *-десят* seperti tetangganya. Ini satu-satunya penyimpangan di antara puluhan."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Angka mengubah kata yang mengikutinya",
+      "blocks": [
+        {"type": "p", "text": "Aturan yang sama seperti *рік / роки / років* berlaku untuk semua kata benda. Sekali kamu melihat polanya, semua angka jadi mudah."},
+        {"type": "tabel", "head": ["Angka", "Bentuk kata benda", "Contoh: гривня", "Contoh: книга"], "rows": [
+          ["1, 21, 31...", "bentuk kamus", "одна гривня", "одна книга"],
+          ["2, 3, 4, 22...", "jamak biasa", "дві гривні", "три книги"],
+          ["5 sampai 20", "родовий jamak", "п'ять гривень", "п'ять книг"],
+          ["11, 12, 13, 14", "родовий jamak", "дванадцять гривень", "дванадцять книг"],
+          ["скільки, багато", "родовий jamak", "скільки гривень?", "багато книг"]
+        ]},
+        {"type": "kotak", "title": "Uang Ukraina dalam tiga bentuk", "items": [
+          "**Гривня** (*HRYV-nya*) — mata uang Ukraina, ditulis **грн** atau ₴. Satu гривня dibagi seratus **копійок**.",
+          "**Одна гривня — дві гривні — п'ять гривень.** Tiga bentuk ini menutup semua harga yang akan kamu ucapkan.",
+          "Harga sering disebut tanpa kata mata uangnya sama sekali: *Скільки коштує? — Сорок п'ять.* Persis seperti \"empat puluh lima\" di pasar Indonesia.",
+          "⚠️ Jangan menyebut harga dengan *рублі* — itu mata uang negara lain, dan menyebutnya di Ukraina bukan sekadar keliru."
+        ]},
+        {"type": "sub", "text": "Menyebutkan nomor telepon"},
+        {"type": "p", "text": "Nomor telepon disebut digit per digit atau dua-dua, seperti kebiasaan Indonesia. Nomor Ukraina berbentuk **+380** diikuti sembilan angka. Kalau kamu diminta mengulang, kalimat penolongnya: *Повторіть, будь ласка, повільно* (tolong ulangi pelan-pelan)."}
+      ]
+    }
+  ],
+  "vocab": [
+    {"uk": "скільки", "baca": "SKIL'-ky", "id": "berapa"},
+    {"uk": "рік", "baca": "rik", "id": "tahun"},
+    {"uk": "роки", "baca": "RO-ky", "id": "tahun (sesudah 2, 3, 4)"},
+    {"uk": "років", "baca": "RO-kiv", "id": "tahun (sesudah 5 ke atas)"},
+    {"uk": "мені", "baca": "me-NI", "id": "kepada saya"},
+    {"uk": "тобі", "baca": "to-BI", "id": "kepadamu"},
+    {"uk": "йому", "baca": "yo-MU", "id": "kepadanya (lk)"},
+    {"uk": "їй", "baca": "yiy", "id": "kepadanya (pr)"},
+    {"uk": "вам", "baca": "vam", "id": "kepada Anda"},
+    {"uk": "номер", "baca": "NO-mer", "id": "nomor"},
+    {"uk": "телефон", "baca": "te-le-FON", "id": "telepon"},
+    {"uk": "кімната", "baca": "kim-NA-ta", "id": "kamar"},
+    {"uk": "гуртожиток", "baca": "hur-TO-zhy-tok", "id": "asrama"},
+    {"uk": "гривня", "baca": "HRYV-nya", "id": "hryvnia (mata uang)"},
+    {"uk": "копійка", "baca": "ko-PIY-ka", "id": "kopiyka (pecahan)"},
+    {"uk": "коштувати", "baca": "KOSH-tu-va-ty", "id": "berharga, berbiaya"},
+    {"uk": "дорого", "baca": "DO-ro-ho", "id": "mahal"},
+    {"uk": "недорого", "baca": "ne-DO-ro-ho", "id": "tidak mahal"},
+    {"uk": "дешево", "baca": "DE-she-vo", "id": "murah"},
+    {"uk": "місяць", "baca": "MI-syats'", "id": "bulan"},
+    {"uk": "тиждень", "baca": "TYZH-den'", "id": "minggu"},
+    {"uk": "день", "baca": "den'", "id": "hari"},
+    {"uk": "тисяча", "baca": "TY-sya-cha", "id": "seribu"},
+    {"uk": "готово", "baca": "ho-TO-vo", "id": "beres, siap"},
+    {"uk": "скажіть", "baca": "ska-ZHIT'", "id": "katakanlah (sopan)"},
+    {"uk": "повторіть", "baca": "pov-to-RIT'", "id": "ulangi (sopan)"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk давальний kata ganti yang tepat.",
+      "items": [
+        "____ двадцять років. (я)",
+        "Скільки ____ років? (ти)",
+        "____ тридцять років. (він)",
+        "____ сімнадцять. (вона)",
+        "Скільки ____ років? (ви)"
+      ]
+    },
+    {
+      "prompt": "Isi dengan рік, роки, atau років.",
+      "items": [
+        "Мені двадцять один ____.",
+        "Йому двадцять три ____.",
+        "Їй п'ять ____.",
+        "Нам сорок два ____.",
+        "Їм тридцять ____."
+      ]
+    },
+    {
+      "prompt": "Tulis angka berikut dengan huruf.",
+      "items": ["7", "12", "20", "45", "100"]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ukraina.",
+      "items": [
+        "Berapa umur Anda?",
+        "Umur saya dua puluh satu tahun.",
+        "Saudara perempuan saya tujuh belas tahun.",
+        "Berapa harganya?",
+        "Dua ribu hryvnia sebulan."
+      ]
+    }
+  ],
+  "answers": [
+    "Мені — тобі — Йому — Їй — вам",
+    "рік — роки — років — роки — років",
+    "сім — дванадцять — двадцять — сорок п'ять — сто",
+    "Скільки вам років? — Мені двадцять один рік. — Моїй сестрі сімнадцять років. — Скільки це коштує? — Дві тисячі гривень на місяць."
+  ],
+  "wave": "Ulangi Unit 4. Kalimat *Йому двадцять років* sudah muncul di sana — sekarang kamu tahu bahwa **йому** itu давальний, dan kenapa bukan *він*."
+}

@@ -1,0 +1,185 @@
+{
+  "title": "Saya dari Indonesia",
+  "title_target": "Я з Індонезії — Ya z Indoneziyi",
+  "goal": "Menyebutkan asal negara dan kota, menanyakan asal orang lain, dan mengatakan bahasa apa saja yang kamu bisa — sekaligus bertemu kasus kedua (родовий) lewat pintu yang paling sering dipakai: kata depan з.",
+  "bekal": [
+    "menanyakan dan menjawab \"dari mana\"",
+    "menyebut nama negara dan kota dalam bentuk родовий",
+    "mengatakan bahasa yang kamu kuasai",
+    "membedakan з, із, dan зі",
+    "menyebut kebangsaan laki-laki dan perempuan"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — Di koridor kampus",
+      "intro": "Andriy menyapa Ani sebelum kelas dimulai. Perhatikan bahwa nama negara berubah ekornya setiap kali muncul sesudah з — Індонезія jadi Індонезії, Україна jadi України.",
+      "lines": [
+        {"speaker": "Андрій:", "text": "[Привіт|Pry-VIT]! [Ти|Ty] [нова|no-VA] [тут|tut], [так|tak]?", "id": "Hai! Kamu baru di sini, ya?", "literal": "hai! kamu — baru (pr) — di-sini, ya?"},
+        {"speaker": "Ані:", "text": "[Так|Tak]. [Мене|Me-NE] [звати|ZVA-ty] [Ані|A-ni].", "id": "Ya. Nama saya Ani.", "literal": "ya. saya (objek) — dipanggil — Ani."},
+        {"speaker": "Андрій:", "text": "[Дуже|DU-zhe] [приємно|pry-YEM-no]. [Я|Ya] [Андрій|An-DRIY]. [Звідки|ZVID-ky] [ти|ty]?", "id": "Senang berkenalan. Saya Andriy. Kamu dari mana?", "literal": "sangat — menyenangkan. saya — Andriy. dari-mana — kamu?"},
+        {"speaker": "Ані:", "text": "[Я|Ya] [з|z] [Індонезії|in-do-NE-zi-yi]. [З|Z] [Джакарти|dzha-KAR-ty].", "id": "Saya dari Indonesia. Dari Jakarta.", "literal": "saya — dari — Indonesia (родовий). dari — Jakarta (родовий)."},
+        {"speaker": "Андрій:", "text": "[З|Z] [Індонезії|in-do-NE-zi-yi]? [Це|Tse] [далеко|da-LE-ko]!", "id": "Dari Indonesia? Itu jauh!", "literal": "dari — Indonesia? ini — jauh!"},
+        {"speaker": "Ані:", "text": "[Дуже|DU-zhe] [далеко|da-LE-ko]. [А|A] [ти|ty] [звідки|ZVID-ky]?", "id": "Jauh sekali. Kalau kamu dari mana?", "literal": "sangat — jauh. dan — kamu — dari-mana?"},
+        {"speaker": "Андрій:", "text": "[Я|Ya] [з|z] [України|u-kra-YI-ny], [зі|zi] [Львова|L'VO-va]. [Але|A-le] [зараз|ZA-raz] [я|ya] [живу|zhy-VU] [в|v] [Києві|KY-ye-vi].", "id": "Saya dari Ukraina, dari Lviv. Tapi sekarang saya tinggal di Kyiv.", "literal": "saya — dari — Ukraina. dari — Lviv. tapi — sekarang — saya — tinggal — di — Kyiv."},
+        {"speaker": "Ані:", "text": "[Ти|Ty] [говориш|ho-VO-rysh] [англійською|an-HLIY-s'ko-yu]?", "id": "Kamu bisa bahasa Inggris?", "literal": "kamu — berbicara — dengan-Inggris?"},
+        {"speaker": "Андрій:", "text": "[Трохи|TRO-khy]. [А|A] [ти|ty] [говориш|ho-VO-rysh] [українською|u-kra-YIN-s'ko-yu]?", "id": "Sedikit. Kalau kamu bisa bahasa Ukraina?", "literal": "sedikit. dan — kamu — berbicara — dengan-Ukraina?"},
+        {"speaker": "Ані:", "text": "[Ще|Shche] [ні|ni]. [Тільки|TIL'-ky] [трохи|TRO-khy]. [Я|Ya] [вивчаю|vyv-CHA-yu] [українську|u-kra-YIN-s'ku].", "id": "Belum. Baru sedikit. Saya sedang belajar bahasa Ukraina.", "literal": "masih — tidak. hanya — sedikit. saya — mempelajari — bahasa-Ukraina."},
+        {"speaker": "Андрій:", "text": "[Ти|Ty] [вже|vzhe] [говориш|ho-VO-rysh] [добре|DOB-re]!", "id": "Kamu sudah bicara dengan baik kok!", "literal": "kamu — sudah — berbicara — baik!"},
+        {"speaker": "Ані:", "text": "[Дякую|DYA-ku-yu], [але|A-le] [це|tse] [неправда|ne-PRAV-da].", "id": "Terima kasih, tapi itu tidak benar.", "literal": "terima-kasih, tapi — ini — bukan-benar."}
+      ],
+      "notes": [
+        "**Звідки menanyakan asal, bukan tempat.** *Звідки ти?* = kamu dari mana (asalnya). *Де ти?* = kamu (sedang) di mana. Dua pertanyaan yang berbeda dan dijawab dengan kasus yang berbeda. Bandingkan: *Я з України* (asal) vs *Я в Україні* (sekarang berada).",
+        "**Sesudah з, nama negara masuk родовий.** Kabar baiknya polanya sangat rapi untuk negara berakhiran **-я**: Індонезія → **Індонезії**, Японія → **Японії**, Малайзія → **Малайзії**. Negara berakhiran **-а** jadi **-и**: Україна → **України**, Канада → **Канади**, Америка → **Америки**.",
+        "**з, із, зі — satu kata dengan tiga baju.** Pilihannya semata soal enak diucapkan. **з** di depan vokal atau satu konsonan (*з Києва*), **із** di depan gugus konsonan (*із Сінгапуру*), **зі** di depan gugus yang diawali с/з/ш/ж (*зі Львова*, *зі школи*). ⚠️ Salah memilih tidak mengubah arti dan semua orang tetap paham — jadi jangan biarkan ini menghentikanmu bicara.",
+        "**Bahasa memakai bentuk -ською, bukan nama bahasanya.** *Я говорю українською* harfiahnya \"saya berbicara dengan-cara-Ukraina\". Bentuk ini kasus kelima (орудний), tapi kamu tidak perlu tahu itu sekarang — cukup hafal bahwa ekornya **-ською** atau **-цькою**.",
+        "**Tapi kalau bahasanya jadi benda yang dipelajari, ekornya lain.** *Я вивчаю українську* (saya belajar bahasa Ukraina) — di sini bahasanya jadi sasaran perbuatan, dan ekornya **-ську**. Bandingkan berpasangan: *говорю українською* / *вивчаю українську*.",
+        "**Ще ні = belum.** Harfiahnya \"masih tidak\". Ini jawaban yang jauh lebih halus daripada *ні* polos, dan sangat berguna bagi pemula: ia mengakui keterbatasan sekaligus menandakan bahwa kamu sedang mengusahakannya. Kebalikannya **вже** (sudah).",
+        "**Nama kota Ukraina ditulis dari bahasanya sendiri.** Київ (Kyiv), Львів (Lviv), Харків (Kharkiv), Одеса (Odesa), Дніпро (Dnipro). ⚠️ Bentuk *Киев*, *Львов*, *Одесса* adalah ejaan Rusia; memakainya di Ukraina terdengar seperti memanggil Yogyakarta dengan nama kolonialnya."
+      ],
+      "grammars": [
+        {
+          "title": "Звідки? — asal, dengan з + родовий",
+          "body": ["Perhatikan polanya, bukan kata per katanya. Ekor **-а** jadi **-и**; ekor **-я** jadi **-ї**; konsonan jadi **-у** atau **-а**."],
+          "table": {
+            "head": ["Negara", "Baca", "Dari sana", "Indonesia"],
+            "rows": [
+              ["Індонезія", "in-do-NE-zi-ya", "з Індонезії", "dari Indonesia"],
+              ["Україна", "u-kra-YI-na", "з України", "dari Ukraina"],
+              ["Малайзія", "ma-LAY-zi-ya", "з Малайзії", "dari Malaysia"],
+              ["Японія", "ya-PO-ni-ya", "з Японії", "dari Jepang"],
+              ["Польща", "POL'-shcha", "з Польщі", "dari Polandia"],
+              ["Німеччина", "ni-MECH-chy-na", "з Німеччини", "dari Jerman"],
+              ["Америка", "a-ME-ry-ka", "з Америки", "dari Amerika"],
+              ["Канада", "ka-NA-da", "з Канади", "dari Kanada"],
+              ["Китай", "ky-TAY", "з Китаю", "dari Tiongkok"],
+              ["Сінгапур", "sin-ha-PUR", "із Сінгапуру", "dari Singapura"],
+              ["Джакарта", "dzha-KAR-ta", "з Джакарти", "dari Jakarta"],
+              ["Київ", "KY-yiv", "з Києва", "dari Kyiv"],
+              ["Львів", "l'viv", "зі Львова", "dari Lviv"]
+            ]
+          }
+        },
+        {
+          "title": "Bahasa: говорити + ekor -ською",
+          "body": ["Satu rumus, sebelas bahasa. Tempelkan **-ською** (atau **-цькою**) pada nama bahasanya dan kamu selesai."],
+          "table": {
+            "head": ["Bahasa", "Bentuk yang dipakai", "Baca", "Contoh kalimat"],
+            "rows": [
+              ["українська", "українською", "u-kra-YIN-s'ko-yu", "Я говорю українською."],
+              ["англійська", "англійською", "an-HLIY-s'ko-yu", "Він говорить англійською."],
+              ["індонезійська", "індонезійською", "in-do-ne-ZIY-s'ko-yu", "Ми говоримо індонезійською."],
+              ["польська", "польською", "POL'-s'ko-yu", "Вона говорить польською."],
+              ["німецька", "німецькою", "ni-METS'-ko-yu", "Ти говориш німецькою?"],
+              ["французька", "французькою", "fran-TSUZ'-ko-yu", "Вони говорять французькою."],
+              ["японська", "японською", "ya-PON-s'ko-yu", "Я не говорю японською."],
+              ["арабська", "арабською", "a-RAB-s'ko-yu", "Він говорить арабською."]
+            ]
+          },
+          "after": ["Untuk bertanya secara sopan: **Ви говорите англійською?** — kalimat yang mungkin paling sering kamu pakai di minggu pertama.", "Untuk mengaku terbatas: **Я говорю тільки трохи** (saya cuma bisa sedikit) atau **Я ще вивчаю** (saya masih belajar)."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kebangsaan: laki-laki dan perempuan berbeda",
+      "blocks": [
+        {"type": "p", "text": "Berbeda dari bahasa Indonesia, kebangsaan dalam bahasa Ukraina punya dua bentuk. Kamu hanya perlu menghafal bentuk yang menyebut dirimu sendiri — yang lain akan datang lewat telinga."},
+        {"type": "tabel", "head": ["Negara", "Laki-laki", "Perempuan", "Bahasa"], "rows": [
+          ["Індонезія", "індонезієць", "індонезійка", "індонезійська"],
+          ["Україна", "українець", "українка", "українська"],
+          ["Америка", "американець", "американка", "англійська"],
+          ["Англія", "англієць", "англійка", "англійська"],
+          ["Польща", "поляк", "полька", "польська"],
+          ["Німеччина", "німець", "німкеня", "німецька"],
+          ["Японія", "японець", "японка", "японська"],
+          ["Малайзія", "малайзієць", "малайзійка", "малайська"]
+        ]},
+        {"type": "p", "text": "Perhatikan polanya: laki-laki hampir selalu **-ець** atau **-ець** yang meluruh jadi **-ця** di kasus lain, perempuan hampir selalu **-ка**. Kalau kamu ragu, jalan aman yang selalu benar adalah menyebut negaranya: *Я з Індонезії* — dan itulah yang paling sering dipakai orang."},
+        {"type": "kotak", "title": "В Україні, bukan на Україні", "items": [
+          "Untuk mengatakan \"di Ukraina\", bahasa Ukraina memakai **в Україні** — kata depan *в*, seperti untuk negara mana pun: *в Індонезії*, *в Польщі*, *в Японії*.",
+          "Bentuk **на Україні** dulu lazim dalam bahasa Rusia dan menyiratkan wilayah, bukan negara. Sejak lama bentuk itu ditinggalkan dan terdengar menyinggung bagi banyak orang.",
+          "Aturan praktisnya sederhana: **negara pakai в, pulau dan wilayah pakai на**. *В Україні*, *в Індонезії*, tapi *на Балі*, *на Яві*, *на Суматрі*.",
+          "⚠️ Ini salah satu dari sedikit kesalahan tata bahasa dalam modul ini yang bukan cuma soal benar-salah. Kalau kamu hanya mengingat satu hal dari halaman ini, ingat yang ini."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"uk": "звідки", "baca": "ZVID-ky", "id": "dari mana"},
+    {"uk": "з, із, зі", "baca": "z, iz, zi", "id": "dari"},
+    {"uk": "країна", "baca": "kra-YI-na", "id": "negara"},
+    {"uk": "місто", "baca": "MIS-to", "id": "kota"},
+    {"uk": "Індонезія", "baca": "in-do-NE-zi-ya", "id": "Indonesia"},
+    {"uk": "Україна", "baca": "u-kra-YI-na", "id": "Ukraina"},
+    {"uk": "Київ", "baca": "KY-yiv", "id": "Kyiv"},
+    {"uk": "Львів", "baca": "l'viv", "id": "Lviv"},
+    {"uk": "Джакарта", "baca": "dzha-KAR-ta", "id": "Jakarta"},
+    {"uk": "мова", "baca": "MO-va", "id": "bahasa"},
+    {"uk": "говорити", "baca": "ho-vo-RY-ty", "id": "berbicara"},
+    {"uk": "розмовляти", "baca": "roz-mov-LYA-ty", "id": "bercakap-cakap"},
+    {"uk": "вивчати", "baca": "vyv-CHA-ty", "id": "mempelajari"},
+    {"uk": "жити", "baca": "ZHY-ty", "id": "tinggal, hidup"},
+    {"uk": "трохи", "baca": "TRO-khy", "id": "sedikit"},
+    {"uk": "тільки", "baca": "TIL'-ky", "id": "hanya"},
+    {"uk": "вже", "baca": "vzhe", "id": "sudah"},
+    {"uk": "ще", "baca": "shche", "id": "masih, lagi"},
+    {"uk": "ще ні", "baca": "shche ni", "id": "belum"},
+    {"uk": "зараз", "baca": "ZA-raz", "id": "sekarang"},
+    {"uk": "далеко", "baca": "da-LE-ko", "id": "jauh"},
+    {"uk": "близько", "baca": "BLYZ'-ko", "id": "dekat"},
+    {"uk": "новий / нова / нове", "baca": "no-VYY / no-VA", "id": "baru"},
+    {"uk": "англійська", "baca": "an-HLIY-s'ka", "id": "bahasa Inggris"},
+    {"uk": "українець / українка", "baca": "u-kra-YI-nets'", "id": "orang Ukraina (lk / pr)"},
+    {"uk": "неправда", "baca": "ne-PRAV-da", "id": "tidak benar"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk з + nama negara yang benar.",
+      "items": [
+        "Я ____ (Індонезія).",
+        "Він ____ (Україна).",
+        "Вона ____ (Польща).",
+        "Ми ____ (Японія).",
+        "Ви ____ (Канада)?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk bahasa yang benar (-ською).",
+      "items": [
+        "Я говорю ____ (українська).",
+        "Він говорить ____ (англійська).",
+        "Вона говорить ____ (польська).",
+        "Ми говоримо ____ (індонезійська).",
+        "Ти говориш ____ (німецька)?"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "ти / звідки",
+        "Індонезії / я / з",
+        "українською / трохи / я / говорю",
+        "Києві / живу / я / в",
+        "далеко / це / дуже"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ukraina.",
+      "items": [
+        "Kamu dari mana?",
+        "Saya dari Indonesia, dari Jakarta.",
+        "Dia dari Lviv, tapi sekarang tinggal di Kyiv.",
+        "Saya belum bisa bahasa Ukraina. Baru sedikit.",
+        "Anda bisa bahasa Inggris?"
+      ]
+    }
+  ],
+  "answers": [
+    "з Індонезії — з України — з Польщі — з Японії — з Канади",
+    "українською — англійською — польською — індонезійською — німецькою",
+    "Звідки ти? — Я з Індонезії. — Я трохи говорю українською. — Я живу в Києві. — Це дуже далеко.",
+    "Звідки ти? — Я з Індонезії, з Джакарти. — Він зі Львова, але зараз живе в Києві. — Я ще не говорю українською. Тільки трохи. — Ви говорите англійською?"
+  ],
+  "wave": "Ulangi Unit 1. Sekarang *Ласкаво просимо до Києва* mestinya terbaca sebagai \"selamat datang ke Kyiv\" — dan kamu bisa melihat sendiri kenapa ekornya **Києва**, bukan **Київ**."
+}

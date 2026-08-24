@@ -1,0 +1,213 @@
+{
+  "title": "Keluarga saya — dan \"punya\" yang terbalik",
+  "title_target": "Моя сім'я — Moya simya",
+  "goal": "Bercerita tentang keluargamu, menyebut siapa yang kamu punya dan tidak kamu punya, dan mengerti kenapa bahasa Ukraina tidak berkata \"saya punya\" melainkan \"di saya ada\".",
+  "bekal": [
+    "menyebut anggota keluarga",
+    "mengatakan apa yang kamu punya dengan У мене є",
+    "menyangkalnya dengan немає",
+    "memakai kata milik мій, моя, моє, мої",
+    "menyebut jumlah orang di keluargamu"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — Foto keluarga di layar telepon",
+      "intro": "Andriy melihat foto di telepon Ani. Perhatikan bahwa tidak ada satu pun kata kerja \"punya\" dalam percakapan ini — yang ada hanya \"di saya ada\" dan \"di saya tidak ada\".",
+      "lines": [
+        {"speaker": "Андрій:", "text": "[Це|Tse] [твоя|tvo-YA] [сім'я|sim-YA]?", "id": "Ini keluargamu?", "literal": "ini — milikmu (pr) — keluarga?"},
+        {"speaker": "Ані:", "text": "[Так|Tak]. [Це|Tse] [моя|mo-YA] [мама|MA-ma], [а|a] [це|tse] [мій|miy] [тато|TA-to].", "id": "Ya. Ini ibu saya, dan ini ayah saya.", "literal": "ya. ini — milikku (pr) — ibu, dan — ini — milikku (lk) — ayah."},
+        {"speaker": "Андрій:", "text": "[А|A] [хто|khto] [це|tse]?", "id": "Kalau ini siapa?", "literal": "dan — siapa — ini?"},
+        {"speaker": "Ані:", "text": "[Це|Tse] [моя|mo-YA] [сестра|ses-TRA]. [Її|Yi-YI] [звати|ZVA-ty] [Діна|DI-na].", "id": "Ini adik perempuan saya. Namanya Dina.", "literal": "ini — milikku — saudari. dia (objek) — dipanggil — Dina."},
+        {"speaker": "Андрій:", "text": "[У|U] [тебе|TE-be] [є|ye] [брат|brat]?", "id": "Kamu punya saudara laki-laki?", "literal": "di — kamu (родовий) — ada — saudara-lk?"},
+        {"speaker": "Ані:", "text": "[Так|Tak], [у|u] [мене|ME-ne] [є|ye] [брат|brat]. [Йому|Yo-MU] [двадцять|DVAD-tsyat'] [років|RO-kiv].", "id": "Ya, saya punya abang. Umurnya dua puluh tahun.", "literal": "ya, di — saya — ada — saudara-lk. kepada-dia — dua-puluh — tahun-tahun."},
+        {"speaker": "Андрій:", "text": "[А|A] [в|v] [мене|ME-ne] [немає|ne-MA-ye] [брата|BRA-ta]. [Тільки|TIL'-ky] [сестра|ses-TRA].", "id": "Kalau saya tidak punya saudara laki-laki. Cuma saudara perempuan.", "literal": "dan — di — saya — tidak-ada — saudara-lk (родовий). hanya — saudari."},
+        {"speaker": "Ані:", "text": "[Твоя|Tvo-YA] [сестра|ses-TRA] [тут|tut], [у|u] [Києві|KY-ye-vi]?", "id": "Saudara perempuanmu di sini, di Kyiv?", "literal": "milikmu — saudari — di-sini, di — Kyiv?"},
+        {"speaker": "Андрій:", "text": "[Ні|Ni], [вона|vo-NA] [у|u] [Львові|L'VO-vi], [з|z] [батьками|bat'-KA-my].", "id": "Tidak, dia di Lviv, bersama orang tua.", "literal": "tidak, dia — di — Lviv, dengan — orang-tua."},
+        {"speaker": "Ані:", "text": "[У|U] [тебе|TE-be] [велика|ve-LY-ka] [сім'я|sim-YA]?", "id": "Keluargamu besar?", "literal": "di — kamu — besar (pr) — keluarga?"},
+        {"speaker": "Андрій:", "text": "[Не|Ne] [дуже|DU-zhe]. [Нас|Nas] [четверо|CHET-ve-ro].", "id": "Tidak terlalu. Kami berempat.", "literal": "tidak — sangat. kami (родовий) — berempat."},
+        {"speaker": "Ані:", "text": "[А|A] [нас|nas] [шестеро|SHES-te-ro]. [У|U] [нас|nas] [ще|shche] [є|ye] [кіт|kit].", "id": "Kalau kami berenam. Kami juga punya kucing.", "literal": "dan — kami — berenam. di — kami — masih — ada — kucing."}
+      ],
+      "notes": [
+        "**Bahasa Ukraina tidak punya kata kerja \"memiliki\" yang lazim.** Ia membalik kalimatnya: bukan \"saya punya abang\" melainkan **У мене є брат** — \"di saya ada abang\". Pemiliknya masuk родовий dan menempel pada kata depan *у*; barang miliknya justru jadi pelaku kalimat.",
+        "**Kata kerja *мати* memang ada, tapi jarang dalam percakapan.** *Я маю брата* benar secara tata bahasa dan sering muncul di tulisan resmi, tapi di warung, di rumah, dan di jalanan orang berkata *У мене є*. Pakai bentuk yang akan kamu dengar.",
+        "**У dan в di sini kata yang sama.** *У мене* dan *в мене* dua-duanya benar dan sama artinya. Pilihannya cuma soal enak diucapkan: sesudah vokal orang cenderung memakai **в**, sesudah konsonan memakai **у**. Andriy melakukannya persis begitu di baris ketujuh.",
+        "**Menyangkal kepemilikan memakai немає, dan bendanya berubah ekor.** *У мене є брат* → *У мене **немає брата***. Ini pintu masuk kedua ke родовий: ketiadaan **selalu** diikuti родовий, tanpa satu pun kekecualian. Perhatikan juga bahwa **є** hilang — *немає* sudah memuatnya.",
+        "**Немає satu kata, ditulis menyatu.** Ia gabungan *не* + *має*, tapi sudah lama menyatu. ⚠️ Menulis *не має* terpisah punya arti lain (\"tidak memiliki\", dengan pelaku yang jelas) dan jarang dipakai pemula.",
+        "**Kata milik ikut jenis barangnya, bukan jenis pemiliknya.** *Мій тато* (laki-laki) dan *моя мама* (perempuan) — dua-duanya diucapkan Ani, seorang perempuan. Yang menentukan ekornya adalah kata yang mengikutinya. Ini kebalikan dari kebiasaan bahasa Inggris (*his* / *her*), dan tempat pemula paling sering tergelincir.",
+        "**Menyebut jumlah orang memakai bentuk khusus.** Bukan *ми чотири* melainkan **нас четверо** — harfiahnya \"kami berempat\". Bentuk ini (збірні числівники) hanya dipakai untuk orang: *нас двоє, троє, четверо, п'ятеро, шестеро*."
+      ],
+      "grammars": [
+        {
+          "title": "У мене є — kepemilikan yang dibalik",
+          "body": ["Ubah kata gantinya, kata depannya tetap. Ini salah satu dari sedikit tabel di modul ini yang benar-benar berguna dihafal utuh, karena kamu akan memakainya setiap hari."],
+          "table": {
+            "head": ["Indonesia", "Ukraina", "Baca", "Harfiah"],
+            "rows": [
+              ["saya punya", "у мене є", "u ME-ne ye", "di saya ada"],
+              ["kamu punya", "у тебе є", "u TE-be ye", "di kamu ada"],
+              ["dia (lk) punya", "у нього є", "u NYO-ho ye", "di dia ada"],
+              ["dia (pr) punya", "у неї є", "u NE-yi ye", "di dia ada"],
+              ["kami punya", "у нас є", "u nas ye", "di kami ada"],
+              ["Anda punya", "у вас є", "u vas ye", "di Anda ada"],
+              ["mereka punya", "у них є", "u nykh ye", "di mereka ada"]
+            ]
+          },
+          "after": ["Untuk bertanya, susunannya tidak berubah sama sekali — cukup naikkan nada di ujung kalimat: **У тебе є брат?**"]
+        },
+        {
+          "title": "Немає + родовий: ketiadaan",
+          "body": ["Bandingkan berpasangan. Perhatikan bahwa ekor bendanya berubah begitu ia tidak ada."],
+          "table": {
+            "head": ["Ada", "Tidak ada", "Indonesia"],
+            "rows": [
+              ["У мене є брат.", "У мене немає брата.", "punya / tidak punya saudara lk"],
+              ["У мене є сестра.", "У мене немає сестри.", "punya / tidak punya saudara pr"],
+              ["У нас є кіт.", "У нас немає кота.", "punya / tidak punya kucing"],
+              ["У них є машина.", "У них немає машини.", "punya / tidak punya mobil"],
+              ["У мене є час.", "У мене немає часу.", "punya / tidak punya waktu"],
+              ["Тут є кафе.", "Тут немає кафе.", "di sini ada / tidak ada kafe"]
+            ]
+          },
+          "after": ["**Немає** juga dipakai sendirian untuk \"tidak ada\": *Проблем немає* (tidak ada masalah), *Часу немає* (tidak ada waktu). Dua kalimat yang akan sering kamu dengar."]
+        },
+        {
+          "title": "Kata milik: ikut jenis barangnya",
+          "body": [],
+          "table": {
+            "head": ["Pemilik", "+ lk", "+ pr", "+ netral", "+ jamak"],
+            "rows": [
+              ["saya", "мій тато", "моя мама", "моє ім'я", "мої батьки"],
+              ["kamu", "твій брат", "твоя сестра", "твоє місто", "твої книги"],
+              ["dia (lk)", "його тато", "його мама", "його ім'я", "його батьки"],
+              ["dia (pr)", "її тато", "її мама", "її ім'я", "її батьки"],
+              ["kami", "наш дім", "наша кухня", "наше вікно", "наші друзі"],
+              ["Anda", "ваш ключ", "ваша сумка", "ваше місто", "ваші діти"],
+              ["mereka", "їхній дім", "їхня мама", "їхнє місто", "їхні книги"]
+            ]
+          },
+          "after": ["**Його** dan **її** tidak pernah berubah — dua kata gratis. **Їхній** justru berubah, dan itu satu lagi tanda pengenal bahasa Ukraina."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Keluarga, dari kakek sampai kucing",
+      "blocks": [
+        {"type": "tabel", "head": ["Українська", "Baca", "Bahasa Indonesia"], "rows": [
+          ["сім'я", "sim-YA", "keluarga"],
+          ["родина", "ro-DY-na", "keluarga besar, sanak"],
+          ["мама, мати", "MA-ma, MA-ty", "ibu"],
+          ["тато, батько", "TA-to, BAT'-ko", "ayah"],
+          ["батьки", "bat'-KY", "orang tua"],
+          ["брат", "brat", "saudara laki-laki"],
+          ["сестра", "ses-TRA", "saudara perempuan"],
+          ["син", "syn", "anak laki-laki"],
+          ["донька, дочка", "DON'-ka, doch-KA", "anak perempuan"],
+          ["дитина, діти", "dy-TY-na, DI-ty", "anak, anak-anak"],
+          ["дідусь", "di-DUS'", "kakek"],
+          ["бабуся", "ba-BU-sya", "nenek"],
+          ["онук, онука", "o-NUK, o-NU-ka", "cucu (lk, pr)"],
+          ["дядько", "DYAD'-ko", "paman"],
+          ["тітка", "TIT-ka", "bibi"],
+          ["чоловік", "cho-lo-VIK", "suami; laki-laki"],
+          ["дружина", "dru-ZHY-na", "istri"],
+          ["друг, подруга", "druh, po-DRU-ha", "teman (lk, pr)"],
+          ["кіт, кішка", "kit, KISH-ka", "kucing (jantan, betina)"],
+          ["собака", "so-BA-ka", "anjing"]
+        ]},
+        {"type": "kotak", "title": "Чоловік: satu kata, dua arti", "items": [
+          "**Чоловік** berarti \"suami\" **dan** \"laki-laki\" sekaligus. *Мій чоловік* = suami saya; *цей чоловік* = laki-laki itu. Konteks yang memutuskan, dan orang Ukraina tak pernah bingung.",
+          "Pasangannya, **жінка**, juga bekerja dua arah: \"istri\" dan \"perempuan\". Untuk istri, bentuk yang lebih hangat dan lebih sering dipakai adalah **дружина** (harfiahnya \"kawan seperjalanan\").",
+          "⚠️ Jangan menerjemahkan \"pria\" dengan *мужчина* — itu kata Rusia. Bentuk Ukrainanya **чоловік**."
+        ]},
+        {"type": "sub", "text": "Menyebut jumlah orang"},
+        {"type": "tabel", "head": ["Ukraina", "Baca", "Indonesia"], "rows": [
+          ["Нас двоє.", "nas DVO-ye", "Kami berdua."],
+          ["Нас троє.", "nas TRO-ye", "Kami bertiga."],
+          ["Нас четверо.", "nas CHET-ve-ro", "Kami berempat."],
+          ["Нас п'ятеро.", "nas PYA-te-ro", "Kami berlima."],
+          ["Нас шестеро.", "nas SHES-te-ro", "Kami berenam."],
+          ["Я один. / Я одна.", "ya o-DYN / od-NA", "Saya sendirian. (lk / pr)"]
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"uk": "сім'я", "baca": "sim-YA", "id": "keluarga"},
+    {"uk": "мама", "baca": "MA-ma", "id": "ibu"},
+    {"uk": "тато", "baca": "TA-to", "id": "ayah"},
+    {"uk": "батьки", "baca": "bat'-KY", "id": "orang tua"},
+    {"uk": "брат", "baca": "brat", "id": "saudara laki-laki"},
+    {"uk": "сестра", "baca": "ses-TRA", "id": "saudara perempuan"},
+    {"uk": "син", "baca": "syn", "id": "anak laki-laki"},
+    {"uk": "донька", "baca": "DON'-ka", "id": "anak perempuan"},
+    {"uk": "дитина", "baca": "dy-TY-na", "id": "anak"},
+    {"uk": "діти", "baca": "DI-ty", "id": "anak-anak"},
+    {"uk": "дідусь", "baca": "di-DUS'", "id": "kakek"},
+    {"uk": "бабуся", "baca": "ba-BU-sya", "id": "nenek"},
+    {"uk": "чоловік", "baca": "cho-lo-VIK", "id": "suami; laki-laki"},
+    {"uk": "дружина", "baca": "dru-ZHY-na", "id": "istri"},
+    {"uk": "друг", "baca": "druh", "id": "teman"},
+    {"uk": "кіт", "baca": "kit", "id": "kucing"},
+    {"uk": "собака", "baca": "so-BA-ka", "id": "anjing"},
+    {"uk": "є", "baca": "ye", "id": "ada"},
+    {"uk": "немає", "baca": "ne-MA-ye", "id": "tidak ada"},
+    {"uk": "мій / моя / моє / мої", "baca": "miy / mo-YA", "id": "milik saya"},
+    {"uk": "твій / твоя / твоє / твої", "baca": "tviy / tvo-YA", "id": "milikmu"},
+    {"uk": "його", "baca": "yo-HO", "id": "miliknya (lk)"},
+    {"uk": "її", "baca": "yi-YI", "id": "miliknya (pr)"},
+    {"uk": "наш / наша / наше / наші", "baca": "nash / NA-sha", "id": "milik kami"},
+    {"uk": "час", "baca": "chas", "id": "waktu"},
+    {"uk": "машина", "baca": "ma-SHY-na", "id": "mobil"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk у + kata ganti yang benar.",
+      "items": [
+        "____ є брат. (я)",
+        "____ є сестра? (ти)",
+        "____ є кіт. (він)",
+        "____ немає часу. (ми)",
+        "____ є діти? (ви)"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi kalimat menyangkal dengan немає. Jangan lupa mengubah ekor bendanya.",
+      "items": [
+        "У мене є брат. → ____",
+        "У неї є сестра. → ____",
+        "У нас є кіт. → ____",
+        "У них є машина. → ____",
+        "У тебе є час. → ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan мій, моя, моє, atau мої.",
+      "items": [
+        "Це ____ мама.",
+        "Це ____ тато.",
+        "Це ____ ім'я.",
+        "Це ____ батьки.",
+        "Це ____ сестра."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ukraina.",
+      "items": [
+        "Ini keluarga saya.",
+        "Saya punya abang.",
+        "Saya tidak punya saudara perempuan.",
+        "Kami berempat.",
+        "Kamu punya kucing?"
+      ]
+    }
+  ],
+  "answers": [
+    "У мене — У тебе — У нього — У нас — У вас",
+    "У мене немає брата. — У неї немає сестри. — У нас немає кота. — У них немає машини. — У тебе немає часу.",
+    "моя — мій — моє — мої — моя",
+    "Це моя сім'я. — У мене є брат. — У мене немає сестри. — Нас четверо. — У тебе є кіт?"
+  ],
+  "wave": "Ulangi Unit 3. Ekor **-и** dan **-ї** yang kamu lihat di *з України* dan *з Індонезії* adalah родовий yang sama dengan yang muncul sesudah *немає* hari ini."
+}

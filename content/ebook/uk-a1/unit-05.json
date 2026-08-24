@@ -1,0 +1,184 @@
+{
+  "title": "Apa pekerjaan Anda?",
+  "title_target": "Ким ви працюєте? — Kym vy pratsyuyete?",
+  "goal": "Menanyakan dan menyebut pekerjaan, mengucapkan kata kerja bekerja dalam enam bentuknya, dan bertemu kasus kelima (орудний) lewat pintu yang paling mudah diingat: pekerjaan selalu memakainya.",
+  "bekal": [
+    "menanyakan pekerjaan dengan Ким?",
+    "menyebut pekerjaanmu sendiri dan pekerjaan keluargamu",
+    "mengubah nama pekerjaan jadi bentuk орудний",
+    "menyusun kata kerja працювати di enam bentuk",
+    "mengatakan di mana seseorang bekerja"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — Sesudah kelas, di kantin",
+      "intro": "Ani dan Andriy makan siang. Perhatikan baris pertama: Ani memanggil Andriy dengan bentuk memanggil, **Андрію** — bukan *Андрій*. Perhatikan juga bahwa setiap nama pekerjaan berakhir dengan bunyi yang sama sekali baru.",
+      "lines": [
+        {"speaker": "Ані:", "text": "[Андрію|An-DRI-yu], [ти|ty] [студент|stu-DENT]?", "id": "Andriy, kamu mahasiswa?", "literal": "Andriy (panggilan), kamu — mahasiswa?"},
+        {"speaker": "Андрій:", "text": "[Так|Tak], [але|A-le] [я|ya] [також|TA-kozh] [працюю|pra-TSYU-yu].", "id": "Ya, tapi saya juga bekerja.", "literal": "ya, tapi — saya — juga — bekerja."},
+        {"speaker": "Ані:", "text": "[Ким|Kym] [ти|ty] [працюєш|pra-TSYU-yesh]?", "id": "Kerja sebagai apa?", "literal": "sebagai-siapa — kamu — bekerja?"},
+        {"speaker": "Андрій:", "text": "[Я|Ya] [працюю|pra-TSYU-yu] [офіціантом|o-fi-tsi-AN-tom] [у|u] [кафе|ka-FE]. [А|A] [ти|ty]?", "id": "Saya kerja sebagai pelayan di kafe. Kalau kamu?", "literal": "saya — bekerja — pelayan (орудний) — di — kafe. dan — kamu?"},
+        {"speaker": "Ані:", "text": "[Я|Ya] [поки|PO-ky] [не|ne] [працюю|pra-TSYU-yu]. [Тільки|TIL'-ky] [вчуся|VCHU-sya].", "id": "Saya belum bekerja. Cuma kuliah.", "literal": "saya — untuk-sementara — tidak — bekerja. hanya — belajar."},
+        {"speaker": "Андрій:", "text": "[А|A] [твої|tvo-YI] [батьки|bat'-KY]? [Ким|Kym] [вони|vo-NY] [працюють|pra-TSYU-yut']?", "id": "Kalau orang tuamu? Mereka kerja sebagai apa?", "literal": "dan — milikmu — orang-tua? sebagai-siapa — mereka — bekerja?"},
+        {"speaker": "Ані:", "text": "[Мама|MA-ma] [працює|pra-TSYU-ye] [вчителькою|VCHY-tel'-ko-yu], [а|a] [тато|TA-to] — [інженером|in-zhe-NE-rom].", "id": "Ibu kerja sebagai guru, kalau ayah insinyur.", "literal": "ibu — bekerja — guru (pr, орудний), dan — ayah — insinyur (орудний)."},
+        {"speaker": "Андрій:", "text": "[Цікаво|Tsi-KA-vo]! [Де|De] [працює|pra-TSYU-ye] [твоя|tvo-YA] [мама|MA-ma]?", "id": "Menarik! Ibumu kerja di mana?", "literal": "menarik! di-mana — bekerja — milikmu — ibu?"},
+        {"speaker": "Ані:", "text": "[У|U] [школі|SHKO-li], [в|v] [Джакарті|dzha-KAR-ti].", "id": "Di sekolah, di Jakarta.", "literal": "di — sekolah (місцевий), di — Jakarta (місцевий)."},
+        {"speaker": "Андрій:", "text": "[Їй|Yiy] [подобається|po-DO-ba-ye-tsya] [її|yi-YI] [робота|ro-BO-ta]?", "id": "Dia suka pekerjaannya?", "literal": "kepada-dia — menyenangkan — miliknya — pekerjaan?"},
+        {"speaker": "Ані:", "text": "[Дуже|DU-zhe]. [Вона|Vo-NA] [каже|KA-zhe], [що|shcho] [це|tse] [найкраща|nay-KRA-shcha] [робота|ro-BO-ta] [у|u] [світі|SVI-ti].", "id": "Sangat. Katanya itu pekerjaan terbaik di dunia.", "literal": "sangat. dia — berkata, bahwa — ini — paling-baik — pekerjaan — di — dunia."},
+        {"speaker": "Андрій:", "text": "[Тоді|To-DI] [твоя|tvo-YA] [мама|MA-ma] — [щаслива|shchas-LY-va] [людина|lyu-DY-na].", "id": "Kalau begitu ibumu orang yang beruntung.", "literal": "kalau-begitu — milikmu — ibu — bahagia (pr) — orang."}
+      ],
+      "notes": [
+        "**Ким? bukan Хто?** *Хто ти?* menanyakan siapa kamu (jati diri). *Ким ти працюєш?* menanyakan bekerja sebagai apa. Jawaban yang benar untuk pertanyaan kedua **wajib** memakai orudный: *офіціантом*, bukan *офіціант*.",
+        "**Ekor орудний itu -ом, -ем, atau -ою.** Kata laki-laki berkonsonan keras → **-ом** (*інженер* → *інженером*). Berkonsonan lunak atau berakhiran -й → **-ем** (*водій* → *водієм*, *лікар* → *лікарем*). Kata perempuan berakhiran -а → **-ою** (*вчителька* → *вчителькою*).",
+        "**Працювати ikut pola pertama, tapi dasarnya berubah.** Bentuk kamusnya *працювати*, tapi begitu diubah, bagian **-юва-** meluruh jadi **-ю-**: *я працюю*, bukan *я працюваю*. Semua kata kerja berakhiran **-увати / -ювати** berperilaku sama: *малювати* → *малюю*, *дякувати* → *дякую*.",
+        "**Поки не = belum, untuk sementara.** Lebih halus daripada *ще ні* karena ia menyiratkan bahwa keadaannya sementara. *Я поки не працюю* — saya belum bekerja (tapi nanti akan).",
+        "**Вчуся itu kata kerja berbalik.** Ekor **-ся** aslinya berarti \"diri sendiri\": *вчити* = mengajar, *вчитися* = mengajar diri sendiri, yaitu belajar. Kelompok kata kerja ini akan kamu temui lagi di Unit 12; untuk sekarang cukup hafal *я вчуся*, *ти вчишся*.",
+        "**Nama pekerjaan punya bentuk perempuan, dan bentuk itu dipakai.** *Вчитель* / *вчителька*, *лікар* / *лікарка*, *студент* / *студентка*, *перекладач* / *перекладачка*. Berbeda dari beberapa bahasa Eropa yang meninggalkan bentuk perempuan, bahasa Ukraina justru menghidupkannya kembali.",
+        "**У світі, bukan в світі.** Sesudah konsonan orang memakai *у*; sesudah vokal, *в*. Ini kebiasaan enak-diucapkan yang sama dengan з / із / зі di Unit 3, dan sekali lagi: memilih yang salah tidak pernah menghalangi orang mengerti."
+      ],
+      "grammars": [
+        {
+          "title": "Працювати di enam bentuk",
+          "body": ["Pola pertama, dengan **-ю-** di batangnya. Kalau kamu hafal tabel ini, kamu sudah menguasai puluhan kata kerja lain yang berakhiran -увати."],
+          "table": {
+            "head": ["Orang", "Bentuk", "Baca", "Arti"],
+            "rows": [
+              ["я", "працюю", "pra-TSYU-yu", "saya bekerja"],
+              ["ти", "працюєш", "pra-TSYU-yesh", "kamu bekerja"],
+              ["він / вона", "працює", "pra-TSYU-ye", "dia bekerja"],
+              ["ми", "працюємо", "pra-TSYU-ye-mo", "kami bekerja"],
+              ["ви", "працюєте", "pra-TSYU-ye-te", "Anda / kalian bekerja"],
+              ["вони", "працюють", "pra-TSYU-yut'", "mereka bekerja"]
+            ]
+          }
+        },
+        {
+          "title": "Pekerjaan dalam bentuk орудний",
+          "body": ["Lajur kedua yang kamu pakai sesudah *працювати*. Lajur pertama hanya dipakai untuk kalimat tanpa kata kerja: *Він лікар.*"],
+          "table": {
+            "head": ["Bentuk kamus", "Sesudah працювати", "Baca", "Indonesia"],
+            "rows": [
+              ["лікар", "лікарем", "LI-ka-rem", "dokter"],
+              ["вчитель", "вчителем", "VCHY-te-lem", "guru (lk)"],
+              ["вчителька", "вчителькою", "VCHY-tel'-ko-yu", "guru (pr)"],
+              ["інженер", "інженером", "in-zhe-NE-rom", "insinyur"],
+              ["офіціант", "офіціантом", "o-fi-tsi-AN-tom", "pelayan"],
+              ["програміст", "програмістом", "pro-hra-MIS-tom", "pemrogram"],
+              ["журналіст", "журналістом", "zhur-na-LIS-tom", "wartawan"],
+              ["перекладач", "перекладачем", "pe-re-kla-DA-chem", "penerjemah"],
+              ["медсестра", "медсестрою", "med-ses-TRO-yu", "perawat"],
+              ["водій", "водієм", "vo-DI-yem", "sopir"],
+              ["продавець", "продавцем", "pro-dav-TSEM", "penjaga toko"],
+              ["кухар", "кухарем", "KU-kha-rem", "juru masak"]
+            ]
+          },
+          "after": ["Perhatikan **продавець** → **продавцем**: huruf **е** di suku terakhir hilang begitu ekornya berubah. Kata berakhiran **-ець** semuanya berperilaku begitu (*українець* → *українцем*)."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Di mana orang bekerja",
+      "blocks": [
+        {"type": "p", "text": "Untuk mengatakan **di** suatu tempat, bahasa Ukraina memakai в/у atau на dan tempatnya masuk kasus keenam (місцевий). Ekornya hampir selalu **-і**. Kasus ini dibahas penuh di Unit 10; untuk sekarang, hafalkan pasangannya."},
+        {"type": "tabel", "head": ["Tempat", "Di sana", "Baca", "Indonesia"], "rows": [
+          ["школа", "у школі", "u SHKO-li", "di sekolah"],
+          ["університет", "в університеті", "v u-ni-ver-sy-TE-ti", "di universitas"],
+          ["кафе", "у кафе", "u ka-FE", "di kafe (tak berubah)"],
+          ["лікарня", "у лікарні", "u li-KAR-ni", "di rumah sakit"],
+          ["офіс", "в офісі", "v O-fi-si", "di kantor"],
+          ["магазин", "у магазині", "u ma-ha-ZY-ni", "di toko"],
+          ["банк", "у банку", "u BAN-ku", "di bank"],
+          ["ресторан", "у ресторані", "u res-to-RA-ni", "di restoran"],
+          ["робота", "на роботі", "na ro-BO-ti", "di tempat kerja"],
+          ["завод", "на заводі", "na za-VO-di", "di pabrik"]
+        ]},
+        {"type": "p", "text": "Dua baris terakhir memakai **на**, bukan **в**. Tidak ada aturan yang benar-benar rapi untuk ini — *на роботі*, *на заводі*, *на пошті*, *на вокзалі* harus dihafal satu-satu. Untungnya jumlahnya sedikit."},
+        {"type": "kotak", "title": "Tiga cara menanyakan pekerjaan", "items": [
+          "**Ким ви працюєте?** — paling lazim, paling aman. Harfiahnya \"sebagai siapa Anda bekerja\".",
+          "**Хто ви за професією?** — sedikit lebih resmi, terdengar seperti pertanyaan formulir. Harfiahnya \"siapa Anda menurut profesi\".",
+          "**Де ви працюєте?** — menanyakan tempatnya, bukan jabatannya. Dijawab dengan *у школі*, *в офісі*, bukan dengan nama pekerjaan.",
+          "⚠️ Kalau kamu belum bekerja, jawaban yang paling wajar bukan diam melainkan **Я ще вчуся** (saya masih sekolah/kuliah) atau **Я поки не працюю**."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"uk": "робота", "baca": "ro-BO-ta", "id": "pekerjaan"},
+    {"uk": "працювати", "baca": "pra-tsyu-VA-ty", "id": "bekerja"},
+    {"uk": "ким", "baca": "kym", "id": "sebagai apa / sebagai siapa"},
+    {"uk": "професія", "baca": "pro-FE-si-ya", "id": "profesi"},
+    {"uk": "лікар", "baca": "LI-kar", "id": "dokter"},
+    {"uk": "вчитель / вчителька", "baca": "VCHY-tel'", "id": "guru (lk / pr)"},
+    {"uk": "інженер", "baca": "in-zhe-NER", "id": "insinyur"},
+    {"uk": "офіціант", "baca": "o-fi-tsi-ANT", "id": "pelayan"},
+    {"uk": "програміст", "baca": "pro-hra-MIST", "id": "pemrogram"},
+    {"uk": "журналіст", "baca": "zhur-na-LIST", "id": "wartawan"},
+    {"uk": "перекладач", "baca": "pe-re-kla-DACH", "id": "penerjemah"},
+    {"uk": "медсестра", "baca": "med-ses-TRA", "id": "perawat"},
+    {"uk": "продавець", "baca": "pro-da-VETS'", "id": "penjaga toko"},
+    {"uk": "водій", "baca": "vo-DIY", "id": "sopir"},
+    {"uk": "кухар", "baca": "KU-khar", "id": "juru masak"},
+    {"uk": "офіс", "baca": "O-fis", "id": "kantor"},
+    {"uk": "університет", "baca": "u-ni-ver-sy-TET", "id": "universitas"},
+    {"uk": "школа", "baca": "SHKO-la", "id": "sekolah"},
+    {"uk": "лікарня", "baca": "li-KAR-nya", "id": "rumah sakit"},
+    {"uk": "вчитися", "baca": "VCHY-ty-sya", "id": "belajar, sekolah"},
+    {"uk": "поки", "baca": "PO-ky", "id": "untuk sementara, sejauh ini"},
+    {"uk": "також", "baca": "TA-kozh", "id": "juga"},
+    {"uk": "цікаво", "baca": "tsi-KA-vo", "id": "menarik"},
+    {"uk": "казати", "baca": "ka-ZA-ty", "id": "berkata"},
+    {"uk": "людина", "baca": "lyu-DY-na", "id": "orang"},
+    {"uk": "світ", "baca": "svit", "id": "dunia"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk орудний yang benar.",
+      "items": [
+        "Я працюю ____ (лікар).",
+        "Вона працює ____ (вчителька).",
+        "Він працює ____ (інженер).",
+        "Ти працюєш ____ (журналіст)?",
+        "Вона працює ____ (медсестра)."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk kata kerja працювати yang tepat.",
+      "items": [
+        "Я ____ у кафе.",
+        "Ти ____ у школі?",
+        "Він ____ в офісі.",
+        "Ми ____ у лікарні.",
+        "Вони ____ на заводі."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "працюєш / ким / ти",
+        "кафе / я / у / працюю",
+        "не / поки / я / працюю",
+        "вчителькою / мама / працює / моя",
+        "робота / це / гарна"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ukraina.",
+      "items": [
+        "Anda kerja sebagai apa?",
+        "Saya bekerja sebagai dokter.",
+        "Ibu saya bekerja sebagai guru.",
+        "Saya belum bekerja. Saya masih kuliah.",
+        "Dia suka pekerjaannya."
+      ]
+    }
+  ],
+  "answers": [
+    "лікарем — вчителькою — інженером — журналістом — медсестрою",
+    "працюю — працюєш — працює — працюємо — працюють",
+    "Ким ти працюєш? — Я працюю у кафе. — Я поки не працюю. — Моя мама працює вчителькою. — Це гарна робота.",
+    "Ким ви працюєте? — Я працюю лікарем. — Моя мама працює вчителькою. — Я поки не працюю. Я ще вчуся. — Їй подобається її робота."
+  ],
+  "wave": "Ulangi Unit 1. Kalimat *Я викладачка* yang diucapkan Oksana adalah kalimat tanpa kata kerja — karena itu **tidak** memakai орудний. Bandingkan dengan *Я працюю викладачкою*."
+}

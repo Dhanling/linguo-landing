@@ -1,0 +1,197 @@
+{
+  "title": "Di apotek: kepala saya yang sakit, bukan saya",
+  "title_target": "В аптеці — V aptetsi",
+  "goal": "Mengatakan bagian tubuh mana yang sakit, membeli obat, dan mengerti kenapa dalam bahasa Ukraina bukan kamu yang sakit melainkan kepalamu.",
+  "bekal": [
+    "menyebut bagian tubuh",
+    "memakai болить dan болять dengan benar",
+    "menggambarkan keluhan sederhana",
+    "membeli obat dan menanyakan aturan pakainya",
+    "kalimat darurat yang perlu kamu hafal"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — Apotek dua blok dari asrama",
+      "intro": "Ani demam dan pergi ke apotek. Perhatikan susunan kalimat keluhannya: bukan \"saya sakit kepala\" melainkan \"di saya, kepala sakit\" — kepalanya yang jadi pelaku.",
+      "lines": [
+        {"speaker": "Фармацевт:", "text": "[Доброго|DOB-ro-ho] [дня|dnya]. [Чим|Chym] [можу|MO-zhu] [допомогти|do-po-moh-TY]?", "id": "Selamat siang. Ada yang bisa dibantu?", "literal": "hari-yang-baik. dengan-apa — bisa — membantu?"},
+        {"speaker": "Ані:", "text": "[У|U] [мене|ME-ne] [болить|bo-LYT'] [голова|ho-lo-VA]. [І|I] [горло|HOR-lo].", "id": "Kepala saya sakit. Tenggorokan juga.", "literal": "di — saya — sakit — kepala. dan — tenggorokan."},
+        {"speaker": "Фармацевт:", "text": "[Температура|Tem-pe-ra-TU-ra] [є|ye]?", "id": "Ada demam?", "literal": "suhu — ada?"},
+        {"speaker": "Ані:", "text": "[Здається|Zda-YE-tsya], [є|ye]. [Тридцять|TRYD-tsyat'] [сім|sim] [і|i] [вісім|VI-sim].", "id": "Kayaknya ada. Tiga puluh tujuh koma delapan.", "literal": "tampaknya, ada. tiga-puluh — tujuh — dan — delapan."},
+        {"speaker": "Фармацевт:", "text": "[Давно|Dav-NO]?", "id": "Sudah lama?", "literal": "lama?"},
+        {"speaker": "Ані:", "text": "[Два|Dva] [дні|dni].", "id": "Dua hari.", "literal": "dua — hari-hari."},
+        {"speaker": "Фармацевт:", "text": "[Ось|Os'] [таблетки|tab-LET-ky] [від|vid] [голови|ho-lo-VY]. [І|I] [чай|chay] [від|vid] [горла|HOR-la].", "id": "Ini tablet untuk sakit kepala. Dan teh untuk tenggorokan.", "literal": "ini-dia — tablet — dari — kepala (родовий). dan — teh — dari — tenggorokan (родовий)."},
+        {"speaker": "Ані:", "text": "[Як|Yak] [приймати|pryy-MA-ty]?", "id": "Diminumnya bagaimana?", "literal": "bagaimana — meminum-obat?"},
+        {"speaker": "Фармацевт:", "text": "[Одну|Od-NU] [таблетку|tab-LET-ku] [тричі|TRY-chi] [на|na] [день|den'], [після|PIS-lya] [їжі|YI-zhi].", "id": "Satu tablet tiga kali sehari, sesudah makan.", "literal": "satu — tablet (знахідний) — tiga-kali — per — hari, sesudah — makanan (родовий)."},
+        {"speaker": "Ані:", "text": "[Дякую|DYA-ku-yu]. [А|A] [скільки|SKIL'-ky] [коштує|KOSH-tu-ye]?", "id": "Terima kasih. Berapa harganya?", "literal": "terima-kasih. dan — berapa — berharga?"},
+        {"speaker": "Фармацевт:", "text": "[Разом|RA-zom] [двісті|DVIS-ti] [тридцять|TRYD-tsyat']. [Якщо|Yak-SHCHO] [не|ne] [стане|STA-ne] [краще|KRA-shche] — [до|do] [лікаря|LI-ka-rya].", "id": "Totalnya dua ratus tiga puluh. Kalau tidak membaik, ke dokter ya.", "literal": "bersama — dua-ratus — tiga-puluh. kalau — tidak — menjadi — lebih-baik — ke — dokter (родовий)."},
+        {"speaker": "Ані:", "text": "[Ось|Os']. [Дякую|DYA-ku-yu] [вам|vam]!", "id": "Ini. Terima kasih!", "literal": "ini-dia. terima-kasih — kepada-Anda!"}
+      ],
+      "notes": [
+        "**У мене болить голова — kepalanya yang jadi pelaku.** Harfiahnya \"di saya, kepala sakit\". Kamu tidak melakukan apa-apa dalam kalimat ini; bagian tubuhmu yang melakukannya. Ini kembali ke pola *У мене є* dari Unit 4 — pemiliknya masuk родовий, barangnya jadi pelaku.",
+        "**Болить untuk satu, болять untuk banyak.** *Болить голова* (satu kepala), *болять зуби* (banyak gigi), *болять ноги* (dua kaki). ⚠️ Kesalahan yang paling sering: memakai *болить* untuk bagian tubuh yang berpasangan.",
+        "**Таблетки від голови harfiahnya \"tablet dari kepala\".** Kata depan **від** dipakai untuk obat: *від голови*, *від горла*, *від кашлю*, *від температури*. Ia berarti \"melawan\", bukan \"dari\" dalam arti asal. Yang diikutinya masuk родовий.",
+        "**Suhu tubuh disebut tanpa kata koma.** *Тридцять сім і вісім* = 37,8. Kata *і* menggantikan tanda koma. Suhu 36,6 dianggap normal di Ukraina, dan mulai 37 orang sudah menyebutnya *температура*.",
+        "**Приймати ліки, bukan пити ліки.** Untuk obat, kata kerjanya *приймати* (mengonsumsi). *Пити* dipakai kalau obatnya benar-benar cair. Perhatikan bahwa *приймати* juga berarti \"menerima\" — *приймати гостей* (menerima tamu).",
+        "**Тричі на день = tiga kali sehari.** Bentuk khusus: *раз* (sekali), *двічі* (dua kali), *тричі* (tiga kali). Mulai empat kali orang memakai bentuk biasa: *чотири рази*, *п'ять разів*.",
+        "**Якщо = kalau, dalam arti syarat.** Jangan tertukar dengan *коли* (kapan/ketika). *Якщо не стане краще* (kalau tidak membaik) versus *Коли стане краще* (ketika sudah membaik). Dua kata yang membedakan kemungkinan dari kepastian."
+      ],
+      "grammars": [
+        {
+          "title": "Болить dan болять",
+          "body": [],
+          "table": {
+            "head": ["Ukraina", "Baca", "Indonesia"],
+            "rows": [
+              ["У мене болить голова.", "u ME-ne bo-LYT'", "Kepala saya sakit."],
+              ["У мене болить горло.", "HOR-lo", "Tenggorokan saya sakit."],
+              ["У мене болить живіт.", "zhy-VIT", "Perut saya sakit."],
+              ["У мене болить спина.", "spy-NA", "Punggung saya sakit."],
+              ["У мене болять зуби.", "bo-LYAT' ZU-by", "Gigi saya sakit."],
+              ["У мене болять ноги.", "NO-hy", "Kaki saya sakit."],
+              ["У нього болить вухо.", "u NYO-ho", "Telinganya sakit."],
+              ["У неї нічого не болить.", "u NE-yi", "Dia tidak sakit apa-apa."]
+            ]
+          },
+          "after": ["Untuk yang sudah lewat: *боліла голова* (pr), *болів живіт* (lk), *боліли зуби* (jamak) — ekornya ikut bagian tubuhnya, bukan orangnya."]
+        },
+        {
+          "title": "Bagian tubuh",
+          "body": [],
+          "table": {
+            "head": ["Українська", "Baca", "Jenis", "Indonesia"],
+            "rows": [
+              ["голова", "ho-lo-VA", "вона", "kepala"],
+              ["обличчя", "ob-LYCH-chya", "воно", "wajah"],
+              ["око, очі", "O-ko, O-chi", "воно", "mata"],
+              ["вухо, вуха", "VU-kho, VU-kha", "воно", "telinga"],
+              ["ніс", "nis", "він", "hidung"],
+              ["рот", "rot", "він", "mulut"],
+              ["зуб, зуби", "zub, ZU-by", "він", "gigi"],
+              ["горло", "HOR-lo", "воно", "tenggorokan"],
+              ["шия", "SHY-ya", "вона", "leher"],
+              ["рука, руки", "ru-KA, RU-ky", "вона", "tangan, lengan"],
+              ["нога, ноги", "no-HA, NO-hy", "вона", "kaki"],
+              ["спина", "spy-NA", "вона", "punggung"],
+              ["живіт", "zhy-VIT", "він", "perut"],
+              ["серце", "SER-tse", "воно", "jantung"],
+              ["палець", "PA-lets'", "він", "jari"]
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Keluhan, obat, dan kalimat darurat",
+      "blocks": [
+        {"type": "sub", "text": "Menggambarkan keadaanmu"},
+        {"type": "tabel", "head": ["Ukraina", "Baca", "Indonesia"], "rows": [
+          ["Я погано себе почуваю.", "po-HA-no se-BE po-chu-VA-yu", "Saya merasa tidak enak badan."],
+          ["У мене температура.", "tem-pe-ra-TU-ra", "Saya demam."],
+          ["У мене кашель.", "KA-shel'", "Saya batuk."],
+          ["У мене нежить.", "NE-zhyt'", "Saya pilek."],
+          ["Мене нудить.", "me-NE NU-dyt'", "Saya mual."],
+          ["Я застудився / застудилася.", "za-stu-DYV-sya", "Saya masuk angin. (lk / pr)"],
+          ["У мене алергія на ___.", "a-ler-HI-ya", "Saya alergi ___."],
+          ["Мені краще.", "me-NI KRA-shche", "Saya sudah membaik."]
+        ]},
+        {"type": "sub", "text": "Di apotek"},
+        {"type": "tabel", "head": ["Українська", "Baca", "Bahasa Indonesia"], "rows": [
+          ["аптека", "ap-TE-ka", "apotek"],
+          ["ліки", "LI-ky", "obat"],
+          ["таблетка", "tab-LET-ka", "tablet"],
+          ["сироп", "sy-ROP", "sirup"],
+          ["краплі", "KRAP-li", "obat tetes"],
+          ["пластир", "PLAS-tyr", "plester"],
+          ["рецепт", "re-TSEPT", "resep"],
+          ["без рецепта", "bez re-TSEP-ta", "tanpa resep"],
+          ["лікар", "LI-kar", "dokter"],
+          ["лікарня", "li-KAR-nya", "rumah sakit"],
+          ["швидка допомога", "SHVYD-ka do-po-MO-ha", "ambulans"],
+          ["страховка", "stra-KHOV-ka", "asuransi"]
+        ]},
+        {"type": "kotak", "title": "Kalimat darurat — hafalkan, semoga tak pernah terpakai", "items": [
+          "**Допоможіть!** (*do-po-mo-ZHIT'*) — Tolong!",
+          "**Викличте швидку!** (*VY-klych-te SHVYD-ku*) — Panggil ambulans!",
+          "**Мені погано.** — Saya merasa sangat tidak enak badan.",
+          "**Я не місцевий / не місцева. Мій номер телефону ___.** — Saya bukan orang sini. Nomor telepon saya ___.",
+          "**У мене алергія на ліки.** — Saya alergi obat.",
+          "⚠️ Nomor darurat di Ukraina: **103** untuk ambulans, **102** polisi, **101** pemadam kebakaran, dan **112** untuk semuanya sekaligus."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"uk": "боліти", "baca": "bo-LI-ty", "id": "sakit, nyeri"},
+    {"uk": "болить / болять", "baca": "bo-LYT' / bo-LYAT'", "id": "sakit (satu / banyak)"},
+    {"uk": "голова", "baca": "ho-lo-VA", "id": "kepala"},
+    {"uk": "горло", "baca": "HOR-lo", "id": "tenggorokan"},
+    {"uk": "живіт", "baca": "zhy-VIT", "id": "perut"},
+    {"uk": "спина", "baca": "spy-NA", "id": "punggung"},
+    {"uk": "зуб", "baca": "zub", "id": "gigi"},
+    {"uk": "рука", "baca": "ru-KA", "id": "tangan"},
+    {"uk": "нога", "baca": "no-HA", "id": "kaki"},
+    {"uk": "око", "baca": "O-ko", "id": "mata"},
+    {"uk": "температура", "baca": "tem-pe-ra-TU-ra", "id": "demam, suhu"},
+    {"uk": "кашель", "baca": "KA-shel'", "id": "batuk"},
+    {"uk": "нежить", "baca": "NE-zhyt'", "id": "pilek"},
+    {"uk": "застудитися", "baca": "za-stu-DY-ty-sya", "id": "masuk angin"},
+    {"uk": "ліки", "baca": "LI-ky", "id": "obat"},
+    {"uk": "таблетка", "baca": "tab-LET-ka", "id": "tablet"},
+    {"uk": "рецепт", "baca": "re-TSEPT", "id": "resep"},
+    {"uk": "приймати", "baca": "pryy-MA-ty", "id": "mengonsumsi (obat)"},
+    {"uk": "тричі на день", "baca": "TRY-chi na den'", "id": "tiga kali sehari"},
+    {"uk": "після їжі", "baca": "PIS-lya YI-zhi", "id": "sesudah makan"},
+    {"uk": "лікар", "baca": "LI-kar", "id": "dokter"},
+    {"uk": "лікарня", "baca": "li-KAR-nya", "id": "rumah sakit"},
+    {"uk": "швидка допомога", "baca": "SHVYD-ka do-po-MO-ha", "id": "ambulans"},
+    {"uk": "допоможіть", "baca": "do-po-mo-ZHIT'", "id": "tolong!"},
+    {"uk": "якщо", "baca": "yak-SHCHO", "id": "kalau (syarat)"},
+    {"uk": "краще", "baca": "KRA-shche", "id": "lebih baik"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan болить atau болять.",
+      "items": [
+        "У мене ____ голова.",
+        "У мене ____ зуби.",
+        "У нього ____ горло.",
+        "У неї ____ ноги.",
+        "У них ____ живіт."
+      ]
+    },
+    {
+      "prompt": "Tulis nama bagian tubuh berikut dalam bahasa Ukraina.",
+      "items": ["kepala", "tenggorokan", "perut", "tangan", "kaki"]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "болить / у мене / голова",
+        "температура / є",
+        "приймати / як",
+        "день / тричі / на",
+        "їжі / після"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ukraina.",
+      "items": [
+        "Kepala saya sakit.",
+        "Tenggorokan saya juga sakit.",
+        "Sudah dua hari.",
+        "Diminumnya bagaimana?",
+        "Satu tablet tiga kali sehari, sesudah makan."
+      ]
+    }
+  ],
+  "answers": [
+    "болить — болять — болить — болять — болить",
+    "голова — горло — живіт — рука — нога",
+    "У мене болить голова. — Температура є? — Як приймати? — Тричі на день. — Після їжі.",
+    "У мене болить голова. — У мене також болить горло. — Вже два дні. — Як приймати? — Одну таблетку тричі на день, після їжі."
+  ],
+  "wave": "Ulangi Unit 4. *У мене є брат* dan *У мене болить голова* adalah kalimat yang sama susunannya — dan sekarang kamu bisa melihatnya sekali lihat."
+}

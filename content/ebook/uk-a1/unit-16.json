@@ -1,0 +1,204 @@
+{
+  "title": "Kata sifat: warna, ukuran, dan ekor yang ikut",
+  "title_target": "У магазині одягу — U mahazyni odyahu",
+  "goal": "Menggambarkan benda dengan kata sifat yang ekornya cocok, menyebut warna, dan berbelanja pakaian dari mencari sampai membayar.",
+  "bekal": [
+    "menyesuaikan ekor kata sifat dengan jenis bendanya",
+    "menyebut dua belas warna",
+    "bertanya dengan Який, Яка, Яке, Які",
+    "meminta ukuran lain dan mencoba pakaian",
+    "menggambarkan orang dan benda"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — Mencari sweter untuk musim dingin pertama",
+      "intro": "Ani belanja pakaian menjelang musim dingin. Perhatikan bahwa setiap kata sifat berubah ekornya mengikuti benda yang diterangkannya — dan bahwa benda yang sama disebut dengan ekor berbeda begitu ia jadi sasaran perbuatan.",
+      "lines": [
+        {"speaker": "Продавчиня:", "text": "[Доброго|DOB-ro-ho] [дня|dnya]! [Вам|Vam] [допомогти|do-po-moh-TY]?", "id": "Selamat siang! Ada yang bisa dibantu?", "literal": "hari-yang-baik! kepada-Anda — membantu?"},
+        {"speaker": "Ані:", "text": "[Так|Tak]. [Я|Ya] [шукаю|shu-KA-yu] [светр|svetr].", "id": "Ya. Saya mencari sweter.", "literal": "ya. saya — mencari — sweter."},
+        {"speaker": "Продавчиня:", "text": "[Який|Ya-KYY] [колір|KO-lir] [ви|vy] [хочете|KHO-che-te]?", "id": "Warna apa yang Anda mau?", "literal": "yang-mana (lk) — warna — Anda — mau?"},
+        {"speaker": "Ані:", "text": "[Синій|SY-niy] [або|A-bo] [зелений|ze-LE-nyy].", "id": "Biru atau hijau.", "literal": "biru — atau — hijau."},
+        {"speaker": "Продавчиня:", "text": "[Ось|Os'] [синій|SY-niy]. [Це|Tse] [ваш|vash] [розмір|ROZ-mir]?", "id": "Ini yang biru. Ini ukuran Anda?", "literal": "ini-dia — biru. ini — milik-Anda — ukuran?"},
+        {"speaker": "Ані:", "text": "[Здається|Zda-YE-tsya], [великий|ve-LY-kyy]. [Є|Ye] [менший|MEN-shyy]?", "id": "Kayaknya kebesaran. Ada yang lebih kecil?", "literal": "tampaknya, besar. ada — lebih-kecil?"},
+        {"speaker": "Продавчиня:", "text": "[Є|Ye]. [Ось|Os'] [цей|tsey].", "id": "Ada. Ini dia.", "literal": "ada. ini-dia — ini (lk)."},
+        {"speaker": "Ані:", "text": "[Можна|MOZH-na] [поміряти|po-MI-rya-ty]?", "id": "Boleh dicoba?", "literal": "boleh — mencoba-pakai?"},
+        {"speaker": "Продавчиня:", "text": "[Звичайно|Zvy-CHAY-no]. [Примірочна|Pry-MI-roch-na] [там|tam].", "id": "Tentu. Kamar pasnya di sana.", "literal": "tentu. kamar-pas — di-sana."},
+        {"speaker": "Ані:", "text": "[Дякую|DYA-ku-yu]... [Цей|Tsey] [гарний|HAR-nyy]. [Скільки|SKIL'-ky] [коштує|KOSH-tu-ye]?", "id": "Terima kasih... Yang ini bagus. Berapa harganya?", "literal": "terima-kasih... ini (lk) — bagus. berapa — berharga?"},
+        {"speaker": "Продавчиня:", "text": "[Вісімсот|Vi-sim-SOT] [гривень|HRY-ven'].", "id": "Delapan ratus hryvnia.", "literal": "delapan-ratus — hryvnia."},
+        {"speaker": "Ані:", "text": "[Беру|Be-RU]. [Він|Vin] [теплий|TEP-lyy] [і|i] [красивий|kra-SY-vyy].", "id": "Saya ambil. Ini hangat dan cantik.", "literal": "saya-ambil. dia — hangat — dan — cantik."}
+      ],
+      "notes": [
+        "**Kata sifat selalu ikut jenis, jumlah, dan kasus benda yang diterangkannya.** *Новий светр* (lk), *нова книга* (pr), *нове вікно* (netral), *нові книги* (jamak). Tidak ada satu pun kata sifat yang boleh berdiri dengan ekor kamusnya kalau ia menempel pada benda.",
+        "**Ekor dasarnya -ий, -а, -е, -і.** Ini kelompok terbesar dan paling mudah: *гарний, гарна, гарне, гарні*; *великий, велика, велике, великі*; *теплий, тепла, тепле, теплі*.",
+        "**Kelompok kecil berekor lunak -ій, -я, -є, -і.** *Синій, синя, синє, сині*. Anggotanya sedikit tapi sering dipakai: *синій* (biru), *останній* (terakhir), *сьогоднішній* (hari ini), *домашній* (rumahan). ⚠️ Perhatikan bahwa *синій* dan *зелений* berperilaku berbeda walaupun dua-duanya warna.",
+        "**Який? juga berubah, karena ia sendiri kata sifat.** *Який колір?* (lk), *Яка сукня?* (pr), *Яке пальто?* (netral), *Які штани?* (jamak). Ia menanyakan sifat, bukan pilihan dari daftar — untuk itu orang berkata *котрий*.",
+        "**Perbandingan dibuat dengan -ший atau більш.** *Великий* → *більший* (lebih besar), *маленький* → *менший* (lebih kecil), *гарний* → *гарніший* (lebih bagus). Untuk kata panjang: *більш цікавий* (lebih menarik). Untuk yang paling: tambahkan **най-** — *найбільший* (terbesar), *найкращий* (terbaik).",
+        "**Поміряти = mencoba pakaian.** Kata ini khusus untuk pakaian dan sepatu; untuk mencoba makanan orang memakai *спробувати*. Kalimat lengkapnya: *Можна поміряти?* — tiga kata yang menutup seluruh urusan kamar pas.",
+        "**Беру = saya ambil, artinya saya beli.** Persis seperti \"saya ambil ini\" dalam bahasa Indonesia. Kata dasarnya *брати*, dan bentuknya menyimpang: *беру, береш, бере, беремо, берете, беруть*."
+      ],
+      "grammars": [
+        {
+          "title": "Ekor kata sifat",
+          "body": [],
+          "table": {
+            "head": ["Kelompok", "+ laki-laki", "+ perempuan", "+ netral", "+ jamak"],
+            "rows": [
+              ["keras (-ий)", "новий светр", "нова книга", "нове вікно", "нові книги"],
+              ["", "гарний день", "гарна погода", "гарне місто", "гарні люди"],
+              ["", "великий стіл", "велика кімната", "велике вікно", "великі міста"],
+              ["", "теплий чай", "тепла вода", "тепле молоко", "теплі речі"],
+              ["", "червоний светр", "червона сукня", "червоне яблуко", "червоні квіти"],
+              ["lunak (-ій)", "синій светр", "синя сукня", "синє небо", "сині очі"],
+              ["", "останній день", "остання пара", "останнє слово", "останні дні"]
+            ]
+          },
+          "after": ["Kalau kamu ragu, lihat ekor bendanya dan cocokkan: benda berakhiran **-а** minta kata sifat berakhiran **-а**; benda berakhiran **-о** minta **-е**. Aturan sederhana ini benar di sebagian besar keadaan."]
+        },
+        {
+          "title": "Warna",
+          "body": [],
+          "table": {
+            "head": ["Українська", "Baca", "Indonesia", "Bentuk perempuan"],
+            "rows": [
+              ["червоний", "cher-VO-nyy", "merah", "червона"],
+              ["синій", "SY-niy", "biru", "синя"],
+              ["блакитний", "bla-KYT-nyy", "biru muda", "блакитна"],
+              ["зелений", "ze-LE-nyy", "hijau", "зелена"],
+              ["жовтий", "ZHOV-tyy", "kuning", "жовта"],
+              ["чорний", "CHOR-nyy", "hitam", "чорна"],
+              ["білий", "BI-lyy", "putih", "біла"],
+              ["сірий", "SI-ryy", "abu-abu", "сіра"],
+              ["коричневий", "ko-RYCH-ne-vyy", "cokelat", "коричнева"],
+              ["рожевий", "ro-ZHE-vyy", "merah muda", "рожева"],
+              ["помаранчевий", "po-ma-RAN-che-vyy", "oranye", "помаранчева"],
+              ["фіолетовий", "fi-o-LE-to-vyy", "ungu", "фіолетова"]
+            ]
+          },
+          "after": ["**Жовтий і блакитний** adalah warna bendera Ukraina — kuning dan biru muda. Dua kata ini akan kamu lihat di mana-mana, dan urutannya penting: kuning di bawah, biru di atas."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pakaian dan ukuran",
+      "blocks": [
+        {"type": "tabel", "head": ["Українська", "Baca", "Jenis", "Bahasa Indonesia"], "rows": [
+          ["сорочка", "so-ROCH-ka", "вона", "kemeja"],
+          ["футболка", "fut-BOL-ka", "вона", "kaus"],
+          ["светр", "svetr", "він", "sweter"],
+          ["куртка", "KURT-ka", "вона", "jaket"],
+          ["пальто", "pal'-TO", "воно", "mantel"],
+          ["штани", "shta-NY", "jamak", "celana"],
+          ["джинси", "DZHYN-sy", "jamak", "jins"],
+          ["спідниця", "spid-NY-tsya", "вона", "rok"],
+          ["сукня", "SUK-nya", "вона", "gaun"],
+          ["шкарпетки", "shkar-PET-ky", "jamak", "kaus kaki"],
+          ["взуття", "vzut-TYA", "воно", "alas kaki"],
+          ["черевики", "che-re-VY-ky", "jamak", "sepatu bot"],
+          ["кросівки", "kro-SIV-ky", "jamak", "sepatu olahraga"],
+          ["шапка", "SHAP-ka", "вона", "topi rajut"],
+          ["шарф", "sharf", "він", "syal"],
+          ["рукавички", "ru-ka-VYCH-ky", "jamak", "sarung tangan"]
+        ]},
+        {"type": "kotak", "title": "Kalimat yang menutup satu kali belanja baju", "items": [
+          "**Я шукаю ___** — saya mencari ___",
+          "**Можна поміряти?** — boleh dicoba?",
+          "**Є більший розмір?** — ada ukuran lebih besar? · **Є менший?** — ada yang lebih kecil?",
+          "**Це задовге / закоротке** — ini kepanjangan / kependekan",
+          "**Мені підходить** — pas untuk saya · **Не підходить** — tidak pas",
+          "**Беру.** — saya ambil. · **Я подумаю.** — saya pikir-pikir dulu (cara halus menolak)"
+        ]},
+        {"type": "sub", "text": "Menggambarkan orang"},
+        {"type": "tabel", "head": ["Ukraina", "Baca", "Indonesia"], "rows": [
+          ["високий / низький", "vy-SO-kyy / NYZ'-kyy", "tinggi / pendek"],
+          ["молодий / старий", "mo-lo-DYY / sta-RYY", "muda / tua"],
+          ["красивий / гарний", "kra-SY-vyy / HAR-nyy", "cantik, tampan / bagus"],
+          ["добрий", "DOB-ryy", "baik hati"],
+          ["веселий", "ve-SE-lyy", "ceria"],
+          ["розумний", "ro-ZUM-nyy", "pandai"],
+          ["тихий", "TY-khyy", "pendiam"],
+          ["у неї темне волосся", "TEM-ne vo-LOS-sya", "rambutnya gelap"],
+          ["у нього сині очі", "SY-ni O-chi", "matanya biru"]
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"uk": "одяг", "baca": "O-dyah", "id": "pakaian"},
+    {"uk": "колір", "baca": "KO-lir", "id": "warna"},
+    {"uk": "розмір", "baca": "ROZ-mir", "id": "ukuran"},
+    {"uk": "шукати", "baca": "shu-KA-ty", "id": "mencari"},
+    {"uk": "міряти", "baca": "MI-rya-ty", "id": "mencoba (pakaian)"},
+    {"uk": "примірочна", "baca": "pry-MI-roch-na", "id": "kamar pas"},
+    {"uk": "брати", "baca": "BRA-ty", "id": "mengambil"},
+    {"uk": "підходити", "baca": "pid-KHO-dy-ty", "id": "cocok, pas"},
+    {"uk": "який / яка / яке / які", "baca": "ya-KYY / ya-KA", "id": "yang mana, seperti apa"},
+    {"uk": "більший", "baca": "BIL'-shyy", "id": "lebih besar"},
+    {"uk": "менший", "baca": "MEN-shyy", "id": "lebih kecil"},
+    {"uk": "найкращий", "baca": "nay-KRA-shchyy", "id": "terbaik"},
+    {"uk": "теплий", "baca": "TEP-lyy", "id": "hangat"},
+    {"uk": "красивий", "baca": "kra-SY-vyy", "id": "cantik, tampan"},
+    {"uk": "високий", "baca": "vy-SO-kyy", "id": "tinggi"},
+    {"uk": "молодий", "baca": "mo-lo-DYY", "id": "muda"},
+    {"uk": "старий", "baca": "sta-RYY", "id": "tua, lama"},
+    {"uk": "здається", "baca": "zda-YE-tsya", "id": "sepertinya"},
+    {"uk": "допомогти", "baca": "do-po-moh-TY", "id": "membantu"},
+    {"uk": "светр", "baca": "svetr", "id": "sweter"},
+    {"uk": "сукня", "baca": "SUK-nya", "id": "gaun"},
+    {"uk": "куртка", "baca": "KURT-ka", "id": "jaket"},
+    {"uk": "взуття", "baca": "vzut-TYA", "id": "alas kaki"},
+    {"uk": "волосся", "baca": "vo-LOS-sya", "id": "rambut"},
+    {"uk": "очі", "baca": "O-chi", "id": "mata"},
+    {"uk": "жовтий", "baca": "ZHOV-tyy", "id": "kuning"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan ekor kata sifat yang benar.",
+      "items": [
+        "____ (новий) книга",
+        "____ (великий) місто",
+        "____ (гарний) день",
+        "____ (синій) сукня",
+        "____ (червоний) яблука"
+      ]
+    },
+    {
+      "prompt": "Isi dengan Який, Яка, Яке, atau Які.",
+      "items": [
+        "____ це колір?",
+        "____ гарна сукня!",
+        "____ велике вікно!",
+        "____ у тебе книги?",
+        "____ твій улюблений колір?"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "светр / шукаю / я",
+        "хочете / колір / який / ви",
+        "поміряти / можна",
+        "коштує / це / скільки",
+        "теплий / і / він / красивий"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ukraina.",
+      "items": [
+        "Saya mencari sweter.",
+        "Warna apa yang Anda mau?",
+        "Biru atau hijau.",
+        "Boleh dicoba?",
+        "Saya ambil. Ini hangat dan cantik."
+      ]
+    }
+  ],
+  "answers": [
+    "нова — велике — гарний — синя — червоні",
+    "Який — Яка — Яке — Які — Який",
+    "Я шукаю светр. — Який колір ви хочете? — Можна поміряти? — Скільки це коштує? — Він теплий і красивий.",
+    "Я шукаю светр. — Який колір ви хочете? — Синій або зелений. — Можна поміряти? — Беру. Він теплий і красивий."
+  ],
+  "wave": "Ulangi Unit 2. Jenis kata benda yang kamu pelajari di sana baru terbayar sekarang — tanpa mengetahui bahwa *книга* itu perempuan, kamu tidak bisa memilih *нова*."
+}

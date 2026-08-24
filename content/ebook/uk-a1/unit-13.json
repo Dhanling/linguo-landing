@@ -1,0 +1,192 @@
+{
+  "title": "Ke mana kamu pergi? — jalan kaki atau berkendara",
+  "title_target": "Куди ти йдеш? — Kudy ty ydesh?",
+  "goal": "Mengatakan ke mana kamu pergi, memilih antara dua kata kerja \"pergi\" yang berbeda, dan memisahkan dengan pasti antara tempat (де) dan arah (куди) — pasangan yang paling sering tertukar bagi pemula.",
+  "bekal": [
+    "membedakan йти (jalan kaki) dan їхати (berkendara)",
+    "menjawab Куди? dengan в/на + знахідний",
+    "membedakan Де? dan Куди? dalam satu tarikan napas",
+    "menyebut kendaraan dengan на + місцевий",
+    "mengajak orang dengan Ходімо!"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — Di depan pintu metro",
+      "intro": "Ani dan Andriy berpapasan di jalan. Perhatikan dua kata kerja yang dua-duanya berarti \"pergi\": Ani berjalan kaki, Andriy naik kendaraan — dan bahasa Ukraina tidak membiarkan keduanya memakai kata yang sama.",
+      "lines": [
+        {"speaker": "Андрій:", "text": "[Ані|A-ni], [куди|ku-DY] [ти|ty] [йдеш|y-DESH]?", "id": "Ani, kamu mau ke mana?", "literal": "Ani, ke-mana — kamu — berjalan?"},
+        {"speaker": "Ані:", "text": "[Я|Ya] [йду|y-DU] [на|na] [пошту|POSH-tu]. [А|A] [потім|PO-tim] [у|u] [бібліотеку|bib-li-o-TE-ku].", "id": "Saya mau ke kantor pos. Lalu ke perpustakaan.", "literal": "saya — berjalan — ke — kantor-pos (знахідний). dan — sesudah-itu — ke — perpustakaan (знахідний)."},
+        {"speaker": "Андрій:", "text": "[Пішки|PISH-ky]? [Це|Tse] [далеко|da-LE-ko].", "id": "Jalan kaki? Itu jauh.", "literal": "dengan-kaki? ini — jauh."},
+        {"speaker": "Ані:", "text": "[Не|Ne] [дуже|DU-zhe]. [Двадцять|DVAD-tsyat'] [хвилин|khvy-LYN].", "id": "Tidak terlalu. Dua puluh menit.", "literal": "tidak — sangat. dua-puluh — menit."},
+        {"speaker": "Андрій:", "text": "[Краще|KRA-shche] [їдь|yid'] [на|na] [автобусі|av-TO-bu-si]. [Номер|NO-mer] [сім|sim].", "id": "Lebih baik naik bus saja. Nomor tujuh.", "literal": "lebih-baik — berkendaralah — dengan — bus (місцевий). nomor — tujuh."},
+        {"speaker": "Ані:", "text": "[А|A] [ти|ty] [куди|ku-DY] [їдеш|YI-desh]?", "id": "Kalau kamu mau ke mana?", "literal": "dan — kamu — ke-mana — berkendara?"},
+        {"speaker": "Андрій:", "text": "[Я|Ya] [їду|YI-du] [на|na] [роботу|ro-BO-tu]. [У|U] [кафе|ka-FE].", "id": "Saya berangkat kerja. Ke kafe.", "literal": "saya — berkendara — ke — pekerjaan (знахідний). ke — kafe."},
+        {"speaker": "Ані:", "text": "[На|Na] [метро|met-RO]?", "id": "Naik metro?", "literal": "dengan — metro?"},
+        {"speaker": "Андрій:", "text": "[Так|Tak]. [Це|Tse] [швидше|SHVYD-she].", "id": "Ya. Lebih cepat.", "literal": "ya. ini — lebih-cepat."},
+        {"speaker": "Ані:", "text": "[Тоді|To-DI] [ходімо|kho-DI-mo] [разом|RA-zom] [до|do] [метро|met-RO].", "id": "Kalau begitu ayo ke metro bareng.", "literal": "kalau-begitu — mari-berjalan — bersama — sampai — metro."},
+        {"speaker": "Андрій:", "text": "[Добре|DOB-re]. [А|A] [завтра|ZAV-tra] [ти|ty] [йдеш|y-DESH] [на|na] [концерт|kon-TSERT]?", "id": "Boleh. Besok kamu jadi ke konser?", "literal": "baik. dan — besok — kamu — berjalan — ke — konser?"},
+        {"speaker": "Ані:", "text": "[Обов'язково|O-bo-VYAZ-ko-vo]! [Я|Ya] [вже|vzhe] [купила|ku-PY-la] [квиток|kvy-TOK].", "id": "Pasti! Saya sudah beli tiket.", "literal": "pasti! saya — sudah — membeli (lampau pr) — tiket."}
+      ],
+      "notes": [
+        "**Йти untuk jalan kaki, їхати untuk kendaraan.** Bahasa Ukraina tidak punya kata kerja \"pergi\" yang netral. Kalau kamu memakai *йду* padahal naik bus, kalimatnya tetap dimengerti tapi terdengar seperti kamu berjalan kaki ke Lviv. ⚠️ Pemula Indonesia paling sering tergelincir di sini, karena \"pergi\" dalam bahasa Indonesia menutup dua-duanya.",
+        "**Куди memakai знахідний, Де memakai місцевий — dengan kata depan yang sama persis.** *Я йду в університет* (arah) versus *Я в університеті* (tempat). Kata depannya *в* di kedua kalimat; ekornya yang bercerita. Ini pasangan terpenting di seluruh modul.",
+        "**Kendaraan memakai на + місцевий.** *На автобусі*, *на метро*, *на потязі*, *на таксі*, *на машині*. Perhatikan bahwa ini bertabrakan dengan aturan arah: *їду на роботу* (arah, знахідний) tapi *їду на автобусі* (alat, місцевий). Konteksnya yang memisahkan, dan telingamu akan cepat terbiasa.",
+        "**Пішки berdiri sendiri, tanpa kata depan.** *Я йду пішки* — saya jalan kaki. Kata ini satu-satunya cara mengatakan \"dengan kaki\", dan ia bukan kata benda melainkan keterangan.",
+        "**Ходімо! = ayo kita jalan.** Bentuk ajakan yang sangat lazim dan sangat berguna. Untuk kendaraan: **поїхали!** (ayo berangkat). Dua kata ini akan sering kamu dengar dari teman Ukraina, dan dua-duanya berarti \"ayo\".",
+        "**Пошта memakai на, bukan в.** *На пошту* (ke kantor pos), *на пошті* (di kantor pos). Ia masuk kelompok yang sama dengan *на роботу*, *на вокзал*, *на ринок*, *на концерт*, *на урок*. Kelompok ini kecil, tapi isinya tempat yang sering didatangi — jadi hafalkan sekaligus.",
+        "**До metro, bukan в metro.** Kata depan **до** berarti \"sampai ke\" — kamu berjalan sampai pintunya, bukan masuk ke dalamnya. Bandingkan: *йду до метро* (menuju stasiunnya) versus *їду на метро* (naik keretanya)."
+      ],
+      "grammars": [
+        {
+          "title": "Йти dan їхати berdampingan",
+          "body": [],
+          "table": {
+            "head": ["Orang", "йти (jalan kaki)", "Baca", "їхати (berkendara)", "Baca"],
+            "rows": [
+              ["я", "йду", "y-DU", "їду", "YI-du"],
+              ["ти", "йдеш", "y-DESH", "їдеш", "YI-desh"],
+              ["він / вона", "йде", "y-DE", "їде", "YI-de"],
+              ["ми", "йдемо", "y-de-MO", "їдемо", "YI-de-mo"],
+              ["ви", "йдете", "y-de-TE", "їдете", "YI-de-te"],
+              ["вони", "йдуть", "y-DUT'", "їдуть", "YI-dut'"],
+              ["ajakan", "ходімо!", "kho-DI-mo", "поїхали!", "po-YI-kha-ly"]
+            ]
+          },
+          "after": ["Untuk perjalanan jauh antar kota, **їхати** hampir selalu yang benar — bahkan orang Ukraina yang berjalan kaki lima kilometer akan berkata *їду*, kecuali ia sedang menekankan bahwa ia berjalan."]
+        },
+        {
+          "title": "Куди? dan Де? berpasangan",
+          "body": ["Baca berpasangan, jangan satu-satu. Yang menempel di ingatan adalah bedanya, bukan bentuknya masing-masing."],
+          "table": {
+            "head": ["Куди? (arah, знахідний)", "Де? (tempat, місцевий)", "Indonesia"],
+            "rows": [
+              ["в університет", "в університеті", "ke / di kampus"],
+              ["у школу", "у школі", "ke / di sekolah"],
+              ["в бібліотеку", "в бібліотеці", "ke / di perpustakaan"],
+              ["у кафе", "у кафе", "ke / di kafe (tak berubah)"],
+              ["на роботу", "на роботі", "ke / di tempat kerja"],
+              ["на пошту", "на пошті", "ke / di kantor pos"],
+              ["на ринок", "на ринку", "ke / di pasar"],
+              ["на концерт", "на концерті", "ke / di konser"],
+              ["додому", "вдома", "pulang / di rumah"],
+              ["в Київ", "у Києві", "ke / di Kyiv"]
+            ]
+          },
+          "after": ["Baris kesembilan adalah kekecualian yang harus dihafal karena bentuknya tidak berpola: **додому** (arah) dan **вдома** (tempat). Dua kata pendek yang akan kamu ucapkan setiap hari."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kendaraan dan perjalanan sehari-hari",
+      "blocks": [
+        {"type": "tabel", "head": ["Українська", "Baca", "Dengan kendaraan itu", "Bahasa Indonesia"], "rows": [
+          ["автобус", "av-TO-bus", "на автобусі", "bus"],
+          ["тролейбус", "tro-LEY-bus", "на тролейбусі", "trolibus"],
+          ["трамвай", "tram-VAY", "на трамваї", "trem"],
+          ["маршрутка", "marsh-RUT-ka", "на маршрутці", "angkot"],
+          ["метро", "met-RO", "на метро", "metro"],
+          ["потяг", "PO-tyah", "на потязі", "kereta"],
+          ["таксі", "tak-SI", "на таксі", "taksi"],
+          ["машина", "ma-SHY-na", "на машині", "mobil"],
+          ["велосипед", "ve-lo-sy-PED", "на велосипеді", "sepeda"],
+          ["літак", "li-TAK", "на літаку", "pesawat"]
+        ]},
+        {"type": "kotak", "title": "Маршрутка: kendaraan yang paling Ukraina", "items": [
+          "**Маршрутка** adalah minibus yang berjalan di jalur tetap tapi berhenti di mana pun penumpang meminta — persis seperti angkot di Indonesia.",
+          "Untuk turun: **На зупинці, будь ласка!** (di halte, tolong) atau cukup **Зупиніть, будь ласка** (tolong berhenti).",
+          "Ongkos dibayar ke sopir, sering diestafetkan lewat tangan penumpang lain. Menyerahkan uang orang di depanmu adalah kelaziman, bukan kesopanan luar biasa.",
+          "⚠️ Kata *маршрутка* tidak ada di buku wisata mana pun, tapi ia kendaraan yang paling sering kamu naiki di luar pusat kota."
+        ]},
+        {"type": "sub", "text": "Kalimat perjalanan yang menutup sebagian besar keadaan"},
+        {"type": "tabel", "head": ["Ukraina", "Baca", "Indonesia"], "rows": [
+          ["Куди ви їдете?", "ku-DY vy YI-de-te", "Anda mau ke mana?"],
+          ["Мені треба на вокзал.", "me-NI TRE-ba na vok-ZAL", "Saya perlu ke stasiun."],
+          ["Скільки їхати?", "SKIL'-ky YI-kha-ty", "Berapa lama perjalanannya?"],
+          ["Де зупинка?", "de zu-PYN-ka", "Halte di mana?"],
+          ["Один квиток, будь ласка.", "o-DYN kvy-TOK", "Satu tiket, tolong."],
+          ["Ви виходите?", "vy vy-KHO-dy-te", "Anda mau turun?"],
+          ["Це моя зупинка.", "tse mo-YA zu-PYN-ka", "Ini halte saya."]
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"uk": "куди", "baca": "ku-DY", "id": "ke mana"},
+    {"uk": "йти", "baca": "y-TY", "id": "pergi (jalan kaki)"},
+    {"uk": "їхати", "baca": "YI-kha-ty", "id": "pergi (berkendara)"},
+    {"uk": "ходімо", "baca": "kho-DI-mo", "id": "ayo (jalan)"},
+    {"uk": "поїхали", "baca": "po-YI-kha-ly", "id": "ayo (berangkat)"},
+    {"uk": "пішки", "baca": "PISH-ky", "id": "jalan kaki"},
+    {"uk": "автобус", "baca": "av-TO-bus", "id": "bus"},
+    {"uk": "маршрутка", "baca": "marsh-RUT-ka", "id": "minibus, angkot"},
+    {"uk": "потяг", "baca": "PO-tyah", "id": "kereta"},
+    {"uk": "літак", "baca": "li-TAK", "id": "pesawat"},
+    {"uk": "таксі", "baca": "tak-SI", "id": "taksi"},
+    {"uk": "зупинка", "baca": "zu-PYN-ka", "id": "halte"},
+    {"uk": "вокзал", "baca": "vok-ZAL", "id": "stasiun"},
+    {"uk": "аеропорт", "baca": "a-e-ro-PORT", "id": "bandara"},
+    {"uk": "пошта", "baca": "POSH-ta", "id": "kantor pos"},
+    {"uk": "квиток", "baca": "kvy-TOK", "id": "tiket"},
+    {"uk": "концерт", "baca": "kon-TSERT", "id": "konser"},
+    {"uk": "бібліотека", "baca": "bib-li-o-TE-ka", "id": "perpustakaan"},
+    {"uk": "виходити", "baca": "vy-KHO-dy-ty", "id": "keluar, turun"},
+    {"uk": "швидко", "baca": "SHVYD-ko", "id": "cepat"},
+    {"uk": "швидше", "baca": "SHVYD-she", "id": "lebih cepat"},
+    {"uk": "повільно", "baca": "po-VIL'-no", "id": "pelan"},
+    {"uk": "обов'язково", "baca": "o-bo-VYAZ-ko-vo", "id": "pasti, tentu saja"},
+    {"uk": "купувати", "baca": "ku-pu-VA-ty", "id": "membeli"},
+    {"uk": "до", "baca": "do", "id": "ke, sampai"},
+    {"uk": "разом", "baca": "RA-zom", "id": "bersama"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk йти atau їхати yang tepat.",
+      "items": [
+        "Я ____ пішки в магазин.",
+        "Ми ____ на автобусі в Київ.",
+        "Він ____ у школу пішки.",
+        "Вони ____ на потязі до Львова.",
+        "Ти ____ на роботу на метро?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk знахідний (arah) atau місцевий (tempat) yang tepat.",
+      "items": [
+        "Я йду в ____ (університет).",
+        "Я в ____ (університет).",
+        "Вона їде на ____ (робота).",
+        "Вона на ____ (робота).",
+        "Ми йдемо в ____ (бібліотека)."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "йдеш / куди / ти",
+        "пошту / я / на / йду",
+        "автобусі / він / на / їде",
+        "разом / ходімо",
+        "квиток / я / купила / вже"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ukraina.",
+      "items": [
+        "Kamu mau ke mana?",
+        "Saya mau ke kantor pos.",
+        "Jalan kaki? Itu jauh.",
+        "Lebih baik naik bus. Nomor tujuh.",
+        "Ayo kita ke metro bareng."
+      ]
+    }
+  ],
+  "answers": [
+    "йду — їдемо — йде — їдуть — їдеш",
+    "університет — університеті — роботу — роботі — бібліотеку",
+    "Куди ти йдеш? — Я йду на пошту. — Він їде на автобусі. — Ходімо разом! — Я вже купила квиток.",
+    "Куди ти йдеш? — Я йду на пошту. — Пішки? Це далеко. — Краще їдь на автобусі. Номер сім. — Ходімо разом до метро."
+  ],
+  "wave": "Ulangi Unit 10. Semua bentuk **-і** yang kamu pelajari di sana adalah lajur kanan tabel hari ini — dan lajur kirinya baru saja jadi milikmu juga."
+}

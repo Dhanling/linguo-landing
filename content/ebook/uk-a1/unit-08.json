@@ -1,0 +1,206 @@
+{
+  "title": "Di kafe: memesan tanpa menunjuk",
+  "title_target": "У кафе — U kafe",
+  "goal": "Memesan makanan dan minuman dengan kalimat utuh, meminta bon, dan bertemu kasus keempat (знахідний) — kasus yang menandai apa yang kamu inginkan, minum, dan makan.",
+  "bekal": [
+    "memesan dengan Мені, будь ласка",
+    "mengubah kata benda jadi bentuk знахідний",
+    "menyebut dengan atau tanpa sesuatu (з / без)",
+    "meminta bon dan membayar",
+    "membaca menu kafe Ukraina"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — Pesanan pertama tanpa menunjuk",
+      "intro": "Ani dan Andriy duduk di kafe di pusat kota. Perhatikan bahwa setiap benda yang dipesan berubah ekornya: кава jadi каву, вода jadi воду — sementara чай dan борщ tidak berubah sama sekali.",
+      "lines": [
+        {"speaker": "Офіціантка:", "text": "[Доброго|DOB-ro-ho] [дня|dnya]! [Що|Shcho] [ви|vy] [будете|BU-de-te]?", "id": "Selamat siang! Mau pesan apa?", "literal": "hari-yang-baik! apa — Anda — akan (memesan)?"},
+        {"speaker": "Ані:", "text": "[Мені|Me-NI], [будь|bud'] [ласка|LAS-ka], [каву|KA-vu] [і|i] [воду|VO-du].", "id": "Saya kopi dan air, tolong.", "literal": "kepada-saya, jadilah — kebaikan, kopi (знахідний) — dan — air (знахідний)."},
+        {"speaker": "Офіціантка:", "text": "[Каву|KA-vu] [з|z] [молоком|mo-lo-KOM] [чи|chy] [без|bez]?", "id": "Kopinya dengan susu atau tanpa?", "literal": "kopi — dengan — susu (орудний) — atau — tanpa?"},
+        {"speaker": "Ані:", "text": "[Без|Bez] [молока|mo-lo-KA], [але|A-le] [з|z] [цукром|TSUK-rom].", "id": "Tanpa susu, tapi pakai gula.", "literal": "tanpa — susu (родовий), tapi — dengan — gula (орудний)."},
+        {"speaker": "Офіціантка:", "text": "[А|A] [ви|vy]?", "id": "Kalau Anda?", "literal": "dan — Anda?"},
+        {"speaker": "Андрій:", "text": "[Мені|Me-NI] [чай|chay] [і|i] [борщ|borshch].", "id": "Saya teh dan borsch.", "literal": "kepada-saya — teh — dan — borsch."},
+        {"speaker": "Офіціантка:", "text": "[Борщ|Borshch] [зі|zi] [сметаною|sme-TA-no-yu]?", "id": "Borschnya pakai krim asam?", "literal": "borsch — dengan — krim-asam (орудний)?"},
+        {"speaker": "Андрій:", "text": "[Так|Tak], [будь|bud'] [ласка|LAS-ka]. [І|I] [хліб|khlib].", "id": "Ya, tolong. Dan roti.", "literal": "ya, jadilah — kebaikan. dan — roti."},
+        {"speaker": "Офіціантка:", "text": "[Щось|Shchos'] [на|na] [десерт|de-SERT]?", "id": "Ada pencuci mulut?", "literal": "sesuatu — untuk — pencuci-mulut?"},
+        {"speaker": "Ані:", "text": "[Так|Tak], [одне|od-NE] [морозиво|mo-RO-zy-vo]. [І|I] [рахунок|ra-KHU-nok] [разом|RA-zom], [будь|bud'] [ласка|LAS-ka].", "id": "Ya, satu es krim. Dan bonnya digabung, tolong.", "literal": "ya, satu (netral) — es-krim. dan — bon — bersama, jadilah — kebaikan."},
+        {"speaker": "Офіціантка:", "text": "[Добре|DOB-re]. [Хвилинку|Khvy-LYN-ku].", "id": "Baik. Sebentar.", "literal": "baik. semenit (знахідний)."},
+        {"speaker": "Андрій:", "text": "[Смачного|Smach-NO-ho]!", "id": "Selamat makan!", "literal": "yang-lezat (родовий)!"}
+      ],
+      "notes": [
+        "**Мені, будь ласка — rumus pemesanan yang paling aman.** Harfiahnya \"kepada saya, tolong\". Kata kerjanya dibuang sama sekali, jadi kamu tidak perlu memilih antara *хочу* (mau), *буду* (akan), atau *візьму* (ambil). Semua pelayan di Ukraina mengerti bentuk ini.",
+        "**Що ви будете? harfiahnya \"Anda akan apa?\"** Kata kerjanya memang menggantung tanpa objek — persis seperti \"Mau apa?\" dalam bahasa Indonesia. Jawaban yang paling wajar mengikuti bentuknya: *Я буду каву* (saya kopi).",
+        "**Yang kamu pesan masuk знахідний, dan itu berarti ekornya berubah — kadang.** Kata perempuan berakhiran **-а** jadi **-у**: *кава* → *каву*, *вода* → *воду*, *піца* → *піцу*. Kata laki-laki tak bernyawa dan kata netral **tidak berubah sama sekali**: *чай*, *борщ*, *хліб*, *молоко*, *морозиво*.",
+        "**Itu sebabnya знахідний sering terasa tak terlihat.** Setengah kata benda yang akan kamu pesan kebetulan tidak berubah bentuknya. Jangan tertipu — kasusnya tetap ada, dan ia akan terasa nyata begitu kamu memesan sesuatu yang bernyawa (Unit 13) atau menyebut arah (Unit 13 juga).",
+        "**З memakai орудний, без memakai родовий.** *З молоком* (dengan susu), *без молока* (tanpa susu) — kata yang sama dengan dua ekor berbeda. Pasangan ini muncul di setiap pesanan kopi di Ukraina, jadi ada gunanya dihafal utuh: *з цукром / без цукру*, *зі сметаною / без сметани*.",
+        "**Смачного bukan \"selamat makan\" secara harfiah.** Ia potongan dari \"(semoga) yang lezat\", dan bentuknya родовий karena itu. Diucapkan kepada orang yang akan makan — pelayan mengucapkannya saat mengantar piring, dan teman semeja mengucapkannya sebelum menyuap.",
+        "**Рахунок разом atau окремо.** *Разом* = digabung, *окремо* = dipisah. Di Ukraina membayar terpisah sangat lazim dan tidak dianggap kikir sama sekali. Kalimat lengkapnya: *Рахунок, будь ласка, окремо.*"
+      ],
+      "grammars": [
+        {
+          "title": "Знахідний: apa yang kamu inginkan",
+          "body": ["Kasus ini menandai sasaran perbuatan — yang dimakan, diminum, dibaca, dilihat, dipesan."],
+          "table": {
+            "head": ["Bentuk kamus", "Jenis", "Bentuk знахідний", "Contoh"],
+            "rows": [
+              ["кава", "pr -а", "каву", "Я хочу каву."],
+              ["вода", "pr -а", "воду", "Я п'ю воду."],
+              ["піца", "pr -а", "піцу", "Я їм піцу."],
+              ["книга", "pr -а", "книгу", "Я читаю книгу."],
+              ["кухня", "pr -я", "кухню", "Я бачу кухню."],
+              ["чай", "lk mati", "чай", "Я п'ю чай."],
+              ["борщ", "lk mati", "борщ", "Я їм борщ."],
+              ["хліб", "lk mati", "хліб", "Я купую хліб."],
+              ["молоко", "netral", "молоко", "Я п'ю молоко."],
+              ["морозиво", "netral", "морозиво", "Я люблю морозиво."],
+              ["брат", "lk hidup", "брата", "Я бачу брата."]
+            ]
+          },
+          "after": ["Baris terakhir adalah kekecualian yang penting: **kata laki-laki yang bernyawa memakai bentuk родовий**, bukan bentuk kamus. *Я бачу брата*, bukan *Я бачу брат*. Aturan ini berlaku untuk orang dan binatang."]
+        },
+        {
+          "title": "З dan без: dua kata depan yang selalu berpasangan",
+          "body": [],
+          "table": {
+            "head": ["Dengan (з + орудний)", "Tanpa (без + родовий)", "Indonesia"],
+            "rows": [
+              ["з молоком", "без молока", "dengan / tanpa susu"],
+              ["з цукром", "без цукру", "dengan / tanpa gula"],
+              ["зі сметаною", "без сметани", "dengan / tanpa krim asam"],
+              ["з лимоном", "без лимона", "dengan / tanpa lemon"],
+              ["з газом", "без газу", "bersoda / tanpa soda"],
+              ["з м'ясом", "без м'яса", "dengan / tanpa daging"]
+            ]
+          },
+          "after": ["Kalau kamu lupa ekornya, kalimat penyelamat yang selalu dimengerti: **Без молока, будь ласка** — dua kata dan sebuah permintaan sopan sudah cukup."]
+        }
+      ]
+    },
+    {
+      "title": "Діалог — Membayar",
+      "intro": "Empat baris yang menutup akhir setiap kunjungan ke kafe.",
+      "lines": [
+        {"speaker": "Ані:", "text": "[Рахунок|Ra-KHU-nok], [будь|bud'] [ласка|LAS-ka].", "id": "Minta bonnya.", "literal": "bon, jadilah — kebaikan."},
+        {"speaker": "Офіціантка:", "text": "[Разом|RA-zom] [чи|chy] [окремо|o-KRE-mo]?", "id": "Digabung atau dipisah?", "literal": "bersama — atau — terpisah?"},
+        {"speaker": "Ані:", "text": "[Окремо|O-KRE-mo], [будь|bud'] [ласка|LAS-ka]. [Карткою|KART-ko-yu] [можна|MOZH-na]?", "id": "Dipisah, tolong. Boleh pakai kartu?", "literal": "terpisah, jadilah — kebaikan. dengan-kartu — boleh?"},
+        {"speaker": "Офіціантка:", "text": "[Звичайно|Zvy-CHAY-no]. [Дякую|DYA-ku-yu], [смачного|smach-NO-ho]!", "id": "Tentu. Terima kasih, selamat menikmati!", "literal": "tentu. terima-kasih, yang-lezat!"}
+      ],
+      "notes": [
+        "**Карткою — dengan kartu, dalam bentuk орудний.** Alat selalu memakai kasus ini: *плачу карткою* (bayar pakai kartu), *плачу готівкою* (bayar tunai), *пишу ручкою* (menulis dengan pulpen).",
+        "**Можна? satu kata, satu pertanyaan lengkap.** Artinya \"boleh?\" dan bisa berdiri sendiri di hampir semua keadaan: menunjuk kursi kosong, menunjuk pintu, menunjuk kartu. Kebalikannya **не можна** (tidak boleh)."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Membaca menu kafe Ukraina",
+      "blocks": [
+        {"type": "tabel", "head": ["Українська", "Baca", "Bahasa Indonesia"], "rows": [
+          ["кава", "KA-va", "kopi"],
+          ["чай", "chay", "teh"],
+          ["вода", "vo-DA", "air"],
+          ["сік", "sik", "jus"],
+          ["пиво", "PY-vo", "bir"],
+          ["борщ", "borshch", "borsch (sup bit merah)"],
+          ["суп", "sup", "sup"],
+          ["вареники", "va-RE-ny-ky", "pangsit rebus isi kentang atau keju"],
+          ["деруни", "de-ru-NY", "perkedel kentang parut"],
+          ["сирники", "SYR-ny-ky", "panekuk keju lembut"],
+          ["салат", "sa-LAT", "salad"],
+          ["хліб", "khlib", "roti"],
+          ["м'ясо", "MYA-so", "daging"],
+          ["курка", "KUR-ka", "ayam"],
+          ["риба", "RY-ba", "ikan"],
+          ["картопля", "kar-TOP-lya", "kentang"],
+          ["сметана", "sme-TA-na", "krim asam"],
+          ["морозиво", "mo-RO-zy-vo", "es krim"],
+          ["цукор", "TSU-kor", "gula"],
+          ["сіль", "sil'", "garam"]
+        ]},
+        {"type": "kotak", "title": "Tiga hidangan yang akan ditawarkan kepadamu", "items": [
+          "**Борщ** — sup bit merah dengan daging dan sayur, disajikan panas dengan **сметана** dan bawang putih. Ia hidangan kebangsaan, dan menolaknya di rumah orang bukan pilihan yang bijak.",
+          "**Вареники** — pangsit rebus berisi kentang, keju lembut, kubis, atau ceri. Yang berisi ceri (*з вишнями*) adalah pencuci mulut, bukan hidangan utama.",
+          "**Деруни** — perkedel kentang parut yang digoreng, hampir selalu disajikan dengan сметана. Bagi lidah Indonesia inilah menu Ukraina yang paling cepat terasa akrab.",
+          "⚠️ Kalau kamu tidak makan daging: **Я не їм м'яса** (родовий sesudah penyangkalan). Untuk memastikan: *Це без м'яса?*"
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"uk": "кафе", "baca": "ka-FE", "id": "kafe"},
+    {"uk": "ресторан", "baca": "res-to-RAN", "id": "restoran"},
+    {"uk": "офіціант", "baca": "o-fi-tsi-ANT", "id": "pelayan"},
+    {"uk": "меню", "baca": "me-NYU", "id": "menu"},
+    {"uk": "рахунок", "baca": "ra-KHU-nok", "id": "bon, tagihan"},
+    {"uk": "разом", "baca": "RA-zom", "id": "bersama, digabung"},
+    {"uk": "окремо", "baca": "o-KRE-mo", "id": "terpisah"},
+    {"uk": "картка", "baca": "KART-ka", "id": "kartu"},
+    {"uk": "готівка", "baca": "ho-TIV-ka", "id": "uang tunai"},
+    {"uk": "можна", "baca": "MOZH-na", "id": "boleh"},
+    {"uk": "звичайно", "baca": "zvy-CHAY-no", "id": "tentu saja"},
+    {"uk": "хвилинку", "baca": "khvy-LYN-ku", "id": "sebentar"},
+    {"uk": "смачного", "baca": "smach-NO-ho", "id": "selamat makan"},
+    {"uk": "смачно", "baca": "SMACH-no", "id": "enak"},
+    {"uk": "хотіти", "baca": "kho-TI-ty", "id": "mau, ingin"},
+    {"uk": "замовити", "baca": "za-MO-vy-ty", "id": "memesan"},
+    {"uk": "платити", "baca": "pla-TY-ty", "id": "membayar"},
+    {"uk": "з", "baca": "z", "id": "dengan"},
+    {"uk": "без", "baca": "bez", "id": "tanpa"},
+    {"uk": "щось", "baca": "shchos'", "id": "sesuatu"},
+    {"uk": "десерт", "baca": "de-SERT", "id": "pencuci mulut"},
+    {"uk": "сніданок", "baca": "sni-DA-nok", "id": "sarapan"},
+    {"uk": "обід", "baca": "o-BID", "id": "makan siang"},
+    {"uk": "вечеря", "baca": "ve-CHE-rya", "id": "makan malam"},
+    {"uk": "гарячий", "baca": "ha-RYA-chyy", "id": "panas"},
+    {"uk": "холодний", "baca": "kho-LOD-nyy", "id": "dingin"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk знахідний yang benar.",
+      "items": [
+        "Я хочу ____ (кава).",
+        "Я п'ю ____ (вода).",
+        "Він їсть ____ (борщ).",
+        "Ми хочемо ____ (піца).",
+        "Вона любить ____ (морозиво)."
+      ]
+    },
+    {
+      "prompt": "Isi dengan з atau без. Perhatikan ekor kata sesudahnya.",
+      "items": [
+        "Каву ____ молоком.",
+        "Чай ____ цукру.",
+        "Борщ ____ сметаною.",
+        "Вода ____ газу.",
+        "Хліб ____ маслом."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "будь ласка / каву / мені",
+        "ви / що / будете",
+        "рахунок / будь ласка",
+        "борщ / хочу / я",
+        "смачно / це / дуже"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ukraina.",
+      "items": [
+        "Selamat siang! Mau pesan apa?",
+        "Saya mau kopi, tanpa susu.",
+        "Teh dengan gula, tolong.",
+        "Minta bonnya.",
+        "Selamat makan!"
+      ]
+    }
+  ],
+  "answers": [
+    "каву — воду — борщ — піцу — морозиво",
+    "з — без — з — без — з",
+    "Мені каву, будь ласка. — Що ви будете? — Рахунок, будь ласка. — Я хочу борщ. — Це дуже смачно.",
+    "Доброго дня! Що ви будете? — Я хочу каву, без молока. — Чай з цукром, будь ласка. — Рахунок, будь ласка. — Смачного!"
+  ],
+  "wave": "Ulangi Unit 6. Kalimat *Тато готує вечерю* memakai знахідний yang baru kamu pelajari hari ini — *вечеря* jadi *вечерю*."
+}

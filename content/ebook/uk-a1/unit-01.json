@@ -1,0 +1,178 @@
+{
+  "title": "Halo, nama saya Ani",
+  "title_target": "Привіт — Pryvit",
+  "goal": "Menyapa dengan aman kepada siapa pun, menyebut nama, menanyakan nama lawan bicara, dan mengucapkan kalimat Ukraina pertama yang benar — kalimat yang tidak punya kata \"adalah\" sama sekali. Sekaligus berkenalan dengan satu hal yang tidak dimiliki bahasa Rusia: bentuk memanggil nama.",
+  "bekal": [
+    "menyapa resmi dan santai, dan tahu bedanya",
+    "menyebut namamu dan menanyakan nama orang",
+    "mengucapkan terima kasih, maaf, dan permisi",
+    "menyusun kalimat \"saya X\" tanpa kata kerja",
+    "memanggil orang dengan bentuk yang benar"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — Hari pertama di kursus",
+      "intro": "Ani, pelajar dari Indonesia, masuk ke kelas bahasa Ukraina di Kyiv dan duduk di sebelah seseorang yang belum dikenalnya. Perhatikan bahwa tidak satu pun kalimat di bawah ini memakai kata yang berarti \"adalah\" — dan perhatikan baris terakhir, tempat nama Оксана berubah ekornya.",
+      "lines": [
+        {"speaker": "Ані:", "text": "[Доброго|DOB-ro-ho] [дня|dnya]!", "id": "Selamat siang!", "literal": "hari-yang-baik!"},
+        {"speaker": "Оксана:", "text": "[Доброго|DOB-ro-ho] [дня|dnya]! [Мене|me-NE] [звати|ZVA-ty] [Оксана|ok-SA-na]. [А|A] [вас|vas]?", "id": "Selamat siang! Nama saya Oksana. Dan Anda?", "literal": "hari-yang-baik! saya (objek) — dipanggil — Oksana. dan — Anda (objek)?"},
+        {"speaker": "Ані:", "text": "[Дуже|DU-zhe] [приємно|pry-YEM-no]. [Я|Ya] [Ані|A-ni].", "id": "Senang berkenalan. Saya Ani.", "literal": "sangat — menyenangkan. saya — Ani."},
+        {"speaker": "Оксана:", "text": "[Ані|A-ni]? [Гарне|HAR-ne] [ім'я|im-YA]. [Ви|Vy] [студентка|stu-DENT-ka]?", "id": "Ani? Nama yang indah. Anda mahasiswi?", "literal": "Ani? indah (netral) — nama. Anda — mahasiswi?"},
+        {"speaker": "Ані:", "text": "[Так|Tak], [я|ya] [студентка|stu-DENT-ka]. [А|A] [ви|vy]?", "id": "Ya, saya mahasiswi. Kalau Anda?", "literal": "ya, saya — mahasiswi. dan — Anda?"},
+        {"speaker": "Оксана:", "text": "[Я|Ya] [не|ne] [студентка|stu-DENT-ka]. [Я|Ya] [викладачка|vy-kla-DACH-ka].", "id": "Saya bukan mahasiswi. Saya pengajar.", "literal": "saya — tidak — mahasiswi. saya — pengajar (pr)."},
+        {"speaker": "Ані:", "text": "[Ой|Oy], [вибачте|VY-bach-te]!", "id": "Oh, maaf!", "literal": "oh, maafkanlah-Anda!"},
+        {"speaker": "Оксана:", "text": "[Нічого|Ni-CHO-ho]! [Все|Vse] [добре|DOB-re]. [Ласкаво|Las-KA-vo] [просимо|PRO-sy-mo] [до|do] [Києва|KY-ye-va]!", "id": "Tidak apa-apa! Semuanya baik. Selamat datang di Kyiv!", "literal": "tidak-apa-apa! semua — baik. ramah — kami-minta — ke — Kyiv!"},
+        {"speaker": "Ані:", "text": "[Дякую|DYA-ku-yu].", "id": "Terima kasih.", "literal": "terima-kasih."},
+        {"speaker": "Оксана:", "text": "[Будь|Bud'] [ласка|LAS-ka]. [До|Do] [побачення|po-BA-chen-nya], [Ані|A-ni]!", "id": "Sama-sama. Sampai jumpa, Ani!", "literal": "jadilah — kebaikan. sampai — perjumpaan, Ani!"},
+        {"speaker": "Ані:", "text": "[До|Do] [побачення|po-BA-chen-nya], [пані|PA-ni] [Оксано|ok-SA-no]!", "id": "Sampai jumpa, Bu Oksana!", "literal": "sampai — perjumpaan, nyonya (panggilan) — Oksana (panggilan)!"}
+      ],
+      "notes": [
+        "**Bahasa Ukraina tidak punya kata \"adalah\" di waktu sekarang.** *Я студентка* secara harfiah cuma \"saya mahasiswi\" — dua kata, tanpa penghubung apa pun. Dalam tulisan resmi penghubung itu kadang ditandai tanda hubung: *Київ — місто* (Kyiv adalah kota). ⚠️ Pemula Indonesia sering mencari kata untuk \"adalah\" lalu memaksakan **є**, yang di sini salah. Є berarti \"ada\", bukan \"adalah\", dan pemakaiannya diajarkan di Unit 4.",
+        "**Bahasa Ukraina juga tidak punya \"a\" dan \"the\".** Tidak ada kata sandang sama sekali. Bagi penutur Indonesia, yang juga tak punya kata sandang, satu beban besar bahasa Inggris hilang begitu saja di sini.",
+        "**Доброго дня itu resmi, Привіт itu santai.** *Доброго дня* (*DOB-ro-ho dnya*) aman untuk siapa pun — orang asing, dosen, petugas, kasir. *Привіт* (*pry-VIT*) hanya untuk teman dan sebaya. ⚠️ Memakai *Привіт* kepada dosen atau petugas imigrasi terdengar seperti anak kecil menepuk bahu orang dewasa.",
+        "**Kenapa Доброго дня, bukan Добрий день?** Dua-duanya benar dan dua-duanya dipakai. *Добрий день* bentuk dasarnya; *Доброго дня* aslinya potongan dari doa \"(saya doakan kamu) hari yang baik\", jadi ekornya masuk родовий. Yang kedua terdengar sedikit lebih hangat dan lebih khas Ukraina. Pilih salah satu dan pakai terus.",
+        "**Мене звати harfiahnya \"saya dipanggil\".** Bukan \"nama saya\". Orang Ukraina menyebut namanya lewat kalimat tanpa pelaku yang jelas — siapa yang memanggil tidak pernah disebut. Terima saja sebagai satu bongkah: *Мене звати ___*. Untuk bertanya balik cukup **А вас?** (\"dan Anda?\"), tak perlu mengulang seluruh kalimatnya.",
+        "**Вибачте dan Перепрошую dua-duanya \"maaf\".** *Вибачте* (*VY-bach-te*) untuk gangguan kecil: menyela, lewat, salah sebut. *Перепрошую* (*pe-re-PRO-shu-yu*) sedikit lebih resmi dan lebih khas di Ukraina barat. Untuk kesalahan yang sungguhan orang berkata *Пробачте* (*pro-BACH-te*).",
+        "**Будь ласка satu ungkapan, tiga pekerjaan.** Ia berarti \"tolong\", \"silakan\", dan \"sama-sama\" sekaligus. Kamu akan memakainya puluhan kali sehari. Harfiahnya \"jadilah kebaikan\" — dua kata, bukan satu, jadi jangan menyambungnya jadi *будьласка*.",
+        "**Пані Оксано, bukan пані Оксана.** Baris terakhir memakai bentuk memanggil (кличний відмінок): kata *пані* dan nama *Оксана* dua-duanya berubah ekornya. Ini yang membedakan bahasa Ukraina dari bahasa Rusia sejak kalimat pertama — dan orang Ukraina langsung mendengarnya."
+      ],
+      "grammars": [
+        {
+          "title": "Kalimat tanpa kata kerja",
+          "body": ["Pada waktu sekarang, kalimat \"X adalah Y\" dalam bahasa Ukraina hanya menempelkan X dan Y. Tidak ada yang perlu ditambahkan, dan menambahkan sesuatu justru salah."],
+          "table": {
+            "head": ["Ukraina", "Baca", "Indonesia", "Harfiah"],
+            "rows": [
+              ["Я студент.", "ya stu-DENT", "Saya mahasiswa.", "saya mahasiswa"],
+              ["Він лікар.", "vin LI-kar", "Dia dokter.", "dia dokter"],
+              ["Вона вдома.", "vo-NA VDO-ma", "Dia di rumah.", "dia di-rumah"],
+              ["Це Київ.", "tse KY-yiv", "Ini Kyiv.", "ini Kyiv"],
+              ["Я не викладач.", "ya ne vy-kla-DACH", "Saya bukan pengajar.", "saya tidak pengajar"]
+            ]
+          },
+          "after": ["Untuk menyangkal, sisipkan **не** tepat di depan bagian yang disangkal. Satu kata, tanpa perubahan lain."]
+        },
+        {
+          "title": "Кличний відмінок — bentuk memanggil",
+          "body": ["Begitu kamu memanggil seseorang dengan namanya, ekor namanya berubah. Ini kasus ketujuh, dan bahasa Rusia tidak memilikinya. Tiga pola berikut menutup hampir semua nama yang akan kamu ucapkan di tingkat A1."],
+          "table": {
+            "head": ["Pola", "Bentuk kamus", "Bentuk memanggil", "Contoh dipakai"],
+            "rows": [
+              ["Perempuan -а", "Оксана, мама, сестра", "Оксано, мамо, сестро", "Оксано, добрий день!"],
+              ["Perempuan -я", "Марія, Софія", "Маріє, Софіє", "Маріє, дякую!"],
+              ["Laki-laki keras", "Іван, брат, пан", "Іване, брате, пане", "Іване, вибачте!"],
+              ["Laki-laki -й", "Андрій, Сергій", "Андрію, Сергію", "Андрію, привіт!"],
+              ["Sebutan hormat", "пан Петро, пані Оксана", "пане Петре, пані Оксано", "Пане Петре, будь ласка."]
+            ]
+          },
+          "after": ["⚠️ Perhatikan bahwa sebutan hormatnya ikut berubah: **пане**, **пані**. Keduanya berpasangan dengan namanya, bukan berdiri sendiri.", "Tidak memakai bentuk ini tidak membuat kalimatmu salah paham, tapi ia langsung terdengar. Bagi orang Ukraina, memanggil \"Оксана!\" terasa seperti membacakan daftar hadir."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ungkapan yang wajib ada di saku hari pertama",
+      "blocks": [
+        {"type": "p", "text": "Sepuluh ungkapan berikut menutup hampir semua basa-basi hari pertama. Hafalkan utuh sebagai bongkahan; tata bahasanya akan terurai sendiri di unit-unit berikutnya."},
+        {"type": "tabel", "head": ["Українська", "Baca", "Bahasa Indonesia"], "rows": [
+          ["Так / Ні", "tak / ni", "Ya / Tidak"],
+          ["Дякую", "DYA-ku-yu", "Terima kasih"],
+          ["Дуже дякую", "DU-zhe DYA-ku-yu", "Terima kasih banyak"],
+          ["Будь ласка", "bud' LAS-ka", "Tolong / Silakan / Sama-sama"],
+          ["Вибачте", "VY-bach-te", "Maaf, permisi"],
+          ["Я не розумію", "ya ne ro-zu-MI-yu", "Saya tidak mengerti"],
+          ["Повторіть, будь ласка", "pov-to-RIT' bud' LAS-ka", "Tolong ulangi"],
+          ["Говоріть повільно, будь ласка", "ho-vo-RIT' po-VIL'-no", "Tolong bicara pelan-pelan"],
+          ["Що це?", "shcho tse", "Ini apa?"],
+          ["Як це українською?", "yak tse u-kra-YIN-s'ko-yu", "Bahasa Ukrainanya apa?"]
+        ]},
+        {"type": "p", "text": "Dua kalimat terakhir bukan sekadar kosakata — itu alat belajar. Begitu kamu bisa menanyakan \"ini apa\" dan \"bahasa Ukrainanya apa\", setiap orang Ukraina di sekitarmu berubah jadi kamus berjalan."},
+        {"type": "kotak", "title": "Як справи? dan jebakan kecilnya", "items": [
+          "**Як справи?** (*yak SPRA-vy*) harfiahnya \"bagaimana urusan-urusan?\" — sapaan sehari-hari kepada orang yang sudah dikenal.",
+          "Jawaban baku: **Добре** (baik), **Нормально** (biasa saja), **Непогано** (lumayan), **Так собі** (begitulah).",
+          "Kepada orang yang kamu panggil *ви*, bentuknya **Як ваші справи?**; kepada teman, **Як твої справи?** atau cukup **Як справи?**",
+          "⚠️ Berbeda dari *How are you?* dalam bahasa Inggris, Як справи? **bukan** basa-basi kosong yang dilontarkan ke kasir atau orang asing. Ia ditanyakan kepada orang yang kamu kenal, dan jawabannya benar-benar didengarkan."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"uk": "доброго дня", "baca": "DOB-ro-ho dnya", "id": "selamat siang (resmi, aman untuk siapa pun)"},
+    {"uk": "доброго ранку", "baca": "DOB-ro-ho RAN-ku", "id": "selamat pagi"},
+    {"uk": "добрий вечір", "baca": "DOB-ryy VE-chir", "id": "selamat malam (saat bertemu)"},
+    {"uk": "привіт", "baca": "pry-VIT", "id": "hai (santai, ke teman)"},
+    {"uk": "до побачення", "baca": "do po-BA-chen-nya", "id": "sampai jumpa"},
+    {"uk": "бувай", "baca": "bu-VAY", "id": "dah (santai)"},
+    {"uk": "мене звати", "baca": "me-NE ZVA-ty", "id": "nama saya"},
+    {"uk": "як вас звати?", "baca": "yak vas ZVA-ty", "id": "siapa nama Anda?"},
+    {"uk": "дуже приємно", "baca": "DU-zhe pry-YEM-no", "id": "senang berkenalan"},
+    {"uk": "дякую", "baca": "DYA-ku-yu", "id": "terima kasih"},
+    {"uk": "будь ласка", "baca": "bud' LAS-ka", "id": "tolong / silakan / sama-sama"},
+    {"uk": "вибачте", "baca": "VY-bach-te", "id": "maaf, permisi"},
+    {"uk": "нічого", "baca": "ni-CHO-ho", "id": "tidak apa-apa"},
+    {"uk": "так", "baca": "tak", "id": "ya"},
+    {"uk": "ні", "baca": "ni", "id": "tidak (jawaban)"},
+    {"uk": "не", "baca": "ne", "id": "tidak, bukan (di depan kata)"},
+    {"uk": "я", "baca": "ya", "id": "saya"},
+    {"uk": "ти", "baca": "ty", "id": "kamu (santai)"},
+    {"uk": "ви", "baca": "vy", "id": "Anda / kalian"},
+    {"uk": "студент / студентка", "baca": "stu-DENT / stu-DENT-ka", "id": "mahasiswa / mahasiswi"},
+    {"uk": "викладач / викладачка", "baca": "vy-kla-DACH", "id": "pengajar (lk / pr)"},
+    {"uk": "ім'я", "baca": "im-YA", "id": "nama"},
+    {"uk": "гарний", "baca": "HAR-nyy", "id": "bagus, indah"},
+    {"uk": "добре", "baca": "DOB-re", "id": "baik, oke"},
+    {"uk": "як справи?", "baca": "yak SPRA-vy", "id": "apa kabar?"},
+    {"uk": "пан / пані", "baca": "pan / PA-ni", "id": "Bapak / Ibu (sebutan hormat)"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Ukraina. Ingat: tidak ada kata untuk \"adalah\".",
+      "items": [
+        "Selamat siang! (resmi)",
+        "Nama saya Ani.",
+        "Saya mahasiswi.",
+        "Dia bukan dokter.",
+        "Siapa nama Anda?",
+        "Sampai jumpa!"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk ти atau ви yang tepat (тебе, вас, твої, ваші, ви).",
+      "items": [
+        "Kepada dosen di kelas: Як ____ звати?",
+        "Kepada teman sekamar: Як ____ справи?",
+        "Kepada petugas di bandara: Вибачте, ____ говорите англійською?",
+        "Kepada anak tetangga umur tujuh tahun: Як ____ звати?",
+        "Kepada tiga orang teman sekaligus: Як ____ справи?"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "звати / мене / Ані",
+        "не / я / студент",
+        "приємно / дуже",
+        "добре / все",
+        "вас / як / звати"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi bentuk memanggil (кличний відмінок).",
+      "items": [
+        "Оксана, добрий день! → ____",
+        "Іван, вибачте! → ____",
+        "мама, дякую! → ____",
+        "Андрій, привіт! → ____",
+        "пан Петро, будь ласка. → ____"
+      ]
+    }
+  ],
+  "answers": [
+    "Доброго дня! — Мене звати Ані. — Я студентка. — Він не лікар. — Як вас звати? — До побачення!",
+    "вас — твої — ви — тебе — ваші",
+    "Мене звати Ані. — Я не студент. — Дуже приємно. — Все добре. — Як вас звати?",
+    "Оксано — Іване — мамо — Андрію — пане Петре"
+  ],
+  "wave": "Belum ada yang perlu diulang. Mulai unit berikutnya, bagian ini menunjuk balik ke unit yang paling sering menjegal."
+}

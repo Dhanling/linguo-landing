@@ -1,0 +1,197 @@
+{
+  "title": "Apa yang kamu lakukan sekarang?",
+  "title_target": "Що ти робиш? — Shcho ty robysh?",
+  "goal": "Menguasai dua pola kata kerja yang menopang seluruh bahasa Ukraina, lalu memakainya untuk menceritakan apa yang sedang kamu dan orang lain lakukan.",
+  "bekal": [
+    "menyusun kata kerja pola pertama (-е-)",
+    "menyusun kata kerja pola kedua (-и-)",
+    "menanyakan apa yang sedang dilakukan seseorang",
+    "menyangkal dengan нічого не",
+    "memakai lima belas kata kerja sehari-hari"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — Panggilan video ke Jakarta",
+      "intro": "Ani menelepon adiknya, Dina. Hitung berapa kata kerja yang lewat di dua belas baris ini — dan perhatikan bahwa ekornya jatuh ke dalam dua kelompok saja.",
+      "lines": [
+        {"speaker": "Діна:", "text": "[Ані|A-ni], [привіт|pry-VIT]! [Що|Shcho] [ти|ty] [робиш|RO-bysh]?", "id": "Ani, hai! Kamu sedang apa?", "literal": "Ani, hai! apa — kamu — melakukan?"},
+        {"speaker": "Ані:", "text": "[Я|Ya] [читаю|chy-TA-yu]. [А|A] [ти|ty]?", "id": "Saya sedang membaca. Kamu?", "literal": "saya — membaca. dan — kamu?"},
+        {"speaker": "Діна:", "text": "[Я|Ya] [нічого|ni-CHO-ho] [не|ne] [роблю|rob-LYU]. [Дивлюся|Dyv-LYU-sya] [телевізор|te-le-VI-zor].", "id": "Saya tidak sedang apa-apa. Nonton televisi.", "literal": "saya — tidak-apa-apa — tidak — melakukan. menonton — televisi."},
+        {"speaker": "Ані:", "text": "[Мама|MA-ma] [вдома|VDO-ma]?", "id": "Ibu di rumah?", "literal": "ibu — di-rumah?"},
+        {"speaker": "Діна:", "text": "[Ні|Ni], [вона|vo-NA] [працює|pra-TSYU-ye]. [Тато|TA-to] [готує|ho-TU-ye] [вечерю|ve-CHE-ryu].", "id": "Tidak, dia sedang bekerja. Ayah sedang masak makan malam.", "literal": "tidak, dia — bekerja. ayah — memasak — makan-malam."},
+        {"speaker": "Ані:", "text": "[Тато|TA-to] [готує|ho-TU-ye]? [Це|Tse] [новина|no-vy-NA]!", "id": "Ayah masak? Itu berita baru!", "literal": "ayah — memasak? ini — berita!"},
+        {"speaker": "Діна:", "text": "[Так|Tak]. [Він|Vin] [каже|KA-zhe], [що|shcho] [любить|LYU-byt'] [готувати|ho-tu-VA-ty].", "id": "Iya. Katanya dia suka memasak.", "literal": "ya. dia — berkata, bahwa — mencintai — memasak."},
+        {"speaker": "Ані:", "text": "[А|A] [що|shcho] [він|vin] [готує|ho-TU-ye]?", "id": "Masak apa?", "literal": "dan — apa — dia — memasak?"},
+        {"speaker": "Діна:", "text": "[Рис|Rys] [і|i] [рибу|RY-bu]. [Як|Yak] [завжди|ZAV-zhdy].", "id": "Nasi dan ikan. Seperti biasa.", "literal": "nasi — dan — ikan (знахідний). seperti — selalu."},
+        {"speaker": "Ані:", "text": "[Я|Ya] [сумую|su-MU-yu] [за|za] [домом|DO-mom].", "id": "Saya kangen rumah.", "literal": "saya — merindu — di-belakang — rumah (орудний)."},
+        {"speaker": "Діна:", "text": "[Ми|My] [теж|tezh] [сумуємо|su-MU-ye-mo]. [Коли|Ko-LY] [ти|ty] [приїдеш|pry-YI-desh]?", "id": "Kami juga kangen. Kapan kamu pulang?", "literal": "kami — juga — merindu. kapan — kamu — akan-datang?"},
+        {"speaker": "Ані:", "text": "[Не|Ne] [знаю|ZNA-yu]. [Але|A-le] [я|ya] [думаю|DU-ma-yu] [про|pro] [вас|vas] [щодня|shcho-DNYA].", "id": "Tidak tahu. Tapi aku memikirkan kalian setiap hari.", "literal": "tidak — tahu. tapi — saya — berpikir — tentang — kalian — setiap-hari."}
+      ],
+      "notes": [
+        "**Bahasa Ukraina tidak punya bentuk \"sedang\".** *Я читаю* berarti \"saya membaca\" **dan** \"saya sedang membaca\" sekaligus. Tidak ada padanan untuk *am reading* dalam bahasa Inggris. Bagi penutur Indonesia ini kabar baik: satu bentuk, seperti \"saya membaca\" yang juga menutup dua-duanya.",
+        "**Semua kata kerja jatuh ke dalam dua pola.** Bedanya cuma satu huruf di bentuk orang ketiga: pola pertama **читає** (-е-), pola kedua **робить** (-и-). Kalau kamu tahu satu bentuk itu untuk sebuah kata kerja, lima bentuk lainnya menyusul tanpa perlu dihafal.",
+        "**Роблю, bukan робю.** Kata kerja pola kedua yang batangnya berakhir **б, п, в, м, ф** menyisipkan **-л-** hanya di bentuk *я* dan *вони*: *роблю / роблять*, *люблю / люблять*, *сплю / сплять*. Empat bentuk di tengahnya tidak kena. ⚠️ Ini pola kecil tapi sangat sering muncul.",
+        "**Нічого не роблю — dua penyangkalan dalam satu kalimat.** Bahasa Ukraina mewajibkan penyangkalan ganda: *нічого* (tidak apa-apa) **tetap** harus disertai *не*. Sama dengan *ніхто не знає* (tidak ada yang tahu), *ніколи не був* (tidak pernah). Menghapus salah satunya membuat kalimatnya patah.",
+        "**Дивлюся телевізор, tapi дивлюся на нього.** Kata kerja *дивитися* (menonton, memandang) berpasangan dengan **на** kalau sasarannya bukan tontonan: *дивлюся на тебе* (memandangmu). Untuk televisi dan film, tanpa kata depan.",
+        "**Сумувати за — kangen.** Harfiahnya \"bersedih di belakang\", dan yang dirindukan masuk орудний: *сумую за домом*, *сумую за мамою*. Bentuk *скучати* juga terdengar, tapi *сумувати* lebih Ukraina.",
+        "**Що bisa berarti \"apa\" dan \"bahwa\".** *Що ти робиш?* (apa yang kamu lakukan) dan *Він каже, що…* (dia bilang bahwa…). Yang membedakan cuma letaknya: di awal kalimat ia bertanya, di tengah kalimat sesudah koma ia menyambung."
+      ],
+      "grammars": [
+        {
+          "title": "Pola I (-е-): читати — membaca",
+          "body": ["Ciri pengenalnya: bentuk orang ketiga berakhiran **-є** atau **-е**."],
+          "table": {
+            "head": ["Orang", "Bentuk", "Baca", "Arti"],
+            "rows": [
+              ["я", "читаю", "chy-TA-yu", "saya membaca"],
+              ["ти", "читаєш", "chy-TA-yesh", "kamu membaca"],
+              ["він / вона", "читає", "chy-TA-ye", "dia membaca"],
+              ["ми", "читаємо", "chy-TA-ye-mo", "kami membaca"],
+              ["ви", "читаєте", "chy-TA-ye-te", "Anda / kalian membaca"],
+              ["вони", "читають", "chy-TA-yut'", "mereka membaca"]
+            ]
+          },
+          "after": ["Ikut pola ini: **знати** (tahu), **думати** (berpikir), **гуляти** (jalan-jalan), **питати** (bertanya), **відпочивати** (istirahat), **розуміти** (mengerti)."]
+        },
+        {
+          "title": "Pola II (-и-): робити — melakukan",
+          "body": ["Ciri pengenalnya: bentuk orang ketiga berakhiran **-ить** atau **-ить** yang lunak."],
+          "table": {
+            "head": ["Orang", "Bentuk", "Baca", "Arti"],
+            "rows": [
+              ["я", "роблю", "rob-LYU", "saya melakukan"],
+              ["ти", "робиш", "RO-bysh", "kamu melakukan"],
+              ["він / вона", "робить", "RO-byt'", "dia melakukan"],
+              ["ми", "робимо", "RO-by-mo", "kami melakukan"],
+              ["ви", "робите", "RO-by-te", "Anda / kalian melakukan"],
+              ["вони", "роблять", "ROB-lyat'", "mereka melakukan"]
+            ]
+          },
+          "after": ["Ikut pola ini: **говорити** (berbicara), **любити** (mencintai), **бачити** (melihat), **вчити** (belajar/mengajar), **платити** (membayar), **спати** (tidur)."]
+        },
+        {
+          "title": "Cara mengenali polanya tanpa kamus",
+          "body": ["Aturan praktis yang benar untuk sebagian besar kata kerja A1:"],
+          "table": {
+            "head": ["Ekor bentuk kamus", "Biasanya pola", "Contoh", "Bentuk я"],
+            "rows": [
+              ["-ати", "I", "читати, знати, думати", "читаю, знаю, думаю"],
+              ["-увати / -ювати", "I", "працювати, малювати", "працюю, малюю"],
+              ["-ити", "II", "робити, говорити, любити", "роблю, говорю, люблю"],
+              ["-іти", "II", "бачити, сидіти, летіти", "бачу, сиджу, лечу"],
+              ["-ти bervokal lain", "campur", "жити, пити, їсти", "живу, п'ю, їм"]
+            ]
+          },
+          "after": ["Baris terakhir adalah kelompok yang harus dihafal satu-satu, dan untungnya isinya sedikit: kata kerja yang paling sering dipakai justru yang paling sering menyimpang — persis seperti *pergi*, *ada*, *makan* dalam banyak bahasa lain."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Lima belas kata kerja yang menutup hari biasa",
+      "blocks": [
+        {"type": "tabel", "head": ["Bentuk kamus", "Bentuk я", "Bentuk він", "Pola", "Indonesia"], "rows": [
+          ["читати", "читаю", "читає", "I", "membaca"],
+          ["писати", "пишу", "пише", "I", "menulis"],
+          ["знати", "знаю", "знає", "I", "tahu"],
+          ["думати", "думаю", "думає", "I", "berpikir"],
+          ["розуміти", "розумію", "розуміє", "I", "mengerti"],
+          ["працювати", "працюю", "працює", "I", "bekerja"],
+          ["готувати", "готую", "готує", "I", "memasak"],
+          ["жити", "живу", "живе", "I", "tinggal"],
+          ["пити", "п'ю", "п'є", "I", "minum"],
+          ["робити", "роблю", "робить", "II", "melakukan"],
+          ["говорити", "говорю", "говорить", "II", "berbicara"],
+          ["любити", "люблю", "любить", "II", "mencintai, suka"],
+          ["бачити", "бачу", "бачить", "II", "melihat"],
+          ["спати", "сплю", "спить", "II", "tidur"],
+          ["їсти", "їм", "їсть", "khusus", "makan"]
+        ]},
+        {"type": "kotak", "title": "Penyangkalan ganda itu wajib, bukan kesalahan", "items": [
+          "**Я нічого не роблю** — harfiahnya \"saya tidak-apa-apa tidak melakukan\". Bagi telinga yang terbiasa bahasa Inggris ini terdengar salah; dalam bahasa Ukraina ia satu-satunya bentuk yang benar.",
+          "**Ніхто не знає** — tidak ada yang tahu. **Ніде немає** — tidak ada di mana pun. **Ніколи не був** — tidak pernah pergi.",
+          "Polanya tetap: kata negatif berawalan **ні-** selalu berpasangan dengan **не** di depan kata kerjanya.",
+          "⚠️ Menghapus salah satunya bukan sekadar terdengar aneh — kalimatnya jadi tak terbaca. *Я нічого роблю* tidak berarti apa-apa."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"uk": "робити", "baca": "ro-BY-ty", "id": "melakukan, membuat"},
+    {"uk": "читати", "baca": "chy-TA-ty", "id": "membaca"},
+    {"uk": "писати", "baca": "py-SA-ty", "id": "menulis"},
+    {"uk": "знати", "baca": "ZNA-ty", "id": "tahu"},
+    {"uk": "думати", "baca": "DU-ma-ty", "id": "berpikir"},
+    {"uk": "розуміти", "baca": "ro-zu-MI-ty", "id": "mengerti"},
+    {"uk": "готувати", "baca": "ho-tu-VA-ty", "id": "memasak"},
+    {"uk": "дивитися", "baca": "dy-VY-ty-sya", "id": "menonton, memandang"},
+    {"uk": "любити", "baca": "lyu-BY-ty", "id": "mencintai, suka"},
+    {"uk": "бачити", "baca": "BA-chy-ty", "id": "melihat"},
+    {"uk": "спати", "baca": "SPA-ty", "id": "tidur"},
+    {"uk": "їсти", "baca": "YIS-ty", "id": "makan"},
+    {"uk": "пити", "baca": "PY-ty", "id": "minum"},
+    {"uk": "сумувати за", "baca": "su-mu-VA-ty za", "id": "merindukan"},
+    {"uk": "нічого", "baca": "ni-CHO-ho", "id": "tidak apa-apa"},
+    {"uk": "ніхто", "baca": "nikh-TO", "id": "tidak seorang pun"},
+    {"uk": "завжди", "baca": "ZAV-zhdy", "id": "selalu"},
+    {"uk": "ніколи", "baca": "ni-KO-ly", "id": "tidak pernah"},
+    {"uk": "щодня", "baca": "shcho-DNYA", "id": "setiap hari"},
+    {"uk": "вдома", "baca": "VDO-ma", "id": "di rumah"},
+    {"uk": "телевізор", "baca": "te-le-VI-zor", "id": "televisi"},
+    {"uk": "вечеря", "baca": "ve-CHE-rya", "id": "makan malam"},
+    {"uk": "рис", "baca": "rys", "id": "nasi, beras"},
+    {"uk": "риба", "baca": "RY-ba", "id": "ikan"},
+    {"uk": "новина", "baca": "no-vy-NA", "id": "berita"},
+    {"uk": "теж", "baca": "tezh", "id": "juga"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk читати yang tepat (pola I).",
+      "items": [
+        "Я ____ книгу.",
+        "Ти ____ газету?",
+        "Він ____ журнал.",
+        "Ми ____ разом.",
+        "Вони ____ багато."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk робити yang tepat (pola II). Ingat -л- di bentuk я dan вони.",
+      "items": [
+        "Що я ____?",
+        "Що ти ____?",
+        "Що вона ____?",
+        "Що ми ____?",
+        "Що вони ____?"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "робиш / що / ти",
+        "книгу / я / читаю",
+        "не / нічого / я / роблю",
+        "вечерю / тато / готує",
+        "про / думаю / вас / я"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ukraina.",
+      "items": [
+        "Kamu sedang apa?",
+        "Saya sedang membaca.",
+        "Saya tidak sedang melakukan apa-apa.",
+        "Ayah memasak makan malam.",
+        "Saya memikirkan kalian setiap hari."
+      ]
+    }
+  ],
+  "answers": [
+    "читаю — читаєш — читає — читаємо — читають",
+    "роблю — робиш — робить — робимо — роблять",
+    "Що ти робиш? — Я читаю книгу. — Я нічого не роблю. — Тато готує вечерю. — Я думаю про вас.",
+    "Що ти робиш? — Я читаю. — Я нічого не роблю. — Тато готує вечерю. — Я думаю про вас щодня."
+  ],
+  "wave": "Ulangi Unit 5. *Працюю* yang kamu hafal di sana ternyata pola pertama — dan sekarang kamu tahu kenapa ekornya begitu."
+}

@@ -1,0 +1,202 @@
+{
+  "title": "Kamu tinggal di mana?",
+  "title_target": "Де ти живеш? — De ty zhyvesh?",
+  "goal": "Mengatakan di mana kamu tinggal, bekerja, dan berada — dan menguasai kasus keenam (місцевий), satu-satunya kasus yang tak pernah muncul tanpa kata depan.",
+  "bekal": [
+    "menanyakan dan menjawab \"tinggal di mana\"",
+    "mengubah nama tempat jadi bentuk місцевий",
+    "memilih antara в dan на",
+    "menyusun kata kerja жити",
+    "menggambarkan tempat tinggalmu"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — Sesudah kelas, menunggu bus",
+      "intro": "Oksana dan Ani berbicara di halte. Setiap nama tempat di dialog ini berakhiran **-і** — itulah tanda pengenal kasus keenam, dan hampir tak ada kekecualiannya.",
+      "lines": [
+        {"speaker": "Оксана:", "text": "[Ані|A-ni], [де|de] [ти|ty] [живеш|zhy-VESH]?", "id": "Ani, kamu tinggal di mana?", "literal": "Ani, di-mana — kamu — tinggal?"},
+        {"speaker": "Ані:", "text": "[Я|Ya] [живу|zhy-VU] [в|v] [гуртожитку|hur-TO-zhyt-ku], [на|na] [Подолі|Po-DO-li].", "id": "Saya tinggal di asrama, di Podil.", "literal": "saya — tinggal — di — asrama, di — Podil."},
+        {"speaker": "Оксана:", "text": "[О|O], [я|ya] [знаю|ZNA-yu] [Поділ|Po-DIL]. [Це|Tse] [гарний|HAR-nyy] [район|ra-YON].", "id": "Oh, saya tahu Podil. Itu daerah yang bagus.", "literal": "oh, saya — tahu — Podil. ini — bagus — kawasan."},
+        {"speaker": "Ані:", "text": "[Так|Tak], [і|i] [близько|BLYZ'-ko] [до|do] [університету|u-ni-ver-sy-TE-tu]. [А|A] [ви|vy] [де|de] [живете|zhy-ve-TE]?", "id": "Ya, dan dekat ke kampus. Kalau Ibu tinggal di mana?", "literal": "ya, dan — dekat — ke — universitas (родовий). dan — Anda — di-mana — tinggal?"},
+        {"speaker": "Оксана:", "text": "[Я|Ya] [живу|zhy-VU] [в|v] [квартирі|kvar-TY-ri] [на|na] [Лівому|LI-vo-mu] [березі|BE-re-zi].", "id": "Saya tinggal di apartemen di Tepi Kiri.", "literal": "saya — tinggal — di — apartemen, di — kiri — tepi."},
+        {"speaker": "Ані:", "text": "[Це|Tse] [далеко|da-LE-ko]?", "id": "Itu jauh?", "literal": "ini — jauh?"},
+        {"speaker": "Оксана:", "text": "[Не|Ne] [дуже|DU-zhe]. [Сорок|SO-rok] [хвилин|khvy-LYN] [на|na] [метро|met-RO].", "id": "Tidak terlalu. Empat puluh menit naik metro.", "literal": "tidak — sangat. empat-puluh — menit (родовий) — dengan — metro."},
+        {"speaker": "Ані:", "text": "[У|U] [вас|vas] [велика|ve-LY-ka] [квартира|kvar-TY-ra]?", "id": "Apartemen Ibu besar?", "literal": "di — Anda — besar — apartemen?"},
+        {"speaker": "Оксана:", "text": "[Три|Try] [кімнати|kim-NA-ty]. [Я|Ya] [живу|zhy-VU] [там|tam] [з|z] [чоловіком|cho-lo-VI-kom] [і|i] [сином|SY-nom].", "id": "Tiga kamar. Saya tinggal di sana bersama suami dan anak laki-laki.", "literal": "tiga — kamar-kamar. saya — tinggal — di-sana — dengan — suami (орудний) — dan — anak-lk (орудний)."},
+        {"speaker": "Ані:", "text": "[А|A] [в|v] [моїй|mo-YIY] [кімнаті|kim-NA-ti] [тільки|TIL'-ky] [ліжко|LIZH-ko], [стіл|stil] [і|i] [шафа|SHA-fa].", "id": "Kalau di kamar saya cuma ada tempat tidur, meja, dan lemari.", "literal": "dan — di — milikku (місцевий) — kamar — hanya — ranjang, meja — dan — lemari."},
+        {"speaker": "Оксана:", "text": "[Цього|TSYO-ho] [достатньо|dos-TAT-nyo], [коли|ko-LY] [ти|ty] [студентка|stu-DENT-ka].", "id": "Itu cukup, kalau kamu mahasiswi.", "literal": "ini (родовий) — cukup, ketika — kamu — mahasiswi."},
+        {"speaker": "Ані:", "text": "[Правда|PRAV-da]. [І|I] [вікно|vik-NO] [з|z] [гарним|HAR-nym] [видом|VY-dom].", "id": "Benar. Dan jendela dengan pemandangan bagus.", "literal": "benar. dan — jendela — dengan — bagus (орудний) — pemandangan (орудний)."}
+      ],
+      "notes": [
+        "**Місцевий tidak pernah berdiri sendiri.** Kasus ini satu-satunya yang **wajib** didahului kata depan: в, у, на, при, по. Kamu tidak akan pernah melihat *школі* tanpa *в* atau *у* di depannya. Itu sebabnya ia paling mudah dikenali di antara tujuh kasus.",
+        "**Ekornya hampir selalu -і.** *Київ* → *у Києві*, *школа* → *у школі*, *стіл* → *на столі*, *кімната* → *у кімнаті*, *робота* → *на роботі*. Kalau kamu menempelkan **-і** dan menaruh kata depan di depannya, kamu benar di sembilan dari sepuluh kasus.",
+        "**Sisanya berakhiran -у, dan itu kata laki-laki tertentu.** *Банк* → *у банку*, *гуртожиток* → *у гуртожитку*, *ринок* → *на ринку*, *сад* → *у саду*. Tidak ada aturan rapi; kata-kata ini dihafal lewat pemakaian, dan jumlahnya sedikit.",
+        "**Kata asing yang berakhiran -о, -е, -у tidak berubah sama sekali.** *Кафе*, *метро*, *таксі*, *пальто* — bentuknya tetap di semua kasus. Ini hadiah kecil yang lumayan sering terpakai.",
+        "**В untuk yang berdinding, на untuk yang berpermukaan — tapi tidak selalu.** Aturan besarnya: *в квартирі*, *в кімнаті*, *в школі* (ruang tertutup) versus *на столі*, *на вулиці* (permukaan atau ruang terbuka). ⚠️ Tapi ada kelompok yang harus dihafal: **на роботі**, **на вокзалі**, **на пошті**, **на заводі**, **на ринку**, **на метро** — semuanya memakai *на* walau jelas-jelas ruang tertutup.",
+        "**Nama daerah dan kawasan hampir selalu memakai на.** *На Подолі*, *на Лівому березі*, *на Оболоні*. Kalau ragu dengan nama kawasan, *на* adalah taruhan yang lebih aman daripada *в*.",
+        "**Жити itu pola pertama dengan batang yang berubah.** Bentuk kamusnya *жити*, tapi batangnya jadi **жив-**: *я живу*, *ти живеш*, *він живе*. Kelompok kata kerja begini kecil tapi isinya kata yang sering dipakai — persis yang akan sering kamu ucapkan."
+      ],
+      "grammars": [
+        {
+          "title": "Місцевий: tempat, selalu dengan kata depan",
+          "body": [],
+          "table": {
+            "head": ["Bentuk kamus", "Di sana", "Baca", "Indonesia"],
+            "rows": [
+              ["Київ", "у Києві", "u KY-ye-vi", "di Kyiv"],
+              ["Львів", "у Львові", "u L'VO-vi", "di Lviv"],
+              ["Україна", "в Україні", "v u-kra-YI-ni", "di Ukraina"],
+              ["Індонезія", "в Індонезії", "v in-do-NE-zi-yi", "di Indonesia"],
+              ["школа", "у школі", "u SHKO-li", "di sekolah"],
+              ["кімната", "у кімнаті", "u kim-NA-ti", "di kamar"],
+              ["квартира", "у квартирі", "u kvar-TY-ri", "di apartemen"],
+              ["стіл", "на столі", "na sto-LI", "di atas meja"],
+              ["вулиця", "на вулиці", "na VU-ly-tsi", "di jalan"],
+              ["робота", "на роботі", "na ro-BO-ti", "di tempat kerja"],
+              ["банк", "у банку", "u BAN-ku", "di bank"],
+              ["гуртожиток", "у гуртожитку", "u hur-TO-zhyt-ku", "di asrama"],
+              ["кафе", "у кафе", "u ka-FE", "di kafe"],
+              ["метро", "на метро", "na met-RO", "naik metro"]
+            ]
+          }
+        },
+        {
+          "title": "Жити di enam bentuk",
+          "body": ["Perhatikan bahwa **и** di bentuk kamusnya menghilang sama sekali begitu kata kerjanya diubah."],
+          "table": {
+            "head": ["Orang", "Bentuk", "Baca", "Contoh"],
+            "rows": [
+              ["я", "живу", "zhy-VU", "Я живу в Києві."],
+              ["ти", "живеш", "zhy-VESH", "Де ти живеш?"],
+              ["він / вона", "живе", "zhy-VE", "Вона живе далеко."],
+              ["ми", "живемо", "zhy-ve-MO", "Ми живемо разом."],
+              ["ви", "живете", "zhy-ve-TE", "Де ви живете?"],
+              ["вони", "живуть", "zhy-VUT'", "Вони живуть у Львові."]
+            ]
+          },
+          "after": ["Kata kerja lain yang batangnya berubah begini: **пити** → *п'ю, п'єш*; **бути** → *буду, будеш*; **брати** → *беру, береш*."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Rumah, kamar, dan isinya",
+      "blocks": [
+        {"type": "tabel", "head": ["Українська", "Baca", "Bahasa Indonesia"], "rows": [
+          ["дім, будинок", "dim, bu-DY-nok", "rumah, gedung"],
+          ["квартира", "kvar-TY-ra", "apartemen"],
+          ["гуртожиток", "hur-TO-zhy-tok", "asrama"],
+          ["кімната", "kim-NA-ta", "kamar"],
+          ["кухня", "KUKH-nya", "dapur"],
+          ["ванна", "VAN-na", "kamar mandi"],
+          ["туалет", "tu-a-LET", "toilet"],
+          ["балкон", "bal-KON", "balkon"],
+          ["поверх", "PO-verkh", "lantai (tingkat)"],
+          ["ліфт", "lift", "lift"],
+          ["ліжко", "LIZH-ko", "tempat tidur"],
+          ["стіл", "stil", "meja"],
+          ["стілець", "sti-LETS'", "kursi"],
+          ["шафа", "SHA-fa", "lemari"],
+          ["вікно", "vik-NO", "jendela"],
+          ["двері", "DVE-ri", "pintu"],
+          ["підлога", "pid-LO-ha", "lantai"],
+          ["стіна", "sti-NA", "dinding"],
+          ["район", "ra-YON", "kawasan, distrik"],
+          ["вулиця", "VU-ly-tsya", "jalan"]
+        ]},
+        {"type": "kotak", "title": "Menyebut alamat di Ukraina", "items": [
+          "Urutannya kebalikan dari kebiasaan Indonesia: **jalan dulu, baru nomor**. *Вулиця Хрещатик, 15, квартира 8.*",
+          "Kata *вулиця* sering disingkat **вул.** Bentuk lain: **проспект** (jalan besar), **площа** (lapangan), **провулок** (gang).",
+          "Untuk mengatakan tinggal di jalan tertentu: **Я живу на вулиці Хрещатик** — memakai *на*, bukan *в*.",
+          "Nomor lantai memakai **поверх**: *п'ятий поверх* (lantai lima). Lantai dasar dihitung sebagai lantai satu, seperti di Indonesia."
+        ]},
+        {"type": "sub", "text": "Menanyakan jarak dan waktu tempuh"},
+        {"type": "tabel", "head": ["Ukraina", "Baca", "Indonesia"], "rows": [
+          ["Це далеко?", "tse da-LE-ko", "Itu jauh?"],
+          ["Це близько.", "tse BLYZ'-ko", "Itu dekat."],
+          ["Сорок хвилин на метро.", "SO-rok khvy-LYN na met-RO", "Empat puluh menit naik metro."],
+          ["Десять хвилин пішки.", "DE-syat' khvy-LYN PISH-ky", "Sepuluh menit jalan kaki."],
+          ["Це поруч.", "tse PO-ruch", "Itu di sebelah sini."]
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"uk": "жити", "baca": "ZHY-ty", "id": "tinggal, hidup"},
+    {"uk": "де", "baca": "de", "id": "di mana"},
+    {"uk": "квартира", "baca": "kvar-TY-ra", "id": "apartemen"},
+    {"uk": "гуртожиток", "baca": "hur-TO-zhy-tok", "id": "asrama"},
+    {"uk": "кімната", "baca": "kim-NA-ta", "id": "kamar"},
+    {"uk": "кухня", "baca": "KUKH-nya", "id": "dapur"},
+    {"uk": "поверх", "baca": "PO-verkh", "id": "lantai (tingkat)"},
+    {"uk": "район", "baca": "ra-YON", "id": "kawasan"},
+    {"uk": "вулиця", "baca": "VU-ly-tsya", "id": "jalan"},
+    {"uk": "метро", "baca": "met-RO", "id": "metro, kereta bawah tanah"},
+    {"uk": "автобус", "baca": "av-TO-bus", "id": "bus"},
+    {"uk": "пішки", "baca": "PISH-ky", "id": "jalan kaki"},
+    {"uk": "хвилина", "baca": "khvy-LY-na", "id": "menit"},
+    {"uk": "близько", "baca": "BLYZ'-ko", "id": "dekat"},
+    {"uk": "далеко", "baca": "da-LE-ko", "id": "jauh"},
+    {"uk": "поруч", "baca": "PO-ruch", "id": "di sebelah, berdekatan"},
+    {"uk": "ліжко", "baca": "LIZH-ko", "id": "tempat tidur"},
+    {"uk": "стілець", "baca": "sti-LETS'", "id": "kursi"},
+    {"uk": "вид", "baca": "vyd", "id": "pemandangan"},
+    {"uk": "достатньо", "baca": "dos-TAT-nyo", "id": "cukup"},
+    {"uk": "разом", "baca": "RA-zom", "id": "bersama"},
+    {"uk": "сам, сама", "baca": "sam, sa-MA", "id": "sendirian"},
+    {"uk": "сусід", "baca": "su-SID", "id": "tetangga"},
+    {"uk": "адреса", "baca": "ad-RE-sa", "id": "alamat"},
+    {"uk": "будинок", "baca": "bu-DY-nok", "id": "gedung, rumah"},
+    {"uk": "коли", "baca": "ko-LY", "id": "kapan, ketika"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk місцевий yang benar.",
+      "items": [
+        "Я живу в ____ (Київ).",
+        "Вона працює в ____ (школа).",
+        "Ми в ____ (кафе).",
+        "Книга на ____ (стіл).",
+        "Він у ____ (кімната)."
+      ]
+    },
+    {
+      "prompt": "Isi dengan в atau на.",
+      "items": [
+        "Я живу ____ квартирі.",
+        "Вона ____ роботі.",
+        "Ми ____ університеті.",
+        "Він ____ вокзалі.",
+        "Діти ____ школі."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk жити yang tepat.",
+      "items": [
+        "Я ____ у Києві.",
+        "Ти ____ у Львові?",
+        "Він ____ в Одесі.",
+        "Ми ____ разом.",
+        "Вони ____ далеко."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ukraina.",
+      "items": [
+        "Kamu tinggal di mana?",
+        "Saya tinggal di asrama.",
+        "Itu jauh?",
+        "Empat puluh menit naik metro.",
+        "Kami punya tiga kamar."
+      ]
+    }
+  ],
+  "answers": [
+    "Києві — школі — кафе — столі — кімнаті",
+    "в — на — в — на — в",
+    "живу — живеш — живе — живемо — живуть",
+    "Де ти живеш? — Я живу в гуртожитку. — Це далеко? — Сорок хвилин на метро. — У нас три кімнати."
+  ],
+  "wave": "Ulangi Unit 5. Baris *Вона працює у школі* di sana ternyata sudah memakai місцевий — sekarang kamu tahu kenapa ekornya **-і**."
+}

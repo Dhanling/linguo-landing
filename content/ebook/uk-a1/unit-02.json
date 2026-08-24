@@ -1,0 +1,183 @@
+{
+  "title": "Ini apa? Lemari itu perempuan",
+  "title_target": "Що це? — Shcho tse?",
+  "goal": "Menanyakan nama benda, menyangkalnya, dan mengerti kenapa setiap benda dalam bahasa Ukraina punya jenis kelamin — beserta cara menebaknya dari ekor katanya, hampir selalu tanpa kamus.",
+  "bekal": [
+    "menanyakan dan menyebut nama benda",
+    "menebak jenis kata benda dari ekornya",
+    "membedakan це dan цей / ця / це",
+    "menyangkal dengan не",
+    "menyebut dua puluh benda di sekitarmu"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — Kamar sewaan yang baru",
+      "intro": "Ani baru pindah ke kamar sewaan. Oksana mengantarnya masuk dan menunjuk benda satu per satu. Perhatikan bahwa Ani tidak menanyakan arti kata, melainkan jenisnya — dan itu pertanyaan yang tepat.",
+      "lines": [
+        {"speaker": "Ані:", "text": "[Вибачте|VY-bach-te], [що|shcho] [це|tse]?", "id": "Permisi, ini apa?", "literal": "maafkan, apa — ini?"},
+        {"speaker": "Оксана:", "text": "[Це|Tse] [вікно|vik-NO]. [А|A] [це|tse] [двері|DVE-ri].", "id": "Ini jendela. Dan ini pintu.", "literal": "ini — jendela. dan — ini — pintu-pintu."},
+        {"speaker": "Ані:", "text": "[А|A] [це|tse] [що|shcho]? [Це|Tse] [стіл|stil]?", "id": "Dan ini apa? Ini meja?", "literal": "dan — ini — apa? ini — meja?"},
+        {"speaker": "Оксана:", "text": "[Ні|Ni], [це|tse] [не|ne] [стіл|stil]. [Це|Tse] [шафа|SHA-fa].", "id": "Bukan, ini bukan meja. Ini lemari.", "literal": "tidak, ini — tidak — meja. ini — lemari."},
+        {"speaker": "Ані:", "text": "[Шафа|SHA-fa]... [Це|Tse] [він|vin] [чи|chy] [вона|vo-NA]?", "id": "Lemari... Ini dia laki-laki atau dia perempuan?", "literal": "lemari... ini — dia (lk) — atau — dia (pr)?"},
+        {"speaker": "Оксана:", "text": "[Шафа|SHA-fa] — [вона|vo-NA]. [А|A] [стіл|stil] — [він|vin].", "id": "Lemari itu perempuan. Kalau meja, laki-laki.", "literal": "lemari — dia (pr). dan — meja — dia (lk)."},
+        {"speaker": "Ані:", "text": "[Чому|Cho-MU]?", "id": "Kenapa?", "literal": "kenapa?"},
+        {"speaker": "Оксана:", "text": "[Тому|To-MU] [що|shcho] [шафа|SHA-fa] [закінчується|za-KIN-chu-ye-tsya] [на|na] -а. [Всі|Vsi] [слова|slo-VA] [на|na] -а — [жіночого|zhi-NO-cho-ho] [роду|RO-du].", "id": "Karena lemari berakhiran -a. Semua kata berakhiran -a itu jenis perempuan.", "literal": "karena — lemari — berakhir — pada -a. semua — kata — pada -a — perempuan-punya — jenis."},
+        {"speaker": "Ані:", "text": "[А|A] [вікно|vik-NO]?", "id": "Kalau jendela?", "literal": "dan — jendela?"},
+        {"speaker": "Оксана:", "text": "[Вікно|Vik-NO] — [воно|vo-NO]. [Середній|Se-RED-niy] [рід|rid].", "id": "Jendela itu netral. Jenis tengah.", "literal": "jendela — dia (netral). tengah — jenis."},
+        {"speaker": "Ані:", "text": "[Зрозуміло|Zro-zu-MI-lo]. [Дякую|DYA-ku-yu]!", "id": "Paham. Terima kasih!", "literal": "dapat-dimengerti. terima-kasih!"},
+        {"speaker": "Оксана:", "text": "[Будь|Bud'] [ласка|LAS-ka]. [Це|Tse] [легко|LEH-ko], [правда|PRAV-da]?", "id": "Sama-sama. Gampang, kan?", "literal": "jadilah — kebaikan. ini — mudah, benar?"}
+      ],
+      "notes": [
+        "**Setiap kata benda punya salah satu dari tiga jenis, tanpa kecuali.** Ini bukan soal makhluk hidup: *шафа* (lemari) perempuan, *стіл* (meja) laki-laki, *вікно* (jendela) netral. Jenis itu bukan pernyataan tentang bendanya — ia hanya menentukan ekor kata sifat dan kata kerja yang menempel padanya nanti.",
+        "**Kabar baiknya: ekornya hampir selalu memberi tahu.** Berakhiran **-а** atau **-я** → perempuan. Berakhiran **konsonan** → laki-laki. Berakhiran **-о** atau **-е** → netral. Tiga aturan itu menutup sekitar sembilan dari sepuluh kata yang akan kamu temui di tingkat A1.",
+        "**Двері selalu jamak.** Seperti \"gunting\" dalam bahasa Indonesia, kata *двері* (pintu) tak punya bentuk tunggal — satu daun pintu pun tetap *двері*. Kata sifat yang menempel padanya ikut jamak: *нові двері* (pintu baru).",
+        "**Чи berarti \"atau\" dalam pertanyaan.** *Він чи вона?* — dia laki-laki atau perempuan? Untuk \"atau\" dalam kalimat biasa orang memakai **або**: *кава або чай* (kopi atau teh). Di percakapan sehari-hari keduanya sering bertukar tempat tanpa masalah.",
+        "**Тому що = karena.** Dua kata, selalu berpasangan. Jangan pisahkan. Untuk menanyakan sebabnya, **Чому?** (*cho-MU*) — dan perhatikan bahwa jawabannya diawali *тому що*, hampir seperti gema pertanyaannya.",
+        "**Зрозуміло itu jawaban, bukan kata sifat.** Artinya \"(sudah) jelas / paham\" dan dipakai berdiri sendiri, persis seperti \"Paham\" dalam bahasa Indonesia. Kebalikannya: **Не зрозуміло** atau lebih sering **Я не розумію** (saya tidak mengerti).",
+        "**Це dan цей bukan kata yang sama.** *Це* berdiri sendiri: \"ini (adalah)\". *Цей / ця / це / ці* menempel pada bendanya dan ikut jenisnya: *цей стіл* (meja ini). ⚠️ Kesalahan paling umum pemula: mengatakan *це стіл* padahal maksudnya \"meja ini\" — yang tertangkap lawan bicara justru \"ini meja\"."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga jenis, dan cara menebaknya dari ekor kata",
+          "body": ["Tutup lajur kanan, lihat ekornya, tebak jenisnya. Kalau kamu bisa melakukan ini dengan lancar, separuh pekerjaan tata bahasa Ukraina sudah selesai."],
+          "table": {
+            "head": ["Ekor kata", "Jenis", "Kata ganti", "Contoh"],
+            "rows": [
+              ["konsonan", "чоловічий (laki-laki)", "він", "стіл, банк, хліб, чай"],
+              ["-а", "жіночий (perempuan)", "вона", "шафа, книга, кава, мама"],
+              ["-я", "жіночий (perempuan)", "вона", "сім'я, земля, кухня"],
+              ["-о", "середній (netral)", "воно", "вікно, місто, молоко"],
+              ["-е", "середній (netral)", "воно", "море, поле, сонце"],
+              ["-ь", "bisa dua-duanya", "він / вона", "день (lk), сіль (pr)"]
+            ]
+          },
+          "after": ["Hanya baris terakhir yang perlu dihafal satu-satu. Untungnya kata berakhiran **-ь** tidak banyak di tingkat A1, dan sebagian besar akan kamu temui berulang kali di modul ini sampai jenisnya melekat sendiri."]
+        },
+        {
+          "title": "Це vs цей / ця / це / ці",
+          "body": ["*Це* memperkenalkan sesuatu. *Цей* menunjuk sesuatu yang sudah ada di depan mata. Bandingkan barisnya berpasangan."],
+          "table": {
+            "head": ["Ukraina", "Baca", "Indonesia"],
+            "rows": [
+              ["Це книга.", "tse KNY-ha", "Ini buku."],
+              ["Ця книга нова.", "tsya KNY-ha NO-va", "Buku ini baru."],
+              ["Це стіл.", "tse stil", "Ini meja."],
+              ["Цей стіл великий.", "tsey stil ve-LY-kyy", "Meja ini besar."],
+              ["Це вікно.", "tse vik-NO", "Ini jendela."],
+              ["Це вікно маленьке.", "tse vik-NO ma-LEN'-ke", "Jendela ini kecil."],
+              ["Ці двері нові.", "tsi DVE-ri no-VI", "Pintu ini baru."]
+            ]
+          },
+          "after": ["Untuk benda netral, kedua bentuknya kebetulan sama-sama **це** — jadi *Це вікно маленьке* bisa berarti \"Ini jendela kecil\" maupun \"Jendela ini kecil\". Konteks yang memutuskan, dan orang Ukraina tidak pernah bingung karenanya."]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Dua puluh benda di sekitarmu",
+      "blocks": [
+        {"type": "p", "text": "Baca lajur pertama, tebak jenisnya sebelum melihat lajur ketiga. Kata-kata ini akan muncul lagi di sepuluh unit berikutnya, jadi waktu yang kamu habiskan di sini terbayar dua kali."},
+        {"type": "tabel", "head": ["Українська", "Baca", "Jenis", "Bahasa Indonesia"], "rows": [
+          ["стіл", "stil", "він", "meja"],
+          ["стілець", "sti-LETS'", "він", "kursi"],
+          ["шафа", "SHA-fa", "вона", "lemari"],
+          ["ліжко", "LIZH-ko", "воно", "tempat tidur"],
+          ["вікно", "vik-NO", "воно", "jendela"],
+          ["двері", "DVE-ri", "jamak", "pintu"],
+          ["кімната", "kim-NA-ta", "вона", "kamar"],
+          ["кухня", "KUKH-nya", "вона", "dapur"],
+          ["книга", "KNY-ha", "вона", "buku"],
+          ["зошит", "ZO-shyt", "він", "buku tulis"],
+          ["ручка", "RUCH-ka", "вона", "pulpen"],
+          ["телефон", "te-le-FON", "він", "telepon"],
+          ["комп'ютер", "kom-PYU-ter", "він", "komputer"],
+          ["сумка", "SUM-ka", "вона", "tas"],
+          ["ключ", "klyuch", "він", "kunci"],
+          ["вода", "vo-DA", "вона", "air"],
+          ["кава", "KA-va", "вона", "kopi"],
+          ["чай", "chay", "він", "teh"],
+          ["хліб", "khlib", "він", "roti"],
+          ["молоко", "mo-lo-KO", "воно", "susu"]
+        ]},
+        {"type": "kotak", "title": "Kata berakhiran -ь: satu-satunya yang harus dihafal", "items": [
+          "**Laki-laki:** день (hari), тиждень (minggu), місяць (bulan), лікар (dokter — konsonan), учитель (guru), готель (hotel).",
+          "**Perempuan:** ніч (malam), сіль (garam), любов (cinta), осінь (musim gugur), подорож (perjalanan).",
+          "Pola kecil yang menolong: kata berakhiran **-ість** dan **-ощ** hampir selalu perempuan; kata berakhiran **-тель** dan **-ар** hampir selalu laki-laki.",
+          "⚠️ Jangan menghabiskan waktu menghafal daftar ini sekarang. Tandai halamannya, dan kembalilah kalau ada kata yang benar-benar menghalangi."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"uk": "що", "baca": "shcho", "id": "apa"},
+    {"uk": "це", "baca": "tse", "id": "ini, ini adalah"},
+    {"uk": "цей / ця / це / ці", "baca": "tsey / tsya", "id": "ini (menempel pada benda)"},
+    {"uk": "той / та / те / ті", "baca": "toy / ta", "id": "itu"},
+    {"uk": "тут", "baca": "tut", "id": "di sini"},
+    {"uk": "там", "baca": "tam", "id": "di sana"},
+    {"uk": "він", "baca": "vin", "id": "dia (laki-laki), ia (benda lk)"},
+    {"uk": "вона", "baca": "vo-NA", "id": "dia (perempuan), ia (benda pr)"},
+    {"uk": "воно", "baca": "vo-NO", "id": "ia (benda netral)"},
+    {"uk": "рід", "baca": "rid", "id": "jenis (kata benda)"},
+    {"uk": "чоловічий рід", "baca": "cho-lo-VI-chyy rid", "id": "jenis laki-laki"},
+    {"uk": "жіночий рід", "baca": "zhi-NO-chyy rid", "id": "jenis perempuan"},
+    {"uk": "середній рід", "baca": "se-RED-niy rid", "id": "jenis netral"},
+    {"uk": "чи", "baca": "chy", "id": "atau (dalam pertanyaan)"},
+    {"uk": "або", "baca": "A-bo", "id": "atau"},
+    {"uk": "і, та", "baca": "i, ta", "id": "dan"},
+    {"uk": "але", "baca": "A-le", "id": "tapi"},
+    {"uk": "чому", "baca": "cho-MU", "id": "kenapa"},
+    {"uk": "тому що", "baca": "to-MU shcho", "id": "karena"},
+    {"uk": "зрозуміло", "baca": "zro-zu-MI-lo", "id": "paham, jelas"},
+    {"uk": "я не розумію", "baca": "ya ne ro-zu-MI-yu", "id": "saya tidak mengerti"},
+    {"uk": "легко", "baca": "LEH-ko", "id": "mudah"},
+    {"uk": "важко", "baca": "VAZH-ko", "id": "sulit"},
+    {"uk": "правда", "baca": "PRAV-da", "id": "benar, kan?"},
+    {"uk": "великий", "baca": "ve-LY-kyy", "id": "besar"},
+    {"uk": "маленький", "baca": "ma-LEN'-kyy", "id": "kecil"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Tentukan jenis kata berikut. Tulis він, вона, atau воно.",
+      "items": ["книга", "стіл", "вікно", "кава", "чай", "молоко"]
+    },
+    {
+      "prompt": "Isi dengan цей, ця, або це.",
+      "items": [
+        "____ книга нова.",
+        "____ стіл великий.",
+        "____ вікно маленьке.",
+        "____ кава гаряча.",
+        "____ хліб свіжий."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "це / що",
+        "стіл / це / не",
+        "шафа / це",
+        "велике / вікно / це",
+        "легко / це"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Ukraina.",
+      "items": [
+        "Ini apa?",
+        "Ini jendela.",
+        "Ini bukan lemari.",
+        "Meja ini besar.",
+        "Kenapa? Karena lemari berakhiran -a."
+      ]
+    }
+  ],
+  "answers": [
+    "вона — він — воно — вона — він — воно",
+    "Ця — Цей — Це — Ця — Цей",
+    "Що це? — Це не стіл. — Це шафа. — Це велике вікно. — Це легко.",
+    "Що це? — Це вікно. — Це не шафа. — Цей стіл великий. — Чому? Тому що шафа закінчується на -а."
+  ],
+  "wave": "Ulangi dialog Unit 1 sekali, sekarang sambil memperhatikan bahwa *студентка* berakhiran -а dan karena itu perempuan."
+}
