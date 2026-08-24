@@ -1,0 +1,211 @@
+{
+ "title": "Kata kerja di tempat kedua",
+ "title_target": "Het werkwoord op plaats twee",
+ "goal": "Menguasai aturan urutan kata terpenting bahasa Belanda: kata kerja selalu duduk di posisi kedua kalimat berita, apa pun yang berdiri di depannya.",
+ "bekal": [
+  "membalik kalimat begitu keterangan berdiri di depan: *Morgen ga ik…*",
+  "menyusun bagian kalimat dengan urutan waktu → cara → tempat",
+  "membentuk pertanyaan ya/tidak dan pertanyaan berkata tanya"
+ ],
+ "wave": "Ulangi **unit 8**: sebutkan sepuluh jam sembarang dari jam dinding di rumahmu, lalu ubah tiap jawaban ke bentuk digital.",
+ "dialogs": [
+  {
+   "title": "Dialog — Wat doe je dit weekend?",
+   "intro": "Jumat sore. Sanne mencoba menyusun rencana; Budi mencoba menyusun kalimat.",
+   "lines": [
+    { "speaker": "Sanne:", "text": "Wat doe je dit weekend?", "id": "Akhir pekan ini ngapain?", "literal": "apa lakukan kamu ini akhir-pekan?" },
+    { "speaker": "Budi:", "text": "Zaterdag ga ik naar Den Haag.", "id": "Sabtu saya ke Den Haag.", "literal": "Sabtu pergi saya ke Den Haag." },
+    { "speaker": "Sanne:", "text": "Leuk! Ga je met de trein?", "id": "Asyik! Naik kereta?", "literal": "pergi kamu dengan kereta-itu?" },
+    { "speaker": "Budi:", "text": "Ja, ik ga om negen uur met de trein naar het Mauritshuis.", "id": "Ya, jam sembilan saya naik kereta ke Mauritshuis.", "literal": "ya, saya pergi pada sembilan jam dengan kereta ke Mauritshuis." },
+    { "speaker": "Sanne:", "text": "Netjes. Waarom daarheen?", "id": "Rapi. Kenapa ke situ?", "literal": "rapi. mengapa ke-sana?" },
+    { "speaker": "Budi:", "text": "Omdat ik het Meisje met de parel wil zien.", "id": "Karena saya mau lihat Gadis dengan Anting Mutiara.", "literal": "karena saya gadis-itu dengan mutiara-itu mau melihat." },
+    { "speaker": "Sanne:", "text": "Dat schilderij is kleiner dan iedereen denkt.", "id": "Lukisan itu lebih kecil daripada dugaan orang.", "literal": "itu lukisan adalah lebih-kecil daripada setiap-orang berpikir." },
+    { "speaker": "Budi:", "text": "Dat zegt mijn tante ook altijd.", "id": "Bibi saya juga selalu bilang begitu.", "literal": "itu berkata milik-saya bibi juga selalu." },
+    { "speaker": "Sanne:", "text": "En zondag? Doe je dan niets?", "id": "Kalau Minggu? Nggak ada acara?", "literal": "dan Minggu? lakukan kamu kemudian tidak-ada?" },
+    { "speaker": "Budi:", "text": "Zondag doe ik niets. Alles is dicht.", "id": "Minggu saya tidak ngapa-ngapain. Semuanya tutup.", "literal": "Minggu lakukan saya tidak-ada. semuanya adalah tutup." },
+    { "speaker": "Sanne:", "text": "Niet meer, hoor. Maar rustig is het wel.", "id": "Nggak lagi kok. Tapi memang sepi.", "literal": "tidak lagi, ya. tapi tenang adalah itu memang." },
+    { "speaker": "Budi:", "text": "Dan slaap ik uit. Ook een plan.", "id": "Kalau gitu saya bangun siang. Rencana juga itu.", "literal": "kemudian tidur saya keluar. juga satu rencana." }
+   ],
+   "notes": [
+    "**Zaterdag ga ik naar Den Haag** — perhatikan urutannya: keterangan waktu di depan, lalu **kata kerja**, baru pelaku. Dalam bahasa Indonesia urutan ini mustahil (\"Sabtu pergi saya\"), dan justru itulah yang harus kamu biasakan.",
+    "**Omdat ik het Meisje met de parel wil zien** — di anak kalimat, kata kerjanya justru terlempar ke **ujung**. Persis kebalikan aturan tadi. Ini unit 20; untuk sekarang cukup perhatikan bahwa sesudah *omdat*, *dat*, *als* susunannya berubah.",
+    "**Netjes** (rapi, apik) dipakai sebagai pujian ringan untuk hampir apa saja — rencana, tulisan tangan, pekerjaan.",
+    "**Het Meisje met de parel** — lukisan Vermeer, dipajang di Mauritshuis, Den Haag. Ukurannya 44 × 39 cm; hampir semua pengunjung terkejut betapa kecilnya.",
+    "**Alles is dicht** — dulu benar: hari Minggu Belanda hampir seluruhnya tutup. Kini di kota besar banyak toko buka (*koopzondag*), tapi di desa kebiasaan lama masih hidup.",
+    "**Dan slaap ik uit** — *uitslapen* berarti tidur sampai bangun sendiri, tanpa alarm. Bahasa Indonesia butuh satu kalimat penuh untuk itu.",
+    "**Ook een plan** — potongan kalimat khas percakapan: \"itu juga termasuk rencana\". Bahasa Belanda lisan sangat gemar memotong kalimat begini."
+   ],
+   "grammars": [
+    {
+     "title": "Aturan posisi kedua",
+     "body": [
+      "Dalam kalimat berita bahasa Belanda, **kata kerja bernomor satu selalu berada di posisi kedua**. Yang berdiri di posisi pertama boleh apa saja — pelaku, keterangan waktu, tempat, bahkan objek. Yang tergeser adalah pelakunya, yang pindah ke belakang kata kerja."
+     ],
+     "table": {
+      "head": ["1", "2 (kata kerja)", "3", "sisanya"],
+      "rows": [
+       ["Ik", "**ga**", "morgen", "naar Amsterdam."],
+       ["Morgen", "**ga**", "ik", "naar Amsterdam."],
+       ["Naar Amsterdam", "**ga**", "ik", "morgen."],
+       ["Met de trein", "**ga**", "ik", "morgen naar Amsterdam."],
+       ["Om acht uur", "**begint**", "de les", "."],
+       ["Vandaag", "**werkt**", "hij", "thuis."]
+      ]
+     },
+     "after": [
+      "Perhatikan: kata kerjanya tidak pernah bergerak. Yang pindah tempat adalah pelakunya. Karena itu aturan ini disebut **inversie** — pembalikan.",
+      "⚠️ Kesalahan paling sering pemula: *Morgen ik ga naar Amsterdam.* Kalimat ini langsung terdengar asing bagi telinga Belanda, walau maksudnya jelas. Memperbaikinya cuma butuh satu kebiasaan: begitu kalimatmu dibuka keterangan, tukar posisi kata kerja dan pelakunya.",
+      "Ingat lagi aturan kecil dari unit 2: kalau *jij/je* pindah ke belakang kata kerja, huruf *-t*-nya hilang. *Je gaat* → *Ga je?* / *Morgen ga je…*"
+     ]
+    },
+    {
+     "title": "Urutan sisanya: waktu, cara, tempat",
+     "body": [
+      "Sesudah pelaku dan kata kerja, bagian kalimat lain punya urutan tetap yang disingkat **TMP**: *tijd* (waktu) → *manier* (cara) → *plaats* (tempat)."
+     ],
+     "table": {
+      "head": ["Waktu", "Cara", "Tempat"],
+      "rows": [
+       ["Ik ga **morgen**", "**met de trein**", "**naar Utrecht**."],
+       ["Hij werkt **elke dag**", "**hard**", "**op kantoor**."],
+       ["We eten **om zes uur**", "**samen**", "**thuis**."],
+       ["Zij fietst **'s ochtends**", "**snel**", "**naar school**."]
+      ]
+     },
+     "after": [
+      "Bahasa Indonesia justru menyukai urutan terbalik: \"Saya pergi ke Utrecht naik kereta besok.\" Terjemahan kata-per-kata dari kebiasaan itu akan selalu terdengar keliru dalam bahasa Belanda.",
+      "Urutan TMP bukan aturan mati — bagian mana pun boleh naik ke posisi pertama untuk penekanan. Yang tidak boleh berubah adalah posisi kata kerjanya.",
+      "Kata *niet* (unit 4) berdiri sesudah waktu tapi sebelum tempat: *Ik ga morgen **niet** naar Utrecht.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bertanya",
+   "blocks": [
+    { "type": "p", "text": "Pertanyaan bahasa Belanda ada dua jenis, dan keduanya cuma memindahkan kata kerja." },
+    { "type": "sub", "text": "1. Pertanyaan ya/tidak — kata kerja di posisi PERTAMA" },
+    { "type": "tabel", "head": ["Berita", "Pertanyaan"], "rows": [
+      ["Je woont in Utrecht.", "**Woon** je in Utrecht?"],
+      ["Hij heeft tijd.", "**Heeft** hij tijd?"],
+      ["We gaan vanavond uit.", "**Gaan** we vanavond uit?"],
+      ["U spreekt Nederlands.", "**Spreekt** u Nederlands?"]
+     ] },
+    { "type": "sub", "text": "2. Pertanyaan berkata tanya — kata tanya pertama, kata kerja kedua" },
+    { "type": "tabel", "head": ["Kata tanya", "Arti", "Contoh"], "rows": [
+      ["wie", "siapa", "**Wie** is dat?"],
+      ["wat", "apa", "**Wat** doe je?"],
+      ["waar", "di mana", "**Waar** woon je?"],
+      ["wanneer", "kapan", "**Wanneer** kom je?"],
+      ["waarom", "mengapa", "**Waarom** niet?"],
+      ["hoe", "bagaimana", "**Hoe** gaat het?"],
+      ["hoeveel", "berapa banyak", "**Hoeveel** kost het?"],
+      ["welke / welk", "yang mana", "**Welke** bus gaat naar het centrum?"],
+      ["hoe laat", "jam berapa", "**Hoe laat** begint de les?"],
+      ["waarheen / waarvandaan", "ke mana / dari mana", "**Waar** ga je **heen**?"]
+     ] },
+    { "type": "kotak", "title": "Tiga hal yang perlu diperhatikan", "items": [
+      "*Welke* untuk de-woord dan jamak, *welk* untuk het-woord: *welke bus*, *welk boek*.",
+      "*Waar … heen* dan *waar … vandaan* berpisah dalam kalimat, persis kata kerja berpisah: *Waar kom je vandaan?*",
+      "Bahasa Belanda **tidak punya** kata bantu tanya seperti *do* dalam bahasa Inggris. *Do you live here?* = *Woon je hier?* — cukup dibalik.",
+      "⚠️ Nada bicara saja tidak cukup untuk bertanya. *Je woont hier?* dengan nada naik terdengar seperti keheranan, bukan pertanyaan biasa."
+     ] }
+   ]
+  },
+  {
+   "title": "Kata penyambung yang tidak mengubah urutan",
+   "blocks": [
+    { "type": "p", "text": "Lima kata penyambung ini menggabungkan dua kalimat **tanpa** mengubah susunannya sama sekali. Kata penyambung lain (*omdat*, *dat*, *als*, *terwijl*) melempar kata kerja ke ujung — itu urusan unit 20." },
+    { "type": "tabel", "head": ["Kata", "Arti", "Contoh"], "rows": [
+      ["**en**", "dan", "Ik werk **en** zij studeert."],
+      ["**maar**", "tetapi", "Het is koud, **maar** droog."],
+      ["**of**", "atau", "Kom je **of** blijf je thuis?"],
+      ["**want**", "sebab", "Ik ga naar bed, **want** ik ben moe."],
+      ["**dus**", "jadi", "Het regent, **dus** ik neem de bus."]
+     ] },
+    { "type": "p", "text": "*Want* dan *omdat* dua-duanya berarti \"karena\", tapi berperilaku berbeda: sesudah *want* susunan kalimatnya normal, sesudah *omdat* kata kerjanya terlempar ke ujung. *Ik blijf thuis, **want** ik ben ziek* = *Ik blijf thuis **omdat** ik ziek **ben**.* Untuk sekarang, pakai *want* — ia selalu aman." },
+    { "type": "p", "text": "*Dus* di awal kalimat memicu inversi seperti keterangan lain: *Het regent. **Dus neem** ik de bus.*" }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "gaan", "baca": "khahn", "id": "pergi" },
+  { "nl": "komen", "baca": "KOH-me(n)", "id": "datang" },
+  { "nl": "blijven", "baca": "BLÈY-fe(n)", "id": "tinggal / tetap" },
+  { "nl": "beginnen", "baca": "be-KHI-ne(n)", "id": "mulai" },
+  { "nl": "zien", "baca": "zin", "id": "melihat" },
+  { "nl": "denken", "baca": "DÈNG-ke(n)", "id": "berpikir" },
+  { "nl": "zeggen", "baca": "ZÈ-khe(n)", "id": "berkata" },
+  { "nl": "uitslapen", "baca": "ÖYT-slah-pe(n)", "id": "bangun siang" },
+  { "nl": "het weekend", "baca": "het VIH-kènt", "id": "akhir pekan" },
+  { "nl": "het plan", "baca": "het plan", "id": "rencana" },
+  { "nl": "het schilderij", "baca": "het skhil-de-RÈY", "id": "lukisan" },
+  { "nl": "het centrum", "baca": "het SÈN-trüm", "id": "pusat kota" },
+  { "nl": "de bus", "baca": "de büs", "id": "bus" },
+  { "nl": "thuis", "baca": "töys", "id": "di rumah" },
+  { "nl": "dicht / open", "baca": "dikht / OH-pe(n)", "id": "tutup / buka" },
+  { "nl": "niets / alles", "baca": "nits / A-les", "id": "tidak ada apa-apa / semuanya" },
+  { "nl": "want", "baca": "vant", "id": "sebab" },
+  { "nl": "dus", "baca": "düs", "id": "jadi" },
+  { "nl": "omdat", "baca": "om-DAT", "id": "karena" },
+  { "nl": "welke / welk", "baca": "VÈL-ke / vèlk", "id": "yang mana" },
+  { "nl": "waarheen", "baca": "vahr-HEHN", "id": "ke mana" },
+  { "nl": "snel / langzaam", "baca": "snèl / LANG-zahm", "id": "cepat / pelan" },
+  { "nl": "hard", "baca": "hart", "id": "keras / giat" },
+  { "nl": "elke dag", "baca": "ÈL-ke dakh", "id": "setiap hari" },
+  { "nl": "netjes", "baca": "NÈT-yes", "id": "rapi / apik" },
+  { "nl": "kleiner dan", "baca": "KLÈY-ner dan", "id": "lebih kecil daripada" },
+  { "nl": "regenen", "baca": "REH-khe-ne(n)", "id": "hujan" },
+  { "nl": "ziek", "baca": "zik", "id": "sakit" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis ulang kalimatnya dengan bagian bercetak tebal di posisi pertama.",
+   "items": [
+    "Ik ga **morgen** naar Amsterdam. → ____",
+    "Wij eten **om zes uur**. → ____",
+    "Hij werkt **vandaag** thuis. → ____",
+    "Zij komt **met de trein**. → ____",
+    "Ik heb **daarom** geen tijd. → ____"
+   ]
+  },
+  {
+   "prompt": "Susun dengan urutan waktu-cara-tempat yang benar.",
+   "items": [
+    "ik / ga / naar Utrecht / met de trein / morgen",
+    "hij / werkt / op kantoor / elke dag / hard",
+    "we / eten / thuis / samen / om zes uur",
+    "zij / fietst / naar school / snel / 's ochtends"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi pertanyaan.",
+   "items": [
+    "Je woont in Utrecht. → ____",
+    "Hij heeft tijd. → ____",
+    "Ze gaan vanavond uit. → ____",
+    "U spreekt Nederlands. → ____",
+    "Je komt uit Indonesië. → ____"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata tanya yang tepat.",
+   "items": [
+    "____ woon je? (Utrecht)",
+    "____ kost het? (twee euro)",
+    "____ begint de les? (om negen uur)",
+    "____ is dat? (mijn broer)",
+    "____ ga je niet mee? (ik ben moe)",
+    "____ bus gaat naar het centrum? (bus 8)"
+   ]
+  }
+ ],
+ "answers": [
+  "Morgen ga ik naar Amsterdam. — Om zes uur eten wij. — Vandaag werkt hij thuis. — Met de trein komt zij. — Daarom heb ik geen tijd.",
+  "Ik ga morgen met de trein naar Utrecht. — Hij werkt elke dag hard op kantoor. — We eten om zes uur samen thuis. — Zij fietst 's ochtends snel naar school.",
+  "Woon je in Utrecht? — Heeft hij tijd? — Gaan ze vanavond uit? — Spreekt u Nederlands? — Kom je uit Indonesië?",
+  "Waar — Hoeveel — Hoe laat — Wie — Waarom — Welke"
+ ]
+}

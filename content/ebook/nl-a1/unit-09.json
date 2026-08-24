@@ -1,0 +1,213 @@
+{
+ "title": "Satu hari biasa",
+ "title_target": "Een gewone dag",
+ "goal": "Menceritakan rutinitas harian dari bangun sampai tidur, memakai kata kerja berpisah, dan mengenali kata kerja berpantul.",
+ "bekal": [
+  "menguasai kata kerja berpisah — *opstaan*, *aankomen*, *meenemen*",
+  "memakai *me/je/zich* pada kata kerja berpantul",
+  "menceritakan urutan harimu dengan *eerst*, *daarna*, *dan*"
+ ],
+ "wave": "Ulangi **unit 7**: pesan sarapan, makan siang, dan minuman malammu dalam bahasa Belanda, tiga kali dengan tiga tingkat kesopanan yang berbeda.",
+ "dialogs": [
+  {
+   "title": "Dialog — Hoe ziet jouw dag eruit?",
+   "intro": "Di kantin kampus. Sanne heran Budi selalu terlihat mengantuk.",
+   "lines": [
+    { "speaker": "Sanne:", "text": "Hoe ziet jouw dag eruit?", "id": "Harimu seperti apa?", "literal": "bagaimana melihat milik-kamu hari keluar-itu?" },
+    { "speaker": "Budi:", "text": "Ik sta om zes uur op. Veel te vroeg.", "id": "Saya bangun jam enam. Terlalu pagi.", "literal": "saya berdiri pada enam jam naik. banyak terlalu awal." },
+    { "speaker": "Sanne:", "text": "Zes uur? Waarom zo vroeg?", "id": "Jam enam? Kenapa sepagi itu?", "literal": "enam jam? mengapa begitu awal?" },
+    { "speaker": "Budi:", "text": "Ik douche, ik kleed me aan en ik ontbijt rustig.", "id": "Saya mandi, berpakaian, lalu sarapan santai.", "literal": "saya berpancuran, saya berpakaian saya pada dan saya bersarapan tenang." },
+    { "speaker": "Sanne:", "text": "En dan?", "id": "Lalu?", "literal": "dan kemudian?" },
+    { "speaker": "Budi:", "text": "Daarna pak ik de trein. Ik kom om half negen aan.", "id": "Setelah itu naik kereta. Saya sampai jam setengah sembilan.", "literal": "sesudah-itu ambil saya kereta-itu. saya datang pada setengah sembilan tiba." },
+    { "speaker": "Sanne:", "text": "Ik sta pas om acht uur op. De universiteit is om de hoek.", "id": "Saya baru bangun jam delapan. Kampusnya dekat sekali.", "literal": "saya berdiri baru pada delapan jam naik. universitas-itu adalah di tikungan." },
+    { "speaker": "Budi:", "text": "Dat verklaart veel.", "id": "Pantas.", "literal": "itu menjelaskan banyak." },
+    { "speaker": "Sanne:", "text": "En 's avonds? Wat doe je dan?", "id": "Kalau malam? Ngapain?", "literal": "dan malam-nya? apa lakukan kamu kemudian?" },
+    { "speaker": "Budi:", "text": "Ik kook, ik bel mijn ouders, en ik studeer nog wat.", "id": "Saya masak, telepon orang tua, lalu belajar sebentar.", "literal": "saya memasak, saya menelepon milik-saya orang-tua, dan saya belajar lagi sedikit." },
+    { "speaker": "Sanne:", "text": "Hoe laat ga je naar bed?", "id": "Tidur jam berapa?", "literal": "bagaimana terlambat pergi kamu ke tempat-tidur?" },
+    { "speaker": "Budi:", "text": "Meestal rond middernacht. Daarom ben ik altijd moe.", "id": "Biasanya sekitar tengah malam. Makanya saya selalu ngantuk.", "literal": "biasanya sekitar tengah-malam. karena-itu adalah saya selalu lelah." }
+   ],
+   "notes": [
+    "**Hoe ziet jouw dag eruit?** — dari *eruitzien* (tampak, kelihatan), kata kerja berpisah yang bahkan punya dua bagian. Hafalkan pertanyaannya utuh; ia sangat sering dipakai.",
+    "**Ik sta om zes uur op** — inilah bentuk khas bahasa Belanda: kata kerjanya *opstaan*, tapi *op* terlempar ke **ujung kalimat**. Kalau kamu menulis *ik opsta*, kalimatnya salah.",
+    "**Ik kleed me aan** — dua hal sekaligus: kata kerjanya berpisah (*aankleden*) **dan** berpantul (*me*). Urutannya: kata kerja, kata pantul, sisanya, lalu bagian yang berpisah di ujung.",
+    "**Ik ontbijt** — kata kerja *ontbijten* (sarapan) tidak berpisah, meski diawali *ont-*. Awalan yang tidak pernah berpisah: *be-*, *ge-*, *ver-*, *ont-*, *her-*, *er-*. Semua awalan lain berpisah.",
+    "**Ik pak de trein** — bahasa Belanda \"mengambil\" kereta, sama seperti bahasa Inggris *take the train*. Alternatifnya *met de trein gaan*.",
+    "**Ik sta pas om acht uur op** — *pas* berarti \"baru\" dalam arti waktu: *pas om acht uur* = baru jam delapan. Jangan tertukar dengan *net* (barusan): *hij is net weg*.",
+    "**Om de hoek** = di tikungan, artinya dekat sekali. Ungkapan sehari-hari yang berguna.",
+    "**Daarom ben ik altijd moe** — kalimat dibuka *daarom* (karena itu), jadi kata kerjanya melompat ke depan pelaku. Sekali lagi aturan unit 10, yang mulai muncul di mana-mana."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja berpisah",
+     "body": [
+      "Sekelompok besar kata kerja Belanda terdiri dari kata kerja + awalan yang bisa berdiri sendiri (*op*, *aan*, *mee*, *uit*, *af*, *terug*). Dalam kalimat sederhana, awalan itu **selalu pindah ke ujung**."
+     ],
+     "table": {
+      "head": ["Bentuk kamus", "Arti", "Dalam kalimat"],
+      "rows": [
+       ["**op**staan", "bangun tidur", "Ik sta om zeven uur **op**."],
+       ["**aan**komen", "tiba", "De trein komt om acht uur **aan**."],
+       ["**mee**nemen", "membawa serta", "Neem je paraplu **mee**!"],
+       ["**uit**gaan", "keluar bersenang-senang", "We gaan vanavond **uit**."],
+       ["**af**wassen", "mencuci piring", "Hij wast altijd **af**."],
+       ["**terug**bellen", "menelepon balik", "Ik bel je later **terug**."],
+       ["**op**bellen", "menelepon", "Zij belt haar moeder **op**."]
+      ]
+     },
+     "after": [
+      "Kalau ada kata kerja bantu, kata kerja berpisahnya justru **bersatu kembali** di ujung: *Ik moet om zeven uur **opstaan**.* Aturan ini akan sangat berguna mulai unit 13.",
+      "Tekanan bunyinya jatuh di awalan: **OP**staan, **AAN**komen. Itu cara paling cepat mengenali apakah sebuah kata kerja berpisah atau tidak — bandingkan dengan ver**TEL**len yang tekanannya di belakang dan tidak pernah berpisah.",
+      "⚠️ Perbedaan arti bisa jauh: *opnemen* (mengangkat telepon) lawan *nemen* (mengambil), *uitgaan* (keluar main) lawan *gaan* (pergi). Perlakukan tiap kata kerja berpisah sebagai kata baru, bukan sebagai variasi."
+     ]
+    },
+    {
+     "title": "Kata kerja berpantul",
+     "body": [
+      "Beberapa perbuatan yang dalam bahasa Indonesia berdiri sendiri (\"mandi\", \"berpakaian\", \"merasa\") dalam bahasa Belanda memerlukan kata pantul — pelakunya mengenai dirinya sendiri."
+     ],
+     "table": {
+      "head": ["Kata ganti", "Bentuk pantul", "Contoh"],
+      "rows": [
+       ["ik", "**me** / mij", "Ik was **me**."],
+       ["jij", "**je**", "Was **je**!"],
+       ["u", "**u** / zich", "Voelt u **zich** goed?"],
+       ["hij / zij / het", "**zich**", "Hij scheert **zich**."],
+       ["wij", "**ons**", "We vervelen **ons**."],
+       ["jullie", "**je**", "Jullie vergissen **je**."],
+       ["zij (mereka)", "**zich**", "Ze haasten **zich**."]
+      ]
+     },
+     "after": [
+      "Yang paling sering dipakai: *zich wassen* (mandi/cuci badan), *zich aankleden* (berpakaian), *zich voelen* (merasa), *zich haasten* (buru-buru), *zich vergissen* (keliru), *zich vervelen* (bosan).",
+      "*Ik voel me niet lekker* = \"saya tidak enak badan\" — kalimat yang akan menyelamatkanmu di apotek dan di kantor.",
+      "⚠️ Jangan menambahkan kata pantul pada kata kerja yang tidak memerlukannya. *Ik douche* sudah benar; *ik douche me* terdengar aneh."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Rutinitas dari pagi sampai malam",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Cara baca", "Bahasa Indonesia"], "rows": [
+      ["wakker worden", "VA-ker VOR-de(n)", "terbangun"],
+      ["opstaan", "OP-stahn", "bangun dari tempat tidur"],
+      ["zich wassen", "zikh VA-se(n)", "mandi / cuci badan"],
+      ["douchen", "DU-sye(n)", "mandi pancuran"],
+      ["zich aankleden", "zikh AHN-kleh-de(n)", "berpakaian"],
+      ["ontbijten", "ont-BÈY-te(n)", "sarapan"],
+      ["tanden poetsen", "TAN-de(n) PUT-se(n)", "sikat gigi"],
+      ["naar het werk gaan", "nahr het vèrk khahn", "berangkat kerja"],
+      ["lunchen", "LÜN-sye(n)", "makan siang"],
+      ["thuiskomen", "TÖYS-koh-me(n)", "pulang ke rumah"],
+      ["koken", "KOH-ke(n)", "memasak"],
+      ["afwassen", "AF-va-se(n)", "cuci piring"],
+      ["tv-kijken", "TEH-VEH-kèy-ke(n)", "nonton TV"],
+      ["naar bed gaan", "nahr bèt khahn", "pergi tidur"],
+      ["slapen", "SLAH-pe(n)", "tidur"]
+     ] },
+    { "type": "kotak", "title": "Menyambung cerita", "items": [
+      "*eerst* (mula-mula) → *dan* / *daarna* (lalu) → *daarna* (sesudah itu) → *ten slotte* (akhirnya).",
+      "*eerst … dan … en daarna …* sudah cukup untuk menceritakan satu hari penuh.",
+      "⚠️ Semua kata penyambung ini berdiri **di awal kalimat**, dan begitu ia di depan, kata kerjanya melompat ke posisi kedua: *Daarna **pak** ik de trein.*",
+      "*Meestal*, *altijd*, *soms*, *nooit* menyatakan seberapa sering: *Ik kook meestal zelf.*"
+     ] }
+   ]
+  },
+  {
+   "title": "Makan di Belanda",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Waktunya", "Isinya"], "rows": [
+      ["het ontbijt", "07.00-08.00", "roti, keju, hagelslag"],
+      ["de lunch", "12.00-12.30", "roti lagi — hampir selalu dingin"],
+      ["het avondeten", "17.30-18.30", "hidangan panas, satu-satunya hari itu"],
+      ["de koffie", "10.00 & 15.00", "kopi + satu kue kecil"],
+      ["de borrel", "17.00 Jumat", "bir + camilan goreng"]
+     ] },
+    { "type": "p", "text": "Dua hal yang mengejutkan pendatang Indonesia. **Pertama**, makan siang di Belanda hampir selalu dingin: dua lembar roti dengan keju, dibawa dari rumah dalam kotak (*een broodtrommel*). **Kedua**, makan malam dimulai pukul setengah enam — jam yang di Indonesia masih terasa seperti sore." },
+    { "type": "p", "text": "*Hagelslag* — mesis cokelat di atas roti berlapis mentega — dimakan orang dewasa tanpa sedikit pun rasa bersalah, dan penjualannya di Belanda melebihi negara mana pun. Kalau ada satu kebiasaan makan Belanda yang perlu dicoba, itu dia." },
+    { "type": "p", "text": "Kalimat yang sering kamu dengar di meja: *Smakelijk eten!* (selamat makan), *Wil je nog wat?* (mau nambah?), *Ik zit vol* (saya kenyang), *Het was heerlijk* (tadi enak sekali)." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "opstaan", "baca": "OP-stahn", "id": "bangun tidur" },
+  { "nl": "aankomen", "baca": "AHN-koh-me(n)", "id": "tiba" },
+  { "nl": "meenemen", "baca": "MEH-neh-me(n)", "id": "membawa serta" },
+  { "nl": "uitgaan", "baca": "ÖYT-khahn", "id": "keluar main" },
+  { "nl": "opbellen", "baca": "OP-bè-le(n)", "id": "menelepon" },
+  { "nl": "terugbellen", "baca": "te-RÜKH-bè-le(n)", "id": "menelepon balik" },
+  { "nl": "zich wassen", "baca": "zikh VA-se(n)", "id": "mandi" },
+  { "nl": "zich aankleden", "baca": "zikh AHN-kleh-de(n)", "id": "berpakaian" },
+  { "nl": "zich voelen", "baca": "zikh FU-le(n)", "id": "merasa" },
+  { "nl": "zich haasten", "baca": "zikh HAHS-te(n)", "id": "buru-buru" },
+  { "nl": "ontbijten", "baca": "ont-BÈY-te(n)", "id": "sarapan" },
+  { "nl": "koken", "baca": "KOH-ke(n)", "id": "memasak" },
+  { "nl": "slapen", "baca": "SLAH-pe(n)", "id": "tidur" },
+  { "nl": "werken", "baca": "VÈR-ke(n)", "id": "bekerja" },
+  { "nl": "de trein", "baca": "de trèyn", "id": "kereta" },
+  { "nl": "het ontbijt", "baca": "het ont-BÈYT", "id": "sarapan" },
+  { "nl": "het avondeten", "baca": "het AH-font-eh-te(n)", "id": "makan malam" },
+  { "nl": "eerst", "baca": "ehrst", "id": "mula-mula" },
+  { "nl": "daarna", "baca": "dahr-NAH", "id": "sesudah itu" },
+  { "nl": "dan", "baca": "dan", "id": "lalu" },
+  { "nl": "meestal", "baca": "MEHS-tal", "id": "biasanya" },
+  { "nl": "rustig", "baca": "RÜS-tekh", "id": "santai / tenang" },
+  { "nl": "moe", "baca": "mu", "id": "lelah / mengantuk" },
+  { "nl": "pas", "baca": "pas", "id": "baru (waktu)" },
+  { "nl": "middernacht", "baca": "MI-der-nakht", "id": "tengah malam" },
+  { "nl": "daarom", "baca": "dahr-OM", "id": "karena itu" },
+  { "nl": "gewoon", "baca": "khe-VOHN", "id": "biasa" },
+  { "nl": "om de hoek", "baca": "om de huk", "id": "dekat sekali" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Susun kalimatnya dengan kata kerja berpisah di tempat yang benar.",
+   "items": [
+    "Ik ____ om zes uur ____. (opstaan)",
+    "De trein ____ om acht uur ____. (aankomen)",
+    "Wij ____ vanavond ____. (uitgaan)",
+    "Zij ____ haar moeder ____. (opbellen)",
+    "Ik ____ je morgen ____. (terugbellen)"
+   ]
+  },
+  {
+   "prompt": "Isi kata pantul yang benar (me, je, zich, ons).",
+   "items": [
+    "Ik kleed ____ aan.",
+    "Hij wast ____.",
+    "Voelt u ____ goed?",
+    "Wij haasten ____.",
+    "Vergis ____ niet!"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Saya bangun jam tujuh.",
+    "Setelah itu saya sarapan.",
+    "Saya naik kereta ke kantor.",
+    "Malamnya saya masak.",
+    "Saya tidur sekitar tengah malam.",
+    "Saya tidak enak badan."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "op / zes / sta / uur / ik / om",
+    "trein / de / ik / pak / daarna",
+    "aan / kleed / me / ik",
+    "bed / ga / ik / naar / twaalf / om",
+    "moe / altijd / ben / ik"
+   ]
+  }
+ ],
+ "answers": [
+  "sta … op — komt … aan — gaan … uit — belt … op — bel … terug",
+  "me — zich — zich — ons — je",
+  "Ik sta om zeven uur op. — Daarna ontbijt ik. — Ik ga met de trein naar mijn werk. — 's Avonds kook ik. — Ik ga rond middernacht naar bed. — Ik voel me niet lekker.",
+  "Ik sta om zes uur op. — Daarna pak ik de trein. — Ik kleed me aan. — Ik ga om twaalf naar bed. — Ik ben altijd moe."
+ ]
+}

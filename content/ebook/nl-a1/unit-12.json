@@ -1,0 +1,213 @@
+{
+ "title": "Cuaca dan musim",
+ "title_target": "Het weer en de seizoenen",
+ "goal": "Berbicara tentang cuaca — pembuka percakapan nomor satu di Belanda — serta menyebut musim dan memakai *er* untuk menyatakan keberadaan.",
+ "bekal": [
+  "membicarakan cuaca tanpa kehabisan bahan",
+  "memakai *het regent*, *het waait*, *het vriest*",
+  "memakai *er is / er zijn* untuk menyatakan ada"
+ ],
+ "wave": "Ulangi **unit 10**: ambil sepuluh kalimatmu sendiri, lalu pindahkan keterangan waktunya ke depan dan balik kata kerjanya.",
+ "dialogs": [
+  {
+   "title": "Dialog — Lekker weertje",
+   "intro": "Hujan, lalu matahari, lalu hujan lagi — semuanya dalam satu jam. Budi mulai memahami sesuatu tentang negeri ini.",
+   "lines": [
+    { "speaker": "Sanne:", "text": "Wat een weer, hè?", "id": "Cuacanya gimana ya?", "literal": "apa satu cuaca, kan?" },
+    { "speaker": "Budi:", "text": "Vanochtend scheen de zon nog.", "id": "Tadi pagi masih ada matahari.", "literal": "pagi-ini bersinar matahari-itu masih." },
+    { "speaker": "Sanne:", "text": "Ja, en nu regent het weer. Typisch Nederlands.", "id": "Iya, sekarang hujan lagi. Khas Belanda.", "literal": "ya, dan sekarang hujan itu lagi. khas Belanda." },
+    { "speaker": "Budi:", "text": "Bij ons regent het ook, maar dan uren achter elkaar.", "id": "Di tempat saya juga hujan, tapi berjam-jam terus.", "literal": "pada kami hujan itu juga, tapi kemudian jam-jam belakang satu-sama-lain." },
+    { "speaker": "Sanne:", "text": "Hier duurt het tien minuten. En dan waait het.", "id": "Di sini sepuluh menit. Habis itu berangin.", "literal": "di-sini berlangsung itu sepuluh menit. dan kemudian berangin itu." },
+    { "speaker": "Budi:", "text": "De wind is het ergste. Mijn paraplu is al kapot.", "id": "Anginnya yang paling parah. Payung saya sudah rusak.", "literal": "angin-itu adalah yang-paling-parah. milik-saya payung adalah sudah rusak." },
+    { "speaker": "Sanne:", "text": "Daarom gebruikt niemand hier een paraplu. We dragen een regenjas.", "id": "Makanya tidak ada yang pakai payung di sini. Kami pakai jas hujan.", "literal": "karena-itu memakai tidak-seorang-pun di-sini satu payung. kami memakai satu jas-hujan." },
+    { "speaker": "Budi:", "text": "En fietsen jullie ook in de regen?", "id": "Dan kalian tetap bersepeda waktu hujan?", "literal": "dan bersepeda kalian juga dalam hujan-itu?" },
+    { "speaker": "Sanne:", "text": "Natuurlijk. Anders kom je nooit ergens.", "id": "Tentu. Kalau tidak, tidak akan sampai ke mana-mana.", "literal": "tentu-saja. lain datang kamu tidak-pernah di-suatu-tempat." },
+    { "speaker": "Budi:", "text": "Wordt het nog warm deze zomer?", "id": "Musim panas ini bakal panas nggak?", "literal": "menjadi itu masih hangat ini musim-panas?" },
+    { "speaker": "Sanne:", "text": "Er zijn drie mooie dagen. Meestal in juli.", "id": "Ada tiga hari yang bagus. Biasanya di bulan Juli.", "literal": "di-sana adalah tiga indah hari-hari. biasanya di Juli." },
+    { "speaker": "Budi:", "text": "Drie dagen. Ik noteer het.", "id": "Tiga hari. Saya catat.", "literal": "tiga hari. saya mencatat itu." }
+   ],
+   "notes": [
+    "**Wat een weer!** — \"cuaca apaan ini!\". Pola *wat een + kata benda* dipakai untuk seruan apa pun: *Wat een dag!*, *Wat een mooi huis!*",
+    "**Het regent** — untuk cuaca, pelakunya selalu *het* yang kosong, sama seperti *it's raining* dalam bahasa Inggris. Bahasa Indonesia tidak butuh pelaku sama sekali; bahasa Belanda wajib memakainya.",
+    "**Typisch Nederlands** — ungkapan yang akan sering kamu dengar dari orang Belanda tentang negerinya sendiri, biasanya sambil setengah mengeluh dan setengah bangga.",
+    "**Uren achter elkaar** = berjam-jam berturut-turut. *Achter elkaar* berarti \"satu demi satu\", berguna untuk apa pun yang berurutan.",
+    "**Niemand gebruikt een paraplu** — dan ini bukan lelucon: dengan angin Laut Utara, payung bertahan rata-rata satu musim. Yang dipakai orang Belanda adalah *regenjas* dan *regenbroek*, dan sepeda tetap dikayuh.",
+    "**Anders kom je nooit ergens** — *anders* (kalau tidak), *ergens* (di suatu tempat), *nergens* (tidak di mana pun). Sekelompok kata yang akan kembali di unit 14.",
+    "**Wordt het warm?** — *worden* berarti \"menjadi\" dan dipakai untuk perubahan: *het wordt koud* (mulai dingin), *hij wordt dertig* (dia genap tiga puluh). Ia juga kata kerja yang membentuk kalimat pasif — urusan tingkat A2."
+   ],
+   "grammars": [
+    {
+     "title": "Cuaca: kalimat berpelaku kosong",
+     "body": [
+      "Semua kalimat cuaca memakai *het* sebagai pelaku kosong, dan banyak di antaranya berupa kata kerja tersendiri — bukan gabungan \"ada + kata benda\" seperti dalam bahasa Indonesia."
+     ],
+     "table": {
+      "head": ["Nederlands", "Harfiah", "Bahasa Indonesia"],
+      "rows": [
+       ["Het regent.", "itu hujan", "Hujan."],
+       ["Het waait.", "itu berangin", "Anginnya kencang."],
+       ["Het sneeuwt.", "itu bersalju", "Turun salju."],
+       ["Het vriest.", "itu membeku", "Suhunya di bawah nol."],
+       ["Het dooit.", "itu mencair", "Saljunya mencair."],
+       ["Het is bewolkt.", "itu adalah berawan", "Mendung."],
+       ["De zon schijnt.", "matahari bersinar", "Matahari bersinar."],
+       ["Het klaart op.", "itu menjadi cerah", "Cuacanya membaik."]
+      ]
+     },
+     "after": [
+      "Untuk suhu dipakai *graden*: *Het is achttien graden.* Suhu di bawah nol: *Het is min drie* atau *drie graden onder nul*.",
+      "⚠️ *Het is koud* (cuacanya dingin) berbeda dari *Ik heb het koud* (saya kedinginan) — ingat kembali unit 4. Menukar keduanya adalah kesalahan pemula yang khas."
+     ]
+    },
+    {
+     "title": "Er is / er zijn — menyatakan ada",
+     "body": [
+      "Untuk menyatakan keberadaan sesuatu yang belum diperkenalkan, bahasa Belanda memakai *er* — sepadan dengan \"ada\" dalam bahasa Indonesia dan *there is/are* dalam bahasa Inggris."
+     ],
+     "table": {
+      "head": ["Bentuk", "Contoh", "Arti"],
+      "rows": [
+       ["**er is** + tunggal", "**Er is** een probleem.", "Ada masalah."],
+       ["**er zijn** + jamak", "**Er zijn** drie mooie dagen.", "Ada tiga hari bagus."],
+       ["**er is geen**", "**Er is geen** koffie meer.", "Kopinya habis."],
+       ["pertanyaan", "**Is er** een supermarkt in de buurt?", "Ada supermarket di dekat sini?"],
+       ["di posisi kedua", "In juli **zijn er** mooie dagen.", "Di bulan Juli ada hari-hari bagus."]
+      ]
+     },
+     "after": [
+      "Perhatikan baris terakhir: begitu kalimat dibuka keterangan, aturan posisi kedua tetap berlaku dan *er* bergeser ke belakang kata kerja.",
+      "*Er* dipakai untuk hal yang **tak tentu** — *een probleem*, *drie dagen*, *geen koffie*. Untuk benda tertentu, kalimatnya biasa saja: *De koffie staat op tafel.*",
+      "Kata *er* punya banyak pekerjaan lain dalam bahasa Belanda (kamu sudah bertemu *ik heb er twee* di unit 2). Ini yang paling sering dan paling mudah — kuasai yang ini dulu."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Musim dan cuaca",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Cara baca", "Bahasa Indonesia"], "rows": [
+      ["de lente / het voorjaar", "de LÈN-te", "musim semi"],
+      ["de zomer", "de ZOH-mer", "musim panas"],
+      ["de herfst / het najaar", "de hèrfst", "musim gugur"],
+      ["de winter", "de VIN-ter", "musim dingin"],
+      ["de regen", "de REH-khe(n)", "hujan"],
+      ["de wind", "de vint", "angin"],
+      ["de sneeuw", "de snehv", "salju"],
+      ["de zon", "de zon", "matahari"],
+      ["de wolk", "de volk", "awan"],
+      ["de mist", "de mist", "kabut"],
+      ["de bui", "de böy", "hujan sebentar"],
+      ["het onweer", "het ON-vehr", "badai petir"],
+      ["de temperatuur", "de tèm-pe-rah-TÜHR", "suhu"],
+      ["de graad / graden", "de khraht", "derajat"]
+     ] },
+    { "type": "kotak", "title": "Cuaca Belanda dalam angka", "items": [
+      "Rata-rata **hujan turun sekitar 130 hari setahun** — tapi hampir selalu sebentar. Karena itu ramalan cuaca berbicara tentang *buien* (hujan-hujan pendek), bukan tentang \"hari hujan\".",
+      "Musim panas jarang di atas 25 °C, musim dingin jarang di bawah −5 °C. Yang membuat dingin terasa menusuk adalah **angin dan kelembapan**, bukan angkanya.",
+      "*Elfstedentocht* — lomba luncur es 200 km melewati sebelas kota Friesland, hanya bisa digelar kalau seluruh kanal membeku cukup tebal. Terakhir diadakan tahun 1997, dan setiap musim dingin seluruh negeri masih membicarakan kemungkinannya.",
+      "Bulan tergelap adalah Desember: matahari terbit pukul setengah sembilan dan terbenam pukul setengah lima. Banyak pendatang terkejut oleh itu, bukan oleh suhunya."
+     ] }
+   ]
+  },
+  {
+   "title": "Bahan obrolan cuaca",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Bahasa Indonesia"], "rows": [
+      ["Wat een weer!", "Cuacanya luar biasa (biasanya: buruk)."],
+      ["Lekker weertje, hè?", "Enak ya cuacanya."],
+      ["Het is guur.", "Dingin, lembap, dan berangin."],
+      ["Het klaart op.", "Cuacanya mulai cerah."],
+      ["Het is drukkend warm.", "Panas menyesakkan."],
+      ["Wat is het koud vandaag!", "Dingin banget hari ini!"],
+      ["Wordt het morgen beter?", "Besok membaik nggak?"],
+      ["Volgens het weerbericht gaat het regenen.", "Menurut ramalan cuaca akan hujan."],
+      ["Neem een paraplu mee.", "Bawa payung."],
+      ["Het valt wel mee.", "Ternyata tidak seburuk itu."]
+     ] },
+    { "type": "p", "text": "*Het valt mee* dan *het valt tegen* adalah sepasang ungkapan yang sangat Belanda dan tidak berpadanan dalam bahasa Indonesia: yang pertama berarti \"ternyata lebih baik daripada dugaan\", yang kedua \"ternyata lebih buruk\". Dipakai untuk cuaca, ujian, harga, dan hampir segalanya." },
+    { "type": "p", "text": "Membicarakan cuaca bukan basa-basi kosong di Belanda — ia pembuka percakapan yang sah, bahkan dengan orang asing di halte bus. Dua kalimat cuaca yang lancar akan membawamu lebih jauh daripada satu paragraf tata bahasa yang sempurna." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "het weer", "baca": "het vehr", "id": "cuaca" },
+  { "nl": "regenen", "baca": "REH-khe-ne(n)", "id": "hujan" },
+  { "nl": "waaien", "baca": "VAH-ye(n)", "id": "berangin" },
+  { "nl": "sneeuwen", "baca": "SNEH-ve(n)", "id": "turun salju" },
+  { "nl": "vriezen", "baca": "FRI-ze(n)", "id": "membeku" },
+  { "nl": "schijnen", "baca": "SKHÈY-ne(n)", "id": "bersinar" },
+  { "nl": "worden", "baca": "VOR-de(n)", "id": "menjadi" },
+  { "nl": "koud / warm", "baca": "kaut / varm", "id": "dingin / hangat" },
+  { "nl": "nat / droog", "baca": "nat / drohkh", "id": "basah / kering" },
+  { "nl": "bewolkt", "baca": "be-VOLKT", "id": "berawan" },
+  { "nl": "zonnig", "baca": "ZO-nekh", "id": "cerah" },
+  { "nl": "de lente", "baca": "de LÈN-te", "id": "musim semi" },
+  { "nl": "de zomer", "baca": "de ZOH-mer", "id": "musim panas" },
+  { "nl": "de herfst", "baca": "de hèrfst", "id": "musim gugur" },
+  { "nl": "de winter", "baca": "de VIN-ter", "id": "musim dingin" },
+  { "nl": "de regen", "baca": "de REH-khe(n)", "id": "hujan" },
+  { "nl": "de wind", "baca": "de vint", "id": "angin" },
+  { "nl": "de zon", "baca": "de zon", "id": "matahari" },
+  { "nl": "de paraplu", "baca": "de pa-ra-PLÜ", "id": "payung" },
+  { "nl": "de regenjas", "baca": "de REH-khe(n)-yas", "id": "jas hujan" },
+  { "nl": "de jas", "baca": "de yas", "id": "jaket" },
+  { "nl": "dragen", "baca": "DRAH-khe(n)", "id": "memakai (baju)" },
+  { "nl": "gebruiken", "baca": "khe-BRÖY-ke(n)", "id": "memakai (alat)" },
+  { "nl": "er is / er zijn", "baca": "er is / er zèyn", "id": "ada" },
+  { "nl": "niemand", "baca": "NI-mant", "id": "tidak seorang pun" },
+  { "nl": "ergens / nergens", "baca": "ÈR-khens / NÈR-khens", "id": "di suatu tempat / tidak di mana pun" },
+  { "nl": "anders", "baca": "AN-ders", "id": "kalau tidak / lain" },
+  { "nl": "het weerbericht", "baca": "het VEHR-be-rikht", "id": "ramalan cuaca" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi kalimat cuacanya.",
+   "items": [
+    "____ regent. (hujan)",
+    "____ waait hard. (berangin)",
+    "De zon ____. (bersinar)",
+    "Het ____ vannacht. (membeku)",
+    "Het is achttien ____. (derajat)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan er is atau er zijn.",
+   "items": [
+    "____ een probleem.",
+    "____ drie mooie dagen in juli.",
+    "____ geen koffie meer.",
+    "____ veel mensen op straat.",
+    "____ een supermarkt in de buurt?"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Hari ini hujan.",
+    "Cuacanya dingin sekali.",
+    "Saya kedinginan.",
+    "Besok membaik nggak?",
+    "Ada supermarket di dekat sini?",
+    "Bawa jas hujanmu."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "regent / weer / het",
+    "koud / is / vandaag / het",
+    "mooie / zijn / dagen / drie / er",
+    "mee / paraplu / neem / een",
+    "morgen / het / wordt / beter / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "Het — Het — schijnt — vriest — graden",
+  "Er is — Er zijn — Er is — Er zijn — Is er",
+  "Vandaag regent het. — Het is heel koud. — Ik heb het koud. — Wordt het morgen beter? — Is er een supermarkt in de buurt? — Neem je regenjas mee.",
+  "Het regent weer. — Het is vandaag koud. — Er zijn drie mooie dagen. — Neem een paraplu mee. — Wordt het morgen beter?"
+ ]
+}

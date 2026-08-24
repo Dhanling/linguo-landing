@@ -1,0 +1,218 @@
+{
+ "title": "Suka dan tidak suka",
+ "title_target": "Ik hou van…",
+ "goal": "Menyatakan kesukaan, ketidaksukaan, dan pendapat — serta mengenali kenapa \"suka\" dalam bahasa Belanda punya tiga bentuk yang tidak bisa saling menggantikan.",
+ "bekal": [
+  "membedakan *houden van*, *leuk vinden*, *lekker vinden*, dan *graag*",
+  "menyatakan pendapat dengan *ik vind* dan *volgens mij*",
+  "menyetujui dan membantah dengan sopan"
+ ],
+ "wave": "Ulangi **unit 14**: susun daftar belanja sepuluh barang lengkap dengan takarannya, lalu bacakan seolah kamu sedang di depan penjual.",
+ "dialogs": [
+  {
+   "title": "Dialog — Wat vind jij?",
+   "intro": "Makan malam di rumah Sanne. Ada satu hidangan yang, bagi Budi, membutuhkan penjelasan.",
+   "lines": [
+    { "speaker": "Sanne:", "text": "Hou je van stamppot?", "id": "Kamu suka stamppot?", "literal": "menahan kamu dari stamppot?" },
+    { "speaker": "Budi:", "text": "Ik weet het nog niet. Wat zit erin?", "id": "Belum tahu. Isinya apa?", "literal": "saya tahu itu masih tidak. apa duduk di-dalamnya?" },
+    { "speaker": "Sanne:", "text": "Aardappels, boerenkool en een worst erbovenop.", "id": "Kentang, kale, dan sosis di atasnya.", "literal": "kentang-kentang, kubis-petani dan satu sosis di-atasnya." },
+    { "speaker": "Budi:", "text": "En dat eten jullie in de winter?", "id": "Dan itu dimakan waktu musim dingin?", "literal": "dan itu makan kalian dalam musim-dingin-itu?" },
+    { "speaker": "Sanne:", "text": "Elke week. Mijn moeder vindt het heerlijk.", "id": "Tiap minggu. Ibu saya suka banget.", "literal": "setiap minggu. milik-saya ibu menemukan itu lezat." },
+    { "speaker": "Budi:", "text": "Ik vind het… interessant.", "id": "Menurut saya… menarik.", "literal": "saya menemukan itu… menarik." },
+    { "speaker": "Sanne:", "text": "Dat is Nederlands voor 'niet lekker'.", "id": "Itu bahasa Belandanya 'nggak enak'.", "literal": "itu adalah Belanda untuk 'tidak enak'." },
+    { "speaker": "Budi:", "text": "Nee hoor! Ik eet graag nieuwe dingen. Maar ik mis sambal.", "id": "Nggak kok! Saya suka coba hal baru. Cuma kangen sambal.", "literal": "tidak sungguh! saya makan senang-hati baru hal-hal. tapi saya merindukan sambal." },
+    { "speaker": "Sanne:", "text": "Sambal bij stamppot? Dat doet mijn oma ook.", "id": "Sambal buat stamppot? Nenek saya juga gitu.", "literal": "sambal pada stamppot? itu lakukan milik-saya nenek juga." },
+    { "speaker": "Budi:", "text": "Serieus?", "id": "Serius?", "literal": "serius?" },
+    { "speaker": "Sanne:", "text": "Ze woonde jaren in Indonesië. Ze houdt meer van sambal dan ik.", "id": "Dia dulu bertahun-tahun di Indonesia. Sukanya sambal lebih dari saya.", "literal": "dia tinggal tahun-tahun di Indonesia. dia menahan lebih dari sambal daripada saya." },
+    { "speaker": "Budi:", "text": "Dan vind ik jullie familie meteen een stuk leuker.", "id": "Kalau gitu keluarga kalian langsung jauh lebih asyik.", "literal": "kemudian menemukan saya kalian keluarga langsung satu potong lebih-asyik." }
+   ],
+   "notes": [
+    "**Hou je van…?** — *houden van* harfiahnya \"menahan dari\", tapi artinya menyukai dengan sungguh-sungguh, bahkan mencintai. Bentuk *ik hou* (bukan *ik houd*) adalah yang dipakai sehari-hari.",
+    "**Wat zit erin?** — kata kerja *zitten* lagi (unit 14), dan *erin* (di dalamnya). Untuk menanyakan isi makanan, inilah kalimatnya.",
+    "**Stamppot** — kentang tumbuk dicampur sayur, hidangan musim dingin Belanda yang paling khas. Yang bersama *boerenkool* (kale) adalah versi paling terkenal.",
+    "**Mijn moeder vindt het heerlijk** — *vinden* berarti \"menemukan\" **dan** \"berpendapat\". Untuk menyatakan pendapat, inilah kata kerja utamanya: *Ik vind het mooi*, *Wat vind jij?*",
+    "**Ik vind het… interessant** — dan Sanne benar. Dalam pergaulan Belanda, *interessant* sering menjadi cara sopan mengatakan \"saya tidak suka\". Orang Belanda dikenal blak-blakan, tapi mereka juga punya kode halusnya sendiri.",
+    "**Ik eet graag nieuwe dingen** — *graag* + kata kerja = suka melakukan sesuatu. Ini bentuk yang paling sering dipakai untuk menyatakan kesukaan pada **kegiatan**, dan yang paling sering dilupakan pemula.",
+    "**Ik mis sambal** — *missen* berarti merindukan dan juga ketinggalan (kereta). Bahasa Belanda tidak membedakannya.",
+    "**Ze woonde jaren in Indonesië** — bentuk lampau, yang menunggumu di unit berikutnya. Kaitan Belanda-Indonesia membuat kalimat semacam ini sangat sering kamu dengar: banyak keluarga Belanda punya nenek yang tumbuh besar di Jawa atau Sumatra."
+   ],
+   "grammars": [
+    {
+     "title": "Empat cara berkata \"suka\"",
+     "body": [
+      "Bahasa Indonesia memakai satu kata untuk semuanya. Bahasa Belanda memilih menurut **apa** yang disukai."
+     ],
+     "table": {
+      "head": ["Bentuk", "Dipakai untuk", "Contoh"],
+      "rows": [
+       ["**houden van**", "orang, hal yang dicintai", "Ik **hou van** muziek / van jou."],
+       ["**leuk vinden**", "hal, kegiatan, orang (netral)", "Ik **vind** voetbal **leuk**."],
+       ["**lekker vinden**", "makanan & minuman", "Ik **vind** kaas **lekker**."],
+       ["**graag** + kata kerja", "kegiatan yang suka dilakukan", "Ik lees **graag**."],
+       ["**mooi vinden**", "sesuatu yang indah", "Ik **vind** die film **mooi**."]
+      ]
+     },
+     "after": [
+      "⚠️ *Ik hou van kaas* terdengar berlebihan — seolah keju itu cinta hidupmu. Untuk makanan pakai *lekker vinden*.",
+      "⚠️ *Ik hou van voetballen* juga janggal; untuk kegiatan pakai *graag*: *Ik voetbal graag.*",
+      "Ingkarannya: *Ik hou niet van…*, *Ik vind het niet leuk*, *Ik lees niet graag*. Untuk yang benar-benar tidak disukai: *Ik heb een hekel aan…* (saya benci)."
+     ]
+    },
+    {
+     "title": "Menyatakan pendapat",
+     "body": [
+      "Orang Belanda menganggap pendapat langsung sebagai bentuk kejujuran, bukan kekasaran — tapi mereka tetap punya rumusan untuk melunakkannya."
+     ],
+     "table": {
+      "head": ["Nederlands", "Bahasa Indonesia"],
+      "rows": [
+       ["Ik vind dat…", "Menurut saya…"],
+       ["Volgens mij…", "Kalau menurut saya…"],
+       ["Ik denk dat…", "Saya pikir…"],
+       ["Ik ben het ermee eens.", "Saya setuju."],
+       ["Ik ben het er niet mee eens.", "Saya tidak setuju."],
+       ["Je hebt gelijk.", "Kamu benar."],
+       ["Dat klopt.", "Itu benar."],
+       ["Dat valt wel mee.", "Ternyata tidak seburuk itu."],
+       ["Misschien, maar…", "Mungkin, tapi…"],
+       ["Ik weet het niet zeker.", "Saya kurang yakin."]
+      ]
+     },
+     "after": [
+      "*Ik vind dat…* dan *Ik denk dat…* diikuti anak kalimat, dan di anak kalimat kata kerjanya pindah ke ujung: *Ik vind dat het te duur **is**.* Ini unit 20 — untuk sementara, kamu boleh berhenti sebelum *dat*: *Ik vind het te duur.*",
+      "*Dat klopt* (itu cocok/benar) adalah salah satu kalimat paling sering diucapkan orang Belanda; ingkarannya *dat klopt niet*.",
+      "Kejujuran Belanda memang tajam: kalau presentasimu kurang bagus, kamu akan diberi tahu langsung. Itu bukan penolakan pribadi — dan pujian mereka, karena jarang, jadi berarti."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Waktu luang",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Cara baca", "Bahasa Indonesia"], "rows": [
+      ["lezen", "LEH-ze(n)", "membaca"],
+      ["muziek luisteren", "mü-ZIK LÖYS-te-re(n)", "mendengarkan musik"],
+      ["sporten", "SPOR-te(n)", "berolahraga"],
+      ["voetballen", "FUT-ba-le(n)", "main sepak bola"],
+      ["zwemmen", "ZVÈ-me(n)", "berenang"],
+      ["wandelen", "VAN-de-le(n)", "jalan-jalan kaki"],
+      ["fietsen", "FIT-se(n)", "bersepeda"],
+      ["koken", "KOH-ke(n)", "memasak"],
+      ["tuinieren", "töy-NI-re(n)", "berkebun"],
+      ["reizen", "RÈY-ze(n)", "bepergian"],
+      ["een film kijken", "en film KÈY-ke(n)", "nonton film"],
+      ["afspreken met vrienden", "AF-spreh-ke(n)", "janjian dengan teman"],
+      ["schaatsen", "SKHAHT-se(n)", "meluncur di es"],
+      ["klussen", "KLÜ-se(n)", "beres-beres rumah sendiri"]
+     ] },
+    { "type": "kotak", "title": "Yang benar-benar dilakukan orang Belanda di waktu luang", "items": [
+      "**Fietsen** bukan olahraga, melainkan cara berpindah — tapi *een fietstocht* di akhir pekan memang rekreasi.",
+      "**Wandelen** — jalan kaki panjang di alam, dengan sepatu khusus dan rencana rute. Dianggap kegiatan penuh, bukan sekadar jalan-jalan.",
+      "**Klussen** — memperbaiki dan mengubah rumah sendiri. Toko perkakas penuh setiap Sabtu pagi.",
+      "**Verjaardagsfeestje** — pesta ulang tahun dengan tamu duduk melingkar, kopi, dan kue. Legendaris di seluruh dunia karena lingkaran kursinya.",
+      "**Op vakantie** — liburan direncanakan berbulan-bulan sebelumnya, sering dengan karavan."
+     ] }
+   ]
+  },
+  {
+   "title": "Percakapan tentang kesukaan",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Bahasa Indonesia"], "rows": [
+      ["Wat doe je graag in je vrije tijd?", "Suka ngapain waktu senggang?"],
+      ["Ik lees graag / Ik kook graag.", "Saya suka membaca / memasak."],
+      ["Hou je van muziek?", "Suka musik?"],
+      ["Wat voor muziek vind je mooi?", "Musik apa yang kamu suka?"],
+      ["Ik vind het niet zo leuk.", "Saya kurang suka."],
+      ["Ik heb een hekel aan wachten.", "Saya benci menunggu."],
+      ["Ik ben gek op kaas.", "Saya doyan banget keju."],
+      ["Dat is niets voor mij.", "Itu bukan selera saya."],
+      ["Waar hou jij van?", "Kamu suka apa?"],
+      ["Ik doe liever iets anders.", "Saya lebih suka yang lain."]
+     ] },
+    { "type": "p", "text": "*Gek zijn op* (harfiah: gila akan) adalah bentuk paling bersemangat untuk menyatakan suka, dan aman dipakai untuk makanan maupun kegiatan: *Ik ben gek op stroopwafels.*" },
+    { "type": "p", "text": "*Wat voor …?* berarti \"jenis apa\": *Wat voor werk doe je?*, *Wat voor muziek luister je?* Ia terpisah dalam kalimat panjang — *Wat voor een boek is dat?* — dan sangat sering dipakai untuk menggali percakapan lebih dalam." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "houden van", "baca": "HAU-de(n) fan", "id": "menyukai / mencintai" },
+  { "nl": "leuk vinden", "baca": "lök FIN-de(n)", "id": "menganggap asyik" },
+  { "nl": "lekker vinden", "baca": "LÈ-ker FIN-de(n)", "id": "menganggap enak" },
+  { "nl": "gek zijn op", "baca": "khèk zèyn op", "id": "doyan banget" },
+  { "nl": "een hekel hebben aan", "baca": "en HEH-kel HÈ-be(n) ahn", "id": "benci" },
+  { "nl": "vinden", "baca": "FIN-de(n)", "id": "berpendapat / menemukan" },
+  { "nl": "denken", "baca": "DÈNG-ke(n)", "id": "berpikir" },
+  { "nl": "volgens mij", "baca": "FOL-khens mèy", "id": "menurut saya" },
+  { "nl": "kloppen", "baca": "KLO-pe(n)", "id": "benar / cocok" },
+  { "nl": "het eens zijn", "baca": "het ehns zèyn", "id": "setuju" },
+  { "nl": "missen", "baca": "MI-se(n)", "id": "merindukan / ketinggalan" },
+  { "nl": "de vrije tijd", "baca": "de FRÈY-e tèyt", "id": "waktu luang" },
+  { "nl": "lezen", "baca": "LEH-ze(n)", "id": "membaca" },
+  { "nl": "luisteren", "baca": "LÖYS-te-re(n)", "id": "mendengarkan" },
+  { "nl": "kijken", "baca": "KÈY-ke(n)", "id": "menonton" },
+  { "nl": "sporten", "baca": "SPOR-te(n)", "id": "berolahraga" },
+  { "nl": "wandelen", "baca": "VAN-de-le(n)", "id": "jalan kaki santai" },
+  { "nl": "zwemmen", "baca": "ZVÈ-me(n)", "id": "berenang" },
+  { "nl": "reizen", "baca": "RÈY-ze(n)", "id": "bepergian" },
+  { "nl": "de muziek", "baca": "de mü-ZIK", "id": "musik" },
+  { "nl": "de film", "baca": "de film", "id": "film" },
+  { "nl": "het boek", "baca": "het buk", "id": "buku" },
+  { "nl": "de vakantie", "baca": "de fa-KAN-si", "id": "liburan" },
+  { "nl": "interessant", "baca": "in-te-rè-SANT", "id": "menarik" },
+  { "nl": "saai", "baca": "sahy", "id": "membosankan" },
+  { "nl": "wat voor", "baca": "vat fohr", "id": "jenis apa" },
+  { "nl": "elke week", "baca": "ÈL-ke vehk", "id": "tiap minggu" },
+  { "nl": "meteen", "baca": "me-TEHN", "id": "langsung" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih houden van, leuk vinden, lekker vinden, atau graag.",
+   "items": [
+    "Ik ____ kaas. (enak)",
+    "Ik ____ mijn familie. (mencintai)",
+    "Ik lees ____. (suka melakukannya)",
+    "Ik ____ die film ____. (asyik)",
+    "Ik ____ muziek. (menyukai)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat ingkar.",
+   "items": [
+    "Ik hou van koffie. → ____",
+    "Ik vind het leuk. → ____",
+    "Ik kook graag. → ____",
+    "Dat klopt. → ____",
+    "Ik ben het ermee eens. → ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Saya suka membaca.",
+    "Saya doyan banget keju.",
+    "Menurut saya itu terlalu mahal.",
+    "Saya kurang suka.",
+    "Kamu suka apa waktu senggang?",
+    "Saya setuju."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "muziek / van / hou / ik",
+    "leuk / vind / het / ik / niet",
+    "graag / ik / kook",
+    "eens / het / ik / ben / ermee",
+    "tijd / je / doe / vrije / wat / je / graag / in / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "vind … lekker — hou van — graag — vind … leuk — hou van",
+  "Ik hou niet van koffie. — Ik vind het niet leuk. — Ik kook niet graag. — Dat klopt niet. — Ik ben het er niet mee eens.",
+  "Ik lees graag. — Ik ben gek op kaas. — Ik vind het te duur. — Ik vind het niet zo leuk. — Wat doe je graag in je vrije tijd? — Ik ben het ermee eens.",
+  "Ik hou van muziek. — Ik vind het niet leuk. — Ik kook graag. — Ik ben het ermee eens. — Wat doe je graag in je vrije tijd?"
+ ]
+}

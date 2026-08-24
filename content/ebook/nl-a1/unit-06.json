@@ -1,0 +1,210 @@
+{
+ "title": "Berapa harganya?",
+ "title_target": "Hoeveel kost het?",
+ "goal": "Menguasai angka bahasa Belanda yang dibaca terbalik, menyebut dan menanyakan harga, serta membaca nomor telepon dan tanggal dalam angka.",
+ "bekal": [
+  "membaca angka sampai jutaan — termasuk *eenentwintig* yang terbalik",
+  "menanyakan dan memahami harga di toko dan pasar",
+  "menyebutkan nomor teleponmu seperti orang Belanda"
+ ],
+ "wave": "Ulangi **unit 4**: tutup kolom Belanda pada tabel ungkapan *hebben*, lihat arti Indonesianya, lalu susun kembali kalimat Belandanya dari ingatan.",
+ "dialogs": [
+  {
+   "title": "Dialog — Op de markt",
+   "intro": "Pasar Sabtu di Utrecht. Budi berdiri di depan lapak keju.",
+   "lines": [
+    { "speaker": "Verkoper:", "text": "Zegt u het maar!", "id": "Silakan, mau apa?", "literal": "katakan Anda itu saja!" },
+    { "speaker": "Budi:", "text": "Hoeveel kost die kaas?", "id": "Berapa harga keju itu?", "literal": "berapa-banyak berharga itu keju?" },
+    { "speaker": "Verkoper:", "text": "Twaalf euro vijftig per kilo. Hoeveel wilt u?", "id": "Dua belas euro lima puluh per kilo. Mau berapa?", "literal": "dua-belas euro lima-puluh per kilo. berapa-banyak mau Anda?" },
+    { "speaker": "Budi:", "text": "Een half pondje, alstublieft.", "id": "Setengah pon saja.", "literal": "satu setengah pon-kecil, silakan." },
+    { "speaker": "Verkoper:", "text": "Dat is dan drie euro vijfenzestig.", "id": "Jadinya tiga euro enam puluh lima.", "literal": "itu adalah kemudian tiga euro lima-dan-enam-puluh." },
+    { "speaker": "Budi:", "text": "Sorry, hoeveel? Vijfenzestig of zesenvijftig?", "id": "Maaf, berapa? Enam puluh lima atau lima puluh enam?", "literal": "maaf, berapa-banyak? lima-dan-enam-puluh atau enam-dan-lima-puluh?" },
+    { "speaker": "Verkoper:", "text": "Vijfenzestig. Vijf en zestig — 65.", "id": "Enam puluh lima. Lima dan enam puluh — 65.", "literal": "lima-dan-enam-puluh. lima dan enam-puluh — 65." },
+    { "speaker": "Budi:", "text": "Ah, nu snap ik het. Bij ons is het andersom.", "id": "Ah, sekarang saya paham. Di tempat kami urutannya kebalikan.", "literal": "ah, sekarang paham saya itu. pada kami adalah itu terbalik." },
+    { "speaker": "Verkoper:", "text": "Iedereen zegt dat. Nog iets erbij?", "id": "Semua orang bilang begitu. Ada lagi?", "literal": "setiap-orang berkata itu. lagi sesuatu di-situ?" },
+    { "speaker": "Budi:", "text": "Nee, dat was het. Kan ik pinnen?", "id": "Tidak, itu saja. Bisa bayar pakai kartu?", "literal": "tidak, itu adalah itu. bisa saya berkartu?" },
+    { "speaker": "Verkoper:", "text": "Natuurlijk. Vier euro, dan is het rond.", "id": "Tentu. Empat euro saja, biar bulat.", "literal": "tentu-saja. empat euro, maka adalah itu bulat." },
+    { "speaker": "Budi:", "text": "Dank u wel. Fijne dag!", "id": "Terima kasih. Selamat beraktivitas!", "literal": "terima kasih Anda memang. menyenangkan hari!" }
+   ],
+   "notes": [
+    "**Zegt u het maar** adalah sapaan penjual paling khas di Belanda — harfiahnya \"katakan saja\", artinya \"silakan pesan\". Di toko roti kamu juga akan mendengar *Wie is er aan de beurt?* (siapa gilirannya?).",
+    "**Twaalf euro vijftig** = €12,50. Sen tidak disebut sebagai \"koma lima puluh\": cukup angka euro lalu angka sennya. Untuk harga bulat orang berkata *twaalf euro* saja.",
+    "**Een pondje** — *een pond* di Belanda berarti **500 gram**, bukan pon Inggris. Bersama *een ons* (100 gram!) ia sisa sistem takaran lama yang masih sangat hidup di pasar dan toko keju. Minta *twee ons kaas* dan kamu akan mendapat 200 gram.",
+    "**Vijfenzestig atau zesenvijftig?** Ini kebingungan yang akan kamu alami sungguhan, bukan hanya di buku. Kuncinya: **satuan disebut lebih dulu**, lalu *en*, lalu puluhan. Jadi *vijf-en-zestig* = 5 dan 60 = 65.",
+    "**Bij ons** = \"di tempat kami\", cara ringkas menyebut negara atau budaya asalmu.",
+    "**Nog iets erbij?** = \"ada tambahan lagi?\" Jawaban penutupnya: *Nee, dat was het* (tidak, itu saja) — kalimat yang akan kamu pakai hampir tiap hari.",
+    "**Dan is het rond** — pembulatan ke bawah oleh penjual pasar. Menawar sendiri tidak lazim di Belanda, tapi menjelang tutup lapak harga sering diturunkan dengan sendirinya."
+   ],
+   "grammars": [
+    {
+     "title": "Angka: satuan dulu, baru puluhan",
+     "body": [
+      "Dari 21 sampai 99, bahasa Belanda menyebut **satuan lebih dulu** dan menyambungnya dengan *en*. Bahasa Jerman melakukan hal yang sama; bahasa Indonesia dan Inggris tidak. Ini satu-satunya bagian sistem angka Belanda yang perlu dilatih sungguh-sungguh."
+     ],
+     "table": {
+      "head": ["Angka", "Nederlands", "Harfiah"],
+      "rows": [
+       ["21", "eenentwintig", "satu-dan-dua-puluh"],
+       ["32", "tweeëndertig", "dua-dan-tiga-puluh"],
+       ["45", "vijfenveertig", "lima-dan-empat-puluh"],
+       ["58", "achtenvijftig", "delapan-dan-lima-puluh"],
+       ["67", "zevenenzestig", "tujuh-dan-enam-puluh"],
+       ["76", "zesenzeventig", "enam-dan-tujuh-puluh"],
+       ["89", "negenentachtig", "sembilan-dan-delapan-puluh"],
+       ["99", "negenennegentig", "sembilan-dan-sembilan-puluh"]
+      ]
+     },
+     "after": [
+      "Semua ditulis **sebagai satu kata**, sepanjang apa pun. Tanda titik dua di atas huruf (*tweeëndertig*, *drieëntwintig*) cuma penanda ejaan supaya *ee* dan *e* tidak terbaca menyatu.",
+      "Puluhannya: *tien, twintig, dertig, veertig, vijftig, zestig, zeventig, tachtig, negentig*. Perhatikan **dertig** dan **veertig** yang berubah bentuk, dan **tachtig** yang diawali t-.",
+      "Trik mendengar yang benar-benar menolong: begitu kamu mendengar *en* di tengah angka, tahan angka pertama di kepala dan tunggu yang kedua — angka kedua itulah puluhannya."
+     ]
+    },
+    {
+     "title": "Angka besar dan cara menuliskannya",
+     "body": [
+      "Di atas seratus, susunannya kembali masuk akal."
+     ],
+     "table": {
+      "head": ["Angka", "Nederlands"],
+      "rows": [
+       ["100 / 200", "honderd / tweehonderd"],
+       ["101", "honderdeen"],
+       ["135", "honderdvijfendertig"],
+       ["1.000", "duizend"],
+       ["2.500", "tweeduizend vijfhonderd"],
+       ["1.000.000", "een miljoen"],
+       ["€ 1.250,75", "twaalfhonderdvijftig euro vijfenzeventig"]
+      ]
+     },
+     "after": [
+      "⚠️ **Titik dan koma bertukar tempat** dibanding kebiasaan Inggris, dan kebetulan sama persis dengan kebiasaan Indonesia: titik untuk ribuan, koma untuk desimal. *€ 1.250,75* dibaca \"duizend tweehonderdvijftig euro vijfenzeventig\".",
+      "Orang Belanda sering menyebut ratusan alih-alih ribuan untuk tahun dan harga: *negentienhonderd* (1900), *achttienhonderd euro* (€1800).",
+      "*Honderd* dan *duizend* tidak memakai *een* di depannya kalau berdiri sendiri: *honderd euro*, bukan *een honderd euro*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bertanya harga dan membayar",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Cara baca", "Bahasa Indonesia"], "rows": [
+      ["Hoeveel kost dit?", "HU-fehl kost dit", "Berapa harga ini?"],
+      ["Wat kost het?", "vat kost het", "Berapa harganya?"],
+      ["Dat is te duur.", "dat is te dühr", "Itu terlalu mahal."],
+      ["Heeft u iets goedkopers?", "hehft ü its khut-KOH-pers", "Ada yang lebih murah?"],
+      ["Kan ik pinnen?", "kan ik PI-ne", "Bisa bayar pakai kartu?"],
+      ["Mag ik een bonnetje?", "makh ik en BO-ne-tye", "Boleh minta struknya?"],
+      ["Het is in de aanbieding.", "het is in de AHN-bi-ding", "Sedang diskon."],
+      ["Twee voor de prijs van één.", "tveh fohr de prèys fan ehn", "Beli satu gratis satu."],
+      ["Nog iets erbij?", "nokh its er-BÈY", "Ada lagi?"],
+      ["Nee, dat was het.", "neh, dat vas het", "Tidak, itu saja."]
+     ] },
+    { "type": "kotak", "title": "Uang dan pembayaran di Belanda", "items": [
+      "**Pinnen** (kartu debit) adalah cara bayar bawaan. Banyak toko bertanda *alleen pinnen* — tunai tidak diterima sama sekali.",
+      "Kartu kredit sering **tidak** diterima di supermarket dan restoran kecil; yang berlaku adalah kartu debit (Maestro/V-Pay).",
+      "Uang koin 1 dan 2 sen tidak dipakai: total belanja tunai dibulatkan ke 5 sen terdekat. Pembayaran kartu tidak dibulatkan.",
+      "*Statiegeld* — uang jaminan botol. Botol plastik dan kaleng dititipi 15-25 sen yang kembali kalau botolnya dimasukkan ke mesin di supermarket.",
+      "Memberi *fooi* (tip) tidak wajib; membulatkan ke atas sudah dianggap sopan."
+     ] }
+   ]
+  },
+  {
+   "title": "Angka di kehidupan sehari-hari",
+   "blocks": [
+    { "type": "tabel", "head": ["Keperluan", "Contoh", "Cara membacanya"], "rows": [
+      ["Nomor telepon", "06 - 21 34 55 89", "nul zes, eenentwintig, vierendertig, vijfenvijftig, negenentachtig"],
+      ["Kode pos", "3512 JE", "vijfendertig twaalf JE"],
+      ["Nomor rumah", "Kerkstraat 12-B", "Kerkstraat twaalf B"],
+      ["Tahun", "2026", "tweeduizend zesentwintig"],
+      ["Suhu", "18 °C", "achttien graden"],
+      ["Nomor peron", "spoor 5", "spoor vijf"]
+     ] },
+    { "type": "p", "text": "Nomor telepon Belanda dibaca **berpasangan**, bukan angka per angka seperti kebiasaan Indonesia. Ini membuat pemula panik di telepon — dan karena tiap pasangan dibaca terbalik, sepasang angka bisa terdengar seperti dua angka lain. Boleh sekali meminta: *Kunt u het cijfer voor cijfer zeggen?* (\"Bisa dibaca satu per satu?\")." },
+    { "type": "p", "text": "Kode pos Belanda (empat angka + dua huruf) hampir seperti alamat lengkap: bersama nomor rumah, ia cukup untuk mengisi hampir semua formulir daring. Hafalkan kode posmu sejak minggu pertama." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "hoeveel", "baca": "HU-fehl", "id": "berapa banyak" },
+  { "nl": "kosten", "baca": "KOS-te(n)", "id": "berharga" },
+  { "nl": "de prijs", "baca": "de prèys", "id": "harga" },
+  { "nl": "duur / goedkoop", "baca": "dühr / khut-KOHP", "id": "mahal / murah" },
+  { "nl": "het geld", "baca": "het khèlt", "id": "uang" },
+  { "nl": "betalen", "baca": "be-TAH-le(n)", "id": "membayar" },
+  { "nl": "het bonnetje", "baca": "het BO-ne-tye", "id": "struk" },
+  { "nl": "de aanbieding", "baca": "de AHN-bi-ding", "id": "diskon / promo" },
+  { "nl": "de korting", "baca": "de KOR-ting", "id": "potongan harga" },
+  { "nl": "gratis", "baca": "KHRAH-tis", "id": "gratis" },
+  { "nl": "de markt", "baca": "de markt", "id": "pasar" },
+  { "nl": "de kaas", "baca": "de kahs", "id": "keju" },
+  { "nl": "het pond / het ons", "baca": "het pont / het ons", "id": "500 gram / 100 gram" },
+  { "nl": "de kilo", "baca": "de KI-loh", "id": "kilogram" },
+  { "nl": "per stuk", "baca": "per stük", "id": "per buah" },
+  { "nl": "twintig", "baca": "TVIN-tekh", "id": "dua puluh" },
+  { "nl": "dertig / veertig", "baca": "DÈR-tekh / FEHR-tekh", "id": "tiga puluh / empat puluh" },
+  { "nl": "vijftig / zestig", "baca": "FÈYF-tekh / ZÈS-tekh", "id": "lima puluh / enam puluh" },
+  { "nl": "zeventig / tachtig", "baca": "ZEH-fe-tekh / TAKH-tekh", "id": "tujuh puluh / delapan puluh" },
+  { "nl": "negentig", "baca": "NEH-khe-tekh", "id": "sembilan puluh" },
+  { "nl": "honderd / duizend", "baca": "HON-dert / DÖY-zent", "id": "seratus / seribu" },
+  { "nl": "het miljoen", "baca": "het mil-YUN", "id": "juta" },
+  { "nl": "het cijfer", "baca": "het SÈY-fer", "id": "angka" },
+  { "nl": "het nummer", "baca": "het NÜ-mer", "id": "nomor" },
+  { "nl": "snappen", "baca": "SNA-pe(n)", "id": "paham" },
+  { "nl": "iedereen", "baca": "I-der-ehn", "id": "semua orang" },
+  { "nl": "andersom", "baca": "AN-ders-om", "id": "kebalikannya" },
+  { "nl": "rond", "baca": "ront", "id": "bulat" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angkanya dalam bahasa Belanda.",
+   "items": [
+    "21 → ____",
+    "35 → ____",
+    "48 → ____",
+    "67 → ____",
+    "82 → ____",
+    "99 → ____"
+   ]
+  },
+  {
+   "prompt": "Tulis dalam angka.",
+   "items": [
+    "drieëntwintig → ____",
+    "zevenenveertig → ____",
+    "vierennegentig → ____",
+    "honderdvijftien → ____",
+    "tweeduizend zesentwintig → ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Berapa harganya?",
+    "Itu terlalu mahal.",
+    "Bisa bayar pakai kartu?",
+    "Sepuluh euro lima puluh.",
+    "Ada yang lebih murah?",
+    "Tidak, itu saja."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "kost / dit / hoeveel / ?",
+    "duur / te / is / dat",
+    "pinnen / kan / ik / ?",
+    "euro / dat / vijftig / twaalf / is",
+    "was / dat / het / nee"
+   ]
+  }
+ ],
+ "answers": [
+  "eenentwintig — vijfendertig — achtenveertig — zevenenzestig — tweeëntachtig — negenennegentig",
+  "23 — 47 — 94 — 115 — 2026",
+  "Hoeveel kost het? — Dat is te duur. — Kan ik pinnen? — Tien euro vijftig. — Heeft u iets goedkopers? — Nee, dat was het.",
+  "Hoeveel kost dit? — Dat is te duur. — Kan ik pinnen? — Dat is twaalf euro vijftig. — Nee, dat was het."
+ ]
+}

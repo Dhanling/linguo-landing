@@ -1,0 +1,218 @@
+{
+ "title": "Kata sifat",
+ "title_target": "Hoe ziet hij eruit?",
+ "goal": "Memakai kata sifat dalam kedua bentuknya, menguasai satu perkecualian yang menentukan, dan membandingkan dua hal.",
+ "bekal": [
+  "tahu kapan kata sifat mendapat **-e** dan kapan tidak",
+  "membandingkan dengan *-er … dan* dan *het … -st*",
+  "menggambarkan rupa dan sifat seseorang"
+ ],
+ "wave": "Ulangi **unit 13**: susun sepuluh permintaan tolong, dari yang paling santai sampai yang paling sopan, semuanya dengan kata kerja bantu.",
+ "dialogs": [
+  {
+   "title": "Dialog — Op het station",
+   "intro": "Budi menjemput sepupunya yang belum pernah ia temui, dan cuma punya satu keterangan: \"kamu pasti kenal dia.\"",
+   "lines": [
+    { "speaker": "Budi:", "text": "Hoe ziet je neef eruit?", "id": "Sepupumu itu seperti apa orangnya?", "literal": "bagaimana melihat milik-kamu sepupu keluar-itu?" },
+    { "speaker": "Tante:", "text": "Hij is lang en heeft donker haar.", "id": "Dia tinggi dan rambutnya gelap.", "literal": "dia adalah panjang dan punya gelap rambut." },
+    { "speaker": "Budi:", "text": "Dat is de helft van Nederland niet.", "id": "Setengah Belanda bukan begitu.", "literal": "itu adalah setengah-itu dari Belanda tidak." },
+    { "speaker": "Tante:", "text": "Hij draagt een rode jas en een grijze rugzak.", "id": "Dia pakai jaket merah dan ransel abu-abu.", "literal": "dia memakai satu merah jaket dan satu abu-abu ransel." },
+    { "speaker": "Budi:", "text": "Een rode jas — dat helpt.", "id": "Jaket merah — nah itu membantu.", "literal": "satu merah jaket — itu menolong." },
+    { "speaker": "Tante:", "text": "En hij heeft een klein kind bij zich.", "id": "Dan dia bawa anak kecil.", "literal": "dan dia punya satu kecil anak dekat dirinya." },
+    { "speaker": "Budi:", "text": "Wacht — een kléin kind, zonder -e?", "id": "Tunggu — een klein kind, tanpa -e?", "literal": "tunggu — satu kecil anak, tanpa -e?" },
+    { "speaker": "Tante:", "text": "Goed opgelet. Het is een het-woord.", "id": "Perhatiannya bagus. Itu het-woord.", "literal": "baik diperhatikan. itu adalah satu het-kata." },
+    { "speaker": "Budi:", "text": "Maar het kleine kind wél met -e?", "id": "Tapi het kleine kind pakai -e?", "literal": "tapi anak-kecil-itu memang dengan -e?" },
+    { "speaker": "Tante:", "text": "Precies. Alleen bij een is er geen -e.", "id": "Tepat. Cuma sesudah een yang tidak pakai -e.", "literal": "persis. hanya pada een adalah di-sana tidak-ada -e." },
+    { "speaker": "Budi:", "text": "Dat is de gekste regel tot nu toe.", "id": "Itu aturan paling aneh sejauh ini.", "literal": "itu adalah yang-paling-gila aturan sampai sekarang." },
+    { "speaker": "Tante:", "text": "Wacht maar tot unit twintig.", "id": "Tunggu saja sampai unit dua puluh.", "literal": "tunggu saja sampai unit dua-puluh." }
+   ],
+   "notes": [
+    "**Hoe ziet hij eruit?** — *eruitzien* (tampak). Jawabannya boleh dua arah: rupa (*hij is lang*) atau pakaian (*hij draagt een rode jas*).",
+    "**Donker haar** tanpa *-e*? Bukan — *haar* adalah het-woord (*het haar*) dan di sini berdiri tanpa kata sandang sama sekali, jadi aturan yang sama berlaku: tanpa *de/het* dan tanpa *een* yang menunjuk het-woord tunggal, kata sifatnya polos.",
+    "**Een rode jas** — *de jas* itu de-woord, jadi kata sifatnya berakhiran *-e*. Perhatikan juga ejaannya: *rood* → *rode* (satu *o* hilang), sesuai aturan suku kata terbuka dari unit 3.",
+    "**Een klein kind** — *het kind* itu het-woord dan didahului *een*, jadi kata sifatnya **tanpa** *-e*. Inilah satu-satunya perkecualian dalam seluruh aturan kata sifat bahasa Belanda.",
+    "**Het kleine kind** — begitu kata sandangnya *het* (bukan *een*), *-e*-nya kembali. Sama halnya dengan *dit kleine kind*, *mijn kleine kind*.",
+    "**Goed opgelet** — pujian singkat, dari *opletten* (memperhatikan). *Let op!* berarti \"awas!\" dan tertulis di seluruh rambu peringatan Belanda.",
+    "**De gekste regel** — bentuk paling: *gek → gekker → gekst*. Perhatikan *de* di depannya; bentuk paling hampir selalu memakai kata sandang."
+   ],
+   "grammars": [
+    {
+     "title": "Kapan kata sifat mendapat -e",
+     "body": [
+      "Aturannya pendek: **kata sifat di depan kata benda hampir selalu mendapat -e.** Ada satu perkecualian, dan satu keadaan di mana ia tidak berubah sama sekali."
+     ],
+     "table": {
+      "head": ["Keadaan", "Contoh", "-e?"],
+      "rows": [
+       ["de-woord, tentu", "**de grote** man", "ya"],
+       ["de-woord, tak tentu", "**een grote** man", "ya"],
+       ["het-woord, tentu", "**het grote** huis", "ya"],
+       ["het-woord + **een**", "**een groot** huis", "⚠️ **tidak**"],
+       ["het-woord tanpa sandang", "**warm** water", "tidak"],
+       ["jamak", "**grote** huizen", "ya"],
+       ["sesudah kata kerja", "Het huis is **groot**.", "tidak"]
+      ]
+     },
+     "after": [
+      "Baris keempat itulah seluruh kesulitannya: *een groot huis*, *een klein kind*, *een lekker broodje*. Kalau kata sandangnya bukan *een* — melainkan *het*, *dit*, *dat*, *mijn*, *ons* — *-e*-nya kembali: *ons grote huis*.",
+      "Baris terakhir juga penting: sesudah *zijn*, *worden*, *blijven*, kata sifat berdiri sendiri tanpa akhiran. *De koffie is lekker.*",
+      "Kata sifat berakhiran *-en* tidak pernah berubah: *een gouden ring*, *houten tafel*. Begitu juga *plastic*, *oranje*, *roze*."
+     ]
+    },
+    {
+     "title": "Membandingkan",
+     "body": [
+      "Sama rapinya dengan bahasa Inggris, dan dengan tiga kata tak beraturan yang sama."
+     ],
+     "table": {
+      "head": ["Dasar", "Lebih (-er)", "Paling (-st)"],
+      "rows": [
+       ["klein", "kleiner", "kleinst"],
+       ["groot", "groter", "grootst"],
+       ["duur", "duurder", "duurst"],
+       ["mooi", "mooier", "mooist"],
+       ["**goed**", "**beter**", "**best**"],
+       ["**veel**", "**meer**", "**meest**"],
+       ["**weinig**", "**minder**", "**minst**"],
+       ["**graag**", "**liever**", "**liefst**"]
+      ]
+     },
+     "after": [
+      "\"Lebih … daripada\" = **-er … dan**: *Amsterdam is groter **dan** Utrecht.* \"Sama … dengan\" = *even … als* atau *net zo … als*: *Utrecht is **even** mooi **als** Amsterdam.*",
+      "Bentuk paling memakai kata sandang: *de mooiste stad*, *het grootste huis*, atau *het … -st* untuk sifat: *In juli is het weer **het mooist**.*",
+      "*Liever* dan *het liefst* menyatakan pilihan: *Ik drink **liever** thee* (saya lebih suka teh). Ungkapan ini akan sangat berguna di unit berikutnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menggambarkan orang",
+   "blocks": [
+    { "type": "tabel", "head": ["Rupa", "Arti", "Sifat", "Arti"], "rows": [
+      ["lang / klein", "tinggi / pendek", "aardig", "baik hati"],
+      ["dik / dun", "gemuk / kurus", "vriendelijk", "ramah"],
+      ["jong / oud", "muda / tua", "grappig", "lucu"],
+      ["blond / donker", "pirang / gelap", "serieus", "serius"],
+      ["knap", "rupawan", "verlegen", "pemalu"],
+      ["sterk", "kuat", "slim", "pintar"],
+      ["het haar", "rambut", "lui", "malas"],
+      ["de bril", "kacamata", "eerlijk", "jujur"],
+      ["de baard", "jenggot", "streng", "tegas"],
+      ["de ogen", "mata", "gezellig", "menyenangkan diajak bersama"]
+     ] },
+    { "type": "p", "text": "⚠️ *Knap* berarti rupawan **dan** pintar, tergantung konteksnya. *Wat knap van je!* berarti \"hebat kamu!\", bukan komentar tentang penampilan." },
+    { "type": "kotak", "title": "Warna", "items": [
+      "*rood* (merah), *blauw* (biru), *geel* (kuning), *groen* (hijau), *zwart* (hitam), *wit* (putih), *grijs* (abu-abu), *bruin* (cokelat), *oranje* (oranye), *roze* (merah muda), *paars* (ungu).",
+      "*Rood → rode*, *wit → witte*, *zwart → zwarte* — ejaannya menyesuaikan aturan vokal panjang-pendek.",
+      "*Oranje* dan *roze* tidak pernah berubah: *een oranje trui*.",
+      "⚠️ **Oranje** bukan sekadar warna di Belanda: ia warna keluarga kerajaan (Oranje-Nassau) dan warna tim nasional. Pada *Koningsdag*, 27 April, seluruh negeri berpakaian oranye."
+     ] }
+   ]
+  },
+  {
+   "title": "Kata sifat yang sering dipakai",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Cara baca", "Bahasa Indonesia"], "rows": [
+      ["groot / klein", "khroht / klèyn", "besar / kecil"],
+      ["nieuw / oud", "niv / aut", "baru / lama"],
+      ["duur / goedkoop", "dühr / khut-KOHP", "mahal / murah"],
+      ["mooi / lelijk", "mohy / LEH-lek", "indah / jelek"],
+      ["makkelijk / moeilijk", "MA-ke-lek / MUY-lek", "mudah / sulit"],
+      ["snel / langzaam", "snèl / LANG-zahm", "cepat / lambat"],
+      ["vol / leeg", "fol / lehkh", "penuh / kosong"],
+      ["druk / rustig", "drük / RÜS-tekh", "ramai / tenang"],
+      ["schoon / vies", "skhohn / fis", "bersih / kotor"],
+      ["licht / zwaar", "likht / zvahr", "ringan / berat"],
+      ["lekker", "LÈ-ker", "enak / nyaman"],
+      ["gezellig", "khe-ZÈ-lekh", "hangat & menyenangkan"]
+     ] },
+    { "type": "p", "text": "*Lekker* jauh melampaui \"enak\" untuk makanan: *lekker weer* (cuaca enak), *lekker slapen* (tidur nyenyak), *lekker bezig* (asyik mengerjakan sesuatu). Ia salah satu kata paling sering diucapkan orang Belanda dalam sehari." },
+    { "type": "p", "text": "*Gezellig* adalah kata Belanda yang paling terkenal tidak bisa diterjemahkan. Ia berarti hangat, akrab, nyaman, dan menyenangkan sekaligus — dan bisa dipakai untuk ruangan, sore hari, kedai, maupun orang. *Wat gezellig!* diucapkan waktu seseorang datang berkunjung; *het was heel gezellig* diucapkan waktu ia pulang. Kalau kamu belajar satu kata dari unit ini, pilih yang ini." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "groot / klein", "baca": "khroht / klèyn", "id": "besar / kecil" },
+  { "nl": "lang / kort", "baca": "lang / kort", "id": "panjang / pendek" },
+  { "nl": "mooi / lelijk", "baca": "mohy / LEH-lek", "id": "indah / jelek" },
+  { "nl": "aardig", "baca": "AHR-dekh", "id": "baik hati" },
+  { "nl": "vriendelijk", "baca": "FRIN-de-lek", "id": "ramah" },
+  { "nl": "grappig", "baca": "KHRA-pekh", "id": "lucu" },
+  { "nl": "slim", "baca": "slim", "id": "pintar" },
+  { "nl": "knap", "baca": "knap", "id": "rupawan / hebat" },
+  { "nl": "lui", "baca": "löy", "id": "malas" },
+  { "nl": "verlegen", "baca": "fer-LEH-khe(n)", "id": "pemalu" },
+  { "nl": "gezellig", "baca": "khe-ZÈ-lekh", "id": "hangat & menyenangkan" },
+  { "nl": "lekker", "baca": "LÈ-ker", "id": "enak / nyaman" },
+  { "nl": "druk / rustig", "baca": "drük / RÜS-tekh", "id": "ramai / tenang" },
+  { "nl": "makkelijk / moeilijk", "baca": "MA-ke-lek / MUY-lek", "id": "mudah / sulit" },
+  { "nl": "schoon / vies", "baca": "skhohn / fis", "id": "bersih / kotor" },
+  { "nl": "rood / blauw", "baca": "roht / blau", "id": "merah / biru" },
+  { "nl": "geel / groen", "baca": "khehl / khrun", "id": "kuning / hijau" },
+  { "nl": "zwart / wit", "baca": "zvart / vit", "id": "hitam / putih" },
+  { "nl": "grijs / bruin", "baca": "khrèys / bröyn", "id": "abu-abu / cokelat" },
+  { "nl": "het haar", "baca": "het hahr", "id": "rambut" },
+  { "nl": "de ogen", "baca": "de OH-khe(n)", "id": "mata" },
+  { "nl": "de bril", "baca": "de bril", "id": "kacamata" },
+  { "nl": "de jas / de rugzak", "baca": "de yas / de RÜKH-zak", "id": "jaket / ransel" },
+  { "nl": "beter / best", "baca": "BEH-ter / bèst", "id": "lebih baik / terbaik" },
+  { "nl": "meer / minder", "baca": "mehr / MIN-der", "id": "lebih banyak / lebih sedikit" },
+  { "nl": "liever", "baca": "LI-fer", "id": "lebih suka" },
+  { "nl": "dan / als", "baca": "dan / als", "id": "daripada / sebagai" },
+  { "nl": "opletten", "baca": "OP-lè-te(n)", "id": "memperhatikan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tambahkan -e kalau perlu.",
+   "items": [
+    "een ____ huis (groot)",
+    "het ____ huis (groot)",
+    "een ____ man (lang)",
+    "de ____ jas (rood)",
+    "een ____ kind (klein)",
+    "____ water (warm)",
+    "____ huizen (mooi)",
+    "Het huis is ____. (groot)"
+   ]
+  },
+  {
+   "prompt": "Isi bentuk perbandingannya.",
+   "items": [
+    "Amsterdam is ____ dan Utrecht. (groot)",
+    "Deze fiets is ____ dan die. (duur)",
+    "Dit is de ____ stad van Nederland. (mooi)",
+    "Thee is ____ dan koffie voor mij. (goed)",
+    "Ik drink ____ thee. (graag → lebih suka)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Dia tinggi dan rambutnya gelap.",
+    "Dia pakai jaket merah.",
+    "Rumah kecil itu bagus.",
+    "Ini sebuah rumah besar.",
+    "Utrecht lebih tenang daripada Amsterdam.",
+    "Sore tadi menyenangkan sekali."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "jas / draagt / rode / hij / een",
+    "huis / groot / een / is / dat",
+    "dan / groter / Utrecht / Amsterdam / is",
+    "gezellig / was / het / erg",
+    "hij / eruit / ziet / hoe / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "groot — grote — lange — rode — klein — warm — mooie — groot",
+  "groter — duurder — mooiste — beter — liever",
+  "Hij is lang en heeft donker haar. — Hij draagt een rode jas. — Het kleine huis is mooi. — Dit is een groot huis. — Utrecht is rustiger dan Amsterdam. — Het was heel gezellig.",
+  "Hij draagt een rode jas. — Dat is een groot huis. — Amsterdam is groter dan Utrecht. — Het was erg gezellig. — Hoe ziet hij eruit?"
+ ]
+}

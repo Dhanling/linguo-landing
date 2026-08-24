@@ -1,0 +1,222 @@
+{
+ "title": "Di supermarket",
+ "title_target": "In de supermarkt",
+ "goal": "Berbelanja bahan makanan, menyebut jumlah dan takaran, serta memakai *wat*, *veel*, *weinig*, dan *een paar*.",
+ "bekal": [
+  "menyebut takaran: *een kilo*, *een ons*, *een pak*, *een doos*",
+  "memakai kata jumlah tak pasti: *wat*, *veel*, *weinig*, *een paar*",
+  "menanyakan letak barang dan meminta bantuan di toko"
+ ],
+ "wave": "Ulangi **unit 12**: lihat ramalan cuaca hari ini di ponselmu, lalu ceritakan seluruh isinya dalam bahasa Belanda dengan kalimat *het …*.",
+ "dialogs": [
+  {
+   "title": "Dialog — Bij de Albert Heijn",
+   "intro": "Supermarket sore hari. Budi mencari satu bahan yang ternyata tidak ada di negeri ini.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Pardon, waar staat de rijst?", "id": "Permisi, berasnya di mana?", "literal": "maaf, di-mana berdiri beras-itu?" },
+    { "speaker": "Medewerker:", "text": "Schap zeven, naast de pasta.", "id": "Rak tujuh, di sebelah pasta.", "literal": "rak tujuh, di-sebelah pasta-itu." },
+    { "speaker": "Budi:", "text": "En hebben jullie ook kecap manis?", "id": "Ada kecap manis juga?", "literal": "dan punya kalian juga kecap manis?" },
+    { "speaker": "Medewerker:", "text": "Zeker. Bij de wereldkeuken, onderin.", "id": "Ada. Di bagian masakan dunia, rak bawah.", "literal": "pasti. pada dapur-dunia-itu, bawah-dalam." },
+    { "speaker": "Budi:", "text": "Serieus? In een gewone supermarkt?", "id": "Serius? Di supermarket biasa?", "literal": "serius? dalam satu biasa supermarket?" },
+    { "speaker": "Medewerker:", "text": "Natuurlijk. We eten hier veel Indonesisch.", "id": "Tentu. Di sini orang banyak makan masakan Indonesia.", "literal": "tentu-saja. kami makan di-sini banyak Indonesia." },
+    { "speaker": "Budi:", "text": "Dat wist ik niet. Mag ik ook een half pond kaas?", "id": "Saya tidak tahu itu. Boleh minta setengah pon keju juga?", "literal": "itu tahu saya tidak. boleh saya juga satu setengah pon keju?" },
+    { "speaker": "Medewerker:", "text": "Bij de kaasafdeling. Wilt u jong of oud?", "id": "Di bagian keju. Mau yang muda atau tua?", "literal": "pada keju-bagian-itu. mau Anda muda atau tua?" },
+    { "speaker": "Budi:", "text": "Wat is het verschil?", "id": "Bedanya apa?", "literal": "apa adalah perbedaan-itu?" },
+    { "speaker": "Medewerker:", "text": "Oude kaas is droger en veel scherper.", "id": "Keju tua lebih kering dan jauh lebih tajam.", "literal": "tua keju adalah lebih-kering dan banyak lebih-tajam." },
+    { "speaker": "Budi:", "text": "Dan neem ik een paar plakjes oude kaas.", "id": "Kalau gitu saya ambil beberapa lembar keju tua.", "literal": "kemudian ambil saya satu pasang lembar-kecil tua keju." },
+    { "speaker": "Medewerker:", "text": "Prima. Verder nog iets? Anders: kassa vier is vrij.", "id": "Baik. Ada lagi? Kalau tidak: kasir empat kosong.", "literal": "bagus. selanjutnya lagi sesuatu? lain: kasir empat adalah bebas." }
+   ],
+   "notes": [
+    "**Waar staat de rijst?** — bahasa Belanda memilih kata kerja menurut bentuk bendanya: *staan* (berdiri) untuk yang tegak, *liggen* (berbaring) untuk yang mendatar, *zitten* (duduk) untuk yang berada di dalam sesuatu. *De melk staat in de koelkast*, *het boek ligt op tafel*.",
+    "**Onderin** = di bagian bawah (dalam rak). Keluarganya: *bovenin*, *achterin*, *voorin*, *middenin*.",
+    "**We eten hier veel Indonesisch** — dan ini sungguhan. Masakan Indonesia adalah bagian dari makanan sehari-hari Belanda: *nasi*, *bami*, *saté*, *kroepoek*, *sambal*, dan *kecap* ada di hampir setiap supermarket. Kata-kata itu masuk ke bahasa Belanda utuh, kadang dengan ejaan yang mengejutkan.",
+    "**Dat wist ik niet** — bentuk lampau dari *weten*. Bentuk lampau baru dibahas di unit 17, tapi kalimat ini terlalu berguna untuk ditunda.",
+    "**Jong of oud?** — usia keju menentukan rasanya: *jong* (4 minggu, lembut), *belegen* (4 bulan), *oud* (10 bulan, tajam dan berbutir garam), *overjarig* (lebih dari setahun). Pertanyaan ini akan diajukan kepadamu setiap kali membeli keju di Belanda.",
+    "**Een paar plakjes** — *een paar* berarti \"beberapa\", bukan \"sepasang\" (itu *een paar* juga, tapi dengan konteks jelas: *een paar schoenen*). *Plakje* = irisan tipis, bentuk kecil dari *plak*.",
+    "**Kassa vier is vrij** — *vrij* berarti kosong/bebas. Di supermarket Belanda kamu memasukkan sendiri belanjaan ke tas: kantong plastik berbayar dan tidak disediakan pramuniaga. Bawa *een boodschappentas* sendiri."
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut jumlah tak pasti",
+     "body": [
+      "Bahasa Indonesia memakai satu kata \"beberapa\" untuk banyak keadaan; bahasa Belanda membedakannya menurut jenis kata bendanya."
+     ],
+     "table": {
+      "head": ["Kata", "Dipakai untuk", "Contoh"],
+      "rows": [
+       ["**wat**", "sedikit, tak terhitung", "Ik wil **wat** melk."],
+       ["**een beetje**", "sedikit, tak terhitung", "**Een beetje** suiker, graag."],
+       ["**een paar**", "beberapa, terhitung", "**Een paar** appels."],
+       ["**enkele**", "beberapa, agak resmi", "**Enkele** mensen wachten."],
+       ["**veel**", "banyak", "**Veel** mensen, **veel** water."],
+       ["**weinig**", "sedikit sekali", "**Weinig** tijd, **weinig** mensen."],
+       ["**genoeg**", "cukup", "Ik heb **genoeg** geld."],
+       ["**te veel / te weinig**", "terlalu banyak / sedikit", "Dat is **te veel**."]
+      ]
+     },
+     "after": [
+      "*Veel* dan *weinig* dipakai untuk yang terhitung maupun tidak — kelonggaran yang tidak ada dalam bahasa Inggris (*many/much*).",
+      "⚠️ *Wat* punya dua nyawa: kata tanya \"apa\" dan kata jumlah \"sedikit\". Yang menentukan adalah tempatnya: *Wat wil je?* lawan *Ik wil wat water.*",
+      "*Nog wat* = sedikit lagi: *Wil je nog wat koffie?*"
+     ]
+    },
+    {
+     "title": "Takaran dan kemasan",
+     "body": [
+      "Sesudah kata takaran, kata bendanya berdiri **tanpa kata sandang dan tanpa *van***: *een kilo appels*, bukan *een kilo van de appels*."
+     ],
+     "table": {
+      "head": ["Nederlands", "Arti", "Contoh"],
+      "rows": [
+       ["een kilo", "1 kg", "een kilo aardappelen"],
+       ["een pond", "500 g", "een pond kaas"],
+       ["een ons", "100 g", "twee ons ham"],
+       ["een liter", "1 liter", "een liter melk"],
+       ["een pak", "kotak/karton", "een pak melk, een pak rijst"],
+       ["een fles", "botol", "een fles water"],
+       ["een blik", "kaleng", "een blik tomaten"],
+       ["een pot", "toples", "een pot pindakaas"],
+       ["een zak", "kantong", "een zak chips"],
+       ["een doos", "dus", "een doos eieren"],
+       ["een bosje", "ikat", "een bosje wortels"],
+       ["een stuk", "potong", "een stuk taart"]
+      ]
+     },
+     "after": [
+      "⚠️ *Een ons* = 100 gram, bukan ons dalam arti Inggris. Memesan *twee ons* di toko keju berarti 200 gram — takaran yang paling sering dipakai orang Belanda.",
+      "Kata takaran tidak dijamakkan sesudah angka: *drie kilo*, *twee ons*, *vijf liter* — bukan *drie kilo's*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Belanja mingguan",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Cara baca", "Bahasa Indonesia"], "rows": [
+      ["het brood", "het broht", "roti"],
+      ["de melk", "de mèlk", "susu"],
+      ["de kaas", "de kahs", "keju"],
+      ["het ei / de eieren", "het èy / de ÈY-e-re(n)", "telur"],
+      ["de boter", "de BOH-ter", "mentega"],
+      ["de rijst", "de rèyst", "beras"],
+      ["de aardappel", "de AHR-da-pel", "kentang"],
+      ["de groente", "de KHRUN-te", "sayur"],
+      ["het fruit", "het fröyt", "buah"],
+      ["de appel / de banaan", "de A-pel / de ba-NAHN", "apel / pisang"],
+      ["de ui / de knoflook", "de öy / de KNOF-lohk", "bawang bombai / bawang putih"],
+      ["de kip / het rundvlees", "de kip / het RÜNT-flehs", "ayam / daging sapi"],
+      ["de suiker / het zout", "de SÖY-ker / het zaut", "gula / garam"],
+      ["de koffie / de thee", "de KO-fi / de teh", "kopi / teh"]
+     ] },
+    { "type": "kotak", "title": "Supermarket Belanda: yang perlu diketahui", "items": [
+      "**Albert Heijn** (paling besar), **Jumbo**, **Lidl**, **Aldi**, dan **toko toko** (toko Asia) untuk bahan Indonesia yang lengkap.",
+      "*Bonuskaart* / *bonus* — kartu diskon toko. Tanpa kartunya, kamu membayar harga penuh untuk barang yang sedang promo.",
+      "Tas belanja **berbayar** dan tidak diberikan otomatis. *Wilt u een tasje?* — kalau iya, ada biayanya.",
+      "*Statiegeld* — botol dan kaleng dikembalikan ke mesin; struknya dipotong dari total belanja.",
+      "Sabtu sore dan Minggu bisa sangat ramai; toko kecil banyak yang tutup pada hari Minggu dan Senin pagi.",
+      "⚠️ Sebagian besar supermarket **hanya menerima kartu debit** — ingat kembali unit 6."
+     ] }
+   ]
+  },
+  {
+   "title": "Kalimat di toko",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Bahasa Indonesia"], "rows": [
+      ["Waar kan ik … vinden?", "Di mana saya bisa menemukan …?"],
+      ["Heeft u nog …?", "Masih ada …?"],
+      ["Het is uitverkocht.", "Habis terjual."],
+      ["Mag ik een tasje?", "Boleh minta tas?"],
+      ["Heeft u een bonuskaart?", "Punya kartu member?"],
+      ["Wilt u de bon?", "Mau strukmya?"],
+      ["Kunt u dat afwegen?", "Bisa ditimbang?"],
+      ["Is dit vers?", "Ini segar?"],
+      ["Tot wanneer is het houdbaar?", "Tahan sampai kapan?"],
+      ["Ik zoek iets zonder varkensvlees.", "Saya cari yang tanpa daging babi."]
+     ] },
+    { "type": "p", "text": "*Houdbaar tot* (baik digunakan sebelum) dan *ten minste houdbaar tot* (sebaiknya sebelum) tercetak di setiap kemasan — dua ungkapan yang layak dihafal sebelum belanja pertama." },
+    { "type": "p", "text": "Untuk mencari bahan Indonesia: kata kuncinya *toko* — dipakai dalam bahasa Belanda persis seperti dalam bahasa Indonesia, tapi khusus berarti toko bahan Asia. *Is er een toko in de buurt?* akan langsung dimengerti." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "de supermarkt", "baca": "de SÜ-per-markt", "id": "supermarket" },
+  { "nl": "de boodschappen", "baca": "de BOHT-skha-pe(n)", "id": "belanjaan" },
+  { "nl": "het schap", "baca": "het skhap", "id": "rak" },
+  { "nl": "de kassa", "baca": "de KA-sa", "id": "kasir" },
+  { "nl": "de bon", "baca": "de bon", "id": "struk" },
+  { "nl": "het tasje", "baca": "het TA-sye", "id": "kantong belanja" },
+  { "nl": "staan / liggen / zitten", "baca": "stahn / LI-khe(n) / ZI-te(n)", "id": "berada (tegak / mendatar / di dalam)" },
+  { "nl": "vinden", "baca": "FIN-de(n)", "id": "menemukan" },
+  { "nl": "zoeken", "baca": "ZU-ke(n)", "id": "mencari" },
+  { "nl": "wegen", "baca": "VEH-khe(n)", "id": "menimbang" },
+  { "nl": "de kilo / het pond / het ons", "baca": "de KI-loh", "id": "kg / 500 g / 100 g" },
+  { "nl": "het pak", "baca": "het pak", "id": "kotak / karton" },
+  { "nl": "het blik", "baca": "het blik", "id": "kaleng" },
+  { "nl": "de fles", "baca": "de flès", "id": "botol" },
+  { "nl": "de doos", "baca": "de dohs", "id": "dus" },
+  { "nl": "het stuk", "baca": "het stük", "id": "potong / buah" },
+  { "nl": "veel / weinig", "baca": "fehl / VÈY-nekh", "id": "banyak / sedikit" },
+  { "nl": "een paar", "baca": "en pahr", "id": "beberapa" },
+  { "nl": "wat", "baca": "vat", "id": "sedikit" },
+  { "nl": "genoeg", "baca": "khe-NUKH", "id": "cukup" },
+  { "nl": "vers", "baca": "fèrs", "id": "segar" },
+  { "nl": "houdbaar", "baca": "HAUT-bahr", "id": "tahan / layak konsumsi" },
+  { "nl": "uitverkocht", "baca": "ÖYT-fer-kokht", "id": "habis terjual" },
+  { "nl": "goedkoop / duur", "baca": "khut-KOHP / dühr", "id": "murah / mahal" },
+  { "nl": "het verschil", "baca": "het fer-SKHIL", "id": "perbedaan" },
+  { "nl": "scherp", "baca": "skhèrp", "id": "tajam / pedas" },
+  { "nl": "de afdeling", "baca": "de AF-deh-ling", "id": "bagian / departemen" },
+  { "nl": "vrij", "baca": "frèy", "id": "kosong / bebas" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan takaran atau kemasan yang tepat.",
+   "items": [
+    "een ____ melk (1 liter)",
+    "een ____ eieren (dus)",
+    "twee ____ kaas (200 gram)",
+    "een ____ rijst (karton)",
+    "een ____ tomaten (kaleng)",
+    "een ____ taart (potong)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan veel, weinig, wat, atau een paar.",
+   "items": [
+    "Ik heb ____ tijd — ik moet me haasten. (sedikit sekali)",
+    "Wil je ____ melk in je koffie? (sedikit)",
+    "Er staan ____ mensen bij de kassa. (banyak)",
+    "Ik koop ____ appels. (beberapa)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Di mana berasnya?",
+    "Masih ada telur?",
+    "Boleh minta setengah kilo keju?",
+    "Ini segar?",
+    "Boleh minta tas?",
+    "Saya cari yang tanpa daging babi."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "rijst / de / staat / waar / ?",
+    "kilo / een / appels / graag / ik / wil",
+    "tasje / ik / een / mag / ?",
+    "duur / te / is / dat / mij / voor",
+    "kassa / vrij / vier / is"
+   ]
+  }
+ ],
+ "answers": [
+  "liter — doos — ons — pak — blik — stuk",
+  "weinig — wat — veel — een paar",
+  "Waar staat de rijst? — Heeft u nog eieren? — Mag ik een half kilo kaas? — Is dit vers? — Mag ik een tasje? — Ik zoek iets zonder varkensvlees.",
+  "Waar staat de rijst? — Ik wil graag een kilo appels. — Mag ik een tasje? — Dat is te duur voor mij. — Kassa vier is vrij."
+ ]
+}

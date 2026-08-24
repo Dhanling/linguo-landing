@@ -1,0 +1,207 @@
+{
+ "title": "Dari mana asalmu?",
+ "title_target": "Waar kom je vandaan?",
+ "goal": "Menyebut asal, tempat tinggal, pekerjaan, dan bahasa yang kamu kuasai — sekaligus mengenal bentuk dasar kata kerja bahasa Belanda.",
+ "bekal": [
+  "menjawab *waar kom je vandaan?* dan *waar woon je?*",
+  "menyebut pekerjaanmu tanpa kata sandang — *ik ben student*, bukan *een student*",
+  "mengatakan bahasa apa saja yang kamu kuasai dan seberapa jauh"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — In de pauze",
+   "intro": "Jeda kursus. Sanne membawa dua cangkir kopi.",
+   "lines": [
+    { "speaker": "Sanne:", "text": "Waar kom je vandaan, Budi?", "id": "Kamu berasal dari mana, Budi?", "literal": "di-mana datang kamu dari-sana?" },
+    { "speaker": "Budi:", "text": "Ik kom uit Indonesië, uit Bandung.", "id": "Saya dari Indonesia, dari Bandung.", "literal": "saya datang dari Indonesia, dari Bandung." },
+    { "speaker": "Sanne:", "text": "En waar woon je nu?", "id": "Dan sekarang tinggal di mana?", "literal": "dan di-mana tinggal kamu sekarang?" },
+    { "speaker": "Budi:", "text": "Ik woon in Utrecht, bij mijn tante.", "id": "Saya tinggal di Utrecht, di rumah bibi saya.", "literal": "saya tinggal di Utrecht, dekat milik-saya bibi." },
+    { "speaker": "Sanne:", "text": "Wat doe je hier? Werk je of studeer je?", "id": "Kamu ngapain di sini? Kerja atau kuliah?", "literal": "apa lakukan kamu di-sini? bekerja kamu atau belajar kamu?" },
+    { "speaker": "Budi:", "text": "Ik studeer. Ik ben student aan de universiteit.", "id": "Saya kuliah. Saya mahasiswa di universitas.", "literal": "saya belajar. saya adalah mahasiswa pada universitas-itu." },
+    { "speaker": "Sanne:", "text": "Wat leuk. En je Nederlands is al goed!", "id": "Asyik. Dan bahasa Belandamu sudah bagus!", "literal": "apa asyik. dan milik-kamu Belanda adalah sudah baik!" },
+    { "speaker": "Budi:", "text": "Nee hoor, ik spreek een beetje. Ik leer nog.", "id": "Ah, tidak kok, saya cuma sedikit bisa. Masih belajar.", "literal": "tidak sungguh, saya berbicara sedikit. saya belajar masih." },
+    { "speaker": "Sanne:", "text": "Spreek je ook Engels?", "id": "Kamu bisa bahasa Inggris juga?", "literal": "berbicara kamu juga Inggris?" },
+    { "speaker": "Budi:", "text": "Ja, en Indonesisch en Soendanees natuurlijk.", "id": "Ya, dan bahasa Indonesia dan Sunda tentu saja.", "literal": "ya, dan Indonesia dan Sunda tentu-saja." },
+    { "speaker": "Sanne:", "text": "Vier talen! Ik spreek er maar twee.", "id": "Empat bahasa! Saya cuma dua.", "literal": "empat bahasa! saya berbicara darinya cuma dua." }
+   ],
+   "notes": [
+    "**Waar kom je vandaan?** — perhatikan *vandaan* yang terlempar ke ujung kalimat. Bahasa Belanda punya banyak kata kerja yang bagiannya berpisah begini (dibahas penuh di unit 9); untuk sekarang hafalkan pertanyaannya utuh.",
+    "**Ik kom uit Indonesië.** Untuk negara dipakai *uit* (dari dalam), bukan *van*. Untuk kota juga *uit*: *ik kom uit Bandung*.",
+    "**Ik woon in Utrecht** — *wonen* berarti tinggal/berdiam, sementara *leven* berarti hidup. Jangan tertukar: *ik leef in Utrecht* terdengar seperti kamu bertahan hidup di sana.",
+    "**Ik ben student** — tanpa *een*! Ini salah satu perbedaan paling rapi dari bahasa Inggris (*I am a student*). Kata sandang muncul lagi begitu ada kata sifat: *ik ben een goede student*.",
+    "**Nee hoor** adalah cara Belanda menolak pujian dengan ramah. Kata *hoor* di ujung kalimat tidak berarti apa-apa yang bisa diterjemahkan; ia melunakkan nada, seperti \"kok\" atau \"ya\" dalam bahasa Indonesia: *Dat is goed hoor!*",
+    "**Ik spreek een beetje** — *een beetje* (sedikit) adalah ungkapan penyelamat di bulan-bulan pertama, biasanya lengkapnya *ik spreek een beetje Nederlands*.",
+    "**Ik spreek er maar twee** — *er* di sini menggantikan \"dari (bahasa-bahasa) itu\". Kata *er* adalah salah satu kata paling khas bahasa Belanda dan paling sulit diterjemahkan; kamu akan bertemu dengannya berkali-kali. Untuk sekarang cukup kenali bentuknya.",
+    "**Maar** punya dua arti: \"tetapi\" dan — seperti di sini — \"hanya\". Yang menentukan adalah letaknya: di awal bagian kalimat ia \"tetapi\", di tengah ia \"hanya\"."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja masa kini: pola dasarnya",
+     "body": [
+      "Bentuk kamus kata kerja Belanda berakhiran **-en**: *wonen*, *werken*, *spreken*. Buang *-en* dan kamu dapat **akar** kata (*ik*-bentuk): *woon*, *werk*, *spreek*. Sisanya cuma menambah *-t* atau *-en*."
+     ],
+     "table": {
+      "head": ["Kata ganti", "Bentuk", "wonen (tinggal)", "werken (bekerja)"],
+      "rows": [
+       ["ik", "akar", "ik **woon**", "ik **werk**"],
+       ["jij / u / hij / zij", "akar + **t**", "je **woont**", "hij **werkt**"],
+       ["wij / jullie / zij", "bentuk kamus", "we **wonen**", "ze **werken**"]
+      ]
+     },
+     "after": [
+      "Cuma tiga baris. Bandingkan dengan bahasa Prancis atau Spanyol yang punya enam bentuk berbeda — di sini kamu praktis hanya perlu memutuskan: pakai *-t* atau tidak.",
+      "⚠️ Satu perkecualian yang akan sering kamu temui: kalau *jij/je* berdiri **sesudah** kata kerjanya (dalam pertanyaan atau kalimat terbalik), huruf *-t* itu **hilang**: *je woont* → *woon je?*, *je werkt* → *werk je?* Aturan ini hanya berlaku untuk *jij/je*, tidak untuk *u*: *woont u?*",
+      "Akar kata tidak pernah diakhiri dua huruf mati yang sama atau huruf *v/z*: *wonen → woon* (bukan *won*), *leven → leef*, *reizen → reis*. Alasannya ejaan, bukan tata bahasa: bunyi vokalnya harus tetap panjang."
+     ]
+    },
+    {
+     "title": "Negara, kebangsaan, bahasa",
+     "body": [
+      "Bahasa Belanda memakai satu kata untuk kebangsaan dan bahasa, dan menuliskannya dengan **huruf besar**."
+     ],
+     "table": {
+      "head": ["Negara", "Orangnya (lk / pr)", "Bahasa / sifat"],
+      "rows": [
+       ["Nederland", "een Nederlander / Nederlandse", "Nederlands"],
+       ["Indonesië", "een Indonesiër / Indonesische", "Indonesisch"],
+       ["België", "een Belg / Belgische", "Nederlands & Frans"],
+       ["Duitsland", "een Duitser / Duitse", "Duits"],
+       ["Engeland", "een Engelsman / Engelse", "Engels"],
+       ["Frankrijk", "een Fransman / Franse", "Frans"],
+       ["China", "een Chinees / Chinese", "Chinees"],
+       ["Japan", "een Japanner / Japanse", "Japans"]
+      ]
+     },
+     "after": [
+      "Untuk menyebut kemampuan bahasa, kata bahasanya berdiri sendiri tanpa kata sandang: *ik spreek Nederlands*, *hij leert Engels*.",
+      "⚠️ *Holland* sebenarnya nama dua provinsi saja (Noord- dan Zuid-Holland). Negaranya bernama **Nederland**. Orang Belanda memakai keduanya, tapi di luar Holland sebagian orang keberatan — dan sejak 2020 pemerintahnya resmi hanya memakai *Nederland*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pekerjaan",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Cara baca", "Bahasa Indonesia"], "rows": [
+      ["de student", "de stü-DÈNT", "mahasiswa"],
+      ["de leraar / de lerares", "de LEH-rahr", "guru (lk / pr)"],
+      ["de docent", "de doh-SÈNT", "pengajar (kursus/kampus)"],
+      ["de arts / de dokter", "de arts", "dokter"],
+      ["de verpleegkundige", "de fer-PLEHKH-kün-de-khe", "perawat"],
+      ["de ingenieur", "de in-zye-NÖR", "insinyur"],
+      ["de ondernemer", "de on-der-NEH-mer", "pengusaha"],
+      ["de kok", "de kok", "juru masak"],
+      ["de winkelier", "de ving-ke-LIR", "pemilik toko"],
+      ["de chauffeur", "de syo-FÖR", "sopir"],
+      ["de vertaler", "de fer-TAH-ler", "penerjemah"],
+      ["de ambtenaar", "de AMPT-e-nahr", "pegawai negeri"]
+     ] },
+    { "type": "p", "text": "Banyak nama pekerjaan Belanda sudah menjadi kata Indonesia, kadang dengan arti yang bergeser: *kantoor* → kantor, *winkel* → bengkel (di Belanda artinya **toko**), *dokter*, *chauffeur* → sopir. Kalau sebuah kata terasa akrab, kemungkinan besar ia memang pernah singgah di bahasa kita." },
+    { "type": "kotak", "title": "Tiga pertanyaan pembuka yang wajib bisa dijawab", "items": [
+      "*Wat doe je?* — Kamu kerja apa? Jawab: *Ik ben leraar* / *Ik studeer*.",
+      "*Waar werk je?* — Kerja di mana? Jawab: *Ik werk bij Philips* (pakai **bij** untuk perusahaan, **in** untuk tempat).",
+      "*Wat studeer je?* — Kuliah jurusan apa? Jawab: *Ik studeer economie / geneeskunde / informatica*.",
+      "⚠️ *Wat ben je?* bukan pertanyaan pekerjaan yang lazim; ia terdengar seperti menanyakan jenis makhluk apa kamu."
+     ] }
+   ]
+  },
+  {
+   "title": "Seberapa jauh bahasamu",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Bahasa Indonesia"], "rows": [
+      ["Ik spreek vloeiend Nederlands.", "Saya lancar berbahasa Belanda."],
+      ["Ik spreek een beetje Nederlands.", "Saya bisa sedikit bahasa Belanda."],
+      ["Ik versta het wel, maar ik spreek het niet.", "Saya mengerti, tapi tidak bisa bicara."],
+      ["Ik leer nog.", "Saya masih belajar."],
+      ["Kunt u langzamer praten, alstublieft?", "Bisa bicara lebih pelan?"],
+      ["Wat betekent dat?", "Apa artinya itu?"],
+      ["Hoe zeg je … in het Nederlands?", "Bagaimana mengatakan … dalam bahasa Belanda?"],
+      ["Spreekt u Engels?", "Anda bisa bahasa Inggris?"]
+     ] },
+    { "type": "p", "text": "*In het Nederlands* — perhatikan *het*: nama bahasa memakai kata sandang begitu ia berdiri sesudah kata depan. *Ik lees het boek in het Engels*." },
+    { "type": "p", "text": "Ini nasihat praktis yang tidak ada di buku tata bahasa mana pun: hampir semua orang Belanda berbahasa Inggris dengan sangat baik, dan mereka akan **langsung beralih** ke bahasa Inggris begitu mendengar keraguan kecil di kalimatmu. Itu bukan penghinaan, itu kebiasaan menolong. Kalimat penyelamatnya: *Mag ik Nederlands oefenen met u?* — \"boleh saya latihan bahasa Belanda dengan Anda?\" Nyaris tidak ada yang menolak." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "komen uit", "baca": "KOH-me(n) öyt", "id": "berasal dari" },
+  { "nl": "waar", "baca": "vahr", "id": "di mana" },
+  { "nl": "wonen", "baca": "VOH-ne(n)", "id": "tinggal" },
+  { "nl": "werken", "baca": "VÈR-ke(n)", "id": "bekerja" },
+  { "nl": "studeren", "baca": "stü-DEH-re(n)", "id": "kuliah / belajar (formal)" },
+  { "nl": "leren", "baca": "LEH-re(n)", "id": "belajar / mengajari" },
+  { "nl": "spreken", "baca": "SPREH-ke(n)", "id": "berbicara" },
+  { "nl": "praten", "baca": "PRAH-te(n)", "id": "mengobrol" },
+  { "nl": "doen", "baca": "dun", "id": "melakukan" },
+  { "nl": "de taal / de talen", "baca": "de tahl", "id": "bahasa" },
+  { "nl": "Nederland", "baca": "NEH-der-lant", "id": "Belanda (negara)" },
+  { "nl": "Nederlands", "baca": "NEH-der-lants", "id": "bahasa Belanda" },
+  { "nl": "Indonesië", "baca": "in-do-NEH-zi-ye", "id": "Indonesia" },
+  { "nl": "Engels", "baca": "ÈNG-els", "id": "bahasa Inggris" },
+  { "nl": "een beetje", "baca": "en BEH-tye", "id": "sedikit" },
+  { "nl": "vloeiend", "baca": "VLUY-ent", "id": "lancar" },
+  { "nl": "nog", "baca": "nokh", "id": "masih" },
+  { "nl": "al", "baca": "al", "id": "sudah" },
+  { "nl": "nu", "baca": "nü", "id": "sekarang" },
+  { "nl": "of", "baca": "of", "id": "atau" },
+  { "nl": "maar", "baca": "mahr", "id": "tetapi / hanya" },
+  { "nl": "natuurlijk", "baca": "na-TÜHR-lek", "id": "tentu saja" },
+  { "nl": "de universiteit", "baca": "ü-ni-fer-si-TÈYT", "id": "universitas" },
+  { "nl": "het werk", "baca": "het vèrk", "id": "pekerjaan" },
+  { "nl": "de stad", "baca": "de stat", "id": "kota" },
+  { "nl": "bij", "baca": "bèy", "id": "di (tempat orang/perusahaan)" },
+  { "nl": "vier", "baca": "fir", "id": "empat" },
+  { "nl": "twee", "baca": "tveh", "id": "dua" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan bentuk kata kerja yang benar.",
+   "items": [
+    "Ik ____ in Utrecht. (wonen)",
+    "Hij ____ bij Philips. (werken)",
+    "____ je Nederlands? (spreken)",
+    "Wij ____ economie. (studeren)",
+    "Zij ____ uit Duitsland. (komen)",
+    "Wat ____ u? (doen)"
+   ]
+  },
+  {
+   "prompt": "Jawab tentang dirimu sendiri, lalu bandingkan dengan contoh di kunci.",
+   "items": [
+    "Waar kom je vandaan? ____",
+    "Waar woon je? ____",
+    "Wat doe je? ____",
+    "Welke talen spreek je? ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Saya berasal dari Indonesia.",
+    "Saya tinggal di Amsterdam.",
+    "Saya mahasiswa.",
+    "Saya bicara sedikit bahasa Belanda.",
+    "Apa artinya itu?",
+    "Bisa bicara lebih pelan?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "kom / Indonesië / uit / ik",
+    "woon / waar / je / ?",
+    "spreek / beetje / ik / een / Nederlands",
+    "werkt / bij / hij / Philips",
+    "student / ben / ik"
+   ]
+  }
+ ],
+ "answers": [
+  "woon — werkt — Spreek — studeren — komt — doet",
+  "Ik kom uit Indonesië. — Ik woon in Utrecht. — Ik ben student. — Ik spreek Indonesisch, Engels en een beetje Nederlands.",
+  "Ik kom uit Indonesië. — Ik woon in Amsterdam. — Ik ben student. — Ik spreek een beetje Nederlands. — Wat betekent dat? — Kunt u langzamer praten, alstublieft?",
+  "Ik kom uit Indonesië. — Waar woon je? — Ik spreek een beetje Nederlands. — Hij werkt bij Philips. — Ik ben student."
+ ]
+}

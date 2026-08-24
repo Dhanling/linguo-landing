@@ -1,0 +1,221 @@
+{
+ "title": "Jam berapa sekarang?",
+ "title_target": "Hoe laat is het?",
+ "goal": "Membaca jam dalam bahasa Belanda — termasuk *half* yang menunjuk ke depan, bukan ke belakang — serta menyebut hari, bulan, dan membuat janji temu.",
+ "bekal": [
+  "membaca jam analog dengan *over*, *voor*, *kwart*, dan *half*",
+  "menyebut hari, bulan, dan tanggal",
+  "membuat dan membatalkan janji temu"
+ ],
+ "wave": "Ulangi **unit 6**: sebut sepuluh harga sembarang dalam bahasa Belanda dengan suara keras, lalu tulis angkanya dan periksa sendiri.",
+ "dialogs": [
+  {
+   "title": "Dialog — Een afspraak maken",
+   "intro": "Budi menelepon dokter gigi. Ia mengira sudah menguasai angka. Ia keliru.",
+   "lines": [
+    { "speaker": "Assistent:", "text": "Tandartspraktijk De Vries, goedemorgen.", "id": "Praktik dokter gigi De Vries, selamat pagi.", "literal": "praktik-dokter-gigi De Vries, selamat-pagi." },
+    { "speaker": "Budi:", "text": "Goedemorgen, u spreekt met Budi Santoso. Ik wil graag een afspraak maken.", "id": "Selamat pagi, dengan Budi Santoso. Saya mau membuat janji.", "literal": "selamat-pagi, Anda berbicara dengan Budi Santoso. saya mau senang-hati satu janji membuat." },
+    { "speaker": "Assistent:", "text": "Dat kan. Kunt u donderdag om half drie?", "id": "Bisa. Kamis pukul setengah tiga bisa?", "literal": "itu bisa. bisa Anda Kamis pada setengah tiga?" },
+    { "speaker": "Budi:", "text": "Half drie… dus half vier?", "id": "Setengah tiga… jadi jam setengah empat?", "literal": "setengah tiga… jadi setengah empat?" },
+    { "speaker": "Assistent:", "text": "Nee hoor. Half drie is twee uur dertig.", "id": "Bukan. Half drie itu pukul 14.30.", "literal": "tidak sungguh. setengah tiga adalah dua jam tiga-puluh." },
+    { "speaker": "Budi:", "text": "Ah — een half uur vóór drie, niet erna.", "id": "Ah — setengah jam sebelum jam tiga, bukan sesudahnya.", "literal": "ah — satu setengah jam sebelum tiga, tidak sesudahnya." },
+    { "speaker": "Assistent:", "text": "Precies. Iedereen struikelt daarover.", "id": "Tepat. Semua orang tersandung di situ.", "literal": "persis. setiap-orang tersandung di-atas-itu." },
+    { "speaker": "Budi:", "text": "Donderdag half drie is prima. Hoe laat moet ik er zijn?", "id": "Kamis setengah tiga oke. Saya harus sampai jam berapa?", "literal": "Kamis setengah tiga adalah bagus. bagaimana terlambat harus saya di-sana adalah?" },
+    { "speaker": "Assistent:", "text": "Vijf minuten van tevoren. En neem uw verzekeringspas mee.", "id": "Lima menit sebelumnya. Dan bawa kartu asuransi Anda.", "literal": "lima menit dari sebelumnya. dan ambil Anda kartu-asuransi ikut." },
+    { "speaker": "Budi:", "text": "Doe ik. Tot donderdag!", "id": "Siap. Sampai Kamis!", "literal": "lakukan saya. sampai Kamis!" },
+    { "speaker": "Assistent:", "text": "Tot donderdag. Fijne dag verder!", "id": "Sampai Kamis. Selamat beraktivitas!", "literal": "sampai Kamis. menyenangkan hari selanjutnya!" }
+   ],
+   "notes": [
+    "**U spreekt met …** adalah cara baku memperkenalkan diri di telepon — bukan *ik ben*. Harfiahnya \"Anda berbicara dengan …\".",
+    "**Half drie = 14.30.** Ini jebakan waktu paling terkenal dalam bahasa Belanda, dan ia sungguhan membuat orang datang satu jam salah. Bahasa Belanda (seperti bahasa Jerman) menghitung *half* menuju jam **berikutnya**: *half drie* = setengah jalan menuju jam tiga.",
+    "**Kunt u donderdag om half drie?** — kata kerja *komen* dihilangkan karena sudah jelas. Kalimat lengkapnya: *Kunt u donderdag om half drie komen?*",
+    "**Iedereen struikelt daarover** — *daarover* = \"atas hal itu\". Gabungan *daar* + kata depan menggantikan \"itu\" untuk benda dan gagasan. Kamu akan bertemu *daarom*, *daarmee*, *daarnaast* terus-menerus.",
+    "**Van tevoren** = sebelumnya, lebih awal. Untuk janji temu di Belanda, datang tepat waktu berarti datang **lima menit lebih awal**; terlambat sepuluh menit sudah dianggap tidak sopan dan kadang membatalkan gilirannya.",
+    "**Neem uw pas mee** — *meenemen* (membawa serta) adalah kata kerja berpisah: bagiannya (*mee*) terlempar ke ujung kalimat. Seluruh keluarganya dibahas di unit berikutnya.",
+    "**Doe ik** — jawaban super ringkas untuk \"akan saya lakukan\". Bentuk lengkapnya *dat doe ik*."
+   ],
+   "grammars": [
+    {
+     "title": "Membaca jam",
+     "body": [
+      "Bahasa Belanda membagi tiap jam menjadi empat titik acuan: jam bulat, seperempat lewat, setengah, dan seperempat kurang. Semua menit lain dihitung dari titik terdekat."
+     ],
+     "table": {
+      "head": ["Jam", "Nederlands", "Harfiah"],
+      "rows": [
+       ["14.00", "twee uur", "dua jam"],
+       ["14.05", "vijf over twee", "lima lewat dua"],
+       ["14.15", "kwart over twee", "seperempat lewat dua"],
+       ["14.20", "tien voor half drie", "sepuluh sebelum setengah tiga"],
+       ["14.25", "vijf voor half drie", "lima sebelum setengah tiga"],
+       ["14.30", "**half drie**", "setengah tiga"],
+       ["14.35", "vijf over half drie", "lima lewat setengah tiga"],
+       ["14.40", "tien over half drie", "sepuluh lewat setengah tiga"],
+       ["14.45", "kwart voor drie", "seperempat sebelum tiga"],
+       ["14.55", "vijf voor drie", "lima sebelum tiga"]
+      ]
+     },
+     "after": [
+      "Perhatikan baris 14.20 sampai 14.40: bahasa Belanda **menghitung dari setengah**, bukan dari jam bulat. *Tien voor half drie* bukan \"sepuluh sebelum tiga\", melainkan \"sepuluh sebelum 14.30\" = 14.20. Butuh latihan, tapi setelah menempel ia justru terasa lebih tepat.",
+      "Untuk menghindari salah paham, orang Belanda sendiri sering memakai bentuk digital: *twee uur dertig*, *veertien uur dertig*. Di stasiun, bandara, dan jadwal resmi, **selalu** dipakai jam 24.",
+      "Pertanyaannya: *Hoe laat is het?* (harfiah: \"seberapa terlambat ini?\") dan *Hoe laat begint het?* Untuk menyebut waktu janji dipakai kata depan **om**: *om half drie*, *om acht uur*."
+     ]
+    },
+    {
+     "title": "Hari, bulan, dan bagian hari",
+     "body": [
+      "Nama hari dan bulan ditulis dengan **huruf kecil** — berbeda dari bahasa Indonesia dan Inggris."
+     ],
+     "tables": [
+      {
+       "head": ["Hari", "Cara baca", "Bulan", "Bulan"],
+       "rows": [
+        ["maandag", "MAHN-dakh", "januari", "juli"],
+        ["dinsdag", "DINS-dakh", "februari", "augustus"],
+        ["woensdag", "VUNS-dakh", "maart", "september"],
+        ["donderdag", "DON-der-dakh", "april", "oktober"],
+        ["vrijdag", "FRÈY-dakh", "mei", "november"],
+        ["zaterdag", "ZAH-ter-dakh", "juni", "december"],
+        ["zondag", "ZON-dakh", "", ""]
+       ]
+      }
+     ],
+     "after": [
+      "Untuk hari dipakai kata depan **op**: *op maandag*, *op zondag* — tapi dalam percakapan kata depannya sering dihilangkan: *Ik werk maandag.*",
+      "Bagian hari: *de ochtend* (pagi), *de middag* (siang), *de avond* (sore/malam), *de nacht* (malam larut). Untuk menyebut kebiasaan dipakai bentuk **'s**: *'s ochtends*, *'s middags*, *'s avonds*, *'s nachts* — \"tiap pagi\", \"tiap malam\".",
+      "Tanggal memakai angka biasa: *op 5 mei* dibaca *op vijf mei*. Untuk tanggal 1 dipakai *één* atau *de eerste*: *de eerste januari*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membuat janji",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Bahasa Indonesia"], "rows": [
+      ["Ik wil graag een afspraak maken.", "Saya mau membuat janji."],
+      ["Wanneer kunt u?", "Kapan Anda bisa?"],
+      ["Kunt u dinsdag om tien uur?", "Selasa jam sepuluh bisa?"],
+      ["Dat komt me goed uit.", "Itu pas buat saya."],
+      ["Dat lukt me niet.", "Saya tidak bisa saat itu."],
+      ["Heeft u iets later?", "Ada yang lebih siang?"],
+      ["Ik moet de afspraak verzetten.", "Saya harus menggeser janjinya."],
+      ["Ik ben helaas verhinderd.", "Sayangnya saya berhalangan."],
+      ["Tot dan!", "Sampai nanti!"],
+      ["Hoe laat spreken we af?", "Janjian jam berapa?"]
+     ] },
+    { "type": "kotak", "title": "Agenda: kebiasaan Belanda yang wajib dipahami", "items": [
+      "Hampir semua hal di Belanda **dijanjikan lebih dulu** — kunjungan ke teman sekalipun. Mampir tanpa memberi kabar dianggap mengejutkan, bukan hangat.",
+      "*Even in mijn agenda kijken* (\"sebentar, saya lihat agenda dulu\") adalah kalimat yang akan kamu dengar tiap kali mengajak seseorang.",
+      "Janji makan malam bisa dibuat tiga minggu di depan, dan itu normal.",
+      "Kalau kamu batal, kabari secepatnya: *Sorry, ik moet onze afspraak afzeggen.* Membatalkan pada hari-H tanpa alasan kuat berkesan buruk.",
+      "⚠️ Praktik dokter, dokter gigi, dan kantor pemerintah menagih biaya kalau kamu tidak datang tanpa membatalkan (*no-show*)."
+     ] }
+   ]
+  },
+  {
+   "title": "Kata keterangan waktu",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Cara baca", "Bahasa Indonesia"], "rows": [
+      ["vandaag", "fan-DAHKH", "hari ini"],
+      ["morgen", "MOR-khe(n)", "besok"],
+      ["gisteren", "KHIS-te-re(n)", "kemarin"],
+      ["overmorgen", "OH-fer-mor-khe(n)", "lusa"],
+      ["eergisteren", "EHR-khis-te-re(n)", "kemarin lusa"],
+      ["vanochtend", "fa-NOKH-tent", "pagi ini"],
+      ["vanavond", "fa-NAH-font", "malam ini"],
+      ["vannacht", "fa-NAKHT", "malam ini (larut)"],
+      ["volgende week", "FOL-khen-de vehk", "minggu depan"],
+      ["vorige week", "FOH-ri-khe vehk", "minggu lalu"],
+      ["altijd / nooit", "AL-tèyt / nohyt", "selalu / tidak pernah"],
+      ["vaak / soms", "fahk / soms", "sering / kadang"],
+      ["meestal", "MEHS-tal", "biasanya"],
+      ["nu meteen", "nü me-TEHN", "sekarang juga"]
+     ] },
+    { "type": "p", "text": "⚠️ *Morgen* berarti **besok**, sedangkan *ochtend* berarti pagi — tapi *vanmorgen* berarti \"pagi ini\" dan *goedemorgen* berarti \"selamat pagi\". Satu kata, dua nyawa; yang menentukan adalah bentuk gabungannya." },
+    { "type": "p", "text": "Keterangan waktu paling sering berdiri **di awal kalimat** dalam bahasa Belanda, dan begitu ia berdiri di depan, kata kerja melompat ke posisi kedua: *Morgen **ga** ik naar Amsterdam.* Ini persis aturan yang akan dibongkar di unit 10." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "hoe laat", "baca": "hu laht", "id": "jam berapa" },
+  { "nl": "het uur", "baca": "het ühr", "id": "jam" },
+  { "nl": "de minuut", "baca": "de mi-NÜHT", "id": "menit" },
+  { "nl": "half", "baca": "half", "id": "setengah (menuju jam berikutnya)" },
+  { "nl": "kwart over / voor", "baca": "kvart OH-fer / fohr", "id": "seperempat lewat / kurang" },
+  { "nl": "om", "baca": "om", "id": "pada (jam)" },
+  { "nl": "de afspraak", "baca": "de AF-sprahk", "id": "janji temu" },
+  { "nl": "afspreken", "baca": "AF-spreh-ke(n)", "id": "membuat janji" },
+  { "nl": "verzetten", "baca": "fer-ZÈ-te(n)", "id": "menggeser jadwal" },
+  { "nl": "afzeggen", "baca": "AF-zè-khe(n)", "id": "membatalkan" },
+  { "nl": "de agenda", "baca": "de a-KHÈN-da", "id": "agenda" },
+  { "nl": "maandag", "baca": "MAHN-dakh", "id": "Senin" },
+  { "nl": "dinsdag", "baca": "DINS-dakh", "id": "Selasa" },
+  { "nl": "woensdag", "baca": "VUNS-dakh", "id": "Rabu" },
+  { "nl": "donderdag", "baca": "DON-der-dakh", "id": "Kamis" },
+  { "nl": "vrijdag", "baca": "FRÈY-dakh", "id": "Jumat" },
+  { "nl": "zaterdag / zondag", "baca": "ZAH-ter-dakh / ZON-dakh", "id": "Sabtu / Minggu" },
+  { "nl": "de week", "baca": "de vehk", "id": "minggu" },
+  { "nl": "de maand", "baca": "de mahnt", "id": "bulan" },
+  { "nl": "het jaar", "baca": "het yahr", "id": "tahun" },
+  { "nl": "de ochtend", "baca": "de OKH-tent", "id": "pagi" },
+  { "nl": "de middag", "baca": "de MI-dakh", "id": "siang" },
+  { "nl": "de avond", "baca": "de AH-font", "id": "sore / malam" },
+  { "nl": "de nacht", "baca": "de nakht", "id": "malam larut" },
+  { "nl": "wanneer", "baca": "va-NEHR", "id": "kapan" },
+  { "nl": "vroeg / laat", "baca": "frukh / laht", "id": "awal / terlambat" },
+  { "nl": "meenemen", "baca": "MEH-neh-me(n)", "id": "membawa serta" },
+  { "nl": "van tevoren", "baca": "fan te-FOH-re(n)", "id": "sebelumnya" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis jamnya dalam bahasa Belanda.",
+   "items": [
+    "15.00 → ____",
+    "15.15 → ____",
+    "15.30 → ____",
+    "15.45 → ____",
+    "15.20 → ____",
+    "15.35 → ____"
+   ]
+  },
+  {
+   "prompt": "Tulis dalam angka.",
+   "items": [
+    "half acht → ____",
+    "kwart over negen → ____",
+    "tien voor half elf → ____",
+    "kwart voor twaalf → ____",
+    "vijf over half een → ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Jam berapa sekarang?",
+    "Saya mau membuat janji.",
+    "Kamis pukul setengah tiga bisa?",
+    "Saya tidak bisa saat itu.",
+    "Besok saya ke Amsterdam.",
+    "Sampai Senin!"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "is / laat / het / hoe / ?",
+    "drie / om / half / kom / ik",
+    "afspraak / een / maken / wil / ik / graag",
+    "werk / maandag / ik / op",
+    "Amsterdam / ga / morgen / naar / ik"
+   ]
+  }
+ ],
+ "answers": [
+  "drie uur — kwart over drie — half vier — kwart voor vier — tien voor half vier — vijf over half vier",
+  "07.30 — 09.15 — 10.20 — 11.45 — 12.35",
+  "Hoe laat is het? — Ik wil graag een afspraak maken. — Kunt u donderdag om half drie? — Dat lukt me niet. — Morgen ga ik naar Amsterdam. — Tot maandag!",
+  "Hoe laat is het? — Ik kom om half drie. — Ik wil graag een afspraak maken. — Ik werk op maandag. — Morgen ga ik naar Amsterdam."
+ ]
+}

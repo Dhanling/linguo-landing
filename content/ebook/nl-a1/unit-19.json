@@ -1,0 +1,221 @@
+{
+ "title": "Saya pernah ke Belanda",
+ "title_target": "Ik ben in Nederland geweest",
+ "goal": "Memilih antara *hebben* dan *zijn* sebagai kata kerja bantu, dan memakai bentuk lampau sederhana untuk kata kerja yang paling sering dipakai.",
+ "bekal": [
+  "tahu kapan kalimat lampau memakai *ben* dan bukan *heb*",
+  "memakai *was*, *had*, *ging*, *kon*, *moest* dalam cerita",
+  "membedakan \"pernah\" dan \"belum pernah\""
+ ],
+ "wave": "Ulangi **unit 17**: ceritakan kembali kemarinmu dalam sepuluh kalimat lampau, kali ini semuanya dibuka dengan keterangan waktu.",
+ "dialogs": [
+  {
+   "title": "Dialog — Bij de kapper",
+   "intro": "Tukang cukur Belanda terkenal banyak bicara. Budi terjebak dua puluh menit percakapan — dan ternyata itu latihan terbaik yang ia dapat sepanjang bulan.",
+   "lines": [
+    { "speaker": "Kapper:", "text": "Ben je hier geboren?", "id": "Kamu lahir di sini?", "literal": "adalah kamu di-sini dilahirkan?" },
+    { "speaker": "Budi:", "text": "Nee, ik ben in Bandung geboren. Ik ben hier sinds januari.", "id": "Bukan, saya lahir di Bandung. Saya di sini sejak Januari.", "literal": "tidak, saya adalah di Bandung dilahirkan. saya adalah di-sini sejak Januari." },
+    { "speaker": "Kapper:", "text": "En? Bevalt het?", "id": "Gimana? Betah?", "literal": "dan? berkenan itu?" },
+    { "speaker": "Budi:", "text": "Het was moeilijk in het begin. Het weer was verschrikkelijk.", "id": "Awalnya susah. Cuacanya parah.", "literal": "itu adalah sulit di awal-itu. cuaca-itu adalah mengerikan." },
+    { "speaker": "Kapper:", "text": "Ha! Dat is het altijd. En nu?", "id": "Ha! Emang selalu begitu. Sekarang?", "literal": "ha! itu adalah itu selalu. dan sekarang?" },
+    { "speaker": "Budi:", "text": "Nu gaat het goed. Ik ben naar veel steden geweest.", "id": "Sekarang baik. Saya sudah ke banyak kota.", "literal": "sekarang pergi itu baik. saya adalah ke banyak kota-kota pernah." },
+    { "speaker": "Kapper:", "text": "Welke steden?", "id": "Kota mana saja?", "literal": "yang-mana kota-kota?" },
+    { "speaker": "Budi:", "text": "Ik ben in Rotterdam, Den Haag en Maastricht geweest.", "id": "Saya sudah ke Rotterdam, Den Haag, dan Maastricht.", "literal": "saya adalah di Rotterdam, Den Haag dan Maastricht pernah." },
+    { "speaker": "Kapper:", "text": "Maastricht! Daar ben ik nog nooit geweest.", "id": "Maastricht! Saya malah belum pernah ke sana.", "literal": "di-sana adalah saya masih tidak-pernah pernah." },
+    { "speaker": "Budi:", "text": "Echt? Het is drie uur met de trein.", "id": "Serius? Tiga jam naik kereta.", "literal": "sungguh? itu adalah tiga jam dengan kereta." },
+    { "speaker": "Kapper:", "text": "Precies. Dat is ver, hoor. Ik ben ooit in Zeeland geweest.", "id": "Nah itu. Jauh banget. Saya sih pernah sekali ke Zeeland.", "literal": "persis. itu adalah jauh, ya. saya adalah pernah di Zeeland pernah." },
+    { "speaker": "Budi:", "text": "Dat is twee uur.", "id": "Itu dua jam.", "literal": "itu adalah dua jam." },
+    { "speaker": "Kapper:", "text": "Zoals ik zei: ver.", "id": "Kayak saya bilang tadi: jauh.", "literal": "seperti saya berkata: jauh." }
+   ],
+   "notes": [
+    "**Ben je hier geboren?** — *geboren zijn* (dilahirkan) selalu memakai *zijn*. Kalimat ini akan ditanyakan kepadamu berkali-kali.",
+    "**Ik ben hier sinds januari** — *sinds* (sejak) dipakai dengan bentuk **sekarang**, bukan lampau. Bahasa Belanda berkata \"saya di sini sejak Januari\", bukan \"saya sudah di sini sejak…\".",
+    "**Bevalt het?** — dari *bevallen* (berkenan, cocok). Pertanyaan khas untuk pendatang: \"betah?\". Jawabannya: *Ja, het bevalt me goed.*",
+    "**Het was moeilijk** — *was* adalah bentuk lampau sederhana dari *zijn*. Untuk *zijn*, *hebben*, dan kata kerja bantu, bentuk inilah yang dipakai sehari-hari, bukan bentuk *ge-*.",
+    "**Ik ben naar veel steden geweest** — perhatikan *ben*, bukan *heb*: *zijn* dipakai untuk perpindahan tempat dan perubahan keadaan. Dan *geweest* dipakai untuk \"pernah ke\", bukan *gegaan*.",
+    "**Daar ben ik nog nooit geweest** — \"saya belum pernah ke sana\". Susunannya: keterangan tempat di depan, kata kerja bantu kedua, bentuk ketiga di ujung.",
+    "**Ik ben ooit in Zeeland geweest** — *ooit* berarti \"pernah\" (suatu waktu). Bedakan dari *nooit* (tidak pernah) dan *altijd* (selalu).",
+    "**Dat is ver, hoor** — dan ini bukan lelucon. Belanda seukuran Jawa Barat, tapi perjalanan dua jam sudah dianggap jauh. Bagi orang Indonesia yang biasa naik bus semalaman, ini salah satu perbedaan budaya yang paling lucu."
+   ],
+   "grammars": [
+    {
+     "title": "Hebben atau zijn?",
+     "body": [
+      "Sebagian besar kata kerja memakai *hebben*. Yang memakai *zijn* adalah kelompok kecil dengan satu benang merah: **perpindahan atau perubahan**."
+     ],
+     "table": {
+      "head": ["Pakai **zijn** untuk", "Contoh"],
+      "rows": [
+       ["perpindahan tempat", "Ik **ben** naar Amsterdam **gegaan**."],
+       ["", "Hij **is** thuis**gekomen**."],
+       ["perubahan keadaan", "Ze **is** ziek **geworden**."],
+       ["", "De melk **is** zuur **geworden**."],
+       ["*zijn*, *blijven*, *worden*", "Ik **ben** in Parijs **geweest**."],
+       ["", "We **zijn** thuis **gebleven**."],
+       ["kejadian tanpa pelaku", "Er **is** iets **gebeurd**."],
+       ["*beginnen*, *stoppen*, *sterven*", "De les **is** **begonnen**."]
+      ]
+     },
+     "after": [
+      "⚠️ Beberapa kata kerja gerak bisa dua-duanya, tergantung ada tujuan atau tidak: *Ik **heb** gefietst* (saya bersepeda — kegiatannya) lawan *Ik **ben** naar Utrecht gefietst* (saya bersepeda ke Utrecht — perpindahannya). Sama untuk *lopen*, *rijden*, *zwemmen*, *vliegen*.",
+      "*Zijn* + *geweest* menggantikan *gegaan* untuk pengalaman: *Ik ben in Maastricht geweest* (saya pernah ke Maastricht) lawan *Ik ben naar Maastricht gegaan* (saya berangkat ke Maastricht).",
+      "Kalau ragu: hampir semua kata kerja yang punya objek langsung memakai *hebben*. *Ik heb een boek gelezen*, *ik heb koffie gedronken*."
+     ]
+    },
+    {
+     "title": "Bentuk lampau sederhana yang dipakai sehari-hari",
+     "body": [
+      "Bahasa Belanda punya dua bentuk lampau. Yang dengan *ge-* (unit 17-18) dipakai untuk percakapan; yang ini, *imperfectum*, dipakai untuk **keadaan**, untuk **cerita panjang**, dan — yang terpenting — untuk sekelompok kata kerja yang justru terdengar aneh dalam bentuk lain."
+     ],
+     "table": {
+      "head": ["Sekarang", "Lampau (tunggal)", "Lampau (jamak)", "Arti"],
+      "rows": [
+       ["ik ben", "**was**", "waren", "adalah"],
+       ["ik heb", "**had**", "hadden", "punya"],
+       ["ik ga", "**ging**", "gingen", "pergi"],
+       ["ik kan", "**kon**", "konden", "bisa"],
+       ["ik moet", "**moest**", "moesten", "harus"],
+       ["ik wil", "**wilde**", "wilden", "mau"],
+       ["ik mag", "**mocht**", "mochten", "boleh"],
+       ["ik zeg", "**zei**", "zeiden", "berkata"],
+       ["ik weet", "**wist**", "wisten", "tahu"],
+       ["ik denk", "**dacht**", "dachten", "berpikir"],
+       ["ik zie", "**zag**", "zagen", "melihat"],
+       ["ik doe", "**deed**", "deden", "melakukan"]
+      ]
+     },
+     "after": [
+      "Untuk kedua belas kata ini, bentuk *imperfectum* **jauh lebih sering** dipakai daripada bentuk dengan *ge-*. Orang Belanda berkata *ik was moe*, bukan *ik ben moe geweest*; *ik moest werken*, bukan *ik heb moeten werken*.",
+      "Untuk kata kerja lain, pakai bentuk unit 17-18 dalam percakapan. *Imperfectum* kata kerja biasa (*ik werkte*, *ik fietste*) lebih banyak muncul dalam tulisan dan cerita — kamu akan membacanya jauh lebih sering daripada mengucapkannya.",
+      "Bentuknya: kata kerja lemah menambah **-te** atau **-de** menurut aturan 't kofschip yang sama: *werken → werkte*, *wonen → woonde*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pengalaman: pernah dan belum pernah",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Bahasa Indonesia"], "rows": [
+      ["Ben je wel eens in Amsterdam geweest?", "Kamu pernah ke Amsterdam?"],
+      ["Ja, één keer.", "Ya, sekali."],
+      ["Nee, nog nooit.", "Belum pernah."],
+      ["Ik ben er twee keer geweest.", "Saya pernah ke sana dua kali."],
+      ["Heb je ooit stamppot gegeten?", "Pernah makan stamppot?"],
+      ["Ik heb het nog nooit geprobeerd.", "Belum pernah coba."],
+      ["Dat heb ik nog nooit gehoord.", "Baru dengar."],
+      ["Ik ben nog nooit zo nat geworden.", "Belum pernah sebasah ini."]
+     ] },
+    { "type": "p", "text": "*Wel eens* dan *ooit* dua-duanya berarti \"pernah\": *wel eens* lebih santai dan lebih sering dipakai dalam pertanyaan sehari-hari. Ingkarannya selalu *nog nooit* (belum pernah), bukan *niet ooit*." },
+    { "type": "kotak", "title": "Sebelas provinsi yang layak dikunjungi", "items": [
+      "**Zeeland** — delta dan bendungan raksasa *Deltawerken*, dibangun setelah banjir 1953.",
+      "**Friesland** — punya bahasanya sendiri (*Frysk*), bahasa resmi kedua Belanda.",
+      "**Limburg** — berbukit, dan satu-satunya tempat di Belanda yang punya \"gunung\" (322 meter).",
+      "**Groningen** — kota mahasiswa termuda rata-rata usianya di seluruh negeri.",
+      "**Noord-Holland** — Amsterdam, Haarlem, dan desa-desa kincir angin *Zaanse Schans*.",
+      "⚠️ Untuk pelajar, kartu **OV-chipkaart** dengan langganan akhir pekan membuat seluruh negeri terjangkau dengan biaya kecil."
+     ] }
+   ]
+  },
+  {
+   "title": "Bercerita dengan bentuk lampau",
+   "blocks": [
+    { "type": "p", "text": "Perhatikan bagaimana kedua bentuk lampau bekerja berdampingan dalam satu cerita — *was*, *had*, *moest* untuk keadaan, dan bentuk *ge-* untuk kejadian:" },
+    { "type": "tabel", "head": ["Nederlands", "Bahasa Indonesia"], "rows": [
+      ["Gisteren was het heel koud.", "Kemarin dingin sekali."],
+      ["Ik moest om zes uur opstaan.", "Saya harus bangun jam enam."],
+      ["Ik had geen tijd voor ontbijt.", "Saya tidak sempat sarapan."],
+      ["Ik heb de trein gemist.", "Saya ketinggalan kereta."],
+      ["Daarna ben ik naar kantoor gefietst.", "Setelah itu saya bersepeda ke kantor."],
+      ["Onderweg ging het regenen.", "Di jalan mulai hujan."],
+      ["Ik ben doorweekt aangekomen.", "Saya sampai dalam keadaan basah kuyup."],
+      ["Maar mijn collega had koffie gezet.", "Tapi rekan saya sudah menyeduh kopi."],
+      ["Toen was alles weer goed.", "Habis itu semuanya baik lagi."]
+     ] },
+    { "type": "p", "text": "Susunan seperti ini — keadaan dengan *was/had/moest*, kejadian dengan *heb/ben + ge-* — adalah bentuk bercerita yang paling alami dalam bahasa Belanda lisan. Kalau kamu bisa menceritakan satu hari burukmu seperti di atas, kamu sudah melewati batas A1." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "was / waren", "baca": "vas / VAH-re(n)", "id": "adalah (lampau)" },
+  { "nl": "had / hadden", "baca": "hat / HA-de(n)", "id": "punya (lampau)" },
+  { "nl": "ging / gingen", "baca": "khing", "id": "pergi (lampau)" },
+  { "nl": "kon / konden", "baca": "kon", "id": "bisa (lampau)" },
+  { "nl": "moest / moesten", "baca": "must", "id": "harus (lampau)" },
+  { "nl": "wilde / wilden", "baca": "VIL-de", "id": "mau (lampau)" },
+  { "nl": "zei / zeiden", "baca": "zèy", "id": "berkata (lampau)" },
+  { "nl": "wist / wisten", "baca": "vist", "id": "tahu (lampau)" },
+  { "nl": "dacht / dachten", "baca": "dakht", "id": "berpikir (lampau)" },
+  { "nl": "zag / zagen", "baca": "zakh", "id": "melihat (lampau)" },
+  { "nl": "geweest", "baca": "khe-VEHST", "id": "pernah / sudah ada" },
+  { "nl": "gegaan", "baca": "khe-KHAHN", "id": "sudah pergi" },
+  { "nl": "geworden", "baca": "khe-VOR-de(n)", "id": "sudah menjadi" },
+  { "nl": "gebleven", "baca": "khe-BLEH-fe(n)", "id": "sudah tinggal" },
+  { "nl": "geboren", "baca": "khe-BOH-re(n)", "id": "dilahirkan" },
+  { "nl": "aangekomen", "baca": "AHN-khe-koh-me(n)", "id": "sudah tiba" },
+  { "nl": "ooit / nooit", "baca": "ohyt / nohyt", "id": "pernah / tidak pernah" },
+  { "nl": "wel eens", "baca": "vèl ehns", "id": "pernah" },
+  { "nl": "nog nooit", "baca": "nokh nohyt", "id": "belum pernah" },
+  { "nl": "sinds", "baca": "sints", "id": "sejak" },
+  { "nl": "toen", "baca": "tun", "id": "waktu itu / lalu" },
+  { "nl": "onderweg", "baca": "on-der-VÈKH", "id": "di perjalanan" },
+  { "nl": "het begin", "baca": "het be-KHIN", "id": "awal" },
+  { "nl": "de stad / de steden", "baca": "de stat / de STEH-de(n)", "id": "kota" },
+  { "nl": "de collega", "baca": "de ko-LEH-kha", "id": "rekan kerja" },
+  { "nl": "bevallen", "baca": "be-FA-le(n)", "id": "berkenan / cocok" },
+  { "nl": "verschrikkelijk", "baca": "fer-SKHRI-ke-lek", "id": "mengerikan" },
+  { "nl": "de keer", "baca": "de kehr", "id": "kali" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan heb/heeft atau ben/is.",
+   "items": [
+    "Ik ____ naar Amsterdam gegaan.",
+    "Ik ____ koffie gedronken.",
+    "Hij ____ ziek geworden.",
+    "Zij ____ een boek gelezen.",
+    "We ____ thuis gebleven.",
+    "Er ____ iets gebeurd."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk lampau sederhana.",
+   "items": [
+    "Het ____ gisteren koud. (zijn)",
+    "Ik ____ geen tijd. (hebben)",
+    "Ik ____ vroeg opstaan. (moeten)",
+    "Hij ____ dat niet. (weten)",
+    "Wat ____ je? (zeggen)",
+    "We ____ naar huis. (gaan)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Saya pernah ke Rotterdam.",
+    "Saya belum pernah ke sana.",
+    "Saya lahir di Bandung.",
+    "Kemarin dingin sekali.",
+    "Saya ketinggalan kereta.",
+    "Waktu itu semuanya baik lagi."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "geweest / Maastricht / ik / in / ben",
+    "nooit / daar / ik / nog / ben / geweest",
+    "koud / het / gisteren / was",
+    "gemist / trein / heb / de / ik",
+    "geboren / Bandung / ben / ik / in"
+   ]
+  }
+ ],
+ "answers": [
+  "ben — heb — is — heeft — zijn — is",
+  "was — had — moest — wist — zei — gingen",
+  "Ik ben in Rotterdam geweest. — Ik ben daar nog nooit geweest. — Ik ben in Bandung geboren. — Gisteren was het heel koud. — Ik heb de trein gemist. — Toen was alles weer goed.",
+  "Ik ben in Maastricht geweest. — Daar ben ik nog nooit geweest. — Gisteren was het koud. — Ik heb de trein gemist. — Ik ben in Bandung geboren."
+ ]
+}

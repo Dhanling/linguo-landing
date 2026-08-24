@@ -1,0 +1,210 @@
+{
+ "title": "Halo, siapa namamu?",
+ "title_target": "Hallo! Hoe heet je?",
+ "goal": "Menyapa pada waktu yang tepat, menyebut nama, menanyakan kabar, dan mengenali kapan harus memakai *u* dan kapan cukup *je*.",
+ "bekal": [
+  "menyapa dari pagi sampai malam dengan sapaan yang benar",
+  "memperkenalkan diri dan menanyakan nama orang lain",
+  "memilih antara *je* (akrab) dan *u* (hormat) tanpa salah langkah"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Op de taalschool",
+   "intro": "Hari pertama kursus di Amsterdam. Budi duduk di sebelah seseorang yang belum ia kenal.",
+   "lines": [
+    { "speaker": "Sanne:", "text": "Hoi! Ik ben Sanne.", "id": "Hai! Saya Sanne.", "literal": "hai! saya adalah Sanne." },
+    { "speaker": "Budi:", "text": "Hallo Sanne. Ik heet Budi.", "id": "Halo Sanne. Nama saya Budi.", "literal": "halo Sanne. saya bernama Budi." },
+    { "speaker": "Sanne:", "text": "Aangenaam. Hoe gaat het?", "id": "Senang berkenalan. Apa kabar?", "literal": "menyenangkan. bagaimana pergi itu?" },
+    { "speaker": "Budi:", "text": "Goed, dank je. En met jou?", "id": "Baik, terima kasih. Dan kamu?", "literal": "baik, terima kasih kamu. dan dengan kamu?" },
+    { "speaker": "Sanne:", "text": "Ook goed. Ben jij nieuw hier?", "id": "Baik juga. Kamu baru di sini?", "literal": "juga baik. adalah kamu baru di-sini?" },
+    { "speaker": "Budi:", "text": "Ja, het is mijn eerste dag.", "id": "Ya, ini hari pertama saya.", "literal": "ya, itu adalah milik-saya pertama hari." },
+    { "speaker": "Sanne:", "text": "Leuk! Sorry, hoe heet je ook alweer?", "id": "Asyik! Maaf, siapa tadi namamu?", "literal": "asyik! maaf, bagaimana bernama kamu juga lagi?" },
+    { "speaker": "Budi:", "text": "Budi. B-U-D-I.", "id": "Budi. B-U-D-I.", "literal": "Budi." },
+    { "speaker": "Sanne:", "text": "Budi. Tot straks!", "id": "Budi. Sampai nanti!", "literal": "Budi. sampai sebentar-lagi!" },
+    { "speaker": "Docent:", "text": "Goedemorgen allemaal. Hoe gaat het met u, meneer?", "id": "Selamat pagi semua. Bagaimana kabar Anda, Pak?", "literal": "selamat-pagi semua. bagaimana pergi itu dengan Anda, tuan?" },
+    { "speaker": "Budi:", "text": "Heel goed, dank u wel.", "id": "Baik sekali, terima kasih banyak.", "literal": "sangat baik, terima kasih Anda memang." }
+   ],
+   "notes": [
+    "**Ik heet Budi** harfiahnya \"saya bernama Budi\" — *heten* adalah kata kerja, bukan kata benda. Bahasa Belanda tidak berkata \"nama saya\" seperti bahasa Indonesia; ia berkata \"saya dinamai\". Bentuk lain yang juga benar: *Mijn naam is Budi*, tapi ini terdengar formal, seperti memperkenalkan diri di telepon kantor.",
+    "**Ik ben Sanne** dan **Ik heet Sanne** dua-duanya dipakai dan sama benar. *Ik ben* sedikit lebih santai.",
+    "**Hoe gaat het?** harfiahnya \"bagaimana ia berjalan?\" — bukan \"bagaimana kamu?\". Karena itu jawabannya juga tentang \"ia\", bukan tentang \"saya\": *Het gaat goed* (ia berjalan baik). Dalam percakapan cepat, orang cukup menjawab *Goed!*",
+    "**Dank je** untuk orang yang kamu panggil *je*; **dank u** untuk yang kamu panggil *u*. Menambah *wel* membuatnya lebih hangat: *dank je wel*, *dank u wel*. Salah pasang di sini terdengar seperti mengucapkan \"makasih ya\" kepada rektor.",
+    "**En met jou?** — \"dan denganmu?\" Perhatikan *jou*, bukan *je*: sesudah kata depan (*met*, *voor*, *van*) dipakai bentuk penuh. Bentuk hormatnya: *En met u?*",
+    "**Hoe heet je ook alweer?** adalah ungkapan siap pakai untuk \"siapa ya namamu tadi?\" — ia menyelamatkan banyak percakapan. Harfiahnya tak masuk akal (\"juga lagi\"), jadi hafalkan utuh.",
+    "**Tot straks** = sampai nanti (hari yang sama). Keluarganya besar: *tot ziens* (sampai jumpa, netral), *tot morgen* (sampai besok), *tot zo* (sampai sebentar lagi), *doei* (dadah, sangat santai)."
+   ],
+   "grammars": [
+    {
+     "title": "Zijn — kata kerja terpenting bahasa Belanda",
+     "body": [
+      "Sama seperti bahasa Indonesia yang bisa berkata \"saya guru\" tanpa kata kerja, bahasa Belanda *tidak* bisa: *ik ben leraar*. Kata kerja *zijn* (adalah) wajib hadir, dan ia satu-satunya kata kerja Belanda yang bentuknya benar-benar berantakan — hafalkan sebagai lagu."
+     ],
+     "table": {
+      "head": ["Kata ganti", "Bentuk", "Contoh"],
+      "rows": [
+       ["ik (saya)", "**ben**", "ik ben Budi"],
+       ["jij / je (kamu)", "**bent**", "jij bent nieuw"],
+       ["u (Anda)", "**bent** (juga *is*)", "u bent de docent"],
+       ["hij / zij / het (dia)", "**is**", "hij is thuis"],
+       ["wij / we (kami)", "**zijn**", "we zijn hier"],
+       ["jullie (kalian)", "**zijn**", "jullie zijn vroeg"],
+       ["zij / ze (mereka)", "**zijn**", "ze zijn Nederlands"]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa *zij* berarti **dia (perempuan)** sekaligus **mereka** — yang membedakan cuma bentuk kata kerjanya: *zij is* (dia) lawan *zij zijn* (mereka).",
+      "Tiap kata ganti punya bentuk penuh dan bentuk lemah: *jij/je*, *wij/we*, *zij/ze*, *mij/me*. Bentuk lemah dipakai sehari-hari; bentuk penuh dipakai kalau kamu ingin menekankan — *Ik ben moe, maar jíj bent nog wakker*."
+     ]
+    },
+    {
+     "title": "Je atau u? Aturan sopan santun Belanda",
+     "body": [
+      "Belanda terkenal sangat datar hierarkinya, dan itu terlihat di bahasanya: *je* dipakai jauh lebih luas daripada dugaan orang Indonesia."
+     ],
+     "table": {
+      "head": ["Pakai *u* untuk", "Pakai *je* untuk"],
+      "rows": [
+       ["orang yang jauh lebih tua", "teman, kenalan, rekan sebaya"],
+       ["petugas resmi, dokter, polisi", "sesama peserta kursus"],
+       ["pelanggan (kalau kamu yang melayani)", "anak-anak, siapa pun di bawah 30-an"],
+       ["surat resmi & wawancara kerja", "hampir semua percakapan sehari-hari"]
+      ]
+     },
+     "after": [
+      "Kalau ragu, mulai dengan *u*. Orang Belanda akan cepat memotong dengan *Zeg maar je* (\"panggil je saja\") — dan sesudah itu memakai *u* lagi justru terasa dingin.",
+      "⚠️ Jangan menyamakan *u* dengan *jij* dalam satu kalimat. *Hoe heet u?* atau *Hoe heet je?* — jangan *Hoe heet u, jij?*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Sapaan menurut waktu",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Cara baca", "Dipakai kapan"], "rows": [
+      ["Goedemorgen", "KHU-de-mor-khe", "sampai sekitar pukul 12"],
+      ["Goedemiddag", "khu-de-MI-dakh", "12 sampai sekitar 18"],
+      ["Goedenavond", "khu-de-NAH-font", "sesudah 18"],
+      ["Goedenacht", "khu-de-NAKHT", "hanya saat berpisah untuk tidur"],
+      ["Hallo / Hoi", "ha-LOH / hoy", "kapan saja, santai"],
+      ["Dag!", "dakh", "halo *dan* dadah — dua-duanya"],
+      ["Goedendag", "khu-de-DAKH", "netral, agak formal"]
+     ] },
+    { "type": "p", "text": "*Dag* adalah kata paling serbaguna dalam bahasa Belanda: ia berarti \"hari\", dipakai untuk menyapa, dan dipakai untuk berpamitan. Diucapkan dua kali dengan nada naik-turun (*dag-dag!*) ia menjadi ucapan pamit yang hangat khas Belanda." },
+    { "type": "kotak", "title": "Pamit", "items": [
+      "*Tot ziens* (tot ZINS) — sampai jumpa, netral dan aman untuk siapa saja.",
+      "*Doei* / *doeg* (duy) — dadah, santai, hanya untuk yang kamu panggil *je*.",
+      "*Tot morgen* / *tot straks* / *tot zo* — sampai besok / sampai nanti / sampai sebentar lagi.",
+      "*Fijne dag!* (FÈY-ne dakh) — semoga harimu menyenangkan. Balasannya: *Jij ook!*"
+     ] }
+   ]
+  },
+  {
+   "title": "Bertanya nama dan mengeja",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Bahasa Indonesia"], "rows": [
+      ["Hoe heet je?", "Siapa namamu?"],
+      ["Hoe heet u?", "Siapa nama Anda?"],
+      ["Wie ben jij?", "Kamu siapa? (agak langsung)"],
+      ["Wat is uw naam?", "Siapa nama Anda? (formal, di loket)"],
+      ["Hoe schrijf je dat?", "Bagaimana menulisnya?"],
+      ["Kun je dat spellen?", "Bisa dieja?"],
+      ["Sorry, ik versta je niet.", "Maaf, saya tidak menangkap."],
+      ["Kun je dat herhalen?", "Bisa diulang?"]
+     ] },
+    { "type": "p", "text": "*Ik versta je niet* dan *ik begrijp het niet* berbeda: yang pertama berarti bunyinya tidak tertangkap, yang kedua berarti maksudnya tidak dimengerti. Di minggu-minggu pertama kamu akan lebih sering butuh yang pertama." },
+    { "type": "sub", "text": "Nama-nama huruf yang paling sering dipakai saat mengeja" },
+    { "type": "tabel", "head": ["Huruf", "Dibaca", "Huruf", "Dibaca"], "rows": [
+      ["a", "ah", "j", "yeh"],
+      ["e", "eh", "g", "kheh"],
+      ["i", "ih", "u", "üh"],
+      ["y", "EY-khrèk (*ypsilon*)", "ij", "lange èy"],
+      ["c", "seh", "w", "veh"],
+      ["v", "feh", "z", "zèt"]
+     ] },
+    { "type": "p", "text": "Nama Indonesia hampir selalu perlu dieja di Belanda. Yang paling sering bermasalah: **y** (orang Belanda mendengarnya sebagai *ij*), **c** (dibaca \"seh\"), dan **u** (dibaca \"üh\", bukan \"u\" — kalau namamu ada huruf u, sebut *u zoals in Utrecht*)." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "hallo / hoi", "baca": "ha-LOH / hoy", "id": "halo / hai" },
+  { "nl": "goedemorgen", "baca": "KHU-de-mor-khe", "id": "selamat pagi" },
+  { "nl": "goedemiddag", "baca": "khu-de-MI-dakh", "id": "selamat siang" },
+  { "nl": "goedenavond", "baca": "khu-de-NAH-font", "id": "selamat malam" },
+  { "nl": "tot ziens", "baca": "tot ZINS", "id": "sampai jumpa" },
+  { "nl": "doei", "baca": "duy", "id": "dadah" },
+  { "nl": "tot straks", "baca": "tot STRAKS", "id": "sampai nanti" },
+  { "nl": "ik ben", "baca": "ik bèn", "id": "saya adalah" },
+  { "nl": "jij bent / u bent", "baca": "yèy bènt / ü bènt", "id": "kamu / Anda adalah" },
+  { "nl": "hij / zij is", "baca": "hèy / zèy is", "id": "dia (lk / pr) adalah" },
+  { "nl": "heten", "baca": "HEH-te(n)", "id": "bernama" },
+  { "nl": "de naam", "baca": "de nahm", "id": "nama" },
+  { "nl": "aangenaam", "baca": "AHN-khe-nahm", "id": "senang berkenalan" },
+  { "nl": "hoe gaat het?", "baca": "hu khaht het", "id": "apa kabar?" },
+  { "nl": "goed", "baca": "khut", "id": "baik" },
+  { "nl": "heel goed", "baca": "hehl khut", "id": "baik sekali" },
+  { "nl": "ook", "baca": "ohk", "id": "juga" },
+  { "nl": "dank je wel", "baca": "dangk ye VÈL", "id": "terima kasih (akrab)" },
+  { "nl": "dank u wel", "baca": "dangk ü VÈL", "id": "terima kasih (hormat)" },
+  { "nl": "alstublieft", "baca": "as-tü-BLIFT", "id": "silakan / tolong (hormat)" },
+  { "nl": "alsjeblieft", "baca": "a-sye-BLIFT", "id": "silakan / tolong (akrab)" },
+  { "nl": "sorry", "baca": "SO-ri", "id": "maaf" },
+  { "nl": "ja / nee", "baca": "ya / neh", "id": "ya / tidak" },
+  { "nl": "nieuw", "baca": "niv", "id": "baru" },
+  { "nl": "hier", "baca": "hir", "id": "di sini" },
+  { "nl": "de dag", "baca": "de dakh", "id": "hari" },
+  { "nl": "eerste", "baca": "EHRS-te", "id": "pertama" },
+  { "nl": "leuk", "baca": "lök", "id": "asyik / menyenangkan" },
+  { "nl": "meneer / mevrouw", "baca": "me-NEHR / me-VRAU", "id": "Bapak / Ibu" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan bentuk zijn yang benar (ben, bent, is, zijn).",
+   "items": [
+    "Ik ____ Budi.",
+    "Jij ____ nieuw hier.",
+    "Hij ____ mijn docent.",
+    "Wij ____ studenten.",
+    "Jullie ____ vroeg.",
+    "U ____ meneer Jansen."
+   ]
+  },
+  {
+   "prompt": "Pilih sapaan yang tepat untuk waktunya.",
+   "items": [
+    "Pukul 08.00 di kantor pos: ____",
+    "Pukul 14.00 di toko: ____",
+    "Pukul 20.00 di restoran: ____",
+    "Kepada teman sekelas, kapan saja: ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Nama saya Budi.",
+    "Apa kabar?",
+    "Baik, terima kasih.",
+    "Siapa nama Anda?",
+    "Saya baru di sini.",
+    "Sampai besok!"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "heet / ik / Budi",
+    "je / hoe / heet / ?",
+    "dag / mijn / het / eerste / is",
+    "u / gaat / met / het / hoe / ?",
+    "wel / dank / je"
+   ]
+  }
+ ],
+ "answers": [
+  "ben — bent — is — zijn — zijn — bent",
+  "Goedemorgen — Goedemiddag — Goedenavond — Hallo",
+  "Ik heet Budi. — Hoe gaat het? — Goed, dank je. — Hoe heet u? — Ik ben nieuw hier. — Tot morgen!",
+  "Ik heet Budi. — Hoe heet je? — Het is mijn eerste dag. — Hoe gaat het met u? — Dank je wel."
+ ]
+}

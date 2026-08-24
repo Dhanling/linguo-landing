@@ -1,0 +1,212 @@
+{
+ "title": "Di kafe",
+ "title_target": "In het café",
+ "goal": "Memesan makanan dan minuman dengan sopan memakai *ik wil graag* dan *mag ik*, serta mengenali kebiasaan kafe Belanda.",
+ "bekal": [
+  "memesan tanpa terdengar kasar — kunci utamanya kata *graag*",
+  "membaca menu kafe Belanda yang paling lazim",
+  "meminta bon dan membayar berbarengan atau terpisah"
+ ],
+ "wave": "Ulangi **unit 5**: sebutkan sepuluh anggota keluargamu lengkap dengan kata miliknya, lalu ubah tiap kalimat menjadi pertanyaan umur.",
+ "dialogs": [
+  {
+   "title": "Dialog — Op het terras",
+   "intro": "Matahari keluar untuk pertama kalinya dalam sepekan. Seluruh kota, tampaknya, sedang duduk di teras.",
+   "lines": [
+    { "speaker": "Ober:", "text": "Goedemiddag. Wat mag het zijn?", "id": "Selamat siang. Mau pesan apa?", "literal": "selamat-siang. apa boleh itu adalah?" },
+    { "speaker": "Sanne:", "text": "Voor mij een koffie verkeerd, alstublieft.", "id": "Saya kopi susu.", "literal": "untuk saya satu kopi salah, silakan." },
+    { "speaker": "Budi:", "text": "En ik wil graag een thee met citroen.", "id": "Dan saya mau teh dengan lemon.", "literal": "dan saya mau senang-hati satu teh dengan lemon." },
+    { "speaker": "Ober:", "text": "Wilt u er iets bij eten?", "id": "Mau pesan makanan juga?", "literal": "mau Anda di-situ sesuatu di-samping makan?" },
+    { "speaker": "Sanne:", "text": "Doe maar een portie bitterballen.", "id": "Bitterballen satu porsi deh.", "literal": "lakukan saja satu porsi bitterballen." },
+    { "speaker": "Budi:", "text": "Wat zijn bitterballen eigenlijk?", "id": "Bitterballen itu sebenarnya apa?", "literal": "apa adalah bitterballen sebenarnya?" },
+    { "speaker": "Sanne:", "text": "Gefrituurde balletjes met vlees erin. Heel lekker.", "id": "Bola-bola goreng berisi daging. Enak sekali.", "literal": "digoreng bola-kecil dengan daging di-dalamnya. sangat enak." },
+    { "speaker": "Ober:", "text": "Anders nog iets?", "id": "Ada lagi?", "literal": "lain lagi sesuatu?" },
+    { "speaker": "Budi:", "text": "Nee, dank u. O wacht — mag ik ook een glaasje water?", "id": "Tidak, terima kasih. Oh tunggu — boleh minta segelas air juga?", "literal": "tidak, terima kasih Anda. oh tunggu — boleh saya juga satu gelas-kecil air?" },
+    { "speaker": "Ober:", "text": "Zeker. Kraanwater of flesje?", "id": "Tentu. Air keran atau botol?", "literal": "pasti. air-keran atau botol-kecil?" },
+    { "speaker": "Budi:", "text": "Kraanwater is prima. Dank u wel.", "id": "Air keran saja. Terima kasih.", "literal": "air-keran adalah bagus. terima kasih Anda memang." },
+    { "speaker": "Sanne:", "text": "Straks de rekening apart, hoor.", "id": "Nanti bonnya dipisah, ya.", "literal": "sebentar-lagi tagihan-itu terpisah, ya." }
+   ],
+   "notes": [
+    "**Wat mag het zijn?** — sapaan pelayan yang paling lazim, harfiahnya \"boleh jadi apa ini?\". Variasi lain: *Zegt u het maar* dan *Wat kan ik voor u doen?*",
+    "**Koffie verkeerd** harfiahnya \"kopi salah\" — susu lebih banyak daripada kopi, kira-kira setara *latte*. Namanya bukan lelucon; begitulah menu menuliskannya.",
+    "**Ik wil graag …** adalah kalimat pemesanan yang paling aman. Tanpa *graag*, kalimat *ik wil een koffie* terdengar seperti perintah kepada pelayan. Kata kecil ini yang menanggung seluruh kesopanannya.",
+    "**Doe maar …** = \"sudah, itu saja deh\" — cara memesan yang santai dan sangat Belanda. *Maar* di sini bukan \"tetapi\", melainkan pelunak: *doe maar*, *zeg het maar*, *ga maar zitten*.",
+    "**Gefrituurde balletjes met vlees erin** — perhatikan *erin* (di dalamnya). Kata *er* muncul lagi; ia akan terus muncul sampai kamu berhenti menyadarinya.",
+    "**Een glaasje water** — bentuk kecil sekali lagi. Memesan *een water* terdengar aneh; orang Belanda memesan *een glaasje water*, *een biertje*, *een kopje thee*.",
+    "**Kraanwater** — air keran, gratis dan aman diminum di seluruh Belanda, meski beberapa kafe memasang biaya kecil. Meminta air keran sama sekali tidak dianggap pelit.",
+    "**De rekening apart** — membayar terpisah adalah kebiasaan, bukan pengecualian. Bahkan ada ungkapan internasional untuk itu: *going Dutch*. Di Belanda sendiri orang berkata *ieder betaalt voor zichzelf* atau memakai aplikasi *Tikkie* untuk menagih temannya beberapa euro tanpa canggung sedikit pun."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga cara memesan, dari paling santai ke paling sopan",
+     "body": [
+      "Semuanya benar. Yang membedakan cuma nada."
+     ],
+     "table": {
+      "head": ["Bentuk", "Contoh", "Nada"],
+      "rows": [
+       ["**Doe maar** …", "Doe maar een koffie.", "santai, seperti di antara teman"],
+       ["**Ik wil graag** …", "Ik wil graag een koffie.", "netral, aman di mana pun"],
+       ["**Mag ik** …?", "Mag ik een koffie?", "sopan, sedikit meminta izin"],
+       ["**Zou ik … mogen?**", "Zou ik de kaart mogen?", "sangat sopan, agak formal"],
+       ["**Voor mij** …", "Voor mij een thee.", "ringkas, saat pesanan berkeliling meja"]
+      ]
+     },
+     "after": [
+      "*Graag* tidak punya padanan langsung dalam bahasa Indonesia — ia berarti \"dengan senang hati\" dan menempel di mana-mana: *graag gedaan* (sama-sama), *ja, graag* (ya, boleh), *ik eet graag rijst* (saya suka makan nasi).",
+      "⚠️ *Ik wil* tanpa *graag* dianggap kasar oleh telinga Belanda. Ini salah satu kesalahan sopan santun yang paling sering dilakukan pemula, dan yang paling gampang diperbaiki."
+     ]
+    },
+    {
+     "title": "Mogen dan willen — dua kata kerja bantu pertama",
+     "body": [
+      "Kata kerja bantu memindahkan kata kerja utama ke **ujung kalimat** dalam bentuk kamusnya. Kelima kata kerja bantu dibahas lengkap di unit 13; dua yang paling berguna sudah dipakai sekarang."
+     ],
+     "table": {
+      "head": ["", "willen (mau)", "mogen (boleh)"],
+      "rows": [
+       ["ik", "wil", "mag"],
+       ["jij / u", "wilt / wil", "mag"],
+       ["hij / zij", "wil", "mag"],
+       ["wij / jullie / zij", "willen", "mogen"]
+      ]
+     },
+     "after": [
+      "*Ik wil graag een kopje koffie **drinken**.* — kata kerja utamanya berdiri di paling belakang. Kalau objeknya sudah jelas, kata kerja utamanya boleh dihilangkan sama sekali: *Ik wil graag een kopje koffie.*",
+      "*Mag ik …?* meminta izin; *Kan ik …?* menanyakan kemungkinan. Di kafe keduanya dipakai, tapi *mag* terdengar lebih halus."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menu kafe Belanda",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Cara baca", "Bahasa Indonesia"], "rows": [
+      ["de koffie", "de KO-fi", "kopi"],
+      ["koffie verkeerd", "KO-fi fer-KEHRT", "kopi susu"],
+      ["de thee", "de teh", "teh"],
+      ["de melk", "de mèlk", "susu"],
+      ["het bier / een biertje", "het bir", "bir / segelas bir"],
+      ["de wijn (rood / wit)", "de vèyn", "anggur (merah / putih)"],
+      ["de jus d'orange", "de zyü do-RANZY", "jus jeruk"],
+      ["het broodje kaas", "het BROH-tye kahs", "roti isi keju"],
+      ["de tosti", "de TOS-ti", "roti panggang isi"],
+      ["de bitterballen", "de BI-ter-ba-le(n)", "bola daging goreng"],
+      ["de patat / de friet", "de pa-TAT", "kentang goreng"],
+      ["de appeltaart", "de A-pel-tahrt", "kue apel"],
+      ["de stroopwafel", "de STROHP-vah-fel", "wafel sirup"],
+      ["de pannenkoek", "de PA-ne-kuk", "panekuk"]
+     ] },
+    { "type": "kotak", "title": "Kebiasaan kafe yang perlu diketahui lebih dulu", "items": [
+      "**Kopi datang bersama sepotong kue kecil** (*een koekje*) — dan itu gratis. Menolaknya tidak perlu.",
+      "**Borrel** = jam minum sore, biasanya Jumat sesudah kerja, dengan bir dan camilan goreng. Undangannya berbunyi: *Gaan we borrelen?*",
+      "**Terras** dibuka begitu matahari muncul, meski suhunya 12 derajat. Selimut disediakan di sandaran kursi.",
+      "**Pelayan tidak menghampiri berkali-kali.** Untuk memanggil, angkat tangan dan katakan *Mag ik afrekenen?* atau *De rekening, alstublieft.*",
+      "⚠️ Di banyak kafe kecil, kamu memesan dan **membayar di kasir**, bukan di meja. Kalau ragu, perhatikan apakah orang lain berdiri antre."
+     ] }
+   ]
+  },
+  {
+   "title": "Kalimat siap pakai di meja",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Bahasa Indonesia"], "rows": [
+      ["Mag ik de kaart?", "Boleh minta menunya?"],
+      ["Wat kunt u aanbevelen?", "Apa yang Anda sarankan?"],
+      ["Is deze plek vrij?", "Tempat ini kosong?"],
+      ["Ik ben vegetariër.", "Saya vegetarian."],
+      ["Ik eet geen varkensvlees.", "Saya tidak makan daging babi."],
+      ["Is dit halal?", "Ini halal?"],
+      ["Zonder suiker, alstublieft.", "Tanpa gula."],
+      ["Het smaakt heerlijk.", "Rasanya enak sekali."],
+      ["De rekening, alstublieft.", "Bonnya, tolong."],
+      ["Kunnen we apart betalen?", "Bisa bayar terpisah?"],
+      ["Laat maar zitten.", "Kembaliannya ambil saja."],
+      ["Eet smakelijk!", "Selamat makan!"]
+     ] },
+    { "type": "p", "text": "*Eet smakelijk* diucapkan sebelum makan, oleh siapa pun yang lewat di sebelah mejamu — pelayan, tetangga meja, bahkan orang asing. Balasannya cukup *dank je* atau *jij ook*." },
+    { "type": "p", "text": "Kalimat *Ik eet geen varkensvlees* jauh lebih efektif daripada bertanya apakah suatu hidangan halal: daging babi tersembunyi di banyak sup dan camilan Belanda, dan pelayan biasanya langsung tahu mana yang aman begitu kamu menyebutkannya." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "willen", "baca": "VI-le(n)", "id": "mau" },
+  { "nl": "graag", "baca": "khrahkh", "id": "dengan senang hati" },
+  { "nl": "mogen", "baca": "MOH-khe(n)", "id": "boleh" },
+  { "nl": "bestellen", "baca": "be-STÈ-le(n)", "id": "memesan" },
+  { "nl": "eten / drinken", "baca": "EH-te(n) / DRING-ke(n)", "id": "makan / minum" },
+  { "nl": "het café", "baca": "het ka-FEH", "id": "kafe" },
+  { "nl": "het terras", "baca": "het tè-RAS", "id": "teras" },
+  { "nl": "de ober", "baca": "de OH-ber", "id": "pelayan" },
+  { "nl": "de kaart", "baca": "de kahrt", "id": "menu / kartu" },
+  { "nl": "de rekening", "baca": "de REH-ke-ning", "id": "tagihan" },
+  { "nl": "afrekenen", "baca": "AF-reh-ke-ne(n)", "id": "membayar" },
+  { "nl": "apart", "baca": "a-PART", "id": "terpisah" },
+  { "nl": "samen", "baca": "SAH-me(n)", "id": "bersama / digabung" },
+  { "nl": "lekker", "baca": "LÈ-ker", "id": "enak" },
+  { "nl": "heerlijk", "baca": "HEHR-lek", "id": "lezat sekali" },
+  { "nl": "het vlees", "baca": "het flehs", "id": "daging" },
+  { "nl": "het varkensvlees", "baca": "het FAR-kens-flehs", "id": "daging babi" },
+  { "nl": "de kip", "baca": "de kip", "id": "ayam" },
+  { "nl": "de vis", "baca": "de fis", "id": "ikan" },
+  { "nl": "de suiker", "baca": "de SÖY-ker", "id": "gula" },
+  { "nl": "het water", "baca": "het VAH-ter", "id": "air" },
+  { "nl": "het glaasje", "baca": "het KHLAH-sye", "id": "gelas kecil" },
+  { "nl": "de fles / het flesje", "baca": "de flès", "id": "botol" },
+  { "nl": "de portie", "baca": "de POR-si", "id": "porsi" },
+  { "nl": "zeker", "baca": "ZEH-ker", "id": "tentu" },
+  { "nl": "prima", "baca": "PRI-ma", "id": "bagus / oke" },
+  { "nl": "eigenlijk", "baca": "ÈY-khe-lek", "id": "sebenarnya" },
+  { "nl": "wachten", "baca": "VAKH-te(n)", "id": "menunggu" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan willen atau mogen dalam bentuk yang benar.",
+   "items": [
+    "Ik ____ graag een koffie. (willen)",
+    "____ ik de kaart? (mogen)",
+    "Wat ____ u drinken? (willen)",
+    "Wij ____ hier niet roken. (mogen)",
+    "Zij ____ een broodje kaas. (willen)"
+   ]
+  },
+  {
+   "prompt": "Susun pesanan yang sopan dari kata-kata ini.",
+   "items": [
+    "koffie / graag / een / ik / wil",
+    "de / mag / kaart / ik / ?",
+    "mij / thee / voor / een",
+    "maar / doe / bitterballen / een portie",
+    "alstublieft / rekening / de"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Saya mau segelas air.",
+    "Boleh minta menunya?",
+    "Rasanya enak sekali.",
+    "Saya tidak makan daging babi.",
+    "Bisa bayar terpisah?",
+    "Bonnya, tolong."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang hilang.",
+   "items": [
+    "Ik wil ____ een biertje. (kata kesopanan)",
+    "Wat ____ het zijn? (sapaan pelayan)",
+    "De rekening, ____.",
+    "Eet ____! (sebelum makan)",
+    "Kunnen we ____ betalen? (terpisah)"
+   ]
+  }
+ ],
+ "answers": [
+  "wil — Mag — wilt — mogen — willen",
+  "Ik wil graag een koffie. — Mag ik de kaart? — Voor mij een thee. — Doe maar een portie bitterballen. — De rekening, alstublieft.",
+  "Ik wil graag een glaasje water. — Mag ik de kaart? — Het smaakt heerlijk. — Ik eet geen varkensvlees. — Kunnen we apart betalen? — De rekening, alstublieft.",
+  "graag — mag — alstublieft — smakelijk — apart"
+ ]
+}

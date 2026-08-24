@@ -1,0 +1,207 @@
+{
+ "title": "Bisa, harus, mau, boleh",
+ "title_target": "Kun je me helpen?",
+ "goal": "Menguasai lima kata kerja bantu bahasa Belanda dan menghindari jebakan terbesarnya: *moet niet* yang tidak berarti \"tidak harus\".",
+ "bekal": [
+  "memakai *kunnen, moeten, mogen, willen, zullen* dengan benar",
+  "melempar kata kerja utama ke ujung kalimat",
+  "membedakan *je hoeft niet* (tidak perlu) dari *je moet niet* (jangan)"
+ ],
+ "wave": "Ulangi **unit 11**: bayangkan rute dari rumahmu ke stasiun terdekat, lalu jelaskan seluruhnya dalam bahasa Belanda, kalimat demi kalimat.",
+ "dialogs": [
+  {
+   "title": "Dialog — Verhuizen",
+   "intro": "Budi pindah kamar. Ia butuh bantuan, dan orang Belanda punya kata untuk gotong royong: *een verhuizing*.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Sanne, kun je me zaterdag helpen?", "id": "Sanne, Sabtu bisa bantu saya?", "literal": "Sanne, bisa kamu saya Sabtu menolong?" },
+    { "speaker": "Sanne:", "text": "Wat moet er gebeuren?", "id": "Perlu ngapain?", "literal": "apa harus di-sana terjadi?" },
+    { "speaker": "Budi:", "text": "Ik moet verhuizen. Ik mag mijn kamer niet houden.", "id": "Saya harus pindah. Kamar saya tidak boleh diperpanjang.", "literal": "saya harus pindah. saya boleh milik-saya kamar tidak menahan." },
+    { "speaker": "Sanne:", "text": "Wanneer moet je eruit?", "id": "Kapan harus keluar?", "literal": "kapan harus kamu keluar-itu?" },
+    { "speaker": "Budi:", "text": "Voor het einde van de maand. Ik kan een busje huren.", "id": "Sebelum akhir bulan. Saya bisa sewa mobil bak.", "literal": "sebelum akhir-itu dari bulan-itu. saya bisa satu mobil-kecil menyewa." },
+    { "speaker": "Sanne:", "text": "Dat hoeft niet. Mijn broer heeft een bakfiets.", "id": "Tidak perlu. Kakak saya punya sepeda angkut.", "literal": "itu perlu tidak. milik-saya saudara punya satu sepeda-bak." },
+    { "speaker": "Budi:", "text": "Een bakfiets? Voor een hele kamer?", "id": "Sepeda angkut? Buat sekamar penuh?", "literal": "satu sepeda-bak? untuk satu seluruh kamar?" },
+    { "speaker": "Sanne:", "text": "Je zou verbaasd zijn. Alles past erin.", "id": "Kamu bakal kaget. Semuanya muat.", "literal": "kamu akan terkejut adalah. semuanya muat di-dalamnya." },
+    { "speaker": "Budi:", "text": "Goed. Maar we moeten niet in de regen rijden.", "id": "Oke. Tapi kita jangan sampai jalan pas hujan.", "literal": "baik. tapi kami harus tidak dalam hujan-itu berkendara." },
+    { "speaker": "Sanne:", "text": "Dat kunnen we niet beloven. Zullen we om negen uur beginnen?", "id": "Itu tidak bisa dijanjikan. Mulai jam sembilan, ya?", "literal": "itu bisa kami tidak menjanjikan. akan kami pada sembilan jam memulai?" },
+    { "speaker": "Budi:", "text": "Prima. Ik zal koffie en broodjes halen.", "id": "Oke. Saya yang bawa kopi dan roti.", "literal": "bagus. saya akan kopi dan roti-roti mengambil." },
+    { "speaker": "Sanne:", "text": "Dan wil iedereen wel komen helpen.", "id": "Kalau begitu semua orang pasti mau ikut bantu.", "literal": "kemudian mau setiap-orang memang datang menolong." }
+   ],
+   "notes": [
+    "**Kun je me helpen?** — bentuk *kunt* dipendekkan jadi *kun* khusus di depan *je*. Dua-duanya benar; *kun je* jauh lebih sering dipakai.",
+    "**Wat moet er gebeuren?** — perhatikan kata kerja utamanya (*gebeuren*) yang berdiri di ujung dalam bentuk kamus. Ini pola yang berlaku untuk semua kata kerja bantu.",
+    "**Ik mag mijn kamer niet houden** — *mogen* berarti \"boleh\", dan *mag niet* berarti \"tidak boleh\" (dilarang), bukan sekadar \"tidak bisa\".",
+    "**Dat hoeft niet.** Inilah pasangan yang tidak boleh tertukar: *moeten niet* = **jangan** (larangan), sedangkan *hoeven niet* = **tidak perlu**. Kata kerja *hoeven* praktis hanya dipakai dalam bentuk ingkar.",
+    "**Een bakfiets** — sepeda berbak besar di depan, dipakai orang Belanda untuk mengangkut anak, belanjaan, perabot, dan memang benar-benar satu kamar kos. Ia salah satu benda paling khas Belanda modern.",
+    "**Je zou verbaasd zijn** — *zou* adalah bentuk pengandaian dari *zullen*: \"kamu akan terkejut\". Ia juga kunci kesopanan tingkat lanjut (*zou u … kunnen?*).",
+    "**Zullen we om negen uur beginnen?** — *zullen we …?* adalah cara baku mengajak: \"gimana kalau kita …?\". Hampir semua ajakan dalam bahasa Belanda dimulai begini.",
+    "**Dan wil iedereen wel komen helpen** — dua kata kerja berderet di ujung (*komen helpen*). Bahasa Belanda membiarkan tumpukan kata kerja di akhir kalimat tumbuh sampai tiga atau empat; ini yang membuat kalimat panjangnya terdengar khas."
+   ],
+   "grammars": [
+    {
+     "title": "Lima kata kerja bantu",
+     "body": [
+      "Semuanya menempatkan kata kerja utama **di ujung kalimat dalam bentuk kamus**, dan semuanya sedikit tak beraturan di bentuk tunggalnya."
+     ],
+     "table": {
+      "head": ["", "kunnen (bisa)", "moeten (harus)", "mogen (boleh)", "willen (mau)", "zullen (akan)"],
+      "rows": [
+       ["ik", "kan", "moet", "mag", "wil", "zal"],
+       ["jij", "kunt / kan", "moet", "mag", "wilt / wil", "zult / zal"],
+       ["hij / zij", "kan", "moet", "mag", "wil", "zal"],
+       ["wij / jullie / zij", "kunnen", "moeten", "mogen", "willen", "zullen"]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa bentuk *jij* di sini **tidak** berakhiran -t untuk *moeten* dan *mogen* — bentuknya memang begitu, bukan karena inversi.",
+      "Susunan kalimatnya: pelaku → kata kerja bantu (posisi 2) → sisanya → **kata kerja utama di ujung**. *Ik **kan** morgen niet **komen**.*",
+      "Kata kerja berpisah (unit 9) menyatu kembali di ujung: *Ik moet vroeg **opstaan**.*"
+     ]
+    },
+    {
+     "title": "Nuansa yang membedakan artinya",
+     "body": [
+      "Kelimanya sering diterjemahkan sama ke bahasa Indonesia, padahal jaraknya jauh."
+     ],
+     "table": {
+      "head": ["Kalimat", "Artinya"],
+      "rows": [
+       ["Ik **kan** niet komen.", "Saya tidak bisa (ada halangan)."],
+       ["Ik **mag** niet komen.", "Saya tidak boleh (dilarang)."],
+       ["Ik **wil** niet komen.", "Saya tidak mau."],
+       ["Ik **moet** komen.", "Saya harus datang."],
+       ["Ik **hoef** niet te komen.", "Saya tidak perlu datang."],
+       ["Je **moet** niet komen.", "**Jangan** datang."],
+       ["**Zal** ik komen?", "Perlu saya datang?"],
+       ["**Zullen** we gaan?", "Yuk, kita berangkat?"]
+      ]
+     },
+     "after": [
+      "⚠️ Baris kelima dan keenam adalah inti unit ini. Menjawab undangan dengan *ik moet niet komen* berarti kamu berkata \"saya dilarang datang\" — bukan \"saya tidak perlu datang\".",
+      "*Hoeven* selalu memakai **te** di depan kata kerja utamanya: *Je hoeft niet **te** betalen.* Ia satu-satunya dari kelompok ini yang begitu.",
+      "*Kunnen* juga dipakai untuk kemampuan berbahasa: *Ik kan Nederlands* — tanpa kata kerja kedua sama sekali."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Meminta tolong dengan sopan",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Tingkat kesopanan"], "rows": [
+      ["Kun je me even helpen?", "santai, ke teman"],
+      ["Kunt u me helpen?", "netral, ke orang asing"],
+      ["Zou u me kunnen helpen?", "sangat sopan"],
+      ["Mag ik iets vragen?", "sopan, membuka percakapan"],
+      ["Zou het lukken om…?", "hati-hati, saat mungkin merepotkan"],
+      ["Ik heb een vraagje.", "melunakkan sebelum bertanya"]
+     ] },
+    { "type": "p", "text": "Kata *even* adalah pelunak paling berguna dalam bahasa Belanda: ia mengecilkan permintaan menjadi \"sebentar saja\". *Kun je even kijken?*, *Mag ik even bellen?*, *Wacht even.* Tanpa *even*, permintaan yang sama terdengar jauh lebih menuntut." },
+    { "type": "kotak", "title": "Menjawab permintaan", "items": [
+      "*Ja hoor* — boleh, santai saja.",
+      "*Natuurlijk* / *zeker* — tentu.",
+      "*Geen probleem* — tidak masalah.",
+      "*Ik zal kijken wat ik kan doen* — saya lihat dulu apa yang bisa saya lakukan.",
+      "*Sorry, dat lukt me niet* — maaf, saya tidak bisa. (*lukken* = berhasil, terlaksana)",
+      "*Misschien een andere keer* — mungkin lain kali."
+     ] }
+   ]
+  },
+  {
+   "title": "Aturan dan larangan sehari-hari",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Bahasa Indonesia"], "rows": [
+      ["Hier mag je niet parkeren.", "Di sini tidak boleh parkir."],
+      ["Je moet je fiets op slot zetten.", "Sepedamu harus dikunci."],
+      ["Je mag hier niet roken.", "Dilarang merokok di sini."],
+      ["Je hoeft geen afspraak te maken.", "Tidak perlu bikin janji."],
+      ["Ik moet nog boodschappen doen.", "Saya masih harus belanja."],
+      ["Kun je dat herhalen?", "Bisa diulang?"],
+      ["Mag ik hier zitten?", "Boleh duduk di sini?"],
+      ["Dat mag niet van mijn baas.", "Bos saya tidak mengizinkan."]
+     ] },
+    { "type": "p", "text": "*Op slot zetten* (mengunci) pantas dihafal utuh: di Belanda sepeda dikunci dua kali — satu kunci di roda, satu rantai ke tiang. Ini bukan kecurigaan berlebihan; jumlah sepeda yang hilang tiap tahun ratusan ribu." },
+    { "type": "p", "text": "*Boodschappen doen* = berbelanja kebutuhan sehari-hari, berbeda dari *winkelen* (jalan-jalan ke toko untuk membeli baju dan barang). Dua kegiatan yang dalam bahasa Indonesia sama-sama disebut \"belanja\"." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "kunnen", "baca": "KÜ-ne(n)", "id": "bisa" },
+  { "nl": "moeten", "baca": "MU-te(n)", "id": "harus" },
+  { "nl": "mogen", "baca": "MOH-khe(n)", "id": "boleh" },
+  { "nl": "willen", "baca": "VI-le(n)", "id": "mau" },
+  { "nl": "zullen", "baca": "ZÜ-le(n)", "id": "akan" },
+  { "nl": "hoeven", "baca": "HU-fe(n)", "id": "perlu (dalam kalimat ingkar)" },
+  { "nl": "helpen", "baca": "HÈL-pe(n)", "id": "menolong" },
+  { "nl": "lukken", "baca": "LÜ-ke(n)", "id": "berhasil / terlaksana" },
+  { "nl": "beloven", "baca": "be-LOH-fe(n)", "id": "berjanji" },
+  { "nl": "gebeuren", "baca": "khe-BÖ-re(n)", "id": "terjadi" },
+  { "nl": "verhuizen", "baca": "fer-HÖY-ze(n)", "id": "pindah rumah" },
+  { "nl": "huren", "baca": "HÜH-re(n)", "id": "menyewa" },
+  { "nl": "halen", "baca": "HAH-le(n)", "id": "mengambil / menjemput" },
+  { "nl": "passen", "baca": "PA-se(n)", "id": "muat / pas" },
+  { "nl": "rijden", "baca": "RÈY-de(n)", "id": "berkendara" },
+  { "nl": "parkeren", "baca": "par-KEH-re(n)", "id": "parkir" },
+  { "nl": "roken", "baca": "ROH-ke(n)", "id": "merokok" },
+  { "nl": "boodschappen doen", "baca": "BOHT-skha-pe(n) dun", "id": "belanja kebutuhan" },
+  { "nl": "de kamer", "baca": "de KAH-mer", "id": "kamar" },
+  { "nl": "de bakfiets", "baca": "de BAK-fits", "id": "sepeda angkut" },
+  { "nl": "het busje", "baca": "het BÜ-sye", "id": "mobil bak kecil" },
+  { "nl": "op slot zetten", "baca": "op slot ZÈ-te(n)", "id": "mengunci" },
+  { "nl": "het einde", "baca": "het ÈYN-de", "id": "akhir" },
+  { "nl": "verbaasd", "baca": "fer-BAHST", "id": "terkejut" },
+  { "nl": "hele", "baca": "HEH-le", "id": "seluruh" },
+  { "nl": "even", "baca": "EH-fe(n)", "id": "sebentar (pelunak)" },
+  { "nl": "misschien", "baca": "mi-SKHIN", "id": "mungkin" },
+  { "nl": "de keer", "baca": "de kehr", "id": "kali" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan kata kerja bantu yang benar.",
+   "items": [
+    "Ik ____ je helpen. (bisa)",
+    "Je ____ je fiets op slot zetten. (harus)",
+    "Hier ____ je niet roken. (boleh)",
+    "Wij ____ vanavond uitgaan. (mau)",
+    "____ we om negen uur beginnen? (ajakan)",
+    "Je ____ niet te betalen. (tidak perlu)"
+   ]
+  },
+  {
+   "prompt": "Susun ulang dengan kata kerja utama di ujung.",
+   "items": [
+    "ik / kan / komen / niet / morgen",
+    "je / moet / opstaan / vroeg",
+    "we / mogen / parkeren / hier / niet",
+    "hij / wil / helpen / ons",
+    "ik / zal / halen / koffie"
+   ]
+  },
+  {
+   "prompt": "Pilih moet niet atau hoeft niet.",
+   "items": [
+    "Je ____ te komen — het is niet verplicht.",
+    "Je ____ zo hard rijden — dat is gevaarlijk.",
+    "Je ____ te betalen — het is gratis.",
+    "Je ____ dat zeggen — het is onaardig."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Bisa bantu saya sebentar?",
+    "Saya harus bangun pagi.",
+    "Di sini tidak boleh parkir.",
+    "Tidak perlu bikin janji.",
+    "Yuk mulai jam sembilan?",
+    "Maaf, saya tidak bisa."
+   ]
+  }
+ ],
+ "answers": [
+  "kan — moet — mag — willen — Zullen — hoeft",
+  "Ik kan morgen niet komen. — Je moet vroeg opstaan. — We mogen hier niet parkeren. — Hij wil ons helpen. — Ik zal koffie halen.",
+  "hoeft niet — moet niet — hoeft niet — moet niet",
+  "Kun je me even helpen? — Ik moet vroeg opstaan. — Hier mag je niet parkeren. — Je hoeft geen afspraak te maken. — Zullen we om negen uur beginnen? — Sorry, dat lukt me niet."
+ ]
+}

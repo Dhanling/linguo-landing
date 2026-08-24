@@ -1,0 +1,211 @@
+{
+ "title": "Keluargaku",
+ "title_target": "Mijn familie",
+ "goal": "Menyebut anggota keluarga, memakai kata milik — termasuk *ons* dan *onze* yang ikut golongan kata bendanya — dan menanyakan umur.",
+ "bekal": [
+  "memakai *mijn, je, zijn, haar, ons/onze, hun* dengan benar",
+  "menyatakan kepemilikan dengan *van*: *de fiets van mijn broer*",
+  "menanyakan dan menyebut umur"
+ ],
+ "wave": "Ulangi **unit 3**: tunjuk sepuluh benda di sekitarmu, sebut namanya lengkap dengan *de* atau *het*, lalu ubah jadi bentuk jamaknya.",
+ "dialogs": [
+  {
+   "title": "Dialog — Foto's op de telefoon",
+   "intro": "Sanne memperlihatkan foto keluarganya kepada Budi.",
+   "lines": [
+    { "speaker": "Sanne:", "text": "Kijk, dit is mijn familie.", "id": "Lihat, ini keluarga saya.", "literal": "lihat, ini adalah milik-saya keluarga." },
+    { "speaker": "Budi:", "text": "Wie is die man met de baard?", "id": "Siapa laki-laki berjenggot itu?", "literal": "siapa adalah itu laki-laki dengan janggut-itu?" },
+    { "speaker": "Sanne:", "text": "Dat is mijn vader. Hij heet Kees.", "id": "Itu ayah saya. Namanya Kees.", "literal": "itu adalah milik-saya ayah. dia bernama Kees." },
+    { "speaker": "Budi:", "text": "En de vrouw naast hem?", "id": "Dan perempuan di sebelahnya?", "literal": "dan perempuan-itu di-sebelah dia?" },
+    { "speaker": "Sanne:", "text": "Mijn moeder, Anke. En dat zijn mijn twee broers.", "id": "Ibu saya, Anke. Dan itu dua kakak/adik laki-laki saya.", "literal": "milik-saya ibu, Anke. dan itu adalah milik-saya dua saudara-laki-laki." },
+    { "speaker": "Budi:", "text": "Hoe oud zijn ze?", "id": "Berapa umur mereka?", "literal": "bagaimana tua adalah mereka?" },
+    { "speaker": "Sanne:", "text": "Tom is negentien en Daan is veertien. Ik ben de oudste.", "id": "Tom sembilan belas, Daan empat belas. Saya yang paling tua.", "literal": "Tom adalah sembilan-belas dan Daan adalah empat-belas. saya adalah yang paling-tua." },
+    { "speaker": "Budi:", "text": "Heb je ook een zus?", "id": "Punya saudara perempuan juga?", "literal": "punya kamu juga satu saudara-perempuan?" },
+    { "speaker": "Sanne:", "text": "Nee. Maar mijn broer heeft een vriendin — die daar.", "id": "Tidak. Tapi kakak saya punya pacar — yang itu.", "literal": "tidak. tapi milik-saya saudara punya satu pacar-perempuan — itu di-sana." },
+    { "speaker": "Budi:", "text": "Wonen ze samen?", "id": "Mereka tinggal bersama?", "literal": "tinggal mereka bersama?" },
+    { "speaker": "Sanne:", "text": "Ja, in haar huis in Haarlem. Ons huis is te klein.", "id": "Ya, di rumah dia (perempuan) di Haarlem. Rumah kami terlalu kecil.", "literal": "ya, di milik-dia rumah di Haarlem. milik-kami rumah adalah terlalu kecil." },
+    { "speaker": "Budi:", "text": "En jullie hond? Is dat ook familie?", "id": "Dan anjing kalian? Itu keluarga juga?", "literal": "dan milik-kalian anjing? adalah itu juga keluarga?" },
+    { "speaker": "Sanne:", "text": "Onze hond is de baas van het huis.", "id": "Anjing kami adalah bos rumah ini.", "literal": "milik-kami anjing adalah bos-itu dari rumah-itu." }
+   ],
+   "notes": [
+    "**Ons huis** tapi **onze hond** — inilah satu-satunya kata milik bahasa Belanda yang berubah bentuk. *Ons* untuk het-woord, *onze* untuk de-woord dan untuk semua bentuk jamak. Sisanya (*mijn, je, zijn, haar, jullie, hun*) tidak pernah berubah sama sekali.",
+    "**Wie is die man?** — *wie* = siapa, *wat* = apa, *welke* = yang mana. Jangan tertukar dengan bahasa Inggris *who/which*; *wie* memang mirip \"who\" tapi ditulis dan dibaca lain.",
+    "**Naast hem** — sesudah kata depan dipakai bentuk objek: *hem* (dia lk), *haar* (dia pr), *mij/me* (saya), *jou/je* (kamu), *ons* (kami), *hen/hun* (mereka).",
+    "**Hoe oud zijn ze?** Harfiahnya \"bagaimana tua adalah mereka?\". Umur dinyatakan dengan *zijn*, sama seperti bahasa Inggris (*I am 25*) — bukan dengan *hebben* seperti bahasa Prancis atau Spanyol.",
+    "**De oudste** = yang paling tua. Bentuk bertingkat: *oud → ouder → oudst*. Kata sifat bertingkat dibahas penuh di unit 15.",
+    "**Een vriendin** berarti pacar perempuan **dan** teman perempuan — yang membedakan hanya kata miliknya. *Mijn vriendin* biasanya berarti pacar; *een vriendin van mij* berarti seorang teman. Perbedaan yang sama berlaku untuk *vriend*.",
+    "**De baas van het huis** — kepemilikan dinyatakan dengan *van*, bukan dengan akhiran. Ini bentuk yang paling sering dipakai dalam bahasa Belanda sehari-hari."
+   ],
+   "grammars": [
+    {
+     "title": "Kata milik",
+     "body": [
+      "Delapan bentuk, dan hanya satu yang punya dua wajah."
+     ],
+     "table": {
+      "head": ["Pemilik", "Bentuk", "Contoh"],
+      "rows": [
+       ["saya", "**mijn** (m'n)", "mijn vader, mijn huis"],
+       ["kamu (akrab)", "**jouw / je**", "je moeder, jouw fiets"],
+       ["Anda (hormat)", "**uw**", "uw naam, uw huis"],
+       ["dia (lk)", "**zijn** (z'n)", "zijn broer, zijn boek"],
+       ["dia (pr)", "**haar**", "haar zus, haar huis"],
+       ["kami — het-woord", "**ons**", "**ons** huis, **ons** kind"],
+       ["kami — de-woord & jamak", "**onze**", "**onze** hond, **onze** kinderen"],
+       ["kalian", "**jullie**", "jullie hond"],
+       ["mereka", "**hun**", "hun kinderen"]
+      ]
+     },
+     "after": [
+      "*Jouw* dan *je* sama artinya: *jouw* dipakai kalau kamu ingin menekankan (*Is dat jouw fiets of die van mij?*), *je* untuk selebihnya. Sama halnya *m'n* dan *z'n* dalam percakapan santai.",
+      "⚠️ *Zijn* berarti \"miliknya (lk)\" **dan** kata kerja \"adalah\". Yang menentukan adalah tempatnya dalam kalimat: *Zijn boek* (bukunya) lawan *De boeken zijn nieuw* (buku-buku itu baru).",
+      "⚠️ *Uw* (milik Anda) sering tertukar dengan *u* (Anda). *Hoe is uw naam?* benar; *Hoe is u naam?* salah."
+     ]
+    },
+    {
+     "title": "Menyatakan milik dengan van",
+     "body": [
+      "Bahasa Belanda punya dua cara, dan yang pertama jauh lebih sering dipakai daripada yang kedua."
+     ],
+     "table": {
+      "head": ["Bentuk", "Contoh", "Catatan"],
+      "rows": [
+       ["**van** + pemilik", "de fiets **van** mijn broer", "bentuk sehari-hari, selalu aman"],
+       ["nama + **-s**", "**Sannes** fiets", "hanya untuk nama orang, tanpa tanda kutip"],
+       ["nama berakhir vokal + **'s**", "**Anna's** huis, **opa's** bril", "tanda kutip supaya vokalnya tetap panjang"],
+       ["nama berakhir -s + **'**", "**Kees'** auto", "cukup tanda kutip di ujung"]
+      ]
+     },
+     "after": [
+      "Untuk benda dan kata umum, bentuk *-s* **tidak** dipakai: *het dak van het huis* (atap rumah itu), bukan *het huis's dak*. Ini beda penting dari bahasa Inggris.",
+      "Pertanyaannya: *Van wie is deze tas?* (\"Punya siapa tas ini?\") Jawabannya: *Die is van mij.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Anggota keluarga",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Cara baca", "Bahasa Indonesia"], "rows": [
+      ["de familie", "de fa-MI-li", "keluarga"],
+      ["de vader / de moeder", "de FAH-der / de MU-der", "ayah / ibu"],
+      ["de ouders", "de AU-ders", "orang tua"],
+      ["de zoon / de dochter", "de zohn / de DOKH-ter", "anak lk / anak pr"],
+      ["de broer / de zus", "de brur / de züs", "saudara lk / saudara pr"],
+      ["de opa / de oma", "de OH-pa / de OH-ma", "kakek / nenek"],
+      ["de oom / de tante", "de ohm / de TAN-te", "paman / bibi"],
+      ["de neef / de nicht", "de nehf / de nikht", "sepupu atau keponakan"],
+      ["de man / de vrouw", "de man / de frau", "suami / istri"],
+      ["de vriend / de vriendin", "de frint / de frin-DIN", "pacar atau teman"],
+      ["het kleinkind", "het KLÈYN-kint", "cucu"],
+      ["de schoonmoeder", "de SKHOHN-mu-der", "ibu mertua"]
+     ] },
+    { "type": "p", "text": "*Oom* dan *tante* langsung dikenali orang Indonesia — keduanya memang diserap utuh ke bahasa kita. Begitu juga *opa* dan *oma*, yang di Indonesia justru lebih hidup daripada di sebagian daerah Belanda sendiri." },
+    { "type": "kotak", "title": "Dua kata yang perlu kehati-hatian", "items": [
+      "*De neef* berarti **sepupu laki-laki** sekaligus **keponakan laki-laki**; *de nicht* begitu pula untuk perempuan. Bahasa Belanda tidak membedakannya — kalau perlu jelas, orang berkata *de zoon van mijn zus*.",
+      "*De man* berarti laki-laki **dan** suami; *de vrouw* berarti perempuan **dan** istri. Kata miliknya yang membedakan: *mijn man* = suami saya.",
+      "Keluarga tiri memakai awalan *stief-*: *de stiefvader*. Mertua dan ipar memakai *schoon-*: *de schoonouders*, *de zwager* (ipar lk), *de schoonzus*."
+     ] }
+   ]
+  },
+  {
+   "title": "Umur",
+   "blocks": [
+    { "type": "tabel", "head": ["Nederlands", "Bahasa Indonesia"], "rows": [
+      ["Hoe oud ben je?", "Berapa umurmu?"],
+      ["Hoe oud bent u?", "Berapa umur Anda?"],
+      ["Ik ben vijfentwintig.", "Saya dua puluh lima."],
+      ["Ik ben vijfentwintig jaar oud.", "Saya berumur dua puluh lima tahun."],
+      ["Hij is net dertig geworden.", "Dia baru saja tiga puluh."],
+      ["Zij is jarig vandaag.", "Hari ini dia berulang tahun."],
+      ["Gefeliciteerd!", "Selamat!"],
+      ["Wanneer ben je jarig?", "Kapan ulang tahunmu?"]
+     ] },
+    { "type": "p", "text": "*Jarig zijn* berarti \"sedang berulang tahun\" — satu kata sifat untuk sesuatu yang butuh tiga kata dalam bahasa Indonesia. Dan satu kebiasaan Belanda yang mengejutkan pendatang: pada pesta ulang tahun, **tamu mengucapkan selamat kepada seluruh keluarga**, bukan hanya kepada yang berulang tahun — *gefeliciteerd met je zus!*" },
+    { "type": "p", "text": "Perhatikan juga bahwa angka Belanda dibaca terbalik: *vijfentwintig* = \"lima-dan-dua-puluh\" = 25. Sistemnya dibongkar sepenuhnya di unit berikutnya." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "mijn / m'n", "baca": "mèyn", "id": "milik saya" },
+  { "nl": "jouw / je", "baca": "yau / ye", "id": "milik kamu" },
+  { "nl": "uw", "baca": "üv", "id": "milik Anda" },
+  { "nl": "zijn / haar", "baca": "zèyn / hahr", "id": "miliknya (lk / pr)" },
+  { "nl": "ons / onze", "baca": "ons / ON-ze", "id": "milik kami" },
+  { "nl": "jullie / hun", "baca": "YÜ-li / hün", "id": "milik kalian / mereka" },
+  { "nl": "de familie", "baca": "de fa-MI-li", "id": "keluarga" },
+  { "nl": "de vader", "baca": "de FAH-der", "id": "ayah" },
+  { "nl": "de moeder", "baca": "de MU-der", "id": "ibu" },
+  { "nl": "de ouders", "baca": "de AU-ders", "id": "orang tua" },
+  { "nl": "de broer", "baca": "de brur", "id": "saudara laki-laki" },
+  { "nl": "de zus", "baca": "de züs", "id": "saudara perempuan" },
+  { "nl": "de zoon / de dochter", "baca": "de zohn / de DOKH-ter", "id": "anak lk / anak pr" },
+  { "nl": "de oom / de tante", "baca": "de ohm / de TAN-te", "id": "paman / bibi" },
+  { "nl": "de opa / de oma", "baca": "de OH-pa / de OH-ma", "id": "kakek / nenek" },
+  { "nl": "de vriend / de vriendin", "baca": "de frint / de frin-DIN", "id": "teman / pacar" },
+  { "nl": "de hond / de kat", "baca": "de hont / de kat", "id": "anjing / kucing" },
+  { "nl": "wie", "baca": "vi", "id": "siapa" },
+  { "nl": "hoe oud", "baca": "hu aut", "id": "berapa umur" },
+  { "nl": "oud / jong", "baca": "aut / yong", "id": "tua / muda" },
+  { "nl": "de oudste", "baca": "de AUT-ste", "id": "yang paling tua" },
+  { "nl": "jarig zijn", "baca": "YAH-rekh zèyn", "id": "berulang tahun" },
+  { "nl": "gefeliciteerd", "baca": "khe-feh-li-si-TEHRT", "id": "selamat" },
+  { "nl": "naast", "baca": "nahst", "id": "di sebelah" },
+  { "nl": "kijken", "baca": "KÈY-ke(n)", "id": "melihat" },
+  { "nl": "klein / groot", "baca": "klèyn / khroht", "id": "kecil / besar" },
+  { "nl": "te", "baca": "te", "id": "terlalu" },
+  { "nl": "de baas", "baca": "de bahs", "id": "bos" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan ons atau onze.",
+   "items": [
+    "____ huis",
+    "____ hond",
+    "____ kinderen",
+    "____ auto",
+    "____ boek",
+    "____ familie"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata milik yang tepat.",
+   "items": [
+    "Sanne en ____ moeder (dia perempuan)",
+    "Tom en ____ fiets (dia laki-laki)",
+    "Ik en ____ broer (saya)",
+    "U en ____ paspoort (Anda)",
+    "Zij en ____ kinderen (mereka)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Ini keluarga saya.",
+    "Berapa umurmu?",
+    "Saya berumur dua puluh lima tahun.",
+    "Saya punya dua saudara laki-laki dan satu saudara perempuan.",
+    "Siapa perempuan itu?",
+    "Sepeda ini punya siapa?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "familie / mijn / is / dit",
+    "oud / je / hoe / ben / ?",
+    "broers / heb / twee / ik",
+    "huis / haar / in / wonen / ze",
+    "hond / de / is / onze / baas"
+   ]
+  }
+ ],
+ "answers": [
+  "ons — onze — onze — onze — ons — onze",
+  "haar — zijn — mijn — uw — hun",
+  "Dit is mijn familie. — Hoe oud ben je? — Ik ben vijfentwintig jaar oud. — Ik heb twee broers en een zus. — Wie is die vrouw? — Van wie is deze fiets?",
+  "Dit is mijn familie. — Hoe oud ben je? — Ik heb twee broers. — Ze wonen in haar huis. — Onze hond is de baas."
+ ]
+}

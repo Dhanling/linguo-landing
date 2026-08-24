@@ -1,0 +1,585 @@
+{
+ "title": "Di mana kantor posnya?",
+ "title_target": "Waar is het postkantoor?",
+ "goal": "Menanyakan dan memberi arah, memakai kata depan tempat, dan membentuk kalimat perintah.",
+ "bekal": [
+  "menanyakan jalan dan — yang lebih sulit — memahami jawabannya",
+  "memakai kata depan tempat: *in, op, naast, tegenover, tussen*",
+  "membentuk perintah sopan dengan *even* dan *eens*"
+ ],
+ "wave": "Ulangi **unit 9**: ceritakan harimu dari bangun sampai tidur dalam sepuluh kalimat, semuanya dibuka keterangan waktu supaya kata kerjanya terbalik.",
+ "dialogs": [
+  {
+   "title": "Dialog — De weg vragen",
+   "intro": "Budi tersesat di pusat kota. Sebuah kanal, lagi-lagi, terlihat persis seperti kanal sebelumnya.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Pardon, mag ik u iets vragen?",
+     "id": "Permisi, boleh bertanya?",
+     "literal": "maaf, boleh saya Anda sesuatu bertanya?"
+    },
+    {
+     "speaker": "Vrouw:",
+     "text": "Ja, natuurlijk.",
+     "id": "Ya, tentu.",
+     "literal": "ya, tentu-saja."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Weet u waar het postkantoor is?",
+     "id": "Tahu di mana kantor posnya?",
+     "literal": "tahu Anda di-mana kantor-pos-itu adalah?"
+    },
+    {
+     "speaker": "Vrouw:",
+     "text": "Loop hier rechtdoor tot aan de brug.",
+     "id": "Jalan lurus sampai jembatan.",
+     "literal": "berjalan di-sini lurus sampai pada jembatan-itu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tot aan de brug. En dan?",
+     "id": "Sampai jembatan. Lalu?",
+     "literal": "sampai pada jembatan-itu. dan kemudian?"
+    },
+    {
+     "speaker": "Vrouw:",
+     "text": "Ga daar linksaf, langs de gracht.",
+     "id": "Di situ belok kiri, menyusuri kanal.",
+     "literal": "pergi di-sana kiri-lepas, sepanjang kanal-itu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Is het ver?",
+     "id": "Jauh?",
+     "literal": "adalah itu jauh?"
+    },
+    {
+     "speaker": "Vrouw:",
+     "text": "Nee hoor, vijf minuten lopen. Het zit naast de apotheek.",
+     "id": "Tidak kok, lima menit jalan kaki. Letaknya di sebelah apotek.",
+     "literal": "tidak sungguh, lima menit berjalan. itu duduk di-sebelah apotek-itu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tegenover de kerk?",
+     "id": "Di seberang gereja?",
+     "literal": "berhadapan gereja-itu?"
+    },
+    {
+     "speaker": "Vrouw:",
+     "text": "Precies. Tussen de apotheek en de bakker.",
+     "id": "Tepat. Di antara apotek dan toko roti.",
+     "literal": "persis. di-antara apotek-itu dan tukang-roti-itu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dank u wel! Fijne dag.",
+     "id": "Terima kasih! Selamat beraktivitas.",
+     "literal": "terima kasih Anda memang! menyenangkan hari."
+    },
+    {
+     "speaker": "Vrouw:",
+     "text": "Geen dank. Succes!",
+     "id": "Sama-sama. Semoga lancar!",
+     "literal": "tidak-ada terima-kasih. sukses!"
+    }
+   ],
+   "notes": [
+    "**Weet u waar het postkantoor is?** — perhatikan kata kerjanya di ujung (*is*) karena kalimatnya menempel pada *waar*. Bentuk ini disebut anak kalimat; unit 20 membongkarnya. Untuk sekarang, hafalkan polanya: *Weet u waar … is?*",
+    "**Loop rechtdoor** — kalimat perintah dibentuk dari akar kata kerja, tanpa pelaku. Detailnya di kotak tata bahasa.",
+    "**Linksaf / rechtsaf** — belok kiri / kanan. Perhatikan *-af* yang menempel; tanpa itu, *links* dan *rechts* cuma berarti \"di kiri\" dan \"di kanan\".",
+    "**De gracht** adalah kanal kota yang bertepi rumah — berbeda dari *het kanaal* (kanal besar antarkota) dan *de sloot* (parit di antara sawah). Bahasa Belanda punya kosakata air yang jauh lebih rinci daripada bahasa mana pun, dan itu bukan kebetulan: seperempat negaranya berada di bawah permukaan laut.",
+    "**Het zit naast de apotheek** — untuk letak toko atau kantor, orang Belanda sering memakai *zitten* (duduk), bukan *zijn*. *Waar zit de bakker?* terdengar sangat asli.",
+    "**Vijf minuten lopen** — cara menyatakan jarak berdasarkan waktu tempuh: *tien minuten fietsen* (sepuluh menit bersepeda). Di Belanda, jarak hampir selalu diukur dengan sepeda.",
+    "**Geen dank** = sama-sama. Pilihan lain: *graag gedaan* (dengan senang hati), *niets te danken*, atau sekadar *hoor*."
+   ],
+   "grammars": [
+    {
+     "title": "Kalimat perintah",
+     "body": [
+      "Bentuknya paling sederhana di seluruh bahasa Belanda: **akar kata kerja saja**, tanpa pelaku, tanpa akhiran."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Perintah",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "lopen",
+        "**Loop** rechtdoor.",
+        "Jalan lurus."
+       ],
+       [
+        "gaan",
+        "**Ga** linksaf.",
+        "Belok kiri."
+       ],
+       [
+        "nemen",
+        "**Neem** de tweede straat.",
+        "Ambil jalan kedua."
+       ],
+       [
+        "komen",
+        "**Kom** binnen!",
+        "Masuklah!"
+       ],
+       [
+        "zijn",
+        "**Wees** voorzichtig!",
+        "Hati-hati!"
+       ],
+       [
+        "meenemen",
+        "**Neem** je jas **mee**.",
+        "Bawa jaketmu."
+       ]
+      ]
+     },
+     "after": [
+      "Untuk beberapa orang atau situasi resmi, dipakai bentuk dengan *u*: *Komt u binnen*, *Gaat u zitten* — jauh lebih sopan, dan sering dipakai di kantor dan restoran.",
+      "**Kata pelunak wajib.** Perintah telanjang terdengar kasar; orang Belanda menyisipkan *even*, *eens*, atau *maar*: *Kom even hier* (sini sebentar), *Kijk eens* (coba lihat), *Ga maar zitten* (duduk saja).",
+      "Larangan dibentuk dengan *niet*: *Loop hier niet*, atau lebih halus dengan *Je mag hier niet lopen.*"
+     ]
+    },
+    {
+     "title": "Kata depan tempat",
+     "body": [
+      "Sebagian besar bisa ditebak dari maknanya, tapi tiga pasangan perlu perhatian khusus."
+     ],
+     "table": {
+      "head": [
+       "Kata depan",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**in**",
+        "di dalam",
+        "in de stad, in het huis"
+       ],
+       [
+        "**op**",
+        "di atas permukaan",
+        "op tafel, op straat, op kantoor"
+       ],
+       [
+        "**aan**",
+        "di tepi / menempel",
+        "aan de gracht, aan de muur"
+       ],
+       [
+        "**naast**",
+        "di sebelah",
+        "naast de apotheek"
+       ],
+       [
+        "**tegenover**",
+        "di seberang",
+        "tegenover de kerk"
+       ],
+       [
+        "**tussen**",
+        "di antara",
+        "tussen de bakker en de bank"
+       ],
+       [
+        "**achter / voor**",
+        "di belakang / depan",
+        "achter het station"
+       ],
+       [
+        "**onder / boven**",
+        "di bawah / atas",
+        "onder de brug"
+       ],
+       [
+        "**bij**",
+        "dekat / di tempat",
+        "bij de supermarkt, bij mijn tante"
+       ],
+       [
+        "**naar**",
+        "menuju (arah)",
+        "naar het centrum"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **naar** untuk arah, **in/op** untuk keberadaan: *Ik ga **naar** de stad* (saya pergi ke kota) lawan *Ik ben **in** de stad* (saya sedang di kota).",
+      "⚠️ Beberapa tempat memakai **op**, bukan *in*: *op kantoor*, *op school*, *op straat*, *op het station*, *op vakantie*. Ini hafalan, bukan logika.",
+      "Untuk rumah orang dipakai **bij**: *bij mijn tante*, *bij de dokter*, *bij de kapper*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Petunjuk arah yang akan kamu dengar",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Nederlands",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "rechtdoor",
+       "RÈKHT-dohr",
+       "lurus terus"
+      ],
+      [
+       "linksaf / rechtsaf",
+       "LINKS-af / RÈKHTS-af",
+       "belok kiri / kanan"
+      ],
+      [
+       "de eerste straat links",
+       "de EHRS-te straht links",
+       "jalan pertama di kiri"
+      ],
+      [
+       "tot aan het kruispunt",
+       "tot ahn het KRÖYS-pünt",
+       "sampai perempatan"
+      ],
+      [
+       "bij het stoplicht",
+       "bèy het STOP-likht",
+       "di lampu merah"
+      ],
+      [
+       "over de brug",
+       "OH-fer de brükh",
+       "menyeberangi jembatan"
+      ],
+      [
+       "langs de gracht",
+       "langs de khrakht",
+       "menyusuri kanal"
+      ],
+      [
+       "om de hoek",
+       "om de huk",
+       "di tikungan"
+      ],
+      [
+       "aan het einde van de straat",
+       "ahn het ÈYN-de fan de straht",
+       "di ujung jalan"
+      ],
+      [
+       "op de derde verdieping",
+       "op de DÈR-de fer-DI-ping",
+       "di lantai empat"
+      ],
+      [
+       "Het is vlakbij.",
+       "het is flak-BÈY",
+       "Dekat sekali."
+      ],
+      [
+       "Het is een eindje lopen.",
+       "het is en ÈYN-tye LOH-pe",
+       "Lumayan jalan kaki."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Lantai dihitung berbeda",
+     "items": [
+      "*de begane grond* = lantai dasar (lantai 1 dalam hitungan Indonesia).",
+      "*de eerste verdieping* = lantai satu Belanda = lantai **dua** Indonesia.",
+      "Karena itu *op de derde verdieping* berarti naik tiga lantai — dan di rumah kanal Belanda, itu tiga tangga curam yang legendaris sempitnya.",
+      "Di lift tertulis **0** untuk lantai dasar, kadang **BG**."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Di kota",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "de-woord",
+      "Arti",
+      "het-woord",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "de straat",
+       "jalan",
+       "het station",
+       "stasiun"
+      ],
+      [
+       "de gracht",
+       "kanal kota",
+       "het plein",
+       "alun-alun"
+      ],
+      [
+       "de brug",
+       "jembatan",
+       "het postkantoor",
+       "kantor pos"
+      ],
+      [
+       "de kerk",
+       "gereja",
+       "het ziekenhuis",
+       "rumah sakit"
+      ],
+      [
+       "de apotheek",
+       "apotek",
+       "het stadhuis",
+       "balai kota"
+      ],
+      [
+       "de bakker",
+       "toko roti",
+       "het museum",
+       "museum"
+      ],
+      [
+       "de supermarkt",
+       "supermarket",
+       "het park",
+       "taman"
+      ],
+      [
+       "de bank",
+       "bank",
+       "het centrum",
+       "pusat kota"
+      ],
+      [
+       "de bibliotheek",
+       "perpustakaan",
+       "het café",
+       "kafe"
+      ],
+      [
+       "de halte",
+       "halte",
+       "het fietspad",
+       "jalur sepeda"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Het fietspad** pantas mendapat perhatian tersendiri. Jalur sepeda Belanda adalah jalan sungguhan dengan aturannya sendiri, dan pejalan kaki yang melamun di atasnya akan segera mendengar bel yang tidak ramah. Warnanya merah bata; hafalkan warnanya sebelum hari pertamamu di sana."
+    },
+    {
+     "type": "p",
+     "text": "Kalimat penyelamat waktu tersesat: *Ik ben verdwaald* (saya tersesat), *Kunt u het op de kaart aanwijzen?* (bisa tunjukkan di peta?), *Kunt u het langzaam herhalen?* (bisa diulang pelan-pelan?). Yang terakhir paling penting: arah bahasa Belanda selalu diucapkan lebih cepat daripada yang bisa kamu cerna di bulan pertama."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "nl": "de weg",
+   "baca": "de vèkh",
+   "id": "jalan (rute)"
+  },
+  {
+   "nl": "de straat",
+   "baca": "de straht",
+   "id": "jalan (nama)"
+  },
+  {
+   "nl": "lopen",
+   "baca": "LOH-pe(n)",
+   "id": "berjalan kaki"
+  },
+  {
+   "nl": "fietsen",
+   "baca": "FIT-se(n)",
+   "id": "bersepeda"
+  },
+  {
+   "nl": "rechtdoor",
+   "baca": "RÈKHT-dohr",
+   "id": "lurus"
+  },
+  {
+   "nl": "links / rechts",
+   "baca": "links / rèkhts",
+   "id": "kiri / kanan"
+  },
+  {
+   "nl": "de brug",
+   "baca": "de brükh",
+   "id": "jembatan"
+  },
+  {
+   "nl": "de gracht",
+   "baca": "de khrakht",
+   "id": "kanal kota"
+  },
+  {
+   "nl": "de hoek",
+   "baca": "de huk",
+   "id": "sudut / tikungan"
+  },
+  {
+   "nl": "het kruispunt",
+   "baca": "het KRÖYS-pünt",
+   "id": "perempatan"
+  },
+  {
+   "nl": "het stoplicht",
+   "baca": "het STOP-likht",
+   "id": "lampu lalu lintas"
+  },
+  {
+   "nl": "naast",
+   "baca": "nahst",
+   "id": "di sebelah"
+  },
+  {
+   "nl": "tegenover",
+   "baca": "TEH-khe-noh-fer",
+   "id": "di seberang"
+  },
+  {
+   "nl": "tussen",
+   "baca": "TÜ-se(n)",
+   "id": "di antara"
+  },
+  {
+   "nl": "achter / voor",
+   "baca": "AKH-ter / fohr",
+   "id": "di belakang / depan"
+  },
+  {
+   "nl": "onder / boven",
+   "baca": "ON-der / BOH-fe(n)",
+   "id": "di bawah / atas"
+  },
+  {
+   "nl": "ver / vlakbij",
+   "baca": "fèr / flak-BÈY",
+   "id": "jauh / dekat"
+  },
+  {
+   "nl": "het postkantoor",
+   "baca": "het POST-kan-tohr",
+   "id": "kantor pos"
+  },
+  {
+   "nl": "de apotheek",
+   "baca": "de a-poh-TEHK",
+   "id": "apotek"
+  },
+  {
+   "nl": "het ziekenhuis",
+   "baca": "het ZI-ke(n)-höys",
+   "id": "rumah sakit"
+  },
+  {
+   "nl": "de kerk",
+   "baca": "de kèrk",
+   "id": "gereja"
+  },
+  {
+   "nl": "het plein",
+   "baca": "het plèyn",
+   "id": "alun-alun"
+  },
+  {
+   "nl": "de halte",
+   "baca": "de HAL-te",
+   "id": "halte"
+  },
+  {
+   "nl": "verdwaald",
+   "baca": "fer-DVAHLT",
+   "id": "tersesat"
+  },
+  {
+   "nl": "voorzichtig",
+   "baca": "fohr-ZIKH-tekh",
+   "id": "hati-hati"
+  },
+  {
+   "nl": "herhalen",
+   "baca": "her-HAH-le(n)",
+   "id": "mengulang"
+  },
+  {
+   "nl": "de verdieping",
+   "baca": "de fer-DI-ping",
+   "id": "lantai"
+  },
+  {
+   "nl": "succes",
+   "baca": "sük-SÈS",
+   "id": "semoga berhasil"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi kalimat perintah.",
+   "items": [
+    "lopen (rechtdoor) → ____",
+    "gaan (linksaf) → ____",
+    "nemen (de eerste straat) → ____",
+    "komen (binnen) → ____",
+    "meenemen (je jas) → ____"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata depan yang tepat.",
+   "items": [
+    "Het postkantoor is ____ de apotheek. (di sebelah)",
+    "De bakker zit ____ de kerk. (di seberang)",
+    "Ik werk ____ kantoor.",
+    "We gaan ____ het centrum. (menuju)",
+    "De fiets staat ____ het huis. (di depan)",
+    "Ik ben ____ de dokter. (di tempat)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Permisi, boleh bertanya?",
+    "Di mana stasiunnya?",
+    "Jalan lurus sampai jembatan.",
+    "Belok kiri di lampu merah.",
+    "Jauh tidak?",
+    "Saya tersesat."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "is / het / waar / station / ?",
+    "rechtdoor / loop / brug / de / tot",
+    "linksaf / daar / ga",
+    "apotheek / naast / het / de / is",
+    "minuten / vijf / is / lopen / het"
+   ]
+  }
+ ],
+ "answers": [
+  "Loop rechtdoor. — Ga linksaf. — Neem de eerste straat. — Kom binnen. — Neem je jas mee.",
+  "naast — tegenover — op — naar — voor — bij",
+  "Pardon, mag ik u iets vragen? — Waar is het station? — Loop rechtdoor tot aan de brug. — Ga linksaf bij het stoplicht. — Is het ver? — Ik ben verdwaald.",
+  "Waar is het station? — Loop rechtdoor tot de brug. — Ga daar linksaf. — Het is naast de apotheek. — Het is vijf minuten lopen."
+ ]
+}
