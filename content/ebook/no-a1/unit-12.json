@@ -1,0 +1,653 @@
+{
+ "title": "Menyifati benda",
+ "title_target": "Den store, grønne sekken",
+ "goal": "Mengubah kata sifat menurut kata benda yang disifatinya — tiga bentuk saja — dan memasang kebiasaan yang membuat pemula tersandung: menandai kepastian dua kali sekaligus.",
+ "bekal": [
+  "memakai bentuk dasar, bentuk *-t*, dan bentuk *-e*",
+  "menyusun *den store bilen* dengan tiga penanda sekaligus",
+  "mengenali kata sifat yang tidak mau menambah *-t*"
+ ],
+ "wave": "Ulangi **unit 10** dulu: tutup bahasa Norwegianya, lihat terjemahan Indonesianya, susun kembali dialognya. Satu pertanyaan saja: kapan *sin*, kapan *hans*?",
+ "dialogs": [
+  {
+   "title": "Dialog — På hittegodskontoret",
+   "intro": "Kantor barang hilang di stasiun. Budi kehilangan ranselnya di trem dua hari lalu, dan petugas di balik meja tampak sudah mendengar cerita seperti ini seribu kali.",
+   "lines": [
+    {
+     "speaker": "Betjenten:",
+     "text": "Kan du beskrive sekken?",
+     "id": "Bisa jelaskan ranselnya?",
+     "literal": "bisa kamu menggambarkan ransel-itu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Den er stor og grønn. En gammel sekk.",
+     "id": "Besar dan hijau. Ransel lama.",
+     "literal": "ia adalah besar dan hijau. sebuah tua ransel."
+    },
+    {
+     "speaker": "Betjenten:",
+     "text": "Vi har mange grønne sekker. Hva var inni?",
+     "id": "Kami punya banyak ransel hijau. Isinya apa?",
+     "literal": "kami punya banyak hijau ransel-ransel. apa adalah di-dalam?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ei blå bok, et lite håndkle og en rød lue.",
+     "id": "Buku biru, handuk kecil, dan topi merah.",
+     "literal": "sebuah biru buku, sebuah kecil handuk dan sebuah merah topi."
+    },
+    {
+     "speaker": "Betjenten:",
+     "text": "Den store, grønne sekken med den røde lua… vent litt.",
+     "id": "Ransel hijau besar dengan topi merah itu… tunggu sebentar.",
+     "literal": "itu besar, hijau ransel-itu dengan itu merah topi-itu… tunggu sedikit."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Har dere den?",
+     "id": "Ada?",
+     "literal": "punya kalian ia?"
+    },
+    {
+     "speaker": "Betjenten:",
+     "text": "Vi har tre. En gammel, en ny og en veldig skitten.",
+     "id": "Ada tiga. Satu lama, satu baru, satu kotor sekali.",
+     "literal": "kami punya tiga. satu tua, satu baru dan satu sangat kotor."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Den gamle er nok min.",
+     "id": "Yang lama kayaknya punya saya.",
+     "literal": "itu tua adalah barangkali punyaku."
+    },
+    {
+     "speaker": "Betjenten:",
+     "text": "Er boka tykk eller tynn?",
+     "id": "Bukunya tebal atau tipis?",
+     "literal": "adalah buku-itu tebal atau tipis?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Veldig tykk. Det er ei norsk grammatikkbok.",
+     "id": "Tebal sekali. Buku tata bahasa Norwegia.",
+     "literal": "sangat tebal. itu adalah sebuah Norwegia tata-bahasa-buku."
+    },
+    {
+     "speaker": "Betjenten:",
+     "text": "Da er det din. Ingen andre mister slike bøker med glede.",
+     "id": "Kalau begitu punya kamu. Tidak ada orang lain yang kehilangan buku begitu dengan senang hati.",
+     "literal": "kalau-begitu adalah itu punyamu. tak-seorang lain kehilangan begitu buku-buku dengan kesenangan."
+    }
+   ],
+   "notes": [
+    "**Kata sifat bahasa Norwegia cuma punya tiga bentuk**, dan yang ketiga sekaligus bentuk jamak: *stor* (dasar), *stort* (untuk *et*-ord), *store* (jamak dan sesudah penanda kepastian). Bandingkan dengan bahasa Jerman yang punya enam belas kemungkinan; bahasa Norwegia menawarkan tiga.",
+    "**Et lite håndkle** menyalahi aturan: bentuk *et*-ord dari *liten* bukan *litet* melainkan **lite**. Kata *liten* adalah satu-satunya kata sifat yang benar-benar tak beraturan di bahasa Norwegia — dan ia sering dipakai, jadi hafalkan sekarang: *liten, lita, lite, små*.",
+    "**Den store, grønne sekken** memakai **tiga penanda kepastian sekaligus**: *den* di depan, akhiran *-e* pada semua kata sifat, dan ekor *-en* pada kata bendanya. Inilah yang disebut kepastian ganda, dan bahasa Norwegia adalah salah satu dari sedikit bahasa yang melakukannya.",
+    "**Bahasa Denmark dan Swedia berbeda di sini.** Bahasa Denmark melepas ekornya (*den store sæk*), bahasa Swedia mempertahankannya (*den stora säcken*). Kalau kamu pernah menyentuh salah satunya, jangan menyeberangkan kebiasaan.",
+    "**Den gamle er nok min** — kata sifat bisa berdiri sendiri tanpa kata benda kalau bendanya sudah jelas dari percakapan. *Den gamle* = \"yang lama\". Ini penghematan yang sangat sering dipakai.",
+    "**Ei norsk grammatikkbok** — kata sifat *norsk* tidak berubah walaupun kata bendanya *ei*-ord. Semua kata sifat yang sudah berakhiran *-sk*, *-ig*, atau *-t* tidak menambah *-t* lagi. Daftarnya di halaman berikutnya."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga bentuk kata sifat",
+     "body": [
+      "Dua hal menentukan bentuknya: jenis kata bendanya, dan apakah kata bendanya sudah pasti atau belum."
+     ],
+     "table": {
+      "head": [
+       "Keadaan",
+       "Bentuk",
+       "Contoh",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "*en*/*ei*-ord, tak tentu",
+        "dasar",
+        "en **stor** bil",
+        "sebuah mobil besar"
+       ],
+       [
+        "*et*-ord, tak tentu",
+        "+ **t**",
+        "et **stort** hus",
+        "sebuah rumah besar"
+       ],
+       [
+        "jamak, tak tentu",
+        "+ **e**",
+        "**store** biler",
+        "mobil-mobil besar"
+       ],
+       [
+        "sesudah *den/det/de*",
+        "+ **e**",
+        "den **store** bilen",
+        "mobil besar itu"
+       ],
+       [
+        "sesudah *min/din/…*",
+        "+ **e**",
+        "min **store** bil",
+        "mobil besar saya"
+       ],
+       [
+        "sesudah nama + *-s*",
+        "+ **e**",
+        "Ingrids **store** bil",
+        "mobil besar Ingrid"
+       ],
+       [
+        "berdiri sendiri sesudah *er*",
+        "ikut jenisnya",
+        "bilen er **stor**; huset er **stort**",
+        "mobilnya besar; rumahnya besar"
+       ]
+      ]
+     },
+     "after": [
+      "Baris terakhir penting: kalau kata sifat berdiri sesudah *er* atau *blir*, ia tidak pernah mengambil *-e*, walaupun kata bendanya sudah pasti. *Bilen er stor*, bukan *bilen er store*.",
+      "Tapi kalau kata bendanya jamak, ia tetap *-e* juga di posisi ini: *bilene er stor**e***. Jadi *-e* menandai jamak **dan** kepastian; *-t* menandai jenis netral."
+     ]
+    },
+    {
+     "title": "Kepastian ganda",
+     "body": [
+      "Susunan ini adalah tanda pengenal bahasa Norwegia. Bacalah tiga kolomnya sebagai satu bunyi, bukan tiga bagian terpisah."
+     ],
+     "table": {
+      "head": [
+       "Tak tentu",
+       "**Tentu (ganda)**",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "en stor bil",
+        "**den** stor**e** bil**en**",
+        "mobil besar itu"
+       ],
+       [
+        "ei gammel bok",
+        "**den** gaml**e** bok**a**",
+        "buku tua itu"
+       ],
+       [
+        "et lite hus",
+        "**det** lit**e** hus**et**",
+        "rumah kecil itu"
+       ],
+       [
+        "store biler",
+        "**de** stor**e** bil**ene**",
+        "mobil-mobil besar itu"
+       ],
+       [
+        "en ny, rød genser",
+        "**den** ny**e**, rød**e** genser**en**",
+        "sweater merah baru itu"
+       ],
+       [
+        "et norsk hus",
+        "**det** norsk**e** hus**et**",
+        "rumah Norwegia itu"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Kalau **tidak ada** kata sifat, kata tunjuknya boleh dibuang: *bilen* sudah berarti \"mobil itu\". Kata *den* hanya wajib muncul kalau ada kata sifat di antaranya.",
+      "Semua kata sifat dalam satu rangkaian mengambil *-e*, bukan hanya yang pertama: *den nye, røde genseren*.",
+      "Ada satu kelompok yang membuang ekornya walaupun ada kata sifat: nama diri dan hubungan keluarga yang sudah pasti — *min gamle venn*, *hele dagen*, *neste uke*. Kata *hele*, *neste*, *forrige*, dan *samme* selalu diikuti kata benda tanpa ekor."
+     ]
+    },
+    {
+     "title": "Kata sifat yang membangkang",
+     "body": [
+      "Satu-satunya bagian yang harus dihafal. Selebihnya mengikuti tiga bentuk di atas tanpa membantah."
+     ],
+     "table": {
+      "head": [
+       "Kelompok",
+       "Yang terjadi",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "berakhiran **-ig**",
+        "tidak menambah *-t*",
+        "et hyggel**ig** hus, et vikt**ig** møte"
+       ],
+       [
+        "berakhiran **-sk** (bangsa)",
+        "tidak menambah *-t*",
+        "et nor**sk** hus, et indonesi**sk** ord"
+       ],
+       [
+        "berakhiran **-t**",
+        "tidak berubah",
+        "et sv**art** bord, et lett spørsmål"
+       ],
+       [
+        "berakhiran **-e**",
+        "tidak berubah sama sekali",
+        "et mod**erne** hus, et stille rom"
+       ],
+       [
+        "berakhiran vokal",
+        "menggandakan huruf mati",
+        "et bl**ått** hus, et gr**ått** hus, et n**ytt** hus"
+       ],
+       [
+        "**liten**",
+        "tak beraturan penuh",
+        "en liten, ei lita, et **lite**, **små** (jamak)"
+       ],
+       [
+        "**gammel**",
+        "membuang *e* di tengah",
+        "en gammel, et gammelt, **gamle** (jamak)"
+       ],
+       [
+        "**annen**",
+        "tak beraturan",
+        "en annen, et **annet**, **andre** (jamak)"
+       ]
+      ]
+     },
+     "after": [
+      "*Liten* punya lima bentuk dan semuanya sering dipakai: *en liten gutt*, *ei lita jente*, *et lite hus*, *små barn*, *den lille gutten*. Bentuk terakhir — **lille** sesudah kata tunjuk — adalah yang paling sering dilupakan.",
+      "Kata sifat berakhiran *-el*, *-en*, *-er* membuang *e* di tengah saat menambah *-e*: *gammel → gamle*, *sulten → sultne*, *vakker → vakre*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata sifat yang paling sering dipakai",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Norsk",
+      "et-ord",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "stor",
+       "stort",
+       "stur / sturt",
+       "besar"
+      ],
+      [
+       "liten",
+       "lite",
+       "LI-ten / LI-te",
+       "kecil"
+      ],
+      [
+       "ny",
+       "nytt",
+       "nü / nüt",
+       "baru"
+      ],
+      [
+       "gammel",
+       "gammelt",
+       "GAM-mel",
+       "tua, lama"
+      ],
+      [
+       "god",
+       "godt",
+       "gu / got",
+       "baik, enak"
+      ],
+      [
+       "dårlig",
+       "dårlig",
+       "DOR-li",
+       "buruk"
+      ],
+      [
+       "lang",
+       "langt",
+       "lang / langt",
+       "panjang, lama"
+      ],
+      [
+       "kort",
+       "kort",
+       "kort",
+       "pendek"
+      ],
+      [
+       "tykk",
+       "tykt",
+       "tük / tükt",
+       "tebal, gemuk"
+      ],
+      [
+       "tynn",
+       "tynt",
+       "tün / tünt",
+       "tipis, kurus"
+      ],
+      [
+       "varm",
+       "varmt",
+       "varm / varmt",
+       "hangat, panas"
+      ],
+      [
+       "kald",
+       "kaldt",
+       "kal / kalt",
+       "dingin"
+      ],
+      [
+       "billig",
+       "billig",
+       "BIL-li",
+       "murah"
+      ],
+      [
+       "dyr",
+       "dyrt",
+       "dür / dürt",
+       "mahal"
+      ],
+      [
+       "lett",
+       "lett",
+       "let",
+       "mudah; ringan"
+      ],
+      [
+       "vanskelig",
+       "vanskelig",
+       "VAN-ske-li",
+       "sulit"
+      ],
+      [
+       "fin",
+       "fint",
+       "fin / fint",
+       "bagus, cantik"
+      ],
+      [
+       "skitten",
+       "skittent",
+       "SYIT-ten",
+       "kotor"
+      ],
+      [
+       "ren",
+       "rent",
+       "rèn / rènt",
+       "bersih"
+      ],
+      [
+       "morsom",
+       "morsomt",
+       "MU-som",
+       "lucu, menyenangkan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan *skitten* dibaca **SYIT-ten** — gabungan *sk* di depan *i* berbunyi *sy*, seperti dipasang di halaman pelafalan. Dan *morsom* berbunyi **MU-som**: huruf *o* pertama jadi \"u\", yang kedua tetap \"o\"."
+    }
+   ]
+  },
+  {
+   "title": "Latihan mata: satu kata sifat, enam keadaan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Baca tiap baris keras-keras dari kiri ke kanan sebagai satu tarikan napas."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "en-ord",
+      "et-ord",
+      "Jamak",
+      "Tentu tunggal",
+      "Tentu jamak"
+     ],
+     "rows": [
+      [
+       "en stor bil",
+       "et stort hus",
+       "store hus",
+       "den store bilen",
+       "de store bilene"
+      ],
+      [
+       "en ny genser",
+       "et nytt bord",
+       "nye bord",
+       "den nye genseren",
+       "de nye genserne"
+      ],
+      [
+       "ei gammel bok",
+       "et gammelt hus",
+       "gamle hus",
+       "den gamle boka",
+       "de gamle bøkene"
+      ],
+      [
+       "en liten gutt",
+       "et lite barn",
+       "små barn",
+       "den lille gutten",
+       "de små barna"
+      ],
+      [
+       "en norsk lærer",
+       "et norsk ord",
+       "norske ord",
+       "den norske læreren",
+       "de norske ordene"
+      ],
+      [
+       "ei blå bukse",
+       "et blått håndkle",
+       "blå klær",
+       "den blå buksa",
+       "de blå klærne"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Uji cepat untuk dirimu sendiri",
+     "items": [
+      "Gambarkan lima benda di sekitarmu dengan dua kata sifat masing-masing, dalam bentuk tak tentu dan tentu: *en stor, grønn sekk → den store, grønne sekken*.",
+      "Kalau kamu tersandung, hampir selalu penyebabnya sama: kamu lupa jenis kata bendanya. Aturan kata sifat sendiri sangat pendek; yang menuntut ingatan adalah *en/ei/et*-nya.",
+      "Bunyikan *liten* dalam kelima bentuknya sekaligus — *liten, lita, lite, lille, små* — sampai lancar. Ini satu-satunya kata sifat yang benar-benar layak dihafal sendirian."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "stor / stort / store",
+   "baca": "stur",
+   "id": "besar"
+  },
+  {
+   "no": "liten / lite / små",
+   "baca": "LI-ten / LI-te / smo",
+   "id": "kecil"
+  },
+  {
+   "no": "gammel / gammelt / gamle",
+   "baca": "GAM-mel",
+   "id": "tua, lama"
+  },
+  {
+   "no": "tykk / tykt",
+   "baca": "tük",
+   "id": "tebal"
+  },
+  {
+   "no": "tynn / tynt",
+   "baca": "tün",
+   "id": "tipis"
+  },
+  {
+   "no": "varm / varmt",
+   "baca": "varm",
+   "id": "hangat, panas"
+  },
+  {
+   "no": "kald / kaldt",
+   "baca": "kal",
+   "id": "dingin"
+  },
+  {
+   "no": "lett",
+   "baca": "let",
+   "id": "mudah; ringan"
+  },
+  {
+   "no": "vanskelig",
+   "baca": "VAN-ske-li",
+   "id": "sulit"
+  },
+  {
+   "no": "fin / fint",
+   "baca": "fin",
+   "id": "bagus"
+  },
+  {
+   "no": "skitten / skittent",
+   "baca": "SYIT-ten",
+   "id": "kotor"
+  },
+  {
+   "no": "ren / rent",
+   "baca": "rèn",
+   "id": "bersih"
+  },
+  {
+   "no": "morsom / morsomt",
+   "baca": "MU-som",
+   "id": "lucu, seru"
+  },
+  {
+   "no": "slik / slikt / slike",
+   "baca": "slik",
+   "id": "begitu, semacam itu"
+  },
+  {
+   "no": "å beskrive",
+   "baca": "o be-SKRI-ve",
+   "id": "menggambarkan"
+  },
+  {
+   "no": "å miste",
+   "baca": "o MIS-te",
+   "id": "kehilangan"
+  },
+  {
+   "no": "ei lue",
+   "baca": "ai LÜ-e",
+   "id": "topi rajut"
+  },
+  {
+   "no": "ei glede",
+   "baca": "ai GLÈ-de",
+   "id": "kesenangan"
+  },
+  {
+   "no": "et ord",
+   "baca": "èt ur",
+   "id": "kata"
+  },
+  {
+   "no": "et møte",
+   "baca": "èt MÖ-te",
+   "id": "pertemuan, rapat"
+  },
+  {
+   "no": "et spørsmål",
+   "baca": "èt SPÖSY-mol",
+   "id": "pertanyaan"
+  },
+  {
+   "no": "ei grammatikkbok",
+   "baca": "ai gra-ma-TIK-buk",
+   "id": "buku tata bahasa"
+  },
+  {
+   "no": "inni",
+   "baca": "IN-ni",
+   "id": "di dalam"
+  },
+  {
+   "no": "hele",
+   "baca": "HÈ-le",
+   "id": "seluruh"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan bentuk kata sifat yang benar.",
+   "items": [
+    "en ____ bil (stor)",
+    "et ____ hus (stor)",
+    "____ biler (stor)",
+    "et ____ barn (liten)",
+    "et ____ hus (ny)",
+    "et ____ bord (norsk)"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi bentuk tentu dengan kepastian ganda.",
+   "items": [
+    "en stor bil → ____",
+    "et lite hus → ____",
+    "ei gammel bok → ____",
+    "en ny genser → ____",
+    "store biler → ____",
+    "en liten gutt → ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia.",
+   "items": [
+    "Ranselnya besar dan hijau.",
+    "Ini rumah kecil.",
+    "Buku tua itu ada di meja.",
+    "Anak-anak kecil itu ada di taman.",
+    "Sweater merah baru itu punya saya.",
+    "Bukunya tebal sekali."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "grønn / sekken / og / er / stor",
+    "hus / dette / lite / er / et",
+    "bordet / gamle / boka / på / den / ligger",
+    "parken / barna / i / små / er / de",
+    "min / genseren / røde / er / nye / den"
+   ]
+  }
+ ],
+ "answers": [
+  "stor — stort — store — lite — nytt — norsk",
+  "den store bilen — det lille huset — den gamle boka — den nye genseren — de store bilene — den lille gutten",
+  "Sekken er stor og grønn. — Dette er et lite hus. — Den gamle boka ligger på bordet. — De små barna er i parken. — Den nye, røde genseren er min. — Boka er veldig tykk.",
+  "Sekken er stor og grønn. — Dette er et lite hus. — Den gamle boka ligger på bordet. — De små barna er i parken. — Den nye, røde genseren er min."
+ ]
+}

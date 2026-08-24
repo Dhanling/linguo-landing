@@ -1,0 +1,646 @@
+{
+ "title": "Menyebut lebih dari satu",
+ "title_target": "To brødre og ei søster",
+ "goal": "Membentuk jamak bahasa Norwegia dengan satu akhiran yang menutupi sebagian besar kata — lalu mengenali segelintir kata sering pakai yang menyalahi aturannya.",
+ "bekal": [
+  "membentuk jamak dengan **-er** dan jamak tentu dengan **-ene**",
+  "tahu kenapa *et hus* tidak berubah di jamak tapi *et vindu* berubah",
+  "menyebut anggota keluarga dan menanyakan jumlah dengan *hvor mange*"
+ ],
+ "wave": "Ulangi **unit 3** dulu: tutup bahasa Norwegianya, lihat terjemahan Indonesianya, susun kembali dialognya. Uji dirimu di satu titik saja — di mana kata kerjanya berdiri?",
+ "dialogs": [
+  {
+   "title": "Dialog — Familien",
+   "intro": "Sore hari di ruang bersama. Ingrid sedang melipat cucian, Budi sedang menunggu air mendidih.",
+   "lines": [
+    {
+     "speaker": "Ingrid:",
+     "text": "Har du søsken?",
+     "id": "Kamu punya saudara?",
+     "literal": "punya kamu saudara?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ja, jeg har to brødre og ei søster.",
+     "id": "Ya, saya punya dua kakak laki-laki dan satu perempuan.",
+     "literal": "ya, saya punya dua saudara-laki-laki dan seorang saudara-perempuan."
+    },
+    {
+     "speaker": "Ingrid:",
+     "text": "Så mange! Jeg har bare én bror.",
+     "id": "Banyak juga! Saya cuma punya satu.",
+     "literal": "begitu banyak! saya punya hanya satu saudara-laki-laki."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bor foreldrene i Bergen?",
+     "id": "Orang tuamu tinggal di Bergen?",
+     "literal": "tinggal orang-tua-itu di Bergen?"
+    },
+    {
+     "speaker": "Ingrid:",
+     "text": "Nei, de bor på en gård utenfor byen.",
+     "id": "Tidak, mereka tinggal di pertanian di luar kota.",
+     "literal": "tidak, mereka tinggal pada sebuah pertanian di-luar kota-itu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "En gård? Har de dyr?",
+     "id": "Pertanian? Mereka punya binatang?",
+     "literal": "sebuah pertanian? punya mereka binatang?"
+    },
+    {
+     "speaker": "Ingrid:",
+     "text": "Fire hester, to hunder og altfor mange katter.",
+     "id": "Empat kuda, dua anjing, dan kucing yang kebanyakan.",
+     "literal": "empat kuda-kuda, dua anjing-anjing dan terlalu banyak kucing-kucing."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hvor mange katter?",
+     "id": "Kucingnya berapa?",
+     "literal": "berapa banyak kucing-kucing?"
+    },
+    {
+     "speaker": "Ingrid:",
+     "text": "Ingen vet. Katta får barn hvert år.",
+     "id": "Tidak ada yang tahu. Kucingnya beranak tiap tahun.",
+     "literal": "tak-seorang-pun tahu. kucing-itu mendapat anak setiap tahun."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Liker du dyr?",
+     "id": "Kamu suka binatang?",
+     "literal": "suka kamu binatang?"
+    },
+    {
+     "speaker": "Ingrid:",
+     "text": "Ja, men jeg liker mennesker bedre. Dyr snakker ikke norsk.",
+     "id": "Ya, tapi saya lebih suka manusia. Binatang tidak bisa bahasa Norwegia.",
+     "literal": "ya, tapi saya suka manusia-manusia lebih-baik. binatang berbicara tidak Norwegia."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ikke jeg heller — ennå.",
+     "id": "Saya juga belum.",
+     "literal": "tidak saya juga — belum."
+    }
+   ],
+   "notes": [
+    "**Aturan pokoknya cuma satu:** tambahkan **-er** untuk jamak dan **-ene** untuk jamak tentu. *en katt → katter → kattene*. Sekitar delapan dari sepuluh kata benda mengikuti pola ini tanpa membantah.",
+    "**Brødre dan søstre menyalahi aturan**, dan keduanya termasuk kata yang paling sering kamu pakai. Kelompok tak beraturan bahasa Norwegia untungnya pendek — sekitar dua puluh kata — dan hampir semuanya soal keluarga, badan, dan alam. Daftar lengkapnya di halaman berikutnya.",
+    "**Foreldrene** berarti \"orang tua itu\", dan kata *foreldre* memang **hanya ada dalam bentuk jamak** — tidak ada *en foreldre*. Untuk satu orang, bahasa Norwegia menyebut *en far* atau *ei mor* langsung.",
+    "**Én bror dengan aksen** — *én* (dengan tanda di atas *e*) berarti \"satu, cuma satu\" dan dipakai kalau jumlahnya ditekankan. Tanpa aksen, *en* cuma berarti \"sebuah\". Bedanya kecil di kertas, besar di makna.",
+    "**Hvor mange** untuk yang bisa dihitung (*hvor mange katter?*), **hvor mye** untuk yang tidak (*hvor mye kaffe?*). Bahasa Indonesia memakai \"berapa banyak\" untuk keduanya, jadi ini pembedaan yang harus dipasang sengaja.",
+    "**Katta får barn** — kata *barn* dipakai untuk anak manusia **dan** anak binatang, dan bentuk jamaknya sama persis dengan bentuk tunggalnya: *et barn → to barn*. Bentuk jamak tentunya menyalahi semua aturan: *barna*."
+   ],
+   "grammars": [
+    {
+     "title": "Aturan pokok: -er dan -ene",
+     "body": [
+      "Empat bentuk, satu pola. Ini yang berlaku untuk sebagian besar kata benda bahasa Norwegia, jenis apa pun."
+     ],
+     "table": {
+      "head": [
+       "Tunggal",
+       "Tunggal tentu",
+       "Jamak",
+       "Jamak tentu"
+      ],
+      "rows": [
+       [
+        "en katt",
+        "katten",
+        "katt**er**",
+        "katt**ene**"
+       ],
+       [
+        "en hund",
+        "hunden",
+        "hund**er**",
+        "hund**ene**"
+       ],
+       [
+        "en hest",
+        "hesten",
+        "hest**er**",
+        "hest**ene**"
+       ],
+       [
+        "ei jente",
+        "jenta",
+        "jent**er**",
+        "jent**ene**"
+       ],
+       [
+        "et eple",
+        "eplet",
+        "epl**er**",
+        "epl**ene**"
+       ],
+       [
+        "et vindu",
+        "vinduet",
+        "vindu**er**",
+        "vindu**ene**"
+       ]
+      ]
+     },
+     "after": [
+      "Kata yang sudah berakhiran *-e* tidak menggandakan hurufnya: *en jente* → *jenter*, bukan *jenteer*.",
+      "Kata berakhiran *-el*, *-en*, *-er* membuang *e* di tengah: *en nøkkel* → *nøkler*, *en søster* → *søstre*, *et vinter* → *vintrer*.",
+      "Kata bersuku satu berhuruf mati tunggal sesudah vokal pendek menggandakan huruf matinya: *en venn* → *venner*, *et rom* → *rommer*."
+     ]
+    },
+    {
+     "title": "Kata bernetral bersuku satu: jamaknya kosong",
+     "body": [
+      "Satu kelompok besar yang harus kamu kenali sekarang juga: **kata *et* bersuku satu tidak menambah apa pun di jamak tak tentu**. Bentuknya sama persis dengan bentuk tunggalnya, dan hanya angka di depannya yang memberi tahu."
+     ],
+     "table": {
+      "head": [
+       "Tunggal",
+       "Jamak",
+       "Jamak tentu",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "et hus",
+        "to **hus**",
+        "hus**ene**",
+        "rumah"
+       ],
+       [
+        "et bord",
+        "to **bord**",
+        "bord**ene**",
+        "meja"
+       ],
+       [
+        "et år",
+        "to **år**",
+        "år**ene**",
+        "tahun"
+       ],
+       [
+        "et barn",
+        "to **barn**",
+        "**barna**",
+        "anak"
+       ],
+       [
+        "et dyr",
+        "to **dyr**",
+        "dyr**ene**",
+        "binatang"
+       ],
+       [
+        "et glass",
+        "to **glass**",
+        "glass**ene**",
+        "gelas"
+       ],
+       [
+        "et brev",
+        "to **brev**",
+        "brev**ene**",
+        "surat"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Yang bersuku **dua** tetap mengambil *-er*: *et vindu → vinduer*, *et eple → epler*, *et menneske → mennesker*. Jadi aturannya bukan \"semua kata *et*\", melainkan \"kata *et* yang bersuku satu\".",
+      "*Barna* adalah satu-satunya yang benar-benar menyimpang di kolom terakhir — bentuk jamak tentunya *-a*, bukan *-ene*. Hafalkan utuh; ini kata yang akan kamu pakai tiap hari."
+     ]
+    },
+    {
+     "title": "Jamak tak beraturan yang wajib dihafal",
+     "body": [
+      "Daftar ini pendek, dan semua isinya kata yang sering dipakai. Hafalkan sekaligus sekarang, dan urusan jamak selesai untuk seluruh tingkat A1."
+     ],
+     "table": {
+      "head": [
+       "Tunggal",
+       "Jamak",
+       "Jamak tentu",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "en mann",
+        "**menn**",
+        "mennene",
+        "laki-laki, suami"
+       ],
+       [
+        "ei bok",
+        "**bøker**",
+        "bøkene",
+        "buku"
+       ],
+       [
+        "en bror",
+        "**brødre**",
+        "brødrene",
+        "saudara laki-laki"
+       ],
+       [
+        "ei søster",
+        "**søstre**",
+        "søstrene",
+        "saudara perempuan"
+       ],
+       [
+        "en far",
+        "**fedre**",
+        "fedrene",
+        "ayah"
+       ],
+       [
+        "ei mor",
+        "**mødre**",
+        "mødrene",
+        "ibu"
+       ],
+       [
+        "ei datter",
+        "**døtre**",
+        "døtrene",
+        "anak perempuan"
+       ],
+       [
+        "ei natt",
+        "**netter**",
+        "nettene",
+        "malam"
+       ],
+       [
+        "ei hånd",
+        "**hender**",
+        "hendene",
+        "tangan"
+       ],
+       [
+        "en fot",
+        "**føtter**",
+        "føttene",
+        "kaki"
+       ],
+       [
+        "et tre",
+        "**trær**",
+        "trærne",
+        "pohon"
+       ],
+       [
+        "et øye",
+        "**øyne**",
+        "øynene",
+        "mata"
+       ],
+       [
+        "en sko",
+        "**sko**",
+        "skoene",
+        "sepatu"
+       ],
+       [
+        "en ting",
+        "**ting**",
+        "tingene",
+        "benda, hal"
+       ],
+       [
+        "ei ku",
+        "**kyr**",
+        "kyrne",
+        "sapi"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan polanya: sebagian besar cuma **mengganti vokal** (*bok → bøker*, *mann → menn*, *fot → føtter*). Ini sisa sistem lama yang juga ada di bahasa Inggris — *foot → feet*, *man → men*, *tooth → teeth*. Kalau kamu tahu bahasa Inggris, separuh daftar ini sudah terasa akrab.",
+      "Kata profesi berakhiran *-er* punya pola tersendiri yang rapi: *en lærer → lærere → lærerne*, *en arbeider → arbeidere → arbeiderne*. Jamaknya *-e* saja, dan jamak tentunya *-ne*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Keluarga",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kata-kata ini dipakai di hampir setiap percakapan perkenalan, dan setengahnya kebetulan jamak tak beraturan — jadi ia sekaligus latihan halaman sebelumnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Norsk",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "en familie",
+       "en fa-MI-li-e",
+       "keluarga"
+      ],
+      [
+       "ei mor / en mamma",
+       "ai mur / èn MAM-ma",
+       "ibu"
+      ],
+      [
+       "en far / en pappa",
+       "èn far / èn PAP-pa",
+       "ayah"
+      ],
+      [
+       "foreldre",
+       "for-EL-dre",
+       "orang tua (selalu jamak)"
+      ],
+      [
+       "en bror",
+       "èn brur",
+       "saudara laki-laki"
+      ],
+      [
+       "ei søster",
+       "ai SÖS-ter",
+       "saudara perempuan"
+      ],
+      [
+       "søsken",
+       "SÖS-ken",
+       "saudara kandung (selalu jamak)"
+      ],
+      [
+       "en sønn",
+       "èn sön",
+       "anak laki-laki"
+      ],
+      [
+       "ei datter",
+       "ai DAT-ter",
+       "anak perempuan"
+      ],
+      [
+       "et barn",
+       "èt barn",
+       "anak"
+      ],
+      [
+       "en bestefar",
+       "èn BES-te-far",
+       "kakek"
+      ],
+      [
+       "ei bestemor",
+       "ai BES-te-mur",
+       "nenek"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan *bestefar* dan *bestemor* — harfiahnya \"ayah terbaik\" dan \"ibu terbaik\". Bahasa Norwegia juga punya kata yang lebih tepat untuk membedakan sisi keluarga: *farfar* (ayahnya ayah), *morfar* (ayahnya ibu), *farmor*, *mormor*. Bahasa Indonesia tidak membedakannya, jadi ini justru tambahan yang berguna."
+    }
+   ]
+  },
+  {
+   "title": "Latihan mata: hitung sambil membaca",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Baca tiap baris keras-keras dari kiri ke kanan. Kalau ada baris yang tersendat, garis bawahi dan kembali ke sana besok."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Satu",
+      "Dua",
+      "…itu (jamak)"
+     ],
+     "rows": [
+      [
+       "en katt",
+       "to katter",
+       "kattene"
+      ],
+      [
+       "ei bok",
+       "to bøker",
+       "bøkene"
+      ],
+      [
+       "et hus",
+       "to hus",
+       "husene"
+      ],
+      [
+       "et barn",
+       "to barn",
+       "barna"
+      ],
+      [
+       "en mann",
+       "to menn",
+       "mennene"
+      ],
+      [
+       "ei søster",
+       "to søstre",
+       "søstrene"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Uji cepat untuk dirimu sendiri",
+     "items": [
+      "Ceritakan keluargamu dalam empat kalimat, keras-keras: berapa saudara, di mana orang tuamu tinggal, berapa anak di rumah, binatang apa yang ada.",
+      "Kalau kamu tersandung, kemungkinan besar bukan di akhiran jamaknya melainkan di **jenis kata bendanya** — kembali ke unit 4 dan tulis ulang daftarmu dengan *en/ei/et* di depan.",
+      "Aturan tebak-tebakan yang aman: kalau kamu tidak tahu jamak sebuah kata, pakai **-er**. Delapan dari sepuluh kali kamu benar, dan sisanya tetap dimengerti."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "søsken",
+   "baca": "SÖS-ken",
+   "id": "saudara kandung"
+  },
+  {
+   "no": "en bror",
+   "baca": "èn brur",
+   "id": "saudara laki-laki"
+  },
+  {
+   "no": "ei søster",
+   "baca": "ai SÖS-ter",
+   "id": "saudara perempuan"
+  },
+  {
+   "no": "foreldre",
+   "baca": "for-EL-dre",
+   "id": "orang tua"
+  },
+  {
+   "no": "ei mor",
+   "baca": "ai mur",
+   "id": "ibu"
+  },
+  {
+   "no": "en far",
+   "baca": "èn far",
+   "id": "ayah"
+  },
+  {
+   "no": "en sønn",
+   "baca": "èn sön",
+   "id": "anak laki-laki"
+  },
+  {
+   "no": "ei datter",
+   "baca": "ai DAT-ter",
+   "id": "anak perempuan"
+  },
+  {
+   "no": "en familie",
+   "baca": "èn fa-MI-li-e",
+   "id": "keluarga"
+  },
+  {
+   "no": "en gård",
+   "baca": "èn gor",
+   "id": "pertanian, perkebunan"
+  },
+  {
+   "no": "en by",
+   "baca": "èn bü",
+   "id": "kota"
+  },
+  {
+   "no": "et dyr",
+   "baca": "èt dür",
+   "id": "binatang"
+  },
+  {
+   "no": "en hest",
+   "baca": "èn hest",
+   "id": "kuda"
+  },
+  {
+   "no": "en hund",
+   "baca": "èn hun",
+   "id": "anjing"
+  },
+  {
+   "no": "ei katt",
+   "baca": "ai kat",
+   "id": "kucing"
+  },
+  {
+   "no": "et menneske",
+   "baca": "èt MEN-nes-ke",
+   "id": "manusia, orang"
+  },
+  {
+   "no": "å ha",
+   "baca": "o ha",
+   "id": "punya, memiliki"
+  },
+  {
+   "no": "å like",
+   "baca": "o LI-ke",
+   "id": "suka"
+  },
+  {
+   "no": "å få",
+   "baca": "o fo",
+   "id": "mendapat"
+  },
+  {
+   "no": "å vite",
+   "baca": "o VI-te",
+   "id": "tahu"
+  },
+  {
+   "no": "mange",
+   "baca": "MANG-e",
+   "id": "banyak (yang dihitung)"
+  },
+  {
+   "no": "mye",
+   "baca": "MÜ-e",
+   "id": "banyak (yang tak dihitung)"
+  },
+  {
+   "no": "altfor",
+   "baca": "ALT-for",
+   "id": "terlalu"
+  },
+  {
+   "no": "ingen",
+   "baca": "ING-en",
+   "id": "tak seorang pun, tak satu pun"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah jadi jamak tak tentu.",
+   "items": [
+    "en katt → to ____",
+    "ei bok → to ____",
+    "et hus → to ____",
+    "en mann → to ____",
+    "et barn → to ____",
+    "ei søster → to ____"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi jamak tentu.",
+   "items": [
+    "biler → ____",
+    "bøker → ____",
+    "hus → ____",
+    "barn → ____",
+    "lærere → ____",
+    "søstre → ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia.",
+   "items": [
+    "Saya punya dua saudara laki-laki.",
+    "Orang tuanya tinggal di luar kota.",
+    "Berapa kucing yang mereka punya?",
+    "Anak-anak itu ada di rumah.",
+    "Buku-buku itu ada di meja.",
+    "Saya suka binatang."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "brødre / jeg / to / har",
+    "mange / hvor / katter / ?",
+    "hjemme / barna / er",
+    "bor / byen / de / utenfor",
+    "dyr / liker / ikke / jeg"
+   ]
+  }
+ ],
+ "answers": [
+  "katter — bøker — hus — menn — barn — søstre",
+  "bilene — bøkene — husene — barna — lærerne — søstrene",
+  "Jeg har to brødre. — Foreldrene bor utenfor byen. — Hvor mange katter har de? — Barna er hjemme. — Bøkene ligger på bordet. — Jeg liker dyr.",
+  "Jeg har to brødre. — Hvor mange katter? — Barna er hjemme. — De bor utenfor byen. — Jeg liker ikke dyr."
+ ]
+}

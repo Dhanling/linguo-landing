@@ -1,0 +1,813 @@
+{
+  "brand": "LINGUO",
+  "title": "Norsk 101",
+  "subtitle": "Modul belajar mandiri bahasa Norwegia untuk pemula",
+  "level": "Level A1 (CEFR)",
+  "edition": "Edisi Bahasa Indonesia",
+  "ruby": false,
+  "font_size": "9.0pt",
+  "page_margin": "11mm 10mm 10mm",
+  "vocab_columns": [
+    {
+      "head": "Norsk",
+      "key": "no"
+    },
+    {
+      "head": "Cara baca",
+      "key": "baca"
+    },
+    {
+      "head": "Bahasa Indonesia",
+      "key": "id"
+    }
+  ],
+  "cover_design": {
+    "bg": "#123B63",
+    "accent": "#F0C05A",
+    "label": "BAHASA NORWEGIA",
+    "judul": "Norsk",
+    "cap": "å",
+    "pola_opacity": 0.42,
+    "pola": "background-image:repeating-linear-gradient(90deg, rgba(255,255,255,.11) 0 3px, transparent 3px 44px),repeating-linear-gradient(0deg, rgba(255,255,255,.06) 0 3px, transparent 3px 44px);",
+    "ringkas": "Modul belajar mandiri bahasa Norwegia untuk pemula — dari menyapa di Oslo sampai menceritakan akhir pekan yang sudah lewat.",
+    "catatan": "Tiap baris dialog dilengkapi terjemahan harfiah dan cara baca."
+  },
+  "product": {
+    "slug": "modul-norwegia-101-id",
+    "title": "Norsk 101 new edition",
+    "type": "ebook",
+    "language": "Norwegian",
+    "level": "A1",
+    "file": "norsk-101-a1-id.pdf",
+    "description": "Dua puluh unit belajar mandiri bergaya Assimil untuk bahasa Norwegia (bokmål) dari nol: dialog pendek, terjemahan harfiah yang memperlihatkan cara bahasa Norwegia menyusun kalimat, catatan tata bahasa, kosakata lengkap dengan cara baca, latihan, dan kunci jawaban. Ditulis khusus untuk penutur bahasa Indonesia — tiap unit menyasar satu titik yang paling sering menjegal, dari kata sandang yang menempel di ekor kata benda sampai kata kerja yang wajib duduk di tempat kedua.",
+    "pages": 150
+  },
+  "front": [
+    {
+      "title": "Kata pengantar",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ada satu hal yang perlu kamu tahu sejak halaman pertama: **bahasa Norwegia adalah bahasa Skandinavia yang paling ramah kepada pemula**. Bukan pendapat pribadi — ini kesimpulan yang sama-sama diakui guru bahasa di Oslo, København, dan Stockholm. Bahasa Denmark punya tata bahasa yang mirip, tapi pelafalannya jauh dari ejaannya. Bahasa Swedia punya pelafalan yang jelas, tapi nadanya menuntut. Bahasa Norwegia berdiri persis di tengah: ditulis hampir seperti bahasa Denmark, dibunyikan hampir seperti bahasa Swedia."
+        },
+        {
+          "type": "p",
+          "text": "Dan daftar hal yang **lebih mudah daripada bahasa Inggris** ternyata panjang. Kata kerja bahasa Norwegia tidak berubah menurut pelakunya sama sekali — *jeg er, du er, han er, vi er, dere er, de er*, satu bentuk untuk semua orang, persis seperti \"saya adalah, kamu adalah, dia adalah\" dalam bahasa Indonesia. Tidak ada *am/is/are*, tidak ada *-s* yang menempel di orang ketiga. Bahasa Norwegia juga tidak punya bentuk kata kerja berkelanjutan; \"saya sedang makan\" dan \"saya makan\" memakai satu kalimat yang sama."
+        },
+        {
+          "type": "p",
+          "text": "Kesulitannya ada, tentu, dan sejak awal modul ini akan menyebutkannya terang-terangan supaya kamu tidak kaget. Ada tiga: **kata sandang yang menempel di ekor kata benda** (*en bil* → *bilen*, \"mobil itu\"), **kata kerja yang wajib duduk di tempat kedua** dalam kalimat (*I dag går jeg* — bukan *I dag jeg går*), dan **huruf yang tidak selalu berbunyi seperti tulisannya** — terutama huruf *o* yang sering berbunyi \"u\", dan huruf *d* di ujung kata yang biasanya diam saja."
+        },
+        {
+          "type": "p",
+          "text": "Ketiganya nyata, tapi ketiganya juga **berjumlah tiga**. Tidak ada jenis kelamin kata yang harus dihafal seperti bahasa Jerman dengan tiga kata sandangnya yang berubah menurut jabatan kalimat; tidak ada konjugasi enam baris seperti bahasa Prancis; tidak ada lima belas kasus seperti bahasa Finlandia. Setelah tiga hal itu duduk, sisanya mengalir."
+        },
+        {
+          "type": "p",
+          "text": "Yang akan kamu pelajari di modul ini adalah **bokmål**, ragam tulis yang dipakai sekitar 85% orang Norwegia, dipakai di sekolah, media, dan hampir semua buku. Ragam satunya, *nynorsk*, tetap resmi dan akan disinggung sekali di halaman terakhir, tapi kalau tujuanmu bekerja, kuliah, atau tinggal di Norwegia, bokmål adalah pintunya."
+        },
+        {
+          "type": "p",
+          "text": "Dialog-dialog di modul ini mengikuti Budi, mahasiswa Indonesia yang baru tiba di Oslo, bersama teman sekamarnya Ahmad dan tetangga Norwegianya, Ingrid dan Lars. Yang mereka bicarakan sengaja hal-hal biasa: mencari kunci, membeli roti, kereta yang terlambat, akhir pekan di kabin. Bahasa yang benar-benar dipakai orang adalah bahasa yang dipakai untuk hal-hal biasa."
+        },
+        {
+          "type": "p",
+          "text": "Dua puluh unit, satu dialog per unit, sekitar dua puluh sampai tiga puluh menit sekali duduk. Kalau kamu mengerjakan satu unit tiap dua hari, dalam enam minggu kamu sudah selesai. **Lykke til** — semoga berhasil."
+        }
+      ]
+    },
+    {
+      "type": "isi",
+      "title": "Daftar isi",
+      "intro": "Modul ini paling baik dikerjakan berurutan — tiap unit memakai ulang apa yang dipasang unit sebelumnya."
+    },
+    {
+      "title": "Cara memakai modul ini",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Modul ini disusun untuk **belajar sendiri**. Tiap unit dirancang selesai dalam satu kali duduk, sekitar 20-30 menit. Yang penting bukan seberapa cepat kamu maju, tapi seberapa sering kamu kembali."
+        },
+        {
+          "type": "p",
+          "text": "Setiap unit punya susunan yang sama, dan urutannya sengaja begitu:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Dialog** — baca dulu bahasa Norwegianya dengan suara keras, jangan lihat artinya. Biarkan telinga bekerja sebelum otak menuntut penjelasan.",
+            "**Terjemahan harfiah** — baris kecil miring di bawah arti. Ini bagian yang paling sering dilewati orang, padahal di sinilah kamu melihat cara bahasa Norwegia *berpikir*. Contoh: *Jeg heter Budi* secara harfiah berarti \"saya dinamai Budi\", bukan \"nama saya Budi\".",
+            "**Catatan** — penjelasan pendek atas hal-hal yang tadi terasa aneh.",
+            "**Kosakata** — kata baru unit itu, lengkap dengan cara bacanya. Kata benda selalu ditulis bersama *en*, *ei*, atau *et*, supaya jenisnya ikut terhafal sejak pertama kali dilihat.",
+            "**Latihan** — kerjakan tanpa melihat kunci. Salah itu bagian dari prosesnya.",
+            "**Kunci jawaban** — baru dibuka setelah kamu benar-benar mencoba."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Ulangan berjenjang",
+          "items": [
+            "Mulai unit 3, tiap unit menyuruhmu mengulang satu unit yang sudah lewat — biasanya dua langkah ke belakang, jarak yang pas untuk membuat ingatan bekerja tanpa terasa seperti mengulang dari nol. Caranya dibalik: tutup bahasa Norwegianya, lihat terjemahan Indonesianya, lalu susun kembali kalimat Norwegianya dari ingatan.",
+            "Bagian ini yang mengubah \"pernah paham\" jadi \"bisa dipakai\". Jangan dilewati."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Satu aturan terakhir: **suarakan**. Ejaan bahasa Norwegia jauh lebih jujur daripada bahasa Denmark, tapi ia tetap punya belasan kebiasaan yang tidak kelihatan di kertas. Kolom \"cara baca\" di tiap tabel kosakata bukan hiasan — ia bagian utama pelajarannya. Huruf besar di dalamnya menandai suku kata yang ditekan: **SNAK-ker** berarti tekanannya di *snak*."
+        }
+      ]
+    },
+    {
+      "title": "Pelafalan bahasa Norwegia",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ejaan bahasa Norwegia mengikuti bunyinya jauh lebih setia daripada bahasa Inggris atau Prancis, dan kabar baiknya berhenti sampai di situ: masih ada sekitar dua belas kebiasaan yang harus kamu pasang lebih dulu. Halaman ini memasang semuanya sekaligus. Baca sekali sekarang, lalu kembali ke sini tiap kali sebuah kata terdengar tidak seperti tulisannya."
+        },
+        {
+          "type": "sub",
+          "text": "Tiga huruf tambahan"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Huruf",
+            "Bunyinya",
+            "Ditulis di modul ini",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "**æ**",
+              "seperti *e* pada \"beca\", mulut lebih terbuka",
+              "**è**",
+              "*være* → VÈ-re"
+            ],
+            [
+              "**ø**",
+              "bunyikan *e* pada \"sore\" sambil memonyongkan bibir",
+              "**ö**",
+              "*kjøtt* → khöt"
+            ],
+            [
+              "**å**",
+              "*o* panjang pada \"bola\"",
+              "**o**",
+              "*hvorfor* → VUR-for"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Ketiganya adalah huruf tersendiri di abjad Norwegia, bukan huruf beraksen. Urutannya paling belakang: …*x, y, z, æ, ø, å*. Kalau kamu mencari kata di kamus, kata berawalan *å* ada di halaman paling akhir."
+        },
+        {
+          "type": "sub",
+          "text": "Vokal yang menipu"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**o sering berbunyi \"u\".** Ini jebakan nomor satu, dan ia mengenai kata-kata yang paling sering dipakai: *bok* → **buk**, *bo* → **bu**, *sol* → **sul**, *god* → **gu**, *stor* → **stur**, *bord* → **bur**. Aturannya kasar tapi berguna: *o* yang panjang biasanya \"u\", *o* yang pendek (di depan dua huruf mati) biasanya tetap \"o\" atau bahkan \"å\": *sommer* → **SOM-mer**, *opp** → **op**.",
+            "**u bukan \"u\" biasa.** Bunyinya di antara *u* dan *i* — bulatkan bibir seperti mau bilang \"u\", lalu naikkan lidah seperti mau bilang \"i\". *hus* → **hüs**, *du* → **dü**. Di modul ini ditulis **ü**."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Huruf mati yang diam"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pola",
+            "Yang terjadi",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "**hv-**",
+              "*h* lenyap",
+              "*hva* → **va**, *hvor* → **vur**, *hvem* → **vem**"
+            ],
+            [
+              "**-d** di ujung",
+              "hampir selalu diam",
+              "*med* → **me**, *ved* → **ve**, *god* → **gu**, *land* → **lan**"
+            ],
+            [
+              "**-t** pada *det* & akhiran *-et*",
+              "diam",
+              "*det* → **de**, *huset* → **HÜ-se**"
+            ],
+            [
+              "**g-** sebelum i, y, ei",
+              "jadi *y*",
+              "*gi* → **yi**, *gift* → **yift**"
+            ],
+            [
+              "**-g** pada *jeg, meg, deg*",
+              "jadi *i*",
+              "*jeg* → **yai**, *meg* → **mai**"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Gabungan huruf yang berbunyi lain"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Ditulis",
+            "Berbunyi",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "**kj-**, **k-** sebelum i/y",
+              "**kh** — seperti mendesis lembut di langit-langit",
+              "*kjøkken* → **KHÖ-ken**, *kino* → **KHI-nu**"
+            ],
+            [
+              "**sj-**, **skj-**, **sk-** sebelum i/y/øy",
+              "**sy** — seperti *sy* pada \"syarat\"",
+              "*sju* → **syü**, *skje* → **sye**, *ski* → **syi**"
+            ],
+            [
+              "**rs**",
+              "**sy**",
+              "*norsk* → **nosyk**, *person* → **pe-SYUN**"
+            ],
+            [
+              "**eg** di dalam kata",
+              "**ai**",
+              "*regn* → **rain**, *tegne* → **TAI-ne**"
+            ],
+            [
+              "**ei**",
+              "**ai**",
+              "*nei* → **nai**, *hei* → **hai**"
+            ],
+            [
+              "**øy**",
+              "**öi**",
+              "*øy* → **öi**, *høyre* → **HÖI-re**"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Tekanan dan panjang"
+        },
+        {
+          "type": "p",
+          "text": "Tekanan bahasa Norwegia hampir selalu jatuh di **suku kata pertama** — *SNAK-ke*, *ØN-ske*, *AR-beid*. Yang menyalahi aturan ini umumnya kata pinjaman: *ba-NAN*, *stu-DENT*, *res-tau-RANG*. Di modul ini suku kata bertekanan selalu ditulis dengan huruf besar."
+        },
+        {
+          "type": "p",
+          "text": "Yang lebih penting daripada tekanan adalah **panjang vokal**, karena ia membedakan arti. Aturannya rapi: vokal di depan **satu** huruf mati dibaca panjang, vokal di depan **dua** huruf mati dibaca pendek. *tak* (atap) panjang, *takk* (terima kasih) pendek. *lese* (membaca) panjang, *lesse* pendek. Kalau kamu memendekkan vokal yang seharusnya panjang, orang Norwegia sering benar-benar tidak mengerti — jauh lebih sering daripada kalau tekananmu meleset."
+        },
+        {
+          "type": "kotak",
+          "title": "Yang boleh kamu abaikan dulu",
+          "items": [
+            "Bahasa Norwegia punya **dua nada** (*tonem*) yang membedakan pasangan kata seperti *bønder* (petani) dan *bønner* (kacang). Nada ini nyata, tapi ia tidak pernah membuat kalimat lengkap jadi salah paham, dan tidak ada penutur yang mengharapkan pemula menguasainya. Abaikan sampai kamu benar-benar nyaman berbicara.",
+            "**Logat sangat beragam** di Norwegia — jauh lebih beragam daripada di Indonesia, dan tidak ada yang dianggap \"salah\". Cara baca di modul ini mengikuti logat Oslo (*østnorsk*), yang paling banyak terdengar di radio, film, dan kelas bahasa."
+          ]
+        }
+      ]
+    }
+  ],
+  "back": [
+    {
+      "title": "Ringkasan tata bahasa A1",
+      "blocks": [
+        {
+          "type": "sub",
+          "text": "Kata benda: tiga jenis, empat bentuk"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Jenis",
+            "Tak tentu",
+            "Tentu",
+            "Jamak",
+            "Jamak tentu"
+          ],
+          "rows": [
+            [
+              "hankjønn (**en**)",
+              "en bil",
+              "bil**en**",
+              "bil**er**",
+              "bil**ene**"
+            ],
+            [
+              "hunkjønn (**ei**)",
+              "ei bok",
+              "bok**a**",
+              "bøk**er**",
+              "bøk**ene**"
+            ],
+            [
+              "intetkjønn (**et**)",
+              "et hus",
+              "hus**et**",
+              "hus",
+              "hus**ene**"
+            ],
+            [
+              "intetkjønn bersuku 2",
+              "et eple",
+              "epl**et**",
+              "epl**er**",
+              "epl**ene**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tak beraturan: *mann → menn*, *bok → bøker*, *bror → brødre*, *søster → søstre*, *far → fedre*, *mor → mødre*, *datter → døtre*, *natt → netter*, *hånd → hender*, *fot → føtter*, *tre → trær*, *øye → øyne*, *ku → kyr*. Tidak berubah: *sko*, *ting*, *år*, *barn*."
+        },
+        {
+          "type": "sub",
+          "text": "Kata sifat: tiga bentuk"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Keadaan",
+            "Bentuk",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "*en/ei*-ord tak tentu",
+              "dasar",
+              "en **stor** bil"
+            ],
+            [
+              "*et*-ord tak tentu",
+              "+ **t**",
+              "et **stort** hus"
+            ],
+            [
+              "jamak",
+              "+ **e**",
+              "**store** biler"
+            ],
+            [
+              "sesudah *den/det/de/min/…*",
+              "+ **e**",
+              "den **store** bilen"
+            ],
+            [
+              "sesudah *er*",
+              "ikut jenisnya",
+              "bilen er **stor**; huset er **stort**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Kepastian ganda:** \"mobil besar itu\" = *den store bilen* — kata *den* di depan, akhiran *-e* pada kata sifat, **dan** ekor *-en* pada kata bendanya. Tiga penanda sekaligus."
+        },
+        {
+          "type": "p",
+          "text": "Tidak menambah *-t*: kata sifat berakhiran *-ig* (*hyggelig*), *-sk* bangsa (*norsk*), *-t* (*svart*), dan *-e* (*moderne*). Berakhiran vokal menggandakan: *blå → blått*, *ny → nytt*. Tak beraturan: *liten, lita, lite, lille, små*."
+        },
+        {
+          "type": "p",
+          "text": "Membandingkan: **-ere** dan **-est** — *billig → billigere → billigst*. Tak beraturan: *god → bedre → best*, *dårlig → verre → verst*, *stor → større → størst*, *liten → mindre → minst*, *mange → flere → flest*, *mye → mer → mest*, *gammel → eldre → eldst*, *ung → yngre → yngst*, *lang → lengre → lengst*. Kata panjang memakai *mer* dan *mest*."
+        },
+        {
+          "type": "sub",
+          "text": "Kata ganti"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pelaku",
+            "Sasaran",
+            "Milik (en / et / jamak)"
+          ],
+          "rows": [
+            [
+              "jeg",
+              "meg",
+              "min / mitt / mine"
+            ],
+            [
+              "du",
+              "deg",
+              "din / ditt / dine"
+            ],
+            [
+              "han",
+              "ham",
+              "hans"
+            ],
+            [
+              "hun",
+              "henne",
+              "hennes"
+            ],
+            [
+              "den / det",
+              "den / det",
+              "dens / dets"
+            ],
+            [
+              "vi",
+              "oss",
+              "vår / vårt / våre"
+            ],
+            [
+              "dere",
+              "dere",
+              "deres"
+            ],
+            [
+              "de",
+              "dem",
+              "deres"
+            ],
+            [
+              "(diri sendiri, org ke-3)",
+              "seg",
+              "sin / sitt / sine"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Han ringer til **moren sin*** = ibunya **sendiri**. *Han ringer til **moren hans*** = ibu **orang lain**. *Sin/si/sitt/sine* hanya dipakai kalau pemiliknya adalah pelaku kalimat itu, dan tidak pernah boleh ikut jadi pelaku."
+        },
+        {
+          "type": "sub",
+          "text": "Kata kerja: satu bentuk untuk semua orang"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Waktu",
+            "Bentuk",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "sekarang",
+              "dasar + **-r**",
+              "jeg snakke**r**, du snakke**r**, de snakke**r**"
+            ],
+            [
+              "lampau kel. 1",
+              "+ **-et**",
+              "snakk**et**, jobb**et**, vent**et**"
+            ],
+            [
+              "lampau kel. 2",
+              "+ **-te**",
+              "spis**te**, les**te**, kjøp**te**"
+            ],
+            [
+              "lampau kel. 3",
+              "+ **-de**",
+              "lev**de**, prøv**de**"
+            ],
+            [
+              "lampau kel. 4",
+              "+ **-dde**",
+              "bo**dde**, tro**dde**"
+            ],
+            [
+              "bentuk ketiga",
+              "**har** + ketiga",
+              "har snakk**et**, har spi**st**, har bo**dd**"
+            ],
+            [
+              "masa depan (niat)",
+              "**skal** + dasar",
+              "jeg skal jobbe"
+            ],
+            [
+              "masa depan (ramalan)",
+              "**kommer til å** + dasar",
+              "det kommer til å regne"
+            ],
+            [
+              "perintah",
+              "dasar tanpa *å* dan *-e*",
+              "kom! spis! vent!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kata kerja bantu **tidak** berakhiran *-r*: *kan, vil, skal, må, bør*. Bentuk lampaunya *kunne, ville, skulle, måtte, burde*. Kata kerja sesudahnya berdiri telanjang tanpa *å*."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Du **må ikke** røyke* = **dilarang** merokok. *Du **trenger ikke** røyke* = tidak perlu merokok. ⚠️ *Vil* berarti **mau**, bukan \"akan\"."
+        },
+        {
+          "type": "sub",
+          "text": "Susunan kalimat"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "1. Pembuka",
+            "2. **Kata kerja**",
+            "3. Pelaku",
+            "4. *ikke* dll.",
+            "5. Sisanya"
+          ],
+          "rows": [
+            [
+              "Jeg",
+              "**går**",
+              "—",
+              "ikke",
+              "på jobb i dag."
+            ],
+            [
+              "I dag",
+              "**går**",
+              "jeg",
+              "ikke",
+              "på jobb."
+            ],
+            [
+              "Hvorfor",
+              "**går**",
+              "du",
+              "ikke",
+              "på jobb?"
+            ],
+            [
+              "—",
+              "**Går**",
+              "du",
+              "ikke",
+              "på jobb i dag?"
+            ],
+            [
+              "I dag",
+              "**skal**",
+              "jeg",
+              "ikke",
+              "**gå** på jobb."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Kata kerja selalu di tempat kedua** di kalimat utama. Kotak keempat dihuni *ikke*, *alltid*, *ofte*, *aldri*, *sjelden*, *bare*, *også*, *kanskje*, *nok*, *jo*, *allerede*. Kata sambung *og*, *men*, *for*, *eller* **tidak** memaksa pembalikan."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Di dalam anak kalimat** (*at*, *fordi*, *hvis*, *når*, *da*, *som*, *om*, *før*, *etter at*), susunannya **pelaku — ikke — kata kerja**: *…at han **ikke kommer***. Ini satu-satunya tempat *ikke* mendahului kata kerja. Kalau anak kalimat berdiri di depan, kalimat utamanya terbalik: *Hvis du ikke vil, **er det** greit.*"
+        }
+      ]
+    },
+    {
+      "title": "Kata kerja yang paling sering dipakai",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Empat puluh kata kerja berikut menutupi sebagian besar percakapan sehari-hari. Baca tiap baris keras-keras dalam empat bentuk sekaligus — dasar, sekarang, lampau, ketiga — seperti orang menghafal *go, goes, went, gone*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Dasar",
+            "Sekarang",
+            "Lampau",
+            "Ketiga",
+            "Artinya"
+          ],
+          "rows": [
+            [
+              "å være",
+              "er",
+              "var",
+              "vært",
+              "adalah"
+            ],
+            [
+              "å ha",
+              "har",
+              "hadde",
+              "hatt",
+              "punya"
+            ],
+            [
+              "å gjøre",
+              "gjør",
+              "gjorde",
+              "gjort",
+              "melakukan"
+            ],
+            [
+              "å si",
+              "sier",
+              "sa",
+              "sagt",
+              "berkata"
+            ],
+            [
+              "å se",
+              "ser",
+              "så",
+              "sett",
+              "melihat"
+            ],
+            [
+              "å gå",
+              "går",
+              "gikk",
+              "gått",
+              "pergi, berjalan"
+            ],
+            [
+              "å komme",
+              "kommer",
+              "kom",
+              "kommet",
+              "datang"
+            ],
+            [
+              "å ta",
+              "tar",
+              "tok",
+              "tatt",
+              "mengambil"
+            ],
+            [
+              "å få",
+              "får",
+              "fikk",
+              "fått",
+              "mendapat"
+            ],
+            [
+              "å gi",
+              "gir",
+              "ga",
+              "gitt",
+              "memberi"
+            ],
+            [
+              "å vite",
+              "vet",
+              "visste",
+              "visst",
+              "tahu"
+            ],
+            [
+              "å spørre",
+              "spør",
+              "spurte",
+              "spurt",
+              "bertanya"
+            ],
+            [
+              "å finne",
+              "finner",
+              "fant",
+              "funnet",
+              "menemukan"
+            ],
+            [
+              "å bli",
+              "blir",
+              "ble",
+              "blitt",
+              "menjadi; tinggal"
+            ],
+            [
+              "å stå",
+              "står",
+              "sto",
+              "stått",
+              "berdiri"
+            ],
+            [
+              "å sitte",
+              "sitter",
+              "satt",
+              "sittet",
+              "duduk"
+            ],
+            [
+              "å ligge",
+              "ligger",
+              "lå",
+              "ligget",
+              "terbaring"
+            ],
+            [
+              "å sove",
+              "sover",
+              "sov",
+              "sovet",
+              "tidur"
+            ],
+            [
+              "å drikke",
+              "drikker",
+              "drakk",
+              "drukket",
+              "minum"
+            ],
+            [
+              "å skrive",
+              "skriver",
+              "skrev",
+              "skrevet",
+              "menulis"
+            ],
+            [
+              "å le",
+              "ler",
+              "lo",
+              "ledd",
+              "tertawa"
+            ],
+            [
+              "å snakke",
+              "snakker",
+              "snakket",
+              "snakket",
+              "berbicara"
+            ],
+            [
+              "å jobbe",
+              "jobber",
+              "jobbet",
+              "jobbet",
+              "bekerja"
+            ],
+            [
+              "å våkne",
+              "våkner",
+              "våknet",
+              "våknet",
+              "terbangun"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kelompok 1 (*snakke*, *jobbe*, *våkne*, *vente*) punya bentuk lampau dan bentuk ketiga yang **sama persis** — seperempat dari seluruh kata kerja bahasa Norwegia."
+        }
+      ]
+    },
+    {
+      "title": "Apa selanjutnya",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Dua puluh unit ini memberimu kerangka lengkap tingkat **A1**: kata benda, kata sifat, kata ganti, empat waktu, kata kerja bantu, anak kalimat, dan sekitar enam ratus kosakata. Dengan itu kamu bisa memperkenalkan diri, mengurus keperluan sehari-hari, dan menceritakan apa yang sudah dan akan terjadi."
+        },
+        {
+          "type": "sub",
+          "text": "Yang menunggu di tingkat berikutnya"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Bentuk pasif** — *huset **ble bygd** i 1950*, dan bentuk *-s* (*boka **selges** her*).",
+            "**Bentuk pengandaian** — *hvis jeg **hadde hatt** tid, **ville jeg** kommet*.",
+            "**Kata kerja bersayap dalam jumlah besar** — *å slå opp*, *å finne ut*, *å legge fram*, *å gi opp*. Kelompok ini yang paling menuntut hafalan di tingkat B1.",
+            "**Kata benda majemuk** — bahasa Norwegia menyambung kata tanpa spasi, dan sambungannya panjang: *arbeidsledighetstrygd*. Sekali kamu bisa memotongnya, kosakatamu berlipat."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Sumber yang benar-benar berguna"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**klartale.no** — berita harian dalam bahasa Norwegia sederhana, gratis, dengan versi suara. Ini titik masuk terbaik sesudah modul ini.",
+            "**NRK** — penyiar publik Norwegia. *NRK Skole* punya video pendek untuk sekolah; *Supernytt* adalah berita untuk anak-anak dan cocok sekali untuk pembelajar dewasa.",
+            "**Ordbøkene.no** — kamus resmi bokmål dan nynorsk, lengkap dengan bentuk lengkap tiap kata. Gratis dan tanpa iklan.",
+            "**Lær norsk nå** dan **Norsklærer Karense** — dua podcast yang berbicara pelan dan sengaja untuk pembelajar."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Satu kalimat terakhir yang harus kamu hafal",
+          "items": [
+            "*Kan vi snakke norsk? Jeg øver.* — \"Bisa kita pakai bahasa Norwegia? Saya sedang latihan.\" Orang Norwegia sering beralih ke bahasa Inggris begitu mendengar aksen asing, dan kalimat ini menghentikannya dengan sopan. Ia mungkin kalimat paling berguna di seluruh modul.",
+            "Ulangi modul ini dari unit 1 dengan arah terbalik: baca terjemahan Indonesianya, susun bahasa Norwegianya dari ingatan. Putaran kedua terasa sama sekali berbeda dari putaran pertama.",
+            "**Lykke til!**"
+          ]
+        }
+      ]
+    }
+  ]
+}

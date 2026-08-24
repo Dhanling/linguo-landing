@@ -1,0 +1,610 @@
+{
+ "title": "Menyuruh dan meminta",
+ "title_target": "Kom inn og sett deg!",
+ "goal": "Membentuk perintah dengan membuang *å* dan *-r* sekaligus, lalu melunakkannya jadi permintaan yang terdengar Norwegia — bukan terjemahan harfiah dari bahasa Indonesia.",
+ "bekal": [
+  "membentuk perintah dari bentuk dasar mana pun",
+  "melarang dengan *ikke* yang berdiri di belakang perintah",
+  "meminta dengan *kan*, *kunne*, dan *får jeg*"
+ ],
+ "wave": "Ulangi **unit 11** dulu: tutup bahasa Norwegianya, lihat terjemahan Indonesianya, susun kembali dialognya. Bunyikan delapan pasangan gerakan/tempat sekali lagi.",
+ "dialogs": [
+  {
+   "title": "Dialog — Kom inn!",
+   "intro": "Sabtu sore di apartemen Ahmad. Budi mengetuk pintu sambil membawa sekantong plastik yang mengeluarkan bunyi mencurigakan.",
+   "lines": [
+    {
+     "speaker": "Ahmad:",
+     "text": "Kom inn! Ta av deg skoene, er du snill.",
+     "id": "Masuk! Lepas sepatunya ya.",
+     "literal": "datang masuk! ambil dari kamu sepatu-sepatu-itu, adalah kamu baik."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Selvfølgelig. Hvor skal jeg legge jakka?",
+     "id": "Tentu. Jaketnya taruh di mana?",
+     "literal": "tentu-saja. di-mana akan saya meletakkan jaket-itu?"
+    },
+    {
+     "speaker": "Ahmad:",
+     "text": "Heng den der. Og sett deg — maten er nesten klar.",
+     "id": "Gantung di situ. Duduk dulu — makanannya hampir siap.",
+     "literal": "gantung ia di-sana. dan dudukkan kamu — makanan-itu adalah hampir siap."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Skal jeg hjelpe deg?",
+     "id": "Mau saya bantu?",
+     "literal": "akan saya menolong kamu?"
+    },
+    {
+     "speaker": "Ahmad:",
+     "text": "Gjerne. Kutt løken, men ikke gråt.",
+     "id": "Boleh. Potong bawangnya, tapi jangan nangis.",
+     "literal": "dengan-senang-hati. potong bawang-itu, tapi tidak menangis."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "For sent. Har du et glass vann?",
+     "id": "Telat. Ada segelas air?",
+     "literal": "untuk terlambat. punya kamu sebuah gelas air?"
+    },
+    {
+     "speaker": "Ahmad:",
+     "text": "Ta det selv. Ikke spør meg om alt.",
+     "id": "Ambil sendiri. Jangan tanya saya soal semuanya.",
+     "literal": "ambil itu sendiri. tidak bertanya saya tentang semua."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kunne du gi meg et håndkle, da?",
+     "id": "Kalau begitu, boleh minta handuk?",
+     "literal": "bisa kamu memberi saya sebuah handuk, kalau-begitu?"
+    },
+    {
+     "speaker": "Ahmad:",
+     "text": "Vær så god. Ikke tørk øynene med den — den er skitten.",
+     "id": "Silakan. Jangan lap mata pakai itu — kotor.",
+     "literal": "adalah begitu baik. tidak lap mata-itu dengan ia — ia adalah kotor."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Du er en fryktelig vert.",
+     "id": "Kamu tuan rumah yang mengerikan.",
+     "literal": "kamu adalah seorang mengerikan tuan-rumah."
+    },
+    {
+     "speaker": "Ahmad:",
+     "text": "Smak på maten først. Så snakker vi om det.",
+     "id": "Cicip dulu makanannya. Baru kita bahas.",
+     "literal": "cicipi pada makanan-itu pertama. lalu berbicara kami tentang itu."
+    }
+   ],
+   "notes": [
+    "**Bentuk perintah dibuat dengan membuang dua hal sekaligus: kata *å* dan akhiran *-r*.** *å komme* → **kom!**, *å ta* → **ta!**, *å sette* → **sett!**, *å kutte* → **kutt!** Yang tersisa adalah kata kerja telanjang, dan itu memang bentuk paling pendek yang ada.",
+    "**Kata kerja berakhiran dua huruf mati membuang satu**: *å komme* → *kom*, *å sette* → *sett* tetap dua karena *tt* di akhir memang dibolehkan; *å hjelpe* → *hjelp*. Aturan kasarnya: buang *-e* di ujung dan sisanya biarkan.",
+    "**Larangan dibentuk dengan *ikke* di belakang perintahnya**: *ikke gråt!*, *ikke spør!*, *ikke tørk!* — eh, perhatikan baik-baik: di sini *ikke* justru berdiri **di depan**. Bentuk perintah adalah satu-satunya tempat di seluruh bahasa Norwegia di mana *ikke* mendahului kata kerja, dan susunannya kebetulan sama persis dengan \"jangan\" dalam bahasa Indonesia.",
+    "**Er du snill** harfiahnya \"kalau kamu baik\" dan fungsinya seperti \"ya\" atau \"dong\" di ujung kalimat Indonesia. Ia melunakkan perintah tanpa mengubah bentuknya.",
+    "**Sett deg** berarti \"duduklah\" — harfiahnya \"dudukkan dirimu\". Kelompok kata kerja yang menuntut kata ganti kembali ini akan dibongkar di unit 18; untuk sekarang hafalkan tiga yang paling sering: *sett deg* (duduk), *skynd deg* (cepat), *kos deg* (nikmati).",
+    "**Ta av deg skoene** — melepas sepatu saat masuk rumah adalah kebiasaan yang benar-benar dipegang di Norwegia, bahkan di rumah teman dekat. Melangkah masuk bersepatu adalah hal yang orang Norwegia perhatikan tapi jarang mengomentari."
+   ],
+   "grammars": [
+    {
+     "title": "Membentuk perintah",
+     "body": [
+      "Satu gerakan: buang *å*, buang *-e* kalau ada. Tidak ada akhiran yang ditambahkan, dan bentuknya sama untuk satu orang maupun banyak orang."
+     ],
+     "table": {
+      "head": [
+       "Bentuk dasar",
+       "Perintah",
+       "Contoh",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "å komme",
+        "**kom!**",
+        "*Kom inn!*",
+        "Masuklah!"
+       ],
+       [
+        "å gå",
+        "**gå!**",
+        "*Gå hjem!*",
+        "Pulanglah!"
+       ],
+       [
+        "å ta",
+        "**ta!**",
+        "*Ta det selv.*",
+        "Ambil sendiri."
+       ],
+       [
+        "å se",
+        "**se!**",
+        "*Se her!*",
+        "Lihat sini!"
+       ],
+       [
+        "å høre",
+        "**hør!**",
+        "*Hør på meg.*",
+        "Dengarkan saya."
+       ],
+       [
+        "å spise",
+        "**spis!**",
+        "*Spis opp!*",
+        "Habiskan!"
+       ],
+       [
+        "å sitte",
+        "**sitt!**",
+        "*Sitt stille.*",
+        "Duduk diam."
+       ],
+       [
+        "å hjelpe",
+        "**hjelp!**",
+        "*Hjelp meg!*",
+        "Tolong saya!"
+       ],
+       [
+        "å vente",
+        "**vent!**",
+        "*Vent litt.*",
+        "Tunggu sebentar."
+       ],
+       [
+        "å være",
+        "**vær!**",
+        "*Vær så snill.*",
+        "Tolong ya."
+       ]
+      ]
+     },
+     "after": [
+      "Bentuk perintah tidak berubah menurut jumlah orang. *Kom!* dipakai untuk satu orang maupun sekelas penuh — berbeda dengan bahasa Spanyol, Prancis, atau Arab yang punya bentuk berbeda.",
+      "Kalau kata kerjanya bersayap, sayapnya berdiri di belakang: *stå **opp**!*, *spis **opp**!*, *kom **inn**!*, *ta **av** deg skoene!*",
+      "⚠️ Kata *å være* punya bentuk perintah **vær**, dan hampir satu-satunya tempat kamu menemuinya adalah dalam *vær så snill* (tolong) dan *vær så god* (silakan). Dua ungkapan itu praktis membekukan bentuknya."
+     ]
+    },
+    {
+     "title": "Melarang",
+     "body": [
+      "Inilah satu-satunya susunan di seluruh bahasa Norwegia di mana *ikke* berdiri di depan kata kerja — dan kebetulan susunannya sama persis dengan bahasa Indonesia."
+     ],
+     "table": {
+      "head": [
+       "Norsk",
+       "Bahasa Indonesia",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "**Ikke gråt!**",
+        "Jangan menangis!",
+        "*ikke* di depan"
+       ],
+       [
+        "**Ikke spør meg.**",
+        "Jangan tanya saya.",
+        "sasaran di belakang"
+       ],
+       [
+        "**Ikke glem nøkkelen!**",
+        "Jangan lupa kuncinya!",
+        "—"
+       ],
+       [
+        "**Ikke vær redd.**",
+        "Jangan takut.",
+        "dengan *vær*"
+       ],
+       [
+        "**Ikke ta den!**",
+        "Jangan ambil itu!",
+        "—"
+       ],
+       [
+        "**La være å røyke.**",
+        "Jangan merokok.",
+        "bentuk yang lebih halus"
+       ],
+       [
+        "Du **må ikke** røyke.",
+        "Kamu tidak boleh merokok.",
+        "larangan tanpa bentuk perintah"
+       ]
+      ]
+     },
+     "after": [
+      "Bandingkan tiga baris terakhir: *ikke ta den!* adalah perintah langsung, *la være å ta den* lebih halus, dan *du må ikke ta den* adalah pernyataan aturan. Ketiganya melarang, dengan tiga tingkat ketegasan.",
+      "*La være* harfiahnya \"biarkan saja\" dan sangat sering dipakai orang tua kepada anak — semacam \"sudah, jangan\"."
+     ]
+    },
+    {
+     "title": "Dari perintah ke permintaan",
+     "body": [
+      "Bahasa Norwegia tidak punya kata \"tolong\" yang dipakai sesering *please*. Kesopanan diurus lewat bentuk kalimatnya, dan tabel ini berjalan dari yang paling datar ke yang paling halus."
+     ],
+     "table": {
+      "head": [
+       "Norsk",
+       "Setingkat apa",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "*Gi meg saltet.*",
+        "datar — antar keluarga dekat",
+        "Ambilkan garamnya."
+       ],
+       [
+        "*Gi meg saltet, er du snill.*",
+        "lunak",
+        "Ambilkan garamnya ya."
+       ],
+       [
+        "*Kan du gi meg saltet?*",
+        "biasa, sehari-hari",
+        "Bisa ambilkan garamnya?"
+       ],
+       [
+        "*Kunne du gi meg saltet?*",
+        "sopan",
+        "Boleh minta tolong ambilkan?"
+       ],
+       [
+        "*Kan jeg få saltet?*",
+        "sopan, di meja makan",
+        "Minta garamnya."
+       ],
+       [
+        "*Kunne jeg fått saltet?*",
+        "sangat sopan, agak resmi",
+        "Bolehkah saya minta garamnya?"
+       ],
+       [
+        "*Vær så snill å gi meg saltet.*",
+        "memohon",
+        "Tolong sekali ambilkan garamnya."
+       ]
+      ]
+     },
+     "after": [
+      "Baris keempat dan kelima adalah yang paling sering kamu perlukan sehari-hari — di kasir, di kantor, di rumah orang. Hafalkan keduanya utuh.",
+      "⚠️ Jangan memakai *vær så snill* di setiap kalimat. Penutur bahasa Inggris membawa kebiasaan *please* ke sini dan hasilnya terdengar memelas. Bahasa Norwegia menganggap *kan du…?* sudah sopan sepenuhnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di dapur dan di meja makan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bentuk perintah paling sering terdengar di dapur, jadi kosakata unit ini berkumpul di sana."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Norsk",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Sett deg.",
+       "Duduklah."
+      ],
+      [
+       "Forsyn deg!",
+       "Silakan ambil sendiri!"
+      ],
+      [
+       "Vær så god.",
+       "Silakan (makan)."
+      ],
+      [
+       "Takk for maten.",
+       "Terima kasih makanannya."
+      ],
+      [
+       "Smaker det godt?",
+       "Enak?"
+      ],
+      [
+       "Vil du ha mer?",
+       "Mau tambah?"
+      ],
+      [
+       "Nei takk, jeg er mett.",
+       "Tidak, terima kasih, saya sudah kenyang."
+      ],
+      [
+       "Send meg saltet, er du snill.",
+       "Tolong ambilkan garamnya."
+      ],
+      [
+       "Kutt løken.",
+       "Potong bawangnya."
+      ],
+      [
+       "Kok vannet.",
+       "Rebus airnya."
+      ],
+      [
+       "Stek fisken i ti minutter.",
+       "Goreng ikannya sepuluh menit."
+      ],
+      [
+       "Rør i gryta.",
+       "Aduk pancinya."
+      ],
+      [
+       "Skru av komfyren.",
+       "Matikan kompornya."
+      ],
+      [
+       "Vask opp etterpå.",
+       "Cuci piring setelahnya."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Takk for maten** wajib diucapkan setiap kali selesai makan di rumah orang Norwegia, tanpa kecuali — kepada tuan rumah, kepada ibu, kepada teman sekamar. Melewatkannya benar-benar terasa, walaupun tidak akan ada yang menegurmu."
+    }
+   ]
+  },
+  {
+   "title": "Latihan mata: satu kata kerja, empat bentuk",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk dasar",
+      "Sekarang",
+      "Perintah",
+      "Larangan"
+     ],
+     "rows": [
+      [
+       "å komme",
+       "kommer",
+       "kom!",
+       "ikke kom!"
+      ],
+      [
+       "å spise",
+       "spiser",
+       "spis!",
+       "ikke spis!"
+      ],
+      [
+       "å ta",
+       "tar",
+       "ta!",
+       "ikke ta!"
+      ],
+      [
+       "å vente",
+       "venter",
+       "vent!",
+       "ikke vent!"
+      ],
+      [
+       "å glemme",
+       "glemmer",
+       "glem!",
+       "ikke glem!"
+      ],
+      [
+       "å hjelpe",
+       "hjelper",
+       "hjelp!",
+       "ikke hjelp!"
+      ],
+      [
+       "å røyke",
+       "røyker",
+       "røyk!",
+       "ikke røyk!"
+      ],
+      [
+       "å være",
+       "er",
+       "vær!",
+       "ikke vær!"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Uji cepat untuk dirimu sendiri",
+     "items": [
+      "Ambil sepuluh kata kerja dari unit 7 dan bentuk perintahnya semua, keras-keras. Lalu larang semuanya.",
+      "Tulis resep masakan Indonesia favoritmu dalam bahasa Norwegia, seluruhnya dalam bentuk perintah. Ini latihan yang mengherankan efektifnya karena resep memang ditulis begitu.",
+      "Terakhir, ubah lima perintah kasar jadi permintaan sopan lewat empat tingkat di tabel halaman sebelumnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "å sette seg",
+   "baca": "o SET-te sai",
+   "id": "duduk"
+  },
+  {
+   "no": "å kutte",
+   "baca": "o KÜT-te",
+   "id": "memotong"
+  },
+  {
+   "no": "å koke",
+   "baca": "o KU-ke",
+   "id": "merebus"
+  },
+  {
+   "no": "å steke",
+   "baca": "o STÈ-ke",
+   "id": "menggoreng"
+  },
+  {
+   "no": "å røre",
+   "baca": "o RÖ-re",
+   "id": "mengaduk"
+  },
+  {
+   "no": "å skru av",
+   "baca": "o skrü AV",
+   "id": "mematikan (alat)"
+  },
+  {
+   "no": "å vaske opp",
+   "baca": "o VAS-ke OP",
+   "id": "cuci piring"
+  },
+  {
+   "no": "å gråte",
+   "baca": "o GRO-te",
+   "id": "menangis"
+  },
+  {
+   "no": "å tørke",
+   "baca": "o TÖR-ke",
+   "id": "mengeringkan, mengelap"
+  },
+  {
+   "no": "å gi",
+   "baca": "o yi",
+   "id": "memberi"
+  },
+  {
+   "no": "å sende",
+   "baca": "o SEN-ne",
+   "id": "mengirim, mengoper"
+  },
+  {
+   "no": "å la være",
+   "baca": "o la VÆ-re",
+   "id": "membiarkan, jangan"
+  },
+  {
+   "no": "ei løk",
+   "baca": "ai lök",
+   "id": "bawang"
+  },
+  {
+   "no": "en fisk",
+   "baca": "èn fisk",
+   "id": "ikan"
+  },
+  {
+   "no": "et salt",
+   "baca": "èt salt",
+   "id": "garam"
+  },
+  {
+   "no": "et vann",
+   "baca": "èt van",
+   "id": "air"
+  },
+  {
+   "no": "et glass",
+   "baca": "èt glas",
+   "id": "gelas"
+  },
+  {
+   "no": "ei gryte",
+   "baca": "ai GRÜ-te",
+   "id": "panci"
+  },
+  {
+   "no": "en komfyr",
+   "baca": "èn kom-FÜR",
+   "id": "kompor"
+  },
+  {
+   "no": "en vert",
+   "baca": "èn vert",
+   "id": "tuan rumah"
+  },
+  {
+   "no": "snill",
+   "baca": "snil",
+   "id": "baik hati"
+  },
+  {
+   "no": "klar / klart",
+   "baca": "klar",
+   "id": "siap; jelas"
+  },
+  {
+   "no": "mett",
+   "baca": "met",
+   "id": "kenyang"
+  },
+  {
+   "no": "redd",
+   "baca": "re",
+   "id": "takut"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Bentuk perintahnya.",
+   "items": [
+    "å komme → ____",
+    "å spise → ____",
+    "å vente → ____",
+    "å hjelpe → ____",
+    "å glemme → ____",
+    "å være → ____"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi larangan.",
+   "items": [
+    "Gråt! → ____",
+    "Spør meg! → ____",
+    "Ta den! → ____",
+    "Glem nøkkelen! → ____",
+    "Vær redd! → ____",
+    "Røyk inne! → ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia.",
+   "items": [
+    "Masuklah!",
+    "Duduk dulu.",
+    "Jangan lupa kuncinya.",
+    "Bisa bantu saya?",
+    "Boleh minta segelas air?",
+    "Terima kasih makanannya."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "inn / kom / !",
+    "skoene / av / ta / deg",
+    "nøkkelen / ikke / glem / !",
+    "meg / du / hjelpe / kan / ?",
+    "vann / få / jeg / kan / glass / et / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "kom — spis — vent — hjelp — glem — vær",
+  "Ikke gråt! — Ikke spør meg! — Ikke ta den! — Ikke glem nøkkelen! — Ikke vær redd! — Ikke røyk inne!",
+  "Kom inn! — Sett deg. — Ikke glem nøkkelen. — Kan du hjelpe meg? — Kan jeg få et glass vann? — Takk for maten.",
+  "Kom inn! — Ta av deg skoene. — Ikke glem nøkkelen! — Kan du hjelpe meg? — Kan jeg få et glass vann?"
+ ]
+}

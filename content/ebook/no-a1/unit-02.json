@@ -1,0 +1,525 @@
+{
+ "title": "Bertanya, menjawab, menyangkal",
+ "title_target": "Hva er dette?",
+ "goal": "Menyusun pertanyaan dengan tujuh kata tanya bahasa Norwegia, dan menyangkal kalimat dengan *ikke* — yang letaknya justru kebalikan dari bahasa Indonesia.",
+ "bekal": [
+  "membedakan pertanyaan ya/tidak dari pertanyaan berkata tanya",
+  "menempatkan *ikke* **sesudah** kata kerja, bukan sebelumnya",
+  "menjawab dengan *ja*, *nei*, dan — ini yang menarik — *jo*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — På kjøkkenet",
+   "intro": "Dapur bersama di lantai dua. Budi sedang menggoreng sesuatu ketika seorang tetangga masuk membawa cangkir kosong.",
+   "lines": [
+    {
+     "speaker": "Lars:",
+     "text": "Hei. Hva heter du?",
+     "id": "Hai. Namamu siapa?",
+     "literal": "hai. apa dinamai kamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jeg heter Budi. Hvem er du?",
+     "id": "Nama saya Budi. Kamu siapa?",
+     "literal": "saya dinamai Budi. siapa adalah kamu?"
+    },
+    {
+     "speaker": "Lars:",
+     "text": "Lars. Jeg bor her også. Hva er dette?",
+     "id": "Lars. Saya juga tinggal di sini. Ini apa?",
+     "literal": "Lars. saya tinggal di-sini juga. apa adalah ini?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Det er tempe. Det er indonesisk mat.",
+     "id": "Itu tempe. Makanan Indonesia.",
+     "literal": "itu adalah tempe. itu adalah Indonesia makanan."
+    },
+    {
+     "speaker": "Lars:",
+     "text": "Hvordan smaker det?",
+     "id": "Rasanya bagaimana?",
+     "literal": "bagaimana berasa itu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Det er veldig godt. Vil du smake?",
+     "id": "Enak sekali. Mau coba?",
+     "literal": "itu adalah sangat enak. mau kamu mencicipi?"
+    },
+    {
+     "speaker": "Lars:",
+     "text": "Nei takk, ikke nå. Jeg spiser ikke frokost.",
+     "id": "Tidak, terima kasih, jangan sekarang. Saya tidak sarapan.",
+     "literal": "tidak terima-kasih, tidak sekarang. saya makan tidak sarapan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hvorfor ikke?",
+     "id": "Kenapa tidak?",
+     "literal": "mengapa tidak?"
+    },
+    {
+     "speaker": "Lars:",
+     "text": "Jeg er ikke sulten om morgenen. Bare kaffe.",
+     "id": "Pagi-pagi saya tidak lapar. Kopi saja.",
+     "literal": "saya adalah tidak lapar pada pagi-itu. hanya kopi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jeg drikker ikke kaffe. Jeg drikker te.",
+     "id": "Saya tidak minum kopi. Saya minum teh.",
+     "literal": "saya minum tidak kopi. saya minum teh."
+    },
+    {
+     "speaker": "Lars:",
+     "text": "Drikker du ikke kaffe? Er du sikker på at du bor i Norge?",
+     "id": "Kamu tidak minum kopi? Yakin kamu tinggal di Norwegia?",
+     "literal": "minum kamu tidak kopi? adalah kamu yakin pada bahwa kamu tinggal di Norwegia?"
+    }
+   ],
+   "notes": [
+    "**Inilah titik yang paling sering menjegal penutur Indonesia.** Kata *ikke* berdiri **sesudah** kata kerja, bukan sebelumnya: *jeg spiser **ikke*** — harfiahnya \"saya makan tidak\". Bahasa Indonesia menaruh \"tidak\" di depan (*saya tidak makan*), dan tangan akan otomatis menulis *jeg ikke spiser*. Itu salah, dan salahnya kentara sekali di telinga orang Norwegia.",
+    "**Pertanyaan ya/tidak dibuat dengan menaruh kata kerja paling depan.** *Du bor her* → *Bor du her?* Tidak ada kata bantu seperti *do* dalam bahasa Inggris. Cukup tukar tempat kata kerja dan pelakunya.",
+    "**Semua kata tanya berawalan hv-, dan h-nya diam**: *hva* → **va**, *hvem* → **vem**, *hvor* → **vur**, *hvordan* → **VUR-dan**, *hvorfor* → **VUR-for**. Satu kebiasaan bunyi ini sekaligus membereskan enam kata sekaligus.",
+    "**Dette** dan **det** dua-duanya berarti \"ini/itu\", tapi *dette* menunjuk yang dekat dan *det* yang jauh atau yang sudah disebut. Untuk memulai kalimat perkenalan benda, *hva er dette?* adalah yang paling wajar.",
+    "**Det er godt** — kata sifat *god* berubah jadi *godt* karena *det* adalah kata bernetral. Aturannya lengkap di unit 12; untuk sekarang hafalkan saja *det er godt* dan *det er kaldt* utuh-utuh.",
+    "**Bare** berarti \"hanya, cuma\" dan dibaca **BA-re**. Ia salah satu kata paling sering dipakai orang Norwegia dalam percakapan sehari-hari."
+   ],
+   "grammars": [
+    {
+     "title": "Tujuh kata tanya yang membawamu ke mana-mana",
+     "body": [
+      "Hafalkan tabel ini utuh. Dengan tujuh kata ini kamu sudah bisa menanyakan hampir semua hal yang perlu ditanyakan pendatang baru."
+     ],
+     "table": {
+      "head": [
+       "Norsk",
+       "Cara baca",
+       "Artinya",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**hva**",
+        "va",
+        "apa",
+        "*Hva heter du?* — Namamu siapa?"
+       ],
+       [
+        "**hvem**",
+        "vem",
+        "siapa",
+        "*Hvem er han?* — Dia siapa?"
+       ],
+       [
+        "**hvor**",
+        "vur",
+        "di mana",
+        "*Hvor bor du?* — Kamu tinggal di mana?"
+       ],
+       [
+        "**hvordan**",
+        "VUR-dan",
+        "bagaimana",
+        "*Hvordan går det?* — Apa kabar?"
+       ],
+       [
+        "**hvorfor**",
+        "VUR-for",
+        "mengapa",
+        "*Hvorfor ikke?* — Kenapa tidak?"
+       ],
+       [
+        "**når**",
+        "nor",
+        "kapan",
+        "*Når kommer du?* — Kapan kamu datang?"
+       ],
+       [
+        "**hvilken**",
+        "VIL-ken",
+        "yang mana",
+        "*Hvilken buss?* — Bus yang mana?"
+       ]
+      ]
+     },
+     "after": [
+      "Tiga tambahan yang langsung berguna: **hvor mange** (berapa banyak, untuk yang dihitung), **hvor mye** (berapa banyak, untuk yang tidak dihitung), dan **hvor lenge** (berapa lama). Ketiganya memakai *hvor* sebagai batu pijakan.",
+      "*Hvilken* berubah bentuk menurut jenis kata bendanya — *hvilken buss*, *hvilket hus*, *hvilke bøker*. Jenis kata benda baru dibahas di unit 4, jadi untuk sekarang pakai *hvilken* saja dan tidak akan ada yang salah paham.",
+      "⚠️ *Hvordan går det?* harfiahnya \"bagaimana berjalan itu?\" dan artinya \"apa kabar?\". Jawabannya hampir selalu *Det går bra, takk* — \"berjalan baik, terima kasih\"."
+     ]
+    },
+    {
+     "title": "Dua macam pertanyaan, dua susunan",
+     "body": [
+      "Semua pertanyaan bahasa Norwegia jatuh ke salah satu dari dua pola ini. Perhatikan bahwa **kata kerja selalu berdiri di tempat kedua** — hal yang akan kita bongkar habis di unit berikutnya."
+     ],
+     "table": {
+      "head": [
+       "Macam",
+       "Susunan",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "Ya/tidak",
+        "**kata kerja** + pelaku + …",
+        "*Bor du i Oslo?* — Kamu tinggal di Oslo?"
+       ],
+       [
+        "Ya/tidak",
+        "**kata kerja** + pelaku + …",
+        "*Snakker han norsk?* — Dia bisa bahasa Norwegia?"
+       ],
+       [
+        "Berkata tanya",
+        "kata tanya + **kata kerja** + pelaku",
+        "*Hvor bor du?* — Kamu tinggal di mana?"
+       ],
+       [
+        "Berkata tanya",
+        "kata tanya + **kata kerja** + pelaku",
+        "*Når kommer bussen?* — Kapan busnya datang?"
+       ]
+      ]
+     },
+     "after": [
+      "Yang tidak ada di sini justru yang penting: **tidak ada kata bantu**. Bahasa Inggris memaksa *do you live…?*, bahasa Norwegia cukup *bor du…?*. Kalau kamu terbiasa berpikir lewat bahasa Inggris, buang *do*-nya."
+     ]
+    },
+    {
+     "title": "Menyangkal dengan ikke",
+     "body": [
+      "Satu aturan, dan ia berlaku untuk semua kalimat biasa: **ikke berdiri persis sesudah kata kerja**."
+     ],
+     "table": {
+      "head": [
+       "Kalimat biasa",
+       "Disangkal",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "Jeg **snakker** norsk.",
+        "Jeg **snakker ikke** norsk.",
+        "Saya tidak bisa bahasa Norwegia."
+       ],
+       [
+        "Han **er** hjemme.",
+        "Han **er ikke** hjemme.",
+        "Dia tidak di rumah."
+       ],
+       [
+        "Vi **bor** i Bergen.",
+        "Vi **bor ikke** i Bergen.",
+        "Kami tidak tinggal di Bergen."
+       ],
+       [
+        "Det **koster** mye.",
+        "Det **koster ikke** mye.",
+        "Itu tidak mahal."
+       ],
+       [
+        "**Kommer** du?",
+        "**Kommer** du **ikke**?",
+        "Kamu tidak datang?"
+       ]
+      ]
+     },
+     "after": [
+      "Di dalam pertanyaan, *ikke* pindah ke belakang pelakunya: *Kommer du ikke?* Aturannya tetap sama — ia mengikuti kata kerja **dan** pelakunya, bukan mendahului.",
+      "⚠️ Satu-satunya tempat di mana *ikke* melompat ke **depan** kata kerja adalah di dalam anak kalimat (*fordi jeg **ikke** kommer*). Itu jebakan besar yang menunggu di unit 18; sekarang cukup tahu bahwa pengecualiannya ada."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Ja, nei — dan jo",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Norwegia punya **tiga** kata jawaban, bukan dua. Yang ketiga, *jo*, tidak punya padanan dalam bahasa Indonesia maupun bahasa Inggris, dan justru karena itu ia layak dipasang sejak awal."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pertanyaan",
+      "Jawaban",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "*Snakker du norsk?*",
+       "**Ja**, litt.",
+       "Ya, sedikit."
+      ],
+      [
+       "*Snakker du norsk?*",
+       "**Nei**, dessverre.",
+       "Tidak, sayangnya."
+      ],
+      [
+       "*Snakker du **ikke** norsk?*",
+       "**Jo**, det gjør jeg!",
+       "**Bisa kok**, saya bisa!"
+      ],
+      [
+       "*Snakker du **ikke** norsk?*",
+       "**Nei**, dessverre ikke.",
+       "Betul, sayangnya tidak."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Aturannya sederhana: kalau pertanyaannya **mengandung sangkalan** dan jawabanmu **membantah sangkalan itu**, pakai *jo*, bukan *ja*. Bahasa Indonesia menyelesaikannya dengan intonasi dan tambahan kata (\"bisa kok!\"); bahasa Norwegia menyediakan satu kata khusus."
+    },
+    {
+     "type": "kotak",
+     "title": "Jawaban pendek yang sopan",
+     "items": [
+      "*Ja takk* — \"ya, terima kasih\", untuk menerima tawaran. Bukan *ja* saja; itu terdengar tumpul.",
+      "*Nei takk* — \"tidak, terima kasih\", untuk menolak. Sama pentingnya.",
+      "*Det går bra* — \"tidak apa-apa\" / \"boleh saja\", jawaban serba guna.",
+      "*Kanskje* (**KAN-sye**) — \"mungkin\", pelarian yang sopan saat kamu belum mau memutuskan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Latihan mata: satu kalimat, empat bentuk",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Baca tiap baris keras-keras dari kiri ke kanan. Yang dilatih di sini bukan hafalan kata, melainkan kebiasaan tangan menaruh *ikke* di tempat yang benar."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pernyataan",
+      "Sangkalan",
+      "Pertanyaan",
+      "Pertanyaan bersangkalan"
+     ],
+     "rows": [
+      [
+       "Du bor her.",
+       "Du bor ikke her.",
+       "Bor du her?",
+       "Bor du ikke her?"
+      ],
+      [
+       "Han er sulten.",
+       "Han er ikke sulten.",
+       "Er han sulten?",
+       "Er han ikke sulten?"
+      ],
+      [
+       "De snakker norsk.",
+       "De snakker ikke norsk.",
+       "Snakker de norsk?",
+       "Snakker de ikke norsk?"
+      ],
+      [
+       "Det smaker godt.",
+       "Det smaker ikke godt.",
+       "Smaker det godt?",
+       "Smaker det ikke godt?"
+      ],
+      [
+       "Vi drikker kaffe.",
+       "Vi drikker ikke kaffe.",
+       "Drikker vi kaffe?",
+       "Drikker vi ikke kaffe?"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Uji cepat untuk dirimu sendiri",
+     "items": [
+      "Ambil lima kalimat apa saja dari unit 1, sangkal semuanya, lalu ubah jadi pertanyaan. Kalau tanganmu sempat menulis *ikke* di depan kata kerja, ulangi dari atas.",
+      "Ucapkan sambil menulis. Bunyi *ikke* — **I-ke** dengan *k* yang ditahan — akan menempel di telinga lebih cepat daripada di mata."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "hva",
+   "baca": "va",
+   "id": "apa"
+  },
+  {
+   "no": "hvem",
+   "baca": "vem",
+   "id": "siapa"
+  },
+  {
+   "no": "hvordan",
+   "baca": "VUR-dan",
+   "id": "bagaimana"
+  },
+  {
+   "no": "hvorfor",
+   "baca": "VUR-for",
+   "id": "mengapa"
+  },
+  {
+   "no": "når",
+   "baca": "nor",
+   "id": "kapan"
+  },
+  {
+   "no": "hvilken",
+   "baca": "VIL-ken",
+   "id": "yang mana"
+  },
+  {
+   "no": "ikke",
+   "baca": "I-ke",
+   "id": "tidak, bukan"
+  },
+  {
+   "no": "jo",
+   "baca": "yu",
+   "id": "ya (membantah sangkalan)"
+  },
+  {
+   "no": "dette",
+   "baca": "DET-te",
+   "id": "ini"
+  },
+  {
+   "no": "det",
+   "baca": "de",
+   "id": "itu; ia (bernetral)"
+  },
+  {
+   "no": "en kopp",
+   "baca": "èn kop",
+   "id": "cangkir"
+  },
+  {
+   "no": "en kaffe",
+   "baca": "èn KAF-fe",
+   "id": "kopi"
+  },
+  {
+   "no": "en te",
+   "baca": "èn tè",
+   "id": "teh"
+  },
+  {
+   "no": "mat",
+   "baca": "mat",
+   "id": "makanan"
+  },
+  {
+   "no": "en frokost",
+   "baca": "èn FRU-kost",
+   "id": "sarapan"
+  },
+  {
+   "no": "å spise",
+   "baca": "o SPI-se",
+   "id": "makan"
+  },
+  {
+   "no": "å drikke",
+   "baca": "o DRIK-ke",
+   "id": "minum"
+  },
+  {
+   "no": "å smake",
+   "baca": "o SMA-ke",
+   "id": "mencicipi; berasa"
+  },
+  {
+   "no": "å forstå",
+   "baca": "o for-STO",
+   "id": "mengerti"
+  },
+  {
+   "no": "sulten",
+   "baca": "SÜL-ten",
+   "id": "lapar"
+  },
+  {
+   "no": "god / godt",
+   "baca": "gu / got",
+   "id": "baik; enak"
+  },
+  {
+   "no": "veldig",
+   "baca": "VEL-di",
+   "id": "sangat"
+  },
+  {
+   "no": "bare",
+   "baca": "BA-re",
+   "id": "hanya, saja"
+  },
+  {
+   "no": "nå",
+   "baca": "no",
+   "id": "sekarang"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Sangkal kalimat berikut dengan menaruh *ikke* di tempat yang benar.",
+   "items": [
+    "Jeg snakker norsk. → Jeg ____",
+    "Han er hjemme. → Han ____",
+    "Vi bor i Bergen. → Vi ____",
+    "De drikker kaffe. → De ____",
+    "Det smaker godt. → Det ____",
+    "Du forstår meg. → Du ____"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata tanya yang tepat: *hva*, *hvem*, *hvor*, *hvordan*, *hvorfor*, *når*.",
+   "items": [
+    "____ heter du?",
+    "____ bor dere?",
+    "____ går det?",
+    "____ er han? — Det er Lars.",
+    "____ kommer bussen?",
+    "____ spiser du ikke frokost?"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia.",
+   "items": [
+    "Saya tidak minum kopi.",
+    "Kamu tidak tinggal di sini?",
+    "Ini apa?",
+    "Kenapa tidak?",
+    "Dia (laki-laki) tidak lapar.",
+    "Kapan kamu datang?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ikke / jeg / kaffe / drikker",
+    "du / hvor / bor / ?",
+    "er / dette / hva / ?",
+    "ikke / han / hjemme / er",
+    "norsk / snakker / ikke / de / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "snakker ikke norsk — er ikke hjemme — bor ikke i Bergen — drikker ikke kaffe — smaker ikke godt — forstår meg ikke",
+  "Hva — Hvor — Hvordan — Hvem — Når — Hvorfor",
+  "Jeg drikker ikke kaffe. — Bor du ikke her? — Hva er dette? — Hvorfor ikke? — Han er ikke sulten. — Når kommer du?",
+  "Jeg drikker ikke kaffe. — Hvor bor du? — Hva er dette? — Han er ikke hjemme. — Snakker de ikke norsk?"
+ ]
+}

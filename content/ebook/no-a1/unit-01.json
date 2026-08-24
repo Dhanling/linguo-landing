@@ -1,0 +1,522 @@
+{
+ "title": "Menyapa dan menyebut nama",
+ "title_target": "Hei! Jeg heter Budi",
+ "goal": "Menyapa, menyebut nama, dan mengatakan dari mana kamu berasal — sambil menemukan hadiah terbesar bahasa Norwegia: kata kerjanya tidak pernah berubah menurut pelakunya.",
+ "bekal": [
+  "menyapa dan berpamitan menurut waktu hari",
+  "menyebut nama dengan *jeg heter* dan asal dengan *jeg kommer fra*",
+  "memakai enam kata ganti orang dengan satu bentuk kata kerja yang sama"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — På studentbyen",
+   "intro": "Hari pertama Budi di asrama mahasiswa Kringsjå, Oslo. Ia sedang menyeret kopernya menaiki tangga ketika seseorang membuka pintu.",
+   "lines": [
+    {
+     "speaker": "Ingrid:",
+     "text": "Hei! Er du ny her?",
+     "id": "Hai! Kamu baru di sini?",
+     "literal": "hai! adalah kamu baru di-sini?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ja, jeg er ny. Jeg heter Budi.",
+     "id": "Ya, saya baru. Nama saya Budi.",
+     "literal": "ya, saya adalah baru. saya dinamai Budi."
+    },
+    {
+     "speaker": "Ingrid:",
+     "text": "Hyggelig! Jeg heter Ingrid.",
+     "id": "Senang berkenalan! Nama saya Ingrid.",
+     "literal": "menyenangkan! saya dinamai Ingrid."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hyggelig å møte deg. Bor du her også?",
+     "id": "Senang bertemu denganmu. Kamu tinggal di sini juga?",
+     "literal": "menyenangkan untuk bertemu kamu. tinggal kamu di-sini juga?"
+    },
+    {
+     "speaker": "Ingrid:",
+     "text": "Ja, jeg bor i nummer tolv. Hvor kommer du fra?",
+     "id": "Ya, saya tinggal di nomor dua belas. Kamu dari mana?",
+     "literal": "ya, saya tinggal di nomor dua-belas. di-mana datang kamu dari?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jeg kommer fra Indonesia. Og du?",
+     "id": "Saya dari Indonesia. Kamu?",
+     "literal": "saya datang dari Indonesia. dan kamu?"
+    },
+    {
+     "speaker": "Ingrid:",
+     "text": "Jeg er norsk. Jeg er fra Bergen.",
+     "id": "Saya orang Norwegia. Saya dari Bergen.",
+     "literal": "saya adalah Norwegia. saya adalah dari Bergen."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Snakker du engelsk?",
+     "id": "Kamu bisa bahasa Inggris?",
+     "literal": "berbicara kamu Inggris?"
+    },
+    {
+     "speaker": "Ingrid:",
+     "text": "Ja, litt. Men vi snakker norsk, ikke sant?",
+     "id": "Ya, sedikit. Tapi kita pakai bahasa Norwegia, kan?",
+     "literal": "ya, sedikit. tapi kami berbicara Norwegia, tidak benar?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ja! Takk, Ingrid. Vi ses!",
+     "id": "Ya! Terima kasih, Ingrid. Sampai jumpa!",
+     "literal": "ya! terima-kasih, Ingrid. kami terlihat!"
+    }
+   ],
+   "notes": [
+    "**Jeg heter Budi** secara harfiah berarti \"saya dinamai Budi\". Bahasa Norwegia memakai kata kerja *å hete* untuk memperkenalkan diri, bukan susunan \"nama saya adalah…\". Bentuk *navnet mitt er Budi* memang ada dan benar, tapi terdengar kaku — seperti mengisi formulir. Pakai *jeg heter*.",
+    "**Inilah hadiah terbesarnya.** Perhatikan *jeg er* dan *er du* — bentuk kata kerjanya sama persis. Begitu juga *jeg heter* / *du heter*, *jeg bor* / *bor du*, *jeg kommer* / *kommer du*. Kata kerja bahasa Norwegia **tidak berubah sama sekali** menurut siapa pelakunya. Tidak ada *am/is/are*, tidak ada *-s* di orang ketiga. Satu bentuk untuk enam orang, persis seperti bahasa Indonesia.",
+    "**Jeg dibaca yai**, bukan \"yeg\". Huruf *g* di *jeg*, *meg*, *deg* berubah jadi bunyi *i*. Ini tiga kata paling sering dipakai di seluruh bahasa Norwegia, jadi pasang bunyinya sekarang juga.",
+    "**Hvor dibaca vur.** Huruf *h* di depan *v* selalu diam: *hva* → **va**, *hvem* → **vem**, *hvorfor* → **VUR-for**. Tidak ada kecualinya.",
+    "**Hyggelig** adalah kata paling Norwegia yang ada. Ia dipakai untuk orang, ruangan, sore hari, percakapan — apa saja yang terasa hangat dan nyaman. Dibaca **HÜ-ge-li**; huruf *g* terakhir diam, seperti hampir semua akhiran *-lig*.",
+    "**Jeg er norsk** — nama bahasa dan kebangsaan ditulis dengan **huruf kecil** dalam bahasa Norwegia (*norsk*, *engelsk*, *indonesisk*), berbeda dengan bahasa Inggris. Nama negaranya tetap huruf besar: *Norge*, *Indonesia*."
+   ],
+   "grammars": [
+    {
+     "title": "Satu bentuk kata kerja untuk semua orang",
+     "body": [
+      "Tabel ini adalah alasan kenapa bahasa Norwegia terasa ringan di minggu pertama. Bandingkan kolomnya dari atas ke bawah: tidak ada satu pun yang berubah."
+     ],
+     "table": {
+      "head": [
+       "Kata ganti",
+       "Artinya",
+       "*å være* (adalah)",
+       "*å hete* (bernama)",
+       "*å bo* (tinggal)"
+      ],
+      "rows": [
+       [
+        "**jeg**",
+        "saya",
+        "er",
+        "heter",
+        "bor"
+       ],
+       [
+        "**du**",
+        "kamu",
+        "er",
+        "heter",
+        "bor"
+       ],
+       [
+        "**han / hun**",
+        "dia (lk) / dia (pr)",
+        "er",
+        "heter",
+        "bor"
+       ],
+       [
+        "**det / den**",
+        "itu, ia (benda)",
+        "er",
+        "heter",
+        "bor"
+       ],
+       [
+        "**vi**",
+        "kami, kita",
+        "er",
+        "heter",
+        "bor"
+       ],
+       [
+        "**dere**",
+        "kalian",
+        "er",
+        "heter",
+        "bor"
+       ],
+       [
+        "**de**",
+        "mereka",
+        "er",
+        "heter",
+        "bor"
+       ]
+      ]
+     },
+     "after": [
+      "Bandingkan dengan bahasa Inggris (*I am, you are, he is*) atau bahasa Prancis (*je suis, tu es, il est, nous sommes*). Bahasa Norwegia menghapus seluruh urusan itu. Yang perlu kamu hafal cuma **satu bentuk per kata kerja**.",
+      "Kata ganti *de* (mereka) dibaca **di**, dan *dere* (kalian) dibaca **DÈ-re**. Keduanya sering tertukar di awal karena tulisannya mirip; bunyinya jauh berbeda.",
+      "Bahasa Norwegia tidak lagi memakai bentuk hormat *De* untuk \"Anda\". Kepada dosen, dokter, atau petugas kantor imigrasi sekalipun, orang Norwegia memakai *du*. Ini bukan tidak sopan — justru sebaliknya, memakai *De* akan terdengar aneh dan berjarak."
+     ]
+    },
+    {
+     "title": "Menyapa dan berpamitan",
+     "body": [
+      "Bahasa Norwegia memilah sapaan menurut waktu hari, tapi *hei* menembus semuanya dan dipakai hampir di mana saja."
+     ],
+     "table": {
+      "head": [
+       "Norsk",
+       "Cara baca",
+       "Kapan dipakai"
+      ],
+      "rows": [
+       [
+        "**Hei!**",
+        "hai",
+        "kapan saja, kepada siapa saja — yang paling sering terdengar"
+       ],
+       [
+        "**Hallo!**",
+        "ha-LU",
+        "menjawab telepon, memanggil dari jauh"
+       ],
+       [
+        "**God morgen**",
+        "gu MOR-en",
+        "sampai sekitar pukul 10"
+       ],
+       [
+        "**God dag**",
+        "gu DAG",
+        "siang, agak resmi — di toko, di kantor"
+       ],
+       [
+        "**God kveld**",
+        "gu KVEL",
+        "sesudah sekitar pukul 18"
+       ],
+       [
+        "**God natt**",
+        "gu NAT",
+        "hanya saat berpisah untuk tidur"
+       ],
+       [
+        "**Ha det (bra)!**",
+        "ha de BRA",
+        "sampai jumpa — yang paling umum"
+       ],
+       [
+        "**Vi ses!**",
+        "vi SÈS",
+        "sampai ketemu lagi, kepada orang yang akan kamu temui lagi"
+       ],
+       [
+        "**Takk for nå**",
+        "tak for NO",
+        "\"terima kasih untuk sekarang\" — penutup percakapan yang khas"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan *god* dibaca **gu** — huruf *d* di ujung kata diam, dan huruf *o* berbunyi \"u\". Dua kebiasaan besar bahasa Norwegia bertemu dalam satu kata pendek.",
+      "*Ha det bra* harfiahnya \"punyailah itu baik\" — semacam \"baik-baik ya\". Dalam percakapan cepat ia menyusut jadi **hade** saja, dan itulah yang paling sering kamu dengar di jalan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyebut asal dan bahasa",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Ada dua susunan yang dipakai bergantian, dan keduanya sama benarnya:"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Norsk",
+      "Bahasa Indonesia",
+      "Harfiahnya"
+     ],
+     "rows": [
+      [
+       "Jeg **er fra** Indonesia.",
+       "Saya dari Indonesia.",
+       "saya adalah dari Indonesia"
+      ],
+      [
+       "Jeg **kommer fra** Indonesia.",
+       "Saya berasal dari Indonesia.",
+       "saya datang dari Indonesia"
+      ],
+      [
+       "Jeg **er** indonesisk.",
+       "Saya orang Indonesia.",
+       "saya adalah Indonesia"
+      ],
+      [
+       "Jeg **bor i** Oslo.",
+       "Saya tinggal di Oslo.",
+       "saya tinggal di Oslo"
+      ],
+      [
+       "Jeg **snakker** indonesisk.",
+       "Saya berbahasa Indonesia.",
+       "saya berbicara Indonesia"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa **tidak ada kata sandang** di depan nama bahasa dan kebangsaan: bukan *jeg snakker det norsk*, cuma *jeg snakker norsk*. Sama persis dengan bahasa Indonesia, dan berbeda dengan banyak bahasa Eropa lain."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Negara",
+      "Kebangsaan / bahasa",
+      "Cara baca"
+     ],
+     "rows": [
+      [
+       "Norge",
+       "norsk",
+       "NOR-ge · nosyk"
+      ],
+      [
+       "Indonesia",
+       "indonesisk",
+       "in-du-NÈ-si-a · in-du-NÈ-sisk"
+      ],
+      [
+       "England",
+       "engelsk",
+       "ENG-lan · ENG-elsk"
+      ],
+      [
+       "Tyskland",
+       "tysk",
+       "TÜSK-lan · tüsk"
+      ],
+      [
+       "Sverige",
+       "svensk",
+       "SVÈR-ye · svensk"
+      ],
+      [
+       "Danmark",
+       "dansk",
+       "DAN-mark · dansk"
+      ],
+      [
+       "Japan",
+       "japansk",
+       "ya-PAN · ya-PANSK"
+      ],
+      [
+       "Kina",
+       "kinesisk",
+       "KHI-na · khi-NÈ-sisk"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kenapa ini terasa mudah bagi penutur Indonesia",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Unit pertama modul bahasa apa pun biasanya sudah menabrakkanmu ke satu tembok. Di sini tidak ada tembok, dan itu bukan kebetulan — tiga sifat bahasa Norwegia kebetulan sama persis dengan bahasa Indonesia:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Kata kerja tidak berubah menurut pelakunya.** \"Saya makan, kamu makan, mereka makan\" — bahasa Indonesia sudah begitu seumur hidupmu. Bahasa Norwegia sama.",
+      "**Tidak ada bentuk sedang berlangsung.** *Jeg spiser* berarti \"saya makan\" **dan** \"saya sedang makan\", tergantung keadaan. Persis bahasa Indonesia; berbeda dengan bahasa Inggris yang memaksa memilih antara *I eat* dan *I am eating*.",
+      "**Kata ganti \"dia\" tidak berjenis di dalam kalimat sehari-hari** — walaupun bahasa Norwegia punya *han* dan *hun*, keduanya dipakai dengan cara yang sama persis, tanpa mengubah apa pun di sekelilingnya."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Yang justru perlu diwaspadai",
+     "items": [
+      "Bahasa Indonesia sering **membuang kata \"adalah\"**: \"saya mahasiswa\", \"dia guru\". Bahasa Norwegia tidak pernah boleh membuangnya. *Jeg student* salah — harus *jeg **er** student*. Ini kesalahan nomor satu penutur Indonesia di minggu pertama.",
+      "Bahasa Indonesia juga sering **membuang kata ganti**: \"dari mana?\" tanpa \"kamu\". Bahasa Norwegia selalu menyebut pelakunya: *Hvor kommer **du** fra?*",
+      "Ucapkan tiap kata sampai selesai. Godaan terbesar pemula adalah menelan akhiran, padahal justru di akhiran itulah bahasa Norwegia menyimpan tata bahasanya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "hei",
+   "baca": "hai",
+   "id": "hai, halo"
+  },
+  {
+   "no": "ja",
+   "baca": "ya",
+   "id": "ya"
+  },
+  {
+   "no": "nei",
+   "baca": "nai",
+   "id": "tidak"
+  },
+  {
+   "no": "takk",
+   "baca": "tak",
+   "id": "terima kasih"
+  },
+  {
+   "no": "å være",
+   "baca": "o VÈ-re",
+   "id": "adalah, berada"
+  },
+  {
+   "no": "er",
+   "baca": "èr",
+   "id": "adalah (bentuk sekarang)"
+  },
+  {
+   "no": "å hete",
+   "baca": "o HÈ-te",
+   "id": "bernama"
+  },
+  {
+   "no": "å bo",
+   "baca": "o bu",
+   "id": "tinggal, berdiam"
+  },
+  {
+   "no": "å komme",
+   "baca": "o KOM-me",
+   "id": "datang"
+  },
+  {
+   "no": "å snakke",
+   "baca": "o SNAK-ke",
+   "id": "berbicara"
+  },
+  {
+   "no": "å møte",
+   "baca": "o MÖ-te",
+   "id": "bertemu"
+  },
+  {
+   "no": "ny",
+   "baca": "nü",
+   "id": "baru"
+  },
+  {
+   "no": "her",
+   "baca": "hèr",
+   "id": "di sini"
+  },
+  {
+   "no": "hvor",
+   "baca": "vur",
+   "id": "di mana"
+  },
+  {
+   "no": "fra",
+   "baca": "fra",
+   "id": "dari"
+  },
+  {
+   "no": "i",
+   "baca": "i",
+   "id": "di, dalam"
+  },
+  {
+   "no": "og",
+   "baca": "o",
+   "id": "dan"
+  },
+  {
+   "no": "men",
+   "baca": "men",
+   "id": "tetapi"
+  },
+  {
+   "no": "også",
+   "baca": "OS-so",
+   "id": "juga"
+  },
+  {
+   "no": "litt",
+   "baca": "lit",
+   "id": "sedikit"
+  },
+  {
+   "no": "hyggelig",
+   "baca": "HÜ-ge-li",
+   "id": "menyenangkan, hangat"
+  },
+  {
+   "no": "norsk",
+   "baca": "nosyk",
+   "id": "bahasa Norwegia; orang Norwegia"
+  },
+  {
+   "no": "engelsk",
+   "baca": "ENG-elsk",
+   "id": "bahasa Inggris"
+  },
+  {
+   "no": "et nummer",
+   "baca": "èt NOM-mer",
+   "id": "nomor"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan bentuk *å være* yang benar. (Petunjuk: bentuknya cuma satu.)",
+   "items": [
+    "Jeg ____ ny her.",
+    "Du ____ fra Bergen.",
+    "Hun ____ norsk.",
+    "Vi ____ studenter.",
+    "De ____ i Oslo.",
+    "Dere ____ hyggelige."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata kerja yang tepat: *heter*, *bor*, *kommer*, *snakker*.",
+   "items": [
+    "Jeg ____ Budi.",
+    "Hun ____ i Bergen.",
+    "Han ____ fra Indonesia.",
+    "Vi ____ norsk og engelsk.",
+    "Hva ____ du?",
+    "Hvor ____ dere fra?"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia.",
+   "items": [
+    "Hai! Nama saya Ahmad.",
+    "Saya dari Indonesia.",
+    "Kamu tinggal di sini juga?",
+    "Senang bertemu denganmu.",
+    "Dia (perempuan) berbahasa Norwegia sedikit.",
+    "Sampai jumpa!"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "heter / jeg / Ingrid",
+    "du / hvor / fra / kommer / ?",
+    "i / bor / Oslo / vi",
+    "norsk / snakker / litt / han",
+    "ny / er / her / du / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "er — er — er — er — er — er",
+  "heter — bor — kommer — snakker — heter — kommer",
+  "Hei! Jeg heter Ahmad. — Jeg kommer fra Indonesia. — Bor du her også? — Hyggelig å møte deg. — Hun snakker litt norsk. — Vi ses!",
+  "Jeg heter Ingrid. — Hvor kommer du fra? — Vi bor i Oslo. — Han snakker litt norsk. — Er du ny her?"
+ ]
+}

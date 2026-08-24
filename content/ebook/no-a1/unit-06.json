@@ -1,0 +1,629 @@
+{
+ "title": "Angka dan jam",
+ "title_target": "Når går toget?",
+ "goal": "Menghitung sampai jutaan dengan sistem yang sepenuhnya masuk akal, dan membaca jam Norwegia — yang ternyata bekerja persis seperti bahasa Indonesia.",
+ "bekal": [
+  "menyebut angka 0 sampai 1.000.000 dan harga dalam kroner",
+  "membaca jam dengan *halv*, *kvart over*, dan *kvart på*",
+  "menyebut hari, bulan, dan tanggal"
+ ],
+ "wave": "Ulangi **unit 4** dulu: tutup bahasa Norwegianya, lihat terjemahan Indonesianya, susun kembali dialognya. Perhatikan tiap kata benda — jenisnya apa, dan ekornya apa?",
+ "dialogs": [
+  {
+   "title": "Dialog — På Oslo S",
+   "intro": "Stasiun pusat Oslo, pagi hari. Budi berdiri di depan papan jadwal yang berkedip-kedip dan tidak yakin apa yang dilihatnya.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Unnskyld, når går toget til Trondheim?",
+     "id": "Permisi, kereta ke Trondheim berangkat jam berapa?",
+     "literal": "maaf, kapan pergi kereta-itu ke Trondheim?"
+    },
+    {
+     "speaker": "Lars:",
+     "text": "Klokka sju førti. Om ti minutter.",
+     "id": "Jam 07.40. Sepuluh menit lagi.",
+     "literal": "jam-itu tujuh empat-puluh. pada sepuluh menit."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Å nei. Og det neste?",
+     "id": "Aduh. Yang berikutnya?",
+     "literal": "oh tidak. dan yang berikut?"
+    },
+    {
+     "speaker": "Lars:",
+     "text": "Halv ni.",
+     "id": "Setengah sembilan.",
+     "literal": "setengah sembilan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Halv ni… altså åtte tretti?",
+     "id": "Setengah sembilan… jadi 08.30?",
+     "literal": "setengah sembilan… jadi delapan tiga-puluh?"
+    },
+    {
+     "speaker": "Lars:",
+     "text": "Ja, nettopp. Halv ni betyr tretti minutter før ni.",
+     "id": "Ya, tepat. *Halv ni* artinya tiga puluh menit sebelum jam sembilan.",
+     "literal": "ya, tepat. setengah sembilan berarti tiga-puluh menit sebelum sembilan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hva koster billetten?",
+     "id": "Tiketnya berapa?",
+     "literal": "apa berharga tiket-itu?"
+    },
+    {
+     "speaker": "Lars:",
+     "text": "Fire hundre og nitti kroner. Men på lørdag koster den halvparten.",
+     "id": "490 kroner. Tapi hari Sabtu setengah harga.",
+     "literal": "empat ratus dan sembilan-puluh kroner. tapi pada Sabtu berharga ia setengah-bagian-itu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Da venter jeg til lørdag.",
+     "id": "Kalau begitu saya tunggu sampai Sabtu.",
+     "literal": "kalau-begitu menunggu saya sampai Sabtu."
+    }
+   ],
+   "notes": [
+    "**Ini hadiah yang tidak diketahui hampir semua orang: *halv ni* berarti 08.30 — sama persis dengan \"setengah sembilan\" dalam bahasa Indonesia.** Bahasa Norwegia menghitung **menuju** jam berikutnya, dan bahasa Indonesia melakukan hal yang sama. Penutur bahasa Inggris tersandung parah di sini, karena *half nine* dalam bahasa Inggris justru berarti 09.30. Kamu tidak akan pernah tersandung; nikmati saja.",
+    "**Klokka sju førti** — angka jam disebut apa adanya, seperti membaca papan digital. Untuk jadwal resmi (kereta, pesawat, bioskop), orang Norwegia memakai sistem 24 jam: *klokka nitten førti* untuk 19.40.",
+    "**Om ti minutter** = \"sepuluh menit lagi\", ke depan. Sudah muncul di unit 3 dan akan terus muncul; pasangannya *for ti minutter siden* = \"sepuluh menit yang lalu\".",
+    "**Fire hundre og nitti** — perhatikan ada *og* di tengah angka. Bahasa Norwegia menyisipkan \"dan\" antara ratusan dan sisanya: 490 = \"empat ratus **dan** sembilan puluh\". Kata *og* di sini dibaca **o** saja, cepat sekali.",
+    "**Kroner** disingkat **kr** dan ditulis di belakang angkanya: *490 kr*. Satu krone dibagi seratus *øre*, tapi *øre* praktis sudah lenyap dari peredaran — harga selalu dibulatkan ke krone."
+   ],
+   "grammars": [
+    {
+     "title": "Angka 0 sampai 20",
+     "body": [
+      "Dua puluh satu kata ini adalah satu-satunya bagian yang harus dihafal mentah. Sesudahnya semuanya bisa dirakit."
+     ],
+     "table": {
+      "head": [
+       "",
+       "Norsk",
+       "Cara baca",
+       "",
+       "Norsk",
+       "Cara baca"
+      ],
+      "rows": [
+       [
+        "0",
+        "null",
+        "nül",
+        "11",
+        "elleve",
+        "EL-ve"
+       ],
+       [
+        "1",
+        "en / ei / ett",
+        "èn / ai / et",
+        "12",
+        "tolv",
+        "tol"
+       ],
+       [
+        "2",
+        "to",
+        "tu",
+        "13",
+        "tretten",
+        "TRET-ten"
+       ],
+       [
+        "3",
+        "tre",
+        "trè",
+        "14",
+        "fjorten",
+        "FYUR-ten"
+       ],
+       [
+        "4",
+        "fire",
+        "FI-re",
+        "15",
+        "femten",
+        "FEM-ten"
+       ],
+       [
+        "5",
+        "fem",
+        "fem",
+        "16",
+        "seksten",
+        "SAIS-ten"
+       ],
+       [
+        "6",
+        "seks",
+        "seks",
+        "17",
+        "sytten",
+        "SÖT-ten"
+       ],
+       [
+        "7",
+        "sju / syv",
+        "syü / süv",
+        "18",
+        "atten",
+        "AT-ten"
+       ],
+       [
+        "8",
+        "åtte",
+        "OT-te",
+        "19",
+        "nitten",
+        "NIT-ten"
+       ],
+       [
+        "9",
+        "ni",
+        "ni",
+        "20",
+        "tjue",
+        "KHÜ-e"
+       ],
+       [
+        "10",
+        "ti",
+        "ti",
+        "",
+        "",
+        ""
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Seksten dibaca SAIS-ten**, bukan \"seks-ten\". Huruf *k* lenyap dan *e* jadi *ai*. Ini satu-satunya angka yang benar-benar berbohong tentang ejaannya.",
+      "⚠️ **Sytten dibaca SÖT-ten** dan **tjue dibaca KHÜ-e** — gabungan *tj-* berbunyi sama dengan *kj-*, yaitu desis lembut di langit-langit.",
+      "Angka **7** punya dua bentuk yang dua-duanya benar: *sju* (lebih modern, lebih umum di lisan) dan *syv* (lebih lama, masih sering di tulisan). Pakai *sju*."
+     ]
+    },
+    {
+     "title": "Puluhan, ratusan, ribuan",
+     "body": [
+      "Mulai 21, bahasa Norwegia modern menyusun angka **dari besar ke kecil**, persis seperti bahasa Indonesia: *tjueen* = \"dua puluh satu\"."
+     ],
+     "table": {
+      "head": [
+       "Angka",
+       "Norsk",
+       "Angka",
+       "Norsk"
+      ],
+      "rows": [
+       [
+        "20",
+        "tjue",
+        "21",
+        "tjueen"
+       ],
+       [
+        "30",
+        "tretti",
+        "35",
+        "trettifem"
+       ],
+       [
+        "40",
+        "førti",
+        "48",
+        "førtiåtte"
+       ],
+       [
+        "50",
+        "femti",
+        "57",
+        "femtisju"
+       ],
+       [
+        "60",
+        "seksti",
+        "66",
+        "sekstiseks"
+       ],
+       [
+        "70",
+        "sytti",
+        "79",
+        "syttini"
+       ],
+       [
+        "80",
+        "åtti",
+        "82",
+        "åttito"
+       ],
+       [
+        "90",
+        "nitti",
+        "99",
+        "nittini"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Ada sistem lama yang masih terdengar dari orang berumur:** *enogtyve* untuk 21, harfiahnya \"satu dan dua puluh\" — angka kecil disebut lebih dulu, persis seperti bahasa Jerman dan Denmark. Sistem itu resmi ditinggalkan pada 1951, tapi nomor telepon dan tahun kelahiran kadang masih diucapkan begitu. **Kamu cukup mengenalinya; pakai sistem baru.**",
+      "Titik dipakai sebagai pemisah ribuan dan koma sebagai pemisah desimal — sama persis dengan kebiasaan Indonesia: *1.500,50 kr*. Kalau kamu terbiasa dengan tulisan Inggris, ini justru yang tidak perlu kamu ubah."
+     ]
+    },
+    {
+     "title": "Jam",
+     "body": [
+      "Bahasa Norwegia memakai *klokka* untuk menyebut jam. Bentuk resmi memakai angka apa adanya; bentuk percakapan memakai pecahan seperempat dan setengah."
+     ],
+     "table": {
+      "head": [
+       "Waktu",
+       "Bentuk percakapan",
+       "Bentuk resmi",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "08.00",
+        "klokka åtte",
+        "klokka åtte",
+        "jam delapan"
+       ],
+       [
+        "08.05",
+        "fem over åtte",
+        "åtte null fem",
+        "jam delapan lewat lima"
+       ],
+       [
+        "08.15",
+        "**kvart over** åtte",
+        "åtte femten",
+        "jam delapan lewat seperempat"
+       ],
+       [
+        "08.25",
+        "fem på halv ni",
+        "åtte tjuefem",
+        "lima menit sebelum setengah sembilan"
+       ],
+       [
+        "08.30",
+        "**halv ni**",
+        "åtte tretti",
+        "**setengah sembilan**"
+       ],
+       [
+        "08.35",
+        "fem over halv ni",
+        "åtte trettifem",
+        "lima menit lewat setengah sembilan"
+       ],
+       [
+        "08.45",
+        "**kvart på** ni",
+        "åtte førtifem",
+        "jam sembilan kurang seperempat"
+       ]
+      ]
+     },
+     "after": [
+      "**Over** berarti \"lewat\", **på** berarti \"kurang\", **kvart** berarti \"seperempat\", dan **halv** menunjuk ke jam **berikutnya**. Empat kata ini menutupi seluruh sistemnya.",
+      "Baris 08.25 dan 08.35 tampak berlebihan bagi telinga Indonesia, tapi orang Norwegia benar-benar memakainya — mereka mengukur dari *halv*, bukan dari jam bulat. Kalau terasa terlalu rumit, bentuk resmi (*åtte tjuefem*) selalu bisa dipakai dan tidak pernah salah."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Hari, bulan, dan tanggal",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Hari",
+      "Cara baca",
+      "Bulan",
+      "Cara baca"
+     ],
+     "rows": [
+      [
+       "mandag",
+       "MAN-da",
+       "januar",
+       "ya-nu-AR"
+      ],
+      [
+       "tirsdag",
+       "TISY-da",
+       "februar",
+       "fe-bru-AR"
+      ],
+      [
+       "onsdag",
+       "UNS-da",
+       "mars",
+       "masy"
+      ],
+      [
+       "torsdag",
+       "TOSY-da",
+       "april",
+       "a-PRIL"
+      ],
+      [
+       "fredag",
+       "FRÈ-da",
+       "mai",
+       "mai"
+      ],
+      [
+       "lørdag",
+       "LÖR-da",
+       "juni",
+       "YÜ-ni"
+      ],
+      [
+       "søndag",
+       "SÖN-da",
+       "juli",
+       "YÜ-li"
+      ],
+      [
+       "",
+       "",
+       "august",
+       "öu-GÜST"
+      ],
+      [
+       "ei uke",
+       "ai Ü-ke",
+       "september",
+       "sep-TEM-ber"
+      ],
+      [
+       "en måned",
+       "èn MO-ne",
+       "oktober",
+       "ok-TU-ber"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Nama hari dan bulan ditulis dengan huruf kecil** dalam bahasa Norwegia — berbeda dengan bahasa Inggris dan Indonesia. *mandag*, bukan *Mandag*."
+    },
+    {
+     "type": "p",
+     "text": "Akhiran *-dag* pada nama hari selalu menyusut jadi **-da** di mulut; tidak ada yang benar-benar mengucapkan huruf *g*-nya. Dan *tirsdag*, *torsdag*, *onsdag* memuat gabungan *rs* dan *ns* yang berbunyi mendesis — dengarkan lebih dari sekali sebelum menirukan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "**på mandag**",
+       "hari Senin (yang akan datang)"
+      ],
+      [
+       "**på mandager**",
+       "tiap hari Senin"
+      ],
+      [
+       "**i helga**",
+       "akhir pekan ini"
+      ],
+      [
+       "**i dag / i morgen / i går**",
+       "hari ini / besok / kemarin"
+      ],
+      [
+       "**i forrige uke**",
+       "minggu lalu"
+      ],
+      [
+       "**neste uke**",
+       "minggu depan"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menutup unit ini",
+   "blocks": [
+    {
+     "type": "kotak",
+     "title": "Uji cepat untuk dirimu sendiri",
+     "items": [
+      "Baca keras-keras: 17, 27, 70, 76, 116, 490, 1.500, 2.026. Kalau ada satu yang tersendat, kemungkinan besar itu *sytten*, *seksten*, atau *tjue* — tiga angka yang bunyinya paling jauh dari tulisannya.",
+      "Lihat jam sekarang dan sebutkan dalam dua bentuk: percakapan dan resmi. Ulangi tiap kali kamu melihat jam hari ini.",
+      "Sebutkan tanggal lahirmu lengkap dengan tahunnya. Ini pertanyaan yang benar-benar akan ditanyakan di kantor imigrasi, bank, dan klinik."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "ei klokke",
+   "baca": "ai KLOK-ke",
+   "id": "jam (alat); pukul"
+  },
+  {
+   "no": "halv",
+   "baca": "hal",
+   "id": "setengah"
+  },
+  {
+   "no": "kvart",
+   "baca": "kvart",
+   "id": "seperempat"
+  },
+  {
+   "no": "over",
+   "baca": "O-ver",
+   "id": "lewat; di atas"
+  },
+  {
+   "no": "før",
+   "baca": "för",
+   "id": "sebelum"
+  },
+  {
+   "no": "et tog",
+   "baca": "èt tog",
+   "id": "kereta"
+  },
+  {
+   "no": "en billett",
+   "baca": "èn bi-LET",
+   "id": "tiket"
+  },
+  {
+   "no": "ei krone",
+   "baca": "ai KRU-ne",
+   "id": "krone (mata uang)"
+  },
+  {
+   "no": "å koste",
+   "baca": "o KOS-te",
+   "id": "berharga, seharga"
+  },
+  {
+   "no": "å betale",
+   "baca": "o be-TA-le",
+   "id": "membayar"
+  },
+  {
+   "no": "å bli",
+   "baca": "o bli",
+   "id": "menjadi; tinggal"
+  },
+  {
+   "no": "å si",
+   "baca": "o si",
+   "id": "berkata"
+  },
+  {
+   "no": "å bety",
+   "baca": "o be-TÜ",
+   "id": "berarti"
+  },
+  {
+   "no": "dyr / dyrt",
+   "baca": "dür / dürt",
+   "id": "mahal"
+  },
+  {
+   "no": "billig",
+   "baca": "BIL-li",
+   "id": "murah"
+  },
+  {
+   "no": "neste",
+   "baca": "NES-te",
+   "id": "berikutnya"
+  },
+  {
+   "no": "nettopp",
+   "baca": "NET-top",
+   "id": "tepat sekali; baru saja"
+  },
+  {
+   "no": "virkelig",
+   "baca": "VIR-ke-li",
+   "id": "sungguh, benar-benar"
+  },
+  {
+   "no": "forvirret",
+   "baca": "for-VIR-ret",
+   "id": "bingung"
+  },
+  {
+   "no": "unnskyld",
+   "baca": "ÜN-syül",
+   "id": "permisi, maaf"
+  },
+  {
+   "no": "ei uke",
+   "baca": "ai Ü-ke",
+   "id": "minggu"
+  },
+  {
+   "no": "en måned",
+   "baca": "èn MO-ne",
+   "id": "bulan"
+  },
+  {
+   "no": "ei helg",
+   "baca": "ai helg",
+   "id": "akhir pekan"
+  },
+  {
+   "no": "et kort",
+   "baca": "èt kort",
+   "id": "kartu"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angkanya dengan huruf.",
+   "items": [
+    "14 → ____",
+    "16 → ____",
+    "27 → ____",
+    "70 → ____",
+    "105 → ____",
+    "490 → ____"
+   ]
+  },
+  {
+   "prompt": "Tulis jamnya dalam bentuk percakapan.",
+   "items": [
+    "07.30 → ____",
+    "09.15 → ____",
+    "11.45 → ____",
+    "14.30 → ____",
+    "16.05 → ____",
+    "19.55 → ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia.",
+   "items": [
+    "Keretanya berangkat jam berapa?",
+    "Setengah sembilan.",
+    "Tiketnya berapa?",
+    "490 kroner.",
+    "Hari Sabtu saya kerja.",
+    "Sepuluh menit lagi."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "toget / når / går / ?",
+    "koster / hva / billetten / ?",
+    "ni / er / halv / klokka",
+    "minutter / om / ti / kommer / bussen",
+    "lørdag / jeg / på / jobber"
+   ]
+  }
+ ],
+ "answers": [
+  "fjorten — seksten — tjuesju — sytti — hundre og fem — fire hundre og nitti",
+  "halv åtte — kvart over ni — kvart på tolv — halv tre — fem over fire — fem på åtte",
+  "Når går toget? — Halv ni. — Hva koster billetten? — Fire hundre og nitti kroner. — På lørdag jobber jeg. — Om ti minutter.",
+  "Når går toget? — Hva koster billetten? — Klokka er halv ni. — Bussen kommer om ti minutter. — På lørdag jobber jeg."
+ ]
+}
