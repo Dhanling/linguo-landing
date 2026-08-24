@@ -1,0 +1,581 @@
+{
+ "title": "Di tempat dokter",
+ "title_target": "ექიმთან — Ekimtan",
+ "goal": "Menjelaskan apa yang sakit, menyebut bagian tubuh, membeli obat di apotek — dan menghadapi satu kata kerja yang menyusun kalimatnya secara terbalik dari bahasa Indonesia.",
+ "bekal": [
+  "mengatakan bagian tubuh mana yang sakit",
+  "menyebut gejala umum: demam, batuk, mual",
+  "meminta obat di apotek",
+  "menyebut alergi dan obat yang rutin diminum",
+  "meminta pertolongan dalam keadaan darurat"
+ ],
+ "dialogs": [
+  {
+   "title": "დიალოგი — Tenggorokan yang tidak beres",
+   "intro": "Ani jatuh sakit di minggu keempat musim dingin dan pergi ke klinik. Perhatikan kata kerja \"sakit\" — susunan kalimatnya terbalik, dan begitulah cara bahasa Georgia menempatkan orang yang menderita.",
+   "lines": [
+    {
+     "speaker": "ექიმი:",
+     "text": "[გამარჯობათ|Ga-mar-jo-bat]. [რა|Ra] [გჭირთ|gch'irt]?",
+     "id": "Selamat siang. Ada keluhan apa?",
+     "literal": "halo-sopan. apa — mengganggu-kalian?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ყელი|Q'e-li] [მტკივა|mt'k'i-va] [და|da] [თავიც|ta-vits] [მტკივა|mt'k'i-va].",
+     "id": "Tenggorokan saya sakit dan kepala saya juga sakit.",
+     "literal": "tenggorokan — sakit-kepadaku — dan — kepala-juga — sakit-kepadaku."
+    },
+    {
+     "speaker": "ექიმი:",
+     "text": "[სიცხე|Sits-khe] [გაქვთ|gakvt]?",
+     "id": "Anda demam?",
+     "literal": "suhu-badan — kalian-punya?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[დილით|Di-lit] [ოცდათვრამეტი|ots-dat-vra-me-t'i] [იყო|i-q'o]. [ხველაც|Khve-lats] [მაქვს|makvs].",
+     "id": "Pagi tadi 38. Batuk juga ada.",
+     "literal": "pagi-dengan — tiga-puluh-delapan — adalah-dulu. batuk-juga — saya-punya."
+    },
+    {
+     "speaker": "ექიმი:",
+     "text": "[რამდენი|Ram-de-ni] [დღეა|dghe-a]?",
+     "id": "Sudah berapa hari?",
+     "literal": "berapa — hari-adalah?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[სამი|Sa-mi] [დღეა|dghe-a]. [ღამით|Gha-mit] [უარესია|u-a-re-si-a].",
+     "id": "Sudah tiga hari. Malam hari lebih parah.",
+     "literal": "tiga — hari-adalah. malam-dengan — lebih-buruk-adalah."
+    },
+    {
+     "speaker": "ექიმი:",
+     "text": "[პირი|P'i-ri] [გააღეთ|ga-a-ghet]… [კარგი|K'ar-gi]. [ვირუსია|Vi-ru-si-a], [სერიოზული|se-ri-o-zu-li] [არაფერი|a-ra-pe-ri].",
+     "id": "Buka mulut… Baik. Ini virus, tidak ada yang serius.",
+     "literal": "mulut — bukalah… baik. virus-adalah, serius — tidak-apa-apa."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[წამალი|Ts'a-ma-li] [მჭირდება|mch'ir-de-ba]?",
+     "id": "Saya perlu obat?",
+     "literal": "obat — saya-perlukan?"
+    },
+    {
+     "speaker": "ექიმი:",
+     "text": "[ეს|Es] [სამი|sa-mi] [დღე|dghe] [დალიეთ|da-li-et]. [ბევრი|Bev-ri] [თბილი|tbi-li] [წყალი|ts'q'a-li] [დალიეთ|da-li-et] [და|da] [დაისვენეთ|da-is-ve-net].",
+     "id": "Minum ini tiga hari. Banyak minum air hangat dan istirahat.",
+     "literal": "ini — tiga — hari — minumlah. banyak — hangat — air — minumlah — dan — beristirahatlah."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ალერგია|A-ler-gi-a] [მაქვს|makvs] [პენიცილინზე|p'e-ni-tsi-lin-ze].",
+     "id": "Saya alergi penisilin.",
+     "literal": "alergi — saya-punya — penisilin-pada."
+    },
+    {
+     "speaker": "ექიმი:",
+     "text": "[კარგია|K'ar-gi-a] [რომ|rom] [თქვით|tkvit]. [ეს|Es] [ანტიბიოტიკი|an-t'i-bi-o-t'i-k'i] [არ|ar] [არის|a-ris].",
+     "id": "Bagus Anda memberi tahu. Ini bukan antibiotik.",
+     "literal": "baik-adalah — bahwa — kalian-katakan. ini — antibiotik — tidak — adalah."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[გმადლობთ|Gmad-lobt], [ექიმო|e-ki-mo]. [რამდენი|Ram-de-ni] [გადავიხადო|ga-da-vi-kha-do]?",
+     "id": "Terima kasih, Dok. Saya bayar berapa?",
+     "literal": "terima-kasih, dokter-panggilan. berapa — saya-harus-bayar?"
+    }
+   ],
+   "notes": [
+    "⚠️ **მტკივა menyusun kalimatnya terbalik.** *თავი მტკივა* harfiahnya \"kepala sakit-kepada-saya\" — yang jadi pokok kalimat adalah **bagian tubuhnya**, bukan orangnya. Karena itu tidak ada ვ- di depan, dan tidak perlu kata \"saya\". Bentuknya: **მ**ტკივა (sakit padaku), **გ**ტკივა (padamu), **ს**ტკივა (padanya).",
+    "**Kalau lebih dari satu bagian sakit, kata kerjanya jadi jamak**: *თავი და ყელი მტკივა* tetap benar, tapi lebih tepat *მტკივა* dipertahankan karena bahasa Georgia tidak selalu menjamakkannya dalam percakapan.",
+    "**რა გჭირს? / რა გჭირთ? = \"ada keluhan apa?\"** Harfiahnya \"apa yang mengganggumu\". Kalimat pembuka baku setiap dokter. Kerabatnya sudah kamu kenal: მჭირდება (saya perlu) di unit 7.",
+    "**სიცხე გაქვთ? — demam dinyatakan dengan \"punya\", bukan \"adalah\".** *სიცხე მაქვს* (saya demam), *ხველა მაქვს* (saya batuk), *სურდო მაქვს* (saya pilek). Pola ini berlaku untuk hampir semua gejala, dan kamu sudah menguasainya sejak unit 4.",
+    "**Suhu badan disebut dalam Celsius tanpa koma**: ოცდათვრამეტი (38), ოცდაცხრამეტი (39). Perhatikan bahwa sistem dua puluhan dari unit 6 kembali dipakai di tempat yang paling tidak nyaman untuk berhitung.",
+    "**ექიმო — perhatikan ekor -ო.** Itu bentuk memanggil (vokatif): ექიმ**ო** (Dok!), ბატონ**ო** (Pak!), ქალბატონ**ო** (Bu!). Ekor -ი diganti -ო setiap kali kamu memanggil seseorang secara langsung.",
+    "**ბატონო dan ქალბატონო adalah sapaan sopan yang wajib diketahui.** ბატონო kepada laki-laki, ქალბატონო kepada perempuan — dipakai kepada dokter, petugas, orang yang lebih tua, dan siapa pun yang kamu hormati. Sering juga dipakai sendirian sebagai jawaban sopan atas panggilan, seperti \"iya, Pak?\"."
+   ],
+   "grammars": [
+    {
+     "title": "Bagian tubuh, dan kata kerja \"sakit\"",
+     "tables": [
+      {
+       "head": [
+        "Georgia",
+        "Cara baca",
+        "Artinya",
+        "Georgia",
+        "Cara baca",
+        "Artinya"
+       ],
+       "rows": [
+        [
+         "თავი",
+         "tavi",
+         "kepala",
+         "კუჭი",
+         "k'uch'i",
+         "perut"
+        ],
+        [
+         "ყელი",
+         "q'eli",
+         "tenggorokan",
+         "ზურგი",
+         "zurgi",
+         "punggung"
+        ],
+        [
+         "თვალი",
+         "tvali",
+         "mata",
+         "ხელი",
+         "kheli",
+         "tangan"
+        ],
+        [
+         "ყური",
+         "q'uri",
+         "telinga",
+         "ფეხი",
+         "pekhi",
+         "kaki"
+        ],
+        [
+         "ცხვირი",
+         "tskhviri",
+         "hidung",
+         "კბილი",
+         "k'bili",
+         "gigi"
+        ],
+        [
+         "პირი",
+         "p'iri",
+         "mulut",
+         "გული",
+         "guli",
+         "jantung, hati"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Kalimat",
+        "Cara baca",
+        "Artinya"
+       ],
+       "rows": [
+        [
+         "თავი მტკივა",
+         "tavi mt'k'iva",
+         "Kepala saya sakit"
+        ],
+        [
+         "კუჭი მტკივა",
+         "k'uch'i mt'k'iva",
+         "Perut saya sakit"
+        ],
+        [
+         "რა გტკივა?",
+         "ra gt'k'iva",
+         "Apanya yang sakit?"
+        ],
+        [
+         "სიცხე მაქვს",
+         "sitskhe makvs",
+         "Saya demam"
+        ],
+        [
+         "ხველა მაქვს",
+         "khvela makvs",
+         "Saya batuk"
+        ],
+        [
+         "სურდო მაქვს",
+         "surdo makvs",
+         "Saya pilek"
+        ],
+        [
+         "გულზე მერევა",
+         "gulze mereva",
+         "Saya mual"
+        ],
+        [
+         "ავად ვარ",
+         "avad var",
+         "Saya sakit"
+        ],
+        [
+         "თავბრუ მეხვევა",
+         "tavbru mekhveva",
+         "Saya pusing"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **ავად ვარ** (saya sakit) memakai ekor -ად yang sudah kamu kenal — harfiahnya \"saya dalam keadaan sakit\". Lawannya: **ჯანმრთელი ვარ** (saya sehat)."
+     ]
+    },
+    {
+     "title": "Di apotek",
+     "table": {
+      "head": [
+       "Kalimat",
+       "Cara baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "წამალი მჭირდება",
+        "ts'amali mch'irdeba",
+        "Saya perlu obat"
+       ],
+       [
+        "თავის ტკივილის წამალი გაქვთ?",
+        "tavis t'k'ivilis ts'amali gakvt",
+        "Ada obat sakit kepala?"
+       ],
+       [
+        "რეცეპტი მჭირდება?",
+        "retsep't'i mch'irdeba",
+        "Perlu resep?"
+       ],
+       [
+        "დღეში რამდენჯერ?",
+        "dgheshi ramdenjer",
+        "Berapa kali sehari?"
+       ],
+       [
+        "ალერგია მაქვს …-ზე",
+        "alergia makvs …ze",
+        "Saya alergi …"
+       ],
+       [
+        "ორსულად ვარ",
+        "orsulad var",
+        "Saya sedang hamil"
+       ]
+      ]
+     },
+     "after": [
+      "Apotek di Georgia (**აფთიაქი**) buka sampai malam dan banyak obat dijual tanpa resep. Rantai yang ada di mana-mana: PSP, Aversi, GPC. Untuk keadaan darurat, nomor tunggal **112** melayani polisi, pemadam, dan ambulans, dengan operator berbahasa Inggris."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalau keadaannya mendesak",
+   "blocks": [
+    {
+     "type": "kotak",
+     "title": "Enam kalimat darurat — hafalkan utuh",
+     "items": [
+      "**დამეხმარეთ!** (damekhmaret) — Tolong saya!",
+      "**სასწრაფო გამოიძახეთ!** (sasts'rapo gamoidzakhet) — Panggil ambulans!",
+      "**ცუდად ვარ.** (tsudad var) — Saya merasa tidak enak badan / hampir pingsan.",
+      "**ალერგია მაქვს.** — Saya punya alergi.",
+      "**ინგლისურად ლაპარაკობთ?** — Anda bisa bahasa Inggris?",
+      "**ინდონეზიის საელჩო.** (Indoneziis saelcho) — Kedutaan Indonesia."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua hal praktis yang lebih baik disiapkan sebelum diperlukan. Pertama, **112** adalah satu-satunya nomor darurat yang perlu kamu ingat di Georgia, dan operatornya melayani bahasa Inggris. Kedua, tulis riwayat alergi dan obat rutinmu di secarik kertas berbahasa Georgia sederhana — *ალერგია მაქვს …-ზე* — dan simpan di dompet. Dalam keadaan panik, kalimat yang paling sederhana pun sulit keluar."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Georgia",
+      "Cara baca",
+      "Artinya",
+      "Georgia",
+      "Cara baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "ექიმი",
+       "ekimi",
+       "dokter",
+       "წამალი",
+       "ts'amali",
+       "obat"
+      ],
+      [
+       "საავადმყოფო",
+       "saavadmq'opo",
+       "rumah sakit",
+       "რეცეპტი",
+       "retsep't'i",
+       "resep"
+      ],
+      [
+       "კლინიკა",
+       "k'linik'a",
+       "klinik",
+       "სიცხე",
+       "sitskhe",
+       "demam"
+      ],
+      [
+       "აფთიაქი",
+       "aptiaki",
+       "apotek",
+       "ხველა",
+       "khvela",
+       "batuk"
+      ],
+      [
+       "ექთანი",
+       "ektani",
+       "perawat",
+       "სურდო",
+       "surdo",
+       "pilek"
+      ],
+      [
+       "სასწრაფო",
+       "sasts'rapo",
+       "ambulans",
+       "ტკივილი",
+       "t'k'ivili",
+       "rasa sakit"
+      ],
+      [
+       "ავად",
+       "avad",
+       "sakit",
+       "ჯანმრთელი",
+       "janmrteli",
+       "sehat"
+      ],
+      [
+       "დაზღვევა",
+       "dazghveva",
+       "asuransi",
+       "ანალიზი",
+       "analizi",
+       "tes lab"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu kebiasaan yang mungkin mengejutkan: orang Georgia bertanya *როგორ ხარ?* dengan sungguh-sungguh, dan kalau kamu sedang sakit mereka benar-benar ingin tahu. Jawaban *ცოტა ავად ვარ* (saya agak sakit) hampir pasti akan disusul tawaran obat, teh, atau antar ke dokter dari orang yang baru kamu kenal seminggu. Itu bukan basa-basi, dan menolaknya seluruhnya justru membingungkan mereka."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ka": "ექიმი",
+   "baca": "ekimi",
+   "id": "dokter"
+  },
+  {
+   "ka": "აფთიაქი",
+   "baca": "aptiaki",
+   "id": "apotek"
+  },
+  {
+   "ka": "საავადმყოფო",
+   "baca": "saavadmq'opo",
+   "id": "rumah sakit"
+  },
+  {
+   "ka": "წამალი",
+   "baca": "ts'amali",
+   "id": "obat"
+  },
+  {
+   "ka": "რეცეპტი",
+   "baca": "retsep't'i",
+   "id": "resep"
+  },
+  {
+   "ka": "სასწრაფო",
+   "baca": "sasts'rapo",
+   "id": "ambulans"
+  },
+  {
+   "ka": "თავი",
+   "baca": "tavi",
+   "id": "kepala"
+  },
+  {
+   "ka": "ყელი",
+   "baca": "q'eli",
+   "id": "tenggorokan"
+  },
+  {
+   "ka": "კუჭი",
+   "baca": "k'uch'i",
+   "id": "perut"
+  },
+  {
+   "ka": "კბილი",
+   "baca": "k'bili",
+   "id": "gigi"
+  },
+  {
+   "ka": "ზურგი",
+   "baca": "zurgi",
+   "id": "punggung"
+  },
+  {
+   "ka": "თვალი",
+   "baca": "tvali",
+   "id": "mata"
+  },
+  {
+   "ka": "ყური",
+   "baca": "q'uri",
+   "id": "telinga"
+  },
+  {
+   "ka": "ცხვირი",
+   "baca": "tskhviri",
+   "id": "hidung"
+  },
+  {
+   "ka": "ხელი",
+   "baca": "kheli",
+   "id": "tangan"
+  },
+  {
+   "ka": "ფეხი",
+   "baca": "pekhi",
+   "id": "kaki"
+  },
+  {
+   "ka": "გული",
+   "baca": "guli",
+   "id": "jantung, hati"
+  },
+  {
+   "ka": "მტკივა",
+   "baca": "mt'k'iva",
+   "id": "… saya sakit"
+  },
+  {
+   "ka": "გტკივა",
+   "baca": "gt'k'iva",
+   "id": "… kamu sakit"
+  },
+  {
+   "ka": "ტკივილი",
+   "baca": "t'k'ivili",
+   "id": "rasa sakit"
+  },
+  {
+   "ka": "სიცხე",
+   "baca": "sitskhe",
+   "id": "demam"
+  },
+  {
+   "ka": "ხველა",
+   "baca": "khvela",
+   "id": "batuk"
+  },
+  {
+   "ka": "სურდო",
+   "baca": "surdo",
+   "id": "pilek"
+  },
+  {
+   "ka": "ავად",
+   "baca": "avad",
+   "id": "sakit"
+  },
+  {
+   "ka": "ჯანმრთელი",
+   "baca": "janmrteli",
+   "id": "sehat"
+  },
+  {
+   "ka": "ალერგია",
+   "baca": "alergia",
+   "id": "alergi"
+  },
+  {
+   "ka": "უარესი",
+   "baca": "uaresi",
+   "id": "lebih buruk"
+  },
+  {
+   "ka": "დამეხმარეთ",
+   "baca": "damekhmaret",
+   "id": "tolong saya"
+  },
+  {
+   "ka": "ბატონო",
+   "baca": "bat'ono",
+   "id": "Pak (sapaan)"
+  },
+  {
+   "ka": "ქალბატონო",
+   "baca": "kalbat'ono",
+   "id": "Bu (sapaan)"
+  },
+  {
+   "ka": "დაისვენეთ",
+   "baca": "daisvenet",
+   "id": "istirahatlah"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis bagian tubuh yang dimaksud.",
+   "items": [
+    "kepala → ____",
+    "tenggorokan → ____",
+    "perut → ____",
+    "gigi → ____",
+    "kaki → ____",
+    "mata → ____"
+   ]
+  },
+  {
+   "prompt": "Lengkapi kalimat keluhannya.",
+   "items": [
+    "თავი ____ (sakit padaku)",
+    "სიცხე ____ (saya punya)",
+    "ავად ____ (saya adalah)",
+    "წამალი ____ (saya perlukan)",
+    "ალერგია ____ (saya punya)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "მტკივა / ყელი",
+    "გაქვთ / სიცხე / ?",
+    "გტკივა / რა / ?",
+    "მჭირდება / წამალი",
+    "ვარ / ავად"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Georgia.",
+   "items": [
+    "Tenggorokan saya sakit.",
+    "Saya demam.",
+    "Sudah tiga hari.",
+    "Saya perlu obat.",
+    "Saya alergi penisilin.",
+    "Tolong panggil ambulans!"
+   ]
+  }
+ ],
+ "answers": [
+  "თავი — ყელი — კუჭი — კბილი — ფეხი — თვალი",
+  "მტკივა — მაქვს — ვარ — მჭირდება — მაქვს",
+  "ყელი მტკივა. — სიცხე გაქვთ? — რა გტკივა? — წამალი მჭირდება. — ავად ვარ.",
+  "ყელი მტკივა. — სიცხე მაქვს. — სამი დღეა. — წამალი მჭირდება. — ალერგია მაქვს პენიცილინზე. — სასწრაფო გამოიძახეთ!"
+ ]
+}

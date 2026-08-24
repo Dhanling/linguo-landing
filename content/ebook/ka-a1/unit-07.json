@@ -1,0 +1,559 @@
+{
+ "title": "Metronya di mana?",
+ "title_target": "სად არის მეტრო? — Sad aris met'ro?",
+ "goal": "Bertanya arah dan mengerti jawabannya, menyebut tempat-tempat di kota, dan memakai tiga ekor kata yang menggantikan seluruh kata depan bahasa Indonesia: -ში, -ზე, dan -თან.",
+ "bekal": [
+  "bertanya სად არის…? dan mengerti jawabannya",
+  "memakai -ში (di dalam), -ზე (di atas), -თან (di dekat)",
+  "menyebut arah: kanan, kiri, lurus",
+  "menyebut tempat penting di kota",
+  "meminta orang mengulang atau menunjukkan di peta"
+ ],
+ "dialogs": [
+  {
+   "title": "დიალოგი — Tersesat di Jalan Rustaveli",
+   "intro": "Ani mencari stasiun metro dan bertanya kepada seorang bapak di halte. Jawaban orang Georgia biasanya panjang dan penuh isyarat tangan — perhatikan bagaimana Ani meminta pengulangan tanpa merasa canggung.",
+   "lines": [
+    {
+     "speaker": "ანი:",
+     "text": "[უკაცრავად|Uk'-ats-ra-vad], [სად|sad] [არის|a-ris] [მეტრო|met'-ro]?",
+     "id": "Permisi, metronya di mana?",
+     "literal": "permisi, di-mana — adalah — metro?"
+    },
+    {
+     "speaker": "კაცი:",
+     "text": "[მეტრო|Met'-ro]? [აქვე|Ak-ve], [ახლოს|akh-los]. [პირდაპირ|P'ir-da-p'ir] [წადი|ts'a-di].",
+     "id": "Metro? Di sini saja, dekat. Jalan lurus.",
+     "literal": "metro? di-sini-juga, dekat. lurus — pergilah."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[პირდაპირ|P'ir-da-p'ir]… [მერე|me-re]?",
+     "id": "Lurus… lalu?",
+     "literal": "lurus… lalu?"
+    },
+    {
+     "speaker": "კაცი:",
+     "text": "[მერე|Me-re] [მარჯვნივ|marj-vniv], [აფთიაქთან|ap-ti-ak-tan]. [მეტროს|Met'-ros] [შესასვლელი|she-sas-vle-li] [იქ|ik] [არის|a-ris].",
+     "id": "Lalu ke kanan, di dekat apotek. Pintu masuk metronya ada di situ.",
+     "literal": "lalu — ke-kanan, apotek-dekat. metro-punya — pintu-masuk — di-sana — adalah."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ბოდიში|Bo-di-shi], [ვერ|ver] [გავიგე|ga-vi-ge]. [ნელა|Ne-la], [თუ|tu] [შეიძლება|she-idz-le-ba].",
+     "id": "Maaf, saya tidak menangkap. Pelan-pelan, tolong.",
+     "literal": "maaf, tidak-bisa — saya-menangkap. pelan, kalau — boleh."
+    },
+    {
+     "speaker": "კაცი:",
+     "text": "[პირდაპირ|P'ir-da-p'ir]… [ას|as] [მეტრში|met'r-shi]… [მარჯვნივ|marj-vniv]. [გასაგებია|Ga-sa-ge-bi-a]?",
+     "id": "Lurus… seratus meter… lalu kanan. Jelas?",
+     "literal": "lurus… seratus — meter-dalam… ke-kanan. bisa-dimengerti-adalah?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[კი|K'i], [გასაგებია|ga-sa-ge-bi-a]. [შორია|Sho-ri-a]?",
+     "id": "Ya, jelas. Jauh?",
+     "literal": "ya, bisa-dimengerti-adalah. jauh-adalah?"
+    },
+    {
+     "speaker": "კაცი:",
+     "text": "[არა|A-ra], [ხუთი|khu-ti] [წუთი|ts'u-ti] [ფეხით|pe-khit].",
+     "id": "Tidak, lima menit jalan kaki.",
+     "literal": "tidak, lima — menit — kaki-dengan."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[და|Da] [სად|sad] [არის|a-ris] [ბანკი|ban-k'i]? [ფული|Pu-li] [მჭირდება|mch'ir-de-ba].",
+     "id": "Dan banknya di mana? Saya perlu uang.",
+     "literal": "dan — di-mana — adalah — bank? uang — saya-perlukan."
+    },
+    {
+     "speaker": "კაცი:",
+     "text": "[ბანკი|Ban-k'i] [მეტროსთან|met'-ros-tan] [არის|a-ris], [სასტუმროს|sas-t'um-ros] [გვერდით|gver-dit].",
+     "id": "Banknya di dekat metro, di samping hotel.",
+     "literal": "bank — metro-dekat — adalah, hotel-punya — sisi-dengan."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[დიდი|Di-di] [მადლობა|mad-lo-ba]! [ძალიან|Dza-li-an] [დამეხმარეთ|da-me-khma-ret].",
+     "id": "Terima kasih banyak! Anda sangat menolong.",
+     "literal": "besar — terima-kasih! sangat — kalian-menolong-saya."
+    },
+    {
+     "speaker": "კაცი:",
+     "text": "[არაფრის|A-rap-ris], [გენაცვალე|ge-nats-va-le]. [კარგად|K'ar-gad]!",
+     "id": "Sama-sama, Nak. Hati-hati!",
+     "literal": "tidak-apa-apa, sayang. secara-baik!"
+    }
+   ],
+   "notes": [
+    "**Tiga ekor kata yang menggantikan semua kata depan tempat.** **-ში** = di dalam (თბილის**ში** = di Tbilisi, სახლ**ში** = di rumah). **-ზე** = di atas / pada (მაგიდა**ზე** = di atas meja, ქუჩა**ზე** = di jalan). **-თან** = di dekat / di tempat (აფთიაქ**თან** = di dekat apotek, ექიმ**თან** = ke tempat dokter). Ekor -ი luruh dulu, persis seperti pada -დან di unit 3.",
+    "⚠️ **Bahasa Georgia tidak membedakan \"di\" dan \"ke\".** *სახლში ვარ* = saya di rumah; *სახლში მივდივარ* = saya pulang ke rumah. Ekornya sama; yang membedakan cuma kata kerjanya. Ini kelonggaran besar dibanding bahasa Jerman atau Rusia yang mengubah ekornya.",
+    "**ვერ bukan არ.** Dua-duanya berarti \"tidak\", tapi **არ** = tidak mau/tidak begitu, sedangkan **ვერ** = tidak bisa, di luar kemampuan. *არ გავიგე* berarti \"saya tidak menangkapnya\" (mungkin tidak menyimak); *ვერ გავიგე* berarti \"saya tidak berhasil menangkapnya\" — dan inilah yang benar saat bahasamu belum cukup. Bahasa Indonesia menyatukan keduanya dalam satu kata; bahasa Georgia tidak.",
+    "**ვერ გავიგე — hafalkan utuh.** Ini kalimat paling berguna sepanjang tinggal di Georgia. Pasangannya: *ნელა, თუ შეიძლება* (pelan-pelan) dan *გაიმეორეთ, თუ შეიძლება* (tolong ulangi).",
+    "**გასაგებია?** (gasagebia) — \"jelas?\", dan jawabannya კი, გასაგებია. Kata ini sering menutup penjelasan apa pun, dari petunjuk arah sampai pelajaran.",
+    "**ფეხით = jalan kaki.** Ekor -ით lagi, yang sudah kamu kenal dari unit 5 — ფეხი (kaki) → ფეხ**ით** (dengan kaki). Unit 13 akan memakainya untuk semua alat angkut.",
+    "**მჭირდება = saya perlu.** Kata kerja terbalik lagi: მჭირდება (saya perlu), გჭირდება (kamu perlu), სჭირდება (dia perlu). Bunyinya berat karena ada ჭ di dalamnya; ucapkan m-ch'ir-de-ba perlahan."
+   ],
+   "grammars": [
+    {
+     "title": "-ში, -ზე, -თან: ke mana ekor mana",
+     "body": [
+      "Aturannya masuk akal begitu kamu memikirkan bentuk tempatnya."
+     ],
+     "table": {
+      "head": [
+       "Ekor",
+       "Artinya",
+       "Dipakai untuk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "-ში",
+        "di dalam",
+        "ruang tertutup, kota, negara",
+        "სახლში, თბილისში, მაღაზიაში, ბანკში"
+       ],
+       [
+        "-ზე",
+        "di atas, pada",
+        "permukaan, jalan, acara",
+        "მაგიდაზე, ქუჩაზე, გაკვეთილზე (di kelas)"
+       ],
+       [
+        "-თან",
+        "di dekat, di tempat",
+        "orang, bangunan sebagai patokan",
+        "ექიმთან, აფთიაქთან, მეგობართან"
+       ],
+       [
+        "-დან",
+        "dari",
+        "asal, titik berangkat",
+        "სახლიდან, თბილისიდან, ბანკიდან"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Beberapa tempat memakai **-ზე** meski terdengar seperti \"di dalam\": ქუჩა**ზე** (di jalan), ბაზრო**ბაზე** (di pasar raya), გაკვეთილ**ზე** (di pelajaran). Kalau ragu, -ში hampir selalu aman untuk bangunan dan kota.",
+      "Untuk menyebut arah tujuan orang, dipakai **-თან**: *ექიმთან მივდივარ* — saya pergi ke dokter (harfiahnya \"ke tempat dokter\")."
+     ]
+    },
+    {
+     "title": "Arah dan letak",
+     "table": {
+      "head": [
+       "Georgia",
+       "Cara baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "მარჯვნივ",
+        "marjvniv",
+        "ke kanan, di sebelah kanan"
+       ],
+       [
+        "მარცხნივ",
+        "martskhniv",
+        "ke kiri, di sebelah kiri"
+       ],
+       [
+        "პირდაპირ",
+        "p'irdap'ir",
+        "lurus"
+       ],
+       [
+        "უკან",
+        "uk'an",
+        "ke belakang, kembali"
+       ],
+       [
+        "აქ / აქვე",
+        "ak / ak've",
+        "di sini / di sini juga"
+       ],
+       [
+        "იქ",
+        "ik",
+        "di sana"
+       ],
+       [
+        "ახლოს",
+        "akhlos",
+        "dekat"
+       ],
+       [
+        "შორს",
+        "shors",
+        "jauh"
+       ],
+       [
+        "გვერდით",
+        "gverdit",
+        "di samping"
+       ],
+       [
+        "პირისპირ",
+        "p'irisp'ir",
+        "di seberang"
+       ],
+       [
+        "შუაში",
+        "shuashi",
+        "di tengah"
+       ],
+       [
+        "კუთხეში",
+        "k'utkheshi",
+        "di pojok"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa **მარჯვნივ** dan **მარცხნივ** berarti \"ke kanan\" maupun \"di sebelah kanan\" sekaligus — sekali lagi, bahasa Georgia tidak merasa perlu membedakan gerak dan letak di sini."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tempat di kota",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Georgia",
+      "Cara baca",
+      "Artinya",
+      "Georgia",
+      "Cara baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "ქუჩა",
+       "kucha",
+       "jalan",
+       "სასტუმრო",
+       "sast'umro",
+       "hotel"
+      ],
+      [
+       "მოედანი",
+       "moedani",
+       "alun-alun",
+       "აფთიაქი",
+       "aptiaki",
+       "apotek"
+      ],
+      [
+       "მეტრო",
+       "met'ro",
+       "metro",
+       "საავადმყოფო",
+       "saavadmq'opo",
+       "rumah sakit"
+      ],
+      [
+       "გაჩერება",
+       "gachereba",
+       "halte",
+       "ბანკი",
+       "bank'i",
+       "bank"
+      ],
+      [
+       "სადგური",
+       "sadguri",
+       "stasiun",
+       "ბანკომატი",
+       "bank'omat'i",
+       "ATM"
+      ],
+      [
+       "აეროპორტი",
+       "aerop'ort'i",
+       "bandara",
+       "ეკლესია",
+       "ek'lesia",
+       "gereja"
+      ],
+      [
+       "მაღაზია",
+       "maghazia",
+       "toko",
+       "მუზეუმი",
+       "muzeumi",
+       "museum"
+      ],
+      [
+       "ბაზარი",
+       "bazari",
+       "pasar",
+       "პარკი",
+       "p'ark'i",
+       "taman"
+      ],
+      [
+       "სუპერმარკეტი",
+       "sup'ermark'et'i",
+       "supermarket",
+       "უნივერსიტეტი",
+       "universit'et'i",
+       "universitas"
+      ],
+      [
+       "ტუალეტი",
+       "t'ualet'i",
+       "toilet",
+       "ბიბლიოთეკა",
+       "bibliotek'a",
+       "perpustakaan"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Enam kalimat untuk tidak tersesat",
+     "items": [
+      "**სად არის…?** — … di mana?",
+      "**როგორ მივიდე…?** (rogor mivide) — Bagaimana caranya sampai ke…?",
+      "**შორია?** — Jauh?",
+      "**ვერ გავიგე. ნელა, თუ შეიძლება.** — Saya tidak menangkap. Pelan-pelan, tolong.",
+      "**რუკაზე მაჩვენებთ?** (rukaze machvenebt) — Bisa tunjukkan di peta?",
+      "**დავიკარგე.** (davik'arge) — Saya tersesat."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu catatan praktis tentang bertanya arah di Georgia: orang hampir tidak pernah menjawab \"saya tidak tahu\". Kalau seseorang tidak yakin, ia sering tetap menunjuk arah supaya tidak mengecewakanmu. Karena itu, tanyakan **dua orang** untuk jarak yang penting, dan lebih baik memakai kata patokan yang besar dan jelas — მეტრო, ეკლესია, მოედანი — daripada nama jalan."
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Metro Tbilisi punya dua jalur dan papan namanya dwibahasa, tapi pengumuman di dalam kereta hanya berbahasa Georgia. Dua kata yang menolong: **შემდეგი სადგური** (shemdegi sadguri — stasiun berikutnya) dan **გასასვლელი** (gasasvleli — jalan keluar)."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ka": "სად",
+   "baca": "sad",
+   "id": "di mana"
+  },
+  {
+   "ka": "აქ",
+   "baca": "ak",
+   "id": "di sini"
+  },
+  {
+   "ka": "იქ",
+   "baca": "ik",
+   "id": "di sana"
+  },
+  {
+   "ka": "მარჯვნივ",
+   "baca": "marjvniv",
+   "id": "kanan"
+  },
+  {
+   "ka": "მარცხნივ",
+   "baca": "martskhniv",
+   "id": "kiri"
+  },
+  {
+   "ka": "პირდაპირ",
+   "baca": "p'irdap'ir",
+   "id": "lurus"
+  },
+  {
+   "ka": "უკან",
+   "baca": "uk'an",
+   "id": "kembali, belakang"
+  },
+  {
+   "ka": "ახლოს",
+   "baca": "akhlos",
+   "id": "dekat"
+  },
+  {
+   "ka": "შორს",
+   "baca": "shors",
+   "id": "jauh"
+  },
+  {
+   "ka": "გვერდით",
+   "baca": "gverdit",
+   "id": "di samping"
+  },
+  {
+   "ka": "-ში",
+   "baca": "-shi",
+   "id": "di dalam"
+  },
+  {
+   "ka": "-ზე",
+   "baca": "-ze",
+   "id": "di atas, pada"
+  },
+  {
+   "ka": "-თან",
+   "baca": "-tan",
+   "id": "di dekat"
+  },
+  {
+   "ka": "ქუჩა",
+   "baca": "kucha",
+   "id": "jalan"
+  },
+  {
+   "ka": "მოედანი",
+   "baca": "moedani",
+   "id": "alun-alun"
+  },
+  {
+   "ka": "მეტრო",
+   "baca": "met'ro",
+   "id": "metro"
+  },
+  {
+   "ka": "გაჩერება",
+   "baca": "gachereba",
+   "id": "halte"
+  },
+  {
+   "ka": "სადგური",
+   "baca": "sadguri",
+   "id": "stasiun"
+  },
+  {
+   "ka": "სასტუმრო",
+   "baca": "sast'umro",
+   "id": "hotel"
+  },
+  {
+   "ka": "აფთიაქი",
+   "baca": "aptiaki",
+   "id": "apotek"
+  },
+  {
+   "ka": "ბანკი",
+   "baca": "bank'i",
+   "id": "bank"
+  },
+  {
+   "ka": "ეკლესია",
+   "baca": "ek'lesia",
+   "id": "gereja"
+  },
+  {
+   "ka": "ტუალეტი",
+   "baca": "t'ualet'i",
+   "id": "toilet"
+  },
+  {
+   "ka": "რუკა",
+   "baca": "ruk'a",
+   "id": "peta"
+  },
+  {
+   "ka": "წუთი",
+   "baca": "ts'uti",
+   "id": "menit"
+  },
+  {
+   "ka": "ფეხით",
+   "baca": "pekhit",
+   "id": "jalan kaki"
+  },
+  {
+   "ka": "ვერ",
+   "baca": "ver",
+   "id": "tidak bisa"
+  },
+  {
+   "ka": "გავიგე",
+   "baca": "gavige",
+   "id": "saya menangkap, saya paham"
+  },
+  {
+   "ka": "გასაგები",
+   "baca": "gasagebi",
+   "id": "jelas, bisa dimengerti"
+  },
+  {
+   "ka": "მჭირდება",
+   "baca": "mch'irdeba",
+   "id": "saya perlu"
+  },
+  {
+   "ka": "შემდეგი",
+   "baca": "shemdegi",
+   "id": "berikutnya"
+  },
+  {
+   "ka": "გასასვლელი",
+   "baca": "gasasvleli",
+   "id": "jalan keluar"
+  },
+  {
+   "ka": "მერე",
+   "baca": "mere",
+   "id": "lalu, kemudian"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pasang ekor yang tepat: -ში, -ზე, atau -თან.",
+   "items": [
+    "თბილის__ ვარ (di Tbilisi)",
+    "მაგიდა__ წიგნია (di atas meja)",
+    "აფთიაქ__ არის (di dekat apotek)",
+    "ბანკ__ მივდივარ (ke bank)",
+    "ქუჩა__ ვდგავარ (di jalan)",
+    "ექიმ__ მივდივარ (ke dokter)"
+   ]
+  },
+  {
+   "prompt": "Lengkapi petunjuk arahnya.",
+   "items": [
+    "____ წადი (lurus)",
+    "მერე ____ (ke kanan)",
+    "მეტრო ____ არის (dekat)",
+    "ხუთი წუთი ____ (jalan kaki)",
+    "____ გავიგე (saya tidak bisa menangkap)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "არის / სად / მეტრო / ?",
+    "წადი / პირდაპირ",
+    "არის / ახლოს / ბანკი",
+    "შეიძლება / ნელა / თუ / ,",
+    "მჭირდება / ფული"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Georgia.",
+   "items": [
+    "Permisi, apoteknya di mana?",
+    "Jalan lurus, lalu ke kanan.",
+    "Jauh?",
+    "Tidak, lima menit jalan kaki.",
+    "Saya tidak menangkap. Tolong ulangi.",
+    "Saya tersesat."
+   ]
+  }
+ ],
+ "answers": [
+  "თბილისში — მაგიდაზე — აფთიაქთან — ბანკში — ქუჩაზე — ექიმთან",
+  "პირდაპირ — მარჯვნივ — ახლოს — ფეხით — ვერ",
+  "სად არის მეტრო? — პირდაპირ წადი. — ბანკი ახლოს არის. — ნელა, თუ შეიძლება. — ფული მჭირდება.",
+  "უკაცრავად, სად არის აფთიაქი? — პირდაპირ წადი, მერე მარჯვნივ. — შორია? — არა, ხუთი წუთი ფეხით. — ვერ გავიგე. გაიმეორეთ, თუ შეიძლება. — დავიკარგე."
+ ]
+}

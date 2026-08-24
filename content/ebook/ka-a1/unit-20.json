@@ -1,0 +1,464 @@
+{
+ "title": "Menulis pesan",
+ "title_target": "წერილი მეგობარს — Ts'erili megobars",
+ "goal": "Menulis pesan dan surat pendek dalam bahasa Georgia, memakai semua yang sudah kamu kumpulkan — dan menutup modul ini dengan satu teks utuh yang kamu tulis sendiri.",
+ "bekal": [
+  "menulis pesan singkat sehari-hari (WhatsApp, SMS)",
+  "menulis surat pendek dengan pembuka dan penutup yang tepat",
+  "memakai singkatan yang dipakai orang Georgia saat mengetik",
+  "mengucapkan selamat pada hari besar",
+  "menutup modul dengan menulis lima kalimat tentang dirimu"
+ ],
+ "dialogs": [
+  {
+   "title": "დიალოგი — Percakapan di layar",
+   "intro": "Bukan dialog lisan kali ini, melainkan pesan-pesan yang dikirim Ani dan Nino sepanjang satu hari. Bahasa tulis sehari-hari orang Georgia lebih pendek daripada bahasa lisannya — perhatikan kata mana yang dibuang.",
+   "lines": [
+    {
+     "speaker": "ნინო:",
+     "text": "[გამარჯობა|Ga-mar-jo-ba]! [როგორ|Ro-gor] [ხარ|khar]?",
+     "id": "Halo! Apa kabar?",
+     "literal": "halo! bagaimana — kamu-adalah?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[გამარჯობა|Ga-mar-jo-ba]! [კარგად|K'ar-gad], [შენ|shen]? [დაკავებული|Da-k'a-ve-bu-li] [ვარ|var] [ცოტა|tso-t'a].",
+     "id": "Halo! Baik, kamu? Saya agak sibuk.",
+     "literal": "halo! secara-baik, kamu? sibuk — saya-adalah — sedikit."
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[საღამოს|Sa-gha-mos] [თავისუფალი|ta-vi-su-pa-li] [ხარ|khar]? [კაფეში|K'a-pesh-i] [წავიდეთ|ts'a-vi-det]?",
+     "id": "Sore nanti senggang? Ke kafe yuk?",
+     "literal": "sore-pada — bebas — kamu-adalah? kafe-dalam — mari-kita-pergi?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[კი|K'i]! [რომელ|Ro-mel] [საათზე|sa-at-ze]?",
+     "id": "Iya! Jam berapa?",
+     "literal": "ya! jam-yang-mana-pada?"
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[6|Ekvs] [საათზე|sa-at-ze], [რუსთაველზე|Rus-ta-vel-ze]. [კაი|K'ai]?",
+     "id": "Jam 6, di Rustaveli. Oke?",
+     "literal": "enam — jam-pada, Rustaveli-di. baik?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[კაი|K'ai], [ვნახოთ|vna-khot] [იქ|ik]. 👍",
+     "id": "Oke, ketemu di sana. 👍",
+     "literal": "baik, mari-kita-lihat — di-sana."
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[ცოტა|Tso-t'a] [დავაგვიანებ|da-vag-vi-a-neb], [ბოდიში|bo-di-shi]! [10|At] [წუთში|ts'ut-shi] [ვიქნები|vik-ne-bi].",
+     "id": "Saya agak telat, maaf! Sepuluh menit lagi saya sampai.",
+     "literal": "sedikit — saya-akan-terlambat, maaf! sepuluh — menit-dalam — saya-akan-ada."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[არა|A-ra] [უშავს|u-shavs], [გელოდები|ge-lo-de-bi].",
+     "id": "Tidak apa-apa, saya tunggu.",
+     "literal": "tidak — buruk-baginya, saya-menunggumu."
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[ძალიან|Dza-li-an] [კარგი|k'ar-gi] [საღამო|sa-gha-mo] [იყო|i-q'o]! [მადლობა|Mad-lo-ba]!",
+     "id": "Malam yang menyenangkan! Terima kasih!",
+     "literal": "sangat — baik — sore — adalah-dulu! terima-kasih!"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[მეც|Mets] [ძალიან|dza-li-an] [მომეწონა|mo-me-ts'o-na]. [ხვალ|Khval] [დაგირეკავ|da-gi-re-k'av]!",
+     "id": "Saya juga sangat senang. Besok saya telepon!",
+     "literal": "saya-juga — sangat — disukailah-olehku. besok — saya-akan-meneleponmu!"
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[კაი|K'ai]! [ღამე|Gha-me] [მშვიდობისა|mshvi-do-bi-sa] 🌙",
+     "id": "Oke! Selamat tidur 🌙",
+     "literal": "baik! malam — damai."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ღამე|Gha-me] [მშვიდობისა|mshvi-do-bi-sa]! [ხვალამდე|Khva-lam-de]!",
+     "id": "Selamat tidur! Sampai besok!",
+     "literal": "malam — damai! besok-sampai!"
+    }
+   ],
+   "notes": [
+    "**კაი adalah კარგი yang dipendekkan**, dan ia hampir tidak pernah ditulis dalam bahasa resmi — tapi ada di setiap percakapan mengetik. Sejajar dengan \"oke\" atau \"sip\" dalam bahasa Indonesia. Jangan memakainya dalam surat lamaran kerja.",
+    "**Angka ditulis dengan angka, bukan huruf, saat mengetik.** *6 საათზე*, *10 წუთში*. Ini kelonggaran besar buat pemula: kamu tidak perlu mengeja ოცდაათი saat sedang buru-buru.",
+    "**გელოდები = \"saya menunggumu\".** Perhatikan awalan **გ-** yang berarti \"kamu\" sebagai sasaran, sama seperti pada **გ**ქვია dan **და**გ**ირეკავ** (saya telepon kamu). Bahasa Georgia menyimpan dua orang sekaligus di dalam satu kata kerja — dan itulah yang membuat kalimatnya begitu pendek.",
+    "**ხვალამდე! = \"sampai besok!\"** Ekor -მდე dari unit 11. Pasangannya: **შაბათამდე** (sampai Sabtu), **მოგვიანებით** (nanti).",
+    "**Orang Georgia mengetik dengan aksara Georgia, hampir tanpa kecuali.** Transliterasi Latin (*gamarjoba*) dipakai hanya kalau papan ketiknya tidak punya huruf Georgia, dan makin jarang. Kalau kamu ingin benar-benar dianggap sedang belajar, pasang papan ketik Georgia di teleponmu hari ini juga — tata letaknya mengikuti bunyi, jadi tombol \"a\" mengetik ა dan \"b\" mengetik ბ.",
+    "**Emoji dipakai sama seperti di Indonesia**, tapi satu kebiasaan berbeda: pesan singkat Georgia jarang dibuka dengan basa-basi panjang. *გამარჯობა, როგორ ხარ?* sudah cukup, dan langsung disusul urusannya.",
+    "**Dalam pesan tulis, kata ganti hampir selalu dibuang** — persis seperti yang sudah kamu pelajari sejak unit 1. *დაკავებული ვარ* tanpa მე, *ვნახოთ იქ* tanpa ჩვენ. Semakin pendek, semakin wajar."
+   ],
+   "grammars": [
+    {
+     "title": "Surat pendek: kerangka yang selalu berhasil",
+     "body": [
+      "Surat resmi maupun pesan panjang di Georgia memakai kerangka yang sama. Isi bagian tengahnya dengan kalimat-kalimat yang sudah kamu punya."
+     ],
+     "table": {
+      "head": [
+       "Bagian",
+       "Georgia",
+       "Cara baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "Sapaan (akrab)",
+        "ძვირფასო ნინო,",
+        "dzvirpaso Nino",
+        "Nino yang baik,"
+       ],
+       [
+        "Sapaan (resmi)",
+        "პატივცემულო ბატონო გიორგი,",
+        "p'at'ivtsemulo bat'ono Giorgi",
+        "Yth. Bapak Giorgi,"
+       ],
+       [
+        "Pembuka",
+        "როგორ ხარ? დიდი ხანია არ გინახივარ.",
+        "rogor khar? didi khania ar ginakhivar",
+        "Apa kabar? Lama tidak bertemu."
+       ],
+       [
+        "Isi",
+        "ახლა თბილისში ვცხოვრობ და ქართულს ვსწავლობ.",
+        "akhla Tbilisshi vtskhovrob…",
+        "Sekarang saya tinggal di Tbilisi dan belajar bahasa Georgia."
+       ],
+       [
+        "Ajakan",
+        "იმედი მაქვს, მალე შევხვდებით.",
+        "imedi makvs, male shevkhvdebit",
+        "Semoga kita segera bertemu."
+       ],
+       [
+        "Penutup (akrab)",
+        "კარგად იყავი, ანი",
+        "k'argad iq'avi, Ani",
+        "Jaga diri, Ani"
+       ],
+       [
+        "Penutup (resmi)",
+        "პატივისცემით, ანი",
+        "p'at'ivistsemit, Ani",
+        "Hormat saya, Ani"
+       ]
+      ]
+     },
+     "after": [
+      "**იმედი მაქვს** (saya berharap) adalah salah satu ungkapan paling berguna untuk menutup apa pun: *იმედი მაქვს, მალე შევხვდებით* — semoga kita segera bertemu."
+     ]
+    },
+    {
+     "title": "Ucapan selamat",
+     "table": {
+      "head": [
+       "Georgia",
+       "Cara baca",
+       "Kapan"
+      ],
+      "rows": [
+       [
+        "გილოცავ!",
+        "gilotsav",
+        "Selamat! (kepada satu orang, akrab)"
+       ],
+       [
+        "გილოცავთ!",
+        "gilotsavt",
+        "Selamat! (sopan atau kepada banyak orang)"
+       ],
+       [
+        "დაბადების დღეს გილოცავ!",
+        "dabadebis dghes gilotsav",
+        "Selamat ulang tahun!"
+       ],
+       [
+        "გილოცავ ახალ წელს!",
+        "gilotsav akhal ts'els",
+        "Selamat tahun baru!"
+       ],
+       [
+        "ბედნიერებას გისურვებ!",
+        "bednierebas gisurveb",
+        "Semoga bahagia!"
+       ],
+       [
+        "წარმატებას გისურვებ!",
+        "ts'armat'ebas gisurveb",
+        "Semoga sukses!"
+       ],
+       [
+        "სწრაფად გამოჯანმრთელდი!",
+        "sts'rapad gamojanmrteldi",
+        "Semoga cepat sembuh!"
+       ],
+       [
+        "ღმერთმა ხელი მოგიმართოს!",
+        "ghmertma kheli mogimartos",
+        "Semoga Tuhan membantumu!"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan awalan **გი-** dan **გ-** di hampir semua ucapan ini: sekali lagi, \"kepadamu\" sudah masuk ke dalam kata kerjanya. Itu pola yang sama yang kamu temui di unit 1 pada რა **გ**ქვია."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Latihan penutup: tulis lima kalimat tentang dirimu",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Ini latihan terakhir modul, dan yang paling penting. Tulis lima kalimat tentang dirimu dengan aksara Georgia — bukan di kepala, tapi betul-betul ditulis, di kertas atau di telepon. Semua bahannya sudah ada di dua puluh unit yang sudah kamu lewati; kamu tidak perlu satu kata baru pun."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Ambil dari unit",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "Nama dan asalmu",
+       "1, 3",
+       "მე ბუდი ვარ. ინდონეზიიდან ვარ, ჯაკარტიდან."
+      ],
+      [
+       "Pekerjaan atau kegiatanmu",
+       "3, 9",
+       "სტუდენტი ვარ და ქართულს ვსწავლობ."
+      ],
+      [
+       "Keluargamu",
+       "4",
+       "ორი და მყავს და ერთი ძმა."
+      ],
+      [
+       "Yang kamu suka",
+       "10",
+       "ხინკალი ძალიან მიყვარს, მაგრამ ღორის ხორცს არ ვჭამ."
+      ],
+      [
+       "Rencana atau harapanmu",
+       "15, 18",
+       "მალე კახეთში წავალ. იმედი მაქვს, ქართულს კარგად ვისწავლი."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Sesudah kamu menulisnya",
+     "items": [
+      "**Baca keras-keras.** Kalau ada kata yang tersendat, itu kata yang belum benar-benar kamu punya — kembali ke unitnya sebentar.",
+      "**Kirim ke seseorang.** Guru, teman Georgia, kelompok belajar. Kalimat yang dibaca orang lain menempel jauh lebih kuat daripada kalimat yang mengendap di buku catatan.",
+      "**Simpan tanggalnya.** Tulis ulang lima kalimat yang sama tiga bulan lagi. Perbedaannya akan mengejutkanmu, dan itu satu-satunya ukuran kemajuan yang tidak bisa dibohongi."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dan itulah akhir dua puluh unit ini. Kamu memulainya dengan tiga puluh tiga huruf yang tampak seperti lengkung tak beraturan, dan sekarang kamu bisa membaca papan nama, memesan makan malam, menceritakan akhir pekanmu, dan menolak segelas anggur tanpa menyinggung siapa pun. Itu bukan pencapaian kecil untuk sebuah bahasa yang tidak berkerabat dengan satu pun bahasa yang pernah kamu dengar."
+    },
+    {
+     "type": "p",
+     "text": "Kalimat terakhir modul ini sebaiknya kamu ucapkan keras-keras, karena kamu akan sering memerlukannya: **ქართულს ვსწავლობ და ძალიან მიყვარს.** — Saya sedang belajar bahasa Georgia, dan saya sangat menyukainya. Di Georgia, kalimat itu akan membukakan lebih banyak pintu daripada paspor mana pun."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ka": "წერილი",
+   "baca": "ts'erili",
+   "id": "surat"
+  },
+  {
+   "ka": "შეტყობინება",
+   "baca": "shet'q'obineba",
+   "id": "pesan"
+  },
+  {
+   "ka": "ვწერ",
+   "baca": "vts'er",
+   "id": "saya menulis"
+  },
+  {
+   "ka": "დავწერ",
+   "baca": "davts'er",
+   "id": "saya akan menulis"
+  },
+  {
+   "ka": "დაგირეკავ",
+   "baca": "dagirek'av",
+   "id": "saya akan telepon kamu"
+  },
+  {
+   "ka": "გელოდები",
+   "baca": "gelodebi",
+   "id": "saya menunggumu"
+  },
+  {
+   "ka": "დავაგვიანებ",
+   "baca": "davagvianeb",
+   "id": "saya akan terlambat"
+  },
+  {
+   "ka": "კაი",
+   "baca": "k'ai",
+   "id": "oke (bahasa santai)"
+  },
+  {
+   "ka": "ხვალამდე",
+   "baca": "khvalamde",
+   "id": "sampai besok"
+  },
+  {
+   "ka": "მოგვიანებით",
+   "baca": "mogvianebit",
+   "id": "nanti"
+  },
+  {
+   "ka": "ძვირფასო",
+   "baca": "dzvirpaso",
+   "id": "yang terkasih (pembuka surat)"
+  },
+  {
+   "ka": "პატივცემულო",
+   "baca": "p'at'ivtsemulo",
+   "id": "yang terhormat"
+  },
+  {
+   "ka": "პატივისცემით",
+   "baca": "p'at'ivistsemit",
+   "id": "hormat saya"
+  },
+  {
+   "ka": "იმედი მაქვს",
+   "baca": "imedi makvs",
+   "id": "saya berharap"
+  },
+  {
+   "ka": "გილოცავ",
+   "baca": "gilotsav",
+   "id": "selamat!"
+  },
+  {
+   "ka": "დაბადების დღე",
+   "baca": "dabadebis dghe",
+   "id": "ulang tahun"
+  },
+  {
+   "ka": "ახალი წელი",
+   "baca": "akhali ts'eli",
+   "id": "tahun baru"
+  },
+  {
+   "ka": "ბედნიერება",
+   "baca": "bedniereba",
+   "id": "kebahagiaan"
+  },
+  {
+   "ka": "წარმატება",
+   "baca": "ts'armat'eba",
+   "id": "kesuksesan"
+  },
+  {
+   "ka": "გისურვებ",
+   "baca": "gisurveb",
+   "id": "saya mendoakanmu"
+  },
+  {
+   "ka": "დიდი ხანია",
+   "baca": "didi khania",
+   "id": "sudah lama"
+  },
+  {
+   "ka": "შევხვდებით",
+   "baca": "shevkhvdebit",
+   "id": "kita akan bertemu"
+  },
+  {
+   "ka": "კარგად იყავი",
+   "baca": "k'argad iq'avi",
+   "id": "jaga diri"
+  },
+  {
+   "ka": "ღმერთი",
+   "baca": "ghmerti",
+   "id": "Tuhan"
+  },
+  {
+   "ka": "მალე",
+   "baca": "male",
+   "id": "segera"
+  },
+  {
+   "ka": "ყველაფერი",
+   "baca": "q'velaperi",
+   "id": "segalanya"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi pesan singkatnya.",
+   "items": [
+    "____ ! როგორ ხარ? (halo)",
+    "საღამოს ____ ხარ? (senggang)",
+    "რომელ ____ ? (jam)",
+    "ცოტა ____ , ბოდიში (saya terlambat)",
+    "____ მშვიდობისა! (malam)"
+   ]
+  },
+  {
+   "prompt": "Pasangkan ucapan selamat yang tepat.",
+   "items": [
+    "Ulang tahun → ____ დღეს გილოცავ!",
+    "Tahun baru → გილოცავ ახალ ____ !",
+    "Untuk orang yang sakit → სწრაფად ____ !",
+    "Untuk yang mau ujian → ____ გისურვებ!",
+    "Untuk menutup surat resmi → ____ , ანი"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ვარ / დაკავებული / ცოტა",
+    "წავიდეთ / კაფეში / საღამოს",
+    "ვიქნები / წუთში / ათ",
+    "დაგირეკავ / ხვალ",
+    "შევხვდებით / მაქვს / იმედი / მალე / ,"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Georgia — lima kalimat terakhir modul ini.",
+   "items": [
+    "Halo! Apa kabar?",
+    "Sore nanti kamu senggang?",
+    "Tidak apa-apa, saya tunggu.",
+    "Terima kasih, malam yang menyenangkan!",
+    "Semoga kita segera bertemu.",
+    "Saya sedang belajar bahasa Georgia dan saya sangat menyukainya."
+   ]
+  }
+ ],
+ "answers": [
+  "გამარჯობა — თავისუფალი — საათზე — დავაგვიანებ — ღამე",
+  "დაბადების — წელს — გამოჯანმრთელდი — წარმატებას — პატივისცემით",
+  "ცოტა დაკავებული ვარ. — საღამოს კაფეში წავიდეთ. — ათ წუთში ვიქნები. — ხვალ დაგირეკავ. — იმედი მაქვს, მალე შევხვდებით.",
+  "გამარჯობა! როგორ ხარ? — საღამოს თავისუფალი ხარ? — არა უშავს, გელოდები. — მადლობა, ძალიან კარგი საღამო იყო! — იმედი მაქვს, მალე შევხვდებით. — ქართულს ვსწავლობ და ძალიან მიყვარს."
+ ],
+ "wave": "Ulangan berjenjang terakhir: buka unit 1 sekali lagi, tutup lajur cara bacanya, dan baca dialognya dari awal sampai akhir. Kalau kamu bisa membacanya tanpa berhenti, kamu sudah berada di tempat yang dijanjikan halaman pertama modul ini."
+}

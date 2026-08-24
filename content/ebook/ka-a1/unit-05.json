@@ -1,0 +1,506 @@
+{
+ "title": "Satu kopi, tolong",
+ "title_target": "ერთი ყავა, თუ შეიძლება — Erti q'ava, tu sheidzleba",
+ "goal": "Memesan minuman dan makanan di kafe, mengatakan apa yang kamu inginkan, dan menghadapi bunyi ყ untuk pertama kalinya dalam kata yang akan kamu ucapkan setiap pagi.",
+ "bekal": [
+  "memesan dengan pola ერთი … თუ შეიძლება",
+  "mengatakan მინდა (saya mau) dan არ მინდა (saya tidak mau)",
+  "menanyakan apakah sesuatu ada: … გაქვთ?",
+  "meminta bon dan membayar",
+  "mengucapkan ყავა dengan bunyi ყ yang benar"
+ ],
+ "dialogs": [
+  {
+   "title": "დიალოგი — Di kafe dekat Rustaveli",
+   "intro": "Ani masuk ke kafe kecil dan memesan sarapan. Pelayannya, Sopo, berbicara cepat seperti pelayan di mana pun — perhatikan bagaimana Ani memakai satu pola yang sama untuk semua pesanannya.",
+   "lines": [
+    {
+     "speaker": "სოფო:",
+     "text": "[გამარჯობა|Ga-mar-jo-ba]! [რას|Ras] [ისურვებთ|i-sur-vebt]?",
+     "id": "Halo! Mau pesan apa?",
+     "literal": "halo! apa — Anda-inginkan?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[გამარჯობა|Ga-mar-jo-ba]. [ერთი|Er-ti] [ყავა|q'a-va], [თუ|tu] [შეიძლება|she-idz-le-ba].",
+     "id": "Halo. Satu kopi, tolong.",
+     "literal": "halo. satu — kopi, kalau — boleh."
+    },
+    {
+     "speaker": "სოფო:",
+     "text": "[რძით|Rdzit] [თუ|tu] [რძის|rdzis] [გარეშე|ga-re-she]?",
+     "id": "Pakai susu atau tanpa susu?",
+     "literal": "susu-dengan — atau — susu-punya — tanpa?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[რძით|Rdzit], [თუ|tu] [შეიძლება|she-idz-le-ba]. [შაქარი|Sha-ka-ri] [არ|ar] [მინდა|min-da].",
+     "id": "Pakai susu, tolong. Tanpa gula.",
+     "literal": "susu-dengan, kalau — boleh. gula — tidak — saya-mau."
+    },
+    {
+     "speaker": "სოფო:",
+     "text": "[კარგი|K'ar-gi]. [სხვა|Skhva] [რამე|ra-me]?",
+     "id": "Baik. Ada lagi?",
+     "literal": "baik. lain — sesuatu?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ხაჭაპური|Kha-ch'a-p'u-ri] [გაქვთ|gakvt]?",
+     "id": "Ada khachapuri?",
+     "literal": "khachapuri — kalian-punya?"
+    },
+    {
+     "speaker": "სოფო:",
+     "text": "[კი|K'i], [იმერული|i-me-ru-li] [და|da] [აჭარული|a-ch'a-ru-li] [გვაქვს|gvakvs].",
+     "id": "Ya, ada yang Imereti dan yang Adjara.",
+     "literal": "ya, Imereti-punya — dan — Adjara-punya — kami-punya."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[რა|Ra] [განსხვავებაა|gans-khva-ve-ba-a]?",
+     "id": "Apa bedanya?",
+     "literal": "apa — perbedaan-adalah?"
+    },
+    {
+     "speaker": "სოფო:",
+     "text": "[აჭარული|A-ch'a-ru-li] [კვერცხით|k'verts-khit] [არის|a-ris], [ნავივით|na-vi-vit].",
+     "id": "Yang Adjara pakai telur, bentuknya seperti perahu.",
+     "literal": "Adjara-punya — telur-dengan — adalah, perahu-seperti."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[მაშინ|Ma-shin] [აჭარული|a-ch'a-ru-li], [თუ|tu] [შეიძლება|she-idz-le-ba]. [რამდენი|Ram-de-ni] [ღირს|ghirs]?",
+     "id": "Kalau begitu yang Adjara, tolong. Berapa harganya?",
+     "literal": "kalau-begitu — Adjara-punya, kalau — boleh. berapa — berharga?"
+    },
+    {
+     "speaker": "სოფო:",
+     "text": "[თხუთმეტი|Tkhut-me-t'i] [ლარი|la-ri]. [აქ|Ak] [მიირთმევთ|mi-irt-mevt]?",
+     "id": "Lima belas lari. Makan di sini?",
+     "literal": "lima-belas — lari. di-sini — kalian-santap?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[კი|K'i], [აქ|ak]. [გმადლობთ|Gmad-lobt]!",
+     "id": "Ya, di sini. Terima kasih!",
+     "literal": "ya, di-sini. terima-kasih!"
+    }
+   ],
+   "notes": [
+    "**ერთი … თუ შეიძლება adalah satu-satunya pola yang kamu butuhkan untuk memesan apa pun.** Angka + benda + \"kalau boleh\". *ერთი ჩაი, თუ შეიძლება* (satu teh), *ორი ყავა, თუ შეიძლება* (dua kopi). Kata bendanya tetap dalam bentuk kamus, tidak berubah sedikit pun.",
+    "**თუ შეიძლება dipasang di UJUNG kalimat.** ⚠️ Penutur bahasa Indonesia sering menaruhnya di depan, meniru \"tolong satu kopi\". Dalam bahasa Georgia yang wajar adalah *ერთი ყავა, თუ შეიძლება* — permintaannya dulu, kesopanannya menyusul.",
+    "**მინდა berarti \"saya mau\", dan bentuknya tidak berawalan ვ-.** Ia salah satu kata kerja terbalik yang sudah kamu temui di unit 4: მინდა (saya mau), გინდა (kamu mau), უნდა (dia mau). Ingkarannya *არ მინდა* — dan ini kalimat penolakan paling berguna di Georgia, karena orang akan menawarimu makan terus-menerus.",
+    "**რძით berarti \"dengan susu\" — satu kata, bukan dua.** Ekor **-ით** berarti \"dengan/memakai\", dan ia menggantikan seluruh kata depan bahasa Indonesia. რძე (susu) → რძ**ით**, კვერცხი (telur) → კვერცხ**ით**, შაქარი (gula) → შაქრ**ით**. Unit 13 akan memakainya untuk alat angkut: ავტობუს**ით** (naik bus).",
+    "**გაქვთ? = \"kalian punya?\" — inilah cara menanyakan ketersediaan.** Bukan \"ada?\" melainkan \"apakah kalian punya?\". *ჩაი გაქვთ?* (ada teh?), *წყალი გაქვთ?* (ada air?). Jawabannya *კი, გვაქვს* (ya, ada pada kami) atau *არა, არ გვაქვს*.",
+    "**რამდენი ღირს? = berapa harganya.** ღირს artinya \"berharga\", dan bentuknya tidak berubah untuk barang tunggal maupun jamak. Unit berikutnya akan mengisi kekosongan yang tersisa: angka-angkanya.",
+    "**ხაჭაპური punya lebih dari dua puluh macam, dan tiap daerah membela versinya sendiri.** Dua yang paling umum: **იმერული** (bundar, keju di dalam) dan **აჭარული** (berbentuk perahu, dengan telur setengah matang dan mentega di tengahnya). Menanyakan *რა განსხვავებაა?* di kafe mana pun akan membuat pelayannya senang menjelaskan."
+   ],
+   "grammars": [
+    {
+     "title": "მინდა — kata kerja \"mau\" dan kerabatnya",
+     "body": [
+      "Kelompok ini kecil, dipakai terus-menerus, dan semuanya berperilaku terbalik: yang jadi pokok kalimat adalah **barangnya**, sedangkan orangnya masuk sebagai awalan."
+     ],
+     "table": {
+      "head": [
+       "Saya",
+       "Kamu",
+       "Dia",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "მინდა — minda",
+        "გინდა — ginda",
+        "უნდა — unda",
+        "mau, ingin"
+       ],
+       [
+        "მშია — mshia",
+        "გშია — gshia",
+        "შია — shia",
+        "lapar"
+       ],
+       [
+        "მწყურია — mts'q'uria",
+        "გწყურია — gts'q'uria",
+        "სწყურია — sts'q'uria",
+        "haus"
+       ],
+       [
+        "მიყვარს — miq'vars",
+        "გიყვარს — giq'vars",
+        "უყვარს — uq'vars",
+        "cinta, suka sekali"
+       ]
+      ]
+     },
+     "after": [
+      "*ყავა მინდა* harfiahnya \"kopi diinginkan-olehku\". Karena itu kata kerjanya tidak berawalan ვ-.",
+      "⚠️ **უნდა punya dua pekerjaan.** Selain \"dia mau\", ia juga berarti \"harus\" ketika berdiri di depan kata kerja lain: *უნდა წავიდე* (saya harus pergi). Yang membedakan cuma apa yang mengikutinya."
+     ]
+    },
+    {
+     "title": "Ekor -ით: dengan, memakai, naik",
+     "body": [
+      "Satu ekor yang menggantikan tiga kata depan bahasa Indonesia sekaligus."
+     ],
+     "table": {
+      "head": [
+       "Kata dasar",
+       "Dengan ekor -ით",
+       "Cara baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "რძე — susu",
+        "რძით",
+        "rdzit",
+        "dengan susu"
+       ],
+       [
+        "შაქარი — gula",
+        "შაქრით",
+        "shakrit",
+        "dengan gula"
+       ],
+       [
+        "კვერცხი — telur",
+        "კვერცხით",
+        "k'verts'khit",
+        "dengan telur"
+       ],
+       [
+        "ყინული — es",
+        "ყინულით",
+        "q'inulit",
+        "dengan es"
+       ],
+       [
+        "კალამი — pulpen",
+        "კალმით",
+        "k'almit",
+        "dengan pulpen"
+       ],
+       [
+        "მანქანა — mobil",
+        "მანქანით",
+        "mankanit",
+        "naik mobil"
+       ]
+      ]
+     },
+     "after": [
+      "Lawannya adalah **-ის გარეშე** (tanpa) atau awalan **უ-…-ოდ**: *შაქრის გარეშე* / *უშაქროდ* — tanpa gula. Yang pertama lebih mudah dan selalu aman."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Daftar minuman, dan cara membayar",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Georgia",
+      "Cara baca",
+      "Artinya",
+      "Georgia",
+      "Cara baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "ყავა",
+       "q'ava",
+       "kopi",
+       "წყალი",
+       "ts'q'ali",
+       "air"
+      ],
+      [
+       "ჩაი",
+       "chai",
+       "teh",
+       "მინერალური წყალი",
+       "mineraluri ts'q'ali",
+       "air mineral"
+      ],
+      [
+       "რძე",
+       "rdze",
+       "susu",
+       "ლიმონათი",
+       "limonati",
+       "limun"
+      ],
+      [
+       "წვენი",
+       "ts'veni",
+       "jus",
+       "ღვინო",
+       "ghvino",
+       "anggur"
+      ],
+      [
+       "ლუდი",
+       "ludi",
+       "bir",
+       "ლიმონი",
+       "limoni",
+       "lemon"
+      ],
+      [
+       "შაქარი",
+       "shakari",
+       "gula",
+       "ყინული",
+       "q'inuli",
+       "es"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Enam kalimat untuk seluruh kunjungan ke kafe",
+     "items": [
+      "**ერთი ყავა, თუ შეიძლება.** — Satu kopi, tolong.",
+      "**მენიუ გაქვთ?** (meniu gakvt) — Ada menu?",
+      "**ეს რა არის?** — Ini apa? (menunjuk menu — kalimat dari unit 2 dipakai lagi)",
+      "**ანგარიში, თუ შეიძლება.** (angarishi) — Bonnya, tolong.",
+      "**ბარათით შეიძლება?** (baratit sheidzleba) — Bisa pakai kartu?",
+      "**ძალიან გემრიელია!** (dzalian gemrielia) — Enak sekali!"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Soal bunyi **ყ** sekali lagi, karena ia ada di kata yang akan kamu ucapkan tiap pagi. ყავა bukan \"kava\" dan bukan \"khava\": tenggorokan ditutup di pangkal lidah, lalu dilepas pendek. Kalau meleset, kamu tetap akan diberi kopi — tapi luangkan tiga puluh detik mengulang ყავა, ყველი, წყალი keras-keras sekarang, sebelum bunyi yang salah menjadi kebiasaan."
+    },
+    {
+     "type": "p",
+     "text": "Satu hal yang sering mengejutkan: di banyak kafe kecil Tbilisi, membayar dilakukan **sesudah** makan di kasir, bukan di meja, dan tidak ada yang akan datang menagih. Kalau kamu sudah selesai dan tidak ada yang mendekat, berdirilah dan ucapkan *ანგარიში, თუ შეიძლება* ke arah kasir. Tip 10% dihargai tapi tidak diwajibkan; banyak tempat sudah memasukkannya sebagai *მომსახურება* (momsakhureba, biaya layanan) di bon."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ka": "ყავა",
+   "baca": "q'ava",
+   "id": "kopi"
+  },
+  {
+   "ka": "ჩაი",
+   "baca": "chai",
+   "id": "teh"
+  },
+  {
+   "ka": "წყალი",
+   "baca": "ts'q'ali",
+   "id": "air"
+  },
+  {
+   "ka": "რძე",
+   "baca": "rdze",
+   "id": "susu"
+  },
+  {
+   "ka": "შაქარი",
+   "baca": "shakari",
+   "id": "gula"
+  },
+  {
+   "ka": "ღვინო",
+   "baca": "ghvino",
+   "id": "anggur"
+  },
+  {
+   "ka": "ლუდი",
+   "baca": "ludi",
+   "id": "bir"
+  },
+  {
+   "ka": "წვენი",
+   "baca": "ts'veni",
+   "id": "jus"
+  },
+  {
+   "ka": "ყინული",
+   "baca": "q'inuli",
+   "id": "es"
+  },
+  {
+   "ka": "პური",
+   "baca": "p'uri",
+   "id": "roti"
+  },
+  {
+   "ka": "ხაჭაპური",
+   "baca": "khach'ap'uri",
+   "id": "khachapuri (roti keju)"
+  },
+  {
+   "ka": "ყველი",
+   "baca": "q'veli",
+   "id": "keju"
+  },
+  {
+   "ka": "კვერცხი",
+   "baca": "k'verts'khi",
+   "id": "telur"
+  },
+  {
+   "ka": "მენიუ",
+   "baca": "meniu",
+   "id": "menu"
+  },
+  {
+   "ka": "ანგარიში",
+   "baca": "angarishi",
+   "id": "bon, tagihan"
+  },
+  {
+   "ka": "ბარათი",
+   "baca": "barati",
+   "id": "kartu"
+  },
+  {
+   "ka": "კაფე",
+   "baca": "k'ape",
+   "id": "kafe"
+  },
+  {
+   "ka": "რესტორანი",
+   "baca": "rest'orani",
+   "id": "restoran"
+  },
+  {
+   "ka": "მინდა",
+   "baca": "minda",
+   "id": "saya mau"
+  },
+  {
+   "ka": "გინდა",
+   "baca": "ginda",
+   "id": "kamu mau"
+  },
+  {
+   "ka": "არ მინდა",
+   "baca": "ar minda",
+   "id": "saya tidak mau"
+  },
+  {
+   "ka": "ღირს",
+   "baca": "ghirs",
+   "id": "berharga"
+  },
+  {
+   "ka": "რამდენი ღირს",
+   "baca": "ramdeni ghirs",
+   "id": "berapa harganya"
+  },
+  {
+   "ka": "ლარი",
+   "baca": "lari",
+   "id": "lari (mata uang Georgia)"
+  },
+  {
+   "ka": "გემრიელი",
+   "baca": "gemrieli",
+   "id": "enak"
+  },
+  {
+   "ka": "ცხელი",
+   "baca": "tskheli",
+   "id": "panas"
+  },
+  {
+   "ka": "ცივი",
+   "baca": "tsivi",
+   "id": "dingin"
+  },
+  {
+   "ka": "სხვა",
+   "baca": "skhva",
+   "id": "lain"
+  },
+  {
+   "ka": "რამე",
+   "baca": "rame",
+   "id": "sesuatu"
+  },
+  {
+   "ka": "განსხვავება",
+   "baca": "gansxvaveba",
+   "id": "perbedaan"
+  },
+  {
+   "ka": "თუ შეიძლება",
+   "baca": "tu sheidzleba",
+   "id": "tolong, kalau boleh"
+  },
+  {
+   "ka": "გმადლობთ",
+   "baca": "gmadlobt",
+   "id": "terima kasih (sopan)"
+  },
+  {
+   "ka": "-ით",
+   "baca": "-it",
+   "id": "dengan, memakai (ekor kata)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk \"dengan …\" (ekor -ით).",
+   "items": [
+    "რძე → ____",
+    "შაქარი → ____",
+    "ყინული → ____",
+    "კვერცხი → ____",
+    "მანქანა → ____"
+   ]
+  },
+  {
+   "prompt": "Lengkapi pesanannya.",
+   "items": [
+    "ერთი ყავა, ____ ____ (tolong)",
+    "ჩაი ____ (ada teh? — kalian punya)",
+    "შაქარი ____ ____ (saya tidak mau gula)",
+    "რამდენი ____ ? (berapa harganya)",
+    "____ , თუ შეიძლება (bonnya)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "შეიძლება / ყავა / ერთი / თუ / ,",
+    "გაქვთ / ხაჭაპური / ?",
+    "მინდა / არ / შაქარი",
+    "ღირს / რამდენი / ?",
+    "გემრიელია / ძალიან"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Georgia.",
+   "items": [
+    "Satu teh, tolong.",
+    "Ada air?",
+    "Saya mau kopi dengan susu.",
+    "Saya tidak mau gula.",
+    "Berapa harganya?",
+    "Bonnya, tolong."
+   ]
+  }
+ ],
+ "answers": [
+  "რძით — შაქრით — ყინულით — კვერცხით — მანქანით",
+  "თუ შეიძლება — გაქვთ — არ მინდა — ღირს — ანგარიში",
+  "ერთი ყავა, თუ შეიძლება. — ხაჭაპური გაქვთ? — შაქარი არ მინდა. — რამდენი ღირს? — ძალიან გემრიელია.",
+  "ერთი ჩაი, თუ შეიძლება. — წყალი გაქვთ? — ყავა რძით მინდა. — შაქარი არ მინდა. — რამდენი ღირს? — ანგარიში, თუ შეიძლება."
+ ]
+}

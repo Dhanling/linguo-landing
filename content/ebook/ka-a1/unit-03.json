@@ -1,0 +1,489 @@
+{
+ "title": "Saya dari Indonesia",
+ "title_target": "ინდონეზიიდან ვარ — Indoneziidan var",
+ "goal": "Mengatakan kamu dari mana, menyebut kebangsaan dan bahasa, dan berkenalan dengan dua ekor kata yang akan kamu pakai setiap hari: -დან (dari) dan -ად (secara).",
+ "bekal": [
+  "menjawab pertanyaan საიდან ხარ?",
+  "menyebut nama negara dan kota dengan ekor -დან",
+  "menyebut kebangsaan dengan ekor -ელი",
+  "mengatakan bahasa apa yang kamu bisa, dengan ekor -ად",
+  "mengatakan seberapa lancar: ცოტა, კარგად, საერთოდ არა"
+ ],
+ "dialogs": [
+  {
+   "title": "დიალოგი — Di antrean kedai kopi",
+   "intro": "Ani mengantre kopi dan mengobrol dengan Levan, orang yang berdiri di depannya. Perhatikan bagaimana nama negara berganti ekor begitu ia menjawab \"dari mana\" — dan bagaimana nama bahasa berganti ekor lagi begitu bicara soal berbicara.",
+   "lines": [
+    {
+     "speaker": "ლევანი:",
+     "text": "[უკაცრავად|Uk'-ats-ra-vad], [თქვენ|tkven] [ტურისტი|t'u-ris-t'i] [ხართ|khart]?",
+     "id": "Permisi, Anda turis?",
+     "literal": "permisi, Anda — turis — adalah?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[არა|A-ra], [სტუდენტი|st'u-den-t'i] [ვარ|var]. [ქართულს|Kar-tuls] [ვსწავლობ|vsts'av-lob].",
+     "id": "Bukan, saya mahasiswa. Saya belajar bahasa Georgia.",
+     "literal": "tidak, mahasiswa — saya-adalah. bahasa-Georgia — saya-belajar."
+    },
+    {
+     "speaker": "ლევანი:",
+     "text": "[მართლა|Mar-tla]? [საიდან|Sa-i-dan] [ხართ|khart]?",
+     "id": "Sungguh? Anda dari mana?",
+     "literal": "sungguh? dari-mana — Anda-adalah?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ინდონეზიიდან|In-do-ne-zi-i-dan] [ვარ|var], [ჯაკარტიდან|Ja-k'ar-t'i-dan].",
+     "id": "Saya dari Indonesia, dari Jakarta.",
+     "literal": "Indonesia-dari — saya-adalah, Jakarta-dari."
+    },
+    {
+     "speaker": "ლევანი:",
+     "text": "[ინდონეზიიდან|In-do-ne-zi-i-dan]?! [ძალიან|Dza-li-an] [შორია|sho-ri-a]. [მე|Me] [ლევანი|Le-va-ni] [ვარ|var], [ქართველი|kar-tve-li].",
+     "id": "Dari Indonesia?! Jauh sekali. Saya Levan, orang Georgia.",
+     "literal": "Indonesia-dari?! sangat — jauh-adalah. saya — Levan — adalah, orang-Georgia."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[სასიამოვნოა|Sa-si-a-mov-no-a]. [თბილისიდან|Tbi-li-si-dan] [ხართ|khart]?",
+     "id": "Senang berkenalan. Anda dari Tbilisi?",
+     "literal": "menyenangkan-adalah. Tbilisi-dari — Anda-adalah?"
+    },
+    {
+     "speaker": "ლევანი:",
+     "text": "[არა|A-ra], [ბათუმიდან|Ba-tu-mi-dan]. [ქართულად|Kar-tu-lad] [კარგად|k'ar-gad] [ლაპარაკობთ|la-p'a-ra-k'obt]!",
+     "id": "Bukan, dari Batumi. Bahasa Georgia Anda bagus!",
+     "literal": "tidak, Batumi-dari. secara-Georgia — dengan-baik — kalian-berbicara!"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[არა|A-ra], [ცოტა|tso-t'a] [ვიცი|vi-tsi]. [ინგლისურად|Ing-li-su-rad] [ლაპარაკობთ|la-p'a-ra-k'obt]?",
+     "id": "Ah tidak, saya tahu sedikit. Anda bisa bahasa Inggris?",
+     "literal": "tidak, sedikit — saya-tahu. secara-Inggris — kalian-berbicara?"
+    },
+    {
+     "speaker": "ლევანი:",
+     "text": "[ცოტა|Tso-t'a]. [რუსულად|Ru-su-lad] [უკეთესად|u-k'e-te-sad].",
+     "id": "Sedikit. Bahasa Rusia saya lebih baik.",
+     "literal": "sedikit. secara-Rusia — lebih-baik."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[მაშინ|Ma-shin] [ქართულად|kar-tu-lad] [ვილაპარაკოთ|vi-la-p'a-ra-k'ot]!",
+     "id": "Kalau begitu mari bicara bahasa Georgia saja!",
+     "literal": "kalau-begitu — secara-Georgia — mari-kita-bicara!"
+    },
+    {
+     "speaker": "ლევანი:",
+     "text": "[შესანიშნავია|She-sa-nish-na-vi-a]! [ინდონეზიურად|In-do-ne-zi-u-rad] [როგორ|ro-gor] [არის|a-ris] „[გამარჯობა|ga-mar-jo-ba]“?",
+     "id": "Bagus sekali! Bahasa Indonesianya „gamarjoba“ apa?",
+     "literal": "hebat-adalah! secara-Indonesia — bagaimana — adalah „halo“?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "„[ჰალო|Ha-lo]“ [ან|an] „[სელამატ|se-la-mat] [პაგი|p'a-gi]“ — [დილა|di-la] [მშვიდობისა|mshvi-do-bi-sa].",
+     "id": "„Halo“ atau „selamat pagi“ — selamat pagi.",
+     "literal": "„halo“ — atau — „selamat pagi“ — pagi — damai."
+    }
+   ],
+   "notes": [
+    "**-დან berarti \"dari\", dan ia menempel langsung ke nama tempatnya.** Ekor -ი luruh dulu: თბილის**ი** → თბილის**იდან**, ბათუმ**ი** → ბათუმ**იდან**. Nama yang berakhiran -ა mengubahnya jadi -ი: ჯაკარტ**ა** → ჯაკარტ**იდან**, ინდონეზი**ა** → ინდონეზი**იდან** (perhatikan dua ი berturut-turut — memang begitu, dan memang dibaca dua kali).",
+    "**Kebangsaan dibentuk dengan -ელი, dan ini rapi sekali.** ინდონეზია → ინდონეზი**ელი** (orang Indonesia), ამერიკა → ამერიკ**ელი**, იტალია → იტალი**ელი**, ჩინეთი → ჩინ**ელი**. ⚠️ Beberapa yang paling sering dipakai justru tak beraturan dan harus dihafal: **ქართველი** (orang Georgia), **რუსი** (orang Rusia), **ინგლისელი** (orang Inggris), **ბერძენი** (orang Yunani).",
+    "**Nama bahasa dibentuk dengan -ური atau -ული**, dan ini kata yang berbeda dari kebangsaan. ქართველი = orang Georgia, ქართ**ული** = bahasa Georgia. ინდონეზი**ელი** = orang Indonesia, ინდონეზი**ური** = bahasa Indonesia. ინგლის**ური**, რუს**ული**, ესპან**ური**, ჩინ**ური**.",
+    "**Dan begitu kamu bicara \"dalam\" bahasa itu, ekornya berganti lagi jadi -ად.** ქართული → ქართულ**ად** ვლაპარაკობ (saya berbicara dalam bahasa Georgia). ⚠️ Inilah titik keliru khas penutur Indonesia: *ქართული ვლაპარაკობ* terdengar seperti \"saya membicarakan bahasa Georgia\" — bendanya, bukan alatnya. Ekor -ად itu yang mengubahnya jadi \"secara Georgia\".",
+    "**ქართულს ვსწავლობ — kenapa ekornya -ს?** Karena di kalimat ini bahasa Georgia adalah **sasaran** perbuatan: yang dipelajari. Kata benda yang jadi sasaran berekor -ს. Kamu belum perlu menghafal ini; cukup catat bahwa ekor kata benda Georgia berganti menurut perannya, dan unit 9 akan membahasnya dengan tenang.",
+    "**\"Bahasa Georgia Anda bagus!\" akan kamu dengar terus, dan hampir selalu terlalu cepat.** Jawaban yang tepat bukan menyangkal keras, melainkan **არა, ცოტა ვიცი** (ah, saya tahu sedikit) atau **მადლობა, ვსწავლობ** (terima kasih, saya sedang belajar). Menyangkal berlebihan justru terdengar aneh.",
+    "**ვილაპარაკოთ = \"mari kita bicara\".** Bentuk ajakan dalam bahasa Georgia memakai ekor **-ოთ**: წავიდე**თ** (mari pergi), ვჭამო**თ** (mari makan), დავლიო**თ** (mari minum). Cukup kenali polanya sekarang; unit 15 akan memakainya sungguhan."
+   ],
+   "grammars": [
+    {
+     "title": "Negara, orangnya, dan bahasanya — tiga kata dari satu akar",
+     "body": [
+      "Tiga lajur ini adalah satu-satunya hafalan penting di unit ini. Bacalah mendatar, bukan menurun: yang perlu menempel adalah hubungan antara ketiganya."
+     ],
+     "table": {
+      "head": [
+       "Negara",
+       "Orangnya",
+       "Bahasanya",
+       "\"dari sana\""
+      ],
+      "rows": [
+       [
+        "ინდონეზია",
+        "ინდონეზიელი",
+        "ინდონეზიური",
+        "ინდონეზიიდან"
+       ],
+       [
+        "საქართველო",
+        "ქართველი",
+        "ქართული",
+        "საქართველოდან"
+       ],
+       [
+        "ინგლისი",
+        "ინგლისელი",
+        "ინგლისური",
+        "ინგლისიდან"
+       ],
+       [
+        "ამერიკა",
+        "ამერიკელი",
+        "ინგლისური",
+        "ამერიკიდან"
+       ],
+       [
+        "რუსეთი",
+        "რუსი",
+        "რუსული",
+        "რუსეთიდან"
+       ],
+       [
+        "გერმანია",
+        "გერმანელი",
+        "გერმანული",
+        "გერმანიიდან"
+       ],
+       [
+        "იაპონია",
+        "იაპონელი",
+        "იაპონური",
+        "იაპონიიდან"
+       ],
+       [
+        "თურქეთი",
+        "თურქი",
+        "თურქული",
+        "თურქეთიდან"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **საქართველო tidak ada hubungannya dengan kata \"Georgia\".** Orang Georgia menyebut negaranya Sakartvelo dan dirinya kartveli — nama \"Georgia\" datang dari luar, lewat bahasa Persia dan Yunani. Menyebut საქართველო dengan benar adalah cara paling cepat memperlihatkan bahwa kamu bukan turis biasa."
+     ]
+    },
+    {
+     "title": "Seberapa lancar? Empat jawaban jujur",
+     "body": [
+      "Semua jawaban ini memakai kata kerja **ვლაპარაკობ** (saya berbicara) atau **ვიცი** (saya tahu), dan keterangan di depannya yang berubah."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Cara baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "ქართულად კარგად ვლაპარაკობ",
+        "kartulad k'argad vlap'arak'ob",
+        "Saya bisa bahasa Georgia dengan baik"
+       ],
+       [
+        "ქართულად ცოტა ვლაპარაკობ",
+        "kartulad tsot'a vlap'arak'ob",
+        "Saya bisa sedikit bahasa Georgia"
+       ],
+       [
+        "ქართული ცოტა ვიცი",
+        "kartuli tsot'a vitsi",
+        "Saya tahu sedikit bahasa Georgia"
+       ],
+       [
+        "ქართული საერთოდ არ ვიცი",
+        "kartuli saertod ar vitsi",
+        "Saya sama sekali tidak bisa bahasa Georgia"
+       ],
+       [
+        "ქართულს ვსწავლობ",
+        "kartuls vsts'avlob",
+        "Saya sedang belajar bahasa Georgia"
+       ]
+      ]
+     },
+     "after": [
+      "Kalimat terakhir yang paling berguna. Ia menjelaskan sekaligus meminta kesabaran, dan hampir selalu dijawab dengan orang yang memperlambat bicaranya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bertanya asal dengan tiga tingkat kedalaman",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Percakapan pertama dengan orang Georgia hampir selalu menuruni tangga ini: negara, kota, lalu \"sudah berapa lama di sini\"."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pertanyaan",
+      "Cara baca",
+      "Menanyakan"
+     ],
+     "rows": [
+      [
+       "საიდან ხარ?",
+       "saidan khar",
+       "dari mana asalmu (santai)"
+      ],
+      [
+       "საიდან ხართ?",
+       "saidan khart",
+       "dari mana asal Anda (sopan)"
+      ],
+      [
+       "რომელი ქვეყნიდან ხართ?",
+       "romeli kveq'nidan khart",
+       "dari negara mana (lebih resmi)"
+      ],
+      [
+       "სად ცხოვრობ?",
+       "sad tskhovrob",
+       "kamu tinggal di mana"
+      ],
+      [
+       "რამდენი ხანია საქართველოში?",
+       "ramdeni khania Sakartveloshi",
+       "sudah berapa lama di Georgia"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga jawaban yang selalu berhasil",
+     "items": [
+      "**ინდონეზიიდან ვარ.** — jawaban aman untuk siapa pun, di mana pun.",
+      "**ინდონეზიიდან ვარ, ჯაკარტიდან.** — sekaligus menjawab kotanya. Orang Georgia umumnya mengenal Bali jauh lebih baik daripada Jakarta; *ბალი იცით? ეს ინდონეზიაა.* adalah kalimat yang membuka banyak percakapan.",
+      "⚠️ Jangan menjawab *მე ინდონეზია ვარ* — itu berarti \"saya adalah negara Indonesia\". Yang benar **ინდონეზიიდან ვარ** (dari) atau **ინდონეზიელი ვარ** (orangnya)."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu hal yang mungkin mengejutkan: pertanyaan \"sudah berapa lama di sini\" sering disusul undangan makan. Itu bukan basa-basi. Keramahan kepada tamu di Georgia punya nama sendiri — *სტუმარი ღვთისაა* (st'umari ghvtisaa), \"tamu itu milik Tuhan\" — dan unit 19 akan membahasnya lebih jauh."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ka": "საიდან",
+   "baca": "saidan",
+   "id": "dari mana"
+  },
+  {
+   "ka": "-დან",
+   "baca": "-dan",
+   "id": "dari (menempel di ekor kata)"
+  },
+  {
+   "ka": "ქვეყანა",
+   "baca": "kveq'ana",
+   "id": "negara"
+  },
+  {
+   "ka": "ქალაქი",
+   "baca": "kalaki",
+   "id": "kota"
+  },
+  {
+   "ka": "ინდონეზია",
+   "baca": "Indonezia",
+   "id": "Indonesia"
+  },
+  {
+   "ka": "ინდონეზიელი",
+   "baca": "indonezieli",
+   "id": "orang Indonesia"
+  },
+  {
+   "ka": "ინდონეზიური",
+   "baca": "indoneziuri",
+   "id": "bahasa Indonesia"
+  },
+  {
+   "ka": "საქართველო",
+   "baca": "Sakartvelo",
+   "id": "Georgia (negara)"
+  },
+  {
+   "ka": "ქართველი",
+   "baca": "kartveli",
+   "id": "orang Georgia"
+  },
+  {
+   "ka": "ქართული",
+   "baca": "kartuli",
+   "id": "bahasa Georgia"
+  },
+  {
+   "ka": "თბილისი",
+   "baca": "Tbilisi",
+   "id": "Tbilisi"
+  },
+  {
+   "ka": "ბათუმი",
+   "baca": "Batumi",
+   "id": "Batumi"
+  },
+  {
+   "ka": "ინგლისური",
+   "baca": "inglisuri",
+   "id": "bahasa Inggris"
+  },
+  {
+   "ka": "რუსული",
+   "baca": "rusuli",
+   "id": "bahasa Rusia"
+  },
+  {
+   "ka": "ენა",
+   "baca": "ena",
+   "id": "bahasa"
+  },
+  {
+   "ka": "ვლაპარაკობ",
+   "baca": "vlap'arak'ob",
+   "id": "saya berbicara"
+  },
+  {
+   "ka": "ლაპარაკობ",
+   "baca": "lap'arak'ob",
+   "id": "kamu berbicara"
+  },
+  {
+   "ka": "ლაპარაკობთ",
+   "baca": "lap'arak'obt",
+   "id": "Anda/kalian berbicara"
+  },
+  {
+   "ka": "ვსწავლობ",
+   "baca": "vsts'avlob",
+   "id": "saya belajar"
+  },
+  {
+   "ka": "ვცხოვრობ",
+   "baca": "vtskhovrob",
+   "id": "saya tinggal"
+  },
+  {
+   "ka": "ცოტა",
+   "baca": "tsot'a",
+   "id": "sedikit"
+  },
+  {
+   "ka": "კარგად",
+   "baca": "k'argad",
+   "id": "dengan baik"
+  },
+  {
+   "ka": "უკეთესად",
+   "baca": "uk'etesad",
+   "id": "lebih baik"
+  },
+  {
+   "ka": "საერთოდ",
+   "baca": "saertod",
+   "id": "sama sekali"
+  },
+  {
+   "ka": "ტურისტი",
+   "baca": "t'urist'i",
+   "id": "turis"
+  },
+  {
+   "ka": "მართლა",
+   "baca": "martla",
+   "id": "sungguh, benarkah"
+  },
+  {
+   "ka": "შორი",
+   "baca": "shori",
+   "id": "jauh"
+  },
+  {
+   "ka": "ახლო",
+   "baca": "akhlo",
+   "id": "dekat"
+  },
+  {
+   "ka": "მაშინ",
+   "baca": "mashin",
+   "id": "kalau begitu"
+  },
+  {
+   "ka": "ან",
+   "baca": "an",
+   "id": "atau"
+  },
+  {
+   "ka": "შესანიშნავი",
+   "baca": "shesanishnavi",
+   "id": "hebat, luar biasa"
+  },
+  {
+   "ka": "რომელი",
+   "baca": "romeli",
+   "id": "yang mana"
+  },
+  {
+   "ka": "ხანი",
+   "baca": "khani",
+   "id": "waktu, lama"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah nama tempat ke bentuk \"dari sana\".",
+   "items": [
+    "ინდონეზია → ____",
+    "თბილისი → ____",
+    "ჯაკარტა → ____",
+    "საქართველო → ____",
+    "ბათუმი → ____",
+    "გერმანია → ____"
+   ]
+  },
+  {
+   "prompt": "Tulis kebangsaan atau nama bahasa yang tepat.",
+   "items": [
+    "Orang dari საქართველო adalah ____",
+    "Orang dari ინდონეზია adalah ____",
+    "Bahasa di საქართველო adalah ____",
+    "Bahasa di ინდონეზია adalah ____",
+    "Orang dari იაპონია adalah ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ხართ / საიდან / ?",
+    "ვარ / ინდონეზიიდან",
+    "ვლაპარაკობ / ცოტა / ქართულად",
+    "ვსწავლობ / ქართულს",
+    "ვარ / სტუდენტი / არა / ტურისტი"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Georgia.",
+   "items": [
+    "Anda dari mana?",
+    "Saya dari Indonesia, dari Jakarta.",
+    "Saya orang Indonesia.",
+    "Saya bisa sedikit bahasa Georgia.",
+    "Saya sedang belajar bahasa Georgia.",
+    "Anda bisa bahasa Inggris?"
+   ]
+  }
+ ],
+ "answers": [
+  "ინდონეზიიდან — თბილისიდან — ჯაკარტიდან — საქართველოდან — ბათუმიდან — გერმანიიდან",
+  "ქართველი — ინდონეზიელი — ქართული — ინდონეზიური — იაპონელი",
+  "საიდან ხართ? — ინდონეზიიდან ვარ. — ქართულად ცოტა ვლაპარაკობ. — ქართულს ვსწავლობ. — სტუდენტი ვარ, არა ტურისტი.",
+  "საიდან ხართ? — ინდონეზიიდან ვარ, ჯაკარტიდან. — ინდონეზიელი ვარ. — ქართულად ცოტა ვლაპარაკობ. — ქართულს ვსწავლობ. — ინგლისურად ლაპარაკობთ?"
+ ]
+}

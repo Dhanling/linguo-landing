@@ -1,0 +1,592 @@
+{
+ "title": "Rumah dan kamar",
+ "title_target": "ჩემი სახლი — Chemi sakhli",
+ "goal": "Menjelaskan tempat tinggalmu, menyebut isi ruangan, dan memakai kata sifat di depan kata benda — termasuk saat kata bendanya berganti ekor.",
+ "bekal": [
+  "menyebut jenis tempat tinggal dan ruangannya",
+  "memakai kata sifat di depan kata benda",
+  "mengatakan ada / tidak ada sesuatu di suatu tempat",
+  "menyebut lantai dan letak barang",
+  "menjelaskan apa yang kurang saat menyewa"
+ ],
+ "dialogs": [
+  {
+   "title": "დიალოგი — Melihat apartemen sewaan",
+   "intro": "Ani mencari tempat tinggal dan melihat sebuah apartemen bersama pemiliknya, Mzia. Perhatikan kata sifat yang mendahului kata benda — dan apa yang terjadi pada ekornya saat kata bendanya masuk ke dalam bentuk lain.",
+   "lines": [
+    {
+     "speaker": "მზია:",
+     "text": "[შემობრძანდით|She-mob-rdzan-dit]! [ეს|Es] [ბინა|bi-na] [პატარაა|p'a-t'a-ra-a], [მაგრამ|mag-ram] [ნათელი|na-te-li].",
+     "id": "Silakan masuk! Apartemen ini kecil, tapi terang.",
+     "literal": "masuklah! ini — apartemen — kecil-adalah, tetapi — terang."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ლამაზია|La-ma-zi-a]. [რამდენი|Ram-de-ni] [ოთახია|o-ta-khi-a]?",
+     "id": "Bagus. Ada berapa kamar?",
+     "literal": "cantik-adalah. berapa — kamar-adalah?"
+    },
+    {
+     "speaker": "მზია:",
+     "text": "[ორი|O-ri] [ოთახი|o-ta-khi]: [საძინებელი|sa-dzi-ne-be-li] [და|da] [მისაღები|mi-sa-ghe-bi]. [სამზარეულო|Sam-za-re-u-lo] [აქ|ak] [არის|a-ris].",
+     "id": "Dua kamar: kamar tidur dan ruang tamu. Dapurnya di sini.",
+     "literal": "dua — kamar: tidur-tempat — dan — terima-tempat. dapur — di-sini — adalah."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[სამზარეულოში|Sam-za-re-u-losh-i] [მაცივარი|ma-tsi-va-ri] [არის|a-ris]?",
+     "id": "Di dapur ada kulkas?",
+     "literal": "dapur-dalam — kulkas — adalah?"
+    },
+    {
+     "speaker": "მზია:",
+     "text": "[კი|K'i], [მაცივარი|ma-tsi-va-ri], [ღუმელი|ghu-me-li] [და|da] [სარეცხი|sa-rets-khi] [მანქანა|man-ka-na] [არის|a-ris].",
+     "id": "Ya, ada kulkas, kompor, dan mesin cuci.",
+     "literal": "ya, kulkas, kompor — dan — cuci — mesin — adalah."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ცხელი|Tskhe-li] [წყალი|ts'q'a-li] [მუდამ|mu-dam] [არის|a-ris]?",
+     "id": "Air panasnya selalu ada?",
+     "literal": "panas — air — senantiasa — adalah?"
+    },
+    {
+     "speaker": "მზია:",
+     "text": "[დიახ|Di-akh], [მუდამ|mu-dam]. [ინტერნეტიც|In-t'er-ne-t'its] [სწრაფია|sts'ra-pi-a].",
+     "id": "Ya, selalu. Internetnya juga cepat.",
+     "literal": "ya, senantiasa. internet-juga — cepat-adalah."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[რომელ|Ro-mel] [სართულზეა|sar-tul-ze-a]?",
+     "id": "Di lantai berapa?",
+     "literal": "yang-mana — lantai-di-atas-adalah?"
+    },
+    {
+     "speaker": "მზია:",
+     "text": "[მეოთხეზე|Me-ot-khe-ze]. [ლიფტი|Lip-t'i] [არ|ar] [არის|a-ris], [სამწუხაროდ|sam-ts'u-kha-rod].",
+     "id": "Lantai empat. Sayangnya tidak ada lift.",
+     "literal": "keempat-di-atas. lift — tidak — adalah, sayang-sekali."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[არა|A-ra] [უშავს|u-shavs]. [რამდენი|Ram-de-ni] [ღირს|ghirs] [თვეში|tve-shi]?",
+     "id": "Tidak apa-apa. Berapa sebulan?",
+     "literal": "tidak — buruk-baginya. berapa — berharga — bulan-dalam?"
+    },
+    {
+     "speaker": "მზია:",
+     "text": "[ხუთასი|Khu-ta-si] [ლარი|la-ri], [კომუნალურის|k'o-mu-na-lu-ris] [გარეშე|ga-re-she].",
+     "id": "Lima ratus lari, belum termasuk tagihan.",
+     "literal": "lima-ratus — lari, tagihan-punya — tanpa."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[კარგი|K'ar-gi]. [ხვალამდე|Khva-lam-de] [ვიფიქრებ|vi-pik-reb], [თუ|tu] [შეიძლება|she-idz-le-ba].",
+     "id": "Baik. Saya pikirkan sampai besok, kalau boleh.",
+     "literal": "baik. besok-sampai — saya-akan-berpikir, kalau — boleh."
+    }
+   ],
+   "notes": [
+    "**Kata sifat berdiri di depan kata bendanya, persis kebalikan bahasa Indonesia.** დიდი სახლი (rumah besar), ცხელი წყალი (air panas), ლამაზი ქალაქი (kota cantik). ⚠️ Penutur Indonesia sering membaliknya — *სახლი დიდი* terdengar seperti kalimat yang belum selesai.",
+    "**Kata sifat kehilangan ekor -ი begitu kata bendanya berganti ekor.** დიდი სახლი → დიდ სახლ**ში** (di rumah besar), ცხელი ჩაი → ცხელ ჩა**ის** (teh panasnya). Itu satu-satunya perubahan yang perlu kamu ingat pada tingkat A1.",
+    "**\"Ada\" dan \"adalah\" adalah kata yang sama: არის.** *სამზარეულოში მაცივარი არის* — di dapur ada kulkas. Ingkarannya *არ არის* (tidak ada). Bahasa Georgia tidak punya kata khusus seperti \"ada/terdapat\".",
+    "**Lantai bertingkat pakai bilangan bertingkat, yang dibentuk dengan მე-…-ე**: მე**ორ**ე (kedua), მე**სამ**ე (ketiga), მე**ოთხ**ე (keempat), მე**ხუთ**ე (kelima). Yang pertama tak beraturan: **პირველი**. Pola ini juga dipakai untuk tanggal dan urutan apa pun.",
+    "**არა უშავს = \"tidak apa-apa\".** Harfiahnya \"tidak buruk baginya\". Salah satu ungkapan paling sering dipakai untuk menenangkan orang atau menerima keadaan.",
+    "**კომუნალური = tagihan listrik, air, gas.** Kata ini akan muncul di setiap iklan sewa di Georgia, biasanya sebagai *კომუნალურის გარეშე* (belum termasuk). ⚠️ Di musim dingin, tagihan gas untuk pemanas bisa menyamai setengah harga sewa — tanyakan *ზამთარში რამდენია კომუნალური?* sebelum tanda tangan.",
+    "**ხვალამდე = sampai besok.** Ekor **-მდე** berarti \"sampai\": ხვალ**ამდე**, საღამო**მდე** (sampai sore), თბილის**ამდე** (sampai Tbilisi)."
+   ],
+   "grammars": [
+    {
+     "title": "Kata sifat: di depan, dan hampir tak berubah",
+     "tables": [
+      {
+       "head": [
+        "Kata sifat",
+        "Cara baca",
+        "Artinya",
+        "Lawannya"
+       ],
+       "rows": [
+        [
+         "დიდი",
+         "didi",
+         "besar",
+         "პატარა — kecil"
+        ],
+        [
+         "ახალი",
+         "akhali",
+         "baru",
+         "ძველი — lama"
+        ],
+        [
+         "ლამაზი",
+         "lamazi",
+         "cantik, indah",
+         "უშნო — jelek"
+        ],
+        [
+         "ცხელი",
+         "tskheli",
+         "panas",
+         "ცივი — dingin"
+        ],
+        [
+         "ნათელი",
+         "nateli",
+         "terang",
+         "ბნელი — gelap"
+        ],
+        [
+         "სუფთა",
+         "supta",
+         "bersik",
+         "ჭუჭყიანი — kotor"
+        ],
+        [
+         "იაფი",
+         "iapi",
+         "murah",
+         "ძვირი — mahal"
+        ],
+        [
+         "ახლო",
+         "akhlo",
+         "dekat",
+         "შორი — jauh"
+        ],
+        [
+         "სწრაფი",
+         "sts'rapi",
+         "cepat",
+         "ნელი — lambat"
+        ],
+        [
+         "მშვიდი",
+         "mshvidi",
+         "tenang",
+         "ხმაურიანი — berisik"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Bentuk dasar",
+        "Dengan ekor",
+        "Artinya"
+       ],
+       "rows": [
+        [
+         "დიდი სახლი",
+         "დიდ სახლში",
+         "di rumah besar"
+        ],
+        [
+         "ახალი ბინა",
+         "ახალ ბინაში",
+         "di apartemen baru"
+        ],
+        [
+         "ცხელი ჩაი",
+         "ცხელ ჩაის ვსვამ",
+         "saya minum teh panas"
+        ],
+        [
+         "ლამაზი ქალაქი",
+         "ლამაზ ქალაქში",
+         "di kota yang indah"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ Kata sifat yang berakhiran **-ა** (პატარა, სუფთა) tidak berubah sama sekali: პატარა სახლ**ში**, სუფთა ოთახ**ში**. Semakin sedikit yang perlu diingat."
+     ]
+    },
+    {
+     "title": "Ada / tidak ada, dan bilangan bertingkat",
+     "table": {
+      "head": [
+       "Kalimat",
+       "Cara baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "ოთახში მაგიდაა",
+        "otakhshi magidaa",
+        "Di kamar ada meja"
+       ],
+       [
+        "ლიფტი არ არის",
+        "lip't'i ar aris",
+        "Tidak ada lift"
+       ],
+       [
+        "ინტერნეტი გაქვთ?",
+        "int'ernet'i gakvt",
+        "Ada internet?"
+       ],
+       [
+        "პირველი სართული",
+        "p'irveli sartuli",
+        "lantai satu"
+       ],
+       [
+        "მეორე სართული",
+        "meore sartuli",
+        "lantai dua"
+       ],
+       [
+        "მეოთხე სართული",
+        "meotkhe sartuli",
+        "lantai empat"
+       ],
+       [
+        "მეათე სართული",
+        "meate sartuli",
+        "lantai sepuluh"
+       ]
+      ]
+     },
+     "after": [
+      "Untuk bertanya di lantai berapa: **რომელ სართულზე?** (romel sartulze). Jawabannya memakai ekor -ზე yang sama: *მეოთხეზე* (di lantai empat)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Isi rumah",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Georgia",
+      "Cara baca",
+      "Artinya",
+      "Georgia",
+      "Cara baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "სახლი",
+       "sakhli",
+       "rumah",
+       "საწოლი",
+       "sats'oli",
+       "tempat tidur"
+      ],
+      [
+       "ბინა",
+       "bina",
+       "apartemen",
+       "მაგიდა",
+       "magida",
+       "meja"
+      ],
+      [
+       "ოთახი",
+       "otakhi",
+       "kamar, ruangan",
+       "სკამი",
+       "sk'ami",
+       "kursi"
+      ],
+      [
+       "საძინებელი",
+       "sadzinebeli",
+       "kamar tidur",
+       "კარადა",
+       "k'arada",
+       "lemari"
+      ],
+      [
+       "მისაღები",
+       "misaghebi",
+       "ruang tamu",
+       "სარკე",
+       "sark'e",
+       "cermin"
+      ],
+      [
+       "სამზარეულო",
+       "samzareulo",
+       "dapur",
+       "მაცივარი",
+       "matsivari",
+       "kulkas"
+      ],
+      [
+       "აბაზანა",
+       "abazana",
+       "kamar mandi",
+       "ღუმელი",
+       "ghumeli",
+       "kompor, oven"
+      ],
+      [
+       "ტუალეტი",
+       "t'ualet'i",
+       "toilet",
+       "სარეცხი მანქანა",
+       "saretskhi mankana",
+       "mesin cuci"
+      ],
+      [
+       "აივანი",
+       "aivani",
+       "balkon",
+       "კონდიციონერი",
+       "k'onditsioneri",
+       "AC"
+      ],
+      [
+       "სართული",
+       "sartuli",
+       "lantai (tingkat)",
+       "გათბობა",
+       "gatboba",
+       "pemanas"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Enam kalimat untuk mencari tempat tinggal",
+     "items": [
+      "**ბინა მინდა ვიქირაო.** (bina minda vikirao) — Saya mau menyewa apartemen.",
+      "**რამდენი ღირს თვეში?** — Berapa sebulan?",
+      "**კომუნალური შედის?** (k'omunaluri shedis) — Tagihan sudah termasuk?",
+      "**ცხელი წყალი მუდამ არის?** — Air panas selalu ada?",
+      "**რომელ სართულზეა?** — Di lantai berapa?",
+      "**შემიძლია ვნახო?** (shemidzlia vnakho) — Boleh saya lihat?"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua kata yang bisa menyelamatkan musim dinginmu: **გათბობა** (pemanas) dan **ცენტრალური გათბობა** (pemanas terpusat). Banyak bangunan lama di Tbilisi hanya punya pemanas gas per ruangan, dan suhu Januari di sana bisa turun di bawah nol. Pertanyaan *გათბობა როგორია?* (bagaimana pemanasnya?) jauh lebih penting daripada kelihatannya bagi orang yang datang dari daerah tropis."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ka": "სახლი",
+   "baca": "sakhli",
+   "id": "rumah"
+  },
+  {
+   "ka": "ბინა",
+   "baca": "bina",
+   "id": "apartemen"
+  },
+  {
+   "ka": "ოთახი",
+   "baca": "otakhi",
+   "id": "kamar"
+  },
+  {
+   "ka": "საძინებელი",
+   "baca": "sadzinebeli",
+   "id": "kamar tidur"
+  },
+  {
+   "ka": "მისაღები",
+   "baca": "misaghebi",
+   "id": "ruang tamu"
+  },
+  {
+   "ka": "სამზარეულო",
+   "baca": "samzareulo",
+   "id": "dapur"
+  },
+  {
+   "ka": "აბაზანა",
+   "baca": "abazana",
+   "id": "kamar mandi"
+  },
+  {
+   "ka": "აივანი",
+   "baca": "aivani",
+   "id": "balkon"
+  },
+  {
+   "ka": "სართული",
+   "baca": "sartuli",
+   "id": "lantai, tingkat"
+  },
+  {
+   "ka": "ლიფტი",
+   "baca": "lipt'i",
+   "id": "lift"
+  },
+  {
+   "ka": "საწოლი",
+   "baca": "sats'oli",
+   "id": "tempat tidur"
+  },
+  {
+   "ka": "კარადა",
+   "baca": "k'arada",
+   "id": "lemari"
+  },
+  {
+   "ka": "მაცივარი",
+   "baca": "matsivari",
+   "id": "kulkas"
+  },
+  {
+   "ka": "ღუმელი",
+   "baca": "ghumeli",
+   "id": "kompor"
+  },
+  {
+   "ka": "გათბობა",
+   "baca": "gatboba",
+   "id": "pemanas"
+  },
+  {
+   "ka": "ცხელი წყალი",
+   "baca": "tskheli ts'q'ali",
+   "id": "air panas"
+  },
+  {
+   "ka": "ინტერნეტი",
+   "baca": "int'ernet'i",
+   "id": "internet"
+  },
+  {
+   "ka": "ახალი",
+   "baca": "akhali",
+   "id": "baru"
+  },
+  {
+   "ka": "ძველი",
+   "baca": "dzveli",
+   "id": "lama"
+  },
+  {
+   "ka": "ლამაზი",
+   "baca": "lamazi",
+   "id": "cantik, indah"
+  },
+  {
+   "ka": "ნათელი",
+   "baca": "nateli",
+   "id": "terang"
+  },
+  {
+   "ka": "ბნელი",
+   "baca": "bneli",
+   "id": "gelap"
+  },
+  {
+   "ka": "სუფთა",
+   "baca": "supta",
+   "id": "bersih"
+  },
+  {
+   "ka": "სწრაფი",
+   "baca": "sts'rapi",
+   "id": "cepat"
+  },
+  {
+   "ka": "მშვიდი",
+   "baca": "mshvidi",
+   "id": "tenang"
+  },
+  {
+   "ka": "ხმაურიანი",
+   "baca": "khmauriani",
+   "id": "berisik"
+  },
+  {
+   "ka": "მუდამ",
+   "baca": "mudam",
+   "id": "senantiasa"
+  },
+  {
+   "ka": "არა უშავს",
+   "baca": "ara ushavs",
+   "id": "tidak apa-apa"
+  },
+  {
+   "ka": "სამწუხაროდ",
+   "baca": "samts'ukharod",
+   "id": "sayangnya"
+  },
+  {
+   "ka": "კომუნალური",
+   "baca": "k'omunaluri",
+   "id": "tagihan listrik/air/gas"
+  },
+  {
+   "ka": "გარეშე",
+   "baca": "gareshe",
+   "id": "tanpa"
+  },
+  {
+   "ka": "-მდე",
+   "baca": "-mde",
+   "id": "sampai"
+  },
+  {
+   "ka": "ვიფიქრებ",
+   "baca": "vipikreb",
+   "id": "saya akan pikirkan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Susun kata sifat dan kata bendanya (perhatikan ekor -ი yang luruh).",
+   "items": [
+    "დიდი + სახლი + ში → ____",
+    "ახალი + ბინა + ში → ____",
+    "ცხელი + ჩაი → ____",
+    "ლამაზი + ქალაქი + ში → ____",
+    "პატარა + ოთახი + ში → ____"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bilangan bertingkat.",
+   "items": [
+    "lantai 1 → ____ სართული",
+    "lantai 2 → ____ სართული",
+    "lantai 3 → ____ სართული",
+    "lantai 4 → ____ სართული",
+    "lantai 10 → ____ სართული"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ოთახია / რამდენი / ?",
+    "არის / არ / ლიფტი",
+    "სართულზეა / რომელ / ?",
+    "ღირს / თვეში / რამდენი / ?",
+    "არის / წყალი / ცხელი / მუდამ"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Georgia.",
+   "items": [
+    "Apartemen ini kecil tapi terang.",
+    "Ada berapa kamar?",
+    "Di dapur ada kulkas.",
+    "Tidak ada lift.",
+    "Di lantai berapa?",
+    "Berapa sebulan?"
+   ]
+  }
+ ],
+ "answers": [
+  "დიდ სახლში — ახალ ბინაში — ცხელი ჩაი — ლამაზ ქალაქში — პატარა ოთახში",
+  "პირველი — მეორე — მესამე — მეოთხე — მეათე",
+  "რამდენი ოთახია? — ლიფტი არ არის. — რომელ სართულზეა? — რამდენი ღირს თვეში? — ცხელი წყალი მუდამ არის.",
+  "ეს ბინა პატარაა, მაგრამ ნათელი. — რამდენი ოთახია? — სამზარეულოში მაცივარი არის. — ლიფტი არ არის. — რომელ სართულზეა? — რამდენი ღირს თვეში?"
+ ]
+}

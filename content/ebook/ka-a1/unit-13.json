@@ -1,0 +1,527 @@
+{
+ "title": "Naik apa ke sana?",
+ "title_target": "ავტობუსით თუ ტაქსით? — Avt'obusit tu t'aksit?",
+ "goal": "Naik angkutan umum di Georgia, membeli tiket, menyetop taksi, dan memakai ekor -ით untuk semua alat angkut sekaligus.",
+ "bekal": [
+  "menyebut alat angkut dengan ekor -ით",
+  "menanyakan bus mana yang menuju suatu tempat",
+  "membeli tiket dan bertanya berapa lama perjalanannya",
+  "memberi arah kepada sopir taksi",
+  "membaca papan dan pengumuman angkutan"
+ ],
+ "dialogs": [
+  {
+   "title": "დიალოგი — Ke Mtskheta untuk sehari",
+   "intro": "Ani dan Nino merencanakan perjalanan sehari ke Mtskheta, kota tua di utara Tbilisi. Perhatikan bahwa semua alat angkut memakai ekor yang sama — yang sudah kamu pelajari di unit 5 untuk \"kopi dengan susu\".",
+   "lines": [
+    {
+     "speaker": "ანი:",
+     "text": "[მცხეთაში|Mtskhe-tash-i] [როგორ|ro-gor] [მივიდეთ|mi-vi-det]?",
+     "id": "Bagaimana caranya kita ke Mtskheta?",
+     "literal": "Mtskheta-dalam — bagaimana — mari-kita-sampai?"
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[მარშრუტკით|Marsh-rut'-k'it] [ან|an] [ტაქსით|t'ak-sit]. [მარშრუტკა|Marsh-rut'-k'a] [უფრო|up-ro] [იაფია|i-a-pi-a].",
+     "id": "Naik marshrutka atau taksi. Marshrutka lebih murah.",
+     "literal": "marshrutka-dengan — atau — taksi-dengan. marshrutka — lebih — murah-adalah."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[რამდენი|Ram-de-ni] [ღირს|ghirs] [მარშრუტკა|marsh-rut'-k'a]?",
+     "id": "Marshrutka berapa?",
+     "literal": "berapa — berharga — marshrutka?"
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[სამი|Sa-mi] [ლარი|la-ri]. [ტაქსი|T'ak-si] [ორმოცი|or-mo-tsi] [ლარი|la-ri] [იქნება|ik-ne-ba].",
+     "id": "Tiga lari. Taksi mungkin empat puluh lari.",
+     "literal": "tiga — lari. taksi — empat-puluh — lari — akan-jadi."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[მარშრუტკით|Marsh-rut'-k'it] [წავიდეთ|ts'a-vi-det]. [საიდან|Sa-i-dan] [გადის|ga-dis]?",
+     "id": "Naik marshrutka saja. Berangkat dari mana?",
+     "literal": "marshrutka-dengan — mari-kita-pergi. dari-mana — berangkat?"
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[დიდუბის|Di-du-bis] [სადგურიდან|sad-gu-ri-dan]. [მეტროთი|Met'-ro-ti] [მივალთ|mi-valt] [იქამდე|i-kam-de].",
+     "id": "Dari terminal Didube. Kita ke sana naik metro.",
+     "literal": "Didube-punya — stasiun-dari. metro-dengan — kita-akan-sampai — sana-sampai."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[რამდენი|Ram-de-ni] [ხანი|kha-ni] [სჭირდება|sch'ir-de-ba]?",
+     "id": "Berapa lama perjalanannya?",
+     "literal": "berapa — waktu — diperlukan?"
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[ნახევარი|Na-khe-va-ri] [საათი|sa-a-ti], [თუ|tu] [საცობი|sa-tso-bi] [არ|ar] [არის|a-ris].",
+     "id": "Setengah jam, kalau tidak macet.",
+     "literal": "setengah — jam, kalau — kemacetan — tidak — adalah."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ბილეთი|Bi-le-ti] [სად|sad] [ვიყიდოთ|vi-q'i-dot]?",
+     "id": "Tiketnya beli di mana?",
+     "literal": "tiket — di-mana — mari-kita-beli?"
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[მძღოლს|Mdzghols] [გადავუხდით|ga-da-vukh-dit], [პირდაპირ|p'ir-da-p'ir]. [ხურდა|Khur-da] [გქონდეს|gkon-des]!",
+     "id": "Kita bayar langsung ke sopirnya. Siapkan uang kecil!",
+     "literal": "sopir-kepada — kita-akan-membayar, langsung. kembalian — semoga-kamu-punya!"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[როდის|Ro-dis] [გავიდეთ|ga-vi-det]?",
+     "id": "Kita berangkat jam berapa?",
+     "literal": "kapan — mari-kita-keluar?"
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[ცხრა|Tskhra] [საათზე|sa-at-ze]. [მარშრუტკა|Marsh-rut'-k'a] [ყოველ|q'o-vel] [ოც|ots] [წუთში|ts'ut-shi] [გადის|ga-dis].",
+     "id": "Jam sembilan. Marshrutka berangkat tiap dua puluh menit.",
+     "literal": "sembilan — jam-pada. marshrutka — setiap — dua-puluh — menit-dalam — berangkat."
+    }
+   ],
+   "notes": [
+    "**Semua alat angkut memakai ekor -ით — satu ekor untuk semua.** ავტობუს**ით** (naik bus), მეტრო**თი** (naik metro), ტაქს**ით** (naik taksi), მატარებლ**ით** (naik kereta), თვითმფრინავ**ით** (naik pesawat), ფეხ**ით** (jalan kaki). ⚠️ Tidak ada kata depan sama sekali; jangan mencari padanan \"naik\" atau \"dengan\" — ekornya sudah menjadi keduanya.",
+    "**მარშრუტკა adalah tulang punggung angkutan Georgia.** Minibus empat belas kursi yang berjalan di rute tetap tapi berhenti di mana saja kalau kamu memberi isyarat. Kata untuk berhenti: **გამიჩერეთ!** (gamicheret — berhentikan untuk saya!), atau lebih halus *აქ გავალ* (ak gaval — saya turun di sini).",
+    "**Bayar ke sopir, dan siapkan uang pas.** Di marshrutka pembayaran dilakukan saat naik atau saat turun, tergantung rute. ⚠️ Uang 50 atau 100 lari akan ditolak; *ხურდა გქონდეს* (siapkan kembalian) adalah nasihat yang serius.",
+    "**წავიდეთ, მივიდეთ, გავიდეთ — tiga bentuk ajakan dari kata kerja gerak.** Ekor **-ეთ**/-ოთ berarti \"mari kita…\". წავიდეთ (mari pergi), მივიდეთ (mari sampai ke sana), ვიყიდოთ (mari beli). Kamu belum perlu membentuknya sendiri; kenali saja artinya.",
+    "**სჭირდება = diperlukan.** Kerabat dekat მჭირდება (saya perlu) dari unit 7. *რამდენი ხანი სჭირდება?* — berapa lama diperlukan? Kalimat baku untuk menanyakan lama perjalanan apa pun.",
+    "**საცობი = kemacetan.** Kata harian di Tbilisi, sama seperti di Jakarta. *საცობია* (macet), *საცობში ვარ* (saya di tengah macet).",
+    "**ყოველ ოც წუთში = setiap dua puluh menit.** Pola ini berguna: ყოველ საათში (tiap jam), ყოველ დღე (tiap hari), ყოველ კვირას (tiap minggu)."
+   ],
+   "grammars": [
+    {
+     "title": "Alat angkut dengan ekor -ით",
+     "table": {
+      "head": [
+       "Kata dasar",
+       "Dengan -ით",
+       "Cara baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "ავტობუსი",
+        "ავტობუსით",
+        "avt'obusit",
+        "naik bus"
+       ],
+       [
+        "მარშრუტკა",
+        "მარშრუტკით",
+        "marshrut'k'it",
+        "naik marshrutka"
+       ],
+       [
+        "მეტრო",
+        "მეტროთი",
+        "met'roti",
+        "naik metro"
+       ],
+       [
+        "ტაქსი",
+        "ტაქსით",
+        "t'aksit",
+        "naik taksi"
+       ],
+       [
+        "მანქანა",
+        "მანქანით",
+        "mankanit",
+        "naik mobil"
+       ],
+       [
+        "მატარებელი",
+        "მატარებლით",
+        "mat'areblit",
+        "naik kereta"
+       ],
+       [
+        "თვითმფრინავი",
+        "თვითმფრინავით",
+        "tvitmprinavit",
+        "naik pesawat"
+       ],
+       [
+        "ველოსიპედი",
+        "ველოსიპედით",
+        "velosip'edit",
+        "naik sepeda"
+       ],
+       [
+        "ფეხი",
+        "ფეხით",
+        "pekhit",
+        "jalan kaki"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan **მეტრო → მეტროთი**: kata yang berakhiran vokal menyisipkan -თ sebelum -ი. Dan **მატარებელი → მატარებლით**: vokal ე di suku terakhir luruh. Dua penyimpangan kecil ini akan kamu kenali sendiri dengan kebiasaan."
+     ]
+    },
+    {
+     "title": "Kalimat wajib di angkutan umum",
+     "table": {
+      "head": [
+       "Kalimat",
+       "Cara baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "რომელი ავტობუსი მიდის…?",
+        "romeli avt'obusi midis",
+        "Bus nomor berapa yang ke…?"
+       ],
+       [
+        "ეს ავტობუსი მიდის…-ში?",
+        "es avt'obusi midis …shi",
+        "Bus ini ke… ?"
+       ],
+       [
+        "სად უნდა გადავჯდე?",
+        "sad unda gadavjde",
+        "Di mana saya harus pindah?"
+       ],
+       [
+        "გამიჩერეთ, თუ შეიძლება!",
+        "gamicheret, tu sheidzleba",
+        "Berhenti, tolong!"
+       ],
+       [
+        "აქ გავალ",
+        "ak gaval",
+        "Saya turun di sini"
+       ],
+       [
+        "შემდეგ გაჩერებაზე",
+        "shemdeg gacherebaze",
+        "Di halte berikutnya"
+       ],
+       [
+        "რამდენი ხანი სჭირდება?",
+        "ramdeni khani sch'irdeba",
+        "Berapa lama?"
+       ],
+       [
+        "საცობია",
+        "satsobia",
+        "Macet"
+       ]
+      ]
+     },
+     "after": [
+      "Untuk taksi: aplikasi (Bolt, Yandex) dipakai luas di Tbilisi dan menghindarkan tawar-menawar. Kalau menyetop di jalan, tanyakan harganya **sebelum** naik: *რამდენი გამიწევს …-მდე?* (ramdeni gamits'evs …mde — berapa sampai ke…?)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di jalan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Georgia",
+      "Cara baca",
+      "Artinya",
+      "Georgia",
+      "Cara baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "ავტობუსი",
+       "avt'obusi",
+       "bus",
+       "ბილეთი",
+       "bileti",
+       "tiket"
+      ],
+      [
+       "მარშრუტკა",
+       "marshrut'k'a",
+       "minibus rute",
+       "მძღოლი",
+       "mdzgholi",
+       "sopir"
+      ],
+      [
+       "მეტრო",
+       "met'ro",
+       "metro",
+       "მგზავრი",
+       "mgzavri",
+       "penumpang"
+      ],
+      [
+       "ტაქსი",
+       "t'aksi",
+       "taksi",
+       "გაჩერება",
+       "gachereba",
+       "halte"
+      ],
+      [
+       "მატარებელი",
+       "mat'arebeli",
+       "kereta",
+       "სადგური",
+       "sadguri",
+       "stasiun, terminal"
+      ],
+      [
+       "თვითმფრინავი",
+       "tvitmprinavi",
+       "pesawat",
+       "აეროპორტი",
+       "aerop'ort'i",
+       "bandara"
+      ],
+      [
+       "მანქანა",
+       "mankana",
+       "mobil",
+       "საცობი",
+       "satsobi",
+       "kemacetan"
+      ],
+      [
+       "ველოსიპედი",
+       "velosip'edi",
+       "sepeda",
+       "გზა",
+       "gza",
+       "jalan (rute)"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal praktis tentang angkutan Tbilisi",
+     "items": [
+      "**Metro dan bus dibayar dengan kartu** (მეტრომანი / Metromoney) atau kartu bank tanpa sentuh. Sekali jalan sekitar satu lari, dan pindah moda dalam sembilan puluh menit gratis.",
+      "**Marshrutka antarkota berangkat dari terminal**, bukan dari halte: დიდუბე (arah barat dan utara), ისანი (arah timur), ორთაჭალა (arah selatan). Tidak ada jadwal tetap — kendaraan berangkat begitu penuh.",
+      "**Kereta ke Batumi** berangkat dari სადგურის მოედანი dan jauh lebih nyaman daripada marshrutka untuk perjalanan panjang. Tiketnya dibeli daring atau di stasiun; kata yang perlu: *ბილეთი ბათუმამდე* (tiket sampai Batumi)."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu kata yang akan kamu lihat di setiap papan: **გასვლა** (gasvla — keluar/berangkat) dan **შესვლა** (shesvla — masuk). Di stasiun metro, **გამოსასვლელი** berarti pintu keluar. Ketiganya berasal dari akar kata kerja gerak yang sama, dan begitu kamu mengenali -სვლ- di tengah kata, banyak papan nama jadi terbaca sendiri."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ka": "ავტობუსი",
+   "baca": "avt'obusi",
+   "id": "bus"
+  },
+  {
+   "ka": "მარშრუტკა",
+   "baca": "marshrut'k'a",
+   "id": "minibus rute"
+  },
+  {
+   "ka": "მეტრო",
+   "baca": "met'ro",
+   "id": "metro"
+  },
+  {
+   "ka": "ტაქსი",
+   "baca": "t'aksi",
+   "id": "taksi"
+  },
+  {
+   "ka": "მატარებელი",
+   "baca": "mat'arebeli",
+   "id": "kereta"
+  },
+  {
+   "ka": "თვითმფრინავი",
+   "baca": "tvitmprinavi",
+   "id": "pesawat"
+  },
+  {
+   "ka": "მანქანა",
+   "baca": "mankana",
+   "id": "mobil"
+  },
+  {
+   "ka": "ველოსიპედი",
+   "baca": "velosip'edi",
+   "id": "sepeda"
+  },
+  {
+   "ka": "ბილეთი",
+   "baca": "bileti",
+   "id": "tiket"
+  },
+  {
+   "ka": "მძღოლი",
+   "baca": "mdzgholi",
+   "id": "sopir"
+  },
+  {
+   "ka": "მგზავრი",
+   "baca": "mgzavri",
+   "id": "penumpang"
+  },
+  {
+   "ka": "გაჩერება",
+   "baca": "gachereba",
+   "id": "halte"
+  },
+  {
+   "ka": "სადგური",
+   "baca": "sadguri",
+   "id": "stasiun, terminal"
+  },
+  {
+   "ka": "გზა",
+   "baca": "gza",
+   "id": "jalan, rute"
+  },
+  {
+   "ka": "საცობი",
+   "baca": "satsobi",
+   "id": "kemacetan"
+  },
+  {
+   "ka": "გადის",
+   "baca": "gadis",
+   "id": "berangkat"
+  },
+  {
+   "ka": "მიდის",
+   "baca": "midis",
+   "id": "pergi (ke arah)"
+  },
+  {
+   "ka": "გამიჩერეთ",
+   "baca": "gamicheret",
+   "id": "berhenti, tolong"
+  },
+  {
+   "ka": "გავალ",
+   "baca": "gaval",
+   "id": "saya turun, saya keluar"
+  },
+  {
+   "ka": "შემდეგი",
+   "baca": "shemdegi",
+   "id": "berikutnya"
+  },
+  {
+   "ka": "სჭირდება",
+   "baca": "sch'irdeba",
+   "id": "diperlukan"
+  },
+  {
+   "ka": "ხანი",
+   "baca": "khani",
+   "id": "lama, waktu"
+  },
+  {
+   "ka": "იაფი",
+   "baca": "iapi",
+   "id": "murah"
+  },
+  {
+   "ka": "ძვირი",
+   "baca": "dzviri",
+   "id": "mahal"
+  },
+  {
+   "ka": "ყოველ",
+   "baca": "q'ovel",
+   "id": "setiap"
+  },
+  {
+   "ka": "გასვლა",
+   "baca": "gasvla",
+   "id": "keluar, berangkat"
+  },
+  {
+   "ka": "შესვლა",
+   "baca": "shesvla",
+   "id": "masuk"
+  },
+  {
+   "ka": "ხურდა",
+   "baca": "khurda",
+   "id": "uang kecil, kembalian"
+  },
+  {
+   "ka": "იქამდე",
+   "baca": "ikamde",
+   "id": "sampai ke sana"
+  },
+  {
+   "ka": "წავიდეთ",
+   "baca": "ts'avidet",
+   "id": "mari kita pergi"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk \"naik …\" (ekor -ით).",
+   "items": [
+    "ავტობუსი → ____",
+    "ტაქსი → ____",
+    "მეტრო → ____",
+    "მანქანა → ____",
+    "ფეხი → ____",
+    "მატარებელი → ____"
+   ]
+  },
+  {
+   "prompt": "Lengkapi kalimat di angkutan umum.",
+   "items": [
+    "____ ავტობუსი მიდის მცხეთაში? (yang mana)",
+    "____ ღირს ბილეთი? (berapa)",
+    "____ , თუ შეიძლება! (berhentikan saya)",
+    "აქ ____ (saya turun)",
+    "რამდენი ხანი ____ ? (diperlukan)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "წავიდეთ / მარშრუტკით",
+    "გადის / საიდან / ?",
+    "სჭირდება / ხანი / რამდენი / ?",
+    "იაფია / უფრო / მარშრუტკა",
+    "გქონდეს / ხურდა"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Georgia.",
+   "items": [
+    "Bagaimana caranya ke Mtskheta?",
+    "Naik bus atau taksi.",
+    "Berapa harga tiketnya?",
+    "Berapa lama perjalanannya?",
+    "Berhenti di sini, tolong!",
+    "Saya turun di halte berikutnya."
+   ]
+  }
+ ],
+ "answers": [
+  "ავტობუსით — ტაქსით — მეტროთი — მანქანით — ფეხით — მატარებლით",
+  "რომელი — რამდენი — გამიჩერეთ — გავალ — სჭირდება",
+  "მარშრუტკით წავიდეთ. — საიდან გადის? — რამდენი ხანი სჭირდება? — მარშრუტკა უფრო იაფია. — ხურდა გქონდეს.",
+  "მცხეთაში როგორ მივიდეთ? — ავტობუსით ან ტაქსით. — რამდენი ღირს ბილეთი? — რამდენი ხანი სჭირდება? — აქ გამიჩერეთ, თუ შეიძლება! — შემდეგ გაჩერებაზე გავალ."
+ ]
+}

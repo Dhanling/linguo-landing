@@ -1,0 +1,544 @@
+{
+ "title": "Ini apa, itu siapa",
+ "title_target": "ეს რა არის? — Es ra aris?",
+ "goal": "Menunjuk benda dan orang di sekitarmu, bertanya nama benda dalam bahasa Georgia, menjawab ya dan tidak, dan membentuk jamak dengan satu ekor yang sama untuk semua kata.",
+ "bekal": [
+  "membedakan ეს (ini) dan ის (itu)",
+  "bertanya ეს რა არის? dan ის ვინ არის?",
+  "menjawab dengan bentuk pendek -ია / -ა",
+  "memakai კი, დიახ, არა, dan არ pada tempatnya masing-masing",
+  "membentuk jamak apa pun dengan ekor -ები"
+ ],
+ "dialogs": [
+  {
+   "title": "დიალოგი — Di dalam kelas",
+   "intro": "Pelajaran kedua. Giorgi, guru itu, menunjuk benda-benda di ruangan dan Ani menyebutkan namanya. Perhatikan bagaimana kata kerja \"adalah\" menempel di ekor kata bendanya — di seluruh dialog ini hampir tak ada kata არის yang berdiri sendiri.",
+   "lines": [
+    {
+     "speaker": "გიორგი:",
+     "text": "[ანი|A-ni], [ეს|es] [რა|ra] [არის|a-ris]?",
+     "id": "Ani, ini apa?",
+     "literal": "Ani, ini — apa — adalah?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ეს|Es] [წიგნია|ts'ig-ni-a].",
+     "id": "Ini buku.",
+     "literal": "ini — buku-adalah."
+    },
+    {
+     "speaker": "გიორგი:",
+     "text": "[სწორია|Sts'o-ri-a]. [და|Da] [ეს|es]?",
+     "id": "Betul. Kalau ini?",
+     "literal": "benar-adalah. dan — ini?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ეს|Es] [კალამია|k'a-la-mi-a]… [არა|a-ra], [ფანქარია|pan-ka-ri-a].",
+     "id": "Ini pulpen… bukan, pensil.",
+     "literal": "ini — pulpen-adalah… tidak, pensil-adalah."
+    },
+    {
+     "speaker": "გიორგი:",
+     "text": "[ყოჩაღ|Q'o-chagh]! [ის|Is] [რა|ra] [არის|a-ris]?",
+     "id": "Mantap! Itu apa?",
+     "literal": "mantap! itu — apa — adalah?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ის|Is] [მაგიდაა|ma-gi-da-a]. [მაგიდაზე|Ma-gi-da-ze] [წიგნებია|ts'ig-ne-bi-a].",
+     "id": "Itu meja. Di atas meja ada buku-buku.",
+     "literal": "itu — meja-adalah. meja-di-atas — buku-buku-adalah."
+    },
+    {
+     "speaker": "გიორგი:",
+     "text": "[რამდენი|Ram-de-ni] [წიგნია|ts'ig-ni-a]?",
+     "id": "Berapa bukunya?",
+     "literal": "berapa — buku-adalah?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[სამი|Sa-mi] [წიგნი|ts'ig-ni]. [და|Da] [ერთი|er-ti] [ჩანთა|chan-ta].",
+     "id": "Tiga buku. Dan satu tas.",
+     "literal": "tiga — buku. dan — satu — tas."
+    },
+    {
+     "speaker": "გიორგი:",
+     "text": "[ძალიან|Dza-li-an] [კარგი|k'ar-gi]. [ეს|Es] [კი|k'i]?",
+     "id": "Bagus sekali. Kalau yang ini?",
+     "literal": "sangat — baik. ini — pun?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[არ|Ar] [ვიცი|vi-tsi]. [ქართულად|Kar-tu-lad] [როგორ|ro-gor] [არის|a-ris]?",
+     "id": "Tidak tahu. Bahasa Georgianya apa?",
+     "literal": "tidak — saya-tahu. secara-Georgia — bagaimana — adalah?"
+    },
+    {
+     "speaker": "გიორგი:",
+     "text": "[ეს|Es] [ფანჯარაა|pan-ja-ra-a]. [გაიმეორე|Ga-i-me-o-re]: [ფანჯარა|pan-ja-ra].",
+     "id": "Ini jendela. Ulangi: panjara.",
+     "literal": "ini — jendela-adalah. ulangi: jendela."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ფანჯარა|Pan-ja-ra]. [ეს|Es] [კარია|k'a-ri-a], [არა|a-ra]?",
+     "id": "Panjara. Ini pintu, kan?",
+     "literal": "jendela. ini — pintu-adalah, tidak?"
+    },
+    {
+     "speaker": "გიორგი:",
+     "text": "[დიახ|Di-akh], [კარია|k'a-ri-a]. [ყოჩაღ|Q'o-chagh], [ანი|A-ni]!",
+     "id": "Ya, itu pintu. Mantap, Ani!",
+     "literal": "ya, pintu-adalah. mantap, Ani!"
+    }
+   ],
+   "notes": [
+    "**ეს = ini (dekat), ის = itu (jauh).** ⚠️ Perhatikan bahwa **ის juga berarti \"dia\"** — kata yang sama persis. *ის ვინ არის?* bisa berarti \"itu siapa?\" maupun \"dia siapa?\", dan yang menentukan cuma keadaannya: kalau kamu sedang menunjuk, artinya \"itu\". Bahasa Georgia tidak merasa perlu membedakan orang dan benda di sini.",
+    "**\"Adalah\" menempel jadi -ა atau -ია.** Kata benda berakhiran **-ი** kehilangan -ი-nya lalu ditambah **-ია**: წიგნ**ი** → წიგნ**ია**, კარ**ი** → კარ**ია**. Kata berakhiran **-ა** cukup ditambah **-ა**: მაგიდა → მაგიდა**ა** (dibaca dengan a agak panjang), ფანჯარა → ფანჯარა**ა**. Bentuk panjangnya (წიგნი არის) tidak salah, tapi terdengar seperti membaca daftar.",
+    "**არ dan არა adalah dua kata yang berbeda.** ⚠️ Ini titik keliru khas penutur Indonesia, yang punya satu kata \"tidak\" untuk semua keadaan. **არა** = \"tidak\" yang berdiri sendiri, jawaban atas pertanyaan. **არ** = penanda ingkar yang dipasang **di depan kata kerja**: არ ვიცი (saya tidak tahu), არ არის (bukan/tidak ada). Jangan pernah menjawab pertanyaan dengan არ sendirian.",
+    "**ვიცი berarti \"saya tahu\", dan bentuknya tidak berawalan ვ- biasa.** Ia salah satu dari segelintir kata kerja tak beraturan yang paling sering dipakai: ვიცი (saya tahu), იცი (kamu tahu), იცის (dia tahu). Hafalkan ketiganya sekarang; kamu akan memakainya tiap hari.",
+    "**ქართულად როგორ არის? — hafalkan kalimat ini utuh.** Artinya \"bahasa Georgianya apa?\", dan ini satu-satunya kalimat yang membuat kamu bisa menambah kosakata tanpa kamus, langsung dari orang di depanmu. Ekor **-ად** pada ქართულ**ად** berarti \"secara/dalam\", dan akan dibahas penuh di unit berikutnya.",
+    "**რამდენი წიგნია? — bendanya tetap tunggal.** ⚠️ Sesudah angka atau kata \"berapa\", kata benda Georgia **tidak** dijamakkan: სამი წიგნი (tiga buku), ათი ლარი (sepuluh lari). Ini kelonggaran, bukan jebakan — persis seperti bahasa Indonesia. Yang salah justru სამი წიგნები.",
+    "**ყოჩაღ!** (q'ochagh) — pujian sehari-hari yang artinya kira-kira \"mantap, kerja bagus\". Dipakai guru kepada murid, orang tua kepada anak, dan teman kepada teman. Kalau kamu mendengarnya, kamu sedang melakukan sesuatu dengan benar."
+   ],
+   "grammars": [
+    {
+     "title": "Jamak: satu ekor untuk semua kata, tanpa kecuali",
+     "body": [
+      "Sesudah bergulat dengan jamak bahasa Inggris (child/children, mouse/mice) atau Rusia, bagian ini terasa seperti hadiah. Bahasa Georgia membentuk jamak dengan **-ები** untuk kata apa pun, tanpa satu pun bentuk tak beraturan."
+     ],
+     "table": {
+      "head": [
+       "Tunggal",
+       "Jamak",
+       "Cara baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "წიგნი",
+        "წიგნები",
+        "ts'ignebi",
+        "buku-buku"
+       ],
+       [
+        "სახლი",
+        "სახლები",
+        "sakhlebi",
+        "rumah-rumah"
+       ],
+       [
+        "კაცი",
+        "კაცები",
+        "k'atsebi",
+        "orang laki-laki"
+       ],
+       [
+        "ქალი",
+        "ქალები",
+        "kalebi",
+        "perempuan"
+       ],
+       [
+        "მაგიდა",
+        "მაგიდები",
+        "magidebi",
+        "meja-meja"
+       ],
+       [
+        "ჩანთა",
+        "ჩანთები",
+        "chantebi",
+        "tas-tas"
+       ]
+      ]
+     },
+     "after": [
+      "Aturannya cuma satu: **vokal terakhir luruh dulu**, baru -ები dipasang. წიგნ**ი** → წიგნ**ები**, მაგიდ**ა** → მაგიდ**ები**.",
+      "⚠️ Tapi ingat catatan di atas: **sesudah angka, jamak tidak dipakai**. Jamak dipakai kalau jumlahnya tidak disebut — *მაგიდაზე წიგნებია* (di atas meja ada buku-buku), tapi *მაგიდაზე სამი წიგნია* (di atas meja ada tiga buku)."
+     ]
+    },
+    {
+     "title": "Ya, tidak, dan bukan",
+     "body": [
+      "Bahasa Georgia punya tiga cara mengatakan \"ya\" yang berbeda tingkat kesopanannya, dan memilih yang salah tidak berbahaya — cuma terdengar terlalu santai atau terlalu kaku."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Cara baca",
+       "Artinya",
+       "Kapan dipakai"
+      ],
+      "rows": [
+       [
+        "დიახ",
+        "diakh",
+        "ya",
+        "resmi, sopan, kepada orang yang dihormati"
+       ],
+       [
+        "კი",
+        "k'i",
+        "ya",
+        "sehari-hari, aman untuk hampir semua keadaan"
+       ],
+       [
+        "ჰო",
+        "ho",
+        "iya",
+        "sangat santai, di antara teman dekat"
+       ],
+       [
+        "არა",
+        "ara",
+        "tidak, bukan",
+        "jawaban yang berdiri sendiri"
+       ],
+       [
+        "არ",
+        "ar",
+        "tidak",
+        "selalu menempel di depan kata kerja"
+       ],
+       [
+        "არა უშავს",
+        "ara ushavs",
+        "tidak apa-apa",
+        "menolak halus atau menenangkan"
+       ]
+      ]
+     },
+     "after": [
+      "Satu kebiasaan yang membingungkan orang asing: menjawab pertanyaan bernada negatif. Kalau seseorang bertanya *ჩაი არ გინდა?* (tidak mau teh?), jawaban **კი** berarti \"benar, saya tidak mau\" bagi sebagian orang dan \"mau!\" bagi sebagian yang lain. Amannya, jangan menjawab dengan satu kata: ucapkan **კი, მინდა** atau **არა, არ მინდა**."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Benda yang ada di sekitarmu sekarang",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Cara tercepat menambah kosakata di minggu pertama bukan menghafal daftar, tapi menamai benda yang benar-benar ada di depan matamu. Baca lajur kiri sambil menunjuk bendanya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Georgia",
+      "Cara baca",
+      "Artinya",
+      "Georgia",
+      "Cara baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "წიგნი",
+       "ts'igni",
+       "buku",
+       "კარი",
+       "k'ari",
+       "pintu"
+      ],
+      [
+       "რვეული",
+       "rveuli",
+       "buku tulis",
+       "ფანჯარა",
+       "panjara",
+       "jendela"
+      ],
+      [
+       "კალამი",
+       "k'alami",
+       "pulpen",
+       "სკამი",
+       "sk'ami",
+       "kursi"
+      ],
+      [
+       "ფანქარი",
+       "pankari",
+       "pensil",
+       "მაგიდა",
+       "magida",
+       "meja"
+      ],
+      [
+       "ჩანთა",
+       "chanta",
+       "tas",
+       "კედელი",
+       "k'edeli",
+       "dinding"
+      ],
+      [
+       "ტელეფონი",
+       "t'eleponi",
+       "telepon",
+       "იატაკი",
+       "iat'ak'i",
+       "lantai"
+      ],
+      [
+       "კომპიუტერი",
+       "k'omp'iut'eri",
+       "komputer",
+       "ჭიქა",
+       "ch'ika",
+       "gelas"
+      ],
+      [
+       "გასაღები",
+       "gasaghebi",
+       "kunci",
+       "დაფა",
+       "dapa",
+       "papan tulis"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat kalimat untuk dipakai di kelas mana pun",
+     "items": [
+      "**ეს ქართულად როგორ არის?** — Bahasa Georgianya apa?",
+      "**გაიმეორეთ, თუ შეიძლება.** (gaimeoret, tu sheidzleba) — Tolong ulangi.",
+      "**ნელა, თუ შეიძლება.** (nela, tu sheidzleba) — Pelan-pelan, tolong.",
+      "**როგორ იწერება?** (rogor its'ereba) — Bagaimana menulisnya?"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan **თუ შეიძლება** (tu sheidzleba) — harfiahnya \"kalau boleh\", dan inilah kata \"tolong\" dalam bahasa Georgia. Ia dipasang di ujung kalimat, bukan di depan seperti *please*. Kamu akan memakainya sepanjang sisa modul ini, terutama saat memesan di kafe pada unit 5."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ka": "ეს",
+   "baca": "es",
+   "id": "ini"
+  },
+  {
+   "ka": "ის",
+   "baca": "is",
+   "id": "itu; dia"
+  },
+  {
+   "ka": "წიგნი",
+   "baca": "ts'igni",
+   "id": "buku"
+  },
+  {
+   "ka": "კალამი",
+   "baca": "k'alami",
+   "id": "pulpen"
+  },
+  {
+   "ka": "ფანქარი",
+   "baca": "pankari",
+   "id": "pensil"
+  },
+  {
+   "ka": "რვეული",
+   "baca": "rveuli",
+   "id": "buku tulis"
+  },
+  {
+   "ka": "ჩანთა",
+   "baca": "chanta",
+   "id": "tas"
+  },
+  {
+   "ka": "მაგიდა",
+   "baca": "magida",
+   "id": "meja"
+  },
+  {
+   "ka": "სკამი",
+   "baca": "sk'ami",
+   "id": "kursi"
+  },
+  {
+   "ka": "კარი",
+   "baca": "k'ari",
+   "id": "pintu"
+  },
+  {
+   "ka": "ფანჯარა",
+   "baca": "panjara",
+   "id": "jendela"
+  },
+  {
+   "ka": "ჭიქა",
+   "baca": "ch'ika",
+   "id": "gelas"
+  },
+  {
+   "ka": "გასაღები",
+   "baca": "gasaghebi",
+   "id": "kunci"
+  },
+  {
+   "ka": "ტელეფონი",
+   "baca": "t'eleponi",
+   "id": "telepon"
+  },
+  {
+   "ka": "კაცი",
+   "baca": "k'atsi",
+   "id": "laki-laki"
+  },
+  {
+   "ka": "ქალი",
+   "baca": "kali",
+   "id": "perempuan"
+  },
+  {
+   "ka": "ბიჭი",
+   "baca": "bich'i",
+   "id": "anak laki-laki"
+  },
+  {
+   "ka": "გოგო",
+   "baca": "gogo",
+   "id": "anak perempuan"
+  },
+  {
+   "ka": "დიახ",
+   "baca": "diakh",
+   "id": "ya (sopan)"
+  },
+  {
+   "ka": "კი",
+   "baca": "k'i",
+   "id": "ya"
+  },
+  {
+   "ka": "არა",
+   "baca": "ara",
+   "id": "tidak, bukan"
+  },
+  {
+   "ka": "არ",
+   "baca": "ar",
+   "id": "tidak (di depan kata kerja)"
+  },
+  {
+   "ka": "ვიცი",
+   "baca": "vitsi",
+   "id": "saya tahu"
+  },
+  {
+   "ka": "არ ვიცი",
+   "baca": "ar vitsi",
+   "id": "saya tidak tahu"
+  },
+  {
+   "ka": "სწორია",
+   "baca": "sts'oria",
+   "id": "betul"
+  },
+  {
+   "ka": "რამდენი",
+   "baca": "ramdeni",
+   "id": "berapa"
+  },
+  {
+   "ka": "ერთი",
+   "baca": "erti",
+   "id": "satu"
+  },
+  {
+   "ka": "ორი",
+   "baca": "ori",
+   "id": "dua"
+  },
+  {
+   "ka": "სამი",
+   "baca": "sami",
+   "id": "tiga"
+  },
+  {
+   "ka": "ყოჩაღ",
+   "baca": "q'ochagh",
+   "id": "mantap, kerja bagus"
+  },
+  {
+   "ka": "გაიმეორე",
+   "baca": "gaimeore",
+   "id": "ulangi"
+  },
+  {
+   "ka": "ნელა",
+   "baca": "nela",
+   "id": "pelan-pelan"
+  },
+  {
+   "ka": "თუ შეიძლება",
+   "baca": "tu sheidzleba",
+   "id": "tolong, kalau boleh"
+  },
+  {
+   "ka": "ქართულად",
+   "baca": "kartulad",
+   "id": "dalam bahasa Georgia"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk jamak.",
+   "items": [
+    "წიგნი → ____",
+    "სახლი → ____",
+    "მაგიდა → ____",
+    "ქალი → ____",
+    "ჩანთა → ____",
+    "მეგობარი → ____"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bentuk pendek \"adalah\" (-ია atau -ა).",
+   "items": [
+    "ეს წიგნ____",
+    "ეს მაგიდ____",
+    "ის კარ____",
+    "ეს ფანჯარ____",
+    "ის ჩემი მეგობარ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "არის / ეს / რა / ?",
+    "წიგნია / ეს",
+    "ვიცი / არ",
+    "ვინ / ის / არის / ?",
+    "წიგნი / სამი / მაგიდაზე"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Georgia.",
+   "items": [
+    "Ini apa?",
+    "Ini buku.",
+    "Itu siapa?",
+    "Saya tidak tahu.",
+    "Bahasa Georgianya apa?",
+    "Ya, betul."
+   ]
+  }
+ ],
+ "answers": [
+  "წიგნები — სახლები — მაგიდები — ქალები — ჩანთები — მეგობრები",
+  "წიგნია — მაგიდაა — კარია — ფანჯარაა — მეგობარია",
+  "ეს რა არის? — ეს წიგნია. — არ ვიცი. — ის ვინ არის? — მაგიდაზე სამი წიგნი.",
+  "ეს რა არის? — ეს წიგნია. — ის ვინ არის? — არ ვიცი. — ქართულად როგორ არის? — დიახ, სწორია."
+ ]
+}

@@ -1,0 +1,546 @@
+{
+ "title": "Di restoran",
+ "title_target": "რესტორანში — Rest'oranshi",
+ "goal": "Memesan makan malam sungguhan, mengatakan apa yang kamu suka dan tidak suka, dan mengenal masakan Georgia cukup untuk memesan tanpa menunjuk-nunjuk menu.",
+ "bekal": [
+  "memesan hidangan untuk beberapa orang",
+  "mengatakan მიყვარს (saya suka) dan მომწონს (saya suka ini)",
+  "menyebut pantangan makan dengan jelas",
+  "menyebut sepuluh hidangan Georgia yang pasti ada di menu",
+  "memuji makanan dan meminta bon"
+ ],
+ "dialogs": [
+  {
+   "title": "დიალოგი — Khinkali pertama",
+   "intro": "Ani, Nino, dan Levan makan malam di restoran khinkali. Perhatikan dua kata kerja \"suka\" yang berbeda, dan satu petunjuk makan yang membedakan orang asing dari orang yang sudah pernah diajari.",
+   "lines": [
+    {
+     "speaker": "მიმტანი:",
+     "text": "[კეთილი|K'e-ti-li] [იყოს|i-q'os] [მობრძანება|mob-rdza-ne-ba]! [რას|Ras] [შეუკვეთავთ|she-uk've-tavt]?",
+     "id": "Selamat datang! Mau pesan apa?",
+     "literal": "baik — jadilah — kedatangan! apa-sasaran — kalian-akan-pesan?"
+    },
+    {
+     "speaker": "ლევანი:",
+     "text": "[ათი|A-ti] [ხინკალი|khin-k'a-li], [ერთი|er-ti] [ხაჭაპური|kha-ch'a-p'u-ri] [და|da] [სალათი|sa-la-ti].",
+     "id": "Sepuluh khinkali, satu khachapuri, dan salad.",
+     "literal": "sepuluh — khinkali, satu — khachapuri — dan — salad."
+    },
+    {
+     "speaker": "მიმტანი:",
+     "text": "[სასმელი|Sas-me-li]? [ღვინო|Ghvi-no] [გნებავთ|gne-bavt]?",
+     "id": "Minumnya? Mau anggur?",
+     "literal": "minuman? anggur — kalian-inginkan?"
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[ერთი|Er-ti] [ბოთლი|bot-li] [წითელი|ts'i-te-li] [და|da] [ერთი|er-ti] [ბოთლი|bot-li] [წყალი|ts'q'a-li].",
+     "id": "Satu botol merah dan satu botol air.",
+     "literal": "satu — botol — merah — dan — satu — botol — air."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[მე|Me] [ხორცი|khor-tsi] [არ|ar] [მიყვარს|miq'-vars]. [ბოსტნეული|Bost'-ne-u-li] [გაქვთ|gakvt]?",
+     "id": "Saya tidak suka daging. Ada sayur?",
+     "literal": "saya — daging — tidak — dicintai-olehku. sayur — kalian-punya?"
+    },
+    {
+     "speaker": "მიმტანი:",
+     "text": "[რა|Ra] [თქმა|tkma] [უნდა|un-da]. [ლობიო|Lo-bio], [ბადრიჯანი|bad-ri-ja-ni], [მწვანილი|mts'va-ni-li].",
+     "id": "Tentu saja. Lobio, terung, sayuran hijau.",
+     "literal": "apa — ucapan — perlu. lobio, terung, daun-rempah."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[მაშინ|Ma-shin] [ლობიო|lo-bio], [თუ|tu] [შეიძლება|she-idz-le-ba].",
+     "id": "Kalau begitu lobio, tolong.",
+     "literal": "kalau-begitu — lobio, kalau — boleh."
+    },
+    {
+     "speaker": "ლევანი:",
+     "text": "[ანი|A-ni], [ხინკალი|khin-k'a-li] [ხელით|khe-lit] [იჭმევა|ich'-me-va], [არა|a-ra] [ჩანგლით|chang-lit].",
+     "id": "Ani, khinkali dimakan pakai tangan, bukan garpu.",
+     "literal": "Ani, khinkali — tangan-dengan — dimakan, bukan — garpu-dengan."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ხელით|Khe-lit]? [ინდონეზიაშიც|In-do-ne-zi-a-shits] [ხელით|khe-lit] [ვჭამთ|vch'amt]!",
+     "id": "Pakai tangan? Di Indonesia juga kami makan pakai tangan!",
+     "literal": "tangan-dengan? Indonesia-dalam-juga — tangan-dengan — kami-makan!"
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[და|Da] [კუდი|k'u-di] [არ|ar] [იჭმევა|ich'-me-va] — [თეფშზე|tep-shze] [რჩება|rche-ba].",
+     "id": "Dan ekornya tidak dimakan — ditinggal di piring.",
+     "literal": "dan — ekor — tidak — dimakan — piring-di-atas — tersisa."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[გასაგებია|Ga-sa-ge-bi-a]! [ძალიან|Dza-li-an] [გემრიელია|gem-ri-e-li-a]. [ლობიოც|Lo-bi-ots] [მომწონს|mom-ts'ons].",
+     "id": "Jelas! Enak sekali. Lobionya juga saya suka.",
+     "literal": "bisa-dimengerti-adalah! sangat — enak-adalah. lobio-juga — disukai-olehku."
+    },
+    {
+     "speaker": "ლევანი:",
+     "text": "[მაშინ|Ma-shin] [კიდევ|k'i-dev] [ათი|a-ti] [ხინკალი|khin-k'a-li]! [გაუმარჯოს|Ga-u-mar-jos]!",
+     "id": "Kalau begitu sepuluh khinkali lagi! Bersulang!",
+     "literal": "kalau-begitu — lagi — sepuluh — khinkali! semoga-menang!"
+    }
+   ],
+   "notes": [
+    "**მიყვარს dan მომწონს dua-duanya berarti \"suka\", tapi tidak bisa ditukar.** **მიყვარს** = cinta, kesukaan yang mendalam dan tetap: *ხინკალი მიყვარს* (saya suka khinkali — secara umum, sudah lama). **მომწონს** = suka pada saat ini, penilaian atas sesuatu yang di depan mata: *ეს ლობიო მომწონს* (lobio ini enak menurut saya). ⚠️ Untuk orang, მიყვარს berarti cinta betulan; kalau kamu baru berkenalan dan bilang *შენ მიყვარხარ*, kamu sedang menyatakan cinta.",
+    "**Keduanya kata kerja terbalik**, sekeluarga dengan მაქვს dan მინდა: მიყვარს (saya suka) / გიყვარს (kamu suka) / უყვარს (dia suka); მომწონს / მოგწონს / მოსწონს.",
+    "**ხელით = dengan tangan, ჩანგლით = dengan garpu.** Ekor -ით yang sama dari unit 5. Perhatikan bahwa ჩანგალი kehilangan ა-nya: ჩანგ**ლ**ით.",
+    "**ინდონეზიაშიც = ინდონეზია + ში + ც.** Tiga ekor bertumpuk dalam satu kata: \"di Indonesia juga\". Bahasa Georgia sangat suka menumpuk ekor seperti ini, dan begitu kamu terbiasa membongkarnya dari belakang, kata yang tadinya menakutkan jadi mudah dibaca.",
+    "**Cara makan khinkali punya aturan dan orang Georgia senang mengajarkannya.** Pegang bagian atasnya (კუდი, \"ekor\"), gigit sedikit di sisinya, sedot kuahnya lebih dulu, baru makan sisanya. Ekornya **tidak** dimakan dan ditinggal di piring — itu juga cara menghitung berapa banyak yang sudah kamu makan. ⚠️ Memakai garpu dan pisau untuk khinkali bukan pelanggaran, tapi semua orang di meja akan melihat.",
+    "**კეთილი იყოს მობრძანება = selamat datang.** Kalimat resmi yang tertulis di pintu restoran dan bandara. Cukup dikenali, tidak perlu diucapkan.",
+    "**გაუმარჯოს! = bersulang.** Akar katanya sama dengan გამარჯობა — \"kemenangan\". Unit 19 akan membahas seluruh dunia yang berdiri di belakang kata ini."
+   ],
+   "grammars": [
+    {
+     "title": "Suka, tidak suka, dan pantangan",
+     "table": {
+      "head": [
+       "Kalimat",
+       "Cara baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "ხინკალი მიყვარს",
+        "khink'ali miq'vars",
+        "Saya suka khinkali"
+       ],
+       [
+        "ეს მომწონს",
+        "es momts'ons",
+        "Saya suka yang ini"
+       ],
+       [
+        "ხორცი არ მიყვარს",
+        "khortsi ar miq'vars",
+        "Saya tidak suka daging"
+       ],
+       [
+        "ცხარე არ მიყვარს",
+        "tskhare ar miq'vars",
+        "Saya tidak suka pedas"
+       ],
+       [
+        "ხორცს არ ვჭამ",
+        "khortss ar vch'am",
+        "Saya tidak makan daging"
+       ],
+       [
+        "ვეგეტარიანელი ვარ",
+        "veget'arianeli var",
+        "Saya vegetarian"
+       ],
+       [
+        "ღორის ხორცს არ ვჭამ",
+        "ghoris khortss ar vch'am",
+        "Saya tidak makan daging babi"
+       ],
+       [
+        "ალერგია მაქვს",
+        "alergia makvs",
+        "Saya punya alergi"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Kalimat **ღორის ხორცს არ ვჭამ** layak dihafal utuh oleh pembaca muslim: babi (ღორი) dipakai luas di masakan Georgia, sering di dalam ხინკალი campuran. Kalimat pengaman yang lebih pendek: *ღორი არ შეიძლება* (babi tidak boleh). Daging sapi dan domba mudah didapat, dan sebagian besar hidangan sayur Georgia — ლობიო, ფხალი, ბადრიჯანი — memang tanpa daging sama sekali."
+     ]
+    },
+    {
+     "title": "Sepuluh hidangan yang pasti ada di menu",
+     "table": {
+      "head": [
+       "Hidangan",
+       "Cara baca",
+       "Apa itu"
+      ],
+      "rows": [
+       [
+        "ხინკალი",
+        "khink'ali",
+        "pangsit besar berkuah, dimakan dengan tangan"
+       ],
+       [
+        "ხაჭაპური",
+        "khach'ap'uri",
+        "roti keju; ada belasan versi daerah"
+       ],
+       [
+        "მწვადი",
+        "mts'vadi",
+        "sate daging panggang"
+       ],
+       [
+        "ლობიო",
+        "lobio",
+        "kacang merah berbumbu, hidangan sayur paling umum"
+       ],
+       [
+        "ფხალი",
+        "pkhali",
+        "pasta sayur dengan kenari"
+       ],
+       [
+        "ბადრიჯანი ნიგვზით",
+        "badrijani nigvzit",
+        "terung gulung isi kenari"
+       ],
+       [
+        "ჩახოხბილი",
+        "chakhokhbili",
+        "ayam masak tomat"
+       ],
+       [
+        "შქმერული",
+        "shkmeruli",
+        "ayam saus bawang putih dan susu"
+       ],
+       [
+        "ჩაქაფული",
+        "chakapuli",
+        "domba masak tarragon"
+       ],
+       [
+        "მაწონი",
+        "mats'oni",
+        "yogurt Georgia"
+       ]
+      ]
+     },
+     "after": [
+      "Dua kata yang menolong di meja: **ცხარე** (tskhare, pedas) dan **მარილიანი** (mariliani, asin). Masakan Georgia umumnya tidak pedas menurut ukuran Indonesia — yang disebut ცხარე di sini sering terasa hangat saja bagi lidah kita."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di meja makan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Georgia",
+      "Cara baca",
+      "Artinya",
+      "Georgia",
+      "Cara baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "მიმტანი",
+       "mimt'ani",
+       "pelayan",
+       "თეფში",
+       "tepshi",
+       "piring"
+      ],
+      [
+       "მენიუ",
+       "meniu",
+       "menu",
+       "ჭიქა",
+       "ch'ika",
+       "gelas"
+      ],
+      [
+       "სასმელი",
+       "sasmeli",
+       "minuman",
+       "ჩანგალი",
+       "changali",
+       "garpu"
+      ],
+      [
+       "საჭმელი",
+       "sach'meli",
+       "makanan",
+       "კოვზი",
+       "k'ovzi",
+       "sendok"
+      ],
+      [
+       "ხორცი",
+       "khortsi",
+       "daging",
+       "დანა",
+       "dana",
+       "pisau"
+      ],
+      [
+       "ქათამი",
+       "katami",
+       "ayam",
+       "ხელი",
+       "kheli",
+       "tangan"
+      ],
+      [
+       "თევზი",
+       "tevzi",
+       "ikan",
+       "მარილი",
+       "marili",
+       "garam"
+      ],
+      [
+       "ბრინჯი",
+       "brinji",
+       "nasi",
+       "პილპილი",
+       "p'ilp'ili",
+       "merica"
+      ],
+      [
+       "კარტოფილი",
+       "k'art'opili",
+       "kentang",
+       "სალათი",
+       "salati",
+       "salad"
+      ],
+      [
+       "სუპი",
+       "sup'i",
+       "sup",
+       "ტკბილეული",
+       "t'k'bileuli",
+       "makanan manis"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Enam kalimat untuk seluruh makan malam",
+     "items": [
+      "**მენიუ, თუ შეიძლება.** — Menunya, tolong.",
+      "**რას მირჩევთ?** (ras mirchevt) — Anda menyarankan apa?",
+      "**ეს რა არის?** — Ini apa? (unit 2 kembali berguna)",
+      "**ღორის ხორცი აქვს?** — Ini ada daging babinya?",
+      "**ძალიან გემრიელია!** — Enak sekali!",
+      "**ანგარიში, თუ შეიძლება.** — Bonnya, tolong."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu hal yang perlu disiapkan sejak awal: porsi di restoran Georgia besar, dan tuan rumah — atau bahkan pelayan — akan mendorongmu memesan lebih banyak daripada yang bisa kamu habiskan. Menolak dengan halus dilakukan dengan *მადლობა, ეს საკმარისია* (madloba, es sak'marisia — terima kasih, ini sudah cukup). Kalau kamu diundang orang Georgia, ingat aturan tak tertulis ini: meja yang tidak penuh dianggap tuan rumah yang gagal, jadi jangan menilai jumlah makanan sebagai isyarat berapa yang harus kamu habiskan."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ka": "რესტორანი",
+   "baca": "rest'orani",
+   "id": "restoran"
+  },
+  {
+   "ka": "მიმტანი",
+   "baca": "mimt'ani",
+   "id": "pelayan"
+  },
+  {
+   "ka": "საჭმელი",
+   "baca": "sach'meli",
+   "id": "makanan"
+  },
+  {
+   "ka": "სასმელი",
+   "baca": "sasmeli",
+   "id": "minuman"
+  },
+  {
+   "ka": "ხინკალი",
+   "baca": "khink'ali",
+   "id": "khinkali"
+  },
+  {
+   "ka": "მწვადი",
+   "baca": "mts'vadi",
+   "id": "sate daging"
+  },
+  {
+   "ka": "ლობიო",
+   "baca": "lobio",
+   "id": "kacang merah berbumbu"
+  },
+  {
+   "ka": "ხორცი",
+   "baca": "khortsi",
+   "id": "daging"
+  },
+  {
+   "ka": "ღორის ხორცი",
+   "baca": "ghoris khortsi",
+   "id": "daging babi"
+  },
+  {
+   "ka": "ქათამი",
+   "baca": "katami",
+   "id": "ayam"
+  },
+  {
+   "ka": "თევზი",
+   "baca": "tevzi",
+   "id": "ikan"
+  },
+  {
+   "ka": "ბრინჯი",
+   "baca": "brinji",
+   "id": "nasi"
+  },
+  {
+   "ka": "კარტოფილი",
+   "baca": "k'art'opili",
+   "id": "kentang"
+  },
+  {
+   "ka": "ბადრიჯანი",
+   "baca": "badrijani",
+   "id": "terung"
+  },
+  {
+   "ka": "სალათი",
+   "baca": "salati",
+   "id": "salad"
+  },
+  {
+   "ka": "მარილი",
+   "baca": "marili",
+   "id": "garam"
+  },
+  {
+   "ka": "ცხარე",
+   "baca": "tskhare",
+   "id": "pedas"
+  },
+  {
+   "ka": "გემრიელი",
+   "baca": "gemrieli",
+   "id": "enak"
+  },
+  {
+   "ka": "თეფში",
+   "baca": "tepshi",
+   "id": "piring"
+  },
+  {
+   "ka": "ჩანგალი",
+   "baca": "changali",
+   "id": "garpu"
+  },
+  {
+   "ka": "კოვზი",
+   "baca": "k'ovzi",
+   "id": "sendok"
+  },
+  {
+   "ka": "დანა",
+   "baca": "dana",
+   "id": "pisau"
+  },
+  {
+   "ka": "ხელი",
+   "baca": "kheli",
+   "id": "tangan"
+  },
+  {
+   "ka": "ბოთლი",
+   "baca": "botli",
+   "id": "botol"
+  },
+  {
+   "ka": "წითელი",
+   "baca": "ts'iteli",
+   "id": "merah"
+  },
+  {
+   "ka": "მიყვარს",
+   "baca": "miq'vars",
+   "id": "saya suka, saya cinta"
+  },
+  {
+   "ka": "მომწონს",
+   "baca": "momts'ons",
+   "id": "saya suka (ini)"
+  },
+  {
+   "ka": "საკმარისი",
+   "baca": "sak'marisi",
+   "id": "cukup"
+  },
+  {
+   "ka": "გაუმარჯოს",
+   "baca": "gaumarjos",
+   "id": "bersulang!"
+  },
+  {
+   "ka": "ალერგია",
+   "baca": "alergia",
+   "id": "alergi"
+  },
+  {
+   "ka": "ვეგეტარიანელი",
+   "baca": "veget'arianeli",
+   "id": "vegetarian"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih მიყვარს atau მომწონს.",
+   "items": [
+    "Saya suka khinkali (secara umum) → ხინკალი ____",
+    "Lobio ini enak menurut saya → ეს ლობიო ____",
+    "Saya tidak suka daging → ხორცი არ ____",
+    "Saya suka restoran ini → ეს რესტორანი ____",
+    "Saya suka bahasa Georgia (mendalam) → ქართული ____"
+   ]
+  },
+  {
+   "prompt": "Lengkapi pesanannya.",
+   "items": [
+    "____ ხინკალი, თუ შეიძლება (sepuluh)",
+    "____ , თუ შეიძლება (menunya)",
+    "ღორის ხორცს არ ____ (saya makan)",
+    "ძალიან ____ (enak sekali)",
+    "____ , თუ შეიძლება (bonnya)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ხინკალი / ათი / შეიძლება / თუ / ,",
+    "მიყვარს / არ / ხორცი",
+    "გემრიელია / ძალიან / ეს",
+    "ვჭამ / არ / ღორის ხორცს",
+    "გაქვთ / ბოსტნეული / ?"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Georgia.",
+   "items": [
+    "Menunya, tolong.",
+    "Saya tidak makan daging babi.",
+    "Saya suka khinkali.",
+    "Ini enak sekali!",
+    "Ada sayur?",
+    "Bonnya, tolong."
+   ]
+  }
+ ],
+ "answers": [
+  "მიყვარს — მომწონს — მიყვარს — მომწონს — მიყვარს",
+  "ათი — მენიუ — ვჭამ — გემრიელია — ანგარიში",
+  "ათი ხინკალი, თუ შეიძლება. — ხორცი არ მიყვარს. — ეს ძალიან გემრიელია. — ღორის ხორცს არ ვჭამ. — ბოსტნეული გაქვთ?",
+  "მენიუ, თუ შეიძლება. — ღორის ხორცს არ ვჭამ. — ხინკალი მიყვარს. — ეს ძალიან გემრიელია! — ბოსტნეული გაქვთ? — ანგარიში, თუ შეიძლება."
+ ],
+ "wave": "Setengah jalan. Kembalilah ke unit 5 dan bandingkan: dialog kafe yang dulu terasa penuh kata asing sekarang hampir seluruhnya sudah kamu kenal. Itu ukuran kemajuan yang jauh lebih jujur daripada menghitung berapa unit yang sudah selesai."
+}

@@ -1,0 +1,595 @@
+{
+ "title": "Keluarga saya",
+ "title_target": "ჩემი ოჯახი — Chemi ojakhi",
+ "goal": "Menyebut anggota keluarga, mengatakan apa yang kamu punya, dan menghadapi jebakan terbesar unit ini: bahasa Georgia punya dua kata kerja \"punya\" yang berbeda, dan pilihannya bergantung pada bernyawa atau tidaknya yang dipunyai.",
+ "bekal": [
+  "menyebut anggota keluarga inti dan kakek-nenek",
+  "memakai ჩემი, შენი, მისი untuk menyatakan milik",
+  "memilih მაქვს atau მყავს dengan benar",
+  "menyebut jumlah anggota keluarga",
+  "menanyakan keadaan keluarga orang lain"
+ ],
+ "dialogs": [
+  {
+   "title": "დიალოგი — Foto di telepon",
+   "intro": "Nino ingin tahu tentang keluarga Ani, dan Ani membuka foto di teleponnya. Perhatikan dua kata kerja \"punya\" yang berganti-ganti sepanjang percakapan — dan dengarkan bunyi kata \"ayah\" baik-baik.",
+   "lines": [
+    {
+     "speaker": "ნინო:",
+     "text": "[ეს|Es] [შენი|she-ni] [ოჯახია|o-ja-khi-a]?",
+     "id": "Ini keluargamu?",
+     "literal": "ini — kamu-punya — keluarga-adalah?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[კი|K'i]. [ეს|Es] [ჩემი|che-mi] [დედაა|de-da-a], [ეს|es] [კი|k'i] [ჩემი|che-mi] [მამა|ma-ma].",
+     "id": "Ya. Ini ibu saya, dan ini ayah saya.",
+     "literal": "ya. ini — saya-punya — ibu-adalah, ini — pun — saya-punya — ayah."
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[მამა|Ma-ma]? [ინდონეზიურად|In-do-ne-zi-u-rad] [ეს|es] [დედა|de-da] [არის|a-ris], [არა|a-ra]?",
+     "id": "Mama? Dalam bahasa Indonesia itu ibu, kan?",
+     "literal": "ayah? secara-Indonesia — ini — ibu — adalah, tidak?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[დიახ|Di-akh]! [ქართულად|Kar-tu-lad] [პირიქითაა|p'i-ri-ki-ta-a]. [ეს|Es] [ყოველთვის|q'o-vel-tvis] [მაბნევს|mab-nevs].",
+     "id": "Ya! Dalam bahasa Georgia justru terbalik. Ini selalu membingungkan saya.",
+     "literal": "ya! secara-Georgia — terbalik-adalah. ini — selalu — membingungkan-saya."
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[და|Da] [ან|an] [ძმა|dzma] [გყავს|gq'avs]?",
+     "id": "Kamu punya saudara perempuan atau laki-laki?",
+     "literal": "saudari — atau — saudara — kamu-punya-nyawa?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ორი|O-ri] [ძმა|dzma] [მყავს|mq'avs] [და|da] [ერთი|er-ti] [და|da].",
+     "id": "Saya punya dua saudara laki-laki dan satu saudara perempuan.",
+     "literal": "dua — saudara — saya-punya-nyawa — dan — satu — saudari."
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[დიდი|Di-di] [ოჯახია|o-ja-khi-a]! [მე|Me] [ერთი|er-ti] [და|da] [მყავს|mq'avs], [სხვა|skhva] [არავინ|a-ra-vin].",
+     "id": "Keluarga besar! Saya cuma punya satu saudara perempuan, tidak ada yang lain.",
+     "literal": "besar — keluarga-adalah! saya — satu — saudari — saya-punya-nyawa, lain — tidak-siapa-pun."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ბებია|Be-bi-a] [და|da] [ბაბუა|ba-bu-a] [გყავს|gq'avs]?",
+     "id": "Kamu masih punya nenek dan kakek?",
+     "literal": "nenek — dan — kakek — kamu-punya-nyawa?"
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[ბებია|Be-bi-a] [მყავს|mq'avs]. [კახეთში|K'a-khet-shi] [ცხოვრობს|tskhov-robs], [დიდი|di-di] [სახლი|sakh-li] [აქვს|akvs].",
+     "id": "Nenek masih ada. Dia tinggal di Kakheti, punya rumah besar.",
+     "literal": "nenek — saya-punya-nyawa. Kakheti-di — dia-tinggal, besar — rumah — dia-punya-benda."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ბაღი|Ba-ghi] [აქვს|akvs]?",
+     "id": "Dia punya kebun?",
+     "literal": "kebun — dia-punya-benda?"
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[კი|K'i], [ვენახი|ve-na-khi] [აქვს|akvs]! [და|Da] [ორი|ori] [ძაღლი|dzagh-li] [ჰყავს|hq'avs].",
+     "id": "Ya, dia punya kebun anggur! Dan dua ekor anjing.",
+     "literal": "ya, kebun-anggur — dia-punya-benda! dan — dua — anjing — dia-punya-nyawa."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ვენახი|Ve-na-khi]… [ახლა|akh-la] [მესმის|mes-mis], [რატომ|ra-t'om] [არის|a-ris] [ღვინო|ghvi-no] [ასე|a-se] [მნიშვნელოვანი|mnish-vne-lo-va-ni].",
+     "id": "Kebun anggur… sekarang saya mengerti kenapa anggur begitu penting di sini.",
+     "literal": "kebun-anggur… sekarang — saya-mengerti, kenapa — adalah — anggur — begitu — penting."
+    }
+   ],
+   "notes": [
+    "⚠️ **დედა = ibu. მამა = ayah.** Bacalah dua kali. Bagi penutur bahasa Indonesia ini titik keliru yang paling awet di seluruh modul, karena \"mama\" sudah tertanam sebagai ibu sejak sebelum kita bisa bicara. Orang Georgia akan tetap mengerti dari keadaannya, tapi kekeliruan ini akan mengejarmu sampai berbulan-bulan. Satu cara mengingatnya: **დედა** punya დ seperti \"daddy\"… yang justru **bukan** artinya. Ingat terbaliknya, dan justru itu yang menempel.",
+    "**და punya dua arti sekaligus: \"dan\" dan \"saudara perempuan\".** *ორი ძმა და ერთი და* = \"dua saudara laki-laki dan satu saudara perempuan\". Kelihatannya menyusahkan, kenyataannya jarang membingungkan — letaknya di kalimat yang menentukan.",
+    "**Dua kata kerja \"punya\", dan pilihannya bukan soal gaya.** **მაქვს** untuk benda mati, **მყავს** untuk makhluk hidup. სახლი მაქვს (saya punya rumah), ძმა მყავს (saya punya saudara). ⚠️ Memakai მაქვს untuk orang bukan cuma salah tata bahasa — terdengar seperti kamu menganggap orang itu barang.",
+    "**Yang berubah bukan kata gantinya, tapi awalannya.** მ**აქვს** (saya punya), გ**აქვს** (kamu punya), **აქვს** (dia punya). Sama untuk yang bernyawa: მ**ყავს**, გ**ყავს**, **ჰყავს**. Awalan მ-/გ- ini sudah kamu temui di unit 1 pada მქვია/გქვია, dan akan muncul lagi di unit 10 dan 16.",
+    "**Dalam kalimat \"punya\", yang jadi pokok kalimat adalah barangnya, bukan orangnya.** Harfiahnya *ორი ძმა მყავს* berbunyi \"dua saudara ada-padaku\". Itu sebabnya kata kerjanya tidak berawalan ვ-: pelakunya bukan \"saya\". Kelompok kata kerja terbalik ini kecil, tapi isinya kata-kata yang dipakai setiap hari.",
+    "**არავინ = tidak ada seorang pun.** Perhatikan bahwa bahasa Georgia, seperti bahasa Indonesia, membiarkan ingkar bertumpuk: *არავინ არ არის* (tidak ada siapa pun) sama sekali tidak dianggap salah.",
+    "**კახეთი (Kakheti) adalah daerah anggur di timur Georgia.** Kalau seseorang menyebut bahwa keluarganya punya ვენახი (kebun anggur) di Kakheti, ia sedang mengatakan sesuatu tentang jati dirinya, bukan tentang pertaniannya. Georgia menganggap dirinya tempat lahir anggur — delapan ribu tahun — dan unit 19 akan kembali ke sana."
+   ],
+   "grammars": [
+    {
+     "title": "მაქვს atau მყავს — bernyawa atau tidak",
+     "body": [
+      "Satu-satunya pertanyaan yang perlu kamu ajukan sebelum memilih: **yang saya punya ini bernapas atau tidak?**"
+     ],
+     "tables": [
+      {
+       "head": [
+        "Untuk benda mati",
+        "Cara baca",
+        "Untuk makhluk hidup",
+        "Cara baca"
+       ],
+       "rows": [
+        [
+         "მაქვს",
+         "makvs",
+         "მყავს",
+         "mq'avs"
+        ],
+        [
+         "გაქვს",
+         "gakvs",
+         "გყავს",
+         "gq'avs"
+        ],
+        [
+         "აქვს",
+         "akvs",
+         "ჰყავს",
+         "hq'avs"
+        ],
+        [
+         "გვაქვს (kami)",
+         "gvakvs",
+         "გვყავს",
+         "gvq'avs"
+        ],
+        [
+         "გაქვთ (kalian)",
+         "gakvt",
+         "გყავთ",
+         "gq'avt"
+        ],
+        [
+         "აქვთ (mereka)",
+         "akvt",
+         "ჰყავთ",
+         "hq'avt"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Contoh benda",
+        "Artinya",
+        "Contoh makhluk",
+        "Artinya"
+       ],
+       "rows": [
+        [
+         "მანქანა მაქვს",
+         "saya punya mobil",
+         "ძმა მყავს",
+         "saya punya saudara"
+        ],
+        [
+         "ფული არ მაქვს",
+         "saya tidak punya uang",
+         "შვილი გყავს?",
+         "kamu punya anak?"
+        ],
+        [
+         "დრო გაქვს?",
+         "kamu ada waktu?",
+         "კატა მყავს",
+         "saya punya kucing"
+        ],
+        [
+         "სახლი აქვს",
+         "dia punya rumah",
+         "ძაღლი ჰყავს",
+         "dia punya anjing"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ Tumbuhan dihitung **benda mati**: ვენახი მაქვს, ყვავილი მაქვს. Yang bernyawa dalam pengertian bahasa Georgia adalah manusia dan hewan."
+     ]
+    },
+    {
+     "title": "Kata milik",
+     "body": [
+      "Kata milik berdiri di depan kata bendanya dan tidak berubah bentuk pada tingkat A1."
+     ],
+     "table": {
+      "head": [
+       "Milik",
+       "Cara baca",
+       "Contoh",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "ჩემი",
+        "chemi",
+        "ჩემი დედა",
+        "ibu saya"
+       ],
+       [
+        "შენი",
+        "sheni",
+        "შენი ოჯახი",
+        "keluargamu"
+       ],
+       [
+        "მისი",
+        "misi",
+        "მისი ძმა",
+        "saudaranya"
+       ],
+       [
+        "ჩვენი",
+        "chveni",
+        "ჩვენი სახლი",
+        "rumah kami"
+       ],
+       [
+        "თქვენი",
+        "tkveni",
+        "თქვენი შვილი",
+        "anak Anda"
+       ],
+       [
+        "მათი",
+        "mati",
+        "მათი ქალაქი",
+        "kota mereka"
+       ]
+      ]
+     },
+     "after": [
+      "Untuk bertanya \"punya siapa\", pakai **ვისი?** — *ვისი ჩანთაა?* (tas siapa ini?). Jawabannya memakai nama orang dengan ekor **-ის**: *ანის ჩანთაა* (tas Ani)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Keluarga, dan cara bertanya tentangnya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Georgia",
+      "Cara baca",
+      "Artinya",
+      "Georgia",
+      "Cara baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "ოჯახი",
+       "ojakhi",
+       "keluarga",
+       "ბებია",
+       "bebia",
+       "nenek"
+      ],
+      [
+       "დედა",
+       "deda",
+       "ibu",
+       "ბაბუა",
+       "babua",
+       "kakek"
+      ],
+      [
+       "მამა",
+       "mama",
+       "ayah",
+       "ცოლი",
+       "tsoli",
+       "istri"
+      ],
+      [
+       "ძმა",
+       "dzma",
+       "saudara laki-laki",
+       "ქმარი",
+       "kmari",
+       "suami"
+      ],
+      [
+       "და",
+       "da",
+       "saudara perempuan",
+       "ბიძა",
+       "bidza",
+       "paman"
+      ],
+      [
+       "შვილი",
+       "shvili",
+       "anak",
+       "დეიდა",
+       "deida",
+       "bibi (dari ibu)"
+      ],
+      [
+       "ვაჟი",
+       "vazhi",
+       "anak laki-laki",
+       "მამიდა",
+       "mamida",
+       "bibi (dari ayah)"
+      ],
+      [
+       "ქალიშვილი",
+       "kalishvili",
+       "anak perempuan",
+       "ბიძაშვილი",
+       "bidzashvili",
+       "sepupu"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan **დეიდა** dan **მამიდა**: yang pertama saudara perempuan **ibu** (დედა), yang kedua saudara perempuan **ayah** (მამა). Bahasa Georgia membedakan keduanya persis seperti bahasa Indonesia membedakan \"besan\" dan \"ipar\" — karena hubungan itu penting dalam kehidupan sehari-hari. **ბიძაშვილი** harfiahnya \"anak paman\", dan itulah kata untuk sepupu."
+    },
+    {
+     "type": "kotak",
+     "title": "Lima pertanyaan tentang keluarga",
+     "items": [
+      "**ოჯახი გყავს?** (ojakhi gq'avs) — Sudah berkeluarga?",
+      "**და-ძმა გყავს?** (da-dzma gq'avs) — Punya saudara? Harfiahnya \"punya saudari-saudara\"; ini kata gabungan yang berarti \"saudara kandung\" secara umum.",
+      "**რამდენი შვილი გყავს?** (ramdeni shvili gq'avs) — Punya berapa anak?",
+      "**სად ცხოვრობს შენი ოჯახი?** (sad tskhovrobs sheni ojakhi) — Keluargamu tinggal di mana?",
+      "**როგორ არიან?** (rogor arian) — Bagaimana kabar mereka?"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Satu peringatan budaya yang berguna: di Georgia, pertanyaan tentang keluarga, umur, dan status pernikahan **bukan** dianggap terlalu pribadi, bahkan dari orang yang baru kamu kenal lima menit. Itu bukan kekurangajaran, melainkan cara menempatkanmu dalam peta hubungan. Kalau kamu tidak ingin menjawab, *ჯერ არა* (jer ara — belum) sudah cukup dan tidak akan dikejar lebih jauh."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ka": "ოჯახი",
+   "baca": "ojakhi",
+   "id": "keluarga"
+  },
+  {
+   "ka": "დედა",
+   "baca": "deda",
+   "id": "ibu"
+  },
+  {
+   "ka": "მამა",
+   "baca": "mama",
+   "id": "ayah"
+  },
+  {
+   "ka": "ძმა",
+   "baca": "dzma",
+   "id": "saudara laki-laki"
+  },
+  {
+   "ka": "და",
+   "baca": "da",
+   "id": "saudara perempuan; dan"
+  },
+  {
+   "ka": "და-ძმა",
+   "baca": "da-dzma",
+   "id": "saudara kandung"
+  },
+  {
+   "ka": "შვილი",
+   "baca": "shvili",
+   "id": "anak"
+  },
+  {
+   "ka": "ვაჟი",
+   "baca": "vazhi",
+   "id": "anak laki-laki"
+  },
+  {
+   "ka": "ქალიშვილი",
+   "baca": "kalishvili",
+   "id": "anak perempuan"
+  },
+  {
+   "ka": "ბებია",
+   "baca": "bebia",
+   "id": "nenek"
+  },
+  {
+   "ka": "ბაბუა",
+   "baca": "babua",
+   "id": "kakek"
+  },
+  {
+   "ka": "ცოლი",
+   "baca": "tsoli",
+   "id": "istri"
+  },
+  {
+   "ka": "ქმარი",
+   "baca": "kmari",
+   "id": "suami"
+  },
+  {
+   "ka": "ბიძა",
+   "baca": "bidza",
+   "id": "paman"
+  },
+  {
+   "ka": "დეიდა",
+   "baca": "deida",
+   "id": "bibi (saudari ibu)"
+  },
+  {
+   "ka": "მაქვს",
+   "baca": "makvs",
+   "id": "saya punya (benda)"
+  },
+  {
+   "ka": "გაქვს",
+   "baca": "gakvs",
+   "id": "kamu punya (benda)"
+  },
+  {
+   "ka": "აქვს",
+   "baca": "akvs",
+   "id": "dia punya (benda)"
+  },
+  {
+   "ka": "მყავს",
+   "baca": "mq'avs",
+   "id": "saya punya (makhluk hidup)"
+  },
+  {
+   "ka": "გყავს",
+   "baca": "gq'avs",
+   "id": "kamu punya (makhluk hidup)"
+  },
+  {
+   "ka": "ჰყავს",
+   "baca": "hq'avs",
+   "id": "dia punya (makhluk hidup)"
+  },
+  {
+   "ka": "ჩემი",
+   "baca": "chemi",
+   "id": "milik saya"
+  },
+  {
+   "ka": "შენი",
+   "baca": "sheni",
+   "id": "milikmu"
+  },
+  {
+   "ka": "მისი",
+   "baca": "misi",
+   "id": "miliknya"
+  },
+  {
+   "ka": "ჩვენი",
+   "baca": "chveni",
+   "id": "milik kami"
+  },
+  {
+   "ka": "მათი",
+   "baca": "mati",
+   "id": "milik mereka"
+  },
+  {
+   "ka": "ვისი",
+   "baca": "visi",
+   "id": "punya siapa"
+  },
+  {
+   "ka": "სახლი",
+   "baca": "sakhli",
+   "id": "rumah"
+  },
+  {
+   "ka": "მანქანა",
+   "baca": "mankana",
+   "id": "mobil"
+  },
+  {
+   "ka": "ძაღლი",
+   "baca": "dzaghli",
+   "id": "anjing"
+  },
+  {
+   "ka": "კატა",
+   "baca": "k'at'a",
+   "id": "kucing"
+  },
+  {
+   "ka": "ბაღი",
+   "baca": "baghi",
+   "id": "kebun"
+  },
+  {
+   "ka": "ვენახი",
+   "baca": "venakhi",
+   "id": "kebun anggur"
+  },
+  {
+   "ka": "არავინ",
+   "baca": "aravin",
+   "id": "tidak ada siapa pun"
+  },
+  {
+   "ka": "სხვა",
+   "baca": "skhva",
+   "id": "lain"
+  },
+  {
+   "ka": "დიდი",
+   "baca": "didi",
+   "id": "besar"
+  },
+  {
+   "ka": "პატარა",
+   "baca": "p'at'ara",
+   "id": "kecil"
+  },
+  {
+   "ka": "მესმის",
+   "baca": "mesmis",
+   "id": "saya mengerti"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih მაქვს atau მყავს.",
+   "items": [
+    "მანქანა ____",
+    "ძმა ____",
+    "სახლი ____",
+    "ორი კატა ____",
+    "ფული არ ____",
+    "დიდი ოჯახი ____"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan kata milik yang tepat.",
+   "items": [
+    "Ibu saya → ____ დედა",
+    "Keluargamu → ____ ოჯახი",
+    "Rumahnya → ____ სახლი",
+    "Kota kami → ____ ქალაქი",
+    "Anak Anda → ____ შვილი"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "მყავს / ძმა / ორი",
+    "გყავს / და-ძმა / ?",
+    "ოჯახია / დიდი / ეს",
+    "აქვს / სახლი / ბებიას",
+    "არ / ფული / მაქვს"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Georgia.",
+   "items": [
+    "Ini keluarga saya.",
+    "Saya punya dua saudara laki-laki.",
+    "Kamu punya saudara?",
+    "Dia punya rumah besar.",
+    "Ini ibu saya, ini ayah saya.",
+    "Saya tidak punya mobil."
+   ]
+  }
+ ],
+ "answers": [
+  "მაქვს — მყავს — მაქვს — მყავს — მაქვს — მყავს",
+  "ჩემი — შენი — მისი — ჩვენი — თქვენი",
+  "ორი ძმა მყავს. — და-ძმა გყავს? — ეს დიდი ოჯახია. — ბებიას სახლი აქვს. — ფული არ მაქვს.",
+  "ეს ჩემი ოჯახია. — ორი ძმა მყავს. — და-ძმა გყავს? — დიდი სახლი აქვს. — ეს ჩემი დედაა, ეს ჩემი მამა. — მანქანა არ მაქვს."
+ ],
+ "wave": "Sebelum masuk unit 5, kembalilah ke unit 1 dan baca dialognya sekali lagi tanpa melihat lajur cara baca. Empat unit sudah cukup untuk membuat gamarjoba, var, dan chemi terbaca tanpa dieja."
+}

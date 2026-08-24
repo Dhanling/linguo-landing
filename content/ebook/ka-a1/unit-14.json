@@ -1,0 +1,521 @@
+{
+ "title": "Di toko pakaian",
+ "title_target": "მაღაზიაში — Maghaziashi",
+ "goal": "Berbelanja pakaian: menyebut warna dan ukuran, mencoba barang, membandingkan dua pilihan, dan menolak dengan sopan tanpa merasa terjebak.",
+ "bekal": [
+  "menyebut sepuluh nama pakaian",
+  "menyebut warna dan memakainya sebagai kata sifat",
+  "meminta ukuran lain dan mencoba barang",
+  "membandingkan dua barang dengan უფრო dan -ზე",
+  "menolak dengan sopan dan pergi tanpa membeli"
+ ],
+ "dialogs": [
+  {
+   "title": "დიალოგი — Jaket untuk musim dingin",
+   "intro": "Nino menemani Ani membeli jaket. Perhatikan cara membandingkan dua barang — ekor -ზე muncul lagi, kali ini bukan untuk tempat melainkan untuk \"daripada\".",
+   "lines": [
+    {
+     "speaker": "გამყიდველი:",
+     "text": "[გამარჯობათ|Ga-mar-jo-bat]! [რამეს|Ra-mes] [ეძებთ|e-dzebt]?",
+     "id": "Selamat siang! Cari sesuatu?",
+     "literal": "halo-sopan! sesuatu-sasaran — kalian-mencari?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ქურთუკი|Kur-tu-k'i] [მჭირდება|mch'ir-de-ba], [თბილი|tbi-li].",
+     "id": "Saya perlu jaket, yang hangat.",
+     "literal": "jaket — saya-perlukan, hangat."
+    },
+    {
+     "speaker": "გამყიდველი:",
+     "text": "[რა|Ra] [ზომა|zo-ma] [გაცვიათ|gats-vi-at]?",
+     "id": "Ukuran berapa?",
+     "literal": "apa — ukuran — kalian-kenakan?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[არ|Ar] [ვიცი|vi-tsi]… [ინდონეზიაში|In-do-ne-zi-a-shi] [სხვა|skhva] [ზომებია|zo-me-bi-a].",
+     "id": "Tidak tahu… di Indonesia ukurannya lain.",
+     "literal": "tidak — saya-tahu… Indonesia-dalam — lain — ukuran-ukuran-adalah."
+    },
+    {
+     "speaker": "გამყიდველი:",
+     "text": "[არა|A-ra] [უშავს|u-shavs]. [ეს|Es] [ემ|em] [არის|a-ris]. [მოიზომეთ|Mo-i-zo-met]!",
+     "id": "Tidak apa-apa. Ini ukuran M. Coba pakai!",
+     "literal": "tidak — buruk-baginya. ini — M — adalah. cobalah-kenakan!"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[პატარაა|P'a-t'a-ra-a]. [უფრო|Up-ro] [დიდი|di-di] [გაქვთ|gakvt]?",
+     "id": "Kekecilan. Ada yang lebih besar?",
+     "literal": "kecil-adalah. lebih — besar — kalian-punya?"
+    },
+    {
+     "speaker": "გამყიდველი:",
+     "text": "[კი|K'i]. [შავი|Sha-vi] [თუ|tu] [ლურჯი|lur-ji] [გირჩევნიათ|gir-chev-ni-at]?",
+     "id": "Ada. Lebih suka hitam atau biru?",
+     "literal": "ya. hitam — atau — biru — kalian-lebih-suka?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ლურჯი|Lur-ji]. [ნინო|Ni-no], [როგორია|ro-go-ri-a]?",
+     "id": "Biru. Nino, gimana?",
+     "literal": "biru. Nino, bagaimana-adalah?"
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[ლურჯი|Lur-ji] [შავზე|shav-ze] [უკეთესია|u-k'e-te-si-a]. [ძალიან|Dza-li-an] [გიხდება|gikh-de-ba]!",
+     "id": "Yang biru lebih bagus daripada yang hitam. Cocok sekali buat kamu!",
+     "literal": "biru — hitam-daripada — lebih-baik-adalah. sangat — pantas-untukmu!"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[რამდენი|Ram-de-ni] [ღირს|ghirs]?",
+     "id": "Berapa harganya?",
+     "literal": "berapa — berharga?"
+    },
+    {
+     "speaker": "გამყიდველი:",
+     "text": "[ორასი|O-ra-si] [ლარი|la-ri]. [ახლა|Akh-la] [ფასდაკლებაა|pas-dak'-le-ba-a] — [ას|as] [სამოცი|sa-mo-tsi].",
+     "id": "Dua ratus lari. Sekarang ada diskon — seratus enam puluh.",
+     "literal": "dua-ratus — lari. sekarang — diskon-adalah — seratus — enam-puluh."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[კარგი|K'ar-gi], [ვიყიდი|vi-q'i-di]. [ბარათით|Ba-ra-tit] [შეიძლება|she-idz-le-ba]?",
+     "id": "Baik, saya beli. Bisa pakai kartu?",
+     "literal": "baik, saya-akan-beli. kartu-dengan — boleh?"
+    }
+   ],
+   "notes": [
+    "**Membandingkan: უფრო + kata sifat, dan ekor -ზე untuk \"daripada\".** *ლურჯი შავ**ზე** უკეთესია* — yang biru lebih baik daripada yang hitam. ⚠️ Perhatikan urutannya terbalik dari bahasa Indonesia: yang dibandingkan **dulu**, baru kata sifatnya. Susunan harfiahnya \"biru hitam-atas lebih-baik-adalah\".",
+    "**უკეთესი = lebih baik**, bentuk khusus dari კარგი. Bahasa Georgia punya beberapa kata sifat bertingkat yang tak beraturan seperti ini, sama seperti *baik → lebih baik* dalam bahasa Inggris. Untuk semua kata sifat lainnya, **უფრო** sudah cukup.",
+    "**გიხდება = \"cocok untukmu\" (soal penampilan).** Kata kerja terbalik lagi: მიხდება (cocok untukku), გიხდება (untukmu), უხდება (untuknya). Kalimat pujian yang paling sering kamu dengar di toko — dan tidak selalu tulus.",
+    "**Warna adalah kata sifat biasa dan berdiri di depan kata bendanya**: შავი ქურთუკი (jaket hitam), წითელი კაბა (gaun merah). Beberapa warna dibentuk dari benda + **-ფერი** (warna): ყავის**ფერი** (cokelat, \"warna kopi\"), ნაცრის**ფერი** (abu-abu, \"warna abu\"), ვარდის**ფერი** (merah muda, \"warna mawar\").",
+    "**რა ზომა გაცვიათ? — harfiahnya \"ukuran apa yang kalian kenakan\".** Jawaban aman kalau kamu tidak tahu: *არ ვიცი, მოვიზომავ* (tidak tahu, saya coba dulu). Ukuran Eropa dipakai di Georgia, dan biasanya satu sampai dua angka lebih besar daripada ukuran Indonesia.",
+    "**ფასდაკლება = diskon.** Kata gabungan dari ფასი (harga) + დაკლება (pengurangan). Akan kamu lihat di jendela toko sebagai **-30%** atau **ფასდაკლება**.",
+    "**Menolak dengan sopan.** Kalau kamu tidak jadi membeli, jangan diam-diam pergi: *მადლობა, ვიფიქრებ* (terima kasih, saya pikir dulu) sudah cukup dan tidak akan dikejar. Penjual Georgia jarang memaksa; yang sering terjadi justru sebaliknya — mereka menyuruhmu pulang untuk berpikir."
+   ],
+   "grammars": [
+    {
+     "title": "Warna",
+     "table": {
+      "head": [
+       "Georgia",
+       "Cara baca",
+       "Artinya",
+       "Georgia",
+       "Cara baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "შავი",
+        "shavi",
+        "hitam",
+        "ყვითელი",
+        "q'viteli",
+        "kuning"
+       ],
+       [
+        "თეთრი",
+        "tetri",
+        "putih",
+        "მწვანე",
+        "mts'vane",
+        "hijau"
+       ],
+       [
+        "წითელი",
+        "ts'iteli",
+        "merah",
+        "ნარინჯისფერი",
+        "narinjisperi",
+        "oranye"
+       ],
+       [
+        "ლურჯი",
+        "lurji",
+        "biru",
+        "ყავისფერი",
+        "q'avisperi",
+        "cokelat"
+       ],
+       [
+        "ცისფერი",
+        "tsisperi",
+        "biru muda",
+        "ნაცრისფერი",
+        "natsrisperi",
+        "abu-abu"
+       ],
+       [
+        "ვარდისფერი",
+        "vardisperi",
+        "merah muda",
+        "იისფერი",
+        "iisperi",
+        "ungu"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan **ლურჯი** (biru tua) dan **ცისფერი** (biru muda, \"warna langit\") dianggap dua warna yang berbeda, bukan dua tingkat dari warna yang sama — seperti \"merah\" dan \"merah muda\" dalam bahasa Indonesia."
+     ]
+    },
+    {
+     "title": "Membandingkan dua hal",
+     "table": {
+      "head": [
+       "Kalimat",
+       "Cara baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "ეს უფრო დიდია",
+        "es upro didia",
+        "Yang ini lebih besar"
+       ],
+       [
+        "ეს იმაზე დიდია",
+        "es imaze didia",
+        "Yang ini lebih besar daripada itu"
+       ],
+       [
+        "ლურჯი შავზე უკეთესია",
+        "lurji shavze uk'etesia",
+        "Biru lebih bagus daripada hitam"
+       ],
+       [
+        "ეს ყველაზე კარგია",
+        "es q'velaze k'argia",
+        "Ini yang paling bagus"
+       ],
+       [
+        "ეს ძალიან ძვირია",
+        "es dzalian dzviria",
+        "Ini terlalu mahal"
+       ],
+       [
+        "უფრო იაფი გაქვთ?",
+        "upro iapi gakvt",
+        "Ada yang lebih murah?"
+       ]
+      ]
+     },
+     "after": [
+      "**ყველაზე** (harfiahnya \"daripada semua\") membentuk tingkat tertinggi: ყველაზე დიდი (paling besar), ყველაზე ლამაზი (paling indah). Satu kata, dan seluruh tingkat perbandingan bahasa Georgia selesai."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pakaian dan mencoba barang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Georgia",
+      "Cara baca",
+      "Artinya",
+      "Georgia",
+      "Cara baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "ტანსაცმელი",
+       "t'ansatsmeli",
+       "pakaian",
+       "ფეხსაცმელი",
+       "pekhsatsmeli",
+       "sepatu"
+      ],
+      [
+       "პერანგი",
+       "p'erangi",
+       "kemeja",
+       "წინდები",
+       "ts'indebi",
+       "kaus kaki"
+      ],
+      [
+       "მაისური",
+       "maisuri",
+       "kaus",
+       "ქუდი",
+       "kudi",
+       "topi"
+      ],
+      [
+       "შარვალი",
+       "sharvali",
+       "celana",
+       "შარფი",
+       "sharpi",
+       "syal"
+      ],
+      [
+       "კაბა",
+       "k'aba",
+       "gaun",
+       "ხელთათმანები",
+       "kheltatmanebi",
+       "sarung tangan"
+      ],
+      [
+       "ქურთუკი",
+       "kurtuk'i",
+       "jaket",
+       "ჩანთა",
+       "chanta",
+       "tas"
+      ],
+      [
+       "პალტო",
+       "p'alt'o",
+       "mantel",
+       "ქამარი",
+       "kamari",
+       "ikat pinggang"
+      ],
+      [
+       "სვიტერი",
+       "svit'eri",
+       "sweter",
+       "ზომა",
+       "zoma",
+       "ukuran"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tujuh kalimat untuk seluruh kunjungan ke toko",
+     "items": [
+      "**უბრალოდ ვათვალიერებ.** (ubralod vatvaliereb) — Saya cuma lihat-lihat. (kalimat penyelamat saat baru masuk)",
+      "**შემიძლია მოვიზომო?** (shemidzlia movizomo) — Boleh saya coba?",
+      "**სად არის საზომი?** (sazomi) — Kamar pasnya di mana?",
+      "**უფრო დიდი გაქვთ?** — Ada yang lebih besar?",
+      "**სხვა ფერი გაქვთ?** — Ada warna lain?",
+      "**ფასდაკლება აქვს?** — Ada diskonnya?",
+      "**მადლობა, ვიფიქრებ.** — Terima kasih, saya pikir dulu."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Satu hal yang membedakan toko Georgia dari mal Indonesia: di toko kecil dan di pasar pakaian, penjual sering **mengikutimu** dan mengomentari tiap barang yang kamu pegang. Itu dianggap pelayanan, bukan pengawasan. Kalimat *უბრალოდ ვათვალიერებ* mengatakan dengan jelas bahwa kamu belum butuh bantuan, dan hampir selalu dihormati."
+    },
+    {
+     "type": "p",
+     "text": "Untuk pembaca perempuan berhijab: pakaian tertutup mudah didapat di Tbilisi, dan **შარფი** (syal) dijual di mana-mana terutama menjelang musim dingin. Kata yang berguna di toko: *გრძელი ხელი* (grdzeli kheli — lengan panjang) dan *გრძელი კაბა* (gaun panjang)."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ka": "მაღაზია",
+   "baca": "maghazia",
+   "id": "toko"
+  },
+  {
+   "ka": "ტანსაცმელი",
+   "baca": "t'ansatsmeli",
+   "id": "pakaian"
+  },
+  {
+   "ka": "პერანგი",
+   "baca": "p'erangi",
+   "id": "kemeja"
+  },
+  {
+   "ka": "მაისური",
+   "baca": "maisuri",
+   "id": "kaus"
+  },
+  {
+   "ka": "შარვალი",
+   "baca": "sharvali",
+   "id": "celana"
+  },
+  {
+   "ka": "კაბა",
+   "baca": "k'aba",
+   "id": "gaun"
+  },
+  {
+   "ka": "ქურთუკი",
+   "baca": "kurtuk'i",
+   "id": "jaket"
+  },
+  {
+   "ka": "ფეხსაცმელი",
+   "baca": "pekhsatsmeli",
+   "id": "sepatu"
+  },
+  {
+   "ka": "ქუდი",
+   "baca": "kudi",
+   "id": "topi"
+  },
+  {
+   "ka": "შარფი",
+   "baca": "sharpi",
+   "id": "syal"
+  },
+  {
+   "ka": "ზომა",
+   "baca": "zoma",
+   "id": "ukuran"
+  },
+  {
+   "ka": "ფერი",
+   "baca": "peri",
+   "id": "warna"
+  },
+  {
+   "ka": "შავი",
+   "baca": "shavi",
+   "id": "hitam"
+  },
+  {
+   "ka": "თეთრი",
+   "baca": "tetri",
+   "id": "putih"
+  },
+  {
+   "ka": "წითელი",
+   "baca": "ts'iteli",
+   "id": "merah"
+  },
+  {
+   "ka": "ლურჯი",
+   "baca": "lurji",
+   "id": "biru"
+  },
+  {
+   "ka": "მწვანე",
+   "baca": "mts'vane",
+   "id": "hijau"
+  },
+  {
+   "ka": "ყვითელი",
+   "baca": "q'viteli",
+   "id": "kuning"
+  },
+  {
+   "ka": "ყავისფერი",
+   "baca": "q'avisperi",
+   "id": "cokelat"
+  },
+  {
+   "ka": "ნაცრისფერი",
+   "baca": "natsrisperi",
+   "id": "abu-abu"
+  },
+  {
+   "ka": "უფრო",
+   "baca": "upro",
+   "id": "lebih"
+  },
+  {
+   "ka": "ყველაზე",
+   "baca": "q'velaze",
+   "id": "paling"
+  },
+  {
+   "ka": "უკეთესი",
+   "baca": "uk'etesi",
+   "id": "lebih baik"
+  },
+  {
+   "ka": "ფასდაკლება",
+   "baca": "pasdak'leba",
+   "id": "diskon"
+  },
+  {
+   "ka": "გამყიდველი",
+   "baca": "gamq'idveli",
+   "id": "penjual"
+  },
+  {
+   "ka": "ვიყიდი",
+   "baca": "viq'idi",
+   "id": "saya akan beli"
+  },
+  {
+   "ka": "მოვიზომავ",
+   "baca": "movizomav",
+   "id": "saya coba pakai"
+  },
+  {
+   "ka": "გიხდება",
+   "baca": "gikhdeba",
+   "id": "cocok untukmu"
+  },
+  {
+   "ka": "ვათვალიერებ",
+   "baca": "vatvaliereb",
+   "id": "saya lihat-lihat"
+  },
+  {
+   "ka": "ვიფიქრებ",
+   "baca": "vipikreb",
+   "id": "saya pikir dulu"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis warna dalam bahasa Georgia.",
+   "items": [
+    "hitam → ____",
+    "putih → ____",
+    "merah → ____",
+    "biru → ____",
+    "hijau → ____",
+    "cokelat → ____"
+   ]
+  },
+  {
+   "prompt": "Lengkapi kalimat di toko.",
+   "items": [
+    "____ დიდი გაქვთ? (lebih)",
+    "სხვა ____ გაქვთ? (warna)",
+    "რა ____ გაცვიათ? (ukuran)",
+    "____ აქვს? (diskon)",
+    "მადლობა, ____ (saya pikir dulu)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ღირს / რამდენი / ეს / ?",
+    "უკეთესია / შავზე / ლურჯი",
+    "გაქვთ / დიდი / უფრო / ?",
+    "ვიყიდი / კარგი / ,",
+    "შეიძლება / ბარათით / ?"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Georgia.",
+   "items": [
+    "Saya perlu jaket hangat.",
+    "Ada yang lebih besar?",
+    "Ada warna lain?",
+    "Yang biru lebih bagus daripada yang hitam.",
+    "Ini terlalu mahal.",
+    "Terima kasih, saya pikir dulu."
+   ]
+  }
+ ],
+ "answers": [
+  "შავი — თეთრი — წითელი — ლურჯი — მწვანე — ყავისფერი",
+  "უფრო — ფერი — ზომა — ფასდაკლება — ვიფიქრებ",
+  "ეს რამდენი ღირს? — ლურჯი შავზე უკეთესია. — უფრო დიდი გაქვთ? — კარგი, ვიყიდი. — ბარათით შეიძლება?",
+  "თბილი ქურთუკი მჭირდება. — უფრო დიდი გაქვთ? — სხვა ფერი გაქვთ? — ლურჯი შავზე უკეთესია. — ეს ძალიან ძვირია. — მადლობა, ვიფიქრებ."
+ ]
+}

@@ -1,0 +1,528 @@
+{
+ "title": "Besok kamu ada waktu?",
+ "title_target": "ხვალ თავისუფალი ხარ? — Khval tavisupali khar?",
+ "goal": "Mengajak orang, membuat janji, menerima dan menolak ajakan — dan memakai bentuk masa depan seperlunya untuk membicarakan rencana.",
+ "bekal": [
+  "mengajak dengan წავიდეთ dan გინდა…?",
+  "menerima dan menolak ajakan dengan sopan",
+  "menyebut rencana dengan bentuk masa depan sederhana",
+  "menawar waktu dan tempat pertemuan",
+  "membatalkan janji tanpa membuat orang tersinggung"
+ ],
+ "dialogs": [
+  {
+   "title": "დიალოგი — Rencana akhir pekan",
+   "intro": "Levan menelepon Ani untuk mengajaknya jalan. Dialog ini penuh bentuk masa depan — jangan mencoba membongkar bentuk katanya sekarang, kenali dulu artinya.",
+   "lines": [
+    {
+     "speaker": "ლევანი:",
+     "text": "[ანი|A-ni], [შაბათს|sha-bats] [თავისუფალი|ta-vi-su-pa-li] [ხარ|khar]?",
+     "id": "Ani, Sabtu kamu ada waktu?",
+     "literal": "Ani, Sabtu-pada — bebas — kamu-adalah?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[დილით|Di-lit] [გაკვეთილი|ga-k've-ti-li] [მაქვს|makvs], [მერე|me-re] [თავისუფალი|ta-vi-su-pa-li] [ვარ|var].",
+     "id": "Pagi saya ada kelas, setelah itu bebas.",
+     "literal": "pagi-dengan — pelajaran — saya-punya, lalu — bebas — saya-adalah."
+    },
+    {
+     "speaker": "ლევანი:",
+     "text": "[კარგი|K'ar-gi]. [მთაწმინდაზე|Mta-ts'min-da-ze] [ავიდეთ|a-vi-det]? [იქიდან|I-ki-dan] [მთელი|mte-li] [ქალაქი|ka-la-ki] [ჩანს|chans].",
+     "id": "Bagus. Naik ke Mtatsminda yuk? Dari sana seluruh kota kelihatan.",
+     "literal": "Mtatsminda-di-atas — mari-kita-naik? sana-dari — seluruh — kota — terlihat."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[სიამოვნებით|Si-a-mov-ne-bit]! [რომელ|Ro-mel] [საათზე|sa-at-ze] [შევხვდეთ|shev-khvdet]?",
+     "id": "Dengan senang hati! Kita ketemu jam berapa?",
+     "literal": "dengan-kesenangan! jam-yang-mana-pada — mari-kita-bertemu?"
+    },
+    {
+     "speaker": "ლევანი:",
+     "text": "[სამ|Sam] [საათზე|sa-at-ze], [რუსთაველის|Rus-ta-ve-lis] [მეტროსთან|met'-ros-tan]?",
+     "id": "Jam tiga, di dekat metro Rustaveli?",
+     "literal": "tiga — jam-pada, Rustaveli-punya — metro-dekat?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[კარგი|K'ar-gi]. [ნინოც|Ni-nots] [მოვა|mo-va]?",
+     "id": "Baik. Nino ikut juga?",
+     "literal": "baik. Nino-juga — akan-datang?"
+    },
+    {
+     "speaker": "ლევანი:",
+     "text": "[ვერა|Ve-ra], [შაბათს|sha-bats] [მუშაობს|mu-sha-obs]. [კვირას|K'vi-ras] [კი|k'i] [თავისუფალია|ta-vi-su-pa-li-a].",
+     "id": "Tidak bisa, Sabtu dia kerja. Kalau Minggu dia bebas.",
+     "literal": "tidak-bisa, Sabtu-pada — dia-bekerja. Minggu-pada — pun — bebas-adalah."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[მაშინ|Ma-shin] [კვირას|k'vi-ras] [სამივე|sa-mi-ve] [ვნახოთ|vna-khot] [ერთმანეთი|ert-ma-ne-ti]?",
+     "id": "Kalau begitu Minggu kita bertiga ketemu?",
+     "literal": "kalau-begitu — Minggu-pada — bertiga — mari-kita-lihat — satu-sama-lain?"
+    },
+    {
+     "speaker": "ლევანი:",
+     "text": "[შესანიშნავია|She-sa-nish-na-vi-a]! [კვირას|K'vi-ras] [სადილზე|sa-dil-ze] [დაგპატიჟებთ|dag-p'a-t'i-zhebt].",
+     "id": "Bagus sekali! Minggu saya traktir makan siang.",
+     "literal": "hebat-adalah! Minggu-pada — makan-siang-pada — saya-akan-mengundang-kalian."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[არა|A-ra], [ერთად|er-tad] [გადავიხადოთ|ga-da-vi-kha-dot]!",
+     "id": "Jangan, kita bayar bareng!",
+     "literal": "tidak, bersama — mari-kita-bayar!"
+    },
+    {
+     "speaker": "ლევანი:",
+     "text": "[საქართველოში|Sa-kar-tve-losh-i] [ასე|a-se] [არ|ar] [ხდება|khde-ba], [ანი|A-ni]!",
+     "id": "Di Georgia tidak begitu, Ani!",
+     "literal": "Georgia-dalam — begitu — tidak — terjadi, Ani!"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[კარგი|K'ar-gi], [მაგრამ|mag-ram] [შემდეგში|shem-deg-shi] [მე|me] [ვიხდი|vikh-di]!",
+     "id": "Baik, tapi lain kali saya yang bayar!",
+     "literal": "baik, tetapi — berikutnya-dalam — saya — saya-membayar!"
+    }
+   ],
+   "notes": [
+    "**Ajakan dibentuk dengan ekor -ოთ / -ეთ, dan sudah kamu temui sejak unit 3.** წავიდე**თ** (mari pergi), ავიდე**თ** (mari naik), შევხვდე**თ** (mari bertemu), ვნახო**თ** (mari lihat), გადავიხადო**თ** (mari bayar). Semuanya berarti \"mari kita…\" dan tidak perlu kata tambahan seperti \"ayo\".",
+    "**Cara lain mengajak, yang lebih mudah dibentuk pemula: გინდა…?** *გინდა კინოში წავიდეთ?* (mau nonton?), *გინდა ყავა დავლიოთ?* (mau ngopi?). Pola ini aman dipakai untuk apa pun.",
+    "**ვერა bukan არა.** ⚠️ Untuk menolak karena **tidak bisa** — ada acara lain, sedang kerja — dipakai **ვერ**/**ვერა**, bukan არ/არა. *ვერ მოვალ* = saya tidak bisa datang. *არ მოვალ* = saya tidak mau datang, dan itu terdengar kasar. Perbedaan ini penting justru di kalimat-kalimat sosial seperti ini.",
+    "**სიამოვნებით = \"dengan senang hati\".** Jawaban baku untuk menerima ajakan apa pun. Perhatikan ekor -ით yang sudah kamu kenal: სიამოვნება (kesenangan) → სიამოვნებ**ით**.",
+    "**Masa depan pada tingkat A1: kenali, jangan bentuk sendiri.** მოვა (dia akan datang), მოვალ (saya akan datang), ვნახავ (saya akan lihat), ვიყიდი (saya akan beli), ვიქნები (saya akan ada). Bentuknya dibuat dengan awalan yang berbeda-beda per kata kerja dan tidak bisa ditebak — itu pekerjaan A2. Untuk sekarang, sepuluh kata kerja di halaman belakang modul sudah cukup.",
+    "**Soal siapa yang membayar.** ⚠️ Ini bukan basa-basi. Di Georgia, orang yang **mengajak** hampir selalu membayar, dan menolaknya terlalu keras justru dianggap tidak sopan. Cara keluar yang benar bukan memaksa membayar sekarang, melainkan mengucapkan *შემდეგში მე ვიხდი* (lain kali saya yang bayar) — dan menepatinya.",
+    "**მთაწმინდა (Mtatsminda) adalah bukit di atas Tbilisi**, dicapai dengan kereta gantung (ფუნიკულიორი). Dari sana seluruh kota terlihat, dan ini tempat pertemuan pertama yang paling sering ditawarkan orang Tbilisi kepada tamunya."
+   ],
+   "grammars": [
+    {
+     "title": "Mengajak, menerima, menolak",
+     "tables": [
+      {
+       "head": [
+        "Mengajak",
+        "Cara baca",
+        "Artinya"
+       ],
+       "rows": [
+        [
+         "წავიდეთ?",
+         "ts'avidet",
+         "Yuk pergi?"
+        ],
+        [
+         "გინდა კინოში წავიდეთ?",
+         "ginda k'inoshi ts'avidet",
+         "Mau nonton bioskop?"
+        ],
+        [
+         "ყავა დავლიოთ?",
+         "q'ava davliot",
+         "Ngopi yuk?"
+        ],
+        [
+         "შევხვდეთ?",
+         "shevkhvdet",
+         "Ketemuan yuk?"
+        ],
+        [
+         "დრო გაქვს?",
+         "dro gakvs",
+         "Kamu ada waktu?"
+        ],
+        [
+         "თავისუფალი ხარ?",
+         "tavisupali khar",
+         "Kamu senggang?"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Menjawab",
+        "Cara baca",
+        "Artinya",
+        "Nadanya"
+       ],
+       "rows": [
+        [
+         "სიამოვნებით!",
+         "siamovnebit",
+         "Dengan senang hati!",
+         "menerima"
+        ],
+        [
+         "რა თქმა უნდა!",
+         "ra tkma unda",
+         "Tentu saja!",
+         "menerima"
+        ],
+        [
+         "კარგი, მოვალ",
+         "k'argi, moval",
+         "Baik, saya datang",
+         "menerima"
+        ],
+        [
+         "ვერ მოვალ, ბოდიში",
+         "ver moval, bodishi",
+         "Saya tidak bisa datang, maaf",
+         "menolak — sopan"
+        ],
+        [
+         "სამწუხაროდ, დაკავებული ვარ",
+         "samts'ukharod, dak'avebuli var",
+         "Sayangnya saya sibuk",
+         "menolak — sopan"
+        ],
+        [
+         "სხვა დროს შეიძლება?",
+         "skhva dros sheidzleba",
+         "Lain waktu bisa?",
+         "menolak sambil menawarkan"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ Perhatikan **ვერ მოვალ**, bukan *არ მოვალ*. Yang pertama berarti \"tidak bisa\", yang kedua \"tidak mau\"."
+     ]
+    },
+    {
+     "title": "Bentuk masa depan yang perlu dikenali sekarang",
+     "table": {
+      "head": [
+       "Sekarang",
+       "Nanti",
+       "Cara baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "ვარ",
+        "ვიქნები",
+        "viknebi",
+        "saya akan ada / jadi"
+       ],
+       [
+        "მოვდივარ",
+        "მოვალ",
+        "moval",
+        "saya akan datang"
+       ],
+       [
+        "მივდივარ",
+        "წავალ",
+        "ts'aval",
+        "saya akan pergi"
+       ],
+       [
+        "ვხედავ",
+        "ვნახავ",
+        "vnakhav",
+        "saya akan lihat / temui"
+       ],
+       [
+        "ვყიდულობ",
+        "ვიყიდი",
+        "viq'idi",
+        "saya akan beli"
+       ],
+       [
+        "ვჭამ",
+        "შევჭამ",
+        "shevch'am",
+        "saya akan makan"
+       ],
+       [
+        "ვწერ",
+        "დავწერ",
+        "davts'er",
+        "saya akan tulis"
+       ],
+       [
+        "ვსწავლობ",
+        "ვისწავლი",
+        "vists'avli",
+        "saya akan belajar"
+       ]
+      ]
+     },
+     "after": [
+      "Untuk orang ketiga, ekornya kembali ke pola yang kamu kenal: მოვალ → **მოვა** (dia akan datang), წავალ → **წავა**, ვნახავ → **ნახავს**."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Ke mana orang mengajak, dan bagaimana membatalkan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ajakan",
+      "Cara baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "კინოში წავიდეთ",
+       "k'inoshi ts'avidet",
+       "Yuk ke bioskop"
+      ],
+      [
+       "კაფეში დავსხდეთ",
+       "k'apeshi davskhdet",
+       "Yuk duduk di kafe"
+      ],
+      [
+       "სასეირნოდ გავიდეთ",
+       "saseirnod gavidet",
+       "Yuk jalan-jalan keluar"
+      ],
+      [
+       "სადილზე დაგპატიჟებ",
+       "sadilze dagp'at'izheb",
+       "Saya traktir makan siang"
+      ],
+      [
+       "ჩემთან მოდი",
+       "chemtan modi",
+       "Datanglah ke tempat saya"
+      ],
+      [
+       "ერთად ვისწავლოთ",
+       "ertad vists'avlot",
+       "Yuk belajar bareng"
+      ],
+      [
+       "კონცერტზე წავიდეთ",
+       "k'ontsert'ze ts'avidet",
+       "Yuk ke konser"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Membatalkan janji tanpa merusak hubungan",
+     "items": [
+      "**ბოდიში, ვერ მოვალ.** — Maaf, saya tidak bisa datang. (kalimat inti; tidak perlu lebih)",
+      "**რაღაც გამომივიდა.** (raghats gamomivida) — Ada sesuatu yang muncul.",
+      "**შეიძლება სხვა დროს?** — Bisa lain waktu?",
+      "**ხვალ დაგირეკავ.** (khval dagirek'av) — Besok saya telepon kamu.",
+      "⚠️ Membatalkan lewat pesan singkat tanpa menawarkan waktu pengganti dianggap dingin. Selalu tambahkan kalimat ketiga atau keempat di atas."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu hal yang perlu diketahui sejak awal: ajakan orang Georgia sering terdengar mendadak dan sering **bukan** basa-basi. *ხვალ ჩვენთან მოდი* (besok datang ke rumah kami) dari orang yang baru kamu kenal seminggu adalah undangan sungguhan, dan menolaknya berkali-kali akan dianggap penolakan atas orangnya, bukan atas acaranya. Kalau kamu memang tidak bisa, tawarkan waktu lain — itu yang membedakan \"tidak bisa hari ini\" dari \"tidak mau\"."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ka": "თავისუფალი",
+   "baca": "tavisupali",
+   "id": "bebas, senggang"
+  },
+  {
+   "ka": "დაკავებული",
+   "baca": "dak'avebuli",
+   "id": "sibuk"
+  },
+  {
+   "ka": "დრო",
+   "baca": "dro",
+   "id": "waktu"
+  },
+  {
+   "ka": "წავიდეთ",
+   "baca": "ts'avidet",
+   "id": "mari kita pergi"
+  },
+  {
+   "ka": "შევხვდეთ",
+   "baca": "shevkhvdet",
+   "id": "mari kita bertemu"
+  },
+  {
+   "ka": "ვნახოთ",
+   "baca": "vnakhot",
+   "id": "mari kita lihat"
+  },
+  {
+   "ka": "სიამოვნებით",
+   "baca": "siamovnebit",
+   "id": "dengan senang hati"
+  },
+  {
+   "ka": "ვერ",
+   "baca": "ver",
+   "id": "tidak bisa"
+  },
+  {
+   "ka": "მოვალ",
+   "baca": "moval",
+   "id": "saya akan datang"
+  },
+  {
+   "ka": "მოვა",
+   "baca": "mova",
+   "id": "dia akan datang"
+  },
+  {
+   "ka": "წავალ",
+   "baca": "ts'aval",
+   "id": "saya akan pergi"
+  },
+  {
+   "ka": "ვიქნები",
+   "baca": "viknebi",
+   "id": "saya akan ada"
+  },
+  {
+   "ka": "ვნახავ",
+   "baca": "vnakhav",
+   "id": "saya akan lihat"
+  },
+  {
+   "ka": "ვიყიდი",
+   "baca": "viq'idi",
+   "id": "saya akan beli"
+  },
+  {
+   "ka": "კინო",
+   "baca": "k'ino",
+   "id": "bioskop"
+  },
+  {
+   "ka": "კონცერტი",
+   "baca": "k'ontsert'i",
+   "id": "konser"
+  },
+  {
+   "ka": "სასეირნოდ",
+   "baca": "saseirnod",
+   "id": "untuk jalan-jalan"
+  },
+  {
+   "ka": "ერთმანეთი",
+   "baca": "ertmaneti",
+   "id": "satu sama lain"
+  },
+  {
+   "ka": "ერთად",
+   "baca": "ertad",
+   "id": "bersama"
+  },
+  {
+   "ka": "სამივე",
+   "baca": "samive",
+   "id": "bertiga"
+  },
+  {
+   "ka": "ვიხდი",
+   "baca": "vikhdi",
+   "id": "saya membayar"
+  },
+  {
+   "ka": "დაგპატიჟებ",
+   "baca": "dagp'at'izheb",
+   "id": "saya traktir kamu"
+  },
+  {
+   "ka": "შემდეგში",
+   "baca": "shemdegshi",
+   "id": "lain kali"
+  },
+  {
+   "ka": "სხვა დროს",
+   "baca": "skhva dros",
+   "id": "lain waktu"
+  },
+  {
+   "ka": "დაგირეკავ",
+   "baca": "dagirek'av",
+   "id": "saya akan telepon kamu"
+  },
+  {
+   "ka": "ჩანს",
+   "baca": "chans",
+   "id": "terlihat"
+  },
+  {
+   "ka": "მთელი",
+   "baca": "mteli",
+   "id": "seluruh"
+  },
+  {
+   "ka": "ასე",
+   "baca": "ase",
+   "id": "begitu, seperti ini"
+  },
+  {
+   "ka": "ხდება",
+   "baca": "khdeba",
+   "id": "terjadi"
+  },
+  {
+   "ka": "ბოდიში",
+   "baca": "bodishi",
+   "id": "maaf"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih ვერ atau არ.",
+   "items": [
+    "Saya tidak bisa datang, ada kelas → ____ მოვალ",
+    "Saya tidak makan daging babi → ღორის ხორცს ____ ვჭამ",
+    "Saya tidak bisa bicara bahasa Georgia dengan baik → ____ ვლაპარაკობ კარგად",
+    "Saya tidak tahu → ____ ვიცი",
+    "Saya tidak bisa dengar → ____ მესმის"
+   ]
+  },
+  {
+   "prompt": "Lengkapi ajakan dan jawabannya.",
+   "items": [
+    "____ კინოში წავიდეთ? (kamu mau)",
+    "____ ! (dengan senang hati)",
+    "რომელ ____ შევხვდეთ? (jam)",
+    "ბოდიში, ____ მოვალ (tidak bisa)",
+    "შეიძლება ____ დროს? (lain)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ხარ / თავისუფალი / შაბათს / ?",
+    "წავიდეთ / კინოში",
+    "შევხვდეთ / საათზე / სამ",
+    "მოვალ / ბოდიში / ვერ / ,",
+    "გაქვს / დრო / ხვალ / ?"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Georgia.",
+   "items": [
+    "Besok kamu ada waktu?",
+    "Mau ke bioskop?",
+    "Dengan senang hati!",
+    "Kita ketemu jam berapa?",
+    "Maaf, saya tidak bisa datang.",
+    "Bisa lain waktu?"
+   ]
+  }
+ ],
+ "answers": [
+  "ვერ — არ — ვერ — არ — ვერ",
+  "გინდა — სიამოვნებით — საათზე — ვერ — სხვა",
+  "შაბათს თავისუფალი ხარ? — კინოში წავიდეთ. — სამ საათზე შევხვდეთ. — ბოდიში, ვერ მოვალ. — ხვალ დრო გაქვს?",
+  "ხვალ დრო გაქვს? — გინდა კინოში წავიდეთ? — სიამოვნებით! — რომელ საათზე შევხვდეთ? — ბოდიში, ვერ მოვალ. — შეიძლება სხვა დროს?"
+ ]
+}

@@ -1,0 +1,576 @@
+{
+ "title": "Berapa harganya?",
+ "title_target": "რამდენი ღირს? — Ramdeni ghirs?",
+ "goal": "Menghitung sampai seratus dengan sistem yang dihitung per dua puluh, menanyakan harga, menawar di pasar, dan memahami kenapa \"empat puluh\" dalam bahasa Georgia sebenarnya berbunyi \"dua kali dua puluh\".",
+ "bekal": [
+  "menghitung 1–20 dan membentuk semua angka sampai 100",
+  "menanyakan harga dengan dua cara",
+  "menawar dengan sopan di pasar",
+  "menyebut jumlah dan berat pembelian",
+  "membaca harga yang tertulis di label toko"
+ ],
+ "dialogs": [
+  {
+   "title": "დიალოგი — Di pasar Dezerter",
+   "intro": "Pasar Dezerter di Tbilisi: buah, keju, rempah, dan penjual yang selalu punya pendapat tentang apa yang harus kamu beli. Ani berbelanja untuk seminggu. Perhatikan angka-angkanya baik-baik — sistemnya akan terbuka sendiri di kotak tata bahasa.",
+   "lines": [
+    {
+     "speaker": "ანი:",
+     "text": "[უკაცრავად|Uk'-ats-ra-vad], [ეს|es] [ატამი|a-t'a-mi] [რამდენი|ram-de-ni] [ღირს|ghirs]?",
+     "id": "Permisi, persik ini berapa?",
+     "literal": "permisi, ini — persik — berapa — berharga?"
+    },
+    {
+     "speaker": "გამყიდველი:",
+     "text": "[კილო|K'i-lo] [ხუთი|khu-ti] [ლარი|la-ri].",
+     "id": "Sekilo lima lari.",
+     "literal": "kilo — lima — lari."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ორი|O-ri] [კილო|k'i-lo], [თუ|tu] [შეიძლება|she-idz-le-ba]. [ყველი|Q've-li] [გაქვთ|gakvt]?",
+     "id": "Dua kilo, tolong. Ada keju?",
+     "literal": "dua — kilo, kalau — boleh. keju — kalian-punya?"
+    },
+    {
+     "speaker": "გამყიდველი:",
+     "text": "[რა|Ra] [თქმა|tkma] [უნდა|un-da]. [სულგუნი|Sul-gu-ni] [ოცდაათი|ots-da-a-ti] [ლარი|la-ri] [კილო|k'i-lo].",
+     "id": "Tentu saja. Sulguni tiga puluh lari sekilo.",
+     "literal": "apa — ucapan — perlu. sulguni — dua-puluh-dan-sepuluh — lari — kilo."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ოცდაათი|Ots-da-a-ti]?! [ცოტა|Tso-t'a] [ძვირია|dzvi-ri-a].",
+     "id": "Tiga puluh?! Agak mahal.",
+     "literal": "dua-puluh-dan-sepuluh?! sedikit — mahal-adalah."
+    },
+    {
+     "speaker": "გამყიდველი:",
+     "text": "[კარგი|K'ar-gi] [ყველია|q've-li-a], [სოფლის|sop-lis]. [ნახევარი|Na-khe-va-ri] [კილო|k'i-lo] [თხუთმეტი|tkhut-me-t'i].",
+     "id": "Ini keju bagus, dari desa. Setengah kilo lima belas.",
+     "literal": "baik — keju-adalah, desa-punya. setengah — kilo — lima-belas."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ნახევარი|Na-khe-va-ri] [კილო|k'i-lo], [მაშინ|ma-shin]. [სულ|Sul] [რამდენი|ram-de-ni] [გამოვიდა|ga-mo-vi-da]?",
+     "id": "Setengah kilo kalau begitu. Totalnya berapa?",
+     "literal": "setengah — kilo, kalau-begitu. semua — berapa — keluar?"
+    },
+    {
+     "speaker": "გამყიდველი:",
+     "text": "[ორი|O-ri] [კილო|k'i-lo] [ატამი|a-t'a-mi] [ათი|a-ti], [ყველი|q've-li] [თხუთმეტი|tkhut-me-t'i] — [ოცდახუთი|ots-da-khu-ti] [ლარი|la-ri].",
+     "id": "Dua kilo persik sepuluh, keju lima belas — dua puluh lima lari.",
+     "literal": "dua — kilo — persik — sepuluh, keju — lima-belas — dua-puluh-dan-lima — lari."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[აი|A-i], [ოცდაათი|ots-da-a-ti].",
+     "id": "Ini, tiga puluh.",
+     "literal": "ini-dia, dua-puluh-dan-sepuluh."
+    },
+    {
+     "speaker": "გამყიდველი:",
+     "text": "[ხუთი|Khu-ti] [ლარი|la-ri] [ხურდა|khur-da]. [ესეც|E-sets] [ერთი|er-ti] [ატამი|a-t'a-mi], [საჩუქრად|sa-chuk-rad]!",
+     "id": "Kembali lima lari. Ini satu persik lagi, hadiah!",
+     "literal": "lima — lari — kembalian. ini-juga — satu — persik, sebagai-hadiah!"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ძალიან|Dza-li-an] [დიდი|di-di] [მადლობა|mad-lo-ba]!",
+     "id": "Terima kasih banyak!",
+     "literal": "sangat — besar — terima-kasih!"
+    },
+    {
+     "speaker": "გამყიდველი:",
+     "text": "[არაფრის|A-rap-ris]! [კიდევ|K'i-dev] [მოდი|mo-di]!",
+     "id": "Sama-sama! Datang lagi ya!",
+     "literal": "tidak-apa-apa! lagi — datang!"
+    }
+   ],
+   "notes": [
+    "**Angka Georgia dihitung per dua puluh, bukan per sepuluh.** ოცდაათი (30) harfiahnya \"dua puluh dan sepuluh\". ორმოცი (40) = \"dua kali dua puluh\". Sistem yang sama dipakai bahasa Prancis (*quatre-vingts* = 80) dan bahasa Denmark. Kelihatannya aneh, tapi begitu polanya terlihat, kamu cuma perlu hafal sepuluh kata untuk menguasai seratus angka pertama.",
+    "**ოცდახუთი = 25** — ოცი (20) + და (dan) + ხუთი (5). Perhatikan bahwa კ dan ც-nya menyatu jadi satu kata tanpa spasi. Angka Georgia selalu ditulis menyatu: ორმოცდაათი (50), სამოცდაცხრამეტი (79).",
+    "**კილო tidak perlu ekor apa-apa.** *ორი კილო ატამი* — dua kilo persik, semuanya dalam bentuk kamus. Sama seperti bahasa Indonesia, dan tidak seperti bahasa Rusia atau Jerman yang mengubah ekornya.",
+    "**ძვირია / იაფია — mahal / murah.** Untuk menawar dengan sopan, jangan menyebut harga yang kamu mau; katakan *ცოტა ძვირია* (agak mahal) dan tunggu. ⚠️ Di pasar makanan Georgia, tawar-menawar keras **tidak** biasa — harga per kilo umumnya sudah tetap. Yang bisa berubah cuma jumlah dan bonusnya.",
+    "**საჩუქრად = \"sebagai hadiah\".** Ekor **-ად** yang sudah kamu kenal dari unit 3 (ქართულ**ად**), sekarang dengan arti \"menjadi/sebagai\". Diberi tambahan gratis di pasar Georgia adalah kejadian harian, bukan keistimewaan — menolaknya justru dianggap kaku.",
+    "**ხურდა = uang kembalian.** Kalimat penting kalau kamu membayar dengan uang besar: *ხურდა გაქვთ?* (ada kembalian?). Di Tbilisi, membayar tiket bus dengan uang 50 lari akan selalu ditolak.",
+    "**რა თქმა უნდა** (ra tkma unda) — \"tentu saja\". Harfiahnya \"apa yang perlu dikatakan\". Salah satu ungkapan paling sering dipakai di percakapan sehari-hari; hafalkan utuh."
+   ],
+   "grammars": [
+    {
+     "title": "Angka: sepuluh kata untuk seratus angka",
+     "body": [
+      "Bagian pertama harus dihafal apa adanya. Bagian kedua terbentuk sendiri."
+     ],
+     "tables": [
+      {
+       "head": [
+        "1–10",
+        "",
+        "11–20",
+        ""
+       ],
+       "rows": [
+        [
+         "1 ერთი — erti",
+         "6 ექვსი — ekvsi",
+         "11 თერთმეტი — tertmet'i",
+         "16 თექვსმეტი — tekvsmet'i"
+        ],
+        [
+         "2 ორი — ori",
+         "7 შვიდი — shvidi",
+         "12 თორმეტი — tormet'i",
+         "17 ჩვიდმეტი — chvidmet'i"
+        ],
+        [
+         "3 სამი — sami",
+         "8 რვა — rva",
+         "13 ცამეტი — tsamet'i",
+         "18 თვრამეტი — tvramet'i"
+        ],
+        [
+         "4 ოთხი — otkhi",
+         "9 ცხრა — tskhra",
+         "14 თოთხმეტი — totkhmet'i",
+         "19 ცხრამეტი — tskhramet'i"
+        ],
+        [
+         "5 ხუთი — khuti",
+         "10 ათი — ati",
+         "15 თხუთმეტი — tkhutmet'i",
+         "20 ოცი — otsi"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Kelipatan 20",
+        "Harfiahnya",
+        "+10",
+        "Harfiahnya"
+       ],
+       "rows": [
+        [
+         "20 ოცი",
+         "dua puluh",
+         "30 ოცდაათი",
+         "20 dan 10"
+        ],
+        [
+         "40 ორმოცი",
+         "2 × 20",
+         "50 ორმოცდაათი",
+         "2×20 dan 10"
+        ],
+        [
+         "60 სამოცი",
+         "3 × 20",
+         "70 სამოცდაათი",
+         "3×20 dan 10"
+        ],
+        [
+         "80 ოთხმოცი",
+         "4 × 20",
+         "90 ოთხმოცდაათი",
+         "4×20 dan 10"
+        ],
+        [
+         "100 ასი",
+         "seratus",
+         "1.000 ათასი",
+         "seribu"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "**Angka di antaranya = kelipatan + და + sisanya.** 21 ოცდაერთი · 25 ოცდახუთი · 33 ოცდაცამეტი · 45 ორმოცდახუთი · 68 სამოცდარვა · 99 ოთხმოცდაცხრამეტი.",
+      "⚠️ **Kata benda sesudah angka tetap tunggal**: ხუთი ლარი, ოცი წიგნი, ასი კაცი. Jangan pernah menjamakkannya."
+     ]
+    },
+    {
+     "title": "Menanyakan harga — tiga bentuk",
+     "table": {
+      "head": [
+       "Kalimat",
+       "Cara baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "რამდენი ღირს?",
+        "ramdeni ghirs",
+        "Berapa harganya?"
+       ],
+       [
+        "რა ღირს?",
+        "ra ghirs",
+        "Berapa? (lebih pendek, sangat umum)"
+       ],
+       [
+        "სულ რამდენი გამოვიდა?",
+        "sul ramdeni gamovida",
+        "Totalnya berapa?"
+       ],
+       [
+        "ძვირია",
+        "dzviria",
+        "Mahal"
+       ],
+       [
+        "იაფია",
+        "iapia",
+        "Murah"
+       ],
+       [
+        "ფასდაკლება გაქვთ?",
+        "pasdak'leba gakvt",
+        "Ada diskon?"
+       ]
+      ]
+     },
+     "after": [
+      "Mata uang Georgia adalah **ლარი** (lari), dan pecahannya **თეთრი** (tetri) — harfiahnya \"putih\". Satu lari = 100 tetri. Lambangnya ₾, dan kamu akan melihatnya di semua label harga."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di pasar: apa yang kamu lihat dan apa yang kamu katakan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Georgia",
+      "Cara baca",
+      "Artinya",
+      "Georgia",
+      "Cara baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "ბაზარი",
+       "bazari",
+       "pasar",
+       "ხილი",
+       "khili",
+       "buah"
+      ],
+      [
+       "მაღაზია",
+       "maghazia",
+       "toko",
+       "ბოსტნეული",
+       "bost'neuli",
+       "sayur"
+      ],
+      [
+       "ფასი",
+       "pasi",
+       "harga",
+       "ატამი",
+       "at'ami",
+       "persik"
+      ],
+      [
+       "კილო",
+       "k'ilo",
+       "kilogram",
+       "ვაშლი",
+       "vashli",
+       "apel"
+      ],
+      [
+       "ნახევარი",
+       "nakhevari",
+       "setengah",
+       "ყურძენი",
+       "q'urdzeni",
+       "anggur (buah)"
+      ],
+      [
+       "ცალი",
+       "tsali",
+       "biji, buah (satuan)",
+       "პომიდორი",
+       "p'omidori",
+       "tomat"
+      ],
+      [
+       "ხურდა",
+       "khurda",
+       "kembalian",
+       "კარტოფილი",
+       "k'art'opili",
+       "kentang"
+      ],
+      [
+       "ფული",
+       "puli",
+       "uang",
+       "მწვანილი",
+       "mts'vanili",
+       "daun rempah"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Enam kalimat untuk seluruh kunjungan ke pasar",
+     "items": [
+      "**ეს რა ღირს?** — Ini berapa?",
+      "**ერთი კილო, თუ შეიძლება.** — Satu kilo, tolong.",
+      "**ნახევარი კილო.** — Setengah kilo.",
+      "**ცოტა ძვირია.** — Agak mahal. (cara menawar paling sopan)",
+      "**ხურდა გაქვთ?** — Ada kembalian?",
+      "**სულ რამდენი გამოვიდა?** — Totalnya berapa?"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu kata yang tidak ada di daftar mana pun tapi akan kamu dengar terus: **გენაცვალე** (genatsvale). Ia dipakai penjual pasar, sopir taksi, dan nenek-nenek kepada orang asing, dan tidak bisa diterjemahkan — kira-kira \"sayang\", \"nak\", atau \"kamu yang kuganti tempatnya\". Kalau seseorang memanggilmu genatsvale, kamu sedang diperlakukan dengan hangat."
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Soal harga: label di toko Georgia hampir selalu mencantumkan harga **per kilo**, bukan per bungkus, termasuk untuk keju dan daging. Yang tertulis 30 ₾ pada sepotong keju kecil kemungkinan besar berarti tiga puluh lari sekilo, dan potongan itu sendiri jauh lebih murah. Kalimat *ეს ცალი რა ღირს?* (potong ini berapa?) menyelesaikan kebingungannya."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ka": "ერთი",
+   "baca": "erti",
+   "id": "satu"
+  },
+  {
+   "ka": "ორი",
+   "baca": "ori",
+   "id": "dua"
+  },
+  {
+   "ka": "სამი",
+   "baca": "sami",
+   "id": "tiga"
+  },
+  {
+   "ka": "ოთხი",
+   "baca": "otkhi",
+   "id": "empat"
+  },
+  {
+   "ka": "ხუთი",
+   "baca": "khuti",
+   "id": "lima"
+  },
+  {
+   "ka": "ექვსი",
+   "baca": "ekvsi",
+   "id": "enam"
+  },
+  {
+   "ka": "შვიდი",
+   "baca": "shvidi",
+   "id": "tujuh"
+  },
+  {
+   "ka": "რვა",
+   "baca": "rva",
+   "id": "delapan"
+  },
+  {
+   "ka": "ცხრა",
+   "baca": "tskhra",
+   "id": "sembilan"
+  },
+  {
+   "ka": "ათი",
+   "baca": "ati",
+   "id": "sepuluh"
+  },
+  {
+   "ka": "თხუთმეტი",
+   "baca": "tkhutmet'i",
+   "id": "lima belas"
+  },
+  {
+   "ka": "ოცი",
+   "baca": "otsi",
+   "id": "dua puluh"
+  },
+  {
+   "ka": "ოცდაათი",
+   "baca": "otsdaati",
+   "id": "tiga puluh"
+  },
+  {
+   "ka": "ორმოცი",
+   "baca": "ormotsi",
+   "id": "empat puluh"
+  },
+  {
+   "ka": "ასი",
+   "baca": "asi",
+   "id": "seratus"
+  },
+  {
+   "ka": "ათასი",
+   "baca": "atasi",
+   "id": "seribu"
+  },
+  {
+   "ka": "ღირს",
+   "baca": "ghirs",
+   "id": "berharga"
+  },
+  {
+   "ka": "ფასი",
+   "baca": "pasi",
+   "id": "harga"
+  },
+  {
+   "ka": "ლარი",
+   "baca": "lari",
+   "id": "lari"
+  },
+  {
+   "ka": "თეთრი",
+   "baca": "tetri",
+   "id": "tetri; putih"
+  },
+  {
+   "ka": "ფული",
+   "baca": "puli",
+   "id": "uang"
+  },
+  {
+   "ka": "ხურდა",
+   "baca": "khurda",
+   "id": "kembalian"
+  },
+  {
+   "ka": "ძვირი",
+   "baca": "dzviri",
+   "id": "mahal"
+  },
+  {
+   "ka": "იაფი",
+   "baca": "iapi",
+   "id": "murah"
+  },
+  {
+   "ka": "ბაზარი",
+   "baca": "bazari",
+   "id": "pasar"
+  },
+  {
+   "ka": "კილო",
+   "baca": "k'ilo",
+   "id": "kilogram"
+  },
+  {
+   "ka": "ნახევარი",
+   "baca": "nakhevari",
+   "id": "setengah"
+  },
+  {
+   "ka": "ხილი",
+   "baca": "khili",
+   "id": "buah"
+  },
+  {
+   "ka": "ბოსტნეული",
+   "baca": "bost'neuli",
+   "id": "sayur"
+  },
+  {
+   "ka": "ვაშლი",
+   "baca": "vashli",
+   "id": "apel"
+  },
+  {
+   "ka": "ატამი",
+   "baca": "at'ami",
+   "id": "persik"
+  },
+  {
+   "ka": "ყურძენი",
+   "baca": "q'urdzeni",
+   "id": "anggur (buah)"
+  },
+  {
+   "ka": "სულ",
+   "baca": "sul",
+   "id": "total, seluruhnya"
+  },
+  {
+   "ka": "კიდევ",
+   "baca": "k'idev",
+   "id": "lagi"
+  },
+  {
+   "ka": "რა თქმა უნდა",
+   "baca": "ra tkma unda",
+   "id": "tentu saja"
+  },
+  {
+   "ka": "საჩუქარი",
+   "baca": "sachukari",
+   "id": "hadiah"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angkanya dengan huruf Georgia.",
+   "items": [
+    "7 → ____",
+    "12 → ____",
+    "20 → ____",
+    "30 → ____",
+    "40 → ____",
+    "25 → ____"
+   ]
+  },
+  {
+   "prompt": "Lengkapi kalimat belanjanya.",
+   "items": [
+    "ეს რამდენი ____ ? (berharga)",
+    "ორი ____ ატამი (kilo)",
+    "____ კილო ყველი (setengah)",
+    "ცოტა ____ (mahal)",
+    "____ გაქვთ? (kembalian)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ღირს / რამდენი / ეს / ?",
+    "შეიძლება / კილო / ერთი / თუ / ,",
+    "ძვირია / ცოტა",
+    "გამოვიდა / რამდენი / სულ / ?",
+    "ლარი / ხუთი / ღირს"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Georgia.",
+   "items": [
+    "Ini berapa harganya?",
+    "Sekilo lima lari.",
+    "Dua kilo, tolong.",
+    "Agak mahal.",
+    "Ada kembalian?",
+    "Totalnya berapa?"
+   ]
+  }
+ ],
+ "answers": [
+  "შვიდი — თორმეტი — ოცი — ოცდაათი — ორმოცი — ოცდახუთი",
+  "ღირს — კილო — ნახევარი — ძვირია — ხურდა",
+  "ეს რამდენი ღირს? — ერთი კილო, თუ შეიძლება. — ცოტა ძვირია. — სულ რამდენი გამოვიდა? — ხუთი ლარი ღირს.",
+  "ეს რამდენი ღირს? — კილო ხუთი ლარი. — ორი კილო, თუ შეიძლება. — ცოტა ძვირია. — ხურდა გაქვთ? — სულ რამდენი გამოვიდა?"
+ ]
+}

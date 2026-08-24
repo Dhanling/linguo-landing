@@ -1,0 +1,496 @@
+{
+ "title": "Halo, saya Ani",
+ "title_target": "გამარჯობა, მე ანი ვარ — Gamarjoba, me Ani var",
+ "goal": "Menyapa orang Georgia dengan salam yang benar, mengatakan siapa dirimu, menanyakan nama orang lain, dan berpisah baik-baik — semuanya dengan satu kata kerja saja.",
+ "bekal": [
+  "menyapa dengan გამარჯობა dan menjawab salam itu dengan benar",
+  "mengatakan მე … ვარ untuk menyebut namamu",
+  "menanyakan nama orang, sopan maupun santai",
+  "mengucapkan terima kasih dalam dua tingkat kesopanan",
+  "berpisah dengan kata yang tepat menurut siapa yang pergi"
+ ],
+ "dialogs": [
+  {
+   "title": "დიალოგი — Hari pertama di kursus",
+   "intro": "Ani, mahasiswa Indonesia, baru sampai di Tbilisi dan hari ini masuk kelas bahasa Georgia untuk pertama kalinya. Di pintu ia bertemu Nino. Perhatikan bahwa salam pertama dan jawabannya adalah dua kata yang berbeda — ini satu-satunya bahasa yang melakukan itu.",
+   "lines": [
+    {
+     "speaker": "ნინო:",
+     "text": "[გამარჯობა|Ga-mar-jo-ba]! [მე|Me] [ნინო|Ni-no] [ვარ|var].",
+     "id": "Halo! Saya Nino.",
+     "literal": "halo! saya — Nino — adalah."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[გაგიმარჯოს|Ga-gi-mar-jos]! [მე|Me] [ანი|A-ni] [ვარ|var].",
+     "id": "Halo! Saya Ani.",
+     "literal": "halo-balasan! saya — Ani — adalah."
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[ძალიან|Dza-li-an] [სასიამოვნოა|sa-si-a-mov-no-a].",
+     "id": "Senang sekali berkenalan.",
+     "literal": "sangat — menyenangkan-adalah."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[მეც|Mets].",
+     "id": "Saya juga.",
+     "literal": "saya-juga."
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[როგორ|Ro-gor] [ხარ|khar], [ანი|A-ni]?",
+     "id": "Apa kabar, Ani?",
+     "literal": "bagaimana — kamu-adalah, Ani?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[კარგად|K'ar-gad] [ვარ|var], [მადლობა|mad-lo-ba]. [შენ|Shen]?",
+     "id": "Baik, terima kasih. Kamu?",
+     "literal": "secara-baik — saya-adalah, terima-kasih. kamu?"
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[მეც|Mets] [კარგად|k'ar-gad]. [ის|Is] [ვინ|vin] [არის|a-ris]?",
+     "id": "Saya juga baik. Itu siapa?",
+     "literal": "saya-juga — secara-baik. itu — siapa — adalah?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ის|Is] [ჩემი|che-mi] [მასწავლებელია|mas-ts'av-le-be-li-a].",
+     "id": "Itu guru saya.",
+     "literal": "itu — saya-punya — guru-adalah."
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[რა|Ra] [ჰქვია|hkvi-a]?",
+     "id": "Siapa namanya?",
+     "literal": "apa — ter-panggil-kepadanya?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[გიორგი|Gi-or-gi] [ჰქვია|hkvi-a]. [ის|Is] [ძალიან|dza-li-an] [კარგია|k'ar-gi-a].",
+     "id": "Namanya Giorgi. Dia baik sekali.",
+     "literal": "Giorgi — ter-panggil-kepadanya. dia — sangat — baik-adalah."
+    },
+    {
+     "speaker": "ნინო:",
+     "text": "[კარგი|K'ar-gi]. [ნახვამდის|Nakh-vam-dis], [ანი|A-ni]!",
+     "id": "Baiklah. Sampai jumpa, Ani!",
+     "literal": "baik. sampai-berjumpa, Ani!"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[კარგად|K'ar-gad], [ნინო|Ni-no]! [მადლობა|Mad-lo-ba]!",
+     "id": "Hati-hati, Nino! Terima kasih!",
+     "literal": "secara-baik, Nino! terima-kasih!"
+    }
+   ],
+   "notes": [
+    "**გამარჯობა harfiahnya bukan \"halo\", tapi \"kemenangan bagimu\".** Salam ini warisan zaman perang: prajurit yang pulang disambut dengan doa kemenangan. Jawabannya bukan mengulang kata yang sama, melainkan **გაგიმარჯოს** — \"semoga kemenangan jadi milikmu\". ⚠️ Ini titik keliru pertama penutur Indonesia, yang terbiasa membalas \"halo\" dengan \"halo\". Membalas გამარჯობა dengan გამარჯობა tidak salah dan orang tetap mengerti, tapi გაგიმარჯოს langsung terdengar seperti orang yang benar-benar belajar.",
+    "**Tidak ada kata terpisah untuk \"adalah\", karena ia sudah ada di dalam kata kerjanya.** მე ვარ = \"saya adalah\". Yang menarik: pelakunya boleh dibuang sama sekali. *ანი ვარ* saja sudah berarti \"saya Ani\", karena **ვ-** di depan kata kerja sudah menyatakan bahwa pelakunya \"saya\". Awalan ვ- itu akan kamu temui di hampir semua kata kerja modul ini.",
+    "**არის sering menyusut jadi -ა yang menempel ke kata sebelumnya.** მასწავლებელი + არის → მასწავლებელ**ია**. კარგი + არის → კარგ**ია**. Bentuk panjangnya tetap benar (ის მასწავლებელი არის), tapi yang terdengar sehari-hari hampir selalu bentuk pendeknya.",
+    "**რა გქვია? harfiahnya \"apa yang terpanggil kepadamu\", bukan \"siapa namamu\".** ⚠️ Penutur Indonesia hampir selalu memakai ვინ (siapa) di sini karena begitulah bahasa kita bertanya. Dalam bahasa Georgia yang dipakai **რა** (apa) — yang ditanyakan bukan orangnya, melainkan namanya. ვინ ხარ? berarti \"kamu ini siapa?\" dan terdengar seperti interogasi.",
+    "**კარგად bukan კარგი.** კარგი = baik (kata sifat), კარგად = secara baik (kata keterangan). Ekor **-ად** inilah yang mengubah kata sifat jadi keterangan, dan ia akan kembali lagi di unit 3 dengan pekerjaan yang lebih besar: ქართულ**ად** = \"dalam bahasa Georgia\".",
+    "**მეც = მე + ც.** Partikel **-ც** berarti \"juga\" dan selalu menempel di ekor kata, tidak pernah berdiri sendiri. შენ**ც** (kamu juga), ის**ც** (dia juga), დღეს**ც** (hari ini juga).",
+    "**Dua cara berpisah, dan pilihannya bergantung pada siapa yang pergi.** Yang **pergi** mengucapkan ნახვამდის (sampai berjumpa). Yang **tinggal** menjawab კარგად (baik-baik saja di sana). Kalau dua-duanya pergi ke arah berbeda, dua-duanya boleh mengucapkan კარგად."
+   ],
+   "grammars": [
+    {
+     "title": "ვარ, ხარ, არის — kata kerja pertama dan yang paling sering dipakai",
+     "body": [
+      "Satu-satunya bentuk yang perlu kamu hafal utuh hari ini. Perhatikan bahwa kata gantinya (მე, შენ, ის) dicetak dalam kurung: ia boleh ada, boleh tidak — kata kerjanya sudah menyimpan keterangan itu."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Bentuknya",
+       "Cara baca",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "(მე) saya",
+        "ვარ",
+        "var",
+        "სტუდენტი ვარ — saya mahasiswa"
+       ],
+       [
+        "(შენ) kamu",
+        "ხარ",
+        "khar",
+        "სად ხარ? — kamu di mana?"
+       ],
+       [
+        "(ის) dia",
+        "არის / -ა",
+        "aris",
+        "ის ქართველია — dia orang Georgia"
+       ],
+       [
+        "(ჩვენ) kami",
+        "ვართ",
+        "vart",
+        "აქ ვართ — kami di sini"
+       ],
+       [
+        "(თქვენ) kalian, Anda",
+        "ხართ",
+        "khart",
+        "მასწავლებელი ხართ? — Anda guru?"
+       ],
+       [
+        "(ისინი) mereka",
+        "არიან",
+        "arian",
+        "ისინი მეგობრები არიან — mereka berteman"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **თქვენ ხართ** dipakai untuk dua hal: \"kalian\" (banyak orang) dan \"Anda\" (satu orang, sopan). Kepada siapa pun yang baru kamu temui, terutama yang lebih tua, pakai თქვენ. Beralih ke შენ nanti biasanya ditawarkan oleh lawan bicaranya sendiri."
+     ]
+    },
+    {
+     "title": "Menanyakan dan menyebut nama",
+     "body": [
+      "Ada dua cara menyebut nama, dan keduanya sama-sama umum. Yang kedua lebih mudah bagi pemula karena susunannya persis bahasa Indonesia."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Cara baca",
+       "Artinya",
+       "Kapan dipakai"
+      ],
+      "rows": [
+       [
+        "რა გქვია?",
+        "ra gkvia",
+        "Siapa namamu?",
+        "kepada teman sebaya, anak-anak"
+       ],
+       [
+        "რა გქვიათ?",
+        "ra gkviat",
+        "Siapa nama Anda?",
+        "sopan — pakai ini kalau ragu"
+       ],
+       [
+        "მე მქვია ანი",
+        "me mkvia Ani",
+        "Nama saya Ani",
+        "harfiah: \"kepada-saya terpanggil Ani\""
+       ],
+       [
+        "ჩემი სახელია ანი",
+        "chemi sakhelia Ani",
+        "Nama saya Ani",
+        "harfiah: \"nama-saya adalah Ani\""
+       ],
+       [
+        "მას ჰქვია გიორგი",
+        "mas hkvia Giorgi",
+        "Namanya Giorgi",
+        "untuk orang ketiga"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan awalan yang berganti-ganti: **მ**ქვია (kepada saya), **გ**ქვია (kepada kamu), **ჰ**ქვია (kepada dia). Awalan მ-/გ-/ჰ- ini akan muncul lagi di unit 4 pada kata kerja \"punya\", dan di unit 16 pada kata kerja \"sakit\". Kelompok kata kerja ini kecil, tapi dipakai setiap hari."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Sapaan menurut waktu, dan lima kalimat penyelamat",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "გამარჯობა boleh dipakai kapan saja, dari pagi sampai malam. Tapi sapaan menurut waktu terdengar lebih hangat, dan ketiganya dibentuk dengan pola yang sama: nama waktunya + მშვიდობისა (\"damai\")."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Georgia",
+      "Cara baca",
+      "Artinya",
+      "Kapan"
+     ],
+     "rows": [
+      [
+       "დილა მშვიდობისა",
+       "dila mshvidobisa",
+       "Selamat pagi",
+       "sampai kira-kira pukul 12"
+      ],
+      [
+       "საღამო მშვიდობისა",
+       "saghamo mshvidobisa",
+       "Selamat sore/malam",
+       "sejak petang"
+      ],
+      [
+       "ღამე მშვიდობისა",
+       "ghame mshvidobisa",
+       "Selamat tidur",
+       "hanya saat berpisah untuk tidur"
+      ],
+      [
+       "გამარჯობა",
+       "gamarjoba",
+       "Halo",
+       "kapan saja, siapa saja"
+      ],
+      [
+       "გამარჯობათ",
+       "gamarjobat",
+       "Halo (sopan/jamak)",
+       "kepada beberapa orang atau orang yang dihormati"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Lima kalimat yang menyelamatkan hari pertama",
+     "items": [
+      "**მადლობა** (madloba) — terima kasih. Versi sopannya **გმადლობთ** (gmadlobt). Jawabannya **არაფრის** (arapris, \"tidak apa-apa\").",
+      "**ბოდიში** (bodishi) — maaf, saat kamu bersalah. **უკაცრავად** (uk'atsravad) — permisi, saat kamu mau menyela atau bertanya kepada orang asing.",
+      "**არ ვიცი** (ar vitsi) — saya tidak tahu.",
+      "**ვერ გავიგე** (ver gavige) — saya tidak menangkap; tolong ulangi. Kalimat paling berguna di minggu pertama.",
+      "**ქართული ცოტა ვიცი** (kartuli tsot'a vitsi) — saya tahu sedikit bahasa Georgia. Ucapkan ini dan lawan bicaramu akan memperlambat kalimatnya."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu catatan kecil yang menghemat rasa canggung: orang Georgia hampir tidak pernah menganggap salah ucap sebagai masalah. Yang mereka hargai bukan kelancaranmu, tapi bahwa kamu mencoba sama sekali. Kalimat *ქართული ცოტა ვიცი* biasanya dijawab dengan pujian yang jauh lebih besar daripada yang pantas kamu terima — terimalah saja dengan მადლობა."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ka": "გამარჯობა",
+   "baca": "gamarjoba",
+   "id": "halo"
+  },
+  {
+   "ka": "გაგიმარჯოს",
+   "baca": "gagimarjos",
+   "id": "halo (jawaban atas გამარჯობა)"
+  },
+  {
+   "ka": "დილა",
+   "baca": "dila",
+   "id": "pagi"
+  },
+  {
+   "ka": "საღამო",
+   "baca": "saghamo",
+   "id": "sore, petang"
+  },
+  {
+   "ka": "ღამე",
+   "baca": "ghame",
+   "id": "malam"
+  },
+  {
+   "ka": "მშვიდობისა",
+   "baca": "mshvidobisa",
+   "id": "damai (dipakai dalam sapaan)"
+  },
+  {
+   "ka": "მე",
+   "baca": "me",
+   "id": "saya"
+  },
+  {
+   "ka": "შენ",
+   "baca": "shen",
+   "id": "kamu"
+  },
+  {
+   "ka": "ის",
+   "baca": "is",
+   "id": "dia; itu"
+  },
+  {
+   "ka": "ჩვენ",
+   "baca": "chven",
+   "id": "kami"
+  },
+  {
+   "ka": "თქვენ",
+   "baca": "tkven",
+   "id": "kalian; Anda"
+  },
+  {
+   "ka": "ისინი",
+   "baca": "isini",
+   "id": "mereka"
+  },
+  {
+   "ka": "ვარ",
+   "baca": "var",
+   "id": "(saya) adalah"
+  },
+  {
+   "ka": "ხარ",
+   "baca": "khar",
+   "id": "(kamu) adalah"
+  },
+  {
+   "ka": "არის",
+   "baca": "aris",
+   "id": "(dia) adalah"
+  },
+  {
+   "ka": "როგორ",
+   "baca": "rogor",
+   "id": "bagaimana"
+  },
+  {
+   "ka": "კარგი",
+   "baca": "k'argi",
+   "id": "baik, bagus"
+  },
+  {
+   "ka": "კარგად",
+   "baca": "k'argad",
+   "id": "dengan baik; hati-hati (salam pisah)"
+  },
+  {
+   "ka": "ცუდი",
+   "baca": "tsudi",
+   "id": "buruk"
+  },
+  {
+   "ka": "მადლობა",
+   "baca": "madloba",
+   "id": "terima kasih"
+  },
+  {
+   "ka": "გმადლობთ",
+   "baca": "gmadlobt",
+   "id": "terima kasih (sopan)"
+  },
+  {
+   "ka": "არაფრის",
+   "baca": "arapris",
+   "id": "sama-sama"
+  },
+  {
+   "ka": "ბოდიში",
+   "baca": "bodishi",
+   "id": "maaf"
+  },
+  {
+   "ka": "უკაცრავად",
+   "baca": "uk'atsravad",
+   "id": "permisi"
+  },
+  {
+   "ka": "ნახვამდის",
+   "baca": "nakhvamdis",
+   "id": "sampai jumpa"
+  },
+  {
+   "ka": "ვინ",
+   "baca": "vin",
+   "id": "siapa"
+  },
+  {
+   "ka": "რა",
+   "baca": "ra",
+   "id": "apa"
+  },
+  {
+   "ka": "ჩემი",
+   "baca": "chemi",
+   "id": "saya punya, -ku"
+  },
+  {
+   "ka": "მასწავლებელი",
+   "baca": "masts'avlebeli",
+   "id": "guru"
+  },
+  {
+   "ka": "სტუდენტი",
+   "baca": "st'udent'i",
+   "id": "mahasiswa"
+  },
+  {
+   "ka": "მეგობარი",
+   "baca": "megobari",
+   "id": "teman"
+  },
+  {
+   "ka": "ძალიან",
+   "baca": "dzalian",
+   "id": "sangat"
+  },
+  {
+   "ka": "სასიამოვნოა",
+   "baca": "sasiamovnoa",
+   "id": "senang berkenalan"
+  },
+  {
+   "ka": "-ც",
+   "baca": "-ts",
+   "id": "juga (menempel di ekor kata)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan bentuk \"adalah\" yang benar.",
+   "items": [
+    "მე სტუდენტი ____",
+    "შენ მასწავლებელი ____",
+    "ის ჩემი მეგობარი ____",
+    "ჩვენ აქ ____",
+    "თქვენ ნინო ____",
+    "ისინი კარგი მეგობრები ____"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata sapaan atau jawaban yang tepat.",
+   "items": [
+    "— გამარჯობა! — ____!",
+    "— მადლობა! — ____",
+    "— როგორ ხარ? — ____ ვარ.",
+    "დილის სამ საათზე არა, ცხრა საათზე: ____ მშვიდობისა.",
+    "Kamu yang pergi, kamu mengucapkan: ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ვარ / ანი / მე",
+    "ხარ / როგორ / ?",
+    "ჰქვია / რა / ?",
+    "კარგად / მეც",
+    "მასწავლებელია / ჩემი / ის"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Georgia.",
+   "items": [
+    "Halo! Saya Budi.",
+    "Apa kabar?",
+    "Baik, terima kasih.",
+    "Siapa nama Anda?",
+    "Dia guru saya.",
+    "Sampai jumpa!"
+   ]
+  }
+ ],
+ "answers": [
+  "ვარ — ხარ — არის — ვართ — ხართ — არიან",
+  "გაგიმარჯოს — არაფრის — კარგად — დილა — ნახვამდის",
+  "მე ანი ვარ. — როგორ ხარ? — რა ჰქვია? — მეც კარგად. — ის ჩემი მასწავლებელია.",
+  "გამარჯობა! მე ბუდი ვარ. — როგორ ხარ? — კარგად ვარ, მადლობა. — რა გქვიათ? — ის ჩემი მასწავლებელია. — ნახვამდის!"
+ ]
+}

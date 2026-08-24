@@ -1,0 +1,561 @@
+{
+ "title": "Jam berapa sekarang?",
+ "title_target": "რომელი საათია? — Romeli saatia?",
+ "goal": "Menyebut jam, hari, dan tanggal — dan mengerti kenapa \"setengah lima\" dalam bahasa Georgia berarti pukul 16.30, bukan 17.30.",
+ "bekal": [
+  "menanyakan dan menyebut jam",
+  "menyebut hari dalam seminggu dan mengerti asal namanya",
+  "membuat janji pada jam tertentu dengan ekor -ზე",
+  "menyebut bagian hari: pagi, siang, sore, malam",
+  "menyebut tanggal dan bulan"
+ ],
+ "dialogs": [
+  {
+   "title": "დიალოგი — Mengatur jadwal les",
+   "intro": "Ani dan gurunya, Giorgi, mengatur jadwal pelajaran minggu depan. Perhatikan satu baris di tengah percakapan — di situ Ani hampir membuat kesalahan yang membuat orang datang satu jam terlambat.",
+   "lines": [
+    {
+     "speaker": "გიორგი:",
+     "text": "[ანი|A-ni], [ხვალ|khval] [გაკვეთილი|ga-k've-ti-li] [გვაქვს|gvakvs]. [რომელ|Ro-mel] [საათზე|sa-at-ze] [გირჩევნია|gir-chev-ni-a]?",
+     "id": "Ani, besok kita ada pelajaran. Kamu lebih suka jam berapa?",
+     "literal": "Ani, besok — pelajaran — kami-punya. jam-yang-mana-pada — kamu-lebih-suka?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[დილით|Di-lit] [შეიძლება|she-idz-le-ba]? [ათ|At] [საათზე|sa-at-ze]?",
+     "id": "Bisa pagi? Jam sepuluh?",
+     "literal": "pagi-dengan — boleh? sepuluh — jam-pada?"
+    },
+    {
+     "speaker": "გიორგი:",
+     "text": "[ათ|At] [საათზე|sa-at-ze] [სხვა|skhva] [გაკვეთილი|ga-k've-ti-li] [მაქვს|makvs]. [თერთმეტ|Tert-met'] [საათზე|sa-at-ze]?",
+     "id": "Jam sepuluh saya ada kelas lain. Jam sebelas?",
+     "literal": "sepuluh — jam-pada — lain — pelajaran — saya-punya. sebelas — jam-pada?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[კარგი|K'ar-gi]. [ან|An] [თერთმეტის|tert-me-t'is] [ნახევარზე|na-khe-var-ze]?",
+     "id": "Baik. Atau setengah sebelas?",
+     "literal": "baik. atau — sebelas-punya — setengah-pada?"
+    },
+    {
+     "speaker": "გიორგი:",
+     "text": "[თერთმეტის|Tert-me-t'is] [ნახევარი|na-khe-va-ri] [ათი|a-ti] [ოცდაათია|ots-da-a-ti-a], [არა|a-ra] [თერთმეტი|tert-me-t'i] [ოცდაათი|ots-da-a-ti].",
+     "id": "Setengah sebelas itu pukul 10.30, bukan 11.30.",
+     "literal": "sebelas-punya — setengah — sepuluh — tiga-puluh-adalah, bukan — sebelas — tiga-puluh."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[აჰ|Ah]! [ინდონეზიურად|In-do-ne-zi-u-rad] [იგივეა|i-gi-ve-a]. [კარგი|K'ar-gi], [თერთმეტ|tert-met'] [საათზე|sa-at-ze].",
+     "id": "Ah! Dalam bahasa Indonesia sama saja. Baik, jam sebelas.",
+     "literal": "ah! secara-Indonesia — sama-adalah. baik, sebelas — jam-pada."
+    },
+    {
+     "speaker": "გიორგი:",
+     "text": "[შესანიშნავია|She-sa-nish-na-vi-a]. [რომელი|Ro-me-li] [დღეა|dghe-a] [ხვალ|khval]?",
+     "id": "Bagus. Besok hari apa?",
+     "literal": "hebat-adalah. yang-mana — hari-adalah — besok?"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[ხვალ|Khval] [ოთხშაბათია|otkh-sha-ba-ti-a].",
+     "id": "Besok hari Rabu.",
+     "literal": "besok — empat-sabtu-adalah."
+    },
+    {
+     "speaker": "გიორგი:",
+     "text": "[სწორია|Sts'o-ri-a]. [პარასკევს|P'a-ras-k'evs] [გამოცდა|ga-mots-da] [გვაქვს|gvakvs], [არ|ar] [დაგავიწყდეს|da-ga-vits'-q'des]!",
+     "id": "Betul. Hari Jumat kita ada ujian, jangan lupa!",
+     "literal": "benar-adalah. Jumat-pada — ujian — kami-punya, tidak — terlupakan-kepadamu!"
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[რომელ|Ro-mel] [საათზე|sa-at-ze]?",
+     "id": "Jam berapa?",
+     "literal": "jam-yang-mana-pada?"
+    },
+    {
+     "speaker": "გიორგი:",
+     "text": "[ცხრის|Tskhris] [ნახევარზე|na-khe-var-ze] — [რვა|rva] [ოცდაათზე|ots-da-at-ze].",
+     "id": "Setengah sembilan — pukul 8.30.",
+     "literal": "sembilan-punya — setengah-pada — delapan — tiga-puluh-pada."
+    },
+    {
+     "speaker": "ანი:",
+     "text": "[გასაგებია|Ga-sa-ge-bi-a]! [რვა|Rva] [ოცდაათი|ots-da-a-ti]. [დავიმახსოვრებ|Da-vi-makh-sov-reb].",
+     "id": "Jelas! Pukul 8.30. Saya akan ingat.",
+     "literal": "bisa-dimengerti-adalah! delapan — tiga-puluh. saya-akan-mengingat."
+    }
+   ],
+   "notes": [
+    "⚠️ **ნახევარი menghitung setengah MENUJU jam berikutnya, bukan setengah sesudahnya.** *თერთმეტის ნახევარი* = \"setengahnya jam sebelas\" = **pukul 10.30**. Sistem yang sama dipakai bahasa Belanda dan Jerman, dan inilah penyebab keterlambatan satu jam yang paling sering dialami orang asing di Tbilisi. Kalau kamu ragu, sebutkan saja angkanya: *ათი ოცდაათი* (sepuluh tiga puluh) — selalu aman.",
+    "**Menyebut jam yang bulat: angka + საათია.** *ხუთი საათია* (jam lima). Untuk membuat janji **pada** jam tertentu, ekor **-ზე** dipasang: *ხუთ საათზე* (pukul lima). Perhatikan bahwa ხუთ**ი** kehilangan -ი-nya begitu საათ**ზე** menyusul.",
+    "**Hari dalam seminggu dihitung dari hari Sabtu.** შაბათი (Sabtu, dari kata Ibrani *shabbat*) jadi titik nolnya, lalu: **ორ**შაბათი (dua-sabtu = Senin), **სამ**შაბათი (tiga = Selasa), **ოთხ**შაბათი (empat = Rabu), **ხუთ**შაბათი (lima = Kamis). Jumat punya nama sendiri: პარასკევი. Kalau kamu tahu angka 2–5 dari unit 6, kamu sudah tahu empat nama hari.",
+    "**კვირა punya dua arti: \"hari Minggu\" dan \"pekan\".** *კვირას* = pada hari Minggu; *ერთი კვირა* = satu minggu. Sekali lagi, keadaannya yang menentukan.",
+    "**Untuk mengatakan \"pada hari …\", pakai ekor -ს**: პარასკევ**ს** (pada hari Jumat), შაბათ**ს** (pada hari Sabtu), ორშაბათ**ს** (pada hari Senin). Ekor -ს ini yang di unit 9 akan kamu kenal sebagai bentuk sasaran.",
+    "**დილით, საღამოს, ღამით — pagi hari, sore hari, malam hari.** Perhatikan bahwa ketiganya berekor berbeda dan sebaiknya dihafal utuh sebagai satu kata: დილ**ით** (pagi), შუადღეს (siang), საღამო**ს** (sore), ღამ**ით** (malam).",
+    "**არ დაგავიწყდეს! = \"jangan lupa!\"** Kalimat utuh yang layak dihafal apa adanya. Bentuk kata kerjanya jauh di luar A1, tapi ungkapannya dipakai setiap hari."
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut jam",
+     "table": {
+      "head": [
+       "Georgia",
+       "Cara baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "რომელი საათია?",
+        "romeli saatia",
+        "Jam berapa sekarang?"
+       ],
+       [
+        "ერთი საათია",
+        "erti saatia",
+        "Jam satu"
+       ],
+       [
+        "ხუთი საათია",
+        "khuti saatia",
+        "Jam lima"
+       ],
+       [
+        "ხუთი და ათი წუთი",
+        "khuti da ati ts'uti",
+        "Jam lima lewat sepuluh (5.10)"
+       ],
+       [
+        "ხუთის ნახევარი",
+        "khutis nakhevari",
+        "Setengah lima → pukul 4.30"
+       ],
+       [
+        "ხუთს ათი წუთი აკლია",
+        "khuts ati ts'uti ak'lia",
+        "Jam lima kurang sepuluh (4.50)"
+       ],
+       [
+        "რომელ საათზე?",
+        "romel saatze",
+        "Pada jam berapa?"
+       ],
+       [
+        "შვიდ საათზე",
+        "shvid saatze",
+        "Pada pukul tujuh"
+       ],
+       [
+        "შვიდის ნახევარზე",
+        "shvidis nakhevarze",
+        "Pada pukul 6.30"
+       ]
+      ]
+     },
+     "after": [
+      "Di kehidupan sehari-hari, orang Georgia sering langsung menyebut angkanya seperti jam digital: *რვა ორმოცდახუთი* (8.45). Cara ini selalu benar dan tidak pernah salah paham — pakai ini kalau kamu sedang buru-buru."
+     ]
+    },
+    {
+     "title": "Hari, bagian hari, dan bulan",
+     "tables": [
+      {
+       "head": [
+        "Hari",
+        "Cara baca",
+        "Pada hari itu",
+        "Artinya"
+       ],
+       "rows": [
+        [
+         "ორშაბათი",
+         "orshabati",
+         "ორშაბათს",
+         "Senin"
+        ],
+        [
+         "სამშაბათი",
+         "samshabati",
+         "სამშაბათს",
+         "Selasa"
+        ],
+        [
+         "ოთხშაბათი",
+         "otkhshabati",
+         "ოთხშაბათს",
+         "Rabu"
+        ],
+        [
+         "ხუთშაბათი",
+         "khutshabati",
+         "ხუთშაბათს",
+         "Kamis"
+        ],
+        [
+         "პარასკევი",
+         "p'arask'evi",
+         "პარასკევს",
+         "Jumat"
+        ],
+        [
+         "შაბათი",
+         "shabati",
+         "შაბათს",
+         "Sabtu"
+        ],
+        [
+         "კვირა",
+         "k'vira",
+         "კვირას",
+         "Minggu"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Waktu",
+        "Cara baca",
+        "Artinya",
+        "Waktu",
+        "Cara baca",
+        "Artinya"
+       ],
+       "rows": [
+        [
+         "დღეს",
+         "dghes",
+         "hari ini",
+         "დილით",
+         "dilit",
+         "pagi hari"
+        ],
+        [
+         "ხვალ",
+         "khval",
+         "besok",
+         "შუადღეს",
+         "shuadghes",
+         "siang hari"
+        ],
+        [
+         "გუშინ",
+         "gushin",
+         "kemarin",
+         "საღამოს",
+         "saghamos",
+         "sore hari"
+        ],
+        [
+         "ზეგ",
+         "zeg",
+         "lusa",
+         "ღამით",
+         "ghamit",
+         "malam hari"
+        ],
+        [
+         "გუშინწინ",
+         "gushints'in",
+         "kemarin dulu",
+         "ახლა",
+         "akhla",
+         "sekarang"
+        ],
+        [
+         "ყოველდღე",
+         "q'oveldghe",
+         "setiap hari",
+         "მალე",
+         "male",
+         "sebentar lagi"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "Bulan hampir semuanya mirip bahasa Eropa dan mudah dikenali: იანვარი, თებერვალი, მარტი, აპრილი, მაისი, ივნისი, ივლისი, აგვისტო, სექტემბერი, ოქტომბერი, ნოემბერი, დეკემბერი."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membuat janji",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Cara baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "რომელ საათზე?",
+       "romel saatze",
+       "Pada jam berapa?"
+      ],
+      [
+       "როდის?",
+       "rodis",
+       "Kapan?"
+      ],
+      [
+       "ხვალ, ხუთ საათზე",
+       "khval, khut saatze",
+       "Besok, pukul lima"
+      ],
+      [
+       "შაბათს შეიძლება?",
+       "shabats sheidzleba",
+       "Sabtu bisa?"
+      ],
+      [
+       "დროზე მოვალ",
+       "droze moval",
+       "Saya akan datang tepat waktu"
+      ],
+      [
+       "ცოტა დავაგვიანე",
+       "tsot'a davagviane",
+       "Saya agak terlambat"
+      ],
+      [
+       "მაცალე ხუთი წუთი",
+       "matsale khuti ts'uti",
+       "Tunggu saya lima menit"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Soal ketepatan waktu",
+     "items": [
+      "Di Georgia, janji jam sembilan untuk urusan resmi — kantor, dokter, kelas — memang berarti jam sembilan.",
+      "Janji jam sembilan untuk urusan sosial — makan malam, bertemu teman — biasanya berarti antara jam sembilan dan setengah sepuluh, dan tak seorang pun akan menganggapnya masalah.",
+      "Kalau kamu terlambat, satu kalimat sudah cukup: **ბოდიში, დავაგვიანე.** Tidak perlu penjelasan panjang.",
+      "⚠️ Undangan makan malam di rumah orang Georgia hampir tidak pernah punya jam selesai. Jangan membuat janji lain sesudahnya."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu kata yang layak dicatat sekarang meski baru akan berguna nanti: **დრო** (dro) berarti \"waktu\". *დრო გაქვს?* (ada waktu?) adalah cara paling umum mengajak seseorang, dan unit 15 akan membangun seluruh percakapan di atasnya."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ka": "საათი",
+   "baca": "saati",
+   "id": "jam"
+  },
+  {
+   "ka": "წუთი",
+   "baca": "ts'uti",
+   "id": "menit"
+  },
+  {
+   "ka": "ნახევარი",
+   "baca": "nakhevari",
+   "id": "setengah"
+  },
+  {
+   "ka": "დრო",
+   "baca": "dro",
+   "id": "waktu"
+  },
+  {
+   "ka": "დღე",
+   "baca": "dghe",
+   "id": "hari"
+  },
+  {
+   "ka": "დღეს",
+   "baca": "dghes",
+   "id": "hari ini"
+  },
+  {
+   "ka": "ხვალ",
+   "baca": "khval",
+   "id": "besok"
+  },
+  {
+   "ka": "გუშინ",
+   "baca": "gushin",
+   "id": "kemarin"
+  },
+  {
+   "ka": "ზეგ",
+   "baca": "zeg",
+   "id": "lusa"
+  },
+  {
+   "ka": "დილა",
+   "baca": "dila",
+   "id": "pagi"
+  },
+  {
+   "ka": "დილით",
+   "baca": "dilit",
+   "id": "pagi hari"
+  },
+  {
+   "ka": "შუადღე",
+   "baca": "shuadghe",
+   "id": "siang"
+  },
+  {
+   "ka": "საღამო",
+   "baca": "saghamo",
+   "id": "sore"
+  },
+  {
+   "ka": "ღამე",
+   "baca": "ghame",
+   "id": "malam"
+  },
+  {
+   "ka": "კვირა",
+   "baca": "k'vira",
+   "id": "Minggu; pekan"
+  },
+  {
+   "ka": "ორშაბათი",
+   "baca": "orshabati",
+   "id": "Senin"
+  },
+  {
+   "ka": "სამშაბათი",
+   "baca": "samshabati",
+   "id": "Selasa"
+  },
+  {
+   "ka": "ოთხშაბათი",
+   "baca": "otkhshabati",
+   "id": "Rabu"
+  },
+  {
+   "ka": "ხუთშაბათი",
+   "baca": "khutshabati",
+   "id": "Kamis"
+  },
+  {
+   "ka": "პარასკევი",
+   "baca": "p'arask'evi",
+   "id": "Jumat"
+  },
+  {
+   "ka": "შაბათი",
+   "baca": "shabati",
+   "id": "Sabtu"
+  },
+  {
+   "ka": "თვე",
+   "baca": "tve",
+   "id": "bulan"
+  },
+  {
+   "ka": "წელი",
+   "baca": "ts'eli",
+   "id": "tahun"
+  },
+  {
+   "ka": "როდის",
+   "baca": "rodis",
+   "id": "kapan"
+  },
+  {
+   "ka": "ახლა",
+   "baca": "akhla",
+   "id": "sekarang"
+  },
+  {
+   "ka": "მალე",
+   "baca": "male",
+   "id": "sebentar lagi"
+  },
+  {
+   "ka": "ყოველდღე",
+   "baca": "q'oveldghe",
+   "id": "setiap hari"
+  },
+  {
+   "ka": "გაკვეთილი",
+   "baca": "gak'vetili",
+   "id": "pelajaran"
+  },
+  {
+   "ka": "გამოცდა",
+   "baca": "gamotsda",
+   "id": "ujian"
+  },
+  {
+   "ka": "დავაგვიანე",
+   "baca": "davagviane",
+   "id": "saya terlambat"
+  },
+  {
+   "ka": "იგივე",
+   "baca": "igive",
+   "id": "sama, yang sama"
+  },
+  {
+   "ka": "გირჩევნია",
+   "baca": "girchevnia",
+   "id": "kamu lebih suka"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis jamnya dalam angka (perhatikan ნახევარი).",
+   "items": [
+    "ხუთი საათია → ____",
+    "შვიდის ნახევარი → ____",
+    "ათი და ოცი წუთი → ____",
+    "თერთმეტის ნახევარი → ____",
+    "ცხრა საათია → ____"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan nama hari.",
+   "items": [
+    "Hari kedua dari Sabtu = ____",
+    "Hari ketiga dari Sabtu = ____",
+    "Hari kelima dari Sabtu = ____",
+    "Hari sebelum Sabtu = ____",
+    "Hari sesudah Sabtu = ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "საათია / რომელი / ?",
+    "საათზე / შვიდ / მოვალ",
+    "დღეა / რომელი / დღეს / ?",
+    "გვაქვს / პარასკევს / გამოცდა",
+    "გაქვს / დრო / ?"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Georgia.",
+   "items": [
+    "Jam berapa sekarang?",
+    "Jam lima.",
+    "Pada jam berapa?",
+    "Besok pukul sebelas.",
+    "Hari Jumat kita ada ujian.",
+    "Kamu ada waktu?"
+   ]
+  }
+ ],
+ "answers": [
+  "05.00 — 06.30 — 10.20 — 10.30 — 09.00",
+  "ორშაბათი — სამშაბათი — ხუთშაბათი — პარასკევი — კვირა",
+  "რომელი საათია? — შვიდ საათზე მოვალ. — დღეს რომელი დღეა? — პარასკევს გამოცდა გვაქვს. — დრო გაქვს?",
+  "რომელი საათია? — ხუთი საათია. — რომელ საათზე? — ხვალ თერთმეტ საათზე. — პარასკევს გამოცდა გვაქვს. — დრო გაქვს?"
+ ],
+ "wave": "Ulangan berjenjang: buka lagi unit 3 dan unit 5. Ekor -დან, -ით, dan -ზე yang tadinya terasa acak sekarang sudah punya tempatnya masing-masing — bacalah dialog kedua unit itu sekali lagi dan perhatikan berapa banyak yang sudah berjalan sendiri."
+}
