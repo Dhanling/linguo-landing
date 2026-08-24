@@ -72,6 +72,68 @@ export function isYouTubeUrl(raw: string | null | undefined): boolean {
   return parseYouTube(raw) !== null;
 }
 
+// ── [elearning-playlist-isi-v1] Isi playlist ────────────────────────────────
+//
+// Laporan Bug Tracker 24 Agu 2026: "link playlist sudah benar, tapi setelah
+// disimpan yang muncul cuma satu video". Bingkai embed memang MEMUTAR seluruh
+// playlist, tapi yang terlihat cuma video pertama — halaman kita sendiri tidak
+// pernah tahu isi playlist-nya, karena YouTube memblokir pembacaan halaman
+// playlist lintas-asal. Jadi daftarnya diambil dari server (edge function
+// `yt-playlist`, kunci YouTube Data API ada di sana).
+//
+// Cermin dari `linguo-admin-dashboard/src/lib/youtube.ts`.
+
+export interface PlaylistItem {
+  videoId: string;
+  title: string;
+  thumb: string | null;
+  position: number;
+}
+
+export interface PlaylistInfo {
+  id: string;
+  title: string;
+  channel: string;
+  /** Video yang benar-benar bisa ditonton. */
+  count: number;
+  /** Video privat/terhapus yang ikut terdaftar di playlist. */
+  hidden: number;
+  totalReported: number;
+  items: PlaylistItem[];
+}
+
+export type PlaylistError = "not_found" | "no_keys" | "quota" | "bad_request" | "server_error" | "network";
+
+const SUPABASE_URL =
+  process.env.NEXT_PUBLIC_SUPABASE_URL || "https://jbtgciepdmqxxcjflrxz.supabase.co";
+const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+
+const cache = new Map<string, Promise<PlaylistInfo | { error: PlaylistError }>>();
+
+export function fetchPlaylist(listId: string): Promise<PlaylistInfo | { error: PlaylistError }> {
+  const key = listId.trim();
+  const hit = cache.get(key);
+  if (hit) return hit;
+  const p = (async () => {
+    try {
+      const res = await fetch(`${SUPABASE_URL}/functions/v1/yt-playlist`, {
+        method: "POST",
+        headers: { "content-type": "application/json", Authorization: `Bearer ${SUPABASE_ANON_KEY}`, apikey: SUPABASE_ANON_KEY },
+        body: JSON.stringify({ list: key }),
+      });
+      const data = await res.json().catch(() => null);
+      if (!data) return { error: "server_error" as PlaylistError };
+      if (data.error) return { error: data.error as PlaylistError };
+      return data as PlaylistInfo;
+    } catch {
+      return { error: "network" as PlaylistError };
+    }
+  })();
+  cache.set(key, p);
+  void p.then((r) => { if ("error" in r) cache.delete(key); });
+  return p;
+}
+
 /** Thumbnail playlist/video — dipakai buat kartu pratinjau. */
 export function youTubeThumb(ref: YouTubeRef | null): string | null {
   if (!ref?.videoId) return null;
