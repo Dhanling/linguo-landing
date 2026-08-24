@@ -1,0 +1,509 @@
+{
+  "title": "Berapa harganya? — di pasar",
+  "title_target": "Mennyibe kerül?",
+  "goal": "Menanyakan harga, menyebut berat dan jumlah, membayar dan menerima kembalian dalam forint.",
+  "bekal": [
+    "menanyakan harga dengan *mennyibe kerül* dan memahami jawabannya",
+    "memesan dengan satuan berat dan wadah: *egy kiló*, *fél kiló*, *egy üveg*",
+    "membayar, menghitung kembalian, dan memilih antara tunai dan kartu"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — A piacon",
+      "intro": "Pasar tertutup di Hunyadi tér, Sabtu pagi. Budi berdiri di depan meja penuh paprika merah.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Jó napot! Mennyibe kerül a paprika?",
+          "id": "Selamat siang! Berapa harga paprikanya?",
+          "literal": "baik hari! berapa-ke-dalam ia-berharga itu paprika?"
+        },
+        {
+          "speaker": "Árus:",
+          "text": "Ötszáz forint kilója. Nagyon friss.",
+          "id": "Lima ratus forint sekilo. Segar sekali.",
+          "literal": "lima-ratus forint kilo-nya. sangat segar."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "És a paradicsom mennyibe kerül?",
+          "id": "Dan tomatnya berapa?",
+          "literal": "dan itu tomat berapa-ke-dalam ia-berharga?"
+        },
+        {
+          "speaker": "Árus:",
+          "text": "A paradicsom hatszáznegyven forint.",
+          "id": "Tomatnya enam ratus empat puluh forint.",
+          "literal": "itu tomat enam-ratus-empat-puluh forint."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kérek egy kiló paradicsomot és fél kiló almát.",
+          "id": "Saya minta satu kilo tomat dan setengah kilo apel.",
+          "literal": "saya-minta sebuah kilo tomat-sasaran dan setengah kilo apel-sasaran."
+        },
+        {
+          "speaker": "Árus:",
+          "text": "Melyik almát? Ez édes, az savanyú.",
+          "id": "Apel yang mana? Ini manis, itu masam.",
+          "literal": "yang-mana apel-sasaran? ini manis, itu masam."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Az édeset kérem. Valami mást nem kérek.",
+          "id": "Saya minta yang manis. Tidak ada lagi yang lain.",
+          "literal": "itu manis-sasaran saya-memintanya. sesuatu lain-sasaran tidak saya-minta."
+        },
+        {
+          "speaker": "Árus:",
+          "text": "Rendben. Mennyi lesz? Mindjárt megmondom.",
+          "id": "Baik. Berapa jadinya? Sebentar saya hitung.",
+          "literal": "beres-di. berapa akan-jadi? sebentar saya-mengatakannya."
+        },
+        {
+          "speaker": "Árus:",
+          "text": "Ezerkétszáz forint lesz összesen.",
+          "id": "Seribu dua ratus forint seluruhnya.",
+          "literal": "seribu-dua-ratus forint akan-jadi seluruhnya."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tessék, kétezer forint.",
+          "id": "Ini, dua ribu forint.",
+          "literal": "silakan, dua-ribu forint."
+        },
+        {
+          "speaker": "Árus:",
+          "text": "Nyolcszáz a visszajáró. Köszönöm szépen, viszlát!",
+          "id": "Kembaliannya delapan ratus. Terima kasih banyak, sampai jumpa!",
+          "literal": "delapan-ratus itu kembalian. saya-berterima-kasih indah, sampai-jumpa!"
+        }
+      ],
+      "notes": [
+        "**Mennyibe kerül?** harfiahnya \"ke dalam berapa ia berharga\". Susunannya aneh dan tidak perlu dibongkar; hafalkan utuh. Ada bentuk pendeknya yang sama-sama sopan: *Mennyi?* atau *Mennyi lesz?*",
+        "**Ötszáz forint kilója** memakai akhiran milik dari unit 5: harfiahnya \"lima ratus forint kilonya\". Ini cara baku menyebut harga per satuan, dan kamu akan mendengarnya di setiap meja pasar.",
+        "**Forint tidak pernah berjamak.** *ötszáz forint*, *kétezer forint* — sesuai aturan unit 3 dan 6: sesudah angka, kata bendanya tunggal. Singkatannya **Ft**, ditulis **sesudah** angkanya: 1200 Ft.",
+        "**Fél kiló, másfél kiló.** *Fél* berarti setengah, dan *másfél* berarti satu setengah — harfiahnya \"setengah yang lain\". Kata *másfél* tidak punya padanan sependek itu dalam bahasa Indonesia, dan begitu terbiasa kamu akan merindukannya.",
+        "**Az édeset kérem** memperlihatkan dua hal sekaligus. Pertama, kata sifat bisa berdiri sendiri sebagai kata benda: *az édes* = \"yang manis\". Kedua, kalau begitu ia ikut memakai akhiran sasaran: *az édeset*. Perhatikan juga *kérem*, bukan *kérek* — karena apelnya sekarang tertentu, yang mana sudah jelas. Aturannya menunggu di unit 11.",
+        "**Lesz adalah masa depan dari van.** *Mennyi lesz?* = \"berapa jadinya nanti?\". Ia satu-satunya kata kerja bahasa Hungaria yang punya bentuk masa depan sendiri; semua kata kerja lain memakai cara lain, yang dibahas di unit 20."
+      ],
+      "grammars": [
+        {
+          "title": "Menanyakan dan menyebut harga",
+          "body": [
+            "Empat susunan yang menutup hampir semua keperluan belanja."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Cara baca",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "*Mennyibe kerül?*",
+                "MÈNY-nyi-bè KÈ-rül",
+                "Berapa harganya?"
+              ],
+              [
+                "*Mennyibe kerülnek?*",
+                "MÈNY-nyi-bè KÈ-rül-nèk",
+                "Berapa harganya? (barang jamak)"
+              ],
+              [
+                "*Mennyi lesz összesen?*",
+                "MÈNY-nyi lès ÖS-sè-syèn",
+                "Semuanya jadi berapa?"
+              ],
+              [
+                "*Ez mennyi?*",
+                "èz MÈNY-nyi",
+                "Ini berapa?"
+              ],
+              [
+                "*Drága.* / *Olcsó.*",
+                "DRA-gå / OL-co",
+                "Mahal. / Murah."
+              ],
+              [
+                "*Van olcsóbb?*",
+                "vån OL-cobb",
+                "Ada yang lebih murah?"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan *kerülnek* pada baris kedua: kalau barangnya jamak, kata kerjanya ikut jamak. Kesalahan ini tidak fatal, tapi memperbaikinya gratis.",
+            "*Olcsóbb* adalah bentuk \"lebih\" dari *olcsó*, dibentuk dengan akhiran *-bb*. Perbandingan dibahas penuh di unit 16; untuk sekarang tiga bentuk ini sudah cukup: *olcsóbb* (lebih murah), *jobb* (lebih baik), *nagyobb* (lebih besar)."
+          ]
+        },
+        {
+          "title": "Berat, jumlah, dan wadah",
+          "body": [
+            "Semuanya berperilaku seperti angka: kata benda sesudahnya tetap tunggal, dan akhiran sasaran menempel pada **kata bendanya**, bukan pada satuannya."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Cara baca",
+              "Arti",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "*egy kiló*",
+                "èdy KI-lo",
+                "satu kilo",
+                "*egy kiló almát kérek*"
+              ],
+              [
+                "*fél kiló*",
+                "fél KI-lo",
+                "setengah kilo",
+                "*fél kiló sajtot kérek*"
+              ],
+              [
+                "*másfél kiló*",
+                "MASY-fél KI-lo",
+                "satu setengah kilo",
+                "*másfél kiló krumplit kérek*"
+              ],
+              [
+                "*tíz deka*",
+                "tiz DÈ-kå",
+                "seratus gram",
+                "*tíz deka sonkát kérek*"
+              ],
+              [
+                "*egy üveg*",
+                "èdy Ü-vèg",
+                "sebotol",
+                "*egy üveg bort kérek*"
+              ],
+              [
+                "*egy doboz*",
+                "èdy DO-boz",
+                "sekotak",
+                "*egy doboz tejet kérek*"
+              ],
+              [
+                "*egy szelet*",
+                "èdy SÈ-lèt",
+                "sepotong",
+                "*egy szelet süteményt kérek*"
+              ],
+              [
+                "*egy csomag*",
+                "èdy CO-måg",
+                "sebungkus",
+                "*egy csomag rizst kérek*"
+              ]
+            ]
+          },
+          "after": [
+            "**Deka adalah satuan yang paling khas Hungaria.** Satu *deka* sama dengan sepuluh gram, jadi *tíz deka* berarti seratus gram. Di toko daging dan keju, orang Hungaria hampir tidak pernah menyebut gram — mereka menyebut deka, dan pemula yang meminta \"száz gramm\" langsung terdengar asing.",
+            "Perhatikan sekali lagi letak akhiran sasarannya: *egy kiló almá**t***, bukan *egy kiló**t** alma*. Satuannya menempel pada angkanya; yang dikenai perbuatan tetap bendanya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Di pasar",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "a piac",
+              "å PI-åts",
+              "pasar"
+            ],
+            [
+              "a zöldség",
+              "å ZÖLD-syég",
+              "sayur"
+            ],
+            [
+              "a gyümölcs",
+              "å DYÜ-mölc",
+              "buah"
+            ],
+            [
+              "a paprika",
+              "å PÅP-ri-kå",
+              "paprika; cabai"
+            ],
+            [
+              "a paradicsom",
+              "å PÅ-rå-di-com",
+              "tomat"
+            ],
+            [
+              "a krumpli",
+              "å KRUMP-li",
+              "kentang"
+            ],
+            [
+              "a hagyma",
+              "å HÅDY-må",
+              "bawang"
+            ],
+            [
+              "az uborka",
+              "åz U-bor-kå",
+              "mentimun"
+            ],
+            [
+              "a sárgarépa",
+              "å SYAR-gå-ré-på",
+              "wortel"
+            ],
+            [
+              "az alma",
+              "åz ÅL-må",
+              "apel"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Paprika* di Hungaria berarti dua hal sekaligus: buah paprika segar yang dijual di pasar, dan bubuk merah yang membuat *gulyás* berwarna. Kalau kamu ingin yang bubuk, sebut *őrölt paprika* (paprika giling) atau tunjuk saja — pedagang pasar Hungaria sangat terbiasa menerjemahkan tunjukan tangan."
+        }
+      ]
+    },
+    {
+      "title": "Uang, kembalian, cara membayar",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Mennyi lesz összesen?",
+              "MÈNY-nyi lès ÖS-sè-syèn",
+              "Semuanya jadi berapa?"
+            ],
+            [
+              "Tessék.",
+              "TÈSY-syék",
+              "Ini (sambil menyerahkan uang)."
+            ],
+            [
+              "Kártyával fizetek.",
+              "KAR-tya-vål FI-zè-tèk",
+              "Saya bayar pakai kartu."
+            ],
+            [
+              "Készpénzzel fizetek.",
+              "KÉS-pénz-zèl FI-zè-tèk",
+              "Saya bayar tunai."
+            ],
+            [
+              "Kártyával lehet?",
+              "KAR-tya-vål LÈ-hèt",
+              "Bisa pakai kartu?"
+            ],
+            [
+              "Nincs apróm.",
+              "ninc ÅP-rom",
+              "Saya tidak punya uang kecil."
+            ],
+            [
+              "Nem kell a visszajáró.",
+              "nèm kèll å VIS-så-ya-ro",
+              "Kembaliannya ambil saja."
+            ],
+            [
+              "Kaphatok számlát?",
+              "KÅP-hå-tok SAM-lat",
+              "Boleh minta bon?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Forint dalam praktik",
+          "items": [
+            "Uang logam: 5, 10, 20, 50, 100, 200 Ft. Uang kertas: 500, 1000, 2000, 5000, 10 000, 20 000 Ft. Pecahan 20 000 sering ditolak di kios kecil, jadi sediakan uang menengah.",
+            "Harga di kasir **dibulatkan ke kelipatan lima** kalau kamu membayar tunai, karena uang 1 dan 2 forint sudah tidak beredar. Membayar dengan kartu tidak dibulatkan — jadi angka di bon dan angka yang kamu bayar bisa berbeda beberapa forint, dan itu normal.",
+            "Di pasar, kartu tidak selalu diterima. Kalimat *Kártyával lehet?* sebaiknya diucapkan **sebelum** pedagangnya mulai menimbang."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "mennyibe kerül",
+      "baca": "MÈNY-nyi-bè KÈ-rül",
+      "id": "berapa harganya"
+    },
+    {
+      "hu": "forint",
+      "baca": "FO-rint",
+      "id": "forint (mata uang)"
+    },
+    {
+      "hu": "piac",
+      "baca": "PI-åts",
+      "id": "pasar"
+    },
+    {
+      "hu": "árus",
+      "baca": "A-rusy",
+      "id": "pedagang"
+    },
+    {
+      "hu": "ár",
+      "baca": "ar",
+      "id": "harga"
+    },
+    {
+      "hu": "kiló",
+      "baca": "KI-lo",
+      "id": "kilo"
+    },
+    {
+      "hu": "deka",
+      "baca": "DÈ-kå",
+      "id": "sepuluh gram"
+    },
+    {
+      "hu": "fél",
+      "baca": "fél",
+      "id": "setengah"
+    },
+    {
+      "hu": "másfél",
+      "baca": "MASY-fél",
+      "id": "satu setengah"
+    },
+    {
+      "hu": "üveg",
+      "baca": "Ü-vèg",
+      "id": "botol; kaca"
+    },
+    {
+      "hu": "doboz",
+      "baca": "DO-boz",
+      "id": "kotak"
+    },
+    {
+      "hu": "csomag",
+      "baca": "CO-måg",
+      "id": "bungkus; paket"
+    },
+    {
+      "hu": "szelet",
+      "baca": "SÈ-lèt",
+      "id": "potong; iris"
+    },
+    {
+      "hu": "melyik",
+      "baca": "MÈ-yik",
+      "id": "yang mana"
+    },
+    {
+      "hu": "más",
+      "baca": "masy",
+      "id": "lain"
+    },
+    {
+      "hu": "összesen",
+      "baca": "ÖS-sè-syèn",
+      "id": "seluruhnya"
+    },
+    {
+      "hu": "visszajáró",
+      "baca": "VIS-så-ya-ro",
+      "id": "kembalian"
+    },
+    {
+      "hu": "készpénz",
+      "baca": "KÉS-pénz",
+      "id": "uang tunai"
+    },
+    {
+      "hu": "apró",
+      "baca": "ÅP-ro",
+      "id": "uang kecil; kecil"
+    },
+    {
+      "hu": "lesz",
+      "baca": "lès",
+      "id": "akan ada; akan jadi"
+    },
+    {
+      "hu": "mindjárt",
+      "baca": "MIND-yart",
+      "id": "sebentar lagi"
+    },
+    {
+      "hu": "olcsó",
+      "baca": "OL-co",
+      "id": "murah"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Hungaria.",
+      "items": [
+        "Berapa harga paprikanya?",
+        "Lima ratus forint sekilo.",
+        "Saya minta satu kilo tomat.",
+        "Saya minta setengah kilo apel.",
+        "Semuanya jadi berapa?",
+        "Bisa pakai kartu?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk sasaran yang tepat.",
+      "items": [
+        "Egy kiló ____ kérek. (alma)",
+        "Fél kiló ____ kérek. (sajt)",
+        "Egy üveg ____ kérek. (bor)",
+        "Tíz deka ____ kérek. (sonka)",
+        "Egy doboz ____ kérek. (tej)",
+        "Egy szelet ____ kérek. (sütemény)"
+      ]
+    },
+    {
+      "prompt": "Tulis harganya dengan huruf.",
+      "items": [
+        "500 Ft",
+        "640 Ft",
+        "1200 Ft",
+        "2000 Ft",
+        "850 Ft",
+        "3400 Ft"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 6. Terjemahkan ke bahasa Hungaria tanpa melihat unitnya.",
+      "items": [
+        "Umurmu berapa?",
+        "Saya dua puluh empat tahun.",
+        "Nomor teleponmu berapa?",
+        "Lantai berapa?",
+        "Kursusnya delapan minggu."
+      ]
+    }
+  ],
+  "answers": [
+    "Mennyibe kerül a paprika? — Ötszáz forint kilója. — Kérek egy kiló paradicsomot. — Kérek fél kiló almát. — Mennyi lesz összesen? — Kártyával lehet?",
+    "almát — sajtot — bort — sonkát — tejet — süteményt",
+    "ötszáz forint — hatszáznegyven forint — ezerkétszáz forint — kétezer forint — nyolcszázötven forint — háromezer-négyszáz forint",
+    "Hány éves vagy? — Huszonnégy éves vagyok. — Mi a telefonszámod? — Hányadik emelet? — A tanfolyam nyolc hét."
+  ]
+}

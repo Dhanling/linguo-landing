@@ -1,0 +1,540 @@
+{
+  "title": "Di kafe — dan akhiran yang menandai sasaran",
+  "title_target": "A kávézóban",
+  "goal": "Memesan makanan dan minuman dengan sopan, lalu memasang akhiran *-t* yang menandai bagian kalimat yang dikenai perbuatan.",
+  "bekal": [
+    "membentuk akhiran sasaran *-t* pada kata benda apa pun",
+    "memesan dengan *kérek* dan *szeretnék*",
+    "menanyakan isi sebuah hidangan dan meminta bon"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — A kávézóban",
+      "intro": "Sebuah kafe kecil di dekat Nyugati pályaudvar. Budi lapar, dan menu di dinding penuh kata yang belum pernah ia lihat.",
+      "lines": [
+        {
+          "speaker": "Pincér:",
+          "text": "Jó napot kívánok! Mit kér?",
+          "id": "Selamat siang! Anda mau pesan apa?",
+          "literal": "baik hari saya-doakan! apa-sasaran Anda-minta?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Egy kávét kérek szépen.",
+          "id": "Saya minta satu kopi.",
+          "literal": "sebuah kopi-sasaran saya-minta indah."
+        },
+        {
+          "speaker": "Pincér:",
+          "text": "Tejjel vagy tej nélkül?",
+          "id": "Dengan susu atau tanpa susu?",
+          "literal": "susu-dengan atau susu tanpa?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tejjel. És egy pohár vizet is kérek.",
+          "id": "Dengan susu. Dan saya minta segelas air juga.",
+          "literal": "susu-dengan. dan sebuah gelas air-sasaran juga saya-minta."
+        },
+        {
+          "speaker": "Pincér:",
+          "text": "Rendben. Enni is kér valamit?",
+          "id": "Baik. Mau makan sesuatu juga?",
+          "literal": "beres-di. makan juga Anda-minta sesuatu-sasaran?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igen. Bocsánat, mi az a lángos?",
+          "id": "Ya. Maaf, lángos itu apa?",
+          "literal": "ya. maaf, apa itu si lángos?"
+        },
+        {
+          "speaker": "Pincér:",
+          "text": "Az egy magyar étel. Sült tészta, tejföllel és sajttal.",
+          "id": "Itu makanan Hungaria. Adonan goreng, dengan krim asam dan keju.",
+          "literal": "itu sebuah Hungaria makanan. digoreng adonan, krim-asam-dengan dan keju-dengan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Finom? És elég nagy?",
+          "id": "Enak? Dan cukup besar?",
+          "literal": "enak? dan cukup besar?"
+        },
+        {
+          "speaker": "Pincér:",
+          "text": "Nagyon finom, és elég nagy egy embernek.",
+          "id": "Sangat enak, dan cukup besar untuk satu orang.",
+          "literal": "sangat enak, dan cukup besar sebuah orang-kepada."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jó, akkor egy lángost kérek.",
+          "id": "Baik, kalau begitu saya minta satu lángos.",
+          "literal": "bagus, kalau-begitu sebuah lángos-sasaran saya-minta."
+        },
+        {
+          "speaker": "Pincér:",
+          "text": "Máris hozom. Tessék, egy kávé tejjel!",
+          "id": "Segera saya bawakan. Silakan, kopi dengan susu!",
+          "literal": "segera saya-membawanya. silakan, sebuah kopi susu-dengan!"
+        }
+      ],
+      "notes": [
+        "**Akhiran -t menandai sasaran, bukan tempat.** *Egy kávét kérek* = \"saya minta sebuah kopi\". Kopinya adalah **yang diminta**, jadi ia memakai *-t*. Bahasa Indonesia menandai peran ini lewat urutan kata saja; bahasa Hungaria menandainya lewat ekor — dan karena itu urutan katanya jadi bebas: *Kérek egy kávét* sama benarnya.",
+        "**Kérek atau kérem?** *Kérek* dipakai kalau bendanya belum tertentu (*egy kávét kérek*), *kérem* kalau bendanya jelas yang mana (*a számlát kérem* — bonnya). Ini contoh pertama dari dua rangkaian akhiran kata kerja yang dibahas penuh di unit 11. Untuk sekarang cukup hafalkan dua kalimat itu apa adanya.",
+        "**Szépen membuat pesananmu ramah.** Harfiahnya \"dengan indah\". *Egy kávét kérek szépen* terdengar hangat tanpa jadi berlebihan; ia setara dengan menambahkan \"ya\" yang sopan dalam bahasa Indonesia.",
+        "**Tejjel = tej + -vel.** Akhiran \"dengan\" adalah *-val/-vel*, dan *v*-nya melebur ke huruf mati sebelumnya sehingga huruf itu menjadi ganda: *tej* → *tej**jel***, *sajt* → *sajt**tal***, *tejföl* → *tejföl**lel***. Aturannya dibongkar di unit 15; di sini kenali polanya saja.",
+        "**Nélkül berdiri sendiri.** Ia *névutó* seperti *mellett* dari unit 4, jadi kata bendanya tetap telanjang: *tej nélkül*, *cukor nélkül*. Perhatikan bahwa \"dengan\" menempel tapi \"tanpa\" tidak — pasangan yang tidak simetris, dan memang begitulah adanya.",
+        "**Mit adalah mi + -t.** Kata tanya pun tunduk pada aturan sasaran: *Mi ez?* (Ini apa?) melawan *Mit kérsz?* (Kamu minta apa?). Begitu juga *Ki?* → *Kit?* (siapa, sebagai sasaran). Kalau kamu bingung memilih, tanyakan pada dirimu: apakah kata itu **dikenai** perbuatan?"
+      ],
+      "grammars": [
+        {
+          "title": "Akhiran sasaran -t",
+          "body": [
+            "Satu huruf, tiga keadaan. Perhatikan bahwa keadaan ketiga persis sama dengan aturan jamak di unit 3 — bahasa Hungaria memakai ulang pola yang sama di mana-mana."
+          ],
+          "table": {
+            "head": [
+              "Kata dasar berakhir",
+              "Yang ditambahkan",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "huruf hidup",
+                "**-t** langsung (*a* dan *e* memanjang)",
+                "*kávé* → *kávét*; *alma* → *almát*; *tea* → *teát*"
+              ],
+              [
+                "s, sz, r, l, n, ny",
+                "**-t** langsung",
+                "*sör* → *sört*; *bor* → *bort*; *lángos* → *lángost*; *asztal* → *asztalt*"
+              ],
+              [
+                "huruf mati lain",
+                "**vokal sambung + t**",
+                "*könyv* → *könyvet*; *sajt* → *sajtot*; *gyümölcs* → *gyümölcsöt*"
+              ]
+            ]
+          },
+          "after": [
+            "**Kelompok -at yang perlu dihafal.** Beberapa kata bervokal dalam memakai *-at*, bukan *-ot* — dan daftarnya sama persis dengan kelompok jamak *-ak* dari unit 3: *ház* → *házat*, *hal* → *halat*, *fal* → *falat*, *toll* → *tollat*, *út* → *utat*. Kalau kamu sudah hafal *házak*, kamu sudah hafal *házat*.",
+            "**Sebagian kata memendekkan atau membuang vokalnya.** *víz* → *vizet*, *kenyér* → *kenyeret*, *cukor* → *cukrot*, *étterem* → *éttermet*, *nyár* → *nyarat*. Gejala ini muncul di semua akhiran, bukan cuma *-t*, jadi begitu kamu hafal satu bentuknya, kamu hafal semuanya.",
+            "**Kapan -t dipakai?** Setiap kali kata benda itu menjawab pertanyaan \"apa yang dikenai perbuatan\": *Kérek egy kávét*, *Eszem egy lángost*, *Olvasom a könyvet*. Kalau kata bendanya cuma menyebut tempat, waktu, atau alat, ia tidak memakai *-t*."
+          ]
+        },
+        {
+          "title": "Kérek, szeretnék — dua cara memesan",
+          "body": [
+            "Dua-duanya sopan. Yang kedua sedikit lebih halus, dan hampir selalu aman."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Cara baca",
+              "Nada",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "*Egy kávét kérek.*",
+                "èdy KA-vét KÉ-rèk",
+                "biasa, ramah",
+                "Saya minta satu kopi."
+              ],
+              [
+                "*Egy kávét szeretnék.*",
+                "èdy KA-vét SÈ-rèt-nék",
+                "halus",
+                "Saya ingin satu kopi."
+              ],
+              [
+                "*Kérhetek egy kávét?*",
+                "KÉR-hè-tèk èdy KA-vét",
+                "meminta izin",
+                "Boleh saya minta satu kopi?"
+              ],
+              [
+                "*Hozna egy kávét?*",
+                "HOZ-nå èdy KA-vét",
+                "sangat sopan",
+                "Bisa dibawakan satu kopi?"
+              ]
+            ]
+          },
+          "after": [
+            "*Szeretnék* sebenarnya bentuk pengandaian dari *szeretek* (\"saya suka\") — harfiahnya \"saya akan menyukainya\". Sama persis dengan *I would like* bahasa Inggris dan \"saya mau\" yang dihaluskan dalam bahasa Indonesia.",
+            "Untuk memesan lebih dari satu barang, sambungkan dengan *és* dan pasang *-t* pada **masing-masing**: *Egy kávét és egy pohár vizet kérek.* Melewatkan *-t* pada barang kedua adalah kesalahan yang paling sering terdengar dari pemula."
+          ]
+        },
+        {
+          "title": "Kata tanya pun ikut berakhiran",
+          "body": [
+            "Kalau kata tanyanya menanyakan sasaran, ia ikut memakai *-t*."
+          ],
+          "table": {
+            "head": [
+              "Tanpa sasaran",
+              "Dengan sasaran",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "*mi* (apa)",
+                "**mit**",
+                "*Mit kérsz?* = Kamu mau apa?"
+              ],
+              [
+                "*ki* (siapa)",
+                "**kit**",
+                "*Kit vársz?* = Kamu menunggu siapa?"
+              ],
+              [
+                "*melyik* (yang mana)",
+                "**melyiket**",
+                "*Melyiket kéred?* = Kamu mau yang mana?"
+              ],
+              [
+                "*mennyi* (berapa)",
+                "**mennyit**",
+                "*Mennyit kérsz?* = Kamu mau berapa banyak?"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan urutan katanya: kata tanya bahasa Hungaria selalu berdiri **tepat sebelum kata kerja**. *Mit kérsz?*, bukan *Kérsz mit?*. Aturan posisi ini nanti berlaku juga untuk bagian kalimat yang ditekankan — dan itulah kunci urutan kata bahasa Hungaria yang sering disebut \"bebas\", padahal sama sekali tidak."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Makanan dan minuman",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia",
+            "Bentuk sasaran"
+          ],
+          "rows": [
+            [
+              "a kávé",
+              "å KA-vé",
+              "kopi",
+              "kávét"
+            ],
+            [
+              "a tea",
+              "å TÈ-å",
+              "teh",
+              "teát"
+            ],
+            [
+              "a víz",
+              "å viz",
+              "air",
+              "vizet"
+            ],
+            [
+              "a tej",
+              "å tèy",
+              "susu",
+              "tejet"
+            ],
+            [
+              "a sör",
+              "å syör",
+              "bir",
+              "sört"
+            ],
+            [
+              "a bor",
+              "å bor",
+              "anggur",
+              "bort"
+            ],
+            [
+              "a kenyér",
+              "å KÈ-nyér",
+              "roti",
+              "kenyeret"
+            ],
+            [
+              "a sajt",
+              "å syåyt",
+              "keju",
+              "sajtot"
+            ],
+            [
+              "a leves",
+              "å LÈ-vèsy",
+              "sup",
+              "levest"
+            ],
+            [
+              "a hús",
+              "å husy",
+              "daging",
+              "húst"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tiga hidangan yang wajib dicoba dan wajib bisa diucapkan: **gulyás** (GU-yasy) — sup daging berpaprika yang di luar Hungaria salah disebut \"goulash\" dan salah dianggap kental; **pörkölt** (PÖR-költ) — yang sebenarnya kental itu; dan **lángos** (LAN-gosy) — adonan goreng bertabur krim asam dan keju yang dijual di pasar dan pemandian."
+        }
+      ]
+    },
+    {
+      "title": "Kalimat memesan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Mit kér?",
+              "mit kér",
+              "Anda mau pesan apa?"
+            ],
+            [
+              "Egy kávét kérek.",
+              "èdy KA-vét KÉ-rèk",
+              "Saya minta satu kopi."
+            ],
+            [
+              "Egy pohár vizet kérek.",
+              "èdy PO-har VI-zèt KÉ-rèk",
+              "Saya minta segelas air."
+            ],
+            [
+              "Mi az?",
+              "mi åz",
+              "Itu apa?"
+            ],
+            [
+              "Finom?",
+              "FI-nom",
+              "Enak?"
+            ],
+            [
+              "Éhes vagyok.",
+              "É-hèsy VÅ-dyok",
+              "Saya lapar."
+            ],
+            [
+              "Szomjas vagyok.",
+              "SOM-yåsy VÅ-dyok",
+              "Saya haus."
+            ],
+            [
+              "Egészségedre!",
+              "È-gés-syé-gèd-rè",
+              "Bersulang! (kepada satu teman)"
+            ],
+            [
+              "Jó étvágyat!",
+              "yo ÉT-va-dyåt",
+              "Selamat makan!"
+            ],
+            [
+              "A számlát kérem.",
+              "å SAM-lat KÉ-rèm",
+              "Minta bonnya."
+            ],
+            [
+              "Fizetni szeretnék.",
+              "FI-zèt-ni SÈ-rèt-nék",
+              "Saya mau bayar."
+            ],
+            [
+              "Kártyával lehet?",
+              "KAR-tya-vål LÈ-hèt",
+              "Bisa pakai kartu?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga kebiasaan kafe Hungaria",
+          "items": [
+            "**Air tidak otomatis datang.** Berbeda dari banyak negara Eropa lain, air keran gratis jarang disajikan tanpa diminta. Pesan *egy pohár vizet* kalau kamu memerlukannya.",
+            "**Uang jasa sekitar sepuluh persen** dan sering sudah tercantum di bon sebagai *szervizdíj*. Kalau belum, sebutkan jumlah total yang kamu bayar saat menyerahkan uang — kebiasaan setempat adalah menyebut angka, bukan meninggalkan kembalian di meja.",
+            "**Egészségedre** dipakai untuk bersulang, dan bentuk sopannya *Egészségére*. Kata ini panjang dan menakutkan di awal, tapi ia salah satu yang paling menyenangkan begitu lidahmu terbiasa."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "kávézó",
+      "baca": "KA-vé-zo",
+      "id": "kafe"
+    },
+    {
+      "hu": "étterem",
+      "baca": "ÉT-tè-rèm",
+      "id": "restoran"
+    },
+    {
+      "hu": "pincér",
+      "baca": "PIN-tsér",
+      "id": "pelayan"
+    },
+    {
+      "hu": "étel",
+      "baca": "É-tèl",
+      "id": "makanan"
+    },
+    {
+      "hu": "ital",
+      "baca": "I-tål",
+      "id": "minuman"
+    },
+    {
+      "hu": "kér",
+      "baca": "kér",
+      "id": "minta"
+    },
+    {
+      "hu": "szeretnék",
+      "baca": "SÈ-rèt-nék",
+      "id": "saya ingin"
+    },
+    {
+      "hu": "hoz",
+      "baca": "hoz",
+      "id": "membawa"
+    },
+    {
+      "hu": "eszik",
+      "baca": "È-sik",
+      "id": "makan"
+    },
+    {
+      "hu": "iszik",
+      "baca": "I-sik",
+      "id": "minum"
+    },
+    {
+      "hu": "fizet",
+      "baca": "FI-zèt",
+      "id": "membayar"
+    },
+    {
+      "hu": "pohár",
+      "baca": "PO-har",
+      "id": "gelas"
+    },
+    {
+      "hu": "csésze",
+      "baca": "CÉ-sè",
+      "id": "cangkir"
+    },
+    {
+      "hu": "számla",
+      "baca": "SAM-lå",
+      "id": "bon; tagihan"
+    },
+    {
+      "hu": "tejföl",
+      "baca": "TÈY-föl",
+      "id": "krim asam"
+    },
+    {
+      "hu": "tészta",
+      "baca": "TÉS-tå",
+      "id": "adonan; pasta"
+    },
+    {
+      "hu": "sült",
+      "baca": "syült",
+      "id": "goreng; panggang"
+    },
+    {
+      "hu": "finom",
+      "baca": "FI-nom",
+      "id": "enak"
+    },
+    {
+      "hu": "éhes",
+      "baca": "É-hèsy",
+      "id": "lapar"
+    },
+    {
+      "hu": "szomjas",
+      "baca": "SOM-yåsy",
+      "id": "haus"
+    },
+    {
+      "hu": "elég",
+      "baca": "È-lég",
+      "id": "cukup"
+    },
+    {
+      "hu": "akkor",
+      "baca": "ÅK-kor",
+      "id": "kalau begitu"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis bentuk sasarannya.",
+      "items": [
+        "kávé",
+        "sör",
+        "könyv",
+        "ház",
+        "víz",
+        "alma"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk sasaran yang tepat.",
+      "items": [
+        "Egy ____ kérek. (kopi)",
+        "____ kérsz? (apa)",
+        "A ____ kérem. (bon)",
+        "Egy pohár ____ kérek. (air)",
+        "Egy ____ eszem. (lángos)",
+        "____ vársz? (siapa)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Hungaria.",
+      "items": [
+        "Saya minta satu kopi.",
+        "Dengan susu atau tanpa susu?",
+        "Saya minta segelas air juga.",
+        "Itu apa?",
+        "Saya lapar.",
+        "Minta bonnya."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 5. Terjemahkan ke bahasa Hungaria tanpa melihat unitnya.",
+      "items": [
+        "Ini keluarga saya.",
+        "Saya punya kakak laki-laki.",
+        "Saya tidak punya saudara.",
+        "Apa pekerjaanmu?",
+        "Ibu saya dokter."
+      ]
+    }
+  ],
+  "answers": [
+    "kávét — sört — könyvet — házat — vizet — almát",
+    "kávét — Mit — számlát — vizet — lángost — Kit",
+    "Egy kávét kérek. — Tejjel vagy tej nélkül? — Egy pohár vizet is kérek. — Mi az? — Éhes vagyok. — A számlát kérem.",
+    "Ez a családom. — Van egy bátyám. — Nincs testvérem. — Mi a foglalkozásod? — Az anyám orvos."
+  ]
+}

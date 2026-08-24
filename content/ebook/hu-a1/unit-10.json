@@ -1,0 +1,589 @@
+{
+  "title": "Satu hari kerja — kata kerja masa kini",
+  "title_target": "Egy hétköznap",
+  "goal": "Menceritakan kegiatan sehari-hari dengan rangkaian akhiran kata kerja yang pertama: bentuk tak tentu, enam pelaku, tiga kubu vokal.",
+  "bekal": [
+    "menyusun sendiri bentuk *én*, *te*, *ő*, *mi*, *ti*, *ők* dari kata kerja mana pun",
+    "mengenali kata kerja berakhiran *s*, *sz*, *z* yang bentuk \"kamu\"-nya berbeda",
+    "menceritakan hari kerjamu dari bangun sampai tidur"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Egy hétköznap",
+      "intro": "Anna penasaran bagaimana rasanya bekerja di Budapest sebagai orang asing. Budi menceritakan hari biasanya.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Mit csinálsz egy hétköznapon?",
+          "id": "Apa yang kamu lakukan pada hari kerja?",
+          "literal": "apa-sasaran kamu-melakukan sebuah hari-kerja-pada?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Reggel hatkor kelek. Aztán zuhanyozom és reggelizem.",
+          "id": "Pagi jam enam saya bangun. Lalu mandi dan sarapan.",
+          "literal": "pagi enam-pada saya-bangun. lalu saya-mandi dan saya-sarapan."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Mikor indulsz otthonról?",
+          "id": "Kamu berangkat dari rumah jam berapa?",
+          "literal": "kapan kamu-berangkat rumah-dari?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Fél nyolckor. Metróval megyek dolgozni.",
+          "id": "Setengah delapan. Saya pergi kerja naik metro.",
+          "literal": "setengah delapan-pada. metro-dengan saya-pergi bekerja."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Hol dolgozol?",
+          "id": "Kamu bekerja di mana?",
+          "literal": "di-mana kamu-bekerja?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Egy irodában, a Blaha Lujza téren. Kilenctől ötig dolgozom.",
+          "id": "Di sebuah kantor, di Blaha Lujza tér. Saya bekerja dari jam sembilan sampai jam lima.",
+          "literal": "sebuah kantor-di-dalam, itu Blaha Lujza lapangan-di. sembilan-dari lima-sampai saya-bekerja."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "És ebédelsz?",
+          "id": "Kamu makan siang?",
+          "literal": "dan kamu-makan-siang?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igen, délben eszem valamit a kollégákkal.",
+          "id": "Ya, siang saya makan sesuatu bersama rekan-rekan kerja.",
+          "literal": "ya, tengah-hari-di saya-makan sesuatu-sasaran itu rekan-jamak-dengan."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Este mit csinálsz?",
+          "id": "Malamnya kamu ngapain?",
+          "literal": "malam apa-sasaran kamu-melakukan?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Magyarul tanulok, olvasok, néha sportolok. Tizenegy körül alszom.",
+          "id": "Saya belajar bahasa Hungaria, membaca, kadang olahraga. Sekitar jam sebelas saya tidur.",
+          "literal": "Hungaria-secara saya-belajar, saya-membaca, kadang saya-berolahraga. sebelas sekitar saya-tidur."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Az kevés! Én nyolc órát alszom.",
+          "id": "Itu sedikit! Saya tidur delapan jam.",
+          "literal": "itu sedikit! saya delapan jam-sasaran saya-tidur."
+        }
+      ],
+      "notes": [
+        "**Kata gantinya hampir selalu dibuang.** *Kelek* sudah berarti \"saya bangun\", *dolgozol* sudah berarti \"kamu bekerja\". Ekornya menyimpan pelakunya, jadi *én* dan *te* muncul hanya untuk menekankan — perhatikan baris terakhir: *Én nyolc órát alszom* = \"kalau **saya** sih tidur delapan jam\".",
+        "**Nyolc órát alszom** memakai akhiran sasaran untuk menyatakan **lamanya**. Bahasa Hungaria memperlakukan durasi seperti sasaran: *két órát várok* (saya menunggu dua jam), *egy hetet maradok* (saya tinggal seminggu). Kebiasaan ini tidak sulit, cuma perlu diperhatikan sekali.",
+        "**Metróval, a kollégákkal.** Akhiran \"dengan\" menempel dan meleburkan *v*-nya, seperti sudah kamu lihat di unit 7. Pada kata jamak, hasilnya *-kkal / -kkel*: *kollégák* → *kollégákkal*. Aturan penuhnya di unit 15.",
+        "**Megyek dolgozni** memakai bentuk dasar berakhiran *-ni* untuk menyatakan tujuan: \"saya pergi untuk bekerja\". Sama seperti \"pergi bekerja\" dalam bahasa Indonesia — tanpa kata \"untuk\".",
+        "**Kilenctől ötig** menutup rentang waktu dengan sepasang akhiran: *-tól/-től* (sejak) dan *-ig* (sampai). Pasangan ini juga dipakai untuk tempat: *Budapesttől Szegedig* (dari Budapest sampai Szeged).",
+        "**Zuhanyozom, reggelizem, dolgozom, alszom.** Semuanya berakhiran *-om/-em* pada bentuk \"saya\", bukan *-ok/-ek*. Itu tanda golongan **-ik**: kata kerja yang bentuk kamusnya berakhir *-ik*. Golongan ini dibahas di kotak ketiga di bawah."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk tak tentu — rangkaian akhiran yang pertama",
+          "body": [
+            "Enam pelaku, tiga kubu vokal. Perhatikan bahwa polanya identik di ketiga kolom; yang berbeda hanya vokal sambungnya, persis seperti pada akhiran milik di unit 5."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "*tanul* (dalam)",
+              "*beszél* (depan)",
+              "*ül* (depan bulat)",
+              "Akhiran"
+            ],
+            "rows": [
+              [
+                "én",
+                "tanul**ok**",
+                "beszél**ek**",
+                "ül**ök**",
+                "*-ok / -ek / -ök*"
+              ],
+              [
+                "te",
+                "tanul**sz**",
+                "beszél**sz**",
+                "ül**sz**",
+                "*-sz*"
+              ],
+              [
+                "ő",
+                "tanul",
+                "beszél",
+                "ül",
+                "— (telanjang)"
+              ],
+              [
+                "mi",
+                "tanul**unk**",
+                "beszél**ünk**",
+                "ül**ünk**",
+                "*-unk / -ünk*"
+              ],
+              [
+                "ti",
+                "tanul**tok**",
+                "beszél**tek**",
+                "ül**tök**",
+                "*-tok / -tek / -tök*"
+              ],
+              [
+                "ők",
+                "tanul**nak**",
+                "beszél**nek**",
+                "ül**nek**",
+                "*-nak / -nek*"
+              ]
+            ]
+          },
+          "after": [
+            "**Baris ő itu hadiah.** Bentuk untuk orang ketiga tunggal adalah kata kerjanya sendiri, tanpa tambahan apa pun. Itu sebabnya kamus bahasa Hungaria mencantumkan bentuk *ő*, bukan bentuk dasar — bentuk yang paling pendek sekaligus paling sering dipakai.",
+            "**Bentuk te punya dua wajah.** *-sz* dipakai untuk sebagian besar kata kerja, tapi kata kerja yang berakhir bunyi desis memakai *-ol/-el/-öl*. Tabel berikutnya memuatnya.",
+            "**Masa kini juga berarti sedang dan akan.** *Tanulok* bisa berarti \"saya belajar\", \"saya sedang belajar\", dan — kalau waktunya jelas — \"saya akan belajar\". Bahasa Hungaria tidak membedakan ketiganya, persis seperti bahasa Indonesia."
+          ]
+        },
+        {
+          "title": "Kata kerja berakhir s, sz, z, dz",
+          "body": [
+            "Satu penyesuaian kecil pada bentuk \"kamu\", dan itu saja."
+          ],
+          "table": {
+            "head": [
+              "Kata kerja",
+              "Arti",
+              "Bentuk *te*",
+              "Bukan"
+            ],
+            "rows": [
+              [
+                "*olvas*",
+                "membaca",
+                "olvas**ol**",
+                "~~olvassz~~"
+              ],
+              [
+                "*keres*",
+                "mencari",
+                "keres**el**",
+                "~~keressz~~"
+              ],
+              [
+                "*néz*",
+                "melihat",
+                "néz**el**",
+                "~~nézsz~~"
+              ],
+              [
+                "*főz*",
+                "memasak",
+                "főz**öl**",
+                "~~főzsz~~"
+              ],
+              [
+                "*utazik*",
+                "bepergian",
+                "utaz**ol**",
+                "~~utazsz~~"
+              ],
+              [
+                "*dolgozik*",
+                "bekerja",
+                "dolgoz**ol**",
+                "~~dolgozsz~~"
+              ]
+            ]
+          },
+          "after": [
+            "Alasannya murni bunyi: *-sz* sesudah *s* atau *z* mustahil diucapkan dengan jelas. Bahasa Hungaria memilih vokal sambung daripada memaksa lidah.",
+            "Sisa lima bentuk lainnya tidak berubah sama sekali: *olvasok, olvasol, olvas, olvasunk, olvastok, olvasnak*."
+          ]
+        },
+        {
+          "title": "Golongan -ik",
+          "body": [
+            "Sekelompok kata kerja yang bentuk kamusnya berakhir *-ik*. Yang berbeda cuma dua baris pertama."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "*lakik* (tinggal)",
+              "*dolgozik* (bekerja)",
+              "*eszik* (makan)"
+            ],
+            "rows": [
+              [
+                "én",
+                "lak**om**",
+                "dolgoz**om**",
+                "esz**em**"
+              ],
+              [
+                "te",
+                "lak**sz**",
+                "dolgoz**ol**",
+                "esz**el**"
+              ],
+              [
+                "ő",
+                "lak**ik**",
+                "dolgoz**ik**",
+                "esz**ik**"
+              ],
+              [
+                "mi",
+                "lak**unk**",
+                "dolgoz**unk**",
+                "esz**ünk**"
+              ],
+              [
+                "ti",
+                "lak**tok**",
+                "dolgoz**tok**",
+                "esz**tek**"
+              ],
+              [
+                "ők",
+                "lak**nak**",
+                "dolgoz**nak**",
+                "esz**nek**"
+              ]
+            ]
+          },
+          "after": [
+            "Golongan ini memuat banyak kata kerja sehari-hari: *lakik, dolgozik, alszik, eszik, iszik, utazik, zuhanyozik, reggelizik, ebédel* (yang ini bukan *-ik*, hati-hati), *érkezik, találkozik, kezdődik*.",
+            "**Dalam percakapan sehari-hari, banyak orang Hungaria memakai *-ok* juga untuk golongan ini** — *lakok* alih-alih *lakom*. Ia tidak dianggap salah besar, tetapi bentuk *-om* selalu benar, jadi pakailah itu."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Sehari penuh",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia",
+            "Bentuk *én*"
+          ],
+          "rows": [
+            [
+              "felkel",
+              "FÈL-kèl",
+              "bangun",
+              "felkelek"
+            ],
+            [
+              "zuhanyozik",
+              "ZU-hå-nyo-zik",
+              "mandi",
+              "zuhanyozom"
+            ],
+            [
+              "reggelizik",
+              "RÈG-gè-li-zik",
+              "sarapan",
+              "reggelizem"
+            ],
+            [
+              "ebédel",
+              "È-bé-dèl",
+              "makan siang",
+              "ebédelek"
+            ],
+            [
+              "vacsorázik",
+              "VÅ-co-ra-zik",
+              "makan malam",
+              "vacsorázom"
+            ],
+            [
+              "indul",
+              "IN-dul",
+              "berangkat",
+              "indulok"
+            ],
+            [
+              "érkezik",
+              "ÉR-kè-zik",
+              "tiba",
+              "érkezem"
+            ],
+            [
+              "dolgozik",
+              "DOL-go-zik",
+              "bekerja",
+              "dolgozom"
+            ],
+            [
+              "tanul",
+              "TÅ-nul",
+              "belajar",
+              "tanulok"
+            ],
+            [
+              "olvas",
+              "OL-våsy",
+              "membaca",
+              "olvasok"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan *felkel*: ia *kel* yang diberi awalan *fel-* (naik). Awalan semacam ini mengubah dan mempertajam arti kata kerja, dan ia salah satu ciri paling khas bahasa Hungaria. Unit 12 membahasnya."
+        }
+      ]
+    },
+    {
+      "title": "Urutan dan kekerapan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Dua kelompok kata kecil ini yang mengubah daftar kegiatan menjadi cerita."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Urutan",
+            "Cara baca",
+            "Arti",
+            "Kekerapan",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "*először*",
+              "ÈLÖ-sör",
+              "pertama-tama",
+              "*mindig*",
+              "MIN-dig",
+              "selalu"
+            ],
+            [
+              "*aztán*",
+              "ÅZ-tan",
+              "lalu",
+              "*gyakran*",
+              "DYÅK-rån",
+              "sering"
+            ],
+            [
+              "*utána*",
+              "U-ta-nå",
+              "sesudah itu",
+              "*néha*",
+              "NÉ-hå",
+              "kadang-kadang"
+            ],
+            [
+              "*közben*",
+              "KÖZ-bèn",
+              "sementara itu",
+              "*ritkán*",
+              "RIT-kan",
+              "jarang"
+            ],
+            [
+              "*végül*",
+              "VÉ-gül",
+              "akhirnya",
+              "*soha nem*",
+              "SYO-hå nèm",
+              "tidak pernah"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Soha* selalu berpasangan dengan *nem*: *Soha nem főzök* = \"Saya tidak pernah memasak\". Bahasa Hungaria memakai **sangkalan ganda** dan menganggapnya benar — sama seperti bahasa Indonesia yang bilang \"tidak pernah\", bukan \"pernah tidak\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Latihan bicara yang paling menghasilkan di tingkat ini",
+          "items": [
+            "Ceritakan harimu sendiri dengan suara keras, dari bangun sampai tidur, memakai sepuluh kata kerja saja. Lakukan tiap hari selama seminggu.",
+            "Lalu ceritakan hari **temanmu** — kalimat yang sama, tapi semua kata kerjanya berbentuk *ő*. Ini latihan tersembunyi yang paling cepat memasang seluruh tabel di kepalamu, karena kamu mengubah bentuk sambil memikirkan isinya, bukan sambil menatap tabel."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "csinál",
+      "baca": "CI-nal",
+      "id": "melakukan; mengerjakan"
+    },
+    {
+      "hu": "hétköznap",
+      "baca": "HÉT-köz-nåp",
+      "id": "hari kerja"
+    },
+    {
+      "hu": "felkel",
+      "baca": "FÈL-kèl",
+      "id": "bangun"
+    },
+    {
+      "hu": "zuhanyozik",
+      "baca": "ZU-hå-nyo-zik",
+      "id": "mandi"
+    },
+    {
+      "hu": "reggelizik",
+      "baca": "RÈG-gè-li-zik",
+      "id": "sarapan"
+    },
+    {
+      "hu": "ebédel",
+      "baca": "È-bé-dèl",
+      "id": "makan siang"
+    },
+    {
+      "hu": "indul",
+      "baca": "IN-dul",
+      "id": "berangkat"
+    },
+    {
+      "hu": "érkezik",
+      "baca": "ÉR-kè-zik",
+      "id": "tiba"
+    },
+    {
+      "hu": "otthon",
+      "baca": "OTT-hon",
+      "id": "di rumah; rumah sendiri"
+    },
+    {
+      "hu": "metró",
+      "baca": "MÈT-ro",
+      "id": "metro"
+    },
+    {
+      "hu": "villamos",
+      "baca": "VIL-lå-mosy",
+      "id": "trem"
+    },
+    {
+      "hu": "kolléga",
+      "baca": "KOL-lé-gå",
+      "id": "rekan kerja"
+    },
+    {
+      "hu": "olvas",
+      "baca": "OL-våsy",
+      "id": "membaca"
+    },
+    {
+      "hu": "néz",
+      "baca": "néz",
+      "id": "menonton; melihat"
+    },
+    {
+      "hu": "főz",
+      "baca": "föz",
+      "id": "memasak"
+    },
+    {
+      "hu": "vásárol",
+      "baca": "VA-sya-rol",
+      "id": "berbelanja"
+    },
+    {
+      "hu": "takarít",
+      "baca": "TÅ-kå-rit",
+      "id": "bersih-bersih"
+    },
+    {
+      "hu": "pihen",
+      "baca": "PI-hèn",
+      "id": "istirahat"
+    },
+    {
+      "hu": "sportol",
+      "baca": "SPOR-tol",
+      "id": "berolahraga"
+    },
+    {
+      "hu": "alszik",
+      "baca": "ÅL-sik",
+      "id": "tidur"
+    },
+    {
+      "hu": "aztán",
+      "baca": "ÅZ-tan",
+      "id": "lalu"
+    },
+    {
+      "hu": "néha",
+      "baca": "NÉ-hå",
+      "id": "kadang-kadang"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis bentuk én, te, dan ő dari kata kerja berikut.",
+      "items": [
+        "tanul",
+        "beszél",
+        "ül",
+        "olvas",
+        "főz",
+        "lakik"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+      "items": [
+        "Reggel hatkor ____. (felkel — saya)",
+        "Hol ____? (dolgozik — kamu)",
+        "Este magyarul ____. (tanul — saya)",
+        "Ők egy irodában ____. (dolgozik — mereka)",
+        "Mit ____? (csinál — kalian)",
+        "Mi mindig otthon ____. (vacsorázik — kami)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Hungaria.",
+      "items": [
+        "Pagi jam enam saya bangun.",
+        "Kamu bekerja di mana?",
+        "Saya bekerja dari jam sembilan sampai jam lima.",
+        "Malamnya kamu ngapain?",
+        "Kadang saya olahraga.",
+        "Saya tidur delapan jam."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 8. Terjemahkan ke bahasa Hungaria tanpa melihat unitnya.",
+      "items": [
+        "Berapa harga tomatnya?",
+        "Saya minta satu kilo apel.",
+        "Semuanya jadi berapa?",
+        "Ada yang lebih murah?",
+        "Bisa pakai kartu?"
+      ]
+    }
+  ],
+  "answers": [
+    "tanulok, tanulsz, tanul — beszélek, beszélsz, beszél — ülök, ülsz, ül — olvasok, olvasol, olvas — főzök, főzöl, főz — lakom, laksz, lakik",
+    "felkelek — dolgozol — tanulok — dolgoznak — csináltok — vacsorázunk",
+    "Reggel hatkor felkelek. — Hol dolgozol? — Kilenctől ötig dolgozom. — Este mit csinálsz? — Néha sportolok. — Nyolc órát alszom.",
+    "Mennyibe kerül a paradicsom? — Kérek egy kiló almát. — Mennyi lesz összesen? — Van olcsóbb? — Kártyával lehet?"
+  ]
+}

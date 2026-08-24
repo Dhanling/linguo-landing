@@ -1,0 +1,623 @@
+{
+  "title": "Kata kerja yang membangkang",
+  "title_target": "Rendhagyó igék",
+  "goal": "Menguasai delapan kata kerja tak beraturan yang justru paling sering dipakai — di masa kini maupun di masa lampau.",
+  "bekal": [
+    "memakai *megy*, *jön*, *eszik*, *iszik*, *tesz*, *vesz*, *visz*, *alszik* dengan benar",
+    "menceritakan perjalanan singkat di masa lampau",
+    "membedakan *haza*, *itthon*, dan *otthon*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — A hétvége",
+      "intro": "Senin pagi lagi. Kali ini Anna yang punya cerita.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Hol voltál a hétvégén?",
+          "id": "Akhir pekan kamu di mana?",
+          "literal": "di-mana kamu-ada-lampau itu akhir-pekan-pada?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Szentendrére mentem a családommal.",
+          "id": "Saya pergi ke Szentendre bersama keluarga saya.",
+          "literal": "Szentendre-ke-atas saya-pergi-lampau itu keluarga-ku-dengan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hogy mentetek?",
+          "id": "Kalian pergi naik apa?",
+          "literal": "bagaimana kalian-pergi-lampau?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Hajóval. Nagyon szép út volt.",
+          "id": "Naik kapal. Perjalanannya indah sekali.",
+          "literal": "kapal-dengan. sangat indah perjalanan ada-lampau."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mit csináltatok ott?",
+          "id": "Kalian ngapain di sana?",
+          "literal": "apa-sasaran kalian-melakukan-lampau di-sana?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Sétáltunk a régi utcákban, és ettünk egy jó ebédet.",
+          "id": "Kami jalan-jalan di jalan-jalan tua, dan makan siang yang enak.",
+          "literal": "kami-berjalan-lampau itu lama jalan-jamak-di-dalam, dan kami-makan-lampau sebuah bagus makan-siang-sasaran."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mit ettetek?",
+          "id": "Kalian makan apa?",
+          "literal": "apa-sasaran kalian-makan-lampau?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Én halászlét ettem, apu pörköltet. Ittunk egy kis bort is.",
+          "id": "Saya makan sup ikan, ayah makan pörkölt. Kami minum sedikit anggur juga.",
+          "literal": "saya sup-ikan-sasaran saya-makan-lampau, ayah pörkölt-sasaran. kami-minum-lampau sebuah kecil anggur-sasaran juga."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "És mikor jöttetek haza?",
+          "id": "Dan kalian pulang jam berapa?",
+          "literal": "dan kapan kalian-datang-lampau ke-rumah?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Este nyolckor. Nagyon fáradt lettem.",
+          "id": "Malam jam delapan. Saya jadi capek sekali.",
+          "literal": "malam delapan-pada. sangat capek saya-menjadi-lampau."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Én meg egész hétvégén otthon aludtam!",
+          "id": "Saya sih tidur di rumah sepanjang akhir pekan!",
+          "literal": "saya sedangkan seluruh akhir-pekan-pada rumah-di saya-tidur-lampau!"
+        }
+      ],
+      "notes": [
+        "**Mentem, bukan menttem.** *Megy* berubah bentuk sepenuhnya di masa lampau: batangnya menjadi *men-*. Begitu pula *jön* menjadi *jöt-*, *eszik* menjadi *et-*, *iszik* menjadi *it-*. Kabar baiknya: begitu batangnya berubah, akhiran pelakunya tetap yang biasa.",
+        "**Evett dan ivott adalah dua bentuk yang paling sering mengagetkan.** Bentuk *ő* dari *eszik* bukan *ett* melainkan **evett**, dan dari *iszik* bukan *itt* melainkan **ivott**. Ada alasan sejarahnya, tetapi untuk sekarang cukup dihafal — dua kata ini akan kamu pakai setiap hari.",
+        "**Itt punya dua arti yang sama sekali berbeda.** *Itt* berarti \"di sini\", dan *ittak* berarti \"mereka minum\". Keadaan kalimatnya selalu memisahkan keduanya, tetapi pemula sering tertegun sedetik saat pertama kali bertemu.",
+        "**Lettem berarti \"saya menjadi\".** *Lesz* mengerjakan dua pekerjaan: masa depan dari *van* (unit 8), dan \"menjadi\" (*Fáradt lettem* = saya jadi capek, *Orvos lett* = dia jadi dokter). Bahasa Indonesia memisahkan \"akan\" dan \"menjadi\"; bahasa Hungaria memakai satu kata.",
+        "**Haza, itthon, otthon.** Tiga kata yang semuanya berhubungan dengan rumah tetapi tidak bisa ditukar. *Haza* berarti \"pulang\" (arah), *itthon* berarti \"di rumah\" ketika kamu sedang berada di sana, dan *otthon* berarti \"di rumah\" ketika kamu sedang tidak. Bahasa Indonesia tidak membedakan dua yang terakhir sama sekali."
+      ],
+      "grammars": [
+        {
+          "title": "Delapan kata kerja tak beraturan — masa kini",
+          "body": [
+            "Semuanya sangat sering dipakai, dan justru karena itu bentuknya tidak pernah dirapikan oleh bahasanya."
+          ],
+          "table": {
+            "head": [
+              "Dasar",
+              "Arti",
+              "én",
+              "te",
+              "ő",
+              "mi",
+              "ti",
+              "ők"
+            ],
+            "rows": [
+              [
+                "*van*",
+                "ada",
+                "vagyok",
+                "vagy",
+                "van",
+                "vagyunk",
+                "vagytok",
+                "vannak"
+              ],
+              [
+                "*megy*",
+                "pergi",
+                "megyek",
+                "mész",
+                "megy",
+                "megyünk",
+                "mentek",
+                "mennek"
+              ],
+              [
+                "*jön*",
+                "datang",
+                "jövök",
+                "jössz",
+                "jön",
+                "jövünk",
+                "jöttök",
+                "jönnek"
+              ],
+              [
+                "*eszik*",
+                "makan",
+                "eszem",
+                "eszel",
+                "eszik",
+                "eszünk",
+                "esztek",
+                "esznek"
+              ],
+              [
+                "*iszik*",
+                "minum",
+                "iszom",
+                "iszol",
+                "iszik",
+                "iszunk",
+                "isztok",
+                "isznak"
+              ],
+              [
+                "*tesz*",
+                "menaruh",
+                "teszek",
+                "teszel",
+                "tesz",
+                "teszünk",
+                "tesztek",
+                "tesznek"
+              ],
+              [
+                "*vesz*",
+                "membeli",
+                "veszek",
+                "veszel",
+                "vesz",
+                "veszünk",
+                "vesztek",
+                "vesznek"
+              ],
+              [
+                "*alszik*",
+                "tidur",
+                "alszom",
+                "alszol",
+                "alszik",
+                "alszunk",
+                "alszotok",
+                "alszanak"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan *mész* pada baris *megy* — satu-satunya bentuk *te* di seluruh daftar yang benar-benar tidak bisa ditebak. Sisanya masih mengikuti pola yang kamu kenal, hanya dengan batang yang berubah.",
+            "*Visz* (membawa pergi) dan *hisz* (percaya) mengikuti pola *tesz* dan *vesz* persis: *viszek, viszel, visz…* dan *hiszek, hiszel, hisz…*"
+          ]
+        },
+        {
+          "title": "Delapan kata kerja tak beraturan — masa lampau",
+          "body": [
+            "Batangnya berubah, akhirannya tetap seperti biasa."
+          ],
+          "table": {
+            "head": [
+              "Dasar",
+              "én",
+              "te",
+              "ő",
+              "mi",
+              "ti",
+              "ők"
+            ],
+            "rows": [
+              [
+                "*van*",
+                "voltam",
+                "voltál",
+                "volt",
+                "voltunk",
+                "voltatok",
+                "voltak"
+              ],
+              [
+                "*megy*",
+                "mentem",
+                "mentél",
+                "ment",
+                "mentünk",
+                "mentetek",
+                "mentek"
+              ],
+              [
+                "*jön*",
+                "jöttem",
+                "jöttél",
+                "jött",
+                "jöttünk",
+                "jöttetek",
+                "jöttek"
+              ],
+              [
+                "*eszik*",
+                "ettem",
+                "ettél",
+                "**evett**",
+                "ettünk",
+                "ettetek",
+                "ettek"
+              ],
+              [
+                "*iszik*",
+                "ittam",
+                "ittál",
+                "**ivott**",
+                "ittunk",
+                "ittatok",
+                "ittak"
+              ],
+              [
+                "*tesz*",
+                "tettem",
+                "tettél",
+                "**tett**",
+                "tettünk",
+                "tettetek",
+                "tettek"
+              ],
+              [
+                "*vesz*",
+                "vettem",
+                "vettél",
+                "**vett**",
+                "vettünk",
+                "vettetek",
+                "vettek"
+              ],
+              [
+                "*alszik*",
+                "aludtam",
+                "aludtál",
+                "**aludt**",
+                "aludtunk",
+                "aludtatok",
+                "aludtak"
+              ]
+            ]
+          },
+          "after": [
+            "**Bentuk tertentu tinggal mengganti ekornya**, seperti pada kata kerja beraturan: *ettem, etted, ette, ettük, ettétek, ették*; *ittam, ittad, itta, ittuk, ittátok, itták*; *vettem, vetted, vette, vettük, vettétek, vették*.",
+            "*Lesz* di masa lampau menjadi *lettem, lettél, lett, lettünk, lettetek, lettek* — dan artinya bergeser menjadi \"menjadi\", bukan \"akan\": *Orvos lett* = dia menjadi dokter."
+          ]
+        },
+        {
+          "title": "Haza, itthon, otthon",
+          "body": [
+            "Tiga kata yang bahasa Indonesia satukan menjadi \"rumah\"."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Cara baca",
+              "Dipakai kapan",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "*haza*",
+                "HÅ-zå",
+                "arah — pulang",
+                "*Hazamegyek.* = Saya pulang."
+              ],
+              [
+                "*itthon*",
+                "ITT-hon",
+                "di rumah, dan kamu **sedang** di sana",
+                "*Itthon vagyok.* = Saya di rumah."
+              ],
+              [
+                "*otthon*",
+                "OTT-hon",
+                "di rumah, tapi kamu **tidak** di sana",
+                "*Otthon van.* = Dia ada di rumah."
+              ],
+              [
+                "*otthon* (kata benda)",
+                "OTT-hon",
+                "rumah sebagai tempat berteduh",
+                "*Ez az otthonom.* = Ini rumahku."
+              ]
+            ]
+          },
+          "after": [
+            "Pembagian yang sama berlaku untuk negara: *itthon* kalau kamu sedang di Hungaria dan bicara tentang Hungaria, *otthon* kalau kamu sedang di luar dan merindukannya. Kehalusan ini tidak pernah membuat kalimatmu salah paham, tetapi memakainya dengan tepat langsung terdengar seperti orang yang benar-benar tinggal di sana.",
+            "Kembarannya untuk tempat lain: *ide* (ke sini), *oda* (ke sana), *itt* (di sini), *ott* (di sana), *innen* (dari sini), *onnan* (dari sana)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Perjalanan singkat",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "a kirándulás",
+              "å KI-ran-du-lasy",
+              "jalan-jalan ke luar kota"
+            ],
+            [
+              "az utazás",
+              "åz U-tå-zasy",
+              "perjalanan"
+            ],
+            [
+              "az út",
+              "åz ut",
+              "jalan; perjalanan"
+            ],
+            [
+              "a hajó",
+              "å HÅ-yo",
+              "kapal"
+            ],
+            [
+              "a vonat",
+              "å VO-nåt",
+              "kereta"
+            ],
+            [
+              "a jegy",
+              "å yèdy",
+              "tiket"
+            ],
+            [
+              "a vár",
+              "å var",
+              "benteng"
+            ],
+            [
+              "a templom",
+              "å TÈMP-lom",
+              "gereja"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tiga tujuan sehari dari Budapest yang paling sering disebut orang setempat: **Szentendre** (kota seniman di tepi Danube, empat puluh menit naik kapal), **Esztergom** (basilika terbesar di Hungaria), dan **a Balaton** — danau terbesar di Eropa Tengah, yang oleh orang Hungaria disebut \"laut Hungaria\" tanpa sedikit pun nada bercanda."
+        }
+      ]
+    },
+    {
+      "title": "Menceritakan perjalanan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Hol voltál a hétvégén?",
+              "hol VOL-tal å HÉT-vé-gén",
+              "Akhir pekan kamu di mana?"
+            ],
+            [
+              "Szentendrére mentem.",
+              "SÈNT-èn-dré-rè MÈN-tèm",
+              "Saya pergi ke Szentendre."
+            ],
+            [
+              "Hogy mentetek?",
+              "hody MÈN-tè-tèk",
+              "Kalian pergi naik apa?"
+            ],
+            [
+              "Vonattal mentünk.",
+              "VO-nåt-tål MÈN-tünk",
+              "Kami naik kereta."
+            ],
+            [
+              "Mit csináltatok?",
+              "mit CI-nal-tå-tok",
+              "Kalian ngapain?"
+            ],
+            [
+              "Sétáltunk a városban.",
+              "SYÉ-tal-tunk å VA-rosy-bån",
+              "Kami jalan-jalan di kota."
+            ],
+            [
+              "Megnéztük a várat.",
+              "MÈG-néz-tük å VA-råt",
+              "Kami melihat bentengnya."
+            ],
+            [
+              "Nagyon szép volt.",
+              "NÅ-dyon sép volt",
+              "Indah sekali."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Sepuluh kata kerja yang menutup sebagian besar cerita",
+          "items": [
+            "Kalau kamu cuma sempat menghafal sepuluh bentuk lampau, pilih ini: *voltam, mentem, jöttem, ettem, ittam, láttam, csináltam, olvastam, néztem, aludtam*.",
+            "Kesepuluhnya bersama-sama menutup lebih dari separuh kalimat masa lampau dalam percakapan sehari-hari — dan enam di antaranya tak beraturan, jadi memang harus dari hafalan, bukan dari aturan."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "megy",
+      "baca": "mèdy",
+      "id": "pergi"
+    },
+    {
+      "hu": "jön",
+      "baca": "yön",
+      "id": "datang"
+    },
+    {
+      "hu": "eszik",
+      "baca": "È-sik",
+      "id": "makan"
+    },
+    {
+      "hu": "iszik",
+      "baca": "I-sik",
+      "id": "minum"
+    },
+    {
+      "hu": "tesz",
+      "baca": "tès",
+      "id": "menaruh; melakukan"
+    },
+    {
+      "hu": "visz",
+      "baca": "vis",
+      "id": "membawa pergi"
+    },
+    {
+      "hu": "hisz",
+      "baca": "hisy",
+      "id": "percaya"
+    },
+    {
+      "hu": "lesz",
+      "baca": "lès",
+      "id": "akan ada; menjadi"
+    },
+    {
+      "hu": "alszik",
+      "baca": "ÅL-sik",
+      "id": "tidur"
+    },
+    {
+      "hu": "haza",
+      "baca": "HÅ-zå",
+      "id": "pulang"
+    },
+    {
+      "hu": "itthon",
+      "baca": "ITT-hon",
+      "id": "di rumah (sedang di sini)"
+    },
+    {
+      "hu": "otthon",
+      "baca": "OTT-hon",
+      "id": "di rumah (sedang tidak di sana)"
+    },
+    {
+      "hu": "hajó",
+      "baca": "HÅ-yo",
+      "id": "kapal"
+    },
+    {
+      "hu": "kirándulás",
+      "baca": "KI-ran-du-lasy",
+      "id": "jalan-jalan"
+    },
+    {
+      "hu": "sétál",
+      "baca": "SYÉ-tal",
+      "id": "berjalan-jalan"
+    },
+    {
+      "hu": "vár",
+      "baca": "var",
+      "id": "benteng; menunggu"
+    },
+    {
+      "hu": "folyó",
+      "baca": "FO-yo",
+      "id": "sungai"
+    },
+    {
+      "hu": "hegy",
+      "baca": "hèdy",
+      "id": "gunung"
+    },
+    {
+      "hu": "tó",
+      "baca": "to",
+      "id": "danau"
+    },
+    {
+      "hu": "ajándék",
+      "baca": "Å-yan-dék",
+      "id": "oleh-oleh"
+    },
+    {
+      "hu": "fénykép",
+      "baca": "FÉNY-kép",
+      "id": "foto"
+    },
+    {
+      "hu": "meg",
+      "baca": "mèg",
+      "id": "sedangkan; dan"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis bentuk lampau untuk ő.",
+      "items": [
+        "van",
+        "megy",
+        "jön",
+        "eszik",
+        "iszik",
+        "alszik"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk lampau yang tepat.",
+      "items": [
+        "Szentendrére ____. (megy — saya)",
+        "Halászlét ____. (eszik — saya)",
+        "____ egy kis bort. (iszik — kami)",
+        "Mikor ____ haza? (jön — kalian)",
+        "Nagyon fáradt ____. (lesz — saya)",
+        "Egész hétvégén otthon ____. (alszik — saya)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Hungaria.",
+      "items": [
+        "Akhir pekan kamu di mana?",
+        "Saya pergi ke Szentendre bersama keluarga saya.",
+        "Kalian pergi naik apa?",
+        "Kami jalan-jalan di kota.",
+        "Kalian makan apa?",
+        "Kalian pulang jam berapa?"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 17. Terjemahkan ke bahasa Hungaria tanpa melihat unitnya.",
+      "items": [
+        "Kamu suka makanan Hungaria?",
+        "Gulyás favorit saya.",
+        "Saya suka main bola.",
+        "Film seperti apa yang kamu suka?",
+        "Saya benci sepak bola."
+      ]
+    }
+  ],
+  "answers": [
+    "volt — ment — jött — evett — ivott — aludt",
+    "mentem — ettem — Ittunk — jöttetek — lettem — aludtam",
+    "Hol voltál a hétvégén? — Szentendrére mentem a családommal. — Hogy mentetek? — Sétáltunk a városban. — Mit ettetek? — Mikor jöttetek haza?",
+    "Szereted a magyar ételeket? — A gulyás a kedvencem. — Szeretek focizni. — Milyen filmeket szeretsz? — Utálom a focit."
+  ]
+}

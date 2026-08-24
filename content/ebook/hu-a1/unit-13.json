@@ -1,0 +1,534 @@
+{
+  "title": "Cuaca dan musim",
+  "title_target": "Milyen az idő?",
+  "goal": "Bicara tentang cuaca dengan kalimat yang tidak punya pelaku, menyebut empat musim beserta akhirannya, dan membedakan \"cuacanya dingin\" dari \"saya kedinginan\".",
+  "bekal": [
+    "menjawab *Milyen az idő?* dengan sepuluh kalimat siap pakai",
+    "menyebut suhu dalam derajat, termasuk yang di bawah nol",
+    "memakai *tavasszal, nyáron, ősszel, télen* untuk menyatakan musim"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Az első tél",
+      "intro": "Awal Januari, di depan pintu sekolah bahasa. Salju pertama Budi baru turun tadi malam.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Milyen hideg van ma!",
+          "id": "Dingin sekali hari ini!",
+          "literal": "betapa dingin ada hari-ini!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igen, nagyon hideg. Hány fok van?",
+          "id": "Iya, dingin sekali. Berapa derajat?",
+          "literal": "ya, sangat dingin. berapa derajat ada?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Mínusz öt. És havazik is.",
+          "id": "Minus lima. Dan turun salju juga.",
+          "literal": "minus lima. dan ia-bersalju juga."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Indonéziában soha nincs hó. Ez az első telem.",
+          "id": "Di Indonesia tidak pernah ada salju. Ini musim dingin pertama saya.",
+          "literal": "Indonesia-di-dalam tidak-pernah tidak-ada salju. ini itu pertama musim-dingin-ku."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Tényleg? És szereted a telet?",
+          "id": "Serius? Dan kamu suka musim dingin?",
+          "literal": "sungguh? dan kamu-menyukainya itu musim-dingin-sasaran?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Szeretem, de fázom. Nálunk mindig meleg van.",
+          "id": "Suka, tapi saya kedinginan. Di tempat kami selalu panas.",
+          "literal": "saya-menyukainya, tapi saya-kedinginan. di-tempat-kami selalu panas ada."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Hány fok van Jakartában?",
+          "id": "Berapa derajat di Jakarta?",
+          "literal": "berapa derajat ada Jakarta-di-dalam?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Harminc fok, egész évben. Két évszak van: száraz és esős.",
+          "id": "Tiga puluh derajat, sepanjang tahun. Ada dua musim: kering dan hujan.",
+          "literal": "tiga-puluh derajat, seluruh tahun-di-dalam. dua musim ada: kering dan berhujan."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Nálunk négy évszak van. A tavasz a legszebb.",
+          "id": "Di tempat kami ada empat musim. Musim semi yang paling indah.",
+          "literal": "di-tempat-kami empat musim ada. itu musim-semi itu paling-indah."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mikor kezdődik a tavasz?",
+          "id": "Musim semi mulai kapan?",
+          "literal": "kapan ia-mulai itu musim-semi?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Márciusban. Akkor süt a nap, és minden virágzik.",
+          "id": "Bulan Maret. Waktu itu matahari bersinar, dan semuanya berbunga.",
+          "literal": "Maret-di-dalam. kalau-begitu ia-bersinar itu matahari, dan semua ia-berbunga."
+        }
+      ],
+      "notes": [
+        "**Hideg van — kalimat tanpa pelaku.** Harfiahnya \"dingin ada\", tanpa menyebut siapa atau apa yang dingin. Bahasa Hungaria memakai susunan ini untuk seluruh urusan cuaca, dan bahasa Indonesia melakukan hal yang mirip ketika bilang \"dingin, ya\" tanpa pokok kalimat.",
+        "**Hideg van bukan Fázom.** Ini pembeda yang wajib rapi: *Hideg van* berarti **cuacanya** dingin, sedangkan *Fázom* berarti **saya** kedinginan. Keduanya bisa benar sekaligus, seperti di dialog. Kebalikannya: *Meleg van* (cuacanya panas) melawan *Melegem van* (saya kepanasan).",
+        "**Havazik dan esik az eső.** \"Turun salju\" adalah satu kata kerja utuh, *havazik*. \"Hujan\" justru dua kata: *esik az eső* — harfiahnya \"hujannya jatuh\". Bentuk pendek *esik* saja juga dipakai dan sangat sering terdengar.",
+        "**Ez az első telem** memperlihatkan kata *tél* memendekkan vokalnya begitu ada akhiran: *tél* → *telem*, *telet*, *télen*. Gejala yang sama sudah kamu lihat pada *víz* → *vizet* di unit 7 dan *nyár* → *nyarat*.",
+        "**Nálunk berarti \"di tempat kami\"** — akhiran *-nál* dari unit 12 plus akhiran milik. Orang Hungaria memakainya untuk menyebut negaranya, kotanya, atau rumahnya, tergantung keadaan. Kembarannya *nálatok* (di tempat kalian) dan *náluk* (di tempat mereka).",
+        "**A legszebb** memakai awalan *leg-* untuk menyatakan \"paling\". Ia dipasang bersama akhiran *-bb*: *szép* → *szebb* (lebih indah) → *legszebb* (paling indah). Aturan penuhnya di unit 16."
+      ],
+      "grammars": [
+        {
+          "title": "Cuaca: sepuluh kalimat yang menutup semuanya",
+          "body": [
+            "Hampir semuanya memakai *van* tanpa pelaku, atau satu kata kerja tunggal."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Cara baca",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "*Milyen az idő?*",
+                "MI-yèn åz I-dö",
+                "Cuacanya bagaimana?"
+              ],
+              [
+                "*Szép idő van.*",
+                "sép I-dö vån",
+                "Cuacanya bagus."
+              ],
+              [
+                "*Rossz idő van.*",
+                "ross I-dö vån",
+                "Cuacanya jelek."
+              ],
+              [
+                "*Meleg van.*",
+                "MÈ-lèg vån",
+                "Panas."
+              ],
+              [
+                "*Hideg van.*",
+                "HI-dèg vån",
+                "Dingin."
+              ],
+              [
+                "*Süt a nap.*",
+                "syüt å nåp",
+                "Matahari bersinar."
+              ],
+              [
+                "*Esik az eső.*",
+                "È-sik åz È-sö",
+                "Hujan."
+              ],
+              [
+                "*Havazik.*",
+                "HÅ-vå-zik",
+                "Turun salju."
+              ],
+              [
+                "*Fúj a szél.*",
+                "fuy å sél",
+                "Angin bertiup."
+              ],
+              [
+                "*Köd van.*",
+                "köd vån",
+                "Berkabut."
+              ]
+            ]
+          },
+          "after": [
+            "**Suhu memakai fok.** *Húsz fok van* (dua puluh derajat), *mínusz öt fok van* (minus lima derajat), *Hány fok van?* (berapa derajat). Perhatikan bahwa *fok* tetap tunggal sesudah angka, seperti semua kata benda lain.",
+            "*Idő* berarti \"waktu\" sekaligus \"cuaca\". Kalimat *Milyen az idő?* karena itu bisa ditebak salah oleh pemula sebagai \"jam berapa\" — tetapi untuk itu bahasa Hungaria memakai *Hány óra van?*, jadi kebingungannya tidak pernah bertahan lama."
+          ]
+        },
+        {
+          "title": "Cuacanya dingin, atau saya yang kedinginan?",
+          "body": [
+            "Bahasa Hungaria memisahkan dua hal yang bahasa Indonesia sering biarkan menyatu."
+          ],
+          "table": {
+            "head": [
+              "Tentang cuaca",
+              "Arti",
+              "Tentang orang",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "*Hideg van.*",
+                "Cuacanya dingin.",
+                "*Fázom.*",
+                "Saya kedinginan."
+              ],
+              [
+                "*Meleg van.*",
+                "Cuacanya panas.",
+                "*Melegem van.*",
+                "Saya kepanasan."
+              ],
+              [
+                "*Hideg van itt.*",
+                "Di sini dingin.",
+                "*Fázol?*",
+                "Kamu kedinginan?"
+              ],
+              [
+                "*Nagyon meleg van.*",
+                "Panas sekali.",
+                "*Nagyon melegem van.*",
+                "Saya kepanasan sekali."
+              ]
+            ]
+          },
+          "after": [
+            "*Fázik* adalah kata kerja golongan *-ik*: *fázom, fázol, fázik, fázunk, fáztok, fáznak*. *Melegem van* justru tersusun dari akhiran milik: harfiahnya \"panasku ada\" — susunan yang sama dengan *Nincs pénzem* dari unit 5.",
+            "Susunan kedua itu dipakai untuk banyak keadaan badan: *Éhes vagyok* (lapar), *Szomjas vagyok* (haus), *Álmos vagyok* (mengantuk), *Fáradt vagyok* (capek), tetapi *Melegem van* dan *Hidegem van* memilih jalan yang lain. Hafalkan keduanya sebagai pasangan."
+          ]
+        },
+        {
+          "title": "Empat musim dan akhirannya",
+          "body": [
+            "Perhatikan bahwa \"pada musim\" tidak memakai akhiran tempat, melainkan akhiran \"dengan\" — kebiasaan lama yang tinggal dihafal."
+          ],
+          "table": {
+            "head": [
+              "Musim",
+              "Cara baca",
+              "Arti",
+              "Pada musim…"
+            ],
+            "rows": [
+              [
+                "*tavasz*",
+                "TÅ-vås",
+                "musim semi",
+                "*tavasszal*"
+              ],
+              [
+                "*nyár*",
+                "nyar",
+                "musim panas",
+                "*nyáron*"
+              ],
+              [
+                "*ősz*",
+                "ös",
+                "musim gugur",
+                "*ősszel*"
+              ],
+              [
+                "*tél*",
+                "tél",
+                "musim dingin",
+                "*télen*"
+              ]
+            ]
+          },
+          "after": [
+            "*Tavasszal* dan *ősszel* memakai akhiran *-val/-vel* yang meleburkan *v*-nya, sementara *nyáron* dan *télen* memakai akhiran permukaan *-on/-en*. Tidak ada logika yang bisa diterangkan; empat bentuk ini dihafal utuh, dan untungnya cuma empat.",
+            "Di Hungaria musimnya benar-benar berbeda satu sama lain: musim panas bisa mencapai 35 derajat, musim dingin turun ke minus 10. Bagi pendatang dari Indonesia, *ősz* — musim gugur — biasanya yang paling menyenangkan, dan *november* yang paling berat, karena berkabut dan gelap sejak pukul empat sore."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Cuaca dan pakaian",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "az idő / az időjárás",
+              "åz I-dö / åz I-dö-ya-rasy",
+              "cuaca"
+            ],
+            [
+              "a nap",
+              "å nåp",
+              "matahari; hari"
+            ],
+            [
+              "a felhő",
+              "å FÈL-hö",
+              "awan"
+            ],
+            [
+              "az eső",
+              "åz È-sö",
+              "hujan"
+            ],
+            [
+              "a hó",
+              "å ho",
+              "salju"
+            ],
+            [
+              "a szél",
+              "å sél",
+              "angin"
+            ],
+            [
+              "a köd",
+              "å köd",
+              "kabut"
+            ],
+            [
+              "a vihar",
+              "å VI-hår",
+              "badai"
+            ],
+            [
+              "a fok",
+              "å fok",
+              "derajat"
+            ],
+            [
+              "napos",
+              "NÅ-posy",
+              "cerah"
+            ],
+            [
+              "a kabát",
+              "å KÅ-bat",
+              "mantel"
+            ],
+            [
+              "az esernyő",
+              "åz È-syèr-nyö",
+              "payung"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Satu kalimat yang akan sangat berguna di bulan November: *Hozz esernyőt!* — \"Bawa payung!\". Dan satu lagi untuk bulan Januari: *Vegyél fel kabátot!* — \"Pakai mantel!\". Keduanya bentuk perintah, yang baru dipelajari di A2; untuk sekarang cukup dikenali."
+        }
+      ]
+    },
+    {
+      "title": "Setahun di Hungaria",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bulan",
+            "Cuaca biasanya",
+            "Yang terjadi"
+          ],
+          "rows": [
+            [
+              "*december – február*",
+              "−5 sampai +5 °C, sering bersalju",
+              "*karácsony* (Natal), pasar Natal di Vörösmarty tér"
+            ],
+            [
+              "*március – május*",
+              "10 sampai 20 °C",
+              "*tavasz*, kota mulai hijau, kafe membuka terasnya"
+            ],
+            [
+              "*június – augusztus*",
+              "25 sampai 35 °C",
+              "*nyár*, orang pindah ke Balaton dan ke kolam renang"
+            ],
+            [
+              "*szeptember – november*",
+              "5 sampai 20 °C",
+              "*ősz*, warna daun terbaik, lalu kabut November"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Szia, hogy vagy? Milyen idő van nálatok?* — pertanyaan basa-basi yang paling aman di seluruh Hungaria, dan sekarang kamu bisa menjawabnya sepenuhnya. Cuaca adalah pembuka percakapan di sini sama seperti di Inggris; bedanya, orang Hungaria akan langsung menyambungnya dengan keluhan yang sangat rinci."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "idő",
+      "baca": "I-dö",
+      "id": "cuaca; waktu"
+    },
+    {
+      "hu": "hideg",
+      "baca": "HI-dèg",
+      "id": "dingin"
+    },
+    {
+      "hu": "meleg",
+      "baca": "MÈ-lèg",
+      "id": "panas; hangat"
+    },
+    {
+      "hu": "fok",
+      "baca": "fok",
+      "id": "derajat"
+    },
+    {
+      "hu": "mínusz",
+      "baca": "MI-nus",
+      "id": "minus"
+    },
+    {
+      "hu": "hó",
+      "baca": "ho",
+      "id": "salju"
+    },
+    {
+      "hu": "havazik",
+      "baca": "HÅ-vå-zik",
+      "id": "turun salju"
+    },
+    {
+      "hu": "eső",
+      "baca": "È-sö",
+      "id": "hujan"
+    },
+    {
+      "hu": "esik",
+      "baca": "È-sik",
+      "id": "jatuh; hujan"
+    },
+    {
+      "hu": "szél",
+      "baca": "sél",
+      "id": "angin"
+    },
+    {
+      "hu": "fúj",
+      "baca": "fuy",
+      "id": "bertiup"
+    },
+    {
+      "hu": "süt",
+      "baca": "syüt",
+      "id": "bersinar; memanggang"
+    },
+    {
+      "hu": "felhő",
+      "baca": "FÈL-hö",
+      "id": "awan"
+    },
+    {
+      "hu": "köd",
+      "baca": "köd",
+      "id": "kabut"
+    },
+    {
+      "hu": "évszak",
+      "baca": "ÉV-såk",
+      "id": "musim"
+    },
+    {
+      "hu": "tavasz",
+      "baca": "TÅ-vås",
+      "id": "musim semi"
+    },
+    {
+      "hu": "nyár",
+      "baca": "nyar",
+      "id": "musim panas"
+    },
+    {
+      "hu": "ősz",
+      "baca": "ös",
+      "id": "musim gugur"
+    },
+    {
+      "hu": "tél",
+      "baca": "tél",
+      "id": "musim dingin"
+    },
+    {
+      "hu": "fázik",
+      "baca": "FA-zik",
+      "id": "kedinginan"
+    },
+    {
+      "hu": "száraz",
+      "baca": "SA-råz",
+      "id": "kering"
+    },
+    {
+      "hu": "egész",
+      "baca": "È-gés",
+      "id": "seluruh"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Hungaria.",
+      "items": [
+        "Cuacanya bagaimana?",
+        "Dingin sekali hari ini.",
+        "Berapa derajat?",
+        "Turun salju.",
+        "Matahari bersinar.",
+        "Saya kedinginan."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk musim yang tepat.",
+      "items": [
+        "____ mindig meleg van. (musim panas)",
+        "____ havazik. (musim dingin)",
+        "____ minden virágzik. (musim semi)",
+        "____ sok eső esik. (musim gugur)",
+        "A ____ márciusban kezdődik. (musim semi)",
+        "Ez az első ____ Magyarországon. (musim dingin saya)"
+      ]
+    },
+    {
+      "prompt": "Pilih: cuaca atau orang. Tulis kalimat Hungarianya.",
+      "items": [
+        "Cuacanya panas.",
+        "Saya kepanasan.",
+        "Cuacanya dingin.",
+        "Saya kedinginan.",
+        "Di sini dingin.",
+        "Kamu kedinginan?"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 11. Terjemahkan ke bahasa Hungaria tanpa melihat unitnya.",
+      "items": [
+        "Saya minta supnya.",
+        "Saya minta satu sup.",
+        "Saya tidak mengerti apa-apa.",
+        "Saya kenal Anna.",
+        "Saya panggil pelayannya."
+      ]
+    }
+  ],
+  "answers": [
+    "Milyen az idő? — Nagyon hideg van ma. — Hány fok van? — Havazik. — Süt a nap. — Fázom.",
+    "Nyáron — Télen — Tavasszal — Ősszel — tavasz — telem",
+    "Meleg van. — Melegem van. — Hideg van. — Fázom. — Hideg van itt. — Fázol?",
+    "Kérem a levest. — Kérek egy levest. — Nem értek semmit. — Ismerem Annát. — Hívom a pincért."
+  ]
+}

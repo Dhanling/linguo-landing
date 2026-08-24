@@ -1,0 +1,573 @@
+{
+  "title": "Dari mana asalmu? — dan aturan yang menyetir seluruh bahasa",
+  "title_target": "Honnan jössz?",
+  "goal": "Menyebut asal dan tempat tinggal, lalu menguasai keselarasan vokal — satu aturan yang menentukan bentuk hampir setiap akhiran dalam bahasa Hungaria.",
+  "bekal": [
+    "menjawab *honnan* dan *hol* dengan akhiran yang benar",
+    "memilih sendiri antara *-ban* dan *-ben*, *-ból* dan *-ből*, tanpa menghafal satu per satu",
+    "menyebut negara, bangsa, dan bahasa dengan satu kata yang sama"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Szünet a nyelviskolában",
+      "intro": "Istirahat di sela kelas. Anna dan Budi bicara sambil minum kopi di koridor.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Honnan jössz, Budi?",
+          "id": "Dari mana asalmu, Budi?",
+          "literal": "dari-mana kamu-datang, Budi?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Indonéziából jövök, Jakartából.",
+          "id": "Saya dari Indonesia, dari Jakarta.",
+          "literal": "Indonesia-dari-dalam saya-datang, Jakarta-dari-dalam."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "És most hol laksz?",
+          "id": "Dan sekarang tinggal di mana?",
+          "literal": "dan sekarang di-mana kamu-tinggal?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Budapesten lakom, a hetedik kerületben.",
+          "id": "Saya tinggal di Budapest, di distrik tujuh.",
+          "literal": "Budapest-di saya-tinggal, itu ketujuh distrik-di-dalam."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Én is Budapesten lakom, de Szegedről jövök.",
+          "id": "Saya juga tinggal di Budapest, tapi asal saya Szeged.",
+          "literal": "saya juga Budapest-di saya-tinggal, tapi Szeged-dari-atas saya-datang."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Szeged messze van?",
+          "id": "Szeged jauh?",
+          "literal": "Szeged jauh ada?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Nem nagyon. Két óra vonattal.",
+          "id": "Tidak terlalu. Dua jam naik kereta.",
+          "literal": "tidak sangat. dua jam kereta-dengan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "És hol van Szeged?",
+          "id": "Szeged itu di mana?",
+          "literal": "dan di-mana ada Szeged?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Délen, a Tisza mellett. Nagyon szép város.",
+          "id": "Di selatan, di tepi Sungai Tisza. Kota yang sangat indah.",
+          "literal": "selatan-di, itu Tisza di-sebelah. sangat indah kota."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "És a család? Ők is Szegeden élnek?",
+          "id": "Dan keluargamu? Mereka juga tinggal di Szeged?",
+          "literal": "dan itu keluarga? mereka juga Szeged-di mereka-hidup?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Igen, ott élnek. Én egyedül lakom itt.",
+          "id": "Ya, mereka tinggal di sana. Saya tinggal sendiri di sini.",
+          "literal": "ya, di-sana mereka-hidup. saya sendiri saya-tinggal di-sini."
+        }
+      ],
+      "notes": [
+        "**Tiga kata tanya untuk tempat, bukan satu.** *Hol?* (di mana), *Honnan?* (dari mana), *Hová?* (ke mana). Bahasa Indonesia memakai \"mana\" dengan kata depan berbeda; bahasa Hungaria memakai tiga kata yang benar-benar berlainan — dan tiap kata menuntut kelompok akhiran yang berbeda pula. Membiasakan ketiganya sekarang menghemat banyak kebingungan nanti.",
+        "**Jakartából, tapi Szegedről.** Dua-duanya berarti \"dari\", dan bedanya bukan soal jarak. Kota **di luar Hungaria** dianggap ruang tertutup, jadi memakai kelompok *-ban/-ból/-ba*. Kota **di dalam Hungaria** umumnya dianggap permukaan, jadi memakai kelompok *-on/-ról/-ra*. Aneh, tapi konsisten — dan langsung menandai kamu sebagai orang yang belajar dengan benar.",
+        "**Budapesten, bukan Budapestben.** Ikut aturan di atas: Budapest ada di Hungaria, jadi permukaan. Sayangnya kota Hungaria tidak semuanya seragam — *Debrecenben* dan *Győrben* memakai kelompok ruang. Tabel di bagian belakang unit ini memuat yang paling sering dipakai; sisanya dihafal satu per satu, seperti orang Hungaria sendiri.",
+        "**Lakom atau lakok?** Kata kerja *lakik* termasuk golongan **-ik**, kelompok yang bentuk \"saya\"-nya berakhir *-om/-em/-öm*. Bentuk baku: *lakom*. Dalam percakapan sehari-hari *lakok* juga sering terdengar dan tidak dianggap salah besar. Pakai *lakom* dan kamu selalu aman.",
+        "**Van kembali muncul.** Di unit 1 kata \"adalah\" hilang untuk orang ketiga. Di sini ia hadir: *Szeged messze van*, *Hol van Szeged?*. Bedanya jelas — kalau kalimatnya menyebut **tempat atau keberadaan**, *van* wajib ada; kalau kalimatnya menyebut **siapa atau apa**, *van* justru terlarang.",
+        "**Vonattal** = *vonat* + *-val*. Perhatikan *v*-nya lenyap dan huruf mati sebelumnya menjadi ganda. Akhiran \"dengan\" memang berperilaku begitu: *busszal* (dengan bus), *repülővel* (dengan pesawat). Ia dibahas penuh di unit 15."
+      ],
+      "grammars": [
+        {
+          "title": "Keselarasan vokal — aturan yang menyetir seluruh bahasa",
+          "body": [
+            "Ini halaman terpenting di seluruh modul. Hampir setiap akhiran bahasa Hungaria punya dua atau tiga bentuk yang **artinya sama persis**. Yang memilih di antaranya bukan makna, melainkan vokal kata dasarnya."
+          ],
+          "table": {
+            "head": [
+              "Kubu",
+              "Vokalnya",
+              "Contoh kata",
+              "\"di dalam\"",
+              "\"dari dalam\""
+            ],
+            "rows": [
+              [
+                "**Dalam** (mély)",
+                "a, á, o, ó, u, ú",
+                "*ház* (rumah)",
+                "ház**ban**",
+                "ház**ból**"
+              ],
+              [
+                "**Depan** (magas)",
+                "e, é, i, í",
+                "*kert* (kebun)",
+                "kert**ben**",
+                "kert**ből**"
+              ],
+              [
+                "**Depan bulat**",
+                "ö, ő, ü, ű",
+                "*sör* (bir)",
+                "sör**ben**",
+                "sör**ből**"
+              ]
+            ]
+          },
+          "after": [
+            "Dua kubu utama itu ditentukan oleh **posisi lidah**: vokal dalam dibentuk di belakang mulut, vokal depan di depan. Bahasa Hungaria menolak mencampur keduanya dalam satu kata utuh — jadi akhirannya ikut menyesuaikan diri, bukan sebaliknya.",
+            "**Kubu ketiga cuma penting untuk beberapa akhiran.** Sebagian besar akhiran hanya punya dua bentuk (*-ban/-ben*), tapi ada segelintir yang punya tiga: *-hoz/-hez/-höz*, *-on/-en/-ön*, dan akhiran \"saya\" pada kata kerja (*-ok/-ek/-ök*). Untuk yang tiga bentuk itulah *ö, ő, ü, ű* punya jatah sendiri."
+          ]
+        },
+        {
+          "title": "Kata campuran: e, é, i, í itu netral",
+          "body": [
+            "Bagaimana kalau satu kata memuat vokal dari dua kubu sekaligus? Aturannya pendek, dan hampir tanpa kecuali di tingkat A1."
+          ],
+          "table": {
+            "head": [
+              "Kata",
+              "Vokalnya",
+              "Kubu yang menang",
+              "Hasilnya"
+            ],
+            "rows": [
+              [
+                "*papír*",
+                "a + í",
+                "dalam — *í* netral",
+                "papír**ban**"
+              ],
+              [
+                "*Budapest*",
+                "u + a + e",
+                "dalam — *e* netral",
+                "Budapest**en**"
+              ],
+              [
+                "*ebéd*",
+                "e + é",
+                "depan",
+                "ebéd**ben**"
+              ],
+              [
+                "*sofőr*",
+                "o + ő",
+                "depan — vokal **terakhir** menang",
+                "sofőr**ben**"
+              ],
+              [
+                "*kávé*",
+                "á + é",
+                "dalam — kata pinjaman lama",
+                "kávé**ban**"
+              ]
+            ]
+          },
+          "after": [
+            "Kuncinya: **e, é, i, í bersifat netral**. Ia tidak memaksa apa pun. Jadi kalau di dalam satu kata ada satu saja vokal dalam (a, á, o, ó, u, ú), akhirannya ikut kubu dalam — walaupun ada *e* atau *i* di sana.",
+            "Baru kalau kata itu memuat **ö, ő, ü, ű** bersama vokal dalam, vokal terakhirlah yang memutuskan. Kata semacam ini jarang, dan hampir semuanya kata pinjaman.",
+            "Beberapa kata pinjaman lama membangkang — *kávé*, *sofőr*, *hotel* — dan pilihannya dihafal, bukan dihitung. Jumlahnya sedikit, jadi jangan biarkan pengecualian ini merusak kepercayaanmu pada aturannya."
+          ]
+        },
+        {
+          "title": "Datang dari mana, ada di mana",
+          "body": [
+            "Tiga pasang akhiran yang langsung bisa kamu pakai hari ini."
+          ],
+          "table": {
+            "head": [
+              "Pertanyaan",
+              "Akhiran",
+              "Untuk apa",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**Hol?** (di mana)",
+                "*-ban / -ben*",
+                "ruang tertutup, negara, kota luar negeri",
+                "*Indonéziában* = di Indonesia"
+              ],
+              [
+                "**Hol?**",
+                "*-on / -en / -ön*",
+                "permukaan, kota Hungaria",
+                "*Budapesten* = di Budapest"
+              ],
+              [
+                "**Honnan?** (dari mana)",
+                "*-ból / -ből*",
+                "keluar dari ruang",
+                "*Jakartából* = dari Jakarta"
+              ],
+              [
+                "**Honnan?**",
+                "*-ról / -ről*",
+                "turun dari permukaan",
+                "*Szegedről* = dari Szeged"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan pola bunyinya: kelompok \"ruang\" selalu memuat **b**, kelompok \"permukaan\" selalu memuat **r** atau **n**. Sekali kamu mendengar polanya, kamu tidak perlu menghafal dua belas akhiran — cukup tiga bentuk dikali dua kubu vokal.",
+            "Nama negara hampir selalu memakai kelompok ruang: *Magyarországon* adalah kekecualian besar yang wajib dihafal — negara sendiri diperlakukan sebagai permukaan oleh orang Hungaria."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Negara, bangsa, bahasa",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bahasa Hungaria menghemat satu kata di sini: nama bangsa dan nama bahasanya **sama persis**. Yang berubah cuma akhiran ketika kamu bicara soal berbicara *dalam* bahasa itu."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Negara",
+            "Bangsa / kata sifat",
+            "Berbicara dalam…"
+          ],
+          "rows": [
+            [
+              "*Magyarország*",
+              "*magyar*",
+              "*magyarul*"
+            ],
+            [
+              "*Indonézia*",
+              "*indonéz*",
+              "*indonézül*"
+            ],
+            [
+              "*Anglia*",
+              "*angol*",
+              "*angolul*"
+            ],
+            [
+              "*Németország*",
+              "*német*",
+              "*németül*"
+            ],
+            [
+              "*Franciaország*",
+              "*francia*",
+              "*franciául*"
+            ],
+            [
+              "*Olaszország*",
+              "*olasz*",
+              "*olaszul*"
+            ],
+            [
+              "*Spanyolország*",
+              "*spanyol*",
+              "*spanyolul*"
+            ],
+            [
+              "*Kína*",
+              "*kínai*",
+              "*kínaiul*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Akhiran *-ul / -ül* itu berarti \"dengan cara\". *Beszélek magyarul* harfiahnya \"saya berbicara secara Hungaria\". Perhatikan bahwa akhiran ini pun tunduk pada keselarasan vokal: *magyar***ul**, tapi *német***ül**."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "Beszélsz magyarul?",
+              "BÈ-sélsy MÅ-dyå-rul",
+              "Kamu bisa bahasa Hungaria?"
+            ],
+            [
+              "Egy kicsit beszélek.",
+              "èdy KI-cit BÈ-sé-lèk",
+              "Saya bisa sedikit."
+            ],
+            [
+              "Nem beszélek magyarul.",
+              "nèm BÈ-sé-lèk MÅ-dyå-rul",
+              "Saya tidak bisa bahasa Hungaria."
+            ],
+            [
+              "Magyarul tanulok.",
+              "MÅ-dyå-rul TÅ-nu-lok",
+              "Saya sedang belajar bahasa Hungaria."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Egy kicsit beszélek* adalah kalimat yang paling sering menyelamatkan pemula. Ia jujur, ia sopan, dan ia hampir selalu membuat lawan bicaramu melambatkan kecepatan bicaranya tanpa perlu diminta."
+        }
+      ]
+    },
+    {
+      "title": "Kota Hungaria dan akhirannya",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kota di dalam Hungaria memilih sendiri antara kelompok permukaan dan kelompok ruang, dan pilihannya tidak bisa ditebak dari bentuk katanya. Sebagian besar memakai kelompok permukaan; yang memakai kelompok ruang jumlahnya sedikit dan sebaiknya dihafal."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kota",
+            "Di…",
+            "Dari…",
+            "Ke…"
+          ],
+          "rows": [
+            [
+              "Budapest",
+              "Budapest**en**",
+              "Budapest**ről**",
+              "Budapest**re**"
+            ],
+            [
+              "Szeged",
+              "Szeged**en**",
+              "Szeged**ről**",
+              "Szeged**re**"
+            ],
+            [
+              "Miskolc",
+              "Miskolc**on**",
+              "Miskolc**ról**",
+              "Miskolc**ra**"
+            ],
+            [
+              "Kecskemét",
+              "Kecskemét**en**",
+              "Kecskemét**ről**",
+              "Kecskemét**re**"
+            ],
+            [
+              "Siófok",
+              "Siófok**on**",
+              "Siófok**ról**",
+              "Siófok**ra**"
+            ],
+            [
+              "Debrecen",
+              "Debrecen**ben**",
+              "Debrecen**ből**",
+              "Debrecen**be**"
+            ],
+            [
+              "Győr",
+              "Győr**ben**",
+              "Győr**ből**",
+              "Győr**be**"
+            ],
+            [
+              "Sopron",
+              "Sopron**ban**",
+              "Sopron**ból**",
+              "Sopron**ba**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kota di luar Hungaria seragam dan mudah: semuanya kelompok ruang. *Jakartában*, *Jakartából*, *Jakartába*. *Bécsben* (di Wina), *Londonban*, *Párizsban*, *Tokióban*."
+        },
+        {
+          "type": "kotak",
+          "title": "Cara menghafal yang benar-benar bekerja",
+          "items": [
+            "Jangan menghafal kotanya. Hafalkan **satu kalimat utuh** per kota: *Budapesten lakom.* *Debrecenbe megyek.* Bentuk yang menempel di kalimat jauh lebih awet daripada bentuk yang menempel di tabel.",
+            "Kalau kamu benar-benar lupa dan harus bicara sekarang juga: pakai kelompok permukaan. Ia yang paling sering benar untuk kota Hungaria, dan kesalahannya tetap dimengerti."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "honnan",
+      "baca": "HON-nån",
+      "id": "dari mana"
+    },
+    {
+      "hu": "hol",
+      "baca": "hol",
+      "id": "di mana"
+    },
+    {
+      "hu": "hová",
+      "baca": "HO-va",
+      "id": "ke mana"
+    },
+    {
+      "hu": "jön",
+      "baca": "yön",
+      "id": "datang"
+    },
+    {
+      "hu": "lakik",
+      "baca": "LÅ-kik",
+      "id": "tinggal (berdiam)"
+    },
+    {
+      "hu": "él",
+      "baca": "él",
+      "id": "hidup; tinggal"
+    },
+    {
+      "hu": "most",
+      "baca": "mosyt",
+      "id": "sekarang"
+    },
+    {
+      "hu": "itt",
+      "baca": "itt",
+      "id": "di sini"
+    },
+    {
+      "hu": "ott",
+      "baca": "ott",
+      "id": "di sana"
+    },
+    {
+      "hu": "de",
+      "baca": "dè",
+      "id": "tapi"
+    },
+    {
+      "hu": "messze",
+      "baca": "MÈS-sè",
+      "id": "jauh"
+    },
+    {
+      "hu": "közel",
+      "baca": "KÖ-zèl",
+      "id": "dekat"
+    },
+    {
+      "hu": "két / kettő",
+      "baca": "két / KÈT-tö",
+      "id": "dua"
+    },
+    {
+      "hu": "óra",
+      "baca": "O-rå",
+      "id": "jam"
+    },
+    {
+      "hu": "vonat",
+      "baca": "VO-nåt",
+      "id": "kereta api"
+    },
+    {
+      "hu": "busz",
+      "baca": "bus",
+      "id": "bus"
+    },
+    {
+      "hu": "dél",
+      "baca": "dél",
+      "id": "selatan; tengah hari"
+    },
+    {
+      "hu": "észak",
+      "baca": "É-såk",
+      "id": "utara"
+    },
+    {
+      "hu": "mellett",
+      "baca": "MÈL-lètt",
+      "id": "di sebelah"
+    },
+    {
+      "hu": "város",
+      "baca": "VA-rosy",
+      "id": "kota"
+    },
+    {
+      "hu": "falu",
+      "baca": "FÅ-lu",
+      "id": "desa"
+    },
+    {
+      "hu": "ország",
+      "baca": "OR-sag",
+      "id": "negara"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis ulang tiap kata dengan akhiran \"di dalam\" yang tepat.",
+      "items": [
+        "ház",
+        "kert",
+        "Jakarta",
+        "Indonézia",
+        "étterem",
+        "papír"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk kota yang tepat.",
+      "items": [
+        "____ lakom. (di Budapest)",
+        "____ jövök. (dari Szeged)",
+        "____ megyek. (ke Debrecen)",
+        "____ lakik a családom. (di Miskolc)",
+        "____ jön a vonat. (dari Győr)",
+        "____ élek. (di Jakarta)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Hungaria.",
+      "items": [
+        "Dari mana asalmu?",
+        "Saya dari Indonesia.",
+        "Sekarang saya tinggal di Budapest.",
+        "Szeged jauh?",
+        "Kamu bisa bahasa Hungaria?",
+        "Saya bisa sedikit."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "lakom / Budapesten / én",
+        "jövök / Jakartából / ?",
+        "van / Szeged / hol / ?",
+        "beszélek / magyarul / nem",
+        "szép / nagyon / város / Szeged"
+      ]
+    }
+  ],
+  "answers": [
+    "házban — kertben — Jakartában — Indonéziában — étteremben — papírban",
+    "Budapesten — Szegedről — Debrecenbe — Miskolcon — Győrből — Jakartában",
+    "Honnan jössz? — Indonéziából jövök. — Most Budapesten lakom. — Szeged messze van? — Beszélsz magyarul? — Egy kicsit beszélek.",
+    "Én Budapesten lakom. — Jakartából jövök? — Hol van Szeged? — Nem beszélek magyarul. — Szeged nagyon szép város."
+  ]
+}

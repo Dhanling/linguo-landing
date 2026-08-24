@@ -1,0 +1,577 @@
+{
+  "title": "Keluargaku — akhiran yang sudah kamu kenal seumur hidup",
+  "title_target": "A családom",
+  "goal": "Menyebut anggota keluarga dan pekerjaan mereka dengan akhiran milik, lalu menemukan bahwa bahasa Hungaria sama sekali tidak punya kata kerja \"punya\".",
+  "bekal": [
+    "menempelkan akhiran milik pada kata benda: *ház* → *házam*",
+    "menyatakan kepemilikan dengan *van* dan *nincs*",
+    "menanyakan dan menyebut pekerjaan"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Családi fotó",
+      "intro": "Budi menunjukkan foto keluarganya di telepon. Anna penasaran.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Ki van a képen?",
+          "id": "Siapa yang ada di foto itu?",
+          "literal": "siapa ada itu foto-di?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ez a családom. Ez az apám, ez pedig az anyám.",
+          "id": "Ini keluarga saya. Ini ayah saya, dan ini ibu saya.",
+          "literal": "ini itu keluarga-ku. ini itu ayah-ku, ini sedangkan itu ibu-ku."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "És ez a lány? A húgod?",
+          "id": "Dan gadis ini? Adik perempuanmu?",
+          "literal": "dan ini si gadis? itu adik-perempuan-mu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igen, ő a húgom. Tizenhat éves.",
+          "id": "Ya, dia adik saya. Umurnya enam belas.",
+          "literal": "ya, dia itu adik-perempuan-ku. enam-belas bertahun."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "És testvéred is van?",
+          "id": "Kamu punya saudara lain juga?",
+          "literal": "dan saudara-mu juga ada?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igen, van egy bátyám. Ő Szurabájában dolgozik.",
+          "id": "Ya, saya punya kakak laki-laki. Dia bekerja di Surabaya.",
+          "literal": "ya, ada sebuah kakak-laki-laki-ku. dia Surabaya-di-dalam ia-bekerja."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Mi a foglalkozása?",
+          "id": "Apa pekerjaannya?",
+          "literal": "apa itu pekerjaan-nya?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mérnök. És a te családod?",
+          "id": "Insinyur. Dan keluargamu?",
+          "literal": "insinyur. dan itu kamu keluarga-mu?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "A szüleim Szegeden élnek. Nekem nincs testvérem.",
+          "id": "Orang tua saya tinggal di Szeged. Saya tidak punya saudara.",
+          "literal": "itu orang-tua-ku-jamak Szeged-di mereka-hidup. kepada-saya tidak-ada saudara-ku."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Egyedüli gyerek vagy?",
+          "id": "Kamu anak tunggal?",
+          "literal": "tunggal anak kamu-adalah?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Igen. De van két unokatestvérem Budapesten.",
+          "id": "Ya. Tapi saya punya dua sepupu di Budapest.",
+          "literal": "ya. tapi ada dua sepupu-ku Budapest-di."
+        }
+      ],
+      "notes": [
+        "**Ini bagian yang paling ramah untukmu di seluruh modul.** *ház* → *házam* (rumahku), *könyv* → *könyved* (bukumu), *család* → *családja* (keluarganya). Bahasa Hungaria menempelkan pemilik di ekor kata benda — persis seperti bahasa Indonesia. Pelajar dari Inggris menghabiskan berminggu-minggu untuk terbiasa; kamu sudah melakukannya sejak kecil.",
+        "**Apa jadi apám, anya jadi anyám.** Vokal *a* dan *e* di ujung kata selalu memanjang begitu ada akhiran. Aturan yang sama sudah kamu temui pada jamak *alma* → *almák* di unit 3, dan ia akan muncul lagi di setiap akhiran berikutnya.",
+        "**Bahasa Hungaria tidak punya kata kerja \"punya\".** *Van egy bátyám* harfiahnya \"ada seorang kakak-laki-lakiku\". Kepemilikan disusun dari dua bahan yang sudah kamu kuasai: *van/nincs* dari unit 4, dan akhiran milik dari unit ini. Tidak ada bahan ketiga.",
+        "**Nekem nincs testvérem** memuat *nekem* (\"kepada saya\") yang sebetulnya boleh dibuang — akhiran *-em* pada *testvérem* sudah menyebut pemiliknya. *Nekem* dipakai untuk **menekankan**: \"kalau saya sih tidak punya\". Bentuk lengkapnya dipasang di bawah.",
+        "**Testvér tidak menyebut jenis kelamin, tapi kata lainnya menyebut umur.** Bahasa Hungaria membedakan kakak dan adik seperti bahasa Indonesia, dan menambah satu lapis lagi: jenis kelamin. *báty* (kakak laki-laki), *nővér* (kakak perempuan), *öcs* (adik laki-laki), *húg* (adik perempuan). Kata umum untuk semuanya: *testvér*."
+      ],
+      "grammars": [
+        {
+          "title": "Akhiran milik — kata berakhir huruf mati",
+          "body": [
+            "Tiga contoh sekaligus, satu untuk tiap kubu vokal. Perhatikan bahwa polanya identik; yang berubah hanya vokal sambungnya."
+          ],
+          "table": {
+            "head": [
+              "Pemilik",
+              "*ház* (dalam)",
+              "*gyerek* (depan)",
+              "*sör* (depan bulat)"
+            ],
+            "rows": [
+              [
+                "saya",
+                "ház**am**",
+                "gyerek**em**",
+                "sör**öm**"
+              ],
+              [
+                "kamu",
+                "ház**ad**",
+                "gyerek**ed**",
+                "sör**öd**"
+              ],
+              [
+                "dia",
+                "ház**a**",
+                "gyerek**e**",
+                "sör**e**"
+              ],
+              [
+                "kami",
+                "ház**unk**",
+                "gyerek**ünk**",
+                "sör**ünk**"
+              ],
+              [
+                "kalian",
+                "ház**atok**",
+                "gyerek**etek**",
+                "sör**ötök**"
+              ],
+              [
+                "mereka",
+                "ház**uk**",
+                "gyerek**ük**",
+                "sör**ük**"
+              ]
+            ]
+          },
+          "after": [
+            "**Sebagian kata memasukkan j pada bentuk \"dia\" dan \"mereka\".** *könyv* → *könyv**e***, tapi *asztal* → *asztal**a***, dan *kert* → *kert**je***. Sayangnya tidak ada aturan yang benar-benar rapi; kelompok ini dihafal sambil jalan. Kabar baiknya, salah memilih di sini tetap dimengerti sepenuhnya.",
+            "**Kata sandang hampir selalu ikut.** Orang Hungaria mengatakan *a házam* (rumahku), bukan *házam* telanjang. Kebiasaan ini penting karena kata sandang itulah yang nanti memutuskan bentuk kata kerja di unit 11."
+          ]
+        },
+        {
+          "title": "Akhiran milik — kata berakhir huruf hidup",
+          "body": [
+            "Lebih pendek, karena tidak perlu vokal sambung. Yang perlu diingat cuma pemanjangan *a* dan *e* di ujung."
+          ],
+          "table": {
+            "head": [
+              "Pemilik",
+              "*kutya* (anjing)",
+              "*apa* (ayah)",
+              "*anya* (ibu)"
+            ],
+            "rows": [
+              [
+                "saya",
+                "kutyá**m**",
+                "apá**m**",
+                "anyá**m**"
+              ],
+              [
+                "kamu",
+                "kutyá**d**",
+                "apá**d**",
+                "anyá**d**"
+              ],
+              [
+                "dia",
+                "kutyá**ja**",
+                "**apja**",
+                "**anyja**"
+              ],
+              [
+                "kami",
+                "kutyá**nk**",
+                "apá**nk**",
+                "anyá**nk**"
+              ],
+              [
+                "kalian",
+                "kutyá**tok**",
+                "apá**tok**",
+                "anyá**tok**"
+              ],
+              [
+                "mereka",
+                "kutyá**juk**",
+                "**apjuk**",
+                "**anyjuk**"
+              ]
+            ]
+          },
+          "after": [
+            "*Apa* dan *anya* membangkang pada baris \"dia\" dan \"mereka\": bentuknya *apja* dan *anyja*, bukan *apája*. Dua kata ini terlalu sering dipakai untuk dihindari, jadi hafalkan langsung.",
+            "**Milik yang bendanya jamak** memakai *-i-* sebelum akhirannya: *könyveim* (buku-bukuku), *szüleim* (orang tuaku), *barátaim* (teman-temanku). Untuk A1 cukup kenali bentuknya ketika kamu mendengarnya; menyusunnya sendiri boleh menunggu."
+          ]
+        },
+        {
+          "title": "Punya = ada + akhiran milik",
+          "body": [
+            "Karena tidak ada kata kerja \"punya\", bahasa Hungaria menyusunnya dari bahan yang sudah ada. Susunannya selalu sama."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Harfiah",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "*Van egy bátyám.*",
+                "ada seorang kakakku",
+                "Saya punya kakak laki-laki."
+              ],
+              [
+                "*Nincs testvérem.*",
+                "tidak ada saudaraku",
+                "Saya tidak punya saudara."
+              ],
+              [
+                "*Van kutyád?*",
+                "ada anjingmu?",
+                "Kamu punya anjing?"
+              ],
+              [
+                "*Nincs pénzem.*",
+                "tidak ada uangku",
+                "Saya tidak punya uang."
+              ],
+              [
+                "*Van két gyerekük.*",
+                "ada dua anak mereka",
+                "Mereka punya dua anak."
+              ]
+            ]
+          },
+          "after": [
+            "Kalau kamu ingin menekankan pemiliknya, tambahkan bentuk *nekem, neked, neki, nekünk, nektek, nekik* di depan: *Nekem van kutyám* = \"Sayalah yang punya anjing\". Tanpa penekanan, bagian ini dibuang.",
+            "Perhatikan bahwa yang berjamak adalah **bendanya**, bukan pemiliknya: *Vannak könyveim* = saya punya beberapa buku. Kalau bendanya jamak, *van* pun berubah jadi *vannak*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Keluarga",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "a család",
+              "å CÅ-lad",
+              "keluarga"
+            ],
+            [
+              "az apa / apu",
+              "åz Å-på / Å-pu",
+              "ayah / papa"
+            ],
+            [
+              "az anya / anyu",
+              "åz Å-nyå / Å-nyu",
+              "ibu / mama"
+            ],
+            [
+              "a szülők",
+              "å SÜ-lök",
+              "orang tua"
+            ],
+            [
+              "a testvér",
+              "å TÈSYT-vér",
+              "saudara kandung"
+            ],
+            [
+              "a bátyám",
+              "å BA-tyam",
+              "kakak laki-laki saya"
+            ],
+            [
+              "a nővérem",
+              "å NÖ-vé-rèm",
+              "kakak perempuan saya"
+            ],
+            [
+              "az öcsém",
+              "åz Ö-csém",
+              "adik laki-laki saya"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kata saudara di atas ditulis langsung dengan akhiran \"saya\" karena begitulah bentuk yang benar-benar kamu pakai. Untuk pemilik lain, tukar ekornya: *a bátyád* (kakakmu), *a húga* (adik perempuannya)."
+        }
+      ]
+    },
+    {
+      "title": "Pekerjaan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "tanár",
+              "TÅ-nar",
+              "guru"
+            ],
+            [
+              "diák",
+              "DI-ak",
+              "pelajar; mahasiswa"
+            ],
+            [
+              "orvos",
+              "OR-vosy",
+              "dokter"
+            ],
+            [
+              "ápoló",
+              "A-po-lo",
+              "perawat"
+            ],
+            [
+              "mérnök",
+              "MÉR-nök",
+              "insinyur"
+            ],
+            [
+              "programozó",
+              "PRO-grå-mo-zo",
+              "pemrogram"
+            ],
+            [
+              "ügyvéd",
+              "ÜDY-véd",
+              "pengacara"
+            ],
+            [
+              "eladó",
+              "ÈL-å-do",
+              "penjaga toko"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "Mi a foglalkozásod?",
+              "mi å FOG-lål-ko-za-syod",
+              "Apa pekerjaanmu?"
+            ],
+            [
+              "Mérnök vagyok.",
+              "MÉR-nök VÅ-dyok",
+              "Saya insinyur."
+            ],
+            [
+              "Hol dolgozol?",
+              "hol DOL-go-zol",
+              "Kamu bekerja di mana?"
+            ],
+            [
+              "Egy irodában dolgozom.",
+              "èdy I-ro-da-bån DOL-go-zom",
+              "Saya bekerja di sebuah kantor."
+            ],
+            [
+              "Még diák vagyok.",
+              "még DI-ak VÅ-dyok",
+              "Saya masih pelajar."
+            ],
+            [
+              "Hány éves vagy?",
+              "hany É-vèsy vådy",
+              "Umurmu berapa?"
+            ],
+            [
+              "Huszonöt éves vagyok.",
+              "HU-son-öt É-vèsy VÅ-dyok",
+              "Saya dua puluh lima tahun."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Foglalkozás* adalah kata resmi untuk \"pekerjaan\". Dalam percakapan santai orang lebih sering bertanya *Mit dolgozol?* — harfiahnya \"apa yang kamu kerjakan?\"."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "ki",
+      "baca": "ki",
+      "id": "siapa"
+    },
+    {
+      "hu": "kép",
+      "baca": "kép",
+      "id": "foto; gambar"
+    },
+    {
+      "hu": "család",
+      "baca": "CÅ-lad",
+      "id": "keluarga"
+    },
+    {
+      "hu": "apa",
+      "baca": "Å-på",
+      "id": "ayah"
+    },
+    {
+      "hu": "anya",
+      "baca": "Å-nyå",
+      "id": "ibu"
+    },
+    {
+      "hu": "szülők",
+      "baca": "SÜ-lök",
+      "id": "orang tua"
+    },
+    {
+      "hu": "testvér",
+      "baca": "TÈSYT-vér",
+      "id": "saudara kandung"
+    },
+    {
+      "hu": "báty",
+      "baca": "baty",
+      "id": "kakak laki-laki"
+    },
+    {
+      "hu": "húg",
+      "baca": "hug",
+      "id": "adik perempuan"
+    },
+    {
+      "hu": "öcs",
+      "baca": "öc",
+      "id": "adik laki-laki"
+    },
+    {
+      "hu": "nővér",
+      "baca": "NÖ-vér",
+      "id": "kakak perempuan"
+    },
+    {
+      "hu": "lány",
+      "baca": "lany",
+      "id": "anak perempuan; gadis"
+    },
+    {
+      "hu": "fiú",
+      "baca": "FI-u",
+      "id": "anak laki-laki"
+    },
+    {
+      "hu": "gyerek",
+      "baca": "DYÈ-rèk",
+      "id": "anak"
+    },
+    {
+      "hu": "unokatestvér",
+      "baca": "U-no-kå-tèsyt-vér",
+      "id": "sepupu"
+    },
+    {
+      "hu": "éves",
+      "baca": "É-vèsy",
+      "id": "berumur"
+    },
+    {
+      "hu": "foglalkozás",
+      "baca": "FOG-lål-ko-zasy",
+      "id": "pekerjaan"
+    },
+    {
+      "hu": "mérnök",
+      "baca": "MÉR-nök",
+      "id": "insinyur"
+    },
+    {
+      "hu": "orvos",
+      "baca": "OR-vosy",
+      "id": "dokter"
+    },
+    {
+      "hu": "dolgozik",
+      "baca": "DOL-go-zik",
+      "id": "bekerja"
+    },
+    {
+      "hu": "iroda",
+      "baca": "I-ro-då",
+      "id": "kantor"
+    },
+    {
+      "hu": "pénz",
+      "baca": "pénz",
+      "id": "uang"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tambahkan akhiran milik \"saya\".",
+      "items": [
+        "ház",
+        "könyv",
+        "kutya",
+        "apa",
+        "testvér",
+        "sör"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk milik yang diminta.",
+      "items": [
+        "Ez a ____. (keluarga saya)",
+        "Hol van a ____? (bukumu)",
+        "A ____ Szegeden él. (kakak laki-laki saya)",
+        "Nincs ____. (uang saya)",
+        "Van két ____. (anak mereka)",
+        "A ____ orvos. (ibu saya)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Hungaria.",
+      "items": [
+        "Saya punya kakak laki-laki.",
+        "Saya tidak punya saudara.",
+        "Apa pekerjaanmu?",
+        "Saya insinyur.",
+        "Umurmu berapa?",
+        "Kamu punya anjing?"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 3. Terjemahkan ke bahasa Hungaria tanpa melihat unitnya.",
+      "items": [
+        "Ini apa?",
+        "Ini sebuah kamus.",
+        "Buku-buku itu mahal.",
+        "Ini bukan peta.",
+        "Buku merah itu menarik?"
+      ]
+    }
+  ],
+  "answers": [
+    "házam — könyvem — kutyám — apám — testvérem — söröm",
+    "családom — könyved — bátyám — pénzem — gyerekük — anyám",
+    "Van egy bátyám. — Nincs testvérem. — Mi a foglalkozásod? — Mérnök vagyok. — Hány éves vagy? — Van kutyád?",
+    "Ez mi? — Ez egy szótár. — Azok a könyvek drágák. — Ez nem térkép. — Az a piros könyv érdekes?"
+  ]
+}

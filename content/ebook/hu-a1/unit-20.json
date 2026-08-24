@@ -1,0 +1,508 @@
+{
+  "title": "Ceritakan rencanamu — masa depan",
+  "title_target": "Mit fogsz csinálni?",
+  "goal": "Menyusun rencana dengan tiga cara menyatakan masa depan, lalu memakai seluruh isi modul ini dalam satu percakapan yang utuh.",
+  "bekal": [
+    "memakai *fog* + bentuk dasar untuk masa depan",
+    "memilih antara masa kini berketerangan waktu dan bentuk *fog*",
+    "mengajak, menawarkan, dan menyepakati rencana"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Hétvégi tervek",
+      "intro": "Jumat sore, di depan gedung sekolah. Cuaca sudah hangat; musim panas pertama Budi di Hungaria akan segera dimulai.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Mit fogsz csinálni a hétvégén?",
+          "id": "Akhir pekan kamu mau ngapain?",
+          "literal": "apa-sasaran kamu-akan melakukan itu akhir-pekan-pada?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Szombaton a Balatonra megyek a barátaimmal.",
+          "id": "Sabtu saya pergi ke Balaton bersama teman-teman saya.",
+          "literal": "Sabtu-pada itu Balaton-ke-atas saya-pergi itu teman-jamak-ku-dengan."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Nagyszerű! Meddig maradtok?",
+          "id": "Hebat! Kalian sampai kapan di sana?",
+          "literal": "hebat! sampai-kapan kalian-tinggal?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vasárnap estig. Fogunk úszni és sétálni.",
+          "id": "Sampai Minggu malam. Kami akan berenang dan jalan-jalan.",
+          "literal": "Minggu malam-sampai. kami-akan berenang dan berjalan."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Milyen lesz az idő?",
+          "id": "Cuacanya akan bagaimana?",
+          "literal": "bagaimana akan-ada itu cuaca?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Meleg lesz, huszonnyolc fok. Nem fog esni.",
+          "id": "Akan panas, dua puluh delapan derajat. Tidak akan hujan.",
+          "literal": "panas akan-ada, dua-puluh-delapan derajat. tidak ia-akan jatuh."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Irigy vagyok! Én dolgozni fogok.",
+          "id": "Saya iri! Saya akan kerja.",
+          "literal": "iri saya-adalah! saya bekerja saya-akan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Egész hétvégén?",
+          "id": "Sepanjang akhir pekan?",
+          "literal": "seluruh akhir-pekan-pada?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Nem, csak szombaton. Vasárnap pihenek.",
+          "id": "Tidak, cuma Sabtu. Minggu saya istirahat.",
+          "literal": "tidak, hanya Sabtu-pada. Minggu saya-istirahat."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Akkor jövő héten együtt megyünk valahova.",
+          "id": "Kalau begitu minggu depan kita pergi bareng ke suatu tempat.",
+          "literal": "kalau-begitu depan minggu-pada bersama kita-pergi suatu-tempat-ke."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Jó ötlet! Majd megbeszéljük.",
+          "id": "Ide bagus! Nanti kita bicarakan.",
+          "literal": "bagus ide! nanti kita-membicarakannya."
+        }
+      ],
+      "notes": [
+        "**Fog + bentuk dasar adalah masa depan yang paling jelas.** *fogok, fogsz, fog, fogunk, fogtok, fognak* — yang berubah bentuk hanya *fog*, sementara kata kerja utamanya tetap berakhiran *-ni*. Susunannya sama persis dengan kata kerja bantu di unit 14.",
+        "**Tetapi masa kini sudah cukup kalau waktunya jelas.** *Szombaton a Balatonra megyek* dan *Vasárnap pihenek* keduanya masa kini, dan tak seorang pun salah paham — persis seperti \"Sabtu saya ke Balaton\" dalam bahasa Indonesia. Bentuk *fog* dipakai kalau waktunya belum disebut, atau kalau kamu ingin menegaskan bahwa ini rencana.",
+        "**Dolgozni fogok, atau fogok dolgozni?** Dua-duanya benar. Yang berdiri **tepat sebelum kata kerja** adalah bagian yang ditekankan, jadi *dolgozni fogok* menekankan pekerjaannya (\"yang akan saya lakukan itu **kerja**\"), sementara *fogok dolgozni* lebih datar. Inilah aturan urutan kata yang sudah muncul sejak unit 7, sekarang dengan bentuk baru.",
+        "**Lesz mengurus masa depan dari van.** *Meleg lesz* (akan panas), *Milyen lesz az idő?* (cuacanya akan bagaimana). Perhatikan bahwa *lesz* tidak memerlukan *fog* — ia sudah masa depan dengan sendirinya, dan menambahkan *fog* di situ salah.",
+        "**Nem fog esni** menyangkal masa depan. Perhatikan bahwa *nem* berdiri sebelum *fog*, bukan sebelum kata kerja utamanya. Aturannya sama seperti pada semua kata kerja bantu: sangkalan menempel pada bagian yang berubah bentuk."
+      ],
+      "grammars": [
+        {
+          "title": "Masa depan: fog + bentuk dasar",
+          "body": [
+            "Kata kerja utamanya tidak berubah sama sekali; seluruh pekerjaan ditanggung *fog*."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "Bentuk",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "én",
+                "*fogok*",
+                "*Fogok tanulni.*",
+                "Saya akan belajar."
+              ],
+              [
+                "te",
+                "*fogsz*",
+                "*Mit fogsz csinálni?*",
+                "Kamu akan ngapain?"
+              ],
+              [
+                "ő",
+                "*fog*",
+                "*Nem fog esni.*",
+                "Tidak akan hujan."
+              ],
+              [
+                "mi",
+                "*fogunk*",
+                "*Fogunk úszni.*",
+                "Kami akan berenang."
+              ],
+              [
+                "ti",
+                "*fogtok*",
+                "*Hol fogtok lakni?*",
+                "Kalian akan tinggal di mana?"
+              ],
+              [
+                "ők",
+                "*fognak*",
+                "*Holnap fognak jönni.*",
+                "Mereka akan datang besok."
+              ]
+            ]
+          },
+          "after": [
+            "**Fog juga punya bentuk tertentu**, dipakai kalau sasarannya tertentu: *fogom, fogod, fogja, fogjuk, fogjátok, fogják*. Contoh: *Meg fogom nézni a filmet* = \"Saya akan menonton filmnya\". Aturan unit 11 tetap berlaku di sini, seperti di mana-mana.",
+            "**Awalan kata kerja berdiri sendiri di depan**, sesuai aturan unit 14: *meg fogom nézni*, *el fogok menni*, *fel fogom hívni*."
+          ]
+        },
+        {
+          "title": "Tiga cara menyatakan masa depan",
+          "body": [
+            "Ketiganya benar. Yang membedakan adalah seberapa tegas rencananya."
+          ],
+          "table": {
+            "head": [
+              "Cara",
+              "Kapan dipakai",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "masa kini + keterangan waktu",
+                "rencana yang waktunya jelas",
+                "*Holnap Szegedre megyek.*",
+                "Besok saya ke Szeged."
+              ],
+              [
+                "*fog* + bentuk dasar",
+                "rencana atau ramalan",
+                "*Holnap esni fog.*",
+                "Besok akan hujan."
+              ],
+              [
+                "*lesz*",
+                "khusus untuk *van*",
+                "*Holnap meleg lesz.*",
+                "Besok akan panas."
+              ]
+            ]
+          },
+          "after": [
+            "Dalam percakapan sehari-hari, cara pertama yang paling sering dipakai — sama seperti bahasa Indonesia. Bentuk *fog* terdengar sedikit lebih resmi, dan wajib dipakai untuk ramalan cuaca, janji, dan hal yang belum pasti waktunya.",
+            "Satu susunan tambahan yang berguna: *Szeretnék…* untuk keinginan yang belum jadi rencana. *Szeretnék Szegedre menni* = \"Saya ingin ke Szeged\" — tanpa janji apa pun."
+          ]
+        },
+        {
+          "title": "Keterangan waktu ke depan",
+          "body": [
+            "Cerminan dari daftar masa lampau di unit 18."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Cara baca",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "*holnap*",
+                "HOL-nåp",
+                "besok"
+              ],
+              [
+                "*holnapután*",
+                "HOL-nåp-u-tan",
+                "lusa"
+              ],
+              [
+                "*a jövő héten*",
+                "å YÖ-vö HÉ-tèn",
+                "minggu depan"
+              ],
+              [
+                "*a jövő hónapban*",
+                "å YÖ-vö HO-nåp-bån",
+                "bulan depan"
+              ],
+              [
+                "*jövőre*",
+                "YÖ-vö-rè",
+                "tahun depan"
+              ],
+              [
+                "*majd*",
+                "måyd",
+                "nanti"
+              ],
+              [
+                "*később*",
+                "KÉ-söbb",
+                "belakangan"
+              ],
+              [
+                "*hamarosan*",
+                "HÅ-må-ro-syån",
+                "segera"
+              ],
+              [
+                "*egy óra múlva*",
+                "èdy O-rå MUL-vå",
+                "sejam lagi"
+              ],
+              [
+                "*mindjárt*",
+                "MIND-yart",
+                "sebentar lagi"
+              ]
+            ]
+          },
+          "after": [
+            "*Jövő* berarti \"yang datang\", dan ia bentuk kata sifat dari *jön*. Jadi *a jövő hét* harfiahnya \"minggu yang datang\" — susunan yang sama persis dengan \"minggu depan\" dalam bahasa Indonesia kalau dipikir dari arah waktunya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mengajak dan menyepakati",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Van kedved…?",
+              "vån KÈD-vèd",
+              "Kamu mau…?"
+            ],
+            [
+              "Nincs kedvem.",
+              "ninc KÈD-vèm",
+              "Saya sedang tidak ingin."
+            ],
+            [
+              "Ráérsz szombaton?",
+              "RA-érs SOM-bå-ton",
+              "Sabtu kamu sempat?"
+            ],
+            [
+              "Sajnos nem érek rá.",
+              "SÅY-nosy nèm É-rèk ra",
+              "Sayangnya saya tidak sempat."
+            ],
+            [
+              "Menjünk moziba!",
+              "MÈN-yünk MO-zi-bå",
+              "Ayo ke bioskop!"
+            ],
+            [
+              "Jó ötlet!",
+              "yo ÖT-lèt",
+              "Ide bagus!"
+            ],
+            [
+              "Rendben, megbeszéltük.",
+              "RÈND-bèn MÈG-bè-sél-tük",
+              "Oke, sepakat."
+            ],
+            [
+              "Hánykor találkozunk?",
+              "HANY-kor TÅ-lal-ko-zunk",
+              "Kita ketemu jam berapa?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Van kedved…?* harfiahnya \"ada seleramu…?\" — susunan kepemilikan dari unit 5 yang dipakai untuk menawarkan. Ia diikuti bentuk dasar: *Van kedved moziba menni?* (Mau ke bioskop?). Ini ajakan paling wajar di antara teman, jauh lebih sering terdengar daripada *Akarsz…?* yang terdengar menuntut."
+        },
+        {
+          "type": "p",
+          "text": "*Menjünk!* adalah bentuk perintah orang pertama jamak — \"ayo kita\". Ia belum dibahas di modul ini karena bentuk perintah termasuk bahan A2, tetapi kamu akan mendengarnya setiap hari, jadi kenali sekarang: *Menjünk!* (ayo pergi), *Nézzük meg!* (ayo lihat), *Együnk!* (ayo makan)."
+        }
+      ]
+    },
+    {
+      "title": "Apa yang sudah kamu kuasai",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Dua puluh unit selesai. Ini yang sekarang ada di tanganmu — bukan daftar bahan yang pernah dibaca, melainkan daftar hal yang bisa kamu **lakukan**."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Memperkenalkan diri** dan bertanya tentang orang lain: nama, asal, umur, pekerjaan, keluarga.",
+            "**Menyusun kalimat tanpa kata kerja** untuk orang ketiga — susunan yang sama persis dengan bahasa Indonesia.",
+            "**Memilih bentuk akhiran** sendiri lewat keselarasan vokal, tanpa menghafal satu per satu.",
+            "**Memakai akhiran tempat** untuk ruang, permukaan, dan orang, beserta tiga arahnya masing-masing.",
+            "**Menyatakan kepemilikan** dengan akhiran, dan menyusun \"punya\" dari *van* dan *nincs*.",
+            "**Berbelanja dan memesan**: harga, berat, satuan, tunai atau kartu.",
+            "**Menyebut waktu** — jam, hari, bulan, tanggal — termasuk *fél hét* yang kebetulan sama persis dengan \"setengah tujuh\".",
+            "**Menyusun kata kerja masa kini** dalam dua rangkaian, dan tahu kapan memakai yang mana.",
+            "**Menanyakan arah** dan memahami jawabannya di jalan.",
+            "**Menyatakan bisa, mau, harus, boleh** dengan bentuk dasar.",
+            "**Menggambarkan orang dan benda**, membandingkannya dengan dua cara, dan menyebut yang paling.",
+            "**Menceritakan kemarin** dengan masa lampau, termasuk delapan kata kerja tak beraturan yang paling sering dipakai.",
+            "**Menyusun rencana** dengan tiga cara menyatakan masa depan."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Itu A1 yang utuh — dan yang lebih penting, kamu sudah melewati tiga penghalang yang membuat banyak orang berhenti sebelum sampai di sini: keselarasan vokal, akhiran yang menggantikan kata depan, dan dua rangkaian kata kerja. Ketiganya tidak akan pernah menjadi tantangan lagi; yang tersisa hanyalah menambah kosakata dan memperhalus bentuk."
+        },
+        {
+          "type": "p",
+          "text": "Halaman terakhir modul ini memuat saran ke mana melangkah selanjutnya. Untuk sekarang, satu kalimat saja: *Gratulálok! Nagyon ügyes vagy!* — Selamat! Kamu hebat!"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "fog",
+      "baca": "fog",
+      "id": "akan"
+    },
+    {
+      "hu": "terv",
+      "baca": "tèrv",
+      "id": "rencana"
+    },
+    {
+      "hu": "ötlet",
+      "baca": "ÖT-lèt",
+      "id": "ide"
+    },
+    {
+      "hu": "meddig",
+      "baca": "MÈD-dig",
+      "id": "sampai kapan"
+    },
+    {
+      "hu": "jövő",
+      "baca": "YÖ-vö",
+      "id": "depan; masa depan"
+    },
+    {
+      "hu": "majd",
+      "baca": "måyd",
+      "id": "nanti"
+    },
+    {
+      "hu": "később",
+      "baca": "KÉ-söbb",
+      "id": "belakangan"
+    },
+    {
+      "hu": "hamarosan",
+      "baca": "HÅ-må-ro-syån",
+      "id": "segera"
+    },
+    {
+      "hu": "valahova",
+      "baca": "VÅ-lå-ho-vå",
+      "id": "ke suatu tempat"
+    },
+    {
+      "hu": "valahol",
+      "baca": "VÅ-lå-hol",
+      "id": "di suatu tempat"
+    },
+    {
+      "hu": "kedv",
+      "baca": "kèdv",
+      "id": "selera; suasana hati"
+    },
+    {
+      "hu": "megbeszél",
+      "baca": "MÈG-bè-sél",
+      "id": "membicarakan; menyepakati"
+    },
+    {
+      "hu": "irigy",
+      "baca": "I-ridy",
+      "id": "iri"
+    },
+    {
+      "hu": "nagyszerű",
+      "baca": "NÅDY-sè-rü",
+      "id": "hebat"
+    },
+    {
+      "hu": "talán",
+      "baca": "TÅ-lan",
+      "id": "mungkin"
+    },
+    {
+      "hu": "biztos",
+      "baca": "BIZ-tosy",
+      "id": "pasti"
+    },
+    {
+      "hu": "remélem",
+      "baca": "RÈ-mé-lèm",
+      "id": "semoga; saya harap"
+    },
+    {
+      "hu": "szórakozás",
+      "baca": "SO-rå-ko-zasy",
+      "id": "hiburan"
+    },
+    {
+      "hu": "gratulálok",
+      "baca": "GRÅ-tu-la-lok",
+      "id": "selamat"
+    },
+    {
+      "hu": "ügyes",
+      "baca": "Ü-dyèsy",
+      "id": "cakap; hebat"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis bentuk fog untuk pelaku yang diminta.",
+      "items": [
+        "saya",
+        "kamu",
+        "dia",
+        "kami",
+        "kalian",
+        "mereka"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk masa depan yang tepat.",
+      "items": [
+        "Holnap esni ____. (akan)",
+        "Holnap meleg ____. (van, masa depan)",
+        "Mit ____ csinálni? (akan — kamu)",
+        "____ úszni a Balatonban. (akan — kami)",
+        "Nem ____ dolgozni vasárnap. (akan — saya)",
+        "Jövő héten ____ jönni. (akan — mereka)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Hungaria.",
+      "items": [
+        "Akhir pekan kamu mau ngapain?",
+        "Sabtu saya pergi ke Balaton.",
+        "Kalian sampai kapan di sana?",
+        "Cuacanya akan bagaimana?",
+        "Tidak akan hujan.",
+        "Sabtu kamu sempat?"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 18 dan 19. Terjemahkan ke bahasa Hungaria tanpa melihat unitnya.",
+      "items": [
+        "Kemarin kamu ngapain?",
+        "Saya kerja seharian.",
+        "Akhir pekan kamu di mana?",
+        "Kami jalan-jalan di kota.",
+        "Kamu pernah ke Budapest?"
+      ]
+    }
+  ],
+  "answers": [
+    "fogok — fogsz — fog — fogunk — fogtok — fognak",
+    "fog — lesz — fogsz — Fogunk — fogok — fognak",
+    "Mit fogsz csinálni a hétvégén? — Szombaton a Balatonra megyek. — Meddig maradtok? — Milyen lesz az idő? — Nem fog esni. — Ráérsz szombaton?",
+    "Mit csináltál tegnap? — Dolgoztam egész nap. — Hol voltál a hétvégén? — Sétáltunk a városban. — Voltál már Budapesten?"
+  ]
+}

@@ -1,0 +1,602 @@
+{
+  "title": "Jam berapa sekarang? — dan satu kejutan yang menyenangkan",
+  "title_target": "Hány óra van?",
+  "goal": "Menyebut jam, hari, dan bagian hari — sambil menemukan bahwa cara bahasa Hungaria membaca setengah jam sama persis dengan bahasa Indonesia, dan justru menjegal penutur bahasa Inggris.",
+  "bekal": [
+    "menjawab *Hány óra van?* dengan *fél*, *negyed*, dan *háromnegyed*",
+    "menyebut waktu kejadian dengan akhiran *-kor*",
+    "menyebut hari dalam seminggu beserta akhiran \"pada hari\"-nya"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Mikor kezdődik a film?",
+      "intro": "Sore hari di halte bus. Budi dan Anna berencana menonton film di Toldi mozi.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Bocsánat, hány óra van?",
+          "id": "Maaf, jam berapa sekarang?",
+          "literal": "maaf, berapa jam ada?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Fél hét. Miért?",
+          "id": "Setengah tujuh. Kenapa?",
+          "literal": "setengah tujuh. kenapa?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mert hétkor kezdődik a film.",
+          "id": "Karena filmnya mulai jam tujuh.",
+          "literal": "karena tujuh-pada ia-mulai itu film."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Akkor még van idő. A mozi közel van.",
+          "id": "Kalau begitu masih ada waktu. Bioskopnya dekat.",
+          "literal": "kalau-begitu masih ada waktu. itu bioskop dekat ada."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mikor jön a következő busz?",
+          "id": "Bus berikutnya datang jam berapa?",
+          "literal": "kapan ia-datang itu berikutnya bus?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Tíz perc múlva, háromnegyed hétkor.",
+          "id": "Sepuluh menit lagi, jam tujuh kurang seperempat.",
+          "literal": "sepuluh menit lewat, tiga-perempat tujuh-pada."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jó. Akkor hét óra előtt ott vagyunk.",
+          "id": "Bagus. Berarti kita sampai sebelum jam tujuh.",
+          "literal": "bagus. kalau-begitu tujuh jam sebelum di-sana kami-ada."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Remek. Utána vacsorázunk?",
+          "id": "Bagus sekali. Setelah itu makan malam?",
+          "literal": "hebat. sesudah-itu kita-makan-malam?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igen, de nem túl későn.",
+          "id": "Ya, tapi jangan terlalu larut.",
+          "literal": "ya, tapi tidak terlalu larut-secara."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Miért? Holnap korán kelsz?",
+          "id": "Kenapa? Besok kamu bangun pagi?",
+          "literal": "kenapa? besok pagi-secara kamu-bangun?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igen, hatkor. Nyolckor kezdődik a munkám.",
+          "id": "Ya, jam enam. Kerja saya mulai jam delapan.",
+          "literal": "ya, enam-pada. delapan-pada ia-mulai itu kerja-ku."
+        }
+      ],
+      "notes": [
+        "**Fél hét berarti 06.30, bukan 07.30 — persis seperti \"setengah tujuh\".** Ini kabar baik yang jarang disadari: bahasa Hungaria menghitung setengah jam **menuju jam berikutnya**, sama seperti bahasa Indonesia. Penutur bahasa Inggris justru tersandung parah di sini, karena *half seven* dalam bahasa mereka berarti 07.30. Kamu tidak perlu belajar apa-apa; kamu tinggal memakai kebiasaan yang sudah ada.",
+        "**Negyed dan háromnegyed melanjutkan logika yang sama.** *Negyed hét* = 06.15 (seperempat perjalanan menuju tujuh), *háromnegyed hét* = 06.45 (tiga perempat perjalanan). Bagian ini memang tidak punya padanan dalam bahasa Indonesia, tetapi karena logikanya sudah kamu kenal lewat \"setengah\", ia jauh lebih gampang menempel.",
+        "**Hétkor, nyolckor, hatkor.** Akhiran *-kor* berarti \"pada jam\". Ia salah satu dari sedikit akhiran bahasa Hungaria yang **tidak tunduk pada keselarasan vokal** — bentuknya selalu *-kor*, apa pun vokal kata dasarnya. Nikmatilah; ini hadiah kecil yang jarang diberikan bahasa ini.",
+        "**Dua pertanyaan waktu yang berbeda.** *Hány óra van?* menanyakan jam berapa **sekarang**. *Hánykor?* atau *Mikor?* menanyakan **kapan** sesuatu terjadi. Menukar keduanya adalah kesalahan pemula yang paling sering menimbulkan jawaban yang membingungkan.",
+        "**Tíz perc múlva** harfiahnya \"sepuluh menit berlalu\" — maksudnya \"sepuluh menit lagi\". Kembarannya *tíz perce* berarti \"sepuluh menit yang lalu\". Dua kata yang mirip, dua arah waktu yang berlawanan.",
+        "**Mert menjawab miért.** Keduanya berasal dari akar yang sama, dan itu memudahkan: *Miért?* (kenapa) dijawab dengan *Mert…* (karena). Jangan tertukar dengan *mert* dan *mint* (seperti)."
+      ],
+      "grammars": [
+        {
+          "title": "Membaca jam",
+          "body": [
+            "Bahasa Hungaria membagi satu jam menjadi empat, dan menghitung maju ke jam berikutnya. Tabel berikut memakai jam tujuh sebagai contoh."
+          ],
+          "table": {
+            "head": [
+              "Waktu",
+              "Magyar",
+              "Cara baca",
+              "Harfiah"
+            ],
+            "rows": [
+              [
+                "06.00",
+                "*hat óra*",
+                "håt O-rå",
+                "enam jam"
+              ],
+              [
+                "06.15",
+                "*negyed hét*",
+                "NÈ-dyèd hét",
+                "seperempat tujuh"
+              ],
+              [
+                "06.30",
+                "*fél hét*",
+                "fél hét",
+                "setengah tujuh"
+              ],
+              [
+                "06.45",
+                "*háromnegyed hét*",
+                "HA-rom-nè-dyèd hét",
+                "tiga perempat tujuh"
+              ],
+              [
+                "06.50",
+                "*tíz perc múlva hét*",
+                "tiz pèrts MUL-vå hét",
+                "sepuluh menit lagi tujuh"
+              ],
+              [
+                "07.00",
+                "*hét óra*",
+                "hét O-rå",
+                "tujuh jam"
+              ],
+              [
+                "07.10",
+                "*hét óra tíz perc*",
+                "hét O-rå tiz pèrts",
+                "tujuh jam sepuluh menit"
+              ]
+            ]
+          },
+          "after": [
+            "**Untuk jadwal resmi, orang Hungaria memakai cara panjang**: *tizennyolc óra harminc perc* (18.30) di stasiun, bandara, dan televisi. Cara *fél hét* dipakai dalam percakapan sehari-hari.",
+            "**Pagi dan sore dibedakan lewat kata, bukan angka.** *reggel hétkor* (jam tujuh pagi), *este hétkor* (jam tujuh malam). Bahasa Hungaria sehari-hari memakai jam dua belas, sama seperti bahasa Indonesia."
+          ]
+        },
+        {
+          "title": "Kapan? Akhiran -kor dan kawan-kawannya",
+          "body": [
+            "Waktu kejadian ditandai dengan akhiran, sama seperti tempat."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Cara baca",
+              "Arti",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "*-kor*",
+                "-kor",
+                "pada jam",
+                "*hétkor* = jam tujuh"
+              ],
+              [
+                "*-n / -on / -en / -ön*",
+                "",
+                "pada hari",
+                "*hétfőn* = hari Senin"
+              ],
+              [
+                "*-ban / -ben*",
+                "",
+                "pada bulan/tahun",
+                "*januárban* = bulan Januari"
+              ],
+              [
+                "*előtt*",
+                "È-lött",
+                "sebelum",
+                "*hét óra előtt* = sebelum jam tujuh"
+              ],
+              [
+                "*után*",
+                "U-tan",
+                "sesudah",
+                "*hét óra után* = sesudah jam tujuh"
+              ],
+              [
+                "*-ig*",
+                "-ig",
+                "sampai",
+                "*hétig* = sampai jam tujuh"
+              ],
+              [
+                "*-tól / -től*",
+                "",
+                "sejak",
+                "*héttől* = sejak jam tujuh"
+              ],
+              [
+                "*múlva*",
+                "MUL-vå",
+                "lagi (ke depan)",
+                "*tíz perc múlva* = sepuluh menit lagi"
+              ]
+            ]
+          },
+          "after": [
+            "*Előtt* dan *után* adalah *névutó* — kata belakang yang berdiri sendiri, seperti *mellett* di unit 4. Kata bendanya tetap telanjang.",
+            "Pasangan *-tól … -ig* menutup seluruh rentang: *kilenctől ötig dolgozom* = saya bekerja dari jam sembilan sampai jam lima. Susunan ini akan sering kamu pakai saat menceritakan hari kerja di unit 10."
+          ]
+        },
+        {
+          "title": "Hari dalam seminggu",
+          "body": [
+            "Perhatikan baris terakhir — ia satu-satunya yang tidak memakai akhiran apa pun."
+          ],
+          "table": {
+            "head": [
+              "Hari",
+              "Cara baca",
+              "Pada hari…",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "*hétfő*",
+                "HÉT-fö",
+                "*hétfőn*",
+                "Senin"
+              ],
+              [
+                "*kedd*",
+                "kèdd",
+                "*kedden*",
+                "Selasa"
+              ],
+              [
+                "*szerda*",
+                "SÈR-då",
+                "*szerdán*",
+                "Rabu"
+              ],
+              [
+                "*csütörtök*",
+                "CÜ-tör-tök",
+                "*csütörtökön*",
+                "Kamis"
+              ],
+              [
+                "*péntek*",
+                "PÉN-tèk",
+                "*pénteken*",
+                "Jumat"
+              ],
+              [
+                "*szombat*",
+                "SOM-båt",
+                "*szombaton*",
+                "Sabtu"
+              ],
+              [
+                "*vasárnap*",
+                "VÅ-syar-nåp",
+                "*vasárnap*",
+                "Minggu"
+              ]
+            ]
+          },
+          "after": [
+            "*Hétfő* harfiahnya \"kepala minggu\" — dan karena *hét* berarti tujuh sekaligus minggu, namanya masuk akal dua kali. *Vasárnap* berarti \"hari pasar\", dan justru karena itu ia sudah mengandung kata *nap* (hari) sehingga tidak perlu akhiran lagi.",
+            "*Hétvége* berarti akhir pekan — harfiahnya \"ujung minggu\". Bentuk \"pada akhir pekan\": *hétvégén*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bagian hari dan keterangan waktu",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "reggel",
+              "RÈG-gèl",
+              "pagi (sampai sekitar jam 9)"
+            ],
+            [
+              "délelőtt",
+              "DÉL-è-lött",
+              "menjelang siang"
+            ],
+            [
+              "dél",
+              "dél",
+              "tengah hari"
+            ],
+            [
+              "délután",
+              "DÉL-u-tan",
+              "sore"
+            ],
+            [
+              "este",
+              "ÈSY-tè",
+              "petang; malam"
+            ],
+            [
+              "éjszaka",
+              "ÉY-så-kå",
+              "malam (larut)"
+            ],
+            [
+              "ma",
+              "må",
+              "hari ini"
+            ],
+            [
+              "holnap",
+              "HOL-nåp",
+              "besok"
+            ],
+            [
+              "holnapután",
+              "HOL-nåp-u-tan",
+              "lusa"
+            ],
+            [
+              "tegnap",
+              "TÈG-nåp",
+              "kemarin"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa *délelőtt* dan *délután* dibentuk dari *dél* (tengah hari) plus *előtt* dan *után* — \"sebelum tengah hari\" dan \"sesudah tengah hari\". Bahasa Hungaria suka membangun kata panjang dari kepingan yang sudah kamu kenal, dan begitu kamu menyadarinya, kosakatanya berhenti terasa asing."
+        }
+      ]
+    },
+    {
+      "title": "Bulan dan tanggal",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "*január*",
+              "*február*",
+              "*március*",
+              "*április*"
+            ],
+            [
+              "*május*",
+              "*június*",
+              "*július*",
+              "*augusztus*"
+            ],
+            [
+              "*szeptember*",
+              "*október*",
+              "*november*",
+              "*december*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Nama bulan hampir sama dengan bahasa Indonesia, jadi tidak perlu dihafal — cukup diperhatikan ejaannya: *március* dengan **c** yang dibaca *ts*, dan *augusztus* dengan **sz** yang dibaca *s*."
+        },
+        {
+          "type": "p",
+          "text": "Tanggal ditulis dari besar ke kecil, seperti alamat: **2026. augusztus 24.** Dibaca *kétezer-huszonhat augusztus huszonnegyedike*. Perhatikan bahwa tanggalnya memakai bilangan tingkat berakhiran *-e*: *elseje* (tanggal 1), *másodika* (2), *huszonnegyedike* (24)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Hányadika van ma?",
+              "HA-nyå-di-kå vån må",
+              "Hari ini tanggal berapa?"
+            ],
+            [
+              "Ma augusztus huszonnegyedike van.",
+              "må ÅU-gus-tusy HU-son-nè-dyè-di-kè vån",
+              "Hari ini tanggal 24 Agustus."
+            ],
+            [
+              "Milyen nap van ma?",
+              "MI-yèn nåp vån må",
+              "Hari ini hari apa?"
+            ],
+            [
+              "Ma hétfő van.",
+              "må HÉT-fö vån",
+              "Hari ini hari Senin."
+            ],
+            [
+              "Mikor van a születésnapod?",
+              "MI-kor vån å SÜ-lè-tésy-nå-pod",
+              "Ulang tahunmu kapan?"
+            ],
+            [
+              "Májusban.",
+              "MA-yusy-bån",
+              "Bulan Mei."
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "óra",
+      "baca": "O-rå",
+      "id": "jam"
+    },
+    {
+      "hu": "perc",
+      "baca": "pèrts",
+      "id": "menit"
+    },
+    {
+      "hu": "idő",
+      "baca": "I-dö",
+      "id": "waktu; cuaca"
+    },
+    {
+      "hu": "negyed",
+      "baca": "NÈ-dyèd",
+      "id": "seperempat"
+    },
+    {
+      "hu": "háromnegyed",
+      "baca": "HA-rom-nè-dyèd",
+      "id": "tiga perempat"
+    },
+    {
+      "hu": "mikor",
+      "baca": "MI-kor",
+      "id": "kapan"
+    },
+    {
+      "hu": "hánykor",
+      "baca": "HANY-kor",
+      "id": "jam berapa (kejadian)"
+    },
+    {
+      "hu": "múlva",
+      "baca": "MUL-vå",
+      "id": "…lagi"
+    },
+    {
+      "hu": "miért",
+      "baca": "MI-ért",
+      "id": "kenapa"
+    },
+    {
+      "hu": "mert",
+      "baca": "mèrt",
+      "id": "karena"
+    },
+    {
+      "hu": "kezdődik",
+      "baca": "KÈZ-dö-dik",
+      "id": "mulai"
+    },
+    {
+      "hu": "végződik",
+      "baca": "VÉG-zö-dik",
+      "id": "berakhir"
+    },
+    {
+      "hu": "következő",
+      "baca": "KÖ-vèt-kè-zö",
+      "id": "berikutnya"
+    },
+    {
+      "hu": "mozi",
+      "baca": "MO-zi",
+      "id": "bioskop"
+    },
+    {
+      "hu": "film",
+      "baca": "film",
+      "id": "film"
+    },
+    {
+      "hu": "utána",
+      "baca": "U-ta-nå",
+      "id": "sesudah itu"
+    },
+    {
+      "hu": "vacsorázik",
+      "baca": "VÅ-co-ra-zik",
+      "id": "makan malam"
+    },
+    {
+      "hu": "kel",
+      "baca": "kèl",
+      "id": "bangun (dari tidur)"
+    },
+    {
+      "hu": "munka",
+      "baca": "MUN-kå",
+      "id": "pekerjaan"
+    },
+    {
+      "hu": "remek",
+      "baca": "RÈ-mèk",
+      "id": "hebat"
+    },
+    {
+      "hu": "túl",
+      "baca": "tul",
+      "id": "terlalu"
+    },
+    {
+      "hu": "hétvége",
+      "baca": "HÉT-vé-gè",
+      "id": "akhir pekan"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis waktunya dalam bahasa Hungaria.",
+      "items": [
+        "06.30",
+        "07.15",
+        "08.45",
+        "09.00",
+        "10.30",
+        "11.15"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk waktu yang tepat.",
+      "items": [
+        "A film ____ kezdődik. (jam tujuh)",
+        "____ dolgozom. (hari Senin)",
+        "____ van a születésnapom. (bulan Mei)",
+        "____ kelek. (jam enam)",
+        "____ jön a busz. (sepuluh menit lagi)",
+        "____ nem dolgozom. (hari Minggu)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Hungaria.",
+      "items": [
+        "Jam berapa sekarang?",
+        "Setengah tujuh.",
+        "Filmnya mulai jam tujuh.",
+        "Bus berikutnya datang kapan?",
+        "Besok saya bangun pagi.",
+        "Hari ini hari apa?"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 7. Terjemahkan ke bahasa Hungaria tanpa melihat unitnya.",
+      "items": [
+        "Saya minta satu kopi.",
+        "Dengan susu atau tanpa susu?",
+        "Saya lapar.",
+        "Itu apa?",
+        "Minta bonnya."
+      ]
+    }
+  ],
+  "answers": [
+    "fél hét — negyed nyolc — háromnegyed kilenc — kilenc óra — fél tizenegy — negyed tizenkettő",
+    "hétkor — Hétfőn — Májusban — Hatkor — Tíz perc múlva — Vasárnap",
+    "Hány óra van? — Fél hét. — A film hétkor kezdődik. — Mikor jön a következő busz? — Holnap korán kelek. — Milyen nap van ma?",
+    "Egy kávét kérek. — Tejjel vagy tej nélkül? — Éhes vagyok. — Mi az? — A számlát kérem."
+  ]
+}

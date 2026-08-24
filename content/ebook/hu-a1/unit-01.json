@@ -1,0 +1,507 @@
+{
+  "title": "Halo, siapa namamu?",
+  "title_target": "Szia! Hogy hívnak?",
+  "goal": "Menyapa pada waktu dan tingkat kesopanan yang tepat, menyebut nama sendiri, menanyakan kabar, dan mengenali kenapa kata \"adalah\" bahasa Hungaria hilang justru di tempat yang paling sering dipakai.",
+  "bekal": [
+    "menyapa dengan *szia*, *jó napot*, dan *jó reggelt* pada tempatnya masing-masing",
+    "menyebut nama sendiri dengan *…vagyok* atau *…nak hívnak*, dan menanyakan nama orang lain",
+    "menyusun kalimat orang ketiga tanpa kata kerja sama sekali — persis seperti bahasa Indonesia"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Első nap a nyelviskolában",
+      "intro": "Hari pertama kursus bahasa di sebuah nyelviskola di Budapest. Dua peserta baru duduk bersebelahan.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Szia! Hogy hívnak?",
+          "id": "Halo! Siapa namamu?",
+          "literal": "halo! bagaimana mereka-memanggil?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Szia! Budi vagyok. És téged?",
+          "id": "Halo! Saya Budi. Dan kamu?",
+          "literal": "halo! Budi saya-adalah. dan kamu-sasaran?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Anna vagyok. Nagyon örülök!",
+          "id": "Saya Anna. Senang sekali berkenalan!",
+          "literal": "Anna saya-adalah. sangat saya-gembira!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Én is örülök. Hogy vagy?",
+          "id": "Saya juga senang. Apa kabar?",
+          "literal": "saya juga saya-gembira. bagaimana kamu-adalah?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Köszönöm, jól vagyok. És te?",
+          "id": "Terima kasih, saya baik. Dan kamu?",
+          "literal": "saya-berterima-kasih, baik saya-adalah. dan kamu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Én is jól vagyok. Magyar vagy?",
+          "id": "Saya juga baik. Kamu orang Hungaria?",
+          "literal": "saya juga baik saya-adalah. Hungaria kamu-adalah?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Igen, magyar vagyok. Te kínai vagy?",
+          "id": "Ya, saya orang Hungaria. Kamu orang Cina?",
+          "literal": "ya, Hungaria saya-adalah. kamu Cina kamu-adalah?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nem, indonéz vagyok. Jakartából jövök.",
+          "id": "Bukan, saya orang Indonesia. Saya datang dari Jakarta.",
+          "literal": "tidak, Indonesia saya-adalah. Jakarta-dari saya-datang."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Milyen érdekes! Isten hozott Magyarországon!",
+          "id": "Wah, menarik sekali! Selamat datang di Hungaria!",
+          "literal": "betapa menarik! Tuhan membawa Hungaria-di!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Köszönöm szépen! Holnap találkozunk, Anna.",
+          "id": "Terima kasih banyak! Sampai jumpa besok, Anna.",
+          "literal": "saya-berterima-kasih indah! besok kita-bertemu, Anna."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Viszlát! Szia!",
+          "id": "Sampai jumpa! Dah!",
+          "literal": "sampai-lihat! halo!"
+        }
+      ],
+      "notes": [
+        "**Szia dipakai dua arah.** Satu kata yang sama untuk \"halo\" dan \"dah\" — persis seperti *ciao* bahasa Italia. Kepada lebih dari satu orang bentuknya berubah jadi *sziasztok*: bahasa Hungaria membedakan \"kamu\" dan \"kalian\" bahkan di dalam sapaan.",
+        "**Hogy hívnak? bukan \"apa namamu\".** Harfiahnya \"bagaimana mereka memanggil\". Ini kalimat lengkap dengan kata kerja *hív* (memanggil) — pelakunya \"mereka\" yang kabur, seperti \"orang bilang\" dalam bahasa Indonesia. Jawabannya boleh dua cara: *Budi vagyok* (paling gampang) atau *Budinak hívnak* (\"mereka memanggilku Budi\"). Bentuk *A nevem Budi* juga benar, tapi terdengar seperti mengisi formulir.",
+        "**Örülök harfiahnya \"saya gembira\".** Ia dipakai persis seperti \"senang berkenalan\". Yang lebih resmi: *Örvendek*. Perhatikan bahwa kata kerjanya sudah menyimpan pelakunya di ekor — *örül-ök* berarti \"gembira-saya\", jadi *én* di depannya boleh dibuang.",
+        "**Kata \"adalah\" hilang untuk orang ketiga.** Perhatikan baik-baik: untuk saya dan kamu ada kata kerjanya (*vagyok*, *vagy*), tapi untuk *ő* tidak ada apa-apa. *Ő magyar* = \"Dia orang Hungaria\", dua kata, titik. Ini persis susunan bahasa Indonesia — dan justru inilah bagian yang paling membingungkan pelajar dari Inggris atau Jerman, sementara kamu sudah melakukannya sejak kecil.",
+        "**Tidak ada laki-laki dan perempuan.** *Ő* berarti \"dia\", entah laki-laki entah perempuan. Bahasa Hungaria tidak punya *he/she*, tidak punya *der/die/das*, tidak punya perubahan bentuk kata sifat menurut jenis kelamin. Sekali lagi: sama seperti bahasa Indonesia."
+      ],
+      "grammars": [
+        {
+          "title": "Lenni — kata kerja \"adalah\" yang separuh menghilang",
+          "body": [
+            "Kata kerja pertama yang wajib kamu kuasai. Pelajaran terpentingnya bukan bentuknya, melainkan dua kotak yang sengaja dikosongkan."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "Cara baca",
+              "lenni",
+              "arti"
+            ],
+            "rows": [
+              [
+                "én",
+                "én",
+                "**vagyok**",
+                "saya adalah"
+              ],
+              [
+                "te",
+                "tè",
+                "**vagy**",
+                "kamu adalah"
+              ],
+              [
+                "ő",
+                "ö",
+                "— *(van)*",
+                "dia adalah"
+              ],
+              [
+                "mi",
+                "mi",
+                "**vagyunk**",
+                "kami adalah"
+              ],
+              [
+                "ti",
+                "ti",
+                "**vagytok**",
+                "kalian adalah"
+              ],
+              [
+                "ők",
+                "ök",
+                "— *(vannak)*",
+                "mereka adalah"
+              ]
+            ]
+          },
+          "after": [
+            "Dua baris berkurung kosong ketika kalimatnya **menyebut siapa atau apa sesuatu itu**: *Ő tanár* (Dia guru), *Ők diákok* (Mereka pelajar). Tidak ada kata kerja sama sekali, dan menambahkan *van* di situ justru salah.",
+            "*Van* dan *vannak* muncul kembali begitu kalimatnya bicara soal **keberadaan atau tempat**: *A könyv az asztalon van* (Bukunya ada di atas meja), *Anna itthon van* (Anna ada di rumah). Aturannya dipasang lengkap di unit 4.",
+            "Perhatikan juga bahwa *én*, *te*, *mi*, *ti* boleh dibuang, karena ekor kata kerjanya sudah menyimpan pelakunya: *Jól vagyok* sudah pasti berarti \"saya baik\". Kata ganti dipakai kalau kamu ingin **menekankan**: *Én jól vagyok* = \"Kalau saya sih baik-baik saja\"."
+          ]
+        },
+        {
+          "title": "Kata ganti orang",
+          "body": [
+            "Enam bentuk, tanpa jenis kelamin, tanpa bentuk sopan tersembunyi. Yang perlu perhatian cuma baris terakhir."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Cara baca",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "**én**",
+                "én",
+                "saya"
+              ],
+              [
+                "**te**",
+                "tè",
+                "kamu (akrab)"
+              ],
+              [
+                "**ő**",
+                "ö",
+                "dia (laki-laki atau perempuan)"
+              ],
+              [
+                "**mi**",
+                "mi",
+                "kami / kita"
+              ],
+              [
+                "**ti**",
+                "ti",
+                "kalian"
+              ],
+              [
+                "**ők**",
+                "ök",
+                "mereka"
+              ],
+              [
+                "**ön**",
+                "ön",
+                "Anda (sopan, tunggal)"
+              ],
+              [
+                "**önök**",
+                "Ö-nök",
+                "Anda sekalian (sopan, jamak)"
+              ]
+            ]
+          },
+          "after": [
+            "**Ön memakai bentuk kata kerja orang ketiga**, bukan kedua: *Ön magyar?* (Anda orang Hungaria?), bukan *Ön magyar vagy?*. Bahasa Hungaria bersikap seperti sedang membicarakan Anda, bukan berbicara kepada Anda — cara halus yang juga dipakai bahasa Jerman dan Italia.",
+            "Ada bentuk sopan kedua, *maga*, yang secara tata bahasa sama tetapi nadanya bisa terdengar dingin atau menuduh. Sebagai pemula, pakai *ön* saja dan kamu aman."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kalimat yang menolongmu bertahan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Delapan kalimat berikut bukan bahan hafalan tata bahasa — ia perkakas darurat. Hafalkan bentuk utuhnya sekarang, pahami susunannya nanti."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Igen / Nem",
+              "I-gèn / nèm",
+              "Ya / Tidak"
+            ],
+            [
+              "Köszönöm",
+              "KÖ-sö-nöm",
+              "Terima kasih"
+            ],
+            [
+              "Szívesen",
+              "SI-vè-syèn",
+              "Sama-sama"
+            ],
+            [
+              "Bocsánat",
+              "BO-ca-nåt",
+              "Maaf"
+            ],
+            [
+              "Elnézést",
+              "ÈL-né-zésyt",
+              "Permisi (menarik perhatian)"
+            ],
+            [
+              "Tessék",
+              "TÈSY-syék",
+              "Silakan; ini dia"
+            ],
+            [
+              "Nem értem",
+              "nèm ÉR-tèm",
+              "Saya tidak mengerti"
+            ],
+            [
+              "Nem tudom",
+              "nèm TU-dom",
+              "Saya tidak tahu"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Tessék* adalah kata paling serbaguna dalam bahasa Hungaria. Ia berarti \"silakan\" saat mempersilakan duduk, \"ini dia\" saat menyerahkan sesuatu, \"halo?\" saat mengangkat telepon, dan \"ya?\" saat pelayan menghampiri mejamu. Kalau kamu cuma boleh menghafal satu kata dari halaman ini, hafalkan yang ini."
+        },
+        {
+          "type": "p",
+          "text": "*Bocsánat* untuk minta maaf, *elnézést* untuk menarik perhatian orang. Banyak penutur memakai keduanya bergantian, tapi memakai yang tepat langsung terdengar rapi."
+        }
+      ]
+    },
+    {
+      "title": "Sapaan menurut waktu dan tingkat kesopanan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bahasa Hungaria memilah sapaan pada dua sumbu sekaligus: jam berapa, dan seberapa dekat kamu dengan lawan bicara. Tabel ini menutup keduanya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Dipakai kapan"
+          ],
+          "rows": [
+            [
+              "**Jó reggelt!**",
+              "yo RÈG-gèlt",
+              "Selamat pagi — sampai sekitar pukul 9"
+            ],
+            [
+              "**Jó napot!**",
+              "yo NÅ-pot",
+              "Selamat siang — sepanjang siang, sapaan sopan paling aman"
+            ],
+            [
+              "**Jó estét!**",
+              "yo ÈSY-tét",
+              "Selamat sore/malam — mulai senja"
+            ],
+            [
+              "**Jó éjszakát!**",
+              "yo ÉY-så-kat",
+              "Selamat malam — hanya saat berpisah untuk tidur"
+            ],
+            [
+              "**Szia!**",
+              "SI-å",
+              "Halo/dah — akrab, satu orang"
+            ],
+            [
+              "**Sziasztok!**",
+              "SI-ås-tok",
+              "Halo/dah — akrab, banyak orang"
+            ],
+            [
+              "**Helló!**",
+              "HÈL-lo",
+              "Halo — akrab, agak modern"
+            ],
+            [
+              "**Viszontlátásra!**",
+              "VI-sont-la-tasy-rå",
+              "Sampai jumpa — resmi penuh"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Bentuk sopan sebenarnya lebih panjang: *Jó napot kívánok!* — harfiahnya \"saya mendoakan hari yang baik\". Menambahkan *kívánok* membuat sapaanmu terdengar sangat rapi, dan itu gratis. Orang Hungaria memakainya di kantor, toko, dan setiap kali masuk ruangan berisi orang asing."
+        },
+        {
+          "type": "p",
+          "text": "Satu kebiasaan yang perlu ditiru: di Hungaria, **masuk ke ruangan kecil berarti menyapa**. Lift, ruang tunggu dokter, kompartemen kereta — orang mengucapkan *jó napot* kepada orang-orang yang tidak dikenalnya, dan diam justru terasa kasar."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "szia",
+      "baca": "SI-å",
+      "id": "halo; dah (akrab)"
+    },
+    {
+      "hu": "sziasztok",
+      "baca": "SI-ås-tok",
+      "id": "halo; dah (kepada banyak orang)"
+    },
+    {
+      "hu": "jó reggelt",
+      "baca": "yo RÈG-gèlt",
+      "id": "selamat pagi"
+    },
+    {
+      "hu": "jó napot",
+      "baca": "yo NÅ-pot",
+      "id": "selamat siang"
+    },
+    {
+      "hu": "jó estét",
+      "baca": "yo ÈSY-tét",
+      "id": "selamat sore/malam"
+    },
+    {
+      "hu": "viszlát",
+      "baca": "VIS-lat",
+      "id": "sampai jumpa"
+    },
+    {
+      "hu": "hogy",
+      "baca": "hody",
+      "id": "bagaimana"
+    },
+    {
+      "hu": "hív",
+      "baca": "hiv",
+      "id": "memanggil"
+    },
+    {
+      "hu": "vagyok",
+      "baca": "VÅ-dyok",
+      "id": "saya adalah"
+    },
+    {
+      "hu": "vagy",
+      "baca": "vådy",
+      "id": "kamu adalah"
+    },
+    {
+      "hu": "és",
+      "baca": "ésy",
+      "id": "dan"
+    },
+    {
+      "hu": "nagyon",
+      "baca": "NÅ-dyon",
+      "id": "sangat"
+    },
+    {
+      "hu": "örül",
+      "baca": "Ö-rül",
+      "id": "gembira"
+    },
+    {
+      "hu": "is",
+      "baca": "isy",
+      "id": "juga"
+    },
+    {
+      "hu": "köszönöm",
+      "baca": "KÖ-sö-nöm",
+      "id": "terima kasih"
+    },
+    {
+      "hu": "szívesen",
+      "baca": "SI-vè-syèn",
+      "id": "sama-sama"
+    },
+    {
+      "hu": "jól",
+      "baca": "yol",
+      "id": "baik (keadaan)"
+    },
+    {
+      "hu": "igen",
+      "baca": "I-gèn",
+      "id": "ya"
+    },
+    {
+      "hu": "nem",
+      "baca": "nèm",
+      "id": "tidak; bukan"
+    },
+    {
+      "hu": "magyar",
+      "baca": "MÅ-dyår",
+      "id": "Hungaria; orang/bahasa Hungaria"
+    },
+    {
+      "hu": "indonéz",
+      "baca": "IN-do-néz",
+      "id": "Indonesia; orang Indonesia"
+    },
+    {
+      "hu": "kínai",
+      "baca": "KI-nå-i",
+      "id": "Cina; orang Cina"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Hungaria.",
+      "items": [
+        "Halo! Siapa namamu?",
+        "Saya Budi.",
+        "Saya orang Indonesia.",
+        "Apa kabar?",
+        "Terima kasih, saya baik.",
+        "Kamu orang Hungaria?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata ganti orang atau bentuk lenni yang tepat.",
+      "items": [
+        "____ Anna vagyok. (saya)",
+        "Te magyar ____? (bentuk lenni)",
+        "Ő tanár, és ____ diák vagyok. (saya)",
+        "Mi diákok ____. (bentuk lenni)",
+        "____ jól vagytok? (kalian)",
+        "____ magyarok. (mereka)"
+      ]
+    },
+    {
+      "prompt": "Pilih sapaan yang tepat. Tulis ulang kalimatnya lengkap.",
+      "items": [
+        "Kamu masuk toko roti jam tujuh pagi. Kepada penjualnya kamu bilang ____.",
+        "Kamu bertemu teman sekelas di kantin jam sebelas. Kamu bilang ____.",
+        "Kamu masuk restoran jam delapan malam. Kepada pelayannya kamu bilang ____.",
+        "Kamu berpisah dengan dosenmu di ujung koridor, dengan cara resmi. Kamu bilang ____.",
+        "Kamu berpamitan dengan tiga teman sekelas sekaligus. Kamu bilang ____."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "vagyok / Anna / én",
+        "vagy / magyar / te / ?",
+        "hívnak / hogy / ?",
+        "jól / köszönöm / vagyok / ,",
+        "vagyok / nem / magyar / én"
+      ]
+    }
+  ],
+  "answers": [
+    "Szia! Hogy hívnak? — Budi vagyok. — Indonéz vagyok. — Hogy vagy? — Köszönöm, jól vagyok. — Magyar vagy?",
+    "Én — vagy — én — vagyunk — Ti — Ők",
+    "Jó reggelt! — Szia! — Jó estét! — Viszontlátásra! — Sziasztok!",
+    "Én Anna vagyok. — Te magyar vagy? — Hogy hívnak? — Köszönöm, jól vagyok. — Én nem vagyok magyar."
+  ]
+}

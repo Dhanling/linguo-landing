@@ -1,0 +1,562 @@
+{
+  "title": "Di mana kantor posnya? — arah, jarak, dan awalan kata kerja",
+  "title_target": "Hol van a posta?",
+  "goal": "Menanyakan arah dan memahami jawabannya, memakai kelompok akhiran ketiga (*-hoz*, *-nál*, *-tól*), dan mengenali awalan kata kerja yang mengubah arah perbuatan.",
+  "bekal": [
+    "bertanya arah dengan sopan dan menangkap jawaban orang lewat",
+    "memakai *-hoz / -nál / -tól* untuk orang, tempat, dan patokan",
+    "membaca awalan *be-, ki-, fel-, le-, el-, meg-* dan tahu kapan ia pindah tempat"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Az utcán",
+      "intro": "Budi tersesat di sekitar Astoria dan menghentikan seorang perempuan yang sedang lewat.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Elnézést! Hol van a posta?",
+          "id": "Permisi! Di mana kantor posnya?",
+          "literal": "maaf-sasaran! di-mana ada itu pos?"
+        },
+        {
+          "speaker": "Járókelő:",
+          "text": "A posta a második utcában van, balra.",
+          "id": "Kantor posnya di jalan kedua, sebelah kiri.",
+          "literal": "itu pos itu kedua jalan-di-dalam ada, kiri-ke."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Messze van innen?",
+          "id": "Jauh dari sini?",
+          "literal": "jauh ada dari-sini?"
+        },
+        {
+          "speaker": "Járókelő:",
+          "text": "Nem, öt perc gyalog. A gyógyszertár mellett van.",
+          "id": "Tidak, lima menit jalan kaki. Ada di sebelah apotek.",
+          "literal": "tidak, lima menit jalan-kaki. itu apotek di-sebelah ada."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Köszönöm. És a metró merre van?",
+          "id": "Terima kasih. Dan metronya ke arah mana?",
+          "literal": "saya-berterima-kasih. dan itu metro arah-mana ada?"
+        },
+        {
+          "speaker": "Járókelő:",
+          "text": "Arra, a nagy tér felé. Az Astoriánál.",
+          "id": "Ke sana, ke arah lapangan besar. Di Astoria.",
+          "literal": "arah-itu, itu besar lapangan ke-arah. itu Astoria-di-dekat."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Az messze van a postától?",
+          "id": "Itu jauh dari kantor pos?",
+          "literal": "itu jauh ada itu pos-dari?"
+        },
+        {
+          "speaker": "Járókelő:",
+          "text": "Nem, két perc. Villamossal is lehet menni.",
+          "id": "Tidak, dua menit. Bisa juga naik trem.",
+          "literal": "tidak, dua menit. trem-dengan juga boleh pergi."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Melyik villamossal?",
+          "id": "Trem yang mana?",
+          "literal": "yang-mana trem-dengan?"
+        },
+        {
+          "speaker": "Járókelő:",
+          "text": "A negyvenhetessel. A megálló ott van, a sarkon.",
+          "id": "Yang nomor empat puluh tujuh. Haltenya di sana, di pojok.",
+          "literal": "itu empat-puluh-tujuh-an-dengan. itu halte di-sana ada, itu pojok-di."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Köszönöm szépen a segítséget! Viszlát!",
+          "id": "Terima kasih banyak atas bantuannya! Sampai jumpa!",
+          "literal": "saya-berterima-kasih indah itu bantuan-sasaran! sampai-jumpa!"
+        }
+      ],
+      "notes": [
+        "**Elnézést untuk menghentikan orang, bocsánat untuk minta maaf.** Perhatikan bahwa *elnézést* sudah memakai akhiran sasaran — bentuk lengkapnya *Elnézést kérek* (\"saya minta maaf\"), dan bagian *kérek*-nya biasanya dibuang.",
+        "**Az Astoriánál** memakai akhiran *-nál/-nél* yang berarti \"di dekat, di tempat\". Kelompok ini yang dipakai untuk **orang dan patokan**: *az orvosnál* (di tempat dokter), *Annánál* (di tempat Anna), *a hídnál* (di dekat jembatan).",
+        "**Merre, arra, erre.** Tiga kata arah yang tidak persis sama dengan *hol, ott, itt*. *Hol?* menanyakan titik; *Merre?* menanyakan arah. Jawabannya *arra* (ke sana) atau *erre* (ke sini), dan orang Hungaria biasanya mengucapkannya sambil menunjuk.",
+        "**Felé adalah névutó**, jadi kata bendanya telanjang: *a tér felé* (ke arah lapangan). Bandingkan dengan *-ra/-re* yang berarti sampai ke tempatnya: *a térre megyek* (saya pergi ke lapangan itu).",
+        "**A negyvenhetessel.** Nomor kendaraan umum dijadikan kata benda dengan akhiran *-s*: *négy* → *négyes* (nomor empat), *hét* → *hetes*, *negyvenhét* → *negyvenhetes*. Lalu ia bisa memakai akhiran biasa: *a hetessel megyek* (saya naik yang nomor tujuh). Kebiasaan ini dipakai semua orang Budapest."
+      ],
+      "grammars": [
+        {
+          "title": "Kelompok ketiga: orang, tempat, patokan",
+          "body": [
+            "Unit 4 memasang enam akhiran untuk ruang dan permukaan. Ini tiga sisanya — dan justru kelompok ini yang wajib dipakai untuk **orang**."
+          ],
+          "table": {
+            "head": [
+              "Pertanyaan",
+              "Akhiran",
+              "Arti",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**Hol?**",
+                "*-nál / -nél*",
+                "di dekat; di tempat",
+                "*az orvosnál* = di tempat dokter"
+              ],
+              [
+                "**Hová?**",
+                "*-hoz / -hez / -höz*",
+                "ke dekat; ke tempat",
+                "*az orvoshoz* = ke tempat dokter"
+              ],
+              [
+                "**Honnan?**",
+                "*-tól / -től*",
+                "dari dekat; dari tempat",
+                "*az orvostól* = dari tempat dokter"
+              ]
+            ]
+          },
+          "after": [
+            "**Untuk orang, kelompok ini wajib.** *Annához megyek* (saya pergi ke tempat Anna), bukan *Annába* — bentuk itu berarti sesuatu yang lain sama sekali. Aturan yang sama berlaku untuk dokter, tukang cukur, teman, dan siapa pun.",
+            "**Akhiran -hoz punya tiga bentuk**, seperti *-on/-en/-ön*: *az asztalhoz*, *a kerthez*, *az ördöghöz*. Kubu ketiga (*ö, ő, ü, ű*) mendapat jatahnya sendiri di sini.",
+            "**-tól/-től juga berarti \"sejak\" untuk waktu**, seperti sudah kamu pakai di unit 10: *kilenctől* (sejak jam sembilan). Satu akhiran, dua pekerjaan — dan keduanya berbagi rasa yang sama: titik awal."
+          ]
+        },
+        {
+          "title": "Awalan kata kerja (igekötő)",
+          "body": [
+            "Sekelompok kata kecil yang menempel di depan kata kerja dan menajamkan artinya. Ia salah satu ciri bahasa Hungaria yang paling khas."
+          ],
+          "table": {
+            "head": [
+              "Awalan",
+              "Arti dasar",
+              "Contoh dengan *megy* (pergi)",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "**be-**",
+                "masuk",
+                "*bemegy*",
+                "masuk ke dalam"
+              ],
+              [
+                "**ki-**",
+                "keluar",
+                "*kimegy*",
+                "keluar"
+              ],
+              [
+                "**fel-**",
+                "naik",
+                "*felmegy*",
+                "naik ke atas"
+              ],
+              [
+                "**le-**",
+                "turun",
+                "*lemegy*",
+                "turun"
+              ],
+              [
+                "**el-**",
+                "menjauh; tuntas",
+                "*elmegy*",
+                "berangkat, pergi"
+              ],
+              [
+                "**át-**",
+                "menyeberang",
+                "*átmegy*",
+                "menyeberang"
+              ],
+              [
+                "**meg-**",
+                "menuntaskan",
+                "*megnéz*",
+                "menonton sampai selesai"
+              ],
+              [
+                "**vissza-**",
+                "kembali",
+                "*visszamegy*",
+                "kembali"
+              ]
+            ]
+          },
+          "after": [
+            "**Awalannya pindah ke belakang kalau ada sangkalan atau kata tanya.** *Elmegyek* (saya berangkat) → *Nem megyek el* (saya tidak jadi berangkat) → *Elmegyek?* tetapi *Mikor megyek el?*. Aturan ini terasa aneh di awal dan menjadi wajar dengan cepat, karena telinga akan mendengarnya berkali-kali sehari.",
+            "**Meg- adalah yang paling sering dan paling sulit diterjemahkan.** Ia menandai perbuatan yang **tuntas**: *eszem a levest* (saya sedang makan supnya) melawan *megeszem a levest* (saya menghabiskan supnya). Bahasa Indonesia sering memakai \"habis\", \"selesai\", atau tidak menandainya sama sekali.",
+            "Di tingkat A1 kamu tidak perlu memakai awalan ini secara aktif. Yang penting adalah **mengenalinya** ketika muncul, supaya kamu tetap menemukan kata dasarnya di kamus: *felkelek* dicari di bawah *kel*, bukan *fel*."
+          ]
+        },
+        {
+          "title": "Naik apa?",
+          "body": [
+            "Alat angkut memakai akhiran \"dengan\", satu-satunya perkecualiannya adalah kaki sendiri."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Cara baca",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "*gyalog*",
+                "DYÅ-log",
+                "jalan kaki"
+              ],
+              [
+                "*busszal*",
+                "BUS-sål",
+                "naik bus"
+              ],
+              [
+                "*villamossal*",
+                "VIL-lå-mosy-syål",
+                "naik trem"
+              ],
+              [
+                "*metróval*",
+                "MÈT-ro-vål",
+                "naik metro"
+              ],
+              [
+                "*vonattal*",
+                "VO-nåt-tål",
+                "naik kereta"
+              ],
+              [
+                "*autóval*",
+                "ÅU-to-vål",
+                "naik mobil"
+              ],
+              [
+                "*taxival*",
+                "TÅK-si-vål",
+                "naik taksi"
+              ],
+              [
+                "*biciklivel*",
+                "BI-tsik-li-vèl",
+                "naik sepeda"
+              ],
+              [
+                "*repülővel*",
+                "RÈ-pü-lö-vèl",
+                "naik pesawat"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan sekali lagi *v*-nya melebur sesudah huruf mati: *busz* → *bus**sz**al*, *vonat* → *vona**tt**al*. Sesudah huruf hidup ia tetap utuh: *metró**val***, *taxi**val***."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Di kota",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "a posta",
+              "å POSY-tå",
+              "kantor pos"
+            ],
+            [
+              "a bank",
+              "å bånk",
+              "bank"
+            ],
+            [
+              "a gyógyszertár",
+              "å DYODY-sèr-tar",
+              "apotek"
+            ],
+            [
+              "a kórház",
+              "å KOR-haz",
+              "rumah sakit"
+            ],
+            [
+              "az iskola",
+              "åz ISY-ko-lå",
+              "sekolah"
+            ],
+            [
+              "a templom",
+              "å TÈMP-lom",
+              "gereja"
+            ],
+            [
+              "a múzeum",
+              "å MU-zè-um",
+              "museum"
+            ],
+            [
+              "a színház",
+              "å SIN-haz",
+              "gedung teater"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan berapa banyak di antaranya yang tersusun dari dua kata yang sudah kamu kenal: *gyógyszer* (obat) + *tár* (gudang), *kór* (penyakit) + *ház* (rumah), *repülő* (yang terbang) + *tér* (lapangan). Bahasa Hungaria hampir tidak pernah meminjam kata asing kalau ia bisa menyusun sendiri — itu sebabnya kosakatanya terasa asing di awal dan justru mudah ditebak sesudahnya."
+        }
+      ]
+    },
+    {
+      "title": "Menanyakan arah",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Elnézést, hol van…?",
+              "ÈL-né-zésyt hol vån",
+              "Permisi, di mana…?"
+            ],
+            [
+              "Merre van…?",
+              "MÈR-rè vån",
+              "Ke arah mana…?"
+            ],
+            [
+              "Messze van innen?",
+              "MÈS-sè vån IN-nèn",
+              "Jauh dari sini?"
+            ],
+            [
+              "Öt perc gyalog.",
+              "öt pèrts DYÅ-log",
+              "Lima menit jalan kaki."
+            ],
+            [
+              "Egyenesen.",
+              "È-dyè-nè-syèn",
+              "Lurus."
+            ],
+            [
+              "Balra. / Jobbra.",
+              "BÅL-rå / YOBB-rå",
+              "Kiri. / Kanan."
+            ],
+            [
+              "A sarkon.",
+              "å SÅR-kon",
+              "Di pojok."
+            ],
+            [
+              "A második utcában.",
+              "å MA-syo-dik UT-tsa-bån",
+              "Di jalan kedua."
+            ],
+            [
+              "Eltévedtem.",
+              "ÈL-té-vèd-tèm",
+              "Saya tersesat."
+            ],
+            [
+              "Jó utat!",
+              "yo U-tåt",
+              "Selamat jalan!"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Bergerak di Budapest",
+          "items": [
+            "Metro Budapest punya empat jalur bernomor **M1** sampai **M4**; M1 adalah jalur bawah tanah tertua di daratan Eropa dan orang setempat menyebutnya *kisföldalatti* (\"yang bawah tanah kecil\").",
+            "Tiket dan langganan disebut *jegy* dan *bérlet*. Yang wajib diingat: tiket harus **dicap** sebelum naik (*kezelni*), dan pemeriksa tiket berjaket biru sering berdiri tepat di ujung eskalator.",
+            "*Átszállni* berarti ganti kendaraan, *felszállni* naik, *leszállni* turun. Ketiganya kata kerja berawalan — dan pengumuman di dalam kereta akan mengucapkannya berkali-kali sehari, jadi ia salah satu bahan dengar gratis terbaik yang bisa kamu dapat."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "posta",
+      "baca": "POSY-tå",
+      "id": "kantor pos"
+    },
+    {
+      "hu": "gyógyszertár",
+      "baca": "DYODY-sèr-tar",
+      "id": "apotek"
+    },
+    {
+      "hu": "megálló",
+      "baca": "MÈG-al-lo",
+      "id": "halte"
+    },
+    {
+      "hu": "sarok",
+      "baca": "SÅ-rok",
+      "id": "pojok"
+    },
+    {
+      "hu": "híd",
+      "baca": "hid",
+      "id": "jembatan"
+    },
+    {
+      "hu": "merre",
+      "baca": "MÈR-rè",
+      "id": "ke arah mana"
+    },
+    {
+      "hu": "arra",
+      "baca": "ÅR-rå",
+      "id": "ke sana"
+    },
+    {
+      "hu": "erre",
+      "baca": "ÈR-rè",
+      "id": "ke sini"
+    },
+    {
+      "hu": "innen",
+      "baca": "IN-nèn",
+      "id": "dari sini"
+    },
+    {
+      "hu": "onnan",
+      "baca": "ON-nån",
+      "id": "dari sana"
+    },
+    {
+      "hu": "felé",
+      "baca": "FÈ-lé",
+      "id": "ke arah"
+    },
+    {
+      "hu": "gyalog",
+      "baca": "DYÅ-log",
+      "id": "jalan kaki"
+    },
+    {
+      "hu": "villamos",
+      "baca": "VIL-lå-mosy",
+      "id": "trem"
+    },
+    {
+      "hu": "bicikli",
+      "baca": "BI-tsik-li",
+      "id": "sepeda"
+    },
+    {
+      "hu": "repülő",
+      "baca": "RÈ-pü-lö",
+      "id": "pesawat"
+    },
+    {
+      "hu": "jegy",
+      "baca": "yèdy",
+      "id": "tiket"
+    },
+    {
+      "hu": "bérlet",
+      "baca": "BÉR-lèt",
+      "id": "langganan"
+    },
+    {
+      "hu": "segítség",
+      "baca": "SYÈ-git-syég",
+      "id": "bantuan"
+    },
+    {
+      "hu": "elmegy",
+      "baca": "ÈL-mèdy",
+      "id": "berangkat; pergi"
+    },
+    {
+      "hu": "bemegy",
+      "baca": "BÈ-mèdy",
+      "id": "masuk"
+    },
+    {
+      "hu": "kimegy",
+      "baca": "KI-mèdy",
+      "id": "keluar"
+    },
+    {
+      "hu": "felszáll",
+      "baca": "FÈL-sall",
+      "id": "naik (kendaraan)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tambahkan akhiran yang tepat dari kelompok orang dan patokan.",
+      "items": [
+        "orvos (ke tempat)",
+        "Anna (di tempat)",
+        "posta (dari)",
+        "híd (di dekat)",
+        "barát (ke tempat)",
+        "iskola (dari)"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk alat angkut yang tepat.",
+      "items": [
+        "____ megyek dolgozni. (metro)",
+        "____ megyek haza. (bus)",
+        "____ megyünk Szegedre. (kereta)",
+        "____ megyek a boltba. (jalan kaki)",
+        "____ megyek a repülőtérre. (taksi)",
+        "____ megyek a parkba. (sepeda)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Hungaria.",
+      "items": [
+        "Permisi, di mana kantor posnya?",
+        "Jauh dari sini?",
+        "Lima menit jalan kaki.",
+        "Ada di sebelah apotek.",
+        "Bisa juga naik trem.",
+        "Terima kasih banyak atas bantuannya!"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 10. Terjemahkan ke bahasa Hungaria tanpa melihat unitnya.",
+      "items": [
+        "Pagi jam enam saya bangun.",
+        "Kamu bekerja di mana?",
+        "Saya bekerja dari jam sembilan sampai jam lima.",
+        "Kadang saya olahraga.",
+        "Malamnya kamu ngapain?"
+      ]
+    }
+  ],
+  "answers": [
+    "orvoshoz — Annánál — postától — hídnál — baráthoz — iskolától",
+    "Metróval — Busszal — Vonattal — Gyalog — Taxival — Biciklivel",
+    "Elnézést, hol van a posta? — Messze van innen? — Öt perc gyalog. — A gyógyszertár mellett van. — Villamossal is lehet menni. — Köszönöm szépen a segítséget!",
+    "Reggel hatkor felkelek. — Hol dolgozol? — Kilenctől ötig dolgozom. — Néha sportolok. — Este mit csinálsz?"
+  ]
+}

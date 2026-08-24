@@ -1,0 +1,556 @@
+{
+  "title": "Bisa, mau, harus, boleh",
+  "title_target": "Tudsz segíteni?",
+  "goal": "Menyusun kalimat bertingkat dengan kata kerja bantu dan bentuk dasar berakhiran *-ni* — susunan yang membuka sebagian besar percakapan dewasa.",
+  "bekal": [
+    "memakai *tud*, *akar*, *szeretne*, *kell*, *lehet*, *szabad* dengan bentuk dasar",
+    "membedakan *kell* yang tak berpelaku dari *kell* yang berpelaku",
+    "menempatkan awalan kata kerja dengan benar di kalimat bertingkat"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Az űrlap",
+      "intro": "Kantor administrasi sekolah bahasa. Budi memegang selembar formulir yang seluruhnya berbahasa Hungaria.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Anna, tudsz segíteni?",
+          "id": "Anna, bisa bantu?",
+          "literal": "Anna, kamu-bisa menolong?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Persze. Mit kell csinálni?",
+          "id": "Tentu. Apa yang harus dikerjakan?",
+          "literal": "apa-sasaran harus mengerjakan?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ki kell töltenem egy űrlapot, de nem értem.",
+          "id": "Saya harus mengisi formulir, tapi saya tidak mengerti.",
+          "literal": "keluar harus mengisi-ku sebuah formulir-sasaran, tapi tidak saya-mengertinya."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Meg tudom nézni. Melyik részt nem érted?",
+          "id": "Saya bisa lihat. Bagian mana yang tidak kamu mengerti?",
+          "literal": "tuntas saya-bisa melihat. yang-mana bagian-sasaran tidak kamu-mengertinya?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ezt itt. Mit akarnak tudni?",
+          "id": "Yang ini. Mereka mau tahu apa?",
+          "literal": "ini-sasaran di-sini. apa-sasaran mereka-mau tahu?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "A születési helyedet és a dátumot.",
+          "id": "Tempat lahirmu dan tanggalnya.",
+          "literal": "itu kelahiran tempat-mu-sasaran dan itu tanggal-sasaran."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Á, értem! És itt alá kell írni?",
+          "id": "Oh, mengerti! Dan di sini harus tanda tangan?",
+          "literal": "ah, saya-mengertinya! dan di-sini bawah harus menulis?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Igen. De előbb be kell írni a címedet is.",
+          "id": "Ya. Tapi sebelumnya alamatmu juga harus ditulis.",
+          "literal": "ya. tapi lebih-dulu masuk harus menulis itu alamat-mu-sasaran juga."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kész. Most hova kell vinni?",
+          "id": "Selesai. Sekarang harus dibawa ke mana?",
+          "literal": "selesai. sekarang ke-mana harus membawa?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "A második emeletre. Ott le lehet adni.",
+          "id": "Ke lantai dua. Di sana bisa diserahkan.",
+          "literal": "itu kedua lantai-ke-atas. di-sana turun boleh menyerahkan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nagyon köszönöm a segítséget!",
+          "id": "Terima kasih banyak atas bantuannya!",
+          "literal": "sangat saya-berterima-kasih itu bantuan-sasaran!"
+        }
+      ],
+      "notes": [
+        "**Bentuk dasar bahasa Hungaria selalu berakhir -ni.** *segít* → *segíteni*, *csinál* → *csinálni*, *néz* → *nézni*, *ír* → *írni*. Ia dipakai sesudah kata kerja bantu, persis seperti bentuk dasar bahasa Indonesia sesudah \"bisa\", \"mau\", \"harus\".",
+        "**Tudsz segíteni? adalah cara meminta tolong yang paling wajar.** Harfiahnya \"kamu bisa menolong?\". Bentuk sopannya *Tudna segíteni?* — dengan kata kerja bantu yang dihaluskan, sama seperti *szeretnék* di unit 7.",
+        "**Meg tudom nézni** memperlihatkan dua hal penting sekaligus. Pertama, awalannya (*meg-*) melompat ke **depan seluruh susunan**, terpisah dari kata kerjanya. Kedua, kata kerja bantunya memakai bentuk **tertentu** (*tudom*, bukan *tudok*), karena sasaran yang dituju — formulirnya — sudah jelas.",
+        "**Ki kell töltenem** adalah *kell* yang berpelaku. Bentuk dasarnya memakai akhiran milik: *töltenem* (saya mengisi), *töltened* (kamu mengisi), *töltenie* (dia mengisi). Susunan ini terdengar rumit tetapi sangat sering dipakai, jadi sebaiknya kamu kenali sekarang meski belum menyusunnya sendiri.",
+        "**Mit kell csinálni? adalah kell yang tak berpelaku.** Tidak ada yang menyebutkan siapa yang harus mengerjakan — persis seperti \"apa yang harus dikerjakan?\" dalam bahasa Indonesia. Bentuk ini lebih pendek dan selalu aman, jadi pakai ini dulu.",
+        "**Lehet berarti \"boleh\" sekaligus \"mungkin\".** *Le lehet adni* = \"bisa diserahkan\". *Lehet* juga bisa berdiri sendiri sebagai jawaban: *Lehet.* = \"Boleh\" atau \"Mungkin\", tergantung nada suara."
+      ],
+      "grammars": [
+        {
+          "title": "Kata kerja bantu + bentuk dasar",
+          "body": [
+            "Susunannya selalu sama: kata kerja bantu berubah bentuk mengikuti pelakunya, bentuk dasarnya tidak pernah berubah."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Cara baca",
+              "Arti",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "*tud*",
+                "tud",
+                "bisa (mampu)",
+                "*Tudok főzni.* = Saya bisa memasak."
+              ],
+              [
+                "*akar*",
+                "Å-kår",
+                "mau (tegas)",
+                "*Akarok tanulni.* = Saya mau belajar."
+              ],
+              [
+                "*szeretne*",
+                "SÈ-rèt-nè",
+                "ingin (halus)",
+                "*Szeretnék tanulni.* = Saya ingin belajar."
+              ],
+              [
+                "*kell*",
+                "kèll",
+                "harus; perlu",
+                "*Tanulni kell.* = Harus belajar."
+              ],
+              [
+                "*lehet*",
+                "LÈ-hèt",
+                "boleh; mungkin",
+                "*Itt lehet dohányozni?* = Boleh merokok di sini?"
+              ],
+              [
+                "*szabad*",
+                "SÅ-båd",
+                "boleh (diizinkan)",
+                "*Szabad bejönni?* = Boleh masuk?"
+              ],
+              [
+                "*szokott*",
+                "SO-kott",
+                "biasa",
+                "*Szoktam sportolni.* = Saya biasa berolahraga."
+              ]
+            ]
+          },
+          "after": [
+            "**Tud punya dua pekerjaan.** Ia berarti \"bisa\" dengan bentuk dasar (*tudok úszni* — saya bisa berenang), dan berarti \"tahu\" dengan sasaran (*tudom a választ* — saya tahu jawabannya). Untuk bahasa: *tudok magyarul* = saya bisa bahasa Hungaria.",
+            "**Akar terdengar lebih tegas daripada yang kamu kira.** Dalam bahasa Hungaria, *akarok* sedikit lebih keras daripada \"saya mau\" dalam bahasa Indonesia — untuk permintaan sopan pakailah *szeretnék*. Perbedaannya sama seperti *I want* melawan *I would like*.",
+            "**Lehet dan szabad tidak berubah bentuk.** Keduanya tak berpelaku, jadi bentuknya selalu itu-itu saja, apa pun yang terjadi di sekitarnya."
+          ]
+        },
+        {
+          "title": "Kell: dengan pelaku dan tanpa pelaku",
+          "body": [
+            "Dua susunan yang sama-sama benar, dipakai untuk dua maksud yang sedikit berbeda."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "Bentuk dasar berakhiran milik",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "— (umum)",
+                "*-ni*",
+                "*Tanulni kell.*",
+                "Harus belajar."
+              ],
+              [
+                "én",
+                "*-nom / -nem / -nöm*",
+                "*Tanulnom kell.*",
+                "Saya harus belajar."
+              ],
+              [
+                "te",
+                "*-nod / -ned / -nöd*",
+                "*Tanulnod kell.*",
+                "Kamu harus belajar."
+              ],
+              [
+                "ő",
+                "*-nia / -nie*",
+                "*Tanulnia kell.*",
+                "Dia harus belajar."
+              ],
+              [
+                "mi",
+                "*-nunk / -nünk*",
+                "*Tanulnunk kell.*",
+                "Kami harus belajar."
+              ],
+              [
+                "ti",
+                "*-notok / -netek / -nötök*",
+                "*Tanulnotok kell.*",
+                "Kalian harus belajar."
+              ],
+              [
+                "ők",
+                "*-niuk / -niük*",
+                "*Tanulniuk kell.*",
+                "Mereka harus belajar."
+              ]
+            ]
+          },
+          "after": [
+            "Bentuk tanpa pelaku dipakai untuk aturan umum: *Itt fizetni kell* (di sini harus bayar). Bentuk berpelaku dipakai kalau orangnya penting: *Mennem kell* (saya harus pergi) — kalimat yang akan sering kamu ucapkan saat berpamitan.",
+            "Kalau kamu belum siap memakai bentuk berpelaku, ada jalan keluar yang sepenuhnya benar: sebutkan pelakunya dengan *nekem*, *neked*, dan seterusnya, lalu pakai bentuk *-ni* biasa. *Nekem tanulni kell* dimengerti sempurna, cuma sedikit kurang rapi."
+          ]
+        },
+        {
+          "title": "Ke mana awalannya pergi?",
+          "body": [
+            "Aturan yang sudah muncul di unit 12, sekarang dengan satu keadaan tambahan."
+          ],
+          "table": {
+            "head": [
+              "Keadaan",
+              "Letak awalan",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "kalimat biasa",
+                "menempel di depan kata kerja",
+                "*Kitöltöm az űrlapot.*"
+              ],
+              [
+                "ada sangkalan",
+                "pindah ke belakang",
+                "*Nem töltöm ki az űrlapot.*"
+              ],
+              [
+                "ada kata tanya",
+                "pindah ke belakang",
+                "*Mikor töltöd ki?*"
+              ],
+              [
+                "ada kata kerja bantu",
+                "berdiri sendiri di depan",
+                "*Ki kell tölteni.* / *Ki tudom tölteni.*"
+              ]
+            ]
+          },
+          "after": [
+            "Baris terakhir yang paling sering menjegal pemula, karena hasilnya terlihat seperti tiga kata yang tidak berhubungan: *le lehet adni*, *meg tudom nézni*, *fel kell hívni*. Terimalah sebagai satu bongkahan; telinga akan lebih cepat terbiasa daripada logika.",
+            "Kalau kamu benar-benar ragu, susunan tanpa awalan hampir selalu tetap dimengerti. Kesalahan letak awalan menandaimu sebagai pemula, tetapi tidak pernah membuat kalimatmu gagal."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Meminta tolong dan menawarkan bantuan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Tudsz segíteni?",
+              "tuds SYÈ-gi-tè-ni",
+              "Bisa bantu?"
+            ],
+            [
+              "Tudna segíteni?",
+              "TUD-nå SYÈ-gi-tè-ni",
+              "Bisa Anda bantu?"
+            ],
+            [
+              "Segíthetek?",
+              "SYÈ-git-hè-tèk",
+              "Boleh saya bantu?"
+            ],
+            [
+              "Mit kell csinálni?",
+              "mit kèll CI-nal-ni",
+              "Apa yang harus dikerjakan?"
+            ],
+            [
+              "Nem tudom, hogyan kell.",
+              "nèm TU-dom HO-dyån kèll",
+              "Saya tidak tahu caranya."
+            ],
+            [
+              "Meg tudod mutatni?",
+              "mèg TU-dod MU-tåt-ni",
+              "Bisa ditunjukkan?"
+            ],
+            [
+              "Mennem kell.",
+              "MÈN-nèm kèll",
+              "Saya harus pergi."
+            ],
+            [
+              "Nem lehet.",
+              "nèm LÈ-hèt",
+              "Tidak bisa."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Segíthetek?* memuat sisipan *-hat/-het* yang berarti \"boleh\" atau \"bisa\". Sisipan ini menempel langsung di dalam kata kerja: *ír* → *írhat* (boleh menulis), *megy* → *mehet* (boleh pergi), *kér* → *kérhet* (boleh minta). Ia sangat khas bahasa Hungaria dan sangat berguna; di A1 cukup kenali, di A2 kamu akan memakainya setiap hari."
+        }
+      ]
+    },
+    {
+      "title": "Di kantor: formulir dan urusan resmi",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "az űrlap",
+              "åz ÜR-låp",
+              "formulir"
+            ],
+            [
+              "a hivatal",
+              "å HI-vå-tål",
+              "kantor pemerintah"
+            ],
+            [
+              "az iroda",
+              "åz I-ro-då",
+              "kantor"
+            ],
+            [
+              "az útlevél",
+              "åz UT-lè-vél",
+              "paspor"
+            ],
+            [
+              "az igazolvány",
+              "åz I-gå-zol-vany",
+              "kartu identitas"
+            ],
+            [
+              "az aláírás",
+              "åz Å-la-i-rasy",
+              "tanda tangan"
+            ],
+            [
+              "a dátum",
+              "å DA-tum",
+              "tanggal"
+            ],
+            [
+              "a sor",
+              "å syor",
+              "antrean; baris"
+            ],
+            [
+              "kitölt",
+              "KI-tölt",
+              "mengisi"
+            ],
+            [
+              "aláír",
+              "Å-la-ir",
+              "menandatangani"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga kalimat penyelamat di loket",
+          "items": [
+            "*Elnézést, hol kell sorszámot húzni?* — \"Permisi, di mana harus ambil nomor antrean?\" Hampir semua kantor Hungaria memakai mesin nomor, dan berdiri di antrean yang salah bisa memakan satu jam.",
+            "*Beszél angolul valaki?* — \"Ada yang bisa bahasa Inggris?\" Jujur dan efektif; di kantor besar biasanya ada.",
+            "*Le tudná írni?* — \"Bisa dituliskan?\" Menerima jawaban dalam bentuk tulisan jauh lebih aman daripada mengandalkan telinga yang belum terlatih."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "tud",
+      "baca": "tud",
+      "id": "bisa; tahu"
+    },
+    {
+      "hu": "akar",
+      "baca": "Å-kår",
+      "id": "mau"
+    },
+    {
+      "hu": "szeretne",
+      "baca": "SÈ-rèt-nè",
+      "id": "ingin"
+    },
+    {
+      "hu": "kell",
+      "baca": "kèll",
+      "id": "harus; perlu"
+    },
+    {
+      "hu": "lehet",
+      "baca": "LÈ-hèt",
+      "id": "boleh; mungkin"
+    },
+    {
+      "hu": "szabad",
+      "baca": "SÅ-båd",
+      "id": "boleh"
+    },
+    {
+      "hu": "segít",
+      "baca": "SYÈ-git",
+      "id": "menolong"
+    },
+    {
+      "hu": "mutat",
+      "baca": "MU-tåt",
+      "id": "menunjukkan"
+    },
+    {
+      "hu": "űrlap",
+      "baca": "ÜR-låp",
+      "id": "formulir"
+    },
+    {
+      "hu": "kitölt",
+      "baca": "KI-tölt",
+      "id": "mengisi"
+    },
+    {
+      "hu": "aláír",
+      "baca": "Å-la-ir",
+      "id": "menandatangani"
+    },
+    {
+      "hu": "lead",
+      "baca": "LÈ-åd",
+      "id": "menyerahkan"
+    },
+    {
+      "hu": "visz",
+      "baca": "vis",
+      "id": "membawa (pergi)"
+    },
+    {
+      "hu": "hoz",
+      "baca": "hoz",
+      "id": "membawa (datang)"
+    },
+    {
+      "hu": "rész",
+      "baca": "rés",
+      "id": "bagian"
+    },
+    {
+      "hu": "kész",
+      "baca": "kés",
+      "id": "selesai; siap"
+    },
+    {
+      "hu": "előbb",
+      "baca": "È-löbb",
+      "id": "lebih dulu"
+    },
+    {
+      "hu": "hogyan",
+      "baca": "HO-dyån",
+      "id": "bagaimana"
+    },
+    {
+      "hu": "úszik",
+      "baca": "U-sik",
+      "id": "berenang"
+    },
+    {
+      "hu": "vezet",
+      "baca": "VÈ-zèt",
+      "id": "menyetir; memimpin"
+    },
+    {
+      "hu": "dohányzik",
+      "baca": "DO-hany-zik",
+      "id": "merokok"
+    },
+    {
+      "hu": "nyugodtan",
+      "baca": "NYU-god-tån",
+      "id": "silakan saja; dengan tenang"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis bentuk dasar (-ni) dari kata kerja berikut.",
+      "items": [
+        "tanul",
+        "beszél",
+        "olvas",
+        "segít",
+        "főz",
+        "megy"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata kerja bantu yang tepat.",
+      "items": [
+        "____ úszni? (bisa — kamu)",
+        "____ tanulni. (ingin — saya, halus)",
+        "Itt fizetni ____. (harus)",
+        "Itt ____ dohányozni? (boleh)",
+        "Mit ____ csinálni? (harus)",
+        "____ magyarul. (bisa — saya, tanpa bentuk dasar)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Hungaria.",
+      "items": [
+        "Bisa bantu?",
+        "Apa yang harus dikerjakan?",
+        "Saya bisa lihat.",
+        "Di sini harus tanda tangan?",
+        "Saya harus pergi.",
+        "Tidak bisa."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 12. Terjemahkan ke bahasa Hungaria tanpa melihat unitnya.",
+      "items": [
+        "Permisi, di mana kantor posnya?",
+        "Jauh dari sini?",
+        "Lima menit jalan kaki.",
+        "Bisa juga naik trem.",
+        "Haltenya di pojok."
+      ]
+    }
+  ],
+  "answers": [
+    "tanulni — beszélni — olvasni — segíteni — főzni — menni",
+    "Tudsz — Szeretnék — kell — lehet — kell — Tudok",
+    "Tudsz segíteni? — Mit kell csinálni? — Meg tudom nézni. — Itt alá kell írni? — Mennem kell. — Nem lehet.",
+    "Elnézést, hol van a posta? — Messze van innen? — Öt perc gyalog. — Villamossal is lehet menni. — A megálló a sarkon van."
+  ]
+}

@@ -1,0 +1,531 @@
+{
+  "title": "Belanja di supermarket — akhiran \"dengan\"",
+  "title_target": "A boltban",
+  "goal": "Berbelanja kebutuhan sehari-hari, dan menguasai akhiran *-val / -vel* yang meleburkan dirinya ke huruf mati sebelumnya.",
+  "bekal": [
+    "membentuk *-val / -vel* dengan benar pada kata apa pun",
+    "menjawab *Kivel?* dan *Mivel?* dengan bentuk kata ganti yang tepat",
+    "memakai kata kerja *vesz* untuk membeli"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — A boltban",
+      "intro": "Sabtu siang di sebuah supermarket di dekat rumah. Anna memegang telepon berisi daftar belanja.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Mit veszünk?",
+          "id": "Kita beli apa?",
+          "literal": "apa-sasaran kita-membeli?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kenyeret, tejet és gyümölcsöt. Van nálad lista?",
+          "id": "Roti, susu, dan buah. Kamu bawa daftarnya?",
+          "literal": "roti-sasaran, susu-sasaran dan buah-sasaran. ada padamu daftar?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Igen, a telefonomban. A pékárunál kezdünk.",
+          "id": "Ya, di teleponku. Kita mulai dari bagian roti.",
+          "literal": "ya, itu telepon-ku-di-dalam. itu roti-barang-di-dekat kita-mulai."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Milyen kenyeret veszel?",
+          "id": "Kamu beli roti yang seperti apa?",
+          "literal": "bagaimana roti-sasaran kamu-membeli?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Barnát. Fehér kenyérrel nem jó a szendvics.",
+          "id": "Yang coklat. Roti putih tidak enak untuk sandwich.",
+          "literal": "coklat-sasaran. putih roti-dengan tidak bagus itu sandwich."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Egyetértek. És mivel isszuk a kávét?",
+          "id": "Setuju. Dan kopinya kita minum pakai apa?",
+          "literal": "saya-setuju. dan apa-dengan kita-meminumnya itu kopi-sasaran?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Én tejjel iszom, te feketén.",
+          "id": "Saya minum pakai susu, kamu hitam.",
+          "literal": "saya susu-dengan saya-minum, kamu hitam-secara."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igaz. Kivel jössz holnap a piacra?",
+          "id": "Betul. Besok kamu ke pasar sama siapa?",
+          "literal": "benar. siapa-dengan kamu-datang besok itu pasar-ke-atas?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Veled, ha ráérsz.",
+          "id": "Sama kamu, kalau kamu sempat.",
+          "literal": "kamu-dengan, kalau kamu-sempat."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ráérek. Itt lehet kártyával fizetni?",
+          "id": "Sempat. Di sini bisa bayar pakai kartu?",
+          "literal": "saya-sempat. di-sini boleh kartu-dengan membayar?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Igen, mindenhol lehet.",
+          "id": "Ya, di mana-mana bisa.",
+          "literal": "ya, di-mana-mana boleh."
+        }
+      ],
+      "notes": [
+        "**Tejjel, kenyérrel, kártyával — semuanya akhiran yang sama.** Bentuk dasarnya *-val / -vel*, tetapi *v*-nya lenyap sesudah huruf mati dan huruf mati itu menjadi ganda. *tej* + *vel* → *tejjel*; *kenyér* + *vel* → *kenyérrel*; *kártya* + *val* → *kártyával* (sesudah huruf hidup, *v*-nya tetap).",
+        "**Isszuk adalah bentuk tertentu dari iszik.** Kata kerja ini termasuk yang paling tak beraturan dalam bahasa Hungaria: *iszom, iszod, issza, isszuk, isszátok, isszák*. Karena kopinya tertentu (*a kávét*), bentuk tertentulah yang dipakai — aturan unit 11 tetap berlaku, sekalipun kata kerjanya berulah.",
+        "**Nálad lista van** memakai akhiran *-nál* dari unit 12 untuk menyatakan \"pada dirimu\", \"kamu bawa\". Susunan ini sangat sering dipakai: *Van nálad pénz?* (Kamu bawa uang?), *Nincs nálam telefon* (Saya tidak bawa telepon).",
+        "**Feketén** adalah keterangan dari *fekete*. Untuk kopi, ia berarti tanpa susu — persis seperti \"kopi hitam\" dalam bahasa Indonesia. Akhiran *-n / -an / -en* mengubah kata sifat menjadi keterangan, seperti sudah kamu lihat pada *jól*, *szépen*, *gyorsan*.",
+        "**Kivel dan mivel adalah kata tanya yang sudah berakhiran.** *Ki* + *vel* → *kivel* (dengan siapa), *mi* + *vel* → *mivel* (dengan apa). Perhatikan bahwa kata tanya bahasa Hungaria memang menerima akhiran seperti kata benda biasa: *kinek* (kepada siapa), *kitől* (dari siapa), *hova* (ke mana)."
+      ],
+      "grammars": [
+        {
+          "title": "Akhiran -val / -vel: v yang melebur",
+          "body": [
+            "Satu-satunya akhiran bahasa Hungaria yang benar-benar berubah bentuk mengikuti huruf mati di depannya. Aturannya sederhana dan tanpa perkecualian."
+          ],
+          "table": {
+            "head": [
+              "Kata dasar berakhir",
+              "Yang terjadi",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "huruf hidup",
+                "*v* tetap; *a* dan *e* memanjang",
+                "*kávé* → *kávéval*; *Anna* → *Annával*; *taxi* → *taxival*"
+              ],
+              [
+                "huruf mati",
+                "*v* lenyap, huruf matinya menjadi ganda",
+                "*vonat* → *vonattal*; *tej* → *tejjel*; *busz* → *busszal*"
+              ],
+              [
+                "huruf mati ganda",
+                "tidak berubah lagi",
+                "*toll* → *tollal*; *kés* → *késsel*"
+              ],
+              [
+                "bentuk jamak",
+                "*-kkal / -kkel*",
+                "*barátok* → *barátokkal*; *gyerekek* → *gyerekekkel*"
+              ]
+            ]
+          },
+          "after": [
+            "Akhiran ini menutup tiga arti sekaligus: **bersama** (*Annával megyek* — saya pergi bersama Anna), **memakai** (*kártyával fizetek* — saya bayar pakai kartu), dan **naik** (*busszal megyek* — saya naik bus).",
+            "Perhatikan bahwa akhiran ini juga tunduk pada keselarasan vokal: *-val* untuk kubu dalam, *-vel* untuk kubu depan. Jadi *vonattal* tetapi *kenyérrel*, *busszal* tetapi *késsel*."
+          ]
+        },
+        {
+          "title": "Dengan siapa? Bentuk kata ganti",
+          "body": [
+            "Kata ganti orang tidak memakai akhiran biasa; ia punya bentuk sendiri yang harus dihafal."
+          ],
+          "table": {
+            "head": [
+              "Orang",
+              "\"dengan\"",
+              "\"kepada\"",
+              "\"di tempat\""
+            ],
+            "rows": [
+              [
+                "én",
+                "**velem**",
+                "nekem",
+                "nálam"
+              ],
+              [
+                "te",
+                "**veled**",
+                "neked",
+                "nálad"
+              ],
+              [
+                "ő",
+                "**vele**",
+                "neki",
+                "nála"
+              ],
+              [
+                "mi",
+                "**velünk**",
+                "nekünk",
+                "nálunk"
+              ],
+              [
+                "ti",
+                "**veletek**",
+                "nektek",
+                "nálatok"
+              ],
+              [
+                "ők",
+                "**velük**",
+                "nekik",
+                "náluk"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan polanya: akhirannya sama persis dengan akhiran milik dari unit 5 (*-m, -d, -a/-e, -nk, -tok, -uk*). Bahasa Hungaria memakai ulang perkakas yang sama di seluruh bahasanya, dan begitu kamu melihatnya, tiga kolom ini berhenti terasa seperti tiga tabel terpisah.",
+            "Kolom kedua dan ketiga sudah kamu temui: *nekem* di unit 5 dan 7, *nálunk* di unit 13. Sekarang kamu punya ketiganya sekaligus."
+          ]
+        },
+        {
+          "title": "Vesz — membeli",
+          "body": [
+            "Salah satu kata kerja tak beraturan yang paling sering dipakai di toko."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "Tak tentu",
+              "Tertentu",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "én",
+                "vesz**ek**",
+                "vesz**em**",
+                "*Veszek egy kenyeret.*"
+              ],
+              [
+                "te",
+                "vesz**el**",
+                "vesz**ed**",
+                "*Mit veszel?*"
+              ],
+              [
+                "ő",
+                "vesz",
+                "vesz**i**",
+                "*Megveszi a könyvet.*"
+              ],
+              [
+                "mi",
+                "vesz**ünk**",
+                "vesz**szük**",
+                "*Mit veszünk?*"
+              ],
+              [
+                "ti",
+                "vesz**tek**",
+                "vesz**itek**",
+                "*Mit vesztek?*"
+              ],
+              [
+                "ők",
+                "vesz**nek**",
+                "vesz**ik**",
+                "*Ők veszik a jegyet.*"
+              ]
+            ]
+          },
+          "after": [
+            "Awalan *meg-* membuat perbuatannya tuntas: *veszem a kenyeret* (saya sedang membeli rotinya) melawan *megveszem a kenyeret* (saya jadi membelinya). Di toko, bentuk berawalan yang lebih sering terdengar.",
+            "Kembarannya *elad* berarti menjual, dan *eladó* — yang sudah kamu temui di unit 3 — berarti \"penjual\" sekaligus \"dijual\". Papan bertuliskan *ELADÓ* di jendela sebuah rumah berarti rumah itu dijual."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Di supermarket",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "a bolt / az üzlet",
+              "å bolt / åz ÜZ-lèt",
+              "toko"
+            ],
+            [
+              "a bevásárlókocsi",
+              "å BÈ-va-syar-lo-ko-ci",
+              "troli belanja"
+            ],
+            [
+              "a kosár",
+              "å KO-syar",
+              "keranjang"
+            ],
+            [
+              "a pénztár / a kassza",
+              "å PÉNZ-tar / å KÅS-så",
+              "kasir"
+            ],
+            [
+              "a zacskó",
+              "å ZÅC-ko",
+              "kantong plastik"
+            ],
+            [
+              "az akció",
+              "åz ÅK-tsi-o",
+              "diskon"
+            ],
+            [
+              "a pékáru",
+              "å PÉK-a-ru",
+              "roti dan kue"
+            ],
+            [
+              "a tejtermék",
+              "å TÈY-tèr-mék",
+              "produk susu"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dua kata yang sering membingungkan pendatang: *bolt* dan *üzlet* dua-duanya berarti toko dan bisa ditukar; sementara *ABC* — dibaca *á-bé-cé* — adalah nama lama untuk toko kelontong kecil, dan papan bertuliskan tiga huruf itu masih banyak tergantung di kota-kota kecil."
+        }
+      ]
+    },
+    {
+      "title": "Kalimat belanja",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Hol van a tej?",
+              "hol vån å tèy",
+              "Susunya di mana?"
+            ],
+            [
+              "Van friss kenyerük?",
+              "vån frisy KÈ-nyè-rük",
+              "Ada roti segar?"
+            ],
+            [
+              "Mennyibe kerül ez?",
+              "MÈNY-nyi-bè KÈ-rül èz",
+              "Ini berapa?"
+            ],
+            [
+              "Akciós?",
+              "ÅK-tsi-osy",
+              "Sedang diskon?"
+            ],
+            [
+              "Kérek egy zacskót.",
+              "KÉ-rèk èdy ZÅC-kot",
+              "Minta satu kantong."
+            ],
+            [
+              "Kártyával fizetek.",
+              "KAR-tya-vål FI-zè-tèk",
+              "Saya bayar pakai kartu."
+            ],
+            [
+              "Van kártyájuk?",
+              "vån KAR-tya-yuk",
+              "Punya kartu anggota?"
+            ],
+            [
+              "Nincs, köszönöm.",
+              "ninc KÖ-sö-nöm",
+              "Tidak punya, terima kasih."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Dua kebiasaan yang berbeda dari Indonesia",
+          "items": [
+            "**Kantong plastik berbayar** dan hampir tidak pernah diberikan otomatis. Orang Hungaria membawa *vászontáska* — tas kain — dan pertanyaan *Kér zacskót?* di kasir berarti kamu akan ditagih untuknya.",
+            "**Barang ditimbang sendiri** di banyak supermarket: sayur dan buah diletakkan di timbangan, tombol bergambar barangnya ditekan, lalu stiker harganya ditempel. Kasir tidak akan menimbangkan untukmu, dan antrean di belakangmu akan segera memberi tahu."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "vesz",
+      "baca": "vès",
+      "id": "membeli; mengambil"
+    },
+    {
+      "hu": "elad",
+      "baca": "ÈL-åd",
+      "id": "menjual"
+    },
+    {
+      "hu": "bolt",
+      "baca": "bolt",
+      "id": "toko"
+    },
+    {
+      "hu": "lista",
+      "baca": "LISY-tå",
+      "id": "daftar"
+    },
+    {
+      "hu": "kosár",
+      "baca": "KO-syar",
+      "id": "keranjang"
+    },
+    {
+      "hu": "pénztár",
+      "baca": "PÉNZ-tar",
+      "id": "kasir"
+    },
+    {
+      "hu": "zacskó",
+      "baca": "ZÅC-ko",
+      "id": "kantong"
+    },
+    {
+      "hu": "akció",
+      "baca": "ÅK-tsi-o",
+      "id": "diskon"
+    },
+    {
+      "hu": "blokk",
+      "baca": "blokk",
+      "id": "struk"
+    },
+    {
+      "hu": "barna",
+      "baca": "BÅR-nå",
+      "id": "coklat (warna)"
+    },
+    {
+      "hu": "fehér",
+      "baca": "FÈ-hér",
+      "id": "putih"
+    },
+    {
+      "hu": "fekete",
+      "baca": "FÈ-kè-tè",
+      "id": "hitam"
+    },
+    {
+      "hu": "szendvics",
+      "baca": "SÈND-vic",
+      "id": "sandwich"
+    },
+    {
+      "hu": "vaj",
+      "baca": "våy",
+      "id": "mentega"
+    },
+    {
+      "hu": "só",
+      "baca": "syo",
+      "id": "garam"
+    },
+    {
+      "hu": "olaj",
+      "baca": "O-låy",
+      "id": "minyak"
+    },
+    {
+      "hu": "csirke",
+      "baca": "CIR-kè",
+      "id": "ayam"
+    },
+    {
+      "hu": "kivel",
+      "baca": "KI-vèl",
+      "id": "dengan siapa"
+    },
+    {
+      "hu": "mivel",
+      "baca": "MI-vèl",
+      "id": "dengan apa"
+    },
+    {
+      "hu": "velem",
+      "baca": "VÈ-lèm",
+      "id": "dengan saya"
+    },
+    {
+      "hu": "ha",
+      "baca": "hå",
+      "id": "kalau"
+    },
+    {
+      "hu": "ráér",
+      "baca": "RA-ér",
+      "id": "sempat"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tambahkan akhiran \"dengan\".",
+      "items": [
+        "vonat",
+        "tej",
+        "kávé",
+        "busz",
+        "Anna",
+        "barátok"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk kata ganti yang tepat.",
+      "items": [
+        "____ jössz? (dengan saya)",
+        "____ megyek a piacra. (dengan kamu)",
+        "Nincs ____ pénz. (pada saya)",
+        "____ mindig meleg van. (di tempat kami)",
+        "Adok ____ egy könyvet. (kepadamu)",
+        "____ beszélek holnap. (dengan mereka)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Hungaria.",
+      "items": [
+        "Kita beli apa?",
+        "Kamu bawa daftarnya?",
+        "Saya bayar pakai kartu.",
+        "Besok kamu ke pasar sama siapa?",
+        "Sama kamu, kalau kamu sempat.",
+        "Di sini bisa bayar pakai kartu?"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 13. Terjemahkan ke bahasa Hungaria tanpa melihat unitnya.",
+      "items": [
+        "Cuacanya bagaimana?",
+        "Dingin sekali hari ini.",
+        "Turun salju.",
+        "Saya kedinginan.",
+        "Musim semi mulai bulan Maret."
+      ]
+    }
+  ],
+  "answers": [
+    "vonattal — tejjel — kávéval — busszal — Annával — barátokkal",
+    "Velem — Veled — nálam — Nálunk — neked — Velük",
+    "Mit veszünk? — Van nálad lista? — Kártyával fizetek. — Kivel jössz holnap a piacra? — Veled, ha ráérsz. — Itt lehet kártyával fizetni?",
+    "Milyen az idő? — Nagyon hideg van ma. — Havazik. — Fázom. — A tavasz márciusban kezdődik."
+  ]
+}

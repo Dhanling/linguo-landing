@@ -1,0 +1,552 @@
+{
+  "title": "Suka dan tidak suka",
+  "title_target": "Szeretem a magyar ételt",
+  "goal": "Menyatakan kesukaan terhadap benda dan terhadap kegiatan — dua susunan berbeda yang memakai kata kerja yang sama — sambil memasang bentuk jamak bersasaran.",
+  "bekal": [
+    "membedakan *szeretem a gulyást* dari *szeretek főzni*",
+    "membentuk jamak yang sekaligus bersasaran: *a könyveket*, *a filmeket*",
+    "menyusun tangga dari *imádom* sampai *utálom*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Mit szeretsz csinálni?",
+      "intro": "Makan siang di kantin sekolah. Piring Budi penuh; piring Anna sudah kosong.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Szereted a magyar ételeket?",
+          "id": "Kamu suka makanan Hungaria?",
+          "literal": "kamu-menyukainya itu Hungaria makanan-jamak-sasaran?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igen, nagyon szeretem őket. A gulyás a kedvencem.",
+          "id": "Ya, saya suka sekali. Gulyás favorit saya.",
+          "literal": "ya, sangat saya-menyukainya mereka-sasaran. itu gulyás itu favorit-ku."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "És a savanyú káposztát?",
+          "id": "Dan sauerkraut?",
+          "literal": "dan itu masam kubis-sasaran?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Azt nem szeretem. Túl savanyú.",
+          "id": "Yang itu saya tidak suka. Terlalu masam.",
+          "literal": "itu-sasaran tidak saya-menyukainya. terlalu masam."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Én imádom. És mit szeretsz csinálni?",
+          "id": "Saya suka banget. Dan kamu suka melakukan apa?",
+          "literal": "saya saya-memujanya. dan apa-sasaran kamu-suka melakukan?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Szeretek focizni és zenét hallgatni. Te?",
+          "id": "Saya suka main bola dan mendengarkan musik. Kamu?",
+          "literal": "saya-suka bermain-bola dan musik-sasaran mendengarkan. kamu?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Én olvasok és úszom. Utálom a focit.",
+          "id": "Saya membaca dan berenang. Saya benci sepak bola.",
+          "literal": "saya saya-membaca dan saya-berenang. saya-membencinya itu bola-sasaran."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tényleg? Miért?",
+          "id": "Serius? Kenapa?",
+          "literal": "sungguh? kenapa?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Unalmas. De szeretem a filmeket.",
+          "id": "Membosankan. Tapi saya suka film.",
+          "literal": "membosankan. tapi saya-menyukainya itu film-jamak-sasaran."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Milyen filmeket szeretsz?",
+          "id": "Film seperti apa yang kamu suka?",
+          "literal": "bagaimana film-jamak-sasaran kamu-menyukai?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "A vígjátékokat. A horrort nem szeretem.",
+          "id": "Film komedi. Film horor saya tidak suka.",
+          "literal": "itu komedi-jamak-sasaran. itu horor-sasaran tidak saya-menyukainya."
+        }
+      ],
+      "notes": [
+        "**Szeretem dan szeretek dalam satu dialog.** Perhatikan baris kedua dan keenam. *Szeretem őket* memakai bentuk tertentu karena sasarannya *őket* — makanannya sudah jelas yang mana. *Szeretek focizni* memakai bentuk tak tentu karena sasarannya bukan benda melainkan **kegiatan**. Ini penerapan langsung aturan unit 11, dan tempat paling sering pemula tersandung.",
+        "**Milyen filmeket szeretsz? juga bentuk tak tentu**, walaupun ada kata *filmeket* yang berjamak dan bersasaran. Pemicunya adalah *milyen* — ia menanyakan jenis, bukan menunjuk film tertentu. Bandingkan dengan *A filmeket szeretem* yang tertentu karena ada *a*.",
+        "**Bentuk jamak bersasaran menumpuk dua akhiran.** *film* → *filmek* (jamak) → *filmeket* (jamak + sasaran). Urutannya selalu begitu: jamak dulu, sasaran belakangan. Aturan ini berlaku untuk seluruh bahasa Hungaria, dan tidak pernah dibalik.",
+        "**A gulyás a kedvencem** menyusun dua kata benda berhadapan tanpa kata kerja, sesuai aturan unit 1. Harfiahnya \"si gulyás si favoritku\". Kata *kedvenc* juga bisa berdiri sebagai kata sifat: *a kedvenc ételem* (makanan favorit saya).",
+        "**Imád dan utál adalah ujung tangganya.** *Imádom* berarti \"saya suka sekali\" dan dipakai sehari-hari tanpa kesan berlebihan, sementara *utálom* memang sekeras \"benci\". Untuk rasa yang lebih halus: *nem nagyon szeretem* (kurang suka)."
+      ],
+      "grammars": [
+        {
+          "title": "Dua susunan untuk \"suka\"",
+          "body": [
+            "Kata kerjanya sama, rangkaian akhirannya berbeda — dan yang memutuskan adalah bentuk sasarannya."
+          ],
+          "table": {
+            "head": [
+              "Yang disukai",
+              "Rangkaian",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "benda tertentu",
+                "**tertentu**",
+                "*Szeretem a gulyást.*",
+                "Saya suka gulyás."
+              ],
+              [
+                "benda jamak tertentu",
+                "**tertentu**",
+                "*Szeretem a filmeket.*",
+                "Saya suka film-filmnya."
+              ],
+              [
+                "*őt / őket*",
+                "**tertentu**",
+                "*Szeretem őket.*",
+                "Saya suka mereka."
+              ],
+              [
+                "kegiatan (bentuk dasar)",
+                "tak tentu",
+                "*Szeretek főzni.*",
+                "Saya suka memasak."
+              ],
+              [
+                "jenis, ditanyakan",
+                "tak tentu",
+                "*Milyen zenét szeretsz?*",
+                "Kamu suka musik apa?"
+              ],
+              [
+                "benda tanpa kata sandang",
+                "tak tentu",
+                "*Szeretek gulyást enni.*",
+                "Saya suka makan gulyás."
+              ]
+            ]
+          },
+          "after": [
+            "**Cara memeriksa yang paling cepat:** kalau sesudah *szeret* ada kata berakhiran *-ni*, hampir pasti bentuk tak tentu. Kalau ada *a/az*, hampir pasti bentuk tertentu.",
+            "*Szeret* juga berarti \"mencintai\" untuk orang: *Szeretlek* (unit 11) memakai bentuk khusus *-lak/-lek*, dan *Szeretem Annát* memakai bentuk tertentu karena nama diri."
+          ]
+        },
+        {
+          "title": "Jamak yang sekaligus bersasaran",
+          "body": [
+            "Dua akhiran ditumpuk, selalu dalam urutan yang sama."
+          ],
+          "table": {
+            "head": [
+              "Dasar",
+              "Jamak",
+              "Jamak + sasaran",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "*könyv*",
+                "könyvek",
+                "**könyveket**",
+                "buku-buku (sasaran)"
+              ],
+              [
+                "*film*",
+                "filmek",
+                "**filmeket**",
+                "film-film"
+              ],
+              [
+                "*alma*",
+                "almák",
+                "**almákat**",
+                "apel-apel"
+              ],
+              [
+                "*ház*",
+                "házak",
+                "**házakat**",
+                "rumah-rumah"
+              ],
+              [
+                "*gyerek*",
+                "gyerekek",
+                "**gyerekeket**",
+                "anak-anak"
+              ],
+              [
+                "*sör*",
+                "sörök",
+                "**söröket**",
+                "bir-bir"
+              ],
+              [
+                "*étel*",
+                "ételek",
+                "**ételeket**",
+                "makanan-makanan"
+              ]
+            ]
+          },
+          "after": [
+            "Vokal sambungnya selalu *-a-* atau *-e-*, mengikuti keselarasan vokal — bukan *-o-* seperti pada bentuk tunggal. Jadi *ház* → *házat* (tunggal) tetapi *házak* → *házakat* (jamak).",
+            "Ingat lagi aturan unit 3: **sesudah angka, jangan pakai jamak**. *Két könyvet kérek*, bukan *két könyveket*."
+          ]
+        },
+        {
+          "title": "Tangga suka dan tidak suka",
+          "body": [
+            "Lima tingkat yang menutup hampir semua yang perlu kamu katakan."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Cara baca",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "*Imádom.*",
+                "I-ma-dom",
+                "Saya suka sekali."
+              ],
+              [
+                "*Nagyon szeretem.*",
+                "NÅ-dyon SÈ-rè-tèm",
+                "Saya sangat suka."
+              ],
+              [
+                "*Szeretem.*",
+                "SÈ-rè-tèm",
+                "Saya suka."
+              ],
+              [
+                "*Nem nagyon szeretem.*",
+                "nèm NÅ-dyon SÈ-rè-tèm",
+                "Saya kurang suka."
+              ],
+              [
+                "*Nem szeretem.*",
+                "nèm SÈ-rè-tèm",
+                "Saya tidak suka."
+              ],
+              [
+                "*Utálom.*",
+                "U-ta-lom",
+                "Saya benci."
+              ]
+            ]
+          },
+          "after": [
+            "Ada satu susunan lain yang sangat Hungaria: *Jobban szeretem a teát, mint a kávét* = \"Saya lebih suka teh daripada kopi\". Ia memakai *jobban* dari unit 16, dan menutup seluruh urusan memilih.",
+            "Untuk menanyakan pendapat: *Ízlik?* (enak? — khusus makanan) dan *Tetszik?* (suka? — untuk apa pun). Keduanya susunan yang membalik pelakunya, jadi jawabannya *Ízlik* atau *Tetszik*, bukan *Ízlem*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Hobi dan waktu luang",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia",
+            "Bentuk dasar"
+          ],
+          "rows": [
+            [
+              "olvas",
+              "OL-våsy",
+              "membaca",
+              "olvasni"
+            ],
+            [
+              "zenét hallgat",
+              "ZÈ-nét HÅLL-gåt",
+              "mendengarkan musik",
+              "zenét hallgatni"
+            ],
+            [
+              "filmet néz",
+              "FIL-mèt néz",
+              "menonton film",
+              "filmet nézni"
+            ],
+            [
+              "focizik",
+              "FO-tsi-zik",
+              "main sepak bola",
+              "focizni"
+            ],
+            [
+              "úszik",
+              "U-sik",
+              "berenang",
+              "úszni"
+            ],
+            [
+              "fut",
+              "fut",
+              "berlari",
+              "futni"
+            ],
+            [
+              "kirándul",
+              "KI-ran-dul",
+              "jalan-jalan ke alam",
+              "kirándulni"
+            ],
+            [
+              "táncol",
+              "TAN-tsol",
+              "menari",
+              "táncolni"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa *zenét hallgat* dan *filmet néz* sudah membawa sasarannya sendiri. Kalau kamu memakainya sesudah *szeret*, sasarannya tetap tinggal di dalam: *Szeretek zenét hallgatni*. Susunan bertingkat semacam ini yang membuat kalimatmu mulai terdengar seperti kalimat orang dewasa, bukan daftar kata."
+        }
+      ]
+    },
+    {
+      "title": "Makanan Hungaria yang wajib dicoba",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Apa itu"
+          ],
+          "rows": [
+            [
+              "*gulyás*",
+              "GU-yasy",
+              "sup daging sapi berpaprika — di Hungaria ia **sup**, bukan semur"
+            ],
+            [
+              "*pörkölt*",
+              "PÖR-költ",
+              "semur daging kental berpaprika; inilah yang di luar negeri disebut \"goulash\""
+            ],
+            [
+              "*halászlé*",
+              "HÅ-las-lé",
+              "sup ikan merah pedas dari Danube dan Tisza"
+            ],
+            [
+              "*töltött káposzta*",
+              "TÖL-tött KA-pos-tå",
+              "kubis isi daging, hidangan Natal"
+            ],
+            [
+              "*lecsó*",
+              "LÈ-co",
+              "tumis paprika, tomat, dan bawang — masakan musim panas"
+            ],
+            [
+              "*paprikás csirke*",
+              "PÅP-ri-kasy CIR-kè",
+              "ayam berkuah paprika dan krim asam"
+            ],
+            [
+              "*lángos*",
+              "LAN-gosy",
+              "adonan goreng bertabur krim asam dan keju"
+            ],
+            [
+              "*túró rudi*",
+              "TU-ro RU-di",
+              "batang keju dadih berlapis coklat — camilan nasional"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Satu kalimat yang akan membuat siapa pun senang: *Nagyon finom volt, köszönöm!* — \"Enak sekali, terima kasih!\". Dan satu lagi yang jujur dan tetap sopan kalau ternyata tidak cocok di lidahmu: *Érdekes íze van* — \"Rasanya menarik\"."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "szeret",
+      "baca": "SÈ-rèt",
+      "id": "suka; mencintai"
+    },
+    {
+      "hu": "imád",
+      "baca": "I-mad",
+      "id": "suka sekali"
+    },
+    {
+      "hu": "utál",
+      "baca": "U-tal",
+      "id": "benci"
+    },
+    {
+      "hu": "kedvenc",
+      "baca": "KÈD-vènts",
+      "id": "favorit"
+    },
+    {
+      "hu": "szabadidő",
+      "baca": "SÅ-båd-i-dö",
+      "id": "waktu luang"
+    },
+    {
+      "hu": "zene",
+      "baca": "ZÈ-nè",
+      "id": "musik"
+    },
+    {
+      "hu": "hallgat",
+      "baca": "HÅLL-gåt",
+      "id": "mendengarkan"
+    },
+    {
+      "hu": "foci",
+      "baca": "FO-tsi",
+      "id": "sepak bola"
+    },
+    {
+      "hu": "úszik",
+      "baca": "U-sik",
+      "id": "berenang"
+    },
+    {
+      "hu": "kirándul",
+      "baca": "KI-ran-dul",
+      "id": "jalan-jalan ke alam"
+    },
+    {
+      "hu": "táncol",
+      "baca": "TAN-tsol",
+      "id": "menari"
+    },
+    {
+      "hu": "énekel",
+      "baca": "É-nè-kèl",
+      "id": "menyanyi"
+    },
+    {
+      "hu": "rajzol",
+      "baca": "RÅY-zol",
+      "id": "menggambar"
+    },
+    {
+      "hu": "utazik",
+      "baca": "U-tå-zik",
+      "id": "bepergian"
+    },
+    {
+      "hu": "unalmas",
+      "baca": "U-nål-måsy",
+      "id": "membosankan"
+    },
+    {
+      "hu": "érdekes",
+      "baca": "ÉR-dè-kèsy",
+      "id": "menarik"
+    },
+    {
+      "hu": "vígjáték",
+      "baca": "VIG-ya-ték",
+      "id": "film komedi"
+    },
+    {
+      "hu": "káposzta",
+      "baca": "KA-pos-tå",
+      "id": "kubis"
+    },
+    {
+      "hu": "íz",
+      "baca": "iz",
+      "id": "rasa"
+    },
+    {
+      "hu": "ízlik",
+      "baca": "IZ-lik",
+      "id": "terasa enak"
+    },
+    {
+      "hu": "tetszik",
+      "baca": "TÈT-sik",
+      "id": "disukai; berkenan"
+    },
+    {
+      "hu": "csak",
+      "baca": "cåk",
+      "id": "hanya"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih bentuk yang tepat dan tulis kalimat lengkapnya.",
+      "items": [
+        "____ a gulyást. (szeretek atau szeretem)",
+        "____ főzni. (szeretek atau szeretem)",
+        "____ a filmeket. (szeretek atau szeretem)",
+        "____ zenét hallgatni. (szeretek atau szeretem)",
+        "Nem ____ a horrort. (szeretek atau szeretem)",
+        "____ Annát. (szeretek atau szeretem)"
+      ]
+    },
+    {
+      "prompt": "Tulis bentuk jamak yang sekaligus bersasaran.",
+      "items": [
+        "könyv",
+        "film",
+        "alma",
+        "ház",
+        "sör",
+        "gyerek"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Hungaria.",
+      "items": [
+        "Kamu suka makanan Hungaria?",
+        "Gulyás favorit saya.",
+        "Saya suka main bola.",
+        "Saya benci sepak bola.",
+        "Film seperti apa yang kamu suka?",
+        "Saya lebih suka teh daripada kopi."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 15. Terjemahkan ke bahasa Hungaria tanpa melihat unitnya.",
+      "items": [
+        "Kita beli apa?",
+        "Saya bayar pakai kartu.",
+        "Besok kamu ke pasar sama siapa?",
+        "Sama kamu, kalau kamu sempat.",
+        "Kamu bawa daftarnya?"
+      ]
+    }
+  ],
+  "answers": [
+    "Szeretem — Szeretek — Szeretem — Szeretek — szeretem — Szeretem",
+    "könyveket — filmeket — almákat — házakat — söröket — gyerekeket",
+    "Szereted a magyar ételeket? — A gulyás a kedvencem. — Szeretek focizni. — Utálom a focit. — Milyen filmeket szeretsz? — Jobban szeretem a teát, mint a kávét.",
+    "Mit veszünk? — Kártyával fizetek. — Kivel jössz holnap a piacra? — Veled, ha ráérsz. — Van nálad lista?"
+  ]
+}

@@ -1,0 +1,621 @@
+{
+  "title": "Angka, umur, dan alamat",
+  "title_target": "Hány éves vagy?",
+  "goal": "Menghitung dari nol sampai jutaan, menyebut umur, nomor telepon, dan alamat — sambil menikmati satu aturan yang sama persis dengan bahasa Indonesia: sesudah angka, kata benda tetap tunggal.",
+  "bekal": [
+    "menyusun angka apa pun sampai seribu tanpa menghafal satu per satu",
+    "menjawab *Hány éves vagy?* dan menanyakannya balik",
+    "menyebut bilangan tingkat untuk lantai, tanggal, dan urutan"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Az iskola irodájában",
+      "intro": "Budi mendaftar di kantor sekolah bahasa. Sekretarisnya mengisi formulir sambil bertanya.",
+      "lines": [
+        {
+          "speaker": "Titkárnő:",
+          "text": "Jó napot kívánok! Mi a neve?",
+          "id": "Selamat siang! Siapa nama Anda?",
+          "literal": "baik hari saya-doakan! apa itu nama-nya?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jó napot! Budi Santoso vagyok.",
+          "id": "Selamat siang! Saya Budi Santoso.",
+          "literal": "baik hari! Budi Santoso saya-adalah."
+        },
+        {
+          "speaker": "Titkárnő:",
+          "text": "Hány éves ön?",
+          "id": "Umur Anda berapa?",
+          "literal": "berapa bertahun Anda?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Huszonnégy éves vagyok.",
+          "id": "Saya dua puluh empat tahun.",
+          "literal": "dua-puluh-empat bertahun saya-adalah."
+        },
+        {
+          "speaker": "Titkárnő:",
+          "text": "És mi a telefonszáma?",
+          "id": "Dan nomor telepon Anda?",
+          "literal": "dan apa itu telepon-nomor-nya?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nulla-hat, harminc, hét-hat-öt, negyven-hatvan.",
+          "id": "Nol-enam, tiga puluh, tujuh-enam-lima, empat puluh-enam puluh.",
+          "literal": "nol-enam, tiga-puluh, tujuh-enam-lima, empat-puluh-enam-puluh."
+        },
+        {
+          "speaker": "Titkárnő:",
+          "text": "Köszönöm. És a címe?",
+          "id": "Terima kasih. Dan alamat Anda?",
+          "literal": "saya-berterima-kasih. dan itu alamat-nya?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Budapest, Rákóczi út huszonhét, második emelet, hat.",
+          "id": "Budapest, Jalan Rákóczi dua puluh tujuh, lantai dua, nomor enam.",
+          "literal": "Budapest, Rákóczi jalan dua-puluh-tujuh, kedua lantai, enam."
+        },
+        {
+          "speaker": "Titkárnő:",
+          "text": "Rendben. A csoportjában tizenkét diák van.",
+          "id": "Baik. Di kelompok Anda ada dua belas pelajar.",
+          "literal": "beres-di. itu kelompok-nya-di-dalam dua-belas pelajar ada."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tizenkettő? Az jó. És hány tanár?",
+          "id": "Dua belas? Bagus. Dan berapa gurunya?",
+          "literal": "dua-belas? itu bagus. dan berapa guru?"
+        },
+        {
+          "speaker": "Titkárnő:",
+          "text": "Két tanár. A tanfolyam nyolc hét.",
+          "id": "Dua guru. Kursusnya delapan minggu.",
+          "literal": "dua guru. itu kursus delapan minggu."
+        }
+      ],
+      "notes": [
+        "**Két atau kettő, sekali lagi.** *Kettő* dipakai ketika angkanya berdiri sendiri — menjawab pertanyaan, membaca nomor telepon, menyebut nomor rumah. *Két* dipakai ketika ada kata benda di belakangnya: *két tanár*, *két hét*. Perhatikan dialognya: Budi menjawab *Tizenkettő?* (berdiri sendiri) sesudah sekretarisnya berkata *tizenkét diák* (ada kata bendanya).",
+        "**Sesudah angka, kata benda tetap tunggal — dan kata kerjanya juga.** *Tizenkét diák **van***, bukan *vannak*. Bahasa Indonesia melakukan hal yang persis sama (\"ada dua belas pelajar\"), jadi jangan biarkan kebiasaan bahasa Inggris merusaknya.",
+        "**Hány untuk yang bisa dihitung, mennyi untuk jumlah.** *Hány diák?* (berapa pelajar), *Mennyi idő?* (berapa lama), *Mennyi pénz?* (berapa uang). Salah memilih tidak fatal, tapi *hány* di depan benda tak terhitung langsung terdengar aneh.",
+        "**Hét mengerjakan dua pekerjaan.** Ia berarti \"tujuh\" **dan** \"minggu\". Keadaan kalimatnya yang memisahkan: *hét diák* (tujuh pelajar) melawan *nyolc hét* (delapan minggu). Kebetulan ini tidak akan pernah benar-benar membingungkan, tapi selalu membuat pemula tersenyum saat pertama kali menyadarinya.",
+        "**Angka ditulis serangkai, tanpa \"dan\".** *huszonnégy* (dua puluh empat), *harminchét* (tiga puluh tujuh), *százhúsz* (seratus dua puluh). Bahasa Hungaria menyambungnya jadi satu kata sampai angka dua ribu. Di atas itu baru ada tanda hubung."
+      ],
+      "grammars": [
+        {
+          "title": "Nol sampai dua puluh",
+          "body": [
+            "Sebelas angka pertama dihafal; sisanya tinggal disusun."
+          ],
+          "table": {
+            "head": [
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": [
+              [
+                "0 *nulla* (NUL-lå)",
+                "1 *egy* (èdy)",
+                "2 *kettő / két* (KÈT-tö)",
+                "3 *három* (HA-rom)"
+              ],
+              [
+                "4 *négy* (nédy)",
+                "5 *öt* (öt)",
+                "6 *hat* (håt)",
+                "7 *hét* (hét)"
+              ],
+              [
+                "8 *nyolc* (nyolts)",
+                "9 *kilenc* (KI-lènts)",
+                "10 *tíz* (tiz)",
+                "11 *tizenegy* (TI-zèn-èdy)"
+              ],
+              [
+                "12 *tizenkettő*",
+                "13 *tizenhárom*",
+                "14 *tizennégy*",
+                "15 *tizenöt*"
+              ],
+              [
+                "16 *tizenhat*",
+                "17 *tizenhét*",
+                "18 *tizennyolc*",
+                "19 *tizenkilenc*"
+              ],
+              [
+                "20 *húsz* (hus)",
+                "21 *huszonegy*",
+                "22 *huszonkettő*",
+                "29 *huszonkilenc*"
+              ]
+            ]
+          },
+          "after": [
+            "Angka belasan dibentuk dari **tizen-** + satuan, dan angka dua puluhan dari **huszon-** + satuan. Perhatikan bahwa *tíz* memendek jadi *tizen-* dan *húsz* berubah jadi *huszon-* — dua perubahan ini satu-satunya yang perlu dihafal di seluruh sistem angka.",
+            "Mulai tiga puluh, polanya lurus tanpa kejutan: puluhan ditulis utuh lalu satuannya menempel."
+          ]
+        },
+        {
+          "title": "Puluhan, ratusan, ribuan",
+          "body": [
+            "Sesudah dua puluh, bahasa Hungaria berhenti berulah."
+          ],
+          "table": {
+            "head": [
+              "Puluhan",
+              "Cara baca",
+              "Contoh susunan",
+              "Artinya"
+            ],
+            "rows": [
+              [
+                "30 *harminc*",
+                "HÅR-mints",
+                "*harminchét*",
+                "37"
+              ],
+              [
+                "40 *negyven*",
+                "NÈDY-vèn",
+                "*negyvenkettő*",
+                "42"
+              ],
+              [
+                "50 *ötven*",
+                "ÖT-vèn",
+                "*ötvenöt*",
+                "55"
+              ],
+              [
+                "60 *hatvan*",
+                "HÅT-vån",
+                "*hatvanhárom*",
+                "63"
+              ],
+              [
+                "70 *hetven*",
+                "HÈT-vèn",
+                "*hetvenkilenc*",
+                "79"
+              ],
+              [
+                "80 *nyolcvan*",
+                "NYOLTS-vån",
+                "*nyolcvanegy*",
+                "81"
+              ],
+              [
+                "90 *kilencven*",
+                "KI-lènts-vèn",
+                "*kilencvennyolc*",
+                "98"
+              ],
+              [
+                "100 *száz*",
+                "saz",
+                "*százhúsz*",
+                "120"
+              ],
+              [
+                "1000 *ezer*",
+                "È-zèr",
+                "*ezerötszáz*",
+                "1500"
+              ],
+              [
+                "1.000.000 *millió*",
+                "MIL-li-o",
+                "*kétmillió*",
+                "2.000.000"
+              ]
+            ]
+          },
+          "after": [
+            "Ratusan dan ribuan memakai *két-*, bukan *kettő-*: *kétszáz* (200), *kétezer* (2000). Sekali lagi aturannya sama — ada sesuatu di belakangnya, jadi bentuknya *két*.",
+            "Untuk tahun, orang Hungaria membacanya utuh sebagai satu bilangan: *ezerkilencszázkilencvennyolc* (1998), *kétezer-huszonhat* (2026). Panjang, tapi tidak ada jalan pintas — dan ini salah satu latihan mengucap terbaik yang bisa kamu dapat."
+          ]
+        },
+        {
+          "title": "Bilangan tingkat",
+          "body": [
+            "Dipakai untuk lantai, tanggal, urutan, dan nomor unit di modul ini."
+          ],
+          "table": {
+            "head": [
+              "Angka",
+              "Bilangan tingkat",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "1.",
+                "**első**",
+                "ÈL-sö",
+                "pertama"
+              ],
+              [
+                "2.",
+                "**második**",
+                "MA-syo-dik",
+                "kedua"
+              ],
+              [
+                "3.",
+                "**harmadik**",
+                "HÅR-må-dik",
+                "ketiga"
+              ],
+              [
+                "4.",
+                "**negyedik**",
+                "NÈ-dyè-dik",
+                "keempat"
+              ],
+              [
+                "5.",
+                "**ötödik**",
+                "Ö-tö-dik",
+                "kelima"
+              ],
+              [
+                "6.",
+                "**hatodik**",
+                "HÅ-to-dik",
+                "keenam"
+              ],
+              [
+                "7.",
+                "**hetedik**",
+                "HÈ-tè-dik",
+                "ketujuh"
+              ],
+              [
+                "8.",
+                "**nyolcadik**",
+                "NYOL-tså-dik",
+                "kedelapan"
+              ],
+              [
+                "9.",
+                "**kilencedik**",
+                "KI-lèn-tsè-dik",
+                "kesembilan"
+              ],
+              [
+                "10.",
+                "**tizedik**",
+                "TI-zè-dik",
+                "kesepuluh"
+              ],
+              [
+                "20.",
+                "**huszadik**",
+                "HU-så-dik",
+                "kedua puluh"
+              ],
+              [
+                "100.",
+                "**századik**",
+                "SA-zå-dik",
+                "keseratus"
+              ]
+            ]
+          },
+          "after": [
+            "Akhirannya *-dik*, dengan vokal sambung yang mengikuti keselarasan vokal. Dua yang membangkang: *első* dan *második* — dan keduanya memang yang paling sering dipakai, jadi hafalkan langsung.",
+            "Dalam tulisan, bilangan tingkat ditandai **titik** sesudah angkanya: *2. emelet* dibaca *második emelet*. Titik itu bukan tanda akhir kalimat; ia bagian dari angkanya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Umur, nomor, tanggal",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Hány éves vagy?",
+              "hany É-vèsy vådy",
+              "Umurmu berapa?"
+            ],
+            [
+              "Hány éves ön?",
+              "hany É-vèsy ön",
+              "Umur Anda berapa?"
+            ],
+            [
+              "Huszonöt éves vagyok.",
+              "HU-son-öt É-vèsy VÅ-dyok",
+              "Saya dua puluh lima tahun."
+            ],
+            [
+              "Mi a telefonszámod?",
+              "mi å TÈ-lè-fon-sa-mod",
+              "Nomor teleponmu berapa?"
+            ],
+            [
+              "Mi a címed?",
+              "mi å TSI-mèd",
+              "Alamatmu di mana?"
+            ],
+            [
+              "Hányan vagytok?",
+              "HA-nyån VÅDY-tok",
+              "Kalian berapa orang?"
+            ],
+            [
+              "Négyen vagyunk.",
+              "NÉ-dyèn VÅ-dyunk",
+              "Kami berempat."
+            ],
+            [
+              "Hányadik emelet?",
+              "HA-nyå-dik È-mè-lèt",
+              "Lantai berapa?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Hányan vagytok?* memakai bentuk khusus untuk menghitung orang: *ketten* (berdua), *hárman* (bertiga), *négyen* (berempat), *öten* (berlima). Bentuk ini tidak punya padanan langsung dalam bahasa Indonesia selain \"ber-\", dan kebetulan padanannya cukup rapi."
+        }
+      ]
+    },
+    {
+      "title": "Alamat ala Hungaria",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Alamat Hungaria ditulis dari yang paling besar ke yang paling kecil, dan tiap bagiannya punya kata sendiri yang tidak boleh ditukar."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bagian",
+            "Magyar",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "kota",
+              "*város*",
+              "Budapest"
+            ],
+            [
+              "distrik (khusus Budapest)",
+              "*kerület*",
+              "VII. kerület"
+            ],
+            [
+              "jalan besar",
+              "*út*",
+              "Rákóczi út"
+            ],
+            [
+              "jalan biasa",
+              "*utca* (disingkat *u.*)",
+              "Dob utca"
+            ],
+            [
+              "lapangan/alun-alun",
+              "*tér*",
+              "Deák tér"
+            ],
+            [
+              "nomor rumah",
+              "—",
+              "27."
+            ],
+            [
+              "lantai",
+              "*emelet* (disingkat *em.*)",
+              "2. em."
+            ],
+            [
+              "nomor pintu",
+              "*ajtó*",
+              "6."
+            ],
+            [
+              "kode pos",
+              "*irányítószám*",
+              "1074"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Ditulis lengkap, alamat Budi menjadi: **1074 Budapest, Rákóczi út 27. 2. em. 6.** Kode pos Budapest selalu empat angka yang dimulai dengan 1, dan dua angka di tengahnya menyebutkan distriknya — 1074 berarti distrik tujuh. Trik kecil ini dipakai semua orang Hungaria untuk menebak letak sebuah alamat."
+        },
+        {
+          "type": "kotak",
+          "title": "Dua kalimat yang wajib hafal saat mengisi formulir",
+          "items": [
+            "*Hogy írjuk?* — \"Bagaimana menulisnya?\" Dipakai untuk meminta ejaan, dan sangat berguna karena namamu hampir pasti akan salah ditulis.",
+            "*Betűzném.* — \"Saya eja, ya.\" Lalu sebutkan huruf demi huruf. Nama Indonesia dengan huruf *y* dan *u* yang berdempet hampir selalu perlu perlakuan ini."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "hány",
+      "baca": "hany",
+      "id": "berapa (yang bisa dihitung)"
+    },
+    {
+      "hu": "mennyi",
+      "baca": "MÈNY-nyi",
+      "id": "berapa (jumlah)"
+    },
+    {
+      "hu": "szám",
+      "baca": "sam",
+      "id": "angka; nomor"
+    },
+    {
+      "hu": "telefonszám",
+      "baca": "TÈ-lè-fon-sam",
+      "id": "nomor telepon"
+    },
+    {
+      "hu": "név",
+      "baca": "név",
+      "id": "nama"
+    },
+    {
+      "hu": "cím",
+      "baca": "tsim",
+      "id": "alamat; judul"
+    },
+    {
+      "hu": "utca",
+      "baca": "UT-tså",
+      "id": "jalan"
+    },
+    {
+      "hu": "út",
+      "baca": "ut",
+      "id": "jalan besar; perjalanan"
+    },
+    {
+      "hu": "tér",
+      "baca": "tér",
+      "id": "lapangan; alun-alun"
+    },
+    {
+      "hu": "csoport",
+      "baca": "CO-port",
+      "id": "kelompok"
+    },
+    {
+      "hu": "tanfolyam",
+      "baca": "TÅN-fo-yåm",
+      "id": "kursus"
+    },
+    {
+      "hu": "hét",
+      "baca": "hét",
+      "id": "tujuh; minggu"
+    },
+    {
+      "hu": "hónap",
+      "baca": "HO-nåp",
+      "id": "bulan"
+    },
+    {
+      "hu": "év",
+      "baca": "év",
+      "id": "tahun"
+    },
+    {
+      "hu": "nap",
+      "baca": "nåp",
+      "id": "hari; matahari"
+    },
+    {
+      "hu": "rendben",
+      "baca": "RÈND-bèn",
+      "id": "baik; oke"
+    },
+    {
+      "hu": "titkárnő",
+      "baca": "TIT-kar-nö",
+      "id": "sekretaris (perempuan)"
+    },
+    {
+      "hu": "első",
+      "baca": "ÈL-sö",
+      "id": "pertama"
+    },
+    {
+      "hu": "második",
+      "baca": "MA-syo-dik",
+      "id": "kedua"
+    },
+    {
+      "hu": "sok",
+      "baca": "syok",
+      "id": "banyak"
+    },
+    {
+      "hu": "kevés",
+      "baca": "KÈ-vésy",
+      "id": "sedikit"
+    },
+    {
+      "hu": "összesen",
+      "baca": "ÖSS-sè-syèn",
+      "id": "seluruhnya"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis angkanya dengan huruf.",
+      "items": [
+        "14",
+        "23",
+        "37",
+        "58",
+        "91",
+        "120"
+      ]
+    },
+    {
+      "prompt": "Isi dengan két atau kettő.",
+      "items": [
+        "____ tanár van a csoportban.",
+        "Hány diák? ____.",
+        "A tanfolyam ____ hét.",
+        "Hányadik emelet? A ____ .",
+        "____ testvérem van.",
+        "Hány óra? ____ ."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Hungaria.",
+      "items": [
+        "Umurmu berapa?",
+        "Saya dua puluh empat tahun.",
+        "Nomor teleponmu berapa?",
+        "Di kelompok ada dua belas pelajar.",
+        "Lantai berapa?",
+        "Kursusnya delapan minggu."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 4. Terjemahkan ke bahasa Hungaria tanpa melihat unitnya.",
+      "items": [
+        "Dapurnya di mana?",
+        "Buku-bukunya ada di rak.",
+        "Tidak ada balkon.",
+        "Ada toko di sini?",
+        "Kamar mandinya di sebelah dapur."
+      ]
+    }
+  ],
+  "answers": [
+    "tizennégy — huszonhárom — harminchét — ötvennyolc — kilencvenegy — százhúsz",
+    "Két — Kettő — két — második — Két — Kettő",
+    "Hány éves vagy? — Huszonnégy éves vagyok. — Mi a telefonszámod? — A csoportban tizenkét diák van. — Hányadik emelet? — A tanfolyam nyolc hét.",
+    "Hol van a konyha? — A könyvek a polcon vannak. — Nincs erkély. — Van itt bolt? — A fürdőszoba a konyha mellett van."
+  ]
+}

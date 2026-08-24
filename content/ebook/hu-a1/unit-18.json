@@ -1,0 +1,539 @@
+{
+  "title": "Kemarin kamu ngapain? — masa lampau",
+  "title_target": "Mit csináltál tegnap?",
+  "goal": "Menceritakan apa yang sudah terjadi dengan penanda masa lampau *-t*, lengkap dengan dua rangkaian akhiran yang sudah kamu kenal dari unit 10 dan 11.",
+  "bekal": [
+    "membentuk masa lampau dari kata kerja beraturan mana pun",
+    "memilih antara rangkaian tak tentu dan tertentu di masa lampau",
+    "memakai *volt* dan *nem volt* untuk keadaan yang sudah lewat"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Mit csináltál tegnap?",
+      "intro": "Senin pagi di ruang kelas, sebelum pelajaran dimulai.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Szia! Mit csináltál tegnap?",
+          "id": "Halo! Kemarin kamu ngapain?",
+          "literal": "halo! apa-sasaran kamu-melakukan-lampau kemarin?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dolgoztam egész nap. És te?",
+          "id": "Saya kerja seharian. Dan kamu?",
+          "literal": "saya-bekerja-lampau seluruh hari. dan kamu?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Én nem dolgoztam. Otthon maradtam és olvastam.",
+          "id": "Saya tidak kerja. Saya di rumah saja dan membaca.",
+          "literal": "saya tidak saya-bekerja-lampau. rumah-di saya-tinggal-lampau dan saya-membaca-lampau."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mit olvastál?",
+          "id": "Kamu baca apa?",
+          "literal": "apa-sasaran kamu-membaca-lampau?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Egy magyar regényt. Nehéz volt, de tetszett.",
+          "id": "Sebuah novel Hungaria. Sulit, tapi saya suka.",
+          "literal": "sebuah Hungaria novel-sasaran. sulit ada-lampau, tapi ia-berkenan-lampau."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Este mit csináltatok?",
+          "id": "Malamnya kalian ngapain?",
+          "literal": "malam apa-sasaran kalian-melakukan-lampau?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Egy étteremben vacsoráztunk a barátaimmal.",
+          "id": "Kami makan malam di sebuah restoran bersama teman-teman saya.",
+          "literal": "sebuah restoran-di-dalam kami-makan-malam-lampau itu teman-jamak-ku-dengan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jó volt?",
+          "id": "Bagus?",
+          "literal": "bagus ada-lampau?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Nagyon. Halászlét rendeltünk, és sokat beszélgettünk.",
+          "id": "Bagus sekali. Kami pesan sup ikan, dan banyak mengobrol.",
+          "literal": "sangat. sup-ikan-sasaran kami-memesan-lampau, dan banyak-sasaran kami-mengobrol-lampau."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Én csak tévét néztem és korán pihentem.",
+          "id": "Saya cuma nonton TV dan istirahat lebih awal.",
+          "literal": "saya hanya TV-sasaran saya-menonton-lampau dan pagi-secara saya-istirahat-lampau."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Nem baj. Ma este együtt vacsorázunk!",
+          "id": "Tidak apa-apa. Malam ini kita makan malam bareng!",
+          "literal": "tidak masalah. hari-ini malam bersama kita-makan-malam!"
+        }
+      ],
+      "notes": [
+        "**Penanda masa lampau adalah -t, dan ia berdiri sebelum akhiran pelaku.** *csinál* → *csinál**t**am*, *dolgozik* → *dolgoz**t**am*, *olvas* → *olvas**t**am*. Setiap bentuk lampau bahasa Hungaria memuat huruf ini; kalau kamu tidak menemukannya, kalimatnya bukan masa lampau.",
+        "**Bentuk saya sama di kedua rangkaian.** *Olvastam egy könyvet* dan *Olvastam a könyvet* memakai bentuk yang persis sama. Ini penghematan kecil yang menyenangkan: di masa lampau, kamu cuma perlu memilih rangkaian untuk lima pelaku, bukan enam.",
+        "**Maradtam, tapi olvasott.** Ada dua pola: sebagian kata kerja menempelkan *-t* langsung, sebagian memerlukan vokal sambung *-ott / -ett / -ött*. Tabel di bawah memuat aturannya, dan aturannya bisa ditebak dari huruf terakhir kata dasarnya.",
+        "**Volt adalah masa lampau dari van — dan juga dari nincs.** *Nehéz volt* (sulit), *Jó volt?* (bagus?). Bentuk sangkalnya *nem volt*, bukan *nincs volt*: kata *nincs* hanya hidup di masa kini, dan begitu ceritanya bergeser ke masa lampau, ia lenyap sepenuhnya.",
+        "**Perhatikan bahwa volt wajib muncul walau di masa kini tidak ada.** Bandingkan *Nehéz* (sulit — masa kini, tanpa kata kerja) dengan *Nehéz volt* (sulit — masa lampau). Kotak kosong dari unit 1 hanya kosong di masa kini; di masa lampau ia terisi.",
+        "**Tetszett** memakai susunan yang membalik pelakunya: yang menyenangkan adalah bukunya, bukan Anna. Harfiahnya \"ia berkenan\". Bahasa Indonesia menyusunnya terbalik (\"saya suka\"), jadi bentuk ini perlu dihafal utuh: *Tetszett a film* = \"Saya suka filmnya\"."
+      ],
+      "grammars": [
+        {
+          "title": "Penanda -t: langsung atau dengan vokal sambung",
+          "body": [
+            "Huruf terakhir kata dasarnya yang menentukan."
+          ],
+          "table": {
+            "head": [
+              "Kata dasar berakhir",
+              "Bentuknya",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**j, l, ly, n, ny, r**",
+                "*-t* langsung",
+                "*tanul* → *tanult*; *beszél* → *beszélt*; *vár* → *várt*; *pihen* → *pihent*"
+              ],
+              [
+                "huruf mati lain",
+                "*-ott / -ett / -ött*",
+                "*olvas* → *olvasott*; *néz* → *nézett*; *főz* → *főzött*; *mond* → *mondott*"
+              ],
+              [
+                "**-ít**",
+                "*-ott / -ett*",
+                "*tanít* → *tanított*; *segít* → *segített*"
+              ]
+            ]
+          },
+          "after": [
+            "**Vokal sambung itu hanya muncul pada bentuk *ő*.** Bandingkan: *olvas**ott*** (dia membaca) tetapi *olvas**t**am*, *olvas**t**ál*, *olvas**t**unk*. Begitu ada akhiran pelaku, vokal sambungnya tidak diperlukan lagi.",
+            "**Beberapa kata yang membangkang, dan semuanya sering dipakai:** kata kerja dua suku kata berakhir *-ad / -ed* memakai *-t* langsung — *marad* → *maradt*, *szalad* → *szaladt* — sementara *hall* justru memakai vokal sambung: *hallott*. Jumlahnya sedikit; hafalkan saat kamu bertemu.",
+            "Kata kerja tak beraturan — *van, megy, jön, eszik, iszik, tesz, vesz* — punya bentuk lampaunya sendiri, dan itu isi unit 19."
+          ]
+        },
+        {
+          "title": "Akhiran pelaku di masa lampau",
+          "body": [
+            "Dua rangkaian, sama seperti di masa kini. Perhatikan baris pertama: bentuknya identik."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "Tak tentu",
+              "Tertentu",
+              "Contoh tertentu"
+            ],
+            "rows": [
+              [
+                "én",
+                "tanul**tam**",
+                "tanul**tam**",
+                "*Tanultam a leckét.*"
+              ],
+              [
+                "te",
+                "tanul**tál**",
+                "tanul**tad**",
+                "*Tanultad a leckét?*"
+              ],
+              [
+                "ő",
+                "tanul**t**",
+                "tanul**ta**",
+                "*Tanulta a leckét.*"
+              ],
+              [
+                "mi",
+                "tanul**tunk**",
+                "tanul**tuk**",
+                "*Tanultuk a leckét.*"
+              ],
+              [
+                "ti",
+                "tanul**tatok**",
+                "tanul**tátok**",
+                "*Tanultátok a leckét?*"
+              ],
+              [
+                "ők",
+                "tanul**tak**",
+                "tanul**ták**",
+                "*Tanulták a leckét.*"
+              ]
+            ]
+          },
+          "after": [
+            "Untuk kata kerja bervokal depan, vokal akhirannya menyesuaikan: *kér* → *kértem, kértél, kért, kértünk, kértetek, kértek* (tak tentu) dan *kértem, kérted, kérte, kértük, kértétek, kérték* (tertentu).",
+            "**Aturan memilih rangkaiannya sama persis dengan unit 11.** Sasaran ber-*a/az*, nama diri, kata tunjuk, akhiran milik, *őt/őket* → tertentu. Sisanya tak tentu. Tidak ada aturan baru yang perlu dihafal di sini — hanya bentuk barunya."
+          ]
+        },
+        {
+          "title": "Volt — masa lampau dari van",
+          "body": [
+            "Satu kata kerja, tapi ia yang paling sering kamu pakai di masa lampau."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "Bentuk",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "én",
+                "*voltam*",
+                "*Otthon voltam.*",
+                "Saya di rumah."
+              ],
+              [
+                "te",
+                "*voltál*",
+                "*Hol voltál?*",
+                "Kamu di mana?"
+              ],
+              [
+                "ő",
+                "*volt*",
+                "*Jó volt.*",
+                "Bagus."
+              ],
+              [
+                "mi",
+                "*voltunk*",
+                "*Moziban voltunk.*",
+                "Kami di bioskop."
+              ],
+              [
+                "ti",
+                "*voltatok*",
+                "*Ott voltatok?*",
+                "Kalian di sana?"
+              ],
+              [
+                "ők",
+                "*voltak*",
+                "*Itt voltak.*",
+                "Mereka di sini."
+              ]
+            ]
+          },
+          "after": [
+            "Bentuk sangkalnya *nem voltam*, *nem volt*, dan seterusnya. Kata *nincs* tidak punya bentuk lampau sama sekali: \"tidak ada\" di masa lampau selalu *nem volt*.",
+            "*Volt* juga dipakai untuk menyatakan pengalaman: *Voltál már Szegeden?* = \"Kamu pernah ke Szeged?\". Kata *már* (sudah) di situ yang mengubahnya menjadi pertanyaan pengalaman, dan jawabannya *Igen, voltam* atau *Nem, még nem*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Keterangan waktu lampau",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "tegnap",
+              "TÈG-nåp",
+              "kemarin"
+            ],
+            [
+              "tegnapelőtt",
+              "TÈG-nåp-è-lött",
+              "kemarin dulu"
+            ],
+            [
+              "tegnap este",
+              "TÈG-nåp ÈSY-tè",
+              "tadi malam"
+            ],
+            [
+              "ma reggel",
+              "må RÈG-gèl",
+              "tadi pagi"
+            ],
+            [
+              "a múlt héten",
+              "å mult HÉ-tèn",
+              "minggu lalu"
+            ],
+            [
+              "a múlt hónapban",
+              "å mult HO-nåp-bån",
+              "bulan lalu"
+            ],
+            [
+              "tavaly",
+              "TÅ-våy",
+              "tahun lalu"
+            ],
+            [
+              "régen",
+              "RÉ-gèn",
+              "dulu sekali"
+            ],
+            [
+              "azelőtt",
+              "ÅZ-è-lött",
+              "sebelum itu"
+            ],
+            [
+              "egy órája",
+              "èdy O-ra-yå",
+              "sejam yang lalu"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan *egy órája* dan *két napja*: bentuknya memakai akhiran milik, harfiahnya \"satu jamnya\", \"dua harinya\". Bandingkan dengan *egy óra múlva* (satu jam lagi) dari unit 9 — satu bentuk menoleh ke belakang, satu lagi menghadap ke depan."
+        }
+      ]
+    },
+    {
+      "title": "Menceritakan kemarin",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Mit csináltál tegnap?",
+              "mit CI-nal-tal TÈG-nåp",
+              "Kemarin kamu ngapain?"
+            ],
+            [
+              "Dolgoztam egész nap.",
+              "DOL-goz-tåm È-gés nåp",
+              "Saya kerja seharian."
+            ],
+            [
+              "Otthon maradtam.",
+              "OTT-hon MÅ-råd-tåm",
+              "Saya di rumah saja."
+            ],
+            [
+              "Hol voltál?",
+              "hol VOL-tal",
+              "Kamu di mana?"
+            ],
+            [
+              "Moziban voltam.",
+              "MO-zi-bån VOL-tåm",
+              "Saya di bioskop."
+            ],
+            [
+              "Jó volt?",
+              "yo volt",
+              "Bagus?"
+            ],
+            [
+              "Nagyon jó volt.",
+              "NÅ-dyon yo volt",
+              "Bagus sekali."
+            ],
+            [
+              "Sokat beszélgettünk.",
+              "SYO-kåt BÈ-sél-gèt-tünk",
+              "Kami banyak mengobrol."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Latihan tulis yang paling berguna di tingkat ini",
+          "items": [
+            "Tulis lima kalimat tentang harimu kemarin, memakai hanya kata kerja beraturan yang sudah kamu kenal. Lima kalimat, bukan lima paragraf.",
+            "Lalu ubah semuanya jadi cerita tentang temanmu — semua kata kerjanya berbentuk *ő*. Lalu ubah lagi jadi cerita tentang kalian berdua — semuanya *mi*.",
+            "Tiga putaran itu memasang seluruh tabel masa lampau tanpa kamu harus menatap tabelnya sekali pun."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "tegnap",
+      "baca": "TÈG-nåp",
+      "id": "kemarin"
+    },
+    {
+      "hu": "volt",
+      "baca": "volt",
+      "id": "adalah (lampau)"
+    },
+    {
+      "hu": "marad",
+      "baca": "MÅ-råd",
+      "id": "tinggal; tetap"
+    },
+    {
+      "hu": "rendel",
+      "baca": "RÈN-dèl",
+      "id": "memesan"
+    },
+    {
+      "hu": "beszélget",
+      "baca": "BÈ-sél-gèt",
+      "id": "mengobrol"
+    },
+    {
+      "hu": "tévé",
+      "baca": "TÉ-vé",
+      "id": "televisi"
+    },
+    {
+      "hu": "lecke",
+      "baca": "LÈTS-kè",
+      "id": "pelajaran; PR"
+    },
+    {
+      "hu": "együtt",
+      "baca": "È-dyütt",
+      "id": "bersama"
+    },
+    {
+      "hu": "fáradt",
+      "baca": "FA-rådt",
+      "id": "capek"
+    },
+    {
+      "hu": "múlt",
+      "baca": "mult",
+      "id": "lalu; masa lalu"
+    },
+    {
+      "hu": "tavaly",
+      "baca": "TÅ-våy",
+      "id": "tahun lalu"
+    },
+    {
+      "hu": "régen",
+      "baca": "RÉ-gèn",
+      "id": "dulu sekali"
+    },
+    {
+      "hu": "már",
+      "baca": "mar",
+      "id": "sudah"
+    },
+    {
+      "hu": "még",
+      "baca": "még",
+      "id": "masih; lagi"
+    },
+    {
+      "hu": "tetszik",
+      "baca": "TÈT-sik",
+      "id": "disukai"
+    },
+    {
+      "hu": "halászlé",
+      "baca": "HÅ-las-lé",
+      "id": "sup ikan"
+    },
+    {
+      "hu": "sokat",
+      "baca": "SYO-kåt",
+      "id": "banyak (perbuatan)"
+    },
+    {
+      "hu": "keveset",
+      "baca": "KÈ-vè-syèt",
+      "id": "sedikit (perbuatan)"
+    },
+    {
+      "hu": "csak",
+      "baca": "cåk",
+      "id": "hanya"
+    },
+    {
+      "hu": "szalad",
+      "baca": "SÅ-låd",
+      "id": "berlari"
+    },
+    {
+      "hu": "tanít",
+      "baca": "TÅ-nit",
+      "id": "mengajar"
+    },
+    {
+      "hu": "hall",
+      "baca": "håll",
+      "id": "mendengar"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis bentuk lampau untuk ő (tak tentu).",
+      "items": [
+        "tanul",
+        "olvas",
+        "néz",
+        "főz",
+        "dolgozik",
+        "marad"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk lampau yang tepat.",
+      "items": [
+        "Tegnap egész nap ____. (dolgozik — saya)",
+        "Mit ____ tegnap? (csinál — kamu)",
+        "Otthon ____ és ____. (marad, olvas — saya)",
+        "Egy étteremben ____. (vacsorázik — kami)",
+        "Hol ____? (van — kamu)",
+        "Nagyon jó ____. (van — dia)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Hungaria.",
+      "items": [
+        "Kemarin kamu ngapain?",
+        "Saya kerja seharian.",
+        "Saya di rumah saja dan membaca.",
+        "Kamu baca apa?",
+        "Kami banyak mengobrol.",
+        "Kamu pernah ke Budapest?"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 16. Terjemahkan ke bahasa Hungaria tanpa melihat unitnya.",
+      "items": [
+        "Orangnya bagaimana?",
+        "Lebih tua darimu?",
+        "Bukan, lebih muda.",
+        "Sahabat terbaik saya.",
+        "Dia bicara lebih baik daripada saya."
+      ]
+    }
+  ],
+  "answers": [
+    "tanult — olvasott — nézett — főzött — dolgozott — maradt",
+    "dolgoztam — csináltál — maradtam és olvastam — vacsoráztunk — voltál — volt",
+    "Mit csináltál tegnap? — Dolgoztam egész nap. — Otthon maradtam és olvastam. — Mit olvastál? — Sokat beszélgettünk. — Voltál már Budapesten?",
+    "Milyen ő? — Idősebb nálad? — Nem, fiatalabb. — A legjobb barátnőm. — Jobban beszél, mint én."
+  ]
+}

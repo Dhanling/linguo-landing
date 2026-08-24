@@ -1,0 +1,540 @@
+{
+  "title": "Kata depan yang menempel di ekor",
+  "title_target": "Hol van a szoba?",
+  "goal": "Menyebut letak benda dan ruangan dengan enam akhiran tempat, membedakan *van* dari *nincs*, dan mengenali kelompok kata yang justru **tidak** menempel.",
+  "bekal": [
+    "menjawab *hol*, *hová*, dan *honnan* dengan akhiran yang tepat",
+    "menyatakan ada dan tidak ada dengan *van*, *vannak*, *nincs*, *nincsenek*",
+    "memakai *mellett*, *alatt*, *előtt* dan kawan-kawannya sebagai kata terpisah"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Az új lakásban",
+      "intro": "Budi baru pindah ke apartemen kecil di distrik tujuh. Anna datang melihat-lihat.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Szia! Milyen szép lakás! Hol van a konyha?",
+          "id": "Halo! Apartemennya bagus sekali! Dapurnya di mana?",
+          "literal": "halo! betapa indah apartemen! di-mana ada itu dapur?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A konyha itt van, balra. A szoba pedig jobbra.",
+          "id": "Dapurnya di sini, di sebelah kiri. Kamarnya di sebelah kanan.",
+          "literal": "itu dapur di-sini ada, kiri-ke. itu kamar sedangkan kanan-ke."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "És hol vannak a könyvek?",
+          "id": "Dan buku-bukunya di mana?",
+          "literal": "dan di-mana mereka-ada itu buku-jamak?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A könyvek a polcon vannak, az ablak mellett.",
+          "id": "Buku-bukunya ada di rak, di sebelah jendela.",
+          "literal": "itu buku-jamak itu rak-di mereka-ada, itu jendela di-sebelah."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Fürdőszoba is van?",
+          "id": "Ada kamar mandinya juga?",
+          "literal": "kamar-mandi juga ada?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igen, van. A fürdőszoba a konyha mellett van.",
+          "id": "Ya, ada. Kamar mandinya di sebelah dapur.",
+          "literal": "ya, ada. itu kamar-mandi itu dapur di-sebelah ada."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "És erkély? Van erkély?",
+          "id": "Balkon? Ada balkon?",
+          "literal": "dan balkon? ada balkon?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sajnos nincs erkély. De van egy nagy ablak.",
+          "id": "Sayangnya tidak ada balkon. Tapi ada jendela besar.",
+          "literal": "sayang tidak-ada balkon. tapi ada sebuah besar jendela."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "A lakás a földszinten van?",
+          "id": "Apartemennya di lantai dasar?",
+          "literal": "itu apartemen itu lantai-dasar-di ada?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nem, a harmadik emeleten. Lift is van a házban.",
+          "id": "Bukan, di lantai tiga. Ada lift juga di gedungnya.",
+          "literal": "tidak, itu ketiga lantai-di. lift juga ada itu rumah-di-dalam."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Nagyon jó hely! És a bolt közel van?",
+          "id": "Tempatnya bagus sekali! Tokonya dekat?",
+          "literal": "sangat bagus tempat! dan itu toko dekat ada?"
+        }
+      ],
+      "notes": [
+        "**A polcon, tapi a szobában.** Rak adalah **permukaan** — benda diletakkan di atasnya — jadi ia memakai *-on*. Kamar adalah **ruang tertutup** — kamu berada di dalamnya — jadi ia memakai *-ban*. Pembagian ini masuk akal sembilan dari sepuluh kali, dan itu sudah cukup untuk A1.",
+        "**Mellett tidak menempel.** Perhatikan *az ablak mellett* — ditulis terpisah, tanpa akhiran pada *ablak*. Bahasa Hungaria punya dua perkakas untuk tempat: **akhiran** yang menempel, dan **kata belakang** (*névutó*) yang berdiri sendiri. Keduanya sama-sama berdiri **di belakang** kata bendanya; yang membedakan cuma apakah ia menyatu atau tidak.",
+        "**Nincs, bukan nem van.** Bahasa Hungaria punya kata khusus untuk \"tidak ada\": *nincs* (tunggal) dan *nincsenek* (jamak). Menyusun *nem van* adalah kesalahan yang langsung terdengar janggal — seperti mengatakan \"tidak ada-ada\" dalam bahasa Indonesia.",
+        "**Van erkély? tanpa kata sandang.** Ketika kamu menanyakan **keberadaan** sesuatu secara umum, kata bendanya telanjang: *Van erkély?* (Ada balkon?). Kata sandang muncul begitu bendanya sudah tertentu: *Hol van az erkély?* (Di mana balkonnya?).",
+        "**Is berdiri sesudah kata yang ditekankan.** *Fürdőszoba is van* = \"kamar mandinya juga ada\". *Van is fürdőszoba* justru berarti sesuatu yang lain. Letakkan *is* langsung **di belakang** kata yang kamu maksud — ini kebiasaan kecil yang sangat menandai penutur yang teliti.",
+        "**Balra, jobbra memakai akhiran -ra.** Harfiahnya \"ke kiri\", \"ke kanan\" — arah, bukan tempat. Bentuk \"di sebelah kiri\" adalah *bal oldalon*. Untuk sehari-hari, *balra* dan *jobbra* menutup hampir semua kebutuhan."
+      ],
+      "grammars": [
+        {
+          "title": "Enam akhiran tempat, dua kelompok",
+          "body": [
+            "Semua akhiran ini menjawab salah satu dari tiga pertanyaan: *hol* (di mana), *hová* (ke mana), *honnan* (dari mana). Yang menentukan kelompoknya adalah apakah bendanya dianggap ruang atau permukaan."
+          ],
+          "table": {
+            "head": [
+              "Pertanyaan",
+              "Ruang tertutup",
+              "Contoh",
+              "Permukaan",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**Hol?**",
+                "*-ban / -ben*",
+                "*a szobában* = di dalam kamar",
+                "*-on / -en / -ön*",
+                "*az asztalon* = di atas meja"
+              ],
+              [
+                "**Hová?**",
+                "*-ba / -be*",
+                "*a szobába* = ke dalam kamar",
+                "*-ra / -re*",
+                "*az asztalra* = ke atas meja"
+              ],
+              [
+                "**Honnan?**",
+                "*-ból / -ből*",
+                "*a szobából* = dari dalam kamar",
+                "*-ról / -ről*",
+                "*az asztalról* = dari atas meja"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan pola bunyinya sekali lagi: kelompok ruang selalu memuat **b**, kelompok permukaan memuat **r** atau **n**. Enam akhiran ini sebetulnya cuma dua pola dikali tiga arah.",
+            "**Akhiran -on punya tiga bentuk**, bukan dua: *-on* (vokal dalam), *-en* (vokal depan), *-ön* (vokal depan bulat). *az asztalon*, *a széken*, *a földön*. Selain itu, kata yang berakhir huruf hidup memakai *-n* saja: *az ajtón*, *a kanapén*.",
+            "Kalau kamu ragu antara ruang dan permukaan untuk benda yang aneh — sebuah pesta, sebuah gunung, sebuah rapat — pakai akal sehat dulu, lalu hafalkan yang meleset. Orang Hungaria pun tidak bisa menerangkan kenapa mereka bilang *a piacon* (di pasar) tapi *a boltban* (di toko)."
+          ]
+        },
+        {
+          "title": "Van, vannak, nincs, nincsenek",
+          "body": [
+            "Empat kata yang mengurus seluruh urusan ada dan tidak ada."
+          ],
+          "table": {
+            "head": [
+              "Bentuk",
+              "Cara baca",
+              "Dipakai untuk",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**van**",
+                "vån",
+                "satu benda ada",
+                "*Van egy ablak.* = Ada satu jendela."
+              ],
+              [
+                "**vannak**",
+                "VÅN-nåk",
+                "banyak benda ada",
+                "*Vannak könyvek.* = Ada buku-buku."
+              ],
+              [
+                "**nincs**",
+                "ninc",
+                "satu benda tidak ada",
+                "*Nincs erkély.* = Tidak ada balkon."
+              ],
+              [
+                "**nincsenek**",
+                "NIN-cè-nèk",
+                "banyak benda tidak ada",
+                "*Nincsenek székek.* = Tidak ada kursi."
+              ]
+            ]
+          },
+          "after": [
+            "Ingat kembali aturan unit 1: kalau kalimatnya menyebut **siapa atau apa** sesuatu itu, *van* dilarang muncul (*Ő tanár*). Kalau kalimatnya menyebut **tempat atau keberadaan**, *van* wajib muncul (*A tanár az iskolában van*).",
+            "Bentuk sangkalnya mengikuti aturan yang sama: *Ő nem tanár* (Dia bukan guru) memakai *nem*, sedangkan *Nincs itt* (Dia tidak ada di sini) memakai *nincs*."
+          ]
+        },
+        {
+          "title": "Névutó — kata belakang yang tidak menempel",
+          "body": [
+            "Kelompok kecil ini bekerja seperti kata depan bahasa Indonesia, hanya saja letaknya di belakang kata bendanya. Ia tidak pernah menyatu, dan kata bendanya tetap telanjang."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Cara baca",
+              "Bahasa Indonesia",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**mellett**",
+                "MÈL-lètt",
+                "di sebelah",
+                "*az ablak mellett* = di sebelah jendela"
+              ],
+              [
+                "**alatt**",
+                "Å-lått",
+                "di bawah",
+                "*az asztal alatt* = di bawah meja"
+              ],
+              [
+                "**fölött**",
+                "FÖ-lött",
+                "di atas (melayang)",
+                "*a kép a kanapé fölött* = gambar di atas sofa"
+              ],
+              [
+                "**előtt**",
+                "È-lött",
+                "di depan",
+                "*a ház előtt* = di depan rumah"
+              ],
+              [
+                "**mögött**",
+                "MÖ-gött",
+                "di belakang",
+                "*a szekrény mögött* = di belakang lemari"
+              ],
+              [
+                "**között**",
+                "KÖ-zött",
+                "di antara",
+                "*az ablak és az ajtó között* = di antara jendela dan pintu"
+              ],
+              [
+                "**körül**",
+                "KÖ-rül",
+                "di sekeliling",
+                "*az asztal körül* = di sekeliling meja"
+              ]
+            ]
+          },
+          "after": [
+            "Beda *fölött* dan *-on*: *a kép a falon van* (gambarnya menempel di dinding), *a lámpa az asztal fölött van* (lampunya menggantung di atas meja tanpa menyentuhnya). Bahasa Indonesia memakai \"di atas\" untuk keduanya; bahasa Hungaria memisahkan menyentuh dan tidak menyentuh.",
+            "Kelompok ini juga punya bentuk \"ke\" dan \"dari\": *mellé* (ke sebelah), *mellől* (dari sebelah), *alá* / *alól*, *elé* / *elől*, *mögé* / *mögül*. Untuk A1 cukup kenali bentuk \"di\"-nya; sisanya datang sendiri lewat pemakaian."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Rumah dan isinya",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "a lakás",
+              "å LÅ-kasy",
+              "apartemen"
+            ],
+            [
+              "a ház",
+              "å haz",
+              "rumah"
+            ],
+            [
+              "a szoba",
+              "å SO-bå",
+              "kamar; ruangan"
+            ],
+            [
+              "a hálószoba",
+              "å HA-lo-so-bå",
+              "kamar tidur"
+            ],
+            [
+              "a nappali",
+              "å NÅP-på-li",
+              "ruang keluarga"
+            ],
+            [
+              "a konyha",
+              "å KONY-hå",
+              "dapur"
+            ],
+            [
+              "a fürdőszoba",
+              "å FÜR-dö-so-bå",
+              "kamar mandi"
+            ],
+            [
+              "az erkély",
+              "åz ÈR-kéy",
+              "balkon"
+            ],
+            [
+              "a folyosó",
+              "å FO-yo-syo",
+              "koridor"
+            ],
+            [
+              "az emelet",
+              "åz È-mè-lèt",
+              "lantai (tingkat)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Pakailah kebiasaan yang disarankan di halaman depan: setiap kata baru di tabel ini langsung ucapkan dengan satu akhiran. *szoba* → *szobában*, *polc* → *polcon*, *erkély* → *erkélyen*. Sepuluh detik per kata, dan keselarasan vokal berhenti jadi teori."
+        }
+      ]
+    },
+    {
+      "title": "Bertanya dan menjawab soal tempat",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Hol van a fürdőszoba?",
+              "hol vån å FÜR-dö-so-bå",
+              "Kamar mandinya di mana?"
+            ],
+            [
+              "Itt van, balra.",
+              "itt vån BÅL-rå",
+              "Di sini, di sebelah kiri."
+            ],
+            [
+              "Ott van, jobbra.",
+              "ott vån YOBB-rå",
+              "Di sana, di sebelah kanan."
+            ],
+            [
+              "Egyenesen.",
+              "È-dyè-nè-syèn",
+              "Lurus."
+            ],
+            [
+              "Van itt bolt?",
+              "vån itt bolt",
+              "Ada toko di sini?"
+            ],
+            [
+              "Sajnos nincs.",
+              "SÅY-nosy ninc",
+              "Sayangnya tidak ada."
+            ],
+            [
+              "Közel van.",
+              "KÖ-zèl vån",
+              "Dekat."
+            ],
+            [
+              "Messze van.",
+              "MÈS-sè vån",
+              "Jauh."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Satu jebakan kecil yang sering menjegal",
+          "items": [
+            "*Hol vannak a könyvek?* memakai bentuk jamak, karena bendanya jamak. Bahasa Indonesia tidak menuntut ini, jadi telinga kita tidak terlatih menangkapnya. Biasakan memeriksa: benda jamak menuntut *vannak* dan *nincsenek*, bukan *van* dan *nincs*.",
+            "Sebaliknya, sesudah angka bendanya tetap tunggal — dan kata kerjanya pun ikut tunggal: *Két könyv van az asztalon.* Bukan *vannak*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "lakás",
+      "baca": "LÅ-kasy",
+      "id": "apartemen"
+    },
+    {
+      "hu": "szoba",
+      "baca": "SO-bå",
+      "id": "kamar; ruangan"
+    },
+    {
+      "hu": "konyha",
+      "baca": "KONY-hå",
+      "id": "dapur"
+    },
+    {
+      "hu": "fürdőszoba",
+      "baca": "FÜR-dö-so-bå",
+      "id": "kamar mandi"
+    },
+    {
+      "hu": "erkély",
+      "baca": "ÈR-kéy",
+      "id": "balkon"
+    },
+    {
+      "hu": "polc",
+      "baca": "polts",
+      "id": "rak"
+    },
+    {
+      "hu": "szekrény",
+      "baca": "SÈK-rény",
+      "id": "lemari"
+    },
+    {
+      "hu": "ágy",
+      "baca": "ady",
+      "id": "tempat tidur"
+    },
+    {
+      "hu": "kanapé",
+      "baca": "KÅ-nå-pé",
+      "id": "sofa"
+    },
+    {
+      "hu": "fal",
+      "baca": "fål",
+      "id": "dinding"
+    },
+    {
+      "hu": "emelet",
+      "baca": "È-mè-lèt",
+      "id": "lantai (tingkat)"
+    },
+    {
+      "hu": "földszint",
+      "baca": "FÖLD-sint",
+      "id": "lantai dasar"
+    },
+    {
+      "hu": "lift",
+      "baca": "lift",
+      "id": "lift"
+    },
+    {
+      "hu": "hely",
+      "baca": "hèy",
+      "id": "tempat"
+    },
+    {
+      "hu": "balra",
+      "baca": "BÅL-rå",
+      "id": "ke kiri"
+    },
+    {
+      "hu": "jobbra",
+      "baca": "YOBB-rå",
+      "id": "ke kanan"
+    },
+    {
+      "hu": "egyenesen",
+      "baca": "È-dyè-nè-syèn",
+      "id": "lurus"
+    },
+    {
+      "hu": "sajnos",
+      "baca": "SÅY-nosy",
+      "id": "sayangnya"
+    },
+    {
+      "hu": "pedig",
+      "baca": "PÈ-dig",
+      "id": "sedangkan"
+    },
+    {
+      "hu": "nincs",
+      "baca": "ninc",
+      "id": "tidak ada"
+    },
+    {
+      "hu": "nincsenek",
+      "baca": "NIN-cè-nèk",
+      "id": "tidak ada (jamak)"
+    },
+    {
+      "hu": "mellett",
+      "baca": "MÈL-lètt",
+      "id": "di sebelah"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tambahkan akhiran \"di\" yang tepat — ruang atau permukaan.",
+      "items": [
+        "szoba",
+        "asztal",
+        "ház",
+        "polc",
+        "konyha",
+        "fal"
+      ]
+    },
+    {
+      "prompt": "Isi dengan van, vannak, nincs, atau nincsenek.",
+      "items": [
+        "A könyv az asztalon ____.",
+        "A könyvek a polcon ____.",
+        "Sajnos ____ erkély.",
+        "____ székek a szobában? (tidak ada)",
+        "Hol ____ a fürdőszoba?",
+        "____ egy nagy ablak a konyhában."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Hungaria.",
+      "items": [
+        "Dapurnya di mana?",
+        "Buku-bukunya ada di rak.",
+        "Tidak ada balkon.",
+        "Kamar mandinya di sebelah dapur.",
+        "Apartemennya di lantai tiga.",
+        "Ada toko di sini?"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 2. Terjemahkan ke bahasa Hungaria tanpa melihat unitnya.",
+      "items": [
+        "Dari mana asalmu?",
+        "Saya tinggal di Budapest.",
+        "Saya datang dari Jakarta.",
+        "Szeged jauh?",
+        "Saya bisa sedikit bahasa Hungaria."
+      ]
+    }
+  ],
+  "answers": [
+    "szobában — asztalon — házban — polcon — konyhában — falon",
+    "van — vannak — nincs — Nincsenek — van — Van",
+    "Hol van a konyha? — A könyvek a polcon vannak. — Nincs erkély. — A fürdőszoba a konyha mellett van. — A lakás a harmadik emeleten van. — Van itt bolt?",
+    "Honnan jössz? — Budapesten lakom. — Jakartából jövök. — Szeged messze van? — Egy kicsit beszélek magyarul."
+  ]
+}

@@ -1,0 +1,545 @@
+{
+  "title": "Ini apa? — kata tunjuk, kata sandang, dan bentuk jamak",
+  "title_target": "Ez egy könyv",
+  "goal": "Menunjuk benda dan menamainya, memilih antara *a* dan *az*, serta membentuk jamak dengan *-k* — sambil menikmati satu penghematan besar: bahasa Hungaria tidak punya jenis kelamin kata benda.",
+  "bekal": [
+    "bertanya *Ez mi?* dan menjawabnya",
+    "memakai *a* dan *az* di tempat yang benar, termasuk pada susunan *ez a könyv*",
+    "membentuk jamak dan tahu kapan kata sifat ikut berubah, kapan tidak"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — A könyvesboltban",
+      "intro": "Budi masuk ke sebuah toko buku kecil di Budapest, mencari kamus. Penjaga tokonya sabar.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Bocsánat, ez mi?",
+          "id": "Permisi, ini apa?",
+          "literal": "maaf, ini apa?"
+        },
+        {
+          "speaker": "Eladó:",
+          "text": "Ez egy magyar szótár.",
+          "id": "Ini kamus bahasa Hungaria.",
+          "literal": "ini sebuah Hungaria kamus."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "És az? Az is szótár?",
+          "id": "Dan itu? Itu juga kamus?",
+          "literal": "dan itu? itu juga kamus?"
+        },
+        {
+          "speaker": "Eladó:",
+          "text": "Nem, az egy nyelvkönyv. Nagyon jó könyv.",
+          "id": "Bukan, itu buku pelajaran bahasa. Buku yang sangat bagus.",
+          "literal": "tidak, itu sebuah bahasa-buku. sangat bagus buku."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "És ezek? Ezek is szótárak?",
+          "id": "Dan ini semua? Ini juga kamus?",
+          "literal": "dan ini-jamak? ini-jamak juga kamus-jamak?"
+        },
+        {
+          "speaker": "Eladó:",
+          "text": "Nem, ezek nem szótárak. Ezek térképek.",
+          "id": "Bukan, ini bukan kamus. Ini peta.",
+          "literal": "tidak, ini-jamak tidak kamus-jamak. ini-jamak peta-jamak."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Értem. És ott mi van?",
+          "id": "Saya mengerti. Dan di sana ada apa?",
+          "literal": "saya-mengerti. dan di-sana apa ada?"
+        },
+        {
+          "speaker": "Eladó:",
+          "text": "Ott vannak a regények és az újságok.",
+          "id": "Di sana ada novel-novel dan koran-koran.",
+          "literal": "di-sana mereka-ada itu novel-jamak dan itu koran-jamak."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Az a piros könyv érdekes?",
+          "id": "Buku merah itu menarik?",
+          "literal": "itu si merah buku menarik?"
+        },
+        {
+          "speaker": "Eladó:",
+          "text": "Igen, az egy nagyon jó regény. Magyar író.",
+          "id": "Ya, itu novel yang sangat bagus. Penulisnya orang Hungaria.",
+          "literal": "ya, itu sebuah sangat bagus novel. Hungaria penulis."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Köszönöm. Ezt a könyvet kérem.",
+          "id": "Terima kasih. Saya minta buku ini.",
+          "literal": "saya-berterima-kasih. ini-sasaran si buku-sasaran saya-minta."
+        }
+      ],
+      "notes": [
+        "**Ez mi?** — dua kata, tanpa kata kerja, persis seperti \"ini apa?\". Urutannya boleh dibalik jadi *Mi ez?* dan artinya tidak berubah; yang berubah cuma penekanannya. Bahasa Hungaria sangat longgar soal urutan kata, tapi tidak sembarangan — bagian yang paling penting selalu duduk **tepat sebelum kata kerja**.",
+        "**Az mengerjakan dua pekerjaan.** *Az* berarti \"itu\", dan *az* juga berarti \"si/sang\" di depan kata berawalan huruf hidup. Keadaan kalimatnya yang membedakan, dan orang Hungaria tidak pernah bingung karenanya. Kamu pun tidak akan, setelah beberapa hari.",
+        "**Ez a könyv, bukan ez könyv.** Kalau kata tunjuk berdiri di depan kata benda, kata sandangnya **wajib ada**: *ez a könyv* (buku ini), *az a ház* (rumah itu). Harfiahnya \"ini si buku\". Menghilangkan *a* di situ adalah kesalahan pemula yang paling cepat terdengar.",
+        "**Egy berarti \"satu\" sekaligus \"sebuah\".** Ia dipakai ketika sesuatu diperkenalkan untuk pertama kali: *Ez egy szótár*. Sesudah benda itu dikenal, ia berganti menjadi *a szótár*. Dalam banyak kalimat *egy* boleh dibuang begitu saja — *Ez szótár* tetap benar, cuma terdengar lebih datar.",
+        "**Jamak dibentuk dengan -k, dan hampir selalu perlu vokal sambung.** *könyv* → *könyv**ek***, *szótár* → *szótár**ak***, *térkép* → *térkép**ek***. Kata yang sudah berakhir huruf hidup cukup ditambah *-k*: *ajtó* → *ajtók*."
+      ],
+      "grammars": [
+        {
+          "title": "Ez és az — ini dan itu",
+          "body": [
+            "Empat bentuk saja, dan tidak ada jenis kelamin yang perlu dicocokkan."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Cara baca",
+              "Arti",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**ez**",
+                "èz",
+                "ini (satu benda)",
+                "*Ez egy könyv.* = Ini sebuah buku."
+              ],
+              [
+                "**az**",
+                "åz",
+                "itu (satu benda)",
+                "*Az egy ház.* = Itu sebuah rumah."
+              ],
+              [
+                "**ezek**",
+                "È-zèk",
+                "ini (banyak benda)",
+                "*Ezek könyvek.* = Ini buku-buku."
+              ],
+              [
+                "**azok**",
+                "Å-zok",
+                "itu (banyak benda)",
+                "*Azok házak.* = Itu rumah-rumah."
+              ]
+            ]
+          },
+          "after": [
+            "Kalau kata tunjuknya berdiri sendiri sebagai pokok kalimat, susunannya lurus: *Ez egy szótár.*",
+            "Kalau ia menerangkan kata benda, susunannya berubah dan **kata sandangnya wajib muncul**: *ez a szótár* (kamus ini), *azok a könyvek* (buku-buku itu). Perhatikan bahwa kata tunjuknya ikut jamak, sementara kata sandangnya tidak.",
+            "Susunan itu terasa berlebihan bagi orang Indonesia — seolah berkata \"ini si kamus\". Terimalah sebagai bentuk baku; tidak ada cara lain yang benar."
+          ]
+        },
+        {
+          "title": "A dan az — satu kata sandang, dua bentuk",
+          "body": [
+            "Sama seperti *a* dan *an* dalam bahasa Inggris, pilihannya ditentukan oleh bunyi awal kata sesudahnya — bukan oleh arti, bukan oleh jenis kelamin."
+          ],
+          "table": {
+            "head": [
+              "Bentuk",
+              "Sebelum",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**a**",
+                "huruf mati",
+                "*a könyv*, *a ház*, *a lány*, *a szótár*"
+              ],
+              [
+                "**az**",
+                "huruf hidup",
+                "*az alma*, *az ember*, *az óra*, *az újság*"
+              ]
+            ]
+          },
+          "after": [
+            "Bahasa Hungaria memakai kata sandang jauh lebih sering daripada bahasa Indonesia. Nama negara memakainya (*a Magyarország* — kecuali dalam banyak susunan tetap), begitu pula waktu dan benda umum. Kalau ragu di tingkat A1: **pakai a/az kalau bendanya sudah jelas yang mana**, dan buang kalau kamu bicara umum.",
+            "Kata sandang ini juga yang nanti memutuskan bentuk kata kerja di unit 11. Jadi memperhatikannya sekarang bukan soal kerapian, melainkan investasi."
+          ]
+        },
+        {
+          "title": "Bentuk jamak: -k dan vokal sambungnya",
+          "body": [
+            "Satu huruf saja yang menandai jamak. Yang perlu dipilih hanyalah vokal yang menjembataninya — dan pilihannya mengikuti keselarasan vokal dari unit 2."
+          ],
+          "table": {
+            "head": [
+              "Bentuk dasar berakhir",
+              "Tambahkan",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "huruf hidup",
+                "**-k**",
+                "*ajtó* → *ajtók*; *kutya* → *kutyák*; *alma* → *almák*"
+              ],
+              [
+                "huruf mati, vokal dalam",
+                "**-ok**",
+                "*asztal* → *asztalok*; *ablak* → *ablakok*; *város* → *városok*"
+              ],
+              [
+                "huruf mati, vokal depan",
+                "**-ek**",
+                "*szék* → *székek*; *könyv* → *könyvek*; *ember* → *emberek*"
+              ],
+              [
+                "huruf mati, vokal depan bulat",
+                "**-ök**",
+                "*sör* → *sörök*; *gyümölcs* → *gyümölcsök*"
+              ]
+            ]
+          },
+          "after": [
+            "**Perhatikan a dan e di ujung kata.** Keduanya **memanjang** begitu ada akhiran: *alma* → *almák*, *kutya* → *kutyák*, *fekete* → *feketék*. Aturan ini berlaku untuk semua akhiran, bukan cuma jamak, dan ia salah satu yang paling sering terlupa.",
+            "**Ada segelintir kata bervokal dalam yang memakai -ak, bukan -ok.** Jumlahnya terbatas dan sebaiknya dihafal langsung: *ház* → *házak*, *fal* → *falak*, *toll* → *tollak*, *hal* → *halak*, *út* → *utak*. Perhatikan bahwa vokal panjang pada *út* memendek jadi *utak* — kelompok kata ini memang suka berulah."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Benda di sekitarmu",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Semua kata di bawah ini ditulis bersama kata sandangnya, supaya pilihan *a* atau *az* ikut terhafal tanpa usaha tambahan."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Cara baca",
+            "Bahasa Indonesia",
+            "Jamak"
+          ],
+          "rows": [
+            [
+              "a könyv",
+              "å könyv",
+              "buku",
+              "könyvek"
+            ],
+            [
+              "az újság",
+              "åz UY-sag",
+              "koran",
+              "újságok"
+            ],
+            [
+              "a szótár",
+              "å SO-tar",
+              "kamus",
+              "szótárak"
+            ],
+            [
+              "a térkép",
+              "å TÉR-kép",
+              "peta",
+              "térképek"
+            ],
+            [
+              "a toll",
+              "å toll",
+              "pulpen",
+              "tollak"
+            ],
+            [
+              "a ceruza",
+              "å TSÈ-ru-zå",
+              "pensil",
+              "ceruzák"
+            ],
+            [
+              "a füzet",
+              "å FÜ-zèt",
+              "buku tulis",
+              "füzetek"
+            ],
+            [
+              "a táska",
+              "å TASY-kå",
+              "tas",
+              "táskák"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa *ceruza* dan *táska* berakhir huruf hidup, jadi jamaknya cuma menambah *-k* — sesudah *a* yang memanjang jadi *á*."
+        }
+      ]
+    },
+    {
+      "title": "Kata sifat: di depan kata benda dan di ujung kalimat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ini satu-satunya tempat di unit ini yang benar-benar butuh perhatian, karena bahasa Indonesia tidak membedakan keduanya sama sekali."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letak kata sifat",
+            "Ikut jamak?",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "**Di depan** kata benda",
+              "tidak",
+              "*a piros könyv* → *a piros könyvek*"
+            ],
+            [
+              "**Di ujung** kalimat, sebagai keterangan",
+              "ya",
+              "*A könyv piros.* → *A könyvek piros**ak**.*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Jadi *piros* di *a piros könyvek* tetap utuh, tapi *piros* di *A könyvek pirosak* wajib berjamak. Cara mengingatnya: kata sifat yang menempel di kata benda menumpang jamaknya; kata sifat yang berdiri sendiri harus membawa jamaknya sendiri."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Warna",
+            "Cara baca",
+            "Bahasa Indonesia",
+            "Bentuk jamak"
+          ],
+          "rows": [
+            [
+              "piros",
+              "PI-rosy",
+              "merah",
+              "pirosak"
+            ],
+            [
+              "kék",
+              "kék",
+              "biru",
+              "kékek"
+            ],
+            [
+              "zöld",
+              "zöld",
+              "hijau",
+              "zöldek"
+            ],
+            [
+              "sárga",
+              "SYAR-gå",
+              "kuning",
+              "sárgák"
+            ],
+            [
+              "fehér",
+              "FÈ-hér",
+              "putih",
+              "fehérek"
+            ],
+            [
+              "fekete",
+              "FÈ-kè-tè",
+              "hitam",
+              "feketék"
+            ],
+            [
+              "barna",
+              "BÅR-nå",
+              "coklat",
+              "barnák"
+            ],
+            [
+              "szürke",
+              "SÜR-kè",
+              "abu-abu",
+              "szürkék"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kata sifat lain yang langsung berguna",
+          "items": [
+            "*nagy* (besar) — *kicsi* (kecil); *hosszú* (panjang) — *rövid* (pendek)",
+            "*új* (baru) — *régi* (lama); *drága* (mahal) — *olcsó* (murah)",
+            "*jó* (bagus) — *rossz* (jelek); *könnyű* (mudah/ringan) — *nehéz* (sulit/berat)",
+            "Perhatikan dua pasangan terakhir: *könnyű* dan *nehéz* mengerjakan dua arti sekaligus, sama seperti \"berat\" dalam bahasa Indonesia yang bisa berarti bobot maupun kesulitan."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "ez",
+      "baca": "èz",
+      "id": "ini"
+    },
+    {
+      "hu": "az",
+      "baca": "åz",
+      "id": "itu; si/sang"
+    },
+    {
+      "hu": "ezek",
+      "baca": "È-zèk",
+      "id": "ini (jamak)"
+    },
+    {
+      "hu": "azok",
+      "baca": "Å-zok",
+      "id": "itu (jamak)"
+    },
+    {
+      "hu": "egy",
+      "baca": "èdy",
+      "id": "sebuah; satu"
+    },
+    {
+      "hu": "mi",
+      "baca": "mi",
+      "id": "apa"
+    },
+    {
+      "hu": "könyv",
+      "baca": "könyv",
+      "id": "buku"
+    },
+    {
+      "hu": "szótár",
+      "baca": "SO-tar",
+      "id": "kamus"
+    },
+    {
+      "hu": "nyelvkönyv",
+      "baca": "NYÈLV-könyv",
+      "id": "buku pelajaran bahasa"
+    },
+    {
+      "hu": "térkép",
+      "baca": "TÉR-kép",
+      "id": "peta"
+    },
+    {
+      "hu": "újság",
+      "baca": "UY-sag",
+      "id": "koran"
+    },
+    {
+      "hu": "regény",
+      "baca": "RÈ-gény",
+      "id": "novel"
+    },
+    {
+      "hu": "író",
+      "baca": "I-ro",
+      "id": "penulis"
+    },
+    {
+      "hu": "eladó",
+      "baca": "ÈL-å-do",
+      "id": "penjaga toko"
+    },
+    {
+      "hu": "bolt",
+      "baca": "bolt",
+      "id": "toko"
+    },
+    {
+      "hu": "asztal",
+      "baca": "ÅS-tål",
+      "id": "meja"
+    },
+    {
+      "hu": "szék",
+      "baca": "sék",
+      "id": "kursi"
+    },
+    {
+      "hu": "ajtó",
+      "baca": "ÅY-to",
+      "id": "pintu"
+    },
+    {
+      "hu": "ablak",
+      "baca": "ÅB-låk",
+      "id": "jendela"
+    },
+    {
+      "hu": "toll",
+      "baca": "toll",
+      "id": "pulpen"
+    },
+    {
+      "hu": "táska",
+      "baca": "TASY-kå",
+      "id": "tas"
+    },
+    {
+      "hu": "ember",
+      "baca": "ÈM-bèr",
+      "id": "orang; manusia"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Hungaria.",
+      "items": [
+        "Ini apa?",
+        "Ini sebuah kamus.",
+        "Itu buku pelajaran bahasa.",
+        "Ini bukan peta.",
+        "Buku itu mahal?",
+        "Ini buku-buku."
+      ]
+    },
+    {
+      "prompt": "Isi dengan a atau az.",
+      "items": [
+        "____ könyv",
+        "____ alma",
+        "____ asztal",
+        "____ szótár",
+        "____ ember",
+        "____ újság"
+      ]
+    },
+    {
+      "prompt": "Tulis bentuk jamaknya.",
+      "items": [
+        "könyv",
+        "asztal",
+        "ház",
+        "alma",
+        "sör",
+        "ajtó"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 1. Terjemahkan ke bahasa Hungaria tanpa melihat unitnya.",
+      "items": [
+        "Halo! Apa kabar?",
+        "Terima kasih, saya baik.",
+        "Saya orang Indonesia.",
+        "Dia guru.",
+        "Sampai jumpa besok!"
+      ]
+    }
+  ],
+  "answers": [
+    "Ez mi? — Ez egy szótár. — Az egy nyelvkönyv. — Ez nem térkép. — Az a könyv drága? — Ezek könyvek.",
+    "a — az — az — a — az — az",
+    "könyvek — asztalok — házak — almák — sörök — ajtók",
+    "Szia! Hogy vagy? — Köszönöm, jól vagyok. — Indonéz vagyok. — Ő tanár. — Holnap találkozunk!"
+  ]
+}
