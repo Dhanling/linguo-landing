@@ -1,0 +1,215 @@
+{
+ "title": "Ini apa?",
+ "title_target": "Ano ito?",
+ "goal": "Menunjuk benda di sekitarmu, menyebut namanya, bertanya dengan *ba*, dan berkenalan dengan penanda *ang* — kata terpenting di seluruh bahasa ini.",
+ "bekal": [
+  "membedakan *ito*, *iyan*, dan *iyon* menurut jarak dari pembicara",
+  "membuat pertanyaan ya/tidak dengan menyelipkan *ba*",
+  "memakai *ang* dan *mga* untuk menandai benda yang sedang dibicarakan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Sa loob ng bahay",
+   "intro": "Budi baru masuk ke kamar kosnya. Aling Nena, si induk semang, menunjukkan isi kamar satu per satu.",
+   "lines": [
+    { "speaker": "Aling Nena:", "text": "Ito ang kwarto mo. Maliit, pero malinis.", "id": "Ini kamarmu. Kecil, tapi bersih.", "literal": "ini si kamar kamu-punya. kecil, tapi bersih." },
+    { "speaker": "Budi:", "text": "Maganda po! Ano po ito?", "id": "Bagus, Bu! Ini apa?", "literal": "indah Bu! apa Bu ini?" },
+    { "speaker": "Aling Nena:", "text": "Iyan ay bentilador. Mainit dito sa Maynila.", "id": "Itu kipas angin. Di Manila panas.", "literal": "itu adalah kipas. panas di-sini di Manila." },
+    { "speaker": "Budi:", "text": "At iyon po? Aparador ba iyon?", "id": "Dan yang itu, Bu? Apakah itu lemari?", "literal": "dan itu Bu? lemari apakah itu?" },
+    { "speaker": "Aling Nena:", "text": "Oo, aparador iyon. Nasa loob ang mga unan.", "id": "Ya, itu lemari. Bantal-bantalnya ada di dalam.", "literal": "ya, lemari itu. berada-di dalam si jamak bantal." },
+    { "speaker": "Budi:", "text": "Salamat po. Ano ang tawag dito sa Tagalog?", "id": "Terima kasih, Bu. Ini namanya apa dalam bahasa Tagalog?", "literal": "terima-kasih Bu. apa si panggilan ke-ini di Tagalog?" },
+    { "speaker": "Aling Nena:", "text": "Kulambo. Para sa lamok.", "id": "Kelambu. Untuk nyamuk.", "literal": "kelambu. untuk ke nyamuk." },
+    { "speaker": "Budi:", "text": "Ay, marami po bang lamok dito?", "id": "Wah, apakah di sini banyak nyamuk, Bu?", "literal": "wah, banyak Bu apakah nyamuk di-sini?" },
+    { "speaker": "Aling Nena:", "text": "Hindi naman. Pero mag-ingat ka pa rin.", "id": "Tidak juga. Tapi tetap hati-hati.", "literal": "tidak ya. tapi ber-hati-hati kamu masih juga." },
+    { "speaker": "Budi:", "text": "Sige po. Malinis po ang kwarto. Salamat!", "id": "Baik, Bu. Kamarnya bersih. Terima kasih!", "literal": "baiklah Bu. bersih Bu si kamar. terima-kasih!" },
+    { "speaker": "Aling Nena:", "text": "Walang anuman, iho. Magpahinga ka na.", "id": "Sama-sama, Nak. Istirahatlah.", "literal": "tiada apa-pun, nak. beristirahat kamu sudah." }
+   ],
+   "notes": [
+    "**Tiga jarak, bukan dua.** Bahasa Indonesia membagi dunia jadi \"ini\" dan \"itu\". Bahasa Tagalog membaginya jadi tiga: *ito* (dekat saya), *iyan* (dekat kamu), *iyon* (jauh dari kita berdua). Pembagian yang sama ada di bahasa Jepang dan Spanyol, dan sebetulnya juga tersisa dalam bahasa Indonesia lama lewat kata \"itu\" dan \"anu\".",
+    "**Ang menandai benda yang sedang jadi sorotan.** Dalam *Ito ang kwarto mo*, kata *ang* menempel pada *kwarto* dan berkata: inilah yang kita bicarakan. Anggap saja *ang* sebagai lampu sorot panggung. Seluruh tata bahasa Tagalog berputar di sekitar lampu ini, dan mulai unit 10 kamu akan melihat kenapa.",
+    "**Mga menjamakkan, dan dibaca ma-NGA.** *Ang unan* = bantal itu; *ang mga unan* = bantal-bantal itu. Tidak ada perubahan pada kata bendanya sendiri — persis seperti bahasa Indonesia yang cukup mengulang kata atau menambahkan \"para\".",
+    "**Ba mengubah pernyataan jadi pertanyaan.** *Aparador iyon* (itu lemari) → *Aparador ba iyon?* (apakah itu lemari?). Tidak perlu membalik urutan apa pun, tidak perlu kata tanya. Cukup selipkan *ba* sesudah kata pertama, dan nada suaramu boleh tetap datar.",
+    "**Iyan ay bentilador** memakai *ay*, penghubung resmi yang membalik urutan kalimat menjadi seperti bahasa Indonesia. Aling Nena memakainya karena sedang menerangkan dengan hati-hati. Dalam percakapan cepat, orang akan bilang *Bentilador iyan* — dan itulah yang sebaiknya kamu tiru.",
+    "**Kata sifat berdiri di depan.** *Maliit ang kwarto*, bukan *ang kwarto maliit*. Ini pola yang sama dengan *Guro ako* di unit 1: yang diberitakan di depan, yang diberitakan tentangnya di belakang. Kamu akan mengulang pola ini ratusan kali.",
+    "**Hindi naman** adalah cara halus mengatakan \"tidak juga\" atau \"tidak terlalu\". *Naman* melembutkan hampir semua hal yang disentuhnya — menolak, membetulkan, membandingkan. Tanpa *naman*, jawaban *hindi* saja terdengar tegas dan agak dingin.",
+    "**Iho** (dari bahasa Spanyol *hijo*, anak) dipakai orang tua kepada anak muda laki-laki; untuk perempuan *iha*. Kata ini hangat, bukan merendahkan — sepadan dengan \"Nak\" dalam bahasa Indonesia.",
+    "**Aling** di depan nama perempuan (dan *Mang* untuk laki-laki) adalah sapaan hormat kepada orang yang lebih tua di lingkungan sekitar: *Aling Nena*, *Mang Kanor*. Terjemahan terdekatnya \"Bu\" dan \"Pak\" dalam bahasa Indonesia kampung."
+   ],
+   "grammars": [
+    {
+     "title": "Ito, iyan, iyon — tiga jarak",
+     "body": [
+      "Kata penunjuk bahasa Tagalog punya tiga deret bentuk, dan yang dipasang di unit ini adalah deret pertama — deret *ang*, yang dipakai kalau penunjuk itu jadi sorotan kalimat."
+     ],
+     "table": {
+      "head": ["Bentuk", "Cara baca", "Jarak", "Contoh"],
+      "rows": [
+       ["**ito**", "i-TO", "dekat pembicara", "Ano ito? — Ini apa?"],
+       ["**iyan**", "i-YAN", "dekat lawan bicara", "Ano iyan? — Itu apa? (yang kamu pegang)"],
+       ["**iyon**", "i-YON", "jauh dari keduanya", "Ano iyon? — Itu apa? (yang di sana)"],
+       ["**dito**", "DI-to", "di sini", "Mainit dito. — Di sini panas."],
+       ["**diyan**", "d-YAN", "di situ", "Ilagay mo diyan. — Taruh di situ."],
+       ["**doon**", "do-ON", "di sana", "Doon ang palengke. — Pasarnya di sana."]
+      ]
+     },
+     "after": [
+      "Dalam percakapan cepat, *iyan* dan *iyon* sering disingkat jadi *yan* dan *yun* (ditulis *'yan*, *'yun*). Kamu akan lebih sering mendengar bentuk pendek ini daripada bentuk panjangnya.",
+      "*Ito* juga dipakai untuk memperkenalkan orang: *Ito si Ana* — \"ini Ana\". Perhatikan penandanya berubah jadi *si* karena yang ditunjuk nama orang.",
+      "Deret kedua (*nito*, *niyan*, *niyon*) dan penggunaannya menyusul di unit 5, sesudah ketiga penanda lengkap terpasang."
+     ]
+    },
+    {
+     "title": "Ang dan mga — lampu sorot dan tanda jamak",
+     "body": [
+      "*Ang* adalah kata yang paling sering muncul dalam bahasa Tagalog, dan sekaligus yang paling sulit diterjemahkan: ia bukan \"itu\", bukan \"si\", bukan \"the\". Tugasnya menandai **benda mana yang sedang jadi sorotan kalimat**."
+     ],
+     "table": {
+      "head": ["Kalimat", "Harfiah", "Arti"],
+      "rows": [
+       ["Maganda **ang** bahay.", "indah si rumah", "Rumah itu bagus."],
+       ["Malinis **ang mga** kwarto.", "bersih si jamak kamar", "Kamar-kamarnya bersih."],
+       ["Guro **si** Ana.", "guru si Ana", "Ana seorang guru."],
+       ["Mabait **sina** Ana at Budi.", "baik si-jamak Ana dan Budi", "Ana dan Budi orang baik."],
+       ["Nasaan **ang** susi?", "di-mana si kunci", "Kuncinya di mana?"]
+      ]
+     },
+     "after": [
+      "**Untuk nama orang, *ang* berubah jadi *si*** (satu orang) atau *sina* (beberapa orang). Ini wajib dan tidak bisa dilewati: *Guro Ana* terdengar salah di telinga orang Filipina seperti \"pergi ke Jakarta\" tanpa \"ke\" di telinga kita.",
+      "**Mga selalu berdiri sesudah penandanya**, tidak pernah sendirian di depan kalimat: *ang mga bata*, *ng mga bata*, *sa mga bata*.",
+      "Kata benda tanpa penanda apa pun juga sering muncul — *Guro ako*, *Bentilador iyan*. Dalam pola ini, kata benda itu sedang bertugas sebagai keterangan, bukan sebagai sorotan. Sorotannya justru *ako* dan *iyan*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Barang di sekitarmu",
+   "blocks": [
+    { "type": "p", "text": "Sebagian besar kata benda rumah tangga dalam bahasa Tagalog berasal dari bahasa Spanyol, jadi banyak yang sudah terasa akrab lewat bahasa Indonesia." },
+    { "type": "tabel", "head": ["Tagalog", "Cara baca", "Bahasa Indonesia"], "rows": [
+      ["mesa", "ME-sa", "meja"],
+      ["silya", "SIL-ya", "kursi"],
+      ["kama", "KA-ma", "tempat tidur"],
+      ["unan", "U-nan", "bantal"],
+      ["kumot", "KU-mot", "selimut"],
+      ["aparador", "a-pa-ra-DOR", "lemari"],
+      ["bintana", "bin-TA-na", "jendela"],
+      ["pinto", "pin-TO'", "pintu"],
+      ["ilaw", "I-law", "lampu"],
+      ["bentilador", "ben-ti-la-DOR", "kipas angin"],
+      ["banyo", "BAN-yo", "kamar mandi"],
+      ["kusina", "ku-SI-na", "dapur"],
+      ["kwarto", "KWAR-to", "kamar"],
+      ["susi", "su-SI'", "kunci"],
+      ["salamin", "sa-la-MIN", "kaca; cermin"]
+     ] },
+    { "type": "kotak", "title": "Kata yang kamu sudah tahu", "items": [
+      "*Bintana* dari *ventana*, *baso* dari *vaso*, *kutsara* dari *cuchara*: pola **v jadi b** dan **c jadi k** yang kamu lihat di halaman pelafalan bekerja di sini.",
+      "*Kusina* (dapur) sepupu dari \"kuliner\" dan dari kata Belanda \"keuken\" yang kita kenal lewat \"koki\". *Silya* sepupu dari \"seluar\"? Bukan — dari *silla*, dan sepupu Indonesianya justru \"sela\" pada pelana kuda."
+     ] }
+   ]
+  },
+  {
+   "title": "Bertanya dengan ba",
+   "blocks": [
+    { "type": "p", "text": "Pertanyaan ya/tidak dalam bahasa Tagalog dibuat dengan satu kata kecil yang diselipkan, bukan dengan membalik urutan kata seperti bahasa Inggris." },
+    { "type": "tabel", "head": ["Pernyataan", "Pertanyaan", "Arti"], "rows": [
+      ["Guro siya.", "Guro **ba** siya?", "Dia guru? "],
+      ["Malinis ang kwarto.", "Malinis **ba** ang kwarto?", "Kamarnya bersih?"],
+      ["Taga-Cebu ka.", "Taga-Cebu **ka ba**?", "Kamu dari Cebu?"],
+      ["Marami ang lamok.", "Marami **ba** ang lamok?", "Nyamuknya banyak?"],
+      ["Ito ang bahay mo.", "Ito **ba** ang bahay mo?", "Ini rumahmu?"]
+     ] },
+    { "type": "p", "text": "Perhatikan baris ketiga: kalau kalimatnya mengandung *ka*, *ko*, atau *mo*, kata-kata pendek itu **mendahului** *ba*. Urutan antar-partikel ini punya aturannya sendiri, dan seluruhnya dibahas di unit 14. Untuk sekarang cukup hafalkan bentuk *ka ba*, *mo ba*, *ko ba*." },
+    { "type": "p", "text": "Menjawabnya pendek saja: *Oo* atau *Hindi*, dengan *po* kalau sopan. Untuk memperjelas, ulangi kata kuncinya: *Oo, guro siya.* — *Hindi, hindi siya guro.* Perhatikan bahwa *hindi* muncul dua kali: sekali sebagai jawaban, sekali sebagai penyangkal kalimat." },
+    { "type": "kotak", "title": "Ba bukan penanda sopan", "items": [
+      "Pertanyaan tanpa *ba* tetap benar kalau nada suaramu naik: *Guro siya?* Tapi dalam bahasa tulis dan dalam percakapan yang jelas, *ba* jauh lebih lazim.",
+      "Jangan tertukar dengan *ba* dalam bahasa Indonesia informal (\"gitu ba?\"). Yang ini kata tugas sungguhan dan wajib ada di hampir semua pertanyaan ya/tidak."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "tl": "ito", "baca": "i-TO", "id": "ini" },
+  { "tl": "iyan", "baca": "i-YAN", "id": "itu (dekat lawan bicara)" },
+  { "tl": "iyon", "baca": "i-YON", "id": "itu (jauh)" },
+  { "tl": "dito", "baca": "DI-to", "id": "di sini" },
+  { "tl": "doon", "baca": "do-ON", "id": "di sana" },
+  { "tl": "ang", "baca": "ang", "id": "penanda sorotan" },
+  { "tl": "mga", "baca": "ma-NGA", "id": "penanda jamak" },
+  { "tl": "ba", "baca": "ba", "id": "penanda pertanyaan" },
+  { "tl": "bahay", "baca": "BA-hay", "id": "rumah" },
+  { "tl": "kwarto", "baca": "KWAR-to", "id": "kamar" },
+  { "tl": "mesa", "baca": "ME-sa", "id": "meja" },
+  { "tl": "silya", "baca": "SIL-ya", "id": "kursi" },
+  { "tl": "kama", "baca": "KA-ma", "id": "tempat tidur" },
+  { "tl": "unan", "baca": "U-nan", "id": "bantal" },
+  { "tl": "aparador", "baca": "a-pa-ra-DOR", "id": "lemari" },
+  { "tl": "bentilador", "baca": "ben-ti-la-DOR", "id": "kipas angin" },
+  { "tl": "pinto", "baca": "pin-TO'", "id": "pintu" },
+  { "tl": "bintana", "baca": "bin-TA-na", "id": "jendela" },
+  { "tl": "susi", "baca": "su-SI'", "id": "kunci" },
+  { "tl": "banyo", "baca": "BAN-yo", "id": "kamar mandi" },
+  { "tl": "kusina", "baca": "ku-SI-na", "id": "dapur" },
+  { "tl": "maliit", "baca": "ma-li-IT", "id": "kecil" },
+  { "tl": "malaki", "baca": "ma-la-KI", "id": "besar" },
+  { "tl": "malinis", "baca": "ma-li-NIS", "id": "bersih" },
+  { "tl": "madumi", "baca": "ma-du-MI", "id": "kotor" },
+  { "tl": "mainit", "baca": "ma-i-NIT", "id": "panas" },
+  { "tl": "malamig", "baca": "ma-la-MIG", "id": "dingin" },
+  { "tl": "marami", "baca": "ma-RA-mi", "id": "banyak" },
+  { "tl": "lamok", "baca": "la-MOK", "id": "nyamuk" },
+  { "tl": "pero", "baca": "PE-ro", "id": "tapi" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Tagalog.",
+   "items": [
+    "Ini apa?",
+    "Itu kipas angin.",
+    "Apakah itu lemari?",
+    "Kamarnya bersih.",
+    "Rumahnya besar.",
+    "Nyamuknya banyak."
+   ]
+  },
+  {
+   "prompt": "Isi dengan penunjuk yang tepat: ito, iyan, iyon, dito, doon.",
+   "items": [
+    "Ano ____? (benda di tanganmu sendiri)",
+    "Ano ____? (benda yang dipegang lawan bicara)",
+    "Ano ____? (benda di seberang jalan)",
+    "Mainit ____. (di tempat kamu berdiri)",
+    "Ang palengke ay ____. (di kejauhan)",
+    "____ si Ana. (memperkenalkan orang di sampingmu)"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi pertanyaan dengan ba.",
+   "items": [
+    "Guro siya. → ____",
+    "Malinis ang banyo. → ____",
+    "Taga-Maynila ka. → ____",
+    "Malaki ang bahay. → ____",
+    "Ito ang susi. → ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ang / maliit / kwarto",
+    "iyan / ba / aparador / ?",
+    "mga / ang / malinis / silya",
+    "ito / ang / mo / bahay / ba / ?",
+    "dito / lamok / marami / ba / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "Ano ito? — Bentilador iyan. — Aparador ba iyon? — Malinis ang kwarto. — Malaki ang bahay. — Marami ang lamok.",
+  "ito — iyan — iyon — dito — doon — Ito",
+  "Guro ba siya? — Malinis ba ang banyo? — Taga-Maynila ka ba? — Malaki ba ang bahay? — Ito ba ang susi?",
+  "Maliit ang kwarto. — Aparador ba iyan? — Malinis ang mga silya. — Ito ba ang bahay mo? — Marami ba ang lamok dito?"
+ ]
+}

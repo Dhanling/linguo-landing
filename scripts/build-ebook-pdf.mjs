@@ -259,7 +259,12 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
      beraksara asing memakai baris beruby yang tingginya hampir dua kali baris
      biasa; dibiarkan selonggar modul Latin, tebalnya membengkak sampai
      sepertiga tanpa satu kata pun ditambahkan. Nilai bawaannya persis seperti
-     sebelum ada tombol ini, jadi modul lama tercetak sama saja. */
+     sebelum ada tombol ini, jadi modul lama tercetak sama saja.
+
+     meta.line_height menyusul dengan alasan yang sebaliknya: modul yang
+     isinya rapat (Tagalog 101 punya 20 unit bertabel) melewati batas halaman
+     yang dijanjikan katalognya walau hurufnya sudah dikecilkan — yang menahan
+     tebalnya ternyata jarak antarbaris, bukan ukuran hurufnya. */
   @page { size: A4; margin: ${esc(meta.page_margin ?? "18mm 16mm 16mm")}; }
   /* Halaman bernama: cuma sampulnya yang dicetak tanpa marjin. */
   @page sampul { size: A4; margin: 0; }
@@ -269,7 +274,7 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
      sedikit pun sementara aksara asing tidak lagi jatuh ke fon darurat. */
   body { margin: 0; font-family: "Charter", "Georgia", "Times New Roman", serif,
          ${FON_CJK_SERIF};
-         font-size: ${esc(meta.font_size ?? "10.5pt")}; line-height: 1.55; color: #1B2233; }
+         font-size: ${esc(meta.font_size ?? "10.5pt")}; line-height: ${esc(meta.line_height ?? "1.55")}; color: #1B2233; }
   h1, h2, h3, h4, .unit-no, .sampul-tanda, th { font-family: "Helvetica Neue", Arial, sans-serif,
          ${FON_CJK_SANS}; }
 

@@ -1,0 +1,217 @@
+{
+ "title": "Kata-kata kecil yang membawa nada",
+ "title_target": "Na, pa, lang, naman, pala",
+ "goal": "Memakai partikel enklitik — kata sependek satu suku yang membedakan orang asing berbahasa Tagalog dari orang yang benar-benar berbicara Tagalog.",
+ "bekal": [
+  "membedakan *na* (sudah) dari *pa* (masih/belum)",
+  "melembutkan kalimat dengan *naman*, *lang*, dan *nga*",
+  "menyusun beberapa partikel sekaligus dalam urutan yang benar"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Tara na!",
+   "intro": "Sabtu pagi. Rombongan hendak berangkat ke pantai, tapi tidak semua orang siap.",
+   "lines": [
+    { "speaker": "Mia:", "text": "Tara na! Alas-siyete na!", "id": "Ayo dong! Sudah jam tujuh!", "literal": "ayo sudah! jam-tujuh sudah!" },
+    { "speaker": "Budi:", "text": "Sandali lang. Naliligo pa si Ate.", "id": "Sebentar saja. Kakak masih mandi.", "literal": "sebentar saja. sedang-mandi masih si Kakak." },
+    { "speaker": "Mia:", "text": "Ang tagal naman niya!", "id": "Lama amat sih dia!", "literal": "betapa lama ya dia-punya!" },
+    { "speaker": "Ana:", "text": "Tapos na ako! Nagbibihis na lang.", "id": "Aku sudah selesai! Tinggal ganti baju.", "literal": "selesai sudah saya! sedang-ganti-baju sudah saja." },
+    { "speaker": "Budi:", "text": "May dala ka bang tuwalya?", "id": "Kamu bawa handuk?", "literal": "ada bawaan kamu apakah handuk?" },
+    { "speaker": "Ana:", "text": "Oo naman. Ikaw, may sunblock ka ba?", "id": "Ya dong. Kamu, bawa tabir surya?", "literal": "ya tentu. kamu, ada sunblock kamu apakah?" },
+    { "speaker": "Budi:", "text": "Wala pa. Bibili pa ako mamaya sa tindahan.", "id": "Belum. Nanti aku beli dulu di warung.", "literal": "tiada masih. akan-beli masih saya nanti di warung." },
+    { "speaker": "Mia:", "text": "Sarado raw ang tindahan ngayon, eh.", "id": "Katanya warungnya tutup hari ini, sih.", "literal": "tutup katanya si warung sekarang, kan." },
+    { "speaker": "Budi:", "text": "Talaga? Sayang naman. Sa 7-Eleven na lang.", "id": "Oh ya? Sayang deh. Di 7-Eleven saja kalau begitu.", "literal": "sungguh? sayang ya. di 7-Eleven sudah saja." },
+    { "speaker": "Ana:", "text": "Ay, may sunblock pala ako sa bag. Sa iyo na.", "id": "Eh, ternyata aku punya tabir surya di tas. Buat kamu saja.", "literal": "eh, ada sunblock ternyata saya di tas. ke kamu sudah." },
+    { "speaker": "Budi:", "text": "Salamat, Ate! Ang bait mo talaga.", "id": "Terima kasih, Kak! Kakak baik banget.", "literal": "terima-kasih, Kakak! betapa baik kamu sungguh." },
+    { "speaker": "Mia:", "text": "Tara na nga! Male-late na tayo, eh!", "id": "Ayo dong, cepat! Kita bakal telat nih!", "literal": "ayo sudah dong! akan-terlambat sudah kita, kan!" }
+   ],
+   "notes": [
+    "**Na dan pa adalah pasangan yang saling melawan.** *Na* berarti perubahan sudah terjadi (\"sudah\", \"tinggal\"), *pa* berarti keadaan lama masih berlanjut (\"masih\", \"belum\"). *Kumain na ako* (sudah makan) versus *Kumakain pa ako* (masih makan). Dua kata sependek ini menggantikan sebagian besar pekerjaan yang di bahasa lain dilakukan oleh tenses.",
+    "**Wala pa berarti \"belum ada\", wala na berarti \"sudah habis\".** Perbedaannya seluruh dunia. Di warung, jawaban *wala na* berarti kamu terlambat; *wala pa* berarti barangnya sedang dalam perjalanan.",
+    "**Naman adalah partikel paling sulit diterjemahkan dan paling sering dipakai.** Ia melembutkan, membandingkan, sedikit mengeluh, dan menegaskan — tergantung nada. *Ang tagal naman* (lama amat sih), *Oo naman* (ya dong, tentu saja), *Ikaw naman* (giliran kamu; atau: ah kamu ini).",
+    "**Lang berarti \"saja\"** dan hampir selalu memperkecil: *sandali lang* (sebentar saja), *isa lang* (satu saja), *joke lang* (bercanda saja). Bentuk bakunya *lamang*, yang cuma dipakai dalam tulisan resmi.",
+    "**Na lang berarti \"…saja deh\"** — pilihan pengganti sesudah rencana pertama gagal. *Sa 7-Eleven na lang.* Gabungan dua partikel ini sangat khas dan sangat sering; hafalkan sebagai satu kesatuan.",
+    "**Pala menandai penemuan.** \"Oh ternyata\". *May sunblock pala ako* = ternyata aku punya. Ia selalu tentang informasi yang baru saja kamu sadari, dan tidak pernah tentang hal yang sudah kamu tahu.",
+    "**Daw / raw berarti \"katanya\"** dan memindahkan tanggung jawab atas kebenaran informasi ke orang lain. *Sarado raw* = katanya tutup — bukan aku yang bilang. Di budaya yang menghindari konfrontasi seperti Filipina, partikel ini bekerja keras.",
+    "**Eh di ujung kalimat memberi alasan** sekaligus meminta pengertian, mirip \"sih\" atau \"kan\" dalam bahasa Indonesia: *Male-late na tayo, eh.* Ia tidak pernah berdiri di awal kalimat.",
+    "**Nga menegaskan dan mendesak.** *Tara na nga!* (ayo dong, cepat!), *Oo nga* (iya benar), *Pakiulit nga* (tolong ulangi dong). Nadanya bisa hangat atau tidak sabar — telinga yang menentukan, bukan kamusnya."
+   ],
+   "grammars": [
+    {
+     "title": "Partikel yang paling sering dipakai",
+     "body": [
+      "Semuanya menempel sesudah kata pertama kalimat, tidak pernah berdiri sendiri di depan."
+     ],
+     "table": {
+      "head": ["Partikel", "Arti", "Contoh", "Terjemahan"],
+      "rows": [
+       ["**na**", "sudah; tinggal", "Kumain na ako.", "Saya sudah makan."],
+       ["**pa**", "masih; belum", "Kumakain pa ako.", "Saya masih makan."],
+       ["**lang**", "saja, cuma", "Isa lang.", "Satu saja."],
+       ["**ba**", "penanda tanya", "Guro ka ba?", "Kamu guru?"],
+       ["**po**", "sopan", "Salamat po.", "Terima kasih."],
+       ["**rin / din**", "juga", "Ako rin.", "Saya juga."],
+       ["**daw / raw**", "katanya", "Mahal daw.", "Katanya mahal."],
+       ["**naman**", "melembutkan; giliran", "Ikaw naman.", "Giliran kamu. / Ah kamu ini."],
+       ["**pala**", "ternyata", "Ikaw pala!", "Oh ternyata kamu!"],
+       ["**nga**", "memang; dong", "Oo nga.", "Iya benar."],
+       ["**kasi**", "soalnya", "Pagod kasi ako.", "Soalnya saya lelah."],
+       ["**muna**", "dulu", "Kain muna tayo.", "Makan dulu yuk."],
+       ["**sana**", "semoga; andai", "Sana pumunta ka.", "Semoga kamu datang."],
+       ["**yata**", "sepertinya", "Umalis na yata siya.", "Sepertinya dia sudah pergi."]
+      ]
+     },
+     "after": [
+      "*Sana* layak diperhatikan: ia menyatakan harapan (*sana maganda ang panahon* — semoga cuacanya bagus) sekaligus penyesalan (*sana pumunta ka kahapon* — andai kamu datang kemarin). Konteks yang memisahkan.",
+      "*Yata* adalah cara paling halus mengatakan sesuatu yang belum pasti. Sepupunya *siguro* (mungkin) dan *parang* (sepertinya, kira-kira).",
+      "Semua partikel ini bebas ditumpuk — dan penutur asli memang menumpuknya."
+     ]
+    },
+    {
+     "title": "Urutan kalau partikelnya lebih dari satu",
+     "body": [
+      "Ada urutan baku, dan melanggarnya membuat kalimatmu terdengar seperti kalimat yang diaduk. Aturan pokoknya: **yang satu suku kata lebih dulu, yang dua suku kata belakangan.**"
+     ],
+     "table": {
+      "head": ["Urutan", "Contoh", "Terjemahan"],
+      "rows": [
+       ["ka/ko/mo + na/pa", "Kumain **ka na**?", "Kamu sudah makan?"],
+       ["na/pa + po", "Kumain **na po** ako.", "Saya sudah makan, Bu."],
+       ["na/pa + po + ba", "Kumain **ka na po ba**?", "Anda sudah makan?"],
+       ["na + rin", "Ako **na rin**.", "Saya juga sudah."],
+       ["pa + daw", "Wala **pa raw**.", "Katanya belum ada."],
+       ["na + lang", "Bukas **na lang**.", "Besok saja."],
+       ["na + naman", "Ikaw **na naman**!", "Kamu lagi!"],
+       ["pa + pala", "Meron **pa pala**.", "Ternyata masih ada."]
+      ]
+     },
+     "after": [
+      "Yang paling sering kamu butuhkan cuma tiga: *ka na ba*, *na po*, dan *na lang*. Kuasai tiga ini dan sembilan puluh persen kalimat sehari-harimu sudah berbunyi wajar.",
+      "⚠️ Kalau kata pertama kalimat memakai penghubung, partikelnya masuk **sebelum** penghubung: *Wala na**ng** tinapay* (sudah tidak ada roti), bukan *walang na tinapay*.",
+      "Menempatkan partikel dengan benar adalah salah satu tanda paling cepat bahwa seseorang benar-benar berbahasa Tagalog, bukan sekadar menerjemahkan dari bahasa Inggris di kepalanya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Na dan pa dalam kalimat sehari-hari",
+   "blocks": [
+    { "type": "tabel", "head": ["Dengan na", "Arti", "Dengan pa", "Arti"], "rows": [
+      ["Kumain na ako.", "Saya sudah makan.", "Kumakain pa ako.", "Saya masih makan."],
+      ["Wala na.", "Sudah habis.", "Wala pa.", "Belum ada."],
+      ["Meron na.", "Sudah ada.", "Meron pa.", "Masih ada."],
+      ["Tapos na.", "Sudah selesai.", "Hindi pa tapos.", "Belum selesai."],
+      ["Alis na tayo.", "Ayo berangkat sekarang.", "Sandali pa.", "Sebentar lagi."],
+      ["Malaki na siya.", "Dia sudah besar.", "Bata pa siya.", "Dia masih kecil."],
+      ["Tama na.", "Cukup.", "Konti pa.", "Sedikit lagi."]
+     ] },
+    { "type": "p", "text": "Perhatikan baris terakhir: *tama na* (sudah cukup) dan *konti pa* (sedikit lagi) adalah dua kalimat yang paling sering kamu ucapkan di meja makan Filipina — yang pertama untuk menghentikan tuan rumah, yang kedua untuk memintanya melanjutkan." }
+   ]
+  },
+  {
+   "title": "Nada yang dibawa naman",
+   "blocks": [
+    { "type": "p", "text": "*Naman* pantas mendapat halamannya sendiri, karena ia satu-satunya partikel yang benar-benar tidak punya padanan tetap dalam bahasa Indonesia." },
+    { "type": "tabel", "head": ["Kalimat", "Nada", "Terjemahan yang pas"], "rows": [
+      ["Mabuti naman.", "melembutkan jawaban", "Baik-baik saja kok."],
+      ["Oo naman!", "menegaskan", "Ya dong! Tentu saja!"],
+      ["Ang tagal naman.", "keluhan halus", "Lama amat sih."],
+      ["Ikaw naman.", "giliran", "Sekarang giliran kamu."],
+      ["Ikaw naman kasi.", "menyalahkan halus", "Ah, kamu sih."],
+      ["Ako naman ang bibili.", "membandingkan", "Kali ini biar aku yang beli."],
+      ["Sayang naman.", "menyesal", "Sayang ya."]
+     ] },
+    { "type": "kotak", "title": "Kenapa partikel ini penting", "items": [
+      "Bahasa Tagalog menyampaikan kesopanan dan kehangatan lewat partikel, bukan lewat pilihan kata seperti bahasa Jawa atau lewat bentuk kalimat seperti bahasa Inggris.",
+      "Kalimat yang tata bahasanya sempurna tapi tanpa partikel akan terdengar dingin, kaku, dan sedikit menakutkan — seperti pengumuman bandara. Menambahkan *naman*, *po*, atau *lang* seketika mengubahnya jadi percakapan antar-manusia.",
+      "Inilah bagian bahasa yang tidak bisa dipelajari dari tabel mana pun, termasuk tabel ini. Ia dipelajari dengan mendengar orang bicara — teleserye, vlog, dan percakapan di warung."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "tl": "na", "baca": "na", "id": "sudah; tinggal" },
+  { "tl": "pa", "baca": "pa", "id": "masih; belum" },
+  { "tl": "lang", "baca": "lang", "id": "saja" },
+  { "tl": "naman", "baca": "na-MAN", "id": "kok; dong; giliran" },
+  { "tl": "pala", "baca": "pa-LA", "id": "ternyata" },
+  { "tl": "nga", "baca": "nga'", "id": "memang; dong" },
+  { "tl": "kasi", "baca": "ka-SI", "id": "soalnya" },
+  { "tl": "muna", "baca": "MU-na", "id": "dulu" },
+  { "tl": "sana", "baca": "SA-na", "id": "semoga; andai" },
+  { "tl": "yata", "baca": "ya-TA'", "id": "sepertinya" },
+  { "tl": "parang", "baca": "PA-rang", "id": "seperti, kira-kira" },
+  { "tl": "siguro", "baca": "si-GU-ro", "id": "mungkin" },
+  { "tl": "talaga", "baca": "ta-la-GA", "id": "sungguh" },
+  { "tl": "sayang", "baca": "SA-yang", "id": "sayang (disesalkan)" },
+  { "tl": "tapos na", "baca": "TA-pos na", "id": "sudah selesai" },
+  { "tl": "tama na", "baca": "ta-MA na", "id": "cukup" },
+  { "tl": "sarado", "baca": "sa-RA-do", "id": "tutup" },
+  { "tl": "bukas (buka)", "baca": "BU-kas", "id": "terbuka" },
+  { "tl": "matagal", "baca": "ma-ta-GAL", "id": "lama" },
+  { "tl": "tuwalya", "baca": "tu-WAL-ya", "id": "handuk" },
+  { "tl": "dala", "baca": "da-LA", "id": "bawaan" },
+  { "tl": "dagat", "baca": "DA-gat", "id": "laut" },
+  { "tl": "baybayin", "baca": "bay-BA-yin", "id": "pantai; aksara kuno" },
+  { "tl": "araw-araw", "baca": "A-raw A-raw", "id": "setiap hari" },
+  { "tl": "panahon", "baca": "pa-na-HON", "id": "cuaca; zaman" },
+  { "tl": "joke lang", "baca": "dyok lang", "id": "bercanda saja" },
+  { "tl": "ganoon", "baca": "ga-no-ON", "id": "begitu" },
+  { "tl": "ganito", "baca": "ga-ni-TO", "id": "begini" },
+  { "tl": "ibig sabihin", "baca": "i-BIG sa-BI-hin", "id": "artinya" },
+  { "tl": "halika", "baca": "ha-li-KA", "id": "kemarilah" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan na atau pa.",
+   "items": [
+    "Kumain ____ ako, busog na busog. (sudah)",
+    "Kumakain ____ siya, hintayin natin. (masih)",
+    "Wala ____ akong pera, bukas pa ang sweldo. (belum)",
+    "Tapos ____ ang klase. (sudah)",
+    "Bata ____ siya, sampung taon lang. (masih)",
+    "Alis ____ tayo, late na. (sudah/sekarang)"
+   ]
+  },
+  {
+   "prompt": "Pilih partikel yang tepat: naman, pala, daw, lang, kasi, sana.",
+   "items": [
+    "Oo ____! Tentu saja.",
+    "Ikaw ____! Ternyata kamu.",
+    "Mahal ____ ang bigas ngayon. Katanya.",
+    "Sandali ____. Sebentar saja.",
+    "Pagod ____ ako. Soalnya lelah.",
+    "____ pumunta ka bukas. Semoga."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Tagalog.",
+   "items": [
+    "Kamu sudah makan?",
+    "Belum.",
+    "Besok saja.",
+    "Lama amat sih!",
+    "Ternyata masih ada."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ba / na / ka / kumain / ?",
+    "po / na / ako / kumain",
+    "lang / na / bukas",
+    "niya / naman / ang / tagal",
+    "pala / meron / pa"
+   ]
+  }
+ ],
+ "answers": [
+  "na — pa — pa — na — pa — na",
+  "naman — pala — daw — lang — kasi — Sana",
+  "Kumain ka na ba? — Hindi pa. — Bukas na lang. — Ang tagal naman! — Meron pa pala.",
+  "Kumain ka na ba? — Kumain na po ako. — Bukas na lang. — Ang tagal naman niya. — Meron pa pala."
+ ],
+ "wave": "Ulangi **unit 12**: sebutkan lima kata kerja *-um-* dan tiga kata kerja *ma-* dalam ketiga aspeknya, keras-keras, tanpa melihat tabel."
+}

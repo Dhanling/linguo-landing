@@ -1,0 +1,215 @@
+{
+ "title": "Kata kerja yang tidak mengenal waktu",
+ "title_target": "Nagluluto, nagluto, magluluto",
+ "goal": "Memakai kata kerja berawalan *mag-* dalam tiga tahapan — sudah, sedang, akan — dan menyadari bahwa bahasa Tagalog menandai tahapan, bukan waktu.",
+ "bekal": [
+  "membentuk tiga aspek kata kerja *mag-* dari kata dasarnya",
+  "menyusun kalimat kata kerja: kerja dulu, pelaku belakangan",
+  "menyangkal kata kerja dengan *hindi* dan mengenali jebakan *hindi pa*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Sino ang nagluluto?",
+   "intro": "Sore hari di dapur bersama. Mia sedang memasak, Budi baru pulang, dan Ana baru bangun tidur.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Ang bango! Ano ang niluluto mo, Mia?", "id": "Wangi sekali! Kamu sedang masak apa, Mia?", "literal": "betapa harum! apa si yang-sedang-dimasak kamu-punya, Mia?" },
+    { "speaker": "Mia:", "text": "Nagluluto ako ng adobo. Paborito ni Ate.", "id": "Aku sedang masak adobo. Kesukaan Kakak.", "literal": "sedang-memasak saya akan adobo. favorit punya-si Kakak." },
+    { "speaker": "Budi:", "text": "Nagluto ka na ba kahapon?", "id": "Kemarin kamu sudah masak?", "literal": "sudah-memasak kamu sudah apakah kemarin?" },
+    { "speaker": "Mia:", "text": "Hindi. Nag-order lang kami kahapon. Tamad ako eh.", "id": "Tidak. Kemarin kami cuma pesan. Aku malas sih.", "literal": "tidak. sudah-pesan saja kami kemarin. malas saya kan." },
+    { "speaker": "Ana:", "text": "Magluluto rin ako bukas. Sinigang naman.", "id": "Besok aku juga akan masak. Sinigang gantian.", "literal": "akan-memasak juga saya besok. sinigang adapun." },
+    { "speaker": "Budi:", "text": "Ano ang ginagawa mo ngayon, Ate?", "id": "Kakak sedang apa sekarang?", "literal": "apa si yang-sedang-dikerjakan kamu-punya sekarang, Kakak?" },
+    { "speaker": "Ana:", "text": "Wala. Nagpapahinga lang ako. Nagtrabaho ako buong araw kahapon.", "id": "Tidak ada. Aku cuma istirahat. Kemarin aku kerja seharian.", "literal": "tiada. sedang-istirahat saja saya. sudah-bekerja saya seluruh hari kemarin." },
+    { "speaker": "Mia:", "text": "Ikaw, Kuya Budi? Nag-aral ka ba kagabi?", "id": "Kamu, Kak Budi? Tadi malam belajar?", "literal": "kamu, Kak Budi? sudah-belajar kamu apakah tadi-malam?" },
+    { "speaker": "Budi:", "text": "Hindi pa. Mag-aaral ako mamaya, pagkatapos kumain.", "id": "Belum. Nanti aku belajar, setelah makan.", "literal": "tidak masih. akan-belajar saya nanti, sesudah makan." },
+    { "speaker": "Ana:", "text": "Laging pagkatapos kumain, tapos natutulog ka na!", "id": "Selalu habis makan, terus kamu malah ketiduran!", "literal": "selalu sesudah makan, lalu sedang-tidur kamu sudah!" },
+    { "speaker": "Budi:", "text": "Hindi po ngayon! Mag-aaral talaga ako, promise.", "id": "Tidak untuk sekarang! Aku benar-benar akan belajar, janji.", "literal": "tidak Bu sekarang! akan-belajar sungguh saya, janji." }
+   ],
+   "notes": [
+    "**Bahasa Tagalog tidak punya waktu, ia punya tahapan.** Kata kerjanya tidak bertanya \"kapan\", melainkan \"sudah dimulai atau belum, sudah selesai atau belum\". Karena itu *nagluto* dipakai untuk apa pun yang sudah selesai — kemarin, tadi pagi, atau lima tahun lalu. Kapannya diberi tahu oleh kata keterangan (*kahapon*, *kanina*, *noong isang taon*), bukan oleh kata kerjanya.",
+    "**Mag- berubah jadi nag- begitu perbuatannya dimulai.** Ini kunci seluruh sistem: awalan *m-* berarti belum dimulai, awalan *n-* berarti sudah dimulai. *Magluto* (akan/belum) → *nagluto* (sudah). Aturan yang sama berlaku untuk *ma-* → *na-* di unit berikutnya.",
+    "**Pengulangan suku kata pertama berarti belum selesai.** *Nagluluto* (sedang memasak) dan *magluluto* (akan memasak) sama-sama mengulang *lu-*. Perbedaannya cuma satu huruf di depan: *n-* berarti sudah dimulai (jadi: sedang), *m-* berarti belum (jadi: akan).",
+    "**Kata kerja berdiri paling depan.** *Nagluluto ako ng adobo*, bukan *Ako nagluluto*. Susunan bakunya: kata kerja → pelaku → objek → keterangan. Ini kebalikan bahasa Indonesia dan butuh latihan sadar selama beberapa hari.",
+    "**Pelaku ditandai ang atau si; objek ditandai ng.** *Nagluluto **ako** ng **adobo*** — pelakunya disorot (*ako*, deret *ang*), objeknya tidak (*ng adobo*). Inilah yang disebut fokus pelaku, dan unit 13 akan menunjukkan apa jadinya kalau sorotannya dipindah.",
+    "**Niluluto dan ginagawa** yang muncul di dialog memakai fokus objek — bentuk yang baru dipasang di unit 13. Untuk sekarang cukup kenali dua kalimat utuh ini sebagai pola tanya sehari-hari: *Ano ang niluluto mo?* dan *Ano ang ginagawa mo?*",
+    "**Hindi pa berarti \"belum\"**, bukan \"tidak\". Menjawab *hindi* saja atas *Nag-aral ka ba?* berarti \"tidak, dan tidak akan\". Menambahkan *pa* mengubahnya jadi \"belum\" — yang hampir selalu lebih jujur dan lebih sopan.",
+    "**Eh di ujung kalimat** adalah partikel pelunak khas Filipina, mirip \"sih\" dalam bahasa Indonesia: *Tamad ako eh.* Ia memberi alasan sekaligus meminta pengertian.",
+    "**Talaga berarti \"sungguh\"** dan bisa berdiri sendiri sebagai seruan: *Talaga?* — \"Oh ya?\" Salah satu kata yang paling sering kamu dengar dalam percakapan sehari-hari."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga tahapan kata kerja mag-",
+     "body": [
+      "Ambil kata dasar, lalu kerjakan dua hal: pilih awalan (*mag-* kalau belum dimulai, *nag-* kalau sudah), dan ulangi suku kata pertama kata dasar kalau perbuatannya belum selesai."
+     ],
+     "table": {
+      "head": ["Kata dasar", "Infinitif (belum)", "Sudah", "Sedang", "Akan", "Arti"],
+      "rows": [
+       ["luto", "**mag**luto", "**nag**luto", "**nag**lu**lu**to", "**mag**lu**lu**to", "memasak"],
+       ["trabaho", "**mag**trabaho", "**nag**trabaho", "**nag**tra**tra**baho", "**mag**tra**tra**baho", "bekerja"],
+       ["aral", "**mag**-aral", "**nag**-aral", "**nag**-a**a**ral", "**mag**-a**a**ral", "belajar"],
+       ["linis", "**mag**linis", "**nag**linis", "**nag**li**li**nis", "**mag**li**li**nis", "membersihkan"],
+       ["laba", "**mag**laba", "**nag**laba", "**nag**la**la**ba", "**mag**la**la**ba", "mencuci baju"],
+       ["basa", "**mag**basa", "**nag**basa", "**nag**ba**ba**sa", "**mag**ba**ba**sa", "membaca"],
+       ["bayad", "**mag**bayad", "**nag**bayad", "**nag**ba**ba**yad", "**mag**ba**ba**yad", "membayar"],
+       ["hintay", "**mag**hintay", "**nag**hintay", "**nag**hi**hin**tay", "**mag**hi**hin**tay", "menunggu"]
+      ]
+     },
+     "after": [
+      "**Yang diulang adalah suku kata pertama kata dasar, bukan awalannya.** *Nagluluto*, bukan *nanagluto*. Suku kata yang diulang hanya konsonan + vokal pertama: *lu-*, *tra-*, *a-*, *li-*.",
+      "Kata dasar yang dimulai vokal memakai tanda hubung sesudah *mag-*: *mag-aral*, *mag-ingat*, *mag-alala*. Ini aturan ejaan, bukan bunyi.",
+      "Dua bentuk yang paling sering tertukar pemula adalah *nagluluto* (sedang) dan *magluluto* (akan). Bedanya cuma huruf pertama. Kalau ragu, ingat: **n = sudah jalan, m = belum jalan.**"
+     ]
+    },
+    {
+     "title": "Susunan kalimat berkata kerja",
+     "body": [
+      "Susunan baku bahasa Tagalog menaruh kata kerja di depan. Semua yang lain menyusul menurut urutan yang cukup longgar."
+     ],
+     "table": {
+      "head": ["Kalimat", "Harfiah", "Arti"],
+      "rows": [
+       ["**Nagluluto** ang nanay.", "sedang-masak si ibu", "Ibu sedang memasak."],
+       ["**Nagluluto** ang nanay **ng** adobo.", "sedang-masak si ibu akan adobo", "Ibu sedang memasak adobo."],
+       ["**Nagluluto** **siya** **sa** kusina.", "sedang-masak dia di dapur", "Dia sedang memasak di dapur."],
+       ["**Nag-aral** **ako** kahapon.", "sudah-belajar saya kemarin", "Saya belajar kemarin."],
+       ["**Hindi** **ako** nag-aral.", "tidak saya sudah-belajar", "Saya tidak belajar."],
+       ["**Hindi pa** **ako** nag-aaral.", "tidak masih saya sedang-belajar", "Saya belum belajar."]
+      ]
+     },
+     "after": [
+      "Perhatikan dua baris terakhir: begitu ada *hindi*, kata ganti pendek melompat ke depan kata kerjanya. *Hindi ako nag-aral*, bukan *hindi nag-aral ako*. Aturan yang sama berlaku untuk semua partikel: mereka berkumpul sesudah kata pertama.",
+      "Untuk bertanya siapa pelakunya: *Sino ang nagluluto?* Jawabannya menaruh pelaku di depan dengan *ang*: *Si Mia ang nagluluto.* Pola *X ang Y* ini menekankan — \"Mia-lah yang memasak\".",
+      "Untuk bertanya sedang apa: *Ano ang ginagawa mo?* Hafalkan utuh; bentuk sepupunya *Anong ginagawa mo?* sama saja."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata kerja mag- yang paling sering dipakai",
+   "blocks": [
+    { "type": "tabel", "head": ["Infinitif", "Arti", "Sudah", "Sedang", "Akan"], "rows": [
+      ["mag-aral", "belajar", "nag-aral", "nag-aaral", "mag-aaral"],
+      ["magtrabaho", "bekerja", "nagtrabaho", "nagtatrabaho", "magtatrabaho"],
+      ["magluto", "memasak", "nagluto", "nagluluto", "magluluto"],
+      ["maglinis", "membersihkan", "naglinis", "naglilinis", "maglilinis"],
+      ["maglaba", "mencuci baju", "naglaba", "naglalaba", "maglalaba"],
+      ["magbasa", "membaca", "nagbasa", "nagbabasa", "magbabasa"],
+      ["magsulat", "menulis", "nagsulat", "nagsusulat", "magsusulat"],
+      ["magbayad", "membayar", "nagbayad", "nagbabayad", "magbabayad"],
+      ["magdala", "membawa", "nagdala", "nagdadala", "magdadala"],
+      ["maghintay", "menunggu", "naghintay", "naghihintay", "maghihintay"],
+      ["magbihis", "berganti baju", "nagbihis", "nagbibihis", "magbibihis"],
+      ["magsalita", "berbicara", "nagsalita", "nagsasalita", "magsasalita"],
+      ["magtanong", "bertanya", "nagtanong", "nagtatanong", "magtatanong"],
+      ["maglakad", "berjalan", "naglakad", "naglalakad", "maglalakad"],
+      ["magpahinga", "beristirahat", "nagpahinga", "nagpapahinga", "magpapahinga"]
+     ] },
+    { "type": "p", "text": "Kata kerja *mag-* cenderung menandai perbuatan yang **disengaja dan dikerjakan sendiri** oleh pelakunya. Ini akan terasa penting di unit berikutnya, ketika kamu bertemu *-um-* — kelompok kata kerja yang menutupi wilayah yang berdekatan tapi tidak sama." },
+    { "type": "kotak", "title": "Mag- + kata Inggris", "items": [
+      "Awalan ini sangat produktif dan menerima kata Inggris tanpa keberatan: *mag-shopping*, *nag-jogging*, *mag-online*, *nag-text*, *mag-Zoom*.",
+      "Bentuk aspeknya mengikuti aturan yang sama: *nag-shoshopping* (sedang berbelanja), *mag-tetext ako* (aku akan mengirim pesan). Terlihat aneh di mata, terdengar biasa di telinga."
+     ] }
+   ]
+  },
+  {
+   "title": "Keterangan waktu yang menemani tiap aspek",
+   "blocks": [
+    { "type": "p", "text": "Karena kata kerjanya tidak menandai waktu, keterangan waktulah yang bekerja. Pasangan berikut adalah yang paling lazim." },
+    { "type": "tabel", "head": ["Aspek", "Keterangan yang cocok", "Contoh"], "rows": [
+      ["Sudah", "kahapon, kanina, kagabi, noong Lunes", "Nagtrabaho ako kahapon."],
+      ["Sudah", "kanina lang, kababalik lang", "Nagluto siya kanina lang."],
+      ["Sedang", "ngayon, sa ngayon", "Nag-aaral ako ngayon."],
+      ["Sedang (kebiasaan)", "araw-araw, tuwing Lunes, palagi", "Nagtatrabaho ako araw-araw."],
+      ["Akan", "bukas, mamaya, sa Lunes, sa susunod", "Magluluto ako bukas."],
+      ["Belum", "hindi pa, wala pa", "Hindi pa ako nag-aaral."]
+     ] },
+    { "type": "p", "text": "Baris keempat layak diperhatikan: **bentuk \"sedang\" juga dipakai untuk kebiasaan.** *Nagtatrabaho ako araw-araw* bukan berarti \"saya sedang bekerja setiap hari\", melainkan \"saya bekerja setiap hari\". Bahasa Indonesia memakai bentuk yang sama untuk keduanya, jadi ini justru mudah bagimu." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "tl": "mag-aral", "baca": "mag-A-ral", "id": "belajar" },
+  { "tl": "magtrabaho", "baca": "mag-tra-BA-ho", "id": "bekerja" },
+  { "tl": "magluto", "baca": "mag-LU-to'", "id": "memasak" },
+  { "tl": "maglinis", "baca": "mag-LI-nis", "id": "membersihkan" },
+  { "tl": "maglaba", "baca": "mag-la-BA", "id": "mencuci baju" },
+  { "tl": "magbasa", "baca": "mag-BA-sa", "id": "membaca" },
+  { "tl": "magsulat", "baca": "mag-SU-lat", "id": "menulis" },
+  { "tl": "magbayad", "baca": "mag-BA-yad", "id": "membayar" },
+  { "tl": "magdala", "baca": "mag-da-LA", "id": "membawa" },
+  { "tl": "maghintay", "baca": "mag-hin-TAY", "id": "menunggu" },
+  { "tl": "magsalita", "baca": "mag-sa-li-TA'", "id": "berbicara" },
+  { "tl": "magtanong", "baca": "mag-ta-NONG", "id": "bertanya" },
+  { "tl": "maglakad", "baca": "mag-la-KAD", "id": "berjalan kaki" },
+  { "tl": "magpahinga", "baca": "mag-pa-hi-NGA", "id": "beristirahat" },
+  { "tl": "magbihis", "baca": "mag-BI-his", "id": "berganti pakaian" },
+  { "tl": "adobo", "baca": "a-DO-bo", "id": "adobo (masakan khas)" },
+  { "tl": "sinigang", "baca": "si-ni-GANG", "id": "sup asam khas Filipina" },
+  { "tl": "kusina", "baca": "ku-SI-na", "id": "dapur" },
+  { "tl": "paborito", "baca": "pa-bo-RI-to", "id": "kesukaan" },
+  { "tl": "mabango", "baca": "ma-ba-NGO", "id": "harum" },
+  { "tl": "tamad", "baca": "TA-mad", "id": "malas" },
+  { "tl": "masipag", "baca": "ma-SI-pag", "id": "rajin" },
+  { "tl": "buong araw", "baca": "bu-ONG A-raw", "id": "seharian" },
+  { "tl": "pagkatapos", "baca": "pag-ka-TA-pos", "id": "sesudah" },
+  { "tl": "talaga", "baca": "ta-la-GA", "id": "sungguh, benar-benar" },
+  { "tl": "palagi", "baca": "pa-la-GI", "id": "selalu" },
+  { "tl": "araw-araw", "baca": "A-raw A-raw", "id": "setiap hari" },
+  { "tl": "ginagawa", "baca": "gi-na-ga-WA", "id": "sedang dikerjakan" },
+  { "tl": "eh", "baca": "e", "id": "sih (partikel pelunak)" },
+  { "tl": "tapos", "baca": "TA-pos", "id": "lalu; selesai" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk yang diminta.",
+   "items": [
+    "magluto (sudah) → ____",
+    "mag-aral (sedang) → ____",
+    "magtrabaho (akan) → ____",
+    "maglinis (sudah) → ____",
+    "magbasa (sedang) → ____",
+    "maghintay (akan) → ____"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+   "items": [
+    "____ ako ng adobo kahapon. (magluto)",
+    "____ siya ngayon sa kusina. (magluto)",
+    "____ kami bukas ng umaga. (mag-aral)",
+    "____ ang nanay ko araw-araw. (magtrabaho)",
+    "Hindi pa ako ____. (mag-aral, bentuk sedang)",
+    "____ tayo mamaya sa parke. (maglakad)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Tagalog.",
+   "items": [
+    "Saya belajar kemarin.",
+    "Dia sedang memasak adobo.",
+    "Besok kami akan bekerja.",
+    "Saya belum belajar.",
+    "Ibu bekerja setiap hari."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ako / adobo / nagluluto / ng",
+    "ka / nag-aral / ba / kagabi / ?",
+    "mamaya / ako / mag-aaral",
+    "ako / hindi / nag-aral / pa",
+    "araw-araw / nanay / nagtatrabaho / ang / ko"
+   ]
+  }
+ ],
+ "answers": [
+  "nagluto — nag-aaral — magtatrabaho — naglinis — nagbabasa — maghihintay",
+  "Nagluto — Nagluluto — Mag-aaral — Nagtatrabaho — nag-aaral — Maglalakad",
+  "Nag-aral ako kahapon. — Nagluluto siya ng adobo. — Magtatrabaho kami bukas. — Hindi pa ako nag-aaral. — Nagtatrabaho ang nanay ko araw-araw.",
+  "Nagluluto ako ng adobo. — Nag-aral ka ba kagabi? — Mag-aaral ako mamaya. — Hindi pa ako nag-aral. — Nagtatrabaho ang nanay ko araw-araw."
+ ],
+ "wave": "Ulangi **unit 9**: sebutkan jadwalmu satu minggu penuh — hari, jam, dan kegiatannya — memakai *sa Lunes*, *alas-otso ng umaga*, dan seterusnya."
+}

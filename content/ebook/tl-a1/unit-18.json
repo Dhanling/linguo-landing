@@ -1,0 +1,221 @@
+{
+ "title": "Menemukan jalan",
+ "title_target": "Para po! Saan ako bababa?",
+ "goal": "Naik kendaraan umum Filipina, menanyakan arah, dan menerangkan letak sesuatu dengan kata depan yang tepat.",
+ "bekal": [
+  "menghentikan jeepney dan membayar ongkos seperti orang setempat",
+  "memberi dan meminta petunjuk arah: kanan, kiri, lurus",
+  "menerangkan letak: di depan, di belakang, di sebelah, di dalam"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Sa loob ng jeepney",
+   "intro": "Jeepney penuh di jalan Taft. Budi menuju Rizal Park dan belum yakin harus turun di mana.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Manong, dumadaan po ba kayo sa Luneta?", "id": "Pak, apakah lewat Luneta?", "literal": "pak, sedang-lewat Pak apakah kalian di Luneta?" },
+    { "speaker": "Drayber:", "text": "Oo, sakay ka na.", "id": "Ya, naik saja.", "literal": "ya, naik kamu sudah." },
+    { "speaker": "Budi:", "text": "Magkano po ang pamasahe?", "id": "Ongkosnya berapa, Pak?", "literal": "berapa Pak si ongkos?" },
+    { "speaker": "Drayber:", "text": "Trese pesos lang.", "id": "Cuma tiga belas peso.", "literal": "tiga-belas peso saja." },
+    { "speaker": "Budi:", "text": "Bayad po. Pakiabot po sa driver.", "id": "Ini ongkosnya. Tolong sampaikan ke sopir.", "literal": "bayaran Pak. tolong-sampaikan Pak ke sopir." },
+    { "speaker": "Pasahero:", "text": "Sige. Ilan po kayo?", "id": "Baik. Berapa orang?", "literal": "baiklah. berapa Pak kalian?" },
+    { "speaker": "Budi:", "text": "Isa lang po. Saan po ako bababa para sa Luneta?", "id": "Satu saja. Untuk ke Luneta saya turun di mana?", "literal": "satu saja Pak. di-mana Pak saya akan-turun untuk ke Luneta?" },
+    { "speaker": "Pasahero:", "text": "Sa tapat ng simbahan. Sasabihan kita.", "id": "Di depan gereja. Nanti saya beri tahu.", "literal": "di seberang punya gereja. akan-diberi-tahu aku-kamu." },
+    { "speaker": "Budi:", "text": "Maraming salamat po!", "id": "Terima kasih banyak, Pak!", "literal": "banyak terima-kasih Pak!" },
+    { "speaker": "Pasahero:", "text": "Ayan na. Para na kayo.", "id": "Itu dia. Bilang berhenti sekarang.", "literal": "itu-dia sudah. berhenti sudah kalian." },
+    { "speaker": "Budi:", "text": "Para po! Salamat po!", "id": "Berhenti, Pak! Terima kasih!", "literal": "berhenti Pak! terima-kasih Pak!" },
+    { "speaker": "Drayber:", "text": "Ingat ka, iho!", "id": "Hati-hati, Nak!", "literal": "hati-hati kamu, nak!" }
+   ],
+   "notes": [
+    "**Para po! adalah kata paling penting di unit ini.** Ia berarti \"berhenti\" dan dipakai untuk menghentikan jeepney, tricycle, atau bus di mana pun kamu mau turun. Kata ini datang dari bahasa Spanyol *parar* (berhenti) dan tidak ada hubungannya dengan *para* yang berarti \"untuk\" — walau ditulis sama persis.",
+    "**Bayad po** diucapkan sambil menyerahkan uang, bahkan kalau kamu duduk jauh dari sopir. Penumpang lain akan menyampaikannya ke depan tanpa diminta, dan kembaliannya akan kembali lewat rantai tangan yang sama. Sistem kepercayaan ini bekerja setiap hari di seluruh Filipina.",
+    "**Manong dan Manang** adalah sapaan hormat kepada laki-laki dan perempuan yang lebih tua, dan hampir wajib kepada sopir jeepney. Untuk sopir taksi dan Grab, orang lebih sering memakai *kuya*.",
+    "**Sakay ka na** dari kata dasar *sakay* (naik kendaraan). Perhatikan bentuk perintah *-um-* di sini muncul tanpa imbuhan sama sekali — pemendekan yang sangat lazim dalam ucapan sehari-hari.",
+    "**Sa tapat ng** berarti \"tepat di seberang\" atau \"persis di depan\". Bedakan dari *sa harap ng*, yang berarti di depan tapi masih di sisi yang sama.",
+    "**Sasabihan kita** memakai bentuk gabungan *kita* (saya→kamu) dari unit 4, dengan kata kerja fokus penerima dari unit 13. Kalimat ini utuh berarti \"saya akan memberitahumu\".",
+    "**Dumadaan** dari kata dasar *daan* — yang berarti \"jalan\" dan juga \"lewat\". Kata yang sama muncul dalam *daan* (seratus)? Bukan: itu kebetulan ejaan. *Isang daan* memang seratus, tapi asal katanya berbeda.",
+    "**Jeepney** adalah kendaraan yang lahir dari jip tentara Amerika sesudah Perang Dunia II, dipanjangkan dan dihias sampai jadi lambang Filipina. Ongkosnya termurah di antara semua pilihan, rutenya tertulis di badan mobil, dan tidak ada halte resmi — kamu naik dan turun di mana saja.",
+    "**Tricycle** adalah motor bersespan yang mengangkut penumpang di jarak pendek, dan di banyak kota kecil ia satu-satunya angkutan yang ada. Ongkosnya biasanya per orang, tapi tanyakan dulu: *Magkano po hanggang…?*"
+   ],
+   "grammars": [
+    {
+     "title": "Kata depan tempat",
+     "body": [
+      "Semuanya dibangun dari *sa* + kata tempat + *ng*. Pola ini tetap sama untuk seluruh daftar, jadi yang perlu dihafal hanya kata tengahnya."
+     ],
+     "table": {
+      "head": ["Tagalog", "Cara baca", "Arti", "Contoh"],
+      "rows": [
+       ["sa harap ng", "sa HA-rap nang", "di depan", "sa harap ng bahay"],
+       ["sa likod ng", "sa li-KOD nang", "di belakang", "sa likod ng mall"],
+       ["sa tabi ng", "sa ta-BI nang", "di sebelah", "sa tabi ng simbahan"],
+       ["sa tapat ng", "sa ta-PAT nang", "di seberang", "sa tapat ng paaralan"],
+       ["sa loob ng", "sa lo-OB nang", "di dalam", "sa loob ng bag"],
+       ["sa labas ng", "sa la-BAS nang", "di luar", "sa labas ng bahay"],
+       ["sa ibabaw ng", "sa i-BA-baw nang", "di atas", "sa ibabaw ng mesa"],
+       ["sa ilalim ng", "sa i-LA-lim nang", "di bawah", "sa ilalim ng kama"],
+       ["sa pagitan ng", "sa pa-gi-TAN nang", "di antara", "sa pagitan ng dalawa"],
+       ["malapit sa", "ma-LA-pit sa", "dekat dengan", "malapit sa palengke"],
+       ["malayo sa", "ma-LA-yo' sa", "jauh dari", "malayo sa bahay"],
+       ["katabi ng", "ka-ta-BI nang", "bersebelahan dengan", "katabi ng bangko"]
+      ]
+     },
+     "after": [
+      "Untuk nama orang, *ng* di ujung berubah jadi *ni*: *sa tabi ni Ana*, *sa harap ni Kuya*. Aturan penanda dari unit 5 berlaku di sini juga.",
+      "*Malapit* dan *malayo* memakai *sa*, bukan *ng*: *malapit **sa** palengke*, bukan *malapit ng palengke*. Ini pengecualian kecil yang layak dihafal.",
+      "Untuk menanyakan letak, pakai *nasaan*; untuk menanyakan jarak, pakai *gaano kalayo*."
+     ]
+    },
+    {
+     "title": "Memberi petunjuk arah",
+     "body": [
+      "Perintah arah memakai kata kerja *-um-* yang sudah kamu kenal dari unit 12, biasanya dalam bentuk dasar."
+     ],
+     "table": {
+      "head": ["Tagalog", "Cara baca", "Arti"],
+      "rows": [
+       ["Dumiretso ka.", "du-mi-RET-so", "Jalan lurus."],
+       ["Kumanan ka.", "ku-MA-nan", "Belok kanan."],
+       ["Kumaliwa ka.", "ku-ma-li-WA'", "Belok kiri."],
+       ["Tumawid ka.", "tu-MA-wid", "Menyeberang."],
+       ["Umakyat ka.", "u-mak-YAT", "Naik (tangga)."],
+       ["Bumaba ka.", "bu-ma-BA'", "Turun."],
+       ["Lumiko ka sa kanto.", "lu-mi-KO'", "Belok di pojok."],
+       ["Huminto ka dito.", "hu-min-TO'", "Berhenti di sini."],
+       ["Sumakay ka ng jeep.", "su-MA-kay", "Naik jeepney."],
+       ["Bumaba ka sa tapat ng simbahan.", "bu-ma-BA'", "Turun di seberang gereja."]
+      ]
+     },
+     "after": [
+      "Kata *kanan* (kanan) dan *kaliwa* (kiri) juga dipakai sendirian sebagai perintah singkat kepada sopir: *Kanan po sa kanto* — \"kanan di pojok ya, Pak\".",
+      "Jarak dinyatakan dengan blok bangunan atau perhentian: *dalawang kanto* (dua pojok), *tatlong sakayan* (tiga perhentian).",
+      "Kalau kamu tersesat, kalimat penyelamatnya: *Pasensya po, nawawala po ako. Paano po pumunta sa …?* — \"Maaf, saya tersesat. Bagaimana caranya ke …?\""
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kendaraan di Filipina",
+   "blocks": [
+    { "type": "tabel", "head": ["Tagalog", "Apa itu", "Kapan dipakai"], "rows": [
+      ["**jeep / jeepney**", "kendaraan panjang berpenumpang di dua bangku memanjang", "jarak menengah dalam kota, termurah"],
+      ["**tricycle**", "motor bersespan", "jarak pendek, gang, kota kecil"],
+      ["**traysikad / padyak**", "becak sepeda", "jarak sangat pendek"],
+      ["**bus**", "bus kota atau antarkota", "jarak jauh"],
+      ["**LRT / MRT**", "kereta layang Manila", "menembus kemacetan"],
+      ["**taxi**", "taksi meteran", "cari yang bermeter; katakan *meter po*"],
+      ["**Grab**", "ojek/taksi daring", "paling mudah untuk pendatang"],
+      ["**habal-habal**", "ojek", "daerah pegunungan dan pulau kecil"],
+      ["**bangka**", "perahu bercadik", "antarpulau jarak dekat"],
+      ["**barko**", "kapal besar", "antarpulau jarak jauh"]
+     ] },
+    { "type": "kotak", "title": "Kalimat wajib di kendaraan umum", "items": [
+      "*Bayad po.* — menyerahkan ongkos.  *Sukli po.* — meminta kembalian.",
+      "*Para po!* — minta berhenti.  *Sa tabi lang po.* — \"di pinggir saja, Pak\", cara halus meminta berhenti.",
+      "*Meter po, kuya.* — meminta sopir taksi menyalakan argo. Kalau ditolak, turun dan cari yang lain."
+     ] }
+   ]
+  },
+  {
+   "title": "Menanyakan arah",
+   "blocks": [
+    { "type": "tabel", "head": ["Tagalog", "Arti"], "rows": [
+      ["Paano po pumunta sa Luneta?", "Bagaimana caranya ke Luneta?"],
+      ["Saan po ang CR?", "Kamar mandinya di mana?"],
+      ["Malayo po ba dito?", "Jauh dari sini?"],
+      ["Gaano po katagal?", "Berapa lama?"],
+      ["Ilang minuto po?", "Berapa menit?"],
+      ["Dumadaan po ba kayo sa Makati?", "Apakah lewat Makati?"],
+      ["Saan po ako bababa?", "Saya turun di mana?"],
+      ["Nawawala po ako.", "Saya tersesat."],
+      ["Puwede po bang ituro?", "Boleh ditunjukkan?"],
+      ["Dito po ba ang sakayan?", "Tempat naiknya di sini?"]
+     ] },
+    { "type": "p", "text": "Jawaban yang paling sering kamu terima bukan nama jalan, melainkan patokan: *sa tapat ng simbahan*, *katabi ng 7-Eleven*, *pagkatapos ng ilog*. Di Filipina, seperti di Indonesia, orang memberi arah dengan bangunan, bukan dengan peta." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "tl": "sakay", "baca": "SA-kay", "id": "naik kendaraan" },
+  { "tl": "bumaba", "baca": "bu-ma-BA'", "id": "turun" },
+  { "tl": "para", "baca": "PA-ra", "id": "berhenti (di kendaraan)" },
+  { "tl": "bayad", "baca": "BA-yad", "id": "ongkos, bayaran" },
+  { "tl": "pamasahe", "baca": "pa-ma-SA-he", "id": "ongkos" },
+  { "tl": "drayber", "baca": "DRAY-ber", "id": "sopir" },
+  { "tl": "pasahero", "baca": "pa-sa-HE-ro", "id": "penumpang" },
+  { "tl": "sakayan", "baca": "sa-KA-yan", "id": "tempat naik" },
+  { "tl": "kanan", "baca": "KA-nan", "id": "kanan" },
+  { "tl": "kaliwa", "baca": "ka-li-WA'", "id": "kiri" },
+  { "tl": "diretso", "baca": "di-RET-so", "id": "lurus" },
+  { "tl": "tumawid", "baca": "tu-MA-wid", "id": "menyeberang" },
+  { "tl": "lumiko", "baca": "lu-mi-KO'", "id": "belok" },
+  { "tl": "harap", "baca": "HA-rap", "id": "depan" },
+  { "tl": "likod", "baca": "li-KOD", "id": "belakang" },
+  { "tl": "tabi", "baca": "ta-BI", "id": "sebelah" },
+  { "tl": "tapat", "baca": "ta-PAT", "id": "seberang" },
+  { "tl": "ibabaw", "baca": "i-BA-baw", "id": "atas" },
+  { "tl": "ilalim", "baca": "i-LA-lim", "id": "bawah" },
+  { "tl": "pagitan", "baca": "pa-gi-TAN", "id": "antara" },
+  { "tl": "kanto", "baca": "KAN-to", "id": "pojok jalan" },
+  { "tl": "daan", "baca": "da-AN", "id": "jalan" },
+  { "tl": "tulay", "baca": "tu-LAY", "id": "jembatan" },
+  { "tl": "ilog", "baca": "I-log", "id": "sungai" },
+  { "tl": "nawawala", "baca": "na-wa-wa-LA", "id": "tersesat, hilang" },
+  { "tl": "ituro", "baca": "i-TU-ro'", "id": "tunjukkan" },
+  { "tl": "dumaan", "baca": "du-ma-AN", "id": "lewat" },
+  { "tl": "trapik", "baca": "TRA-pik", "id": "macet" },
+  { "tl": "malapit", "baca": "ma-LA-pit", "id": "dekat" },
+  { "tl": "malayo", "baca": "ma-LA-yo'", "id": "jauh" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Tagalog.",
+   "items": [
+    "Ongkosnya berapa, Pak?",
+    "Berhenti, Pak!",
+    "Saya turun di mana?",
+    "Bagaimana caranya ke Luneta?",
+    "Jauh dari sini?",
+    "Saya tersesat."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata depan yang tepat: harap, likod, tabi, loob, ilalim.",
+   "items": [
+    "Ang tindahan ay sa ____ ng simbahan. (di sebelah)",
+    "Nasa ____ ng bag ang susi. (di dalam)",
+    "Ang kotse ay sa ____ ng bahay. (di depan)",
+    "Nasa ____ ng kama ang sapatos. (di bawah)",
+    "May hardin sa ____ ng paaralan. (di belakang)"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi perintah arah.",
+   "items": [
+    "lurus → ____ ka.",
+    "belok kanan → ____ ka.",
+    "belok kiri → ____ ka.",
+    "menyeberang → ____ ka.",
+    "turun di pojok → ____ ka sa kanto."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "po / ang / magkano / pamasahe / ?",
+    "po / ako / saan / bababa / ?",
+    "ng / sa / simbahan / tapat",
+    "po / sa / paano / pumunta / Luneta / ?",
+    "po / kayo / ba / sa / dumadaan / Makati / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "Magkano po ang pamasahe? — Para po! — Saan po ako bababa? — Paano po pumunta sa Luneta? — Malayo po ba dito? — Nawawala po ako.",
+  "tabi — loob — harap — ilalim — likod",
+  "Dumiretso — Kumanan — Kumaliwa — Tumawid — Bumaba",
+  "Magkano po ang pamasahe? — Saan po ako bababa? — Sa tapat ng simbahan. — Paano po pumunta sa Luneta? — Dumadaan po ba kayo sa Makati?"
+ ],
+ "wave": "Ulangi **unit 16**: sebutkan lima hal yang kamu mau, lima yang tidak kamu mau, dan lima yang harus kamu kerjakan hari ini — semuanya dengan *gusto*, *ayaw*, dan *kailangan*."
+}

@@ -1,0 +1,228 @@
+{
+ "title": "Jam berapa sekarang?",
+ "title_target": "Anong oras na?",
+ "goal": "Menyebut jam dengan cara yang benar-benar dipakai orang, menamai hari dan bulan, dan menempatkan kejadian di kemarin, hari ini, atau besok.",
+ "bekal": [
+  "membaca jam dengan *alas-* dan menambahkan bagian hari (*ng umaga*, *ng gabi*)",
+  "menyebut tujuh hari dan dua belas bulan — semuanya dari bahasa Spanyol",
+  "memakai *kanina*, *mamaya*, *kahapon*, *bukas* dengan tepat"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Anong oras ang klase?",
+   "intro": "Budi baru mendaftar kursus. Mia menjelaskan jadwalnya sambil menuliskannya di ponsel.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Anong oras ang klase bukas?", "id": "Besok kelasnya jam berapa?", "literal": "apa-yang jam si kelas besok?" },
+    { "speaker": "Mia:", "text": "Alas-otso ng umaga. Huwag kang ma-late!", "id": "Jam delapan pagi. Jangan telat!", "literal": "jam-delapan punya pagi. jangan kamu ter-lambat!" },
+    { "speaker": "Budi:", "text": "Alas-otso? Ang aga naman!", "id": "Jam delapan? Pagi amat!", "literal": "jam-delapan? betapa pagi ya!" },
+    { "speaker": "Mia:", "text": "Hanggang alas-onse lang naman. May pahinga sa alas-nuwebe y medya.", "id": "Cuma sampai jam sebelas kok. Ada istirahat jam setengah sepuluh.", "literal": "sampai jam-sebelas saja ya. ada istirahat di jam-sembilan dan setengah." },
+    { "speaker": "Budi:", "text": "Sige. Anong araw ang klase?", "id": "Baik. Kelasnya hari apa saja?", "literal": "baiklah. apa-yang hari si kelas?" },
+    { "speaker": "Mia:", "text": "Lunes, Miyerkules, at Biyernes.", "id": "Senin, Rabu, dan Jumat.", "literal": "Senin, Rabu, dan Jumat." },
+    { "speaker": "Budi:", "text": "Wala bang klase sa Sabado?", "id": "Sabtu tidak ada kelas?", "literal": "tiada apakah kelas di Sabtu?" },
+    { "speaker": "Mia:", "text": "Wala. Pero may practice tayo sa Sabado ng hapon.", "id": "Tidak ada. Tapi Sabtu sore kita ada latihan.", "literal": "tiada. tapi ada latihan kita di Sabtu punya sore." },
+    { "speaker": "Budi:", "text": "Anong petsa ngayon?", "id": "Sekarang tanggal berapa?", "literal": "apa-yang tanggal sekarang?" },
+    { "speaker": "Mia:", "text": "Ika-labinlima ng Hunyo. Mag-eexam tayo sa katapusan ng buwan.", "id": "Lima belas Juni. Akhir bulan kita ujian.", "literal": "ke-lima-belas punya Juni. akan-ujian kita di akhir punya bulan." },
+    { "speaker": "Budi:", "text": "Naku! Kailangan ko nang mag-aral.", "id": "Aduh! Aku harus mulai belajar.", "literal": "aduh! perlu aku-punya sudah belajar." }
+   ],
+   "notes": [
+    "**Jam memakai bilangan Spanyol, selalu.** *Alas-otso* (jam 8), *alas-dos* (jam 2), *alas-singko* (jam 5). Satu-satunya pengecualian jam satu: *ala-una*, dengan *ala-* bukan *alas-*, karena dalam bahasa Spanyol jam satu bersifat tunggal.",
+    "**Bagian hari ditambahkan dengan ng.** *Alas-otso ng umaga* (8 pagi), *alas-otso ng gabi* (8 malam). Tanpa keterangan ini, jam di Filipina bisa berarti dua waktu yang berbeda dua belas jam.",
+    "**Y medya berarti setengah** (dari Spanyol *y media*): *alas-nuwebe y medya* = setengah sepuluh, harfiahnya \"jam sembilan dan setengah\". Perhatikan bedanya dengan bahasa Indonesia, yang menghitung *maju* ke jam berikutnya.",
+    "**Ika- adalah bentuk resmi.** *Ika-walo ng umaga* sama dengan *alas-otso ng umaga*, tapi dipakai di undangan, jadwal resmi, dan berita. Untuk tanggal, justru *ika-* yang lazim: *ika-labinlima ng Hunyo*.",
+    "**Ang aga naman** memakai pola seruan unit 3 dengan kata dasar *aga* (pagi buta). Sepupunya: *ang gabi na* (sudah malam sekali), *ang tagal* (lama sekali).",
+    "**Hanggang berarti \"sampai\"** — dipakai untuk waktu maupun tempat: *hanggang alas-onse*, *hanggang Maynila*. Ia juga dipakai untuk pamit: *hanggang bukas* (sampai besok).",
+    "**Ma-late adalah Taglish sempurna**: awalan Tagalog *ma-* dipasang pada kata Inggris *late*. Pola ini hidup dan produktif — *mag-shopping*, *nag-jogging*, *ma-stress*. Kamu akan sering mendengarnya, dan tidak ada yang menganggapnya salah.",
+    "**Naku!** adalah seruan serba guna: terkejut, kecewa, ngeri, gemas. Bentuk panjangnya *ay naku*, dan versi yang lebih kuat *naku po*. Padanan terdekatnya \"aduh\" atau \"astaga\".",
+    "**Katapusan ng buwan** = akhir bulan. Kata *katapusan* juga berarti \"akhir\" secara umum, dari kata dasar *tapos* — yang sudah kamu kenal lewat bahasa Indonesia. Salah satu contoh terbaik kekerabatan dua bahasa ini."
+   ],
+   "grammars": [
+    {
+     "title": "Membaca jam",
+     "body": [
+      "Pertanyaan bakunya *Anong oras na?* dan jawaban bakunya memakai *alas-* + bilangan Spanyol."
+     ],
+     "table": {
+      "head": ["Jam", "Tagalog", "Cara baca", "Catatan"],
+      "rows": [
+       ["1:00", "ala-una", "a-la U-na", "**ala-**, bukan *alas-*"],
+       ["2:00", "alas-dos", "a-las DOS", ""],
+       ["3:00", "alas-tres", "a-las TRES", ""],
+       ["5:00", "alas-singko", "a-las SING-ko", ""],
+       ["7:00", "alas-siyete", "a-las SYE-te", ""],
+       ["8:30", "alas-otso y medya", "a-las OT-so i MED-ya", "*y medya* = dan setengah"],
+       ["9:15", "alas-nuwebe kinse", "a-las nu-WE-be KIN-se", "lewat lima belas"],
+       ["10:45", "menos kinse alas-onse", "ME-nos KIN-se", "kurang lima belas menuju sebelas"],
+       ["12:00 siang", "alas-dose ng tanghali", "a-las DO-se", ""],
+       ["12:00 malam", "hatinggabi", "ha-ting-ga-BI", "harfiah: tengah malam"]
+      ]
+     },
+     "after": [
+      "Bagian hari yang bisa ditempelkan: *ng umaga* (pagi, 6-11), *ng tanghali* (tengah hari, 11-13), *ng hapon* (siang-sore, 13-18), *ng gabi* (malam, 18-24), *ng madaling-araw* (dini hari, 1-5).",
+      "Untuk menanyakan jam berapa sesuatu berlangsung: *Anong oras ang klase?* Untuk menjawab kapan, tambahkan *sa*: *Sa alas-otso.*",
+      "Menit yang tidak bulat biasanya dibaca dalam bahasa Inggris: *eight forty-five*. Ini bukan kemalasan, melainkan kebiasaan — bahkan penutur asli melakukannya."
+     ]
+    },
+    {
+     "title": "Hari, bulan, dan penunjuk waktu",
+     "body": [
+      "Nama hari dan bulan seluruhnya datang dari bahasa Spanyol, jadi tidak ada satu pun yang perlu diterka."
+     ],
+     "tables": [
+      {
+       "head": ["Hari", "Cara baca", "Arti"],
+       "rows": [
+        ["Lunes", "LU-nes", "Senin"],
+        ["Martes", "MAR-tes", "Selasa"],
+        ["Miyerkules", "mi-YER-ku-les", "Rabu"],
+        ["Huwebes", "hu-WE-bes", "Kamis"],
+        ["Biyernes", "bi-YER-nes", "Jumat"],
+        ["Sabado", "SA-ba-do", "Sabtu"],
+        ["Linggo", "ling-GO", "Minggu; juga berarti *pekan*"]
+       ]
+      },
+      {
+       "head": ["Bulan", "Arti", "Bulan", "Arti"],
+       "rows": [
+        ["Enero", "Januari", "Hulyo", "Juli"],
+        ["Pebrero", "Februari", "Agosto", "Agustus"],
+        ["Marso", "Maret", "Setyembre", "September"],
+        ["Abril", "April", "Oktubre", "Oktober"],
+        ["Mayo", "Mei", "Nobyembre", "November"],
+        ["Hunyo", "Juni", "Disyembre", "Desember"]
+       ]
+      }
+     ],
+     "after": [
+      "*Linggo* mengerjakan dua tugas: hari Minggu **dan** satu pekan. *Sa Linggo* = hari Minggu; *isang linggo* = satu minggu. Konteks yang memisahkan, dan penutur asli tidak pernah bingung.",
+      "Hari selalu diawali *sa*: *sa Lunes* (pada hari Senin). Untuk kebiasaan berulang dipakai *tuwing*: *tuwing Lunes* (setiap Senin).",
+      "Tanggal ditulis dengan *ika-*: *ika-lima ng Mayo* (5 Mei). Dalam percakapan cepat, orang sering langsung memakai bahasa Inggris: *May five*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kapan: kemarin, sekarang, nanti",
+   "blocks": [
+    { "type": "tabel", "head": ["Tagalog", "Cara baca", "Arti", "Catatan"], "rows": [
+      ["ngayon", "nga-YON", "sekarang; hari ini", "juga \"zaman sekarang\""],
+      ["kanina", "ka-NI-na", "tadi", "masih hari ini"],
+      ["mamaya", "ma-ma-YA", "nanti", "masih hari ini"],
+      ["kahapon", "ka-HA-pon", "kemarin", ""],
+      ["bukas", "bu-KAS", "besok", "tekanan di belakang!"],
+      ["kamakalawa", "ka-ma-ka-la-WA", "kemarin lusa", ""],
+      ["sa makalawa", "sa ma-ka-la-WA", "lusa", ""],
+      ["noong isang linggo", "no-ONG i-SANG ling-GO", "minggu lalu", ""],
+      ["sa susunod na linggo", "sa su-SU-nod na ling-GO", "minggu depan", ""],
+      ["mamayang gabi", "ma-ma-YANG ga-BI", "nanti malam", ""],
+      ["kagabi", "ka-ga-BI", "tadi malam", ""],
+      ["araw-araw", "A-raw A-raw", "setiap hari", "pengulangan = keberulangan"]
+     ] },
+    { "type": "p", "text": "Perhatikan dua awalan yang saling berlawanan: **ka-** menunjuk ke belakang (*kahapon*, *kagabi*, *kanina*), sedangkan **sa** menunjuk ke depan (*sa makalawa*, *sa Linggo*, *sa susunod*). Begitu pola ini kelihatan, separuh kata di tabel ini tidak perlu dihafal satu-satu." },
+    { "type": "kotak", "title": "Noong dan sa", "items": [
+      "**Noong** menandai waktu lampau: *noong Lunes* (Senin lalu), *noong 2020*, *noong bata pa ako* (waktu saya masih kecil).",
+      "**Sa** menandai waktu mendatang: *sa Lunes* (Senin depan), *sa Disyembre*, *sa susunod na taon*.",
+      "Dua kata kecil ini menggantikan seluruh sistem tenses yang tidak dimiliki bahasa Tagalog — dan itulah sebabnya kata kerja Tagalog tidak perlu menandai waktu sendiri."
+     ] }
+   ]
+  },
+  {
+   "title": "Menanyakan waktu",
+   "blocks": [
+    { "type": "tabel", "head": ["Pertanyaan", "Arti", "Contoh jawaban"], "rows": [
+      ["Anong oras na?", "Sekarang jam berapa?", "Alas-tres na."],
+      ["Anong oras ang klase?", "Kelasnya jam berapa?", "Alas-otso ng umaga."],
+      ["Anong araw ngayon?", "Hari ini hari apa?", "Miyerkules."],
+      ["Anong petsa ngayon?", "Hari ini tanggal berapa?", "Ika-lima ng Hunyo."],
+      ["Kailan ka darating?", "Kapan kamu datang?", "Bukas ng hapon."],
+      ["Gaano katagal?", "Berapa lama?", "Isang oras lang."]
+     ] },
+    { "type": "p", "text": "*Gaano katagal* menanyakan durasi, dan jawabannya memakai satuan waktu biasa: *limang minuto*, *dalawang oras*, *tatlong araw*, *isang linggo*, *anim na buwan*, *isang taon*." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "tl": "oras", "baca": "O-ras", "id": "jam, waktu" },
+  { "tl": "minuto", "baca": "mi-NU-to", "id": "menit" },
+  { "tl": "alas-", "baca": "a-las", "id": "penanda jam" },
+  { "tl": "y medya", "baca": "i MED-ya", "id": "setengah (jam)" },
+  { "tl": "hatinggabi", "baca": "ha-ting-ga-BI", "id": "tengah malam" },
+  { "tl": "madaling-araw", "baca": "ma-da-LING A-raw", "id": "dini hari" },
+  { "tl": "tanghali", "baca": "tang-HA-li'", "id": "tengah hari" },
+  { "tl": "Lunes", "baca": "LU-nes", "id": "Senin" },
+  { "tl": "Martes", "baca": "MAR-tes", "id": "Selasa" },
+  { "tl": "Miyerkules", "baca": "mi-YER-ku-les", "id": "Rabu" },
+  { "tl": "Huwebes", "baca": "hu-WE-bes", "id": "Kamis" },
+  { "tl": "Biyernes", "baca": "bi-YER-nes", "id": "Jumat" },
+  { "tl": "Sabado", "baca": "SA-ba-do", "id": "Sabtu" },
+  { "tl": "Linggo", "baca": "ling-GO", "id": "Minggu; pekan" },
+  { "tl": "petsa", "baca": "PET-sa", "id": "tanggal" },
+  { "tl": "kailan", "baca": "kay-LAN", "id": "kapan" },
+  { "tl": "ngayon", "baca": "nga-YON", "id": "sekarang; hari ini" },
+  { "tl": "kanina", "baca": "ka-NI-na", "id": "tadi" },
+  { "tl": "mamaya", "baca": "ma-ma-YA", "id": "nanti" },
+  { "tl": "kahapon", "baca": "ka-HA-pon", "id": "kemarin" },
+  { "tl": "kagabi", "baca": "ka-ga-BI", "id": "tadi malam" },
+  { "tl": "noong", "baca": "no-ONG", "id": "pada (waktu lampau)" },
+  { "tl": "tuwing", "baca": "tu-WING", "id": "setiap (berulang)" },
+  { "tl": "hanggang", "baca": "hang-GANG", "id": "sampai" },
+  { "tl": "katapusan", "baca": "ka-ta-PU-san", "id": "akhir" },
+  { "tl": "simula", "baca": "si-mu-LA'", "id": "awal, mulai" },
+  { "tl": "pahinga", "baca": "pa-hi-NGA", "id": "istirahat" },
+  { "tl": "klase", "baca": "KLA-se", "id": "kelas" },
+  { "tl": "gaano katagal", "baca": "ga-A-no ka-ta-GAL", "id": "berapa lama" },
+  { "tl": "naku", "baca": "na-KU", "id": "aduh, astaga" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis jam berikut dalam bahasa Tagalog.",
+   "items": [
+    "08:00 pagi",
+    "13:00",
+    "19:30",
+    "10:15",
+    "12:00 tengah malam",
+    "05:00 pagi"
+   ]
+  },
+  {
+   "prompt": "Isi dengan penunjuk waktu yang tepat: kahapon, bukas, kanina, mamaya, ngayon, kagabi.",
+   "items": [
+    "Umuwi ako ____. (dua jam yang lalu, hari ini)",
+    "May klase ako ____. (esok hari)",
+    "Natulog ako nang maaga ____. (malam yang baru lewat)",
+    "Miyerkules ____. (hari ini)",
+    "Kumain kami sa labas ____. (satu hari sebelum ini)",
+    "Tawagan mo ako ____. (beberapa jam lagi)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Tagalog.",
+   "items": [
+    "Sekarang jam berapa?",
+    "Hari ini hari apa?",
+    "Kelasnya jam delapan pagi.",
+    "Sabtu tidak ada kelas.",
+    "Setiap Senin saya bekerja."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "na / oras / anong / ?",
+    "umaga / alas-otso / ng",
+    "klase / bukas / ang / anong / oras / ?",
+    "Sabado / klase / walang / sa",
+    "linggo / sa / darating / susunod / na / siya"
+   ]
+  }
+ ],
+ "answers": [
+  "alas-otso ng umaga — ala-una ng hapon — alas-siyete y medya ng gabi — alas-diyes kinse ng umaga — hatinggabi — alas-singko ng umaga",
+  "kanina — bukas — kagabi — ngayon — kahapon — mamaya",
+  "Anong oras na? — Anong araw ngayon? — Alas-otso ng umaga ang klase. — Walang klase sa Sabado. — Tuwing Lunes ako nagtatrabaho.",
+  "Anong oras na? — Alas-otso ng umaga. — Anong oras ang klase bukas? — Walang klase sa Sabado. — Darating siya sa susunod na linggo."
+ ],
+ "wave": "Ulangi **unit 7**: sebutkan harga lima barang yang tadi kamu beli dengan bilangan Spanyol, lalu hitung jumlah barangnya dengan bilangan asli Tagalog lengkap dengan penghubungnya."
+}

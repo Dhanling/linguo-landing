@@ -1,0 +1,216 @@
+{
+ "title": "Berapa banyak, berapa harganya",
+ "title_target": "Ilan? Magkano?",
+ "goal": "Menghitung dengan angka asli Tagalog, membaca harga dan jam dengan angka Spanyol, dan tahu kapan memakai yang mana.",
+ "bekal": [
+  "menghitung 1 sampai 100 dengan bilangan asli Tagalog",
+  "menyebut harga dengan bilangan Spanyol — cara yang benar-benar dipakai di pasar",
+  "memasang penghubung pada angka: *isang libro*, *apat na bata*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Sa bakery",
+   "intro": "Pagi hari di toko roti. Budi membeli pandesal, roti bulat kecil yang jadi sarapan sejuta orang Filipina.",
+   "lines": [
+    { "speaker": "Tindera:", "text": "Magandang umaga po! Ano po ang kailangan ninyo?", "id": "Selamat pagi! Perlu apa, Pak?", "literal": "indahnya pagi Pak! apa Pak si keperluan kalian-punya?" },
+    { "speaker": "Budi:", "text": "Magkano po ang pandesal?", "id": "Pandesalnya berapa, Bu?", "literal": "berapa Bu si pandesal?" },
+    { "speaker": "Tindera:", "text": "Tatlong piso bawat isa po.", "id": "Tiga peso satunya, Pak.", "literal": "tiga peso tiap satu Pak." },
+    { "speaker": "Budi:", "text": "Bigyan ninyo ako ng sampu.", "id": "Beri saya sepuluh.", "literal": "diberi kalian saya akan sepuluh." },
+    { "speaker": "Tindera:", "text": "Sampung pandesal po. Trenta pesos lahat.", "id": "Sepuluh pandesal. Semuanya tiga puluh peso.", "literal": "sepuluh pandesal Pak. tiga-puluh peso semua." },
+    { "speaker": "Budi:", "text": "Heto po ang singkwenta.", "id": "Ini lima puluh, Bu.", "literal": "ini-dia Bu si lima-puluh." },
+    { "speaker": "Tindera:", "text": "Bente pesos po ang sukli ninyo. Salamat po!", "id": "Kembaliannya dua puluh peso, Pak. Terima kasih!", "literal": "dua-puluh peso Bu si kembalian kalian-punya. terima-kasih Bu!" },
+    { "speaker": "Budi:", "text": "May kape rin po ba kayo?", "id": "Ibu punya kopi juga?", "literal": "ada kopi juga Bu apakah kalian?" },
+    { "speaker": "Tindera:", "text": "Mayroon po. Dalawampung piso ang isang tasa.", "id": "Ada, Pak. Satu cangkir dua puluh peso.", "literal": "ada Bu. dua-puluh peso si satu cangkir." },
+    { "speaker": "Budi:", "text": "Isa po. Salamat!", "id": "Satu, Bu. Terima kasih!", "literal": "satu Bu. terima-kasih!" },
+    { "speaker": "Tindera:", "text": "Sige po. Balik po kayo, ha?", "id": "Baik, Pak. Datang lagi ya?", "literal": "baiklah Bu. kembali Bu kalian, ya?" }
+   ],
+   "notes": [
+    "**Dua sistem angka hidup berdampingan.** Bilangan asli Tagalog (*isa, dalawa, tatlo*) dipakai untuk menghitung benda. Bilangan Spanyol (*uno, dos, tres*) dipakai untuk **harga, jam, dan tanggal**. Bukan satu menggantikan yang lain: keduanya dipakai orang yang sama dalam satu kalimat, seperti di dialog ini.",
+    "**Magkano menanyakan harga**, *ilan* menanyakan jumlah. Jangan tertukar: *Ilan ang pandesal?* menanyakan berapa butir, *Magkano ang pandesal?* menanyakan berapa peso.",
+    "**Angka juga butuh penghubung.** *Sampung pandesal*, *tatlong piso*, *dalawampung piso* — semua memakai *-ng* karena angkanya berakhir vokal. Yang berakhir konsonan memakai *na*: *apat na tao*, *anim na libro*, *siyam na araw*.",
+    "**Bawat isa** berarti \"masing-masing\" atau \"satuannya\". Bentuk lain yang sama artinya: *isahan*, dan dalam percakapan orang sering cukup bilang *tig-tatlo* (tiga-tiga).",
+    "**Heto** artinya \"ini dia\" — dipakai saat menyerahkan sesuatu, persis seperti \"nih\" dalam bahasa Indonesia. Sepupunya: *hayan* (itu dia, dekat kamu) dan *hayun* (itu dia, jauh).",
+    "**Pesos atau piso?** Bentuk Tagalognya *piso*, bentuk Inggris/Spanyolnya *pesos*. Keduanya dipakai tanpa aturan ketat, sering dalam satu kalimat yang sama. Di harga tertulis kamu akan melihat ₱ atau \"Php\".",
+    "**Bigyan ninyo ako ng sampu** adalah bentuk yang sopan dan agak resmi. Di warung, orang lebih sering cukup menyebut jumlahnya: *Sampu po* — dan itu sudah cukup.",
+    "**Ha? di ujung kalimat** melembutkan permintaan atau ajakan, mirip \"ya?\" dalam bahasa Indonesia: *Balik po kayo, ha?* Nadanya hangat, bukan menantang.",
+    "**Pandesal** (dari Spanyol *pan de sal*, roti garam) adalah sarapan nasional Filipina — dan meski namanya berarti roti asin, rasanya justru sedikit manis."
+   ],
+   "grammars": [
+    {
+     "title": "Bilangan asli Tagalog",
+     "body": [
+      "Bilangan ini dipakai untuk menghitung benda, orang, hari, dan umur. Sebagian akan terasa akrab: *lima* dan *anim* memang kata yang sama dengan bahasa Indonesia."
+     ],
+     "table": {
+      "head": ["Angka", "Tagalog", "Cara baca", "Angka", "Tagalog", "Cara baca"],
+      "rows": [
+       ["1", "isa", "i-SA", "11", "labing-isa", "la-bing i-SA"],
+       ["2", "dalawa", "da-la-WA", "12", "labindalawa", "la-bin-da-la-WA"],
+       ["3", "tatlo", "tat-LO", "13", "labintatlo", "la-bin-tat-LO"],
+       ["4", "apat", "A-pat", "20", "dalawampu", "da-la-wam-PU"],
+       ["5", "lima", "li-MA", "21", "dalawampu't isa", "da-la-wam-PUT i-SA"],
+       ["6", "anim", "A-nim", "30", "tatlumpu", "tat-lum-PU"],
+       ["7", "pito", "pi-TO", "40", "apatnapu", "a-pat-na-PU"],
+       ["8", "walo", "wa-LO", "50", "limampu", "li-mam-PU"],
+       ["9", "siyam", "si-YAM", "100", "isang daan", "i-SANG da-AN"],
+       ["10", "sampu", "sam-PU", "1000", "isang libo", "i-SANG LI-bo"]
+      ]
+     },
+     "after": [
+      "Pola belasan: **labing-** + angka satuan, dengan penyesuaian bunyi (*labindalawa*, *labintatlo*, *labing-apat*). Pola puluhan: angka + **-mpu** atau **-napu** (*dalawampu*, *tatlumpu*, *apatnapu*).",
+      "Penghubung **'t** (singkatan dari *at*, \"dan\") dipakai di antara puluhan dan satuan: *dalawampu't lima* (25), *limampu't anim* (56).",
+      "Untuk umur dipakai bilangan asli: *Dalawampu't lima anong taon ako* — atau lebih lazim, *Beinte singko anyos ako*, dengan bilangan Spanyol. Dua-duanya kamu akan dengar."
+     ]
+    },
+    {
+     "title": "Bilangan Spanyol — untuk uang dan jam",
+     "body": [
+      "Untuk harga dan waktu, orang Filipina hampir selalu memakai bilangan Spanyol. Memakai bilangan asli di sini tidak salah, tapi terdengar seperti membaca buku pelajaran."
+     ],
+     "table": {
+      "head": ["Angka", "Spanyol-Tagalog", "Cara baca", "Angka", "Spanyol-Tagalog", "Cara baca"],
+      "rows": [
+       ["1", "uno", "U-no", "20", "bente", "BEN-te"],
+       ["2", "dos", "dos", "25", "bente singko", "BEN-te SING-ko"],
+       ["3", "tres", "tres", "30", "trenta", "TREN-ta"],
+       ["4", "kwatro", "KWAT-ro", "40", "kwarenta", "kwa-REN-ta"],
+       ["5", "singko", "SING-ko", "50", "singkwenta", "sing-KWEN-ta"],
+       ["6", "sais", "sa-IS", "60", "sisenta", "si-SEN-ta"],
+       ["7", "siyete", "SYE-te", "70", "setenta", "se-TEN-ta"],
+       ["8", "otso", "OT-so", "80", "otsenta", "ot-SEN-ta"],
+       ["9", "nuwebe", "nu-WE-be", "90", "nobenta", "no-BEN-ta"],
+       ["10", "diyes", "dyes", "100", "siyento", "SYEN-to"]
+      ]
+     },
+     "after": [
+      "Harga diucapkan begitu saja diikuti *pesos*: *bente pesos*, *singkwenta pesos*, *siyento singkwenta pesos* (150).",
+      "Untuk ratusan besar dan ribuan, orang kembali memakai campuran: *isang libo* (1.000) lebih lazim daripada *mil*, tapi *dos mil* (2.000) juga sering terdengar.",
+      "⚠️ Angka Spanyol **tidak** dipakai untuk menghitung benda. *Dos pandesal* terdengar aneh; yang benar *dalawang pandesal*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Penghubung pada angka",
+   "blocks": [
+    { "type": "p", "text": "Angka dan kata benda selalu disambung dengan penghubung, dan bentuknya mengikuti aturan yang sudah kamu kenal dari unit 3: huruf terakhir angka yang menentukan." },
+    { "type": "tabel", "head": ["Angka", "Berakhir", "Bentuk", "Contoh", "Arti"], "rows": [
+      ["isa", "vokal", "isa**ng**", "isang libro", "satu buku"],
+      ["dalawa", "vokal", "dalawa**ng**", "dalawang bata", "dua anak"],
+      ["tatlo", "vokal", "tatlo**ng**", "tatlong araw", "tiga hari"],
+      ["apat", "konsonan", "apat **na**", "apat na tao", "empat orang"],
+      ["lima", "vokal", "lima**ng**", "limang piso", "lima peso"],
+      ["anim", "konsonan", "anim **na**", "anim na buwan", "enam bulan"],
+      ["pito", "vokal", "pito**ng**", "pitong taon", "tujuh tahun"],
+      ["walo", "vokal", "walo**ng**", "walong oras", "delapan jam"],
+      ["siyam", "konsonan", "siyam **na**", "siyam na tao", "sembilan orang"],
+      ["sampu", "vokal", "sampu**ng**", "sampung piso", "sepuluh peso"]
+     ] },
+    { "type": "p", "text": "Perhatikan hanya tiga angka pertama sepuluh yang memakai *na*: **apat**, **anim**, dan **siyam** — semuanya berakhir konsonan. Sisanya memakai *-ng* yang menempel. Hafalkan tiga pengecualian itu dan sisanya jalan sendiri." }
+   ]
+  },
+  {
+   "title": "Bertanya berapa",
+   "blocks": [
+    { "type": "tabel", "head": ["Pertanyaan", "Menanyakan", "Contoh jawaban"], "rows": [
+      ["**Magkano** ito?", "harga", "Singkwenta pesos."],
+      ["**Ilan** ang gusto mo?", "jumlah", "Tatlo po."],
+      ["**Ilang taon** ka na?", "umur", "Bente singko na ako."],
+      ["**Anong oras** na?", "jam", "Alas-otso na."],
+      ["**Ilang araw**?", "lama hari", "Tatlong araw."],
+      ["**Pang-ilan** ito?", "urutan", "Pangalawa."]
+     ] },
+    { "type": "p", "text": "*Ilan* berdiri sendiri; kalau diikuti kata benda ia jadi *ilang*: *Ilang tao?* (berapa orang), *Ilang piso?* (berapa peso). Penghubung yang sama lagi." },
+    { "type": "kotak", "title": "Urutan: pang-", "items": [
+      "*una* (pertama), *pangalawa* (kedua), *pangatlo* (ketiga), *pang-apat* (keempat), *panlima* (kelima).",
+      "Bentuk *una* berdiri sendiri karena datang dari bahasa Spanyol; sisanya memakai awalan **pang-** pada bilangan asli."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "tl": "isa", "baca": "i-SA", "id": "satu" },
+  { "tl": "dalawa", "baca": "da-la-WA", "id": "dua" },
+  { "tl": "tatlo", "baca": "tat-LO", "id": "tiga" },
+  { "tl": "apat", "baca": "A-pat", "id": "empat" },
+  { "tl": "lima", "baca": "li-MA", "id": "lima" },
+  { "tl": "anim", "baca": "A-nim", "id": "enam" },
+  { "tl": "pito", "baca": "pi-TO", "id": "tujuh" },
+  { "tl": "walo", "baca": "wa-LO", "id": "delapan" },
+  { "tl": "siyam", "baca": "si-YAM", "id": "sembilan" },
+  { "tl": "sampu", "baca": "sam-PU", "id": "sepuluh" },
+  { "tl": "dalawampu", "baca": "da-la-wam-PU", "id": "dua puluh" },
+  { "tl": "isang daan", "baca": "i-SANG da-AN", "id": "seratus" },
+  { "tl": "isang libo", "baca": "i-SANG LI-bo", "id": "seribu" },
+  { "tl": "magkano", "baca": "mag-KA-no", "id": "berapa harganya" },
+  { "tl": "ilan", "baca": "i-LAN", "id": "berapa banyak" },
+  { "tl": "piso / pesos", "baca": "PI-so / PE-sos", "id": "peso (mata uang)" },
+  { "tl": "sukli", "baca": "suk-LI'", "id": "kembalian" },
+  { "tl": "bayad", "baca": "BA-yad", "id": "bayaran" },
+  { "tl": "lahat", "baca": "la-HAT", "id": "semua" },
+  { "tl": "bawat", "baca": "BA-wat", "id": "tiap, masing-masing" },
+  { "tl": "heto", "baca": "HE-to", "id": "ini dia (menyerahkan)" },
+  { "tl": "pandesal", "baca": "pan-de-SAL", "id": "roti bulat kecil" },
+  { "tl": "tinapay", "baca": "ti-NA-pay", "id": "roti" },
+  { "tl": "kape", "baca": "ka-PE", "id": "kopi" },
+  { "tl": "tasa", "baca": "TA-sa", "id": "cangkir" },
+  { "tl": "kailangan", "baca": "kay-LA-ngan", "id": "perlu, butuh" },
+  { "tl": "taon", "baca": "ta-ON", "id": "tahun" },
+  { "tl": "buwan", "baca": "bu-WAN", "id": "bulan" },
+  { "tl": "araw", "baca": "A-raw", "id": "hari; matahari" },
+  { "tl": "oras", "baca": "O-ras", "id": "jam, waktu" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis dengan huruf dalam bilangan asli Tagalog.",
+   "items": [
+    "3 hari",
+    "4 orang",
+    "6 bulan",
+    "9 tahun",
+    "10 peso",
+    "25"
+   ]
+  },
+  {
+   "prompt": "Isi dengan penghubung yang tepat: na atau -ng.",
+   "items": [
+    "isa____ libro",
+    "apat ____ bata",
+    "lima____ piso",
+    "anim ____ buwan",
+    "sampu____ tao",
+    "siyam ____ araw"
+   ]
+  },
+  {
+   "prompt": "Ubah harga berikut ke bilangan Spanyol yang lazim dipakai.",
+   "items": [
+    "₱20 → ____",
+    "₱50 → ____",
+    "₱15 → ____",
+    "₱100 → ____",
+    "₱30 → ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "po / ang / magkano / pandesal / ?",
+    "piso / tatlong / isa / bawat",
+    "pesos / lahat / trenta",
+    "ba / ilan / gusto / ang / mo / ?",
+    "ang / bente / sukli / pesos"
+   ]
+  }
+ ],
+ "answers": [
+  "tatlong araw — apat na tao — anim na buwan — siyam na taon — sampung piso — dalawampu't lima",
+  "-ng — na — -ng — na — -ng — na",
+  "bente — singkwenta — kinse — siyento — trenta",
+  "Magkano po ang pandesal? — Tatlong piso bawat isa. — Trenta pesos lahat. — Ilan ba ang gusto mo? — Bente pesos ang sukli."
+ ],
+ "wave": "Ulangi **unit 5**: sebutkan lima tempat di kotamu dengan pola *nasa* — *Nasa kalye Sudirman ang bangko* — lalu tanyakan letaknya kembali dengan *nasaan*."
+}

@@ -1,0 +1,213 @@
+{
+ "title": "Tiga kata kecil yang mengatur segalanya",
+ "title_target": "Ang, ng, sa",
+ "goal": "Menguasai ketiga penanda bahasa Tagalog beserta bentuknya untuk nama orang, dan memakai *nasa* untuk mengatakan sesuatu berada di suatu tempat.",
+ "bekal": [
+  "memilih *ang*, *ng*, atau *sa* dengan alasan, bukan dengan menebak",
+  "mengganti ketiganya jadi *si*, *ni*, dan *kay* di depan nama orang",
+  "menyatakan tempat dengan *nasa* dan menanyakannya dengan *nasaan*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Nasaan ang susi?",
+   "intro": "Pagi-pagi di rumah kos. Kunci pintu depan hilang, dan semua orang mulai mencari.",
+   "lines": [
+    { "speaker": "Ana:", "text": "Nasaan ang susi ng pinto?", "id": "Kunci pintunya di mana?", "literal": "di-mana si kunci punya pintu?" },
+    { "speaker": "Budi:", "text": "Nasa mesa kanina. Ngayon, wala na.", "id": "Tadi di meja. Sekarang sudah tidak ada.", "literal": "berada-di meja tadi. sekarang, tiada sudah." },
+    { "speaker": "Ana:", "text": "Baka nasa bag ni Mia. Lagi niyang kinukuha iyon.", "id": "Mungkin di tas Mia. Dia selalu mengambilnya.", "literal": "mungkin berada-di tas punya-si Mia. selalu dia-punya yang-diambil itu." },
+    { "speaker": "Mia:", "text": "Wala sa akin! Ibinigay ko kay Kuya Ben kahapon.", "id": "Tidak ada padaku! Kemarin sudah kuberikan ke Kak Ben.", "literal": "tiada ke saya! yang-diberikan aku-punya ke-si Kak Ben kemarin." },
+    { "speaker": "Budi:", "text": "Sino ang may hawak ngayon?", "id": "Sekarang siapa yang memegangnya?", "literal": "siapa si ada pegangan sekarang?" },
+    { "speaker": "Mia:", "text": "Si Ben. Nasa opisina siya.", "id": "Ben. Dia ada di kantor.", "literal": "si Ben. berada-di kantor dia." },
+    { "speaker": "Ana:", "text": "Sige, tawagan natin siya. Nasa akin ang numero niya.", "id": "Baik, kita telepon dia. Nomornya ada padaku.", "literal": "baiklah, ditelepon kita-punya dia. berada-di saya si nomor dia-punya." },
+    { "speaker": "Budi:", "text": "Sandali. Ano ito sa bulsa ko?", "id": "Sebentar. Apa ini di kantongku?", "literal": "sebentar. apa ini di kantong aku-punya?" },
+    { "speaker": "Mia:", "text": "Ang susi! Nasa iyo pala!", "id": "Kuncinya! Ternyata ada padamu!", "literal": "si kunci! berada-di kamu ternyata!" },
+    { "speaker": "Budi:", "text": "Pasensya na. Nakalimutan ko.", "id": "Maaf ya. Aku lupa.", "literal": "sabar sudah. yang-terlupakan aku-punya." },
+    { "speaker": "Ana:", "text": "Ayos lang. Tara, late na tayo!", "id": "Tidak apa-apa. Ayo, kita sudah telat!", "literal": "beres saja. ayo, telat sudah kita!" }
+   ],
+   "notes": [
+    "**Nasaan menanyakan letak.** Ia hanya dipakai untuk benda atau orang, tidak untuk peristiwa. \"Di mana kelasnya?\" dalam arti tempat berlangsung memakai *saan*: *Saan ang klase?* Perbedaannya halus: *nasaan* menanyakan letak benda, *saan* menanyakan tempat kejadian.",
+    "**Nasa adalah pasangan jawabannya.** *Nasa mesa* (di meja), *nasa bahay* (di rumah), *nasa opisina* (di kantor). Untuk nama orang, *nasa* berubah jadi *nasa kay*: *Nasa kay Ben ang susi.* Untuk kata ganti, cukup deret *sa*: *nasa akin*, *nasa iyo*.",
+    "**Susi ng pinto** — di sini *ng* menyambungkan dua benda: kunci milik pintu. Ini pemakaian *ng* yang paling gampang dipahami penutur bahasa Indonesia, karena setara dengan \"kunci pintu\" tanpa kata sambung apa pun.",
+    "**Wala punya dua arti yang saling bersaudara**: \"tidak ada\" (keberadaan) dan \"tidak punya\" (kepemilikan). *Wala na* = sudah tidak ada; *wala akong pera* = saya tidak punya uang. Unit 6 membahasnya lengkap.",
+    "**Kanina berarti \"tadi\"** — waktu lampau yang masih di hari yang sama. Untuk kemarin dipakai *kahapon*. Bahasa Tagalog membedakan keduanya dengan tegas, persis seperti bahasa Indonesia.",
+    "**Lagi** artinya \"selalu\" dan berdiri di depan kata kerjanya. Bukan kata pinjaman dari bahasa Indonesia, walau bunyinya persis sama — kebetulan yang menyenangkan, karena artinya juga bertetangga.",
+    "**Sandali** = \"sebentar\". Bentuk lengkapnya *sandali lang* atau *saglit lang*, dan dipakai persis seperti \"sebentar ya\" dalam bahasa Indonesia.",
+    "**Ayos lang** adalah salah satu ungkapan paling khas Filipina: \"tidak apa-apa\", \"beres\", \"santai saja\". Kalau kamu hanya bisa menghafal satu penenang suasana, pilih yang ini.",
+    "**Late na tayo** menunjukkan Taglish di alam liarnya: kata Inggris *late* dipakai begitu saja di tengah kalimat Tagalog yang sempurna. Ini bukan bahasa yang rusak, melainkan cara orang Manila benar-benar bicara."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga penanda dan bentuknya untuk nama orang",
+     "body": [
+      "Inilah kerangka seluruh bahasa Tagalog. Semua yang datang sesudah unit ini — kata kerja, pertanyaan, kepemilikan — bersandar pada tabel kecil ini."
+     ],
+     "table": {
+      "head": ["Tugas", "Benda biasa", "Nama, satu orang", "Nama, beberapa orang", "Contoh"],
+      "rows": [
+       ["Sorotan kalimat", "**ang**", "**si**", "**sina**", "Maganda **ang** bahay. / Guro **si** Ana."],
+       ["Milik & pelaku tak disorot", "**ng**", "**ni**", "**nina**", "susi **ng** pinto / bahay **ni** Ana"],
+       ["Arah, tempat, penerima", "**sa**", "**kay**", "**kina**", "pumunta **sa** Maynila / ibigay **kay** Ben"]
+      ]
+     },
+     "after": [
+      "**Ang** menandai apa yang sedang jadi pusat perhatian kalimat — yang \"diceritakan\". Bahasa Indonesia menandainya dengan urutan kata dan intonasi; bahasa Tagalog memakai satu kata khusus.",
+      "**Ng** (dibaca *nang*) mengerjakan dua hal sekaligus: menandai pemilik (*bahay ng guro*) dan menandai benda atau pelaku yang **tidak** sedang disorot (*kumain ng mangga*). Kedua tugas ini terasa jauh, tapi akan menyatu begitu kamu sampai di unit 11.",
+      "**Sa** adalah kata depan serba guna: di, ke, dari, untuk, kepada. Tidak ada padanan satu-satu dalam bahasa Indonesia, karena satu kata Tagalog ini menutupi setengah lemari kata depan kita."
+     ]
+    },
+    {
+     "title": "Nasa — berada di",
+     "body": [
+      "*Nasa* bukan kata kerja, walau terjemahannya sering berupa kata kerja. Ia gabungan dari *na* + *sa* dan artinya \"sudah berada di\"."
+     ],
+     "table": {
+      "head": ["Kalimat", "Harfiah", "Arti"],
+      "rows": [
+       ["**Nasa** bahay si Ana.", "berada-di rumah si Ana", "Ana ada di rumah."],
+       ["**Nasa** mesa ang susi.", "berada-di meja si kunci", "Kuncinya ada di meja."],
+       ["**Nasa akin** ang pera.", "berada-di saya si uang", "Uangnya ada padaku."],
+       ["**Nasa kay** Ben ang susi.", "berada-di ke-si Ben si kunci", "Kuncinya ada pada Ben."],
+       ["**Nasaan** ang banyo?", "di-mana si kamar-mandi", "Kamar mandinya di mana?"],
+       ["**Wala** si Ana.", "tiada si Ana", "Ana tidak ada."]
+      ]
+     },
+     "after": [
+      "Lawan kata *nasa* adalah **wala**: *Nasa bahay siya* (dia di rumah) → *Wala siya sa bahay* (dia tidak di rumah). Perhatikan bahwa *nasa* pecah kembali menjadi *sa* ketika disangkal.",
+      "Ada tiga kata tempat yang sudah kamu kenal dari unit 2 dan bekerja tanpa *nasa*: *nandito* (di sini), *nandiyan* (di situ), *nandoon* (di sana). Bentuk pendeknya *andito*, *andiyan*, *andoon*.",
+      "Untuk tempat yang bukan letak melainkan tujuan, dipakai *sa* biasa: *Pupunta ako sa palengke* — saya akan pergi ke pasar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kapan memakai ng, kapan memakai sa",
+   "blocks": [
+    { "type": "p", "text": "Inilah pertanyaan yang paling sering diajukan pelajar Tagalog di seluruh dunia. Jawabannya bisa diringkas jadi satu kalimat: **ng untuk milik dan benda; sa untuk tempat dan orang yang dituju.**" },
+    { "type": "tabel", "head": ["Kalimat", "Penanda", "Kenapa"], "rows": [
+      ["bahay **ng** guro", "ng", "milik — rumahnya guru"],
+      ["pumunta **sa** bahay", "sa", "tujuan — pergi ke rumah"],
+      ["kumain **ng** mangga", "ng", "benda yang dimakan, tidak disorot"],
+      ["ibigay **sa** bata", "sa", "penerima — diberikan kepada anak"],
+      ["taga-**Maynila**", "tanpa", "asal memakai *taga-*, bukan penanda"],
+      ["galing **sa** Maynila", "sa", "asal gerakan — datang dari Manila"],
+      ["para **sa** iyo", "sa", "peruntukan — untuk kamu"],
+      ["takot **sa** aso", "sa", "sasaran perasaan — takut pada anjing"]
+     ] },
+    { "type": "p", "text": "Baris terakhir menunjukkan pola yang perlu dihafal apa adanya: perasaan yang punya sasaran memakai *sa*. *Takot sa aso* (takut anjing), *galit sa kaniya* (marah padanya), *sanay sa init* (terbiasa dengan panas)." },
+    { "type": "kotak", "title": "Kalau benar-benar ragu", "items": [
+      "Tanyakan pada dirimu: apakah kata ini menjawab **\"punya siapa\"** atau **\"apa\"**? Kalau ya, *ng*.",
+      "Apakah ia menjawab **\"di mana\"**, **\"ke mana\"**, atau **\"kepada siapa\"**? Kalau ya, *sa*.",
+      "Dan apakah ia jawaban dari **\"siapa/apa yang sedang dibicarakan\"**? Kalau ya, *ang*."
+     ] }
+   ]
+  },
+  {
+   "title": "Tempat di sekitar kota",
+   "blocks": [
+    { "type": "tabel", "head": ["Tagalog", "Cara baca", "Bahasa Indonesia"], "rows": [
+      ["bahay", "BA-hay", "rumah"],
+      ["paaralan / eskwelahan", "pa-a-RA-lan", "sekolah"],
+      ["opisina", "o-pi-SI-na", "kantor"],
+      ["palengke", "pa-LENG-ke", "pasar"],
+      ["tindahan", "tin-DA-han", "warung"],
+      ["simbahan", "sim-BA-han", "gereja"],
+      ["ospital", "os-pi-TAL", "rumah sakit"],
+      ["botika", "bo-TI-ka", "apotek"],
+      ["bangko", "bang-KO", "bank"],
+      ["parke", "PAR-ke", "taman"],
+      ["kalye", "KAL-ye", "jalan"],
+      ["mall", "mol", "mal"],
+      ["restawran", "res-taw-RAN", "restoran"],
+      ["terminal", "ter-mi-NAL", "terminal bus"],
+      ["bayan", "BA-yan", "kota kecil; kampung halaman"]
+     ] },
+    { "type": "p", "text": "*Bayan* punya dua arti yang sama-sama hidup: \"kota kecil\" dan \"tanah air\". Lagu kebangsaan Filipina dimulai dengan *Bayang magiliw* — \"tanah air yang penuh kasih\". Kata yang sama dengan \"bayan\" dalam bahasa Melayu lama." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "tl": "nasa", "baca": "NA-sa", "id": "berada di" },
+  { "tl": "nasaan", "baca": "na-sa-AN", "id": "di mana" },
+  { "tl": "wala", "baca": "wa-LA'", "id": "tidak ada; tidak punya" },
+  { "tl": "nandito", "baca": "nan-DI-to", "id": "ada di sini" },
+  { "tl": "nandoon", "baca": "nan-do-ON", "id": "ada di sana" },
+  { "tl": "sino", "baca": "SI-no", "id": "siapa" },
+  { "tl": "opisina", "baca": "o-pi-SI-na", "id": "kantor" },
+  { "tl": "palengke", "baca": "pa-LENG-ke", "id": "pasar" },
+  { "tl": "paaralan", "baca": "pa-a-RA-lan", "id": "sekolah" },
+  { "tl": "simbahan", "baca": "sim-BA-han", "id": "gereja" },
+  { "tl": "ospital", "baca": "os-pi-TAL", "id": "rumah sakit" },
+  { "tl": "bangko", "baca": "bang-KO", "id": "bank" },
+  { "tl": "kalye", "baca": "KAL-ye", "id": "jalan" },
+  { "tl": "bayan", "baca": "BA-yan", "id": "kota; tanah air" },
+  { "tl": "bulsa", "baca": "BUL-sa", "id": "kantong, saku" },
+  { "tl": "numero", "baca": "NU-me-ro", "id": "nomor" },
+  { "tl": "kanina", "baca": "ka-NI-na", "id": "tadi" },
+  { "tl": "kahapon", "baca": "ka-HA-pon", "id": "kemarin" },
+  { "tl": "lagi", "baca": "LA-gi", "id": "selalu" },
+  { "tl": "sandali", "baca": "san-da-LI'", "id": "sebentar" },
+  { "tl": "ayos lang", "baca": "A-yos lang", "id": "tidak apa-apa" },
+  { "tl": "pasensya na", "baca": "pa-SEN-sha na", "id": "maaf ya" },
+  { "tl": "galing sa", "baca": "GA-ling sa", "id": "berasal dari" },
+  { "tl": "para sa", "baca": "PA-ra sa", "id": "untuk" },
+  { "tl": "takot", "baca": "TA-kot", "id": "takut" },
+  { "tl": "galit", "baca": "GA-lit", "id": "marah" },
+  { "tl": "hawak", "baca": "HA-wak", "id": "pegangan; memegang" },
+  { "tl": "nakalimutan", "baca": "na-ka-li-MU-tan", "id": "terlupakan" },
+  { "tl": "aso", "baca": "A-so", "id": "anjing" },
+  { "tl": "pusa", "baca": "PU-sa'", "id": "kucing" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Tagalog.",
+   "items": [
+    "Kuncinya di mana?",
+    "Kuncinya ada di meja.",
+    "Ana ada di kantor.",
+    "Rumah Ana besar.",
+    "Uangnya ada padaku.",
+    "Ben tidak ada di rumah."
+   ]
+  },
+  {
+   "prompt": "Isi dengan penanda yang tepat: ang, ng, sa, si, ni, kay.",
+   "items": [
+    "Maganda ____ bahay.",
+    "Guro ____ Ana.",
+    "Bahay ____ guro ito.",
+    "Pumunta siya ____ palengke.",
+    "Ibigay mo ____ Ben.",
+    "Susi ____ pinto iyan."
+   ]
+  },
+  {
+   "prompt": "Jawab dengan nasa. Contoh: Nasaan ang susi? (mesa) → Nasa mesa ang susi.",
+   "items": [
+    "Nasaan si Ana? (opisina) → ____",
+    "Nasaan ang pera? (bag ko) → ____",
+    "Nasaan ang libro? (mesa) → ____",
+    "Nasaan si Ben? (paaralan) → ____",
+    "Nasaan ang cellphone? (bulsa mo) → ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ang / nasaan / susi / ?",
+    "si / nasa / Ana / opisina",
+    "ni / bahay / ang / Ana / maganda",
+    "sa / wala / bahay / siya",
+    "akin / ang / nasa / pera"
+   ]
+  }
+ ],
+ "answers": [
+  "Nasaan ang susi? — Nasa mesa ang susi. — Nasa opisina si Ana. — Malaki ang bahay ni Ana. — Nasa akin ang pera. — Wala si Ben sa bahay.",
+  "ang — si — ng — sa — kay — ng",
+  "Nasa opisina si Ana. — Nasa bag ko ang pera. — Nasa mesa ang libro. — Nasa paaralan si Ben. — Nasa bulsa mo ang cellphone.",
+  "Nasaan ang susi? — Nasa opisina si Ana. — Maganda ang bahay ni Ana. — Wala siya sa bahay. — Nasa akin ang pera."
+ ],
+ "wave": "Ulangi **unit 3**: sebutkan lima benda di sekitarmu lengkap dengan satu kata sifat dan penghubungnya — *malinis na mesa*, *magandang bahay* — tanpa melihat catatan."
+}

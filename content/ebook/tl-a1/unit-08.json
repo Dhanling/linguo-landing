@@ -1,0 +1,220 @@
+{
+ "title": "Di pasar",
+ "title_target": "Sa palengke",
+ "goal": "Berbelanja sungguhan: menanyakan harga, meminta jumlah tertentu, menawar dengan sopan, dan menyebut warna serta ukuran.",
+ "bekal": [
+  "meminta barang dengan *pabili* dan *pakibigyan*",
+  "menawar dengan kalimat yang tidak menyinggung siapa pun",
+  "menyebut satuan: kilo, dosena, tali, piraso"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Tawad nang kaunti",
+   "intro": "Pasar basah di Quiapo. Budi ditemani Mia membeli buah dan sayur untuk seminggu.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Ate, magkano po ang mangga?", "id": "Mbak, mangganya berapa?", "literal": "kakak, berapa Mbak si mangga?" },
+    { "speaker": "Tindera:", "text": "Otsenta pesos ang kilo, sir.", "id": "Delapan puluh peso sekilo, Pak.", "literal": "delapan-puluh peso si kilo, pak." },
+    { "speaker": "Budi:", "text": "Ang mahal naman! Puwede po bang tumawad?", "id": "Mahal amat! Boleh nawar, Bu?", "literal": "betapa mahal ya! bisa Bu apakah menawar?" },
+    { "speaker": "Tindera:", "text": "Sige, setenta na lang. Sariwa iyan, galing Cebu.", "id": "Baik, tujuh puluh saja. Itu segar, dari Cebu.", "literal": "baiklah, tujuh-puluh sudah saja. segar itu, berasal Cebu." },
+    { "speaker": "Mia:", "text": "Kuya, dalawang kilo na lang para mura.", "id": "Kak, ambil dua kilo saja biar murah.", "literal": "kak, dua kilo sudah saja supaya murah." },
+    { "speaker": "Budi:", "text": "Sige. Dalawang kilo po. Pabili rin po ng kamatis.", "id": "Baik. Dua kilo, Bu. Beli tomat juga.", "literal": "baiklah. dua kilo Bu. tolong-beli juga Bu akan tomat." },
+    { "speaker": "Tindera:", "text": "Ilang piraso po?", "id": "Berapa buah, Pak?", "literal": "berapa biji Bu?" },
+    { "speaker": "Budi:", "text": "Anim na piraso. At isang tali na sibuyas.", "id": "Enam buah. Dan seikat bawang.", "literal": "enam biji. dan satu ikat yang bawang." },
+    { "speaker": "Tindera:", "text": "Ayan po. Isang daan at bente lahat.", "id": "Ini dia, Pak. Semuanya seratus dua puluh.", "literal": "itu-dia Bu. satu ratus dan dua-puluh semua." },
+    { "speaker": "Budi:", "text": "Heto po ang bayad. Salamat po, ate!", "id": "Ini bayarannya. Terima kasih, Mbak!", "literal": "ini-dia Bu si bayaran. terima-kasih Bu, kakak!" },
+    { "speaker": "Tindera:", "text": "Salamat din! Balik po kayo, ha?", "id": "Terima kasih juga! Datang lagi ya?", "literal": "terima-kasih juga! kembali Bu kalian, ya?" }
+   ],
+   "notes": [
+    "**Ate dan kuya dipakai kepada orang asing.** Menyapa pedagang dengan *ate* atau *kuya* bukan basa-basi, melainkan tata krama dasar. Kepada yang jauh lebih tua: *nanay*, *tatay*, *lola*, *lolo*. Melewatkannya membuatmu terdengar dingin.",
+    "**Pabili adalah kata sakti di warung.** Harfiahnya \"tolong belikan\", dan dipakai untuk memulai hampir semua transaksi kecil: *Pabili po ng tubig.* Bentuk lain yang sekeluarga: *pahingi* (minta), *pakiabot* (tolong ambilkan), *pakibigyan* (tolong beri).",
+    "**Tumawad berarti menawar.** Menawar di pasar basah adalah hal biasa dan diharapkan; di mal dan toko berlabel harga, tidak. Kalimat *Puwede po bang tumawad?* menanyakannya lebih dulu dan tidak akan pernah dianggap kurang ajar.",
+    "**Ang mahal naman!** memakai *naman* untuk melembutkan keluhan. Tanpa *naman*, *ang mahal!* terdengar seperti tuduhan; dengan *naman*, ia jadi ajakan bercanda untuk menurunkan harga.",
+    "**Na lang menandai penawaran akhir**: *setenta na lang* = \"tujuh puluh saja deh\". Ini bunyi khas tawar-menawar Filipina, dan hampir selalu jadi penutup.",
+    "**Piraso** (dari Spanyol *pieza*) berarti \"biji\" atau \"potong\", dipakai untuk benda yang dihitung satuan. *Tali* berarti seikat — dan ya, ini kata yang sama dengan \"tali\" dalam bahasa Indonesia.",
+    "**Isang daan at bente** memperlihatkan campuran dua sistem angka dalam satu harga: ratusannya bilangan asli, puluhannya bilangan Spanyol. Ini sangat lazim dan tidak dianggap salah oleh siapa pun.",
+    "**Sariwa** berarti segar. Kata ini akan sering kamu dengar sebagai alasan penjual mempertahankan harga — dan sebagai pujian ketika kamu benar-benar mendapat barang bagus.",
+    "**Galing Cebu** memendekkan *galing sa Cebu*. Dalam percakapan cepat, *sa* sering hilang sesudah *galing* kalau yang menyusul nama tempat."
+   ],
+   "grammars": [
+    {
+     "title": "Meminta dengan sopan — keluarga kata paki-",
+     "body": [
+      "Bahasa Tagalog punya satu awalan yang tugasnya hanya membuat permintaan terdengar sopan. Ia menempel di depan kata kerja dan langsung mengubah perintah jadi permohonan."
+     ],
+     "table": {
+      "head": ["Bentuk", "Harfiah", "Dipakai untuk", "Contoh"],
+      "rows": [
+       ["**pabili**", "tolong belikan", "membeli di warung", "Pabili po ng tubig."],
+       ["**pahingi**", "tolong beri", "minta yang gratis", "Pahingi po ng plastik."],
+       ["**pakiabot**", "tolong ambilkan", "minta diambilkan", "Pakiabot po ng asin."],
+       ["**pakibigay**", "tolong berikan", "minta diserahkan", "Pakibigay po kay Ana."],
+       ["**pakiulit**", "tolong ulangi", "minta diulang", "Pakiulit po."],
+       ["**pakisabi**", "tolong sampaikan", "titip pesan", "Pakisabi po sa kaniya."]
+      ]
+     },
+     "after": [
+      "Semua bentuk ini sudah sopan dengan sendirinya, tapi tetap ditambahi *po* kepada orang yang lebih tua atau tak dikenal. Menambahkan *po* tidak pernah salah.",
+      "Barang yang diminta memakai *ng*: *pabili po **ng** tubig*, *pahingi po **ng** tissue*. Orang yang dituju memakai *sa* atau *kay*: *pakibigay po **kay** Ben*.",
+      "Bentuk paling pendek yang tetap sopan di warung: sebut barangnya, jumlahnya, lalu *po*. *Dalawang tubig po.* Itu sudah cukup, dan itulah yang orang sungguhan ucapkan."
+     ]
+    },
+    {
+     "title": "Satuan dan jumlah",
+     "body": [
+      "Sebagian besar satuan Filipina datang dari bahasa Spanyol, dan sebagian lagi berupa satuan pasar yang tak punya padanan pasti dalam bahasa Indonesia."
+     ],
+     "table": {
+      "head": ["Satuan", "Cara baca", "Arti", "Contoh"],
+      "rows": [
+       ["kilo", "KI-lo", "kilogram", "dalawang kilo ng mangga"],
+       ["piraso", "pi-RA-so", "biji, potong", "anim na piraso"],
+       ["dosena", "do-SE-na", "lusin (12)", "isang dosenang itlog"],
+       ["tali", "TA-li'", "ikat", "isang tali na sibuyas"],
+       ["bote", "BO-te", "botol", "tatlong bote ng tubig"],
+       ["pakete", "pa-KE-te", "bungkus", "isang paketeng biskwit"],
+       ["sachet", "sa-SHE", "sachet kecil", "limang sachet ng kape"],
+       ["salop", "SA-lop", "takaran beras (~2 kg)", "isang salop na bigas"]
+      ]
+     },
+     "after": [
+      "Satuan sachet layak disebut tersendiri: di Filipina hampir semua barang rumah tangga dijual dalam bungkus sekali pakai — sampo, kopi, kecap, deterjen. Ekonomi *tingi-tingi* (eceran) ini adalah wajah sehari-hari sari-sari store.",
+      "*Tingi* berarti membeli eceran: *Tingi po, dalawang sachet lang.* Kata ini tidak ada padanan persisnya dalam bahasa Indonesia baku, walau praktiknya sangat kita kenal."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalimat tawar-menawar",
+   "blocks": [
+    { "type": "tabel", "head": ["Tagalog", "Cara baca", "Arti"], "rows": [
+      ["Magkano po ito?", "mag-KA-no po' i-TO", "Ini berapa?"],
+      ["Ang mahal naman!", "ang ma-HAL na-MAN", "Mahal amat!"],
+      ["Puwede po bang tumawad?", "PWE-de po' bang tu-MA-wad", "Boleh menawar?"],
+      ["Pabarat naman po.", "pa-BA-rat na-MAN po'", "Kurangi sedikit dong."],
+      ["Setenta na lang po.", "se-TEN-ta na lang po'", "Tujuh puluh saja ya."],
+      ["Wala po bang diskwento?", "wa-LA' po' bang dis-KWEN-to", "Tidak ada diskon?"],
+      ["Sobra pong mahal.", "SOB-ra pong ma-HAL", "Kemahalan."],
+      ["Sige, kukunin ko.", "SI-ge ku-KU-nin ko", "Baik, saya ambil."],
+      ["Isipin ko muna.", "i-SI-pin ko MU-na", "Saya pikir-pikir dulu."],
+      ["Salamat po, sa uulitin.", "sa-LA-mat po' sa u-u-LI-tin", "Terima kasih, lain kali lagi."]
+     ] },
+    { "type": "p", "text": "*Sa uulitin* harfiahnya \"pada yang akan diulang\" dan dipakai saat pergi tanpa membeli, atau saat berpamitan sesudah dijamu. Ia sopan dan tidak canggung — jauh lebih baik daripada pergi diam-diam." },
+    { "type": "kotak", "title": "Aturan tak tertulis tawar-menawar", "items": [
+      "Tawar di pasar basah dan pasar kaki lima; jangan menawar di toko berlabel harga, apotek, atau restoran.",
+      "Menawar dengan senyum dan satu candaan hampir selalu berhasil; menawar dengan wajah serius jarang.",
+      "Kalau pedagang menolak dan kamu tetap membeli, ucapkan terima kasih seperti biasa. Menawar bukan pertengkaran, dan tidak boleh diperlakukan begitu."
+     ] }
+   ]
+  },
+  {
+   "title": "Warna dan ukuran",
+   "blocks": [
+    { "type": "tabel", "head": ["Tagalog", "Cara baca", "Arti", "Catatan"], "rows": [
+      ["pula", "pu-LA", "merah", "juga arti politik: kiri"],
+      ["asul / bughaw", "a-SUL", "biru", "*asul* dari Spanyol *azul*"],
+      ["dilaw", "di-LAW", "kuning", "warna gerakan politik Aquino"],
+      ["berde / luntian", "BER-de", "hijau", "*luntian* bentuk sastra"],
+      ["itim", "i-TIM", "hitam", "bandingkan Melayu *hitam*"],
+      ["puti", "pu-TI'", "putih", "bandingkan Melayu *putih*"],
+      ["kayumanggi", "ka-yu-mang-GI", "cokelat sawo matang", "warna kulit khas Filipina"],
+      ["kulay abo", "ku-LAY a-BO", "abu-abu", "harfiah: warna abu"],
+      ["rosas", "RO-sas", "merah muda", "dari *rosa*"],
+      ["kulay", "ku-LAY", "warna", "*Anong kulay?* — warnanya apa?"]
+     ] },
+    { "type": "p", "text": "*Itim* dan *puti* adalah dua kata yang hampir tidak perlu dihafal: keduanya sepupu langsung dari \"hitam\" dan \"putih\". Perhatikan juga *kayumanggi*, kata yang tidak punya padanan tepat dalam bahasa Indonesia dan menyimpan kebanggaan tersendiri di Filipina." },
+    { "type": "tabel", "head": ["Ukuran", "Tagalog", "Contoh"], "rows": [
+      ["besar", "malaki", "malaking bag"],
+      ["kecil", "maliit", "maliit na tasa"],
+      ["panjang", "mahaba", "mahabang damit"],
+      ["pendek", "maikli", "maikling buhok"],
+      ["lebar", "malapad", "malapad na mesa"],
+      ["sempit", "makitid", "makitid na kalye"]
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "tl": "palengke", "baca": "pa-LENG-ke", "id": "pasar" },
+  { "tl": "tindera / tindero", "baca": "tin-DE-ra", "id": "penjual (pr / lk)" },
+  { "tl": "pabili", "baca": "pa-BI-li", "id": "tolong belikan" },
+  { "tl": "pahingi", "baca": "pa-hi-NGI'", "id": "tolong beri" },
+  { "tl": "pakiabot", "baca": "pa-ki-A-bot", "id": "tolong ambilkan" },
+  { "tl": "tumawad", "baca": "tu-MA-wad", "id": "menawar" },
+  { "tl": "diskwento", "baca": "dis-KWEN-to", "id": "diskon" },
+  { "tl": "kilo", "baca": "KI-lo", "id": "kilogram" },
+  { "tl": "piraso", "baca": "pi-RA-so", "id": "biji, potong" },
+  { "tl": "dosena", "baca": "do-SE-na", "id": "lusin" },
+  { "tl": "tali", "baca": "TA-li'", "id": "ikat" },
+  { "tl": "bote", "baca": "BO-te", "id": "botol" },
+  { "tl": "sariwa", "baca": "sa-ri-WA'", "id": "segar" },
+  { "tl": "mangga", "baca": "mang-GA", "id": "mangga" },
+  { "tl": "saging", "baca": "SA-ging", "id": "pisang" },
+  { "tl": "kamatis", "baca": "ka-ma-TIS", "id": "tomat" },
+  { "tl": "sibuyas", "baca": "si-BU-yas", "id": "bawang bombai" },
+  { "tl": "bawang", "baca": "BA-wang", "id": "bawang putih" },
+  { "tl": "gulay", "baca": "GU-lay", "id": "sayur" },
+  { "tl": "prutas", "baca": "PRU-tas", "id": "buah" },
+  { "tl": "isda", "baca": "is-DA'", "id": "ikan" },
+  { "tl": "karne", "baca": "KAR-ne", "id": "daging" },
+  { "tl": "manok", "baca": "ma-NOK", "id": "ayam" },
+  { "tl": "bigas", "baca": "bi-GAS", "id": "beras" },
+  { "tl": "itlog", "baca": "it-LOG", "id": "telur" },
+  { "tl": "pula", "baca": "pu-LA", "id": "merah" },
+  { "tl": "itim", "baca": "i-TIM", "id": "hitam" },
+  { "tl": "puti", "baca": "pu-TI'", "id": "putih" },
+  { "tl": "berde", "baca": "BER-de", "id": "hijau" },
+  { "tl": "kulay", "baca": "ku-LAY", "id": "warna" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Tagalog.",
+   "items": [
+    "Mangganya berapa, Mbak?",
+    "Mahal amat!",
+    "Boleh menawar, Bu?",
+    "Dua kilo saja.",
+    "Beli air juga, Bu.",
+    "Terima kasih, lain kali lagi."
+   ]
+  },
+  {
+   "prompt": "Isi dengan satuan yang tepat: kilo, piraso, dosena, tali, bote.",
+   "items": [
+    "Dalawang ____ ng mangga. (berat)",
+    "Anim na ____ ng kamatis. (satuan biji)",
+    "Isang ____ ng itlog. (dua belas butir)",
+    "Isang ____ na sibuyas. (seikat)",
+    "Tatlong ____ ng tubig. (botol)"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi permintaan sopan dengan paki- atau pa-. Contoh: Bumili ka ng tubig. → Pabili po ng tubig.",
+   "items": [
+    "Bumili ka ng kape. → ____",
+    "Ulitin mo. → ____",
+    "Abutin mo ang asin. → ____",
+    "Ibigay mo kay Ana. → ____",
+    "Sabihin mo sa kaniya. → ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ang / po / magkano / mangga / ?",
+    "naman / mahal / ang / !",
+    "bang / tumawad / puwede / po / ?",
+    "lang / na / setenta / po",
+    "kilo / po / dalawang"
+   ]
+  }
+ ],
+ "answers": [
+  "Ate, magkano po ang mangga? — Ang mahal naman! — Puwede po bang tumawad? — Dalawang kilo na lang. — Pabili rin po ng tubig. — Salamat po, sa uulitin.",
+  "kilo — piraso — dosena — tali — bote",
+  "Pabili po ng kape. — Pakiulit po. — Pakiabot po ng asin. — Pakibigay po kay Ana. — Pakisabi po sa kaniya.",
+  "Magkano po ang mangga? — Ang mahal naman! — Puwede po bang tumawad? — Setenta na lang po. — Dalawang kilo po."
+ ],
+ "wave": "Ulangi **unit 6**: sebutkan lima barang yang ada di kamarmu dengan *may*, lalu lima yang tidak ada dengan *wala* — semuanya keras-keras, tanpa melihat catatan."
+}

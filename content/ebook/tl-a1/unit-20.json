@@ -1,0 +1,211 @@
+{
+ "title": "Menceritakan hari kemarin, merencanakan besok",
+ "title_target": "Kahapon at bukas",
+ "goal": "Merangkai semua yang sudah kamu pelajari jadi cerita: satu hari penuh yang sudah lewat, dan satu hari yang belum datang.",
+ "bekal": [
+  "menyambung kalimat dengan *tapos*, *pagkatapos*, *bago*, *habang*, dan *kaya*",
+  "menyampaikan rencana dengan *balak*, *plano*, dan bentuk *akan*",
+  "menceritakan satu hari penuh tanpa berhenti di tengah"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Kumusta ang weekend mo?",
+   "intro": "Senin pagi di kelas. Sebelum pelajaran mulai, semua orang bertukar cerita akhir pekan.",
+   "lines": [
+    { "speaker": "Ana:", "text": "Kumusta ang weekend mo, Budi?", "id": "Bagaimana akhir pekanmu, Budi?", "literal": "bagaimana si akhir-pekan kamu-punya, Budi?" },
+    { "speaker": "Budi:", "text": "Ang saya! Pumunta kami sa Tagaytay noong Sabado.", "id": "Menyenangkan! Sabtu kami ke Tagaytay.", "literal": "betapa senang! pergi kami ke Tagaytay pada Sabtu." },
+    { "speaker": "Ana:", "text": "Talaga? Anong oras kayo umalis?", "id": "Oh ya? Kalian berangkat jam berapa?", "literal": "sungguh? apa-yang jam kalian berangkat?" },
+    { "speaker": "Budi:", "text": "Umalis kami ng alas-singko ng umaga. Bago sumikat ang araw!", "id": "Kami berangkat jam lima pagi. Sebelum matahari terbit!", "literal": "berangkat kami punya jam-lima punya pagi. sebelum terbit si matahari!" },
+    { "speaker": "Ana:", "text": "Ang aga naman! Ano ang ginawa ninyo doon?", "id": "Pagi amat! Kalian ngapain di sana?", "literal": "betapa pagi ya! apa si yang-dikerjakan kalian-punya di-sana?" },
+    { "speaker": "Budi:", "text": "Kumain kami ng bulalo, tapos naglakad sa tabi ng lawa. Habang naglalakad, nakita namin ang bulkan.", "id": "Kami makan bulalo, terus jalan-jalan di tepi danau. Sambil jalan, kami melihat gunung apinya.", "literal": "makan kami akan bulalo, lalu berjalan di sebelah punya danau. sambil sedang-berjalan, terlihat kami-punya si gunung-api." },
+    { "speaker": "Ana:", "text": "Ang ganda doon, di ba? Malamig din.", "id": "Bagus ya di sana? Dingin juga.", "literal": "betapa indah di-sana, kan? dingin juga." },
+    { "speaker": "Budi:", "text": "Sobrang lamig! Kaya bumili pa ako ng jacket sa palengke.", "id": "Dingin banget! Makanya aku sampai beli jaket di pasar.", "literal": "keterlaluan dingin! maka membeli lagi saya akan jaket di pasar." },
+    { "speaker": "Ana:", "text": "Anong oras kayo umuwi?", "id": "Kalian pulang jam berapa?", "literal": "apa-yang jam kalian pulang?" },
+    { "speaker": "Budi:", "text": "Alas-otso na ng gabi. Pagod na pagod ako, kaya natulog ako agad.", "id": "Sudah jam delapan malam. Aku capek sekali, jadi langsung tidur.", "literal": "jam-delapan sudah punya malam. lelah yang lelah saya, maka tidur saya segera." },
+    { "speaker": "Ana:", "text": "Buti naman. Ano ang balak mo sa susunod na weekend?", "id": "Syukurlah. Akhir pekan depan rencanamu apa?", "literal": "baik ya. apa si rencana kamu-punya di berikutnya yang akhir-pekan?" },
+    { "speaker": "Budi:", "text": "Balak kong pumunta sa Batangas. Sasama ka ba?", "id": "Aku berencana ke Batangas. Kamu ikut?", "literal": "rencana aku-yang pergi ke Batangas. akan-ikut kamu apakah?" },
+    { "speaker": "Ana:", "text": "Sana! Pero may pasok ako sa Sabado.", "id": "Semoga bisa! Tapi Sabtu aku masuk kerja.", "literal": "semoga! tapi ada masuk saya di Sabtu." }
+   ],
+   "notes": [
+    "**Bercerita dalam bahasa Tagalog hampir seluruhnya memakai bentuk \"sudah\".** *Pumunta*, *kumain*, *naglakad*, *bumili*, *natulog* — semuanya aspek selesai. Kapan tepatnya diberi tahu satu kali di awal (*noong Sabado*), lalu tidak diulang lagi. Ini penghematan besar dibanding bahasa yang wajib menandai waktu di setiap kata kerja.",
+    "**Tapos adalah penyambung cerita paling sering dipakai.** Artinya \"lalu\", dan dalam percakapan ia muncul di hampir setiap kalimat kedua. Bentuk yang lebih baku: *pagkatapos* (sesudah itu).",
+    "**Habang berarti \"sambil\" atau \"sementara\"** dan selalu diikuti bentuk \"sedang\": *habang naglalakad*, *habang kumakain*, *habang natutulog*. Perhatikan bahwa aspeknya berubah — inilah tempat bentuk \"sedang\" paling sering muncul dalam cerita masa lalu.",
+    "**Bago berarti \"sebelum\"** dan diikuti bentuk dasar: *bago sumikat ang araw*, *bago kumain*, *bago matulog*. Kata yang sama juga berarti \"baru\" — dibedakan oleh letaknya dalam kalimat, bukan oleh bunyinya.",
+    "**Kaya di sini berarti \"maka, jadi\"** dan menyambungkan sebab dengan akibat: *Pagod ako, kaya natulog ako agad.* Ini kata yang sama yang berarti \"mampu\" di unit 16, dibedakan oleh tekanan dan tempat.",
+    "**Balak dan plano dua-duanya berarti rencana.** *Balak* lebih Tagalog dan lebih santai; *plano* dari bahasa Spanyol dan sedikit lebih resmi. Susunannya sama dengan *gusto*: *balak **kong** pumunta*.",
+    "**Sana!** berdiri sendiri sebagai jawaban berarti \"semoga bisa\" — jawaban yang hangat sekaligus tidak mengikat. Sangat berguna ketika kamu belum bisa memastikan.",
+    "**May pasok ako** berarti \"saya ada jadwal masuk\" — sekolah atau kerja. *Walang pasok* berarti libur, dan kalimat *Walang pasok bukas!* adalah salah satu yang paling membahagiakan di Filipina, biasanya karena topan.",
+    "**Nakita namin** dari kata dasar *kita* (terlihat) dengan awalan *na-*: bentuk yang menandai sesuatu yang **kebetulan terjadi atau berhasil dilakukan**. Ia sangat sering muncul dalam cerita: *nakita* (terlihat), *narinig* (terdengar), *nakain* (sempat termakan)."
+   ],
+   "grammars": [
+    {
+     "title": "Kata penyambung cerita",
+     "body": [
+      "Dua puluh unit sudah memberimu kata kerja, penanda, dan partikel. Yang tersisa adalah lem yang menyambungkan kalimat jadi cerita."
+     ],
+     "table": {
+      "head": ["Kata", "Arti", "Diikuti", "Contoh"],
+      "rows": [
+       ["**at**", "dan", "apa saja", "Kumain at uminom kami."],
+       ["**tapos**", "lalu", "kalimat baru", "Kumain kami, tapos umuwi na."],
+       ["**pagkatapos**", "sesudah itu", "kalimat atau kata kerja dasar", "Pagkatapos kumain, natulog ako."],
+       ["**bago**", "sebelum", "kata kerja dasar", "Bago matulog, nagbasa ako."],
+       ["**habang**", "sambil, sementara", "bentuk sedang", "Habang kumakain, nag-usap kami."],
+       ["**pero**", "tapi", "kalimat baru", "Masarap, pero mahal."],
+       ["**kaya**", "maka, jadi", "akibat", "Pagod ako, kaya umuwi na ako."],
+       ["**kasi / dahil**", "soalnya, karena", "sebab", "Umuwi ako kasi pagod ako."],
+       ["**kung**", "kalau", "syarat", "Kung maulan, hindi ako aalis."],
+       ["**para**", "supaya", "kata kerja dasar", "Nag-aaral ako para matuto."]
+      ]
+     },
+     "after": [
+      "Susunan cerita yang paling lazim: **keterangan waktu → kata kerja → pelaku → sisanya**. *Noong Sabado, pumunta kami sa Tagaytay.*",
+      "Kalau kamu kehabisan kata penyambung, *tapos* hampir selalu bisa dipakai. Penutur asli pun bersandar padanya.",
+      "Untuk memulai cerita: *Alam mo ba…?* (\"tahu tidak…?\") atau *May kuwento ako.* (\"Aku punya cerita.\")"
+     ]
+    },
+    {
+     "title": "Menyampaikan rencana",
+     "body": [
+      "Rencana dinyatakan dengan bentuk \"akan\", atau dengan salah satu dari tiga kata pembuka berikut."
+     ],
+     "table": {
+      "head": ["Pola", "Contoh", "Terjemahan", "Nada"],
+      "rows": [
+       ["bentuk akan saja", "Pupunta ako sa Batangas.", "Saya akan ke Batangas.", "pasti"],
+       ["**balak ko**", "Balak kong pumunta.", "Saya berencana pergi.", "rencana"],
+       ["**plano ko**", "Plano kong pumunta.", "Saya berencana pergi.", "agak resmi"],
+       ["**sana**", "Sana makapunta ako.", "Semoga saya bisa pergi.", "harapan"],
+       ["**gusto ko sana**", "Gusto ko sanang pumunta.", "Sebenarnya saya ingin pergi.", "halus, sering diikuti alasan"],
+       ["**baka**", "Baka pumunta ako.", "Mungkin saya pergi.", "belum pasti"]
+      ]
+     },
+     "after": [
+      "*Baka* adalah cara paling aman menyampaikan rencana yang belum pasti — dan di Filipina, tempat menolak secara langsung dianggap kasar, ia sering juga berarti \"kemungkinan besar tidak\".",
+      "Kalimat *Sige, text kita.* (\"Nanti kukabari\") berfungsi sama: ramah, terbuka, tidak mengikat.",
+      "Untuk bertanya rencana orang: *Ano ang balak mo?* atau *Ano ang gagawin mo bukas?*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Satu hari penuh",
+   "blocks": [
+    { "type": "p", "text": "Bacalah paragraf berikut keras-keras. Semua kata di dalamnya sudah pernah muncul di modul ini, dan kalau kamu bisa memahaminya tanpa melihat terjemahan, kamu sudah sampai di ujung tingkat A1." },
+    { "type": "kotak", "title": "Ang araw ko kahapon", "items": [
+      "*Gumising ako ng alas-sais ng umaga. Naligo ako, tapos nag-almusal ng kanin at itlog. Umalis ako ng bahay ng alas-siyete at sumakay ng jeep papuntang paaralan.*",
+      "*Nag-aral kami ng Tagalog hanggang alas-onse. Mahirap ang leksyon, pero masaya. Pagkatapos ng klase, kumain kami ni Ana sa karinderya. Sinigang ang ulam namin, at unlimited ang kanin.*",
+      "*Sa hapon, pumunta ako sa palengke. Bumili ako ng prutas at gulay. Nakalimutan ko ang pera ko kaya bumalik pa ako sa bahay — nakakainis!*",
+      "*Umuwi ako ng alas-singko. Naglinis ako ng kwarto, tapos nagpahinga. Natulog ako ng alas-diyes, pagod pero kontento.*"
+     ] },
+    { "type": "p", "text": "Terjemahannya: *Saya bangun jam enam pagi. Saya mandi, lalu sarapan nasi dan telur. Saya keluar rumah jam tujuh dan naik jeepney ke sekolah. Kami belajar bahasa Tagalog sampai jam sebelas. Pelajarannya sulit, tapi menyenangkan. Sesudah kelas, saya dan Ana makan di warung. Lauk kami sinigang, dan nasinya sepuasnya. Sorenya saya ke pasar. Saya membeli buah dan sayur. Saya lupa membawa uang jadi harus kembali ke rumah — menyebalkan! Saya pulang jam lima. Saya membersihkan kamar, lalu istirahat. Saya tidur jam sepuluh, lelah tapi puas.*" }
+   ]
+  },
+  {
+   "title": "Bercerita dengan wajar",
+   "blocks": [
+    { "type": "tabel", "head": ["Tagalog", "Arti", "Kapan dipakai"], "rows": [
+      ["Alam mo ba?", "Tahu tidak?", "membuka cerita"],
+      ["Ang saya!", "Menyenangkan!", "menilai pengalaman"],
+      ["Nakakainis!", "Menyebalkan!", "kesal"],
+      ["Nakakatuwa!", "Menyenangkan sekali!", "gembira"],
+      ["Nakakapagod.", "Melelahkan.", ""],
+      ["Grabe!", "Parah! Wah!", "seruan serba guna"],
+      ["Buti naman.", "Syukurlah.", "menanggapi kabar baik"],
+      ["Sayang naman.", "Sayang ya.", "menanggapi kabar buruk"],
+      ["Talaga? Oo nga!", "Oh ya? Iya benar!", "menanggapi cerita"],
+      ["Tapos ano na?", "Terus gimana?", "meminta lanjutan"]
+     ] },
+    { "type": "p", "text": "Awalan **nakaka-** membentuk kata sifat yang berarti \"membuat orang jadi …\": *nakakainis* (membuat kesal), *nakakapagod* (melelahkan), *nakakagutom* (bikin lapar), *nakakatuwa* (menggembirakan). Pola ini sangat produktif dan sangat sering dipakai anak muda Filipina." },
+    { "type": "kotak", "title": "Selamat, kamu sampai di ujung", "items": [
+      "Dua puluh unit yang lalu kamu tidak tahu bahwa *ang* itu ada. Sekarang kamu bisa menyapa, berbelanja, memesan makanan, naik jeepney, menceritakan kemarin, dan menyampaikan rencana besok.",
+      "Yang belum kamu punya cuma kecepatan — dan itu tidak datang dari buku mana pun. Ia datang dari mendengar orang bicara dan dari berani salah di depan orang yang tidak keberatan.",
+      "*Maraming salamat sa pag-aaral. Kaya mo 'yan — magaling ka na!*"
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "tl": "tapos", "baca": "TA-pos", "id": "lalu; selesai" },
+  { "tl": "pagkatapos", "baca": "pag-ka-TA-pos", "id": "sesudah itu" },
+  { "tl": "bago", "baca": "BA-go", "id": "sebelum; baru" },
+  { "tl": "habang", "baca": "HA-bang", "id": "sambil, sementara" },
+  { "tl": "kaya", "baca": "ka-YA", "id": "maka, jadi" },
+  { "tl": "pero", "baca": "PE-ro", "id": "tapi" },
+  { "tl": "kung", "baca": "kung", "id": "kalau" },
+  { "tl": "balak", "baca": "BA-lak", "id": "rencana" },
+  { "tl": "plano", "baca": "PLA-no", "id": "rencana" },
+  { "tl": "kuwento", "baca": "ku-WEN-to", "id": "cerita" },
+  { "tl": "leksyon", "baca": "lek-SHON", "id": "pelajaran" },
+  { "tl": "pasok", "baca": "PA-sok", "id": "masuk (sekolah/kerja)" },
+  { "tl": "weekend", "baca": "WIK-end", "id": "akhir pekan" },
+  { "tl": "lawa", "baca": "LA-wa'", "id": "danau" },
+  { "tl": "bulkan", "baca": "bul-KAN", "id": "gunung api" },
+  { "tl": "bundok", "baca": "bun-DOK", "id": "gunung" },
+  { "tl": "dagat", "baca": "DA-gat", "id": "laut" },
+  { "tl": "sumikat", "baca": "su-mi-KAT", "id": "terbit; terkenal" },
+  { "tl": "nakita", "baca": "na-KI-ta", "id": "terlihat, sempat melihat" },
+  { "tl": "narinig", "baca": "na-RI-nig", "id": "terdengar" },
+  { "tl": "nakalimutan", "baca": "na-ka-li-MU-tan", "id": "terlupakan" },
+  { "tl": "bumalik", "baca": "bu-ma-LIK", "id": "kembali" },
+  { "tl": "nakakainis", "baca": "na-ka-ka-I-nis", "id": "menyebalkan" },
+  { "tl": "nakakapagod", "baca": "na-ka-ka-PA-god", "id": "melelahkan" },
+  { "tl": "nakakatuwa", "baca": "na-ka-ka-tu-WA'", "id": "menggembirakan" },
+  { "tl": "kontento", "baca": "kon-TEN-to", "id": "puas" },
+  { "tl": "grabe", "baca": "GRA-be", "id": "parah, wah" },
+  { "tl": "buti naman", "baca": "BU-ti na-MAN", "id": "syukurlah" },
+  { "tl": "almusal", "baca": "al-mu-SAL", "id": "sarapan" },
+  { "tl": "papunta", "baca": "pa-PUN-ta", "id": "menuju" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan penyambung yang tepat: tapos, bago, habang, kaya, pero.",
+   "items": [
+    "Kumain kami, ____ umuwi na. (lalu)",
+    "____ matulog, nagbasa ako. (sebelum)",
+    "____ kumakain kami, nag-usap kami. (sambil)",
+    "Pagod ako, ____ natulog ako agad. (jadi)",
+    "Masarap ang pagkain, ____ mahal. (tapi)"
+   ]
+  },
+  {
+   "prompt": "Ubah ke bentuk cerita masa lalu. Contoh: Kumakain ako. → Kumain ako kahapon.",
+   "items": [
+    "Pumupunta ako sa palengke. → ____",
+    "Nagluluto si Mia ng adobo. → ____",
+    "Bumibili kami ng prutas. → ____",
+    "Natutulog siya nang maaga. → ____",
+    "Nag-aaral kami ng Tagalog. → ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Tagalog.",
+   "items": [
+    "Sabtu kami pergi ke Tagaytay.",
+    "Kami berangkat jam lima pagi.",
+    "Sesudah makan, saya tidur.",
+    "Akhir pekan depan rencanamu apa?",
+    "Saya berencana ke Batangas."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "kami / Sabado / sa / pumunta / noong / Tagaytay",
+    "umalis / ng / kami / umaga / alas-singko / ng",
+    "kumain / natulog / pagkatapos / ako / ,",
+    "mo / ano / balak / ang / ?",
+    "kong / balak / pumunta / sa / Batangas"
+   ]
+  }
+ ],
+ "answers": [
+  "tapos — Bago — Habang — kaya — pero",
+  "Pumunta ako sa palengke kahapon. — Nagluto si Mia ng adobo kahapon. — Bumili kami ng prutas kahapon. — Natulog siya nang maaga kahapon. — Nag-aral kami ng Tagalog kahapon.",
+  "Noong Sabado, pumunta kami sa Tagaytay. — Umalis kami ng alas-singko ng umaga. — Pagkatapos kumain, natulog ako. — Ano ang balak mo sa susunod na weekend? — Balak kong pumunta sa Batangas.",
+  "Noong Sabado, pumunta kami sa Tagaytay. — Umalis kami ng alas-singko ng umaga. — Pagkatapos kumain, natulog ako. — Ano ang balak mo? — Balak kong pumunta sa Batangas."
+ ],
+ "wave": "Ulangi **unit 18**: ceritakan perjalananmu dari rumah ke tempat kerja atau sekolah — kendaraannya, beloknya, patokannya — lalu ulangi dalam bentuk cerita masa lalu."
+}

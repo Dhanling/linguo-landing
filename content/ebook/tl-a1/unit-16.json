@@ -1,0 +1,548 @@
+{
+ "title": "Mau, tidak mau, harus, boleh",
+ "title_target": "Gusto, ayaw, kailangan, puwede, dapat",
+ "goal": "Menyatakan keinginan, penolakan, keperluan, izin, dan kewajiban — lima kata yang membuka setengah percakapan sehari-hari.",
+ "bekal": [
+  "membedakan *gusto ko ng kape* dari *gusto kong uminom ng kape*",
+  "tahu kata mana yang memakai *ko/mo/niya* dan mana yang memakai *ako/ka/siya*",
+  "meminta izin dengan *puwede* tanpa terdengar memaksa"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ano ang gusto mo?",
+   "intro": "Siang hari di kantin kampus. Ana, Mia, dan Budi memilih makanan sambil berdebat kecil.",
+   "lines": [
+    {
+     "speaker": "Ana:",
+     "text": "Ano ang gusto mong kainin?",
+     "id": "Kamu mau makan apa?",
+     "literal": "apa si suka kamu-yang dimakan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Gusto ko ng sinigang. Ikaw?",
+     "id": "Aku mau sinigang. Kamu?",
+     "literal": "suka aku-punya akan sinigang. kamu?"
+    },
+    {
+     "speaker": "Ana:",
+     "text": "Ayoko ng maasim. Adobo na lang ako.",
+     "id": "Aku tidak suka yang asam. Aku adobo saja.",
+     "literal": "tidak-suka-aku akan asam. adobo sudah saja saya."
+    },
+    {
+     "speaker": "Mia:",
+     "text": "Gusto kong sumubok ng bagong pagkain. Puwede ba akong kumuha ng dalawa?",
+     "id": "Aku mau coba makanan baru. Boleh aku ambil dua?",
+     "literal": "suka aku-yang mencoba akan baru-yang makanan. bisa apakah saya-yang mengambil akan dua?"
+    },
+    {
+     "speaker": "Ana:",
+     "text": "Puwede, pero dapat mong ubusin, ha?",
+     "id": "Boleh, tapi harus kamu habiskan, ya?",
+     "literal": "bisa, tapi harus kamu-punya dihabiskan, ya?"
+    },
+    {
+     "speaker": "Mia:",
+     "text": "Kaya ko iyan!",
+     "id": "Aku sanggup!",
+     "literal": "mampu aku-punya itu!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kailangan ko ring bumili ng tubig. Nauuhaw ako.",
+     "id": "Aku juga perlu beli air. Aku haus.",
+     "literal": "perlu aku-punya juga membeli akan air. sedang-haus saya."
+    },
+    {
+     "speaker": "Ana:",
+     "text": "Ayaw mo bang softdrinks? Mas mura dito.",
+     "id": "Kamu tidak mau minuman bersoda? Di sini lebih murah.",
+     "literal": "tidak-suka kamu apakah minuman-soda? lebih murah di-sini."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hindi na po. Ayaw kong tumaba.",
+     "id": "Tidak usah. Aku tidak mau gemuk.",
+     "literal": "tidak sudah Bu. tidak-suka aku-yang menggemuk."
+    },
+    {
+     "speaker": "Mia:",
+     "text": "Dapat kang kumain nang marami, ang payat mo!",
+     "id": "Kamu harus makan banyak, kurus banget!",
+     "literal": "harus kamu-yang makan dengan banyak, betapa kurus kamu!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hindi ako payat! Fit lang, ha.",
+     "id": "Aku tidak kurus! Cuma bugar, ya.",
+     "literal": "tidak saya kurus! bugar saja, ya."
+    }
+   ],
+   "notes": [
+    "**Gusto punya dua susunan yang berbeda.** Kalau yang diinginkan **benda**, dipakai *ng*: *gusto ko ng kape*. Kalau yang diinginkan **perbuatan**, dipakai penghubung: *gusto kong uminom ng kape*. Kelalaian memasang penghubung di susunan kedua adalah kesalahan pemula yang paling sering terdengar.",
+    "**Ayoko adalah singkatan dari ayaw ko.** Bentuk panjangnya tetap benar, tapi hampir tidak ada yang memakainya dalam percakapan. Perhatikan bahwa bentuk pendek ini hanya ada untuk orang pertama: *ayaw mo*, *ayaw niya* tidak dipendekkan.",
+    "**Gusto, ayaw, dan kailangan memakai ko/mo/niya**, sedangkan **puwede, dapat, dan kaya memakai ako/ka/siya**. Ini pembagian yang tidak masuk akal secara logika dan harus dihafal apa adanya — tapi kabar baiknya, ia tetap sama di semua kalimat.",
+    "**Puwede ba akong…?** adalah cara paling sopan meminta izin. Bentuk lebih santainya *pwede ba…?* dan bentuk paling pendek yang masih sopan: *Pwede po?* sambil menunjuk.",
+    "**Dapat berarti \"harus\" atau \"seharusnya\"** — dua-duanya. Kalau ingin lebih tegas dipakai *kailangan* (perlu, wajib). Bandingkan: *Dapat kang matulog* (kamu sebaiknya tidur) versus *Kailangan mong matulog* (kamu perlu tidur).",
+    "**Kaya berarti \"mampu\"** dan dibaca *KA-ya*. Bedakan dari *ka-YA* (\"maka\") yang sudah kamu temui di unit 15. *Kaya ko* = aku bisa; *Kaya mo iyan!* = kamu pasti bisa! — kalimat penyemangat paling khas Filipina.",
+    "**Nang marami** memakai *nang* (dengan huruf n-g terpisah) untuk menandai cara. Ini kata yang berbeda dari penanda *ng* walau bunyinya sama persis: *nang* untuk keterangan cara dan waktu, *ng* untuk penanda benda. Bahkan penutur asli sering keliru menulisnya.",
+    "**Mas mura** memakai *mas* (dari Spanyol) untuk membandingkan: *mas mura* (lebih murah), *mas malaki* (lebih besar), *mas mabuti* (lebih baik). Bentuk paling tinggi memakai *pinaka-*: *pinakamura* (paling murah).",
+    "**Fit lang, ha** — sekali lagi Taglish, dan sekali lagi partikel *ha* yang melembutkan bantahan jadi candaan."
+   ],
+   "grammars": [
+    {
+     "title": "Lima kata dan pasangan kata gantinya",
+     "body": [
+      "Kelima kata ini bukan kata kerja penuh: mereka tidak punya aspek dan tidak berubah bentuk. Yang berubah hanyalah kata kerja yang menyusul di belakangnya."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Arti",
+       "Kata ganti",
+       "Contoh",
+       "Terjemahan"
+      ],
+      "rows": [
+       [
+        "**gusto**",
+        "mau, suka",
+        "ko / mo / niya",
+        "**Gusto kong** kumain.",
+        "Saya mau makan."
+       ],
+       [
+        "**ayaw**",
+        "tidak mau",
+        "ko / mo / niya",
+        "**Ayaw kong** kumain.",
+        "Saya tidak mau makan."
+       ],
+       [
+        "**kailangan**",
+        "perlu, butuh",
+        "ko / mo / niya",
+        "**Kailangan kong** mag-aral.",
+        "Saya perlu belajar."
+       ],
+       [
+        "**puwede**",
+        "boleh, bisa",
+        "ako / ka / siya",
+        "**Puwede akong** umalis?",
+        "Boleh saya pergi?"
+       ],
+       [
+        "**dapat**",
+        "harus, sebaiknya",
+        "ako / ka / siya",
+        "**Dapat kang** matulog.",
+        "Kamu harus tidur."
+       ],
+       [
+        "**kaya**",
+        "mampu",
+        "ko / mo / niya",
+        "**Kaya kong** gawin.",
+        "Saya sanggup mengerjakannya."
+       ]
+      ]
+     },
+     "after": [
+      "Kata kerja yang menyusul selalu dalam bentuk **infinitif** — bentuk dasar tanpa aspek: *kumain*, *mag-aral*, *matulog*, *umalis*. Tidak pernah *kumakain* atau *nag-aral*.",
+      "Penghubung wajib ada di antara kata ganti dan kata kerja: *gusto **kong** kumain*, *dapat **kang** matulog*, *puwede **akong** umalis*. Inilah penghubung *-ng* yang sama sejak unit 3.",
+      "Untuk menyangkal, letakkan *hindi* di depan: *Hindi ko gusto* (saya tidak suka — walau *ayaw ko* lebih lazim), *Hindi ko kailangan* (saya tidak perlu), *Hindi puwede* (tidak boleh)."
+     ]
+    },
+    {
+     "title": "Benda atau perbuatan?",
+     "body": [
+      "Inilah bagian yang paling sering keliru. Perhatikan bahwa penandanya berbeda, bukan katanya."
+     ],
+     "table": {
+      "head": [
+       "Yang diinginkan",
+       "Susunan",
+       "Contoh",
+       "Terjemahan"
+      ],
+      "rows": [
+       [
+        "benda",
+        "gusto + ko + **ng** + benda",
+        "Gusto ko **ng** kape.",
+        "Saya mau kopi."
+       ],
+       [
+        "perbuatan",
+        "gusto + ko**ng** + kata kerja",
+        "Gusto **kong** uminom ng kape.",
+        "Saya mau minum kopi."
+       ],
+       [
+        "benda tertentu",
+        "gusto + ko + **ang** + benda",
+        "Gusto ko **ang** kapeng ito.",
+        "Saya suka kopi yang ini."
+       ],
+       [
+        "orang",
+        "gusto + ko + **si** + nama",
+        "Gusto ko **si** Ana.",
+        "Saya suka Ana."
+       ],
+       [
+        "menolak benda",
+        "ayaw + ko + **ng** + benda",
+        "Ayoko **ng** maasim.",
+        "Saya tidak suka yang asam."
+       ],
+       [
+        "menolak perbuatan",
+        "ayaw + ko**ng** + kata kerja",
+        "Ayaw **kong** tumaba.",
+        "Saya tidak mau gemuk."
+       ]
+      ]
+     },
+     "after": [
+      "Baris ketiga menyimpan pelajaran halus: *gusto ko ng kape* berarti \"saya mau kopi\" (sembarang kopi), sedangkan *gusto ko ang kape* berarti \"saya suka kopi ini\" atau \"saya suka kopi\" secara umum sebagai hal yang disukai. Perbedaan *ng* dan *ang* di sini persis sama dengan perbedaan fokus di unit 13.",
+      "*Gusto kita* berarti \"saya suka kamu\" — memakai bentuk gabungan *kita* yang kamu kenal dari unit 4. Hati-hati memakainya: artinya cukup dekat dengan pernyataan cinta.",
+      "Untuk menawarkan, dipakai bentuk pertanyaan: *Gusto mo ba ng kape?* — \"mau kopi?\" Ini kalimat tuan rumah paling standar di Filipina."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Meminta izin dan menawarkan bantuan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tagalog",
+      "Arti",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "Puwede po ba?",
+       "Boleh?",
+       "paling pendek, sambil menunjuk"
+      ],
+      [
+       "Puwede po bang tumawad?",
+       "Boleh menawar?",
+       "di pasar"
+      ],
+      [
+       "Puwede ba akong umupo dito?",
+       "Boleh saya duduk di sini?",
+       "di kendaraan umum"
+      ],
+      [
+       "Puwede mo ba akong tulungan?",
+       "Bisa kamu bantu saya?",
+       "meminta tolong"
+      ],
+      [
+       "Puwede na ba?",
+       "Sudah boleh? / Sudah cukup?",
+       ""
+      ],
+      [
+       "Hindi puwede.",
+       "Tidak boleh.",
+       "penolakan tegas"
+      ],
+      [
+       "Bawal.",
+       "Dilarang.",
+       "di papan pengumuman"
+      ],
+      [
+       "Kaya mo ba?",
+       "Kamu sanggup?",
+       ""
+      ],
+      [
+       "Kaya ko na po.",
+       "Saya bisa sendiri, terima kasih.",
+       "menolak bantuan dengan sopan"
+      ],
+      [
+       "Tutulungan kita.",
+       "Saya akan membantumu.",
+       ""
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Bawal** layak dihafal terpisah karena ia muncul di mana-mana dalam bentuk papan: *bawal umihi dito* (dilarang kencing di sini), *bawal pumasok* (dilarang masuk), *bawal tumawid* (dilarang menyeberang). Kata ini adalah salah satu yang paling cepat dipelajari pendatang di Manila."
+    },
+    {
+     "type": "kotak",
+     "title": "Menolak tanpa menyinggung",
+     "items": [
+      "Menolak langsung dengan *ayaw ko* terdengar cukup keras dalam budaya Filipina. Yang lebih halus: *Sige, sa susunod na lang po.* (\"Lain kali saja ya.\")",
+      "Menolak makanan: *Busog pa po ako, salamat.* (\"Saya masih kenyang, terima kasih.\") Tuan rumah akan tetap menawarkan sekali dua kali lagi — itu bagian dari tata krama, bukan desakan sungguhan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membandingkan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Pola",
+      "Contoh",
+      "Terjemahan"
+     ],
+     "rows": [
+      [
+       "**mas** + sifat",
+       "mas mura",
+       "lebih murah"
+      ],
+      [
+       "**mas** + sifat + **kaysa sa**",
+       "mas mura kaysa sa mangga",
+       "lebih murah daripada mangga"
+      ],
+      [
+       "**pinaka-** + sifat",
+       "pinakamura",
+       "paling murah"
+      ],
+      [
+       "**kasing-** + dasar",
+       "kasingtaas ko",
+       "setinggi saya"
+      ],
+      [
+       "**hindi kasing-**",
+       "hindi kasingtaas ko",
+       "tidak setinggi saya"
+      ],
+      [
+       "**sobrang** + dasar",
+       "sobrang mura",
+       "murah banget"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Kaysa sa* dipendekkan jadi *kaysa* dalam percakapan, dan sering hilang sama sekali ketika perbandingannya sudah jelas dari keadaan: *Mas gusto ko ito.* — \"Saya lebih suka yang ini.\""
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tl": "gusto",
+   "baca": "GUS-to",
+   "id": "mau, suka"
+  },
+  {
+   "tl": "ayaw",
+   "baca": "A-yaw",
+   "id": "tidak mau"
+  },
+  {
+   "tl": "ayoko",
+   "baca": "a-YO-ko",
+   "id": "saya tidak mau"
+  },
+  {
+   "tl": "kailangan",
+   "baca": "kay-LA-ngan",
+   "id": "perlu"
+  },
+  {
+   "tl": "puwede / pwede",
+   "baca": "PWE-de",
+   "id": "boleh, bisa"
+  },
+  {
+   "tl": "dapat",
+   "baca": "DA-pat",
+   "id": "harus, sebaiknya"
+  },
+  {
+   "tl": "kaya",
+   "baca": "KA-ya",
+   "id": "mampu"
+  },
+  {
+   "tl": "bawal",
+   "baca": "BA-wal",
+   "id": "dilarang"
+  },
+  {
+   "tl": "mas",
+   "baca": "mas",
+   "id": "lebih"
+  },
+  {
+   "tl": "kaysa",
+   "baca": "KAY-sa",
+   "id": "daripada"
+  },
+  {
+   "tl": "pinaka-",
+   "baca": "pi-na-KA",
+   "id": "paling"
+  },
+  {
+   "tl": "sumubok",
+   "baca": "su-MU-bok",
+   "id": "mencoba"
+  },
+  {
+   "tl": "ubusin",
+   "baca": "u-BU-sin",
+   "id": "habiskan"
+  },
+  {
+   "tl": "tumulong",
+   "baca": "tu-MU-long",
+   "id": "membantu"
+  },
+  {
+   "tl": "maasim",
+   "baca": "ma-A-sim",
+   "id": "asam"
+  },
+  {
+   "tl": "matamis",
+   "baca": "ma-ta-MIS",
+   "id": "manis"
+  },
+  {
+   "tl": "maalat",
+   "baca": "ma-A-lat",
+   "id": "asin"
+  },
+  {
+   "tl": "maanghang",
+   "baca": "ma-ang-HANG",
+   "id": "pedas"
+  },
+  {
+   "tl": "mapait",
+   "baca": "ma-pa-IT",
+   "id": "pahit"
+  },
+  {
+   "tl": "busog",
+   "baca": "bu-SOG",
+   "id": "kenyang"
+  },
+  {
+   "tl": "gutom",
+   "baca": "gu-TOM",
+   "id": "lapar"
+  },
+  {
+   "tl": "payat",
+   "baca": "pa-YAT",
+   "id": "kurus"
+  },
+  {
+   "tl": "mataba",
+   "baca": "ma-ta-BA'",
+   "id": "gemuk"
+  },
+  {
+   "tl": "softdrinks",
+   "baca": "SOFT-drinks",
+   "id": "minuman bersoda"
+  },
+  {
+   "tl": "tsaa",
+   "baca": "tsa-A",
+   "id": "teh"
+  },
+  {
+   "tl": "juice",
+   "baca": "dyus",
+   "id": "jus"
+  },
+  {
+   "tl": "kanin",
+   "baca": "KA-nin",
+   "id": "nasi"
+  },
+  {
+   "tl": "ulam",
+   "baca": "u-LAM",
+   "id": "lauk"
+  },
+  {
+   "tl": "sabaw",
+   "baca": "sa-BAW",
+   "id": "kuah"
+  },
+  {
+   "tl": "nang",
+   "baca": "nang",
+   "id": "dengan (cara); ketika"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan bentuk yang tepat: ko, mo, niya, ako, ka, siya.",
+   "items": [
+    "Gusto ____ ng kape. (saya)",
+    "Ayaw ____ ng maanghang. (dia)",
+    "Kailangan ____ mag-aral. (kamu)",
+    "Puwede ba ____ umalis? (saya)",
+    "Dapat ____ matulog nang maaga. (kamu)",
+    "Kaya ____ iyan! (kamu)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan gusto, ayaw, kailangan, puwede, atau dapat.",
+   "items": [
+    "____ kong kumain, gutom na ako. (mau)",
+    "____ kong tumaba. (tidak mau)",
+    "____ kong mag-aral bukas. (perlu)",
+    "____ ba akong umalis? (boleh)",
+    "____ kang matulog nang maaga. (harus)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Tagalog.",
+   "items": [
+    "Kamu mau makan apa?",
+    "Saya mau sinigang.",
+    "Saya tidak mau yang asam.",
+    "Boleh saya duduk di sini?",
+    "Kamu harus tidur lebih awal."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "kong / gusto / kumain",
+    "ng / gusto / kape / ko",
+    "akong / puwede / ba / umalis / ?",
+    "matulog / kang / dapat",
+    "iyan / kaya / ko"
+   ]
+  }
+ ],
+ "answers": [
+  "ko — niya — mo — ako — ka — mo",
+  "Gusto — Ayaw — Kailangan — Puwede — Dapat",
+  "Ano ang gusto mong kainin? — Gusto ko ng sinigang. — Ayoko ng maasim. — Puwede ba akong umupo dito? — Dapat kang matulog nang maaga.",
+  "Gusto kong kumain. — Gusto ko ng kape. — Puwede ba akong umalis? — Dapat kang matulog. — Kaya ko iyan."
+ ],
+ "wave": "Ulangi **unit 14**: ambil lima kalimat biasa yang kamu buat sendiri, lalu tambahkan partikel — *na*, *pa*, *lang*, *naman*, *po* — sampai nadanya berubah tiga kali."
+}

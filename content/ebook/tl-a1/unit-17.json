@@ -1,0 +1,221 @@
+{
+ "title": "Makan di luar",
+ "title_target": "Kain tayo!",
+ "goal": "Memesan makanan, menyebut rasa, meminta tambahan, membayar — dan memahami kenapa \"sudah makan?\" adalah pertanyaan terpenting di Filipina.",
+ "bekal": [
+  "memesan dengan pola *isang* + makanan + *po*",
+  "meminta tambahan nasi, kuah, dan sendok tanpa canggung",
+  "menanggapi ajakan makan dengan cara yang benar"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Sa karinderya",
+   "intro": "Warung makan sederhana di pinggir jalan. Lauk berjejer di balik kaca, dan pembeli menunjuk apa yang mereka mau.",
+   "lines": [
+    { "speaker": "Tindera:", "text": "Sir, ano po ang ulam ninyo?", "id": "Mas, lauknya apa?", "literal": "pak, apa Pak si lauk kalian-punya?" },
+    { "speaker": "Budi:", "text": "Ano po ang masarap dito?", "id": "Di sini yang enak apa, Bu?", "literal": "apa Bu si enak di-sini?" },
+    { "speaker": "Tindera:", "text": "Bagong luto ang adobo at ang sinigang na baboy.", "id": "Adobo dan sinigang babi baru matang.", "literal": "baru masak si adobo dan si sinigang yang babi." },
+    { "speaker": "Budi:", "text": "Sinigang na lang po. Isang kanin din po.", "id": "Sinigang saja, Bu. Nasinya satu juga.", "literal": "sinigang sudah saja Bu. satu nasi juga Bu." },
+    { "speaker": "Tindera:", "text": "Dine-in o take-out po?", "id": "Makan di sini atau bungkus?", "literal": "makan-di-sini atau bawa-pulang Bu?" },
+    { "speaker": "Budi:", "text": "Dito na lang po. May tubig po ba?", "id": "Di sini saja. Ada air, Bu?", "literal": "di-sini sudah saja Bu. ada air Bu apakah?" },
+    { "speaker": "Tindera:", "text": "Mayroon, libre po ang tubig.", "id": "Ada, airnya gratis.", "literal": "ada, gratis Bu si air." },
+    { "speaker": "Budi:", "text": "Salamat po. Pahingi rin po ng kutsara.", "id": "Terima kasih. Minta sendok juga, Bu.", "literal": "terima-kasih Bu. tolong-beri juga Bu akan sendok." },
+    { "speaker": "Tindera:", "text": "Heto po. Kain po kayo!", "id": "Ini dia. Silakan makan!", "literal": "ini-dia Bu. makan Bu kalian!" },
+    { "speaker": "Budi:", "text": "Sarap! Puwede po bang dagdagan ng kanin?", "id": "Enak! Boleh tambah nasi, Bu?", "literal": "enak! bisa Bu apakah ditambah akan nasi?" },
+    { "speaker": "Tindera:", "text": "Oo naman. Unlimited po ang kanin dito.", "id": "Tentu saja. Di sini nasinya sepuasnya.", "literal": "ya tentu. tanpa-batas Bu si nasi di-sini." },
+    { "speaker": "Budi:", "text": "Ang galing! Magkano po lahat?", "id": "Hebat! Semuanya berapa, Bu?", "literal": "betapa hebat! berapa Bu semua?" },
+    { "speaker": "Tindera:", "text": "Siyento bente po lahat.", "id": "Semuanya seratus dua puluh.", "literal": "seratus dua-puluh Bu semua." }
+   ],
+   "notes": [
+    "**Karinderya adalah warung makan rakyat**: lauk sudah dimasak sejak pagi, berjejer di balik kaca, dan kamu tinggal menunjuk. Padanan Indonesianya warteg. Kata lain untuk tempat sejenis: *turo-turo*, harfiahnya \"tunjuk-tunjuk\" — dari cara memesannya.",
+    "**Ulam adalah kata yang perlu dipahami betul.** Ia berarti lauk — apa pun yang dimakan bersama nasi. Orang Filipina tidak menganggap makanan lengkap tanpa nasi, jadi pertanyaan *ano ang ulam?* sebetulnya menanyakan \"makan pakai apa hari ini\".",
+    "**Kanin adalah nasi yang sudah matang**, *bigas* beras mentah, dan *palay* padi di sawah. Tiga kata untuk satu benda di tiga tahap — persis seperti bahasa Indonesia dan bahasa Jawa. Ini salah satu bukti paling terang bahwa dua bahasa ini bersaudara.",
+    "**Kain po kayo!** adalah ajakan yang akan kamu dengar di mana-mana, bahkan dari orang asing yang sedang makan di sebelahmu. Ini keramahan yang tulus tapi juga tata krama: jawaban sopannya *Salamat po, kumain na po ako* kalau kamu tidak ingin ikut.",
+    "**Dagdagan ng kanin** memakai fokus penerima dari unit 13: yang ditambahi adalah piringmu. Bentuk lebih pendek yang juga lazim: *Extra rice po.*",
+    "**Unlimited rice** adalah lembaga tersendiri di Filipina — banyak warung menawarkan nasi tanpa batas, dan di sanalah kata Inggris itu dipakai apa adanya tanpa terjemahan.",
+    "**Sarap!** adalah bentuk pendek dari *ang sarap!* dan cukup diucapkan sendirian sebagai pujian. Memuji masakan dengan lantang di Filipina bukan berlebihan, melainkan diharapkan.",
+    "**Libre berarti gratis** (dari Spanyol *libre*). Kata ini juga dipakai untuk mentraktir: *Libre kita* — \"aku traktir kamu\". Salah satu tawaran yang paling sering kamu dengar dari teman Filipina.",
+    "**Dine-in atau take-out** — dua kata Inggris yang dipakai bahkan di warung paling kecil. Padanan Tagalognya ada (*dito kakainin* / *iuuwi*), tapi jarang dipakai."
+   ],
+   "grammars": [
+    {
+     "title": "Memesan: pola yang selalu berhasil",
+     "body": [
+      "Pesanan di Filipina hampir selalu berbentuk: jumlah + penghubung + makanan + *po*. Tidak perlu kata kerja sama sekali."
+     ],
+     "table": {
+      "head": ["Tagalog", "Harfiah", "Arti"],
+      "rows": [
+       ["**Isang** adobo **po**.", "satu adobo Bu", "Adobo satu, Bu."],
+       ["**Dalawang** kanin **po**.", "dua nasi Bu", "Nasi dua."],
+       ["**Tatlong** kape **po**, please.", "tiga kopi Bu", "Kopi tiga."],
+       ["**Pahingi po ng** tubig.", "tolong-beri Bu akan air", "Minta air."],
+       ["**Pabili po ng** kanin.", "tolong-belikan Bu akan nasi", "Beli nasi."],
+       ["**Ano po ang** masarap dito?", "apa Bu si enak di-sini", "Yang enak apa di sini?"],
+       ["**Para sa** dalawang tao **po**.", "untuk ke dua orang Bu", "Untuk dua orang."]
+      ]
+     },
+     "after": [
+      "Pola pertama sudah cukup untuk seluruh hidupmu di Filipina. Kalau kamu hanya sempat menghafal satu kalimat dari unit ini, hafalkan *Isang … po.*",
+      "Untuk meminta bon: *Bill out po* atau *Ang bill po*. Untuk meminta bungkus: *Pa-take-out po*.",
+      "Menyebut makanan yang tidak kamu tahu namanya cukup dengan menunjuk dan berkata *Iyan po* — \"yang itu\". Tidak ada yang menganggapnya kasar di karinderya."
+     ]
+    },
+    {
+     "title": "Rasa dan keadaan makanan",
+     "body": [
+      "Semua kata rasa memakai awalan *ma-* yang sudah kamu kenal dari unit 3."
+     ],
+     "table": {
+      "head": ["Tagalog", "Cara baca", "Arti", "Kata dasar"],
+      "rows": [
+       ["masarap", "ma-sa-RAP", "enak", "sarap"],
+       ["matamis", "ma-ta-MIS", "manis", "tamis"],
+       ["maalat", "ma-A-lat", "asin", "alat"],
+       ["maasim", "ma-A-sim", "asam", "asim"],
+       ["mapait", "ma-pa-IT", "pahit", "pait"],
+       ["maanghang", "ma-ang-HANG", "pedas", "anghang"],
+       ["malansa", "ma-lan-SA", "amis", "lansa"],
+       ["mainit", "ma-i-NIT", "panas", "init"],
+       ["malamig", "ma-la-MIG", "dingin", "lamig"],
+       ["sariwa", "sa-ri-WA'", "segar", "—"],
+       ["panis", "pa-NIS", "basi", "—"],
+       ["luto", "LU-to'", "matang", "—"]
+      ]
+     },
+     "after": [
+      "Perhatikan *maalat* dan *maasim* — dua kata yang dasarnya sama dengan \"asin\" dan \"asam\" dalam bahasa Indonesia, dengan huruf yang bergeser sedikit.",
+      "Bentuk seruannya membuang *ma-*: *Ang sarap!*, *Ang anghang!*, *Ang tamis!* Ini yang paling sering kamu ucapkan di meja makan.",
+      "Untuk menolak dengan halus, pakai *hindi masyado*: *Hindi masyadong maanghang para sa akin* — \"buat saya kurang pedas\" atau \"terlalu pedas\", tergantung nada."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Makanan yang perlu kamu kenal",
+   "blocks": [
+    { "type": "tabel", "head": ["Nama", "Isinya", "Catatan untuk orang Indonesia"], "rows": [
+      ["**adobo**", "daging dimasak cuka, kecap asin, bawang, daun salam", "hidangan nasional; rasanya asam-asin, bukan manis"],
+      ["**sinigang**", "sup asam dengan asam jawa atau belimbing", "paling dekat dengan sayur asem"],
+      ["**lechon**", "babi panggang utuh", "hidangan pesta; ada juga *lechon manok* (ayam)"],
+      ["**sisig**", "cincangan kepala babi di atas piring panas", "gurih, asam, pedas"],
+      ["**pancit**", "mi goreng dengan sayur dan daging", "wajib ada di ulang tahun — lambang umur panjang"],
+      ["**lumpia**", "lumpia; ada yang goreng dan segar", "kata yang sama dengan bahasa Indonesia"],
+      ["**halo-halo**", "es campur dengan susu, ubi ungu, es serut", "harfiah \"campur-campur\""],
+      ["**taho**", "tahu sutra manis dengan sagu", "dijual keliling pagi hari"],
+      ["**balut**", "telur bebek berembrio", "jangan ditolak dengan wajah ngeri; cukup *hindi po muna*"],
+      ["**kare-kare**", "gulai kacang tanah dengan buntut sapi", "dimakan dengan *bagoong* (terasi)"]
+     ] },
+    { "type": "kotak", "title": "Kalau kamu tidak makan babi", "items": [
+      "Katakan sejak awal: *Hindi po ako kumakain ng baboy.* — \"Saya tidak makan babi.\" Ini kalimat yang dipahami dengan segera dan dihormati, terutama karena Filipina punya penduduk Muslim yang besar di selatan.",
+      "Cari kata **manok** (ayam), **isda** (ikan), **baka** (sapi), dan **gulay** (sayur) di daftar lauk. Hindari **baboy** (babi), **lechon**, **sisig**, **chicharon**, dan **bagoong** yang sering memakai bahan babi atau udang.",
+      "Restoran halal ada di banyak kota; cari papan *halal* atau tanyakan *May halal po ba dito?*"
+     ] }
+   ]
+  },
+  {
+   "title": "Di meja makan",
+   "blocks": [
+    { "type": "tabel", "head": ["Tagalog", "Arti", "Kapan dipakai"], "rows": [
+      ["Kain tayo!", "Ayo makan!", "mengajak"],
+      ["Kain po kayo.", "Silakan makan.", "menawari orang yang lebih tua"],
+      ["Salamat po, busog pa ako.", "Terima kasih, saya masih kenyang.", "menolak dengan halus"],
+      ["Ang sarap!", "Enak sekali!", "memuji"],
+      ["Pahingi po ng kutsara.", "Minta sendok.", ""],
+      ["Pakiabot po ng asin.", "Tolong ambilkan garam.", ""],
+      ["Puwede pong dagdagan?", "Boleh tambah?", ""],
+      ["Tama na po, salamat.", "Cukup, terima kasih.", "menghentikan tambahan"],
+      ["Busog na busog ako.", "Saya kenyang sekali.", ""],
+      ["Bill out po.", "Minta bonnya.", "di restoran"],
+      ["Kanya-kanyang bayad.", "Bayar masing-masing.", "patungan"],
+      ["Libre kita.", "Aku traktir kamu.", ""]
+     ] },
+    { "type": "p", "text": "Alat makan utama di Filipina adalah **sendok dan garpu** — pisau jarang muncul di meja rumah, karena lauk sudah dipotong kecil sejak dapur. Makan dengan tangan (*kamayan*) juga lazim dan dianggap istimewa, terutama pada jamuan bersama di atas daun pisang (*boodle fight*)." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "tl": "kumain", "baca": "ku-MA-in", "id": "makan" },
+  { "tl": "pagkain", "baca": "pag-ka-IN", "id": "makanan" },
+  { "tl": "ulam", "baca": "u-LAM", "id": "lauk" },
+  { "tl": "kanin", "baca": "KA-nin", "id": "nasi" },
+  { "tl": "bigas", "baca": "bi-GAS", "id": "beras" },
+  { "tl": "baboy", "baca": "BA-boy", "id": "babi" },
+  { "tl": "manok", "baca": "ma-NOK", "id": "ayam" },
+  { "tl": "baka", "baca": "BA-ka", "id": "sapi" },
+  { "tl": "isda", "baca": "is-DA'", "id": "ikan" },
+  { "tl": "hipon", "baca": "HI-pon", "id": "udang" },
+  { "tl": "gulay", "baca": "GU-lay", "id": "sayur" },
+  { "tl": "sabaw", "baca": "sa-BAW", "id": "kuah" },
+  { "tl": "asin", "baca": "a-SIN", "id": "garam" },
+  { "tl": "asukal", "baca": "a-SU-kal", "id": "gula" },
+  { "tl": "toyo", "baca": "TO-yo", "id": "kecap asin" },
+  { "tl": "suka", "baca": "su-KA'", "id": "cuka" },
+  { "tl": "sili", "baca": "SI-li", "id": "cabai" },
+  { "tl": "kutsara", "baca": "ku-TSA-ra", "id": "sendok" },
+  { "tl": "tinidor", "baca": "ti-ni-DOR", "id": "garpu" },
+  { "tl": "plato", "baca": "PLA-to", "id": "piring" },
+  { "tl": "baso", "baca": "BA-so", "id": "gelas" },
+  { "tl": "karinderya", "baca": "ka-rin-DER-ya", "id": "warung makan" },
+  { "tl": "restawran", "baca": "res-taw-RAN", "id": "restoran" },
+  { "tl": "libre", "baca": "LIB-re", "id": "gratis" },
+  { "tl": "dagdagan", "baca": "dag-DA-gan", "id": "tambahkan" },
+  { "tl": "masarap", "baca": "ma-sa-RAP", "id": "enak" },
+  { "tl": "matamis", "baca": "ma-ta-MIS", "id": "manis" },
+  { "tl": "maanghang", "baca": "ma-ang-HANG", "id": "pedas" },
+  { "tl": "busog", "baca": "bu-SOG", "id": "kenyang" },
+  { "tl": "panis", "baca": "pa-NIS", "id": "basi" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Tagalog.",
+   "items": [
+    "Di sini yang enak apa, Bu?",
+    "Adobo satu, Bu.",
+    "Minta sendok, Bu.",
+    "Boleh tambah nasi?",
+    "Enak sekali!",
+    "Semuanya berapa?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata rasa yang tepat: masarap, matamis, maalat, maasim, maanghang.",
+   "items": [
+    "Ang sinigang ay ____. (asam)",
+    "Ang halo-halo ay ____. (manis)",
+    "Sobrang ____ ang sili. (pedas)",
+    "____ ang adobo, gusto ko! (enak)",
+    "Masyadong ____ ang isda. (asin)"
+   ]
+  },
+  {
+   "prompt": "Pilih kalimat yang tepat untuk keadaan berikut.",
+   "items": [
+    "Kamu ditawari makan tapi sudah kenyang. Kamu bilang ____.",
+    "Kamu ingin memuji masakan tuan rumah. Kamu bilang ____.",
+    "Kamu tidak makan babi. Kamu bilang ____.",
+    "Kamu ingin membayar di restoran. Kamu bilang ____.",
+    "Kamu mengajak teman makan. Kamu bilang ____."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "po / adobo / isang",
+    "po / kutsara / ng / pahingi",
+    "bang / dagdagan / puwede / po / ?",
+    "po / lahat / magkano / ?",
+    "po / kumakain / hindi / baboy / ako / ng"
+   ]
+  }
+ ],
+ "answers": [
+  "Ano po ang masarap dito? — Isang adobo po. — Pahingi po ng kutsara. — Puwede pong dagdagan ng kanin? — Ang sarap! — Magkano po lahat?",
+  "maasim — matamis — maanghang — Masarap — maalat",
+  "Salamat po, busog pa ako. — Ang sarap po! — Hindi po ako kumakain ng baboy. — Bill out po. — Kain tayo!",
+  "Isang adobo po. — Pahingi po ng kutsara. — Puwede po bang dagdagan? — Magkano po lahat? — Hindi po ako kumakain ng baboy."
+ ],
+ "wave": "Ulangi **unit 15**: tanyakan sepuluh hal kepada dirimu sendiri di depan cermin — nama, asal, tempat tinggal, alasan, cara, harga — lalu jawab semuanya keras-keras."
+}

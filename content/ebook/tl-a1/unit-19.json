@@ -1,0 +1,246 @@
+{
+ "title": "Kalau badan tidak enak",
+ "title_target": "Masakit ang ulo ko",
+ "goal": "Mengatakan bagian tubuh mana yang sakit, menyebut keluhan yang umum, membeli obat di apotek, dan meminta tolong dalam keadaan darurat.",
+ "bekal": [
+  "memakai pola *masakit ang* + bagian tubuh + kata milik",
+  "menyebut keluhan dengan *may* dan dengan bentuk *nilalagnat*",
+  "meminta pertolongan dengan jelas dan cepat"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Sa botika",
+   "intro": "Budi terbangun dengan badan tidak enak sesudah kehujanan kemarin. Mia mengantarnya ke apotek di ujung jalan.",
+   "lines": [
+    { "speaker": "Mia:", "text": "Kuya, ang pula ng mata mo. Ayos ka lang ba?", "id": "Kak, matamu merah sekali. Kamu tidak apa-apa?", "literal": "kak, betapa merah punya mata kamu-punya. beres kamu saja apakah?" },
+    { "speaker": "Budi:", "text": "Hindi masyado. Masakit ang ulo ko at may sipon ako.", "id": "Kurang enak. Kepalaku sakit dan aku pilek.", "literal": "tidak terlalu. sakit si kepala aku-punya dan ada pilek saya." },
+    { "speaker": "Mia:", "text": "Nilalagnat ka ba?", "id": "Kamu demam?", "literal": "sedang-didemam kamu apakah?" },
+    { "speaker": "Budi:", "text": "Konti. Naulanan kasi ako kahapon.", "id": "Sedikit. Soalnya kemarin aku kehujanan.", "literal": "sedikit. terkena-hujan sebab saya kemarin." },
+    { "speaker": "Mia:", "text": "Halika, pumunta tayo sa botika.", "id": "Ayo, kita ke apotek.", "literal": "kemarilah, pergi kita ke apotek." },
+    { "speaker": "Parmasyutiko:", "text": "Magandang umaga po. Ano po ang kailangan ninyo?", "id": "Selamat pagi. Perlu apa?", "literal": "indahnya pagi Bu. apa Bu si keperluan kalian-punya?" },
+    { "speaker": "Budi:", "text": "May gamot po ba para sa sipon at sakit ng ulo?", "id": "Ada obat untuk pilek dan sakit kepala?", "literal": "ada obat Bu apakah untuk ke pilek dan sakit punya kepala?" },
+    { "speaker": "Parmasyutiko:", "text": "Mayroon po. Ito po ay iniinom tuwing anim na oras.", "id": "Ada. Yang ini diminum setiap enam jam.", "literal": "ada Bu. ini Bu adalah sedang-diminum setiap enam yang jam." },
+    { "speaker": "Budi:", "text": "Pagkatapos po ba kumain?", "id": "Sesudah makan?", "literal": "sesudah Bu apakah makan?" },
+    { "speaker": "Parmasyutiko:", "text": "Opo, huwag pong inumin nang walang laman ang tiyan.", "id": "Ya, jangan diminum saat perut kosong.", "literal": "ya-Bu, jangan Bu diminum dengan tiada isi si perut." },
+    { "speaker": "Budi:", "text": "Salamat po. Magkano po lahat?", "id": "Terima kasih. Semuanya berapa?", "literal": "terima-kasih Bu. berapa Bu semua?" },
+    { "speaker": "Parmasyutiko:", "text": "Otsenta pesos po. Kung hindi bumuti sa dalawang araw, magpatingin po kayo sa doktor.", "id": "Delapan puluh peso. Kalau dua hari tidak membaik, periksakan ke dokter.", "literal": "delapan-puluh peso Bu. kalau tidak membaik di dua yang hari, memeriksakan Bu kalian ke dokter." },
+    { "speaker": "Budi:", "text": "Opo, salamat po talaga.", "id": "Baik, terima kasih banyak.", "literal": "ya-Bu, terima-kasih Bu sungguh." }
+   ],
+   "notes": [
+    "**Masakit ang ulo ko** harfiahnya \"sakit si kepala saya\" — sifat di depan, bendanya di belakang, persis pola unit 3. Bahasa Indonesia berkata \"kepala saya sakit\"; bahasa Tagalog membalik urutannya, dan pola ini berlaku untuk semua keluhan.",
+    "**Nilalagnat ka ba?** memakai bentuk yang menarik: penyakit diperlakukan sebagai sesuatu yang **menimpa** orang, bukan sebagai keadaan yang dimiliki. Sepupunya: *sinisipon ako* (saya kena pilek), *inuubo ako* (saya batuk-batuk), *sinusuka ako* (saya mual).",
+    "**May sipon ako** adalah bentuk yang lebih sederhana dan sama benarnya. Untuk pemula, pola *may* + keluhan + kata ganti sudah cukup menutupi hampir semua keperluan: *may lagnat ako*, *may ubo ako*, *may sugat ako*.",
+    "**Naulanan ako** berarti \"saya kehujanan\" — awalan *na-* dengan akhiran *-an* menandai sesuatu yang menimpa pelakunya tanpa dia kehendaki. Sepupunya: *nabasa* (kebasahan), *nasunog* (terbakar), *nahulog* (terjatuh).",
+    "**Botika adalah apotek**, dan di Filipina apotek boleh menjual banyak obat tanpa resep. Yang perlu resep disebut *reseta*, dan apoteker akan memintanya jika perlu.",
+    "**Magpatingin sa doktor** harfiahnya \"membuat diri dilihat oleh dokter\". Awalan *magpa-* berarti menyuruh atau membuat orang lain melakukan sesuatu — bentuk yang akan kamu pelajari lengkap di tingkat A2, tapi kata ini layak dihafal utuh sekarang.",
+    "**Kung berarti \"kalau\"** dan selalu berdiri di depan syaratnya: *Kung masakit pa bukas, pumunta ka sa doktor.* Untuk \"kalau\" dalam arti pengandaian yang tidak terjadi dipakai *kung sana*.",
+    "**Walang laman ang tiyan** = \"perutnya tidak ada isinya\", cara Tagalog mengatakan perut kosong. Perhatikan *wala* yang muncul lagi sebagai penyangkal keberadaan, seperti di unit 6.",
+    "**Ayos ka lang ba?** adalah pertanyaan paling umum ketika seseorang terlihat tidak enak badan atau baru terjatuh. Jawaban standarnya *Ayos lang* atau *Okay lang* — dua-duanya sama-sama sering dipakai."
+   ],
+   "grammars": [
+    {
+     "title": "Mengatakan bagian tubuh yang sakit",
+     "body": [
+      "Ada tiga pola, dan semuanya sama benarnya. Pilih yang paling gampang keluar dari mulutmu."
+     ],
+     "table": {
+      "head": ["Pola", "Contoh", "Terjemahan"],
+      "rows": [
+       ["**Masakit ang** + bagian + milik", "Masakit ang ulo ko.", "Kepala saya sakit."],
+       ["**Sumasakit ang** + bagian", "Sumasakit ang tiyan ko.", "Perut saya sedang sakit."],
+       ["**May sakit** + orang", "May sakit ako.", "Saya sedang sakit."],
+       ["**May** + keluhan + orang", "May lagnat ako.", "Saya demam."],
+       ["**Ni-/-in-** + keluhan", "Nilalagnat ako.", "Saya sedang demam."],
+       ["**Hindi maganda ang pakiramdam**", "Hindi maganda ang pakiramdam ko.", "Badan saya tidak enak."]
+      ]
+     },
+     "after": [
+      "*Pakiramdam* berarti \"perasaan badan\" dan dipakai untuk keluhan yang tidak jelas letaknya. Pertanyaannya: *Kumusta ang pakiramdam mo?* — \"bagaimana rasanya badanmu?\"",
+      "Untuk menanyakan letak sakit: *Saan masakit?* atau *Ano ang masakit?* Dokter akan bertanya persis begitu.",
+      "Untuk menyatakan sudah membaik: *Mas mabuti na ako* atau *Gumaling na ako.*"
+     ]
+    },
+    {
+     "title": "Bagian tubuh",
+     "body": [
+      "Perhatikan berapa banyak yang sudah kamu kenal: *mata*, *ilong*, *dila*, *balat*, *buto* — semuanya sepupu dari kata Indonesia dengan bentuk yang nyaris tak berubah."
+     ],
+     "tables": [
+      {
+       "head": ["Tagalog", "Cara baca", "Arti"],
+       "rows": [
+        ["ulo", "U-lo", "kepala"],
+        ["buhok", "bu-HOK", "rambut"],
+        ["mukha", "muk-HA'", "wajah"],
+        ["mata", "ma-TA", "mata"],
+        ["ilong", "i-LONG", "hidung"],
+        ["bibig", "bi-BIG", "mulut"],
+        ["ngipin", "NGI-pin", "gigi"],
+        ["dila", "DI-la'", "lidah"],
+        ["tainga", "TA-i-nga", "telinga"],
+        ["leeg", "LE-eg", "leher"]
+       ]
+      },
+      {
+       "head": ["Tagalog", "Cara baca", "Arti"],
+       "rows": [
+        ["balikat", "ba-li-KAT", "bahu"],
+        ["braso", "BRA-so", "lengan"],
+        ["kamay", "ka-MAY", "tangan"],
+        ["daliri", "da-li-RI'", "jari"],
+        ["dibdib", "dib-DIB", "dada"],
+        ["likod", "li-KOD", "punggung"],
+        ["tiyan", "ti-YAN", "perut"],
+        ["binti", "bin-TI'", "betis"],
+        ["paa", "pa-A", "kaki"],
+        ["balat", "ba-LAT", "kulit"]
+       ]
+      }
+     ],
+     "after": [
+      "*Kamay* berarti tangan, dan dari sinilah datang *kamayan* — makan dengan tangan, yang kamu temui di unit 17.",
+      "*Paa* berarti kaki dari mata kaki ke bawah; untuk keseluruhan tungkai dipakai *binti* atau *hita* (paha).",
+      "Bagian tubuh hampir selalu muncul bersama kata milik: *ulo **ko***, *kamay **mo***, *mata **niya***. Tanpa itu, kalimatnya terdengar menggantung."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Keluhan yang paling umum",
+   "blocks": [
+    { "type": "tabel", "head": ["Tagalog", "Cara baca", "Arti"], "rows": [
+      ["sakit ng ulo", "sa-KIT nang U-lo", "sakit kepala"],
+      ["lagnat", "LAG-nat", "demam"],
+      ["sipon", "SI-pon", "pilek"],
+      ["ubo", "u-BO", "batuk"],
+      ["sakit ng tiyan", "sa-KIT nang ti-YAN", "sakit perut"],
+      ["pagtatae", "pag-ta-ta-E", "diare"],
+      ["pagsusuka", "pag-su-su-KA", "muntah"],
+      ["hilo", "HI-lo", "pusing"],
+      ["pagod", "PA-god", "lelah"],
+      ["sugat", "SU-gat", "luka"],
+      ["pasa", "PA-sa", "memar"],
+      ["kagat ng lamok", "ka-GAT nang la-MOK", "gigitan nyamuk"],
+      ["allergy", "A-ler-dyi", "alergi"],
+      ["hika", "HI-ka'", "asma"]
+     ] },
+    { "type": "p", "text": "**Demam berdarah** (*dengue*) adalah penyakit yang perlu kamu kenali namanya, karena ia nyata di Filipina seperti di Indonesia. Kalau demam disertai bintik merah atau nyeri sendi hebat, jangan menunggu: *Kailangan ko pong magpatingin sa doktor ngayon.*" },
+    { "type": "kotak", "title": "Di klinik atau rumah sakit", "items": [
+      "*Gusto ko pong magpatingin sa doktor.* — Saya ingin diperiksa dokter.",
+      "*May appointment po ba kailangan?* — Perlu janji dulu?",
+      "*Magkano po ang konsulta?* — Berapa biaya konsultasinya?",
+      "*May allergy po ako sa …* — Saya alergi terhadap …",
+      "*Buntis po ako.* — Saya hamil."
+     ] }
+   ]
+  },
+  {
+   "title": "Keadaan darurat",
+   "blocks": [
+    { "type": "tabel", "head": ["Tagalog", "Arti", "Kapan"], "rows": [
+      ["Tulong po!", "Tolong!", "keadaan darurat apa pun"],
+      ["Saklolo!", "Tolong!", "lebih mendesak, jarang dipakai sehari-hari"],
+      ["Tumawag po kayo ng ambulansya!", "Tolong panggil ambulans!", ""],
+      ["May aksidente po!", "Ada kecelakaan!", ""],
+      ["May nasaktan po!", "Ada yang terluka!", ""],
+      ["Nasaan ang pinakamalapit na ospital?", "Rumah sakit terdekat di mana?", ""],
+      ["Ninakawan po ako.", "Saya kecurian.", "lapor polisi"],
+      ["Nawala ang pasaporte ko.", "Paspor saya hilang.", ""],
+      ["Tawagan po ninyo ang embahada ng Indonesia.", "Tolong hubungi Kedutaan Indonesia.", ""],
+      ["Hindi po ako marunong mag-Tagalog nang mabuti.", "Saya belum lancar berbahasa Tagalog.", "meminta kesabaran"]
+     ] },
+    { "type": "p", "text": "Nomor darurat nasional Filipina adalah **911**, sama seperti di Amerika Serikat. Petugasnya berbahasa Inggris, jadi dalam keadaan panik kamu boleh sepenuhnya memakai bahasa Inggris — itu bukan kegagalan berbahasa, itu keselamatan." },
+    { "type": "kotak", "title": "Kalimat yang mudah-mudahan tak perlu kamu pakai", "items": [
+      "*Hindi ako makahinga.* — Saya sulit bernapas.",
+      "*Nahimatay siya.* — Dia pingsan.",
+      "*May dugo.* — Ada darah.",
+      "*Dalhin po ninyo ako sa ospital.* — Tolong bawa saya ke rumah sakit."
+     ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "tl": "masakit", "baca": "ma-sa-KIT", "id": "sakit" },
+  { "tl": "sumakit", "baca": "su-ma-KIT", "id": "menjadi sakit" },
+  { "tl": "sakit", "baca": "sa-KIT", "id": "rasa sakit; penyakit" },
+  { "tl": "lagnat", "baca": "LAG-nat", "id": "demam" },
+  { "tl": "sipon", "baca": "SI-pon", "id": "pilek" },
+  { "tl": "ubo", "baca": "u-BO", "id": "batuk" },
+  { "tl": "hilo", "baca": "HI-lo", "id": "pusing" },
+  { "tl": "sugat", "baca": "SU-gat", "id": "luka" },
+  { "tl": "gamot", "baca": "ga-MOT", "id": "obat" },
+  { "tl": "botika", "baca": "bo-TI-ka", "id": "apotek" },
+  { "tl": "doktor", "baca": "dok-TOR", "id": "dokter" },
+  { "tl": "ospital", "baca": "os-pi-TAL", "id": "rumah sakit" },
+  { "tl": "ulo", "baca": "U-lo", "id": "kepala" },
+  { "tl": "mata", "baca": "ma-TA", "id": "mata" },
+  { "tl": "ilong", "baca": "i-LONG", "id": "hidung" },
+  { "tl": "bibig", "baca": "bi-BIG", "id": "mulut" },
+  { "tl": "ngipin", "baca": "NGI-pin", "id": "gigi" },
+  { "tl": "tainga", "baca": "TA-i-nga", "id": "telinga" },
+  { "tl": "tiyan", "baca": "ti-YAN", "id": "perut" },
+  { "tl": "likod", "baca": "li-KOD", "id": "punggung" },
+  { "tl": "kamay", "baca": "ka-MAY", "id": "tangan" },
+  { "tl": "paa", "baca": "pa-A", "id": "kaki" },
+  { "tl": "balat", "baca": "ba-LAT", "id": "kulit" },
+  { "tl": "pakiramdam", "baca": "pa-ki-ram-DAM", "id": "rasa badan" },
+  { "tl": "gumaling", "baca": "gu-ma-LING", "id": "sembuh" },
+  { "tl": "magpatingin", "baca": "mag-pa-ti-NGIN", "id": "berobat, periksa" },
+  { "tl": "kung", "baca": "kung", "id": "kalau" },
+  { "tl": "tulong", "baca": "TU-long", "id": "tolong" },
+  { "tl": "aksidente", "baca": "ak-si-DEN-te", "id": "kecelakaan" },
+  { "tl": "ambulansya", "baca": "am-bu-LAN-sha", "id": "ambulans" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Tagalog.",
+   "items": [
+    "Kepala saya sakit.",
+    "Saya demam.",
+    "Saya pilek dan batuk.",
+    "Ada obat untuk sakit perut?",
+    "Rumah sakit terdekat di mana?",
+    "Tolong!"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bagian tubuh yang tepat.",
+   "items": [
+    "Masakit ang ____ ko, kailangan ko ng dentista. (gigi)",
+    "Masakit ang ____ ko, hindi ako makakain. (perut)",
+    "Ang pula ng ____ mo. (mata)",
+    "May sugat sa ____ ko. (tangan)",
+    "Masakit ang ____ ko kakaupo buong araw. (punggung)"
+   ]
+  },
+  {
+   "prompt": "Pilih kalimat yang tepat untuk keadaan berikut.",
+   "items": [
+    "Kamu ingin membeli obat demam di apotek. Kamu bilang ____.",
+    "Kamu ingin diperiksa dokter. Kamu bilang ____.",
+    "Kamu alergi udang. Kamu bilang ____.",
+    "Temanmu terlihat pucat. Kamu tanya ____.",
+    "Paspormu hilang. Kamu bilang ____."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ko / ang / masakit / ulo",
+    "ako / lagnat / may",
+    "sipon / po / ba / para / gamot / sa / may / ?",
+    "sa / doktor / po / magpatingin / kayo",
+    "po / ako / nawawala"
+   ]
+  }
+ ],
+ "answers": [
+  "Masakit ang ulo ko. — May lagnat ako. — May sipon at ubo ako. — May gamot po ba para sa sakit ng tiyan? — Nasaan ang pinakamalapit na ospital? — Tulong po!",
+  "ngipin — tiyan — mata — kamay — likod",
+  "May gamot po ba para sa lagnat? — Gusto ko pong magpatingin sa doktor. — May allergy po ako sa hipon. — Ayos ka lang ba? — Nawala po ang pasaporte ko.",
+  "Masakit ang ulo ko. — May lagnat ako. — May gamot po ba para sa sipon? — Magpatingin po kayo sa doktor. — Nawawala po ako."
+ ],
+ "wave": "Ulangi **unit 17**: pesan satu porsi makanan lengkap dari awal sampai membayar, lalu tambahkan satu keluhan tentang rasanya memakai *masyadong*."
+}

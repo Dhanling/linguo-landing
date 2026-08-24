@@ -1,0 +1,213 @@
+{
+ "title": "Punyaku, punyamu",
+ "title_target": "Akin, iyo, kaniya",
+ "goal": "Memakai tiga deret kata ganti orang, menyatakan kepemilikan dengan *ko/mo/niya*, dan menjawab pertanyaan *kanino*.",
+ "bekal": [
+  "menyebut milik siapa sesuatu itu dengan dua pola: *bahay ko* dan *akin ang bahay*",
+  "membedakan *tayo* (kita) dari *kami* (kami) — pembedaan yang tidak ada di bahasa Inggris",
+  "menempatkan *ka*, *ko*, dan *mo* di tempat yang benar dalam kalimat"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Kaninong cellphone?",
+   "intro": "Sesudah kelas, ada ponsel tertinggal di atas meja. Mia, Ana, dan Budi mencari pemiliknya.",
+   "lines": [
+    { "speaker": "Mia:", "text": "Kaninong cellphone ito?", "id": "Ini ponsel siapa?", "literal": "siapa-punya ponsel ini?" },
+    { "speaker": "Ana:", "text": "Hindi ko alam. Hindi akin.", "id": "Aku tidak tahu. Bukan punyaku.", "literal": "tidak aku-punya tahu. bukan punya-saya." },
+    { "speaker": "Budi:", "text": "Iyo ba iyan, Mia?", "id": "Itu punyamu, Mia?", "literal": "punya-kamu apakah itu, Mia?" },
+    { "speaker": "Mia:", "text": "Hindi. Ang cellphone ko ay nasa bag ko.", "id": "Bukan. Ponselku ada di tasku.", "literal": "tidak. si ponsel aku-punya adalah berada-di tas aku-punya." },
+    { "speaker": "Ana:", "text": "Baka kay Kuya Ben. Siya ang huling umalis.", "id": "Mungkin punya Kak Ben. Dia yang terakhir keluar.", "literal": "mungkin ke-si Kak Ben. dia si terakhir yang-pergi." },
+    { "speaker": "Budi:", "text": "Tama ka. Kanila ang mga gamit sa mesa.", "id": "Kamu benar. Barang-barang di meja itu punya mereka.", "literal": "benar kamu. punya-mereka si jamak barang di meja." },
+    { "speaker": "Mia:", "text": "Sige, ibalik natin sa kaniya bukas.", "id": "Baik, besok kita kembalikan kepadanya.", "literal": "baiklah, dikembalikan kita-punya ke dia bukas." },
+    { "speaker": "Budi:", "text": "Natin? Kami ni Ana ang uuwi ngayon, hindi ikaw!", "id": "Kita? Aku dan Ana yang pulang sekarang, bukan kamu!", "literal": "kita-punya? kami dengan-si Ana si yang-akan-pulang sekarang, bukan kamu!" },
+    { "speaker": "Mia:", "text": "Sorry! Ibalik ninyo pala, hindi natin.", "id": "Maaf! Kalian yang mengembalikan, bukan kita.", "literal": "maaf! dikembalikan kalian-punya ternyata, bukan kita-punya." },
+    { "speaker": "Ana:", "text": "Ayan, tama na ang Tagalog mo!", "id": "Nah, bahasa Tagalogmu sudah benar!", "literal": "itu-dia, benar sudah si Tagalog kamu-punya!" }
+   ],
+   "notes": [
+    "**Kepemilikan punya dua pola.** Pola pertama menempelkan kata ganti pendek di belakang benda: *bahay ko* (rumahku), *cellphone mo* (ponselmu). Pola kedua menaruh bentuk panjang di depan: *akin ang bahay* (rumah itu punyaku). Pola pertama untuk menyebut, pola kedua untuk menegaskan kepemilikan.",
+    "**Kanino berarti \"siapa punya\".** Dengan penghubung ia jadi *kaninong*: *Kaninong cellphone ito?* Jawabannya memakai bentuk *sa*: *akin*, *iyo*, *kaniya*, atau *kay* + nama: *kay Ben*.",
+    "**Tayo dan kami dua-duanya \"kami\", tapi tidak sama.** *Tayo* memasukkan lawan bicara — persis \"kita\" dalam bahasa Indonesia. *Kami* mengecualikannya. Bahasa Indonesia punya pembedaan yang sama, jadi ini justru salah satu hal yang paling mudah bagimu — sekaligus hal yang paling sering menjegal pelajar dari Eropa.",
+    "**Ang cellphone ko ay nasa bag ko** memakai *ay*, yang membuat kalimatnya terdengar rapi dan sedikit resmi. Dalam percakapan biasa: *Nasa bag ko ang cellphone ko.* Keterangan tempat di depan, benda yang disorot di belakang.",
+    "**Baka berarti \"mungkin\"** dan dibaca *ba-KA'* dengan tekanan di belakang. Dengan tekanan di depan (*BA-ka*), artinya \"sapi\". Salah satu pasangan tekanan yang paling sering dijadikan lelucon oleh orang Filipina kepada pelajar asing.",
+    "**Kami ni Ana** harfiahnya \"kami dengan Ana\" dan berarti \"aku dan Ana\". Pola khas Tagalog ini: kata ganti jamak + *ni* + nama. Bandingkan *tayo ni Ana* (kamu, aku, dan Ana), *sila ni Ben* (dia dan Ben).",
+    "**Pala menandai keterkejutan** — \"oh ternyata\". Ia salah satu partikel paling berguna dan paling khas; bab lengkapnya di unit 14. Sekarang cukup rasakan nadanya: *Ikaw pala!* = \"oh ternyata kamu!\"",
+    "**Ayan** (dari *iyan*) dipakai seperti \"nah, itu dia\" dalam bahasa Indonesia — untuk menandai bahwa sesuatu akhirnya berhasil.",
+    "**Tama na** harfiahnya \"benar sudah\" dan artinya \"cukup\" atau \"sudah pas\". Sangat sering dipakai untuk menghentikan sesuatu dengan sopan: *Tama na po* — \"sudah cukup, Bu\"."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga deret kata ganti orang",
+     "body": [
+      "Bahasa Tagalog memakai tiga bentuk untuk tiap orang, dan ketiganya wajib dihafal bersama, bukan satu per satu. Nama deretnya mengikuti penanda yang digantikannya: deret *ang*, deret *ng*, dan deret *sa*."
+     ],
+     "table": {
+      "head": ["Arti", "Deret ANG (pelaku/sorotan)", "Deret NG (milik/pelaku tak disorot)", "Deret SA (arah/penegas milik)"],
+      "rows": [
+       ["saya", "**ako**", "**ko**", "**akin**"],
+       ["kamu", "**ikaw / ka**", "**mo**", "**iyo**"],
+       ["dia", "**siya**", "**niya**", "**kaniya**"],
+       ["kita (termasuk kamu)", "**tayo**", "**natin**", "**atin**"],
+       ["kami (tanpa kamu)", "**kami**", "**namin**", "**amin**"],
+       ["kalian", "**kayo**", "**ninyo**", "**inyo**"],
+       ["mereka", "**sila**", "**nila**", "**kanila**"]
+      ]
+     },
+     "after": [
+      "**Ikaw berdiri di depan, ka menempel di belakang.** *Ikaw ang guro* (kamulah gurunya) tapi *Guro ka* (kamu guru). Aturannya sederhana: kalau kata itu memulai kalimat, pakai *ikaw*; kalau tidak, pakai *ka*.",
+      "Deret *sa* juga dipakai sesudah kata depan: *sa akin* (kepada saya), *para sa iyo* (untuk kamu), *kasama nila* (bersama mereka).",
+      "Bentuk sopan kepada satu orang memakai bentuk jamak: *kayo*, *ninyo*, *inyo* — sama seperti bahasa Prancis dan Indonesia formal (\"kalian\" jadi \"Anda\")."
+     ]
+    },
+    {
+     "title": "Dua cara menyatakan milik",
+     "body": [
+      "Perbedaan keduanya bukan soal benar dan salah, melainkan soal apa yang sedang kamu soroti."
+     ],
+     "table": {
+      "head": ["Pola", "Contoh", "Arti", "Yang disorot"],
+      "rows": [
+       ["benda + deret NG", "bahay **ko**", "rumahku", "rumahnya"],
+       ["benda + deret NG", "pangalan **mo**", "namamu", "namanya"],
+       ["deret SA + ang + benda", "**Akin** ang bahay.", "Rumah itu punyaku.", "siapa pemiliknya"],
+       ["deret SA + ang + benda", "**Kaniya** ang libro.", "Bukunya punya dia.", "siapa pemiliknya"],
+       ["ni + nama", "bahay **ni** Ana", "rumah Ana", "rumahnya"],
+       ["kay + nama", "**Kay** Ana ang bahay.", "Rumah itu punya Ana.", "siapa pemiliknya"]
+      ]
+     },
+     "after": [
+      "Untuk nama orang, deret *ng* menjadi **ni** dan deret *sa* menjadi **kay**: *libro ni Ben*, *kay Ben ang libro*. Bentuk jamaknya *nina* dan *kina*.",
+      "Ada bentuk ketiga yang lebih panjang: *ang bahay na akin* atau *ang aking bahay*. Yang terakhir ini sering dipakai dalam tulisan dan pidato, dan urutannya kebalikan dari yang lazim: *ang aking pangalan* = namaku.",
+      "⚠️ Jangan campur dua pola: *akin ang bahay ko* berarti \"rumahku itu milikku\" — benar secara tata bahasa tapi berputar-putar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di mana kata ganti pendek berdiri",
+   "blocks": [
+    { "type": "p", "text": "*Ka*, *ko*, *mo*, dan teman-temannya termasuk kata yang tidak bisa berdiri sendiri: ia harus menumpang pada kata lain. Tempatnya selalu **sesudah kata pertama** kalimat." },
+    { "type": "tabel", "head": ["Kalimat", "Harfiah", "Arti"], "rows": [
+      ["Guro **ka** ba?", "guru kamu apakah", "Kamu guru?"],
+      ["Hindi **ko** alam.", "tidak aku-punya tahu", "Saya tidak tahu."],
+      ["Ano **ang** pangalan **mo**?", "apa si nama kamu-punya", "Siapa namamu?"],
+      ["Nasaan **ka**?", "di-mana kamu", "Kamu di mana?"],
+      ["Mabait **siya**.", "baik dia", "Dia baik."],
+      ["Kumain **na kami**.", "makan sudah kami", "Kami sudah makan."]
+     ] },
+    { "type": "p", "text": "Perhatikan *hindi ko alam* — bukan *hindi alam ko*. Karena *hindi* adalah kata pertama, semua kata pendek berkumpul persis sesudahnya. Kalimat ini akan kamu ucapkan puluhan kali sehari sebagai pemula, jadi hafalkan bentuk utuhnya." },
+    { "type": "kotak", "title": "Dua kata pendek sekaligus", "items": [
+      "Kalau ada dua, yang berdiri lebih dulu adalah yang **satu suku kata**: *Ibigay mo sa akin* tapi *Ibigay mo ito sa akin*.",
+      "Gabungan *ko* + *ikaw* punya bentuk khusus yang wajib dihafal: **kita**. *Mahal kita* = \"aku mencintaimu\", bukan *mahal ko ikaw*. Bentuk ini hanya ada untuk pasangan saya→kamu."
+     ] }
+   ]
+  },
+  {
+   "title": "Barang pribadi",
+   "blocks": [
+    { "type": "tabel", "head": ["Tagalog", "Cara baca", "Bahasa Indonesia"], "rows": [
+      ["cellphone", "SEL-fon", "ponsel (kata Inggris, dipakai apa adanya)"],
+      ["bag", "bag", "tas"],
+      ["pitaka", "pi-TA-ka'", "dompet"],
+      ["pera", "PE-ra", "uang"],
+      ["susi", "su-SI'", "kunci"],
+      ["libro", "LIB-ro", "buku"],
+      ["papel", "pa-PEL", "kertas"],
+      ["bolpen", "BOL-pen", "pulpen"],
+      ["damit", "da-MIT", "pakaian"],
+      ["sapatos", "sa-PA-tos", "sepatu"],
+      ["relo", "re-LO", "jam tangan"],
+      ["salamin sa mata", "sa-la-MIN sa ma-TA", "kacamata"],
+      ["payong", "PA-yong", "payung"],
+      ["gamit", "GA-mit", "barang, keperluan"],
+      ["ID", "ay-DI", "kartu identitas"]
+     ] },
+    { "type": "p", "text": "Perhatikan berapa banyak kata Inggris yang dipakai apa adanya. Untuk benda modern, orang Filipina hampir selalu memakai kata Inggris — memaksakan padanan Tagalog untuk *cellphone* atau *laptop* justru membuatmu terdengar seperti buku pelajaran zaman dulu." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "tl": "akin", "baca": "A-kin", "id": "punyaku" },
+  { "tl": "iyo", "baca": "i-YO", "id": "punyamu" },
+  { "tl": "kaniya", "baca": "kan-YA", "id": "punya dia" },
+  { "tl": "atin", "baca": "A-tin", "id": "punya kita" },
+  { "tl": "amin", "baca": "A-min", "id": "punya kami" },
+  { "tl": "inyo", "baca": "in-YO", "id": "punya kalian" },
+  { "tl": "kanila", "baca": "ka-NI-la", "id": "punya mereka" },
+  { "tl": "tayo", "baca": "TA-yo", "id": "kita (termasuk lawan bicara)" },
+  { "tl": "kami", "baca": "ka-MI", "id": "kami (tanpa lawan bicara)" },
+  { "tl": "sila", "baca": "si-LA", "id": "mereka" },
+  { "tl": "kanino", "baca": "ka-NI-no", "id": "punya siapa" },
+  { "tl": "ni / kay", "baca": "ni / kay", "id": "penanda milik / arah untuk nama orang" },
+  { "tl": "cellphone", "baca": "SEL-fon", "id": "ponsel" },
+  { "tl": "bag", "baca": "bag", "id": "tas" },
+  { "tl": "pitaka", "baca": "pi-TA-ka'", "id": "dompet" },
+  { "tl": "pera", "baca": "PE-ra", "id": "uang" },
+  { "tl": "libro", "baca": "LIB-ro", "id": "buku" },
+  { "tl": "bolpen", "baca": "BOL-pen", "id": "pulpen" },
+  { "tl": "damit", "baca": "da-MIT", "id": "pakaian" },
+  { "tl": "sapatos", "baca": "sa-PA-tos", "id": "sepatu" },
+  { "tl": "payong", "baca": "PA-yong", "id": "payung" },
+  { "tl": "gamit", "baca": "GA-mit", "id": "barang" },
+  { "tl": "baka", "baca": "ba-KA'", "id": "mungkin" },
+  { "tl": "tama", "baca": "ta-MA", "id": "benar" },
+  { "tl": "mali", "baca": "ma-LI'", "id": "salah" },
+  { "tl": "alam", "baca": "a-LAM", "id": "tahu" },
+  { "tl": "pala", "baca": "pa-LA", "id": "ternyata (partikel)" },
+  { "tl": "ibalik", "baca": "i-ba-LIK", "id": "kembalikan" },
+  { "tl": "bukas", "baca": "bu-KAS", "id": "besok" },
+  { "tl": "kasama", "baca": "ka-SA-ma", "id": "bersama; teman" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Tagalog.",
+   "items": [
+    "Ini ponsel siapa?",
+    "Bukan punyaku.",
+    "Rumah itu punya Ana.",
+    "Saya tidak tahu.",
+    "Namamu siapa?",
+    "Tas itu punya mereka."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata ganti deret NG: ko, mo, niya, natin, namin, ninyo, nila.",
+   "items": [
+    "Ang bahay ____ ay malaki. (saya)",
+    "Ano ang pangalan ____? (kamu)",
+    "Mabait ang guro ____. (mereka)",
+    "Hindi ____ alam. (kami)",
+    "Ang kwarto ____ ay malinis. (dia)",
+    "Ang bayan ____ ay maganda. (kita)"
+   ]
+  },
+  {
+   "prompt": "Ganti jadi pola penegas kepemilikan. Contoh: Bahay ko ito. → Akin ang bahay na ito.",
+   "items": [
+    "Libro mo ito. → ____",
+    "Cellphone niya iyan. → ____",
+    "Pera namin iyon. → ____",
+    "Bag nila ito. → ____",
+    "Susi ni Ana iyan. → ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ito / cellphone / kaninong / ?",
+    "ko / hindi / alam",
+    "ang / nasa / cellphone / bag / ko / ko",
+    "ni / ang / Ana / bahay / maganda",
+    "kami / uuwi / ang / ni / Ana"
+   ]
+  }
+ ],
+ "answers": [
+  "Kaninong cellphone ito? — Hindi akin. — Kay Ana ang bahay. — Hindi ko alam. — Ano ang pangalan mo? — Kanila ang bag.",
+  "ko — mo — nila — namin — niya — natin",
+  "Iyo ang librong ito. — Kaniya ang cellphone na iyan. — Amin ang perang iyon. — Kanila ang bag na ito. — Kay Ana ang susing iyan.",
+  "Kaninong cellphone ito? — Hindi ko alam. — Nasa bag ko ang cellphone ko. — Maganda ang bahay ni Ana. — Kami ni Ana ang uuwi."
+ ],
+ "wave": "Ulangi **unit 2**: tutup kolom Tagalognya, tunjuk lima benda di kamarmu, dan sebutkan namanya lengkap dengan *ito*, *iyan*, atau *iyon* menurut jaraknya."
+}

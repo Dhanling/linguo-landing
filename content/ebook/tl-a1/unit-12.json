@@ -1,0 +1,216 @@
+{
+ "title": "Kata kerja yang menyisip di tengah",
+ "title_target": "Kumain, uminom, natulog",
+ "goal": "Memakai kata kerja *-um-* dan *ma-*, mengenali kenapa sisipan itu masuk ke tengah kata, dan tahu bedanya dengan *mag-*.",
+ "bekal": [
+  "menyisipkan *-um-* sesudah konsonan pertama kata dasar",
+  "membentuk aspek *-um-* dan *ma-* tanpa tertukar dengan *mag-*",
+  "memilih *mag-* atau *-um-* pada kata dasar yang menerima keduanya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Kumain ka na ba?",
+   "intro": "Menjelang tengah hari. Ana menyusul Budi yang baru bangun setelah semalam begadang.",
+   "lines": [
+    { "speaker": "Ana:", "text": "Kumain ka na ba?", "id": "Kamu sudah makan?", "literal": "makan kamu sudah apakah?" },
+    { "speaker": "Budi:", "text": "Hindi pa. Kagigising ko lang.", "id": "Belum. Aku baru saja bangun.", "literal": "tidak masih. baru-bangun aku-punya saja." },
+    { "speaker": "Ana:", "text": "Anong oras ka natulog kagabi?", "id": "Tadi malam kamu tidur jam berapa?", "literal": "apa-yang jam kamu tidur tadi-malam?" },
+    { "speaker": "Budi:", "text": "Natulog ako ng alas-dos. Nag-aral kasi ako.", "id": "Aku tidur jam dua. Soalnya aku belajar.", "literal": "tidur saya punya jam-dua. sudah-belajar sebab saya." },
+    { "speaker": "Ana:", "text": "Naku! Kumain ka muna, tapos matulog ka ulit.", "id": "Aduh! Makan dulu, terus tidur lagi.", "literal": "aduh! makan kamu dulu, lalu tidur kamu lagi." },
+    { "speaker": "Budi:", "text": "Uminom muna ako ng kape. May kape pa ba?", "id": "Aku minum kopi dulu. Masih ada kopi?", "literal": "minum dulu saya akan kopi. ada kopi masih apakah?" },
+    { "speaker": "Ana:", "text": "Meron pa. Bumili ako kanina sa tindahan.", "id": "Masih ada. Tadi aku beli di warung.", "literal": "ada masih. beli saya tadi di warung." },
+    { "speaker": "Budi:", "text": "Salamat, Ate! Saan ka pupunta mamaya?", "id": "Terima kasih, Kak! Nanti Kakak mau ke mana?", "literal": "terima-kasih, Kakak! di-mana kamu akan-pergi nanti?" },
+    { "speaker": "Ana:", "text": "Pupunta ako sa palengke. Sasama ka ba?", "id": "Aku mau ke pasar. Kamu ikut?", "literal": "akan-pergi saya ke pasar. akan-ikut kamu apakah?" },
+    { "speaker": "Budi:", "text": "Sasama ako! Maliligo lang ako, sandali.", "id": "Ikut! Aku mandi dulu, sebentar.", "literal": "akan-ikut saya! akan-mandi saja saya, sebentar." },
+    { "speaker": "Ana:", "text": "Sige, maghihintay ako sa labas.", "id": "Baik, aku tunggu di luar.", "literal": "baiklah, akan-menunggu saya di luar." }
+   ],
+   "notes": [
+    "**-um- adalah sisipan, bukan awalan.** Ia masuk ke **tengah** kata dasar, tepat sesudah konsonan pertama: *kain* → *k-um-ain* → *kumain*. Kata dasar yang dimulai vokal menerimanya di depan: *inom* → *uminom*, *alis* → *umalis*. Sisipan seperti ini tidak ada dalam bahasa Indonesia modern, tapi masih tersisa di kata seperti \"gemuruh\" dan \"gerigi\".",
+    "**Bentuk \"sudah\" dan bentuk dasar -um- sama persis.** *Kumain* berarti \"makan\" (bentuk dasar) sekaligus \"sudah makan\". Yang membedakan hanya tempatnya dalam kalimat: sesudah *gusto*, *huwag*, atau *dapat*, artinya belum terjadi. Ini penghematan, bukan kebingungan — begitu terbiasa, kamu justru menghafal satu bentuk lebih sedikit.",
+    "**Bentuk \"akan\" pada -um- membuang sisipannya.** *Kakain* (akan makan), bukan *kukumain*. Yang tersisa hanya pengulangan suku kata pertama kata dasar. Ini bentuk yang paling sering salah dipakai pemula.",
+    "**Ma- menandai keadaan yang terjadi pada pelakunya.** *Matulog* (tidur), *magutom* (lapar), *maligo* (mandi), *mapagod* (lelah). Pelakunya tidak sepenuhnya mengerjakan — ia mengalami. Aspeknya mengikuti pola yang sudah kamu kenal: *ma-* jadi *na-* begitu dimulai.",
+    "**Kagigising ko lang** memakai bentuk khusus yang berarti \"baru saja\": awalan *ka-* + pengulangan + kata dasar. Sepupunya: *kararating lang* (baru saja tiba), *kakakain lang* (baru saja makan). Bentuk ini sangat sering dipakai dan enak dihafal utuh.",
+    "**Kasi berarti \"soalnya\"** dan hampir selalu diletakkan di tengah atau di ujung, bukan di depan seperti \"karena\" dalam bahasa Indonesia: *Nag-aral kasi ako.* Kata yang lebih baku: *dahil*.",
+    "**Natulog ako ng alas-dos** memakai *ng* untuk menandai waktu. Ini pemakaian *ng* yang belum kamu lihat: selain milik dan objek, ia juga menandai waktu dan cara. *Ng alas-dos* (jam dua), *ng mabilis* (dengan cepat).",
+    "**Muna berarti \"dulu\"** dalam arti urutan: *Kumain ka muna* (makan dulu), *Sandali muna* (sebentar dulu). Ia salah satu partikel paling berguna dan paling mudah, karena artinya persis sama dengan \"dulu\" bahasa Indonesia.",
+    "**Sasama ka ba?** dari kata dasar *sama* (ikut, bersama). Kata ini juga jadi *kasama* (teman seperjalanan) dan *magkasama* (bersama-sama) — satu keluarga kata yang akan sering kamu pakai."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga tahapan kata kerja -um-",
+     "body": [
+      "Perhatikan kolom kedua dan ketiga: keduanya sama persis. Ini bukan salah cetak, melainkan sifat asli kata kerja *-um-*."
+     ],
+     "table": {
+      "head": ["Kata dasar", "Infinitif (belum)", "Sudah", "Sedang", "Akan", "Arti"],
+      "rows": [
+       ["kain", "k**um**ain", "k**um**ain", "k**um**a**ka**in", "**ka**kain", "makan"],
+       ["inom", "**um**inom", "**um**inom", "**um**i**i**nom", "**i**inom", "minum"],
+       ["punta", "p**um**unta", "p**um**unta", "p**um**u**pun**ta", "**pu**punta", "pergi ke"],
+       ["alis", "**um**alis", "**um**alis", "**um**a**a**lis", "**a**alis", "berangkat"],
+       ["bili", "b**um**ili", "b**um**ili", "b**um**i**bi**li", "**bi**bili", "membeli"],
+       ["upo", "**um**upo", "**um**upo", "**um**u**u**po", "**u**upo", "duduk"],
+       ["dating", "d**um**ating", "d**um**ating", "d**um**a**ra**ting", "**da**rating", "tiba"],
+       ["uwi", "**um**uwi", "**um**uwi", "**um**u**u**wi", "**u**uwi", "pulang"]
+      ]
+     },
+     "after": [
+      "Perhatikan *dumarating* — kata dasarnya *dating*, tapi *d* berubah jadi *r* karena terjepit dua vokal. Aturan bunyi dari halaman pelafalan bekerja di sini.",
+      "Bentuk \"akan\" tidak pernah mengandung *-um-*: *kakain*, *iinom*, *pupunta*, *aalis*. Kalau kamu mendengar dirimu mengucapkan *kukumain*, berhentilah dan ulangi.",
+      "Kata dasar berawalan vokal mengulang vokalnya sendiri: *inom* → *iinom*, *alis* → *aalis*, *upo* → *uupo*. Terlihat aneh ditulis, terdengar wajar diucapkan."
+     ]
+    },
+    {
+     "title": "Kata kerja ma- — yang dialami, bukan dikerjakan",
+     "body": [
+      "Kelompok ini kecil tapi isinya kata-kata yang kamu pakai setiap hari."
+     ],
+     "table": {
+      "head": ["Kata dasar", "Infinitif", "Sudah", "Sedang", "Akan", "Arti"],
+      "rows": [
+       ["tulog", "**ma**tulog", "**na**tulog", "**na**tu**tu**log", "**ma**tu**tu**log", "tidur"],
+       ["ligo", "**ma**ligo", "**na**ligo", "**na**li**li**go", "**ma**li**li**go", "mandi"],
+       ["gutom", "**ma**gutom", "**na**gutom", "**na**gu**gu**tom", "**ma**gu**gu**tom", "lapar"],
+       ["uhaw", "**ma**uhaw", "**na**uhaw", "**na**u**u**haw", "**ma**u**u**haw", "haus"],
+       ["pagod", "**ma**pagod", "**na**pagod", "**na**pa**pa**god", "**ma**pa**pa**god", "lelah"],
+       ["tuto", "**ma**tuto", "**na**tuto", "**na**tu**tu**to", "**ma**tu**tu**to", "belajar sampai bisa"]
+      ]
+     },
+     "after": [
+      "Untuk keadaan badan, bentuk \"sedang\" adalah yang paling sering dipakai: *Nagugutom ako* (saya lapar), *Napapagod ako* (saya lelah), *Nauuhaw ako* (saya haus).",
+      "Perhatikan bahwa *natulog* berarti \"sudah tidur\" — perbuatan yang selesai — sedangkan \"sedang tidur\" adalah *natutulog*. Salah pilih di sini akan membuatmu berkata \"saya sudah tidur\" kepada orang yang menelepon di tengah malam.",
+      "*Matuto* berbeda dari *mag-aral*: yang pertama berarti berhasil menguasai, yang kedua berarti mempelajari. *Nag-aral ako ng Tagalog* (saya belajar), *Natuto akong mag-Tagalog* (saya jadi bisa)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Mag- atau -um-?",
+   "blocks": [
+    { "type": "p", "text": "Beberapa kata dasar menerima keduanya, dan artinya lalu bergeser. Tidak ada aturan yang berlaku seratus persen, tapi kecenderungannya cukup jelas untuk dipakai." },
+    { "type": "tabel", "head": ["Kecenderungan", "-um-", "mag-"], "rows": [
+      ["Arah perbuatan", "kembali ke pelakunya", "keluar dari pelakunya"],
+      ["bili", "**bumili** = membeli", "**magbili** = menjual"],
+      ["akyat", "**umakyat** = naik", "**mag-akyat** = menaikkan barang"],
+      ["labas", "**lumabas** = keluar", "**maglabas** = mengeluarkan sesuatu"],
+      ["sulat", "**sumulat** = menulis (surat)", "**magsulat** = menulis (kegiatan)"],
+      ["luto", "**lumuto** = jarang dipakai", "**magluto** = memasak"],
+      ["Umumnya", "gerakan & keadaan diri", "kegiatan bertujuan & berulang"]
+     ] },
+    { "type": "p", "text": "Kalau kamu benar-benar tidak yakin, pilih bentuk yang paling sering kamu dengar. Bahasa hidup tidak menunggu aturan: *kumain*, *uminom*, *pumunta*, *umalis*, *matulog* dipakai dengan bentuk itu dan hampir tidak pernah dengan bentuk lain." },
+    { "type": "kotak", "title": "Kalimat yang paling sering kamu dengar", "items": [
+      "*Kumain ka na ba?* — \"Sudah makan?\" Ini sapaan, bukan pertanyaan sungguhan; bertanya begini di Filipina setara dengan basa-basi \"apa kabar\" — dan sering diikuti tawaran makan yang sungguhan.",
+      "Jawaban yang aman: *Kumain na po ako, salamat.* atau *Hindi pa po.* Kalau kamu menjawab yang kedua, bersiaplah benar-benar disuruh makan."
+     ] }
+   ]
+  },
+  {
+   "title": "Kata kerja -um- yang paling sering dipakai",
+   "blocks": [
+    { "type": "tabel", "head": ["Infinitif", "Arti", "Sudah", "Sedang", "Akan"], "rows": [
+      ["kumain", "makan", "kumain", "kumakain", "kakain"],
+      ["uminom", "minum", "uminom", "umiinom", "iinom"],
+      ["pumunta", "pergi ke", "pumunta", "pumupunta", "pupunta"],
+      ["umalis", "berangkat", "umalis", "umaalis", "aalis"],
+      ["dumating", "tiba", "dumating", "dumarating", "darating"],
+      ["umuwi", "pulang", "umuwi", "umuuwi", "uuwi"],
+      ["bumili", "membeli", "bumili", "bumibili", "bibili"],
+      ["kumuha", "mengambil", "kumuha", "kumukuha", "kukuha"],
+      ["sumakay", "naik kendaraan", "sumakay", "sumasakay", "sasakay"],
+      ["bumaba", "turun", "bumaba", "bumababa", "bababa"],
+      ["umupo", "duduk", "umupo", "umuupo", "uupo"],
+      ["tumayo", "berdiri", "tumayo", "tumatayo", "tatayo"],
+      ["tumawag", "menelepon", "tumawag", "tumatawag", "tatawag"],
+      ["sumagot", "menjawab", "sumagot", "sumasagot", "sasagot"],
+      ["gumising", "bangun", "gumising", "gumigising", "gigising"]
+     ] },
+    { "type": "p", "text": "Lima belas kata kerja ini ditambah lima belas kata kerja *mag-* dari unit sebelumnya sudah cukup untuk menceritakan satu hari penuh — dan itulah tepatnya yang akan kamu lakukan di unit 20." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "tl": "kumain", "baca": "ku-MA-in", "id": "makan" },
+  { "tl": "uminom", "baca": "u-MI-nom", "id": "minum" },
+  { "tl": "pumunta", "baca": "pu-MUN-ta", "id": "pergi ke" },
+  { "tl": "umalis", "baca": "u-MA-lis", "id": "berangkat, pergi" },
+  { "tl": "dumating", "baca": "du-ma-TING", "id": "tiba" },
+  { "tl": "umuwi", "baca": "u-mu-WI'", "id": "pulang" },
+  { "tl": "bumili", "baca": "bu-MI-li", "id": "membeli" },
+  { "tl": "kumuha", "baca": "ku-MU-ha", "id": "mengambil" },
+  { "tl": "sumakay", "baca": "su-MA-kay", "id": "naik kendaraan" },
+  { "tl": "bumaba", "baca": "bu-ma-BA'", "id": "turun" },
+  { "tl": "umupo", "baca": "u-mu-PO'", "id": "duduk" },
+  { "tl": "tumayo", "baca": "tu-ma-YO'", "id": "berdiri" },
+  { "tl": "tumawag", "baca": "tu-MA-wag", "id": "menelepon" },
+  { "tl": "gumising", "baca": "gu-mi-SING", "id": "bangun tidur" },
+  { "tl": "sumama", "baca": "su-MA-ma", "id": "ikut" },
+  { "tl": "matulog", "baca": "ma-TU-log", "id": "tidur" },
+  { "tl": "maligo", "baca": "ma-LI-go'", "id": "mandi" },
+  { "tl": "magutom", "baca": "ma-GU-tom", "id": "lapar" },
+  { "tl": "mauhaw", "baca": "ma-U-haw", "id": "haus" },
+  { "tl": "mapagod", "baca": "ma-PA-god", "id": "lelah" },
+  { "tl": "matuto", "baca": "ma-TU-to", "id": "menjadi bisa" },
+  { "tl": "muna", "baca": "MU-na", "id": "dulu (urutan)" },
+  { "tl": "kasi", "baca": "ka-SI", "id": "soalnya" },
+  { "tl": "dahil", "baca": "DA-hil", "id": "karena" },
+  { "tl": "ulit", "baca": "u-LIT", "id": "lagi, ulang" },
+  { "tl": "kanin", "baca": "KA-nin", "id": "nasi" },
+  { "tl": "ulam", "baca": "u-LAM", "id": "lauk" },
+  { "tl": "almusal", "baca": "al-mu-SAL", "id": "sarapan" },
+  { "tl": "tanghalian", "baca": "tang-ha-li-AN", "id": "makan siang" },
+  { "tl": "hapunan", "baca": "ha-PU-nan", "id": "makan malam" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk yang diminta.",
+   "items": [
+    "kumain (akan) → ____",
+    "uminom (sedang) → ____",
+    "pumunta (akan) → ____",
+    "matulog (sudah) → ____",
+    "bumili (sedang) → ____",
+    "maligo (akan) → ____"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+   "items": [
+    "____ ka na ba? (kumain, sudah)",
+    "____ ako ng kape kanina. (uminom, sudah)",
+    "____ kami sa palengke mamaya. (pumunta, akan)",
+    "____ siya ngayon. (matulog, sedang)",
+    "____ ako ng alas-dos kagabi. (matulog, sudah)",
+    "____ ako, gutom na gutom na ako. (kumain, akan)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Tagalog.",
+   "items": [
+    "Kamu sudah makan?",
+    "Belum.",
+    "Saya minum kopi dulu.",
+    "Nanti kami akan ke pasar.",
+    "Saya lapar."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "na / kumain / ba / ka / ?",
+    "kape / uminom / ako / ng / muna",
+    "sa / pupunta / palengke / ako",
+    "kagabi / natulog / ako / alas-dos / ng",
+    "ako / maliligo / sandali / lang"
+   ]
+  }
+ ],
+ "answers": [
+  "kakain — umiinom — pupunta — natulog — bumibili — maliligo",
+  "Kumain — Uminom — Pupunta — Natutulog — Natulog — Kakain",
+  "Kumain ka na ba? — Hindi pa. — Uminom muna ako ng kape. — Pupunta kami sa palengke mamaya. — Nagugutom ako.",
+  "Kumain ka na ba? — Uminom muna ako ng kape. — Pupunta ako sa palengke. — Natulog ako ng alas-dos kagabi. — Maliligo lang ako sandali."
+ ],
+ "wave": "Ulangi **unit 10**: ceritakan keluargamu keras-keras — berapa bersaudara, siapa sulung, apa pekerjaan orang tuamu — memakai *ni*, *kay*, dan *may*."
+}

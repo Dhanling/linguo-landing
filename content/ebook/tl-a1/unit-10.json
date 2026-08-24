@@ -1,0 +1,634 @@
+{
+ "title": "Keluarga",
+ "title_target": "Ang pamilya",
+ "goal": "Menyebut anggota keluarga, menerangkan hubungan dengan *ni* dan *kay*, dan memahami kenapa urutan lahir begitu penting di Filipina.",
+ "bekal": [
+  "menyebut anggota keluarga inti dan keluarga besar",
+  "menerangkan hubungan: *kapatid ni Ana*, *anak nina Ben at Lisa*",
+  "memakai *ate*, *kuya*, dan sapaan hormat kepada yang lebih tua"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ilan kayong magkakapatid?",
+   "intro": "Makan malam di rumah keluarga Ana. Nanay Lita, ibunya, bertanya-tanya tentang keluarga Budi.",
+   "lines": [
+    {
+     "speaker": "Nanay Lita:",
+     "text": "Ilan kayong magkakapatid, iho?",
+     "id": "Kamu bersaudara berapa, Nak?",
+     "literal": "berapa kalian-yang bersaudara, nak?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Apat po kami. Ako ang panganay.",
+     "id": "Kami berempat, Bu. Saya anak sulung.",
+     "literal": "empat Bu kami. saya si sulung."
+    },
+    {
+     "speaker": "Nanay Lita:",
+     "text": "Ay, panganay ka rin pala! Katulad ni Ana.",
+     "id": "Wah, ternyata kamu juga sulung! Sama seperti Ana.",
+     "literal": "wah, sulung kamu juga ternyata! serupa punya-si Ana."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "May dalawa akong kapatid na babae at isang lalaki.",
+     "id": "Saya punya dua saudara perempuan dan satu laki-laki.",
+     "literal": "ada dua saya-yang saudara yang perempuan dan satu laki-laki."
+    },
+    {
+     "speaker": "Nanay Lita:",
+     "text": "Nasa Indonesia ba silang lahat?",
+     "id": "Mereka semua di Indonesia?",
+     "literal": "berada-di Indonesia apakah mereka-yang semua?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Opo. Ang bunso po namin ay nag-aaral pa.",
+     "id": "Iya, Bu. Adik bungsu kami masih sekolah.",
+     "literal": "ya-Bu. si bungsu Bu kami-punya adalah sedang-belajar masih."
+    },
+    {
+     "speaker": "Nanay Lita:",
+     "text": "Ang tatay mo, ano ang trabaho niya?",
+     "id": "Ayahmu, apa pekerjaannya?",
+     "literal": "si ayah kamu-punya, apa si pekerjaan dia-punya?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Guro po siya. Ang nanay ko naman ay may tindahan.",
+     "id": "Beliau guru, Bu. Sedangkan ibu saya punya warung.",
+     "literal": "guru Bu dia. si ibu aku-punya adapun adalah ada warung."
+    },
+    {
+     "speaker": "Nanay Lita:",
+     "text": "Mabuti naman. Miss mo na sila, ano?",
+     "id": "Bagus. Kamu pasti kangen mereka, ya?",
+     "literal": "baik ya. rindu kamu-punya sudah mereka, apa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Opo, sobra. Pero tumatawag po ako tuwing Linggo.",
+     "id": "Iya, Bu, sangat. Tapi saya menelepon setiap Minggu.",
+     "literal": "ya-Bu, keterlaluan. tapi sedang-menelepon Bu saya setiap Minggu."
+    },
+    {
+     "speaker": "Nanay Lita:",
+     "text": "Mabait kang bata. Kain pa, marami pang pagkain!",
+     "id": "Kamu anak yang baik. Makan lagi, masih banyak makanannya!",
+     "literal": "baik kamu-yang anak. makan lagi, banyak masih-yang makanan!"
+    }
+   ],
+   "notes": [
+    "**Magkakapatid berarti \"bersaudara\"** — awalan *magka-* (dan bentuk jamaknya *magkaka-*) membentuk kata yang menyatakan hubungan timbal balik. Sepupunya: *magkaibigan* (berteman), *magkasama* (bersama), *mag-asawa* (suami-istri), *mag-ina* (ibu dan anak).",
+    "**Panganay dan bunso punya bobot sosial.** Anak sulung diharapkan bertanggung jawab atas adik-adiknya, sering sampai dewasa; anak bungsu dimanja dan tetap dipanggil *bunso* di usia empat puluh. Menyebut dirimu *panganay* di Filipina memberi lawan bicaramu banyak informasi sekaligus.",
+    "**Kapatid tidak membedakan jenis kelamin** — sama seperti \"saudara\" dalam bahasa Indonesia. Kalau perlu diperjelas: *kapatid na babae* (saudara perempuan), *kapatid na lalaki*. Yang membedakan justru **usia**, lewat sapaan *ate* dan *kuya*.",
+    "**Ate dan kuya wajib dipakai kepada kakak.** Memanggil kakak kandung dengan namanya saja dianggap kurang ajar di banyak keluarga Filipina. Aturan yang sama berlaku ke sepupu yang lebih tua, dan bahkan ke teman yang lebih tua.",
+    "**Nanay dan tatay** adalah panggilan yang hangat dan paling umum. Ada juga *inay/itay* (lebih akrab), *ina/ama* (baku dan agak resmi), serta *mama/papa* dan *mommy/daddy* yang dipakai keluarga kota.",
+    "**Ang nanay ko naman ay …** memakai *naman* sebagai penanda perbandingan: \"sedangkan ibu saya\". Ini salah satu tugas *naman* yang paling sering dipakai — memindahkan sorotan dari satu orang ke orang lain tanpa terdengar membantah.",
+    "**Miss mo na sila** adalah Taglish sempurna sekali lagi: kata Inggris *miss* dipakai sebagai kata dasar Tagalog. Bentuk aslinya *na-mi-miss mo sila*, dan bentuk Tagalog tulennya *nasasabik ka sa kanila* — yang hampir tak pernah dipakai orang.",
+    "**Kain pa!** adalah perintah yang sebenarnya bukan perintah, melainkan keramahan. Di meja makan Filipina, tuan rumah akan menyuruhmu makan lagi berkali-kali; menolak sekali dua kali dianggap wajar dan tidak menghentikan tawarannya.",
+    "**Katulad ni Ana** = \"sama seperti Ana\". Perhatikan penandanya *ni* karena yang dibandingkan nama orang. Untuk benda: *katulad ng bahay namin*."
+   ],
+   "grammars": [
+    {
+     "title": "Menerangkan hubungan dengan ni, kay, at nina",
+     "body": [
+      "Semua hubungan keluarga dinyatakan dengan penanda yang sudah kamu pasang di unit 5. Yang baru di sini hanyalah bentuk jamaknya."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "benda + **ni** + nama",
+        "kapatid **ni** Ana",
+        "saudaranya Ana"
+       ],
+       [
+        "benda + **nina** + dua nama",
+        "anak **nina** Ben at Lisa",
+        "anaknya Ben dan Lisa"
+       ],
+       [
+        "benda + deret NG",
+        "kapatid **ko**",
+        "saudara saya"
+       ],
+       [
+        "**si** + benda + **ni**",
+        "**Si** Mia ang kapatid **ni** Ana.",
+        "Mia itu saudaranya Ana."
+       ],
+       [
+        "**kay** + nama",
+        "Ibigay mo **kay** Nanay.",
+        "Berikan kepada Ibu."
+       ],
+       [
+        "**kina** + nama",
+        "Pumunta ako **kina** Ana.",
+        "Saya pergi ke rumah Ana dan keluarganya."
+       ]
+      ]
+     },
+     "after": [
+      "*Kina* punya arti khas yang layak dicatat: **\"ke rumah/tempat si anu dan orang-orangnya\"**. *Pumunta ako kina Ana* tidak berarti \"pergi kepada Ana\", melainkan \"pergi ke rumah Ana\".",
+      "Untuk bertanya hubungan: *Ano ang relasyon mo kay Ana?* atau lebih sehari-hari *Ano siya sa iyo?* — \"dia apamu?\"",
+      "Menyebut orang tua orang lain tetap memakai penanda hormat: *ang nanay **ni** Ana*, bukan *si nanay ni Ana*."
+     ]
+    },
+    {
+     "title": "Anggota keluarga",
+     "body": [
+      "Perhatikan berapa banyak yang sudah kamu kenal: *anak*, *asawa*, *biyenan*, *bayaw* semuanya punya sepupu dalam bahasa Melayu."
+     ],
+     "tables": [
+      {
+       "head": [
+        "Tagalog",
+        "Cara baca",
+        "Arti"
+       ],
+       "rows": [
+        [
+         "magulang",
+         "ma-GU-lang",
+         "orang tua"
+        ],
+        [
+         "nanay / ina",
+         "NA-nay / i-NA",
+         "ibu"
+        ],
+        [
+         "tatay / ama",
+         "TA-tay / a-MA",
+         "ayah"
+        ],
+        [
+         "anak",
+         "a-NAK",
+         "anak"
+        ],
+        [
+         "kapatid",
+         "ka-pa-TID",
+         "saudara kandung"
+        ],
+        [
+         "ate",
+         "A-te",
+         "kakak perempuan"
+        ],
+        [
+         "kuya",
+         "KU-ya",
+         "kakak laki-laki"
+        ],
+        [
+         "bunso",
+         "bun-SO'",
+         "anak bungsu"
+        ],
+        [
+         "panganay",
+         "pa-NGA-nay",
+         "anak sulung"
+        ],
+        [
+         "asawa",
+         "a-SA-wa",
+         "suami atau istri"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Tagalog",
+        "Cara baca",
+        "Arti"
+       ],
+       "rows": [
+        [
+         "lolo / lola",
+         "LO-lo / LO-la",
+         "kakek / nenek"
+        ],
+        [
+         "apo",
+         "a-PO",
+         "cucu"
+        ],
+        [
+         "tito / tita",
+         "TI-to / TI-ta",
+         "paman / bibi"
+        ],
+        [
+         "pinsan",
+         "PIN-san",
+         "sepupu"
+        ],
+        [
+         "pamangkin",
+         "pa-mang-KIN",
+         "keponakan"
+        ],
+        [
+         "biyenan",
+         "bi-YE-nan",
+         "mertua"
+        ],
+        [
+         "manugang",
+         "ma-NU-gang",
+         "menantu"
+        ],
+        [
+         "bayaw / hipag",
+         "BA-yaw / HI-pag",
+         "ipar laki-laki / perempuan"
+        ],
+        [
+         "ninong / ninang",
+         "NI-nong / NI-nang",
+         "wali baptis"
+        ],
+        [
+         "kamag-anak",
+         "ka-mag-A-nak",
+         "kerabat"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "**Ninong dan ninang** adalah lembaga sosial tersendiri di Filipina: wali baptis yang seumur hidup punya kewajiban memberi hadiah, membantu sekolah, dan menolong anak walinya mencari kerja. Satu anak bisa punya belasan.",
+      "*Kamag-anak* (kerabat) mengandung kata *anak* di dalamnya — susunan yang langsung terbaca oleh penutur bahasa Indonesia.",
+      "Sapaan *tito* dan *tita* juga dipakai kepada teman orang tua yang bukan kerabat sama sekali, persis seperti \"om\" dan \"tante\" di Indonesia."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bertanya tentang keluarga",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Pertanyaan",
+      "Arti",
+      "Contoh jawaban"
+     ],
+     "rows": [
+      [
+       "Ilan kayong magkakapatid?",
+       "Kalian bersaudara berapa?",
+       "Apat kami."
+      ],
+      [
+       "May asawa ka na ba?",
+       "Kamu sudah menikah?",
+       "Wala pa. / Mayroon na."
+      ],
+      [
+       "May anak ka ba?",
+       "Kamu punya anak?",
+       "Oo, dalawa."
+      ],
+      [
+       "Ano ang trabaho ng tatay mo?",
+       "Ayahmu bekerja apa?",
+       "Guro siya."
+      ],
+      [
+       "Nasaan ang pamilya mo?",
+       "Keluargamu di mana?",
+       "Nasa Indonesia."
+      ],
+      [
+       "Panganay ka ba?",
+       "Kamu anak sulung?",
+       "Opo, ako ang panganay."
+      ],
+      [
+       "Ilang taon ang bunso ninyo?",
+       "Bungsu kalian berapa umurnya?",
+       "Labindalawa pa lang."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Pertanyaan tentang status pernikahan, umur, dan gaji jauh lebih biasa di Filipina daripada di Indonesia perkotaan — dan bukan dianggap tidak sopan. Menjawab pendek dan tersenyum sudah cukup; kamu tidak wajib menjelaskan."
+    },
+    {
+     "type": "kotak",
+     "title": "Pamilya bukan cuma keluarga inti",
+     "items": [
+      "Rumah tangga Filipina lazim berisi tiga generasi ditambah sepupu yang sedang kuliah. Kalau seseorang berkata *nakatira ako sa bahay namin*, jumlah orang di dalamnya bisa sepuluh.",
+      "Karena itu *ate* dan *kuya* dipakai jauh melewati saudara kandung: sepupu, tetangga, teman kakak, bahkan sopir tetap. Aturannya bukan darah, melainkan usia."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pekerjaan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tagalog",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "guro / titser",
+       "GU-ro' / TIT-ser",
+       "guru"
+      ],
+      [
+       "doktor",
+       "dok-TOR",
+       "dokter"
+      ],
+      [
+       "nars",
+       "nars",
+       "perawat"
+      ],
+      [
+       "inhinyero",
+       "in-hin-YE-ro",
+       "insinyur"
+      ],
+      [
+       "abogado",
+       "a-bo-GA-do",
+       "pengacara"
+      ],
+      [
+       "negosyante",
+       "ne-gos-YAN-te",
+       "pengusaha"
+      ],
+      [
+       "magsasaka",
+       "mag-sa-SA-ka",
+       "petani"
+      ],
+      [
+       "mangingisda",
+       "ma-ngi-ngis-DA'",
+       "nelayan"
+      ],
+      [
+       "drayber",
+       "DRAY-ber",
+       "sopir"
+      ],
+      [
+       "katulong",
+       "ka-TU-long",
+       "asisten rumah tangga"
+      ],
+      [
+       "pulis",
+       "pu-LIS",
+       "polisi"
+      ],
+      [
+       "sundalo",
+       "sun-DA-lo",
+       "tentara"
+      ],
+      [
+       "estudyante",
+       "es-tud-YAN-te",
+       "pelajar"
+      ],
+      [
+       "OFW",
+       "o-ef-DAB-yu",
+       "pekerja migran Filipina"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**OFW** — *Overseas Filipino Worker* — bukan sekadar singkatan, melainkan salah satu kata paling sarat makna di Filipina. Sekitar sepuluh persen penduduk bekerja di luar negeri, dan hampir setiap keluarga punya satu. Menanyakannya adalah pembuka percakapan yang wajar, tapi ingat bahwa ia sering membawa cerita perpisahan panjang."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tl": "pamilya",
+   "baca": "pa-MIL-ya",
+   "id": "keluarga"
+  },
+  {
+   "tl": "magulang",
+   "baca": "ma-GU-lang",
+   "id": "orang tua"
+  },
+  {
+   "tl": "nanay",
+   "baca": "NA-nay",
+   "id": "ibu"
+  },
+  {
+   "tl": "tatay",
+   "baca": "TA-tay",
+   "id": "ayah"
+  },
+  {
+   "tl": "anak",
+   "baca": "a-NAK",
+   "id": "anak"
+  },
+  {
+   "tl": "kapatid",
+   "baca": "ka-pa-TID",
+   "id": "saudara kandung"
+  },
+  {
+   "tl": "ate",
+   "baca": "A-te",
+   "id": "kakak perempuan"
+  },
+  {
+   "tl": "kuya",
+   "baca": "KU-ya",
+   "id": "kakak laki-laki"
+  },
+  {
+   "tl": "bunso",
+   "baca": "bun-SO'",
+   "id": "anak bungsu"
+  },
+  {
+   "tl": "panganay",
+   "baca": "pa-NGA-nay",
+   "id": "anak sulung"
+  },
+  {
+   "tl": "asawa",
+   "baca": "a-SA-wa",
+   "id": "suami/istri"
+  },
+  {
+   "tl": "lolo / lola",
+   "baca": "LO-lo / LO-la",
+   "id": "kakek / nenek"
+  },
+  {
+   "tl": "apo",
+   "baca": "a-PO",
+   "id": "cucu"
+  },
+  {
+   "tl": "pinsan",
+   "baca": "PIN-san",
+   "id": "sepupu"
+  },
+  {
+   "tl": "pamangkin",
+   "baca": "pa-mang-KIN",
+   "id": "keponakan"
+  },
+  {
+   "tl": "tito / tita",
+   "baca": "TI-to / TI-ta",
+   "id": "paman / bibi"
+  },
+  {
+   "tl": "kamag-anak",
+   "baca": "ka-mag-A-nak",
+   "id": "kerabat"
+  },
+  {
+   "tl": "babae",
+   "baca": "ba-BA-e",
+   "id": "perempuan"
+  },
+  {
+   "tl": "lalaki",
+   "baca": "la-LA-ki",
+   "id": "laki-laki"
+  },
+  {
+   "tl": "bata",
+   "baca": "BA-ta'",
+   "id": "anak kecil"
+  },
+  {
+   "tl": "matanda",
+   "baca": "ma-tan-DA'",
+   "id": "orang tua, lansia"
+  },
+  {
+   "tl": "trabaho",
+   "baca": "tra-BA-ho",
+   "id": "pekerjaan"
+  },
+  {
+   "tl": "guro",
+   "baca": "GU-ro'",
+   "id": "guru"
+  },
+  {
+   "tl": "doktor",
+   "baca": "dok-TOR",
+   "id": "dokter"
+  },
+  {
+   "tl": "negosyante",
+   "baca": "ne-gos-YAN-te",
+   "id": "pengusaha"
+  },
+  {
+   "tl": "magsasaka",
+   "baca": "mag-sa-SA-ka",
+   "id": "petani"
+  },
+  {
+   "tl": "katulad",
+   "baca": "ka-TU-lad",
+   "id": "sama seperti"
+  },
+  {
+   "tl": "nakatira",
+   "baca": "na-ka-ti-RA",
+   "id": "tinggal (berdiam)"
+  },
+  {
+   "tl": "tumawag",
+   "baca": "tu-MA-wag",
+   "id": "menelepon"
+  },
+  {
+   "tl": "pagkain",
+   "baca": "pag-ka-IN",
+   "id": "makanan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Tagalog.",
+   "items": [
+    "Kamu bersaudara berapa?",
+    "Kami berempat.",
+    "Saya anak sulung.",
+    "Saya punya dua saudara perempuan.",
+    "Ayah saya guru.",
+    "Keluarga saya di Indonesia."
+   ]
+  },
+  {
+   "prompt": "Isi dengan ni, nina, kay, atau kina.",
+   "items": [
+    "Kapatid ____ Ana si Mia.",
+    "Anak ____ Ben at Lisa sila.",
+    "Ibigay mo ____ Nanay.",
+    "Pumunta kami ____ Ana kahapon.",
+    "Ang bahay ____ Kuya Ben ay malaki.",
+    "Sumulat ako ____ Lolo."
+   ]
+  },
+  {
+   "prompt": "Sebutkan hubungannya. Contoh: Anak ng nanay mo, hindi ikaw. → kapatid",
+   "items": [
+    "Nanay ng nanay mo. → ____",
+    "Anak ng kapatid mo. → ____",
+    "Anak ng tito mo. → ____",
+    "Asawa ng anak mo. → ____",
+    "Ang pinakabatang anak sa pamilya. → ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "magkakapatid / kayong / ilan / ?",
+    "ang / ako / panganay",
+    "kapatid / dalawang / may / akong / babae / na",
+    "ng / ang / trabaho / ano / tatay / mo / ?",
+    "Indonesia / nasa / pamilya / ang / ko"
+   ]
+  }
+ ],
+ "answers": [
+  "Ilan kayong magkakapatid? — Apat kami. — Ako ang panganay. — May dalawa akong kapatid na babae. — Guro ang tatay ko. — Nasa Indonesia ang pamilya ko.",
+  "ni — nina — kay — kina — ni — kay",
+  "lola — pamangkin — pinsan — manugang — bunso",
+  "Ilan kayong magkakapatid? — Ako ang panganay. — May dalawa akong kapatid na babae. — Ano ang trabaho ng tatay mo? — Nasa Indonesia ang pamilya ko."
+ ],
+ "wave": "Ulangi **unit 8**: perankan tawar-menawar di pasar dari awal sampai akhir — sapa penjualnya, tanya harga, tawar, sebut jumlah, bayar, pamit. Semuanya keras-keras."
+}

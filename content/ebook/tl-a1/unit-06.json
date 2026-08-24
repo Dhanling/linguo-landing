@@ -1,0 +1,213 @@
+{
+ "title": "Ada dan tidak ada",
+ "title_target": "May, mayroon, wala",
+ "goal": "Menyatakan bahwa sesuatu ada atau kamu memilikinya, menyangkalnya dengan *wala*, dan mengenali kapan *may* berubah jadi *mayroon*.",
+ "bekal": [
+  "memakai *may* untuk \"ada\" dan \"punya\" sekaligus",
+  "menyangkal keberadaan dan kepemilikan dengan *wala*, bukan dengan *hindi*",
+  "menyusun *may* bersama kata ganti pendek: *may kotse ako*, *mayroon akong kotse*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Sa boarding house",
+   "intro": "Budi sedang melihat-lihat kamar kos baru. Aling Nena menerangkan apa saja yang ada di dalamnya.",
+   "lines": [
+    { "speaker": "Budi:", "text": "May wifi po ba dito?", "id": "Di sini ada wifi, Bu?", "literal": "ada wifi Bu apakah di-sini?" },
+    { "speaker": "Aling Nena:", "text": "Oo, may wifi. Mabilis pa.", "id": "Ya, ada wifi. Cepat pula.", "literal": "ya, ada wifi. cepat lagi." },
+    { "speaker": "Budi:", "text": "Mayroon po bang aircon sa kwarto?", "id": "Apakah ada AC di kamarnya, Bu?", "literal": "ada Bu apakah aircon di kamar?" },
+    { "speaker": "Aling Nena:", "text": "Wala. Bentilador lang. Pero malamig dito sa gabi.", "id": "Tidak ada. Hanya kipas. Tapi di sini dingin kalau malam.", "literal": "tiada. kipas saja. tapi dingin di-sini di malam." },
+    { "speaker": "Budi:", "text": "Ayos lang po. May kusina ba kayo?", "id": "Tidak apa-apa, Bu. Ibu punya dapur?", "literal": "beres saja Bu. ada dapur apakah kalian?" },
+    { "speaker": "Aling Nena:", "text": "Mayroon, sa baba. Pero walang gas ngayon.", "id": "Ada, di bawah. Tapi sekarang tidak ada gas.", "literal": "ada, di bawah. tapi tiada gas sekarang." },
+    { "speaker": "Budi:", "text": "May tindahan po ba malapit dito?", "id": "Ada warung dekat sini, Bu?", "literal": "ada warung Bu apakah dekat di-sini?" },
+    { "speaker": "Aling Nena:", "text": "Marami! May sari-sari store sa kanto.", "id": "Banyak! Ada warung kelontong di pojok.", "literal": "banyak! ada sari-sari toko di sudut." },
+    { "speaker": "Budi:", "text": "Salamat po. Wala na po akong tanong.", "id": "Terima kasih, Bu. Saya sudah tidak punya pertanyaan lagi.", "literal": "terima-kasih Bu. tiada sudah Bu saya-yang pertanyaan." },
+    { "speaker": "Aling Nena:", "text": "Sige. May susi ka na ba?", "id": "Baik. Kamu sudah punya kunci?", "literal": "baiklah. ada kunci kamu sudah apakah?" },
+    { "speaker": "Budi:", "text": "Wala pa po. Bukas na lang po.", "id": "Belum, Bu. Besok saja.", "literal": "tiada masih Bu. besok sudah saja Bu." }
+   ],
+   "notes": [
+    "**May melakukan dua pekerjaan sekaligus**: \"ada\" (keberadaan) dan \"punya\" (kepemilikan). *May wifi dito* = ada wifi di sini. *May kotse ako* = saya punya mobil. Bahasa Tagalog tidak merasa perlu memisahkan keduanya, dan setelah beberapa hari kamu pun tidak.",
+    "**Mayroon adalah may yang bisa berdiri sendiri.** *May* selalu butuh kata benda persis di belakangnya; kalau ada partikel yang menyela (*ba*, *po*, *ka*), bentuknya berubah jadi *mayroon*: *May aircon ba?* boleh, tapi *Mayroon po bang aircon?* jauh lebih rapi. Dan sebagai jawaban tunggal, hanya *mayroon* yang bisa: *Mayroon.* (Ada.)",
+    "**Wala menyangkal keduanya.** Ini penting: keberadaan dan kepemilikan **tidak** disangkal dengan *hindi*. *Hindi may kotse ako* salah total; yang benar *wala akong kotse*.",
+    "**Walang gas** memperlihatkan penghubung yang sudah kamu pelajari di unit 3: *wala* + *-ng* + benda. Begitu juga *walang tanong*, *walang pera*, *walang problema*.",
+    "**Wala pa berarti \"belum\"**, sedangkan *wala na* berarti \"sudah tidak lagi\". Dua partikel kecil ini membalikkan arah waktu, dan keduanya akan dibahas tuntas di unit 14.",
+    "**Sari-sari store** adalah lembaga sosial Filipina, bukan sekadar toko. Warung kelontong kecil di depan rumah orang, menjual apa saja dalam ukuran sachet — dan biasanya juga tempat orang berdiri mengobrol sepanjang sore. *Sari-sari* sendiri berarti \"bermacam-macam\", kata yang juga hidup dalam bahasa Melayu.",
+    "**Kanto** (dari Spanyol *canto*) berarti sudut jalan. *Sa kanto* adalah salah satu petunjuk arah paling sering kamu dengar di Filipina, karena begitu banyak yang terletak di pojokan.",
+    "**Aircon** dari *air conditioner*, dipendekkan dengan cara khas Filipina. Pola pemendekan yang sama menghasilkan *ref* (kulkas), *CR* (kamar mandi, dari *comfort room*), dan *aircon* — tiga kata Inggris yang tidak dipakai persis begitu di negara mana pun selain Filipina.",
+    "**Bukas na lang** = \"besok saja\". Susunan *na lang* menandai keputusan yang menggantikan rencana sebelumnya, persis seperti \"…saja deh\" dalam bahasa Indonesia."
+   ],
+   "grammars": [
+    {
+     "title": "May, mayroon, wala — kapan memakai yang mana",
+     "body": [
+      "Ketiganya menyatakan hal yang sama dari sisi yang berbeda. Yang menentukan bentuknya bukan artinya, melainkan **apa yang berdiri sesudahnya**."
+     ],
+     "table": {
+      "head": ["Bentuk", "Diikuti", "Contoh", "Arti"],
+      "rows": [
+       ["**may**", "langsung kata benda", "**May** kotse ako.", "Saya punya mobil."],
+       ["**may**", "langsung kata benda", "**May** tao sa labas.", "Ada orang di luar."],
+       ["**mayroon**", "kata ganti / partikel", "**Mayroon** akong kotse.", "Saya punya mobil."],
+       ["**mayroon**", "berdiri sendiri", "**Mayroon.**", "Ada."],
+       ["**meron**", "bentuk percakapan", "**Meron** ba?", "Ada?"],
+       ["**wala**", "apa saja", "**Wala** akong kotse.", "Saya tidak punya mobil."],
+       ["**wala**", "berdiri sendiri", "**Wala.**", "Tidak ada."]
+      ]
+     },
+     "after": [
+      "*Meron* adalah *mayroon* yang dipendekkan dalam percakapan. Kamu akan mendengarnya jauh lebih sering daripada bentuk panjangnya; dalam tulisan tetap pakai *mayroon*.",
+      "Perhatikan penghubung yang muncul begitu ada kata ganti: *mayroon **akong** kotse*, *wala **akong** pera*. Kata ganti dan benda disambung dengan *-ng* — persis aturan unit 3.",
+      "⚠️ Pertanyaannya *May … ba?* atau *Mayroon bang …?* Jangan gabungkan keduanya: *May bang kotse?* salah."
+     ]
+    },
+    {
+     "title": "Wala melawan hindi",
+     "body": [
+      "Bahasa Tagalog punya tiga kata untuk \"tidak\", dan memilih yang salah adalah kesalahan pemula yang paling cepat terdengar."
+     ],
+     "table": {
+      "head": ["Kata", "Menyangkal", "Contoh", "Arti"],
+      "rows": [
+       ["**hindi**", "sifat, benda, kata kerja", "**Hindi** ako guro.", "Saya bukan guru."],
+       ["**hindi**", "kata kerja", "**Hindi** siya kumain.", "Dia tidak makan."],
+       ["**wala**", "keberadaan", "**Wala** si Ana.", "Ana tidak ada."],
+       ["**wala**", "kepemilikan", "**Wala** akong pera.", "Saya tidak punya uang."],
+       ["**wala**", "letak", "**Wala** siya sa bahay.", "Dia tidak di rumah."],
+       ["**huwag**", "perintah", "**Huwag** kang umalis.", "Jangan pergi."]
+      ]
+     },
+     "after": [
+      "Aturan ringkasnya: kalau kalimat positifnya memakai *may* atau *nasa*, penyangkalnya **selalu** *wala*. Kalau tidak, *hindi*.",
+      "*Huwag* hanya untuk melarang, dan sering dipendekkan jadi *wag* dalam percakapan dan pesan singkat: *Wag ka nang umiyak.*",
+      "Jawaban \"tidak\" atas pertanyaan *may…?* juga *wala*, bukan *hindi*: — *May pera ka ba?* — *Wala.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Apa saja yang ada di rumah orang Filipina",
+   "blocks": [
+    { "type": "tabel", "head": ["Tagalog", "Cara baca", "Bahasa Indonesia"], "rows": [
+      ["ref", "ref", "kulkas (dari *refrigerator*)"],
+      ["kalan", "ka-LAN", "kompor"],
+      ["aircon", "EYR-kon", "AC"],
+      ["bentilador", "ben-ti-la-DOR", "kipas angin"],
+      ["CR", "si-AR", "kamar mandi (dari *comfort room*)"],
+      ["kuryente", "kur-YEN-te", "listrik"],
+      ["tubig", "TU-big", "air"],
+      ["gripo", "GRI-po", "keran"],
+      ["basurahan", "ba-su-RA-han", "tempat sampah"],
+      ["walis", "wa-LIS", "sapu"],
+      ["sabon", "sa-BON", "sabun"],
+      ["tuwalya", "tu-WAL-ya", "handuk"],
+      ["kutson", "kut-SON", "kasur"],
+      ["kulambo", "ku-LAM-bo", "kelambu"],
+      ["terrace", "TE-ras", "teras"]
+     ] },
+    { "type": "p", "text": "Perhatikan *walis* (sapu) dan *sabon* (sabun) — dua kata yang nyaris tidak perlu dihafal oleh penutur bahasa Indonesia. Begitu pula *tubig*, yang sepupu jauhnya adalah \"tubir\" dan \"telaga\" dalam bahasa Melayu lama." },
+    { "type": "kotak", "title": "Kata Inggris yang wajib dipakai", "items": [
+      "*CR* untuk kamar mandi. Bertanya *Nasaan ang banyo?* akan dimengerti, tapi *Nasaan po ang CR?* adalah yang benar-benar diucapkan orang.",
+      "*Ref*, *aircon*, *cellphone*, *load* (pulsa), *sachet*, *tricycle*. Untuk benda modern, bahasa Tagalog memang berbahasa Inggris."
+     ] }
+   ]
+  },
+  {
+   "title": "Bertanya apakah sesuatu tersedia",
+   "blocks": [
+    { "type": "p", "text": "Pola pertanyaan ini akan kamu pakai setiap hari — di warung, di kos, di restoran, di terminal." },
+    { "type": "tabel", "head": ["Tagalog", "Arti", "Jawaban ya", "Jawaban tidak"], "rows": [
+      ["May tubig ba?", "Ada air?", "Mayroon / Meron.", "Wala."],
+      ["Mayroon po bang wifi?", "Ada wifi, Bu/Pak?", "Opo, mayroon po.", "Wala po."],
+      ["May sukli ba kayo?", "Ada kembalian?", "Meron.", "Wala, pasensya na."],
+      ["May bakante pa ba?", "Masih ada tempat kosong?", "Mayroon pa.", "Wala na."],
+      ["May tanong ka ba?", "Kamu ada pertanyaan?", "Meron.", "Wala."]
+     ] },
+    { "type": "p", "text": "*Wala na* dan *mayroon pa* memakai dua partikel yang saling berlawanan: *na* berarti \"sudah\", *pa* berarti \"masih\". Gabungannya sangat produktif — *wala na* (sudah habis), *meron pa* (masih ada), *wala pa* (belum ada), *meron na* (sudah ada)." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "tl": "may", "baca": "may", "id": "ada; punya" },
+  { "tl": "mayroon / meron", "baca": "may-RO-on / ME-ron", "id": "ada (bentuk berdiri sendiri)" },
+  { "tl": "wala", "baca": "wa-LA'", "id": "tidak ada; tidak punya" },
+  { "tl": "huwag", "baca": "hu-WAG", "id": "jangan" },
+  { "tl": "tao", "baca": "TA-o", "id": "orang" },
+  { "tl": "kotse", "baca": "KOT-se", "id": "mobil" },
+  { "tl": "wifi", "baca": "WAY-fay", "id": "wifi" },
+  { "tl": "aircon", "baca": "EYR-kon", "id": "AC" },
+  { "tl": "ref", "baca": "ref", "id": "kulkas" },
+  { "tl": "kalan", "baca": "ka-LAN", "id": "kompor" },
+  { "tl": "kuryente", "baca": "kur-YEN-te", "id": "listrik" },
+  { "tl": "gripo", "baca": "GRI-po", "id": "keran" },
+  { "tl": "sabon", "baca": "sa-BON", "id": "sabun" },
+  { "tl": "tuwalya", "baca": "tu-WAL-ya", "id": "handuk" },
+  { "tl": "walis", "baca": "wa-LIS", "id": "sapu" },
+  { "tl": "basura", "baca": "ba-SU-ra", "id": "sampah" },
+  { "tl": "kanto", "baca": "KAN-to", "id": "sudut jalan" },
+  { "tl": "sari-sari store", "baca": "SA-ri SA-ri stor", "id": "warung kelontong" },
+  { "tl": "sukli", "baca": "suk-LI'", "id": "uang kembalian" },
+  { "tl": "bakante", "baca": "ba-KAN-te", "id": "kosong, tersedia" },
+  { "tl": "tanong", "baca": "ta-NONG", "id": "pertanyaan" },
+  { "tl": "problema", "baca": "prob-LE-ma", "id": "masalah" },
+  { "tl": "gabi", "baca": "ga-BI", "id": "malam" },
+  { "tl": "umaga", "baca": "u-MA-ga", "id": "pagi" },
+  { "tl": "hapon", "baca": "HA-pon", "id": "sore" },
+  { "tl": "labas", "baca": "la-BAS", "id": "luar" },
+  { "tl": "loob", "baca": "lo-OB", "id": "dalam" },
+  { "tl": "baba", "baca": "ba-BA'", "id": "bawah" },
+  { "tl": "taas", "baca": "ta-AS", "id": "atas" },
+  { "tl": "na lang", "baca": "na lang", "id": "…saja (pilihan pengganti)" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Tagalog.",
+   "items": [
+    "Di sini ada wifi?",
+    "Tidak ada AC.",
+    "Saya punya mobil.",
+    "Saya tidak punya uang.",
+    "Ada orang di luar.",
+    "Masih ada tempat kosong?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan may, mayroon, atau wala.",
+   "items": [
+    "____ tubig sa ref.",
+    "____ ba kayong sukli?",
+    "____ akong pera ngayon.",
+    "____ tao sa labas.",
+    "____ pa bang bakante?",
+    "____ na ang tinapay. (sudah habis)"
+   ]
+  },
+  {
+   "prompt": "Sangkal kalimat berikut. Contoh: May kotse ako. → Wala akong kotse.",
+   "items": [
+    "May pera siya. → ____",
+    "Nasa bahay si Ana. → ____",
+    "Guro ako. → ____",
+    "May wifi dito. → ____",
+    "Masarap ang pagkain. → ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ba / dito / may / wifi / ?",
+    "akong / wala / pera",
+    "sa / may / tao / labas",
+    "bang / mayroon / aircon / po / ?",
+    "na / wala / tinapay"
+   ]
+  }
+ ],
+ "answers": [
+  "May wifi ba dito? — Walang aircon. — May kotse ako. — Wala akong pera. — May tao sa labas. — May bakante pa ba?",
+  "May — Mayroon — Wala — May — Mayroon — Wala",
+  "Wala siyang pera. — Wala si Ana sa bahay. — Hindi ako guro. — Walang wifi dito. — Hindi masarap ang pagkain.",
+  "May wifi ba dito? — Wala akong pera. — May tao sa labas. — Mayroon po bang aircon? — Wala nang tinapay."
+ ],
+ "wave": "Ulangi **unit 4**: sebutkan lima barang di tasmu lengkap dengan pemiliknya — *cellphone ko*, *susi ni Ana* — lalu ubah tiap kalimat jadi bentuk penegas: *akin ang cellphone*."
+}

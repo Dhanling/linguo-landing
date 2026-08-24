@@ -1,0 +1,216 @@
+{
+ "title": "Sepuluh kata tanya",
+ "title_target": "Ano, sino, saan, kailan, bakit",
+ "goal": "Bertanya apa saja: benda, orang, tempat, waktu, sebab, cara, jumlah, dan pilihan — lalu menjawabnya dengan susunan yang benar.",
+ "bekal": [
+  "memakai sepuluh kata tanya bahasa Tagalog dengan penanda yang tepat",
+  "menjawab *bakit* dengan *kasi* atau *dahil*",
+  "membedakan *saan* dari *nasaan*, dan *ano* dari *alin*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ang usisera",
+   "intro": "Di dalam jeepney menuju kampus. Seorang ibu duduk di sebelah Budi dan, seperti banyak orang Filipina, langsung ingin tahu segalanya.",
+   "lines": [
+    { "speaker": "Ale:", "text": "Iho, taga-saan ka?", "id": "Nak, kamu dari mana?", "literal": "nak, orang-mana kamu?" },
+    { "speaker": "Budi:", "text": "Taga-Indonesia po. Taga-Jakarta.", "id": "Dari Indonesia, Bu. Dari Jakarta.", "literal": "orang-Indonesia Bu. orang-Jakarta." },
+    { "speaker": "Ale:", "text": "Ay! Bakit ka nandito sa Pilipinas?", "id": "Wah! Kenapa kamu ada di Filipina?", "literal": "wah! kenapa kamu ada-di-sini di Filipina?" },
+    { "speaker": "Budi:", "text": "Nag-aaral po ako ng Tagalog dito.", "id": "Saya belajar bahasa Tagalog di sini, Bu.", "literal": "sedang-belajar Bu saya akan Tagalog di-sini." },
+    { "speaker": "Ale:", "text": "Talaga? Kailan ka dumating?", "id": "Oh ya? Kapan kamu datang?", "literal": "sungguh? kapan kamu tiba?" },
+    { "speaker": "Budi:", "text": "Noong isang buwan po.", "id": "Sebulan yang lalu, Bu.", "literal": "pada satu bulan Bu." },
+    { "speaker": "Ale:", "text": "Saan ka nakatira?", "id": "Kamu tinggal di mana?", "literal": "di-mana kamu tinggal?" },
+    { "speaker": "Budi:", "text": "Sa Malate po, malapit sa paaralan.", "id": "Di Malate, Bu, dekat sekolah.", "literal": "di Malate Bu, dekat ke sekolah." },
+    { "speaker": "Ale:", "text": "Sino ang kasama mo doon?", "id": "Di sana kamu tinggal dengan siapa?", "literal": "siapa si teman kamu-punya di-sana?" },
+    { "speaker": "Budi:", "text": "Mag-isa lang po ako. Pero marami akong kaibigan.", "id": "Saya sendirian, Bu. Tapi teman saya banyak.", "literal": "sendiri saja Bu saya. tapi banyak saya-yang teman." },
+    { "speaker": "Ale:", "text": "Mabuti naman. Paano mo natutunan ang Tagalog?", "id": "Bagus. Bagaimana kamu belajar bahasa Tagalog?", "literal": "baik ya. bagaimana kamu-punya yang-dikuasai si Tagalog?" },
+    { "speaker": "Budi:", "text": "Sa libro po at sa mga kaibigan ko. Mahirap pero masaya.", "id": "Dari buku dan dari teman-teman saya, Bu. Sulit tapi menyenangkan.", "literal": "di buku Bu dan di jamak teman aku-punya. sulit tapi senang." },
+    { "speaker": "Ale:", "text": "Magaling ka! Sige, bababa na ako dito. Ingat ka, ha?", "id": "Kamu hebat! Ya sudah, saya turun di sini. Hati-hati ya?", "literal": "hebat kamu! baiklah, akan-turun sudah saya di-sini. hati-hati kamu, ya?" }
+   ],
+   "notes": [
+    "**Bertanya banyak hal kepada orang asing itu wajar di Filipina.** Umur, status pernikahan, gaji, agama — semuanya bisa ditanyakan di dalam jeepney oleh orang yang baru kamu temui. Ini keramahan, bukan kekurangajaran. Jawaban pendek dan senyum sudah cukup kalau kamu tidak ingin bercerita panjang.",
+    "**Ale dan Mama** adalah sapaan kepada perempuan paruh baya yang tidak dikenal, sepupu dari *Aling*. Untuk laki-laki: *Mamang* atau *Manong*.",
+    "**Bakit ka nandito** — perhatikan bahwa *ka* langsung menempel sesudah kata tanya. Semua kata ganti pendek berkumpul di situ: *Bakit ka umalis?*, *Saan mo binili?*, *Kailan ka darating?*",
+    "**Noong isang buwan** = \"sebulan yang lalu\". Pola *noong isang* + satuan waktu: *noong isang linggo* (minggu lalu), *noong isang taon* (tahun lalu). Untuk masa depan pola kembarannya *sa susunod na*: *sa susunod na buwan*.",
+    "**Saan menanyakan tempat kejadian, nasaan menanyakan letak benda.** *Saan ka nakatira?* (di mana kamu tinggal — tempat berlangsungnya perbuatan) tapi *Nasaan ang bahay mo?* (letak rumahmu di mana). Salah pilih tidak fatal, tapi langsung terdengar.",
+    "**Mag-isa berarti sendirian.** Dari kata *isa* (satu), dengan awalan *mag-*. Sepupunya: *mag-isa lang* (sendirian saja), *nag-iisa* (sedang sendirian, dan sedikit sedih).",
+    "**Paano bertanya cara**, bukan keadaan. Untuk menanyakan keadaan dipakai *kumusta*. Bandingkan: *Paano ka pumunta?* (bagaimana caramu ke sana) versus *Kumusta ang biyahe?* (bagaimana perjalanannya).",
+    "**Natutunan** dari *matuto* (menjadi bisa) dalam bentuk fokus objek. Bentuk ini akan sering kamu dengar dalam pertanyaan tentang belajar, dan cukup dikenali dulu tanpa perlu dibentuk sendiri.",
+    "**Bababa na ako dito** — kalimat wajib di dalam jeepney. Bentuk yang lebih sering dipakai bahkan lebih pendek: *Para po!* — \"Berhenti!\", yang akan dibahas di unit 18."
+   ],
+   "grammars": [
+    {
+     "title": "Sepuluh kata tanya",
+     "body": [
+      "Bahasa Tagalog menaruh kata tanya di **awal kalimat**, seperti bahasa Indonesia dan tidak seperti bahasa Jepang atau Korea. Yang perlu diperhatikan adalah penanda yang mengikutinya."
+     ],
+     "table": {
+      "head": ["Kata tanya", "Cara baca", "Menanyakan", "Contoh"],
+      "rows": [
+       ["**ano**", "a-NO", "benda, hal", "Ano ang pangalan mo?"],
+       ["**sino**", "SI-no", "orang", "Sino ang kasama mo?"],
+       ["**kanino**", "ka-NI-no", "pemilik", "Kaninong bag ito?"],
+       ["**saan**", "sa-AN", "tempat kejadian", "Saan ka nakatira?"],
+       ["**nasaan**", "na-sa-AN", "letak benda", "Nasaan ang susi?"],
+       ["**kailan**", "kay-LAN", "waktu", "Kailan ka darating?"],
+       ["**bakit**", "BA-kit", "sebab", "Bakit ka umalis?"],
+       ["**paano**", "pa-A-no", "cara", "Paano ka pumunta?"],
+       ["**magkano**", "mag-KA-no", "harga", "Magkano ito?"],
+       ["**ilan**", "i-LAN", "jumlah", "Ilan kayo?"],
+       ["**alin**", "a-LIN", "pilihan", "Alin ang gusto mo?"],
+       ["**gaano**", "ga-A-no", "seberapa", "Gaano katagal?"]
+      ]
+     },
+     "after": [
+      "**Ano dan alin dua-duanya \"apa\", tapi tidak sama.** *Ano* menanyakan tanpa pilihan yang tersedia; *alin* menanyakan pilihan dari kumpulan yang sudah ada di depan mata. *Ano ang gusto mo?* (mau apa) versus *Alin ang gusto mo?* (yang mana yang kamu mau).",
+      "**Gaano selalu berpasangan dengan kata sifat berawalan ka-**: *gaano katagal* (berapa lama), *gaano kalayo* (seberapa jauh), *gaano kalaki* (seberapa besar), *gaano kadalas* (seberapa sering).",
+      "Sesudah kata tanya, kata ganti pendek langsung menempel: *Bakit **ka***, *Saan **mo***, *Ano **ang** ginagawa **mo***."
+     ]
+    },
+    {
+     "title": "Menjawab bakit",
+     "body": [
+      "Pertanyaan sebab dijawab dengan salah satu dari dua kata, dan keduanya sama benarnya — yang berbeda hanyalah suasana."
+     ],
+     "table": {
+      "head": ["Kata", "Suasana", "Letak", "Contoh"],
+      "rows": [
+       ["**kasi**", "sehari-hari, hangat", "di tengah atau di depan", "Kasi pagod ako. / Pagod kasi ako."],
+       ["**dahil**", "baku, tulisan", "selalu di depan alasan", "Dahil pagod ako."],
+       ["**dahil sa**", "diikuti kata benda", "sebelum benda", "Dahil sa ulan."],
+       ["**para**", "menyatakan tujuan", "sebelum kata kerja", "Para matuto ng Tagalog."],
+       ["**kaya**", "menyatakan akibat", "di antara dua kalimat", "Pagod ako, kaya natulog ako."]
+      ]
+     },
+     "after": [
+      "*Kaya* punya dua arti yang jauh berbeda dan dibedakan oleh tekanan: *ka-YA* berarti \"maka, karena itu\", sedangkan *KA-ya* berarti \"mampu\" (*kaya ko* — saya bisa).",
+      "Untuk menanyakan tujuan, bukan sebab, dipakai *para saan* atau *para kanino*: *Para kanino ito?* (ini untuk siapa).",
+      "Jawaban paling jujur yang sering dipakai orang Filipina ketika tidak mau menjelaskan: *Basta.* — \"pokoknya begitu\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pertanyaan yang akan kamu pakai tiap hari",
+   "blocks": [
+    { "type": "tabel", "head": ["Tagalog", "Arti", "Jawaban khas"], "rows": [
+      ["Ano ito?", "Ini apa?", "Kulambo iyan."],
+      ["Ano ang pangalan mo?", "Siapa namamu?", "Ako si Budi."],
+      ["Ano ang ginagawa mo?", "Kamu sedang apa?", "Nag-aaral ako."],
+      ["Sino ka?", "Kamu siapa?", "Ako ang bagong estudyante."],
+      ["Sino ang guro natin?", "Siapa guru kita?", "Si Ma'am Reyes."],
+      ["Saan ka pupunta?", "Kamu mau ke mana?", "Sa palengke."],
+      ["Saan ka galing?", "Kamu dari mana?", "Galing akong klase."],
+      ["Kailan ang klase?", "Kapan kelasnya?", "Sa Lunes."],
+      ["Bakit ka malungkot?", "Kenapa kamu sedih?", "Wala, pagod lang."],
+      ["Paano pumunta sa Luneta?", "Bagaimana caranya ke Luneta?", "Sumakay ka ng LRT."],
+      ["Magkano ang pamasahe?", "Ongkosnya berapa?", "Trese pesos."],
+      ["Ilan kayo?", "Kalian berapa orang?", "Tatlo lang."]
+     ] },
+    { "type": "p", "text": "*Saan ka galing?* memakai *galing* (berasal) untuk menanyakan asal gerakan, bukan asal daerah. Untuk asal daerah dipakai *taga-saan*. Dua pertanyaan ini terdengar mirip tapi jawabannya berbeda jauh: *Galing akong palengke* (baru dari pasar) versus *Taga-Jakarta ako* (asalnya dari Jakarta)." },
+    { "type": "kotak", "title": "Bertanya balik dengan sopan", "items": [
+      "*Ikaw?* atau *Kayo po?* — \"kamu bagaimana?\" Cara paling pendek dan paling lazim mengembalikan pertanyaan.",
+      "*Ano po ulit?* — \"tadi apa ya?\" Dipakai ketika kamu tidak menangkap jawabannya dan tidak ingin membuat lawan bicara merasa bicaranya tidak jelas.",
+      "*Pasensya po, hindi ko naintindihan.* — \"Maaf, saya tidak menangkap.\" Kalimat penyelamat yang layak dihafal utuh."
+     ] }
+   ]
+  },
+  {
+   "title": "Pertanyaan tanpa kata tanya",
+   "blocks": [
+    { "type": "p", "text": "Selain sepuluh kata tanya, ada dua cara lain bertanya yang dipakai sama seringnya." },
+    { "type": "tabel", "head": ["Cara", "Contoh", "Arti"], "rows": [
+      ["dengan **ba**", "Guro ka ba?", "Kamu guru?"],
+      ["dengan **di ba**", "Guro ka, di ba?", "Kamu guru, kan?"],
+      ["dengan **ano**", "Maganda, ano?", "Bagus ya?"],
+      ["dengan **hindi ba**", "Hindi ba't taga-Cebu ka?", "Bukankah kamu dari Cebu?"],
+      ["nada naik saja", "Guro ka?", "Kamu guru?"]
+     ] },
+    { "type": "p", "text": "*Di ba* (dari *hindi ba*) adalah salah satu ungkapan paling sering terdengar dalam percakapan Filipina — dipakai untuk mencari persetujuan, mengingatkan, atau sekadar mengisi jeda. Padanan terdekatnya \"kan?\" dalam bahasa Indonesia." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "tl": "ano", "baca": "a-NO", "id": "apa" },
+  { "tl": "sino", "baca": "SI-no", "id": "siapa" },
+  { "tl": "kanino", "baca": "ka-NI-no", "id": "punya siapa" },
+  { "tl": "saan", "baca": "sa-AN", "id": "di mana (kejadian)" },
+  { "tl": "nasaan", "baca": "na-sa-AN", "id": "di mana (letak)" },
+  { "tl": "kailan", "baca": "kay-LAN", "id": "kapan" },
+  { "tl": "bakit", "baca": "BA-kit", "id": "kenapa" },
+  { "tl": "paano", "baca": "pa-A-no", "id": "bagaimana caranya" },
+  { "tl": "alin", "baca": "a-LIN", "id": "yang mana" },
+  { "tl": "gaano", "baca": "ga-A-no", "id": "seberapa" },
+  { "tl": "kasi", "baca": "ka-SI", "id": "soalnya" },
+  { "tl": "dahil", "baca": "DA-hil", "id": "karena" },
+  { "tl": "kaya", "baca": "ka-YA", "id": "maka, karena itu" },
+  { "tl": "para", "baca": "PA-ra", "id": "supaya; untuk" },
+  { "tl": "basta", "baca": "BAS-ta", "id": "pokoknya" },
+  { "tl": "di ba", "baca": "di ba", "id": "kan?" },
+  { "tl": "galing", "baca": "GA-ling", "id": "berasal dari" },
+  { "tl": "nakatira", "baca": "na-ka-ti-RA", "id": "tinggal" },
+  { "tl": "mag-isa", "baca": "mag-i-SA", "id": "sendirian" },
+  { "tl": "kasama", "baca": "ka-SA-ma", "id": "teman, yang menemani" },
+  { "tl": "pamasahe", "baca": "pa-ma-SA-he", "id": "ongkos" },
+  { "tl": "biyahe", "baca": "bi-YA-he", "id": "perjalanan" },
+  { "tl": "maintindihan", "baca": "ma-in-tin-DI-han", "id": "dimengerti" },
+  { "tl": "matutunan", "baca": "ma-tu-TU-nan", "id": "dikuasai, dipelajari" },
+  { "tl": "bagong", "baca": "BA-gong", "id": "baru (dengan penghubung)" },
+  { "tl": "ulit", "baca": "u-LIT", "id": "lagi, sekali lagi" },
+  { "tl": "malungkot", "baca": "ma-lung-KOT", "id": "sedih" },
+  { "tl": "usisera", "baca": "u-si-SE-ra", "id": "orang yang serba ingin tahu" },
+  { "tl": "madalas", "baca": "ma-da-LAS", "id": "sering" },
+  { "tl": "bihira", "baca": "bi-HI-ra", "id": "jarang" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan kata tanya yang tepat.",
+   "items": [
+    "____ ang pangalan mo? (apa)",
+    "____ ka nakatira? (di mana)",
+    "____ ang susi? (di mana letaknya)",
+    "____ ka dumating? (kapan)",
+    "____ ka umalis? (kenapa)",
+    "____ ang kasama mo? (siapa)"
+   ]
+  },
+  {
+   "prompt": "Pasangkan pertanyaan dengan jawabannya. Tulis jawaban yang cocok.",
+   "items": [
+    "Magkano ang pamasahe? → ____",
+    "Ilan kayo? → ____",
+    "Kaninong bag ito? → ____",
+    "Gaano katagal ang biyahe? → ____",
+    "Alin ang gusto mo, kape o tsaa? → ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Tagalog.",
+   "items": [
+    "Kamu mau ke mana?",
+    "Kenapa kamu ada di Filipina?",
+    "Kapan kamu datang?",
+    "Bagaimana caranya ke Luneta?",
+    "Kamu tinggal dengan siapa?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ka / bakit / nandito / ?",
+    "ka / saan / nakatira / ?",
+    "dumating / kailan / ka / ?",
+    "ang / sino / mo / kasama / ?",
+    "pagod / kasi / ako"
+   ]
+  }
+ ],
+ "answers": [
+  "Ano — Saan — Nasaan — Kailan — Bakit — Sino",
+  "Trese pesos. — Tatlo lang kami. — Akin iyan. — Isang oras lang. — Kape.",
+  "Saan ka pupunta? — Bakit ka nandito sa Pilipinas? — Kailan ka dumating? — Paano pumunta sa Luneta? — Sino ang kasama mo?",
+  "Bakit ka nandito? — Saan ka nakatira? — Kailan ka dumating? — Sino ang kasama mo? — Pagod kasi ako."
+ ],
+ "wave": "Ulangi **unit 13**: ambil lima kalimat berfokus pelaku yang kamu buat sendiri, lalu ubah semuanya jadi fokus objek — dan sebaliknya."
+}
