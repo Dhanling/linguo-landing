@@ -1,0 +1,298 @@
+{
+ "title": "Belok kiri di lampu merah",
+ "title_target": "เลี้ยวซ้ายตรงไฟแดง — Líao sáai trong fai-daaeng",
+ "goal": "Bertanya arah, menyuruh sopir berhenti, dan memilih di antara delapan cara berpindah di Bangkok — termasuk kalimat yang mencegah tagihan taksi membengkak.",
+ "bekal": [
+  "bertanya arah dengan ไปยังไง dan อยู่ที่ไหน",
+  "mengerti perintah arah: ตรงไป, เลี้ยวซ้าย, เลี้ยวขวา, จอด",
+  "menyebut delapan alat transportasi",
+  "memastikan taksi memakai argo dengan satu kalimat",
+  "bertanya jauh-dekat dan lama perjalanan"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Naik taksi ke Wat Pho",
+   "intro": "Budi menghentikan taksi. Perhatikan kalimat kedua yang diucapkannya — kalimat itu satu-satunya yang benar-benar penting di seluruh dialog ini.",
+   "lines": [
+    {
+     "speaker": "บูดี:",
+     "text": "[ไป|Pai][วัดโพธิ์|Wát-Phoo][ไหม|mǎi][ครับ|khráp]",
+     "id": "Ke Wat Pho mau?",
+     "literal": "pergi — Wat-Pho — kah — (sopan)?"
+    },
+    {
+     "speaker": "คนขับ:",
+     "text": "[ไป|Pai][ครับ|khráp] [ขึ้น|Khûen][เลย|loei][ครับ|khráp]",
+     "id": "Mau. Naik saja.",
+     "literal": "pergi — (sopan). naik — langsung — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[กด|Kòt][มิเตอร์|mí-tôee][ด้วย|dûai][นะ|ná][ครับ|khráp]",
+     "id": "Pakai argo ya.",
+     "literal": "tekan — meter — juga — ya — (sopan)."
+    },
+    {
+     "speaker": "คนขับ:",
+     "text": "[ได้|Dâai][ครับ|khráp] [รถ|Rót][ติด|tìt][นิดหน่อย|nít-nàwy][นะ|ná][ครับ|khráp]",
+     "id": "Baik. Agak macet ya.",
+     "literal": "bisa — (sopan). mobil — nempel — sedikit — ya — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ไม่เป็นไร|Mâi pen rai][ครับ|khráp] [ใช้|Chái][เวลา|wee-laa][กี่|kìi][นาที|naa-thii][ครับ|khráp]",
+     "id": "Tidak apa-apa. Berapa menit kira-kira?",
+     "literal": "tidak-jadi-apa — (sopan). pakai — waktu — berapa — menit — (sopan)?"
+    },
+    {
+     "speaker": "คนขับ:",
+     "text": "[ประมาณ|Prà-maan][สาม|sǎam][สิบ|sìp][นาที|naa-thii][ครับ|khráp] [ไม่|Mâi][ไกล|klai][ครับ|khráp]",
+     "id": "Sekitar tiga puluh menit. Tidak jauh.",
+     "literal": "kira-kira — tiga — puluh — menit — (sopan). tidak — jauh — (sopan)."
+    },
+    {
+     "speaker": "คนขับ:",
+     "text": "[ตรง|Trong][ไฟแดง|fai-daaeng][เลี้ยว|líao][ซ้าย|sáai][ใช่|châi][ไหม|mǎi][ครับ|khráp]",
+     "id": "Di lampu merah belok kiri, benar?",
+     "literal": "tepat — lampu-merah — belok — kiri — benar — kah — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ผม|Phǒm][ไม่|mâi][แน่ใจ|nâae-jai][ครับ|khráp] [แผนที่|Phǎaen-thîi][บอก|bàwk][ว่า|wâa][ตรง|trong][ไป|pai][แล้ว|láaeo][เลี้ยว|líao][ขวา|khwǎa][ครับ|khráp]",
+     "id": "Saya tidak yakin. Petanya bilang lurus terus lalu belok kanan.",
+     "literal": "saya — tidak — yakin — (sopan). peta — bilang — bahwa — lurus — pergi — lalu — belok — kanan — (sopan)."
+    },
+    {
+     "speaker": "คนขับ:",
+     "text": "[อ๋อ|Ǎw] [เข้าใจ|khâo-jai][แล้ว|láaeo][ครับ|khráp] [ใกล้|Klâi][ท่าเรือ|thâa-ruuea][ใช่|châi][ไหม|mǎi][ครับ|khráp]",
+     "id": "Oh, saya paham. Dekat dermaga kan?",
+     "literal": "oh — paham — sudah — (sopan). dekat — dermaga — benar — kah — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ใช่|Châi][ครับ|khráp]",
+     "id": "Benar.",
+     "literal": "benar — (sopan)."
+    },
+    {
+     "speaker": "คนขับ:",
+     "text": "[ถึง|Thǔeng][แล้ว|láaeo][ครับ|khráp] [หนึ่ง|Nùeng][ร้อย|ráwy][สี่|sìi][สิบ|sìp][บาท|bàat][ครับ|khráp]",
+     "id": "Sudah sampai. Seratus empat puluh baht.",
+     "literal": "sampai — sudah — (sopan). satu — ratus — empat — puluh — baht — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[จอด|Jàwt][ตรงนี้|trong-níi][ได้|dâai][ครับ|khráp] [ขอบคุณ|Khàwp-khun][ครับ|khráp] [ไม่|Mâi][ต้อง|tâwng][ทอน|thawn][ครับ|khráp]",
+     "id": "Berhenti di sini saja. Terima kasih, kembaliannya ambil saja.",
+     "literal": "berhenti — tepat-ini — bisa — (sopan). terima-kasih — (sopan). tidak — harus — kembalikan — (sopan)."
+    }
+   ],
+   "notes": [
+    "**กดมิเตอร์ด้วยนะครับ/ค่ะ adalah kalimat terpenting di seluruh unit ini.** Harfiahnya \"tekan argonya ya\". Di kawasan wisata, sebagian sopir menawarkan harga borongan yang bisa dua sampai tiga kali lipat. Mengucapkan kalimat ini sebelum berangkat menyelesaikan urusan itu tanpa perdebatan — dan kalau sopirnya menolak, cukup turun dan mencari taksi lain. Itu hal yang biasa, bukan penghinaan.",
+    "**ไปวัดโพธิ์ไหมครับ diucapkan SEBELUM naik**, lewat jendela yang terbuka. Sopir taksi Bangkok berhak menolak tujuan, dan menanyakannya lebih dulu menghemat waktu semua orang.",
+    "**ใช่ไหม châi mǎi berarti \"benar kan?\"** dan dipakai untuk memastikan sesuatu yang sudah kamu duga. Bandingkan dengan *ไหม mǎi* biasa yang menanyakan hal yang belum diketahui sama sekali.",
+    "**ถึงแล้ว thǔeng láaeo = \"sudah sampai\".** Kata *ถึง* juga berarti \"sampai ke\": *ไปถึงบ้าน* (sampai di rumah). Ia akan sering muncul bersama *แล้ว*.",
+    "**ไม่ต้องทอน mâi tâwng thawn berarti \"tidak usah kembalian\".** Memberi tip di taksi bukan kewajiban di Thailand, tetapi membulatkan tagihan ke atas adalah kebiasaan yang umum dan disambut baik. Kata *ไม่ต้อง mâi tâwng* (tidak perlu) akan dibahas tuntas di unit 12.",
+    "**จอด jàwt berarti \"berhenti/parkir\" untuk kendaraan**, sedangkan *หยุด yùt* berarti \"berhenti\" secara umum. Untuk menyuruh sopir berhenti, pakai *จอด*: *จอดตรงนี้ครับ* (berhenti di sini).",
+    "**ตรง trong berarti \"lurus\" dan sekaligus \"tepat di\".** *ตรงไป* (lurus terus), *ตรงนี้* (tepat di sini), *ตรงไฟแดง* (tepat di lampu merah). Satu kata, dua pekerjaan yang keduanya sering kamu perlukan.",
+    "**แน่ใจ nâae-jai berarti \"yakin\".** Perhatikan kata *ใจ jai* (hati) di ujungnya — bahasa Thai membentuk puluhan kata perasaan dengan cara ini: *เข้าใจ khâo-jai* (mengerti, harfiah \"masuk hati\"), *ดีใจ dii-jai* (senang), *เสียใจ sǐa-jai* (sedih), *ใจดี jai-dii* (baik hati), *ใจร้อน jai-ráwn* (tidak sabar). Kalau kamu melihat *ใจ*, kamu sedang melihat kata tentang perasaan."
+   ],
+   "grammars": [
+    {
+     "title": "Arah: sepuluh kata yang cukup untuk sampai ke mana pun",
+     "table": {
+      "head": ["Thai", "Baca", "Artinya"],
+      "rows": [
+       ["ตรงไป", "*trong pai*", "lurus terus"],
+       ["เลี้ยวซ้าย", "*líao sáai*", "belok kiri"],
+       ["เลี้ยวขวา", "*líao khwǎa*", "belok kanan"],
+       ["กลับรถ", "*klàp rót*", "putar balik"],
+       ["จอดตรงนี้", "*jàwt trong-níi*", "berhenti di sini"],
+       ["เลยไปหน่อย", "*loei pai nàwy*", "maju sedikit lagi"],
+       ["ข้ามสะพาน", "*khâam sà-phaan*", "menyeberangi jembatan"],
+       ["ตรงไฟแดง", "*trong fai-daaeng*", "di lampu merah"],
+       ["ตรงหัวมุม", "*trong hǔa-mum*", "di pojok"],
+       ["ตรงข้าม", "*trong-khâam*", "di seberang"]
+      ]
+     },
+     "after": [
+      "⚠️ *เลย loei* punya dua pekerjaan yang jauh berbeda: sebagai kata kerja ia berarti **melewati** (*เลยไปหน่อย* = lewat sedikit lagi), sebagai partikel ia berarti **\"langsung saja\"** atau **\"sama sekali\"** (*ไม่ชอบเลย* = sama sekali tidak suka). Bedanya selalu jelas dari letaknya."
+     ]
+    },
+    {
+     "title": "Delapan cara berpindah di Bangkok",
+     "table": {
+      "head": ["Thai", "Baca", "Apa itu", "Kapan dipakai"],
+      "rows": [
+       ["รถไฟฟ้า / บีทีเอส", "*rót-fai-fáa / BTS*", "kereta layang", "jam sibuk, jarak menengah"],
+       ["รถไฟใต้ดิน / เอ็มอาร์ที", "*rót-fai-tâai-din / MRT*", "kereta bawah tanah", "jam sibuk"],
+       ["แท็กซี่", "*tháek-sîi*", "taksi", "malam, barang banyak"],
+       ["มอเตอร์ไซค์รับจ้าง", "*maw-tôoe-sai ráp-jâang*", "ojek", "jarak pendek, macet"],
+       ["รถเมล์", "*rót-mee*", "bus kota", "murah, lambat"],
+       ["เรือ", "*ruuea*", "perahu sungai/kanal", "cepat di jam sibuk"],
+       ["ตุ๊กตุ๊ก", "*túk-túk*", "bajaj Thailand", "wisata, harus ditawar"],
+       ["สองแถว", "*sǎawng-thǎaeo*", "pikap bangku dua sisi", "kota kecil, luar Bangkok"]
+      ]
+     },
+     "after": [
+      "**มอเตอร์ไซค์รับจ้าง** — pengemudinya berompi warna oranye dan menunggu di mulut gang. Harfiahnya \"motor yang menerima upah\". Untuk jarak pendek di Bangkok ia hampir selalu paling cepat, dan tarifnya biasanya 20-40 baht.",
+      "⚠️ **ตุ๊กตุ๊ก hampir selalu lebih mahal daripada taksi** dan tidak berargo. Ia menyenangkan sekali untuk dicoba satu kali, tetapi bukan cara sehari-hari. Tawar dulu, dan sepakati angkanya sebelum naik."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bertanya arah kepada orang di jalan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Thai", "Baca", "Artinya"],
+     "rows": [
+      ["ขอโทษครับ/ค่ะ", "*khǎaw-thôot*", "permisi (pembuka wajib)"],
+      ["…อยู่ที่ไหน", "*…yùu thîi nǎi*", "… di mana?"],
+      ["ไป…ยังไง", "*pai … yang-ngai*", "ke … caranya bagaimana?"],
+      ["ไกลไหม", "*klai mǎi*", "jauh tidak?"],
+      ["เดินไปได้ไหม", "*dooen pai dâai mǎi*", "bisa jalan kaki?"],
+      ["ใช้เวลากี่นาที", "*chái wee-laa kìi naa-thii*", "berapa menit?"],
+      ["ทางนี้ใช่ไหม", "*thaang níi châi mǎi*", "lewat sini benar?"],
+      ["หลงทาง", "*lǒng thaang*", "tersesat"],
+      ["ห้องน้ำอยู่ไหน", "*hâwng-náam yùu nǎi*", "toilet di mana?"],
+      ["สถานีต่อไป", "*sà-thǎa-nii tàw-pai*", "stasiun berikutnya"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Dua hal yang membuat bertanya arah lebih berhasil",
+     "items": [
+      "**Tunjukkan tulisannya, jangan cuma menyebutkan.** Nama tempat Thai sangat bergantung pada nada, dan satu nada meleset bisa membuat namanya tidak dikenali sama sekali. Menunjukkan layar ponsel bertuliskan aksara Thai menyelesaikan ini dalam sedetik.",
+      "⚠️ **Waspadai jawaban yang terlalu meyakinkan.** Budaya Thai sangat enggan mengecewakan orang yang bertanya, sehingga sebagian orang lebih memilih menunjuk arah mana pun daripada berkata \"tidak tahu\". Kalau jawabannya terdengar ragu, bertanyalah sekali lagi kepada orang kedua — itu bukan tidak sopan, itu praktik yang bijak."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Tempat yang sering dicari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Thai", "Baca", "Indonesia"],
+     "rows": [
+      ["สถานี", "*sà-thǎa-nii*", "stasiun"],
+      ["สนามบิน", "*sà-nǎam-bin*", "bandara"],
+      ["โรงพยาบาล", "*roong-phá-yaa-baan*", "rumah sakit"],
+      ["โรงแรม", "*roong-raaem*", "hotel"],
+      ["ธนาคาร", "*thá-naa-khaan*", "bank"],
+      ["ตู้เอทีเอ็ม", "*tûu ee-thii-em*", "ATM"],
+      ["ร้านสะดวกซื้อ", "*ráan sà-dùak-súue*", "minimarket"],
+      ["ตลาด", "*tà-làat*", "pasar"],
+      ["วัด", "*wát*", "kuil"],
+      ["มัสยิด", "*mát-sà-yít*", "masjid"],
+      ["ห้องน้ำ", "*hâwng-náam*", "kamar kecil"],
+      ["ท่าเรือ", "*thâa-ruuea*", "dermaga"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan pola **โรง roong** di depan kata: ia berarti \"gedung besar tempat…\". *โรงเรียน roong-rian* (sekolah — gedung belajar), *โรงพยาบาล* (rumah sakit — gedung perawatan), *โรงแรม* (hotel), *โรงหนัง roong-nǎng* (bioskop), *โรงงาน roong-ngaan* (pabrik). Sama seperti *นัก-* dan *ข้าง-*, satu pola membuka banyak kata sekaligus."
+    },
+    {
+     "type": "kotak",
+     "title": "Kalau benar-benar tersesat",
+     "items": [
+      "**ผม/ฉันหลงทางครับ/ค่ะ** *lǒng thaang* — saya tersesat. Kalimat ini hampir selalu membuat orang berhenti dan menolong.",
+      "**ช่วยหน่อยได้ไหมครับ/คะ** *chûai nàwy dâai mǎi* — bisa tolong sebentar?",
+      "**พาไปหน่อยได้ไหมครับ/คะ** *phaa pai nàwy dâai mǎi* — bisa antar saya ke sana? Ini permintaan besar, tetapi di Thailand cukup sering dikabulkan begitu saja."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "th": "เลี้ยว", "baca": "líao", "id": "belok" },
+  { "th": "ซ้าย", "baca": "sáai", "id": "kiri" },
+  { "th": "ขวา", "baca": "khwǎa", "id": "kanan" },
+  { "th": "ตรงไป", "baca": "trong pai", "id": "lurus terus" },
+  { "th": "จอด", "baca": "jàwt", "id": "berhenti, parkir" },
+  { "th": "หยุด", "baca": "yùt", "id": "berhenti" },
+  { "th": "ขึ้น", "baca": "khûen", "id": "naik" },
+  { "th": "ลง", "baca": "long", "id": "turun" },
+  { "th": "ข้าม", "baca": "khâam", "id": "menyeberang" },
+  { "th": "ทาง", "baca": "thaang", "id": "jalan, arah" },
+  { "th": "หลงทาง", "baca": "lǒng thaang", "id": "tersesat" },
+  { "th": "แผนที่", "baca": "phǎaen-thîi", "id": "peta" },
+  { "th": "ไฟแดง", "baca": "fai-daaeng", "id": "lampu merah" },
+  { "th": "สะพาน", "baca": "sà-phaan", "id": "jembatan" },
+  { "th": "หัวมุม", "baca": "hǔa-mum", "id": "pojok" },
+  { "th": "ตรงข้าม", "baca": "trong-khâam", "id": "di seberang" },
+  { "th": "มิเตอร์", "baca": "mí-tôee", "id": "argo" },
+  { "th": "แท็กซี่", "baca": "tháek-sîi", "id": "taksi" },
+  { "th": "รถไฟฟ้า", "baca": "rót-fai-fáa", "id": "kereta layang (BTS)" },
+  { "th": "รถเมล์", "baca": "rót-mee", "id": "bus kota" },
+  { "th": "เรือ", "baca": "ruuea", "id": "perahu" },
+  { "th": "มอเตอร์ไซค์", "baca": "maw-tôoe-sai", "id": "sepeda motor" },
+  { "th": "สถานี", "baca": "sà-thǎa-nii", "id": "stasiun" },
+  { "th": "สนามบิน", "baca": "sà-nǎam-bin", "id": "bandara" },
+  { "th": "โรงแรม", "baca": "roong-raaem", "id": "hotel" },
+  { "th": "โรงพยาบาล", "baca": "roong-phá-yaa-baan", "id": "rumah sakit" },
+  { "th": "ห้องน้ำ", "baca": "hâwng-náam", "id": "kamar kecil" },
+  { "th": "วัด", "baca": "wát", "id": "kuil" },
+  { "th": "แน่ใจ", "baca": "nâae-jai", "id": "yakin" },
+  { "th": "ช่วย", "baca": "chûai", "id": "menolong" },
+  { "th": "พา", "baca": "phaa", "id": "mengantar, membawa (orang)" },
+  { "th": "ใช้", "baca": "chái", "id": "memakai" },
+  { "th": "ใช่ไหม", "baca": "châi mǎi", "id": "benar kan?" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi bagian yang kosong.",
+   "items": [
+    "\"Lurus terus\" → ____ไป",
+    "\"Belok kiri\" → เลี้ยว____",
+    "\"Berhenti di sini\" → ____ตรงนี้ครับ",
+    "\"Pakai argo ya\" → กด____ด้วยนะครับ",
+    "\"Sudah sampai\" → ____แล้วครับ",
+    "\"Saya tersesat\" → ผม____ครับ"
+   ]
+  },
+  {
+   "prompt": "Cocokkan alat transportasi dengan keterangannya: tulis nama Thainya.",
+   "items": [
+    "kereta layang di Bangkok = ____",
+    "ojek berompi oranye = ____",
+    "bajaj Thailand = ____",
+    "perahu sungai = ____",
+    "bus kota = ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ครับ / ไหม / วัดโพธิ์ / ไป",
+    "ครับ / ด้วยนะ / กด / มิเตอร์",
+    "คะ / อยู่ที่ไหน / ห้องน้ำ",
+    "ครับ / กี่นาที / ใช้เวลา",
+    "ครับ / ได้ / ตรงนี้ / จอด"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu perempuan.",
+   "items": [
+    "Permisi, stasiun di mana?",
+    "Jauh tidak?",
+    "Bisa jalan kaki?",
+    "Ke bandara caranya bagaimana?",
+    "Lurus terus lalu belok kanan.",
+    "Berhenti di sini saja, terima kasih."
+   ]
+  }
+ ],
+ "answers": [
+  "ตรง — ซ้าย — จอด — มิเตอร์ — ถึง — หลงทาง",
+  "รถไฟฟ้า / บีทีเอส — มอเตอร์ไซค์รับจ้าง — ตุ๊กตุ๊ก — เรือ — รถเมล์",
+  "ไปวัดโพธิ์ไหมครับ — กดมิเตอร์ด้วยนะครับ — ห้องน้ำอยู่ที่ไหนคะ — ใช้เวลากี่นาทีครับ — จอดตรงนี้ได้ครับ",
+  "ขอโทษค่ะ สถานีอยู่ที่ไหนคะ — ไกลไหมคะ — เดินไปได้ไหมคะ — ไปสนามบินยังไงคะ — ตรงไปแล้วเลี้ยวขวาค่ะ — จอดตรงนี้ค่ะ ขอบคุณค่ะ"
+ ],
+ "wave": "Ulangi unit 7: tutup bahasa Thainya, lalu sebutkan sepuluh jam berbeda sepanjang hari dengan sistem Thai — dari ตีห้า sampai ห้าทุ่ม."
+}

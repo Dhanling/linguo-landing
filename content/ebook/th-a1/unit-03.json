@@ -1,0 +1,307 @@
+{
+ "title": "Berapa harganya?",
+ "title_target": "เท่าไหร่ครับ — Thâo-rài khráp",
+ "goal": "Menghitung dari nol sampai sejuta, menanyakan harga, menawar dengan sopan, dan mengerti kembalian — termasuk tiga keanehan angka Thai yang membuat orang salah dengar harga.",
+ "bekal": [
+  "menghitung 0-1.000.000 dalam bahasa Thai",
+  "menanyakan harga dengan เท่าไหร่",
+  "menawar dengan ลดหน่อยได้ไหม",
+  "mengatakan mahal, murah, dan \"ambil segini\"",
+  "mengerti dan memeriksa kembalian"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Di pasar Chatuchak, lapak kaus",
+   "intro": "Nok mengajak Budi belanja di akhir pekan. Perhatikan bahwa menawar di Thailand bukan pertengkaran: ia berlangsung sambil tersenyum, dan berhenti begitu satu pihak berkata ไม่ได้.",
+   "lines": [
+    {
+     "speaker": "บูดี:",
+     "text": "[ขอโทษ|Khǎaw-thôot][ครับ|khráp] [เสื้อ|Sûuea][ตัว|tua][นี้|níi][เท่าไหร่|thâo-rài][ครับ|khráp]",
+     "id": "Permisi, baju ini berapa?",
+     "literal": "minta-hukuman — (sopan). baju — (kata bantu) — ini — berapa — (sopan)?"
+    },
+    {
+     "speaker": "แม่ค้า:",
+     "text": "[สาม|Sǎam][ร้อย|ráwy][ห้า|hâa][สิบ|sìp][บาท|bàat][ค่ะ|khâ]",
+     "id": "Tiga ratus lima puluh baht.",
+     "literal": "tiga — ratus — lima — puluh — baht — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[โอ้โห|Ôo-hǒo] [แพง|phaaeng][จัง|jang][ครับ|khráp] [ลด|Lót][หน่อย|nàwy][ได้|dâai][ไหม|mǎi][ครับ|khráp]",
+     "id": "Wah, mahal sekali. Bisa kurang sedikit?",
+     "literal": "wah — mahal — sekali — (sopan). kurangi — sedikit — bisa — kah — (sopan)?"
+    },
+    {
+     "speaker": "แม่ค้า:",
+     "text": "[ลด|Lót][ได้|dâai][ค่ะ|khâ] [สาม|Sǎam][ร้อย|ráwy][ค่ะ|khâ]",
+     "id": "Bisa. Tiga ratus.",
+     "literal": "kurangi — bisa — (sopan). tiga — ratus — (sopan)."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[สอง|Sǎawng][ร้อย|ráwy][ห้า|hâa][สิบ|sìp][ได้|dâai][ไหม|mǎi][คะ|khá] [เอา|Ao][สอง|sǎawng][ตัว|tua][ค่ะ|khâ]",
+     "id": "Dua ratus lima puluh boleh? Ambil dua.",
+     "literal": "dua — ratus — lima — puluh — bisa — kah — (sopan)? ambil — dua — (kata bantu) — (sopan)."
+    },
+    {
+     "speaker": "แม่ค้า:",
+     "text": "[สอง|Sǎawng][ตัว|tua][เหรอ|rǒoe][คะ|khá] [งั้น|Ngán] [ตัว|tua][ละ|lá][สอง|sǎawng][ร้อย|ráwy][แปด|pàaet][สิบ|sìp][ค่ะ|khâ]",
+     "id": "Dua ya? Kalau begitu dua ratus delapan puluh per potong.",
+     "literal": "dua — (kata bantu) — ya — (sopan)? kalau-begitu — (kata bantu) — per — dua — ratus — delapan — puluh — (sopan)."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[สอง|Sǎawng][ร้อย|ráwy][เจ็ด|jèt][สิบ|sìp][นะ|ná][คะ|khá] [เอา|Ao][เลย|loei][ค่ะ|khâ]",
+     "id": "Dua ratus tujuh puluh ya. Kami ambil.",
+     "literal": "dua — ratus — tujuh — puluh — ya — (sopan). ambil — langsung — (sopan)."
+    },
+    {
+     "speaker": "แม่ค้า:",
+     "text": "[ได้|Dâai][ค่ะ|khâ] [ทั้งหมด|Tháng-mòt][ห้า|hâa][ร้อย|ráwy][สี่|sìi][สิบ|sìp][บาท|bàat][ค่ะ|khâ]",
+     "id": "Boleh. Semuanya lima ratus empat puluh baht.",
+     "literal": "bisa — (sopan). semua — lima — ratus — empat — puluh — baht — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[นี่|Nîi][ครับ|khráp] [หก|Hòk][ร้อย|ráwy]",
+     "id": "Ini, enam ratus.",
+     "literal": "ini — (sopan). enam — ratus."
+    },
+    {
+     "speaker": "แม่ค้า:",
+     "text": "[ทอน|Thawn][หก|hòk][สิบ|sìp][บาท|bàat][ค่ะ|khâ] [ขอบคุณ|Khàwp-khun][ค่ะ|khâ]",
+     "id": "Kembali enam puluh baht. Terima kasih.",
+     "literal": "kembalikan — enam — puluh — baht — (sopan). terima-kasih — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ขอบคุณ|Khàwp-khun][ครับ|khráp] [นก|Nók][ต่อ|tàw][เก่ง|kèng][มาก|mâak][ครับ|khráp]",
+     "id": "Terima kasih. Nok jago menawar ya.",
+     "literal": "terima-kasih — (sopan). Nok — menawar — pandai — sangat — (sopan)."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[ธรรมดา|Tham-má-daa][ค่ะ|khâ] [แต่|Tàae][ที่|thîi][ห้าง|hâang][ต่อ|tàw][ไม่|mâi][ได้|dâai][นะ|ná][คะ|khá]",
+     "id": "Biasa saja. Tapi di mal tidak bisa menawar ya.",
+     "literal": "biasa — (sopan). tetapi — di — mal — menawar — tidak — bisa — ya — (sopan)."
+    }
+   ],
+   "notes": [
+    "**เท่าไหร่ thâo-rài menanyakan harga atau jumlah yang tidak dihitung satu per satu.** Letaknya selalu di **ujung** kalimat: *อันนี้เท่าไหร่* (ini berapa), *ทั้งหมดเท่าไหร่* (semuanya berapa). Bandingkan dengan *กี่ kìi* yang menanyakan **berapa banyak benda** dan selalu diikuti kata bantu bilangan: *กี่คน* (berapa orang), *กี่บาท* (berapa baht).",
+    "**บาท bàat adalah mata uang Thailand**, dan ia berlaku sebagai kata bantunya sendiri. Angka langsung ditempel: *ห้าสิบบาท* (lima puluh baht). Dalam percakapan cepat kata *บาท* sering dibuang sama sekali — orang cukup berkata *ห้าสิบ* dan semua paham.",
+    "**ลด lót berarti \"mengurangi\", dan itulah kata kunci menawar.** Kalimat lengkapnya *ลดหน่อยได้ไหม* — \"bisa kurang sedikit?\". Kata *หน่อย nàwy* di tengah adalah pelembut; tanpa dia kalimatnya terdengar seperti perintah.",
+    "**ต่อ tàw berarti \"menawar\".** *ต่อได้ไหม tàw dâai mǎi* = \"boleh ditawar?\". ⚠️ Aturan tak tertulisnya: **di pasar dan lapak kaki lima, menawar itu wajar; di mal, minimarket, dan restoran, sama sekali tidak.** Menawar di tempat yang salah membuat penjualnya bingung, bukan tersinggung.",
+    "**ละ lá berarti \"per\".** *ตัวละสองร้อย* = dua ratus per potong, *คนละร้อย* = seratus per orang, *วันละสองครั้ง* = dua kali sehari. Susunannya: **kata bantu + ละ + harga**.",
+    "**ทอน thawn adalah kembalian.** Penjual akan berkata *ทอนหกสิบบาทค่ะ*. Kalau kamu perlu meminta kembalian: *ขอเงินทอนด้วยครับ khǎaw ngoen-thawn dûai khráp*.",
+    "**เอา ao berarti \"ambil\", dan itulah cara paling umum berkata \"saya mau ini\".** Ia terdengar biasa saja, bukan kasar — tetapi untuk lebih halus pakai *ขอ khǎaw* (minta), yang dibahas di unit 6.",
+    "**งั้น ngán = \"kalau begitu\"**, bentuk pendek dari *ถ้างั้น thâa-ngán*. Sangat sering muncul di tawar-menawar, ketika salah satu pihak menyesuaikan tawaran."
+   ],
+   "grammars": [
+    {
+     "title": "Angka: seluruh sistemnya dalam satu tabel",
+     "body": [
+      "Bahasa Thai menghitung persis seperti bahasa Indonesia — satuan lalu puluhan lalu ratusan — dengan tiga kekecualian yang ditandai di bawah tabel."
+     ],
+     "table": {
+      "head": ["Angka", "Thai", "Baca", "Angka", "Thai", "Baca"],
+      "rows": [
+       ["0", "ศูนย์", "*sǔun*", "11", "สิบเอ็ด", "*sìp-èt*"],
+       ["1", "หนึ่ง", "*nùeng*", "12", "สิบสอง", "*sìp-sǎawng*"],
+       ["2", "สอง", "*sǎawng*", "20", "ยี่สิบ", "*yîi-sìp*"],
+       ["3", "สาม", "*sǎam*", "21", "ยี่สิบเอ็ด", "*yîi-sìp-èt*"],
+       ["4", "สี่", "*sìi*", "30", "สามสิบ", "*sǎam-sìp*"],
+       ["5", "ห้า", "*hâa*", "100", "หนึ่งร้อย", "*nùeng-ráwy*"],
+       ["6", "หก", "*hòk*", "500", "ห้าร้อย", "*hâa-ráwy*"],
+       ["7", "เจ็ด", "*jèt*", "1.000", "หนึ่งพัน", "*nùeng-phan*"],
+       ["8", "แปด", "*pàaet*", "10.000", "หนึ่งหมื่น", "*nùeng-mùuen*"],
+       ["9", "เก้า", "*kâao*", "100.000", "หนึ่งแสน", "*nùeng-sǎaen*"],
+       ["10", "สิบ", "*sìp*", "1.000.000", "หนึ่งล้าน", "*nùeng-láan*"]
+      ]
+     },
+     "after": [
+      "⚠️ **Keanehan 1 — เอ็ด èt menggantikan หนึ่ง di posisi satuan pada bilangan 11 ke atas.** 11 = *สิบเอ็ด*, 21 = *ยี่สิบเอ็ด*, 101 = *ร้อยเอ็ด*. Kata *หนึ่ง* tetap dipakai untuk angka satu yang berdiri sendiri.",
+      "⚠️ **Keanehan 2 — 20 adalah ยี่สิบ *yîi-sìp*, bukan สองสิบ.** Cuma dua puluh yang begini; 30, 40, 50 semuanya normal.",
+      "⚠️ **Keanehan 3 — หมื่น *mùuen* (10.000) dan แสน *sǎaen* (100.000) tidak ada padanannya di bahasa Indonesia.** 50.000 baht adalah *ห้าหมื่นบาท* (lima × sepuluh-ribu), bukan dihitung dari ribuan. Ini penyebab nomor satu orang Indonesia salah mendengar harga sewa dan gaji."
+     ]
+    },
+    {
+     "title": "Kata-kata harga yang selalu berguna",
+     "table": {
+      "head": ["Thai", "Baca", "Artinya"],
+      "rows": [
+       ["เท่าไหร่", "*thâo-rài*", "berapa (harga/jumlah)"],
+       ["แพง", "*phaaeng*", "mahal"],
+       ["ถูก", "*thùuk*", "murah — dan juga \"benar\""],
+       ["แพงไป", "*phaaeng pai*", "terlalu mahal"],
+       ["ลดหน่อยได้ไหม", "*lót nàwy dâai mǎi*", "bisa kurang sedikit?"],
+       ["ต่อได้ไหม", "*tàw dâai mǎi*", "boleh ditawar?"],
+       ["ทั้งหมด", "*tháng-mòt*", "semuanya, totalnya"],
+       ["เงินทอน", "*ngoen-thawn*", "uang kembalian"],
+       ["เงินสด", "*ngoen-sòt*", "uang tunai"],
+       ["จ่ายบัตรได้ไหม", "*jàai bàt dâai mǎi*", "bisa bayar pakai kartu?"],
+       ["สแกนได้ไหม", "*sà-kaen dâai mǎi*", "bisa bayar QR?"],
+       ["ใบเสร็จ", "*bai-sèt*", "struk, kuitansi"]
+      ]
+     },
+     "after": [
+      "⚠️ *ถูก thùuk* punya dua arti yang sama sekali berbeda: **murah** dan **benar**. *ถูกต้อง thùuk-tâwng* selalu berarti \"benar\"; *ถูก* sendirian di konteks belanja hampir selalu berarti \"murah\".",
+      "Pembayaran QR (*พร้อมเพย์ phráawm-phee*) kini dipakai di mana-mana, bahkan oleh pedagang kaki lima. Kalimat *สแกนได้ไหมครับ* sering lebih berguna daripada bertanya soal kartu."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca harga panjang tanpa panik",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Harga bahasa Thai dibaca persis dari kiri ke kanan, seperti bahasa Indonesia. Yang perlu dilatih cuma satu: kecepatannya."
+    },
+    {
+     "type": "tabel",
+     "head": ["Angka", "Thai", "Baca"],
+     "rows": [
+      ["45", "สี่สิบห้า", "*sìi-sìp-hâa*"],
+      ["99", "เก้าสิบเก้า", "*kâao-sìp-kâao*"],
+      ["120", "ร้อยยี่สิบ", "*ráwy-yîi-sìp*"],
+      ["250", "สองร้อยห้าสิบ", "*sǎawng-ráwy-hâa-sìp*"],
+      ["1.500", "พันห้าร้อย", "*phan-hâa-ráwy*"],
+      ["3.900", "สามพันเก้าร้อย", "*sǎam-phan-kâao-ráwy*"],
+      ["12.000", "หมื่นสองพัน", "*mùuen-sǎawng-phan*"],
+      ["35.000", "สามหมื่นห้าพัน", "*sǎam-mùuen-hâa-phan*"],
+      ["250.000", "สองแสนห้าหมื่น", "*sǎawng-sǎaen-hâa-mùuen*"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa *หนึ่ง* di depan *ร้อย, พัน, หมื่น* biasanya **dibuang** dalam percakapan: 120 lebih sering *ร้อยยี่สิบ* daripada *หนึ่งร้อยยี่สิบ*."
+    },
+    {
+     "type": "kotak",
+     "title": "Kalau tidak jelas mendengar harganya",
+     "items": [
+      "**พูดอีกทีได้ไหมครับ/คะ** *phûut ìik thii dâai mǎi* — bisa diulang?",
+      "**เขียนให้หน่อยได้ไหมครับ/คะ** *khǐan hâi nàwy dâai mǎi* — tolong tuliskan. Ini trik paling ampuh di pasar; hampir semua penjual punya kalkulator dan langsung mengetikkan angkanya.",
+      "**พูดช้าๆ ได้ไหมครับ/คะ** *phûut cháa-cháa dâai mǎi* — bisa pelan-pelan?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menawar tanpa membuat orang tidak enak",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tawar-menawar di Thailand punya batas sopan yang tidak tertulis, dan melampauinya tidak membuat orang marah — cuma membuat mereka diam dan menolak dengan senyum, yang justru lebih tidak enak."
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Turunkan sekitar 10-20 persen, bukan setengahnya.** Menawar setengah harga adalah kebiasaan dari negara lain dan di sini terdengar seperti menghina barangnya.",
+      "**Tersenyumlah.** Menawar dengan wajah serius mengubah suasana jadi pertengkaran, dan orang Thai akan menghindari pertengkaran dengan cara berhenti berjualan kepadamu.",
+      "**Membeli lebih dari satu adalah alat tawar terbaik.** *เอาสองตัว ลดได้ไหมคะ* hampir selalu berhasil.",
+      "**Kalau penjual berkata ไม่ได้ *mâi dâai* — berhenti.** Itu bukan pembukaan babak baru; itu jawaban akhir yang disampaikan sesopan mungkin.",
+      "**Jangan menawar kalau tidak berniat membeli.** Ini kesalahan yang paling merusak suasana."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat kalimat tawar-menawar, dari halus ke tegas",
+     "items": [
+      "**ลดหน่อยได้ไหมครับ/คะ** — bisa kurang sedikit? (paling aman)",
+      "**สองร้อยได้ไหมครับ/คะ** — dua ratus boleh? (menyebut angka sendiri)",
+      "**ถ้าเอาสองอัน ลดได้ไหมครับ/คะ** — kalau ambil dua, bisa kurang?",
+      "**แพงไปหน่อยครับ/ค่ะ** — agak kemahalan. Diucapkan sambil tersenyum, ini sering langsung membuat penjual menurunkan harga tanpa diminta."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "th": "เท่าไหร่", "baca": "thâo-rài", "id": "berapa (harga, jumlah)" },
+  { "th": "กี่", "baca": "kìi", "id": "berapa (dengan kata bantu bilangan)" },
+  { "th": "บาท", "baca": "bàat", "id": "baht (mata uang Thailand)" },
+  { "th": "เงิน", "baca": "ngoen", "id": "uang" },
+  { "th": "เงินทอน", "baca": "ngoen-thawn", "id": "kembalian" },
+  { "th": "ทอน", "baca": "thawn", "id": "mengembalikan (uang)" },
+  { "th": "แพง", "baca": "phaaeng", "id": "mahal" },
+  { "th": "ถูก", "baca": "thùuk", "id": "murah; benar" },
+  { "th": "ลด", "baca": "lót", "id": "mengurangi, memberi diskon" },
+  { "th": "ต่อ", "baca": "tàw", "id": "menawar" },
+  { "th": "หน่อย", "baca": "nàwy", "id": "sedikit (pelembut permintaan)" },
+  { "th": "เอา", "baca": "ao", "id": "ambil, mau" },
+  { "th": "ทั้งหมด", "baca": "tháng-mòt", "id": "semuanya, total" },
+  { "th": "ละ", "baca": "lá", "id": "per (satuan)" },
+  { "th": "งั้น", "baca": "ngán", "id": "kalau begitu" },
+  { "th": "เลย", "baca": "loei", "id": "langsung saja; sama sekali" },
+  { "th": "เสื้อ", "baca": "sûuea", "id": "baju" },
+  { "th": "ตัว", "baca": "tua", "id": "kata bantu: baju, binatang, kursi" },
+  { "th": "นี้", "baca": "níi", "id": "ini (menempel pada benda)" },
+  { "th": "นี่", "baca": "nîi", "id": "ini (berdiri sendiri)" },
+  { "th": "ห้าง", "baca": "hâang", "id": "mal, pusat perbelanjaan" },
+  { "th": "ตลาด", "baca": "tà-làat", "id": "pasar" },
+  { "th": "ร้าน", "baca": "ráan", "id": "toko, warung" },
+  { "th": "ธรรมดา", "baca": "tham-má-daa", "id": "biasa saja" },
+  { "th": "โอ้โห", "baca": "ôo-hǒo", "id": "wah! (kagum atau kaget)" },
+  { "th": "บัตร", "baca": "bàt", "id": "kartu" },
+  { "th": "จ่าย", "baca": "jàai", "id": "membayar" },
+  { "th": "ใบเสร็จ", "baca": "bai-sèt", "id": "struk, kuitansi" },
+  { "th": "เขียน", "baca": "khǐan", "id": "menulis" },
+  { "th": "อีกที", "baca": "ìik thii", "id": "sekali lagi" },
+  { "th": "ช้าๆ", "baca": "cháa-cháa", "id": "pelan-pelan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angka berikut dengan huruf Thai (boleh cara bacanya saja).",
+   "items": [
+    "11 = ____",
+    "20 = ____",
+    "45 = ____",
+    "101 = ____",
+    "250 = ____",
+    "30.000 = ____"
+   ]
+  },
+  {
+   "prompt": "Isi kata yang hilang.",
+   "items": [
+    "\"Ini berapa?\" → อันนี้____ครับ",
+    "\"Bisa kurang sedikit?\" → ____หน่อยได้ไหมคะ",
+    "\"Semuanya berapa?\" → ____เท่าไหร่ครับ",
+    "\"Terlalu mahal.\" → ____ไปหน่อยค่ะ",
+    "\"Dua ratus per potong.\" → ตัว____สองร้อย"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ครับ / เท่าไหร่ / นี้ / เสื้อ / ตัว",
+    "คะ / ได้ไหม / ลด / หน่อย",
+    "ค่ะ / สองตัว / เอา",
+    "ครับ / ทั้งหมด / เท่าไหร่",
+    "คะ / ได้ไหม / บัตร / จ่าย"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu perempuan.",
+   "items": [
+    "Permisi, ini berapa?",
+    "Mahal sekali.",
+    "Bisa kurang sedikit?",
+    "Dua ratus lima puluh boleh?",
+    "Saya ambil dua.",
+    "Bisa bayar pakai QR?"
+   ]
+  }
+ ],
+ "answers": [
+  "สิบเอ็ด sìp-èt — ยี่สิบ yîi-sìp — สี่สิบห้า sìi-sìp-hâa — ร้อยเอ็ด ráwy-èt — สองร้อยห้าสิบ sǎawng-ráwy-hâa-sìp — สามหมื่น sǎam-mùuen",
+  "เท่าไหร่ — ลด — ทั้งหมด — แพง — ละ",
+  "เสื้อตัวนี้เท่าไหร่ครับ — ลดหน่อยได้ไหมคะ — เอาสองตัวค่ะ — ทั้งหมดเท่าไหร่ครับ — จ่ายบัตรได้ไหมคะ",
+  "ขอโทษค่ะ อันนี้เท่าไหร่คะ — แพงจังค่ะ — ลดหน่อยได้ไหมคะ — สองร้อยห้าสิบได้ไหมคะ — เอาสองอันค่ะ — สแกนได้ไหมคะ"
+ ],
+ "wave": "Ulangi unit 1: tutup bahasa Thainya, lalu ucapkan seluruh sapaan dan perkenalan dari ingatan — kali ini sambil memperhatikan nada tiap kata, bukan cuma bunyinya."
+}

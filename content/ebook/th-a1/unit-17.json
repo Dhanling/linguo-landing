@@ -1,0 +1,285 @@
+{
+ "title": "Menelepon, mengirim pesan, mengubah janji",
+ "title_target": "โทรหา นัดใหม่ — Thoo hǎa, nát mài",
+ "goal": "Menelepon dan mengangkat telepon, meninggalkan pesan, membuat janji dan mengubahnya — termasuk cara meminta maaf atas keterlambatan yang tidak membuat orang lain merasa dirugikan.",
+ "bekal": [
+  "membuka dan menutup percakapan telepon",
+  "meminta bicara dengan seseorang dan meninggalkan pesan",
+  "membuat janji: hari, jam, tempat",
+  "menunda atau membatalkan dengan sopan",
+  "menulis pesan singkat yang wajar di LINE"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Menelepon kantor, lalu mengubah janji",
+   "intro": "Budi menelepon kantor Nok. Perhatikan bahwa percakapan telepon Thai punya pembuka dan penutup yang hampir baku — menghafal keduanya membuat seluruh sisanya jauh lebih mudah.",
+   "lines": [
+    {
+     "speaker": "พนักงาน:",
+     "text": "[สวัสดี|Sà-wàt-dii][ค่ะ|khâ] [บริษัท|Baw-rí-sàt][ลิงกัว|Ling-kua][ค่ะ|khâ]",
+     "id": "Selamat siang, PT Lingua.",
+     "literal": "sejahtera — (sopan). perusahaan — Lingua — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[สวัสดี|Sà-wàt-dii][ครับ|khráp] [ขอ|Khǎaw][สาย|sǎai][คุณ|khun][นก|Nók][หน่อย|nàwy][ครับ|khráp]",
+     "id": "Selamat siang. Minta sambungkan ke Bu Nok.",
+     "literal": "sejahtera — (sopan). minta — saluran — Bu — Nok — sedikit — (sopan)."
+    },
+    {
+     "speaker": "พนักงาน:",
+     "text": "[รอ|Raw][สักครู่|sàk-khrûu][นะ|ná][คะ|khá] … [ตอนนี้|Tawn-níi][คุณ|khun][นก|Nók][ไม่|mâi][อยู่|yùu][ค่ะ|khâ] [ติด|Tìt][ประชุม|prà-chum][ค่ะ|khâ]",
+     "id": "Tunggu sebentar ya… Bu Nok sedang tidak ada. Lagi rapat.",
+     "literal": "tunggu — sejenak — ya — (sopan) … saat-ini — Bu — Nok — tidak — ada — (sopan). tersangkut — rapat — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ฝาก|Fàak][ข้อความ|khâw-khwaam][ได้|dâai][ไหม|mǎi][ครับ|khráp]",
+     "id": "Boleh titip pesan?",
+     "literal": "titip — pesan — bisa — kah — (sopan)?"
+    },
+    {
+     "speaker": "พนักงาน:",
+     "text": "[ได้|Dâai][ค่ะ|khâ] [ขอ|Khǎaw][ทราบ|sâap][ชื่อ|chûue][ด้วย|dûai][ค่ะ|khâ]",
+     "id": "Boleh. Boleh tahu namanya?",
+     "literal": "bisa — (sopan). minta — mengetahui — nama — juga — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ผม|Phǒm][บูดี|Buu-dii][ครับ|khráp] [ช่วย|Chûai][บอก|bàwk][ว่า|wâa][พรุ่งนี้|phrûng-níi][ผม|phǒm][ไป|pai][ไม่|mâi][ได้|dâai][ครับ|khráp]",
+     "id": "Saya Budi. Tolong sampaikan besok saya tidak bisa datang.",
+     "literal": "saya — Budi — (sopan). tolong — bilang — bahwa — besok — saya — pergi — tidak — bisa — (sopan)."
+    },
+    {
+     "speaker": "พนักงาน:",
+     "text": "[ค่ะ|Khâ] [แล้ว|Láaeo][จะ|jà][นัด|nát][ใหม่|mài][เมื่อไหร่|mûea-rài][คะ|khá]",
+     "id": "Baik. Lalu mau janjian ulang kapan?",
+     "literal": "(sopan). lalu — akan — janji — baru — kapan — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[วัน|Wan][ศุกร์|sùk][บ่าย|bàai][สอง|sǎawng][โมง|moong][ได้|dâai][ไหม|mǎi][ครับ|khráp] [ถ้า|Thâa][ไม่|mâi][สะดวก|sà-dùak][รบกวน|róp-kuan][โทร|thoo][กลับ|klàp][ครับ|khráp]",
+     "id": "Jumat jam dua siang bisa? Kalau tidak leluasa, mohon telepon balik.",
+     "literal": "hari — Jumat — sore — dua — jam — bisa — kah — (sopan)? jika — tidak — leluasa — merepotkan — telepon — kembali — (sopan)."
+    },
+    {
+     "speaker": "พนักงาน:",
+     "text": "[รับทราบ|Ráp-sâap][ค่ะ|khâ] [เดี๋ยว|Dǐao][แจ้ง|jâaeng][ให้|hâi][ค่ะ|khâ]",
+     "id": "Baik, dicatat. Nanti saya sampaikan.",
+     "literal": "terima-tahu — (sopan). sebentar — memberitahukan — untuk — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ขอบคุณ|Khàwp-khun][มาก|mâak][ครับ|khráp] [สวัสดี|Sà-wàt-dii][ครับ|khráp]",
+     "id": "Terima kasih banyak. Selamat siang.",
+     "literal": "terima-kasih — banyak — (sopan). sejahtera — (sopan)."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[ฮัลโหล|Han-lǒo] [พี่|phîi][บูดี|Buu-dii][คะ|khá] [เพิ่ง|Phôeng][เห็น|hěn][ข้อความ|khâw-khwaam][ค่ะ|khâ] [ศุกร์|Sùk][บ่าย|bàai][สอง|sǎawng][ว่าง|wâang][ค่ะ|khâ]",
+     "id": "Halo Phi Budi. Baru lihat pesannya. Jumat jam dua saya kosong.",
+     "literal": "halo — kakak — Budi — (sopan). baru-saja — lihat — pesan — (sopan). Jumat — sore — dua — luang — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ขอโทษ|Khǎaw-thôot][ที่|thîi][เลื่อน|lûuean][นะ|ná][ครับ|khráp] [เจอ|Joee][กัน|kan][ที่|thîi][เดิม|dooem][ครับ|khráp]",
+     "id": "Maaf ya sudah menunda. Ketemu di tempat biasa.",
+     "literal": "maaf — yang — menggeser — ya — (sopan). bertemu — bersama — di — semula — (sopan)."
+    }
+   ],
+   "notes": [
+    "**ขอสาย… หน่อยครับ/ค่ะ adalah kalimat baku untuk \"minta sambungkan ke…\".** Kata *สาย sǎai* di sini berarti \"saluran telepon\" — arti yang berbeda lagi dari *สาย* yang berarti \"terlambat\" (unit 7).",
+    "**ติดประชุม tìt prà-chum berarti \"sedang rapat, tidak bisa diganggu\".** Kata *ติด tìt* (tersangkut) membentuk banyak alasan berhalangan: *ติดธุระ* (ada urusan), *ติดงาน* (sedang kerja), *ติดประชุม*, dan tentu saja *รถติด* (macet) dari unit 7.",
+    "**ฝากข้อความ fàak khâw-khwaam = menitip pesan.** Kata *ฝาก fàak* (menitipkan) sangat berguna: *ฝากบอก…หน่อย* (tolong titip sampaikan…), *ฝากซื้อ…หน่อย* (tolong titip belikan…). Yang terakhir adalah kalimat yang dipakai orang Thai setiap hari kepada rekan yang akan keluar makan.",
+    "**ทราบ sâap adalah bentuk hormat dari รู้ rúu (tahu)**, dan kamu akan mendengarnya di telepon kantor, bandara, dan pengumuman. Kamu tidak perlu memakainya sendiri; cukup mengenalinya. Bentuk *รับทราบ ráp-sâap* berarti \"dicatat, dimengerti\" — jawaban baku di lingkungan kerja.",
+    "**นัด nát berarti \"janji temu\", baik sebagai kata benda maupun kata kerja.** *นัดใหม่* (janjian ulang), *มีนัด* (ada janji), *ผิดนัด phìt nát* (ingkar janji). ⚠️ Jangan tertukar dengan *สัญญา sǎn-yaa* yang berarti janji dalam arti berjanji atau kontrak.",
+    "**เลื่อน lûuean berarti \"menggeser, menunda\".** *ขอเลื่อนนัดได้ไหม* (boleh geser janjinya?). Bentuk yang lebih tegas: *ยกเลิก yók-lôoek* (membatalkan). Di Thailand, menggeser jauh lebih disukai daripada membatalkan — ia menjaga hubungan tetap terbuka.",
+    "**ขอโทษที่… khǎaw-thôot thîi … berarti \"maaf karena…\".** *ขอโทษที่เลื่อน* (maaf sudah menunda), *ขอโทษที่มาสาย* (maaf datang terlambat), *ขอโทษที่โทรมาดึก* (maaf menelepon larut).",
+    "**ที่เดิม thîi dooem = \"tempat yang biasa\".** Kata *เดิม dooem* berarti \"semula, yang dulu\": *ราคาเดิม* (harga semula), *ที่เดิม*, *เวลาเดิม* (waktu yang sama seperti biasa)."
+   ],
+   "grammars": [
+    {
+     "title": "Percakapan telepon: kerangkanya",
+     "table": {
+      "head": ["Tahap", "Thai", "Baca"],
+      "rows": [
+       ["mengangkat", "ฮัลโหล / สวัสดีครับ-ค่ะ", "*han-lǒo / sà-wàt-dii*"],
+       ["memperkenalkan diri", "ผม/ดิฉัน…พูดครับ/ค่ะ", "*phǒm/dì-chǎn … phûut*"],
+       ["meminta orang", "ขอสาย…หน่อยครับ/ค่ะ", "*khǎaw sǎai … nàwy*"],
+       ["menunggu", "รอสักครู่นะครับ/คะ", "*raw sàk-khrûu ná*"],
+       ["orangnya tidak ada", "…ไม่อยู่ครับ/ค่ะ", "*… mâi yùu*"],
+       ["menitip pesan", "ฝากข้อความได้ไหมครับ/คะ", "*fàak khâw-khwaam dâai mǎi*"],
+       ["minta telepon balik", "รบกวนโทรกลับด้วยครับ/ค่ะ", "*róp-kuan thoo klàp dûai*"],
+       ["salah sambung", "โทรผิดครับ/ค่ะ", "*thoo phìt*"],
+       ["suara putus-putus", "สัญญาณไม่ดีครับ/ค่ะ", "*sǎn-yaan mâi dii*"],
+       ["menutup", "ขอบคุณครับ/ค่ะ สวัสดีครับ/ค่ะ", "*khàwp-khun … sà-wàt-dii*"]
+      ]
+     },
+     "after": [
+      "⚠️ **Menutup telepon di Thailand hampir selalu memakai สวัสดีครับ/ค่ะ, bukan \"bye\".** Menutup tanpa itu terasa seperti membanting pintu — bahkan di antara teman dekat, biasanya masih ada *บ๊ายบายค่ะ báai-baai khâ* atau *แล้วเจอกันนะ*."
+     ]
+    },
+    {
+     "title": "Membuat, menggeser, membatalkan janji",
+     "table": {
+      "head": ["Thai", "Baca", "Artinya"],
+      "rows": [
+       ["ว่างวันไหน", "*wâang wan nǎi*", "hari apa luang?"],
+       ["นัดวันศุกร์ได้ไหม", "*nát wan sùk dâai mǎi*", "bisa janjian Jumat?"],
+       ["กี่โมงดี", "*kìi moong dii*", "jam berapa enaknya?"],
+       ["เจอกันที่ไหนดี", "*joee kan thîi nǎi dii*", "ketemu di mana enaknya?"],
+       ["ที่เดิมนะ", "*thîi dooem ná*", "di tempat biasa ya"],
+       ["ขอเลื่อนได้ไหม", "*khǎaw lûuean dâai mǎi*", "boleh digeser?"],
+       ["ขอเลื่อนเป็นวันจันทร์", "*khǎaw lûuean pen wan jan*", "digeser ke Senin ya"],
+       ["ขอยกเลิกนะ", "*khǎaw yók-lôoek ná*", "saya batalkan ya"],
+       ["ขอโทษที่มาสาย", "*khǎaw-thôot thîi maa sǎai*", "maaf datang terlambat"],
+       ["จะสายประมาณสิบนาที", "*jà sǎai prà-maan sìp naa-thii*", "akan telat sekitar sepuluh menit"],
+       ["ถึงแล้วบอกด้วยนะ", "*thǔeng láaeo bàwk dûai ná*", "kalau sudah sampai kabari ya"]
+      ]
+     },
+     "after": [
+      "**Kalimat *จะสายประมาณสิบนาที* adalah hal yang paling dihargai** ketika kamu terlambat. Mengabari lebih dulu jauh lebih penting daripada meminta maaf setelah tiba — dan itu berlaku di kantor mana pun."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "LINE: cara orang Thai benar-benar berkirim pesan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Di Thailand, pesan sehari-hari hampir seluruhnya lewat **LINE**, bukan WhatsApp atau SMS. Bertukar kontak berarti bertukar LINE, dan pertanyaannya berbunyi: *ขอไลน์ได้ไหมครับ/คะ khǎaw lai dâai mǎi* — boleh minta LINE-nya?"
+    },
+    {
+     "type": "tabel",
+     "head": ["Thai", "Baca", "Artinya"],
+     "rows": [
+      ["ขอไลน์ได้ไหม", "*khǎaw lai dâai mǎi*", "boleh minta LINE?"],
+      ["แอดไลน์มานะ", "*àaet lai maa ná*", "add LINE saya ya"],
+      ["ทักมาได้เลย", "*thák maa dâai loei*", "chat saja langsung"],
+      ["ส่งมาให้หน่อย", "*sòng maa hâi nàwy*", "tolong kirimkan"],
+      ["อ่านแล้วนะ", "*àan láaeo ná*", "sudah kubaca ya"],
+      ["เดี๋ยวตอบนะ", "*dǐao tàwp ná*", "nanti kubalas ya"],
+      ["โอเคค่ะ / ได้ครับ", "*oo-khee / dâai*", "oke"],
+      ["555", "*hâa-hâa-hâa*", "hahaha"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kenapa 555 berarti tertawa",
+     "items": [
+      "Angka **5** dalam bahasa Thai dibaca *ห้า hâa*. Jadi **555** dibaca *hâa-hâa-hâa* — dan itulah cara orang Thai menulis tawa, persis seperti kita menulis \"wkwk\".",
+      "Semakin panjang deretnya, semakin geli: *5555555*. Kalau kamu menerima pesan berisi angka lima berderet, kamu sedang membuat orang tertawa, bukan menerima nomor.",
+      "Ejaan santai lain yang akan kamu lihat: *ค่า* dan *คับ* (bentuk manja dari *ค่ะ* dan *ครับ*), *จ้า jâa* (ya, dengan hangat), dan *นะคะ/นะครับ* yang ditulis penuh sebagai tanda kesopanan tambahan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sopan santun telepon dan pesan",
+   "blocks": [
+    {
+     "type": "list",
+     "items": [
+      "**Jangan menelepon tanpa pemberitahuan untuk hal yang bisa ditulis.** Di Thailand, panggilan telepon mendadak dianggap agak mendesak; pesan LINE lebih disukai untuk urusan biasa.",
+      "**Kalau harus menelepon di luar jam kerja**, buka dengan *ขอโทษที่โทรมาดึกนะครับ/คะ* (maaf menelepon larut) — kalimat pembuka itu menyelesaikan seluruh urusan kesopanan sekaligus.",
+      "**Balas pesan walau belum bisa menjawab.** *รับทราบครับ/ค่ะ* (dicatat) atau *เดี๋ยวตอบนะครับ/คะ* (nanti kubalas) sudah cukup — diam terlalu lama dianggap kurang enak.",
+      "**Kalau kamu yang salah**, jangan menjelaskan panjang. *ขอโทษครับ/ค่ะ* diikuti perbaikan yang jelas jauh lebih dihargai daripada alasan yang terperinci."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Meminta tolong lewat pesan",
+     "items": [
+      "**ฝากซื้อ…หน่อยได้ไหมครับ/คะ** — tolong titip belikan …",
+      "**ช่วยส่งไฟล์ให้หน่อยได้ไหมครับ/คะ** *chûai sòng fai hâi nàwy dâai mǎi* — bisa tolong kirimkan berkasnya?",
+      "**รบกวนด้วยนะครับ/คะ** — maaf merepotkan ya. Ditambahkan di ujung permintaan apa pun, kalimat ini membuat seluruh pesan terdengar jauh lebih halus."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "th": "โทร", "baca": "thoo", "id": "menelepon" },
+  { "th": "โทรกลับ", "baca": "thoo klàp", "id": "menelepon balik" },
+  { "th": "สาย", "baca": "sǎai", "id": "saluran telepon" },
+  { "th": "ฮัลโหล", "baca": "han-lǒo", "id": "halo (telepon)" },
+  { "th": "สักครู่", "baca": "sàk-khrûu", "id": "sebentar" },
+  { "th": "ฝาก", "baca": "fàak", "id": "menitipkan" },
+  { "th": "ข้อความ", "baca": "khâw-khwaam", "id": "pesan" },
+  { "th": "ทราบ", "baca": "sâap", "id": "tahu (hormat)" },
+  { "th": "รับทราบ", "baca": "ráp-sâap", "id": "dicatat, dimengerti" },
+  { "th": "แจ้ง", "baca": "jâaeng", "id": "memberitahukan" },
+  { "th": "นัด", "baca": "nát", "id": "janji temu" },
+  { "th": "เลื่อน", "baca": "lûuean", "id": "menggeser, menunda" },
+  { "th": "ยกเลิก", "baca": "yók-lôoek", "id": "membatalkan" },
+  { "th": "ติด", "baca": "tìt", "id": "tersangkut, berhalangan" },
+  { "th": "เดิม", "baca": "dooem", "id": "semula, yang biasa" },
+  { "th": "บริษัท", "baca": "baw-rí-sàt", "id": "perusahaan" },
+  { "th": "ผิด", "baca": "phìt", "id": "salah" },
+  { "th": "สัญญาณ", "baca": "sǎn-yaan", "id": "sinyal" },
+  { "th": "ตอบ", "baca": "tàwp", "id": "menjawab, membalas" },
+  { "th": "ทัก", "baca": "thák", "id": "menyapa, menghubungi duluan" },
+  { "th": "ส่ง", "baca": "sòng", "id": "mengirim" },
+  { "th": "ไลน์", "baca": "lai", "id": "LINE (aplikasi pesan)" },
+  { "th": "เบอร์", "baca": "booe", "id": "nomor (telepon)" },
+  { "th": "ว่าง", "baca": "wâang", "id": "luang, kosong" },
+  { "th": "โอเค", "baca": "oo-khee", "id": "oke" },
+  { "th": "ไฟล์", "baca": "fai", "id": "berkas, file" },
+  { "th": "ประชุม", "baca": "prà-chum", "id": "rapat" },
+  { "th": "อีเมล", "baca": "ii-meeo", "id": "surel" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi bagian yang kosong.",
+   "items": [
+    "\"Minta sambungkan ke Bu Nok\" → ขอ____คุณนกหน่อยครับ",
+    "\"Tunggu sebentar ya\" → รอ____นะคะ",
+    "\"Boleh titip pesan?\" → ____ข้อความได้ไหมครับ",
+    "\"Mohon telepon balik\" → รบกวน____ด้วยครับ",
+    "\"Boleh digeser?\" → ขอ____ได้ไหมคะ",
+    "\"Maaf datang terlambat\" → ขอโทษที่____ครับ"
+   ]
+  },
+  {
+   "prompt": "Cocokkan alasan berhalangan dengan artinya: tulis kata Thainya.",
+   "items": [
+    "sedang rapat = ____",
+    "ada urusan = ____",
+    "macet = ____",
+    "belum bisa datang = ไป____",
+    "salah sambung = ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ครับ / หน่อย / ขอสาย / คุณนก",
+    "คะ / ไม่อยู่ / ตอนนี้ / คุณนก",
+    "ครับ / ได้ไหม / ฝากข้อความ",
+    "คะ / เมื่อไหร่ / จะนัดใหม่",
+    "ครับ / นะ / ที่เลื่อน / ขอโทษ"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu perempuan.",
+   "items": [
+    "Halo, minta sambungkan ke Pak Budi.",
+    "Tunggu sebentar ya.",
+    "Beliau sedang rapat.",
+    "Boleh titip pesan?",
+    "Besok saya tidak bisa datang.",
+    "Jumat jam dua siang bisa?"
+   ]
+  }
+ ],
+ "answers": [
+  "สาย — สักครู่ — ฝาก — โทรกลับ — เลื่อน — มาสาย",
+  "ติดประชุม — ติดธุระ — รถติด — ไม่ได้ — โทรผิด",
+  "ขอสายคุณนกหน่อยครับ — ตอนนี้คุณนกไม่อยู่ค่ะ — ฝากข้อความได้ไหมครับ — จะนัดใหม่เมื่อไหร่คะ — ขอโทษที่เลื่อนนะครับ",
+  "ฮัลโหล ขอสายคุณบูดีหน่อยค่ะ — รอสักครู่นะคะ — ตอนนี้ติดประชุมค่ะ — ฝากข้อความได้ไหมคะ — พรุ่งนี้ฉันไปไม่ได้ค่ะ — วันศุกร์บ่ายสองโมงได้ไหมคะ"
+ ],
+ "wave": "Ulangi unit 15: tutup bahasa Thainya, lalu ajaklah seseorang menonton konser — dan tolaklah ajakan yang sama dengan halus."
+}

@@ -1,0 +1,305 @@
+{
+ "title": "Warna, ukuran, dan mencoba baju",
+ "title_target": "สีอะไร ไซส์ไหน — Sǐi à-rai, sái nǎi",
+ "goal": "Menyebut warna dan ukuran, meminta mencoba baju, mengatakan kekecilan atau kebesaran, dan menukar barang — sekaligus memakai susunan kata sifat yang berdiri di belakang kata bendanya.",
+ "bekal": [
+  "menyebut dua belas warna",
+  "menanyakan ukuran dan meminta ukuran lain",
+  "meminta izin mencoba dengan ลอง…ได้ไหม",
+  "mengatakan kebesaran, kekecilan, kesempitan",
+  "menukar barang dan menanyakan bahan"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Di toko baju, lantai dua",
+   "intro": "Budi mencari kemeja untuk rapat. Perhatikan urutan kata sifat: warna dan ukuran selalu berdiri **di belakang** benda yang mereka jelaskan, kebalikan dari bahasa Inggris.",
+   "lines": [
+    {
+     "speaker": "พนักงาน:",
+     "text": "[หา|Hǎa][อะไร|à-rai][อยู่|yùu][คะ|khá]",
+     "id": "Lagi cari apa?",
+     "literal": "cari — apa — (berlangsung) — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[หา|Hǎa][เสื้อเชิ้ต|sûuea-chóoet][ครับ|khráp] [มี|Mii][สี|sǐi][ขาว|khǎao][ไหม|mǎi][ครับ|khráp]",
+     "id": "Cari kemeja. Ada yang putih?",
+     "literal": "cari — baju-kemeja — (sopan). ada — warna — putih — kah — (sopan)?"
+    },
+    {
+     "speaker": "พนักงาน:",
+     "text": "[มี|Mii][ค่ะ|khâ] [ใส่|Sài][ไซส์|sái][อะไร|à-rai][คะ|khá]",
+     "id": "Ada. Pakai ukuran apa?",
+     "literal": "ada — (sopan). pakai — ukuran — apa — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ไม่|Mâi][แน่ใจ|nâae-jai][ครับ|khráp] [ที่|Thîi][อินโดนีเซีย|In-doo-nii-sia][ใส่|sài][แอล|aae-o][ครับ|khráp]",
+     "id": "Tidak yakin. Di Indonesia saya pakai L.",
+     "literal": "tidak — yakin — (sopan). di — Indonesia — pakai — L — (sopan)."
+    },
+    {
+     "speaker": "พนักงาน:",
+     "text": "[ที่|Thîi][ไทย|thai][ไซส์|sái][เล็ก|lék][กว่า|kwàa][ค่ะ|khâ] [ลอง|Laawng][เอ็กซ์แอล|ék-aae-o][ดู|duu][ไหม|mǎi][คะ|khá]",
+     "id": "Ukuran di Thailand lebih kecil. Coba XL?",
+     "literal": "di — Thai — ukuran — kecil — lebih — (sopan). coba — XL — lihat — kah — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ลอง|Laawng][ได้|dâai][ไหม|mǎi][ครับ|khráp] [ห้องลอง|Hâwng-laawng][อยู่|yùu][ไหน|nǎi][ครับ|khráp]",
+     "id": "Boleh coba? Kamar pasnya di mana?",
+     "literal": "coba — bisa — kah — (sopan)? kamar-coba — berada — mana — (sopan)?"
+    },
+    {
+     "speaker": "พนักงาน:",
+     "text": "[ตรงนั้น|Trong-nán][ค่ะ|khâ] [ข้างๆ|Khâang-khâang][กระจก|krà-jòk][ค่ะ|khâ]",
+     "id": "Di sana. Di sebelah cermin.",
+     "literal": "tepat-situ — (sopan). sebelah — kaca — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ตัว|Tua][นี้|níi][แขน|khǎaen][ยาว|yaao][ไป|pai][หน่อย|nàwy][ครับ|khráp] [มี|Mii][แขนสั้น|khǎaen-sân][ไหม|mǎi][ครับ|khráp]",
+     "id": "Yang ini lengannya agak kepanjangan. Ada yang lengan pendek?",
+     "literal": "(kata bantu) — ini — lengan — panjang — terlalu — sedikit — (sopan). ada — lengan-pendek — kah — (sopan)?"
+    },
+    {
+     "speaker": "พนักงาน:",
+     "text": "[มี|Mii][ค่ะ|khâ] [แต่|Tàae][สี|sǐi][ขาว|khǎao][หมด|mòt][ค่ะ|khâ] [มี|Mii][สี|sǐi][ฟ้า|fáa][กับ|kàp][สี|sǐi][เทา|thao][ค่ะ|khâ]",
+     "id": "Ada. Tapi yang putih habis. Adanya biru muda dan abu-abu.",
+     "literal": "ada — (sopan). tetapi — warna — putih — habis — (sopan). ada — warna — biru-langit — dengan — warna — abu — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ขอ|Khǎaw][สี|sǐi][ฟ้า|fáa][ครับ|khráp] [ผ้า|Phâa][อะไร|à-rai][ครับ|khráp] [ร้อน|Ráwn][ไหม|mǎi][ครับ|khráp]",
+     "id": "Minta yang biru muda. Bahannya apa? Panas tidak?",
+     "literal": "minta — warna — biru-langit — (sopan). kain — apa — (sopan)? panas — kah — (sopan)?"
+    },
+    {
+     "speaker": "พนักงาน:",
+     "text": "[ผ้า|Phâa][ฝ้าย|fâai][ค่ะ|khâ] [ใส่|Sài][สบาย|sà-baai][ค่ะ|khâ] [ซัก|Sák][ได้|dâai][ปกติ|pà-kà-tì][ค่ะ|khâ]",
+     "id": "Katun. Nyaman dipakai. Bisa dicuci biasa.",
+     "literal": "kain — kapas — (sopan). pakai — nyaman — (sopan). cuci — bisa — biasa — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[เอา|Ao][ตัว|tua][นี้|níi][ครับ|khráp] [ถ้า|Thâa][ไม่|mâi][พอดี|phaw-dii][เปลี่ยน|plìan][ได้|dâai][ไหม|mǎi][ครับ|khráp]",
+     "id": "Ambil yang ini. Kalau tidak pas, bisa ditukar?",
+     "literal": "ambil — (kata bantu) — ini — (sopan). jika — tidak — pas — tukar — bisa — kah — (sopan)?"
+    },
+    {
+     "speaker": "พนักงาน:",
+     "text": "[ได้|Dâai][ค่ะ|khâ] [ภายใน|Phaai-nai][เจ็ด|jèt][วัน|wan][ค่ะ|khâ] [เก็บ|Kèp][ใบเสร็จ|bai-sèt][ไว้|wái][นะ|ná][คะ|khá]",
+     "id": "Bisa. Dalam tujuh hari. Simpan struknya ya.",
+     "literal": "bisa — (sopan). dalam — tujuh — hari — (sopan). simpan — struk — taruh — ya — (sopan)."
+    }
+   ],
+   "notes": [
+    "**สี sǐi berarti \"warna\", dan ia berdiri di DEPAN nama warnanya**: *สีขาว* (warna putih), *สีแดง* (merah). Ketika menempel ke benda, seluruh gugusnya pindah ke belakang: *เสื้อสีขาว* (baju putih). ⚠️ Susunan ini kebalikan dari bahasa Inggris — dan sama persis dengan bahasa Indonesia.",
+    "**Kata sifat bahasa Thai selalu berdiri SESUDAH kata bendanya**, seperti bahasa Indonesia: *เสื้อใหญ่* (baju besar), *ห้องเล็ก* (kamar kecil). Ini salah satu alasan kalimat Thai terasa begitu akrab bagi kita dan begitu asing bagi penutur Inggris.",
+    "**…ไป pai di belakang kata sifat berarti \"terlalu\".** *ใหญ่ไป* (kebesaran), *แพงไป* (kemahalan), *ยาวไป* (kepanjangan). Menambahkan *หน่อย nàwy* di ujung melunakkannya jadi \"agak terlalu\": *ยาวไปหน่อย* (agak kepanjangan) — dan bentuk inilah yang paling sopan ketika menolak barang di toko.",
+    "**ลอง laawng berarti \"mencoba\", dan sering diikuti ดู duu (lihat).** *ลองดู* = coba dulu. *ลองใส่ดู* = coba pakai. Susunan *kata kerja + ดู* berarti \"coba …dulu\" untuk banyak kata kerja: *ชิมดู chim duu* (coba cicipi), *ถามดู thǎam duu* (coba tanya).",
+    "**พอดี phaw-dii berarti \"pas\" — dan itu kata yang sangat sering dipakai di luar urusan baju juga.** *พอดีเลย* = kebetulan sekali, pas sekali. Kata *พอ phaw* sendiri berarti cukup.",
+    "**หมด mòt berarti \"habis\".** *สีขาวหมด* (yang putih habis), *เงินหมด* (uangnya habis), *หมดแล้ว* (sudah habis). Ia juga membentuk *ทั้งหมด tháng-mòt* (semuanya) yang sudah kamu pakai sejak unit 3.",
+    "**ไซส์ sái adalah serapan dari bahasa Inggris *size*.** Ukuran huruf dipakai apa adanya: *เอส S, เอ็ม M, แอล L, เอ็กซ์แอล XL*. ⚠️ Perhatikan peringatan si pelayan — ukuran Thailand memang **satu tingkat lebih kecil** daripada ukuran Indonesia untuk merek yang sama.",
+    "**ถ้า thâa berarti \"jika\", dan letaknya di awal anak kalimat.** *ถ้าไม่พอดี เปลี่ยนได้ไหม* (kalau tidak pas, bisa ditukar?). Susunan ini akan kamu pakai terus-menerus mulai sekarang."
+   ],
+   "grammars": [
+    {
+     "title": "Dua belas warna",
+     "table": {
+      "head": ["Thai", "Baca", "Warna", "Thai", "Baca", "Warna"],
+      "rows": [
+       ["สีขาว", "*sǐi khǎao*", "putih", "สีเขียว", "*sǐi khǐao*", "hijau"],
+       ["สีดำ", "*sǐi dam*", "hitam", "สีฟ้า", "*sǐi fáa*", "biru langit"],
+       ["สีแดง", "*sǐi daaeng*", "merah", "สีน้ำเงิน", "*sǐi náam-ngoen*", "biru tua"],
+       ["สีเหลือง", "*sǐi lǔueang*", "kuning", "สีม่วง", "*sǐi mûang*", "ungu"],
+       ["สีส้ม", "*sǐi sôm*", "oranye", "สีชมพู", "*sǐi chom-phuu*", "merah muda"],
+       ["สีน้ำตาล", "*sǐi náam-taan*", "cokelat", "สีเทา", "*sǐi thao*", "abu-abu"]
+      ]
+     },
+     "after": [
+      "Beberapa nama warna Thai adalah gambaran benda, persis seperti \"cokelat\" kita: *สีส้ม* dari buah jeruk (*ส้ม*), *สีน้ำตาล* dari air gula aren (*น้ำตาล*), *สีฟ้า* dari langit (*ฟ้า*), *สีชมพู* dari nama buah jambu air.",
+      "⚠️ **สีฟ้า dan สีน้ำเงิน keduanya \"biru\" tetapi tidak boleh ditukar**: yang pertama biru muda seperti langit, yang kedua biru tua. Bahasa Thai memperlakukan keduanya sebagai warna yang benar-benar berbeda, bukan tingkatan dari warna yang sama."
+     ]
+    },
+    {
+     "title": "Belanja pakaian: kalimat yang cukup",
+     "table": {
+      "head": ["Thai", "Baca", "Artinya"],
+      "rows": [
+       ["มีสีอื่นไหม", "*mii sǐi ùuen mǎi*", "ada warna lain?"],
+       ["มีไซส์ใหญ่กว่านี้ไหม", "*mii sái yài kwàa níi mǎi*", "ada ukuran lebih besar?"],
+       ["ลองได้ไหม", "*laawng dâai mǎi*", "boleh dicoba?"],
+       ["ห้องลองอยู่ไหน", "*hâwng-laawng yùu nǎi*", "kamar pas di mana?"],
+       ["ใหญ่ไปหน่อย", "*yài pai nàwy*", "agak kebesaran"],
+       ["เล็กไปหน่อย", "*lék pai nàwy*", "agak kekecilan"],
+       ["พอดีเลย", "*phaw-dii loei*", "pas sekali"],
+       ["ผ้าอะไร", "*phâa à-rai*", "bahannya apa?"],
+       ["ซักเครื่องได้ไหม", "*sák khrûeang dâai mǎi*", "bisa dicuci mesin?"],
+       ["เปลี่ยนได้ไหม", "*plìan dâai mǎi*", "bisa ditukar?"],
+       ["คืนได้ไหม", "*khuuen dâai mǎi*", "bisa dikembalikan?"],
+       ["ลดราคาไหม", "*lót raa-khaa mǎi*", "ada diskon?"]
+      ]
+     },
+     "after": [
+      "⚠️ **เปลี่ยน *plìan* (menukar dengan barang lain) berbeda dari คืน *khuuen* (mengembalikan dan minta uang).** Di Thailand yang pertama umum diterima; yang kedua jarang, dan di pasar hampir tidak pernah. Tanyakan sebelum membayar, bukan sesudah."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pakaian dan barang bawaan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Thai", "Baca", "Indonesia", "Kata bantu"],
+     "rows": [
+      ["เสื้อ", "*sûuea*", "baju atasan", "ตัว"],
+      ["เสื้อเชิ้ต", "*sûuea-chóoet*", "kemeja", "ตัว"],
+      ["เสื้อยืด", "*sûuea-yûuet*", "kaus", "ตัว"],
+      ["กางเกง", "*kaang-keeng*", "celana", "ตัว"],
+      ["กระโปรง", "*krà-proong*", "rok", "ตัว"],
+      ["ชุด", "*chút*", "setelan, gaun", "ชุด"],
+      ["รองเท้า", "*rawng-tháo*", "sepatu", "คู่"],
+      ["ถุงเท้า", "*thǔng-tháo*", "kaus kaki", "คู่"],
+      ["หมวก", "*mùak*", "topi", "ใบ"],
+      ["เข็มขัด", "*khěm-khàt*", "ikat pinggang", "เส้น"],
+      ["ผ้าคลุมผม", "*phâa-khlum-phǒm*", "kerudung", "ผืน"],
+      ["นาฬิกา", "*naa-lí-kaa*", "jam tangan", "เรือน"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan **คู่ khûu** untuk barang berpasangan (sepatu, kaus kaki) — kata yang sama juga berarti \"pasangan\" dalam arti kekasih. Dan **ผ้า phâa** (kain) membentuk banyak kata: *ผ้าเช็ดตัว phâa-chét-tua* (handuk), *ผ้าปูที่นอน* (seprai), *ผ้าห่ม phâa-hòm* (selimut)."
+    },
+    {
+     "type": "kotak",
+     "title": "Berpakaian di Thailand: tiga hal praktis",
+     "items": [
+      "**Kuil menuntut bahu dan lutut tertutup** — untuk laki-laki maupun perempuan. Beberapa kuil besar menyewakan kain, tetapi antreannya panjang. Membawa kemeja lengan panjang tipis di tas menyelesaikan ini sekali untuk seterusnya.",
+      "**Kantor Thailand umumnya lebih rapi daripada perkiraan pendatang** — kemeja berkerah adalah standar, dan hari Senin banyak orang memakai kuning (warna hari Senin, lihat unit 8).",
+      "**AC di dalam ruangan sangat dingin** meskipun di luar 35 derajat. Bioskop, bus antarkota, dan gedung perkantoran hampir selalu membuat orang kedinginan. Kata yang akan sering kamu ucapkan: *หนาว nǎao* (dingin)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata sifat yang berpasangan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Thai", "Baca", "Indonesia", "Lawannya"],
+     "rows": [
+      ["ยาว", "*yaao*", "panjang", "สั้น *sân* — pendek"],
+      ["หนา", "*nǎa*", "tebal", "บาง *baang* — tipis"],
+      ["หนัก", "*nàk*", "berat", "เบา *bao* — ringan"],
+      ["แน่น", "*nâaen*", "ketat", "หลวม *lǔam* — longgar"],
+      ["สวย", "*sǔai*", "cantik, indah", "น่าเกลียด *nâa-klìat* — jelek"],
+      ["เท่", "*thêe*", "keren", "เชย *chooei* — norak"],
+      ["นุ่ม", "*nûm*", "lembut", "แข็ง *khǎeng* — keras"],
+      ["ใหม่", "*mài*", "baru", "เก่า *kào* — lama"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Memuji dengan benar",
+     "items": [
+      "**สวยจัง *sǔai jang*** — cantik sekali. Dipakai untuk barang maupun orang; untuk orang, biasanya kepada perempuan.",
+      "**เท่จัง *thêe jang*** — keren sekali. Lebih cocok untuk laki-laki dan untuk benda seperti jam tangan atau motor.",
+      "**น่ารัก *nâa-rák*** — menggemaskan. Kata ini dipakai sangat luas di Thailand — untuk anak kecil, hewan, barang, bahkan orang dewasa — dan hampir selalu diterima sebagai pujian yang hangat.",
+      "⚠️ Pola **น่า- *nâa-*** membentuk banyak kata sifat: *น่ากิน* (menggugah selera), *น่าสนใจ* (menarik), *น่าเบื่อ* (membosankan), *น่ากลัว* (menakutkan). Harfiahnya \"pantas untuk di-…\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "th": "สี", "baca": "sǐi", "id": "warna" },
+  { "th": "ขาว", "baca": "khǎao", "id": "putih" },
+  { "th": "ดำ", "baca": "dam", "id": "hitam" },
+  { "th": "แดง", "baca": "daaeng", "id": "merah" },
+  { "th": "เหลือง", "baca": "lǔueang", "id": "kuning" },
+  { "th": "เขียว", "baca": "khǐao", "id": "hijau" },
+  { "th": "ฟ้า", "baca": "fáa", "id": "biru langit; langit" },
+  { "th": "น้ำเงิน", "baca": "náam-ngoen", "id": "biru tua" },
+  { "th": "ชมพู", "baca": "chom-phuu", "id": "merah muda" },
+  { "th": "เทา", "baca": "thao", "id": "abu-abu" },
+  { "th": "ไซส์", "baca": "sái", "id": "ukuran" },
+  { "th": "ลอง", "baca": "laawng", "id": "mencoba" },
+  { "th": "ห้องลอง", "baca": "hâwng-laawng", "id": "kamar pas" },
+  { "th": "พอดี", "baca": "phaw-dii", "id": "pas; kebetulan" },
+  { "th": "หมด", "baca": "mòt", "id": "habis" },
+  { "th": "เปลี่ยน", "baca": "plìan", "id": "menukar, mengganti" },
+  { "th": "คืน", "baca": "khuuen", "id": "mengembalikan; malam" },
+  { "th": "ผ้า", "baca": "phâa", "id": "kain" },
+  { "th": "ฝ้าย", "baca": "fâai", "id": "kapas, katun" },
+  { "th": "ซัก", "baca": "sák", "id": "mencuci (pakaian)" },
+  { "th": "เก็บ", "baca": "kèp", "id": "menyimpan" },
+  { "th": "ภายใน", "baca": "phaai-nai", "id": "dalam (jangka waktu)" },
+  { "th": "ถ้า", "baca": "thâa", "id": "jika, kalau" },
+  { "th": "อื่น", "baca": "ùuen", "id": "lain" },
+  { "th": "ราคา", "baca": "raa-khaa", "id": "harga" },
+  { "th": "เสื้อเชิ้ต", "baca": "sûuea-chóoet", "id": "kemeja" },
+  { "th": "กางเกง", "baca": "kaang-keeng", "id": "celana" },
+  { "th": "แขน", "baca": "khǎaen", "id": "lengan" },
+  { "th": "ยาว", "baca": "yaao", "id": "panjang" },
+  { "th": "สั้น", "baca": "sân", "id": "pendek" },
+  { "th": "กระจก", "baca": "krà-jòk", "id": "cermin, kaca" },
+  { "th": "สวย", "baca": "sǔai", "id": "cantik, indah" },
+  { "th": "น่ารัก", "baca": "nâa-rák", "id": "menggemaskan, manis" },
+  { "th": "สบาย", "baca": "sà-baai", "id": "nyaman, enak" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis warnanya dalam bahasa Thai.",
+   "items": [
+    "putih = ____",
+    "hitam = ____",
+    "merah = ____",
+    "biru langit = ____",
+    "abu-abu = ____",
+    "merah muda = ____"
+   ]
+  },
+  {
+   "prompt": "Isi bagian yang kosong.",
+   "items": [
+    "\"Boleh dicoba?\" → ____ได้ไหมครับ",
+    "\"Agak kebesaran\" → ใหญ่____หน่อยค่ะ",
+    "\"Pas sekali\" → ____เลยครับ",
+    "\"Yang putih habis\" → สีขาว____ค่ะ",
+    "\"Bisa ditukar?\" → ____ได้ไหมครับ"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ครับ / มี / ไหม / สีขาว",
+    "คะ / อยู่ไหน / ห้องลอง",
+    "ครับ / หน่อย / แขนยาว / ไป / ตัวนี้",
+    "คะ / กว่านี้ / มีไซส์ / ไหม / ใหญ่",
+    "ครับ / ได้ไหม / ถ้าไม่พอดี / เปลี่ยน"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu perempuan.",
+   "items": [
+    "Ada warna lain tidak?",
+    "Boleh dicoba?",
+    "Kamar pasnya di mana?",
+    "Agak kekecilan.",
+    "Ada ukuran yang lebih besar?",
+    "Kalau tidak pas, bisa ditukar?"
+   ]
+  }
+ ],
+ "answers": [
+  "สีขาว — สีดำ — สีแดง — สีฟ้า — สีเทา — สีชมพู",
+  "ลอง — ไป — พอดี — หมด — เปลี่ยน",
+  "มีสีขาวไหมครับ — ห้องลองอยู่ไหนคะ — ตัวนี้แขนยาวไปหน่อยครับ — มีไซส์ใหญ่กว่านี้ไหมคะ — ถ้าไม่พอดีเปลี่ยนได้ไหมครับ",
+  "มีสีอื่นไหมคะ — ลองได้ไหมคะ — ห้องลองอยู่ไหนคะ — เล็กไปหน่อยค่ะ — มีไซส์ใหญ่กว่านี้ไหมคะ — ถ้าไม่พอดีเปลี่ยนได้ไหมคะ"
+ ],
+ "wave": "Ulangi unit 12: tutup bahasa Thainya, lalu mintalah lima izin berbeda dengan …ได้ไหม, dan tolaklah dua permintaan dengan halus."
+}

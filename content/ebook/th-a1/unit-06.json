@@ -1,0 +1,633 @@
+{
+ "title": "Memesan makanan tanpa salah paham",
+ "title_target": "สั่งอาหาร — Sàng aa-hǎan",
+ "goal": "Memesan di warung maupun restoran, mengatur tingkat pedas, meminta sesuatu tidak dimasukkan, dan meminta bon — termasuk kalimat-kalimat yang khusus diperlukan pembaca muslim.",
+ "bekal": [
+  "memesan dengan ขอ dan เอา beserta kata bantunya",
+  "mengatur pedas: เผ็ดน้อย, ไม่เผ็ด, เผ็ดมาก",
+  "meminta sesuatu tidak dimasukkan dengan ไม่ใส่",
+  "menyebut sepuluh masakan Thai yang paling sering ada",
+  "meminta bon dan mengatakan sudah kenyang"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Di ร้านอาหาร dekat kantor, jam makan siang",
+   "intro": "Budi dan Nok makan siang. Perhatikan bagaimana satu kata kecil — ใส่ (memasukkan) — menyelamatkan seluruh urusan makanan bagi orang yang punya pantangan.",
+   "lines": [
+    {
+     "speaker": "พนักงาน:",
+     "text": "[กี่|Kìi][ท่าน|thâan][คะ|khá]",
+     "id": "Berapa orang?",
+     "literal": "berapa — orang(hormat) — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[สอง|Sǎawng][คน|khon][ค่ะ|khâ] [ขอ|Khǎaw][เมนู|mee-nuu][หน่อย|nàwy][ค่ะ|khâ]",
+     "id": "Dua orang. Minta menunya ya.",
+     "literal": "dua — orang — (sopan). minta — menu — sedikit — (sopan)."
+    },
+    {
+     "speaker": "พนักงาน:",
+     "text": "[ได้|Dâai][ค่ะ|khâ] [รับ|Ráp][อะไร|à-rai][ดี|dii][คะ|khá]",
+     "id": "Baik. Mau pesan apa?",
+     "literal": "bisa — (sopan). terima — apa — baik — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[เอา|Ao][ต้มยำกุ้ง|tôm-yam-kûng][หนึ่ง|nùeng][ที่|thîi][กับ|kàp][ข้าวผัด|khâao-phàt][หนึ่ง|nùeng][จาน|jaan][ค่ะ|khâ]",
+     "id": "Ambil tom yam udang satu porsi dan nasi goreng satu piring.",
+     "literal": "ambil — tom-yam-udang — satu — porsi — dengan — nasi-goreng — satu — piring — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ผม|Phǒm][ขอ|khǎaw][ผัดไทย|phàt-thai][ครับ|khráp] [ไม่|Mâi][ใส่|sài][หมู|mǔu][นะ|ná][ครับ|khráp] [ผม|Phǒm][เป็น|pen][มุสลิม|mút-sà-lim][ครับ|khráp]",
+     "id": "Saya minta pad thai. Jangan pakai babi ya. Saya muslim.",
+     "literal": "saya — minta — pad-thai — (sopan). tidak — masukkan — babi — ya — (sopan). saya — adalah — muslim — (sopan)."
+    },
+    {
+     "speaker": "พนักงาน:",
+     "text": "[เข้าใจ|Khâo-jai][ค่ะ|khâ] [ใส่|Sài][ไก่|kài][แทน|thaaen][ได้|dâai][ไหม|mǎi][คะ|khá]",
+     "id": "Mengerti. Diganti ayam boleh?",
+     "literal": "paham — (sopan). masukkan — ayam — sebagai-ganti — bisa — kah — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ได้|Dâai][ครับ|khráp] [แล้ว|Láaeo][ก็|kâw][ขอ|khǎaw][ไม่|mâi][เผ็ด|phèt][ครับ|khráp] [เผ็ด|Phèt][ไม่|mâi][ค่อย|khâwy][ได้|dâai][ครับ|khráp]",
+     "id": "Boleh. Dan minta tidak pedas. Saya kurang kuat pedas.",
+     "literal": "bisa — (sopan). lalu — juga — minta — tidak — pedas — (sopan). pedas — tidak — begitu — bisa — (sopan)."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[เมื่อกี้|Mûea-kîi][บอก|bàwk][คน|khon][อินโดฯ|In-doo][กิน|kin][เผ็ด|phèt][ได้|dâai][ไง|ngai][คะ|khá]",
+     "id": "Tadi katanya orang Indonesia kuat pedas?",
+     "literal": "tadi — bilang — orang — Indo — makan — pedas — bisa — kan — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[เผ็ด|Phèt][ไทย|thai][กับ|kàp][เผ็ด|phèt][อินโดฯ|In-doo][ไม่|mâi][เหมือน|mǔuean][กัน|kan][ครับ|khráp]",
+     "id": "Pedas Thai dan pedas Indonesia itu tidak sama.",
+     "literal": "pedas — Thai — dengan — pedas — Indo — tidak — sama — saling — (sopan)."
+    },
+    {
+     "speaker": "พนักงาน:",
+     "text": "[รับ|Ráp][เครื่องดื่ม|khrûeang-dùuem][อะไร|à-rai][คะ|khá]",
+     "id": "Minumnya apa?",
+     "literal": "terima — minuman — apa — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[น้ำเปล่า|Náam-plào][สอง|sǎawng][ขวด|khùat][ค่ะ|khâ] [เย็น|Yen][นะ|ná][คะ|khá]",
+     "id": "Air putih dua botol. Yang dingin ya.",
+     "literal": "air-tawar — dua — botol — (sopan). dingin — ya — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[อร่อย|À-ràwy][มาก|mâak][ครับ|khráp] [อิ่ม|Ìm][แล้ว|láaeo][ครับ|khráp] [เช็คบิล|Chék-bin][ด้วย|dûai][ครับ|khráp]",
+     "id": "Enak sekali. Sudah kenyang. Minta bonnya ya.",
+     "literal": "enak — sangat — (sopan). kenyang — sudah — (sopan). cek-bill — juga — (sopan)."
+    }
+   ],
+   "notes": [
+    "**ขอ khǎaw dan เอา ao sama-sama berarti \"minta/ambil\", tetapi rasanya berbeda.** *ขอ* lebih halus dan cocok untuk apa pun; *เอา* lebih langsung dan sangat umum di warung. Aturan aman: pakai *ขอ* untuk hal kecil (menu, air, sendok) dan *เอา* untuk memesan lauk. Keduanya sopan asal diakhiri *ครับ/ค่ะ*.",
+    "**ที่ thîi adalah kata bantu untuk PORSI makanan**, bukan cuma \"tempat\". *ต้มยำหนึ่งที่* = satu porsi tom yam. Untuk masakan yang disajikan di piring, *จาน jaan* juga benar. Keduanya terdengar wajar; *ที่* sedikit lebih luwes.",
+    "**ใส่ sài berarti \"memasukkan\", dan ไม่ใส่ adalah kunci seluruh urusan pantangan.** *ไม่ใส่หมู* (tanpa babi), *ไม่ใส่ผงชูรส* (tanpa MSG), *ไม่ใส่น้ำปลา* (tanpa kecap ikan), *ไม่ใส่น้ำตาล* (tanpa gula). Satu pola ini menyelesaikan lebih banyak masalah daripada seluruh daftar kosakata makanan.",
+    "**Tingkat pedas punya tangga sendiri**, dan sebaiknya kamu mulai dari bawah: *ไม่เผ็ด mâi phèt* (tidak pedas) → *เผ็ดนิดหน่อย phèt nít-nàwy* (sedikit pedas) → *เผ็ดน้อย phèt náwy* (kurang pedas) → *เผ็ดปกติ phèt pà-kà-tì* (pedas biasa) → *เผ็ดมาก phèt mâak* (pedas sekali). ⚠️ \"Pedas biasa\" di Thailand sering setara dengan \"pedas sekali\" di Indonesia, terutama untuk *ส้มตำ* dan masakan Isan.",
+    "**ไม่ค่อย mâi khâwy berarti \"tidak begitu\", dan ia melembutkan penolakan.** *เผ็ดไม่ค่อยได้* = \"kurang kuat pedas\". Susunan ini jauh lebih halus daripada *ไม่ได้* yang terdengar tegas. Bahasa Thai sangat menyukai bentuk melembutkan seperti ini; unit 19 membahas mengapa.",
+    "**เช็คบิล chék-bin adalah \"minta bon\"**, serapan dari bahasa Inggris *check bill* dan dipakai di mana-mana. Bentuk Thai aslinya *คิดเงินด้วยครับ khít-ngoen dûai khráp* (harfiah: \"hitung uangnya ya\"), yang justru lebih umum di warung sederhana.",
+    "**ท่าน thâan adalah kata ganti hormat untuk \"orang\"**, dipakai pegawai restoran, bandara, dan kantor. Kamu tidak perlu memakainya sendiri — cukup mengerti ketika mendengarnya. Jawablah dengan *คน khon* biasa.",
+    "**อิ่ม ìm berarti kenyang, dan ia kata sifat — jadi tidak perlu \"adalah\".** *อิ่มแล้วครับ* = sudah kenyang. Lawannya *หิว hǐu* (lapar). Dua kata ini, ditambah *อร่อย*, sudah cukup untuk memberi tanggapan lengkap atas makanan apa pun."
+   ],
+   "grammars": [
+    {
+     "title": "Sepuluh masakan yang ada di hampir setiap warung",
+     "table": {
+      "head": [
+       "Thai",
+       "Baca",
+       "Apa itu"
+      ],
+      "rows": [
+       [
+        "ผัดไทย",
+        "*phàt-thai*",
+        "kwetiau goreng khas Thailand, biasanya tidak pedas"
+       ],
+       [
+        "ข้าวผัด",
+        "*khâao-phàt*",
+        "nasi goreng — sebut isinya: ข้าวผัดไก่ (ayam), ข้าวผัดกุ้ง (udang)"
+       ],
+       [
+        "ต้มยำกุ้ง",
+        "*tôm-yam-kûng*",
+        "sup asam pedas dengan udang"
+       ],
+       [
+        "ต้มข่าไก่",
+        "*tôm-khàa-kài*",
+        "sup santan lengkuas dengan ayam — hampir tidak pedas"
+       ],
+       [
+        "ส้มตำ",
+        "*sôm-tam*",
+        "salad pepaya muda — **sangat** pedas secara bawaan"
+       ],
+       [
+        "ผัดกะเพรา",
+        "*phàt-kà-phrao*",
+        "tumis daun kemangi suci, pedas; makanan sehari-hari nomor satu"
+       ],
+       [
+        "ข้าวมันไก่",
+        "*khâao-man-kài*",
+        "nasi ayam Hainan"
+       ],
+       [
+        "ผัดซีอิ๊ว",
+        "*phàt-sii-íu*",
+        "kwetiau goreng kecap, tidak pedas"
+       ],
+       [
+        "แกงเขียวหวาน",
+        "*kaaeng-khǐao-wǎan*",
+        "gulai hijau santan, pedas sedang"
+       ],
+       [
+        "ก๋วยเตี๋ยว",
+        "*kǔai-tǐao*",
+        "mi kuah — bumbunya kamu racik sendiri di meja"
+       ]
+      ]
+     },
+     "after": [
+      "Pola penamaan Thai sangat teratur: **cara masak + bahan**. *ผัด phàt* = tumis/goreng, *ต้ม tôm* = rebus, *ทอด thâwt* = goreng rendam, *ย่าง yâang* = bakar, *นึ่ง nûeng* = kukus, *แกง kaaeng* = gulai. Tempelkan dengan *ไก่ kài* (ayam), *หมู mǔu* (babi), *เนื้อ núuea* (sapi), *กุ้ง kûng* (udang), *ปลา plaa* (ikan), *ผัก phàk* (sayur) — dan kamu bisa membaca separuh menu tanpa pernah menghafalnya."
+     ]
+    },
+    {
+     "title": "Kalimat memesan, dari awal sampai bayar",
+     "table": {
+      "head": [
+       "Thai",
+       "Baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "ขอเมนูหน่อยครับ/ค่ะ",
+        "*khǎaw mee-nuu nàwy*",
+        "minta menunya"
+       ],
+       [
+        "มีอะไรแนะนำไหม",
+        "*mii à-rai náe-nam mǎi*",
+        "ada yang direkomendasikan?"
+       ],
+       [
+        "อันนี้เผ็ดไหม",
+        "*an-níi phèt mǎi*",
+        "yang ini pedas tidak?"
+       ],
+       [
+        "ขอไม่เผ็ดนะ",
+        "*khǎaw mâi phèt ná*",
+        "minta yang tidak pedas ya"
+       ],
+       [
+        "ไม่ใส่หมูนะ",
+        "*mâi sài mǔu ná*",
+        "jangan pakai babi ya"
+       ],
+       [
+        "ขอน้ำเปล่าหน่อย",
+        "*khǎaw náam-plào nàwy*",
+        "minta air putih"
+       ],
+       [
+        "ขอช้อนเพิ่มหน่อย",
+        "*khǎaw cháwn phôoem nàwy*",
+        "minta sendok tambahan"
+       ],
+       [
+        "อร่อยมาก",
+        "*à-ràwy mâak*",
+        "enak sekali"
+       ],
+       [
+        "อิ่มแล้ว",
+        "*ìm láaeo*",
+        "sudah kenyang"
+       ],
+       [
+        "เช็คบิลด้วย",
+        "*chék-bin dûai*",
+        "minta bonnya"
+       ],
+       [
+        "ห่อกลับบ้าน",
+        "*hàw klàp bâan*",
+        "dibungkus, dibawa pulang"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *ห่อกลับบ้าน* harfiahnya \"bungkus pulang ke rumah\", dan itu memang cara Thailand berkata \"take away\". Di warung banyak orang cukup berkata *ใส่ถุงครับ/ค่ะ sài thǔng* — \"masukkan kantong\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Untuk pembaca muslim: kalimat yang perlu dihafal",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Thailand punya penduduk muslim yang cukup besar, terutama di selatan, dan istilahnya sudah umum dimengerti di kota-kota besar. Yang perlu kamu waspadai bukan daging babi yang kelihatan, melainkan **kaldu dan bumbu** yang tidak kelihatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Thai",
+      "Baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "ผม/ฉันเป็นมุสลิม",
+       "*phǒm/chǎn pen mút-sà-lim*",
+       "saya muslim"
+      ],
+      [
+       "กินหมูไม่ได้",
+       "*kin mǔu mâi dâai*",
+       "saya tidak bisa makan babi"
+      ],
+      [
+       "ไม่ใส่หมูนะ",
+       "*mâi sài mǔu ná*",
+       "jangan pakai babi ya"
+      ],
+      [
+       "ไม่ใส่น้ำมันหมู",
+       "*mâi sài náam-man-mǔu*",
+       "jangan pakai minyak babi"
+      ],
+      [
+       "มีอาหารฮาลาลไหม",
+       "*mii aa-hǎan haa-laan mǎi*",
+       "ada makanan halal?"
+      ],
+      [
+       "ร้านนี้ฮาลาลไหม",
+       "*ráan níi haa-laan mǎi*",
+       "warung ini halal?"
+      ],
+      [
+       "ใส่ไก่แทนได้ไหม",
+       "*sài kài thaaen dâai mǎi*",
+       "boleh diganti ayam?"
+      ],
+      [
+       "ไม่กินเนื้อสัตว์",
+       "*mâi kin núuea-sàt*",
+       "saya tidak makan daging"
+      ],
+      [
+       "กินเจ",
+       "*kin jee*",
+       "vegan (tanpa produk hewani sama sekali)"
+      ],
+      [
+       "มัสยิดอยู่ที่ไหน",
+       "*mát-sà-yít yùu thîi nǎi*",
+       "masjid di mana?"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal praktis",
+     "items": [
+      "**Cari tanda ฮาลาล (haa-laan) berwarna hijau** di kaca warung. Di Bangkok, kawasan Nana, Ramkhamhaeng, dan sekitar Masjid Jawa punya banyak pilihan.",
+      "**กินเจ *kin jee* adalah kata sakti kalau ragu.** Ia berarti vegan ketat menurut tradisi Tionghoa-Thai: tanpa daging, tanpa kaldu hewan, bahkan tanpa bawang. Warung berbendera kuning bertulisan เจ pasti aman dari babi.",
+      "⚠️ **น้ำปลา *náam-plaa* (kecap ikan) ada di hampir semua masakan Thai** dan itu bukan masalah bagi kebanyakan orang — tetapi *ผัดกะเพรา* dan *ก๋วยเตี๋ยว* sangat sering memakai kaldu babi tanpa disebut. Bertanya *ใส่หมูไหมคะ/ครับ* sebelum memesan lebih aman daripada menebak dari tampilannya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Rasa dan tanggapan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Thai",
+      "Baca",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "อร่อย",
+       "*à-ràwy*",
+       "enak"
+      ],
+      [
+       "ไม่อร่อย",
+       "*mâi à-ràwy*",
+       "tidak enak"
+      ],
+      [
+       "เผ็ด",
+       "*phèt*",
+       "pedas"
+      ],
+      [
+       "หวาน",
+       "*wǎan*",
+       "manis"
+      ],
+      [
+       "เค็ม",
+       "*khem*",
+       "asin"
+      ],
+      [
+       "เปรี้ยว",
+       "*prîao*",
+       "asam"
+      ],
+      [
+       "ขม",
+       "*khǒm*",
+       "pahit"
+      ],
+      [
+       "จืด",
+       "*jùuet*",
+       "hambar"
+      ],
+      [
+       "มัน",
+       "*man*",
+       "gurih, berlemak"
+      ],
+      [
+       "ร้อน / เย็น",
+       "*ráwn / yen*",
+       "panas / dingin"
+      ],
+      [
+       "หิว",
+       "*hǐu*",
+       "lapar"
+      ],
+      [
+       "อิ่ม",
+       "*ìm*",
+       "kenyang"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Untuk memuji masakan orang, kalimat terbaik bukan *อร่อย* saja melainkan **อร่อยมากครับ/ค่ะ** atau **อร่อยจัง** — keduanya terdengar tulus. Kalau ditanya *เผ็ดไหม* dan kamu kewalahan, jawaban paling aman adalah *เผ็ดนิดหน่อยครับ/ค่ะ* sambil tersenyum; ini akan membuat tuan rumah menyodorkan air, bukan tersinggung."
+    },
+    {
+     "type": "kotak",
+     "title": "\"กินข้าวหรือยัง\" bukan tawaran makan",
+     "items": [
+      "*กินข้าวหรือยัง kin khâao rǔue yang* — \"sudah makan belum?\" — adalah sapaan, bukan undangan. Orang Thai memakainya persis seperti kita memakai \"apa kabar\".",
+      "Jawaban standarnya cuma dua: *กินแล้วครับ/ค่ะ kin láaeo* (sudah) atau *ยังครับ/ค่ะ yang* (belum). Kalau kamu menjawab \"belum\", ada kemungkinan nyata kamu benar-benar akan diajak makan — dan menolaknya perlu keterampilan yang dibahas di unit 19."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "th": "สั่ง",
+   "baca": "sàng",
+   "id": "memesan"
+  },
+  {
+   "th": "เมนู",
+   "baca": "mee-nuu",
+   "id": "menu"
+  },
+  {
+   "th": "ใส่",
+   "baca": "sài",
+   "id": "memasukkan, memakai"
+  },
+  {
+   "th": "ไม่ใส่",
+   "baca": "mâi sài",
+   "id": "tanpa, jangan pakai"
+  },
+  {
+   "th": "แทน",
+   "baca": "thaaen",
+   "id": "sebagai ganti"
+  },
+  {
+   "th": "ไม่ค่อย",
+   "baca": "mâi khâwy",
+   "id": "tidak begitu"
+  },
+  {
+   "th": "หมู",
+   "baca": "mǔu",
+   "id": "babi"
+  },
+  {
+   "th": "ไก่",
+   "baca": "kài",
+   "id": "ayam"
+  },
+  {
+   "th": "เนื้อ",
+   "baca": "núuea",
+   "id": "daging (sapi)"
+  },
+  {
+   "th": "กุ้ง",
+   "baca": "kûng",
+   "id": "udang"
+  },
+  {
+   "th": "ปลา",
+   "baca": "plaa",
+   "id": "ikan"
+  },
+  {
+   "th": "ผัก",
+   "baca": "phàk",
+   "id": "sayur"
+  },
+  {
+   "th": "ไข่",
+   "baca": "khài",
+   "id": "telur"
+  },
+  {
+   "th": "ข้าว",
+   "baca": "khâao",
+   "id": "nasi; makanan"
+  },
+  {
+   "th": "ผัด",
+   "baca": "phàt",
+   "id": "tumis, goreng"
+  },
+  {
+   "th": "ต้ม",
+   "baca": "tôm",
+   "id": "rebus"
+  },
+  {
+   "th": "ทอด",
+   "baca": "thâwt",
+   "id": "goreng rendam"
+  },
+  {
+   "th": "ย่าง",
+   "baca": "yâang",
+   "id": "bakar"
+  },
+  {
+   "th": "แกง",
+   "baca": "kaaeng",
+   "id": "gulai, kari"
+  },
+  {
+   "th": "น้ำเปล่า",
+   "baca": "náam-plào",
+   "id": "air putih"
+  },
+  {
+   "th": "เครื่องดื่ม",
+   "baca": "khrûeang-dùuem",
+   "id": "minuman"
+  },
+  {
+   "th": "ช้อน",
+   "baca": "cháwn",
+   "id": "sendok"
+  },
+  {
+   "th": "ส้อม",
+   "baca": "sâwm",
+   "id": "garpu"
+  },
+  {
+   "th": "เพิ่ม",
+   "baca": "phôoem",
+   "id": "menambah"
+  },
+  {
+   "th": "อิ่ม",
+   "baca": "ìm",
+   "id": "kenyang"
+  },
+  {
+   "th": "หิว",
+   "baca": "hǐu",
+   "id": "lapar"
+  },
+  {
+   "th": "เช็คบิล",
+   "baca": "chék-bin",
+   "id": "minta bon"
+  },
+  {
+   "th": "คิดเงิน",
+   "baca": "khít-ngoen",
+   "id": "menghitung tagihan"
+  },
+  {
+   "th": "ห่อ",
+   "baca": "hàw",
+   "id": "membungkus"
+  },
+  {
+   "th": "แนะนำ",
+   "baca": "náe-nam",
+   "id": "menyarankan"
+  },
+  {
+   "th": "เข้าใจ",
+   "baca": "khâo-jai",
+   "id": "mengerti"
+  },
+  {
+   "th": "มุสลิม",
+   "baca": "mút-sà-lim",
+   "id": "muslim"
+  },
+  {
+   "th": "ฮาลาล",
+   "baca": "haa-laan",
+   "id": "halal"
+  },
+  {
+   "th": "เมื่อกี้",
+   "baca": "mûea-kîi",
+   "id": "tadi, barusan"
+  },
+  {
+   "th": "บอก",
+   "baca": "bàwk",
+   "id": "memberi tahu"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi bagian yang kosong.",
+   "items": [
+    "\"Minta menunya ya\" → ขอ____หน่อยค่ะ",
+    "\"Jangan pakai babi ya\" → ____หมูนะครับ",
+    "\"Minta yang tidak pedas\" → ขอ____ค่ะ",
+    "\"Sudah kenyang\" → ____แล้วครับ",
+    "\"Minta bonnya\" → ____ด้วยค่ะ"
+   ]
+  },
+  {
+   "prompt": "Cocokkan tingkat pedas dari yang paling ringan ke paling berat: tulis urutannya.",
+   "items": [
+    "เผ็ดมาก",
+    "ไม่เผ็ด",
+    "เผ็ดปกติ",
+    "เผ็ดนิดหน่อย",
+    "เผ็ดน้อย"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ค่ะ / สองคน",
+    "ครับ / หนึ่งจาน / เอา / ข้าวผัดไก่",
+    "ครับ / เป็นมุสลิม / ผม / ไม่ใส่หมูนะ",
+    "คะ / ไหม / อันนี้ / เผ็ด",
+    "ครับ / เช็คบิล / ด้วย"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu laki-laki.",
+   "items": [
+    "Berapa orang? (yang bertanya pelayan)",
+    "Saya minta pad thai satu porsi.",
+    "Saya muslim, jangan pakai babi ya.",
+    "Boleh diganti ayam?",
+    "Yang ini pedas tidak?",
+    "Enak sekali. Minta bonnya ya."
+   ]
+  }
+ ],
+ "answers": [
+  "เมนู — ไม่ใส่ — ไม่เผ็ด — อิ่ม — เช็คบิล",
+  "5 (paling berat) — 1 (paling ringan) — 4 — 2 — 3",
+  "สองคนค่ะ — เอาข้าวผัดไก่หนึ่งจานครับ — ผมเป็นมุสลิมครับ ไม่ใส่หมูนะ — อันนี้เผ็ดไหมคะ — เช็คบิลด้วยครับ",
+  "กี่คนครับ — ผมขอผัดไทยหนึ่งที่ครับ — ผมเป็นมุสลิมครับ ไม่ใส่หมูนะครับ — ใส่ไก่แทนได้ไหมครับ — อันนี้เผ็ดไหมครับ — อร่อยมากครับ เช็คบิลด้วยครับ"
+ ],
+ "wave": "Ulangi unit 4: tutup bahasa Thainya, lalu pesan enam benda berbeda dengan kata bantu bilangan yang benar — air, kopi, roti, tiket, buku, kantong."
+}

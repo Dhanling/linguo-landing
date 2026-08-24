@@ -1,0 +1,302 @@
+{
+ "title": "Jam berapa sekarang?",
+ "title_target": "กี่โมงแล้ว — Kìi moong láaeo",
+ "goal": "Membaca jam dengan sistem Thai yang membagi hari jadi enam blok, membuat janji, dan menyebut bagian hari — sistem yang terlihat rumit di kertas tetapi selesai dalam satu duduk.",
+ "bekal": [
+  "menanyakan dan menyebut jam dalam sistem sehari-hari Thai",
+  "menyebut bagian hari dengan ตอน",
+  "membuat janji: กี่โมง, เมื่อไหร่, ตอนไหน",
+  "menyebut menit, setengah jam, dan \"sekitar\"",
+  "mengerti sistem 24 jam yang dipakai di stasiun dan bandara"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Menyusun rencana makan malam",
+   "intro": "Nok mengajak Budi makan malam. Perhatikan bahwa satu angka yang sama — \"enam\" — dipakai untuk dua jam berbeda, dan yang membedakannya adalah kata di belakangnya.",
+   "lines": [
+    {
+     "speaker": "บูดี:",
+     "text": "[ตอนนี้|Tawn-níi][กี่|kìi][โมง|moong][แล้ว|láaeo][ครับ|khráp]",
+     "id": "Sekarang jam berapa?",
+     "literal": "saat-ini — berapa — jam — sudah — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[บ่าย|Bàai][สอง|sǎawng][โมง|moong][ครึ่ง|khrûeng][ค่ะ|khâ]",
+     "id": "Setengah tiga siang.",
+     "literal": "sore — dua — jam — setengah — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[เย็น|Yen][นี้|níi][ว่าง|wâang][ไหม|mǎi][ครับ|khráp] [ไป|Pai][กิน|kin][ข้าว|khâao][กัน|kan][ไหม|mǎi][ครับ|khráp]",
+     "id": "Sore ini kosong tidak? Makan bareng yuk?",
+     "literal": "sore — ini — luang — kah — (sopan)? pergi — makan — nasi — bersama — kah — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[ว่าง|Wâang][ค่ะ|khâ] [กี่|Kìi][โมง|moong][ดี|dii][คะ|khá]",
+     "id": "Kosong. Jam berapa enaknya?",
+     "literal": "luang — (sopan). berapa — jam — baik — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[หก|Hòk][โมง|moong][เย็น|yen][ได้|dâai][ไหม|mǎi][ครับ|khráp]",
+     "id": "Jam enam sore bisa?",
+     "literal": "enam — jam — sore — bisa — kah — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[หก|Hòk][โมง|moong][เย็น|yen][ยัง|yang][ไม่|mâi][เลิก|lôoek][งาน|ngaan][ค่ะ|khâ] [หนึ่ง|Nùeng][ทุ่ม|thûm][ได้|dâai][ไหม|mǎi][คะ|khá]",
+     "id": "Jam enam sore saya belum pulang kerja. Jam tujuh malam bisa?",
+     "literal": "enam — jam — sore — masih — tidak — selesai — kerja — (sopan). satu — pukul-malam — bisa — kah — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ได้|Dâai][ครับ|khráp] [เจอ|Joee][กัน|kan][ที่|thîi][ไหน|nǎi][ดี|dii][ครับ|khráp]",
+     "id": "Bisa. Ketemu di mana enaknya?",
+     "literal": "bisa — (sopan). bertemu — bersama — di — mana — baik — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[หน้า|Nâa][บีทีเอส|BTS][อโศก|À-sòok][ค่ะ|khâ] [อย่า|Yàa][มา|maa][สาย|sǎai][นะ|ná][คะ|khá]",
+     "id": "Depan BTS Asok. Jangan telat ya.",
+     "literal": "depan — BTS — Asok — (sopan). jangan — datang — terlambat — ya — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ไม่|Mâi][สาย|sǎai][ครับ|khráp] [ผม|Phǒm][จะ|jà][ไป|pai][ถึง|thǔeng][ประมาณ|prà-maan][หก|hòk][โมง|moong][สี่|sìi][สิบ|sìp][ห้า|hâa][ครับ|khráp]",
+     "id": "Tidak akan telat. Saya sampai sekitar jam 18.45.",
+     "literal": "tidak — terlambat — (sopan). saya — akan — pergi — sampai — kira-kira — enam — jam — empat — puluh — lima — (sopan)."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[รถ|Rót][ติด|tìt][นะ|ná][คะ|khá] [ตอน|Tawn][เย็น|yen][รถ|rót][ติด|tìt][มาก|mâak][ค่ะ|khâ]",
+     "id": "Macet lho. Sore itu macet sekali.",
+     "literal": "mobil — nempel — ya — (sopan). saat — sore — mobil — nempel — sangat — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ผม|Phǒm][นั่ง|nâng][บีทีเอส|BTS][ครับ|khráp] [เร็ว|Reo][กว่า|kwàa][ครับ|khráp]",
+     "id": "Saya naik BTS. Lebih cepat.",
+     "literal": "saya — duduk — BTS — (sopan). cepat — lebih — (sopan)."
+    }
+   ],
+   "notes": [
+    "**Bahasa Thai membagi satu hari jadi ENAM blok, dan tiap blok punya kata jamnya sendiri.** Ini yang membuat sistemnya terlihat rumit padahal sebenarnya cuma perlu dihafal sekali. Blok-bloknya: dini hari (*ตี*), pagi (*โมงเช้า*), tengah hari (*เที่ยง*), siang-sore (*บ่าย…โมง*), sore (*โมงเย็น*), malam (*ทุ่ม*).",
+    "**Angka \"enam\" muncul dua kali dalam sehari dan itu tidak membingungkan orang Thai** karena ekornya berbeda: *หกโมงเช้า* (jam 6 pagi) dan *หกโมงเย็น* (jam 6 sore). Kata *เช้า* dan *เย็น* di belakang itulah yang menentukan.",
+    "**ทุ่ม thûm menghitung ulang dari jam 19.00.** *หนึ่งทุ่ม* = 19.00, *สองทุ่ม* = 20.00, *สามทุ่ม* = 21.00, sampai *ห้าทุ่ม* = 23.00. Kata itu berasal dari bunyi genderang yang dulu dipukul untuk menandai waktu malam.",
+    "**ตี tii menghitung dini hari.** *ตีหนึ่ง* = 01.00, *ตีห้า* = 05.00. Ini juga dari bunyi pukulan — *ตี* memang berarti \"memukul\".",
+    "**ครึ่ง khrûeng = setengah, dan letaknya di belakang.** *หกโมงครึ่ง* = 06.30 atau 18.30. Untuk menit yang lain, sebut angkanya lalu *นาที naa-thii*: *บ่ายสองโมงยี่สิบนาที* = 14.20. Dalam percakapan cepat kata *นาที* sering dibuang.",
+    "**ตอน tawn berarti \"pada saat\" dan membentuk bagian hari.** *ตอนเช้า* (pagi hari), *ตอนบ่าย* (siang), *ตอนเย็น* (sore), *ตอนกลางคืน* (malam), *ตอนนี้* (sekarang). Ia jauh lebih sering dipakai daripada jam yang tepat — orang Thai lebih suka berkata \"sore\" daripada \"jam lima\".",
+    "**อย่า yàa berarti \"jangan\" dan letaknya di depan kata kerja.** *อย่ามาสาย* = jangan datang terlambat. ⚠️ Jangan tertukar dengan *ไม่ mâi* yang cuma menyatakan \"tidak\"; *อย่า* adalah larangan.",
+    "**รถติด rót tìt harfiahnya \"mobil menempel\" dan itulah kata untuk macet.** Kamu akan mendengarnya setiap hari di Bangkok, dan ia adalah alasan yang selalu diterima untuk keterlambatan."
+   ],
+   "grammars": [
+    {
+     "title": "Jam Thai: seluruh hari dalam satu tabel",
+     "body": [
+      "Bacalah sekali dengan tenang, lalu kembali ke sini setiap kali perlu. Kolom terakhir adalah yang benar-benar diucapkan orang."
+     ],
+     "table": {
+      "head": ["Jam", "Blok", "Thai", "Baca"],
+      "rows": [
+       ["01.00", "ตี", "ตีหนึ่ง", "*tii nùeng*"],
+       ["05.00", "ตี", "ตีห้า", "*tii hâa*"],
+       ["06.00", "เช้า", "หกโมงเช้า", "*hòk moong cháao*"],
+       ["09.00", "เช้า", "เก้าโมงเช้า", "*kâao moong cháao*"],
+       ["11.00", "เช้า", "สิบเอ็ดโมงเช้า", "*sìp-èt moong cháao*"],
+       ["12.00", "เที่ยง", "เที่ยง / เที่ยงวัน", "*thîang / thîang wan*"],
+       ["13.00", "บ่าย", "บ่ายโมง", "*bàai moong*"],
+       ["14.00", "บ่าย", "บ่ายสองโมง", "*bàai sǎawng moong*"],
+       ["16.00", "บ่าย", "บ่ายสี่โมง", "*bàai sìi moong*"],
+       ["17.00", "เย็น", "ห้าโมงเย็น", "*hâa moong yen*"],
+       ["18.00", "เย็น", "หกโมงเย็น", "*hòk moong yen*"],
+       ["19.00", "ทุ่ม", "หนึ่งทุ่ม", "*nùeng thûm*"],
+       ["21.00", "ทุ่ม", "สามทุ่ม", "*sǎam thûm*"],
+       ["23.00", "ทุ่ม", "ห้าทุ่ม", "*hâa thûm*"],
+       ["24.00", "เที่ยงคืน", "เที่ยงคืน", "*thîang khuuen*"]
+      ]
+     },
+     "after": [
+      "⚠️ **บ่ายโมง (13.00) tidak memakai angka \"satu\".** Kata *หนึ่ง* dilesapkan; orang berkata *บ่ายโมง*, bukan *บ่ายหนึ่งโมง*.",
+      "Kalau semua ini terasa terlalu banyak untuk hari ini, ada jalan pintas yang sah: **pakai sistem 24 jam** — *สิบเก้านาฬิกา sìp-kâao naa-lí-kaa* (19.00). Semua orang mengerti, cuma terdengar seperti pengumuman stasiun. Yang penting kamu bisa **mendengar** sistem sehari-hari; berbicara dengan sistem resmi tidak akan menyulitkan siapa pun."
+     ]
+    },
+    {
+     "title": "Bagian hari dengan ตอน",
+     "table": {
+      "head": ["Thai", "Baca", "Kira-kira", "Indonesia"],
+      "rows": [
+       ["ตอนเช้า", "*tawn cháao*", "06.00–11.00", "pagi"],
+       ["ตอนสาย", "*tawn sǎai*", "09.00–11.00", "menjelang siang"],
+       ["ตอนเที่ยง", "*tawn thîang*", "12.00", "tengah hari"],
+       ["ตอนบ่าย", "*tawn bàai*", "13.00–16.00", "siang menjelang sore"],
+       ["ตอนเย็น", "*tawn yen*", "17.00–19.00", "sore"],
+       ["ตอนค่ำ", "*tawn khâm*", "19.00–21.00", "petang"],
+       ["ตอนกลางคืน", "*tawn klaang-khuuen*", "malam", "malam"],
+       ["ตอนดึก", "*tawn dùek*", "larut", "larut malam"],
+       ["ตอนนี้", "*tawn níi*", "—", "sekarang"]
+      ]
+     },
+     "after": [
+      "⚠️ *สาย sǎai* punya dua arti yang mudah tertukar: **menjelang siang** dan **terlambat**. *มาสาย maa sǎai* = datang terlambat. Keduanya sebetulnya satu ide — datang ketika hari sudah menjelang siang."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membuat janji dalam empat kalimat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Thai", "Baca", "Artinya"],
+     "rows": [
+      ["ตอนนี้กี่โมงแล้ว", "*tawn-níi kìi moong láaeo*", "sekarang jam berapa?"],
+      ["กี่โมงดี", "*kìi moong dii*", "jam berapa enaknya?"],
+      ["เมื่อไหร่", "*mûea-rài*", "kapan?"],
+      ["ตอนไหน", "*tawn nǎi*", "waktu yang mana? (bagian hari)"],
+      ["ว่างไหม", "*wâang mǎi*", "kosong tidak? luang?"],
+      ["ไม่ว่าง", "*mâi wâang*", "tidak sempat, sibuk"],
+      ["เจอกันที่ไหนดี", "*joee kan thîi nǎi dii*", "ketemu di mana enaknya?"],
+      ["ประมาณ…", "*prà-maan*", "sekitar…"],
+      ["ตรงเวลา", "*trong wee-laa*", "tepat waktu"],
+      ["มาสาย", "*maa sǎai*", "datang terlambat"],
+      ["รอ", "*raw*", "menunggu"],
+      ["สายหน่อยนะ", "*sǎai nàwy ná*", "agak telat ya (memberi tahu)"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "…ดี di ujung pertanyaan",
+     "items": [
+      "Menambahkan **ดี *dii*** (baik) di ujung pertanyaan mengubahnya dari interogasi jadi ajakan berunding: *กี่โมง* (jam berapa?) versus *กี่โมงดี* (jam berapa enaknya?). Bandingkan juga *กินอะไรดี* (makan apa ya?) dan *ไปไหนดี* (ke mana ya?).",
+      "Ini salah satu kebiasaan bahasa Thai yang paling cepat membuatmu terdengar alami. Ia menandakan kamu mengajak lawan bicara ikut memutuskan, bukan menuntut jawaban."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata waktu yang sering menyertai jam",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Thai", "Baca", "Indonesia"],
+     "rows": [
+      ["เวลา", "*wee-laa*", "waktu"],
+      ["ชั่วโมง", "*chûa-moong*", "jam (lamanya)"],
+      ["นาที", "*naa-thii*", "menit"],
+      ["ครึ่ง", "*khrûeng*", "setengah"],
+      ["ประมาณ", "*prà-maan*", "kira-kira, sekitar"],
+      ["ก่อน", "*kàwn*", "sebelum, duluan"],
+      ["หลัง", "*lǎng*", "sesudah, setelah"],
+      ["ตั้งแต่…ถึง…", "*tâng-tàae … thǔeng …*", "dari … sampai …"],
+      ["เร็ว", "*reo*", "cepat, awal"],
+      ["ช้า", "*cháa*", "lambat, pelan"],
+      ["ทัน", "*than*", "keburu, sempat"],
+      ["ไม่ทัน", "*mâi than*", "tidak keburu"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **ชั่วโมง chûa-moong berarti \"jam\" sebagai LAMANYA**, sedangkan *โมง moong* menandai titik waktu. \"Dua jam\" adalah *สองชั่วโมง*; \"jam dua\" adalah *บ่ายสองโมง*. Ini pembedaan yang sama dengan bahasa Indonesia, cuma dengan dua kata berbeda."
+    },
+    {
+     "type": "kotak",
+     "title": "Waktu Thailand dan waktu Indonesia",
+     "items": [
+      "Thailand memakai satu zona waktu untuk seluruh negeri, dan zona itu **sama dengan WIB** (UTC+7). Jadi tidak ada perhitungan selisih sama sekali untuk pembaca di Jakarta, Sumatra, atau Kalimantan Barat.",
+      "Untuk WITA kurangi satu jam, untuk WIT kurangi dua. Kalimat yang berguna: *ที่อินโดนีเซียตอนนี้กี่โมง thîi in-doo-nii-sia tawn-níi kìi moong* — di Indonesia sekarang jam berapa?"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "th": "โมง", "baca": "moong", "id": "jam (titik waktu)" },
+  { "th": "ชั่วโมง", "baca": "chûa-moong", "id": "jam (lamanya)" },
+  { "th": "นาที", "baca": "naa-thii", "id": "menit" },
+  { "th": "ครึ่ง", "baca": "khrûeng", "id": "setengah" },
+  { "th": "ตอน", "baca": "tawn", "id": "pada saat, waktu" },
+  { "th": "ตอนนี้", "baca": "tawn-níi", "id": "sekarang" },
+  { "th": "เช้า", "baca": "cháao", "id": "pagi" },
+  { "th": "สาย", "baca": "sǎai", "id": "menjelang siang; terlambat" },
+  { "th": "เที่ยง", "baca": "thîang", "id": "tengah hari" },
+  { "th": "บ่าย", "baca": "bàai", "id": "siang menjelang sore" },
+  { "th": "เย็น", "baca": "yen", "id": "sore; dingin" },
+  { "th": "ค่ำ", "baca": "khâm", "id": "petang" },
+  { "th": "กลางคืน", "baca": "klaang-khuuen", "id": "malam" },
+  { "th": "ดึก", "baca": "dùek", "id": "larut malam" },
+  { "th": "ทุ่ม", "baca": "thûm", "id": "jam (19.00–23.00)" },
+  { "th": "ตี", "baca": "tii", "id": "jam (01.00–05.00); memukul" },
+  { "th": "เวลา", "baca": "wee-laa", "id": "waktu" },
+  { "th": "เมื่อไหร่", "baca": "mûea-rài", "id": "kapan" },
+  { "th": "ว่าง", "baca": "wâang", "id": "luang, kosong" },
+  { "th": "ประมาณ", "baca": "prà-maan", "id": "kira-kira" },
+  { "th": "ถึง", "baca": "thǔeng", "id": "sampai, tiba" },
+  { "th": "ก่อน", "baca": "kàwn", "id": "sebelum, duluan" },
+  { "th": "หลัง", "baca": "lǎng", "id": "sesudah; belakang" },
+  { "th": "รอ", "baca": "raw", "id": "menunggu" },
+  { "th": "อย่า", "baca": "yàa", "id": "jangan" },
+  { "th": "เลิกงาน", "baca": "lôoek-ngaan", "id": "pulang kerja, selesai kerja" },
+  { "th": "งาน", "baca": "ngaan", "id": "pekerjaan; acara" },
+  { "th": "รถติด", "baca": "rót-tìt", "id": "macet" },
+  { "th": "นั่ง", "baca": "nâng", "id": "duduk; naik (kendaraan)" },
+  { "th": "เร็ว", "baca": "reo", "id": "cepat" },
+  { "th": "ช้า", "baca": "cháa", "id": "lambat" },
+  { "th": "กว่า", "baca": "kwàa", "id": "lebih (…daripada)" },
+  { "th": "ทัน", "baca": "than", "id": "keburu, sempat" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis jam berikut dalam sistem sehari-hari Thai (cara bacanya saja boleh).",
+   "items": [
+    "07.00 = ____",
+    "12.00 = ____",
+    "14.00 = ____",
+    "18.00 = ____",
+    "20.00 = ____",
+    "03.00 = ____"
+   ]
+  },
+  {
+   "prompt": "Isi bagian yang kosong.",
+   "items": [
+    "\"Sekarang jam berapa?\" → ตอนนี้____โมงแล้วคะ",
+    "\"Sore ini kosong tidak?\" → เย็นนี้____ไหมครับ",
+    "\"Jangan telat ya\" → ____มาสายนะคะ",
+    "\"Sekitar jam tujuh malam\" → ____หนึ่งทุ่ม",
+    "\"Ketemu di mana enaknya?\" → เจอกันที่ไหน____ครับ"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ครับ / กี่โมง / ตอนนี้ / แล้ว",
+    "คะ / ดี / กี่โมง",
+    "ครับ / ได้ไหม / หนึ่งทุ่ม",
+    "ค่ะ / รถติด / ตอนเย็น / มาก",
+    "ครับ / เร็วกว่า / บีทีเอส / นั่ง / ผม"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu perempuan.",
+   "items": [
+    "Sekarang jam berapa?",
+    "Setengah tiga siang.",
+    "Sore ini luang tidak?",
+    "Jam tujuh malam bisa?",
+    "Saya sampai sekitar jam enam sore.",
+    "Jangan datang terlambat ya."
+   ]
+  }
+ ],
+ "answers": [
+  "เจ็ดโมงเช้า jèt moong cháao — เที่ยง thîang — บ่ายสองโมง bàai sǎawng moong — หกโมงเย็น hòk moong yen — สองทุ่ม sǎawng thûm — ตีสาม tii sǎam",
+  "กี่ — ว่าง — อย่า — ประมาณ — ดี",
+  "ตอนนี้กี่โมงแล้วครับ — กี่โมงดีคะ — หนึ่งทุ่มได้ไหมครับ — ตอนเย็นรถติดมากค่ะ — ผมนั่งบีทีเอสเร็วกว่าครับ",
+  "ตอนนี้กี่โมงแล้วคะ — บ่ายสองโมงครึ่งค่ะ — เย็นนี้ว่างไหมคะ — หนึ่งทุ่มได้ไหมคะ — ฉันจะไปถึงประมาณหกโมงเย็นค่ะ — อย่ามาสายนะคะ"
+ ],
+ "wave": "Ulangi unit 5: tutup bahasa Thainya, lalu tanyakan lima benda di sekitarmu — ini apa, punya siapa, ada di dalam apa."
+}

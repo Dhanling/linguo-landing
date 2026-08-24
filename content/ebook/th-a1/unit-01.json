@@ -1,0 +1,266 @@
+{
+ "title": "Sawatdi: satu kata untuk sepanjang hari",
+ "title_target": "สวัสดีครับ — Sà-wàt-dii khráp",
+ "goal": "Menyapa, menanyakan kabar, berterima kasih, dan berpamitan — sekaligus memasang kebiasaan yang menentukan seluruh sisa modul ini: ekor ครับ/ค่ะ.",
+ "bekal": [
+  "menyapa siapa pun, kapan pun, dengan สวัสดี",
+  "memilih ekor ครับ atau ค่ะ sesuai jenis kelaminmu sendiri",
+  "menanyakan dan menjawab kabar",
+  "mengucapkan terima kasih dan maaf",
+  "berpamitan dengan dua tingkat keakraban"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Di lobi kantor, pagi hari",
+   "intro": "Budi baru pindah ke Bangkok dan bertemu Nok, rekan kerjanya, di lift. Perhatikan satu hal saja untuk sekarang: kata terakhir yang keluar dari mulut masing-masing tidak pernah sama.",
+   "lines": [
+    {
+     "speaker": "นก:",
+     "text": "[สวัสดี|Sà-wàt-dii][ค่ะ|khâ]",
+     "id": "Selamat pagi.",
+     "literal": "sejahtera — (partikel sopan perempuan)"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[สวัสดี|Sà-wàt-dii][ครับ|khráp] [สบายดี|Sà-baai-dii][ไหม|mǎi][ครับ|khráp]",
+     "id": "Selamat pagi. Apa kabar?",
+     "literal": "sejahtera — (sopan laki-laki). nyaman-baik — kah — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[สบายดี|Sà-baai-dii][ค่ะ|khâ] [แล้ว|Láaeo][คุณ|khun][ล่ะ|lâ][คะ|khá]",
+     "id": "Baik. Kalau kamu?",
+     "literal": "nyaman-baik — (sopan). lalu — Anda — bagaimana — (sopan tanya)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ผม|Phǒm][ก็|kâw][สบายดี|sà-baai-dii][ครับ|khráp] [ขอบคุณ|Khàwp-khun][ครับ|khráp]",
+     "id": "Saya juga baik. Terima kasih.",
+     "literal": "saya — juga — nyaman-baik — (sopan). terima-kasih — (sopan)."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[คุณ|Khun][ชื่อ|chûue][อะไร|à-rai][คะ|khá]",
+     "id": "Nama kamu siapa?",
+     "literal": "Anda — bernama — apa — (sopan tanya)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ผม|Phǒm][ชื่อ|chûue][บูดี|Buu-dii][ครับ|khráp] [คุณ|Khun][ล่ะ|lâ][ครับ|khráp]",
+     "id": "Nama saya Budi. Kamu?",
+     "literal": "saya — bernama — Budi — (sopan). Anda — bagaimana — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[ดิฉัน|Dì-chǎn][ชื่อ|chûue][นก|Nók][ค่ะ|khâ] [ยินดี|Yin-dii][ที่|thîi][ได้|dâai][รู้จัก|rúu-jàk][ค่ะ|khâ]",
+     "id": "Nama saya Nok. Senang berkenalan.",
+     "literal": "saya(pr) — bernama — Nok — (sopan). gembira — yang — dapat — kenal — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ยินดี|Yin-dii][ครับ|khráp] [ขอโทษ|Khǎaw-thôot][ครับ|khráp] [ผม|phǒm][พูด|phûut][ไทย|Thai][ได้|dâai][นิดหน่อย|nít-nàwy]",
+     "id": "Sama-sama, senang berkenalan. Maaf ya, bahasa Thai saya cuma sedikit.",
+     "literal": "gembira — (sopan). minta-hukuman — (sopan). saya — bicara — Thai — bisa — sedikit."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[ไม่เป็นไร|Mâi pen rai][ค่ะ| khâ] [พูด|Phûut][ได้|dâai][ดี|dii][ค่ะ|khâ]",
+     "id": "Tidak apa-apa. Bicaranya sudah bagus kok.",
+     "literal": "tidak — jadi — apa — (sopan). bicara — bisa — baik — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ขอบคุณ|Khàwp-khun][มาก|mâak][ครับ|khráp] [แล้ว|Láaeo][เจอ|joee][กัน|kan][ครับ|khráp]",
+     "id": "Terima kasih banyak. Sampai nanti.",
+     "literal": "terima-kasih — banyak — (sopan). lalu — bertemu — bersama — (sopan)."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[แล้ว|Láaeo][เจอ|joee][กัน|kan][ค่ะ|khâ]",
+     "id": "Sampai nanti.",
+     "literal": "lalu — bertemu — bersama — (sopan)."
+    }
+   ],
+   "notes": [
+    "**สวัสดี berlaku sepanjang hari.** Tidak ada \"selamat pagi\" dan \"selamat sore\" yang terpisah seperti bahasa Indonesia — satu kata ini dipakai dari subuh sampai tengah malam, untuk menyapa maupun berpamitan. Kata itu sendiri sebenarnya buatan baru: seorang guru besar mengarangnya pada tahun 1930-an dari kata Sanskerta *svasti* (sejahtera), dan pemerintah menyebarkannya lewat radio.",
+    "**ครับ dan ค่ะ ditentukan oleh JENIS KELAMIN PENUTURNYA, bukan lawan bicaranya.** ⚠️ Ini titik keliru nomor satu penutur Indonesia. Laki-laki selalu *ครับ khráp*, siapa pun yang diajak bicara. Perempuan selalu *ค่ะ khâ*. Kalau Budi berbicara kepada Nok, tetap *ครับ*; kalau Nok berbicara kepada Budi, tetap *ค่ะ*.",
+    "**Perempuan punya DUA bentuk.** Untuk kalimat berita: *ค่ะ khâ* (nada jatuh). Untuk pertanyaan: *คะ khá* (nada tinggi). Perhatikan di dialog: Nok berkata *สบายดีค่ะ* tetapi *แล้วคุณล่ะคะ*. Laki-laki tidak punya urusan ini — *ครับ* dipakai untuk keduanya.",
+    "**Melewatkan ครับ/ค่ะ bukan kesalahan tata bahasa, melainkan kesalahan sikap.** Kalimatnya tetap benar dan tetap dimengerti, tapi terdengar seperti perintah dari orang yang sedang marah. Tempelkan di setiap kalimat sampai ia keluar sendiri tanpa dipikir. Di percakapan sangat akrab orang memang melepasnya — tetapi itu keputusan yang kamu ambil nanti, bukan sekarang.",
+    "**ผม dan ดิฉัน sama-sama berarti \"saya\", dan pilihannya juga ikut jenis kelamin penutur.** Laki-laki: *ผม phǒm*. Perempuan: *ดิฉัน dì-chǎn* (agak resmi) atau *ฉัน chǎn* (santai). Dalam obrolan sehari-hari banyak perempuan memakai *เรา rao*, yang di sini berarti \"aku\", bukan \"kami\".",
+    "**ก็ kâw berarti \"juga\" dan letaknya SEBELUM kata sifatnya**, bukan sesudah: *ผมก็สบายดี* = \"saya juga baik\". Kata ini akan muncul terus di seluruh modul; ia adalah salah satu kata paling sering dipakai dalam bahasa Thai.",
+    "**ไม่เป็นไร mâi pen rai adalah kalimat yang paling sering kamu dengar di Thailand.** Harfiahnya \"tidak jadi apa\", dan ia melayani tiga tugas sekaligus: \"tidak apa-apa\", \"sama-sama\" (menjawab terima kasih), dan \"sudahlah, biar saja\". ⚠️ Perhatikan bahwa ia sering diucapkan bahkan ketika jelas ada apa-apa — itu bagian dari cara Thailand menjaga suasana tetap enak."
+   ],
+   "grammars": [
+    {
+     "title": "Ekor kesopanan: tabel yang wajib menempel hari ini juga",
+     "body": [
+      "Ini satu-satunya hafalan yang benar-benar mendesak di unit ini. Sisanya boleh menyusul."
+     ],
+     "table": {
+      "head": ["Penutur", "Kalimat berita", "Kalimat tanya", "\"Saya\""],
+      "rows": [
+       ["Laki-laki", "ครับ *khráp*", "ครับ *khráp*", "ผม *phǒm*"],
+       ["Perempuan", "ค่ะ *khâ*", "คะ *khá*", "ดิฉัน / ฉัน *dì-chǎn / chǎn*"]
+      ]
+     },
+     "after": [
+      "Di jalanan, *ครับ* sering dipendekkan jadi *ขับ khráp* yang nyaris hilang bunyi *r*-nya, atau bahkan cuma *คับ kháp*. Kamu tidak perlu menirunya; ucapkan penuh dan kamu terdengar sopan, bukan kaku."
+     ]
+    },
+    {
+     "title": "Empat kalimat yang menutupi seluruh basa-basi pertama",
+     "body": [
+      "Empat baris ini adalah seluruh perkenalan pertama dalam bahasa Thai. Hafalkan sebagai satu blok, bukan kata per kata."
+     ],
+     "table": {
+      "head": ["Thai", "Baca", "Artinya"],
+      "rows": [
+       ["สวัสดีครับ/ค่ะ", "*sà-wàt-dii khráp / khâ*", "Halo / selamat … / sampai jumpa"],
+       ["สบายดีไหมครับ/คะ", "*sà-baai-dii mǎi khráp / khá*", "Apa kabar?"],
+       ["สบายดีครับ/ค่ะ", "*sà-baai-dii khráp / khâ*", "Baik-baik saja"],
+       ["ขอบคุณครับ/ค่ะ", "*khàwp-khun khráp / khâ*", "Terima kasih"]
+      ]
+     },
+     "after": [
+      "⚠️ *สบายดีไหม* sebetulnya bukan sapaan otomatis seperti \"How are you?\" bahasa Inggris. Orang Thai memakainya kepada orang yang **sudah lama tidak ditemui**. Untuk orang yang kamu temui tiap hari, sapaan yang lebih alami justru *ไปไหนมา pai nǎi maa* (\"habis dari mana?\") atau *กินข้าวหรือยัง kin khâao rǔue yang* (\"sudah makan?\") — keduanya basa-basi, bukan pertanyaan sungguhan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Terima kasih, maaf, dan ไหว้",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tiga kata di bawah ini kamu pakai puluhan kali sehari di Thailand. Ketiganya selalu memakai ekor kesopanan."
+    },
+    {
+     "type": "tabel",
+     "head": ["Thai", "Baca", "Artinya", "Kapan"],
+     "rows": [
+      ["ขอบคุณ", "*khàwp-khun*", "terima kasih", "untuk siapa pun, aman selalu"],
+      ["ขอบใจ", "*khàwp-jai*", "terima kasih", "hanya kepada yang lebih muda / akrab"],
+      ["ขอโทษ", "*khǎaw-thôot*", "maaf; permisi", "menabrak orang, menyela, meminta perhatian"],
+      ["ไม่เป็นไร", "*mâi pen rai*", "tidak apa-apa; sama-sama", "menjawab terima kasih maupun maaf"],
+      ["ยินดี", "*yin-dii*", "dengan senang hati", "menjawab terima kasih, lebih hangat"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "ไหว้ — sapaan yang bukan kata",
+     "items": [
+      "*ไหว้ wâai* adalah sikap kedua telapak tangan dirapatkan di depan dada sambil kepala menunduk sedikit. Ia menyertai *สวัสดี* dan *ขอบคุณ*, dan tingginya menandakan rasa hormat: makin tinggi ujung jari, makin hormat.",
+      "**Aturan praktisnya sederhana:** yang lebih muda atau berkedudukan lebih rendah memulai lebih dulu; yang lebih tua membalas dengan tangan yang lebih rendah. Sebagai orang asing kamu tidak akan disalahkan apa pun yang kamu lakukan — tetapi membalas *ไหว้* selalu dihargai.",
+      "⚠️ Satu hal yang sering salah: **jangan mem-*ไหว้* pelayan, kasir, atau petugas** yang sedang melayanimu. Cukup angguk dan ucapkan *ขอบคุณครับ/ค่ะ*. Mem-*ไหว้* mereka justru membuat suasana canggung."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Berpamitan: tiga tingkat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Thai", "Baca", "Rasanya"],
+     "rows": [
+      ["สวัสดีครับ/ค่ะ", "*sà-wàt-dii*", "netral, selalu benar"],
+      ["แล้วเจอกัน", "*láaeo joee kan*", "sampai jumpa — santai, hangat"],
+      ["ไปก่อนนะ", "*pai kàwn ná*", "\"saya duluan ya\" — akrab"],
+      ["ลาก่อน", "*laa-kàwn*", "selamat tinggal — resmi, terdengar seperti perpisahan panjang"],
+      ["บ๊ายบาย", "*báai-baai*", "bye-bye — santai, umum di kota"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *ลาก่อน laa-kàwn* sering diajarkan sebagai \"selamat tinggal\" di buku, padahal orang Thai jarang memakainya. Ia terdengar berat, seperti berpisah untuk waktu yang sangat lama. Untuk keluar dari ruangan rapat atau meninggalkan warung, pakai *แล้วเจอกัน* atau cukup *สวัสดีครับ/ค่ะ*."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "th": "สวัสดี", "baca": "sà-wàt-dii", "id": "halo; selamat (pagi/siang/malam); sampai jumpa" },
+  { "th": "ครับ", "baca": "khráp", "id": "partikel sopan (penutur laki-laki)" },
+  { "th": "ค่ะ", "baca": "khâ", "id": "partikel sopan perempuan, kalimat berita" },
+  { "th": "คะ", "baca": "khá", "id": "partikel sopan perempuan, kalimat tanya" },
+  { "th": "สบายดี", "baca": "sà-baai-dii", "id": "baik-baik saja, sehat" },
+  { "th": "ไหม", "baca": "mǎi", "id": "kah? (penanda pertanyaan ya/tidak)" },
+  { "th": "ผม", "baca": "phǒm", "id": "saya (laki-laki)" },
+  { "th": "ดิฉัน", "baca": "dì-chǎn", "id": "saya (perempuan, resmi)" },
+  { "th": "ฉัน", "baca": "chǎn", "id": "saya (perempuan, santai)" },
+  { "th": "คุณ", "baca": "khun", "id": "Anda, kamu (sopan)" },
+  { "th": "ชื่อ", "baca": "chûue", "id": "nama; bernama" },
+  { "th": "อะไร", "baca": "à-rai", "id": "apa" },
+  { "th": "ก็", "baca": "kâw", "id": "juga; kalau begitu" },
+  { "th": "แล้ว", "baca": "láaeo", "id": "sudah; lalu" },
+  { "th": "ล่ะ", "baca": "lâ", "id": "kalau …? (melempar balik pertanyaan)" },
+  { "th": "ขอบคุณ", "baca": "khàwp-khun", "id": "terima kasih" },
+  { "th": "ขอบใจ", "baca": "khàwp-jai", "id": "terima kasih (kepada yang lebih muda)" },
+  { "th": "ขอโทษ", "baca": "khǎaw-thôot", "id": "maaf; permisi" },
+  { "th": "ไม่เป็นไร", "baca": "mâi pen rai", "id": "tidak apa-apa; sama-sama" },
+  { "th": "ยินดี", "baca": "yin-dii", "id": "senang, dengan senang hati" },
+  { "th": "รู้จัก", "baca": "rúu-jàk", "id": "kenal" },
+  { "th": "ได้", "baca": "dâai", "id": "bisa; dapat" },
+  { "th": "พูด", "baca": "phûut", "id": "berbicara" },
+  { "th": "ไทย", "baca": "thai", "id": "Thai" },
+  { "th": "นิดหน่อย", "baca": "nít-nàwy", "id": "sedikit" },
+  { "th": "มาก", "baca": "mâak", "id": "banyak, sangat" },
+  { "th": "ดี", "baca": "dii", "id": "baik, bagus" },
+  { "th": "เจอ", "baca": "joee", "id": "bertemu" },
+  { "th": "กัน", "baca": "kan", "id": "saling, bersama" },
+  { "th": "ไหว้", "baca": "wâai", "id": "salam dengan telapak tangan dirapatkan" },
+  { "th": "ลาก่อน", "baca": "laa-kàwn", "id": "selamat tinggal (resmi)" },
+  { "th": "นะ", "baca": "ná", "id": "ya (melunakkan kalimat)" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis ekor kesopanan yang benar. Budi adalah laki-laki, Nok perempuan.",
+   "items": [
+    "Budi berkata halo: สวัสดี____",
+    "Nok berkata halo: สวัสดี____",
+    "Nok bertanya kabar: สบายดีไหม____",
+    "Budi bertanya kabar: สบายดีไหม____",
+    "Nok menjawab \"baik\": สบายดี____",
+    "Budi berterima kasih: ขอบคุณ____"
+   ]
+  },
+  {
+   "prompt": "Isi bagian yang kosong.",
+   "items": [
+    "\"Nama kamu siapa?\" → คุณ____อะไรครับ",
+    "\"Saya juga baik.\" (laki-laki) → ผม____สบายดีครับ",
+    "\"Terima kasih banyak.\" → ขอบคุณ____ครับ",
+    "\"Tidak apa-apa.\" → ____",
+    "\"Sampai nanti.\" → แล้ว____กันค่ะ"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ครับ / ชื่อ / ผม / บูดี",
+    "คะ / สบายดี / ไหม",
+    "ค่ะ / ที่ได้รู้จัก / ยินดี",
+    "ครับ / ผม / ไทย / พูด / นิดหน่อย / ได้",
+    "ค่ะ / คุณ / ล่ะ / แล้ว / คะ"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu perempuan.",
+   "items": [
+    "Halo.",
+    "Apa kabar?",
+    "Saya baik-baik saja, terima kasih.",
+    "Nama saya Nok.",
+    "Senang berkenalan.",
+    "Maaf, saya bisa bahasa Thai sedikit."
+   ]
+  }
+ ],
+ "answers": [
+  "ครับ — ค่ะ — คะ — ครับ — ค่ะ — ครับ",
+  "ชื่อ — ก็ — มาก — ไม่เป็นไร — เจอ",
+  "ผมชื่อบูดีครับ — สบายดีไหมคะ — ยินดีที่ได้รู้จักค่ะ — ผมพูดไทยได้นิดหน่อยครับ — แล้วคุณล่ะคะ",
+  "สวัสดีค่ะ — สบายดีไหมคะ — สบายดีค่ะ ขอบคุณค่ะ — ดิฉันชื่อนกค่ะ — ยินดีที่ได้รู้จักค่ะ — ขอโทษค่ะ ฉันพูดไทยได้นิดหน่อยค่ะ"
+ ]
+}

@@ -1,0 +1,318 @@
+{
+ "title": "Cuaca, badan, dan ke apotek",
+ "title_target": "ไม่สบาย — Mâi sà-baai",
+ "goal": "Berbicara tentang cuaca, menyebut bagian tubuh, menjelaskan keluhan kepada apoteker atau dokter, dan mengerti dua kata yang membedakan \"sakit ditusuk\" dari \"sakit berdenyut\".",
+ "bekal": [
+  "berbicara tentang cuaca dan tiga musim Thailand",
+  "menyebut bagian tubuh yang paling sering dikeluhkan",
+  "membedakan เจ็บ dan ปวด",
+  "menjelaskan keluhan di apotek",
+  "meminta pertolongan darurat"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Di ร้านขายยา, gang sebelah",
+   "intro": "Budi kurang enak badan setelah kehujanan. Perhatikan dua kata yang keduanya berarti \"sakit\" tetapi tidak boleh ditukar — dan bagaimana apoteker memakainya untuk memastikan keluhannya.",
+   "lines": [
+    {
+     "speaker": "เภสัชกร:",
+     "text": "[สวัสดี|Sà-wàt-dii][ค่ะ|khâ] [เป็น|Pen][อะไร|à-rai][คะ|khá]",
+     "id": "Selamat siang. Sakit apa?",
+     "literal": "sejahtera — (sopan). mengalami — apa — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ไม่|Mâi][ค่อย|khâwy][สบาย|sà-baai][ครับ|khráp] [ปวด|Pùat][หัว|hǔa][กับ|kàp][เจ็บ|jèp][คอ|khaw][ครับ|khráp]",
+     "id": "Kurang enak badan. Kepala berdenyut dan tenggorokan sakit.",
+     "literal": "tidak — begitu — nyaman — (sopan). nyeri — kepala — dengan — sakit — leher — (sopan)."
+    },
+    {
+     "speaker": "เภสัชกร:",
+     "text": "[มี|Mii][ไข้|khâi][ไหม|mǎi][คะ|khá] [ไอ|Ai][ด้วย|dûai][ไหม|mǎi][คะ|khá]",
+     "id": "Ada demam? Batuk juga?",
+     "literal": "ada — demam — kah — (sopan)? batuk — juga — kah — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ไอ|Ai][นิดหน่อย|nít-nàwy][ครับ|khráp] [ไข้|Khâi][ไม่|mâi][มี|mii][ครับ|khráp] [เมื่อวาน|Mûea-waan][ตาก|tàak][ฝน|fǒn][มา|maa][ครับ|khráp]",
+     "id": "Batuk sedikit. Demam tidak ada. Kemarin kehujanan.",
+     "literal": "batuk — sedikit — (sopan). demam — tidak — ada — (sopan). kemarin — terkena — hujan — datang — (sopan)."
+    },
+    {
+     "speaker": "เภสัชกร:",
+     "text": "[เป็น|Pen][มา|maa][กี่|kìi][วัน|wan][แล้ว|láaeo][คะ|khá]",
+     "id": "Sudah berapa hari begini?",
+     "literal": "mengalami — datang — berapa — hari — sudah — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[สอง|Sǎawng][วัน|wan][ครับ|khráp] [แพ้|Pháae][ยา|yaa][อะไร|à-rai][ไม่|mâi][รู้|rúu][ครับ|khráp] [ไม่|Mâi][เคย|khoei][แพ้|pháae][ครับ|khráp]",
+     "id": "Dua hari. Saya tidak tahu alergi obat apa. Belum pernah alergi.",
+     "literal": "dua — hari — (sopan). alergi — obat — apa — tidak — tahu — (sopan). tidak — pernah — alergi — (sopan)."
+    },
+    {
+     "speaker": "เภสัชกร:",
+     "text": "[งั้น|Ngán] [ยา|yaa][ชุด|chút][นี้|níi][ค่ะ|khâ] [กิน|Kin][หลัง|lǎng][อาหาร|aa-hǎan][วัน|wan][ละ|lá][สาม|sǎam][ครั้ง|khráng][ค่ะ|khâ]",
+     "id": "Kalau begitu obat paket ini. Diminum sesudah makan, tiga kali sehari.",
+     "literal": "kalau-begitu — obat — set — ini — (sopan). makan — sesudah — makanan — hari — per — tiga — kali — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ง่วง|Ngûang][ไหม|mǎi][ครับ|khráp] [ผม|Phǒm][ต้อง|tâwng][ทำงาน|tham-ngaan][ครับ|khráp]",
+     "id": "Bikin ngantuk tidak? Saya harus kerja.",
+     "literal": "mengantuk — kah — (sopan)? saya — harus — bekerja — (sopan)."
+    },
+    {
+     "speaker": "เภสัชกร:",
+     "text": "[เม็ด|Mét][สีขาว|sǐi-khǎao][ง่วง|ngûang][ค่ะ|khâ] [กิน|Kin][ตอน|tawn][กลางคืน|klaang-khuuen][ก็|kâw][พอ|phaw][ค่ะ|khâ]",
+     "id": "Yang tablet putih bikin ngantuk. Cukup diminum malam saja.",
+     "literal": "butir — warna-putih — mengantuk — (sopan). makan — saat — malam — juga — cukup — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ถ้า|Thâa][ไม่|mâi][ดีขึ้น|dii-khûen][ต้อง|tâwng][ทำ|tham][ยังไง|yang-ngai][ครับ|khráp]",
+     "id": "Kalau tidak membaik harus bagaimana?",
+     "literal": "jika — tidak — baik-naik — harus — buat — bagaimana — (sopan)?"
+    },
+    {
+     "speaker": "เภสัชกร:",
+     "text": "[สาม|Sǎam][วัน|wan][ไม่|mâi][ดีขึ้น|dii-khûen][ไป|pai][หา|hǎa][หมอ|mǎw][นะ|ná][คะ|khá] [โรงพยาบาล|Roong-phá-yaa-baan][อยู่|yùu][ปาก|pàak][ซอย|sawy][ค่ะ|khâ]",
+     "id": "Tiga hari tidak membaik, temui dokter ya. Rumah sakitnya di mulut gang.",
+     "literal": "tiga — hari — tidak — baik-naik — pergi — cari — dokter — ya — (sopan). rumah-sakit — berada — mulut — gang — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ขอบคุณ|Khàwp-khun][มาก|mâak][ครับ|khráp]",
+     "id": "Terima kasih banyak.",
+     "literal": "terima-kasih — banyak — (sopan)."
+    }
+   ],
+   "notes": [
+    "**เจ็บ jèp dan ปวด pùat keduanya berarti \"sakit\", dan bedanya nyata.** *เจ็บ* adalah sakit yang **tajam, dari luar, dari luka** — tergores, tertusuk, tenggorokan perih: *เจ็บคอ, เจ็บมือ, เจ็บแผล*. *ปวด* adalah sakit yang **berdenyut, dari dalam**: *ปวดหัว* (sakit kepala), *ปวดท้อง* (sakit perut), *ปวดฟัน* (sakit gigi), *ปวดหลัง* (sakit punggung). ⚠️ Menukar keduanya membuat apoteker memberi obat yang salah.",
+    "**ไม่สบาย mâi sà-baai berarti \"kurang enak badan\"**, dan itu ungkapan payung untuk sakit apa pun yang tidak berat. Perhatikan bahwa ia adalah kebalikan langsung dari *สบายดี* yang kamu pelajari di unit 1 — lingkarannya menutup di sini.",
+    "**เป็นอะไร pen à-rai adalah \"sakit apa?\" — bukan \"ada apa?\".** Kata *เป็น* di sini memakai arti keduanya: **menderita penyakit**, seperti yang sudah diperingatkan di unit 2. *เป็นหวัด* (kena flu), *เป็นไข้* (demam), *เป็นไข้หวัดใหญ่* (flu berat).",
+    "**แพ้ pháae berarti \"alergi\" — dan juga \"kalah\".** *แพ้ยา* (alergi obat), *แพ้อาหารทะเล* (alergi makanan laut), *แพ้กุ้ง* (alergi udang). ⚠️ Kalimat *ผม/ฉันแพ้…ครับ/ค่ะ* adalah salah satu yang paling penting dihafal siapa pun yang punya alergi, dan sebaiknya kamu tuliskan di ponsel dalam aksara Thai.",
+    "**…ขึ้น khûen di belakang kata sifat berarti \"menjadi lebih…\".** *ดีขึ้น* (membaik), *แย่ลง yâae long* (memburuk — dengan *ลง* yang berarti turun). Pasangan *ขึ้น/ลง* ini dipakai untuk banyak perubahan: *ร้อนขึ้น* (jadi lebih panas), *ถูกลง* (jadi lebih murah).",
+    "**ครั้ง khráng adalah kata bantu untuk \"kali\".** *วันละสามครั้ง* (tiga kali sehari), *อีกครั้ง* (sekali lagi). Aturan minum obat hampir selalu memakai susunan *วันละ… ครั้ง*.",
+    "**หา hǎa berarti \"mencari\", tetapi ไปหาหมอ berarti \"pergi ke dokter\"** — harfiahnya \"pergi mencari dokter\". Pola *ไปหา + orang* adalah cara baku berkata \"mengunjungi seseorang\": *ไปหาเพื่อน* (menemui teman).",
+    "**ร้านขายยา ráan khǎai yaa (apotek) adalah tempat pertama yang didatangi orang Thai**, bukan rumah sakit. Apoteker di Thailand terbiasa mendengar keluhan dan meracik *ยาชุด yaa chút* — paket obat kecil dalam plastik untuk beberapa hari. Untuk keluhan ringan, ini jauh lebih cepat dan murah."
+   ],
+   "grammars": [
+    {
+     "title": "Bagian tubuh yang paling sering dikeluhkan",
+     "table": {
+      "head": ["Thai", "Baca", "Indonesia", "Thai", "Baca", "Indonesia"],
+      "rows": [
+       ["หัว", "*hǔa*", "kepala", "ท้อง", "*tháwng*", "perut"],
+       ["ตา", "*taa*", "mata", "หลัง", "*lǎng*", "punggung"],
+       ["หู", "*hǔu*", "telinga", "แขน", "*khǎaen*", "lengan"],
+       ["จมูก", "*jà-mùuk*", "hidung", "มือ", "*muue*", "tangan"],
+       ["ปาก", "*pàak*", "mulut", "ขา", "*khǎa*", "kaki"],
+       ["ฟัน", "*fan*", "gigi", "เท้า", "*tháo*", "telapak kaki"],
+       ["คอ", "*khaw*", "leher, tenggorokan", "นิ้ว", "*níu*", "jari"],
+       ["ไหล่", "*lài*", "bahu", "เข่า", "*khào*", "lutut"]
+      ]
+     },
+     "after": [
+      "⚠️ **หัว *hǔa* (kepala) dan หู *hǔu* (telinga) berbeda cuma pada vokalnya**, dan keduanya bernada naik. Latih berdampingan: *hǔa — hǔu*.",
+      "Ingat aturan budaya dari unit 12: **kepala adalah bagian tubuh paling tinggi dan tidak boleh disentuh**, bahkan untuk anak kecil sekalipun; **kaki paling rendah** dan tidak boleh diarahkan ke orang atau ke patung Buddha."
+     ]
+    },
+    {
+     "title": "Menjelaskan keluhan",
+     "table": {
+      "head": ["Thai", "Baca", "Artinya"],
+      "rows": [
+       ["ไม่สบาย", "*mâi sà-baai*", "kurang enak badan"],
+       ["ปวดหัว", "*pùat hǔa*", "sakit kepala"],
+       ["ปวดท้อง", "*pùat tháwng*", "sakit perut"],
+       ["เจ็บคอ", "*jèp khaw*", "sakit tenggorokan"],
+       ["เป็นไข้", "*pen khâi*", "demam"],
+       ["เป็นหวัด", "*pen wàt*", "flu, pilek"],
+       ["ไอ", "*ai*", "batuk"],
+       ["น้ำมูกไหล", "*náam-mûuk lǎi*", "ingus meler"],
+       ["ท้องเสีย", "*tháwng-sǐa*", "diare"],
+       ["คลื่นไส้", "*khlûuen-sâi*", "mual"],
+       ["เวียนหัว", "*wian hǔa*", "pusing berputar"],
+       ["แพ้…", "*pháae …*", "alergi …"],
+       ["เป็นมากี่วันแล้ว", "*pen maa kìi wan láaeo*", "sudah berapa hari?"],
+       ["ดีขึ้นแล้ว", "*dii-khûen láaeo*", "sudah membaik"]
+      ]
+     },
+     "after": [
+      "**Kalimat darurat yang perlu kamu hafal apa adanya:** *ช่วยด้วย chûai dûai* (tolong!), *เรียกรถพยาบาลหน่อย rîak rót-phá-yaa-baan nàwy* (panggilkan ambulans), *ผม/ฉันแพ้… phǒm/chǎn pháae …* (saya alergi …).",
+      "Nomor darurat di Thailand: **191** untuk polisi, **1669** untuk ambulans, **1155** untuk polisi pariwisata yang berbahasa Inggris."
+     ]
+    },
+    {
+     "title": "Cuaca dan tiga musim",
+     "table": {
+      "head": ["Thai", "Baca", "Artinya"],
+      "rows": [
+       ["อากาศ", "*aa-kàat*", "cuaca, udara"],
+       ["ร้อน", "*ráwn*", "panas"],
+       ["หนาว", "*nǎao*", "dingin"],
+       ["เย็น", "*yen*", "sejuk"],
+       ["ฝนตก", "*fǒn tòk*", "hujan turun"],
+       ["แดดออก", "*dàaet àwk*", "matahari terik"],
+       ["ลมแรง", "*lom raaeng*", "angin kencang"],
+       ["ฟ้าร้อง", "*fáa ráwng*", "guntur"],
+       ["ชื้น", "*chúuen*", "lembap"],
+       ["หน้าร้อน", "*nâa-ráwn*", "musim panas (Mar-Mei)"],
+       ["หน้าฝน", "*nâa-fǒn*", "musim hujan (Jun-Okt)"],
+       ["หน้าหนาว", "*nâa-nǎao*", "musim dingin (Nov-Feb)"]
+      ]
+     },
+     "after": [
+      "**หน้า nâa di sini berarti \"musim\"** — arti ketiga dari kata yang juga berarti \"depan\" dan \"wajah\". Bahasa Thai memang gemar memakai satu kata untuk banyak pekerjaan.",
+      "⚠️ **\"Musim dingin\" Thailand bukan dingin menurut ukuran Eropa** — di Bangkok berarti sekitar 22-25 derajat. Tetapi di utara, Chiang Mai dan pegunungannya benar-benar bisa turun ke 10 derajat, dan penduduknya memakai jaket tebal. Bagi pendatang dari Indonesia, suhu itu memang terasa dingin."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Berbasa-basi tentang cuaca",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Cuaca adalah bahan basa-basi paling aman di mana pun, dan Thailand tidak berbeda. Empat kalimat ini bisa dipakai kepada siapa saja."
+    },
+    {
+     "type": "list",
+     "items": [
+      "**วันนี้ร้อนจังนะครับ/คะ** — hari ini panas sekali ya.",
+      "**ฝนจะตกแล้ว** *fǒn jà tòk láaeo* — sebentar lagi hujan.",
+      "**เอาร่มไปด้วยนะครับ/คะ** — bawa payung ya.",
+      "**อากาศดีนะครับ/คะ** — cuacanya enak ya."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Musim hujan bukan hujan sepanjang hari",
+     "items": [
+      "Di musim hujan, hujan Bangkok biasanya datang deras selama satu sampai dua jam di sore hari, lalu berhenti. Itu bukan hujan seharian seperti yang dibayangkan pendatang.",
+      "Yang perlu diwaspadai adalah **น้ำท่วม *náam thûam*** — banjir — yang bisa membuat jalan tidak bisa dilewati selama beberapa jam. Kalimat yang berguna: *น้ำท่วมไหมครับ/คะ* (banjir tidak?) dan *รถผ่านได้ไหมครับ/คะ rót phàan dâai mǎi* (mobil bisa lewat?).",
+      "Payung lipat di dalam tas adalah kebiasaan yang dipegang hampir semua orang Thai — dan ia dipakai untuk hujan maupun untuk matahari."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Di rumah sakit",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Thai", "Baca", "Artinya"],
+     "rows": [
+      ["ทำบัตรใหม่", "*tham bàt mài*", "membuat kartu pasien baru"],
+      ["นัดหมอ", "*nát mǎw*", "membuat janji dengan dokter"],
+      ["ไม่ได้นัดมา", "*mâi dâai nát maa*", "datang tanpa janji"],
+      ["มีประกันไหม", "*mii prà-kan mǎi*", "punya asuransi?"],
+      ["พาสปอร์ต", "*páat-sà-pàwt*", "paspor"],
+      ["รอคิว", "*raw khiu*", "menunggu antrean"],
+      ["ห้องฉุกเฉิน", "*hâwng chùk-chǒoen*", "unit gawat darurat"],
+      ["ใบรับรองแพทย์", "*bai ráp-rawng phâaet*", "surat keterangan dokter"],
+      ["ค่ารักษา", "*khâa rák-sǎa*", "biaya pengobatan"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal praktis",
+     "items": [
+      "**Bawa paspor.** Rumah sakit Thailand membuat kartu pasien atas nama paspor, dan tanpa itu prosesnya berhenti di meja pertama.",
+      "**Rumah sakit swasta jauh lebih cepat dan berbahasa Inggris**, tetapi biayanya bisa berlipat. Rumah sakit negeri (*โรงพยาบาลรัฐ*) jauh lebih murah dengan antrean panjang.",
+      "**Simpan tulisan alergimu dalam aksara Thai di ponsel.** Contoh: *ฉันแพ้ยาเพนนิซิลลิน* (saya alergi penisilin). Di keadaan darurat, menunjukkan layar jauh lebih cepat daripada mengucapkan."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "th": "ไม่สบาย", "baca": "mâi sà-baai", "id": "kurang enak badan" },
+  { "th": "ปวด", "baca": "pùat", "id": "nyeri (dari dalam)" },
+  { "th": "เจ็บ", "baca": "jèp", "id": "sakit (dari luar, tajam)" },
+  { "th": "ไข้", "baca": "khâi", "id": "demam" },
+  { "th": "หวัด", "baca": "wàt", "id": "flu, pilek" },
+  { "th": "ไอ", "baca": "ai", "id": "batuk" },
+  { "th": "แพ้", "baca": "pháae", "id": "alergi; kalah" },
+  { "th": "ยา", "baca": "yaa", "id": "obat" },
+  { "th": "ร้านขายยา", "baca": "ráan khǎai yaa", "id": "apotek" },
+  { "th": "หมอ", "baca": "mǎw", "id": "dokter" },
+  { "th": "ครั้ง", "baca": "khráng", "id": "kali" },
+  { "th": "เม็ด", "baca": "mét", "id": "butir, tablet" },
+  { "th": "ง่วง", "baca": "ngûang", "id": "mengantuk" },
+  { "th": "ดีขึ้น", "baca": "dii-khûen", "id": "membaik" },
+  { "th": "หัว", "baca": "hǔa", "id": "kepala" },
+  { "th": "ท้อง", "baca": "tháwng", "id": "perut" },
+  { "th": "คอ", "baca": "khaw", "id": "leher, tenggorokan" },
+  { "th": "ฟัน", "baca": "fan", "id": "gigi" },
+  { "th": "มือ", "baca": "muue", "id": "tangan" },
+  { "th": "ขา", "baca": "khǎa", "id": "kaki" },
+  { "th": "ตา", "baca": "taa", "id": "mata" },
+  { "th": "หู", "baca": "hǔu", "id": "telinga" },
+  { "th": "ท้องเสีย", "baca": "tháwng-sǐa", "id": "diare" },
+  { "th": "อากาศ", "baca": "aa-kàat", "id": "cuaca, udara" },
+  { "th": "ฝน", "baca": "fǒn", "id": "hujan" },
+  { "th": "ตก", "baca": "tòk", "id": "jatuh, turun" },
+  { "th": "แดด", "baca": "dàaet", "id": "sinar matahari" },
+  { "th": "ลม", "baca": "lom", "id": "angin" },
+  { "th": "น้ำท่วม", "baca": "náam thûam", "id": "banjir" },
+  { "th": "หน้าฝน", "baca": "nâa-fǒn", "id": "musim hujan" },
+  { "th": "ตาก", "baca": "tàak", "id": "terkena (hujan, matahari); menjemur" },
+  { "th": "ฉุกเฉิน", "baca": "chùk-chǒoen", "id": "darurat" },
+  { "th": "ประกัน", "baca": "prà-kan", "id": "asuransi" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih ปวด atau เจ็บ.",
+   "items": [
+    "____หัว (sakit kepala)",
+    "____คอ (tenggorokan perih)",
+    "____ท้อง (sakit perut)",
+    "____ฟัน (sakit gigi)",
+    "____มือ (tangan luka)"
+   ]
+  },
+  {
+   "prompt": "Isi bagian yang kosong.",
+   "items": [
+    "\"Kurang enak badan\" → ____ครับ",
+    "\"Ada demam?\" → มี____ไหมคะ",
+    "\"Saya alergi udang\" → ผม____กุ้งครับ",
+    "\"Tiga kali sehari\" → วันละสาม____",
+    "\"Sudah membaik\" → ____แล้วค่ะ",
+    "\"Hujan turun\" → ฝน____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ครับ / เจ็บคอ / กับ / ปวดหัว",
+    "คะ / ไหม / มีไข้",
+    "ครับ / กี่วันแล้ว / เป็นมา",
+    "ค่ะ / หลังอาหาร / กิน / วันละสามครั้ง",
+    "ครับ / ไปหาหมอ / ถ้าไม่ดีขึ้น"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu laki-laki.",
+   "items": [
+    "Saya kurang enak badan.",
+    "Sakit kepala dan tenggorokan sakit.",
+    "Demam tidak ada, batuk sedikit.",
+    "Sudah dua hari.",
+    "Obatnya bikin ngantuk tidak?",
+    "Hari ini panas sekali ya."
+   ]
+  }
+ ],
+ "answers": [
+  "ปวด — เจ็บ — ปวด — ปวด — เจ็บ",
+  "ไม่สบาย — ไข้ — แพ้ — ครั้ง — ดีขึ้น — ตก",
+  "ปวดหัวกับเจ็บคอครับ — มีไข้ไหมคะ — เป็นมากี่วันแล้วครับ — กินหลังอาหารวันละสามครั้งค่ะ — ถ้าไม่ดีขึ้นไปหาหมอครับ",
+  "ผมไม่ค่อยสบายครับ — ปวดหัวกับเจ็บคอครับ — ไข้ไม่มีครับ ไอนิดหน่อยครับ — เป็นมาสองวันแล้วครับ — ยาง่วงไหมครับ — วันนี้ร้อนจังนะครับ"
+ ],
+ "wave": "Ulangi unit 14: tutup bahasa Thainya, lalu belilah sepotong baju dari awal sampai akhir — warna, ukuran, mencoba, dan menukar."
+}

@@ -1,0 +1,290 @@
+{
+ "title": "Mencari tempat tinggal",
+ "title_target": "หาที่อยู่ — Hǎa thîi-yùu",
+ "goal": "Menanyakan sewa, memeriksa kamar, menyebut isi rumah, dan menempatkan benda dengan tepat memakai kata depan — sekaligus mengerti angka sewa yang sering salah didengar.",
+ "bekal": [
+  "menanyakan sewa bulanan dan biaya tambahan",
+  "menyebut ruangan dan isi rumah",
+  "menempatkan benda dengan บน ใต้ ใน ข้าง ระหว่าง",
+  "menyebut ukuran dan keadaan: กว้าง แคบ สว่าง มืด",
+  "melaporkan kerusakan kepada pengelola"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Melihat kamar di สอย ใกล้ BTS",
+   "intro": "Budi mencari tempat tinggal. Perhatikan angka sewanya — ia memakai *หมื่น*, satuan yang tidak ada di bahasa Indonesia dan paling sering salah didengar pendatang.",
+   "lines": [
+    {
+     "speaker": "บูดี:",
+     "text": "[สวัสดี|Sà-wàt-dii][ครับ|khráp] [มี|Mii][ห้อง|hâwng][ว่าง|wâang][ไหม|mǎi][ครับ|khráp]",
+     "id": "Selamat siang. Ada kamar kosong?",
+     "literal": "sejahtera — (sopan). ada — kamar — kosong — kah — (sopan)?"
+    },
+    {
+     "speaker": "เจ้าของ:",
+     "text": "[มี|Mii][ค่ะ|khâ] [ชั้น|Chán][สี่|sìi][ห้อง|hâwng][หนึ่ง|nùeng][ค่ะ|khâ] [ขึ้น|Khûen][ไป|pai][ดู|duu][ก่อน|kàwn][ไหม|mǎi][คะ|khá]",
+     "id": "Ada. Lantai empat satu kamar. Mau naik lihat dulu?",
+     "literal": "ada — (sopan). lantai — empat — kamar — satu — (sopan). naik — pergi — lihat — dulu — kah — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ครับ|Khráp] [ค่าเช่า|Khâa-châo][เดือน|duuean][ละ|lá][เท่าไหร่|thâo-rài][ครับ|khráp]",
+     "id": "Iya. Sewanya berapa per bulan?",
+     "literal": "(sopan). biaya-sewa — bulan — per — berapa — (sopan)?"
+    },
+    {
+     "speaker": "เจ้าของ:",
+     "text": "[หนึ่ง|Nùeng][หมื่น|mùuen][สอง|sǎawng][พัน|phan][ค่ะ|khâ] [ยัง|Yang][ไม่|mâi][รวม|ruam][ค่าน้ำ|khâa-náam][ค่าไฟ|khâa-fai][ค่ะ|khâ]",
+     "id": "Dua belas ribu. Belum termasuk air dan listrik.",
+     "literal": "satu — sepuluh-ribu — dua — ribu — (sopan). masih — tidak — termasuk — biaya-air — biaya-listrik — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ต้อง|Tâwng][วาง|waang][มัดจำ|mát-jam][ไหม|mǎi][ครับ|khráp]",
+     "id": "Harus bayar deposit?",
+     "literal": "harus — menaruh — jaminan — kah — (sopan)?"
+    },
+    {
+     "speaker": "เจ้าของ:",
+     "text": "[ต้อง|Tâwng][ค่ะ|khâ] [สอง|Sǎawng][เดือน|duuean][ค่ะ|khâ] [สัญญา|Sǎn-yaa][หนึ่ง|nùeng][ปี|pii][ค่ะ|khâ]",
+     "id": "Harus. Dua bulan. Kontraknya satu tahun.",
+     "literal": "harus — (sopan). dua — bulan — (sopan). perjanjian — satu — tahun — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ห้อง|Hâwng][กว้าง|kwâang][ดี|dii][ครับ|khráp] [มี|Mii][แอร์|aae][ด้วย|dûai][ครับ|khráp] [เครื่องซักผ้า|Khrûeang-sák-phâa][มี|mii][ไหม|mǎi][ครับ|khráp]",
+     "id": "Kamarnya lumayan luas. Ada AC juga. Mesin cuci ada tidak?",
+     "literal": "kamar — luas — baik — (sopan). ada — AC — juga — (sopan). mesin-cuci-baju — ada — kah — (sopan)?"
+    },
+    {
+     "speaker": "เจ้าของ:",
+     "text": "[ในห้อง|Nai-hâwng][ไม่มี|mâi mii][ค่ะ|khâ] [อยู่|Yùu][ข้างล่าง|khâang-lâang][ค่ะ|khâ] [ข้างๆ|Khâang-khâang][ที่จอดรถ|thîi-jàwt-rót][ค่ะ|khâ]",
+     "id": "Di kamar tidak ada. Adanya di bawah, di sebelah tempat parkir.",
+     "literal": "di-kamar — tidak-ada — (sopan). berada — bagian-bawah — (sopan). sebelah — tempat-parkir-mobil — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ใกล้|Klâi][บีทีเอส|BTS][ไหม|mǎi][ครับ|khráp]",
+     "id": "Dekat BTS tidak?",
+     "literal": "dekat — BTS — kah — (sopan)?"
+    },
+    {
+     "speaker": "เจ้าของ:",
+     "text": "[เดิน|Dooen][ห้า|hâa][นาที|naa-thii][ค่ะ|khâ] [ตรง|Trong][ปาก|pàak][ซอย|sawy][มี|mii][ร้าน|ráan][สะดวกซื้อ|sà-dùak-súue][ด้วย|dûai][ค่ะ|khâ]",
+     "id": "Jalan lima menit. Di mulut gang ada minimarket juga.",
+     "literal": "jalan — lima — menit — (sopan). tepat — mulut — gang — ada — toko — praktis-beli — juga — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ดี|Dii][เลย|loei][ครับ|khráp] [ขอ|Khǎaw][คิด|khít][ดู|duu][ก่อน|kàwn][นะ|ná][ครับ|khráp] [เดี๋ยว|Dǐao][โทร|thoo][มา|maa][ครับ|khráp]",
+     "id": "Bagus. Saya pikirkan dulu ya. Nanti saya telepon.",
+     "literal": "baik — betul — (sopan). minta — pikir — lihat — dulu — ya — (sopan). sebentar — telepon — datang — (sopan)."
+    }
+   ],
+   "notes": [
+    "**ค่า khâa berarti \"biaya\", dan ia menempel di depan apa pun yang dibayar.** *ค่าเช่า* (sewa), *ค่าน้ำ* (biaya air), *ค่าไฟ* (listrik), *ค่าอาหาร* (biaya makan), *ค่ารถ* (ongkos), *ค่าเทอม khâa-thoome* (uang sekolah). Satu pola ini menghemat puluhan kata.",
+    "⚠️ **หนึ่งหมื่นสองพัน = 12.000, bukan 1.200.** *หมื่น mùuen* adalah sepuluh ribu, satuan yang tidak ada padanannya di bahasa Indonesia — dan inilah penyebab nomor satu pendatang salah mendengar harga sewa. Kalau ragu, minta dituliskan: *เขียนให้หน่อยได้ไหมครับ*.",
+    "**ซอย sawy adalah gang atau jalan kecil yang bercabang dari jalan besar**, dan seluruh alamat Bangkok dibangun di atasnya: *สุขุมวิท ซอย 11* berarti gang nomor 11 di Jalan Sukhumvit. *ปากซอย pàak sawy* (mulut gang) adalah titik pertemuan gang dengan jalan besar — dan itulah patokan yang dipakai semua orang untuk janjian.",
+    "**ข้างล่าง khâang-lâang (bawah) dan ข้างบน khâang-bon (atas) dipakai untuk lantai gedung**, bukan cuma untuk letak benda. *อยู่ข้างล่าง* = ada di lantai bawah.",
+    "**ข้างๆ khâang-khâang berarti \"di sebelah\"** — dengan pengulangan. Tanpa pengulangan, *ข้าง* saja lebih sering jadi bagian kata lain (*ข้างใน, ข้างนอก*).",
+    "**มัดจำ mát-jam adalah uang jaminan.** Di Bangkok, dua bulan sewa adalah jumlah yang lazim, dan menurut kebiasaan (bukan hukum) ia dikembalikan saat keluar bila tidak ada kerusakan. Mintalah *สัญญา sǎn-yaa* (kontrak) tertulis, dan simpan foto keadaan kamar di hari pertama.",
+    "**ขอคิดดูก่อนนะครับ/คะ adalah kalimat penting yang sudah kamu temui di unit 12.** Di sini ia dipakai secara jujur — untuk benar-benar berpikir dulu. Tetapi ingat, kalimat yang sama sering berarti penolakan halus ketika diucapkan orang Thai kepadamu.",
+    "**โทร thoo adalah bentuk pendek dari โทรศัพท์ thoo-rá-sàp** dan berarti \"menelepon\". *เดี๋ยวโทรมา* (nanti saya telepon), *โทรหา thoo hǎa* (menelepon seseorang)."
+   ],
+   "grammars": [
+    {
+     "title": "Rumah dan isinya",
+     "table": {
+      "head": ["Thai", "Baca", "Indonesia", "Thai", "Baca", "Indonesia"],
+      "rows": [
+       ["บ้าน", "*bâan*", "rumah", "เตียง", "*tiang*", "tempat tidur"],
+       ["ห้อง", "*hâwng*", "kamar", "ตู้เย็น", "*tûu-yen*", "kulkas"],
+       ["ห้องนอน", "*hâwng-nawn*", "kamar tidur", "แอร์", "*aae*", "AC"],
+       ["ห้องน้ำ", "*hâwng-náam*", "kamar mandi", "พัดลม", "*phát-lom*", "kipas angin"],
+       ["ห้องครัว", "*hâwng-khrua*", "dapur", "โทรทัศน์ / ทีวี", "*thoo-rá-thát / thii-wii*", "televisi"],
+       ["ห้องนั่งเล่น", "*hâwng-nâng-lên*", "ruang duduk", "เครื่องซักผ้า", "*khrûeang-sák-phâa*", "mesin cuci"],
+       ["ระเบียง", "*rá-biang*", "balkon", "ตู้เสื้อผ้า", "*tûu-sûuea-phâa*", "lemari baju"],
+       ["บันได", "*ban-dai*", "tangga", "ที่จอดรถ", "*thîi-jàwt-rót*", "tempat parkir"],
+       ["ลิฟต์", "*líp*", "lift", "กุญแจ", "*kun-jaae*", "kunci"],
+       ["หน้าต่าง", "*nâa-tàang*", "jendela", "ประตู", "*prà-tuu*", "pintu"]
+      ]
+     },
+     "after": [
+      "Perhatikan **ตู้ tûu** (lemari/kotak) yang membentuk banyak kata: *ตู้เย็น* (lemari dingin = kulkas), *ตู้เสื้อผ้า* (lemari baju), *ตู้เอทีเอ็ม* (mesin ATM), *ตู้ไปรษณีย์* (kotak pos). Ini pola yang sama dengan *โรง-*, *นัก-*, *ค่า-*, dan *น้ำ-* yang sudah kamu temui."
+     ]
+    },
+    {
+     "title": "Menempatkan benda: sepuluh kata depan",
+     "table": {
+      "head": ["Thai", "Baca", "Artinya", "Contoh"],
+      "rows": [
+       ["บน", "*bon*", "di atas (menempel)", "บนโต๊ะ"],
+       ["ข้างบน", "*khâang-bon*", "di bagian atas, lantai atas", "อยู่ข้างบน"],
+       ["ใต้", "*tâai*", "di bawah", "ใต้เตียง"],
+       ["ข้างล่าง", "*khâang-lâang*", "di bagian bawah, lantai bawah", "อยู่ข้างล่าง"],
+       ["ใน", "*nai*", "di dalam", "ในตู้เย็น"],
+       ["นอก / ข้างนอก", "*nâwk / khâang-nâwk*", "di luar", "รออยู่ข้างนอก"],
+       ["ข้างๆ", "*khâang-khâang*", "di sebelah", "ข้างๆ ประตู"],
+       ["ระหว่าง", "*rá-wàang*", "di antara", "ระหว่างตู้กับเตียง"],
+       ["ตรงข้าม", "*trong-khâam*", "di seberang", "ตรงข้ามร้าน"],
+       ["ใกล้ / ไกลจาก", "*klâi / klai jàak*", "dekat / jauh dari", "ใกล้บีทีเอส"]
+      ]
+     },
+     "after": [
+      "⚠️ **ใกล้ klâi (dekat) dan ไกล klai (jauh) berbeda cuma pada nadanya** — yang pertama nada jatuh, yang kedua nada datar. Ini pasangan yang paling sering tertukar oleh pemula, dan artinya berlawanan. Latih keduanya berdampingan: *klâi — klai, klâi — klai*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menanyakan dan memeriksa tempat tinggal",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Thai", "Baca", "Artinya"],
+     "rows": [
+      ["มีห้องว่างไหม", "*mii hâwng wâang mǎi*", "ada kamar kosong?"],
+      ["ค่าเช่าเดือนละเท่าไหร่", "*khâa-châo duuean lá thâo-rài*", "sewanya berapa per bulan?"],
+      ["รวมค่าน้ำค่าไฟไหม", "*ruam khâa-náam khâa-fai mǎi*", "termasuk air dan listrik?"],
+      ["ต้องวางมัดจำเท่าไหร่", "*tâwng waang mát-jam thâo-rài*", "depositnya berapa?"],
+      ["สัญญากี่ปี", "*sǎn-yaa kìi pii*", "kontrak berapa tahun?"],
+      ["มีเฟอร์นิเจอร์ไหม", "*mii foee-ní-jôee mǎi*", "ada perabotnya?"],
+      ["มีอินเทอร์เน็ตไหม", "*mii in-thoee-nét mǎi*", "ada internet?"],
+      ["เลี้ยงสัตว์ได้ไหม", "*líang sàt dâai mǎi*", "boleh pelihara hewan?"],
+      ["ขอดูห้องหน่อยได้ไหม", "*khǎaw duu hâwng nàwy dâai mǎi*", "boleh lihat kamarnya?"],
+      ["เข้าอยู่ได้เมื่อไหร่", "*khâo yùu dâai mûea-rài*", "kapan bisa mulai tinggal?"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Melaporkan kerusakan",
+     "items": [
+      "**…เสีย *sǐa*** — rusak. *แอร์เสียครับ* (AC-nya rusak), *น้ำไม่ไหลครับ náam mâi lǎi* (airnya tidak mengalir), *ไฟดับ fai dàp* (listrik mati).",
+      "**ช่วยมาดูหน่อยได้ไหมครับ/คะ** — bisa tolong datang lihat?",
+      "**ซ่อมได้เมื่อไหร่ครับ/คะ *sâwm dâai mûea-rài*** — kapan bisa diperbaiki?",
+      "⚠️ Kata *เสีย sǐa* punya banyak arti: rusak, hilang, dan juga \"membayar\" (*เสียค่าเช่า*). Yang mana yang dimaksud selalu jelas dari kalimatnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menggambarkan tempat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Thai", "Baca", "Indonesia", "Lawannya"],
+     "rows": [
+      ["กว้าง", "*kwâang*", "luas", "แคบ *khâaep* — sempit"],
+      ["ใหญ่", "*yài*", "besar", "เล็ก *lék* — kecil"],
+      ["สว่าง", "*sà-wàang*", "terang", "มืด *mûuet* — gelap"],
+      ["สะอาด", "*sà-àat*", "bersih", "สกปรก *sòk-kà-pròk* — kotor"],
+      ["เงียบ", "*ngîap*", "sepi, tenang", "เสียงดัง *sǐang dang* — berisik"],
+      ["ใหม่", "*mài*", "baru", "เก่า *kào* — lama"],
+      ["แพง", "*phaaeng*", "mahal", "ถูก *thùuk* — murah"],
+      ["สบาย", "*sà-baai*", "nyaman", "อึดอัด *ùet-àt* — sesak"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kata sifat bahasa Thai berdiri **sesudah** kata bendanya, dan tidak memerlukan \"adalah\": *ห้องกว้าง* (kamarnya luas), *ห้องไม่สะอาด* (kamarnya tidak bersih). Untuk menguatkan, tambahkan *มาก mâak* (sangat) atau *จัง jang* (sekali) di belakang: *กว้างมาก*, *สะอาดจัง*."
+    },
+    {
+     "type": "kotak",
+     "title": "Satu hal yang perlu diperiksa di Bangkok",
+     "items": [
+      "**Tanyakan tarif listrik per unit.** Banyak apartemen sewa memasang tarif sendiri yang jauh di atas tarif negara, dan dengan AC yang menyala setiap malam, selisihnya bisa lebih besar daripada kenaikan sewa. Kalimatnya: *ค่าไฟยูนิตละเท่าไหร่ครับ/คะ khâa-fai yuu-nít lá thâo-rài*.",
+      "**Periksa jarak sebenarnya ke stasiun dengan berjalan kaki.** \"Lima menit\" di iklan sering berarti lima menit naik ojek. Di iklan Thailand, kata yang jujur adalah *เดิน dooen* (jalan kaki) — kalau tidak disebut, kemungkinan besar bukan jalan kaki."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "th": "ที่อยู่", "baca": "thîi-yùu", "id": "alamat, tempat tinggal" },
+  { "th": "เช่า", "baca": "châo", "id": "menyewa" },
+  { "th": "ค่าเช่า", "baca": "khâa-châo", "id": "uang sewa" },
+  { "th": "ค่าน้ำ", "baca": "khâa-náam", "id": "biaya air" },
+  { "th": "ค่าไฟ", "baca": "khâa-fai", "id": "biaya listrik" },
+  { "th": "มัดจำ", "baca": "mát-jam", "id": "uang jaminan, deposit" },
+  { "th": "สัญญา", "baca": "sǎn-yaa", "id": "kontrak, perjanjian" },
+  { "th": "รวม", "baca": "ruam", "id": "termasuk, menggabungkan" },
+  { "th": "เจ้าของ", "baca": "jâo-khǎawng", "id": "pemilik" },
+  { "th": "ซอย", "baca": "sawy", "id": "gang, jalan kecil" },
+  { "th": "ปากซอย", "baca": "pàak sawy", "id": "mulut gang" },
+  { "th": "ห้องนอน", "baca": "hâwng-nawn", "id": "kamar tidur" },
+  { "th": "ห้องครัว", "baca": "hâwng-khrua", "id": "dapur" },
+  { "th": "เตียง", "baca": "tiang", "id": "tempat tidur" },
+  { "th": "ตู้เย็น", "baca": "tûu-yen", "id": "kulkas" },
+  { "th": "แอร์", "baca": "aae", "id": "AC" },
+  { "th": "พัดลม", "baca": "phát-lom", "id": "kipas angin" },
+  { "th": "เครื่องซักผ้า", "baca": "khrûeang-sák-phâa", "id": "mesin cuci" },
+  { "th": "ระเบียง", "baca": "rá-biang", "id": "balkon" },
+  { "th": "บันได", "baca": "ban-dai", "id": "tangga" },
+  { "th": "ระหว่าง", "baca": "rá-wàang", "id": "di antara" },
+  { "th": "ข้างล่าง", "baca": "khâang-lâang", "id": "di bawah, lantai bawah" },
+  { "th": "ข้างบน", "baca": "khâang-bon", "id": "di atas, lantai atas" },
+  { "th": "กว้าง", "baca": "kwâang", "id": "luas" },
+  { "th": "แคบ", "baca": "khâaep", "id": "sempit" },
+  { "th": "สว่าง", "baca": "sà-wàang", "id": "terang" },
+  { "th": "มืด", "baca": "mûuet", "id": "gelap" },
+  { "th": "สะอาด", "baca": "sà-àat", "id": "bersih" },
+  { "th": "เงียบ", "baca": "ngîap", "id": "sepi, tenang" },
+  { "th": "เสีย", "baca": "sǐa", "id": "rusak; membayar" },
+  { "th": "ซ่อม", "baca": "sâwm", "id": "memperbaiki" },
+  { "th": "โทร", "baca": "thoo", "id": "menelepon" },
+  { "th": "เลี้ยง", "baca": "líang", "id": "memelihara; mentraktir" },
+  { "th": "หมื่น", "baca": "mùuen", "id": "sepuluh ribu" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angkanya.",
+   "items": [
+    "หนึ่งหมื่นสองพัน = ____",
+    "แปดพันห้าร้อย = ____",
+    "สองหมื่น = ____",
+    "หนึ่งแสน = ____",
+    "หมื่นห้า = ____"
+   ]
+  },
+  {
+   "prompt": "Isi bagian yang kosong.",
+   "items": [
+    "\"Ada kamar kosong?\" → มีห้อง____ไหมครับ",
+    "\"Sewanya berapa per bulan?\" → ____เดือนละเท่าไหร่คะ",
+    "\"Belum termasuk listrik\" → ยังไม่____ค่าไฟค่ะ",
+    "\"AC-nya rusak\" → แอร์____ครับ",
+    "\"Di sebelah tempat parkir\" → ____ที่จอดรถค่ะ"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ครับ / มีห้องว่าง / ไหม",
+    "คะ / เท่าไหร่ / ค่าเช่า / เดือนละ",
+    "ครับ / ไหม / มัดจำ / ต้องวาง",
+    "ครับ / ได้ไหม / ขอดูห้อง / หน่อย",
+    "ค่ะ / ห้านาที / เดิน"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu laki-laki.",
+   "items": [
+    "Ada kamar kosong?",
+    "Sewanya berapa per bulan?",
+    "Termasuk air dan listrik?",
+    "Depositnya berapa?",
+    "Dekat BTS tidak?",
+    "Saya pikirkan dulu ya, nanti saya telepon."
+   ]
+  }
+ ],
+ "answers": [
+  "12.000 — 8.500 — 20.000 — 100.000 — 15.000",
+  "ว่าง — ค่าเช่า — รวม — เสีย — ข้างๆ",
+  "มีห้องว่างไหมครับ — ค่าเช่าเดือนละเท่าไหร่คะ — ต้องวางมัดจำไหมครับ — ขอดูห้องหน่อยได้ไหมครับ — เดินห้านาทีค่ะ",
+  "มีห้องว่างไหมครับ — ค่าเช่าเดือนละเท่าไหร่ครับ — รวมค่าน้ำค่าไฟไหมครับ — ต้องวางมัดจำเท่าไหร่ครับ — ใกล้บีทีเอสไหมครับ — ขอคิดดูก่อนนะครับ เดี๋ยวโทรมาครับ"
+ ],
+ "wave": "Ulangi unit 11: tutup bahasa Thainya, lalu ceritakan satu hal yang sudah kamu lakukan, satu yang sedang, dan satu yang akan — dengan kata kerja yang sama persis."
+}
