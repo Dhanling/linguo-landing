@@ -12,19 +12,97 @@
       "title": "حِوَار — فِي الْعِيَادَةِ",
       "intro": "Budi datang ke klinik kampus karena demam sejak dua hari.",
       "lines": [
-        { "speaker": "اَلطَّبِيبَة:", "text": "تَفَضَّلْ، اِجْلِسْ. مَاذَا بِكَ؟", "baca": "tafadhdhal, ijlis. maadzaa bika?", "id": "Silakan, duduk. Kenapa kamu?", "literal": "silakanlah, duduklah. apa dengan-kamu?" },
-        { "speaker": "بُودِي:", "text": "عِنْدِي حَرَارَةٌ وَأَلَمٌ فِي رَأْسِي.", "baca": "'indii haraaratun wa alamun fii ra'sii.", "id": "Saya demam dan kepala saya sakit.", "literal": "di-tempat-saya panas dan sakit di kepala-saya." },
-        { "speaker": "اَلطَّبِيبَة:", "text": "مُنْذُ مَتَى؟", "baca": "mundzu mataa?", "id": "Sejak kapan?", "literal": "sejak kapan?" },
-        { "speaker": "بُودِي:", "text": "مُنْذُ يَوْمَيْنِ. وَحَلْقِي يُؤْلِمُنِي أَيْضًا.", "baca": "mundzu yaumain. wa halqii yu'limunii aidhan.", "id": "Sejak dua hari. Tenggorokan saya juga sakit.", "literal": "sejak dua-hari. dan tenggorokan-saya menyakiti-saya juga." },
-        { "speaker": "اَلطَّبِيبَة:", "text": "هَلْ تَسْعُلُ؟ وَهَلْ نِمْتَ جَيِّدًا؟", "baca": "hal tas'ul? wa hal nimta jayyidan?", "id": "Kamu batuk? Dan tidurmu nyenyak?", "literal": "apakah kamu-batuk? dan apakah kamu-tidur baik?" },
-        { "speaker": "بُودِي:", "text": "نَعَمْ أَسْعُلُ قَلِيلًا، وَمَا نِمْتُ جَيِّدًا.", "baca": "na'am as'ulu qaliilan, wa maa nimtu jayyidan.", "id": "Ya, saya batuk sedikit, dan saya tidak tidur nyenyak.", "literal": "ya saya-batuk sedikit, dan tidak saya-tidur baik." },
-        { "speaker": "اَلطَّبِيبَة:", "text": "لَا تَقْلَقْ. هٰذِهِ نَزْلَةُ بَرْدٍ بَسِيطَةٌ.", "baca": "laa taqlaq. haadzihi nazlatu bardin basiithah.", "id": "Jangan khawatir. Ini cuma flu ringan.", "literal": "jangan kamu-khawatir. ini turunan dingin sederhana." },
-        { "speaker": "بُودِي:", "text": "اَلْحَمْدُ لِلَّهِ. مَاذَا آخُذُ؟", "baca": "alhamdu lillaah. maadzaa aakhudz?", "id": "Alhamdulillah. Saya minum obat apa?", "literal": "segala puji bagi Allah. apa saya-ambil?" },
-        { "speaker": "اَلطَّبِيبَة:", "text": "خُذْ هٰذَا الدَّوَاءَ ثَلَاثَ مَرَّاتٍ فِي الْيَوْمِ.", "baca": "khudz haadzad-dawaa'a tsalaatsa marraatin fil-yaum.", "id": "Minum obat ini tiga kali sehari.", "literal": "ambillah obat ini tiga kali-kali pada hari-itu." },
-        { "speaker": "بُودِي:", "text": "قَبْلَ الْأَكْلِ أَمْ بَعْدَهُ؟", "baca": "qablal-akli am ba'dah?", "id": "Sebelum makan atau sesudahnya?", "literal": "sebelum makan-itu atau sesudah-nya?" },
-        { "speaker": "اَلطَّبِيبَة:", "text": "بَعْدَ الْأَكْلِ. وَاشْرَبْ مَاءً كَثِيرًا وَاسْتَرِحْ.", "baca": "ba'dal-akl. wasyrab maa'an katsiiran wastarih.", "id": "Sesudah makan. Dan minum banyak air serta istirahat.", "literal": "sesudah makan-itu. dan minumlah air banyak dan beristirahatlah." },
-        { "speaker": "بُودِي:", "text": "شُكْرًا يَا دُكْتُورَة!", "baca": "syukran yaa duktuurah!", "id": "Terima kasih, Dokter!", "literal": "terima kasih wahai dokter-perempuan!" },
-        { "speaker": "اَلطَّبِيبَة:", "text": "سَلَامَتُكَ. أَلْفُ سَلَامَةٍ!", "baca": "salaamatuk. alfu salaamah!", "id": "Semoga selamat. Semoga cepat sembuh!", "literal": "keselamatan-kamu. seribu keselamatan!" }
+        {
+          "speaker": "اَلطَّبِيبَة:",
+          "text": "تَفَضَّلْ، اِجْلِسْ. مَاذَا بِكَ؟",
+          "baca": "tafadhdhal, ijlis. maadzaa bika?",
+          "id": "Silakan, duduk. Kenapa kamu?",
+          "literal": "silakanlah, duduklah. apa dengan-kamu?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "عِنْدِي حَرَارَةٌ وَأَلَمٌ فِي رَأْسِي.",
+          "baca": "'indii haraaratun wa alamun fii ra'sii.",
+          "id": "Saya demam dan kepala saya sakit.",
+          "literal": "di-tempat-saya panas dan sakit di kepala-saya."
+        },
+        {
+          "speaker": "اَلطَّبِيبَة:",
+          "text": "مُنْذُ مَتَى؟",
+          "baca": "mundzu mataa?",
+          "id": "Sejak kapan?",
+          "literal": "sejak kapan?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مُنْذُ يَوْمَيْنِ. وَحَلْقِي يُؤْلِمُنِي أَيْضًا.",
+          "baca": "mundzu yaumain. wa halqii yu'limunii aidhan.",
+          "id": "Sejak dua hari. Tenggorokan saya juga sakit.",
+          "literal": "sejak dua-hari. dan tenggorokan-saya menyakiti-saya juga."
+        },
+        {
+          "speaker": "اَلطَّبِيبَة:",
+          "text": "هَلْ تَسْعُلُ؟ وَهَلْ نِمْتَ جَيِّدًا؟",
+          "baca": "hal tas'ul? wa hal nimta jayyidan?",
+          "id": "Kamu batuk? Dan tidurmu nyenyak?",
+          "literal": "apakah kamu-batuk? dan apakah kamu-tidur baik?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "نَعَمْ أَسْعُلُ قَلِيلًا، وَمَا نِمْتُ جَيِّدًا.",
+          "baca": "na'am as'ulu qaliilan, wa maa nimtu jayyidan.",
+          "id": "Ya, saya batuk sedikit, dan saya tidak tidur nyenyak.",
+          "literal": "ya saya-batuk sedikit, dan tidak saya-tidur baik."
+        },
+        {
+          "speaker": "اَلطَّبِيبَة:",
+          "text": "لَا تَقْلَقْ. هٰذِهِ نَزْلَةُ بَرْدٍ بَسِيطَةٌ.",
+          "baca": "laa taqlaq. haadzihi nazlatu bardin basiithah.",
+          "id": "Jangan khawatir. Ini cuma flu ringan.",
+          "literal": "jangan kamu-khawatir. ini turunan dingin sederhana."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "اَلْحَمْدُ لِلَّهِ. مَاذَا آخُذُ؟",
+          "baca": "alhamdu lillaah. maadzaa aakhudz?",
+          "id": "Alhamdulillah. Saya minum obat apa?",
+          "literal": "segala puji bagi Allah. apa saya-ambil?"
+        },
+        {
+          "speaker": "اَلطَّبِيبَة:",
+          "text": "خُذْ هٰذَا الدَّوَاءَ ثَلَاثَ مَرَّاتٍ فِي الْيَوْمِ.",
+          "baca": "khudz haadzad-dawaa'a tsalaatsa marraatin fil-yaum.",
+          "id": "Minum obat ini tiga kali sehari.",
+          "literal": "ambillah obat ini tiga kali-kali pada hari-itu."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "قَبْلَ الْأَكْلِ أَمْ بَعْدَهُ؟",
+          "baca": "qablal-akli am ba'dah?",
+          "id": "Sebelum makan atau sesudahnya?",
+          "literal": "sebelum makan-itu atau sesudah-nya?"
+        },
+        {
+          "speaker": "اَلطَّبِيبَة:",
+          "text": "بَعْدَ الْأَكْلِ. وَاشْرَبْ مَاءً كَثِيرًا وَاسْتَرِحْ.",
+          "baca": "ba'dal-akl. wasyrab maa'an katsiiran wastarih.",
+          "id": "Sesudah makan. Dan minum banyak air serta istirahat.",
+          "literal": "sesudah makan-itu. dan minumlah air banyak dan beristirahatlah."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "شُكْرًا يَا دُكْتُورَة!",
+          "baca": "syukran yaa duktuurah!",
+          "id": "Terima kasih, Dokter!",
+          "literal": "terima kasih wahai dokter-perempuan!"
+        },
+        {
+          "speaker": "اَلطَّبِيبَة:",
+          "text": "سَلَامَتُكَ. أَلْفُ سَلَامَةٍ!",
+          "baca": "salaamatuk. alfu salaamah!",
+          "id": "Semoga selamat. Semoga cepat sembuh!",
+          "literal": "keselamatan-kamu. seribu keselamatan!"
+        }
       ],
       "notes": [
         "**مَاذَا بِكَ؟ harfiahnya \"apa denganmu?\".** Ini kalimat baku dokter dan juga orang yang melihatmu kurang sehat. Kepada perempuan: مَاذَا بِكِ؟ Yang lebih santai: مَا لَكَ؟",
@@ -39,18 +117,62 @@
         {
           "title": "Menyebut keluhan",
           "table": {
-            "head": ["Arab", "Cara baca", "Arti"],
+            "head": [
+              "Arab",
+              "Cara baca",
+              "Arti"
+            ],
             "rows": [
-              ["أَنَا مَرِيضٌ", "anaa mariidh", "Saya sakit"],
-              ["عِنْدِي حَرَارَةٌ", "'indii haraarah", "Saya demam"],
-              ["عِنْدِي أَلَمٌ فِي رَأْسِي", "'indii alamun fii ra'sii", "Kepala saya sakit"],
-              ["بَطْنِي يُؤْلِمُنِي", "bathnii yu'limunii", "Perut saya sakit"],
-              ["عِنْدِي زُكَامٌ", "'indii zukaam", "Saya pilek"],
-              ["أَسْعُلُ", "as'ulu", "Saya batuk"],
-              ["أَشْعُرُ بِالتَّعَبِ", "asy'uru bit-ta'ab", "Saya merasa lelah"],
-              ["أَشْعُرُ بِالدَّوَارِ", "asy'uru bid-dawaar", "Saya pusing berputar"],
-              ["لَا أَسْتَطِيعُ النَّوْمَ", "laa astathii'un-naum", "Saya tidak bisa tidur"],
-              ["عِنْدِي حَسَاسِيَّةٌ مِنْ...", "'indii hasaasiyyatun min...", "Saya alergi terhadap..."]
+              [
+                "أَنَا مَرِيضٌ",
+                "anaa mariidh",
+                "Saya sakit"
+              ],
+              [
+                "عِنْدِي حَرَارَةٌ",
+                "'indii haraarah",
+                "Saya demam"
+              ],
+              [
+                "عِنْدِي أَلَمٌ فِي رَأْسِي",
+                "'indii alamun fii ra'sii",
+                "Kepala saya sakit"
+              ],
+              [
+                "بَطْنِي يُؤْلِمُنِي",
+                "bathnii yu'limunii",
+                "Perut saya sakit"
+              ],
+              [
+                "عِنْدِي زُكَامٌ",
+                "'indii zukaam",
+                "Saya pilek"
+              ],
+              [
+                "أَسْعُلُ",
+                "as'ulu",
+                "Saya batuk"
+              ],
+              [
+                "أَشْعُرُ بِالتَّعَبِ",
+                "asy'uru bit-ta'ab",
+                "Saya merasa lelah"
+              ],
+              [
+                "أَشْعُرُ بِالدَّوَارِ",
+                "asy'uru bid-dawaar",
+                "Saya pusing berputar"
+              ],
+              [
+                "لَا أَسْتَطِيعُ النَّوْمَ",
+                "laa astathii'un-naum",
+                "Saya tidak bisa tidur"
+              ],
+              [
+                "عِنْدِي حَسَاسِيَّةٌ مِنْ...",
+                "'indii hasaasiyyatun min...",
+                "Saya alergi terhadap..."
+              ]
             ]
           },
           "after": [
@@ -60,16 +182,79 @@
         {
           "title": "Bagian tubuh",
           "table": {
-            "head": ["Arab", "Cara baca", "Arti", "Arab", "Cara baca", "Arti"],
+            "head": [
+              "Arab",
+              "Cara baca",
+              "Arti",
+              "Arab",
+              "Cara baca",
+              "Arti"
+            ],
             "rows": [
-              ["رَأْس", "ra's", "kepala", "يَد", "yad", "tangan"],
-              ["وَجْه", "wajh", "wajah", "رِجْل", "rijl", "kaki"],
-              ["عَيْن", "'ain", "mata", "قَلْب", "qalb", "jantung, hati"],
-              ["أُذُن", "udzun", "telinga", "بَطْن", "bathn", "perut"],
-              ["أَنْف", "anf", "hidung", "ظَهْر", "zhahr", "punggung"],
-              ["فَم", "fam", "mulut", "أَسْنَان", "asnaan", "gigi"],
-              ["حَلْق", "halq", "tenggorokan", "شَعْر", "sya'r", "rambut"],
-              ["رَقَبَة", "raqabah", "leher", "جِلْد", "jild", "kulit"]
+              [
+                "رَأْس",
+                "ra's",
+                "kepala",
+                "يَد",
+                "yad",
+                "tangan"
+              ],
+              [
+                "وَجْه",
+                "wajh",
+                "wajah",
+                "رِجْل",
+                "rijl",
+                "kaki"
+              ],
+              [
+                "عَيْن",
+                "'ain",
+                "mata",
+                "قَلْب",
+                "qalb",
+                "jantung, hati"
+              ],
+              [
+                "أُذُن",
+                "udzun",
+                "telinga",
+                "بَطْن",
+                "bathn",
+                "perut"
+              ],
+              [
+                "أَنْف",
+                "anf",
+                "hidung",
+                "ظَهْر",
+                "zhahr",
+                "punggung"
+              ],
+              [
+                "فَم",
+                "fam",
+                "mulut",
+                "أَسْنَان",
+                "asnaan",
+                "gigi"
+              ],
+              [
+                "حَلْق",
+                "halq",
+                "tenggorokan",
+                "شَعْر",
+                "sya'r",
+                "rambut"
+              ],
+              [
+                "رَقَبَة",
+                "raqabah",
+                "leher",
+                "جِلْد",
+                "jild",
+                "kulit"
+              ]
             ]
           },
           "after": [
@@ -84,109 +269,328 @@
     {
       "title": "Di apotek",
       "blocks": [
-        { "type": "tabel", "head": ["Arab", "Cara baca", "Arti"], "rows": [
-          ["عِنْدَكُمْ دَوَاءٌ لِلصُّدَاعِ؟", "'indakum dawaa'un lish-shudaa'?", "Ada obat sakit kepala?"],
-          ["دَوَاءٌ لِلسُّعَالِ", "dawaa'un lis-su'aal", "obat batuk"],
-          ["حُبُوب / شَرَاب", "hubuub / syaraab", "tablet / sirop"],
-          ["مَرْهَم", "marham", "salep"],
-          ["كَمْ مَرَّةً فِي الْيَوْمِ؟", "kam marratan fil-yaum?", "Berapa kali sehari?"],
-          ["قَبْلَ الْأَكْلِ / بَعْدَهُ", "qablal-akl / ba'dah", "sebelum / sesudah makan"],
-          ["هَلْ يَحْتَاجُ وَصْفَةً؟", "hal yahtaaju washfah?", "Perlu resep?"],
-          ["عِنْدِي حَسَاسِيَّةٌ مِنَ الْبِنِسِلِين", "'indii hasaasiyyatun minal-binisiliin", "Saya alergi penisilin"],
-          ["أَيْنَ أَقْرَبُ صَيْدَلِيَّةٍ؟", "aina aqrabu shaidaliyyah?", "Apotek terdekat di mana?"],
-          ["اِتَّصِلْ بِالْإِسْعَافِ", "ittashil bil-is'aaf", "Panggil ambulans"]
-        ] },
-        { "type": "kotak", "title": "Kalimat yang perlu kamu hafal utuh sebelum bepergian", "items": [
-          "**عِنْدِي حَسَاسِيَّةٌ مِنْ...** — \"saya alergi terhadap...\". Kalimat ini bisa menyelamatkan nyawa dan tidak boleh kamu susun sambil berpikir.",
-          "**أَحْتَاجُ إِلَى طَبِيبٍ** — \"saya butuh dokter\". Dan **أَيْنَ أَقْرَبُ مُسْتَشْفًى؟** — \"rumah sakit terdekat di mana?\".",
-          "Simpan juga satu kalimat tentang penyakit menahun kalau kamu punya, misalnya عِنْدِي مَرَضُ السُّكَّرِ (\"saya diabetes\") atau عِنْدِي رَبْوٌ (\"saya asma\")."
-        ] }
+        {
+          "type": "tabel",
+          "head": [
+            "Arab",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "عِنْدَكُمْ دَوَاءٌ لِلصُّدَاعِ؟",
+              "'indakum dawaa'un lish-shudaa'?",
+              "Ada obat sakit kepala?"
+            ],
+            [
+              "دَوَاءٌ لِلسُّعَالِ",
+              "dawaa'un lis-su'aal",
+              "obat batuk"
+            ],
+            [
+              "حُبُوب / شَرَاب",
+              "hubuub / syaraab",
+              "tablet / sirop"
+            ],
+            [
+              "مَرْهَم",
+              "marham",
+              "salep"
+            ],
+            [
+              "كَمْ مَرَّةً فِي الْيَوْمِ؟",
+              "kam marratan fil-yaum?",
+              "Berapa kali sehari?"
+            ],
+            [
+              "قَبْلَ الْأَكْلِ / بَعْدَهُ",
+              "qablal-akl / ba'dah",
+              "sebelum / sesudah makan"
+            ],
+            [
+              "هَلْ يَحْتَاجُ وَصْفَةً؟",
+              "hal yahtaaju washfah?",
+              "Perlu resep?"
+            ],
+            [
+              "عِنْدِي حَسَاسِيَّةٌ مِنَ الْبِنِسِلِين",
+              "'indii hasaasiyyatun minal-binisiliin",
+              "Saya alergi penisilin"
+            ],
+            [
+              "أَيْنَ أَقْرَبُ صَيْدَلِيَّةٍ؟",
+              "aina aqrabu shaidaliyyah?",
+              "Apotek terdekat di mana?"
+            ],
+            [
+              "اِتَّصِلْ بِالْإِسْعَافِ",
+              "ittashil bil-is'aaf",
+              "Panggil ambulans"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kalimat yang perlu kamu hafal utuh sebelum bepergian",
+          "items": [
+            "**عِنْدِي حَسَاسِيَّةٌ مِنْ...** — \"saya alergi terhadap...\". Kalimat ini bisa menyelamatkan nyawa dan tidak boleh kamu susun sambil berpikir.",
+            "**أَحْتَاجُ إِلَى طَبِيبٍ** — \"saya butuh dokter\". Dan **أَيْنَ أَقْرَبُ مُسْتَشْفًى؟** — \"rumah sakit terdekat di mana?\".",
+            "Simpan juga satu kalimat tentang penyakit menahun kalau kamu punya, misalnya عِنْدِي مَرَضُ السُّكَّرِ (\"saya diabetes\") atau عِنْدِي رَبْوٌ (\"saya asma\")."
+          ]
+        }
       ]
     },
     {
       "title": "Menanyakan dan mendoakan orang sakit",
       "blocks": [
-        { "type": "tabel", "head": ["Arab", "Cara baca", "Arti"], "rows": [
-          ["كَيْفَ صِحَّتُكَ؟", "kaifa shihhatuka?", "Bagaimana kesehatanmu?"],
-          ["هَلْ تَحَسَّنْتَ؟", "hal tahassanta?", "Sudah membaik?"],
-          ["أَتَمَنَّى لَكَ الشِّفَاءَ", "atamannaa lakasy-syifaa'", "Semoga kamu sembuh"],
-          ["شِفَاءً عَاجِلًا", "syifaa'an 'aajilan", "Semoga lekas sembuh"],
-          ["سَلَامَتُكَ", "salaamatuk", "Semoga selamat"],
-          ["اَللهُ يَشْفِيكَ", "allaahu yasyfiik", "Semoga Allah menyembuhkanmu"],
-          ["اِرْتَحْ قَلِيلًا", "irtah qaliilan", "Istirahatlah sedikit"],
-          ["اَلْحَمْدُ لِلَّهِ عَلَى السَّلَامَةِ", "alhamdu lillaahi 'alas-salaamah", "Syukurlah kamu selamat"]
-        ] },
-        { "type": "p", "text": "Kalimat terakhir dipakai jauh lebih luas daripada urusan sakit: ia diucapkan kepada siapa pun yang baru pulang dari perjalanan, baru sembuh, atau baru lolos dari kesulitan. Jawabannya: اَللهُ يُسَلِّمُكَ." }
+        {
+          "type": "tabel",
+          "head": [
+            "Arab",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "كَيْفَ صِحَّتُكَ؟",
+              "kaifa shihhatuka?",
+              "Bagaimana kesehatanmu?"
+            ],
+            [
+              "هَلْ تَحَسَّنْتَ؟",
+              "hal tahassanta?",
+              "Sudah membaik?"
+            ],
+            [
+              "أَتَمَنَّى لَكَ الشِّفَاءَ",
+              "atamannaa lakasy-syifaa'",
+              "Semoga kamu sembuh"
+            ],
+            [
+              "شِفَاءً عَاجِلًا",
+              "syifaa'an 'aajilan",
+              "Semoga lekas sembuh"
+            ],
+            [
+              "سَلَامَتُكَ",
+              "salaamatuk",
+              "Semoga selamat"
+            ],
+            [
+              "اَللهُ يَشْفِيكَ",
+              "allaahu yasyfiik",
+              "Semoga Allah menyembuhkanmu"
+            ],
+            [
+              "اِرْتَحْ قَلِيلًا",
+              "irtah qaliilan",
+              "Istirahatlah sedikit"
+            ],
+            [
+              "اَلْحَمْدُ لِلَّهِ عَلَى السَّلَامَةِ",
+              "alhamdu lillaahi 'alas-salaamah",
+              "Syukurlah kamu selamat"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kalimat terakhir dipakai jauh lebih luas daripada urusan sakit: ia diucapkan kepada siapa pun yang baru pulang dari perjalanan, baru sembuh, atau baru lolos dari kesulitan. Jawabannya: اَللهُ يُسَلِّمُكَ."
+        }
       ]
     }
   ],
   "vocab": [
-    { "ar": "مَرِيض", "baca": "mariidh", "id": "sakit" },
-    { "ar": "صِحَّة", "baca": "shihhah", "id": "kesehatan" },
-    { "ar": "عِيَادَة", "baca": "'iyaadah", "id": "klinik" },
-    { "ar": "طَبِيب / طَبِيبَة", "baca": "thabiib / thabiibah", "id": "dokter (lk / pr)" },
-    { "ar": "دَوَاء", "baca": "dawaa'", "id": "obat" },
-    { "ar": "وَصْفَة", "baca": "washfah", "id": "resep" },
-    { "ar": "أَلَم", "baca": "alam", "id": "rasa sakit" },
-    { "ar": "حَرَارَة", "baca": "haraarah", "id": "demam, suhu" },
-    { "ar": "صُدَاع", "baca": "shudaa'", "id": "sakit kepala" },
-    { "ar": "زُكَام", "baca": "zukaam", "id": "pilek" },
-    { "ar": "سُعَال", "baca": "su'aal", "id": "batuk" },
-    { "ar": "حَسَاسِيَّة", "baca": "hasaasiyyah", "id": "alergi" },
-    { "ar": "تَعَب", "baca": "ta'ab", "id": "lelah" },
-    { "ar": "رَأْس", "baca": "ra's", "id": "kepala" },
-    { "ar": "بَطْن", "baca": "bathn", "id": "perut" },
-    { "ar": "حَلْق", "baca": "halq", "id": "tenggorokan" },
-    { "ar": "يَد / رِجْل", "baca": "yad / rijl", "id": "tangan / kaki" },
-    { "ar": "عَيْن / أُذُن", "baca": "'ain / udzun", "id": "mata / telinga" },
-    { "ar": "أَسْنَان", "baca": "asnaan", "id": "gigi" },
-    { "ar": "يَشْعُرُ بِـ", "baca": "yasy'uru bi", "id": "merasa" },
-    { "ar": "يَسْتَطِيعُ", "baca": "yastathii'u", "id": "bisa, mampu" },
-    { "ar": "يَسْتَرِيحُ", "baca": "yastariihu", "id": "beristirahat" },
-    { "ar": "يَقْلَقُ", "baca": "yaqlaqu", "id": "khawatir" },
-    { "ar": "أَمْ", "baca": "am", "id": "atau (dalam pertanyaan)" },
-    { "ar": "مُنْذُ", "baca": "mundzu", "id": "sejak" },
-    { "ar": "بَسِيط", "baca": "basiith", "id": "sederhana, ringan" },
-    { "ar": "شِفَاء", "baca": "syifaa'", "id": "kesembuhan" },
-    { "ar": "إِسْعَاف", "baca": "is'aaf", "id": "ambulans, pertolongan" }
+    {
+      "ar": "مَرِيض",
+      "baca": "mariidh",
+      "id": "sakit"
+    },
+    {
+      "ar": "صِحَّة",
+      "baca": "shihhah",
+      "id": "kesehatan"
+    },
+    {
+      "ar": "عِيَادَة",
+      "baca": "'iyaadah",
+      "id": "klinik"
+    },
+    {
+      "ar": "طَبِيب / طَبِيبَة",
+      "baca": "thabiib / thabiibah",
+      "id": "dokter (lk / pr)"
+    },
+    {
+      "ar": "دَوَاء",
+      "baca": "dawaa'",
+      "id": "obat"
+    },
+    {
+      "ar": "وَصْفَة",
+      "baca": "washfah",
+      "id": "resep"
+    },
+    {
+      "ar": "أَلَم",
+      "baca": "alam",
+      "id": "rasa sakit"
+    },
+    {
+      "ar": "حَرَارَة",
+      "baca": "haraarah",
+      "id": "demam, suhu"
+    },
+    {
+      "ar": "صُدَاع",
+      "baca": "shudaa'",
+      "id": "sakit kepala"
+    },
+    {
+      "ar": "زُكَام",
+      "baca": "zukaam",
+      "id": "pilek"
+    },
+    {
+      "ar": "سُعَال",
+      "baca": "su'aal",
+      "id": "batuk"
+    },
+    {
+      "ar": "حَسَاسِيَّة",
+      "baca": "hasaasiyyah",
+      "id": "alergi"
+    },
+    {
+      "ar": "تَعَب",
+      "baca": "ta'ab",
+      "id": "lelah"
+    },
+    {
+      "ar": "رَأْس",
+      "baca": "ra's",
+      "id": "kepala"
+    },
+    {
+      "ar": "بَطْن",
+      "baca": "bathn",
+      "id": "perut"
+    },
+    {
+      "ar": "حَلْق",
+      "baca": "halq",
+      "id": "tenggorokan"
+    },
+    {
+      "ar": "يَد / رِجْل",
+      "baca": "yad / rijl",
+      "id": "tangan / kaki"
+    },
+    {
+      "ar": "عَيْن / أُذُن",
+      "baca": "'ain / udzun",
+      "id": "mata / telinga"
+    },
+    {
+      "ar": "أَسْنَان",
+      "baca": "asnaan",
+      "id": "gigi"
+    },
+    {
+      "ar": "يَشْعُرُ بِـ",
+      "baca": "yasy'uru bi",
+      "id": "merasa"
+    },
+    {
+      "ar": "يَسْتَطِيعُ",
+      "baca": "yastathii'u",
+      "id": "bisa, mampu"
+    },
+    {
+      "ar": "يَسْتَرِيحُ",
+      "baca": "yastariihu",
+      "id": "beristirahat"
+    },
+    {
+      "ar": "يَقْلَقُ",
+      "baca": "yaqlaqu",
+      "id": "khawatir"
+    },
+    {
+      "ar": "أَمْ",
+      "baca": "am",
+      "id": "atau (dalam pertanyaan)"
+    },
+    {
+      "ar": "مُنْذُ",
+      "baca": "mundzu",
+      "id": "sejak"
+    },
+    {
+      "ar": "بَسِيط",
+      "baca": "basiith",
+      "id": "sederhana, ringan"
+    },
+    {
+      "ar": "شِفَاء",
+      "baca": "syifaa'",
+      "id": "kesembuhan"
+    },
+    {
+      "ar": "إِسْعَاف",
+      "baca": "is'aaf",
+      "id": "ambulans, pertolongan"
+    }
   ],
   "exercises": [
-    { "prompt": "Terjemahkan ke bahasa Arab.", "items": [
-      "Saya demam sejak dua hari.",
-      "Kepala saya sakit.",
-      "Tenggorokan saya sakit juga.",
-      "Berapa kali sehari?",
-      "Sesudah makan.",
-      "Semoga lekas sembuh."
-    ] },
-    { "prompt": "Isi dengan bagian tubuh yang tepat.", "items": [
-      "أَقْرَأُ بِـ____ . (mata)",
-      "أَسْمَعُ بِـ____ . (telinga)",
-      "أَمْشِي بِـ____ . (kaki)",
-      "آكُلُ بِـ____ . (mulut)",
-      "أَكْتُبُ بِـ____ . (tangan)"
-    ] },
-    { "prompt": "Susun pertanyaan yang cocok untuk jawaban berikut.", "items": [
-      "مُنْذُ ثَلَاثَةِ أَيَّامٍ.",
-      "نَعَمْ، أَسْعُلُ قَلِيلًا.",
-      "ثَلَاثَ مَرَّاتٍ فِي الْيَوْمِ.",
-      "بَعْدَ الْأَكْلِ.",
-      "لَا، لَيْسَ عِنْدِي حَسَاسِيَّةٌ."
-    ] },
-    { "prompt": "Tulis percakapan di klinik: kamu sakit perut sejak kemarin, tidak bisa tidur, dan dokter memberimu obat.", "items": [
-      "Dokter menyapa dan bertanya",
-      "Kamu menyebut keluhanmu",
-      "Dokter menanyakan sejak kapan",
-      "Kamu menjawab dan menambahkan gejala",
-      "Dokter memberi anjuran",
-      "Penutup dan doa"
-    ] }
+    {
+      "prompt": "Terjemahkan ke bahasa Arab.",
+      "items": [
+        "Saya demam sejak dua hari.",
+        "Kepala saya sakit.",
+        "Tenggorokan saya sakit juga.",
+        "Berapa kali sehari?",
+        "Sesudah makan.",
+        "Semoga lekas sembuh."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bagian tubuh yang tepat.",
+      "items": [
+        "أَقْرَأُ بِـ____ . (mata)",
+        "أَسْمَعُ بِـ____ . (telinga)",
+        "أَمْشِي بِـ____ . (kaki)",
+        "آكُلُ بِـ____ . (mulut)",
+        "أَكْتُبُ بِـ____ . (tangan)"
+      ]
+    },
+    {
+      "prompt": "Susun pertanyaan yang cocok untuk jawaban berikut.",
+      "items": [
+        "مُنْذُ ثَلَاثَةِ أَيَّامٍ.",
+        "نَعَمْ، أَسْعُلُ قَلِيلًا.",
+        "ثَلَاثَ مَرَّاتٍ فِي الْيَوْمِ.",
+        "بَعْدَ الْأَكْلِ.",
+        "لَا، لَيْسَ عِنْدِي حَسَاسِيَّةٌ."
+      ]
+    },
+    {
+      "prompt": "Tulis percakapan di klinik: kamu sakit perut sejak kemarin, tidak bisa tidur, dan dokter memberimu obat.",
+      "items": [
+        "Dokter menyapa dan bertanya",
+        "Kamu menyebut keluhanmu",
+        "Dokter menanyakan sejak kapan",
+        "Kamu menjawab dan menambahkan gejala",
+        "Dokter memberi anjuran",
+        "Penutup dan doa"
+      ]
+    }
   ],
   "answers": [
     "عِنْدِي حَرَارَةٌ مُنْذُ يَوْمَيْنِ. — عِنْدِي أَلَمٌ فِي رَأْسِي. — وَحَلْقِي يُؤْلِمُنِي أَيْضًا. — كَمْ مَرَّةً فِي الْيَوْمِ؟ — بَعْدَ الْأَكْلِ. — شِفَاءً عَاجِلًا.",
     "عَيْنِي / عَيْنَيَّ — أُذُنِي — رِجْلِي — فَمِي — يَدِي",
     "مُنْذُ مَتَى؟ — هَلْ تَسْعُلُ؟ — كَمْ مَرَّةً فِي الْيَوْمِ؟ — قَبْلَ الْأَكْلِ أَمْ بَعْدَهُ؟ — هَلْ عِنْدَكَ حَسَاسِيَّةٌ؟",
-    "Contoh: مَاذَا بِكَ؟ — عِنْدِي أَلَمٌ فِي بَطْنِي. — مُنْذُ مَتَى؟ — مُنْذُ أَمْسِ، وَمَا نِمْتُ جَيِّدًا. — خُذْ هٰذَا الدَّوَاءَ مَرَّتَيْنِ فِي الْيَوْمِ وَاسْتَرِحْ. — شُكْرًا! — سَلَامَتُكَ."
+    "Contoh: مَاذَا بِكَ؟ — عِنْدِي أَلَمٌ فِي بَطْنِي مُنْذُ أَمْسِ — مُنْذُ مَتَى؟ — مُنْذُ أَمْسِ، وَمَا نِمْتُ جَيِّدًا — خُذْ هٰذَا الدَّوَاءَ مَرَّتَيْنِ فِي الْيَوْمِ وَاسْتَرِحْ — شُكْرًا يَا دُكْتُورَة! وَجَوَابُهَا: سَلَامَتُكَ"
   ],
   "wave": "Hafalkan tiga kalimat dari unit ini utuh-utuh: alergi, butuh dokter, dan rumah sakit terdekat. Tiga kalimat itu tidak boleh dicari-cari saat dibutuhkan."
 }
