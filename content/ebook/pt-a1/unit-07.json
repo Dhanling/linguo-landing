@@ -1,0 +1,221 @@
+{
+  "title": "No, na, do, da — kata depan yang melebur dengan kata sandang",
+  "title_target": "Onde fica a estação?",
+  "goal": "Menguasai peleburan yang sejak unit 2 terus muncul tanpa dijelaskan, lalu memakainya untuk bertanya arah dan menerangkan letak sesuatu di dalam kota.",
+  "bekal": [
+    "melebur *de*, *em*, *a*, dan *por* dengan kata sandang tanpa berpikir",
+    "bertanya *Onde fica...?* dan mengerti jawaban orang Portugal",
+    "menerangkan letak dengan *ao lado de*, *em frente a*, *entre*"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Como se vai para o Rossio?",
+      "intro": "Budi tersesat di Baixa. Ia bertanya kepada seorang ibu yang sedang menunggu di halte.",
+      "lines": [
+        { "speaker": "Budi:", "text": "Desculpe, onde fica a estação do Rossio?", "id": "Permisi, stasiun Rossio di mana?", "literal": "maaf, di-mana dia-terletak si stasiun dari-si Rossio?" },
+        { "speaker": "Senhora:", "text": "Fica ali, ao fundo da rua, à direita.", "id": "Di sana, di ujung jalan, sebelah kanan.", "literal": "dia-terletak di-sana, ke-si dasar dari-si jalan, ke-si kanan." },
+        { "speaker": "Budi:", "text": "É longe daqui?", "id": "Jauh dari sini?", "literal": "adalah jauh dari-sini?" },
+        { "speaker": "Senhora:", "text": "Não, é a cinco minutos a pé. Passa pelo mercado e vira na segunda rua.", "id": "Tidak, lima menit jalan kaki. Lewat pasar lalu belok di jalan kedua.", "literal": "tidak, adalah pada lima menit-jamak dengan kaki. dia-lewat lewat-si pasar dan dia-belok di-si kedua jalan." },
+        { "speaker": "Budi:", "text": "Pelo mercado... e depois?", "id": "Lewat pasar... lalu?", "literal": "lewat-si pasar... dan sesudah?" },
+        { "speaker": "Senhora:", "text": "Depois do mercado há uma praça. A estação fica em frente à igreja.", "id": "Sesudah pasar ada alun-alun. Stasiunnya di depan gereja.", "literal": "sesudah dari-si pasar ada sebuah alun-alun. si stasiun dia-terletak di depan ke-si gereja." },
+        { "speaker": "Budi:", "text": "E há uma farmácia perto?", "id": "Ada apotek di dekat sini?", "literal": "dan ada sebuah apotek dekat?" },
+        { "speaker": "Senhora:", "text": "Há, sim. Fica entre o banco e o correio.", "id": "Ada. Letaknya di antara bank dan kantor pos.", "literal": "ada, ya. dia-terletak di-antara si bank dan si pos." },
+        { "speaker": "Budi:", "text": "No mesmo lado da rua?", "id": "Di sisi jalan yang sama?", "literal": "di-si sama sisi dari-si jalan?" },
+        { "speaker": "Senhora:", "text": "Não, do outro lado, ao lado do quiosque.", "id": "Bukan, di seberang, di sebelah kios.", "literal": "tidak, dari-si lain sisi, ke-si sisi dari-si kios." },
+        { "speaker": "Budi:", "text": "Está bem. Muito obrigado pela ajuda!", "id": "Baik. Terima kasih banyak atas bantuannya!", "literal": "dia-berada baik. banyak terima-kasih lewat-si bantuan!" },
+        { "speaker": "Senhora:", "text": "De nada. Boa viagem!", "id": "Sama-sama. Selamat jalan!", "literal": "dari tidak-apa. baik perjalanan!" }
+      ],
+      "notes": [
+        "**Onde fica...? bukan Onde está...?** Untuk bangunan, jalan, kota, dan segala sesuatu yang tidak bisa berpindah, orang Portugal memakai *ficar*. *Onde está a chave?* (kunci — bisa pindah) tetapi *Onde fica a estação?* (stasiun — tidak pindah ke mana-mana). Memakai *estar* untuk bangunan tidak salah, tetapi *ficar* jauh lebih wajar.",
+        "**A cinco minutos a pé** — perhatikan dua kata depan yang berbeda dalam satu kalimat pendek. *A cinco minutos* menandai jarak (\"berjarak lima menit\"), *a pé* menandai caranya (\"dengan kaki\"). Begitu pula *de carro* (naik mobil), *de comboio* (naik kereta), tetapi selalu *a pé* — kaki adalah satu-satunya yang memakai *a*.",
+        "**Comboio, bukan trem.** Kereta api di Portugal adalah *o comboio*; di Brasil orang berkata *o trem*. Ini salah satu perbedaan kosakata yang paling sering menjebak wisatawan yang belajar dari bahan Brasil.",
+        "**Obrigado pela ajuda** — *pela* adalah peleburan *por* dengan *a*. Susunan *obrigado por...* dipakai untuk berterima kasih atas sesuatu yang jelas: *obrigado pela ajuda*, *obrigado pelo café*, *obrigada pela informação*.",
+        "**Está bem** berarti \"baiklah\" atau \"oke\", dan diucapkan sangat sering. Di percakapan cepat ia menyusut jadi *tá bem*, lalu jadi *tá* saja — persis seperti \"oke\" dalam bahasa Indonesia."
+      ],
+      "grammars": [
+        {
+          "title": "Empat kata depan yang wajib melebur",
+          "body": [
+            "Peleburan ini **tidak boleh dipisah**. Menulis *de o* atau *em a* bukan gaya lain — ia salah, dan langsung terdengar."
+          ],
+          "table": {
+            "head": ["Kata depan", "+ **o**", "+ **a**", "+ **os**", "+ **as**"],
+            "rows": [
+              ["**de** (dari, milik)", "**do**", "**da**", "**dos**", "**das**"],
+              ["**em** (di, dalam)", "**no**", "**na**", "**nos**", "**nas**"],
+              ["**a** (ke, kepada)", "**ao**", "**à**", "**aos**", "**às**"],
+              ["**por** (lewat, oleh)", "**pelo**", "**pela**", "**pelos**", "**pelas**"]
+            ]
+          },
+          "after": [
+            "**Perhatikan tanda ` pada à.** Ia menandai bahwa dua *a* telah melebur jadi satu, dan bunyinya jadi lebih terbuka dan lebih panjang: *à* dibaca **a**, sedangkan *a* biasa dibaca lebih pendek. Tanda ini yang membedakan *vou a casa* dari *vou à escola*.",
+            "*de* juga melebur dengan kata sandang tak tentu — *dum*, *duma* — dan dengan kata ganti orang ketiga: *dele*, *dela*, *deles*, *delas* (unit 5). Begitu pula *em*: *num*, *numa*, *nele*, *nela*.",
+            "**Peleburan ini juga terjadi di depan nama tempat yang memakai kata sandang:** *no Porto*, *no Brasil*, *na Indonésia*, *nos Estados Unidos*. Tetapi *em Portugal*, *em Lisboa*, *em Bandung* — karena nama-nama itu tidak memakai kata sandang. Sayangnya mana yang memakai dan mana yang tidak harus dihafal satu per satu."
+          ]
+        },
+        {
+          "title": "Kata depan tempat",
+          "body": [
+            "Sebagian besar berbentuk gabungan dan berakhir dengan *de* atau *a* — yang berarti keduanya ikut melebur dengan kata sandang di belakangnya."
+          ],
+          "table": {
+            "head": ["Português", "Cara baca", "Bahasa Indonesia", "Contoh"],
+            "rows": [
+              ["**em cima de**", "ãing SI-me de", "di atas", "*em cima **da** mesa*"],
+              ["**debaixo de**", "de-BAI-syu de", "di bawah", "*debaixo **da** cama*"],
+              ["**ao lado de**", "au LA-du de", "di sebelah", "*ao lado **do** banco*"],
+              ["**em frente a**", "ãing FRENT e", "di depan", "*em frente **à** igreja*"],
+              ["**atrás de**", "e-TRASY de", "di belakang", "*atrás **da** porta*"],
+              ["**perto de**", "PÉR-tu de", "dekat", "*perto **do** mercado*"],
+              ["**longe de**", "LONGZH de", "jauh dari", "*longe **daqui***"],
+              ["**entre**", "ENG-tre", "di antara", "*entre o banco **e** o correio*"],
+              ["**dentro de** / **fora de**", "DENG-tru de", "di dalam / di luar", "*dentro **do** carro*"]
+            ]
+          },
+          "after": [
+            "**Entre adalah satu-satunya yang tidak melebur**, karena ia tidak berakhir dengan kata depan. Cukup *entre o banco e o correio* — dua benda disambung dengan *e*.",
+            "*Daqui* adalah peleburan *de* dengan *aqui*: \"dari sini\". Begitu pula *dali* (dari sana), *daí* (dari situ)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Na cidade",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["a rua", "e KHU-e", "jalan"],
+            ["a praça", "e PRA-se", "alun-alun, lapangan"],
+            ["a estação", "e isy-te-SÃUNG", "stasiun"],
+            ["a paragem", "e pe-RA-zhãing", "halte (Portugal)"],
+            ["o mercado", "u mer-KA-du", "pasar"],
+            ["a loja", "e LO-zhe", "toko"],
+            ["o banco", "u BANG-ku", "bank"],
+            ["o correio", "u ku-KHEI-u", "kantor pos"],
+            ["a farmácia", "e fer-MA-sie", "apotek"],
+            ["a igreja", "e i-GREI-zhe", "gereja"],
+            ["o hospital", "u osy-pi-TAL", "rumah sakit"],
+            ["o supermercado", "u su-per-mer-KA-du", "supermarket"],
+            ["o quiosque", "u ki-ÓSY-ke", "kios"],
+            ["o jardim", "u zher-DING", "taman"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**A paragem** adalah halte bus di Portugal; di Brasil orang berkata *o ponto*. Dan *a igreja* tentu sudah kamu kenal — ia berpindah ke bahasa Indonesia menjadi **gereja**, lengkap dengan bunyinya."
+        }
+      ]
+    },
+    {
+      "title": "Bertanya dan menerima arah",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**Onde fica...?**", "OND FI-ke", "Di mana letak...?"],
+            ["**Como se vai para...?**", "KO-mu se vai PE-re", "Bagaimana caranya ke...?"],
+            ["**É longe?** / **É perto?**", "é LONGZH / PÉR-tu", "Jauh? / Dekat?"],
+            ["**siga sempre em frente**", "SI-ge SENG-pre ãing FRENT", "jalan terus lurus"],
+            ["**vire à direita / à esquerda**", "VIR a di-REI-te / isy-KER-de", "belok kanan / kiri"],
+            ["**na primeira / segunda rua**", "ne pri-MEI-re", "di jalan pertama / kedua"],
+            ["**ao fundo da rua**", "au FUNG-du", "di ujung jalan"],
+            ["**do outro lado**", "du O-tru LA-du", "di seberang"],
+            ["**a pé / de autocarro**", "e pé / de au-tu-KA-khu", "jalan kaki / naik bus"],
+            ["**Estou perdido / perdida.**", "isy-TO per-DI-du", "Saya tersesat."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kendaraan di Portugal, dan namanya yang berbeda dari Brasil",
+          "items": [
+            "*o autocarro* (bus) — di Brasil *o ônibus*. *o comboio* (kereta api) — di Brasil *o trem*.",
+            "*o elétrico* adalah trem listrik kuning yang jadi lambang Lisbon. *o metro* sama di kedua negara.",
+            "Semua kendaraan memakai **de**: *de autocarro*, *de comboio*, *de carro*, *de metro*, *de táxi*. Satu-satunya pengecualian: *a pé*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "ficar", "baca": "fi-KAR", "id": "terletak; tinggal; menjadi" },
+    { "pt": "a rua", "baca": "e KHU-e", "id": "jalan" },
+    { "pt": "a praça", "baca": "e PRA-se", "id": "alun-alun" },
+    { "pt": "a estação", "baca": "e isy-te-SÃUNG", "id": "stasiun" },
+    { "pt": "a paragem", "baca": "e pe-RA-zhãing", "id": "halte (Portugal)" },
+    { "pt": "o mercado", "baca": "u mer-KA-du", "id": "pasar" },
+    { "pt": "o correio", "baca": "u ku-KHEI-u", "id": "kantor pos" },
+    { "pt": "a farmácia", "baca": "e fer-MA-sie", "id": "apotek" },
+    { "pt": "a igreja", "baca": "e i-GREI-zhe", "id": "gereja" },
+    { "pt": "o autocarro", "baca": "u au-tu-KA-khu", "id": "bus (Portugal)" },
+    { "pt": "o comboio", "baca": "u kong-BOI-u", "id": "kereta api (Portugal)" },
+    { "pt": "à direita / à esquerda", "baca": "a di-REI-te / isy-KER-de", "id": "ke kanan / ke kiri" },
+    { "pt": "em frente", "baca": "ãing FRENT", "id": "lurus; di depan" },
+    { "pt": "ao lado de", "baca": "au LA-du de", "id": "di sebelah" },
+    { "pt": "em cima de", "baca": "ãing SI-me de", "id": "di atas" },
+    { "pt": "debaixo de", "baca": "de-BAI-syu de", "id": "di bawah" },
+    { "pt": "perto / longe", "baca": "PÉR-tu / LONGZH", "id": "dekat / jauh" },
+    { "pt": "entre", "baca": "ENG-tre", "id": "di antara" },
+    { "pt": "o lado", "baca": "u LA-du", "id": "sisi" },
+    { "pt": "virar", "baca": "vi-RAR", "id": "belok" },
+    { "pt": "passar", "baca": "pe-SAR", "id": "lewat" },
+    { "pt": "o minuto", "baca": "u mi-NU-tu", "id": "menit" },
+    { "pt": "a pé", "baca": "e pé", "id": "jalan kaki" },
+    { "pt": "a ajuda", "baca": "e e-ZHU-de", "id": "bantuan" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Leburkan kata depan dan kata sandangnya.",
+      "items": [
+        "de + o mercado",
+        "em + a rua",
+        "a + as nove",
+        "por + a ajuda",
+        "de + as casas",
+        "em + um quarto"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk leburan yang tepat.",
+      "items": [
+        "A chave está em cima ____ mesa.",
+        "Moro ____ Porto.",
+        "A farmácia fica ao lado ____ banco.",
+        "Vou ____ escola às oito.",
+        "O gato está debaixo ____ cama.",
+        "Obrigado ____ café!"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Stasiunnya di mana?",
+        "Lima menit jalan kaki.",
+        "Apoteknya di antara bank dan kantor pos.",
+        "Belok kanan di jalan kedua.",
+        "Jauh dari sini?",
+        "Saya tersesat."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 5. Terjemahkan ke bahasa Portugis tanpa melihat unitnya.",
+      "items": [
+        "Saya punya dua saudara laki-laki.",
+        "Berapa umurmu?",
+        "Ibu saya bekerja di sebuah rumah sakit.",
+        "Saya lapar.",
+        "Kakek saya berumur delapan puluh tahun."
+      ]
+    }
+  ],
+  "answers": [
+    "do mercado — na rua — às nove — pela ajuda — das casas — num quarto",
+    "da — no — do — à — da — pelo",
+    "Onde fica a estação? — É a cinco minutos a pé. — A farmácia fica entre o banco e o correio. — Vire à direita na segunda rua. — É longe daqui? — Estou perdido.",
+    "Tenho dois irmãos. — Quantos anos tens? — A minha mãe trabalha num hospital. — Tenho fome. — O meu avô tem oitenta anos."
+  ]
+}

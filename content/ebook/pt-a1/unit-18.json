@@ -1,0 +1,215 @@
+{
+  "title": "Que tempo faz? — cuaca, bulan, dan tanggal",
+  "title_target": "Faz frio em janeiro",
+  "goal": "Berbicara tentang cuaca dengan tiga kata kerja yang berbeda, menamai bulan dan musim, lalu menuliskan tanggal seperti orang Portugal menuliskannya.",
+  "bekal": [
+    "memilih antara *fazer*, *estar*, dan *haver* ketika bicara soal cuaca",
+    "menyebut dua belas bulan dan empat musim",
+    "menjawab *Que dia é hoje?* dengan lengkap"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Um novembro chuvoso",
+      "intro": "Hujan sejak subuh. Budi turun ke dapur dengan rambut basah, dan Dona Fernanda tertawa.",
+      "lines": [
+        { "speaker": "D. Fernanda:", "text": "Então? Que tempo faz lá fora?", "id": "Gimana? Cuaca di luar bagaimana?", "literal": "jadi? apa cuaca dia-buat di-sana di-luar?" },
+        { "speaker": "Budi:", "text": "Está a chover. E está muito vento.", "id": "Lagi hujan. Dan anginnya kencang.", "literal": "dia-berada untuk hujan. dan dia-berada banyak angin." },
+        { "speaker": "D. Fernanda:", "text": "Em novembro é sempre assim. Em dezembro chove ainda mais.", "id": "November memang selalu begitu. Desember hujannya lebih deras lagi.", "literal": "di November adalah selalu begitu. di Desember dia-hujan masih lebih." },
+        { "speaker": "Budi:", "text": "Na Indonésia também chove muito, mas nunca faz frio.", "id": "Di Indonesia hujannya juga banyak, tapi tidak pernah dingin.", "literal": "di-si Indonesia juga dia-hujan banyak, tapi tidak-pernah dia-buat dingin." },
+        { "speaker": "D. Fernanda:", "text": "Nunca? Nem no inverno?", "id": "Tidak pernah? Musim dingin pun tidak?", "literal": "tidak-pernah? bahkan-tidak di-si musim-dingin?" },
+        { "speaker": "Budi:", "text": "Não temos inverno. Temos duas estações: chuva e sol.", "id": "Kami tidak punya musim dingin. Cuma dua musim: hujan dan kemarau.", "literal": "tidak kami-punya musim-dingin. kami-punya dua musim: hujan dan matahari." },
+        { "speaker": "D. Fernanda:", "text": "Que sorte! Aqui o inverno é curto, mas é húmido.", "id": "Beruntung! Di sini musim dinginnya pendek, tapi lembap.", "literal": "yang nasib! di-sini si musim-dingin adalah pendek, tapi adalah lembap." },
+        { "speaker": "Budi:", "text": "E o verão? Faz muito calor?", "id": "Kalau musim panas? Panas sekali?", "literal": "dan si musim-panas? dia-buat banyak panas?" },
+        { "speaker": "D. Fernanda:", "text": "Em julho e agosto faz muito calor, sobretudo no Alentejo. Quarenta graus.", "id": "Juli dan Agustus panas sekali, terutama di Alentejo. Empat puluh derajat.", "literal": "di Juli dan Agustus dia-buat banyak panas, terutama di-si Alentejo. empat-puluh derajat." },
+        { "speaker": "Budi:", "text": "Quarenta! Como em Jacarta.", "id": "Empat puluh! Seperti di Jakarta.", "literal": "empat-puluh! seperti di Jakarta." },
+        { "speaker": "D. Fernanda:", "text": "A primavera é a melhor altura. Abril, maio: está fresco e há flores.", "id": "Musim semi masa yang paling enak. April, Mei: sejuk dan banyak bunga.", "literal": "si musim-semi adalah si terbaik masa. April, Mei: dia-berada sejuk dan ada bunga-jamak." },
+        { "speaker": "Budi:", "text": "Então vou ficar até maio!", "id": "Kalau begitu saya tinggal sampai Mei!", "literal": "kalau-begitu saya-pergi tinggal sampai Mei!" }
+      ],
+      "notes": [
+        "**Nama bulan ditulis dengan huruf kecil.** *janeiro*, *fevereiro*, *março* — berbeda dari bahasa Indonesia dan bahasa Inggris. Nama hari juga huruf kecil: *segunda-feira*, *domingo*. Yang ditulis besar hanya nama orang, kota, dan negara.",
+        "**Sobretudo** berarti \"terutama\" — kata yang sangat sering dipakai dalam bahasa Portugis tulis maupun lisan. Kata sejenis: *principalmente*, *especialmente*.",
+        "**A altura** dalam arti \"masa\" atau \"waktu\" adalah pemakaian khas Portugal: *nessa altura* (waktu itu), *na altura do Natal* (menjelang Natal). Di Brasil orang berkata *época*. Kata yang sama juga berarti \"tinggi\".",
+        "**Nem no inverno?** — *nem* berarti \"bahkan tidak\", dan ia menguatkan sangkalan sebelumnya. *Nem eu* = \"saya juga tidak\", jawaban baku untuk pernyataan bermuatan sangkalan.",
+        "**Está muito vento**, bukan *faz vento*. Angin dan hujan memakai *estar* di Portugal; suhu memakai *fazer*. Aturannya dirapikan di tabel di bawah — dan sejujurnya orang Portugal sendiri kadang bertukar.",
+        "**Húmido dengan h.** Ejaan Portugal menulis *húmido*, sedangkan Brasil menulis *úmido*. Perbedaan kecil ini muncul di beberapa kata lain juga, misalnya *facto* (Portugal) melawan *fato* (Brasil)."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga kata kerja untuk cuaca",
+          "body": [
+            "Semuanya dipakai tanpa pelaku, sama seperti \"hujan\" dalam bahasa Indonesia yang tidak butuh siapa-siapa untuk melakukannya."
+          ],
+          "table": {
+            "head": ["Kata kerja", "Dipakai untuk", "Contoh"],
+            "rows": [
+              ["**fazer**", "suhu dan cuaca umum", "*Faz frio. Faz calor. Faz bom tempo.*"],
+              ["**estar**", "keadaan langit saat ini", "*Está sol. Está nublado. Está vento.*"],
+              ["**estar a** + kata kerja", "yang sedang turun", "*Está a chover. Está a nevar.*"],
+              ["**haver / há**", "menyatakan ada", "*Há nevoeiro. Há trovoada.*"],
+              ["kata kerja sendiri", "hujan dan salju", "*Chove muito em dezembro.*"]
+            ]
+          },
+          "after": [
+            "**Chover dan nevar hanya punya satu bentuk**, yaitu bentuk orang ketiga: *chove*, *choveu*, *está a chover*. Tidak ada \"saya hujan\" dalam bahasa mana pun.",
+            "Untuk bertanya: *Que tempo faz?* (\"cuacanya bagaimana?\") atau *Como está o tempo?*. Perhatikan bahwa *o tempo* berarti \"cuaca\" **dan** \"waktu\" — dua arti yang dibedakan oleh keadaan kalimat: *não tenho tempo* (tidak punya waktu), *está bom tempo* (cuacanya bagus)."
+          ]
+        },
+        {
+          "title": "Bulan dan musim",
+          "body": [
+            "Bulan memakai kata depan *em*; musim memakai *em* yang melebur dengan kata sandangnya."
+          ],
+          "table": {
+            "head": ["Bulan", "Cara baca", "Bulan", "Cara baca"],
+            "rows": [
+              ["janeiro", "zhe-NEI-ru", "julho", "ZHU-lyu"],
+              ["fevereiro", "fe-ve-REI-ru", "agosto", "e-GOSY-tu"],
+              ["março", "MAR-su", "setembro", "se-TENG-bru"],
+              ["abril", "e-BRIL", "outubro", "o-TU-bru"],
+              ["maio", "MAI-u", "novembro", "nu-VENG-bru"],
+              ["junho", "ZHU-nyu", "dezembro", "de-ZENG-bru"]
+            ]
+          },
+          "after": [
+            "Empat musim: **a primavera** (semi), **o verão** (panas), **o outono** (gugur), **o inverno** (dingin). Kata depannya melebur: *na primavera*, *no verão*, *no outono*, *no inverno*.",
+            "Untuk bulan, tidak ada peleburan: *em janeiro*, *em agosto* — sederhana. Untuk tahun juga: *em 2026* (dibaca *dois mil e vinte e seis*)."
+          ]
+        },
+        {
+          "title": "Menulis dan menyebut tanggal",
+          "body": [
+            "Urutannya sama dengan bahasa Indonesia: hari, tanggal, bulan, tahun — dan semuanya disambung dengan *de*."
+          ],
+          "table": {
+            "head": ["Pertanyaan", "Jawaban"],
+            "rows": [
+              ["*Que dia é hoje?*", "*Hoje é dia catorze.*"],
+              ["*Em que dia estamos?*", "*Estamos a catorze de novembro.*"],
+              ["tanggal lengkap", "*quinta-feira, 14 de novembro de 2026*"],
+              ["tanggal 1", "*o dia um de maio* (bukan *primeiro*)"],
+              ["ulang tahun", "*Faço anos a 3 de julho.*"],
+              ["tanggal lahir", "*Nasci em 1995.*"]
+            ]
+          },
+          "after": [
+            "**Angka tanggal dibaca biasa, bukan bertingkat.** *5 de maio* dibaca *cinco de maio*, bukan *quinto*. Ini berbeda dari bahasa Inggris, dan lebih mudah.",
+            "*Fazer anos* berarti berulang tahun — harfiahnya \"membuat tahun\". *Quando fazes anos?* = \"ulang tahunmu kapan?\", dijawab *Faço anos a vinte de março.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "O tempo",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**Faz sol.** / **Está sol.**", "fasy sol", "Cerah."],
+            ["**Está a chover.**", "isy-TA e syu-VER", "Sedang hujan."],
+            ["**Está nublado.**", "isy-TA nu-BLA-du", "Berawan."],
+            ["**Está vento.**", "isy-TA VENG-tu", "Berangin."],
+            ["**Faz frio / calor.**", "fasy FRI-u / ke-LOR", "Dingin / panas."],
+            ["**Está fresco.**", "isy-TA FRESY-ku", "Sejuk."],
+            ["**Há nevoeiro.**", "a ne-vu-EI-ru", "Berkabut."],
+            ["**Há trovoada.**", "a tru-vu-A-de", "Ada badai petir."],
+            ["**Está a nevar.**", "isy-TA e ne-VAR", "Sedang turun salju."],
+            ["**Faz bom / mau tempo.**", "fasy bong TENG-pu", "Cuacanya bagus / buruk."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Suhu disebut dengan *graus*: *Estão vinte graus* (dua puluh derajat) atau *Faz vinte graus*. Untuk suhu di bawah nol: *menos dois graus*. Dan ramalan cuaca disebut *a previsão do tempo* — kata yang akan kamu dengar tiap malam di televisi Portugal."
+        },
+        {
+          "type": "kotak",
+          "title": "Setahun di Portugal, dilihat dari Indonesia",
+          "items": [
+            "**Perbedaan terbesarnya bukan suhu, melainkan panjang hari.** Pada akhir Desember, matahari terbenam pukul lima sore; pada akhir Juni, pukul sembilan malam. Di Indonesia matahari terbenam pukul enam sepanjang tahun. Ini yang paling sering mengejutkan pendatang dari khatulistiwa.",
+            "Musim dingin Portugal jarang membeku — Lisbon jarang di bawah lima derajat — tetapi rumah-rumah tua sering tanpa pemanas, jadi terasa lebih dingin di dalam daripada di luar. Bawa pakaian berlapis, bukan satu jaket tebal.",
+            "*Agosto* adalah bulan liburan nasional: banyak toko dan restoran kecil tutup, terutama di Lisbon, karena pemiliknya pergi ke kampung halaman. Kalau kamu datang bulan itu, jangan heran menemukan tasca kesukaanmu terkunci sebulan penuh."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "o tempo", "baca": "u TENG-pu", "id": "cuaca; waktu" },
+    { "pt": "chover", "baca": "syu-VER", "id": "hujan" },
+    { "pt": "a chuva", "baca": "e SYU-ve", "id": "hujan (kata benda)" },
+    { "pt": "o sol", "baca": "u sol", "id": "matahari" },
+    { "pt": "o vento", "baca": "u VENG-tu", "id": "angin" },
+    { "pt": "a nuvem / nublado", "baca": "e NU-vãing", "id": "awan / berawan" },
+    { "pt": "o frio / o calor", "baca": "u FRI-u / u ke-LOR", "id": "dingin / panas" },
+    { "pt": "fresco / húmido", "baca": "FRESY-ku / U-mi-du", "id": "sejuk / lembap" },
+    { "pt": "a neve / nevar", "baca": "e NÉV / ne-VAR", "id": "salju / turun salju" },
+    { "pt": "o nevoeiro", "baca": "u ne-vu-EI-ru", "id": "kabut" },
+    { "pt": "o grau", "baca": "u grau", "id": "derajat" },
+    { "pt": "a estação (do ano)", "baca": "e isy-te-SÃUNG", "id": "musim" },
+    { "pt": "a primavera", "baca": "e pri-me-VÉ-re", "id": "musim semi" },
+    { "pt": "o verão", "baca": "u ve-RÃUNG", "id": "musim panas" },
+    { "pt": "o outono", "baca": "u o-TO-nu", "id": "musim gugur" },
+    { "pt": "o inverno", "baca": "u ing-VÉR-nu", "id": "musim dingin" },
+    { "pt": "o mês / o ano", "baca": "u mesy / u A-nu", "id": "bulan / tahun" },
+    { "pt": "fazer anos", "baca": "fe-ZER A-nusy", "id": "berulang tahun" },
+    { "pt": "nascer", "baca": "nesy-SER", "id": "lahir" },
+    { "pt": "a altura", "baca": "e al-TU-re", "id": "masa, waktu (Portugal)" },
+    { "pt": "sobretudo", "baca": "su-bre-TU-du", "id": "terutama" },
+    { "pt": "curto / comprido", "baca": "KUR-tu", "id": "pendek / panjang" },
+    { "pt": "a flor", "baca": "e flor", "id": "bunga" },
+    { "pt": "nem", "baca": "nãing", "id": "bahkan tidak" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan faz, está, atau há.",
+      "items": [
+        "____ frio em janeiro.",
+        "____ a chover.",
+        "____ sol hoje.",
+        "____ nevoeiro de manhã.",
+        "____ muito vento.",
+        "____ calor em agosto."
+      ]
+    },
+    {
+      "prompt": "Isi dengan em, no, atau na.",
+      "items": [
+        "____ janeiro",
+        "____ inverno",
+        "____ primavera",
+        "____ agosto",
+        "____ verão",
+        "____ 2026"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Cuacanya bagaimana?",
+        "Sedang hujan dan berangin.",
+        "Bulan Januari dingin.",
+        "Musim panas panas sekali.",
+        "Hari ini tanggal berapa?",
+        "Ulang tahun saya tanggal tiga Juli."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 16. Terjemahkan ke bahasa Portugis tanpa melihat unitnya.",
+      "items": [
+        "Boleh saya coba?",
+        "Yang ini kesempitan buat saya.",
+        "Ada yang lebih besar?",
+        "Saya lebih suka yang biru itu.",
+        "Saya ambil yang ini."
+      ]
+    }
+  ],
+  "answers": [
+    "Faz — Está — Faz — Há — Está — Faz",
+    "em — no — na — em — no — em",
+    "Que tempo faz? — Está a chover e está vento. — Em janeiro faz frio. — No verão faz muito calor. — Que dia é hoje? — Faço anos a três de julho.",
+    "Posso experimentar? — Este fica-me apertado. — Tem um maior? — Gosto mais daquele azul. — Fico com este."
+  ]
+}

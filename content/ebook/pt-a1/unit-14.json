@@ -1,0 +1,219 @@
+{
+  "title": "Ontem descansei — masa lampau, kata kerja beraturan",
+  "title_target": "Como correu o fim de semana?",
+  "goal": "Menceritakan apa yang sudah selesai terjadi. Untuk penutur bahasa Indonesia inilah kejutan besar terakhir: kata kerja bahasa Portugis tidak hanya berubah menurut pelakunya, tetapi juga menurut **waktunya**.",
+  "bekal": [
+    "membentuk masa lampau untuk tiga kelompok kata kerja beraturan",
+    "mengenali ejaan *-ámos* yang khas Portugal",
+    "memakai keterangan waktu lampau: *ontem*, *na semana passada*, *há dois dias*"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Segunda-feira de manhã",
+      "intro": "Senin pagi di sekolah. Ana ingin tahu bagaimana akhir pekan Budi.",
+      "lines": [
+        { "speaker": "Ana:", "text": "Bom dia! Como correu o fim de semana?", "id": "Selamat pagi! Bagaimana akhir pekanmu?", "literal": "baik hari! bagaimana dia-berjalan si akhir dari minggu?" },
+        { "speaker": "Budi:", "text": "Correu bem! No sábado acordei tarde e não saí de casa.", "id": "Lancar! Sabtu saya bangun siang dan tidak keluar rumah.", "literal": "dia-berjalan baik! di-si Sabtu saya-terbangun larut dan tidak saya-keluar dari rumah." },
+        { "speaker": "Ana:", "text": "Descansaste, então.", "id": "Berarti kamu istirahat, ya.", "literal": "kau-beristirahat, kalau-begitu." },
+        { "speaker": "Budi:", "text": "Descansei. À tarde estudei um pouco e telefonei à minha mãe.", "id": "Istirahat. Sorenya saya belajar sedikit lalu menelepon ibu saya.", "literal": "saya-beristirahat. ke-si sore saya-belajar sedikit dan saya-menelepon ke-si milikku ibu." },
+        { "speaker": "Ana:", "text": "E no domingo?", "id": "Kalau Minggu?", "literal": "dan di-si Minggu?" },
+        { "speaker": "Budi:", "text": "No domingo a dona Fernanda convidou-me para almoçar.", "id": "Minggu Bu Fernanda mengundang saya makan siang.", "literal": "di-si Minggu si nyonya Fernanda dia-mengundang-aku untuk makan-siang." },
+        { "speaker": "Ana:", "text": "Que simpática! Comeram o quê?", "id": "Baik sekali! Kalian makan apa?", "literal": "yang ramah! mereka-makan si apa?" },
+        { "speaker": "Budi:", "text": "Comemos bacalhau. Ela cozinhou a tarde toda.", "id": "Kami makan bakalau. Dia masak sepanjang sore.", "literal": "kami-makan ikan-kod. dia dia-memasak si sore seluruh." },
+        { "speaker": "Ana:", "text": "E gostaste?", "id": "Kamu suka?", "literal": "dan kau-suka?" },
+        { "speaker": "Budi:", "text": "Adorei! Comi demais e depois dormi duas horas.", "id": "Suka sekali! Saya makan kebanyakan lalu tidur dua jam.", "literal": "saya-memuja! saya-makan terlalu dan sesudah saya-tidur dua jam." },
+        { "speaker": "Ana:", "text": "E eu que estudei o fim de semana inteiro...", "id": "Sementara saya belajar sepanjang akhir pekan...", "literal": "dan aku yang saya-belajar si akhir dari minggu utuh..." },
+        { "speaker": "Budi:", "text": "Coitada! Mas já acabou. Hoje descansas.", "id": "Kasihan! Tapi sudah lewat. Hari ini kamu istirahat.", "literal": "kasihan(pr)! tapi sudah dia-berakhir. hari-ini kau-beristirahat." }
+      ],
+      "notes": [
+        "**Como correu?** adalah cara Portugal bertanya \"bagaimana hasilnya?\" — untuk ujian, wawancara kerja, akhir pekan, apa saja. Kata kerjanya *correr* (berlari), jadi harfiahnya \"bagaimana ia berlari?\". Jawabannya memakai kata kerja yang sama: *Correu bem* atau *Correu mal*.",
+        "**Convidou-me** — kata ganti tetap menempel di belakang, sama seperti di masa kini. Aturan penariknya juga tetap berlaku: *não me convidou*, *quem te convidou?*",
+        "**Comeram o quê?** Perhatikan *o quê* dengan aksen di ujung kalimat. Kata tanya *que* memakai aksen kalau ia berdiri di akhir kalimat atau berdiri sendiri: *O quê?* (\"apa?\"), tetapi *O que é que comeram?* di awal.",
+        "**Já acabou** = \"sudah selesai\". Kata *já* bersama masa lampau menandai bahwa sesuatu benar-benar tuntas, sama seperti \"sudah\" dalam bahasa Indonesia.",
+        "**Saí, dengan aksen.** Kata kerja *sair* menuliskan aksen pada bentuk *eu* dan *tu* di masa lampau: *saí*, *saíste*. Aksen itu memberi tahu bahwa *a* dan *i* dibaca terpisah, bukan sebagai satu bunyi luncur.",
+        "**Inteiro dan todo** dua-duanya berarti \"seluruh\". *A tarde toda* dan *a tarde inteira* sama saja; yang pertama lebih sering diucapkan."
+      ],
+      "grammars": [
+        {
+          "title": "Masa lampau: kata kerja -ar",
+          "body": [
+            "Bentuk ini dipakai untuk perbuatan yang **sudah selesai** dan punya batas jelas — kemarin, minggu lalu, tahun lalu. Untuk kebiasaan di masa lampau, bahasa Portugis punya bentuk lain yang tidak masuk tingkat A1."
+          ],
+          "table": {
+            "head": ["Kata ganti", "Akhiran", "*falar*", "Cara baca"],
+            "rows": [
+              ["*eu*", "**-ei**", "**falei**", "fe-LEI"],
+              ["*tu*", "**-aste**", "**falaste**", "fe-LASY-te"],
+              ["*ele / ela / você*", "**-ou**", "**falou**", "fe-LO"],
+              ["*nós*", "**-ámos**", "**falámos**", "fe-LA-musy"],
+              ["*vocês / eles / elas*", "**-aram**", "**falaram**", "fe-LA-rãung"]
+            ]
+          },
+          "after": [
+            "**Falámos dengan aksen — inilah ejaan Portugal.** Masa kini *falamos* dan masa lampau *falámos* ditulis berbeda dan diucapkan berbeda: yang pertama dengan *a* pendek, yang kedua dengan *a* terbuka dan panjang. Di Brasil kedua bentuk ditulis sama (*falamos*), sehingga keadaan kalimat yang harus membedakannya. Modul ini memakai ejaan Portugal.",
+            "**Bentuk *ele* berakhir -ou dan dibaca \"o\", bukan \"ou\".** *Falou* = fe-LO, *comprou* = kong-PRO, *cozinhou* = ku-zi-NYO. Ini akhiran masa lampau yang paling sering kamu dengar, karena orang lebih sering bercerita tentang orang lain."
+          ]
+        },
+        {
+          "title": "Masa lampau: kata kerja -er dan -ir",
+          "body": [
+            "Seperti di masa kini, keduanya hampir sama. Bedanya kali ini cuma di bentuk *eu*."
+          ],
+          "table": {
+            "head": ["Kata ganti", "*comer*", "*partir*", "Akhirannya"],
+            "rows": [
+              ["*eu*", "**comi**", "**parti**", "**-i** (sama)"],
+              ["*tu*", "**comeste**", "**partiste**", "**-este** / **-iste**"],
+              ["*ele / ela*", "**comeu**", "**partiu**", "**-eu** / **-iu**"],
+              ["*nós*", "**comemos**", "**partimos**", "**-emos** / **-imos**"],
+              ["*eles / elas*", "**comeram**", "**partiram**", "**-eram** / **-iram**"]
+            ]
+          },
+          "after": [
+            "**Bentuk *nós* untuk -er dan -ir sama persis dengan masa kini:** *comemos* bisa berarti \"kami makan\" dan \"kami sudah makan\". Tidak ada aksen yang menolong di sini, jadi keadaan kalimatlah yang menentukan — dan dalam praktiknya tidak pernah membingungkan, karena keterangan waktu hampir selalu ikut disebut.",
+            "Cara baca yang perlu diperhatikan: *comi* (ku-MI), *comeu* (ku-MEU), *comeram* (ku-ME-rãung), *parti* (per-TI), *partiu* (per-TIU)."
+          ]
+        },
+        {
+          "title": "Keterangan waktu lampau",
+          "body": [
+            "Hampir tiap kalimat masa lampau membawa salah satu dari keterangan ini. Menyebutkannya membuat kalimatmu jelas bahkan kalau bentuk kata kerjanya belum sempurna."
+          ],
+          "table": {
+            "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+            "rows": [
+              ["**ontem**", "ONG-tãing", "kemarin"],
+              ["**anteontem**", "ANG-ti-ONG-tãing", "kemarin lusa"],
+              ["**ontem à noite**", "ONG-tãing a NOIT", "tadi malam"],
+              ["**esta manhã**", "ÉSY-te me-NYÃ", "tadi pagi"],
+              ["**na semana passada**", "ne se-MA-ne pe-SA-de", "minggu lalu"],
+              ["**no mês passado**", "nu mesy pe-SA-du", "bulan lalu"],
+              ["**no ano passado**", "nu A-nu pe-SA-du", "tahun lalu"],
+              ["**há dois dias**", "a doisy DI-esy", "dua hari yang lalu"],
+              ["**há pouco**", "a PO-ku", "barusan"]
+            ]
+          },
+          "after": [
+            "**Há berarti \"yang lalu\" ketika berpasangan dengan masa lampau**, dan \"sudah selama\" ketika berpasangan dengan masa kini. Bandingkan: *cheguei há dois dias* (saya tiba dua hari lalu) dan *estou aqui há dois meses* (saya sudah di sini dua bulan). Satu kata, dua pekerjaan, dan yang menentukan adalah bentuk kata kerjanya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata kerja beraturan yang paling sering diceritakan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Bentuk dasar", "*eu*", "*ele / ela*", "Bahasa Indonesia"],
+          "rows": [
+            ["falar", "falei", "falou", "bicara"],
+            ["trabalhar", "trabalhei", "trabalhou", "bekerja"],
+            ["estudar", "estudei", "estudou", "belajar"],
+            ["comprar", "comprei", "comprou", "membeli"],
+            ["telefonar", "telefonei", "telefonou", "menelepon"],
+            ["descansar", "descansei", "descansou", "istirahat"],
+            ["gostar", "gostei", "gostou", "suka"],
+            ["chegar", "cheguei", "chegou", "tiba"],
+            ["comer", "comi", "comeu", "makan"],
+            ["beber", "bebi", "bebeu", "minum"],
+            ["viver", "vivi", "viveu", "tinggal"],
+            ["aprender", "aprendi", "aprendeu", "belajar"],
+            ["partir", "parti", "partiu", "berangkat"],
+            ["dormir", "dormi", "dormiu", "tidur"],
+            ["sair", "saí", "saiu", "keluar"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Cheguei dengan u.** Kata kerja berakhir *-gar* menyisipkan *u* pada bentuk *eu* supaya bunyinya tetap keras: *chegar* → *cheguei*, *pagar* → *paguei*, *jogar* → *joguei*. Begitu pula *-car* berubah jadi *-quei*: *ficar* → *fiquei*, *explicar* → *expliquei*. Ini perubahan ejaan, bukan perubahan bunyi."
+        },
+        {
+          "type": "kotak",
+          "title": "Satu aksen yang menandai dua negara",
+          "items": [
+            "Portugal menulis **falámos**, **estudámos**, **comprámos** dengan aksen ´ untuk masa lampau, dan **falamos**, **estudamos** tanpa aksen untuk masa kini.",
+            "Brasil menulis keduanya tanpa aksen, karena di sana bunyinya memang tidak dibedakan.",
+            "Kalau kamu membaca teks Brasil dan melihat *falamos*, jangan bingung — bisa masa kini, bisa masa lampau. Dalam tulisanmu sendiri, ikuti ejaan Portugal: aksen itu memberi keterangan gratis kepada pembacamu."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "ontem", "baca": "ONG-tãing", "id": "kemarin" },
+    { "pt": "anteontem", "baca": "ANG-ti-ONG-tãing", "id": "kemarin lusa" },
+    { "pt": "passado / passada", "baca": "pe-SA-du", "id": "yang lalu" },
+    { "pt": "há dois dias", "baca": "a doisy DI-esy", "id": "dua hari lalu" },
+    { "pt": "correr", "baca": "ku-KHER", "id": "berlari; berjalan (hal)" },
+    { "pt": "convidar", "baca": "kong-vi-DAR", "id": "mengundang" },
+    { "pt": "cozinhar", "baca": "ku-zi-NYAR", "id": "memasak" },
+    { "pt": "descansar", "baca": "desy-kang-SAR", "id": "istirahat" },
+    { "pt": "acabar", "baca": "e-ke-BAR", "id": "selesai, berakhir" },
+    { "pt": "comprar", "baca": "kong-PRAR", "id": "membeli" },
+    { "pt": "pagar", "baca": "pe-GAR", "id": "membayar" },
+    { "pt": "jogar", "baca": "zhu-GAR", "id": "bermain" },
+    { "pt": "visitar", "baca": "vi-zi-TAR", "id": "mengunjungi" },
+    { "pt": "encontrar", "baca": "ing-kong-TRAR", "id": "bertemu, menemukan" },
+    { "pt": "perder", "baca": "per-DER", "id": "kehilangan; ketinggalan" },
+    { "pt": "receber", "baca": "khe-se-BER", "id": "menerima" },
+    { "pt": "inteiro / todo", "baca": "ing-TEI-ru", "id": "seluruh" },
+    { "pt": "a semana passada", "baca": "e se-MA-ne pe-SA-de", "id": "minggu lalu" },
+    { "pt": "o mês", "baca": "u mesy", "id": "bulan" },
+    { "pt": "há pouco", "baca": "a PO-ku", "id": "barusan" },
+    { "pt": "que tal?", "baca": "ke tal", "id": "bagaimana?" },
+    { "pt": "bem / mal", "baca": "bãing / mal", "id": "baik / buruk" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah ke masa lampau.",
+      "items": [
+        "Eu falo com a Ana. (ontem)",
+        "Ela trabalha muito. (na semana passada)",
+        "Nós comemos bacalhau. (no domingo)",
+        "Tu estudas português? (ontem)",
+        "Eles chegam às oito. (anteontem)",
+        "Eu durmo duas horas. (à tarde)"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk masa lampau yang tepat.",
+      "items": [
+        "Ontem eu ____ tarde. (acordar)",
+        "A dona Fernanda ____ o almoço. (cozinhar)",
+        "Nós ____ muito no sábado. (descansar)",
+        "Tu ____ à tua mãe? (telefonar)",
+        "Eles ____ para almoçar. (sair)",
+        "Eu ____ a Lisboa há dois meses. (chegar)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Kemarin saya belajar sepanjang sore.",
+        "Bagaimana akhir pekanmu?",
+        "Kami makan bakalau hari Minggu.",
+        "Dia mengundang saya makan siang.",
+        "Saya tiba dua bulan yang lalu.",
+        "Saya tidur dua jam."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 12. Terjemahkan ke bahasa Portugis tanpa melihat unitnya.",
+      "items": [
+        "Saya bangun jam tujuh.",
+        "Saya selalu lupa kuncinya.",
+        "Sampai ketemu besok!",
+        "Saya merasa tidak enak badan.",
+        "Nama saya Budi."
+      ]
+    }
+  ],
+  "answers": [
+    "Ontem falei com a Ana. — Na semana passada ela trabalhou muito. — No domingo comemos bacalhau. — Ontem estudaste português? — Anteontem eles chegaram às oito. — À tarde dormi duas horas.",
+    "acordei — cozinhou — descansámos — telefonaste — saíram — cheguei",
+    "Ontem estudei a tarde toda. — Como correu o fim de semana? — Comemos bacalhau no domingo. — Ela convidou-me para almoçar. — Cheguei há dois meses. — Dormi duas horas.",
+    "Levanto-me às sete. — Esqueço-me sempre das chaves. — Vejo-te amanhã! — Sinto-me mal. — Chamo-me Budi."
+  ]
+}

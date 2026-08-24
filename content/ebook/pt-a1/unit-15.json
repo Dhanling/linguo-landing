@@ -1,0 +1,215 @@
+{
+  "title": "Fui, fiz, tive — masa lampau yang membangkang",
+  "title_target": "Onde é que foste?",
+  "goal": "Menutup masa lampau dengan kata kerja tak beraturan yang paling sering dipakai — termasuk satu kejutan besar: *ser* dan *ir* punya bentuk lampau yang **sama persis**.",
+  "bekal": [
+    "menyebut bentuk lampau *ser/ir*, *estar*, *ter*, *fazer*, *ver*, dan *vir*",
+    "mengenali kelompok besar berpola *-ive* dan *-isse*",
+    "menceritakan satu perjalanan dari awal sampai akhir"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Uma viagem ao Porto",
+      "intro": "Senin pagi lagi. Kali ini Budi menghilang sepanjang akhir pekan, dan Ana penasaran.",
+      "lines": [
+        { "speaker": "Ana:", "text": "Onde é que foste no fim de semana? Não te vi.", "id": "Akhir pekan kamu ke mana? Saya tidak lihat kamu.", "literal": "di-mana adalah bahwa kau-pergi di-si akhir dari minggu? tidak kamu saya-melihat." },
+        { "speaker": "Budi:", "text": "Fui ao Porto! Foi a minha primeira viagem sozinho.", "id": "Saya ke Porto! Itu perjalanan pertama saya sendirian.", "literal": "saya-pergi ke-si Porto! dia-adalah si milikku pertama perjalanan sendirian." },
+        { "speaker": "Ana:", "text": "A sério? E como foi?", "id": "Serius? Bagaimana?", "literal": "dengan serius? dan bagaimana dia-adalah?" },
+        { "speaker": "Budi:", "text": "Foi ótimo. Fui de comboio e demorou três horas.", "id": "Bagus sekali. Saya naik kereta dan makan waktu tiga jam.", "literal": "dia-adalah bagus-sekali. saya-pergi dengan kereta dan dia-memakan-waktu tiga jam." },
+        { "speaker": "Ana:", "text": "E onde é que ficaste?", "id": "Kamu menginap di mana?", "literal": "dan di-mana adalah bahwa kau-tinggal?" },
+        { "speaker": "Budi:", "text": "Estive numa pensão perto da estação. Foi barata.", "id": "Saya menginap di losmen dekat stasiun. Murah.", "literal": "saya-berada di-sebuah losmen dekat dari-si stasiun. dia-adalah murah." },
+        { "speaker": "Ana:", "text": "E fizeste o quê lá?", "id": "Kamu ngapain di sana?", "literal": "dan kau-membuat si apa di-sana?" },
+        { "speaker": "Budi:", "text": "Vi a livraria Lello, andei à beira do rio e comi uma francesinha.", "id": "Saya lihat toko buku Lello, jalan-jalan di tepi sungai, dan makan francesinha.", "literal": "saya-melihat si toko-buku Lello, saya-berjalan ke-si tepi dari-si sungai dan saya-makan sebuah francesinha." },
+        { "speaker": "Ana:", "text": "E gostaste da francesinha?", "id": "Suka francesinha-nya?", "literal": "dan kau-suka dari-si francesinha?" },
+        { "speaker": "Budi:", "text": "Gostei, mas tive de dormir a seguir! É pesada.", "id": "Suka, tapi habis itu saya harus tidur! Berat sekali.", "literal": "saya-suka, tapi saya-punya untuk tidur ke mengikuti! adalah berat." },
+        { "speaker": "Ana:", "text": "Pois é. E não trouxeste nada para mim?", "id": "Ya begitulah. Dan kamu tidak bawakan apa-apa buat saya?", "literal": "nah adalah. dan tidak kau-membawa apa-pun untuk aku?" },
+        { "speaker": "Budi:", "text": "Trouxe, sim! Trouxe-te vinho do Porto.", "id": "Bawa, dong! Saya bawakan anggur Porto.", "literal": "saya-membawa, ya! saya-membawa-kamu anggur dari-si Porto." }
+      ],
+      "notes": [
+        "**Fui berarti \"saya pergi\" dan \"saya adalah\" sekaligus.** *Ser* dan *ir* memakai satu rangkaian bentuk lampau yang sama persis: *fui, foste, foi, fomos, foram*. Ini kebetulan sejarah, dan ia hampir tidak pernah membingungkan — karena *ir* hampir selalu diikuti kata depan tempat. *Fui ao Porto* = saya pergi. *Foi ótimo* = itu bagus.",
+        "**Foi ótimo, foi barata** — bentuk *foi* juga dipakai tanpa pelaku yang jelas, untuk menilai sesuatu yang sudah lewat: \"itu bagus\", \"itu murah\". Kalau yang dinilai perempuan, kata sifatnya ikut: *foi barata* (losmennya), *foi caro* (perjalanannya).",
+        "**Tive de dormir** — *ter de* di masa lampau berarti \"terpaksa\" atau \"harus\": *tive de sair cedo* = saya harus berangkat pagi-pagi.",
+        "**A seguir** berarti \"sesudah itu\" atau \"berikutnya\", dan sangat sering dipakai di Portugal: *a seguir ao almoço* (sesudah makan siang), *o que vem a seguir?* (apa berikutnya?).",
+        "**Trouxe dibaca TRO-se**, dengan *x* yang berbunyi *s*. Ini satu-satunya kelompok kata di mana *x* berbunyi begitu, dan semuanya datang dari *trazer*: *trouxe*, *trouxeste*, *trouxeram*.",
+        "**A francesinha adalah roti lapis khas Porto** berisi daging, dilapis keju leleh, dan disiram kuah bir pedas. Namanya berarti \"perempuan Prancis kecil\". Ia memang seberat yang Budi bilang."
+      ],
+      "grammars": [
+        {
+          "title": "Ser dan ir — satu bentuk lampau untuk dua kata kerja",
+          "body": [
+            "Hafalkan sekali, dapat dua. Ini salah satu penghematan terbesar di seluruh bahasa Portugis."
+          ],
+          "table": {
+            "head": ["Kata ganti", "Bentuk", "Cara baca", "*ir*", "*ser*"],
+            "rows": [
+              ["*eu*", "**fui**", "fui", "*Fui ao Porto.*", "*Fui professor.*"],
+              ["*tu*", "**foste**", "FOSY-te", "*Foste sozinho?*", "*Foste rápido.*"],
+              ["*ele / ela*", "**foi**", "foi", "*Ela foi a Sintra.*", "*Foi ótimo.*"],
+              ["*nós*", "**fomos**", "FO-musy", "*Fomos de comboio.*", "*Fomos felizes.*"],
+              ["*eles / elas*", "**foram**", "FO-rãung", "*Foram a pé.*", "*Foram caros.*"]
+            ]
+          },
+          "after": [
+            "Yang membedakan keduanya cuma apa yang datang sesudahnya. Kalau ada kata depan tempat (*a*, *ao*, *para*), itu *ir*. Kalau ada kata sifat atau kata benda, itu *ser*.",
+            "Perhatikan bahwa *foi* juga muncul dalam pertanyaan yang sangat sering dipakai: *Como foi?* (\"bagaimana tadi?\") dan *Quando foi?* (\"kapan itu?\")."
+          ]
+        },
+        {
+          "title": "Kelompok besar: estar, ter, fazer, poder, saber, querer",
+          "body": [
+            "Enam kata kerja ini berbagi pola yang sama: bentuk *eu* berakhir **-e** tanpa tekanan, dan bentuk *ele* berakhir **-e** juga. Sekali kamu mengenali polanya, keenamnya jatuh bersama."
+          ],
+          "table": {
+            "head": ["", "*estar*", "*ter*", "*fazer*", "*poder*", "*saber*", "*querer*"],
+            "rows": [
+              ["*eu*", "**estive**", "**tive**", "**fiz**", "**pude**", "**soube**", "**quis**"],
+              ["*tu*", "estiveste", "tiveste", "fizeste", "pudeste", "soubeste", "quiseste"],
+              ["*ele/ela*", "**esteve**", "**teve**", "**fez**", "**pôde**", "**soube**", "**quis**"],
+              ["*nós*", "estivemos", "tivemos", "fizemos", "pudemos", "soubemos", "quisemos"],
+              ["*eles*", "estiveram", "tiveram", "fizeram", "puderam", "souberam", "quiseram"]
+            ]
+          },
+          "after": [
+            "**Perhatikan bahwa tekanannya bergeser ke depan.** *Estive* dibaca isy-TIV, *tive* dibaca TIV, *fiz* dibaca fisy. Bentuk *eu* dan *ele* pada *saber* dan *querer* **sama persis** — *soube*, *quis* — jadi keadaan kalimat yang membedakannya.",
+            "**Saber di masa lampau berarti \"jadi tahu\", bukan \"tahu\".** *Soube ontem* = \"saya baru tahu kemarin\". Begitu pula *quis* yang berarti \"mau lalu melakukannya\", dan *não quis* yang berarti \"menolak\".",
+            "*Dizer* dan *trazer* ikut pola yang mirip: *disse, disseste, disse, dissemos, disseram*; *trouxe, trouxeste, trouxe, trouxemos, trouxeram*."
+          ]
+        },
+        {
+          "title": "Ver, vir, dar",
+          "body": [
+            "Tiga kata kerja pendek yang bentuk lampaunya harus dihafal terpisah — dan yang muncul di hampir tiap cerita."
+          ],
+          "table": {
+            "head": ["Kata ganti", "*ver* (melihat)", "*vir* (datang)", "*dar* (memberi)"],
+            "rows": [
+              ["*eu*", "**vi**", "**vim**", "**dei**"],
+              ["*tu*", "viste", "vieste", "deste"],
+              ["*ele / ela*", "**viu**", "**veio**", "**deu**"],
+              ["*nós*", "vimos", "viemos", "demos"],
+              ["*eles / elas*", "viram", "vieram", "deram"]
+            ]
+          },
+          "after": [
+            "**Vimos berarti dua hal:** \"kami melihat\" (masa lampau *ver*) dan \"kami datang\" (masa kini *vir*). Sekali lagi, keadaan kalimat yang menyelamatkan.",
+            "*Dar* muncul dalam banyak susunan tetap: *dar um passeio* (jalan-jalan), *dar uma volta* (berkeliling), *dá para...?* (\"bisa nggak...?\"). Yang terakhir sangat khas percakapan sehari-hari: *Dá para ajudar?*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ringkasan cepat: semua bentuk lampau tak beraturan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Bentuk dasar", "*eu*", "*tu*", "*ele / ela*", "*eles / elas*"],
+          "rows": [
+            ["**ser / ir**", "fui", "foste", "foi", "foram"],
+            ["**estar**", "estive", "estiveste", "esteve", "estiveram"],
+            ["**ter**", "tive", "tiveste", "teve", "tiveram"],
+            ["**fazer**", "fiz", "fizeste", "fez", "fizeram"],
+            ["**dizer**", "disse", "disseste", "disse", "disseram"],
+            ["**trazer**", "trouxe", "trouxeste", "trouxe", "trouxeram"],
+            ["**poder**", "pude", "pudeste", "pôde", "puderam"],
+            ["**saber**", "soube", "soubeste", "soube", "souberam"],
+            ["**querer**", "quis", "quiseste", "quis", "quiseram"],
+            ["**ver**", "vi", "viste", "viu", "viram"],
+            ["**vir**", "vim", "vieste", "veio", "vieram"],
+            ["**dar**", "dei", "deste", "deu", "deram"],
+            ["**pôr**", "pus", "puseste", "pôs", "puseram"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tiga belas kata kerja, dan itulah **seluruh** daftar yang benar-benar harus dihafal untuk tingkat A1. Semua kata kerja lain — ratusan jumlahnya — mengikuti pola beraturan dari unit 14. Bandingkan dengan bahasa Inggris, yang punya lebih dari seratus kata kerja tak beraturan; bahasa Portugis jauh lebih murah di sini."
+        },
+        {
+          "type": "kotak",
+          "title": "Cara melatihnya tanpa menghafal tabel",
+          "items": [
+            "Ceritakan hari kemarinmu dengan suara keras, tiap malam, selama satu minggu. Lima kalimat cukup: *Ontem acordei..., fui..., comi..., vi..., deitei-me...*",
+            "Perhatikan bahwa tabel di atas paling sering kamu butuhkan pada dua bentuk saja: *eu* dan *ele/ela*. Kuasai dua kolom itu lebih dulu, dan sisanya menyusul sendiri.",
+            "Kalau kamu lupa satu bentuk di tengah cerita, jangan berhenti — pakai kata kerja lain yang beraturan. *Não pude ir* bisa diganti *não consegui ir*, dan tak seorang pun akan menganggapnya salah."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "a viagem", "baca": "e vi-A-zhãing", "id": "perjalanan" },
+    { "pt": "sozinho / sozinha", "baca": "su-ZI-nyu", "id": "sendirian" },
+    { "pt": "primeiro / primeira", "baca": "pri-MEI-ru", "id": "pertama" },
+    { "pt": "a pensão", "baca": "e peng-SÃUNG", "id": "losmen" },
+    { "pt": "o hotel", "baca": "u o-TÉL", "id": "hotel" },
+    { "pt": "a livraria", "baca": "e li-vre-RI-e", "id": "toko buku" },
+    { "pt": "a beira", "baca": "e BEI-re", "id": "tepi" },
+    { "pt": "o vinho", "baca": "u VI-nyu", "id": "anggur" },
+    { "pt": "pesado / leve", "baca": "pe-ZA-du / LÉV", "id": "berat / ringan" },
+    { "pt": "a seguir", "baca": "e se-GIR", "id": "sesudah itu" },
+    { "pt": "andar", "baca": "ang-DAR", "id": "berjalan" },
+    { "pt": "conseguir", "baca": "kong-se-GIR", "id": "berhasil, sempat" },
+    { "pt": "dar um passeio", "baca": "dar ung pe-SEI-u", "id": "jalan-jalan" },
+    { "pt": "ficar (num hotel)", "baca": "fi-KAR", "id": "menginap" },
+    { "pt": "a mala", "baca": "e MA-le", "id": "koper" },
+    { "pt": "o bilhete", "baca": "u bi-LYET", "id": "tiket" },
+    { "pt": "a lembrança", "baca": "e leng-BRANG-se", "id": "oleh-oleh" },
+    { "pt": "de manhã cedo", "baca": "de me-NYÃ SE-du", "id": "pagi-pagi sekali" },
+    { "pt": "no norte / no sul", "baca": "nu NORT / nu sul", "id": "di utara / di selatan" },
+    { "pt": "o comboio", "baca": "u kong-BOI-u", "id": "kereta api" },
+    { "pt": "barato / caro", "baca": "be-RA-tu / KA-ru", "id": "murah / mahal" },
+    { "pt": "nada", "baca": "NA-de", "id": "apa pun (dalam sangkalan)" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk lampau yang tepat.",
+      "items": [
+        "Eu ____ ao Porto. (ir)",
+        "____ ótimo! (ser)",
+        "Eu ____ numa pensão. (estar)",
+        "Tu ____ o quê lá? (fazer)",
+        "Eu ____ a livraria Lello. (ver)",
+        "Eu ____ de dormir. (ter)"
+      ]
+    },
+    {
+      "prompt": "Ubah ke masa lampau.",
+      "items": [
+        "Vou a Sintra.",
+        "Faço o teste.",
+        "Trago vinho.",
+        "Vejo a Ana.",
+        "Não posso ir.",
+        "Digo a verdade."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Akhir pekan kamu ke mana?",
+        "Saya ke Porto naik kereta.",
+        "Bagus sekali!",
+        "Saya menginap di losmen dekat stasiun.",
+        "Saya harus tidur setelah itu.",
+        "Saya bawakan anggur untuk kamu."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 13. Terjemahkan ke bahasa Portugis tanpa melihat unitnya.",
+      "items": [
+        "Saya sedang makan malam.",
+        "Saya tidak paham.",
+        "Nanti saya telepon lagi.",
+        "Saya sudah tidak tinggal di Alfama.",
+        "Bisa diulang?"
+      ]
+    }
+  ],
+  "answers": [
+    "fui — Foi — estive — fizeste — vi — tive",
+    "Fui a Sintra. — Fiz o teste. — Trouxe vinho. — Vi a Ana. — Não pude ir. — Disse a verdade.",
+    "Onde é que foste no fim de semana? — Fui ao Porto de comboio. — Foi ótimo! — Estive numa pensão perto da estação. — Tive de dormir a seguir. — Trouxe-te vinho.",
+    "Estou a jantar. — Não estou a perceber. — Ligo mais tarde. — Já não moro em Alfama. — Pode repetir?"
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "title": "Vou a Sintra — ir, vir, sair, dan cara berangkat",
+  "title_target": "Vens comigo?",
+  "goal": "Menguasai tiga kata kerja gerak yang paling sering dipakai, memilih antara *ir a* dan *ir para*, dan mengajak orang dengan *vamos*.",
+  "bekal": [
+    "menyebut bentuk *ir*, *vir*, dan *sair* tanpa ragu",
+    "menyusun kalimat rencana dengan *ir* + kata kerja dasar",
+    "menyebut kendaraan dengan kata depan yang benar"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Um passeio a Sintra",
+      "intro": "Malam sebelumnya, Ana menelepon Budi untuk mengajaknya jalan-jalan ke Sintra.",
+      "lines": [
+        { "speaker": "Ana:", "text": "Amanhã vou a Sintra. Vens comigo?", "id": "Besok saya ke Sintra. Ikut?", "literal": "besok saya-pergi ke Sintra. kau-datang denganku?" },
+        { "speaker": "Budi:", "text": "Vou, claro! Como é que vamos? De comboio?", "id": "Ikut, dong! Perginya naik apa? Kereta?", "literal": "saya-pergi, jelas! bagaimana adalah bahwa kami-pergi? dengan kereta?" },
+        { "speaker": "Ana:", "text": "Vamos de comboio até Sintra e depois de autocarro até ao palácio.", "id": "Naik kereta sampai Sintra, lalu naik bus sampai istana.", "literal": "kami-pergi dengan kereta sampai Sintra dan sesudah dengan bus sampai ke-si istana." },
+        { "speaker": "Budi:", "text": "A que horas sais de casa?", "id": "Kamu keluar rumah jam berapa?", "literal": "ke apa jam-jamak kau-keluar dari rumah?" },
+        { "speaker": "Ana:", "text": "Saio às oito. O comboio parte do Rossio às oito e meia.", "id": "Saya berangkat jam delapan. Keretanya berangkat dari Rossio jam setengah sembilan.", "literal": "saya-keluar ke-si-jamak delapan. si kereta dia-berangkat dari-si Rossio ke-si-jamak delapan dan setengah." },
+        { "speaker": "Budi:", "text": "Vens buscar-me?", "id": "Kamu jemput saya?", "literal": "kau-datang menjemput-aku?" },
+        { "speaker": "Ana:", "text": "Vou, sim. Passo por tua casa às oito menos um quarto.", "id": "Iya. Saya lewat rumahmu jam delapan kurang seperempat.", "literal": "saya-pergi, ya. saya-lewat lewat rumahmu ke-si-jamak delapan kurang seperempat." },
+        { "speaker": "Budi:", "text": "Ótimo. E voltamos quando?", "id": "Bagus. Pulangnya kapan?", "literal": "bagus-sekali. dan kami-kembali kapan?" },
+        { "speaker": "Ana:", "text": "Voltamos ao fim da tarde. Vamos almoçar lá.", "id": "Pulang menjelang sore berakhir. Kita makan siang di sana.", "literal": "kami-kembali ke-si akhir dari-si sore. kami-pergi makan-siang di-sana." },
+        { "speaker": "Budi:", "text": "Então vou levar a máquina fotográfica.", "id": "Kalau begitu saya bawa kamera.", "literal": "kalau-begitu saya-pergi membawa si mesin fotografi." },
+        { "speaker": "Ana:", "text": "Leva! Sintra é linda. Vais gostar muito.", "id": "Bawa! Sintra cantik. Kamu pasti suka.", "literal": "bawa! Sintra adalah cantik. kau-pergi menyukai banyak." },
+        { "speaker": "Budi:", "text": "Até amanhã, então!", "id": "Sampai besok kalau begitu!", "literal": "sampai besok, kalau-begitu!" }
+      ],
+      "notes": [
+        "**Vou a Sintra, dengan a.** Kata depan *a* dipakai untuk kepergian yang **ada pulangnya**: berkunjung, berjalan-jalan, ke kantor, ke sekolah. Kata depan *para* dipakai untuk kepergian yang **menetap** atau setidaknya berjangka panjang: *vou para o Brasil* (saya pindah ke Brasil). Bedanya penting: *vou a Portugal* berarti berlibur, *vou para Portugal* berarti pindah.",
+        "**Vamos punya dua arti sekaligus:** \"kami pergi\" dan \"ayo\". *Vamos!* berdiri sendiri berarti \"ayo!\", dan *Vamos almoçar* berarti \"ayo makan siang\" — bukan \"kami akan makan siang\". Keadaan kalimat yang membedakannya, dan orang Portugal tidak pernah bingung.",
+        "**Vens buscar-me?** — *ir/vir buscar* berarti menjemput atau mengambil. Ini susunan khas Portugal yang tidak bisa diterjemahkan kata demi kata: harfiahnya \"datang mencari saya\". *Vou buscar o pão* = saya mau ambil rotinya.",
+        "**Vais gostar** — *ir* + kata kerja dasar adalah cara paling umum menyatakan masa depan dalam percakapan, persis seperti \"akan\" dalam bahasa Indonesia. Bentuk ini dibongkar penuh di unit 19; sementara ini cukup kenali bahwa *vou comer* berarti \"saya akan makan\", bukan \"saya pergi makan\".",
+        "**Então** berarti \"kalau begitu\" atau \"jadi\", dan ia menempel di awal maupun akhir kalimat. Orang Portugal juga memakainya sebagai sapaan santai kepada teman: *Então? Tudo bem?* — kira-kira \"gimana? baik-baik saja?\"",
+        "**Leva!** adalah bentuk perintah dari *levar*. Perintah untuk *tu* pada kata kerja *-ar* dibentuk dengan mengganti ujungnya jadi **-a**: *fala!*, *leva!*, *espera!*. Untuk kata kerja *-er* dan *-ir* ujungnya jadi **-e**: *come!*, *abre!*."
+      ],
+      "grammars": [
+        {
+          "title": "Ir — pergi, dan akan",
+          "body": [
+            "Tidak beraturan dan tidak mirip bentuk dasarnya sama sekali. Untungnya cuma lima bentuk, dan semuanya pendek."
+          ],
+          "table": {
+            "head": ["Kata ganti", "Bentuk", "Cara baca", "Contoh"],
+            "rows": [
+              ["*eu*", "**vou**", "vo", "*Vou a Sintra.*"],
+              ["*tu*", "**vais**", "vaisy", "*Vais de comboio?*"],
+              ["*ele / ela / você*", "**vai**", "vai", "*Ela vai para o Porto.*"],
+              ["*nós*", "**vamos**", "VA-musy", "*Vamos almoçar!*"],
+              ["*vocês / eles / elas*", "**vão**", "vãung", "*Eles vão de carro.*"]
+            ]
+          },
+          "after": [
+            "**Ir a** = pergi dan kembali. **Ir para** = pergi untuk menetap. **Ir de** = naik apa. Ketiganya bisa muncul dalam satu kalimat: *Vou a Sintra de comboio.*",
+            "Nama tempat yang memakai kata sandang ikut melebur: *vou **ao** mercado*, *vou **à** escola*, *vou **ao** Porto*. Tetapi *vou a Lisboa*, *vou a Portugal* — tanpa peleburan, karena nama-nama itu tanpa kata sandang."
+          ]
+        },
+        {
+          "title": "Vir dan sair",
+          "body": [
+            "*Vir* adalah lawan dari *ir*: datang ke tempat pembicara. *Sair* berarti keluar, dan juga \"pergi keluar\" untuk bersenang-senang."
+          ],
+          "table": {
+            "head": ["Kata ganti", "*vir* (datang)", "Cara baca", "*sair* (keluar)", "Cara baca"],
+            "rows": [
+              ["*eu*", "**venho**", "VE-nyu", "**saio**", "SAI-u"],
+              ["*tu*", "**vens**", "vãingsy", "**sais**", "saisy"],
+              ["*ele / ela / você*", "**vem**", "vãing", "**sai**", "sai"],
+              ["*nós*", "**vimos**", "VI-musy", "**saímos**", "se-I-musy"],
+              ["*vocês / eles / elas*", "**vêm**", "VÃING-ãing", "**saem**", "SA-ãing"]
+            ]
+          },
+          "after": [
+            "**Vem dan vêm** dibedakan hanya oleh aksen ^ dalam tulisan — sama seperti *tem* dan *têm* di unit 5. Pola ini berulang, jadi hafalkan sekali: aksen ^ pada kata pendek semacam ini menandai **jamak**.",
+            "*Sair* juga berarti pergi bersenang-senang di malam hari: *Sais hoje à noite?* = \"Kamu keluar malam ini?\" Susunan *sair com alguém* berarti berpacaran.",
+            "*Sair de* (keluar dari) dan *sair para* (keluar menuju): *saio de casa às oito*, *saio para o trabalho*."
+          ]
+        },
+        {
+          "title": "Comigo, contigo — kata depan com yang menyatu",
+          "body": [
+            "Kata depan *com* melebur dengan kata ganti orang, dan bentuknya harus dihafal karena tidak bisa ditebak."
+          ],
+          "table": {
+            "head": ["Bahasa Indonesia", "Português", "Cara baca"],
+            "rows": [
+              ["denganku", "**comigo**", "ku-MI-gu"],
+              ["denganmu (*tu*)", "**contigo**", "kong-TI-gu"],
+              ["dengannya", "*com ele* / *com ela*", "kong EL / kong É-le"],
+              ["dengan kami", "**connosco**", "ku-NOSY-ku"],
+              ["dengan kalian / mereka", "*com vocês* / *com eles*", "kong vó-SESY"]
+            ]
+          },
+          "after": [
+            "Hanya tiga bentuk yang benar-benar melebur: *comigo*, *contigo*, *connosco*. Sisanya tetap terpisah.",
+            "Perhatikan ejaan **connosco** dengan dua n — itu ejaan Portugal. Di Brasil ditulis *conosco*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kendaraan dan kata kerja gerak",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["de **autocarro**", "de au-tu-KA-khu", "naik bus (Portugal)"],
+            ["de **comboio**", "de kong-BOI-u", "naik kereta api (Portugal)"],
+            ["de **metro**", "de MÉ-tru", "naik kereta bawah tanah"],
+            ["de **elétrico**", "de i-LÉ-tri-ku", "naik trem listrik Lisbon"],
+            ["de **carro** / de **táxi**", "de KA-khu", "naik mobil / taksi"],
+            ["de **avião** / de **barco**", "de e-vi-ÃUNG", "naik pesawat / kapal"],
+            ["a **pé**", "e pé", "jalan kaki"]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": ["Kata kerja", "Cara baca", "Bahasa Indonesia", "Contoh"],
+          "rows": [
+            ["**chegar (a)**", "sye-GAR", "tiba, sampai", "*Chego a Lisboa às nove.*"],
+            ["**partir (de)**", "per-TIR", "berangkat", "*O comboio parte do Rossio.*"],
+            ["**voltar / regressar**", "vol-TAR", "kembali, pulang", "*Voltamos à tarde.*"],
+            ["**levar**", "le-VAR", "membawa (pergi)", "*Levo a máquina.*"],
+            ["**trazer**", "tre-ZER", "membawa (datang)", "*Trazes o mapa?*"],
+            ["**passar por**", "pe-SAR pur", "lewat", "*Passo por tua casa.*"],
+            ["**entrar / sair**", "ing-TRAR", "masuk / keluar", "*Entra, por favor!*"],
+            ["**andar / caminhar**", "ang-DAR", "berjalan", "*Ando muito em Lisboa.*"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Levar atau trazer?",
+          "items": [
+            "*Levar* berarti membawa sesuatu **menjauh** dari tempat pembicara — arahnya sama dengan *ir*. *Levo o guarda-chuva* = saya bawa payung (pergi).",
+            "*Trazer* berarti membawa sesuatu **mendekat** ke tempat pembicara — arahnya sama dengan *vir*. *Trazes o mapa?* = kamu bawakan petanya (ke sini)?",
+            "Bahasa Indonesia memakai satu kata \"membawa\" untuk keduanya, jadi pasangan ini butuh perhatian. Petunjuk cepat: kalau kamu bisa menggantinya dengan *ir*, pakai *levar*; kalau *vir*, pakai *trazer*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "ir", "baca": "ir", "id": "pergi; akan" },
+    { "pt": "vir", "baca": "vir", "id": "datang" },
+    { "pt": "sair", "baca": "se-IR", "id": "keluar" },
+    { "pt": "chegar", "baca": "sye-GAR", "id": "tiba" },
+    { "pt": "partir", "baca": "per-TIR", "id": "berangkat" },
+    { "pt": "voltar", "baca": "vol-TAR", "id": "kembali, pulang" },
+    { "pt": "levar / trazer", "baca": "le-VAR / tre-ZER", "id": "membawa (pergi / datang)" },
+    { "pt": "entrar", "baca": "ing-TRAR", "id": "masuk" },
+    { "pt": "almoçar", "baca": "al-mu-SAR", "id": "makan siang" },
+    { "pt": "o palácio", "baca": "u pe-LA-siu", "id": "istana" },
+    { "pt": "o passeio", "baca": "u pe-SEI-u", "id": "jalan-jalan; trotoar" },
+    { "pt": "a viagem", "baca": "e vi-A-zhãing", "id": "perjalanan" },
+    { "pt": "o carro", "baca": "u KA-khu", "id": "mobil" },
+    { "pt": "o avião", "baca": "u e-vi-ÃUNG", "id": "pesawat" },
+    { "pt": "a máquina fotográfica", "baca": "e MA-ki-ne", "id": "kamera" },
+    { "pt": "comigo / contigo", "baca": "ku-MI-gu / kong-TI-gu", "id": "denganku / denganmu" },
+    { "pt": "amanhã", "baca": "a-me-NYÃ", "id": "besok" },
+    { "pt": "então", "baca": "eng-TÃUNG", "id": "kalau begitu, jadi" },
+    { "pt": "claro", "baca": "KLA-ru", "id": "tentu saja" },
+    { "pt": "lá / ali", "baca": "la / e-LI", "id": "di sana" },
+    { "pt": "até", "baca": "e-TÉ", "id": "sampai" },
+    { "pt": "depois", "baca": "de-POISY", "id": "sesudah, lalu" },
+    { "pt": "lindo / linda", "baca": "LING-du", "id": "cantik, indah" },
+    { "pt": "o fim", "baca": "u fing", "id": "akhir" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk ir, vir, atau sair yang tepat.",
+      "items": [
+        "Eu ____ a Sintra amanhã. (ir)",
+        "Tu ____ comigo? (vir)",
+        "Nós ____ de casa às oito. (sair)",
+        "Eles ____ de comboio. (ir)",
+        "A Ana ____ buscar o pão. (ir)",
+        "Vocês ____ hoje à noite? (sair)"
+      ]
+    },
+    {
+      "prompt": "Isi dengan a, para, atau de.",
+      "items": [
+        "Vou ____ Sintra e volto à tarde.",
+        "Ele vai ____ o Brasil e não volta.",
+        "Vamos ____ comboio.",
+        "Saio ____ casa às sete.",
+        "Chego ____ Lisboa às nove.",
+        "Vou ____ pé."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Besok saya ke Porto.",
+        "Kamu ikut saya?",
+        "Ayo makan siang!",
+        "Keretanya berangkat jam delapan.",
+        "Saya akan bawa kamera.",
+        "Kami pulang sore."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 6. Terjemahkan ke bahasa Portugis tanpa melihat unitnya.",
+      "items": [
+        "Satu kopi, tolong.",
+        "Semuanya berapa?",
+        "Enam belas euro.",
+        "Minta bonnya, tolong.",
+        "Mahal sekali."
+      ]
+    }
+  ],
+  "answers": [
+    "vou — vens — saímos — vão — vai — saem",
+    "a — para — de — de — a — a",
+    "Amanhã vou ao Porto. — Vens comigo? — Vamos almoçar! — O comboio parte às oito. — Vou levar a máquina fotográfica. — Voltamos à tarde.",
+    "Um café, se faz favor. — Quanto é tudo? — Dezasseis euros. — A conta, se faz favor. — É muito caro."
+  ]
+}

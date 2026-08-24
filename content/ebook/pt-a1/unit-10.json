@@ -1,0 +1,210 @@
+{
+  "title": "Faço, posso, quero — kata kerja yang membangkang",
+  "title_target": "Pode ajudar-me?",
+  "goal": "Menaklukkan enam kata kerja tak beraturan yang paling sering dipakai, lalu memakainya untuk meminta tolong, meminta izin, dan menyatakan keinginan dengan sopan.",
+  "bekal": [
+    "menyebut bentuk *fazer*, *poder*, *querer*, *saber*, *ver*, dan *dizer* di masa kini",
+    "membedakan *saber*, *poder*, dan *conhecer* — tiga kata yang semuanya terasa seperti \"bisa\" atau \"tahu\"",
+    "menyambung dua kata kerja dengan atau tanpa kata depan"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Na secretaria da escola",
+      "intro": "Budi merasa kelasnya terlalu mudah. Ia mendatangi kantor sekolah bahasanya.",
+      "lines": [
+        { "speaker": "Budi:", "text": "Desculpe, pode ajudar-me?", "id": "Permisi, bisa tolong saya?", "literal": "maaf, dia-bisa menolong-aku?" },
+        { "speaker": "Funcionária:", "text": "Com certeza. O que é que quer?", "id": "Tentu saja. Perlu apa?", "literal": "dengan kepastian. apa adalah bahwa dia-mau?" },
+        { "speaker": "Budi:", "text": "Quero mudar de turma. Faço o nível A1 e é fácil demais.", "id": "Saya mau pindah kelas. Saya ambil tingkat A1 dan itu terlalu mudah.", "literal": "saya-mau berpindah dari kelompok. saya-buat si tingkat A1 dan adalah mudah terlalu." },
+        { "speaker": "Funcionária:", "text": "Sabe qual é o nível certo para si?", "id": "Anda tahu tingkat mana yang tepat untuk Anda?", "literal": "dia-tahu yang-mana adalah si tingkat tepat untuk diri?" },
+        { "speaker": "Budi:", "text": "Não sei bem. Sei falar um pouco, mas não sei escrever.", "id": "Kurang tahu. Saya bisa bicara sedikit, tapi tidak bisa menulis.", "literal": "tidak saya-tahu baik. saya-tahu berbicara sedikit, tapi tidak saya-tahu menulis." },
+        { "speaker": "Funcionária:", "text": "Então pode fazer o teste outra vez. Pode ser hoje?", "id": "Kalau begitu Anda bisa ikut tesnya lagi. Bisa hari ini?", "literal": "kalau-begitu dia-bisa membuat si ujian lain kali. dia-bisa jadi hari-ini?" },
+        { "speaker": "Budi:", "text": "Posso, sim. A que horas?", "id": "Bisa. Jam berapa?", "literal": "saya-bisa, ya. ke apa jam-jamak?" },
+        { "speaker": "Funcionária:", "text": "Às quatro. Vê ali a sala três? É lá.", "id": "Jam empat. Lihat ruang tiga di sana? Di situ.", "literal": "ke-si-jamak empat. dia-melihat di-sana si ruang tiga? adalah di-sana." },
+        { "speaker": "Budi:", "text": "Vejo. E quanto tempo demora?", "id": "Lihat. Berapa lama tesnya?", "literal": "saya-melihat. dan berapa waktu dia-memakan-waktu?" },
+        { "speaker": "Funcionária:", "text": "Uma hora. Digo à professora que vem.", "id": "Satu jam. Saya beri tahu gurunya bahwa Anda akan datang.", "literal": "satu jam. saya-berkata ke-si guru bahwa dia-datang." },
+        { "speaker": "Budi:", "text": "Muito obrigado. Dá-me só um minuto para avisar a minha amiga.", "id": "Terima kasih banyak. Beri saya semenit untuk memberi tahu teman saya.", "literal": "banyak terima-kasih. dia-beri-aku hanya satu menit untuk memberi-tahu si milikku teman." },
+        { "speaker": "Funcionária:", "text": "Com certeza. Boa sorte no teste!", "id": "Silakan. Semoga berhasil di tesnya!", "literal": "dengan kepastian. baik nasib di-si ujian!" }
+      ],
+      "notes": [
+        "**Pode ajudar-me?** adalah cara paling sopan meminta tolong, dan ia memakai bentuk orang ketiga tanpa kata ganti apa pun — persis kebiasaan Portugal yang kamu lihat di unit 1. Kalau kamu berbicara dengan teman, bentuknya *Podes ajudar-me?*",
+        "**Sei falar, mas não sei escrever.** Di sini *saber* berarti \"bisa\" dalam arti **sudah dipelajari**: bisa berenang, bisa menyetir, bisa bahasa Portugis. Bandingkan dengan *poder*, yang berarti \"bisa\" dalam arti **ada kesempatan atau izin**: *Não posso ir hoje* (saya tidak bisa pergi hari ini — bukan karena tak mampu, tapi karena berhalangan).",
+        "**Para si** — bentuk sopan dari \"untukmu\". Di Portugal, *si* dipakai untuk menyapa orang secara sopan sesudah kata depan, sebagai pengganti *você* yang terasa terlalu langsung: *para si*, *consigo* (denganmu, sopan). Ini bentuk khas Portugal yang tidak dipakai di Brasil.",
+        "**Fácil demais** — *demais* berarti \"terlalu\" dan diletakkan **sesudah** kata sifatnya, kebalikan dari bahasa Indonesia. Bentuk lain yang sama artinya adalah *demasiado fácil*, yang diletakkan di depan.",
+        "**Demorar** berarti \"memakan waktu\": *Quanto tempo demora?* = \"berapa lama?\", *Demora meia hora* = \"setengah jam\". Kata ini sangat sering dipakai di Portugal dan tidak punya padanan satu kata dalam bahasa Indonesia.",
+        "**Dá-me** — kata ganti *me* menempel di belakang lagi, sama seperti *chamo-me* di unit 1 dan *ajudar-me* di baris pertama. Semua aturannya dibongkar di unit 12."
+      ],
+      "grammars": [
+        {
+          "title": "Enam kata kerja tak beraturan yang paling sering dipakai",
+          "body": [
+            "Perhatikan satu pola yang menolong: **hanya bentuk *eu* yang benar-benar mengejutkan**. Empat bentuk lainnya hampir selalu bisa ditebak dari bentuk dasarnya."
+          ],
+          "table": {
+            "head": ["", "*fazer*", "*poder*", "*querer*", "*saber*", "*ver*", "*dizer*"],
+            "rows": [
+              ["*eu*", "**faço**", "**posso**", "**quero**", "**sei**", "**vejo**", "**digo**"],
+              ["*tu*", "fazes", "podes", "queres", "sabes", "vês", "dizes"],
+              ["*ele/ela*", "faz", "pode", "quer", "sabe", "vê", "diz"],
+              ["*nós*", "fazemos", "podemos", "queremos", "sabemos", "vemos", "dizemos"],
+              ["*eles*", "fazem", "podem", "querem", "sabem", "veem", "dizem"]
+            ]
+          },
+          "after": [
+            "Cara baca bentuk *eu*: *faço* (FA-su), *posso* (PÓ-su), *quero* (KÉ-ru), *sei* (sei), *vejo* (VE-zhu), *digo* (DI-gu).",
+            "**Fazer mengerjakan banyak pekerjaan.** Selain \"membuat\" dan \"mengerjakan\", ia dipakai untuk cuaca (*faz frio* — dingin), untuk umur (*faço trinta anos* — saya berulang tahun ketiga puluh), dan untuk pertanyaan pekerjaan (*O que é que fazes?*).",
+            "**Querer punya bentuk sopan sendiri: *queria*.** Ini sebetulnya bentuk masa lampau, tetapi dipakai persis seperti \"saya mau\" yang halus: *Queria um café, se faz favor*. Memakai *quero* di kafe tidak salah, tetapi *queria* terdengar jauh lebih sopan — dan itulah yang diucapkan orang Portugal."
+          ]
+        },
+        {
+          "title": "Saber, poder, conhecer — tiga kata untuk \"bisa\" dan \"tahu\"",
+          "body": [
+            "Bahasa Indonesia memakai \"bisa\" dan \"tahu\" untuk semuanya. Bahasa Portugis memilah bertiga, dan pilihannya tidak lentur."
+          ],
+          "table": {
+            "head": ["Kata kerja", "Dipakai untuk", "Contoh"],
+            "rows": [
+              ["**saber**", "keterampilan yang dipelajari; fakta", "*Sei nadar.* *Sabes onde fica?*"],
+              ["**poder**", "izin, kesempatan, kemungkinan", "*Posso entrar?* *Não posso ir hoje.*"],
+              ["**conhecer**", "kenal orang, kenal tempat", "*Conheço a Ana.* *Conheces Sintra?*"]
+            ]
+          },
+          "after": [
+            "**Saber untuk fakta, conhecer untuk perkenalan.** *Sei o nome dela* (saya tahu namanya) tetapi *Conheço-a* (saya kenal dia). Menukar keduanya adalah kesalahan yang langsung terdengar aneh bagi orang Portugal.",
+            "*Conhecer* juga berarti \"berkenalan\" dan \"mengunjungi untuk pertama kali\": *Quero conhecer o Porto* = saya ingin melihat Porto (belum pernah ke sana). Bentuk *eu*-nya tidak beraturan: **conheço** (ku-NYE-su)."
+          ]
+        },
+        {
+          "title": "Menyambung dua kata kerja",
+          "body": [
+            "Kata kerja kedua selalu berbentuk dasar. Yang perlu dihafal cuma satu hal: mana yang butuh kata depan di antaranya, mana yang tidak."
+          ],
+          "table": {
+            "head": ["Susunan", "Kata depan?", "Contoh"],
+            "rows": [
+              ["*poder*, *querer*, *saber*, *dever*", "**tidak ada**", "*Posso entrar. Quero comer. Sei nadar.*"],
+              ["*ir*", "**tidak ada**", "*Vou estudar.* (= akan belajar)"],
+              ["*ter* + **de/que**", "**de** atau **que**", "*Tenho de sair.* (harus)"],
+              ["*começar*, *aprender*, *ajudar*", "**a**", "*Começo a trabalhar às nove.*"],
+              ["*gostar*, *precisar*, *deixar*", "**de**", "*Gosto de ler. Preciso de dormir.*"],
+              ["*estar* + **a**", "**a**", "*Estou a estudar.* (sedang)"]
+            ]
+          },
+          "after": [
+            "Empat kata kerja pertama itulah yang paling sering kamu pakai, dan untungnya semuanya **tanpa kata depan** — persis seperti bahasa Indonesia. *Posso ir*, *quero comer*, *sei falar*: susunannya lurus.",
+            "*Dever* berarti \"seharusnya\": *Deves descansar* = kamu sebaiknya istirahat. Ia lebih halus daripada *ter de*, yang berarti \"harus\" tanpa pilihan."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Empat kata kerja tak beraturan lagi",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["", "*dar* (memberi)", "*pôr* (meletakkan)", "*ouvir* (mendengar)", "*ler* (membaca)"],
+          "rows": [
+            ["*eu*", "**dou**", "**ponho**", "**ouço**", "**leio**"],
+            ["*tu*", "dás", "pões", "ouves", "lês"],
+            ["*ele / ela*", "dá", "põe", "ouve", "lê"],
+            ["*nós*", "damos", "pomos", "ouvimos", "lemos"],
+            ["*eles / elas*", "dão", "põem", "ouvem", "leem"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Pôr adalah satu-satunya kata kerja bahasa Portugis yang tidak berakhir *-ar*, *-er*, atau *-ir*.** Ia berdiri sendiri dengan aksen ^ di atas *o*-nya, untuk membedakannya dari kata depan *por*. Bentuk *eu*-nya, *ponho*, dibaca **PO-nyu**."
+        },
+        {
+          "type": "kotak",
+          "title": "Kalimat sopan yang dibangun dari kata kerja ini",
+          "items": [
+            "*Pode dizer-me...?* — \"Bisa beri tahu saya...?\" Susunan paling sopan untuk bertanya kepada orang asing.",
+            "*Queria...* — \"Saya mau...\", untuk memesan apa pun. *Queria a conta, se faz favor.*",
+            "*Sabe onde fica...?* — \"Anda tahu di mana letak...?\" Lebih halus daripada *Onde fica...?* yang langsung.",
+            "*Importa-se de...?* — \"Keberatan tidak kalau...?\" Bentuk paling sopan untuk meminta sesuatu yang merepotkan.",
+            "*Posso?* — satu kata yang berarti \"boleh?\", dipakai untuk apa saja: duduk, lewat, mengambil. Sangat berguna."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "fazer", "baca": "fe-ZER", "id": "membuat, mengerjakan" },
+    { "pt": "poder", "baca": "pu-DER", "id": "bisa, boleh" },
+    { "pt": "querer", "baca": "ke-RER", "id": "mau, ingin" },
+    { "pt": "queria", "baca": "ke-RI-e", "id": "saya mau (sopan)" },
+    { "pt": "saber", "baca": "se-BER", "id": "tahu; bisa (terampil)" },
+    { "pt": "conhecer", "baca": "ku-nye-SER", "id": "kenal" },
+    { "pt": "ver", "baca": "ver", "id": "melihat" },
+    { "pt": "dizer", "baca": "di-ZER", "id": "berkata" },
+    { "pt": "dar", "baca": "dar", "id": "memberi" },
+    { "pt": "pôr", "baca": "por", "id": "meletakkan" },
+    { "pt": "ouvir", "baca": "o-VIR", "id": "mendengar" },
+    { "pt": "dever", "baca": "de-VER", "id": "seharusnya" },
+    { "pt": "ajudar", "baca": "e-zhu-DAR", "id": "menolong" },
+    { "pt": "mudar", "baca": "mu-DAR", "id": "berpindah, berubah" },
+    { "pt": "demorar", "baca": "de-mu-RAR", "id": "memakan waktu" },
+    { "pt": "avisar", "baca": "e-vi-ZAR", "id": "memberi tahu" },
+    { "pt": "o teste / o nível", "baca": "u TESY-te / u NI-vel", "id": "ujian / tingkat" },
+    { "pt": "a turma", "baca": "e TUR-me", "id": "kelas (kelompok)" },
+    { "pt": "a sala", "baca": "e SA-le", "id": "ruang" },
+    { "pt": "o tempo", "baca": "u TENG-pu", "id": "waktu; cuaca" },
+    { "pt": "outra vez", "baca": "O-tre vesy", "id": "sekali lagi" },
+    { "pt": "demais", "baca": "de-MAISY", "id": "terlalu" },
+    { "pt": "com certeza", "baca": "kong ser-TE-ze", "id": "tentu saja" },
+    { "pt": "boa sorte", "baca": "BO-e SORT", "id": "semoga berhasil" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+      "items": [
+        "Eu ____ o teste hoje. (fazer)",
+        "____ entrar? (poder, eu)",
+        "Eu não ____ escrever bem. (saber)",
+        "Tu ____ um café? (querer)",
+        "Eu ____ a sala três. (ver)",
+        "Eles ____ que é fácil. (dizer)"
+      ]
+    },
+    {
+      "prompt": "Pilih saber, poder, atau conhecer, lalu tulis bentuknya untuk eu.",
+      "items": [
+        "____ nadar.",
+        "____ a Ana há dois meses.",
+        "Hoje não ____ ir, estou doente.",
+        "____ onde fica a estação.",
+        "____ Sintra? Não, nunca fui lá.",
+        "____ entrar, por favor?"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Bisa tolong saya?",
+        "Saya mau satu kopi, tolong.",
+        "Saya bisa bicara sedikit bahasa Portugis.",
+        "Berapa lama?",
+        "Saya harus pergi.",
+        "Saya suka membaca."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 8. Terjemahkan ke bahasa Portugis tanpa melihat unitnya.",
+      "items": [
+        "Besok saya ke Porto.",
+        "Kamu ikut saya?",
+        "Kami naik kereta.",
+        "Ayo makan siang!",
+        "Kami pulang sore."
+      ]
+    }
+  ],
+  "answers": [
+    "faço — Posso — sei — queres — vejo — dizem",
+    "Sei — Conheço — posso — Sei — Conheces — Posso",
+    "Pode ajudar-me? — Queria um café, se faz favor. — Sei falar um pouco de português. — Quanto tempo demora? — Tenho de ir. — Gosto de ler.",
+    "Amanhã vou ao Porto. — Vens comigo? — Vamos de comboio. — Vamos almoçar! — Voltamos à tarde."
+  ]
+}

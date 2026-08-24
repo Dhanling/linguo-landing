@@ -1,0 +1,630 @@
+{
+ "title": "O livro e a mesa — jenis kelamin, kata sandang, dan bentuk jamak",
+ "title_target": "O quarto é pequeno",
+ "goal": "Memasang *o* atau *a* di depan tiap kata benda tanpa ragu, membentuk jamak, dan membuat kata sifat ikut menyesuaikan diri — penghalang pertama bagi penutur bahasa Indonesia, dan sengaja dipasang di depan.",
+ "bekal": [
+  "menebak jenis kelamin sebuah kata benda dari ujungnya, dan mengenali pengecualian yang wajib dihafal",
+  "memilih antara *o / a / os / as* dan *um / uma / uns / umas*",
+  "membentuk jamak, termasuk kata yang berakhir *-l*, *-m*, dan *-ão*"
+ ],
+ "dialogs": [
+  {
+   "title": "Diálogo — O quarto arrendado",
+   "intro": "Budi menyewa kamar di rumah Dona Fernanda, di kawasan Alfama. Hari ini ia melihat kamarnya untuk pertama kali.",
+   "lines": [
+    {
+     "speaker": "D. Fernanda:",
+     "text": "Boa tarde. É o senhor Budi?",
+     "id": "Selamat sore. Anda Tuan Budi?",
+     "literal": "baik sore. adalah si tuan Budi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sou, sim. Boa tarde, dona Fernanda.",
+     "id": "Betul. Selamat sore, Bu Fernanda.",
+     "literal": "saya-adalah, ya. baik sore, nyonya Fernanda."
+    },
+    {
+     "speaker": "D. Fernanda:",
+     "text": "Este é o quarto. É pequeno, mas é confortável.",
+     "id": "Ini kamarnya. Kecil, tapi nyaman.",
+     "literal": "ini adalah si kamar. adalah kecil, tapi adalah nyaman."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A janela é grande! E a cama também.",
+     "id": "Jendelanya besar! Tempat tidurnya juga.",
+     "literal": "si jendela adalah besar! dan si ranjang juga."
+    },
+    {
+     "speaker": "D. Fernanda:",
+     "text": "Ali estão a mesa e uma cadeira. O armário está atrás da porta.",
+     "id": "Di sana ada meja dan sebuah kursi. Lemarinya di belakang pintu.",
+     "literal": "di-sana mereka-berada si meja dan sebuah kursi. si lemari dia-berada di-belakang dari-si pintu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "E a casa de banho? É no corredor?",
+     "id": "Kamar mandinya bagaimana? Di koridor?",
+     "literal": "dan si rumah dari mandi? adalah di-si koridor?"
+    },
+    {
+     "speaker": "D. Fernanda:",
+     "text": "É. E a cozinha é ao lado. Os quartos dos outros são em cima.",
+     "id": "Ya. Dapurnya di sebelah. Kamar-kamar penghuni lain di atas.",
+     "literal": "adalah. dan si dapur adalah ke-si sisi. si-jamak kamar dari-si-jamak lain mereka-adalah di atas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "As chaves são estas?",
+     "id": "Kuncinya yang ini?",
+     "literal": "si-jamak kunci mereka-adalah ini-jamak?"
+    },
+    {
+     "speaker": "D. Fernanda:",
+     "text": "São. Duas chaves: a da porta e a do prédio.",
+     "id": "Ya. Dua kunci: kunci pintu dan kunci gedung.",
+     "literal": "mereka-adalah. dua kunci: si dari-si pintu dan si dari-si gedung."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "O prédio é antigo, não é?",
+     "id": "Gedungnya tua, ya?",
+     "literal": "si gedung adalah tua, tidak adalah?"
+    },
+    {
+     "speaker": "D. Fernanda:",
+     "text": "É muito antigo. As casas de Alfama são todas antigas.",
+     "id": "Tua sekali. Rumah-rumah di Alfama semuanya tua.",
+     "literal": "adalah sangat tua. si-jamak rumah dari Alfama mereka-adalah semua(pr) tua(pr-jamak)."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Muito obrigado, dona Fernanda!",
+     "id": "Terima kasih banyak, Bu Fernanda!",
+     "literal": "banyak terima-kasih, nyonya Fernanda!"
+    }
+   ],
+   "notes": [
+    "**O senhor Budi, a dona Fernanda.** Gelar pun memakai kata sandang. *O senhor* dan *a senhora* adalah sapaan sopan untuk orang yang belum akrab; *dona* dipakai di depan nama depan perempuan yang lebih tua, dan di Portugal ia terdengar hangat, bukan kaku.",
+    "**Não é?** Ini ekor pertanyaan yang dipakai untuk minta persetujuan, persis seperti \"ya?\" atau \"kan?\" dalam bahasa Indonesia: *O prédio é antigo, não é?* Bentuk pendeknya, *né?*, sangat umum di Brasil tetapi jarang di Portugal — di Portugal orang mengucapkannya penuh.",
+    "**Da, do, no, ao — kata depan yang menempel di kata sandang.** *da porta* = *de + a porta*. *no corredor* = *em + o corredor*. *ao lado* = *a + o lado*. Peleburan ini **wajib**, tidak boleh dipisah, dan ia dibongkar seluruhnya di unit 7. Untuk sekarang cukup kenali bentuknya.",
+    "**Casa de banho** adalah kamar mandi dalam bahasa Portugis Portugal. Di Brasil orang berkata *banheiro* — kata yang di Portugal justru berarti penjaga pantai. Ini salah satu perbedaan yang paling sering membuat pelajar salah tempat.",
+    "**Todas antigas** — dua kata sekaligus ikut berjamak dan ikut berjenis perempuan, karena *as casas* perempuan dan jamak. Inilah rantai kesesuaian yang membuat jenis kelamin kata benda penting: ia tidak berhenti di kata sandang, tapi menular ke semua kata yang menerangkannya."
+   ],
+   "grammars": [
+    {
+     "title": "Empat kata sandang tentu, empat kata sandang tak tentu",
+     "body": [
+      "Bahasa Indonesia tidak punya kata sandang sama sekali. Bahasa Portugis punya delapan, dan pilihannya ditentukan oleh dua hal saja: jenis kelamin kata bendanya, dan tunggal atau jamak."
+     ],
+     "table": {
+      "head": [
+       "",
+       "Laki-laki tunggal",
+       "Laki-laki jamak",
+       "Perempuan tunggal",
+       "Perempuan jamak"
+      ],
+      "rows": [
+       [
+        "**Tentu** (\"si/itu\")",
+        "**o** livro",
+        "**os** livros",
+        "**a** mesa",
+        "**as** mesas"
+       ],
+       [
+        "**Tak tentu** (\"sebuah\")",
+        "**um** livro",
+        "**uns** livros",
+        "**uma** mesa",
+        "**umas** mesas"
+       ]
+      ]
+     },
+     "after": [
+      "Cara bacanya: *o* = **u**, *os* = **usy**, *a* = **e**, *as* = **esy**, *um* = **ung**, *uma* = **U-me**, *uns* = **ungsy**, *umas* = **U-mesy**.",
+      "**Bahasa Portugis memakai kata sandang jauh lebih sering daripada bahasa Inggris**, apalagi bahasa Indonesia. Ia muncul di depan nama orang (*o Pedro*), di depan nama negara (*o Brasil*, *a Indonésia* — tetapi *Portugal* tanpa kata sandang), dan di depan kata benda umum: *Gosto do café* = \"saya suka kopi\", harfiahnya \"saya suka dari-si kopi\".",
+      "*Uns* dan *umas* berarti \"beberapa\", bukan \"sebuah-sebuah\": *uns livros* = beberapa buku."
+     ]
+    },
+    {
+     "title": "Menebak jenis kelamin dari ujung kata",
+     "body": [
+      "Tebakannya benar sekitar sembilan dari sepuluh kali. Sisanya harus dihafal — dan daftar pengecualian yang benar-benar sering dipakai ternyata pendek."
+     ],
+     "table": {
+      "head": [
+       "Berakhir dengan",
+       "Biasanya",
+       "Contoh",
+       "Pengecualian penting"
+      ],
+      "rows": [
+       [
+        "**-o**",
+        "laki-laki",
+        "*o livro*, *o carro*, *o quarto*",
+        "*a mão* (tangan), *a foto*, *a moto*"
+       ],
+       [
+        "**-a**",
+        "perempuan",
+        "*a mesa*, *a casa*, *a porta*",
+        "*o dia*, *o problema*, *o mapa*, *o programa*"
+       ],
+       [
+        "**-ção, -são**",
+        "perempuan **selalu**",
+        "*a lição*, *a estação*, *a televisão*",
+        "—"
+       ],
+       [
+        "**-dade, -agem**",
+        "perempuan **selalu**",
+        "*a cidade*, *a viagem*",
+        "—"
+       ],
+       [
+        "**-or, -l, -r**",
+        "laki-laki",
+        "*o professor*, *o hotel*, *o mar*",
+        "*a flor* (bunga), *a cor* (warna)"
+       ],
+       [
+        "**-e**",
+        "bisa dua-duanya",
+        "*o nome*, *a noite*",
+        "harus dihafal satu per satu"
+       ]
+      ]
+     },
+     "after": [
+      "**Pengecualian yang paling sering menjegal orang Indonesia adalah *o dia*.** Kata \"hari\" berakhir *-a* tetapi laki-laki, dan ia muncul tiap kali kamu menyapa: *bom dia*, bukan *boa dia*. Bandingkan dengan *boa tarde* dan *boa noite*, yang keduanya perempuan.",
+      "Empat kata Yunani yang berakhir *-ma* juga laki-laki dan semuanya sering dipakai: *o problema*, *o programa*, *o sistema*, *o tema*.",
+      "Untuk kata benda berakhir *-e*, tidak ada aturan sama sekali. Jangan buang waktu menebak — hafalkan bersama kata sandangnya sejak pertama kali bertemu."
+     ]
+    },
+    {
+     "title": "Bentuk jamak",
+     "body": [
+      "Menambahkan *-s* menyelesaikan sebagian besar kata. Yang perlu diperhatikan hanya empat ujung kata."
+     ],
+     "table": {
+      "head": [
+       "Kalau berakhir",
+       "Jamaknya",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "huruf hidup",
+        "**+ s**",
+        "*livro* → *livros*; *mesa* → *mesas*"
+       ],
+       [
+        "**-r, -z, -s** bertekanan",
+        "**+ es**",
+        "*flor* → *flores*; *rapaz* → *rapazes*; *português* → *portugueses*"
+       ],
+       [
+        "**-m**",
+        "**-m → -ns**",
+        "*homem* → *homens*; *jardim* → *jardins*"
+       ],
+       [
+        "**-l**",
+        "**-l → -is**",
+        "*hotel* → *hotéis*; *papel* → *papéis*; *fácil* → *fáceis*"
+       ],
+       [
+        "**-ão**",
+        "biasanya **-ões**",
+        "*lição* → *lições*; *coração* → *corações*"
+       ]
+      ]
+     },
+     "after": [
+      "**Kata berakhir -ão punya tiga kemungkinan jamak**, dan sayangnya semuanya sering dipakai: sebagian besar jadi *-ões* (*lição → lições*), sedikit jadi *-ães* (*pão → pães*, *cão → cães*), dan sedikit lagi cukup ditambah *-s* (*mão → mãos*, *irmão → irmãos*). Tiga yang terakhir itu dihafal; sisanya anggap saja *-ões*.",
+      "Kata yang sudah berakhir *-s* tanpa tekanan di suku terakhir **tidak berubah**: *o lápis* → *os lápis* (pensil), *o ónibus* → *os ónibus*. Yang berubah cuma kata sandangnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata sifat ikut jenis kelamin dan jumlahnya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Ini bagian yang paling asing bagi penutur bahasa Indonesia, karena kata sifat kita tidak pernah berubah. Dalam bahasa Portugis, kata sifat **mengambil bentuk dari kata benda yang diterangkannya** — dan letaknya biasanya **sesudah** kata benda, bukan sebelum."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk dasar",
+      "Laki-laki",
+      "Perempuan",
+      "Jamak"
+     ],
+     "rows": [
+      [
+       "**-o / -a**",
+       "*o quarto pequeno*",
+       "*a casa pequena*",
+       "*os quartos pequenos*, *as casas pequenas*"
+      ],
+      [
+       "**-e** (tak berubah)",
+       "*o livro grande*",
+       "*a mesa grande*",
+       "*os livros grandes*, *as mesas grandes*"
+      ],
+      [
+       "**-l, -z** (tak berubah)",
+       "*o exercício fácil*",
+       "*a lição fácil*",
+       "*os exercícios fáceis*"
+      ],
+      [
+       "**-or**",
+       "*o carro melhor*",
+       "*a casa melhor*",
+       "*os carros melhores*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kabar baiknya: kata sifat yang berakhir **-e** tidak pernah berubah menurut jenis kelamin — dan kata sifat semacam itu banyak sekali (*grande*, *inteligente*, *interessante*, *forte*, *simples*, *verde*). Kalau kamu ragu, memilih kata sifat berakhir *-e* adalah jalan keluar yang jujur."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Português",
+      "Cara baca",
+      "Bahasa Indonesia",
+      "Lawan katanya"
+     ],
+     "rows": [
+      [
+       "grande",
+       "GRAND",
+       "besar",
+       "*pequeno* (kecil)"
+      ],
+      [
+       "novo",
+       "NO-vu",
+       "baru",
+       "*velho* / *antigo* (tua)"
+      ],
+      [
+       "bom",
+       "bong",
+       "bagus",
+       "*mau* (jelek)"
+      ],
+      [
+       "caro",
+       "KA-ru",
+       "mahal",
+       "*barato* (murah)"
+      ],
+      [
+       "fácil",
+       "FA-sil",
+       "mudah",
+       "*difícil* (sulit)"
+      ],
+      [
+       "bonito",
+       "bu-NI-tu",
+       "cantik/bagus",
+       "*feio* (jelek rupa)"
+      ],
+      [
+       "comprido",
+       "kong-PRI-du",
+       "panjang",
+       "*curto* (pendek)"
+      ],
+      [
+       "limpo",
+       "LING-pu",
+       "bersih",
+       "*sujo* (kotor)"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Bom dan mau membangkang",
+     "items": [
+      "*bom* (lk) → *boa* (pr) → *bons* / *boas*. Perhatikan bahwa bentuk perempuannya bukan *boma*, melainkan *boa* — dan inilah kenapa *bom dia* berpasangan dengan *boa tarde*.",
+      "*mau* (lk) → *má* (pr) → *maus* / *más*.",
+      "Dua kata ini terlalu sering dipakai untuk dilewatkan. Hafalkan keempat bentuknya sekarang."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Benda di dalam rumah",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa tiap kata ditulis bersama kata sandangnya. Jangan pernah menghafalnya sendirian."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Português",
+      "Cara baca",
+      "Bahasa Indonesia",
+      "Jamak"
+     ],
+     "rows": [
+      [
+       "a casa",
+       "e KA-ze",
+       "rumah",
+       "as casas"
+      ],
+      [
+       "o quarto",
+       "u KUAR-tu",
+       "kamar tidur",
+       "os quartos"
+      ],
+      [
+       "a cozinha",
+       "e ku-ZI-nye",
+       "dapur",
+       "as cozinhas"
+      ],
+      [
+       "a casa de banho",
+       "e KA-ze de BA-nyu",
+       "kamar mandi",
+       "as casas de banho"
+      ],
+      [
+       "a sala",
+       "e SA-le",
+       "ruang tamu",
+       "as salas"
+      ],
+      [
+       "a porta",
+       "e POR-te",
+       "pintu",
+       "as portas"
+      ],
+      [
+       "a janela",
+       "e zhe-NÉ-le",
+       "jendela",
+       "as janelas"
+      ],
+      [
+       "a mesa",
+       "e ME-ze",
+       "meja",
+       "as mesas"
+      ],
+      [
+       "a cadeira",
+       "e ke-DEI-re",
+       "kursi",
+       "as cadeiras"
+      ],
+      [
+       "a cama",
+       "e KA-me",
+       "tempat tidur",
+       "as camas"
+      ],
+      [
+       "o armário",
+       "u ar-MA-riu",
+       "lemari",
+       "os armários"
+      ],
+      [
+       "a chave",
+       "e SYAV",
+       "kunci",
+       "as chaves"
+      ],
+      [
+       "o prédio",
+       "u PRÉ-diu",
+       "gedung",
+       "os prédios"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Tiga kata di tabel ini sudah kamu kenal seumur hidup: *a mesa*, *a janela*, dan *o armário* berpindah ke bahasa Indonesia hampir tanpa berubah — meja, jendela, lemari. Ketiganya masuk lewat pedagang Portugis pada abad ke-16 dan tidak pernah pulang. Perhatikan pula bahwa ketiganya mempertahankan **jenis kelamin aslinya** dalam bahasa Portugis, sesuatu yang hilang begitu kata itu masuk ke bahasa kita."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pt": "o livro",
+   "baca": "u LI-vru",
+   "id": "buku"
+  },
+  {
+   "pt": "a mesa",
+   "baca": "e ME-ze",
+   "id": "meja"
+  },
+  {
+   "pt": "a casa",
+   "baca": "e KA-ze",
+   "id": "rumah"
+  },
+  {
+   "pt": "o quarto",
+   "baca": "u KUAR-tu",
+   "id": "kamar"
+  },
+  {
+   "pt": "a porta",
+   "baca": "e POR-te",
+   "id": "pintu"
+  },
+  {
+   "pt": "a janela",
+   "baca": "e zhe-NÉ-le",
+   "id": "jendela"
+  },
+  {
+   "pt": "a cama",
+   "baca": "e KA-me",
+   "id": "tempat tidur"
+  },
+  {
+   "pt": "a cadeira",
+   "baca": "e ke-DEI-re",
+   "id": "kursi"
+  },
+  {
+   "pt": "o armário",
+   "baca": "u ar-MA-riu",
+   "id": "lemari"
+  },
+  {
+   "pt": "a chave",
+   "baca": "e SYAV",
+   "id": "kunci"
+  },
+  {
+   "pt": "a cozinha",
+   "baca": "e ku-ZI-nye",
+   "id": "dapur"
+  },
+  {
+   "pt": "a casa de banho",
+   "baca": "e KA-ze de BA-nyu",
+   "id": "kamar mandi (Portugal)"
+  },
+  {
+   "pt": "o corredor",
+   "baca": "u ku-khe-DOR",
+   "id": "koridor"
+  },
+  {
+   "pt": "o prédio",
+   "baca": "u PRÉ-diu",
+   "id": "gedung"
+  },
+  {
+   "pt": "a cidade",
+   "baca": "e si-DAD",
+   "id": "kota"
+  },
+  {
+   "pt": "o dia",
+   "baca": "u DI-e",
+   "id": "hari (laki-laki!)"
+  },
+  {
+   "pt": "a lição",
+   "baca": "e li-SÃUNG",
+   "id": "pelajaran"
+  },
+  {
+   "pt": "o pão",
+   "baca": "u pãung",
+   "id": "roti"
+  },
+  {
+   "pt": "grande / pequeno",
+   "baca": "GRAND / pe-KE-nu",
+   "id": "besar / kecil"
+  },
+  {
+   "pt": "novo / velho",
+   "baca": "NO-vu / VÉ-lyu",
+   "id": "baru / tua"
+  },
+  {
+   "pt": "antigo",
+   "baca": "ang-TI-gu",
+   "id": "tua, kuno"
+  },
+  {
+   "pt": "confortável",
+   "baca": "kong-fur-TA-vel",
+   "id": "nyaman"
+  },
+  {
+   "pt": "também",
+   "baca": "tãing-BÃING",
+   "id": "juga"
+  },
+  {
+   "pt": "ali / aqui",
+   "baca": "e-LI / e-KI",
+   "id": "di sana / di sini"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan o atau a.",
+   "items": [
+    "____ livro",
+    "____ janela",
+    "____ dia",
+    "____ cidade",
+    "____ problema",
+    "____ lição"
+   ]
+  },
+  {
+   "prompt": "Tulis bentuk jamaknya, lengkap dengan kata sandangnya.",
+   "items": [
+    "o livro",
+    "a lição",
+    "o hotel",
+    "o homem",
+    "o pão",
+    "a flor"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk kata sifat yang tepat (pequeno atau pequena, novo atau nova).",
+   "items": [
+    "A casa é ____. (pequeno)",
+    "O quarto é ____. (pequeno)",
+    "As mesas são ____. (novo)",
+    "Os livros são ____. (novo)",
+    "A cadeira é ____. (bom)",
+    "O dia é ____. (bom)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Portugis.",
+   "items": [
+    "Kamarnya kecil, tapi nyaman.",
+    "Jendelanya besar.",
+    "Rumah-rumah itu tua.",
+    "Ini sebuah kursi.",
+    "Kuncinya di belakang pintu.",
+    "Kotanya bagus."
+   ]
+  }
+ ],
+ "answers": [
+  "o — a — o — a — o — a",
+  "os livros — as lições — os hotéis — os homens — os pães — as flores",
+  "pequena — pequeno — novas — novos — boa — bom",
+  "O quarto é pequeno, mas é confortável. — A janela é grande. — As casas são antigas. — Isto é uma cadeira. — A chave está atrás da porta. — A cidade é bonita."
+ ]
+}

@@ -1,0 +1,219 @@
+{
+  "title": "Quanto custa? — angka, harga, dan kafe",
+  "title_target": "Um café, por favor",
+  "goal": "Menghitung sampai seribu, menanyakan harga, memesan di kafe, dan membayar — sambil mengenal beberapa kata angka yang **ditulis berbeda** di Portugal dan di Brasil.",
+  "bekal": [
+    "menyebut angka 0-1000 dengan benar",
+    "bertanya *Quanto custa?* dan memahami jawabannya",
+    "memesan di kafe dengan kalimat yang benar-benar dipakai orang Portugal"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Na pastelaria",
+      "intro": "Pukul empat sore, Budi masuk ke sebuah pastelaria kecil di dekat rumahnya.",
+      "lines": [
+        { "speaker": "Empregado:", "text": "Boa tarde! Faz favor?", "id": "Selamat sore! Mau pesan apa?", "literal": "baik sore! dia-buat kebaikan?" },
+        { "speaker": "Budi:", "text": "Um café e um pastel de nata, se faz favor.", "id": "Satu kopi dan satu pastel de nata, tolong.", "literal": "sebuah kopi dan sebuah kue dari krim, kalau dia-buat kebaikan." },
+        { "speaker": "Empregado:", "text": "Mais alguma coisa?", "id": "Ada lagi?", "literal": "lebih sesuatu hal?" },
+        { "speaker": "Budi:", "text": "Sim, uma água sem gás. Quanto é tudo?", "id": "Ya, satu air putih tanpa soda. Semuanya berapa?", "literal": "ya, sebuah air tanpa gas. berapa adalah semua?" },
+        { "speaker": "Empregado:", "text": "São três euros e vinte.", "id": "Tiga euro dua puluh.", "literal": "mereka-adalah tiga euro-jamak dan dua-puluh." },
+        { "speaker": "Budi:", "text": "Aqui está. Tem troco de vinte?", "id": "Ini. Ada kembalian dari dua puluh?", "literal": "di-sini dia-berada. dia-punya kembalian dari dua-puluh?" },
+        { "speaker": "Empregado:", "text": "Tenho, sim. Aqui está: dezasseis e oitenta.", "id": "Ada. Ini: enam belas delapan puluh.", "literal": "saya-punya, ya. di-sini dia-berada: enam-belas dan delapan-puluh." },
+        { "speaker": "Budi:", "text": "Obrigado. O café aqui é muito bom.", "id": "Terima kasih. Kopi di sini enak sekali.", "literal": "terima-kasih. si kopi di-sini adalah sangat bagus." },
+        { "speaker": "Empregado:", "text": "É o melhor da rua! Quantos cafés bebe por dia?", "id": "Paling enak sejalan ini! Sehari minum berapa kopi?", "literal": "adalah si terbaik dari-si jalan! berapa-banyak kopi-jamak dia-minum per hari?" },
+        { "speaker": "Budi:", "text": "Três ou quatro. Em Portugal bebo mais.", "id": "Tiga atau empat. Di Portugal saya minum lebih banyak.", "literal": "tiga atau empat. di Portugal saya-minum lebih." },
+        { "speaker": "Empregado:", "text": "Cá bebemos seis! Bom apetite.", "id": "Kami di sini enam! Selamat menikmati.", "literal": "di-sini kami-minum enam! baik selera-makan." },
+        { "speaker": "Budi:", "text": "Obrigado. Até amanhã!", "id": "Terima kasih. Sampai besok!", "literal": "terima-kasih. sampai besok!" }
+      ],
+      "notes": [
+        "**Faz favor dan se faz favor** adalah cara Portugal berkata \"silakan\" dan \"tolong\". Pelayan memakainya untuk bertanya \"mau pesan apa?\", pembeli memakainya sebagai \"tolong\". Ia juga cara sopan memanggil pelayan dari jauh: cukup ucapkan *Se faz favor!* — bukan melambaikan tangan. Bentuk *por favor* juga benar dan lebih dikenal di luar Portugal.",
+        "**São três euros, tapi É um euro.** Kata kerjanya mengikuti jumlahnya: kalau harganya lebih dari satu, pakai *são*; kalau tepat satu, pakai *é*. Sen dibaca sebagai angka biasa sesudah kata *e*: *três euros e vinte* = 3,20 €. Orang Portugal menulis koma di tempat kita menulis koma juga — jadi tak ada yang perlu dibalik.",
+        "**Dezasseis, bukan dezesseis.** Empat angka ditulis berbeda di Portugal: *dezasseis* (16), *dezassete* (17), *dezanove* (19), dan *catorze* (14, yang di Brasil boleh juga *quatorze*). Perhatikan huruf **a** di tengah — inilah ejaan Portugal, dan inilah yang dipakai di seluruh modul ini.",
+        "**Um café di Portugal berarti espresso**, bukan secangkir kopi besar. Kalau kamu memesan *um café* di Lisbon, yang datang adalah cangkir mungil berisi kopi hitam pekat. Di Lisbon orang juga menyebutnya *uma bica*; di Porto, *um cimbalino*. Kalau kamu mau kopi susu besar dalam gelas, pesanlah *um galão*.",
+        "**Tem troco de vinte?** — *troco* adalah uang kembalian. Pertanyaan ini sangat berguna, karena banyak kedai kecil di Portugal enggan menerima uang kertas besar untuk pembelian kecil.",
+        "**Bom apetite** diucapkan kepada siapa pun yang sedang atau akan makan, bahkan orang asing di meja sebelah. Jawabannya: *Obrigado, igualmente.*"
+      ],
+      "grammars": [
+        {
+          "title": "Angka 0 sampai 20",
+          "body": [
+            "Hanya dua di antaranya yang berubah menurut jenis kelamin: **um/uma** dan **dois/duas**. Sisanya tetap."
+          ],
+          "table": {
+            "head": ["", "Angka", "Cara baca", "", "Angka", "Cara baca"],
+            "rows": [
+              ["0", "zero", "ZÉ-ru", "11", "onze", "ONGZ"],
+              ["1", "um / uma", "ung / U-me", "12", "doze", "DOZ"],
+              ["2", "dois / duas", "doisy / DU-esy", "13", "treze", "TREZ"],
+              ["3", "três", "tresy", "14", "**catorze**", "ke-TORZ"],
+              ["4", "quatro", "KUA-tru", "15", "quinze", "KINGZ"],
+              ["5", "cinco", "SING-ku", "16", "**dezasseis**", "de-ze-SEISY"],
+              ["6", "seis", "seisy", "17", "**dezassete**", "de-ze-SÉT"],
+              ["7", "sete", "SÉT", "18", "dezoito", "de-ZOI-tu"],
+              ["8", "oito", "OI-tu", "19", "**dezanove**", "de-ze-NÓV"],
+              ["9", "nove", "NÓV", "20", "vinte", "VINGT"],
+              ["10", "dez", "désy", "", "", ""]
+            ]
+          },
+          "after": [
+            "*Duas* dipakai untuk benda perempuan: *duas horas*, *duas casas*, *duas irmãs*. Ini salah satu kesalahan pemula yang paling sering terdengar, karena angka lain tidak berubah dan mudah membuat kita lupa bahwa yang ini berubah.",
+            "Angka yang ditebalkan adalah empat angka dengan ejaan khas Portugal."
+          ]
+        },
+        {
+          "title": "Puluhan, ratusan, ribuan",
+          "body": [
+            "Angka gabungan disambung dengan **e** — di semua tempat, bukan hanya di satu tempat seperti bahasa Inggris."
+          ],
+          "table": {
+            "head": ["Angka", "Português", "Cara baca", "Contoh gabungan"],
+            "rows": [
+              ["30", "trinta", "TRING-te", "*trinta e um* (31)"],
+              ["40", "quarenta", "kue-RENG-te", "*quarenta e dois* (42)"],
+              ["50", "cinquenta", "sing-KUENG-te", "*cinquenta e cinco* (55)"],
+              ["60", "sessenta", "se-SENG-te", "*sessenta e nove* (69)"],
+              ["70", "setenta", "se-TENG-te", "*setenta e três* (73)"],
+              ["80", "oitenta", "oi-TENG-te", "*oitenta e sete* (87)"],
+              ["90", "noventa", "nu-VENG-te", "*noventa e nove* (99)"],
+              ["100", "cem / cento", "sãing / SENG-tu", "*cento e dez* (110)"],
+              ["200", "duzentos / duzentas", "du-ZENG-tusy", "*duzentos e cinquenta* (250)"],
+              ["500", "quinhentos", "ki-NYENG-tusy", "*quinhentos euros*"],
+              ["1000", "mil", "mil", "*mil e quinhentos* (1500)"]
+            ]
+          },
+          "after": [
+            "**Cem tepat 100; cento untuk 101 ke atas.** *Cem euros* (100), tetapi *cento e vinte euros* (120). Ini satu-satunya angka yang punya dua bentuk semacam ini.",
+            "**Ratusan ikut jenis kelamin:** *duzentos livros* tetapi *duzentas casas*. Begitu pula *trezentos/trezentas*, *quinhentos/quinhentas*. Puluhan tidak pernah berubah.",
+            "*Mil* tidak pernah didahului *um*: cukup *mil euros*, bukan *um mil euros*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bertanya harga dan membayar",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**Quanto custa?**", "KUANG-tu KUSY-te", "Berapa harganya? (satu benda)"],
+            ["**Quanto custam?**", "KUANG-tu KUSY-tãung", "Berapa harganya? (banyak benda)"],
+            ["**Quanto é tudo?**", "KUANG-tu é TU-du", "Semuanya berapa?"],
+            ["**É caro / barato.**", "é KA-ru / be-RA-tu", "Mahal / murah."],
+            ["**Aceitam cartão?**", "e-SEI-tãung kar-TÃUNG", "Terima kartu?"],
+            ["**Tem troco?**", "tãing TRO-ku", "Ada kembalian?"],
+            ["**A conta, se faz favor.**", "e KONG-te", "Minta bonnya, tolong."],
+            ["**Fico com este.**", "FI-ku kong ESY-te", "Saya ambil yang ini."],
+            ["**Só estou a ver, obrigado.**", "só isy-TO e ver", "Saya lihat-lihat saja, terima kasih."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Ficar com* secara harfiah berarti \"tinggal bersama\", dan dipakai persis seperti \"saya ambil ini\" dalam bahasa Indonesia ketika memutuskan membeli sesuatu. Kata kerja *ficar* ini sangat produktif di Portugal — ia juga berarti \"terletak\" (*Onde fica a estação?*) dan \"menjadi\" (*fico contente*)."
+        }
+      ]
+    },
+    {
+      "title": "No café — memesan seperti orang Portugal",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Apa yang datang"],
+          "rows": [
+            ["**um café** / **uma bica**", "ung ke-FÉ / U-me BI-ke", "espresso, cangkir kecil"],
+            ["**um galão**", "ung ge-LÃUNG", "kopi susu dalam gelas tinggi"],
+            ["**uma meia de leite**", "U-me MEI-e de LEIT", "kopi susu dalam cangkir besar"],
+            ["**um abatanado**", "ung e-be-te-NA-du", "kopi hitam encer, seperti *americano*"],
+            ["**um chá**", "ung sya", "teh"],
+            ["**uma água (sem gás)**", "U-me A-gue", "air putih (tanpa soda)"],
+            ["**um sumo de laranja**", "ung SU-mu de le-RANG-zhe", "jus jeruk"],
+            ["**uma cerveja / uma imperial**", "U-me ser-VE-zhe", "bir / bir draf gelas kecil"],
+            ["**um pastel de nata**", "ung pesy-TÉL de NA-te", "kue krim khas Portugal"],
+            ["**uma tosta mista**", "U-me TOSY-te MISY-te", "roti panggang keju dan ham"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Dua hal kecil yang membuatmu terdengar setempat",
+          "items": [
+            "Orang Portugal minum kopi **berdiri di depan meja bar**, bukan duduk — dan sering harganya memang lebih murah begitu. Ucapkan pesananmu langsung tanpa pembukaan panjang: *Um café, se faz favor.*",
+            "Kata *sumo* berarti jus di Portugal; di Brasil orang berkata *suco*. Dan *imperial* adalah bir draf gelas kecil di Lisbon — di Porto benda yang sama disebut *fino*.",
+            "Bentuk jamak *pastel* adalah **pastéis**: *dois pastéis de nata*. Ingat aturan *-l → -is* dari unit 2."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "quanto custa?", "baca": "KUANG-tu KUSY-te", "id": "berapa harganya?" },
+    { "pt": "o euro", "baca": "u EU-ru", "id": "euro" },
+    { "pt": "o troco", "baca": "u TRO-ku", "id": "kembalian" },
+    { "pt": "a conta", "baca": "e KONG-te", "id": "bon, tagihan" },
+    { "pt": "o cartão", "baca": "u kar-TÃUNG", "id": "kartu" },
+    { "pt": "o dinheiro", "baca": "u di-NYEI-ru", "id": "uang" },
+    { "pt": "caro / barato", "baca": "KA-ru / be-RA-tu", "id": "mahal / murah" },
+    { "pt": "o café", "baca": "u ke-FÉ", "id": "kopi; kafe" },
+    { "pt": "o chá", "baca": "u sya", "id": "teh" },
+    { "pt": "a água", "baca": "e A-gue", "id": "air" },
+    { "pt": "o sumo", "baca": "u SU-mu", "id": "jus (Portugal)" },
+    { "pt": "a cerveja", "baca": "e ser-VE-zhe", "id": "bir" },
+    { "pt": "o leite", "baca": "u LEIT", "id": "susu" },
+    { "pt": "o pastel / os pastéis", "baca": "u pesy-TÉL", "id": "kue" },
+    { "pt": "a pastelaria", "baca": "e pesy-te-le-RI-e", "id": "toko kue dan kopi" },
+    { "pt": "beber", "baca": "be-BER", "id": "minum" },
+    { "pt": "custar", "baca": "kusy-TAR", "id": "berharga" },
+    { "pt": "pagar", "baca": "pe-GAR", "id": "membayar" },
+    { "pt": "ficar com", "baca": "fi-KAR kong", "id": "mengambil, jadi membeli" },
+    { "pt": "alguma coisa", "baca": "al-GU-me KOI-ze", "id": "sesuatu" },
+    { "pt": "tudo", "baca": "TU-du", "id": "semua(nya)" },
+    { "pt": "mais / menos", "baca": "maisy / ME-nusy", "id": "lebih / kurang" },
+    { "pt": "ou", "baca": "o", "id": "atau" },
+    { "pt": "bom apetite", "baca": "bong e-pe-TIT", "id": "selamat menikmati" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis angka ini dengan huruf dalam bahasa Portugis (ejaan Portugal).",
+      "items": ["14", "16", "17", "19", "45", "128"]
+    },
+    {
+      "prompt": "Isi dengan um, uma, dois atau duas.",
+      "items": [
+        "____ café",
+        "____ água",
+        "____ cervejas",
+        "____ pastéis",
+        "____ horas",
+        "____ euros"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Satu kopi, tolong.",
+        "Semuanya berapa?",
+        "Tiga euro dua puluh.",
+        "Ada kembalian dari lima puluh?",
+        "Minta bonnya, tolong.",
+        "Terima kartu?"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 4. Terjemahkan ke bahasa Portugis tanpa melihat unitnya.",
+      "items": [
+        "Kamu tinggal di mana?",
+        "Saya tidak bekerja di sini.",
+        "Kami belajar setiap hari.",
+        "Mereka bicaranya cepat sekali.",
+        "Saya tidak pernah bicara bahasa Inggris di rumah."
+      ]
+    }
+  ],
+  "answers": [
+    "catorze — dezasseis — dezassete — dezanove — quarenta e cinco — cento e vinte e oito",
+    "um — uma — duas — dois — duas — dois",
+    "Um café, se faz favor. — Quanto é tudo? — São três euros e vinte. — Tem troco de cinquenta? — A conta, se faz favor. — Aceitam cartão?",
+    "Onde é que moras? — Não trabalho aqui. — Estudamos todos os dias. — Eles falam muito depressa. — Nunca falo inglês em casa."
+  ]
+}

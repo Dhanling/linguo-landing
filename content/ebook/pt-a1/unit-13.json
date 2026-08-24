@@ -1,0 +1,213 @@
+{
+  "title": "Estou a falar — bentuk \"sedang\" khas Portugal",
+  "title_target": "O que é que estás a fazer?",
+  "goal": "Menyatakan sesuatu yang sedang berlangsung dengan susunan yang dipakai di Portugal — dan yang berbeda dari Brasil — lalu memilah *já*, *ainda*, dan *já não* yang semuanya terasa seperti \"sudah\" dan \"belum\".",
+  "bekal": [
+    "menyusun *estar a* + kata kerja dasar",
+    "memakai *continuar a*, *começar a*, *voltar a*",
+    "membedakan empat pasangan *já / ainda* yang sering tertukar"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Ao telefone",
+      "intro": "Budi tersesat lagi, kali ini di lereng Bica. Ia menelepon Ana.",
+      "lines": [
+        { "speaker": "Ana:", "text": "Estou?", "id": "Halo?", "literal": "saya-berada?" },
+        { "speaker": "Budi:", "text": "Ana? Sou eu, o Budi. Estás ocupada?", "id": "Ana? Ini saya, Budi. Kamu lagi sibuk?", "literal": "Ana? saya-adalah aku, si Budi. kau-berada sibuk?" },
+        { "speaker": "Ana:", "text": "Estou a jantar. Mas diz.", "id": "Lagi makan malam. Tapi ngomong aja.", "literal": "saya-berada untuk makan-malam. tapi katakan." },
+        { "speaker": "Budi:", "text": "Desculpa! Ligo mais tarde.", "id": "Maaf! Nanti saya telepon lagi.", "literal": "maaf! saya-menelepon lebih larut." },
+        { "speaker": "Ana:", "text": "Não faz mal, estou só a acabar a sopa. O que se passa?", "id": "Tidak apa-apa, tinggal menghabiskan supnya. Ada apa?", "literal": "tidak dia-buat buruk, saya-berada hanya untuk menyelesaikan si sup. apa yang diri lewat?" },
+        { "speaker": "Budi:", "text": "Estou perdido outra vez. Estou a olhar para o mapa e não percebo nada.", "id": "Saya tersesat lagi. Saya lagi melihat peta dan tidak paham apa-apa.", "literal": "saya-berada tersesat lain kali. saya-berada untuk melihat kepada si peta dan tidak saya-mengerti apa-pun." },
+        { "speaker": "Ana:", "text": "Onde é que estás?", "id": "Kamu di mana?", "literal": "di-mana adalah bahwa kau-berada?" },
+        { "speaker": "Budi:", "text": "Numa rua estreita. Está um elétrico a passar.", "id": "Di jalan sempit. Ada trem lewat.", "literal": "di-sebuah jalan sempit. dia-berada sebuah trem untuk lewat." },
+        { "speaker": "Ana:", "text": "Estás na Bica! Continua a descer e chegas ao rio.", "id": "Kamu di Bica! Terus turun saja, nanti sampai sungai.", "literal": "kau-berada di-si Bica! teruskan untuk turun dan kau-tiba ke-si sungai." },
+        { "speaker": "Budi:", "text": "Mas ainda estou a subir, acho eu.", "id": "Tapi sepertinya saya masih naik.", "literal": "tapi masih saya-berada untuk naik, saya-pikir aku." },
+        { "speaker": "Ana:", "text": "Então estás a ir na direção errada!", "id": "Berarti kamu jalan ke arah yang salah!", "literal": "kalau-begitu kau-berada untuk pergi di-si arah salah!" },
+        { "speaker": "Budi:", "text": "Pois estou. Obrigado! Bom jantar!", "id": "Iya, betul. Terima kasih! Selamat makan malam!", "literal": "nah saya-berada. terima-kasih! baik makan-malam!" }
+      ],
+      "notes": [
+        "**Estou? adalah cara menjawab telepon di Portugal.** Harfiahnya \"saya berada?\" — kira-kira \"ada saya di sini?\". Bentuk lengkapnya *Estou sim?*. Di Brasil orang menjawab *Alô?*, dan di Portugal itu terdengar asing. Untuk memperkenalkan diri: *Sou eu, o Budi* atau *É o Budi.*",
+        "**Estar a + kata kerja dasar** adalah bentuk \"sedang\" di Portugal. Di Brasil bentuknya *estar* + *-ndo*: *estou falando*. Kedua bentuk dipahami di kedua negara, tetapi hanya yang pertama yang wajar diucapkan di Lisbon. Ini penanda kedua — sesudah letak kata ganti di unit 12 — yang paling cepat memberi tahu orang dari mana kamu belajar.",
+        "**Ligar berarti menelepon di Portugal**, dan juga \"menyalakan\" (*liga a luz* — nyalakan lampunya). Kata *telefonar* tetap benar dan sedikit lebih resmi. Perhatikan bahwa keduanya memakai kata depan *a* untuk orangnya: *ligo-te*, *telefono à Ana*.",
+        "**O que se passa?** = \"ada apa?\" atau \"kenapa?\". Susunan tanpa pelaku lagi, seperti *janta-se* di unit 9. Bentuk lain yang sama artinya: *O que é que se passa?* dan, lebih santai, *Que foi?*",
+        "**Está um elétrico a passar** — perhatikan bahwa *estar a* juga dipakai untuk benda, bukan hanya orang, dan bahwa pelakunya boleh datang **sesudah** kata kerjanya. Susunan seperti ini biasa dipakai untuk memperkenalkan sesuatu yang baru muncul di pandangan.",
+        "**Pois estou** — menjawab dengan mengulang kata kerjanya, kebiasaan yang sudah kamu lihat sejak unit 1. Tambahan *pois* memberinya rasa \"iya juga ya\"."
+      ],
+      "grammars": [
+        {
+          "title": "Estar a + kata kerja dasar",
+          "body": [
+            "Susunannya tetap: bentuk *estar* yang sesuai, lalu *a*, lalu kata kerja dalam bentuk dasar yang tidak pernah berubah."
+          ],
+          "table": {
+            "head": ["Kata ganti", "Susunan", "Arti"],
+            "rows": [
+              ["*eu*", "**estou a** falar", "saya sedang bicara"],
+              ["*tu*", "**estás a** comer", "kamu sedang makan"],
+              ["*ele / ela*", "**está a** trabalhar", "dia sedang bekerja"],
+              ["*nós*", "**estamos a** estudar", "kami sedang belajar"],
+              ["*eles / elas*", "**estão a** dormir", "mereka sedang tidur"]
+            ]
+          },
+          "after": [
+            "**Bentuk ini tidak sesering yang kamu kira.** Bahasa Portugis memakai masa kini biasa untuk banyak hal yang dalam bahasa Inggris harus memakai bentuk \"sedang\": *Trabalho num banco* (saya bekerja di bank), *Moro em Lisboa* (saya tinggal di Lisbon). Pakailah *estar a* hanya kalau perbuatannya benar-benar **berlangsung saat itu juga**.",
+            "Untuk menyangkal, *não* tetap di depan *estar*: *Não estou a perceber* — kalimat yang akan sangat sering kamu pakai di Portugal, dan yang lebih halus daripada *não percebo*.",
+            "Kalau ada kata ganti sasaran, ia menempel di kata kerja dasarnya: *Estou a ver-te* — atau, kalau ada penarik, melompat ke depan seluruh susunan: *Não te estou a ver.*"
+          ]
+        },
+        {
+          "title": "Kata kerja lain yang memakai a + kata kerja dasar",
+          "body": [
+            "Pola *a* + kata kerja dasar ini ternyata bekerja untuk beberapa kata kerja lain, dan semuanya sangat sering dipakai."
+          ],
+          "table": {
+            "head": ["Susunan", "Arti", "Contoh"],
+            "rows": [
+              ["**começar a**", "mulai", "*Começo a trabalhar às nove.*"],
+              ["**continuar a**", "terus, lanjut", "*Continua a descer!*"],
+              ["**voltar a**", "kembali me-, lagi", "*Voltei a estudar português.*"],
+              ["**aprender a**", "belajar me-", "*Estou a aprender a nadar.*"],
+              ["**ajudar a**", "membantu me-", "*Ajudas-me a fazer isto?*"],
+              ["**andar a**", "sedang menjalani (Portugal)", "*Ando a estudar muito.*"]
+            ]
+          },
+          "after": [
+            "**Voltar a + kata kerja dasar** adalah cara bahasa Portugis berkata \"lagi\": *voltar a ver* = melihat lagi, *voltar a ler* = membaca lagi. Bahasa Indonesia menaruh \"lagi\" di ujung; bahasa Portugis memasangnya sebagai kata kerja tambahan di depan.",
+            "**Andar a + kata kerja dasar** khas Portugal dan tidak punya padanan yang rapi: ia berarti sesuatu yang sedang berlangsung selama beberapa waktu belakangan ini. *Ando a pensar nisso* = \"belakangan ini saya memikirkan itu\"."
+          ]
+        },
+        {
+          "title": "Já, ainda, ainda não, já não",
+          "body": [
+            "Empat susunan yang mengurus \"sudah\" dan \"belum\". Bahasa Indonesia punya dua kata; bahasa Portugis membaginya jadi empat, dan bedanya tegas."
+          ],
+          "table": {
+            "head": ["Português", "Arti", "Contoh"],
+            "rows": [
+              ["**já**", "sudah (dan sekarang begitu)", "*Já almocei.* (sudah makan siang)"],
+              ["**ainda**", "masih (dan belum berhenti)", "*Ainda estou a comer.*"],
+              ["**ainda não**", "belum (tapi mungkin nanti)", "*Ainda não jantei.*"],
+              ["**já não**", "sudah tidak lagi", "*Já não moro em Alfama.*"]
+            ]
+          },
+          "after": [
+            "**Já não adalah yang paling sering terlewat.** Ia berarti keadaan yang **dulu benar dan sekarang berhenti**: *já não fumo* (saya sudah berhenti merokok), *já não trabalho lá* (saya sudah tidak kerja di situ). Menerjemahkannya jadi *não já* selalu salah.",
+            "*Já* juga dipakai sendirian untuk berarti \"sebentar lagi\" atau \"segera\": *Vou já!* = \"saya datang sekarang juga\", *Já venho* = \"saya balik sebentar lagi\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ao telefone",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**Estou? / Estou sim?**", "isy-TO", "Halo? (menjawab telepon)"],
+            ["**É o Budi.** / **Sou eu.**", "é u BU-di", "Ini Budi. / Ini saya."],
+            ["**Posso falar com a Ana?**", "PÓ-su fe-LAR kong", "Bisa bicara dengan Ana?"],
+            ["**Um momento, se faz favor.**", "ung mu-MENG-tu", "Sebentar, ya."],
+            ["**Está enganado.**", "isy-TA ing-ge-NA-du", "Salah sambung."],
+            ["**Não estou a ouvir bem.**", "nãung isy-TO e o-VIR", "Suaranya kurang jelas."],
+            ["**Ligo mais tarde.**", "LI-gu maisy TARD", "Nanti saya telepon lagi."],
+            ["**Pode repetir?**", "PÓD khe-pe-TIR", "Bisa diulang?"],
+            ["**Qual é o teu número?**", "kual é u teu NU-me-ru", "Nomormu berapa?"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Menyebutkan nomor telepon di Portugal dilakukan **berpasangan dua angka**: 912 345 678 dibaca *nove-um-dois, três-quatro-cinco, seis-sete-oito* atau, lebih sering, *novecentos e doze, trezentos e quarenta e cinco, seiscentos e setenta e oito*. Kalau kamu ragu, membacanya satu per satu tetap dimengerti."
+        },
+        {
+          "type": "kotak",
+          "title": "Perbandingan cepat Portugal dan Brasil",
+          "items": [
+            "\"Sedang bicara\": Portugal *estou a falar* — Brasil *estou falando*.",
+            "\"Nama saya\": Portugal *chamo-me* — Brasil *me chamo*.",
+            "\"Halo?\" di telepon: Portugal *Estou?* — Brasil *Alô?*.",
+            "Telepon genggam: Portugal *o telemóvel* — Brasil *o celular*.",
+            "Ketiganya muncul dalam percakapan hari pertama, jadi tiga perbedaan ini yang paling penting kamu ingat kalau bahan belajarmu bercampur."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "estar a + inf.", "baca": "isy-TAR e", "id": "sedang (Portugal)" },
+    { "pt": "ligar (a)", "baca": "li-GAR", "id": "menelepon; menyalakan" },
+    { "pt": "atender", "baca": "e-teng-DER", "id": "menjawab (telepon)" },
+    { "pt": "o número", "baca": "u NU-me-ru", "id": "nomor" },
+    { "pt": "acabar", "baca": "e-ke-BAR", "id": "menyelesaikan, habis" },
+    { "pt": "continuar a", "baca": "kong-ti-nu-AR", "id": "terus me-" },
+    { "pt": "voltar a", "baca": "vol-TAR e", "id": "me- lagi" },
+    { "pt": "olhar para", "baca": "u-LYAR PE-re", "id": "melihat ke" },
+    { "pt": "o mapa", "baca": "u MA-pe", "id": "peta (laki-laki!)" },
+    { "pt": "a direção", "baca": "e di-re-SÃUNG", "id": "arah" },
+    { "pt": "errado / certo", "baca": "i-KHA-du / SÉR-tu", "id": "salah / benar" },
+    { "pt": "estreito / largo", "baca": "isy-TREI-tu / LAR-gu", "id": "sempit / lebar" },
+    { "pt": "a sopa", "baca": "e SO-pe", "id": "sup" },
+    { "pt": "já", "baca": "zha", "id": "sudah; segera" },
+    { "pt": "ainda", "baca": "e-ING-de", "id": "masih" },
+    { "pt": "ainda não", "baca": "e-ING-de nãung", "id": "belum" },
+    { "pt": "já não", "baca": "zha nãung", "id": "sudah tidak lagi" },
+    { "pt": "agora", "baca": "e-GO-re", "id": "sekarang" },
+    { "pt": "mais tarde", "baca": "maisy TARD", "id": "nanti" },
+    { "pt": "um momento", "baca": "ung mu-MENG-tu", "id": "sebentar" },
+    { "pt": "repetir", "baca": "khe-pe-TIR", "id": "mengulang" },
+    { "pt": "enganado", "baca": "ing-ge-NA-du", "id": "keliru, salah sambung" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi bentuk sedang dengan estar a.",
+      "items": [
+        "Eu falo com a Ana.",
+        "Ela come a sopa.",
+        "Nós estudamos português.",
+        "Eles dormem.",
+        "Tu trabalhas?",
+        "Eu não percebo."
+      ]
+    },
+    {
+      "prompt": "Isi dengan já, ainda, ainda não, atau já não.",
+      "items": [
+        "____ almocei, obrigado.",
+        "____ estou a comer, espera um pouco.",
+        "____ jantei, tenho fome.",
+        "____ moro em Alfama, mudei-me.",
+        "____ vou! Espera dois minutos.",
+        "Ele ____ trabalha aqui, saiu no ano passado."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Halo? Ini Budi.",
+        "Saya sedang makan malam.",
+        "Saya tidak paham.",
+        "Nanti saya telepon lagi.",
+        "Bisa diulang?",
+        "Terus turun saja."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 11. Terjemahkan ke bahasa Portugis tanpa melihat unitnya.",
+      "items": [
+        "Saya suka sekali Lisbon.",
+        "Saya sama sekali tidak suka dingin.",
+        "Menurut saya bagus.",
+        "Buat saya terlalu mahal.",
+        "Saya lebih suka teh."
+      ]
+    }
+  ],
+  "answers": [
+    "Estou a falar com a Ana. — Ela está a comer a sopa. — Estamos a estudar português. — Eles estão a dormir. — Estás a trabalhar? — Não estou a perceber.",
+    "Já — Ainda — Ainda não — Já não — Já — já não",
+    "Estou? É o Budi. — Estou a jantar. — Não estou a perceber. — Ligo mais tarde. — Pode repetir? — Continua a descer.",
+    "Gosto muito de Lisboa. — Não gosto nada do frio. — Acho que é bom. — Para mim é caro demais. — Prefiro o chá."
+  ]
+}

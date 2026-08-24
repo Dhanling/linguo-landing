@@ -1,0 +1,219 @@
+{
+  "title": "Chamo-me, levanto-me — kata ganti yang menempel di ekor kata kerja",
+  "title_target": "A que horas te levantas?",
+  "goal": "Membongkar tanda hubung yang sudah kamu tiru sejak unit 1. Ini bab yang paling khas Portugal di seluruh modul: letak kata ganti di sini berbeda dari Brasil, dan berbeda dari semua bahasa yang mungkin pernah kamu pelajari.",
+  "bekal": [
+    "menempelkan *me*, *te*, *o*, *a*, *lhe* di belakang kata kerja",
+    "mengenali enam kata yang **menarik** kata ganti itu ke depan",
+    "memakai kata kerja berpasangan seperti *levantar-se* dan *esquecer-se de*"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — As manhãs de cada um",
+      "intro": "Ana dan Budi mengobrol tentang pagi masing-masing. Ternyata keduanya sama-sama pelupa.",
+      "lines": [
+        { "speaker": "Ana:", "text": "A que horas é que te levantas?", "id": "Kamu bangun jam berapa?", "literal": "ke apa jam-jamak adalah bahwa dirimu kau-bangunkan?" },
+        { "speaker": "Budi:", "text": "Levanto-me às sete. E tu?", "id": "Saya bangun jam tujuh. Kamu?", "literal": "saya-bangunkan-diriku ke-si-jamak tujuh. dan kamu?" },
+        { "speaker": "Ana:", "text": "Levanto-me tarde, mas também me deito tarde.", "id": "Saya bangunnya siang, tapi tidurnya juga larut.", "literal": "saya-bangunkan-diriku larut, tapi juga diriku saya-baringkan larut." },
+        { "speaker": "Budi:", "text": "Vestes-te depressa de manhã?", "id": "Pagi-pagi kamu ganti bajunya cepat?", "literal": "kau-pakaikan-dirimu cepat dari pagi?" },
+        { "speaker": "Ana:", "text": "Não! Demoro imenso. E nunca me lembro das chaves.", "id": "Tidak! Lama sekali. Dan saya tidak pernah ingat kuncinya.", "literal": "tidak! saya-memakan-waktu sangat. dan tidak-pernah diriku saya-ingat dari-si-jamak kunci." },
+        { "speaker": "Budi:", "text": "A mim acontece-me o mesmo. Esqueço-me sempre do telemóvel.", "id": "Saya juga begitu. Saya selalu lupa telepon genggam.", "literal": "kepada aku dia-terjadi-padaku si sama. saya-lupakan-diriku selalu dari-si telepon." },
+        { "speaker": "Ana:", "text": "Eu telefono-te de manhã, então!", "id": "Kalau begitu saya telepon kamu pagi-pagi!", "literal": "aku saya-telepon-kamu dari pagi, kalau-begitu!" },
+        { "speaker": "Budi:", "text": "Boa ideia. Mas não me telefones antes das sete!", "id": "Ide bagus. Tapi jangan telepon saya sebelum jam tujuh!", "literal": "baik ide. tapi tidak aku kau-telepon sebelum dari-si-jamak tujuh!" },
+        { "speaker": "Ana:", "text": "Combinado. E ao domingo? Também te levantas cedo?", "id": "Sepakat. Kalau hari Minggu? Bangun pagi juga?", "literal": "disepakati. dan ke-si Minggu? juga dirimu kau-bangunkan awal?" },
+        { "speaker": "Budi:", "text": "Ao domingo ninguém me acorda. Durmo até ao meio-dia.", "id": "Hari Minggu tidak ada yang membangunkan saya. Saya tidur sampai tengah hari.", "literal": "ke-si Minggu tidak-seorang-pun aku dia-bangunkan. saya-tidur sampai ke-si tengah-hari." },
+        { "speaker": "Ana:", "text": "Que sorte! Eu tenho um gato que me acorda às seis.", "id": "Beruntung! Saya punya kucing yang membangunkan saya jam enam.", "literal": "yang nasib! aku saya-punya seekor kucing yang aku dia-bangunkan ke-si-jamak enam." },
+        { "speaker": "Budi:", "text": "Coitada de ti!", "id": "Kasihan kamu!", "literal": "kasihan(pr) dari kamu!" }
+      ],
+      "notes": [
+        "**Levanto-me, tetapi também me deito.** Dua kalimat, satu kata kerja berpasangan, dua letak yang berbeda — dan inilah seluruh isi unit ini. Bawaannya, kata ganti duduk **di belakang** kata kerja dan disambung tanda hubung. Tetapi begitu ada kata tertentu di depan kalimat, ia **melompat ke depan**.",
+        "**Nunca me lembro, bukan nunca lembro-me.** Kata *nunca* adalah salah satu penarik itu. Begitu pula *não*, *também*, *já*, *só*, *sempre*, dan semua kata tanya. Daftar lengkapnya ada di tabel di bawah.",
+        "**Ninguém me acorda** — kata *ninguém* (tidak seorang pun) juga menarik kata gantinya ke depan, karena ia mengandung sangkalan. Semua kata bermuatan sangkalan berbuat begitu: *nada*, *ninguém*, *nunca*, *nenhum*.",
+        "**Telemóvel adalah telepon genggam di Portugal**; di Brasil orang berkata *celular*. Kata ini tersusun dari *telefone* + *móvel* dan tidak dipakai di luar Portugal.",
+        "**Combinado** berarti \"sepakat\" atau \"oke, deal\" — satu kata yang menutup kesepakatan kecil. Kata kerjanya *combinar*: *Combinamos às oito?* = \"Sepakat jam delapan?\"",
+        "**Coitada de ti** memakai *ti* karena ada kata depan *de* di depannya, persis aturan unit 11. Perhatikan juga *coitada* berbentuk perempuan, karena yang dikasihani adalah Ana."
+      ],
+      "grammars": [
+        {
+          "title": "Kata ganti sasaran",
+          "body": [
+            "Ada dua rombongan: satu untuk sasaran langsung (\"saya melihat **dia**\") dan satu untuk sasaran tak langsung (\"saya berkata **kepadanya**\"). Untungnya keduanya hanya berbeda di orang ketiga."
+          ],
+          "table": {
+            "head": ["Arti", "Sasaran langsung", "Sasaran tak langsung", "Contoh"],
+            "rows": [
+              ["aku", "**me**", "**me**", "*Ajuda-me!* *Dá-me a chave.*"],
+              ["kamu (*tu*)", "**te**", "**te**", "*Vejo-te amanhã.* *Telefono-te.*"],
+              ["dia (lk)", "**o**", "**lhe**", "*Conheço-o.* *Digo-lhe tudo.*"],
+              ["dia (pr)", "**a**", "**lhe**", "*Conheço-a.* *Dou-lhe o livro.*"],
+              ["kami", "**nos**", "**nos**", "*Ajuda-nos!*"],
+              ["mereka", "**os / as**", "**lhes**", "*Vejo-os.* *Digo-lhes.*"]
+            ]
+          },
+          "after": [
+            "**Untuk tingkat A1, tiga yang benar-benar wajib adalah *me*, *te*, dan *lhe*.** Ketiganya muncul di kalimat paling sehari-hari: *ajuda-me*, *vejo-te*, *digo-lhe*.",
+            "Kalau kata kerjanya berakhir *-r*, *-s*, atau *-z*, huruf itu **luruh** dan kata gantinya berubah jadi *-lo*, *-la*: *ver + o* → *vê-**lo***, *fazer + a* → *fazê-**la***. Susunan ini sering dihindari pemula dengan memakai nama bendanya kembali — dan itu sepenuhnya sah."
+          ]
+        },
+        {
+          "title": "Di depan atau di belakang? Enam penarik",
+          "body": [
+            "Bawaannya **di belakang**, dengan tanda hubung. Tetapi enam jenis kata di bawah ini menariknya ke depan, tanpa tanda hubung."
+          ],
+          "table": {
+            "head": ["Penariknya", "Contoh"],
+            "rows": [
+              ["**sangkalan**: *não, nunca, nada, ninguém*", "*Não **me** telefones.* *Nunca **te** vejo.*"],
+              ["**kata tanya**: *quem, o que, onde, quando*", "*Quem **te** ajudou?* *Onde **o** puseste?*"],
+              ["**kata sambung**: *que, porque, se, quando*", "*Sei que **te** ajuda.* *Se **me** vires...*"],
+              ["**kata keterangan tertentu**: *já, ainda, sempre, também, só, talvez*", "*Já **te** disse.* *Também **me** deito tarde.*"],
+              ["**kata sifat tak tentu**: *todos, alguém, tudo*", "*Todos **me** conhecem.*"],
+              ["kalimat perintah **sangkalan**", "*Não **me** chames!*"]
+            ]
+          },
+          "after": [
+            "Petunjuk praktis: **kalau kalimatmu dimulai langsung dengan kata kerjanya, kata gantinya di belakang.** Kalau ada sesuatu di depan kata kerja — apalagi *não* — kemungkinan besar kata gantinya ikut pindah ke depan.",
+            "**Di Brasil, kata ganti hampir selalu di depan**, bahkan di awal kalimat: *me chamo Budi*, *te vejo amanhã*. Di Portugal susunan itu terdengar salah, dan di tulisan resmi memang dianggap salah. Kalau kamu belajar dari lagu atau sinetron Brasil, inilah kebiasaan yang harus kamu balik."
+          ]
+        },
+        {
+          "title": "Kata kerja berpasangan (refleksif)",
+          "body": [
+            "Sekelompok kata kerja selalu datang bersama kata ganti yang menunjuk pelakunya sendiri. Bentuk dasarnya ditulis dengan *-se* di ujung."
+          ],
+          "table": {
+            "head": ["Bentuk dasar", "Arti", "*eu*", "*tu*"],
+            "rows": [
+              ["**chamar-se**", "bernama", "*chamo-me*", "*chamas-te*"],
+              ["**levantar-se**", "bangun, berdiri", "*levanto-me*", "*levantas-te*"],
+              ["**deitar-se**", "berbaring, tidur", "*deito-me*", "*deitas-te*"],
+              ["**sentar-se**", "duduk", "*sento-me*", "*sentas-te*"],
+              ["**vestir-se**", "berpakaian", "*visto-me*", "*vestes-te*"],
+              ["**lembrar-se de**", "ingat", "*lembro-me de*", "*lembras-te de*"],
+              ["**esquecer-se de**", "lupa", "*esqueço-me de*", "*esqueces-te de*"],
+              ["**sentir-se**", "merasa", "*sinto-me*", "*sentes-te*"]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa kata gantinya ikut berubah menurut pelakunya: *me* untuk *eu*, *te* untuk *tu*, *se* untuk *ele/ela/você*, *nos* untuk *nós*, *se* untuk *eles*.",
+            "Dua yang terakhir menuntut *de*: *lembro-me **da** Ana*, *esqueci-me **das** chaves*. Sama seperti *gostar de*, kata depannya tidak boleh dibuang.",
+            "*Vestir-se* dan *sentir-se* berubah huruf hidupnya pada bentuk *eu*: **visto-me**, **sinto-me** — kelompok yang sama dengan *dormir* dan *preferir*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Sehari dari bangun sampai tidur",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**acordar**", "e-kur-DAR", "terbangun"],
+            ["**levantar-se**", "le-vang-TAR-se", "bangun dari tempat tidur"],
+            ["**tomar banho / duche**", "tu-MAR DUSY", "mandi"],
+            ["**lavar os dentes**", "le-VAR usy DENG-tesy", "sikat gigi"],
+            ["**vestir-se**", "vesy-TIR-se", "berpakaian"],
+            ["**pentear-se**", "peng-ti-AR-se", "menyisir rambut"],
+            ["**sair de casa**", "se-IR de KA-ze", "berangkat dari rumah"],
+            ["**voltar para casa**", "vol-TAR PE-re KA-ze", "pulang ke rumah"],
+            ["**despir-se**", "desy-PIR-se", "melepas baju"],
+            ["**deitar-se**", "dei-TAR-se", "tidur, berbaring"],
+            ["**adormecer**", "e-dur-me-SER", "tertidur"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Acordar dan levantar-se bukan hal yang sama**, dan bahasa Portugis menuntutmu memilih. *Acordo às seis, mas só me levanto às sete* = \"saya terbangun jam enam, tapi baru bangkit jam tujuh\". Bahasa Indonesia memakai satu kata \"bangun\" untuk keduanya."
+        },
+        {
+          "type": "kotak",
+          "title": "Kalimat harian yang memakai kata ganti menempel",
+          "items": [
+            "*Vejo-te amanhã!* — \"Sampai ketemu besok!\" Salah satu perpisahan yang paling sering terdengar.",
+            "*Diz-me uma coisa...* — \"Coba tanya deh...\", cara membuka pertanyaan yang sangat khas Portugal.",
+            "*Desculpa, não te ouvi.* — \"Maaf, saya tidak dengar.\" Perhatikan bahwa *não* menarik *te* ke depan.",
+            "*Chamo-me...* — yang sudah kamu pakai sejak unit 1, dan sekarang kamu tahu kenapa bentuknya begitu.",
+            "*Sinto-me mal.* — \"Saya merasa tidak enak badan.\""
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "levantar-se", "baca": "le-vang-TAR-se", "id": "bangun" },
+    { "pt": "deitar-se", "baca": "dei-TAR-se", "id": "tidur, berbaring" },
+    { "pt": "sentar-se", "baca": "seng-TAR-se", "id": "duduk" },
+    { "pt": "vestir-se", "baca": "vesy-TIR-se", "id": "berpakaian" },
+    { "pt": "lembrar-se de", "baca": "leng-BRAR-se", "id": "ingat" },
+    { "pt": "esquecer-se de", "baca": "isy-ke-SER-se", "id": "lupa" },
+    { "pt": "sentir-se", "baca": "seng-TIR-se", "id": "merasa" },
+    { "pt": "chamar-se", "baca": "sye-MAR-se", "id": "bernama" },
+    { "pt": "telefonar a", "baca": "te-le-fu-NAR", "id": "menelepon" },
+    { "pt": "o telemóvel", "baca": "u te-le-MÓ-vel", "id": "telepon genggam (Portugal)" },
+    { "pt": "acontecer", "baca": "e-kong-te-SER", "id": "terjadi" },
+    { "pt": "tomar duche", "baca": "tu-MAR DUSY", "id": "mandi" },
+    { "pt": "os dentes", "baca": "usy DENG-tesy", "id": "gigi" },
+    { "pt": "ninguém", "baca": "ning-GÃING", "id": "tidak seorang pun" },
+    { "pt": "nada", "baca": "NA-de", "id": "tidak apa pun" },
+    { "pt": "tudo / todos", "baca": "TU-du / TO-dusy", "id": "semuanya / semua orang" },
+    { "pt": "imenso", "baca": "i-MENG-su", "id": "sangat banyak (Portugal)" },
+    { "pt": "combinado", "baca": "kong-bi-NA-du", "id": "sepakat" },
+    { "pt": "a sorte", "baca": "e SORT", "id": "keberuntungan" },
+    { "pt": "a ideia", "baca": "e i-DEI-e", "id": "ide" },
+    { "pt": "antes / depois", "baca": "ANG-tesy", "id": "sebelum / sesudah" },
+    { "pt": "cada", "baca": "KA-de", "id": "tiap" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Letakkan kata ganti di tempat yang benar.",
+      "items": [
+        "____ às sete. (levantar-se, eu)",
+        "Não ____ das chaves. (lembrar-se, eu)",
+        "____ tarde. (deitar-se, eu)",
+        "Também ____ tarde. (deitar-se, eu)",
+        "Nunca ____ do telemóvel. (esquecer-se, eu)",
+        "____ amanhã! (ver, eu + te)"
+      ]
+    },
+    {
+      "prompt": "Tulis ulang kalimat ini dalam bentuk sangkalan, dan pindahkan kata gantinya.",
+      "items": [
+        "Chamo-me Budi.",
+        "Levanto-me cedo.",
+        "Vejo-te amanhã.",
+        "Lembro-me da Ana.",
+        "Telefono-te hoje."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Saya bangun jam tujuh.",
+        "Saya selalu lupa kuncinya.",
+        "Sampai ketemu besok!",
+        "Saya merasa tidak enak badan.",
+        "Tidak ada yang membangunkan saya hari Minggu.",
+        "Bisa tolong saya?"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 10. Terjemahkan ke bahasa Portugis tanpa melihat unitnya.",
+      "items": [
+        "Bisa tolong saya?",
+        "Saya mau satu teh, tolong.",
+        "Saya tidak bisa menulis dengan baik.",
+        "Berapa lama?",
+        "Menurut saya mudah."
+      ]
+    }
+  ],
+  "answers": [
+    "Levanto-me — me lembro — Deito-me — me deito — me esqueço — Vejo-te",
+    "Não me chamo Budi. — Não me levanto cedo. — Não te vejo amanhã. — Não me lembro da Ana. — Não te telefono hoje.",
+    "Levanto-me às sete. — Esqueço-me sempre das chaves. — Vejo-te amanhã! — Sinto-me mal. — Ao domingo ninguém me acorda. — Pode ajudar-me?",
+    "Pode ajudar-me? — Queria um chá, se faz favor. — Não sei escrever bem. — Quanto tempo demora? — Acho que é fácil."
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "title": "Este ou aquele? — belanja, warna, dan kata tunjuk",
+  "title_target": "Posso experimentar?",
+  "goal": "Menunjuk barang pada tiga jarak yang berbeda, menyebut warna dan ukuran, lalu menyelesaikan satu transaksi di toko dari awal sampai membayar.",
+  "bekal": [
+    "membedakan *este*, *esse*, dan *aquele*",
+    "memakai *ficar* untuk mengatakan sesuatu muat atau cocok",
+    "menyebut warna yang berubah bentuk dan warna yang tidak"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Na loja de roupa",
+      "intro": "Awal November, Lisbon mulai dingin. Budi masuk ke sebuah toko pakaian di Chiado.",
+      "lines": [
+        { "speaker": "Empregada:", "text": "Boa tarde. Precisa de ajuda?", "id": "Selamat sore. Perlu dibantu?", "literal": "baik sore. dia-butuh dari bantuan?" },
+        { "speaker": "Budi:", "text": "Sim, procuro um casaco. Está frio lá fora.", "id": "Ya, saya cari jaket. Di luar dingin.", "literal": "ya, saya-mencari sebuah jaket. dia-berada dingin di-sana di-luar." },
+        { "speaker": "Empregada:", "text": "Temos estes aqui. Que tamanho veste?", "id": "Ada yang ini semua. Ukuran berapa?", "literal": "kami-punya ini-jamak di-sini. apa ukuran dia-memakai?" },
+        { "speaker": "Budi:", "text": "Não sei bem os tamanhos daqui. Na Indonésia uso M.", "id": "Saya kurang tahu ukuran di sini. Di Indonesia saya pakai M.", "literal": "tidak saya-tahu baik si-jamak ukuran dari-di-sini. di-si Indonesia saya-pakai M." },
+        { "speaker": "Empregada:", "text": "Então pode experimentar este. É o M.", "id": "Kalau begitu coba yang ini. Ini M.", "literal": "kalau-begitu dia-bisa mencoba ini. adalah si M." },
+        { "speaker": "Budi:", "text": "Obrigado. Onde é o gabinete de provas?", "id": "Terima kasih. Kamar pasnya di mana?", "literal": "terima-kasih. di-mana adalah si kamar dari percobaan?" },
+        { "speaker": "Empregada:", "text": "Ali ao fundo, à direita.", "id": "Di ujung sana, sebelah kanan.", "literal": "di-sana ke-si dasar, ke-si kanan." },
+        { "speaker": "Budi:", "text": "Este fica-me apertado. Tem um maior?", "id": "Yang ini kesempitan buat saya. Ada yang lebih besar?", "literal": "ini dia-tinggal-padaku sempit. dia-punya sebuah lebih-besar?" },
+        { "speaker": "Empregada:", "text": "Tenho esse castanho e aquele azul-escuro, ao fundo.", "id": "Ada yang coklat itu, dan yang biru tua di sana.", "literal": "saya-punya itu coklat dan itu-jauh biru-gelap, ke-si dasar." },
+        { "speaker": "Budi:", "text": "Gosto mais daquele azul. Quanto custa?", "id": "Saya lebih suka yang biru itu. Berapa harganya?", "literal": "saya-suka lebih dari-itu-jauh biru. berapa dia-berharga?" },
+        { "speaker": "Empregada:", "text": "Sessenta e nove euros. Está em saldo.", "id": "Enam puluh sembilan euro. Sedang diskon.", "literal": "enam-puluh dan sembilan euro-jamak. dia-berada dalam obral." },
+        { "speaker": "Budi:", "text": "Fico com ele! Onde é que pago?", "id": "Saya ambil yang itu! Bayarnya di mana?", "literal": "saya-tinggal dengan dia! di-mana adalah bahwa saya-bayar?" }
+      ],
+      "notes": [
+        "**Fica-me apertado** — kata kerja *ficar* mengerjakan pekerjaan baru di sini: \"muat\" dan \"cocok\". *Fica-te bem* = \"cocok buat kamu\", *fica-me grande* = \"kebesaran buat saya\". Perhatikan bahwa kata ganti sasarannya menempel, persis aturan unit 12.",
+        "**Este, esse, aquele — tiga jarak, bukan dua.** Bahasa Portugis membedakan barang yang dekat pembicara (*este*), dekat lawan bicara (*esse*), dan jauh dari keduanya (*aquele*). Bahasa Indonesia punya \"ini\" dan \"itu\" saja, jadi tiga ini perlu latihan. Untungnya sistemnya sama persis dengan bahasa Jawa: *iki*, *iku*, *kuwi*.",
+        "**Castanho, bukan marrom.** Warna coklat di Portugal adalah *castanho* — dari kata *castanha*, buah berangan. Di Brasil orang berkata *marrom*. Begitu pula *em saldo* (sedang obral) di Portugal melawan *em promoção* di Brasil.",
+        "**O gabinete de provas** adalah kamar pas. Kata yang lebih pendek dan juga dipakai: *o provador*.",
+        "**Que tamanho veste?** — *vestir* berarti memakai pakaian, dan bentuk *eu*-nya berubah huruf hidupnya: *visto*. Untuk sepatu, kata kerjanya berbeda: *calçar*. *Que número calça?* = \"ukuran sepatunya berapa?\"",
+        "**Precisa de ajuda?** adalah sapaan baku pegawai toko. Perhatikan *de* wajib sesudah *precisar*, seperti yang sudah kamu pelajari di unit 4."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga jarak kata tunjuk",
+          "body": [
+            "Semuanya ikut jenis kelamin dan jumlah benda yang ditunjuk — kecuali bentuk terakhir, yang tidak pernah berubah."
+          ],
+          "table": {
+            "head": ["Jarak", "lk tunggal", "pr tunggal", "lk jamak", "pr jamak", "tanpa benda"],
+            "rows": [
+              ["dekat **saya**", "**este**", "**esta**", "**estes**", "**estas**", "**isto**"],
+              ["dekat **kamu**", "**esse**", "**essa**", "**esses**", "**essas**", "**isso**"],
+              ["**jauh** dari keduanya", "**aquele**", "**aquela**", "**aqueles**", "**aquelas**", "**aquilo**"]
+            ]
+          },
+          "after": [
+            "**Kolom terakhir dipakai kalau bendanya belum disebut atau tidak diketahui.** *O que é isto?* (\"ini apa?\") — kamu belum tahu bendanya, jadi belum bisa memilih jenis kelaminnya. Begitu pula *isso é caro* dan *não gosto daquilo*. Ketiganya tidak pernah berubah bentuk.",
+            "Kata penunjuk tempat yang berpasangan: *aqui* (di sini, dekat saya), *aí* (di situ, dekat kamu), *ali* / *lá* (di sana). Pasangkan mereka: *este... aqui*, *esse... aí*, *aquele... ali*.",
+            "**Dalam praktik sehari-hari, orang Portugal sering memakai *este* dan *aquele* saja**, dan menyerahkan *esse* untuk hal yang baru saja dikatakan lawan bicara. Kalau kamu ragu, dua itu cukup."
+          ]
+        },
+        {
+          "title": "Kata tunjuk yang melebur",
+          "body": [
+            "Seperti kata sandang, kata tunjuk pun melebur dengan *de*, *em*, dan *a*."
+          ],
+          "table": {
+            "head": ["Kata depan", "+ *este*", "+ *esse*", "+ *aquele*", "+ bentuk netral"],
+            "rows": [
+              ["**de**", "*deste*", "*desse*", "*daquele*", "*disto*, *disso*, *daquilo*"],
+              ["**em**", "*neste*", "*nesse*", "*naquele*", "*nisto*, *nisso*, *naquilo*"],
+              ["**a**", "—", "—", "*àquele*", "*àquilo*"]
+            ]
+          },
+          "after": [
+            "*Gosto deste* = \"saya suka yang ini\". *Gosto daquele* = \"saya suka yang di sana itu\". Karena *gostar* menuntut *de*, peleburan ini muncul terus-menerus ketika berbelanja.",
+            "Kata depan *a* hanya melebur dengan kelompok *aquele*, dan tandanya ` seperti pada *à*: *àquele*, *àquela*, *àquilo*."
+          ]
+        },
+        {
+          "title": "Ficar — muat, cocok, dan pantas",
+          "body": [
+            "Kata kerja ini sudah muncul tiga kali di modul: \"terletak\" (unit 7), \"jadi membeli\" (unit 6), dan sekarang \"muat\"."
+          ],
+          "table": {
+            "head": ["Kalimat", "Arti"],
+            "rows": [
+              ["*Fica-me bem.*", "Cocok buat saya."],
+              ["*Fica-te muito bem!*", "Bagus banget di kamu!"],
+              ["*Fica-me grande / pequeno.*", "Kebesaran / kekecilan buat saya."],
+              ["*Fica-me apertado / largo.*", "Kesempitan / kebesaran (longgar)."],
+              ["*Este fica melhor.*", "Yang ini lebih cocok."],
+              ["*Fico com este.*", "Saya ambil yang ini."]
+            ]
+          },
+          "after": [
+            "Kata *melhor* (lebih baik) dan *pior* (lebih buruk) adalah bentuk perbandingan tak beraturan. Untuk kata sifat lain, perbandingan dibentuk dengan *mais* dan *menos*: *mais caro* (lebih mahal), *menos caro* (kurang mahal), dan yang tertinggi dengan kata sandang: *o mais caro* (yang paling mahal)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Warna",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia", "Berubah?"],
+          "rows": [
+            ["**branco / branca**", "BRANG-ku", "putih", "ya"],
+            ["**preto / preta**", "PRE-tu", "hitam", "ya"],
+            ["**vermelho / vermelha**", "ver-ME-lyu", "merah", "ya"],
+            ["**amarelo / amarela**", "e-me-RÉ-lu", "kuning", "ya"],
+            ["**castanho / castanha**", "kesy-TA-nyu", "coklat (Portugal)", "ya"],
+            ["**azul / azuis**", "e-ZUL", "biru", "cuma jamak"],
+            ["**verde / verdes**", "VERD", "hijau", "cuma jamak"],
+            ["**cinzento / cinzenta**", "sing-ZENG-tu", "abu-abu", "ya"],
+            ["**cor-de-rosa**", "kor-de-KHO-ze", "merah muda", "tidak pernah"],
+            ["**cor-de-laranja**", "kor-de-le-RANG-zhe", "oranye", "tidak pernah"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Warna yang aslinya nama benda tidak pernah berubah bentuk:** *cor-de-rosa* (warna mawar), *cor-de-laranja* (warna jeruk), *bege*, *creme*. Jadi *duas camisolas cor-de-rosa* — tanpa *-s*. Untuk memperjelas gelap-terangnya, tambahkan *escuro* (gelap) atau *claro* (terang) di belakang: *azul-escuro*, *verde-claro*."
+        }
+      ]
+    },
+    {
+      "title": "A roupa",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["a camisa", "e ke-MI-ze", "kemeja"],
+            ["a camisola", "e ke-mi-ZÓ-le", "sweter (Portugal)"],
+            ["a t-shirt", "e ti-SYERT", "kaus"],
+            ["as calças", "esy KAL-sesy", "celana panjang"],
+            ["os calções", "usy kal-SÕINGSY", "celana pendek"],
+            ["o vestido / a saia", "u vesy-TI-du / e SAI-e", "gaun / rok"],
+            ["o casaco", "u ke-ZA-ku", "jaket, mantel"],
+            ["os sapatos", "usy se-PA-tusy", "sepatu"],
+            ["as meias", "esy MEI-esy", "kaus kaki"],
+            ["o chapéu / o boné", "u sye-PÉU", "topi"],
+            ["o cinto", "u SING-tu", "ikat pinggang"],
+            ["os óculos", "usy Ó-ku-lusy", "kacamata"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Lemari pakaianmu penuh kata Portugis",
+          "items": [
+            "*a camisa* → **kemeja**. *o sapato* → **sepatu**. *a renda* → **renda**. *o saco* → **saku**. *o botão* → **butang** dalam bahasa Melayu lama.",
+            "Perhatikan *camisola*: di Portugal ia berarti sweter atau kaus lengan panjang, sementara di Brasil kata yang sama berarti gaun tidur. Salah satu perbedaan yang bisa membuat percakapan jadi janggal.",
+            "*As calças* selalu jamak, seperti \"celana\" yang punya dua kaki — persis kebiasaan bahasa Inggris (*trousers*) dan berbeda dari bahasa Indonesia. Begitu juga *as meias* dan *os óculos*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "este / esse / aquele", "baca": "ESY-te / ES-se / e-KEL", "id": "ini / itu / itu (jauh)" },
+    { "pt": "isto / isso / aquilo", "baca": "ISY-tu / IS-su / e-KI-lu", "id": "ini / itu (tanpa benda)" },
+    { "pt": "a loja", "baca": "e LO-zhe", "id": "toko" },
+    { "pt": "a roupa", "baca": "e KHO-pe", "id": "pakaian" },
+    { "pt": "o casaco", "baca": "u ke-ZA-ku", "id": "jaket" },
+    { "pt": "as calças", "baca": "esy KAL-sesy", "id": "celana panjang" },
+    { "pt": "os sapatos", "baca": "usy se-PA-tusy", "id": "sepatu" },
+    { "pt": "o tamanho", "baca": "u te-MA-nyu", "id": "ukuran" },
+    { "pt": "experimentar / provar", "baca": "isy-pe-ri-meng-TAR", "id": "mencoba" },
+    { "pt": "vestir / calçar", "baca": "vesy-TIR / kal-SAR", "id": "memakai baju / sepatu" },
+    { "pt": "apertado / largo", "baca": "e-per-TA-du", "id": "sempit / longgar" },
+    { "pt": "escuro / claro", "baca": "isy-KU-ru / KLA-ru", "id": "gelap / terang" },
+    { "pt": "em saldo", "baca": "ãing SAL-du", "id": "sedang obral (Portugal)" },
+    { "pt": "o desconto", "baca": "u desy-KONG-tu", "id": "diskon" },
+    { "pt": "procurar", "baca": "pru-ku-RAR", "id": "mencari" },
+    { "pt": "precisar de", "baca": "pre-si-ZAR de", "id": "membutuhkan" },
+    { "pt": "melhor / pior", "baca": "me-LYOR / pi-OR", "id": "lebih baik / lebih buruk" },
+    { "pt": "maior / menor", "baca": "me-YOR / me-NOR", "id": "lebih besar / lebih kecil" },
+    { "pt": "branco / preto", "baca": "BRANG-ku / PRE-tu", "id": "putih / hitam" },
+    { "pt": "vermelho / azul", "baca": "ver-ME-lyu / e-ZUL", "id": "merah / biru" },
+    { "pt": "castanho", "baca": "kesy-TA-nyu", "id": "coklat (Portugal)" },
+    { "pt": "verde / amarelo", "baca": "VERD / e-me-RÉ-lu", "id": "hijau / kuning" },
+    { "pt": "o frio", "baca": "u FRI-u", "id": "dingin" },
+    { "pt": "lá fora", "baca": "la FÓ-re", "id": "di luar sana" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan este, esta, estes, atau estas.",
+      "items": [
+        "____ casaco",
+        "____ camisa",
+        "____ sapatos",
+        "____ calças",
+        "____ vestido",
+        "____ meias"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk leburan yang tepat (deste, daquele, neste, naquela...).",
+      "items": [
+        "Gosto ____ casaco aqui. (de + este)",
+        "Gosto mais ____ azul ali. (de + aquele)",
+        "O que é que está ____ saco? (em + este)",
+        "Não gosto ____. (de + aquilo)",
+        "Moro ____ rua. (em + esta)",
+        "O que é ____? (isto)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Saya cari jaket.",
+        "Boleh saya coba?",
+        "Yang ini kesempitan buat saya.",
+        "Ada yang lebih besar?",
+        "Saya lebih suka yang biru itu.",
+        "Saya ambil yang ini."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 14. Terjemahkan ke bahasa Portugis tanpa melihat unitnya.",
+      "items": [
+        "Kemarin saya belajar sepanjang sore.",
+        "Bagaimana akhir pekanmu?",
+        "Dia mengundang saya makan siang.",
+        "Saya tiba dua bulan yang lalu.",
+        "Kami istirahat hari Sabtu."
+      ]
+    }
+  ],
+  "answers": [
+    "este — esta — estes — estas — este — estas",
+    "deste — daquele — neste — daquilo — nesta — isto",
+    "Procuro um casaco. — Posso experimentar? — Este fica-me apertado. — Tem um maior? — Gosto mais daquele azul. — Fico com este.",
+    "Ontem estudei a tarde toda. — Como correu o fim de semana? — Ela convidou-me para almoçar. — Cheguei há dois meses. — Descansámos no sábado."
+  ]
+}

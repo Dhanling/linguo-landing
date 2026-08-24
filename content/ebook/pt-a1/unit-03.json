@@ -1,0 +1,249 @@
+{
+  "title": "Sou português, estou cansado — dua kata \"adalah\"",
+  "title_target": "Como estás?",
+  "goal": "Memilih antara *ser* dan *estar* tanpa berpikir lama — penghalang kedua, dan satu-satunya tempat di modul ini di mana memilih yang salah benar-benar **mengubah arti** kalimatmu, bukan sekadar membuatnya janggal.",
+  "bekal": [
+    "menyebut enam bentuk *estar* selancar *ser*",
+    "tahu kapan sebuah kata sifat memakai *ser* dan kapan memakai *estar*",
+    "bertanya *Como estás?* dan menjawabnya dengan jujur"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — À porta do café",
+      "intro": "Tiga hari kemudian, Budi bertemu Ana lagi di depan sebuah kafe kecil di Bairro Alto.",
+      "lines": [
+        { "speaker": "Ana:", "text": "Olá, Budi! Como estás?", "id": "Halo Budi! Apa kabar?", "literal": "halo Budi! bagaimana kau-berada?" },
+        { "speaker": "Budi:", "text": "Estou cansado. O quarto é bom, mas a cama é dura.", "id": "Saya capek. Kamarnya bagus, tapi kasurnya keras.", "literal": "saya-berada lelah(lk). si kamar adalah bagus, tapi si ranjang adalah keras." },
+        { "speaker": "Ana:", "text": "Coitado! E hoje, estás livre?", "id": "Kasihan! Hari ini kamu senggang?", "literal": "kasihan(lk)! dan hari-ini, kau-berada bebas?" },
+        { "speaker": "Budi:", "text": "Estou. Estou de férias até segunda-feira.", "id": "Ya. Saya libur sampai Senin.", "literal": "saya-berada. saya-berada dari libur sampai kedua-hari." },
+        { "speaker": "Ana:", "text": "Boa! O café aqui é ótimo... mas hoje está fechado.", "id": "Bagus! Kopi di sini enak sekali... tapi hari ini tutup.", "literal": "bagus(pr)! si kafe di-sini adalah bagus-sekali... tapi hari-ini dia-berada tertutup." },
+        { "speaker": "Budi:", "text": "Que pena! Estás com pressa?", "id": "Sayang sekali! Kamu buru-buru?", "literal": "yang sayang! kau-berada dengan buru-buru?" },
+        { "speaker": "Ana:", "text": "Não, estou tranquila. Sou estudante, e hoje não há aulas.", "id": "Tidak, santai saja. Saya mahasiswa, dan hari ini tidak ada kuliah.", "literal": "tidak, saya-berada tenang(pr). saya-adalah pelajar, dan hari-ini tidak ada kuliah-jamak." },
+        { "speaker": "Budi:", "text": "És estudante de quê?", "id": "Kamu mahasiswa jurusan apa?", "literal": "kau-adalah pelajar dari apa?" },
+        { "speaker": "Ana:", "text": "De história. E tu? És estudante também?", "id": "Sejarah. Kalau kamu? Mahasiswa juga?", "literal": "dari sejarah. dan kamu? kau-adalah pelajar juga?" },
+        { "speaker": "Budi:", "text": "Não, sou engenheiro. Estou aqui para aprender português.", "id": "Bukan, saya insinyur. Saya di sini untuk belajar bahasa Portugis.", "literal": "tidak, saya-adalah insinyur. saya-berada di-sini untuk belajar Portugis." },
+        { "speaker": "Ana:", "text": "O português é difícil, mas tu estás a falar muito bem!", "id": "Bahasa Portugis itu sulit, tapi kamu bicaranya sudah bagus sekali!", "literal": "si Portugis adalah sulit, tapi kamu kau-berada untuk berbicara sangat baik!" },
+        { "speaker": "Budi:", "text": "Obrigado. Hoje estou contente.", "id": "Terima kasih. Hari ini saya senang.", "literal": "terima-kasih. hari-ini saya-berada senang." }
+      ],
+      "notes": [
+        "**Como estás? bukan Como és?** Keduanya kalimat yang benar, tetapi artinya berbeda jauh. *Como estás?* = \"apa kabar?\" — menanyakan keadaanmu hari ini. *Como és?* = \"kamu orangnya bagaimana?\" — menanyakan wataknya. Menukar keduanya di depan orang yang baru dikenal menghasilkan pertanyaan yang jauh lebih pribadi daripada yang kamu maksud.",
+        "**O café é ótimo, mas está fechado.** Satu kalimat, dua kata kerja, dan di sinilah seluruh perbedaannya terlihat. Kafe itu **memang** tempat yang bagus — itu sifat tetapnya, jadi *ser*. Ia **sedang** tutup hari ini — itu keadaan sesaat, jadi *estar*. Kalau kamu hanya mengingat satu contoh dari unit ini, ingat kalimat ini.",
+        "**Sou engenheiro, tanpa um.** Bahasa Portugis **tidak memakai kata sandang** di depan pekerjaan: *Sou engenheiro*, *É professora*, *Somos estudantes*. Menambahkan *um* di situ (*sou um engenheiro*) terdengar seperti kamu sedang menekankan sesuatu — \"saya ini seorang insinyur, lho\". Bahasa Inggris melakukan kebalikannya, jadi berhati-hatilah kalau kamu menerjemahkan lewat bahasa Inggris di kepalamu.",
+        "**Não há aulas** — *há* berarti \"ada\", untuk benda maupun keadaan, tunggal maupun jamak. Bentuknya cuma satu dan tidak pernah berubah: *há um problema* (ada satu masalah), *há muitos livros* (ada banyak buku). Ia berasal dari kata kerja *haver*, yang di tingkat A1 praktis hanya muncul dalam bentuk ini.",
+        "**Estás a falar** — bentuk \"sedang\" khas Portugal: *estar a* + kata kerja dasar. Di Brasil orang berkata *está falando*. Bentuk ini dibongkar penuh di unit 13; kali ini cukup mengenalinya kalau muncul.",
+        "**Coitado / coitada** ikut jenis kelamin orang yang dikasihani, sama seperti *obrigado*. Ana berkata *coitado* karena yang capek adalah Budi."
+      ],
+      "grammars": [
+        {
+          "title": "Estar — kata kerja \"berada\" dan \"sedang\"",
+          "body": [
+            "Bentuknya tidak beraturan, tetapi berulang dengan pola yang mudah dikenali: semuanya diawali *est-*, dan huruf *e* di depannya nyaris hilang ketika diucapkan."
+          ],
+          "table": {
+            "head": ["Kata ganti", "Bentuk", "Cara baca", "Arti"],
+            "rows": [
+              ["*eu*", "**estou**", "isy-TO", "saya berada / sedang"],
+              ["*tu*", "**estás**", "isy-TASY", "kamu berada"],
+              ["*ele / ela / você*", "**está**", "isy-TA", "dia berada"],
+              ["*nós*", "**estamos**", "isy-TA-musy", "kami berada"],
+              ["*vocês / eles / elas*", "**estão**", "isy-TÃUNG", "kalian / mereka berada"]
+            ]
+          },
+          "after": [
+            "Dalam percakapan cepat, orang Portugal sering memotong suku kata pertamanya sama sekali: *tou bem* untuk *estou bem*, *tás pronto?* untuk *estás pronto?*. Jangan menirunya dulu, tapi kenalilah — kalau tidak, kamu akan mendengar sesuatu yang sama sekali tidak ada di kamus.",
+            "Perhatikan bahwa *estar* dan *ser* sama-sama memakai satu bentuk untuk *vocês*, *eles*, dan *elas* — dan bentuk itu sama-sama berakhir *-ão*: *são*, *estão*."
+          ]
+        },
+        {
+          "title": "Ser atau estar? Satu pertanyaan yang menyelesaikan sembilan dari sepuluh kasus",
+          "body": [
+            "Tanyakan pada dirimu: **apakah ini masih benar bulan depan?** Kalau ya, pakai *ser*. Kalau tidak, pakai *estar*."
+          ],
+          "table": {
+            "head": ["Untuk menyatakan", "Kata kerjanya", "Contoh"],
+            "rows": [
+              ["jati diri, nama", "**ser**", "*Sou o Budi.* *Ela é a Ana.*"],
+              ["asal, kebangsaan", "**ser**", "*Sou indonésio. És de Lisboa?*"],
+              ["pekerjaan", "**ser**", "*Sou engenheiro. Ela é médica.*"],
+              ["sifat bawaan, watak", "**ser**", "*A Ana é simpática. O livro é interessante.*"],
+              ["waktu, tanggal, jam", "**ser**", "*Hoje é segunda-feira. São três horas.*"],
+              ["perasaan hari ini", "**estar**", "*Estou cansado. Estou contente.*"],
+              ["letak, tempat sesuatu berada", "**estar**", "*A chave está na mesa. Estou em Lisboa.*"],
+              ["keadaan sementara", "**estar**", "*A loja está fechada. O café está frio.*"],
+              ["\"sedang\" (+ *a* + kata dasar)", "**estar**", "*Estou a estudar.*"]
+            ]
+          },
+          "after": [
+            "**Satu pengecualian yang perlu dihafal:** letak bangunan dan kota yang tidak bisa pindah tetap boleh memakai *ser* atau *ficar*: *Lisboa é em Portugal* atau *Lisboa fica em Portugal*. Untuk benda yang bisa dipindahkan, selalu *estar*: *O livro está na mesa*.",
+            "**Dan satu jebakan bahasa Inggris:** \"I am hungry\" diterjemahkan dengan *ter*, bukan *ser* maupun *estar* — *tenho fome*, harfiahnya \"saya punya lapar\". Begitu pula *tenho sede* (haus), *tenho frio* (kedinginan), *tenho sono* (mengantuk), *tenho medo* (takut). Kata kerja *ter* dibongkar di unit 5."
+          ]
+        },
+        {
+          "title": "Kata sifat yang berganti arti bersama kata kerjanya",
+          "body": [
+            "Sekelompok kata sifat bisa dipakai dengan keduanya — dan artinya benar-benar berubah. Inilah bukti bahwa memilih *ser* atau *estar* bukan soal kerapian tata bahasa."
+          ],
+          "table": {
+            "head": ["Kata sifat", "Dengan **ser**", "Dengan **estar**"],
+            "rows": [
+              ["*bom*", "*é bom* — barangnya memang bagus", "*está bom* — rasanya enak (sekarang)"],
+              ["*aberto / fechado*", "*é fechado* — orangnya tertutup", "*está fechado* — sedang tutup"],
+              ["*rico*", "*é rico* — orang kaya", "*está rico* — sedang banyak uang"],
+              ["*verde*", "*é verde* — warnanya hijau", "*está verde* — belum matang"],
+              ["*pronto*", "*é pronto* — cepat tanggap", "*está pronto* — sudah siap"],
+              ["*bonito*", "*é bonita* — orangnya cantik", "*está bonita* — hari ini kelihatan cantik"]
+            ]
+          },
+          "after": [
+            "Pasangan terakhir itu yang paling berguna diingat. *A Ana é bonita* adalah pujian atas rupanya; *A Ana está bonita hoje* adalah pujian atas penampilannya hari ini — dan yang kedua justru lebih sering diucapkan orang Portugal, karena terdengar lebih ringan dan tidak menghakimi."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bagaimana keadaanmu hari ini",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Semua kata sifat di bawah ini dipakai dengan **estar**, dan semuanya berubah menurut jenis kelamin pembicaranya. Laki-laki memakai bentuk *-o*, perempuan memakai bentuk *-a*."
+        },
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["estou **bem** / **mal**", "isy-TO bãing / mal", "saya baik / tidak enak badan"],
+            ["estou **cansado / cansada**", "kang-SA-du", "saya lelah"],
+            ["estou **contente / feliz**", "kong-TENT / fe-LISY", "saya senang / bahagia"],
+            ["estou **triste**", "TRIST", "saya sedih"],
+            ["estou **doente**", "du-ENT", "saya sakit"],
+            ["estou **ocupado / ocupada**", "u-ku-PA-du", "saya sibuk"],
+            ["estou **livre**", "LI-vre", "saya senggang"],
+            ["estou **atrasado / atrasada**", "e-tre-ZA-du", "saya terlambat"],
+            ["estou **com pressa**", "kong PRÉ-se", "saya buru-buru"],
+            ["estou **de férias**", "de FÉ-riesy", "saya sedang libur"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dua yang terakhir memakai kata depan, bukan kata sifat: *estar com* (dengan) dan *estar de* (dalam keadaan). Pola *estar de* sangat produktif di Portugal: *estou de folga* (libur kerja), *estou de acordo* (saya setuju), *estou de pé* (saya sedang berdiri)."
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga cara menjawab \"Como estás?\"",
+          "items": [
+            "**Netral:** *Estou bem, obrigado. E tu?* — selalu aman.",
+            "**Khas Portugal:** *Vai-se andando.* (\"jalan terus\") atau *Mais ou menos.* (\"lumayan\") — keduanya jujur dan sangat sering terdengar.",
+            "**Jangan menjawab panjang.** Sama seperti \"apa kabar\" dalam bahasa Indonesia, ini sebagian besar basa-basi. Kalau keadaanmu betul-betul buruk, orang Portugal menandainya lebih dulu dengan *Ai...* atau *Olha...* sebelum bercerita."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pekerjaan — dipakai dengan ser, tanpa kata sandang",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Laki-laki", "Perempuan", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["professor", "professora", "pru-fe-SOR / -SO-re", "guru, dosen"],
+            ["estudante", "estudante", "isy-tu-DANT", "pelajar, mahasiswa"],
+            ["engenheiro", "engenheira", "ing-zhe-NYEI-ru", "insinyur"],
+            ["médico", "médica", "MÉ-di-ku", "dokter"],
+            ["enfermeiro", "enfermeira", "ing-fer-MEI-ru", "perawat"],
+            ["advogado", "advogada", "ed-vu-GA-du", "pengacara"],
+            ["empregado", "empregada", "ing-pre-GA-du", "pegawai, pelayan"],
+            ["cozinheiro", "cozinheira", "ku-zi-NYEI-ru", "juru masak"],
+            ["motorista", "motorista", "mu-tu-RISY-te", "sopir"],
+            ["reformado", "reformada", "khe-fur-MA-du", "pensiunan"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan dua kata yang **tidak berubah** menurut jenis kelamin: *estudante* dan *motorista*. Yang membedakannya cuma kata sandangnya — *o estudante* dan *a estudante*. Semua kata yang berakhir *-ista* berperilaku begitu: *o/a dentista*, *o/a jornalista*, *o/a artista*."
+        },
+        {
+          "type": "p",
+          "text": "Untuk bertanya soal pekerjaan, ada dua kalimat yang keduanya wajar: *O que é que fazes?* (\"apa yang kamu kerjakan?\") dan *Qual é a tua profissão?* (\"apa profesimu?\"). Yang pertama jauh lebih sering di percakapan sehari-hari — dan perhatikan susunan *o que é que*, yang akan kamu temui berulang kali di unit 4."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "estar", "baca": "isy-TAR", "id": "berada; sedang" },
+    { "pt": "cansado / cansada", "baca": "kang-SA-du / -de", "id": "lelah" },
+    { "pt": "contente", "baca": "kong-TENT", "id": "senang" },
+    { "pt": "triste", "baca": "TRIST", "id": "sedih" },
+    { "pt": "doente", "baca": "du-ENT", "id": "sakit" },
+    { "pt": "ocupado / livre", "baca": "u-ku-PA-du / LI-vre", "id": "sibuk / senggang" },
+    { "pt": "atrasado", "baca": "e-tre-ZA-du", "id": "terlambat" },
+    { "pt": "com pressa", "baca": "kong PRÉ-se", "id": "buru-buru" },
+    { "pt": "de férias", "baca": "de FÉ-riesy", "id": "sedang libur" },
+    { "pt": "aberto / fechado", "baca": "e-BÉR-tu / fe-SYA-du", "id": "buka / tutup" },
+    { "pt": "pronto", "baca": "PRONG-tu", "id": "siap" },
+    { "pt": "hoje", "baca": "OZH", "id": "hari ini" },
+    { "pt": "há", "baca": "a", "id": "ada" },
+    { "pt": "a aula", "baca": "e AU-le", "id": "kuliah, pelajaran" },
+    { "pt": "o estudante", "baca": "u isy-tu-DANT", "id": "mahasiswa" },
+    { "pt": "o engenheiro", "baca": "u ing-zhe-NYEI-ru", "id": "insinyur" },
+    { "pt": "o médico", "baca": "u MÉ-di-ku", "id": "dokter" },
+    { "pt": "o professor", "baca": "u pru-fe-SOR", "id": "guru, dosen" },
+    { "pt": "a história", "baca": "e isy-TÓ-rie", "id": "sejarah; cerita" },
+    { "pt": "difícil / fácil", "baca": "di-FI-sil / FA-sil", "id": "sulit / mudah" },
+    { "pt": "ótimo", "baca": "Ó-ti-mu", "id": "bagus sekali" },
+    { "pt": "que pena!", "baca": "ke PE-ne", "id": "sayang sekali!" },
+    { "pt": "coitado!", "baca": "koi-TA-du", "id": "kasihan!" },
+    { "pt": "para", "baca": "PE-re", "id": "untuk" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk ser atau estar yang tepat.",
+      "items": [
+        "Eu ____ indonésio.",
+        "Hoje eu ____ cansado.",
+        "A loja ____ fechada.",
+        "A Ana ____ estudante.",
+        "Onde ____ a chave?",
+        "Nós ____ de férias."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Apa kabar? Saya baik, terima kasih.",
+        "Saya guru.",
+        "Kafenya bagus, tapi hari ini tutup.",
+        "Dia (perempuan) sedang sibuk.",
+        "Kuncinya di atas meja.",
+        "Hari ini tidak ada kuliah."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "estás / como / ?",
+        "cansada / hoje / estou",
+        "engenheiro / sou / não",
+        "está / o / fechado / café",
+        "livres / estamos / hoje"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 1. Terjemahkan ke bahasa Portugis tanpa melihat unitnya.",
+      "items": [
+        "Selamat sore! Apa kabar?",
+        "Nama saya Budi.",
+        "Senang berkenalan.",
+        "Kamu dari mana?",
+        "Sampai nanti!"
+      ]
+    }
+  ],
+  "answers": [
+    "sou — estou — está — é — está — estamos",
+    "Como estás? Estou bem, obrigado. — Sou professor. — O café é bom, mas hoje está fechado. — Ela está ocupada. — A chave está na mesa. — Hoje não há aulas.",
+    "Como estás? — Hoje estou cansada. — Não sou engenheiro. — O café está fechado. — Hoje estamos livres.",
+    "Boa tarde! Tudo bem? — Chamo-me Budi. — Muito prazer. — De onde és? — Até logo!"
+  ]
+}

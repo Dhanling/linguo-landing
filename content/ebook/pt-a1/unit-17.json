@@ -1,0 +1,215 @@
+{
+  "title": "À mesa — di restoran",
+  "title_target": "Queria a ementa, se faz favor",
+  "goal": "Menjalani satu makan malam lengkap dalam bahasa Portugis: masuk, memesan, bertanya isi masakan, dan membayar — lengkap dengan satu kebiasaan Portugal yang mengejutkan banyak wisatawan.",
+  "bekal": [
+    "memesan dengan *queria* dan *para mim*",
+    "bertanya apa isi sebuah masakan",
+    "memakai *muito* dan *pouco* dengan benar, baik sebagai kata sifat maupun keterangan"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Numa tasca",
+      "intro": "Ana mengajak Budi ke *tasca* langganan keluarganya — rumah makan kecil, meja kayu, taplak kertas.",
+      "lines": [
+        { "speaker": "Empregado:", "text": "Boa noite. Mesa para dois?", "id": "Selamat malam. Meja untuk dua?", "literal": "baik malam. meja untuk dua?" },
+        { "speaker": "Ana:", "text": "Sim, se faz favor. Podemos ficar ali junto à janela?", "id": "Ya, tolong. Boleh kami duduk di dekat jendela itu?", "literal": "ya, kalau dia-buat kebaikan. kami-bisa tinggal di-sana bersama ke-si jendela?" },
+        { "speaker": "Empregado:", "text": "Com certeza. Aqui têm a ementa.", "id": "Tentu. Ini menunya.", "literal": "dengan kepastian. di-sini mereka-punya si menu." },
+        { "speaker": "Budi:", "text": "Obrigado. Qual é o prato do dia?", "id": "Terima kasih. Menu hari ini apa?", "literal": "yang-mana adalah si hidangan dari-si hari?" },
+        { "speaker": "Empregado:", "text": "Hoje temos carne de porco à alentejana e sardinhas assadas.", "id": "Hari ini ada babi ala Alentejo dan sarden bakar.", "literal": "hari-ini kami-punya daging dari babi ke-si Alentejo dan sarden-jamak terbakar." },
+        { "speaker": "Ana:", "text": "Para mim, as sardinhas. E uma salada mista.", "id": "Buat saya sardennya. Dan satu salad campur.", "literal": "untuk aku, si-jamak sarden. dan sebuah salad campur." },
+        { "speaker": "Budi:", "text": "Eu queria a carne de porco. Leva muito picante?", "id": "Saya mau yang babi. Pedas tidak?", "literal": "aku saya-mau si daging dari babi. dia-bawa banyak pedas?" },
+        { "speaker": "Empregado:", "text": "Não leva nada. É com amêijoas e batatas.", "id": "Sama sekali tidak. Isinya kerang dan kentang.", "literal": "tidak dia-bawa apa-pun. adalah dengan kerang-jamak dan kentang-jamak." },
+        { "speaker": "Budi:", "text": "Ótimo. E para beber, uma água e um vinho tinto da casa.", "id": "Bagus. Minumnya satu air putih dan satu anggur merah rumah.", "literal": "bagus-sekali. dan untuk minum, sebuah air dan sebuah anggur merah dari-si rumah." },
+        { "speaker": "Empregado:", "text": "Mais alguma coisa? Sobremesa?", "id": "Ada lagi? Pencuci mulut?", "literal": "lebih sesuatu hal? pencuci-mulut?" },
+        { "speaker": "Ana:", "text": "Depois vemos. Obrigada.", "id": "Nanti kami lihat. Terima kasih.", "literal": "sesudah kami-melihat. terima-kasih(pr)." },
+        { "speaker": "Budi:", "text": "A conta, se faz favor. Podemos pagar com cartão?", "id": "Minta bonnya, tolong. Boleh bayar pakai kartu?", "literal": "si tagihan, kalau dia-buat kebaikan. kami-bisa membayar dengan kartu?" }
+      ],
+      "notes": [
+        "**A ementa, bukan o cardápio.** Menu di Portugal adalah *a ementa* atau *a lista*; *cardápio* adalah kata Brasil. Menu makan siang murah dengan harga tetap disebut *o prato do dia* atau *a ementa turística*.",
+        "**Leva berarti \"mengandung\" ketika bicara soal masakan.** *Leva carne?* = \"pakai daging?\", *não leva açúcar* = \"tidak pakai gula\". Ini pertanyaan yang wajib kamu kuasai kalau kamu punya pantangan makanan. Untuk menegaskan: *Sou vegetariano* atau *Não como carne de porco*.",
+        "**Vinho tinto, bukan vinho vermelho.** Anggur merah selalu *tinto*; kata *vermelho* tidak dipakai untuk anggur. Pasangannya: *vinho branco* (putih) dan *vinho verde* — yang bukan berwarna hijau, melainkan anggur muda yang sedikit berbuih, khas utara Portugal.",
+        "**Depois vemos** = \"nanti kita lihat\". Susunan pendek yang sangat berguna untuk menunda keputusan tanpa menolak.",
+        "**Junto a** berarti \"di sebelah\" atau \"berdampingan dengan\", dan ia melebur seperti kata depan lain: *junto à janela*, *junto ao rio*.",
+        "**Tasca** adalah rumah makan kecil keluarga yang murah dan jujur — lembaga kuliner Portugal yang paling dicintai. Kalau kamu ingin makan seperti orang setempat, carilah tasca yang penuh orang Portugal pada pukul satu siang."
+      ],
+      "grammars": [
+        {
+          "title": "Cara memesan",
+          "body": [
+            "Ada empat susunan yang semuanya sopan dan semuanya dipakai. Yang perlu dihindari cuma satu: *quero*, yang terdengar terlalu langsung di Portugal."
+          ],
+          "table": {
+            "head": ["Português", "Kesopanan", "Contoh"],
+            "rows": [
+              ["**Queria...**", "paling umum dan aman", "*Queria uma sopa, se faz favor.*"],
+              ["**Para mim,...**", "santai, cepat", "*Para mim, o bacalhau.*"],
+              ["**Gostaria de...**", "sangat sopan, agak resmi", "*Gostaria de ver a ementa.*"],
+              ["**Traz-me... / Traga-me...**", "akrab / sopan", "*Traz-me a conta.*"],
+              ["*Quero...*", "**terlalu langsung**", "hindari kecuali dengan teman"]
+            ]
+          },
+          "after": [
+            "*Queria* dan *gostaria* dua-duanya bentuk masa lampau yang dipakai untuk masa kini — cara bahasa Portugis melunakkan permintaan, sama seperti \"saya mau\" yang berubah jadi \"boleh minta\" dalam bahasa Indonesia.",
+            "Untuk pelayan yang lewat, cukup ucapkan *Se faz favor!* atau *Desculpe!* — jangan memanggil dengan *garçon* (itu Prancis) atau menjentikkan jari."
+          ]
+        },
+        {
+          "title": "Muito dan pouco — kadang berubah, kadang tidak",
+          "body": [
+            "Dua kata ini bekerja dua-duanya sebagai kata sifat dan sebagai kata keterangan, dan hanya salah satunya yang ikut berubah bentuk."
+          ],
+          "table": {
+            "head": ["Peran", "Berubah?", "Contoh"],
+            "rows": [
+              ["menerangkan **kata benda**", "**ya**", "*muita água*, *muitos livros*, *poucas pessoas*"],
+              ["menerangkan **kata sifat**", "**tidak**", "*muito caro*, *muito boa*, *pouco interessante*"],
+              ["menerangkan **kata kerja**", "**tidak**", "*como muito*, *falo pouco*"]
+            ]
+          },
+          "after": [
+            "Perhatikan baris kedua: *a comida é muito boa* — *muito* tetap, sementara *boa* berubah. Ini kesalahan yang sangat sering dibuat pemula, karena dua kata bersebelahan berperilaku berbeda.",
+            "Kata sejenis lainnya: *algum / alguma* (beberapa), *nenhum / nenhuma* (tidak satu pun), *todo / toda* (seluruh), *outro / outra* (yang lain). Semuanya ikut jenis kelamin dan jumlah kata bendanya."
+          ]
+        },
+        {
+          "title": "Satu makan malam, dari masuk sampai keluar",
+          "body": [
+            "Urutan kalimatnya hampir selalu sama, jadi hafalkan sebagai satu rangkaian."
+          ],
+          "table": {
+            "head": ["Tahap", "Português"],
+            "rows": [
+              ["masuk", "*Boa noite, mesa para dois, se faz favor.*"],
+              ["minta menu", "*Queria a ementa, se faz favor.*"],
+              ["bertanya", "*Qual é o prato do dia?* / *O que me recomenda?*"],
+              ["memesan", "*Para mim, o bacalhau. E para beber, uma água.*"],
+              ["pantangan", "*Sou vegetariano.* / *Não como carne de porco.*"],
+              ["minta tambahan", "*Traz-me mais pão, se faz favor.*"],
+              ["pencuci mulut", "*O que têm de sobremesa?*"],
+              ["membayar", "*A conta, se faz favor.* / *Aceitam cartão?*"],
+              ["pergi", "*Estava tudo muito bom. Obrigado!*"]
+            ]
+          },
+          "after": [
+            "*O que me recomenda?* (\"apa yang Anda sarankan?\") adalah satu kalimat yang mengubah pengalaman makanmu di Portugal. Pelayan tasca hampir selalu menjawab jujur, dan sering menyarankan sesuatu yang tidak ada di menu."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "A comida e a bebida",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["o pão / a manteiga", "u pãung / e mang-TEI-ge", "roti / mentega"],
+            ["o arroz / a batata", "u e-KHOSY / e be-TA-te", "nasi / kentang"],
+            ["a carne / o peixe", "e KARN / u peisy", "daging / ikan"],
+            ["o frango / o porco", "u FRANG-gu / u POR-ku", "ayam / babi"],
+            ["o bacalhau", "u be-ke-LYAU", "ikan kod asin"],
+            ["a sardinha", "e ser-DI-nye", "sarden"],
+            ["os legumes / a salada", "usy le-GUMSY", "sayur / salad"],
+            ["a sopa", "e SO-pe", "sup"],
+            ["o queijo / o ovo", "u KEI-zhu / u O-vu", "keju / telur"],
+            ["a fruta / a sobremesa", "e FRU-te", "buah / pencuci mulut"],
+            ["o sal / o açúcar", "u sal / u e-SU-ker", "garam / gula"],
+            ["a água / o vinho", "e A-gue / u VI-nyu", "air / anggur"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tiga kata di tabel ini berpindah ke bahasa Indonesia hampir tanpa berubah: *a manteiga* → **mentega**, *o queijo* → **keju**, dan — lewat jalan yang berliku — *a bacalhau* memberi kita nama ikan yang sampai sekarang dijual di pasar sebagai **bakalau**. Tambahkan *o garfo* → **garpu** dari unit 1, dan meja makanmu praktis berbahasa Portugis."
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga kebiasaan meja Portugal",
+          "items": [
+            "**O couvert.** Begitu kamu duduk, pelayan menaruh roti, mentega, zaitun, kadang keju di meja tanpa kamu pesan. Itu **tidak gratis** — kalau kamu memakannya, ia masuk bon. Kalau tidak mau, cukup katakan *Não, obrigado* dan mereka akan mengangkatnya. Ini bukan penipuan; ini kebiasaan setempat yang sah.",
+            "**Jam makan.** Makan siang di Portugal antara pukul 12.30 dan 14.30, makan malam antara 19.30 dan 22.00. Di luar jam itu, banyak dapur tutup. Datang pukul enam sore untuk makan malam berarti makan sendirian — atau tidak makan sama sekali.",
+            "**Uang tip.** Tidak wajib dan tidak diharapkan sebesar di Amerika. Membulatkan tagihan atau meninggalkan lima sampai sepuluh persen di restoran yang bagus sudah lebih dari cukup."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "a ementa", "baca": "e i-MENG-te", "id": "menu (Portugal)" },
+    { "pt": "o prato", "baca": "u PRA-tu", "id": "hidangan; piring" },
+    { "pt": "a entrada", "baca": "e ing-TRA-de", "id": "hidangan pembuka" },
+    { "pt": "a sobremesa", "baca": "e su-bre-ME-ze", "id": "pencuci mulut" },
+    { "pt": "a bebida", "baca": "e be-BI-de", "id": "minuman" },
+    { "pt": "a carne / o peixe", "baca": "e KARN / u peisy", "id": "daging / ikan" },
+    { "pt": "o frango", "baca": "u FRANG-gu", "id": "ayam" },
+    { "pt": "o porco", "baca": "u POR-ku", "id": "babi" },
+    { "pt": "o arroz", "baca": "u e-KHOSY", "id": "nasi" },
+    { "pt": "a batata", "baca": "e be-TA-te", "id": "kentang" },
+    { "pt": "os legumes", "baca": "usy le-GUMSY", "id": "sayur" },
+    { "pt": "a salada", "baca": "e se-LA-de", "id": "salad" },
+    { "pt": "o vinho tinto / branco", "baca": "u VI-nyu TING-tu", "id": "anggur merah / putih" },
+    { "pt": "assado / grelhado", "baca": "e-SA-du / gre-LYA-du", "id": "dipanggang / dibakar" },
+    { "pt": "frito / cozido", "baca": "FRI-tu / ku-ZI-du", "id": "digoreng / direbus" },
+    { "pt": "picante / salgado", "baca": "pi-KANT / sal-GA-du", "id": "pedas / asin" },
+    { "pt": "doce / amargo", "baca": "DOS / e-MAR-gu", "id": "manis / pahit" },
+    { "pt": "recomendar", "baca": "khe-ku-meng-DAR", "id": "menyarankan" },
+    { "pt": "levar (comida)", "baca": "le-VAR", "id": "mengandung, memakai" },
+    { "pt": "junto a", "baca": "ZHUNG-tu e", "id": "di dekat" },
+    { "pt": "vegetariano", "baca": "ve-zhe-te-ri-A-nu", "id": "vegetarian" },
+    { "pt": "o copo / a garrafa", "baca": "u KÓ-pu / e ge-KHA-fe", "id": "gelas / botol" },
+    { "pt": "o garfo / a faca", "baca": "u GAR-fu / e FA-ke", "id": "garpu / pisau" },
+    { "pt": "estava tudo bom", "baca": "isy-TA-ve TU-du bong", "id": "semuanya enak" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan muito, muita, muitos, atau muitas.",
+      "items": [
+        "____ água",
+        "____ livros",
+        "____ pessoas",
+        "A comida é ____ boa.",
+        "Como ____.",
+        "____ obrigado!"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "ementa / a / queria / favor / faz / se",
+        "mim / o / para / bacalhau",
+        "picante / leva / ?",
+        "conta / a / favor / faz / se",
+        "prato / é / dia / o / do / qual / ?"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Meja untuk dua, tolong.",
+        "Menu hari ini apa?",
+        "Buat saya ikannya.",
+        "Pedas tidak?",
+        "Saya tidak makan daging babi.",
+        "Boleh bayar pakai kartu?"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 15. Terjemahkan ke bahasa Portugis tanpa melihat unitnya.",
+      "items": [
+        "Akhir pekan kamu ke mana?",
+        "Saya ke Porto naik kereta.",
+        "Bagus sekali!",
+        "Saya harus tidur setelah itu.",
+        "Saya lihat toko bukunya."
+      ]
+    }
+  ],
+  "answers": [
+    "muita — muitos — muitas — muito — muito — Muito",
+    "Queria a ementa, se faz favor. — Para mim, o bacalhau. — Leva picante? — A conta, se faz favor. — Qual é o prato do dia?",
+    "Mesa para dois, se faz favor. — Qual é o prato do dia? — Para mim, o peixe. — Leva picante? — Não como carne de porco. — Podemos pagar com cartão?",
+    "Onde é que foste no fim de semana? — Fui ao Porto de comboio. — Foi ótimo! — Tive de dormir a seguir. — Vi a livraria."
+  ]
+}

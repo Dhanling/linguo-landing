@@ -1,0 +1,218 @@
+{
+  "title": "Que horas são? — jam, hari, dan rutinitas",
+  "title_target": "São oito e meia",
+  "goal": "Menyebut jam, menamai hari, dan menceritakan hari-harimu — sambil mengenal cara Portugal menyebut hari yang tidak dipakai bahasa Eropa mana pun selain bahasa Portugis.",
+  "bekal": [
+    "menjawab *Que horas são?* dengan benar, termasuk pengecualian *É uma hora*",
+    "menyebut hari dalam seminggu dan bagian hari",
+    "memasang kata depan waktu: *às nove*, *de manhã*, *ao sábado*"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Na cozinha, de manhã",
+      "intro": "Pukul tujuh pagi. Budi masuk ke dapur dan mendapati Dona Fernanda sudah menyiapkan kopi.",
+      "lines": [
+        { "speaker": "D. Fernanda:", "text": "Bom dia, Budi! Já acordado?", "id": "Selamat pagi, Budi! Sudah bangun?", "literal": "baik hari, Budi! sudah terbangun?" },
+        { "speaker": "Budi:", "text": "Bom dia. Que horas são?", "id": "Selamat pagi. Sekarang jam berapa?", "literal": "baik hari. apa jam-jamak mereka-adalah?" },
+        { "speaker": "D. Fernanda:", "text": "São sete e um quarto. Hoje tens aulas?", "id": "Jam tujuh lewat seperempat. Hari ini ada kuliah?", "literal": "mereka-adalah tujuh dan satu perempat. hari-ini kau-punya kuliah-jamak?" },
+        { "speaker": "Budi:", "text": "Tenho. As aulas são de segunda a sexta, das nove ao meio-dia.", "id": "Ada. Kuliahnya Senin sampai Jumat, dari jam sembilan sampai tengah hari.", "literal": "saya-punya. si-jamak kuliah mereka-adalah dari kedua ke keenam, dari-si-jamak sembilan ke-si tengah-hari." },
+        { "speaker": "D. Fernanda:", "text": "E à tarde?", "id": "Kalau sorenya?", "literal": "dan ke-si sore?" },
+        { "speaker": "Budi:", "text": "À tarde estudo em casa. Às vezes vou ao museu.", "id": "Sore saya belajar di rumah. Kadang-kadang saya ke museum.", "literal": "ke-si sore saya-belajar di rumah. ke-si-jamak kali saya-pergi ke-si museum." },
+        { "speaker": "D. Fernanda:", "text": "E ao fim de semana?", "id": "Kalau akhir pekan?", "literal": "dan ke-si akhir dari minggu?" },
+        { "speaker": "Budi:", "text": "Ao sábado durmo até tarde. Ao domingo almoço fora.", "id": "Sabtu saya tidur sampai siang. Minggu saya makan siang di luar.", "literal": "ke-si Sabtu saya-tidur sampai larut. ke-si Minggu saya-makan-siang di-luar." },
+        { "speaker": "D. Fernanda:", "text": "Aqui o almoço é sempre à uma e jantamos às oito.", "id": "Di sini makan siang selalu jam satu dan kami makan malam jam delapan.", "literal": "di-sini si makan-siang adalah selalu ke-si satu dan kami-makan-malam ke-si-jamak delapan." },
+        { "speaker": "Budi:", "text": "Em Portugal janta-se tarde, não é?", "id": "Di Portugal makan malamnya larut, ya?", "literal": "di Portugal makan-malam-diri larut, tidak adalah?" },
+        { "speaker": "D. Fernanda:", "text": "Tarde? Em Espanha jantam às dez!", "id": "Larut? Di Spanyol makan malam jam sepuluh!", "literal": "larut? di Spanyol mereka-makan-malam ke-si-jamak sepuluh!" },
+        { "speaker": "Budi:", "text": "Pois é. Então às oito ainda é cedo!", "id": "Ya juga. Berarti jam delapan masih awal!", "literal": "nah adalah. kalau-begitu ke-si-jamak delapan masih adalah awal!" }
+      ],
+      "notes": [
+        "**São sete, tetapi É uma.** Jam memakai *ser*, dan bentuknya mengikuti angkanya: jamak untuk dua ke atas (*são duas*, *são sete*), tunggal untuk satu (*é uma hora*). Perhatikan juga bahwa angkanya **perempuan** — *são duas*, bukan *são dois* — karena kata *horas* perempuan.",
+        "**Hari dalam bahasa Portugis dinomori.** *Segunda-feira* berarti \"hari kedua\", *terça* ketiga, sampai *sexta* keenam. Hanya Sabtu dan Minggu yang punya nama sendiri. Susunan ini datang dari kalender gereja abad ke-6 dan bahasa Portugis adalah **satu-satunya bahasa Eropa besar** yang mempertahankannya sampai hari ini.",
+        "**Ao sábado berarti \"tiap hari Sabtu\", bukan \"pada hari Sabtu\".** Untuk kebiasaan yang berulang, Portugal memakai *ao sábado*, *ao domingo*, *à segunda*; Brasil memakai bentuk jamak *aos sábados*. Untuk satu hari tertentu yang akan datang, pakai *no sábado*: *no sábado vou a Sintra* (Sabtu ini).",
+        "**Janta-se tarde** adalah susunan tanpa pelaku, seperti \"orang makan malamnya larut\" atau \"makan malamnya larut\". Kata *se* di sini tidak berarti \"diri sendiri\" — ia menandai bahwa pelakunya tidak disebut. Susunan ini sangat umum di papan pengumuman: *vende-se* (dijual), *aluga-se* (disewakan), *fala-se inglês* (bisa bahasa Inggris).",
+        "**Durmo, bukan dormo.** Sekelompok kata kerja *-ir* mengubah huruf hidupnya hanya pada bentuk *eu*: *dormir* → *durmo*, *subir* → *subo*, *preferir* → *prefiro*, *servir* → *sirvo*. Bentuk lainnya tetap: *dormes*, *dorme*, *dormimos*, *dormem*. Perubahan ini terjadi supaya bunyinya tetap enak diucapkan, dan hanya perlu diingat untuk bentuk *eu*."
+      ],
+      "grammars": [
+        {
+          "title": "Menyebut jam",
+          "body": [
+            "Menitnya ditambahkan dengan *e*, dan dikurangi dengan *menos*. Setelah lewat setengah, orang Portugal lebih sering menghitung mundur."
+          ],
+          "table": {
+            "head": ["Jam", "Português", "Cara baca"],
+            "rows": [
+              ["01.00", "**É uma hora.**", "é U-me O-re"],
+              ["02.00", "**São duas horas.**", "sãung DU-esy O-resy"],
+              ["07.15", "**São sete e um quarto.**", "sãung SÉT i ung KUAR-tu"],
+              ["08.30", "**São oito e meia.**", "sãung OI-tu i MEI-e"],
+              ["09.45", "**São dez menos um quarto.**", "sãung désy ME-nusy"],
+              ["10.50", "**São onze menos dez.**", "sãung ONGZ ME-nusy désy"],
+              ["12.00", "**É meio-dia.**", "é MEI-u DI-e"],
+              ["00.00", "**É meia-noite.**", "é MEI-e NOIT"],
+              ["16.20", "**São quatro e vinte da tarde.**", "sãung KUA-tru i VINGT"]
+            ]
+          },
+          "after": [
+            "**Untuk menanyakan jam:** *Que horas são?* Untuk menanyakan pukul berapa sesuatu terjadi: *A que horas...?* — dan jawabannya selalu memakai *às*: *às nove*, *às três e meia*. Satu-satunya pengecualian: *à uma* (tunggal).",
+            "Bagian hari ditambahkan dengan *de* atau *da*: *às oito **da** manhã*, *às três **da** tarde*, *às dez **da** noite*. Kalau tidak ada keraguan, bagian ini boleh dibuang.",
+            "Di jadwal kereta, bandara, dan bioskop, orang Portugal memakai hitungan 24 jam dan membacanya lurus: *o comboio parte às dezoito e trinta* (18.30)."
+          ]
+        },
+        {
+          "title": "Hari dan bagian hari",
+          "body": [
+            "Semua nama hari **laki-laki** kecuali yang berakhir *-feira*, yang perempuan."
+          ],
+          "table": {
+            "head": ["Português", "Cara baca", "Bahasa Indonesia", "Singkatannya"],
+            "rows": [
+              ["**segunda-feira**", "se-GUNG-de FEI-re", "Senin", "*2.ª feira* / *segunda*"],
+              ["**terça-feira**", "TER-se FEI-re", "Selasa", "*3.ª feira* / *terça*"],
+              ["**quarta-feira**", "KUAR-te FEI-re", "Rabu", "*4.ª feira*"],
+              ["**quinta-feira**", "KING-te FEI-re", "Kamis", "*5.ª feira*"],
+              ["**sexta-feira**", "SEISY-te FEI-re", "Jumat", "*6.ª feira*"],
+              ["**o sábado**", "u SA-bu-du", "Sabtu", "—"],
+              ["**o domingo**", "u du-MING-gu", "Minggu", "—"]
+            ]
+          },
+          "after": [
+            "Dalam percakapan, kata *feira* hampir selalu dibuang: *Vejo-te na quinta* = \"sampai ketemu Kamis\". Tulislah lengkap, ucapkan pendek.",
+            "*O domingo* dan *o sábado* keduanya berpindah ke bahasa Indonesia: **Minggu** datang dari *domingo*, dan **Sabtu** dari akar yang sama dengan *sábado*. Nama hari kita sendiri sebagian datang dari bahasa Arab, sebagian dari Portugis — dan *domingo* adalah salah satu warisan Portugis yang paling jelas."
+          ]
+        },
+        {
+          "title": "Kata depan waktu",
+          "body": [
+            "Empat kata depan mengurus hampir semua keterangan waktu di tingkat A1."
+          ],
+          "table": {
+            "head": ["Untuk", "Kata depan", "Contoh"],
+            "rows": [
+              ["jam", "**a** (+ melebur)", "*às nove*, *à uma*, *ao meio-dia*"],
+              ["bagian hari", "**de** atau **a**", "*de manhã*, *à tarde*, *à noite*"],
+              ["kebiasaan tiap minggu", "**a** (+ melebur)", "*ao sábado*, *à segunda*"],
+              ["satu hari tertentu", "**em** (+ melebur)", "*no sábado*, *na quinta*"],
+              ["bulan dan musim", "**em** (+ melebur)", "*em janeiro*, *no verão*"],
+              ["lama waktu", "**durante** / **há**", "*durante duas horas*, *há dois anos*"]
+            ]
+          },
+          "after": [
+            "**De manhã tetapi à tarde dan à noite.** Tidak ada alasannya; ini kebiasaan yang harus dihafal. Ketiganya sering diucapkan berurutan, jadi latih sebagai satu rangkaian: *de manhã, à tarde, à noite*.",
+            "*Há* juga berarti \"sejak\" atau \"yang lalu\": *estou em Portugal há dois meses* = \"saya di Portugal sudah dua bulan\". Perhatikan bahwa kata kerjanya tetap masa kini, tidak seperti bahasa Indonesia."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Satu hari biasa",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**acordar**", "e-kur-DAR", "bangun (dari tidur)"],
+            ["**tomar o pequeno-almoço**", "PE-ke-nu al-MO-su", "sarapan (Portugal)"],
+            ["**almoçar**", "al-mu-SAR", "makan siang"],
+            ["**lanchar**", "lang-SYAR", "makan camilan sore"],
+            ["**jantar**", "zhang-TAR", "makan malam"],
+            ["**dormir** (*durmo*)", "dur-MIR", "tidur"],
+            ["**trabalhar / estudar**", "tre-be-LYAR", "bekerja / belajar"],
+            ["**descansar**", "desy-kang-SAR", "istirahat"],
+            ["**ver televisão**", "ver te-le-vi-ZÃUNG", "menonton televisi"],
+            ["**ler**", "ler", "membaca"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Sarapan di Portugal adalah *o pequeno-almoço*** — harfiahnya \"makan siang kecil\". Di Brasil orang berkata *o café da manhã*. Ini salah satu perbedaan yang paling terlihat di menu hotel, dan salah satu yang paling sering membingungkan pelajar Indonesia yang belajar dari dua sumber sekaligus."
+        },
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**de manhã**", "de me-NYÃ", "pagi hari"],
+            ["**à tarde**", "a TARD", "sore hari"],
+            ["**à noite**", "a NOIT", "malam hari"],
+            ["**hoje / amanhã / ontem**", "OZH / a-me-NYÃ / ONG-tãing", "hari ini / besok / kemarin"],
+            ["**cedo / tarde**", "SE-du / TARD", "awal / larut"],
+            ["**o fim de semana**", "u fing de se-MA-ne", "akhir pekan"],
+            ["**todos os dias**", "TO-duzy usy DI-esy", "setiap hari"],
+            ["**por semana**", "pur se-MA-ne", "per minggu"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "a hora", "baca": "e O-re", "id": "jam" },
+    { "pt": "o quarto (de hora)", "baca": "u KUAR-tu", "id": "seperempat jam" },
+    { "pt": "meio-dia / meia-noite", "baca": "MEI-u DI-e", "id": "tengah hari / tengah malam" },
+    { "pt": "segunda-feira", "baca": "se-GUNG-de FEI-re", "id": "Senin" },
+    { "pt": "terça-feira", "baca": "TER-se FEI-re", "id": "Selasa" },
+    { "pt": "quarta-feira", "baca": "KUAR-te FEI-re", "id": "Rabu" },
+    { "pt": "quinta-feira", "baca": "KING-te FEI-re", "id": "Kamis" },
+    { "pt": "sexta-feira", "baca": "SEISY-te FEI-re", "id": "Jumat" },
+    { "pt": "o sábado / o domingo", "baca": "u SA-bu-du", "id": "Sabtu / Minggu" },
+    { "pt": "a semana", "baca": "e se-MA-ne", "id": "minggu" },
+    { "pt": "o fim de semana", "baca": "u fing de se-MA-ne", "id": "akhir pekan" },
+    { "pt": "de manhã", "baca": "de me-NYÃ", "id": "pagi hari" },
+    { "pt": "à tarde / à noite", "baca": "a TARD / a NOIT", "id": "sore / malam" },
+    { "pt": "ontem", "baca": "ONG-tãing", "id": "kemarin" },
+    { "pt": "cedo / tarde", "baca": "SE-du / TARD", "id": "awal / larut" },
+    { "pt": "acordar", "baca": "e-kur-DAR", "id": "bangun" },
+    { "pt": "dormir", "baca": "dur-MIR", "id": "tidur" },
+    { "pt": "o pequeno-almoço", "baca": "u pe-KE-nu al-MO-su", "id": "sarapan (Portugal)" },
+    { "pt": "o almoço / o jantar", "baca": "u al-MO-su", "id": "makan siang / makan malam" },
+    { "pt": "jantar", "baca": "zhang-TAR", "id": "makan malam" },
+    { "pt": "descansar", "baca": "desy-kang-SAR", "id": "istirahat" },
+    { "pt": "ler", "baca": "ler", "id": "membaca" },
+    { "pt": "o museu", "baca": "u mu-ZEU", "id": "museum" },
+    { "pt": "fora", "baca": "FÓ-re", "id": "di luar" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis jamnya dengan huruf dalam bahasa Portugis.",
+      "items": ["01.00", "03.30", "07.15", "09.45", "12.00", "22.10"]
+    },
+    {
+      "prompt": "Isi dengan kata depan waktu yang tepat.",
+      "items": [
+        "As aulas começam ____ nove.",
+        "Estudo ____ manhã.",
+        "Descanso ____ tarde.",
+        "____ sábado durmo até tarde.",
+        "____ sábado que vem vou a Sintra.",
+        "O almoço é ____ uma."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Sekarang jam berapa?",
+        "Jam delapan lewat setengah.",
+        "Kuliahnya Senin sampai Jumat.",
+        "Sabtu saya tidur sampai siang.",
+        "Kami makan malam jam delapan.",
+        "Kadang-kadang saya ke museum."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 7. Terjemahkan ke bahasa Portugis tanpa melihat unitnya.",
+      "items": [
+        "Stasiunnya di mana?",
+        "Apoteknya di sebelah bank.",
+        "Belok kiri.",
+        "Jauh dari sini?",
+        "Kuncinya di atas meja."
+      ]
+    }
+  ],
+  "answers": [
+    "É uma hora. — São três e meia. — São sete e um quarto. — São dez menos um quarto. — É meio-dia. — São dez e dez da noite.",
+    "às — de — à — Ao — No — à",
+    "Que horas são? — São oito e meia. — As aulas são de segunda a sexta. — Ao sábado durmo até tarde. — Jantamos às oito. — Às vezes vou ao museu.",
+    "Onde fica a estação? — A farmácia fica ao lado do banco. — Vire à esquerda. — É longe daqui? — A chave está em cima da mesa."
+  ]
+}
