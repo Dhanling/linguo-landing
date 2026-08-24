@@ -1,0 +1,543 @@
+{
+  "title": "Membandingkan, dan yang sedang berlangsung",
+  "title_target": "Estou aprendendo",
+  "goal": "Dua alat terakhir: **perbandingan** (lebih besar, paling murah) dan **bentuk sedang** — yang di Brasil dibentuk dengan cara yang berbeda dari Portugal.",
+  "bekal": [
+    "membandingkan dengan *mais… que*, *menos… que*, *tão… quanto*",
+    "menyebut yang paling dengan *o mais…*",
+    "memakai *estar* + kata kerja berakhiran *-ndo*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Rio ou São Paulo?",
+      "intro": "Perdebatan abadi Brasil, dibawakan di meja kantin.",
+      "lines": [
+        {
+          "speaker": "Carla:",
+          "text": "E aí, o que você tá achando de São Paulo?",
+          "id": "Gimana, gimana kesanmu soal São Paulo?",
+          "literal": "dan di-sana, apa yang kamu kamu-berada mengira dari São Paulo?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tô gostando muito. Mas é maior do que eu imaginava.",
+          "id": "Suka banget. Tapi lebih besar dari yang saya bayangkan.",
+          "literal": "saya-berada menyukai banyak. tapi adalah lebih-besar dari yang saya membayangkan."
+        },
+        {
+          "speaker": "Carla:",
+          "text": "É a maior cidade da América do Sul.",
+          "id": "Ini kota terbesar di Amerika Selatan.",
+          "literal": "adalah si terbesar kota dari-si Amerika dari-si Selatan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dá pra sentir. O trânsito é pior que em Jacarta!",
+          "id": "Kerasa. Macetnya lebih parah dari Jakarta!",
+          "literal": "ia-memberi untuk merasakan. si lalu-lintas adalah lebih-buruk dari di Jakarta!"
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Duvido! Mas e o Rio? Você já foi?",
+          "id": "Masa sih! Tapi kalau Rio? Kamu sudah pernah ke sana?",
+          "literal": "saya-ragukan! tapi dan si Rio? kamu sudah kamu-pergi?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Fui em julho. O Rio é mais bonito, sem dúvida.",
+          "id": "Saya ke sana Juli. Rio lebih cantik, tidak diragukan.",
+          "literal": "saya-pergi pada Juli. si Rio adalah lebih cantik, tanpa keraguan."
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Mas São Paulo tem mais oportunidade de trabalho.",
+          "id": "Tapi São Paulo peluang kerjanya lebih banyak.",
+          "literal": "tapi São Paulo ia-punya lebih kesempatan dari kerja."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Verdade. E a comida aqui é tão boa quanto lá.",
+          "id": "Benar. Dan makanannya di sini sama enaknya dengan di sana.",
+          "literal": "kebenaran. dan si makanan di-sini adalah begitu baik berapa di-sana."
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Aí você acertou. Estamos comendo bem, né?",
+          "id": "Nah itu kamu betul. Kita makan enak terus, kan?",
+          "literal": "di-sana kamu kamu-benar. kami-berada makan baik, kan?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Estamos! Aliás, estou engordando desde que cheguei.",
+          "id": "Iya! Malah saya makin gemuk sejak datang.",
+          "literal": "kami-berada! omong-omong, saya-berada menggemuk sejak yang saya-tiba."
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Isso é o maior elogio que o Brasil pode receber.",
+          "id": "Itu pujian terbesar yang bisa diterima Brasil.",
+          "literal": "itu adalah si terbesar pujian yang si Brasil ia-bisa menerima."
+        }
+      ],
+      "notes": [
+        "**Tá achando, tô gostando, estamos comendo — bentuk sedang muncul enam kali di dialog ini.** Di Brasil, bentuk ini dipakai jauh lebih sering daripada di banyak bahasa lain, termasuk untuk hal yang sedang berlangsung dalam rentang berminggu-minggu: *Estou aprendendo português* (\"saya sedang belajar bahasa Portugis\" — bukan tepat detik ini, melainkan periode ini).",
+        "⚠️ **Di Portugal kalimatnya *estou a aprender*.** Bentuk itu benar dan akan dimengerti di Brasil, tetapi ia langsung menandai kamu belajar dari sumber Eropa. Modul ini memakai bentuk Brasil: *estar* + kata kerja berakhiran **-ndo**.",
+        "**Maior do que dan pior que** — dua bentuk perbandingan tak beraturan. *Grande* tidak menjadi *mais grande* melainkan **maior**; *ruim* tidak menjadi *mais ruim* melainkan **pior**. Cuma ada empat kata seperti ini, dan semuanya sering dipakai.",
+        "**Duvido!** harfiahnya \"saya ragukan\", artinya \"masa sih!\" atau \"nggak percaya!\" — dipakai sambil bercanda. Sekeluarga dengan *Sério?* dan *Jura?* (\"sumpah?\").",
+        "**Aliás** berarti \"omong-omong\" atau \"malah\", dan ia salah satu kata penghubung yang membuat percakapanmu terdengar jauh lebih matang. Padanan santainya: *por sinal*."
+      ],
+      "grammars": [
+        {
+          "title": "Perbandingan",
+          "body": [
+            "Tiga rumus menutup semuanya. Perhatikan bahwa kata sifatnya tetap menyesuaikan diri dengan kata bendanya, seperti biasa."
+          ],
+          "table": {
+            "head": [
+              "Rumus",
+              "Contoh",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "**mais** … **(do) que**",
+                "*O Rio é mais bonito que São Paulo.*",
+                "Rio lebih cantik daripada São Paulo."
+              ],
+              [
+                "**menos** … **(do) que**",
+                "*Esse é menos caro que aquele.*",
+                "Ini kurang mahal daripada itu."
+              ],
+              [
+                "**tão** … **quanto**",
+                "*A comida aqui é tão boa quanto lá.*",
+                "Makanan di sini sama enaknya dengan di sana."
+              ],
+              [
+                "**o / a mais** …",
+                "*É a maior cidade do Brasil.*",
+                "Ini kota terbesar di Brasil."
+              ],
+              [
+                "**o / a menos** …",
+                "*É o menos caro da loja.*",
+                "Ini yang paling murah di toko."
+              ]
+            ]
+          },
+          "after": [
+            "**Do que dan que sama-sama benar.** *Mais bonito do que* dan *mais bonito que* dipakai bergantian; yang kedua lebih pendek dan lebih sering terdengar.",
+            "⚠️ Untuk menyebut \"paling … di …\", bahasa Portugis memakai **de**, bukan *em*: *a maior cidade **do** Brasil*, *o melhor restaurante **da** cidade*. Ini kebalikan dari dugaan penutur bahasa Inggris, tetapi sama dengan bahasa Indonesia yang mengatakan \"terbesar **di** Brasil\" — cuma kata depannya yang berbeda."
+          ]
+        },
+        {
+          "title": "Empat perbandingan tak beraturan",
+          "body": [
+            "Empat kata sifat yang menolak *mais*. Semuanya sering dipakai, jadi hafalkan sekarang."
+          ],
+          "table": {
+            "head": [
+              "Dasar",
+              "Lebih…",
+              "Paling…",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "bom / boa",
+                "**melhor**",
+                "o melhor",
+                "bagus → lebih baik"
+              ],
+              [
+                "ruim",
+                "**pior**",
+                "o pior",
+                "buruk → lebih buruk"
+              ],
+              [
+                "grande",
+                "**maior**",
+                "o maior",
+                "besar → lebih besar"
+              ],
+              [
+                "pequeno",
+                "**menor**",
+                "o menor",
+                "kecil → lebih kecil"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Mais bom* dan *mais grande* adalah kesalahan yang langsung terdengar. Yang benar *melhor* dan *maior*, dan keduanya **tidak berubah** menurut jenis kelamin: *o melhor restaurante*, *a melhor comida*.",
+            "*Melhor* juga berarti \"mendingan\" seperti di unit 18, dan *pior* juga dipakai sebagai seruan: *Pior que é verdade* = \"parahnya, itu benar\"."
+          ]
+        },
+        {
+          "title": "Bentuk sedang: estar + -ndo",
+          "body": [
+            "Buang ujung dasarnya, tempelkan **-ando**, **-endo**, atau **-indo**. Tidak ada pengecualian sama sekali di seluruh bahasa Portugis."
+          ],
+          "table": {
+            "head": [
+              "Dasar",
+              "Bentuk -ndo",
+              "Contoh",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "falar",
+                "fal**ando**",
+                "*Estou falando.*",
+                "Saya sedang bicara."
+              ],
+              [
+                "comer",
+                "com**endo**",
+                "*Estou comendo.*",
+                "Saya sedang makan."
+              ],
+              [
+                "abrir",
+                "abr**indo**",
+                "*Estou abrindo.*",
+                "Saya sedang membuka."
+              ],
+              [
+                "fazer",
+                "faz**endo**",
+                "*O que você tá fazendo?*",
+                "Kamu lagi ngapain?"
+              ],
+              [
+                "ir",
+                "**indo**",
+                "*Estou indo.*",
+                "Saya lagi jalan (ke sana)."
+              ],
+              [
+                "ser",
+                "s**endo**",
+                "*Está sendo difícil.*",
+                "Ini lagi berat."
+              ]
+            ]
+          },
+          "after": [
+            "**Estou indo! adalah salah satu kalimat yang paling sering dikirim lewat pesan di Brasil** — artinya \"otw\". Bentuk potongnya, *tô indo*, bahkan lebih sering.",
+            "**Bentuk ini juga dipakai di masa lampau**, dengan *estava*: *Eu estava dormindo quando você ligou* = \"Saya sedang tidur waktu kamu telepon\". Perhatikan bahwa latar belakangnya memakai *imperfeito* dari unit 17 — dua alat yang bekerja bersama.",
+            "⚠️ Berbeda dari bahasa Inggris, bentuk ini **tidak** dipakai untuk masa depan. \"Saya berangkat besok\" bukan *estou indo amanhã*, melainkan *vou amanhã* atau *vou viajar amanhã*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata sifat untuk membandingkan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "alto / baixo",
+              "ÁU-tu / BÁI-syu",
+              "tinggi / pendek"
+            ],
+            [
+              "gordo / magro",
+              "GÔH-du / MA-gru",
+              "gemuk / kurus"
+            ],
+            [
+              "forte / fraco",
+              "FÓH-tchi / FRA-ku",
+              "kuat / lemah"
+            ],
+            [
+              "rápido / devagar",
+              "HA-pi-du / dji-va-GAH",
+              "cepat / lambat"
+            ],
+            [
+              "barato / caro",
+              "ba-RA-tu / KA-ru",
+              "murah / mahal"
+            ],
+            [
+              "limpo / sujo",
+              "LIN-pu / SU-zhu",
+              "bersih / kotor"
+            ],
+            [
+              "cheio / vazio",
+              "SYÊI-u / va-ZI-u",
+              "penuh / kosong"
+            ],
+            [
+              "perto / longe",
+              "PÊH-tu / LON-zhi",
+              "dekat / jauh"
+            ],
+            [
+              "quente / frio",
+              "KEN-tchi / FRI-u",
+              "panas / dingin"
+            ],
+            [
+              "novo / velho",
+              "NÔ-vu / VÉ-lyu",
+              "baru / tua"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Latihan singkat yang bermanfaat: ambil dua kota yang kamu kenal, lalu buat lima kalimat perbandingan tentang keduanya memakai lima pasang kata sifat di atas."
+        }
+      ]
+    },
+    {
+      "title": "Tô, tá, e o resto: bentuk potong Brasil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kamu sudah bertemu beberapa di antaranya. Ini daftarnya sekaligus, karena tanpa daftar ini kamu akan kesulitan menangkap percakapan cepat."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bentuk penuh",
+            "Bentuk potong",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "estou",
+              "**tô**",
+              "*Tô com fome.*"
+            ],
+            [
+              "está",
+              "**tá**",
+              "*Tá tudo bem?*"
+            ],
+            [
+              "estamos",
+              "**tamo**",
+              "*Tamo indo.*"
+            ],
+            [
+              "para",
+              "**pra**",
+              "*Isso é pra você.*"
+            ],
+            [
+              "para o / para a",
+              "**pro / pra**",
+              "*Vou pro trabalho.*"
+            ],
+            [
+              "você",
+              "**cê**",
+              "*Cê viu isso?*"
+            ],
+            [
+              "não é?",
+              "**né?**",
+              "*Legal, né?*"
+            ],
+            [
+              "está bom",
+              "**tá bom**",
+              "*Tá bom, combinado.*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Bentuk-bentuk ini **tidak dipakai dalam tulisan resmi** — jangan menulis *tô* di surat lamaran kerja. Tetapi ia sepenuhnya wajar dalam pesan WhatsApp, media sosial, dan seluruh percakapan lisan, dari mahasiswa sampai profesor."
+        },
+        {
+          "type": "p",
+          "text": "*Cê* adalah yang paling ekstrem — ia hampir tidak pernah ditulis, tetapi sangat sering diucapkan. Kalau kamu mendengar sesuatu seperti \"sê vai?\", itu *Você vai?*"
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — kembali ke unit 17",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Waktu saya kecil → *Quando eu era criança*",
+            "Dulu saya main di jalan → *Eu brincava na rua*",
+            "Rumahnya dulu kecil → *A casa era pequena*",
+            "Kangen banget! → *Que saudade!*",
+            "Aku kangen kamu → *Estou com saudade de você*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pt": "mais / menos",
+      "baca": "máis / MÊ-nus",
+      "id": "lebih / kurang"
+    },
+    {
+      "pt": "tão… quanto",
+      "baca": "táun… KUAN-tu",
+      "id": "sama… dengan"
+    },
+    {
+      "pt": "melhor / pior",
+      "baca": "me-LYÓH / pi-OH",
+      "id": "lebih baik / lebih buruk"
+    },
+    {
+      "pt": "maior / menor",
+      "baca": "ma-i-OH / me-NOH",
+      "id": "lebih besar / lebih kecil"
+    },
+    {
+      "pt": "alto / baixo",
+      "baca": "ÁU-tu / BÁI-syu",
+      "id": "tinggi / pendek"
+    },
+    {
+      "pt": "forte / fraco",
+      "baca": "FÓH-tchi / FRA-ku",
+      "id": "kuat / lemah"
+    },
+    {
+      "pt": "rápido",
+      "baca": "HA-pi-du",
+      "id": "cepat"
+    },
+    {
+      "pt": "limpo / sujo",
+      "baca": "LIN-pu / SU-zhu",
+      "id": "bersih / kotor"
+    },
+    {
+      "pt": "quente / frio",
+      "baca": "KEN-tchi / FRI-u",
+      "id": "panas / dingin"
+    },
+    {
+      "pt": "o trânsito",
+      "baca": "u TRAN-zi-tu",
+      "id": "lalu lintas; kemacetan"
+    },
+    {
+      "pt": "a oportunidade",
+      "baca": "a o-poh-tu-ni-DA-dji",
+      "id": "kesempatan"
+    },
+    {
+      "pt": "a dúvida",
+      "baca": "a DU-vi-da",
+      "id": "keraguan"
+    },
+    {
+      "pt": "o elogio",
+      "baca": "u e-lo-ZHI-u",
+      "id": "pujian"
+    },
+    {
+      "pt": "imaginar",
+      "baca": "i-ma-zhi-NAH",
+      "id": "membayangkan"
+    },
+    {
+      "pt": "acertar",
+      "baca": "a-seh-TAH",
+      "id": "benar; tepat"
+    },
+    {
+      "pt": "engordar",
+      "baca": "en-goh-DAH",
+      "id": "menjadi gemuk"
+    },
+    {
+      "pt": "aliás",
+      "baca": "a-li-ÁIS",
+      "id": "omong-omong; malah"
+    },
+    {
+      "pt": "sem dúvida",
+      "baca": "séin DU-vi-da",
+      "id": "tidak diragukan"
+    },
+    {
+      "pt": "tô / tá",
+      "baca": "tô / ta",
+      "id": "bentuk potong estou / está"
+    },
+    {
+      "pt": "pra / pro",
+      "baca": "pra / pru",
+      "id": "bentuk potong para a / para o"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Lengkapi perbandingannya. Tulis kata yang hilang saja.",
+      "items": [
+        "O Rio é mais bonito ____ São Paulo.",
+        "Esse livro é ____ caro que aquele. (lebih)",
+        "A comida aqui é tão boa ____ lá.",
+        "O metrô é ____ rápido que o ônibus. (lebih)",
+        "Essa casa é ____ suja que a outra. (kurang)"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk tak beraturan yang tepat.",
+      "items": [
+        "Esse restaurante é ____ que aquele. (bagus)",
+        "O trânsito hoje está ____ que ontem. (buruk)",
+        "São Paulo é a ____ cidade do Brasil. (besar)",
+        "Esse é o ____ quarto do hotel. (kecil)",
+        "Essa é a ____ comida da cidade. (bagus)"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi bentuk sedang.",
+      "items": [
+        "Eu falo português.",
+        "Ela come agora.",
+        "Nós abrimos a loja.",
+        "Você faz o quê?",
+        "Eu aprendo muito.",
+        "Eles vão para casa."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Rio lebih cantik daripada São Paulo.",
+        "Ini kota terbesar di Brasil.",
+        "Makanan di sini sama enaknya dengan di sana.",
+        "Saya sedang belajar bahasa Portugis.",
+        "Kamu lagi ngapain?",
+        "Saya otw."
+      ]
+    }
+  ],
+  "answers": [
+    "que — mais — quanto — mais — menos",
+    "melhor — pior — maior — menor — melhor",
+    "Eu estou falando português. — Ela está comendo agora. — Nós estamos abrindo a loja. — Você está fazendo o quê? — Eu estou aprendendo muito. — Eles estão indo para casa.",
+    "O Rio é mais bonito que São Paulo. — É a maior cidade do Brasil. — A comida aqui é tão boa quanto lá. — Estou aprendendo português. — O que você tá fazendo? — Tô indo."
+  ]
+}

@@ -1,0 +1,536 @@
+{
+  "title": "Laki-laki, perempuan, dan meja",
+  "title_target": "O livro e a mesa",
+  "goal": "Memasang kebiasaan yang menentukan seluruh sisa modul: setiap kata benda punya jenis kelamin, dan kata sandang serta kata sifatnya wajib ikut. Sekaligus membuat bentuk jamak.",
+  "bekal": [
+    "memilih *o* atau *a* untuk kata benda baru dengan menebak dari ujung katanya",
+    "membuat bentuk jamak dengan *-s* dan mengubah sandangnya jadi *os* / *as*",
+    "menempelkan kata sifat **di belakang** kata benda dan menyesuaikan ujungnya"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Na livraria",
+      "intro": "Budi mencari buku di sebuah toko buku kecil di Jalan Augusta. Seorang pegawai menghampirinya.",
+      "lines": [
+        {
+          "speaker": "Vendedor:",
+          "text": "Boa tarde! Posso ajudar?",
+          "id": "Selamat sore! Bisa saya bantu?",
+          "literal": "baik sore! saya-bisa membantu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Boa tarde. Eu procuro um livro de português.",
+          "id": "Selamat sore. Saya mencari sebuah buku bahasa Portugis.",
+          "literal": "baik sore. saya saya-cari sebuah buku dari Portugis."
+        },
+        {
+          "speaker": "Vendedor:",
+          "text": "Claro. O livro é para você?",
+          "id": "Tentu. Bukunya untuk kamu?",
+          "literal": "jelas. si buku adalah untuk kamu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "É, sim. Eu sou estudante.",
+          "id": "Ya, benar. Saya seorang pelajar.",
+          "literal": "adalah, ya. saya adalah pelajar."
+        },
+        {
+          "speaker": "Vendedor:",
+          "text": "Temos uma gramática nova e um dicionário pequeno.",
+          "id": "Kami punya sebuah buku tata bahasa baru dan sebuah kamus kecil.",
+          "literal": "kami-punya sebuah tata-bahasa baru dan sebuah kamus kecil."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A gramática é boa?",
+          "id": "Buku tata bahasanya bagus?",
+          "literal": "si tata-bahasa adalah baik-perempuan?"
+        },
+        {
+          "speaker": "Vendedor:",
+          "text": "É excelente. E os exercícios são fáceis.",
+          "id": "Bagus sekali. Dan latihan-latihannya gampang.",
+          "literal": "adalah unggul. dan si-jamak latihan adalah-jamak gampang-jamak."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "E as fotos? O livro tem fotos?",
+          "id": "Kalau fotonya? Bukunya ada fotonya?",
+          "literal": "dan si-jamak foto? si buku ia-punya foto-jamak?"
+        },
+        {
+          "speaker": "Vendedor:",
+          "text": "Tem, sim. As páginas são bem coloridas.",
+          "id": "Ada. Halaman-halamannya berwarna sekali.",
+          "literal": "ia-punya, ya. si-jamak halaman adalah-jamak sangat berwarna-jamak."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Perfeito. Eu levo os dois.",
+          "id": "Sempurna. Saya ambil dua-duanya.",
+          "literal": "sempurna. saya saya-bawa si-jamak dua."
+        },
+        {
+          "speaker": "Vendedor:",
+          "text": "Ótima escolha!",
+          "id": "Pilihan yang bagus sekali!",
+          "literal": "bagus-sekali-perempuan pilihan!"
+        }
+      ],
+      "notes": [
+        "**Setiap benda punya jenis kelamin, termasuk yang jelas-jelas tidak punya.** *O livro* (buku) laki-laki; *a mesa* (meja) perempuan. Tidak ada alasan logisnya, dan mencarinya cuma membuang waktu. Yang bisa diandalkan bukan makna, melainkan **ujung katanya** — dan itu berhasil untuk sekitar delapan dari sepuluh kata.",
+        "**Kata sifat menempel di belakang, persis seperti bahasa Indonesia.** *um livro pequeno* = \"sebuah buku kecil\", *uma gramática nova* = \"sebuah tata bahasa baru\". Urutannya sama kata demi kata dengan bahasa Indonesia. Pelajar dari bahasa Inggris menghabiskan berbulan-bulan melawan godaan menulis *um pequeno livro*; tanganmu sudah menulisnya benar sejak awal.",
+        "**Tapi kata sifatnya ikut berubah.** Ini bagian yang tidak ada di bahasa Indonesia: *livro pequen**o***, tetapi *mesa pequen**a***; *livros pequen**os***, *mesas pequen**as***. Kata sifat menyalin jenis kelamin dan jumlah kata bendanya, seperti bayangan.",
+        "**Bem coloridas, bukan muito coloridas.** *Bem* di depan kata sifat berarti \"cukup/sangat\", dan di Brasil ia jauh lebih sering terdengar daripada *muito* dalam percakapan santai. *A comida é bem gostosa* = \"makanannya enak banget\"."
+      ],
+      "grammars": [
+        {
+          "title": "Kata sandang: empat bentuk tentu, empat tak tentu",
+          "body": [
+            "Bahasa Indonesia tidak punya kata sandang sama sekali, jadi seluruh tabel ini adalah barang baru. Kabar baiknya: isinya cuma delapan kata, dan mereka termasuk yang paling sering muncul dalam bahasa Portugis, jadi hafalannya cepat menempel sendiri."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Laki tunggal",
+              "Perempuan tunggal",
+              "Laki jamak",
+              "Perempuan jamak"
+            ],
+            "rows": [
+              [
+                "**Tentu** (\"si/itu\")",
+                "**o** livro",
+                "**a** mesa",
+                "**os** livros",
+                "**as** mesas"
+              ],
+              [
+                "**Tak tentu** (\"sebuah\")",
+                "**um** livro",
+                "**uma** mesa",
+                "**uns** livros",
+                "**umas** mesas"
+              ]
+            ]
+          },
+          "after": [
+            "**Kata sandang tentu dipakai jauh lebih sering daripada dugaanmu.** Bahasa Portugis memasangnya di depan hal-hal yang dalam bahasa Indonesia berdiri telanjang: *o Brasil* (Brasil), *a vida* (kehidupan), *o português* (bahasa Portugis), bahkan *a Carla* (nama orang). Aturan kasarnya: kalau ragu, pasang.",
+            "*Uns* dan *umas* berarti \"beberapa\": *uns livros* = beberapa buku. Ia lebih jarang dipakai daripada tiga bentuk lainnya.",
+            "⚠️ Menghafal kata benda tanpa sandangnya adalah kesalahan yang paling mahal di seluruh perjalanan belajarmu, karena memperbaikinya nanti berarti mengulang setiap kata dari nol. Tulis **o livro**, bukan *livro*. Selalu."
+          ]
+        },
+        {
+          "title": "Menebak jenis kelamin dari ujung kata",
+          "body": [
+            "Delapan dari sepuluh kata benda mematuhi aturan berikut. Sisanya dihafal satu per satu, dan jumlahnya lebih sedikit daripada yang kamu takutkan."
+          ],
+          "table": {
+            "head": [
+              "Ujung kata",
+              "Jenis",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**-o**",
+                "laki-laki",
+                "*o livro*, *o carro*, *o banheiro*"
+              ],
+              [
+                "**-a**",
+                "perempuan",
+                "*a mesa*, *a casa*, *a pergunta*"
+              ],
+              [
+                "**-ção**",
+                "perempuan (selalu)",
+                "*a estação*, *a informação*"
+              ],
+              [
+                "**-dade**",
+                "perempuan (selalu)",
+                "*a cidade*, *a verdade*"
+              ],
+              [
+                "**-l, -r, -z**",
+                "biasanya laki-laki",
+                "*o hotel*, *o mar*, *o arroz*"
+              ],
+              [
+                "**-e**",
+                "bisa dua-duanya — hafal",
+                "*o nome*, tapi *a noite*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Empat pengecualian yang wajib dihafal karena sangat sering dipakai: **o dia** (hari) laki-laki walau berakhiran -a; **o problema**, **o mapa**, dan **o programa** juga laki-laki. Semuanya kata serapan Yunani, dan semuanya bandel dengan cara yang sama.",
+            "Kata untuk orang mengikuti jenis kelamin orangnya, dan biasanya punya dua bentuk: *o professor / a professora*, *o amigo / a amiga*, *o brasileiro / a brasileira*. Beberapa cuma punya satu bentuk untuk keduanya, dan yang berubah cuma sandangnya: *o estudante / a estudante*, *o dentista / a dentista*."
+          ]
+        },
+        {
+          "title": "Bentuk jamak: tambahkan -s",
+          "body": [
+            "Aturan dasarnya sesederhana bahasa Inggris, dan empat baris tambahannya menutup sisanya."
+          ],
+          "table": {
+            "head": [
+              "Ujung kata",
+              "Jadi",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "huruf hidup",
+                "+ **s**",
+                "*livro* → *livros*; *mesa* → *mesas*"
+              ],
+              [
+                "**-r, -z, -s** bertekanan",
+                "+ **es**",
+                "*mulher* → *mulheres*; *luz* → *luzes*"
+              ],
+              [
+                "**-l**",
+                "**-l** → **is**",
+                "*hotel* → *hotéis*; *papel* → *papéis*"
+              ],
+              [
+                "**-m**",
+                "**-m** → **ns**",
+                "*homem* → *homens*; *jovem* → *jovens*"
+              ],
+              [
+                "**-ão**",
+                "biasanya → **ões**",
+                "*estação* → *estações*; *limão* → *limões*"
+              ]
+            ]
+          },
+          "after": [
+            "**Semua yang menempel ikut jamak.** Kalau kata bendanya jamak, sandangnya jamak dan kata sifatnya jamak juga: *as casas bonitas* — tiga kata, tiga huruf *s*. Bahasa Indonesia menandai jamak sekali saja atau tidak sama sekali; bahasa Portugis menandainya di setiap kata dalam rangkaian itu.",
+            "⚠️ Baris terakhir punya dua kelompok bandel: *o pão* → *os pães* (roti) dan *a mão* → *as mãos* (tangan). Ketiga pola *-ões*, *-ães*, *-ãos* memang ada; *-ões* paling umum, dan dua lainnya cukup dihafal saat bertemu."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Benda di sekitarmu",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Hafalkan tabel ini **beserta sandangnya**. Jangan pernah mengucapkan kolom pertama tanpa kata kecil di depannya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "o livro",
+              "u LI-vru",
+              "buku"
+            ],
+            [
+              "a mesa",
+              "a MÊ-za",
+              "meja"
+            ],
+            [
+              "a porta",
+              "a POH-ta",
+              "pintu"
+            ],
+            [
+              "a janela",
+              "a zha-NÉ-la",
+              "jendela"
+            ],
+            [
+              "o celular",
+              "u se-lu-LAH",
+              "telepon genggam"
+            ],
+            [
+              "a chave",
+              "a SYA-vi",
+              "kunci"
+            ],
+            [
+              "o dinheiro",
+              "u dji-NYÊI-ru",
+              "uang"
+            ],
+            [
+              "o carro",
+              "u KA-hu",
+              "mobil"
+            ],
+            [
+              "a rua",
+              "a HU-a",
+              "jalan"
+            ],
+            [
+              "a casa",
+              "a KA-za",
+              "rumah"
+            ],
+            [
+              "a cidade",
+              "a si-DA-dji",
+              "kota"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan *a água*: kata perempuan yang diawali huruf **a** bertekanan. Beberapa bahasa lain mengubah sandangnya di sini; bahasa Portugis tidak. Tetap *a água*, dan jamaknya *as águas*."
+        }
+      ]
+    },
+    {
+      "title": "Kata sifat pertama",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kata sifat bahasa Portugis dibagi dua rombongan. Yang berakhiran **-o** berubah empat kali; yang berakhiran **-e** atau huruf mati cuma berubah untuk jamak."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bentuk dasar",
+            "Empat bentuknya",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**bonito**",
+              "bonito / bonita / bonitos / bonitas",
+              "cantik; bagus"
+            ],
+            [
+              "**pequeno**",
+              "pequeno / pequena / pequenos / pequenas",
+              "kecil"
+            ],
+            [
+              "**novo**",
+              "novo / nova / novos / novas",
+              "baru; muda"
+            ],
+            [
+              "**bom**",
+              "bom / boa / bons / boas",
+              "bagus (tak beraturan)"
+            ],
+            [
+              "**grande**",
+              "grande / grandes",
+              "besar"
+            ],
+            [
+              "**fácil**",
+              "fácil / fáceis",
+              "gampang"
+            ],
+            [
+              "**difícil**",
+              "difícil / difíceis",
+              "sulit"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Empat baris terakhir adalah kabar baik: *grande*, *fácil*, *difícil*, dan *feliz* **tidak peduli** kata bendanya laki-laki atau perempuan. *Um livro grande*, *uma casa grande* — sama saja. Sekitar sepertiga kata sifat bahasa Portugis berkelakuan begini."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Bom* adalah kata sifat paling tidak beraturan sekaligus paling sering dipakai. Perhatikan bahwa bentuk perempuannya bukan *boma* melainkan **boa** — dan di situlah *boa tarde* dan *boa noite* dari unit 1 berasal, sementara *dia* yang laki-laki mendapat *bom dia*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pt": "o livro",
+      "baca": "u LI-vru",
+      "id": "buku"
+    },
+    {
+      "pt": "a mesa",
+      "baca": "a MÊ-za",
+      "id": "meja"
+    },
+    {
+      "pt": "a porta",
+      "baca": "a POH-ta",
+      "id": "pintu"
+    },
+    {
+      "pt": "a chave",
+      "baca": "a SYA-vi",
+      "id": "kunci"
+    },
+    {
+      "pt": "o celular",
+      "baca": "u se-lu-LAH",
+      "id": "telepon genggam"
+    },
+    {
+      "pt": "o dinheiro",
+      "baca": "u dji-NYÊI-ru",
+      "id": "uang"
+    },
+    {
+      "pt": "a casa",
+      "baca": "a KA-za",
+      "id": "rumah"
+    },
+    {
+      "pt": "a rua",
+      "baca": "a HU-a",
+      "id": "jalan"
+    },
+    {
+      "pt": "a cidade",
+      "baca": "a si-DA-dji",
+      "id": "kota"
+    },
+    {
+      "pt": "o dia",
+      "baca": "u DJI-a",
+      "id": "hari (⚠️ laki-laki)"
+    },
+    {
+      "pt": "o problema",
+      "baca": "u pro-BLÊ-ma",
+      "id": "masalah (⚠️ laki-laki)"
+    },
+    {
+      "pt": "a livraria",
+      "baca": "a li-vra-RI-a",
+      "id": "toko buku"
+    },
+    {
+      "pt": "a gramática",
+      "baca": "a gra-MA-tchi-ka",
+      "id": "tata bahasa"
+    },
+    {
+      "pt": "o exercício",
+      "baca": "u e-zeh-SI-si-u",
+      "id": "latihan"
+    },
+    {
+      "pt": "a foto",
+      "baca": "a FÓ-tu",
+      "id": "foto (⚠️ perempuan)"
+    },
+    {
+      "pt": "o estudante",
+      "baca": "u is-tu-DAN-tchi",
+      "id": "pelajar"
+    },
+    {
+      "pt": "bonito",
+      "baca": "bo-NI-tu",
+      "id": "cantik; bagus"
+    },
+    {
+      "pt": "pequeno",
+      "baca": "pe-KÊ-nu",
+      "id": "kecil"
+    },
+    {
+      "pt": "grande",
+      "baca": "GRAN-dji",
+      "id": "besar"
+    },
+    {
+      "pt": "novo",
+      "baca": "NÔ-vu",
+      "id": "baru; muda"
+    },
+    {
+      "pt": "caro",
+      "baca": "KA-ru",
+      "id": "mahal"
+    },
+    {
+      "pt": "fácil / difícil",
+      "baca": "FA-siu / dji-FI-siu",
+      "id": "gampang / sulit"
+    },
+    {
+      "pt": "procurar",
+      "baca": "pro-ku-RAH",
+      "id": "mencari"
+    },
+    {
+      "pt": "levar",
+      "baca": "le-VAH",
+      "id": "membawa; mengambil"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata sandang tentu yang tepat: o, a, os, atau as.",
+      "items": [
+        "____ livro é novo.",
+        "____ mesa é grande.",
+        "____ exercícios são fáceis.",
+        "____ chaves são pequenas.",
+        "____ dia está bonito.",
+        "____ cidade é grande."
+      ]
+    },
+    {
+      "prompt": "Ubah jadi bentuk jamak. Tulis seluruh rangkaiannya.",
+      "items": [
+        "o livro novo",
+        "a casa bonita",
+        "o hotel grande",
+        "a estação pequena",
+        "o homem feliz",
+        "a mulher brasileira"
+      ]
+    },
+    {
+      "prompt": "Sesuaikan kata sifat dalam kurung.",
+      "items": [
+        "Uma gramática ____. (novo)",
+        "Os exercícios são ____. (fácil)",
+        "A cidade é muito ____. (bonito)",
+        "Os livros são ____. (caro)",
+        "A comida é ____. (bom)",
+        "As casas são ____. (grande)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Sebuah buku kecil.",
+        "Rumah itu besar.",
+        "Latihan-latihannya gampang.",
+        "Saya mencari sebuah kamus.",
+        "Kotanya cantik sekali."
+      ]
+    }
+  ],
+  "answers": [
+    "O — A — Os — As — O — A",
+    "os livros novos — as casas bonitas — os hotéis grandes — as estações pequenas — os homens felizes — as mulheres brasileiras",
+    "nova — fáceis — bonita — caros — boa — grandes",
+    "Um livro pequeno. — A casa é grande. — Os exercícios são fáceis. — Eu procuro um dicionário. — A cidade é muito bonita."
+  ]
+}

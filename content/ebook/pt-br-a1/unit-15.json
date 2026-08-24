@@ -1,0 +1,255 @@
+{
+  "title": "Menceritakan yang sudah lewat",
+  "title_target": "Ontem eu trabalhei",
+  "goal": "Membuka pintu terbesar yang tersisa: **bentuk lampau**. Bahasa Indonesia menandai waktu dengan kata keterangan; bahasa Portugis mengubah kata kerjanya sendiri.",
+  "bekal": [
+    "mengubah kata kerja beraturan -ar, -er, -ir ke bentuk lampau",
+    "menceritakan kejadian kemarin dan akhir pekan lalu",
+    "mengenali dua perubahan ejaan kecil di bentuk \"saya\""
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Como foi o fim de semana?",
+      "intro": "Senin pagi. Pertanyaan yang sama diucapkan jutaan kali di seluruh Brasil.",
+      "lines": [
+        { "speaker": "Carla:", "text": "E aí, como foi o seu fim de semana?", "id": "Gimana akhir pekanmu?", "literal": "dan di-sana, bagaimana ia-adalah si milikmu akhir dari pekan?" },
+        { "speaker": "Budi:", "text": "Foi ótimo! Eu viajei para Paraty.", "id": "Seru banget! Saya jalan-jalan ke Paraty.", "literal": "ia-adalah bagus-sekali! saya saya-bepergian untuk Paraty." },
+        { "speaker": "Carla:", "text": "Que legal! Você viajou sozinho?", "id": "Keren! Kamu pergi sendirian?", "literal": "betapa keren! kamu kamu-bepergian sendirian?" },
+        { "speaker": "Budi:", "text": "Não, viajei com dois colegas do trabalho.", "id": "Tidak, saya pergi sama dua teman kerja.", "literal": "tidak, saya-bepergian dengan dua rekan dari-si kerja." },
+        { "speaker": "Carla:", "text": "E o que vocês fizeram lá?", "id": "Dan kalian ngapain di sana?", "literal": "dan apa yang kalian kalian-buat di-sana?" },
+        { "speaker": "Budi:", "text": "Nadamos, comemos muito peixe e andamos pelo centro.", "id": "Kami berenang, makan banyak ikan, dan jalan-jalan di pusat kota.", "literal": "kami-berenang, kami-makan banyak ikan dan kami-berjalan lewat-si pusat." },
+        { "speaker": "Carla:", "text": "Vocês dormiram em pousada?", "id": "Kalian nginap di losmen?", "literal": "kalian kalian-tidur di penginapan?" },
+        { "speaker": "Budi:", "text": "Dormimos. Custou barato e o café da manhã estava incluído.", "id": "Iya. Murah dan sarapannya sudah termasuk.", "literal": "kami-tidur. ia-berharga murah dan si kopi dari-si pagi ia-berada termasuk." },
+        { "speaker": "Carla:", "text": "Choveu lá? Aqui choveu o sábado inteiro.", "id": "Di sana hujan? Di sini hujan seharian Sabtu.", "literal": "ia-hujan di-sana? di-sini ia-hujan si Sabtu utuh." },
+        { "speaker": "Budi:", "text": "Choveu só no domingo de manhã. Depois abriu o sol.", "id": "Hujan cuma Minggu pagi. Habis itu matahari muncul.", "literal": "ia-hujan cuma di-si Minggu dari pagi. sesudah ia-buka si matahari." },
+        { "speaker": "Carla:", "text": "Que sorte. Eu fiquei em casa o fim de semana inteiro.", "id": "Beruntung. Saya di rumah terus sepanjang akhir pekan.", "literal": "betapa keberuntungan. saya saya-tinggal di rumah si akhir dari pekan utuh." },
+        { "speaker": "Budi:", "text": "Da próxima vez você vem com a gente.", "id": "Lain kali ikut kami ya.", "literal": "dari-si berikut kali kamu kamu-datang dengan kami." }
+      ],
+      "notes": [
+        "**Inilah bedanya yang paling dalam dari bahasa Indonesia.** \"Saya kerja\" dan \"saya sudah kerja\" memakai kata kerja yang sama persis; yang berubah cuma kata di depannya. Bahasa Portugis mengubah **kata kerjanya sendiri**: *trabalho* menjadi *trabalhei*. Kata keterangan seperti *ontem* boleh ada, boleh tidak — bentuk kata kerjanya sudah menceritakan waktunya.",
+        "**E aí?** adalah sapaan Brasil yang paling santai. Harfiahnya \"dan di sana?\", artinya \"apa kabar, gimana nih\". Ia dipakai antar teman sepanjang hari, dan sering digabung: *E aí, tudo bem?*",
+        "**Nadamos, comemos, dormimos — perhatikan bahwa bentuk *nós* untuk -ar dan -ir sama persis dengan bentuk sekarang.** *Nós comemos* bisa berarti \"kami makan\" atau \"kami sudah makan\", dan konteks yang memutuskan. Ini kabar baik: satu bentuk lebih sedikit untuk dihafal.",
+        "**Choveu** — kata kerja cuaca cuma punya satu bentuk, karena pelakunya tidak ada. *Chove* (hujan), *choveu* (hujan tadi), *vai chover* (akan hujan). Sama seperti bahasa Indonesia yang mengatakan \"hujan\" tanpa menyebut siapa yang menghujankan.",
+        "**Fiquei em casa** — dari *ficar*, kata serbaguna dari unit 8. Di bentuk lampau ia berarti \"saya tinggal di\", \"saya jadi\", atau bahkan \"saya berakhir\". *Fiquei feliz* = \"saya jadi senang\"."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk lampau: tiga rombongan",
+          "body": [
+            "Buang ujung dasarnya, tempelkan ujung berikut. Perhatikan bahwa tekanannya **pindah ke ujung** — itulah yang paling terdengar berbeda."
+          ],
+          "table": {
+            "head": ["Pelaku", "-ar: falar", "-er: comer", "-ir: abrir"],
+            "rows": [
+              ["eu", "fal**ei**", "com**i**", "abr**i**"],
+              ["você / ele / ela", "fal**ou**", "com**eu**", "abr**iu**"],
+              ["nós", "fal**amos**", "com**emos**", "abr**imos**"],
+              ["vocês / eles / elas", "fal**aram**", "com**eram**", "abr**iram**"],
+              ["a gente", "fal**ou**", "com**eu**", "abr**iu**"]
+            ]
+          },
+          "after": [
+            "**Cara baca yang perlu diperhatikan:** *falei* = fa-LÊI, *falou* = fa-LÔ, *comi* = ko-MI, *comeu* = ko-MÊU, *abriu* = a-BRIU. Semuanya bertekanan di **suku terakhir** — kebalikan dari bentuk sekarang yang bertekanan di suku kedua dari belakang. Perbedaan tekanan inilah yang paling cepat dikenali telinga: *FA-lu* (saya bicara) lawan *fa-LÊI* (saya bicara tadi).",
+            "**Rombongan -er dan -ir bertemu di tiga baris.** Bentuk *eu* (*comi*, *abri*) dan *nós* (*comemos*, *abrimos*) — dua-duanya berpola sama. Seperti biasa, kamu tidak sedang menghafal tiga sistem penuh.",
+            "⚠️ **Bentuk nós untuk -ar dan -ir sama dengan bentuk sekarang.** *Nós falamos* dan *nós abrimos* dipakai untuk dua waktu sekaligus. Cuma rombongan -er yang membedakan: *comemos* (sekarang) dan *comemos* (lampau) — juga sama! Jadi seluruh baris *nós* tidak perlu dihafal ulang sama sekali."
+          ]
+        },
+        {
+          "title": "Dua perubahan ejaan di bentuk \"saya\"",
+          "body": [
+            "Bunyi kata kerjanya harus tetap sama, jadi ejaannya yang menyesuaikan. Cuma tiga kelompok, dan semuanya hanya berlaku untuk bentuk *eu*."
+          ],
+          "table": {
+            "head": ["Dasar", "eu (lampau)", "Kenapa"],
+            "rows": [
+              ["che**g**ar", "che**gu**ei", "supaya g tetap keras, bukan \"zh\""],
+              ["pa**g**ar", "pa**gu**ei", "sama"],
+              ["dan**ç**ar", "dan**c**ei", "ç tidak pernah muncul di depan e"],
+              ["come**ç**ar", "come**c**ei", "sama"],
+              ["fi**c**ar", "fi**qu**ei", "supaya c tetap keras, bukan \"s\""],
+              ["to**c**ar", "to**qu**ei", "sama"]
+            ]
+          },
+          "after": [
+            "Kuncinya: **bunyinya tidak berubah sama sekali** — cuma tulisannya. *Cheguei* dibaca sye-GÊI, *fiquei* dibaca fi-KÊI, *dancei* dibaca dan-SÊI. Kalau kamu membacanya keras-keras, kamu tidak akan pernah salah; yang perlu berhati-hati cuma tanganmu.",
+            "Empat baris lainnya (você, nós, eles) tidak terpengaruh sama sekali: *chegou*, *chegamos*, *chegaram* — semuanya beraturan penuh."
+          ]
+        },
+        {
+          "title": "Keterangan waktu lampau",
+          "body": [
+            "Boleh dipakai, boleh tidak — bentuk kata kerjanya sudah menandai waktu. Tetapi ia membuat ceritamu jauh lebih jelas."
+          ],
+          "table": {
+            "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+            "rows": [
+              ["ontem", "ON-téin", "kemarin"],
+              ["anteontem", "an-tchi-ON-téin", "kemarin dulu"],
+              ["ontem à noite", "ON-téin a NÓI-tchi", "tadi malam"],
+              ["na semana passada", "na se-MA-na pa-SA-da", "minggu lalu"],
+              ["no mês passado", "nu MÊS pa-SA-du", "bulan lalu"],
+              ["no ano passado", "nu A-nu pa-SA-du", "tahun lalu"],
+              ["há dois dias", "a DÓIS DJI-as", "dua hari yang lalu"],
+              ["de manhã cedo", "dji ma-NYAN SÊ-du", "pagi-pagi sekali"],
+              ["já", "zha", "sudah"],
+              ["ainda não", "a-IN-da NÁUN", "belum"]
+            ]
+          },
+          "after": [
+            "**Passado berarti \"yang lalu\"** dan menempel di belakang: *semana passada*, *mês passado*, *ano passado*. Bandingkan dengan *que vem* untuk masa depan dari unit 11 — pasangan yang rapi.",
+            "*Há dois dias* memakai kata kerja *haver* dan berarti \"dua hari yang lalu\". Di percakapan santai orang Brasil sering menggantinya dengan *faz*: *faz dois dias*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menceritakan akhir pekan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sepuluh kalimat yang menutup jawaban paling umum atas pertanyaan *Como foi o fim de semana?*"
+        },
+        {
+          "type": "tabel",
+          "head": ["Português", "Bahasa Indonesia"],
+          "rows": [
+            ["*Eu descansei em casa.*", "Saya istirahat di rumah."],
+            ["*Eu trabalhei o sábado inteiro.*", "Saya kerja seharian Sabtu."],
+            ["*Eu almocei com a minha família.*", "Saya makan siang bersama keluarga."],
+            ["*Nós assistimos um filme.*", "Kami menonton film."],
+            ["*Eu estudei português.*", "Saya belajar bahasa Portugis."],
+            ["*Eu conheci um lugar novo.*", "Saya mengunjungi tempat baru."],
+            ["*Eu viajei para a praia.*", "Saya jalan-jalan ke pantai."],
+            ["*Eu não saí de casa.*", "Saya tidak keluar rumah."],
+            ["*Eu encontrei uns amigos.*", "Saya ketemu beberapa teman."],
+            ["*Foi tranquilo.*", "Santai saja."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Foi* adalah bentuk lampau dari *ser* dan *ir* sekaligus — kata kerja tak beraturan yang menunggu di unit 16. Untuk sekarang hafalkan *Foi ótimo* dan *Foi tranquilo* sebagai jawaban utuh; keduanya akan menyelamatkan banyak percakapan Senin pagi."
+        },
+        {
+          "type": "p",
+          "text": "**Tranquilo** — dibaca tran-KUI-lu — adalah salah satu kata paling Brasil yang ada. Ia berarti \"tenang, santai, tidak ada masalah\", dan dipakai sebagai jawaban atas hampir apa saja. Bentuk potongnya, *tranquilão*, bahkan lebih santai lagi."
+        }
+      ]
+    },
+    {
+      "title": "Cuaca",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kata kerja cuaca tidak punya pelaku, jadi bentuknya cuma satu."
+        },
+        {
+          "type": "tabel",
+          "head": ["Sekarang", "Lampau", "Bahasa Indonesia"],
+          "rows": [
+            ["*Chove.*", "*Choveu.*", "Hujan."],
+            ["*Faz sol.*", "*Fez sol.*", "Cerah."],
+            ["*Faz calor.*", "*Fez calor.*", "Panas."],
+            ["*Faz frio.*", "*Fez frio.*", "Dingin."],
+            ["*Está nublado.*", "*Estava nublado.*", "Mendung."],
+            ["*Venta muito.*", "*Ventou muito.*", "Anginnya kencang."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Untuk bertanya: *Como está o tempo?* (\"Cuacanya bagaimana?\"). ⚠️ *O tempo* berarti \"cuaca\" **dan** \"waktu\" — dua arti yang cukup jauh, tetapi konteks selalu memisahkannya."
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — kembali ke unit 13",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Yang ini berapa? → *Quanto custa esse?*",
+            "Boleh saya coba? → *Posso experimentar?*",
+            "Terlalu mahal → *Caro demais*",
+            "Saya ambil yang biru → *Vou levar a azul*",
+            "Terima kartu? → *Aceita cartão?*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "ontem", "baca": "ON-téin", "id": "kemarin" },
+    { "pt": "a semana passada", "baca": "a se-MA-na pa-SA-da", "id": "minggu lalu" },
+    { "pt": "o ano passado", "baca": "u A-nu pa-SA-du", "id": "tahun lalu" },
+    { "pt": "há", "baca": "a", "id": "… yang lalu" },
+    { "pt": "andar", "baca": "an-DAH", "id": "berjalan" },
+    { "pt": "chover", "baca": "syo-VÊH", "id": "hujan" },
+    { "pt": "ventar", "baca": "ven-TAH", "id": "berangin" },
+    { "pt": "o tempo", "baca": "u TEN-pu", "id": "cuaca; waktu" },
+    { "pt": "o sol", "baca": "u SÓU", "id": "matahari" },
+    { "pt": "nublado", "baca": "nu-BLA-du", "id": "mendung" },
+    { "pt": "a pousada", "baca": "a pô-ZA-da", "id": "losmen; penginapan" },
+    { "pt": "o colega", "baca": "u ko-LÉ-ga", "id": "rekan" },
+    { "pt": "o lugar", "baca": "u lu-GAH", "id": "tempat" },
+    { "pt": "o centro", "baca": "u SEN-tru", "id": "pusat kota" },
+    { "pt": "sozinho", "baca": "so-ZI-nyu", "id": "sendirian" },
+    { "pt": "inteiro", "baca": "in-TÊI-ru", "id": "utuh; seharian" },
+    { "pt": "incluído", "baca": "in-klu-I-du", "id": "termasuk" },
+    { "pt": "tranquilo", "baca": "tran-KUI-lu", "id": "tenang; santai" },
+    { "pt": "a sorte", "baca": "a SÓH-tchi", "id": "keberuntungan" },
+    { "pt": "próximo", "baca": "PRÓ-si-mu", "id": "berikutnya" },
+    { "pt": "E aí?", "baca": "i a-I", "id": "Gimana nih? (sapaan santai)" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah ke bentuk lampau.",
+      "items": [
+        "Eu trabalho. (eu)",
+        "Ela viaja. (ela)",
+        "Nós comemos. (nós)",
+        "Eles abrem. (eles)",
+        "Você estuda. (você)",
+        "Eu durmo. (eu, dormir)"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk lampau yang tepat. Awas ejaannya.",
+      "items": [
+        "Eu ____ às oito. (chegar)",
+        "Eu ____ a conta. (pagar)",
+        "Eu ____ em casa. (ficar)",
+        "Eu ____ a aula às nove. (começar)",
+        "Eu ____ muito na festa. (dançar)",
+        "Eu ____ violão ontem. (tocar)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Kemarin saya bekerja.",
+        "Saya jalan-jalan ke pantai minggu lalu.",
+        "Kami makan banyak ikan.",
+        "Di sini hujan seharian Sabtu.",
+        "Saya tidak keluar rumah.",
+        "Kalian ngapain di sana?"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "para / viajei / Paraty / eu",
+        "sozinho / você / viajou / ?",
+        "sábado / choveu / inteiro / o",
+        "casa / fiquei / em / eu",
+        "peixe / comemos / muito / nós"
+      ]
+    }
+  ],
+  "answers": [
+    "Eu trabalhei. — Ela viajou. — Nós comemos. — Eles abriram. — Você estudou. — Eu dormi.",
+    "cheguei — paguei — fiquei — comecei — dancei — toquei",
+    "Ontem eu trabalhei. — Eu viajei para a praia na semana passada. — Nós comemos muito peixe. — Aqui choveu o sábado inteiro. — Eu não saí de casa. — O que vocês fizeram lá?",
+    "Eu viajei para Paraty. — Você viajou sozinho? — Choveu o sábado inteiro. — Eu fiquei em casa. — Nós comemos muito peixe."
+  ]
+}

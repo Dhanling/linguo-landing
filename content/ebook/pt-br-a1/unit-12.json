@@ -1,0 +1,251 @@
+{
+  "title": "Kata kerja bandel yang wajib",
+  "title_target": "Faço, sei, vejo",
+  "goal": "Mengumpulkan kata kerja tak beraturan yang paling sering dipakai dalam satu tempat, lalu memakainya untuk menyatakan keharusan dan kemampuan.",
+  "bekal": [
+    "menguasai *fazer*, *saber*, *ver*, *vir*, *dar*, *dizer*, *pôr*",
+    "menyatakan keharusan dengan *ter que* dan *precisar*",
+    "membedakan *saber* dan *conhecer* — dua kata untuk \"tahu\""
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Um favor",
+      "intro": "Budi menghampiri Carla dengan raut wajah orang yang butuh bantuan.",
+      "lines": [
+        { "speaker": "Budi:", "text": "Carla, você sabe onde fica o cartório?", "id": "Carla, kamu tahu di mana kantor notaris?", "literal": "Carla, kamu kamu-tahu di-mana ia-terletak si kantor-akta?" },
+        { "speaker": "Carla:", "text": "Sei, sim. Por quê? Você tem que ir lá?", "id": "Tahu. Kenapa? Kamu harus ke sana?", "literal": "saya-tahu, ya. untuk apa? kamu kamu-punya bahwa pergi ke-sana?" },
+        { "speaker": "Budi:", "text": "Tenho. Preciso reconhecer firma num documento.", "id": "Harus. Saya perlu legalisasi tanda tangan di sebuah dokumen.", "literal": "saya-punya. saya-perlu mengakui tanda-tangan di-sebuah dokumen." },
+        { "speaker": "Carla:", "text": "Ah, o famoso cartório. Você conhece a Rua Vergueiro?", "id": "Ah, cartório yang legendaris itu. Kamu tahu Jalan Vergueiro?", "literal": "ah, si terkenal kantor-akta. kamu kamu-mengenal si Jalan Vergueiro?" },
+        { "speaker": "Budi:", "text": "Não conheço. Você pode me dizer como chegar?", "id": "Tidak tahu. Bisa kasih tahu caranya ke sana?", "literal": "tidak saya-mengenal. kamu kamu-bisa saya mengatakan bagaimana tiba?" },
+        { "speaker": "Carla:", "text": "Claro. Eu faço esse caminho todo dia.", "id": "Tentu. Saya lewat jalan itu tiap hari.", "literal": "jelas. saya saya-buat ini jalan setiap hari." },
+        { "speaker": "Budi:", "text": "E você sabe que horas eles abrem?", "id": "Dan kamu tahu mereka buka jam berapa?", "literal": "dan kamu kamu-tahu apa jam-jam mereka mereka-buka?" },
+        { "speaker": "Carla:", "text": "Às nove. Mas você tem que levar documento com foto.", "id": "Jam sembilan. Tapi kamu harus bawa identitas berfoto.", "literal": "pada-si sembilan. tapi kamu kamu-punya bahwa membawa dokumen dengan foto." },
+        { "speaker": "Budi:", "text": "Tenho passaporte. Serve?", "id": "Saya punya paspor. Bisa?", "literal": "saya-punya paspor. ia-melayani?" },
+        { "speaker": "Carla:", "text": "Serve. E leva dinheiro — nem sempre dá para pagar no cartão.", "id": "Bisa. Dan bawa uang tunai — kartu tidak selalu bisa dipakai.", "literal": "ia-melayani. dan bawa uang — tidak-pun selalu ia-memberi untuk membayar di-si kartu." },
+        { "speaker": "Budi:", "text": "Boa dica. Muito obrigado mesmo!", "id": "Tips bagus. Makasih banyak, serius!", "literal": "baik petunjuk. sangat terima-kasih sungguh!" },
+        { "speaker": "Carla:", "text": "Que isso! Depois você me diz como foi.", "id": "Ah, apaan sih! Nanti ceritain gimana hasilnya.", "literal": "betapa ini! sesudah kamu saya kamu-katakan bagaimana ia-adalah." }
+      ],
+      "notes": [
+        "⚠️ **Saber dan conhecer dua-duanya berarti \"tahu\", dan keduanya tidak bisa saling menggantikan.** *Saber* untuk **informasi dan kemampuan**: *sei o endereço*, *sei nadar*, *sei que ele mora aqui*. *Conhecer* untuk **berkenalan dengan orang, tempat, atau karya**: *conheço a Carla*, *conheço São Paulo*, *conheço esse filme*. Cara mengingatnya: *saber* menjawab \"apa\", *conhecer* menjawab \"siapa/di mana\". Bahasa Indonesia memakai satu kata \"tahu\" untuk keduanya, jadi ini pembedaan yang sepenuhnya baru.",
+        "**Tem que — cara menyatakan keharusan yang paling Brasil.** Harfiahnya \"punya bahwa\". *Você tem que ir* = \"kamu harus pergi\". Bentuk baku *tem de* juga benar tetapi hampir tidak pernah terdengar di Brasil. Dan sekali lagi, kata kerja di belakangnya tetap dalam bentuk dasar.",
+        "**Dá para — ungkapan yang tidak ada padanannya.** *Dá para pagar no cartão?* harfiahnya \"ia memberi untuk membayar di kartu?\", artinya \"bisa bayar pakai kartu?\". *Dá* dipakai untuk kemungkinan umum, bukan kemampuan seseorang: *Não dá* = \"tidak bisa, tidak memungkinkan\". Ia salah satu ungkapan yang paling sering dipakai di Brasil dan paling jarang diajarkan.",
+        "**Que isso!** harfiahnya \"betapa ini!\", dan ia jawaban khas untuk terima kasih yang berlebihan — kira-kira \"apaan sih, santai aja\". Sekeluarga dengan *imagina!* dari unit 8.",
+        "**Nem** berarti \"bahkan tidak\": *nem sempre* (tidak selalu), *nem sei* (saya bahkan tidak tahu), *nem vem* (jangan macam-macam). Kata kecil ini sangat sering muncul dalam percakapan cepat."
+      ],
+      "grammars": [
+        {
+          "title": "Tujuh kata kerja tak beraturan yang wajib",
+          "body": [
+            "Yang menyimpang hampir selalu **bentuk \"saya\"**. Empat baris lainnya biasanya beraturan, jadi hafalkan kolom kedua dan sisanya mengikuti."
+          ],
+          "table": {
+            "head": ["Dasar", "eu", "você/ele", "nós", "eles", "Arti"],
+            "rows": [
+              ["fazer", "**faço**", "faz", "fazemos", "fazem", "membuat; melakukan"],
+              ["saber", "**sei**", "sabe", "sabemos", "sabem", "tahu (informasi)"],
+              ["ver", "**vejo**", "vê", "vemos", "veem", "melihat"],
+              ["vir", "**venho**", "vem", "vimos", "vêm", "datang"],
+              ["dar", "**dou**", "dá", "damos", "dão", "memberi"],
+              ["dizer", "**digo**", "diz", "dizemos", "dizem", "mengatakan"],
+              ["pôr", "**ponho**", "põe", "pomos", "põem", "menaruh"]
+            ]
+          },
+          "after": [
+            "⚠️ *Fazer* adalah kata kerja tersibuk dalam bahasa Portugis. Selain \"membuat\", ia dipakai untuk cuaca (*faz frio* = dingin), waktu yang berlalu (*faz dois anos* = sudah dua tahun), dan hampir semua kegiatan (*fazer compras* = berbelanja, *fazer aniversário* = berulang tahun).",
+            "**Cara baca yang perlu diperhatikan:** *faço* = FA-su, *vejo* = VÊ-zhu, *venho* = VÊ-nyu, *digo* = DJI-gu, *ponho* = PÔ-nyu. Semuanya memakai bunyi yang sudah kamu kenal dari bab pelafalan.",
+            "*Pôr* satu-satunya kata kerja bahasa Portugis yang bentuk dasarnya beraksen — untuk membedakannya dari kata depan *por* (\"oleh, lewat\"). Dibaca sama persis."
+          ]
+        },
+        {
+          "title": "Keharusan dan kemungkinan",
+          "body": [
+            "Empat rumus yang menutup hampir semua kalimat \"harus\", \"perlu\", dan \"bisa\". Semuanya diikuti kata kerja dalam bentuk dasar."
+          ],
+          "table": {
+            "head": ["Português", "Harfiah", "Bahasa Indonesia"],
+            "rows": [
+              ["*Eu **tenho que** ir.*", "saya punya bahwa pergi", "Saya harus pergi."],
+              ["*Eu **preciso** ir.*", "saya perlu pergi", "Saya perlu pergi."],
+              ["*Eu **posso** ir.*", "saya bisa pergi", "Saya bisa/boleh pergi."],
+              ["*Eu **sei** nadar.*", "saya tahu berenang", "Saya bisa berenang."],
+              ["***Dá para** pagar aqui?*", "ia-memberi untuk membayar di-sini?", "Bisa bayar di sini?"],
+              ["*Você **não precisa** pagar.*", "kamu tidak perlu membayar", "Kamu tidak perlu bayar."]
+            ]
+          },
+          "after": [
+            "⚠️ **Poder dan saber dua-duanya bisa diterjemahkan \"bisa\", tetapi artinya berbeda.** *Posso nadar* = \"saya boleh berenang\" (izin) atau \"saya sanggup sekarang\". *Sei nadar* = \"saya bisa berenang\" (punya keterampilannya). Untuk keterampilan yang dipelajari — berenang, menyetir, bermain gitar, berbahasa — selalu pakai *saber*.",
+            "**Precisar memerlukan *de* di depan kata benda**, tetapi tidak di depan kata kerja: *preciso **de** dinheiro* (saya butuh uang) tetapi *preciso ir* (saya perlu pergi). Pola yang sama dengan *gostar* dari unit 6."
+          ]
+        },
+        {
+          "title": "Kata kerja -ir yang mengubah vokalnya",
+          "body": [
+            "Sekelompok kecil kata kerja -ir mengubah huruf hidup di pangkalnya **hanya untuk bentuk \"saya\"**. Empat baris lainnya normal."
+          ],
+          "table": {
+            "head": ["Dasar", "eu", "você / ele", "Arti"],
+            "rows": [
+              ["dormir", "**durmo**", "dorme", "tidur"],
+              ["preferir", "**prefiro**", "prefere", "lebih suka"],
+              ["sentir", "**sinto**", "sente", "merasa"],
+              ["servir", "**sirvo**", "serve", "melayani; cocok"],
+              ["vestir", "**visto**", "veste", "memakai (baju)"],
+              ["seguir", "**sigo**", "segue", "mengikuti"],
+              ["subir", "**subo**", "**sobe**", "naik (⚠️ terbalik)"]
+            ]
+          },
+          "after": [
+            "Polanya: **e** menjadi **i**, dan **o** menjadi **u**, khusus untuk *eu*. Baris terakhir bandel dengan cara terbalik — *subir* justru mengubah bentuk *você*-nya.",
+            "*Sinto muito* berarti \"saya turut berduka\" atau \"saya menyesal sekali\" — salah satu kalimat yang perlu kamu kenali sebelum kamu memerlukannya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Fazer: satu kata kerja, sepuluh pekerjaan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Harfiah", "Bahasa Indonesia"],
+          "rows": [
+            ["*O que você faz?*", "apa yang kamu buat?", "Apa pekerjaanmu?"],
+            ["*Faz frio hoje.*", "ia-buat dingin hari ini", "Hari ini dingin."],
+            ["*Faz dois anos.*", "ia-buat dua tahun", "Sudah dua tahun."],
+            ["*Fazer compras*", "membuat pembelian", "berbelanja"],
+            ["*Fazer aniversário*", "membuat ulang tahun", "berulang tahun"],
+            ["*Fazer uma pergunta*", "membuat sebuah pertanyaan", "bertanya"],
+            ["*Faz sentido.*", "ia-buat makna", "Masuk akal."],
+            ["*Não faz mal.*", "ia-tidak-buat buruk", "Tidak apa-apa."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *O que você faz?* punya dua arti tergantung nadanya: \"apa pekerjaanmu?\" atau \"kamu sedang apa?\". Untuk menghindari salah paham, orang Brasil sering memperjelas: *O que você faz da vida?* untuk pekerjaan, *O que você tá fazendo?* untuk kegiatan saat ini."
+        }
+      ]
+    },
+    {
+      "title": "Pekerjaan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "⚠️ Berbeda dari bahasa Inggris, bahasa Portugis **tidak memakai kata sandang** untuk pekerjaan sesudah *ser*: *Eu sou professor*, bukan *eu sou um professor*."
+        },
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["professor / professora", "pro-fe-SOH / -SÔ-ra", "guru"],
+            ["médico / médica", "MÉ-dji-ku / -ka", "dokter"],
+            ["engenheiro", "en-zhe-NYÊI-ru", "insinyur"],
+            ["advogado", "a-dji-vo-GA-du", "pengacara"],
+            ["vendedor", "ven-de-DOH", "penjual"],
+            ["motorista", "mo-to-RIS-ta", "sopir"],
+            ["cozinheiro", "ko-zi-NYÊI-ru", "juru masak"],
+            ["estudante", "is-tu-DAN-tchi", "pelajar"],
+            ["aposentado", "a-po-zen-TA-du", "pensiunan"],
+            ["autônomo", "áu-TÔ-no-mu", "pekerja lepas"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Motorista* dan *estudante* berakhiran **-a** dan **-e** tetapi bisa laki-laki maupun perempuan; yang berubah cuma sandangnya (*o motorista* / *a motorista*). Ini penerapan aturan dari unit 2."
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — kembali ke unit 10",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Jam berapa sekarang? → *Que horas são?*",
+            "Sekarang jam setengah delapan → *São sete e meia*",
+            "Saya bangun jam enam pagi → *Eu acordo às seis da manhã*",
+            "Kelasnya mulai jam sepuluh → *A aula começa às dez*",
+            "Saya tidur jam dua belas malam → *Eu durmo à meia-noite*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "fazer", "baca": "fa-ZÊH", "id": "membuat; melakukan" },
+    { "pt": "saber", "baca": "sa-BÊH", "id": "tahu (informasi); bisa (keterampilan)" },
+    { "pt": "conhecer", "baca": "ko-nye-SÊH", "id": "mengenal (orang, tempat)" },
+    { "pt": "ver", "baca": "VÊH", "id": "melihat" },
+    { "pt": "vir", "baca": "VIH", "id": "datang" },
+    { "pt": "dar", "baca": "DAH", "id": "memberi" },
+    { "pt": "dizer", "baca": "dji-ZÊH", "id": "mengatakan" },
+    { "pt": "pôr", "baca": "POH", "id": "menaruh" },
+    { "pt": "ter que", "baca": "TÊH ki", "id": "harus" },
+    { "pt": "precisar", "baca": "pre-si-ZAH", "id": "perlu" },
+    { "pt": "dá para", "baca": "DA pra", "id": "bisa; memungkinkan" },
+    { "pt": "sentir", "baca": "sen-TCHIH", "id": "merasa" },
+    { "pt": "servir", "baca": "seh-VIH", "id": "melayani; cocok" },
+    { "pt": "vestir", "baca": "ves-TCHIH", "id": "memakai baju" },
+    { "pt": "seguir", "baca": "se-GIH", "id": "mengikuti" },
+    { "pt": "nadar", "baca": "na-DAH", "id": "berenang" },
+    { "pt": "dirigir", "baca": "dji-ri-ZHIH", "id": "menyetir" },
+    { "pt": "o documento", "baca": "u do-ku-MEN-tu", "id": "dokumen" },
+    { "pt": "o passaporte", "baca": "u pa-sa-POH-tchi", "id": "paspor" },
+    { "pt": "a dica", "baca": "a DJI-ka", "id": "tips; petunjuk" },
+    { "pt": "o caminho", "baca": "u ka-MI-nyu", "id": "jalan; rute" },
+    { "pt": "nem", "baca": "néin", "id": "bahkan tidak" },
+    { "pt": "mesmo", "baca": "MÊZ-mu", "id": "sungguh; sama" },
+    { "pt": "Que isso!", "baca": "ki I-su", "id": "Ah, santai saja!" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+      "items": [
+        "Eu ____ compras no sábado. (fazer)",
+        "Eu não ____ o endereço. (saber)",
+        "Eu ____ televisão à noite. (ver)",
+        "Eu ____ de ônibus. (vir)",
+        "Eu ____ à meia-noite. (dormir)",
+        "Eu ____ chá a café. (preferir)"
+      ]
+    },
+    {
+      "prompt": "Pilih saber atau conhecer. Tulis bentuk untuk eu.",
+      "items": [
+        "____ o telefone dela.",
+        "____ a Carla há dois anos.",
+        "____ nadar muito bem.",
+        "____ São Paulo inteira.",
+        "____ que ele mora aqui.",
+        "____ esse restaurante."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Kamu tahu di mana bank itu?",
+        "Saya harus pergi sekarang.",
+        "Saya perlu uang.",
+        "Bisa bayar pakai kartu?",
+        "Saya bisa berenang.",
+        "Hari ini dingin."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "sabe / fica / você / onde / banco / o / ?",
+        "que / eu / ir / tenho",
+        "dinheiro / preciso / de / eu",
+        "cartão / dá / pagar / no / para / ?",
+        "nadar / eu / sei"
+      ]
+    }
+  ],
+  "answers": [
+    "faço — sei — vejo — venho — durmo — prefiro",
+    "Sei — Conheço — Sei — Conheço — Sei — Conheço",
+    "Você sabe onde fica o banco? — Eu tenho que ir agora. — Eu preciso de dinheiro. — Dá para pagar no cartão? — Eu sei nadar. — Faz frio hoje.",
+    "Você sabe onde fica o banco? — Eu tenho que ir. — Eu preciso de dinheiro. — Dá para pagar no cartão? — Eu sei nadar."
+  ]
+}

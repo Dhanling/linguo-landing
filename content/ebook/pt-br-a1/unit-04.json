@@ -1,0 +1,253 @@
+{
+  "title": "Angka dan umur",
+  "title_target": "Quantos anos você tem?",
+  "goal": "Menghitung sampai satu juta, menanyakan dan menyebut umur dengan kata kerja *ter*, dan menyebut nomor telepon seperti orang Brasil — termasuk kebiasaan mereka mengganti angka enam dengan kata lain.",
+  "bekal": [
+    "menghitung 0-100 dan merakit angka besar dengan *e*",
+    "memakai *ter* untuk umur — \"punya dua puluh lima tahun\", bukan \"berumur\"",
+    "menanyakan harga dan nomor dengan *quanto* dan *qual*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — A ficha de inscrição",
+      "intro": "Di meja pendaftaran kursus. Petugas mengisi formulir sambil bertanya kepada Budi.",
+      "lines": [
+        { "speaker": "Atendente:", "text": "Boa tarde! Qual é o seu nome completo?", "id": "Selamat sore! Siapa nama lengkap Anda?", "literal": "baik sore! apa adalah si milikmu nama lengkap?" },
+        { "speaker": "Budi:", "text": "Budi Santoso. Com S de São Paulo.", "id": "Budi Santoso. Dengan S seperti São Paulo.", "literal": "Budi Santoso. dengan S dari São Paulo." },
+        { "speaker": "Atendente:", "text": "Perfeito. Quantos anos você tem?", "id": "Sempurna. Berapa umur Anda?", "literal": "sempurna. berapa-banyak tahun kamu kamu-punya?" },
+        { "speaker": "Budi:", "text": "Eu tenho vinte e cinco anos.", "id": "Umur saya dua puluh lima tahun.", "literal": "saya saya-punya dua-puluh dan lima tahun." },
+        { "speaker": "Atendente:", "text": "E qual é o seu telefone?", "id": "Dan berapa nomor telepon Anda?", "literal": "dan apa adalah si milikmu telepon?" },
+        { "speaker": "Budi:", "text": "É onze, nove seis dois... desculpa, meia dois...", "id": "Sebelas, sembilan enam dua... maaf, enam dua...", "literal": "adalah sebelas, sembilan enam dua... maaf, setengah dua..." },
+        { "speaker": "Atendente:", "text": "Calma! Fala devagar, por favor.", "id": "Tenang! Bicaranya pelan-pelan, tolong.", "literal": "ketenangan! bicara pelan, tolong." },
+        { "speaker": "Budi:", "text": "Onze, nove seis dois, três quatro cinco oito.", "id": "Sebelas, sembilan enam dua, tiga empat lima delapan.", "literal": "sebelas, sembilan enam dua, tiga empat lima delapan." },
+        { "speaker": "Atendente:", "text": "Anotei. O curso custa quatrocentos reais por mês.", "id": "Sudah dicatat. Kursusnya empat ratus real sebulan.", "literal": "saya-catat. si kursus ia-berharga empat-ratus real per bulan." },
+        { "speaker": "Budi:", "text": "Tudo bem. Quantos alunos tem na turma?", "id": "Baiklah. Ada berapa murid di kelasnya?", "literal": "semua baik. berapa-banyak murid ia-punya di-si kelas?" },
+        { "speaker": "Atendente:", "text": "Tem doze. É uma turma pequena.", "id": "Ada dua belas. Kelasnya kecil.", "literal": "ia-punya dua-belas. adalah sebuah kelas kecil." }
+      ],
+      "notes": [
+        "**Umur adalah sesuatu yang kamu punya, bukan sesuatu yang kamu adalah.** *Eu tenho vinte e cinco anos* harfiahnya \"saya punya dua puluh lima tahun\". Menerjemahkan langsung dari bahasa Indonesia jadi *eu sou vinte e cinco* adalah kesalahan yang segera terdengar, dan sekaligus yang paling gampang dihindari karena polanya cuma satu.",
+        "**⚠️ Meia, bukan seis.** Kebiasaan Brasil yang jarang diajarkan buku pelajaran. Saat mengeja nomor telepon atau alamat, orang Brasil mengganti *seis* (enam) dengan **meia** — potongan dari *meia dúzia*, \"setengah lusin\". Alasannya praktis: *seis* dan *três* terdengar terlalu mirip di telepon. Kalau kamu mendengar *meia* di tengah deretan angka, itu berarti **enam**, bukan setengah.",
+        "**Nomor telepon dibaca angka per angka.** *Nove seis dois* diucapkan satu-satu seperti bahasa Indonesia, bukan digabung jadi \"sembilan ratus enam puluh dua\". Dua angka pertama adalah kode kota — 11 untuk São Paulo, 21 untuk Rio de Janeiro.",
+        "**Tem juga berarti \"ada\".** *Quantos alunos tem na turma?* harfiahnya \"berapa murid ia punya di kelas?\", tetapi artinya \"ada berapa murid\". Di Brasil, *tem* menyatakan keberadaan persis seperti \"ada\" dalam bahasa Indonesia: *Tem café?* = \"Ada kopi?\", *Não tem problema* = \"Tidak ada masalah\". Bentuk baku *há* juga ada tetapi hampir hanya hidup di tulisan.",
+        "**Anotei** adalah bentuk lampau — \"saya sudah mencatat\". Belum saatnya dipelajari; untuk sekarang cukup kenali bahwa ujung **-ei** menandai sesuatu yang sudah terjadi. Seluruh bab lampau menunggu di unit 15."
+      ],
+      "grammars": [
+        {
+          "title": "Ter — \"punya\", kata kerja paling serbaguna",
+          "body": [
+            "Setelah *ser* dan *estar*, inilah kata kerja ketiga yang wajib dihafal utuh. Ia dipakai untuk kepemilikan, umur, keberadaan, dan — nanti di unit 12 — untuk keharusan."
+          ],
+          "table": {
+            "head": ["Pelaku", "ter", "Cara baca", "arti"],
+            "rows": [
+              ["eu", "**tenho**", "TÊ-nyu", "saya punya"],
+              ["você / ele / ela", "**tem**", "TÉIN", "kamu/dia punya"],
+              ["nós", "**temos**", "TÊ-mus", "kami punya"],
+              ["vocês / eles / elas", "**têm**", "TÉIN", "kalian/mereka punya"]
+            ]
+          },
+          "after": [
+            "⚠️ *tem* dan *têm* **dibaca sama persis**. Topi di atas *ê* cuma penanda tulis untuk membedakan tunggal dan jamak; telinga tidak bisa membedakannya, dan orang Brasil pun sering keliru menulisnya.",
+            "Empat pekerjaan *ter* yang perlu kamu kenali sekarang: *Eu tenho um carro* (kepemilikan), *Eu tenho vinte anos* (umur), *Tem café?* (keberadaan), dan *Tem que estudar* (keharusan — unit 12)."
+          ]
+        },
+        {
+          "title": "Angka 0 sampai 20",
+          "body": [
+            "Dua puluh satu kata yang harus dihafal utuh. Setelah itu, sisanya bisa dirakit sendiri."
+          ],
+          "table": {
+            "head": ["Angka", "Português", "Cara baca", "Angka", "Português", "Cara baca"],
+            "rows": [
+              ["0", "zero", "ZÉ-ru", "11", "onze", "ON-zi"],
+              ["1", "um / uma", "un / U-ma", "12", "doze", "DÔ-zi"],
+              ["2", "dois / duas", "dóis / DU-as", "13", "treze", "TRÊ-zi"],
+              ["3", "três", "três", "14", "quatorze", "ka-TOH-zi"],
+              ["4", "quatro", "KUA-tru", "15", "quinze", "KIN-zi"],
+              ["5", "cinco", "SIN-ku", "16", "dezesseis", "de-ze-SÊIS"],
+              ["6", "seis (meia)", "sêis (MÊI-a)", "17", "dezessete", "de-ze-SÉ-tchi"],
+              ["7", "sete", "SÉ-tchi", "18", "dezoito", "de-ZÓI-tu"],
+              ["8", "oito", "ÓI-tu", "19", "dezenove", "de-ze-NÓ-vi"],
+              ["9", "nove", "NÓ-vi", "20", "vinte", "VIN-tchi"],
+              ["10", "dez", "dés", "", "", ""]
+            ]
+          },
+          "after": [
+            "⚠️ **Satu dan dua punya bentuk perempuan.** *Um livro* tetapi *uma mesa*; *dois livros* tetapi *duas mesas*. Angka lain tidak berubah sama sekali. Ini kesalahan yang sering bertahan lama karena terdengar sepele — padahal *duas horas* dan *dois anos* muncul di percakapan setiap hari.",
+            "Perhatikan bahwa 16 sampai 19 dirakit dari *dez* + angkanya: *dez-e-sseis*, *dez-e-ssete*, *dez-oito*, *dez-e-nove*. Setelah 20, semua angka dirakit dengan kata **e** (\"dan\") di tengahnya."
+          ]
+        },
+        {
+          "title": "Angka 20 sampai satu juta",
+          "body": [
+            "Mulai di sini semuanya bisa dirakit. Aturannya cuma satu: sisipkan **e** di antara potongannya."
+          ],
+          "table": {
+            "head": ["Angka", "Português", "Cara baca"],
+            "rows": [
+              ["21", "vinte **e** um", "VIN-tchi i UN"],
+              ["30 / 40 / 50", "trinta / quarenta / cinquenta", "TRIN-ta / kua-REN-ta / sin-KUEN-ta"],
+              ["60 / 70", "sessenta / setenta", "se-SEN-ta / se-TEN-ta"],
+              ["80 / 90", "oitenta / noventa", "ói-TEN-ta / no-VEN-ta"],
+              ["100", "cem", "sein"],
+              ["101", "cento **e** um", "SEN-tu i UN"],
+              ["200 / 300", "duzentos / trezentos", "du-ZEN-tus / tre-ZEN-tus"],
+              ["400 / 500", "quatrocentos / quinhentos", "kua-tru-SEN-tus / ki-NYEN-tus"],
+              ["1.000", "mil", "miu"],
+              ["1.000.000", "um milhão", "un mi-LYÁUN"]
+            ]
+          },
+          "after": [
+            "⚠️ **Cem berubah jadi cento begitu ada angka di belakangnya.** Seratus persis = *cem*; 101 ke atas = *cento e um*, *cento e vinte*. Ini satu-satunya angka yang berkelakuan begitu.",
+            "**Ratusan punya bentuk perempuan**: *duzentos reais* tetapi *duzentas pessoas*; *quinhentos livros* tetapi *quinhentas casas*. Aturannya sama dengan *um/uma* dan *dois/duas*.",
+            "⚠️ Di Brasil, **titik dan koma** dipakai persis seperti di Indonesia: *1.000* berarti seribu, dan *3,5* berarti tiga koma lima. Kebiasaan bahasa Inggris justru yang terbalik."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bertanya dengan angka",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Dua kata tanya menutup hampir semua pertanyaan berangka: *quanto* (berapa banyak) dan *qual* (yang mana; berapa untuk nomor)."
+        },
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["Quantos anos você tem?", "KUAN-tus A-nus vo-SÊ TÉIN", "Berapa umurmu?"],
+            ["Quanto custa?", "KUAN-tu KUS-ta", "Berapa harganya?"],
+            ["Quanto é?", "KUAN-tu É", "Berapa semuanya?"],
+            ["Quantas pessoas?", "KUAN-tas pe-SÔ-as", "Berapa orang?"],
+            ["Qual é o seu telefone?", "kuáu É u SÊ-u te-LÊ-fo-ni", "Berapa nomor teleponmu?"],
+            ["Qual é o seu endereço?", "kuáu É u SÊ-u en-de-RÊ-su", "Apa alamatmu?"],
+            ["Que horas são?", "ki Ó-ras SÁUN", "Jam berapa sekarang?"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Quanto* ikut berubah menurut kata bendanya: *quantos anos* (laki-laki jamak), *quantas pessoas* (perempuan jamak), *quanto dinheiro* (laki-laki tunggal). *Qual* tidak berubah kecuali untuk jamak: *quais*."
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan baris kelima: bahasa Portugis bertanya *qual é* (\"yang mana\") untuk nomor telepon dan nama, bukan *o que é*. Memakai *o que é o seu nome* adalah kesalahan yang langsung menandai penutur asing."
+        }
+      ]
+    },
+    {
+      "title": "Uang Brasil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Mata uang Brasil adalah **real**, jamaknya **reais** (dibaca he-ÁIS). Lambangnya R$, ditulis di depan angkanya: R$ 25,00."
+        },
+        {
+          "type": "tabel",
+          "head": ["Tertulis", "Dibaca", "Bahasa Indonesia"],
+          "rows": [
+            ["R$ 1,00", "um real", "satu real"],
+            ["R$ 2,00", "dois reais", "dua real"],
+            ["R$ 10,50", "dez reais e cinquenta centavos", "sepuluh real lima puluh sen"],
+            ["R$ 100,00", "cem reais", "seratus real"],
+            ["R$ 250,00", "duzentos e cinquenta reais", "dua ratus lima puluh real"],
+            ["R$ 1.000,00", "mil reais", "seribu real"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dalam percakapan sehari-hari, bagian sennya dipendekkan: R$ 10,50 cukup diucapkan *dez e cinquenta*. Sama seperti orang Indonesia mengatakan \"sepuluh lima puluh\" tanpa menyebut satuannya."
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — kembali ke unit 2",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tutup kolom Portugisnya dan susun ulang dari terjemahannya."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Sebuah buku kecil → *um livro pequeno*",
+            "Rumah-rumah yang cantik → *as casas bonitas*",
+            "Latihannya gampang → *o exercício é fácil*",
+            "Hotel-hotel besar → *os hotéis grandes*",
+            "Kotanya besar sekali → *a cidade é muito grande*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "ter", "baca": "TÊH", "id": "punya; ada" },
+    { "pt": "tenho / tem", "baca": "TÊ-nyu / TÉIN", "id": "saya punya / kamu-dia punya" },
+    { "pt": "o ano", "baca": "u A-nu", "id": "tahun" },
+    { "pt": "quantos / quantas", "baca": "KUAN-tus / -tas", "id": "berapa banyak" },
+    { "pt": "quanto custa", "baca": "KUAN-tu KUS-ta", "id": "berapa harganya" },
+    { "pt": "qual", "baca": "kuáu", "id": "yang mana; apa (untuk nomor/nama)" },
+    { "pt": "o nome", "baca": "u NÔ-mi", "id": "nama" },
+    { "pt": "completo", "baca": "kon-PLÊ-tu", "id": "lengkap" },
+    { "pt": "o telefone", "baca": "u te-LÊ-fo-ni", "id": "telepon" },
+    { "pt": "o endereço", "baca": "u en-de-RÊ-su", "id": "alamat" },
+    { "pt": "meia", "baca": "MÊI-a", "id": "enam (saat mengeja nomor)" },
+    { "pt": "o real / os reais", "baca": "u he-ÁU / us he-ÁIS", "id": "real (mata uang Brasil)" },
+    { "pt": "o centavo", "baca": "u sen-TA-vu", "id": "sen" },
+    { "pt": "o curso", "baca": "u KUH-su", "id": "kursus" },
+    { "pt": "a turma", "baca": "a TUH-ma", "id": "kelas; rombongan" },
+    { "pt": "o aluno", "baca": "u a-LU-nu", "id": "murid" },
+    { "pt": "a pessoa", "baca": "a pe-SÔ-a", "id": "orang" },
+    { "pt": "o mês", "baca": "u MÊS", "id": "bulan" },
+    { "pt": "custar", "baca": "kus-TAH", "id": "berharga; seharga" },
+    { "pt": "por mês", "baca": "poh MÊS", "id": "per bulan" },
+    { "pt": "devagar", "baca": "dji-va-GAH", "id": "pelan-pelan" },
+    { "pt": "calma", "baca": "KÁU-ma", "id": "tenang" },
+    { "pt": "perfeito", "baca": "peh-FÊI-tu", "id": "sempurna" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis angkanya dengan huruf dalam bahasa Portugis.",
+      "items": ["12", "16", "21", "45", "100", "230"]
+    },
+    {
+      "prompt": "Isi dengan bentuk ter yang tepat.",
+      "items": [
+        "Eu ____ vinte e cinco anos.",
+        "Você ____ um carro?",
+        "Nós ____ uma turma pequena.",
+        "Eles ____ dois filhos.",
+        "____ café aqui? (dalam arti \"ada\")",
+        "A gente ____ aula hoje."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Berapa umurmu?",
+        "Umur saya tiga puluh tahun.",
+        "Berapa harganya?",
+        "Ada berapa orang?",
+        "Berapa nomor teleponmu?"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "anos / você / quantos / tem / ?",
+        "vinte / tenho / anos / eu / e / cinco",
+        "custa / quanto / ?",
+        "telefone / qual / seu / é / o / ?",
+        "pessoas / duas / tem"
+      ]
+    }
+  ],
+  "answers": [
+    "doze — dezesseis — vinte e um — quarenta e cinco — cem — duzentos e trinta",
+    "tenho — tem — temos — têm — Tem — tem",
+    "Quantos anos você tem? — Eu tenho trinta anos. — Quanto custa? — Quantas pessoas tem? — Qual é o seu telefone?",
+    "Quantos anos você tem? — Eu tenho vinte e cinco anos. — Quanto custa? — Qual é o seu telefone? — Tem duas pessoas."
+  ]
+}

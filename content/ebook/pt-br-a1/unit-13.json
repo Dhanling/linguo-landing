@@ -1,0 +1,258 @@
+{
+  "title": "Belanja, warna, dan penunjuk",
+  "title_target": "Quanto custa esse?",
+  "goal": "Berbelanja dari awal sampai bayar, menyebut warna dan ukuran, dan memasang **tiga tingkat penunjuk** — sebuah sistem yang bahasa Indonesia hanya punya dua.",
+  "bekal": [
+    "memakai *este*, *esse*, *aquele* pada jaraknya masing-masing",
+    "menyebut warna dan ukuran dengan ujung yang sesuai",
+    "menawar dan membayar dengan kalimat yang benar-benar dipakai"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Numa loja de roupas",
+      "intro": "Budi mencari kemeja untuk pesta ulang tahun teman sekelasnya.",
+      "lines": [
+        { "speaker": "Vendedora:", "text": "Oi! Posso ajudar ou só está olhando?", "id": "Halo! Bisa dibantu atau cuma lihat-lihat?", "literal": "halo! saya-bisa membantu atau cuma ia-berada melihat?" },
+        { "speaker": "Budi:", "text": "Estou procurando uma camisa social.", "id": "Saya lagi cari kemeja formal.", "literal": "saya-berada mencari sebuah kemeja sosial." },
+        { "speaker": "Vendedora:", "text": "Que tamanho você usa?", "id": "Ukuran berapa?", "literal": "apa ukuran kamu kamu-pakai?" },
+        { "speaker": "Budi:", "text": "Acho que M. Essa azul é bonita.", "id": "Kayaknya M. Yang biru itu bagus.", "literal": "saya-kira bahwa M. ini biru adalah cantik." },
+        { "speaker": "Vendedora:", "text": "Essa aqui? Temos em azul, branco e preto.", "id": "Yang ini? Ada warna biru, putih, dan hitam.", "literal": "ini di-sini? kami-punya dalam biru, putih dan hitam." },
+        { "speaker": "Budi:", "text": "E aquela ali, no fundo? A verde.", "id": "Kalau yang di sana, di belakang itu? Yang hijau.", "literal": "dan itu di-sana, di-si dasar? si hijau." },
+        { "speaker": "Vendedora:", "text": "Aquela é linda, mas é mais cara.", "id": "Yang itu cantik banget, tapi lebih mahal.", "literal": "itu adalah cantik, tapi adalah lebih mahal." },
+        { "speaker": "Budi:", "text": "Quanto custa?", "id": "Berapa harganya?", "literal": "berapa ia-berharga?" },
+        { "speaker": "Vendedora:", "text": "Cento e oitenta. A azul sai por cento e vinte.", "id": "Seratus delapan puluh. Yang biru seratus dua puluh.", "literal": "seratus dan delapan-puluh. si biru ia-keluar untuk seratus dan dua-puluh." },
+        { "speaker": "Budi:", "text": "Posso experimentar as duas?", "id": "Boleh saya coba dua-duanya?", "literal": "saya-bisa mencoba si-jamak dua?" },
+        { "speaker": "Vendedora:", "text": "Claro! O provador fica ali, à esquerda.", "id": "Tentu! Kamar pasnya di sana, sebelah kiri.", "literal": "jelas! si ruang-coba ia-terletak di-sana, ke-si kiri." },
+        { "speaker": "Budi:", "text": "Vou levar a azul. Aceita cartão?", "id": "Saya ambil yang biru. Terima kartu?", "literal": "saya-pergi membawa si biru. ia-terima kartu?" },
+        { "speaker": "Vendedora:", "text": "Aceito. Em quantas vezes?", "id": "Terima. Mau dicicil berapa kali?", "literal": "saya-terima. dalam berapa kali?" }
+      ],
+      "notes": [
+        "⚠️ **Em quantas vezes? adalah pertanyaan yang paling membingungkan orang asing di Brasil.** Harfiahnya \"dalam berapa kali?\", dan ia menanyakan kamu mau **mencicil** pembelian itu berapa bulan. Di Brasil, mencicil barang seharga dua ratus ribu rupiah dalam tiga kali angsuran adalah hal yang biasa dan tanpa bunga. Jawaban yang tepat kalau kamu mau bayar sekaligus: *À vista* (\"tunai/lunas\").",
+        "**Estou procurando** — bentuk \"sedang\", yang baru dipasang lengkap di unit 19. Untuk sekarang cukup kenali polanya: *estar* + kata kerja berakhiran **-ndo**. Di Brasil bentuk ini dipakai terus-menerus; di Portugal orang mengatakan *estou a procurar*.",
+        "**Sai por** harfiahnya \"keluar seharga\", artinya \"harganya jadi\". Ia cara santai menyebut harga di toko: *Sai por cem reais*. Sekeluarga dengan *fica por* yang sama artinya.",
+        "**Essa aqui, aquela ali** — perhatikan bagaimana penunjuk selalu berpasangan dengan kata tempat. Orang Brasil hampir tidak pernah mengucapkan *esse* tanpa *aqui*, atau *aquele* tanpa *ali*. Pasangan itu yang membuat maksudnya jelas tanpa perlu menunjuk.",
+        "**Linda** lebih kuat daripada *bonita*. Urutannya kira-kira: *bonito* (bagus) → *lindo* (cantik sekali) → *maravilhoso* (luar biasa). Orang Brasil memakai ketiganya dengan murah hati."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga tingkat penunjuk",
+          "body": [
+            "Bahasa Indonesia punya dua: \"ini\" dan \"itu\". Bahasa Portugis punya tiga, dan tingkat ketiganya menandai sesuatu yang jauh dari **kedua** pembicara."
+          ],
+          "table": {
+            "head": ["Jarak", "Laki tunggal", "Perempuan tunggal", "Netral", "Bahasa Indonesia"],
+            "rows": [
+              ["dekat saya", "**este / esse**", "**esta / essa**", "**isto / isso**", "ini"],
+              ["dekat kamu", "**esse**", "**essa**", "**isso**", "itu (di dekatmu)"],
+              ["jauh dari keduanya", "**aquele**", "**aquela**", "**aquilo**", "itu (di sana)"]
+            ]
+          },
+          "after": [
+            "**Di Brasil, este dan esse sudah menyatu dalam praktik.** Buku tata bahasa membedakan *este* (dekat saya) dari *esse* (dekat kamu), tetapi orang Brasil memakai **esse** untuk keduanya, dalam ucapan maupun tulisan santai. Kalau kamu memakai *esse* untuk semua yang dekat dan *aquele* untuk yang jauh, kamu sudah berbicara seperti orang Brasil.",
+            "**Bentuk netral (isso, aquilo) dipakai kalau bendanya tidak disebut namanya**: *O que é isso?* (\"Ini apa?\"), *Isso é caro* (\"Ini mahal\"). Begitu kata bendanya muncul, kamu kembali ke bentuk laki-laki atau perempuan: *esse livro*, *essa camisa*.",
+            "⚠️ Penunjuk juga melebur dengan kata depan: *de + esse* = **desse**, *em + esse* = **nesse**, *de + aquele* = **daquele**. Polanya sama dengan *do* dan *no* dari unit 8."
+          ]
+        },
+        {
+          "title": "Warna",
+          "body": [
+            "Kata sifat biasa, jadi ujungnya menyesuaikan kata bendanya. Yang berakhiran *-e* atau huruf mati tidak berubah menurut jenis kelamin."
+          ],
+          "table": {
+            "head": ["Português", "Cara baca", "Bahasa Indonesia", "Berubah?"],
+            "rows": [
+              ["branco / branca", "BRAN-ku", "putih", "ya"],
+              ["preto / preta", "PRÊ-tu", "hitam", "ya"],
+              ["vermelho / vermelha", "veh-MÊ-lyu", "merah", "ya"],
+              ["amarelo / amarela", "a-ma-RÉ-lu", "kuning", "ya"],
+              ["azul / azuis", "a-ZÚU", "biru", "cuma jamak"],
+              ["verde / verdes", "VÊH-dji", "hijau", "cuma jamak"],
+              ["cinza", "SIN-za", "abu-abu", "tidak"],
+              ["rosa", "HÓ-za", "merah muda", "tidak"],
+              ["laranja", "la-RAN-zha", "oranye", "tidak"],
+              ["marrom / marrons", "ma-HON", "cokelat", "cuma jamak"]
+            ]
+          },
+          "after": [
+            "Tiga baris yang **tidak berubah sama sekali** — *cinza*, *rosa*, *laranja* — punya alasan yang menyenangkan: ketiganya sebenarnya nama benda (abu, bunga mawar, buah jeruk), dan nama benda tidak menyesuaikan diri. *Uma camisa rosa*, *dois carros laranja*.",
+            "Warna berdiri **di belakang** kata bendanya, seperti semua kata sifat: *a camisa azul*, *o carro vermelho*. Sama persis dengan urutan bahasa Indonesia."
+          ]
+        },
+        {
+          "title": "Kalimat belanja",
+          "body": [
+            "Sepuluh kalimat yang menutup hampir semua transaksi."
+          ],
+          "table": {
+            "head": ["Português", "Bahasa Indonesia"],
+            "rows": [
+              ["*Só estou olhando, obrigado.*", "Cuma lihat-lihat, terima kasih."],
+              ["*Quanto custa esse?*", "Yang ini berapa?"],
+              ["*Tem em outro tamanho?*", "Ada ukuran lain?"],
+              ["*Posso experimentar?*", "Boleh saya coba?"],
+              ["*Onde fica o provador?*", "Kamar pasnya di mana?"],
+              ["*Ficou grande demais.*", "Kebesaran."],
+              ["*Tem desconto?*", "Ada diskon?"],
+              ["*Vou levar.*", "Saya ambil ini."],
+              ["*Aceita cartão?*", "Terima kartu?"],
+              ["*À vista, por favor.*", "Bayar lunas, tolong."]
+            ]
+          },
+          "after": [
+            "**Demais berarti \"terlalu\"** dan diletakkan di belakang kata sifatnya: *caro demais* (terlalu mahal), *pequeno demais* (kekecilan). Ia juga dipakai sendirian untuk memuji: *Legal demais!* = \"keren banget!\"",
+            "*Tem desconto?* pantas ditanyakan di pasar dan toko kecil, tetapi tidak di mal atau supermarket. Kalau kamu membayar tunai, peluangnya jauh lebih besar — coba tambahkan *à vista*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pakaian dan ukuran",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["a camisa", "a ka-MI-za", "kemeja"],
+            ["a camiseta", "a ka-mi-ZÊ-ta", "kaus"],
+            ["a calça", "a KÁU-sa", "celana panjang"],
+            ["o short", "u SYÓH-tchi", "celana pendek"],
+            ["o vestido", "u ves-TCHI-du", "gaun"],
+            ["a saia", "a SÁI-a", "rok"],
+            ["o sapato", "u sa-PA-tu", "sepatu"],
+            ["o tênis", "u TÊ-nis", "sepatu olahraga"],
+            ["a bolsa", "a BÔU-sa", "tas"],
+            ["o chinelo", "u syi-NÉ-lu", "sandal jepit"],
+            ["pequeno / médio / grande", "pe-KÊ-nu / MÉ-dji-u / GRAN-dji", "kecil / sedang / besar"],
+            ["o tamanho", "u ta-MA-nyu", "ukuran"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*O chinelo* — sandal jepit — layak disebut sendiri karena ia bagian dari kehidupan sehari-hari Brasil sejauh orang memakainya ke supermarket, ke pantai, dan kadang ke kantor. Merek yang paling terkenal, Havaianas, namanya sudah menjadi kata umum."
+        }
+      ]
+    },
+    {
+      "title": "Membayar",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["em dinheiro", "éin dji-NYÊI-ru", "tunai"],
+            ["no cartão", "nu kah-TÁUN", "pakai kartu"],
+            ["no débito / no crédito", "nu DÉ-bi-tu / nu KRÉ-dji-tu", "debit / kredit"],
+            ["por Pix", "poh PIKS", "lewat transfer instan Pix"],
+            ["à vista", "a VIS-ta", "lunas sekaligus"],
+            ["parcelado", "pah-se-LA-du", "dicicil"],
+            ["o troco", "u TRÔ-ku", "kembalian"],
+            ["o recibo", "u he-SI-bu", "struk"],
+            ["a promoção", "a pro-mo-SÁUN", "diskon; promo"],
+            ["caro / barato", "KA-ru / ba-RA-tu", "mahal / murah"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Pix adalah cara membayar yang paling umum di Brasil sejak 2020** — transfer bank seketika, gratis, dan diterima dari mal besar sampai penjual kelapa di pantai. Kalau kamu tinggal di Brasil lebih dari sebulan, kamu akan memakainya lebih sering daripada uang tunai."
+        },
+        {
+          "type": "p",
+          "text": "*Tem troco para cinquenta?* = \"Ada kembalian untuk lima puluh?\" — pertanyaan yang berguna karena pedagang kecil di Brasil sering kehabisan uang kecil, persis seperti di Indonesia."
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — kembali ke unit 11",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Kamu mau ngapain besok? → *O que você vai fazer amanhã?*",
+            "Saya akan di rumah saja → *Eu vou ficar em casa*",
+            "Kami akan bepergian bulan Juli → *Nós vamos viajar em julho*",
+            "Kamu pasti suka → *Você vai adorar*",
+            "Gimana kalau ngopi? → *Que tal um café?*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "esse / essa", "baca": "Ê-si / É-sa", "id": "ini; itu (dekat)" },
+    { "pt": "aquele / aquela", "baca": "a-KÊ-li / a-KÉ-la", "id": "itu (di sana)" },
+    { "pt": "isso / aquilo", "baca": "I-su / a-KI-lu", "id": "ini / itu (tanpa kata benda)" },
+    { "pt": "aqui / ali / lá", "baca": "a-KI / a-LI / LA", "id": "di sini / di situ / di sana" },
+    { "pt": "a camisa", "baca": "a ka-MI-za", "id": "kemeja" },
+    { "pt": "a calça", "baca": "a KÁU-sa", "id": "celana panjang" },
+    { "pt": "o sapato", "baca": "u sa-PA-tu", "id": "sepatu" },
+    { "pt": "o tamanho", "baca": "u ta-MA-nyu", "id": "ukuran" },
+    { "pt": "branco / preto", "baca": "BRAN-ku / PRÊ-tu", "id": "putih / hitam" },
+    { "pt": "vermelho / azul", "baca": "veh-MÊ-lyu / a-ZÚU", "id": "merah / biru" },
+    { "pt": "verde / amarelo", "baca": "VÊH-dji / a-ma-RÉ-lu", "id": "hijau / kuning" },
+    { "pt": "cinza / rosa", "baca": "SIN-za / HÓ-za", "id": "abu-abu / merah muda" },
+    { "pt": "experimentar", "baca": "is-pe-ri-men-TAH", "id": "mencoba (baju)" },
+    { "pt": "o provador", "baca": "u pro-va-DOH", "id": "kamar pas" },
+    { "pt": "o desconto", "baca": "u dis-KON-tu", "id": "diskon" },
+    { "pt": "aceitar", "baca": "a-sêi-TAH", "id": "menerima" },
+    { "pt": "o troco", "baca": "u TRÔ-ku", "id": "kembalian" },
+    { "pt": "à vista", "baca": "a VIS-ta", "id": "lunas sekaligus" },
+    { "pt": "parcelado", "baca": "pah-se-LA-du", "id": "dicicil" },
+    { "pt": "caro / barato", "baca": "KA-ru / ba-RA-tu", "id": "mahal / murah" },
+    { "pt": "demais", "baca": "dji-MÁIS", "id": "terlalu; banget" },
+    { "pt": "lindo", "baca": "LIN-du", "id": "cantik sekali" },
+    { "pt": "usar", "baca": "u-ZAH", "id": "memakai" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan penunjuk yang tepat.",
+      "items": [
+        "____ camisa aqui é azul. (dekat saya, perempuan)",
+        "____ livro aqui é meu. (dekat saya, laki-laki)",
+        "____ casa ali no fundo é grande. (jauh, perempuan)",
+        "O que é ____? (tanpa kata benda)",
+        "____ sapatos ali são caros. (jauh, laki-laki jamak)",
+        "Eu quero ____ aqui. (tanpa kata benda, dekat)"
+      ]
+    },
+    {
+      "prompt": "Sesuaikan warnanya dengan kata bendanya.",
+      "items": [
+        "uma camisa ____ (branco)",
+        "dois carros ____ (vermelho)",
+        "as calças ____ (preto)",
+        "uma bolsa ____ (azul)",
+        "três camisetas ____ (verde)",
+        "uma saia ____ (rosa)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Yang ini berapa harganya?",
+        "Boleh saya coba?",
+        "Kamar pasnya di mana?",
+        "Ada ukuran lain?",
+        "Terlalu mahal.",
+        "Saya ambil yang biru."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "custa / esse / quanto / ?",
+        "experimentar / posso / ?",
+        "levar / azul / vou / a",
+        "cartão / aceita / ?",
+        "olhando / estou / só"
+      ]
+    }
+  ],
+  "answers": [
+    "Essa — Esse — Aquela — isso — Aqueles — isso",
+    "branca — vermelhos — pretas — azul — verdes — rosa",
+    "Quanto custa esse? — Posso experimentar? — Onde fica o provador? — Tem em outro tamanho? — Caro demais. — Vou levar a azul.",
+    "Quanto custa esse? — Posso experimentar? — Vou levar a azul. — Aceita cartão? — Só estou olhando."
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "title": "Makan dan minum",
+  "title_target": "No restaurante",
+  "goal": "Memesan makanan tanpa gugup, menyebut selera, dan mengenal cara orang Brasil sungguhan memesan — termasuk kebiasaan yang tidak pernah muncul di buku frasa.",
+  "bekal": [
+    "memesan dengan *eu quero*, *eu vou querer*, dan *para mim*",
+    "memakai *querer* dan *poder* — dua kata kerja tak beraturan yang membuka semua permintaan",
+    "menyebut suka dan tidak suka dengan tingkatan yang wajar"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Almoço no bufê",
+      "intro": "Tengah hari di sebuah restoran timbang di São Paulo. Budi baru selesai menimbang piringnya.",
+      "lines": [
+        { "speaker": "Garçom:", "text": "Boa tarde! Vai beber alguma coisa?", "id": "Selamat siang! Mau minum sesuatu?", "literal": "baik sore! ia-pergi minum sesuatu hal?" },
+        { "speaker": "Budi:", "text": "Vou querer um suco de laranja, por favor.", "id": "Saya mau jus jeruk, tolong.", "literal": "saya-pergi ingin sebuah jus dari jeruk, tolong." },
+        { "speaker": "Garçom:", "text": "Com gelo?", "id": "Pakai es?", "literal": "dengan es?" },
+        { "speaker": "Budi:", "text": "Sem gelo, por favor. E sem açúcar.", "id": "Tanpa es, tolong. Dan tanpa gula.", "literal": "tanpa es, tolong. dan tanpa gula." },
+        { "speaker": "Garçom:", "text": "Pode deixar. Mais alguma coisa?", "id": "Siap. Ada lagi?", "literal": "ia-bisa meninggalkan. lebih sesuatu hal?" },
+        { "speaker": "Budi:", "text": "Você pode trazer mais um garfo?", "id": "Bisa tolong bawakan satu garpu lagi?", "literal": "kamu kamu-bisa membawa lebih satu garpu?" },
+        { "speaker": "Garçom:", "text": "Claro. Está tudo bem com a comida?", "id": "Tentu. Makanannya oke semua?", "literal": "jelas. ia-berada semua baik dengan si makanan?" },
+        { "speaker": "Budi:", "text": "Está ótima! Eu adoro feijoada.", "id": "Enak sekali! Saya suka banget feijoada.", "literal": "ia-berada bagus-sekali! saya saya-memuja feijoada." },
+        { "speaker": "Garçom:", "text": "Que bom! Vai querer sobremesa?", "id": "Syukurlah! Mau pesan pencuci mulut?", "literal": "betapa bagus! ia-pergi ingin pencuci-mulut?" },
+        { "speaker": "Budi:", "text": "Hoje não, obrigado. A conta, por favor.", "id": "Hari ini tidak, terima kasih. Minta bonnya.", "literal": "hari-ini tidak, terima-kasih. si tagihan, tolong." },
+        { "speaker": "Garçom:", "text": "Já trago. Vai pagar em dinheiro ou no cartão?", "id": "Segera saya bawa. Mau bayar tunai atau kartu?", "literal": "sudah saya-bawa. ia-pergi membayar dalam uang atau di-si kartu?" },
+        { "speaker": "Budi:", "text": "No cartão, por favor.", "id": "Kartu, tolong.", "literal": "di-si kartu, tolong." }
+      ],
+      "notes": [
+        "**Vou querer, bukan quero.** Ini kebiasaan yang membedakan pemula dari orang yang pernah tinggal di Brasil. Memesan dengan *eu quero* (\"saya mau\") benar tetapi terdengar sedikit tumpul, seperti anak kecil menuntut. Yang lazim adalah *vou querer* — harfiahnya \"saya akan mau\" — yang nadanya jauh lebih lembut. Bentuknya sendiri baru dijelaskan di unit 11; untuk sekarang hafalkan utuh sebagai kalimat pemesanan.",
+        "**Pode deixar** harfiahnya \"boleh tinggalkan\", artinya \"serahkan pada saya, beres\". Ia jawaban khas Brasil untuk permintaan apa pun, dan kamu akan mendengarnya dari pelayan, tukang, sampai teman. Padanan Indonesianya paling dekat: \"siap\" atau \"tenang aja\".",
+        "**Você pode trazer…? adalah rumus permintaan sopan yang paling berguna.** Harfiahnya \"kamu bisa bawa?\", dan bahasa Portugis tidak memerlukan tambahan apa pun untuk membuatnya sopan — tidak ada *would* atau *could* yang perlu dipelajari. Cukup *pode* + kata kerja dasar.",
+        "**Adoro, bukan gosto muito.** Orang Brasil memakai *adorar* (\"memuja\") untuk hal-hal biasa: *Adoro café*, *Adoro esse filme*. Dari mulut penutur bahasa lain ini terdengar berlebihan; di Brasil, ia justru takaran normal.",
+        "**Já trago** = \"segera saya bawa\". Kata *já* berarti \"sudah\" **dan** \"segera\", tergantung bentuk kata kerjanya. Ia salah satu kata kecil yang paling sering muncul dalam percakapan Brasil: *Já vou* (saya berangkat sekarang), *Já acabou?* (sudah selesai?)."
+      ],
+      "grammars": [
+        {
+          "title": "Querer dan poder — dua kunci permintaan",
+          "body": [
+            "Dua kata kerja tak beraturan yang membuka hampir semua kalimat sopan. Keduanya diikuti kata kerja **dalam bentuk dasar**, tanpa perubahan apa pun."
+          ],
+          "table": {
+            "head": ["Pelaku", "querer (mau)", "poder (bisa)", "Cara baca"],
+            "rows": [
+              ["eu", "**quero**", "**posso**", "KÉ-ru / PÓ-su"],
+              ["você / ele / ela", "**quer**", "**pode**", "kéh / PÓ-dji"],
+              ["nós", "**queremos**", "**podemos**", "ke-RÊ-mus / po-DÊ-mus"],
+              ["vocês / eles / elas", "**querem**", "**podem**", "KÉ-réin / PÓ-déin"]
+            ]
+          },
+          "after": [
+            "**Kata kerja kedua tidak berubah sama sekali.** *Eu quero comer*, *Você pode ajudar*, *Nós queremos ir*. Ini kabar baik yang besar: satu kalimat cuma perlu satu kata kerja yang diubah, sisanya tetap dalam bentuk kamus. Bahasa Indonesia bekerja dengan cara yang sama (\"saya mau makan\"), jadi polanya sudah akrab.",
+            "⚠️ Perhatikan bentuk *quer* — tanpa huruf hidup di ujungnya. Ia dibaca **kéh**, bukan \"ke-re\". Dan *quero* dibaca **KÉ-ru**, bukan \"kue-ro\": huruf *u* sesudah *q* selalu bisu di depan *e* dan *i*.",
+            "Untuk menolak dengan sopan, pakai *não, obrigado* atau *hoje não* (\"hari ini tidak\") — dua-duanya terdengar jauh lebih ramah daripada *não quero* yang terdengar ketus."
+          ]
+        },
+        {
+          "title": "Menyebut selera, dari benci sampai memuja",
+          "body": [
+            "Enam tingkat, semuanya dipakai sehari-hari. Perhatikan mana yang memerlukan *de* dan mana yang tidak."
+          ],
+          "table": {
+            "head": ["Português", "Perlu de?", "Bahasa Indonesia"],
+            "rows": [
+              ["*Eu **adoro** feijoada.*", "tidak", "Saya suka banget feijoada."],
+              ["*Eu **gosto muito de** café.*", "**ya**", "Saya suka sekali kopi."],
+              ["*Eu **gosto de** peixe.*", "**ya**", "Saya suka ikan."],
+              ["*Eu **não gosto muito de** cerveja.*", "**ya**", "Saya kurang suka bir."],
+              ["*Eu **não gosto de** carne.*", "**ya**", "Saya tidak suka daging."],
+              ["*Eu **odeio** cebola.*", "tidak", "Saya benci bawang bombai."]
+            ]
+          },
+          "after": [
+            "⚠️ Baris pertama dan terakhir **tidak** memakai *de*; empat baris di tengahnya wajib. Sebabnya sederhana: *adorar* dan *odiar* adalah kata kerja biasa, sementara *gostar* selalu menuntut *de*. Ingat saja bahwa *gostar* itu yang aneh, bukan yang lain.",
+            "**Baris keempat adalah cara sopan menolak makanan.** *Não gosto muito de…* harfiahnya \"saya tidak terlalu suka\", dan di Brasil ia jauh lebih halus daripada *não gosto*. Berguna saat kamu ditawari sesuatu yang tidak kamu inginkan di rumah orang."
+          ]
+        },
+        {
+          "title": "Com, sem, e para mim",
+          "body": [
+            "Tiga kata kecil yang menutup hampir seluruh kalimat pemesanan."
+          ],
+          "table": {
+            "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+            "rows": [
+              ["**com** gelo", "kon ZHÊ-lu", "pakai es"],
+              ["**sem** gelo", "séin ZHÊ-lu", "tanpa es"],
+              ["**sem** açúcar", "séin a-SU-kah", "tanpa gula"],
+              ["**para mim**", "PRA MIN", "untuk saya"],
+              ["**para viagem**", "PRA vi-A-zhéin", "dibungkus, dibawa pulang"],
+              ["**para dois**", "PRA DÓIS", "untuk berdua"]
+            ]
+          },
+          "after": [
+            "⚠️ **Para mim, bukan para eu.** Sesudah kata depan, bahasa Portugis memakai bentuk khusus: *mim* (saya), *você* (kamu), *ele/ela* (dia), *nós* (kami). Cuma \"saya\" yang berubah bentuk, dan itulah yang paling sering dipakai — jadi hafalkan *para mim* sebagai satu bongkahan.",
+            "**Para viagem** harfiahnya \"untuk perjalanan\", dan itu cara mengatakan \"dibungkus\" di Brasil. Kalau kamu meminta *para levar*, kamu juga akan dimengerti — tetapi *para viagem* yang tertulis di papan menu."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Di meja makan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["o café da manhã", "u ka-FÉ da ma-NYAN", "sarapan"],
+            ["o almoço", "u áu-MÔ-su", "makan siang"],
+            ["o jantar", "u zhan-TAH", "makan malam"],
+            ["a sobremesa", "a so-bri-MÊ-za", "pencuci mulut"],
+            ["o cardápio", "u kah-DA-pi-u", "daftar menu"],
+            ["a conta", "a KON-ta", "bon; tagihan"],
+            ["o garçom", "u gah-SON", "pelayan"],
+            ["o prato", "u PRA-tu", "piring; hidangan"],
+            ["o copo", "u KÓ-pu", "gelas"],
+            ["o garfo / a faca", "u GAH-fu / a FA-ka", "garpu / pisau"],
+            ["a colher", "a ko-LYÉH", "sendok"],
+            ["o guardanapo", "u guah-da-NA-pu", "serbet"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *A conta* dan *o cartão* bertemu di kalimat yang akan kamu pakai setiap hari: *A conta, por favor* dan *No cartão, por favor*. Di Brasil, pelayan hampir selalu membawa mesin kartu ke meja, jadi kamu tidak perlu berdiri."
+        }
+      ]
+    },
+    {
+      "title": "Makanan Brasil yang perlu kamu kenali",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Apa itu"],
+          "rows": [
+            ["a feijoada", "a fêi-ZHO-a-da", "rebusan kacang hitam dengan daging — hidangan nasional"],
+            ["o pão de queijo", "u PÁUN dji KÊI-zhu", "roti keju bundar kecil, khas Minas Gerais"],
+            ["a coxinha", "a ko-SYI-nya", "gorengan berisi ayam, bentuknya seperti paha"],
+            ["o açaí", "u a-sa-I", "bubur beku ungu dari buah hutan Amazon"],
+            ["a caipirinha", "a kái-pi-RI-nya", "minuman jeruk nipis dengan cachaça"],
+            ["o churrasco", "u syu-HAS-ku", "daging panggang gaya Brasil"],
+            ["o guaraná", "u gua-ra-NA", "minuman bersoda rasa buah guaraná"],
+            ["o cafezinho", "u ka-fe-ZI-nyu", "kopi kecil manis, disuguhkan di mana-mana"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Cafezinho harfiahnya \"kopi kecil\"**, dan akhiran **-inho** itu perlu kamu kenali sekarang: ia menambahkan rasa kecil, akrab, atau sayang ke kata apa pun. *Um minutinho* (sebentar saja), *obrigadinho* (makasih ya), *amiguinho* (teman kecil). Orang Brasil memakainya terus-menerus, dan ia salah satu ciri yang paling khas dari bahasa mereka."
+        },
+        {
+          "type": "p",
+          "text": "Menolak *cafezinho* di rumah orang Brasil dianggap sedikit dingin — sama seperti menolak teh di rumah orang Indonesia. Kalau kamu tidak minum kopi, jawaban yang aman: *Aceito um copo d'água, obrigado.*"
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — kembali ke unit 7",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Saya makan roti waktu sarapan → *Eu como pão no café da manhã*",
+            "Kamu minum kopi? → *Você bebe café?*",
+            "Kami belajar bahasa Portugis → *Nós aprendemos português*",
+            "Kenapa kamu belajar bahasa Portugis? → *Por que você aprende português?*",
+            "Karena saya ingin tinggal di sini → *Porque eu quero morar aqui*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "querer", "baca": "ke-RÊH", "id": "mau; ingin" },
+    { "pt": "poder", "baca": "po-DÊH", "id": "bisa; boleh" },
+    { "pt": "adorar", "baca": "a-do-RAH", "id": "suka sekali; memuja" },
+    { "pt": "odiar", "baca": "o-dji-AH", "id": "benci" },
+    { "pt": "trazer", "baca": "tra-ZÊH", "id": "membawa (ke sini)" },
+    { "pt": "o almoço", "baca": "u áu-MÔ-su", "id": "makan siang" },
+    { "pt": "o jantar", "baca": "u zhan-TAH", "id": "makan malam" },
+    { "pt": "a sobremesa", "baca": "a so-bri-MÊ-za", "id": "pencuci mulut" },
+    { "pt": "o cardápio", "baca": "u kah-DA-pi-u", "id": "daftar menu" },
+    { "pt": "a conta", "baca": "a KON-ta", "id": "bon; tagihan" },
+    { "pt": "o garçom", "baca": "u gah-SON", "id": "pelayan" },
+    { "pt": "o suco", "baca": "u SU-ku", "id": "jus" },
+    { "pt": "a laranja", "baca": "a la-RAN-zha", "id": "jeruk" },
+    { "pt": "o gelo", "baca": "u ZHÊ-lu", "id": "es" },
+    { "pt": "o açúcar", "baca": "u a-SU-kah", "id": "gula" },
+    { "pt": "o sal", "baca": "u SÁU", "id": "garam" },
+    { "pt": "a cerveja", "baca": "a seh-VÊ-zha", "id": "bir" },
+    { "pt": "a comida", "baca": "a ko-MI-da", "id": "makanan" },
+    { "pt": "gostoso", "baca": "gos-TÔ-zu", "id": "enak" },
+    { "pt": "com / sem", "baca": "kon / séin", "id": "dengan / tanpa" },
+    { "pt": "para mim", "baca": "PRA MIN", "id": "untuk saya" },
+    { "pt": "para viagem", "baca": "PRA vi-A-zhéin", "id": "dibungkus" },
+    { "pt": "o cartão", "baca": "u kah-TÁUN", "id": "kartu" },
+    { "pt": "já", "baca": "zha", "id": "sudah; segera" },
+    { "pt": "alguma coisa", "baca": "áu-GU-ma KÓI-za", "id": "sesuatu" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk querer atau poder yang tepat.",
+      "items": [
+        "Eu ____ um suco de laranja. (querer)",
+        "Você ____ me ajudar? (poder)",
+        "Nós ____ a conta, por favor. (querer)",
+        "Eles não ____ vir hoje. (poder)",
+        "Ela ____ um cafezinho. (querer)",
+        "Eu ____ pagar no cartão? (poder)"
+      ]
+    },
+    {
+      "prompt": "Tambahkan de bila perlu. Kalau tidak perlu, tulis kalimatnya apa adanya.",
+      "items": [
+        "Eu adoro ____ feijoada.",
+        "Eu gosto ____ café.",
+        "Eu odeio ____ cebola.",
+        "Ela não gosta ____ peixe.",
+        "Nós gostamos muito ____ música brasileira."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Saya mau jus jeruk, tolong.",
+        "Tanpa es dan tanpa gula.",
+        "Bisa tolong bawakan satu garpu lagi?",
+        "Minta bonnya, tolong.",
+        "Saya suka banget feijoada.",
+        "Dibungkus, tolong."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "querer / um / vou / suco",
+        "favor / a / por / conta / ,",
+        "gelo / sem / favor / por / ,",
+        "trazer / você / garfo / pode / um / ?",
+        "feijoada / adoro / eu"
+      ]
+    }
+  ],
+  "answers": [
+    "quero — pode — queremos — podem — quer — posso",
+    "Eu adoro feijoada. — Eu gosto de café. — Eu odeio cebola. — Ela não gosta de peixe. — Nós gostamos muito de música brasileira.",
+    "Vou querer um suco de laranja, por favor. — Sem gelo e sem açúcar. — Você pode trazer mais um garfo? — A conta, por favor. — Eu adoro feijoada. — Para viagem, por favor.",
+    "Vou querer um suco. — A conta, por favor. — Sem gelo, por favor. — Você pode trazer um garfo? — Eu adoro feijoada."
+  ]
+}

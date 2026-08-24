@@ -1,0 +1,269 @@
+{
+  "title": "Di kota: tempat dan arah",
+  "title_target": "Onde fica o banco?",
+  "goal": "Menyebut tempat, menanyakan arah, dan menguasai satu mesin kecil yang bekerja di sepanjang sisa modul: **kata depan yang melebur dengan kata sandang**.",
+  "bekal": [
+    "melebur *em* dan *a* dengan kata sandang: *no*, *na*, *ao*, *à*",
+    "menanyakan dan memahami arah sederhana",
+    "memakai *ficar* — kata kerja Brasil untuk \"terletak\" dan sepuluh arti lainnya"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Perdido na Avenida Paulista",
+      "intro": "Budi berdiri di trotoar dengan ponsel yang kehabisan baterai. Ia menghampiri seorang perempuan di halte.",
+      "lines": [
+        { "speaker": "Budi:", "text": "Com licença, você pode me ajudar?", "id": "Permisi, bisa tolong bantu saya?", "literal": "dengan izin, kamu kamu-bisa saya menolong?" },
+        { "speaker": "Mulher:", "text": "Claro! O que você precisa?", "id": "Tentu! Perlu apa?", "literal": "jelas! apa yang kamu kamu-perlu?" },
+        { "speaker": "Budi:", "text": "Onde fica o metrô, por favor?", "id": "Stasiun metro di mana ya?", "literal": "di-mana ia-terletak si metro, tolong?" },
+        { "speaker": "Mulher:", "text": "Fica perto. Você vai reto até a esquina.", "id": "Dekat kok. Jalan lurus sampai perempatan.", "literal": "ia-terletak dekat. kamu kamu-pergi lurus sampai si sudut." },
+        { "speaker": "Budi:", "text": "Reto até a esquina, tá.", "id": "Lurus sampai perempatan, oke.", "literal": "lurus sampai si sudut, oke." },
+        { "speaker": "Mulher:", "text": "Depois vira à direita, na frente do banco.", "id": "Habis itu belok kanan, di depan bank.", "literal": "sesudah belok ke-si kanan, di-si depan dari-si bank." },
+        { "speaker": "Budi:", "text": "É longe daqui?", "id": "Jauh dari sini?", "literal": "adalah jauh dari-sini?" },
+        { "speaker": "Mulher:", "text": "Não, uns cinco minutos a pé.", "id": "Tidak, sekitar lima menit jalan kaki.", "literal": "tidak, beberapa lima menit pada kaki." },
+        { "speaker": "Budi:", "text": "E tem uma farmácia por aqui?", "id": "Ada apotek di sekitar sini?", "literal": "dan ia-punya sebuah apotek lewat sini?" },
+        { "speaker": "Mulher:", "text": "Tem, ao lado da padaria, do outro lado da rua.", "id": "Ada, di sebelah toko roti, di seberang jalan.", "literal": "ia-punya, ke-si sisi dari-si toko-roti, dari-si lain sisi dari-si jalan." },
+        { "speaker": "Budi:", "text": "Muito obrigado! Você salvou o meu dia.", "id": "Terima kasih banyak! Anda menyelamatkan hari saya.", "literal": "sangat terima-kasih! kamu kamu-selamatkan si milikku hari." },
+        { "speaker": "Mulher:", "text": "Imagina! Boa sorte!", "id": "Ah, nggak apa-apa! Semoga berhasil!", "literal": "bayangkan! baik keberuntungan!" }
+      ],
+      "notes": [
+        "**Ficar adalah kata kerja paling Brasil di seluruh modul ini.** Arti dasarnya \"tinggal, berada\", tetapi ia dipakai untuk selusin hal: **terletak** (*Onde fica o metrô?*), **menjadi** (*Fiquei feliz* = saya jadi senang), **tetap tinggal** (*Vou ficar em casa*), dan bahkan **pacaran tanpa status** (*ficar com alguém*) — arti terakhir itu khas anak muda Brasil dan tidak ada padanannya di bahasa mana pun. Untuk menanyakan letak sesuatu, *ficar* jauh lebih sering dipakai daripada *estar*.",
+        "**Imagina!** adalah jawaban khas Brasil untuk terima kasih. Harfiahnya \"bayangkan!\", artinya \"ah, jangan sungkan\". Bersama *de nada* dan *por nada*, ia salah satu dari tiga cara membalas *obrigado* — dan yang paling hangat.",
+        "**Uns cinco minutos** = \"kira-kira lima menit\". Menaruh *uns/umas* di depan angka mengubahnya jadi perkiraan: *umas dez pessoas* (kira-kira sepuluh orang). Ini cara paling ringkas untuk tidak terdengar terlalu pasti.",
+        "**À direita, dengan tanda aksen kubur.** Tanda `à` bukan hiasan: ia menandai bahwa kata depan *a* sudah melebur dengan kata sandang *a*. Dua *a* menjadi satu huruf dengan topi terbalik. Aturannya dipasang di tabel berikut.",
+        "**Tá** adalah *está* yang dipotong, dan di sini ia berarti \"oke\" — persis seperti \"oke\" dalam bahasa Indonesia. Kamu akan mendengarnya di ujung hampir setiap kalimat orang Brasil: *Vamos, tá?*"
+      ],
+      "grammars": [
+        {
+          "title": "Em + kata sandang: mesin pertama",
+          "body": [
+            "*Em* berarti \"di, di dalam, pada\". Ia **wajib** melebur dengan kata sandang yang mengikutinya — menuliskannya terpisah adalah kesalahan, bukan pilihan gaya."
+          ],
+          "table": {
+            "head": ["em +", "jadi", "Contoh", "Arti"],
+            "rows": [
+              ["em + o", "**no**", "*no banco*", "di bank"],
+              ["em + a", "**na**", "*na rua*", "di jalan"],
+              ["em + os", "**nos**", "*nos hotéis*", "di hotel-hotel itu"],
+              ["em + as", "**nas**", "*nas lojas*", "di toko-toko itu"],
+              ["em + um", "**num**", "*num restaurante*", "di sebuah restoran"],
+              ["em + uma", "**numa**", "*numa casa*", "di sebuah rumah"],
+              ["em + este", "**neste**", "*neste mês*", "pada bulan ini"]
+            ]
+          },
+          "after": [
+            "**Nama negara dan kota mengikuti aturan sandangnya masing-masing.** *No Brasil*, *no Japão*, *na Indonésia*, *na França* — karena negara-negara itu memang memakai kata sandang. Tetapi kota hampir tidak pernah: *em São Paulo*, *em Jacarta*, *em Lisboa*, tanpa apa pun di depannya.",
+            "⚠️ Satu pengecualian yang perlu dihafal: **em casa** berarti \"di rumah\" (rumah sendiri), tanpa sandang. *Estou em casa* = saya sedang di rumah. Kalau kamu mengatakan *estou na casa*, orang akan bertanya \"rumah siapa?\""
+          ]
+        },
+        {
+          "title": "A + kata sandang: mesin kedua",
+          "body": [
+            "*A* berarti \"ke\" (arah) dan \"pada\" (waktu). Ia melebur dengan cara yang sama, tetapi hasilnya berbentuk aksen."
+          ],
+          "table": {
+            "head": ["a +", "jadi", "Contoh", "Arti"],
+            "rows": [
+              ["a + o", "**ao**", "*ao banco*", "ke bank"],
+              ["a + a", "**à**", "*à direita*", "ke kanan"],
+              ["a + os", "**aos**", "*aos domingos*", "setiap hari Minggu"],
+              ["a + as", "**às**", "*às oito horas*", "pada pukul delapan"]
+            ]
+          },
+          "after": [
+            "**Tanda pada à disebut crase, dan ia tidak mengubah bunyi sama sekali** — *à* dan *a* dibaca persis sama. Ia semata penanda tulis bahwa dua kata sudah melebur. Orang Brasil sendiri sering salah menaruhnya, jadi jangan terlalu cemas; yang penting kamu bisa membacanya.",
+            "**Di Brasil, para lebih sering dipakai daripada a untuk arah.** *Vou para o Rio* terdengar lebih alami daripada *Vou ao Rio*. Dan *para* juga melebur, tetapi hanya dalam ucapan: *pro* (para+o) dan *pra* (para+a). Kamu akan melihat *pra* tertulis di mana-mana di media sosial Brasil, meskipun buku tata bahasa belum mengakuinya."
+          ]
+        },
+        {
+          "title": "Kata depan tempat",
+          "body": [
+            "Semua yang berakhiran *de* akan melebur dengan sandang berikutnya, jadi perhatikan *do* dan *da* yang muncul berulang-ulang."
+          ],
+          "table": {
+            "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+            "rows": [
+              ["em cima **de**", "en SI-ma dji", "di atas"],
+              ["embaixo **de**", "en-BÁI-syu dji", "di bawah"],
+              ["ao lado **de**", "áu LA-du dji", "di sebelah"],
+              ["na frente **de**", "na FREN-tchi dji", "di depan"],
+              ["atrás **de**", "a-TRÁIS dji", "di belakang"],
+              ["dentro **de**", "DEN-tru dji", "di dalam"],
+              ["fora **de**", "FÓ-ra dji", "di luar"],
+              ["entre", "EN-tri", "di antara"],
+              ["perto **de**", "PÊH-tu dji", "dekat dengan"],
+              ["longe **de**", "LON-zhi dji", "jauh dari"],
+              ["do outro lado **de**", "du Ô-tru LA-du dji", "di seberang"]
+            ]
+          },
+          "after": [
+            "Contoh utuhnya: *O banco fica ao lado **da** padaria* (Bank itu di sebelah toko roti), *A chave está em cima **da** mesa* (Kuncinya di atas meja), *Eu moro perto **do** metrô* (Saya tinggal dekat metro).",
+            "⚠️ Perhatikan *entre* — ia satu-satunya di daftar itu yang **tidak** memakai *de*: *entre o banco e a farmácia* (di antara bank dan apotek)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tempat di kota",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Hafalkan dengan sandangnya, seperti biasa."
+        },
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["o banco", "u BAN-ku", "bank"],
+            ["a farmácia", "a fah-MA-si-a", "apotek"],
+            ["a padaria", "a pa-da-RI-a", "toko roti"],
+            ["o mercado", "u meh-KA-du", "pasar; toko bahan makanan"],
+            ["o supermercado", "u su-peh-meh-KA-du", "supermarket"],
+            ["a loja", "a LÔ-zha", "toko"],
+            ["o shopping", "u SYÓ-pin", "mal"],
+            ["a praça", "a PRA-sa", "alun-alun; taman kota"],
+            ["a igreja", "a i-GRÊ-zha", "gereja"],
+            ["o hospital", "u os-pi-TÁU", "rumah sakit"],
+            ["a escola", "a is-KÓ-la", "sekolah"],
+            ["o metrô", "u me-TRÔ", "kereta bawah tanah"],
+            ["o ponto de ônibus", "u PON-tu dji Ô-ni-bus", "halte bus"],
+            ["a praia", "a PRÁI-a", "pantai"],
+            ["o banheiro", "u ba-NYÊI-ru", "kamar kecil"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *O banheiro* adalah kata yang paling sering kamu butuhkan dan paling gampang salah diucapkan. *Onde fica o banheiro?* — hafalkan utuh sekarang juga. Di Brasil kata itu dipakai di mana saja, dari restoran sampai kantor; *toalete* terdengar seperti sedang membaca papan bandara."
+        }
+      ]
+    },
+    {
+      "title": "Menanyakan dan memberi arah",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["Onde fica…?", "ON-dji FI-ka", "Di mana letak…?"],
+            ["Como eu chego lá?", "KÔ-mu ê-u SYÊ-gu LA", "Bagaimana saya ke sana?"],
+            ["É longe daqui?", "é LON-zhi da-KI", "Jauh dari sini?"],
+            ["Vai reto.", "vái HÉ-tu", "Jalan lurus."],
+            ["Vira à direita.", "VI-ra a dji-RÊI-ta", "Belok kanan."],
+            ["Vira à esquerda.", "VI-ra a is-KÊH-da", "Belok kiri."],
+            ["Na esquina", "na is-KI-na", "Di perempatan/pojok"],
+            ["a pé", "a PÉ", "jalan kaki"],
+            ["de ônibus", "dji Ô-ni-bus", "naik bus"],
+            ["de carro", "dji KA-hu", "naik mobil"],
+            ["Estou perdido.", "is-TÔ peh-DJI-du", "Saya tersesat."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Perhatikan pola alat angkut: **de** ônibus, **de** carro, **de** metrô, **de** avião — tetapi **a** pé untuk jalan kaki. Satu pengecualian, dan itulah yang paling sering dipakai."
+        },
+        {
+          "type": "p",
+          "text": "Kalimat *Estou perdido* jauh lebih berguna daripada kelihatannya. Di Brasil, mengucapkannya kepada orang asing di jalan hampir selalu menghasilkan bantuan yang berlebihan — kadang sampai diantar langsung ke tujuan."
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — kembali ke unit 6",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tutup kolom Portugisnya."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Saya belajar setiap hari → *Eu estudo todo dia*",
+            "Kamu kerja di mana? → *Onde você trabalha?*",
+            "Saya suka kopi → *Eu gosto de café*",
+            "Kami menari tiap Sabtu → *Nós dançamos todo sábado*",
+            "Semua orang menari di Brasil → *Todo mundo dança no Brasil*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "ficar", "baca": "fi-KAH", "id": "terletak; tinggal; menjadi" },
+    { "pt": "o banco", "baca": "u BAN-ku", "id": "bank" },
+    { "pt": "a farmácia", "baca": "a fah-MA-si-a", "id": "apotek" },
+    { "pt": "a padaria", "baca": "a pa-da-RI-a", "id": "toko roti" },
+    { "pt": "o mercado", "baca": "u meh-KA-du", "id": "pasar" },
+    { "pt": "a loja", "baca": "a LÔ-zha", "id": "toko" },
+    { "pt": "a praça", "baca": "a PRA-sa", "id": "alun-alun" },
+    { "pt": "o metrô", "baca": "u me-TRÔ", "id": "kereta bawah tanah" },
+    { "pt": "o ônibus", "baca": "u Ô-ni-bus", "id": "bus" },
+    { "pt": "a praia", "baca": "a PRÁI-a", "id": "pantai" },
+    { "pt": "o banheiro", "baca": "u ba-NYÊI-ru", "id": "kamar kecil" },
+    { "pt": "a esquina", "baca": "a is-KI-na", "id": "pojok; perempatan" },
+    { "pt": "reto", "baca": "HÉ-tu", "id": "lurus" },
+    { "pt": "à direita / à esquerda", "baca": "a dji-RÊI-ta / a is-KÊH-da", "id": "ke kanan / ke kiri" },
+    { "pt": "virar", "baca": "vi-RAH", "id": "belok; berbalik" },
+    { "pt": "perto / longe", "baca": "PÊH-tu / LON-zhi", "id": "dekat / jauh" },
+    { "pt": "ao lado de", "baca": "áu LA-du dji", "id": "di sebelah" },
+    { "pt": "na frente de", "baca": "na FREN-tchi dji", "id": "di depan" },
+    { "pt": "atrás de", "baca": "a-TRÁIS dji", "id": "di belakang" },
+    { "pt": "em cima de", "baca": "en SI-ma dji", "id": "di atas" },
+    { "pt": "embaixo de", "baca": "en-BÁI-syu dji", "id": "di bawah" },
+    { "pt": "entre", "baca": "EN-tri", "id": "di antara" },
+    { "pt": "a pé", "baca": "a PÉ", "id": "jalan kaki" },
+    { "pt": "o minuto", "baca": "u mi-NU-tu", "id": "menit" },
+    { "pt": "Imagina!", "baca": "i-ma-ZHI-na", "id": "Ah, jangan sungkan!" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Lebur kata depannya dengan kata sandang.",
+      "items": [
+        "em + o banco",
+        "em + a rua",
+        "em + um restaurante",
+        "a + o mercado",
+        "a + a esquerda",
+        "de + a padaria"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk leburan yang tepat.",
+      "items": [
+        "Eu moro ____ Brasil. (em)",
+        "Ela trabalha ____ escola. (em)",
+        "O livro está ____ mesa. (em cima de)",
+        "A farmácia fica ____ padaria. (ao lado de)",
+        "Eu vou ____ mercado. (a)",
+        "Vira ____ direita. (a)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Di mana letak kamar kecilnya?",
+        "Bank itu di sebelah toko roti.",
+        "Jauh dari sini?",
+        "Sekitar lima menit jalan kaki.",
+        "Saya tinggal dekat metro.",
+        "Saya tersesat."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "metrô / fica / onde / o / ?",
+        "reto / vai / esquina / até / você / a",
+        "daqui / longe / é / ?",
+        "banco / fica / do / lado / a / farmácia / ao",
+        "perdido / estou / eu"
+      ]
+    }
+  ],
+  "answers": [
+    "no banco — na rua — num restaurante — ao mercado — à esquerda — da padaria",
+    "no — na — em cima da — ao lado da — ao — à",
+    "Onde fica o banheiro? — O banco fica ao lado da padaria. — É longe daqui? — Uns cinco minutos a pé. — Eu moro perto do metrô. — Estou perdido.",
+    "Onde fica o metrô? — Você vai reto até a esquina. — É longe daqui? — A farmácia fica ao lado do banco. — Eu estou perdido."
+  ]
+}

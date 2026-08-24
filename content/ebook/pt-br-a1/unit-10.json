@@ -1,0 +1,542 @@
+{
+  "title": "Jam dan rutinitas harian",
+  "title_target": "Que horas são?",
+  "goal": "Menyebut jam dengan benar, menceritakan rutinitas sehari — dan menemukan satu jebakan yang khusus menjegal penutur bahasa Indonesia: **\"setengah delapan\" dan *sete e meia* bukan jam yang sama**.",
+  "bekal": [
+    "menyebut dan menanyakan jam, termasuk setengah dan seperempat",
+    "memakai kata kerja diri (*acordar*, *levantar-se*, *deitar-se*) untuk menceritakan rutinitas",
+    "menghindari jebakan \"setengah\" yang membalik arti"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — A rotina de um dia comum",
+      "intro": "Carla dan Budi menunggu bus. Percakapan berpindah ke jadwal harian masing-masing.",
+      "lines": [
+        {
+          "speaker": "Carla:",
+          "text": "Que horas você acorda?",
+          "id": "Kamu bangun jam berapa?",
+          "literal": "apa jam-jam kamu kamu-bangun?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Acordo às seis da manhã, todo dia.",
+          "id": "Saya bangun jam enam pagi, tiap hari.",
+          "literal": "saya-bangun pada-si enam dari-si pagi, setiap hari."
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Tão cedo! Eu acordo às nove.",
+          "id": "Pagi banget! Saya bangun jam sembilan.",
+          "literal": "begitu awal! saya saya-bangun pada-si sembilan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "E a aula começa às dez, né?",
+          "id": "Dan kelasnya mulai jam sepuluh, kan?",
+          "literal": "dan si kelas ia-mulai pada-si sepuluh, kan?"
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Começa. Termina ao meio-dia e meia.",
+          "id": "Iya. Selesai jam setengah satu.",
+          "literal": "ia-mulai. ia-selesai pada-si tengah-hari dan setengah."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Depois eu almoço e trabalho até as sete e meia.",
+          "id": "Habis itu saya makan siang dan bekerja sampai jam setengah delapan.",
+          "literal": "sesudah saya saya-makan-siang dan saya-bekerja sampai si tujuh dan setengah."
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Nossa, que dia cheio! A que horas você janta?",
+          "id": "Aduh, penuh banget harinya! Kamu makan malam jam berapa?",
+          "literal": "aduh, betapa hari penuh! pada apa jam-jam kamu kamu-makan-malam?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Por volta das oito. Depois eu descanso.",
+          "id": "Sekitar jam delapan. Habis itu saya istirahat.",
+          "literal": "pada putaran dari-si delapan. sesudah saya saya-istirahat."
+        },
+        {
+          "speaker": "Carla:",
+          "text": "E você dorme cedo?",
+          "id": "Dan kamu tidur cepat?",
+          "literal": "dan kamu kamu-tidur awal?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Durmo à meia-noite. Nunca antes.",
+          "id": "Saya tidur jam dua belas malam. Tidak pernah sebelum itu.",
+          "literal": "saya-tidur pada-si tengah-malam. tidak-pernah sebelum."
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Então você dorme só seis horas!",
+          "id": "Berarti kamu cuma tidur enam jam!",
+          "literal": "maka kamu kamu-tidur cuma enam jam-jam!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pois é. Por isso eu estou sempre cansado.",
+          "id": "Iya begitulah. Makanya saya selalu capek.",
+          "literal": "maka adalah. untuk itu saya saya-berada selalu capek."
+        }
+      ],
+      "notes": [
+        "⚠️ **Jebakan terbesar unit ini: *sete e meia* bukan \"setengah tujuh\".** Bahasa Portugis menghitung **maju** dari jam yang sudah lewat: *sete e meia* = \"tujuh dan setengah\" = **07.30**. Bahasa Indonesia menghitung **mundur** ke jam yang akan datang: \"setengah tujuh\" = 06.30. Jadi keduanya **berselisih satu jam penuh**, dan salah menerjemahkannya berarti datang satu jam lebih awal atau lebih lambat. Ini kebalikan dari hadiah yang didapat pelajar bahasa Hungaria atau Islandia, yang justru memakai cara hitung mundur seperti bahasa Indonesia.",
+        "**Né?** adalah kata paling khas Brasil di seluruh modul ini. Ia potongan dari *não é?* dan berarti \"kan?\" — persis seperti \"kan\" dalam bahasa Indonesia, termasuk cara memakainya di ujung kalimat untuk minta persetujuan. Kalau kamu cuma boleh mengambil satu kebiasaan dari unit ini, ambil yang ini.",
+        "**Pois é** adalah ungkapan yang hampir tak bisa diterjemahkan. Harfiahnya \"maka adalah\", tetapi artinya kira-kira \"iya, begitulah\", \"ya mau gimana lagi\". Orang Brasil memakainya untuk menyetujui sesuatu yang sedikit menyedihkan atau sudah tidak bisa diubah.",
+        "**Por volta das oito** = \"sekitar jam delapan\". Perhatikan *das* — leburan *de* + *as*, karena *horas* perempuan jamak. Cara lain yang lebih santai: *lá pelas oito*."
+      ],
+      "grammars": [
+        {
+          "title": "Menyebut jam",
+          "body": [
+            "Pertanyaannya selalu *Que horas são?* dan jawabannya memakai *ser* — dalam bentuk **jamak**, karena jam-nya banyak."
+          ],
+          "table": {
+            "head": [
+              "Jam",
+              "Português",
+              "Cara baca"
+            ],
+            "rows": [
+              [
+                "01.00",
+                "**É** uma hora.",
+                "é U-ma Ó-ra"
+              ],
+              [
+                "02.00",
+                "**São** duas horas.",
+                "sáun DU-as Ó-ras"
+              ],
+              [
+                "04.30",
+                "São quatro **e meia**.",
+                "sáun KUA-tru i MÊI-a"
+              ],
+              [
+                "07.30",
+                "São sete **e meia**.",
+                "sáun SÉ-tchi i MÊI-a"
+              ],
+              [
+                "12.00",
+                "É **meio-dia**.",
+                "é MÊI-u DJI-a"
+              ],
+              [
+                "00.00",
+                "É **meia-noite**.",
+                "é MÊI-a NÓI-tchi"
+              ],
+              [
+                "20.00",
+                "São oito **da noite**.",
+                "sáun ÓI-tu da NÓI-tchi"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Cuma jam satu yang memakai *é*.** Semua jam lain memakai *são*, karena secara tata bahasa mereka jamak. Begitu juga *é meio-dia* dan *é meia-noite* — dua-duanya tunggal.",
+            "**Duas horas, bukan dois horas.** *Hora* perempuan, jadi angka duanya ikut berubah. Ini penerapan langsung aturan dari unit 4, dan ia muncul setiap kali kamu menyebut jam dua.",
+            "**Dalam kehidupan sehari-hari, orang Brasil memakai hitungan 24 jam untuk hal resmi** (jadwal bus, film, janji dokter): *o filme é às dezenove e trinta*. Tetapi dalam percakapan, mereka kembali ke hitungan 12 jam dan menambahkan *da manhã*, *da tarde*, *da noite*."
+          ]
+        },
+        {
+          "title": "Kata kerja diri: rutinitas pagi",
+          "body": [
+            "Beberapa kata kerja memerlukan kata ganti kecil karena pelakunya melakukan sesuatu **kepada dirinya sendiri**. Bahasa Indonesia menyelesaikan ini tanpa kata tambahan apa pun, jadi seluruh pola ini baru."
+          ],
+          "table": {
+            "head": [
+              "Português",
+              "Harfiah",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "Eu **me** levanto às seis.",
+                "saya diri-saya angkat",
+                "Saya bangun jam enam."
+              ],
+              [
+                "Eu **me** visto rápido.",
+                "saya diri-saya pakaikan",
+                "Saya cepat berpakaian."
+              ],
+              [
+                "Eu **me** arrumo.",
+                "saya diri-saya rapikan",
+                "Saya berdandan."
+              ],
+              [
+                "Eu **me** deito tarde.",
+                "saya diri-saya baringkan",
+                "Saya tidur larut."
+              ]
+            ]
+          },
+          "after": [
+            "**Di Brasil, kata ganti kecilnya berdiri di depan kata kerja** — *eu me levanto*, bukan *eu levanto-me*. Bentuk kedua itu benar di Portugal dan terdengar sangat kaku di Brasil. Sekali lagi, modul ini memakai bentuk Brasil.",
+            "Bentuknya cuma tiga yang perlu kamu kuasai: **me** (saya), **se** (kamu, dia, mereka), **nos** (kami). Karena *você* dan *ele* memakai bentuk yang sama, kamu praktis cuma menghafal dua."
+          ]
+        },
+        {
+          "title": "Kata kerja rutinitas",
+          "body": [
+            "Beberapa di antaranya tak beraturan. Bentuk \"saya\" yang menyimpang ditandai."
+          ],
+          "table": {
+            "head": [
+              "Português",
+              "eu…",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "acordar",
+                "acordo",
+                "bangun tidur"
+              ],
+              [
+                "levantar-se",
+                "me levanto",
+                "bangkit dari kasur"
+              ],
+              [
+                "tomar banho",
+                "tomo banho",
+                "mandi"
+              ],
+              [
+                "sair",
+                "**saio**",
+                "keluar; berangkat"
+              ],
+              [
+                "almoçar",
+                "almoço",
+                "makan siang"
+              ],
+              [
+                "jantar",
+                "janto",
+                "makan malam"
+              ],
+              [
+                "dormir",
+                "**durmo**",
+                "tidur"
+              ],
+              [
+                "começar",
+                "começo",
+                "mulai"
+              ]
+            ]
+          },
+          "after": [
+            "**Tomar banho harfiahnya \"mengambil mandi\"** dan itu satu-satunya cara mengatakan \"mandi\" di Brasil. Dan *tomar café* berarti sarapan sekaligus \"minum kopi\" — konteks yang membedakan.",
+            "⚠️ *Sair* berarti \"keluar\" dan juga \"pergi bersenang-senang\": *Vamos sair hoje?* = \"Mau keluar main hari ini?\". Bentuk \"saya\"-nya menyimpang jadi *saio* (dibaca SÁI-u)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bertanya soal waktu",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Que horas são?",
+              "ki Ó-ras SÁUN",
+              "Jam berapa sekarang?"
+            ],
+            [
+              "A que horas…?",
+              "a ki Ó-ras",
+              "Jam berapa…? (untuk kegiatan)"
+            ],
+            [
+              "Por volta das…",
+              "poh VÔU-ta das",
+              "Sekitar jam…"
+            ],
+            [
+              "cedo / tarde",
+              "SÊ-du / TAH-dji",
+              "awal / terlambat"
+            ],
+            [
+              "antes / depois",
+              "AN-tchis / de-PÓIS",
+              "sebelum / sesudah"
+            ],
+            [
+              "de manhã",
+              "dji ma-NYAN",
+              "pagi hari"
+            ],
+            [
+              "da manhã",
+              "da ma-NYAN",
+              "pagi (menempel pada jam)"
+            ],
+            [
+              "até",
+              "a-TÉ",
+              "sampai"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Perhatikan pasangan *de manhã* dan *da manhã*. Yang pertama berdiri sendiri (*Eu estudo de manhã* = saya belajar pagi hari); yang kedua menempel pada jam (*às seis da manhã* = jam enam pagi). Salah satu kesalahan kecil yang paling sering muncul, dan paling gampang dihindari begitu kamu menyadarinya."
+        },
+        {
+          "type": "p",
+          "text": "Untuk membuat janji, dua kalimat ini cukup: *A que horas a gente se encontra?* (\"Kita ketemu jam berapa?\") dan *Pode ser às três?* (\"Jam tiga bisa?\")."
+        }
+      ]
+    },
+    {
+      "title": "Satu hari Budi, dari bangun sampai tidur",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bacalah keras-keras dua kali. Paragraf ini memakai hampir semua kata kerja unit ini dalam satu rangkaian yang wajar."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Jam",
+            "Português",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "06.00",
+              "*Eu acordo às seis.*",
+              "Saya bangun jam enam."
+            ],
+            [
+              "07.00",
+              "*Saio de casa e vou de metrô.*",
+              "Saya keluar rumah dan naik metro."
+            ],
+            [
+              "10.00",
+              "*A aula começa às dez.*",
+              "Kelasnya mulai jam sepuluh."
+            ],
+            [
+              "12.30",
+              "*Almoço ao meio-dia e meia.*",
+              "Saya makan siang jam setengah satu."
+            ],
+            [
+              "19.30",
+              "*Termino às sete e meia.*",
+              "Saya selesai jam setengah delapan."
+            ],
+            [
+              "20.00",
+              "*Janto por volta das oito.*",
+              "Saya makan malam sekitar jam delapan."
+            ],
+            [
+              "00.00",
+              "*Durmo à meia-noite.*",
+              "Saya tidur jam dua belas malam."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Latihan terbaik untuk unit ini: tulis ulang tabel itu dengan jam dan kegiatanmu sendiri. Sepuluh kalimat tentang hidupmu sendiri menempel jauh lebih kuat daripada seratus kalimat tentang hidup orang lain."
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — kembali ke unit 8",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Di mana letak kamar kecilnya? → *Onde fica o banheiro?*",
+            "Bank itu di sebelah toko roti → *O banco fica ao lado da padaria*",
+            "Saya tinggal dekat metro → *Eu moro perto do metrô*",
+            "Kuncinya di atas meja → *A chave está em cima da mesa*",
+            "Belok kanan di perempatan → *Vira à direita na esquina*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pt": "a hora",
+      "baca": "a Ó-ra",
+      "id": "jam (satuan waktu)"
+    },
+    {
+      "pt": "meia",
+      "baca": "MÊI-a",
+      "id": "setengah (tiga puluh menit)"
+    },
+    {
+      "pt": "meio-dia",
+      "baca": "MÊI-u DJI-a",
+      "id": "tengah hari"
+    },
+    {
+      "pt": "meia-noite",
+      "baca": "MÊI-a NÓI-tchi",
+      "id": "tengah malam"
+    },
+    {
+      "pt": "acordar",
+      "baca": "a-koh-DAH",
+      "id": "bangun tidur"
+    },
+    {
+      "pt": "levantar-se",
+      "baca": "le-van-TAH-si",
+      "id": "bangkit dari kasur"
+    },
+    {
+      "pt": "tomar banho",
+      "baca": "to-MAH BA-nyu",
+      "id": "mandi"
+    },
+    {
+      "pt": "sair",
+      "baca": "sa-IH",
+      "id": "keluar; pergi main"
+    },
+    {
+      "pt": "almoçar",
+      "baca": "áu-mo-SAH",
+      "id": "makan siang"
+    },
+    {
+      "pt": "jantar",
+      "baca": "zhan-TAH",
+      "id": "makan malam"
+    },
+    {
+      "pt": "dormir",
+      "baca": "doh-MIH",
+      "id": "tidur"
+    },
+    {
+      "pt": "começar",
+      "baca": "ko-me-SAH",
+      "id": "mulai"
+    },
+    {
+      "pt": "terminar",
+      "baca": "teh-mi-NAH",
+      "id": "selesai"
+    },
+    {
+      "pt": "descansar",
+      "baca": "dis-kan-SAH",
+      "id": "beristirahat"
+    },
+    {
+      "pt": "cedo / tarde",
+      "baca": "SÊ-du / TAH-dji",
+      "id": "awal / terlambat"
+    },
+    {
+      "pt": "antes / depois",
+      "baca": "AN-tchis / de-PÓIS",
+      "id": "sebelum / sesudah"
+    },
+    {
+      "pt": "até",
+      "baca": "a-TÉ",
+      "id": "sampai"
+    },
+    {
+      "pt": "né?",
+      "baca": "né",
+      "id": "kan?"
+    },
+    {
+      "pt": "Pois é.",
+      "baca": "póis É",
+      "id": "Iya, begitulah."
+    },
+    {
+      "pt": "por volta de",
+      "baca": "poh VÔU-ta dji",
+      "id": "sekitar (jam)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis jamnya dalam bahasa Portugis.",
+      "items": [
+        "01.00",
+        "02.00",
+        "04.30",
+        "07.15",
+        "12.00",
+        "00.00"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+      "items": [
+        "Eu ____ às seis da manhã. (acordar)",
+        "Eu ____ à meia-noite. (dormir)",
+        "Eu ____ de casa às sete. (sair)",
+        "A aula ____ às dez. (começar)",
+        "Eu me ____ cedo. (levantar)",
+        "Nós ____ ao meio-dia. (almoçar)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis. Hati-hati dengan jamnya.",
+      "items": [
+        "Jam berapa sekarang?",
+        "Sekarang jam setengah delapan malam.",
+        "Kamu bangun jam berapa?",
+        "Saya bangun jam enam pagi.",
+        "Kelasnya mulai jam sepuluh, kan?",
+        "Saya tidur jam dua belas malam."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "horas / que / são / ?",
+        "seis / acordo / às / eu",
+        "meia / e / são / sete",
+        "horas / você / a / acorda / que / ?",
+        "meia-noite / durmo / à / eu"
+      ]
+    }
+  ],
+  "answers": [
+    "É uma hora. — São duas horas. — São quatro e meia. — São sete e quinze. — É meio-dia. — É meia-noite.",
+    "acordo — durmo — saio — começa — levanto — almoçamos",
+    "Que horas são? — São sete e meia da noite. — Que horas você acorda? — Eu acordo às seis da manhã. — A aula começa às dez, né? — Eu durmo à meia-noite.",
+    "Que horas são? — Eu acordo às seis. — São sete e meia. — A que horas você acorda? — Eu durmo à meia-noite."
+  ]
+}

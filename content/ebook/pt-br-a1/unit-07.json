@@ -1,0 +1,261 @@
+{
+  "title": "Dua rombongan sisanya, dan cara bertanya",
+  "title_target": "O que, quem, onde, quando",
+  "goal": "Menutup seluruh kata kerja bentuk sekarang dengan menambahkan rombongan **-er** dan **-ir**, lalu memasang delapan kata tanya yang membuka percakapan sungguhan.",
+  "bekal": [
+    "mengubah kata kerja -er dan -ir untuk lima pelaku",
+    "memakai delapan kata tanya tanpa mengubah susunan kalimat",
+    "menjawab pertanyaan dengan mengulang kata kerjanya, seperti orang Brasil"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Uma entrevista rápida",
+      "intro": "Tugas kelas: setiap murid mewawancarai teman sebangkunya dengan sepuluh pertanyaan.",
+      "lines": [
+        { "speaker": "Carla:", "text": "Onde você mora, Budi?", "id": "Kamu tinggal di mana, Budi?", "literal": "di-mana kamu kamu-tinggal, Budi?" },
+        { "speaker": "Budi:", "text": "Moro perto daqui, na Vila Mariana.", "id": "Saya tinggal dekat sini, di Vila Mariana.", "literal": "saya-tinggal dekat dari-sini, di-si Vila Mariana." },
+        { "speaker": "Carla:", "text": "Com quem você mora?", "id": "Kamu tinggal sama siapa?", "literal": "dengan siapa kamu kamu-tinggal?" },
+        { "speaker": "Budi:", "text": "Com dois amigos. A gente divide um apartamento.", "id": "Sama dua teman. Kami berbagi satu apartemen.", "literal": "dengan dua teman. kami kami-bagi satu apartemen." },
+        { "speaker": "Carla:", "text": "O que você come no café da manhã?", "id": "Kamu makan apa waktu sarapan?", "literal": "apa yang kamu kamu-makan di-si kopi dari-si pagi?" },
+        { "speaker": "Budi:", "text": "Como pão com queijo e bebo café.", "id": "Saya makan roti keju dan minum kopi.", "literal": "saya-makan roti dengan keju dan saya-minum kopi." },
+        { "speaker": "Carla:", "text": "Você bebe café puro?", "id": "Kamu minum kopi tanpa gula?", "literal": "kamu kamu-minum kopi murni?" },
+        { "speaker": "Budi:", "text": "Bebo. E você, o que você prefere?", "id": "Iya. Kalau kamu, sukanya apa?", "literal": "saya-minum. dan kamu, apa yang kamu kamu-lebih-suka?" },
+        { "speaker": "Carla:", "text": "Prefiro chá. Por que você aprende português?", "id": "Saya lebih suka teh. Kenapa kamu belajar bahasa Portugis?", "literal": "saya-lebih-suka teh. untuk apa kamu kamu-belajar Portugis?" },
+        { "speaker": "Budi:", "text": "Porque eu quero morar aqui.", "id": "Karena saya ingin tinggal di sini.", "literal": "karena saya saya-ingin tinggal di-sini." },
+        { "speaker": "Carla:", "text": "Quando você volta para a Indonésia?", "id": "Kapan kamu pulang ke Indonesia?", "literal": "kapan kamu kamu-kembali untuk si Indonesia?" },
+        { "speaker": "Budi:", "text": "Não sei ainda. Talvez em dezembro.", "id": "Belum tahu. Mungkin Desember.", "literal": "tidak saya-tahu belum. mungkin pada Desember." }
+      ],
+      "notes": [
+        "**Por que dan porque — dua kata yang beda satu spasi.** *Por que* (dua kata) berarti \"kenapa\" dan dipakai untuk bertanya; *porque* (satu kata) berarti \"karena\" dan dipakai untuk menjawab. Bunyinya sama persis, jadi telinga tidak membedakan keduanya — cuma tangan yang perlu berhati-hati.",
+        "**Menjawab dengan mengulang kata kerjanya, sekali lagi.** *Você bebe café puro?* → *Bebo.* Perhatikan bahwa yang diulang bukan bentuk pertanyaannya (*bebe*) melainkan bentuk **untuk saya** (*bebo*). Ini yang membuat kebiasaan menjawab begini sekaligus melatih perubahan kata kerja.",
+        "**Café da manhã harfiahnya \"kopi pagi\"**, dan artinya sarapan — di Brasil, sarapan memang didefinisikan oleh kopinya. *Café puro* berarti kopi tanpa gula, dan pertanyaan itu perlu ditanyakan karena di Brasil kopi datang **sudah manis** kecuali kamu meminta sebaliknya.",
+        "**Preferir punya perubahan di pangkalnya**: *eu pref**i**ro*, tetapi *você pref**e**re*. Huruf *e* berubah jadi *i* hanya untuk \"saya\". Sekelompok kecil kata kerja -ir berkelakuan begini, dan semuanya dikumpulkan di unit 12.",
+        "**Talvez** berarti \"mungkin\" dan sangat sering dipakai untuk melunakkan jawaban. Bersama *não sei ainda* (\"belum tahu\"), ia perkakas sopan untuk tidak menjawab tanpa terdengar menghindar."
+      ],
+      "grammars": [
+        {
+          "title": "Kata kerja -er dan -ir",
+          "body": [
+            "Dua rombongan yang tersisa, dan kabar baiknya: ujungnya hampir sama. Bandingkan ketiganya berdampingan."
+          ],
+          "table": {
+            "head": ["Pelaku", "-ar: falar", "-er: comer", "-ir: abrir"],
+            "rows": [
+              ["eu", "fal**o**", "com**o**", "abr**o**"],
+              ["você / ele / ela", "fal**a**", "com**e**", "abr**e**"],
+              ["nós", "fal**amos**", "com**emos**", "abr**imos**"],
+              ["vocês / eles / elas", "fal**am**", "com**em**", "abr**em**"],
+              ["a gente", "fal**a**", "com**e**", "abr**e**"]
+            ]
+          },
+          "after": [
+            "**Baris pertama sama untuk ketiganya.** Bentuk \"saya\" selalu berakhiran **-o**, tanpa kecuali di seluruh kata kerja beraturan. Ini penyederhanaan yang layak disyukuri.",
+            "**Rombongan -er dan -ir cuma berbeda di satu baris**: bentuk *nós* (*comemos* lawan *abrimos*). Empat baris lainnya identik. Jadi sesungguhnya kamu tidak sedang menghafal tiga sistem, melainkan satu setengah.",
+            "⚠️ Ingat cara baca *-em* di ujung: **éin**. Jadi *comem* berbunyi KÔ-méin dan *abrem* berbunyi A-bréin. Bandingkan dengan *-am* yang berbunyi **áun** (*falam* = FA-láun). Dua ujung ini terdengar sangat berbeda meskipun artinya sama-sama \"mereka\"."
+          ]
+        },
+        {
+          "title": "Kata kerja -er dan -ir yang sering dipakai",
+          "body": [
+            "Semua yang beraturan dikumpulkan di sini. Yang tidak beraturan menunggu di unit 12."
+          ],
+          "table": {
+            "head": ["Português", "Cara baca", "Arti", "Português", "Cara baca", "Arti"],
+            "rows": [
+              ["comer", "ko-MÊH", "makan", "abrir", "a-BRIH", "membuka"],
+              ["beber", "be-BÊH", "minum", "partir", "pah-TCHIH", "berangkat"],
+              ["aprender", "a-pren-DÊH", "belajar (menguasai)", "dividir", "dji-vi-DJIH", "membagi"],
+              ["escrever", "is-kre-VÊH", "menulis", "decidir", "de-si-DJIH", "memutuskan"],
+              ["vender", "ven-DÊH", "menjual", "assistir", "a-sis-TCHIH", "menonton"],
+              ["entender", "en-ten-DÊH", "mengerti", "discutir", "dis-ku-TCHIH", "berdebat"],
+              ["responder", "hes-pon-DÊH", "menjawab", "permitir", "peh-mi-TCHIH", "mengizinkan"],
+              ["correr", "ko-HÊH", "berlari", "existir", "e-zis-TCHIH", "ada; wujud"],
+              ["viver", "vi-VÊH", "hidup", "insistir", "in-sis-TCHIH", "bersikeras"],
+              ["receber", "he-se-BÊH", "menerima", "subir", "su-BIH", "naik"]
+            ]
+          },
+          "after": [
+            "**Estudar dan aprender tidak sama.** *Estudar* berarti duduk dan mempelajari; *aprender* berarti benar-benar menguasainya. *Eu estudo português mas não aprendo nada* adalah kalimat yang masuk akal — dan menyedihkan.",
+            "**Assistir juga perlu kata kecil**, seperti *gostar de*: *assistir **a** um filme*. Tetapi di Brasil sehari-hari, kata *a* itu dibuang tanpa ampun: *Eu assisto filme todo dia*. Bentuk lisan itu yang akan kamu dengar."
+          ]
+        },
+        {
+          "title": "Delapan kata tanya",
+          "body": [
+            "Semuanya diletakkan di **depan kalimat**, dan sisa kalimatnya tidak berubah sama sekali. Tidak ada pembalikan, tidak ada kata bantu — persis seperti bahasa Indonesia."
+          ],
+          "table": {
+            "head": ["Português", "Cara baca", "Arti", "Contoh"],
+            "rows": [
+              ["**o que**", "u KI", "apa", "*O que você faz?*"],
+              ["**quem**", "kéin", "siapa", "*Quem é ele?*"],
+              ["**onde**", "ON-dji", "di mana", "*Onde você mora?*"],
+              ["**aonde / para onde**", "a-ON-dji", "ke mana", "*Aonde você vai?*"],
+              ["**quando**", "KUAN-du", "kapan", "*Quando você chega?*"],
+              ["**por que**", "poh KI", "kenapa", "*Por que você estuda?*"],
+              ["**como**", "KÔ-mu", "bagaimana", "*Como você está?*"],
+              ["**qual / quais**", "kuáu / kuáis", "yang mana", "*Qual é o seu nome?*"]
+            ]
+          },
+          "after": [
+            "**Kata depan ikut pindah ke depan bersama kata tanyanya**: *Com quem você mora?* (\"Sama siapa kamu tinggal?\"), *De onde você é?* (\"Kamu dari mana?\"), *Para quem é isso?* (\"Ini untuk siapa?\"). Bahasa Inggris meninggalkannya di belakang (*Who do you live with?*); bahasa Portugis tidak pernah.",
+            "**Dalam percakapan, o que sering dipotong jadi que saja**: *Que você quer?* Dan sering pula dipanjangkan jadi *o que é que*: *O que é que você faz?* — dua-duanya lazim, dan yang kedua justru lebih sering terdengar di Brasil meskipun kelihatan lebih rumit.",
+            "⚠️ **Como berarti \"bagaimana\", bukan \"seperti apa\" untuk sifat.** \"Orangnya seperti apa?\" adalah *Como ele é?* Tetapi hati-hati: *como* juga bentuk \"saya makan\" dari *comer*. Konteks yang membedakan, dan itu tidak pernah jadi masalah sungguhan."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menjawab pertanyaan seperti orang Brasil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bahasa Portugis punya *sim* dan *não*, tetapi orang Brasil jarang memakainya sendirian. Yang lazim adalah **mengulang kata kerjanya** dalam bentuk yang sesuai."
+        },
+        {
+          "type": "tabel",
+          "head": ["Pertanyaan", "Jawaban \"ya\"", "Jawaban \"tidak\""],
+          "rows": [
+            ["*Você fala português?*", "*Falo.*", "*Não falo.*"],
+            ["*Você come carne?*", "*Como.*", "*Não como.*"],
+            ["*Você é brasileiro?*", "*Sou.*", "*Não sou.*"],
+            ["*Você está bem?*", "*Estou.*", "*Não estou.*"],
+            ["*Você tem irmãos?*", "*Tenho.*", "*Não tenho.*"],
+            ["*Você mora aqui?*", "*Moro.*", "*Não moro.*"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Untuk terdengar lebih hangat, tambahkan *sim* di belakangnya: *Falo, sim.* Untuk menolak dengan sopan, ulangi *não* dua kali: *Não, não falo.* Kebiasaan mengulang ini terdengar aneh pada awalnya, tetapi ia latihan tata bahasa terbaik yang tersedia — setiap jawaban memaksamu memilih bentuk yang benar."
+        }
+      ]
+    },
+    {
+      "title": "Makanan dan minuman pertama",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cukup untuk sarapan dan percakapan pertama tentang selera. Menu lengkapnya menunggu di unit 9."
+        },
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["o café", "u ka-FÉ", "kopi"],
+            ["o chá", "u SYA", "teh"],
+            ["a água", "a A-gua", "air"],
+            ["o suco", "u SU-ku", "jus"],
+            ["o pão", "u PÁUN", "roti"],
+            ["o queijo", "u KÊI-zhu", "keju"],
+            ["o arroz", "u a-HÔS", "nasi"],
+            ["o feijão", "u fêi-ZHÁUN", "kacang hitam rebus"],
+            ["a carne", "a KAH-ni", "daging"],
+            ["o peixe", "u PÊI-syi", "ikan"],
+            ["a fruta", "a FRU-ta", "buah"],
+            ["o café da manhã", "u ka-FÉ da ma-NYAN", "sarapan"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Arroz e feijão* — nasi dan kacang hitam — adalah pasangan yang muncul di hampir setiap meja makan Brasil, siang dan malam. Ungkapan *arroz com feijão* bahkan dipakai secara kiasan untuk \"hal yang biasa-biasa saja tapi selalu bisa diandalkan\"."
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — kembali ke unit 5",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa tiga kalimat pertama menuntutmu memilih ujung kata milik yang benar."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Ini ayah saya → *Esse é o meu pai*",
+            "Ini ibu saya → *Essa é a minha mãe*",
+            "Rumah kami besar → *A nossa casa é grande*",
+            "Mobil ayahku → *o carro do meu pai*",
+            "Kakak perempuannya sudah menikah → *A irmã dela é casada*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "comer", "baca": "ko-MÊH", "id": "makan" },
+    { "pt": "beber", "baca": "be-BÊH", "id": "minum" },
+    { "pt": "aprender", "baca": "a-pren-DÊH", "id": "belajar; menguasai" },
+    { "pt": "entender", "baca": "en-ten-DÊH", "id": "mengerti" },
+    { "pt": "escrever", "baca": "is-kre-VÊH", "id": "menulis" },
+    { "pt": "responder", "baca": "hes-pon-DÊH", "id": "menjawab" },
+    { "pt": "receber", "baca": "he-se-BÊH", "id": "menerima" },
+    { "pt": "abrir", "baca": "a-BRIH", "id": "membuka" },
+    { "pt": "dividir", "baca": "dji-vi-DJIH", "id": "membagi" },
+    { "pt": "assistir", "baca": "a-sis-TCHIH", "id": "menonton" },
+    { "pt": "decidir", "baca": "de-si-DJIH", "id": "memutuskan" },
+    { "pt": "preferir", "baca": "pre-fe-RIH", "id": "lebih suka" },
+    { "pt": "voltar", "baca": "vou-TAH", "id": "kembali; pulang" },
+    { "pt": "o que", "baca": "u KI", "id": "apa" },
+    { "pt": "quem", "baca": "kéin", "id": "siapa" },
+    { "pt": "quando", "baca": "KUAN-du", "id": "kapan" },
+    { "pt": "por que / porque", "baca": "poh KI / poh-KI", "id": "kenapa / karena" },
+    { "pt": "como", "baca": "KÔ-mu", "id": "bagaimana" },
+    { "pt": "perto / longe", "baca": "PÊH-tu / LON-zhi", "id": "dekat / jauh" },
+    { "pt": "o apartamento", "baca": "u a-pah-ta-MEN-tu", "id": "apartemen" },
+    { "pt": "talvez", "baca": "táu-VÊS", "id": "mungkin" },
+    { "pt": "ainda", "baca": "a-IN-da", "id": "masih; belum" },
+    { "pt": "puro", "baca": "PU-ru", "id": "murni; tanpa gula" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+      "items": [
+        "Eu ____ pão no café da manhã. (comer)",
+        "Você ____ café? (beber)",
+        "Nós ____ português. (aprender)",
+        "Eles ____ um apartamento. (dividir)",
+        "Ela não ____ inglês. (entender)",
+        "A gente ____ filme todo sábado. (assistir)"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata tanya yang tepat.",
+      "items": [
+        "____ você mora? — Na Vila Mariana.",
+        "____ é ele? — É o meu irmão.",
+        "____ você come? — Arroz e feijão.",
+        "____ você chega? — Amanhã de manhã.",
+        "____ você estuda português? — Porque eu quero morar aqui.",
+        "Com ____ você mora? — Com dois amigos."
+      ]
+    },
+    {
+      "prompt": "Jawab dengan cara Brasil: ulangi kata kerjanya.",
+      "items": [
+        "Você fala português?",
+        "Você come carne?",
+        "Você tem irmãos?",
+        "Você está bem?",
+        "Você mora aqui?"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "mora / você / onde / ?",
+        "café / bebo / eu / manhã / de",
+        "chá / prefiro / eu",
+        "português / aprende / por que / você / ?",
+        "morar / quero / aqui / eu / porque"
+      ]
+    }
+  ],
+  "answers": [
+    "como — bebe — aprendemos — dividem — entende — assiste",
+    "Onde — Quem — O que — Quando — Por que — quem",
+    "Falo. — Como. — Tenho. — Estou. — Moro.",
+    "Onde você mora? — Eu bebo café de manhã. — Eu prefiro chá. — Por que você aprende português? — Porque eu quero morar aqui."
+  ]
+}

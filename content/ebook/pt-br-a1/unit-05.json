@@ -1,0 +1,238 @@
+{
+  "title": "Keluarga dan kepemilikan",
+  "title_target": "A minha família",
+  "goal": "Menyebut anggota keluarga dan mengatakan milik siapa sesuatu — sambil menemukan aturan yang paling sering menjegal pemula: kata milik bahasa Portugis mengikuti **barangnya**, bukan pemiliknya.",
+  "bekal": [
+    "menyebut anggota keluarga inti dan besar",
+    "memakai *meu/minha*, *seu/sua*, *nosso/nossa* dengan ujung yang benar",
+    "mengatakan kepunyaan dengan *de*: *o carro do meu pai*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — As fotos no celular",
+      "intro": "Di kantin kampus. Carla menunjukkan foto keluarganya kepada Budi.",
+      "lines": [
+        { "speaker": "Carla:", "text": "Olha, essa é a minha família.", "id": "Lihat, ini keluargaku.", "literal": "lihat, ini adalah si milikku-perempuan keluarga." },
+        { "speaker": "Budi:", "text": "Que legal! Quem é esse senhor?", "id": "Wah keren! Siapa bapak ini?", "literal": "betapa keren! siapa adalah ini tuan?" },
+        { "speaker": "Carla:", "text": "É o meu pai. Ele tem sessenta anos.", "id": "Itu ayahku. Umurnya enam puluh tahun.", "literal": "adalah si milikku ayah. dia ia-punya enam-puluh tahun." },
+        { "speaker": "Budi:", "text": "E essa senhora do lado?", "id": "Kalau ibu di sebelahnya?", "literal": "dan ini nyonya dari-si sisi?" },
+        { "speaker": "Carla:", "text": "É a minha mãe. O nome dela é Sônia.", "id": "Itu ibuku. Namanya Sônia.", "literal": "adalah si milikku ibu. si nama dari-dia adalah Sônia." },
+        { "speaker": "Budi:", "text": "Você tem irmãos?", "id": "Kamu punya saudara?", "literal": "kamu kamu-punya saudara-jamak?" },
+        { "speaker": "Carla:", "text": "Tenho dois: um irmão e uma irmã.", "id": "Punya dua: satu laki-laki dan satu perempuan.", "literal": "saya-punya dua: satu saudara-laki dan satu saudara-perempuan." },
+        { "speaker": "Budi:", "text": "A sua irmã é mais velha que você?", "id": "Kakak perempuanmu lebih tua darimu?", "literal": "si milikmu saudara-perempuan adalah lebih tua dari kamu?" },
+        { "speaker": "Carla:", "text": "É. Ela é casada e tem uma filha.", "id": "Iya. Dia sudah menikah dan punya satu anak perempuan.", "literal": "adalah. dia adalah menikah dan ia-punya satu anak-perempuan." },
+        { "speaker": "Budi:", "text": "Então você é tia! E a sua família é grande?", "id": "Berarti kamu tante! Keluargamu besar?", "literal": "maka kamu adalah bibi! dan si milikmu keluarga adalah besar?" },
+        { "speaker": "Carla:", "text": "Enorme. Eu tenho quatorze primos.", "id": "Besar sekali. Sepupuku ada empat belas.", "literal": "raksasa. saya saya-punya empat-belas sepupu-jamak." }
+      ],
+      "notes": [
+        "**Minha, bukan meu — dan sebabnya bukan Carla perempuan.** *A minha mãe* memakai bentuk perempuan karena ***mãe*** perempuan, bukan karena yang bicara perempuan. Bukti terbaiknya ada di dialog yang sama: Carla juga mengatakan *o meu pai* — bentuk laki-laki, dari mulut perempuan. Kata milik bahasa Portugis menyalin jenis kelamin **barang yang dimiliki**, bukan pemiliknya. Inilah kebalikan dari bahasa Inggris (*his mother*, *her father*), dan sekaligus kesalahan yang paling sering bertahan lama pada pemula.",
+        "**O meu pai, dengan kata sandang di depannya.** Di Brasil, kata milik biasanya didahului *o* atau *a*: *o meu pai*, *a minha casa*. Membuangnya juga benar (*meu pai*), dan di percakapan cepat orang memang sering membuangnya. Pakai yang mana pun; yang penting kamu tidak kaget saat mendengarnya.",
+        "**O nome dela, bukan o seu nome.** Ini kunci praktis yang menyelamatkan banyak percakapan. Karena *seu* bisa berarti \"milikmu\" **dan** \"miliknya\" sekaligus, orang Brasil menghindari kekaburan itu dengan memakai *dele* (miliknya, laki-laki) dan *dela* (miliknya, perempuan) — dan keduanya diletakkan **di belakang** kata bendanya: *o carro dele*, *a mãe dela*. Kalau kamu memakai *seu* untuk \"milikmu\" saja dan *dele/dela* untuk \"miliknya\", kamu tidak akan pernah salah paham.",
+        "**Mais velha que você** = \"lebih tua darimu\". Perbandingan dipasang lengkap di unit 19; untuk sekarang cukup hafalkan polanya: *mais* + kata sifat + *que*.",
+        "**Enorme** dan *que legal* adalah dua kata yang membuat percakapanmu terdengar hidup. Orang Brasil memakai kata sifat berlebihan dengan murah hati — *ótimo*, *maravilhoso*, *enorme*, *péssimo*. Ikut memakainya membuatmu terdengar jauh lebih alami daripada memakai *bom* dan *ruim* terus-menerus."
+      ],
+      "grammars": [
+        {
+          "title": "Kata milik: ikut barangnya",
+          "body": [
+            "Enam baris ini menutup seluruh urusan kepemilikan A1. Yang perlu kamu perhatikan bukan kolom kiri, melainkan kenyataan bahwa **kolom kanan berubah menurut kata bendanya**."
+          ],
+          "table": {
+            "head": ["Pemilik", "Barang laki-laki", "Barang perempuan", "Jamak"],
+            "rows": [
+              ["saya", "**o meu** livro", "**a minha** casa", "*meus / minhas*"],
+              ["kamu; dia", "**o seu** livro", "**a sua** casa", "*seus / suas*"],
+              ["kami", "**o nosso** livro", "**a nossa** casa", "*nossos / nossas*"],
+              ["dia (laki-laki)", "o livro **dele**", "a casa **dele**", "— tidak berubah"],
+              ["dia (perempuan)", "o livro **dela**", "a casa **dela**", "— tidak berubah"],
+              ["mereka", "o livro **deles / delas**", "a casa **deles / delas**", "— tidak berubah"]
+            ]
+          },
+          "after": [
+            "Perhatikan tiga baris terakhir: *dele*, *dela*, *deles*, *delas* **tidak pernah berubah bentuknya**, karena ia sebenarnya bukan kata milik melainkan gabungan *de* + *ele*. Ia juga selalu berdiri **di belakang** kata bendanya. Untuk pemula, tiga baris itu justru bagian yang paling gampang.",
+            "⚠️ Jangan tertukar oleh bahasa Inggris. \"His house\" bukan *seu casa* melainkan **a casa dele** — atau *a sua casa* kalau konteksnya sudah jelas. Dan \"her book\" bukan *sua livro* melainkan **o livro dela**.",
+            "Bandingkan dengan bahasa Indonesia yang jauh lebih hemat: \"rumahku\", \"rumahmu\", \"rumahnya\" — satu akhiran, tanpa memedulikan jenis kelamin apa pun. Bahasa Portugis meminta dua keputusan sekaligus di tiap kata milik: siapa pemiliknya, dan apa jenis kelamin barangnya."
+          ]
+        },
+        {
+          "title": "De + kata sandang: gabungan yang wajib",
+          "body": [
+            "Kata *de* berarti \"dari\" dan \"milik\". Begitu ia bertemu kata sandang, keduanya **wajib** dilebur — menuliskannya terpisah bukan pilihan gaya, melainkan salah."
+          ],
+          "table": {
+            "head": ["de +", "jadi", "Contoh"],
+            "rows": [
+              ["de + o", "**do**", "*o carro **do** meu pai* = mobil ayahku"],
+              ["de + a", "**da**", "*a casa **da** Carla* = rumah Carla"],
+              ["de + os", "**dos**", "*o nome **dos** alunos* = nama murid-murid itu"],
+              ["de + as", "**das**", "*as fotos **das** minhas irmãs* = foto kakak-kakak perempuanku"],
+              ["de + ele", "**dele**", "*a mãe **dele*** = ibunya (laki-laki)"],
+              ["de + ela", "**dela**", "*o irmão **dela*** = kakaknya (perempuan)"],
+              ["de + isso", "**disso**", "*Eu gosto **disso*** = saya suka itu"]
+            ]
+          },
+          "after": [
+            "**Urutannya sama dengan bahasa Indonesia.** \"Mobil ayahku\" menjadi *o carro do meu pai* — barangnya dulu, pemiliknya belakangan. Yang baru cuma kata penyambung *de* di tengahnya.",
+            "Pola ini juga menjawab \"siapa punya\": *De quem é esse celular?* = \"Ini HP siapa?\" — harfiahnya \"dari siapa adalah ini telepon?\""
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Anggota keluarga",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Hafalkan berpasangan. Hampir semuanya berubah ujungnya dari **-o** ke **-a**, dan yang tidak diberi tanda."
+        },
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["o pai / a mãe", "u PÁI / a MÁIN", "ayah / ibu (⚠️ tak berpasangan)"],
+            ["os pais", "us PÁIS", "orang tua (ayah dan ibu)"],
+            ["o filho / a filha", "u FI-lyu / a FI-lya", "anak laki-laki / perempuan"],
+            ["o irmão / a irmã", "u ih-MÁUN / a ih-MAN", "saudara laki-laki / perempuan"],
+            ["o avô / a avó", "u a-VÔ / a a-VÓ", "kakek / nenek (⚠️ cuma beda aksen)"],
+            ["o tio / a tia", "u TCHI-u / a TCHI-a", "paman / bibi"],
+            ["o primo / a prima", "u PRI-mu / a PRI-ma", "sepupu"],
+            ["o sobrinho / a sobrinha", "u so-BRI-nyu / -nya", "keponakan"],
+            ["o marido / a esposa", "u ma-RI-du / a is-PÔ-za", "suami / istri"],
+            ["o namorado / a namorada", "u na-mo-RA-du / -da", "pacar"],
+            ["o neto / a neta", "u NÉ-tu / a NÉ-ta", "cucu"],
+            ["o amigo / a amiga", "u a-MI-gu / a a-MI-ga", "teman"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Bahasa Portugis tidak membedakan kakak dan adik.** *Irmão* berarti saudara laki-laki, titik. Kalau perlu, umurnya ditempelkan: *o meu irmão mais velho* (kakak) dan *o meu irmão mais novo* (adik). Ini kebalikan dari bahasa Indonesia yang justru memisahkan keduanya sejak kata dasarnya."
+        },
+        {
+          "type": "p",
+          "text": "**Bentuk jamak laki-laki menutup campuran.** *Os pais* berarti \"ayah dan ibu\", *os filhos* berarti \"anak-anak\" (laki dan perempuan), *os irmãos* berarti \"saudara-saudara\". Kalau sebuah kelompok berisi seratus perempuan dan satu laki-laki, bentuknya tetap laki-laki jamak. Aturan ini berlaku di seluruh bahasa Portugis."
+        }
+      ]
+    },
+    {
+      "title": "Keadaan hidup",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Semuanya memakai *ser*, karena semuanya menjawab \"siapa dia\", bukan \"bagaimana keadaannya hari ini\"."
+        },
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["solteiro / solteira", "sou-TÊI-ru / -ra", "lajang"],
+            ["casado / casada", "ka-ZA-du / -da", "sudah menikah"],
+            ["divorciado / divorciada", "dji-voh-si-A-du / -da", "bercerai"],
+            ["mais velho / mais novo", "máis VÉ-lyu / máis NÔ-vu", "lebih tua / lebih muda"],
+            ["do meio", "du MÊI-u", "anak tengah"],
+            ["filho único", "FI-lyu U-ni-ku", "anak tunggal"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Pertanyaan yang akan kamu dengar berulang-ulang di Brasil: *Você é casado?* dan *Você tem filhos?* Keduanya dianggap basa-basi biasa, bukan pertanyaan pribadi — sama seperti \"sudah menikah?\" dalam percakapan Indonesia."
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — kembali ke unit 3",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tutup kolom Portugisnya. Perhatikan bahwa dua kalimat terakhir menuntutmu memilih antara *ser* dan *estar*."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Saya capek hari ini → *estou cansado hoje*",
+            "Saya lapar → *estou com fome*",
+            "Dia guru → *ele é professor*",
+            "Dia sedang di Jepang → *ele está no Japão*",
+            "Kelasnya bagus sekali → *a aula é ótima*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "a família", "baca": "a fa-MI-li-a", "id": "keluarga" },
+    { "pt": "o pai / a mãe", "baca": "u PÁI / a MÁIN", "id": "ayah / ibu" },
+    { "pt": "os pais", "baca": "us PÁIS", "id": "orang tua" },
+    { "pt": "o filho / a filha", "baca": "u FI-lyu / a FI-lya", "id": "anak laki-laki / perempuan" },
+    { "pt": "o irmão / a irmã", "baca": "u ih-MÁUN / a ih-MAN", "id": "saudara laki-laki / perempuan" },
+    { "pt": "o avô / a avó", "baca": "u a-VÔ / a a-VÓ", "id": "kakek / nenek" },
+    { "pt": "o tio / a tia", "baca": "u TCHI-u / a TCHI-a", "id": "paman / bibi" },
+    { "pt": "o primo", "baca": "u PRI-mu", "id": "sepupu" },
+    { "pt": "o marido", "baca": "u ma-RI-du", "id": "suami" },
+    { "pt": "a esposa", "baca": "a is-PÔ-za", "id": "istri" },
+    { "pt": "o namorado", "baca": "u na-mo-RA-du", "id": "pacar" },
+    { "pt": "o amigo", "baca": "u a-MI-gu", "id": "teman" },
+    { "pt": "meu / minha", "baca": "MÊ-u / MI-nya", "id": "milikku" },
+    { "pt": "seu / sua", "baca": "SÊ-u / SU-a", "id": "milikmu; miliknya" },
+    { "pt": "nosso / nossa", "baca": "NÓ-su / NÓ-sa", "id": "milik kami" },
+    { "pt": "dele / dela", "baca": "DÊ-li / DÉ-la", "id": "miliknya (laki / perempuan)" },
+    { "pt": "casado", "baca": "ka-ZA-du", "id": "sudah menikah" },
+    { "pt": "solteiro", "baca": "sou-TÊI-ru", "id": "lajang" },
+    { "pt": "velho / novo", "baca": "VÉ-lyu / NÔ-vu", "id": "tua / muda" },
+    { "pt": "enorme", "baca": "e-NÔH-mi", "id": "besar sekali" },
+    { "pt": "quem", "baca": "kéin", "id": "siapa" },
+    { "pt": "olhar", "baca": "o-LYAH", "id": "melihat; lihat!" },
+    { "pt": "o senhor / a senhora", "baca": "u si-NYOH / a si-NYÔ-ra", "id": "bapak / ibu (sapaan sopan)" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata milik yang tepat.",
+      "items": [
+        "Esse é o ____ pai. (saya)",
+        "Essa é a ____ mãe. (saya)",
+        "A ____ casa é grande. (kami)",
+        "Qual é o ____ nome? (kamu)",
+        "O carro ____ é novo. (miliknya, laki-laki)",
+        "A irmã ____ é casada. (miliknya, perempuan)"
+      ]
+    },
+    {
+      "prompt": "Gabungkan de dengan kata sandangnya, lalu tulis rangkaian lengkapnya.",
+      "items": [
+        "o carro de + o meu pai",
+        "a casa de + a Carla",
+        "as fotos de + as minhas irmãs",
+        "o nome de + os alunos",
+        "a mãe de + ele",
+        "o livro de + ela"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Ini keluargaku.",
+        "Ayah saya berumur enam puluh tahun.",
+        "Kamu punya saudara?",
+        "Kakak perempuan saya sudah menikah.",
+        "Ini HP siapa?"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "minha / é / essa / família / a",
+        "meu / o / pai / é / esse",
+        "irmãos / você / tem / ?",
+        "dela / o / é / Sônia / nome",
+        "grande / família / a / é / sua / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "meu — minha — nossa — seu — dele — dela",
+    "o carro do meu pai — a casa da Carla — as fotos das minhas irmãs — o nome dos alunos — a mãe dele — o livro dela",
+    "Essa é a minha família. — O meu pai tem sessenta anos. — Você tem irmãos? — A minha irmã é casada. — De quem é esse celular?",
+    "Essa é a minha família. — Esse é o meu pai. — Você tem irmãos? — O nome dela é Sônia. — A sua família é grande?"
+  ]
+}

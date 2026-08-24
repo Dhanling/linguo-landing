@@ -1,0 +1,239 @@
+{
+  "title": "Badan, sakit, dan menyuruh",
+  "title_target": "Estou com dor de cabeça",
+  "goal": "Menjelaskan keluhan tubuh di apotek atau klinik, lalu memasang **bentuk perintah** — yang di Brasil ternyata jauh lebih sederhana daripada yang diajarkan buku tata bahasa.",
+  "bekal": [
+    "menyebut bagian tubuh dan keluhan dengan *estar com dor de*",
+    "memberi perintah dan saran dengan bentuk Brasil",
+    "melarang dengan *não* + bentuk baku"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Na farmácia",
+      "intro": "Budi masuk apotek dengan wajah kusut. Di Brasil, apoteker sering menjadi penasihat kesehatan pertama.",
+      "lines": [
+        { "speaker": "Farmacêutico:", "text": "Boa tarde! Posso ajudar?", "id": "Selamat sore! Bisa dibantu?", "literal": "baik sore! saya-bisa membantu?" },
+        { "speaker": "Budi:", "text": "Boa tarde. Estou com dor de garganta desde ontem.", "id": "Selamat sore. Tenggorokan saya sakit sejak kemarin.", "literal": "baik sore. saya-berada dengan sakit dari tenggorokan sejak kemarin." },
+        { "speaker": "Farmacêutico:", "text": "Está com febre?", "id": "Demam?", "literal": "ia-berada dengan demam?" },
+        { "speaker": "Budi:", "text": "Um pouco. E também estou com dor de cabeça.", "id": "Sedikit. Dan kepala saya juga sakit.", "literal": "satu sedikit. dan juga saya-berada dengan sakit dari kepala." },
+        { "speaker": "Farmacêutico:", "text": "Toma esse aqui, de oito em oito horas.", "id": "Minum yang ini, tiap delapan jam.", "literal": "minum ini di-sini, dari delapan dalam delapan jam." },
+        { "speaker": "Budi:", "text": "Preciso de receita?", "id": "Perlu resep?", "literal": "saya-perlu dari resep?" },
+        { "speaker": "Farmacêutico:", "text": "Não precisa. Mas não toma de estômago vazio.", "id": "Tidak perlu. Tapi jangan diminum saat perut kosong.", "literal": "tidak ia-perlu. tapi tidak minum dari perut kosong." },
+        { "speaker": "Budi:", "text": "Entendi. Posso tomar com café?", "id": "Paham. Boleh diminum sama kopi?", "literal": "saya-mengerti. saya-bisa minum dengan kopi?" },
+        { "speaker": "Farmacêutico:", "text": "Melhor não. Bebe bastante água e descansa.", "id": "Sebaiknya jangan. Minum banyak air dan istirahat.", "literal": "lebih-baik tidak. minum cukup air dan istirahat." },
+        { "speaker": "Budi:", "text": "E se não melhorar?", "id": "Kalau tidak membaik?", "literal": "dan kalau tidak membaik?" },
+        { "speaker": "Farmacêutico:", "text": "Se em três dias continuar, procura um médico.", "id": "Kalau tiga hari masih begitu, cari dokter.", "literal": "kalau dalam tiga hari melanjutkan, cari seorang dokter." },
+        { "speaker": "Budi:", "text": "Certo. Quanto fica?", "id": "Oke. Berapa semuanya?", "literal": "benar. berapa ia-jadi?" },
+        { "speaker": "Farmacêutico:", "text": "Vinte e três. Melhoras!", "id": "Dua puluh tiga. Semoga cepat sembuh!", "literal": "dua-puluh dan tiga. perbaikan-jamak!" }
+      ],
+      "notes": [
+        "**Estar com dor de — pola yang sudah kamu pasang di unit 3, sekarang dipakai penuh.** *Estou com dor de cabeça* (kepala saya sakit), *de garganta* (tenggorokan), *de barriga* (perut), *de dente* (gigi), *nas costas* (punggung). Perhatikan bahwa bahasa Portugis mengatakan \"saya berada dengan sakit dari kepala\", bukan \"kepala saya sakit\" — bagian tubuhnya bukan pelaku kalimat.",
+        "**Toma, bebe, descansa, procura — perintah Brasil memakai bentuk *você*.** Buku tata bahasa mengajarkan *tome*, *beba*, *descanse*, *procure*. Tetapi di Brasil sehari-hari, orang memakai bentuk yang sama persis dengan bentuk *você* biasa. Ini penyederhanaan besar: kamu **tidak perlu menghafal bentuk perintah sama sekali** untuk berbicara.",
+        "⚠️ **Kecuali untuk larangan.** *Não toma* memang terdengar di jalan, tetapi bentuk baku *não tome* lebih sering dipakai untuk melarang, terutama oleh orang yang lebih tua dan di tulisan. Larangan adalah satu-satunya tempat bentuk baku itu masih hidup kuat.",
+        "**De oito em oito horas** = \"tiap delapan jam\". Pola *de X em X* dipakai untuk selang berulang: *de duas em duas horas*, *de dois em dois dias*. Ia rumus yang wajib dikenali kalau kamu membeli obat di Brasil.",
+        "**Melhoras!** harfiahnya \"perbaikan-perbaikan\", artinya \"semoga cepat sembuh\". Ia ucapan baku yang akan kamu dengar dari kasir, sopir, dan orang asing di jalan begitu kamu menyebut sedang sakit."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk perintah: dua jalur",
+          "body": [
+            "Kolom tengah adalah yang kamu **pakai**; kolom kanan adalah yang kamu perlu **kenali** karena akan kamu lihat di papan pengumuman dan tulisan resmi."
+          ],
+          "table": {
+            "head": ["Kata kerja", "Perintah Brasil (lisan)", "Bentuk baku", "Arti"],
+            "rows": [
+              ["falar", "**fala**", "fale", "bicaralah"],
+              ["comer", "**come**", "coma", "makanlah"],
+              ["beber", "**bebe**", "beba", "minumlah"],
+              ["abrir", "**abre**", "abra", "bukalah"],
+              ["esperar", "**espera**", "espere", "tunggulah"],
+              ["ir", "**vai**", "vá", "pergilah"],
+              ["vir", "**vem**", "venha", "datanglah"],
+              ["fazer", "**faz**", "faça", "buatlah"],
+              ["ser", "—", "seja", "jadilah"]
+            ]
+          },
+          "after": [
+            "**Untuk melarang, pakai kolom kanan.** *Não fale*, *Não coma*, *Não vá*. Ini bukan aturan mutlak — *não fala* juga terdengar — tetapi bentuk baku terdengar lebih tegas dan lebih sopan sekaligus.",
+            "**Menambahkan *por favor* mengubah perintah menjadi permintaan** yang sepenuhnya sopan: *Espera um pouquinho, por favor*. Dan bentuk yang lebih halus lagi memakai *poder* dari unit 9: *Você pode esperar um pouco?*",
+            "⚠️ Perhatikan *vai* dan *vem* — dua perintah yang paling sering kamu dengar di Brasil. *Vai lá!* (\"ayo, coba!\"), *Vem cá* (\"sini deh\"), *Vem comigo* (\"ikut aku\")."
+          ]
+        },
+        {
+          "title": "Memberi saran",
+          "body": [
+            "Empat rumus yang lebih halus daripada perintah langsung, dan yang jauh lebih sering dipakai kepada orang yang belum akrab."
+          ],
+          "table": {
+            "head": ["Português", "Harfiah", "Bahasa Indonesia"],
+            "rows": [
+              ["*Você **deveria** descansar.*", "kamu seharusnya istirahat", "Sebaiknya kamu istirahat."],
+              ["***Melhor** você ir ao médico.*", "lebih baik kamu pergi ke dokter", "Mendingan kamu ke dokter."],
+              ["***Por que você não** descansa?*", "kenapa kamu tidak istirahat?", "Kenapa nggak istirahat aja?"],
+              ["***Que tal** tomar um chá?*", "gimana kalau minum teh?", "Gimana kalau minum teh?"],
+              ["***Tem que** tomar remédio.*", "punya bahwa minum obat", "Harus minum obat."],
+              ["***Não precisa** ir hoje.*", "tidak perlu pergi hari ini", "Tidak perlu pergi hari ini."]
+            ]
+          },
+          "after": [
+            "**Melhor sendirian adalah rumus yang paling Brasil dari semuanya.** *Melhor não* (\"mendingan jangan\"), *Melhor esperar* (\"mendingan tunggu\"), *Melhor você ir agora* (\"mendingan kamu pergi sekarang\"). Ia pendek, hangat, dan tidak terdengar memerintah sama sekali.",
+            "*Deveria* adalah satu-satunya bentuk tingkat lanjut di unit ini, dan cukup dihafal utuh untuk *você* dan *eu* — keduanya sama."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bagian tubuh",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["a cabeça", "a ka-BÊ-sa", "kepala"],
+            ["o olho / os olhos", "u Ô-lyu / us Ô-lyus", "mata"],
+            ["o nariz", "u na-RIS", "hidung"],
+            ["a boca", "a BÔ-ka", "mulut"],
+            ["o dente", "u DEN-tchi", "gigi"],
+            ["a garganta", "a gah-GAN-ta", "tenggorokan"],
+            ["o ouvido", "u ô-VI-du", "telinga (bagian dalam)"],
+            ["o braço / a mão", "u BRA-su / a MÁUN", "lengan / tangan"],
+            ["a perna / o pé", "a PÉH-na / u PÉ", "kaki (paha) / telapak kaki"],
+            ["a barriga", "a ba-HI-ga", "perut"],
+            ["as costas", "as KÓS-tas", "punggung (⚠️ selalu jamak)"],
+            ["o coração", "u ko-ra-SÁUN", "jantung; hati"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *As costas* selalu jamak, seperti *óculos* (kacamata) dan *férias* (liburan). *Estou com dor nas costas* = \"punggung saya sakit\" — perhatikan *nas*, bukan *de*."
+        },
+        {
+          "type": "p",
+          "text": "*O coração* dipakai untuk organ tubuh **dan** untuk perasaan, persis seperti \"hati\" dalam bahasa Indonesia dipakai untuk keduanya. *Meu coração* juga panggilan sayang yang lazim di Brasil, sama seperti \"sayang\"."
+        }
+      ]
+    },
+    {
+      "title": "Di klinik dan apotek",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["Estou com dor de…", "is-TÔ kon DOH dji", "Saya sakit… (bagian tubuh)"],
+            ["Estou com febre.", "is-TÔ kon FÉ-bri", "Saya demam."],
+            ["Estou resfriado.", "is-TÔ hes-fri-A-du", "Saya masuk angin."],
+            ["Estou enjoado.", "is-TÔ en-zho-A-du", "Saya mual."],
+            ["Não estou me sentindo bem.", "náun is-TÔ mi sen-TCHIN-du BÉIN", "Saya merasa tidak enak badan."],
+            ["o remédio", "u he-MÉ-dji-u", "obat"],
+            ["a receita", "a he-SÊI-ta", "resep; resep masakan"],
+            ["a farmácia", "a fah-MA-si-a", "apotek"],
+            ["o posto de saúde", "u POS-tu dji sa-U-dji", "puskesmas"],
+            ["o pronto-socorro", "u PRON-tu so-KÔ-hu", "UGD"],
+            ["Melhoras!", "me-LYÓ-ras", "Semoga cepat sembuh!"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *A receita* berarti **resep dokter** dan **resep masakan** sekaligus. Konteks yang membedakan, dan kesalahpahamannya biasanya lucu, bukan berbahaya."
+        },
+        {
+          "type": "p",
+          "text": "**Apoteker di Brasil adalah lini pertama kesehatan.** Untuk keluhan ringan, orang langsung ke *farmácia*, bukan ke dokter — dan banyak obat yang di negara lain butuh resep bisa dibeli bebas di sana. *Posto de saúde* adalah layanan kesehatan pemerintah yang gratis untuk semua, termasuk orang asing."
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — kembali ke unit 16",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Gimana minggu pertamamu? → *Como foi a sua primeira semana?*",
+            "Dia bilang apa? → *O que ele disse?*",
+            "Kamu sudah pernah ke Rio? → *Você já foi ao Rio?*",
+            "Belum → *Ainda não*",
+            "Akhirnya semuanya beres → *Por fim, tudo deu certo*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "a dor", "baca": "a DOH", "id": "rasa sakit" },
+    { "pt": "a febre", "baca": "a FÉ-bri", "id": "demam" },
+    { "pt": "o remédio", "baca": "u he-MÉ-dji-u", "id": "obat" },
+    { "pt": "a receita", "baca": "a he-SÊI-ta", "id": "resep" },
+    { "pt": "o médico", "baca": "u MÉ-dji-ku", "id": "dokter" },
+    { "pt": "a saúde", "baca": "a sa-U-dji", "id": "kesehatan" },
+    { "pt": "a garganta", "baca": "a gah-GAN-ta", "id": "tenggorokan" },
+    { "pt": "a barriga", "baca": "a ba-HI-ga", "id": "perut" },
+    { "pt": "as costas", "baca": "as KÓS-tas", "id": "punggung (⚠️ jamak)" },
+    { "pt": "o dente", "baca": "u DEN-tchi", "id": "gigi" },
+    { "pt": "a mão / o pé", "baca": "a MÁUN / u PÉ", "id": "tangan / kaki" },
+    { "pt": "o coração", "baca": "u ko-ra-SÁUN", "id": "jantung; hati" },
+    { "pt": "resfriado", "baca": "hes-fri-A-du", "id": "masuk angin" },
+    { "pt": "enjoado", "baca": "en-zho-A-du", "id": "mual" },
+    { "pt": "melhorar", "baca": "me-lyo-RAH", "id": "membaik" },
+    { "pt": "melhor / pior", "baca": "me-LYÓH / pi-OH", "id": "lebih baik / lebih buruk" },
+    { "pt": "tomar remédio", "baca": "to-MAH he-MÉ-dji-u", "id": "minum obat" },
+    { "pt": "desde", "baca": "DÊZ-dji", "id": "sejak" },
+    { "pt": "vazio", "baca": "va-ZI-u", "id": "kosong" },
+    { "pt": "bastante", "baca": "bas-TAN-tchi", "id": "cukup banyak" },
+    { "pt": "continuar", "baca": "kon-tchi-nu-AH", "id": "melanjutkan; terus" },
+    { "pt": "Melhoras!", "baca": "me-LYÓ-ras", "id": "Semoga cepat sembuh!" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Lengkapi keluhannya.",
+      "items": [
+        "Estou com dor de ____. (kepala)",
+        "Estou com dor de ____. (tenggorokan)",
+        "Estou com dor de ____. (gigi)",
+        "Estou com dor nas ____. (punggung)",
+        "Estou com dor de ____. (perut)",
+        "Estou com ____. (demam)"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi perintah bentuk Brasil.",
+      "items": [
+        "beber bastante água",
+        "descansar hoje",
+        "esperar um pouco",
+        "vir comigo",
+        "fazer o exercício",
+        "tomar o remédio"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Tenggorokan saya sakit sejak kemarin.",
+        "Perlu resep?",
+        "Minum tiap delapan jam.",
+        "Jangan diminum saat perut kosong.",
+        "Sebaiknya kamu istirahat.",
+        "Semoga cepat sembuh!"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "cabeça / com / de / estou / dor",
+        "receita / de / preciso / ?",
+        "água / bebe / bastante",
+        "não / estômago / vazio / de / toma",
+        "médico / procura / um"
+      ]
+    }
+  ],
+  "answers": [
+    "cabeça — garganta — dente — costas — barriga — febre",
+    "Bebe bastante água. — Descansa hoje. — Espera um pouco. — Vem comigo. — Faz o exercício. — Toma o remédio.",
+    "Estou com dor de garganta desde ontem. — Preciso de receita? — Toma de oito em oito horas. — Não toma de estômago vazio. — Você deveria descansar. — Melhoras!",
+    "Estou com dor de cabeça. — Preciso de receita? — Bebe bastante água. — Não toma de estômago vazio. — Procura um médico."
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "title": "Menggantikan orang dan benda",
+  "title_target": "Eu vi ele",
+  "goal": "Memakai kata ganti sasaran seperti orang Brasil sungguhan — termasuk bentuk yang dicoret guru bahasa tetapi diucapkan seratus juta orang setiap hari.",
+  "bekal": [
+    "memakai *me*, *te*, *nos* di depan kata kerja",
+    "menggantikan orang dengan *ele/ela* sesudah kata kerja, cara Brasil",
+    "memakai bentuk sesudah kata depan: *para mim*, *comigo*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Um encontro perdido",
+      "intro": "Carla menelepon Budi yang tidak muncul di acara ulang tahun.",
+      "lines": [
+        { "speaker": "Carla:", "text": "Budi! Eu te liguei três vezes ontem!", "id": "Budi! Aku telepon kamu tiga kali kemarin!", "literal": "Budi! saya kamu saya-telepon tiga kali kemarin!" },
+        { "speaker": "Budi:", "text": "Desculpa! Meu celular estava sem bateria.", "id": "Maaf! HP saya kehabisan baterai.", "literal": "maaf! milikku telepon ia-berada tanpa baterai." },
+        { "speaker": "Carla:", "text": "A gente esperou você até as dez!", "id": "Kami nungguin kamu sampai jam sepuluh!", "literal": "kami kami-tunggu kamu sampai si sepuluh!" },
+        { "speaker": "Budi:", "text": "Que vergonha. Me desculpa mesmo.", "id": "Malu banget. Maafin aku, serius.", "literal": "betapa malu. saya maafkan sungguh." },
+        { "speaker": "Carla:", "text": "Tudo bem. O Pedro perguntou de você.", "id": "Nggak apa-apa. Pedro nanyain kamu.", "literal": "semua baik. si Pedro ia-tanya dari kamu." },
+        { "speaker": "Budi:", "text": "Sério? Eu não conheço ele direito.", "id": "Serius? Saya belum kenal dia betul.", "literal": "serius? saya tidak saya-kenal dia benar." },
+        { "speaker": "Carla:", "text": "Ele te achou legal na aula de quarta.", "id": "Dia pikir kamu asyik waktu kelas Rabu.", "literal": "dia kamu ia-temukan keren di-si kelas dari Rabu." },
+        { "speaker": "Budi:", "text": "Que bom! Eu vou falar com ele amanhã.", "id": "Syukur! Besok saya ngobrol sama dia.", "literal": "betapa bagus! saya saya-pergi bicara dengan dia besok." },
+        { "speaker": "Carla:", "text": "Fala mesmo. E olha, guardei um pedaço de bolo pra você.", "id": "Ngobrol beneran ya. Eh, aku simpanin sepotong kue buat kamu.", "literal": "bicara sungguh. dan lihat, saya-simpan satu potong dari kue untuk kamu." },
+        { "speaker": "Budi:", "text": "Você guardou bolo pra mim? Que fofa!", "id": "Kamu nyimpanin kue buat aku? Baik banget!", "literal": "kamu kamu-simpan kue untuk saya? betapa manis!" },
+        { "speaker": "Carla:", "text": "Guardei, sim. Vem buscar comigo depois da aula.", "id": "Iya. Ambil bareng aku habis kelas ya.", "literal": "saya-simpan, ya. datang mencari dengan-saya sesudah dari-si kelas." },
+        { "speaker": "Budi:", "text": "Fechado! Te vejo às três.", "id": "Oke! Ketemu jam tiga.", "literal": "tertutup! kamu saya-lihat pada-si tiga." }
+      ],
+      "notes": [
+        "⚠️ **Eu não conheço ele adalah bentuk yang salah menurut buku tata bahasa, dan benar menurut Brasil.** Aturan bakunya menuntut *não o conheço*. Tetapi bentuk itu terdengar seperti pembawa berita tahun 1970 di telinga orang Brasil. Yang diucapkan sehari-hari, oleh semua kalangan, adalah *eu conheço ele*, *eu vi ele*, *eu encontrei ela*. Modul ini mengajarkan yang kedua — karena itulah yang akan kamu dengar dan yang akan membuatmu dimengerti.",
+        "**Te dipakai untuk \"kamu\", meskipun kata gantinya você.** Secara tata bahasa ini campur aduk: *você* seharusnya berpasangan dengan *lhe*, dan *te* milik *tu*. Tetapi orang Brasil memakai *te* dengan *você* tanpa ragu: *eu te ligo*, *ele te viu*, *te amo*. Ini bukan kesalahan yang perlu kamu hindari — ini bahasa Brasil.",
+        "**Me desculpa, bukan desculpe-me.** Perhatikan sekali lagi bahwa kata ganti kecilnya berdiri **di depan** kata kerja di Brasil. Ini berlaku hampir tanpa pengecualian dalam percakapan, bahkan di awal kalimat — sesuatu yang aturan baku sebenarnya melarang.",
+        "**Pra você, pra mim.** Bentuk lisan dari *para*. Perhatikan bahwa kata ganti sesudah kata depan berbeda dari yang di depan kata kerja: bukan *pra me* melainkan **pra mim**.",
+        "**Que fofa!** = \"manis banget!\" — pujian khas Brasil untuk sikap yang baik hati. *Fofo/fofa* harfiahnya \"empuk\", dan dipakai untuk apa pun yang menggemaskan. Dan **Fechado!** harfiahnya \"tertutup\", artinya \"deal, sepakat\" — sekeluarga dengan *combinado*."
+      ],
+      "grammars": [
+        {
+          "title": "Kata ganti di depan kata kerja",
+          "body": [
+            "Tiga bentuk yang perlu kamu kuasai, dan semuanya berdiri **di depan** kata kerja dalam bahasa Brasil."
+          ],
+          "table": {
+            "head": ["Bentuk", "Arti", "Contoh", "Bahasa Indonesia"],
+            "rows": [
+              ["**me**", "saya", "*Ele **me** ligou.*", "Dia menelepon saya."],
+              ["**te**", "kamu", "*Eu **te** vejo amanhã.*", "Saya lihat kamu besok."],
+              ["**nos**", "kami", "*Ela **nos** ajudou.*", "Dia menolong kami."],
+              ["**se**", "diri sendiri", "*Ele **se** chama Pedro.*", "Namanya Pedro."]
+            ]
+          },
+          "after": [
+            "**Untuk orang ketiga, Brasil memakai kata ganti biasa sesudah kata kerja**: *Eu vi **ele***, *Eu conheço **ela***, *Eu encontrei **eles***. Bentuk baku *o*, *a*, *os*, *as* masih kamu temui dalam tulisan resmi dan buku, jadi kenali saja — tetapi jangan memaksakan diri memakainya.",
+            "⚠️ Satu bentuk baku yang tetap hidup: **lhe** untuk \"kepadanya\" dalam surat resmi dan sapaan sopan. Sebagai pemula kamu tidak memerlukannya sama sekali."
+          ]
+        },
+        {
+          "title": "Kata ganti sesudah kata depan",
+          "body": [
+            "Bentuk yang berbeda lagi, dan cuma dua baris pertama yang benar-benar menyimpang."
+          ],
+          "table": {
+            "head": ["Kata depan +", "Bentuknya", "Contoh"],
+            "rows": [
+              ["para / de / em + saya", "**mim**", "*É para **mim**.*"],
+              ["com + saya", "**comigo**", "*Vem **comigo**.*"],
+              ["com + kamu", "**com você**", "*Vou **com você**.*"],
+              ["com + kami", "**conosco**", "*Fica **conosco**.*"],
+              ["untuk semua yang lain", "bentuk biasa", "*para ele*, *de nós*, *com eles*"]
+            ]
+          },
+          "after": [
+            "**Comigo dan conosco adalah dua kata leburan yang bertahan dari bahasa Latin.** Tidak ada *com mim* — bentuk itu salah. Hafalkan keduanya sebagai kata utuh.",
+            "⚠️ **Para mim, bukan para eu.** Ini kesalahan yang paling sering dibuat pemula, dan sekaligus yang paling gampang dihindari begitu kamu menyadarinya. Aturan kasarnya: sesudah kata depan apa pun, \"saya\" berubah jadi *mim*."
+          ]
+        },
+        {
+          "title": "Kata kerja yang menuntut kata depan",
+          "body": [
+            "Beberapa kata kerja bahasa Portugis selalu berpasangan dengan kata depan tertentu, dan pasangannya sering tidak sama dengan bahasa Indonesia."
+          ],
+          "table": {
+            "head": ["Português", "Harfiah", "Bahasa Indonesia"],
+            "rows": [
+              ["*gostar **de*** algo", "suka dari sesuatu", "suka sesuatu"],
+              ["*precisar **de*** algo", "perlu dari sesuatu", "butuh sesuatu"],
+              ["*falar **com*** alguém", "bicara dengan seseorang", "bicara dengan seseorang"],
+              ["*perguntar **de*** alguém", "bertanya dari seseorang", "menanyakan seseorang"],
+              ["*depender **de*** algo", "bergantung dari sesuatu", "tergantung sesuatu"],
+              ["*casar **com*** alguém", "menikah dengan seseorang", "menikah dengan seseorang"],
+              ["*sonhar **com*** algo", "bermimpi dengan sesuatu", "memimpikan sesuatu"]
+            ]
+          },
+          "after": [
+            "Tiga baris pertama sudah kamu temui di unit sebelumnya. Yang perlu kamu perhatikan adalah pola umumnya: **kata depannya melekat pada kata kerjanya**, bukan pada maknanya. Hafalkan *gostar de* sebagai satu kata, bukan sebagai *gostar* + aturan.",
+            "*Sonhar com você* = \"memimpikanmu\" — dan itu juga judul beberapa lagu Brasil, jadi kamu akan mendengarnya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kalimat yang memakai kata ganti setiap hari",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["Te ligo depois.", "tchi LI-gu de-PÓIS", "Nanti aku telepon kamu."],
+            ["Me liga!", "mi LI-ga", "Telepon aku ya!"],
+            ["Me ajuda, por favor.", "mi a-ZHU-da", "Tolong bantu saya."],
+            ["Me desculpa.", "mi dis-KUU-pa", "Maafkan saya."],
+            ["Te amo.", "tchi A-mu", "Aku cinta kamu."],
+            ["Vem comigo.", "véin ko-MI-gu", "Ikut aku."],
+            ["É para mim?", "é PRA MIN", "Ini untuk saya?"],
+            ["Me passa o sal?", "mi PA-sa u SÁU", "Tolong ambilkan garamnya?"],
+            ["Te vejo amanhã.", "tchi VÊ-zhu a-ma-NYAN", "Sampai jumpa besok."],
+            ["Ele me disse isso.", "Ê-li mi DJI-si I-su", "Dia bilang begitu ke saya."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Me liga!** adalah cara berpamitan yang paling khas Brasil. Bentuknya perintah, tetapi nadanya hangat — kira-kira \"kabarin ya\" dalam bahasa Indonesia. Pasangannya: *Qualquer coisa, me chama* (\"kalau ada apa-apa, panggil aku\")."
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan *Me passa o sal?* — bentuk pertanyaan yang sebenarnya adalah perintah yang dilunakkan. Menambahkan *por favor* membuatnya sempurna, tetapi orang Brasil sering cukup dengan nada suara yang naik."
+        }
+      ]
+    },
+    {
+      "title": "Baku dan lisan berdampingan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tabel ini bukan untuk dihafal, melainkan untuk dikenali. Kolom kiri akan kamu temui di buku dan surat; kolom kanan akan kamu dengar di jalan."
+        },
+        {
+          "type": "tabel",
+          "head": ["Bentuk baku", "Bentuk Brasil sehari-hari", "Arti"],
+          "rows": [
+            ["*Não o conheço.*", "*Não conheço ele.*", "Saya tidak mengenal dia."],
+            ["*Eu a vi ontem.*", "*Eu vi ela ontem.*", "Saya melihat dia kemarin."],
+            ["*Dê-me o livro.*", "*Me dá o livro.*", "Berikan bukunya."],
+            ["*Desculpe-me.*", "*Me desculpa.*", "Maafkan saya."],
+            ["*para si*", "*para você*", "untukmu"],
+            ["*Nós vamos.*", "*A gente vai.*", "Kami pergi."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Jangan menyimpulkan bahwa kolom kanan \"salah\". Bahasa yang diucapkan seratus dua puluh juta orang dewasa terdidik setiap hari bukanlah kesalahan — ia ragam yang berbeda. Yang perlu kamu tahu cuma kapan memakai yang mana: kolom kanan untuk berbicara, kolom kiri untuk menulis surat lamaran kerja."
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — kembali ke unit 12",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Kamu tahu di mana bank itu? → *Você sabe onde fica o banco?*",
+            "Saya harus pergi sekarang → *Eu tenho que ir agora*",
+            "Saya butuh uang → *Eu preciso de dinheiro*",
+            "Bisa bayar pakai kartu? → *Dá para pagar no cartão?*",
+            "Saya bisa berenang → *Eu sei nadar*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "me / te / nos", "baca": "mi / tchi / nus", "id": "saya / kamu / kami (sasaran)" },
+    { "pt": "mim", "baca": "min", "id": "saya (sesudah kata depan)" },
+    { "pt": "comigo / conosco", "baca": "ko-MI-gu / ko-NOS-ku", "id": "dengan saya / dengan kami" },
+    { "pt": "ligar", "baca": "li-GAH", "id": "menelepon; menyalakan" },
+    { "pt": "perguntar", "baca": "peh-gun-TAH", "id": "bertanya" },
+    { "pt": "guardar", "baca": "guah-DAH", "id": "menyimpan" },
+    { "pt": "buscar", "baca": "bus-KAH", "id": "menjemput; mengambil" },
+    { "pt": "encontrar", "baca": "en-kon-TRAH", "id": "bertemu; menemukan" },
+    { "pt": "amar", "baca": "a-MAH", "id": "mencintai" },
+    { "pt": "passar", "baca": "pa-SAH", "id": "melewati; mengoperkan" },
+    { "pt": "sonhar com", "baca": "so-NYAH kon", "id": "memimpikan" },
+    { "pt": "depender de", "baca": "de-pen-DÊH dji", "id": "bergantung pada" },
+    { "pt": "o bolo", "baca": "u BÔ-lu", "id": "kue" },
+    { "pt": "o pedaço", "baca": "u pe-DA-su", "id": "potongan" },
+    { "pt": "a vez", "baca": "a VÊS", "id": "kali" },
+    { "pt": "a vergonha", "baca": "a veh-GÔ-nya", "id": "malu" },
+    { "pt": "a bateria", "baca": "a ba-te-RI-a", "id": "baterai" },
+    { "pt": "direito", "baca": "dji-RÊI-tu", "id": "betul; dengan benar" },
+    { "pt": "qualquer coisa", "baca": "kuáu-KÉH KÓI-za", "id": "apa saja; kalau ada apa-apa" },
+    { "pt": "fofo / fofa", "baca": "FÔ-fu / FÔ-fa", "id": "manis; menggemaskan" },
+    { "pt": "Fechado!", "baca": "fe-SYA-du", "id": "Sepakat!" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan me, te, atau nos.",
+      "items": [
+        "Ele ____ ligou ontem. (kepada saya)",
+        "Eu ____ vejo amanhã. (kepada kamu)",
+        "Ela ____ ajudou muito. (kepada kami)",
+        "Você ____ passa o sal? (kepada saya)",
+        "Eu ____ amo. (kepada kamu)",
+        "O professor ____ explicou tudo. (kepada kami)"
+      ]
+    },
+    {
+      "prompt": "Isi dengan mim, comigo, você, atau ele.",
+      "items": [
+        "Esse presente é para ____. (saya)",
+        "Vem ____ à festa. (dengan saya)",
+        "Eu vou falar com ____. (dia, laki-laki)",
+        "Isso é para ____? (kamu)",
+        "Ela não quer ir ____. (dengan saya)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis dengan bentuk Brasil sehari-hari.",
+      "items": [
+        "Saya tidak mengenal dia.",
+        "Saya melihat dia kemarin.",
+        "Nanti aku telepon kamu.",
+        "Tolong bantu saya.",
+        "Ini untuk saya?",
+        "Ikut aku."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "ligo / depois / te",
+        "desculpa / me",
+        "comigo / vem",
+        "mim / é / para / isso / ?",
+        "ele / conheço / não / eu"
+      ]
+    }
+  ],
+  "answers": [
+    "me — te — nos — me — te — nos",
+    "mim — comigo — ele — você — comigo",
+    "Eu não conheço ele. — Eu vi ela ontem. — Te ligo depois. — Me ajuda, por favor. — É para mim? — Vem comigo.",
+    "Te ligo depois. — Me desculpa. — Vem comigo. — Isso é para mim? — Eu não conheço ele."
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "title": "Dulu, waktu kecil",
+  "title_target": "Quando eu era criança",
+  "goal": "Memasang bentuk lampau kedua — yang menggambarkan **kebiasaan dan suasana** di masa lalu, bukan kejadian tunggal. Bahasa Indonesia tidak memisahkan keduanya sama sekali.",
+  "bekal": [
+    "mengubah kata kerja ke bentuk *imperfeito*",
+    "memilih antara dua bentuk lampau menurut jenis ceritanya",
+    "menggambarkan masa kecil dan kebiasaan lama"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Fotos antigas",
+      "intro": "Carla menunjukkan album lama di rumah neneknya. Budi ikut melihat.",
+      "lines": [
+        { "speaker": "Carla:", "text": "Olha, essa era a nossa casa antiga.", "id": "Lihat, ini dulu rumah kami yang lama.", "literal": "lihat, ini ia-adalah si milik-kami rumah lama." },
+        { "speaker": "Budi:", "text": "Que bonita! Você morava lá?", "id": "Cantik! Kamu dulu tinggal di situ?", "literal": "betapa cantik! kamu kamu-tinggal di-sana?" },
+        { "speaker": "Carla:", "text": "Morei até os dez anos. Era pequena, mas tinha um quintal enorme.", "id": "Saya tinggal sampai umur sepuluh. Kecil, tapi halamannya luas sekali.", "literal": "saya-tinggal sampai si-jamak sepuluh tahun. ia-adalah kecil, tapi ia-punya sebuah halaman raksasa." },
+        { "speaker": "Budi:", "text": "O que você fazia lá?", "id": "Kamu ngapain aja di situ?", "literal": "apa yang kamu kamu-buat di-sana?" },
+        { "speaker": "Carla:", "text": "Eu brincava com os vizinhos todo dia depois da escola.", "id": "Saya main sama tetangga tiap hari sepulang sekolah.", "literal": "saya saya-bermain dengan si-jamak tetangga setiap hari sesudah dari-si sekolah." },
+        { "speaker": "Budi:", "text": "E vocês brincavam de quê?", "id": "Kalian main apa?", "literal": "dan kalian kalian-bermain dari apa?" },
+        { "speaker": "Carla:", "text": "De pique-esconde, de bola... A gente ficava na rua até escurecer.", "id": "Petak umpet, bola... Kami di jalan sampai gelap.", "literal": "dari cubit-sembunyi, dari bola... kami kami-tinggal di-si jalan sampai menggelap." },
+        { "speaker": "Budi:", "text": "Aqui era assim também. E a sua avó, cozinhava muito?", "id": "Di tempat saya juga begitu. Kalau nenekmu, sering masak?", "literal": "di-sini ia-adalah begitu juga. dan si milikmu nenek, ia-memasak banyak?" },
+        { "speaker": "Carla:", "text": "Todo domingo. A casa inteira cheirava a feijoada.", "id": "Tiap Minggu. Seluruh rumah harum feijoada.", "literal": "setiap Minggu. si rumah utuh ia-berbau pada feijoada." },
+        { "speaker": "Budi:", "text": "Que saudade você deve sentir.", "id": "Pasti kangen banget kamu.", "literal": "betapa kerinduan kamu kamu-harus merasakan." },
+        { "speaker": "Carla:", "text": "Sinto, sim. Mas um dia a gente vendeu a casa e mudou pra cá.", "id": "Iya. Tapi suatu hari kami jual rumahnya dan pindah ke sini.", "literal": "saya-rasa, ya. tapi satu hari kami kami-jual si rumah dan kami-pindah untuk ke-sini." },
+        { "speaker": "Budi:", "text": "Foi difícil?", "id": "Berat?", "literal": "ia-adalah sulit?" },
+        { "speaker": "Carla:", "text": "Naquela época eu chorei muito. Hoje eu entendo.", "id": "Waktu itu saya nangis terus. Sekarang saya paham.", "literal": "di-itu masa saya saya-menangis banyak. hari-ini saya saya-mengerti." }
+      ],
+      "notes": [
+        "**Dua bentuk lampau berdampingan di dialog ini, dan bedanya bukan soal waktu melainkan soal bentuk cerita.** *Morava* menggambarkan keadaan yang berlangsung lama tanpa titik awal atau akhir yang jelas; *morei até os dez anos* menyebut satu rentang yang sudah tertutup. *Brincava* menggambarkan kebiasaan; *vendeu* dan *chorei* menyebut kejadian yang terjadi sekali.",
+        "**Saudade** adalah kata Portugis yang paling terkenal sedunia, dan sering disebut tidak bisa diterjemahkan. Ia berarti kerinduan pada sesuatu yang jauh atau sudah lewat — orang, tempat, masa. *Que saudade!* = \"kangen banget!\", *Estou com saudade de você* = \"aku kangen kamu\". Kabar baiknya untuk penutur bahasa Indonesia: \"kangen\" dan \"rindu\" sebenarnya sangat dekat, jauh lebih dekat daripada padanan bahasa Inggris mana pun.",
+        "**Brincar de** — bermain sesuatu. Perhatikan *de*: *brincar de bola*, *brincar de pique-esconde*. ⚠️ *Brincar* juga berarti \"bercanda\": *Tô brincando!* = \"Bercanda kok!\" Untuk olahraga sungguhan, kata kerjanya *jogar*: *jogar futebol*.",
+        "**Naquela época** = *em + aquela época*, \"pada masa itu\". Leburan penunjuk dengan kata depan yang sudah kamu lihat di unit 13. Ia salah satu pembuka cerita masa lalu yang paling sering dipakai.",
+        "**Mudar pra cá** = \"pindah ke sini\". *Cá* adalah bentuk santai dari *aqui*, dan hampir hanya muncul dalam ungkapan seperti *vem cá* (\"sini deh\") dan *pra cá*."
+      ],
+      "grammars": [
+        {
+          "title": "Imperfeito — lampau yang menggambarkan",
+          "body": [
+            "Ujungnya jauh lebih sederhana daripada bentuk lampau pertama, dan rombongan -er dan -ir memakai ujung yang **sama persis**."
+          ],
+          "table": {
+            "head": ["Pelaku", "-ar: falar", "-er / -ir: comer, abrir"],
+            "rows": [
+              ["eu", "fal**ava**", "com**ia** / abr**ia**"],
+              ["você / ele / ela", "fal**ava**", "com**ia** / abr**ia**"],
+              ["nós", "fal**ávamos**", "com**íamos** / abr**íamos**"],
+              ["vocês / eles / elas", "fal**avam**", "com**iam** / abr**iam**"],
+              ["a gente", "fal**ava**", "com**ia** / abr**ia**"]
+            ]
+          },
+          "after": [
+            "**Bentuk *eu* dan *ele* sama persis.** Kalau perlu diperjelas, sebutkan kata gantinya: *eu falava* lawan *ele falava*. Dalam praktiknya konteks hampir selalu cukup.",
+            "**Cuma empat kata kerja yang tak beraturan di bentuk ini** — dan itu jumlah yang sangat kecil dibanding bentuk lampau pertama: *ser* → **era, éramos, eram**; *ter* → **tinha, tínhamos, tinham**; *vir* → **vinha, vínhamos, vinham**; *pôr* → **punha, púnhamos, punham**. Selain itu, semuanya beraturan tanpa kecuali.",
+            "⚠️ *Era* dan *tinha* adalah dua bentuk yang paling sering kamu pakai dari seluruh unit ini. *Era pequena* (dulu kecil), *tinha um quintal* (dulu punya halaman), *eu tinha dez anos* (saya waktu itu sepuluh tahun)."
+          ]
+        },
+        {
+          "title": "Memilih di antara dua bentuk lampau",
+          "body": [
+            "Pertanyaannya bukan \"kapan\", melainkan **\"apa peran kalimat ini di dalam cerita\"**. Latar belakang memakai *imperfeito*; peristiwa memakai bentuk lampau pertama."
+          ],
+          "table": {
+            "head": ["Pakai imperfeito untuk", "Contoh", "Pakai lampau pertama untuk", "Contoh"],
+            "rows": [
+              ["kebiasaan lama", "*Eu brincava na rua.*", "kejadian sekali", "*Eu quebrei o braço.*"],
+              ["keadaan, suasana", "*Estava frio.*", "perubahan mendadak", "*Ficou frio de repente.*"],
+              ["umur, sifat, penampilan", "*Ela era alta.*", "peristiwa yang selesai", "*Ela chegou às oito.*"],
+              ["latar belakang cerita", "*Chovia quando eu saí.*", "peristiwa utama cerita", "*Chovia quando eu **saí**.*"],
+              ["perasaan yang berlangsung", "*Eu queria ir.*", "keputusan sesaat", "*Eu quis ir.*"]
+            ]
+          },
+          "after": [
+            "**Baris keempat memperlihatkan keduanya dalam satu kalimat**, dan itulah pola yang paling khas: *Chovia quando eu saí* = \"Sedang hujan waktu saya keluar\". Hujannya latar (imperfeito), keluarnya peristiwa (lampau pertama). Bahasa Indonesia menandai perbedaan ini dengan kata \"sedang\", bukan dengan bentuk kata kerja.",
+            "**Uji cepat:** kalau kalimatnya bisa diterjemahkan dengan \"dulu sering\", \"waktu itu sedang\", atau \"dulunya\", pakai **imperfeito**. Kalau bisa diterjemahkan dengan \"lalu\", \"kemudian\", atau \"pada suatu hari\", pakai **lampau pertama**.",
+            "⚠️ Jangan menyamakannya dengan \"sudah\" dan \"belum\" dalam bahasa Indonesia. Dua-duanya sudah lewat; yang berbeda cuma cara menceritakannya."
+          ]
+        },
+        {
+          "title": "Kebiasaan lama",
+          "body": [
+            "Dua rumus tambahan yang mempertegas makna \"dulu sering\"."
+          ],
+          "table": {
+            "head": ["Português", "Harfiah", "Bahasa Indonesia"],
+            "rows": [
+              ["*Eu **costumava** acordar cedo.*", "saya biasa bangun awal", "Dulu saya biasanya bangun pagi."],
+              ["*Eu **ia** todo domingo.*", "saya pergi setiap Minggu", "Dulu saya pergi tiap Minggu."],
+              ["*Eu **sempre** estudava à noite.*", "saya selalu belajar malam", "Dulu saya selalu belajar malam."],
+              ["*Antigamente, a gente **morava** lá.*", "dulu kala, kami tinggal di sana", "Dulu kami tinggal di sana."],
+              ["*Quando eu **era** criança…*", "ketika saya adalah anak", "Waktu saya kecil…"],
+              ["*Naquela **época**…*", "pada itu masa", "Waktu itu…"]
+            ]
+          },
+          "after": [
+            "*Quando eu era criança* adalah pembuka cerita masa kecil yang paling baku, dan ia akan membuka banyak percakapan hangat di Brasil — orang Brasil suka bercerita tentang masa kecil sebanyak orang Indonesia.",
+            "**Costumava** dipakai kalau kamu ingin menegaskan bahwa kebiasaan itu **sudah berhenti**. Tanpa itu, *imperfeito* sendiri sudah cukup."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Masa kecil",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["a criança", "a kri-AN-sa", "anak kecil"],
+            ["a infância", "a in-FAN-si-a", "masa kanak-kanak"],
+            ["brincar", "brin-KAH", "bermain; bercanda"],
+            ["a brincadeira", "a brin-ka-DÊI-ra", "permainan; candaan"],
+            ["o brinquedo", "u brin-KÊ-du", "mainan"],
+            ["o quintal", "u kin-TÁU", "halaman belakang"],
+            ["a escola", "a is-KÓ-la", "sekolah"],
+            ["o colégio", "u ko-LÉ-zhi-u", "sekolah menengah"],
+            ["antigamente", "an-tchi-ga-MEN-tchi", "dulu kala"],
+            ["a época", "a É-po-ka", "masa; zaman"],
+            ["antigo", "an-TCHI-gu", "lama; kuno"],
+            ["a saudade", "a sáu-DA-dji", "kerinduan"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Perhatikan *a criança* — kata **perempuan**, meskipun anaknya laki-laki. Sama seperti *a pessoa* (orang) dan *a vítima* (korban). Jenis kelamin kata benda memang tidak selalu mengikuti kenyataan."
+        }
+      ]
+    },
+    {
+      "title": "Saudade: satu kata, satu bab kecil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kata ini pantas mendapat halamannya sendiri, karena ia muncul di judul lagu, nama toko, tato, dan percakapan sehari-hari."
+        },
+        {
+          "type": "tabel",
+          "head": ["Português", "Harfiah", "Bahasa Indonesia"],
+          "rows": [
+            ["*Que saudade!*", "betapa kerinduan!", "Kangen banget!"],
+            ["*Estou com saudade de você.*", "saya berada dengan rindu dari kamu", "Aku kangen kamu."],
+            ["*Estou com saudade de casa.*", "saya berada dengan rindu dari rumah", "Aku kangen rumah."],
+            ["*Que saudade da minha avó.*", "betapa rindu dari nenekku", "Kangen nenek."],
+            ["*Deixa saudade.*", "ia-meninggalkan kerinduan", "Bikin kangen."],
+            ["*Matar a saudade*", "membunuh kerinduan", "melepas rindu"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa polanya memakai *estar com* dari unit 3 — sekali lagi, sebuah perasaan yang dalam bahasa Portugis \"dimiliki\", bukan \"dirasakan\". Dan *matar a saudade* adalah ungkapan yang indah: melepas rindu dengan bertemu lagi, atau dengan memakan makanan yang lama tidak dimakan."
+        },
+        {
+          "type": "p",
+          "text": "Kalau kamu berpisah dengan teman Brasil, kalimat yang tepat adalah *Vou ficar com saudade* — \"aku bakal kangen\". Ia akan diterima dengan hangat, karena ia menunjukkan bahwa kamu sudah paham sesuatu yang lebih dalam daripada tata bahasa."
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — kembali ke unit 15",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Kemarin saya bekerja → *Ontem eu trabalhei*",
+            "Kami makan banyak ikan → *Nós comemos muito peixe*",
+            "Hujan seharian Sabtu → *Choveu o sábado inteiro*",
+            "Saya tiba jam delapan → *Eu cheguei às oito*",
+            "Saya tidak keluar rumah → *Eu não saí de casa*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "era / eram", "baca": "É-ra / É-ráun", "id": "dulu adalah" },
+    { "pt": "tinha / tinham", "baca": "TCHI-nya / TCHI-nyáun", "id": "dulu punya" },
+    { "pt": "morava", "baca": "mo-RA-va", "id": "dulu tinggal" },
+    { "pt": "costumava", "baca": "kos-tu-MA-va", "id": "dulu biasanya" },
+    { "pt": "brincar de", "baca": "brin-KAH dji", "id": "bermain (sesuatu)" },
+    { "pt": "jogar", "baca": "zho-GAH", "id": "bermain (olahraga)" },
+    { "pt": "a criança", "baca": "a kri-AN-sa", "id": "anak kecil (⚠️ perempuan)" },
+    { "pt": "a infância", "baca": "a in-FAN-si-a", "id": "masa kecil" },
+    { "pt": "o quintal", "baca": "u kin-TÁU", "id": "halaman belakang" },
+    { "pt": "o brinquedo", "baca": "u brin-KÊ-du", "id": "mainan" },
+    { "pt": "antigamente", "baca": "an-tchi-ga-MEN-tchi", "id": "dulu kala" },
+    { "pt": "a época", "baca": "a É-po-ka", "id": "masa; zaman" },
+    { "pt": "antigo", "baca": "an-TCHI-gu", "id": "lama; kuno" },
+    { "pt": "a saudade", "baca": "a sáu-DA-dji", "id": "kerinduan" },
+    { "pt": "chorar", "baca": "syo-RAH", "id": "menangis" },
+    { "pt": "mudar", "baca": "mu-DAH", "id": "pindah; berubah" },
+    { "pt": "vender", "baca": "ven-DÊH", "id": "menjual" },
+    { "pt": "cheirar", "baca": "syêi-RAH", "id": "berbau; mencium" },
+    { "pt": "escurecer", "baca": "is-ku-re-SÊH", "id": "menjadi gelap" },
+    { "pt": "assim", "baca": "a-SIN", "id": "begitu; seperti ini" },
+    { "pt": "de repente", "baca": "dji he-PEN-tchi", "id": "tiba-tiba" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah ke bentuk imperfeito.",
+      "items": [
+        "Eu moro em Jacarta. (eu)",
+        "Ela come muito. (ela)",
+        "Nós brincamos na rua. (nós)",
+        "Eles abrem a loja às oito. (eles)",
+        "Eu sou criança. (eu, ser)",
+        "Eu tenho dez anos. (eu, ter)"
+      ]
+    },
+    {
+      "prompt": "Pilih bentuk yang tepat: imperfeito atau lampau pertama.",
+      "items": [
+        "Quando eu ____ criança, eu brincava na rua. (ser)",
+        "Ontem eu ____ o braço. (quebrar)",
+        "Antigamente a gente ____ lá. (morar)",
+        "Um dia nós ____ a casa. (vender)",
+        "____ frio quando eu saí. (estar)",
+        "Ela ____ às oito em ponto. (chegar)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Waktu saya kecil, saya tinggal di Jakarta.",
+        "Dulu rumahnya kecil tapi halamannya luas.",
+        "Saya main sama tetangga tiap hari.",
+        "Nenek saya masak tiap Minggu.",
+        "Kangen banget!",
+        "Aku kangen kamu."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "criança / eu / quando / era",
+        "rua / brincava / eu / na",
+        "quintal / tinha / um / enorme / ela",
+        "saudade / que / !",
+        "você / com / estou / saudade / de"
+      ]
+    }
+  ],
+  "answers": [
+    "Eu morava em Jacarta. — Ela comia muito. — Nós brincávamos na rua. — Eles abriam a loja às oito. — Eu era criança. — Eu tinha dez anos.",
+    "era — quebrei — morava — vendemos — Estava — chegou",
+    "Quando eu era criança, eu morava em Jacarta. — A casa era pequena mas tinha um quintal enorme. — Eu brincava com os vizinhos todo dia. — A minha avó cozinhava todo domingo. — Que saudade! — Estou com saudade de você.",
+    "Quando eu era criança. — Eu brincava na rua. — Ela tinha um quintal enorme. — Que saudade! — Estou com saudade de você."
+  ]
+}

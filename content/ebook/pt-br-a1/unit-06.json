@@ -1,0 +1,263 @@
+{
+  "title": "Kata kerja yang berubah bentuk",
+  "title_target": "Eu falo, você fala",
+  "goal": "Menghadapi penghalang terbesar bagi penutur bahasa Indonesia: kata kerja bahasa Portugis berganti ujung menurut siapa pelakunya. Unit ini memasang rombongan pertama dan terbesar — kata kerja berakhiran **-ar**.",
+  "bekal": [
+    "mengubah kata kerja -ar untuk lima pelaku",
+    "menyusun kalimat sangkal dengan *não* di depan kata kerja",
+    "membuang kata ganti orang karena ujung kata kerjanya sudah menyimpan pelakunya"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — O que você faz no fim de semana?",
+      "intro": "Jumat sore, sebelum kelas bubar. Carla dan Budi berbincang tentang kebiasaan masing-masing.",
+      "lines": [
+        { "speaker": "Carla:", "text": "Budi, você fala outras línguas?", "id": "Budi, kamu bisa bahasa lain?", "literal": "Budi, kamu kamu-bicara lain-jamak bahasa-jamak?" },
+        { "speaker": "Budi:", "text": "Falo indonésio, inglês e um pouco de árabe.", "id": "Saya bisa bahasa Indonesia, Inggris, dan sedikit Arab.", "literal": "saya-bicara Indonesia, Inggris dan satu sedikit dari Arab." },
+        { "speaker": "Carla:", "text": "Nossa! E você estuda português todo dia?", "id": "Wah! Dan kamu belajar bahasa Portugis tiap hari?", "literal": "aduh! dan kamu kamu-belajar Portugis setiap hari?" },
+        { "speaker": "Budi:", "text": "Estudo de manhã. À noite eu trabalho.", "id": "Saya belajar pagi hari. Malamnya saya bekerja.", "literal": "saya-belajar dari pagi. pada-si malam saya saya-bekerja." },
+        { "speaker": "Carla:", "text": "Onde você trabalha?", "id": "Kamu kerja di mana?", "literal": "di-mana kamu kamu-bekerja?" },
+        { "speaker": "Budi:", "text": "Num restaurante japonês. E você?", "id": "Di sebuah restoran Jepang. Kamu sendiri?", "literal": "di-sebuah restoran Jepang. dan kamu?" },
+        { "speaker": "Carla:", "text": "Eu não trabalho. Só estudo.", "id": "Saya tidak bekerja. Cuma kuliah.", "literal": "saya tidak saya-bekerja. cuma saya-belajar." },
+        { "speaker": "Budi:", "text": "E o que você faz no fim de semana?", "id": "Dan kamu ngapain waktu akhir pekan?", "literal": "dan apa yang kamu kamu-buat di-si akhir dari pekan?" },
+        { "speaker": "Carla:", "text": "Eu danço. Nós dançamos forró todo sábado.", "id": "Saya menari. Kami menari forró tiap Sabtu.", "literal": "saya saya-menari. kami kami-menari forró setiap Sabtu." },
+        { "speaker": "Budi:", "text": "Que legal! Eu não danço nada.", "id": "Keren! Saya sama sekali tidak bisa menari.", "literal": "betapa keren! saya tidak saya-menari apa-pun." },
+        { "speaker": "Carla:", "text": "Todo mundo dança no Brasil. A gente ensina você!", "id": "Semua orang menari di Brasil. Kami ajari kamu!", "literal": "seluruh dunia ia-menari di-si Brasil. kami kami-ajar kamu!" }
+      ],
+      "notes": [
+        "**Inilah bedanya yang paling besar dari bahasa Indonesia.** Kata *bicara* dalam bahasa Indonesia tidak pernah berubah: saya bicara, kamu bicara, mereka bicara. Bahasa Portugis mengganti ujungnya setiap kali: *falo*, *fala*, *falamos*, *falam*. Kabar baiknya, yang berubah cuma **ujungnya** — pangkal katanya (*fal-*) tetap utuh selamanya.",
+        "**Karena ujungnya sudah menyimpan pelakunya, kata ganti orangnya boleh dibuang.** Lihat jawaban Budi: *Falo indonésio*, bukan *Eu falo indonésio*. Ujung *-o* sudah pasti berarti \"saya\". Orang Brasil membuangnya terus-menerus, terutama untuk *eu*. Kamu memakai *eu* kalau ingin **menekankan** atau membandingkan: *Eu não trabalho, ela trabalha*.",
+        "**Não berdiri tepat di depan kata kerjanya.** *Eu não trabalho.* Cuma satu kata, selalu di posisi yang sama, tanpa kata bantu apa pun. Ini jauh lebih sederhana daripada bahasa Inggris (*I don't work*) dan hampir sama sederhananya dengan bahasa Indonesia.",
+        "⚠️ **Sangkal ganda adalah bentuk yang benar.** *Eu não danço nada* harfiahnya \"saya tidak menari apa pun\" — dua kata sangkal dalam satu kalimat, dan itu **wajib**. Begitu juga *não tem ninguém* (tidak ada siapa-siapa) dan *não vou nunca* (saya tidak akan pernah). Membuang *não* di depan justru salah. Kebetulan bahasa Indonesia melakukan hal serupa: \"tidak ada apa-apa\".",
+        "**Todo mundo** harfiahnya \"seluruh dunia\", artinya \"semua orang\", dan ia memakai bentuk kata kerja **tunggal**: *todo mundo dança*. Ia salah satu ungkapan yang paling sering dipakai di Brasil, dan bentuk baku *todos* justru terdengar kaku di percakapan."
+      ],
+      "grammars": [
+        {
+          "title": "Kata kerja -ar: rombongan terbesar",
+          "body": [
+            "Sekitar delapan puluh persen kata kerja bahasa Portugis berakhiran **-ar**, dan hampir semuanya beraturan. Buang *-ar* dari bentuk dasarnya, lalu tempelkan ujung berikut."
+          ],
+          "table": {
+            "head": ["Pelaku", "Ujung", "falar (bicara)", "Cara baca"],
+            "rows": [
+              ["eu", "**-o**", "**falo**", "FA-lu"],
+              ["você / ele / ela", "**-a**", "**fala**", "FA-la"],
+              ["nós", "**-amos**", "**falamos**", "fa-LA-mus"],
+              ["vocês / eles / elas", "**-am**", "**falam**", "FA-láun"],
+              ["a gente", "**-a**", "**fala**", "FA-la"]
+            ]
+          },
+          "after": [
+            "⚠️ Perhatikan cara baca baris keempat: **-am** di ujung kata kerja dibaca **áun**, sama seperti *-ão*. Jadi *falam* berbunyi FA-láun, dan *trabalham* berbunyi tra-BA-lyáun. Ini salah satu bunyi yang paling sering salah diucapkan pemula.",
+            "**Baris kelima adalah jalan pintas terbesar bahasa Brasil lisan.** Karena *a gente* memakai bentuk yang sama dengan *ele*, kamu bisa berbicara sepanjang hari cuma dengan **tiga** bentuk: *-o* untuk saya, *-a* untuk semua orang lain yang tunggal termasuk *a gente*, dan *-am* untuk jamak. Bentuk *-amos* boleh disimpan untuk nanti.",
+            "**Ujung -o dan -a itu tidak sama dengan jenis kelamin.** Ini kekeliruan yang sering muncul setelah unit 2: *eu falo* memakai *-o* entah yang bicara laki-laki atau perempuan. Ujung kata kerja menandai **pelaku**, ujung kata sifat menandai **jenis kelamin** — dua sistem yang kebetulan memakai huruf yang sama."
+          ]
+        },
+        {
+          "title": "Dua puluh kata kerja -ar yang paling sering dipakai",
+          "body": [
+            "Semuanya beraturan. Begitu kamu hafal ujungnya sekali, dua puluh kata kerja ini langsung bisa dipakai dalam lima bentuk masing-masing."
+          ],
+          "table": {
+            "head": ["Português", "Cara baca", "Arti", "Português", "Cara baca", "Arti"],
+            "rows": [
+              ["falar", "fa-LAH", "bicara", "morar", "mo-RAH", "tinggal"],
+              ["estudar", "is-tu-DAH", "belajar", "trabalhar", "tra-ba-LYAH", "bekerja"],
+              ["gostar", "gos-TAH", "suka", "chegar", "sye-GAH", "tiba"],
+              ["comprar", "kon-PRAH", "membeli", "pagar", "pa-GAH", "membayar"],
+              ["olhar", "o-LYAH", "melihat", "escutar", "is-ku-TAH", "mendengarkan"],
+              ["achar", "a-SYAH", "mengira; menemukan", "precisar", "pre-si-ZAH", "perlu"],
+              ["ajudar", "a-zhu-DAH", "menolong", "esperar", "is-pe-RAH", "menunggu"],
+              ["dançar", "dan-SAH", "menari", "cozinhar", "ko-zi-NYAH", "memasak"],
+              ["viajar", "vi-a-ZHAH", "bepergian", "descansar", "dis-kan-SAH", "beristirahat"],
+              ["ensinar", "en-si-NAH", "mengajar", "usar", "u-ZAH", "memakai"]
+            ]
+          },
+          "after": [
+            "⚠️ Dua kata kerja di tabel itu menyimpan perubahan **ejaan** kecil yang baru muncul di bentuk lampau nanti, semata demi mempertahankan bunyinya: *chegar* → *cheguei* (disisipi *u* supaya g tetap keras) dan *dançar* → *dancei* (ç berubah jadi c di depan e). Di bentuk sekarang, keduanya beraturan penuh.",
+            "**Achar adalah kata kerja yang paling khas Brasil.** Artinya \"mengira, berpendapat\" — *Eu acho que sim* (\"Saya rasa begitu\"), *O que você acha?* (\"Menurutmu bagaimana?\"). Ia dipakai jauh lebih sering daripada *pensar*, dan menguasainya membuat percakapanmu langsung terdengar wajar."
+          ]
+        },
+        {
+          "title": "Gostar de — suka, dengan kata kecil yang wajib",
+          "body": [
+            "Satu kata kerja yang perlu perhatian sendiri karena bentuknya menjebak."
+          ],
+          "table": {
+            "head": ["Português", "Harfiah", "Bahasa Indonesia"],
+            "rows": [
+              ["Eu gosto **de** café.", "saya suka dari kopi", "Saya suka kopi."],
+              ["Eu gosto **do** Brasil.", "saya suka dari-si Brasil", "Saya suka Brasil."],
+              ["Eu gosto **da** música.", "saya suka dari-si musik", "Saya suka musiknya."],
+              ["Eu gosto **de** estudar.", "saya suka dari belajar", "Saya suka belajar."],
+              ["Você gosta **de** samba?", "kamu suka dari samba?", "Kamu suka samba?"],
+              ["Eu não gosto **de** peixe.", "saya tidak suka dari ikan", "Saya tidak suka ikan."]
+            ]
+          },
+          "after": [
+            "⚠️ **De tidak boleh dibuang.** *Eu gosto café* adalah kalimat yang salah, dan ia salah satu kesalahan yang paling sering bertahan sampai tingkat menengah. Anggap *gostar de* sebagai satu kata utuh, seperti \"suka akan\" — dan jangan pernah memisahkannya.",
+            "Dan karena *de* bertemu kata sandang, ia melebur seperti di unit 5: *gosto **do** Brasil*, *gosto **da** música*, *gosto **dos** livros*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kapan sesuatu terjadi",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Keterangan waktu berikut menempel pada hampir semua kalimat kata kerja, dan semuanya bisa dipakai sekarang juga."
+        },
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["de manhã", "dji ma-NYAN", "pagi hari"],
+            ["de tarde", "dji TAH-dji", "sore hari"],
+            ["à noite", "a NÓI-tchi", "malam hari"],
+            ["hoje", "Ô-zhi", "hari ini"],
+            ["amanhã", "a-ma-NYAN", "besok"],
+            ["ontem", "ON-téin", "kemarin"],
+            ["sempre", "SEN-pri", "selalu"],
+            ["nunca", "NUN-ka", "tidak pernah"],
+            ["às vezes", "as VÊ-zis", "kadang-kadang"],
+            ["todo dia", "TÔ-du DJI-a", "setiap hari"],
+            ["no fim de semana", "nu FIN dji se-MA-na", "waktu akhir pekan"],
+            ["agora", "a-GÔ-ra", "sekarang"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Nunca* memicu sangkal ganda kalau ia berdiri di belakang kata kerja: *Eu não danço nunca*. Kalau ia diletakkan di depan, *não* justru dibuang: *Eu nunca danço*. Dua-duanya benar dan sama artinya."
+        }
+      ]
+    },
+    {
+      "title": "Hari dalam seminggu",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bahasa Portugis menamai hari kerja dengan **nomor urut** — sebuah keanehan yang tidak dimiliki bahasa Eropa lain, dan yang justru membuatnya gampang dihafal."
+        },
+        {
+          "type": "tabel",
+          "head": ["Português", "Cara baca", "Harfiah", "Bahasa Indonesia"],
+          "rows": [
+            ["segunda-feira", "se-GUN-da FÊI-ra", "pasar kedua", "Senin"],
+            ["terça-feira", "TÊH-sa FÊI-ra", "pasar ketiga", "Selasa"],
+            ["quarta-feira", "KUAH-ta FÊI-ra", "pasar keempat", "Rabu"],
+            ["quinta-feira", "KIN-ta FÊI-ra", "pasar kelima", "Kamis"],
+            ["sexta-feira", "SÊS-ta FÊI-ra", "pasar keenam", "Jumat"],
+            ["sábado", "SA-ba-du", "Sabat", "Sabtu"],
+            ["domingo", "do-MIN-gu", "hari Tuhan", "Minggu"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dalam percakapan, bagian *-feira* hampir selalu dibuang: orang mengatakan *segunda*, *terça*, *quinta*. Perhatikan juga bahwa hitungannya mulai dari **dua**, karena Minggu dihitung sebagai hari pertama."
+        },
+        {
+          "type": "p",
+          "text": "Untuk mengatakan \"pada hari Senin\", pasang kata sandang: *na segunda* (Senin ini) dan *às segundas* (setiap Senin). Kelima hari kerja perempuan; *sábado* dan *domingo* laki-laki — jadi *no sábado*, *no domingo*."
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — kembali ke unit 4",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tutup kolom Portugisnya dan susun ulang dari ingatan."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Berapa umurmu? → *Quantos anos você tem?*",
+            "Umur saya dua puluh lima tahun → *Eu tenho vinte e cinco anos*",
+            "Berapa harganya? → *Quanto custa?*",
+            "Ada dua belas murid → *Tem doze alunos*",
+            "Empat ratus real sebulan → *quatrocentos reais por mês*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "pt": "falar", "baca": "fa-LAH", "id": "bicara; bisa (bahasa)" },
+    { "pt": "estudar", "baca": "is-tu-DAH", "id": "belajar" },
+    { "pt": "trabalhar", "baca": "tra-ba-LYAH", "id": "bekerja" },
+    { "pt": "morar", "baca": "mo-RAH", "id": "tinggal (berdiam)" },
+    { "pt": "gostar de", "baca": "gos-TAH dji", "id": "suka (⚠️ selalu dengan de)" },
+    { "pt": "achar", "baca": "a-SYAH", "id": "mengira; berpendapat" },
+    { "pt": "precisar de", "baca": "pre-si-ZAH dji", "id": "perlu; butuh" },
+    { "pt": "ajudar", "baca": "a-zhu-DAH", "id": "menolong" },
+    { "pt": "dançar", "baca": "dan-SAH", "id": "menari" },
+    { "pt": "cozinhar", "baca": "ko-zi-NYAH", "id": "memasak" },
+    { "pt": "esperar", "baca": "is-pe-RAH", "id": "menunggu; berharap" },
+    { "pt": "comprar", "baca": "kon-PRAH", "id": "membeli" },
+    { "pt": "a língua", "baca": "a LIN-gua", "id": "bahasa; lidah" },
+    { "pt": "o inglês", "baca": "u in-GLÊS", "id": "bahasa Inggris" },
+    { "pt": "o restaurante", "baca": "u hes-táu-RAN-tchi", "id": "restoran" },
+    { "pt": "o fim de semana", "baca": "u FIN dji se-MA-na", "id": "akhir pekan" },
+    { "pt": "todo dia", "baca": "TÔ-du DJI-a", "id": "setiap hari" },
+    { "pt": "todo mundo", "baca": "TÔ-du MUN-du", "id": "semua orang" },
+    { "pt": "sempre / nunca", "baca": "SEN-pri / NUN-ka", "id": "selalu / tidak pernah" },
+    { "pt": "às vezes", "baca": "as VÊ-zis", "id": "kadang-kadang" },
+    { "pt": "agora", "baca": "a-GÔ-ra", "id": "sekarang" },
+    { "pt": "nada", "baca": "NA-da", "id": "tidak ada apa-apa" },
+    { "pt": "um pouco", "baca": "un PÔ-ku", "id": "sedikit" },
+    { "pt": "onde", "baca": "ON-dji", "id": "di mana" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+      "items": [
+        "Eu ____ português. (falar)",
+        "Você ____ em São Paulo? (morar)",
+        "Nós ____ todo dia. (estudar)",
+        "Eles ____ num restaurante. (trabalhar)",
+        "A gente ____ forró. (dançar)",
+        "Ela não ____ carne. (gostar de)"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi kalimat sangkal.",
+      "items": [
+        "Eu trabalho aqui.",
+        "Ela dança bem.",
+        "Nós estudamos à noite.",
+        "Eles moram no Brasil.",
+        "Você fala inglês."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Saya belajar bahasa Portugis setiap hari.",
+        "Kamu kerja di mana?",
+        "Saya suka kopi.",
+        "Kami menari tiap Sabtu.",
+        "Saya tidak suka ikan.",
+        "Semua orang menari di Brasil."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "você / línguas / fala / outras / ?",
+        "manhã / estudo / de / eu",
+        "trabalha / onde / você / ?",
+        "gosto / de / eu / café",
+        "danço / não / nada / eu"
+      ]
+    }
+  ],
+  "answers": [
+    "falo — mora — estudamos — trabalham — dança — gosta de",
+    "Eu não trabalho aqui. — Ela não dança bem. — Nós não estudamos à noite. — Eles não moram no Brasil. — Você não fala inglês.",
+    "Eu estudo português todo dia. — Onde você trabalha? — Eu gosto de café. — Nós dançamos todo sábado. — Eu não gosto de peixe. — Todo mundo dança no Brasil.",
+    "Você fala outras línguas? — Eu estudo de manhã. — Onde você trabalha? — Eu gosto de café. — Eu não danço nada."
+  ]
+}

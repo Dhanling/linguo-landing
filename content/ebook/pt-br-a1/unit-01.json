@@ -1,0 +1,516 @@
+{
+  "title": "Halo, apa kabar?",
+  "title_target": "Oi! Tudo bem?",
+  "goal": "Menyapa orang Brasil dengan tepat pada tiap waktu, menyebut nama dan asal, menanyakan kabar, dan menemukan bahwa kalimat tanya bahasa Portugis tidak berubah susunannya — persis seperti bahasa Indonesia.",
+  "bekal": [
+    "menyapa dengan *oi*, *bom dia*, *boa tarde*, dan *boa noite* pada tempatnya masing-masing",
+    "menyebut nama dan asal dengan *eu sou…* dan *eu sou de…*",
+    "membuat kalimat tanya hanya dengan menaikkan nada suara, tanpa mengubah urutan kata"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Primeiro dia na escola de idiomas",
+      "intro": "Hari pertama kursus bahasa di São Paulo. Dua peserta baru duduk bersebelahan sambil menunggu kelas dimulai.",
+      "lines": [
+        {
+          "speaker": "Carla:",
+          "text": "Oi! Tudo bem?",
+          "id": "Halo! Apa kabar?",
+          "literal": "halo! semua baik?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Oi! Tudo bem, obrigado. E você?",
+          "id": "Halo! Baik, terima kasih. Dan kamu?",
+          "literal": "halo! semua baik, terima-kasih. dan kamu?"
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Tudo ótimo! Como você se chama?",
+          "id": "Baik sekali! Siapa namamu?",
+          "literal": "semua bagus-sekali! bagaimana kamu diri-memanggil?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eu me chamo Budi. E você?",
+          "id": "Nama saya Budi. Dan kamu?",
+          "literal": "saya diri saya-panggil Budi. dan kamu?"
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Eu sou a Carla. Muito prazer!",
+          "id": "Saya Carla. Senang berkenalan!",
+          "literal": "saya adalah si Carla. sangat kesenangan!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "O prazer é meu. Você é brasileira?",
+          "id": "Senang juga berkenalan. Kamu orang Brasil?",
+          "literal": "si kesenangan adalah milikku. kamu adalah Brasil-perempuan?"
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Sou, sim. Sou de Salvador. E você?",
+          "id": "Ya, benar. Saya dari Salvador. Dan kamu?",
+          "literal": "saya-adalah, ya. saya-adalah dari Salvador. dan kamu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eu sou indonésio. Sou de Jacarta.",
+          "id": "Saya orang Indonesia. Saya dari Jakarta.",
+          "literal": "saya adalah Indonesia-laki. saya-adalah dari Jakarta."
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Que legal! Seja bem-vindo ao Brasil!",
+          "id": "Wah, keren! Selamat datang di Brasil!",
+          "literal": "betapa keren! jadilah baik-datang ke-si Brasil!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Muito obrigado! Até amanhã, Carla.",
+          "id": "Terima kasih banyak! Sampai besok, Carla.",
+          "literal": "sangat terima-kasih! sampai besok, Carla."
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Até amanhã! Tchau!",
+          "id": "Sampai besok! Dah!",
+          "literal": "sampai besok! dah!"
+        }
+      ],
+      "notes": [
+        "**Tudo bem? adalah sapaan, bukan pertanyaan sungguhan.** Harfiahnya \"semua baik?\", dan jawabannya hampir selalu *tudo bem* juga — bahkan ketika hidupmu sedang berantakan. Ia bekerja persis seperti \"apa kabar?\" dalam bahasa Indonesia: ritual pembuka, bukan permintaan laporan. Kamu boleh menjawabnya dengan *tudo bem*, *tudo bom*, atau *tudo ótimo*, dan ketiganya sama-sama benar.",
+        "**Perhatikan kalimat tanya Carla: susunannya tidak berubah.** *Você é brasileira?* punya urutan kata yang persis sama dengan *Você é brasileira.* Yang membedakan cuma nada suara yang naik di ujung — sama seperti \"Kamu orang Brasil?\" dan \"Kamu orang Brasil.\" Tidak ada kata bantu yang perlu ditambahkan, tidak ada kata yang perlu dibalik. Ini hadiah pertama bahasa Portugis untukmu, dan pelajar dari bahasa Inggris justru harus belajar melupakan kebiasaannya di sini.",
+        "**Menjawab \"ya\" dengan mengulang kata kerjanya.** Lihat jawaban Carla: bukan *sim* saja, melainkan *Sou, sim*. Orang Brasil sangat sering menjawab pertanyaan ya/tidak dengan mengulang kata kerja pertanyaannya: *Você é brasileira?* → *Sou.* Menjawab dengan *sim* saja tidak salah, tetapi mengulang kata kerjanya terdengar jauh lebih alami.",
+        "**Eu me chamo harfiahnya \"saya memanggil diri saya\".** Ada kata *me* di tengah yang tidak punya padanan dalam bahasa Indonesia. Bentuk yang lebih sederhana juga ada dan sama-sama benar: *Meu nome é Budi* (\"nama saya Budi\") atau bahkan *Eu sou o Budi*."
+      ],
+      "grammars": [
+        {
+          "title": "Ser — kata kerja \"adalah\" yang pertama",
+          "body": [
+            "Kata kerja pertama yang wajib kamu kuasai, dan sekaligus yang paling tidak beraturan. Jangan mencari polanya; hafalkan enam barisnya seperti menghafal lagu."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "Cara baca",
+              "ser",
+              "arti"
+            ],
+            "rows": [
+              [
+                "eu",
+                "ê-u",
+                "**sou**",
+                "saya adalah"
+              ],
+              [
+                "você",
+                "vo-SÊ",
+                "**é**",
+                "kamu adalah"
+              ],
+              [
+                "ele / ela",
+                "Ê-li / É-la",
+                "**é**",
+                "dia adalah (laki / perempuan)"
+              ],
+              [
+                "nós",
+                "nós",
+                "**somos**",
+                "kami adalah"
+              ],
+              [
+                "vocês",
+                "vo-SÊS",
+                "**são**",
+                "kalian adalah"
+              ],
+              [
+                "eles / elas",
+                "Ê-lis / É-las",
+                "**são**",
+                "mereka adalah"
+              ]
+            ]
+          },
+          "after": [
+            "**Você memakai bentuk yang sama dengan \"dia\".** Perhatikan baris kedua dan ketiga: *você é* dan *ele é* — bentuk kata kerjanya identik. Bahasa Portugis Brasil memakai *você* untuk semua orang, akrab maupun sopan, dan itu memangkas separuh pekerjaan hafalanmu. Buku tata bahasa lama mengajarkan *tu falas*; di sembilan puluh persen wilayah Brasil, bentuk itu tidak dipakai.",
+            "**Kata ganti orangnya boleh dibuang.** *Sou de Jacarta* sudah pasti berarti \"saya dari Jakarta\", karena cuma \"saya\" yang memakai bentuk *sou*. Orang Brasil membuangnya terus-menerus. Kamu memakai *eu* kalau ingin **menekankan**: *Eu sou indonésio, ela é brasileira*.",
+            "⚠️ Ada kata kerja \"adalah\" kedua, *estar*, yang dipakai untuk hal-hal yang sementara. Ia mendapat satu unit penuh untuk dirinya sendiri di unit 3. Untuk sekarang, pakai *ser* saja untuk nama, asal, dan bangsa — dan itu selalu benar."
+          ]
+        },
+        {
+          "title": "Kata ganti orang",
+          "body": [
+            "Enam bentuk yang perlu dihafal, ditambah dua yang cuma perlu dikenali."
+          ],
+          "table": {
+            "head": [
+              "Português",
+              "Cara baca",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "**eu**",
+                "ê-u",
+                "saya"
+              ],
+              [
+                "**você**",
+                "vo-SÊ",
+                "kamu (dan juga Anda)"
+              ],
+              [
+                "**ele**",
+                "Ê-li",
+                "dia (laki-laki)"
+              ],
+              [
+                "**ela**",
+                "É-la",
+                "dia (perempuan)"
+              ],
+              [
+                "**nós**",
+                "nós",
+                "kami / kita"
+              ],
+              [
+                "**a gente**",
+                "a ZHEN-tchi",
+                "kami / kita (lisan, jauh lebih sering)"
+              ],
+              [
+                "**vocês**",
+                "vo-SÊS",
+                "kalian"
+              ],
+              [
+                "**eles / elas**",
+                "Ê-lis / É-las",
+                "mereka (laki / perempuan)"
+              ]
+            ]
+          },
+          "after": [
+            "**Bahasa Portugis membedakan \"dia laki-laki\" dan \"dia perempuan\".** Ini kebalikan dari bahasa Indonesia yang cuma punya satu \"dia\", dan ia akan menjadi salah satu kesalahan yang paling sering kamu buat. *Ele* untuk laki-laki, *ela* untuk perempuan — tanpa pengecualian.",
+            "**A gente adalah rahasia terbesar bahasa Brasil lisan.** Harfiahnya \"orang-orang itu\", tetapi artinya \"kami/kita\" — dan ia memakai bentuk kata kerja **orang ketiga tunggal**, sama seperti *ele*: *A gente é brasileiro*, bukan *a gente somos*. Di percakapan sehari-hari, *a gente* jauh lebih sering terdengar daripada *nós*. Kabar baik buatmu: memakainya berarti kamu cuma perlu menghafal satu bentuk kata kerja lagi, bukan dua."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kalimat yang menolongmu bertahan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sepuluh kalimat berikut bukan bahan hafalan tata bahasa — ia perkakas darurat. Hafalkan bentuk utuhnya sekarang, pahami susunannya nanti."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Sim / Não",
+              "sin / náun",
+              "Ya / Tidak"
+            ],
+            [
+              "Obrigado / Obrigada",
+              "o-bri-GA-du / o-bri-GA-da",
+              "Terima kasih (laki / perempuan)"
+            ],
+            [
+              "Por favor",
+              "poh fa-VOH",
+              "Tolong; silakan"
+            ],
+            [
+              "Desculpa",
+              "dis-KUU-pa",
+              "Maaf"
+            ],
+            [
+              "Com licença",
+              "kon li-SEN-sa",
+              "Permisi"
+            ],
+            [
+              "Não entendi",
+              "náun en-ten-DJI",
+              "Saya tidak mengerti"
+            ],
+            [
+              "Fala mais devagar, por favor.",
+              "FA-la máis dji-va-GAH",
+              "Bicaranya pelan-pelan, tolong."
+            ],
+            [
+              "Como se diz… em português?",
+              "KÔ-mu si DJIS… en poh-tu-GÊS",
+              "Bagaimana mengatakan… dalam bahasa Portugis?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Obrigado* berubah menurut **siapa yang mengucapkannya**, bukan siapa yang menerimanya. Laki-laki selalu bilang *obrigado*; perempuan selalu bilang *obrigada* — bahkan kepada sesama perempuan. Ini kesalahan paling umum orang asing di Brasil, dan sekaligus yang paling gampang diperbaiki."
+        },
+        {
+          "type": "p",
+          "text": "Dua kalimat terakhir di tabel itu bernilai lebih besar daripada seratus kata hafalan. *Fala mais devagar* membuat percakapan yang sudah kehilangan kendali bisa dilanjutkan, dan *Como se diz…?* mengubah setiap orang Brasil di sekitarmu menjadi kamus berjalan."
+        }
+      ]
+    },
+    {
+      "title": "Sapaan menurut waktu",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bahasa Portugis memilah sapaan menurut jam, bukan menurut tingkat kesopanan. Tabel ini menutup seluruhnya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Cara baca",
+            "Dipakai kapan"
+          ],
+          "rows": [
+            [
+              "**Bom dia!**",
+              "bon DJI-a",
+              "Selamat pagi — sampai tengah hari"
+            ],
+            [
+              "**Boa tarde!**",
+              "BÔ-a TAH-dji",
+              "Selamat siang/sore — tengah hari sampai gelap"
+            ],
+            [
+              "**Boa noite!**",
+              "BÔ-a NÓI-tchi",
+              "Selamat malam — bertemu maupun berpisah"
+            ],
+            [
+              "**Oi!**",
+              "ôi",
+              "Halo — akrab, kapan saja"
+            ],
+            [
+              "**Olá!**",
+              "o-LA",
+              "Halo — sedikit lebih rapi"
+            ],
+            [
+              "**Tchau!**",
+              "tyáu",
+              "Dah — dari *ciao* bahasa Italia"
+            ],
+            [
+              "**Até logo!**",
+              "a-TÉ LÔ-gu",
+              "Sampai jumpa nanti"
+            ],
+            [
+              "**Até amanhã!**",
+              "a-TÉ a-ma-NYAN",
+              "Sampai jumpa besok"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Boa noite* dipakai **dua arah** — untuk menyapa saat masuk ruangan pada malam hari, dan untuk berpamitan sebelum tidur. Bahasa Portugis tidak membedakan keduanya seperti bahasa Inggris membedakan *good evening* dan *good night*."
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan juga bahwa *bom* dipakai untuk *dia* tetapi *boa* untuk *tarde* dan *noite*. Itu bukan kebetulan: *dia* adalah kata laki-laki, sementara *tarde* dan *noite* perempuan. Seluruh aturannya dipasang di unit 2 — untuk sekarang, hafalkan ketiga sapaan itu sebagai satu bongkahan."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pt": "oi",
+      "baca": "ôi",
+      "id": "halo (akrab)"
+    },
+    {
+      "pt": "olá",
+      "baca": "o-LA",
+      "id": "halo"
+    },
+    {
+      "pt": "tchau",
+      "baca": "tyáu",
+      "id": "dah; sampai jumpa"
+    },
+    {
+      "pt": "bom dia",
+      "baca": "bon DJI-a",
+      "id": "selamat pagi"
+    },
+    {
+      "pt": "boa tarde",
+      "baca": "BÔ-a TAH-dji",
+      "id": "selamat siang/sore"
+    },
+    {
+      "pt": "boa noite",
+      "baca": "BÔ-a NÓI-tchi",
+      "id": "selamat malam"
+    },
+    {
+      "pt": "tudo bem",
+      "baca": "TU-du BÉIN",
+      "id": "apa kabar; baik-baik saja"
+    },
+    {
+      "pt": "ótimo",
+      "baca": "Ó-tchi-mu",
+      "id": "bagus sekali"
+    },
+    {
+      "pt": "obrigado / obrigada",
+      "baca": "o-bri-GA-du / -da",
+      "id": "terima kasih (laki / perempuan)"
+    },
+    {
+      "pt": "e",
+      "baca": "i",
+      "id": "dan"
+    },
+    {
+      "pt": "você",
+      "baca": "vo-SÊ",
+      "id": "kamu"
+    },
+    {
+      "pt": "eu",
+      "baca": "ê-u",
+      "id": "saya"
+    },
+    {
+      "pt": "ser",
+      "baca": "SÊH",
+      "id": "adalah (sifat tetap)"
+    },
+    {
+      "pt": "sou",
+      "baca": "sô",
+      "id": "saya adalah"
+    },
+    {
+      "pt": "é",
+      "baca": "é",
+      "id": "kamu/dia adalah"
+    },
+    {
+      "pt": "chamar-se",
+      "baca": "sya-MAH-si",
+      "id": "bernama"
+    },
+    {
+      "pt": "prazer",
+      "baca": "pra-ZÊH",
+      "id": "senang berkenalan; kesenangan"
+    },
+    {
+      "pt": "brasileiro / brasileira",
+      "baca": "bra-zi-LÊI-ru / -ra",
+      "id": "orang Brasil (laki / perempuan)"
+    },
+    {
+      "pt": "indonésio / indonésia",
+      "baca": "in-do-NÉ-zi-u / -a",
+      "id": "orang Indonesia (laki / perempuan)"
+    },
+    {
+      "pt": "de",
+      "baca": "dji",
+      "id": "dari; milik"
+    },
+    {
+      "pt": "sim / não",
+      "baca": "sin / náun",
+      "id": "ya / tidak"
+    },
+    {
+      "pt": "muito",
+      "baca": "MUIN-tu",
+      "id": "sangat; banyak"
+    },
+    {
+      "pt": "legal",
+      "baca": "le-GAU",
+      "id": "keren; asyik"
+    },
+    {
+      "pt": "bem-vindo",
+      "baca": "béin-VIN-du",
+      "id": "selamat datang"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Portugis.",
+      "items": [
+        "Halo! Apa kabar?",
+        "Nama saya Budi.",
+        "Saya orang Indonesia.",
+        "Kamu orang Brasil?",
+        "Saya dari Jakarta.",
+        "Terima kasih banyak! (diucapkan laki-laki)"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk ser yang tepat.",
+      "items": [
+        "Eu ____ o Budi.",
+        "Você ____ brasileira?",
+        "Ela ____ de Salvador.",
+        "Nós ____ indonésios.",
+        "Eles ____ brasileiros.",
+        "A gente ____ de Jacarta."
+      ]
+    },
+    {
+      "prompt": "Pilih sapaan yang tepat. Tulis ulang kalimatnya lengkap.",
+      "items": [
+        "Kamu masuk toko roti jam tujuh pagi. Kepada penjualnya kamu bilang ____.",
+        "Kamu bertemu teman sekelas di kantin jam tiga sore. Kamu bilang ____.",
+        "Kamu masuk restoran jam delapan malam. Kepada pelayannya kamu bilang ____.",
+        "Kamu berpisah dengan temanmu dan akan bertemu lagi besok. Kamu bilang ____.",
+        "Kamu ingin lewat di antara dua orang yang sedang berdiri. Kamu bilang ____."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "sou / Budi / eu",
+        "você / brasileira / é / ?",
+        "chama / como / se / você / ?",
+        "de / sou / Jacarta / eu",
+        "prazer / muito / ,"
+      ]
+    }
+  ],
+  "answers": [
+    "Oi! Tudo bem? — Eu me chamo Budi. — Eu sou indonésio. — Você é brasileira? — Eu sou de Jacarta. — Muito obrigado!",
+    "sou — é — é — somos — são — é",
+    "Bom dia! — Boa tarde! — Boa noite! — Até amanhã! — Com licença!",
+    "Eu sou Budi. — Você é brasileira? — Como você se chama? — Eu sou de Jacarta. — Muito prazer!"
+  ]
+}
