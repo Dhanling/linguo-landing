@@ -1,0 +1,593 @@
+{
+  "title": "Di kota — bertanya arah dan naik apa saja",
+  "title_target": "در شهر",
+  "goal": "Menanyakan letak sesuatu, mengerti jawabannya, dan naik metro, bus, atau taksi tanpa tersesat.",
+  "bekal": [
+    "bertanya \"di mana\" dan mengerti petunjuk arah yang diberikan",
+    "memakai bentuk perintah sopan (بفرمایید، بپیچید، بروید)",
+    "naik taksi Iran, yang bekerja tidak seperti taksi di negerimu"
+  ],
+  "dialogs": [
+    {
+      "title": "گفتگو — راهِ موزه",
+      "intro": "Budi tersesat di pusat kota Teheran dan bertanya kepada seorang bapak yang sedang menunggu bus.",
+      "lines": [
+        {
+          "speaker": "بودی:",
+          "text": "ببخشید آقا، موزهٔ ملی کجاست؟",
+          "baca": "bebakhshid âghâ, muze-ye Melli kojâst?",
+          "id": "Permisi Pak, Museum Nasional di mana?",
+          "literal": "maafkan tuan, museum-nya Nasional mana-adalah?"
+        },
+        {
+          "speaker": "رهگذر:",
+          "text": "سلام. نزدیک است. پیاده ده دقیقه.",
+          "baca": "salâm. nazdik ast. piyâde dah daghighe.",
+          "id": "Halo. Dekat. Jalan kaki sepuluh menit.",
+          "literal": "halo. dekat adalah. berjalan-kaki sepuluh menit."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "از کدام طرف بروم؟",
+          "baca": "az kodâm taraf beravam?",
+          "id": "Saya harus lewat arah mana?",
+          "literal": "dari yang-mana arah pergi-saya?"
+        },
+        {
+          "speaker": "رهگذر:",
+          "text": "مستقیم بروید تا چهارراه، بعد دست چپ بپیچید.",
+          "baca": "mostaghim beravid tâ chahârrâh, ba'd dast-e chap bepichid.",
+          "id": "Jalan lurus sampai perempatan, lalu belok kiri.",
+          "literal": "lurus pergilah-Anda sampai empat-jalan, sesudah tangan-nya kiri belokkanlah-Anda."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "دست چپ، بله. و بعد؟",
+          "baca": "dast-e chap, bale. va ba'd?",
+          "id": "Kiri, baik. Lalu?",
+          "literal": "tangan-nya kiri, ya. dan sesudah?"
+        },
+        {
+          "speaker": "رهگذر:",
+          "text": "از خیابانِ سی تیر بالا بروید. موزه سمتِ راست است.",
+          "baca": "az khiyâbân-e Si Tir bâlâ beravid. muze samt-e râst ast.",
+          "id": "Naiklah lewat Jalan Si Tir. Museumnya di sebelah kanan.",
+          "literal": "dari jalan-nya Si Tir atas pergilah-Anda. museum sisi-nya kanan adalah."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "ببخشید، \"بالا\" یعنی شمال؟",
+          "baca": "bebakhshid, bâlâ ya'ni shomâl?",
+          "id": "Maaf, \"naik\" maksudnya ke utara?",
+          "literal": "maafkan, atas artinya utara?"
+        },
+        {
+          "speaker": "رهگذر:",
+          "text": "دقیقاً! در تهران بالا یعنی شمال، طرفِ کوه.",
+          "baca": "daghighan! dar Tehrân bâlâ ya'ni shomâl, taraf-e kuh.",
+          "id": "Tepat! Di Teheran \"naik\" berarti utara, ke arah gunung.",
+          "literal": "tepat! di Teheran atas artinya utara, arah-nya gunung."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "چه راحت! با مترو هم می‌شود رفت؟",
+          "baca": "che râhat! bâ metro ham mishavad raft?",
+          "id": "Praktis sekali! Bisa juga naik metro?",
+          "literal": "apa mudah! dengan metro juga menjadi pergi?"
+        },
+        {
+          "speaker": "رهگذر:",
+          "text": "بله، ایستگاهِ امام خمینی. ولی پیاده نزدیک‌تر است.",
+          "baca": "bale, istgâh-e Emâm Khomeyni. vali piyâde nazdiktar ast.",
+          "id": "Ya, stasiun Imam Khomeini. Tapi jalan kaki lebih dekat.",
+          "literal": "ya, stasiun-nya Imam Khomeini. tetapi berjalan-kaki lebih-dekat adalah."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "خیلی ممنون. لطف کردید.",
+          "baca": "kheyli mamnun. lotf kardid.",
+          "id": "Terima kasih banyak. Anda baik sekali.",
+          "literal": "sangat berterima-kasih. kebaikan melakukan-Anda."
+        },
+        {
+          "speaker": "رهگذر:",
+          "text": "خواهش می‌کنم. اگر گم شدید، دوباره بپرسید.",
+          "baca": "khâhesh mikonam. agar gom shodid, dobâre beporsid.",
+          "id": "Sama-sama. Kalau tersesat, tanya lagi saja.",
+          "literal": "permohonan melakukan-saya. jika hilang menjadi-Anda, sekali-lagi tanyalah-Anda."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "حتماً. روزِ خوبی داشته باشید.",
+          "baca": "hatman. ruz-e khubi dâshte bâshid.",
+          "id": "Pasti. Semoga hari Anda menyenangkan.",
+          "literal": "pasti. hari-nya baik-suatu punya adalah-Anda."
+        },
+        {
+          "speaker": "رهگذر:",
+          "text": "شما هم همین‌طور. به سلامت.",
+          "baca": "shomâ ham hamintowr. be salâmat.",
+          "id": "Anda juga. Selamat jalan.",
+          "literal": "Anda juga begitu-juga. dengan keselamatan."
+        }
+      ],
+      "notes": [
+        "**کجاست = کجا + است.** Peleburan yang sama seperti چیست dan کیست di unit 3. Bentuk lisannya کجاست juga — salah satu dari sedikit kata yang tidak berubah.",
+        "⚠️ **Di Teheran, \"atas\" berarti utara dan \"bawah\" berarti selatan.** Kota ini bersandar pada lereng pegunungan Alborz, jadi bagian utaranya benar-benar lebih tinggi. Orang Teheran berkata بالا شهر (\"kota atas\", bagian utara yang lebih makmur) dan پایین شهر (\"kota bawah\"), dan petunjuk arah sehari-hari memakai بالا dan پایین tanpa menyebut arah mata angin sama sekali. Kalau kamu tahu ini, separuh petunjuk arah di Teheran langsung masuk akal.",
+        "**می‌شود رفت؟ = \"bisa pergi?\"** Susunan tetap yang berarti \"apakah mungkin\": می‌شود اینجا سیگار کشید؟ (\"boleh merokok di sini?\"), می‌شود کمکم کنید؟ (\"bisa tolong saya?\"). Hafalkan utuh sekarang.",
+        "**لطف کردید = \"Anda baik sekali\"**, harfiahnya \"Anda melakukan kebaikan\". Ucapan terima kasih yang lebih hangat daripada ممنون saja, dipakai ketika seseorang benar-benar meluangkan usaha untukmu.",
+        "**روزِ خوبی داشته باشید = \"semoga harimu baik\"** dan **به سلامت = \"selamat jalan\"** (harfiahnya \"dengan keselamatan\"). Dua ucapan perpisahan yang sopan dan hangat; keduanya pantas kamu hafal utuh.",
+        "**Bentuk lisan:** موزهٔ ملی کجاست؟ (tak berubah), مستقیم برین (*mostaghim berin*), دست چپ بپیچین (*dast-e chap bepichin*), می‌شه رفت؟ (*mishe raft?*). Perhatikan ـید → **ـین** dan می‌شود → **می‌شه**."
+      ],
+      "grammars": [
+        {
+          "title": "Bertanya arah dan mengerti jawabannya",
+          "table": {
+            "head": [
+              "Persia",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "... کجاست؟",
+                "... kojâst?",
+                "... di mana?"
+              ],
+              [
+                "چطور بروم؟",
+                "chetowr beravam?",
+                "Bagaimana caranya ke sana?"
+              ],
+              [
+                "دور است؟",
+                "dur ast?",
+                "Jauh?"
+              ],
+              [
+                "چقدر راه است؟",
+                "cheghadr râh ast?",
+                "Berapa jauh?"
+              ],
+              [
+                "مستقیم بروید",
+                "mostaghim beravid",
+                "Jalan lurus"
+              ],
+              [
+                "دستِ راست بپیچید",
+                "dast-e râst bepichid",
+                "Belok kanan"
+              ],
+              [
+                "دستِ چپ بپیچید",
+                "dast-e chap bepichid",
+                "Belok kiri"
+              ],
+              [
+                "برگردید",
+                "bargardid",
+                "Putar balik"
+              ],
+              [
+                "سرِ چهارراه",
+                "sar-e chahârrâh",
+                "Di perempatan"
+              ],
+              [
+                "روبه‌رویِ بانک",
+                "ruberu-ye bânk",
+                "Di seberang bank"
+              ],
+              [
+                "پشتِ مسجد",
+                "posht-e masjed",
+                "Di belakang masjid"
+              ],
+              [
+                "گم شده‌ام",
+                "gom shode-am",
+                "Saya tersesat"
+              ]
+            ]
+          },
+          "after": [
+            "**Kalau petunjuknya terlalu cepat, satu kalimat menyelamatkanmu:** می‌شود رویِ نقشه نشان بدهید؟ (*mishavad ru-ye naghshe neshân bedahid?*, \"bisa tunjukkan di peta?\"). Hampir semua orang Iran akan mengeluarkan telepon dan menunjukkannya sendiri."
+          ]
+        },
+        {
+          "title": "Bentuk perintah: بـ + akar sekarang",
+          "table": {
+            "head": [
+              "Infinitif",
+              "Akar",
+              "Kepada تو",
+              "Kepada شما",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "رفتن",
+                "رو",
+                "برو",
+                "بروید",
+                "pergilah"
+              ],
+              [
+                "آمدن",
+                "آی",
+                "بیا",
+                "بیایید",
+                "datanglah, ayo"
+              ],
+              [
+                "گفتن",
+                "گو",
+                "بگو",
+                "بگویید",
+                "katakanlah"
+              ],
+              [
+                "دیدن",
+                "بین",
+                "ببین",
+                "ببینید",
+                "lihatlah"
+              ],
+              [
+                "خوردن",
+                "خور",
+                "بخور",
+                "بخورید",
+                "makanlah"
+              ],
+              [
+                "نشستن",
+                "نشین",
+                "بنشین",
+                "بنشینید",
+                "duduklah"
+              ],
+              [
+                "پرسیدن",
+                "پرس",
+                "بپرس",
+                "بپرسید",
+                "tanyalah"
+              ],
+              [
+                "کردن",
+                "کن",
+                "بکن",
+                "بکنید",
+                "lakukanlah"
+              ],
+              [
+                "دادن",
+                "ده",
+                "بده",
+                "بدهید",
+                "berilah"
+              ],
+              [
+                "صبر کردن",
+                "کن",
+                "صبر کن",
+                "صبر کنید",
+                "tunggulah"
+              ]
+            ]
+          },
+          "after": [
+            "**Selalu pakai bentuk شما (ـید) kepada orang yang belum akrab.** Bentuk تو tanpa akhiran terdengar seperti perintah kepada anak kecil.",
+            "**Larangan:** ganti بـ dengan نـ — نرو (\"jangan pergi\"), نگویید (\"jangan bilang\"), نگران نباشید (\"jangan khawatir\").",
+            "Untuk melunakkan perintah, tambahkan لطفاً di depan atau ujung: لطفاً بنشینید، صبر کنید لطفاً. Dan yang paling sopan dari semuanya adalah بفرمایید, yang sudah kamu punya sejak unit 5."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tempat di kota",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Persia",
+            "Cara baca",
+            "Arti",
+            "Persia",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "خیابان",
+              "khiyâbân",
+              "jalan besar",
+              "کوچه",
+              "kuche",
+              "gang"
+            ],
+            [
+              "چهارراه",
+              "chahârrâh",
+              "perempatan",
+              "میدان",
+              "meydân",
+              "bundaran, alun-alun"
+            ],
+            [
+              "پل",
+              "pol",
+              "jembatan",
+              "تقاطع",
+              "taghâto'",
+              "persimpangan"
+            ],
+            [
+              "بانک",
+              "bânk",
+              "bank",
+              "صرافی",
+              "sarrâfi",
+              "penukaran uang"
+            ],
+            [
+              "پست",
+              "post",
+              "kantor pos",
+              "بیمارستان",
+              "bimârestân",
+              "rumah sakit"
+            ],
+            [
+              "داروخانه",
+              "dârukhâne",
+              "apotek",
+              "سوپرمارکت",
+              "supermârket",
+              "swalayan"
+            ],
+            [
+              "موزه",
+              "muze",
+              "museum",
+              "مسجد",
+              "masjed",
+              "masjid"
+            ],
+            [
+              "پارک",
+              "pârk",
+              "taman kota",
+              "ایستگاه",
+              "istgâh",
+              "halte, stasiun"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan akhiran **ـگاه** (\"tempat\") yang membentuk banyak nama tempat: ایستگاه (\"tempat berhenti\" = halte), فرودگاه (\"tempat mendarat\" = bandara), دانشگاه (\"tempat ilmu\" = universitas), آرامگاه (\"tempat beristirahat\" = makam), خوابگاه (\"tempat tidur\" = asrama). Sama seperti ـخانه di unit 5, ia membuat kata panjang jadi bisa ditebak."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Arah",
+            "Cara baca",
+            "Arti",
+            "Arah",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "شمال",
+              "shomâl",
+              "utara",
+              "جنوب",
+              "jonub",
+              "selatan"
+            ],
+            [
+              "شرق",
+              "shargh",
+              "timur",
+              "غرب",
+              "gharb",
+              "barat"
+            ],
+            [
+              "راست",
+              "râst",
+              "kanan",
+              "چپ",
+              "chap",
+              "kiri"
+            ],
+            [
+              "مستقیم",
+              "mostaghim",
+              "lurus",
+              "برگشت",
+              "bargasht",
+              "balik"
+            ],
+            [
+              "بالا",
+              "bâlâ",
+              "atas; utara (Teheran)",
+              "پایین",
+              "pâyin",
+              "bawah; selatan"
+            ],
+            [
+              "نزدیک",
+              "nazdik",
+              "dekat",
+              "دور",
+              "dur",
+              "jauh"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Empat nama arah mata angin — شمال، جنوب، شرق، غرب — adalah kata pinjaman Arab yang juga sudah ada di bahasa Indonesia lewat istilah agama dan geografi lama. Kalau kamu pernah mendengar \"syamal\", \"janub\", \"syarq\", \"gharb\", kamu sudah memilikinya."
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga hal tentang metro Teheran",
+          "items": [
+            "**Murah, cepat, dan lolos dari kemacetan** yang membuat perjalanan mobil tiga kali lebih lama. Untuk pendatang, ini alat angkut yang paling mudah dipakai — papannya berbahasa Persia dan Inggris.",
+            "**Ada gerbong khusus perempuan** (واگنِ ویژهٔ بانوان) di ujung depan dan belakang rangkaian. Perempuan boleh memilih gerbong mana pun; laki-laki tidak boleh masuk yang khusus itu.",
+            "**Aplikasi taksi daring اسنپ (Snapp) dan تپ‌سی (Tapsi)** bekerja seperti aplikasi yang kamu kenal, tapi keduanya membutuhkan nomor telepon Iran. Itulah salah satu alasan kartu SIM di unit 6 adalah barang pertama yang perlu kamu beli."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fa": "شهر",
+      "baca": "shahr",
+      "id": "kota"
+    },
+    {
+      "fa": "خیابان",
+      "baca": "khiyâbân",
+      "id": "jalan besar"
+    },
+    {
+      "fa": "کوچه",
+      "baca": "kuche",
+      "id": "gang"
+    },
+    {
+      "fa": "چهارراه",
+      "baca": "chahârrâh",
+      "id": "perempatan"
+    },
+    {
+      "fa": "مستقیم",
+      "baca": "mostaghim",
+      "id": "lurus"
+    },
+    {
+      "fa": "راست",
+      "baca": "râst",
+      "id": "kanan; benar"
+    },
+    {
+      "fa": "چپ",
+      "baca": "chap",
+      "id": "kiri"
+    },
+    {
+      "fa": "پیچیدن",
+      "baca": "pichidan",
+      "id": "berbelok"
+    },
+    {
+      "fa": "طرف",
+      "baca": "taraf",
+      "id": "arah, sisi"
+    },
+    {
+      "fa": "سمت",
+      "baca": "samt",
+      "id": "sisi"
+    },
+    {
+      "fa": "روبه‌رو",
+      "baca": "ruberu",
+      "id": "di seberang"
+    },
+    {
+      "fa": "شمال",
+      "baca": "shomâl",
+      "id": "utara"
+    },
+    {
+      "fa": "جنوب",
+      "baca": "jonub",
+      "id": "selatan"
+    },
+    {
+      "fa": "شرق",
+      "baca": "shargh",
+      "id": "timur"
+    },
+    {
+      "fa": "غرب",
+      "baca": "gharb",
+      "id": "barat"
+    },
+    {
+      "fa": "موزه",
+      "baca": "muze",
+      "id": "museum"
+    },
+    {
+      "fa": "بیمارستان",
+      "baca": "bimârestân",
+      "id": "rumah sakit"
+    },
+    {
+      "fa": "بانک",
+      "baca": "bânk",
+      "id": "bank"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Persia.",
+      "items": [
+        "Permisi, museum di mana?",
+        "Jalan lurus sampai perempatan.",
+        "Belok kiri.",
+        "Jauh dari sini?",
+        "Saya tersesat."
+      ]
+    },
+    {
+      "prompt": "Ubah jadi bentuk perintah sopan (bentuk شما).",
+      "items": [
+        "رفتن ← ____",
+        "آمدن ← ____",
+        "دیدن ← ____",
+        "پرسیدن ← ____",
+        "صبر کردن ← ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata arah atau tempat yang tepat.",
+      "items": [
+        "Kebalikan dari چپ: ____",
+        "Tempat mendarat pesawat: ____",
+        "Tempat menunggu bus: ____",
+        "Di Teheran, kata untuk arah utara dalam percakapan sehari-hari: ____",
+        "Taksi yang disewa untuk diri sendiri: تاکسیِ ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "کجاست / ملی / موزهٔ / ؟",
+        "بروید / چهارراه / تا / مستقیم",
+        "بپیچید / چپ / دستِ",
+        "است / راست / سمتِ / موزه",
+        "شده‌ام / گم / من"
+      ]
+    }
+  ],
+  "answers": [
+    "ببخشید، موزه کجاست؟ — مستقیم بروید تا چهارراه. — دستِ چپ بپیچید. — از اینجا دور است؟ — گم شده‌ام.",
+    "بروید — بیایید — ببینید — بپرسید — صبر کنید",
+    "راست — فرودگاه — ایستگاه — بالا — دربست",
+    "موزهٔ ملی کجاست؟ — مستقیم بروید تا چهارراه. — دستِ چپ بپیچید. — موزه سمتِ راست است. — من گم شده‌ام."
+  ],
+  "wave": "Buka peta kotamu sendiri dan berikan petunjuk arah dari rumahmu ke pasar terdekat dalam bahasa Persia. Tiga kalimat cukup."
+}

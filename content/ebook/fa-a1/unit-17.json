@@ -1,0 +1,631 @@
+{
+  "title": "Badan dan kesehatan — ketika kepala yang jadi pelakunya",
+  "title_target": "بدن و سلامتی",
+  "goal": "Mengatakan bagian mana yang sakit, berbicara di apotek dan di ruang praktik dokter — dan mengerti susunan kalimat yang membalik pelaku dan penderita.",
+  "bekal": [
+    "menyebut bagian badan dan keluhan yang paling umum",
+    "memakai susunan سرم درد می‌کند yang tidak ada di bahasa Indonesia",
+    "membeli obat dan menjelaskan keadaanmu kepada dokter"
+  ],
+  "dialogs": [
+    {
+      "title": "گفتگو — در داروخانه",
+      "intro": "Pagi hari sesudah perjalanan bus yang panjang. Budi masuk ke apotek dengan wajah kusut.",
+      "lines": [
+        {
+          "speaker": "داروساز:",
+          "text": "سلام، بفرمایید.",
+          "baca": "salâm, befarmâyid.",
+          "id": "Halo, silakan.",
+          "literal": "halo, silakan."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "سلام. حالم خوب نیست. سرم خیلی درد می‌کند.",
+          "baca": "salâm. hâlam khub nist. saram kheyli dard mikonad.",
+          "id": "Halo. Saya kurang enak badan. Kepala saya sakit sekali.",
+          "literal": "halo. keadaan-saya baik tidak-ada. kepala-saya sangat sakit melakukan-dia."
+        },
+        {
+          "speaker": "داروساز:",
+          "text": "تب هم دارید؟",
+          "baca": "tab ham dârid?",
+          "id": "Anda demam juga?",
+          "literal": "demam juga punya-Anda?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "فکر می‌کنم بله. دیشب سرما خوردم.",
+          "baca": "fekr mikonam bale. dishab sarmâ khordam.",
+          "id": "Sepertinya iya. Tadi malam saya masuk angin.",
+          "literal": "pikiran melakukan-saya ya. tadi-malam dingin makan-saya."
+        },
+        {
+          "speaker": "داروساز:",
+          "text": "گلویتان هم درد می‌کند؟",
+          "baca": "galuyetân ham dard mikonad?",
+          "id": "Tenggorokan Anda sakit juga?",
+          "literal": "tenggorokan-Anda juga sakit melakukan-dia?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "بله، و سرفه می‌کنم. دیشب اصلاً نخوابیدم.",
+          "baca": "bale, va sorfe mikonam. dishab aslan nakhâbidam.",
+          "id": "Ya, dan saya batuk. Tadi malam saya sama sekali tidak tidur.",
+          "literal": "ya, dan batuk melakukan-saya. tadi-malam sama-sekali tidak-tidur-saya."
+        },
+        {
+          "speaker": "داروساز:",
+          "text": "این قرص را روزی سه بار بعد از غذا بخورید.",
+          "baca": "in ghors râ ruzi se bâr ba'd az ghazâ bekhorid.",
+          "id": "Minum tablet ini tiga kali sehari sesudah makan.",
+          "literal": "ini tablet [obj] per-hari tiga kali sesudah dari makanan makanlah-Anda."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "چند روز؟",
+          "baca": "chand ruz?",
+          "id": "Berapa hari?",
+          "literal": "berapa hari?"
+        },
+        {
+          "speaker": "داروساز:",
+          "text": "پنج روز. و این شربت برایِ گلویتان.",
+          "baca": "panj ruz. va in sharbat barâye galuyetân.",
+          "id": "Lima hari. Dan sirop ini untuk tenggorokan Anda.",
+          "literal": "lima hari. dan ini sirop untuk-nya tenggorokan-Anda."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "به دکتر هم باید بروم؟",
+          "baca": "be doktor ham bâyad beravam?",
+          "id": "Saya harus ke dokter juga?",
+          "literal": "ke dokter juga harus pergi-saya?"
+        },
+        {
+          "speaker": "داروساز:",
+          "text": "اگر تا سه روزِ دیگر بهتر نشدید، بله.",
+          "baca": "agar tâ se ruz-e digar behtar nashodid, bale.",
+          "id": "Kalau dalam tiga hari belum membaik, ya.",
+          "literal": "jika sampai tiga hari-nya lain lebih-baik tidak-menjadi-Anda, ya."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "ممنون. چقدر می‌شود؟",
+          "baca": "mamnun. cheghadr mishavad?",
+          "id": "Terima kasih. Berapa semuanya?",
+          "literal": "berterima-kasih. berapa-banyak menjadi?"
+        },
+        {
+          "speaker": "داروساز:",
+          "text": "هشتاد هزار تومان. زود خوب شوید!",
+          "baca": "hashtâd hezâr tomân. zud khub shavid!",
+          "id": "Delapan puluh ribu toman. Semoga lekas sembuh!",
+          "literal": "delapan-puluh ribu toman. cepat baik jadilah-Anda!"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "ممنون. خدا حافظ.",
+          "baca": "mamnun. khodâ hâfez.",
+          "id": "Terima kasih. Sampai jumpa.",
+          "literal": "berterima-kasih. Tuhan penjaga."
+        }
+      ],
+      "notes": [
+        "⚠️ **سرم درد می‌کند harfiahnya \"kepalaku melakukan sakit\" — bagian badannya yang jadi pelaku, bukan orangnya.** Bahasa Indonesia berkata \"kepala saya sakit\" dengan kepala sebagai subjek juga, tapi tanpa kata kerja \"melakukan\". Yang perlu kamu tambahkan adalah درد می‌کند sebagai satu paket. Pola ini berlaku untuk seluruh badan: دستم درد می‌کند، پایم درد می‌کند، دندانم درد می‌کند.",
+        "**حالم خوب نیست = \"saya kurang enak badan\"**, harfiahnya \"keadaanku tidak baik\". Kalimat pembuka yang paling berguna di apotek dan ruang praktik. Lawannya: حالم بهتر است (\"saya sudah lebih baik\").",
+        "**روزی سه بار = \"tiga kali sehari\".** Akhiran ـی pada روز lagi-lagi berarti \"per\", sama seperti کیلویی di unit 7. هفته‌ای دو بار (\"dua kali seminggu\"), سالی یک بار (\"setahun sekali\").",
+        "**زود خوب شوید = \"semoga lekas sembuh\"**, harfiahnya \"cepatlah menjadi baik\". Diucapkan apoteker, dokter, teman, dan siapa pun yang tahu kamu sakit. Saudaranya: انشاءالله زود خوب می‌شوید dan خدا شفا بدهد.",
+        "**باید بروم = \"saya harus pergi\".** Perhatikan bentuk kata kerja sesudah باید: **بروم**, bukan می‌روم. Ini bentuk التزامی, dan seluruh unit 18 dipakai untuk mengurusnya. Untuk sekarang hafalkan pasangannya: باید + بـ.",
+        "**Bentuk lisan:** حالم خوب نیست (tak berubah), سرم درد می‌کنه (*saram dard mikone*), تب دارین؟ (*tab dârin?*), زود خوب شین! (*zud khub shin!*)."
+      ],
+      "grammars": [
+        {
+          "title": "درد می‌کند — susunan keluhan",
+          "body": [
+            "Untuk mengatakan bagian badan mana yang sakit, susunannya: **bagian badan + akhiran milik + درد می‌کند**. Bagian badannya berdiri sebagai subjek, jadi kata kerjanya selalu bentuk او."
+          ],
+          "table": {
+            "head": [
+              "Persia",
+              "Cara baca",
+              "Harfiah",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "سرم درد می‌کند",
+                "saram dard mikonad",
+                "kepalaku melakukan sakit",
+                "kepala saya sakit"
+              ],
+              [
+                "دلم درد می‌کند",
+                "delam dard mikonad",
+                "perutku melakukan sakit",
+                "perut saya sakit"
+              ],
+              [
+                "دندانم درد می‌کند",
+                "dandânam dard mikonad",
+                "gigiku melakukan sakit",
+                "gigi saya sakit"
+              ],
+              [
+                "گلویم درد می‌کند",
+                "galuyam dard mikonad",
+                "tenggorokanku melakukan sakit",
+                "tenggorokan saya sakit"
+              ],
+              [
+                "پایم درد می‌کند",
+                "pâyam dard mikonad",
+                "kakiku melakukan sakit",
+                "kaki saya sakit"
+              ],
+              [
+                "کمرم درد می‌کند",
+                "kamaram dard mikonad",
+                "pinggangku melakukan sakit",
+                "pinggang saya sakit"
+              ],
+              [
+                "چشمم درد می‌کند",
+                "cheshmam dard mikonad",
+                "mataku melakukan sakit",
+                "mata saya sakit"
+              ],
+              [
+                "گوشم درد می‌کند",
+                "gusham dard mikonad",
+                "telingaku melakukan sakit",
+                "telinga saya sakit"
+              ]
+            ]
+          },
+          "after": [
+            "**Bentuk lampaunya:** درد می‌کرد (\"tadi sakit\") atau درد گرفت (\"mulai sakit\").",
+            "**Untuk menanyakan:** کجایتان درد می‌کند؟ (*kojâyetân dard mikonad?*, \"bagian mana yang sakit?\"). Ini kalimat pertama yang akan diucapkan dokter kepadamu.",
+            "Pola yang sama dipakai untuk beberapa keadaan lain: **سردم است** (\"saya kedinginan\", harfiahnya \"dinginku adalah\"), **گرمم است** (\"saya kepanasan\"), **خوابم می‌آید** (\"saya mengantuk\", harfiahnya \"tidurku datang\"), **حالم بد است** (\"saya tidak enak badan\")."
+          ]
+        },
+        {
+          "title": "Bagian badan",
+          "table": {
+            "head": [
+              "Persia",
+              "Cara baca",
+              "Arti",
+              "Persia",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "بدن",
+                "badan",
+                "badan",
+                "سر",
+                "sar",
+                "kepala"
+              ],
+              [
+                "صورت",
+                "surat",
+                "wajah",
+                "مو",
+                "mu",
+                "rambut"
+              ],
+              [
+                "چشم",
+                "cheshm",
+                "mata",
+                "گوش",
+                "gush",
+                "telinga"
+              ],
+              [
+                "بینی",
+                "bini",
+                "hidung",
+                "دهان",
+                "dahân",
+                "mulut"
+              ],
+              [
+                "دندان",
+                "dandân",
+                "gigi",
+                "زبان",
+                "zabân",
+                "lidah"
+              ],
+              [
+                "گلو",
+                "galu",
+                "tenggorokan",
+                "گردن",
+                "gardan",
+                "leher"
+              ],
+              [
+                "شانه",
+                "shâne",
+                "bahu",
+                "دست",
+                "dast",
+                "tangan"
+              ],
+              [
+                "انگشت",
+                "angosht",
+                "jari",
+                "سینه",
+                "sine",
+                "dada"
+              ],
+              [
+                "دل",
+                "del",
+                "perut; hati",
+                "معده",
+                "me'de",
+                "lambung"
+              ],
+              [
+                "کمر",
+                "kamar",
+                "pinggang",
+                "پشت",
+                "posht",
+                "punggung"
+              ],
+              [
+                "پا",
+                "pâ",
+                "kaki",
+                "زانو",
+                "zânu",
+                "lutut"
+              ],
+              [
+                "قلب",
+                "ghalb",
+                "jantung",
+                "خون",
+                "khun",
+                "darah"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Perhatikan **بدن** (*badan*) — kata yang sama persis dengan \"badan\" bahasa Indonesia. Beberapa lainnya juga sudah kamu punya lewat istilah agama dan kedokteran lama: **قلب** (\"kalbu\"), **زبان** (\"lisan\" dalam arti lidah), **صورت** (\"surat\" dalam arti rupa), dan **معده** (\"maag\").",
+            "⚠️ **دل berarti \"perut\" dan \"hati\" sekaligus.** دلم درد می‌کند = \"perut saya sakit\". دلم تنگ است = \"saya rindu\". Konteks memisahkannya, dan bahasa Indonesia melakukan hal yang persis sama dengan \"hati\"."
+          ]
+        },
+        {
+          "title": "Keluhan dan keadaan",
+          "table": {
+            "head": [
+              "Persia",
+              "Cara baca",
+              "Arti",
+              "Persia",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "مریض",
+                "mariz",
+                "sakit",
+                "سالم",
+                "sâlem",
+                "sehat"
+              ],
+              [
+                "تب",
+                "tab",
+                "demam",
+                "سرفه",
+                "sorfe",
+                "batuk"
+              ],
+              [
+                "سرماخوردگی",
+                "sarmâkhordegi",
+                "masuk angin",
+                "آنفلوآنزا",
+                "ânfluânzâ",
+                "flu"
+              ],
+              [
+                "حالِ تهوع",
+                "hâl-e tahavvo'",
+                "mual",
+                "اسهال",
+                "es'hâl",
+                "diare"
+              ],
+              [
+                "زخم",
+                "zakhm",
+                "luka",
+                "تصادف",
+                "tasâdof",
+                "kecelakaan"
+              ],
+              [
+                "حساسیت",
+                "hassâsiyat",
+                "alergi",
+                "خستگی",
+                "khastegi",
+                "kelelahan"
+              ],
+              [
+                "دارو",
+                "dâru",
+                "obat",
+                "قرص",
+                "ghors",
+                "tablet"
+              ],
+              [
+                "شربت",
+                "sharbat",
+                "sirop",
+                "آمپول",
+                "âmpul",
+                "suntikan"
+              ],
+              [
+                "نسخه",
+                "noskhe",
+                "resep",
+                "دکتر",
+                "doktor",
+                "dokter"
+              ],
+              [
+                "پرستار",
+                "parastâr",
+                "perawat",
+                "بیمارستان",
+                "bimârestân",
+                "rumah sakit"
+              ]
+            ]
+          },
+          "after": [
+            "Untuk alergi: **به ... حساسیت دارم** (*be ... hassâsiyat dâram*). به بادام‌زمینی حساسیت دارم (\"saya alergi kacang tanah\"). Ini kalimat yang pantas kamu hafal sebelum berangkat kalau kamu memang punya alerginya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Di ruang praktik dokter",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Persia",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "حالم خوب نیست",
+              "hâlam khub nist",
+              "Saya kurang enak badan"
+            ],
+            [
+              "مریض شده‌ام",
+              "mariz shode-am",
+              "Saya jatuh sakit"
+            ],
+            [
+              "کجایتان درد می‌کند؟",
+              "kojâyetân dard mikonad?",
+              "Bagian mana yang sakit?"
+            ],
+            [
+              "از کِی؟",
+              "az key?",
+              "Sejak kapan?"
+            ],
+            [
+              "از دیروز",
+              "az diruz",
+              "Sejak kemarin"
+            ],
+            [
+              "تب دارم",
+              "tab dâram",
+              "Saya demam"
+            ],
+            [
+              "نمی‌توانم بخوابم",
+              "nemitavânam bekhâbam",
+              "Saya tidak bisa tidur"
+            ],
+            [
+              "اشتها ندارم",
+              "eshtehâ nadâram",
+              "Saya tidak berselera makan"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Apotek Iran melakukan lebih banyak daripada apotek di banyak negeri lain.** Untuk keluhan ringan — masuk angin, sakit kepala, gangguan pencernaan — apoteker (داروساز) akan mendengarkan, bertanya, dan memberikan obat tanpa resep dokter. Untuk yang lebih berat, ia akan mengirimmu ke dokter. Ini menghemat banyak waktu dan uang, dan itulah sebabnya dialog unit ini berlangsung di apotek, bukan di rumah sakit."
+        },
+        {
+          "type": "kotak",
+          "title": "Nomor dan kalimat darurat",
+          "items": [
+            "**۱۱۵ اورژانس** (ambulans) · **۱۱۰ پلیس** · **۱۲۵ آتش‌نشانی** (pemadam kebakaran).",
+            "**کمک!** (*komak!*) — \"Tolong!\" · **آمبولانس خبر کنید!** (*âmbulâns khabar konid!*) — \"Panggil ambulans!\" · **حالش بد است** (*hâlash bad ast*) — \"Dia tidak sadar / keadaannya buruk\".",
+            "**سفارتِ اندونزی در تهران** — kalau kamu kehilangan paspor atau masuk masalah serius, kalimatnya: پاسپورتم را گم کرده‌ام، باید به سفارت بروم."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Enam kalimat untuk saat kamu sakit di Iran",
+          "items": [
+            "حالم خوب نیست. — \"Saya tidak enak badan.\"",
+            "سرم / دلم / گلویم درد می‌کند. — \"Kepala / perut / tenggorokan saya sakit.\"",
+            "تب دارم. — \"Saya demam.\"",
+            "به ... حساسیت دارم. — \"Saya alergi terhadap ...\"",
+            "نزدیک‌ترین داروخانه کجاست؟ — \"Apotek terdekat di mana?\"",
+            "دکتر لازم دارم. — \"Saya perlu dokter.\" Enam kalimat ini pantas kamu hafal sebelum berangkat, bukan sesudah sampai."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fa": "بدن",
+      "baca": "badan",
+      "id": "badan"
+    },
+    {
+      "fa": "سلامتی",
+      "baca": "salâmati",
+      "id": "kesehatan"
+    },
+    {
+      "fa": "مریض",
+      "baca": "mariz",
+      "id": "sakit"
+    },
+    {
+      "fa": "سالم",
+      "baca": "sâlem",
+      "id": "sehat"
+    },
+    {
+      "fa": "درد",
+      "baca": "dard",
+      "id": "sakit, nyeri"
+    },
+    {
+      "fa": "سر",
+      "baca": "sar",
+      "id": "kepala"
+    },
+    {
+      "fa": "چشم",
+      "baca": "cheshm",
+      "id": "mata"
+    },
+    {
+      "fa": "گوش",
+      "baca": "gush",
+      "id": "telinga"
+    },
+    {
+      "fa": "دندان",
+      "baca": "dandân",
+      "id": "gigi"
+    },
+    {
+      "fa": "گلو",
+      "baca": "galu",
+      "id": "tenggorokan"
+    },
+    {
+      "fa": "دست",
+      "baca": "dast",
+      "id": "tangan"
+    },
+    {
+      "fa": "پا",
+      "baca": "pâ",
+      "id": "kaki"
+    },
+    {
+      "fa": "کمر",
+      "baca": "kamar",
+      "id": "pinggang"
+    },
+    {
+      "fa": "معده",
+      "baca": "me'de",
+      "id": "lambung"
+    },
+    {
+      "fa": "قلب",
+      "baca": "ghalb",
+      "id": "jantung"
+    },
+    {
+      "fa": "خون",
+      "baca": "khun",
+      "id": "darah"
+    },
+    {
+      "fa": "تب",
+      "baca": "tab",
+      "id": "demam"
+    },
+    {
+      "fa": "سرفه",
+      "baca": "sorfe",
+      "id": "batuk"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Persia.",
+      "items": [
+        "Saya tidak enak badan.",
+        "Kepala saya sakit.",
+        "Saya demam.",
+        "Tadi malam saya masuk angin.",
+        "Apotek terdekat di mana?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bagian badan yang tepat.",
+      "items": [
+        "Bagian yang sakit kalau kamu terlalu banyak membaca: ____م درد می‌کند.",
+        "Bagian yang sakit kalau kamu makan terlalu banyak: ____م درد می‌کند.",
+        "Bagian yang sakit kalau kamu flu dan sulit menelan: ____یم درد می‌کند.",
+        "Bagian yang sakit kalau kamu perlu ke dokter gigi: ____م درد می‌کند.",
+        "Bagian yang sakit sesudah berjalan sepuluh kilometer: ____یم درد می‌کند."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata yang tepat.",
+      "items": [
+        "Suhu badan naik: ____ دارم.",
+        "Obat berbentuk bulat kecil: ____",
+        "Tempat membeli obat: ____",
+        "Kertas dari dokter untuk menebus obat: ____",
+        "Ucapan untuk orang sakit: زود خوب ____."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "نیست / خوب / حالم",
+        "می‌کند / درد / سرم / خیلی",
+        "دارید / هم / تب / ؟",
+        "خوردم / سرما / دیشب",
+        "بخورید / بار / سه / روزی / را / قرص / این"
+      ]
+    }
+  ],
+  "answers": [
+    "حالم خوب نیست. — سرم درد می‌کند. — تب دارم. — دیشب سرما خوردم. — نزدیک‌ترین داروخانه کجاست؟",
+    "سر — دل — گلو — دندان — پا",
+    "تب — قرص — داروخانه — نسخه — شوید",
+    "حالم خوب نیست. — سرم خیلی درد می‌کند. — تب هم دارید؟ — دیشب سرما خوردم. — این قرص را روزی سه بار بخورید."
+  ],
+  "wave": "Sebutkan lima bagian badanmu dengan pola ...م درد می‌کند, keras-keras. Ini kalimat yang akan kamu butuhkan pada hari ketika kamu paling tidak sanggup mencarinya."
+}

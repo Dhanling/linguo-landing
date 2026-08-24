@@ -112,7 +112,13 @@ const FON_RTL = meta.font_rtl ?? `"Geeza Pro", "Al Bayan", "Baghdad", "Noto Nask
    tanpa ini teksnya lolos dari pemagar — tak kebagian fon Ibrani, dan tanda
    bacanya melompat ke ujung yang salah begitu bersanding dengan huruf Latin. */
 const AKSARA_RTL = "\\u0590-\\u05FF\\u0600-\\u06FF\\u0750-\\u077F\\u08A0-\\u08FF\\uFB1D-\\uFDFF\\uFE70-\\uFEFF";
-const NETRAL_RTL = " \\u00A0.,\\u060C\\u061B\\u061F!?:;()\\[\\]/\\-\\u2013\\u2014\\u00AB\\u00BB0-9\\u0660-\\u0669";
+/* [ebook-rtl-zwnj-v1] U+200C (نیم‌فاصله) WAJIB ikut dihitung netral. Bahasa
+   Persia memakainya di hampir tiap kata berimbuhan — می‌کنید، کتاب‌ها، آهسته‌تر —
+   dan tanpa ini untaiannya terputus di titik ZWNJ jadi DUA pagar bersebelahan.
+   Dua pagar `unicode-bidi: isolate` disusun kiri-ke-kanan, jadi می‌کنید tercetak
+   "کنید؟کمک می": urutan katanya terbalik dan tanda tanyanya nyangkut di tengah.
+   Modul Arab tidak terpengaruh — aksara Arab Fusha tak memakai ZWNJ sama sekali. */
+const NETRAL_RTL = " \\u00A0.,\\u060C\\u061B\\u061F!?:;()\\[\\]/\\-\\u2013\\u2014\\u00AB\\u00BB0-9\\u0660-\\u0669\\u200C\\u200D";
 const UNTAIAN_RTL = new RegExp(`[${AKSARA_RTL}](?:[${AKSARA_RTL}${NETRAL_RTL}]*[${AKSARA_RTL}])?`, "g");
 const pagariRtl = (s) => s.replace(UNTAIAN_RTL, (m) => `<span class="rtl" dir="rtl">${m}</span>`);
 

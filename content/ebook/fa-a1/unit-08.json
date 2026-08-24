@@ -1,0 +1,578 @@
+{
+  "title": "Jam berapa? — dan kenapa \"tujuh setengah\" bukan setengah tujuh",
+  "title_target": "ساعت چند است؟",
+  "goal": "Menyebut waktu, hari, dan janji temu — serta menghindari kekeliruan satu jam penuh yang menjegal hampir semua penutur bahasa Indonesia.",
+  "bekal": [
+    "menyebut jam berapa pun dengan tepat",
+    "menyebut hari dalam minggu Iran, yang dimulai hari Sabtu",
+    "membuat dan menerima janji temu"
+  ],
+  "dialogs": [
+    {
+      "title": "گفتگو — قرارِ فردا",
+      "intro": "Maryam menelepon Budi untuk mengatur pertemuan di lembaga bahasa.",
+      "lines": [
+        {
+          "speaker": "مریم:",
+          "text": "سلام بودی. فردا وقت دارید؟",
+          "baca": "salâm Budi. fardâ vaght dârid?",
+          "id": "Halo Budi. Besok Anda ada waktu?",
+          "literal": "halo Budi. besok waktu punya-Anda?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "سلام. بله، فردا آزادم. ساعتِ چند؟",
+          "baca": "salâm. bale, fardâ âzâdam. sâ'at-e chand?",
+          "id": "Halo. Ya, besok saya luang. Jam berapa?",
+          "literal": "halo. ya, besok bebas-saya. jam-nya berapa?"
+        },
+        {
+          "speaker": "مریم:",
+          "text": "ساعتِ ده و نیمِ صبح خوب است؟",
+          "baca": "sâ'at-e dah o nim-e sobh khub ast?",
+          "id": "Jam setengah sebelas pagi bagaimana?",
+          "literal": "jam-nya sepuluh dan setengah-nya pagi baik adalah?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "ببخشید، ده و نیم یعنی ۱۰:۳۰؟",
+          "baca": "bebakhshid, dah o nim ya'ni dah o si daghighe?",
+          "id": "Maaf, \"sepuluh dan setengah\" maksudnya 10.30?",
+          "literal": "maafkan, sepuluh dan setengah artinya sepuluh dan tiga-puluh menit?"
+        },
+        {
+          "speaker": "مریم:",
+          "text": "بله، ۱۰:۳۰. چطور مگر؟",
+          "baca": "bale, dah o si. chetowr magar?",
+          "id": "Ya, 10.30. Memangnya kenapa?",
+          "literal": "ya, sepuluh dan tiga-puluh. bagaimana memangnya?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "در زبانِ ما \"نیمِ ده\" یعنی ۹:۳۰. همیشه اشتباه می‌کنم.",
+          "baca": "dar zabân-e mâ nim-e dah ya'ni noh o si. hamishe eshtebâh mikonam.",
+          "id": "Dalam bahasa kami \"setengah sepuluh\" artinya 9.30. Saya selalu keliru.",
+          "literal": "di bahasa-nya kami setengah-nya sepuluh artinya sembilan dan tiga-puluh. selalu keliru melakukan-saya."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "جالب است! پس ده و نیم، نه نه و نیم.",
+          "baca": "jâleb ast! pas dah o nim, na noh o nim.",
+          "id": "Menarik! Jadi sepuluh tiga puluh, bukan sembilan tiga puluh.",
+          "literal": "menarik adalah! maka sepuluh dan setengah, tidak sembilan dan setengah."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "روشن شد. کجا؟",
+          "baca": "rowshan shod. kojâ?",
+          "id": "Sudah jelas. Di mana?",
+          "literal": "terang menjadi. mana?"
+        },
+        {
+          "speaker": "مریم:",
+          "text": "در کافهٔ مؤسسه. من معمولاً ساعتِ نه آنجا هستم.",
+          "baca": "dar kâfe-ye mo'assese. man ma'mulan sâ'at-e noh ânjâ hastam.",
+          "id": "Di kafe lembaga. Saya biasanya sudah di sana jam sembilan.",
+          "literal": "di kafe-nya lembaga. saya biasanya jam-nya sembilan di-sana ada-saya."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "فردا چه روزی است؟ سه‌شنبه؟",
+          "baca": "fardâ che ruzi ast? se-shanbe?",
+          "id": "Besok hari apa? Selasa?",
+          "literal": "besok apa hari-suatu adalah? tiga-sabtu?"
+        },
+        {
+          "speaker": "مریم:",
+          "text": "نه، فردا چهارشنبه است. پنج‌شنبه و جمعه تعطیلیم.",
+          "baca": "na, fardâ chahâr-shanbe ast. panj-shanbe va jom'e ta'tilim.",
+          "id": "Bukan, besok Rabu. Kamis dan Jumat kami libur.",
+          "literal": "tidak, besok empat-sabtu adalah. lima-sabtu dan Jumat libur-kami."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "آها، آخرِ هفتهٔ شما پنج‌شنبه و جمعه است؟",
+          "baca": "âhâ, âkhar-e hafte-ye shomâ panj-shanbe va jom'e ast?",
+          "id": "Oh, akhir pekan kalian itu Kamis dan Jumat?",
+          "literal": "oh, akhir-nya minggu-nya Anda lima-sabtu dan Jumat adalah?"
+        },
+        {
+          "speaker": "مریم:",
+          "text": "بله. هفتهٔ ما شنبه شروع می‌شود.",
+          "baca": "bale. hafte-ye mâ shanbe shoru' mishavad.",
+          "id": "Ya. Minggu kami mulai hari Sabtu.",
+          "literal": "ya. minggu-nya kami Sabtu mulai menjadi."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "پس تا فردا، ساعتِ ده و نیم. حتماً.",
+          "baca": "pas tâ fardâ, sâ'at-e dah o nim. hatman.",
+          "id": "Kalau begitu sampai besok, jam setengah sebelas. Pasti.",
+          "literal": "maka sampai besok, jam-nya sepuluh dan setengah. pasti."
+        }
+      ],
+      "notes": [
+        "⚠️⚠️ **Inilah kekeliruan satu jam penuh, dan ia menjegal hampir semua penutur bahasa Indonesia.** Bahasa Persia menghitung waktu **maju**: ده و نیم harfiahnya \"sepuluh dan setengah\" = **10.30**. Bahasa Indonesia menghitung **mundur**: \"setengah sepuluh\" = 9.30, yaitu setengah jalan *menuju* sepuluh. Dua bahasa yang memakai kata yang sama persis untuk dua waktu yang berselisih satu jam penuh.",
+        "⚠️ **Minggu Iran dimulai hari Sabtu.** شنبه (Sabtu) adalah hari kerja pertama, dan hari libur pekanan adalah **جمعه (Jumat)** — dengan پنج‌شنبه (Kamis) sering setengah hari atau libur juga. Hari Minggu (یکشنبه) adalah hari kerja biasa. Kalau kamu memesan janji \"akhir pekan\" tanpa menyebut harinya, kamu dan lawan bicaramu sedang membicarakan dua hal yang berbeda.",
+        "**یعنی = \"artinya, maksudnya\".** Kata yang akan kamu pakai puluhan kali sehari saat belajar: این یعنی چه؟ (\"ini artinya apa?\"), یعنی چه؟ (\"maksudnya bagaimana?\"). Kamu sudah mengenalnya dari bahasa Indonesia — \"yakni\" berasal dari kata yang sama.",
+        "**چطور مگر؟ = \"memangnya kenapa?\"** Ungkapan santai yang menanyakan alasan di balik pertanyaan seseorang. Sopan, ringan, dan sangat sering dipakai.",
+        "**روشن شد = \"sudah jelas\"**, harfiahnya \"menjadi terang\". Kamu sudah bertemu روشن di unit 5 sebagai \"terang\"; di sini ia dipakai untuk pengertian. Bahasa Indonesia melakukan hal yang sama persis dengan \"jelas\" dan \"terang\".",
+        "**Bentuk lisan:** ساعت چنده؟ (*sâ'at chande?*), ده و نیمِ صبح خوبه؟ (*dah o nim-e sobh khube?*), فردا چه روزیه؟ (*fardâ che ruziye?*), تعطیلیم (*ta'tilim* — tak berubah)."
+      ],
+      "grammars": [
+        {
+          "title": "Menyebut jam",
+          "body": [
+            "Semua keterangan waktu dimulai dengan ساعت (\"jam\"), lalu angkanya, lalu tambahan menitnya. Untuk bertanya: **ساعت چند است؟**"
+          ],
+          "table": {
+            "head": [
+              "Waktu",
+              "Persia",
+              "Cara baca",
+              "Harfiah"
+            ],
+            "rows": [
+              [
+                "7.00",
+                "ساعتِ هفت",
+                "sâ'at-e haft",
+                "jam tujuh"
+              ],
+              [
+                "7.05",
+                "هفت و پنج دقیقه",
+                "haft o panj daghighe",
+                "tujuh dan lima menit"
+              ],
+              [
+                "7.15",
+                "هفت و ربع",
+                "haft o rob'",
+                "tujuh dan seperempat"
+              ],
+              [
+                "7.30",
+                "هفت و نیم",
+                "haft o nim",
+                "tujuh dan setengah"
+              ],
+              [
+                "7.45",
+                "یک ربع به هشت",
+                "yek rob' be hasht",
+                "seperempat ke delapan"
+              ],
+              [
+                "7.45",
+                "هشت ربع کم",
+                "hasht rob' kam",
+                "delapan kurang seperempat"
+              ],
+              [
+                "7.50",
+                "ده دقیقه به هشت",
+                "dah daghighe be hasht",
+                "sepuluh menit ke delapan"
+              ],
+              [
+                "12.00",
+                "ظهر",
+                "zohr",
+                "tengah hari"
+              ],
+              [
+                "24.00",
+                "نیمه‌شب",
+                "nime-shab",
+                "tengah malam"
+              ]
+            ]
+          },
+          "after": [
+            "**Sampai lewat setengah, dipakai و (\"dan\") — sesudahnya dipakai به atau کم.** Batasnya kira-kira menit ke-30: sesudah itu orang Iran lebih suka menghitung mundur ke jam berikutnya.",
+            "⚠️ Sekali lagi, karena ini yang paling mahal: **هفت و نیم = 7.30, bukan 6.30.** Kalau kamu terlanjur mengatakannya dengan cara Indonesia, kamu akan datang satu jam terlalu awal — atau terlalu terlambat, tergantung siapa yang keliru.",
+            "Bagian hari ditempelkan dengan ezafe: هفتِ صبح (\"tujuh pagi\"), سهِ بعدازظهر (\"tiga sore\"), نهِ شب (\"sembilan malam\"). Iran memakai jam 24 di jadwal resmi, tapi bicara sehari-harinya memakai jam 12 dengan keterangan waktu."
+          ]
+        },
+        {
+          "title": "Hari, dan minggu yang dimulai hari Sabtu",
+          "table": {
+            "head": [
+              "Persia",
+              "Cara baca",
+              "Harfiah",
+              "Hari"
+            ],
+            "rows": [
+              [
+                "شنبه",
+                "shanbe",
+                "—",
+                "Sabtu (hari kerja pertama)"
+              ],
+              [
+                "یکشنبه",
+                "yek-shanbe",
+                "satu-Sabtu",
+                "Minggu (hari kerja)"
+              ],
+              [
+                "دوشنبه",
+                "do-shanbe",
+                "dua-Sabtu",
+                "Senin"
+              ],
+              [
+                "سه‌شنبه",
+                "se-shanbe",
+                "tiga-Sabtu",
+                "Selasa"
+              ],
+              [
+                "چهارشنبه",
+                "chahâr-shanbe",
+                "empat-Sabtu",
+                "Rabu"
+              ],
+              [
+                "پنج‌شنبه",
+                "panj-shanbe",
+                "lima-Sabtu",
+                "Kamis (setengah hari)"
+              ],
+              [
+                "جمعه",
+                "jom'e",
+                "—",
+                "Jumat (hari libur)"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **جمعه adalah hari libur Iran, bukan Minggu.** Kantor, sekolah, dan sebagian besar toko tutup. Museum dan tempat wisata justru ramai. Kalau kamu punya urusan resmi, jangan menjadwalkannya di hari Jumat.",
+            "**آخرِ هفته** (\"akhir pekan\") di Iran berarti Kamis dan Jumat. **اولِ هفته** berarti Sabtu.",
+            "Untuk mengatakan \"tiap hari Jumat\", jamakkan: جمعه‌ها (*jom'e-hâ*). Sudah kamu lihat di unit 5."
+          ]
+        },
+        {
+          "title": "Kemarin, hari ini, besok",
+          "table": {
+            "head": [
+              "Persia",
+              "Cara baca",
+              "Arti",
+              "Persia",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "امروز",
+                "emruz",
+                "hari ini",
+                "امشب",
+                "emshab",
+                "malam ini"
+              ],
+              [
+                "دیروز",
+                "diruz",
+                "kemarin",
+                "دیشب",
+                "dishab",
+                "tadi malam"
+              ],
+              [
+                "فردا",
+                "fardâ",
+                "besok",
+                "فردا شب",
+                "fardâ shab",
+                "besok malam"
+              ],
+              [
+                "پریروز",
+                "pariruz",
+                "kemarin dulu",
+                "پس‌فردا",
+                "pas-fardâ",
+                "lusa"
+              ],
+              [
+                "صبح",
+                "sobh",
+                "pagi",
+                "ظهر",
+                "zohr",
+                "tengah hari"
+              ],
+              [
+                "بعدازظهر",
+                "ba'd az zohr",
+                "siang, sore",
+                "عصر",
+                "asr",
+                "sore"
+              ],
+              [
+                "شب",
+                "shab",
+                "malam",
+                "نیمه‌شب",
+                "nime-shab",
+                "tengah malam"
+              ],
+              [
+                "هفته",
+                "hafte",
+                "minggu",
+                "ماه",
+                "mâh",
+                "bulan"
+              ],
+              [
+                "امسال",
+                "emsâl",
+                "tahun ini",
+                "پارسال",
+                "pârsâl",
+                "tahun lalu"
+              ],
+              [
+                "الان",
+                "alân",
+                "sekarang",
+                "بعداً",
+                "ba'dan",
+                "nanti"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan awalan **ام** (\"ini\") pada امروز، امشب، امسال — semuanya berarti \"yang sekarang\". Dan awalan **دی** pada دیروز، دیشب yang berarti \"yang lewat\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Membuat janji",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Persia",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "ساعت چند است؟",
+              "sâ'at chand ast?",
+              "Jam berapa sekarang?"
+            ],
+            [
+              "کِی؟",
+              "key?",
+              "Kapan?"
+            ],
+            [
+              "فردا وقت دارید؟",
+              "fardâ vaght dârid?",
+              "Besok Anda ada waktu?"
+            ],
+            [
+              "ساعتِ چند خوب است؟",
+              "sâ'at-e chand khub ast?",
+              "Jam berapa enaknya?"
+            ],
+            [
+              "من آزادم.",
+              "man âzâdam.",
+              "Saya luang."
+            ],
+            [
+              "متأسفانه وقت ندارم.",
+              "mota'assefâne vaght nadâram.",
+              "Sayangnya saya tidak ada waktu."
+            ],
+            [
+              "زودتر می‌شود؟",
+              "zudtar mishavad?",
+              "Bisa lebih awal?"
+            ],
+            [
+              "دیرتر بهتر است.",
+              "dirtar behtar ast.",
+              "Lebih siang lebih baik."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**قرار** (*gharâr*) berarti \"janji temu\". قرار داشتن = \"punya janji\", قرار گذاشتن = \"membuat janji\", dan قرارمان ساعتِ ده = \"janji kita jam sepuluh\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Waktu di Iran: apa yang benar-benar terjadi",
+          "items": [
+            "⚠️ **Janji sosial di Iran longgar; janji resmi tidak.** Datang ke undangan makan malam pukul delapan tepat justru dianggap terlalu cepat — tuan rumah mungkin belum siap. Tapi janji dengan kantor, dokter, atau bank berlaku persis seperti yang disebut.",
+            "Ungkapan yang akan kamu dengar: **ایشالله** (*ishâllâ*, dari ان‌شاءالله) di ujung setiap rencana. Ia berarti \"insyaallah\" persis seperti dalam bahasa Indonesia, dengan lapisan makna yang sama: sungguh-sungguh, tapi tidak mengikat sepenuhnya. Kamu sudah tahu cara membacanya."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga tanggal yang menghentikan seluruh Iran",
+          "items": [
+            "**۱ فروردین — نوروز**, tahun baru Persia dan hari libur terbesar. Seluruh negeri berhenti selama kira-kira dua minggu, kantor tutup, dan semua orang bepergian. Jangan merencanakan urusan apa pun di dua minggu pertama Farvardin.",
+            "**۱۳ فروردین — سیزده‌بدر**, hari ketiga belas tahun baru: semua orang wajib keluar rumah dan berpiknik. Kota kosong, taman penuh.",
+            "**تاسوعا و عاشورا** di bulan محرم (kalender hijriah bulan, jadi tanggalnya bergeser tiap tahun) — dua hari berkabung yang kamu kenal namanya dari Indonesia. Toko dan restoran banyak yang tutup, jalanan penuh perarakan."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fa": "ساعت",
+      "baca": "sâ'at",
+      "id": "jam"
+    },
+    {
+      "fa": "دقیقه",
+      "baca": "daghighe",
+      "id": "menit"
+    },
+    {
+      "fa": "ثانیه",
+      "baca": "sâniye",
+      "id": "detik"
+    },
+    {
+      "fa": "ربع",
+      "baca": "rob'",
+      "id": "seperempat"
+    },
+    {
+      "fa": "نیم",
+      "baca": "nim",
+      "id": "setengah"
+    },
+    {
+      "fa": "کم",
+      "baca": "kam",
+      "id": "kurang; sedikit"
+    },
+    {
+      "fa": "صبح",
+      "baca": "sobh",
+      "id": "pagi"
+    },
+    {
+      "fa": "ظهر",
+      "baca": "zohr",
+      "id": "tengah hari"
+    },
+    {
+      "fa": "بعدازظهر",
+      "baca": "ba'd az zohr",
+      "id": "siang, sore"
+    },
+    {
+      "fa": "شب",
+      "baca": "shab",
+      "id": "malam"
+    },
+    {
+      "fa": "امروز",
+      "baca": "emruz",
+      "id": "hari ini"
+    },
+    {
+      "fa": "دیروز",
+      "baca": "diruz",
+      "id": "kemarin"
+    },
+    {
+      "fa": "فردا",
+      "baca": "fardâ",
+      "id": "besok"
+    },
+    {
+      "fa": "پس‌فردا",
+      "baca": "pas-fardâ",
+      "id": "lusa"
+    },
+    {
+      "fa": "هفته",
+      "baca": "hafte",
+      "id": "minggu"
+    },
+    {
+      "fa": "ماه",
+      "baca": "mâh",
+      "id": "bulan"
+    },
+    {
+      "fa": "سال",
+      "baca": "sâl",
+      "id": "tahun"
+    },
+    {
+      "fa": "شنبه",
+      "baca": "shanbe",
+      "id": "Sabtu"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis waktunya dalam bahasa Persia.",
+      "items": [
+        "07.00",
+        "07.15",
+        "07.30",
+        "07.45",
+        "10.30 pagi"
+      ]
+    },
+    {
+      "prompt": "Isi dengan angka jam yang benar (tulis dengan angka Latin).",
+      "items": [
+        "ساعتِ هشت و نیم = ____",
+        "ساعتِ شش و ربع = ____",
+        "یک ربع به نه = ____",
+        "ساعتِ ده و نیم = ____",
+        "بیست دقیقه به پنج = ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan nama hari yang tepat.",
+      "items": [
+        "Hari kerja pertama di Iran: ____",
+        "Hari libur pekanan di Iran: ____",
+        "Hari sesudah دوشنبه: ____",
+        "Hari sebelum جمعه: ____",
+        "Hari yang dalam bahasa Indonesia disebut Minggu: ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "است / چند / ساعت / ؟",
+        "دارید / فردا / وقت / ؟",
+        "است / نیم / و / ده / ساعتِ / قرارمان",
+        "تعطیل / جمعه / است",
+        "است / چهارشنبه / فردا"
+      ]
+    }
+  ],
+  "answers": [
+    "ساعتِ هفت — هفت و ربع — هفت و نیم — یک ربع به هشت — ده و نیمِ صبح",
+    "08.30 — 06.15 — 08.45 — 10.30 — 04.40",
+    "شنبه — جمعه — سه‌شنبه — پنج‌شنبه — یکشنبه",
+    "ساعت چند است؟ — فردا وقت دارید؟ — قرارمان ساعتِ ده و نیم است. — جمعه تعطیل است. — فردا چهارشنبه است."
+  ],
+  "wave": "Malam ini, sebutkan jam berapa sekarang dalam bahasa Persia — lalu ucapkan lagi setiap kali kamu melihat jam besok. Sepuluh kali, dan jebakan \"setengah\" itu hilang selamanya."
+}

@@ -1,0 +1,553 @@
+{
+  "title": "Di pasar — harga, tawar-menawar, dan satu jebakan besar",
+  "title_target": "در بازار",
+  "goal": "Menanyakan harga, menawar dengan sopan, membayar — dan tidak terjebak oleh dua hal yang menjegal hampir semua pendatang: toman lawan rial, dan تعارف penjual.",
+  "bekal": [
+    "menanyakan harga dan jumlah dengan tiga cara yang berbeda",
+    "menawar tanpa terdengar kasar",
+    "mengerti kenapa harga di mulut penjual sepuluh kali lebih kecil daripada di uang kertasnya"
+  ],
+  "dialogs": [
+    {
+      "title": "گفتگو — در بازارِ تجریش",
+      "intro": "Pasar Tajrish di utara Teheran. Budi berhenti di kios rempah dan kacang-kacangan.",
+      "lines": [
+        {
+          "speaker": "بودی:",
+          "text": "سلام. این زعفران چقدر است؟",
+          "baca": "salâm. in za'farân cheghadr ast?",
+          "id": "Halo. Safron ini berapa?",
+          "literal": "halo. ini safron berapa-banyak adalah?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "سلام. یک گرم دویست هزار تومان.",
+          "baca": "salâm. yek geram devist hezâr tomân.",
+          "id": "Halo. Satu gram dua ratus ribu toman.",
+          "literal": "halo. satu gram dua-ratus ribu toman."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "گران است! ارزان‌تر ندارید؟",
+          "baca": "gerân ast! arzântar nadârid?",
+          "id": "Mahal! Tidak ada yang lebih murah?",
+          "literal": "mahal adalah! lebih-murah tidak-punya-Anda?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "این بهترین زعفرانِ قائنات است. ولی برایِ شما صد و هشتاد.",
+          "baca": "in behtarin za'farân-e Ghâ'enât ast. vali barâye shomâ sad o hashtâd.",
+          "id": "Ini safron Qa'enat terbaik. Tapi untuk Anda seratus delapan puluh.",
+          "literal": "ini ter-baik safron-nya Qa'enat adalah. tetapi untuk-nya Anda seratus dan delapan-puluh."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "صد و پنجاه چطور است؟",
+          "baca": "sad o panjâh chetowr ast?",
+          "id": "Bagaimana kalau seratus lima puluh?",
+          "literal": "seratus dan lima-puluh bagaimana adalah?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "قابل نداره! صد و شصت، آخرش.",
+          "baca": "ghâbel nadâre! sad o shast, âkharesh.",
+          "id": "Ah, tidak usah dibayar! Seratus enam puluh, harga terakhir.",
+          "literal": "berharga tidak-punya! seratus dan enam-puluh, akhir-dia."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "باشد، قبول. پستهٔ تازه هم دارید؟",
+          "baca": "bâshad, ghabul. peste-ye tâze ham dârid?",
+          "id": "Baiklah, setuju. Ada pistasio segar juga?",
+          "literal": "jadilah, terima. pistasio-nya segar juga punya-Anda?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "بله، پستهٔ کرمان. کیلویی سیصد و پنجاه هزار.",
+          "baca": "bale, peste-ye Kermân. kiluyi sisad o panjâh hezâr.",
+          "id": "Ya, pistasio Kerman. Tiga ratus lima puluh ribu per kilo.",
+          "literal": "ya, pistasio-nya Kerman. per-kilo tiga-ratus dan lima-puluh ribu."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "نیم کیلو لطفاً. و دو کیلو خرما.",
+          "baca": "nim kilu lotfan. va do kilu khormâ.",
+          "id": "Setengah kilo, tolong. Dan dua kilo kurma.",
+          "literal": "setengah kilo tolong. dan dua kilo kurma."
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "چشم. همه‌اش می‌شود پانصد و ده هزار تومان.",
+          "baca": "chashm. hame-ash mishavad pânsad o dah hezâr tomân.",
+          "id": "Siap. Semuanya jadi lima ratus sepuluh ribu toman.",
+          "literal": "mata. semua-dia menjadi lima-ratus dan sepuluh ribu toman."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "کارت می‌کشید؟",
+          "baca": "kârt mikeshid?",
+          "id": "Bisa bayar pakai kartu?",
+          "literal": "kartu menarik-Anda?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "بله، دستگاه اینجاست. رمزتان را بزنید.",
+          "baca": "bale, dastgâh injâst. ramzetân râ bezanid.",
+          "id": "Ya, mesinnya di sini. Masukkan PIN Anda.",
+          "literal": "ya, mesin di-sini-adalah. sandi-Anda [obj] pukullah-Anda."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "ممنون. کیسه دارید؟",
+          "baca": "mamnun. kise dârid?",
+          "id": "Terima kasih. Ada kantong?",
+          "literal": "berterima-kasih. kantong punya-Anda?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "بفرمایید. خرید مبارک!",
+          "baca": "befarmâyid. kharid mobârak!",
+          "id": "Silakan. Selamat berbelanja!",
+          "literal": "silakan. belanjaan diberkati!"
+        }
+      ],
+      "notes": [
+        "⚠️ **تومان lawan ریال — jebakan uang yang paling sering menjegal pendatang.** Mata uang resmi Iran adalah **rial**, dan itulah yang tercetak di uang kertas. Tapi tidak ada seorang pun yang menyebut harga dalam rial. Semua orang — penjual, sopir, pelayan, kasir — berbicara dalam **toman**, dan **satu toman = sepuluh rial**. Kalau penjual berkata صد هزار تومان, yang tertulis di mesin kartunya adalah ۱٬۰۰۰٬۰۰۰ ریال. Jangan panik: tambahkan satu nol dan semuanya cocok.",
+        "⚠️ **Dan ada lapisan kedua: kata هزار sering dibuang.** Karena harga di Iran berjumlah ratusan ribu, orang Teheran sering memendekkannya: صد و هشتاد di dialog ini berarti صد و هشتاد **هزار** تومان. Aturan praktis yang selalu menolong: **kalau sebuah harga terdengar mustahil murah, kata هزار-nya dibuang.** Kalau ragu, tanyakan: هزار تومان؟ — tidak ada yang tersinggung.",
+        "⚠️⚠️ **قابل نداره adalah kalimat paling berbahaya di modul ini, dan kamu WAJIB tidak mempercayainya.** Harfiahnya \"ini tidak berharga (untuk Anda)\" — artinya \"ambil saja, gratis\". Penjual **tidak** bermaksud memberimu barang gratis. Ini تعارف, tata krama merendah yang wajib diucapkan dan wajib ditolak. Jawabannya: خواهش می‌کنم، چقدر تقدیم کنم؟ (*khâhesh mikonam, cheghadr taghdim konam?*, \"berapa yang harus saya persembahkan?\") atau cukup mengulang pertanyaan harganya. Kalau kamu mengambil barangnya lalu pergi, kamu mencuri. Seluruh mekanisme تعارف dibedah di unit 15.",
+        "**نیم dan نصف dua-duanya berarti \"setengah\", tapi tidak saling menggantikan.** نیم dipakai sebelum takaran: نیم کیلو (\"setengah kilo\"), نیم ساعت (\"setengah jam\"). نصف dipakai untuk membelah sesuatu: نصفِ نان (\"setengah roti\"), نصفِ پول (\"separuh uang\").",
+        "**کارت می‌کشید؟ harfiahnya \"apakah Anda menarik kartu?\"** — dari gerakan menggesek kartu di mesin. Hampir semua kios di Iran menerima kartu debit lokal, tapi ⚠️ **kartu kredit internasional (Visa, Mastercard) tidak berlaku di Iran sama sekali.** Bawa uang tunai atau urus kartu turis setempat sebelum berangkat.",
+        "**خرید مبارک = \"selamat atas belanjaanmu\".** Ucapan penjual saat kamu pergi. Pola مبارک muncul di banyak ucapan selamat: تولدت مبارک (\"selamat ulang tahun\"), عیدت مبارک (\"selamat hari raya\"), مبارک باشد (\"semoga membawa berkah\"). Kata yang sama persis dengan \"mubarak\" bahasa Indonesia."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga cara menanyakan harga",
+          "table": {
+            "head": [
+              "Persia",
+              "Cara baca",
+              "Arti harfiah",
+              "Dipakai untuk"
+            ],
+            "rows": [
+              [
+                "چند است؟",
+                "chand ast?",
+                "berapa adalah?",
+                "harga satu barang"
+              ],
+              [
+                "چقدر است؟",
+                "cheghadr ast?",
+                "berapa banyak adalah?",
+                "harga, jumlah, kadar"
+              ],
+              [
+                "قیمتش چند است؟",
+                "ghymatash chand ast?",
+                "harganya berapa adalah?",
+                "paling jelas dan sopan"
+              ],
+              [
+                "چند می‌شود؟",
+                "chand mishavad?",
+                "berapa jadinya?",
+                "total belanjaan"
+              ],
+              [
+                "همه‌اش چقدر شد؟",
+                "hame-ash cheghadr shod?",
+                "semuanya berapa jadinya?",
+                "saat mau membayar"
+              ],
+              [
+                "کیلویی چند؟",
+                "kiluyi chand?",
+                "per kilo berapa?",
+                "barang timbangan"
+              ]
+            ]
+          },
+          "after": [
+            "**چند** menanyakan jumlah yang bisa dihitung, **چقدر** menanyakan kadar atau harga secara umum. Untuk harga, dua-duanya benar dan sama seringnya.",
+            "Bentuk lisannya: چنده؟ (*chande?*), چقدره؟ (*cheghadre?*), قیمتش چنده؟ (*ghymatash chande?*). Kamu akan mendengar bentuk pendek ini jauh lebih sering daripada bentuk panjangnya."
+          ]
+        },
+        {
+          "title": "Menawar tanpa terdengar kasar",
+          "body": [
+            "Menawar itu biasa di pasar tradisional (بازار), toko permadani, dan taksi jalanan — dan **tidak** biasa di supermarket, toko berlabel harga, atau restoran. Kuncinya bukan tegas melainkan ramah: tawar-menawar di Iran adalah percakapan, bukan pertarungan."
+          ],
+          "table": {
+            "head": [
+              "Persia",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "گران است.",
+                "gerân ast.",
+                "Mahal."
+              ],
+              [
+                "ارزان‌تر ندارید؟",
+                "arzântar nadârid?",
+                "Tidak ada yang lebih murah?"
+              ],
+              [
+                "تخفیف بدهید لطفاً.",
+                "takhfif bedahid lotfan.",
+                "Tolong beri diskon."
+              ],
+              [
+                "آخرش چند؟",
+                "âkharesh chand?",
+                "Harga terakhirnya berapa?"
+              ],
+              [
+                "... چطور است؟",
+                "... chetowr ast?",
+                "Bagaimana kalau ...?"
+              ],
+              [
+                "باشد، قبول.",
+                "bâshad, ghabul.",
+                "Baiklah, setuju."
+              ],
+              [
+                "فعلاً نه، ممنون.",
+                "fe'lan na, mamnun.",
+                "Belum sekarang, terima kasih."
+              ],
+              [
+                "فکر می‌کنم.",
+                "fekr mikonam.",
+                "Saya pikir-pikir dulu."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Jangan menawar dengan wajah serius atau nada mendesak.** Yang berhasil di Iran adalah senyum, pujian atas barangnya, dan kesediaan untuk pergi. فعلاً نه، ممنون sambil melangkah pelan sering menghasilkan harga baru sebelum kamu sampai di pintu.",
+            "**Tawaran pembuka yang wajar adalah sekitar 70-80 persen dari harga yang disebut**, bukan setengahnya. Menawar terlalu rendah dianggap tidak sopan, bukan cerdik.",
+            "Kalau penjual berkata **قیمت مقطوع است** (*ghymat maghtu' ast*, \"harga pas\") atau kamu melihat label harga tercetak, hentikan — di situ menawar memang tidak berlaku."
+          ]
+        },
+        {
+          "title": "Berat, takaran, dan kemasan",
+          "table": {
+            "head": [
+              "Persia",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "کیلو",
+                "kilu",
+                "kilogram"
+              ],
+              [
+                "نیم کیلو",
+                "nim kilu",
+                "setengah kilo"
+              ],
+              [
+                "گرم",
+                "geram",
+                "gram"
+              ],
+              [
+                "دانه / تا",
+                "dâne / tâ",
+                "biji, buah"
+              ],
+              [
+                "بسته",
+                "baste",
+                "bungkus, paket"
+              ],
+              [
+                "جعبه",
+                "ja'be",
+                "kotak"
+              ],
+              [
+                "کیسه",
+                "kise",
+                "kantong"
+              ],
+              [
+                "شیشه",
+                "shishe",
+                "botol; kaca"
+              ],
+              [
+                "قوطی",
+                "ghuti",
+                "kaleng"
+              ],
+              [
+                "دسته",
+                "daste",
+                "ikat (sayuran)"
+              ]
+            ]
+          },
+          "after": [
+            "Untuk memesan: **jumlah + takaran + barang**. دو کیلو خرما، یک بسته چای، سه تا سیب، نیم کیلو پسته. Susunannya sama persis dengan bahasa Indonesia."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Yang dijual di pasar Iran",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Persia",
+            "Cara baca",
+            "Arti",
+            "Persia",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "نان",
+              "nân",
+              "roti",
+              "برنج",
+              "berenj",
+              "beras, nasi"
+            ],
+            [
+              "گوشت",
+              "gusht",
+              "daging",
+              "مرغ",
+              "morgh",
+              "ayam"
+            ],
+            [
+              "ماهی",
+              "mâhi",
+              "ikan",
+              "تخم‌مرغ",
+              "tokhm-e morgh",
+              "telur"
+            ],
+            [
+              "شیر",
+              "shir",
+              "susu",
+              "پنیر",
+              "panir",
+              "keju"
+            ],
+            [
+              "ماست",
+              "mâst",
+              "yogurt",
+              "کره",
+              "kare",
+              "mentega"
+            ],
+            [
+              "سیب",
+              "sib",
+              "apel",
+              "پرتقال",
+              "porteghâl",
+              "jeruk"
+            ],
+            [
+              "انگور",
+              "angur",
+              "anggur",
+              "خرما",
+              "khormâ",
+              "kurma"
+            ],
+            [
+              "هندوانه",
+              "hendevâne",
+              "semangka",
+              "انار",
+              "anâr",
+              "delima"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan dua kata yang menyimpan sejarah: **سیب‌زمینی** harfiahnya \"apel tanah\" (persis seperti *pomme de terre* bahasa Prancis), dan **گوجه‌فرنگی** harfiahnya \"buah asing\" — tomat memang datang dari Amerika lewat Eropa. Kata فرنگی (\"Frank, Eropa\") juga muncul di توت‌فرنگی (\"stroberi\", harfiahnya \"murbei asing\")."
+        },
+        {
+          "type": "kotak",
+          "title": "Kata yang sudah ada di lidahmu",
+          "items": [
+            "**انگور** *angur* → \"anggur\". **خرما** *khormâ* → \"kurma\". **بازار** *bâzâr* → \"pasar\". **گندم** *gandom* → \"gandum\". **کشمش** *keshmesh* → \"kismis\". Lima kata dagang yang menyeberang dari Persia ke Nusantara lewat pedagang Gujarat, dan yang sekarang kamu \"pelajari\" cuma perlu kamu kenali kembali.",
+            "⚠️ Tapi hati-hati dengan yang bergeser: **ماست** (*mâst*) di Iran berarti **yogurt**, bukan \"mesti\". Dan **شیر** (*shir*) berarti \"susu\" — sekaligus \"singa\" dan \"keran\". Konteks selalu memisahkannya, tapi papan bertuliskan شیر di dinding kamar mandi tidak sedang menjanjikan susu."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Enam kalimat untuk sekali berbelanja",
+          "items": [
+            "این چقدر است؟ — \"Ini berapa?\"",
+            "دو کیلو لطفاً. — \"Dua kilo, tolong.\"",
+            "ارزان‌تر ندارید؟ — \"Tidak ada yang lebih murah?\"",
+            "همه‌اش چقدر شد؟ — \"Semuanya berapa?\"",
+            "کارت می‌کشید؟ — \"Bisa pakai kartu?\"",
+            "کیسه دارید؟ — \"Ada kantong?\" Enam kalimat ini sudah cukup untuk seluruh belanjaanmu di Iran, dan lima di antaranya berlaku juga di restoran dan taksi."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fa": "بازار",
+      "baca": "bâzâr",
+      "id": "pasar"
+    },
+    {
+      "fa": "فروشنده",
+      "baca": "forushande",
+      "id": "penjual"
+    },
+    {
+      "fa": "زعفران",
+      "baca": "za'farân",
+      "id": "safron"
+    },
+    {
+      "fa": "پسته",
+      "baca": "peste",
+      "id": "pistasio"
+    },
+    {
+      "fa": "خرما",
+      "baca": "khormâ",
+      "id": "kurma"
+    },
+    {
+      "fa": "گران",
+      "baca": "gerân",
+      "id": "mahal"
+    },
+    {
+      "fa": "ارزان",
+      "baca": "arzân",
+      "id": "murah"
+    },
+    {
+      "fa": "تخفیف",
+      "baca": "takhfif",
+      "id": "diskon"
+    },
+    {
+      "fa": "قبول",
+      "baca": "ghabul",
+      "id": "terima, setuju"
+    },
+    {
+      "fa": "چشم",
+      "baca": "chashm",
+      "id": "siap, baik (harfiah: mata)"
+    },
+    {
+      "fa": "کیلو",
+      "baca": "kilu",
+      "id": "kilogram"
+    },
+    {
+      "fa": "نیم",
+      "baca": "nim",
+      "id": "setengah (takaran)"
+    },
+    {
+      "fa": "گرم",
+      "baca": "geram",
+      "id": "gram"
+    },
+    {
+      "fa": "بسته",
+      "baca": "baste",
+      "id": "bungkus, paket"
+    },
+    {
+      "fa": "کیسه",
+      "baca": "kise",
+      "id": "kantong"
+    },
+    {
+      "fa": "پول",
+      "baca": "pul",
+      "id": "uang"
+    },
+    {
+      "fa": "نقد",
+      "baca": "naghd",
+      "id": "tunai"
+    },
+    {
+      "fa": "کارت",
+      "baca": "kârt",
+      "id": "kartu"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Persia.",
+      "items": [
+        "Ini berapa?",
+        "Mahal sekali!",
+        "Tidak ada yang lebih murah?",
+        "Setengah kilo, tolong.",
+        "Semuanya berapa?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata yang tepat.",
+      "items": [
+        "Menanyakan harga per kilo: ____ چند؟",
+        "Meminta diskon: ____ بدهید لطفاً.",
+        "Menyetujui harga: باشد، ____.",
+        "Menanyakan total belanjaan: همه‌اش چقدر ____؟",
+        "Meminta kantong: ____ دارید؟"
+      ]
+    },
+    {
+      "prompt": "Jawab dengan angka dalam bahasa Persia.",
+      "items": [
+        "Penjual berkata صد هزار تومان. Berapa rial itu? ____ ریال",
+        "Setengah dari دویست هزار adalah ____",
+        "Dua kali پنجاه هزار adalah ____",
+        "Sepuluh persen dari صد هزار adalah ____",
+        "Seratus lima puluh ribu ditulis dengan huruf: ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "است / چقدر / زعفران / این / ؟",
+        "ندارید / ارزان‌تر / ؟",
+        "لطفاً / کیلو / نیم",
+        "می‌کشید / کارت / ؟",
+        "شد / چقدر / همه‌اش / ؟"
+      ]
+    }
+  ],
+  "answers": [
+    "این چقدر است؟ — خیلی گران است! — ارزان‌تر ندارید؟ — نیم کیلو لطفاً. — همه‌اش چقدر شد؟",
+    "کیلویی — تخفیف — قبول — شد — کیسه",
+    "یک میلیون — صد هزار — صد هزار — ده هزار — صد و پنجاه هزار",
+    "این زعفران چقدر است؟ — ارزان‌تر ندارید؟ — نیم کیلو لطفاً. — کارت می‌کشید؟ — همه‌اش چقدر شد؟"
+  ],
+  "wave": "Latih satu tawar-menawar utuh di kepalamu: tanya harga, bilang mahal, tawar, setuju, bayar. Enam kalimat, dan kamu siap ke pasar mana pun."
+}

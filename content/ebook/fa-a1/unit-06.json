@@ -1,0 +1,608 @@
+{
+  "title": "Angka — dan sepuluh bentuk yang tidak kamu kenal",
+  "title_target": "عددها",
+  "goal": "Membaca dan menulis angka Persia, menyebut nomor telepon, menghitung benda, dan memakai bilangan tingkat (pertama, kedua, ketiga).",
+  "bekal": [
+    "mengenali sepuluh angka Persia ۰ sampai ۹ dan bedanya dari angka Arab",
+    "menyebut bilangan sampai ribuan dan membacakan nomor telepon",
+    "memakai bilangan tingkat untuk lantai, unit, dan urutan"
+  ],
+  "dialogs": [
+    {
+      "title": "گفتگو — خریدِ سیم‌کارت",
+      "intro": "Budi masuk ke gerai telepon di sebuah pusat perbelanjaan untuk membeli kartu SIM.",
+      "lines": [
+        {
+          "speaker": "بودی:",
+          "text": "سلام آقا. یک سیم‌کارت می‌خواهم.",
+          "baca": "salâm âghâ. yek sim-kârt mikhâham.",
+          "id": "Halo, Pak. Saya mau satu kartu SIM.",
+          "literal": "halo tuan. satu SIM-kartu mau-saya."
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "سلام. پاسپورتتان لطفاً.",
+          "baca": "salâm. pâsporetân lotfan.",
+          "id": "Halo. Paspor Anda, tolong.",
+          "literal": "halo. paspor-Anda tolong."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "بفرمایید. قیمتش چند است؟",
+          "baca": "befarmâyid. ghymatash chand ast?",
+          "id": "Silakan. Harganya berapa?",
+          "literal": "silakan. harga-dia berapa adalah?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "صد و پنجاه هزار تومان.",
+          "baca": "sad o panjâh hezâr tomân.",
+          "id": "Seratus lima puluh ribu toman.",
+          "literal": "seratus dan lima-puluh ribu toman."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "چند گیگ اینترنت دارد؟",
+          "baca": "chand gig internet dârad?",
+          "id": "Berapa giga internetnya?",
+          "literal": "berapa giga internet punya-dia?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "بیست گیگ برایِ سی روز.",
+          "baca": "bist gig barâye si ruz.",
+          "id": "Dua puluh giga untuk tiga puluh hari.",
+          "literal": "dua-puluh giga untuk-nya tiga-puluh hari."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "خوب است. شمارهٔ من چه می‌شود؟",
+          "baca": "khub ast. shomâre-ye man che mishavad?",
+          "id": "Bagus. Nomor saya jadi berapa?",
+          "literal": "baik adalah. nomor-nya saya apa menjadi?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "صفر نهصد و دوازده، سه چهار پنج، شش هفت هشت نه.",
+          "baca": "sefr nohsad o davâzdah, se chahâr panj, shesh haft hasht noh.",
+          "id": "Nol sembilan ratus dua belas, tiga empat lima, enam tujuh delapan sembilan.",
+          "literal": "nol sembilan-ratus dan dua-belas, tiga empat lima, enam tujuh delapan sembilan."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "ببخشید، دوباره لطفاً. آهسته‌تر.",
+          "baca": "bebakhshid, dobâre lotfan. âheste-tar.",
+          "id": "Maaf, sekali lagi tolong. Lebih pelan.",
+          "literal": "maafkan, sekali-lagi tolong. lebih-pelan."
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "۰۹۱۲ ـ ۳۴۵ ـ ۶۷۸۹. رویِ کارت هم نوشته است.",
+          "baca": "sefr noh yek do, se chahâr panj, shesh haft hasht noh. ru-ye kârt ham neveshte ast.",
+          "id": "0912-345-6789. Tertulis juga di kartunya.",
+          "literal": "nol sembilan satu dua, tiga empat lima, enam tujuh delapan sembilan. atas-nya kartu juga tertulis adalah."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "ممنون. مغازهٔ شما در طبقهٔ چندم است؟",
+          "baca": "mamnun. maghâze-ye shomâ dar tabaghe-ye chandom ast?",
+          "id": "Terima kasih. Toko Anda di lantai berapa?",
+          "literal": "berterima-kasih. toko-nya Anda di lantai-nya ke-berapa adalah?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "طبقهٔ دوم. ولی ما شعبهٔ اول هم داریم.",
+          "baca": "tabaghe-ye dovvom. vali mâ sho'be-ye avval ham dârim.",
+          "id": "Lantai dua. Tapi kami juga punya cabang pertama.",
+          "literal": "lantai-nya kedua. tetapi kami cabang-nya pertama juga punya-kami."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "خیلی ممنون. کارتِ ویزیت دارید؟",
+          "baca": "kheyli mamnun. kârt-e vizit dârid?",
+          "id": "Terima kasih banyak. Anda punya kartu nama?",
+          "literal": "sangat berterima-kasih. kartu-nya kunjungan punya-Anda?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "بله، بفرمایید. شمارهٔ ما آخرش سه صفر است.",
+          "baca": "bale, befarmâyid. shomâre-ye mâ âkharash se sefr ast.",
+          "id": "Ya, silakan. Nomor kami ujungnya tiga nol.",
+          "literal": "ya, silakan. nomor-nya kami akhir-dia tiga nol adalah."
+        }
+      ],
+      "notes": [
+        "⚠️ **Angka Persia bukan angka Arab, walaupun mirip.** Tiga di antaranya berbeda bentuk: **۴** (empat, Arab ٤), **۵** (lima, Arab ٥), **۶** (enam, Arab ٦). Kalau kamu terbiasa membaca angka di mushaf Al-Qur'an, tiga bentuk inilah yang akan menjegalmu — dan sialnya justru ketiganya sering muncul di harga dan nomor telepon.",
+        "**دوباره لطفاً dan آهسته‌تر adalah dua kalimat penyelamat.** Kamu akan memakainya lebih sering daripada kalimat lain mana pun di modul ini, terutama saat orang menyebut angka. Tidak ada yang tersinggung; menyebutkan ulang nomor adalah hal yang dilakukan orang Iran satu sama lain juga.",
+        "**و antara puluhan dan satuan diucapkan, bukan ditulis sebagai kata terpisah dalam angka.** بیست و یک (\"dua puluh satu\"), صد و پنجاه (\"seratus lima puluh\"), هزار و نهصد (\"seribu sembilan ratus\"). Bunyinya *o*, bukan *va*, ketika menyambung angka.",
+        "**طبقهٔ چندم؟ = \"lantai ke berapa?\"** Akhiran ـم membuat bilangan tingkat: دو → دوم (\"kedua\"), سه → سوم (\"ketiga\"). Kata tanyanya چندم (\"ke berapa\"), berbeda dari چند (\"berapa banyak\"). Bahasa Indonesia membedakannya dengan \"berapa\" dan \"ke berapa\" — sama persis.",
+        "⚠️ **اول tidak beraturan.** \"Pertama\" bukan یکم melainkan **اول** (*avval*), kata pinjaman Arab. یکم memang ada tapi hanya dipakai untuk tanggal (یکمِ مهر). Untuk urutan biasa selalu اول.",
+        "**Bentuk lisan Teheran:** قیمتش چنده؟ (*ghymatash chande?*), چند گیگ داره؟ (*chand gig dâre?*), طبقهٔ چندمه؟ (*tabaghe-ye chandome?*). Lagi-lagi است yang berubah jadi ـه — pola yang paling sering kamu temui, dan yang paling cepat membuatmu terdengar wajar."
+      ],
+      "grammars": [
+        {
+          "title": "Sepuluh angka Persia",
+          "body": [
+            "Angka Persia ditulis **dari kiri ke kanan** walaupun hurufnya berjalan ke kanan-kiri. ۱۳۹۸ dibaca seperti biasa: seribu tiga ratus sembilan puluh delapan. Ini satu-satunya bagian tulisan Persia yang berjalan berlawanan arah, dan otakmu akan terbiasa dalam sehari."
+          ],
+          "table": {
+            "head": [
+              "Persia",
+              "Arab",
+              "Latin",
+              "Kata",
+              "Cara baca"
+            ],
+            "rows": [
+              [
+                "۰",
+                "٠",
+                "0",
+                "صفر",
+                "sefr"
+              ],
+              [
+                "۱",
+                "١",
+                "1",
+                "یک",
+                "yek"
+              ],
+              [
+                "۲",
+                "٢",
+                "2",
+                "دو",
+                "do"
+              ],
+              [
+                "۳",
+                "٣",
+                "3",
+                "سه",
+                "se"
+              ],
+              [
+                "۴",
+                "٤",
+                "4",
+                "چهار",
+                "chahâr"
+              ],
+              [
+                "۵",
+                "٥",
+                "5",
+                "پنج",
+                "panj"
+              ],
+              [
+                "۶",
+                "٦",
+                "6",
+                "شش",
+                "shesh"
+              ],
+              [
+                "۷",
+                "٧",
+                "7",
+                "هفت",
+                "haft"
+              ],
+              [
+                "۸",
+                "٨",
+                "8",
+                "هشت",
+                "hasht"
+              ],
+              [
+                "۹",
+                "٩",
+                "9",
+                "نه",
+                "noh"
+              ]
+            ]
+          },
+          "after": [
+            "Bandingkan kolom pertama dan kedua baik-baik: **۴ ۵ ۶** melawan **٤ ٥ ٦**. Tiga bentuk itulah satu-satunya yang harus kamu hafal ulang; tujuh sisanya sama persis.",
+            "⚠️ Perhatikan juga bahwa **نه** berarti \"sembilan\" **dan** \"tidak\". Bedanya cuma pada tekanan dan nada: نه \"sembilan\" datar, نه \"tidak\" lebih tegas dan sering ditarik. Konteks hampir selalu memisahkannya.",
+            "Di Iran sekarang angka Latin (0-9) juga dipakai luas di harga, papan jalan, dan telepon. Kamu perlu bisa membaca kedua-duanya, tapi kamu boleh menulis dengan yang mana pun."
+          ]
+        },
+        {
+          "title": "Bilangan sampai ribuan",
+          "table": {
+            "head": [
+              "Angka",
+              "Persia",
+              "Cara baca",
+              "Angka",
+              "Persia",
+              "Cara baca"
+            ],
+            "rows": [
+              [
+                "۱۰",
+                "ده",
+                "dah",
+                "۲۰",
+                "بیست",
+                "bist"
+              ],
+              [
+                "۱۱",
+                "یازده",
+                "yâzdah",
+                "۳۰",
+                "سی",
+                "si"
+              ],
+              [
+                "۱۲",
+                "دوازده",
+                "davâzdah",
+                "۴۰",
+                "چهل",
+                "chehel"
+              ],
+              [
+                "۱۳",
+                "سیزده",
+                "sizdah",
+                "۵۰",
+                "پنجاه",
+                "panjâh"
+              ],
+              [
+                "۱۴",
+                "چهارده",
+                "chahârdah",
+                "۶۰",
+                "شصت",
+                "shast"
+              ],
+              [
+                "۱۵",
+                "پانزده",
+                "pânzdah",
+                "۷۰",
+                "هفتاد",
+                "haftâd"
+              ],
+              [
+                "۱۶",
+                "شانزده",
+                "shânzdah",
+                "۸۰",
+                "هشتاد",
+                "hashtâd"
+              ],
+              [
+                "۱۷",
+                "هفده",
+                "hevdah",
+                "۹۰",
+                "نود",
+                "navad"
+              ],
+              [
+                "۱۸",
+                "هجده",
+                "hejdah",
+                "۱۰۰",
+                "صد",
+                "sad"
+              ],
+              [
+                "۱۹",
+                "نوزده",
+                "nuzdah",
+                "۱۰۰۰",
+                "هزار",
+                "hezâr"
+              ]
+            ]
+          },
+          "after": [
+            "**Puluhan dan satuan disambung dengan و** yang diucapkan *o*: بیست و یک (21), چهل و پنج (45), نود و نه (99).",
+            "**Ratusan:** دویست (200), سیصد (300), چهارصد (400), پانصد (500), ششصد (600), هفتصد (700), هشتصد (800), نهصد (900). Perhatikan bahwa 200 dan 500 tidak beraturan — دویست bukan دوصد, پانصد bukan پنج‌صد.",
+            "**Di atas seribu:** ده هزار (10.000), صد هزار (100.000), یک میلیون (1.000.000). Karena harga di Iran sering berjumlah ratusan ribu, kata هزار akan jadi kata yang paling sering kamu dengar di kasir.",
+            "⚠️ **Sesudah angka, kata bendanya tetap tunggal:** پنج کتاب، بیست روز، صد نفر. Jangan sekali-kali menambahkan ـها sesudah angka."
+          ]
+        },
+        {
+          "title": "Bilangan tingkat",
+          "table": {
+            "head": [
+              "Persia",
+              "Cara baca",
+              "Arti",
+              "Persia",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "اول",
+                "avval",
+                "pertama",
+                "ششم",
+                "sheshom",
+                "keenam"
+              ],
+              [
+                "دوم",
+                "dovvom",
+                "kedua",
+                "هفتم",
+                "haftom",
+                "ketujuh"
+              ],
+              [
+                "سوم",
+                "sevvom",
+                "ketiga",
+                "هشتم",
+                "hashtom",
+                "kedelapan"
+              ],
+              [
+                "چهارم",
+                "chahârom",
+                "keempat",
+                "نهم",
+                "nohom",
+                "kesembilan"
+              ],
+              [
+                "پنجم",
+                "panjom",
+                "kelima",
+                "دهم",
+                "dahom",
+                "kesepuluh"
+              ],
+              [
+                "آخر",
+                "âkhar",
+                "terakhir",
+                "چندم",
+                "chandom",
+                "ke berapa"
+              ]
+            ]
+          },
+          "after": [
+            "Aturannya: **tempelkan ـم pada bilangan biasa.** Tiga yang tidak persis mengikuti: اول (bukan یکم), دوم (dari دو dengan v ganda), سوم (dari سه).",
+            "Bilangan tingkat berdiri **sesudah** kata bendanya dan disambung ezafe: طبقهٔ دوم (\"lantai kedua\"), روزِ اول (\"hari pertama\"), بارِ آخر (\"kali terakhir\").",
+            "Ada juga bentuk kedua berakhiran ـمین yang berdiri **di depan** kata benda: دومین بار (\"kali kedua\"), اولین روز (\"hari pertama\"). Artinya sama; bentuk ini terasa lebih menekankan."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menghitung dan bertanya jumlah",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Persia",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "چند تا؟",
+              "chand tâ?",
+              "Berapa buah?"
+            ],
+            [
+              "چند نفر؟",
+              "chand nafar?",
+              "Berapa orang?"
+            ],
+            [
+              "چقدر؟",
+              "cheghadr?",
+              "Berapa banyak? Berapa harganya?"
+            ],
+            [
+              "قیمتش چند است؟",
+              "ghymatash chand ast?",
+              "Harganya berapa?"
+            ],
+            [
+              "چندم؟",
+              "chandom?",
+              "Yang ke berapa?"
+            ],
+            [
+              "نصف",
+              "nesf",
+              "setengah"
+            ],
+            [
+              "ربع",
+              "rob'",
+              "seperempat"
+            ],
+            [
+              "دوتا",
+              "do tâ",
+              "dua buah"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**تا adalah kata bilang serbaguna** untuk benda apa saja: دو تا کتاب، سه تا سیب، چند تا؟ Ia tidak wajib — دو کتاب juga benar — tapi dalam percakapan hampir selalu dipakai. Untuk manusia dipakai نفر: سه نفر، چند نفر؟"
+        },
+        {
+          "type": "kotak",
+          "title": "Angka yang punya arti di Iran",
+          "items": [
+            "**۱۴** — nomor darurat polisi bukan ini; polisi Iran adalah **۱۱۰**, ambulans **۱۱۵**, pemadam kebakaran **۱۲۵**. Tiga nomor ini pantas kamu hafal sebelum berangkat.",
+            "**۱۳** dianggap sial di Iran seperti di banyak negeri lain, dan ada hari raya khusus untuk \"membuang\" kesialannya: سیزده‌بدر (*sizdah-bedar*, \"tiga belas ke luar\"), hari ketiga belas tahun baru Persia ketika seluruh negeri pergi berpiknik ke luar rumah. Kamu akan bertemu lagi dengannya di unit 12.",
+            "**۴۰** (چهل) muncul di banyak ungkapan dan tempat: چهلم (peringatan hari keempat puluh kematian), چهل‌ستون (\"empat puluh tiang\", istana terkenal di Isfahan yang sebetulnya bertiang dua puluh — dua puluh sisanya adalah bayangannya di kolam)."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Empat kalimat untuk bertahan saat orang menyebut angka",
+          "items": [
+            "دوباره لطفاً. — *dobâre lotfan.* (\"Sekali lagi, tolong.\")",
+            "آهسته‌تر لطفاً. — *âheste-tar lotfan.* (\"Lebih pelan, tolong.\")",
+            "رقم به رقم لطفاً. — *raghm be raghm lotfan.* (\"Angka per angka, tolong.\")",
+            "می‌نویسید لطفاً؟ — *minevisid lotfan?* (\"Bisa tolong ditulis?\") Kalimat terakhir ini menyelesaikan sembilan dari sepuluh kesulitan angka, dan tidak ada seorang pun yang keberatan menuliskannya untukmu."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fa": "عدد",
+      "baca": "adad",
+      "id": "angka, bilangan"
+    },
+    {
+      "fa": "صفر",
+      "baca": "sefr",
+      "id": "nol"
+    },
+    {
+      "fa": "یک",
+      "baca": "yek",
+      "id": "satu"
+    },
+    {
+      "fa": "دو",
+      "baca": "do",
+      "id": "dua"
+    },
+    {
+      "fa": "سه",
+      "baca": "se",
+      "id": "tiga"
+    },
+    {
+      "fa": "چهار",
+      "baca": "chahâr",
+      "id": "empat"
+    },
+    {
+      "fa": "پنج",
+      "baca": "panj",
+      "id": "lima"
+    },
+    {
+      "fa": "شش",
+      "baca": "shesh",
+      "id": "enam"
+    },
+    {
+      "fa": "هفت",
+      "baca": "haft",
+      "id": "tujuh"
+    },
+    {
+      "fa": "هشت",
+      "baca": "hasht",
+      "id": "delapan"
+    },
+    {
+      "fa": "نه",
+      "baca": "noh",
+      "id": "sembilan"
+    },
+    {
+      "fa": "ده",
+      "baca": "dah",
+      "id": "sepuluh"
+    },
+    {
+      "fa": "بیست",
+      "baca": "bist",
+      "id": "dua puluh"
+    },
+    {
+      "fa": "سی",
+      "baca": "si",
+      "id": "tiga puluh"
+    },
+    {
+      "fa": "صد",
+      "baca": "sad",
+      "id": "seratus"
+    },
+    {
+      "fa": "هزار",
+      "baca": "hezâr",
+      "id": "seribu"
+    },
+    {
+      "fa": "میلیون",
+      "baca": "milyun",
+      "id": "juta"
+    },
+    {
+      "fa": "تا",
+      "baca": "tâ",
+      "id": "buah (kata bilang)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis bilangannya dengan huruf Persia.",
+      "items": [
+        "21",
+        "45",
+        "99",
+        "150",
+        "365"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bilangan tingkat yang tepat.",
+      "items": [
+        "lantai kedua: طبقهٔ ____",
+        "hari pertama: روزِ ____",
+        "kali ketiga: بارِ ____",
+        "lantai ke berapa: طبقهٔ ____؟",
+        "kali terakhir: بارِ ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan angka Persia yang tepat.",
+      "items": [
+        "Angka empat dalam tulisan Persia: ____",
+        "Angka lima dalam tulisan Persia: ____",
+        "Angka enam dalam tulisan Persia: ____",
+        "Angka nol dalam tulisan Persia: ____",
+        "Angka sembilan dalam tulisan Persia: ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "است / چند / قیمتش / ؟",
+        "دارد / روز / سی / برایِ / گیگ / بیست",
+        "است / دوم / طبقهٔ / مغازه",
+        "لطفاً / دوباره / ، / آهسته‌تر",
+        "دارم / کتاب / تا / پنج / من"
+      ]
+    }
+  ],
+  "answers": [
+    "بیست و یک — چهل و پنج — نود و نه — صد و پنجاه — سیصد و شصت و پنج",
+    "دوم — اول — سوم — چندم — آخر",
+    "۴ — ۵ — ۶ — ۰ — ۹",
+    "قیمتش چند است؟ — بیست گیگ برایِ سی روز دارد. — مغازه طبقهٔ دوم است. — دوباره لطفاً، آهسته‌تر. — من پنج تا کتاب دارم."
+  ],
+  "wave": "Tulis nomor teleponmu sendiri dengan angka Persia di buku tulis, lalu bacakan keras-keras tiga kali."
+}

@@ -1,0 +1,499 @@
+{
+  "title": "Makan di luar — dan penanda objek yang tidak ada di bahasamu",
+  "title_target": "غذا و رستوران",
+  "goal": "Memesan makanan dan minuman, membaca daftar menu — dan memakai را, satu-satunya bagian tata bahasa Persia yang tidak punya padanan sama sekali di bahasa Indonesia.",
+  "bekal": [
+    "memesan, meminta tagihan, dan menyampaikan pantangan makan",
+    "memakai را pada objek yang tertentu, dan meninggalkannya pada yang tidak",
+    "mengenali makanan Iran yang paling sering ada di menu"
+  ],
+  "dialogs": [
+    {
+      "title": "گفتگو — در رستوران",
+      "intro": "Maryam mengajak Budi makan siang di sebuah restoran tradisional dekat lembaga bahasa.",
+      "lines": [
+        {
+          "speaker": "گارسون:",
+          "text": "سلام، خوش آمدید. منو را بفرمایید.",
+          "baca": "salâm, khosh âmadid. meno râ befarmâyid.",
+          "id": "Halo, selamat datang. Silakan menunya.",
+          "literal": "halo, baik datang-Anda. menu [obj] silakan."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "ممنون. بودی، چه می‌خورید؟",
+          "baca": "mamnun. Budi, che mikhorid?",
+          "id": "Terima kasih. Budi, Anda mau makan apa?",
+          "literal": "berterima-kasih. Budi, apa makan-Anda?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "نمی‌دانم. این غذا را نمی‌شناسم. چیست؟",
+          "baca": "nemidânam. in ghazâ râ nemishenâsam. chist?",
+          "id": "Saya tidak tahu. Saya tidak kenal makanan ini. Apa ini?",
+          "literal": "tidak-tahu-saya. ini makanan [obj] tidak-kenal-saya. apa-adalah?"
+        },
+        {
+          "speaker": "مریم:",
+          "text": "قورمه‌سبزی است. خورشتِ سبزی با گوشت و لوبیا.",
+          "baca": "ghorme-sabzi ast. khoresht-e sabzi bâ gusht va lubiyâ.",
+          "id": "Itu ghorme sabzi. Gulai sayur hijau dengan daging dan kacang.",
+          "literal": "ghorme-sabzi adalah. gulai-nya sayur dengan daging dan kacang."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "تند است؟ من غذایِ تند دوست ندارم.",
+          "baca": "tond ast? man ghazâ-ye tond dust nadâram.",
+          "id": "Pedas? Saya tidak suka makanan pedas.",
+          "literal": "pedas adalah? saya makanan-nya pedas teman tidak-punya-saya."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "نه، غذایِ ایرانی اصلاً تند نیست. ترش است.",
+          "baca": "na, ghazâ-ye irâni aslan tond nist. torsh ast.",
+          "id": "Tidak, makanan Iran sama sekali tidak pedas. Rasanya asam.",
+          "literal": "tidak, makanan-nya Iran sama-sekali pedas tidak-ada. asam adalah."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "جالب است. پس همان را می‌خواهم.",
+          "baca": "jâleb ast. pas hamân râ mikhâham.",
+          "id": "Menarik. Kalau begitu saya mau itu saja.",
+          "literal": "menarik adalah. maka itu-juga [obj] mau-saya."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "من چلوکباب می‌گیرم. نوشیدنی چه می‌خواهید؟",
+          "baca": "man chelow-kabâb migiram. nushidani che mikhâhid?",
+          "id": "Saya ambil chelow kabab. Anda mau minum apa?",
+          "literal": "saya nasi-kabab ambil-saya. minuman apa mau-Anda?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "دوغ چطور است؟ تا حالا نخورده‌ام.",
+          "baca": "dugh chetowr ast? tâ hâlâ nakhorde-am.",
+          "id": "Bagaimana dengan dugh? Saya belum pernah mencobanya.",
+          "literal": "dugh bagaimana adalah? sampai sekarang tidak-makan-saya."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "حتماً امتحان کنید. ماستِ شور با نعناع است.",
+          "baca": "hatman emtehân konid. mâst-e shur bâ na'nâ' ast.",
+          "id": "Pasti coba. Itu yogurt asin dengan daun mint.",
+          "literal": "pasti percobaan lakukanlah-Anda. yogurt-nya asin dengan mint adalah."
+        },
+        {
+          "speaker": "گارسون:",
+          "text": "غذایتان را آوردم. نوشِ جان!",
+          "baca": "ghazâyetân râ âvardam. nush-e jân!",
+          "id": "Makanan Anda saya bawakan. Selamat makan!",
+          "literal": "makanan-Anda [obj] bawa-saya. nikmat-nya jiwa!"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "خیلی خوشمزه است! دستِ آشپز درد نکند.",
+          "baca": "kheyli khoshmaze ast! dast-e âshpaz dard nakonad.",
+          "id": "Enak sekali! Salut untuk juru masaknya.",
+          "literal": "sangat enak adalah! tangan-nya juru-masak sakit jangan-melakukan."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "خوشحالم که خوشتان آمد. حساب با من است.",
+          "baca": "khoshhâlam ke khoshetân âmad. hesâb bâ man ast.",
+          "id": "Saya senang Anda menyukainya. Bonnya biar saya.",
+          "literal": "gembira-saya bahwa suka-Anda datang. tagihan dengan saya adalah."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "نه، خواهش می‌کنم! دفعهٔ بعد با شما.",
+          "baca": "na, khâhesh mikonam! daf'e-ye ba'd bâ shomâ.",
+          "id": "Jangan, tolong! Lain kali baru Anda.",
+          "literal": "tidak, permohonan melakukan-saya! kali-nya berikut dengan Anda."
+        }
+      ],
+      "notes": [
+        "⚠️ **را menandai objek yang TERTENTU, dan bahasa Indonesia tidak punya apa pun yang seperti itu.** Bandingkan: غذا می‌خورم (\"saya makan\" — makan apa saja) melawan غذا **را** می‌خورم (\"saya makan makanan itu\" — makanan yang sudah kita bicarakan). Perbedaannya persis perbedaan antara \"saya beli buku\" dan \"saya beli buku**nya**\" dalam bahasa Indonesia — dan itulah padanan terbaik yang bisa kamu pegang: **را kira-kira setara dengan akhiran -nya penunjuk**.",
+        "**Kapan را wajib:** kalau objeknya punya این/آن، nama diri, akhiran milik, atau sudah pernah disebut. **Kapan را tidak dipakai:** kalau objeknya umum dan belum tentu. کتاب می‌خرم (\"saya beli buku\") — tanpa را. کتاب **را** می‌خرم (\"saya beli buku itu\") — dengan را.",
+        "**Bentuk lisannya: رو (*ro*), atau cuma ـو yang menempel.** منو رو بده (*meno ro bede*), اینو می‌خوام (*ino mikhâm*, dari این را می‌خواهم). Bentuk pendek inilah yang akan kamu dengar; را penuh lebih banyak kamu baca.",
+        "⚠️ **Makanan Iran tidak pedas — dan ini mengejutkan hampir semua orang Indonesia.** Rasa dasar masakan Iran adalah **asam** (dari limau kering, delima, dan buah asam) dan **wangi** (safron, kayu manis, kunyit), bukan pedas. Kalau kamu tidak bisa makan tanpa sambal, bawa sendiri; فلفل (lada) memang ada di meja, tapi cabai rawit tidak ada di dapur Iran.",
+        "**نوشِ جان! = \"selamat makan\"**, harfiahnya \"nikmat bagi jiwa\". Diucapkan pelayan, tuan rumah, atau siapa pun yang melihatmu mulai makan. Jawabannya: ممنون.",
+        "⚠️ **حساب با من است — dan ini bukan basa-basi kosong.** Di Iran, berebut membayar tagihan adalah olahraga nasional. Yang mengundang biasanya benar-benar akan membayar, dan menolak sekali atau dua kali adalah bagian dari tata kramanya. Kalau kamu benar-benar ingin membayar, bayar diam-diam sebelum tagihan datang — itulah cara yang menang. Seluruh mekanismenya dibedah di unit 15."
+      ],
+      "grammars": [
+        {
+          "title": "را — penanda objek tertentu",
+          "body": [
+            "Bahasa Persia menandai objek langsung dengan را, tapi **hanya kalau objeknya tertentu**. Inilah satu-satunya bagian tata bahasa Persia yang benar-benar asing bagi penutur bahasa Indonesia, dan menguasainya adalah pekerjaan beberapa minggu, bukan beberapa menit."
+          ],
+          "table": {
+            "head": [
+              "Tanpa را",
+              "Arti",
+              "Dengan را",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "کتاب می‌خرم",
+                "saya beli buku",
+                "کتاب را می‌خرم",
+                "saya beli bukunya"
+              ],
+              [
+                "غذا می‌خورم",
+                "saya makan",
+                "غذا را می‌خورم",
+                "saya makan makanan itu"
+              ],
+              [
+                "چای می‌نوشم",
+                "saya minum teh",
+                "چای را می‌نوشم",
+                "saya minum tehnya"
+              ],
+              [
+                "نامه می‌نویسم",
+                "saya menulis surat",
+                "نامه را می‌نویسم",
+                "saya menulis surat itu"
+              ],
+              [
+                "فیلم می‌بینم",
+                "saya nonton film",
+                "این فیلم را می‌بینم",
+                "saya nonton film ini"
+              ]
+            ]
+          },
+          "after": [
+            "**را wajib** kalau objeknya: memakai این/آن (این کتاب را), berupa nama diri (مریم را دیدم), memakai akhiran milik (کتابم را), atau sudah disebut sebelumnya.",
+            "**را tidak dipakai** kalau objeknya umum, belum tentu, atau berupa bagian dari kata kerja gabungan: کار می‌کنم (bukan کار را می‌کنم), غذا می‌خورم, فارسی صحبت می‌کنم.",
+            "⚠️ **را hanya untuk objek langsung.** Kalau di depan kata bendanya ada kata depan (به، از، با، در), را tidak boleh dipakai: به مریم گفتم (bukan به مریم را گفتم).",
+            "Untuk kata ganti, را melebur jadi satu kata: من را → **مرا** (*marâ*), تو را → **ترا** atau تو را, او را, ما را, شما را, آنها را. Dalam percakapan semuanya memakai رو: منو، تورو، اونو."
+          ]
+        },
+        {
+          "title": "Memesan dan meminta",
+          "table": {
+            "head": [
+              "Persia",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "منو لطفاً",
+                "meno lotfan",
+                "Menu, tolong"
+              ],
+              [
+                "چه پیشنهاد می‌کنید؟",
+                "che pishnehâd mikonid?",
+                "Anda menyarankan apa?"
+              ],
+              [
+                "... می‌خواهم",
+                "... mikhâham",
+                "Saya mau ..."
+              ],
+              [
+                "یکی از این لطفاً",
+                "yeki az in lotfan",
+                "Satu ini, tolong"
+              ],
+              [
+                "بدونِ گوشت لطفاً",
+                "bedun-e gusht lotfan",
+                "Tanpa daging, tolong"
+              ],
+              [
+                "کم‌نمک لطفاً",
+                "kam-namak lotfan",
+                "Kurang garam, tolong"
+              ],
+              [
+                "آب لطفاً",
+                "âb lotfan",
+                "Air, tolong"
+              ],
+              [
+                "حساب لطفاً",
+                "hesâb lotfan",
+                "Bon, tolong"
+              ],
+              [
+                "برایِ بردن",
+                "barâye bordan",
+                "Dibungkus"
+              ],
+              [
+                "دستشویی کجاست؟",
+                "dastshuyi kojâst?",
+                "Toilet di mana?"
+              ]
+            ]
+          },
+          "after": [
+            "**بدونِ** (\"tanpa\") adalah kata penting bagi siapa pun yang punya pantangan: بدونِ گوشت، بدونِ پیاز، بدونِ شکر. Untuk alergi: به ... حساسیت دارم (*be ... hassâsiyat dâram*, \"saya alergi terhadap ...\")."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Yang ada di menu Iran",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Persia",
+            "Cara baca",
+            "Apa itu"
+          ],
+          "rows": [
+            [
+              "چلوکباب",
+              "chelow-kabâb",
+              "nasi putih dengan kabab — hidangan nasional"
+            ],
+            [
+              "کبابِ کوبیده",
+              "kabâb-e kubide",
+              "kabab daging giling di tusuk lebar"
+            ],
+            [
+              "جوجه‌کباب",
+              "juje-kabâb",
+              "kabab ayam berbumbu safron"
+            ],
+            [
+              "قورمه‌سبزی",
+              "ghorme-sabzi",
+              "gulai sayur hijau, daging, dan kacang"
+            ],
+            [
+              "قیمه",
+              "gheyme",
+              "gulai kacang polong kuning dengan kentang goreng"
+            ],
+            [
+              "فسنجان",
+              "fesenjân",
+              "gulai kenari dan delima, manis-asam"
+            ],
+            [
+              "آبگوشت",
+              "âbgusht",
+              "sup daging dan buncis yang ditumbuk di meja"
+            ],
+            [
+              "دیزی",
+              "dizi",
+              "nama lain آبگوشت, disajikan di periuk batu"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Minuman",
+            "Cara baca",
+            "Apa itu"
+          ],
+          "rows": [
+            [
+              "چای",
+              "châi",
+              "teh hitam, disajikan sepanjang hari"
+            ],
+            [
+              "دوغ",
+              "dugh",
+              "yogurt asin dengan mint, kadang bersoda"
+            ],
+            [
+              "آبِ معدنی",
+              "âb-e ma'dani",
+              "air mineral"
+            ],
+            [
+              "نوشابه",
+              "nushâbe",
+              "minuman bersoda"
+            ],
+            [
+              "آبِ پرتقال",
+              "âb-e porteghâl",
+              "jus jeruk"
+            ],
+            [
+              "شربتِ آلبالو",
+              "sharbat-e âlbâlu",
+              "sirop ceri asam"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Cara orang Iran minum teh",
+          "items": [
+            "**Teh diminum tanpa gula di dalamnya.** Gula batu (قند) diletakkan di antara gigi, lalu teh diisap melewatinya. Cara ini disebut چای قندپهلو (*châi ghand-pahlu*, \"teh dengan gula di sisi\"). Gelasnya kecil, bening, berpinggang — استکان (*estekân*).",
+            "⚠️ **Menolak gelas teh pertama itu wajar; menolak yang ketiga kalinya perlu kalimat.** بس است، ممنون (*bas ast, mamnun*, \"cukup, terima kasih\") atau سیر شدم (*sir shodam*, \"saya sudah kenyang\"). Menutup gelas dengan telapak tangan juga dimengerti di mana-mana."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Empat kalimat yang membuat tuan rumah senang",
+          "items": [
+            "خیلی خوشمزه است. — \"Enak sekali.\"",
+            "دستتان درد نکند. — \"Terima kasih atas jerih payah Anda.\"",
+            "سیر شدم، ممنون. — \"Saya sudah kenyang, terima kasih.\"",
+            "این را چطور درست می‌کنید؟ — \"Ini dibuatnya bagaimana?\" Kalimat terakhir hampir selalu menghasilkan resep lengkap, sepiring tambahan, dan undangan kembali."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fa": "غذا",
+      "baca": "ghazâ",
+      "id": "makanan"
+    },
+    {
+      "fa": "رستوران",
+      "baca": "resturân",
+      "id": "restoran"
+    },
+    {
+      "fa": "منو",
+      "baca": "meno",
+      "id": "menu"
+    },
+    {
+      "fa": "گارسون",
+      "baca": "gârson",
+      "id": "pelayan"
+    },
+    {
+      "fa": "را",
+      "baca": "râ",
+      "id": "penanda objek tertentu"
+    },
+    {
+      "fa": "شناختن",
+      "baca": "shenâkhtan",
+      "id": "mengenal"
+    },
+    {
+      "fa": "خورشت",
+      "baca": "khoresht",
+      "id": "gulai, lauk berkuah"
+    },
+    {
+      "fa": "سبزی",
+      "baca": "sabzi",
+      "id": "sayuran hijau"
+    },
+    {
+      "fa": "لوبیا",
+      "baca": "lubiyâ",
+      "id": "kacang"
+    },
+    {
+      "fa": "تند",
+      "baca": "tond",
+      "id": "pedas; cepat"
+    },
+    {
+      "fa": "ترش",
+      "baca": "torsh",
+      "id": "asam"
+    },
+    {
+      "fa": "شیرین",
+      "baca": "shirin",
+      "id": "manis"
+    },
+    {
+      "fa": "شور",
+      "baca": "shur",
+      "id": "asin"
+    },
+    {
+      "fa": "خوشمزه",
+      "baca": "khoshmaze",
+      "id": "enak"
+    },
+    {
+      "fa": "نوشیدنی",
+      "baca": "nushidani",
+      "id": "minuman"
+    },
+    {
+      "fa": "دوغ",
+      "baca": "dugh",
+      "id": "minuman yogurt asin"
+    },
+    {
+      "fa": "نعناع",
+      "baca": "na'nâ'",
+      "id": "daun mint"
+    },
+    {
+      "fa": "امتحان کردن",
+      "baca": "emtehân kardan",
+      "id": "mencoba"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Persia.",
+      "items": [
+        "Menu, tolong.",
+        "Saya mau chelow kabab.",
+        "Saya tidak suka makanan pedas.",
+        "Enak sekali!",
+        "Bon, tolong."
+      ]
+    },
+    {
+      "prompt": "Isi dengan را kalau perlu; kosongkan kalau tidak perlu.",
+      "items": [
+        "من کتاب ____ می‌خرم. (buku apa saja)",
+        "من این کتاب ____ می‌خرم.",
+        "او فارسی ____ صحبت می‌کند.",
+        "ما غذایمان ____ خوردیم.",
+        "آنها چای ____ می‌نوشند. (teh apa saja)"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata rasa atau keadaan yang tepat.",
+      "items": [
+        "Makanan Iran rasanya asam, bukan pedas: غذایِ ایرانی ____ است.",
+        "Saya sudah tidak bisa makan lagi: ____ شدم.",
+        "Perut saya kosong: ____ هستم.",
+        "Makanan ini rasanya lezat: این غذا ____ است.",
+        "Teh Iran diminum dengan gula batu, jadi tehnya sendiri: ____ نیست."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "لطفاً / منو",
+        "می‌خواهم / چلوکباب / من",
+        "است / خوشمزه / خیلی",
+        "نکند / درد / دستتان",
+        "نمی‌شناسم / را / غذا / این / من"
+      ]
+    }
+  ],
+  "answers": [
+    "منو لطفاً. — من چلوکباب می‌خواهم. — من غذایِ تند دوست ندارم. — خیلی خوشمزه است! — حساب لطفاً.",
+    "بدون را — را — بدون را — را — بدون را",
+    "ترش — سیر — گرسنه — خوشمزه — شیرین",
+    "منو لطفاً. — من چلوکباب می‌خواهم. — خیلی خوشمزه است. — دستتان درد نکند. — من این غذا را نمی‌شناسم."
+  ],
+  "wave": "Cari satu resep قورمه‌سبزی dalam bahasa Persia di internet dan hitung ada berapa را di dalamnya. Kamu akan langsung melihat polanya."
+}

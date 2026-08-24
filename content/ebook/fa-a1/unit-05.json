@@ -1,0 +1,631 @@
+{
+  "title": "Di rumah — ada dan tidak ada",
+  "title_target": "در خانه",
+  "goal": "Menyebut ruangan dan perabot, mengatakan sesuatu ada atau tidak ada di suatu tempat, dan membuat kata benda jadi jamak.",
+  "bekal": [
+    "memakai هست dan نیست untuk menyatakan keberadaan",
+    "menaruh benda di tempatnya dengan رویِ، زیرِ، تویِ، پشتِ، جلویِ، کنارِ",
+    "membentuk jamak dengan ـها dan tahu kapan ia tidak diperlukan"
+  ],
+  "dialogs": [
+    {
+      "title": "گفتگو — بازدید از آپارتمان",
+      "intro": "Budi mencari tempat tinggal. Seorang pemilik rumah, Ibu Ahmadi, menunjukkan sebuah apartemen kecil di Teheran utara.",
+      "lines": [
+        {
+          "speaker": "خانمِ احمدی:",
+          "text": "بفرمایید تو. این آپارتمانِ ما است.",
+          "baca": "befarmâyid tu. in âpârtemân-e mâ ast.",
+          "id": "Silakan masuk. Ini apartemen kami.",
+          "literal": "silakan dalam. ini apartemen-nya kami adalah."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "چه روشن است! چند اتاق دارد؟",
+          "baca": "che rowshan ast! chand otâgh dârad?",
+          "id": "Terang sekali! Berapa kamarnya?",
+          "literal": "apa terang adalah! berapa kamar punya-dia?"
+        },
+        {
+          "speaker": "خانمِ احمدی:",
+          "text": "دو اتاقِ خواب، یک نشیمن، آشپزخانه و حمام.",
+          "baca": "do otâgh-e khâb, yek neshiman, âshpazkhâne va hammâm.",
+          "id": "Dua kamar tidur, satu ruang duduk, dapur, dan kamar mandi.",
+          "literal": "dua kamar-nya tidur, satu ruang-duduk, dapur dan kamar-mandi."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "در آشپزخانه یخچال هست؟",
+          "baca": "dar âshpazkhâne yakhchâl hast?",
+          "id": "Di dapur ada kulkas?",
+          "literal": "di dapur kulkas ada?"
+        },
+        {
+          "speaker": "خانمِ احمدی:",
+          "text": "بله، یخچال و اجاق هست. ولی ماشینِ لباسشویی نیست.",
+          "baca": "bale, yakhchâl va ojâgh hast. vali mâshin-e lebâsshuyi nist.",
+          "id": "Ya, ada kulkas dan kompor. Tapi mesin cuci tidak ada.",
+          "literal": "ya, kulkas dan kompor ada. tetapi mesin-nya cuci-baju tidak-ada."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "اشکالی ندارد. تختِ خواب چطور؟",
+          "baca": "eshkâli nadârad. takht-e khâb chetowr?",
+          "id": "Tidak masalah. Kalau tempat tidur?",
+          "literal": "masalah-suatu tidak-punya. ranjang-nya tidur bagaimana?"
+        },
+        {
+          "speaker": "خانمِ احمدی:",
+          "text": "در اتاقِ اول یک تخت هست. کمد هم کنارِ پنجره است.",
+          "baca": "dar otâgh-e avval yek takht hast. komod ham kenâr-e panjere ast.",
+          "id": "Di kamar pertama ada satu tempat tidur. Lemari juga ada di samping jendela.",
+          "literal": "di kamar-nya pertama satu ranjang ada. lemari juga samping-nya jendela adalah."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "زیرِ پنجره چیست؟",
+          "baca": "zir-e panjere chist?",
+          "id": "Di bawah jendela itu apa?",
+          "literal": "bawah-nya jendela apa-adalah?"
+        },
+        {
+          "speaker": "خانمِ احمدی:",
+          "text": "شوفاژ است. زمستان‌ها اینجا خیلی گرم می‌شود.",
+          "baca": "shufâzh ast. zemestânhâ injâ kheyli garm mishavad.",
+          "id": "Itu radiator. Waktu musim dingin di sini jadi sangat hangat.",
+          "literal": "radiator adalah. musim-dingin-musim-dingin di-sini sangat hangat menjadi."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "همسایه‌ها چطورند؟",
+          "baca": "hamsâye-hâ chetowrand?",
+          "id": "Tetangganya bagaimana?",
+          "literal": "tetangga-tetangga bagaimana-mereka?"
+        },
+        {
+          "speaker": "خانمِ احمدی:",
+          "text": "خیلی خوب. طبقهٔ پایین یک خانوادهٔ کوچک است.",
+          "baca": "kheyli khub. tabaghe-ye pâyin yek khânevâde-ye kuchak ast.",
+          "id": "Sangat baik. Di lantai bawah ada satu keluarga kecil.",
+          "literal": "sangat baik. lantai-nya bawah satu keluarga-nya kecil adalah."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "آسانسور هست؟",
+          "baca": "âsânsor hast?",
+          "id": "Ada lift?",
+          "literal": "lift ada?"
+        },
+        {
+          "speaker": "خانمِ احمدی:",
+          "text": "متأسفانه نیست. ولی فقط سه طبقه است.",
+          "baca": "mota'assefâne nist. vali faghat se tabaghe ast.",
+          "id": "Sayangnya tidak ada. Tapi cuma tiga lantai.",
+          "literal": "sayang-sekali tidak-ada. tetapi hanya tiga lantai adalah."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "خوب است. خیلی ممنون از وقتتان.",
+          "baca": "khub ast. kheyli mamnun az vaghtetân.",
+          "id": "Bagus. Terima kasih banyak atas waktu Anda.",
+          "literal": "baik adalah. sangat berterima-kasih dari waktu-Anda."
+        },
+        {
+          "speaker": "خانمِ احمدی:",
+          "text": "خواهش می‌کنم. خانهٔ خودتان است.",
+          "baca": "khâhesh mikonam. khâne-ye khodetân ast.",
+          "id": "Sama-sama. Anggap rumah sendiri.",
+          "literal": "permohonan melakukan-saya. rumah-nya diri-Anda adalah."
+        }
+      ],
+      "notes": [
+        "**Sangkalan keduanya satu kata: نیست.** یخچال نیست bisa berarti \"itu bukan kulkas\" maupun \"tidak ada kulkas\", dan konteks yang memutuskan. Ini satu-satunya tempat kedua kata itu berhimpitan.",
+        "**اشکالی ندارد = \"tidak masalah\".** Ungkapan yang wajib kamu hafal utuh, bersama saudaranya عیبی ندارد (*eybi nadârad*) dan مشکلی نیست (*moshkeli nist*). Ketiganya sama artinya dan sama seringnya. Perhatikan bahwa ketiganya memakai akhiran ـی kecil yang kamu pelajari di unit 3.",
+        "**همسایه‌ها چطورند؟** Perhatikan akhiran ـند pada چطور: kata tanya pun memakai akhiran \"adalah\" bentuk jamak, karena yang ditanya banyak orang. Bahasa Persia sangat rapi soal ini.",
+        "**آسانسور، شوفاژ، کمد — tiga kata Prancis** yang sudah jadi warga bahasa Persia (*ascenseur*, *chauffage*, *commode*). Sudah disinggung di unit 2: kalau sebuah benda modern belum kamu tahu namanya, kata Prancisnya sering merupakan tebakan yang bagus.",
+        "**خانهٔ خودتان است — \"ini rumah Anda sendiri\".** Bukan tawaran sungguhan; ini تعارف, ungkapan keramahan yang diucapkan tuan rumah kepada tamu. Jangan menanggapinya dengan mengangkut koper. Jawabannya cukup ممنون atau لطف دارید. Seluk-beluknya di unit 15.",
+        "**Bentuk lisan dialog ini:** بفرمایید تو (*befarmâyin tu*), یخچال هست؟ (*yakhchâl hast?* — tak berubah), نیست (*nist* — tak berubah), همسایه‌ها چطورن؟ (*hamsâyehâ chetowran?*). Perhatikan bahwa هست dan نیست termasuk kata yang **tidak berubah** antara bahasa tulis dan lisan — hadiah kecil."
+      ],
+      "grammars": [
+        {
+          "title": "هست / نیست — ada dan tidak ada",
+          "body": [
+            "Untuk mengatakan sesuatu ada atau tersedia di suatu tempat, bahasa Persia memakai هست, dan untuk kebalikannya نیست. Susunan kalimatnya menaruh **tempatnya lebih dulu**, benda yang ada di tengah, dan هست di ujung."
+          ],
+          "table": {
+            "head": [
+              "Persia",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "در اتاق یک میز هست.",
+                "dar otâgh yek miz hast.",
+                "Di kamar ada sebuah meja."
+              ],
+              [
+                "رویِ میز کتاب هست.",
+                "ru-ye miz ketâb hast.",
+                "Di atas meja ada buku."
+              ],
+              [
+                "اینجا آسانسور نیست.",
+                "injâ âsânsor nist.",
+                "Di sini tidak ada lift."
+              ],
+              [
+                "در خانه کسی نیست.",
+                "dar khâne kasi nist.",
+                "Di rumah tidak ada siapa-siapa."
+              ],
+              [
+                "مشکلی نیست.",
+                "moshkeli nist.",
+                "Tidak ada masalah."
+              ],
+              [
+                "وقت نداریم.",
+                "vaght nadârim.",
+                "Kita tidak punya waktu."
+              ]
+            ]
+          },
+          "after": [
+            "Untuk bertanya, tidak ada yang berubah selain nada suara: آسانسور هست؟ (\"ada lift?\").",
+            "**هست juga bisa berarti \"adalah\" yang ditegaskan.** او اینجا هست (\"dia memang ada di sini\") terdengar lebih tegas daripada او اینجا است. Perbedaannya halus dan tidak akan menjegalmu di A1.",
+            "⚠️ Jangan bingung antara نیست (\"tidak ada / bukan\") dan ندارد (\"dia tidak punya\"). یخچال نیست = \"tidak ada kulkas\" (di tempat itu). یخچال ندارم = \"saya tidak punya kulkas\"."
+          ]
+        },
+        {
+          "title": "Kata depan tempat — semuanya memakai ezafe",
+          "body": [
+            "Hampir semua kata depan tempat bahasa Persia sebetulnya kata **benda** (\"atas\", \"bawah\", \"dalam\") yang disambungkan ke kata berikutnya dengan ezafe. Karena itu semuanya berakhiran -e."
+          ],
+          "table": {
+            "head": [
+              "Persia",
+              "Cara baca",
+              "Arti",
+              "Contoh",
+              "Arti contoh"
+            ],
+            "rows": [
+              [
+                "رویِ",
+                "ru-ye",
+                "di atas",
+                "رویِ میز",
+                "di atas meja"
+              ],
+              [
+                "زیرِ",
+                "zir-e",
+                "di bawah",
+                "زیرِ صندلی",
+                "di bawah kursi"
+              ],
+              [
+                "تویِ",
+                "tu-ye",
+                "di dalam",
+                "تویِ کیف",
+                "di dalam tas"
+              ],
+              [
+                "پشتِ",
+                "posht-e",
+                "di belakang",
+                "پشتِ در",
+                "di belakang pintu"
+              ],
+              [
+                "جلویِ",
+                "jelo-ye",
+                "di depan",
+                "جلویِ خانه",
+                "di depan rumah"
+              ],
+              [
+                "کنارِ",
+                "kenâr-e",
+                "di samping",
+                "کنارِ پنجره",
+                "di samping jendela"
+              ],
+              [
+                "بینِ",
+                "beyn-e",
+                "di antara",
+                "بینِ دو میز",
+                "di antara dua meja"
+              ],
+              [
+                "وسطِ",
+                "vasat-e",
+                "di tengah",
+                "وسطِ اتاق",
+                "di tengah kamar"
+              ],
+              [
+                "بالایِ",
+                "bâlâ-ye",
+                "di atas (jauh)",
+                "بالایِ کوه",
+                "di puncak gunung"
+              ],
+              [
+                "نزدیکِ",
+                "nazdik-e",
+                "dekat",
+                "نزدیکِ بازار",
+                "dekat pasar"
+              ]
+            ]
+          },
+          "after": [
+            "**در** (\"di\") adalah kekecualian: ia kata depan sungguhan dan **tidak** memakai ezafe — در خانه, در تهران. Dalam percakapan ia hampir selalu diganti **تو**: تویِ خانه (*tu-ye khune*).",
+            "Kalau kata depannya berdiri sendiri tanpa benda sesudahnya, ezafe-nya hilang: کتاب رویِ میز است (\"buku di atas meja\") tapi کتاب بالا است (\"buku ada di atas\")."
+          ]
+        },
+        {
+          "title": "Jamak — dan kapan ia tidak diperlukan",
+          "table": {
+            "head": [
+              "Tunggal",
+              "Jamak",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "کتاب",
+                "کتاب‌ها",
+                "ketâb-hâ",
+                "buku-buku"
+              ],
+              [
+                "خانه",
+                "خانه‌ها",
+                "khâne-hâ",
+                "rumah-rumah"
+              ],
+              [
+                "همسایه",
+                "همسایه‌ها",
+                "hamsâye-hâ",
+                "para tetangga"
+              ],
+              [
+                "دانشجو",
+                "دانشجوها",
+                "dâneshju-hâ",
+                "para mahasiswa"
+              ],
+              [
+                "دوست",
+                "دوستان",
+                "dust-ân",
+                "teman-teman (resmi)"
+              ],
+              [
+                "مرد",
+                "مردان",
+                "mard-ân",
+                "para lelaki (resmi)"
+              ]
+            ]
+          },
+          "after": [
+            "**ـها selalu aman**, untuk benda maupun manusia, di segala keadaan. **ـان** hanya untuk makhluk hidup dan terdengar lebih resmi atau sastrawi. Kalau ragu, pakai ـها.",
+            "⚠️ **Sesudah angka, kata bendanya tetap tunggal**: سه کتاب (\"tiga buku\"), نه سه کتاب‌ها. Persis seperti bahasa Indonesia yang juga berkata \"tiga buku\", bukan \"tiga buku-buku\". Pelajar Inggris tersandung di sini; kamu tidak.",
+            "Bahasa Persia juga sering **tidak memakai jamak sama sekali** kalau jumlahnya tidak penting: کتاب می‌خرم bisa berarti \"saya membeli buku\" — satu atau banyak, tidak penting. Sekali lagi persis kebiasaan bahasa Indonesia.",
+            "Bentuk lisan Teheran memendekkan ـها jadi **ـا**: کتابا (*ketâbâ*), خونه‌ها (*khunehâ*), بچه‌ها (*bachehâ*)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ruangan dan perabot",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Persia",
+            "Cara baca",
+            "Arti",
+            "Persia",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "خانه",
+              "khâne",
+              "rumah",
+              "آپارتمان",
+              "âpârtemân",
+              "apartemen"
+            ],
+            [
+              "اتاقِ خواب",
+              "otâgh-e khâb",
+              "kamar tidur",
+              "نشیمن",
+              "neshiman",
+              "ruang duduk"
+            ],
+            [
+              "آشپزخانه",
+              "âshpazkhâne",
+              "dapur",
+              "حمام",
+              "hammâm",
+              "kamar mandi"
+            ],
+            [
+              "دستشویی",
+              "dastshuyi",
+              "toilet",
+              "بالکن",
+              "bâlkon",
+              "balkon"
+            ],
+            [
+              "حیاط",
+              "hayât",
+              "halaman",
+              "راهرو",
+              "râhrow",
+              "lorong"
+            ],
+            [
+              "طبقه",
+              "tabaghe",
+              "lantai (tingkat)",
+              "پله",
+              "pelle",
+              "tangga"
+            ],
+            [
+              "تختِ خواب",
+              "takht-e khâb",
+              "tempat tidur",
+              "کمد",
+              "komod",
+              "lemari"
+            ],
+            [
+              "یخچال",
+              "yakhchâl",
+              "kulkas",
+              "اجاق",
+              "ojâgh",
+              "kompor"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan pola **ـخانه** (\"rumah, tempat\") yang membentuk nama ruangan dan tempat umum: آشپزخانه (\"rumah masak\" = dapur), کتابخانه (\"rumah buku\" = perpustakaan), داروخانه (\"rumah obat\" = apotek), قهوه‌خانه (\"rumah kopi\" = kedai teh), چاپخانه (\"rumah cetak\"). Sekali kamu melihat خانه di ujung kata, artinya hampir selalu bisa kamu tebak."
+        },
+        {
+          "type": "sub",
+          "text": "تو dan شما — memilih sapaan yang tepat"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kepada siapa",
+            "Sapaan",
+            "Kenapa"
+          ],
+          "rows": [
+            [
+              "Orang tua, saudara, anak",
+              "تو",
+              "Keluarga selalu memakai تو"
+            ],
+            [
+              "Teman akrab, teman sebaya",
+              "تو",
+              "Sesudah beberapa kali bertemu"
+            ],
+            [
+              "Anak kecil",
+              "تو",
+              "Selalu"
+            ],
+            [
+              "Orang baru dikenal",
+              "شما",
+              "Tanpa kecuali"
+            ],
+            [
+              "Penjual, sopir, pelayan",
+              "شما",
+              "Tanpa kecuali"
+            ],
+            [
+              "Orang yang lebih tua",
+              "شما",
+              "Sampai dia sendiri yang menawarkan تو"
+            ],
+            [
+              "Atasan, guru, dokter",
+              "شما",
+              "Bahkan sesudah lama kenal"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Aturan praktisnya sederhana: **kalau ragu, pakai شما.** Memakai شما kepada teman akrab hanya membuatmu terdengar kaku dan sopan; memakai تو kepada orang yang belum akrab terdengar seperti sedang meremehkan. Kekeliruan yang kedua jauh lebih mahal daripada yang pertama."
+        },
+        {
+          "type": "p",
+          "text": "Bahasa Persia juga punya lapis ketiga yang lebih hormat lagi, dipakai kepada orang tua dan tokoh yang dihormati: **ایشان** (*ishân*) menggantikan او, dan kata kerjanya ikut jamak. Kamu belum perlu memakainya, tapi kamu akan mendengarnya — dan sekarang kamu tahu itu bukan berarti \"mereka\"."
+        },
+        {
+          "type": "kotak",
+          "title": "یخچال — kulkas yang lebih tua dari listrik",
+          "items": [
+            "یخچال harfiahnya \"lubang es\" (یخ \"es\" + چال \"lubang\"). Sebelum ada listrik, orang Iran membangun kubah tanah liat raksasa di padang untuk menyimpan es sepanjang musim panas — bangunannya masih berdiri di Yazd dan Kerman hari ini. Ketika kulkas listrik datang, namanya diambil begitu saja.",
+            "Kata Persia sering dibangun dari gabungan yang harfiah dan jujur begini: هواپیما (\"pengukur udara\" = pesawat), دستشویی (\"cuci tangan\" = toilet), چشم‌پزشک (\"dokter mata\"). Kalau kamu menemui kata panjang yang asing, coba pecah dulu — sering artinya langsung muncul."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "آقا dan خانم — dua kata yang selalu aman",
+          "items": [
+            "**آقا** (*âghâ*, \"tuan\") dan **خانم** (*khânom*, \"nyonya\") dipakai jauh lebih sering daripada \"Bapak\" dan \"Ibu\" dalam bahasa Indonesia. Mereka bisa berdiri sendiri untuk menyapa orang asing (ببخشید آقا، ...) atau dipasang pada nama: آقای احمدی، خانمِ رضایی.",
+            "⚠️ Perhatikan bahwa آقا berubah jadi **آقای** (*âghâ-ye*) sebelum nama, karena ezafe — sementara خانم tetap خانمِ. Dua-duanya diletakkan **sebelum** nama keluarga, bukan sesudah."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fa": "هست",
+      "baca": "hast",
+      "id": "ada, tersedia"
+    },
+    {
+      "fa": "نیست",
+      "baca": "nist",
+      "id": "tidak ada; bukan"
+    },
+    {
+      "fa": "بفرمایید",
+      "baca": "befarmâyid",
+      "id": "silakan"
+    },
+    {
+      "fa": "آپارتمان",
+      "baca": "âpârtemân",
+      "id": "apartemen"
+    },
+    {
+      "fa": "روشن",
+      "baca": "rowshan",
+      "id": "terang; menyala"
+    },
+    {
+      "fa": "اتاقِ خواب",
+      "baca": "otâgh-e khâb",
+      "id": "kamar tidur"
+    },
+    {
+      "fa": "آشپزخانه",
+      "baca": "âshpazkhâne",
+      "id": "dapur"
+    },
+    {
+      "fa": "حمام",
+      "baca": "hammâm",
+      "id": "kamar mandi"
+    },
+    {
+      "fa": "دستشویی",
+      "baca": "dastshuyi",
+      "id": "toilet"
+    },
+    {
+      "fa": "یخچال",
+      "baca": "yakhchâl",
+      "id": "kulkas"
+    },
+    {
+      "fa": "اجاق",
+      "baca": "ojâgh",
+      "id": "kompor"
+    },
+    {
+      "fa": "تخت",
+      "baca": "takht",
+      "id": "tempat tidur"
+    },
+    {
+      "fa": "کمد",
+      "baca": "komod",
+      "id": "lemari"
+    },
+    {
+      "fa": "آسانسور",
+      "baca": "âsânsor",
+      "id": "lift"
+    },
+    {
+      "fa": "طبقه",
+      "baca": "tabaghe",
+      "id": "lantai, tingkat"
+    },
+    {
+      "fa": "همسایه",
+      "baca": "hamsâye",
+      "id": "tetangga"
+    },
+    {
+      "fa": "روی",
+      "baca": "ru-ye",
+      "id": "di atas"
+    },
+    {
+      "fa": "زیر",
+      "baca": "zir-e",
+      "id": "di bawah"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Persia.",
+      "items": [
+        "Di dapur ada kulkas.",
+        "Di sini tidak ada lift.",
+        "Buku ada di atas meja.",
+        "Lemari ada di samping jendela.",
+        "Di rumah tidak ada siapa-siapa."
+      ]
+    },
+    {
+      "prompt": "Isi dengan هست، نیست، است، atau ندارد.",
+      "items": [
+        "در آشپزخانه یخچال ____.",
+        "این یخچال ____ (bukan).",
+        "اینجا آسانسور ____ (tidak ada).",
+        "کتاب رویِ میز ____.",
+        "او خانه ____ (tidak punya)."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata depan tempat yang tepat.",
+      "items": [
+        "Buku itu di atas meja: کتاب ____ میز است.",
+        "Tas itu di bawah kursi: کیف ____ صندلی است.",
+        "Lemari itu di samping jendela: کمد ____ پنجره است.",
+        "Halaman itu di belakang rumah: حیاط ____ خانه است.",
+        "Pasar itu dekat sekolah: بازار ____ مدرسه است."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "هست / یخچال / آشپزخانه / در",
+        "نیست / اینجا / آسانسور",
+        "است / میز / کتاب / رویِ",
+        "دارد / اتاق / این / دو / آپارتمان",
+        "چطورند / همسایه‌ها / ؟"
+      ]
+    }
+  ],
+  "answers": [
+    "در آشپزخانه یخچال هست. — اینجا آسانسور نیست. — کتاب رویِ میز است. — کمد کنارِ پنجره است. — در خانه کسی نیست.",
+    "هست — نیست — نیست — است — ندارد",
+    "رویِ — زیرِ — کنارِ — پشتِ — نزدیکِ",
+    "در آشپزخانه یخچال هست. — اینجا آسانسور نیست. — کتاب رویِ میز است. — این آپارتمان دو اتاق دارد. — همسایه‌ها چطورند؟"
+  ],
+  "wave": "Berjalanlah keliling rumahmu sendiri dan sebutkan lima benda beserta letaknya: کتاب رویِ میز است، کیف زیرِ صندلی است."
+}
