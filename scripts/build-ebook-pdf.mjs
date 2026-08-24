@@ -312,9 +312,23 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
      bawah menabrak aksara baris atasnya. (Aturan CSS ini ada DI DALAM template
      literal — jangan pakai tanda petik miring di komentarnya, berkasnya
      langsung gagal diurai.) */
-  ruby { ruby-position: over; ruby-align: center; }
+  /* [ebook-ruby-matra-v1] Aksara bermatra (Devanagari dan kerabatnya) TIDAK
+     boleh kena ruby-align center: untuk menyamakan lebar dasar dengan lebar
+     cara bacanya, Chromium menyisipkan jarak DI DALAM gugus aksaranya, jadi
+     मेरा pecah jadi "म रा" dengan matra terlepas dari konsonannya. Nilai start
+     mematikan perataan itu dan gugusnya utuh; rt-nya sekalian dilonggarkan
+     supaya tanda di ATAS garis kepala (bindu, candrabindu) tak tertimpa.
+     Modul CJK/Kiril/Georgia tetap memakai center persis seperti sebelumnya —
+     pilih lewat meta.ruby_align.
+     Tanda di ATAS garis kepala (candrabindu ँ pada हूँ, माँ, पाँच, कहाँ)
+     digambar di luar kotak em fonnya, jadi Chromium tidak menyediakan tempat
+     untuknya dan cara baca menimpanya. Nilai top -3pt menggeser cara bacanya naik
+     TANPA menambah tinggi baris — melonggarkan line-height sama sekali tidak
+     menolong, sudah dicoba sampai 2.15 dan tumpang tindihnya tetap. */
+  ruby { ruby-position: over; ruby-align: ${meta.ruby_align === "start" ? "start" : "center"}; }
   rt { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 6.4pt; font-weight: 500;
-       font-style: normal; color: #12776F; letter-spacing: .01em; line-height: 1; }
+       font-style: normal; color: #12776F; letter-spacing: .01em; line-height: ${meta.ruby_align === "start" ? "1.35" : "1"};
+       ${meta.ruby_align === "start" ? "position: relative; top: -3pt;" : ""} }
   /* Cuma baris yang BENAR-BENAR beruby yang dilonggarkan. Melonggarkan seluruh
      badan teks bikin paragraf Indonesia ikut melar dan modulnya membengkak
      puluhan halaman tanpa satu pun aksara asing di dalamnya. */

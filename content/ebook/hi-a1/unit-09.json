@@ -1,0 +1,214 @@
+{
+ "title": "Jam berapa? — dan kenapa angkanya beda satu",
+ "title_target": "क्या बजा है? — kyaa bajaa hai?",
+ "goal": "Menyebut jam dan membuat janji — sambil menghindari satu kekeliruan yang benar-benar membuat orang salah datang: bahasa Hindi menyebut jam yang sudah lewat, bahasa Indonesia menyebut jam yang akan datang.",
+ "bekal": [
+  "menanyakan dan menyebutkan pukul berapa",
+  "memakai सवा, साढ़े, dan पौने",
+  "mengenali डेढ़ dan ढाई",
+  "menyebut bagian hari: सुबह, दोपहर, शाम, रात",
+  "membuat janji bertemu"
+ ],
+ "dialogs": [
+  {
+   "title": "संवाद — Membuat janji",
+   "intro": "Rahul mengajak Ani bertemu besok. Di baris keenam Ani menemukan sesuatu yang benar-benar berguna: bahasa Indonesia dan bahasa Hindi sama-sama memakai „setengah”, tapi menghitungnya dari ujung yang berlawanan.",
+   "lines": [
+    {"speaker":"राहुल:","text":"[कल|kal] [आप|aap] [फ़्री|frii] [हैं|haiⁿ]?","id":"Besok Anda luang?","literal":"besok — Anda — bebas — ada?"},
+    {"speaker":"आनी:","text":"[हाँ|haaⁿ], [शाम|syaam] [को|ko]। [कितने|kit-ne] [बजे|ba-je]?","id":"Ya, sorenya. Jam berapa?","literal":"ya, sore — pada. berapa — pukul?"},
+    {"speaker":"राहुल:","text":"[साढ़े|saa-Rhe] [छह|chah] [बजे|ba-je]?","id":"Jam setengah tujuh?","literal":"setengah-lebih — enam — pukul?"},
+    {"speaker":"आनी:","text":"[साढ़े|saa-Rhe] [छह|chah]… [यानी|yaa-nii] [छह|chah] [बजकर|baj-kar] [तीस|tiis] [मिनट|mi-naT]?","id":"Sarhe chhah… maksudnya jam enam lewat tiga puluh menit?","literal":"setengah-lebih — enam… yakni — enam — berdentang-setelah — tiga-puluh — menit?"},
+    {"speaker":"राहुल:","text":"[जी|jii] [हाँ|haaⁿ], [छह|chah] [बजकर|baj-kar] [तीस|tiis]।","id":"Ya betul, enam lewat tiga puluh.","literal":"ji — ya, enam — berdentang-setelah — tiga-puluh."},
+    {"speaker":"आनी:","text":"[अरे|a-re]! [हमारी|ha-maa-rii] [भाषा|bhaa-syaa] [में|meⁿ] [भी|bhii] [यह|yeh] „[आधा|aa-dhaa]“ [है|hai] — [लेकिन|le-kin] [हम|ham] „[सात|saat]“ [कहते|keh-te] [हैं|haiⁿ]।","id":"Eh! Dalam bahasa kami ini juga „setengah” — tapi kami menyebutnya „tujuh”.","literal":"eh! milik-kami(perempuan) — bahasa — di-dalam — juga — ini — „setengah“ — ada — tetapi — kami — „tujuh“ — mengatakan — ada."},
+    {"speaker":"राहुल:","text":"[दिलचस्प|dil-casp]! [हिंदी|hin-dii] [में|meⁿ] [हम|ham] [पिछला|pich-laa] [घंटा|ghan-Taa] [बोलते|bol-te] [हैं|haiⁿ]।","id":"Menarik! Dalam bahasa Hindi kami menyebut jam yang sudah lewat.","literal":"menarik! hindi — di-dalam — kami — lalu — jam — mengatakan — ada."},
+    {"speaker":"आनी:","text":"[ठीक|Thiik] [है|hai], [साढ़े|saa-Rhe] [छह|chah]। [कहाँ|ka-haaⁿ] [मिलेंगे|mi-leⁿ-ge]?","id":"Baik, setengah tujuh. Ketemu di mana?","literal":"baik — ada, setengah-lebih — enam. di-mana — akan-bertemu?"},
+    {"speaker":"राहुल:","text":"[कॉफ़ी|kaa-fii] [शॉप|syaap] [के|ke] [सामने|saam-ne]। [सवा|sa-vaa] [सात|saat] [तक|tak] [मैं|maiⁿ] [फ़्री|frii] [हूँ|huuⁿ]।","id":"Di depan kedai kopi. Saya luang sampai jam tujuh seperempat.","literal":"kopi — kedai — milik — depan. seperempat-lebih — tujuh — sampai — saya — bebas — ada."},
+    {"speaker":"आनी:","text":"[सवा|sa-vaa] [सात|saat]? [यानी|yaa-nii] [सात|saat] [बजकर|baj-kar] [पंद्रह|pand-rah]?","id":"Sawa saat? Maksudnya tujuh lewat lima belas?","literal":"seperempat-lebih — tujuh? yakni — tujuh — berdentang-setelah — lima-belas?"},
+    {"speaker":"राहुल:","text":"[बिलकुल|bil-kul]। [और|aur] [पौने|pau-ne] [आठ|aaTh] [मुझे|mu-jhe] [जाना|jaa-naa] [है|hai]।","id":"Persis. Dan jam delapan kurang seperempat saya harus pergi.","literal":"sama-sekali. dan — seperempat-kurang — delapan — kepada-saya — pergi — ada."},
+    {"speaker":"आनी:","text":"[समझ|sa-majh] [गई|ga-ii]। [कल|kal] [मिलते|mil-te] [हैं|haiⁿ]!","id":"Mengerti. Sampai besok!","literal":"mengerti — sudah(perempuan). besok — bertemu — ada!"}
+   ],
+   "notes": [
+    "⚠️ **Inilah kekeliruan janjian yang paling sering terjadi: साढ़े तीन berarti 03.30, bukan 02.30.** Bahasa Indonesia menyebut jam **berikutnya** — \"setengah empat\" berarti 03.30. Bahasa Hindi menyebut jam yang **sudah lewat** — साढ़े तीन harfiahnya \"tiga lebih setengah\". Angkanya berbeda satu, ke arah yang berlawanan. Kalau kamu menerjemahkan \"setengah tujuh\" jadi *साढ़े सात*, kamu akan datang satu jam terlambat.",
+    "**Kabar baiknya: kekeliruan yang sama menjegal penutur bahasa Inggris jauh lebih parah**, karena *half seven* dalam bahasa Inggris Britania berarti 07.30 — sistem yang sama dengan Hindi. Jadi begitu kamu menguasai polanya, kamu justru punya keuntungan: cukup ingat bahwa **angka yang disebut adalah jam yang sudah berlalu**, dan semua penanda lain jadi masuk akal.",
+    "**Tiga kata penanda, dan masing-masing melihat ke arah berbeda.** **सवा** = seperempat **lebih** dari angka yang disebut (सवा चार = 04.15). **साढ़े** = setengah **lebih** dari angka yang disebut (साढ़े चार = 04.30). **पौने** = seperempat **kurang** dari angka yang disebut (पौने चार = 03.45). ⚠️ Dua yang pertama melihat ke depan, yang ketiga melihat ke belakang. Kalau ragu, pakai cara panjang: *चार बजकर पंद्रह मिनट*.",
+    "**डेढ़ dan ढाई adalah kata khusus untuk 1½ dan 2½, dan keduanya wajib.** Tidak ada *साढ़े एक* atau *साढ़े दो* — bentuk itu tidak dipakai sama sekali. **डेढ़ बजे** = 01.30, **ढाई बजे** = 02.30, lalu barulah **साढ़े तीन** = 03.30 dan seterusnya. Kedua kata ini juga dipakai untuk jumlah: *डेढ़ किलो* (1,5 kg), *ढाई घंटे* (2,5 jam).",
+    "**बजे berarti \"pukul\", dan ia berasal dari kata yang berarti \"berdentang\".** *चार बजे* = pukul empat (waktunya), *चार बजे हैं* = sekarang pukul empat. Untuk menanyakan waktu sekarang: **क्या बजा है?** Untuk menanyakan waktu janjian: **कितने बजे?** ⚠️ Dua pertanyaan itu berbeda dan sering tertukar.",
+    "**को sesudah bagian hari, tapi tidak sesudah jam.** *शाम **को*** (pada sore hari), *सुबह **को*** (pada pagi hari), *रात **को*** — tapi *छह बजे* tanpa को. Untuk hari: *सोमवार **को*** (pada hari Senin). Untuk आज dan कल: tanpa apa pun — *आज शाम को*, *कल सुबह*.",
+    "**समझ गई — bentuk yang belum kamu pelajari, tapi terlalu berguna untuk ditunda.** *समझ गया* (lelaki) / *समझ गई* (perempuan) berarti \"saya paham, sudah masuk\", dan ini yang diucapkan orang sungguhan, bukan *मैं समझती हूँ* yang terdengar seperti buku pelajaran. Pasangannya: **समझ नहीं आया** (tidak paham). Unit 13 akan menjelaskan bentuknya; sementara ini hafalkan saja utuh."
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut jam",
+     "body": [
+      "Bacalah lajur kedua keras-keras sambil menutup lajur pertama, lalu sebaliknya. Waktu adalah hal yang harus keluar cepat, bukan dihitung."
+     ],
+     "tables": [
+      {
+       "head":["Waktu","हिंदी","Cara baca","Catatan"],
+       "rows":[
+        ["01.00","एक बजे","ek ba-je","—"],
+        ["01.15","सवा एक","sa-vaa ek","—"],
+        ["01.30","डेढ़ बजे","DeRh ba-je","⚠️ kata khusus"],
+        ["01.45","पौने दो","pau-ne do","seperempat kurang dari **dua**"],
+        ["02.00","दो बजे","do ba-je","—"],
+        ["02.30","ढाई बजे","Dhaa-ii ba-je","⚠️ kata khusus"],
+        ["03.15","सवा तीन","sa-vaa tiin","—"],
+        ["03.30","साढ़े तीन","saa-Rhe tiin","⚠️ Indonesia: „setengah empat”"],
+        ["03.45","पौने चार","pau-ne caar","—"],
+        ["04.10","चार बजकर दस मिनट","caar baj-kar das mi-naT","cara panjang, selalu aman"],
+        ["04.50","पाँच बजने में दस मिनट","paaⁿc baj-ne meⁿ das mi-naT","sepuluh menit menuju lima"],
+        ["12.00 siang","दोपहर के बारह बजे","do-pa-har ke baa-rah ba-je","—"]
+       ]
+      },
+      {
+       "head":["Bagian hari","हिंदी","Cara baca","Kira-kira"],
+       "rows":[
+        ["pagi","सुबह","su-bah","04.00 – 11.00"],
+        ["siang","दोपहर","do-pa-har","11.00 – 16.00"],
+        ["sore","शाम","syaam","16.00 – 19.00"],
+        ["malam","रात","raat","19.00 – 04.00"],
+        ["hari ini","आज","aaj","—"],
+        ["kemarin / besok","कल","kal","⚠️ satu kata untuk keduanya"],
+        ["lusa / kemarin dulu","परसों","par-soⁿ","⚠️ juga satu kata untuk keduanya"],
+        ["sekarang","अभी · अब","a-bhii · ab","—"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **कल berarti \"kemarin\" DAN \"besok\", dan परसों berarti \"lusa\" DAN \"kemarin dulu\".** Yang menentukan artinya adalah bentuk kata kerjanya: *कल मैं आई* (kemarin saya datang) lawan *कल मैं आऊँगी* (besok saya akan datang). Ini terdengar mustahil sampai kamu menyadari bahwa bahasa Hindi memandang waktu sebagai jarak dari hari ini, bukan arah. Unit 13 kembali ke sini."
+     ]
+    },
+    {
+     "title": "Membuat janji",
+     "table": {
+      "head":["हिंदी","Cara baca","Artinya"],
+      "rows":[
+       ["क्या बजा है?","kyaa ba-jaa hai","Sekarang pukul berapa?"],
+       ["कितने बजे?","kit-ne ba-je","Jam berapa? (janjian)"],
+       ["आप कब फ़्री हैं?","aap kab frii haiⁿ","Kapan Anda luang?"],
+       ["कल शाम को मिलें?","kal syaam ko mi-leⁿ","Ketemu besok sore?"],
+       ["मुझे देर हो रही है।","mu-jhe der ho ra-hii hai","Saya terlambat."],
+       ["थोड़ी देर में","tho-Rii der meⁿ","sebentar lagi"],
+       ["जल्दी","jal-dii","cepat, buru-buru"],
+       ["समय पर","sa-may par","tepat waktu"],
+       ["आधे घंटे बाद","aa-dhe ghan-Te baad","setengah jam lagi"],
+       ["कितनी देर?","kit-nii der","Berapa lama?"],
+       ["ठीक है, तय रहा।","Thiik hai, tay ra-haa","Baik, sudah diputuskan."],
+       ["कल मिलते हैं!","kal mil-te haiⁿ","Sampai besok!"]
+      ]
+     },
+     "after": [
+      "⚠️ **देर** berarti \"terlambat\" **dan** \"lamanya waktu\". *मुझे देर हो गई* = saya terlambat; *कितनी देर?* = berapa lama? Konteksnya yang membedakan, dan keduanya sangat sering dipakai."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Waktu India, dan cara membaca janjian",
+   "blocks": [
+    {"type":"p","text":"Satu hal yang perlu diketahui sebelum kamu membuat janji pertamamu di India: ada perbedaan nyata antara janji resmi dan janji sosial, dan keduanya diucapkan dengan kata yang sama."},
+    {"type":"tabel","head":["Keadaan","Yang biasanya terjadi","Kalimat yang membantu"],"rows":[
+     ["Kereta, pesawat, kantor pemerintah","tepat waktu; datanglah lebih awal","मैं समय पर आऊँगी।"],
+     ["Rapat kantor","kurang lebih tepat waktu","दस बजे शुरू होगा?"],
+     ["Janji dengan teman","lima belas sampai tiga puluh menit lebih lambat","आप कितने बजे तक पहुँचेंगे?"],
+     ["Undangan makan malam","sering satu jam lebih lambat dari yang disebut","खाना कितने बजे है?"],
+     ["Pernikahan","jangan datang tepat waktu","⚠️ tanyakan tuan rumah"]
+    ]},
+    {"type":"kotak","title":"Empat kalimat untuk menyelamatkan janji","items":[
+     "**मैं थोड़ा लेट हूँ, दस मिनट में पहुँचती हूँ।** — Saya agak telat, sepuluh menit lagi sampai.",
+     "**आप कहाँ तक पहुँचे?** — Anda sudah sampai mana?",
+     "**कोई बात नहीं।** — Tidak apa-apa. (jawaban terhadap permintaan maaf; sangat sering dipakai)",
+     "**फिर कभी?** — Lain kali saja? (cara halus menunda tanpa menolak — unit 19 membahasnya lebih jauh)"
+    ]},
+    {"type":"p","text":"Dan satu catatan kecil yang menyenangkan. Kata **कल** yang berarti kemarin sekaligus besok bukan kelalaian bahasa; ia mencerminkan cara memandang waktu yang juga kamu kenali dari bahasa Indonesia sehari-hari — \"nanti\" bisa berarti dua jam lagi atau dua bulan lagi, dan tidak ada yang bingung. Bahasa Hindi cuma memilih untuk mengaturnya lebih rapi: **jarak** dari hari ini disebutkan, dan **arahnya** dititipkan ke kata kerja. Begitu kamu terbiasa, ia berhenti terasa aneh dan mulai terasa hemat."}
+   ]
+  }
+ ],
+ "vocab": [
+  {"hi":"बजे","baca":"ba-je","id":"pukul"},
+  {"hi":"बजकर","baca":"baj-kar","id":"lewat (jam)"},
+  {"hi":"सवा","baca":"sa-vaa","id":"seperempat lebih"},
+  {"hi":"साढ़े","baca":"saa-Rhe","id":"setengah lebih"},
+  {"hi":"पौने","baca":"pau-ne","id":"seperempat kurang"},
+  {"hi":"डेढ़","baca":"DeRh","id":"satu setengah"},
+  {"hi":"ढाई","baca":"Dhaa-ii","id":"dua setengah"},
+  {"hi":"मिनट","baca":"mi-naT","id":"menit (L)"},
+  {"hi":"घंटा","baca":"ghan-Taa","id":"jam (lamanya) (L)"},
+  {"hi":"समय","baca":"sa-may","id":"waktu (L)"},
+  {"hi":"वक़्त","baca":"waqt","id":"waktu (L)"},
+  {"hi":"देर","baca":"der","id":"terlambat; lamanya (P)"},
+  {"hi":"जल्दी","baca":"jal-dii","id":"cepat, buru-buru"},
+  {"hi":"सुबह","baca":"su-bah","id":"pagi (P)"},
+  {"hi":"दोपहर","baca":"do-pa-har","id":"siang (P)"},
+  {"hi":"शाम","baca":"syaam","id":"sore (P)"},
+  {"hi":"रात","baca":"raat","id":"malam (P)"},
+  {"hi":"आज","baca":"aaj","id":"hari ini"},
+  {"hi":"कल","baca":"kal","id":"kemarin; besok"},
+  {"hi":"परसों","baca":"par-soⁿ","id":"lusa; kemarin dulu"},
+  {"hi":"अभी","baca":"a-bhii","id":"sekarang juga"},
+  {"hi":"कब","baca":"kab","id":"kapan"},
+  {"hi":"फ़्री · ख़ाली","baca":"frii · khaa-lii","id":"luang, kosong"},
+  {"hi":"मिलना","baca":"mil-naa","id":"bertemu"},
+  {"hi":"पहुँचना","baca":"pa-huⁿc-naa","id":"sampai, tiba"},
+  {"hi":"शुरू होना","baca":"syu-ruu ho-naa","id":"dimulai"},
+  {"hi":"ख़त्म होना","baca":"khatm ho-naa","id":"selesai"},
+  {"hi":"यानी","baca":"yaa-nii","id":"yakni, maksudnya"},
+  {"hi":"दिलचस्प","baca":"dil-casp","id":"menarik"},
+  {"hi":"पिछला","baca":"pich-laa","id":"yang lalu"},
+  {"hi":"अगला","baca":"ag-laa","id":"yang berikutnya"},
+  {"hi":"कोई बात नहीं","baca":"ko-ii baat na-hiiⁿ","id":"tidak apa-apa"},
+  {"hi":"तय","baca":"tay","id":"diputuskan, disepakati"}
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis waktunya dalam bahasa Hindi.",
+   "items": [
+    "05.00 → ____",
+    "05.15 → ____",
+    "05.30 → ____",
+    "05.45 → ____",
+    "01.30 → ____",
+    "02.30 → ____"
+   ]
+  },
+  {
+   "prompt": "Tulis dalam angka.",
+   "items": [
+    "साढ़े आठ → ____",
+    "सवा नौ → ____",
+    "पौने छह → ____",
+    "डेढ़ बजे → ____",
+    "ढाई बजे → ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "है / बजा / क्या / ?",
+    "बजे / कितने / मिलेंगे / हम / ?",
+    "हूँ / फ़्री / मैं / को / शाम",
+    "है / हो / मुझे / रही / देर",
+    "हैं / कल / मिलते / हम"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Hindi.",
+   "items": [
+    "Sekarang jam berapa?",
+    "Jam setengah tujuh. (18.30)",
+    "Saya luang sampai jam sembilan.",
+    "Besok sore ketemu?",
+    "Saya agak terlambat.",
+    "Tidak apa-apa."
+   ]
+  }
+ ],
+ "answers": [
+  "पाँच बजे — सवा पाँच — साढ़े पाँच — पौने छह — डेढ़ बजे — ढाई बजे",
+  "8.30 — 9.15 — 5.45 — 1.30 — 2.30",
+  "क्या बजा है? — हम कितने बजे मिलेंगे? — मैं शाम को फ़्री हूँ। — मुझे देर हो रही है। — हम कल मिलते हैं।",
+  "क्या बजा है? — साढ़े छह बजे। — मैं नौ बजे तक फ़्री हूँ। — कल शाम को मिलें? — मुझे थोड़ी देर हो रही है। — कोई बात नहीं।"
+ ]
+}
