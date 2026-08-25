@@ -1,0 +1,7 @@
+# [deploy-trace-dist-v1] `dist/ebook/*.pdf` adalah keluaran build-ebook-pdf.mjs —
+# artefak lokal yang sudah diunggah ke bucket `ebook-files`, bukan berkas yang
+# dilayani situs. Ia sempat ikut terunggah lalu ikut ditelusuri Next ke dalam
+# fungsi /api/blog-tts: 218 MB dari 266 MB bundelnya berasal dari sini, dan
+# deploy ditolak karena melewati batas 250 MB. Sudah masuk .gitignore, tapi
+# `vercel --prod` tetap mengunggahnya tanpa berkas ini.
+dist
