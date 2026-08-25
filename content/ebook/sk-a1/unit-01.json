@@ -1,0 +1,464 @@
+{
+  "title": "Halo, siapa namamu?",
+  "title_target": "Ahoj! Ako sa voláš?",
+  "goal": "Menyapa pada tingkat kesopanan yang tepat, menyebut nama sendiri, menanyakan kabar, dan melihat sejak baris pertama bahwa bahasa Slowakia tidak punya kata sandang sama sekali.",
+  "bekal": [
+    "menyapa dengan *ahoj*, *dobrý deň*, dan *dobré ráno* pada tempatnya masing-masing",
+    "menyebut nama sendiri dengan *volám sa…* dan menanyakan nama orang lain dengan dua tingkat kesopanan",
+    "memakai keenam bentuk *byť* dan menyangkalnya dengan *nie som* — satu-satunya kata kerja yang sangkalannya dua kata"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Prvý deň v jazykovej škole",
+      "intro": "Hari pertama kursus bahasa di sebuah sekolah bahasa di Bratislava. Dua peserta baru duduk bersebelahan.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Ahoj! Ako sa voláš?",
+          "id": "Halo! Siapa namamu?",
+          "literal": "halo! bagaimana diri kamu-panggil?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ahoj! Volám sa Budi. A ty?",
+          "id": "Halo! Nama saya Budi. Dan kamu?",
+          "literal": "halo! saya-panggil diri Budi. dan kamu?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ja som Eva. Teší ma!",
+          "id": "Saya Eva. Senang berkenalan!",
+          "literal": "saya adalah Eva. menyenangkan aku!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mňa tiež. Ako sa máš?",
+          "id": "Saya juga. Apa kabar?",
+          "literal": "aku juga. bagaimana diri kamu-punya?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ďakujem, mám sa dobre. A ty?",
+          "id": "Terima kasih, saya baik. Dan kamu?",
+          "literal": "saya-berterima-kasih, saya-punya diri baik. dan kamu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tiež dobre. Si Slovenka?",
+          "id": "Baik juga. Kamu orang Slowakia?",
+          "literal": "juga baik. kamu-adalah Slowakia-perempuan?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Áno, som Slovenka. Ty si Číňan?",
+          "id": "Ya, saya orang Slowakia. Kamu orang Cina?",
+          "literal": "ya, saya-adalah Slowakia-perempuan. kamu kamu-adalah Cina-lelaki?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nie, nie som Číňan. Som Indonézan.",
+          "id": "Bukan, saya bukan orang Cina. Saya orang Indonesia.",
+          "literal": "tidak, tidak saya-adalah Cina-lelaki. saya-adalah Indonesia-lelaki."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "To je zaujímavé! Vitaj na Slovensku!",
+          "id": "Wah, menarik sekali! Selamat datang di Slowakia!",
+          "literal": "itu adalah menarik! sambutlah di Slowakia!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ďakujem pekne! Zajtra sa uvidíme, Eva.",
+          "id": "Terima kasih banyak! Sampai jumpa besok, Eva.",
+          "literal": "saya-berterima-kasih cantik! besok diri kita-akan-melihat, Eva."
+        }
+      ],
+      "notes": [
+        "**Ahoj dipakai dua arah.** Satu kata yang sama untuk \"halo\" dan \"dah\" — persis seperti *ciao* bahasa Italia. Ia akrab: dipakai kepada teman, sesama mahasiswa, dan orang seumuran. Kepada orang yang belum kamu kenal, pakai *dobrý deň*.",
+        "**Ako sa voláš? bukan \"apa namamu\".** Harfiahnya \"bagaimana diri kamu panggil\" — kamu sedang bertanya bagaimana orang itu **memanggil dirinya sendiri**. Karena itu jawabannya juga bercermin: *volám sa Budi* = \"saya memanggil diri Budi\". Kata kecil *sa* itulah cerminnya, dan ia akan muncul di puluhan kata kerja lain sepanjang modul ini.",
+        "**Teší ma harfiahnya \"ia menyenangkan aku\".** Pelakunya adalah perkenalan itu sendiri, bukan kamu. Bentuk lengkapnya *teší ma, že vás spoznávam*, tetapi dua kata itu sudah cukup dan justru lebih sering terdengar.",
+        "**Tidak ada kata sandang. Sama sekali.** Perhatikan *Som Slovenka* — tidak ada *a* atau *the* di depannya, dan tidak ada satu pun di seluruh dialog ini. Bahasa Slowakia sama dengan bahasa Indonesia dalam hal ini: *kniha* berarti \"buku\", \"sebuah buku\", dan \"buku itu\" sekaligus, dan kamu tidak pernah perlu memilih. Pelajar dari Inggris atau Jerman menghabiskan berbulan-bulan menyesuaikan diri di titik ini.",
+        "**Áno dan nie.** *Áno* = ya (bentuk santainya *hej*, sangat umum di kalangan anak muda). *Nie* = tidak/bukan. Perhatikan bahwa *nie* muncul dua kali di baris Budi dengan pekerjaan berbeda: yang pertama menjawab pertanyaan, yang kedua menyangkal kata kerja."
+      ],
+      "grammars": [
+        {
+          "title": "Byť — satu-satunya kata kerja yang sangkalannya dua kata",
+          "body": [
+            "Kata kerja pertama yang wajib kamu kuasai, dan sekaligus yang paling menyimpang. Hafalkan dua lajur ini bersama-sama sejak awal — memisahkannya justru membuat lebih susah."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "Cara baca",
+              "byť",
+              "Sangkalan",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "ja",
+                "ya",
+                "**som**",
+                "**nie som**",
+                "saya adalah"
+              ],
+              [
+                "ty",
+                "ti",
+                "**si**",
+                "**nie si**",
+                "kamu adalah"
+              ],
+              [
+                "on / ona / ono",
+                "on / O-na / O-no",
+                "**je**",
+                "**nie je**",
+                "dia adalah"
+              ],
+              [
+                "my",
+                "mi",
+                "**sme**",
+                "**nie sme**",
+                "kami adalah"
+              ],
+              [
+                "vy",
+                "vi",
+                "**ste**",
+                "**nie ste**",
+                "kalian / Anda adalah"
+              ],
+              [
+                "oni / ony",
+                "O-ni / O-ni",
+                "**sú**",
+                "**nie sú**",
+                "mereka adalah"
+              ]
+            ]
+          },
+          "after": [
+            "**Kata gantinya boleh dibuang.** Ekor kata kerjanya sudah menyimpan pelakunya, jadi *Som Slovenka* sudah pasti berarti \"saya orang Slowakia\". *Ja* dipakai hanya kalau kamu ingin **menekankan**: *Ja som Eva* = \"Kalau saya, Eva\". Dalam dialog di atas Eva memakainya justru untuk itu — ia mengambil alih giliran.",
+            "**Semua kata kerja lain menyangkal dengan awalan *ne-* yang menyatu**: *nemám* (saya tidak punya), *nerozumiem* (saya tidak mengerti), *nechcem* (saya tidak mau). Hanya *byť* yang memakai kata terpisah *nie*. Kalau kamu mendengar dirimu berkata *nesom*, itu satu-satunya tempat aturan umum tidak berlaku.",
+            "**Kata *som* tidak pernah ditekan.** Ia menempel pada kata di depannya seperti ekor, jadi *volám sa* terdengar seperti satu kata: **VO**-lam-sa. Ini berlaku untuk seluruh keluarga kata pendek — *som, si, je, sme, ste, sú, sa, si, ma, ťa* — dan menjelaskan kenapa bahasa Slowakia terdengar mengalir walau tekanannya kaku di depan."
+          ]
+        },
+        {
+          "title": "Ty dan vy — dua kamu, dan pilihannya bukan soal jumlah",
+          "body": [
+            "Bahasa Slowakia memilah lawan bicara seperti bahasa Prancis dan Jerman. Yang membingungkan pemula: *vy* punya dua pekerjaan sekaligus."
+          ],
+          "table": {
+            "head": [
+              "Bentuk",
+              "Cara baca",
+              "Dipakai kepada",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**ty**",
+                "ti",
+                "satu orang, akrab — teman, seumuran, anak-anak, keluarga",
+                "*Ako sa voláš?*"
+              ],
+              [
+                "**vy**",
+                "vi",
+                "satu orang, sopan — orang asing, penjual, dosen, orang tua",
+                "*Ako sa voláte?*"
+              ],
+              [
+                "**vy**",
+                "vi",
+                "banyak orang, akrab maupun sopan",
+                "*Ako sa voláte?*"
+              ]
+            ]
+          },
+          "after": [
+            "**Bentuk kata kerjanya sama untuk kedua pekerjaan *vy*.** Jadi *Ako sa voláte?* bisa berarti \"Siapa nama Anda?\" atau \"Siapa nama kalian?\" — keadaannyalah yang memberi tahu. Ini menghemat satu tabel penuh untukmu.",
+            "**Aturan praktis untuk pemula: kalau ragu, pakai *vy*.** Memakai *vy* kepada teman terdengar sedikit kaku dan langsung dimaafkan; memakai *ty* kepada orang asing yang lebih tua terdengar kurang ajar. Orang Slowakia biasanya yang menawarkan pindah ke *ty* lebih dulu, dengan kalimat *Môžeme si tykať?* (\"Boleh kita saling ber-*ty*?\"). Jawab *Áno, samozrejme!*",
+            "Sapaan *ahoj* dan bentuk *vy* tidak pernah dipakai bersama. Pasangannya sudah terkunci: **ahoj + ty**, **dobrý deň + vy**. Kalau kamu ingat satu hal saja dari halaman ini, ingat pasangan itu."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kalimat yang menolongmu bertahan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sepuluh kalimat berikut bukan bahan hafalan tata bahasa — ia perkakas darurat. Hafalkan bentuk utuhnya sekarang, pahami susunannya nanti."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Áno / Nie",
+              "A-no / nye",
+              "Ya / Tidak"
+            ],
+            [
+              "Ďakujem",
+              "DYA-ku-yem",
+              "Terima kasih"
+            ],
+            [
+              "Prosím",
+              "PRO-sim",
+              "Sama-sama; silakan; ini dia"
+            ],
+            [
+              "Prepáčte",
+              "PRE-pac-tye",
+              "Maaf; permisi"
+            ],
+            [
+              "Nerozumiem",
+              "NE-ro-zu-myem",
+              "Saya tidak mengerti"
+            ],
+            [
+              "Neviem",
+              "NE-vyem",
+              "Saya tidak tahu"
+            ],
+            [
+              "Hovoríte po anglicky?",
+              "HO-vo-ri-tye po AN-glits-ki",
+              "Anda bisa bahasa Inggris?"
+            ],
+            [
+              "Ako sa to povie po slovensky?",
+              "A-ko sa to PO-vye po SLO-ven-ski",
+              "Bagaimana mengatakannya dalam bahasa Slowakia?"
+            ],
+            [
+              "Pomaly, prosím",
+              "PO-ma-li PRO-sim",
+              "Pelan-pelan, tolong"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Prosím* adalah kata paling serbaguna dalam bahasa Slowakia. Ia berarti \"silakan\" saat mempersilakan duduk, \"ini dia\" saat menyerahkan sesuatu, \"halo?\" saat mengangkat telepon, \"ya?\" saat pelayan menghampiri mejamu, dan \"sama-sama\" saat menjawab terima kasih. Kalau kamu cuma boleh menghafal satu kata dari halaman ini, hafalkan yang ini."
+        },
+        {
+          "type": "p",
+          "text": "*Prepáčte* memakai bentuk sopan; kepada teman ucapkan *prepáč*. Kata ini menutup dua pekerjaan sekaligus — meminta maaf dan menarik perhatian orang. Untuk menyerobot lewat di keramaian, orang Slowakia lebih sering memakai *s dovolením* (\"dengan izin\")."
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan *po slovensky* dan *po anglicky*. Bentuk *po …-sky* inilah yang dipakai untuk \"dalam bahasa …\", bukan nama bahasanya. Jadi: *po slovensky, po anglicky, po indonézsky, po nemecky*. Ia tidak pernah berubah bentuk, jadi kamu boleh menganggapnya satu kata mati."
+        }
+      ]
+    },
+    {
+      "title": "Sapaan menurut waktu dan tingkat kesopanan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bahasa Slowakia memilah sapaan pada dua sumbu sekaligus: jam berapa, dan seberapa dekat kamu dengan lawan bicara. Tabel ini menutup keduanya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Cara baca",
+            "Dipakai kapan"
+          ],
+          "rows": [
+            [
+              "**Dobré ráno!**",
+              "DOB-re RA-no",
+              "Selamat pagi — sampai sekitar pukul 9"
+            ],
+            [
+              "**Dobrý deň!**",
+              "DOB-ri denj",
+              "Selamat siang — sepanjang hari, sapaan sopan paling aman"
+            ],
+            [
+              "**Dobrý večer!**",
+              "DOB-ri VE-cer",
+              "Selamat sore/malam — mulai senja"
+            ],
+            [
+              "**Dobrú noc!**",
+              "DOB-ru nots",
+              "Selamat malam — hanya saat berpisah untuk tidur"
+            ],
+            [
+              "**Ahoj!**",
+              "A-hoy",
+              "Halo/dah — akrab"
+            ],
+            [
+              "**Čau!**",
+              "cau",
+              "Halo/dah — sangat akrab, anak muda"
+            ],
+            [
+              "**Servus!**",
+              "SER-vus",
+              "Halo/dah — akrab, terdengar sedikit kuno dan hangat"
+            ],
+            [
+              "**Dovidenia!**",
+              "DO-vi-dye-nya",
+              "Sampai jumpa — sopan, dipakai di mana saja"
+            ],
+            [
+              "**Maj sa!**",
+              "may sa",
+              "Jaga dirimu — akrab, saat berpisah"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Yang paling sering kamu butuhkan adalah **dobrý deň**. Ia sopan, tidak pernah salah, dan berlaku dari pagi sampai petang. Kalau kamu ragu jam berapa sekarang menurut ukuran orang Slowakia, pakai saja ini."
+        },
+        {
+          "type": "p",
+          "text": "Satu kebiasaan yang perlu ditiru: di Slowakia, **masuk ke ruangan kecil berarti menyapa**. Lift, ruang tunggu dokter, kompartemen kereta, toko kecil — orang mengucapkan *dobrý deň* kepada orang-orang yang tidak dikenalnya, dan diam justru terasa kasar. Saat keluar, ucapkan *dovidenia*."
+        },
+        {
+          "type": "kotak",
+          "title": "Dobrý, dobré, dobrú — kenapa berubah-ubah?",
+          "items": [
+            "Bukan kesalahan cetak. Kata sifat bahasa Slowakia mengikuti jenis kelamin kata bendanya: *deň* (hari) lelaki → *dobrý deň*; *ráno* (pagi) netral → *dobré ráno*; *noc* (malam) perempuan → *dobrú noc*.",
+            "Untuk sekarang, hafalkan keempat sapaan itu sebagai bongkahan utuh. Aturannya dipasang pelan-pelan di unit 3 dan diselesaikan di unit 18. Tetapi kalau kamu sudah melihat polanya sekarang, kamu sudah setengah jalan."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "ahoj",
+      "baca": "A-hoy",
+      "id": "halo; dah (akrab)"
+    },
+    {
+      "sk": "dobrý deň",
+      "baca": "DOB-ri denj",
+      "id": "selamat siang (sopan)"
+    },
+    {
+      "sk": "dobré ráno",
+      "baca": "DOB-re RA-no",
+      "id": "selamat pagi"
+    },
+    {
+      "sk": "dobrý večer",
+      "baca": "DOB-ri VE-cer",
+      "id": "selamat sore/malam"
+    },
+    {
+      "sk": "dovidenia",
+      "baca": "DO-vi-dye-nya",
+      "id": "sampai jumpa"
+    },
+    {
+      "sk": "ako",
+      "baca": "A-ko",
+      "id": "bagaimana"
+    },
+    {
+      "sk": "volať sa",
+      "baca": "VO-lat sa",
+      "id": "bernama"
+    },
+    {
+      "sk": "ja",
+      "baca": "ya",
+      "id": "saya"
+    },
+    {
+      "sk": "ty",
+      "baca": "ti",
+      "id": "kamu (akrab)"
+    },
+    {
+      "sk": "vy",
+      "baca": "vi",
+      "id": "Anda; kalian"
+    },
+    {
+      "sk": "som",
+      "baca": "som",
+      "id": "saya adalah"
+    },
+    {
+      "sk": "si",
+      "baca": "si",
+      "id": "kamu adalah"
+    },
+    {
+      "sk": "je",
+      "baca": "ye",
+      "id": "dia adalah"
+    },
+    {
+      "sk": "a",
+      "baca": "a",
+      "id": "dan"
+    },
+    {
+      "sk": "tiež",
+      "baca": "tyezh",
+      "id": "juga"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slowakia.",
+      "items": [
+        "Halo! Siapa namamu?",
+        "Nama saya Budi.",
+        "Saya orang Indonesia.",
+        "Apa kabar?",
+        "Terima kasih, saya baik.",
+        "Kamu orang Slowakia?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk byť yang tepat.",
+      "items": [
+        "Ja ____ Eva.",
+        "Ty ____ Slovák?",
+        "On ____ Indonézan.",
+        "My ____ študenti.",
+        "Vy ____ učiteľka?",
+        "Oni ____ doma."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "sa / Budi / volám",
+        "si / Slovenka / ty / ?",
+        "sa / ako / máš / ?",
+        "som / nie / Číňan / ja",
+        "ma / teší"
+      ]
+    }
+  ],
+  "answers": [
+    "Ahoj! Ako sa voláš? — Volám sa Budi. — Som Indonézan. — Ako sa máš? — Ďakujem, mám sa dobre. — Si Slovenka?",
+    "som — si — je — sme — ste — sú",
+    "Volám sa Budi. — Ty si Slovenka? — Ako sa máš? — Ja nie som Číňan. — Teší ma."
+  ]
+}

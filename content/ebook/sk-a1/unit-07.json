@@ -1,0 +1,519 @@
+{
+  "title": "Sedang apa kamu?",
+  "title_target": "Čo robíš?",
+  "goal": "Menceritakan kegiatan sehari-hari, melengkapi ketiga kelas kata kerja, dan memasang hukum irama — aturan bunyi yang tidak dipunyai bahasa Eropa lain dan yang menjelaskan banyak ekor yang tampak salah.",
+  "bekal": [
+    "memakai ketiga kelas kata kerja bahasa Slowakia dan mengenali kelasnya dari bentuk *ja*",
+    "menceritakan kegiatan sehari-hari dengan kata keterangan waktu",
+    "mengenali dan menerapkan hukum irama"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Bežný deň",
+      "intro": "Eva dan Budi menunggu bus. Percakapan berpindah ke rutinitas masing-masing.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Čo robíš cez týždeň?",
+          "id": "Kamu ngapain aja selama seminggu?",
+          "literal": "apa kamu-lakukan lewat minggu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ráno sa učím po slovensky a popoludní pracujem.",
+          "id": "Pagi saya belajar bahasa Slowakia dan siang saya bekerja.",
+          "literal": "pagi diri saya-ajar menurut Slowakia dan sesudah-siang saya-bekerja."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Kde pracuješ?",
+          "id": "Kerja di mana?",
+          "literal": "di-mana kamu-bekerja?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "V malej firme v centre. Píšem programy.",
+          "id": "Di perusahaan kecil di pusat kota. Saya menulis program.",
+          "literal": "di kecil-lokatif perusahaan-lokatif di pusat-lokatif. saya-menulis program-jamak."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "To znie zaujímavo. A čo robíš večer?",
+          "id": "Kedengarannya menarik. Dan malamnya ngapain?",
+          "literal": "itu ia-berbunyi menarik. dan apa kamu-lakukan malam?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Väčšinou čítam alebo pozerám filmy. Niekedy varím.",
+          "id": "Biasanya saya baca atau nonton film. Kadang saya masak.",
+          "literal": "kebanyakan saya-baca atau saya-menonton film-jamak. kadang saya-memasak."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ty vieš variť? Ja vôbec neviem.",
+          "id": "Kamu bisa masak? Saya sama sekali tidak bisa.",
+          "literal": "kamu kamu-tahu memasak? saya sama-sekali tidak-saya-tahu."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Trochu. Indonézske jedlo je jednoduché.",
+          "id": "Sedikit. Masakan Indonesia itu sederhana.",
+          "literal": "sedikit. Indonesia-nt makanan adalah sederhana."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ja každý deň jem v jedálni. Je to rýchle.",
+          "id": "Saya setiap hari makan di kantin. Cepat.",
+          "literal": "saya setiap hari saya-makan di kantin-lokatif. adalah itu cepat."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A cez víkend? Čo robievaš?",
+          "id": "Dan akhir pekan? Kamu biasanya ngapain?",
+          "literal": "dan lewat akhir-pekan? apa kamu-biasa-lakukan?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Chodím do hôr. Milujem Tatry.",
+          "id": "Saya pergi ke gunung. Saya suka Tatra.",
+          "literal": "saya-pergi ke gunung-genitif-jamak. saya-mencintai Tatra-jamak."
+        }
+      ],
+      "notes": [
+        "**Píšem, pracujem — kelas ketiga.** Ekornya *-em*, dan ia yang paling sering mengubah batang katanya: *písať → píšem* (s berubah jadi š), *brať → beriem*, *ísť → idem*. Kabar baiknya: perubahan itu sama untuk keenam pelakunya, jadi kamu cuma perlu menghafal bentuk *ja* dan sisanya mengalir.",
+        "**Kata kerja -ovať selalu jadi -ujem.** *Pracovať → pracujem*, *študovať → študujem*, *kupovať → kupujem*, *ďakovať → ďakujem*. Ini golongan yang paling mudah ditebak dalam seluruh bahasa Slowakia, dan ia besar sekali — hampir semua kata pinjaman modern masuk ke sini: *telefonovať, informovať, organizovať*.",
+        "**Sa učím, bukan učím.** Kata kerja *učiť sa* selalu membawa *sa*: harfiahnya \"mengajar diri sendiri\". Tanpa *sa*, *učiť* berarti \"mengajar orang lain\". Satu kata kecil membalik arah perbuatannya.",
+        "**Robievaš** adalah bentuk kebiasaan — dibentuk dengan menyelipkan *-ieva-* dan berarti \"biasa melakukan berulang-ulang\". Kamu tidak perlu menghasilkannya di A1, tetapi kenali saat mendengarnya: *robiť → robievať*, *chodiť → chodievať*, *piť → pijavať*.",
+        "**Do hôr** = ke gunung-gunung. Perhatikan *hora → hôr*: vokal *o* memanjang jadi *ô* ketika ekor genitif jamaknya hilang — persis pola unit 5."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga kelas kata kerja — tabel lengkapnya",
+          "body": [
+            "Semua kata kerja bahasa Slowakia masuk salah satu dari tiga kelas ini. Kelasnya dikenali dari **bentuk *ja***, bukan dari bentuk kamusnya — itu sebabnya kamus yang baik selalu mencantumkan keduanya."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "**-ám** *volať*",
+              "**-ím** *robiť*",
+              "**-em** *písať*",
+              "**-ujem** *pracovať*"
+            ],
+            "rows": [
+              [
+                "ja",
+                "vol**ám**",
+                "rob**ím**",
+                "píš**em**",
+                "prac**ujem**"
+              ],
+              [
+                "ty",
+                "vol**áš**",
+                "rob**íš**",
+                "píš**eš**",
+                "prac**uješ**"
+              ],
+              [
+                "on / ona",
+                "vol**á**",
+                "rob**í**",
+                "píš**e**",
+                "prac**uje**"
+              ],
+              [
+                "my",
+                "vol**áme**",
+                "rob**íme**",
+                "píš**eme**",
+                "prac**ujeme**"
+              ],
+              [
+                "vy",
+                "vol**áte**",
+                "rob**íte**",
+                "píš**ete**",
+                "prac**ujete**"
+              ],
+              [
+                "oni",
+                "vol**ajú**",
+                "rob**ia**",
+                "píš**u**",
+                "prac**ujú**"
+              ]
+            ]
+          },
+          "after": [
+            "**Kolom keempat sebenarnya bagian dari kolom ketiga** — semua kata kerja *-ovať* adalah kelas *-em* dengan sisipan *-uj-*. Ia dipisahkan di sini karena golongannya besar dan polanya sempurna.",
+            "**Baris terakhir adalah yang paling sering keliru**: *-ajú*, *-ia*, *-u*, *-ujú*. Empat ekor yang berbeda untuk satu pelaku yang sama. Kalau kamu harus melatih satu baris saja dari tabel ini, latih baris ini.",
+            "**Kata kerja yang menyimpang** dan wajib dihafal terpisah: *byť* (som), *mať* (mám — sebenarnya teratur), *jesť* (jem, ješ, je, jeme, jete, jedia), *ísť* (idem, ideš, ide, ideme, idete, idú), *vedieť* (viem, vieš, vie, vieme, viete, vedia), *chcieť* (chcem), *môcť* (môžem). Tujuh kata, dan ketujuhnya dipakai setiap hari — jadi ia akan menempel sendiri lewat pemakaian."
+          ]
+        },
+        {
+          "title": "Hukum irama — kenapa ekornya kadang \"salah\"",
+          "body": [
+            "Aturan yang tidak dipunyai bahasa Slavia lain, bahkan tidak oleh bahasa Ceko yang begitu dekat. Bunyinya sederhana: **dua suku kata panjang tidak boleh berurutan dalam satu kata**. Kalau suku kata sebelumnya sudah panjang, ekor yang seharusnya panjang dipendekkan."
+          ],
+          "table": {
+            "head": [
+              "Dasar",
+              "Ekor seharusnya",
+              "Hasil",
+              "Kenapa"
+            ],
+            "rows": [
+              [
+                "*volať* (pendek)",
+                "*-ám*",
+                "vol**ám**",
+                "*vo-* pendek, ekor tetap panjang"
+              ],
+              [
+                "*písať* (panjang)",
+                "*-em*",
+                "píš**em**",
+                "ekor ini memang pendek, tak terpengaruh"
+              ],
+              [
+                "*chváliť* (panjang)",
+                "*-im*",
+                "chvál**im**",
+                "*chvá-* panjang → *-ím* jadi *-im*"
+              ],
+              [
+                "*pekný* (pendek)",
+                "*-á* pr",
+                "pekn**á**",
+                "*pek-* pendek"
+              ],
+              [
+                "*krásny* (panjang)",
+                "*-á* pr",
+                "krásn**a**",
+                "*krás-* panjang → *-a* pendek"
+              ],
+              [
+                "*žena* (pendek)",
+                "*-ám* datif",
+                "žen**ám**",
+                "*že-* pendek"
+              ],
+              [
+                "*práca* (panjang)",
+                "*-ám* datif",
+                "prác**am**",
+                "*prá-* panjang → *-am* pendek"
+              ]
+            ]
+          },
+          "after": [
+            "**Yang dihitung panjang** adalah vokal bertanda (*á é í ó ú ý*), bunyi rangkap (*ia ie iu*), *ô*, dan *ŕ ĺ*. Semua sisanya pendek.",
+            "**Kenapa ini penting sekarang?** Karena tanpa aturan ini, setengah ekor yang kamu lihat di modul ini akan tampak seperti salah cetak. *Krásna* di sebelah *pekná*, *prácam* di sebelah *ženám* — dua-duanya benar, dan yang membedakan cuma panjang suku kata sebelumnya.",
+            "**Untuk A1, kamu tidak perlu menghasilkannya dengan sempurna.** Yang penting: jangan \"membetulkan\" apa yang kamu lihat. Kalau kamu menulis *krásná* karena merasa polanya begitu, penutur asli akan langsung menandainya sebagai bukan-Slowakia — dan sebagai bahasa Ceko.",
+            "**Perkecualiannya sedikit dan bisa diabaikan sekarang**: beberapa ekor kata benda jamak (*-ie*, *-ia*) dan beberapa awalan tetap panjang walau melanggar aturan. Kamu akan bertemu paling banyak lima di seluruh A1."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kegiatan sehari-hari",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bentuk kamus",
+            "ja …",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**vstávať**",
+              "vstávam",
+              "bangun tidur"
+            ],
+            [
+              "**raňajkovať**",
+              "raňajkujem",
+              "sarapan"
+            ],
+            [
+              "**obedovať**",
+              "obedujem",
+              "makan siang"
+            ],
+            [
+              "**večerať**",
+              "večeriam",
+              "makan malam"
+            ],
+            [
+              "**pracovať**",
+              "pracujem",
+              "bekerja"
+            ],
+            [
+              "**študovať**",
+              "študujem",
+              "kuliah"
+            ],
+            [
+              "**učiť sa**",
+              "učím sa",
+              "belajar"
+            ],
+            [
+              "**čítať**",
+              "čítam",
+              "membaca"
+            ],
+            [
+              "**písať**",
+              "píšem",
+              "menulis"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan berapa banyak yang berakhiran **-ovať** dan karena itu berbentuk *-ujem*. Golongan ini terus bertambah: setiap kata baru yang masuk bahasa Slowakia dari bahasa asing hampir selalu masuk ke sini. *Googlovať → googlujem*. *Četovať → četujem*."
+        },
+        {
+          "type": "kotak",
+          "title": "Nama makan, bukan nama waktu",
+          "items": [
+            "*Raňajky* (sarapan), *obed* (makan siang), *večera* (makan malam) adalah kata benda, dan ketiganya punya kata kerja sendiri: *raňajkovať, obedovať, večerať*. Bahasa Indonesia harus memakai dua kata (\"makan siang\"); bahasa Slowakia punya satu.",
+            "*Obed* di Slowakia adalah makan utama hari itu, biasanya pukul 11.30-13.00, dan hampir selalu dimulai dengan sup. Menolak sup di rumah orang Slowakia butuh alasan yang bagus."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kata keterangan waktu",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**ráno**",
+              "RA-no",
+              "pagi"
+            ],
+            [
+              "**doobeda**",
+              "DO-o-be-da",
+              "sebelum siang"
+            ],
+            [
+              "**napoludnie**",
+              "NA-po-lud-nye",
+              "tengah hari"
+            ],
+            [
+              "**popoludní**",
+              "PO-po-lud-nyi",
+              "sore"
+            ],
+            [
+              "**večer**",
+              "VE-cer",
+              "malam"
+            ],
+            [
+              "**v noci**",
+              "v NO-tsi",
+              "tengah malam"
+            ],
+            [
+              "**dnes**",
+              "dnyes",
+              "hari ini"
+            ],
+            [
+              "**včera**",
+              "FCE-ra",
+              "kemarin"
+            ],
+            [
+              "**zajtra**",
+              "ZAY-tra",
+              "besok"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kata keterangan waktu biasanya berdiri **di awal kalimat**, dan kata kerjanya menyusul: *Ráno sa učím*, *Večer varím*, *Cez víkend chodím do hôr*. Susunan itu bukan keharusan — susunan kata bahasa Slowakia sangat bebas karena ekor kasusnya sudah menandai peran tiap kata — tetapi ia yang paling wajar terdengar."
+        },
+        {
+          "type": "kotak",
+          "title": "Nikdy menuntut sangkalan ganda",
+          "items": [
+            "*Nikdy nepijem kávu.* — \"Saya tak pernah minum kopi.\" Dua sangkalan dalam satu kalimat, dan keduanya wajib. *Nikdy pijem kávu* bukan cuma salah; ia tidak berarti apa-apa.",
+            "Aturan yang sama berlaku untuk *nič* (tak ada apa-apa), *nikto* (tak seorang pun), *nikde* (tak di mana pun): *Nič nevidím*, *Nikto tu nie je*, *Nikde ho nenájdem*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 5",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Berapa harganya?",
+              "*Koľko to stojí?*"
+            ],
+            [
+              "Dua euro sekilo.",
+              "*Dve eurá za kilo.*"
+            ],
+            [
+              "Lima kopi, tolong.",
+              "*Päť káv, prosím.*"
+            ],
+            [
+              "Itu agak mahal.",
+              "*To je trochu drahé.*"
+            ],
+            [
+              "Saya cuma punya dua puluh euro.",
+              "*Mám len dvadsať eur.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "robiť",
+      "baca": "RO-bit",
+      "id": "melakukan; mengerjakan"
+    },
+    {
+      "sk": "písať",
+      "baca": "PI-sat",
+      "id": "menulis"
+    },
+    {
+      "sk": "čítať",
+      "baca": "CI-tat",
+      "id": "membaca"
+    },
+    {
+      "sk": "variť",
+      "baca": "VA-rit",
+      "id": "memasak"
+    },
+    {
+      "sk": "pozerať",
+      "baca": "PO-ze-rat",
+      "id": "menonton"
+    },
+    {
+      "sk": "počúvať",
+      "baca": "PO-cu-vat",
+      "id": "mendengarkan"
+    },
+    {
+      "sk": "učiť sa",
+      "baca": "U-cit sa",
+      "id": "belajar"
+    },
+    {
+      "sk": "spať",
+      "baca": "spat",
+      "id": "tidur"
+    },
+    {
+      "sk": "vstávať",
+      "baca": "FSTA-vat",
+      "id": "bangun tidur"
+    },
+    {
+      "sk": "chodiť",
+      "baca": "KHO-dyit",
+      "id": "pergi (berulang)"
+    },
+    {
+      "sk": "milovať",
+      "baca": "MI-lo-vat",
+      "id": "mencintai"
+    },
+    {
+      "sk": "firma",
+      "baca": "FIR-ma",
+      "id": "perusahaan (pr)"
+    },
+    {
+      "sk": "centrum",
+      "baca": "TSEN-trum",
+      "id": "pusat kota (nt)"
+    },
+    {
+      "sk": "jedlo",
+      "baca": "YED-lo",
+      "id": "makanan (nt)"
+    },
+    {
+      "sk": "jedáleň",
+      "baca": "YE-da-lenj",
+      "id": "kantin (pr)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slowakia.",
+      "items": [
+        "Kamu ngapain aja selama seminggu?",
+        "Pagi saya belajar bahasa Slowakia.",
+        "Kerja di mana?",
+        "Biasanya saya baca atau nonton film.",
+        "Saya setiap hari makan di kantin.",
+        "Saya tak pernah minum kopi."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+      "items": [
+        "Ja ____ program. (písať)",
+        "Ty ____ v škole? (pracovať)",
+        "On ____ knihu. (čítať)",
+        "My ____ večeru. (variť)",
+        "Vy ____ film. (pozerať)",
+        "Oni ____ po slovensky. (učiť sa)",
+        "Ja ____ o siedmej. (vstávať)",
+        "Ona ____ hudbu. (počúvať)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "robíš / týždeň / čo / cez / ?",
+        "sa / ráno / učím / slovensky / po",
+        "pracujem / firme / v / malej",
+        "varím / niekedy / večer",
+        "nepijem / kávu / nikdy"
+      ]
+    }
+  ],
+  "answers": [
+    "Čo robíš cez týždeň? — Ráno sa učím po slovensky. — Kde pracuješ? — Väčšinou čítam alebo pozerám filmy. — Každý deň jem v jedálni. — Nikdy nepijem kávu.",
+    "píšem — pracuješ — číta — varíme — pozeráte — učia sa — vstávam — počúva",
+    "Čo robíš cez týždeň? — Ráno sa učím po slovensky. — Pracujem v malej firme. — Niekedy večer varím. — Nikdy nepijem kávu."
+  ]
+}

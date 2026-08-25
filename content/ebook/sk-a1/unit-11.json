@@ -1,0 +1,495 @@
+{
+  "title": "Saya pergi ke sekolah",
+  "title_target": "Idem do školy",
+  "goal": "Bicara tentang bepergian, dan menghadapi pembedaan yang tidak punya padanan dalam bahasa Indonesia: dua kata kerja \"pergi\" — satu untuk perjalanan sekarang, satu untuk kebiasaan.",
+  "bekal": [
+    "membedakan *ísť* dan *chodiť* dan memilih yang benar tanpa berpikir lama",
+    "menyebut tujuan dengan *do*, *na*, atau *k* sesuai jenis tempatnya",
+    "menyebut kendaraan dan menanyakan jadwal"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Ako sa dostanem do Košíc?",
+      "intro": "Budi berencana mengunjungi Košice akhir pekan ini. Ia bertanya kepada Eva di kelas.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Eva, ako sa dostanem do Košíc?",
+          "id": "Eva, bagaimana saya sampai ke Košice?",
+          "literal": "Eva, bagaimana diri saya-akan-sampai ke Košice-genitif?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Môžeš ísť vlakom alebo autobusom.",
+          "id": "Kamu bisa naik kereta atau bus.",
+          "literal": "kamu-boleh pergi kereta-instrumental atau bus-instrumental."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Čo je rýchlejšie?",
+          "id": "Mana yang lebih cepat?",
+          "literal": "apa adalah lebih-cepat?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Vlak. Ide päť a pol hodiny.",
+          "id": "Kereta. Lima setengah jam.",
+          "literal": "kereta. ia-pergi lima dan setengah jam-genitif."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "To je dlho! A ty chodíš do Košíc často?",
+          "id": "Lama juga! Dan kamu sering ke Košice?",
+          "literal": "itu adalah lama! dan kamu kamu-pergi ke Košice-genitif sering?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Chodím raz za mesiac. Rodičia tam bývajú.",
+          "id": "Sebulan sekali. Orang tua saya tinggal di sana.",
+          "literal": "saya-pergi sekali per bulan. orang-tua di-sana mereka-tinggal."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A kedy ideš najbližšie?",
+          "id": "Dan kapan kamu ke sana lagi?",
+          "literal": "dan kapan kamu-pergi paling-dekat?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Idem tento piatok. Chceš ísť so mnou?",
+          "id": "Saya pergi Jumat ini. Mau ikut saya?",
+          "literal": "saya-pergi ini Jumat. kamu-mau pergi dengan aku-instrumental?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Veľmi rád! Odkiaľ ide vlak?",
+          "id": "Mau sekali! Keretanya berangkat dari mana?",
+          "literal": "sangat senang-lk! dari-mana ia-pergi kereta?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Z hlavnej stanice. Chodím tam pešo, je to blízko.",
+          "id": "Dari stasiun utama. Saya biasa jalan kaki ke sana, dekat.",
+          "literal": "dari utama-genitif stasiun-genitif. saya-pergi ke-sana dengan-kaki, adalah itu dekat."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Tak pôjdeme spolu. Stretneme sa pred domom.",
+          "id": "Kalau begitu kita pergi bareng. Ketemu di depan rumah.",
+          "literal": "jadi kita-akan-pergi bersama. kita-akan-bertemu diri di-depan rumah-instrumental."
+        }
+      ],
+      "notes": [
+        "**Idem dan chodím adalah dua kata kerja yang berbeda, bukan dua bentuk.** *Idem tento piatok* = saya pergi Jumat ini, satu perjalanan tertentu. *Chodím raz za mesiac* = saya biasa pergi sebulan sekali, kebiasaan berulang. Bahasa Indonesia memakai kata yang sama untuk keduanya dan menyerahkan bedanya kepada kata keterangan; bahasa Slowakia mengubah kata kerjanya.",
+        "**Vlakom, autobusom, električkou** — kendaraan dinyatakan dengan **instrumental**, tanpa kata depan sama sekali. Harfiahnya \"dengan-kereta\", tetapi tidak ada kata \"dengan\" yang ditulis; ekornya sudah menyatakannya. Kasus ini dipasang lengkap di unit 17; untuk sekarang hafalkan bentuk-bentuknya sebagai bongkahan.",
+        "**Do Košíc** memakai genitif jamak, karena *Košice* adalah nama berbentuk jamak — seperti *Athens* dalam bahasa Inggris. Beberapa kota Slowakia berbentuk jamak: *Košice, Piešťany, Levice, Michalovce*. Mereka selalu memakai kata kerja jamak: *Košice **sú** krásne*.",
+        "**Ide päť hodín** — kata kerja *ísť* juga dipakai untuk lamanya perjalanan dan untuk kendaraan yang berjalan: *vlak ide*, *autobus ide*, *film ide* (filmnya sedang diputar). Kata kerja yang sama, empat pekerjaan.",
+        "**Pôjdeme** adalah bentuk nanti dari *ísť* — dan ia menyimpang: bukan *budeme ísť*, melainkan *pôjdem, pôjdeš, pôjde, pôjdeme, pôjdete, pôjdu*. Ini satu-satunya kata kerja tak tuntas yang punya bentuk nanti sendiri. Hafalkan terpisah; ia dipakai setiap hari."
+      ],
+      "grammars": [
+        {
+          "title": "Ísť atau chodiť — sekali atau berulang",
+          "body": [
+            "Bahasa Slowakia punya dua kata kerja untuk hampir setiap gerakan. Yang satu menggambarkan satu perjalanan yang sedang atau akan terjadi; yang lain menggambarkan kebiasaan atau kemampuan bergerak pada umumnya."
+          ],
+          "table": {
+            "head": [
+              "Sekali (tertentu)",
+              "Berulang (kebiasaan)",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "**ísť** — idem",
+                "**chodiť** — chodím",
+                "pergi (berjalan)"
+              ],
+              [
+                "**ísť autom** — idem autom",
+                "**jazdiť** — jazdím",
+                "pergi berkendara"
+              ],
+              [
+                "**letieť** — letím",
+                "**lietať** — lietam",
+                "terbang"
+              ],
+              [
+                "**niesť** — nesiem",
+                "**nosiť** — nosím",
+                "membawa"
+              ],
+              [
+                "**bežať** — bežím",
+                "**behať** — behám",
+                "berlari"
+              ]
+            ]
+          },
+          "after": [
+            "**Cara memilih dalam dua detik: tanya \"sekali atau sering?\"** *Teraz idem do školy* (sekarang saya sedang ke sekolah — sekali). *Každý deň chodím do školy* (setiap hari saya ke sekolah — berulang). Kata keterangan waktu di kalimat itu hampir selalu memberi tahu jawabannya.",
+            "**Chodiť juga berarti \"bisa berjalan\"** dan \"berkunjung secara teratur\": *Dieťa už chodí* (anaknya sudah bisa jalan), *Chodím na hodiny slovenčiny* (saya ikut kelas bahasa Slowakia). Ia jauh lebih luas daripada sekadar \"sering pergi\".",
+            "**Untuk pemula, kesalahan ini tidak merusak pengertian** — orang Slowakia akan tetap paham. Tetapi memilih dengan benar adalah salah satu tanda paling cepat bahwa seseorang benar-benar belajar bahasanya, karena ia tidak bisa ditebak dari bahasa mana pun yang mungkin kamu kuasai."
+          ]
+        },
+        {
+          "title": "Do, na, atau k — tiga cara mengatakan \"ke\"",
+          "body": [
+            "Ketiganya berarti \"ke\", dan ketiganya memaksa kasus yang berbeda. Untungnya pemilihannya mengikuti pola yang sudah kamu pelajari di unit 6: tempat yang memakai *v* memakai *do*, tempat yang memakai *na* tetap memakai *na*."
+          ],
+          "table": {
+            "head": [
+              "Ke mana",
+              "Kasus",
+              "Di mana (unit 6)",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**do** + genitif",
+                "genitif",
+                "*v* + lokatif",
+                "*do školy* → *v škole*"
+              ],
+              [
+                "**do** + genitif",
+                "genitif",
+                "*v* + lokatif",
+                "*do obchodu* → *v obchode*"
+              ],
+              [
+                "**na** + akusatif",
+                "akusatif",
+                "*na* + lokatif",
+                "*na poštu* → *na pošte*"
+              ],
+              [
+                "**na** + akusatif",
+                "akusatif",
+                "*na* + lokatif",
+                "*na Slovensko* → *na Slovensku*"
+              ],
+              [
+                "**k** + datif",
+                "datif",
+                "*u* + genitif",
+                "*k lekárovi* → *u lekára*"
+              ],
+              [
+                "**k** + datif",
+                "datif",
+                "*u* + genitif",
+                "*k bratovi* → *u brata*"
+              ]
+            ]
+          },
+          "after": [
+            "**Aturan yang menutup hampir semuanya: pasangkan dengan bentuk \"di\"-nya.** Kalau kamu tahu *v škole*, kamu tahu *do školy*. Kalau kamu tahu *na pošte*, kamu tahu *na poštu*. Kamu tidak sedang menghafal daftar baru — kamu sedang memakai daftar unit 6 dari arah lain.",
+            "**K dipakai untuk orang, bukan tempat.** *Idem k lekárovi* (saya ke dokter), *idem k Eve* (saya ke tempat Eva). Untuk mengatakan \"di rumah orang\", bahasa Slowakia memakai *u* + genitif: *som u lekára*, *bývam u brata*.",
+            "**Perhatikan bahwa *na* + akusatif berarti gerak, *na* + lokatif berarti diam.** Satu kata depan, dua kasus, dua arti. Ini pola yang sama dengan *doprava/vpravo* di unit 6 — bahasa Slowakia memisahkan gerak dan diam di mana pun ia bisa."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kendaraan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kolom ketiga adalah bentuk yang benar-benar kamu pakai — instrumental, tanpa kata depan. Hafalkan langsung kolom itu; bentuk dasarnya jarang muncul dalam kalimat perjalanan."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Cara baca",
+            "Naik …",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**auto** (nt)",
+              "AU-to",
+              "*autom*",
+              "mobil"
+            ],
+            [
+              "**autobus** (lk)",
+              "AU-to-bus",
+              "*autobusom*",
+              "bus"
+            ],
+            [
+              "**vlak** (lk)",
+              "vlak",
+              "*vlakom*",
+              "kereta"
+            ],
+            [
+              "**električka** (pr)",
+              "E-lek-tric-ka",
+              "*električkou*",
+              "trem"
+            ],
+            [
+              "**trolejbus** (lk)",
+              "TRO-ley-bus",
+              "*trolejbusom*",
+              "trolebus"
+            ],
+            [
+              "**metro** (nt)",
+              "MET-ro",
+              "*metrom*",
+              "kereta bawah tanah"
+            ],
+            [
+              "**lietadlo** (nt)",
+              "LYE-tad-lo",
+              "*lietadlom*",
+              "pesawat"
+            ],
+            [
+              "**bicykel** (lk)",
+              "BI-tsi-kel",
+              "*na bicykli*",
+              "sepeda"
+            ],
+            [
+              "**taxík** (lk)",
+              "TA-ksik",
+              "*taxíkom*",
+              "taksi"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dua yang menyimpang: **sepeda** memakai *na bicykli* (di atas sepeda, lokatif), bukan instrumental — karena kamu duduk **di atasnya**, bukan **di dalamnya**. Dan **jalan kaki** memakai *pešo*, satu kata mati yang tidak pernah berubah. Sama halnya *na koni* (naik kuda) dan *na motorke* (naik motor)."
+        },
+        {
+          "type": "kotak",
+          "title": "Bratislava tanpa metro",
+          "items": [
+            "Bratislava adalah salah satu ibu kota Eropa yang tidak punya metro — pembangunannya dimulai pada 1980-an lalu dihentikan, dan terowongannya masih ada di bawah tanah. Yang dipakai orang adalah *električka* (trem), *trolejbus*, dan *autobus*.",
+            "Tiketnya dibeli sebelum naik dan **wajib divalidasi** di mesin kuning di dalam kendaraan. Tiket yang tidak divalidasi dianggap tidak ada, dan pemeriksa (*revízor*) berpakaian biasa. Dendanya lima puluh euro — jauh lebih mahal daripada modul ini."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Bepergian dan jadwal",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Ako sa dostanem do …?*",
+              "Bagaimana saya sampai ke …?"
+            ],
+            [
+              "*Kedy ide ďalší vlak?*",
+              "Kereta berikutnya jam berapa?"
+            ],
+            [
+              "*Odkiaľ ide autobus?*",
+              "Busnya berangkat dari mana?"
+            ],
+            [
+              "*Z ktorého nástupišťa?*",
+              "Dari peron berapa?"
+            ],
+            [
+              "*Ako dlho to trvá?*",
+              "Berapa lama perjalanannya?"
+            ],
+            [
+              "*Kde si mám kúpiť lístok?*",
+              "Di mana saya beli tiket?"
+            ],
+            [
+              "*Jeden lístok do Košíc, prosím.*",
+              "Satu tiket ke Košice, tolong."
+            ],
+            [
+              "*Spiatočný alebo jednosmerný?*",
+              "Pulang-pergi atau sekali jalan?"
+            ],
+            [
+              "*Musím prestupovať?*",
+              "Saya harus ganti kendaraan?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Vystupujete?** adalah kalimat yang wajib kamu kenali di trem penuh. Orang di belakangmu menanyakannya untuk tahu apakah ia perlu menggeser. Jawabnya *áno* atau *nie*, dan pertanyaan itu bukan basa-basi — ia harapan agar kamu bergeser kalau jawabannya tidak."
+        },
+        {
+          "type": "kotak",
+          "title": "Kereta gratis untuk pelajar",
+          "items": [
+            "Pelajar dan mahasiswa berumur di bawah 26 tahun yang terdaftar di Slowakia — termasuk mahasiswa asing — naik kereta dalam negeri **gratis**, cukup dengan mendaftarkan diri di loket stasiun.",
+            "Kalau kamu tinggal di Slowakia untuk belajar, ini alasan yang cukup untuk mendatangi *hlavná stanica* pada minggu pertamamu. Bawalah paspor dan surat keterangan dari sekolahmu."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 9",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Sekilo kentang, tolong.",
+              "*Kilo zemiakov, prosím.*"
+            ],
+            [
+              "Saya beli sebotol air.",
+              "*Kúpim fľašu vody.*"
+            ],
+            [
+              "Kopi tanpa gula.",
+              "*Káva bez cukru.*"
+            ],
+            [
+              "Saya pergi ke toko.",
+              "*Idem do obchodu.*"
+            ],
+            [
+              "Buku kakak.",
+              "*Kniha brata.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "ísť",
+      "baca": "ist",
+      "id": "pergi (sekali)"
+    },
+    {
+      "sk": "chodiť",
+      "baca": "KHO-dyit",
+      "id": "pergi (berulang)"
+    },
+    {
+      "sk": "jazdiť",
+      "baca": "YAZ-dyit",
+      "id": "berkendara (berulang)"
+    },
+    {
+      "sk": "prísť",
+      "baca": "prist",
+      "id": "datang; tiba"
+    },
+    {
+      "sk": "odísť",
+      "baca": "O-dyist",
+      "id": "berangkat pergi"
+    },
+    {
+      "sk": "dostať sa",
+      "baca": "DOS-tat sa",
+      "id": "sampai ke"
+    },
+    {
+      "sk": "prestupovať",
+      "baca": "PRES-tu-po-vat",
+      "id": "ganti kendaraan"
+    },
+    {
+      "sk": "vystupovať",
+      "baca": "VIS-tu-po-vat",
+      "id": "turun"
+    },
+    {
+      "sk": "nastupovať",
+      "baca": "NAS-tu-po-vat",
+      "id": "naik"
+    },
+    {
+      "sk": "trvať",
+      "baca": "TER-vat",
+      "id": "berlangsung; memakan waktu"
+    },
+    {
+      "sk": "vlak",
+      "baca": "vlak",
+      "id": "kereta (lk)"
+    },
+    {
+      "sk": "autobus",
+      "baca": "AU-to-bus",
+      "id": "bus (lk)"
+    },
+    {
+      "sk": "električka",
+      "baca": "E-lek-tric-ka",
+      "id": "trem (pr)"
+    },
+    {
+      "sk": "lietadlo",
+      "baca": "LYE-tad-lo",
+      "id": "pesawat (nt)"
+    },
+    {
+      "sk": "lístok",
+      "baca": "LIS-tok",
+      "id": "tiket (lk)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slowakia.",
+      "items": [
+        "Bagaimana saya sampai ke Košice?",
+        "Kamu bisa naik kereta atau bus.",
+        "Saya pergi Jumat ini.",
+        "Kereta berikutnya jam berapa?",
+        "Berapa lama perjalanannya?",
+        "Satu tiket ke Bratislava, tolong."
+      ]
+    },
+    {
+      "prompt": "Pilih ísť atau chodiť. Tulis bentuk ja-nya.",
+      "items": [
+        "Teraz ____ do školy.",
+        "Každý deň ____ do práce.",
+        "Zajtra ____ do Košíc.",
+        "Raz za mesiac ____ k rodičom.",
+        "Tento piatok ____ do kina.",
+        "Väčšinou ____ pešo."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "Košíc / sa / do / dostanem / ako / ?",
+        "vlakom / môžeš / ísť",
+        "piatok / idem / tento",
+        "mesiac / chodím / za / raz",
+        "spolu / pôjdeme"
+      ]
+    }
+  ],
+  "answers": [
+    "Ako sa dostanem do Košíc? — Môžeš ísť vlakom alebo autobusom. — Idem tento piatok. — Kedy ide ďalší vlak? — Ako dlho to trvá? — Jeden lístok do Bratislavy, prosím.",
+    "idem — chodím — idem — chodím — idem — chodím",
+    "Ako sa dostanem do Košíc? — Môžeš ísť vlakom. — Idem tento piatok. — Chodím raz za mesiac. — Pôjdeme spolu."
+  ]
+}

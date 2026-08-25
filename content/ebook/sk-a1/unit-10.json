@@ -1,0 +1,533 @@
+{
+  "title": "Kamu suka apa?",
+  "title_target": "Čo máš rád?",
+  "goal": "Mengatakan suka dan tidak suka, dan memasang kasus keempat: datif — kasus penerima, yang dalam bahasa Slowakia dipakai untuk hal yang tidak kamu duga, termasuk untuk mengatakan bahwa sesuatu enak.",
+  "bekal": [
+    "membedakan *mať rád* dan *páčiť sa* — dua cara mengatakan suka yang tidak bisa ditukar",
+    "memakai kata ganti datif *mi, ti, mu, jej, nám, vám, im*",
+    "menceritakan kegemaran dan waktu luang"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Čo robíš vo voľnom čase?",
+      "intro": "Sesudah film, Eva dan Budi berjalan menyusuri Dunaj dan saling menanyakan kegemaran.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Páčil sa ti ten film?",
+          "id": "Kamu suka filmnya?",
+          "literal": "berkenan diri kepadamu itu film?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Veľmi. Mám rád staré filmy.",
+          "id": "Sangat. Saya suka film lama.",
+          "literal": "sangat. saya-punya senang-lk tua-jamak film-jamak."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ja tiež. A čo ešte robíš vo voľnom čase?",
+          "id": "Saya juga. Dan apa lagi yang kamu lakukan di waktu luang?",
+          "literal": "saya juga. dan apa masih kamu-lakukan di luang-lokatif waktu-lokatif?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rád varím a rád čítam. A ty?",
+          "id": "Saya suka masak dan suka baca. Dan kamu?",
+          "literal": "senang-lk saya-masak dan senang-lk saya-baca. dan kamu?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Rada chodím do prírody. Nemám rada mestá.",
+          "id": "Saya suka pergi ke alam. Saya tidak suka kota.",
+          "literal": "senang-pr saya-pergi ke alam-genitif. tidak-saya-punya senang-pr kota-jamak."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zaujímavé. A páči sa ti Bratislava?",
+          "id": "Menarik. Dan kamu suka Bratislava?",
+          "literal": "menarik. dan berkenan diri kepadamu Bratislava?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Páči, ale Košice sa mi páčia viac.",
+          "id": "Suka, tapi Košice lebih saya suka.",
+          "literal": "ia-berkenan, tetapi Košice diri kepadaku mereka-berkenan lebih."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mne sa páči všetko. Ešte je to nové.",
+          "id": "Saya suka semuanya. Semuanya masih baru.",
+          "literal": "kepadaku diri ia-berkenan semua. masih adalah itu baru."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "A chutí ti slovenské jedlo?",
+          "id": "Dan masakan Slowakia enak buat kamu?",
+          "literal": "dan ia-terasa-enak kepadamu Slowakia-nt makanan?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bryndzové halušky mi veľmi chutia!",
+          "id": "Bryndzové halušky enak sekali buat saya!",
+          "literal": "bryndza-jamak halušky kepadaku sangat mereka-terasa-enak!"
+        }
+      ],
+      "notes": [
+        "**Dua cara mengatakan suka, dan keduanya tidak bisa ditukar.** *Mám rád* berarti suka yang tahan lama — kesukaan tetap. *Páči sa mi* berarti suka yang muncul dari kesan — sesuatu berkenan bagimu. Filmnya *páčil sa mi* (saya suka menontonnya tadi malam), tetapi film lama pada umumnya *mám rád* (saya memang penggemarnya).",
+        "**Rád ikut jenis kelamin pembicara, bukan benda yang disukai.** Budi berkata *mám rád*, Eva berkata *mám rada*. Ini salah satu dari sedikit tempat di A1 di mana kamu harus tahu jenis kelaminmu sendiri untuk memilih kata — bersama *chcel/chcela by som* dan bentuk lampau di unit 13.",
+        "**Rád + kata kerja = suka melakukan.** *Rád varím* = saya suka memasak. Bukan \"saya memasak dengan gembira\" — walau harfiahnya begitu. Ini cara paling wajar mengatakan kegemaran yang berupa kegiatan, dan jauh lebih umum daripada padanan lain.",
+        "**Páči sa mi memakai susunan terbalik.** Yang menjadi pelaku kalimat adalah **benda yang disukai**, dan orangnya berbentuk datif. *Košice sa mi páčia* harfiahnya \"Košice berkenan kepadaku\" — karena Košice jamak, kata kerjanya juga jamak. Persis seperti *gustar* bahasa Spanyol.",
+        "**Chutí mi bekerja dengan cara yang sama.** *Halušky mi chutia* = \"halušky terasa enak kepadaku\". Sekali lagi makanannya yang jadi pelaku. Kalau kamu bisa memakai *páči sa mi*, kamu langsung bisa memakai *chutí mi* — polanya satu."
+      ],
+      "grammars": [
+        {
+          "title": "Datif — kasus penerima",
+          "body": [
+            "Datif menjawab pertanyaan *komu?* (kepada siapa) dan *čomu?* (kepada apa). Pekerjaan pokoknya: menandai orang yang menerima sesuatu, atau yang mengalami sesuatu."
+          ],
+          "table": {
+            "head": [
+              "Jenis kata benda",
+              "Ekor",
+              "Nominatif",
+              "Datif"
+            ],
+            "rows": [
+              [
+                "**lk bernyawa**",
+                "**-ovi**",
+                "*brat, učiteľ, lekár*",
+                "*bratovi, učiteľovi, lekárovi*"
+              ],
+              [
+                "**lk benda mati**",
+                "**-u**",
+                "*stôl, dom, obchod*",
+                "*stolu, domu, obchodu*"
+              ],
+              [
+                "**pr berakhiran -a**",
+                "**-e**",
+                "*žena, sestra, škola*",
+                "*žene, sestre, škole*"
+              ],
+              [
+                "**pr huruf lunak**",
+                "**-i**",
+                "*ulica, pokladňa*",
+                "*ulici, pokladni*"
+              ],
+              [
+                "**nt**",
+                "**-u**",
+                "*mesto, pivo, auto*",
+                "*mestu, pivu, autu*"
+              ]
+            ]
+          },
+          "after": [
+            "**Perhatikan bahwa datif perempuan sama persis dengan lokatif perempuan**: *žene, škole, ulici*. Satu bentuk, dua pekerjaan — hadiah kecil yang berarti kamu tidak perlu menghafal apa pun yang baru untuk separuh kata benda.",
+            "**Kata sifatnya**: lk dan nt memakai **-ému** (*môjmu dobrému bratovi*), pr memakai **-ej** (*mojej sestre*). Ekor *-ej* untuk perempuan kini muncul di tiga kasus sekaligus — genitif, datif, lokatif. Hafalkan sekali, pakai tiga kali.",
+            "**Kata kerja yang menuntut datif** adalah yang punya penerima: *dať* (memberi), *povedať* (mengatakan), *pomôcť* (menolong), *ďakovať* (berterima kasih), *volať* (menelepon), *veriť* (percaya), *rozumieť* (mengerti). Dan dua kata kerja rasa yang jadi pokok unit ini: *páčiť sa* dan *chutiť*. (Hati-hati: *boleť* — sakit — justru menuntut akusatif, bukan datif; ia dibahas di unit 12.)",
+            "**Kata depan berdatif: *k* dan *ku*.** *Idem k lekárovi* (saya ke dokter), *ku škole* (menuju sekolah). Beda dari *do*: *k* berarti menuju arah, *do* berarti masuk ke dalam."
+          ]
+        },
+        {
+          "title": "Kata ganti datif",
+          "body": [
+            "Sama seperti akusatif, kata ganti datif punya bentuk pendek dan panjang. Bentuk pendeknya sangat sering dipakai dan tidak pernah ditekan."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "Pendek",
+              "Panjang",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "ja",
+                "**mi**",
+                "mne",
+                "*Páči sa mi to.* — Saya suka itu."
+              ],
+              [
+                "ty",
+                "**ti**",
+                "tebe",
+                "*Chutí ti to?* — Enak buat kamu?"
+              ],
+              [
+                "on / ono",
+                "**mu**",
+                "jemu",
+                "*Dám mu knihu.* — Saya beri dia buku."
+              ],
+              [
+                "ona",
+                "**jej**",
+                "jej",
+                "*Povedz jej to.* — Bilang ke dia."
+              ],
+              [
+                "my",
+                "**nám**",
+                "nám",
+                "*Pomôž nám.* — Tolong kami."
+              ],
+              [
+                "vy",
+                "**vám**",
+                "vám",
+                "*Ďakujem vám.* — Terima kasih."
+              ],
+              [
+                "oni",
+                "**im**",
+                "im",
+                "*Volám im.* — Saya menelepon mereka."
+              ]
+            ]
+          },
+          "after": [
+            "**Bentuk pendek berada di tempat kedua** dalam kalimat, sama seperti *som* dan *sa*: *Ten film sa mi páčil*, *Veľmi mi chutí*. Kalau kamu ingin meletakkannya di awal untuk menekankan, kamu wajib memakai bentuk panjang: *Mne sa to páči*.",
+            "**Urutan tetap kalau ada beberapa kata pendek**: *som/si* dulu, lalu *sa/si*, lalu datif, lalu akusatif. *Páčil **sa mi** ten film.* *Dal **som mu ju**.* Urutan ini tidak pernah berubah, dan setelah beberapa minggu telingamu akan menolak urutan yang lain.",
+            "**Mi dan si mudah tertukar.** *Mi* = kepadaku (datif). *Si* = kamu adalah (byť) **atau** untuk diri sendiri (*dám si*). Keadaannyalah yang memisahkan, dan dalam praktik ia jarang membingungkan."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mať rád atau páčiť sa — memilih dengan benar",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "*mať rád*",
+            "*páčiť sa*"
+          ],
+          "rows": [
+            [
+              "**Jenis suka**",
+              "kesukaan tetap",
+              "kesan; berkenan"
+            ],
+            [
+              "**Pelaku kalimat**",
+              "**kamu**",
+              "**benda yang disukai**"
+            ],
+            [
+              "**Bentuk orang**",
+              "nominatif — *ja*",
+              "datif — *mi*"
+            ],
+            [
+              "**Bentuk benda**",
+              "akusatif — *kávu*",
+              "nominatif — *káva*"
+            ],
+            [
+              "**Contoh**",
+              "*Mám rád kávu.*",
+              "*Páči sa mi tá káva.*"
+            ],
+            [
+              "**Artinya**",
+              "Saya penyuka kopi.",
+              "Kopi itu berkenan bagiku."
+            ],
+            [
+              "**Untuk orang**",
+              "*Mám ju rád.* (sayang)",
+              "*Páči sa mi.* (naksir)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Baris terakhir penting untuk kehidupan sosial.** *Mám ťa rád* berarti \"aku sayang kamu\" — dipakai kepada keluarga, teman dekat, dan pasangan. *Páčiš sa mi* berarti \"kamu menarik bagiku\" — pengakuan naksir. Menukar keduanya bisa membuat percakapan berbelok tajam."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Mám rád / rada …*",
+              "Saya suka … (lk / pr)"
+            ],
+            [
+              "*Nemám rád / rada …*",
+              "Saya tidak suka …"
+            ],
+            [
+              "*Rád / rada …-m*",
+              "Saya suka melakukan …"
+            ],
+            [
+              "*Páči sa mi …*",
+              "Saya suka … (berkesan)"
+            ],
+            [
+              "*Nepáči sa mi …*",
+              "Saya tidak suka …"
+            ],
+            [
+              "*Chutí mi …*",
+              "… enak buat saya"
+            ],
+            [
+              "*Nechutí mi …*",
+              "… tidak enak buat saya"
+            ],
+            [
+              "*Milujem …*",
+              "Saya cinta …"
+            ],
+            [
+              "*Neznášam …*",
+              "Saya benci …"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Satu jebakan bentuk",
+          "items": [
+            "*Páči sa mi* untuk satu benda, *páčia sa mi* untuk banyak benda. Kata kerjanya ikut bendanya, bukan ikut kamu: *Páči sa mi tá kniha*, tetapi *Páčia sa mi tie knihy*.",
+            "Bentuk lampau juga ikut benda: *Páčil sa mi film* (lk), *Páčila sa mi kniha* (pr), *Páčilo sa mi mesto* (nt), *Páčili sa mi Košice* (jamak)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Waktu luang",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**voľný čas**",
+              "VOL-ni cas",
+              "waktu luang"
+            ],
+            [
+              "**hudba** (pr)",
+              "HUD-ba",
+              "musik"
+            ],
+            [
+              "**šport** (lk)",
+              "syport",
+              "olahraga"
+            ],
+            [
+              "**futbal** (lk)",
+              "FUD-bal",
+              "sepak bola"
+            ],
+            [
+              "**hokej** (lk)",
+              "HO-key",
+              "hoki es"
+            ],
+            [
+              "**turistika** (pr)",
+              "TU-ris-ti-ka",
+              "mendaki; hiking"
+            ],
+            [
+              "**príroda** (pr)",
+              "PRI-ro-da",
+              "alam"
+            ],
+            [
+              "**cestovanie** (nt)",
+              "TSES-to-va-nye",
+              "bepergian"
+            ],
+            [
+              "**fotografovanie** (nt)",
+              "FO-to-gra-fo-va-nye",
+              "memotret"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Untuk berolahraga, bahasa Slowakia memakai *hrať* (bermain) untuk permainan berbola dan *chodiť na* untuk kegiatan lain: *hrám futbal*, *hrám hokej*, tetapi *chodím plávať* (saya pergi berenang), *chodím na turistiku*. Untuk alat musik juga *hrať na*: *hrám na gitare*."
+        },
+        {
+          "type": "kotak",
+          "title": "Dua hal yang mengikat orang Slowakia",
+          "items": [
+            "**Hoki es** adalah olahraga nasional, dan pertandingan melawan Ceko adalah acara yang menghentikan negara. Kalau kamu ingin satu topik pembuka yang tak pernah gagal, ini dia.",
+            "**Turistika** — berjalan kaki di pegunungan — adalah kegiatan akhir pekan yang hampir universal. Slowakia punya jaringan jalur bertanda warna sepanjang lebih dari tiga belas ribu kilometer, dan hampir setiap orang punya kenangan masa kecil di Tatry. Bertanya *Chodíš na turistiku?* akan hampir selalu membuka cerita panjang."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 8",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Jam berapa sekarang?",
+              "*Koľko je hodín?*"
+            ],
+            [
+              "Filmnya mulai jam setengah delapan.",
+              "*Film začína o pol ôsmej.*"
+            ],
+            [
+              "Kamu ada waktu Jumat?",
+              "*Máš čas v piatok?*"
+            ],
+            [
+              "Kita ketemu jam lima.",
+              "*Stretneme sa o piatej.*"
+            ],
+            [
+              "Saya telat sepuluh menit.",
+              "*Meškám desať minút.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "mať rád / rada",
+      "baca": "mat rat / RA-da",
+      "id": "menyukai (lk / pr)"
+    },
+    {
+      "sk": "páčiť sa",
+      "baca": "PA-cit sa",
+      "id": "berkenan; disukai"
+    },
+    {
+      "sk": "chutiť",
+      "baca": "KHU-tyit",
+      "id": "terasa enak"
+    },
+    {
+      "sk": "milovať",
+      "baca": "MI-lo-vat",
+      "id": "mencintai"
+    },
+    {
+      "sk": "neznášať",
+      "baca": "NEZ-na-syat",
+      "id": "membenci"
+    },
+    {
+      "sk": "dať",
+      "baca": "dat",
+      "id": "memberi"
+    },
+    {
+      "sk": "povedať",
+      "baca": "PO-ve-dat",
+      "id": "mengatakan"
+    },
+    {
+      "sk": "pomôcť",
+      "baca": "PO-muots",
+      "id": "menolong"
+    },
+    {
+      "sk": "veriť",
+      "baca": "VE-rit",
+      "id": "percaya"
+    },
+    {
+      "sk": "hrať",
+      "baca": "hrat",
+      "id": "bermain"
+    },
+    {
+      "sk": "k / ku",
+      "baca": "k / ku",
+      "id": "kepada; ke arah"
+    },
+    {
+      "sk": "voľný",
+      "baca": "VOL-ni",
+      "id": "luang; bebas"
+    },
+    {
+      "sk": "hudba",
+      "baca": "HUD-ba",
+      "id": "musik (pr)"
+    },
+    {
+      "sk": "šport",
+      "baca": "syport",
+      "id": "olahraga (lk)"
+    },
+    {
+      "sk": "príroda",
+      "baca": "PRI-ro-da",
+      "id": "alam (pr)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slowakia. Kalau ada dua kemungkinan, pakai bentuk lelaki.",
+      "items": [
+        "Kamu suka filmnya?",
+        "Saya suka film lama.",
+        "Saya suka masak dan suka baca.",
+        "Saya tidak suka kota.",
+        "Masakan Slowakia enak buat saya.",
+        "Buat saya sama saja."
+      ]
+    },
+    {
+      "prompt": "Ubah ke bentuk datif.",
+      "items": [
+        "Dám knihu ____ . (brat)",
+        "Povedz to ____ . (sestra)",
+        "Idem k ____ . (lekár)",
+        "Pomôžem ____ . (učiteľka)",
+        "Ďakujem ____ . (mama)",
+        "Volám ____ . (otec)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "ti / film / sa / páčil / ten / ?",
+        "filmy / mám / staré / rád",
+        "varím / rád",
+        "mi / chutia / halušky",
+        "páči / mne / všetko / sa"
+      ]
+    }
+  ],
+  "answers": [
+    "Páčil sa ti ten film? — Mám rád staré filmy. — Rád varím a rád čítam. — Nemám rád mestá. — Slovenské jedlo mi chutí. — Je mi to jedno.",
+    "bratovi — sestre — lekárovi — učiteľke — mame — otcovi",
+    "Páčil sa ti ten film? — Mám rád staré filmy. — Rád varím. — Halušky mi chutia. — Mne sa páči všetko."
+  ]
+}

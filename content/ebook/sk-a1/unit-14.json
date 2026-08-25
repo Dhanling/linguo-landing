@@ -1,0 +1,497 @@
+{
+  "title": "Besok saya akan…",
+  "title_target": "Zajtra budem…",
+  "goal": "Menyusun rencana, dan menemukan bahwa bahasa Slowakia punya dua cara berbeda untuk mengatakan \"nanti\" — satu memakai kata bantu, satu tanpa kata bantu sama sekali.",
+  "bekal": [
+    "membentuk kalimat nanti dengan *budem* + bentuk kamus",
+    "mengenali kata kerja yang bentuk sekarangnya sudah berarti nanti",
+    "bicara tentang cuaca dan menyusun rencana akhir pekan"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Plány na víkend",
+      "intro": "Kamis sore. Eva dan Budi menyusun rencana untuk akhir pekan.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Čo budeš robiť cez víkend?",
+          "id": "Akhir pekan mau ngapain?",
+          "literal": "apa kamu-akan-ada melakukan lewat akhir-pekan?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ešte neviem. Asi budem doma.",
+          "id": "Belum tahu. Mungkin di rumah aja.",
+          "literal": "masih tidak-saya-tahu. mungkin saya-akan-ada di-rumah."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ideme s kamarátmi do Tatier. Prídeš?",
+          "id": "Kami ke Tatra sama teman-teman. Ikut?",
+          "literal": "kami-pergi dengan teman-instrumental-jamak ke Tatra-genitif. kamu-akan-datang?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rád! Ale nemám poriadne topánky.",
+          "id": "Mau! Tapi saya tidak punya sepatu yang benar.",
+          "literal": "senang-lk! tetapi tidak-saya-punya benar-jamak sepatu-jamak."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Zajtra kúpime nejaké. Poznám dobrý obchod.",
+          "id": "Besok kita beli. Saya tahu toko yang bagus.",
+          "literal": "besok kami-akan-beli beberapa. saya-kenal baik toko."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Super. A aké bude počasie?",
+          "id": "Keren. Dan cuacanya gimana?",
+          "literal": "super. dan apa-macam ia-akan-ada cuaca?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Bude pekne, ale v horách bude chladno.",
+          "id": "Cerah, tapi di gunung dingin.",
+          "literal": "ia-akan-ada bagus, tetapi di gunung-lokatif-jamak ia-akan-ada dingin."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nebude pršať?",
+          "id": "Tidak akan hujan?",
+          "literal": "tidak-ia-akan-ada menghujani?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "V sobotu nie. V nedeľu možno áno.",
+          "id": "Sabtu tidak. Minggu mungkin iya.",
+          "literal": "pada Sabtu tidak. pada Minggu mungkin ya."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tak sa vrátime v sobotu večer.",
+          "id": "Kalau begitu kita pulang Sabtu malam.",
+          "literal": "jadi diri kita-akan-kembali pada Sabtu malam."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Presne tak. Napíšem ti podrobnosti.",
+          "id": "Tepat. Saya kirim detailnya nanti.",
+          "literal": "tepat begitu. saya-akan-tulis kepadamu perincian-jamak."
+        }
+      ],
+      "notes": [
+        "**Dua cara mengatakan nanti dalam satu dialog.** *Budem robiť*, *budem čakať*, *bude pršať* memakai kata bantu. Tetapi *prídeš*, *kúpime*, *vrátime sa*, *napíšem* tidak memakai kata bantu apa pun — bentuknya persis seperti bentuk sekarang, dan artinya tetap nanti. Alasannya jadi pokok unit berikutnya.",
+        "**Aturan sementara yang sudah cukup untuk sekarang:** kata kerja yang punya **awalan** (*pri-, kú-, vrá-, na-*) biasanya sudah berarti nanti dalam bentuk sekarangnya. Kata kerja tanpa awalan memakai *budem*. Aturan ini bocor di beberapa tempat, tetapi ia menutup sebagian besar kalimat A1.",
+        "**Bude pekne, bude chladno** — cuaca dinyatakan tanpa pelaku sama sekali. Tidak ada \"itu\" atau \"cuacanya\" — cukup *bude* + kata keterangan. Bahasa Indonesia melakukan hal yang sama: \"nanti dingin\", tanpa subjek.",
+        "**Pršať berarti \"turun hujan\", satu kata untuk seluruh peristiwa.** *Prší* = hujan sedang turun. *Pršalo* = tadi hujan. *Bude pršať* = nanti hujan. Perhatikan bahwa ia satu-satunya kata kerja di dialog ini yang tetap memakai *bude* walau berbicara tentang nanti — karena ia tak tuntas.",
+        "**Ďakujem, že…** — cara berterima kasih atas sesuatu yang tertentu. Kata *že* berarti \"bahwa\" dan selalu didahului koma dalam tulisan. Perhatikan juga *si ma pozvala* dengan ekor perempuan: Eva yang mengundang, jadi ekornya *-la*."
+      ],
+      "grammars": [
+        {
+          "title": "Budem + bentuk kamus",
+          "body": [
+            "Cara pertama, dan yang paling mudah: pasangkan bentuk nanti dari *byť* dengan bentuk kamus kata kerjanya. Persis seperti *will* bahasa Inggris."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "*byť* nanti",
+              "Contoh",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "ja",
+                "**budem**",
+                "*budem robiť*",
+                "saya akan mengerjakan"
+              ],
+              [
+                "ty",
+                "**budeš**",
+                "*budeš čítať*",
+                "kamu akan membaca"
+              ],
+              [
+                "on / ona",
+                "**bude**",
+                "*bude pracovať*",
+                "dia akan bekerja"
+              ],
+              [
+                "my",
+                "**budeme**",
+                "*budeme variť*",
+                "kami akan memasak"
+              ],
+              [
+                "vy",
+                "**budete**",
+                "*budete čakať*",
+                "kalian akan menunggu"
+              ],
+              [
+                "oni",
+                "**budú**",
+                "*budú spať*",
+                "mereka akan tidur"
+              ]
+            ]
+          },
+          "after": [
+            "**Budem sendiri berarti \"saya akan ada\"**: *Budem doma* (saya akan di rumah), *Bude tam veľa ľudí* (di sana akan banyak orang). Tanpa kata kerja kedua, ia berdiri sendiri sebagai \"akan ada\".",
+            "**Sangkalannya menyatu di *budem***: *nebudem, nebudeš, nebude, nebudeme, nebudete, nebudú*. Perhatikan bahwa ini **berbeda** dari bentuk sekarang *byť*, yang memakai kata terpisah *nie som*. Bentuk nanti kembali ke aturan umum.",
+            "**Satu kata kerja punya bentuk nanti sendiri: *ísť*.** Bukan *budem ísť*, melainkan **pôjdem, pôjdeš, pôjde, pôjdeme, pôjdete, pôjdu**. Hafalkan terpisah — ia dipakai setiap hari, dan *budem ísť* langsung terdengar salah."
+          ]
+        },
+        {
+          "title": "Bentuk sekarang yang sudah berarti nanti",
+          "body": [
+            "Cara kedua, dan yang tidak punya padanan dalam bahasa Indonesia maupun Inggris: sebagian kata kerja bahasa Slowakia **tidak bisa** dipakai untuk sekarang. Bentuk sekarangnya otomatis berarti nanti."
+          ],
+          "table": {
+            "head": [
+              "Tak tuntas — pakai budem",
+              "Tuntas — sudah berarti nanti",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "*budem robiť*",
+                "**urobím**",
+                "saya akan mengerjakan (sampai selesai)"
+              ],
+              [
+                "*budem písať*",
+                "**napíšem**",
+                "saya akan menulis (sampai selesai)"
+              ],
+              [
+                "*budem čítať*",
+                "**prečítam**",
+                "saya akan membaca (sampai habis)"
+              ],
+              [
+                "*budem kupovať*",
+                "**kúpim**",
+                "saya akan membeli"
+              ],
+              [
+                "*budem platiť*",
+                "**zaplatím**",
+                "saya akan membayar"
+              ],
+              [
+                "*budem prichádzať*",
+                "**prídem**",
+                "saya akan datang"
+              ],
+              [
+                "*budem sa vracať*",
+                "**vrátim sa**",
+                "saya akan kembali"
+              ],
+              [
+                "*budem variť*",
+                "**uvarím**",
+                "saya akan memasak (sampai jadi)"
+              ]
+            ]
+          },
+          "after": [
+            "**Bedanya bukan waktu, melainkan tuntas atau tidak.** *Budem písať list* = saya akan menghabiskan waktu menulis surat (kegiatannya). *Napíšem list* = saya akan menyelesaikan surat itu (hasilnya). Keduanya berbicara tentang nanti; yang berbeda adalah apakah yang ditekankan prosesnya atau selesainya.",
+            "**Karena itu bentuk tuntas tidak punya bentuk sekarang.** Kamu tidak bisa \"sedang menyelesaikan\" — begitu selesai, ia sudah lewat. Inilah sebabnya bentuk sekarangnya melompat ke masa nanti; tidak ada tempat lain untuknya.",
+            "**Untuk sekarang, cukup kenali polanya**: awalan *u-, na-, pre-, z-, za-, pri-, vy-* biasanya menandai bentuk tuntas. Seluruh sistemnya dipasang lengkap di unit berikutnya — unit yang paling berat dalam modul ini, dan yang paling banyak membuka pintu."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Cuaca",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**Aké je počasie?**",
+              "A-ke ye PO-ca-sye",
+              "Cuacanya bagaimana?"
+            ],
+            [
+              "**Je pekne.**",
+              "ye PEK-nye",
+              "Cerah."
+            ],
+            [
+              "**Je slnečno.**",
+              "ye SL-nyec-no",
+              "Cerah berjemur."
+            ],
+            [
+              "**Je teplo.**",
+              "ye TEP-lo",
+              "Hangat."
+            ],
+            [
+              "**Je horúco.**",
+              "ye HO-ru-tso",
+              "Panas."
+            ],
+            [
+              "**Je chladno.**",
+              "ye KHLAD-no",
+              "Dingin."
+            ],
+            [
+              "**Je zima.**",
+              "ye ZI-ma",
+              "Dingin sekali."
+            ],
+            [
+              "**Prší.**",
+              "PER-syi",
+              "Hujan."
+            ],
+            [
+              "**Sneží.**",
+              "SNYE-zhi",
+              "Turun salju."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa cuaca hampir selalu memakai **kalimat tanpa pelaku**: *je pekne*, *prší*, *sneží*. Tidak ada kata untuk \"itu\" atau \"cuacanya\" — kata kerjanya berdiri sendiri. Bahasa Inggris wajib menambahkan *it*; bahasa Indonesia dan Slowakia sama-sama tidak."
+        },
+        {
+          "type": "kotak",
+          "title": "Empat musim yang benar-benar berbeda",
+          "items": [
+            "Slowakia punya empat musim yang tegas. Musim panas bisa mencapai 35°C di Bratislava, musim dingin turun sampai −15°C di pegunungan, dan salju di Tatry bertahan dari November sampai April.",
+            "Untuk pembaca yang baru datang dari iklim tropis, dua hal yang sering mengejutkan: **matahari terbenam pukul empat sore** di bulan Desember, dan **terang sampai pukul sembilan malam** di bulan Juni. Perbedaannya lima jam, dan tubuh butuh waktu untuk menerimanya."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Menyusun rencana",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Čo budeš robiť …?*",
+              "Kamu mau ngapain …?"
+            ],
+            [
+              "*Máš plány na víkend?*",
+              "Ada rencana akhir pekan?"
+            ],
+            [
+              "*Nechceš ísť …?*",
+              "Mau pergi … tidak?"
+            ],
+            [
+              "*Poď s nami!*",
+              "Ikut kami!"
+            ],
+            [
+              "*Rád / rada pôjdem.*",
+              "Saya mau ikut."
+            ],
+            [
+              "*Ešte neviem.*",
+              "Belum tahu."
+            ],
+            [
+              "*Možno.*",
+              "Mungkin."
+            ],
+            [
+              "*Musím sa spýtať doma.*",
+              "Saya harus tanya dulu di rumah."
+            ],
+            [
+              "*Bohužiaľ nemôžem.*",
+              "Sayangnya saya tidak bisa."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Nechceš ísť …?** — bahasa Slowakia sering mengajak dengan **pertanyaan bersangkal**, dan itu justru terdengar lebih sopan, bukan kurang. *Nechceš kávu?* = \"Mau kopi?\" Ini kebiasaan yang butuh waktu untuk diterima kalau kamu terbiasa mendengar sangkalan sebagai penolakan."
+        },
+        {
+          "type": "kotak",
+          "title": "Tatry: satu tempat yang wajib dilihat",
+          "items": [
+            "**Vysoké Tatry** adalah pegunungan alpen terkecil di dunia — hanya 26 kilometer panjangnya — tetapi puncaknya mencapai 2.655 meter (Gerlachovský štít). Ia muat dikunjungi dalam satu akhir pekan.",
+            "*Štrbské Pleso*, *Hrebienok*, dan *Skalnaté pleso* bisa dicapai dengan kereta gigi atau kereta gantung, jadi kamu tidak perlu mendaki untuk melihat pemandangannya.",
+            "Satu peringatan sungguhan: cuaca di sana berubah dalam hitungan menit, dan jalur bertanda ditutup dari 1 November sampai 15 Juni. Bawa jaket walau di Bratislava tiga puluh derajat."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 12",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Saya kurang enak badan.",
+              "*Nie je mi dobre.*"
+            ],
+            [
+              "Kepala saya sakit.",
+              "*Bolí ma hlava.*"
+            ],
+            [
+              "Saya kedinginan.",
+              "*Je mi zima.*"
+            ],
+            [
+              "Apotek terdekat di mana?",
+              "*Kde je najbližšia lekáreň?*"
+            ],
+            [
+              "Saya sudah lebih baik.",
+              "*Už mi je lepšie.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "budem",
+      "baca": "BU-dyem",
+      "id": "saya akan ada"
+    },
+    {
+      "sk": "pôjdem",
+      "baca": "PUOY-dyem",
+      "id": "saya akan pergi"
+    },
+    {
+      "sk": "počasie",
+      "baca": "PO-ca-sye",
+      "id": "cuaca (nt)"
+    },
+    {
+      "sk": "pršať",
+      "baca": "PER-syat",
+      "id": "turun hujan"
+    },
+    {
+      "sk": "snežiť",
+      "baca": "SNYE-zhit",
+      "id": "turun salju"
+    },
+    {
+      "sk": "vietor",
+      "baca": "VYE-tor",
+      "id": "angin (lk)"
+    },
+    {
+      "sk": "slnko",
+      "baca": "SLN-ko",
+      "id": "matahari (nt)"
+    },
+    {
+      "sk": "stupeň",
+      "baca": "STU-penj",
+      "id": "derajat (lk)"
+    },
+    {
+      "sk": "teplo",
+      "baca": "TEP-lo",
+      "id": "hangat"
+    },
+    {
+      "sk": "chladno",
+      "baca": "KHLAD-no",
+      "id": "dingin"
+    },
+    {
+      "sk": "horúco",
+      "baca": "HO-ru-tso",
+      "id": "panas"
+    },
+    {
+      "sk": "plán",
+      "baca": "plan",
+      "id": "rencana (lk)"
+    },
+    {
+      "sk": "možno",
+      "baca": "MOZH-no",
+      "id": "mungkin"
+    },
+    {
+      "sk": "asi",
+      "baca": "A-si",
+      "id": "kira-kira; mungkin"
+    },
+    {
+      "sk": "určite",
+      "baca": "UR-ci-tye",
+      "id": "pasti"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slowakia.",
+      "items": [
+        "Akhir pekan mau ngapain?",
+        "Belum tahu. Mungkin di rumah aja.",
+        "Cuacanya gimana?",
+        "Cerah, tapi di gunung dingin.",
+        "Tidak akan hujan?",
+        "Saya kabari nanti."
+      ]
+    },
+    {
+      "prompt": "Ubah ke bentuk nanti dengan budem.",
+      "items": [
+        "Robím. → ____",
+        "Čítaš. → ____",
+        "Pracuje. → ____",
+        "Varíme. → ____",
+        "Čakáte. → ____",
+        "Spia. → ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "robiť / budeš / víkend / čo / cez / ?",
+        "doma / budem / asi",
+        "počasie / bude / aké / ?",
+        "pršať / nebude / ?",
+        "ti / napíšem"
+      ]
+    }
+  ],
+  "answers": [
+    "Čo budeš robiť cez víkend? — Ešte neviem. Asi budem doma. — Aké je počasie? — Bude pekne, ale v horách bude chladno. — Nebude pršať? — Napíšem ti.",
+    "Budem robiť. — Budeš čítať. — Bude pracovať. — Budeme variť. — Budete čakať. — Budú spať.",
+    "Čo budeš robiť cez víkend? — Asi budem doma. — Aké bude počasie? — Nebude pršať? — Napíšem ti."
+  ]
+}

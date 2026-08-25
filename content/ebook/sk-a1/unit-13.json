@@ -1,0 +1,568 @@
+{
+  "title": "Kemarin saya di rumah",
+  "title_target": "Včera som bol doma",
+  "goal": "Menceritakan apa yang sudah lewat, dan menghadapi dua hal sekaligus: kata kerja lampau yang ikut jenis kelamin pembicara, dan kata kecil *som* yang wajib berdiri di tempat kedua.",
+  "bekal": [
+    "membentuk kalimat lampau untuk pelaku mana pun, dengan ekor jenis kelamin yang benar",
+    "meletakkan *som/si/sme/ste* di tempat yang benar — tempat kedua, selalu",
+    "menceritakan akhir pekan yang sudah lewat"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Aký si mal víkend?",
+      "intro": "Senin pagi di kelas. Eva dan Budi bertukar cerita tentang akhir pekan.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Ahoj! Aký si mal víkend?",
+          "id": "Halo! Gimana akhir pekanmu?",
+          "literal": "halo! apa-macam kamu-adalah punya-lk akhir-pekan?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Veľmi dobrý. Bol som v Košiciach.",
+          "id": "Bagus sekali. Saya ke Košice.",
+          "literal": "sangat baik. ada-lk saya-adalah di Košice-lokatif."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Naozaj? A čo si tam robil?",
+          "id": "Serius? Ngapain aja di sana?",
+          "literal": "sungguh? dan apa kamu-adalah di-sana lakukan-lk?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Chodil som po meste a fotil som staré domy.",
+          "id": "Saya jalan-jalan keliling kota dan memotret rumah-rumah tua.",
+          "literal": "pergi-lk saya-adalah sepanjang kota-lokatif dan potret-lk saya-adalah tua-jamak rumah-jamak."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Videl si Dóm svätej Alžbety?",
+          "id": "Kamu lihat Katedral Santa Elisabeth?",
+          "literal": "lihat-lk kamu-adalah katedral suci-genitif Alžbeta-genitif?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Áno! Bol som tam dvakrát. Je nádherný.",
+          "id": "Ya! Saya ke sana dua kali. Bagus sekali.",
+          "literal": "ya! ada-lk saya-adalah di-sana dua-kali. ia-adalah indah."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "A čo si jedol?",
+          "id": "Dan makan apa?",
+          "literal": "dan apa kamu-adalah makan-lk?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Konečne som ochutnal bryndzové halušky.",
+          "id": "Akhirnya saya coba bryndzové halušky.",
+          "literal": "akhirnya saya-adalah cicip-lk bryndza-jamak halušky."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "A ako ti chutili?",
+          "id": "Enak?",
+          "literal": "dan bagaimana kepadamu mereka-terasa-enak-jamak?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Prvýkrát mi nechutili, druhýkrát áno.",
+          "id": "Pertama kali tidak enak, kedua kali enak.",
+          "literal": "pertama-kali kepadaku tidak-mereka-terasa-enak, kedua-kali ya."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ja som bola doma. Nič som nerobila.",
+          "id": "Saya di rumah. Saya tidak ngapa-ngapain.",
+          "literal": "saya saya-adalah ada-pr di-rumah. tak-apa saya-adalah tidak-lakukan-pr."
+        }
+      ],
+      "notes": [
+        "**Bol som tetapi bola som.** Budi lelaki, jadi ia berkata *bol som*; Eva perempuan, jadi ia berkata *bola som*. Kata kerja lampau bahasa Slowakia **selalu** ikut jenis kelamin pelakunya — termasuk ketika pelakunya kamu sendiri. Ini titik yang sering dilupakan berbulan-bulan oleh pelajar dari bahasa yang tidak punya jenis kelamin.",
+        "**Som selalu di tempat kedua.** Perhatikan urutan yang berubah-ubah di dialog: *Bol som v Košiciach*, *Ja som bol doma*, *Konečne som ochutnal*, *Nič som nerobila*. Apa pun yang berdiri di tempat pertama, *som* menyusul langsung sesudahnya — tidak pernah di awal, tidak pernah di akhir.",
+        "**Orang ketiga tidak memakai apa pun.** *Bol som* (saya), *bol si* (kamu), tetapi cuma *bol* untuk \"dia\". Bahasa Slowakia membuang *je* di sini, sama seperti ia membuang *je* dalam *Ő tanár* di bahasa Hungaria — kecuali di sini alasannya karena ekor *-l* sudah membawa jenis kelaminnya.",
+        "**Nič som nerobila** — sangkalan ganda lagi, dan perhatikan bahwa *som* menyelip di antara *nič* dan *nerobila*. Kata pendek selalu masuk ke celah kedua, bahkan kalau itu membelah bagian yang terasa menyatu.",
+        "**Chodil som po meste** — kata depan *po* + lokatif berarti \"berkeliling di\", bukan \"sesudah\". *Chodiť po meste* = berjalan-jalan keliling kota. Kata depan yang sama berarti \"sesudah\" kalau diikuti waktu: *po obede* (sesudah makan siang)."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk lampau — batang + l + som",
+          "body": [
+            "Bentuk lampau bahasa Slowakia dibentuk dengan dua bagian: **kata kerja berekor *-l* yang ikut jenis kelamin pelakunya**, ditambah **bentuk *byť* sekarang** sebagai penanda siapa pelakunya. Orang ketiga tidak memakai bagian kedua sama sekali."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "*robiť* (lelaki)",
+              "*robiť* (perempuan)",
+              "Sangkalan"
+            ],
+            "rows": [
+              [
+                "ja",
+                "robi**l som**",
+                "robi**la som**",
+                "nerobil som"
+              ],
+              [
+                "ty",
+                "robi**l si**",
+                "robi**la si**",
+                "nerobil si"
+              ],
+              [
+                "on",
+                "robi**l**",
+                "—",
+                "nerobil"
+              ],
+              [
+                "ona",
+                "—",
+                "robi**la**",
+                "nerobila"
+              ],
+              [
+                "ono",
+                "robi**lo**",
+                "robi**lo**",
+                "nerobilo"
+              ],
+              [
+                "my",
+                "robi**li sme**",
+                "robi**li sme**",
+                "nerobili sme"
+              ],
+              [
+                "vy",
+                "robi**li ste**",
+                "robi**li ste**",
+                "nerobili ste"
+              ],
+              [
+                "oni / ony",
+                "robi**li**",
+                "robi**li**",
+                "nerobili"
+              ]
+            ]
+          },
+          "after": [
+            "**Cara membentuknya: buang *-ť* dari bentuk kamus, tambahkan *-l*.** *Robiť → robil*. *Čítať → čítal*. *Bývať → býval*. *Hovoriť → hovoril*. *Pracovať → pracoval*. Untuk sebagian besar kata kerja, ini semua yang perlu kamu tahu.",
+            "**Jamak selalu *-li*, tanpa memandang jenis kelamin** — kabar baik yang menghemat setengah tabel. (Dalam tulisan resmi ada perbedaan *-li* dan *-ly*, tetapi bunyinya sama persis dan aturan itu sudah dihapus dari bahasa Slowakia modern.)",
+            "**Sangkalannya cukup menambahkan *ne-* pada kata berekor *-l*.** *Nerobil som*, *nebol som*, *nevidel som*. Kata *som* tidak ikut disangkal."
+          ]
+        },
+        {
+          "title": "Tempat kedua — hukum yang mengatur semua kata pendek",
+          "body": [
+            "Kata-kata pendek bahasa Slowakia — *som, si, sme, ste*, *sa, si*, *mi, ti, mu, jej*, *ma, ťa, ho, ju* — tidak pernah ditekan, dan karena itu tidak pernah bisa berdiri di awal kalimat. Semuanya berkumpul di **tempat kedua**, langsung sesudah bagian pertama kalimat."
+          ],
+          "table": {
+            "head": [
+              "Kalimat",
+              "Tempat pertama",
+              "Kata pendek",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "*Bol **som** doma.*",
+                "Bol",
+                "som",
+                "Saya di rumah."
+              ],
+              [
+                "*Včera **som** bol doma.*",
+                "Včera",
+                "som",
+                "Kemarin saya di rumah."
+              ],
+              [
+                "*Ja **som** bol doma.*",
+                "Ja",
+                "som",
+                "Sayalah yang di rumah."
+              ],
+              [
+                "*Nič **som** nerobil.*",
+                "Nič",
+                "som",
+                "Saya tak berbuat apa-apa."
+              ],
+              [
+                "*Páčil **sa mi** film.*",
+                "Páčil",
+                "sa mi",
+                "Saya suka filmnya."
+              ],
+              [
+                "*Kúpil **som si** knihu.*",
+                "Kúpil",
+                "som si",
+                "Saya beli buku."
+              ],
+              [
+                "*Dal **som mu ju**.*",
+                "Dal",
+                "som mu ju",
+                "Saya beri dia itu."
+              ]
+            ]
+          },
+          "after": [
+            "**Urutan di dalam kelompok itu tetap:** *som/si/sme/ste* dulu, lalu *sa/si*, lalu datif (*mi, ti, mu*), lalu akusatif (*ma, ťa, ho, ju*). Urutan ini tidak pernah berubah, dan sesudah beberapa minggu telingamu akan menolak urutan lain sebelum otakmu sempat menjelaskan kenapa.",
+            "**Kesalahan yang paling sering:** meletakkan *som* di awal kalimat (*Som bol doma* — salah) atau di akhir (*Včera bol doma som* — salah). Kalau kamu ragu, tanyakan: \"apa kata pertamanya?\" Lalu selipkan *som* tepat sesudahnya.",
+            "**Kenapa aturannya ada?** Karena kata-kata itu tidak punya tekanan sendiri, ia harus menempel pada kata yang punya. Tempat kedua adalah tempat ia bisa menempel pada kata pertama tanpa mengganggu iramanya. Bahasa Ceko, Polandia, Serbia, dan bahasa Yunani kuno melakukan hal yang sama."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata kerja lampau yang menyimpang",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sebagian besar kata kerja cuma membuang *-ť* dan menambahkan *-l*. Sebelas berikut tidak, dan kesebelasnya dipakai setiap hari — jadi menghafalnya sekarang jauh lebih murah daripada mengulang-ulang kesalahan nanti."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bentuk kamus",
+            "Lampau (lk)",
+            "Lampau (pr)",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**byť**",
+              "bol",
+              "bola",
+              "ada; adalah"
+            ],
+            [
+              "**ísť**",
+              "**išiel**",
+              "**išla**",
+              "pergi"
+            ],
+            [
+              "**prísť**",
+              "**prišiel**",
+              "**prišla**",
+              "datang"
+            ],
+            [
+              "**jesť**",
+              "**jedol**",
+              "**jedla**",
+              "makan"
+            ],
+            [
+              "**piť**",
+              "pil",
+              "pila",
+              "minum"
+            ],
+            [
+              "**môcť**",
+              "**mohol**",
+              "**mohla**",
+              "boleh; sanggup"
+            ],
+            [
+              "**chcieť**",
+              "**chcel**",
+              "**chcela**",
+              "mau"
+            ],
+            [
+              "**vedieť**",
+              "**vedel**",
+              "**vedela**",
+              "tahu"
+            ],
+            [
+              "**vidieť**",
+              "videl",
+              "videla",
+              "melihat"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan pola yang berulang di kolom kedua: **-šiel/-šla** untuk kata kerja gerak (*išiel, prišiel*), dan **-ol/-la** untuk beberapa lainnya (*mohol, jedol*). Bentuk lelakinya menyelipkan huruf hidup yang hilang lagi di bentuk perempuannya — *mohol* tetapi *mohla*, *jedol* tetapi *jedla*."
+        },
+        {
+          "type": "kotak",
+          "title": "Satu titik yang menyelamatkan banyak kalimat",
+          "items": [
+            "Bentuk perempuan hampir selalu **lebih pendek** daripada bentuk lelaki di kata kerja yang menyimpang: *mohol/mohla*, *jedol/jedla*, *išiel/išla*.",
+            "Kalau kamu perempuan dan ragu, coba buang huruf hidup terakhir dari bentuk lelakinya lalu tambahkan *-a*. Ia benar jauh lebih sering daripada tidak."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Menceritakan yang sudah lewat",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kata keterangan",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**včera**",
+              "FCE-ra",
+              "kemarin"
+            ],
+            [
+              "**predvčerom**",
+              "PRET-fce-rom",
+              "kemarin dulu"
+            ],
+            [
+              "**minulý týždeň**",
+              "MI-nu-li TISH-dyenj",
+              "minggu lalu"
+            ],
+            [
+              "**minulý mesiac**",
+              "MI-nu-li ME-syats",
+              "bulan lalu"
+            ],
+            [
+              "**minulý rok**",
+              "MI-nu-li rok",
+              "tahun lalu"
+            ],
+            [
+              "**pred rokom**",
+              "pret RO-kom",
+              "setahun yang lalu"
+            ],
+            [
+              "**pred chvíľou**",
+              "pret KHVI-lyou",
+              "barusan"
+            ],
+            [
+              "**kedysi**",
+              "KE-di-si",
+              "dulu sekali"
+            ],
+            [
+              "**naposledy**",
+              "NA-po-sle-di",
+              "terakhir kali"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pertanyaan dan jawaban",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Aký si mal víkend?*",
+              "Gimana akhir pekanmu? (kepada lelaki)"
+            ],
+            [
+              "*Aký si mala víkend?*",
+              "Gimana akhir pekanmu? (kepada perempuan)"
+            ],
+            [
+              "*Čo si robil / robila?*",
+              "Kamu ngapain aja?"
+            ],
+            [
+              "*Kde si bol / bola?*",
+              "Kamu ke mana?"
+            ],
+            [
+              "*Bolo to super!*",
+              "Seru banget!"
+            ],
+            [
+              "*Nič som nerobil.*",
+              "Saya tidak ngapa-ngapain."
+            ],
+            [
+              "*Oddýchol som si.*",
+              "Saya istirahat."
+            ],
+            [
+              "*Bol som prvýkrát v …*",
+              "Saya baru pertama kali ke …"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa **pertanyaannya pun ikut jenis kelamin lawan bicara**: *Kde si bol?* kepada lelaki, *Kde si bola?* kepada perempuan. Kamu perlu memutuskan bentuknya sebelum kalimatnya keluar — dan itulah alasan bagian ini terasa berat pada minggu pertama, lalu berhenti terasa apa-apa pada minggu ketiga."
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 11",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Bagaimana saya sampai ke Košice?",
+              "*Ako sa dostanem do Košíc?*"
+            ],
+            [
+              "Kamu bisa naik kereta.",
+              "*Môžeš ísť vlakom.*"
+            ],
+            [
+              "Saya sebulan sekali ke sana.",
+              "*Chodím tam raz za mesiac.*"
+            ],
+            [
+              "Kereta berikutnya jam berapa?",
+              "*Kedy ide ďalší vlak?*"
+            ],
+            [
+              "Saya pergi ke dokter.",
+              "*Idem k lekárovi.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "včera",
+      "baca": "FCE-ra",
+      "id": "kemarin"
+    },
+    {
+      "sk": "minulý",
+      "baca": "MI-nu-li",
+      "id": "yang lalu"
+    },
+    {
+      "sk": "konečne",
+      "baca": "KO-nyec-ne",
+      "id": "akhirnya"
+    },
+    {
+      "sk": "naposledy",
+      "baca": "NA-po-sle-di",
+      "id": "terakhir kali"
+    },
+    {
+      "sk": "prvýkrát",
+      "baca": "PER-vi-krat",
+      "id": "pertama kali"
+    },
+    {
+      "sk": "dvakrát",
+      "baca": "DVA-krat",
+      "id": "dua kali"
+    },
+    {
+      "sk": "ochutnať",
+      "baca": "O-khut-nat",
+      "id": "mencicipi"
+    },
+    {
+      "sk": "fotiť",
+      "baca": "FO-tyit",
+      "id": "memotret"
+    },
+    {
+      "sk": "oddýchnuť si",
+      "baca": "OD-dikh-nut si",
+      "id": "beristirahat"
+    },
+    {
+      "sk": "stretnúť",
+      "baca": "STRET-nut",
+      "id": "bertemu"
+    },
+    {
+      "sk": "zostať",
+      "baca": "ZOS-tat",
+      "id": "tinggal; menetap"
+    },
+    {
+      "sk": "vrátiť sa",
+      "baca": "VRA-tyit sa",
+      "id": "kembali"
+    },
+    {
+      "sk": "dóm",
+      "baca": "dom",
+      "id": "katedral (lk)"
+    },
+    {
+      "sk": "nádherný",
+      "baca": "NAD-her-ni",
+      "id": "indah sekali"
+    },
+    {
+      "sk": "svätý",
+      "baca": "SVE-ti",
+      "id": "suci"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slowakia. Pakai bentuk lelaki untuk \"saya\".",
+      "items": [
+        "Kemarin saya di rumah.",
+        "Saya ke Košice.",
+        "Ngapain aja di sana?",
+        "Saya jalan-jalan keliling kota.",
+        "Saya tidak ngapa-ngapain.",
+        "Akhirnya saya coba bryndzové halušky."
+      ]
+    },
+    {
+      "prompt": "Ubah ke bentuk lampau. Pakai pelaku ja lelaki.",
+      "items": [
+        "Robím. → ____",
+        "Čítam. → ____",
+        "Bývam v Bratislave. → ____",
+        "Hovorím po slovensky. → ____",
+        "Pracujem. → ____",
+        "Vidím ju. → ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "si / víkend / aký / mal / ?",
+        "Košiciach / som / bol / v",
+        "robil / si / tam / čo / ?",
+        "nerobila / som / nič",
+        "chutili / ti / ako / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Včera som bol doma. — Bol som v Košiciach. — Čo si tam robil? — Chodil som po meste. — Nič som nerobil. — Konečne som ochutnal bryndzové halušky.",
+    "Robil som. — Čítal som. — Býval som v Bratislave. — Hovoril som po slovensky. — Pracoval som. — Videl som ju.",
+    "Aký si mal víkend? — Bol som v Košiciach. — Čo si tam robil? — Nič som nerobila. — Ako ti chutili?"
+  ]
+}

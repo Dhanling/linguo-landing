@@ -1,0 +1,454 @@
+{
+  "title": "Kamu dari mana?",
+  "title_target": "Odkiaľ si?",
+  "goal": "Menyebut asal dan tempat tinggal, mengatakan bahasa apa yang kamu bisa, dan memasang aturan yang mengendalikan seluruh sisa modul ini: jenis kelamin kata benda ditebak dari huruf terakhirnya.",
+  "bekal": [
+    "menjawab *Odkiaľ si?* dan *Kde bývaš?* dengan bentuk yang benar",
+    "menebak jenis kelamin kata benda apa pun dari huruf terakhirnya — dengan ketepatan di atas sembilan dari sepuluh",
+    "menyangkal kata kerja mana pun dengan awalan *ne-* yang menyatu"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — V kaviarni po hodine",
+      "intro": "Sesudah kelas, Eva dan Budi duduk di kafe seberang sekolah. Eva ingin tahu lebih banyak.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Budi, odkiaľ si?",
+          "id": "Budi, kamu dari mana?",
+          "literal": "Budi, dari-mana kamu-adalah?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Som z Indonézie. A ty?",
+          "id": "Saya dari Indonesia. Dan kamu?",
+          "literal": "saya-adalah dari Indonesia. dan kamu?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ja som z Košíc, ale teraz bývam v Bratislave.",
+          "id": "Saya dari Košice, tapi sekarang saya tinggal di Bratislava.",
+          "literal": "saya saya-adalah dari Košice, tetapi sekarang saya-tinggal di Bratislava."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja tu bývam len dva mesiace.",
+          "id": "Saya baru tinggal di sini dua bulan.",
+          "literal": "saya di-sini saya-tinggal hanya dua bulan."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "A hovoríš už po slovensky!",
+          "id": "Dan kamu sudah bisa bahasa Slowakia!",
+          "literal": "dan kamu-bicara sudah menurut Slowakia!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Trochu. Ešte nehovorím dobre.",
+          "id": "Sedikit. Saya belum bisa bicara dengan baik.",
+          "literal": "sedikit. masih tidak-saya-bicara baik."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Nevadí. Aké jazyky vieš?",
+          "id": "Tidak apa-apa. Bahasa apa saja yang kamu bisa?",
+          "literal": "tidak-mengganggu. apa-macam bahasa-bahasa kamu-tahu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Po indonézsky, po anglicky a trochu po nemecky.",
+          "id": "Bahasa Indonesia, Inggris, dan sedikit Jerman.",
+          "literal": "menurut Indonesia, menurut Inggris dan sedikit menurut Jerman."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "To je super! Ja neviem po nemecky.",
+          "id": "Itu keren! Saya tidak bisa bahasa Jerman.",
+          "literal": "itu adalah super! saya tidak-saya-tahu menurut Jerman."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ale vieš po slovensky. To je ťažší jazyk.",
+          "id": "Tapi kamu bisa bahasa Slowakia. Itu bahasa yang lebih sulit.",
+          "literal": "tetapi kamu-tahu menurut Slowakia. itu adalah lebih-sulit bahasa."
+        }
+      ],
+      "notes": [
+        "**Z + nama tempat = \"dari\".** Ia memaksa bentuk khusus yang dipasang lengkap di unit 9: *Indonézia → z Indonézie*, *Košice → z Košíc*, *Slovensko → zo Slovenska*. Untuk sekarang hafalkan bentuk jadinya; polanya akan jelas sendiri nanti.",
+        "**Z jadi zo di depan kata yang berawal s atau z.** *zo Slovenska*, *zo Zvolena*. Bahasa Slowakia melakukan ini untuk beberapa kata depan pendek: *v/vo*, *s/so*, *k/ku*, *z/zo*. Alasannya murni mulut — dua bunyi mendesis berurutan susah diucapkan.",
+        "**Nehovorím, neviem, nevadí — awalan ne- menyatu.** Inilah aturan umum yang berlaku untuk semua kata kerja kecuali *byť*. Perhatikan bahwa tekanannya ikut pindah ke awalan itu: *HO-vo-rim* menjadi *NE-ho-vo-rim*. Awalan *ne-* menjadi suku kata pertama, dan suku kata pertama selalu ditekan.",
+        "**Nevadí adalah kalimat lengkap.** Harfiahnya \"ia tidak mengganggu\" — dipakai persis seperti \"tidak apa-apa\" dan \"santai saja\". Kamu akan mendengarnya puluhan kali sehari di Slowakia.",
+        "**Vedieť bukan poznať.** *Vieš po slovensky* = kamu **bisa** bahasa Slowakia (keterampilan). Untuk \"kenal seseorang\" dipakai *poznať*: *Poznám Evu*. Perbedaannya sama dengan *savoir* dan *connaître* bahasa Prancis, dan ia dipasang lengkap di unit 16."
+      ],
+      "grammars": [
+        {
+          "title": "Jenis kelamin kata benda — dua puluh detik yang menentukan sisa modul ini",
+          "body": [
+            "Setiap kata benda bahasa Slowakia punya salah satu dari tiga jenis kelamin, dan jenis kelamin itulah yang menentukan ekor kasus mana yang dipakai. Kabar baiknya: kamu hampir selalu bisa menebaknya dari **huruf terakhir bentuk dasarnya**, tanpa menghafal apa pun."
+          ],
+          "table": {
+            "head": [
+              "Berakhiran",
+              "Jenis",
+              "Singkatan",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "huruf mati",
+                "lelaki",
+                "**lk**",
+                "*dom* (rumah), *stôl* (meja), *obchod* (toko), *chlieb* (roti)"
+              ],
+              [
+                "**-a**",
+                "perempuan",
+                "**pr**",
+                "*žena* (perempuan), *škola* (sekolah), *káva* (kopi), *kniha* (buku)"
+              ],
+              [
+                "**-o**",
+                "netral",
+                "**nt**",
+                "*mesto* (kota), *okno* (jendela), *pivo* (bir), *auto* (mobil)"
+              ],
+              [
+                "**-e, -ie**",
+                "netral",
+                "**nt**",
+                "*more* (laut), *námestie* (alun-alun), *pole* (ladang)"
+              ],
+              [
+                "**-osť**",
+                "perempuan",
+                "**pr**",
+                "*radosť* (kegembiraan), *možnosť* (kemungkinan)"
+              ],
+              [
+                "**-ď, -ť, -ň, -ľ**",
+                "perempuan",
+                "**pr**",
+                "*posteľ* (ranjang), *dlaň* (telapak), *smrť* (kematian)"
+              ]
+            ]
+          },
+          "after": [
+            "**Dua baris terakhir adalah satu-satunya yang perlu perhatian.** Kata yang berakhir huruf mati biasanya lelaki, kecuali kalau huruf mati itu adalah huruf lunak *ď, ť, ň, ľ* atau akhiran *-osť* — maka ia perempuan. Kalau kamu hafal pengecualian itu, ketepatanmu naik ke sekitar sembilan puluh persen.",
+            "**Satu perkecualian yang masuk akal: orang.** Kata benda yang berakhir *-a* tetapi menyebut orang lelaki tetap lelaki: *kolega* (rekan), *turista* (turis), *dedo* (kakek), *futbalista*. Bahasa Slowakia mendahulukan kenyataan di atas ejaan — sama seperti bahasa Italia dengan *il poeta*.",
+            "**Kenapa ini penting sekarang, bukan nanti?** Karena mulai unit 4 setiap kata benda yang kamu pakai akan mengganti ekornya, dan ekor mana yang benar sepenuhnya ditentukan oleh baris tabel ini. Sepuluh detik yang kamu habiskan untuk mencatat *(lk)*, *(pr)*, atau *(nt)* bersama kata barunya akan menghemat berjam-jam kebingungan di unit 9."
+          ]
+        },
+        {
+          "title": "Bývať dan hovoriť — dua kelas kata kerja pertama",
+          "body": [
+            "Kata kerja bahasa Slowakia terbagi tiga kelas menurut vokal di ekornya. Dua di antaranya sudah kamu temui dalam dialog; kelas ketiga menyusul di unit 7."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "*bývať* (tinggal)",
+              "*hovoriť* (berbicara)",
+              "Sangkalan"
+            ],
+            "rows": [
+              [
+                "ja",
+                "býv**am**",
+                "hovor**ím**",
+                "ne**bývam**, ne**hovorím**"
+              ],
+              [
+                "ty",
+                "býv**aš**",
+                "hovor**íš**",
+                "nebývaš, nehovoríš"
+              ],
+              [
+                "on / ona",
+                "býv**a**",
+                "hovor**í**",
+                "nebýva, nehovorí"
+              ],
+              [
+                "my",
+                "býv**ame**",
+                "hovor**íme**",
+                "nebývame, nehovoríme"
+              ],
+              [
+                "vy",
+                "býv**ate**",
+                "hovor**íte**",
+                "nebývate, nehovoríte"
+              ],
+              [
+                "oni",
+                "býv**ajú**",
+                "hovor**ia**",
+                "nebývajú, nehovoria"
+              ]
+            ]
+          },
+          "after": [
+            "**Cara mengenali kelasnya: lihat bentuk *ja*.** Kalau ekornya *-ám*, seluruh baris ikut *a*. Kalau ekornya *-ím*, seluruh baris ikut *i*. Ini sebabnya kamus bahasa Slowakia yang baik selalu mencantumkan bentuk *ja* di sebelah bentuk kamusnya — dan sebabnya modul ini melakukan hal yang sama di daftar belakang.",
+            "**Perhatikan baris terakhir.** Kelas *-ám* memakai *-ajú*, kelas *-ím* memakai *-ia*. Dua baris inilah yang paling sering keliru di awal, karena keduanya terdengar mirip dan tidak mengikuti pola baris-baris di atasnya.",
+            "Kata kerja lain yang ikut kelas *-ám*: *mať* (mám), *volať* (volám), *čakať* (čakám), *poznať* (poznám), *pracovať*… tidak, yang terakhir itu kelas ketiga. Kata kerja kelas *-ím*: *robiť* (robím), *učiť sa* (učím sa), *prosiť* (prosím), *myslieť* (myslím), *sedieť* (sedím)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Negara, bangsa, dan bahasa",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tiga kolom yang selalu ditanyakan pada perkenalan pertama. Perhatikan bahwa ketiganya dibentuk dari akar yang sama tetapi tidak pernah sama persis — itulah sebabnya tabel ini ada."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Negara",
+            "Orangnya (lk / pr)",
+            "Bahasanya"
+          ],
+          "rows": [
+            [
+              "**Slovensko**",
+              "Slovák / Slovenka",
+              "po slovensky"
+            ],
+            [
+              "**Indonézia**",
+              "Indonézan / Indonézanka",
+              "po indonézsky"
+            ],
+            [
+              "**Česko**",
+              "Čech / Češka",
+              "po česky"
+            ],
+            [
+              "**Poľsko**",
+              "Poliak / Poľka",
+              "po poľsky"
+            ],
+            [
+              "**Maďarsko**",
+              "Maďar / Maďarka",
+              "po maďarsky"
+            ],
+            [
+              "**Rakúsko**",
+              "Rakúšan / Rakúšanka",
+              "po nemecky"
+            ],
+            [
+              "**Nemecko**",
+              "Nemec / Nemka",
+              "po nemecky"
+            ],
+            [
+              "**Anglicko**",
+              "Angličan / Angličanka",
+              "po anglicky"
+            ],
+            [
+              "**Francúzsko**",
+              "Francúz / Francúzka",
+              "po francúzsky"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa banyak nama negara berakhiran **-sko**: *Slovensko, Poľsko, Nemecko, Anglicko, Maďarsko, Japonsko*. Akhiran itu praktis berarti \"negeri\" — jadi *Slovensko* adalah \"negeri orang Slovák\". Kalau kamu bertemu nama negara baru berakhiran *-sko*, kamu bisa menebak nama bangsanya, dan sebaliknya."
+        },
+        {
+          "type": "kotak",
+          "title": "Empat negara tetangga, empat perbatasan",
+          "items": [
+            "Slowakia berbatasan dengan **lima** negara: Česko, Poľsko, Ukrajina, Maďarsko, dan Rakúsko. Bratislava adalah satu-satunya ibu kota di dunia yang berbatasan langsung dengan dua negara sekaligus — Austria dan Hungaria, keduanya bisa dicapai dengan sepeda dari pusat kota.",
+            "Dari kelima tetangga itu, **bahasa Ceko praktis sama**. Orang Slowakia dan Ceko berbicara dengan bahasanya masing-masing dan saling mengerti sepenuhnya, tanpa pernah belajar bahasa yang lain."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Bertanya asal dan tempat tinggal",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Empat pertanyaan berikut menutup hampir seluruh perkenalan. Dua yang pertama tentang asal, dua yang terakhir tentang keadaan sekarang — dan bahasa Slowakia memakai kata depan yang berbeda untuk keduanya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pertanyaan",
+            "Arti",
+            "Jawaban"
+          ],
+          "rows": [
+            [
+              "**Odkiaľ si?**",
+              "Kamu dari mana?",
+              "*Som z Indonézie.*"
+            ],
+            [
+              "**Odkiaľ ste?**",
+              "Anda dari mana? (sopan)",
+              "*Som zo Slovenska.*"
+            ],
+            [
+              "**Kde bývaš?**",
+              "Kamu tinggal di mana?",
+              "*Bývam v Bratislave.*"
+            ],
+            [
+              "**Kde pracuješ?**",
+              "Kamu bekerja di mana?",
+              "*Pracujem v škole.*"
+            ],
+            [
+              "**Ako dlho tu si?**",
+              "Sudah berapa lama kamu di sini?",
+              "*Dva mesiace.*"
+            ],
+            [
+              "**Aké jazyky vieš?**",
+              "Bahasa apa saja yang kamu bisa?",
+              "*Po anglicky a trochu po nemecky.*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Z** untuk asal, **v** untuk tempat sekarang. Keduanya memaksa bentuk kata benda yang berbeda, dan keduanya diberi unit sendiri nanti — *v* di unit 6, *z* di unit 9. Untuk sekarang perlakukan pasangan seperti *z Indonézie* dan *v Bratislave* sebagai satu bongkahan utuh."
+        },
+        {
+          "type": "p",
+          "text": "Satu jebakan kecil: **odkiaľ** (dari mana) dan **kde** (di mana) tidak boleh tertukar. Menjawab *Odkiaľ si?* dengan *Bývam v Bratislave* memberi keterangan yang salah — kamu menyebut tempat tinggal, bukan asal. Orang Slowakia peka pada bedanya, karena hampir semua orang di Bratislava berasal dari kota lain."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "odkiaľ",
+      "baca": "OT-kyal",
+      "id": "dari mana"
+    },
+    {
+      "sk": "kde",
+      "baca": "kdye",
+      "id": "di mana"
+    },
+    {
+      "sk": "z / zo",
+      "baca": "z / zo",
+      "id": "dari"
+    },
+    {
+      "sk": "v / vo",
+      "baca": "v / vo",
+      "id": "di dalam"
+    },
+    {
+      "sk": "bývať",
+      "baca": "BI-vat",
+      "id": "tinggal (berdiam)"
+    },
+    {
+      "sk": "hovoriť",
+      "baca": "HO-vo-rit",
+      "id": "berbicara"
+    },
+    {
+      "sk": "vedieť",
+      "baca": "VE-dyet",
+      "id": "tahu; bisa (keterampilan)"
+    },
+    {
+      "sk": "pracovať",
+      "baca": "PRA-tso-vat",
+      "id": "bekerja"
+    },
+    {
+      "sk": "jazyk",
+      "baca": "YA-zik",
+      "id": "bahasa; lidah (lk)"
+    },
+    {
+      "sk": "teraz",
+      "baca": "TE-ras",
+      "id": "sekarang"
+    },
+    {
+      "sk": "už",
+      "baca": "uzh",
+      "id": "sudah"
+    },
+    {
+      "sk": "ešte",
+      "baca": "ESY-tye",
+      "id": "masih; lagi"
+    },
+    {
+      "sk": "ale",
+      "baca": "A-le",
+      "id": "tetapi"
+    },
+    {
+      "sk": "len",
+      "baca": "len",
+      "id": "hanya"
+    },
+    {
+      "sk": "trochu",
+      "baca": "TRO-khu",
+      "id": "sedikit"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slowakia.",
+      "items": [
+        "Kamu dari mana?",
+        "Saya dari Indonesia.",
+        "Sekarang saya tinggal di Bratislava.",
+        "Saya belum bisa bicara dengan baik.",
+        "Bahasa apa saja yang kamu bisa?",
+        "Saya tidak bisa bahasa Jerman."
+      ]
+    },
+    {
+      "prompt": "Tulis jenis kelaminnya: lk, pr, atau nt.",
+      "items": [
+        "škola ____",
+        "obchod ____",
+        "pivo ____",
+        "posteľ ____",
+        "kniha ____",
+        "námestie ____",
+        "kolega ____",
+        "radosť ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "si / odkiaľ / ?",
+        "Indonézie / som / z",
+        "Bratislave / bývam / v / teraz",
+        "po / nehovorím / dobre / slovensky / ešte",
+        "jazyky / aké / vieš / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Odkiaľ si? — Som z Indonézie. — Teraz bývam v Bratislave. — Ešte nehovorím dobre. — Aké jazyky vieš? — Neviem po nemecky.",
+    "pr — lk — nt — pr — pr — nt — lk — pr",
+    "Odkiaľ si? — Som z Indonézie. — Teraz bývam v Bratislave. — Ešte nehovorím dobre po slovensky. — Aké jazyky vieš?"
+  ]
+}

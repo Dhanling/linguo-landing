@@ -1,0 +1,550 @@
+{
+  "title": "Kantor posnya di mana?",
+  "title_target": "Kde je pošta?",
+  "goal": "Menanyakan dan menunjukkan arah, dan memasang kasus kedua: lokatif — satu-satunya kasus yang tidak pernah muncul tanpa kata depan di depannya.",
+  "bekal": [
+    "menanyakan arah dan memahami jawabannya",
+    "mengubah kata benda ke bentuk lokatif sesudah *v*, *na*, *o*, *pri*",
+    "memilih antara *v* dan *na* — pilihan yang tidak bisa ditebak dari arti"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Neviem, kde som",
+      "intro": "Budi tersesat di dekat Hlavná stanica. Ia menghentikan seorang perempuan yang lewat.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Prepáčte, môžem sa niečo opýtať?",
+          "id": "Permisi, boleh saya bertanya?",
+          "literal": "maafkan-kalian, boleh-saya diri sesuatu bertanya?"
+        },
+        {
+          "speaker": "Pani:",
+          "text": "Samozrejme. Nech sa páči.",
+          "id": "Tentu saja. Silakan.",
+          "literal": "tentu-saja. biar diri berkenan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kde je pošta? Neviem, kde som.",
+          "id": "Kantor posnya di mana? Saya tidak tahu saya di mana.",
+          "literal": "di-mana adalah pos? tidak-saya-tahu, di-mana saya-adalah."
+        },
+        {
+          "speaker": "Pani:",
+          "text": "Pošta je na námestí, oproti kostolu.",
+          "id": "Kantor posnya di alun-alun, seberang gereja.",
+          "literal": "pos adalah di alun-alun-lokatif, berhadapan gereja-datif."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A ako sa tam dostanem?",
+          "id": "Dan bagaimana saya ke sana?",
+          "literal": "dan bagaimana diri ke-sana saya-akan-sampai?"
+        },
+        {
+          "speaker": "Pani:",
+          "text": "Choďte rovno a potom doľava.",
+          "id": "Jalan lurus lalu belok kiri.",
+          "literal": "berjalanlah-kalian lurus dan kemudian ke-kiri."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rovno a doľava. Je to ďaleko?",
+          "id": "Lurus lalu kiri. Jauh?",
+          "literal": "lurus dan ke-kiri. adalah itu jauh?"
+        },
+        {
+          "speaker": "Pani:",
+          "text": "Nie, päť minút pešo. Je to hneď za parkom.",
+          "id": "Tidak, lima menit jalan kaki. Persis di belakang taman.",
+          "literal": "tidak, lima menit-genitif dengan-kaki. adalah itu segera di-belakang taman-instrumental."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A je tam blízko aj banka?",
+          "id": "Dan apakah ada bank di dekat sana juga?",
+          "literal": "dan adalah di-sana dekat juga bank?"
+        },
+        {
+          "speaker": "Pani:",
+          "text": "Áno, banka je vedľa pošty, v tej istej budove.",
+          "id": "Ya, banknya di sebelah kantor pos, di gedung yang sama.",
+          "literal": "ya, bank adalah di-samping pos-genitif, di itu-lokatif sama-lokatif gedung-lokatif."
+        },
+        {
+          "speaker": "Pani:",
+          "text": "Nie je za čo. Dovidenia!",
+          "id": "Sama-sama. Sampai jumpa!",
+          "literal": "tidak adalah untuk apa. sampai-berjumpa!"
+        }
+      ],
+      "notes": [
+        "**Na námestí, v budove, za parkom** — tiga kata depan, tiga bentuk ekor yang berbeda. Dua yang pertama lokatif, yang ketiga instrumental (unit 17). Untuk sekarang perhatikan saja bahwa **kata depan selalu mengubah kata sesudahnya**; tidak ada satu pun kata depan bahasa Slowakia yang membiarkan kata bendanya utuh.",
+        "**Môžem sa niečo opýtať?** adalah cara paling sopan menghentikan orang asing. Lebih halus daripada langsung bertanya, dan hampir selalu membuat orang berhenti dengan senang hati. Pasangkan dengan *prepáčte* di depannya.",
+        "**Choďte** adalah bentuk perintah sopan dari *ísť* (pergi). Bentuk akrabnya *choď*. Kamu tidak perlu menghasilkannya di A1, tetapi kamu wajib mengenalinya — semua petunjuk arah yang kamu dengar akan memakai bentuk ini.",
+        "**Nie je za čo** harfiahnya \"tidak ada untuk apa\" — jawaban baku untuk terima kasih, sedikit lebih hangat daripada *prosím*. Kedua-duanya benar.",
+        "**Aj berarti \"juga\", sama seperti *tiež*.** Bedanya letak: *aj* berdiri tepat di depan kata yang ditekankan (*aj banka* = bank **juga**), sementara *tiež* biasanya di akhir atau setelah pelaku (*Ja tiež* = saya juga). Untuk A1 keduanya boleh dipakai bergantian dalam kalimat sederhana."
+      ],
+      "grammars": [
+        {
+          "title": "Lokatif — kasus yang tidak bisa berdiri sendiri",
+          "body": [
+            "Lokatif adalah satu-satunya dari enam kasus yang **tidak pernah** dipakai tanpa kata depan. Itu kabar baik: kamu tidak perlu menebak kapan memakainya — kalau ada *v*, *na*, *o*, *pri*, atau *po* di depannya, ekornya lokatif."
+          ],
+          "table": {
+            "head": [
+              "Jenis kata benda",
+              "Ekor",
+              "Nominatif",
+              "Lokatif"
+            ],
+            "rows": [
+              [
+                "**lk / nt biasa**",
+                "**-e**",
+                "*dom, obchod, mesto*",
+                "*v dom**e**, v obchod**e**, v mest**e***"
+              ],
+              [
+                "**lk / nt berakhiran k, g, h, ch**",
+                "**-u**",
+                "*park, Slovensko, obchodík*",
+                "*v park**u**, na Slovensk**u***"
+              ],
+              [
+                "**pr berakhiran -a**",
+                "**-e**",
+                "*škola, Bratislava, banka*",
+                "*v škol**e**, v Bratislav**e**, v bank**e***"
+              ],
+              [
+                "**pr huruf lunak**",
+                "**-i**",
+                "*kaviareň, stanica, reštaurácia*",
+                "*v kaviarn**i**, na stanic**i***"
+              ],
+              [
+                "**nt berakhiran -ie**",
+                "**-í**",
+                "*námestie*",
+                "*na námest**í***"
+              ],
+              [
+                "**lk bernyawa**",
+                "**-ovi**",
+                "*brat, učiteľ*",
+                "*o brat**ovi**, o učiteľ**ovi***"
+              ]
+            ]
+          },
+          "after": [
+            "**Kata sifatnya juga berubah**: lk dan nt memakai **-om** (*vo veľkom dome*, *v malom meste*), pr memakai **-ej** (*vo veľkej škole*). Dua ekor, dua puluh detik untuk dihafal.",
+            "**Baris kedua sering mengejutkan.** Kata yang berakhir *k, g, h, ch* memakai *-u*, bukan *-e*, karena ekor *-e* akan memaksa huruf itu melunak dan mengubah bunyinya. Karena itu *na Slovensku* dan bukan *na Slovensce*. Ini juga alasan kenapa *v parku*, *v Rakúsku*, *v Nemecku*.",
+            "**Perhatikan *v* menjadi *vo*** di depan kata yang berawal *v* atau *f*: *vo Viedni* (di Wina), *vo februári*. Sama seperti *z/zo* dan *s/so* — semata-mata supaya mulut tidak tersandung."
+          ]
+        },
+        {
+          "title": "V atau na — pilihan yang tidak bisa ditebak dari arti",
+          "body": [
+            "Keduanya berarti \"di\", keduanya memakai lokatif, dan tidak ada aturan yang menutup seratus persen. Tetapi ada kecenderungan yang menutup sekitar sembilan puluh persen, dan itu sudah lebih dari cukup untuk A1."
+          ],
+          "table": {
+            "head": [
+              "v — ruang tertutup, kota, negara",
+              "na — permukaan, lembaga, acara"
+            ],
+            "rows": [
+              [
+                "*v dome* — di rumah",
+                "*na pošte* — di kantor pos"
+              ],
+              [
+                "*v obchode* — di toko",
+                "*na stanici* — di stasiun"
+              ],
+              [
+                "*v škole* — di sekolah",
+                "*na univerzite* — di universitas"
+              ],
+              [
+                "*v meste* — di kota",
+                "*na námestí* — di alun-alun"
+              ],
+              [
+                "*v banke* — di bank",
+                "*na ulici* — di jalan"
+              ],
+              [
+                "*v reštaurácii* — di restoran",
+                "*na trhu* — di pasar"
+              ],
+              [
+                "*v Bratislave* — di Bratislava",
+                "*na Slovensku* — di Slowakia"
+              ],
+              [
+                "*v Indonézii* — di Indonesia",
+                "*na koncerte* — di konser"
+              ],
+              [
+                "*v aute* — di dalam mobil",
+                "*na obede* — sedang makan siang"
+              ]
+            ]
+          },
+          "after": [
+            "**Perhatikan baris ketujuh dan kedelapan.** Hampir semua nama negara memakai *v*, tetapi Slowakia sendiri memakai **na Slovensku**. Begitu juga *na Ukrajine* dan *na Morave*. Alasannya sejarah — daerah-daerah itu dulunya bagian dari kerajaan yang lebih besar, dan *na* melekat sejak itu. Untuk pemula: hafalkan *na Slovensku* sebagai satu bongkahan, karena kamu akan mengucapkannya setiap hari.",
+            "**Pola yang bisa dipegang:** *v* untuk sesuatu yang kamu **masuki**, *na* untuk sesuatu yang kamu **datangi** atau yang permukaannya kamu tempati. Kantor pos memakai *na* karena bahasa Slowakia memandangnya sebagai urusan yang didatangi, bukan gedung yang dimasuki.",
+            "**Kalau kamu salah pilih, kamu tetap dimengerti** — ini kesalahan yang membuat orang Slowakia tersenyum, bukan bingung. Tetapi memilih dengan benar terdengar sangat rapi, jadi hafalkan tabel di atas beberapa baris sekali duduk."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tempat di kota",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Cara baca",
+            "Bahasa Indonesia",
+            "Di sana"
+          ],
+          "rows": [
+            [
+              "**pošta** (pr)",
+              "POSY-ta",
+              "kantor pos",
+              "*na pošte*"
+            ],
+            [
+              "**banka** (pr)",
+              "BAN-ka",
+              "bank",
+              "*v banke*"
+            ],
+            [
+              "**obchod** (lk)",
+              "OP-khot",
+              "toko",
+              "*v obchode*"
+            ],
+            [
+              "**reštaurácia** (pr)",
+              "RESY-ta-u-ra-tsya",
+              "restoran",
+              "*v reštaurácii*"
+            ],
+            [
+              "**kostol** (lk)",
+              "KOS-tol",
+              "gereja",
+              "*v kostole*"
+            ],
+            [
+              "**park** (lk)",
+              "park",
+              "taman",
+              "*v parku*"
+            ],
+            [
+              "**námestie** (nt)",
+              "NA-mes-tye",
+              "alun-alun",
+              "*na námestí*"
+            ],
+            [
+              "**ulica** (pr)",
+              "U-li-tsa",
+              "jalan",
+              "*na ulici*"
+            ],
+            [
+              "**stanica** (pr)",
+              "STA-ni-tsa",
+              "stasiun",
+              "*na stanici*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kolom terakhir bukan hiasan — ia bagian yang wajib dihafal bersama katanya. Kalau kamu mencatat *pošta* tanpa *na pošte*, kamu baru menghafal setengah kata. Kebiasaan ini yang membuat kasus berhenti terasa seperti tabel."
+        }
+      ]
+    },
+    {
+      "title": "Arah dan letak",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**rovno**",
+              "ROV-no",
+              "lurus"
+            ],
+            [
+              "**doprava / vpravo**",
+              "DO-pra-va / FPRA-vo",
+              "ke kanan / di sebelah kanan"
+            ],
+            [
+              "**doľava / vľavo**",
+              "DO-lya-va / VLYA-vo",
+              "ke kiri / di sebelah kiri"
+            ],
+            [
+              "**hore / dole**",
+              "HO-re / DO-le",
+              "di atas / di bawah"
+            ],
+            [
+              "**blízko**",
+              "BLIS-ko",
+              "dekat"
+            ],
+            [
+              "**ďaleko**",
+              "DYA-le-ko",
+              "jauh"
+            ],
+            [
+              "**vedľa** + genitif",
+              "VED-lya",
+              "di sebelah"
+            ],
+            [
+              "**oproti** + datif",
+              "O-pro-tyi",
+              "di seberang"
+            ],
+            [
+              "**za** + instrumental",
+              "za",
+              "di belakang"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan pasangan **doprava/vpravo** dan **doľava/vľavo**. Bentuk *do-* berarti gerakan (\"ke kanan\"), bentuk *v-* berarti letak (\"di sebelah kanan\"). Bahasa Slowakia memisahkan gerak dan diam di mana-mana — pemisahan yang sama akan muncul lagi dengan *do/v* di unit 11."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pertanyaan dan jawaban",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Kde je …?*",
+              "Di mana …?"
+            ],
+            [
+              "*Ako sa dostanem na …?*",
+              "Bagaimana saya sampai ke …?"
+            ],
+            [
+              "*Je to ďaleko?*",
+              "Apakah itu jauh?"
+            ],
+            [
+              "*Koľko minút pešo?*",
+              "Berapa menit jalan kaki?"
+            ],
+            [
+              "*Choďte rovno.*",
+              "Jalan lurus."
+            ],
+            [
+              "*Zabočte doprava.*",
+              "Belok kanan."
+            ],
+            [
+              "*Je to hneď za rohom.*",
+              "Persis di balik pojok."
+            ],
+            [
+              "*Stratil / stratila som sa.*",
+              "Saya tersesat. (lk / pr)"
+            ],
+            [
+              "*Môžete mi to ukázať na mape?*",
+              "Bisa tunjukkan di peta?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Satu kalimat yang menyelamatkan segalanya",
+          "items": [
+            "*Prepáčte, hľadám poštu.* — \"Permisi, saya sedang mencari kantor pos.\" Ganti kata terakhirnya dengan tempat apa pun dalam bentuk akusatif, dan kamu punya satu kalimat yang berfungsi di seluruh Slowakia.",
+            "Kalau jawabannya terlalu cepat: *Pomaly, prosím* atau *Môžete to zopakovať?* (Bisa diulang?). Keduanya sopan dan selalu berhasil."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 4",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Saya minta satu kopi.",
+              "*Prosím si jednu kávu.*"
+            ],
+            [
+              "Saya pesan satu bir.",
+              "*Dám si jedno pivo.*"
+            ],
+            [
+              "Apa yang Anda sarankan?",
+              "*Čo odporúčate?*"
+            ],
+            [
+              "Saya kenal dia (perempuan).",
+              "*Poznám ju.*"
+            ],
+            [
+              "Bon, tolong.",
+              "*Účet, prosím.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "pošta",
+      "baca": "POSY-ta",
+      "id": "kantor pos (pr)"
+    },
+    {
+      "sk": "banka",
+      "baca": "BAN-ka",
+      "id": "bank (pr)"
+    },
+    {
+      "sk": "námestie",
+      "baca": "NA-mes-tye",
+      "id": "alun-alun (nt)"
+    },
+    {
+      "sk": "kostol",
+      "baca": "KOS-tol",
+      "id": "gereja (lk)"
+    },
+    {
+      "sk": "budova",
+      "baca": "BU-do-va",
+      "id": "gedung (pr)"
+    },
+    {
+      "sk": "ulica",
+      "baca": "U-li-tsa",
+      "id": "jalan (pr)"
+    },
+    {
+      "sk": "stanica",
+      "baca": "STA-ni-tsa",
+      "id": "stasiun (pr)"
+    },
+    {
+      "sk": "park",
+      "baca": "park",
+      "id": "taman (lk)"
+    },
+    {
+      "sk": "mapa",
+      "baca": "MA-pa",
+      "id": "peta (pr)"
+    },
+    {
+      "sk": "rovno",
+      "baca": "ROV-no",
+      "id": "lurus"
+    },
+    {
+      "sk": "doprava",
+      "baca": "DO-pra-va",
+      "id": "ke kanan"
+    },
+    {
+      "sk": "doľava",
+      "baca": "DO-lya-va",
+      "id": "ke kiri"
+    },
+    {
+      "sk": "blízko",
+      "baca": "BLIS-ko",
+      "id": "dekat"
+    },
+    {
+      "sk": "ďaleko",
+      "baca": "DYA-le-ko",
+      "id": "jauh"
+    },
+    {
+      "sk": "vedľa",
+      "baca": "VED-lya",
+      "id": "di sebelah"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slowakia.",
+      "items": [
+        "Permisi, boleh saya bertanya?",
+        "Kantor posnya di mana?",
+        "Jalan lurus lalu belok kiri.",
+        "Apakah itu jauh?",
+        "Lima menit jalan kaki.",
+        "Banknya di sebelah kantor pos."
+      ]
+    },
+    {
+      "prompt": "Ubah ke bentuk lokatif.",
+      "items": [
+        "v ____ (škola)",
+        "v ____ (obchod)",
+        "na ____ (pošta)",
+        "v ____ (mesto)",
+        "v ____ (park)",
+        "na ____ (Slovensko)",
+        "v ____ (Bratislava)",
+        "na ____ (námestie)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "pošta / kde / je / ?",
+        "námestí / je / pošta / na",
+        "doľava / rovno / a / choďte",
+        "ďaleko / to / je / ?",
+        "pešo / minút / päť"
+      ]
+    }
+  ],
+  "answers": [
+    "Prepáčte, môžem sa niečo opýtať? — Kde je pošta? — Choďte rovno a potom doľava. — Je to ďaleko? — Päť minút pešo. — Banka je vedľa pošty.",
+    "škole — obchode — pošte — meste — parku — Slovensku — Bratislave — námestí",
+    "Kde je pošta? — Pošta je na námestí. — Choďte rovno a doľava. — Je to ďaleko? — Päť minút pešo."
+  ]
+}

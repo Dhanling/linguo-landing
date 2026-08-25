@@ -1,0 +1,604 @@
+{
+  "title": "Jam berapa sekarang?",
+  "title_target": "Koľko je hodín?",
+  "goal": "Menyebut jam dan hari, membuat janji, dan menghadapi satu titik yang menjegal hampir semua pemula: *pol siedmej* berarti setengah tujuh, dan itu pukul 06.30.",
+  "bekal": [
+    "menyebut jam dengan dua cara: gaya resmi dan gaya percakapan",
+    "memakai *o* + bentuk urutan untuk mengatakan \"pukul berapa\"",
+    "menyebut hari dan mengatakan kapan sesuatu terjadi"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Kedy sa stretneme?",
+      "intro": "Eva dan Budi mengatur janji untuk pergi ke bioskop.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Budi, nechceš ísť v piatok do kina?",
+          "id": "Budi, mau nonton hari Jumat?",
+          "literal": "Budi, tidak-kamu-mau pergi pada Jumat ke bioskop-genitif?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rád. O koľkej?",
+          "id": "Mau. Jam berapa?",
+          "literal": "senang. pada berapa-lokatif?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Film začína o pol ôsmej.",
+          "id": "Filmnya mulai jam setengah delapan.",
+          "literal": "film ia-mulai pada setengah delapan-lokatif."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "O pol ôsmej? To je o siedmej tridsať?",
+          "id": "Setengah delapan? Itu jam tujuh tiga puluh?",
+          "literal": "pada setengah delapan-lokatif? itu adalah pada tujuh-lokatif tiga-puluh?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Presne tak. Sedem tridsať.",
+          "id": "Tepat sekali. Tujuh tiga puluh.",
+          "literal": "tepat begitu. tujuh tiga-puluh."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aha. U nás pol ôsmej znamená osem tridsať.",
+          "id": "Oh. Di tempat kami setengah delapan berarti delapan tiga puluh.",
+          "literal": "aha. di kami setengah delapan-lokatif ia-berarti delapan tiga-puluh."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Naozaj? To je dobré vedieť!",
+          "id": "Serius? Bagus juga tahu itu!",
+          "literal": "sungguh? itu adalah baik mengetahui!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dobre. Kedy sa stretneme?",
+          "id": "Oke. Kita ketemu kapan?",
+          "literal": "baik. kapan diri kita-akan-bertemu?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "O štvrť na osem pred kinom. Stačí?",
+          "id": "Jam tujuh lewat seperempat di depan bioskop. Cukup?",
+          "literal": "pada seperempat menuju delapan di-depan bioskop-instrumental. cukup?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Stačí. Ale ja väčšinou chodím neskoro.",
+          "id": "Cukup. Tapi saya biasanya telat.",
+          "literal": "cukup. tetapi saya kebanyakan saya-pergi terlambat."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Tak príď o sedem. Budem čakať.",
+          "id": "Kalau begitu datang jam tujuh. Saya akan menunggu.",
+          "literal": "jadi datanglah pada tujuh. saya-akan-ada menunggu."
+        }
+      ],
+      "notes": [
+        "**Pol ôsmej = 07.30, bukan 08.30.** Inilah titik yang paling sering membuat orang kehilangan janji di Slowakia. Bahasa Slowakia menghitung **menuju** jam berikutnya: *pol ôsmej* harfiahnya \"setengah dari yang kedelapan\" — setengah perjalanan menuju pukul delapan. Bahasa Jerman dan Hungaria melakukan hal yang sama; bahasa Indonesia dan Inggris tidak.",
+        "**Bahasa Indonesia justru sepakat dengan bahasa Slowakia di satu tempat** — \"setengah tujuh\" untuk 06.30 memakai logika yang sama, menuju tujuh. Yang tidak sepakat adalah kebiasaan sebagian penutur yang membaca \"setengah delapan\" sebagai 08.30. Kalau kamu terbiasa dengan yang pertama, kamu justru punya keuntungan di sini.",
+        "**Štvrť na osem = 07.15.** Harfiahnya \"seperempat menuju delapan\" — lagi-lagi menghitung ke depan. Dan *trištvrte na osem* = 07.45, \"tiga perempat menuju delapan\". Ketiga bentuk ini (*štvrť na*, *pol*, *trištvrte na*) semuanya menghitung menuju jam berikutnya, tanpa kecuali.",
+        "**O koľkej?** = \"pada jam berapa?\" Bentuk *koľkej* adalah lokatif perempuan, karena kata *hodina* (jam) yang dilesapkan berjenis perempuan. Semua penyebutan jam memakai bentuk perempuan karena alasan yang sama.",
+        "**V piatok memakai akusatif, bukan lokatif.** Aneh, karena *v* biasanya menuntut lokatif — tetapi untuk hari, bahasa Slowakia memakai akusatif: *v pondelok, v stredu, v sobotu*. Sepuluh detik untuk dihafal, dan ia berlaku seumur hidup."
+      ],
+      "grammars": [
+        {
+          "title": "Menyebut jam — dua gaya",
+          "body": [
+            "Bahasa Slowakia punya gaya resmi (jadwal kereta, berita, janji dokter) dan gaya percakapan. Yang pertama mudah, yang kedua yang perlu latihan."
+          ],
+          "table": {
+            "head": [
+              "Jam",
+              "Gaya resmi",
+              "Gaya percakapan"
+            ],
+            "rows": [
+              [
+                "07.00",
+                "*sedem hodín*",
+                "*sedem*"
+              ],
+              [
+                "07.15",
+                "*sedem pätnásť*",
+                "*štvrť na osem*"
+              ],
+              [
+                "07.30",
+                "*sedem tridsať*",
+                "*pol ôsmej*"
+              ],
+              [
+                "07.45",
+                "*sedem štyridsaťpäť*",
+                "*trištvrte na osem*"
+              ],
+              [
+                "07.10",
+                "*sedem desať*",
+                "*desať po siedmej*"
+              ],
+              [
+                "07.50",
+                "*sedem päťdesiat*",
+                "*desať minút do ôsmej*"
+              ],
+              [
+                "13.00",
+                "*trinásť hodín*",
+                "*jedna* (siang)"
+              ],
+              [
+                "20.00",
+                "*dvadsať hodín*",
+                "*osem* (malam)"
+              ]
+            ]
+          },
+          "after": [
+            "**Gaya resmi memakai jam 24 dan angka biasa** — sama persis dengan cara Indonesia. Kalau kamu ragu, pakai ini: ia selalu benar dan tidak pernah disalahpahami.",
+            "**Gaya percakapan memakai jam 12** dan bergantung pada bentuk urutan (\"yang ketujuh\", \"yang kedelapan\"). Ini yang akan kamu dengar dari teman, dan yang perlu kamu kenali walau belum berani memakainya.",
+            "**Pertanyaannya dua**: *Koľko je hodín?* (jam berapa sekarang) dan *O koľkej?* (pada jam berapa sesuatu terjadi). Jangan tertukar — yang pertama menanyakan waktu, yang kedua menanyakan jadwal."
+          ]
+        },
+        {
+          "title": "O + bentuk urutan: pukul berapa",
+          "body": [
+            "Untuk mengatakan \"pada pukul …\", bahasa Slowakia memakai *o* diikuti bentuk urutan berjenis perempuan dalam lokatif. Kedengarannya rumit; tabelnya menutup semuanya."
+          ],
+          "table": {
+            "head": [
+              "Jam",
+              "o + …",
+              "Cara baca",
+              "Setengahnya"
+            ],
+            "rows": [
+              [
+                "1",
+                "*o jednej*",
+                "o YED-ney",
+                "*pol druhej* = 01.30"
+              ],
+              [
+                "2",
+                "*o druhej*",
+                "o DRU-hey",
+                "*pol tretej* = 02.30"
+              ],
+              [
+                "3",
+                "*o tretej*",
+                "o TRE-tyey",
+                "*pol štvrtej* = 03.30"
+              ],
+              [
+                "4",
+                "*o štvrtej*",
+                "o SYTVER-tey",
+                "*pol piatej* = 04.30"
+              ],
+              [
+                "5",
+                "*o piatej*",
+                "o PYA-tey",
+                "*pol šiestej* = 05.30"
+              ],
+              [
+                "6",
+                "*o šiestej*",
+                "o SYYES-tey",
+                "*pol siedmej* = 06.30"
+              ],
+              [
+                "7",
+                "*o siedmej*",
+                "o SYED-mey",
+                "*pol ôsmej* = 07.30"
+              ],
+              [
+                "8",
+                "*o ôsmej*",
+                "o UOS-mey",
+                "*pol deviatej* = 08.30"
+              ],
+              [
+                "9",
+                "*o deviatej*",
+                "o DE-vya-tey",
+                "*pol desiatej* = 09.30"
+              ],
+              [
+                "10",
+                "*o desiatej*",
+                "o DE-sya-tey",
+                "*pol jedenástej* = 10.30"
+              ],
+              [
+                "11",
+                "*o jedenástej*",
+                "o YE-de-nas-tey",
+                "*pol dvanástej* = 11.30"
+              ],
+              [
+                "12",
+                "*o dvanástej*",
+                "o DVA-nas-tey",
+                "*pol jednej* = 12.30"
+              ]
+            ]
+          },
+          "after": [
+            "**Semua berakhiran *-ej*** karena semuanya lokatif perempuan. Sekali kamu melihat pola itu, kamu cuma perlu menghafal batangnya: *jedn-, druh-, tret-, štvrt-, piat-, šiest-, siedm-, ôsm-, deviat-, desiat-*.",
+            "**Kolom terakhir adalah tempat jebakannya.** *Pol* selalu dipasangkan dengan jam **berikutnya**. Kalau kamu ingin mengatakan pukul setengah tujuh (06.30), kamu harus menyebut angka **tujuh**: *pol siedmej*. Baca kolom itu beberapa kali dengan suara keras; ia tidak akan terasa wajar sampai kamu melakukannya.",
+            "**Pagi atau malam?** Tambahkan *ráno*, *popoludní*, *večer*, atau *v noci*: *o siedmej ráno* (pukul 7 pagi), *o siedmej večer* (pukul 7 malam). Dalam percakapan sehari-hari orang sering menghilangkannya kalau sudah jelas dari konteks."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Hari, bulan, dan musim",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hari",
+            "Cara baca",
+            "Pada hari itu",
+            "Arti akar katanya"
+          ],
+          "rows": [
+            [
+              "**pondelok**",
+              "PON-dye-lok",
+              "*v pondelok*",
+              "\"sesudah hari-tak-kerja\""
+            ],
+            [
+              "**utorok**",
+              "U-to-rok",
+              "*v utorok*",
+              "\"yang kedua\""
+            ],
+            [
+              "**streda**",
+              "STRE-da",
+              "*v stredu*",
+              "\"tengah\" — tengah minggu"
+            ],
+            [
+              "**štvrtok**",
+              "SYTVER-tok",
+              "*vo štvrtok*",
+              "\"yang keempat\""
+            ],
+            [
+              "**piatok**",
+              "PYA-tok",
+              "*v piatok*",
+              "\"yang kelima\""
+            ],
+            [
+              "**sobota**",
+              "SO-bo-ta",
+              "*v sobotu*",
+              "dari \"Sabat\""
+            ],
+            [
+              "**nedeľa**",
+              "NE-dye-lya",
+              "*v nedeľu*",
+              "\"hari tanpa kerja\""
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kolom terakhir bukan sekadar cerita: ia membuat ketujuhnya hampir tidak perlu dihafal. Minggu bahasa Slowakia **mulai hari Senin**, jadi *utorok* adalah hari kedua, *streda* di tengah, *štvrtok* keempat, *piatok* kelima. Dan *nedeľa* — dari *ne-delať*, \"tidak bekerja\" — menjelaskan kenapa *pondelok* berarti \"sesudah nedeľa\"."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bulan",
+            "Cara baca",
+            "Bulan",
+            "Cara baca"
+          ],
+          "rows": [
+            [
+              "**január**",
+              "YA-nu-ar",
+              "**júl**",
+              "yul"
+            ],
+            [
+              "**február**",
+              "FEB-ru-ar",
+              "**august**",
+              "AU-gust"
+            ],
+            [
+              "**marec**",
+              "MA-rets",
+              "**september**",
+              "SEP-tem-ber"
+            ],
+            [
+              "**apríl**",
+              "AP-ril",
+              "**október**",
+              "OK-to-ber"
+            ],
+            [
+              "**máj**",
+              "may",
+              "**november**",
+              "NO-vem-ber"
+            ],
+            [
+              "**jún**",
+              "yun",
+              "**december**",
+              "DE-tsem-ber"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Nama bulan bahasa Slowakia dipinjam dari bahasa Latin, jadi kamu sudah mengenal semuanya. Ini berbeda dari bahasa Ceko dan Polandia, yang memakai nama bulan asli Slavia (*leden, únor* dalam bahasa Ceko) dan harus dihafal satu per satu. Satu hadiah kecil dari sejarah."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Musim",
+            "Cara baca",
+            "Pada musim itu"
+          ],
+          "rows": [
+            [
+              "**jar** (pr)",
+              "yar",
+              "*na jar* — musim semi"
+            ],
+            [
+              "**leto** (nt)",
+              "LE-to",
+              "*v lete* — musim panas"
+            ],
+            [
+              "**jeseň** (pr)",
+              "YE-senj",
+              "*na jeseň* — musim gugur"
+            ],
+            [
+              "**zima** (pr)",
+              "ZI-ma",
+              "*v zime* — musim dingin"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Zima* berarti musim dingin **dan** rasa dingin: *Je mi zima* = \"Saya kedinginan\". Begitu juga *leto* — musim panas dan tahun (dalam hitungan usia kuno). Perhatikan bahwa dua musim memakai *na* dan dua memakai *v*; ini murni kebiasaan dan harus dihafal berpasangan."
+        }
+      ]
+    },
+    {
+      "title": "Membuat janji",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Koľko je hodín?*",
+              "Jam berapa sekarang?"
+            ],
+            [
+              "*O koľkej?*",
+              "Jam berapa? (jadwal)"
+            ],
+            [
+              "*Kedy sa stretneme?*",
+              "Kita ketemu kapan?"
+            ],
+            [
+              "*Kedy máš čas?*",
+              "Kapan kamu ada waktu?"
+            ],
+            [
+              "*Máš čas v piatok?*",
+              "Kamu ada waktu Jumat?"
+            ],
+            [
+              "*Hodí sa ti to?*",
+              "Cocok buat kamu?"
+            ],
+            [
+              "*Stačí.* / *Platí!*",
+              "Cukup. / Deal!"
+            ],
+            [
+              "*Bohužiaľ nemôžem.*",
+              "Sayangnya saya tidak bisa."
+            ],
+            [
+              "*Mám iný program.*",
+              "Saya ada acara lain."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Ketepatan waktu di Slowakia",
+          "items": [
+            "Janji sosial ditepati dalam batas lima menit. Datang lima belas menit terlambat tanpa mengabari dianggap kurang sopan, dan datang ke rumah orang lebih **awal** justru lebih buruk — tuan rumah mungkin belum siap.",
+            "Kalau kamu terlambat, kirim pesan: *Meškám desať minút, prepáč.* Satu kalimat itu menyelesaikan seluruh urusan.",
+            "Untuk janji resmi — dokter, kantor, wawancara — datanglah lima menit sebelum waktunya. Loket di Slowakia benar-benar tutup pada jam yang tertulis."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 6",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Kantor posnya di mana?",
+              "*Kde je pošta?*"
+            ],
+            [
+              "Jalan lurus lalu belok kiri.",
+              "*Choďte rovno a potom doľava.*"
+            ],
+            [
+              "Saya bekerja di kota.",
+              "*Pracujem v meste.*"
+            ],
+            [
+              "Saya tinggal di Slowakia.",
+              "*Bývam na Slovensku.*"
+            ],
+            [
+              "Apakah itu jauh?",
+              "*Je to ďaleko?*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "hodina",
+      "baca": "HO-dyi-na",
+      "id": "jam; pelajaran (pr)"
+    },
+    {
+      "sk": "minúta",
+      "baca": "MI-nu-ta",
+      "id": "menit (pr)"
+    },
+    {
+      "sk": "čas",
+      "baca": "cas",
+      "id": "waktu (lk)"
+    },
+    {
+      "sk": "kedy",
+      "baca": "KE-di",
+      "id": "kapan"
+    },
+    {
+      "sk": "pol",
+      "baca": "pol",
+      "id": "setengah"
+    },
+    {
+      "sk": "štvrť",
+      "baca": "sytvert",
+      "id": "seperempat"
+    },
+    {
+      "sk": "deň",
+      "baca": "denj",
+      "id": "hari (lk)"
+    },
+    {
+      "sk": "kino",
+      "baca": "KI-no",
+      "id": "bioskop (nt)"
+    },
+    {
+      "sk": "začínať",
+      "baca": "ZA-ci-nat",
+      "id": "mulai"
+    },
+    {
+      "sk": "končiť",
+      "baca": "KON-cit",
+      "id": "selesai"
+    },
+    {
+      "sk": "stretnúť sa",
+      "baca": "STRET-nut sa",
+      "id": "bertemu"
+    },
+    {
+      "sk": "čakať",
+      "baca": "CA-kat",
+      "id": "menunggu"
+    },
+    {
+      "sk": "prísť",
+      "baca": "prist",
+      "id": "datang"
+    },
+    {
+      "sk": "meškať",
+      "baca": "MESY-kat",
+      "id": "terlambat"
+    },
+    {
+      "sk": "neskoro",
+      "baca": "NES-ko-ro",
+      "id": "terlambat; larut"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slowakia.",
+      "items": [
+        "Jam berapa sekarang?",
+        "Filmnya mulai jam setengah delapan.",
+        "Kita ketemu kapan?",
+        "Kamu ada waktu Jumat?",
+        "Saya telat lima menit.",
+        "Sayangnya saya tidak bisa."
+      ]
+    },
+    {
+      "prompt": "Tulis jamnya dalam gaya percakapan.",
+      "items": [
+        "05.00 = o ____",
+        "07.30 = ____",
+        "09.15 = ____",
+        "12.00 = o ____",
+        "03.30 = ____",
+        "10.45 = ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "hodín / koľko / je / ?",
+        "ôsmej / o / začína / film / pol",
+        "stretneme / kedy / sa / ?",
+        "čas / máš / piatok / v / ?",
+        "minút / meškám / päť"
+      ]
+    }
+  ],
+  "answers": [
+    "Koľko je hodín? — Film začína o pol ôsmej. — Kedy sa stretneme? — Máš čas v piatok? — Meškám päť minút. — Bohužiaľ nemôžem.",
+    "piatej — pol ôsmej — štvrť na desať — dvanástej — pol štvrtej — trištvrte na jedenásť",
+    "Koľko je hodín? — Film začína o pol ôsmej. — Kedy sa stretneme? — Máš čas v piatok? — Meškám päť minút."
+  ]
+}

@@ -1,0 +1,499 @@
+{
+  "title": "Telepon saya, ya!",
+  "title_target": "Zavolaj mi!",
+  "goal": "Menelepon, mengirim pesan, dan menghasilkan sendiri bentuk perintah — bentuk yang sudah kamu dengar sejak unit 6 tanpa pernah membuatnya.",
+  "bekal": [
+    "membentuk perintah untuk *ty*, *vy*, dan *my* dari kata kerja mana pun",
+    "menelepon dan menerima telepon dengan kalimat baku",
+    "menulis pesan pendek yang terdengar wajar"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Haló? Kto volá?",
+      "intro": "Budi menelepon Eva karena bingung mencari kelasnya. Eva sedang di trem.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Haló?",
+          "id": "Halo?",
+          "literal": "halo?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ahoj Eva, tu je Budi. Nerušem?",
+          "id": "Halo Eva, ini Budi. Ganggu tidak?",
+          "literal": "halo Eva, di-sini adalah Budi. tidak-saya-mengganggu?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Vôbec nie. Som v električke. Hovor hlasnejšie.",
+          "id": "Sama sekali tidak. Saya di trem. Bicaranya lebih keras.",
+          "literal": "sama-sekali tidak. saya-adalah di trem-lokatif. bicaralah lebih-keras."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Neviem nájsť učebňu. Pomôž mi, prosím.",
+          "id": "Saya tidak bisa menemukan ruang kelasnya. Tolong saya.",
+          "literal": "tidak-saya-tahu menemukan ruang-kelas-akusatif. tolonglah kepadaku, saya-minta."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Choď na druhé poschodie a zaboč doprava.",
+          "id": "Naik ke lantai dua lalu belok kanan.",
+          "literal": "berjalanlah ke kedua lantai dan beloklah ke-kanan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Som na druhom poschodí. Nevidím nič.",
+          "id": "Saya di lantai dua. Saya tidak lihat apa-apa.",
+          "literal": "saya-adalah di kedua-lokatif lantai-lokatif. tidak-saya-melihat tak-apa."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Počkaj. Je tam automat na kávu?",
+          "id": "Tunggu. Ada mesin kopi di sana?",
+          "literal": "tunggulah. adalah di-sana mesin untuk kopi-akusatif?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Áno, hneď vedľa mňa.",
+          "id": "Ya, persis di sebelah saya.",
+          "literal": "ya, segera di-samping aku-genitif."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Tak si na treťom. Choď o poschodie nižšie.",
+          "id": "Berarti kamu di lantai tiga. Turun satu lantai.",
+          "literal": "jadi kamu-adalah di ketiga-lokatif. berjalanlah pada lantai lebih-rendah."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aha! Už vidím. Ďakujem, zachránila si ma.",
+          "id": "Oh! Sudah ketemu. Terima kasih, kamu menyelamatkan saya.",
+          "literal": "aha! sudah saya-melihat. saya-berterima-kasih, selamatkan-pr kamu-adalah aku."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Nič to nie je. Ozvi sa, keď prídeš!",
+          "id": "Nggak apa-apa. Kabari kalau sudah sampai!",
+          "literal": "tak-apa itu tidak adalah. berbunyilah diri, ketika kamu-akan-datang!"
+        }
+      ],
+      "notes": [
+        "**Tu je Budi** adalah cara baku memperkenalkan diri di telepon — harfiahnya \"di sini ada Budi\". Bukan *ja som Budi*, yang terdengar seperti perkenalan tatap muka. Bahasa Slowakia mempertahankan susunan zaman telepon kabel, sama seperti bahasa Jerman.",
+        "**Nerušem?** = \"tidak mengganggu?\" — pertanyaan bersangkal yang wajib diucapkan sebelum masuk ke pokok pembicaraan. Melewatinya terdengar terburu-buru. Jawabannya hampir selalu *vôbec nie* (sama sekali tidak).",
+        "**Hovor, pomôž, choď, zaboč, počkaj, ozvi sa** — enam bentuk perintah dalam satu dialog. Perhatikan bahwa tidak satu pun memakai kata tambahan seperti \"tolong\" untuk membentuknya; kata *prosím* ditambahkan terpisah kalau ingin lebih sopan.",
+        "**Ozvi sa** harfiahnya \"berbunyilah\" — dipakai persis seperti \"kabari saya\" atau \"hubungi saya\". Bentuk sopannya *ozvite sa*. Ia salah satu kalimat perpisahan yang paling sering terdengar di Slowakia, sesudah *maj sa*.",
+        "**Nič to nie je** = \"itu bukan apa-apa\" — jawaban santai untuk terima kasih, sedikit lebih akrab daripada *nie je za čo*. Sekali lagi sangkalan ganda: *nič* dan *nie je*."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk perintah",
+          "body": [
+            "Perintah dibentuk dari **bentuk *oni*** kata kerjanya: buang ekornya, dan apa yang tersisa adalah perintah untuk *ty*. Untuk *vy* tambahkan *-te*, untuk *my* tambahkan *-me* (\"ayo kita…\")."
+          ],
+          "table": {
+            "head": [
+              "Bentuk kamus",
+              "oni",
+              "ty",
+              "vy",
+              "my (ayo)"
+            ],
+            "rows": [
+              [
+                "*robiť*",
+                "rob**ia**",
+                "**rob**",
+                "rob**te**",
+                "rob**me**"
+              ],
+              [
+                "*písať*",
+                "píš**u**",
+                "**píš**",
+                "píš**te**",
+                "píš**me**"
+              ],
+              [
+                "*čítať*",
+                "čítaj**ú**",
+                "**čítaj**",
+                "čítaj**te**",
+                "čítaj**me**"
+              ],
+              [
+                "*hovoriť*",
+                "hovor**ia**",
+                "**hovor**",
+                "hovor**te**",
+                "hovorme"
+              ],
+              [
+                "*počkať*",
+                "počkaj**ú**",
+                "**počkaj**",
+                "počkaj**te**",
+                "počkajme"
+              ],
+              [
+                "*spať*",
+                "sp**ia**",
+                "**spi**",
+                "sp**ite**",
+                "spime"
+              ]
+            ]
+          },
+          "after": [
+            "**Baris terakhir menunjukkan satu penyesuaian.** Kalau membuang ekornya meninggalkan dua huruf mati yang susah diucapkan, ditambahkan **-i**: *spi*, *mysli*, *choď*. Telingamu akan memutuskan ini sendiri sesudah beberapa minggu.",
+            "**Delapan bentuk menyimpang, dan semuanya sering dipakai:** *byť → **buď / buďte***, *ísť → **choď / choďte***, *prísť → **príď / príďte***, *jesť → **jedz / jedzte***, *dať → **daj / dajte***, *mať → **maj / majte***, *povedať → **povedz / povedzte***, *pomôcť → **pomôž / pomôžte***.",
+            "**Larangan memakai bentuk tak tuntas**, bukan tuntas. *Nerob to!* (jangan lakukan itu), bukan *neurob to*. *Nechoď tam!* (jangan ke sana). Ini salah satu dari sedikit tempat di mana pilihan tuntas dan tak tuntas benar-benar terkunci oleh aturan, bukan oleh arti."
+          ]
+        },
+        {
+          "title": "Membuat perintah terdengar sopan",
+          "body": [
+            "Bentuk perintah bahasa Slowakia jauh lebih netral daripada kesan pertamanya. Ia dipakai untuk petunjuk arah, resep, tawaran, dan ajakan — bukan cuma untuk memerintah."
+          ],
+          "table": {
+            "head": [
+              "Kalimat",
+              "Nada",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "*Počkaj!*",
+                "netral, akrab",
+                "Tunggu!"
+              ],
+              [
+                "*Počkajte, prosím.*",
+                "sopan",
+                "Tunggu sebentar."
+              ],
+              [
+                "*Poď ďalej!*",
+                "hangat, mengajak",
+                "Masuk!"
+              ],
+              [
+                "*Nech sa páči, sadnite si.*",
+                "sangat sopan",
+                "Silakan duduk."
+              ],
+              [
+                "*Daj si!*",
+                "hangat, menawarkan makanan",
+                "Ambil, ambil!"
+              ],
+              [
+                "*Buď opatrný / opatrná.*",
+                "peduli",
+                "Hati-hati."
+              ],
+              [
+                "*Maj sa!*",
+                "perpisahan hangat",
+                "Jaga dirimu!"
+              ],
+              [
+                "*Ozvi sa!*",
+                "perpisahan",
+                "Kabari, ya!"
+              ],
+              [
+                "*Netráp sa.*",
+                "menenangkan",
+                "Jangan khawatir."
+              ],
+              [
+                "*Neboj sa.*",
+                "menenangkan",
+                "Jangan takut."
+              ]
+            ]
+          },
+          "after": [
+            "**Menambahkan *prosím* membuat perintah apa pun sopan seketika.** *Počkajte* bisa terdengar tegas; *Počkajte, prosím* tidak pernah. Ini cara termurah untuk memperhalus, dan orang Slowakia melakukannya sepanjang hari.",
+            "**Bentuk *vy* dipakai kepada orang asing**, bahkan untuk perintah yang paling ramah: *Sadnite si*, *Poďte ďalej*, *Nech sa páči*. Memakai bentuk *ty* kepada orang yang tidak kamu kenal terdengar jauh lebih kasar dalam bentuk perintah daripada dalam kalimat biasa.",
+            "**Kalau kamu ingin menghindari bentuk perintah sama sekali**, pakai *môžete* atau *mohli by ste* dari unit 16: *Mohli by ste počkať?* Ia selalu benar dan selalu sopan — pilihan yang aman selama minggu-minggu pertama."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menelepon",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Haló?*",
+              "Halo?"
+            ],
+            [
+              "*Prosím?*",
+              "Halo? (menerima telepon, sopan)"
+            ],
+            [
+              "*Tu je …*",
+              "Ini …"
+            ],
+            [
+              "*Môžem hovoriť s …?*",
+              "Bisa bicara dengan …?"
+            ],
+            [
+              "*Kto volá?*",
+              "Siapa ini?"
+            ],
+            [
+              "*Nerušem?*",
+              "Ganggu tidak?"
+            ],
+            [
+              "*Počkajte, prosím.*",
+              "Tunggu sebentar."
+            ],
+            [
+              "*Nepočujem vás.*",
+              "Saya tidak dengar."
+            ],
+            [
+              "*Zle vás počujem.*",
+              "Suara Anda kurang jelas."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Prosím sekali lagi",
+          "items": [
+            "Menjawab telepon dengan *Prosím?* adalah kebiasaan Slowakia yang sering membingungkan orang asing — kedengarannya seperti \"tolong?\". Ia berarti \"ya, silakan bicara\".",
+            "Kata yang sama sudah kamu temui sebagai \"silakan\", \"sama-sama\", \"ini dia\", dan \"saya minta\". Kalau kamu menghitung, *prosím* kini punya enam pekerjaan berbeda — dan semuanya kamu pelajari dari satu kata yang sama di unit 1."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Menulis pesan pendek",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Pesan tertulis di Slowakia jauh lebih pendek daripada percakapan lisan, dan sapaan sering dilesapkan sepenuhnya di antara teman. Sepuluh contoh berikut menutup sebagian besar kebutuhan sehari-hari."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pesan",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Ahoj, si doma?*",
+              "Halo, ada di rumah?"
+            ],
+            [
+              "*Meškám 10 min, prepáč.*",
+              "Telat 10 menit, maaf."
+            ],
+            [
+              "*Kde si?*",
+              "Kamu di mana?"
+            ],
+            [
+              "*Už idem.*",
+              "Saya sudah jalan."
+            ],
+            [
+              "*Dnes nemôžem, mám prácu.*",
+              "Hari ini tidak bisa, ada kerjaan."
+            ],
+            [
+              "*Zajtra o piatej?*",
+              "Besok jam lima?"
+            ],
+            [
+              "*Platí, uvidíme sa.*",
+              "Deal, sampai ketemu."
+            ],
+            [
+              "*Daj vedieť.*",
+              "Kabari, ya."
+            ],
+            [
+              "*Ďakujem za dnešok!*",
+              "Terima kasih untuk hari ini!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Daj vedieť** harfiahnya \"beri tahu\" — dua kata yang menutup pekerjaan seluruh kalimat \"tolong kabari saya nanti\". Bersama *ozvi sa*, ia yang paling sering menutup percakapan tertulis."
+        },
+        {
+          "type": "p",
+          "text": "Untuk surat atau pesan resmi, sapaannya berubah sepenuhnya: *Vážený pán / Vážená pani* di awal, dan *S pozdravom* (hormat saya) di akhir. Ini kamu butuhkan untuk menulis ke kantor, sekolah, atau pemilik rumah sewa — dan memakainya menandai bahwa kamu tahu kebiasaan setempat."
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 17",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Saya datang bersama Eva.",
+              "*Prišiel som s Evou.*"
+            ],
+            [
+              "Saya kerja dengan tim kecil.",
+              "*Pracujem s malým tímom.*"
+            ],
+            [
+              "Saya menulis dengan pulpen.",
+              "*Píšem perom.*"
+            ],
+            [
+              "Saya naik kereta.",
+              "*Idem vlakom.*"
+            ],
+            [
+              "Mobilnya di depan rumah.",
+              "*Auto stojí pred domom.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "volať",
+      "baca": "VO-lat",
+      "id": "menelepon; memanggil"
+    },
+    {
+      "sk": "zavolať",
+      "baca": "ZA-vo-lat",
+      "id": "menelepon (sekali)"
+    },
+    {
+      "sk": "ozvať sa",
+      "baca": "OZ-vat sa",
+      "id": "mengabari"
+    },
+    {
+      "sk": "rušiť",
+      "baca": "RU-syit",
+      "id": "mengganggu"
+    },
+    {
+      "sk": "počuť",
+      "baca": "PO-cut",
+      "id": "mendengar"
+    },
+    {
+      "sk": "zachrániť",
+      "baca": "ZA-khra-nyit",
+      "id": "menyelamatkan"
+    },
+    {
+      "sk": "zabočiť",
+      "baca": "ZA-bo-cit",
+      "id": "berbelok"
+    },
+    {
+      "sk": "sadnúť si",
+      "baca": "SAD-nut si",
+      "id": "duduk"
+    },
+    {
+      "sk": "báť sa",
+      "baca": "bat sa",
+      "id": "takut"
+    },
+    {
+      "sk": "trápiť sa",
+      "baca": "TRA-pit sa",
+      "id": "khawatir"
+    },
+    {
+      "sk": "telefón",
+      "baca": "TE-le-fon",
+      "id": "telepon (lk)"
+    },
+    {
+      "sk": "správa",
+      "baca": "SPRA-va",
+      "id": "pesan; berita (pr)"
+    },
+    {
+      "sk": "kredit",
+      "baca": "KRE-dit",
+      "id": "pulsa (lk)"
+    },
+    {
+      "sk": "baterka",
+      "baca": "BA-ter-ka",
+      "id": "baterai (pr)"
+    },
+    {
+      "sk": "poschodie",
+      "baca": "POS-kho-dye",
+      "id": "lantai (nt)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slowakia. Pakai bentuk ty.",
+      "items": [
+        "Halo, ini Budi. Ganggu tidak?",
+        "Bicaranya lebih keras.",
+        "Tolong saya.",
+        "Naik ke lantai dua lalu belok kanan.",
+        "Kabari kalau sudah sampai.",
+        "Sampai ketemu sebentar lagi."
+      ]
+    },
+    {
+      "prompt": "Tulis bentuk perintah untuk ty.",
+      "items": [
+        "robiť → ____",
+        "písať → ____",
+        "čítať → ____",
+        "počkať → ____",
+        "hovoriť → ____",
+        "spať → ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "Budi / je / tu",
+        "prosím / mi / pomôž / ,",
+        "doprava / zaboč / a / choď / poschodie / na / druhé",
+        "chvíľu / sa / o / uvidíme",
+        "sa / ozvi"
+      ]
+    }
+  ],
+  "answers": [
+    "Ahoj, tu je Budi. Nerušem? — Hovor hlasnejšie. — Pomôž mi. — Choď na druhé poschodie a zaboč doprava. — Ozvi sa, keď prídeš. — Uvidíme sa o chvíľu.",
+    "rob — píš — čítaj — počkaj — hovor — spi",
+    "Tu je Budi. — Pomôž mi, prosím. — Choď na druhé poschodie a zaboč doprava. — Uvidíme sa o chvíľu. — Ozvi sa."
+  ]
+}

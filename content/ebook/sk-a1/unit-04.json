@@ -1,0 +1,547 @@
+{
+  "title": "Di kafe",
+  "title_target": "V kaviarni",
+  "goal": "Memesan minuman dan makanan, dan memasang kasus pertama dari enam: akusatif — bentuk yang dipakai kata benda ketika ia menjadi sasaran perbuatan.",
+  "bekal": [
+    "memesan dengan tiga cara: *prosím si*, *dám si*, dan *chcel by som*",
+    "mengubah kata benda apa pun ke bentuk akusatif — termasuk mengetahui kapan ia tidak berubah sama sekali",
+    "memakai kata ganti objek *ma, ťa, ho, ju*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Objednávka",
+      "intro": "Eva dan Budi masuk ke sebuah kafe di Staré Mesto, Bratislava. Pelayan datang menghampiri.",
+      "lines": [
+        {
+          "speaker": "Čašník:",
+          "text": "Dobrý deň! Prosím?",
+          "id": "Selamat siang! Silakan?",
+          "literal": "baik-lk hari! saya-minta?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Dobrý deň. Prosím si jednu kávu.",
+          "id": "Selamat siang. Saya minta satu kopi.",
+          "literal": "baik-lk hari. saya-minta diri satu-akusatif kopi-akusatif."
+        },
+        {
+          "speaker": "Čašník:",
+          "text": "Veľkú alebo malú?",
+          "id": "Yang besar atau yang kecil?",
+          "literal": "besar-akusatif atau kecil-akusatif?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Veľkú, prosím. A pohár vody.",
+          "id": "Yang besar, tolong. Dan segelas air.",
+          "literal": "besar-akusatif, saya-minta. dan gelas air-genitif."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja si dám jedno pivo a jeden koláč.",
+          "id": "Saya pesan satu bir dan satu kue.",
+          "literal": "saya diri saya-akan-beri satu-nt bir dan satu-lk kue."
+        },
+        {
+          "speaker": "Čašník:",
+          "text": "Aké pivo si dáte?",
+          "id": "Bir apa yang Anda pesan?",
+          "literal": "apa-macam-nt bir diri kalian-akan-beri?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Neviem. Čo odporúčate?",
+          "id": "Saya tidak tahu. Apa yang Anda sarankan?",
+          "literal": "tidak-saya-tahu. apa kalian-menyarankan?"
+        },
+        {
+          "speaker": "Čašník:",
+          "text": "Máme Šariš a Zlatý Bažant. Oba sú dobré.",
+          "id": "Kami punya Šariš dan Zlatý Bažant. Keduanya enak.",
+          "literal": "kami-punya Šariš dan Zlatý Bažant. keduanya mereka-adalah baik-jamak."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tak Zlatý Bažant, prosím.",
+          "id": "Kalau begitu Zlatý Bažant, tolong.",
+          "literal": "jadi Zlatý Bažant, saya-minta."
+        },
+        {
+          "speaker": "Čašník:",
+          "text": "Hneď to bude. Ešte niečo?",
+          "id": "Segera datang. Ada lagi?",
+          "literal": "segera itu akan-ada. masih sesuatu?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Nie, ďakujeme. To je všetko.",
+          "id": "Tidak, terima kasih. Itu saja.",
+          "literal": "tidak, kami-berterima-kasih. itu adalah semua."
+        }
+      ],
+      "notes": [
+        "**Prosím si dan dám si — dua cara memesan, keduanya memakai *si*.** Kata kecil itu berarti \"untuk diri sendiri\", jadi *dám si pivo* harfiahnya \"saya memberi diri saya bir\". Bahasa Slowakia hampir selalu menambahkannya saat memesan; menghilangkannya membuat kalimatmu terdengar seperti perintah.",
+        "**Kávu, bukan káva.** Inilah akusatif yang jadi pokok unit ini. Kata benda perempuan berakhiran *-a* berubah menjadi *-u* ketika ia menjadi sasaran: *káva → kávu*, *voda → vodu*, *polievka → polievku*. Ini ekor yang paling sering kamu butuhkan di kehidupan sehari-hari, dan yang paling cepat terasa wajar.",
+        "**Pivo dan koláč tidak berubah.** Kata benda netral tidak pernah berubah di akusatif, dan kata benda lelaki **benda mati** juga tidak. Jadi dari enam golongan kata benda, tiga di antaranya tidak menuntut apa pun darimu di kasus ini. Kabar baik yang jarang disebut buku tata bahasa.",
+        "**Pohár vody memakai bentuk lain lagi** — genitif, untuk menyatakan isi wadah: \"gelas berisi air\". Sama seperti *šálka kávy* (secangkir kopi) dan *fľaša vína* (sebotol anggur). Bentuknya dipasang di unit 9; untuk sekarang hafalkan sebagai bongkahan.",
+        "**Jednu, jedno, jeden.** Angka satu berperilaku persis seperti kata sifat: ia ikut jenis kelamin **dan** ikut kasus. *Jeden koláč* (lk), *jedno pivo* (nt), *jednu kávu* (pr, akusatif). Angka dua ke atas jauh lebih santai, dan itu dibahas di unit 5."
+      ],
+      "grammars": [
+        {
+          "title": "Akusatif — kasus pertama dari enam",
+          "body": [
+            "Akusatif adalah bentuk yang dipakai kata benda ketika ia menjadi **sasaran langsung** perbuatan: yang dipesan, yang dilihat, yang dibeli, yang dipunyai. Pertanyaannya *koho?* (siapa) dan *čo?* (apa).",
+            "Aturan lengkapnya muat dalam satu tabel, dan setengah barisnya tidak menuntut perubahan apa pun."
+          ],
+          "table": {
+            "head": [
+              "Jenis kata benda",
+              "Ekor",
+              "Nominatif",
+              "Akusatif"
+            ],
+            "rows": [
+              [
+                "**lk bernyawa**",
+                "**-a**",
+                "*brat, muž, učiteľ*",
+                "*Mám brat**a**. Vidím muž**a**.*"
+              ],
+              [
+                "**lk benda mati**",
+                "**tetap**",
+                "*stôl, chlieb, koláč*",
+                "*Vidím stôl. Mám chlieb.*"
+              ],
+              [
+                "**pr berakhiran -a**",
+                "**-u**",
+                "*káva, voda, kniha*",
+                "*Prosím si káv**u**. Mám knih**u**.*"
+              ],
+              [
+                "**pr huruf lunak**",
+                "**tetap**",
+                "*posteľ, dlaň*",
+                "*Mám posteľ.*"
+              ],
+              [
+                "**nt**",
+                "**tetap**",
+                "*pivo, mesto, auto*",
+                "*Dám si pivo. Vidím mesto.*"
+              ]
+            ]
+          },
+          "after": [
+            "**Kata sifatnya ikut berubah bersama kata bendanya.** Ekornya: lk bernyawa **-ého** (*vidím dobrého učiteľa*), lk benda mati **-ý** tanpa perubahan (*vidím veľký stôl*), pr **-ú** (*prosím si veľkú kávu*), nt **-é** tanpa perubahan (*dám si dobré pivo*).",
+            "**Kenapa lelaki bernyawa berbeda?** Karena bahasa Slowakia perlu membedakan siapa melakukan dan siapa dikenai, sementara susunan katanya sangat bebas. *Brat vidí otca* dan *Otca vidí brat* dua-duanya berarti \"kakak melihat ayah\" — yang menentukan adalah ekornya, bukan urutannya. Untuk benda mati kebingungan itu jarang terjadi, jadi bahasanya tidak repot-repot.",
+            "**Kata kerja yang menuntut akusatif** adalah yang punya sasaran: *mať* (punya), *vidieť* (melihat), *kupovať* (membeli), *prosiť si* (minta), *dať si* (pesan), *hľadať* (mencari), *poznať* (kenal), *piť* (minum), *jesť* (makan), *čítať* (membaca), *písať* (menulis)."
+          ]
+        },
+        {
+          "title": "Kata ganti sebagai objek",
+          "body": [
+            "Ketika sasarannya adalah orang, kata gantinya juga punya bentuk akusatif sendiri. Sebagian besar sangat pendek, dan seperti *som* dan *sa*, ia tidak pernah ditekan."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "Objek pendek",
+              "Objek panjang",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "ja",
+                "**ma**",
+                "mňa",
+                "*Vidíš ma?* — Kamu melihatku?"
+              ],
+              [
+                "ty",
+                "**ťa**",
+                "teba",
+                "*Vidím ťa.* — Saya melihatmu."
+              ],
+              [
+                "on",
+                "**ho**",
+                "jeho",
+                "*Poznám ho.* — Saya kenal dia."
+              ],
+              [
+                "ona",
+                "**ju**",
+                "ňu",
+                "*Poznám ju.* — Saya kenal dia."
+              ],
+              [
+                "ono",
+                "**ho**",
+                "—",
+                "*Mám ho.*"
+              ],
+              [
+                "my",
+                "**nás**",
+                "nás",
+                "*Vidí nás.* — Dia melihat kami."
+              ],
+              [
+                "vy",
+                "**vás**",
+                "vás",
+                "*Poznám vás.* — Saya kenal Anda."
+              ],
+              [
+                "oni",
+                "**ich**",
+                "ich",
+                "*Vidím ich.* — Saya melihat mereka."
+              ]
+            ]
+          },
+          "after": [
+            "**Bentuk pendek dipakai hampir selalu**, dan ia menempati **tempat kedua** dalam kalimat, langsung sesudah kata pertama: *Ja ťa vidím*, *Zajtra ťa vidím*, *Vidím ťa*. Ia tidak pernah berdiri di awal kalimat.",
+            "**Bentuk panjang dipakai hanya untuk menekankan** atau sesudah kata depan: *Mňa nevidíš?* (\"Kamu tidak melihat **aku**?\"), *pre teba* (untuk kamu), *bez neho* (tanpa dia).",
+            "Kalau ada dua kata pendek berturut-turut, urutannya tetap: *som/si* dulu, baru *sa/si*, baru objek. *Videl som ťa* = \"Saya melihatmu (kemarin)\". Urutan ini otomatis begitu telingamu terbiasa, dan sampai saat itu tiba, tirulah kalimat utuhnya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Minuman dan makanan ringan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**káva** (pr)",
+              "KA-va",
+              "kopi"
+            ],
+            [
+              "**čaj** (lk)",
+              "cay",
+              "teh"
+            ],
+            [
+              "**voda** (pr)",
+              "VO-da",
+              "air"
+            ],
+            [
+              "**minerálka** (pr)",
+              "MI-ne-ral-ka",
+              "air mineral bersoda"
+            ],
+            [
+              "**pivo** (nt)",
+              "PI-vo",
+              "bir"
+            ],
+            [
+              "**víno** (nt)",
+              "VI-no",
+              "anggur"
+            ],
+            [
+              "**džús** (lk)",
+              "jus",
+              "jus"
+            ],
+            [
+              "**mlieko** (nt)",
+              "MLYE-ko",
+              "susu"
+            ],
+            [
+              "**chlieb** (lk)",
+              "khlyep",
+              "roti"
+            ],
+            [
+              "**zmrzlina** (pr)",
+              "ZMERZ-li-na",
+              "es krim"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kopi di Slowakia",
+          "items": [
+            "*Presso* atau *espresso* = espresso. *Kapucíno* = cappuccino. *Viedenská káva* = kopi dengan krim kocok, warisan Wina yang masih hidup.",
+            "Kalau kamu memesan *káva* begitu saja, yang datang biasanya espresso kecil. Untuk kopi panjang bergaya Indonesia, mintalah *veľká káva* atau *lungo*.",
+            "*Turecká káva* masih ada di kedai lama: bubuk kopi diseduh langsung di cangkir, tanpa saringan — persis kopi tubruk. Ini pilihan paling akrab bagi lidah Indonesia."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan *zmrzlina*: enam huruf mati berurutan di depan, tanpa satu pun huruf hidup sampai suku kata kedua. Bacanya *ZMERZ-li-na* — biarkan *r*-nya jadi inti suku kata. Anak-anak Slowakia belajar mengucapkannya lebih dulu daripada kebanyakan kata lain, karena hadiahnya sepadan."
+        }
+      ]
+    },
+    {
+      "title": "Tiga cara memesan, dari yang santai sampai yang paling sopan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Nada",
+            "Harfiah"
+          ],
+          "rows": [
+            [
+              "**Dám si kávu.**",
+              "santai, paling umum",
+              "saya-akan-beri diri kopi"
+            ],
+            [
+              "**Prosím si kávu.**",
+              "sopan, netral — paling aman",
+              "saya-minta diri kopi"
+            ],
+            [
+              "**Chcel by som kávu.**",
+              "sangat sopan (lelaki)",
+              "saya-mau akan saya kopi"
+            ],
+            [
+              "**Chcela by som kávu.**",
+              "sangat sopan (perempuan)",
+              "saya-mau-pr akan saya kopi"
+            ],
+            [
+              "**Môžem poprosiť kávu?**",
+              "sangat sopan, bertanya",
+              "boleh-saya minta kopi?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Prosím si** adalah pilihan paling aman untuk pemula: sopan tanpa terdengar kaku, dan dipakai orang Slowakia sendiri sepanjang hari. **Chcel/chcela by som** adalah bentuk pengandaian — perhatikan bahwa ia ikut jenis kelamin **pembicaranya**, bukan lawan bicara. Ini satu-satunya tempat di A1 di mana kamu harus tahu jenis kelaminmu sendiri untuk memilih kata."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat lain di kafe",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Ešte jedno pivo, prosím.*",
+              "Satu bir lagi, tolong."
+            ],
+            [
+              "*Máte jedálny lístok?*",
+              "Ada daftar menu?"
+            ],
+            [
+              "*Čo odporúčate?*",
+              "Apa yang Anda sarankan?"
+            ],
+            [
+              "*Je to ostré?*",
+              "Ini pedas?"
+            ],
+            [
+              "*Som vegetarián / vegetariánka.*",
+              "Saya vegetarian."
+            ],
+            [
+              "*Nejem bravčové mäso.*",
+              "Saya tidak makan daging babi."
+            ],
+            [
+              "*Účet, prosím.* / *Zaplatím, prosím.*",
+              "Bon, tolong. / Saya mau bayar."
+            ],
+            [
+              "*Môžem platiť kartou?*",
+              "Boleh bayar dengan kartu?"
+            ],
+            [
+              "*Dobrú chuť!*",
+              "Selamat makan!"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Dua kebiasaan meja yang perlu diketahui",
+          "items": [
+            "**Dobrú chuť** diucapkan sebelum makan, oleh siapa pun kepada siapa pun di meja — termasuk pelayan kepada tamunya. Jawabannya *ďakujem, navzájom* (\"terima kasih, sama-sama\").",
+            "**Uang tip** dibayar dengan menyebut jumlah bulatnya saat membayar, bukan ditinggalkan di meja. Kalau bonnya 8,60 € dan kamu menyerahkan sepuluh euro sambil berkata *deväť* (sembilan), pelayan akan mengembalikan satu euro dan sisanya jadi tip. Biasanya lima sampai sepuluh persen."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 2",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tutup kolom Slowakia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Kamu dari mana? — Saya dari Indonesia.",
+              "*Odkiaľ si? — Som z Indonézie.*"
+            ],
+            [
+              "Sekarang saya tinggal di Bratislava.",
+              "*Teraz bývam v Bratislave.*"
+            ],
+            [
+              "Saya belum bisa bicara dengan baik.",
+              "*Ešte nehovorím dobre.*"
+            ],
+            [
+              "Bahasa apa saja yang kamu bisa?",
+              "*Aké jazyky vieš?*"
+            ],
+            [
+              "Tidak apa-apa.",
+              "*Nevadí.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "kaviareň",
+      "baca": "KA-vya-renj",
+      "id": "kafe (pr)"
+    },
+    {
+      "sk": "čašník / čašníčka",
+      "baca": "CASY-nik / -nic-ka",
+      "id": "pelayan (lk / pr)"
+    },
+    {
+      "sk": "prosiť si",
+      "baca": "PRO-sit si",
+      "id": "minta (memesan)"
+    },
+    {
+      "sk": "dať si",
+      "baca": "dat si",
+      "id": "memesan; mengambil untuk diri"
+    },
+    {
+      "sk": "chcieť",
+      "baca": "khtsyet",
+      "id": "mau"
+    },
+    {
+      "sk": "piť",
+      "baca": "pit",
+      "id": "minum"
+    },
+    {
+      "sk": "jesť",
+      "baca": "yest",
+      "id": "makan"
+    },
+    {
+      "sk": "vidieť",
+      "baca": "VI-dyet",
+      "id": "melihat"
+    },
+    {
+      "sk": "poznať",
+      "baca": "POZ-nat",
+      "id": "kenal"
+    },
+    {
+      "sk": "odporúčať",
+      "baca": "OT-po-ru-cat",
+      "id": "menyarankan"
+    },
+    {
+      "sk": "platiť",
+      "baca": "PLA-tyit",
+      "id": "membayar"
+    },
+    {
+      "sk": "alebo",
+      "baca": "A-le-bo",
+      "id": "atau"
+    },
+    {
+      "sk": "tak",
+      "baca": "tak",
+      "id": "jadi; kalau begitu"
+    },
+    {
+      "sk": "hneď",
+      "baca": "hnyed",
+      "id": "segera"
+    },
+    {
+      "sk": "potom",
+      "baca": "PO-tom",
+      "id": "kemudian"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slowakia.",
+      "items": [
+        "Selamat siang. Saya minta satu kopi.",
+        "Yang besar atau yang kecil?",
+        "Saya pesan satu bir dan satu kue.",
+        "Apa yang Anda sarankan?",
+        "Bon, tolong.",
+        "Boleh bayar dengan kartu?"
+      ]
+    },
+    {
+      "prompt": "Ubah ke bentuk akusatif.",
+      "items": [
+        "Prosím si ____ . (káva)",
+        "Dám si ____ . (pivo)",
+        "Mám ____ . (brat)",
+        "Vidím ____ . (stôl)",
+        "Čítam ____ . (kniha)",
+        "Poznám ____ . (učiteľ)",
+        "Kupujem ____ . (chlieb)",
+        "Pijem ____ . (voda)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "kávu / si / prosím / jednu",
+        "pivo / dám / jedno / si",
+        "odporúčate / čo / ?",
+        "prosím / účet / ,",
+        "je / to / všetko"
+      ]
+    }
+  ],
+  "answers": [
+    "Dobrý deň. Prosím si jednu kávu. — Veľkú alebo malú? — Dám si jedno pivo a jeden koláč. — Čo odporúčate? — Účet, prosím. — Môžem platiť kartou?",
+    "kávu — pivo — brata — stôl — knihu — učiteľa — chlieb — vodu",
+    "Prosím si jednu kávu. — Dám si jedno pivo. — Čo odporúčate? — Účet, prosím. — To je všetko."
+  ]
+}

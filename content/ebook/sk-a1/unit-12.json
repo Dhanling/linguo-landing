@@ -1,0 +1,506 @@
+{
+  "title": "Saya kurang enak badan",
+  "title_target": "Nie je mi dobre",
+  "goal": "Mengeluh sakit, menyebut bagian badan, dan menghadapi satu susunan yang membalik kebiasaan berpikir: dalam bahasa Slowakia, kepalalah yang menyakiti kamu — bukan kamu yang sakit kepala.",
+  "bekal": [
+    "menyebut bagian badan dan mengatakan bagian mana yang sakit",
+    "memakai *bolí ma* dengan benar — dan tahu kenapa ia memakai akusatif, bukan datif",
+    "membedakan *je mi zle* dan *bolí ma* dan tahu kapan memakai yang mana"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — U lekára",
+      "intro": "Budi tidak masuk kelas dua hari. Eva mengantarnya ke klinik dekat asrama.",
+      "lines": [
+        {
+          "speaker": "Lekárka:",
+          "text": "Dobrý deň. Čo vás trápi?",
+          "id": "Selamat siang. Ada keluhan apa?",
+          "literal": "baik hari. apa kalian-akusatif ia-menyusahkan?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nie je mi dobre. Bolí ma hlava.",
+          "id": "Saya kurang enak badan. Kepala saya sakit.",
+          "literal": "tidak adalah kepadaku baik. ia-menyakiti aku kepala."
+        },
+        {
+          "speaker": "Lekárka:",
+          "text": "Odkedy vás to bolí?",
+          "id": "Sejak kapan sakitnya?",
+          "literal": "sejak-kapan kalian-akusatif itu ia-menyakiti?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Od pondelka. A bolí ma aj hrdlo.",
+          "id": "Dari Senin. Dan tenggorokan saya juga sakit.",
+          "literal": "dari Senin-genitif. dan ia-menyakiti aku juga tenggorokan."
+        },
+        {
+          "speaker": "Lekárka:",
+          "text": "Máte teplotu? Kašlete?",
+          "id": "Demam? Batuk?",
+          "literal": "kalian-punya suhu-akusatif? kalian-batuk?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Áno, trochu kašlem. A v noci mi je zima.",
+          "id": "Ya, sedikit batuk. Dan malam hari saya kedinginan.",
+          "literal": "ya, sedikit saya-batuk. dan di malam-lokatif kepadaku adalah dingin."
+        },
+        {
+          "speaker": "Lekárka:",
+          "text": "Otvorte ústa, prosím. Povedzte á.",
+          "id": "Buka mulutnya. Bilang \"a\".",
+          "literal": "bukalah-kalian mulut-jamak, saya-minta. katakanlah-kalian a."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Áááá.",
+          "id": "Aaaaa.",
+          "literal": "aaaa."
+        },
+        {
+          "speaker": "Lekárka:",
+          "text": "Nič vážne. Je to obyčajná chrípka.",
+          "id": "Tidak serius. Ini flu biasa.",
+          "literal": "tak-apa berat. adalah itu biasa flu."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Musím brať lieky?",
+          "id": "Saya harus minum obat?",
+          "literal": "harus-saya mengambil obat-jamak?"
+        },
+        {
+          "speaker": "Lekárka:",
+          "text": "Nič vážne. Pite veľa čaju a odpočívajte.",
+          "id": "Tidak serius. Minum banyak teh dan istirahat.",
+          "literal": "tak-apa berat. minumlah-kalian banyak teh-genitif dan beristirahatlah-kalian."
+        }
+      ],
+      "notes": [
+        "**Bolí ma hlava** harfiahnya \"kepala menyakiti aku\". Yang menjadi **pelaku** kalimat adalah bagian badannya, dan kamu adalah **sasarannya** — bentuk akusatif. Susunannya sama dengan *páči sa mi* di unit 10, tetapi kasusnya berbeda: *páčiť sa* memakai datif, *boleť* memakai akusatif. Ini pasangan yang paling sering keliru di seluruh A1.",
+        "**Karena bagian badannya jadi pelaku, kata kerjanya ikut jumlah bagian badannya.** *Bolí ma hlava* (satu kepala), tetapi *Bolia ma nohy* (kaki-kakiku sakit, jamak) dan *Bolia ma zuby* (gigi-gigiku sakit). Kalau kamu memakai bentuk tunggal untuk bagian badan yang berpasangan, kalimatmu terdengar aneh.",
+        "**Nie je mi dobre** memakai datif — di sini yang dibicarakan adalah keadaanmu secara keseluruhan, bukan satu bagian yang sakit. Bandingkan: *Bolí ma hlava* (satu tempat, akusatif) dan *Je mi zle* (seluruh badan, datif). Dua susunan, dua kasus, dua pekerjaan yang jelas berbeda.",
+        "**Je mi zima** bukan \"saya adalah dingin\" melainkan \"kepadaku terasa dingin\". Semua rasa badan memakai pola ini: *je mi teplo* (saya kepanasan), *je mi zle* (saya mual), *je mi smutno* (saya sedih), *je mi to jedno* (buat saya sama saja).",
+        "**Otvorte, povedzte, pite, odpočívajte** — semua bentuk perintah sopan, berakhiran *-te*. Kamu tidak perlu menghasilkannya di A1, tetapi kamu wajib mengenalinya: setiap petunjuk yang kamu terima dari dokter, petugas, atau penjual akan memakai bentuk ini."
+      ],
+      "grammars": [
+        {
+          "title": "Bolí ma — susunan yang membalik pelakunya",
+          "body": [
+            "Bahasa Indonesia menjadikan orangnya pelaku: \"saya sakit kepala\". Bahasa Slowakia menjadikan bagian badannya pelaku: \"kepala menyakiti saya\". Sekali kamu menerima pembalikan itu, seluruh tabelnya jadi mudah."
+          ],
+          "table": {
+            "head": [
+              "Bahasa Slowakia",
+              "Harfiah",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "*Bolí **ma** hlava.*",
+                "menyakiti aku kepala",
+                "Saya sakit kepala."
+              ],
+              [
+                "*Bolí **ťa** brucho?*",
+                "menyakiti kamu perut",
+                "Kamu sakit perut?"
+              ],
+              [
+                "*Bolí **ho** chrbát.*",
+                "menyakiti dia punggung",
+                "Punggungnya sakit."
+              ],
+              [
+                "*Bolí **ju** zub.*",
+                "menyakiti dia gigi",
+                "Giginya sakit."
+              ],
+              [
+                "*Bolia **ma** nohy.*",
+                "menyakiti-jamak aku kaki-kaki",
+                "Kaki saya sakit."
+              ],
+              [
+                "*Bolí **nás** hlava.*",
+                "menyakiti kami kepala",
+                "Kami sakit kepala."
+              ],
+              [
+                "*Čo **vás** bolí?*",
+                "apa kalian menyakiti",
+                "Yang sakit apa?"
+              ]
+            ]
+          },
+          "after": [
+            "**Kata gantinya akusatif** — bentuk yang sama dengan unit 4: *ma, ťa, ho, ju, nás, vás, ich*. Bandingkan dengan *páčiť sa* yang memakai *mi, ti, mu, jej, nám, vám, im*. Kalau kamu bingung, ingat kalimat penanda ini: **\"kepala menyakiti**-ku**\"** — menyakiti punya sasaran, dan sasaran memakai akusatif.",
+            "**Untuk bentuk lampau, ekornya ikut bagian badannya**: *Bolela ma hlava* (pr), *Bolelo ma brucho* (nt), *Boleli ma nohy* (jamak). Sekali lagi bagian badannya yang jadi pelaku, jadi ekornya ikut jenis kelaminnya.",
+            "**Kalau kamu ragu, ada jalan keluar yang selalu benar:** *Mám bolesti hlavy* (\"saya punya sakit kepala\") memakai susunan yang wajar bagi telingamu dan tetap benar dalam bahasa Slowakia. Ia sedikit lebih resmi, tetapi tidak pernah salah."
+          ]
+        },
+        {
+          "title": "Je mi … — rasa yang menimpa seluruh badan",
+          "body": [
+            "Kalau yang kamu rasakan bukan sakit di satu titik melainkan keadaan yang menyeluruh, bahasa Slowakia memakai *je mi* + kata keterangan, dengan **datif**."
+          ],
+          "table": {
+            "head": [
+              "Bahasa Slowakia",
+              "Harfiah",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "*Je **mi** zle.*",
+                "adalah kepadaku buruk",
+                "Saya mual; saya tidak enak badan."
+              ],
+              [
+                "*Nie je **mi** dobre.*",
+                "tidak adalah kepadaku baik",
+                "Saya kurang enak badan."
+              ],
+              [
+                "*Je **mi** zima.*",
+                "adalah kepadaku dingin",
+                "Saya kedinginan."
+              ],
+              [
+                "*Je **mi** teplo.*",
+                "adalah kepadaku panas",
+                "Saya kepanasan."
+              ],
+              [
+                "*Je **mi** smutno.*",
+                "adalah kepadaku sedih",
+                "Saya sedih."
+              ],
+              [
+                "*Je **mi** to jedno.*",
+                "adalah kepadaku itu satu",
+                "Buat saya sama saja."
+              ],
+              [
+                "*Je **mi** ľúto.*",
+                "adalah kepadaku kasihan",
+                "Saya turut menyesal."
+              ]
+            ]
+          },
+          "after": [
+            "**Baris terakhir sering dipakai.** *Je mi ľúto* adalah cara mengucapkan belasungkawa dan sekaligus cara menolak dengan halus: *Je mi ľúto, ale nemôžem* = \"Maaf, tapi saya tidak bisa\".",
+            "**Perhatikan bahwa kata sesudah *mi* tidak pernah berubah bentuk.** *Zle, dobre, zima, teplo, smutno* semuanya berbentuk kata keterangan yang mati. Kamu tidak perlu menyesuaikan apa pun dengan jenis kelaminmu.",
+            "**Bentuk lampaunya:** ganti *je* dengan *bolo* — *Bolo mi zle*, *Bolo mi zima*. Bentuk nantinya: *Bude mi zle*. Satu kata yang berubah, dan seluruh polanya ikut."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bagian badan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Cara baca",
+            "Bahasa Indonesia",
+            "Jamaknya"
+          ],
+          "rows": [
+            [
+              "**hlava** (pr)",
+              "HLA-va",
+              "kepala",
+              "—"
+            ],
+            [
+              "**oko** (nt)",
+              "O-ko",
+              "mata",
+              "*oči*"
+            ],
+            [
+              "**ucho** (nt)",
+              "U-kho",
+              "telinga",
+              "*uši*"
+            ],
+            [
+              "**nos** (lk)",
+              "nos",
+              "hidung",
+              "—"
+            ],
+            [
+              "**ústa** (jamak)",
+              "US-ta",
+              "mulut",
+              "selalu jamak"
+            ],
+            [
+              "**zub** (lk)",
+              "zup",
+              "gigi",
+              "*zuby*"
+            ],
+            [
+              "**krk** (lk)",
+              "kerk",
+              "leher",
+              "—"
+            ],
+            [
+              "**hrdlo** (nt)",
+              "HERD-lo",
+              "tenggorokan",
+              "—"
+            ],
+            [
+              "**ruka** (pr)",
+              "RU-ka",
+              "tangan; lengan",
+              "*ruky*"
+            ],
+            [
+              "**prst** (lk)",
+              "perst",
+              "jari",
+              "*prsty*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Oko → oči dan ucho → uši** adalah jamak yang menyimpang, dan keduanya sisa dari bentuk kuno untuk \"dua benda\" yang sudah hilang dari bahasa Slowakia modern. Karena mata dan telinga selalu berpasangan, bentuk itu bertahan justru di sini."
+        },
+        {
+          "type": "kotak",
+          "title": "Empat kata tanpa huruf hidup",
+          "items": [
+            "*Krk* (leher), *prst* (jari), *chrbát* (punggung, suku kata pertamanya), *smrť* (kematian) — bagian badan menyumbang beberapa kata paling terkenal tanpa huruf hidup dalam bahasa Slowakia.",
+            "Bacanya: selipkan pepet yang sangat samar di antara huruf matinya. *Kerk*, *perst*, *kher-bat*. Jangan pepet penuh — itu langsung terdengar sebagai orang asing."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Di dokter dan di apotek",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Nie je mi dobre.*",
+              "Saya kurang enak badan."
+            ],
+            [
+              "*Bolí ma …*",
+              "… saya sakit."
+            ],
+            [
+              "*Mám teplotu.*",
+              "Saya demam."
+            ],
+            [
+              "*Mám nádchu.*",
+              "Saya pilek."
+            ],
+            [
+              "*Kašlem.*",
+              "Saya batuk."
+            ],
+            [
+              "*Mám chrípku.*",
+              "Saya kena flu."
+            ],
+            [
+              "*Som alergický / alergická na …*",
+              "Saya alergi … (lk / pr)"
+            ],
+            [
+              "*Potrebujem lekára.*",
+              "Saya butuh dokter."
+            ],
+            [
+              "*Kde je najbližšia lekáreň?*",
+              "Apotek terdekat di mana?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Uzdrav sa!** (akrab) atau **Uzdravte sa!** (sopan) adalah yang kamu ucapkan kepada orang yang sedang sakit. Untuk orang yang bersin, ucapkan **Na zdravie!** — kata yang sama dengan yang dipakai untuk bersulang."
+        },
+        {
+          "type": "kotak",
+          "title": "Layanan kesehatan di Slowakia",
+          "items": [
+            "Mahasiswa asing dan pekerja terdaftar wajib punya *zdravotné poistenie* (asuransi kesehatan). Dengan kartunya, kunjungan ke dokter umum praktis gratis.",
+            "*Lekáreň* (apotek) menjual banyak obat tanpa resep, dan apotekernya biasanya bersedia mendengarkan keluhanmu dan menyarankan sesuatu — sering kali itu langkah pertama yang lebih cepat daripada mengantre di klinik.",
+            "*Pohotovosť* adalah unit gawat darurat, buka di luar jam kerja. Nomor darurat: **112** untuk semuanya, **155** khusus ambulans."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 10",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Kamu suka filmnya?",
+              "*Páčil sa ti ten film?*"
+            ],
+            [
+              "Saya suka film lama.",
+              "*Mám rád staré filmy.*"
+            ],
+            [
+              "Saya suka masak.",
+              "*Rád varím.*"
+            ],
+            [
+              "Masakan Slowakia enak buat saya.",
+              "*Slovenské jedlo mi chutí.*"
+            ],
+            [
+              "Saya beri dia buku.",
+              "*Dám mu knihu.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "boleť",
+      "baca": "BO-let",
+      "id": "menyakiti"
+    },
+    {
+      "sk": "bolesť",
+      "baca": "BO-lest",
+      "id": "rasa sakit (pr)"
+    },
+    {
+      "sk": "lekár / lekárka",
+      "baca": "LE-kar / -ka",
+      "id": "dokter (lk / pr)"
+    },
+    {
+      "sk": "lekáreň",
+      "baca": "LE-ka-renj",
+      "id": "apotek (pr)"
+    },
+    {
+      "sk": "liek",
+      "baca": "lyek",
+      "id": "obat (lk)"
+    },
+    {
+      "sk": "teplota",
+      "baca": "TE-plo-ta",
+      "id": "suhu; demam (pr)"
+    },
+    {
+      "sk": "chrípka",
+      "baca": "KHRIP-ka",
+      "id": "flu (pr)"
+    },
+    {
+      "sk": "nádcha",
+      "baca": "NAT-kha",
+      "id": "pilek (pr)"
+    },
+    {
+      "sk": "kašľať",
+      "baca": "KASY-lyat",
+      "id": "batuk"
+    },
+    {
+      "sk": "trápiť",
+      "baca": "TRA-pit",
+      "id": "menyusahkan"
+    },
+    {
+      "sk": "otvoriť",
+      "baca": "OT-vo-rit",
+      "id": "membuka"
+    },
+    {
+      "sk": "odpočívať",
+      "baca": "OT-po-ci-vat",
+      "id": "beristirahat"
+    },
+    {
+      "sk": "zdravie",
+      "baca": "ZDRA-vye",
+      "id": "kesehatan (nt)"
+    },
+    {
+      "sk": "zdravý",
+      "baca": "ZDRA-vi",
+      "id": "sehat"
+    },
+    {
+      "sk": "chorý",
+      "baca": "KHO-ri",
+      "id": "sakit"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slowakia.",
+      "items": [
+        "Saya kurang enak badan.",
+        "Kepala saya sakit.",
+        "Tenggorokan saya juga sakit.",
+        "Saya demam dan batuk.",
+        "Apotek terdekat di mana?",
+        "Saya sudah lebih baik."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata ganti akusatif yang tepat.",
+      "items": [
+        "Bolí ____ hlava. (aku)",
+        "Bolí ____ brucho? (kamu)",
+        "Bolí ____ chrbát. (dia, lelaki)",
+        "Bolí ____ zub. (dia, perempuan)",
+        "Čo ____ bolí? (Anda)",
+        "Bolí ____ hlava. (kami)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "mi / je / nie / dobre",
+        "hlava / ma / bolí",
+        "teplotu / mám",
+        "lekáreň / je / kde / najbližšia / ?",
+        "lepšie / mi / už / je"
+      ]
+    }
+  ],
+  "answers": [
+    "Nie je mi dobre. — Bolí ma hlava. — Bolí ma aj hrdlo. — Mám teplotu a kašlem. — Kde je najbližšia lekáreň? — Už mi je lepšie.",
+    "ma — ťa — ho — ju — vás — nás",
+    "Nie je mi dobre. — Bolí ma hlava. — Mám teplotu. — Kde je najbližšia lekáreň? — Už mi je lepšie."
+  ]
+}

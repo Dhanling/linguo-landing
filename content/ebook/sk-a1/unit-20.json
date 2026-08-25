@@ -1,0 +1,543 @@
+{
+  "title": "Bertamu",
+  "title_target": "Na návšteve",
+  "goal": "Bertamu ke rumah orang Slowakia tanpa salah langkah, menolak tambahan makanan tanpa menyinggung, dan menutup modul ini dengan hal yang tidak ada di tabel tata bahasa: adab.",
+  "bekal": [
+    "berperilaku benar dari pintu masuk sampai pamit",
+    "menolak dan menerima tawaran makanan dengan kalimat yang tepat",
+    "beralih dari *vy* ke *ty* pada saat yang tepat — dan tahu siapa yang menawarkannya"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — U Evy doma",
+      "intro": "Eva mengundang Budi makan malam di rumah orang tuanya di Košice. Ibunya membuka pintu.",
+      "lines": [
+        {
+          "speaker": "Mama:",
+          "text": "Dobrý večer! Poďte ďalej, prosím.",
+          "id": "Selamat malam! Silakan masuk.",
+          "literal": "baik malam! datanglah-kalian lebih-jauh, saya-minta."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dobrý večer. Toto je pre vás.",
+          "id": "Selamat malam. Ini untuk Anda.",
+          "literal": "baik malam. ini adalah untuk kalian-akusatif."
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Ó, kvety! To ste nemuseli. Ďakujem pekne.",
+          "id": "Oh, bunga! Tidak perlu repot. Terima kasih banyak.",
+          "literal": "oh, bunga-jamak! itu kalian-adalah tidak-harus-jamak. saya-berterima-kasih cantik."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mám si vyzuť topánky?",
+          "id": "Sepatunya perlu dilepas?",
+          "literal": "harus-saya diri melepas sepatu-jamak?"
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Áno, prosím. Tu máte papuče.",
+          "id": "Ya, tolong. Ini sandalnya.",
+          "literal": "ya, saya-minta. di-sini kalian-punya sandal-jamak."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Mami, Budi rozumie po slovensky. Môžeš mu tykať.",
+          "id": "Ma, Budi ngerti bahasa Slowakia. Boleh pakai \"kamu\".",
+          "literal": "ibu, Budi ia-mengerti menurut Slowakia. kamu-boleh kepadanya ber-ty."
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Naozaj? Tak si sadni, Budi. Dáš si polievku?",
+          "id": "Serius? Kalau begitu duduk, Budi. Mau sup?",
+          "literal": "sungguh? jadi diri duduklah, Budi. kamu-akan-beri diri sup-akusatif?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rád. Voňa je nádherná.",
+          "id": "Mau. Baunya harum sekali.",
+          "literal": "senang-lk. bau adalah indah-pr."
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Je to kapustnica. Dobrú chuť!",
+          "id": "Ini kapustnica. Selamat makan!",
+          "literal": "adalah itu kapustnica. baik-akusatif selera!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ďakujem, navzájom. Je vynikajúca!",
+          "id": "Terima kasih, sama-sama. Enak sekali!",
+          "literal": "saya-berterima-kasih, saling. ia-adalah unggul-pr!"
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Ešte trochu? Máme veľa.",
+          "id": "Tambah lagi? Masih banyak.",
+          "literal": "masih sedikit? kami-punya banyak."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ďakujem, už naozaj nemôžem. Bolo to výborné.",
+          "id": "Terima kasih, saya benar-benar sudah tidak sanggup. Enak sekali tadi.",
+          "literal": "saya-berterima-kasih, sudah sungguh tidak-saya-bisa. ada-nt itu unggul-nt."
+        }
+      ],
+      "notes": [
+        "**Poďte ďalej** harfiahnya \"datanglah lebih jauh\" — kalimat baku untuk mempersilakan masuk. Bentuk akrabnya *poď ďalej*. Tidak ada padanan harfiah \"silakan masuk\" dalam bahasa Slowakia; kamu dipersilakan **maju**, bukan masuk.",
+        "**To ste nemuseli** harfiahnya \"itu Anda tidak perlu\" — jawaban baku ketika menerima hadiah. Bukan penolakan; ia justru pengakuan bahwa hadiahnya melebihi kewajiban. Jawabnya cukup senyum, atau *maličkosť* (\"hal kecil saja\").",
+        "**Môžeš mu tykať** — Eva mengizinkan ibunya beralih ke *ty*. Perhatikan siapa yang menawarkan: **yang lebih tua, atau yang lebih tinggi kedudukannya**. Sebagai tamu muda, Budi tidak boleh menawarkannya lebih dulu. Kata kerjanya *tykať* (ber-*ty*) dan *vykať* (ber-*vy*) — dua kata kerja yang dibentuk dari kata gantinya sendiri.",
+        "**Mám si vyzuť topánky?** adalah pertanyaan yang wajib kamu tanyakan sekali; jawabannya di Slowakia hampir selalu ya. Melepas sepatu di rumah orang adalah keharusan yang tidak dibicarakan, dan tuan rumah biasanya menyediakan *papuče* (sandal rumah) untuk tamunya.",
+        "**Ďakujem, navzájom** adalah jawaban baku untuk *dobrú chuť*. Kata *navzájom* berarti \"saling\", dan ia dipakai juga untuk membalas ucapan selamat apa pun: *Šťastný nový rok!* — *Navzájom!*"
+      ],
+      "grammars": [
+        {
+          "title": "Tykať dan vykať — dan siapa yang memutuskan",
+          "body": [
+            "Beralih dari *vy* ke *ty* adalah peristiwa sosial yang sungguhan di Slowakia, bukan sekadar pilihan tata bahasa. Ada aturannya, dan aturannya tidak tertulis di mana pun kecuali di halaman seperti ini."
+          ],
+          "table": {
+            "head": [
+              "Keadaan",
+              "Bentuk",
+              "Catatan"
+            ],
+            "rows": [
+              [
+                "orang seumuran, kenalan baru di pesta",
+                "**ty**",
+                "hampir selalu langsung"
+              ],
+              [
+                "teman sekelas, rekan seumuran",
+                "**ty**",
+                "langsung"
+              ],
+              [
+                "anak-anak dan remaja",
+                "**ty**",
+                "selalu"
+              ],
+              [
+                "penjual, pelayan, sopir",
+                "**vy**",
+                "selalu, walau lebih muda"
+              ],
+              [
+                "dosen, dokter, petugas",
+                "**vy**",
+                "selalu"
+              ],
+              [
+                "orang tua teman",
+                "**vy**",
+                "sampai ditawari *ty*"
+              ],
+              [
+                "atasan di kantor",
+                "**vy**",
+                "sampai ditawari"
+              ],
+              [
+                "mertua",
+                "**vy**",
+                "sering seumur hidup"
+              ]
+            ]
+          },
+          "after": [
+            "**Yang menawarkan selalu pihak yang lebih tua atau lebih tinggi kedudukannya.** Kalimatnya: *Môžeme si tykať?* Jawabnya *Áno, samozrejme* atau *Rád / rada*. Sesudah itu tidak ada jalan kembali — beralih balik ke *vy* akan terbaca sebagai keretakan hubungan.",
+            "**Kalau kamu tidak yakin, pakai *vy* dan tunggu.** Ini bukan kehati-hatian berlebihan; ini yang dilakukan orang Slowakia sendiri. Memakai *ty* terlalu cepat kepada orang yang lebih tua adalah salah satu dari sedikit kesalahan bahasa yang benar-benar terasa kasar.",
+            "**Perkecualian yang berguna:** di kalangan anak muda, di internet, dan di antara sesama pendaki gunung, *ty* dipakai hampir seketika. Di jalur pendakian, orang asing pun saling menyapa dengan *ahoj* — kebiasaan yang bertahan dari perkumpulan pendaki lama."
+          ]
+        },
+        {
+          "title": "Menerima dan menolak",
+          "body": [
+            "Tuan rumah Slowakia akan menawarkan tambahan setidaknya dua kali, dan penolakan pertama sering dianggap sopan-santun belaka. Karena itu penolakan yang berhasil butuh susunan tertentu."
+          ],
+          "table": {
+            "head": [
+              "Kalimat",
+              "Arti sebenarnya",
+              "Kapan dipakai"
+            ],
+            "rows": [
+              [
+                "*Rád / rada.*",
+                "Ya, mau.",
+                "menerima"
+              ],
+              [
+                "*Áno, prosím.*",
+                "Ya, tolong.",
+                "menerima"
+              ],
+              [
+                "*Ešte trochu, prosím.*",
+                "Sedikit lagi, tolong.",
+                "menerima tambahan"
+              ],
+              [
+                "*Ďakujem, stačí.*",
+                "Cukup, terima kasih.",
+                "penolakan lembut"
+              ],
+              [
+                "*Ďakujem, už nemôžem.*",
+                "Saya sudah tidak sanggup.",
+                "penolakan yang berhasil"
+              ],
+              [
+                "*Bolo to výborné.*",
+                "Tadi enak sekali.",
+                "wajib ditambahkan"
+              ],
+              [
+                "*Som plný / plná.*",
+                "Saya kenyang.",
+                "akrab"
+              ],
+              [
+                "*Nabudúce určite.*",
+                "Lain kali pasti.",
+                "menutup dengan ramah"
+              ]
+            ]
+          },
+          "after": [
+            "**Jangan memakai *nechcem* (saya tidak mau) untuk menolak makanan.** Ia terdengar seperti penolakan terhadap masakannya, bukan terhadap jumlahnya. *Nemôžem* memindahkan alasannya ke perutmu, bukan ke masakannya — dan itu perbedaan yang terasa.",
+            "**Pujian wajib, bukan tambahan.** Kalimat *bolo to výborné* atau *veľmi mi chutilo* adalah bagian dari penolakan, bukan basa-basi terpisah. Menolak tanpa memuji adalah bagian yang paling sering terlewat oleh tamu asing.",
+            "**Kalau ada pantangan makan, katakan di awal, bukan di meja.** *Nejem bravčové mäso* atau *Jem len halal* diucapkan ketika diundang, lewat pesan, beberapa hari sebelumnya. Tuan rumah Slowakia akan menyesuaikan seluruh menunya tanpa mengeluh — tetapi hanya kalau ia tahu sebelum memasak."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Makanan Slowakia yang wajib dicoba",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Cara baca",
+            "Apa itu"
+          ],
+          "rows": [
+            [
+              "**bryndzové halušky**",
+              "BRIN-dzo-ve HA-lusy-ki",
+              "gnocchi kentang dengan keju domba — hidangan nasional"
+            ],
+            [
+              "**kapustnica**",
+              "KA-pust-nyi-tsa",
+              "sup kubis asam dengan sosis dan jamur"
+            ],
+            [
+              "**parenica**",
+              "PA-re-nyi-tsa",
+              "keju domba gulung yang diasapi"
+            ],
+            [
+              "**pirohy**",
+              "PI-ro-hi",
+              "pangsit isi kentang atau keju"
+            ],
+            [
+              "**lokše**",
+              "LOK-sye",
+              "roti tipis dari kentang"
+            ],
+            [
+              "**vyprážaný syr**",
+              "VI-pra-zha-ni sir",
+              "keju goreng tepung"
+            ],
+            [
+              "**guláš**",
+              "GU-lasy",
+              "gulai daging berpaprika, warisan Hungaria"
+            ],
+            [
+              "**rezeň**",
+              "RE-zenj",
+              "daging tipis goreng tepung"
+            ],
+            [
+              "**trdelník**",
+              "TR-dyel-nik",
+              "kue gulung panggang berbentuk tabung"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Bryndza** adalah keju domba lembut yang jadi jantung masakan Slowakia, dan rasanya asin serta tajam. Banyak orang asing tidak menyukainya pada suapan pertama; hampir semuanya berubah pikiran pada kesempatan ketiga. Kalau kamu ingin satu hidangan yang menjelaskan negeri ini, *bryndzové halušky* adalah jawabannya."
+        },
+        {
+          "type": "kotak",
+          "title": "Bersulang",
+          "items": [
+            "*Na zdravie!* — \"Untuk kesehatan!\" Kata yang sama dipakai untuk orang yang bersin.",
+            "Aturan yang harus dituruti: **saling menatap mata** ketika gelas beradu, satu per satu, mengelilingi meja. Menatap gelas bukan mata dianggap kurang sopan, dan di sebagian keluarga dianggap membawa sial.",
+            "*Slivovica* biasanya dituangkan sebelum makan, bukan sesudah — dan ditolak dengan *ďakujem, nepijem alkohol*. Penolakan ini dihormati sepenuhnya dan tidak perlu dijelaskan."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Bertamu dari pintu sampai pamit",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tahap",
+            "Kalimat",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**datang**",
+              "*Dobrý večer, ďakujem za pozvanie.*",
+              "Selamat malam, terima kasih undangannya."
+            ],
+            [
+              "**hadiah**",
+              "*Toto je pre vás.*",
+              "Ini untuk Anda."
+            ],
+            [
+              "**sepatu**",
+              "*Mám si vyzuť topánky?*",
+              "Sepatunya perlu dilepas?"
+            ],
+            [
+              "**duduk**",
+              "*Kde si mám sadnúť?*",
+              "Saya duduk di mana?"
+            ],
+            [
+              "**makan**",
+              "*Dobrú chuť!* — *Navzájom!*",
+              "Selamat makan! — Sama-sama!"
+            ],
+            [
+              "**memuji**",
+              "*Je to vynikajúce.*",
+              "Ini enak sekali."
+            ],
+            [
+              "**menolak**",
+              "*Ďakujem, už nemôžem.*",
+              "Terima kasih, saya sudah tidak sanggup."
+            ],
+            [
+              "**membantu**",
+              "*Môžem pomôcť?*",
+              "Bisa saya bantu?"
+            ],
+            [
+              "**pamit**",
+              "*Už musím ísť. Bolo to krásne.*",
+              "Saya harus pulang. Menyenangkan sekali."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga hal kecil yang diperhatikan",
+          "items": [
+            "**Bunga dalam jumlah ganjil.** Karangan berjumlah genap dibawa ke pemakaman. Tiga, lima, atau tujuh tangkai — jangan empat atau enam.",
+            "**Datang tepat waktu, jangan lebih awal.** Lima menit terlambat aman; sepuluh menit lebih awal membuat tuan rumah panik.",
+            "**Tawarkan bantuan membereskan meja.** Tawaranmu hampir pasti ditolak, tetapi menawarkannya diperhatikan — dan tidak menawarkannya juga diperhatikan."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 18 dan 19",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Ini lebih besar, tapi lebih mahal.",
+              "*Toto je väčšie, ale drahšie.*"
+            ],
+            [
+              "Itu pilihan terbaik.",
+              "*To je najlepšia možnosť.*"
+            ],
+            [
+              "Bisa bicara lebih pelan?",
+              "*Mohli by ste hovoriť pomalšie?*"
+            ],
+            [
+              "Halo, ini Budi.",
+              "*Haló, tu je Budi.*"
+            ],
+            [
+              "Tunggu sebentar, tolong.",
+              "*Počkajte, prosím.*"
+            ],
+            [
+              "Kabari, ya.",
+              "*Ozvi sa.*"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dua puluh unit, dan sesudahnya",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kalau kamu sampai di halaman ini setelah mengerjakan kedua puluh unitnya, ada baiknya melihat ke belakang sebentar. Kamu memulai modul ini tanpa satu kata pun, dan sekarang kamu bisa memperkenalkan diri, menanyakan arah, memesan makanan, berbelanja dengan takaran yang benar, mengeluh sakit, menceritakan akhir pekan yang sudah lewat, menyusun rencana untuk minggu depan, dan bertamu ke rumah orang tanpa salah langkah."
+        },
+        {
+          "type": "p",
+          "text": "Yang lebih penting: kamu sudah memakai **keenam kasus** bahasa Slowakia, masing-masing untuk pekerjaan sehari-hari yang jelas, bukan sebagai tabel hafalan. Dan kamu sudah melewati **pasangan kata kerja tuntas dan tak tuntas** — bagian yang tidak punya padanan sama sekali dalam bahasa Indonesia, dan yang membuat banyak orang berhenti di bulan kedua."
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga hal yang paling cepat membawamu maju sekarang",
+          "items": [
+            "**Bicara sebelum siap.** Orang Slowakia jarang bertemu orang asing yang mau belajar bahasa mereka, dan usaha sekecil apa pun disambut dengan hangat yang mungkin mengejutkanmu. Kalimat yang salah tetapi diucapkan mengajarkan lebih banyak daripada kalimat benar yang cuma dibaca.",
+            "**Catat kata benda bersama jenis kelaminnya, dan kata kerja bersama pasangannya.** Kebiasaan sepuluh detik ini adalah yang membedakan orang yang maju terus dari orang yang mentok di A2.",
+            "**Dengarkan sesuatu setiap hari, walau belum mengerti.** Telinga dibangun oleh waktu, bukan oleh bakat. Radio, lagu, berita anak-anak — apa pun, asal setiap hari."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Veľa šťastia — a dovidenia na Slovensku!*"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "návšteva",
+      "baca": "NAV-sytye-va",
+      "id": "kunjungan; tamu (pr)"
+    },
+    {
+      "sk": "pozvanie",
+      "baca": "POZ-va-nye",
+      "id": "undangan (nt)"
+    },
+    {
+      "sk": "tykať / vykať",
+      "baca": "TI-kat / VI-kat",
+      "id": "ber-ty / ber-vy"
+    },
+    {
+      "sk": "vyzuť si",
+      "baca": "VI-zut si",
+      "id": "melepas (sepatu)"
+    },
+    {
+      "sk": "papuče",
+      "baca": "PA-pu-ce",
+      "id": "sandal rumah (jamak)"
+    },
+    {
+      "sk": "kvety",
+      "baca": "KVE-ti",
+      "id": "bunga (jamak)"
+    },
+    {
+      "sk": "vôňa",
+      "baca": "VUO-nya",
+      "id": "bau harum (pr)"
+    },
+    {
+      "sk": "chuť",
+      "baca": "khut",
+      "id": "rasa; selera (pr)"
+    },
+    {
+      "sk": "navzájom",
+      "baca": "NAV-za-yom",
+      "id": "saling; sama-sama"
+    },
+    {
+      "sk": "vynikajúci",
+      "baca": "VI-nyi-ka-yu-tsi",
+      "id": "unggul; enak sekali"
+    },
+    {
+      "sk": "výborný",
+      "baca": "VI-bor-ni",
+      "id": "sangat baik; lezat"
+    },
+    {
+      "sk": "bryndza",
+      "baca": "BRIN-dza",
+      "id": "keju domba (pr)"
+    },
+    {
+      "sk": "kapustnica",
+      "baca": "KA-pust-nyi-tsa",
+      "id": "sup kubis asam (pr)"
+    },
+    {
+      "sk": "alkohol",
+      "baca": "AL-ko-hol",
+      "id": "alkohol (lk)"
+    },
+    {
+      "sk": "plný",
+      "baca": "PL-ni",
+      "id": "penuh; kenyang"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slowakia. Pakai bentuk sopan (vy) kalau berbicara kepada tuan rumah.",
+      "items": [
+        "Selamat malam, terima kasih undangannya.",
+        "Ini untuk Anda.",
+        "Sepatunya perlu dilepas?",
+        "Selamat makan!",
+        "Ini enak sekali.",
+        "Terima kasih, saya sudah tidak sanggup."
+      ]
+    },
+    {
+      "prompt": "Pilih ty atau vy untuk orang berikut.",
+      "items": [
+        "teman sekelas seumuran → ____",
+        "pelayan restoran → ____",
+        "orang tua temanmu, pertemuan pertama → ____",
+        "anak kecil tetangga → ____",
+        "dosenmu → ____",
+        "kenalan seumuran di pesta → ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "prosím / ďalej / poďte / ,",
+        "vás / je / pre / toto",
+        "topánky / si / mám / vyzuť / ?",
+        "chuť / dobrú / !",
+        "nemôžem / už / ďakujem / naozaj / ,"
+      ]
+    }
+  ],
+  "answers": [
+    "Dobrý večer, ďakujem za pozvanie. — Toto je pre vás. — Mám si vyzuť topánky? — Dobrú chuť! — Je to vynikajúce. — Ďakujem, už nemôžem.",
+    "ty — vy — vy — ty — vy — ty",
+    "Poďte ďalej, prosím. — Toto je pre vás. — Mám si vyzuť topánky? — Dobrú chuť! — Ďakujem, už naozaj nemôžem."
+  ]
+}

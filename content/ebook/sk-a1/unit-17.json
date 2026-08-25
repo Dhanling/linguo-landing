@@ -1,0 +1,534 @@
+{
+  "title": "Bersama teman",
+  "title_target": "S kamarátom",
+  "goal": "Menyebut teman seperjalanan, alat, dan pekerjaan — dan memasang kasus keenam dan terakhir: instrumental, satu-satunya yang sering dipakai tanpa kata depan sama sekali.",
+  "bekal": [
+    "memakai *s* + instrumental untuk menyebut siapa yang bersamamu",
+    "memakai instrumental tanpa kata depan untuk alat dan kendaraan",
+    "menyebut pekerjaan dan menanyakan pekerjaan orang lain"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Čím sa živíš?",
+      "intro": "Di sebuah pesta ulang tahun. Budi berkenalan dengan teman Eva, seorang lelaki bernama Marek.",
+      "lines": [
+        {
+          "speaker": "Marek:",
+          "text": "Ahoj, ja som Marek. Ty si ten Indonézan?",
+          "id": "Halo, saya Marek. Kamu yang orang Indonesia itu?",
+          "literal": "halo, saya saya-adalah Marek. kamu kamu-adalah itu Indonesia-lelaki?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Áno, Budi. Prišiel som s Evou.",
+          "id": "Ya, Budi. Saya datang bersama Eva.",
+          "literal": "ya, Budi. datang-lk saya-adalah dengan Eva-instrumental."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Poznám ju od strednej školy. A čím sa živíš?",
+          "id": "Saya kenal dia sejak SMA. Dan kerjanya apa?",
+          "literal": "saya-kenal dia dari menengah-genitif sekolah-genitif. dan apa-instrumental diri kamu-hidupi?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Som programátor. Pracujem s malým tímom.",
+          "id": "Saya programer. Saya kerja dengan tim kecil.",
+          "literal": "saya-adalah programer. saya-bekerja dengan kecil-instrumental tim-instrumental."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Zaujímavé. Ja som učiteľom na gymnáziu.",
+          "id": "Menarik. Saya guru di SMA.",
+          "literal": "menarik. saya saya-adalah guru-instrumental di gimnasium-lokatif."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Čo učíš?",
+          "id": "Ngajar apa?",
+          "literal": "apa kamu-ajar?"
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Dejepis. Ale píšem aj knihy — perom, nie na počítači.",
+          "id": "Sejarah. Tapi saya juga menulis buku — pakai pulpen, bukan di komputer.",
+          "literal": "sejarah. tetapi saya-menulis juga buku-jamak — pulpen-instrumental, tidak di komputer-lokatif."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Perom? To je nezvyčajné.",
+          "id": "Pakai pulpen? Itu tidak biasa.",
+          "literal": "pulpen-instrumental? itu adalah tidak-biasa."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Viem. Ale s počítačom píšem príliš rýchlo.",
+          "id": "Saya tahu. Tapi dengan komputer saya menulis terlalu cepat.",
+          "literal": "saya-tahu. tetapi dengan komputer-instrumental saya-menulis terlalu cepat."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Chápem. A kam chodíš cez leto?",
+          "id": "Saya paham. Dan musim panas kamu ke mana?",
+          "literal": "saya-paham. dan ke-mana kamu-pergi lewat musim-panas?"
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Chodím s rodinou do Chorvátska. Autom, dva dni.",
+          "id": "Saya pergi ke Kroasia sama keluarga. Naik mobil, dua hari.",
+          "literal": "saya-pergi dengan keluarga-instrumental ke Kroasia-genitif. mobil-instrumental, dua hari-jamak."
+        }
+      ],
+      "notes": [
+        "**S Evou, s rodinou, s tímom** — kata depan *s* selalu instrumental, dan artinya \"bersama\". Perhatikan bahwa ada kata depan yang ditulis; ini pekerjaan pertama instrumental.",
+        "**Perom, autom — tanpa kata depan sama sekali.** Ini pekerjaan kedua, dan yang paling khas: alat dan kendaraan dinyatakan dengan ekor instrumental **telanjang**. *Píšem perom* = saya menulis dengan pulpen. Tidak ada kata \"dengan\" di kalimat itu; ekornya yang menyatakannya.",
+        "**Karena itu *s* dan instrumental telanjang tidak boleh tertukar.** *Píšem perom* = saya menulis dengan pulpen (alat). *Píšem s Evou* = saya menulis bersama Eva (teman). Kalau kamu menambahkan *s* pada alat, kalimatnya jadi aneh: *píšem s perom* terdengar seperti pulpennya ikut menulis.",
+        "**Som učiteľom** memakai instrumental untuk pekerjaan, dan itu boleh — tetapi *som učiteľ* dengan bentuk dasar juga benar dan lebih sering terdengar. Bedanya halus: instrumental sedikit lebih menekankan peran atau jabatan, bentuk dasar menekankan jati diri. Untuk A1, pakai bentuk dasar dan kenali yang lain.",
+        "**Čím sa živíš?** harfiahnya \"dengan apa kamu menghidupi diri?\" — cara akrab dan sedikit santai untuk menanyakan pekerjaan. Bentuk yang lebih netral: *Čo robíš?* atau *Kde pracuješ?*"
+      ],
+      "grammars": [
+        {
+          "title": "Instrumental — kasus keenam dan terakhir",
+          "body": [
+            "Instrumental menjawab pertanyaan *kým?* (dengan siapa) dan *čím?* (dengan apa). Ekornya adalah yang paling seragam dari keenam kasus: praktis cuma dua bentuk."
+          ],
+          "table": {
+            "head": [
+              "Jenis kata benda",
+              "Ekor",
+              "Nominatif",
+              "Instrumental"
+            ],
+            "rows": [
+              [
+                "**lk (semua)**",
+                "**-om**",
+                "*brat, stôl, autobus*",
+                "*s bratom, pod stolom, autobusom*"
+              ],
+              [
+                "**nt**",
+                "**-om**",
+                "*mesto, pivo, auto*",
+                "*za mestom, s pivom, autom*"
+              ],
+              [
+                "**pr berakhiran -a**",
+                "**-ou**",
+                "*žena, sestra, káva*",
+                "*so ženou, so sestrou, s kávou*"
+              ],
+              [
+                "**pr huruf lunak**",
+                "**-ou**",
+                "*posteľ, dlaň*",
+                "*pod posteľou, s dlaňou*"
+              ]
+            ]
+          },
+          "after": [
+            "**Dua ekor untuk seluruh sistem: *-om* dan *-ou*.** Lelaki dan netral memakai *-om*; perempuan memakai *-ou*. Tidak ada perbedaan bernyawa dan tak bernyawa, tidak ada perkecualian yang perlu dihafal di A1. Sesudah lima kasus sebelumnya, ini terasa seperti hadiah.",
+            "**Kata sifatnya**: lk dan nt memakai **-ým** (*s dobrým bratom*, *pod veľkým stolom*), pr memakai **-ou** (*s dobrou sestrou*). Perhatikan bahwa kata sifat perempuan memakai ekor yang sama dengan kata bendanya — satu-satunya kasus di mana keduanya berima.",
+            "**Kata ganti instrumental**: *mnou, tebou, ním, ňou, nami, vami, nimi*. Semuanya panjang, semuanya bisa berdiri di mana saja, dan semuanya hampir selalu didahului kata depan: *so mnou*, *s tebou*, *s ním*, *s ňou*, *s nami*, *s vami*, *s nimi*."
+          ]
+        },
+        {
+          "title": "Empat pekerjaan instrumental",
+          "body": [
+            "Kasus ini punya empat pekerjaan yang jelas berbeda, dan tiga di antaranya sudah kamu pakai sejak unit-unit awal tanpa dijelaskan."
+          ],
+          "table": {
+            "head": [
+              "Pekerjaan",
+              "Kata depan",
+              "Contoh",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "**teman**",
+                "**s / so**",
+                "*Idem s Evou.*",
+                "Saya pergi bersama Eva."
+              ],
+              [
+                "**alat**",
+                "**tidak ada**",
+                "*Píšem perom.*",
+                "Saya menulis dengan pulpen."
+              ],
+              [
+                "**kendaraan**",
+                "**tidak ada**",
+                "*Idem vlakom.*",
+                "Saya naik kereta."
+              ],
+              [
+                "**cara bayar**",
+                "**tidak ada**",
+                "*Platím kartou.*",
+                "Saya bayar dengan kartu."
+              ],
+              [
+                "**letak**",
+                "*pred, za, nad, pod, medzi*",
+                "*Pred kinom.*",
+                "Di depan bioskop."
+              ],
+              [
+                "**pekerjaan**",
+                "**tidak ada**, dengan *byť*",
+                "*Som učiteľom.*",
+                "Saya seorang guru."
+              ]
+            ]
+          },
+          "after": [
+            "**Aturan yang menutup semuanya: kalau yang menyertaimu adalah orang, pakai *s*. Kalau ia alat, kendaraan, atau cara, jangan pakai apa-apa.** Pemeriksaan sederhana: bisakah benda itu \"ikut\" dengan kemauannya sendiri? Kalau tidak, ia alat.",
+            "**S menjadi so** di depan kata yang berawal *s, z, š, ž* dan di depan *mnou*: *so sestrou*, *so Zuzanou*, *so mnou*. Sama seperti *v/vo*, *z/zo*, *k/ku*.",
+            "**Empat kata depan letak — *pred, za, nad, pod* — memakai instrumental untuk diam dan akusatif untuk gerak.** *Auto stojí pred domom* (mobilnya berdiri di depan rumah, diam, instrumental) tetapi *Idem pred dom* (saya pergi ke depan rumah, gerak, akusatif). Pemisahan gerak dan diam yang sama sudah kamu temui di unit 6 dan 11."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pekerjaan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina (lk / pr)",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**učiteľ / učiteľka**",
+              "U-ci-tyel / -ka",
+              "guru"
+            ],
+            [
+              "**lekár / lekárka**",
+              "LE-kar / -ka",
+              "dokter"
+            ],
+            [
+              "**zdravotná sestra**",
+              "ZDRA-vot-na SES-tra",
+              "perawat"
+            ],
+            [
+              "**inžinier / inžinierka**",
+              "IN-zhi-nyer / -ka",
+              "insinyur"
+            ],
+            [
+              "**programátor / -ka**",
+              "PRO-gra-ma-tor / -ka",
+              "programer"
+            ],
+            [
+              "**právnik / právnička**",
+              "PRAV-nik / PRAV-nic-ka",
+              "pengacara"
+            ],
+            [
+              "**účtovník / -čka**",
+              "UC-tov-nik / -nic-ka",
+              "akuntan"
+            ],
+            [
+              "**predavač / -ka**",
+              "PRE-da-vac / -ka",
+              "penjual"
+            ],
+            [
+              "**čašník / čašníčka**",
+              "CASY-nik / -nic-ka",
+              "pelayan"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Sekali lagi akhiran **-ka** membentuk pasangan perempuannya, dengan sedikit penyesuaian bunyi: *-ník → -níčka*, *-vač → -vačka*. Sekali kamu tahu bentuk lelakinya, kamu praktis mendapat bentuk perempuannya gratis — pola yang sama dengan unit 3."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pertanyaan dan jawaban",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Čo robíš?*",
+              "Kerja apa?"
+            ],
+            [
+              "*Čím sa živíš?*",
+              "Kerjanya apa? (akrab)"
+            ],
+            [
+              "*Aké máte povolanie?*",
+              "Apa pekerjaan Anda? (resmi)"
+            ],
+            [
+              "*Som učiteľ.* / *Som učiteľom.*",
+              "Saya guru."
+            ],
+            [
+              "*Pracujem ako …*",
+              "Saya bekerja sebagai …"
+            ],
+            [
+              "*Ešte študujem.*",
+              "Saya masih kuliah."
+            ],
+            [
+              "*Hľadám prácu.*",
+              "Saya sedang cari kerja."
+            ],
+            [
+              "*Pracujem na plný / čiastočný úväzok.*",
+              "Saya kerja penuh waktu / paruh waktu."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Dôchodca: satu kata yang menceritakan banyak",
+          "items": [
+            "*Dôchodca* (pensiunan) adalah golongan yang sangat terlihat di kehidupan sehari-hari Slowakia: mereka mendapat potongan besar untuk kereta dan transportasi kota, dan pagi hari di trem dan pasar sebagian besar diisi oleh mereka.",
+            "Memberikan tempat duduk kepada orang tua di trem bukan kesopanan tambahan — ia harapan yang tegas, dan tidak melakukannya akan ditegur dengan suara keras oleh orang asing di sekitarmu."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Bersama siapa, dengan apa",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Slowakia",
+            "Pekerjaan",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Idem **s bratom**.*",
+              "teman",
+              "Saya pergi bersama kakak."
+            ],
+            [
+              "*Idem **s Evou**.*",
+              "teman",
+              "Saya pergi bersama Eva."
+            ],
+            [
+              "*Idem **so mnou**… → so mnou*",
+              "teman",
+              "bersama saya"
+            ],
+            [
+              "*Idem **vlakom**.*",
+              "kendaraan",
+              "Saya naik kereta."
+            ],
+            [
+              "*Píšem **perom**.*",
+              "alat",
+              "Saya menulis dengan pulpen."
+            ],
+            [
+              "*Platím **kartou**.*",
+              "cara",
+              "Saya bayar dengan kartu."
+            ],
+            [
+              "*Krájam **nožom**.*",
+              "alat",
+              "Saya potong dengan pisau."
+            ],
+            [
+              "*Hovorím **s lekárom**.*",
+              "teman bicara",
+              "Saya bicara dengan dokter."
+            ],
+            [
+              "*Stretol som sa **s Marekom**.*",
+              "teman",
+              "Saya bertemu Marek."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan baris kedelapan dan kesembilan: **bicara dan bertemu memakai *s***, karena lawan bicaramu adalah orang, bukan alat. *Hovorím s lekárom*, bukan *hovorím lekárom*. Ini kesalahan yang sering muncul justru karena aturan alat sudah terlanjur menempel."
+        },
+        {
+          "type": "kotak",
+          "title": "Enam kasus, selesai",
+          "items": [
+            "Dengan unit ini kamu sudah memakai keenam kasus bahasa Slowakia: nominatif (unit 1), akusatif (4), lokatif (6), genitif (9), datif (10), instrumental (17).",
+            "Tabel lengkapnya ada di halaman *Ringkasan tata bahasa A1* di belakang modul ini. Tetapi kalau kamu sampai di sini setelah mengerjakan tiap unitnya, kamu tidak sedang menghafal tabel itu — kamu sedang mengenali kembali sesuatu yang sudah kamu pakai."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 15",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Saya baca, tapi belum sampai habis.",
+              "*Čítal som ju, ale neprečítal.*"
+            ],
+            [
+              "Malam ini pasti saya selesaikan.",
+              "*Dnes večer to dočítam.*"
+            ],
+            [
+              "Saya masak dua jam.",
+              "*Varil som dve hodiny.*"
+            ],
+            [
+              "Saya lupa beli beras.",
+              "*Zabudol som kúpiť ryžu.*"
+            ],
+            [
+              "Akhirnya saya selesaikan.",
+              "*Konečne som to urobil.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "s / so",
+      "baca": "s / so",
+      "id": "dengan (bersama)"
+    },
+    {
+      "sk": "pred",
+      "baca": "pret",
+      "id": "di depan"
+    },
+    {
+      "sk": "za",
+      "baca": "za",
+      "id": "di belakang"
+    },
+    {
+      "sk": "nad",
+      "baca": "nat",
+      "id": "di atas"
+    },
+    {
+      "sk": "pod",
+      "baca": "pot",
+      "id": "di bawah"
+    },
+    {
+      "sk": "medzi",
+      "baca": "ME-dzi",
+      "id": "di antara"
+    },
+    {
+      "sk": "povolanie",
+      "baca": "PO-vo-la-nye",
+      "id": "pekerjaan (nt)"
+    },
+    {
+      "sk": "práca",
+      "baca": "PRA-tsa",
+      "id": "kerja (pr)"
+    },
+    {
+      "sk": "živiť sa",
+      "baca": "ZHI-vit sa",
+      "id": "menghidupi diri"
+    },
+    {
+      "sk": "tím",
+      "baca": "tim",
+      "id": "tim (lk)"
+    },
+    {
+      "sk": "pero",
+      "baca": "PE-ro",
+      "id": "pulpen (nt)"
+    },
+    {
+      "sk": "počítač",
+      "baca": "PO-ci-tac",
+      "id": "komputer (lk)"
+    },
+    {
+      "sk": "nôž",
+      "baca": "nuozh",
+      "id": "pisau (lk)"
+    },
+    {
+      "sk": "obraz",
+      "baca": "O-bras",
+      "id": "lukisan (lk)"
+    },
+    {
+      "sk": "gymnázium",
+      "baca": "GIM-na-zyum",
+      "id": "SMA (nt)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slowakia. Pakai bentuk lelaki untuk \"saya\".",
+      "items": [
+        "Saya datang bersama Eva.",
+        "Saya programer.",
+        "Saya kerja dengan tim kecil.",
+        "Saya menulis dengan pulpen.",
+        "Saya pergi ke Kroasia sama keluarga.",
+        "Naik mobil, dua hari."
+      ]
+    },
+    {
+      "prompt": "Ubah ke bentuk instrumental.",
+      "items": [
+        "s ____ (brat)",
+        "s ____ (sestra)",
+        "s ____ (Eva)",
+        "____ (vlak)",
+        "____ (auto)",
+        "____ (karta)",
+        "pred ____ (dom)",
+        "pod ____ (stôl)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "Evou / som / prišiel / s",
+        "programátor / som",
+        "tímom / pracujem / malým / s",
+        "perom / píšem",
+        "sa / živíš / čím / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Prišiel som s Evou. — Som programátor. — Pracujem s malým tímom. — Píšem perom. — Chodím s rodinou do Chorvátska. — Autom, dva dni.",
+    "bratom — sestrou — Evou — vlakom — autom — kartou — domom — stolom",
+    "Prišiel som s Evou. — Som programátor. — Pracujem s malým tímom. — Píšem perom. — Čím sa živíš?"
+  ]
+}

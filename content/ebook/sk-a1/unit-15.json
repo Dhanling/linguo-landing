@@ -1,0 +1,565 @@
+{
+  "title": "Tuntas dan tak tuntas",
+  "title_target": "Dokonavý a nedokonavý",
+  "goal": "Menghadapi satu-satunya bagian bahasa Slowakia yang benar-benar tidak punya padanan dalam bahasa Indonesia: setiap perbuatan punya dua kata kerja, dan memilih yang salah mengubah arti kalimatmu.",
+  "bekal": [
+    "memahami apa yang sebenarnya dibedakan oleh pasangan tuntas dan tak tuntas — dan bahwa itu bukan waktu",
+    "mengenali pasangan dari bentuknya: awalan, sisipan, atau kata yang sama sekali berbeda",
+    "memilih bentuk yang benar dalam kalimat lampau dan nanti"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Prečo si to nedočítal?",
+      "intro": "Eva meminjamkan buku kepada Budi minggu lalu. Sekarang ia menagihnya.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Čítal si tú knihu, čo som ti dala?",
+          "id": "Kamu sudah baca buku yang saya kasih?",
+          "literal": "baca-lk kamu-adalah itu buku, yang saya-adalah kepadamu beri-pr?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Čítal som ju, ale neprečítal.",
+          "id": "Saya baca, tapi belum sampai habis.",
+          "literal": "baca-lk saya-adalah dia, tetapi tidak-baca-habis-lk."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "To znie ako výhovorka.",
+          "id": "Kedengaran kayak alasan.",
+          "literal": "itu ia-berbunyi seperti alasan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nie je! Každý večer som čítal desať strán.",
+          "id": "Bukan! Tiap malam saya baca sepuluh halaman.",
+          "literal": "tidak adalah! setiap malam saya-adalah baca-lk sepuluh halaman-genitif."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "A dnes ju dočítaš?",
+          "id": "Dan hari ini kamu selesaikan?",
+          "literal": "dan hari-ini dia kamu-akan-baca-habis?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dnes večer ju určite dočítam.",
+          "id": "Malam ini pasti saya selesaikan.",
+          "literal": "hari-ini malam dia pasti saya-akan-baca-habis."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Dobre. A čo si varil včera?",
+          "id": "Oke. Dan kemarin masak apa?",
+          "literal": "baik. dan apa kamu-adalah masak-lk kemarin?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Varil som dve hodiny a nič som neuvaril.",
+          "id": "Saya masak dua jam dan tidak ada yang jadi.",
+          "literal": "masak-lk saya-adalah dua jam-jamak dan tak-apa saya-adalah tidak-masak-jadi-lk."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ako to?",
+          "id": "Kok bisa?",
+          "literal": "bagaimana itu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zabudol som kúpiť ryžu. Kupoval som všetko ostatné.",
+          "id": "Saya lupa beli beras. Saya beli semua yang lain.",
+          "literal": "lupa-lk saya-adalah membeli beras-akusatif. beli-lk saya-adalah semua sisa."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nakoniec som zjedol dve porcie v jedálni.",
+          "id": "Akhirnya saya habiskan dua porsi di kantin.",
+          "literal": "akhirnya saya-adalah makan-habis-lk dua porsi di kantin-lokatif."
+        }
+      ],
+      "notes": [
+        "**Čítal som ju, ale neprečítal.** Satu kalimat yang memuat seluruh isi unit ini. *Čítal* = saya menghabiskan waktu membacanya (kegiatannya sungguh terjadi). *Neprečítal* = saya tidak sampai ke halaman terakhir (hasilnya tidak tercapai). Dua-duanya berbicara tentang masa lampau, dan keduanya benar dalam kalimat yang sama.",
+        "**Varil som dve hodiny a nič som neuvaril.** Pola yang sama, dan kali ini bahkan lucu. Kegiatan memasaknya berlangsung dua jam penuh — itu *varil*. Tetapi tidak ada masakan yang jadi — itu *neuvaril*. Dalam bahasa Indonesia kamu perlu satu kalimat penjelasan untuk membedakan keduanya; bahasa Slowakia melakukannya dengan satu awalan.",
+        "**Kupoval som všetko ostatné, ale zabudol som kúpiť ryžu.** *Kupoval* = kegiatan berbelanjanya (berkeliling, memasukkan barang). *Kúpiť* = mendapatkan barang tertentu. Karena berasnya tidak pernah masuk keranjang, yang dipakai adalah bentuk tuntas — dan ia disangkal.",
+        "**Zjedol som dve porcie** memakai bentuk tuntas karena porsinya benar-benar habis. Bandingkan *Jedol som* = \"saya sedang makan / saya makan-makan\". Awalan *z-* di sini berarti \"sampai habis\".",
+        "**Bentuk tuntas tidak bisa berpasangan dengan lamanya waktu.** *Varil som dve hodiny* benar; *Uvaril som dve hodiny* tidak berarti apa-apa. Kalau kalimatmu menyebut berapa lama, kata kerjanya wajib tak tuntas. Ini pemeriksaan cepat yang menyelamatkan banyak kalimat."
+      ],
+      "grammars": [
+        {
+          "title": "Apa yang sebenarnya dibedakan",
+          "body": [
+            "Bukan waktu. Bukan sopan. Bukan jumlah. Yang dibedakan adalah apakah kamu memandang perbuatan itu sebagai **kegiatan yang berlangsung** atau sebagai **peristiwa yang selesai**."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Tak tuntas (*nedokonavý*)",
+              "Tuntas (*dokonavý*)"
+            ],
+            "rows": [
+              [
+                "**Yang dilihat**",
+                "prosesnya",
+                "hasilnya"
+              ],
+              [
+                "**Pertanyaan yang dijawab**",
+                "sedang apa? berapa lama?",
+                "sudah selesai?"
+              ],
+              [
+                "**Bentuk sekarang**",
+                "**ada** — *robím*",
+                "**tidak ada**"
+              ],
+              [
+                "**Bentuk sekarangnya berarti**",
+                "sekarang",
+                "nanti — *urobím*"
+              ],
+              [
+                "**Bentuk lampau**",
+                "*robil som*",
+                "*urobil som*"
+              ],
+              [
+                "**Bentuk nanti**",
+                "*budem robiť*",
+                "*urobím*"
+              ],
+              [
+                "**Cocok dengan**",
+                "*často, každý deň, dve hodiny*",
+                "*raz, konečne, už*"
+              ],
+              [
+                "**Contoh**",
+                "*Písal som list.*",
+                "*Napísal som list.*"
+              ],
+              [
+                "**Artinya**",
+                "Saya sedang menulis surat.",
+                "Suratnya selesai."
+              ]
+            ]
+          },
+          "after": [
+            "**Baris ketiga adalah kunci seluruh sistem.** Bentuk tuntas **tidak punya bentuk sekarang**, karena \"sedang selesai\" bukan keadaan yang mungkin. Karena bentuk itu tetap ada secara tata bahasa tetapi tidak punya pekerjaan di masa sekarang, ia dipakai untuk masa nanti. Inilah penjelasan lengkap atas apa yang kamu temui di unit 14.",
+            "**Bahasa Indonesia sudah membedakan hal yang mirip, tetapi dengan kata terpisah**: \"membaca\" dan \"membaca sampai habis\", \"masak\" dan \"masak sampai jadi\", \"belajar\" dan \"menguasai\". Bahasa Slowakia menaruh perbedaan itu ke dalam kata kerjanya sendiri, dan mewajibkanmu memilih setiap kali.",
+            "**Untuk A1, satu aturan praktis menutup sebagian besar kalimat:** kalau ada kata seperti *často, každý deň, väčšinou, dve hodiny, celý deň* — pakai tak tuntas. Kalau ada *raz, konečne, už, hneď* — pakai tuntas. Kata keterangan di kalimat itu hampir selalu memberi tahu jawabannya."
+          ]
+        },
+        {
+          "title": "Tiga cara pasangan dibentuk",
+          "body": [
+            "Pasangan tuntas dan tak tuntas dikenali dari bentuknya. Ada tiga pola, dan yang pertama menutup paling banyak kata."
+          ],
+          "table": {
+            "head": [
+              "Pola",
+              "Tak tuntas",
+              "Tuntas",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "**awalan ditambahkan**",
+                "*robiť*",
+                "**u**robiť",
+                "melakukan"
+              ],
+              [
+                "",
+                "*písať*",
+                "**na**písať",
+                "menulis"
+              ],
+              [
+                "",
+                "*čítať*",
+                "**pre**čítať",
+                "membaca"
+              ],
+              [
+                "",
+                "*variť*",
+                "**u**variť",
+                "memasak"
+              ],
+              [
+                "",
+                "*jesť*",
+                "**z**jesť",
+                "makan"
+              ],
+              [
+                "",
+                "*piť*",
+                "**vy**piť",
+                "minum"
+              ],
+              [
+                "",
+                "*platiť*",
+                "**za**platiť",
+                "membayar"
+              ],
+              [
+                "",
+                "*učiť sa*",
+                "**na**učiť sa",
+                "belajar"
+              ],
+              [
+                "**sisipan dibuang**",
+                "*kupovať*",
+                "**kúpiť**",
+                "membeli"
+              ],
+              [
+                "",
+                "*dávať*",
+                "**dať**",
+                "memberi"
+              ],
+              [
+                "",
+                "*vracať sa*",
+                "**vrátiť sa**",
+                "kembali"
+              ],
+              [
+                "**kata berbeda**",
+                "*brať*",
+                "**vziať**",
+                "mengambil"
+              ],
+              [
+                "",
+                "*hovoriť*",
+                "**povedať**",
+                "berbicara / mengatakan"
+              ],
+              [
+                "",
+                "*hľadať*",
+                "**nájsť**",
+                "mencari / menemukan"
+              ]
+            ]
+          },
+          "after": [
+            "**Pola pertama adalah yang paling banyak, dan awalannya bukan hiasan.** *U-, na-, pre-, z-, vy-, za-* masing-masing punya arti sendiri — *pre-* berarti \"seluruhnya\", *vy-* berarti \"sampai keluar/habis\", *z-* berarti \"jadi/hilang\". Tetapi untuk membentuk pasangan tuntas, arti tambahannya melemah sampai nyaris tak terasa.",
+            "**Pola ketiga menjelaskan pasangan yang tampak tak masuk akal.** *Hľadať* (mencari) dan *nájsť* (menemukan) adalah dua kata yang sama sekali berbeda dalam bahasa Indonesia, tetapi dalam bahasa Slowakia keduanya adalah pasangan tak tuntas-tuntas dari perbuatan yang sama: mencari adalah prosesnya, menemukan adalah hasilnya. Begitu kamu melihatnya begitu, pasangan itu jadi wajar.",
+            "**Catat pasangannya bersama-sama sejak sekarang.** Menghafal *robiť* sendirian berarti kamu bisa mengatakan \"saya sedang mengerjakan\" tetapi tidak bisa mengatakan \"saya akan menyelesaikannya\". Kamus dan daftar kata di belakang modul ini menuliskan keduanya berpasangan, dan itu bukan kebetulan."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Memilih dengan benar — enam pasangan kalimat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cara tercepat memahami sistem ini bukan lewat aturan, melainkan lewat pasangan kalimat yang cuma berbeda satu awalan. Baca keduanya keras-keras dan rasakan bedanya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tak tuntas",
+            "Tuntas",
+            "Bedanya"
+          ],
+          "rows": [
+            [
+              "*Písal som list.*",
+              "*Napísal som list.*",
+              "sedang menulis / suratnya selesai"
+            ],
+            [
+              "*Čítal som knihu.*",
+              "*Prečítal som knihu.*",
+              "sedang membaca / bukunya habis"
+            ],
+            [
+              "*Pil som kávu.*",
+              "*Vypil som kávu.*",
+              "sedang minum / kopinya habis"
+            ],
+            [
+              "*Učil som sa slovenčinu.*",
+              "*Naučil som sa slovenčinu.*",
+              "sedang belajar / sudah menguasai"
+            ],
+            [
+              "*Kupoval som chlieb.*",
+              "*Kúpil som chlieb.*",
+              "sedang belanja / rotinya terbeli"
+            ],
+            [
+              "*Robil som to dlho.*",
+              "*Urobil som to.*",
+              "lama mengerjakannya / selesai"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Perhatikan baris keempat.** *Učil som sa* berarti kamu duduk dan belajar; *naučil som sa* berarti kamu sekarang bisa. Karena itu *Učím sa po slovensky* (saya sedang belajar bahasa Slowakia) benar, tetapi *Naučím sa po slovensky* berarti \"saya akan menguasai bahasa Slowakia\" — janji yang jauh lebih besar."
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga tempat yang selalu tak tuntas",
+          "items": [
+            "**Sesudah *začať* (mulai), *prestať* (berhenti), *pokračovať* (melanjutkan)**: *Začal som čítať*, bukan *začal som prečítať*. Kamu tidak bisa \"mulai menyelesaikan\".",
+            "**Kalau ada berapa lama**: *dve hodiny, celý deň, celý týždeň*. Bentuk tuntas tidak punya lama.",
+            "**Kalau ada seberapa sering**: *často, každý deň, väčšinou, niekedy, vždy*. Perbuatan yang berulang menurut definisinya tidak pernah tuntas."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Dua tempat yang hampir selalu tuntas",
+          "items": [
+            "**Kalau ada *už* (sudah) atau *konečne* (akhirnya)**: *Už som to urobil*, *Konečne som ju prečítal*.",
+            "**Kalau perbuatannya sekali dan hasilnya penting**: *Kúpil som lístok*, *Zaplatil som*, *Prišiel som*. Hampir semua kalimat sehari-hari tentang sesuatu yang beres masuk ke sini."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pasangan yang paling sering dipakai",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Hafalkan berpasangan, bukan satu per satu. Kolom ketiga adalah bentuk *ja* dari yang tuntas — bentuk yang berarti nanti."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tak tuntas",
+            "Tuntas",
+            "ja … (nanti)",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "robiť",
+              "urobiť",
+              "urobím",
+              "melakukan"
+            ],
+            [
+              "písať",
+              "napísať",
+              "napíšem",
+              "menulis"
+            ],
+            [
+              "čítať",
+              "prečítať",
+              "prečítam",
+              "membaca"
+            ],
+            [
+              "variť",
+              "uvariť",
+              "uvarím",
+              "memasak"
+            ],
+            [
+              "jesť",
+              "zjesť",
+              "zjem",
+              "makan"
+            ],
+            [
+              "piť",
+              "vypiť",
+              "vypijem",
+              "minum"
+            ],
+            [
+              "platiť",
+              "zaplatiť",
+              "zaplatím",
+              "membayar"
+            ],
+            [
+              "kupovať",
+              "kúpiť",
+              "kúpim",
+              "membeli"
+            ],
+            [
+              "dávať",
+              "dať",
+              "dám",
+              "memberi"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kalau kamu cuma punya waktu untuk menghafal separuh, hafalkan **kolom kedua dan ketiga**. Bentuk tuntas adalah yang paling sering kamu butuhkan dalam percakapan sehari-hari, karena sebagian besar yang kamu ceritakan adalah hal yang sudah beres atau akan beres."
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 13",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Kemarin saya di rumah.",
+              "*Včera som bol doma.*"
+            ],
+            [
+              "Gimana akhir pekanmu?",
+              "*Aký si mal víkend?*"
+            ],
+            [
+              "Saya tidak ngapa-ngapain.",
+              "*Nič som nerobil.*"
+            ],
+            [
+              "Kamu ke mana?",
+              "*Kde si bol?*"
+            ],
+            [
+              "Saya baru pertama kali ke sana.",
+              "*Bol som tam prvýkrát.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "dokonavý",
+      "baca": "DO-ko-na-vi",
+      "id": "tuntas"
+    },
+    {
+      "sk": "nedokonavý",
+      "baca": "NE-do-ko-na-vi",
+      "id": "tak tuntas"
+    },
+    {
+      "sk": "urobiť",
+      "baca": "U-ro-bit",
+      "id": "menyelesaikan (pekerjaan)"
+    },
+    {
+      "sk": "napísať",
+      "baca": "NA-pi-sat",
+      "id": "menulis sampai selesai"
+    },
+    {
+      "sk": "prečítať",
+      "baca": "PRE-ci-tat",
+      "id": "membaca sampai habis"
+    },
+    {
+      "sk": "dočítať",
+      "baca": "DO-ci-tat",
+      "id": "menyelesaikan bacaan"
+    },
+    {
+      "sk": "uvariť",
+      "baca": "U-va-rit",
+      "id": "memasak sampai jadi"
+    },
+    {
+      "sk": "zjesť",
+      "baca": "zyest",
+      "id": "menghabiskan (makanan)"
+    },
+    {
+      "sk": "vypiť",
+      "baca": "VI-pit",
+      "id": "menghabiskan (minuman)"
+    },
+    {
+      "sk": "naučiť sa",
+      "baca": "NA-u-cit sa",
+      "id": "menguasai"
+    },
+    {
+      "sk": "počkať",
+      "baca": "POC-kat",
+      "id": "menunggu (sebentar)"
+    },
+    {
+      "sk": "vziať",
+      "baca": "vzyat",
+      "id": "mengambil"
+    },
+    {
+      "sk": "povedať",
+      "baca": "PO-ve-dat",
+      "id": "mengatakan"
+    },
+    {
+      "sk": "zabudnúť",
+      "baca": "ZA-bud-nut",
+      "id": "melupakan"
+    },
+    {
+      "sk": "začať",
+      "baca": "ZA-cat",
+      "id": "memulai"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slowakia. Pakai bentuk lelaki untuk \"saya\".",
+      "items": [
+        "Saya baca, tapi belum sampai habis.",
+        "Tiap malam saya baca sepuluh halaman.",
+        "Malam ini pasti saya selesaikan.",
+        "Saya masak dua jam dan tidak ada yang jadi.",
+        "Saya lupa beli beras.",
+        "Saya habiskan dua porsi."
+      ]
+    },
+    {
+      "prompt": "Tulis pasangan tuntasnya.",
+      "items": [
+        "robiť → ____",
+        "písať → ____",
+        "čítať → ____",
+        "piť → ____",
+        "platiť → ____",
+        "kupovať → ____",
+        "hľadať → ____",
+        "hovoriť → ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "som / neprečítal / ale / ju / čítal / som / ,",
+        "hodiny / varil / dve / som",
+        "kúpiť / som / ryžu / zabudol",
+        "porcie / som / dve / zjedol",
+        "dočítam / ju / večer / dnes"
+      ]
+    }
+  ],
+  "answers": [
+    "Čítal som ju, ale neprečítal. — Každý večer som čítal desať strán. — Dnes večer ju určite dočítam. — Varil som dve hodiny a nič som neuvaril. — Zabudol som kúpiť ryžu. — Zjedol som dve porcie.",
+    "urobiť — napísať — prečítať — vypiť — zaplatiť — kúpiť — nájsť — povedať",
+    "Čítal som ju, ale neprečítal som. — Varil som dve hodiny. — Zabudol som kúpiť ryžu. — Zjedol som dve porcie. — Dnes večer ju dočítam."
+  ]
+}

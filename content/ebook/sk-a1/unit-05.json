@@ -1,0 +1,640 @@
+{
+  "title": "Berapa harganya?",
+  "title_target": "Koľko to stojí?",
+  "goal": "Menghitung, menanyakan harga, dan memasang aturan angka bahasa Slowakia yang paling mengejutkan: mulai angka lima, kata bendanya berganti bentuk.",
+  "bekal": [
+    "menyebut angka 0 sampai 1000 dan membaca harga dalam euro",
+    "memilih bentuk kata benda yang benar sesudah 1, sesudah 2-4, dan sesudah 5 ke atas",
+    "menanyakan harga dan menawar dengan sopan di pasar"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Na trhu",
+      "intro": "Sabtu pagi di pasar Miletičova, Bratislava. Budi berbelanja buah untuk pertama kalinya sendirian.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Dobrý deň. Koľko stoja jablká?",
+          "id": "Selamat siang. Berapa harga apel?",
+          "literal": "baik hari. berapa mereka-berdiri apel-apel?"
+        },
+        {
+          "speaker": "Predavačka:",
+          "text": "Dve eurá za kilo.",
+          "id": "Dua euro sekilo.",
+          "literal": "dua euro-jamak untuk kilo."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dám si dve kilá, prosím.",
+          "id": "Saya ambil dua kilo, tolong.",
+          "literal": "saya-akan-beri diri dua kilo-jamak, saya-minta."
+        },
+        {
+          "speaker": "Predavačka:",
+          "text": "Nech sa páči. Ešte niečo?",
+          "id": "Silakan. Ada lagi?",
+          "literal": "biar diri berkenan. masih sesuatu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Áno. Koľko stojí to víno?",
+          "id": "Ya. Berapa harga anggur itu?",
+          "literal": "ya. berapa ia-berdiri itu anggur?"
+        },
+        {
+          "speaker": "Predavačka:",
+          "text": "Sedem eur päťdesiat.",
+          "id": "Tujuh euro lima puluh.",
+          "literal": "tujuh euro-genitif lima-puluh."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "To je trochu drahé. Máte lacnejšie?",
+          "id": "Itu agak mahal. Ada yang lebih murah?",
+          "literal": "itu adalah sedikit mahal. kalian-punya lebih-murah?"
+        },
+        {
+          "speaker": "Predavačka:",
+          "text": "Toto stojí päť eur. Je tiež dobré.",
+          "id": "Yang ini lima euro. Ini juga bagus.",
+          "literal": "ini ia-berdiri lima euro-genitif. ia-adalah juga baik."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dobre, beriem ho. Koľko to je spolu?",
+          "id": "Baik, saya ambil. Semuanya berapa?",
+          "literal": "baik, saya-ambil dia. berapa itu adalah bersama?"
+        },
+        {
+          "speaker": "Predavačka:",
+          "text": "Deväť eur. Máte drobné?",
+          "id": "Sembilan euro. Ada uang pas?",
+          "literal": "sembilan euro-genitif. kalian-punya receh?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bohužiaľ nie. Mám len dvadsať eur.",
+          "id": "Sayangnya tidak. Saya cuma punya dua puluh euro.",
+          "literal": "sayang-sekali tidak. saya-punya hanya dua-puluh euro-genitif."
+        }
+      ],
+      "notes": [
+        "**Koľko stojí?** harfiahnya \"berapa ia berdiri?\" — bahasa Slowakia memakai *stáť* (berdiri) untuk harga, persis seperti bahasa Jerman *kosten* dan Rusia *стоить*. Kalau yang ditanya jamak, kata kerjanya ikut jamak: *koľko **stoja** jablká?*",
+        "**Dve eurá tetapi sedem eur.** Inilah pokok unit ini. Sesudah angka 2, 3, 4 kata bendanya berbentuk jamak biasa (*eurá*); sesudah 5 ke atas ia berbentuk **genitif jamak** (*eur*). Bahasa Slowakia melakukan ini pada setiap kata benda, tanpa kecuali, seumur hidup.",
+        "**Dve, bukan dva.** Angka dua ikut jenis kelamin: *dva* untuk lelaki (*dva stoly*), *dve* untuk perempuan dan netral (*dve kávy*, *dve piva*). Angka 3 dan 4 tidak peduli — *tri, štyri* untuk semuanya. Jadi cuma satu angka yang perlu perhatian.",
+        "**Nech sa páči** adalah kalimat siap pakai yang berarti \"silakan\" saat menyerahkan sesuatu, mempersilakan masuk, atau menawarkan tempat duduk. Harfiahnya \"biarlah ia berkenan\". Kamu akan mendengarnya belasan kali sehari.",
+        "**Beriem ho** — *ho* menggantikan *víno*. Perhatikan bahwa *víno* netral, dan kata ganti netral sebagai objek sama dengan kata ganti lelaki: *ho*."
+      ],
+      "grammars": [
+        {
+          "title": "Angka dan kata benda sesudahnya — tiga golongan",
+          "body": [
+            "Aturan ini tidak punya padanan dalam bahasa Indonesia maupun Inggris, dan ia berlaku di setiap kalimat yang mengandung angka. Untungnya golongannya cuma tiga."
+          ],
+          "table": {
+            "head": [
+              "Angka",
+              "Bentuk kata benda",
+              "Contoh (lk)",
+              "Contoh (pr)",
+              "Contoh (nt)"
+            ],
+            "rows": [
+              [
+                "**1**",
+                "tunggal, angka ikut jenis kelamin",
+                "*jeden stôl*",
+                "*jedna káva*",
+                "*jedno pivo*"
+              ],
+              [
+                "**2, 3, 4**",
+                "jamak nominatif",
+                "*dva stoly*",
+                "*dve kávy*",
+                "*dve pivá*"
+              ],
+              [
+                "**5 ke atas**",
+                "**genitif jamak**",
+                "*päť stolov*",
+                "*päť káv*",
+                "*päť pív*"
+              ],
+              [
+                "**koľko** (berapa)",
+                "**genitif jamak**",
+                "*koľko stolov?*",
+                "*koľko káv?*",
+                "*koľko pív?*"
+              ],
+              [
+                "**veľa / málo**",
+                "**genitif jamak**",
+                "*veľa ľudí*",
+                "*málo kníh*",
+                "*veľa miest*"
+              ]
+            ]
+          },
+          "after": [
+            "**Angka bertingkat mengikuti angka terakhirnya.** *Dvadsaťjeden rokov*? Tidak — bahasa Slowakia memakai *dvadsaťjeden rokov* dengan genitif, karena angka gabungan di atas dua puluh selalu memakai genitif jamak. Untuk A1 pegang aturan sederhana ini: **semua angka mulai lima memakai genitif jamak**, termasuk yang berakhir 1, 2, 3, atau 4 di dalam bilangan besar.",
+            "**Kenapa ini ada?** Sisa dari zaman ketika bahasa Slavia punya bentuk khusus untuk \"dua benda\". Angka 2, 3, 4 mewarisi bentuk itu, sementara 5 ke atas dulu diperlakukan sebagai kata benda sendiri — \"lima dari meja-meja\". Ekor genitif itu adalah jejak kata \"dari\" yang sudah lama hilang.",
+            "**Kata kerjanya juga ikut.** *Dve kávy **stoja** štyri eurá* (jamak), tetapi *Päť káv **stojí** desať eur* (tunggal). Karena sesudah lima kata bendanya secara tata bahasa bukan lagi pelaku jamak, kata kerjanya kembali ke bentuk tunggal. Ini halus dan sering diabaikan pemula — kalau kamu memakainya dengan benar, penutur asli akan langsung menyadarinya."
+          ]
+        },
+        {
+          "title": "Genitif jamak: ekor yang sering justru hilang",
+          "body": [
+            "Bentuk yang dituntut angka 5 ke atas. Yang membingungkan pemula: untuk dua dari tiga jenis kelamin, ekornya bukan ditambahkan melainkan **dibuang** — dan vokal di dalam kata sering memanjang sebagai gantinya."
+          ],
+          "table": {
+            "head": [
+              "Jenis",
+              "Ekor",
+              "Contoh",
+              "Genitif jamak"
+            ],
+            "rows": [
+              [
+                "**lk (semua)**",
+                "**-ov**",
+                "*stôl, brat, cent, dom*",
+                "*stolov, bratov, centov, domov*"
+              ],
+              [
+                "**pr -a**",
+                "**kosong**",
+                "*káva, kniha, žena, škola*",
+                "*káv, kníh, žien, škôl*"
+              ],
+              [
+                "**nt -o**",
+                "**kosong**",
+                "*pivo, mesto, auto, euro*",
+                "*pív, miest, áut, eur*"
+              ],
+              [
+                "**pr huruf lunak**",
+                "**-í**",
+                "*posteľ, dlaň*",
+                "*postelí, dlaní*"
+              ],
+              [
+                "**tak beraturan**",
+                "—",
+                "*človek, dieťa, rok, peniaze*",
+                "*ľudí, detí, rokov, peňazí*"
+              ]
+            ]
+          },
+          "after": [
+            "**Pemanjangan vokal itu punya aturannya sendiri**, dan ia tampak aneh sampai kamu melihat polanya: *e → ie* (*žena → žien*), *o → ô* (*škola → škôl*), *a → á* (*auto → áut*), *i → í* (*kniha → kníh*). Vokal terakhir kata dasarnya memanjang untuk menggantikan ekor yang hilang.",
+            "**Kata yang vokalnya sudah panjang tidak berubah**, karena hukum irama melarang dua panjang bersebelahan — dan karena tidak ada apa pun untuk dipanjangkan lagi: *káva → káv*, *práca → prác*.",
+            "**Untuk A1, hafalkan tujuh bentuk yang paling sering dipakai** dan biarkan sisanya datang perlahan: *eur, centov, rokov, ľudí, detí, korún, kíl*. Tujuh kata itu menutup hampir semua kalimat berangka yang akan kamu ucapkan di bulan pertama."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Angka 0 sampai 1000",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "Slovenčina",
+            "Cara baca",
+            "",
+            "Slovenčina",
+            "Cara baca"
+          ],
+          "rows": [
+            [
+              "**0**",
+              "nula",
+              "NU-la",
+              "**11**",
+              "jedenásť",
+              "YE-de-nast"
+            ],
+            [
+              "**1**",
+              "jeden / jedna / jedno",
+              "YE-den",
+              "**12**",
+              "dvanásť",
+              "DVA-nast"
+            ],
+            [
+              "**2**",
+              "dva / dve",
+              "dva / dve",
+              "**13**",
+              "trinásť",
+              "TRI-nast"
+            ],
+            [
+              "**3**",
+              "tri",
+              "tri",
+              "**14**",
+              "štrnásť",
+              "SYTER-nast"
+            ],
+            [
+              "**4**",
+              "štyri",
+              "SYTI-ri",
+              "**15**",
+              "pätnásť",
+              "PET-nast"
+            ],
+            [
+              "**5**",
+              "päť",
+              "pet",
+              "**16**",
+              "šestnásť",
+              "SYEST-nast"
+            ],
+            [
+              "**6**",
+              "šesť",
+              "syest",
+              "**17**",
+              "sedemnásť",
+              "SE-dyem-nast"
+            ],
+            [
+              "**7**",
+              "sedem",
+              "SE-dyem",
+              "**18**",
+              "osemnásť",
+              "O-sem-nast"
+            ],
+            [
+              "**8**",
+              "osem",
+              "O-sem",
+              "**19**",
+              "devätnásť",
+              "DE-vet-nast"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "Slovenčina",
+            "Cara baca",
+            "",
+            "Slovenčina",
+            "Cara baca"
+          ],
+          "rows": [
+            [
+              "**30**",
+              "tridsať",
+              "TRIT-sat",
+              "**80**",
+              "osemdesiat",
+              "O-sem-dye-syat"
+            ],
+            [
+              "**40**",
+              "štyridsať",
+              "SYTI-rit-sat",
+              "**90**",
+              "deväťdesiat",
+              "DE-vet-dye-syat"
+            ],
+            [
+              "**50**",
+              "päťdesiat",
+              "PET-dye-syat",
+              "**100**",
+              "sto",
+              "sto"
+            ],
+            [
+              "**60**",
+              "šesťdesiat",
+              "SYEST-dye-syat",
+              "**200**",
+              "dvesto",
+              "DVES-to"
+            ],
+            [
+              "**70**",
+              "sedemdesiat",
+              "SE-dyem-dye-syat",
+              "**1000**",
+              "tisíc",
+              "TI-sits"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan pola yang menghemat banyak hafalan: **11-19 = angka satuan + -násť**, dan **20-90 = angka satuan + -dsať atau -desiat**. Begitu kamu hafal 1 sampai 10, sisanya praktis bisa ditebak. Yang menyimpang cuma dua: *štrnásť* (14, bukan *štyrinásť*) dan *pätnásť* (15, dengan *ä*)."
+        },
+        {
+          "type": "p",
+          "text": "Angka gabungan disambung tanpa spasi dan tanpa kata penghubung: *dvadsaťjeden* (21), *tridsaťpäť* (35), *stodvadsať* (120), *tisícdeväťstodeväťdesiatosem* (1998). Kata terpanjang itu memang ditulis menyatu — dan orang Slowakia pun memilih menulisnya dengan angka."
+        },
+        {
+          "type": "kotak",
+          "title": "Štrnásť: latihan kecil yang berguna",
+          "items": [
+            "*Štrnásť* (14) tidak punya huruf hidup di suku kata pertamanya: *št-r-násť*, dibaca *SYTER-nast*. Ia sekelompok dengan *štvrtok* (Kamis) dan *štvrť* (seperempat).",
+            "Kalau kamu bisa mengucapkan ketiganya dengan lancar, sebagian besar rintangan bunyi bahasa Slowakia sudah kamu lewati."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Uang dan harga",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Slowakia memakai euro sejak 2009. Bentuk kata bendanya mengikuti aturan angka di atas, dan karena itu ia jadi latihan harian yang sempurna."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Jumlah",
+            "euro (nt)",
+            "cent (lk)"
+          ],
+          "rows": [
+            [
+              "1",
+              "*jedno euro*",
+              "*jeden cent*"
+            ],
+            [
+              "2, 3, 4",
+              "*dve / tri / štyri **eurá***",
+              "*dva / tri / štyri **centy***"
+            ],
+            [
+              "5 ke atas",
+              "*päť **eur***",
+              "*päť **centov***"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Ditulis",
+            "Dibaca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "1,20 €",
+              "*jedno euro dvadsať*",
+              "satu euro dua puluh"
+            ],
+            [
+              "2,50 €",
+              "*dve eurá päťdesiat*",
+              "dua euro lima puluh"
+            ],
+            [
+              "7,90 €",
+              "*sedem eur deväťdesiat*",
+              "tujuh euro sembilan puluh"
+            ],
+            [
+              "15 €",
+              "*pätnásť eur*",
+              "lima belas euro"
+            ],
+            [
+              "0,80 €",
+              "*osemdesiat centov*",
+              "delapan puluh sen"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa **kata *cent* dilesapkan** ketika ia mengikuti jumlah euro: *dve eurá päťdesiat*, bukan *dve eurá päťdesiat centov*. Sama seperti orang Indonesia berkata \"dua ribu lima\" untuk 2.500. Kata *cent* dipakai penuh hanya kalau tidak ada euro sama sekali."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Koľko to stojí?*",
+              "Berapa harganya?"
+            ],
+            [
+              "*Koľko stoja?*",
+              "Berapa harganya? (jamak)"
+            ],
+            [
+              "*Koľko to je spolu?*",
+              "Semuanya berapa?"
+            ],
+            [
+              "*To je drahé.* / *To je lacné.*",
+              "Itu mahal. / Itu murah."
+            ],
+            [
+              "*Máte niečo lacnejšie?*",
+              "Ada yang lebih murah?"
+            ],
+            [
+              "*Beriem to.*",
+              "Saya ambil."
+            ],
+            [
+              "*Máte drobné?*",
+              "Ada uang pas?"
+            ],
+            [
+              "*Platím kartou.*",
+              "Saya bayar dengan kartu."
+            ],
+            [
+              "*Môžem dostať bloček?*",
+              "Boleh minta struknya?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Koruna yang masih hidup di mulut orang",
+          "items": [
+            "Sebelum euro, mata uang Slowakia adalah *slovenská koruna* (Sk). Nilainya sekitar 30 korun per euro.",
+            "Dua puluh tahun sesudah pergantian, orang berumur masih sering menghitung dalam koruna di kepalanya, dan kadang mengucapkannya keras-keras di pasar. Kalau kamu mendengar angka yang terdengar tiga puluh kali terlalu besar, itu sebabnya."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 3",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Ini keluargaku.",
+              "*Toto je moja rodina.*"
+            ],
+            [
+              "Itu ayahku. Dia guru.",
+              "*To je môj otec. Je učiteľ.*"
+            ],
+            [
+              "Saya punya dua saudara perempuan.",
+              "*Mám dve sestry.*"
+            ],
+            [
+              "Umurnya lima puluh tahun.",
+              "*Má päťdesiat rokov.*"
+            ],
+            [
+              "Rumah itu besar.",
+              "*Ten dom je veľký.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "koľko",
+      "baca": "KOL-ko",
+      "id": "berapa"
+    },
+    {
+      "sk": "stáť",
+      "baca": "stat",
+      "id": "berdiri; berharga"
+    },
+    {
+      "sk": "euro",
+      "baca": "EU-ro",
+      "id": "euro (nt)"
+    },
+    {
+      "sk": "cent",
+      "baca": "tsent",
+      "id": "sen (lk)"
+    },
+    {
+      "sk": "peniaze",
+      "baca": "PE-nya-ze",
+      "id": "uang (jamak)"
+    },
+    {
+      "sk": "drobné",
+      "baca": "DROB-ne",
+      "id": "uang receh"
+    },
+    {
+      "sk": "drahý",
+      "baca": "DRA-hi",
+      "id": "mahal"
+    },
+    {
+      "sk": "lacný",
+      "baca": "LATS-ni",
+      "id": "murah"
+    },
+    {
+      "sk": "trh",
+      "baca": "terkh",
+      "id": "pasar (lk)"
+    },
+    {
+      "sk": "predavač / predavačka",
+      "baca": "PRE-da-vac / -ka",
+      "id": "penjual (lk / pr)"
+    },
+    {
+      "sk": "jablko",
+      "baca": "YA-bel-ko",
+      "id": "apel (nt)"
+    },
+    {
+      "sk": "kilo",
+      "baca": "KI-lo",
+      "id": "kilo (nt)"
+    },
+    {
+      "sk": "brať",
+      "baca": "brat",
+      "id": "mengambil"
+    },
+    {
+      "sk": "spolu",
+      "baca": "SPO-lu",
+      "id": "bersama; seluruhnya"
+    },
+    {
+      "sk": "naspäť",
+      "baca": "NAS-pet",
+      "id": "kembali"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slowakia.",
+      "items": [
+        "Berapa harga apel?",
+        "Dua euro sekilo.",
+        "Berapa semuanya?",
+        "Itu agak mahal.",
+        "Ada yang lebih murah?",
+        "Saya cuma punya dua puluh euro."
+      ]
+    },
+    {
+      "prompt": "Pilih bentuk kata benda yang tepat.",
+      "items": [
+        "dve ____ (káva)",
+        "päť ____ (káva)",
+        "jeden ____ (stôl)",
+        "tri ____ (stôl)",
+        "sedem ____ (stôl)",
+        "dve ____ (pivo)",
+        "desať ____ (pivo)",
+        "osem ____ (euro)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "stojí / to / koľko / ?",
+        "eurá / dve / kilo / za",
+        "je / drahé / to / trochu",
+        "lacnejšie / máte / ?",
+        "to / beriem"
+      ]
+    }
+  ],
+  "answers": [
+    "Koľko stoja jablká? — Dve eurá za kilo. — Koľko to je spolu? — To je trochu drahé. — Máte niečo lacnejšie? — Mám len dvadsať eur.",
+    "kávy — káv — stôl — stoly — stolov — pivá — pív — eur",
+    "Koľko to stojí? — Dve eurá za kilo. — To je trochu drahé. — Máte lacnejšie? — Beriem to."
+  ]
+}

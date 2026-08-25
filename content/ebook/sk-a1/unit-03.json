@@ -1,0 +1,505 @@
+{
+  "title": "Ini keluargaku",
+  "title_target": "Toto je moja rodina",
+  "goal": "Memperkenalkan keluarga, memakai kata kerja *mať*, dan memasang aturan yang berlaku untuk setiap kata sifat dalam bahasa Slowakia: ekornya ikut jenis kelamin kata bendanya.",
+  "bekal": [
+    "menyebut anggota keluarga dan usia dengan *mať*",
+    "memakai *môj/moja/moje* dan *ten/tá/to* dengan ekor yang benar",
+    "membentuk jamak nominatif dan melihat kenapa orang lelaki punya ekor sendiri"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Fotky v telefóne",
+      "intro": "Eva menunjukkan foto keluarganya kepada Budi di ponsel.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Pozri, toto je moja rodina.",
+          "id": "Lihat, ini keluargaku.",
+          "literal": "lihatlah, ini adalah milikku-pr keluarga."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pekná fotka! Kto je ten pán?",
+          "id": "Foto yang bagus! Siapa bapak itu?",
+          "literal": "bagus-pr foto! siapa adalah itu-lk bapak?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "To je môj otec. Má päťdesiat rokov.",
+          "id": "Itu ayahku. Umurnya lima puluh tahun.",
+          "literal": "itu adalah milikku-lk ayah. dia-punya lima-puluh tahun-tahun."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A tá pani vedľa neho?",
+          "id": "Dan ibu di sebelahnya?",
+          "literal": "dan itu-pr ibu di-samping dia?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "To je moja mama. Je učiteľka.",
+          "id": "Itu ibuku. Dia guru.",
+          "literal": "itu adalah milikku-pr ibu. dia-adalah guru-pr."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Máš súrodencov?",
+          "id": "Kamu punya saudara?",
+          "literal": "kamu-punya saudara-saudara?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Áno, mám brata a dve sestry. Tu sú.",
+          "id": "Ya, saya punya satu kakak lelaki dan dua saudara perempuan. Ini mereka.",
+          "literal": "ya, saya-punya saudara-lelaki dan dua saudara-perempuan. di-sini mereka-adalah."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aké malé deti! Sú tvoje?",
+          "id": "Anak-anak yang lucu! Itu anakmu?",
+          "literal": "apa-macam kecil-jamak anak-anak! mereka-adalah milikmu?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Nie, to sú deti mojej sestry. Nemám deti.",
+          "id": "Bukan, itu anak-anak kakakku. Saya belum punya anak.",
+          "literal": "tidak, itu mereka-adalah anak-anak milikku-pr-genitif saudara-perempuan. tidak-saya-punya anak-anak."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Máte peknú rodinu.",
+          "id": "Keluarga Anda bagus.",
+          "literal": "kalian-punya bagus-akusatif keluarga."
+        }
+      ],
+      "notes": [
+        "**To je dipakai untuk menunjuk siapa pun, apa pun.** Perhatikan Eva berkata *to je môj otec* — bukan *ten je*. Ketika kamu memperkenalkan atau menunjuk, bentuknya selalu **to je** (tunggal) atau **to sú** (jamak), tidak peduli jenis kelamin yang ditunjuk. *Toto* adalah bentuk yang lebih menekankan: \"ini di sini\".",
+        "**Mať untuk umur: harfiahnya \"punya tahun\".** *Má päťdesiat rokov* = \"dia punya lima puluh tahun\". Bahasa Slowakia menghitung umur seperti bahasa Prancis dan Spanyol, bukan seperti bahasa Inggris. Pertanyaannya: *Koľko máš rokov?* — \"Berapa tahun yang kamu punya?\"",
+        "**Mám brata, bukan mám brat.** Objek kata kerja mengubah ekor kata bendanya, dan untuk **kata benda lelaki yang bernyawa** ekornya *-a*. Inilah kasus akusatif yang dipasang lengkap di unit berikutnya. Perhatikan juga *peknú rodinu* dan *veľkú rodinu* — kata sifat dan kata bendanya berubah bersama-sama.",
+        "**Nemám deti, bukan nemám dieťa.** Bahasa Slowakia memakai jamak untuk mengatakan \"belum punya anak\" karena yang disangkal adalah keberadaan anak-anak pada umumnya. Kata *dieťa* (anak) punya jamak yang tidak beraturan: *deti*, dan jamak itu berjenis **perempuan**, walau bentuk tunggalnya netral.",
+        "**Deti mojej sestry** = \"anak-anak kakakku\". Kepemilikan dinyatakan dengan mengubah ekor **pemiliknya**, bukan dengan kata seperti \"punya\": harfiahnya \"anak-anak dari-kakakku\". Ini kasus genitif, unit 9. Untuk sekarang cukup perhatikan bahwa yang berubah adalah kata di **belakang**."
+      ],
+      "grammars": [
+        {
+          "title": "Kata sifat: satu kata, tiga ekor",
+          "body": [
+            "Setiap kata sifat bahasa Slowakia menyesuaikan ekornya dengan jenis kelamin kata benda yang diterangkannya. Kabar baiknya: ekornya cuma tiga, sangat teratur, dan sudah kamu temui di keempat sapaan unit 1."
+          ],
+          "table": {
+            "head": [
+              "Jenis benda",
+              "Ekor",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "**lk**",
+                "**-ý**",
+                "*pekn**ý** dom*, *dobr**ý** deň*, *veľk**ý** stôl*",
+                "rumah yang bagus"
+              ],
+              [
+                "**pr**",
+                "**-á**",
+                "*pekn**á** kniha*, *dobr**á** káva*, *veľk**á** škola*",
+                "buku yang bagus"
+              ],
+              [
+                "**nt**",
+                "**-é**",
+                "*pekn**é** mesto*, *dobr**é** ráno*, *veľk**é** auto*",
+                "kota yang bagus"
+              ],
+              [
+                "**jamak**",
+                "**-é**",
+                "*pekn**é** knihy*, *mal**é** deti*",
+                "buku-buku yang bagus"
+              ],
+              [
+                "**jamak, lelaki bernyawa**",
+                "**-í**",
+                "*pekn**í** chlapci*, *dobr**í** ľudia*",
+                "anak-anak lelaki yang tampan"
+              ]
+            ]
+          },
+          "after": [
+            "**Hafalkan tiga huruf: ý – á – é.** Itu saja intinya. Kalau kamu tahu jenis kelamin kata bendanya (unit 2), kamu tahu ekor kata sifatnya, tanpa pengecualian.",
+            "**Baris terakhir adalah tempat lelaki bernyawa muncul lagi.** Jamak biasa memakai *-é*, tetapi jamak orang lelaki memakai *-í*, dan huruf mati sebelumnya sering ikut melunak: *dobrý* → *dobrí*, *pekný* → *pekní*, *slovenský* → *slovenskí*. Ini bagian A1 yang paling sering diabaikan pemula, dan ia terdengar sangat jelas bagi penutur asli.",
+            "**Hukum irama berlaku di sini juga.** Kalau suku kata sebelum ekor sudah panjang, ekornya dipendekkan: *krásny* (bukan *krásný*), *krásna* (bukan *krásná*), *krásne*. Bandingkan dengan *pekný, pekná, pekné* yang suku kata pertamanya pendek. Aturan ini dipasang lengkap di unit 7."
+          ]
+        },
+        {
+          "title": "Milikku, milikmu, dan itu",
+          "body": [
+            "Kata milik dan kata tunjuk memakai pola ekor yang sama dengan kata sifat, jadi kamu tidak sedang menghafal tabel baru — kamu sedang memakai lagi tabel yang sudah ada."
+          ],
+          "table": {
+            "head": [
+              "Arti",
+              "lk",
+              "pr",
+              "nt",
+              "jamak"
+            ],
+            "rows": [
+              [
+                "milikku",
+                "**môj**",
+                "**moja**",
+                "**moje**",
+                "**moje / moji**"
+              ],
+              [
+                "milikmu",
+                "**tvoj**",
+                "**tvoja**",
+                "**tvoje**",
+                "**tvoje / tvoji**"
+              ],
+              [
+                "miliknya (lelaki)",
+                "**jeho**",
+                "jeho",
+                "jeho",
+                "jeho"
+              ],
+              [
+                "miliknya (perempuan)",
+                "**jej**",
+                "jej",
+                "jej",
+                "jej"
+              ],
+              [
+                "milik kami",
+                "**náš**",
+                "**naša**",
+                "**naše**",
+                "**naše / naši**"
+              ],
+              [
+                "milik Anda / kalian",
+                "**váš**",
+                "**vaša**",
+                "**vaše**",
+                "**vaše / vaši**"
+              ],
+              [
+                "milik mereka",
+                "**ich**",
+                "ich",
+                "ich",
+                "ich"
+              ],
+              [
+                "itu (dekat pendengar)",
+                "**ten**",
+                "**tá**",
+                "**to**",
+                "**tie / tí**"
+              ]
+            ]
+          },
+          "after": [
+            "**Tiga baris tidak pernah berubah: *jeho*, *jej*, *ich*.** Hadiah kecil yang gratis. Kalau kamu bicara tentang milik orang ketiga, kamu tidak perlu memikirkan apa pun.",
+            "**Bentuk kedua di kolom jamak dipakai untuk orang lelaki**, sama seperti kata sifat: *moji bratia* (saudara-saudara lelakiku), *naši učitelia* (guru-guru lelaki kami), tetapi *moje sestry* dan *naše knihy*.",
+            "**Ten/tá/to bukan kata sandang.** Ia berarti \"itu\" dan hanya dipakai kalau kamu benar-benar menunjuk atau membedakan: *Ten dom je pekný* = \"Rumah **itu** bagus\" (bukan yang lain). Untuk sekadar berkata \"rumahnya bagus\", cukup *Dom je pekný*. Pelajar dari bahasa Inggris sering menaburkan *ten* ke mana-mana karena mengiranya *the*; jangan ikut."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Keluarga",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**rodina** (pr)",
+              "RO-dyi-na",
+              "keluarga"
+            ],
+            [
+              "**otec** (lk)",
+              "O-tyets",
+              "ayah"
+            ],
+            [
+              "**mama / matka** (pr)",
+              "MA-ma / MAT-ka",
+              "ibu"
+            ],
+            [
+              "**rodičia** (jamak)",
+              "RO-dyi-cya",
+              "orang tua"
+            ],
+            [
+              "**brat** (lk)",
+              "brat",
+              "saudara lelaki"
+            ],
+            [
+              "**sestra** (pr)",
+              "SES-tra",
+              "saudara perempuan"
+            ],
+            [
+              "**súrodenci** (jamak)",
+              "SU-ro-den-tsi",
+              "saudara kandung"
+            ],
+            [
+              "**syn** (lk)",
+              "sin",
+              "anak lelaki"
+            ],
+            [
+              "**dcéra** (pr)",
+              "TSE-ra",
+              "anak perempuan"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan pola **-ka** yang muncul berulang: *manžel → manželka*, *priateľ → priateľka*, *učiteľ → učiteľka*, *Slovák → Slovenka*. Akhiran itu membentuk pasangan perempuan dari hampir setiap kata benda orang, dan hasilnya selalu berjenis perempuan. Sekali kamu tahu bentuk lelakinya, kamu praktis mendapat bentuk perempuannya gratis."
+        },
+        {
+          "type": "kotak",
+          "title": "Priateľ: teman atau pacar?",
+          "items": [
+            "Keduanya, dan keadaannyalah yang memutuskan. *Môj priateľ* biasanya berarti \"pacarku\"; untuk sekadar teman lelaki orang Slowakia lebih sering berkata *kamarát* (pr: *kamarátka*).",
+            "Jadi kalau kamu memperkenalkan teman sekelasmu, katakan *toto je môj kamarát* — kecuali kamu memang bermaksud lain."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Dcéra* ditulis dengan *d* dan *c* berurutan, tetapi *d*-nya nyaris hilang dalam ucapan sehari-hari: bunyinya *TSE-ra*. Ini salah satu dari sedikit kata yang ejaannya tidak sepenuhnya jujur, dan ia langsung menandai orang asing kalau diucapkan huruf demi huruf."
+        }
+      ]
+    },
+    {
+      "title": "Jamak nominatif",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bentuk jamak dasar — yang dipakai sebagai pelaku kalimat. Ekornya ditentukan oleh jenis kelamin kata bendanya, dan sekali lagi lelaki bernyawa berdiri sendiri."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Jenis",
+            "Ekor",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "**lk bernyawa**",
+              "**-i** (huruf sebelumnya melunak)",
+              "*študent → študent**i***, *Slovák → Slováci*, *chlapec → chlapci*"
+            ],
+            [
+              "**lk benda mati**",
+              "**-y**",
+              "*stôl → stol**y***, *dom → dom**y***, *obchod → obchod**y***"
+            ],
+            [
+              "**pr berakhiran -a**",
+              "**-y**",
+              "*žena → žen**y***, *kniha → knih**y***, *škola → škol**y***"
+            ],
+            [
+              "**pr berakhiran huruf lunak**",
+              "**-e**",
+              "*posteľ → postel**e***, *dlaň → dlan**e***"
+            ],
+            [
+              "**nt berakhiran -o**",
+              "**-á**",
+              "*mesto → mest**á***, *okno → okn**á***, *pivo → piv**á***"
+            ],
+            [
+              "**nt berakhiran -e**",
+              "**-ia**",
+              "*more → mor**ia***, *pole → pol**ia***"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Yang perlu diperhatikan cuma baris pertama.** Ekor *-i* pada lelaki bernyawa memicu pelunakan huruf sebelumnya, dan pelunakan itu kadang mengubah hurufnya: *k → c* (*Slovák → Slováci*), *ch → s* (*Čech → Česi*), *h → z* (*sluha → sluhovia*). Untuk A1 kamu cuma perlu mengenalinya saat mendengar, bukan menghasilkannya dengan sempurna."
+        },
+        {
+          "type": "p",
+          "text": "Beberapa kata keluarga punya jamak yang berdiri sendiri dan harus dihafal: *brat → **bratia***, *dieťa → **deti***, *človek → **ľudia*** (orang → orang-orang), *rodič → **rodičia***. Keempatnya sangat sering dipakai, jadi menghafalnya sekarang menghemat banyak waktu."
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 1",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tutup kolom Slowakia, baca terjemahan Indonesianya, lalu susun kembali kalimat Slowakianya dari ingatan. Baru sesudah itu buka kolomnya untuk mencocokkan."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Halo! Siapa namamu?",
+              "*Ahoj! Ako sa voláš?*"
+            ],
+            [
+              "Nama saya Budi.",
+              "*Volám sa Budi.*"
+            ],
+            [
+              "Saya bukan orang Cina.",
+              "*Nie som Číňan.*"
+            ],
+            [
+              "Selamat siang! Apa kabar?",
+              "*Dobrý deň! Ako sa máte?*"
+            ],
+            [
+              "Saya tidak mengerti. Pelan-pelan, tolong.",
+              "*Nerozumiem. Pomaly, prosím.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "mať",
+      "baca": "mat",
+      "id": "punya"
+    },
+    {
+      "sk": "toto",
+      "baca": "TO-to",
+      "id": "ini"
+    },
+    {
+      "sk": "ten / tá / to",
+      "baca": "ten / ta / to",
+      "id": "itu (lk / pr / nt)"
+    },
+    {
+      "sk": "môj / moja / moje",
+      "baca": "muoy / MO-ya / MO-ye",
+      "id": "milikku"
+    },
+    {
+      "sk": "tvoj / tvoja / tvoje",
+      "baca": "tvoy / TVO-ya / TVO-ye",
+      "id": "milikmu"
+    },
+    {
+      "sk": "náš / naša / naše",
+      "baca": "nasy / NA-sya / NA-sye",
+      "id": "milik kami"
+    },
+    {
+      "sk": "váš / vaša / vaše",
+      "baca": "vasy / VA-sya / VA-sye",
+      "id": "milik Anda; kalian"
+    },
+    {
+      "sk": "jeho",
+      "baca": "YE-ho",
+      "id": "miliknya (lelaki)"
+    },
+    {
+      "sk": "jej",
+      "baca": "yey",
+      "id": "miliknya (perempuan)"
+    },
+    {
+      "sk": "kto",
+      "baca": "kto",
+      "id": "siapa"
+    },
+    {
+      "sk": "čo",
+      "baca": "co",
+      "id": "apa"
+    },
+    {
+      "sk": "pán",
+      "baca": "pan",
+      "id": "bapak; tuan (lk)"
+    },
+    {
+      "sk": "pani",
+      "baca": "PA-ni",
+      "id": "ibu; nyonya (pr)"
+    },
+    {
+      "sk": "pekný",
+      "baca": "PEK-ni",
+      "id": "bagus; cantik"
+    },
+    {
+      "sk": "veľký",
+      "baca": "VEL-ki",
+      "id": "besar"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slowakia.",
+      "items": [
+        "Ini keluargaku.",
+        "Itu ayahku. Dia guru.",
+        "Kamu punya saudara?",
+        "Saya punya dua saudara perempuan.",
+        "Umurnya lima puluh tahun.",
+        "Anak-anak itu kecil."
+      ]
+    },
+    {
+      "prompt": "Isi dengan ekor kata sifat yang tepat.",
+      "items": [
+        "pekn____ dom (lk)",
+        "veľk____ škola (pr)",
+        "mal____ mesto (nt)",
+        "dobr____ káva (pr)",
+        "star____ knihy (jamak)",
+        "mlad____ študenti (jamak, lelaki)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "rodina / moja / je / toto",
+        "otec / je / to / môj",
+        "sestry / mám / dve",
+        "rokov / má / päťdesiat",
+        "deti / nemám"
+      ]
+    }
+  ],
+  "answers": [
+    "Toto je moja rodina. — To je môj otec. Je učiteľ. — Máš súrodencov? — Mám dve sestry. — Má päťdesiat rokov. — Tie deti sú malé.",
+    "pekný — veľká — malé — dobrá — staré — mladí",
+    "Toto je moja rodina. — To je môj otec. — Mám dve sestry. — Má päťdesiat rokov. — Nemám deti."
+  ]
+}

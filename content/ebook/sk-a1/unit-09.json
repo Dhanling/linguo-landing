@@ -1,0 +1,621 @@
+{
+  "title": "Di toko",
+  "title_target": "V obchode",
+  "goal": "Berbelanja bahan makanan, dan memasang kasus ketiga: genitif — bentuk milik, bentuk \"dari\", dan bentuk yang sudah kamu pakai diam-diam sejak unit 5.",
+  "bekal": [
+    "menyebut jumlah dan takaran dengan benar",
+    "mengubah kata benda ke bentuk genitif sesudah *do, z, od, bez* dan sesudah takaran",
+    "menyatakan kepemilikan tanpa kata seperti \"punya\""
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Nákup na večeru",
+      "intro": "Budi berbelanja untuk memasak makan malam. Eva ikut dan memberi saran di lorong toko.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Čo potrebuješ do polievky?",
+          "id": "Kamu butuh apa untuk supnya?",
+          "literal": "apa kamu-butuhkan ke sup-genitif?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kilo zemiakov, dve cibule a kúsok mäsa.",
+          "id": "Sekilo kentang, dua bawang, dan sepotong daging.",
+          "literal": "kilo kentang-genitif-jamak, dua bawang dan potong daging-genitif."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "A niečo na pitie? Máš doma vodu?",
+          "id": "Dan minumannya? Di rumah ada air?",
+          "literal": "dan sesuatu untuk minum? kamu-punya di-rumah air-akusatif?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nemám nič. Kúpim fľašu vody a liter mlieka.",
+          "id": "Saya tidak punya apa-apa. Saya beli sebotol air dan sekilo susu.",
+          "literal": "tidak-saya-punya tak-apa. saya-akan-beli botol air-genitif dan liter susu-genitif."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "A chlieb? Bez chleba to nebude ono.",
+          "id": "Dan rotinya? Tanpa roti rasanya kurang.",
+          "literal": "dan roti? tanpa roti-genitif itu tidak-akan-ada ia."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pravda. Kde je pekáreň?",
+          "id": "Benar. Rotinya di mana?",
+          "literal": "kebenaran. di-mana adalah toko-roti?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Vedľa vchodu, hneď pri pokladni.",
+          "id": "Di sebelah pintu masuk, dekat kasir.",
+          "literal": "di-samping pintu-masuk-genitif, segera dekat kasir-lokatif."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dobre. Ešte kávu bez cukru pre teba?",
+          "id": "Baik. Kopi tanpa gula untuk kamu juga?",
+          "literal": "baik. masih kopi-akusatif tanpa gula-genitif untuk kamu-akusatif?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ty si si zapamätal! Áno, prosím.",
+          "id": "Kamu ingat! Ya, tolong.",
+          "literal": "kamu kamu-adalah diri mengingat! ya, saya-minta."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "To je všetko. Ideme k pokladni.",
+          "id": "Itu saja. Kita ke kasir.",
+          "literal": "itu adalah semua. kita-pergi kepada kasir-datif."
+        }
+      ],
+      "notes": [
+        "**Kilo zemiakov, fľaša vody, liter mlieka, kúsok mäsa** — setiap takaran diikuti genitif. Ini pekerjaan genitif yang paling sering kamu butuhkan sehari-hari, dan ia sudah muncul di unit 4 (*pohár vody*) tanpa dijelaskan. Sekarang polanya lengkap.",
+        "**Bez chleba, bez cukru** — kata depan *bez* selalu genitif. Perhatikan dua ekor yang berbeda untuk dua kata lelaki: *chlieb → chleba* memakai *-a*, *cukor → cukru* memakai *-u*. Keduanya benar untuk katanya masing-masing, dan pilihannya harus dihafal per kata.",
+        "**Do polievky** — kata depan *do* juga genitif. Ia berarti \"ke dalam\" untuk arah (*do školy*, *do obchodu*) dan \"untuk\" ketika bicara tentang bahan (*do polievky* = untuk dimasukkan ke dalam sup).",
+        "**Nemám nič** — sangkalan ganda lagi. *Nič* sendiri sudah berarti \"tidak ada apa-apa\", dan kata kerjanya tetap wajib disangkal.",
+        "**Pre teba** memakai akusatif, bukan genitif. Kata depan *pre* (untuk, demi) adalah salah satu dari sedikit yang menuntut akusatif — bersama *na* dan *cez* ketika menyatakan arah atau tujuan. Jangan tertukar dengan *bez* dan *do* yang bersebelahan di kalimat yang sama."
+      ],
+      "grammars": [
+        {
+          "title": "Genitif — kasus ketiga, dan yang paling banyak pekerjaannya",
+          "body": [
+            "Genitif menjawab pertanyaan *koho?* (dari siapa) dan *čoho?* (dari apa). Ia punya lima pekerjaan yang berbeda, dan kamu sudah memakai tiga di antaranya tanpa sadar."
+          ],
+          "table": {
+            "head": [
+              "Jenis kata benda",
+              "Ekor",
+              "Nominatif",
+              "Genitif"
+            ],
+            "rows": [
+              [
+                "**lk bernyawa**",
+                "**-a**",
+                "*brat, učiteľ, muž*",
+                "*bez brat**a**, od učiteľ**a***"
+              ],
+              [
+                "**lk benda mati (padat)**",
+                "**-a**",
+                "*chlieb, syr, stôl*",
+                "*bez chleb**a**, kúsok syr**a***"
+              ],
+              [
+                "**lk benda mati (lain)**",
+                "**-u**",
+                "*obchod, cukor, park*",
+                "*do obchod**u**, bez cukr**u***"
+              ],
+              [
+                "**pr berakhiran -a**",
+                "**-y**",
+                "*voda, škola, káva*",
+                "*fľaša vod**y**, do škol**y***"
+              ],
+              [
+                "**pr huruf lunak**",
+                "**-e**",
+                "*ulica, kaviareň*",
+                "*z ulic**e**, do kaviarn**e***"
+              ],
+              [
+                "**nt**",
+                "**-a**",
+                "*mlieko, mesto, pivo*",
+                "*liter mliek**a**, do mest**a***"
+              ]
+            ]
+          },
+          "after": [
+            "**Kata sifatnya**: lk dan nt memakai **-ého** (*bez dobrého chleba*), pr memakai **-ej** (*do novej školy*). Dua ekor lagi, sama seperti lokatif.",
+            "**Baris dua dan tiga adalah satu-satunya yang menuntut hafalan per kata.** Kecenderungannya: benda padat yang bisa dipegang dan dihitung memakai *-a* (*chleba, syra, stola*), sementara tempat, bahan tak berbentuk, dan hal abstrak memakai *-u* (*obchodu, cukru, času*). Kecenderungan itu bocor di banyak tempat, jadi catat ekornya bersama katanya.",
+            "**Lima pekerjaan genitif**, semuanya sudah muncul di modul ini: (1) sesudah angka 5 ke atas — unit 5; (2) sesudah takaran — *kilo, fľaša, pohár, kúsok*; (3) kepemilikan — *kniha brata*; (4) sesudah kata depan *do, z, od, bez, okrem, počas*; (5) sesudah *veľa, málo, koľko*."
+          ]
+        },
+        {
+          "title": "Kepemilikan tanpa kata \"punya\"",
+          "body": [
+            "Bahasa Slowakia menyatakan milik dengan mengubah ekor **pemiliknya** ke genitif dan meletakkannya **di belakang** benda yang dimiliki. Tidak ada kata penghubung sama sekali."
+          ],
+          "table": {
+            "head": [
+              "Bahasa Slowakia",
+              "Harfiah",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "*kniha brat**a***",
+                "buku dari-saudara",
+                "buku kakak"
+              ],
+              [
+                "*auto otc**a***",
+                "mobil dari-ayah",
+                "mobil ayah"
+              ],
+              [
+                "*dom sestr**y***",
+                "rumah dari-saudara-pr",
+                "rumah kakak perempuan"
+              ],
+              [
+                "*centrum mest**a***",
+                "pusat dari-kota",
+                "pusat kota"
+              ],
+              [
+                "*začiatok film**u***",
+                "awal dari-film",
+                "awal film"
+              ],
+              [
+                "*meno učiteľ**a***",
+                "nama dari-guru",
+                "nama guru"
+              ]
+            ]
+          },
+          "after": [
+            "**Urutannya kebalikan dari bahasa Inggris dan sama dengan bahasa Indonesia**: benda dulu, pemilik belakangan. *Buku kakak*, *kniha brata* — susunan katanya persis sama. Yang ditambahkan bahasa Slowakia cuma ekornya.",
+            "**Untuk milik orang yang diketahui, kata milik lebih wajar**: *moja kniha* (bukuku), bukan *kniha mňa*. Genitif dipakai kalau pemiliknya kata benda, bukan kata ganti.",
+            "**Nama orang juga ikut berubah**: *auto Evy* (mobil Eva), *kniha Budiho* (buku Budi). Nama lelaki asing biasanya mendapat ekor *-a* atau *-ho*, nama perempuan berakhiran *-a* mendapat *-y*. Orang Slowakia melakukan ini pada nama asing tanpa ragu — jangan kaget kalau namamu sendiri berubah bentuk."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bahan makanan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Cara baca",
+            "Bahasa Indonesia",
+            "Genitif"
+          ],
+          "rows": [
+            [
+              "**chlieb** (lk)",
+              "khlyep",
+              "roti",
+              "*chleba*"
+            ],
+            [
+              "**syr** (lk)",
+              "sir",
+              "keju",
+              "*syra*"
+            ],
+            [
+              "**maslo** (nt)",
+              "MAS-lo",
+              "mentega",
+              "*masla*"
+            ],
+            [
+              "**vajce** (nt)",
+              "VAY-tse",
+              "telur",
+              "*vajca*"
+            ],
+            [
+              "**mlieko** (nt)",
+              "MLYE-ko",
+              "susu",
+              "*mlieka*"
+            ],
+            [
+              "**mäso** (nt)",
+              "ME-so",
+              "daging",
+              "*mäsa*"
+            ],
+            [
+              "**kura** (nt)",
+              "KU-ra",
+              "ayam",
+              "*kuraťa*"
+            ],
+            [
+              "**ryba** (pr)",
+              "RI-ba",
+              "ikan",
+              "*ryby*"
+            ],
+            [
+              "**ryža** (pr)",
+              "RI-zha",
+              "beras; nasi",
+              "*ryže*"
+            ],
+            [
+              "**cesnak** (lk)",
+              "TSES-nak",
+              "bawang putih",
+              "*cesnaku*"
+            ],
+            [
+              "**paradajka** (pr)",
+              "PA-ra-day-ka",
+              "tomat",
+              "*paradajky*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Empat kata yang terasa akrab",
+          "items": [
+            "*Ryža* dan *cesnak* mungkin terdengar asing, tetapi *paradajka* (tomat) punya cerita: ia dari *paradajské jablko*, \"apel firdaus\". Sama seperti bahasa Hungaria *paradicsom*.",
+            "*Kuracie mäso* = daging ayam. Untuk memesan ayam di restoran, itu bentuk yang kamu butuhkan, bukan *kura*.",
+            "*Bravčové* = babi, *hovädzie* = sapi, *kuracie* = ayam. Ketiganya kata sifat, dan ketiganya wajib dikenali kalau kamu menghindari daging tertentu.",
+            "Untuk mengatakan pantangan: *Nejem bravčové mäso* (saya tidak makan daging babi) atau *Jem len halal* (saya hanya makan halal). Di Bratislava ada beberapa restoran halal; di kota kecil, bertanyalah dengan kalimat pertama."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Takaran dan wadah",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Semua kata di kolom kiri diikuti genitif. Hafalkan pasangannya utuh, dan genitif akan terasa wajar dalam seminggu."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Takaran",
+            "Contoh lengkap",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**kilo**",
+              "*kilo zemiakov*",
+              "sekilo kentang"
+            ],
+            [
+              "**pol kila**",
+              "*pol kila syra*",
+              "setengah kilo keju"
+            ],
+            [
+              "**deko**",
+              "*dvadsať deka šunky*",
+              "dua ratus gram ham"
+            ],
+            [
+              "**liter**",
+              "*liter mlieka*",
+              "seliter susu"
+            ],
+            [
+              "**fľaša**",
+              "*fľaša vody*",
+              "sebotol air"
+            ],
+            [
+              "**pohár**",
+              "*pohár piva*",
+              "segelas bir"
+            ],
+            [
+              "**šálka**",
+              "*šálka kávy*",
+              "secangkir kopi"
+            ],
+            [
+              "**kúsok**",
+              "*kúsok chleba*",
+              "sepotong roti"
+            ],
+            [
+              "**balík**",
+              "*balík ryže*",
+              "sebungkus beras"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan **deko**: di Slowakia dan Ceko, keju dan daging olahan dijual dalam *deka* (dekagram, 10 gram). *Dvadsať deka* berarti 200 gram. Ini akan membingungkan sampai kamu mendengarnya dua kali; sesudah itu ia jadi wajar."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat di toko",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Máte …?*",
+              "Ada …?"
+            ],
+            [
+              "*Kde nájdem …?*",
+              "Di mana saya bisa temukan …?"
+            ],
+            [
+              "*Prosím si pol kila syra.*",
+              "Saya minta setengah kilo keju."
+            ],
+            [
+              "*Ešte niečo?* — *To je všetko.*",
+              "Ada lagi? — Itu saja."
+            ],
+            [
+              "*Bez cukru, prosím.*",
+              "Tanpa gula, tolong."
+            ],
+            [
+              "*Je to čerstvé?*",
+              "Ini segar?"
+            ],
+            [
+              "*Máte tašku?*",
+              "Ada kantong?"
+            ],
+            [
+              "*Platím kartou / v hotovosti.*",
+              "Saya bayar dengan kartu / tunai."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Empat kata depan bergenitif",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kata depan",
+            "Arti",
+            "Contoh",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**do**",
+              "ke dalam",
+              "*Idem do obchodu.*",
+              "Saya pergi ke toko."
+            ],
+            [
+              "**z / zo**",
+              "dari (keluar dari)",
+              "*Prichádzam z práce.*",
+              "Saya datang dari kerja."
+            ],
+            [
+              "**od**",
+              "dari (orang); sejak",
+              "*List od brata.*",
+              "Surat dari kakak."
+            ],
+            [
+              "**bez**",
+              "tanpa",
+              "*Káva bez cukru.*",
+              "Kopi tanpa gula."
+            ],
+            [
+              "**okrem**",
+              "kecuali",
+              "*Všetci okrem Evy.*",
+              "Semua kecuali Eva."
+            ],
+            [
+              "**počas**",
+              "selama",
+              "*Počas víkendu.*",
+              "Selama akhir pekan."
+            ],
+            [
+              "**vedľa**",
+              "di sebelah",
+              "*Vedľa pošty.*",
+              "Di sebelah kantor pos."
+            ],
+            [
+              "**podľa**",
+              "menurut",
+              "*Podľa mňa.*",
+              "Menurut saya."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Do untuk masuk, z untuk keluar.** Pasangan ini selalu bekerja bersama: *do školy* / *zo školy*, *do obchodu* / *z obchodu*, *do Bratislavy* / *z Bratislavy*. Kalau kamu hafal satu, kamu dapat yang lain gratis."
+        },
+        {
+          "type": "p",
+          "text": "**Od untuk orang, z untuk tempat.** *Idem od lekára* (saya datang dari dokter — dari orangnya), *idem z nemocnice* (saya datang dari rumah sakit — dari gedungnya). Pembedaan ini halus dan sering diabaikan pemula; memakainya dengan benar terdengar sangat rapi."
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 7",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Kamu ngapain aja selama seminggu?",
+              "*Čo robíš cez týždeň?*"
+            ],
+            [
+              "Pagi saya belajar, sore saya bekerja.",
+              "*Ráno sa učím, popoludní pracujem.*"
+            ],
+            [
+              "Biasanya saya nonton film.",
+              "*Väčšinou pozerám filmy.*"
+            ],
+            [
+              "Kadang saya masak.",
+              "*Niekedy varím.*"
+            ],
+            [
+              "Saya tak pernah minum kopi.",
+              "*Nikdy nepijem kávu.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "obchod",
+      "baca": "OP-khot",
+      "id": "toko (lk)"
+    },
+    {
+      "sk": "potraviny",
+      "baca": "PO-tra-vi-ni",
+      "id": "toko bahan makanan (jamak)"
+    },
+    {
+      "sk": "pekáreň",
+      "baca": "PE-ka-renj",
+      "id": "toko roti (pr)"
+    },
+    {
+      "sk": "pokladňa",
+      "baca": "PO-klad-nya",
+      "id": "kasir (pr)"
+    },
+    {
+      "sk": "vchod",
+      "baca": "fkhot",
+      "id": "pintu masuk (lk)"
+    },
+    {
+      "sk": "taška",
+      "baca": "TASY-ka",
+      "id": "tas; kantong (pr)"
+    },
+    {
+      "sk": "nákup",
+      "baca": "NA-kup",
+      "id": "belanjaan (lk)"
+    },
+    {
+      "sk": "kupovať / kúpiť",
+      "baca": "KU-po-vat / KU-pit",
+      "id": "membeli"
+    },
+    {
+      "sk": "potrebovať",
+      "baca": "PO-tre-bo-vat",
+      "id": "membutuhkan"
+    },
+    {
+      "sk": "nájsť",
+      "baca": "nayst",
+      "id": "menemukan"
+    },
+    {
+      "sk": "bez",
+      "baca": "bes",
+      "id": "tanpa"
+    },
+    {
+      "sk": "do",
+      "baca": "do",
+      "id": "ke dalam"
+    },
+    {
+      "sk": "od",
+      "baca": "ot",
+      "id": "dari (orang); sejak"
+    },
+    {
+      "sk": "okrem",
+      "baca": "O-krem",
+      "id": "kecuali"
+    },
+    {
+      "sk": "pre",
+      "baca": "pre",
+      "id": "untuk"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slowakia.",
+      "items": [
+        "Kamu butuh apa untuk supnya?",
+        "Sekilo kentang dan sepotong daging.",
+        "Saya beli sebotol air.",
+        "Kopi tanpa gula, tolong.",
+        "Di mana saya bisa temukan roti?",
+        "Saya bayar dengan kartu."
+      ]
+    },
+    {
+      "prompt": "Ubah ke bentuk genitif.",
+      "items": [
+        "fľaša ____ (voda)",
+        "liter ____ (mlieko)",
+        "kúsok ____ (chlieb)",
+        "bez ____ (cukor)",
+        "do ____ (škola)",
+        "z ____ (obchod)",
+        "kilo ____ (syr)",
+        "do ____ (mesto)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "polievky / potrebuješ / do / čo / ?",
+        "zemiakov / kilo / prosím / si",
+        "vody / kúpim / fľašu",
+        "cukru / kávu / bez",
+        "kartou / platím"
+      ]
+    }
+  ],
+  "answers": [
+    "Čo potrebuješ do polievky? — Kilo zemiakov a kúsok mäsa. — Kúpim fľašu vody. — Kávu bez cukru, prosím. — Kde nájdem chlieb? — Platím kartou.",
+    "vody — mlieka — chleba — cukru — školy — obchodu — syra — mesta",
+    "Čo potrebuješ do polievky? — Prosím si kilo zemiakov. — Kúpim fľašu vody. — Kávu bez cukru. — Platím kartou."
+  ]
+}
