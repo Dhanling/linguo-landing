@@ -1,0 +1,475 @@
+{
+ "title": "Menyuruh, meminta, dan tiga tingkat kesopanan",
+ "title_target": "حکم اور ادب",
+ "goal": "Memberi perintah dan permintaan dalam tiga tingkat kesopanan Urdu, dan mengenali kapan masing-masing dipakai.",
+ "bekal": [
+  "membentuk perintah untuk تو، تم، dan آپ",
+  "meminta tolong tanpa terdengar menyuruh",
+  "melarang dengan مت dan نہ"
+ ],
+ "dialogs": [
+  {
+   "title": "مکالمہ — باورچی خانے میں",
+   "intro": "Ibu Hasan mengajari Budi membuat teh Pakistan. Dapur ramai, dan perintah beterbangan.",
+   "lines": [
+    {
+     "speaker": "امی:",
+     "text": "بودی بیٹا، ادھر آئیے۔ چائے بنانا سیکھیے!",
+     "baca": "Būdī beṭā, idhar āiye. chāe banānā sīkhiye!",
+     "id": "Budi, Nak, ke sini. Belajarlah membuat teh!",
+     "literal": "Budi anak, ke-sini datanglah. teh membuat belajarlah!"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "جی، بالکل۔ مجھے کیا کرنا ہے؟",
+     "baca": "jī, bilkul. mujhe kyā karnā hai?",
+     "id": "Ya, tentu. Saya harus melakukan apa?",
+     "literal": "iya, persis. kepada-saya apa melakukan adalah?"
+    },
+    {
+     "speaker": "امی:",
+     "text": "پہلے پانی ابالیے۔ پھر چائے کی پتی ڈالیے۔",
+     "baca": "pahle pānī ubāliye. phir chāe kī pattī ḍāliye.",
+     "id": "Mula-mula rebus airnya. Lalu masukkan daun tehnya.",
+     "literal": "mula-mula air rebuslah. lalu teh punya-pr daun masukkanlah."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "کتنی پتی؟",
+     "baca": "kitnī pattī?",
+     "id": "Berapa banyak daun tehnya?",
+     "literal": "berapa-pr daun?"
+    },
+    {
+     "speaker": "امی:",
+     "text": "دو چمچ۔ ہاں، اتنی۔ اب دودھ ڈالیے۔",
+     "baca": "do chamach. hāñ, itnī. ab dūdh ḍāliye.",
+     "id": "Dua sendok. Ya, segitu. Sekarang masukkan susunya.",
+     "literal": "dua sendok. ya, segitu-pr. sekarang susu masukkanlah."
+    },
+    {
+     "speaker": "حسن:",
+     "text": "امی، مجھے بھی سکھائیں!",
+     "baca": "ammī, mujhe bhī sikhāeñ!",
+     "id": "Ibu, ajari saya juga!",
+     "literal": "ibu, kepada-saya juga ajarilah!"
+    },
+    {
+     "speaker": "امی:",
+     "text": "تم بیٹھو اور دیکھو۔ ابھی ہاتھ مت لگاؤ۔",
+     "baca": "tum baiṭho aur dekho. abhī hāth mat lagāo.",
+     "id": "Kamu duduk dan lihat. Jangan pegang dulu.",
+     "literal": "kamu duduklah dan lihatlah. sekarang tangan jangan sentuhlah."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "چینی کب ڈالوں؟",
+     "baca": "chīnī kab ḍālūñ?",
+     "id": "Gulanya kapan saya masukkan?",
+     "literal": "gula kapan masukkan-subjungtif?"
+    },
+    {
+     "speaker": "امی:",
+     "text": "آخر میں۔ اور آہستہ ہلائیے، جلدی نہ کیجیے۔",
+     "baca": "āḵir meñ. aur āhista hilāiye, jaldī na kījiye.",
+     "id": "Di akhir. Dan aduk pelan-pelan, jangan terburu-buru.",
+     "literal": "akhir di. dan pelan aduklah, cepat jangan lakukanlah."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "ٹھیک ہے۔ اب چکھیے۔",
+     "baca": "ṭhīk hai. ab chakhiye.",
+     "id": "Baik. Sekarang cicipi.",
+     "literal": "baik adalah. sekarang cicipilah."
+    },
+    {
+     "speaker": "امی:",
+     "text": "واہ! بہت اچھی ہے۔ آپ نے جلدی سیکھ لیا۔",
+     "baca": "vāh! bahut achchhī hai. āp ne jaldī sīkh liyā.",
+     "id": "Wah! Enak sekali. Anda cepat belajar.",
+     "literal": "wah! sangat bagus-pr adalah. Anda oleh cepat belajar diambil."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "آپ اچھی استانی ہیں!",
+     "baca": "āp achchhī ustānī haiñ!",
+     "id": "Ibu guru yang baik!",
+     "literal": "Anda bagus-pr guru-pr ada!"
+    }
+   ],
+   "notes": [
+    "**Tiga bentuk perintah untuk tiga kata ganti.** Kepada تو: akarnya telanjang — کر، جا، بیٹھ. Kepada تم: akar + ـو — کرو، جاؤ، بیٹھو. Kepada آپ: akar + ـیے — کیجیے، جائیے، بیٹھیے. Pilihannya mengikuti aturan unit 1: kalau ragu, pakai bentuk آپ.",
+    "**Ibu Hasan memakai bentuk آپ kepada Budi dan bentuk تم kepada anaknya sendiri.** Perhatikan آئیے dan ڈالیے untuk tamu, sementara بیٹھو dan دیکھو untuk Hasan. Perbedaan itu bukan soal umur melainkan soal keakraban — dan sebagai tamu, kamu hampir selalu akan menerima bentuk آپ.",
+    "**Empat bentuk perintah آپ yang tidak beraturan.** Perintah dari کرنا adalah کیجیے, bukan کریے · dari لینا adalah لیجیے · dari دینا adalah دیجیے · dan dari پینا adalah پیجیے. Selebihnya teratur: dari جانا lahir جائیے · dari آنا lahir آئیے · dari بیٹھنا lahir بیٹھیے · dan dari کھانا lahir کھائیے.",
+    "**Melarang memakai مت, bukan نہیں.** مت جاؤ (\"jangan pergi\"). Untuk bentuk آپ yang lebih halus dipakai **نہ**: جلدی نہ کیجیے (\"jangan terburu-buru\"). Memakai نہیں dalam kalimat perintah adalah kesalahan yang langsung terdengar.",
+    "**Bentuk yang lebih sopan lagi: akar + ـیے گا.** Contohnya بیٹھیے گا dan آئیے گا. Ini bukan perintah masa depan melainkan permintaan yang sangat halus — dipakai kepada tamu, orang tua, dan atasan. Sepupunya برائے مہربانی (\"tolong\") yang bisa ditambahkan ke perintah mana pun.",
+    "**Panggilan بیٹا dan بیٹی dipakai jauh melampaui keluarga.** Orang yang lebih tua memanggil anak muda mana pun بیٹا (laki-laki) atau بیٹی (perempuan), dan itu tanda kasih sayang, bukan tanda merendahkan. Dipanggil begitu oleh tuan rumah adalah pertanda kamu diterima."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga tingkat perintah",
+     "body": [
+      "Kolom paling kanan adalah yang akan kamu pakai hampir sepanjang waktu. Dua kolom lainnya perlu kamu **kenali** supaya kamu paham waktu disuruh, walaupun kamu sendiri belum tentu memakainya."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "تو (sangat akrab)",
+       "تم (akrab)",
+       "آپ (hormat)"
+      ],
+      "rows": [
+       [
+        "جانا (pergi)",
+        "جا",
+        "جاؤ",
+        "**جائیے**"
+       ],
+       [
+        "آنا (datang)",
+        "آ",
+        "آؤ",
+        "**آئیے**"
+       ],
+       [
+        "بیٹھنا (duduk)",
+        "بیٹھ",
+        "بیٹھو",
+        "**بیٹھیے**"
+       ],
+       [
+        "کھانا (makan)",
+        "کھا",
+        "کھاؤ",
+        "**کھائیے**"
+       ],
+       [
+        "کرنا (melakukan)",
+        "کر",
+        "کرو",
+        "**کیجیے**"
+       ],
+       [
+        "لینا (mengambil)",
+        "لے",
+        "لو",
+        "**لیجیے**"
+       ],
+       [
+        "دینا (memberi)",
+        "دے",
+        "دو",
+        "**دیجیے**"
+       ],
+       [
+        "سننا (mendengar)",
+        "سن",
+        "سنو",
+        "**سنیے**"
+       ]
+      ]
+     },
+     "after": [
+      "Melarang: مت + bentuk تم (مت جاؤ) atau نہ + bentuk آپ (نہ جائیے). Untuk larangan yang lebih tegas dan resmi — di papan pengumuman misalnya — dipakai bentuk kamus: یہاں سگریٹ نہ پیئیں."
+     ]
+    },
+    {
+     "title": "Meminta tanpa menyuruh",
+     "body": [
+      "Perintah bentuk آپ sudah sopan, tetapi permintaan yang sesungguhnya biasanya dibungkus lebih lembut lagi. Empat cara di bawah ini berurutan dari yang paling langsung ke yang paling halus."
+     ],
+     "table": {
+      "head": [
+       "Cara",
+       "Contoh",
+       "Rasa"
+      ],
+      "rows": [
+       [
+        "Perintah آپ",
+        "دروازہ بند کیجیے۔",
+        "Tutup pintunya. — sopan, langsung"
+       ],
+       [
+        "Ditambah \"tolong\"",
+        "برائے مہربانی دروازہ بند کیجیے۔",
+        "Tolong tutup pintunya."
+       ],
+       [
+        "Pertanyaan dengan سکنا",
+        "کیا آپ دروازہ بند کر سکتے ہیں؟",
+        "Bisakah Anda menutup pintu?"
+       ],
+       [
+        "Bentuk ـیے گا",
+        "دروازہ بند کیجیے گا۔",
+        "Mohon tutup pintunya. — paling halus"
+       ],
+       [
+        "Menawarkan",
+        "چائے لیجیے۔",
+        "Silakan ambil tehnya."
+       ],
+       [
+        "Mempersilakan",
+        "تشریف رکھیے۔",
+        "Silakan duduk. — sangat sopan"
+       ]
+      ]
+     },
+     "after": [
+      "Menjawab permintaan: جی ضرور (\"ya tentu\") · ابھی کرتا ہوں (\"saya kerjakan sekarang\") · معاف کیجیے، میں نہیں کر سکتا (\"maaf, saya tidak bisa\").",
+      "⚠️ Kata مہربانی muncul di banyak ungkapan kesopanan: برائے مہربانی (tolong), آپ کی مہربانی (Anda baik sekali), مہربانی فرمائیے (mohon sudi). Akar katanya sama dengan مہربان yang sudah kamu kenal sejak unit 2."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di dapur",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Urdu",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "ابالنا",
+       "ubālnā",
+       "merebus"
+      ],
+      [
+       "ڈالنا",
+       "ḍālnā",
+       "menuang, memasukkan"
+      ],
+      [
+       "ہلانا",
+       "hilānā",
+       "mengaduk"
+      ],
+      [
+       "چکھنا",
+       "chakhnā",
+       "mencicipi"
+      ],
+      [
+       "کاٹنا",
+       "kāṭnā",
+       "memotong"
+      ],
+      [
+       "دھونا",
+       "dhonā",
+       "mencuci"
+      ],
+      [
+       "پکانا",
+       "pakānā",
+       "memasak"
+      ],
+      [
+       "سیکھنا",
+       "sīkhnā",
+       "belajar (keterampilan)"
+      ],
+      [
+       "سکھانا",
+       "sikhānā",
+       "mengajari"
+      ],
+      [
+       "چمچ",
+       "chamach",
+       "sendok"
+      ],
+      [
+       "پتیلی",
+       "patīlī",
+       "panci"
+      ],
+      [
+       "چاقو",
+       "chāqū",
+       "pisau"
+      ],
+      [
+       "پلیٹ",
+       "pleṭ",
+       "piring"
+      ],
+      [
+       "گلاس",
+       "gilās",
+       "gelas"
+      ],
+      [
+       "آگ",
+       "āg",
+       "api"
+      ],
+      [
+       "پتی",
+       "pattī",
+       "daun teh"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Membuat چائے, dan kenapa itu penting",
+     "items": [
+      "Teh Pakistan direbus, bukan diseduh: air dan susu dimasak bersama daun teh, lalu gula ditambahkan di akhir. Kalimat perintahnya persis seperti di dialog — pahami sekali, dan kamu bisa mengikuti resep Urdu mana pun.",
+      "Menolak teh di rumah orang Pakistan hampir tidak mungkin, dan sebaiknya jangan dicoba. Tawaran akan diulang tiga kali. Kalau kamu benar-benar tidak bisa: بہت شکریہ، لیکن ابھی نہیں۔ (\"terima kasih banyak, tapi tidak sekarang\") — dan tetap ambil satu gelas kecil.",
+      "Memuji setelah minum: چائے بہت اچھی ہے۔ (\"tehnya enak sekali\") · آپ کے ہاتھ میں ذائقہ ہے۔ (\"tangan Anda punya rasa\") — pujian klasik untuk juru masak, dan pasti membuat tuan rumah tersenyum."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ur": "کیجیے",
+   "baca": "kījiye",
+   "id": "lakukanlah (hormat)"
+  },
+  {
+   "ur": "آئیے",
+   "baca": "āiye",
+   "id": "datanglah, masuklah"
+  },
+  {
+   "ur": "بیٹھیے",
+   "baca": "baiṭhiye",
+   "id": "duduklah"
+  },
+  {
+   "ur": "سنیے",
+   "baca": "suniye",
+   "id": "dengarlah; permisi"
+  },
+  {
+   "ur": "مت",
+   "baca": "mat",
+   "id": "jangan"
+  },
+  {
+   "ur": "نہ",
+   "baca": "na",
+   "id": "jangan (halus)"
+  },
+  {
+   "ur": "برائے مہربانی",
+   "baca": "barāe mehrbānī",
+   "id": "tolong"
+  },
+  {
+   "ur": "سیکھنا",
+   "baca": "sīkhnā",
+   "id": "belajar"
+  },
+  {
+   "ur": "سکھانا",
+   "baca": "sikhānā",
+   "id": "mengajari"
+  },
+  {
+   "ur": "ڈالنا",
+   "baca": "ḍālnā",
+   "id": "memasukkan"
+  },
+  {
+   "ur": "چمچ",
+   "baca": "chamach",
+   "id": "sendok"
+  },
+  {
+   "ur": "چینی",
+   "baca": "chīnī",
+   "id": "gula"
+  },
+  {
+   "ur": "ادھر",
+   "baca": "idhar",
+   "id": "ke sini"
+  },
+  {
+   "ur": "اب",
+   "baca": "ab",
+   "id": "sekarang"
+  },
+  {
+   "ur": "آخر",
+   "baca": "āḵir",
+   "id": "akhir"
+  },
+  {
+   "ur": "ہاتھ",
+   "baca": "hāth",
+   "id": "tangan"
+  },
+  {
+   "ur": "اتنا",
+   "baca": "itnā",
+   "id": "segini, sebanyak itu"
+  },
+  {
+   "ur": "بیٹا",
+   "baca": "beṭā",
+   "id": "nak (panggilan sayang)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah jadi bentuk perintah hormat (آپ).",
+   "items": [
+    "جانا",
+    "آنا",
+    "کرنا",
+    "لینا",
+    "بیٹھنا"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi bentuk perintah akrab (تم).",
+   "items": [
+    "جانا",
+    "دیکھنا",
+    "سننا",
+    "کھانا",
+    "دینا"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Urdu dengan bentuk hormat.",
+   "items": [
+    "Silakan duduk.",
+    "Tolong tutup pintunya.",
+    "Jangan terburu-buru.",
+    "Bicaralah pelan-pelan.",
+    "Ambillah tehnya."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "کیجیے / بند / دروازہ",
+    "جاؤ / مت / ابھی",
+    "کیجیے / نہ / جلدی",
+    "بولیے / آہستہ / برائے مہربانی",
+    "لیجیے / چائے"
+   ]
+  }
+ ],
+ "answers": [
+  "جائیے — آئیے — کیجیے — لیجیے — بیٹھیے",
+  "جاؤ — دیکھو — سنو — کھاؤ — دو",
+  "بیٹھیے۔ — برائے مہربانی دروازہ بند کیجیے۔ — جلدی نہ کیجیے۔ — آہستہ بولیے۔ — چائے لیجیے۔",
+  "دروازہ بند کیجیے۔ — ابھی مت جاؤ۔ — جلدی نہ کیجیے۔ — برائے مہربانی آہستہ بولیے۔ — چائے لیجیے۔"
+ ],
+ "wave": "Hafalkan lima perintah bentuk آپ yang paling sering kamu perlukan: آئیے، بیٹھیے، سنیے، کیجیے، دیجیے. Lima kata itu membuka hampir semua percakapan sopan."
+}

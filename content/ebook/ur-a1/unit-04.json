@@ -1,0 +1,453 @@
+{
+ "title": "Milik siapa, dan keluarga besar",
+ "title_target": "کا، کے، کی — اور خاندان",
+ "goal": "Menyatakan kepemilikan dengan کا / کے / کی dan menyebut anggota keluarga — termasuk enam kata yang bahasa Indonesia gabungkan jadi \"om\", \"tante\", \"kakek\", dan \"nenek\".",
+ "bekal": [
+  "memakai کا، کے، کی sesuai barang yang dimiliki",
+  "menyebut sepuluh anggota keluarga dengan tepat",
+  "memakai kata ganti milik میرا، تمہارا، آپ کا، اس کا، ہمارا، ان کا"
+ ],
+ "dialogs": [
+  {
+   "title": "مکالمہ — خاندان کی تصویر",
+   "intro": "Masih di ruang tamu. Budi berdiri di depan foto keluarga dan mulai bertanya satu per satu.",
+   "lines": [
+    {
+     "speaker": "بودی:",
+     "text": "یہ آپ کے والد کی تصویر ہے؟",
+     "baca": "ye āp ke vālid kī tasvīr hai?",
+     "id": "Ini foto ayah Anda?",
+     "literal": "ini Anda punya ayah punya-pr gambar adalah?"
+    },
+    {
+     "speaker": "عائشہ:",
+     "text": "جی ہاں۔ اور یہ ان کے بھائی ہیں — میرے چچا۔",
+     "baca": "jī hāñ. aur ye un ke bhāī haiñ — mere chachā.",
+     "id": "Ya. Dan ini saudara laki-lakinya — paman saya dari pihak ayah.",
+     "literal": "iya ya. dan ini mereka punya saudara ada — punya-saya paman-ayah."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "اور وہ خاتون کون ہیں؟",
+     "baca": "aur vo ḵātūn kaun haiñ?",
+     "id": "Dan ibu itu siapa?",
+     "literal": "dan itu nyonya siapa ada?"
+    },
+    {
+     "speaker": "عائشہ:",
+     "text": "وہ میری خالہ ہیں، میری والدہ کی بہن۔",
+     "baca": "vo merī ḵāla haiñ, merī vālida kī bahan.",
+     "id": "Itu bibi saya, saudara perempuan ibu saya.",
+     "literal": "itu punya-saya bibi-ibu ada, punya-saya ibu punya-pr saudari."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "آپ کا خاندان بہت بڑا ہے!",
+     "baca": "āp kā ḵāndān bahut baṛā hai!",
+     "id": "Keluarga Anda besar sekali!",
+     "literal": "Anda punya keluarga sangat besar adalah!"
+    },
+    {
+     "speaker": "عائشہ:",
+     "text": "پاکستان میں یہ عام بات ہے۔ آپ کے کتنے بھائی بہن ہیں؟",
+     "baca": "Pākistān meñ ye ām bāt hai. āp ke kitne bhāī-bahan haiñ?",
+     "id": "Di Pakistan ini biasa. Anda punya berapa saudara?",
+     "literal": "Pakistan di ini umum perkataan adalah. Anda punya berapa saudara-saudari ada?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "میرا ایک بڑا بھائی اور ایک چھوٹی بہن ہے۔",
+     "baca": "merā ek baṛā bhāī aur ek chhoṭī bahan hai.",
+     "id": "Saya punya satu kakak laki-laki dan satu adik perempuan.",
+     "literal": "punya-saya satu besar saudara dan satu kecil saudari ada."
+    },
+    {
+     "speaker": "عائشہ:",
+     "text": "آپ کے بھائی کا نام کیا ہے؟",
+     "baca": "āp ke bhāī kā nām kyā hai?",
+     "id": "Nama kakak Anda siapa?",
+     "literal": "Anda punya saudara punya nama apa adalah?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "ان کا نام اندرا ہے۔ وہ ڈاکٹر ہیں۔",
+     "baca": "un kā nām Indra hai. vo ḍākṭar haiñ.",
+     "id": "Namanya Indra. Dia dokter.",
+     "literal": "mereka punya nama Indra adalah. dia dokter ada."
+    },
+    {
+     "speaker": "عائشہ:",
+     "text": "ماشاءاللہ! اور آپ کی بہن؟",
+     "baca": "māshāAllāh! aur āp kī bahan?",
+     "id": "Masyaallah! Dan adik perempuan Anda?",
+     "literal": "masyaallah! dan Anda punya-pr saudari?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "وہ ابھی طالبہ ہے۔ یہ اس کی تصویر ہے۔",
+     "baca": "vo abhī tāliba hai. ye us kī tasvīr hai.",
+     "id": "Dia masih mahasiswi. Ini fotonya.",
+     "literal": "dia sekarang mahasiswa-pr adalah. ini dia punya-pr gambar adalah."
+    },
+    {
+     "speaker": "عائشہ:",
+     "text": "بہت پیاری ہے۔ آپ کا خاندان بھی بہت اچھا ہے۔",
+     "baca": "bahut pyārī hai. āp kā ḵāndān bhī bahut achchhā hai.",
+     "id": "Manis sekali. Keluarga Anda juga baik sekali.",
+     "literal": "sangat manis-pr adalah. Anda punya keluarga juga sangat baik adalah."
+    }
+   ],
+   "notes": [
+    "**Bentuk milik mengikuti barangnya, bukan pemiliknya.** آپ کے والد کی تصویر berarti \"foto ayah Anda\", dan ada dua penanda milik di situ. کے yang pertama menempel karena والد dilanjutkan postposisi lain; کی yang kedua muncul karena **تصویر perempuan**. Bukan karena ayahnya laki-laki. Ini yang paling sering terbalik di kepala pelajar Indonesia.",
+    "**Bahasa Urdu tidak punya kata \"kakak\" dan \"adik\".** بھائی berarti saudara laki-laki, titik. Kalau umurnya perlu dijelaskan, tambahkan kata sifat: بڑا بھائی (kakak laki-laki), چھوٹی بہن (adik perempuan). Persis seperti bahasa Arab dan bahasa Inggris — dan berlawanan dengan naluri kita yang selalu menandai urutan lahir.",
+    "**Sebaliknya, Urdu jauh lebih rinci soal paman dan bibi.** Bahasa Indonesia punya satu \"om\" dan satu \"tante\"; bahasa Urdu punya empat kata dan kamu **harus** memilih yang benar. چچا = adik/kakak laki-laki **ayah**. ماموں = saudara laki-laki **ibu**. پھوپھی = saudara perempuan **ayah**. خالہ = saudara perempuan **ibu**. Salah pilih terdengar seperti salah menyebut hubungan keluarga, bukan sekadar salah kata.",
+    "**Kakek-nenek juga dibedakan dua jalur.** دادا dan دادی adalah kakek dan nenek dari **pihak ayah**; نانا dan نانی dari **pihak ibu**. Kalau kamu bercerita tentang kakekmu kepada orang Pakistan, mereka akan langsung tahu dari kata yang kamu pilih itu kakek yang mana — dan mereka memang ingin tahu.",
+    "**Ucapan ماشاءاللہ dipakai jauh lebih luas daripada yang kamu kira.** Ia bukan sekadar ucapan keagamaan melainkan **cara memuji tanpa terdengar mengiri**. Anak yang pintar, rumah yang bagus, kabar baik apa pun — ماشاءاللہ. Sepupunya: انشاءاللہ (untuk rencana yang belum terjadi), الحمد للہ (menjawab \"apa kabar\"), جزاک اللہ (terima kasih yang lebih dalam).",
+    "**Kata خاتون dan صاحب adalah sopan santun sehari-hari.** خاتون (*ḵātūn*) = \"nyonya, ibu\", cara sopan menyebut perempuan yang tidak kamu kenal. صاحب (*sāhab*) ditempel di belakang nama laki-laki: علی صاحب dan ڈاکٹر صاحب. Untuk perempuan dipakai صاحبہ, atau lebih lazim باجی (kakak perempuan) di percakapan santai."
+   ],
+   "grammars": [
+    {
+     "title": "کا، کے، کی — satu penanda, tiga wajah",
+     "body": [
+      "Bahasa Urdu tidak punya akhiran milik seperti \"-nya\". Yang dipakai adalah kata kecil yang berdiri **di antara pemilik dan barangnya**, dan bentuknya dipilih berdasarkan **barangnya**.",
+      "Susunannya: **pemilik + کا/کے/کی + barang**. علی کا گھر = \"rumahnya Ali\", harfiahnya \"Ali punya rumah\"."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Dipakai kalau barangnya",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "**کا**",
+        "laki-laki tunggal",
+        "علی کا گھر",
+        "rumah Ali"
+       ],
+       [
+        "**کی**",
+        "perempuan (tunggal & jamak)",
+        "علی کی کتاب · علی کی کتابیں",
+        "buku Ali · buku-buku Ali"
+       ],
+       [
+        "**کے**",
+        "laki-laki jamak, atau sebelum postposisi lain",
+        "علی کے بیٹے · علی کے گھر میں",
+        "anak-anak Ali · di rumah Ali"
+       ]
+      ]
+     },
+     "after": [
+      "Kata ganti punya bentuk siap pakainya sendiri, dan bentuk ini yang paling sering kamu ucapkan: **میرا/میری/میرے** (saya), **تمہارا/تمہاری/تمہارے** (kamu, akrab), **آپ کا/کی/کے** (Anda), **اس کا/کی/کے** (dia), **ہمارا/ہماری/ہمارے** (kami), **ان کا/کی/کے** (mereka).",
+      "⚠️ Perhatikan bahwa tiga bentuk — میرا · تمہارا · ہمارا — berdiri sendiri tanpa کا, karena mereka sudah mengandungnya. Menulis میرا کا adalah kesalahan. Sebaliknya آپ dan اس dan ان tetap memerlukan کا, jadi bentuknya آپ کا نام · اس کی بہن · ان کے بھائی."
+     ]
+    },
+    {
+     "title": "Menyatakan \"punya\" untuk kerabat",
+     "body": [
+      "Bahasa Urdu punya tiga cara berbeda untuk mengatakan \"punya\", dan pilihannya bergantung pada **apa yang dipunyai**. Unit 17 membereskan ketiganya. Yang perlu kamu pakai hari ini cuma satu: untuk **kerabat**, dipakai bentuk milik biasa ditambah ہے/ہیں."
+     ],
+     "table": {
+      "head": [
+       "Kalimat Urdu",
+       "Cara baca",
+       "Arti harfiah"
+      ],
+      "rows": [
+       [
+        "میرا ایک بھائی ہے۔",
+        "merā ek bhāī hai.",
+        "punya-saya satu saudara ada — *saya punya satu saudara laki-laki*"
+       ],
+       [
+        "میری دو بہنیں ہیں۔",
+        "merī do bahneñ haiñ.",
+        "punya-saya dua saudari ada — *saya punya dua saudara perempuan*"
+       ],
+       [
+        "آپ کے کتنے بچے ہیں؟",
+        "āp ke kitne bachche haiñ?",
+        "Anda punya berapa anak ada — *Anda punya berapa anak?*"
+       ],
+       [
+        "ان کا کوئی بھائی نہیں ہے۔",
+        "un kā koī bhāī nahīñ hai.",
+        "dia punya satu-pun saudara tidak ada — *dia tidak punya saudara laki-laki*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Cara ini **hanya** untuk kerabat dan bagian tubuh. Untuk barang yang bisa dipindahkan — uang, buku, mobil, waktu — dipakai کے پاس, misalnya میرے پاس پیسے ہیں (\"saya punya uang\"). Memakai میرا پیسہ ہے untuk menyatakan \"saya punya uang\" tidak salah tata bahasa, tetapi artinya berubah jadi \"uang itu milik saya\". Unit 17 mengurusnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Keluarga besar Pakistan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Urdu",
+      "Cara baca",
+      "Arti",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "والد / ابو",
+       "vālid / abbū",
+       "ayah",
+       "ابو lebih akrab, dipakai anak kepada ayahnya"
+      ],
+      [
+       "والدہ / امی",
+       "vālida / ammī",
+       "ibu",
+       "امی dipakai sehari-hari"
+      ],
+      [
+       "بیٹا",
+       "beṭā",
+       "anak laki-laki",
+       "juga panggilan sayang untuk anak muda"
+      ],
+      [
+       "بیٹی",
+       "beṭī",
+       "anak perempuan",
+       ""
+      ],
+      [
+       "بھائی",
+       "bhāī",
+       "saudara laki-laki",
+       "بڑا/چھوٹا untuk kakak/adik"
+      ],
+      [
+       "بہن",
+       "bahan",
+       "saudara perempuan",
+       ""
+      ],
+      [
+       "دادا / دادی",
+       "dādā / dādī",
+       "kakek / nenek",
+       "dari pihak **ayah**"
+      ],
+      [
+       "نانا / نانی",
+       "nānā / nānī",
+       "kakek / nenek",
+       "dari pihak **ibu**"
+      ],
+      [
+       "چچا",
+       "chachā",
+       "paman",
+       "saudara laki-laki **ayah**"
+      ],
+      [
+       "ماموں",
+       "māmūñ",
+       "paman",
+       "saudara laki-laki **ibu**"
+      ],
+      [
+       "پھوپھی",
+       "phūphī",
+       "bibi",
+       "saudara perempuan **ayah**"
+      ],
+      [
+       "خالہ",
+       "ḵāla",
+       "bibi",
+       "saudara perempuan **ibu**"
+      ],
+      [
+       "شوہر",
+       "shauhar",
+       "suami",
+       ""
+      ],
+      [
+       "بیوی",
+       "bīvī",
+       "istri",
+       ""
+      ],
+      [
+       "بچہ / بچے",
+       "bachcha / bachche",
+       "anak / anak-anak",
+       ""
+      ],
+      [
+       "رشتہ دار",
+       "rishtedār",
+       "kerabat",
+       "dari رشتہ, \"hubungan\""
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Bertanya tentang keluarga itu ramah, bukan lancang",
+     "items": [
+      "Di Pakistan, pertanyaan آپ کے کتنے بھائی بہن ہیں؟ (\"Anda punya berapa saudara?\") adalah pembuka percakapan yang normal dengan orang yang baru dikenal — setara dengan \"asalnya dari mana?\" di Indonesia. Menjawabnya singkat justru terdengar dingin.",
+      "Pertanyaan آپ شادی شدہ ہیں؟ (\"Anda sudah menikah?\") juga jauh lebih biasa daripada di Barat, dan tidak dimaksudkan menyelidik. Jawaban yang aman: جی ہاں atau جی نہیں، ابھی نہیں (\"belum\").",
+      "Kalau kamu ingin menutup topiknya dengan sopan tanpa menjawab, kalimat yang dipakai orang Pakistan sendiri: الحمد للہ، سب ٹھیک ہے (\"alhamdulillah, semua baik\") — dan percakapan berpindah dengan sendirinya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ur": "کا",
+   "baca": "kā",
+   "id": "punya (barang lk tunggal)"
+  },
+  {
+   "ur": "کی",
+   "baca": "kī",
+   "id": "punya (barang pr)"
+  },
+  {
+   "ur": "کے",
+   "baca": "ke",
+   "id": "punya (barang lk jamak)"
+  },
+  {
+   "ur": "میرا",
+   "baca": "merā",
+   "id": "punya saya"
+  },
+  {
+   "ur": "آپ کا",
+   "baca": "āp kā",
+   "id": "punya Anda"
+  },
+  {
+   "ur": "اس کا",
+   "baca": "us kā",
+   "id": "punya dia"
+  },
+  {
+   "ur": "ہمارا",
+   "baca": "hamārā",
+   "id": "punya kami"
+  },
+  {
+   "ur": "بہن",
+   "baca": "bahan",
+   "id": "saudara perempuan"
+  },
+  {
+   "ur": "بیٹا",
+   "baca": "beṭā",
+   "id": "anak laki-laki"
+  },
+  {
+   "ur": "بیٹی",
+   "baca": "beṭī",
+   "id": "anak perempuan"
+  },
+  {
+   "ur": "چچا",
+   "baca": "chachā",
+   "id": "paman (pihak ayah)"
+  },
+  {
+   "ur": "خالہ",
+   "baca": "ḵāla",
+   "id": "bibi (pihak ibu)"
+  },
+  {
+   "ur": "دادا",
+   "baca": "dādā",
+   "id": "kakek (pihak ayah)"
+  },
+  {
+   "ur": "نانی",
+   "baca": "nānī",
+   "id": "nenek (pihak ibu)"
+  },
+  {
+   "ur": "بچہ",
+   "baca": "bachcha",
+   "id": "anak"
+  },
+  {
+   "ur": "شادی",
+   "baca": "shādī",
+   "id": "pernikahan"
+  },
+  {
+   "ur": "عام",
+   "baca": "ām",
+   "id": "umum, biasa"
+  },
+  {
+   "ur": "پیارا",
+   "baca": "pyārā",
+   "id": "manis, tersayang"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih کا، کے، atau کی.",
+   "items": [
+    "علی ____ گھر بہت بڑا ہے۔",
+    "عائشہ ____ کتاب نئی ہے۔",
+    "میرے بھائی ____ بیٹے یہاں ہیں۔",
+    "آپ ____ نام کیا ہے؟",
+    "اس ____ بہن ڈاکٹر ہے۔"
+   ]
+  },
+  {
+   "prompt": "Sebutkan istilah Urdu yang tepat untuk tiap hubungan keluarga.",
+   "items": [
+    "Saudara laki-laki ibumu.",
+    "Saudara perempuan ayahmu.",
+    "Ayah dari ayahmu.",
+    "Ibu dari ibumu.",
+    "Adik perempuanmu."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Urdu.",
+   "items": [
+    "Saya punya satu kakak laki-laki.",
+    "Nama ibu saya Siti.",
+    "Keluarga Anda besar sekali.",
+    "Ini foto adik perempuan saya.",
+    "Anda punya berapa anak?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ہے / نام / کیا / کا / آپ / ؟",
+    "ہیں / بھائی / میرے / دو",
+    "ہے / بہن / یہ / کی / تصویر / میری",
+    "ہے / بڑا / خاندان / بہت / آپ / کا",
+    "ہے / ڈاکٹر / بھائی / کا / ان"
+   ]
+  }
+ ],
+ "answers": [
+  "کا — کی — کے — کا — کی",
+  "ماموں — پھوپھی — دادا — نانی — چھوٹی بہن",
+  "میرا ایک بڑا بھائی ہے۔ — میری والدہ کا نام سیتی ہے۔ — آپ کا خاندان بہت بڑا ہے۔ — یہ میری چھوٹی بہن کی تصویر ہے۔ — آپ کے کتنے بچے ہیں؟",
+  "آپ کا نام کیا ہے؟ — میرے دو بھائی ہیں۔ — یہ میری بہن کی تصویر ہے۔ — آپ کا خاندان بہت بڑا ہے۔ — ان کا بھائی ڈاکٹر ہے۔"
+ ],
+ "wave": "Gambar pohon keluargamu sendiri di selembar kertas, lalu tulis kata Urdu-nya di samping tiap orang. Yang membuatmu berhenti dan berpikir adalah yang perlu dihafal ulang."
+}

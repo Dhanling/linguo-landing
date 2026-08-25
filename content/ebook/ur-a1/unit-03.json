@@ -1,0 +1,488 @@
+{
+ "title": "Ini, itu, dan lebih dari satu",
+ "title_target": "یہ، وہ، اور جمع",
+ "goal": "Menunjuk benda dan orang dengan یہ dan وہ, membentuk jamak kata benda, dan memakai delapan kata tanya bahasa Urdu.",
+ "bekal": [
+  "menunjuk sesuatu dan menanyakan apa atau siapa itu",
+  "membuat bentuk jamak dari empat golongan kata benda",
+  "memakai کیا، کون، کہاں، کب، کیوں، کیسے، کتنا، کون سا"
+ ],
+ "dialogs": [
+  {
+   "title": "مکالمہ — عائشہ کے گھر میں",
+   "intro": "Ayesha mengajak Budi masuk ke rumah keluarganya. Di dinding ruang tamu tergantung sebuah foto besar.",
+   "lines": [
+    {
+     "speaker": "عائشہ:",
+     "text": "بودی، یہ میرا گھر ہے۔ اندر آئیے!",
+     "baca": "Būdī, ye merā ghar hai. andar āiye!",
+     "id": "Budi, ini rumah saya. Silakan masuk!",
+     "literal": "Budi, ini punya-saya rumah adalah. dalam datanglah!"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "بہت خوبصورت گھر ہے۔ یہ تصویر کیا ہے؟",
+     "baca": "bahut ḵūbsūrat ghar hai. ye tasvīr kyā hai?",
+     "id": "Rumah yang indah sekali. Foto ini apa?",
+     "literal": "sangat indah rumah adalah. ini gambar apa adalah?"
+    },
+    {
+     "speaker": "عائشہ:",
+     "text": "یہ ہمارا خاندان ہے۔",
+     "baca": "ye hamārā ḵāndān hai.",
+     "id": "Ini keluarga kami.",
+     "literal": "ini punya-kami keluarga adalah."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "یہ دو لوگ کون ہیں؟",
+     "baca": "ye do log kaun haiñ?",
+     "id": "Dua orang ini siapa?",
+     "literal": "ini dua orang siapa ada?"
+    },
+    {
+     "speaker": "عائشہ:",
+     "text": "یہ میرے والد ہیں، اور یہ میری والدہ ہیں۔",
+     "baca": "ye mere vālid haiñ, aur ye merī vālida haiñ.",
+     "id": "Ini ayah saya, dan ini ibu saya.",
+     "literal": "ini punya-saya-jamak ayah ada, dan ini punya-saya-pr ibu ada."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "اور یہ لڑکے کون ہیں؟",
+     "baca": "aur ye laṛke kaun haiñ?",
+     "id": "Dan anak-anak laki-laki ini siapa?",
+     "literal": "dan ini anak-lk-jamak siapa ada?"
+    },
+    {
+     "speaker": "عائشہ:",
+     "text": "یہ میرے بھائی ہیں۔ ان کے نام حسن اور عمر ہیں۔",
+     "baca": "ye mere bhāī haiñ. un ke nām Hasan aur Umar haiñ.",
+     "id": "Ini saudara-saudara saya. Nama mereka Hasan dan Umar.",
+     "literal": "ini punya-saya saudara ada. mereka punya nama Hasan dan Umar ada."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "وہ کتابیں کس کی ہیں؟",
+     "baca": "vo kitābeñ kis kī haiñ?",
+     "id": "Buku-buku itu milik siapa?",
+     "literal": "itu buku-jamak siapa punya-pr ada?"
+    },
+    {
+     "speaker": "عائشہ:",
+     "text": "وہ میری کتابیں ہیں۔ اردو ادب بہت دلچسپ ہے۔",
+     "baca": "vo merī kitābeñ haiñ. urdū adab bahut dilchasp hai.",
+     "id": "Itu buku-buku saya. Sastra Urdu menarik sekali.",
+     "literal": "itu punya-saya-pr buku-jamak ada. Urdu sastra sangat menarik adalah."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "یہ کمرہ بہت بڑا ہے۔ وہ دروازہ کہاں جاتا ہے؟",
+     "baca": "ye kamra bahut baṛā hai. vo darvāza kahāñ jātā hai?",
+     "id": "Kamar ini besar sekali. Pintu itu ke mana?",
+     "literal": "ini kamar sangat besar adalah. itu pintu mana pergi-adalah?"
+    },
+    {
+     "speaker": "عائشہ:",
+     "text": "وہ باورچی خانہ ہے۔ چائے تیار ہے!",
+     "baca": "vo bāvarchī-ḵāna hai. chāe taiyār hai!",
+     "id": "Itu dapur. Tehnya sudah siap!",
+     "literal": "itu juru-masak-rumah adalah. teh siap adalah!"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "بہت بہت شکریہ۔ آپ کا خاندان بہت مہربان ہے۔",
+     "baca": "bahut bahut shukriya. āp kā ḵāndān bahut mehrbān hai.",
+     "id": "Terima kasih banyak. Keluarga Anda ramah sekali.",
+     "literal": "sangat sangat terima kasih. Anda punya keluarga sangat ramah adalah."
+    }
+   ],
+   "notes": [
+    "**Dua kata menutup empat pekerjaan sekaligus.** یہ berarti \"ini\" dan sekaligus \"dia (yang dekat)\"; وہ berarti \"itu\" dan sekaligus \"dia (yang jauh)\". Dan keduanya **tidak berubah bentuk untuk jamak**: یہ کتاب ہے (\"ini buku\") maupun یہ کتابیں ہیں (\"ini buku-buku\") sama-sama memakai یہ. Yang menandai jamaknya adalah kata bendanya dan ہیں di ujung.",
+    "**Aturan praktis untuk memilih یہ atau وہ.** Kalau barang atau orangnya bisa kamu sentuh atau tunjuk dari tempatmu berdiri, pakai یہ. Kalau lebih jauh dari itu — di seberang ruangan, di foto, di kota lain, atau baru saja disebut dalam percakapan — pakai وہ. Untuk menyebut orang ketiga yang tidak ada di tempat, وہ hampir selalu yang benar.",
+    "**Kenapa میرے والد dan bukan میرا والد?** Karena kepada orang tua, mertua, dan orang yang dihormati, bahasa Urdu memakai **bentuk jamak sebagai tanda hormat** — persis seperti آپ yang sebenarnya jamak. Jadi \"ayah saya\" adalah میرے والد ہیں, harfiahnya \"ayah-ayah saya ada\", walaupun ayahnya cuma satu. Menyebut والد dengan bentuk tunggal terdengar kurang ajar.",
+    "**Milik siapa? — کس کی.** کون (\"siapa\") berubah jadi کس begitu sebuah postposisi menempel padanya, dan itu contoh pertama dari **bentuk miring** yang jadi isi unit 6. Untuk sekarang hafalkan dua kalimat siap pakai: یہ کس کا ہے؟ (\"ini milik siapa?\", untuk barang laki-laki) dan یہ کس کی ہے؟ (untuk barang perempuan).",
+    "**Rumah orang Pakistan punya nama-nama yang menyenangkan.** باورچی خانہ (*bāvarchī-ḵāna*) harfiahnya \"rumahnya juru masak\" = dapur. Pola خانہ (\"rumah, tempat\") berulang di banyak kata: کتب خانہ (perpustakaan), غسل خانہ (kamar mandi), ڈاک خانہ (kantor pos), کارخانہ (pabrik). Begitu kamu mengenali خانہ, separuh nama tempat langsung terbaca.",
+    "**Menyambut tamu: اندر آئیے.** Harfiahnya \"masuklah ke dalam\". Bentuk perintah sopan berakhiran ـیے, dan itu bentuk yang akan kamu dengar terus-menerus: بیٹھیے (duduklah), کھائیے (makanlah), سنیے (dengarlah), معاف کیجیے (maafkanlah). Unit 16 mengurus seluruh bentuk perintahnya; untuk sekarang, kenali polanya saja."
+   ],
+   "grammars": [
+    {
+     "title": "Membentuk jamak: empat golongan, dan itu saja",
+     "body": [
+      "Semua kata benda Urdu masuk salah satu dari empat golongan di bawah, dan golongannya bisa kamu lihat dari bentuk kata itu sendiri. Tidak ada golongan kelima dan tidak ada pengecualian yang perlu kamu pikirkan di tingkat A1."
+     ],
+     "table": {
+      "head": [
+       "Golongan",
+       "Tunggal",
+       "Jamak",
+       "Contoh lain (jamaknya)"
+      ],
+      "rows": [
+       [
+        "Laki-laki berakhiran **ـا**",
+        "لڑکا *laṛkā*",
+        "لڑک**ے** *laṛke*",
+        "کمرے · بیٹے · دروازے"
+       ],
+       [
+        "Laki-laki lainnya",
+        "گھر *ghar*",
+        "گھر — **tidak berubah**",
+        "دن · آدمی · ہاتھ (semuanya tetap)"
+       ],
+       [
+        "Perempuan berakhiran **ـی**",
+        "لڑکی *laṛkī*",
+        "لڑک**یاں** *laṛkiyāñ*",
+        "کرسیاں · روٹیاں · چابیاں"
+       ],
+       [
+        "Perempuan lainnya",
+        "کتاب *kitāb*",
+        "کتاب**یں** *kitābeñ*",
+        "راتیں · باتیں · دکانیں"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Golongan kedua adalah sumber kebingungan yang paling sering: گھر bisa berarti \"rumah\" atau \"rumah-rumah\", dan yang membedakan hanyalah kata kerjanya. یہ گھر بڑا ہے = satu rumah. یہ گھر بڑے ہیں = beberapa rumah. Perhatikan ہے lawan ہیں, dan kata sifatnya yang ikut berubah.",
+      "Kata benda yang dipinjam dari bahasa Arab sering membawa jamaknya sendiri, dan bentuk itu tetap dipakai: jamak کتاب bisa jadi کتب, jamak حال jadi حالات, dan jamak خبر jadi اخبار — kata yang belakangan jadi nama surat kabar. Kamu tidak perlu membentuknya sendiri, cukup mengenalinya waktu membaca."
+     ]
+    },
+    {
+     "title": "Delapan kata tanya",
+     "body": [
+      "Bahasa Urdu menaruh kata tanya **tepat sebelum kata kerja**, bukan di awal kalimat seperti bahasa Indonesia. آپ کہاں جاتے ہیں؟ = \"Anda ke mana pergi?\". Susunan kalimatnya sendiri tidak dibongkar."
+     ],
+     "table": {
+      "head": [
+       "Urdu",
+       "Cara baca",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "کیا",
+        "kyā",
+        "apa",
+        "یہ کیا ہے؟"
+       ],
+       [
+        "کون",
+        "kaun",
+        "siapa",
+        "وہ کون ہے؟"
+       ],
+       [
+        "کہاں",
+        "kahāñ",
+        "di mana, ke mana",
+        "آپ کہاں ہیں؟"
+       ],
+       [
+        "کب",
+        "kab",
+        "kapan",
+        "کلاس کب ہے؟"
+       ],
+       [
+        "کیوں",
+        "kyūñ",
+        "kenapa",
+        "آپ کیوں خوش ہیں؟"
+       ],
+       [
+        "کیسے",
+        "kaise",
+        "bagaimana, dengan cara apa",
+        "یہ کیسے ہے؟"
+       ],
+       [
+        "کتنا",
+        "kitnā",
+        "berapa banyak",
+        "یہ کتنا ہے؟"
+       ],
+       [
+        "کون سا",
+        "kaun sā",
+        "yang mana",
+        "کون سی کتاب؟"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Beda کون dan کون سا.** Kata کون menanyakan orang: وہ کون ہے؟ (\"dia siapa?\"). Kata کون سا menanyakan pilihan di antara beberapa benda: کون سی کتاب اچھی ہے؟ (\"buku yang mana yang bagus?\"). Perhatikan bahwa کون سا ikut berubah mengikuti jenis kelamin — کون سا لڑکا · کون سی کتاب · کون سے لڑکے — karena ia berakhiran ـا.",
+      "Kata tanya کتنا juga ikut berubah: کتنا پانی؟ (berapa banyak air), کتنی چائے؟ (berapa banyak teh), کتنے لوگ؟ (berapa banyak orang)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di dalam rumah",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Urdu",
+      "Cara baca",
+      "Arti",
+      "Jenis"
+     ],
+     "rows": [
+      [
+       "گھر",
+       "ghar",
+       "rumah",
+       "lk"
+      ],
+      [
+       "کمرہ",
+       "kamra",
+       "kamar, ruangan",
+       "lk"
+      ],
+      [
+       "دروازہ",
+       "darvāza",
+       "pintu",
+       "lk"
+      ],
+      [
+       "کھڑکی",
+       "khiṛkī",
+       "jendela",
+       "pr"
+      ],
+      [
+       "میز",
+       "mez",
+       "meja",
+       "pr"
+      ],
+      [
+       "کرسی",
+       "kursī",
+       "kursi",
+       "pr"
+      ],
+      [
+       "الماری",
+       "almārī",
+       "lemari",
+       "pr"
+      ],
+      [
+       "بستر",
+       "bistar",
+       "tempat tidur",
+       "lk"
+      ],
+      [
+       "باورچی خانہ",
+       "bāvarchī-ḵāna",
+       "dapur",
+       "lk"
+      ],
+      [
+       "غسل خانہ",
+       "ġusl-ḵāna",
+       "kamar mandi",
+       "lk"
+      ],
+      [
+       "تصویر",
+       "tasvīr",
+       "gambar, foto",
+       "pr"
+      ],
+      [
+       "چابی",
+       "chābī",
+       "kunci",
+       "pr"
+      ],
+      [
+       "پانی",
+       "pānī",
+       "air",
+       "lk"
+      ],
+      [
+       "روٹی",
+       "roṭī",
+       "roti",
+       "pr"
+      ],
+      [
+       "دودھ",
+       "dūdh",
+       "susu",
+       "lk"
+      ],
+      [
+       "کھانا",
+       "khānā",
+       "makanan",
+       "lk"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kata benda yang jenis kelaminnya sering salah ditebak",
+     "items": [
+      "Kata میز (meja) berakhiran konsonan, jadi nalurimu akan menyebutnya laki-laki — padahal ia **perempuan**: میز صاف ہے dan میزیں صاف ہیں. Ia kata Persia, dan kata Persia berakhiran konsonan sering perempuan.",
+      "Kata پانی (air) berakhiran ـی, jadi nalurimu akan menyebutnya perempuan — padahal ia **laki-laki**: پانی ٹھنڈا ہے. Sepupunya yang sama-sama menjebak: آدمی (orang, lk), موتی (mutiara, lk), گھی (minyak samin, lk).",
+      "Kata کھانا (makanan) berakhiran ـا, jadi ia laki-laki — dan itu benar. Yang menjebak: ia juga kata kerja \"makan\". کھانا اچھا ہے = \"makanannya enak\", sementara کھانا کھانا = \"memakan makanan\", dua kata yang sama berturut-turut, dan itu memang kalimat Urdu yang normal."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ur": "یہ",
+   "baca": "ye",
+   "id": "ini; dia (dekat)"
+  },
+  {
+   "ur": "وہ",
+   "baca": "vo",
+   "id": "itu; dia (jauh); mereka"
+  },
+  {
+   "ur": "کون",
+   "baca": "kaun",
+   "id": "siapa"
+  },
+  {
+   "ur": "کون سا",
+   "baca": "kaun sā",
+   "id": "yang mana"
+  },
+  {
+   "ur": "کب",
+   "baca": "kab",
+   "id": "kapan"
+  },
+  {
+   "ur": "کیوں",
+   "baca": "kyūñ",
+   "id": "kenapa"
+  },
+  {
+   "ur": "کتنا",
+   "baca": "kitnā",
+   "id": "berapa banyak"
+  },
+  {
+   "ur": "خاندان",
+   "baca": "ḵāndān",
+   "id": "keluarga"
+  },
+  {
+   "ur": "والد",
+   "baca": "vālid",
+   "id": "ayah"
+  },
+  {
+   "ur": "والدہ",
+   "baca": "vālida",
+   "id": "ibu"
+  },
+  {
+   "ur": "بھائی",
+   "baca": "bhāī",
+   "id": "saudara laki-laki"
+  },
+  {
+   "ur": "تصویر",
+   "baca": "tasvīr",
+   "id": "gambar, foto"
+  },
+  {
+   "ur": "کمرہ",
+   "baca": "kamra",
+   "id": "kamar"
+  },
+  {
+   "ur": "دروازہ",
+   "baca": "darvāza",
+   "id": "pintu"
+  },
+  {
+   "ur": "کتابیں",
+   "baca": "kitābeñ",
+   "id": "buku-buku"
+  },
+  {
+   "ur": "لوگ",
+   "baca": "log",
+   "id": "orang-orang"
+  },
+  {
+   "ur": "تیار",
+   "baca": "taiyār",
+   "id": "siap"
+  },
+  {
+   "ur": "اندر",
+   "baca": "andar",
+   "id": "di dalam, masuk"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah jadi bentuk jamak.",
+   "items": [
+    "لڑکا",
+    "کتاب",
+    "کرسی",
+    "گھر",
+    "رات"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan یہ atau وہ sesuai keterangan dalam kurung.",
+   "items": [
+    "____ میرا گھر ہے۔ (kamu berdiri di depannya)",
+    "____ لڑکا کون ہے؟ (di seberang jalan)",
+    "____ کتابیں میری ہیں۔ (di tanganmu)",
+    "____ کمرہ بہت بڑا ہے۔ (kamu berdiri di dalamnya)",
+    "____ لوگ پاکستانی ہیں۔ (di dalam foto)"
+   ]
+  },
+  {
+   "prompt": "Pilih kata tanya yang tepat.",
+   "items": [
+    "____ ہے؟ — یہ کتاب ہے۔",
+    "وہ ____ ہے؟ — وہ میرا بھائی ہے۔",
+    "آپ ____ ہیں؟ — میں گھر میں ہوں۔",
+    "____ سی کتاب اچھی ہے؟",
+    "یہ ____ ہے؟ — سو روپے۔"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ہیں / یہ / کتابیں / میری",
+    "ہے / کون / وہ / ؟",
+    "ہے / بڑا / کمرہ / یہ / بہت",
+    "ہیں / کون / لڑکے / یہ / ؟",
+    "ہے / خاندان / یہ / ہمارا"
+   ]
+  }
+ ],
+ "answers": [
+  "لڑکے — کتابیں — کرسیاں — گھر — راتیں",
+  "یہ — وہ — یہ — یہ — وہ",
+  "یہ کیا — کون — کہاں — کون — کتنے کا",
+  "یہ میری کتابیں ہیں۔ — وہ کون ہے؟ — یہ کمرہ بہت بڑا ہے۔ — یہ لڑکے کون ہیں؟ — یہ ہمارا خاندان ہے۔"
+ ],
+ "wave": "Sebelum masuk unit 4, tunjuk sepuluh benda di kamarmu dan ucapkan یہ … ہے untuk masing-masing. Kalau jenis kelaminnya belum kamu tahu, catat kata itu."
+}

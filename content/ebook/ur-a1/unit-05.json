@@ -1,0 +1,509 @@
+{
+ "title": "Angka, umur, dan nomor telepon",
+ "title_target": "گنتی، عمر، اور نمبر",
+ "goal": "Berhitung sampai dua puluh, menyebut umur, membaca nomor telepon, dan memakai کتنا / کتنی / کتنے dengan benar.",
+ "bekal": [
+  "menyebut angka 1–20 tanpa berpikir",
+  "menanyakan dan menyebut umur dengan bentuk yang benar",
+  "menyebut dan menuliskan nomor telepon Pakistan"
+ ],
+ "dialogs": [
+  {
+   "title": "مکالمہ — زبان کے اسکول میں",
+   "intro": "Budi mendaftar ke kursus bahasa Urdu. Petugas pendaftaran mengisi formulir sambil bertanya.",
+   "lines": [
+    {
+     "speaker": "کلرک:",
+     "text": "السلام علیکم۔ آپ کا پورا نام کیا ہے؟",
+     "baca": "as-salāmu alaikum. āp kā pūrā nām kyā hai?",
+     "id": "Assalamualaikum. Nama lengkap Anda apa?",
+     "literal": "damai atas kalian. Anda punya penuh nama apa adalah?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "بودی سنتوسو۔ میں انڈونیشیا سے ہوں۔",
+     "baca": "Būdī Santoso. maiñ Inḍonesiyā se hūñ.",
+     "id": "Budi Santoso. Saya dari Indonesia.",
+     "literal": "Budi Santoso. saya Indonesia dari ada."
+    },
+    {
+     "speaker": "کلرک:",
+     "text": "آپ کی عمر کتنی ہے؟",
+     "baca": "āp kī umr kitnī hai?",
+     "id": "Umur Anda berapa?",
+     "literal": "Anda punya-pr umur berapa-pr adalah?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "میری عمر چوبیس سال ہے۔",
+     "baca": "merī umr chaubīs sāl hai.",
+     "id": "Umur saya dua puluh empat tahun.",
+     "literal": "punya-saya umur dua-puluh-empat tahun adalah."
+    },
+    {
+     "speaker": "کلرک:",
+     "text": "اور آپ کا فون نمبر؟",
+     "baca": "aur āp kā fon nambar?",
+     "id": "Dan nomor telepon Anda?",
+     "literal": "dan Anda punya telepon nomor?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "صفر تین ایک دو — چار پانچ چھ — سات آٹھ نو صفر۔",
+     "baca": "sifar tīn ek do — chār pāñch chhe — sāt āṭh nau sifar.",
+     "id": "Nol tiga satu dua — empat lima enam — tujuh delapan sembilan nol.",
+     "literal": "nol tiga satu dua — empat lima enam — tujuh delapan sembilan nol."
+    },
+    {
+     "speaker": "کلرک:",
+     "text": "شکریہ۔ کلاس میں کتنے طالب علم ہیں، معلوم ہے؟",
+     "baca": "shukriya. klās meñ kitne tālib-e-ilm haiñ, ma'lūm hai?",
+     "id": "Terima kasih. Di kelas ada berapa mahasiswa, Anda tahu?",
+     "literal": "terima kasih. kelas di berapa penuntut-ilmu ada, diketahui adalah?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "نہیں۔ کتنے ہیں؟",
+     "baca": "nahīñ. kitne haiñ?",
+     "id": "Tidak. Ada berapa?",
+     "literal": "tidak. berapa ada?"
+    },
+    {
+     "speaker": "کلرک:",
+     "text": "بارہ۔ آٹھ لڑکیاں اور چار لڑکے۔",
+     "baca": "bārah. āṭh laṛkiyāñ aur chār laṛke.",
+     "id": "Dua belas. Delapan perempuan dan empat laki-laki.",
+     "literal": "dua-belas. delapan anak-pr-jamak dan empat anak-lk-jamak."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "اچھا۔ کلاس کتنے گھنٹے کی ہے؟",
+     "baca": "achchhā. klās kitne ghanṭe kī hai?",
+     "id": "Baik. Kelasnya berapa jam?",
+     "literal": "baik. kelas berapa jam punya-pr adalah?"
+    },
+    {
+     "speaker": "کلرک:",
+     "text": "دو گھنٹے، ہفتے میں تین دن۔",
+     "baca": "do ghanṭe, hafte meñ tīn din.",
+     "id": "Dua jam, tiga hari dalam seminggu.",
+     "literal": "dua jam, minggu di tiga hari."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "بہت اچھا۔ فیس کتنی ہے؟",
+     "baca": "bahut achchhā. fīs kitnī hai?",
+     "id": "Bagus sekali. Biayanya berapa?",
+     "literal": "sangat baik. biaya berapa-pr adalah?"
+    }
+   ],
+   "notes": [
+    "**Umur dinyatakan dengan \"punya\", bukan dengan \"berumur\".** آپ کی عمر کتنی ہے؟ harfiahnya \"umur Anda berapa adalah?\". Perhatikan کی dan کتنی — dua-duanya berbentuk perempuan karena **عمر perempuan**. Bentuk pendek yang juga benar dan lebih santai: آپ کتنے سال کے ہیں؟",
+    "**Setelah angka, kata bendanya sering tetap tunggal.** Contohnya چوبیس سال, bukan چوبیس سالیں. Untuk satuan waktu, uang, dan ukuran, bahasa Urdu memakai bentuk tunggal setelah angka — persis seperti bahasa Indonesia yang mengatakan \"dua puluh empat tahun\", bukan \"tahun-tahun\". Tetapi untuk benda yang bisa dihitung, jamaknya dipakai: آٹھ لڑکیاں dan چار لڑکے.",
+    "**Kata کتنا ikut berubah tiga kali.** کتنا پانی؟ (air, laki-laki) · کتنی چائے؟ (teh, perempuan) · کتنے لوگ؟ (orang, laki-laki jamak). Ia berakhiran ـا, jadi ia masuk golongan kata sifat yang berubah — aturan unit 2 berlaku persis.",
+    "**Nomor telepon disebut angka per angka.** Orang Pakistan membaca 0312 sebagai صفر، تین، ایک، دو, bukan sebagai \"tiga ratus dua belas\". Nol adalah صفر (*sifar*) — kata yang lewat bahasa Arab jadi \"cipher\" dan \"zero\" di bahasa Eropa, dan asalnya justru dari India. Nomor ponsel Pakistan selalu diawali 03.",
+    "**Kata معلوم adalah cara Urdu mengatakan \"tahu\".** معلوم ہے؟ = \"tahu?\", harfiahnya \"diketahui adalah?\". Bentuk penuhnya: مجھے معلوم ہے (\"saya tahu\") dan مجھے نہیں معلوم (\"saya tidak tahu\"). Perhatikan bahwa pelakunya memakai مجھے, bukan میں — ini kalimat datif, dan unit 10 dipakai penuh untuk polanya.",
+    "**Kata اچھا bekerja seperti \"oke\" bahasa Indonesia.** Selain berarti \"baik\", ia dipakai sendirian untuk menandai bahwa kamu mendengarkan dan menerima: اچھا۔ Diucapkan dengan nada naik, اچھا؟ berarti \"oh ya?\" atau \"masa?\". Ini kata yang paling sering kamu ucapkan setelah جی."
+   ],
+   "grammars": [
+    {
+     "title": "Angka 1 sampai 20",
+     "body": [
+      "Tidak ada jalan pintas: bahasa Urdu punya kata tersendiri untuk setiap angka sampai seratus, dan dua puluh yang pertama harus masuk kepala sampai keluar tanpa dipikir. Hafalkan berkelompok lima, bersuara, sambil menunjuk jari."
+     ],
+     "table": {
+      "head": [
+       "",
+       "Urdu",
+       "Cara baca",
+       "",
+       "Urdu",
+       "Cara baca"
+      ],
+      "rows": [
+       [
+        "1",
+        "ایک",
+        "ek",
+        "11",
+        "گیارہ",
+        "gyārah"
+       ],
+       [
+        "2",
+        "دو",
+        "do",
+        "12",
+        "بارہ",
+        "bārah"
+       ],
+       [
+        "3",
+        "تین",
+        "tīn",
+        "13",
+        "تیرہ",
+        "terah"
+       ],
+       [
+        "4",
+        "چار",
+        "chār",
+        "14",
+        "چودہ",
+        "chaudah"
+       ],
+       [
+        "5",
+        "پانچ",
+        "pāñch",
+        "15",
+        "پندرہ",
+        "pandrah"
+       ],
+       [
+        "6",
+        "چھ",
+        "chhe",
+        "16",
+        "سولہ",
+        "solah"
+       ],
+       [
+        "7",
+        "سات",
+        "sāt",
+        "17",
+        "سترہ",
+        "satrah"
+       ],
+       [
+        "8",
+        "آٹھ",
+        "āṭh",
+        "18",
+        "اٹھارہ",
+        "aṭhārah"
+       ],
+       [
+        "9",
+        "نو",
+        "nau",
+        "19",
+        "انیس",
+        "unnīs"
+       ],
+       [
+        "10",
+        "دس",
+        "das",
+        "20",
+        "بیس",
+        "bīs"
+       ]
+      ]
+     },
+     "after": [
+      "Dua hal yang menolong hafalan. **Pertama**, دو terdengar seperti \"dua\" dan memang sekeluarga — keduanya turun dari kata Indo-Eropa yang sama. **Kedua**, angka 11–18 semuanya berakhiran **ـرہ / ـہ** yang berasal dari دس (sepuluh) yang tergerus, sementara 19 sudah bersiap ke 20: انیس harfiahnya \"kurang satu dari dua puluh\". Pola \"kurang satu\" itu berulang di 29, 39, 49, dan seterusnya — lihat halaman angka di belakang modul.",
+      "Nol adalah صفر (*sifar*), dan setengah adalah آدھا (*ādhā*)."
+     ]
+    },
+    {
+     "title": "Menanyakan jumlah dan harga",
+     "body": [
+      "Empat kalimat di bawah ini menutup hampir semua pertanyaan berangka yang akan kamu ucapkan di minggu-minggu pertama. Hafalkan sebagai kalimat utuh, bukan sebagai rumus."
+     ],
+     "table": {
+      "head": [
+       "Urdu",
+       "Cara baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "آپ کی عمر کتنی ہے؟",
+        "āp kī umr kitnī hai?",
+        "Umur Anda berapa?"
+       ],
+       [
+        "یہ کتنے کا ہے؟",
+        "ye kitne kā hai?",
+        "Ini harganya berapa? (barang lk)"
+       ],
+       [
+        "یہ کتنے کی ہے؟",
+        "ye kitne kī hai?",
+        "Ini harganya berapa? (barang pr)"
+       ],
+       [
+        "کتنے لوگ ہیں؟",
+        "kitne log haiñ?",
+        "Ada berapa orang?"
+       ],
+       [
+        "کتنا وقت ہے؟",
+        "kitnā vaqt hai?",
+        "Ada berapa banyak waktu?"
+       ],
+       [
+        "آپ کا نمبر کیا ہے؟",
+        "āp kā nambar kyā hai?",
+        "Nomor Anda berapa?"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Perhatikan bahwa harga ditanyakan dengan **کتنے کا**, bukan کتنا. Bentuk itu harfiahnya \"berapa punya\" — barang itu \"milik\" sekian rupee. Yang menentukan کا atau کی adalah **barang yang ditanyakan**, bukan uangnya: یہ قمیض کتنے کی ہے؟ karena قمیض perempuan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Angka dalam kehidupan sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Urdu",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "عمر",
+       "umr",
+       "umur"
+      ],
+      [
+       "سال",
+       "sāl",
+       "tahun"
+      ],
+      [
+       "مہینہ",
+       "mahīna",
+       "bulan"
+      ],
+      [
+       "ہفتہ",
+       "hafta",
+       "minggu"
+      ],
+      [
+       "دن",
+       "din",
+       "hari"
+      ],
+      [
+       "گھنٹہ",
+       "ghanṭa",
+       "jam (durasi)"
+      ],
+      [
+       "منٹ",
+       "minaṭ",
+       "menit"
+      ],
+      [
+       "نمبر",
+       "nambar",
+       "nomor"
+      ],
+      [
+       "فون",
+       "fon",
+       "telepon"
+      ],
+      [
+       "پتہ",
+       "pata",
+       "alamat"
+      ],
+      [
+       "فیس",
+       "fīs",
+       "biaya, uang sekolah"
+      ],
+      [
+       "روپیہ",
+       "rūpayā",
+       "rupee"
+      ],
+      [
+       "قیمت",
+       "qīmat",
+       "harga"
+      ],
+      [
+       "پہلا",
+       "pahlā",
+       "pertama"
+      ],
+      [
+       "دوسرا",
+       "dūsrā",
+       "kedua"
+      ],
+      [
+       "تیسرا",
+       "tīsrā",
+       "ketiga"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Bilangan bertingkat, dan tiga yang tidak beraturan",
+     "items": [
+      "Urutan \"pertama, kedua, ketiga\" dalam bahasa Urdu adalah پہلا، دوسرا، تیسرا, dan ketiganya **tidak bisa ditebak** dari ایک، دو، تین. Mulai keempat polanya teratur: angka + ـواں — چوتھا (keempat, masih agak khusus), پانچواں، چھٹا، ساتواں، آٹھواں، نواں، دسواں.",
+      "Semuanya berakhiran ـا, jadi semuanya ikut berubah: پہلا دن (hari pertama), پہلی کتاب (buku pertama), پہلے دن (pada hari pertama).",
+      "Kata دوسرا mengerjakan dua tugas: \"kedua\" dan juga \"yang lain\". دوسرا آدمی bisa berarti \"orang kedua\" atau \"orang lain\", dan yang menentukan adalah keadaannya. Kalau kamu ingin jelas menyebut \"yang lain\", pakai **اور ایک** atau **کوئی اور**."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ur": "ایک",
+   "baca": "ek",
+   "id": "satu"
+  },
+  {
+   "ur": "دو",
+   "baca": "do",
+   "id": "dua"
+  },
+  {
+   "ur": "تین",
+   "baca": "tīn",
+   "id": "tiga"
+  },
+  {
+   "ur": "چار",
+   "baca": "chār",
+   "id": "empat"
+  },
+  {
+   "ur": "پانچ",
+   "baca": "pāñch",
+   "id": "lima"
+  },
+  {
+   "ur": "دس",
+   "baca": "das",
+   "id": "sepuluh"
+  },
+  {
+   "ur": "بیس",
+   "baca": "bīs",
+   "id": "dua puluh"
+  },
+  {
+   "ur": "صفر",
+   "baca": "sifar",
+   "id": "nol"
+  },
+  {
+   "ur": "عمر",
+   "baca": "umr",
+   "id": "umur"
+  },
+  {
+   "ur": "سال",
+   "baca": "sāl",
+   "id": "tahun"
+  },
+  {
+   "ur": "دن",
+   "baca": "din",
+   "id": "hari"
+  },
+  {
+   "ur": "گھنٹہ",
+   "baca": "ghanṭa",
+   "id": "jam (durasi)"
+  },
+  {
+   "ur": "نمبر",
+   "baca": "nambar",
+   "id": "nomor"
+  },
+  {
+   "ur": "کتنا",
+   "baca": "kitnā",
+   "id": "berapa banyak"
+  },
+  {
+   "ur": "معلوم",
+   "baca": "ma'lūm",
+   "id": "diketahui"
+  },
+  {
+   "ur": "پورا",
+   "baca": "pūrā",
+   "id": "penuh, lengkap"
+  },
+  {
+   "ur": "فیس",
+   "baca": "fīs",
+   "id": "biaya"
+  },
+  {
+   "ur": "پہلا",
+   "baca": "pahlā",
+   "id": "pertama"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angka berikut dengan huruf Urdu.",
+   "items": [
+    "7",
+    "12",
+    "19",
+    "4",
+    "20"
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk کتنا yang tepat: کتنا، کتنی، atau کتنے.",
+   "items": [
+    "آپ کی عمر ____ ہے؟",
+    "یہ کتاب ____ کی ہے؟",
+    "کلاس میں ____ لوگ ہیں؟",
+    "____ پانی ہے؟",
+    "____ وقت ہے؟"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Urdu.",
+   "items": [
+    "Umur saya dua puluh tahun.",
+    "Di kelas ada dua belas mahasiswa.",
+    "Nomor telepon Anda berapa?",
+    "Kelasnya dua jam.",
+    "Saya tidak tahu."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ہے / عمر / کتنی / کی / آپ / ؟",
+    "ہے / سال / میری / بیس / عمر",
+    "ہیں / بارہ / کلاس / طالب علم / میں",
+    "ہے / گھنٹے / کی / دو / کلاس",
+    "ہے / نہیں / معلوم / مجھے"
+   ]
+  }
+ ],
+ "answers": [
+  "سات — بارہ — انیس — چار — بیس",
+  "کتنی — کتنے — کتنے — کتنا — کتنا",
+  "میری عمر بیس سال ہے۔ — کلاس میں بارہ طالب علم ہیں۔ — آپ کا فون نمبر کیا ہے؟ — کلاس دو گھنٹے کی ہے۔ — مجھے نہیں معلوم۔",
+  "آپ کی عمر کتنی ہے؟ — میری عمر بیس سال ہے۔ — کلاس میں بارہ طالب علم ہیں۔ — کلاس دو گھنٹے کی ہے۔ — مجھے معلوم نہیں ہے۔"
+ ],
+ "wave": "Hitung mundur dari بیس ke ایک keras-keras sebelum tidur, tiga malam berturut-turut. Setelah itu angkanya tidak lagi perlu dipikir."
+}

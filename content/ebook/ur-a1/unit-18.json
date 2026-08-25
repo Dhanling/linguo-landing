@@ -1,0 +1,500 @@
+{
+ "title": "Badan, sakit, dan ke dokter",
+ "title_target": "صحت اور بیماری",
+ "goal": "Menyebut bagian tubuh, menjelaskan keluhan kepada dokter, dan memakai pola sakit yang pelakunya bukan \"saya\".",
+ "bekal": [
+  "menyebut lima belas bagian tubuh",
+  "menjelaskan sakit dengan درد ہے dan لگ رہا ہے",
+  "memahami petunjuk sederhana dari dokter dan apoteker"
+ ],
+ "dialogs": [
+  {
+   "title": "مکالمہ — ڈاکٹر کے پاس",
+   "intro": "Budi tidak enak badan sejak semalam. Ayesha mengantarnya ke klinik dekat kampus.",
+   "lines": [
+    {
+     "speaker": "ڈاکٹر:",
+     "text": "آئیے، بیٹھیے۔ کیا تکلیف ہے؟",
+     "baca": "āiye, baiṭhiye. kyā taklīf hai?",
+     "id": "Silakan masuk, duduk. Apa keluhannya?",
+     "literal": "datanglah, duduklah. apa kesusahan adalah?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "مجھے سر درد ہے اور بخار بھی ہے۔",
+     "baca": "mujhe sar dard hai aur buḵār bhī hai.",
+     "id": "Kepala saya sakit dan saya juga demam.",
+     "literal": "kepada-saya kepala sakit adalah dan demam juga adalah."
+    },
+    {
+     "speaker": "ڈاکٹر:",
+     "text": "کب سے؟",
+     "baca": "kab se?",
+     "id": "Sejak kapan?",
+     "literal": "kapan dari?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "کل رات سے۔ مجھے نیند بھی نہیں آئی۔",
+     "baca": "kal rāt se. mujhe nīnd bhī nahīñ āī.",
+     "id": "Sejak semalam. Saya juga tidak bisa tidur.",
+     "literal": "kemarin malam dari. kepada-saya kantuk juga tidak datang-pr."
+    },
+    {
+     "speaker": "ڈاکٹر:",
+     "text": "گلے میں درد ہے؟",
+     "baca": "gale meñ dard hai?",
+     "id": "Tenggorokan sakit?",
+     "literal": "tenggorokan di sakit adalah?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "جی، تھوڑا۔ اور کھانسی بھی ہے۔",
+     "baca": "jī, thoṛā. aur khāñsī bhī hai.",
+     "id": "Ya, sedikit. Dan ada batuk juga.",
+     "literal": "iya, sedikit. dan batuk juga adalah."
+    },
+    {
+     "speaker": "ڈاکٹر:",
+     "text": "منہ کھولیے۔ ہاں… گلا سرخ ہے۔ آپ نے کل کیا کھایا؟",
+     "baca": "muñh kholiye. hāñ… galā surḵ hai. āp ne kal kyā khāyā?",
+     "id": "Buka mulutnya. Ya… tenggorokannya merah. Kemarin Anda makan apa?",
+     "literal": "mulut bukalah. ya… tenggorokan merah adalah. Anda oleh kemarin apa dimakan?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "باہر سے کھانا کھایا تھا۔ بہت تیز تھا۔",
+     "baca": "bāhar se khānā khāyā thā. bahut tez thā.",
+     "id": "Saya makan makanan dari luar. Pedas sekali.",
+     "literal": "luar dari makanan dimakan ada-dulu. sangat pedas ada-dulu."
+    },
+    {
+     "speaker": "ڈاکٹر:",
+     "text": "کوئی خطرے کی بات نہیں۔ یہ دوا لیجیے، تین دن۔",
+     "baca": "koī ḵatre kī bāt nahīñ. ye davā lījiye, tīn din.",
+     "id": "Tidak ada yang berbahaya. Minum obat ini, tiga hari.",
+     "literal": "apa-pun bahaya punya-pr perkataan tidak. ini obat ambillah, tiga hari."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "کھانے سے پہلے یا بعد میں؟",
+     "baca": "khāne se pahle yā bād meñ?",
+     "id": "Sebelum atau sesudah makan?",
+     "literal": "makan dari sebelum atau sesudah di?"
+    },
+    {
+     "speaker": "ڈاکٹر:",
+     "text": "کھانے کے بعد۔ اور آرام کیجیے، پانی زیادہ پیجیے۔",
+     "baca": "khāne ke bād. aur ārām kījiye, pānī zyāda pījiye.",
+     "id": "Sesudah makan. Dan istirahatlah, banyak minum air.",
+     "literal": "makan punya sesudah. dan istirahat lakukanlah, air lebih minumlah."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "بہت شکریہ ڈاکٹر صاحب۔",
+     "baca": "bahut shukriya ḍākṭar sāhab.",
+     "id": "Terima kasih banyak, Dokter.",
+     "literal": "sangat terima kasih dokter tuan."
+    }
+   ],
+   "notes": [
+    "**Sakit dinyatakan dengan pola datif, bukan dengan \"saya sakit\".** مجھے سر درد ہے harfiahnya \"kepada saya, kepala sakit ada\". Yang jadi pokok kalimat adalah **sakitnya**, bukan orangnya. Bentuk yang juga benar dan sedikit lebih rinci: میرے سر میں درد ہے (\"di kepala saya ada sakit\").",
+    "**Kata تکلیف dipakai dokter untuk membuka pemeriksaan.** کیا تکلیف ہے؟ = \"apa keluhannya?\", harfiahnya \"apa kesusahannya?\". Kata yang sama dipakai untuk merepotkan orang: تکلیف کے لیے معذرت (\"maaf sudah merepotkan\"), آپ کو تکلیف ہوئی (\"Anda jadi repot\").",
+    "**Demam, batuk, dan pilek masing-masing punya kata benda sendiri.** Kata بخار (demam) · کھانسی (batuk) · زکام (pilek) · قے (muntah) · دست (diare). Semuanya dipakai dengan ہے dan pelakunya مجھے — مجھے بخار ہے · مجھے کھانسی ہے · مجھے زکام ہے.",
+    "**Kata کب سے berarti \"sejak kapan\", dan jawabannya juga memakai سے.** کل سے (sejak kemarin), دو دن سے (sejak dua hari), صبح سے (sejak pagi). Postposisi سے di sini berarti \"sejak\" — tugas keempatnya, setelah \"dari\", \"dengan\", dan \"daripada\".",
+    "**Bentuk کھایا تھا berarti \"sudah makan sebelumnya\".** Menambahkan تھا di belakang kata kerja lampau menandai bahwa kejadiannya lebih **dulu** lagi daripada kejadian yang sedang diceritakan — persis seperti \"sudah pernah\" dalam bahasa Indonesia. Kamu belum perlu memakainya aktif, tetapi mengenalinya akan sering menolong.",
+    "**Kata تیز berarti \"cepat\" dan sekaligus \"pedas\".** کھانا تیز ہے = \"makanannya pedas\". Sepupu yang perlu dibedakan: گرم (panas suhunya), مصالحہ دار (banyak bumbunya), کڑوا (pahit), میٹھا (manis), نمکین (asin), کھٹا (asam)."
+   ],
+   "grammars": [
+    {
+     "title": "Menjelaskan keluhan",
+     "body": [
+      "Ada dua susunan yang dipakai, dan dua-duanya benar. Yang pertama lebih pendek dan lebih sering dipakai; yang kedua lebih rinci dan menyebutkan bagian tubuhnya sebagai tempat."
+     ],
+     "table": {
+      "head": [
+       "Susunan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "… کو … درد ہے",
+        "مجھے سر درد ہے۔",
+        "Kepala saya sakit."
+       ],
+       [
+        "… کے … میں درد ہے",
+        "میرے پیٹ میں درد ہے۔",
+        "Perut saya sakit."
+       ],
+       [
+        "… کو … ہے",
+        "مجھے بخار ہے۔",
+        "Saya demam."
+       ],
+       [
+        "… کو … لگ رہا ہے",
+        "مجھے ٹھنڈ لگ رہی ہے۔",
+        "Saya kedinginan."
+       ],
+       [
+        "… کی طبیعت …",
+        "میری طبیعت ٹھیک نہیں۔",
+        "Badan saya kurang enak."
+       ],
+       [
+        "… کو … آ رہا ہے",
+        "مجھے چکر آ رہے ہیں۔",
+        "Saya pusing."
+       ]
+      ]
+     },
+     "after": [
+      "Kalimat yang akan paling sering kamu perlukan dan sebaiknya kamu hafalkan utuh: **میری طبیعت ٹھیک نہیں ہے۔** (\"badan saya kurang enak\"). Ia menutup semua keluhan sekaligus dan selalu dimengerti."
+     ]
+    },
+    {
+     "title": "Bagian tubuh",
+     "body": [
+      "Bagian tubuh selalu memakai bentuk milik biasa — میرا سر · میری آنکھیں — tidak pernah کے پاس. Aturan unit 17 berlaku penuh."
+     ],
+     "table": {
+      "head": [
+       "Urdu",
+       "Cara baca",
+       "Arti",
+       "Jenis"
+      ],
+      "rows": [
+       [
+        "سر",
+        "sar",
+        "kepala",
+        "lk"
+       ],
+       [
+        "آنکھ",
+        "āñkh",
+        "mata",
+        "pr"
+       ],
+       [
+        "ناک",
+        "nāk",
+        "hidung",
+        "pr"
+       ],
+       [
+        "کان",
+        "kān",
+        "telinga",
+        "lk"
+       ],
+       [
+        "منہ",
+        "muñh",
+        "mulut",
+        "lk"
+       ],
+       [
+        "دانت",
+        "dāñt",
+        "gigi",
+        "lk"
+       ],
+       [
+        "گلا",
+        "galā",
+        "tenggorokan",
+        "lk"
+       ],
+       [
+        "ہاتھ",
+        "hāth",
+        "tangan",
+        "lk"
+       ],
+       [
+        "پاؤں",
+        "pāoñ",
+        "kaki",
+        "lk"
+       ],
+       [
+        "پیٹ",
+        "peṭ",
+        "perut",
+        "lk"
+       ],
+       [
+        "دل",
+        "dil",
+        "jantung, hati (perasaan)",
+        "lk"
+       ],
+       [
+        "کمر",
+        "kamar",
+        "pinggang",
+        "pr"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Bagian tubuh yang ada sepasang biasanya disebut **jamak**: میری آنکھیں دکھ رہی ہیں (\"mata saya sakit\"), میرے پاؤں تھک گئے (\"kaki saya lelah\"). Menyebutnya tunggal terdengar seperti hanya satu sisi yang bermasalah — yang kadang memang itu maksudnya.",
+      "Kata دل mengerjakan dua pekerjaan yang di bahasa Indonesia juga bertumpuk: jantung dan perasaan. میرا دل نہیں چاہتا = \"saya tidak berselera\", harfiahnya \"hati saya tidak menginginkan\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di klinik dan apotek",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Urdu",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "ڈاکٹر",
+       "ḍākṭar",
+       "dokter"
+      ],
+      [
+       "اسپتال",
+       "ispatāl",
+       "rumah sakit"
+      ],
+      [
+       "دوا",
+       "davā",
+       "obat"
+      ],
+      [
+       "گولی",
+       "golī",
+       "tablet"
+      ],
+      [
+       "انجکشن",
+       "injakshan",
+       "suntikan"
+      ],
+      [
+       "بخار",
+       "buḵār",
+       "demam"
+      ],
+      [
+       "کھانسی",
+       "khāñsī",
+       "batuk"
+      ],
+      [
+       "زکام",
+       "zukām",
+       "pilek"
+      ],
+      [
+       "درد",
+       "dard",
+       "sakit, nyeri"
+      ],
+      [
+       "تکلیف",
+       "taklīf",
+       "keluhan, kerepotan"
+      ],
+      [
+       "آرام",
+       "ārām",
+       "istirahat"
+      ],
+      [
+       "بیمار",
+       "bīmār",
+       "sakit (orang)"
+      ],
+      [
+       "صحت",
+       "sehat",
+       "kesehatan"
+      ],
+      [
+       "خطرہ",
+       "ḵatra",
+       "bahaya"
+      ],
+      [
+       "نسخہ",
+       "nusḵa",
+       "resep"
+      ],
+      [
+       "ٹیسٹ",
+       "ṭesṭ",
+       "tes, pemeriksaan"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Delapan kalimat untuk klinik",
+     "items": [
+      "Membuka: میری طبیعت ٹھیک نہیں ہے۔ (\"badan saya kurang enak\") · مجھے دو دن سے بخار ہے۔ (\"saya demam sejak dua hari\")",
+      "Menunjuk keluhan: مجھے یہاں درد ہے۔ (\"sakit di sini\") — sambil menunjuk, dan ini kalimat paling berguna yang ada.",
+      "Bertanya obat: یہ دوا کیسے لینی ہے؟ (\"obat ini diminum bagaimana?\") · دن میں کتنی بار؟ (\"berapa kali sehari?\") · کھانے سے پہلے یا بعد میں؟",
+      "Mengucapkan doa: **جلد صحت یاب ہوں۔** (\"semoga cepat sembuh\") — kalimat yang akan kamu **terima** dari semua orang, dan sebaiknya kamu tahu cara mengucapkannya kembali. Yang lebih pendek dan sangat lazim: اللہ شفا دے۔"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ur": "درد",
+   "baca": "dard",
+   "id": "sakit, nyeri"
+  },
+  {
+   "ur": "بخار",
+   "baca": "buḵār",
+   "id": "demam"
+  },
+  {
+   "ur": "کھانسی",
+   "baca": "khāñsī",
+   "id": "batuk"
+  },
+  {
+   "ur": "دوا",
+   "baca": "davā",
+   "id": "obat"
+  },
+  {
+   "ur": "بیمار",
+   "baca": "bīmār",
+   "id": "sakit (orang)"
+  },
+  {
+   "ur": "طبیعت",
+   "baca": "tabī'at",
+   "id": "kondisi badan"
+  },
+  {
+   "ur": "سر",
+   "baca": "sar",
+   "id": "kepala"
+  },
+  {
+   "ur": "پیٹ",
+   "baca": "peṭ",
+   "id": "perut"
+  },
+  {
+   "ur": "گلا",
+   "baca": "galā",
+   "id": "tenggorokan"
+  },
+  {
+   "ur": "آنکھ",
+   "baca": "āñkh",
+   "id": "mata"
+  },
+  {
+   "ur": "ہاتھ",
+   "baca": "hāth",
+   "id": "tangan"
+  },
+  {
+   "ur": "دل",
+   "baca": "dil",
+   "id": "jantung; hati"
+  },
+  {
+   "ur": "آرام",
+   "baca": "ārām",
+   "id": "istirahat"
+  },
+  {
+   "ur": "تکلیف",
+   "baca": "taklīf",
+   "id": "keluhan"
+  },
+  {
+   "ur": "صحت",
+   "baca": "sehat",
+   "id": "kesehatan"
+  },
+  {
+   "ur": "کب سے",
+   "baca": "kab se",
+   "id": "sejak kapan"
+  },
+  {
+   "ur": "تیز",
+   "baca": "tez",
+   "id": "pedas; cepat"
+  },
+  {
+   "ur": "کھولنا",
+   "baca": "kholnā",
+   "id": "membuka"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Urdu. Ingat: pelakunya مجھے.",
+   "items": [
+    "Kepala saya sakit.",
+    "Saya demam.",
+    "Perut saya sakit.",
+    "Saya batuk.",
+    "Badan saya kurang enak."
+   ]
+  },
+  {
+   "prompt": "Sebutkan bagian tubuh yang dimaksud.",
+   "items": [
+    "Yang dipakai untuk melihat.",
+    "Yang dipakai untuk mendengar.",
+    "Yang sakit kalau kamu makan terlalu banyak.",
+    "Yang sakit kalau kamu berteriak seharian.",
+    "Yang dipakai untuk berjalan."
+   ]
+  },
+  {
+   "prompt": "Lengkapi percakapan di klinik.",
+   "items": [
+    "Dokter bertanya keluhanmu: ____؟",
+    "Kamu menjawab kamu demam sejak kemarin: ____",
+    "Kamu menanyakan cara minum obat: ____؟",
+    "Kamu menanyakan sebelum atau sesudah makan: ____؟",
+    "Kamu berterima kasih kepada dokter: ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ہے / درد / مجھے / سر",
+    "ہے / بخار / بھی / مجھے",
+    "ہے / نہیں / طبیعت / میری / ٹھیک",
+    "لیجیے / دوا / یہ",
+    "کیجیے / آرام / اور"
+   ]
+  }
+ ],
+ "answers": [
+  "مجھے سر درد ہے۔ — مجھے بخار ہے۔ — میرے پیٹ میں درد ہے۔ — مجھے کھانسی ہے۔ — میری طبیعت ٹھیک نہیں ہے۔",
+  "آنکھ — کان — پیٹ — گلا — پاؤں",
+  "کیا تکلیف ہے — مجھے کل سے بخار ہے۔ — یہ دوا کیسے لینی ہے — کھانے سے پہلے یا بعد میں — بہت شکریہ ڈاکٹر صاحب۔",
+  "مجھے سر درد ہے۔ — مجھے بھی بخار ہے۔ — میری طبیعت ٹھیک نہیں ہے۔ — یہ دوا لیجیے۔ — اور آرام کیجیے۔"
+ ],
+ "wave": "Hafalkan satu kalimat: میری طبیعت ٹھیک نہیں ہے۔ Kalimat itu cukup untuk membuka percakapan dengan dokter mana pun di Pakistan."
+}

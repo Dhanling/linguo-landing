@@ -1,0 +1,487 @@
+{
+ "title": "Lebih, paling, dan sama saja",
+ "title_target": "موازنہ",
+ "goal": "Membandingkan dua hal dengan سے, menyebut yang paling dengan سب سے, dan menyatakan kesamaan — tanpa kata \"daripada\" yang tidak ada di bahasa Urdu.",
+ "bekal": [
+  "membandingkan dua hal dengan … سے … ہے",
+  "memakai سب سے untuk menyatakan \"paling\"",
+  "menyatakan sama, mirip, dan berbeda"
+ ],
+ "dialogs": [
+  {
+   "title": "مکالمہ — لاہور یا کراچی؟",
+   "intro": "Di kantin, percakapan berpindah ke kota mana yang lebih enak untuk ditinggali. Hasan ikut bergabung.",
+   "lines": [
+    {
+     "speaker": "حسن:",
+     "text": "بودی، آپ کو کون سا شہر زیادہ پسند ہے؟",
+     "baca": "Būdī, āp ko kaun sā shahar zyāda pasand hai?",
+     "id": "Budi, kota mana yang lebih Anda suka?",
+     "literal": "Budi, Anda kepada mana kota lebih disukai adalah?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "لاہور۔ یہ کراچی سے زیادہ خوبصورت ہے۔",
+     "baca": "Lāhaur. ye Karāchī se zyāda ḵūbsūrat hai.",
+     "id": "Lahore. Kota ini lebih indah daripada Karachi.",
+     "literal": "Lahore. ini Karachi dari lebih indah adalah."
+    },
+    {
+     "speaker": "حسن:",
+     "text": "لیکن کراچی لاہور سے بڑا ہے۔ اور سمندر بھی ہے۔",
+     "baca": "lekin Karāchī Lāhaur se baṛā hai. aur samundar bhī hai.",
+     "id": "Tapi Karachi lebih besar daripada Lahore. Dan ada laut juga.",
+     "literal": "tetapi Karachi Lahore dari besar adalah. dan laut juga ada."
+    },
+    {
+     "speaker": "عائشہ:",
+     "text": "ہاں، لیکن لاہور میں کھانا سب سے اچھا ہے!",
+     "baca": "hāñ, lekin Lāhaur meñ khānā sab se achchhā hai!",
+     "id": "Ya, tapi makanan di Lahore paling enak!",
+     "literal": "ya, tetapi Lahore di makanan semua dari baik adalah!"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "بالکل۔ لاہور کا کھانا پورے پاکستان سے بہتر ہے۔",
+     "baca": "bilkul. Lāhaur kā khānā pūre Pākistān se behtar hai.",
+     "id": "Betul. Makanan Lahore lebih enak daripada seluruh Pakistan.",
+     "literal": "persis. Lahore punya makanan penuh Pakistan dari lebih-baik adalah."
+    },
+    {
+     "speaker": "حسن:",
+     "text": "اور اسلام آباد؟ وہ سب سے صاف شہر ہے۔",
+     "baca": "aur Islāmābād? vo sab se sāf shahar hai.",
+     "id": "Dan Islamabad? Itu kota paling bersih.",
+     "literal": "dan Islamabad? itu semua dari bersih kota adalah."
+    },
+    {
+     "speaker": "عائشہ:",
+     "text": "صاف تو ہے، لیکن بہت خاموش ہے۔",
+     "baca": "sāf to hai, lekin bahut ḵāmosh hai.",
+     "id": "Bersih memang, tapi terlalu sepi.",
+     "literal": "bersih memang adalah, tetapi sangat sunyi adalah."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "جکارتہ لاہور جیسا ہے — بہت رش، بہت زندگی۔",
+     "baca": "Jakārta Lāhaur jaisā hai — bahut rash, bahut zindagī.",
+     "id": "Jakarta mirip Lahore — sangat ramai, sangat hidup.",
+     "literal": "Jakarta Lahore seperti adalah — sangat padat, sangat kehidupan."
+    },
+    {
+     "speaker": "حسن:",
+     "text": "جکارتہ لاہور سے کتنا بڑا ہے؟",
+     "baca": "Jakārta Lāhaur se kitnā baṛā hai?",
+     "id": "Jakarta berapa kali lebih besar dari Lahore?",
+     "literal": "Jakarta Lahore dari berapa besar adalah?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "تقریباً برابر۔ لیکن جکارتہ زیادہ گرم ہے۔",
+     "baca": "taqrīban barābar. lekin Jakārta zyāda garam hai.",
+     "id": "Kira-kira sama. Tapi Jakarta lebih panas.",
+     "literal": "kira-kira setara. tetapi Jakarta lebih panas adalah."
+    },
+    {
+     "speaker": "عائشہ:",
+     "text": "لاہور سے بھی زیادہ؟ ناممکن!",
+     "baca": "Lāhaur se bhī zyāda? nāmumkin!",
+     "id": "Lebih dari Lahore juga? Tidak mungkin!",
+     "literal": "Lahore dari juga lebih? tidak-mungkin!"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "گرمی کم ہے، لیکن نمی زیادہ۔ اسی لیے برا لگتا ہے۔",
+     "baca": "garmī kam hai, lekin namī zyāda. isī liye burā lagtā hai.",
+     "id": "Panasnya kurang, tapi lembapnya lebih. Karena itu terasa tidak enak.",
+     "literal": "panas kurang adalah, tetapi kelembapan lebih. itu-lah untuk buruk terasa adalah."
+    }
+   ],
+   "notes": [
+    "**Bahasa Urdu tidak punya kata \"daripada\".** Yang dipakai adalah postposisi **سے** yang menempel di belakang benda pembanding: کراچی **سے** بڑا = \"lebih besar daripada Karachi\", harfiahnya \"dari Karachi besar\". Susunannya: **pembanding + سے + kata sifat + ہے**.",
+    "**Kata sifatnya sendiri tidak berubah bentuk.** Bahasa Inggris punya *big → bigger*; bahasa Urdu tidak. بڑا tetap بڑا, dan yang menandai perbandingan hanyalah سے. Kalau kamu ingin menekankan, tambahkan **زیادہ** (\"lebih\") di depan kata sifatnya: کراچی سے زیادہ بڑا.",
+    "**Untuk menyatakan \"paling\", pembandingnya diganti سب (\"semua\").** سب سے اچھا = \"paling baik\", harfiahnya \"dari semua baik\". Rumus yang sama tanpa kekecualian: سب سے بڑا (terbesar), سب سے سستا (termurah), سب سے قریب (terdekat).",
+    "**Beberapa kata sifat punya bentuk perbandingan sendiri dari bahasa Persia.** Bentuk perbandingan اچھا adalah بہتر (lebih baik) · bentuk perbandingan زیادہ adalah بیشتر (lebih banyak) · dan bentuk perbandingan کم adalah کمتر. Bentuk ini lebih resmi dan sering muncul di tulisan; dalam percakapan, سے زیادہ اچھا sama benarnya.",
+    "**Kata جیسا berarti \"seperti, mirip\", dan ia ikut berubah.** جکارتہ لاہور جیسا ہے (جکارتہ laki-laki), یہ کتاب اس کتاب جیسی ہے (perempuan). Sepupunya: کی طرح (\"seperti\", lebih resmi), برابر (\"setara, sama besar\"), ایک جیسا (\"sama persis\").",
+    "**Kata تو di tengah kalimat berarti \"memang\" atau \"sih\".** صاف تو ہے، لیکن… = \"bersih memang, tapi…\". Ia menandai bahwa kamu setuju sebagian sebelum membantah — persis pekerjaan \"sih\" dalam bahasa Indonesia percakapan. Ini kata kecil yang membuat bahasamu langsung terdengar wajar."
+   ],
+   "grammars": [
+    {
+     "title": "Membandingkan",
+     "body": [
+      "Tiga susunan menutup semua perbandingan tingkat A1. Perhatikan bahwa ketiganya memakai سے, dan bedanya cuma apa yang berdiri di depannya."
+     ],
+     "table": {
+      "head": [
+       "Susunan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "A + B **سے** + sifat",
+        "لاہور کراچی سے خوبصورت ہے۔",
+        "Lahore lebih indah daripada Karachi."
+       ],
+       [
+        "A + B **سے زیادہ** + sifat",
+        "یہ اس سے زیادہ مہنگا ہے۔",
+        "Ini lebih mahal daripada itu."
+       ],
+       [
+        "A + **سب سے** + sifat",
+        "یہ سب سے اچھا ہے۔",
+        "Ini yang paling baik."
+       ],
+       [
+        "A + B **جیسا** ہے",
+        "یہ شہر لاہور جیسا ہے۔",
+        "Kota ini mirip Lahore."
+       ],
+       [
+        "A + B **کے برابر** ہے",
+        "یہ اس کے برابر ہے۔",
+        "Ini setara dengan itu."
+       ],
+       [
+        "A + B **سے کم** + sifat",
+        "یہ اس سے کم مہنگا ہے۔",
+        "Ini kurang mahal daripada itu."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Perhatikan bahwa kata sifatnya tetap mengikuti **jenis kelamin bendanya**, seperti biasa: یہ کتاب اس کتاب سے اچھی ہے (اچھی, karena کتاب perempuan). Perbandingan tidak membebaskanmu dari aturan unit 2."
+     ]
+    },
+    {
+     "title": "Kata sifat yang sering dibandingkan",
+     "body": [
+      "Tabel ini sekaligus mengulang kata sifat yang sudah muncul di unit-unit sebelumnya, kali ini bersama lawan katanya dan bentuk Persianya kalau ada."
+     ],
+     "table": {
+      "head": [
+       "Urdu",
+       "Arti",
+       "Lawannya",
+       "Bentuk khusus"
+      ],
+      "rows": [
+       [
+        "بڑا",
+        "besar",
+        "چھوٹا",
+        "—"
+       ],
+       [
+        "اچھا",
+        "baik",
+        "برا",
+        "**بہتر** · بدتر"
+       ],
+       [
+        "مہنگا",
+        "mahal",
+        "سستا",
+        "—"
+       ],
+       [
+        "زیادہ",
+        "banyak",
+        "کم",
+        "**بیشتر** · کمتر"
+       ],
+       [
+        "لمبا",
+        "panjang",
+        "چھوٹا",
+        "—"
+       ],
+       [
+        "مشکل",
+        "sulit",
+        "آسان",
+        "—"
+       ],
+       [
+        "تیز",
+        "cepat",
+        "آہستہ",
+        "—"
+       ],
+       [
+        "نزدیک",
+        "dekat",
+        "دور",
+        "—"
+       ],
+       [
+        "نیا",
+        "baru",
+        "پرانا",
+        "—"
+       ],
+       [
+        "گرم",
+        "panas",
+        "ٹھنڈا",
+        "—"
+       ]
+      ]
+     },
+     "after": [
+      "Kata penguat yang berguna: بہت (sangat), تھوڑا (sedikit), بالکل (sama sekali), تقریباً (kira-kira), کافی (cukup, lumayan), سب سے (paling).",
+      "Untuk menyatakan sesuatu yang **tidak mungkin dibandingkan** — pujian tertinggi — dipakai لاجواب (\"tak terjawab\") atau بےمثال (\"tak ada bandingnya\"): لاہور کا کھانا لاجواب ہے۔"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kota, negeri, dan ukuran",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Urdu",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "ملک",
+       "mulk",
+       "negara"
+      ],
+      [
+       "شہر",
+       "shahar",
+       "kota"
+      ],
+      [
+       "گاؤں",
+       "gāoñ",
+       "desa"
+      ],
+      [
+       "آبادی",
+       "ābādī",
+       "penduduk"
+      ],
+      [
+       "زندگی",
+       "zindagī",
+       "kehidupan"
+      ],
+      [
+       "رش",
+       "rash",
+       "keramaian"
+      ],
+      [
+       "نمی",
+       "namī",
+       "kelembapan"
+      ],
+      [
+       "برابر",
+       "barābar",
+       "setara"
+      ],
+      [
+       "جیسا",
+       "jaisā",
+       "seperti"
+      ],
+      [
+       "بہتر",
+       "behtar",
+       "lebih baik"
+      ],
+      [
+       "تقریباً",
+       "taqrīban",
+       "kira-kira"
+      ],
+      [
+       "ناممکن",
+       "nāmumkin",
+       "tidak mungkin"
+      ],
+      [
+       "فرق",
+       "farq",
+       "perbedaan"
+      ],
+      [
+       "مشہور",
+       "mash'hūr",
+       "terkenal"
+      ],
+      [
+       "سستا",
+       "sastā",
+       "murah"
+      ],
+      [
+       "نزدیک",
+       "nazdīk",
+       "dekat"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kota Pakistan, dalam tiga kalimat",
+     "items": [
+      "Lahore: لاہور پاکستان کا سب سے پرانا بڑا شہر ہے۔ (\"Lahore kota besar tertua di Pakistan\") — ibu kota Punjab, kota taman Mughal, kota makanan, dan kota tempat bahasa Urdu paling terasa di jalanan.",
+      "Karachi: کراچی سب سے بڑا شہر ہے اور سمندر کے کنارے ہے۔ (\"Karachi kota terbesar dan berada di tepi laut\") — kota pelabuhan, kota bisnis, dan kota yang paling banyak bahasanya: Urdu, Sindhi, Pashto, Punjabi, Gujarati semuanya terdengar di satu jalan.",
+      "Islamabad: اسلام آباد سب سے نیا اور سب سے صاف شہر ہے۔ (\"Islamabad kota terbaru dan terbersih\") — dibangun dari nol pada 1960-an sebagai ibu kota, teratur, hijau, dan — seperti kata Ayesha — sepi."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ur": "سے",
+   "baca": "se",
+   "id": "daripada"
+  },
+  {
+   "ur": "سب سے",
+   "baca": "sab se",
+   "id": "paling"
+  },
+  {
+   "ur": "زیادہ",
+   "baca": "zyāda",
+   "id": "lebih, banyak"
+  },
+  {
+   "ur": "کم",
+   "baca": "kam",
+   "id": "kurang, sedikit"
+  },
+  {
+   "ur": "بہتر",
+   "baca": "behtar",
+   "id": "lebih baik"
+  },
+  {
+   "ur": "جیسا",
+   "baca": "jaisā",
+   "id": "seperti, mirip"
+  },
+  {
+   "ur": "برابر",
+   "baca": "barābar",
+   "id": "setara"
+  },
+  {
+   "ur": "فرق",
+   "baca": "farq",
+   "id": "perbedaan"
+  },
+  {
+   "ur": "ملک",
+   "baca": "mulk",
+   "id": "negara"
+  },
+  {
+   "ur": "آبادی",
+   "baca": "ābādī",
+   "id": "penduduk"
+  },
+  {
+   "ur": "زندگی",
+   "baca": "zindagī",
+   "id": "kehidupan"
+  },
+  {
+   "ur": "مشہور",
+   "baca": "mash'hūr",
+   "id": "terkenal"
+  },
+  {
+   "ur": "تقریباً",
+   "baca": "taqrīban",
+   "id": "kira-kira"
+  },
+  {
+   "ur": "ناممکن",
+   "baca": "nāmumkin",
+   "id": "tidak mungkin"
+  },
+  {
+   "ur": "خاموش",
+   "baca": "ḵāmosh",
+   "id": "sunyi, diam"
+  },
+  {
+   "ur": "صاف",
+   "baca": "sāf",
+   "id": "bersih"
+  },
+  {
+   "ur": "تو",
+   "baca": "to",
+   "id": "memang, sih"
+  },
+  {
+   "ur": "نزدیک",
+   "baca": "nazdīk",
+   "id": "dekat"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Urdu.",
+   "items": [
+    "Lahore lebih indah daripada Karachi.",
+    "Ini lebih mahal daripada itu.",
+    "Buku ini paling bagus.",
+    "Jakarta mirip Lahore.",
+    "Islamabad kota terbersih."
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan سے atau سب سے.",
+   "items": [
+    "کراچی لاہور ____ بڑا ہے۔",
+    "یہ ____ اچھا ہے۔",
+    "لاہور کا کھانا ____ اچھا ہے۔",
+    "یہ کتاب اس ____ سستی ہے۔",
+    "وہ ____ قریب ہے۔"
+   ]
+  },
+  {
+   "prompt": "Bandingkan dua hal ini dalam satu kalimat Urdu.",
+   "items": [
+    "Kereta dan pesawat (cepat).",
+    "Lahore dan Islamabad (bersih).",
+    "Buku dan film (menarik).",
+    "Teh dan kopi (murah).",
+    "Bahasa Urdu dan bahasa Arab (mudah)."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ہے / سے / خوبصورت / کراچی / لاہور",
+    "ہے / اچھا / سے / یہ / سب",
+    "ہے / جیسا / لاہور / جکارتہ",
+    "ہے / زیادہ / سے / یہ / اس / مہنگا",
+    "ہیں / برابر / تقریباً / دونوں"
+   ]
+  }
+ ],
+ "answers": [
+  "لاہور کراچی سے خوبصورت ہے۔ — یہ اس سے زیادہ مہنگا ہے۔ — یہ کتاب سب سے اچھی ہے۔ — جکارتہ لاہور جیسا ہے۔ — اسلام آباد سب سے صاف شہر ہے۔",
+  "سے — سب سے — سب سے — سے — سب سے",
+  "جہاز ٹرین سے تیز ہے۔ — اسلام آباد لاہور سے صاف ہے۔ — کتاب فلم سے دلچسپ ہے۔ — چائے کافی سے سستی ہے۔ — اردو عربی سے آسان ہے۔",
+  "لاہور کراچی سے خوبصورت ہے۔ — یہ سب سے اچھا ہے۔ — جکارتہ لاہور جیسا ہے۔ — یہ اس سے زیادہ مہنگا ہے۔ — دونوں تقریباً برابر ہیں۔"
+ ],
+ "wave": "Bandingkan lima pasang hal dari hidupmu sendiri — kotamu dan Lahore, dua makanan, dua bahasa. Satu kalimat masing-masing, dan periksa jenis kelamin kata sifatnya."
+}

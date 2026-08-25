@@ -1,0 +1,534 @@
+{
+ "title": "Kata depan yang datang di belakang",
+ "title_target": "حروفِ جار — اور ترچھی حالت",
+ "goal": "Memakai delapan postposisi Urdu, dan mengubah kata benda ke bentuk miring yang wajib menyertainya — pola yang akan muncul di setiap kalimat sampai unit terakhir.",
+ "bekal": [
+  "memakai میں، پر، سے، کو، تک، کے ساتھ، کے لیے، کے پاس",
+  "mengubah kata benda ke bentuk miring sebelum postposisi",
+  "menyebut arah dan tempat di dalam kota"
+ ],
+ "dialogs": [
+  {
+   "title": "مکالمہ — رکشے میں",
+   "intro": "Budi berdiri di pinggir jalan dan menyetop sebuah becak bermotor. Sopirnya menoleh.",
+   "lines": [
+    {
+     "speaker": "بودی:",
+     "text": "بھائی صاحب، انارکلی بازار تک کتنے پیسے؟",
+     "baca": "bhāī sāhab, Anārkalī bāzār tak kitne paise?",
+     "id": "Pak, sampai Pasar Anarkali berapa?",
+     "literal": "saudara tuan, Anarkali pasar sampai berapa uang?"
+    },
+    {
+     "speaker": "ڈرائیور:",
+     "text": "تین سو روپے۔ آپ کہاں سے آئے ہیں؟",
+     "baca": "tīn sau rūpaye. āp kahāñ se āye haiñ?",
+     "id": "Tiga ratus rupee. Anda datang dari mana?",
+     "literal": "tiga ratus rupee. Anda mana dari datang ada?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "انڈونیشیا سے۔ میں لاہور میں طالب علم ہوں۔",
+     "baca": "Inḍonesiyā se. maiñ Lāhaur meñ tālib-e-ilm hūñ.",
+     "id": "Dari Indonesia. Saya mahasiswa di Lahore.",
+     "literal": "Indonesia dari. saya Lahore di penuntut-ilmu ada."
+    },
+    {
+     "speaker": "ڈرائیور:",
+     "text": "واہ! آپ کا اسکول کہاں ہے؟",
+     "baca": "vāh! āp kā iskūl kahāñ hai?",
+     "id": "Wah! Sekolah Anda di mana?",
+     "literal": "wah! Anda punya sekolah mana adalah?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "مسجد کے پیچھے، بینک کے پاس۔",
+     "baca": "masjid ke pīchhe, baiñk ke pās.",
+     "id": "Di belakang masjid, dekat bank.",
+     "literal": "masjid punya belakang, bank punya dekat."
+    },
+    {
+     "speaker": "ڈرائیور:",
+     "text": "اچھا، سمجھ گیا۔ بیٹھیے۔",
+     "baca": "achchhā, samajh gayā. baiṭhiye.",
+     "id": "Baik, saya mengerti. Silakan duduk.",
+     "literal": "baik, mengerti pergi. duduklah."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "شکریہ۔ بازار یہاں سے کتنی دور ہے؟",
+     "baca": "shukriya. bāzār yahāñ se kitnī dūr hai?",
+     "id": "Terima kasih. Pasarnya berapa jauh dari sini?",
+     "literal": "terima kasih. pasar sini dari berapa-pr jauh adalah?"
+    },
+    {
+     "speaker": "ڈرائیور:",
+     "text": "بیس منٹ۔ سڑک پر آج بہت رش ہے۔",
+     "baca": "bīs minaṭ. saṛak par āj bahut rash hai.",
+     "id": "Dua puluh menit. Hari ini jalanan sangat ramai.",
+     "literal": "dua puluh menit. jalan atas hari-ini sangat padat adalah."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "کوئی بات نہیں۔ میرے پاس وقت ہے۔",
+     "baca": "koī bāt nahīñ. mere pās vaqt hai.",
+     "id": "Tidak apa-apa. Saya punya waktu.",
+     "literal": "apa-pun perkataan tidak. punya-saya dekat waktu ada."
+    },
+    {
+     "speaker": "ڈرائیور:",
+     "text": "آپ کے ساتھ کوئی اور ہے؟",
+     "baca": "āp ke sāth koī aur hai?",
+     "id": "Ada orang lain bersama Anda?",
+     "literal": "Anda punya bersama seseorang lain ada?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "نہیں، میں اکیلا ہوں۔ یہ میرے دوست کے لیے ہے۔",
+     "baca": "nahīñ, maiñ akelā hūñ. ye mere dost ke liye hai.",
+     "id": "Tidak, saya sendirian. Ini untuk teman saya.",
+     "literal": "tidak, saya sendiri ada. ini punya-saya teman punya untuk adalah."
+    },
+    {
+     "speaker": "ڈرائیور:",
+     "text": "ٹھیک ہے۔ چلیں!",
+     "baca": "ṭhīk hai. chaleñ!",
+     "id": "Baik. Jalan!",
+     "literal": "baik adalah. mari-jalan!"
+    }
+   ],
+   "notes": [
+    "**Semua kata depan bahasa Urdu berdiri di belakang.** \"Di Lahore\" adalah لاہور میں, harfiahnya \"Lahore di\". \"Dari Indonesia\" adalah انڈونیشیا سے. Karena itu namanya **postposisi**, bukan preposisi. Ini bukan hal yang aneh — bahasa Jepang, Korea, dan Turki bekerja persis sama, dan setelah dua minggu telingamu berhenti melawan.",
+    "**Postposisi menyeret kata bendanya ke bentuk miring.** Kata لڑکا jadi لڑکے کو, dan کمرا jadi کمرے میں. Hanya kata benda laki-laki berakhiran ـا yang berubah bentuk tunggalnya; yang lain tetap. Tetapi **semua** kata benda jamak berubah jadi ـوں — لڑکوں کو · کتابوں میں · گھروں میں.",
+    "**Postposisi bersusun dibuka dengan کے.** کے پاس (dekat, punya), کے ساتھ (bersama), کے لیے (untuk), کے بعد (sesudah), کے پہلے (sebelum), کے پیچھے (di belakang), کے سامنے (di depan), کے بارے میں (tentang). Semuanya memakai کے, dan itu sebabnya kata ganti berubah: میرے پاس, bukan میرا پاس.",
+    "**Kata کوئی berarti \"seseorang\" dan sekaligus \"suatu\".** کوئی اور ہے؟ = \"ada orang lain?\". کوئی کتاب = \"suatu buku\". Dengan نہیں ia jadi \"tidak ada satu pun\": کوئی بات نہیں (\"tidak apa-apa\"), کوئی مسئلہ نہیں (\"tidak ada masalah\"). Untuk benda mati, kata yang lebih tepat adalah کچھ (*kuchh*): کچھ اور؟ (\"ada lagi?\").",
+    "**Sapaan kepada orang yang tidak kamu kenal namanya.** بھائی صاحب (\"saudara, tuan\") dipakai kepada laki-laki mana pun yang seumuran atau lebih tua: sopir, penjual, petugas. Untuk perempuan: باجی atau آپا. Untuk yang jauh lebih tua: انکل dan آنٹی — dua kata Inggris yang sudah sepenuhnya jadi Urdu dan sama sekali tidak kurang sopan.",
+    "**Kata چلیں adalah ajakan yang paling sering kamu dengar.** Artinya \"mari jalan\", \"ayo\", \"jadi begitu ya\". Sepupunya چلو (santai) dan چلیے (sopan). Di ujung percakapan telepon, اچھا چلیں berarti \"baik, sampai di sini dulu\"."
+   ],
+   "grammars": [
+    {
+     "title": "Delapan postposisi yang menutup tingkat A1",
+     "body": [
+      "Hafalkan yang delapan ini bersama contohnya, dan kamu bisa menyusun hampir semua kalimat berketerangan tempat, waktu, dan tujuan yang diperlukan di tingkat ini."
+     ],
+     "table": {
+      "head": [
+       "Postposisi",
+       "Cara baca",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "میں",
+        "meñ",
+        "di, di dalam",
+        "گھر میں — di rumah"
+       ],
+       [
+        "پر",
+        "par",
+        "di atas, pada",
+        "میز پر — di atas meja"
+       ],
+       [
+        "سے",
+        "se",
+        "dari; dengan (alat); daripada",
+        "لاہور سے — dari Lahore"
+       ],
+       [
+        "کو",
+        "ko",
+        "kepada; penanda objek tertentu",
+        "علی کو — kepada Ali"
+       ],
+       [
+        "تک",
+        "tak",
+        "sampai",
+        "بازار تک — sampai pasar"
+       ],
+       [
+        "کے پاس",
+        "ke pās",
+        "punya; di dekat",
+        "میرے پاس — saya punya"
+       ],
+       [
+        "کے ساتھ",
+        "ke sāth",
+        "bersama",
+        "دوست کے ساتھ — bersama teman"
+       ],
+       [
+        "کے لیے",
+        "ke liye",
+        "untuk",
+        "آپ کے لیے — untuk Anda"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Postposisi سے mengerjakan tiga tugas yang di bahasa Indonesia dipegang tiga kata berbeda: \"dari\" (لاہور سے), \"dengan\" sebagai alat (قلم سے لکھنا, menulis dengan pena), dan \"daripada\" dalam perbandingan (اس سے بڑا, lebih besar daripada itu — unit 19). Jangan kaget menemuinya di tempat yang tak kamu duga."
+     ]
+    },
+    {
+     "title": "Bentuk miring: apa yang berubah dan apa yang tidak",
+     "body": [
+      "Begitu sebuah postposisi menempel, kata benda di depannya masuk ke **bentuk miring**. Untuk sebagian besar kata benda, bentuk miring tunggalnya sama saja dengan bentuk biasa — jadi yang benar-benar perlu kamu ingat cuma dua baris."
+     ],
+     "table": {
+      "head": [
+       "Kata benda",
+       "Biasa",
+       "Miring tunggal",
+       "Miring jamak"
+      ],
+      "rows": [
+       [
+        "Lk berakhiran ـا",
+        "لڑکا",
+        "لڑک**ے** کو",
+        "لڑک**وں** کو"
+       ],
+       [
+        "Lk lainnya",
+        "گھر",
+        "گھر میں — **tetap**",
+        "گھر**وں** میں"
+       ],
+       [
+        "Pr berakhiran ـی",
+        "لڑکی",
+        "لڑکی سے — **tetap**",
+        "لڑکی**وں** سے"
+       ],
+       [
+        "Pr lainnya",
+        "کتاب",
+        "کتاب میں — **tetap**",
+        "کتاب**وں** میں"
+       ]
+      ]
+     },
+     "after": [
+      "Kata ganti punya bentuk miringnya sendiri, dan bentuk inilah yang paling sering kamu pakai: kata میں jadi مجھ · kata تم tetap تم · kata آپ tetap آپ · kata یہ jadi اس · kata وہ jadi اس · kata ہم tetap ہم · dan kata وہ jamak jadi ان. Jadi \"kepada saya\" adalah مجھ کو — yang lalu dipendekkan jadi مجھے, dan bentuk pendek itulah yang dipakai orang.",
+      "Kata sifat berakhiran ـا juga ikut miring: بڑا کمرا jadi بڑے کمرے میں (\"di kamar besar\"). Kata sifat perempuan dan kata sifat yang tak berakhiran ـا tidak berubah sama sekali."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di dalam kota",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Urdu",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "شہر",
+       "shahar",
+       "kota"
+      ],
+      [
+       "سڑک",
+       "saṛak",
+       "jalan"
+      ],
+      [
+       "بازار",
+       "bāzār",
+       "pasar"
+      ],
+      [
+       "دکان",
+       "dukān",
+       "toko"
+      ],
+      [
+       "مسجد",
+       "masjid",
+       "masjid"
+      ],
+      [
+       "بینک",
+       "baiñk",
+       "bank"
+      ],
+      [
+       "اسکول",
+       "iskūl",
+       "sekolah"
+      ],
+      [
+       "اسپتال",
+       "ispatāl",
+       "rumah sakit"
+      ],
+      [
+       "ہوٹل",
+       "hoṭal",
+       "hotel, warung makan"
+      ],
+      [
+       "اسٹیشن",
+       "isṭeshan",
+       "stasiun"
+      ],
+      [
+       "پارک",
+       "pārk",
+       "taman"
+      ],
+      [
+       "دفتر",
+       "daftar",
+       "kantor"
+      ],
+      [
+       "ڈاک خانہ",
+       "ḍāk-ḵāna",
+       "kantor pos"
+      ],
+      [
+       "ریستوران",
+       "resṭorān",
+       "restoran"
+      ],
+      [
+       "رکشہ",
+       "rikshā",
+       "becak bermotor"
+      ],
+      [
+       "گاڑی",
+       "gāṛī",
+       "mobil, kendaraan"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Menerangkan letak"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Urdu",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "کے سامنے",
+       "ke sāmne",
+       "di depan"
+      ],
+      [
+       "کے پیچھے",
+       "ke pīchhe",
+       "di belakang"
+      ],
+      [
+       "کے اوپر",
+       "ke ūpar",
+       "di atas"
+      ],
+      [
+       "کے نیچے",
+       "ke nīche",
+       "di bawah"
+      ],
+      [
+       "کے قریب",
+       "ke qarīb",
+       "di dekat"
+      ],
+      [
+       "کے درمیان",
+       "ke darmiyān",
+       "di antara"
+      ],
+      [
+       "دائیں",
+       "dāeñ",
+       "kanan"
+      ],
+      [
+       "بائیں",
+       "bāeñ",
+       "kiri"
+      ],
+      [
+       "سیدھا",
+       "sīdhā",
+       "lurus"
+      ],
+      [
+       "دور",
+       "dūr",
+       "jauh"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kalimat yang menyelamatkanmu di jalan",
+     "items": [
+      "Bertanya arah: معاف کیجیے، بازار کہاں ہے؟ (\"Permisi, pasar di mana?\"). Kalau kamu ingin lebih tepat: یہاں سے کتنی دور ہے؟ (\"berapa jauh dari sini?\").",
+      "Menawar becak: بھائی صاحب، تھوڑا کم کیجیے (\"Pak, kurangi sedikit\"). Menawar di Pakistan itu normal dan diharapkan, tetapi nadanya harus ringan — bukan menuntut. Kalau harga sudah pas: ٹھیک ہے، چلیں.",
+      "Menyerah dengan sopan waktu kamu tidak paham: معاف کیجیے، میں سمجھا نہیں (laki-laki) atau میں سمجھی نہیں (perempuan) — \"maaf, saya tidak paham\". Lanjutkan dengan آہستہ بولیے (\"bicaralah pelan-pelan\"), dan orang Pakistan hampir selalu mau."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ur": "میں",
+   "baca": "meñ",
+   "id": "di, di dalam"
+  },
+  {
+   "ur": "پر",
+   "baca": "par",
+   "id": "di atas, pada"
+  },
+  {
+   "ur": "سے",
+   "baca": "se",
+   "id": "dari; dengan"
+  },
+  {
+   "ur": "کو",
+   "baca": "ko",
+   "id": "kepada"
+  },
+  {
+   "ur": "تک",
+   "baca": "tak",
+   "id": "sampai"
+  },
+  {
+   "ur": "کے پاس",
+   "baca": "ke pās",
+   "id": "punya; di dekat"
+  },
+  {
+   "ur": "کے ساتھ",
+   "baca": "ke sāth",
+   "id": "bersama"
+  },
+  {
+   "ur": "کے لیے",
+   "baca": "ke liye",
+   "id": "untuk"
+  },
+  {
+   "ur": "شہر",
+   "baca": "shahar",
+   "id": "kota"
+  },
+  {
+   "ur": "سڑک",
+   "baca": "saṛak",
+   "id": "jalan"
+  },
+  {
+   "ur": "دکان",
+   "baca": "dukān",
+   "id": "toko"
+  },
+  {
+   "ur": "دفتر",
+   "baca": "daftar",
+   "id": "kantor"
+  },
+  {
+   "ur": "دور",
+   "baca": "dūr",
+   "id": "jauh"
+  },
+  {
+   "ur": "قریب",
+   "baca": "qarīb",
+   "id": "dekat"
+  },
+  {
+   "ur": "کوئی",
+   "baca": "koī",
+   "id": "seseorang; suatu"
+  },
+  {
+   "ur": "وقت",
+   "baca": "vaqt",
+   "id": "waktu"
+  },
+  {
+   "ur": "دوست",
+   "baca": "dost",
+   "id": "teman"
+  },
+  {
+   "ur": "اکیلا",
+   "baca": "akelā",
+   "id": "sendirian"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah kata dalam kurung ke bentuk miring yang benar.",
+   "items": [
+    "میں (لڑکا) ____ کو دیکھتا ہوں۔",
+    "ہم (کمرا) ____ میں ہیں۔",
+    "کتاب (میز) ____ پر ہے۔",
+    "وہ (لڑکے) ____ کو بلاتا ہے۔",
+    "پانی (گلاس) ____ میں ہے۔"
+   ]
+  },
+  {
+   "prompt": "Pilih postposisi yang tepat.",
+   "items": [
+    "میں لاہور ____ ہوں۔ (tinggal di sana)",
+    "یہ تحفہ آپ ____ ہے۔ (hadiah untuk Anda)",
+    "میں دوست ____ جاتا ہوں۔ (pergi bersama teman)",
+    "بازار ____ کتنے پیسے؟ (sampai pasar)",
+    "میرے ____ وقت نہیں ہے۔ (saya tidak punya waktu)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Urdu.",
+   "items": [
+    "Saya di Lahore.",
+    "Bukunya di atas meja.",
+    "Sekolahnya di belakang masjid.",
+    "Saya punya waktu.",
+    "Ini untuk teman saya."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ہوں / میں / میں / لاہور",
+    "ہے / پر / کتاب / میز",
+    "ہے / کے / مسجد / اسکول / پیچھے",
+    "ہے / وقت / پاس / میرے",
+    "ہے / لیے / یہ / کے / آپ"
+   ]
+  }
+ ],
+ "answers": [
+  "لڑکے — کمرے — میز — لڑکوں — گلاس",
+  "میں — کے لیے — کے ساتھ — تک — پاس",
+  "میں لاہور میں ہوں۔ — کتاب میز پر ہے۔ — اسکول مسجد کے پیچھے ہے۔ — میرے پاس وقت ہے۔ — یہ میرے دوست کے لیے ہے۔",
+  "میں لاہور میں ہوں۔ — کتاب میز پر ہے۔ — اسکول مسجد کے پیچھے ہے۔ — میرے پاس وقت ہے۔ — یہ آپ کے لیے ہے۔"
+ ],
+ "wave": "Terjemahkan lima kalimat berketerangan tempat dari hari-harimu sendiri, lalu periksa: apakah kata depannya sudah kamu taruh di belakang?"
+}

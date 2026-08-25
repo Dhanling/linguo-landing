@@ -1,0 +1,542 @@
+{
+ "title": "Di pasar: harga, tawar-menawar, dan angka besar",
+ "title_target": "بازار میں",
+ "goal": "Menanyakan harga, menawar dengan nada yang benar, dan membaca angka sampai seratus — bagian bahasa Urdu yang paling banyak menuntut hafalan.",
+ "bekal": [
+  "menanyakan harga dengan کتنے کا / کتنے کی",
+  "menawar tanpa terdengar menuntut",
+  "mengenali pola angka 20–100 dan satuan لاکھ dan کروڑ"
+ ],
+ "dialogs": [
+  {
+   "title": "مکالمہ — انارکلی بازار",
+   "intro": "Pasar Anarkali, sore hari. Budi berhenti di depan lapak kain sambil memegang sehelai kemeja.",
+   "lines": [
+    {
+     "speaker": "بودی:",
+     "text": "بھائی صاحب، یہ قمیض کتنے کی ہے؟",
+     "baca": "bhāī sāhab, ye qamīz kitne kī hai?",
+     "id": "Pak, kemeja ini harganya berapa?",
+     "literal": "saudara tuan, ini kemeja berapa punya-pr adalah?"
+    },
+    {
+     "speaker": "دکاندار:",
+     "text": "دو ہزار روپے، صاحب۔ بہت اچھا کپڑا ہے۔",
+     "baca": "do hazār rūpaye, sāhab. bahut achchhā kapṛā hai.",
+     "id": "Dua ribu rupee, Tuan. Kainnya bagus sekali.",
+     "literal": "dua ribu rupee, tuan. sangat baik kain adalah."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "دو ہزار؟ تھوڑا زیادہ ہے۔",
+     "baca": "do hazār? thoṛā zyāda hai.",
+     "id": "Dua ribu? Agak kemahalan.",
+     "literal": "dua ribu? sedikit lebih adalah."
+    },
+    {
+     "speaker": "دکاندار:",
+     "text": "آپ کتنا دیتے ہیں؟",
+     "baca": "āp kitnā dete haiñ?",
+     "id": "Anda mau bayar berapa?",
+     "literal": "Anda berapa memberi ada?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "بارہ سو۔",
+     "baca": "bārah sau.",
+     "id": "Seribu dua ratus.",
+     "literal": "dua-belas ratus."
+    },
+    {
+     "speaker": "دکاندار:",
+     "text": "نہیں صاحب، یہ بہت کم ہے۔ اٹھارہ سو۔",
+     "baca": "nahīñ sāhab, ye bahut kam hai. aṭhārah sau.",
+     "id": "Tidak Tuan, itu terlalu sedikit. Seribu delapan ratus.",
+     "literal": "tidak tuan, ini sangat sedikit adalah. delapan-belas ratus."
+    },
+    {
+     "speaker": "بودی:",
+     "text": "پندرہ سو، آخری بات۔",
+     "baca": "pandrah sau, āḵirī bāt.",
+     "id": "Seribu lima ratus, terakhir.",
+     "literal": "lima-belas ratus, terakhir perkataan."
+    },
+    {
+     "speaker": "دکاندار:",
+     "text": "چلیں، آپ کے لیے پندرہ سو۔ کون سا رنگ؟",
+     "baca": "chaleñ, āp ke liye pandrah sau. kaun sā rañg?",
+     "id": "Baiklah, untuk Anda seribu lima ratus. Warna yang mana?",
+     "literal": "mari, Anda punya untuk lima-belas ratus. mana warna?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "نیلا۔ کیا میرا سائز ہے؟",
+     "baca": "nīlā. kyā merā sāiz hai?",
+     "id": "Biru. Apakah ada ukuran saya?",
+     "literal": "biru. apa punya-saya ukuran ada?"
+    },
+    {
+     "speaker": "دکاندار:",
+     "text": "جی، سب سائز ہیں۔ اور کچھ؟",
+     "baca": "jī, sab sāiz haiñ. aur kuchh?",
+     "id": "Ya, semua ukuran ada. Ada lagi?",
+     "literal": "iya, semua ukuran ada. lagi sesuatu?"
+    },
+    {
+     "speaker": "بودی:",
+     "text": "نہیں، بس۔ یہ لیجیے پیسے۔",
+     "baca": "nahīñ, bas. ye lījiye paise.",
+     "id": "Tidak, cukup. Ini uangnya.",
+     "literal": "tidak, cukup. ini ambillah uang."
+    },
+    {
+     "speaker": "دکاندار:",
+     "text": "شکریہ صاحب۔ پھر تشریف لائیے۔",
+     "baca": "shukriya sāhab. phir tashrīf lāiye.",
+     "id": "Terima kasih Tuan. Silakan datang lagi.",
+     "literal": "terima kasih tuan. lagi kehormatan bawalah."
+    }
+   ],
+   "notes": [
+    "**Harga ditanyakan dengan کتنے کا atau کتنے کی, mengikuti barangnya.** قمیض perempuan, jadi کتنے کی. کرتا (baju panjang laki-laki) laki-laki, jadi کتنے کا. Kalau kamu lupa jenis kelaminnya, ada jalan aman yang selalu benar: **قیمت کیا ہے؟** (\"harganya berapa?\") — قیمت selalu perempuan dan kalimatnya tidak berubah.",
+    "**Angka ratusan disebut dengan cara yang mengejutkan.** \"Seribu lima ratus\" bukan ایک ہزار پانچ سو melainkan **پندرہ سو** — \"lima belas ratus\". Pola ini dipakai untuk semua angka antara 1.100 dan 1.900, persis seperti bahasa Inggris *fifteen hundred*. Di pasar, hampir semua tawar-menawar berlangsung dalam satuan سو.",
+    "**Menawar itu diharapkan, tetapi nadanya ringan.** Kalimat pembuka yang benar bukan \"terlalu mahal\" melainkan **تھوڑا زیادہ ہے** (\"agak kemahalan\") atau **تھوڑا کم کیجیے** (\"kurangi sedikit\"). Menolak dengan keras — یہ بہت مہنگا ہے — terdengar seperti menuduh penjualnya curang. Kalau harganya sudah pas: ٹھیک ہے.",
+    "**Kata بس adalah salah satu kata paling berguna di seluruh bahasa Urdu.** Artinya \"cukup\", \"sudah\", \"stop\". بس؟ = \"sudah?\". بس! = \"cukup!\". بس اتنا ہی = \"segitu saja\". Di warung makan, waktu pelayan menuangkan teh, بس بس menghentikannya dengan sopan.",
+    "**Ungkapan تشریف لائیے sering kamu dengar dan patut kamu kenali.** Harfiahnya \"bawalah kehormatan Anda\" — cara sangat sopan mengatakan \"silakan datang\" atau \"silakan masuk\". Sepupunya: تشریف رکھیے (\"silakan duduk\"). Kamu belum perlu memakainya, tetapi mengenalinya membuat kesopanan Urdu terbuka jauh lebih cepat.",
+    "**Kata کچھ dan کوئی dibagi tugas.** کچھ untuk benda dan jumlah: اور کچھ؟ (\"ada lagi?\"), کچھ پانی (\"sedikit air\"). کوئی untuk orang dan untuk satuan yang bisa dihitung: کوئی اور؟ (\"orang lain?\"), کوئی مسئلہ نہیں (\"tidak ada masalah\")."
+   ],
+   "grammars": [
+    {
+     "title": "Pola angka 20 sampai 100",
+     "body": [
+      "Bahasa Urdu punya seratus kata angka yang masing-masing berdiri sendiri, dan tidak ada gunanya berpura-pura bisa ditebak. Tetapi ada dua pola yang membuat telingamu jauh lebih cepat menangkapnya daripada matamu, dan dua pola itu layak kamu ketahui sejak sekarang.",
+      "**Pola pertama: ekor puluhannya tetap.** Semua angka 20-an berakhiran ـیس, 30-an ـتیس, 40-an ـالیس, 50-an ـاون, 60-an ـسٹھ, 70-an ـہتر, 80-an ـاسی, 90-an ـانوے. Begitu kamu mendengar ekornya, kamu langsung tahu puluhannya."
+     ],
+     "table": {
+      "head": [
+       "Puluhan",
+       "Urdu",
+       "Angka +1",
+       "Angka +5",
+       "Angka +9 (\"kurang satu\")"
+      ],
+      "rows": [
+       [
+        "20",
+        "بیس *bīs*",
+        "اکیس *ikkīs*",
+        "پچیس *pachchīs*",
+        "انتیس *untīs* = 29"
+       ],
+       [
+        "30",
+        "تیس *tīs*",
+        "اکتیس *ikattīs*",
+        "پینتیس *paiñtīs*",
+        "انتالیس *untālīs* = 39"
+       ],
+       [
+        "40",
+        "چالیس *chālīs*",
+        "اکتالیس *iktālīs*",
+        "پینتالیس *paiñtālīs*",
+        "انچاس *unchās* = 49"
+       ],
+       [
+        "50",
+        "پچاس *pachās*",
+        "اکاون *ikyāvan*",
+        "پچپن *pachpan*",
+        "انسٹھ *unsaṭh* = 59"
+       ],
+       [
+        "60",
+        "ساٹھ *sāṭh*",
+        "اکسٹھ *iksaṭh*",
+        "پینسٹھ *paiñsaṭh*",
+        "انہتر *unhattar* = 69"
+       ],
+       [
+        "70",
+        "ستر *sattar*",
+        "اکہتر *ikhattar*",
+        "پچہتر *pachhattar*",
+        "اناسی *unāsī* = 79"
+       ]
+      ]
+     },
+     "after": [
+      "**Pola kedua: yang berakhiran 9 dibentuk \"kurang satu\".** Awalan اُن- berarti \"kurang satu dari\", jadi انتیس (29) harfiahnya \"kurang satu dari tiga puluh\". Pola yang sama membentuk انیس (19), انتالیس (39), انچاس (49), انسٹھ (59), انہتر (69), اناسی (79), نناوے (99).",
+      "Daftar lengkap 1–100 ada di halaman belakang modul. Jangan hafalkan sekaligus — hafalkan yang kamu butuhkan: harga, umur, nomor rumah, dan tahun."
+     ]
+    },
+    {
+     "title": "Uang dan satuan besar",
+     "body": [
+      "Mata uang Pakistan adalah روپیہ (*rūpayā*), kata yang sama asalnya dengan \"rupiah\". Bentuk jamaknya روپے (*rūpaye*), dan bentuk jamak inilah yang selalu dipakai dengan angka."
+     ],
+     "table": {
+      "head": [
+       "Urdu",
+       "Cara baca",
+       "Nilai",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "سو",
+        "sau",
+        "100",
+        "تین سو روپے — 300 rupee"
+       ],
+       [
+        "ہزار",
+        "hazār",
+        "1.000",
+        "دو ہزار — 2.000"
+       ],
+       [
+        "لاکھ",
+        "lākh",
+        "**100.000**",
+        "پانچ لاکھ — 500.000"
+       ],
+       [
+        "کروڑ",
+        "karoṛ",
+        "**10.000.000**",
+        "دو کروڑ — 20 juta"
+       ],
+       [
+        "آدھا",
+        "ādhā",
+        "setengah",
+        "آدھا کلو — setengah kilo"
+       ],
+       [
+        "ڈیڑھ",
+        "ḍeṛh",
+        "satu setengah",
+        "ڈیڑھ سو — 150"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Bahasa Urdu **tidak berhitung dengan juta**. Satu juta disebut دس لاکھ (\"sepuluh laksa\"), dan seratus juta disebut دس کروڑ. Kalau kamu membaca berita Pakistan atau India, seluruh angka ekonominya akan muncul dalam dua satuan ini — dan otakmu perlu waktu untuk berhenti menerjemahkannya ke juta."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Belanja",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Urdu",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "قیمت",
+       "qīmat",
+       "harga"
+      ],
+      [
+       "پیسے",
+       "paise",
+       "uang"
+      ],
+      [
+       "روپے",
+       "rūpaye",
+       "rupee"
+      ],
+      [
+       "مہنگا",
+       "mahñgā",
+       "mahal"
+      ],
+      [
+       "سستا",
+       "sastā",
+       "murah"
+      ],
+      [
+       "کپڑا",
+       "kapṛā",
+       "kain, pakaian"
+      ],
+      [
+       "قمیض",
+       "qamīz",
+       "kemeja"
+      ],
+      [
+       "جوتے",
+       "jūte",
+       "sepatu"
+      ],
+      [
+       "رنگ",
+       "rañg",
+       "warna"
+      ],
+      [
+       "سائز",
+       "sāiz",
+       "ukuran"
+      ],
+      [
+       "کلو",
+       "kilo",
+       "kilo"
+      ],
+      [
+       "سبزی",
+       "sabzī",
+       "sayur"
+      ],
+      [
+       "پھل",
+       "phal",
+       "buah"
+      ],
+      [
+       "گوشت",
+       "gosht",
+       "daging"
+      ],
+      [
+       "دودھ",
+       "dūdh",
+       "susu"
+      ],
+      [
+       "چینی",
+       "chīnī",
+       "gula"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Warna"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Urdu",
+      "Cara baca",
+      "Arti",
+      "Berubah?"
+     ],
+     "rows": [
+      [
+       "کالا",
+       "kālā",
+       "hitam",
+       "ya — کالی، کالے"
+      ],
+      [
+       "سفید",
+       "safed",
+       "putih",
+       "tidak"
+      ],
+      [
+       "لال / سرخ",
+       "lāl / surḵ",
+       "merah",
+       "tidak"
+      ],
+      [
+       "نیلا",
+       "nīlā",
+       "biru",
+       "ya — نیلی، نیلے"
+      ],
+      [
+       "ہرا",
+       "harā",
+       "hijau",
+       "ya — ہری، ہرے"
+      ],
+      [
+       "پیلا",
+       "pīlā",
+       "kuning",
+       "ya — پیلی، پیلے"
+      ],
+      [
+       "بھورا",
+       "bhūrā",
+       "cokelat",
+       "ya — بھوری، بھورے"
+      ],
+      [
+       "گلابی",
+       "gulābī",
+       "merah muda",
+       "tidak"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Enam kalimat yang cukup untuk seluruh transaksi",
+     "items": [
+      "Membuka: یہ کتنے کا ہے؟ atau قیمت کیا ہے؟ — \"berapa harganya?\"",
+      "Menawar: تھوڑا کم کیجیے۔ (\"kurangi sedikit\") · آخری قیمت کیا ہے؟ (\"harga terakhirnya berapa?\")",
+      "Menolak dengan sopan: نہیں، شکریہ۔ میں بعد میں آتا ہوں۔ (\"tidak, terima kasih, nanti saya kembali\") — dan ini sering justru menurunkan harganya.",
+      "Menutup: ٹھیک ہے، دے دیجیے۔ (\"baik, berikan saja\") · یہ لیجیے۔ (\"ini, ambillah\") · باقی پیسے؟ (\"kembaliannya?\")"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ur": "قیمت",
+   "baca": "qīmat",
+   "id": "harga"
+  },
+  {
+   "ur": "پیسے",
+   "baca": "paise",
+   "id": "uang"
+  },
+  {
+   "ur": "سو",
+   "baca": "sau",
+   "id": "seratus"
+  },
+  {
+   "ur": "ہزار",
+   "baca": "hazār",
+   "id": "seribu"
+  },
+  {
+   "ur": "لاکھ",
+   "baca": "lākh",
+   "id": "seratus ribu"
+  },
+  {
+   "ur": "مہنگا",
+   "baca": "mahñgā",
+   "id": "mahal"
+  },
+  {
+   "ur": "سستا",
+   "baca": "sastā",
+   "id": "murah"
+  },
+  {
+   "ur": "کم",
+   "baca": "kam",
+   "id": "sedikit, kurang"
+  },
+  {
+   "ur": "زیادہ",
+   "baca": "zyāda",
+   "id": "banyak, lebih"
+  },
+  {
+   "ur": "تھوڑا",
+   "baca": "thoṛā",
+   "id": "sedikit"
+  },
+  {
+   "ur": "بس",
+   "baca": "bas",
+   "id": "cukup, sudah"
+  },
+  {
+   "ur": "کچھ",
+   "baca": "kuchh",
+   "id": "sesuatu, sedikit"
+  },
+  {
+   "ur": "رنگ",
+   "baca": "rañg",
+   "id": "warna"
+  },
+  {
+   "ur": "دکاندار",
+   "baca": "dukāndār",
+   "id": "penjual"
+  },
+  {
+   "ur": "دینا",
+   "baca": "denā",
+   "id": "memberi"
+  },
+  {
+   "ur": "لینا",
+   "baca": "lenā",
+   "id": "mengambil"
+  },
+  {
+   "ur": "آخری",
+   "baca": "āḵirī",
+   "id": "terakhir"
+  },
+  {
+   "ur": "سب",
+   "baca": "sab",
+   "id": "semua"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angka berikut dengan huruf Urdu.",
+   "items": [
+    "25",
+    "40",
+    "67",
+    "99",
+    "150"
+   ]
+  },
+  {
+   "prompt": "Pilih کتنے کا atau کتنے کی.",
+   "items": [
+    "یہ قمیض ____ ہے؟",
+    "یہ کرتا ____ ہے؟",
+    "یہ کتاب ____ ہے؟",
+    "یہ جوتے ____ ہیں؟",
+    "یہ چائے ____ ہے؟"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Urdu.",
+   "items": [
+    "Berapa harganya?",
+    "Agak kemahalan.",
+    "Kurangi sedikit.",
+    "Baik, saya ambil.",
+    "Ada lagi? Tidak, cukup."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ہے / کی / یہ / کتنے / قمیض / ؟",
+    "ہے / زیادہ / تھوڑا / یہ",
+    "کیجیے / کم / تھوڑا",
+    "ہے / آخری / کیا / قیمت / ؟",
+    "ہیں / روپے / پندرہ / سو"
+   ]
+  }
+ ],
+ "answers": [
+  "پچیس — چالیس — سڑسٹھ — ننانوے — ڈیڑھ سو",
+  "کتنے کی — کتنے کا — کتنے کی — کتنے کے — کتنے کی",
+  "قیمت کیا ہے؟ — تھوڑا زیادہ ہے۔ — تھوڑا کم کیجیے۔ — ٹھیک ہے، میں لیتا ہوں۔ — اور کچھ؟ نہیں، بس۔",
+  "یہ قمیض کتنے کی ہے؟ — یہ تھوڑا زیادہ ہے۔ — تھوڑا کم کیجیے۔ — آخری قیمت کیا ہے؟ — پندرہ سو روپے ہیں۔"
+ ],
+ "wave": "Hafalkan angka 20, 30, 40, 50, 60, 70, 80, 90 hari ini — cuma delapan kata. Sisanya menempel sendiri begitu kerangka puluhannya berdiri."
+}
