@@ -1,0 +1,203 @@
+{
+ "title": "Apa yang saya lakukan kemarin",
+ "title_target": "Zer egin zenuen atzo?",
+ "goal": "Menceritakan perbuatan yang sudah lewat dengan bentuk lampau ukan, dan menyusun cerita berurutan.",
+ "bekal": [
+  "memakai *nuen, zenuen, zuen, genuen, zenuten, zuten* dan bentuk jamaknya *nituen*",
+  "menceritakan akhir pekan atau perjalanan dari awal sampai akhir",
+  "memakai kata penyambung cerita: *gero, ondoren, azkenean, bat-batean*"
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Kontatu asteburua",
+   "intro": "Maite menarik kursi dan duduk di depan Budi, jelas ingin mendengar semuanya.",
+   "lines": [
+    { "speaker": "Maite:", "text": "Kontatu! Zer egin zenuen asteburuan?", "id": "Cerita dong! Akhir pekan kamu ngapain?", "literal": "ceritakan! apa lakukan punya-kamu-nya-lampau akhir-pekan-di?" },
+    { "speaker": "Budi:", "text": "Larunbatean Guggenheim museoa ikusi nuen.", "id": "Sabtu saya lihat museum Guggenheim.", "literal": "Sabtu-di Guggenheim museum-itu lihat punya-saya-nya-lampau." },
+    { "speaker": "Maite:", "text": "Gustatu zitzaizun?", "id": "Kamu suka?", "literal": "menyenangkan kepada-kamu-ia-lampau?" },
+    { "speaker": "Budi:", "text": "Asko! Argazki pila bat atera nituen.", "id": "Suka sekali! Saya ambil banyak sekali foto.", "literal": "banyak! foto tumpukan satu keluarkan punya-saya-mereka-lampau." },
+    { "speaker": "Maite:", "text": "Eta gero?", "id": "Lalu?", "literal": "dan nanti?" },
+    { "speaker": "Budi:", "text": "Gero pintxoak jan genituen Alde Zaharrean.", "id": "Lalu kami makan pintxo di Kota Tua.", "literal": "nanti pintxo-jamak makan punya-kami-mereka-lampau Sisi Tua-di." },
+    { "speaker": "Maite:", "text": "Zer jan zenuten?", "id": "Kalian makan apa?", "literal": "apa makan punya-kalian-nya-lampau?" },
+    { "speaker": "Budi:", "text": "Bakailaoa, tortilla eta gilda batzuk. Txakolina ere edan genuen.", "id": "Bakalao, telur dadar, dan beberapa gilda. Kami minum txakoli juga.", "literal": "bakalao-itu, telur-dadar dan gilda beberapa. txakoli-itu juga minum punya-kami-nya-lampau." },
+    { "speaker": "Maite:", "text": "Ederra! Eta igandean zer egin zenuen?", "id": "Enak banget! Dan hari Minggu kamu ngapain?", "literal": "indah-itu! dan Minggu-di apa lakukan punya-kamu-nya-lampau?" },
+    { "speaker": "Budi:", "text": "Ezer ez. Egun osoan lo egin nuen!", "id": "Tidak ada. Saya tidur seharian!", "literal": "apa-pun tidak. hari seluruh-di tidur lakukan punya-saya-nya-lampau!" },
+    { "speaker": "Maite:", "text": "Ha, ha! Beharrezkoa zen, ziur.", "id": "Ha, ha! Perlu itu, pasti.", "literal": "perlu-itu adalah-lampau, pasti." },
+    { "speaker": "Budi:", "text": "Bai. Eta orain berriro prest nago.", "id": "Ya. Dan sekarang saya siap lagi.", "literal": "ya. dan sekarang lagi siap berada-saya." }
+   ],
+   "notes": [
+    "**Bentuk lampau ukan: tambahkan n, ganti awalannya.** *Dut* → *nuen*, *duzu* → *zenuen*, *du* → *zuen*. Awalan yang tadinya *d-* menjadi *n-* atau *z-*, dan seluruhnya berakhir *-n*. Terlihat rumit di tabel, tapi tiga bentuk pertama sudah menutup hampir semua percakapan.",
+    "**Kata kerjanya memakai bentuk kamus, bukan -t(z)en.** *Ikusi nuen* (saya melihat), bukan *ikusten nuen*. Bentuk *-t(z)en* di masa lampau berarti kebiasaan: *lehen egunero ikusten nuen* (dulu saya melihatnya tiap hari). Pembagian yang sama persis dengan Unit 16.",
+    "**Gustatu zitzaizun? — bentuk lampau dari zaizu.** Kata kerja golongan *gustatu* juga punya bentuk lampau: *zitzaidan* (kepada saya), *zitzaizun* (kepadamu), *zitzaion* (kepadanya). Untuk sekarang cukup kenali dua kalimat: *Gustatu zitzaizun?* dan *Bai, asko gustatu zitzaidan.*",
+    "**Pila bat — \"setumpuk\", cara wajar bilang \"banyak sekali\".** *Argazki pila bat* (banyak sekali foto), *jende pila bat* (banyak sekali orang). Bentuk lain: *asko* (banyak), *batzuk* (beberapa), *gutxi batzuk* (sedikit saja), *ezer ez* (tidak ada sama sekali)."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Lampau ukan: nuen, zenuen, zuen",
+   "blocks": [
+    { "type": "tabel", "head": ["Pelaku", "Benda tunggal", "Benda jamak", "Contoh"], "rows": [
+     ["nik", "**nuen**", "**nituen**", "Museoa ikusi nuen."],
+     ["zuk", "**zenuen**", "**zenituen**", "Zer egin zenuen?"],
+     ["hark", "**zuen**", "**zituen**", "Jonek kafea hartu zuen."],
+     ["guk", "**genuen**", "**genituen**", "Pintxoak jan genituen."],
+     ["zuek", "**zenuten**", "**zenituzten**", "Non afaldu zenuten?"],
+     ["haiek", "**zuten**", "**zituzten**", "Etxera eraman zuten."]
+    ]},
+    { "type": "p", "text": "Bandingkan berdampingan dengan bentuk sekarang, dan polanya langsung terlihat: *dut → nuen*, *duzu → zenuen*, *du → zuen*, *dugu → genuen*, *duzue → zenuten*, *dute → zuten*. Sisipan *-it-* untuk benda jamak tetap di tempatnya: *ditut → nituen*." },
+    { "type": "sub", "text": "Menyangkal dan bertanya di masa lampau" },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia"], "rows": [
+     ["Ez nuen ezer egin.", "Saya tidak melakukan apa-apa."],
+     ["Ez genuen kaferik hartu.", "Kami tidak minum kopi."],
+     ["Zer egin zenuen atzo?", "Kemarin kamu melakukan apa?"],
+     ["Non afaldu zenuen?", "Kamu makan malam di mana?"],
+     ["Zenbat ordaindu zenuen?", "Kamu bayar berapa?"],
+     ["Nork esan zuen hori?", "Siapa yang bilang begitu?"]
+    ]},
+    { "type": "kotak", "title": "Dua kalimat lampau untuk setiap kata kerja", "items": [
+     "**Sekali terjadi:** *Atzo pintxoak jan nituen.* — Kemarin saya makan pintxo.",
+     "**Kebiasaan dulu:** *Lehen pintxoak jaten nituen egunero.* — Dulu saya makan pintxo tiap hari.",
+     "Bedanya cuma bentuk kata kerjanya: *jan* (sekali) dan *jaten* (kebiasaan). Bantunya sama.",
+     "Kalau kamu ragu, pakai bentuk kamus. Cerita akhir pekan hampir selalu berisi kejadian sekali, bukan kebiasaan."
+    ]}
+   ]
+  },
+  {
+   "title": "Menyusun cerita",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia"], "rows": [
+     ["lehenengo", "le-e-NEN-go", "pertama-tama"],
+     ["gero", "GE-ro", "lalu"],
+     ["ondoren", "on-DO-ren", "sesudah itu"],
+     ["gainera", "ga-i-NE-ra", "lagi pula"],
+     ["bat-batean", "bat-ba-TE-an", "tiba-tiba"],
+     ["azkenean", "as-ke-NE-an", "akhirnya"],
+     ["orduan", "or-DU-an", "waktu itu, lalu"],
+     ["hala ere", "A-la E-re", "meskipun begitu"],
+     ["beraz", "BE-ras", "jadi, maka"],
+     ["adibidez", "a-di-BI-des", "misalnya"]
+    ]},
+    { "type": "p", "text": "Bacalah paragraf berikut keras-keras; ia memakai seluruh bentuk lampau unit ini dan bisa kamu tiru dengan mengganti isinya sendiri." },
+    { "type": "kotak", "title": "Nire asteburua", "items": [
+     "*Larunbat goizean goiz esnatu nintzen. Gosaldu nuen eta Donostiara joan nintzen trenez. Lehenengo Zurriola hondartza ikusi nuen; jendez beteta zegoen. Gero Alde Zaharrera joan ginen eta pintxo batzuk jan genituen. Arratsaldean euria hasi zuen, beraz museo batera sartu ginen. Azkenean, gaueko hamarretan Bilbora itzuli nintzen. Oso nekatuta nengoen, baina egun ederra izan zen.*",
+     "Perhatikan pergantian bantunya: *joan **nintzen*** (tanpa objek), *ikusi **nuen*** (ada objeknya). Seluruh cerita berpindah-pindah antara keduanya, dan itulah irama alami bahasa Basque."
+    ]}
+   ]
+  },
+  {
+   "title": "Bertanya tentang masa lalu",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia"], "rows": [
+     ["Zer egin zenuen atzo?", "Kemarin kamu ngapain?"],
+     ["Nora joan zinen?", "Kamu pergi ke mana?"],
+     ["Norekin joan zinen?", "Dengan siapa kamu pergi?"],
+     ["Zer moduz joan zen?", "Bagaimana hasilnya?"],
+     ["Gustatu zitzaizun?", "Kamu suka?"],
+     ["Zenbat denbora egon zinen?", "Berapa lama kamu di sana?"],
+     ["Noiz itzuli zinen?", "Kapan kamu kembali?"],
+     ["Zer ikusi zenuen?", "Apa yang kamu lihat?"]
+    ]},
+    { "type": "sub", "text": "Menjawab singkat" },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia"], "rows": [
+     ["Oso ondo pasatu nuen.", "Saya senang sekali."],
+     ["Primeran!", "Mantap!"],
+     ["Ez zen oso ondo joan.", "Tidak begitu lancar."],
+     ["Asko gustatu zitzaidan.", "Saya suka sekali."],
+     ["Ez nuen ezer berezirik egin.", "Tidak melakukan apa-apa yang istimewa."],
+     ["Etxean geratu nintzen.", "Saya di rumah saja."]
+    ]},
+    { "type": "kotak", "title": "Ondo pasatu — ungkapan yang wajib kamu punya", "items": [
+     "*Ondo pasatu nuen* — saya bersenang-senang (harfiahnya \"saya melewatkannya dengan baik\").",
+     "*Ondo pasa!* — Selamat bersenang-senang! Diucapkan kepada orang yang akan pergi berlibur atau ke pesta.",
+     "*Primeran pasatu genuen* — kami senang sekali.",
+     "Ungkapan ini muncul di setiap percakapan sesudah akhir pekan; menguasainya membuat obrolan Senin pagimu terdengar sangat wajar."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "eu": "kontatu", "baca": "kon-TA-tu", "id": "menceritakan" },
+  { "eu": "esan", "baca": "e-SAN", "id": "mengatakan" },
+  { "eu": "galdetu", "baca": "gal-DE-tu", "id": "bertanya" },
+  { "eu": "atera", "baca": "a-TE-ra", "id": "mengeluarkan, memotret" },
+  { "eu": "eraman", "baca": "e-RA-man", "id": "membawa pergi" },
+  { "eu": "ekarri", "baca": "e-KA-rri", "id": "membawa datang" },
+  { "eu": "itzuli", "baca": "i-TSU-li", "id": "kembali" },
+  { "eu": "geratu", "baca": "ge-RA-tu", "id": "tinggal, tetap" },
+  { "eu": "pasatu", "baca": "pa-SA-tu", "id": "melewatkan, lewat" },
+  { "eu": "gertatu", "baca": "ger-TA-tu", "id": "terjadi" },
+  { "eu": "aurkitu", "baca": "a-ur-KI-tu", "id": "menemukan" },
+  { "eu": "erabaki", "baca": "e-ra-BA-ki", "id": "memutuskan" },
+  { "eu": "argazki", "baca": "ar-GAS-ki", "id": "foto" },
+  { "eu": "pila bat", "baca": "PI-la bat", "id": "banyak sekali" },
+  { "eu": "batzuk", "baca": "ba-TSUK", "id": "beberapa" },
+  { "eu": "osoa", "baca": "o-SO-a", "id": "seluruh" },
+  { "eu": "berezi", "baca": "be-RE-si", "id": "istimewa" },
+  { "eu": "berriro", "baca": "be-RRI-ro", "id": "lagi" },
+  { "eu": "azkenean", "baca": "as-ke-NE-an", "id": "akhirnya" },
+  { "eu": "bat-batean", "baca": "bat-ba-TE-an", "id": "tiba-tiba" },
+  { "eu": "gainera", "baca": "ga-i-NE-ra", "id": "lagi pula" },
+  { "eu": "beraz", "baca": "BE-ras", "id": "jadi, maka" },
+  { "eu": "hala ere", "baca": "A-la E-re", "id": "meskipun begitu" },
+  { "eu": "adibidez", "baca": "a-di-BI-des", "id": "misalnya" },
+  { "eu": "ziur", "baca": "SI-ur", "id": "pasti, yakin" },
+  { "eu": "beharrezko", "baca": "be-a-RRES-ko", "id": "perlu" },
+  { "eu": "Alde Zaharra", "baca": "AL-de SA-a-rra", "id": "Kota Tua" },
+  { "eu": "museo", "baca": "mu-SE-o", "id": "museum" },
+  { "eu": "ondo pasatu", "baca": "ON-do pa-SA-tu", "id": "bersenang-senang" },
+  { "eu": "egun osoan", "baca": "e-GUN o-SO-an", "id": "seharian" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk lampau.",
+   "items": [
+    "Museoa ikusten dut. → Museoa ikusi ____.",
+    "Pintxoak jaten ditugu. → Pintxoak jan ____.",
+    "Zer egiten duzu? → Zer egin ____?",
+    "Kafea hartzen du. → Kafea hartu ____.",
+    "Liburuak erosten dituzte. → Liburuak erosi ____.",
+    "Non afaltzen duzue? → Non afaldu ____?"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Basque.",
+   "items": [
+    "Kemarin kamu ngapain?",
+    "Saya melihat museum.",
+    "Kami makan pintxo.",
+    "Saya tidak melakukan apa-apa.",
+    "Saya senang sekali.",
+    "Saya kembali jam sepuluh malam."
+   ]
+  },
+  {
+   "prompt": "Pilih bantu yang tepat: *nintzen* atau *nuen*.",
+   "items": [
+    "Donostiara joan ____.",
+    "Museoa ikusi ____.",
+    "Goiz esnatu ____.",
+    "Pintxo bat jan ____.",
+    "Etxean geratu ____.",
+    "Argazki bat atera ____."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "zenuen / zer / atzo / egin / ?",
+    "nuen / museoa / ikusi / larunbatean",
+    "genituen / pintxoak / jan",
+    "nuen / ez / egin / ezer",
+    "nintzen / etxean / geratu / igandean",
+    "zitzaidan / gustatu / asko"
+   ]
+  }
+ ],
+ "answers": [
+  "nuen — genituen — zenuen — zuen — zituzten — zenuten",
+  "Zer egin zenuen atzo? — Museoa ikusi nuen. — Pintxoak jan genituen. — Ez nuen ezer egin. — Oso ondo pasatu nuen. — Gaueko hamarretan itzuli nintzen.",
+  "nintzen — nuen — nintzen — nuen — nintzen — nuen",
+  "Zer egin zenuen atzo? — Larunbatean museoa ikusi nuen. — Pintxoak jan genituen. — Ez nuen ezer egin. — Igandean etxean geratu nintzen. — Asko gustatu zitzaidan."
+ ]
+}

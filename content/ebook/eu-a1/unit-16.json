@@ -1,0 +1,206 @@
+{
+ "title": "Kemarin saya di mana",
+ "title_target": "Non zeunden atzo?",
+ "goal": "Bercerita tentang keadaan yang sudah lewat dengan bentuk lampau izan dan egon, dan menyebut kapan sesuatu terjadi.",
+ "bekal": [
+  "memakai *nintzen, zinen, zen, ginen, zineten, ziren* untuk keadaan lampau",
+  "memakai *nengoen, zeunden, zegoen* untuk tempat dan keadaan lampau",
+  "menyebut waktu lampau: *atzo, joan den astean, duela bi urte*"
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Asteburua Donostian",
+   "intro": "Senin pagi di euskaltegi. Ainhoa memperhatikan Budi datang dengan wajah kecokelatan.",
+   "lines": [
+    { "speaker": "Ainhoa:", "text": "Non zeunden asteburuan? Ez zinen hemen egon.", "id": "Akhir pekan kamu di mana? Kamu tidak ada di sini.", "literal": "di-mana berada-kamu-lampau akhir-pekan-di? tidak adalah-kamu-lampau di-sini berada." },
+    { "speaker": "Budi:", "text": "Donostian nengoen, Nerearekin.", "id": "Saya di Donostia, bersama Nerea.", "literal": "Donostia-di berada-saya-lampau, Nerea-dengan." },
+    { "speaker": "Ainhoa:", "text": "Zer moduz? Eguraldia ona zen?", "id": "Bagaimana? Cuacanya bagus?", "literal": "apa cara-nya? cuaca-itu baik-itu adalah-lampau?" },
+    { "speaker": "Budi:", "text": "Larunbatean euria ari zuen, baina igandea eguzkitsua zen.", "id": "Sabtu hujan, tapi Minggu cerah.", "literal": "Sabtu-di hujan-itu sedang punya-lampau, tapi Minggu-itu matahari-penuh-itu adalah-lampau." },
+    { "speaker": "Ainhoa:", "text": "Hondartzara joan zineten?", "id": "Kalian ke pantai?", "literal": "pantai-ke pergi adalah-kalian-lampau?" },
+    { "speaker": "Budi:", "text": "Bai, Zurriolara. Jendez beteta zegoen!", "id": "Ya, ke Zurriola. Penuh orang!", "literal": "ya, Zurriola-ke. orang-dengan penuh berada-lampau!" },
+    { "speaker": "Ainhoa:", "text": "Uda da, normala da. Eta zer moduz Donostia?", "id": "Musim panas, wajar. Dan Donostia bagaimana?", "literal": "musim-panas adalah, biasa-itu adalah. dan apa cara-nya Donostia?" },
+    { "speaker": "Budi:", "text": "Oso polita! Baina Bilbo baino garestiagoa zen.", "id": "Cantik sekali! Tapi lebih mahal daripada Bilbo.", "literal": "sangat cantik-itu! tapi Bilbo daripada mahal-lebih-itu adalah-lampau." },
+    { "speaker": "Ainhoa:", "text": "Ha, ha! Bilbotarra zara jada!", "id": "Ha, ha! Kamu sudah jadi orang Bilbo!", "literal": "ha, ha! Bilbo-orang-itu adalah-kamu sudah!" },
+    { "speaker": "Budi:", "text": "Beharbada... Atzo gauean oso nekatuta nengoen.", "id": "Mungkin... Tadi malam saya capek sekali.", "literal": "mungkin... kemarin malam-di sangat capek berada-saya-lampau." },
+    { "speaker": "Ainhoa:", "text": "Normala. Baina orain hemen zaude, klasean.", "id": "Wajar. Tapi sekarang kamu di sini, di kelas.", "literal": "biasa-itu. tapi sekarang di-sini berada-kamu, kelas-di." },
+    { "speaker": "Budi:", "text": "Bai! Eta prest nago.", "id": "Ya! Dan saya siap.", "literal": "ya! dan siap berada-saya." }
+   ],
+   "notes": [
+    "**Bentuk lampau selalu berakhir -n.** *Naiz* → *nintze**n***, *da* → *ze**n***, *dago* → *zegoe**n***, *dut* → *nue**n***. Huruf *n* di ujung adalah tanda waktu lampau untuk **semua** kata kerja bantu, tanpa kecuali. Ini salah satu aturan paling rapi dalam bahasa ini.",
+    "**Euria ari zuen — hujan itu memakai bantu ukan.** Seperti sudah disinggung di Unit 10, cuaca adalah pengecualian: *euria ari **du*** (sedang hujan), *euria ari **zuen*** (tadi hujan). Bahasa Basque memperlakukan langit sebagai pelaku yang tidak pernah disebut namanya.",
+    "**Bilbotarra — akhiran -tar untuk penduduk.** *Bilbo* → *bilbotarra*, *Donostia* → *donostiarra*, *Jakarta* → *jakartarra*. Akhiran ini juga membentuk nama suku bangsa: *indonesiarra*, *japoniarra*. Perhatikan huruf kecil: nama penduduk tidak ditulis dengan huruf besar dalam bahasa Basque.",
+    "**Jada — sudah.** Kata kecil yang sering dipakai untuk menandai perubahan: *jada bilbotarra zara* (kamu sudah jadi orang Bilbo), *jada berandu da* (sudah telat). Kata lain dengan arti sama: *dagoeneko*."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Lampau: izan dan egon",
+   "blocks": [
+    { "type": "tabel", "head": ["Orang", "Sekarang", "Lampau", "Contoh"], "rows": [
+     ["ni", "naiz", "**nintzen**", "Atzo Donostian nintzen."],
+     ["zu", "zara", "**zinen**", "Non zinen?"],
+     ["hura", "da", "**zen**", "Eguraldia ona zen."],
+     ["gu", "gara", "**ginen**", "Lagunak ginen."],
+     ["zuek", "zarete", "**zineten**", "Hondartzan zineten?"],
+     ["haiek", "dira", "**ziren**", "Oso politak ziren."]
+    ]},
+    { "type": "tabel", "head": ["Orang", "Sekarang", "Lampau", "Contoh"], "rows": [
+     ["ni", "nago", "**nengoen**", "Nekatuta nengoen."],
+     ["zu", "zaude", "**zeunden**", "Non zeunden?"],
+     ["hura", "dago", "**zegoen**", "Itxita zegoen."],
+     ["gu", "gaude", "**geunden**", "Zain geunden."],
+     ["zuek", "zaudete", "**zeundeten**", "Pozik zeundeten?"],
+     ["haiek", "daude", "**zeuden**", "Tabernan zeuden."]
+    ]},
+    { "type": "p", "text": "Pembagian tugas antara keduanya tetap sama seperti di masa sekarang: *izan* untuk jati diri dan sifat (*ikaslea nintzen* — saya dulu pelajar), *egon* untuk tempat dan keadaan sementara (*etxean nengoen* — saya tadi di rumah)." },
+    { "type": "kotak", "title": "Kalimat lampau yang paling sering dipakai", "items": [
+     "*Non zinen atzo?* — Kemarin kamu di mana?",
+     "*Etxean nengoen.* — Saya di rumah.",
+     "*Nola zen?* — Bagaimana rasanya?",
+     "*Oso ondo zegoen.* — Enak sekali. (untuk makanan)",
+     "*Jendez beteta zegoen.* — Penuh orang.",
+     "*Itxita zegoen.* — Sedang tutup."
+    ]}
+   ]
+  },
+  {
+   "title": "Menyebut waktu yang sudah lewat",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia"], "rows": [
+     ["atzo", "A-tso", "kemarin"],
+     ["herenegun", "e-re-NE-gun", "kemarin lusa"],
+     ["atzo gauean", "A-tso ga-U-e-an", "tadi malam"],
+     ["gaur goizean", "GA-ur GO-i-se-an", "tadi pagi"],
+     ["joan den astean", "KHO-an den as-TE-an", "minggu lalu"],
+     ["joan den hilean", "i-LE-an", "bulan lalu"],
+     ["iaz", "I-as", "tahun lalu"],
+     ["duela bi urte", "DU-e-la bi UR-te", "dua tahun yang lalu"],
+     ["duela gutxi", "DU-e-la GU-chi", "belum lama ini"],
+     ["aspaldi", "as-PAL-di", "lama sekali yang lalu"],
+     ["orduan", "or-DU-an", "waktu itu"],
+     ["lehen", "LE-en", "dulu"]
+    ]},
+    { "type": "p", "text": "*Duela* berarti \"yang lalu\", dan ia berdiri **di depan** jangka waktunya: *duela bi urte* (dua tahun yang lalu), *duela hiru egun* (tiga hari yang lalu). Bandingkan dengan bahasa Indonesia yang meletakkannya di belakang." },
+    { "type": "sub", "text": "Dulu dan sekarang" },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia"], "rows": [
+     ["Lehen Jakartan bizi nintzen, orain Bilbon bizi naiz.", "Dulu saya tinggal di Jakarta, sekarang di Bilbo."],
+     ["Lehen ez nekien euskaraz, orain pixka bat badakit.", "Dulu saya tidak bisa euskara, sekarang sedikit bisa."],
+     ["Orduan gaztea nintzen.", "Waktu itu saya masih muda."],
+     ["Duela bi urte hasi nintzen ikasten.", "Dua tahun lalu saya mulai belajar."]
+    ]},
+    { "type": "kotak", "title": "Kelahiran dan riwayat", "items": [
+     "*Non jaio zinen?* — Kamu lahir di mana? *Jakartan jaio nintzen.*",
+     "*Noiz jaio zinen?* — Kapan kamu lahir? *Mila bederatziehun eta laurogeita hamaseian.* (1996)",
+     "*Non ikasi zenuen?* — Kamu sekolah di mana?",
+     "*Zenbat urte daramatzazu hemen?* — Sudah berapa lama kamu di sini?",
+     "*Duela sei hilabete etorri nintzen.* — Saya datang enam bulan yang lalu."
+    ]}
+   ]
+  },
+  {
+   "title": "Kata kerja lain dalam bentuk lampau",
+   "blocks": [
+    { "type": "p", "text": "Kata kerja yang berbantu *izan* — yang kamu kenal dari Unit 9 — dibuat lampau cukup dengan mengganti bantunya. Kata kerjanya sendiri memakai bentuk kamus, bukan bentuk *-t(z)en*." },
+    { "type": "tabel", "head": ["Sekarang", "Lampau", "Bahasa Indonesia"], "rows": [
+     ["etxera noa", "etxera **joan nintzen**", "saya pulang ke rumah"],
+     ["berandu iristen naiz", "berandu **iritsi nintzen**", "saya datang telat"],
+     ["klasea hasten da", "klasea **hasi zen**", "kelasnya mulai"],
+     ["lagunak datoz", "lagunak **etorri ziren**", "teman-teman datang"],
+     ["zazpietan esnatzen naiz", "zazpietan **esnatu nintzen**", "saya bangun jam tujuh"],
+     ["Bilbon bizi naiz", "Bilbon **bizi nintzen**", "saya tinggal di Bilbo"]
+    ]},
+    { "type": "p", "text": "Perhatikan bahwa bentuk *-t(z)en* dipakai untuk kebiasaan **di masa lampau** juga: *lehen egunero mendira joaten nintzen* (dulu saya naik gunung setiap hari). Jadi *joan nintzen* = \"saya pergi (sekali, waktu itu)\", sementara *joaten nintzen* = \"saya biasa pergi\"." },
+    { "type": "kotak", "title": "Kesalahan khas penutur bahasa Indonesia", "items": [
+     "Menambahkan kata \"sudah\" secara harfiah. Bahasa Basque tidak butuh kata tambahan: *joan nintzen* sudah berarti \"saya sudah pergi\". Menambahkan *jada* hanya kalau memang ingin menekankan.",
+     "Memakai bentuk *-t(z)en* untuk satu kejadian: ***atzo mendira joaten nintzen*** terdengar seperti \"kemarin saya biasa naik gunung\". Yang benar *atzo mendira joan nintzen*.",
+     "Lupa mengganti bantu *egon*: ***atzo etxean nago*** salah, yang benar *atzo etxean **nengoen***."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "eu": "atzo", "baca": "A-tso", "id": "kemarin" },
+  { "eu": "herenegun", "baca": "e-re-NE-gun", "id": "kemarin lusa" },
+  { "eu": "iaz", "baca": "I-as", "id": "tahun lalu" },
+  { "eu": "duela", "baca": "DU-e-la", "id": "… yang lalu" },
+  { "eu": "aspaldi", "baca": "as-PAL-di", "id": "lama sekali lalu" },
+  { "eu": "orduan", "baca": "or-DU-an", "id": "waktu itu" },
+  { "eu": "lehen", "baca": "LE-en", "id": "dulu" },
+  { "eu": "jada", "baca": "KHA-da", "id": "sudah" },
+  { "eu": "jaio", "baca": "KHA-i-o", "id": "lahir" },
+  { "eu": "bizitza", "baca": "bi-SI-tsa", "id": "kehidupan" },
+  { "eu": "gertatu", "baca": "ger-TA-tu", "id": "terjadi" },
+  { "eu": "hondartza", "baca": "on-DAR-tsa", "id": "pantai" },
+  { "eu": "itsaso", "baca": "i-TSA-so", "id": "laut" },
+  { "eu": "jende", "baca": "KHEN-de", "id": "orang-orang" },
+  { "eu": "eguzkitsu", "baca": "e-gus-KI-tsu", "id": "cerah, berjemur matahari" },
+  { "eu": "normala", "baca": "nor-MA-la", "id": "biasa, wajar" },
+  { "eu": "bilbotar", "baca": "bil-BO-tar", "id": "orang Bilbo" },
+  { "eu": "donostiar", "baca": "do-nos-TI-ar", "id": "orang Donostia" },
+  { "eu": "asteburu", "baca": "as-te-BU-ru", "id": "akhir pekan" },
+  { "eu": "oporrak", "baca": "o-PO-rrak", "id": "liburan" },
+  { "eu": "txango", "baca": "CHAN-go", "id": "tamasya, jalan-jalan" },
+  { "eu": "ikusi", "baca": "i-KU-si", "id": "melihat" },
+  { "eu": "ezagutu", "baca": "e-sa-GU-tu", "id": "mengenal, berkenalan" },
+  { "eu": "iritsi", "baca": "i-RI-tsi", "id": "tiba" },
+  { "eu": "geratu", "baca": "ge-RA-tu", "id": "tinggal, menginap" },
+  { "eu": "hasi", "baca": "A-si", "id": "mulai" },
+  { "eu": "amaitu", "baca": "a-MA-i-tu", "id": "selesai" },
+  { "eu": "nekatuta", "baca": "ne-ka-TU-ta", "id": "capek" },
+  { "eu": "polit", "baca": "po-LIT", "id": "cantik" },
+  { "eu": "garesti", "baca": "ga-RES-ti", "id": "mahal" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk lampau.",
+   "items": [
+    "Ni Bilbon nago. → Ni Bilbon ____.",
+    "Zu ikaslea zara. → Zu ikaslea ____.",
+    "Eguraldia ona da. → Eguraldia ona ____.",
+    "Gu tabernan gaude. → Gu tabernan ____.",
+    "Haiek nekatuta daude. → Haiek nekatuta ____.",
+    "Zuek lagunak zarete. → Zuek lagunak ____."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Basque.",
+   "items": [
+    "Kemarin saya di rumah.",
+    "Akhir pekan kamu di mana?",
+    "Cuacanya bagus.",
+    "Tokonya sedang tutup.",
+    "Saya lahir di Jakarta.",
+    "Dua tahun yang lalu saya mulai belajar euskara."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata waktu lampau yang tepat.",
+   "items": [
+    "____ etxean nengoen. (kemarin)",
+    "____ Donostian egon ginen. (minggu lalu)",
+    "____ bi urte hasi nintzen. (dua tahun yang lalu)",
+    "____ Jakartan bizi nintzen. (dulu)",
+    "____ gaztea nintzen. (waktu itu)",
+    "____ ez zen euria ari. (tadi pagi)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "zinen / non / atzo / ?",
+    "nengoen / etxean / ni",
+    "zen / ona / eguraldia",
+    "ginen / hondartzara / joan",
+    "zegoen / itxita / denda",
+    "nintzen / Jakartan / jaio"
+   ]
+  }
+ ],
+ "answers": [
+  "nengoen — zinen — zen — geunden — zeuden — zineten",
+  "Atzo etxean nengoen. — Non zinen asteburuan? — Eguraldia ona zen. — Denda itxita zegoen. — Jakartan jaio nintzen. — Duela bi urte hasi nintzen euskara ikasten.",
+  "Atzo — Joan den astean — Duela — Lehen — Orduan — Gaur goizean",
+  "Non zinen atzo? — Ni etxean nengoen. — Eguraldia ona zen. — Hondartzara joan ginen. — Denda itxita zegoen. — Jakartan jaio nintzen."
+ ]
+}

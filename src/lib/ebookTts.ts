@@ -642,6 +642,7 @@ const SUARA_BROWSER: Record<string, string> = {
   th: "th-TH", vi: "vi-VN", tr: "tr-TR", en: "en-US", id: "id-ID", ms: "ms-MY",
   da: "da-DK", sv: "sv-SE", no: "nb-NO", fi: "fi-FI", pl: "pl-PL", cs: "cs-CZ",
   el: "el-GR", he: "he-IL", uk: "uk-UA", ro: "ro-RO", hu: "hu-HU",
+  eu: "eu-ES",
 };
 
 let audio: HTMLAudioElement | null = null;

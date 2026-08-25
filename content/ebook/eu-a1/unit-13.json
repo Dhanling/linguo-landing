@@ -1,0 +1,208 @@
+{
+ "title": "Di rumah",
+ "title_target": "Etxean",
+ "goal": "Menyebut ruangan dan perabot, menggambarkan tempat tinggalmu, dan membagi pekerjaan rumah.",
+ "bekal": [
+  "menyebut seluruh ruangan dan perabot yang paling sering dipakai",
+  "menggambarkan rumah atau kamar dengan *badago*, *daude*, dan kata bantu tempat",
+  "membagi pekerjaan rumah dengan *behar dut* dan *nik … dut, zuk … duzu*"
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Pisua garbitzen",
+   "intro": "Sabtu pagi di apartemen. Unai berdiri di tengah ruang tamu dengan tangan di pinggang.",
+   "lines": [
+    { "speaker": "Unai:", "text": "Budi, pisua nahiko zikina dago.", "id": "Budi, apartemennya lumayan kotor.", "literal": "Budi, apartemen-itu cukup kotor-itu berada." },
+    { "speaker": "Budi:", "text": "Egia da. Gaur garbitu behar dugu.", "id": "Benar juga. Hari ini kita harus bersih-bersih.", "literal": "benar-itu adalah. hari-ini bersihkan butuh punya-kami-nya." },
+    { "speaker": "Unai:", "text": "Nik sukaldea garbitzen dut. Zuk komuna?", "id": "Saya bersihkan dapur. Kamu kamar mandi?", "literal": "saya-pelaku dapur-itu bersihkan-nya punya-saya-nya. kamu-pelaku toilet-itu?" },
+    { "speaker": "Budi:", "text": "Ados. Eta egongela?", "id": "Setuju. Dan ruang tamu?", "literal": "setuju. dan ruang-duduk-itu?" },
+    { "speaker": "Unai:", "text": "Egongela biok garbitzen dugu, azkarragoa da.", "id": "Ruang tamu kita berdua, lebih cepat.", "literal": "ruang-duduk-itu kami-berdua bersihkan-nya punya-kami-nya, cepat-lebih-itu adalah." },
+    { "speaker": "Budi:", "text": "Non dago erratza?", "id": "Sapunya di mana?", "literal": "di-mana berada sapu-itu?" },
+    { "speaker": "Unai:", "text": "Armairuan dago, atearen ondoan.", "id": "Di lemari, sebelah pintu.", "literal": "lemari-di berada, pintu-punya sebelah-di." },
+    { "speaker": "Budi:", "text": "Eta zaborra? Non bota behar dut?", "id": "Dan sampahnya? Harus dibuang di mana?", "literal": "dan sampah-itu? di-mana buang butuh punya-saya-nya?" },
+    { "speaker": "Unai:", "text": "Kalean, atariaren ondoan. Bihar goizean jasotzen dute.", "id": "Di jalan, dekat pintu gedung. Besok pagi diambil.", "literal": "jalan-di, lorong-punya sebelah-di. besok pagi-di angkat-nya punya-mereka-nya." },
+    { "speaker": "Budi:", "text": "Ondo. Nire logela ere txukundu behar dut.", "id": "Baik. Kamar saya juga harus dirapikan.", "literal": "baik. saya-punya kamar-tidur-itu juga rapikan butuh punya-saya-nya." },
+    { "speaker": "Unai:", "text": "Bai! Zure mahaia liburuz beteta dago.", "id": "Iya! Mejamu penuh buku.", "literal": "ya! kamu-punya meja-itu buku-dengan penuh berada." },
+    { "speaker": "Budi:", "text": "Badakit... Ikaslearen bizitza!", "id": "Saya tahu... Hidup pelajar!", "literal": "memang-tahu-saya-nya... pelajar-punya kehidupan!" }
+   ],
+   "notes": [
+    "**Pisua adalah apartemen, bukan lantai.** Di seluruh wilayah ini orang menyebut tempat tinggalnya *pisua* (dari bahasa Spanyol *piso*) atau *etxebizitza* dalam bahasa yang lebih baku. *Etxea* dipakai untuk rumah maupun \"rumah\" dalam arti tempat pulang.",
+    "**Biok — kami berdua.** Bahasa Basque punya kata khusus untuk kelompok berjumlah tertentu: *biok* (kita/kami berdua), *hirurok* (bertiga), *denok* (kita semua), *zuek biok* (kalian berdua). Kata-kata ini sekaligus menandai bahwa yang berbicara termasuk di dalamnya.",
+    "**Liburuz beteta — penuh dengan apa.** Akhiran *-z* yang kamu kenal untuk alat angkut juga berarti \"dengan\": *liburuz beteta* (penuh buku), *jendez beteta* (penuh orang), *urez beteta* (penuh air). Susunannya kebalikan bahasa Indonesia: isinya dulu, baru \"penuh\".",
+    "**Nik … dut, zuk … duzu — cara membagi tugas.** Karena bentuk kata kerja bantu sudah menyebut pelakunya, menambahkan *nik* dan *zuk* di depan berfungsi menekankan pembagian: \"**saya** yang dapur, **kamu** yang kamar mandi\". Tanpa penekanan itu, kata gantinya dibuang begitu saja."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Ruangan dan bagian rumah",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia"], "rows": [
+     ["etxebizitza / pisua", "e-che-bi-SI-tsa", "apartemen"],
+     ["sukaldea", "su-KAL-de-a", "dapur"],
+     ["egongela", "e-GON-ge-la", "ruang tamu"],
+     ["logela", "lo-GE-la", "kamar tidur"],
+     ["komuna", "ko-MU-na", "kamar kecil, toilet"],
+     ["bainugela", "ba-i-nu-GE-la", "kamar mandi"],
+     ["jangela", "KHAN-ge-la", "ruang makan"],
+     ["korridorea", "ko-rri-DO-re-a", "koridor"],
+     ["balkoia", "bal-KO-i-a", "balkon"],
+     ["terraza", "te-RRA-sa", "teras"],
+     ["ataria", "a-TA-ri-a", "lorong depan gedung"],
+     ["igogailua", "i-go-GA-i-lu-a", "lift"],
+     ["eskailerak", "es-ka-i-LE-rak", "tangga"],
+     ["ganbara", "gan-BA-ra", "loteng"],
+     ["garajea", "ga-RA-khe-a", "garasi"],
+     ["lorategia", "lo-ra-TE-gi-a", "taman rumah"]
+    ]},
+    { "type": "p", "text": "Perhatikan akhiran *-gela* yang berarti \"ruangan\" — kata Latin *cella* yang kamu kenal dari bab pembuka: *lo**gela*** (ruang tidur), *jan**gela*** (ruang makan), *bainu**gela*** (ruang mandi), *ikas**gela*** (ruang kelas). Sekali kamu melihat polanya, setengah kosakata rumah datang gratis." },
+    { "type": "kotak", "title": "Baserria — rumah tani Basque", "items": [
+     "*Baserria* adalah rumah pertanian tradisional: satu bangunan batu besar dengan kandang di lantai bawah dan keluarga di atasnya. Ia bukan sekadar rumah, melainkan nama keluarga sekaligus — banyak nama keluarga Basque adalah nama baserri (*Etxeberria* = rumah baru, *Elizalde* = dekat gereja, *Mendizabal* = gunung lebar).",
+     "*Baserritarra* berarti orang yang tinggal di baserri, dan di pasar kota berarti petani yang menjual hasil kebunnya sendiri.",
+     "Kalau kamu membaca nama jalan atau nama orang Basque, kamu hampir selalu sedang membaca gambaran sebuah tempat: *etxe* (rumah), *mendi* (gunung), *ibai* (sungai), *zabal* (lebar), *berri* (baru), *zahar* (tua)."
+    ]}
+   ]
+  },
+  {
+   "title": "Perabot dan barang rumah",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia", "Euskara", "Bahasa Indonesia"], "rows": [
+     ["ohea", "tempat tidur", "hozkailua", "kulkas"],
+     ["armairua", "lemari", "labea", "oven"],
+     ["mahaia", "meja", "sukaldea", "kompor"],
+     ["aulkia", "kursi", "garbigailua", "mesin cuci"],
+     ["sofa", "sofa", "harraska", "wastafel"],
+     ["apala", "rak", "dutxa", "pancuran mandi"],
+     ["alfonbra", "karpet", "ispilua", "cermin"],
+     ["gortina", "gorden", "toalla", "handuk"],
+     ["lanpara", "lampu meja", "izara", "sprei"],
+     ["argia", "lampu, cahaya", "burkoa", "bantal"],
+     ["telebista", "televisi", "platera", "piring"],
+     ["giltza", "kunci", "basoa", "gelas"],
+     ["leihoa", "jendela", "koilara", "sendok"],
+     ["atea", "pintu", "sardexka", "garpu"]
+    ]},
+    { "type": "p", "text": "*Sukaldea* berarti dapur maupun kompornya, tergantung kalimat — sama seperti \"dapur\" dalam bahasa Indonesia bisa berarti ruangannya atau tungkunya. Kalau perlu tegas, kompor disebut *sukalde-plaka* atau cukup *su* (\"api\")." },
+    { "type": "kotak", "title": "Menggambarkan tempat tinggalmu", "items": [
+     "*Nire pisuak hiru logela ditu.* — Apartemen saya punya tiga kamar.",
+     "*Sukaldea txikia da baina argitsua.* — Dapurnya kecil tapi terang.",
+     "*Bigarren solairuan bizi naiz.* — Saya tinggal di lantai dua.",
+     "*Igogailurik ez dago.* — Tidak ada lift.",
+     "*Balkoitik itsasoa ikusten da.* — Dari balkon kelihatan laut.",
+     "*Alokairua garestia da Bilbon.* — Sewa di Bilbo mahal."
+    ]}
+   ]
+  },
+  {
+   "title": "Pekerjaan rumah",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia", "Bantunya"], "rows": [
+     ["garbitu", "gar-BI-tu", "membersihkan", "dut"],
+     ["txukundu", "chu-KUN-du", "merapikan", "dut"],
+     ["jaso", "KHA-so", "membereskan, mengangkat", "dut"],
+     ["bota", "BO-ta", "membuang", "dut"],
+     ["erosi", "e-RO-si", "berbelanja", "dut"],
+     ["kozinatu", "ko-si-NA-tu", "memasak", "dut"],
+     ["prestatu", "pres-TA-tu", "menyiapkan", "dut"],
+     ["arropa garbitu", "a-RRO-pa", "mencuci baju", "dut"],
+     ["platerak garbitu", "pla-TE-rak", "mencuci piring", "ditut"],
+     ["ohea egin", "O-e-a e-gin", "merapikan tempat tidur", "dut"],
+     ["lisatu", "li-SA-tu", "menyetrika", "dut"],
+     ["erregatu", "e-rre-GA-tu", "menyiram tanaman", "dut"]
+    ]},
+    { "type": "p", "text": "Untuk membagi tugas, cukup gabungkan pelaku bertopi dengan *behar dut*: *Nik platerak garbitu behar ditut* (saya harus cuci piring). Perhatikan bahwa bantunya ikut jamak karena piringnya banyak — *ditut*, bukan *dut*." },
+    { "type": "kotak", "title": "Mencari tempat tinggal", "items": [
+     "*iragarkia* (iklan), *alokairua* (sewa), *fidantza* (deposit), *gastuak* (biaya bulanan), *jabea* (pemilik), *bizilaguna* (teman sekamar), *hutsik* (kosong).",
+     "*Logela bat alokatu nahi dut.* — Saya mau menyewa satu kamar.",
+     "*Zenbat da hilean?* — Berapa sebulan?",
+     "*Gastuak barne daude?* — Sudah termasuk biaya?",
+     "Di Bilbo dan Donostia, iklan kamar biasanya ditulis dalam bahasa Spanyol; tapi menanyakannya dalam euskara kepada pemilik yang berbahasa Basque sering membuat percakapannya jauh lebih hangat."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "eu": "pisu", "baca": "PI-su", "id": "apartemen" },
+  { "eu": "sukalde", "baca": "su-KAL-de", "id": "dapur" },
+  { "eu": "egongela", "baca": "e-GON-ge-la", "id": "ruang tamu" },
+  { "eu": "logela", "baca": "lo-GE-la", "id": "kamar tidur" },
+  { "eu": "bainugela", "baca": "ba-i-nu-GE-la", "id": "kamar mandi" },
+  { "eu": "balkoi", "baca": "bal-KO-i", "id": "balkon" },
+  { "eu": "eskailera", "baca": "es-ka-i-LE-ra", "id": "tangga" },
+  { "eu": "igogailu", "baca": "i-go-GA-i-lu", "id": "lift" },
+  { "eu": "solairu", "baca": "so-LA-i-ru", "id": "lantai (tingkat)" },
+  { "eu": "ohe", "baca": "O-e", "id": "tempat tidur" },
+  { "eu": "armairu", "baca": "ar-MA-i-ru", "id": "lemari" },
+  { "eu": "hozkailu", "baca": "os-KA-i-lu", "id": "kulkas" },
+  { "eu": "garbigailu", "baca": "gar-bi-GA-i-lu", "id": "mesin cuci" },
+  { "eu": "ispilu", "baca": "is-PI-lu", "id": "cermin" },
+  { "eu": "giltza", "baca": "GIL-tsa", "id": "kunci" },
+  { "eu": "argi", "baca": "AR-gi", "id": "lampu, terang" },
+  { "eu": "plater", "baca": "pla-TER", "id": "piring" },
+  { "eu": "baso", "baca": "BA-so", "id": "gelas" },
+  { "eu": "koilara", "baca": "ko-i-LA-ra", "id": "sendok" },
+  { "eu": "arropa", "baca": "a-RRO-pa", "id": "pakaian" },
+  { "eu": "zabor", "baca": "SA-bor", "id": "sampah" },
+  { "eu": "erratz", "baca": "e-RRATS", "id": "sapu" },
+  { "eu": "garbitu", "baca": "gar-BI-tu", "id": "membersihkan" },
+  { "eu": "txukundu", "baca": "chu-KUN-du", "id": "merapikan" },
+  { "eu": "bota", "baca": "BO-ta", "id": "membuang" },
+  { "eu": "kozinatu", "baca": "ko-si-NA-tu", "id": "memasak" },
+  { "eu": "zikin", "baca": "si-KIN", "id": "kotor" },
+  { "eu": "garbi", "baca": "GAR-bi", "id": "bersih" },
+  { "eu": "beteta", "baca": "be-TE-ta", "id": "penuh" },
+  { "eu": "hutsik", "baca": "U-tsik", "id": "kosong" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Di ruangan mana benda ini biasanya berada? Jawab dengan akhiran -an.",
+   "items": [
+    "hozkailua → ____",
+    "ohea → ____",
+    "dutxa → ____",
+    "sofa → ____",
+    "mahaia eta aulkiak → ____",
+    "kotxea → ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Basque.",
+   "items": [
+    "Apartemen saya punya dua kamar.",
+    "Dapurnya kecil tapi bersih.",
+    "Saya harus cuci piring.",
+    "Kuncinya di atas meja.",
+    "Tidak ada lift.",
+    "Kamar saya penuh buku."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata kerja pekerjaan rumah yang tepat.",
+   "items": [
+    "Platerak ____ behar ditut. (mencuci)",
+    "Zaborra ____ behar dut. (membuang)",
+    "Logela ____ behar dut. (merapikan)",
+    "Afaria ____ behar dut. (memasak)",
+    "Arropa ____ behar dut. (mencuci)",
+    "Erosketak ____ behar ditut. (melakukan)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "dago / non / giltza / ?",
+    "dago / mahaiaren / giltza / gainean",
+    "ditu / hiru / nire / logela / pisuak",
+    "dugu / garbitu / behar / gaur",
+    "dago / beteta / liburuz / mahaia",
+    "da / txikia / sukaldea / baina / argitsua"
+   ]
+  }
+ ],
+ "answers": [
+  "sukaldean — logelan — bainugelan — egongelan — jangelan — garajean",
+  "Nire pisuak bi logela ditu. — Sukaldea txikia da baina garbia. — Platerak garbitu behar ditut. — Giltza mahaiaren gainean dago. — Ez dago igogailurik. — Nire logela liburuz beteta dago.",
+  "garbitu — bota — txukundu — kozinatu — garbitu — egin",
+  "Non dago giltza? — Giltza mahaiaren gainean dago. — Nire pisuak hiru logela ditu. — Gaur garbitu behar dugu. — Mahaia liburuz beteta dago. — Sukaldea txikia da baina argitsua."
+ ]
+}

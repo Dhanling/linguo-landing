@@ -1,0 +1,202 @@
+{
+ "title": "Sedang apa sekarang?",
+ "title_target": "Zer ari zara egiten?",
+ "goal": "Mengatakan apa yang sedang berlangsung sekarang dengan ari izan, menelepon, dan menyebut keadaan perasaan dengan egon.",
+ "bekal": [
+  "menyusun kalimat \"sedang …\" dengan *-t(z)en ari naiz* dan menyangkalnya",
+  "membedakan kebiasaan (*ikasten dut*) dan yang sedang berlangsung (*ikasten ari naiz*)",
+  "menelepon: membuka, menanyakan keadaan, dan menutup pembicaraan"
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Telefonoz",
+   "intro": "Sabtu siang. Budi menelepon Maite dari perpustakaan euskaltegi.",
+   "lines": [
+    { "speaker": "Maite:", "text": "Bai? Nor da?", "id": "Halo? Siapa ini?", "literal": "ya? siapa adalah?" },
+    { "speaker": "Budi:", "text": "Kaixo Maite, Budi naiz. Zer ari zara egiten?", "id": "Halo Maite, ini Budi. Kamu sedang apa?", "literal": "halo Maite, Budi adalah-saya. apa sedang adalah-kamu melakukan-nya?" },
+    { "speaker": "Maite:", "text": "Bazkaria prestatzen ari naiz. Eta zu?", "id": "Saya sedang menyiapkan makan siang. Kamu?", "literal": "makan-siang-itu menyiapkan-nya sedang adalah-saya. dan kamu?" },
+    { "speaker": "Budi:", "text": "Euskaltegian nago, ikasten ari naiz.", "id": "Saya di euskaltegi, sedang belajar.", "literal": "euskaltegi-di berada-saya, belajar-nya sedang adalah-saya." },
+    { "speaker": "Maite:", "text": "Larunbatean ere ikasten?! Deskantsatu behar duzu!", "id": "Hari Sabtu juga belajar?! Kamu perlu istirahat!", "literal": "Sabtu-di juga belajar-nya?! istirahat butuh punya-kamu-nya!" },
+    { "speaker": "Budi:", "text": "Badakit... baina azterketa hurbil dago.", "id": "Saya tahu... tapi ujiannya sudah dekat.", "literal": "memang-tahu-saya-nya... tapi ujian-itu dekat berada." },
+    { "speaker": "Maite:", "text": "Entzun: gaur eguraldi ederra dago. Eguzkia ateratzen ari da.", "id": "Dengar: hari ini cuacanya bagus sekali. Matahari sedang keluar.", "literal": "dengar: hari-ini cuaca indah-itu berada. matahari-itu keluar-nya sedang adalah." },
+    { "speaker": "Budi:", "text": "Egia da. Kanpora joan nahi duzu?", "id": "Benar juga. Mau keluar?", "literal": "benar-itu adalah. luar-ke pergi ingin punya-kamu-nya?" },
+    { "speaker": "Maite:", "text": "Bai! Lagunak parkean daude, futbolean ari dira.", "id": "Ya! Teman-teman ada di taman, sedang main bola.", "literal": "teman-jamak taman-di berada-mereka, sepak-bola-di sedang adalah-mereka." },
+    { "speaker": "Budi:", "text": "Ondo, banoa. Ordu erdi barru han naiz.", "id": "Baik, saya berangkat. Setengah jam lagi saya di sana.", "literal": "baik, memang-pergi-saya. jam setengah dalam di-sana adalah-saya." },
+    { "speaker": "Maite:", "text": "Ez iritsi berandu! Zain gaude.", "id": "Jangan telat! Kami tunggu.", "literal": "tidak tiba telat! menunggu berada-kami." },
+    { "speaker": "Budi:", "text": "Lasai, korrika noa. Gero arte!", "id": "Tenang, saya lari ke sana. Sampai nanti!", "literal": "tenang, berlari pergi-saya. nanti sampai!" }
+   ],
+   "notes": [
+    "**Ari naiz selalu memakai izan, walau kata kerjanya berobjek.** Ini kejutan yang menyenangkan: *euskara ikasten **dut*** (kebiasaan, berbantu *ukan*) tapi *euskara ikasten ari **naiz*** (sedang, berbantu *izan*). Begitu *ari* masuk, seluruh kalimat berpindah ke bantu *izan*, dan topi pelaku *-k* pun hilang: *ni* saja, bukan *nik*.",
+    "**Banoa dan noa — kata kerja yang berdiri tanpa bantu.** Segelintir kata kerja Basque punya bentuk pendek yang tidak perlu bantu sama sekali: *noa* (saya pergi), *zoaz* (kamu pergi), *doa* (dia pergi). Awalan *ba-* menegaskannya: *banoa* = \"saya berangkat sekarang\". Kelompok ini disebut kata kerja sintetis; jumlahnya sedikit dan semuanya sangat sering dipakai.",
+    "**Futbolean ari dira — ari juga dipakai untuk kegiatan.** Selain dengan bentuk *-t(z)en*, *ari izan* bisa langsung menempel pada nama kegiatan dengan akhiran *-an*: *futbolean ari dira* (sedang main bola), *lanean ari naiz* (sedang bekerja), *jolasean ari dira* (sedang bermain).",
+    "**Zain gaude — menunggu itu sebuah keadaan.** Harfiahnya \"kami berada dalam keadaan menunggu\". Bahasa Basque banyak memakai *egon* + kata keadaan: *zain egon* (menunggu), *lanpetuta egon* (sibuk), *pozik egon* (senang). Bagian ketiga unit ini mengumpulkan yang paling sering."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Ari izan: yang sedang berlangsung",
+   "blocks": [
+    { "type": "p", "text": "Rumusnya satu baris: **kata kerja bentuk -t(z)en + ari + izan**. Tidak ada topi pelaku, tidak ada bantu *ukan*, tidak peduli kata kerjanya punya objek atau tidak." },
+    { "type": "tabel", "head": ["Orang", "Bentuk", "Contoh", "Arti"], "rows": [
+     ["ni", "**ari naiz**", "Ikasten ari naiz.", "Saya sedang belajar."],
+     ["zu", "**ari zara**", "Zer ari zara egiten?", "Kamu sedang apa?"],
+     ["hura", "**ari da**", "Euria ari du.*", "Sedang hujan."],
+     ["gu", "**ari gara**", "Jaten ari gara.", "Kami sedang makan."],
+     ["zuek", "**ari zarete**", "Lanean ari zarete?", "Kalian sedang bekerja?"],
+     ["haiek", "**ari dira**", "Futbolean ari dira.", "Mereka sedang main bola."]
+    ]},
+    { "type": "p", "text": "*Baris cuaca adalah pengecualian yang terkenal: hujan dan salju memakai *du*, bukan *da* — *euria ari du*, *elurra ari du*. Bahasa Basque memperlakukan langit sebagai pelaku yang tak disebutkan. Cuaca dibahas lengkap di Unit 19." },
+    { "type": "sub", "text": "Kebiasaan atau sekarang? Bandingkan" },
+    { "type": "tabel", "head": ["Kebiasaan", "Sedang berlangsung", "Bedanya"], "rows": [
+     ["Euskara ikasten dut.", "Euskara ikasten ari naiz.", "tiap hari / saat ini"],
+     ["Kafea edaten dut.", "Kafea edaten ari naiz.", "biasanya / cangkirnya di tangan"],
+     ["Bilbon lan egiten dut.", "Lanean ari naiz.", "pekerjaan saya / sedang sibuk"],
+     ["Ez dut telebistarik ikusten.", "Ez naiz telebista ikusten ari.", "tidak pernah / tidak sedang"]
+    ]},
+    { "type": "kotak", "title": "Kesalahan khas penutur bahasa Indonesia", "items": [
+     "Memakai *ari* untuk kebiasaan. Bahasa Indonesia sering menyisipkan \"sedang\" tanpa maksud khusus; bahasa Basque tidak. *Egunero ikasten **ari naiz*** terdengar aneh — pakai *egunero ikasten dut*.",
+     "Mempertahankan topi pelaku: ***Nik ikasten ari naiz*** salah. Yang benar *Ni ikasten ari naiz* atau cukup *Ikasten ari naiz*.",
+     "Lupa bahwa kata kerjanya tetap bentuk *-t(z)en*: *jan ari naiz* salah, yang benar *ja**ten** ari naiz*."
+    ]}
+   ]
+  },
+  {
+   "title": "Menelepon dan berkirim pesan",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia"], "rows": [
+     ["Bai? / Esan!", "BA-i / e-SAN", "Halo? (mengangkat telepon)"],
+     ["Nor da?", "NOR da", "Siapa ini?"],
+     ["… naiz.", "NA-is", "Ini …"],
+     ["Maiterekin hitz egin nahi dut.", "MA-i-te-re-kin", "Saya mau bicara dengan Maite."],
+     ["Momentu bat, mesedez.", "mo-MEN-tu bat", "Sebentar, tolong."],
+     ["Ez dago hemen.", "es DA-go E-men", "Dia tidak ada di sini."],
+     ["Gero deituko dizut.", "GE-ro de-i-TU-ko", "Nanti saya telepon lagi."],
+     ["Ez zaitut ondo entzuten.", "es SA-i-tut", "Suaramu kurang jelas."],
+     ["Mezu bat bidali dizut.", "ME-su bat bi-DA-li", "Saya sudah kirim pesan."],
+     ["Gero arte!", "GE-ro AR-te", "Sampai nanti!"]
+    ]},
+    { "type": "p", "text": "Perhatikan bahwa orang Basque menjawab telepon dengan *bai?* (\"ya?\") atau *esan!* (\"bilang!\"), bukan dengan \"halo\". Terdengar sangat singkat bagi telinga Indonesia, tapi itu memang kebiasaannya — dan sama sekali tidak kasar." },
+    { "type": "kotak", "title": "Kata yang muncul di layar telepon", "items": [
+     "*deitu* (menelepon), *mezua* (pesan), *bidali* (mengirim), *jaso* (menerima), *erantzun* (menjawab).",
+     "*Sarea* (jaringan), *bateria* (baterai), *kargatu* (mengisi daya), *deskargatu* (mengunduh).",
+     "Singkatan pesan yang lazim: *eskerrik asko* → *eskrk*, *gero arte* → *g.a.*, *musu bat* (\"satu cium\", penutup pesan yang biasa antarteman)."
+    ]}
+   ]
+  },
+  {
+   "title": "Egon: keadaan dan perasaan",
+   "blocks": [
+    { "type": "p", "text": "*Egon* berarti \"berada\" — baik di suatu tempat maupun dalam suatu keadaan. Bentuknya harus dihafal, dan ia berdiri sendiri tanpa bantu apa pun." },
+    { "type": "tabel", "head": ["Orang", "Bentuk", "Cara baca", "Contoh"], "rows": [
+     ["ni", "**nago**", "NA-go", "Nekatuta nago."],
+     ["zu", "**zaude**", "SA-u-de", "Non zaude?"],
+     ["hura", "**dago**", "DA-go", "Bilbon dago."],
+     ["gu", "**gaude**", "GA-u-de", "Zain gaude."],
+     ["zuek", "**zaudete**", "sa-u-DE-te", "Pozik zaudete?"],
+     ["haiek", "**daude**", "DA-u-de", "Parkean daude."]
+    ]},
+    { "type": "sub", "text": "Keadaan yang paling sering dipakai" },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia", "Euskara", "Bahasa Indonesia"], "rows": [
+     ["pozik", "senang", "triste", "sedih"],
+     ["nekatuta", "capek", "gaixorik", "sakit"],
+     ["lanpetuta", "sibuk", "libre", "luang"],
+     ["haserre", "marah", "lasai", "tenang"],
+     ["urduri", "gugup", "aspertuta", "bosan"],
+     ["gose", "lapar", "egarri", "haus"],
+     ["zain", "menunggu", "prest", "siap"],
+     ["galduta", "tersesat", "beldurtuta", "takut"]
+    ]},
+    { "type": "kotak", "title": "Gose naiz atau gose nago?", "items": [
+     "Keduanya terdengar di jalan, dan keduanya dipahami. *Gose naiz* lebih baku dan lebih sering di buku; *gose nago* juga dipakai luas dalam percakapan.",
+     "Untuk keadaan berakhiran *-ta* dan *-rik* (*nekatuta*, *gaixorik*, *galduta*), **selalu** *egon*: *nekatuta **nago***, bukan *naiz*.",
+     "Untuk sifat tetap, **selalu** *izan*: *Alaia **naiz*** (saya orangnya ceria) berbeda dengan *Pozik **nago*** (saya sedang senang)."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "eu": "ari izan", "baca": "A-ri", "id": "sedang (melakukan)" },
+  { "eu": "prestatu", "baca": "pres-TA-tu", "id": "menyiapkan" },
+  { "eu": "deitu", "baca": "DE-i-tu", "id": "menelepon, memanggil" },
+  { "eu": "mezu", "baca": "ME-su", "id": "pesan" },
+  { "eu": "bidali", "baca": "bi-DA-li", "id": "mengirim" },
+  { "eu": "erantzun", "baca": "e-ran-TSUN", "id": "menjawab" },
+  { "eu": "entzun", "baca": "en-TSUN", "id": "mendengar" },
+  { "eu": "azterketa", "baca": "as-ter-KE-ta", "id": "ujian" },
+  { "eu": "hurbil", "baca": "UR-bil", "id": "dekat" },
+  { "eu": "kanpo", "baca": "KAN-po", "id": "luar" },
+  { "eu": "parke", "baca": "PAR-ke", "id": "taman" },
+  { "eu": "futbol", "baca": "FUT-bol", "id": "sepak bola" },
+  { "eu": "korrika", "baca": "ko-RRI-ka", "id": "berlari" },
+  { "eu": "zain egon", "baca": "SA-in", "id": "menunggu" },
+  { "eu": "pozik", "baca": "PO-sik", "id": "senang" },
+  { "eu": "triste", "baca": "TRIS-te", "id": "sedih" },
+  { "eu": "haserre", "baca": "a-SE-rre", "id": "marah" },
+  { "eu": "urduri", "baca": "ur-DU-ri", "id": "gugup" },
+  { "eu": "lanpetuta", "baca": "lan-pe-TU-ta", "id": "sibuk" },
+  { "eu": "aspertuta", "baca": "as-per-TU-ta", "id": "bosan" },
+  { "eu": "gaixorik", "baca": "ga-i-SYO-rik", "id": "sakit" },
+  { "eu": "egarri", "baca": "e-GA-rri", "id": "haus" },
+  { "eu": "galduta", "baca": "gal-DU-ta", "id": "tersesat" },
+  { "eu": "eguraldi", "baca": "e-gu-RAL-di", "id": "cuaca" },
+  { "eu": "eguzki", "baca": "e-GUS-ki", "id": "matahari" },
+  { "eu": "euria", "baca": "e-U-ri-a", "id": "hujan" },
+  { "eu": "egia", "baca": "e-GI-a", "id": "benar, kebenaran" },
+  { "eu": "barru", "baca": "BA-rru", "id": "di dalam; lagi (waktu)" },
+  { "eu": "momentu", "baca": "mo-MEN-tu", "id": "sebentar, saat" },
+  { "eu": "eder", "baca": "e-DER", "id": "indah" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah jadi bentuk \"sedang berlangsung\" dengan *ari*.",
+   "items": [
+    "Euskara ikasten dut.",
+    "Kafea edaten du.",
+    "Telebista ikusten dute.",
+    "Bazkaria prestatzen dugu.",
+    "Liburua irakurtzen duzu.",
+    "Lan egiten dut."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk *egon* yang tepat (nago, zaude, dago, gaude, zaudete, daude).",
+   "items": [
+    "Ni nekatuta ____.",
+    "Non ____ zu?",
+    "Maite parkean ____.",
+    "Gu zain ____.",
+    "Zuek pozik ____?",
+    "Lagunak tabernan ____."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Basque.",
+   "items": [
+    "Kamu sedang apa?",
+    "Saya sedang belajar euskara.",
+    "Halo? Siapa ini?",
+    "Saya capek.",
+    "Mereka sedang main bola.",
+    "Sebentar, tolong."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "naiz / ikasten / ari",
+    "zara / zer / egiten / ari / ?",
+    "dira / futbolean / ari / lagunak",
+    "nago / nekatuta / oso",
+    "gaude / zain / hemen",
+    "da / ateratzen / eguzkia / ari"
+   ]
+  }
+ ],
+ "answers": [
+  "Euskara ikasten ari naiz. — Kafea edaten ari da. — Telebista ikusten ari dira. — Bazkaria prestatzen ari gara. — Liburua irakurtzen ari zara. — Lanean ari naiz.",
+  "nago — zaude — dago — gaude — zaudete — daude",
+  "Zer ari zara egiten? — Euskara ikasten ari naiz. — Bai? Nor da? — Nekatuta nago. — Futbolean ari dira. — Momentu bat, mesedez.",
+  "Ikasten ari naiz. — Zer ari zara egiten? — Lagunak futbolean ari dira. — Oso nekatuta nago. — Hemen zain gaude. — Eguzkia ateratzen ari da."
+ ]
+}

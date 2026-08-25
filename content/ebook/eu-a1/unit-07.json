@@ -1,0 +1,198 @@
+{
+ "title": "Belanja di pasar",
+ "title_target": "Azokan erosketak egiten",
+ "goal": "Berbelanja dengan satuan berat, menanyakan harga, menyebut warna, dan membandingkan dua benda.",
+ "bekal": [
+  "menanyakan harga dengan *zenbat balio du?* dan memahami jawabannya",
+  "memakai satuan *kilo, kilo erdi, dozena, botila, zati*",
+  "membandingkan dengan *-ago*, *baino*, *-en*, dan *-egi*"
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Erriberako azokan",
+   "intro": "Sabtu pagi di Pasar Ribera, pasar tertutup terbesar di Bilbo, tepat di tepi sungai.",
+   "lines": [
+    { "speaker": "Dendaria:", "text": "Egun on! Zer nahi duzu?", "id": "Selamat pagi! Mau beli apa?", "literal": "hari baik! apa ingin punya-kamu-nya?" },
+    { "speaker": "Budi:", "text": "Sagarrak nahi ditut. Zenbat balio dute?", "id": "Saya mau apel. Harganya berapa?", "literal": "apel-jamak ingin punya-saya-mereka. berapa bernilai punya-mereka-nya?" },
+    { "speaker": "Dendaria:", "text": "Kiloa bi euro eta erdi.", "id": "Dua setengah euro sekilo.", "literal": "kilo-itu dua euro dan setengah." },
+    { "speaker": "Budi:", "text": "Ondo, kilo bat mesedez. Eta tomateak?", "id": "Baik, satu kilo. Dan tomatnya?", "literal": "baik, kilo satu tolong. dan tomat-jamak?" },
+    { "speaker": "Dendaria:", "text": "Hiru euro kiloa. Gaur oso onak dira.", "id": "Tiga euro sekilo. Hari ini bagus-bagus.", "literal": "tiga euro kilo-itu. hari-ini sangat baik-jamak adalah-mereka." },
+    { "speaker": "Budi:", "text": "Kilo erdi nahi dut. Eta gazta hori zer da?", "id": "Saya mau setengah kilo. Dan keju itu apa?", "literal": "kilo setengah ingin punya-saya-nya. dan keju itu apa adalah?" },
+    { "speaker": "Dendaria:", "text": "Idiazabal gazta da, ardi esnearekin egina.", "id": "Itu keju Idiazabal, dibuat dari susu domba.", "literal": "Idiazabal keju adalah, domba susu-dengan dibuat-itu." },
+    { "speaker": "Budi:", "text": "Garestia da?", "id": "Mahal?", "literal": "mahal-itu adalah?" },
+    { "speaker": "Dendaria:", "text": "Pixka bat garestiagoa, baina hemengo onena da.", "id": "Sedikit lebih mahal, tapi yang terbaik di sini.", "literal": "sedikit satu mahal-lebih-itu, tapi sini-dari baik-paling-itu adalah." },
+    { "speaker": "Budi:", "text": "Orduan zati txiki bat, mesedez.", "id": "Kalau begitu, sepotong kecil saja.", "literal": "kalau-begitu potong kecil satu, tolong." },
+    { "speaker": "Dendaria:", "text": "Hemen duzu dena: hamabi euro eta berrogeita hamar.", "id": "Ini semuanya: dua belas euro lima puluh.", "literal": "di-sini punya-kamu-nya semua-itu: dua-belas euro dan lima-puluh." },
+    { "speaker": "Budi:", "text": "Hemen duzu. Eskerrik asko!", "id": "Ini uangnya. Terima kasih!", "literal": "di-sini punya-kamu-nya. terima-kasih banyak!" }
+   ],
+   "notes": [
+    "**Zenbat balio du? — cara baku menanyakan harga.** Harfiahnya \"berapa ia bernilai?\". Kalau barangnya jamak, bantunya ikut jamak: *Zenbat balio **dute**?* Bentuk lain yang sama seringnya: *Zenbat da?* (lebih pendek, lebih santai) dan *Zein da prezioa?* (lebih resmi).",
+    "**Harga disebut per satuan, satuannya di belakang.** *Bi euro kiloa* = \"dua euro sekilo\". Perhatikan urutannya: harga dulu, satuannya menyusul dengan kata sandang. Sama seperti kita bilang \"dua ribu sebiji\".",
+    "**Erdi berarti setengah, dan tempatnya di belakang.** *Kilo erdi* (setengah kilo), *ordu erdi* (setengah jam), *bi euro eta erdi* (dua setengah euro). Jangan tertukar dengan *erdian*, yang berarti \"di tengah\".",
+    "**Garestiagoa, onena — pembanding ditempel juga.** Bahasa Basque tidak punya kata terpisah untuk \"lebih\" dan \"paling\": keduanya akhiran. *Garesti* → *garesti**ago**a* (lebih mahal) → *garesti**en**a* (paling mahal). Bagian tata bahasa di bawah membahasnya lengkap."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Warna dan sifat barang",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia", "Catatan"], "rows": [
+     ["zuria", "SU-ri-a", "putih", "ardo zuria = anggur putih"],
+     ["beltza", "BEL-tsa", "hitam", "ardo beltza = anggur merah!"],
+     ["gorria", "GO-rri-a", "merah", "ikurrina gorria da"],
+     ["urdina", "ur-DI-na", "biru", "juga dipakai untuk hijau laut"],
+     ["berdea", "ber-DE-a", "hijau", ""],
+     ["horia", "O-ri-a", "kuning", "jangan tertukar dengan hori (itu)"],
+     ["marroia", "ma-RRO-i-a", "cokelat", ""],
+     ["grisa", "GRI-sa", "abu-abu", ""],
+     ["laranja", "la-RAN-ja", "oranye", "sekaligus berarti buah jeruk"],
+     ["arrosa", "a-RRO-sa", "merah muda", "sekaligus berarti bunga mawar"]
+    ]},
+    { "type": "p", "text": "Perhatikan satu jebakan budaya: anggur merah disebut *ardo **beltza*** — \"anggur hitam\", bukan merah. Bahasa Basque memakai *beltz* untuk warna gelap pekat, dan anggur merah masuk golongan itu. Kalau kamu memesan *ardo gorria*, pelayan akan mengerti maksudmu, tapi akan tahu persis bahwa kamu baru belajar." },
+    { "type": "kotak", "title": "Ikurrina — bendera Basque", "items": [
+     "Warnanya tiga: latar *gorria* (merah), palang miring *berdea* (hijau), dan salib *zuria* (putih). Namanya *ikurrina*, dari *ikur* (\"lambang\").",
+     "Kata *gorri* juga muncul di banyak nama tempat: *Mendigorria* (\"gunung merah\"), *Iturgorri* (\"mata air merah\").",
+     "Warna dipakai sebagai kata sifat biasa, jadi ia berdiri di belakang bendanya dan menyandang kata sandang: *kotxe **gorria*** (mobil merah itu), *etxe **zuriak*** (rumah-rumah putih itu)."
+    ]}
+   ]
+  },
+  {
+   "title": "Membandingkan: -ago, baino, -en, -egi",
+   "blocks": [
+    { "type": "tabel", "head": ["Bentuk", "Akhiran", "Contoh", "Arti"], "rows": [
+     ["biasa", "—", "garestia", "mahal"],
+     ["lebih", "**-ago**", "garesti**ago**a", "lebih mahal"],
+     ["paling", "**-en**", "garesti**en**a", "paling mahal"],
+     ["terlalu", "**-egi**", "garesti**egi**a", "terlalu mahal"],
+     ["sama", "**bezain**", "zu **bezain** garestia", "semahal kamu"]
+    ]},
+    { "type": "p", "text": "Untuk menyebut pembandingnya, dipakai *baino* — dan letaknya **sebelum** kata sifat, kebalikan dari bahasa Indonesia." },
+    { "type": "tabel", "head": ["Euskara", "Harfiah", "Bahasa Indonesia"], "rows": [
+     ["Gazta ogia **baino** garestiagoa da.", "keju roti-daripada mahal-lebih-itu adalah", "Keju lebih mahal daripada roti."],
+     ["Bilbo Donostia **baino** handiagoa da.", "Bilbo Donostia-daripada besar-lebih-itu adalah", "Bilbo lebih besar daripada Donostia."],
+     ["Hau da onena.", "ini adalah baik-paling-itu", "Ini yang paling bagus."],
+     ["Kafe hau beroegia dago.", "kopi ini panas-terlalu-itu berada", "Kopi ini terlalu panas."],
+     ["Ni zu bezain altua naiz.", "saya kamu se- tinggi-itu adalah-saya", "Saya setinggi kamu."]
+    ]},
+    { "type": "kotak", "title": "Tiga bentuk tak beraturan yang harus dihafal", "items": [
+     "*on* (baik) → **hobea** (lebih baik) → **onena** (paling baik).",
+     "*txar* (buruk) → **okerragoa** (lebih buruk) → **txarrena** (paling buruk).",
+     "*asko* (banyak) → **gehiago** (lebih banyak) → **gehiena** (paling banyak); *gutxi* (sedikit) → **gutxiago** → **gutxiena**.",
+     "Sisanya benar-benar teratur — cukup tempel *-ago*, *-en*, atau *-egi* pada kata dasarnya sebelum kata sandang."
+    ]}
+   ]
+  },
+  {
+   "title": "Kalimat dan satuan untuk berbelanja",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia"], "rows": [
+     ["Zenbat balio du?", "sen-BAT ba-LI-o du", "Berapa harganya?"],
+     ["Merkeegia / Garestiegia da.", "mer-ke-E-gi-a", "Terlalu murah / terlalu mahal."],
+     ["Baduzu … ?", "ba-DU-su", "Ada … ?"],
+     ["Beste kolorerik baduzu?", "BES-te ko-lo-RE-rik", "Ada warna lain?"],
+     ["Handiagoa nahi dut.", "an-di-A-go-a", "Saya mau yang lebih besar."],
+     ["Hau hartuko dut.", "A-u ar-TU-ko dut", "Saya ambil yang ini."],
+     ["Besterik?", "BES-te-rik", "Ada lagi?"],
+     ["Poltsa bat, mesedez.", "POL-tsa bat", "Satu kantong, tolong."]
+    ]},
+    { "type": "sub", "text": "Satuan" },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia", "Contoh"], "rows": [
+     ["kilo bat", "satu kilo", "kilo bat sagar"],
+     ["kilo erdi", "setengah kilo", "kilo erdi tomate"],
+     ["laurden bat", "seperempat", "laurden bat gazta"],
+     ["dozena bat", "satu lusin", "dozena bat arrautza"],
+     ["botila bat", "satu botol", "botila bat ur"],
+     ["zati bat", "sepotong", "zati bat ogi"],
+     ["pakete bat", "satu bungkus", "pakete bat kafe"],
+     ["gutxi / asko", "sedikit / banyak", "azukre gutxi"]
+    ]},
+    { "type": "p", "text": "Perhatikan bahwa sesudah satuan, kata bendanya telanjang tanpa kata sandang: *kilo bat sagar*, bukan *kilo bat sagarrak*. Aturannya sama dengan angka di Unit 2." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "eu": "azoka", "baca": "a-SO-ka", "id": "pasar" },
+  { "eu": "denda", "baca": "DEN-da", "id": "toko" },
+  { "eu": "dendari", "baca": "den-DA-ri", "id": "penjual" },
+  { "eu": "prezio", "baca": "pre-SI-o", "id": "harga" },
+  { "eu": "diru", "baca": "DI-ru", "id": "uang" },
+  { "eu": "balio izan", "baca": "ba-LI-o", "id": "berharga, bernilai" },
+  { "eu": "sagar", "baca": "SA-gar", "id": "apel" },
+  { "eu": "laranja", "baca": "la-RAN-ja", "id": "jeruk" },
+  { "eu": "banana", "baca": "ba-NA-na", "id": "pisang" },
+  { "eu": "mahats", "baca": "MA-ats", "id": "anggur (buah)" },
+  { "eu": "tomate", "baca": "to-MA-te", "id": "tomat" },
+  { "eu": "tipula", "baca": "ti-PU-la", "id": "bawang bombai" },
+  { "eu": "baratxuri", "baca": "ba-ra-CHU-ri", "id": "bawang putih" },
+  { "eu": "patata", "baca": "pa-TA-ta", "id": "kentang" },
+  { "eu": "arroz", "baca": "a-RROS", "id": "nasi, beras" },
+  { "eu": "arrautza", "baca": "a-RRA-u-tsa", "id": "telur" },
+  { "eu": "kilo", "baca": "KI-lo", "id": "kilo" },
+  { "eu": "erdi", "baca": "ER-di", "id": "setengah" },
+  { "eu": "zati", "baca": "SA-ti", "id": "potongan, bagian" },
+  { "eu": "botila", "baca": "bo-TI-la", "id": "botol" },
+  { "eu": "poltsa", "baca": "POL-tsa", "id": "kantong, tas" },
+  { "eu": "zuri", "baca": "SU-ri", "id": "putih" },
+  { "eu": "beltz", "baca": "BELTS", "id": "hitam" },
+  { "eu": "gorri", "baca": "GO-rri", "id": "merah" },
+  { "eu": "urdin", "baca": "ur-DIN", "id": "biru" },
+  { "eu": "berde", "baca": "BER-de", "id": "hijau" },
+  { "eu": "hori", "baca": "O-ri", "id": "kuning" },
+  { "eu": "asko", "baca": "AS-ko", "id": "banyak" },
+  { "eu": "gutxi", "baca": "GU-chi", "id": "sedikit" },
+  { "eu": "hobe", "baca": "O-be", "id": "lebih baik" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Buat bentuk pembanding yang diminta.",
+   "items": [
+    "garesti + lebih = ____",
+    "merke + paling = ____",
+    "bero + terlalu = ____",
+    "handi + lebih = ____",
+    "on + lebih = ____",
+    "polit + paling = ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Basque.",
+   "items": [
+    "Berapa harganya?",
+    "Satu kilo apel, tolong.",
+    "Terlalu mahal.",
+    "Bilbo lebih besar daripada Donostia.",
+    "Ada warna lain?",
+    "Saya ambil yang ini."
+   ]
+  },
+  {
+   "prompt": "Isi dengan warna yang tepat.",
+   "items": [
+    "Ikurrinaren hondoa ____ da. (merah)",
+    "Elurra ____ da. (putih)",
+    "Zerua ____ da. (biru)",
+    "Belarra ____ da. (hijau)",
+    "Eguzkia ____ da. (kuning)",
+    "Ardo ____ (anggur merah)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "du / zenbat / balio / ?",
+    "mesedez / bat / kilo / sagar",
+    "da / hau / garestiegia",
+    "da / gazta / baino / garestiagoa / ogia",
+    "dut / hau / nahi",
+    "da / onena / hau"
+   ]
+  }
+ ],
+ "answers": [
+  "garestiagoa — merkeena — beroegia — handiagoa — hobea — politena",
+  "Zenbat balio du? — Kilo bat sagar, mesedez. — Garestiegia da. — Bilbo Donostia baino handiagoa da. — Beste kolorerik baduzu? — Hau nahi dut.",
+  "gorria — zuria — urdina — berdea — horia — beltza",
+  "Zenbat balio du? — Kilo bat sagar, mesedez. — Hau garestiegia da. — Gazta ogia baino garestiagoa da. — Hau nahi dut. — Hau onena da."
+ ]
+}

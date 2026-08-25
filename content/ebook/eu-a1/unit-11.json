@@ -1,0 +1,211 @@
+{
+ "title": "Di mana letaknya?",
+ "title_target": "Non dago?",
+ "goal": "Menanyakan dan menjelaskan letak benda dan tempat, memakai kata bantu tempat seperti ondoan dan aurrean, serta mengatakan ada dan tidak ada.",
+ "bekal": [
+  "memakai *-ren ondoan, aurrean, atzean, gainean, azpian, artean*",
+  "membedakan *dago* (satu) dan *daude* (banyak), *badago* (ada) dan *ez dago* (tidak ada)",
+  "menyebut tempat umum di kota dan menanyakan letaknya kepada orang asing"
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Galduta Bilbon",
+   "intro": "Budi berhenti di sebuah alun-alun kecil dan bertanya kepada seorang perempuan yang sedang menunggu bus.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Barkatu, non dago Guggenheim museoa?", "id": "Permisi, museum Guggenheim di mana ya?", "literal": "maaf, di-mana berada Guggenheim museum-itu?" },
+    { "speaker": "Emakumea:", "text": "Museoa ibaiaren ondoan dago, hemendik hurbil.", "id": "Museumnya di tepi sungai, dekat dari sini.", "literal": "museum-itu sungai-punya sebelah-di berada, sini-dari dekat." },
+    { "speaker": "Budi:", "text": "Oinez urrun dago?", "id": "Jauh kalau jalan kaki?", "literal": "kaki-dengan jauh berada?" },
+    { "speaker": "Emakumea:", "text": "Ez, hamar minutu. Zuzen joan eta gero ezkerrera.", "id": "Tidak, sepuluh menit. Jalan lurus lalu belok kiri.", "literal": "tidak, sepuluh menit. lurus pergi dan nanti kiri-ke." },
+    { "speaker": "Budi:", "text": "Eskerrik asko. Eta banketxe bat, hemen inguruan?", "id": "Terima kasih. Dan bank, ada di sekitar sini?", "literal": "terima-kasih banyak. dan bank satu, di-sini sekitar-di?" },
+    { "speaker": "Emakumea:", "text": "Bai, kale honen amaieran dago, farmaziaren aurrean.", "id": "Ada, di ujung jalan ini, di depan apotek.", "literal": "ya, jalan ini-punya ujung-di berada, apotek-punya depan-di." },
+    { "speaker": "Budi:", "text": "Farmazia irekita dago orain?", "id": "Apoteknya buka sekarang?", "literal": "apotek-itu terbuka berada sekarang?" },
+    { "speaker": "Emakumea:", "text": "Ez dakit. Normalean zortzietatik zortzietara irekita egoten da.", "id": "Saya tidak tahu. Biasanya buka dari jam delapan sampai jam delapan.", "literal": "tidak tahu-saya-nya. biasanya delapan-jamak-dari delapan-jamak-ke terbuka berada-nya adalah." },
+    { "speaker": "Budi:", "text": "Ondo. Eta komunak non daude?", "id": "Baik. Dan toiletnya di mana?", "literal": "baik. dan toilet-jamak di-mana berada-mereka?" },
+    { "speaker": "Emakumea:", "text": "Plazan daude, iturriaren atzean.", "id": "Di alun-alun, di belakang air mancur.", "literal": "alun-alun-di berada-mereka, air-mancur-punya belakang-di." },
+    { "speaker": "Budi:", "text": "Mila esker! Oso jatorra zara.", "id": "Terima kasih banyak! Kamu baik sekali.", "literal": "seribu terima-kasih! sangat ramah-itu adalah-kamu." },
+    { "speaker": "Emakumea:", "text": "Ez horregatik. Ondo ibili Bilbon!", "id": "Sama-sama. Selamat menikmati Bilbo!", "literal": "tidak karena-itu. baik berjalan Bilbo-di!" }
+   ],
+   "notes": [
+    "**Kata bantu tempat menuntut -ren di depannya.** *Ibaia**ren** ondoan* (di sebelah sungai), *farmazia**ren** aurrean* (di depan apotek). Susunannya: benda acuan + *-ren* + kata tempat + *-an*. Bahasa Indonesia menyusunnya terbalik — \"di sebelah sungai\" — jadi biasakan membalik urutannya di kepala.",
+    "**Dago untuk satu, daude untuk banyak.** *Museoa hemen **dago*** (museumnya di sini), *komunak han **daude*** (toiletnya di sana). Kesalahan ini sangat mencolok di telinga penutur asli, dan mudah dihindari kalau kamu terbiasa melihat *-ak* di ujung kata bendanya.",
+    "**Mila esker — cara berterima kasih yang lebih hangat.** Harfiahnya \"seribu terima kasih\". Sederet ucapan terima kasih dari yang paling singkat: *eskerrik asko* < *mila esker* < *eskerrik asko bihotzez* (\"terima kasih dari hati\"). Semuanya dijawab dengan *ez horregatik* atau *ez dago zergatik*.",
+    "**Irekita dan itxita — keadaan, jadi memakai egon.** *Irekita **dago*** (sedang buka), *itxita **dago*** (sedang tutup). Ini golongan kata berakhiran *-ta* yang kamu kenal dari Unit 10, dan seluruhnya selalu berpasangan dengan *egon*, tidak pernah dengan *izan*."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata bantu tempat",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia", "Contoh"], "rows": [
+     ["**gainean**", "ga-i-NE-an", "di atas (menempel)", "mahaiaren gainean"],
+     ["**azpian**", "as-PI-an", "di bawah", "mahaiaren azpian"],
+     ["**aurrean**", "a-U-rre-an", "di depan", "etxearen aurrean"],
+     ["**atzean**", "a-TSE-an", "di belakang", "etxearen atzean"],
+     ["**ondoan**", "on-DO-an", "di sebelah", "bankuaren ondoan"],
+     ["**alboan**", "al-BO-an", "di samping", "nire alboan"],
+     ["**barruan**", "ba-RRU-an", "di dalam", "poltsaren barruan"],
+     ["**kanpoan**", "kan-PO-an", "di luar", "etxetik kanpoan"],
+     ["**artean**", "ar-TE-an", "di antara", "bi etxeren artean"],
+     ["**erdian**", "er-DI-an", "di tengah", "plazaren erdian"],
+     ["**inguruan**", "in-GU-ru-an", "di sekitar", "hemen inguruan"],
+     ["**parean**", "pa-RE-an", "berseberangan dengan", "geltokiaren parean"]
+    ]},
+    { "type": "p", "text": "Semua kata di atas sebetulnya kata benda biasa yang memakai akhiran tempat *-an*: *gain* (permukaan) → *gainean* (di permukaannya). Karena itu ia menuntut pemilik di depannya, dan pemilik itu ditandai *-ren* — persis seperti \"permukaan-nya meja\"." },
+    { "type": "tabel", "head": ["Euskara", "Harfiah", "Bahasa Indonesia"], "rows": [
+     ["Liburua mahaiaren gainean dago.", "buku-itu meja-punya atas-di berada", "Bukunya di atas meja."],
+     ["Katua aulkiaren azpian dago.", "kucing-itu kursi-punya bawah-di berada", "Kucingnya di bawah kursi."],
+     ["Banketxea farmaziaren ondoan dago.", "bank-itu apotek-punya sebelah-di berada", "Banknya di sebelah apotek."],
+     ["Nire etxea bi dendaren artean dago.", "saya-punya rumah-itu dua toko-punya antara-di berada", "Rumah saya di antara dua toko."],
+     ["Zure poltsa non dago?", "kamu-punya tas di-mana berada", "Tasmu di mana?"]
+    ]},
+    { "type": "kotak", "title": "Tiga akhiran arah yang perlu dibedakan", "items": [
+     "**-an** = di (diam di situ): *etxean nago* — saya di rumah.",
+     "**-ra** = ke (menuju): *etxera noa* — saya pergi ke rumah.",
+     "**-tik** = dari (berasal): *etxetik nator* — saya datang dari rumah.",
+     "Ketiganya dipakai juga dengan kata bantu tempat: *mahaiaren gainean* (di atas meja), *mahaiaren gainera* (ke atas meja), *mahaiaren gainetik* (dari atas meja)."
+    ]}
+   ]
+  },
+  {
+   "title": "Ada dan tidak ada",
+   "blocks": [
+    { "type": "p", "text": "Untuk mengatakan sesuatu ada atau tidak ada di suatu tempat, bahasa Basque memakai *egon* — kata kerja yang sama untuk \"berada\"." },
+    { "type": "tabel", "head": ["Euskara", "Harfiah", "Bahasa Indonesia"], "rows": [
+     ["**Badago** banketxe bat hemen.", "memang-berada bank satu di-sini", "Di sini ada bank."],
+     ["**Ez dago** banketxerik hemen.", "tidak berada bank-sejumlah di-sini", "Di sini tidak ada bank."],
+     ["**Badaude** komunak?", "memang-berada-mereka toilet-jamak?", "Ada toilet?"],
+     ["**Ez daude** hemen.", "tidak berada-mereka di-sini", "Tidak ada di sini."],
+     ["**Zenbat** ikasle daude klasean?", "berapa murid berada-mereka kelas-di", "Ada berapa murid di kelas?"],
+     ["**Inor ez dago** etxean.", "siapa-pun tidak berada rumah-di", "Tidak ada siapa-siapa di rumah."]
+    ]},
+    { "type": "p", "text": "Perhatikan lagi akhiran *-rik* pada kalimat menyangkal: *ez dago banketxe**rik***. Aturan yang sama yang kamu pelajari di Unit 5 untuk benda yang dikenai berlaku juga di sini." },
+    { "type": "kotak", "title": "Empat kata \"tak seorang pun\"", "items": [
+     "*inor ez* — tidak ada seorang pun. *Inor ez dago hemen.*",
+     "*ezer ez* — tidak ada apa pun. *Ez dago ezer hozkailuan.*",
+     "*inon ez* — tidak di mana pun. *Ez dago inon.*",
+     "*inoiz ez* — tidak pernah. *Ez naiz inoiz Parisen egon.*",
+     "Keempatnya selalu berpasangan dengan *ez* — sangkalannya disebut dua kali, sama seperti \"tidak ada siapa-siapa\" dalam bahasa Indonesia."
+    ]}
+   ]
+  },
+  {
+   "title": "Tempat umum di kota",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia"], "rows": [
+     ["banketxea", "ban-KE-che-a", "bank"],
+     ["farmazia", "far-MA-si-a", "apotek"],
+     ["ospitalea", "os-pi-TA-le-a", "rumah sakit"],
+     ["liburutegia", "li-bu-ru-TE-gi-a", "perpustakaan"],
+     ["postetxea", "pos-TE-che-a", "kantor pos"],
+     ["geltokia", "gel-TO-ki-a", "stasiun, halte"],
+     ["udaletxea", "u-da-LE-che-a", "balai kota"],
+     ["eliza", "e-LI-sa", "gereja"],
+     ["museoa", "mu-SE-o-a", "museum"],
+     ["merkatua", "mer-ka-TU-a", "pasar"],
+     ["supermerkatua", "su-per-mer-ka-TU-a", "supermarket"],
+     ["jatetxea", "kha-TE-che-a", "restoran"],
+     ["hotela", "o-TE-la", "hotel"],
+     ["komuna", "ko-MU-na", "toilet"],
+     ["kalea", "ka-LE-a", "jalan"],
+     ["zubia", "SU-bi-a", "jembatan"],
+     ["ibaia", "i-BA-i-a", "sungai"],
+     ["hondartza", "on-DAR-tsa", "pantai"]
+    ]},
+    { "type": "p", "text": "Perhatikan akhiran *-tegi* yang berarti \"tempat untuk\": *liburu**tegi*** (tempat buku = perpustakaan), *euskal**tegi*** (tempat euskara), *sagardo**tegi*** (rumah sider), *ostatu*. Dan *-etxe* yang berarti \"rumah\": *jat**etxe**a* (rumah makan = restoran), *udal**etxe**a* (rumah pemerintahan kota), *bank**etxe**a*." },
+    { "type": "kotak", "title": "Kalimat untuk bertanya arah", "items": [
+     "*Barkatu, non dago …?* — Permisi, di mana …?",
+     "*Hemendik hurbil dago?* — Dekat dari sini?",
+     "*Urrun dago?* — Jauh?",
+     "*Zuzen / ezkerrera / eskuinera* — lurus / ke kiri / ke kanan.",
+     "*Galduta nago.* — Saya tersesat.",
+     "*Berriro esan, mesedez.* — Tolong diulang."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "eu": "gainean", "baca": "ga-i-NE-an", "id": "di atas" },
+  { "eu": "azpian", "baca": "as-PI-an", "id": "di bawah" },
+  { "eu": "aurrean", "baca": "a-U-rre-an", "id": "di depan" },
+  { "eu": "atzean", "baca": "a-TSE-an", "id": "di belakang" },
+  { "eu": "ondoan", "baca": "on-DO-an", "id": "di sebelah" },
+  { "eu": "barruan", "baca": "ba-RRU-an", "id": "di dalam" },
+  { "eu": "artean", "baca": "ar-TE-an", "id": "di antara" },
+  { "eu": "inguruan", "baca": "in-GU-ru-an", "id": "di sekitar" },
+  { "eu": "banketxe", "baca": "ban-KE-che", "id": "bank" },
+  { "eu": "farmazia", "baca": "far-MA-si-a", "id": "apotek" },
+  { "eu": "liburutegi", "baca": "li-bu-ru-TE-gi", "id": "perpustakaan" },
+  { "eu": "postetxe", "baca": "pos-TE-che", "id": "kantor pos" },
+  { "eu": "geltoki", "baca": "gel-TO-ki", "id": "stasiun, halte" },
+  { "eu": "jatetxe", "baca": "kha-TE-che", "id": "restoran" },
+  { "eu": "eliza", "baca": "e-LI-sa", "id": "gereja" },
+  { "eu": "museo", "baca": "mu-SE-o", "id": "museum" },
+  { "eu": "merkatu", "baca": "mer-ka-TU", "id": "pasar" },
+  { "eu": "komun", "baca": "ko-MUN", "id": "toilet" },
+  { "eu": "zubi", "baca": "SU-bi", "id": "jembatan" },
+  { "eu": "ibai", "baca": "i-BA-i", "id": "sungai" },
+  { "eu": "hondartza", "baca": "on-DAR-tsa", "id": "pantai" },
+  { "eu": "iturri", "baca": "i-TU-rri", "id": "air mancur, keran" },
+  { "eu": "irekita", "baca": "i-re-KI-ta", "id": "buka" },
+  { "eu": "itxita", "baca": "i-CHI-ta", "id": "tutup" },
+  { "eu": "zuzen", "baca": "SU-sen", "id": "lurus" },
+  { "eu": "ezkerrera", "baca": "es-ke-RRE-ra", "id": "ke kiri" },
+  { "eu": "eskuinera", "baca": "es-ku-i-NE-ra", "id": "ke kanan" },
+  { "eu": "inor", "baca": "i-NOR", "id": "siapa pun" },
+  { "eu": "mila esker", "baca": "MI-la ES-ker", "id": "terima kasih banyak" },
+  { "eu": "amaiera", "baca": "a-ma-i-E-ra", "id": "ujung, akhir" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan kata bantu tempat yang tepat.",
+   "items": [
+    "Liburua mahaiaren ____ dago. (di atas)",
+    "Katua aulkiaren ____ dago. (di bawah)",
+    "Banketxea farmaziaren ____ dago. (di sebelah)",
+    "Geltokia elizaren ____ dago. (di depan)",
+    "Poltsa ohearen ____ dago. (di belakang)",
+    "Iturria plazaren ____ dago. (di tengah)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan *dago*, *daude*, *badago*, atau *ez dago*.",
+   "items": [
+    "Museoa hemen ____.",
+    "Komunak han ____.",
+    "____ banketxerik hemen? (pertanyaan: ada?)",
+    "Ez, hemen ____ banketxerik.",
+    "Ikasleak klasean ____.",
+    "Inor ez ____ etxean."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Basque.",
+   "items": [
+    "Permisi, di mana museumnya?",
+    "Di sebelah sungai.",
+    "Jauh dari sini?",
+    "Apoteknya sedang tutup.",
+    "Di sini tidak ada restoran.",
+    "Saya tersesat."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "dago / non / museoa / ?",
+    "dago / ibaiaren / museoa / ondoan",
+    "daude / komunak / plazan",
+    "dago / itxita / farmazia",
+    "dago / ez / banketxerik / hemen",
+    "nago / galduta"
+   ]
+  }
+ ],
+ "answers": [
+  "gainean — azpian — ondoan — aurrean — atzean — erdian",
+  "dago — daude — Badago — ez dago — daude — dago",
+  "Barkatu, non dago museoa? — Ibaiaren ondoan. — Hemendik urrun dago? — Farmazia itxita dago. — Hemen ez dago jatetxerik. — Galduta nago.",
+  "Non dago museoa? — Museoa ibaiaren ondoan dago. — Komunak plazan daude. — Farmazia itxita dago. — Hemen ez dago banketxerik. — Galduta nago."
+ ]
+}

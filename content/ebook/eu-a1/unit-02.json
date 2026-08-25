@@ -1,0 +1,621 @@
+{
+ "title": "Ini apa? — benda, kata sandang, dan angka",
+ "title_target": "Hau zer da?",
+ "goal": "Menamai benda di sekitarmu, memakai kata sandang -a dan bentuk jamak -ak, menunjuk dengan hau/hori/hura, dan menghitung sampai dua puluh.",
+ "bekal": [
+  "menempelkan *-a* dan *-ak* di ekor kata benda, seperti \"-nya\" dalam bahasa Indonesia",
+  "membedakan *hau*, *hori*, *hura* — tiga jarak menunjuk, persis seperti \"ini, itu, itu sana\"",
+  "menghitung dari nol sampai dua puluh dan bertanya *zenbat?*"
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Gela berria",
+   "intro": "Ainhoa menunjukkan kamar Budi di apartemen dekat euskaltegi.",
+   "lines": [
+    {
+     "speaker": "Ainhoa:",
+     "text": "Hau zure gela da. Handia da, ezta?",
+     "id": "Ini kamarmu. Besar, kan?",
+     "literal": "ini kamu-punya kamar-itu adalah. besar-itu adalah, bukan-begitu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bai, oso handia. Eta hori zer da?",
+     "id": "Ya, besar sekali. Dan itu apa?",
+     "literal": "ya, sangat besar-itu. dan itu apa adalah?"
+    },
+    {
+     "speaker": "Ainhoa:",
+     "text": "Hori mahaia da. Eta hau aulkia.",
+     "id": "Itu meja. Dan ini kursi.",
+     "literal": "itu meja-itu adalah. dan ini kursi-itu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Aulki bat bakarrik?",
+     "id": "Cuma satu kursi?",
+     "literal": "kursi satu saja?"
+    },
+    {
+     "speaker": "Ainhoa:",
+     "text": "Ez, bi aulki daude. Bestea han dago.",
+     "id": "Tidak, ada dua kursi. Yang satunya di sana.",
+     "literal": "tidak, dua kursi berada-mereka. lain-itu di-sana berada."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ados. Eta liburu horiek zer dira?",
+     "id": "Baik. Dan buku-buku itu apa?",
+     "literal": "setuju. dan buku itu-jamak apa adalah-mereka?"
+    },
+    {
+     "speaker": "Ainhoa:",
+     "text": "Euskarazko liburuak dira. Zuretzat.",
+     "id": "Itu buku-buku berbahasa Basque. Untukmu.",
+     "literal": "Basque-dengan-yang buku-jamak adalah-mereka. kamu-untuk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Eskerrik asko! Zenbat liburu dira?",
+     "id": "Terima kasih! Ada berapa buku?",
+     "literal": "terima-kasih banyak! berapa buku adalah-mereka?"
+    },
+    {
+     "speaker": "Ainhoa:",
+     "text": "Hamar liburu eta hiztegi bat.",
+     "id": "Sepuluh buku dan satu kamus.",
+     "literal": "sepuluh buku dan kamus satu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hiztegia berria da?",
+     "id": "Kamusnya baru?",
+     "literal": "kamus-itu baru-itu adalah?"
+    },
+    {
+     "speaker": "Ainhoa:",
+     "text": "Bai, berri-berria. Gela polita da, ezta?",
+     "id": "Ya, baru sekali. Kamarnya bagus, kan?",
+     "literal": "ya, baru-baru-itu. kamar-itu cantik-itu adalah, bukan-begitu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bai, oso polita. Hemen gustura nago.",
+     "id": "Ya, bagus sekali. Saya betah di sini.",
+     "literal": "ya, sangat cantik-itu. di-sini nyaman berada-saya."
+    }
+   ],
+   "notes": [
+    "**Ezta? adalah \"kan?\".** Dipasang di ujung kalimat untuk meminta persetujuan, persis seperti \"kan?\" atau \"ya?\" dalam bahasa Indonesia. Asalnya *ez da* (\"bukan\"), tapi sekarang ia satu kata dan tidak pernah berubah bentuk, dipakai untuk kalimat apa pun.",
+    "**Angka berdiri di depan, kecuali satu.** *Hamar liburu* (sepuluh buku), *bi aulki* (dua kursi) — angkanya di depan. Tapi *bat* (\"satu\") justru di belakang: *aulki bat*, *hiztegi bat*. Sebabnya *bat* juga berfungsi sebagai \"sebuah\", dan penanda ketidaktentuan selalu jatuh di belakang dalam bahasa ini.",
+    "**Benda yang dihitung tidak dijamakkan.** *Hamar liburu*, bukan *hamar liburuak*. Ini kebiasaan yang sama dengan bahasa Indonesia: \"sepuluh buku\", bukan \"sepuluh buku-buku\". Kalau angkanya sudah ada, kata bendanya dibiarkan telanjang.",
+    "**Berri-berria — mengulang untuk menguatkan.** Bahasa Basque menggandakan kata sifat untuk arti \"sangat\": *berri-berria* (baru sekali), *bete-betea* (penuh sekali), *goxo-goxoa* (enak sekali). Persis kebiasaan kita menggandakan: \"baru-baru saja\", \"panas-panas\"."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata sandang: -a yang menempel",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Ini adalah aturan pertama yang harus benar-benar kamu kuasai, dan kabar baiknya: ia mirip dengan kebiasaan bahasa Indonesia. Kata benda di kamus berdiri telanjang — *etxe*, *liburu*, *mahai*. Begitu ia dipakai dalam kalimat sebagai benda tertentu, ia mendapat *-a* di ekornya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata kamus",
+      "+ kata sandang",
+      "+ jamak",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "etxe",
+       "etxe**a**",
+       "etxe**ak**",
+       "rumah → rumah itu → rumah-rumah itu"
+      ],
+      [
+       "liburu",
+       "liburu**a**",
+       "liburu**ak**",
+       "buku → buku itu → buku-buku itu"
+      ],
+      [
+       "mahai",
+       "mahai**a**",
+       "mahai**ak**",
+       "meja → meja itu → meja-meja itu"
+      ],
+      [
+       "gizon",
+       "gizon**a**",
+       "gizon**ak**",
+       "lelaki → lelaki itu → para lelaki"
+      ],
+      [
+       "neska",
+       "neska",
+       "neska**k**",
+       "gadis → gadis itu → para gadis"
+      ],
+      [
+       "ur",
+       "ur**a**",
+       "—",
+       "air → air itu"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris *neska* memperlihatkan satu-satunya pengecualian yang perlu kamu ingat: kata yang **sudah** berakhir *-a* tidak menambah *-a* lagi. *Neska* sudah berarti \"gadis\" maupun \"gadis itu\"; jamaknya cukup *neskak*. Kata semacam ini banyak — *ama* (ibu), *alaba* (anak perempuan), *hizkuntza* (bahasa)."
+    },
+    {
+     "type": "sub",
+     "text": "Kata sifat berdiri di belakang, dan kata sandangnya pindah ke sana"
+    },
+    {
+     "type": "p",
+     "text": "Kalau ada kata sifat, ia datang **sesudah** kata bendanya — dan *-a* ikut pindah ke ujung rombongan, menempel pada kata sifatnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Euskara",
+      "Harfiah",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "etxe **handia**",
+       "rumah besar-itu",
+       "rumah besar itu"
+      ],
+      [
+       "liburu **berria**",
+       "buku baru-itu",
+       "buku baru itu"
+      ],
+      [
+       "kotxe **gorriak**",
+       "mobil merah-jamak",
+       "mobil-mobil merah itu"
+      ],
+      [
+       "gela **txiki bat**",
+       "kamar kecil satu",
+       "sebuah kamar kecil"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kesalahan yang paling sering terjadi",
+     "items": [
+      "Menaruh *-a* di dua tempat: ***etxea handia*** salah. Yang benar *etxe handia* — satu rombongan, satu kata sandang, dan tempatnya di paling ujung.",
+      "Memakai kata kamus telanjang sebagai subjek: ***Etxe handia da*** terdengar seperti kalimat setengah jadi. Yang benar *Etxea handia da* (rumah itu besar).",
+      "Ingat pola bahasa Indonesia: rumah → rumah**nya**. Kalau kamu ragu apakah perlu *-a*, tanyakan pada dirimu apakah kamu akan menambahkan \"-nya\" atau \"itu\" dalam bahasa Indonesia."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menunjuk: hau, hori, hura",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Basque punya tiga jarak menunjuk, bukan dua — dan kebetulan itu persis seperti bahasa Indonesia: *ini* (dekat saya), *itu* (dekat kamu), *itu di sana* (jauh dari kita berdua)."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Jarak",
+      "Menunjuk benda",
+      "Jamaknya",
+      "Tempatnya",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "dekat saya",
+       "**hau**",
+       "hauek",
+       "**hemen**",
+       "ini / di sini"
+      ],
+      [
+       "dekat kamu",
+       "**hori**",
+       "horiek",
+       "**hor**",
+       "itu / di situ"
+      ],
+      [
+       "jauh dari keduanya",
+       "**hura**",
+       "haiek",
+       "**han**",
+       "itu (di sana) / di sana"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Berdiri sendiri, ia menjadi subjek kalimat: *Hau mahaia da* (ini meja). Dipasang bersama kata benda, ia justru berdiri **di belakangnya**, dan kata bendanya lalu tidak memakai *-a*: *liburu hau* (buku ini), *liburu horiek* (buku-buku itu), *gela hura* (kamar yang di sana itu)."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Euskara",
+      "Harfiah",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Hau zer da?",
+       "ini apa adalah?",
+       "Ini apa?"
+      ],
+      [
+       "Hori nire liburua da.",
+       "itu saya-punya buku-itu adalah.",
+       "Itu buku saya."
+      ],
+      [
+       "Liburu hau berria da.",
+       "buku ini baru-itu adalah.",
+       "Buku ini baru."
+      ],
+      [
+       "Neska horiek nire lagunak dira.",
+       "gadis itu-jamak saya-punya teman-jamak adalah.",
+       "Gadis-gadis itu teman saya."
+      ],
+      [
+       "Etxe hura handia da.",
+       "rumah itu-sana besar-itu adalah.",
+       "Rumah di sana itu besar."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Hura punya dua pekerjaan",
+     "items": [
+      "*Hura* berarti \"itu (yang di sana)\" dan sekaligus **\"dia\"** untuk orang. *Hura irakaslea da* bisa berarti \"dia guru\" atau \"yang di sana itu gurunya\" — konteks yang menentukan.",
+      "Bahasa Basque tidak punya kata terpisah untuk \"dia laki-laki\" dan \"dia perempuan\". Sama seperti bahasa Indonesia yang cuma punya \"dia\". Satu beban hafalan yang tidak perlu kamu tanggung."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Angka nol sampai dua puluh",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "",
+      "Euskara",
+      "Cara baca",
+      "",
+      "Euskara",
+      "Cara baca"
+     ],
+     "rows": [
+      [
+       "0",
+       "zero",
+       "SE-ro",
+       "11",
+       "hamaika",
+       "a-MA-i-ka"
+      ],
+      [
+       "1",
+       "bat",
+       "BAT",
+       "12",
+       "hamabi",
+       "a-ma-BI"
+      ],
+      [
+       "2",
+       "bi",
+       "BI",
+       "13",
+       "hamahiru",
+       "a-ma-I-ru"
+      ],
+      [
+       "3",
+       "hiru",
+       "I-ru",
+       "14",
+       "hamalau",
+       "a-ma-LA-u"
+      ],
+      [
+       "4",
+       "lau",
+       "LA-u",
+       "15",
+       "hamabost",
+       "a-ma-BOST"
+      ],
+      [
+       "5",
+       "bost",
+       "BOST",
+       "16",
+       "hamasei",
+       "a-ma-SE-i"
+      ],
+      [
+       "6",
+       "sei",
+       "SE-i",
+       "17",
+       "hamazazpi",
+       "a-ma-SAS-pi"
+      ],
+      [
+       "7",
+       "zazpi",
+       "SAS-pi",
+       "18",
+       "hemezortzi",
+       "e-me-SOR-tsi"
+      ],
+      [
+       "8",
+       "zortzi",
+       "SOR-tsi",
+       "19",
+       "hemeretzi",
+       "e-me-RE-tsi"
+      ],
+      [
+       "9",
+       "bederatzi",
+       "be-de-RA-tsi",
+       "20",
+       "hogei",
+       "o-GE-i"
+      ],
+      [
+       "10",
+       "hamar",
+       "a-MAR",
+       "",
+       "",
+       ""
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dari 11 sampai 17 polanya jelas: *hama-* (dari *hamar*, sepuluh) ditambah angkanya — *hamabi* = sepuluh-dua. Delapan belas dan sembilan belas menyimpang menjadi *hemezortzi* dan *hemeretzi*; keduanya harus dihafal apa adanya."
+    },
+    {
+     "type": "p",
+     "text": "Bertanya jumlah dengan *zenbat*, dan kata bendanya dibiarkan telanjang: *Zenbat liburu?* (berapa buku?), *Zenbat urte?* (berapa tahun?). Menjawabnya juga tanpa kata sandang: *Hamar liburu.*"
+    },
+    {
+     "type": "kotak",
+     "title": "Peringatan kecil tentang angka besar",
+     "items": [
+      "Bahasa Basque menghitung dengan dasar **dua puluh**, bukan sepuluh. Empat puluh adalah *berrogei* — harfiahnya \"dua kali dua puluh\". Enam puluh adalah *hirurogei*, \"tiga kali dua puluh\".",
+      "Kalau kamu pernah bertemu bahasa Prancis, ini kebiasaan yang sama dengan *quatre-vingts* (delapan puluh = empat kali dua puluh). Bedanya, bahasa Basque memakainya untuk semua puluhan.",
+      "Angka 21 sampai 100 dibahas lengkap di Unit 3. Untuk sekarang, dua puluh sudah cukup untuk hampir semua percakapan pertama."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "eu": "hau",
+   "baca": "A-u",
+   "id": "ini"
+  },
+  {
+   "eu": "hori",
+   "baca": "O-ri",
+   "id": "itu (dekat lawan bicara)"
+  },
+  {
+   "eu": "hura",
+   "baca": "U-ra",
+   "id": "itu (jauh); dia"
+  },
+  {
+   "eu": "hemen / hor / han",
+   "baca": "E-men / OR / AN",
+   "id": "di sini / di situ / di sana"
+  },
+  {
+   "eu": "gela",
+   "baca": "GE-la",
+   "id": "kamar, ruangan"
+  },
+  {
+   "eu": "etxe",
+   "baca": "E-che",
+   "id": "rumah"
+  },
+  {
+   "eu": "mahai",
+   "baca": "MA-a-i",
+   "id": "meja"
+  },
+  {
+   "eu": "aulki",
+   "baca": "A-ul-ki",
+   "id": "kursi"
+  },
+  {
+   "eu": "ohe",
+   "baca": "O-e",
+   "id": "tempat tidur"
+  },
+  {
+   "eu": "ate",
+   "baca": "A-te",
+   "id": "pintu"
+  },
+  {
+   "eu": "leiho",
+   "baca": "LE-i-o",
+   "id": "jendela"
+  },
+  {
+   "eu": "liburu",
+   "baca": "li-BU-ru",
+   "id": "buku"
+  },
+  {
+   "eu": "hiztegi",
+   "baca": "is-TE-gi",
+   "id": "kamus"
+  },
+  {
+   "eu": "boligrafo",
+   "baca": "bo-li-GRA-fo",
+   "id": "pulpen"
+  },
+  {
+   "eu": "koaderno",
+   "baca": "ko-a-DER-no",
+   "id": "buku tulis"
+  },
+  {
+   "eu": "poltsa",
+   "baca": "POL-tsa",
+   "id": "tas"
+  },
+  {
+   "eu": "telefono",
+   "baca": "te-LE-fo-no",
+   "id": "telepon"
+  },
+  {
+   "eu": "handi",
+   "baca": "AN-di",
+   "id": "besar"
+  },
+  {
+   "eu": "txiki",
+   "baca": "CHI-ki",
+   "id": "kecil"
+  },
+  {
+   "eu": "berri",
+   "baca": "BE-rri",
+   "id": "baru"
+  },
+  {
+   "eu": "zahar",
+   "baca": "SA-ar",
+   "id": "tua, lama"
+  },
+  {
+   "eu": "polit",
+   "baca": "po-LIT",
+   "id": "cantik, bagus"
+  },
+  {
+   "eu": "on",
+   "baca": "ON",
+   "id": "baik, bagus"
+  },
+  {
+   "eu": "txar",
+   "baca": "CHAR",
+   "id": "buruk, jelek"
+  },
+  {
+   "eu": "garesti",
+   "baca": "ga-RES-ti",
+   "id": "mahal"
+  },
+  {
+   "eu": "merke",
+   "baca": "MER-ke",
+   "id": "murah"
+  },
+  {
+   "eu": "beste",
+   "baca": "BES-te",
+   "id": "lain, yang lain"
+  },
+  {
+   "eu": "bakarrik",
+   "baca": "ba-KA-rrik",
+   "id": "hanya, saja"
+  },
+  {
+   "eu": "zenbat",
+   "baca": "sen-BAT",
+   "id": "berapa"
+  },
+  {
+   "eu": "gustura",
+   "baca": "gus-TU-ra",
+   "id": "nyaman, betah"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tambahkan kata sandang yang tepat (-a atau -ak).",
+   "items": [
+    "liburu____ berria da. (buku itu)",
+    "mahai____ handiak dira. (meja-meja itu)",
+    "etxe____ txikia da. (rumah itu)",
+    "aulki____ berriak dira. (kursi-kursi itu)",
+    "hiztegi____ ona da. (kamus itu)",
+    "neska____ nire lagunak dira. (gadis-gadis itu)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Basque.",
+   "items": [
+    "Ini apa?",
+    "Itu meja.",
+    "Buku ini baru.",
+    "Rumah di sana itu besar.",
+    "Ada berapa kursi?",
+    "Sebuah kamar kecil."
+   ]
+  },
+  {
+   "prompt": "Tulis angkanya dengan huruf.",
+   "items": [
+    "3 liburu",
+    "7 aulki",
+    "11 ikasle",
+    "15 egun",
+    "18 lagun",
+    "20 etxe"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "da / hau / mahaia",
+    "berria / liburu / hau / da",
+    "dira / horiek / nire / lagunak",
+    "handia / etxea / da / oso",
+    "daude / bi / aulki / hemen",
+    "da / zer / hori / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "liburua — mahaiak — etxea — aulkiak — hiztegia — neskak (kata yang sudah berakhir -a cuma menambah -k)",
+  "Hau zer da? — Hori mahaia da. — Liburu hau berria da. — Etxe hura handia da. — Zenbat aulki daude? — Gela txiki bat.",
+  "hiru liburu — zazpi aulki — hamaika ikasle — hamabost egun — hemezortzi lagun — hogei etxe",
+  "Hau mahaia da. — Liburu hau berria da. — Horiek nire lagunak dira. — Etxea oso handia da. — Hemen bi aulki daude. — Hori zer da?"
+ ]
+}

@@ -1,0 +1,208 @@
+{
+ "title": "Keluarga saya",
+ "title_target": "Nire familia",
+ "goal": "Menyebut anggota keluarga, memakai kata milik nire/zure/haren dan akhiran milik -ren, serta menggambarkan orang dengan kata sifat.",
+ "bekal": [
+  "menyebut seluruh anggota keluarga inti dan menanyakan keluarga orang lain",
+  "memakai *nire*, *zure*, *haren* dan menempelkan *-ren* pada nama orang",
+  "menjawab *nolakoa da?* dengan kata sifat untuk orang"
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Familiaren argazkia",
+   "intro": "Istirahat di euskaltegi. Budi menunjukkan foto keluarganya kepada Maite, teman sekelasnya.",
+   "lines": [
+    { "speaker": "Maite:", "text": "Hau zure familia da?", "id": "Ini keluargamu?", "literal": "ini kamu-punya keluarga adalah?" },
+    { "speaker": "Budi:", "text": "Bai, hau nire familiaren argazkia da.", "id": "Ya, ini foto keluarga saya.", "literal": "ya, ini saya-punya keluarga-punya foto-itu adalah." },
+    { "speaker": "Maite:", "text": "Nor da gizon hori?", "id": "Siapa lelaki itu?", "literal": "siapa adalah lelaki itu?" },
+    { "speaker": "Budi:", "text": "Nire aita da. Hirurogei urte ditu.", "id": "Itu ayah saya. Umurnya enam puluh.", "literal": "saya-punya ayah adalah. enam-puluh tahun punya-dia-mereka." },
+    { "speaker": "Maite:", "text": "Eta haren ondoko emakumea?", "id": "Dan perempuan di sebelahnya?", "literal": "dan dia-punya sebelah-yang perempuan-itu?" },
+    { "speaker": "Budi:", "text": "Nire ama. Irakaslea da, zu bezala.", "id": "Ibu saya. Dia guru, seperti kamu.", "literal": "saya-punya ibu. guru-itu adalah, kamu seperti." },
+    { "speaker": "Maite:", "text": "Anai-arrebarik baduzu?", "id": "Kamu punya saudara?", "literal": "saudara-saudari-sejumlah punya-kamu-nya?" },
+    { "speaker": "Budi:", "text": "Bai, arreba bat eta anaia bat ditut.", "id": "Ya, saya punya satu adik perempuan dan satu adik laki-laki.", "literal": "ya, saudari satu dan saudara satu punya-saya-mereka." },
+    { "speaker": "Maite:", "text": "Zenbat urte dituzte?", "id": "Berapa umur mereka?", "literal": "berapa tahun punya-mereka-mereka?" },
+    { "speaker": "Budi:", "text": "Arrebak hogei urte ditu, eta anaiak hamazazpi.", "id": "Adik perempuan saya dua puluh, dan adik laki-laki saya tujuh belas.", "literal": "saudari-pelaku dua-puluh tahun punya-dia-nya, dan saudara-pelaku tujuh-belas." },
+    { "speaker": "Maite:", "text": "Ezkonduta zaude?", "id": "Kamu sudah menikah?", "literal": "menikah berada-kamu?" },
+    { "speaker": "Budi:", "text": "Ez, ezkongabea naiz. Baina bikotekide bat dut.", "id": "Belum, saya lajang. Tapi saya punya pasangan.", "literal": "tidak, lajang-itu adalah-saya. tapi pasangan satu punya-saya-nya." }
+   ],
+   "notes": [
+    "**Nama saudara bergantung pada jenis kelamin yang berbicara.** Ini kekhasan bahasa Basque yang paling sering mengejutkan pemula. Kalau **laki-laki** yang bicara: *anaia* (saudara laki-laki), *arreba* (saudara perempuan). Kalau **perempuan** yang bicara: *neba* (saudara laki-laki), *ahizpa* (saudara perempuan). Jadi kata yang dipakai Budi berbeda dengan kata yang dipakai Maite untuk hubungan yang sama persis.",
+    "**Anai-arreba: dua kata digabung jadi \"saudara kandung\".** Bahasa Basque suka menggabungkan sepasang kata untuk menyebut golongannya: *anai-arrebak* (saudara kandung), *seme-alabak* (anak-anak), *aitona-amonak* (kakek-nenek), *senar-emazteak* (suami istri). Bahasa Indonesia melakukan hal yang sama — \"saudara-saudari\", \"ayah-ibu\".",
+    "**Baduzu? — ba- yang menegaskan.** Dalam pertanyaan dan kalimat positif yang menegaskan, bantu *duzu* sering mendapat awalan *ba-*: *baduzu?* (\"kamu punya?\"), *badakit* (\"saya tahu\"), *badago* (\"ada\"). Awalan ini tidak mengubah arti dasarnya; ia menegaskan, seperti \"memang\" dalam bahasa Indonesia.",
+    "**-rik: akhiran khusus untuk pertanyaan dan sangkalan.** *Anai-arreba**rik** baduzu?* dan *Ez dut anai-arreba**rik**.* Kalau benda yang dibicarakan belum tentu ada — dalam pertanyaan atau kalimat menyangkal — bahasa Basque memakai *-rik*, bukan kata sandang *-a*. Kira-kira sepadan dengan \"sama sekali\" atau \"satu pun\" dalam bahasa Indonesia."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kepunyaan: nire, zure, haren",
+   "blocks": [
+    { "type": "tabel", "head": ["Orang", "Kata milik", "Cara baca", "Contoh"], "rows": [
+     ["ni", "**nire**", "NI-re", "nire etxea (rumah saya)"],
+     ["zu", "**zure**", "SU-re", "zure liburua (bukumu)"],
+     ["hura", "**haren**", "A-ren", "haren aita (ayahnya)"],
+     ["gu", "**gure**", "GU-re", "gure gela (kamar kami)"],
+     ["zuek", "**zuen**", "SU-en", "zuen irakaslea (guru kalian)"],
+     ["haiek", "**haien**", "A-i-en", "haien etxeak (rumah mereka)"]
+    ]},
+    { "type": "p", "text": "Kata milik berdiri **di depan** benda yang dimiliki — satu-satunya hal dalam bahasa Basque yang berdiri di depan. Bendanya sendiri tetap memakai kata sandang: *nire etxe**a***, bukan *nire etxe*." },
+    { "type": "sub", "text": "Milik siapa pun: akhiran -ren" },
+    { "type": "p", "text": "Untuk nama orang dan kata benda lain, kepunyaan ditandai dengan *-ren* — dan susunannya kebalikan dari bahasa Indonesia: **pemilik dulu, barang belakangan**." },
+    { "type": "tabel", "head": ["Euskara", "Harfiah", "Bahasa Indonesia"], "rows": [
+     ["Jon**en** etxea", "Jon-punya rumah-itu", "rumah Jon"],
+     ["Maite**ren** liburua", "Maite-punya buku-itu", "buku Maite"],
+     ["irakaslea**ren** izena", "guru-itu-punya nama-itu", "nama guru itu"],
+     ["nire familia**ren** argazkia", "saya-punya keluarga-punya foto-itu", "foto keluarga saya"],
+     ["Bilbo**ko** museoa", "Bilbo-dari museum-itu", "museum Bilbao"]
+    ]},
+    { "type": "kotak", "title": "Dua macam \"punya\": -ren dan -ko", "items": [
+     "*-ren* untuk pemilik yang **hidup** atau bisa memiliki: *Jonen etxea*, *amaren kotxea*.",
+     "*-ko* untuk **tempat, bahan, dan keterangan**: *Bilboko kalea* (jalan di Bilbao), *euskarazko liburua* (buku berbahasa Basque), *goizeko kafea* (kopi pagi).",
+     "Patokan cepat: kalau dalam bahasa Indonesia kamu akan bilang \"milik\", pakai *-ren*. Kalau kamu akan bilang \"di\" atau \"dari\", pakai *-ko*.",
+     "Nama yang berakhir konsonan menyisipkan *-e-*: *Jon → Jon**en***, *Iker → Iker**ren*** (dengan *r* ganda karena kata dasarnya berakhir *r*)."
+    ]}
+   ]
+  },
+  {
+   "title": "Keluarga",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia"], "rows": [
+     ["aita", "A-i-ta", "ayah"],
+     ["ama", "A-ma", "ibu"],
+     ["gurasoak", "gu-RA-so-ak", "orang tua"],
+     ["semea", "se-ME-a", "anak laki-laki"],
+     ["alaba", "a-LA-ba", "anak perempuan"],
+     ["seme-alabak", "se-me-a-LA-bak", "anak-anak"],
+     ["anaia", "a-NA-i-a", "saudara laki-laki (kata laki-laki)"],
+     ["arreba", "a-RRE-ba", "saudara perempuan (kata laki-laki)"],
+     ["neba", "NE-ba", "saudara laki-laki (kata perempuan)"],
+     ["ahizpa", "a-IS-pa", "saudara perempuan (kata perempuan)"],
+     ["aitona", "a-i-TO-na", "kakek"],
+     ["amona", "a-MO-na", "nenek"],
+     ["osaba", "o-SA-ba", "paman"],
+     ["izeba", "i-SE-ba", "bibi"],
+     ["lehengusu", "le-en-GU-su", "sepupu"],
+     ["senarra", "se-NA-rra", "suami"],
+     ["emaztea", "e-mas-TE-a", "istri"],
+     ["bikotekidea", "bi-ko-te-KI-de-a", "pasangan, pacar"],
+     ["biloba", "bi-LO-ba", "cucu"],
+     ["haurra", "A-u-rra", "anak kecil"]
+    ]},
+    { "type": "kotak", "title": "Kenapa saudara punya dua nama", "items": [
+     "Bahasa Basque menamai hubungan **dari sudut pandang yang berbicara**, bukan dari jenis kelamin orang yang dibicarakan saja. Karena itu Budi (laki-laki) punya *arreba*, sementara Maite (perempuan) punya *ahizpa* — padahal keduanya berarti \"saudara perempuan\".",
+     "Cara menghafal: **a**naia dan **a**rreba dipakai laki-laki; **n**eba dan a**h**izpa dipakai perempuan.",
+     "Kalau kamu keliru, tak seorang pun akan tersinggung — tapi orang akan langsung tahu kamu pemula, karena inilah salah satu tanda paling khas bahasa ini.",
+     "Kabar baiknya: bahasa Basque tidak membedakan kakak dan adik. *Anaia* berarti saudara laki-laki, tua atau muda. Yang lebih tua bisa ditegaskan dengan *anaia zaharrena* (\"yang paling tua\") kalau memang perlu."
+    ]}
+   ]
+  },
+  {
+   "title": "Nolakoa da? — menggambarkan orang",
+   "blocks": [
+    { "type": "p", "text": "*Nolakoa da?* berarti \"orangnya bagaimana?\". Jawabannya kata sifat dengan kata sandang: *Altua da* (dia tinggi), *Oso jatorra da* (dia sangat ramah)." },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia", "Lawannya", "Bahasa Indonesia"], "rows": [
+     ["altua", "tinggi", "baxua", "pendek"],
+     ["gaztea", "muda", "zaharra", "tua"],
+     ["argala", "kurus", "lodia", "gemuk"],
+     ["jatorra", "ramah, baik hati", "zakarra", "kasar"],
+     ["alaia", "ceria", "serioa", "serius"],
+     ["isila", "pendiam", "berritsua", "cerewet"],
+     ["langilea", "rajin", "alferra", "malas"],
+     ["ilehoria", "berambut pirang", "ilebeltza", "berambut hitam"]
+    ]},
+    { "type": "p", "text": "Kata sifat bisa dikuatkan dengan *oso* (\"sangat\") di depan, atau *-egi* (\"terlalu\") di belakang: *oso altua* (sangat tinggi), *altu**egia*** (terlalu tinggi). Untuk melemahkan, pakai *samarra*: *altu samarra* (agak tinggi)." },
+    { "type": "kotak", "title": "Kalimat siap pakai tentang keluarga", "items": [
+     "*Zenbat anai-arreba dituzu?* — \"Kamu punya berapa saudara?\"",
+     "*Ez dut anai-arrebarik.* — \"Saya anak tunggal.\"",
+     "*Nire ama Jakartan bizi da.* — \"Ibu saya tinggal di Jakarta.\"",
+     "*Nire aita erretiratuta dago.* — \"Ayah saya sudah pensiun.\"",
+     "*Familia handia dugu.* — \"Keluarga kami besar.\""
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "eu": "familia", "baca": "fa-MI-li-a", "id": "keluarga" },
+  { "eu": "aita", "baca": "A-i-ta", "id": "ayah" },
+  { "eu": "ama", "baca": "A-ma", "id": "ibu" },
+  { "eu": "guraso", "baca": "gu-RA-so", "id": "orang tua" },
+  { "eu": "seme", "baca": "SE-me", "id": "anak laki-laki" },
+  { "eu": "alaba", "baca": "a-LA-ba", "id": "anak perempuan" },
+  { "eu": "anaia", "baca": "a-NA-i-a", "id": "saudara laki-laki (kata laki-laki)" },
+  { "eu": "arreba", "baca": "a-RRE-ba", "id": "saudara perempuan (kata laki-laki)" },
+  { "eu": "neba", "baca": "NE-ba", "id": "saudara laki-laki (kata perempuan)" },
+  { "eu": "ahizpa", "baca": "a-IS-pa", "id": "saudara perempuan (kata perempuan)" },
+  { "eu": "aitona", "baca": "a-i-TO-na", "id": "kakek" },
+  { "eu": "amona", "baca": "a-MO-na", "id": "nenek" },
+  { "eu": "osaba", "baca": "o-SA-ba", "id": "paman" },
+  { "eu": "izeba", "baca": "i-SE-ba", "id": "bibi" },
+  { "eu": "lehengusu", "baca": "le-en-GU-su", "id": "sepupu" },
+  { "eu": "senar", "baca": "SE-nar", "id": "suami" },
+  { "eu": "emazte", "baca": "e-MAS-te", "id": "istri" },
+  { "eu": "bikotekide", "baca": "bi-ko-te-KI-de", "id": "pasangan" },
+  { "eu": "haur", "baca": "A-ur", "id": "anak kecil" },
+  { "eu": "gizon", "baca": "gi-SON", "id": "lelaki" },
+  { "eu": "emakume", "baca": "e-ma-KU-me", "id": "perempuan" },
+  { "eu": "argazki", "baca": "ar-GAS-ki", "id": "foto" },
+  { "eu": "ezkonduta", "baca": "es-kon-DU-ta", "id": "sudah menikah" },
+  { "eu": "ezkongabe", "baca": "es-kon-GA-be", "id": "lajang" },
+  { "eu": "altu", "baca": "AL-tu", "id": "tinggi" },
+  { "eu": "baxu", "baca": "BA-syu", "id": "pendek" },
+  { "eu": "gazte", "baca": "GAS-te", "id": "muda" },
+  { "eu": "jator", "baca": "KHA-tor", "id": "ramah, baik hati" },
+  { "eu": "alai", "baca": "a-LA-i", "id": "ceria" },
+  { "eu": "bezala", "baca": "be-SA-la", "id": "seperti" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan kata milik yang tepat (nire, zure, haren, gure, zuen, haien).",
+   "items": [
+    "____ aita mediku bat da. (saya)",
+    "____ etxea handia da. (kamu)",
+    "____ ama Bilbon bizi da. (dia)",
+    "____ irakaslea Ainhoa da. (kami)",
+    "____ liburuak hemen daude. (kalian)",
+    "____ seme-alabak gazteak dira. (mereka)"
+   ]
+  },
+  {
+   "prompt": "Tambahkan -ren atau -ko.",
+   "items": [
+    "Jon____ etxea handia da.",
+    "Bilbo____ kaleak politak dira.",
+    "Maite____ ama irakaslea da.",
+    "euskara____ liburua",
+    "irakaslea____ izena Ainhoa da.",
+    "Donostia____ hondartza"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Basque. Budi (laki-laki) yang berbicara.",
+   "items": [
+    "Ini keluarga saya.",
+    "Saya punya satu saudara perempuan.",
+    "Ayah saya berumur enam puluh tahun.",
+    "Ibu saya guru.",
+    "Saya tidak punya saudara.",
+    "Dia sangat ramah."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "da / nire / irakaslea / ama",
+    "ditut / bat / eta / anaia / arreba / bat",
+    "da / altua / oso / aita / nire",
+    "dituzu / anai-arreba / zenbat / ?",
+    "bizi / Jakartan / dira / gurasoak / nire",
+    "da / familiaren / hau / argazkia / nire"
+   ]
+  }
+ ],
+ "answers": [
+  "Nire — Zure — Haren — Gure — Zuen — Haien",
+  "Jonen — Bilboko — Maiteren — euskarazko — irakaslearen — Donostiako",
+  "Hau nire familia da. — Arreba bat dut. — Nire aitak hirurogei urte ditu. — Nire ama irakaslea da. — Ez dut anai-arrebarik. — Oso jatorra da.",
+  "Nire ama irakaslea da. — Arreba bat eta anaia bat ditut. — Nire aita oso altua da. — Zenbat anai-arreba dituzu? — Nire gurasoak Jakartan bizi dira. — Hau nire familiaren argazkia da."
+ ]
+}

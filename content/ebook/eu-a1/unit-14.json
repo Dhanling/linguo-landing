@@ -1,0 +1,211 @@
+{
+ "title": "Badan dan kesehatan",
+ "title_target": "Gorputza eta osasuna",
+ "goal": "Menyebut bagian tubuh, mengatakan bagian mana yang sakit, dan mengurus diri di apotek atau tempat praktik dokter.",
+ "bekal": [
+  "menyebut bagian tubuh yang paling sering dibicarakan",
+  "memakai pola *…ko mina dut* untuk segala macam sakit",
+  "menjelaskan keluhan dan memahami aturan minum obat"
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Farmazian",
+   "intro": "Budi masuk apotek di sudut jalan dengan suara serak dan wajah kusut.",
+   "lines": [
+    { "speaker": "Farmazialaria:", "text": "Egun on. Zer moduz zaude?", "id": "Selamat pagi. Bagaimana keadaan Anda?", "literal": "hari baik. apa cara-nya berada-kamu?" },
+    { "speaker": "Budi:", "text": "Ez oso ondo. Buruko mina dut.", "id": "Kurang enak badan. Kepala saya sakit.", "literal": "tidak sangat baik. kepala-dari sakit-itu punya-saya-nya." },
+    { "speaker": "Farmazialaria:", "text": "Sukarrik baduzu?", "id": "Ada demam?", "literal": "demam-sejumlah punya-kamu-nya?" },
+    { "speaker": "Budi:", "text": "Uste dut baietz. Eta eztarriko mina ere bai.", "id": "Sepertinya iya. Dan tenggorokan saya juga sakit.", "literal": "kira punya-saya-nya ya-bahwa. dan tenggorokan-dari sakit-itu juga ya." },
+    { "speaker": "Farmazialaria:", "text": "Noiztik zaude horrela?", "id": "Sejak kapan begitu?", "literal": "kapan-dari berada-kamu begitu?" },
+    { "speaker": "Budi:", "text": "Herenegundik. Gaur okerrago nago.", "id": "Sejak kemarin lusa. Hari ini lebih parah.", "literal": "kemarin-lusa-dari. hari-ini buruk-lebih berada-saya." },
+    { "speaker": "Farmazialaria:", "text": "Katarroa duzu, ziur asko. Hartu pastilla hauek.", "id": "Anda pilek, hampir pasti. Minum tablet ini.", "literal": "pilek-itu punya-kamu-nya, pasti banyak. ambil tablet ini-jamak." },
+    { "speaker": "Budi:", "text": "Zenbat hartu behar ditut?", "id": "Berapa yang harus saya minum?", "literal": "berapa ambil butuh punya-saya-mereka?" },
+    { "speaker": "Farmazialaria:", "text": "Bat egunean hirutan, bazkalostean.", "id": "Satu, tiga kali sehari, sesudah makan.", "literal": "satu hari-di tiga-kali, makan-siang-sesudah-di." },
+    { "speaker": "Budi:", "text": "Ados. Eta eztarrirako zerbait?", "id": "Baik. Dan untuk tenggorokan, ada sesuatu?", "literal": "setuju. dan tenggorokan-untuk sesuatu?" },
+    { "speaker": "Farmazialaria:", "text": "Xarabe hau ona da. Eta ur asko edan, e!", "id": "Sirup ini bagus. Dan banyak minum air, ya!", "literal": "sirup ini baik-itu adalah. dan air banyak minum, ya!" },
+    { "speaker": "Budi:", "text": "Eskerrik asko. Osasuna lehenengo!", "id": "Terima kasih. Kesehatan nomor satu!", "literal": "terima-kasih banyak. kesehatan-itu pertama!" }
+   ],
+   "notes": [
+    "**Buruko mina dut — pola yang menutup semua keluhan.** Rumusnya: bagian tubuh + *-ko* + *mina dut*. *Buru**ko** mina* (sakit kepala), *sabel**eko** mina* (sakit perut), *hortz**etako** mina* (sakit gigi), *bizkar**reko** mina* (sakit punggung). Satu pola ini menggantikan puluhan kalimat.",
+    "**Uste dut baietz — \"saya rasa iya\".** *Baietz* adalah bentuk khusus \"ya\" yang dipakai sesudah kata kerja berpikir; pasangannya *ezetz* (\"tidak\"). *Uste dut baietz* (saya kira iya), *uste dut ezetz* (saya kira tidak). Dua kalimat siap pakai yang sangat sering menyelamatkan percakapan.",
+    "**Noiztik — sejak kapan.** Akhiran *-tik* yang kamu pelajari untuk tempat (\"dari Bilbo\") juga dipakai untuk waktu: *herenegun**dik*** (sejak kemarin lusa), *atzo**tik*** (sejak kemarin), *goize**tik*** (sejak pagi). Pasangannya *noiz arte* (\"sampai kapan\").",
+    "**Egunean hirutan — berapa kali sehari.** Susunannya: satuan waktu dengan *-an*, lalu jumlah kali dengan *-tan*. *Egunean bitan* (dua kali sehari), *astean behin* (seminggu sekali), *hilean bitan* (dua kali sebulan). Perhatikan bahwa \"sekali\" tidak beraturan: *behin*, bukan *batetan*."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Gorputza — badan",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia", "Euskara", "Bahasa Indonesia"], "rows": [
+     ["burua", "bu-RU-a", "kepala", "eskua", "tangan"],
+     ["ilea", "i-LE-a", "rambut", "besoa", "lengan"],
+     ["aurpegia", "a-ur-PE-gi-a", "wajah", "hatza", "jari"],
+     ["begiak", "be-GI-ak", "mata", "hanka", "kaki"],
+     ["sudurra", "su-DU-rra", "hidung", "oina", "telapak kaki"],
+     ["ahoa", "a-O-a", "mulut", "belauna", "lutut"],
+     ["belarriak", "be-LA-rri-ak", "telinga", "bizkarra", "punggung"],
+     ["hortzak", "OR-tsak", "gigi", "sabela", "perut"],
+     ["mihia", "mi-I-a", "lidah", "bihotza", "jantung"],
+     ["eztarria", "es-TA-rri-a", "tenggorokan", "odola", "darah"],
+     ["lepoa", "le-PO-a", "leher", "azala", "kulit"],
+     ["sorbalda", "sor-BAL-da", "bahu", "hezurra", "tulang"]
+    ]},
+    { "type": "p", "text": "Bagian tubuh yang berpasangan biasanya disebut jamak: *begiak* (kedua mata), *belarriak* (kedua telinga), *eskuak* (kedua tangan). Kalau maksudnya satu, sebutkan sisinya: *esku eskuina* (tangan kanan), *ezkerreko begia* (mata kiri)." },
+    { "type": "kotak", "title": "Bagian tubuh dalam ungkapan sehari-hari", "items": [
+     "*Buruz ikasi* — menghafal (harfiah: belajar dengan kepala).",
+     "*Bihotzez eskerrak* — terima kasih dari hati.",
+     "*Eskuak garbitu* — cuci tangan; *esku bat eman* — memberi bantuan.",
+     "*Hankaz gora* — kacau balau (harfiah: kaki ke atas)."
+    ]}
+   ]
+  },
+  {
+   "title": "Mengatakan sakit",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Harfiah", "Bahasa Indonesia"], "rows": [
+     ["Buruko mina dut.", "kepala-dari sakit-itu punya-saya", "Kepala saya sakit."],
+     ["Sabeleko mina dut.", "perut-dari sakit-itu punya-saya", "Perut saya sakit."],
+     ["Eztarriko mina dut.", "tenggorokan-dari sakit-itu punya-saya", "Tenggorokan saya sakit."],
+     ["Hortzetako mina dut.", "gigi-jamak-dari sakit-itu punya-saya", "Gigi saya sakit."],
+     ["Gaixorik nago.", "sakit berada-saya", "Saya sedang sakit."],
+     ["Sukarra dut.", "demam-itu punya-saya", "Saya demam."],
+     ["Eztula dut.", "batuk-itu punya-saya", "Saya batuk."],
+     ["Ondo sentitzen naiz.", "baik merasa-nya adalah-saya", "Saya merasa baik."],
+     ["Hobeto nago.", "lebih-baik berada-saya", "Saya sudah membaik."],
+     ["Okerrago nago.", "lebih-buruk berada-saya", "Saya makin parah."]
+    ]},
+    { "type": "sub", "text": "Penyakit yang paling sering disebut" },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia", "Euskara", "Bahasa Indonesia"], "rows": [
+     ["katarroa", "pilek", "alergia", "alergi"],
+     ["gripea", "flu", "beherakoa", "diare"],
+     ["sukarra", "demam", "goragalea", "mual"],
+     ["eztula", "batuk", "zauria", "luka"],
+     ["mina", "rasa sakit", "haustura", "patah tulang"]
+    ]},
+    { "type": "kotak", "title": "Min dut dan min ematen dit", "items": [
+     "*Buruko mina dut* — \"saya punya sakit kepala\", cara paling umum dan paling aman.",
+     "*Buruak min ematen dit* — \"kepala memberi sakit kepadaku\", susunan yang memakai kata kerja bantu tiga arah (NORK-NORI-NOR). Terdengar sangat wajar di mulut penutur asli, dan akan kamu kuasai di tingkat A2.",
+     "Di tingkat A1 cukup pakai bentuk pertama. Yang penting kamu bisa dimengerti dokter — dan *buruko mina dut* sudah cukup untuk itu."
+    ]}
+   ]
+  },
+  {
+   "title": "Di apotek dan di dokter",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia"], "rows": [
+     ["Medikuarengana joan behar dut.", "me-di-ku-a-REN-ga-na", "Saya harus ke dokter."],
+     ["Hitzordua nahi dut.", "i-tsor-DU-a", "Saya mau buat janji."],
+     ["Zer duzu?", "ser DU-su", "Anda kenapa?"],
+     ["Noiztik zaude horrela?", "NO-is-tik", "Sejak kapan begitu?"],
+     ["Errezeta behar duzu.", "e-rre-SE-ta", "Anda butuh resep."],
+     ["Botika hau hartu.", "bo-TI-ka", "Minum obat ini."],
+     ["Egunean bitan.", "e-gu-NE-an BI-tan", "Dua kali sehari."],
+     ["Bazkalostean.", "bas-kal-os-TE-an", "Sesudah makan siang."],
+     ["Alergikoa naiz …ri.", "a-ler-GI-ko-a", "Saya alergi terhadap …"],
+     ["Larrialdietara joan.", "la-rri-al-DI-e-ta-ra", "Pergi ke UGD."]
+    ]},
+    { "type": "sub", "text": "Isi kotak obat" },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia", "Euskara", "Bahasa Indonesia"], "rows": [
+     ["botika", "obat", "tirita", "plester"],
+     ["pastilla", "tablet", "gasa", "kasa"],
+     ["xarabea", "sirup obat", "termometroa", "termometer"],
+     ["ukendua", "salep", "errezeta", "resep"],
+     ["bendak", "perban", "txertoa", "vaksin"]
+    ]},
+    { "type": "kotak", "title": "Kalau keadaannya gawat", "items": [
+     "Nomor darurat di seluruh Euskal Herria (dan seluruh Eropa) adalah **112**. Operatornya berbahasa Basque, Spanyol, Prancis, dan Inggris.",
+     "*Lagundu, mesedez!* — Tolong!",
+     "*Anbulantzia bat behar dugu.* — Kami butuh ambulans.",
+     "*Istripu bat egon da.* — Ada kecelakaan.",
+     "*Non dago ospitalea?* — Rumah sakit di mana?",
+     "Kartu kesehatan Eropa (*Osasun Txartela*) berlaku di sini; wisatawan luar Eropa sebaiknya membawa asuransi perjalanan."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "eu": "gorputz", "baca": "gor-PUTS", "id": "badan" },
+  { "eu": "buru", "baca": "BU-ru", "id": "kepala" },
+  { "eu": "begi", "baca": "BE-gi", "id": "mata" },
+  { "eu": "sudur", "baca": "su-DUR", "id": "hidung" },
+  { "eu": "aho", "baca": "A-o", "id": "mulut" },
+  { "eu": "belarri", "baca": "be-LA-rri", "id": "telinga" },
+  { "eu": "hortz", "baca": "ORTS", "id": "gigi" },
+  { "eu": "eztarri", "baca": "es-TA-rri", "id": "tenggorokan" },
+  { "eu": "esku", "baca": "ES-ku", "id": "tangan" },
+  { "eu": "beso", "baca": "BE-so", "id": "lengan" },
+  { "eu": "hanka", "baca": "AN-ka", "id": "kaki" },
+  { "eu": "oin", "baca": "O-in", "id": "telapak kaki" },
+  { "eu": "sabel", "baca": "sa-BEL", "id": "perut" },
+  { "eu": "bizkar", "baca": "bis-KAR", "id": "punggung" },
+  { "eu": "bihotz", "baca": "bi-OTS", "id": "jantung, hati" },
+  { "eu": "ile", "baca": "I-le", "id": "rambut" },
+  { "eu": "min", "baca": "MIN", "id": "sakit, nyeri" },
+  { "eu": "osasun", "baca": "o-sa-SUN", "id": "kesehatan" },
+  { "eu": "gaixo", "baca": "GA-i-syo", "id": "sakit; orang sakit" },
+  { "eu": "sukar", "baca": "su-KAR", "id": "demam" },
+  { "eu": "eztul", "baca": "es-TUL", "id": "batuk" },
+  { "eu": "katarro", "baca": "ka-TA-rro", "id": "pilek" },
+  { "eu": "mediku", "baca": "me-DI-ku", "id": "dokter" },
+  { "eu": "farmazia", "baca": "far-MA-si-a", "id": "apotek" },
+  { "eu": "botika", "baca": "bo-TI-ka", "id": "obat" },
+  { "eu": "pastilla", "baca": "pas-TI-lya", "id": "tablet" },
+  { "eu": "errezeta", "baca": "e-rre-SE-ta", "id": "resep" },
+  { "eu": "hitzordu", "baca": "i-TSOR-du", "id": "janji temu" },
+  { "eu": "larrialdi", "baca": "la-rri-AL-di", "id": "keadaan darurat" },
+  { "eu": "hobeto", "baca": "o-BE-to", "id": "lebih baik (keadaan)" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Katakan bagian tubuh yang sakit.",
+   "items": [
+    "kepala → ____ mina dut.",
+    "perut → ____ mina dut.",
+    "tenggorokan → ____ mina dut.",
+    "gigi → ____ mina dut.",
+    "punggung → ____ mina dut.",
+    "telinga → ____ mina dut."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Basque.",
+   "items": [
+    "Saya sedang sakit.",
+    "Saya demam dan batuk.",
+    "Sejak kapan begitu?",
+    "Sejak kemarin.",
+    "Berapa kali sehari?",
+    "Dua kali sehari, sesudah makan."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang tepat.",
+   "items": [
+    "____ = obat",
+    "____ = resep dokter",
+    "____ = apotek",
+    "____ = demam",
+    "____ = janji temu dokter",
+    "____ = kesehatan"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "dut / mina / buruko",
+    "nago / gaixorik / gaur",
+    "zaude / noiztik / horrela / ?",
+    "dut / joan / medikuarengana / behar",
+    "ditut / zenbat / hartu / behar / ?",
+    "nago / hobeto / gaur"
+   ]
+  }
+ ],
+ "answers": [
+  "Buruko — Sabeleko — Eztarriko — Hortzetako — Bizkarreko — Belarriko",
+  "Gaixorik nago. — Sukarra eta eztula ditut. — Noiztik zaude horrela? — Atzotik. — Egunean zenbat aldiz? — Egunean bitan, bazkalostean.",
+  "botika — errezeta — farmazia — sukarra — hitzordua — osasuna",
+  "Buruko mina dut. — Gaur gaixorik nago. — Noiztik zaude horrela? — Medikuarengana joan behar dut. — Zenbat hartu behar ditut? — Gaur hobeto nago."
+ ]
+}

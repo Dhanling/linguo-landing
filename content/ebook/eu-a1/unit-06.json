@@ -1,0 +1,610 @@
+{
+ "title": "Di bar: memesan makanan dan minuman",
+ "title_target": "Tabernan",
+ "goal": "Memesan minuman dan pintxo, mengatakan apa yang kamu inginkan dengan nahi izan, dan menanyakan harga.",
+ "bekal": [
+  "memesan dengan *… nahi dut, mesedez* dan menjawab *zer nahi duzu?*",
+  "menyebut minuman dan pintxo yang paling sering ada di bar Basque",
+  "menanyakan dan memahami harga: *zenbat da?*"
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Alde Zaharreko taberna batean",
+   "intro": "Sore hari di Kota Tua Bilbo. Budi dan Maite masuk ke sebuah bar yang penuh pintxo di atas meja panjang.",
+   "lines": [
+    {
+     "speaker": "Zerbitzaria:",
+     "text": "Kaixo! Zer nahi duzue?",
+     "id": "Halo! Kalian mau pesan apa?",
+     "literal": "halo! apa ingin punya-kalian-nya?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kafe huts bat nahi dut, mesedez.",
+     "id": "Saya mau satu kopi hitam.",
+     "literal": "kopi kosong satu ingin punya-saya-nya, tolong."
+    },
+    {
+     "speaker": "Maite:",
+     "text": "Niretzat kafesnea eta tortilla pintxo bat.",
+     "id": "Untuk saya kopi susu dan satu pintxo telur.",
+     "literal": "saya-untuk kopi-susu-itu dan telur-dadar pintxo satu."
+    },
+    {
+     "speaker": "Zerbitzaria:",
+     "text": "Ondo. Zerbait gehiago?",
+     "id": "Baik. Ada lagi?",
+     "literal": "baik. sesuatu lebih?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bai, pintxo bat niretzat ere. Zer duzue?",
+     "id": "Ya, satu pintxo untuk saya juga. Ada apa saja?",
+     "literal": "ya, pintxo satu saya-untuk juga. apa punya-kalian-nya?"
+    },
+    {
+     "speaker": "Zerbitzaria:",
+     "text": "Tortilla, gilda, bakailaoa eta txistorra ditugu.",
+     "id": "Ada telur dadar, gilda, bakalao, dan sosis txistorra.",
+     "literal": "telur-dadar, gilda, bakalao-itu dan txistorra-itu punya-kami-mereka."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Barkatu, gilda zer da?",
+     "id": "Maaf, gilda itu apa?",
+     "literal": "maaf, gilda apa adalah?"
+    },
+    {
+     "speaker": "Maite:",
+     "text": "Piperra, oliba eta antxoa. Oso gozoa da!",
+     "id": "Cabai hijau, zaitun, dan ikan teri. Enak sekali!",
+     "literal": "cabai-itu, zaitun dan teri. sangat enak-itu adalah!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Orduan, gilda bat, mesedez.",
+     "id": "Kalau begitu, satu gilda.",
+     "literal": "kalau-begitu, gilda satu, tolong."
+    },
+    {
+     "speaker": "Zerbitzaria:",
+     "text": "Marchando! Hemen duzue.",
+     "id": "Siap! Ini pesanannya.",
+     "literal": "berangkat! di-sini punya-kalian-nya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Eskerrik asko. Zenbat da dena?",
+     "id": "Terima kasih. Semuanya berapa?",
+     "literal": "terima-kasih banyak. berapa adalah semua-itu?"
+    },
+    {
+     "speaker": "Zerbitzaria:",
+     "text": "Zortzi euro eta hogei zentimo.",
+     "id": "Delapan euro dua puluh sen.",
+     "literal": "delapan euro dan dua-puluh sen."
+    }
+   ],
+   "notes": [
+    "**Pintxo bukan tapa.** Di Euskal Herria, camilan bar disebut *pintxo* — dari *pintxatu*, \"menusuk\", karena aslinya ditusuk dengan tusuk gigi ke atas sepotong roti. Bedanya dengan tapa Spanyol: pintxo hampir selalu dibayar (tidak gratis bersama minuman) dan dipajang di atas meja bar supaya kamu bisa menunjuk. Menunjuk sambil bilang *hori, mesedez* adalah cara memesan yang sepenuhnya sah.",
+    "**Niretzat — akhiran \"untuk\".** *-entzat* berarti \"untuk\": *niretzat* (untuk saya), *zuretzat* (untukmu), *Jonentzat* (untuk Jon), *guretzat* (untuk kami). Di bar, kalimat *niretzat kafesnea* adalah cara memesan yang paling wajar — bahkan lebih sering daripada kalimat lengkap.",
+    "**Nahi dut butuh benda, bukan kalimat.** *Kafea nahi dut* (saya mau kopi). Kalau yang diinginkan sebuah perbuatan, kata kerjanya dipakai dalam bentuk kamus dan diletakkan di depan *nahi*: *Kafea edan nahi dut* (saya mau minum kopi). Bandingkan dengan bahasa Indonesia yang susunannya kebalikan: \"mau minum kopi\".",
+    "**Marchando bukan bahasa Basque.** Itu kata Spanyol yang sudah jadi milik semua bar di wilayah ini — kira-kira \"segera datang!\". Bahasa bar memang campuran; jangan kaget kalau pelayan menjawab dalam euskara lalu berteriak ke dapur dalam bahasa Spanyol."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalimat baku di bar",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Euskara",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Zer nahi duzu?",
+       "ser NA-i du-su",
+       "Mau pesan apa?"
+      ],
+      [
+       "Zer hartuko duzu?",
+       "ser ar-TU-ko du-su",
+       "Mau ambil apa?"
+      ],
+      [
+       "… nahi dut, mesedez.",
+       "NA-i dut me-SE-des",
+       "Saya mau …, tolong."
+      ],
+      [
+       "Niretzat …",
+       "ni-RE-tsat",
+       "Untuk saya …"
+      ],
+      [
+       "Hori, mesedez.",
+       "O-ri",
+       "Itu, tolong."
+      ],
+      [
+       "Zerbait gehiago?",
+       "ser-BA-it ge-I-a-go",
+       "Ada lagi?"
+      ],
+      [
+       "Ez, eskerrik asko.",
+       "es es-KE-rrik AS-ko",
+       "Tidak, terima kasih."
+      ],
+      [
+       "Zenbat da?",
+       "sen-BAT da",
+       "Berapa?"
+      ],
+      [
+       "Ordaindu nahi dut.",
+       "or-DA-in-du",
+       "Saya mau bayar."
+      ],
+      [
+       "Txartelarekin, mesedez.",
+       "char-te-LA-re-kin",
+       "Dengan kartu, tolong."
+      ],
+      [
+       "On egin!",
+       "on e-GIN",
+       "Selamat makan!"
+      ],
+      [
+       "Topa!",
+       "TO-pa",
+       "Bersulang!"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*On egin* harfiahnya \"semoga membuatmu baik\" — diucapkan kepada orang yang sedang makan, persis seperti \"selamat makan\". Kalau ada yang mengucapkannya kepadamu, jawabannya cukup *baita zuri ere* (\"kamu juga\")."
+    },
+    {
+     "type": "kotak",
+     "title": "Adat bar yang perlu kamu tahu",
+     "items": [
+      "Di banyak bar kamu makan dulu, bayar belakangan — hitungannya berdasarkan kejujuranmu sendiri. Sebutkan jujur berapa pintxo yang kamu ambil.",
+      "*Poteo* atau *txikiteo* adalah kebiasaan berpindah dari satu bar ke bar berikutnya, satu gelas kecil di tiap tempat, bersama *kuadrilla* — rombongan teman tetap yang biasanya sudah bersama sejak kecil.",
+      "Minuman kecil punya namanya sendiri: *zurito* (bir kecil), *txikito* (anggur kecil), *katxi* (gelas plastik besar untuk pesta)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menu: minuman dan pintxo",
+   "blocks": [
+    {
+     "type": "sub",
+     "text": "Edariak — minuman"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Euskara",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "kafe hutsa",
+       "KA-fe U-tsa",
+       "kopi hitam"
+      ],
+      [
+       "kafesnea",
+       "ka-fes-NE-a",
+       "kopi susu"
+      ],
+      [
+       "ebakia",
+       "e-ba-KI-a",
+       "kopi dengan sedikit susu"
+      ],
+      [
+       "tea",
+       "TE-a",
+       "teh"
+      ],
+      [
+       "ura",
+       "U-ra",
+       "air"
+      ],
+      [
+       "zukua",
+       "SU-ku-a",
+       "jus"
+      ],
+      [
+       "garagardoa",
+       "ga-ra-gar-DO-a",
+       "bir"
+      ],
+      [
+       "ardo beltza",
+       "AR-do BEL-tsa",
+       "anggur merah"
+      ],
+      [
+       "ardo zuria",
+       "AR-do SU-ri-a",
+       "anggur putih"
+      ],
+      [
+       "txakolina",
+       "cha-ko-LI-na",
+       "txakoli, anggur putih Basque"
+      ],
+      [
+       "sagardoa",
+       "sa-gar-DO-a",
+       "sagardo, sider apel"
+      ],
+      [
+       "kalimotxoa",
+       "ka-li-mo-CHO-a",
+       "anggur merah dicampur cola"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Jatekoa — makanan"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Euskara",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "tortilla",
+       "tor-TI-lya",
+       "telur dadar kentang"
+      ],
+      [
+       "gilda",
+       "GIL-da",
+       "tusuk cabai, zaitun, teri"
+      ],
+      [
+       "bakailaoa",
+       "ba-ka-i-LA-o-a",
+       "ikan kod asin"
+      ],
+      [
+       "txistorra",
+       "chis-TO-rra",
+       "sosis merah tipis"
+      ],
+      [
+       "gazta",
+       "GAS-ta",
+       "keju"
+      ],
+      [
+       "urdaiazpikoa",
+       "ur-da-i-as-PI-ko-a",
+       "ham"
+      ],
+      [
+       "txipiroiak",
+       "chi-pi-RO-i-ak",
+       "cumi kecil"
+      ],
+      [
+       "arraina",
+       "a-RRA-i-na",
+       "ikan"
+      ],
+      [
+       "haragia",
+       "a-ra-GI-a",
+       "daging"
+      ],
+      [
+       "barazkiak",
+       "ba-ras-KI-ak",
+       "sayuran"
+      ],
+      [
+       "patatak",
+       "pa-TA-tak",
+       "kentang"
+      ],
+      [
+       "marmitakoa",
+       "mar-mi-TA-ko-a",
+       "sup tuna dan kentang"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Txakolina* dan *sagardoa* adalah dua minuman yang paling khas wilayah ini. Txakoli dituang dari tinggi supaya berbuih; sagardo diminum di *sagardotegi* (rumah sider) langsung dari tong sambil berteriak *txotx!* — aba-aba bahwa tong berikutnya dibuka."
+    }
+   ]
+  },
+  {
+   "title": "Nahi izan dan behar izan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Dua kata kerja ini dipakai setiap hari, dan susunannya sama persis: barang atau perbuatan lebih dulu, *nahi/behar* di tengah, kata kerja bantu di ujung."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Euskara",
+      "Harfiah",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Kafea **nahi dut**.",
+       "kopi-itu ingin saya-punya-nya",
+       "Saya mau kopi."
+      ],
+      [
+       "Kafea edan **nahi dut**.",
+       "kopi-itu minum ingin saya-punya-nya",
+       "Saya mau minum kopi."
+      ],
+      [
+       "Etxera joan **nahi dut**.",
+       "rumah-ke pergi ingin saya-punya-nya",
+       "Saya mau pulang."
+      ],
+      [
+       "Ura **behar dut**.",
+       "air-itu butuh saya-punya-nya",
+       "Saya butuh air."
+      ],
+      [
+       "Orain joan **behar dut**.",
+       "sekarang pergi butuh saya-punya-nya",
+       "Saya harus pergi sekarang."
+      ],
+      [
+       "**Ez dut** ezer nahi.",
+       "tidak saya-punya-nya apa-pun ingin",
+       "Saya tidak mau apa-apa."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa kata kerjanya memakai bentuk **kamus** (*edan*, *joan*), bukan bentuk *-t(z)en*. Bentuk *-t(z)en* hanya untuk kebiasaan; sesudah *nahi* dan *behar* selalu bentuk kamus."
+    },
+    {
+     "type": "kotak",
+     "title": "Membayar dan berterima kasih",
+     "items": [
+      "*Zenbat da?* — berapa semuanya. *Zenbat da dena?* kalau kamu memesan beberapa hal.",
+      "*Hemen duzu* — \"ini dia\" (waktu menyerahkan uang atau barang).",
+      "*Aldaketa* atau *kanbioa* — kembalian. *Ez daukat sentimorik* — \"saya tidak punya uang receh\".",
+      "Memberi tip tidak wajib di Euskal Herria; membulatkan ke euro terdekat sudah lebih dari cukup."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "eu": "taberna",
+   "baca": "ta-BER-na",
+   "id": "bar, kedai"
+  },
+  {
+   "eu": "zerbitzari",
+   "baca": "ser-bi-TSA-ri",
+   "id": "pelayan"
+  },
+  {
+   "eu": "pintxo",
+   "baca": "PIN-cho",
+   "id": "pintxo, camilan bar"
+  },
+  {
+   "eu": "edari",
+   "baca": "e-DA-ri",
+   "id": "minuman"
+  },
+  {
+   "eu": "janari",
+   "baca": "kha-NA-ri",
+   "id": "makanan"
+  },
+  {
+   "eu": "ur",
+   "baca": "UR",
+   "id": "air"
+  },
+  {
+   "eu": "garagardo",
+   "baca": "ga-ra-GAR-do",
+   "id": "bir"
+  },
+  {
+   "eu": "ardo",
+   "baca": "AR-do",
+   "id": "anggur"
+  },
+  {
+   "eu": "sagardo",
+   "baca": "sa-GAR-do",
+   "id": "sider apel"
+  },
+  {
+   "eu": "zuku",
+   "baca": "SU-ku",
+   "id": "jus"
+  },
+  {
+   "eu": "gazta",
+   "baca": "GAS-ta",
+   "id": "keju"
+  },
+  {
+   "eu": "arrain",
+   "baca": "a-RRA-in",
+   "id": "ikan"
+  },
+  {
+   "eu": "haragi",
+   "baca": "a-RA-gi",
+   "id": "daging"
+  },
+  {
+   "eu": "barazki",
+   "baca": "ba-RAS-ki",
+   "id": "sayuran"
+  },
+  {
+   "eu": "piper",
+   "baca": "PI-per",
+   "id": "cabai, paprika"
+  },
+  {
+   "eu": "oliba",
+   "baca": "o-LI-ba",
+   "id": "zaitun"
+  },
+  {
+   "eu": "gatz",
+   "baca": "GATS",
+   "id": "garam"
+  },
+  {
+   "eu": "azukre",
+   "baca": "a-SU-kre",
+   "id": "gula"
+  },
+  {
+   "eu": "gozo",
+   "baca": "GO-so",
+   "id": "enak, manis"
+  },
+  {
+   "eu": "mikatz",
+   "baca": "MI-kats",
+   "id": "pahit"
+  },
+  {
+   "eu": "beroa",
+   "baca": "be-RO-a",
+   "id": "panas"
+  },
+  {
+   "eu": "hotza",
+   "baca": "O-tsa",
+   "id": "dingin"
+  },
+  {
+   "eu": "zerbait",
+   "baca": "ser-BA-it",
+   "id": "sesuatu"
+  },
+  {
+   "eu": "ezer",
+   "baca": "E-ser",
+   "id": "apa pun (dalam sangkalan)"
+  },
+  {
+   "eu": "dena",
+   "baca": "DE-na",
+   "id": "semuanya"
+  },
+  {
+   "eu": "gehiago",
+   "baca": "ge-I-a-go",
+   "id": "lebih"
+  },
+  {
+   "eu": "orduan",
+   "baca": "or-DU-an",
+   "id": "kalau begitu"
+  },
+  {
+   "eu": "behar izan",
+   "baca": "be-AR",
+   "id": "butuh, harus"
+  },
+  {
+   "eu": "ordaindu",
+   "baca": "or-DA-in-du",
+   "id": "membayar"
+  },
+  {
+   "eu": "txartel",
+   "baca": "CHAR-tel",
+   "id": "kartu"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Basque.",
+   "items": [
+    "Saya mau satu kopi hitam.",
+    "Untuk saya, bir.",
+    "Ada lagi? — Tidak, terima kasih.",
+    "Semuanya berapa?",
+    "Saya mau bayar dengan kartu.",
+    "Saya tidak mau apa-apa."
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan *nahi dut* atau *behar dut*.",
+   "items": [
+    "Egarri naiz. Ura ____.",
+    "Bihar azterketa dut. Ikasi ____.",
+    "Gose naiz. Pintxo bat ____.",
+    "Berandu da. Etxera joan ____.",
+    "Kafe hau hotza dago. Beste bat ____.",
+    "Ez dut dirurik. Diru pixka bat ____."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang tepat dari unit ini.",
+   "items": [
+    "Kafe ____ = kopi hitam, tanpa susu.",
+    "____ = kopi dengan susu.",
+    "____ = sider apel khas Basque.",
+    "____ = telur dadar kentang.",
+    "____ = tusuk cabai, zaitun, dan ikan teri.",
+    "____! = ucapan bersulang."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "dut / kafea / nahi / mesedez",
+    "duzu / zer / nahi / ?",
+    "da / zenbat / dena / ?",
+    "dut / joan / etxera / behar",
+    "ditugu / pintxo / bi / nahi",
+    "nahi / ez / ezer / dut"
+   ]
+  }
+ ],
+ "answers": [
+  "Kafe huts bat nahi dut, mesedez. — Niretzat, garagardoa. — Zerbait gehiago? Ez, eskerrik asko. — Zenbat da dena? — Txartelarekin ordaindu nahi dut. — Ez dut ezer nahi.",
+  "behar dut — behar dut — nahi dut — behar dut — nahi dut — behar dut",
+  "hutsa — Kafesnea — Sagardoa — Tortilla — Gilda — Topa",
+  "Kafea nahi dut, mesedez. — Zer nahi duzu? — Zenbat da dena? — Etxera joan behar dut. — Bi pintxo nahi ditugu. — Ez dut ezer nahi."
+ ]
+}

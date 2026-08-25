@@ -1,0 +1,206 @@
+{
+ "title": "Bepergian, dan berpisah",
+ "title_target": "Bidaia eta agur",
+ "goal": "Mengurus hotel dan perjalanan, mengatasi masalah kecil di jalan, dan menutup modul dengan kalimat perpisahan.",
+ "bekal": [
+  "menginap: memesan kamar, menanyakan sarapan dan wifi, mengurus check-out",
+  "mengatasi masalah: barang hilang, tersesat, sesuatu tidak berfungsi",
+  "berpamitan dan menyatakan niat melanjutkan belajar"
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Hotelean, Donostian",
+   "intro": "Perjalanan terakhir Budi sebelum pulang ke Indonesia. Ia tiba di resepsi sebuah hotel kecil dekat pantai.",
+   "lines": [
+    { "speaker": "Harreragilea:", "text": "Arratsalde on! Erreserba baduzu?", "id": "Selamat sore! Ada reservasi?", "literal": "sore baik! reservasi punya-kamu-nya?" },
+    { "speaker": "Budi:", "text": "Bai, Budi Santoso izenean. Bi gauetarako.", "id": "Ya, atas nama Budi Santoso. Untuk dua malam.", "literal": "ya, Budi Santoso nama-di. dua malam-jamak-untuk." },
+    { "speaker": "Harreragilea:", "text": "Bai, hemen dago. Hogeita bat gela, bigarren solairuan.", "id": "Ya, ada di sini. Kamar dua puluh satu, lantai dua.", "literal": "ya, di-sini berada. dua-puluh-dan satu kamar, kedua lantai-di." },
+    { "speaker": "Budi:", "text": "Gosaria barne dago?", "id": "Sarapan sudah termasuk?", "literal": "sarapan-itu dalam berada?" },
+    { "speaker": "Harreragilea:", "text": "Bai, zortzietatik hamarretara, behe solairuan.", "id": "Ya, dari jam delapan sampai sepuluh, di lantai bawah.", "literal": "ya, delapan-jamak-dari sepuluh-jamak-ke, bawah lantai-di." },
+    { "speaker": "Budi:", "text": "Ondo. Wifirik badago?", "id": "Baik. Ada wifi?", "literal": "baik. wifi-sejumlah memang-berada?" },
+    { "speaker": "Harreragilea:", "text": "Bai, pasahitza txartelean dago.", "id": "Ada, kata sandinya ada di kartu.", "literal": "ya, kata-sandi-itu kartu-di berada." },
+    { "speaker": "Budi:", "text": "Eskerrik asko. Bihar goiz irten behar dut.", "id": "Terima kasih. Besok saya harus berangkat pagi.", "literal": "terima-kasih banyak. besok pagi keluar butuh punya-saya-nya." },
+    { "speaker": "Harreragilea:", "text": "Ez dago arazorik. Giltza hemen duzu.", "id": "Tidak masalah. Ini kuncinya.", "literal": "tidak berada masalah-sejumlah. kunci-itu di-sini punya-kamu-nya." },
+    { "speaker": "Budi:", "text": "Eta hondartza urrun dago?", "id": "Dan pantainya jauh?", "literal": "dan pantai-itu jauh berada?" },
+    { "speaker": "Harreragilea:", "text": "Ez, bost minutu oinez. Kaletik zuzen.", "id": "Tidak, lima menit jalan kaki. Lurus dari jalan ini.", "literal": "tidak, lima menit kaki-dengan. jalan-dari lurus." },
+    { "speaker": "Budi:", "text": "Primeran. Eskerrik asko, oso jatorra zara!", "id": "Mantap. Terima kasih, Anda ramah sekali!", "literal": "hebat. terima-kasih banyak, sangat ramah-itu adalah-kamu!" }
+   ],
+   "notes": [
+    "**Bi gauetarako — untuk dua malam.** Gabungan tiga akhiran yang sudah kamu kenal: *gau* + *-eta-* (jamak) + *-rako* (untuk). Bentuk lain yang sepola: *hiru egunetarako* (untuk tiga hari), *aste baterako* (untuk seminggu).",
+    "**Izenean — atas nama.** *Budi izenean* (atas nama Budi). Kata *izen* berarti nama, dan *-ean* adalah akhiran tempat yang sudah kamu pakai sejak Unit 3. Bahasa Basque memakai gagasan \"di dalam nama\" persis seperti bahasa Indonesia memakai \"atas nama\".",
+    "**Wifirik badago? — akhiran -rik lagi.** Dalam pertanyaan tentang sesuatu yang belum tentu ada, benda itu memakai *-rik*: *wifirik*, *gelarik*, *lekurik*. Ini akhiran yang sama yang kamu pelajari di Unit 4 dan Unit 5 — dan sekarang seharusnya sudah terasa wajar.",
+    "**Ez dago arazorik — tidak masalah.** Satu dari sekian kalimat pendek yang membuat percakapan berjalan mulus. Sepadan dengan *lasai* (tenang saja), *berdin dio* (tidak apa-apa), *noski* (tentu saja)."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menginap dan bepergian",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia"], "rows": [
+     ["Gela bat nahi dut.", "GE-la bat", "Saya mau satu kamar."],
+     ["Gela librerik baduzu?", "LI-bre-rik", "Ada kamar kosong?"],
+     ["Bi gauetarako.", "BI ga-u-e-TA-ra-ko", "Untuk dua malam."],
+     ["Zenbat da gaua?", "sen-BAT da GA-u-a", "Semalam berapa?"],
+     ["Gosaria barne dago?", "BAR-ne", "Sarapan termasuk?"],
+     ["Zer ordutan da gosaria?", "or-DU-tan", "Sarapan jam berapa?"],
+     ["Wifiaren pasahitza, mesedez.", "pa-sa-I-tsa", "Minta kata sandi wifi."],
+     ["Noiz da irteera?", "ir-TE-e-ra", "Check-out jam berapa?"],
+     ["Maletak hemen utz ditzaket?", "ma-LE-tak", "Boleh saya titip koper di sini?"],
+     ["Faktura, mesedez.", "fak-TU-ra", "Minta struknya."]
+    ]},
+    { "type": "sub", "text": "Barang bawaan" },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia", "Euskara", "Bahasa Indonesia"], "rows": [
+     ["maleta", "koper", "pasaportea", "paspor"],
+     ["motxila", "ransel", "txartela", "tiket, kartu"],
+     ["diru-zorroa", "dompet", "kargagailua", "pengisi daya"],
+     ["kamera", "kamera", "eguzkitako betaurrekoak", "kacamata hitam"],
+     ["euritakoa", "payung", "toalla", "handuk"]
+    ]},
+    { "type": "p", "text": "*Euritakoa* harfiahnya \"yang untuk hujan\" — payung. Pola *-tako* ini produktif: *eguzkitakoa* (yang untuk matahari), *bidaiatakoa*. Sekali kamu mengenali potongan katanya, banyak kata panjang bahasa Basque berhenti terasa asing." }
+   ]
+  },
+  {
+   "title": "Kalau ada masalah",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia"], "rows": [
+     ["Galduta nago.", "Saya tersesat."],
+     ["Maleta galdu dut.", "Koper saya hilang."],
+     ["Diru-zorroa lapurtu didate.", "Dompet saya dicuri."],
+     ["Ez dabil.", "Tidak berfungsi."],
+     ["Argirik ez dago gelan.", "Lampu di kamar tidak menyala."],
+     ["Beste gela bat nahi dut.", "Saya mau ganti kamar."],
+     ["Trena galdu dut.", "Saya ketinggalan kereta."],
+     ["Laguntza behar dut.", "Saya butuh bantuan."],
+     ["Polizia deitu behar dugu.", "Kita harus menelepon polisi."],
+     ["Ez dut ulertzen, poliki mesedez.", "Saya tidak paham, pelan-pelan tolong."]
+    ]},
+    { "type": "kotak", "title": "Nomor dan tempat yang perlu dicatat", "items": [
+     "**112** — nomor darurat untuk seluruh keadaan: ambulans, polisi, pemadam kebakaran.",
+     "*Udaltzaingoa* — polisi kota; *Ertzaintza* — polisi otonom Basque.",
+     "*Galdutako gauzen bulegoa* — kantor barang hilang.",
+     "*Turismo bulegoa* — kantor informasi wisata; hampir selalu ada staf yang berbahasa Basque, Spanyol, Prancis, dan Inggris.",
+     "*Anbulatorioa* — klinik umum; *larrialdiak* — unit gawat darurat."
+    ]}
+   ]
+  },
+  {
+   "title": "Agur — dan apa selanjutnya",
+   "blocks": [
+    { "type": "p", "text": "Kamu sampai di ujung dua puluh unit. Mari kita hitung apa yang sekarang bisa kamu lakukan dalam bahasa yang enam bulan lalu mungkin belum pernah kamu dengar bunyinya." },
+    { "type": "list", "items": [
+     "Memperkenalkan diri, menyebut asal, umur, pekerjaan, dan keluarga.",
+     "Memesan makanan dan minuman, berbelanja, dan menanyakan harga.",
+     "Menyebut jam, hari, bulan, dan menyusun jadwal.",
+     "Menceritakan kegiatan sehari-hari, kebiasaan, dan apa yang sedang kamu lakukan sekarang.",
+     "Menanyakan arah, menjelaskan letak benda, dan bepergian dengan kereta atau bus.",
+     "Mengatakan apa yang kamu suka dan tidak suka, dan mengajak orang lain.",
+     "Bercerita tentang kemarin dan akhir pekan yang sudah lewat.",
+     "Menyusun rencana untuk besok, minggu depan, dan tahun depan.",
+     "Dan yang paling penting: memakai topi pelaku *-k* dan tiga susunan kata kerja bantu tanpa berhenti berpikir terlalu lama."
+    ]},
+    { "type": "sub", "text": "Kalimat perpisahan" },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia"], "rows": [
+     ["Agur eta ondo ibili.", "Sampai jumpa dan hati-hati."],
+     ["Ikusi arte.", "Sampai bertemu lagi."],
+     ["Gero arte, laster arte.", "Sampai nanti, sampai segera."],
+     ["Eskerrik asko dena gatik.", "Terima kasih untuk semuanya."],
+     ["Oso ondo pasatu dut hemen.", "Saya sangat senang di sini."],
+     ["Itzuliko naiz.", "Saya akan kembali."],
+     ["Zorte on!", "Semoga berhasil!"],
+     ["Euskara ikasten jarraituko dut.", "Saya akan terus belajar euskara."]
+    ]},
+    { "type": "kotak", "title": "Tiga hal yang bisa kamu lakukan mulai besok", "items": [
+     "**Dengarkan setiap hari.** Radio *Euskadi Irratia* dan televisi *EITB* punya siaran berbahasa Basque sepanjang hari; seri anak-anak paling mudah diikuti. Dua puluh menit sehari sudah cukup.",
+     "**Baca ulang modul ini dari Unit 1.** Bacaan kedua terasa berbeda: yang dulu terlihat sebagai aturan sekarang terbaca sebagai kalimat. Ini bukan pengulangan, melainkan langkah berikutnya.",
+     "**Pakai walau salah.** Tidak ada penutur euskara yang akan mengoreksimu dengan kasar — bahasa ini punya terlalu sedikit penutur untuk menolak siapa pun yang mencoba. Satu *kaixo* dan satu *eskerrik asko* sudah membuka pintu."
+    ]},
+    { "type": "p", "text": "*Eskerrik asko liburu hau irakurtzeagatik. Euskara ikasten jarraitu, eta ondo ibili beti. Gora euskara!*" }
+   ]
+  }
+ ],
+ "vocab": [
+  { "eu": "hotel", "baca": "o-TEL", "id": "hotel" },
+  { "eu": "erreserba", "baca": "e-rre-SER-ba", "id": "reservasi" },
+  { "eu": "harrera", "baca": "a-RRE-ra", "id": "resepsi, penerimaan" },
+  { "eu": "gau", "baca": "GA-u", "id": "malam" },
+  { "eu": "barne", "baca": "BAR-ne", "id": "termasuk, di dalam" },
+  { "eu": "pasahitz", "baca": "pa-SA-its", "id": "kata sandi" },
+  { "eu": "maleta", "baca": "ma-LE-ta", "id": "koper" },
+  { "eu": "motxila", "baca": "mo-CHI-la", "id": "ransel" },
+  { "eu": "pasaporte", "baca": "pa-sa-POR-te", "id": "paspor" },
+  { "eu": "diru-zorro", "baca": "DI-ru SO-rro", "id": "dompet" },
+  { "eu": "euritako", "baca": "e-u-ri-TA-ko", "id": "payung" },
+  { "eu": "kargagailu", "baca": "kar-ga-GA-i-lu", "id": "pengisi daya" },
+  { "eu": "arazo", "baca": "a-RA-so", "id": "masalah" },
+  { "eu": "laguntza", "baca": "la-GUN-tsa", "id": "bantuan" },
+  { "eu": "lapurtu", "baca": "la-PUR-tu", "id": "mencuri" },
+  { "eu": "ibili", "baca": "i-BI-li", "id": "berjalan, berfungsi" },
+  { "eu": "utzi", "baca": "U-tsi", "id": "meninggalkan, menitipkan" },
+  { "eu": "jarraitu", "baca": "kha-RRA-i-tu", "id": "melanjutkan" },
+  { "eu": "faktura", "baca": "fak-TU-ra", "id": "struk, tagihan" },
+  { "eu": "solairu", "baca": "so-LA-i-ru", "id": "lantai" },
+  { "eu": "behe", "baca": "BE-e", "id": "bawah" },
+  { "eu": "goi", "baca": "GO-i", "id": "atas" },
+  { "eu": "irteera", "baca": "ir-TE-e-ra", "id": "keluar, check-out" },
+  { "eu": "turismo bulego", "baca": "tu-RIS-mo bu-LE-go", "id": "kantor wisata" },
+  { "eu": "polizia", "baca": "po-li-SI-a", "id": "polisi" },
+  { "eu": "ikusi arte", "baca": "i-KU-si AR-te", "id": "sampai jumpa lagi" },
+  { "eu": "laster arte", "baca": "LAS-ter AR-te", "id": "sampai segera" },
+  { "eu": "zorte on", "baca": "SOR-te ON", "id": "semoga berhasil" },
+  { "eu": "ondo ibili", "baca": "ON-do i-BI-li", "id": "hati-hati, baik-baik saja" },
+  { "eu": "gora euskara", "baca": "GO-ra e-us-KA-ra", "id": "hidup bahasa Basque" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Basque.",
+   "items": [
+    "Ada kamar kosong?",
+    "Untuk dua malam.",
+    "Sarapan sudah termasuk?",
+    "Semalam berapa?",
+    "Minta kata sandi wifi.",
+    "Check-out jam berapa?"
+   ]
+  },
+  {
+   "prompt": "Kalimat apa yang kamu pakai dalam keadaan ini?",
+   "items": [
+    "Kamu tidak tahu di mana kamu berada. → ____",
+    "Kopermu tidak sampai. → ____",
+    "Lampu kamar tidak menyala. → ____",
+    "Kamu ketinggalan kereta. → ____",
+    "Kamu tidak paham ucapan orang. → ____",
+    "Kamu butuh bantuan segera. → ____"
+   ]
+  },
+  {
+   "prompt": "Ulangan seluruh modul: isi dengan bantu yang tepat.",
+   "items": [
+    "Ni Bilbon bizi ____. (naiz/dut)",
+    "Nik euskara ikasten ____. (naiz/dut)",
+    "Atzo Donostiara joan ____. (nintzen/nuen)",
+    "Atzo museoa ikusi ____. (nintzen/nuen)",
+    "Kafea gustatzen ____. (zait/dut)",
+    "Bihar lan egin behar ____. (naiz/dut)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "duzu / erreserba / ?",
+    "dago / gosaria / barne / ?",
+    "dut / gela / bat / nahi",
+    "dut / galdu / maleta",
+    "dut / jarraituko / ikasten / euskara",
+    "ibili / eta / agur / ondo"
+   ]
+  }
+ ],
+ "answers": [
+  "Gela librerik baduzu? — Bi gauetarako. — Gosaria barne dago? — Zenbat da gaua? — Wifiaren pasahitza, mesedez. — Noiz da irteera?",
+  "Galduta nago. — Maleta galdu dut. — Argirik ez dago gelan. — Trena galdu dut. — Ez dut ulertzen, poliki mesedez. — Laguntza behar dut.",
+  "naiz — dut — nintzen — nuen — zait — dut",
+  "Erreserba baduzu? — Gosaria barne dago? — Gela bat nahi dut. — Maleta galdu dut. — Euskara ikasten jarraituko dut. — Agur eta ondo ibili."
+ ]
+}

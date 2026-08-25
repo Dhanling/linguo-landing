@@ -25,6 +25,7 @@ export const CHIRP_LOCALES: Record<string, string> = {
   te: "te-IN", gu: "gu-IN", kn: "kn-IN", ml: "ml-IN", mr: "mr-IN",
   pa: "pa-IN", yue: "yue-HK",
   fil: "fil-PH", tl: "fil-PH",
+  eu: "eu-ES",
 };
 
 /** Kore = suara Chirp 3 HD bawaan (ada di semua locale di peta atas). */
@@ -33,6 +34,8 @@ export const CHIRP_SPEAKER = "Kore";
 /** Locale yang belum punya Chirp 3 HD → voice terbaik yang tersedia. */
 export const VOICE_OVERRIDE: Record<string, string> = {
   "fil-PH": "fil-ph-Neural2-A",
+  // Euskara belum punya Chirp 3 HD; satu-satunya suara yang ada di katalog Google.
+  "eu-ES": "eu-ES-Standard-B",
 };
 
 export const BUCKET_TTS = "tts-cache";

@@ -1,0 +1,210 @@
+{
+ "title": "Sehari-hari saya",
+ "title_target": "Eguneroko bizitza",
+ "goal": "Menceritakan kegiatan sehari-hari dari bangun sampai tidur, dan mengetahui kata kerja mana yang memakai naiz dan mana yang memakai dut.",
+ "bekal": [
+  "menyusun cerita rutinitas dari *esnatzen naiz* sampai *oheratzen naiz*",
+  "membedakan kata kerja yang berbantu *izan* (naiz) dan yang berbantu *ukan* (dut)",
+  "memakai kata urutan *gero*, *ondoren*, *azkenik* dan alat angkut dengan *-z*"
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Nolakoa da zure eguna?",
+   "intro": "Jam istirahat di euskaltegi. Maite penasaran dengan jadwal harian Budi.",
+   "lines": [
+    { "speaker": "Maite:", "text": "Zer egiten duzu egunero?", "id": "Setiap hari kamu ngapain saja?", "literal": "apa melakukan-nya punya-kamu-nya tiap-hari?" },
+    { "speaker": "Budi:", "text": "Goizean zazpietan esnatzen naiz.", "id": "Pagi saya bangun jam tujuh.", "literal": "pagi-di tujuh-jamak-di bangun-nya adalah-saya." },
+    { "speaker": "Maite:", "text": "Goiz! Eta gero?", "id": "Pagi sekali! Lalu?", "literal": "pagi! dan nanti?" },
+    { "speaker": "Budi:", "text": "Dutxatzen naiz, gosaltzen dut eta euskaltegira joaten naiz.", "id": "Saya mandi, sarapan, lalu berangkat ke euskaltegi.", "literal": "mandi-nya adalah-saya, sarapan-nya punya-saya-nya dan euskaltegi-ke pergi-nya adalah-saya." },
+    { "speaker": "Maite:", "text": "Oinez ala autobusez?", "id": "Jalan kaki atau naik bus?", "literal": "kaki-dengan atau bus-dengan?" },
+    { "speaker": "Budi:", "text": "Oinez. Hogei minutu dira, eta bidea polita da.", "id": "Jalan kaki. Dua puluh menit, dan jalannya bagus.", "literal": "kaki-dengan. dua-puluh menit adalah-mereka, dan jalan-itu cantik-itu adalah." },
+    { "speaker": "Maite:", "text": "Eta bazkaria non egiten duzu?", "id": "Dan makan siang di mana?", "literal": "dan makan-siang-itu di-mana melakukan-nya punya-kamu-nya?" },
+    { "speaker": "Budi:", "text": "Etxean bazkaltzen dut, Unairekin.", "id": "Saya makan siang di rumah, bersama Unai.", "literal": "rumah-di makan-siang-nya punya-saya-nya, Unai-dengan." },
+    { "speaker": "Maite:", "text": "Arratsaldean zer egiten duzu?", "id": "Sorenya ngapain?", "literal": "sore-di apa melakukan-nya punya-kamu-nya?" },
+    { "speaker": "Budi:", "text": "Lan pixka bat egiten dut, eta gero euskara ikasten dut.", "id": "Saya kerja sedikit, lalu belajar euskara.", "literal": "kerja sedikit satu melakukan-nya punya-saya-nya, dan nanti Basque belajar-nya punya-saya-nya." },
+    { "speaker": "Maite:", "text": "Ez zara inoiz nekatzen?", "id": "Kamu tidak pernah capek?", "literal": "tidak adalah-kamu pernah capek-nya?" },
+    { "speaker": "Budi:", "text": "Bai, noski! Gauean hamaiketan oheratzen naiz.", "id": "Ya, tentu saja! Malamnya saya tidur jam sebelas.", "literal": "ya, tentu! malam-di sebelas-jamak-di ranjang-ke-nya adalah-saya." }
+   ],
+   "notes": [
+    "**Esnatzen naiz, tapi gosaltzen dut.** Inilah pembagian yang harus kamu rasakan sejak sekarang: perbuatan yang terjadi **pada dirimu sendiri** memakai *naiz* (bangun, mandi, tidur, pergi, datang), sementara perbuatan yang **mengenai sesuatu** memakai *dut* (sarapan, membaca, belajar, membeli). Bagian tata bahasa di bawah memberi patokan yang bisa dipegang.",
+    "**Oheratzen naiz — kata kerja yang lahir dari kata benda.** *Ohe* berarti tempat tidur; *ohe + ra* berarti \"ke tempat tidur\"; *oheratu* berarti \"pergi tidur\". Pola ini hidup dan produktif: *etxeratu* (pulang ke rumah), *kaleratu* (keluar ke jalan), *lurreratu* (mendarat).",
+    "**Ala, bukan edo.** Kedua-duanya berarti \"atau\", tapi *ala* dipakai dalam **pertanyaan pilihan** yang menuntut satu jawaban: *Oinez **ala** autobusez?* Sementara *edo* dipakai dalam kalimat biasa: *Kafea **edo** tea hartzen dut.* Bahasa Indonesia tidak membedakan keduanya, jadi ini perlu perhatian tambahan.",
+    "**Ez zara inoiz nekatzen? — sangkalan ganda yang wajar.** *Inoiz* berarti \"pernah\"; bersama *ez* ia menjadi \"tidak pernah\". Bahasa Basque, seperti bahasa Indonesia, membiarkan dua tanda sangkalan berdiri berdampingan tanpa saling meniadakan."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Sehari penuh, dari bangun sampai tidur",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia", "Bantunya"], "rows": [
+     ["esnatu", "es-NA-tu", "bangun (dari tidur)", "naiz"],
+     ["jaiki", "KHA-i-ki", "bangkit dari ranjang", "naiz"],
+     ["dutxatu", "du-CHA-tu", "mandi", "naiz"],
+     ["jantzi", "KHAN-tsi", "berpakaian", "dut"],
+     ["gosaldu", "go-SAL-du", "sarapan", "dut"],
+     ["bazkaldu", "bas-KAL-du", "makan siang", "dut"],
+     ["afaldu", "a-FAL-du", "makan malam", "dut"],
+     ["joan", "KHO-an", "pergi", "naiz"],
+     ["etorri", "e-TO-rri", "datang", "naiz"],
+     ["iritsi", "i-RI-tsi", "tiba", "naiz"],
+     ["lan egin", "LAN e-gin", "bekerja", "dut"],
+     ["ikasi", "i-KA-si", "belajar", "dut"],
+     ["deskantsatu", "des-kan-TSA-tu", "istirahat", "naiz"],
+     ["oheratu", "o-e-RA-tu", "pergi tidur", "naiz"],
+     ["lo egin", "LO e-gin", "tidur", "dut"]
+    ]},
+    { "type": "p", "text": "Perhatikan pasangan terakhir: *oheratu* (naik ke tempat tidur) memakai *naiz*, tapi *lo egin* (tidur, harfiahnya \"melakukan tidur\") memakai *dut* — karena ada benda yang dikerjakan, yaitu *lo* itu sendiri. Semua kata kerja gabungan dengan *egin* berperilaku sama: *lan egin*, *hitz egin*, *negar egin* (menangis), *barre egin* (tertawa)." },
+    { "type": "kotak", "title": "Satu paragraf yang bisa kamu pakai apa adanya", "items": [
+     "*Goizean zazpietan esnatzen naiz. Dutxatzen naiz eta gosaltzen dut. Zortzi eta erdietan etxetik ateratzen naiz. Bederatzietatik ordu batera arte lan egiten dut. Etxean bazkaltzen dut. Arratsaldean euskara ikasten dut. Gauean afaltzen dut eta telebista ikusten dut. Hamaiketan oheratzen naiz.*",
+     "Hafalkan paragraf itu utuh. Ia menjawab pertanyaan \"ceritakan harimu\" yang muncul di hampir setiap perkenalan, dan tiap kalimatnya bisa kamu tukar isinya sesuai hidupmu sendiri."
+    ]}
+   ]
+  },
+  {
+   "title": "Naiz atau dut? — patokan yang bisa dipegang",
+   "blocks": [
+    { "type": "p", "text": "Ini pertanyaan yang paling sering ditanyakan pemula, dan jawabannya lebih rapi daripada kelihatannya. Tanyakan satu hal saja: **adakah benda yang dikenai perbuatan itu?**" },
+    { "type": "tabel", "head": ["Pertanyaan", "Jawaban", "Bantunya", "Contoh"], "rows": [
+     ["Ada bendanya?", "tidak ada", "**izan** (naiz)", "Etxera noa. / Esnatzen naiz."],
+     ["", "ada", "**ukan** (dut)", "Ogia jaten dut."],
+     ["Pelakunya bertopi -k?", "tidak", "**izan**", "Ni etorri naiz."],
+     ["", "ya", "**ukan**", "Nik ogia jan dut."]
+    ]},
+    { "type": "p", "text": "Kedua pertanyaan itu sebetulnya satu pertanyaan yang sama, dilihat dari dua arah: topi pelaku dan kata kerja bantu *ukan* selalu datang bersama-sama. Kalau salah satunya ada, yang lain pasti ada." },
+    { "type": "tabel", "head": ["Berbantu izan (naiz)", "Berbantu ukan (dut)"], "rows": [
+     ["joan (pergi), etorri (datang)", "jan (makan), edan (minum)"],
+     ["iritsi (tiba), sartu (masuk)", "ikusi (melihat), entzun (mendengar)"],
+     ["atera (keluar), igo (naik)", "irakurri (membaca), idatzi (menulis)"],
+     ["esnatu (bangun), jaiki (bangkit)", "erosi (membeli), saldu (menjual)"],
+     ["dutxatu (mandi), oheratu (tidur)", "ikasi (belajar), egin (melakukan)"],
+     ["egon (berada), bizi izan (tinggal)", "ukan (punya), nahi izan (ingin)"],
+     ["hasi (mulai), amaitu (selesai)", "hartu (mengambil), eman (memberi)"]
+    ]},
+    { "type": "kotak", "title": "Kesalahan khas penutur bahasa Indonesia", "items": [
+     "Memakai *dut* untuk \"pergi\": ***Etxera joaten dut*** salah, yang benar *Etxera joaten **naiz***. Dalam bahasa Indonesia \"pergi\" terasa seperti perbuatan aktif, jadi godaannya besar.",
+     "Memakai *naiz* untuk \"belajar\": ***Euskara ikasten naiz*** salah, yang benar *Euskara ikasten **dut*** — ada bendanya, yaitu euskara.",
+     "Lupa bahwa *bizi izan* memakai *naiz*: *Bilbon bizi **naiz***, bukan *dut*.",
+     "Kalau benar-benar ragu, tanyakan: \"apa yang di-\"? Kalau ada jawabannya (yang dimakan, yang dibaca, yang dibeli), pakai *dut*."
+    ]}
+   ]
+  },
+  {
+   "title": "Urutan, frekuensi, dan alat angkut",
+   "blocks": [
+    { "type": "sub", "text": "Menyusun urutan" },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia", "Contoh"], "rows": [
+     ["lehenengo", "pertama-tama", "Lehenengo dutxatzen naiz."],
+     ["gero", "lalu, nanti", "Gero gosaltzen dut."],
+     ["ondoren", "sesudah itu", "Ondoren lanera noa."],
+     ["azkenik", "akhirnya", "Azkenik oheratzen naiz."],
+     ["bitartean", "sementara itu", "Bitartean kafea hartzen dut."]
+    ]},
+    { "type": "sub", "text": "Seberapa sering" },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia", "Euskara", "Bahasa Indonesia"], "rows": [
+     ["beti", "selalu", "gutxitan", "jarang"],
+     ["ia beti", "hampir selalu", "inoiz ez", "tidak pernah"],
+     ["sarritan", "sering", "egunero", "setiap hari"],
+     ["batzuetan", "kadang-kadang", "astean behin", "seminggu sekali"]
+    ]},
+    { "type": "sub", "text": "Naik apa: akhiran -z" },
+    { "type": "p", "text": "Alat angkut ditandai dengan *-z*, satu akhiran pendek yang berarti \"dengan\" atau \"memakai\"." },
+    { "type": "tabel", "head": ["Euskara", "Harfiah", "Bahasa Indonesia"], "rows": [
+     ["oinez", "kaki-dengan", "jalan kaki"],
+     ["autobusez", "bus-dengan", "naik bus"],
+     ["trenez", "kereta-dengan", "naik kereta"],
+     ["metroz", "metro-dengan", "naik metro"],
+     ["kotxez", "mobil-dengan", "naik mobil"],
+     ["bizikletaz", "sepeda-dengan", "naik sepeda"],
+     ["hegazkinez", "pesawat-dengan", "naik pesawat"],
+     ["euskaraz", "Basque-dengan", "dalam bahasa Basque"]
+    ]},
+    { "type": "p", "text": "Baris terakhir memperlihatkan bahwa akhiran yang sama juga dipakai untuk bahasa: *euskaraz hitz egiten dut* (saya berbicara dalam bahasa Basque), *ingelesez* (dalam bahasa Inggris), *indonesieraz* (dalam bahasa Indonesia)." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "eu": "esnatu", "baca": "es-NA-tu", "id": "bangun tidur" },
+  { "eu": "jaiki", "baca": "KHA-i-ki", "id": "bangkit, bangun dari ranjang" },
+  { "eu": "dutxatu", "baca": "du-CHA-tu", "id": "mandi" },
+  { "eu": "jantzi", "baca": "KHAN-tsi", "id": "berpakaian" },
+  { "eu": "gosaldu", "baca": "go-SAL-du", "id": "sarapan" },
+  { "eu": "bazkaldu", "baca": "bas-KAL-du", "id": "makan siang" },
+  { "eu": "afaldu", "baca": "a-FAL-du", "id": "makan malam" },
+  { "eu": "oheratu", "baca": "o-e-RA-tu", "id": "pergi tidur" },
+  { "eu": "lo egin", "baca": "LO e-gin", "id": "tidur" },
+  { "eu": "deskantsatu", "baca": "des-kan-TSA-tu", "id": "istirahat" },
+  { "eu": "atera", "baca": "a-TE-ra", "id": "keluar" },
+  { "eu": "sartu", "baca": "SAR-tu", "id": "masuk" },
+  { "eu": "iritsi", "baca": "i-RI-tsi", "id": "tiba, sampai" },
+  { "eu": "bide", "baca": "BI-de", "id": "jalan, rute" },
+  { "eu": "oinez", "baca": "o-i-NES", "id": "jalan kaki" },
+  { "eu": "autobus", "baca": "a-u-to-BUS", "id": "bus" },
+  { "eu": "tren", "baca": "TREN", "id": "kereta" },
+  { "eu": "bizikleta", "baca": "bi-si-KLE-ta", "id": "sepeda" },
+  { "eu": "lan", "baca": "LAN", "id": "pekerjaan" },
+  { "eu": "lehenengo", "baca": "le-e-NEN-go", "id": "pertama" },
+  { "eu": "gero", "baca": "GE-ro", "id": "lalu, nanti" },
+  { "eu": "ondoren", "baca": "on-DO-ren", "id": "sesudah itu" },
+  { "eu": "azkenik", "baca": "as-KE-nik", "id": "akhirnya" },
+  { "eu": "sarritan", "baca": "sa-RRI-tan", "id": "sering" },
+  { "eu": "inoiz ez", "baca": "i-NO-is ES", "id": "tidak pernah" },
+  { "eu": "behin", "baca": "BE-in", "id": "sekali" },
+  { "eu": "ala", "baca": "A-la", "id": "atau (dalam pilihan)" },
+  { "eu": "noski", "baca": "NOS-ki", "id": "tentu saja" },
+  { "eu": "nekatu", "baca": "ne-KA-tu", "id": "menjadi capek" },
+  { "eu": "eguneroko", "baca": "e-gu-NE-ro-ko", "id": "sehari-hari" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih bantu yang tepat: naiz atau dut.",
+   "items": [
+    "Zazpietan esnatzen ____.",
+    "Gosaria egiten ____.",
+    "Euskaltegira joaten ____.",
+    "Euskara ikasten ____.",
+    "Hamaiketan oheratzen ____.",
+    "Telebista ikusten ____."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Basque.",
+   "items": [
+    "Saya bangun jam tujuh.",
+    "Saya sarapan di rumah.",
+    "Saya pergi ke kantor naik bus.",
+    "Sore hari saya belajar euskara.",
+    "Saya tidak pernah makan siang di bar.",
+    "Saya tidur jam sebelas."
+   ]
+  },
+  {
+   "prompt": "Isi dengan akhiran -z untuk alat angkut atau bahasa.",
+   "items": [
+    "Lanera autobus____ joaten naiz.",
+    "Bilbora tren____ noa.",
+    "Etxera oin____ joaten naiz.",
+    "Euskara____ hitz egiten dut.",
+    "Ingeles____ ere badakit.",
+    "Mendira bizikleta____ igotzen naiz."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "naiz / zazpietan / esnatzen / goizean",
+    "dut / etxean / bazkaltzen",
+    "naiz / euskaltegira / joaten / oinez",
+    "dut / arratsaldean / ikasten / euskara",
+    "naiz / ez / nekatzen / inoiz",
+    "duzu / egunero / zer / egiten / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "naiz — dut — naiz — dut — naiz — dut",
+  "Zazpietan esnatzen naiz. — Etxean gosaltzen dut. — Bulegora autobusez joaten naiz. — Arratsaldean euskara ikasten dut. — Ez dut inoiz tabernan bazkaltzen. — Hamaiketan oheratzen naiz.",
+  "autobusez — trenez — oinez — Euskaraz — Ingelesez — bizikletaz",
+  "Goizean zazpietan esnatzen naiz. — Etxean bazkaltzen dut. — Euskaltegira oinez joaten naiz. — Arratsaldean euskara ikasten dut. — Ez naiz inoiz nekatzen. — Zer egiten duzu egunero?"
+ ]
+}

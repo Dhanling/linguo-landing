@@ -54,6 +54,7 @@ const NAME_TO_CODE: Record<string, string> = {
   ukrainian: "uk", ukraina: "uk",
   icelandic: "is", islandia: "is",
   filipino: "tl", tagalog: "tl",
+  basque: "eu", euskara: "eu", euskera: "eu",
   khmer: "km", kamboja: "km",
   lao: "lo",
   burmese: "my", myanmar: "my",
@@ -80,6 +81,7 @@ const CODE_TO_LABEL: Record<string, string> = {
   uk: "Ukraina", is: "Islandia", tl: "Filipino", km: "Khmer", lo: "Lao",
   my: "Myanmar", ur: "Urdu", sw: "Swahili", ms: "Melayu", id: "Indonesia",
   jv: "Jawa", su: "Sunda", ban: "Bali", bbc: "Batak", bug: "Bugis", mad: "Madura",
+  eu: "Basque",
 };
 
 /**

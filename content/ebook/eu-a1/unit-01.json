@@ -1,0 +1,203 @@
+{
+ "title": "Halo, siapa namamu?",
+ "title_target": "Kaixo, nola duzu izena?",
+ "goal": "Menyapa sesuai waktu, menyebut nama dan asal, menanyakan kabar, dan memakai kata kerja \"adalah\" yang selalu jatuh di ujung kalimat.",
+ "bekal": [
+  "menyapa dengan *kaixo*, *egun on*, *arratsalde on*, *gabon* pada tempatnya masing-masing",
+  "menyebut nama sendiri dengan *nola duzu izena* dan menjawabnya",
+  "memakai *naiz / zara / da* untuk mengatakan \"saya/kamu/dia adalah ...\""
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Lehen eguna Bilbon",
+   "intro": "Hari pertama di Bilbo. Budi baru keluar dari bandara Loiu dan bertemu Ainhoa, staf euskaltegi yang menjemputnya.",
+   "lines": [
+    { "speaker": "Ainhoa:", "text": "Kaixo! Ongi etorri Bilbora. Ni Ainhoa naiz.", "id": "Halo! Selamat datang di Bilbo. Saya Ainhoa.", "literal": "halo! baik datang Bilbo-ke. saya Ainhoa adalah-saya." },
+    { "speaker": "Budi:", "text": "Kaixo, Ainhoa. Ni Budi naiz. Pozten naiz.", "id": "Halo, Ainhoa. Saya Budi. Senang berkenalan.", "literal": "halo, Ainhoa. saya Budi adalah-saya. gembira-nya adalah-saya." },
+    { "speaker": "Ainhoa:", "text": "Zer moduz? Nekatuta zaude?", "id": "Apa kabar? Kamu capek?", "literal": "apa cara-nya? capek berada-kamu?" },
+    { "speaker": "Budi:", "text": "Ondo, eskerrik asko. Pixka bat nekatuta. Eta zu?", "id": "Baik, terima kasih. Sedikit capek. Dan kamu?", "literal": "baik, terima-kasih banyak. sedikit satu capek. dan kamu?" },
+    { "speaker": "Ainhoa:", "text": "Oso ondo. Nongoa zara zu?", "id": "Sangat baik. Kamu orang mana?", "literal": "sangat baik. mana-dari-yang adalah-kamu kamu?" },
+    { "speaker": "Budi:", "text": "Indonesiarra naiz. Jakartakoa naiz.", "id": "Saya orang Indonesia. Saya dari Jakarta.", "literal": "Indonesia-orang adalah-saya. Jakarta-dari-yang adalah-saya." },
+    { "speaker": "Ainhoa:", "text": "Oso urrun! Euskaraz badakizu?", "id": "Jauh sekali! Kamu bisa bahasa Basque?", "literal": "sangat jauh! Basque-dengan tahu-kamu?" },
+    { "speaker": "Budi:", "text": "Pixka bat. Euskara ikasten ari naiz.", "id": "Sedikit. Saya sedang belajar bahasa Basque.", "literal": "sedikit satu. Basque belajar-nya sedang adalah-saya." },
+    { "speaker": "Ainhoa:", "text": "Bikain! Ni euskara irakaslea naiz.", "id": "Hebat! Saya guru bahasa Basque.", "literal": "hebat! saya Basque guru-itu adalah-saya." },
+    { "speaker": "Budi:", "text": "Benetan? Ni ikaslea naiz, eta sukaldaria ere bai.", "id": "Sungguh? Saya pelajar, dan juga juru masak.", "literal": "sungguh? saya pelajar-itu adalah-saya, dan juru-masak-itu juga ya." },
+    { "speaker": "Ainhoa:", "text": "Ederra! Tira, goazen. Kotxea hemen dago.", "id": "Bagus sekali! Ayo, kita berangkat. Mobilnya di sini.", "literal": "indah-itu! ayo, pergi-kita. mobil-itu di-sini berada." },
+    { "speaker": "Budi:", "text": "Ados. Eskerrik asko, Ainhoa!", "id": "Baik. Terima kasih, Ainhoa!", "literal": "setuju. terima-kasih banyak, Ainhoa!" }
+   ],
+   "notes": [
+    "**Kaixo boleh kapan saja, tapi ada yang lebih pas.** *Kaixo* adalah \"halo\" yang aman untuk siapa pun dan jam berapa pun. Tapi orang Basque lebih sering memakai sapaan menurut waktu: *egun on* pagi, *arratsalde on* siang sampai sore, *gabon* malam. Di antara teman kamu juga akan sering mendengar *aupa!* — kira-kira \"woi!\" yang ramah.",
+    "**Zer moduz? menuntut jawaban pendek.** Harfiahnya \"bagaimana caranya?\". Jawabannya nyaris selalu satu kata: *ondo* (baik), *oso ondo* (sangat baik), *hala-hola* (biasa saja), *nekatuta* (capek). Menjawab panjang lebar terdengar seperti sedang mengeluh — sama seperti \"apa kabar?\" dalam bahasa Indonesia.",
+    "**\"Adalah\" tidak boleh dihilangkan.** Dalam bahasa Indonesia \"saya pelajar\" sudah kalimat lengkap. Dalam bahasa Basque *ni ikaslea* belum kalimat; ia harus diakhiri *naiz*. Dan perhatikan tempatnya: **di ujung**, sesudah semua yang lain. Ini pola yang akan berulang di seluruh modul.",
+    "**Dua cara menyebut asal.** Untuk negara dan suku bangsa dipakai *-ar/-tar*: *indonesiarra* (orang Indonesia), *japoniarra*, *euskalduna* (orang Basque, harfiahnya \"yang punya euskara\"). Untuk kota dipakai *-ko/-go*: *Jakartakoa*, *Bilbokoa*, *Donostiakoa*. Kalau ragu, *-ko* hampir selalu bisa dipakai: *Indonesiakoa naiz* juga benar."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalimat yang menolongmu bertahan",
+   "blocks": [
+    { "type": "p", "text": "Dua belas kalimat berikut bukan bahan tata bahasa — ia perkakas darurat. Hafalkan bentuk utuhnya sekarang, pahami susunannya nanti." },
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia"], "rows": [
+     ["Bai / Ez", "BA-i / ES", "Ya / Tidak"],
+     ["Eskerrik asko", "es-KE-rrik AS-ko", "Terima kasih banyak"],
+     ["Ez horregatik", "es o-RRE-ga-tik", "Sama-sama"],
+     ["Mesedez", "me-SE-des", "Tolong, silakan"],
+     ["Barkatu", "bar-KA-tu", "Maaf / Permisi"],
+     ["Ez dakit", "es DA-kit", "Saya tidak tahu"],
+     ["Ez dut ulertzen", "es dut u-LER-tsen", "Saya tidak mengerti"],
+     ["Berriro esan, mesedez", "be-RRI-ro e-SAN", "Tolong ulangi"],
+     ["Poliki, mesedez", "po-LI-ki", "Pelan-pelan, tolong"],
+     ["Gaztelaniaz badakizu?", "gas-te-la-NI-as ba-da-KI-su", "Anda bisa bahasa Spanyol?"],
+     ["Nola esaten da hau euskaraz?", "NO-la e-SA-ten da A-u", "Ini bahasa Basque-nya apa?"],
+     ["Lagundu, mesedez!", "la-GUN-du", "Tolong (saya)!"]
+    ]},
+    { "type": "p", "text": "*Ez horregatik* harfiahnya \"bukan karena itu\" — jawaban baku untuk terima kasih, sama anehnya dengan \"sama-sama\" kalau dipikir terlalu dalam. Bentuk lain yang sama seringnya: *ez da ezer* (\"bukan apa-apa\")." },
+    { "type": "kotak", "title": "Satu kalimat yang mengubah pengalamanmu di Euskal Herria", "items": [
+     "*Euskara ikasten ari naiz. Euskaraz hitz egin dezakegu?* — \"Saya sedang belajar bahasa Basque. Boleh kita bicara euskara?\"",
+     "Hampir semua penutur euskara juga fasih berbahasa Spanyol atau Prancis, jadi mereka akan otomatis beralih begitu mendengar aksen asing. Kalimat di atas menghentikan peralihan itu — dan hampir selalu disambut dengan senyum, karena orang luar yang belajar bahasa mereka masih langka."
+    ]}
+   ]
+  },
+  {
+   "title": "Sapaan menurut waktu",
+   "blocks": [
+    { "type": "tabel", "head": ["Sapaan", "Cara baca", "Waktu", "Catatan"], "rows": [
+     ["Egun on", "e-GUN on", "sampai tengah hari", "harfiah: hari baik"],
+     ["Arratsalde on", "a-rrats-AL-de on", "siang sampai matahari turun", "juga dipakai saat berpisah"],
+     ["Gabon", "ga-BON", "sesudah gelap", "salam datang dan salam pergi"],
+     ["Kaixo", "KA-i-syo", "kapan saja", "paling aman untuk semua orang"],
+     ["Aupa", "A-u-pa", "kapan saja", "santai, untuk teman"],
+     ["Epa", "E-pa", "kapan saja", "sangat santai, anak muda"]
+    ]},
+    { "type": "p", "text": "Perhatikan susunannya: waktu dulu, baru *on* (\"baik\"). Sama seperti *egun* (hari) → *egun on*, semua sapaan ini harfiahnya adalah doa pendek: \"semoga harimu baik\". Bahasa Basque menaruh kata sifat **di belakang** kata benda, dan sapaan ini adalah contoh pertamamu." },
+    { "type": "sub", "text": "Berpisah" },
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia"], "rows": [
+     ["Agur", "A-gur", "Sampai jumpa (umum)"],
+     ["Aio", "A-i-o", "Dah (santai)"],
+     ["Gero arte", "GE-ro AR-te", "Sampai nanti"],
+     ["Bihar arte", "BI-ar AR-te", "Sampai besok"],
+     ["Ikusi arte", "i-KU-si AR-te", "Sampai bertemu lagi"],
+     ["Ondo ibili", "ON-do i-BI-li", "Hati-hati di jalan"]
+    ]},
+    { "type": "p", "text": "*Arte* berarti \"sampai\", dan ia berdiri **di belakang** kata yang diterangkannya: *gero arte* = \"nanti sampai\". Pola ini berlaku untuk seluruh kata sambung tempat dan waktu dalam bahasa Basque — semuanya datang belakangan, tidak pernah di depan." }
+   ]
+  },
+  {
+   "title": "Naiz, zara, da — kata kerja pertamamu",
+   "blocks": [
+    { "type": "p", "text": "*Izan* berarti \"ada, adalah\". Ia adalah kata kerja terpenting dalam bahasa ini, dan bentuknya harus dihafal utuh — tidak ada polanya, sama seperti \"am/is/are\" dalam bahasa Inggris." },
+    { "type": "tabel", "head": ["Orang", "Bentuk", "Cara baca", "Contoh"], "rows": [
+     ["ni (saya)", "**naiz**", "NA-is", "Ni Budi naiz."],
+     ["zu (kamu, Anda)", "**zara**", "SA-ra", "Zu Ainhoa zara."],
+     ["hura (dia)", "**da**", "DA", "Hura irakaslea da."],
+     ["gu (kami)", "**gara**", "GA-ra", "Gu ikasleak gara."],
+     ["zuek (kalian)", "**zarete**", "sa-RE-te", "Zuek lagunak zarete."],
+     ["haiek (mereka)", "**dira**", "DI-ra", "Haiek euskaldunak dira."]
+    ]},
+    { "type": "p", "text": "Kata gantinya sendiri boleh dibuang, karena bentuk kata kerjanya sudah menunjukkan siapa yang dimaksud: *Budi naiz* sudah berarti \"saya Budi\". Penutur asli memakai *ni*, *zu*, dan kawan-kawannya hanya kalau ingin menekankan — \"**saya**-lah yang guru, bukan dia\"." },
+    { "type": "sub", "text": "Menyangkal: ez di depan, bantunya ikut pindah" },
+    { "type": "p", "text": "Untuk menyangkal, letakkan *ez* di depan kata kerja bantunya — dan bantu itu melompat ke depan bersamanya, meninggalkan tempatnya di ujung kalimat." },
+    { "type": "tabel", "head": ["Positif", "Negatif", "Arti"], "rows": [
+     ["Ni irakaslea naiz.", "Ni **ez naiz** irakaslea.", "Saya bukan guru."],
+     ["Hura euskalduna da.", "Hura **ez da** euskalduna.", "Dia bukan orang Basque."],
+     ["Gu nekatuta gaude.", "Gu **ez gaude** nekatuta.", "Kami tidak capek."]
+    ]},
+    { "type": "kotak", "title": "Awas: izan dan egon bukan hal yang sama", "items": [
+     "*Izan* (naiz, zara, da) untuk **jati diri**: siapa kamu, dari mana, pekerjaanmu. *Ni ikaslea naiz.*",
+     "*Egon* (nago, zaude, dago) untuk **keadaan sementara dan tempat**: di mana kamu, sedang bagaimana perasaanmu. *Bilbon nago. Nekatuta nago.*",
+     "Penutur bahasa Indonesia sering memakai *naiz* untuk keduanya karena kita cuma punya satu \"adalah\". Patokan cepat: kalau besok bisa berubah, pakai *egon*. Bahasa Spanyol punya pembagian yang sama persis (*ser* dan *estar*) — kalau kamu pernah belajar Spanyol, kamu sudah tahu rasanya.",
+     "Unit 11 membahas *egon* sepenuhnya. Untuk sekarang, cukup hafalkan dua kalimat: *Nekatuta nago* dan *Bilbon nago*."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "eu": "kaixo", "baca": "KA-i-syo", "id": "halo" },
+  { "eu": "egun on", "baca": "e-GUN on", "id": "selamat pagi" },
+  { "eu": "arratsalde on", "baca": "a-rrats-AL-de on", "id": "selamat siang/sore" },
+  { "eu": "gabon", "baca": "ga-BON", "id": "selamat malam" },
+  { "eu": "agur", "baca": "A-gur", "id": "sampai jumpa" },
+  { "eu": "ongi etorri", "baca": "ON-gi e-TO-rri", "id": "selamat datang" },
+  { "eu": "ni", "baca": "NI", "id": "saya" },
+  { "eu": "zu", "baca": "SU", "id": "kamu, Anda" },
+  { "eu": "hura", "baca": "U-ra", "id": "dia" },
+  { "eu": "gu", "baca": "GU", "id": "kami" },
+  { "eu": "zuek", "baca": "SU-ek", "id": "kalian" },
+  { "eu": "haiek", "baca": "A-i-ek", "id": "mereka" },
+  { "eu": "izen", "baca": "I-sen", "id": "nama" },
+  { "eu": "ikasle", "baca": "i-KAS-le", "id": "pelajar, murid" },
+  { "eu": "irakasle", "baca": "i-ra-KAS-le", "id": "guru" },
+  { "eu": "sukaldari", "baca": "su-kal-DA-ri", "id": "juru masak" },
+  { "eu": "lagun", "baca": "LA-gun", "id": "teman" },
+  { "eu": "euskaldun", "baca": "e-us-KAL-dun", "id": "orang Basque, penutur euskara" },
+  { "eu": "euskara", "baca": "e-us-KA-ra", "id": "bahasa Basque" },
+  { "eu": "gaztelania", "baca": "gas-te-LA-ni-a", "id": "bahasa Spanyol" },
+  { "eu": "ondo", "baca": "ON-do", "id": "baik" },
+  { "eu": "oso", "baca": "O-so", "id": "sangat" },
+  { "eu": "pixka bat", "baca": "PISY-ka bat", "id": "sedikit" },
+  { "eu": "nekatuta", "baca": "ne-ka-TU-ta", "id": "capek" },
+  { "eu": "urrun", "baca": "U-rrun", "id": "jauh" },
+  { "eu": "hemen", "baca": "E-men", "id": "di sini" },
+  { "eu": "eta", "baca": "E-ta", "id": "dan" },
+  { "eu": "ere bai", "baca": "E-re BA-i", "id": "juga" },
+  { "eu": "benetan", "baca": "be-NE-tan", "id": "sungguh, benarkah" },
+  { "eu": "ados", "baca": "a-DOS", "id": "setuju, baiklah" },
+  { "eu": "bikain", "baca": "bi-KA-in", "id": "hebat, luar biasa" },
+  { "eu": "kotxe", "baca": "KO-che", "id": "mobil" },
+  { "eu": "zer moduz", "baca": "ser mo-DUS", "id": "apa kabar" },
+  { "eu": "nongoa", "baca": "NON-go-a", "id": "orang mana, dari mana" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Basque.",
+   "items": [
+    "Halo! Saya Budi.",
+    "Saya orang Indonesia.",
+    "Apa kabar?",
+    "Baik, terima kasih.",
+    "Saya sedang belajar bahasa Basque.",
+    "Sampai jumpa besok!"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bentuk *izan* yang tepat (naiz, zara, da, gara, zarete, dira).",
+   "items": [
+    "Ni ikaslea ____.",
+    "Zu irakaslea ____.",
+    "Hura euskalduna ____.",
+    "Gu lagunak ____.",
+    "Zuek sukaldariak ____.",
+    "Haiek Bilbokoak ____."
+   ]
+  },
+  {
+   "prompt": "Pilih sapaan yang tepat. Tulis jawabannya lengkap.",
+   "items": [
+    "Kamu masuk toko roti jam delapan pagi. Kamu bilang ____.",
+    "Kamu bertemu tetangga jam lima sore. Kamu bilang ____.",
+    "Kamu masuk restoran jam sembilan malam. Kamu bilang ____.",
+    "Kamu pamit dan akan bertemu lagi besok. Kamu bilang ____.",
+    "Temanmu pergi naik motor. Kamu bilang ____.",
+    "Seseorang berterima kasih kepadamu. Kamu menjawab ____."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "naiz / Budi / ni",
+    "zara / nongoa / zu / ?",
+    "naiz / indonesiarra / ni",
+    "ez / irakaslea / naiz / ni",
+    "dago / kotxea / hemen",
+    "naiz / ari / euskara / ikasten"
+   ]
+  }
+ ],
+ "answers": [
+  "Kaixo! Ni Budi naiz. — Indonesiarra naiz. — Zer moduz? — Ondo, eskerrik asko. — Euskara ikasten ari naiz. — Bihar arte!",
+  "naiz — zara — da — gara — zarete — dira",
+  "Egun on. — Arratsalde on. — Gabon. — Bihar arte. — Ondo ibili. — Ez horregatik.",
+  "Ni Budi naiz. — Zu nongoa zara? — Ni indonesiarra naiz. — Ni ez naiz irakaslea. — Kotxea hemen dago. — Euskara ikasten ari naiz."
+ ]
+}

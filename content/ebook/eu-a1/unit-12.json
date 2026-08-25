@@ -1,0 +1,204 @@
+{
+ "title": "Mau ke mana?",
+ "title_target": "Nora zoaz?",
+ "goal": "Menyebut tujuan dan asal perjalanan dengan -ra dan -tik, memakai bentuk pendek joan dan etorri, serta membeli tiket.",
+ "bekal": [
+  "membedakan *-ra* (ke), *-tik* (dari), *-raino* (sampai), dan *-rantz* (ke arah)",
+  "memakai bentuk pendek *noa, zoaz, doa* dan *nator, zatoz, dator*",
+  "membeli tiket dan menanyakan jam keberangkatan"
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Abandoko geltokian",
+   "intro": "Budi ingin menghabiskan hari Sabtu di Donostia dan mengantre di loket stasiun Abando, Bilbo.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Egun on. Donostiarako txartel bat, mesedez.", "id": "Selamat pagi. Satu tiket ke Donostia, tolong.", "literal": "hari baik. Donostia-untuk-yang tiket satu, tolong." },
+    { "speaker": "Langilea:", "text": "Joan-etorrikoa ala joatekoa bakarrik?", "id": "Pulang pergi atau sekali jalan saja?", "literal": "pergi-datang-yang atau pergi-untuk-yang saja?" },
+    { "speaker": "Budi:", "text": "Joan-etorrikoa. Noiz irteten da hurrengo trena?", "id": "Pulang pergi. Kereta berikutnya berangkat kapan?", "literal": "pergi-datang-yang. kapan keluar-nya adalah berikut kereta-itu?" },
+    { "speaker": "Langilea:", "text": "Hamaiketan irteten da eta ordu bata eta erdietan iristen da.", "id": "Berangkat jam sebelas dan tiba jam setengah dua.", "literal": "sebelas-jamak-di keluar-nya adalah dan jam satu-itu dan setengah-jamak-di tiba-nya adalah." },
+    { "speaker": "Budi:", "text": "Zenbat balio du?", "id": "Berapa harganya?", "literal": "berapa bernilai punya-dia-nya?" },
+    { "speaker": "Langilea:", "text": "Hogeita bi euro. Bost nasatik irteten da.", "id": "Dua puluh dua euro. Berangkat dari peron lima.", "literal": "dua-puluh-dan dua euro. lima peron-dari keluar-nya adalah." },
+    { "speaker": "Budi:", "text": "Eskerrik asko. Autobusa merkeagoa da?", "id": "Terima kasih. Bus lebih murah?", "literal": "terima-kasih banyak. bus-itu murah-lebih-itu adalah?" },
+    { "speaker": "Langilea:", "text": "Bai, baina motelagoa. Trena azkarragoa da.", "id": "Ya, tapi lebih lambat. Kereta lebih cepat.", "literal": "ya, tapi lambat-lebih-itu. kereta-itu cepat-lebih-itu adalah." },
+    { "speaker": "Budi:", "text": "Ondo, orduan trenez noa.", "id": "Baik, kalau begitu saya naik kereta.", "literal": "baik, kalau-begitu kereta-dengan pergi-saya." },
+    { "speaker": "Langilea:", "text": "Hemen duzu txartela. Bide ona!", "id": "Ini tiketnya. Selamat jalan!", "literal": "di-sini punya-kamu-nya tiket-itu. jalan baik-itu!" },
+    { "speaker": "Budi:", "text": "Eta Donostiatik Bilbora, azken trena noiz da?", "id": "Dan dari Donostia ke Bilbo, kereta terakhir jam berapa?", "literal": "dan Donostia-dari Bilbo-ke, terakhir kereta-itu kapan adalah?" },
+    { "speaker": "Langilea:", "text": "Gaueko hamarretan. Ez galdu!", "id": "Jam sepuluh malam. Jangan sampai ketinggalan!", "literal": "malam-dari sepuluh-jamak-di. tidak hilangkan!" }
+   ],
+   "notes": [
+    "**Donostiarako — akhiran untuk tujuan.** *-rako* berarti \"untuk ke\": tiket **untuk pergi ke** Donostia. Bandingkan tiga bentuk yang mirip: *Donostia**ra*** (ke Donostia), *Donostia**ko*** (dari/di Donostia, sebagai keterangan), *Donostia**rako*** (untuk ke Donostia).",
+    "**Trenez noa — bentuk pendek yang tidak butuh bantu.** *Joan* punya bentuk sintetis yang dipakai untuk perjalanan yang sedang atau akan segera terjadi: *noa* (saya pergi), *zoaz*, *doa*, *goaz*, *zoazte*, *doaz*. Bentuk panjang *joaten naiz* dipakai untuk kebiasaan: *egunero lanera joaten naiz*.",
+    "**Irten dan iritsi — berangkat dan tiba.** Keduanya memakai bantu *izan*: *trena hamaiketan irteten **da***, *ordu batean iristen **da***. Kata lain yang sering muncul di stasiun: *nasa* (peron), *txartela* (tiket), *atzerapena* (keterlambatan), *aldapa*.",
+    "**Ez galdu! — perintah menyangkal.** Bentuk perintah paling sederhana adalah bentuk kamus kata kerjanya: *ez galdu* (jangan sampai hilang/ketinggalan), *ez ahaztu* (jangan lupa), *etorri hona* (datang ke sini), *entzun* (dengarkan). Bentuk perintah yang lebih halus dipelajari di tingkat A2."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Ke mana, dari mana, sampai mana",
+   "blocks": [
+    { "type": "tabel", "head": ["Pertanyaan", "Akhiran", "Contoh", "Arti"], "rows": [
+     ["**nora?** (ke mana)", "-ra", "Bilbo**ra**, etxe**ra**", "ke Bilbo, ke rumah"],
+     ["**nondik?** (dari mana)", "-tik", "Bilbo**tik**, etxe**tik**", "dari Bilbo, dari rumah"],
+     ["**noraino?** (sampai mana)", "-raino", "Bilbo**raino**", "sampai Bilbo"],
+     ["**norantz?** (ke arah mana)", "-rantz", "Bilbo**rantz**", "ke arah Bilbo"],
+     ["**non?** (di mana)", "-n / -an", "Bilbo**n**, etxe**an**", "di Bilbo, di rumah"]
+    ]},
+    { "type": "p", "text": "Keempat akhiran arah itu satu keluarga, dan semuanya dibangun dari akhiran tempat yang sama. Kalau kamu hafal *etxean, etxera, etxetik*, kamu sudah menguasai seluruh sistemnya — sisanya cuma penukaran kata benda." },
+    { "type": "sub", "text": "Ke sini, ke situ, ke sana" },
+    { "type": "tabel", "head": ["Di", "Ke", "Dari", "Bahasa Indonesia"], "rows": [
+     ["hemen", "**hona**", "hemendik", "di/ke/dari sini"],
+     ["hor", "**horra**", "hortik", "di/ke/dari situ"],
+     ["han", "**hara**", "handik", "di/ke/dari sana"],
+     ["non?", "**nora?**", "nondik?", "di/ke/dari mana?"]
+    ]},
+    { "type": "kotak", "title": "Tempat yang bentuknya menyimpang", "items": [
+     "*etxe* → *etxe**ra*** (ke rumah), tapi kalau maksudnya \"pulang\" dipakai apa adanya: *etxera noa*.",
+     "*kanpo* → *kanpo**ra*** (ke luar), *barru* → *barru**ra*** (ke dalam).",
+     "*mendi* → *mendi**ra*** (ke gunung) — kalimat yang paling sering terdengar di akhir pekan di Euskal Herria.",
+     "Untuk orang, dipakai *-rengana*: *amarengana noa* (saya pergi ke tempat ibu). Bentuk ini sering dipakai untuk dokter: *medikuarengana*."
+    ]}
+   ]
+  },
+  {
+   "title": "Joan dan etorri: bentuk pendek",
+   "blocks": [
+    { "type": "p", "text": "Dua kata kerja gerak yang paling sering punya bentuk yang berdiri sendiri tanpa bantu. Hafalkan keduanya sebagai lagu — mereka muncul di setiap percakapan." },
+    { "type": "tabel", "head": ["Orang", "joan (pergi)", "etorri (datang)", "Contoh"], "rows": [
+     ["ni", "**noa**", "**nator**", "Etxera noa."],
+     ["zu", "**zoaz**", "**zatoz**", "Nora zoaz?"],
+     ["hura", "**doa**", "**dator**", "Trena badator."],
+     ["gu", "**goaz**", "**gatoz**", "Mendira goaz."],
+     ["zuek", "**zoazte**", "**zatozte**", "Nondik zatozte?"],
+     ["haiek", "**doaz**", "**datoz**", "Lagunak datoz."]
+    ]},
+    { "type": "p", "text": "Awalan *ba-* menegaskan: *banoa* (\"saya berangkat sekarang\"), *badator* (\"dia sudah dalam perjalanan\"). Sangkalannya memakai bentuk yang sama: *ez noa* (saya tidak pergi), *ez dator* (dia tidak datang)." },
+    { "type": "tabel", "head": ["Kebiasaan (panjang)", "Sekarang (pendek)", "Bedanya"], "rows": [
+     ["Egunero lanera joaten naiz.", "Orain lanera noa.", "tiap hari / sekarang"],
+     ["Astero etortzen da.", "Gaur badator.", "tiap minggu / hari ini"],
+     ["Mendira joaten gara.", "Mendira goaz.", "biasanya / sekarang"]
+    ]},
+    { "type": "kotak", "title": "Joan atau etorri?", "items": [
+     "*Joan* = menjauh dari tempat pembicara. *Etorri* = mendekat ke tempat pembicara.",
+     "Kalau temanmu memanggil dari luar dan kamu menjawab \"aku datang!\", bahasa Basque memakai *banoa!* — karena kamu bergerak **menjauh dari tempatmu sendiri**. Bahasa Indonesia justru memakai \"datang\". Ini kebalikan yang sering menjebak.",
+     "*Etorri hona* (datang ke sini), *joan hara* (pergi ke sana) — dua kalimat pendek yang bisa kamu pakai untuk memastikan mana yang benar."
+    ]}
+   ]
+  },
+  {
+   "title": "Bepergian: tiket dan kendaraan",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia"], "rows": [
+     ["Donostiarako txartel bat.", "do-nos-ti-a-RA-ko", "Satu tiket ke Donostia."],
+     ["Joan-etorrikoa.", "kho-an-e-to-RRI-ko-a", "Pulang pergi."],
+     ["Noiz irteten da?", "NO-is ir-TE-ten da", "Berangkat jam berapa?"],
+     ["Noiz iristen da?", "i-RIS-ten da", "Tiba jam berapa?"],
+     ["Zenbat denbora behar du?", "den-BO-ra", "Berapa lama?"],
+     ["Zein nasatatik?", "NA-sa-ta-tik", "Dari peron berapa?"],
+     ["Hemen jaisten naiz.", "KHA-is-ten", "Saya turun di sini."],
+     ["Non aldatu behar dut?", "al-DA-tu", "Di mana saya harus ganti?"],
+     ["Trena berandu dabil.", "be-RAN-du DA-bil", "Keretanya terlambat."],
+     ["Bide ona!", "BI-de O-na", "Selamat jalan!"]
+    ]},
+    { "type": "sub", "text": "Kendaraan" },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia", "Dengan -z", "Arti"], "rows": [
+     ["trena", "kereta", "trenez", "naik kereta"],
+     ["autobusa", "bus", "autobusez", "naik bus"],
+     ["metroa", "metro", "metroz", "naik metro"],
+     ["tranbia", "trem", "tranbiaz", "naik trem"],
+     ["kotxea", "mobil", "kotxez", "naik mobil"],
+     ["taxia", "taksi", "taxiz", "naik taksi"],
+     ["hegazkina", "pesawat", "hegazkinez", "naik pesawat"],
+     ["itsasontzia", "kapal", "itsasontziz", "naik kapal"],
+     ["bizikleta", "sepeda", "bizikletaz", "naik sepeda"],
+     ["oinak", "kaki", "oinez", "jalan kaki"]
+    ]},
+    { "type": "p", "text": "Di Bilbo, kereta lokal disebut *Euskotren* dan metro kotanya *Metro Bilbao*; papan petunjuknya dua bahasa, dan nama stasiun selalu memakai bentuk Basque lebih dulu. Membaca papan itu adalah latihan membaca gratis setiap hari — *irteera* (keluar), *sarrera* (masuk), *hurrengo geltokia* (stasiun berikutnya)." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "eu": "joan", "baca": "KHO-an", "id": "pergi" },
+  { "eu": "etorri", "baca": "e-TO-rri", "id": "datang" },
+  { "eu": "irten", "baca": "IR-ten", "id": "berangkat, keluar" },
+  { "eu": "iritsi", "baca": "i-RI-tsi", "id": "tiba" },
+  { "eu": "jaitsi", "baca": "KHA-i-tsi", "id": "turun" },
+  { "eu": "igo", "baca": "i-GO", "id": "naik" },
+  { "eu": "aldatu", "baca": "al-DA-tu", "id": "berganti" },
+  { "eu": "ibili", "baca": "i-BI-li", "id": "berjalan, berkeliling" },
+  { "eu": "txartel", "baca": "CHAR-tel", "id": "tiket, kartu" },
+  { "eu": "geltoki", "baca": "gel-TO-ki", "id": "stasiun, halte" },
+  { "eu": "nasa", "baca": "NA-sa", "id": "peron" },
+  { "eu": "bidaia", "baca": "bi-DA-i-a", "id": "perjalanan" },
+  { "eu": "bide", "baca": "BI-de", "id": "jalan" },
+  { "eu": "hurrengo", "baca": "u-RREN-go", "id": "berikutnya" },
+  { "eu": "azken", "baca": "AS-ken", "id": "terakhir" },
+  { "eu": "lehen", "baca": "LE-en", "id": "pertama; dulu" },
+  { "eu": "azkar", "baca": "as-KAR", "id": "cepat" },
+  { "eu": "motel", "baca": "mo-TEL", "id": "lambat" },
+  { "eu": "denbora", "baca": "den-BO-ra", "id": "waktu" },
+  { "eu": "hegazkin", "baca": "e-gas-KIN", "id": "pesawat" },
+  { "eu": "itsasontzi", "baca": "i-tsa-SON-tsi", "id": "kapal" },
+  { "eu": "metro", "baca": "ME-tro", "id": "metro" },
+  { "eu": "taxi", "baca": "TA-ksi", "id": "taksi" },
+  { "eu": "sarrera", "baca": "sa-RRE-ra", "id": "pintu masuk" },
+  { "eu": "irteera", "baca": "ir-TE-e-ra", "id": "pintu keluar" },
+  { "eu": "hona", "baca": "O-na", "id": "ke sini" },
+  { "eu": "hara", "baca": "A-ra", "id": "ke sana" },
+  { "eu": "hemendik", "baca": "e-MEN-dik", "id": "dari sini" },
+  { "eu": "galdu", "baca": "GAL-du", "id": "hilang, ketinggalan" },
+  { "eu": "ahaztu", "baca": "a-AS-tu", "id": "lupa" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tambahkan akhiran arah yang tepat (-ra, -tik, -n).",
+   "items": [
+    "Bilbo____ noa. (ke)",
+    "Donostia____ nator. (dari)",
+    "Etxe____ nago. (di)",
+    "Mendi____ goaz. (ke)",
+    "Euskaltegi____ dator. (dari)",
+    "Hondartza____ zoaz? (ke)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk pendek *joan* atau *etorri*.",
+   "items": [
+    "Ni etxera ____. (pergi)",
+    "Zu nora ____? (pergi)",
+    "Trena ____. (datang)",
+    "Gu mendira ____. (pergi)",
+    "Lagunak ____. (datang)",
+    "Nondik ____ zu? (datang)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Basque.",
+   "items": [
+    "Satu tiket ke Donostia, tolong.",
+    "Pulang pergi.",
+    "Kereta berangkat jam berapa?",
+    "Saya turun di sini.",
+    "Bus lebih murah tapi lebih lambat.",
+    "Selamat jalan!"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "zoaz / nora / ?",
+    "noa / etxera / orain",
+    "da / trena / irteten / hamaiketan",
+    "da / merkeagoa / autobusa",
+    "gatoz / Donostiatik / gu",
+    "dut / txartel / bat / nahi"
+   ]
+  }
+ ],
+ "answers": [
+  "Bilbora — Donostiatik — Etxean — Mendira — Euskaltegitik — Hondartzara",
+  "noa — zoaz — dator — goaz — datoz — zatoz",
+  "Donostiarako txartel bat, mesedez. — Joan-etorrikoa. — Noiz irteten da trena? — Hemen jaisten naiz. — Autobusa merkeagoa da baina motelagoa. — Bide ona!",
+  "Nora zoaz? — Orain etxera noa. — Trena hamaiketan irteten da. — Autobusa merkeagoa da. — Gu Donostiatik gatoz. — Txartel bat nahi dut."
+ ]
+}

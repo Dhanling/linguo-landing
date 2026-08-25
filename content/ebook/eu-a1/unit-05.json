@@ -1,0 +1,209 @@
+{
+ "title": "Topi pelaku dan kata kerja bantu",
+ "title_target": "Nik zer egiten dut?",
+ "goal": "Memakai akhiran pelaku -k, menguasai kata kerja bantu dut/duzu/du, dan menyusun kalimat kebiasaan dengan bentuk -t(z)en.",
+ "bekal": [
+  "memasang \"topi pelaku\" *-k* pada orang yang melakukan sesuatu kepada benda lain",
+  "memakai *dut, duzu, du, dugu, duzue, dute* dan bentuk jamaknya *ditut, dituzu, ditu*",
+  "menyusun kalimat kebiasaan: *kafea edaten dut*, *euskara ikasten dut*"
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Gosaria pisuan",
+   "intro": "Pagi hari di apartemen. Unai, teman sekamar Budi, sedang menyiapkan sarapan.",
+   "lines": [
+    { "speaker": "Unai:", "text": "Egun on! Zer duzu eskuan?", "id": "Selamat pagi! Apa yang kamu pegang?", "literal": "hari baik! apa punya-kamu-nya tangan-di?" },
+    { "speaker": "Budi:", "text": "Euskarazko liburu bat dut. Egunero irakurtzen dut.", "id": "Sebuah buku berbahasa Basque. Saya membacanya setiap hari.", "literal": "Basque-dengan-yang buku satu punya-saya-nya. tiap-hari membaca-nya punya-saya-nya." },
+    { "speaker": "Unai:", "text": "Nik ere liburu hori dut! Non erosi duzu?", "id": "Saya juga punya buku itu! Kamu beli di mana?", "literal": "saya-pelaku juga buku itu punya-saya-nya! di-mana beli punya-kamu-nya?" },
+    { "speaker": "Budi:", "text": "Euskaltegian erosi dut, hamabost euroan.", "id": "Saya beli di euskaltegi, lima belas euro.", "literal": "euskaltegi-di beli punya-saya-nya, lima-belas euro-di." },
+    { "speaker": "Unai:", "text": "Merkea! Nik euskara ikasten dut, baina poliki.", "id": "Murah! Saya juga belajar euskara, tapi pelan-pelan.", "literal": "murah-itu! saya-pelaku Basque belajar-nya punya-saya-nya, tapi pelan." },
+    { "speaker": "Budi:", "text": "Zer egiten duzu goizetan?", "id": "Apa yang kamu lakukan di pagi hari?", "literal": "apa melakukan-nya punya-kamu-nya pagi-jamak-di?" },
+    { "speaker": "Unai:", "text": "Kafea hartzen dut eta egunkaria irakurtzen dut.", "id": "Saya minum kopi dan membaca koran.", "literal": "kopi-itu mengambil-nya punya-saya-nya dan koran-itu membaca-nya punya-saya-nya." },
+    { "speaker": "Budi:", "text": "Nik tea edaten dut. Ez dut kaferik edaten.", "id": "Saya minum teh. Saya tidak minum kopi.", "literal": "saya-pelaku teh-itu minum-nya punya-saya-nya. tidak punya-saya-nya kopi-sejumlah minum-nya." },
+    { "speaker": "Unai:", "text": "Tea?! Euskaldunek kafea edaten dute beti!", "id": "Teh?! Orang Basque selalu minum kopi!", "literal": "teh?! Basque-orang-pelaku-jamak kopi-itu minum-nya punya-mereka-nya selalu!" },
+    { "speaker": "Budi:", "text": "Badakit, baina nik tea nahiago dut.", "id": "Saya tahu, tapi saya lebih suka teh.", "literal": "memang-tahu-saya-nya, tapi saya-pelaku teh-itu ingin-lebih punya-saya-nya." },
+    { "speaker": "Unai:", "text": "Ondo, ondo. Gosaria prest dago!", "id": "Baik, baik. Sarapan sudah siap!", "literal": "baik, baik. sarapan-itu siap berada!" },
+    { "speaker": "Budi:", "text": "Eskerrik asko, Unai. Gose naiz!", "id": "Terima kasih, Unai. Saya lapar!", "literal": "terima-kasih banyak, Unai. lapar adalah-saya!" }
+   ],
+   "notes": [
+    "**Nik, bukan ni.** Begitu kalimatnya punya benda yang dikenai — buku yang dibaca, kopi yang diminum — pelakunya memakai topi *-k*. *Ni Budi naiz* (tanpa topi, tidak ada benda yang dikenai) tetapi *Nik liburua dut* (ada bukunya, jadi bertopi). Inilah satu-satunya hal yang benar-benar baru dalam bahasa ini bagi penutur bahasa Indonesia, dan seluruh unit ini membahasnya.",
+    "**Satu kata bantu menyimpan dua keterangan.** *Dut* bukan cuma \"punya\": di dalamnya ada \"saya\" (pelaku) dan \"nya\" (benda tunggal yang dikenai). Karena itu terjemahan harfiahnya `saya-punya-nya`. Kalau bendanya jamak, bantunya berubah: *ditut* = `saya-punya-mereka`.",
+    "**Egunero irakurtzen dut — kebiasaan, bukan kejadian sekarang.** Bentuk *-t(z)en* menyatakan hal yang biasa dilakukan, sama seperti *present simple* bahasa Inggris. Untuk \"sedang membaca saat ini\" dipakai *irakurtzen ari naiz*, yang dibahas di Unit 10.",
+    "**Ez dut kaferik edaten.** Perhatikan tiga hal sekaligus: *ez* di depan, bantunya melompat mengikutinya, dan kata kerjanya terlempar ke belakang. Ditambah lagi *kafea* berubah menjadi *kaferik* — dalam kalimat menyangkal, benda yang dikenai memakai *-rik*, bukan *-a*."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Topi pelaku: akhiran -k",
+   "blocks": [
+    { "type": "p", "text": "Ini gagasan yang membuat bahasa Basque terkenal. Bahasa Indonesia menandai *subjek* dengan meletakkannya di depan. Bahasa Basque tidak peduli pada subjek; ia menandai **pelaku yang mengerjakan sesuatu kepada benda lain** dengan akhiran *-k*." },
+    { "type": "tabel", "head": ["Kalimat", "Ada bendanya?", "Bentuk pelaku", "Arti"], "rows": [
+     ["**Jon** etorri da.", "tidak", "Jon (telanjang)", "Jon datang."],
+     ["**Jonek** ogia jaten du.", "ada (ogia)", "Jon**ek**", "Jon makan roti."],
+     ["**Ni** Bilbon bizi naiz.", "tidak", "ni (telanjang)", "Saya tinggal di Bilbo."],
+     ["**Nik** euskara ikasten dut.", "ada (euskara)", "ni**k**", "Saya belajar euskara."]
+    ]},
+    { "type": "p", "text": "Jadi pertanyaannya bukan \"siapa subjeknya\", melainkan \"apakah ada benda yang dikenai\". Kalau ada, pelakunya bertopi. Kalau tidak, ia telanjang. Bahasa Basque bahkan punya kata tanya khusus untuk pelaku bertopi: **nork?** (siapa yang melakukan), berbeda dari **nor?** (siapa)." },
+    { "type": "tabel", "head": ["Tanpa topi (nor)", "Bertopi (nork)", "Milik (noren)", "Kepada (nori)"], "rows": [
+     ["ni", "**nik**", "nire", "niri"],
+     ["zu", "**zuk**", "zure", "zuri"],
+     ["hura", "**hark**", "haren", "hari"],
+     ["gu", "**guk**", "gure", "guri"],
+     ["zuek", "**zuek**", "zuen", "zuei"],
+     ["haiek", "**haiek**", "haien", "haiei"],
+     ["irakaslea", "irakasle**ak**", "irakaslearen", "irakasleari"],
+     ["irakasleak (jamak)", "irakasle**ek**", "irakasleen", "irakasleei"],
+     ["Jon", "Jon**ek**", "Jonen", "Joni"]
+    ]},
+    { "type": "kotak", "title": "Jebakan yang paling sering: -ak dan -ak", "items": [
+     "*Irakasleak* bisa berarti dua hal: **\"para guru\"** (jamak tanpa topi) atau **\"guru itu, sebagai pelaku\"** (tunggal bertopi). Bentuknya kebetulan sama.",
+     "Yang membedakan adalah kata kerja bantunya. *Irakasleak etorri **dira*** = para guru datang (jamak). *Irakasleak liburua irakurtzen **du*** = guru itu membaca buku (tunggal bertopi).",
+     "Untuk jamak bertopi, bentuknya berbeda: *irakasle**ek***. Perhatikan *e*-nya: *euskaldun**ek** kafea edaten dute*.",
+     "Jangan panik. Penutur asli pun mengandalkan kata kerja bantu untuk memilah ini, dan bantunya selalu ada di ujung kalimat."
+    ]}
+   ]
+  },
+  {
+   "title": "Bantu NORK-NOR: keluarga dut",
+   "blocks": [
+    { "type": "p", "text": "Kata kerja bantu yang dipakai bersama pelaku bertopi disebut *ukan*. Ia berdiri sendiri untuk arti \"punya\", dan menjadi bantu untuk semua kata kerja yang punya objek. Hafalkan kedua barisnya — ini investasi terbesar di seluruh modul, dan ia terbayar di setiap unit sesudah ini." },
+    { "type": "tabel", "head": ["Pelaku", "Benda tunggal", "Benda jamak", "Contoh"], "rows": [
+     ["nik", "**dut**", "**ditut**", "Liburua dut. / Liburuak ditut."],
+     ["zuk", "**duzu**", "**dituzu**", "Kafea duzu?"],
+     ["hark", "**du**", "**ditu**", "Jonek etxe bat du."],
+     ["guk", "**dugu**", "**ditugu**", "Klasea dugu."],
+     ["zuek", "**duzue**", "**dituzue**", "Liburuak dituzue?"],
+     ["haiek", "**dute**", "**dituzte**", "Haiek kafea edaten dute."]
+    ]},
+    { "type": "p", "text": "Bacalah tabel itu sebagai kalimat, bukan sebagai daftar: *dut* = \"saya-punya-nya\", *dituzte* = \"mereka-punya-mereka\". Yang berubah di depan menandai pelakunya, yang di tengah menandai jumlah bendanya." },
+    { "type": "sub", "text": "Menyangkal dan bertanya" },
+    { "type": "tabel", "head": ["Bentuk", "Contoh", "Arti"], "rows": [
+     ["positif", "Kafea edaten dut.", "Saya minum kopi."],
+     ["negatif", "**Ez dut** kaferik edaten.", "Saya tidak minum kopi."],
+     ["tanya", "Kafea edaten **duzu**?", "Kamu minum kopi?"],
+     ["tanya sopan", "Kafea edaten **al duzu**?", "Apakah kamu minum kopi?"],
+     ["penegasan", "**Badut** kafea.", "Saya memang punya kopi."]
+    ]},
+    { "type": "kotak", "title": "Kenapa kata kerjanya pindah waktu menyangkal", "items": [
+     "Kalimat positif: `benda + kata kerja + bantu` — *kafea edaten dut*.",
+     "Kalimat negatif: `ez + bantu + benda + kata kerja` — *ez dut kaferik edaten*.",
+     "Bantu selalu menempel pada *ez*, dan karena bantu itu tadinya di ujung, seluruh susunan kalimat ikut berputar. Ini terasa aneh dua minggu pertama, lalu menjadi otomatis.",
+     "Jalan pintas untuk pemula: hafalkan *ez dut*, *ez duzu*, *ez du* sebagai satu kesatuan bunyi, lalu tempelkan sisanya di belakang."
+    ]}
+   ]
+  },
+  {
+   "title": "Bentuk -t(z)en: kebiasaan sehari-hari",
+   "blocks": [
+    { "type": "p", "text": "Untuk mengatakan hal yang biasa kamu lakukan, kata kerjanya dipakai dalam bentuk *-t(z)en*, dan bantunya menyusul. Bentuk *-t(z)en* dibuat dari bentuk kamus dengan tiga pola." },
+    { "type": "tabel", "head": ["Akhiran kamus", "Aturan", "Contoh", "Arti"], "rows": [
+     ["-tu / -du", "→ **-tzen**", "hartu → har**tzen**", "mengambil, minum"],
+     ["", "", "ordaindu → ordain**tzen**", "membayar"],
+     ["-i", "→ **-tzen / -ten**", "ikusi → ikus**ten**", "melihat"],
+     ["", "", "irakurri → irakur**tzen**", "membaca"],
+     ["-n", "→ **-ten**", "jan → ja**ten**", "makan"],
+     ["", "", "edan → eda**ten**", "minum"],
+     ["tak berakhiran", "→ **-tzen**", "ikasi → ikas**ten**", "belajar"]
+    ]},
+    { "type": "p", "text": "Pilihan antara *-tzen* dan *-ten* mengikuti bunyi, bukan aturan yang rapi — hafalkan per kata, seperti kata kerja tak beraturan bahasa Inggris. Untunglah kata kerja yang benar-benar sering dipakai jumlahnya tak sampai empat puluh, dan semuanya ada di daftar di akhir modul." },
+    { "type": "tabel", "head": ["Euskara", "Harfiah", "Bahasa Indonesia"], "rows": [
+     ["Egunero euskara ikasten dut.", "tiap-hari Basque belajar-nya saya-punya-nya", "Saya belajar euskara setiap hari."],
+     ["Unaik egunkaria irakurtzen du.", "Unai-pelaku koran-itu membaca-nya dia-punya-nya", "Unai membaca koran."],
+     ["Guk pintxoak jaten ditugu.", "kami-pelaku pintxo-jamak makan-nya kami-punya-mereka", "Kami makan pintxo."],
+     ["Zuk zer edaten duzu?", "kamu-pelaku apa minum-nya kamu-punya-nya", "Kamu minum apa?"],
+     ["Ez dut telebistarik ikusten.", "tidak saya-punya-nya televisi-sejumlah melihat-nya", "Saya tidak menonton televisi."]
+    ]},
+    { "type": "kotak", "title": "Kata keterangan waktu yang menemani kebiasaan", "items": [
+     "*beti* (selalu), *normalean* (biasanya), *askotan* (sering), *batzuetan* (kadang-kadang), *gutxitan* (jarang), *inoiz ez* (tidak pernah).",
+     "*egunero* (setiap hari), *astero* (setiap minggu), *hilero* (setiap bulan), *urtero* (setiap tahun) — semuanya dibuat dengan akhiran *-ero*.",
+     "Tempatnya bebas, tapi paling sering di awal kalimat: *Normalean kafea hartzen dut.*"
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "eu": "ukan / eduki", "baca": "u-KAN / e-DU-ki", "id": "punya" },
+  { "eu": "egin", "baca": "e-GIN", "id": "melakukan, membuat" },
+  { "eu": "jan", "baca": "KHAN", "id": "makan" },
+  { "eu": "edan", "baca": "e-DAN", "id": "minum" },
+  { "eu": "hartu", "baca": "AR-tu", "id": "mengambil, memesan" },
+  { "eu": "irakurri", "baca": "i-ra-KU-rri", "id": "membaca" },
+  { "eu": "idatzi", "baca": "i-DA-tsi", "id": "menulis" },
+  { "eu": "ikasi", "baca": "i-KA-si", "id": "belajar" },
+  { "eu": "ikusi", "baca": "i-KU-si", "id": "melihat, menonton" },
+  { "eu": "entzun", "baca": "en-TSUN", "id": "mendengar" },
+  { "eu": "erosi", "baca": "e-RO-si", "id": "membeli" },
+  { "eu": "nahi izan", "baca": "NA-i", "id": "ingin" },
+  { "eu": "nahiago izan", "baca": "na-i-A-go", "id": "lebih suka" },
+  { "eu": "jakin", "baca": "KHA-kin", "id": "tahu" },
+  { "eu": "gosari", "baca": "go-SA-ri", "id": "sarapan" },
+  { "eu": "bazkari", "baca": "bas-KA-ri", "id": "makan siang" },
+  { "eu": "afari", "baca": "a-FA-ri", "id": "makan malam" },
+  { "eu": "kafe", "baca": "KA-fe", "id": "kopi" },
+  { "eu": "te", "baca": "TE", "id": "teh" },
+  { "eu": "esne", "baca": "ES-ne", "id": "susu" },
+  { "eu": "ogi", "baca": "O-gi", "id": "roti" },
+  { "eu": "egunkari", "baca": "e-gun-KA-ri", "id": "koran" },
+  { "eu": "goizean", "baca": "GO-i-se-an", "id": "di pagi hari" },
+  { "eu": "egunero", "baca": "e-gu-NE-ro", "id": "setiap hari" },
+  { "eu": "beti", "baca": "BE-ti", "id": "selalu" },
+  { "eu": "normalean", "baca": "nor-ma-LE-an", "id": "biasanya" },
+  { "eu": "batzuetan", "baca": "ba-TSU-e-tan", "id": "kadang-kadang" },
+  { "eu": "poliki", "baca": "po-LI-ki", "id": "pelan-pelan" },
+  { "eu": "prest", "baca": "PREST", "id": "siap" },
+  { "eu": "gose", "baca": "GO-se", "id": "lapar" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pasang topi pelaku kalau memang perlu. Kalau tidak perlu, tulis ulang kata itu apa adanya.",
+   "items": [
+    "____ Bilbon bizi naiz. (ni)",
+    "____ euskara ikasten dut. (ni)",
+    "____ kafea edaten du. (Jon)",
+    "____ etorri da. (Jon)",
+    "____ liburuak irakurtzen dituzte. (haiek)",
+    "____ nekatuta daude. (ikasleak)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bantu yang tepat (dut, duzu, du, dugu, duzue, dute, ditut, ditu).",
+   "items": [
+    "Nik kafea edaten ____.",
+    "Zuk euskara ikasten ____?",
+    "Unaik egunkaria irakurtzen ____.",
+    "Guk pintxoak jaten ____.",
+    "Haiek tea hartzen ____.",
+    "Nik hiru liburu ____."
+   ]
+  },
+  {
+   "prompt": "Ubah jadi kalimat menyangkal.",
+   "items": [
+    "Kafea edaten dut.",
+    "Egunkaria irakurtzen du.",
+    "Euskara ikasten dugu.",
+    "Telebista ikusten dute.",
+    "Ogia jaten duzu.",
+    "Liburu bat dut."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "dut / euskara / nik / ikasten",
+    "du / kafea / Unaik / edaten",
+    "duzu / zer / goizean / egiten / ?",
+    "ditugu / pintxoak / guk / jaten",
+    "dut / ez / irakurtzen / egunkaririk",
+    "dute / beti / euskaldunek / edaten / kafea"
+   ]
+  }
+ ],
+ "answers": [
+  "Ni — Nik — Jonek — Jon — Haiek — Ikasleak",
+  "dut — duzu — du — ditugu — dute — ditut",
+  "Ez dut kaferik edaten. — Ez du egunkaririk irakurtzen. — Ez dugu euskararik ikasten. — Ez dute telebistarik ikusten. — Ez duzu ogirik jaten. — Ez dut libururik.",
+  "Nik euskara ikasten dut. — Unaik kafea edaten du. — Zer egiten duzu goizean? — Guk pintxoak jaten ditugu. — Ez dut egunkaririk irakurtzen. — Euskaldunek beti kafea edaten dute."
+ ]
+}

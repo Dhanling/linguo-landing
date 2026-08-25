@@ -1,0 +1,218 @@
+{
+ "title": "Jam berapa sekarang?",
+ "title_target": "Zer ordu da?",
+ "goal": "Menyebut jam, hari, bulan, dan tanggal, serta menanyakan kapan sesuatu dimulai dan berakhir.",
+ "bekal": [
+  "menjawab *zer ordu da?* dengan benar, termasuk setengah dan seperempat",
+  "menyebut tujuh hari, dua belas bulan, dan empat musim",
+  "memakai *-etan* (\"pada jam …\") dan *-tik … arte* (\"dari … sampai …\")"
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Klaseko ordutegia",
+   "intro": "Di depan pintu euskaltegi, Budi kelabakan mengira dirinya terlambat.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Barkatu, Ainhoa, zer ordu da?", "id": "Maaf, Ainhoa, jam berapa sekarang?", "literal": "maaf, Ainhoa, apa jam adalah?" },
+    { "speaker": "Ainhoa:", "text": "Bederatziak eta laurden dira.", "id": "Jam sembilan lewat seperempat.", "literal": "sembilan-jamak dan seperempat adalah-mereka." },
+    { "speaker": "Budi:", "text": "Jo! Klasea bederatzietan hasten da!", "id": "Aduh! Kelasnya mulai jam sembilan!", "literal": "aduh! kelas-itu sembilan-jamak-di mulai-nya adalah." },
+    { "speaker": "Ainhoa:", "text": "Lasai, gaur hamarretan hasten gara.", "id": "Tenang, hari ini kita mulai jam sepuluh.", "literal": "tenang, hari-ini sepuluh-jamak-di mulai-nya adalah-kami." },
+    { "speaker": "Budi:", "text": "A, ondo. Eta noiz amaitzen da?", "id": "Oh, syukurlah. Dan selesainya kapan?", "literal": "ah, baik. dan kapan selesai-nya adalah?" },
+    { "speaker": "Ainhoa:", "text": "Ordu bata eta erdietan.", "id": "Jam setengah dua.", "literal": "jam satu-itu dan setengah-jamak-di." },
+    { "speaker": "Budi:", "text": "Astelehenetan ere ordu berean?", "id": "Hari Senin juga jam yang sama?", "literal": "Senin-jamak-di juga jam sama-di?" },
+    { "speaker": "Ainhoa:", "text": "Ez, astelehenetan arratsaldez izaten dugu, lauretatik seiak arte.", "id": "Tidak, hari Senin kelasnya sore, dari jam empat sampai jam enam.", "literal": "tidak, Senin-jamak-di sore-dengan biasa-punya kami-punya-nya, empat-jamak-dari enam-jamak sampai." },
+    { "speaker": "Budi:", "text": "Eta ostiraletan?", "id": "Dan hari Jumat?", "literal": "dan Jumat-jamak-di?" },
+    { "speaker": "Ainhoa:", "text": "Ostiraletan ez dago klaserik. Asteburua libre!", "id": "Jumat tidak ada kelas. Akhir pekan bebas!", "literal": "Jumat-jamak-di tidak berada kelas-sejumlah. akhir-pekan-itu bebas!" },
+    { "speaker": "Budi:", "text": "Bikain. Larunbatean zer egiten duzu?", "id": "Hebat. Hari Sabtu kamu biasanya ngapain?", "literal": "hebat. Sabtu-di apa melakukan-nya punya-kamu-nya?" },
+    { "speaker": "Ainhoa:", "text": "Normalean mendira joaten naiz. Etorri nahi duzu?", "id": "Biasanya saya naik gunung. Mau ikut?", "literal": "biasanya gunung-ke pergi-nya adalah-saya. datang ingin punya-kamu-nya?" }
+   ],
+   "notes": [
+    "**Jam disebut jamak, kecuali jam satu.** *Bederatziak dira* (jam sembilan — harfiahnya \"sembilan-sembilan itu adalah\"), *hirurak dira*, *hamarrak dira*. Hanya jam satu yang tunggal: *ordu bata da*. Alasannya sederhana: bahasa Basque menghitung \"pukul-pukul\" yang sudah lewat, dan satu tidak bisa jamak.",
+    "**Pada jam berapa: akhiran -etan.** *Bederatzi**etan*** (pada jam sembilan), *hamar**retan*** (pada jam sepuluh), *ordu bat**ean*** (pada jam satu). Ini akhiran tempat *-etan* yang kamu kenal dari Unit 3, dipinjam untuk waktu — sama seperti bahasa Indonesia memakai \"di\" untuk keduanya: \"di rumah\", \"di jam sembilan\".",
+    "**Astelehenetan = tiap hari Senin.** Nama hari yang dijamakkan dengan *-etan* berarti kebiasaan berulang: *astelehenetan* (tiap Senin), *larunbatetan* (tiap Sabtu). Kalau maksudnya satu hari Senin tertentu, dipakai bentuk tunggal: *astelehenean* (pada hari Senin itu).",
+    "**Hasi dan amaitu memakai bantu tanpa topi.** *Klasea hasten **da*** (kelasnya mulai), bukan *du* — karena tidak ada yang \"memulai\" apa pun di sini; kelasnya sendiri yang mulai. Bandingkan: *Nik klasea hasten **dut*** berarti \"saya yang memulai kelas itu\"."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyebut jam",
+   "blocks": [
+    { "type": "tabel", "head": ["Jam", "Euskara", "Cara baca", "Harfiah"], "rows": [
+     ["01.00", "Ordu bata da.", "OR-du BA-ta da", "jam satu-itu adalah"],
+     ["02.00", "Ordu biak dira.", "OR-du BI-ak", "jam dua-jamak adalah"],
+     ["03.00", "Hirurak dira.", "i-RU-rak", "tiga-jamak adalah"],
+     ["04.15", "Laurak eta laurden.", "LA-u-rak eta la-UR-den", "empat-jamak dan seperempat"],
+     ["05.30", "Bostak eta erdiak.", "BOS-tak eta er-DI-ak", "lima-jamak dan setengah"],
+     ["06.45", "Zazpiak laurden gutxi.", "SAS-pi-ak la-UR-den GU-chi", "tujuh-jamak seperempat kurang"],
+     ["07.20", "Zazpiak eta hogei.", "SAS-pi-ak eta o-GE-i", "tujuh-jamak dan dua puluh"],
+     ["08.50", "Bederatziak hamar gutxi.", "be-de-RA-tsi-ak a-MAR GU-chi", "sembilan-jamak sepuluh kurang"],
+     ["12.00", "Hamabiak dira.", "a-ma-BI-ak", "dua belas-jamak adalah"],
+     ["12.00 siang", "Eguerdia da.", "e-gu-ER-di-a", "tengah hari-itu adalah"],
+     ["24.00", "Gauerdia da.", "ga-u-ER-di-a", "tengah malam-itu adalah"]
+    ]},
+    { "type": "p", "text": "Untuk menyebut jam lewat, dipakai *eta* (\"dan\"); untuk jam kurang, dipakai *gutxi* (\"kurang\") **di belakang** angka menitnya. Perhatikan bahwa jam kurang selalu menyebut jam **berikutnya**: 06.45 adalah \"tujuh kurang seperempat\", bukan \"enam lewat empat puluh lima\"." },
+    { "type": "sub", "text": "Pagi, siang, malam" },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia", "Contoh"], "rows": [
+     ["goizeko", "pagi (jam …)", "goizeko zortziak (jam 8 pagi)"],
+     ["arratsaldeko", "sore (jam …)", "arratsaldeko laurak (jam 4 sore)"],
+     ["gaueko", "malam (jam …)", "gaueko hamarrak (jam 10 malam)"],
+     ["goizean", "di pagi hari", "goizean lan egiten dut"],
+     ["arratsaldean", "di sore hari", "arratsaldean ikasten dut"],
+     ["gauean", "di malam hari", "gauean telebista ikusten dut"]
+    ]},
+    { "type": "kotak", "title": "Kalimat siap pakai", "items": [
+     "*Zer ordu da?* — Jam berapa sekarang?",
+     "*Zer ordutan hasten da?* — Mulai jam berapa?",
+     "*Berandu da / Goiz da.* — Sudah telat / masih pagi.",
+     "*Ordu erdi barru.* — Setengah jam lagi.",
+     "*Ordu laurden bat.* — Seperempat jam.",
+     "*Beti berandu iristen naiz!* — Saya selalu datang telat!"
+    ]}
+   ]
+  },
+  {
+   "title": "Hari, bulan, musim",
+   "blocks": [
+    { "type": "sub", "text": "Asteko egunak — hari dalam seminggu" },
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia", "Harfiahnya"], "rows": [
+     ["astelehena", "as-te-LE-e-na", "Senin", "awal minggu"],
+     ["asteartea", "as-te-AR-te-a", "Selasa", "antara minggu"],
+     ["asteazkena", "as-te-AS-ke-na", "Rabu", "akhir minggu (kuno)"],
+     ["osteguna", "os-te-GU-na", "Kamis", "hari Ost (dewa guruh)"],
+     ["ostirala", "os-ti-RA-la", "Jumat", "—"],
+     ["larunbata", "la-run-BA-ta", "Sabtu", "hari keempat"],
+     ["igandea", "i-gan-DE-a", "Minggu", "hari naik"]
+    ]},
+    { "type": "sub", "text": "Hilabeteak — bulan" },
+    { "type": "tabel", "head": ["", "Euskara", "", "Euskara"], "rows": [
+     ["Januari", "urtarrila", "Juli", "uztaila"],
+     ["Februari", "otsaila", "Agustus", "abuztua"],
+     ["Maret", "martxoa", "September", "iraila"],
+     ["April", "apirila", "Oktober", "urria"],
+     ["Mei", "maiatza", "November", "azaroa"],
+     ["Juni", "ekaina", "Desember", "abendua"]
+    ]},
+    { "type": "p", "text": "Nama bulan bahasa Basque tidak meniru bahasa Latin; hampir semuanya nama kegiatan pertanian atau cuaca. *Uztaila* berasal dari *uzta* (panen), *urria* dari *urri* (langka, karena persediaan menipis), *otsaila* dari *otso* (serigala, bulan ketika serigala turun ke desa)." },
+    { "type": "sub", "text": "Urtaroak — musim" },
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia"], "rows": [
+     ["udaberria", "u-da-BE-rri-a", "musim semi (harfiah: musim panas baru)"],
+     ["uda", "U-da", "musim panas"],
+     ["udazkena", "u-das-KE-na", "musim gugur (harfiah: akhir musim panas)"],
+     ["negua", "ne-GU-a", "musim dingin"]
+    ]}
+   ]
+  },
+  {
+   "title": "Kapan? — menyusun jadwal",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Harfiah", "Bahasa Indonesia"], "rows": [
+     ["Klasea zortzi**etan** hasten da.", "kelas delapan-jamak-di mulai", "Kelas mulai jam delapan."],
+     ["Lauretatik seiak arte.", "empat-jamak-dari enam-jamak sampai", "Dari jam empat sampai enam."],
+     ["Astelehen**etan** ikasten dut.", "Senin-jamak-di belajar saya", "Saya belajar tiap hari Senin."],
+     ["Astelehen**ean** azterketa dut.", "Senin-di ujian punya-saya", "Hari Senin (itu) saya ada ujian."],
+     ["Maiatz**ean** Bilbora noa.", "Mei-di Bilbo-ke pergi-saya", "Bulan Mei saya ke Bilbo."],
+     ["Uda**n** ez dago klaserik.", "musim-panas-di tidak ada kelas", "Musim panas tidak ada kelas."]
+    ]},
+    { "type": "sub", "text": "Kata waktu yang paling sering" },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia", "Euskara", "Bahasa Indonesia"], "rows": [
+     ["gaur", "hari ini", "orain", "sekarang"],
+     ["bihar", "besok", "gero", "nanti"],
+     ["atzo", "kemarin", "lehen", "dulu"],
+     ["etzi", "lusa", "berandu", "telat"],
+     ["herenegun", "kemarin lusa", "goiz", "pagi, awal"],
+     ["gaur goizean", "tadi pagi", "asteburua", "akhir pekan"],
+     ["aste honetan", "minggu ini", "hurrengo astean", "minggu depan"]
+    ]},
+    { "type": "kotak", "title": "Tanggal", "items": [
+     "Susunannya: tanggal, bulan, tahun — sama seperti bahasa Indonesia. *Maiatzaren hamabia* = 12 Mei (harfiahnya \"kedua belasnya bulan Mei\").",
+     "Menanyakan tanggal: *Zer egun da gaur?* atau *Zenbat gara gaur?*",
+     "Tahun dibaca utuh: *bi mila eta hogeita seian* = pada tahun 2026."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "eu": "ordu", "baca": "OR-du", "id": "jam, waktu" },
+  { "eu": "ordutegi", "baca": "or-du-TE-gi", "id": "jadwal" },
+  { "eu": "minutu", "baca": "mi-NU-tu", "id": "menit" },
+  { "eu": "laurden", "baca": "la-UR-den", "id": "seperempat" },
+  { "eu": "goiz", "baca": "GO-is", "id": "pagi; awal" },
+  { "eu": "arratsalde", "baca": "a-rrats-AL-de", "id": "sore" },
+  { "eu": "gau", "baca": "GA-u", "id": "malam" },
+  { "eu": "eguerdi", "baca": "e-gu-ER-di", "id": "tengah hari" },
+  { "eu": "egun", "baca": "e-GUN", "id": "hari" },
+  { "eu": "aste", "baca": "AS-te", "id": "minggu" },
+  { "eu": "asteburu", "baca": "as-te-BU-ru", "id": "akhir pekan" },
+  { "eu": "hilabete", "baca": "i-la-BE-te", "id": "bulan" },
+  { "eu": "urte", "baca": "UR-te", "id": "tahun" },
+  { "eu": "astelehen", "baca": "as-te-LE-en", "id": "Senin" },
+  { "eu": "asteazken", "baca": "as-te-AS-ken", "id": "Rabu" },
+  { "eu": "ostiral", "baca": "os-ti-RAL", "id": "Jumat" },
+  { "eu": "larunbat", "baca": "la-run-BAT", "id": "Sabtu" },
+  { "eu": "igande", "baca": "i-GAN-de", "id": "Minggu" },
+  { "eu": "uda", "baca": "U-da", "id": "musim panas" },
+  { "eu": "negu", "baca": "NE-gu", "id": "musim dingin" },
+  { "eu": "gaur", "baca": "GA-ur", "id": "hari ini" },
+  { "eu": "bihar", "baca": "BI-ar", "id": "besok" },
+  { "eu": "atzo", "baca": "A-tso", "id": "kemarin" },
+  { "eu": "gero", "baca": "GE-ro", "id": "nanti" },
+  { "eu": "berandu", "baca": "be-RAN-du", "id": "telat" },
+  { "eu": "hasi", "baca": "A-si", "id": "mulai" },
+  { "eu": "amaitu", "baca": "a-MA-i-tu", "id": "selesai" },
+  { "eu": "libre", "baca": "LI-bre", "id": "bebas, luang" },
+  { "eu": "lasai", "baca": "la-SA-i", "id": "tenang" },
+  { "eu": "mendi", "baca": "MEN-di", "id": "gunung" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis jamnya dalam bahasa Basque.",
+   "items": [
+    "01.00",
+    "03.00",
+    "04.15",
+    "05.30",
+    "06.45",
+    "10.20"
+   ]
+  },
+  {
+   "prompt": "Isi dengan akhiran waktu yang tepat.",
+   "items": [
+    "Klasea bederatzi____ hasten da. (pada jam sembilan)",
+    "Astelehen____ euskara dut. (tiap hari Senin)",
+    "Maiatz____ Bilbora noa. (bulan Mei)",
+    "Uda____ ez dago klaserik. (di musim panas)",
+    "Lau____ seiak arte. (dari jam empat)",
+    "Larunbat____ mendira joaten naiz. (tiap hari Sabtu)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Basque.",
+   "items": [
+    "Jam berapa sekarang?",
+    "Sekarang jam setengah delapan.",
+    "Kelas mulai jam sepuluh.",
+    "Hari Jumat tidak ada kelas.",
+    "Hari ini hari Rabu.",
+    "Besok saya ada ujian."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "da / ordu / zer / ?",
+    "dira / eta / bederatziak / laurden",
+    "da / klasea / hasten / hamarretan",
+    "dago / klaserik / ez / ostiraletan",
+    "naiz / mendira / larunbatetan / joaten",
+    "da / amaitzen / noiz / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "Ordu bata da. — Hirurak dira. — Laurak eta laurden. — Bostak eta erdiak. — Zazpiak laurden gutxi. — Hamarrak eta hogei.",
+  "bederatzietan — Astelehenetan — Maiatzean — Udan — Lauretatik — Larunbatetan",
+  "Zer ordu da? — Zazpiak eta erdiak dira. — Klasea hamarretan hasten da. — Ostiraletan ez dago klaserik. — Gaur asteazkena da. — Bihar azterketa dut.",
+  "Zer ordu da? — Bederatziak eta laurden dira. — Klasea hamarretan hasten da. — Ostiraletan ez dago klaserik. — Larunbatetan mendira joaten naiz. — Noiz amaitzen da?"
+ ]
+}

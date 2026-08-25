@@ -1,0 +1,208 @@
+{
+ "title": "Cuaca dan pesta rakyat",
+ "title_target": "Eguraldia eta jaiak",
+ "goal": "Berbicara tentang cuaca, memahami kalender pesta rakyat Basque, dan mengundang atau menerima undangan.",
+ "bekal": [
+  "menyebut cuaca dengan tiga susunan yang berbeda: *egiten du*, *ari du*, *dago*",
+  "mengenali pesta besar Euskal Herria dan ucapan yang menyertainya",
+  "mengundang, menerima, dan menolak undangan dengan sopan"
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Aste Nagusia dator",
+   "intro": "Awal Agustus di Bilbo. Unai masuk apartemen sambil membawa selendang biru bertuliskan nama kelompoknya.",
+   "lines": [
+    { "speaker": "Unai:", "text": "Budi, datorren astean Aste Nagusia da!", "id": "Budi, minggu depan Aste Nagusia!", "literal": "Budi, yang-datang minggu-di Minggu Besar-itu adalah!" },
+    { "speaker": "Budi:", "text": "Zer da hori?", "id": "Apa itu?", "literal": "apa adalah itu?" },
+    { "speaker": "Unai:", "text": "Bilboko jai handiak. Bederatzi egun kalean.", "id": "Pesta besar Bilbo. Sembilan hari di jalanan.", "literal": "Bilbo-dari pesta besar-jamak. sembilan hari jalan-di." },
+    { "speaker": "Budi:", "text": "Eta zer egiten da?", "id": "Dan acaranya apa saja?", "literal": "dan apa lakukan-nya adalah?" },
+    { "speaker": "Unai:", "text": "Kontzertuak, dantzak eta su artifizialak gauero.", "id": "Konser, tarian, dan kembang api tiap malam.", "literal": "konser-jamak, tarian-jamak dan api buatan-jamak malam-tiap." },
+    { "speaker": "Budi:", "text": "Zoragarria! Eguraldi ona egingo du?", "id": "Luar biasa! Cuacanya bakal bagus?", "literal": "luar-biasa-itu! cuaca baik-itu lakukan-akan punya-nya?" },
+    { "speaker": "Unai:", "text": "Ez dakit. Abuztuan euria egiten du batzuetan.", "id": "Tidak tahu. Agustus kadang-kadang hujan.", "literal": "tidak tahu-saya-nya. Agustus-di hujan-itu lakukan-nya punya-nya kadang-kadang." },
+    { "speaker": "Budi:", "text": "Berdin dio. Etorriko naiz!", "id": "Tidak apa-apa. Saya ikut!", "literal": "sama katanya. datang-akan adalah-saya!" },
+    { "speaker": "Unai:", "text": "Primeran. Gure konpartsan egongo gara, plaza ondoan.", "id": "Mantap. Kami akan di tenda kelompok kami, dekat alun-alun.", "literal": "hebat. kami-punya kelompok-di berada-akan adalah-kami, alun-alun sebelah-di." },
+    { "speaker": "Budi:", "text": "Zer eraman behar dut?", "id": "Saya harus bawa apa?", "literal": "apa bawa butuh punya-saya-nya?" },
+    { "speaker": "Unai:", "text": "Ezer ez. Poza eta gogoa besterik ez!", "id": "Tidak usah apa-apa. Cukup semangat dan kegembiraan!", "literal": "apa-pun tidak. kegembiraan dan selera lain-sejumlah tidak!" },
+    { "speaker": "Budi:", "text": "Ados! Gora Bilbo!", "id": "Setuju! Hidup Bilbo!", "literal": "setuju! naik Bilbo!" }
+   ],
+   "notes": [
+    "**Cuaca punya tiga susunan, dan ketiganya harus dihafal apa adanya.** *Euria **egiten du*** (hujan, sebagai kebiasaan cuaca), *euria **ari du*** (sedang hujan sekarang), *eguraldi ona **dago*** (cuacanya bagus). Yang paling sering salah: memakai *da* — *euria da* bukan kalimat bahasa Basque.",
+    "**Berdin dio — tidak apa-apa.** Harfiahnya \"ia mengatakan hal yang sama\". Ungkapan sepadan: *ez dio axolarik* (tidak penting), *berdin zait* (bagi saya sama saja), *ez da ezer* (bukan apa-apa). Semuanya dipakai untuk menenangkan atau melepaskan urusan kecil.",
+    "**Konpartsa — jantung pesta Bilbo.** Selama Aste Nagusia, alun-alun dipenuhi tenda besar milik *konpartsa*, perkumpulan warga yang masing-masing punya nama, warna, dan musiknya sendiri. Siapa pun boleh masuk. Ini bukan pesta untuk ditonton, melainkan pesta untuk diikuti — dan itulah sebabnya jawaban Unai atas \"harus bawa apa\" adalah \"tidak usah\".",
+    "**Gora …! — hidup …!** Seruan yang terdengar di setiap pesta dan setiap pertandingan: *Gora Bilbo!*, *Gora euskara!*, *Gora gu!* Lawannya *behera* (\"turun\"), tapi yang ini jarang kamu perlukan."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Eguraldia — cuaca",
+   "blocks": [
+    { "type": "sub", "text": "Dengan egin: cuaca sebagai kebiasaan atau ramalan" },
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia"], "rows": [
+     ["Eguraldi ona egiten du.", "e-gu-RAL-di O-na", "Cuacanya bagus."],
+     ["Eguraldi txarra egiten du.", "CHA-rra", "Cuacanya buruk."],
+     ["Hotz egiten du.", "OTS", "Dingin."],
+     ["Bero egiten du.", "BE-ro", "Panas."],
+     ["Haize egiten du.", "A-i-se", "Berangin."],
+     ["Eguzkia egiten du.", "e-GUS-ki-a", "Cerah, matahari bersinar."]
+    ]},
+    { "type": "sub", "text": "Dengan ari: cuaca yang sedang terjadi" },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia"], "rows": [
+     ["Euria ari du.", "Sedang hujan."],
+     ["Elurra ari du.", "Sedang turun salju."],
+     ["Txingorra ari du.", "Sedang hujan es."],
+     ["Zirimiria ari du.", "Sedang gerimis."]
+    ]},
+    { "type": "sub", "text": "Dengan egon: keadaan langit" },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia"], "rows": [
+     ["Eguraldi ederra dago.", "Cuacanya indah."],
+     ["Lainotuta dago.", "Berawan."],
+     ["Hodeitsu dago.", "Mendung."],
+     ["Hezetasuna dago.", "Lembap."],
+     ["Zer eguraldi dago?", "Cuacanya bagaimana?"]
+    ]},
+    { "type": "kotak", "title": "Sirimiri — hujan khas wilayah ini", "items": [
+     "*Zirimiria* (dalam bahasa Spanyol *sirimiri*) adalah gerimis halus yang bisa turun sepanjang hari tanpa pernah benar-benar membasahi — dan tanpa pernah benar-benar berhenti. Ia adalah cuaca paling khas di sisi utara Euskal Herria.",
+     "Karena itu payung jarang dipakai; orang setempat cukup menaikkan tudung jaket dan berjalan terus.",
+     "Sisi selatan (Araba, Nafarroa) jauh lebih kering dan lebih panas di musim panas. Jadi \"cuaca Basque\" sebetulnya dua cuaca yang berbeda, dipisahkan oleh barisan gunung."
+    ]}
+   ]
+  },
+  {
+   "title": "Jaiak — pesta rakyat",
+   "blocks": [
+    { "type": "tabel", "head": ["Pesta", "Kapan", "Di mana", "Apa yang terjadi"], "rows": [
+     ["**San Fermin**", "6–14 Juli", "Iruñea", "lari bersama banteng, baju putih ikat pinggang merah"],
+     ["**Aste Nagusia**", "Agustus", "Bilbo", "sembilan hari konser, tarian, kembang api"],
+     ["**Semana Grande**", "Agustus", "Donostia", "lomba kembang api internasional"],
+     ["**Danborrada**", "20 Januari", "Donostia", "dua puluh empat jam tabuhan drum tanpa henti"],
+     ["**Santo Tomas**", "21 Desember", "Bilbo & Donostia", "pasar desa, txistorra, sagardo"],
+     ["**Olentzero**", "24 Desember", "di mana-mana", "tukang arang yang membawa hadiah Natal"],
+     ["**San Juan**", "23 Juni", "di mana-mana", "api unggun malam terpanjang, melompati api"],
+     ["**Korrika**", "tiap dua tahun", "seluruh wilayah", "lari estafet ribuan kilometer untuk euskara"]
+    ]},
+    { "type": "p", "text": "*Olentzero* patut disebut khusus: alih-alih Sinterklas, anak-anak Basque menunggu seorang tukang arang bertubuh gemuk yang turun dari gunung pada malam Natal. Ia digambarkan sedang merokok pipa, memakai baret, dan sangat suka makan. Tokoh ini jauh lebih tua daripada Natal itu sendiri." },
+    { "type": "kotak", "title": "Ucapan selamat", "items": [
+     "*Zorionak!* — Selamat! (ulang tahun, kelulusan, apa saja)",
+     "*Urte berri on!* — Selamat tahun baru!",
+     "*Eguberri on!* — Selamat Natal!",
+     "*Ondo pasa!* — Selamat bersenang-senang!",
+     "*On egin!* — Selamat makan!",
+     "*Topa!* — Bersulang!",
+     "*Zorte on!* — Semoga berhasil!"
+    ]}
+   ]
+  },
+  {
+   "title": "Mengundang dan menjawab",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia"], "rows": [
+     ["Etorri nahi duzu?", "Mau ikut?"],
+     ["Gonbidatuta zaude.", "Kamu diundang."],
+     ["Zer moduz larunbatean?", "Bagaimana kalau Sabtu?"],
+     ["Zer ordutan geratzen gara?", "Kita janjian jam berapa?"],
+     ["Non geratzen gara?", "Janjian di mana?"],
+     ["Plazan, zortzietan.", "Di alun-alun, jam delapan."]
+    ]},
+    { "type": "sub", "text": "Menerima dan menolak" },
+    { "type": "tabel", "head": ["Menerima", "Menolak"], "rows": [
+     ["Bai, noski!", "Ezin dut, sentitzen dut."],
+     ["Primeran!", "Beste egun batean, mesedez."],
+     ["Gogoz!", "Lanpetuta nago."],
+     ["Han izango naiz.", "Beharbada hurrengoan."],
+     ["Zer eraman behar dut?", "Eskerrik asko gonbidapenagatik."]
+    ]},
+    { "type": "p", "text": "*Sentitzen dut* harfiahnya \"saya merasakannya\" dan dipakai persis seperti \"maaf ya\" dalam bahasa Indonesia — untuk penolakan halus maupun untuk turut berduka. Jangan dicampur dengan *barkatu*, yang dipakai untuk meminta maaf atas kesalahan atau menarik perhatian orang." },
+    { "type": "kotak", "title": "Adat pesta yang perlu kamu tahu", "items": [
+     "Di pesta rakyat, semua orang berdiri dan berpindah-pindah; duduk semalaman di satu meja bukan kebiasaan setempat.",
+     "Minuman dibayar bergiliran, bukan patungan: satu orang membayar seluruh ronde, lalu berikutnya bergantian. Menawar untuk membayar sendiri-sendiri dianggap agak kaku — tapi tak seorang pun akan tersinggung kalau kamu jelaskan bahwa kamu belum tahu adatnya.",
+     "*Kuadrilla* — rombongan teman tetap seumur hidup — adalah satuan sosial paling penting di sini. Kalau kamu diajak masuk ke satu kuadrilla, itu tanda penerimaan yang jauh lebih besar daripada sekadar undangan."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "eu": "eguraldi", "baca": "e-gu-RAL-di", "id": "cuaca" },
+  { "eu": "euri", "baca": "E-u-ri", "id": "hujan" },
+  { "eu": "elur", "baca": "e-LUR", "id": "salju" },
+  { "eu": "haize", "baca": "A-i-se", "id": "angin" },
+  { "eu": "hodei", "baca": "o-DE-i", "id": "awan" },
+  { "eu": "eguzki", "baca": "e-GUS-ki", "id": "matahari" },
+  { "eu": "hotz", "baca": "OTS", "id": "dingin" },
+  { "eu": "bero", "baca": "BE-ro", "id": "panas" },
+  { "eu": "zirimiri", "baca": "si-ri-MI-ri", "id": "gerimis halus" },
+  { "eu": "lainotuta", "baca": "la-i-no-TU-ta", "id": "berawan" },
+  { "eu": "jai", "baca": "KHA-i", "id": "pesta, hari raya" },
+  { "eu": "jaialdi", "baca": "kha-i-AL-di", "id": "festival" },
+  { "eu": "kontzertu", "baca": "kon-TSER-tu", "id": "konser" },
+  { "eu": "dantza", "baca": "DAN-tsa", "id": "tarian" },
+  { "eu": "su artifizial", "baca": "SU ar-ti-fi-si-AL", "id": "kembang api" },
+  { "eu": "konpartsa", "baca": "kon-PAR-tsa", "id": "kelompok pesta" },
+  { "eu": "kuadrilla", "baca": "ku-a-DRI-lya", "id": "rombongan teman" },
+  { "eu": "gonbidatu", "baca": "gon-bi-DA-tu", "id": "mengundang" },
+  { "eu": "gonbidapen", "baca": "gon-bi-DA-pen", "id": "undangan" },
+  { "eu": "geratu", "baca": "ge-RA-tu", "id": "janjian, bertemu" },
+  { "eu": "poz", "baca": "POS", "id": "kegembiraan" },
+  { "eu": "zorionak", "baca": "so-ri-O-nak", "id": "selamat!" },
+  { "eu": "zorte on", "baca": "SOR-te ON", "id": "semoga berhasil" },
+  { "eu": "urte berri on", "baca": "UR-te BE-rri ON", "id": "selamat tahun baru" },
+  { "eu": "sentitzen dut", "baca": "sen-TI-tsen", "id": "maaf ya" },
+  { "eu": "berdin dio", "baca": "ber-DIN DI-o", "id": "tidak apa-apa" },
+  { "eu": "gora", "baca": "GO-ra", "id": "hidup …! (seruan)" },
+  { "eu": "gauero", "baca": "ga-u-E-ro", "id": "tiap malam" },
+  { "eu": "besterik ez", "baca": "BES-te-rik ES", "id": "hanya itu saja" },
+  { "eu": "eraman", "baca": "e-RA-man", "id": "membawa" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan *egiten du*, *ari du*, atau *dago*.",
+   "items": [
+    "Hotz ____ neguan.",
+    "Euria ____ orain.",
+    "Eguraldi ederra ____ gaur.",
+    "Bero ____ udan.",
+    "Elurra ____ mendian orain.",
+    "Lainotuta ____ gaur goizean."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Basque.",
+   "items": [
+    "Cuacanya bagaimana hari ini?",
+    "Sedang hujan.",
+    "Di musim dingin dingin sekali.",
+    "Selamat! (ulang tahun)",
+    "Selamat bersenang-senang!",
+    "Maaf, saya tidak bisa."
+   ]
+  },
+  {
+   "prompt": "Pesta yang mana? Jawab dengan namanya.",
+   "items": [
+    "Lari bersama banteng di Iruñea, bulan Juli → ____",
+    "Sembilan hari pesta jalanan di Bilbo, bulan Agustus → ____",
+    "Tukang arang pembawa hadiah Natal → ____",
+    "Tabuhan drum dua puluh empat jam di Donostia → ____",
+    "Api unggun malam terpanjang, 23 Juni → ____",
+    "Lari estafet untuk bahasa Basque → ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "du / euria / ari",
+    "du / hotz / neguan / egiten",
+    "dago / gaur / eguraldi / ederra",
+    "duzu / etorri / nahi / ?",
+    "gara / non / geratzen / ?",
+    "dut / ezin / sentitzen / dut"
+   ]
+  }
+ ],
+ "answers": [
+  "egiten du — ari du — dago — egiten du — ari du — dago",
+  "Zer eguraldi dago gaur? — Euria ari du. — Neguan hotz egiten du. — Zorionak! — Ondo pasa! — Sentitzen dut, ezin dut.",
+  "San Fermin — Aste Nagusia — Olentzero — Danborrada — San Juan — Korrika",
+  "Euria ari du. — Neguan hotz egiten du. — Gaur eguraldi ederra dago. — Etorri nahi duzu? — Non geratzen gara? — Ezin dut, sentitzen dut."
+ ]
+}

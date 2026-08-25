@@ -1,0 +1,635 @@
+{
+ "title": "Kamu tinggal di mana?",
+ "title_target": "Non bizi zara?",
+ "goal": "Menyebut asal dan tempat tinggal, memakai akhiran tempat -n, menyebut umur dan pekerjaan, dan menghitung sampai seratus.",
+ "bekal": [
+  "menjawab *nongoa zara?* dan *non bizi zara?* dengan lengkap",
+  "menempelkan akhiran tempat *-n/-an* pada nama kota dan kata benda biasa",
+  "menghitung sampai seratus dengan cara Basque yang berdasar dua puluh"
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Euskaltegiko lehen klasea",
+   "intro": "Kelas pertama di euskaltegi. Ainhoa berkeliling menanyai murid-murid barunya.",
+   "lines": [
+    {
+     "speaker": "Ainhoa:",
+     "text": "Egun on denoi! Nor zara zu?",
+     "id": "Selamat pagi semuanya! Kamu siapa?",
+     "literal": "hari baik semua-kepada! siapa adalah-kamu kamu?"
+    },
+    {
+     "speaker": "Marie:",
+     "text": "Marie naiz. Baionakoa naiz.",
+     "id": "Saya Marie. Saya dari Baiona.",
+     "literal": "Marie adalah-saya. Baiona-dari-yang adalah-saya."
+    },
+    {
+     "speaker": "Ainhoa:",
+     "text": "Eta non bizi zara orain?",
+     "id": "Dan sekarang kamu tinggal di mana?",
+     "literal": "dan di-mana hidup adalah-kamu sekarang?"
+    },
+    {
+     "speaker": "Marie:",
+     "text": "Orain Bilbon bizi naiz, ikasle etxe batean.",
+     "id": "Sekarang saya tinggal di Bilbo, di sebuah asrama mahasiswa.",
+     "literal": "sekarang Bilbo-di hidup adalah-saya, pelajar rumah satu-di."
+    },
+    {
+     "speaker": "Ainhoa:",
+     "text": "Eta zu, Budi? Nongoa zara?",
+     "id": "Dan kamu, Budi? Dari mana asalmu?",
+     "literal": "dan kamu, Budi? mana-dari-yang adalah-kamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Indonesiakoa naiz, Jakartakoa. Baina orain Bilbon bizi naiz.",
+     "id": "Saya dari Indonesia, dari Jakarta. Tapi sekarang saya tinggal di Bilbo.",
+     "literal": "Indonesia-dari-yang adalah-saya, Jakarta-dari-yang. tapi sekarang Bilbo-di hidup adalah-saya."
+    },
+    {
+     "speaker": "Ainhoa:",
+     "text": "Zenbat urte dituzu?",
+     "id": "Umurmu berapa?",
+     "literal": "berapa tahun punya-kamu-mereka?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hogeita bost urte ditut. Eta zu, Marie?",
+     "id": "Umur saya dua puluh lima. Dan kamu, Marie?",
+     "literal": "dua-puluh-dan lima tahun punya-saya-mereka. dan kamu, Marie?"
+    },
+    {
+     "speaker": "Marie:",
+     "text": "Hogeita hamar. Zaharra naiz!",
+     "id": "Tiga puluh. Saya sudah tua!",
+     "literal": "dua-puluh-dan sepuluh. tua-itu adalah-saya!"
+    },
+    {
+     "speaker": "Ainhoa:",
+     "text": "Ez zara zaharra! Eta zu, Iker? Non bizi zara?",
+     "id": "Kamu tidak tua! Dan kamu, Iker? Tinggal di mana?",
+     "literal": "tidak adalah-kamu tua-itu! dan kamu, Iker? di-mana hidup adalah-kamu?"
+    },
+    {
+     "speaker": "Iker:",
+     "text": "Donostian bizi naiz, baina Bilbon lan egiten dut.",
+     "id": "Saya tinggal di Donostia, tapi bekerja di Bilbo.",
+     "literal": "Donostia-di hidup adalah-saya, tapi Bilbo-di kerja melakukan-nya punya-saya."
+    },
+    {
+     "speaker": "Ainhoa:",
+     "text": "Ondo. Ongi etorri denoi, eta has gaitezen!",
+     "id": "Bagus. Selamat datang semuanya, dan mari kita mulai!",
+     "literal": "baik. baik datang semua-kepada, dan mulai mari-kita."
+    }
+   ],
+   "notes": [
+    "**Bizi naiz — dua kata, satu arti.** *Bizi izan* berarti \"tinggal, hidup\". Bagian *bizi* tidak pernah berubah; yang berubah cuma *izan* di belakangnya: *bizi naiz*, *bizi zara*, *bizi da*, *bizi gara*. Pola \"kata tetap + kata kerja bantu\" ini akan kamu temui berulang kali — *lan egin*, *hitz egin*, *lo egin*.",
+    "**Nongoa dan non menanyakan dua hal berbeda.** *Nongoa zara?* menanyakan **asal** (\"kamu orang mana?\"), *Non bizi zara?* menanyakan **tempat tinggal sekarang**. Budi menjawab keduanya dengan berbeda: asalnya Jakarta, tinggalnya Bilbo. Dalam bahasa Indonesia kita sering memakai satu pertanyaan untuk dua hal; di sini pisahkan.",
+    "**Zenbat urte dituzu? — umur itu \"dimiliki\", bukan \"ada\".** Harfiahnya \"berapa tahun kamu punya?\" — sama seperti bahasa Spanyol dan Prancis. Jawabannya *… urte ditut*. Bentuk *ditut/dituzu* adalah kata kerja bantu untuk benda **jamak**; ia dibongkar lengkap di Unit 5. Untuk sekarang hafalkan dua kalimat itu apa adanya.",
+    "**Baina, eta, edo — tiga penyambung yang paling sering.** *Eta* (dan), *baina* (tapi), *edo* (atau). Ketiganya berdiri di antara dua bagian kalimat, persis seperti bahasa Indonesia. Ini termasuk bagian bahasa Basque yang tidak menyimpan kejutan apa pun."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di mana? — akhiran -n",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Basque tidak punya kata \"di\". Ia menempelkan *-n* ke ekor kata tempatnya. Bentuk persisnya bergantung pada huruf terakhir kata itu."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Jenis kata",
+      "Aturan",
+      "Contoh",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "nama kota berakhir vokal",
+       "+ **n**",
+       "Bilbo → **Bilbon**",
+       "di Bilbo"
+      ],
+      [
+       "",
+       "",
+       "Donostia → **Donostian**",
+       "di Donostia"
+      ],
+      [
+       "",
+       "",
+       "Jakarta → **Jakartan**",
+       "di Jakarta"
+      ],
+      [
+       "nama kota berakhir konsonan",
+       "+ **en**",
+       "Paris → **Parisen**",
+       "di Paris"
+      ],
+      [
+       "",
+       "",
+       "Madril → **Madrilen**",
+       "di Madrid"
+      ],
+      [
+       "kata benda biasa",
+       "+ **an**",
+       "etxe → **etxean**",
+       "di rumah"
+      ],
+      [
+       "",
+       "",
+       "gela → **gelan**",
+       "di kamar"
+      ],
+      [
+       "",
+       "",
+       "taberna → **tabernan**",
+       "di bar"
+      ],
+      [
+       "kata benda jamak",
+       "+ **etan**",
+       "etxe → **etxeetan**",
+       "di rumah-rumah"
+      ],
+      [
+       "tak tentu (satu)",
+       "+ **batean**",
+       "etxe **batean**",
+       "di sebuah rumah"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa kata benda biasa memakai *-an*, yang sebetulnya adalah kata sandang *-a* ditambah *-n*: *etxe + a + n* → *etxean*, \"rumah-itu-di\". Kata yang sudah berakhir *-a* tinggal menambah *-n* saja: *gela* → *gelan*."
+    },
+    {
+     "type": "sub",
+     "text": "Menyebut asal: -ko dan -tar"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Euskara",
+      "Harfiah",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Jakarta**koa** naiz.",
+       "Jakarta-dari-yang adalah-saya",
+       "Saya orang Jakarta."
+      ],
+      [
+       "Bilbo**koa** da.",
+       "Bilbo-dari-yang adalah-dia",
+       "Dia orang Bilbo."
+      ],
+      [
+       "Indonesia**koa** naiz.",
+       "Indonesia-dari-yang adalah-saya",
+       "Saya dari Indonesia."
+      ],
+      [
+       "indonesiar**ra** naiz.",
+       "Indonesia-orang-itu adalah-saya",
+       "Saya orang Indonesia."
+      ],
+      [
+       "euskal**duna** da.",
+       "euskara-punya-itu adalah-dia",
+       "Dia orang Basque."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Nama kota Basque punya dua wajah",
+     "items": [
+      "Banyak kota punya nama Basque dan nama Spanyol yang berbeda jauh: **Bilbo** = Bilbao, **Donostia** = San Sebastián, **Gasteiz** = Vitoria, **Iruñea** = Pamplona, **Baiona** = Bayonne.",
+      "Di dalam kalimat berbahasa Basque, pakailah nama Basque-nya. Memakai \"San Sebastián\" di tengah kalimat euskara terdengar seperti mencampur \"Jakarta\" dengan \"Batavia\" dalam satu napas.",
+      "*Euskal Herria* adalah nama seluruh wilayahnya — harfiahnya \"negeri euskara\". Bukan nama negara, melainkan nama daerah budaya yang meliputi tujuh provinsi di dua negara."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Angka dua puluh sampai seratus",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Di sinilah bahasa Basque memperlihatkan kebiasaan menghitungnya yang khas: satuan dasarnya bukan sepuluh, melainkan **dua puluh**. Empat puluh adalah \"dua kali dua puluh\", enam puluh \"tiga kali dua puluh\", delapan puluh \"empat kali dua puluh\"."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Angka",
+      "Euskara",
+      "Harfiah",
+      "Cara baca"
+     ],
+     "rows": [
+      [
+       "20",
+       "hogei",
+       "dua puluh",
+       "o-GE-i"
+      ],
+      [
+       "21",
+       "hogeita bat",
+       "dua puluh dan satu",
+       "o-ge-i-ta BAT"
+      ],
+      [
+       "25",
+       "hogeita bost",
+       "dua puluh dan lima",
+       "o-ge-i-ta BOST"
+      ],
+      [
+       "30",
+       "hogeita hamar",
+       "dua puluh dan sepuluh",
+       "o-ge-i-ta a-MAR"
+      ],
+      [
+       "35",
+       "hogeita hamabost",
+       "dua puluh dan lima belas",
+       "o-ge-i-ta a-ma-BOST"
+      ],
+      [
+       "40",
+       "berrogei",
+       "dua-kali dua puluh",
+       "be-rro-GE-i"
+      ],
+      [
+       "50",
+       "berrogeita hamar",
+       "dua-kali dua puluh dan sepuluh",
+       "be-rro-ge-i-ta a-MAR"
+      ],
+      [
+       "60",
+       "hirurogei",
+       "tiga-kali dua puluh",
+       "i-ru-ro-GE-i"
+      ],
+      [
+       "70",
+       "hirurogeita hamar",
+       "tiga-kali dua puluh dan sepuluh",
+       "i-ru-ro-ge-i-ta a-MAR"
+      ],
+      [
+       "80",
+       "laurogei",
+       "empat-kali dua puluh",
+       "la-u-ro-GE-i"
+      ],
+      [
+       "90",
+       "laurogeita hamar",
+       "empat-kali dua puluh dan sepuluh",
+       "la-u-ro-ge-i-ta a-MAR"
+      ],
+      [
+       "100",
+       "ehun",
+       "seratus",
+       "E-un"
+      ],
+      [
+       "1000",
+       "mila",
+       "seribu",
+       "MI-la"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Polanya sebetulnya cuma satu: ambil kelipatan dua puluh terdekat di bawahnya, tambahkan *-ta*, lalu sisanya. *Berrogeita hamazazpi* = 40 + 17 = 57. Terdengar panjang, dan memang panjang — penutur asli pun sering memakai angka Spanyol untuk harga di toko. Tapi untuk umur, tanggal, dan jumlah kecil, bentuk Basque-nya dipakai setiap hari."
+    },
+    {
+     "type": "kotak",
+     "title": "Umur: tahun itu dimiliki",
+     "items": [
+      "*Zenbat urte dituzu?* — \"Umurmu berapa?\" (harfiah: berapa tahun kamu punya?)",
+      "*Hogeita bost urte ditut.* — \"Umur saya 25.\"",
+      "*Nire aitak berrogeita hamar urte ditu.* — \"Ayah saya berumur 50.\"",
+      "Perhatikan bahwa *urte* dibiarkan telanjang tanpa *-a*: setelah angka, kata benda tidak pernah memakai kata sandang."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sepuluh kata tanya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Euskara",
+      "Cara baca",
+      "Bahasa Indonesia",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "nor",
+       "NOR",
+       "siapa",
+       "Nor zara zu?"
+      ],
+      [
+       "zer",
+       "SER",
+       "apa",
+       "Zer da hau?"
+      ],
+      [
+       "non",
+       "NON",
+       "di mana",
+       "Non bizi zara?"
+      ],
+      [
+       "nora",
+       "NO-ra",
+       "ke mana",
+       "Nora zoaz?"
+      ],
+      [
+       "nondik",
+       "non-DIK",
+       "dari mana",
+       "Nondik zatoz?"
+      ],
+      [
+       "noiz",
+       "NO-is",
+       "kapan",
+       "Noiz da klasea?"
+      ],
+      [
+       "nola",
+       "NO-la",
+       "bagaimana",
+       "Nola duzu izena?"
+      ],
+      [
+       "zenbat",
+       "sen-BAT",
+       "berapa",
+       "Zenbat urte dituzu?"
+      ],
+      [
+       "zergatik",
+       "ser-GA-tik",
+       "kenapa",
+       "Zergatik ikasten duzu euskara?"
+      ],
+      [
+       "zein",
+       "SE-in",
+       "yang mana",
+       "Zein liburu nahi duzu?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan keluarga *n*-: *nor*, *non*, *nora*, *nondik*, *noiz*, *nola*, *nongo* — semuanya bermula dengan bunyi yang sama, seperti keluarga \"apa/siapa/mana\" dalam bahasa Indonesia. Menghafalnya sebagai satu rombongan jauh lebih mudah daripada satu per satu."
+    },
+    {
+     "type": "kotak",
+     "title": "Aturan letak yang menentukan",
+     "items": [
+      "Kata tanya harus berdiri **tepat sebelum kata kerja**. *Non **bizi zara**?* benar; ***Non zara bizi?*** salah.",
+      "Aturan yang sama berlaku untuk jawaban: apa pun yang paling penting diletakkan tepat sebelum kata kerja. *Bilbon bizi naiz* menjawab \"di mana\"; *ni bizi naiz Bilbon* terdengar seperti kalimat yang urutannya tercecer.",
+      "Untuk pertanyaan ya/tidak, cukup naikkan nada di ujung — atau sisipkan *al* sebelum kata kerja: *Euskalduna **al** zara?* (\"Kamu orang Basque?\"). *Al* itu sopan dan sangat khas Basque."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "eu": "bizi izan",
+   "baca": "BI-si i-SAN",
+   "id": "tinggal, hidup"
+  },
+  {
+   "eu": "lan egin",
+   "baca": "LAN e-GIN",
+   "id": "bekerja"
+  },
+  {
+   "eu": "orain",
+   "baca": "o-RA-in",
+   "id": "sekarang"
+  },
+  {
+   "eu": "baina",
+   "baca": "BA-i-na",
+   "id": "tapi"
+  },
+  {
+   "eu": "edo",
+   "baca": "E-do",
+   "id": "atau"
+  },
+  {
+   "eu": "urte",
+   "baca": "UR-te",
+   "id": "tahun"
+  },
+  {
+   "eu": "herri",
+   "baca": "E-rri",
+   "id": "kota kecil, negeri"
+  },
+  {
+   "eu": "hiri",
+   "baca": "I-ri",
+   "id": "kota"
+  },
+  {
+   "eu": "auzo",
+   "baca": "A-u-so",
+   "id": "lingkungan, kampung"
+  },
+  {
+   "eu": "kale",
+   "baca": "KA-le",
+   "id": "jalan"
+  },
+  {
+   "eu": "plaza",
+   "baca": "PLA-sa",
+   "id": "alun-alun"
+  },
+  {
+   "eu": "euskaltegi",
+   "baca": "e-us-kal-TE-gi",
+   "id": "sekolah bahasa Basque"
+  },
+  {
+   "eu": "unibertsitate",
+   "baca": "u-ni-ber-tsi-TA-te",
+   "id": "universitas"
+  },
+  {
+   "eu": "bulego",
+   "baca": "bu-LE-go",
+   "id": "kantor"
+  },
+  {
+   "eu": "denda",
+   "baca": "DEN-da",
+   "id": "toko"
+  },
+  {
+   "eu": "taberna",
+   "baca": "ta-BER-na",
+   "id": "bar, kedai"
+  },
+  {
+   "eu": "ospitale",
+   "baca": "os-pi-TA-le",
+   "id": "rumah sakit"
+  },
+  {
+   "eu": "langile",
+   "baca": "lan-GI-le",
+   "id": "pekerja"
+  },
+  {
+   "eu": "mediku",
+   "baca": "me-DI-ku",
+   "id": "dokter"
+  },
+  {
+   "eu": "erizain",
+   "baca": "e-ri-SA-in",
+   "id": "perawat"
+  },
+  {
+   "eu": "ingeniari",
+   "baca": "in-ge-ni-A-ri",
+   "id": "insinyur"
+  },
+  {
+   "eu": "kazetari",
+   "baca": "ka-se-TA-ri",
+   "id": "wartawan"
+  },
+  {
+   "eu": "dendari",
+   "baca": "den-DA-ri",
+   "id": "penjaga toko"
+  },
+  {
+   "eu": "informatikari",
+   "baca": "in-for-ma-ti-KA-ri",
+   "id": "orang IT"
+  },
+  {
+   "eu": "Euskal Herria",
+   "baca": "e-us-KAL e-RRI-a",
+   "id": "negeri Basque"
+  },
+  {
+   "eu": "Bilbo",
+   "baca": "BIL-bo",
+   "id": "Bilbao"
+  },
+  {
+   "eu": "Donostia",
+   "baca": "do-NOS-ti-a",
+   "id": "San Sebastián"
+  },
+  {
+   "eu": "Iruñea",
+   "baca": "i-RU-nye-a",
+   "id": "Pamplona"
+  },
+  {
+   "eu": "denok",
+   "baca": "DE-nok",
+   "id": "kita semua, semuanya"
+  },
+  {
+   "eu": "zergatik",
+   "baca": "ser-GA-tik",
+   "id": "kenapa"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tambahkan akhiran tempat yang tepat.",
+   "items": [
+    "Ni Bilbo____ bizi naiz.",
+    "Marie Donostia____ bizi da.",
+    "Nire lagunak Paris____ bizi dira.",
+    "Ikasleak gela____ daude.",
+    "Iker taberna____ dago.",
+    "Etxe bat____ bizi naiz."
+   ]
+  },
+  {
+   "prompt": "Tulis angkanya dengan huruf.",
+   "items": [
+    "22",
+    "31",
+    "40",
+    "55",
+    "67",
+    "100"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata tanya yang tepat (nor, zer, non, nora, noiz, zenbat).",
+   "items": [
+    "____ zara zu? — Budi naiz.",
+    "____ bizi zara? — Bilbon.",
+    "____ urte dituzu? — Hogeita bost.",
+    "____ da hau? — Hiztegia da.",
+    "____ da klasea? — Bihar.",
+    "____ zoaz? — Etxera."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "naiz / bizi / Bilbon / ni",
+    "zara / non / bizi / ?",
+    "ditut / hogeita / urte / bost",
+    "naiz / Jakartakoa / ni",
+    "bizi / Donostian / da / Iker",
+    "zara / nongoa / zu / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "Bilbon — Donostian — Parisen — gelan — tabernan — Etxe batean",
+  "hogeita bi — hogeita hamaika — berrogei — berrogeita hamabost — hirurogeita zazpi — ehun",
+  "Nor — Non — Zenbat — Zer — Noiz — Nora",
+  "Ni Bilbon bizi naiz. — Non bizi zara? — Hogeita bost urte ditut. — Ni Jakartakoa naiz. — Iker Donostian bizi da. — Zu nongoa zara?"
+ ]
+}

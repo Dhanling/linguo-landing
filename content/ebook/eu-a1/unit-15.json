@@ -1,0 +1,214 @@
+{
+ "title": "Saya suka — dan yang tidak saya suka",
+ "title_target": "Gustatzen zait",
+ "goal": "Mengatakan suka dan tidak suka dengan susunan gustatzen zait, menyebut hobi, dan mengajak orang lain.",
+ "bekal": [
+  "memakai *zait, zaizu, zaio, zaigu, zaizue, zaie* dan bentuk jamaknya *zaizkit*",
+  "menyebut kegiatan waktu luang dan olahraga",
+  "memakai akhiran *-ekin* (\"bersama\") dan menyatakan pendapat"
+ ],
+ "dialogs": [
+  {
+   "title": "Elkarrizketa — Zer gustatzen zaizu?",
+   "intro": "Di kantin euskaltegi, Nerea duduk di seberang Budi sambil menyalakan lagu di ponselnya.",
+   "lines": [
+    { "speaker": "Nerea:", "text": "Budi, zer musika gustatzen zaizu?", "id": "Budi, kamu suka musik apa?", "literal": "Budi, apa musik menyenangkan-nya kepada-kamu-ia?" },
+    { "speaker": "Budi:", "text": "Rock musika gustatzen zait. Eta zuri?", "id": "Saya suka musik rok. Kalau kamu?", "literal": "rok musik menyenangkan-nya kepada-saya-ia. dan kepada-kamu?" },
+    { "speaker": "Nerea:", "text": "Niri bertsolaritza gustatzen zait.", "id": "Saya suka bertsolaritza.", "literal": "kepada-saya bertsolaritza menyenangkan-nya kepada-saya-ia." },
+    { "speaker": "Budi:", "text": "Bertsolaritza? Zer da hori?", "id": "Bertsolaritza? Apa itu?", "literal": "bertsolaritza? apa adalah itu?" },
+    { "speaker": "Nerea:", "text": "Euskal kantu inprobisatuak dira. Oso zailak dira!", "id": "Itu nyanyian Basque yang dikarang mendadak. Susah sekali!", "literal": "Basque nyanyian didadakkan-jamak adalah-mereka. sangat sulit-jamak adalah-mereka!" },
+    { "speaker": "Budi:", "text": "Interesgarria! Kirola ere gustatzen zaizu?", "id": "Menarik! Kamu suka olahraga juga?", "literal": "menarik-itu! olahraga-itu juga menyenangkan-nya kepada-kamu-ia?" },
+    { "speaker": "Nerea:", "text": "Bai, asko. Igandeetan mendira joaten naiz lagunekin.", "id": "Ya, banyak. Tiap Minggu saya naik gunung bersama teman-teman.", "literal": "ya, banyak. Minggu-jamak-di gunung-ke pergi-nya adalah-saya teman-jamak-dengan." },
+    { "speaker": "Budi:", "text": "Niri ere mendia gustatzen zait, baina goizegi da niretzat!", "id": "Saya juga suka gunung, tapi buat saya terlalu pagi!", "literal": "kepada-saya juga gunung-itu menyenangkan-nya kepada-saya-ia, tapi pagi-terlalu adalah saya-untuk!" },
+    { "speaker": "Nerea:", "text": "Ha, ha! Eta futbola? Athletic gustatzen zaizu?", "id": "Ha, ha! Dan sepak bola? Kamu suka Athletic?", "literal": "ha, ha! dan sepak-bola-itu? Athletic menyenangkan-nya kepada-kamu-ia?" },
+    { "speaker": "Budi:", "text": "Bai, partidak asko gustatzen zaizkit.", "id": "Ya, saya suka sekali nonton pertandingannya.", "literal": "ya, pertandingan-jamak banyak menyenangkan-nya kepada-saya-mereka." },
+    { "speaker": "Nerea:", "text": "Orduan larunbatean San Mamesera goaz, ados?", "id": "Kalau begitu Sabtu kita ke San Mamés, setuju?", "literal": "kalau-begitu Sabtu-di San Mamés-ke pergi-kami, setuju?" },
+    { "speaker": "Budi:", "text": "Bai, noski! Zorionekoa naiz.", "id": "Ya, tentu saja! Saya senang sekali.", "literal": "ya, tentu! beruntung-itu adalah-saya." }
+   ],
+   "notes": [
+    "**Yang disukai adalah pelakunya, kamu cuma penerima.** Ini susunan yang terbalik bagi kita. Bahasa Indonesia bilang \"saya suka musik\": saya subjek, musik objek. Bahasa Basque bilang *musika gustatzen zait* — \"musik itu menyenangkan kepadaku\". Musiknyalah yang bekerja; kamu hanya orang yang kena akibatnya. Bahasa Spanyol (*me gusta*) dan Italia melakukan hal yang sama.",
+    "**Kalau yang disukai banyak, bantunya ikut jamak.** *Partidak gustatzen **zaizkit*** (saya suka pertandingan-pertandingan itu), bukan *zait*. Perhatikan sisipan *-zki-* yang menandai jamak. Ini kesalahan paling sering di tingkat A1, dan paling mudah diperbaiki: lihat ujung kata bendanya, kalau ada *-ak*, pakai *zaizkit*.",
+    "**Niri, zuri — penerima ditandai -ri.** Kamu boleh menyebutnya untuk penekanan: *Niri bertsolaritza gustatzen zait* (\"kalau **saya**, sukanya bertsolaritza\"). Tanpa penekanan, cukup bantunya saja — *zait* sudah berarti \"kepadaku\".",
+    "**Bertsolaritza — pantun dadakan yang dinyanyikan.** Seorang *bertsolari* diberi tema dan bentuk irama, lalu harus menyanyikan bait berima di tempat, tanpa persiapan. Final kejuaraannya mengisi stadion tertutup berisi belasan ribu orang. Kalau kamu ingin memahami mengapa bahasa ini bertahan dua ribu tahun, tontonlah satu bertso — walau belum paham kata-katanya."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Susunan gustatzen zait",
+   "blocks": [
+    { "type": "p", "text": "Rumusnya: **yang disukai + gustatzen + bantu kepada-siapa**. Yang disukai memakai kata sandang biasa (*-a* atau *-ak*), tanpa topi pelaku." },
+    { "type": "tabel", "head": ["Kepada siapa", "Satu hal", "Banyak hal", "Contoh"], "rows": [
+     ["niri (saya)", "**zait**", "**zaizkit**", "Kafea gustatzen zait."],
+     ["zuri (kamu)", "**zaizu**", "**zaizkizu**", "Zer gustatzen zaizu?"],
+     ["hari (dia)", "**zaio**", "**zaizkio**", "Joni futbola gustatzen zaio."],
+     ["guri (kami)", "**zaigu**", "**zaizkigu**", "Mendia gustatzen zaigu."],
+     ["zuei (kalian)", "**zaizue**", "**zaizkizue**", "Pintxoak gustatzen zaizkizue?"],
+     ["haiei (mereka)", "**zaie**", "**zaizkie**", "Musika gustatzen zaie."]
+    ]},
+    { "type": "sub", "text": "Menyangkal dan menakar" },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia"], "rows": [
+     ["Asko gustatzen zait.", "Saya suka sekali."],
+     ["Pixka bat gustatzen zait.", "Saya agak suka."],
+     ["**Ez zait** gustatzen.", "Saya tidak suka."],
+     ["Ez zait batere gustatzen.", "Saya sama sekali tidak suka."],
+     ["Gorroto dut.", "Saya benci. (susunan biasa, dengan topi pelaku)"],
+     ["Berdin zait.", "Bagi saya sama saja."]
+    ]},
+    { "type": "kotak", "title": "Kata kerja lain yang bekerja seperti gustatu", "items": [
+     "*interesatu* — menarik minat: *Historia interesatzen zait.*",
+     "*iruditu* — terasa, tampak: *Zaila iruditzen zait.* (bagi saya sulit)",
+     "*ahaztu* — terlupa: *Ahaztu zait!* (saya lupa — harfiahnya \"ia terlupa kepadaku\")",
+     "*gertatu* — terjadi: *Zer gertatzen zaizu?* (kamu kenapa?)",
+     "*axola* — peduli: *Ez zait axola.* (saya tidak peduli)",
+     "Perhatikan bahwa dalam semua kalimat ini kamu bukan pelaku, melainkan orang yang kena akibat. Bahasa Basque memandang perasaan sebagai sesuatu yang **menimpa** orang, bukan yang dikerjakan orang."
+    ]}
+   ]
+  },
+  {
+   "title": "Waktu luang",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Cara baca", "Bahasa Indonesia"], "rows": [
+     ["musika entzun", "MU-si-ka en-tsun", "mendengarkan musik"],
+     ["liburuak irakurri", "li-BU-ru-ak", "membaca buku"],
+     ["filmak ikusi", "FIL-mak i-ku-si", "menonton film"],
+     ["kirola egin", "ki-RO-la e-gin", "berolahraga"],
+     ["igeri egin", "i-GE-ri", "berenang"],
+     ["korrika egin", "ko-RRI-ka", "lari"],
+     ["dantzatu", "dan-TSA-tu", "menari"],
+     ["kantatu", "kan-TA-tu", "menyanyi"],
+     ["bidaiatu", "bi-da-i-A-tu", "bepergian"],
+     ["argazkiak atera", "ar-GAS-ki-ak", "memotret"],
+     ["sukaldatu", "su-kal-DA-tu", "memasak"],
+     ["mendira joan", "MEN-di-ra", "naik gunung"],
+     ["lagunekin egon", "la-GU-ne-kin", "berkumpul dengan teman"],
+     ["bideo-jokoetan aritu", "bi-DE-o kho-KO-e-tan", "main gim"]
+    ]},
+    { "type": "sub", "text": "Olahraga yang khas di sini" },
+    { "type": "tabel", "head": ["Euskara", "Bahasa Indonesia"], "rows": [
+     ["pilota", "pelota, olahraga bola dinding khas Basque"],
+     ["herri kirolak", "olahraga desa: angkat batu, gergaji kayu, tarik tali"],
+     ["estropadak", "lomba perahu dayung di teluk"],
+     ["mendizaletasuna", "kegemaran mendaki gunung"],
+     ["futbola", "sepak bola — Athletic Club di Bilbo, Real Sociedad di Donostia"]
+    ]},
+    { "type": "p", "text": "*Athletic Club* punya kebiasaan yang unik di dunia: klub itu hanya memakai pemain yang lahir atau dibesarkan di Euskal Herria. Aturan itu bertahan lebih dari seabad, dan menjelaskan mengapa pertandingan di stadion San Mamés terasa lebih seperti pesta kampung raksasa daripada tontonan olahraga." },
+    { "type": "kotak", "title": "Mengajak dan menjawab ajakan", "items": [
+     "*Zinemara joan nahi duzu?* — Mau nonton bioskop?",
+     "*Bai, noski!* / *Bai, primeran!* — Ya, tentu! / Ya, keren!",
+     "*Ados, zer ordutan?* — Setuju, jam berapa?",
+     "*Ezin dut, sentitzen dut.* — Tidak bisa, maaf.",
+     "*Beharbada hurrengoan.* — Mungkin lain kali.",
+     "*Zer moduz bihar?* — Bagaimana kalau besok?"
+    ]}
+   ]
+  },
+  {
+   "title": "Bersama siapa: akhiran -ekin",
+   "blocks": [
+    { "type": "tabel", "head": ["Euskara", "Harfiah", "Bahasa Indonesia"], "rows": [
+     ["lagun**arekin**", "teman-itu-dengan", "dengan teman itu"],
+     ["lagun**ekin**", "teman-jamak-dengan", "dengan teman-teman"],
+     ["Jon**ekin**", "Jon-dengan", "dengan Jon"],
+     ["ni**rekin**", "saya-dengan", "dengan saya"],
+     ["zu**rekin**", "kamu-dengan", "denganmu"],
+     ["gu**rekin**", "kami-dengan", "dengan kami"],
+     ["nor**ekin**?", "siapa-dengan?", "dengan siapa?"]
+    ]},
+    { "type": "p", "text": "Jangan tertukar dengan *-z* yang kamu pelajari di Unit 9: *-ekin* untuk **orang** yang menemani (*lagunekin*), *-z* untuk **alat** yang dipakai (*autobusez*). Bahasa Indonesia memakai satu kata \"dengan\" untuk keduanya, jadi ini perlu perhatian." },
+    { "type": "kotak", "title": "Menyatakan pendapat", "items": [
+     "*Nire ustez …* — Menurut saya …",
+     "*Niretzat …* — Bagi saya …",
+     "*Uste dut baietz / ezetz.* — Saya rasa iya / tidak.",
+     "*Interesgarria da.* — Menarik. *Aspergarria da.* — Membosankan.",
+     "*Zoragarria da!* — Luar biasa! *Izugarria da.* — Mengerikan.",
+     "*Bat nator zurekin.* — Saya setuju denganmu."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "eu": "gustatu", "baca": "gus-TA-tu", "id": "menyenangkan, disukai" },
+  { "eu": "gorroto izan", "baca": "go-RRO-to", "id": "membenci" },
+  { "eu": "musika", "baca": "MU-si-ka", "id": "musik" },
+  { "eu": "kantu", "baca": "KAN-tu", "id": "lagu" },
+  { "eu": "film", "baca": "FILM", "id": "film" },
+  { "eu": "zinema", "baca": "si-NE-ma", "id": "bioskop" },
+  { "eu": "kirol", "baca": "ki-ROL", "id": "olahraga" },
+  { "eu": "partida", "baca": "par-TI-da", "id": "pertandingan" },
+  { "eu": "futbol", "baca": "FUT-bol", "id": "sepak bola" },
+  { "eu": "pilota", "baca": "pi-LO-ta", "id": "pelota Basque" },
+  { "eu": "dantzatu", "baca": "dan-TSA-tu", "id": "menari" },
+  { "eu": "kantatu", "baca": "kan-TA-tu", "id": "menyanyi" },
+  { "eu": "igeri egin", "baca": "i-GE-ri", "id": "berenang" },
+  { "eu": "bidaiatu", "baca": "bi-da-i-A-tu", "id": "bepergian" },
+  { "eu": "jolastu", "baca": "kho-LAS-tu", "id": "bermain" },
+  { "eu": "bertsolari", "baca": "ber-tso-LA-ri", "id": "penyair dadakan Basque" },
+  { "eu": "denbora librea", "baca": "den-BO-ra LI-bre-a", "id": "waktu luang" },
+  { "eu": "zaletasun", "baca": "sa-le-ta-SUN", "id": "hobi" },
+  { "eu": "interesgarri", "baca": "in-te-res-GA-rri", "id": "menarik" },
+  { "eu": "aspergarri", "baca": "as-per-GA-rri", "id": "membosankan" },
+  { "eu": "zoragarri", "baca": "so-ra-GA-rri", "id": "luar biasa" },
+  { "eu": "zail", "baca": "SA-il", "id": "sulit" },
+  { "eu": "erraz", "baca": "e-RRAS", "id": "mudah" },
+  { "eu": "uste izan", "baca": "US-te", "id": "mengira, berpendapat" },
+  { "eu": "batere ez", "baca": "ba-TE-re ES", "id": "sama sekali tidak" },
+  { "eu": "berdin", "baca": "ber-DIN", "id": "sama" },
+  { "eu": "primeran", "baca": "pri-ME-ran", "id": "hebat, mantap" },
+  { "eu": "beharbada", "baca": "be-ar-BA-da", "id": "mungkin" },
+  { "eu": "ezin izan", "baca": "e-SIN", "id": "tidak bisa" },
+  { "eu": "norekin", "baca": "no-RE-kin", "id": "dengan siapa" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan *zait*, *zaizkit*, *zaizu*, atau *zaio*.",
+   "items": [
+    "Niri kafea gustatzen ____.",
+    "Niri pintxoak gustatzen ____.",
+    "Zuri zer gustatzen ____?",
+    "Joni futbola gustatzen ____.",
+    "Niri euskara asko gustatzen ____.",
+    "Niri ez ____ gustatzen goiz jaikitzea."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Basque.",
+   "items": [
+    "Saya suka musik.",
+    "Saya tidak suka kopi.",
+    "Kamu suka apa?",
+    "Saya suka sekali film-film itu.",
+    "Bagi saya sama saja.",
+    "Saya setuju denganmu."
+   ]
+  },
+  {
+   "prompt": "Tambahkan akhiran *-ekin* atau *-z*.",
+   "items": [
+    "Mendira lagun____ joaten naiz. (dengan teman-teman)",
+    "Lanera autobus____ noa. (naik bus)",
+    "Ni____ etorri nahi duzu? (dengan saya)",
+    "Euskara____ hitz egiten dut. (dalam bahasa Basque)",
+    "Jon____ bizi naiz. (dengan Jon)",
+    "Etxera oin____ noa. (jalan kaki)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "zait / musika / gustatzen",
+    "zaizu / zer / gustatzen / ?",
+    "zait / gustatzen / ez / kafea",
+    "zaizkit / partidak / gustatzen / asko",
+    "naiz / lagunekin / mendira / joaten",
+    "duzu / joan / zinemara / nahi / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "zait — zaizkit — zaizu — zaio — zait — zait",
+  "Musika gustatzen zait. — Kafea ez zait gustatzen. — Zer gustatzen zaizu? — Film horiek asko gustatzen zaizkit. — Berdin zait. — Bat nator zurekin.",
+  "lagunekin — autobusez — Nirekin — Euskaraz — Jonekin — oinez",
+  "Musika gustatzen zait. — Zer gustatzen zaizu? — Kafea ez zait gustatzen. — Partidak asko gustatzen zaizkit. — Lagunekin mendira joaten naiz. — Zinemara joan nahi duzu?"
+ ]
+}
