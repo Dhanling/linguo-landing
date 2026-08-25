@@ -55,7 +55,7 @@ function PerpustakaanInner() {
 
   return (
     <StudentShell active="pustaka" onTabChange={goTab} previewStudentId={previewId}>
-      <main className="mx-auto w-full max-w-[1200px] px-5 pb-16 pt-6 sm:px-8 lg:py-9">
+      <main className="mx-auto w-full max-w-[1560px] px-5 pb-16 pt-6 sm:px-8 lg:py-9">
         {previewId && (
           <div className="mb-4 rounded-xl bg-[#12172B] px-4 py-2 text-center text-[12px] font-bold text-amber-300">
             Preview POV Siswa — data real, read-only (tanpa login)

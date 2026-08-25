@@ -1064,7 +1064,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
           </div>
         ) : null
       ) : view === "grid" ? (
-        <div className="grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 sm:gap-x-5 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+        <div /* [pustaka-rak-7-kolom-v1] rak lebih rapat: 7 sampul/baris di layar lebar (dulu mentok 5–6) */ className="grid grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-3 sm:gap-x-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-7">
           {shown.map((p) => (
             <ProductCard
               key={p.id}
@@ -1121,7 +1121,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
             </span>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 sm:gap-x-5 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+          <div className="grid grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-3 sm:gap-x-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-7">
             {terkunci.map((k) => (
               <LockedCard
                 key={k.id}
@@ -1391,7 +1391,7 @@ function ProductCard({
       <div className="mt-2.5 px-0.5">
         <div className="flex min-w-0 items-center gap-1.5">
           <TitleFlag language={prod.language} h={13} />
-          <h3 title={prod.title} className="truncate text-[13.5px] font-extrabold leading-snug text-[#12172B]">
+          <h3 title={prod.title} className="truncate text-[12.5px] font-extrabold leading-snug text-[#12172B]">
             {judulRingkas(prod.title)}
           </h3>
         </div>
