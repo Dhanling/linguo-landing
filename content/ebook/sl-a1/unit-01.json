@@ -1,0 +1,486 @@
+{
+  "title": "Halo, siapa namamu?",
+  "title_target": "Dober dan! Kako ti je ime?",
+  "goal": "Menyapa pada waktu dan tingkat kesopanan yang tepat, menyebut nama sendiri, menanyakan kabar, dan melihat untuk pertama kalinya bahwa kata kerja bahasa Slovenia punya TIGA lajur jumlah, bukan dua.",
+  "bekal": [
+    "menyapa dengan *dober dan*, *dobro jutro*, *živjo*, dan *pozdravljeni* pada tempatnya masing-masing",
+    "menyebut nama sendiri dengan *ime mi je…* atau *jaz sem…*, dan menanyakan nama orang lain",
+    "memakai kata kerja *biti* untuk satu orang — dan mengenali dua lajur lain yang menunggu di unit 3"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Prvi dan v jezikovni šoli",
+      "intro": "Hari pertama kursus bahasa di sebuah jezikovna šola di Ljubljana. Dua peserta baru duduk bersebelahan.",
+      "lines": [
+        {
+          "speaker": "Maja:",
+          "text": "Dober dan! Kako ti je ime?",
+          "id": "Selamat siang! Siapa namamu?",
+          "literal": "baik hari! bagaimana kepadamu adalah nama?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dober dan! Ime mi je Budi. Pa ti?",
+          "id": "Selamat siang! Nama saya Budi. Kalau kamu?",
+          "literal": "baik hari! nama kepadaku adalah Budi. dan kamu?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Jaz sem Maja. Me veseli!",
+          "id": "Saya Maja. Senang berkenalan!",
+          "literal": "saya adalah Maja. kepadaku menyenangkan!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mene tudi veseli. Kako si?",
+          "id": "Saya juga senang. Apa kabar?",
+          "literal": "kepadaku juga menyenangkan. bagaimana kamu-adalah?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Hvala, dobro sem. Pa ti?",
+          "id": "Terima kasih, saya baik. Kalau kamu?",
+          "literal": "terima kasih, baik saya-adalah. dan kamu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tudi jaz sem dobro. Si Slovenka?",
+          "id": "Saya juga baik. Kamu orang Slovenia?",
+          "literal": "juga saya adalah baik. kamu-adalah orang-Slovenia-perempuan?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Ja, sem iz Ljubljane. Ti si Kitajec?",
+          "id": "Ya, saya dari Ljubljana. Kamu orang Cina?",
+          "literal": "ya, saya-adalah dari Ljubljana. kamu adalah orang-Cina?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ne, Indonezijec sem. Iz Jakarte.",
+          "id": "Bukan, saya orang Indonesia. Dari Jakarta.",
+          "literal": "tidak, orang-Indonesia saya-adalah. dari Jakarta."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Kako zanimivo! Dobrodošel v Sloveniji!",
+          "id": "Wah, menarik sekali! Selamat datang di Slovenia!",
+          "literal": "betapa menarik! selamat-datang di Slovenia!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Najlepša hvala! Se vidiva jutri, Maja.",
+          "id": "Terima kasih banyak! Sampai jumpa besok, Maja.",
+          "literal": "paling-indah terima-kasih! diri kita-berdua-melihat besok, Maja."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Nasvidenje! Adijo!",
+          "id": "Sampai jumpa! Dah!",
+          "literal": "sampai-melihat! dah!"
+        }
+      ],
+      "notes": [
+        "**Kako ti je ime? bukan \"apa namamu\".** Harfiahnya \"bagaimana kepadamu adalah nama?\" — namanya diperlakukan sebagai sesuatu yang *ada padamu*, bukan sesuatu yang *kamu punya*. Jawabannya mengikuti bentuk yang sama: *Ime mi je Budi* (\"nama kepadaku adalah Budi\"). Yang lebih pendek dan sama benarnya: *Jaz sem Budi*. Bentuk sopan mengganti *ti* dengan *vam*: **Kako vam je ime?**",
+        "**Me veseli tanpa pelaku.** Harfiahnya \"menyenangkan aku\" — tidak ada \"saya\" dan tidak ada \"itu\" di dalamnya. Kalimat semacam ini banyak di bahasa Slovenia, dan pola yang sama akan kembali di unit 15 untuk mengatakan \"kepalaku sakit\". Bentuk panjangnya *Me veseli, da sva se spoznala* — untuk sekarang, dua kata itu sudah cukup.",
+        "**Ja dan da dua-duanya \"ya\".** *Ja* dipungut dari bahasa Jerman dan dipakai sepanjang hari di percakapan biasa; *da* terdengar lebih rapi dan lebih sering muncul di tulisan atau di depan orang yang dihormati. Lawannya cuma satu: *ne*.",
+        "**Slovenka dan Slovenec dua kata berbeda.** Bahasa Slovenia memaksamu memilih jenis kelamin di setiap sebutan bangsa: *Slovenec* (laki-laki), *Slovenka* (perempuan), *Indonezijec* dan *Indonezijka*, *Kitajec* dan *Kitajka*. Bahasa Indonesia tidak pernah menuntut ini, jadi biasakan sejak sekarang menghafal kedua bentuknya sekaligus, bukan satu saja.",
+        "**Se vidiva — intipan pertama dvojina.** Perhatikan ekornya: *-va*. Itu bukan bentuk jamak, itu bentuk untuk **tepat dua orang**. Kalau yang berpisah tiga orang, kalimatnya berubah jadi *se vidimo*. Inilah barang antik yang membuat bahasa Slovenia terkenal, dan ia diberi unit sendiri di unit 3 — untuk sekarang, cukup pakai *se vidiva* sebagai satu bongkah hafalan."
+      ],
+      "grammars": [
+        {
+          "title": "Biti — kata kerja \"adalah\" dengan tiga lajur jumlah",
+          "body": [
+            "Kata kerja pertama yang wajib kamu kuasai, dan sekaligus pemandangan pertama atas hal yang membuat bahasa Slovenia berbeda dari seluruh Eropa. Tabel kata kerja di bahasa Prancis, Jerman, atau Rusia punya dua kolom jumlah: tunggal dan jamak. Di bahasa Slovenia ada **tiga**."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "Cara baca",
+              "biti",
+              "arti"
+            ],
+            "rows": [
+              [
+                "**jaz**",
+                "yas",
+                "**sem**",
+                "saya adalah"
+              ],
+              [
+                "**ti**",
+                "ti",
+                "**si**",
+                "kamu adalah"
+              ],
+              [
+                "**on / ona**",
+                "on / O-na",
+                "**je**",
+                "dia adalah"
+              ],
+              [
+                "**midva / midve**",
+                "MID-va / MID-vé",
+                "**sva**",
+                "kami berdua adalah"
+              ],
+              [
+                "**vidva / vidve**",
+                "VID-va / VID-vé",
+                "**sta**",
+                "kalian berdua adalah"
+              ],
+              [
+                "**onadva / onidve**",
+                "o-NAD-va / o-NID-vé",
+                "**sta**",
+                "mereka berdua adalah"
+              ],
+              [
+                "**mi / me**",
+                "mi / mé",
+                "**smo**",
+                "kami adalah (3+)"
+              ],
+              [
+                "**vi / ve**",
+                "vi / vé",
+                "**ste**",
+                "kalian adalah (3+)"
+              ],
+              [
+                "**mi / me**",
+                "mi / mé",
+                "**smo**",
+                "kami adalah (3+)"
+              ],
+              [
+                "**vi / ve**",
+                "vi / vé",
+                "**ste**",
+                "kalian adalah (3+)"
+              ],
+              [
+                "**oni / one**",
+                "O-ni / O-né",
+                "**so**",
+                "mereka adalah (3+)"
+              ]
+            ]
+          },
+          "after": [
+            "Untuk unit ini kamu cuma perlu tiga baris pertama. Enam baris sisanya sengaja dipajang sekarang supaya kamu tahu bahwa ia ada — banyak buku menyembunyikannya sampai bab sepuluh, lalu pembacanya kaget.",
+            "Bentuk berpasangan seperti *midva / midve* memilah jenis kelamin: *midve* kalau **dua-duanya perempuan**, *midva* untuk selebihnya. Aturan yang sama berlaku untuk *vidva/vidve* dan *onadva/onidve*."
+          ]
+        },
+        {
+          "title": "Vikanje — dua cara menyebut \"kamu\"",
+          "body": [
+            "Bahasa Slovenia memilah lawan bicara jadi dua, persis seperti bahasa Prancis atau Jerman. Yang perlu diingat cuma satu hal: bentuk sopan memakai **kata kerja jamak**, walaupun orangnya cuma satu."
+          ],
+          "table": {
+            "head": [
+              "Bentuk",
+              "Contoh",
+              "Dipakai kepada"
+            ],
+            "rows": [
+              [
+                "**tikanje** (*ti*)",
+                "*Kako si?* — Apa kabar?",
+                "teman, sebaya, anak-anak, keluarga"
+              ],
+              [
+                "**vikanje** (*vi*)",
+                "*Kako ste?* — Apa kabar?",
+                "orang asing, orang lebih tua, pelayan toko, guru, dokter"
+              ],
+              [
+                "**tikanje**",
+                "*Kako ti je ime?*",
+                "akrab"
+              ],
+              [
+                "**vikanje**",
+                "*Kako vam je ime?*",
+                "sopan"
+              ],
+              [
+                "**tikanje**",
+                "*Živjo!* / *Adijo!*",
+                "akrab"
+              ],
+              [
+                "**vikanje**",
+                "*Pozdravljeni!* / *Nasvidenje!*",
+                "sopan"
+              ]
+            ]
+          },
+          "after": [
+            "Aturan praktisnya sederhana: **mulailah dengan vi**, dan tunggu orang Slovenia yang menawarkan untuk pindah. Tawarannya biasanya berbunyi *Lahko sva na ti?* — \"Boleh kita pakai *ti* saja?\" Menjawab *Ja, seveda!* selalu tepat.",
+            "Berbeda dengan bahasa Jerman, *vi* bahasa Slovenia tidak ditulis dengan huruf besar wajib. Di surat resmi orang sering menulis *Vi* dengan huruf besar sebagai penghormatan, tapi itu pilihan, bukan aturan."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kalimat yang menolongmu bertahan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sepuluh kalimat berikut bukan bahan hafalan tata bahasa — ia perkakas darurat. Hafalkan bentuk utuhnya sekarang, pahami susunannya nanti."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Ja / Ne",
+              "ya / né",
+              "Ya / Tidak"
+            ],
+            [
+              "Hvala",
+              "HVA-la",
+              "Terima kasih"
+            ],
+            [
+              "Prosim",
+              "PRO-sim",
+              "Silakan; sama-sama; tolong"
+            ],
+            [
+              "Oprostite",
+              "o-pros-TI-té",
+              "Maaf; permisi (sopan)"
+            ],
+            [
+              "Ne razumem",
+              "né ra-ZU-mem",
+              "Saya tidak mengerti"
+            ],
+            [
+              "Ne vem",
+              "né vém",
+              "Saya tidak tahu"
+            ],
+            [
+              "Govorite angleško?",
+              "go-vo-RI-té an-GLÉSY-ko",
+              "Anda bisa bahasa Inggris?"
+            ],
+            [
+              "Kako se reče …?",
+              "KA-ko se RÉ-cé",
+              "Bagaimana mengatakan …?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Prosim* adalah kata paling serbaguna dalam bahasa Slovenia. Ia berarti \"tolong\" saat meminta, \"silakan\" saat mempersilakan, \"sama-sama\" setelah orang berterima kasih, \"halo?\" saat mengangkat telepon, dan \"maaf, apa tadi?\" saat kamu tidak mendengar. Kalau kamu cuma boleh menghafal satu kata dari halaman ini, hafalkan yang ini."
+        },
+        {
+          "type": "p",
+          "text": "*Oprostite* untuk menarik perhatian orang asing dengan sopan; bentuk akrabnya *oprosti*. Untuk minta maaf sungguhan orang lebih sering bilang *Se opravičujem* — tapi *oprostite* selalu aman."
+        }
+      ]
+    },
+    {
+      "title": "Sapaan menurut waktu dan tingkat kesopanan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bahasa Slovenia memilah sapaan pada dua sumbu sekaligus: jam berapa, dan seberapa dekat kamu dengan lawan bicara. Tabel ini menutup keduanya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Dipakai kapan"
+          ],
+          "rows": [
+            [
+              "**Dobro jutro!**",
+              "DÒ-bro YU-tro",
+              "Selamat pagi — sampai sekitar pukul 10"
+            ],
+            [
+              "**Dober dan!**",
+              "DÒ-ber dan",
+              "Selamat siang — sapaan sopan paling aman"
+            ],
+            [
+              "**Dober večer!**",
+              "DÒ-ber vé-CÉR",
+              "Selamat sore/malam — mulai senja"
+            ],
+            [
+              "**Lahko noč!**",
+              "LAH-ko nòc",
+              "Selamat malam — hanya saat berpisah untuk tidur"
+            ],
+            [
+              "**Pozdravljeni!**",
+              "poz-drau-LYÉ-ni",
+              "Halo — sopan, kepada siapa pun"
+            ],
+            [
+              "**Živjo!**",
+              "ZHIU-yo",
+              "Halo — akrab, sangat sering dipakai"
+            ],
+            [
+              "**Adijo!**",
+              "a-DI-yo",
+              "Dah — akrab"
+            ],
+            [
+              "**Nasvidenje!**",
+              "nas-VI-dé-nyé",
+              "Sampai jumpa — sopan penuh"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Pozdravljeni* sebenarnya bentuk jamak, dan itulah sebabnya ia sekaligus sopan: kamu menyapa satu orang seakan-akan mereka lebih dari satu. Kepada satu teman akrab laki-laki bentuknya *pozdravljen*, kepada satu teman perempuan *pozdravljena* — tapi sebagai pemula, *pozdravljeni* selalu benar dan tidak pernah kasar."
+        },
+        {
+          "type": "p",
+          "text": "Satu kebiasaan yang perlu ditiru: di Slovenia, **masuk ke ruangan kecil berarti menyapa**. Lift, ruang tunggu dokter, kompartemen kereta, toko kecil di desa — orang mengucapkan *dober dan* kepada orang-orang yang tidak dikenalnya, dan diam justru terasa kasar."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "dober dan",
+      "baca": "DÒ-ber dan",
+      "id": "selamat siang"
+    },
+    {
+      "sl": "dobro jutro",
+      "baca": "DÒ-bro YU-tro",
+      "id": "selamat pagi"
+    },
+    {
+      "sl": "dober večer",
+      "baca": "DÒ-ber vé-CÉR",
+      "id": "selamat sore/malam"
+    },
+    {
+      "sl": "živjo",
+      "baca": "ZHIU-yo",
+      "id": "halo (akrab)"
+    },
+    {
+      "sl": "adijo",
+      "baca": "a-DI-yo",
+      "id": "dah (akrab)"
+    },
+    {
+      "sl": "nasvidenje",
+      "baca": "nas-VI-dé-nyé",
+      "id": "sampai jumpa (sopan)"
+    },
+    {
+      "sl": "ime",
+      "baca": "I-mé",
+      "id": "nama"
+    },
+    {
+      "sl": "kako",
+      "baca": "KA-ko",
+      "id": "bagaimana"
+    },
+    {
+      "sl": "jaz",
+      "baca": "yas",
+      "id": "saya"
+    },
+    {
+      "sl": "ti",
+      "baca": "ti",
+      "id": "kamu (akrab)"
+    },
+    {
+      "sl": "sem",
+      "baca": "sem",
+      "id": "saya adalah"
+    },
+    {
+      "sl": "si",
+      "baca": "si",
+      "id": "kamu adalah"
+    },
+    {
+      "sl": "je",
+      "baca": "yé",
+      "id": "dia adalah"
+    },
+    {
+      "sl": "hvala",
+      "baca": "HVA-la",
+      "id": "terima kasih"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slovenia.",
+      "items": [
+        "Selamat siang! Siapa namamu?",
+        "Nama saya Budi.",
+        "Saya orang Indonesia.",
+        "Apa kabar?",
+        "Terima kasih, saya baik.",
+        "Kamu orang Slovenia?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk biti yang tepat.",
+      "items": [
+        "Jaz ____ Budi.",
+        "Ti ____ Slovenka?",
+        "Maja ____ iz Ljubljane.",
+        "Midva ____ iz Jakarte.",
+        "Vi ____ zdravnik?",
+        "Oni ____ dobro."
+      ]
+    },
+    {
+      "prompt": "Pilih sapaan yang tepat. Tulis ulang kalimatnya lengkap.",
+      "items": [
+        "Kamu masuk toko roti jam tujuh pagi. Kepada penjualnya kamu bilang ____.",
+        "Kamu bertemu teman sekelas di kantin jam sebelas. Kamu bilang ____.",
+        "Kamu masuk restoran jam delapan malam. Kepada pelayannya kamu bilang ____.",
+        "Kamu berpisah dengan dosenmu di ujung koridor, dengan cara sopan. Kamu bilang ____.",
+        "Kamu berpamitan dengan teman sekamarmu sebelum tidur. Kamu bilang ____."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "sem / Maja / jaz",
+        "si / Slovenka / ti / ?",
+        "ti / kako / ime / je / ?",
+        "sem / hvala / dobro / ,",
+        "Slovenec / nisem / jaz"
+      ]
+    }
+  ],
+  "answers": [
+    "Dober dan! Kako ti je ime? — Ime mi je Budi. — Indonezijec sem. — Kako si? — Hvala, dobro sem. — Si Slovenka?",
+    "sem — si — je — sva — ste — so",
+    "Dobro jutro! — Živjo! — Dober večer! — Nasvidenje! — Lahko noč!",
+    "Jaz sem Maja. — Ti si Slovenka? — Kako ti je ime? — Hvala, dobro sem. — Jaz nisem Slovenec."
+  ]
+}

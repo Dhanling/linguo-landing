@@ -1,0 +1,491 @@
+{
+  "title": "Besok kamu ngapain? — masa depan",
+  "title_target": "Kaj boš delal jutri?",
+  "goal": "Berbicara tentang rencana — dan menghindari satu kesalahan yang dilakukan hampir setiap pelajar: menambahkan kata kerja kedua pada *bom*. Untuk mengatakan \"saya akan ada di rumah\", bahasa Slovenia cukup dengan *bom doma*.",
+  "bekal": [
+    "menyusun masa depan: *bom* + kata kerja berekor *-l*",
+    "memakai *bom* sendirian sebagai bentuk masa depan dari *biti*",
+    "mengenali bahwa kata kerja bentuk selesai sudah menunjuk ke depan tanpa *bom*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Bom doma",
+      "intro": "Kamis sore. Maja menyusun rencana akhir pekan dan Budi belajar satu aturan yang menghemat satu kata di setiap kalimat.",
+      "lines": [
+        {
+          "speaker": "Maja:",
+          "text": "Kaj boš delal jutri?",
+          "id": "Besok kamu ngapain?",
+          "literal": "apa kamu-akan melakukan-laki besok?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zjutraj bom študiral, popoldne pa bom prost.",
+          "id": "Pagi belajar, sorenya saya kosong.",
+          "literal": "pagi saya-akan belajar-laki, sore tapi saya-akan bebas."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Boš doma?",
+          "id": "Kamu di rumah?",
+          "literal": "kamu-akan di-rumah?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja, bom doma.",
+          "id": "Iya, saya di rumah.",
+          "literal": "ya, saya-akan di-rumah."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Zakaj ne bom bil doma?",
+          "id": "Kenapa bukan \"bom bil doma\"?",
+          "literal": "kenapa bukan saya-akan ada-laki di-rumah?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ker bom že pomeni bom bil.",
+          "id": "Karena \"bom\" sudah berarti \"akan ada\".",
+          "literal": "karena saya-akan sudah berarti saya-akan ada-laki."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Bravo. Dva glagola bi bila preveč.",
+          "id": "Bravo. Dua kata kerja kebanyakan.",
+          "literal": "bravo. dua kata-kerja-berdua akan ada-berdua terlalu-banyak."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "In če bo lepo, gremo na Bled.",
+          "id": "Dan kalau cuacanya bagus, kita ke Bled.",
+          "literal": "dan kalau akan indah, kami-pergi ke Bled."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Gremo — ne bomo šli?",
+          "id": "\"Gremo\" — bukan \"bomo šli\"?",
+          "literal": "kami-pergi — bukan kami-akan pergi-jamak?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dovršni glagol že gleda naprej.",
+          "id": "Kata kerja bentuk selesai sudah menunjuk ke depan.",
+          "literal": "selesai-punya kata-kerja sudah melihat ke-depan."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Vse si razumel. Se vidiva jutri!",
+          "id": "Kamu paham semuanya. Sampai besok!",
+          "literal": "semua kamu-adalah mengerti-laki. diri kita-berdua-melihat besok!"
+        }
+      ],
+      "notes": [
+        "**Bom sendirian sudah berarti \"saya akan ada\".** Ini kesalahan yang paling sering dibawa pelajar dari bahasa Inggris: *I will be at home* punya dua kata kerja, jadi orang mengira bahasa Slovenia juga. Tidak. *Bom doma*, *Boš tam?*, *Bo lepo* — semuanya lengkap. Menambahkan *bil* justru salah.",
+        "**Untuk kata kerja lain, bom butuh pasangan berekor -l.** *Bom delal* (saya akan bekerja), *Bom kuhala* (saya akan memasak, perempuan), *Bomo šli* (kami akan pergi). Ekornya persis sama dengan ekor bentuk lampau dari unit 12 — jadi kamu sudah menguasai separuh sistem ini sebelum unit ini dimulai.",
+        "**Kata kerja bentuk selesai tidak butuh bom sama sekali.** *Gremo na Bled* sudah berarti \"kita akan ke Bled\", *Skuham juho* berarti \"nanti supnya jadi\", *Ti povem jutri* berarti \"besok saya kasih tahu\". Inilah hasil langsung dari vid yang dipasang di unit 14: sesuatu yang selesai tidak bisa sedang berlangsung, jadi ia melompat ke depan sendiri.",
+        "**Če bo lepo — kalimat pengandaian memakai masa depan di kedua sisinya.** Bahasa Inggris memakai bentuk sekarang setelah *if*; bahasa Slovenia tidak repot dan memakai *bo*. *Če bo lepo, gremo* dan *Če bo lepo, bomo šli* dua-duanya benar.",
+        "**Bentuk negatifnya berdiri sendiri: ne bom.** Berbeda dengan bentuk lampau yang menyatu jadi *nisem*, bentuk masa depan menulis *ne* terpisah: *Ne bom delal*, *Ne bo lepo*, *Ne bomo šli*. Dan karena *ne bom* bukan naslonka, ia boleh membuka kalimat."
+      ],
+      "grammars": [
+        {
+          "title": "Prihodnjik — bentuk masa depan",
+          "body": [
+            "Sembilan bentuk *bom*, dan ekor *-l* yang sudah kamu kenal dari bentuk lampau. Tidak ada yang benar-benar baru di sini kecuali kata bantunya."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "Kata bantu",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "jaz",
+                "**bom**",
+                "*Bom delal.* / *Bom delala.*",
+                "saya akan bekerja"
+              ],
+              [
+                "ti",
+                "**boš**",
+                "*Boš delal?*",
+                "kamu akan bekerja?"
+              ],
+              [
+                "on / ona",
+                "**bo**",
+                "*Bo delala.*",
+                "dia akan bekerja"
+              ],
+              [
+                "midva / midve",
+                "**bova**",
+                "*Bova delala.*",
+                "kami berdua akan bekerja"
+              ],
+              [
+                "vidva / onadva",
+                "**bosta**",
+                "*Bosta delala.*",
+                "kalian berdua akan bekerja"
+              ],
+              [
+                "mi / me",
+                "**bomo**",
+                "*Bomo delali.*",
+                "kami akan bekerja"
+              ],
+              [
+                "vi / ve",
+                "**boste**",
+                "*Boste delali?*",
+                "kalian akan bekerja?"
+              ],
+              [
+                "oni / one",
+                "**bodo**",
+                "*Bodo delali.*",
+                "mereka akan bekerja"
+              ],
+              [
+                "oni / one",
+                "**bodo**",
+                "*Bodo delali.*",
+                "mereka akan bekerja"
+              ],
+              [
+                "tanpa pelaku",
+                "**bo**",
+                "*Bo lepo.* / *Bo deževalo.*",
+                "nanti cerah / nanti hujan"
+              ]
+            ]
+          },
+          "after": [
+            "Berbeda dari *sem* di bentuk lampau, **bom bukan naslonka** — ia boleh berdiri di awal kalimat: *Bom delal* benar, dan *Delal bom* juga benar. Yang kedua sedikit lebih menekankan pekerjaannya.",
+            "Ekor *-l* mengikuti aturan yang sama persis dengan bentuk lampau: *-l* satu laki-laki, *-la* satu perempuan atau dua laki-laki, *-li* dua perempuan atau tiga ke atas, *-le* tiga perempuan ke atas, *-lo* untuk hal tanpa jenis kelamin."
+          ]
+        },
+        {
+          "title": "Tiga cara menunjuk ke depan",
+          "body": [
+            "Bahasa Slovenia punya tiga jalan menuju masa depan, dan ketiganya dipakai setiap hari. Yang menentukan bukan tata bahasa, melainkan rasa."
+          ],
+          "table": {
+            "head": [
+              "Cara",
+              "Contoh",
+              "Rasanya"
+            ],
+            "rows": [
+              [
+                "**bom + -l**",
+                "*Jutri bom delal.*",
+                "netral, paling umum"
+              ],
+              [
+                "**kata kerja selesai**",
+                "*Jutri ti povem.*",
+                "yakin, sudah diputuskan"
+              ],
+              [
+                "**sekarang + kata waktu**",
+                "*Jutri grem v Maribor.*",
+                "rencana pasti, sudah dijadwalkan"
+              ],
+              [
+                "**bom + biti**",
+                "*Bom doma.*",
+                "hanya *bom*, tanpa *bil*"
+              ],
+              [
+                "negatif",
+                "*Ne bom delal.*",
+                "*ne* terpisah, boleh di depan"
+              ],
+              [
+                "pertanyaan",
+                "*Boš prišel?*",
+                "naik nada saja"
+              ]
+            ]
+          },
+          "after": [
+            "Cara ketiga sama persis dengan kebiasaan bahasa Indonesia: \"besok saya ke Maribor\" memakai bentuk sekarang dan mengandalkan kata waktunya. Bahasa Slovenia mengizinkan hal yang sama, jadi kalau *bom* belum otomatis di lidahmu, sebutkan saja waktunya dan lanjutkan.",
+            "Untuk niat yang lebih lunak, pakai *bi rad* (ingin): *Rad bi šel na Bled* (saya ingin ke Bled, laki-laki), *Rada bi šla* (perempuan). Bentuk ini terdengar sopan dan hati-hati, dan sangat sering dipakai untuk mengusulkan sesuatu tanpa memaksa."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Rencana dan niat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Dua belas kalimat untuk menyusun, mengusulkan, dan membatalkan rencana. Bentuk laki-laki; perempuan menambahkan *-a* pada kata berekor *-l*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Kaj boš delal jutri?*",
+              "kay bòsy DÉ-lau YU-tri",
+              "Besok kamu ngapain?"
+            ],
+            [
+              "*Bom doma.*",
+              "bom DÒ-ma",
+              "Saya di rumah."
+            ],
+            [
+              "*Bom študiral.*",
+              "bom sytu-DI-rau",
+              "Saya akan belajar."
+            ],
+            [
+              "*Ne bom imel časa.*",
+              "né bom i-MÉU CA-sa",
+              "Saya tidak akan sempat."
+            ],
+            [
+              "*Rad bi šel na Bled.*",
+              "rat bi syeu na blét",
+              "Saya ingin ke Bled."
+            ],
+            [
+              "*Gremo na kavo?*",
+              "GRÉ-mo na KA-vo",
+              "Ngopi, yuk?"
+            ],
+            [
+              "*Ti povem jutri.*",
+              "ti po-VÉM YU-tri",
+              "Besok saya kasih tahu."
+            ],
+            [
+              "*Takoj pridem.*",
+              "ta-KÒY PRI-dem",
+              "Saya segera datang."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Bomo videli* — harfiahnya \"kita akan melihat\" — dipakai persis seperti \"kita lihat nanti\" bahasa Indonesia: jawaban yang sopan, tidak mengikat, dan sedikit menunda. Orang Slovenia memakainya sesering orang Indonesia."
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan juga *Ti povem jutri*: kata kerja bentuk selesai *povedati* dipakai dalam bentuk sekarang, dan *ti* duduk di tempat kedua sebagai naslonka. Satu kalimat pendek yang memakai tiga aturan berbeda sekaligus — dan itu tanda kalau kamu sudah sampai di paruh kedua modul ini."
+        }
+      ]
+    },
+    {
+      "title": "Prosti čas — waktu luang",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Rencana biasanya berisi kegiatan, jadi berikut kegiatan yang paling sering disebut orang Slovenia ketika ditanya apa yang mereka lakukan di waktu luang."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**hoditi v hribe**",
+              "HÒ-di-ti u HRI-bé",
+              "naik gunung"
+            ],
+            [
+              "**smučati**",
+              "SMU-ca-ti",
+              "bermain ski"
+            ],
+            [
+              "**kolesariti**",
+              "ko-lé-SA-ri-ti",
+              "bersepeda"
+            ],
+            [
+              "**tekati**",
+              "TÉ-ka-ti",
+              "berlari"
+            ],
+            [
+              "**plavati**",
+              "PLA-va-ti",
+              "berenang"
+            ],
+            [
+              "**igrati nogomet**",
+              "i-GRA-ti NÒ-go-met",
+              "main sepak bola"
+            ],
+            [
+              "**poslušati glasbo**",
+              "po-SLU-sya-ti GLAS-bo",
+              "mendengarkan musik"
+            ],
+            [
+              "**gledati filme**",
+              "GLÉ-da-ti FIL-mé",
+              "menonton film"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Untuk mengatakan kamu suka melakukannya, pakai *rad* dari unit 9 — dan ingat bahwa ia ikut jenis kelamin **pembicaranya**: *Rad hodim v hribe* (laki-laki), *Rada hodim v hribe* (perempuan), *Radi hodimo v hribe* (kami)."
+        },
+        {
+          "type": "p",
+          "text": "**Hoditi v hribe** pantas mendapat perhatian khusus. Slovenia punya lebih dari sepuluh ribu kilometer jalur pendakian bertanda, dan mendaki adalah olahraga nasional yang sesungguhnya — bukan sekadar hobi akhir pekan. Kalau seseorang mengundangmu *v hribe*, jawaban yang tepat adalah *Z veseljem!* dan sepatu yang benar."
+        },
+        {
+          "type": "kotak",
+          "title": "Kalimat untuk menerima dan menolak ajakan",
+          "items": [
+            "*Z veseljem!* — Dengan senang hati!",
+            "*Super ideja!* — Ide bagus!",
+            "*Žal ne morem.* — Sayangnya saya tidak bisa.",
+            "*Mogoče drugič?* — Mungkin lain kali?"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "bom",
+      "baca": "bom",
+      "id": "saya akan"
+    },
+    {
+      "sl": "prihodnost",
+      "baca": "pri-HÒD-nost",
+      "id": "masa depan"
+    },
+    {
+      "sl": "jutri",
+      "baca": "YU-tri",
+      "id": "besok"
+    },
+    {
+      "sl": "prost",
+      "baca": "pròst",
+      "id": "luang; bebas"
+    },
+    {
+      "sl": "če",
+      "baca": "cé",
+      "id": "kalau; jika"
+    },
+    {
+      "sl": "mogoče",
+      "baca": "mo-GÒ-cé",
+      "id": "mungkin"
+    },
+    {
+      "sl": "načrt",
+      "baca": "NA-cert",
+      "id": "rencana"
+    },
+    {
+      "sl": "povedati",
+      "baca": "po-VÉ-da-ti",
+      "id": "memberi tahu"
+    },
+    {
+      "sl": "prosti čas",
+      "baca": "PRÒS-ti cas",
+      "id": "waktu luang"
+    },
+    {
+      "sl": "hribi",
+      "baca": "HRI-bi",
+      "id": "pegunungan"
+    },
+    {
+      "sl": "smučati",
+      "baca": "SMU-ca-ti",
+      "id": "bermain ski"
+    },
+    {
+      "sl": "kolesariti",
+      "baca": "ko-lé-SA-ri-ti",
+      "id": "bersepeda"
+    },
+    {
+      "sl": "plavati",
+      "baca": "PLA-va-ti",
+      "id": "berenang"
+    },
+    {
+      "sl": "glasba",
+      "baca": "GLAS-ba",
+      "id": "musik"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah ke bentuk masa depan.",
+      "items": [
+        "Delam doma. (laki-laki) — ____",
+        "Kuham večerjo. (perempuan) — ____",
+        "Gremo v hribe. — ____",
+        "Sem doma. (laki-laki) — ____",
+        "Lepo je. — ____",
+        "Midva bereva. (dua laki-laki) — ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk bom yang tepat.",
+      "items": [
+        "Jaz ____ študiral.",
+        "Ti ____ doma?",
+        "Maja ____ kuhala.",
+        "Midva ____ šla na Bled.",
+        "Mi ____ delali.",
+        "Oni ____ prišli jutri."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Slovenia (pembicara laki-laki).",
+      "items": [
+        "Besok kamu ngapain?",
+        "Saya akan belajar.",
+        "Saya di rumah.",
+        "Saya tidak akan sempat.",
+        "Kalau cerah, kita naik gunung.",
+        "Kita lihat nanti."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 15. Terjemahkan ke bahasa Slovenia tanpa melihat unitnya.",
+      "items": [
+        "Kepala saya sakit.",
+        "Badan saya tidak enak.",
+        "Saya demam.",
+        "Saya butuh obat.",
+        "Apotek terdekat di mana?"
+      ]
+    }
+  ],
+  "answers": [
+    "Bom delal doma. — Bom kuhala večerjo. — Bomo šli v hribe. — Bom doma. — Bo lepo. — Bova brala.",
+    "bom — boš — bo — bova — bomo — bodo",
+    "Kaj boš delal jutri? — Bom študiral. — Bom doma. — Ne bom imel časa. — Če bo lepo, gremo v hribe. — Bomo videli.",
+    "Boli me glava. — Slabo mi je. — Imam vročino. — Potrebujem zdravilo. — Kje je najbližja lekarna?"
+  ]
+}

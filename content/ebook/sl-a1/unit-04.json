@@ -1,0 +1,572 @@
+{
+  "title": "Ini apa? — tiga jenis kata benda",
+  "title_target": "Kaj je to?",
+  "goal": "Menamai benda di sekitarmu, membaca jenis kata benda dari huruf terakhirnya, dan memasang kata sifat yang ikut berubah mengikuti kata bendanya — dalam tiga jenis dan tiga jumlah sekaligus.",
+  "bekal": [
+    "menebak jenis kata benda dari huruf terakhirnya, dan mengenali empat kata perempuan yang menyamar",
+    "menyesuaikan kata sifat: *nov slovar*, *nova knjiga*, *novo okno*",
+    "memakai *to je* untuk memperkenalkan benda, dan *ta / tisti* untuk menunjuk"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Nova soba",
+      "intro": "Maja datang melihat kamar kos Budi untuk pertama kali. Di kamar itu ada barang milik penghuni sebelumnya.",
+      "lines": [
+        {
+          "speaker": "Maja:",
+          "text": "Lepa soba! Kaj je to?",
+          "id": "Kamarnya bagus! Ini apa?",
+          "literal": "indah kamar! apa adalah ini?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "To je slovar. Nov je in zelo debel.",
+          "id": "Ini kamus. Baru dan tebal sekali.",
+          "literal": "ini adalah kamus. baru adalah dan sangat tebal."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "In tam? Kaj sta tisti dve knjigi?",
+          "id": "Dan di sana? Dua buku itu apa?",
+          "literal": "dan di-sana? apa adalah-berdua itu-dua-perempuan dua buku?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Stara učbenika. Nista moja.",
+          "id": "Dua buku pelajaran lama. Bukan punya saya.",
+          "literal": "lama dua-buku-pelajaran. tidak-adalah-berdua milikku-berdua."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Čigava sta?",
+          "id": "Punya siapa?",
+          "literal": "milik-siapa-berdua adalah-berdua?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Od Luke. Miza je tudi njegova.",
+          "id": "Punya Luka. Mejanya juga punya dia.",
+          "literal": "dari Luka. meja adalah juga miliknya-perempuan."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Aha. In to okno je veliko — soba je svetla.",
+          "id": "Oh begitu. Dan jendela ini besar — kamarnya jadi terang.",
+          "literal": "aha. dan ini jendela adalah besar — kamar adalah terang."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja, ampak zunaj je hrupno.",
+          "id": "Iya, tapi di luar berisik.",
+          "literal": "ya, tapi di-luar adalah berisik."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Kje pa je tvoja postelja?",
+          "id": "Kalau ranjangmu di mana?",
+          "literal": "di-mana tapi adalah milikmu-perempuan ranjang?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tam. Majhna je, ampak udobna.",
+          "id": "Di sana. Kecil, tapi nyaman.",
+          "literal": "di-sana. kecil-perempuan adalah, tapi nyaman-perempuan."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Super. Soba je res prijetna.",
+          "id": "Mantap. Kamarnya benar-benar enak.",
+          "literal": "hebat. kamar adalah sungguh menyenangkan-perempuan."
+        }
+      ],
+      "notes": [
+        "**To je tidak pernah berubah.** Untuk memperkenalkan benda apa pun, bentuknya selalu *To je…* — *To je slovar* (laki-laki), *To je knjiga* (perempuan), *To je okno* (netral). Yang berubah cuma jumlahnya: *To sta…* untuk dua, *To so…* untuk tiga ke atas. Jadi kalimat paling berguna di unit ini justru satu-satunya yang tidak menuntut apa-apa darimu.",
+        "**Kata sifat menempel pada jenis kata bendanya.** *Nov slovar*, *nova knjiga*, *novo okno* — satu kata sifat, tiga ekor. Bahasa Indonesia menulis \"baru\" tiga kali dengan cara yang sama; bahasa Slovenia tidak punya pilihan itu. Kabar baiknya, ekornya sama persis dengan ekor kata bendanya, jadi begitu kamu tahu jenisnya, kata sifatnya mengikuti sendiri.",
+        "**Nista moja — dua-duanya berbentuk dvojina.** *Nista* adalah bentuk negatif *sta*, dan *moja* di sini bukan bentuk perempuan melainkan bentuk dvojina laki-laki dari *moj*. Bentuk kembar semacam ini akan sering muncul; yang membongkarnya selalu kata kerjanya.",
+        "**Čigav = \"milik siapa\", dan ia sendiri kata sifat.** Karena itu ia ikut berubah: *Čigav slovar?* (laki-laki), *Čigava knjiga?* (perempuan), *Čigavo okno?* (netral), *Čigava sta?* (dua). Bahasa Indonesia cukup dengan \"punya siapa\" untuk semuanya.",
+        "**Hrupno dan svetla — kata sifat sebagai pengabar keadaan.** Di *Soba je svetla*, kata sifatnya berjenis perempuan karena *soba* perempuan. Tapi di *Zunaj je hrupno*, tidak ada kata benda sama sekali — jadi bahasa Slovenia memakai bentuk **netral** sebagai bentuk cadangan. Pola yang sama dipakai untuk cuaca di unit 16: *Toplo je* (hangat), *Mrzlo je* (dingin)."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga jenis kata benda — dibaca dari huruf terakhir",
+          "body": [
+            "Berbeda dari bahasa Jerman atau Prancis, jenis kata benda bahasa Slovenia hampir selalu bisa **dilihat**, bukan dihafal. Huruf terakhirnya yang memberi tahu."
+          ],
+          "table": {
+            "head": [
+              "Jenis",
+              "Berakhiran",
+              "Contoh",
+              "Cara baca"
+            ],
+            "rows": [
+              [
+                "**moški** (laki-laki)",
+                "huruf mati",
+                "*slovar*, *stol*, *avto*, *dan*",
+                "slo-VAR, stou, AU-to, dan"
+              ],
+              [
+                "**ženski** (perempuan)",
+                "**-a**",
+                "*knjiga*, *miza*, *soba*, *hiša*",
+                "KNYI-ga, MI-za, SÒ-ba, HI-sya"
+              ],
+              [
+                "**srednji** (netral)",
+                "**-o** atau **-e**",
+                "*okno*, *mesto*, *morje*, *sonce*",
+                "ÒK-no, MÉS-to, MÒR-yé, SÒN-tsé"
+              ]
+            ]
+          },
+          "after": [
+            "Tiga baris itu menutup mungkin sembilan dari sepuluh kata benda yang akan kamu temui di tingkat A1. Perhatikan bahwa *avto* (mobil) berakhiran *-o* tetapi tetap **laki-laki** — ia kata pinjaman yang membawa jenisnya sendiri, seperti *radio* dan *kino*.",
+            "Ada satu kelompok pengecualian yang benar-benar perlu dihafal: **kata perempuan yang berakhiran huruf mati**. Jumlahnya tidak banyak, tetapi semuanya sering dipakai: *noč* (malam), *stvar* (barang, hal), *misel* (pikiran), *ljubezen* (cinta), *pomoč* (bantuan), *jesen* (musim gugur)."
+          ]
+        },
+        {
+          "title": "Kata sifat: tiga jenis kali tiga jumlah",
+          "body": [
+            "Ini tabel yang perlu kamu lihat sekali secara utuh, lalu boleh kamu tinggalkan. Isinya kata sifat *lep* (indah) menempel pada tiga kata benda dari tiga jenis."
+          ],
+          "table": {
+            "head": [
+              "Jenis",
+              "Satu",
+              "Dua",
+              "Tiga ke atas"
+            ],
+            "rows": [
+              [
+                "laki-laki",
+                "**lep** slovar",
+                "**lepa** slovarja",
+                "**lepi** slovarji"
+              ],
+              [
+                "perempuan",
+                "**lepa** knjiga",
+                "**lepi** knjigi",
+                "**lepe** knjige"
+              ],
+              [
+                "netral",
+                "**lepo** okno",
+                "**lepi** okni",
+                "**lepa** okna"
+              ],
+              [
+                "laki-laki",
+                "**nov** stol",
+                "**nova** stola",
+                "**novi** stoli"
+              ],
+              [
+                "perempuan",
+                "**nova** miza",
+                "**novi** mizi",
+                "**nove** mize"
+              ],
+              [
+                "netral",
+                "**novo** mesto",
+                "**novi** mesti",
+                "**nova** mesta"
+              ]
+            ]
+          },
+          "after": [
+            "Yang menolong: **ekor kata sifat dan ekor kata bendanya bersajak**. *Nova miza*, *novi mizi*, *nove mize* — begitu telingamu terbiasa, tanganmu memilih ekornya tanpa membuka tabel.",
+            "Waspadai satu kembaran yang rapi: bentuk **lepa** muncul dua kali — untuk satu benda perempuan (*lepa knjiga*) dan untuk dua benda laki-laki (*lepa slovarja*). Sekali lagi, kata kerjanya yang membongkar: *je* untuk satu, *sta* untuk dua."
+          ]
+        },
+        {
+          "title": "Ta in tisti — ini dan itu",
+          "body": [
+            "Bahasa Slovenia memilah jarak jadi dua, seperti bahasa Indonesia. Dua-duanya kata sifat, jadi dua-duanya ikut berubah."
+          ],
+          "table": {
+            "head": [
+              "Jarak",
+              "laki-laki",
+              "perempuan",
+              "netral",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "dekat",
+                "**ta** slovar",
+                "**ta** knjiga",
+                "**to** okno",
+                "ini"
+              ],
+              [
+                "jauh",
+                "**tisti** slovar",
+                "**tista** knjiga",
+                "**tisto** okno",
+                "itu"
+              ],
+              [
+                "dekat, dua",
+                "**ta** slovarja",
+                "**ti** knjigi",
+                "**ti** okni",
+                "kedua ini"
+              ],
+              [
+                "jauh, dua",
+                "**tista** slovarja",
+                "**tisti** knjigi",
+                "**tisti** okni",
+                "kedua itu"
+              ],
+              [
+                "dekat, 3+",
+                "**ti** slovarji",
+                "**te** knjige",
+                "**ta** okna",
+                "ini semua"
+              ],
+              [
+                "jauh, 3+",
+                "**tisti** slovarji",
+                "**tiste** knjige",
+                "**tista** okna",
+                "itu semua"
+              ]
+            ]
+          },
+          "after": [
+            "Jangan tertukar antara **ta** sebagai penunjuk (*ta knjiga* = buku ini) dan **to** sebagai kata pembuka kalimat (*To je knjiga* = ini buku). Yang pertama menempel pada kata benda; yang kedua berdiri sendiri dan tidak pernah berubah.",
+            "Di percakapan sehari-hari, orang Slovenia sering menambahkan *-le*: *tale* (ini nih), *tistile* (itu tuh). Ia menambahkan rasa menunjuk dengan jari, dan sangat sering terdengar di pasar."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "V sobi — benda di sekitarmu",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cara tercepat memasang tiga jenis kata benda adalah dengan menghafalnya bersama satu kata sifat, bukan sendirian. Jadi jangan menghafal *miza*; hafalkan *velika miza*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Jenis",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**stol**",
+              "stou",
+              "laki-laki",
+              "kursi"
+            ],
+            [
+              "**slovar**",
+              "slo-VAR",
+              "laki-laki",
+              "kamus"
+            ],
+            [
+              "**telefon**",
+              "té-lé-FON",
+              "laki-laki",
+              "telepon"
+            ],
+            [
+              "**računalnik**",
+              "ra-cu-NAU-nik",
+              "laki-laki",
+              "komputer"
+            ],
+            [
+              "**ključ**",
+              "klyuc",
+              "laki-laki",
+              "kunci"
+            ],
+            [
+              "**miza**",
+              "MI-za",
+              "perempuan",
+              "meja"
+            ],
+            [
+              "**knjiga**",
+              "KNYI-ga",
+              "perempuan",
+              "buku"
+            ],
+            [
+              "**soba**",
+              "SÒ-ba",
+              "perempuan",
+              "kamar"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan **računalnik** (komputer): huruf *l* di tengahnya jatuh sebelum huruf mati, jadi dibaca **ra-cu-NAU-nik**. Kata ini juga contoh bagus kebiasaan Slovenia menolak kata pinjaman — banyak bahasa memakai \"computer\", Slovenia membangun katanya sendiri dari *računati* (menghitung)."
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga kalimat yang membuka semua benda",
+          "items": [
+            "*Kaj je to?* — Ini apa? Jawabannya: *To je …*",
+            "*Kako se reče \"meja\" po slovensko?* — Bagaimana mengatakan \"meja\" dalam bahasa Slovenia?",
+            "*Kaj pomeni \"miza\"?* — Apa arti \"miza\"?"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kata sifat yang paling sering dipakai",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sepuluh pasang berikut menutup hampir semua yang perlu kamu katakan tentang benda di tingkat A1. Semuanya ditulis dalam bentuk laki-laki tunggal — bentuk kamus."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Bahasa Indonesia",
+            "Lawannya"
+          ],
+          "rows": [
+            [
+              "**velik**",
+              "vé-LIK",
+              "besar",
+              "*majhen* (MAY-hen) — kecil"
+            ],
+            [
+              "**nov**",
+              "nou",
+              "baru",
+              "*star* (star) — lama, tua"
+            ],
+            [
+              "**dober**",
+              "DÒ-ber",
+              "baik, bagus",
+              "*slab* (slap) — buruk"
+            ],
+            [
+              "**lep**",
+              "lép",
+              "indah, cantik",
+              "*grd* (gert) — jelek"
+            ],
+            [
+              "**drag**",
+              "drak",
+              "mahal",
+              "*poceni* (po-TSÉ-ni) — murah"
+            ],
+            [
+              "**topel**",
+              "TÒ-peu",
+              "hangat",
+              "*mrzel* (MER-zeu) — dingin"
+            ],
+            [
+              "**težek**",
+              "TÉ-zhek",
+              "berat, sulit",
+              "*lahek* (LA-hek) — ringan, mudah"
+            ],
+            [
+              "**dolg**",
+              "douk",
+              "panjang",
+              "*kratek* (KRA-tek) — pendek"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan *grd* — kata sifat tanpa huruf hidup sama sekali, dibaca **gert** dengan e pepet sebelum *r*, persis seperti dijanjikan di halaman pelafalan. Dan *poceni* (murah) adalah satu-satunya di daftar ini yang **tidak pernah berubah bentuk**: *poceni knjiga*, *poceni slovar*, *poceni okno*. Ia satu-satunya hadiah gratis di halaman ini."
+        },
+        {
+          "type": "p",
+          "text": "Untuk menguatkan, taruh *zelo* (sangat) di depan: *zelo velik*, *zelo lepa*, *zelo poceni*. Untuk melemahkan, pakai *precej* (cukup) atau *malo* (agak): *precej velik*, *malo star*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "*Ta soba je zelo lepa.*",
+              "ta SÒ-ba yé zé-LO LÉ-pa",
+              "Kamar ini bagus sekali."
+            ],
+            [
+              "*Tisti slovar je predrag.*",
+              "TIS-ti slo-VAR yé pré-DRAK",
+              "Kamus itu terlalu mahal."
+            ],
+            [
+              "*Knjiga je nova.*",
+              "KNYI-ga yé NÒ-va",
+              "Bukunya baru."
+            ],
+            [
+              "*Okno je veliko.*",
+              "ÒK-no yé vé-LI-ko",
+              "Jendelanya besar."
+            ],
+            [
+              "*Stola sta stara.*",
+              "STÒ-la sta STA-ra",
+              "Kedua kursi itu tua."
+            ],
+            [
+              "*Mize so čiste.*",
+              "MI-zé so CIS-té",
+              "Meja-mejanya bersih."
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "kaj",
+      "baca": "kay",
+      "id": "apa"
+    },
+    {
+      "sl": "to",
+      "baca": "to",
+      "id": "ini (pembuka kalimat)"
+    },
+    {
+      "sl": "ta",
+      "baca": "ta",
+      "id": "ini (menunjuk benda)"
+    },
+    {
+      "sl": "tisti",
+      "baca": "TIS-ti",
+      "id": "itu"
+    },
+    {
+      "sl": "tam",
+      "baca": "tam",
+      "id": "di sana"
+    },
+    {
+      "sl": "zunaj",
+      "baca": "ZU-nay",
+      "id": "di luar"
+    },
+    {
+      "sl": "soba",
+      "baca": "SÒ-ba",
+      "id": "kamar"
+    },
+    {
+      "sl": "miza",
+      "baca": "MI-za",
+      "id": "meja"
+    },
+    {
+      "sl": "stol",
+      "baca": "stou",
+      "id": "kursi"
+    },
+    {
+      "sl": "okno",
+      "baca": "ÒK-no",
+      "id": "jendela"
+    },
+    {
+      "sl": "postelja",
+      "baca": "pos-TÉ-lya",
+      "id": "ranjang"
+    },
+    {
+      "sl": "slovar",
+      "baca": "slo-VAR",
+      "id": "kamus"
+    },
+    {
+      "sl": "učbenik",
+      "baca": "uc-BÉ-nik",
+      "id": "buku pelajaran"
+    },
+    {
+      "sl": "velik",
+      "baca": "vé-LIK",
+      "id": "besar"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk kata sifat yang tepat.",
+      "items": [
+        "To je ____ slovar. (nov)",
+        "To je ____ knjiga. (nov)",
+        "To je ____ okno. (nov)",
+        "Soba je ____. (majhen)",
+        "Mesto je ____. (velik)",
+        "Mizi sta ____. (star)"
+      ]
+    },
+    {
+      "prompt": "Tulis jenis kata bendanya: moški, ženski, atau srednji.",
+      "items": [
+        "hiša — ____",
+        "stol — ____",
+        "morje — ____",
+        "avto — ____",
+        "noč — ____",
+        "stanovanje — ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Slovenia.",
+      "items": [
+        "Ini apa?",
+        "Ini buku. Bukunya baru.",
+        "Kamar ini kecil, tapi nyaman.",
+        "Jendela itu besar.",
+        "Kamus itu terlalu mahal.",
+        "Punya siapa dua buku itu?"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 2. Terjemahkan ke bahasa Slovenia tanpa melihat unitnya.",
+      "items": [
+        "Kamu dari mana?",
+        "Saya dari Indonesia.",
+        "Kamu tinggal di mana?",
+        "Saya tinggal di Ljubljana.",
+        "Saya bicara sedikit bahasa Slovenia."
+      ]
+    }
+  ],
+  "answers": [
+    "nov — nova — novo — majhna — veliko — stari",
+    "ženski — moški — srednji — moški — ženski — srednji",
+    "Kaj je to? — To je knjiga. Knjiga je nova. — Ta soba je majhna, ampak udobna. — Tisto okno je veliko. — Tisti slovar je predrag. — Čigavi sta tisti dve knjigi?",
+    "Od kod si? — Iz Indonezije sem. — Kje živiš? — Živim v Ljubljani. — Govorim malo slovensko."
+  ]
+}

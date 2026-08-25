@@ -1,0 +1,544 @@
+{
+  "title": "Cuacanya bagaimana? — kalimat tanpa pelaku",
+  "title_target": "Kakšno je vreme?",
+  "goal": "Membicarakan cuaca dan musim, lalu membandingkan dua hal — sekaligus menemukan satu tempat langka di mana bahasa Slovenia berperilaku persis seperti bahasa Indonesia: kalimat cuaca tidak punya pelaku sama sekali.",
+  "bekal": [
+    "memakai kata kerja tanpa pelaku: *dežuje*, *sneži*, *grmi*, *piha*",
+    "menyebut keadaan dengan bentuk netral: *toplo je*, *hladno je*, *oblačno je*",
+    "membandingkan dengan *-ejši* dan *kot*: *topleje kot včeraj*, *najlepši dan*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Kdo dežuje?",
+      "intro": "Pagi berhujan di depan jendela asrama. Budi memandang keluar dan menemukan kalimat tanpa pelaku.",
+      "lines": [
+        {
+          "speaker": "Maja:",
+          "text": "Kakšno je vreme danes?",
+          "id": "Cuacanya hari ini gimana?",
+          "literal": "bagaimana-punya adalah cuaca hari-ini?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dežuje. In hladno je.",
+          "id": "Hujan. Dan dingin.",
+          "literal": "menghujan. dan dingin-netral adalah."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Kdo dežuje?",
+          "id": "Siapa yang menghujan?",
+          "literal": "siapa menghujan?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nihče. Preprosto dežuje.",
+          "id": "Tidak ada siapa-siapa. Ya hujan saja.",
+          "literal": "tidak-ada-siapa-pun. sederhana menghujan."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Tako je. Vreme nima osebka.",
+          "id": "Betul. Cuaca tidak punya pelaku.",
+          "literal": "begitu adalah. cuaca tidak-punya dari-pelaku."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kot v indonezijščini: hujan. Ena beseda.",
+          "id": "Seperti bahasa Indonesia: hujan. Satu kata.",
+          "literal": "seperti di Indonesia-bahasa: hujan. satu kata."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Jutri bo topleje. Menda celo sonce.",
+          "id": "Besok lebih hangat. Katanya bahkan cerah.",
+          "literal": "besok akan lebih-hangat. katanya bahkan matahari."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Topleje — to je od topel?",
+          "id": "\"Topleje\" itu dari \"topel\"?",
+          "literal": "lebih-hangat — ini adalah dari hangat?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Ja. Topel, toplejši, najtoplejši.",
+          "id": "Iya. Hangat, lebih hangat, paling hangat.",
+          "literal": "ya. hangat, lebih-hangat, paling-hangat."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Potem gremo v hribe, če bo lepo.",
+          "id": "Kalau cerah, kita naik gunung.",
+          "literal": "kemudian kami-pergi ke gunung-jamak, kalau akan indah."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Velja. Vzemi jakno — vreme se hitro spremeni.",
+          "id": "Sip. Bawa jaket — cuaca di sini cepat berubah.",
+          "literal": "berlaku. ambillah jaket-sasaran — cuaca diri cepat berubah."
+        }
+      ],
+      "notes": [
+        "**Dežuje tidak punya pelaku, dan itu memang disengaja.** Bahasa Inggris terpaksa mengarang pelaku palsu — *it is raining*, dan tidak ada yang tahu siapa \"it\" itu. Bahasa Slovenia tidak repot: kata kerjanya berdiri sendiri, persis seperti \"hujan\" bahasa Indonesia. Ini salah satu dari sedikit tempat di mana kamu justru diuntungkan oleh bahasa ibumu.",
+        "**Kalau bukan kata kerja, pakai bentuk netral.** *Toplo je*, *Hladno je*, *Oblačno je*, *Megleno je*. Bentuk berekor *-o* adalah bentuk netral kata sifat, dan ia dipakai sebagai cadangan setiap kali tidak ada kata benda yang bisa diikuti. Pola ini sudah muncul di unit 4 lewat *Zunaj je hrupno*.",
+        "**Topleje adalah kata keterangan, toplejši adalah kata sifat.** *Jutri bo toplej**e*** (besok akan lebih hangat — tentang keadaan), tetapi *toplej**ši** dan* (hari yang lebih hangat — tentang benda). Pemilahan yang sama berlaku untuk semuanya: *bolje* melawan *boljši*, *lepše* melawan *lepši*.",
+        "**Menda = katanya, konon.** Satu kata untuk sesuatu yang kamu dengar tapi belum kamu pastikan. Saudaranya: *baje* (katanya), *očitno* (rupanya), *verjetno* (kemungkinan). Keempatnya sangat sering dipakai dan sangat mudah — tidak satu pun menuntut perubahan bentuk.",
+        "**Vreme se hitro spremeni** bukan basa-basi. Slovenia sekecil Jawa Tengah tetapi memuat pegunungan Alpen, dataran Pannonia, dan pantai Mediterania sekaligus; hujan bisa berpindah dari satu ke yang lain dalam satu jam. Ramalan cuaca disebut **vremenska napoved**, dan orang Slovenia membacanya seserius orang Jakarta membaca peta kemacetan."
+      ],
+      "grammars": [
+        {
+          "title": "Vreme — kata kerja dan keadaan tanpa pelaku",
+          "body": [
+            "Dua kelompok, dan dua-duanya tidak menuntut satu pun kata benda di depannya."
+          ],
+          "table": {
+            "head": [
+              "Slovenščina",
+              "Cara baca",
+              "Bahasa Indonesia",
+              "Jenis"
+            ],
+            "rows": [
+              [
+                "**dežuje**",
+                "dé-ZHU-yé",
+                "hujan",
+                "kata kerja"
+              ],
+              [
+                "**sneži**",
+                "sné-ZHI",
+                "turun salju",
+                "kata kerja"
+              ],
+              [
+                "**grmi**",
+                "gér-MI",
+                "guntur",
+                "kata kerja"
+              ],
+              [
+                "**piha**",
+                "PI-ha",
+                "berangin",
+                "kata kerja"
+              ],
+              [
+                "**toplo je**",
+                "TÒ-plo yé",
+                "hangat",
+                "bentuk netral"
+              ],
+              [
+                "**hladno je**",
+                "HLAD-no yé",
+                "sejuk",
+                "bentuk netral"
+              ],
+              [
+                "**mrzlo je**",
+                "MERZ-lo yé",
+                "dingin",
+                "bentuk netral"
+              ],
+              [
+                "**vroče je**",
+                "vro-CÉ yé",
+                "panas",
+                "bentuk netral"
+              ]
+            ]
+          },
+          "after": [
+            "Bentuk lampaunya memakai netral: *Deževalo je* (tadi hujan), *Toplo je bilo* (tadi hangat), *Snežilo je* (tadi turun salju). Bentuk masa depannya juga: *Jutri bo deževalo*, *Jutri bo toplo*.",
+            "Untuk bertanya: *Kakšno je vreme?* (cuacanya bagaimana) atau *Kako je zunaj?* (di luar bagaimana). Jawaban paling sering: *Lepo je* (bagus), *Grdo je* (jelek) — dan ya, orang Slovenia benar-benar menyebut cuaca buruk sebagai \"jelek\"."
+          ]
+        },
+        {
+          "title": "Membandingkan — lebih dan paling",
+          "body": [
+            "Untuk membuat kata sifat jadi \"lebih\", tambahkan **-ejši** atau **-ji**. Untuk membuatnya \"paling\", tambahkan awalan **naj-** di depan bentuk itu. Dua langkah, dan seluruh sistem perbandingan selesai."
+          ],
+          "table": {
+            "head": [
+              "Biasa",
+              "Lebih",
+              "Paling",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "**topel**",
+                "*toplejši*",
+                "*najtoplejši*",
+                "hangat"
+              ],
+              [
+                "**lep**",
+                "*lepši*",
+                "*najlepši*",
+                "indah"
+              ],
+              [
+                "**star**",
+                "*starejši*",
+                "*najstarejši*",
+                "tua"
+              ],
+              [
+                "**mlad**",
+                "*mlajši*",
+                "*najmlajši*",
+                "muda"
+              ],
+              [
+                "**velik**",
+                "*večji*",
+                "*največji*",
+                "besar"
+              ],
+              [
+                "**majhen**",
+                "*manjši*",
+                "*najmanjši*",
+                "kecil"
+              ],
+              [
+                "**dober**",
+                "*boljši*",
+                "*najboljši*",
+                "baik"
+              ],
+              [
+                "**slab**",
+                "*slabši*",
+                "*najslabši*",
+                "buruk"
+              ],
+              [
+                "**drag**",
+                "*dražji*",
+                "*najdražji*",
+                "mahal"
+              ],
+              [
+                "**dolg**",
+                "*daljši*",
+                "*najdaljši*",
+                "panjang"
+              ]
+            ]
+          },
+          "after": [
+            "Untuk mengatakan \"lebih … daripada\", pakai **kot**: *Danes je topleje **kot** včeraj* (hari ini lebih hangat daripada kemarin), *Ljubljana je manjša **kot** Jakarta*. Kata *kot* juga berarti \"seperti\": *bel kot sneg* (seputih salju).",
+            "Kalau kata sifatnya panjang atau canggung, bahasa Slovenia memakai jalan pintas dengan **bolj** (lebih) dan **manj** (kurang): *bolj zanimiv* (lebih menarik), *manj drag* (kurang mahal). Cara ini selalu benar, jadi ia cadangan yang bagus kalau bentuk berekor tidak muncul di kepalamu."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Vreme — kosakata cuaca",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Slovenia punya empat musim yang berbeda tajam, dan cuaca adalah topik pembuka percakapan nomor satu — persis seperti lalu lintas di Jakarta."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**vreme**",
+              "VRÉ-mé",
+              "cuaca"
+            ],
+            [
+              "**sonce**",
+              "SÒN-tsé",
+              "matahari"
+            ],
+            [
+              "**dež**",
+              "désy",
+              "hujan"
+            ],
+            [
+              "**sneg**",
+              "snék",
+              "salju"
+            ],
+            [
+              "**veter**",
+              "VÉ-ter",
+              "angin"
+            ],
+            [
+              "**oblak**",
+              "o-BLAK",
+              "awan"
+            ],
+            [
+              "**megla**",
+              "még-LA",
+              "kabut"
+            ],
+            [
+              "**nevihta**",
+              "né-VIH-ta",
+              "badai petir"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "*Danes je lepo.*",
+              "DA-nes yé LÉ-po",
+              "Hari ini cerah."
+            ],
+            [
+              "*Zunaj je mrzlo.*",
+              "ZU-nay yé MERZ-lo",
+              "Di luar dingin."
+            ],
+            [
+              "*Kakšna je napoved?*",
+              "KAKSY-na yé na-po-VÉT",
+              "Ramalannya bagaimana?"
+            ],
+            [
+              "*Jutri bo deževalo.*",
+              "YU-tri bo dé-zhé-VA-lo",
+              "Besok akan hujan."
+            ],
+            [
+              "*Pet stopinj.*",
+              "pét sto-PINY",
+              "Lima derajat."
+            ],
+            [
+              "*Minus tri.*",
+              "MI-nus tri",
+              "Minus tiga."
+            ],
+            [
+              "*Vzemi dežnik.*",
+              "UZÉ-mi dézh-NIK",
+              "Bawa payung."
+            ],
+            [
+              "*Sneži!*",
+              "sné-ZHI",
+              "Turun salju!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan *pet stopinj* — bentuk rodilnik množine dari *stopinja*, karena angkanya lima. Aturan unit 5 muncul lagi, di tempat yang paling tidak diduga. Untuk dua derajat: *dve stopinji*."
+        },
+        {
+          "type": "p",
+          "text": "Bagi pendatang dari Indonesia, angka yang perlu disiapkan mental: Ljubljana pada Januari sering berada di sekitar **nol sampai minus lima**, dan matahari terbenam jam empat sore. Sebaliknya, Juli bisa mencapai tiga puluh lima derajat dengan udara kering — panas yang terasa sangat berbeda dari panas tropis."
+        }
+      ]
+    },
+    {
+      "title": "Musim dan apa yang orang lakukan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Empat musim, empat kata keterangan, dan empat rombongan kegiatan. Perhatikan bahwa bentuk *spomladi*, *poleti*, *jeseni*, *pozimi* berdiri sendiri tanpa kata depan."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Musim",
+            "Pada musim itu",
+            "Cuacanya",
+            "Kegiatan khas"
+          ],
+          "rows": [
+            [
+              "**pomlad**",
+              "*spomladi*",
+              "*Postaja topleje.*",
+              "*Gremo na sprehod.*"
+            ],
+            [
+              "**poletje**",
+              "*poleti*",
+              "*Vroče je.*",
+              "*Gremo na morje.*"
+            ],
+            [
+              "**jesen**",
+              "*jeseni*",
+              "*Dežuje in piha.*",
+              "*Nabiramo gobe.*"
+            ],
+            [
+              "**zima**",
+              "*pozimi*",
+              "*Sneži in mrzlo je.*",
+              "*Gremo smučat.*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dua kegiatan di kolom terakhir layak diperhatikan karena keduanya bagian dari jati diri Slovenia. **Nabiranje gob** — mencari jamur di hutan pada musim gugur — adalah kegiatan keluarga yang dilakukan puluhan ribu orang, lengkap dengan buku pengenal jamur dan aturan resmi berapa kilogram yang boleh dibawa pulang. Dan **smučanje** (bermain ski) diajarkan di sekolah dasar; hampir setiap orang Slovenia bisa main ski sebelum bisa naik sepeda."
+        },
+        {
+          "type": "p",
+          "text": "Kalimat yang akan membuka percakapan di mana pun: *Lepo vreme, kajne?* (cuacanya bagus, ya?). Kata *kajne* di ujung kalimat berarti \"kan?\" dan dipakai persis seperti itu — pertanyaan sopan yang tidak menuntut jawaban."
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga kalimat perbandingan untuk dipakai hari ini",
+          "items": [
+            "*Danes je topleje kot včeraj.* — Hari ini lebih hangat daripada kemarin.",
+            "*To je najboljša kava v Ljubljani.* — Ini kopi terbaik di Ljubljana.",
+            "*Ljubljana je manjša kot Jakarta, ampak lepša.* — Ljubljana lebih kecil daripada Jakarta, tapi lebih indah. (Ucapkan ini kepada orang Slovenia dan lihat reaksinya.)"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "vreme",
+      "baca": "VRÉ-mé",
+      "id": "cuaca"
+    },
+    {
+      "sl": "dežuje",
+      "baca": "dé-ZHU-yé",
+      "id": "hujan"
+    },
+    {
+      "sl": "sneži",
+      "baca": "sné-ZHI",
+      "id": "turun salju"
+    },
+    {
+      "sl": "sonce",
+      "baca": "SÒN-tsé",
+      "id": "matahari"
+    },
+    {
+      "sl": "dež",
+      "baca": "désy",
+      "id": "hujan (kata benda)"
+    },
+    {
+      "sl": "sneg",
+      "baca": "snék",
+      "id": "salju"
+    },
+    {
+      "sl": "veter",
+      "baca": "VÉ-ter",
+      "id": "angin"
+    },
+    {
+      "sl": "oblačno",
+      "baca": "o-BLAC-no",
+      "id": "mendung"
+    },
+    {
+      "sl": "jasno",
+      "baca": "YAS-no",
+      "id": "cerah"
+    },
+    {
+      "sl": "toplo",
+      "baca": "TÒ-plo",
+      "id": "hangat"
+    },
+    {
+      "sl": "mrzlo",
+      "baca": "MERZ-lo",
+      "id": "dingin"
+    },
+    {
+      "sl": "vroče",
+      "baca": "vro-CÉ",
+      "id": "panas"
+    },
+    {
+      "sl": "stopinja",
+      "baca": "sto-PI-nya",
+      "id": "derajat"
+    },
+    {
+      "sl": "napoved",
+      "baca": "na-po-VÉT",
+      "id": "ramalan"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan keadaan cuacanya.",
+      "items": [
+        "Hujan. — ____",
+        "Turun salju. — ____",
+        "Dingin. — ____",
+        "Mendung. — ____",
+        "Cerah. — ____",
+        "Berangin. — ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk perbandingan yang tepat.",
+      "items": [
+        "Danes je ____ kot včeraj. (toplo)",
+        "Ljubljana je ____ kot Jakarta. (majhen)",
+        "To je ____ kava v mestu. (naj + dober)",
+        "Moj brat je ____ kot jaz. (star)",
+        "Ta knjiga je ____ kot tista. (drag)",
+        "To je ____ dan v letu. (naj + lep)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Slovenia.",
+      "items": [
+        "Cuacanya hari ini gimana?",
+        "Hujan dan dingin.",
+        "Besok akan lebih hangat.",
+        "Ramalannya bagaimana?",
+        "Bawa payung.",
+        "Hari ini lebih hangat daripada kemarin."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 14. Terjemahkan ke bahasa Slovenia tanpa melihat unitnya.",
+      "items": [
+        "Masak apa?",
+        "Saya masak sup.",
+        "Saya suka memasak.",
+        "Enak sekali.",
+        "Saya kenyang, terima kasih."
+      ]
+    }
+  ],
+  "answers": [
+    "Dežuje. — Sneži. — Mrzlo je. — Oblačno je. — Jasno je. — Piha.",
+    "topleje — manjša — najboljša — starejši — dražja — najlepši",
+    "Kakšno je vreme danes? — Dežuje in hladno je. — Jutri bo topleje. — Kakšna je napoved? — Vzemi dežnik. — Danes je topleje kot včeraj.",
+    "Kaj kuhaš? — Kuham juho. — Rad kuham. — Je zelo dobro. — Sit sem, hvala."
+  ]
+}

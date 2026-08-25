@@ -1,0 +1,494 @@
+{
+  "title": "Kepalaku sakit — kalimat yang membalik pelakunya",
+  "title_target": "Boli me glava",
+  "goal": "Mengatakan bagian mana yang sakit, bertahan di apotek dan di ruang dokter — dan memasang satu pola kalimat yang membalik cara berpikirmu: yang sakit bukan kamu, melainkan bagian badanmu, dan kamulah sasarannya.",
+  "bekal": [
+    "menyebut bagian badan dan memakai *Boli me …* / *Bolijo me …*",
+    "memakai dajalnik untuk keadaan: *Slabo mi je*, *Vroče mi je*, *Všeč mi je*",
+    "bertahan di apotek: menyebut gejala, meminta obat, memahami saran"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Pri zdravnici",
+      "intro": "Budi datang ke klinik kampus dengan tenggorokan yang terasa seperti amplas. Dokternya menjelaskan lebih dari yang ditanyakan.",
+      "lines": [
+        {
+          "speaker": "Zdravnica:",
+          "text": "Dober dan. Kaj vas boli?",
+          "id": "Selamat siang. Yang sakit bagian mana?",
+          "literal": "baik hari. apa Anda-sasaran menyakiti?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Boli me glava. In grlo.",
+          "id": "Kepala saya sakit. Tenggorokan juga.",
+          "literal": "menyakiti saya-sasaran kepala. dan tenggorokan."
+        },
+        {
+          "speaker": "Zdravnica:",
+          "text": "Od kdaj?",
+          "id": "Sejak kapan?",
+          "literal": "dari kapan?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Od včeraj. Slabo mi je.",
+          "id": "Sejak kemarin. Badan saya tidak enak.",
+          "literal": "dari kemarin. buruk kepada-saya adalah."
+        },
+        {
+          "speaker": "Zdravnica:",
+          "text": "Imate vročino?",
+          "id": "Demam?",
+          "literal": "Anda-punya panas-sasaran?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja, sedemintrideset devet.",
+          "id": "Iya, tiga puluh tujuh koma sembilan.",
+          "literal": "ya, tujuh-dan-tiga-puluh sembilan."
+        },
+        {
+          "speaker": "Zdravnica:",
+          "text": "Ni hudega. Verjetno prehlad.",
+          "id": "Tidak parah. Kemungkinan masuk angin.",
+          "literal": "tidak-ada dari-yang-buruk. kemungkinan flu."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zakaj rečete boli me, ne jaz bolim?",
+          "id": "Kenapa bilang \"boli me\", bukan \"jaz bolim\"?",
+          "literal": "kenapa Anda-berkata menyakiti saya-sasaran, bukan saya saya-menyakiti?"
+        },
+        {
+          "speaker": "Zdravnica:",
+          "text": "Ker glava boli. Vi ste tarča.",
+          "id": "Karena kepalanya yang menyakiti. Anda sasarannya.",
+          "literal": "karena kepala menyakiti. Anda adalah sasaran."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Torej glava dela, jaz pa trpim.",
+          "id": "Jadi kepalanya yang bekerja, saya yang menderita.",
+          "literal": "jadi kepala bekerja, saya tapi saya-menderita."
+        },
+        {
+          "speaker": "Zdravnica:",
+          "text": "Tako je. Pijte čaj in počivajte.",
+          "id": "Betul. Minum teh dan istirahat.",
+          "literal": "begitu adalah. minumlah teh dan beristirahatlah."
+        }
+      ],
+      "notes": [
+        "**Boli me glava harfiahnya \"kepala menyakiti saya\".** Bagian badannya adalah **pelaku**, dan kamu adalah **sasaran**. Karena itu bentuk yang dipakai untukmu adalah tožilnik: *me*, *te*, *ga*, *jo*, *nas*, *vas*, *jih*. Menerjemahkan langsung dari bahasa Indonesia — *jaz bolim* — akan berarti \"saya menyakiti (orang lain)\".",
+        "**Kalau bagian badannya jamak, kata kerjanya ikut jamak.** *Boli me glava* (satu kepala) tetapi *Bolijo me noge* (dua kaki), *Bolijo me oči*, *Bolijo me zobje*. Perhatikan bahwa untuk sepasang bagian badan, bahasa Slovenia justru memakai bentuk jamak, bukan dvojina — kebiasaan lama yang bertahan hanya di sini.",
+        "**Slabo mi je memakai bentuk lain lagi: dajalnik.** Bandingkan: *Boli **me*** (sasaran langsung) tetapi *Slabo **mi** je* (kepada saya). Kelompok keadaan badan dan perasaan hampir semuanya memakai *mi*: *Vroče mi je* (saya kepanasan), *Mrzlo mi je* (saya kedinginan), *Dolgčas mi je* (saya bosan).",
+        "**Suhu badan disebut tanpa kata \"koma\".** *Sedemintrideset devet* berarti 37,9. Slovenia memakai Celsius, dan ambang demam yang dipakai orang di rumah adalah 37,5. Perhatikan juga bahwa *vročina* berarti demam dan sekaligus cuaca panas — konteks yang memilah.",
+        "**Pijte in počivajte — bentuk perintah sopan.** Ekor *-te* membuatnya sopan dan sekaligus jamak, persis seperti kata kerja biasa. Kepada teman: *Pij čaj in počivaj*. Bentuk perintah dipasang lengkap di unit 19; untuk sekarang, kenali saja ekornya."
+      ],
+      "grammars": [
+        {
+          "title": "Boli me — pola kalimat yang terbalik",
+          "body": [
+            "Satu pola, dan ia menutup semua keluhan badan yang akan kamu ucapkan. Yang berganti cuma kata ganti sasarannya dan jumlah bagian badannya."
+          ],
+          "table": {
+            "head": [
+              "Siapa",
+              "Satu bagian",
+              "Beberapa bagian",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "saya",
+                "**Boli me** glava.",
+                "**Bolijo me** noge.",
+                "Kepala saya sakit."
+              ],
+              [
+                "kamu",
+                "**Boli te** glava?",
+                "**Bolijo te** oči?",
+                "Kepalamu sakit?"
+              ],
+              [
+                "dia (l)",
+                "**Boli ga** trebuh.",
+                "**Bolijo ga** zobje.",
+                "Perutnya sakit."
+              ],
+              [
+                "dia (p)",
+                "**Boli jo** grlo.",
+                "**Bolijo jo** roke.",
+                "Tenggorokannya sakit."
+              ],
+              [
+                "kami",
+                "**Boli nas** …",
+                "**Bolijo nas** …",
+                "… kami sakit."
+              ],
+              [
+                "Anda",
+                "**Kaj vas boli?**",
+                "—",
+                "Yang sakit bagian mana?"
+              ]
+            ]
+          },
+          "after": [
+            "Kata ganti sasarannya adalah naslonke, jadi ia duduk di tempat kedua seperti biasa: *Danes **me** boli glava*, *Že tri dni **me** boli grlo*.",
+            "Untuk mengatakan sakitnya seberapa: *Zelo me boli* (sakit sekali), *Malo me boli* (agak sakit), *Ne boli me več* (sudah tidak sakit lagi)."
+          ]
+        },
+        {
+          "title": "Dajalnik — bentuk \"kepada\"",
+          "body": [
+            "Sklon keempat ini menandai **kepada siapa** sesuatu terjadi. Di tingkat A1 ia paling sering muncul dalam kata gantinya, dan hampir selalu bersama kata sifat netral."
+          ],
+          "table": {
+            "head": [
+              "Kepada",
+              "Bentuk",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "saya",
+                "**mi**",
+                "*Slabo mi je.*",
+                "Badan saya tidak enak."
+              ],
+              [
+                "kamu",
+                "**ti**",
+                "*Je ti vroče?*",
+                "Kamu kepanasan?"
+              ],
+              [
+                "dia (l)",
+                "**mu**",
+                "*Mrzlo mu je.*",
+                "Dia kedinginan."
+              ],
+              [
+                "dia (p)",
+                "**ji**",
+                "*Dolgčas ji je.*",
+                "Dia bosan."
+              ],
+              [
+                "kami berdua",
+                "**nama**",
+                "*Všeč nama je.*",
+                "Kami berdua suka."
+              ],
+              [
+                "kami",
+                "**nam**",
+                "*Žal nam je.*",
+                "Kami menyesal."
+              ],
+              [
+                "Anda / kalian",
+                "**vam**",
+                "*Kako vam je ime?*",
+                "Siapa nama Anda?"
+              ],
+              [
+                "mereka",
+                "**jim**",
+                "*Ni jim všeč.*",
+                "Mereka tidak suka."
+              ]
+            ]
+          },
+          "after": [
+            "Baris *Všeč mi je* pantas dihafal sekarang juga: inilah cara bahasa Slovenia mengatakan **saya suka**. Harfiahnya \"itu berkenan kepada saya\", jadi yang disukai adalah pelakunya: *Všeč mi je ta knjiga* (saya suka buku ini), *Všeč si mi* (saya suka kamu). Kalau yang disukai jamak, kata kerjanya ikut: *Všeč so mi te knjige*.",
+            "*Žal mi je* berarti \"saya menyesal\" dan sekaligus \"sayang sekali\" — ia dipakai untuk permintaan maaf yang tulus maupun untuk menolak dengan halus: *Žal mi je, ne morem* (maaf, saya tidak bisa)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Telo — bagian badan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kolom ketiga adalah bentuk yang benar-benar kamu pakai dalam kalimat *Boli me …*, jadi hafalkan kolom itu, bukan bentuk kamusnya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Dalam kalimat",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**glava**",
+              "GLA-va",
+              "*Boli me glava.*",
+              "kepala"
+            ],
+            [
+              "**grlo**",
+              "GER-lo",
+              "*Boli me grlo.*",
+              "tenggorokan"
+            ],
+            [
+              "**trebuh**",
+              "TRÉ-buh",
+              "*Boli me trebuh.*",
+              "perut"
+            ],
+            [
+              "**hrbet**",
+              "HER-bet",
+              "*Boli me hrbet.*",
+              "punggung"
+            ],
+            [
+              "**zob / zobje**",
+              "zòp / zob-YÉ",
+              "*Bolijo me zobje.*",
+              "gigi"
+            ],
+            [
+              "**oko / oči**",
+              "o-KÒ / o-CI",
+              "*Bolijo me oči.*",
+              "mata"
+            ],
+            [
+              "**uho / ušesa**",
+              "U-ho / u-SYÉ-sa",
+              "*Bolijo me ušesa.*",
+              "telinga"
+            ],
+            [
+              "**roka / roke**",
+              "RÒ-ka / RÒ-ké",
+              "*Bolijo me roke.*",
+              "tangan; lengan"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Nos mi teče* harfiahnya \"hidung mengalir kepadaku\" — cara bahasa Slovenia mengatakan pilek. Pola dajalnik lagi, dan sekali lagi bagian badannya yang jadi pelaku."
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan **oko** → **oči** dan **uho** → **ušesa**: dua bentuk jamak yang sama sekali tidak menurut, warisan kata Slavia kuno. Karena mata dan telinga selalu sepasang, bentuk tunggalnya jarang dipakai kecuali ketika satu di antaranya bermasalah."
+        }
+      ]
+    },
+    {
+      "title": "Di apotek dan di ruang dokter",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Dua belas kalimat yang menutup hampir seluruh urusan kesehatan ringan — dari menjelaskan gejala sampai membeli obat."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Slabo mi je.*",
+              "SLA-bo mi yé",
+              "Badan saya tidak enak."
+            ],
+            [
+              "*Imam vročino.*",
+              "I-mam vro-CI-no",
+              "Saya demam."
+            ],
+            [
+              "*Prehlajen sem.*",
+              "préh-LA-yen sem",
+              "Saya masuk angin. (laki-laki)"
+            ],
+            [
+              "*Kašljam.*",
+              "KASY-lyam",
+              "Saya batuk."
+            ],
+            [
+              "*Bruham.*",
+              "BRU-ham",
+              "Saya muntah."
+            ],
+            [
+              "*Potrebujem zdravilo.*",
+              "po-tré-BU-yem zdra-VI-lo",
+              "Saya butuh obat."
+            ],
+            [
+              "*Imate kaj proti glavobolu?*",
+              "PRÒ-ti gla-vo-BÒ-lu",
+              "Ada obat sakit kepala?"
+            ],
+            [
+              "*Sem alergičen na …*",
+              "sem a-lér-GI-cen na",
+              "Saya alergi … (laki-laki)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Nomor darurat di Slovenia adalah **112** untuk ambulans dan pemadam, **113** untuk polisi. Keduanya berlaku di seluruh negeri dan gratis dari telepon mana pun."
+        },
+        {
+          "type": "kotak",
+          "title": "Yang perlu diketahui pendatang",
+          "items": [
+            "Apotek disebut **lekarna** dan hampir semuanya tutup malam. Yang buka dua puluh empat jam disebut **dežurna lekarna**, dan setiap kota punya minimal satu.",
+            "Banyak obat yang di Indonesia dijual bebas — termasuk antibiotik — di Slovenia wajib **resep** (*recept*). Obat pereda nyeri biasa seperti *lekadol* atau *aspirin* tetap bisa dibeli langsung.",
+            "Kalau kamu tinggal lama, kamu akan punya **kartica zdravstvenega zavarovanja** (kartu asuransi kesehatan). Bawa selalu — tanpa itu, kunjungan dokter dihitung penuh."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dan satu kalimat yang akan sering kamu dengar sebagai jawaban: *Ni hudega* — \"tidak ada yang parah\". Bersama *Bo že* (nanti juga sembuh), keduanya adalah cara orang Slovenia menenangkan orang sakit: pendek, tenang, tanpa dramatisasi."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "boleti",
+      "baca": "bo-LÉ-ti",
+      "id": "sakit; menyakiti"
+    },
+    {
+      "sl": "glava",
+      "baca": "GLA-va",
+      "id": "kepala"
+    },
+    {
+      "sl": "grlo",
+      "baca": "GER-lo",
+      "id": "tenggorokan"
+    },
+    {
+      "sl": "trebuh",
+      "baca": "TRÉ-buh",
+      "id": "perut"
+    },
+    {
+      "sl": "oko",
+      "baca": "o-KÒ",
+      "id": "mata"
+    },
+    {
+      "sl": "roka",
+      "baca": "RÒ-ka",
+      "id": "tangan; lengan"
+    },
+    {
+      "sl": "noga",
+      "baca": "NÒ-ga",
+      "id": "kaki"
+    },
+    {
+      "sl": "zob",
+      "baca": "zòp",
+      "id": "gigi"
+    },
+    {
+      "sl": "vročina",
+      "baca": "vro-CI-na",
+      "id": "demam; panas"
+    },
+    {
+      "sl": "prehlad",
+      "baca": "préh-LAT",
+      "id": "masuk angin; flu"
+    },
+    {
+      "sl": "zdravilo",
+      "baca": "zdra-VI-lo",
+      "id": "obat"
+    },
+    {
+      "sl": "lekarna",
+      "baca": "lé-KAR-na",
+      "id": "apotek"
+    },
+    {
+      "sl": "zdravnica",
+      "baca": "zdrau-NI-tsa",
+      "id": "dokter (perempuan)"
+    },
+    {
+      "sl": "bolan",
+      "baca": "bo-LAN",
+      "id": "sakit (keadaan)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan boli atau bolijo.",
+      "items": [
+        "____ me glava.",
+        "____ me noge.",
+        "____ me grlo.",
+        "____ me oči.",
+        "____ me zobje.",
+        "____ me trebuh."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk dajalnik yang tepat.",
+      "items": [
+        "Slabo ____ je. (saya)",
+        "Vroče ____ je. (kamu)",
+        "Dolgčas ____ je. (dia perempuan)",
+        "Žal ____ je. (kami)",
+        "Všeč ____ je. (mereka)",
+        "Kako ____ je ime? (Anda)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Slovenia.",
+      "items": [
+        "Kepala saya sakit.",
+        "Sejak kemarin.",
+        "Badan saya tidak enak.",
+        "Saya demam.",
+        "Saya butuh obat.",
+        "Apotek terdekat di mana?"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 13. Terjemahkan ke bahasa Slovenia tanpa melihat unitnya.",
+      "items": [
+        "Ini keluarga saya.",
+        "Saya punya satu saudari.",
+        "Suaminya guru.",
+        "Kerja apa kamu?",
+        "Saya masih kuliah."
+      ]
+    }
+  ],
+  "answers": [
+    "Boli — Bolijo — Boli — Bolijo — Bolijo — Boli",
+    "mi — ti — ji — nam — jim — vam",
+    "Boli me glava. — Od včeraj. — Slabo mi je. — Imam vročino. — Potrebujem zdravilo. — Kje je najbližja lekarna?",
+    "To je moja družina. — Imam eno sestro. — Njen mož je učitelj. — Kaj si po poklicu? — Še študiram."
+  ]
+}

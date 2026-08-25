@@ -1,0 +1,582 @@
+{
+  "title": "Kamu dari mana?",
+  "title_target": "Od kod si?",
+  "goal": "Menyebut asal, tempat tinggal, dan bahasa yang kamu pakai — sekaligus melihat untuk pertama kalinya bahwa nama tempat BERUBAH BENTUK setelah kata depan, dan bahwa bahasa Indonesia punya satu kata \"mana\" untuk tiga kata tanya bahasa Slovenia.",
+  "bekal": [
+    "bertanya dan menjawab *Od kod si?* dan *Kje živiš?*",
+    "menyebut negara, bangsa, dan bahasa — tiga kata berbeda dari satu akar",
+    "mengenali bentuk *iz + rodilnik* dan *v + mestnik* sebagai satu bongkah hafalan, sebelum aturannya dibongkar di unit 6 dan 8"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Na hodniku pred predavalnico",
+      "intro": "Di koridor kampus, sebelum kuliah dimulai. Budi baru dua minggu di Ljubljana; Luka mahasiswa tahun kedua.",
+      "lines": [
+        {
+          "speaker": "Luka:",
+          "text": "Živjo! Od kod si?",
+          "id": "Halo! Kamu dari mana?",
+          "literal": "halo! dari mana kamu-adalah?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Iz Indonezije sem. Iz Jakarte.",
+          "id": "Saya dari Indonesia. Dari Jakarta.",
+          "literal": "dari Indonesia saya-adalah. dari Jakarta."
+        },
+        {
+          "speaker": "Luka:",
+          "text": "Aha! In kje živiš zdaj?",
+          "id": "Oh begitu! Dan sekarang kamu tinggal di mana?",
+          "literal": "aha! dan di-mana kamu-tinggal sekarang?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zdaj živim v Ljubljani. Pa ti?",
+          "id": "Sekarang saya tinggal di Ljubljana. Kalau kamu?",
+          "literal": "sekarang saya-tinggal di Ljubljana. dan kamu?"
+        },
+        {
+          "speaker": "Luka:",
+          "text": "Jaz sem iz Maribora, zdaj pa študiram tukaj.",
+          "id": "Saya dari Maribor, tapi sekarang saya kuliah di sini.",
+          "literal": "saya adalah dari Maribor, sekarang tapi saya-kuliah di-sini."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kateri jezik govoriš doma?",
+          "id": "Bahasa apa yang kamu pakai di rumah?",
+          "literal": "yang-mana bahasa kamu-berbicara di-rumah?"
+        },
+        {
+          "speaker": "Luka:",
+          "text": "Slovensko, seveda. In malo nemško.",
+          "id": "Bahasa Slovenia, tentu saja. Dan sedikit bahasa Jerman.",
+          "literal": "secara-Slovenia, tentu-saja. dan sedikit secara-Jerman."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jaz govorim indonezijsko in angleško.",
+          "id": "Saya bicara bahasa Indonesia dan bahasa Inggris.",
+          "literal": "saya berbicara secara-Indonesia dan secara-Inggris."
+        },
+        {
+          "speaker": "Luka:",
+          "text": "Slovensko pa? Malo?",
+          "id": "Kalau bahasa Slovenia? Sedikit?",
+          "literal": "secara-Slovenia tapi? sedikit?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zelo malo. Šele začenjam.",
+          "id": "Sedikit sekali. Saya baru mulai.",
+          "literal": "sangat sedikit. baru-saja saya-memulai."
+        },
+        {
+          "speaker": "Luka:",
+          "text": "Odlično! Vsak začetek je težak.",
+          "id": "Bagus! Setiap permulaan memang berat.",
+          "literal": "sangat-baik! setiap permulaan adalah berat."
+        }
+      ],
+      "notes": [
+        "**Tiga kata tanya untuk satu kata \"mana\".** Bahasa Indonesia memakai \"mana\" untuk semuanya dan menempelkan kata depan di depannya: *di mana*, *ke mana*, *dari mana*. Bahasa Slovenia punya tiga kata utuh yang berbeda: **kje** (di mana), **kam** (ke mana), **od kod** (dari mana). Salah pilih bukan sekadar kurang rapi — kalimatnya jadi menanyakan hal lain.",
+        "**Nama tempat berubah bentuk, dan itu wajib.** Lihat baik-baik: *Indonezija* jadi *iz Indonezije*, *Jakarta* jadi *iz Jakarte*, *Maribor* jadi *iz Maribora*, dan *Ljubljana* jadi *v Ljubljani*. Ini bukan gaya bahasa, melainkan **sklon** — sistem akhiran yang menggantikan sebagian besar tugas kata depan bahasa Indonesia. Untuk sekarang hafalkan pasangannya sebagai satu bongkah; aturannya dibongkar pelan-pelan mulai unit 6.",
+        "**Bahasa dinyatakan dengan kata keterangan, bukan kata benda.** *Govorim slovensko* harfiahnya \"saya berbicara secara-Slovenia\". Kata bendanya ada — *slovenščina* — tapi ia dipakai untuk hal lain: *Učim se slovenščino* (\"Saya belajar bahasa Slovenia\"). Dengan *govoriti*, selalu pakai bentuk *-o*: *slovensko, angleško, nemško, indonezijsko*.",
+        "**Pa — kata kecil yang menyesuaikan diri.** Dalam satu dialog ini *pa* muncul tiga kali dengan tiga rasa: *Pa ti?* = \"kalau kamu?\", *zdaj pa študiram* = \"tapi sekarang saya kuliah\", *Slovensko pa?* = \"kalau bahasa Slovenia?\". Ia tidak pernah berdiri di awal kalimat dan tidak punya terjemahan tetap — ia menandai bahwa pembicaraan berbelok. Rasakan dulu, jangan dihafal artinya.",
+        "**Seveda.** Harfiahnya \"tentu saja\" dan dipakai persis seperti itu. Ia salah satu kata yang paling sering kamu dengar di Slovenia; pasangannya *žal* (sayangnya) dan *mogoče* (mungkin) menyusul di unit 19."
+      ],
+      "grammars": [
+        {
+          "title": "Kata kerja masa kini — sembilan bentuk, satu pola",
+          "body": [
+            "Kata kerja bahasa Slovenia berubah menurut siapa pelakunya, seperti bahasa Eropa lain — bedanya ada sembilan kotak, bukan enam, karena lajur dvojina ikut hadir. Berikut *govoriti* (berbicara), yang polanya berlaku untuk ratusan kata kerja lain."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "govoriti",
+              "Cara baca",
+              "arti"
+            ],
+            "rows": [
+              [
+                "jaz",
+                "**govorim**",
+                "go-VO-rim",
+                "saya berbicara"
+              ],
+              [
+                "ti",
+                "**govoriš**",
+                "go-VO-risy",
+                "kamu berbicara"
+              ],
+              [
+                "on / ona",
+                "**govori**",
+                "go-VO-ri",
+                "dia berbicara"
+              ],
+              [
+                "midva / midve",
+                "**govoriva**",
+                "go-VO-ri-va",
+                "kami berdua berbicara"
+              ],
+              [
+                "vidva / vidve",
+                "**govorita**",
+                "go-VO-ri-ta",
+                "kalian berdua berbicara"
+              ],
+              [
+                "onadva / onidve",
+                "**govorita**",
+                "go-VO-ri-ta",
+                "mereka berdua berbicara"
+              ],
+              [
+                "mi / me",
+                "**govorimo**",
+                "go-vo-RI-mo",
+                "kami berbicara (3+)"
+              ],
+              [
+                "vi / ve",
+                "**govorite**",
+                "go-vo-RI-té",
+                "kalian berbicara (3+)"
+              ],
+              [
+                "mi / me",
+                "**govorimo**",
+                "go-vo-RI-mo",
+                "kami berbicara (3+)"
+              ],
+              [
+                "vi / ve",
+                "**govorite**",
+                "go-vo-RI-té",
+                "kalian berbicara (3+)"
+              ],
+              [
+                "oni / one",
+                "**govorijo**",
+                "go-vo-RI-yo",
+                "mereka berbicara (3+)"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa ekornya — *-m, -š, -∅, -va, -ta, -ta, -mo, -te, -jo* — sama untuk hampir semua kata kerja bahasa Slovenia. Yang berganti cuma huruf hidup di depannya: *govor**i**m* tapi *del**a**m* (saya bekerja) dan *ber**e**m* (saya membaca).",
+            "Karena ekornya sudah menyimpan pelakunya, **kata gantinya boleh dibuang**: *Govorim slovensko* sudah pasti berarti \"saya berbicara bahasa Slovenia\". Buang saja; menyebut *jaz* terus-menerus terdengar seperti sedang membela diri."
+          ]
+        },
+        {
+          "title": "Iz + rodilnik: menyebut asal",
+          "body": [
+            "Kata depan *iz* (dari) menuntut kata benda berikutnya berubah bentuk. Kalau nama tempatnya berakhiran **-a**, ganti dengan **-e**; kalau berakhiran huruf mati, tambahkan **-a**. Dua baris itu sudah menutup sebagian besar nama negara dan kota."
+          ],
+          "table": {
+            "head": [
+              "Bentuk dasar",
+              "Setelah iz",
+              "Contoh kalimat"
+            ],
+            "rows": [
+              [
+                "**Indonezij*a***",
+                "iz Indonezij**e**",
+                "*Sem iz Indonezije.* — Saya dari Indonesia."
+              ],
+              [
+                "**Slovenij*a***",
+                "iz Slovenij**e**",
+                "*Maja je iz Slovenije.*"
+              ],
+              [
+                "**Jakart*a***",
+                "iz Jakart**e**",
+                "*Budi je iz Jakarte.*"
+              ],
+              [
+                "**Ljubljan*a***",
+                "iz Ljubljan**e**",
+                "*Luka ni iz Ljubljane.*"
+              ],
+              [
+                "**Maribor**",
+                "iz Maribor**a**",
+                "*Sem iz Maribora.*"
+              ],
+              [
+                "**Bali**",
+                "z Balij**a***",
+                "*Sva z Balija.*"
+              ],
+              [
+                "**Nemčij*a***",
+                "iz Nemčij**e**",
+                "*Ni iz Nemčije.*"
+              ],
+              [
+                "**Hrvašk*a***",
+                "iz Hrvašk**e**",
+                "*Ana je iz Hrvaške.*"
+              ]
+            ]
+          },
+          "after": [
+            "Baris *Bali* memperlihatkan satu hal kecil yang sering membingungkan: *iz* berubah jadi **z** di depan beberapa bunyi, murni supaya enak diucapkan. Aturan lengkapnya di unit 18; untuk sekarang, ikuti saja apa yang tertulis di tabel.",
+            "Bentuk berakhiran *-e* ini namanya **rodilnik** — sklon kedua dari enam. Ia tidak cuma dipakai setelah *iz*: ia juga menyatakan kepemilikan (*hiša moje mame* = rumah ibuku) dan muncul setelah angka lima ke atas (unit 5). Kamu akan bertemu ia terus-menerus."
+          ]
+        },
+        {
+          "title": "Kje živiš? — v + mestnik",
+          "body": [
+            "Untuk menyebut tempat tinggal, bahasa Slovenia memakai *v* (di dalam) atau *na* (di atas/di), dan nama tempatnya berubah lagi — kali ini jadi bentuk yang namanya **mestnik**."
+          ],
+          "table": {
+            "head": [
+              "Pertanyaan",
+              "Jawaban",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "*Kje živiš?*",
+                "**V Ljubljani.**",
+                "Di Ljubljana."
+              ],
+              [
+                "*Kje živiš?*",
+                "**V Mariboru.**",
+                "Di Maribor."
+              ],
+              [
+                "*Kje živiš?*",
+                "**V Jakarti.**",
+                "Di Jakarta."
+              ],
+              [
+                "*Kje živiš?*",
+                "**V Indoneziji.**",
+                "Di Indonesia."
+              ],
+              [
+                "*Kje živiš?*",
+                "**Na Baliju.**",
+                "Di Bali."
+              ],
+              [
+                "*Kje študiraš?*",
+                "**Na univerzi.**",
+                "Di universitas."
+              ]
+            ]
+          },
+          "after": [
+            "Pola bunyinya gampang diingat: bentuk berakhiran **-i** untuk kata perempuan (*Ljubljan**a*** → *v Ljubljan**i***), dan **-u** untuk kata laki-laki (*Maribor* → *v Maribor**u***).",
+            "Kenapa *v Ljubljani* tapi *na Baliju*? Karena pulau, gunung, dan alun-alun memakai *na*, sedangkan kota dan negara memakai *v*. Pilihannya sebagian masuk akal, sebagian cuma kebiasaan — dan daftar lengkapnya menunggu di unit 8."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Negara, bangsa, dan bahasa",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Dari satu akar, bahasa Slovenia menumbuhkan empat kata: nama negara, sebutan untuk laki-laki, sebutan untuk perempuan, dan bentuk bahasanya. Bahasa Indonesia memakai satu kata untuk keempatnya — \"orang Jerman berbahasa Jerman di Jerman\" — jadi bagian ini memang perlu dihafal."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Negara",
+            "Laki-laki",
+            "Perempuan",
+            "Bahasa"
+          ],
+          "rows": [
+            [
+              "**Slovenija**",
+              "Slovenec",
+              "Slovenka",
+              "slovensko"
+            ],
+            [
+              "**Indonezija**",
+              "Indonezijec",
+              "Indonezijka",
+              "indonezijsko"
+            ],
+            [
+              "**Anglija**",
+              "Anglež",
+              "Angležinja",
+              "angleško"
+            ],
+            [
+              "**Nemčija**",
+              "Nemec",
+              "Nemka",
+              "nemško"
+            ],
+            [
+              "**Italija**",
+              "Italijan",
+              "Italijanka",
+              "italijansko"
+            ],
+            [
+              "**Hrvaška**",
+              "Hrvat",
+              "Hrvatica",
+              "hrvaško"
+            ],
+            [
+              "**Avstrija**",
+              "Avstrijec",
+              "Avstrijka",
+              "nemško"
+            ],
+            [
+              "**Madžarska**",
+              "Madžar",
+              "Madžarka",
+              "madžarsko"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa nama negara ditulis dengan **huruf besar**, sedangkan bentuk bahasanya dengan **huruf kecil**: *Slovenija* tapi *slovensko*. Sebutan orangnya juga huruf besar: *Slovenec*, *Indonezijka*."
+        },
+        {
+          "type": "p",
+          "text": "Empat nama negara di tabel ini berakhiran *-ska* atau *-ška* — *Hrvaška, Madžarska, Kitajska, Japonska*. Bentuk itu sebenarnya kata sifat yang membeku jadi nama, dan ia berubah mengikuti pola kata sifat: *iz Hrvaške*, *na Hrvaškem* (di Kroasia). Untuk sekarang hafalkan saja bentuk *iz*-nya."
+        },
+        {
+          "type": "kotak",
+          "title": "Satu perangkap yang rapi",
+          "items": [
+            "Orang **Avstrija** berbicara **nemško**, bukan \"avstrijsko\". Bahasa dan bangsa tidak selalu sepasang — sama seperti orang Amerika yang berbicara *angleško*.",
+            "Dan hati-hati membedakan **Avstrija** (Austria) dari **Avstralija** (Australia). Dua negara ini bertetangga di kamus, tidak di peta, dan tertukar setiap tahun oleh ribuan pelajar."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kje, kam, od kod — tiga jalan untuk satu \"mana\"",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bahasa Slovenia memilah pertanyaan tempat menurut **arah geraknya**: diam di situ, menuju ke sana, atau datang dari sana. Setiap pilihan menyeret kata depan dan bentuk kata bendanya sendiri."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pertanyaan",
+            "Arti",
+            "Kata depan",
+            "Contoh jawaban"
+          ],
+          "rows": [
+            [
+              "**Kje?**",
+              "Di mana? (diam)",
+              "*v*, *na*, *pri*",
+              "*V Ljubljani.* — Di Ljubljana."
+            ],
+            [
+              "**Kam?**",
+              "Ke mana? (menuju)",
+              "*v*, *na*, *k*",
+              "*V Ljubljano.* — Ke Ljubljana."
+            ],
+            [
+              "**Od kod?**",
+              "Dari mana? (datang)",
+              "*iz*, *z/s*, *od*",
+              "*Iz Ljubljane.* — Dari Ljubljana."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Lihat satu nama kota melewati tiga baris itu: *Ljubljan**i*** → *Ljubljan**o*** → *Ljubljan**e***. Kata bendanya sama, ekornya tiga rupa. Inilah alasan sebenarnya bahasa Slovenia punya enam sklon: **kata depannya sendiri tidak cukup untuk menjelaskan maksud**, jadi kata bendanya ikut bekerja."
+        },
+        {
+          "type": "p",
+          "text": "Kabar baiknya, pemilahan ini masuk akal dan konsisten. Setelah sepuluh kali dipakai, tanganmu memilih ekornya sendiri tanpa kamu pikirkan — dan sejak saat itu, bahasa Slovenia berhenti terasa seperti tabel."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "*Kje si?*",
+              "kyé si",
+              "Kamu di mana?"
+            ],
+            [
+              "*Kam greš?*",
+              "kam grésy",
+              "Kamu mau ke mana?"
+            ],
+            [
+              "*Od kod prihajaš?*",
+              "ot-KÒT pri-HA-yasy",
+              "Kamu datang dari mana?"
+            ],
+            [
+              "*Doma sem.*",
+              "DÒ-ma sem",
+              "Saya di rumah."
+            ],
+            [
+              "*Grem domov.*",
+              "grém do-MÒU",
+              "Saya pulang ke rumah."
+            ],
+            [
+              "*Prihajam od doma.*",
+              "pri-HA-yam ot DÒ-ma",
+              "Saya datang dari rumah."
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "od kod",
+      "baca": "ot-KÒT",
+      "id": "dari mana"
+    },
+    {
+      "sl": "kje",
+      "baca": "kyé",
+      "id": "di mana"
+    },
+    {
+      "sl": "kam",
+      "baca": "kam",
+      "id": "ke mana"
+    },
+    {
+      "sl": "iz",
+      "baca": "iz",
+      "id": "dari (keluar dari)"
+    },
+    {
+      "sl": "v",
+      "baca": "u",
+      "id": "di dalam; ke dalam"
+    },
+    {
+      "sl": "živeti",
+      "baca": "zhi-VÉ-ti",
+      "id": "tinggal; hidup"
+    },
+    {
+      "sl": "živim",
+      "baca": "ZHI-vim",
+      "id": "saya tinggal"
+    },
+    {
+      "sl": "govoriti",
+      "baca": "go-vo-RI-ti",
+      "id": "berbicara"
+    },
+    {
+      "sl": "govorim",
+      "baca": "go-VO-rim",
+      "id": "saya berbicara"
+    },
+    {
+      "sl": "študirati",
+      "baca": "sytu-DI-ra-ti",
+      "id": "kuliah"
+    },
+    {
+      "sl": "jezik",
+      "baca": "YÉ-zik",
+      "id": "bahasa; lidah"
+    },
+    {
+      "sl": "kateri",
+      "baca": "ka-TÉ-ri",
+      "id": "yang mana"
+    },
+    {
+      "sl": "zdaj",
+      "baca": "zday",
+      "id": "sekarang"
+    },
+    {
+      "sl": "tukaj",
+      "baca": "TU-kay",
+      "id": "di sini"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Slovenia.",
+      "items": [
+        "Kamu dari mana?",
+        "Saya dari Indonesia.",
+        "Sekarang saya tinggal di Ljubljana.",
+        "Saya bicara bahasa Indonesia dan bahasa Inggris.",
+        "Maja dari Maribor.",
+        "Saya tidak bicara bahasa Jerman."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk setelah iz yang tepat.",
+      "items": [
+        "Sem iz ____. (Slovenija)",
+        "Ana je iz ____. (Jakarta)",
+        "Luka je iz ____. (Maribor)",
+        "Nisem iz ____. (Nemčija)",
+        "Onadva sta iz ____. (Hrvaška)",
+        "Ste iz ____? (Indonezija)"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk govoriti yang tepat.",
+      "items": [
+        "Jaz ____ slovensko.",
+        "Ti ____ angleško?",
+        "Maja ____ nemško.",
+        "Midva ____ indonezijsko.",
+        "Mi ____ italijansko.",
+        "Oni ____ hrvaško."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "si / kod / od / ?",
+        "Indonezije / sem / iz",
+        "živiš / kje / ?",
+        "v / živim / Ljubljani",
+        "govorim / nemško / ne"
+      ]
+    }
+  ],
+  "answers": [
+    "Od kod si? — Iz Indonezije sem. — Zdaj živim v Ljubljani. — Govorim indonezijsko in angleško. — Maja je iz Maribora. — Ne govorim nemško.",
+    "Slovenije — Jakarte — Maribora — Nemčije — Hrvaške — Indonezije",
+    "govorim — govoriš — govori — govoriva — govorimo — govorijo",
+    "Od kod si? — Iz Indonezije sem. — Kje živiš? — Živim v Ljubljani. — Ne govorim nemško."
+  ]
+}

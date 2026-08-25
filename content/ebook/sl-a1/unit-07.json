@@ -1,0 +1,532 @@
+{
+  "title": "Belanja di pasar — dan kalimat yang menyangkal",
+  "title_target": "Nakupovanje na tržnici",
+  "goal": "Menanyakan harga, meminta takaran, dan membayar — sekaligus memasang satu aturan yang tidak ada padanannya di bahasa mana pun yang kamu kenal: begitu kalimatnya MENYANGKAL, kata bendanya berganti bentuk.",
+  "bekal": [
+    "menanyakan harga dengan *Koliko stane?* dan *Koliko stanejo?*",
+    "meminta takaran: *en kilogram*, *pol kile*, *deset dek*",
+    "mengubah sasaran jadi rodilnik begitu kalimatnya disangkal: *Imam kavo* → *Nimam kave*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Na Centralni tržnici",
+      "intro": "Sabtu pagi di pasar pusat Ljubljana. Budi berdiri di depan lapak buah; penjualnya sudah hafal wajah orang asing yang baru belajar.",
+      "lines": [
+        {
+          "speaker": "Prodajalka:",
+          "text": "Izvolite! Kaj bo dobrega?",
+          "id": "Silakan! Mau cari apa?",
+          "literal": "silakan! apa akan dari-yang-baik?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Koliko stanejo jabolka?",
+          "id": "Apelnya berapa?",
+          "literal": "berapa mereka-berharga apel-jamak?"
+        },
+        {
+          "speaker": "Prodajalka:",
+          "text": "Dva evra kilogram. So domača.",
+          "id": "Dua euro sekilo. Lokal semua.",
+          "literal": "dua euro-berdua kilogram. mereka-adalah rumahan-jamak."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Potem prosim en kilogram. In tri banane.",
+          "id": "Kalau begitu satu kilo. Dan tiga pisang.",
+          "literal": "kemudian tolong satu kilogram. dan tiga pisang-jamak."
+        },
+        {
+          "speaker": "Prodajalka:",
+          "text": "Še kaj? Imamo lepe paradižnike.",
+          "id": "Ada lagi? Tomat kami bagus-bagus.",
+          "literal": "lagi apa? kami-punya indah-jamak tomat-jamak."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pol kile, prosim. Koliko je vse skupaj?",
+          "id": "Setengah kilo. Semuanya berapa?",
+          "literal": "setengah dari-kilo, tolong. berapa adalah semua bersama?"
+        },
+        {
+          "speaker": "Prodajalka:",
+          "text": "Štiri evre in petdeset centov.",
+          "id": "Empat euro lima puluh sen.",
+          "literal": "empat euro-jamak dan lima-puluh dari-sen."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Oprostite, nimam drobiža. Lahko plačam s kartico?",
+          "id": "Maaf, saya tidak punya uang kecil. Boleh bayar pakai kartu?",
+          "literal": "maaf, saya-tidak-punya dari-uang-kecil. bisa saya-bayar dengan kartu?"
+        },
+        {
+          "speaker": "Prodajalka:",
+          "text": "Na tržnici ne, samo gotovina.",
+          "id": "Di pasar tidak bisa, tunai saja.",
+          "literal": "di pasar tidak, hanya tunai."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "V redu, bankomat je blizu. Takoj se vrnem.",
+          "id": "Baik, ATM-nya dekat. Saya segera balik.",
+          "literal": "dalam keteraturan, ATM adalah dekat. segera diri saya-kembali."
+        },
+        {
+          "speaker": "Prodajalka:",
+          "text": "Nič hudega, počakam vas.",
+          "id": "Tidak apa-apa, saya tunggu.",
+          "literal": "tidak-apa dari-yang-buruk, saya-menunggu Anda."
+        }
+      ],
+      "notes": [
+        "**Kaj bo dobrega?** harfiahnya \"apa yang akan baik?\" — sapaan khas pedagang pasar, kira-kira setara \"mau cari apa, Mas?\". Kamu tidak perlu menirunya, tapi kamu perlu mengenalinya, karena ia akan jadi kalimat pertama yang menyambutmu di setiap lapak.",
+        "**Stane atau stanejo — ikut jumlah barangnya.** *Koliko stane kruh?* (satu benda) tetapi *Koliko stanejo jabolka?* (banyak benda). Ini persis seperti bahasa Inggris *how much is / how much are*, dan tidak seperti bahasa Indonesia yang cukup dengan \"berapa\" untuk keduanya.",
+        "**Harga disebut dalam bentuk sasaran.** *Stane štiri evre* — bukan *štiri evri*. Alasannya: barang itu \"berharga sebanyak\" sesuatu, dan yang \"sebanyak\" itu diperlakukan sebagai sasaran. Untuk lima ke atas bentuknya kembali ke rodilnik: *pet evrov*, *deset evrov*, *petdeset centov*.",
+        "**Nimam drobiža — inilah inti unit ini.** Dalam kalimat biasa kamu mengatakan *Imam drobiž* (saya punya uang kecil). Begitu kalimatnya disangkal, kata bendanya berganti bentuk jadi rodilnik: *Nimam drobiž**a***. Bahasa Slovenia menganggap masuk akal bahwa sesuatu yang tidak ada disebut dengan bentuk \"dari\" — dan setelah beberapa minggu, kamu akan setuju.",
+        "**Samo gotovina.** Di pasar terbuka Slovenia, kartu sering tidak diterima — dan di sebagian besar kota kecil, toko tutup total pada hari Minggu. Dua kenyataan itu menyelamatkan banyak pagi Sabtu kalau kamu tahu sejak awal: tarik uang tunai dulu, belanja Sabtu, jangan menyisakan apa pun untuk Minggu."
+      ],
+      "grammars": [
+        {
+          "title": "Rodilnik penyangkalan — aturan besar unit ini",
+          "body": [
+            "Dalam bahasa Slovenia, menyangkal bukan sekadar menambahkan *ne*. Kata bendanya ikut berganti bentuk — dari **tožilnik** (sasaran) jadi **rodilnik**. Aturannya tanpa kecuali, dan ia berlaku di setiap kalimat negatif yang punya sasaran."
+          ],
+          "table": {
+            "head": [
+              "Kalimat biasa",
+              "Kalimat menyangkal",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "*Imam kav**o***.",
+                "*Nimam kav**e***.",
+                "Saya tidak punya kopi."
+              ],
+              [
+                "*Imam čas.*",
+                "*Nimam čas**a***.",
+                "Saya tidak punya waktu."
+              ],
+              [
+                "*Pijem vod**o***.",
+                "*Ne pijem vod**e***.",
+                "Saya tidak minum air."
+              ],
+              [
+                "*Vidim brat**a***.",
+                "*Ne vidim brat**a***.",
+                "Saya tidak melihat saudara saya."
+              ],
+              [
+                "*Tukaj je piv**o***.",
+                "*Tukaj ni piv**a***.",
+                "Di sini tidak ada bir."
+              ],
+              [
+                "*Imam denar.*",
+                "*Nimam denar**ja***.",
+                "Saya tidak punya uang."
+              ]
+            ]
+          },
+          "after": [
+            "Bentuk rodilnik-nya sama persis dengan bentuk setelah *iz* di unit 2: kata perempuan berakhiran **-e** (*kava* → *kave*), kata laki-laki dan netral berakhiran **-a** (*čas* → *časa*, *pivo* → *piva*).",
+            "Perhatikan baris keempat: untuk kata laki-laki yang **bernyawa**, bentuk tožilnik dan rodilnik sudah kembar sejak awal (*brata* untuk dua-duanya), jadi kalimat negatifnya tidak berubah sama sekali. Satu kelompok kata yang tidak menuntut apa-apa."
+          ]
+        },
+        {
+          "title": "Harga dan uang",
+          "body": [
+            "Mata uang Slovenia adalah euro sejak 2007. Yang perlu dihafal cuma bagaimana angka menempel padanya — dan itu pola yang sama dengan unit 5."
+          ],
+          "table": {
+            "head": [
+              "Angka",
+              "Bentuk",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "1",
+                "**en evro**",
+                "en ÉU-ro",
+                "satu euro"
+              ],
+              [
+                "2",
+                "**dva evra**",
+                "dva ÉU-ra",
+                "dua euro"
+              ],
+              [
+                "3, 4",
+                "**tri / štiri evre**",
+                "tri ÉU-ré",
+                "tiga / empat euro"
+              ],
+              [
+                "5+",
+                "**pet evrov**",
+                "pét ÉU-rou",
+                "lima euro"
+              ],
+              [
+                "sen",
+                "**petdeset centov**",
+                "pét-dé-set TSÉN-tou",
+                "lima puluh sen"
+              ],
+              [
+                "gabungan",
+                "**tri evre in dvajset**",
+                "tri ÉU-ré in DVAY-set",
+                "tiga euro dua puluh"
+              ]
+            ]
+          },
+          "after": [
+            "Baris terakhir memperlihatkan kebiasaan sehari-hari: sen sering **tidak disebut sama sekali**. *Tri evre in dvajset* sudah dimengerti sebagai €3,20. Di tulisan, koma memisahkan sen: **3,20 €**, bukan titik seperti kebiasaan bahasa Inggris.",
+            "Kalimat yang perlu dihafal utuh: *Koliko stane?* (berapa harganya), *Koliko je vse skupaj?* (semuanya berapa), *Je to popust?* (ini diskon?), *Lahko plačam s kartico?* (boleh bayar pakai kartu), *Prosim račun* (minta bonnya)."
+          ]
+        },
+        {
+          "title": "Takaran di pasar",
+          "body": [
+            "Satu kebiasaan Slovenia yang mengejutkan pendatang: takaran kecil dihitung dalam **deka** — satuan sepuluh gram, warisan Austria yang bertahan hidup di seluruh Eropa Tengah."
+          ],
+          "table": {
+            "head": [
+              "Slovenščina",
+              "Cara baca",
+              "Artinya",
+              "Setara"
+            ],
+            "rows": [
+              [
+                "*en kilogram* / *en kilo*",
+                "en ki-lo-GRAM",
+                "satu kilo",
+                "1000 g"
+              ],
+              [
+                "*pol kile*",
+                "pou KI-lé",
+                "setengah kilo",
+                "500 g"
+              ],
+              [
+                "*deset dek*",
+                "dé-SÉT dék",
+                "sepuluh deka",
+                "100 g"
+              ],
+              [
+                "*petindvajset dek*",
+                "pé-tin-DVAY-set dék",
+                "dua puluh lima deka",
+                "250 g"
+              ],
+              [
+                "*ena zaboj*",
+                "É-na za-BÒY",
+                "satu peti",
+                "—"
+              ],
+              [
+                "*en kos*",
+                "en kòs",
+                "satu potong / satu biji",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "Kalau kamu memesan keju atau daging asap, jangan menyebut gram — sebutkan **deka**. *Dvajset dek sira, prosim* = \"dua ratus gram keju\". Menyebut \"dvesto gramov\" akan dimengerti, tetapi langsung menandaimu sebagai orang asing.",
+            "Perhatikan *pol kile*: setelah *pol* (setengah), kata bendanya berbentuk rodilnik — sama seperti setelah angka lima ke atas. Kata jumlah apa pun di bahasa Slovenia berperilaku begitu."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Sadje in zelenjava — buah dan sayur",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Nama buah dan sayur adalah kosakata yang paling cepat terpakai, karena kamu akan mengucapkannya setiap minggu. Kolom ketiga menunjukkan bentuk yang kamu pakai saat memesan lebih dari satu."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Saat memesan",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**jabolko**",
+              "YA-bou-ko",
+              "*kilogram jabolk*",
+              "apel"
+            ],
+            [
+              "**banana**",
+              "ba-NA-na",
+              "*tri banane*",
+              "pisang"
+            ],
+            [
+              "**pomaranča**",
+              "po-ma-RAN-ca",
+              "*pet pomaranč*",
+              "jeruk"
+            ],
+            [
+              "**grozdje**",
+              "GRÒZD-yé",
+              "*pol kile grozdja*",
+              "anggur"
+            ],
+            [
+              "**jagoda**",
+              "YA-go-da",
+              "*deset dek jagod*",
+              "stroberi"
+            ],
+            [
+              "**breskev**",
+              "BRÉS-keu",
+              "*tri breskve*",
+              "persik"
+            ],
+            [
+              "**paradižnik**",
+              "pa-ra-DIZH-nik",
+              "*pet paradižnikov*",
+              "tomat"
+            ],
+            [
+              "**krompir**",
+              "krom-PIR",
+              "*kilogram krompirja*",
+              "kentang"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan **jabolko** dibaca **YA-bou-ko** — huruf *l* di tengahnya jatuh jadi *u*, seperti biasa. Dan bentuk untuk lima ke atas, *jabolk*, kehilangan ekornya sama sekali; itu wajar untuk kata netral."
+        },
+        {
+          "type": "p",
+          "text": "**Grozdje** (anggur) dan **korenje** (wortel) adalah kata kumpulan: ia tidak punya bentuk jamak, seperti \"beras\" bahasa Indonesia. Kamu selalu membeli *pol kile grozdja*, tidak pernah \"lima anggur\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Kata yang menolongmu di lapak",
+          "items": [
+            "*domač* (do-MAC) — hasil lokal, bukan impor. Kata jualan paling ampuh di pasar Slovenia.",
+            "*svež* (svésy) — segar. *ekološki* (é-ko-LÒSY-ki) — organik.",
+            "*zrel* (zréu) — matang. *nezrel* — belum matang.",
+            "*Lahko poskusim?* — Boleh cicip? Di pasar Slovenia, jawabannya hampir selalu ya."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kalimat belanja",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Selusin kalimat yang menutup hampir semua transaksi kecil — di pasar, di toko kelontong, maupun di kios."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Koliko stane?*",
+              "KO-li-ko STA-né",
+              "Berapa harganya?"
+            ],
+            [
+              "*Koliko stanejo?*",
+              "KO-li-ko STA-né-yo",
+              "Berapa harganya? (banyak barang)"
+            ],
+            [
+              "*To je predrago.*",
+              "to yé pré-DRA-go",
+              "Ini terlalu mahal."
+            ],
+            [
+              "*Imate kaj cenejšega?*",
+              "i-MA-té kay tsé-NÉY-sygé-ga",
+              "Ada yang lebih murah?"
+            ],
+            [
+              "*Samo gledam, hvala.*",
+              "SA-mo GLÉ-dam",
+              "Lihat-lihat saja, terima kasih."
+            ],
+            [
+              "*Vzamem to.*",
+              "VZA-mem to",
+              "Saya ambil yang ini."
+            ],
+            [
+              "*Še kaj?*",
+              "syé kay",
+              "Ada lagi?"
+            ],
+            [
+              "*To je vse, hvala.*",
+              "to yé usé",
+              "Sudah, itu saja."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Samo gledam* (lihat-lihat saja) adalah kalimat penyelamat di toko baju: penjual Slovenia biasanya langsung menyapa saat kamu masuk, dan kalimat ini menutup percakapan dengan ramah tanpa perlu bicara lagi."
+        },
+        {
+          "type": "p",
+          "text": "Satu hal yang perlu direncanakan: **hari Minggu, Slovenia tutup**. Sejak 2024 sebagian besar toko besar wajib libur pada hari Minggu, dan di kota kecil hampir semuanya. Yang buka cuma pom bensin, kios kecil di stasiun, dan beberapa toko di pusat wisata. Belanjalah hari Sabtu."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "tržnica",
+      "baca": "TERZH-ni-tsa",
+      "id": "pasar"
+    },
+    {
+      "sl": "trgovina",
+      "baca": "ter-go-VI-na",
+      "id": "toko"
+    },
+    {
+      "sl": "prodajalka",
+      "baca": "pro-da-YAU-ka",
+      "id": "penjual (perempuan)"
+    },
+    {
+      "sl": "kupiti",
+      "baca": "KU-pi-ti",
+      "id": "membeli"
+    },
+    {
+      "sl": "plačati",
+      "baca": "PLA-ca-ti",
+      "id": "membayar"
+    },
+    {
+      "sl": "stati",
+      "baca": "STA-ti",
+      "id": "berharga; seharga"
+    },
+    {
+      "sl": "cena",
+      "baca": "TSÉ-na",
+      "id": "harga"
+    },
+    {
+      "sl": "denar",
+      "baca": "dé-NAR",
+      "id": "uang"
+    },
+    {
+      "sl": "drobiž",
+      "baca": "dro-BISY",
+      "id": "uang kecil; kembalian"
+    },
+    {
+      "sl": "gotovina",
+      "baca": "go-to-VI-na",
+      "id": "uang tunai"
+    },
+    {
+      "sl": "kartica",
+      "baca": "KAR-ti-tsa",
+      "id": "kartu"
+    },
+    {
+      "sl": "bankomat",
+      "baca": "ban-ko-MAT",
+      "id": "ATM"
+    },
+    {
+      "sl": "sadje",
+      "baca": "SAD-yé",
+      "id": "buah"
+    },
+    {
+      "sl": "zelenjava",
+      "baca": "zé-lé-NYA-va",
+      "id": "sayur"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi kalimat menyangkal.",
+      "items": [
+        "Imam denar. — ____",
+        "Imam čas. — ____",
+        "Pijem kavo. — ____",
+        "Tukaj je pivo. — ____",
+        "Imam drobiž. — ____",
+        "Kupim solato. — ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk evro yang tepat.",
+      "items": [
+        "Stane en ____.",
+        "Stane dva ____.",
+        "Stane tri ____.",
+        "Stane pet ____.",
+        "Stane deset ____.",
+        "Stane petdeset ____. (cent)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Slovenia.",
+      "items": [
+        "Apelnya berapa?",
+        "Satu kilo, tolong.",
+        "Setengah kilo tomat.",
+        "Semuanya berapa?",
+        "Boleh bayar pakai kartu?",
+        "Saya tidak punya uang kecil."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 5. Terjemahkan ke bahasa Slovenia tanpa melihat unitnya.",
+      "items": [
+        "Umur saya dua puluh tiga tahun.",
+        "Saya punya dua saudara perempuan.",
+        "Berapa buku?",
+        "Lima buku.",
+        "Ada berapa orang di sini?"
+      ]
+    }
+  ],
+  "answers": [
+    "Nimam denarja. — Nimam časa. — Ne pijem kave. — Tukaj ni piva. — Nimam drobiža. — Ne kupim solate.",
+    "evro — evra — evre — evrov — evrov — centov",
+    "Koliko stanejo jabolka? — En kilogram, prosim. — Pol kile paradižnikov. — Koliko je vse skupaj? — Lahko plačam s kartico? — Nimam drobiža.",
+    "Star sem triindvajset let. — Imam dve sestri. — Koliko knjig? — Pet knjig. — Koliko ljudi je tukaj?"
+  ]
+}

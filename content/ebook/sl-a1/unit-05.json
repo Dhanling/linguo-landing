@@ -1,0 +1,634 @@
+{
+  "title": "Berhitung — dan empat cara memasang angka",
+  "title_target": "Koliko?",
+  "goal": "Menghitung dari nol sampai sejuta, menyebut umur dan nomor telepon — dan memasang aturan yang menjegal hampir setiap pelajar: kata benda berubah bentuk menurut ANGKA di depannya, dengan empat pola berbeda.",
+  "bekal": [
+    "menyebut angka 0-100 dan mengenali susunan terbalik *enaindvajset* (satu-dan-dua-puluh)",
+    "memilih bentuk kata benda menurut angkanya: 1, 2, 3-4, dan 5 ke atas",
+    "menyebut umur dengan *star sem … let* dan menanyakan jumlah dengan *koliko*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — V knjižnici",
+      "intro": "Budi mendaftar jadi anggota perpustakaan kota. Petugasnya sabar, dan tanpa sengaja memberi satu pelajaran tata bahasa yang penting.",
+      "lines": [
+        {
+          "speaker": "Uslužbenka:",
+          "text": "Dober dan. Koliko ste stari?",
+          "id": "Selamat siang. Umur Anda berapa?",
+          "literal": "baik hari. berapa Anda-adalah tua?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Star sem triindvajset let.",
+          "id": "Umur saya dua puluh tiga tahun.",
+          "literal": "tua saya-adalah tiga-dan-dua-puluh tahun-banyak."
+        },
+        {
+          "speaker": "Uslužbenka:",
+          "text": "In vaša telefonska številka?",
+          "id": "Dan nomor telepon Anda?",
+          "literal": "dan milik-Anda telepon-punya nomor?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nič štiri ena, dve tri, pet šest sedem.",
+          "id": "Nol empat satu, dua tiga, lima enam tujuh.",
+          "literal": "nol empat satu, dua tiga, lima enam tujuh."
+        },
+        {
+          "speaker": "Uslužbenka:",
+          "text": "Hvala. Koliko knjig želite?",
+          "id": "Terima kasih. Mau pinjam berapa buku?",
+          "literal": "terima kasih. berapa dari-buku Anda-mau?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pet knjig, prosim.",
+          "id": "Lima buku.",
+          "literal": "lima dari-buku, tolong."
+        },
+        {
+          "speaker": "Uslužbenka:",
+          "text": "Pet knjig za tri tedne.",
+          "id": "Lima buku untuk tiga minggu.",
+          "literal": "lima dari-buku untuk tiga minggu-jamak."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zakaj \"pet knjig\", ne \"pet knjige\"?",
+          "id": "Kenapa \"pet knjig\", bukan \"pet knjige\"?",
+          "literal": "kenapa \"lima dari-buku\", bukan \"lima buku-jamak\"?"
+        },
+        {
+          "speaker": "Uslužbenka:",
+          "text": "Ker je pet. Do štiri je drugače.",
+          "id": "Karena angkanya lima. Sampai empat, bentuknya beda.",
+          "literal": "karena adalah lima. sampai empat adalah lain."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Torej dve knjigi, tri knjige, pet knjig?",
+          "id": "Jadi dua buku, tiga buku, lima buku?",
+          "literal": "jadi dua buku-berdua, tiga buku-jamak, lima dari-buku?"
+        },
+        {
+          "speaker": "Uslužbenka:",
+          "text": "Točno tako. Zdaj znate šteti.",
+          "id": "Persis begitu. Sekarang Anda sudah bisa berhitung.",
+          "literal": "tepat begitu. sekarang Anda-bisa menghitung."
+        }
+      ],
+      "notes": [
+        "**Umur diukur, bukan dimiliki.** Bahasa Slovenia tidak mengatakan \"saya punya 23 tahun\" (seperti bahasa Prancis atau Spanyol) dan tidak mengatakan \"saya 23\" (seperti bahasa Inggris). Ia mengatakan *Star sem triindvajset let* — \"saya tua sebanyak dua puluh tiga tahun\". Perempuan mengatakan *Stara sem*, karena *star* kata sifat dan kata sifat ikut jenis kelamin.",
+        "**Triindvajset = tiga-dan-dua-puluh.** Angka 21 sampai 99 dibaca terbalik: satuannya dulu, lalu *in* (dan), baru puluhannya. Susunan ini sama persis dengan bahasa Jerman dan bahasa Belanda — dan itu bukan kebetulan, mengingat sejarah Slovenia yang panjang di bawah Wina.",
+        "**Nič untuk nol, tapi bukan di nomor telepon.** Di hitungan, nol adalah *nič*. Membaca nomor telepon, orang Slovenia juga sering memakai *nula*. Perhatikan juga bahwa nomor telepon dibaca berkelompok dua-dua, dan angka duanya berbentuk *dve* — kebiasaan, bukan aturan.",
+        "**Koliko selalu menyeret bentuk rodilnik.** *Koliko knjig?* (berapa buku?), *Koliko ljudi?* (berapa orang?), *Koliko časa?* (berapa lama?). Bentuk itu sama dengan bentuk setelah angka lima ke atas, jadi kalau kamu sudah menguasai satu, kamu sudah menguasai keduanya.",
+        "**Za tri tedne — angka tiga memakai bentuk jamak biasa.** Inilah inti unit ini: satu, dua, tiga-empat, dan lima ke atas menuntut empat bentuk kata benda yang berbeda. Bahasa Indonesia menyelesaikannya dengan satu bentuk untuk semua — \"satu buku, dua buku, lima buku\" — jadi bagian ini memang perlu diulang sampai jadi refleks."
+      ],
+      "grammars": [
+        {
+          "title": "Angka 0 sampai 20",
+          "body": [
+            "Sebelas sampai sembilan belas semuanya berakhiran **-najst** — satu ekor, sembilan angka. Hafalkan satu sampai sepuluh dengan benar, dan sisanya menyusun dirinya sendiri."
+          ],
+          "table": {
+            "head": [
+              "Angka",
+              "Slovenščina",
+              "Cara baca",
+              "Angka",
+              "Slovenščina",
+              "Cara baca"
+            ],
+            "rows": [
+              [
+                "0",
+                "**nič**",
+                "nic",
+                "11",
+                "**enajst**",
+                "é-NAYST"
+              ],
+              [
+                "1",
+                "**ena / en**",
+                "É-na / en",
+                "12",
+                "**dvanajst**",
+                "dva-NAYST"
+              ],
+              [
+                "2",
+                "**dve / dva**",
+                "dvé / dva",
+                "13",
+                "**trinajst**",
+                "tri-NAYST"
+              ],
+              [
+                "3",
+                "**tri / trije**",
+                "tri / TRI-yé",
+                "14",
+                "**štirinajst**",
+                "syti-ri-NAYST"
+              ],
+              [
+                "4",
+                "**štiri / štirje**",
+                "SYTI-ri / SYTIR-yé",
+                "15",
+                "**petnajst**",
+                "pet-NAYST"
+              ],
+              [
+                "5",
+                "**pet**",
+                "pét",
+                "16",
+                "**šestnajst**",
+                "syest-NAYST"
+              ],
+              [
+                "6",
+                "**šest**",
+                "syést",
+                "17",
+                "**sedemnajst**",
+                "sé-dem-NAYST"
+              ],
+              [
+                "7",
+                "**sedem**",
+                "SÉ-dem",
+                "18",
+                "**osemnajst**",
+                "o-sem-NAYST"
+              ],
+              [
+                "8",
+                "**osem**",
+                "Ò-sem",
+                "18",
+                "**osemnajst**",
+                "o-sem-NAYST"
+              ],
+              [
+                "9",
+                "**devet**",
+                "dé-VÉT",
+                "19",
+                "**devetnajst**",
+                "dé-vet-NAYST"
+              ],
+              [
+                "10",
+                "**deset**",
+                "dé-SÉT",
+                "20",
+                "**dvajset**",
+                "DVAY-set"
+              ],
+              [
+                "100",
+                "**sto**",
+                "sto",
+                "1.000",
+                "**tisoč**",
+                "TI-soc"
+              ]
+            ]
+          },
+          "after": [
+            "Empat angka pertama punya **jenis kelamin**: *en brat* tapi *ena knjiga* tapi *eno okno*; *dva brata* tapi *dve knjigi*; *trije bratje* tapi *tri knjige*; *štirje bratje* tapi *štiri knjige*. Mulai dari lima, angkanya berhenti peduli — dan itu kelegaan yang cukup besar.",
+            "Bentuk berakhiran *-je* (*trije*, *štirje*) **hanya** dipakai untuk kelompok laki-laki atau kelompok campur berjenis orang. Untuk benda, perempuan, dan netral, pakai *tri* dan *štiri*."
+          ]
+        },
+        {
+          "title": "Puluhan dan angka gabungan",
+          "body": [
+            "Puluhan dibangun dengan *-deset* (dari *deset*, sepuluh), lalu angka gabungan disusun terbalik dengan *in* di tengah."
+          ],
+          "table": {
+            "head": [
+              "Angka",
+              "Slovenščina",
+              "Cara baca",
+              "Harfiahnya"
+            ],
+            "rows": [
+              [
+                "20",
+                "**dvajset**",
+                "DVAY-set",
+                "dua puluh"
+              ],
+              [
+                "21",
+                "**enaindvajset**",
+                "é-na-in-DVAY-set",
+                "satu-dan-dua-puluh"
+              ],
+              [
+                "25",
+                "**petindvajset**",
+                "pé-tin-DVAY-set",
+                "lima-dan-dua-puluh"
+              ],
+              [
+                "30",
+                "**trideset**",
+                "TRI-dé-set",
+                "tiga puluh"
+              ],
+              [
+                "42",
+                "**dvainštirideset**",
+                "dva-in-SYTI-ri-dé-set",
+                "dua-dan-empat-puluh"
+              ],
+              [
+                "50",
+                "**petdeset**",
+                "pét-dé-set",
+                "lima puluh"
+              ],
+              [
+                "67",
+                "**sedeminšestdeset**",
+                "SÉ-dé-min-syést-dé-set",
+                "tujuh-dan-enam-puluh"
+              ],
+              [
+                "80",
+                "**osemdeset**",
+                "Ò-sem-dé-set",
+                "delapan puluh"
+              ],
+              [
+                "80",
+                "**osemdeset**",
+                "Ò-sem-dé-set",
+                "delapan puluh"
+              ],
+              [
+                "99",
+                "**devetindevetdeset**",
+                "dé-VÉ-tin-dé-vet-dé-set",
+                "sembilan-dan-sembilan-puluh"
+              ],
+              [
+                "100",
+                "**sto**",
+                "sto",
+                "seratus"
+              ],
+              [
+                "1.000.000",
+                "**milijon**",
+                "mi-li-YÒN",
+                "sejuta"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa \"seratus\" dan \"seribu\" **tidak** memakai kata \"satu\": *sto*, bukan *en sto*; *tisoč*, bukan *en tisoč*. Untuk 200 dan seterusnya, angkanya menempel: *dvesto*, *tristo*, *štiristo*, *petsto*.",
+            "Susunan terbalik itu terasa aneh selama beberapa hari, lalu berhenti terasa apa-apa. Yang penting: ketika menyebut harga atau nomor rumah, **dengarkan sampai akhir** — *enaindvajset* dan *dvaindvajset* baru berbeda di suku kata pertama, dan telinga yang buru-buru sering salah tangkap."
+          ]
+        },
+        {
+          "title": "Empat pola: angka + kata benda",
+          "body": [
+            "Inilah aturan yang membuat bahasa Slovenia terasa berbeda dari semua bahasa yang pernah kamu lihat. Bentuk kata bendanya ditentukan oleh **angka terakhir** yang diucapkan, bukan oleh besarnya bilangan."
+          ],
+          "table": {
+            "head": [
+              "Angka",
+              "Bentuk kata benda",
+              "knjiga (p)",
+              "brat (l)",
+              "okno (n)"
+            ],
+            "rows": [
+              [
+                "**1**",
+                "tunggal biasa",
+                "*ena knjiga*",
+                "*en brat*",
+                "*eno okno*"
+              ],
+              [
+                "**2**",
+                "dvojina",
+                "*dve knjig**i***",
+                "*dva brat**a***",
+                "*dve okn**i***"
+              ],
+              [
+                "**3, 4**",
+                "jamak biasa",
+                "*tri knjig**e***",
+                "*trije brat**je***",
+                "*tri okn**a***"
+              ],
+              [
+                "**5 ke atas**",
+                "**rodilnik množine**",
+                "*pet knjig*",
+                "*pet brat**ov***",
+                "*pet ok**en***"
+              ],
+              [
+                "**Koliko?**",
+                "rodilnik množine",
+                "*koliko knjig?*",
+                "*koliko bratov?*",
+                "*koliko oken?*"
+              ],
+              [
+                "**21, 101**",
+                "kembali ke tunggal",
+                "*enaindvajset knjig**a***",
+                "*enaindvajset brat**ov****",
+                "*sto ena knjig**a***"
+              ]
+            ]
+          },
+          "after": [
+            "Baris terakhir adalah kejutan yang menyenangkan: karena yang menentukan adalah angka **terakhir**, maka *enaindvajset knjiga* memakai bentuk tunggal — 21 berakhir pada \"satu\". Begitu pula *dvaindvajset knjigi* memakai dvojina, dan *triindvajset knjige* memakai jamak. Sistemnya berputar setiap sepuluh angka.",
+            "Bentuk **rodilnik množine** untuk angka lima ke atas sering tidak berekor sama sekali pada kata perempuan (*knjiga* → *knjig*, *ura* → *ur*, *miza* → *miz*) dan berekor *-ov* pada kata laki-laki (*brat* → *bratov*, *evro* → *evrov*, *dan* → *dni*). Kata netral biasanya menyisipkan huruf hidup: *okno* → *oken*, *mesto* → *mest*, *pismo* → *pisem*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Umur, tahun, dan nomor",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Angka paling sering dipakai untuk empat hal: umur, jumlah, harga, dan jam. Dua yang pertama ada di halaman ini; harga menunggu di unit 7, jam di unit 9."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "*Koliko si star?*",
+              "KO-li-ko si star",
+              "Umurmu berapa? (kepada laki-laki)"
+            ],
+            [
+              "*Koliko si stara?*",
+              "KO-li-ko si STA-ra",
+              "Umurmu berapa? (kepada perempuan)"
+            ],
+            [
+              "*Star sem dvajset let.*",
+              "star sem DVAY-set lét",
+              "Umur saya dua puluh tahun."
+            ],
+            [
+              "*Stara sem enaintrideset let.*",
+              "STA-ra sem é-na-in-TRI-dé-set lét",
+              "Umur saya tiga puluh satu tahun."
+            ],
+            [
+              "*Ima eno leto.*",
+              "I-ma É-no LÉ-to",
+              "Umurnya satu tahun."
+            ],
+            [
+              "*Ima dve leti.*",
+              "I-ma dvé LÉ-ti",
+              "Umurnya dua tahun."
+            ],
+            [
+              "*Koliko je ljudi?*",
+              "KO-li-ko yé lyu-DI",
+              "Ada berapa orang?"
+            ],
+            [
+              "*Nas je pet.*",
+              "nas yé pét",
+              "Kami berlima."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan *leto* (tahun) melewati keempat pola sekaligus: *eno leto* (1), *dve leti* (2), *tri leta* (3), *pet let* (5+). Kalau kamu cuma sempat menghafal satu kata benda dalam empat bentuk, hafalkan yang ini — ia dipakai setiap kali ada orang bertanya umurmu."
+        },
+        {
+          "type": "p",
+          "text": "*Ljudje* (orang-orang) adalah kata yang tidak menurut: bentuk jamaknya sama sekali berbeda dari bentuk tunggalnya *človek*, dan bentuk setelah angka lima jadi *ljudi*. *Pet ljudi* = lima orang. Untuk dua orang, orang Slovenia memakai *dva človeka*."
+        },
+        {
+          "type": "kotak",
+          "title": "Membaca nomor dan tanggal",
+          "items": [
+            "Nomor telepon dibaca berkelompok dua atau tiga angka: *nič štiri ena — dve tri — pet šest sedem*.",
+            "Tahun dibaca utuh, bukan dipecah seperti bahasa Inggris: 1991 = *tisoč devetsto enaindevetdeset*, bukan \"sembilan belas sembilan puluh satu\".",
+            "Nomor rumah dan nomor bus dibaca sebagai satu angka utuh: *avtobus številka dvajset* (bus nomor dua puluh)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Angka di kehidupan sehari-hari",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Selusin kalimat berikut memakai angka dalam bentuk yang paling sering kamu dengar di jalan, di toko, dan di kelas."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Koliko stane?*",
+              "KO-li-ko STA-né",
+              "Berapa harganya?"
+            ],
+            [
+              "*Deset evrov, prosim.*",
+              "dé-SÉT ÉU-rou, PRO-sim",
+              "Sepuluh euro."
+            ],
+            [
+              "*Dva kilograma, prosim.*",
+              "dva ki-lo-GRA-ma",
+              "Dua kilo."
+            ],
+            [
+              "*Sedem dni.*",
+              "SÉ-dem dni",
+              "Tujuh hari."
+            ],
+            [
+              "*Tri tedne.*",
+              "tri TÉD-né",
+              "Tiga minggu."
+            ],
+            [
+              "*Pet mesecev.*",
+              "pét MÉ-sé-tsou",
+              "Lima bulan."
+            ],
+            [
+              "*Prva stran.*",
+              "PER-va stran",
+              "Halaman pertama."
+            ],
+            [
+              "*Številka dve.*",
+              "SYTÉ-vil-ka dvé",
+              "Nomor dua."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dua baris terakhir memperlihatkan bahwa **veliko** (banyak) dan **malo** (sedikit) berperilaku persis seperti angka lima ke atas: keduanya menyeret bentuk rodilnik. *Veliko ljudi*, *malo denarja*, *veliko časa* (banyak waktu). Sekali kamu menguasai bentuk itu untuk angka, kamu mendapat semua kata jumlah gratis."
+        },
+        {
+          "type": "p",
+          "text": "*Kilogram* di pasar hampir selalu disingkat jadi **kilo** — dan *kilo* tidak berubah bentuk, jadi *dva kilo*, *pet kilo* keduanya terdengar wajar. Salah satu dari sedikit tempat bahasa Slovenia memberimu jalan pintas."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "koliko",
+      "baca": "KO-li-ko",
+      "id": "berapa"
+    },
+    {
+      "sl": "številka",
+      "baca": "SYTÉ-vil-ka",
+      "id": "nomor"
+    },
+    {
+      "sl": "šteti",
+      "baca": "SYTÉ-ti",
+      "id": "menghitung"
+    },
+    {
+      "sl": "leto",
+      "baca": "LÉ-to",
+      "id": "tahun"
+    },
+    {
+      "sl": "teden",
+      "baca": "TÉ-den",
+      "id": "minggu"
+    },
+    {
+      "sl": "mesec",
+      "baca": "MÉ-sets",
+      "id": "bulan"
+    },
+    {
+      "sl": "dan",
+      "baca": "dan",
+      "id": "hari"
+    },
+    {
+      "sl": "ura",
+      "baca": "U-ra",
+      "id": "jam"
+    },
+    {
+      "sl": "človek",
+      "baca": "CLÒ-vek",
+      "id": "orang"
+    },
+    {
+      "sl": "ljudje",
+      "baca": "lyud-YÉ",
+      "id": "orang-orang"
+    },
+    {
+      "sl": "denar",
+      "baca": "dé-NAR",
+      "id": "uang"
+    },
+    {
+      "sl": "knjižnica",
+      "baca": "knyi-ZHNI-tsa",
+      "id": "perpustakaan"
+    },
+    {
+      "sl": "veliko",
+      "baca": "vé-LI-ko",
+      "id": "banyak"
+    },
+    {
+      "sl": "nekaj",
+      "baca": "NÉ-kay",
+      "id": "beberapa; sesuatu"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis angkanya dengan huruf.",
+      "items": [
+        "7 — ____",
+        "13 — ____",
+        "21 — ____",
+        "44 — ____",
+        "68 — ____",
+        "100 — ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk kata benda yang tepat.",
+      "items": [
+        "ena ____, dve ____, pet ____ (knjiga)",
+        "en ____, dva ____, pet ____ (brat)",
+        "eno ____, dve ____, pet ____ (okno)",
+        "Star sem dvajset ____. (leto)",
+        "Koliko ____ je tukaj? (človek)",
+        "Za tri ____. (teden)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Slovenia.",
+      "items": [
+        "Umur saya dua puluh tiga tahun.",
+        "Berapa buku yang kamu mau?",
+        "Lima buku, tolong.",
+        "Saya punya dua saudara laki-laki.",
+        "Ada berapa orang di sini?",
+        "Tiga minggu."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 3. Terjemahkan ke bahasa Slovenia tanpa melihat unitnya.",
+      "items": [
+        "Kami berdua dari Indonesia.",
+        "Kalian berdua bicara bahasa Slovenia?",
+        "Mereka berdua ada di rumah.",
+        "Kedua orang tua saya ada di Jakarta.",
+        "Sampai jumpa!"
+      ]
+    }
+  ],
+  "answers": [
+    "sedem — trinajst — enaindvajset — štiriinštirideset — oseminšestdeset — sto",
+    "ena knjiga, dve knjigi, pet knjig — en brat, dva brata, pet bratov — eno okno, dve okni, pet oken — let — ljudi — tedne",
+    "Star sem triindvajset let. — Koliko knjig želiš? — Pet knjig, prosim. — Imam dva brata. — Koliko ljudi je tukaj? — Tri tedne.",
+    "Midva sva iz Indonezije. — Vidva govorita slovensko? — Onadva sta doma. — Moja starša sta v Jakarti. — Se vidiva!"
+  ]
+}

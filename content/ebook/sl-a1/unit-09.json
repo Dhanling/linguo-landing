@@ -1,0 +1,577 @@
+{
+  "title": "Jam berapa? — dan setengah yang menghitung maju",
+  "title_target": "Koliko je ura?",
+  "goal": "Menyebut jam, membuat janji, dan menghindari kesalahan paling mahal yang bisa dilakukan pelajar bahasa Slovenia: mengira *pol treh* berarti setengah tiga menurut cara Indonesia. Ia berarti 14.30 — jamnya sedang MENUJU tiga.",
+  "bekal": [
+    "menyebut jam bulat, seperempat, setengah, dan menit dengan *čez* dan *do*",
+    "membuat janji dengan *ob* dan bentuk angka khususnya: *ob treh*, *ob petih*, *ob pol šestih*",
+    "membagi hari dengan *zjutraj*, *dopoldne*, *popoldne*, *zvečer*, *ponoči*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Se dobiva ob petih?",
+      "intro": "Maja dan Budi berdiri di lorong kampus. Budi mengira ia sudah paham cara menyebut jam. Ia belum.",
+      "lines": [
+        {
+          "speaker": "Maja:",
+          "text": "Koliko je ura?",
+          "id": "Jam berapa sekarang?",
+          "literal": "berapa adalah jam?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ura je pol treh.",
+          "id": "Setengah tiga — jam 14.30.",
+          "literal": "jam adalah setengah dari-tiga."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Že? Ob treh imam predavanje.",
+          "id": "Sudah? Jam tiga saya ada kuliah.",
+          "literal": "sudah? pada dari-tiga saya-punya kuliah."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kdaj se konča?",
+          "id": "Selesainya jam berapa?",
+          "literal": "kapan diri berakhir?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Ob pol petih. Se dobiva potem?",
+          "id": "Jam setengah lima. Kita ketemu setelah itu?",
+          "literal": "pada setengah dari-lima. diri kita-berdua-bertemu kemudian?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Velja. Ob petih pred knjižnico?",
+          "id": "Sip. Jam lima di depan perpustakaan?",
+          "literal": "berlaku. pada dari-lima di-depan dengan-perpustakaan?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Raje četrt na šest. Rada zamujam.",
+          "id": "Mending jam lima lewat seperempat. Saya sering telat.",
+          "literal": "lebih-suka seperempat ke enam. suka-perempuan saya-terlambat."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ampak pol treh je pol do treh, ne pol čez dve?",
+          "id": "Tapi \"pol treh\" itu setengah menuju tiga, bukan setengah lewat dua?",
+          "literal": "tapi setengah dari-tiga adalah setengah sampai dari-tiga, bukan setengah lewat dua?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Točno. Ura teče proti trem, ne nazaj.",
+          "id": "Tepat. Jamnya berjalan menuju tiga, bukan mundur.",
+          "literal": "tepat. jam mengalir menuju kepada-tiga, bukan mundur."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Torej pol enajstih je deset trideset?",
+          "id": "Jadi \"pol enajstih\" itu jam 10.30?",
+          "literal": "jadi setengah dari-sebelas adalah sepuluh tiga-puluh?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Tako je. Vsi tujci se enkrat zmotijo.",
+          "id": "Betul. Semua orang asing pasti sekali salah.",
+          "literal": "begitu adalah. semua orang-asing diri sekali salah."
+        }
+      ],
+      "notes": [
+        "**Pol treh = 14.30, bukan 15.30.** Inilah satu-satunya hal di unit ini yang benar-benar bisa membuatmu ketinggalan kereta. Bahasa Slovenia menghitung **maju**, ke jam yang sedang dituju: *pol treh* harfiahnya \"setengah dari yang ketiga\" — setengah perjalanan menuju pukul tiga. Bahasa Jerman, Belanda, Denmark, Kroasia, dan Hungaria melakukan hal yang sama; bahasa Indonesia dan Inggris melakukan sebaliknya.",
+        "**Cara mengingatnya yang tidak pernah gagal:** *pol* + angka berikutnya = tiga puluh menit **sebelum** angka itu. *Pol enih* = 12.30, *pol dveh* = 13.30, *pol treh* = 14.30. Kalau kamu ragu di depan orang, cukup sebut angkanya: *ob štirinajst trideset*. Jam dua puluh empat dipakai di semua jadwal resmi dan tidak pernah salah paham.",
+        "**Ob memakai bentuk angka yang khusus.** *Tri* jadi *ob treh*, *pet* jadi *ob petih*, *osem* jadi *ob osmih*. Bentuk berekor *-ih* itu mestnik — sklon tempat yang sama dari unit 8, dipinjam untuk waktu. Hafalkan dua belas bentuknya sebagai satu daftar; ia dipakai setiap hari.",
+        "**Četrt na šest = 17.15.** Logikanya sama dengan *pol*: seperempat perjalanan **menuju** jam enam. Dan *tri četrt na šest* = 17.45, tiga perempat perjalanan menuju enam. Sekali kamu menerima bahwa bahasa Slovenia selalu menunjuk ke jam berikutnya, ketiganya jadi satu aturan, bukan tiga.",
+        "**Rada zamujam — rad ikut jenis kelamin.** *Rad* berarti \"suka\" dan dipakai bersama kata kerja: *rad berem* (saya suka membaca, laki-laki), *rada berem* (perempuan), *radi beremo* (kami suka membaca). Ia bukan kata kerja, melainkan kata sifat yang menempel pada pembicaranya — jadi ia berubah menurut **siapa yang bicara**, bukan menurut apa yang disukai."
+      ],
+      "grammars": [
+        {
+          "title": "Koliko je ura? — menyebut jam",
+          "body": [
+            "Untuk menyebut jam berapa sekarang, pakai *Ura je …*. Perhatikan bahwa jam bulat memakai bentuk angka biasa, sedangkan setengah dan seperempat menyeret bentuk rodilnik."
+          ],
+          "table": {
+            "head": [
+              "Jam",
+              "Slovenščina",
+              "Cara baca",
+              "Harfiahnya"
+            ],
+            "rows": [
+              [
+                "13.00",
+                "*Ura je ena.*",
+                "U-ra yé É-na",
+                "jam adalah satu"
+              ],
+              [
+                "14.00",
+                "*Ura je dve.*",
+                "U-ra yé dvé",
+                "jam adalah dua"
+              ],
+              [
+                "14.15",
+                "*Ura je četrt na tri.*",
+                "cé-TERT na tri",
+                "seperempat ke tiga"
+              ],
+              [
+                "14.30",
+                "*Ura je pol treh.*",
+                "pou tréh",
+                "setengah dari-tiga"
+              ],
+              [
+                "14.45",
+                "*Ura je tri četrt na tri.*",
+                "tri cé-TERT na tri",
+                "tiga-perempat ke tiga"
+              ],
+              [
+                "14.05",
+                "*Ura je pet čez dve.*",
+                "pét céz dvé",
+                "lima lewat dua"
+              ],
+              [
+                "14.50",
+                "*Ura je deset do treh.*",
+                "dé-SÉT do tréh",
+                "sepuluh sampai tiga"
+              ],
+              [
+                "12.00",
+                "*Ura je dvanajst.* / *Poldne je.*",
+                "POU-dné yé",
+                "tengah hari"
+              ]
+            ]
+          },
+          "after": [
+            "Tiga baris di tengah adalah yang menentukan: **četrt na**, **pol**, dan **tri četrt na** semuanya menunjuk ke jam **berikutnya**. Kalau kamu cuma sempat menghafal satu, hafalkan *pol* — ia yang paling sering dipakai dan paling sering disalahpahami.",
+            "*Čez* (lewat) dan *do* (sampai) bekerja seperti bahasa Indonesia dan tidak menyimpan jebakan: *pet čez dve* = jam dua lewat lima, *deset do treh* = jam tiga kurang sepuluh."
+          ]
+        },
+        {
+          "title": "Ob — pada jam berapa",
+          "body": [
+            "Untuk mengatakan *pada* jam berapa sesuatu terjadi, bahasa Slovenia memakai *ob* dan mengubah angkanya jadi bentuk berekor **-ih**. Dua belas bentuk, dan sesudah itu selesai selamanya."
+          ],
+          "table": {
+            "head": [
+              "Jam",
+              "ob …",
+              "Cara baca",
+              "Setengahnya"
+            ],
+            "rows": [
+              [
+                "1",
+                "**ob enih**",
+                "op É-nih",
+                "*ob pol enih* — 12.30"
+              ],
+              [
+                "2",
+                "**ob dveh**",
+                "op dvéh",
+                "*ob pol dveh* — 13.30"
+              ],
+              [
+                "3",
+                "**ob treh**",
+                "op tréh",
+                "*ob pol treh* — 14.30"
+              ],
+              [
+                "4",
+                "**ob štirih**",
+                "op SYTI-rih",
+                "*ob pol štirih* — 15.30"
+              ],
+              [
+                "5",
+                "**ob petih**",
+                "op PÉ-tih",
+                "*ob pol petih* — 16.30"
+              ],
+              [
+                "6",
+                "**ob šestih**",
+                "op SYÉS-tih",
+                "*ob pol šestih* — 17.30"
+              ],
+              [
+                "7",
+                "**ob sedmih**",
+                "op SÉD-mih",
+                "*ob pol sedmih* — 18.30"
+              ],
+              [
+                "8",
+                "**ob osmih**",
+                "op ÒS-mih",
+                "*ob pol osmih* — 19.30"
+              ],
+              [
+                "9",
+                "**ob devetih**",
+                "op dé-VÉ-tih",
+                "*ob pol devetih* — 20.30"
+              ],
+              [
+                "10",
+                "**ob desetih**",
+                "op dé-SÉ-tih",
+                "*ob pol desetih* — 21.30"
+              ],
+              [
+                "11",
+                "**ob enajstih**",
+                "op é-NAYS-tih",
+                "*ob pol enajstih* — 22.30"
+              ],
+              [
+                "12",
+                "**ob dvanajstih**",
+                "op dva-NAYS-tih",
+                "*ob pol dvanajstih* — 23.30"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan tiga bentuk yang tidak menurut: *sedem* → *sedmih*, *osem* → *osmih*, dan *ena* → *enih*. Huruf hidupnya lenyap, seperti biasa terjadi pada e pepet.",
+            "Untuk bertanya: *Ob kateri uri?* (jam berapa?) atau lebih santai *Kdaj?* (kapan?). Untuk menjawab kira-kira: *okrog petih* (sekitar jam lima), *točno ob petih* (tepat jam lima)."
+          ]
+        },
+        {
+          "title": "Bagian hari",
+          "body": [
+            "Bahasa Slovenia membagi hari jadi lima potong, dan potongannya dipakai sebagai kata keterangan — tanpa kata depan apa pun."
+          ],
+          "table": {
+            "head": [
+              "Slovenščina",
+              "Cara baca",
+              "Kira-kira",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**zjutraj**",
+                "ZYU-tray",
+                "05.00-09.00",
+                "*Zjutraj pijem kavo.*"
+              ],
+              [
+                "**dopoldne**",
+                "do-POU-dné",
+                "09.00-12.00",
+                "*Dopoldne sem v šoli.*"
+              ],
+              [
+                "**opoldne**",
+                "o-POU-dné",
+                "12.00",
+                "*Opoldne jem kosilo.*"
+              ],
+              [
+                "**popoldne**",
+                "po-POU-dné",
+                "12.00-18.00",
+                "*Popoldne delam.*"
+              ],
+              [
+                "**zvečer**",
+                "zvé-CÉR",
+                "18.00-23.00",
+                "*Zvečer gledam film.*"
+              ],
+              [
+                "**ponoči**",
+                "po-NÒ-ci",
+                "23.00-05.00",
+                "*Ponoči spim.*"
+              ]
+            ]
+          },
+          "after": [
+            "Kelimanya berdiri sendiri tanpa *v* atau *ob*: *zjutraj*, bukan \"v zjutraj\". Ia sudah membawa arti \"pada waktu itu\" di dalam dirinya.",
+            "Untuk memperjelas jam saat bicara santai, gabungkan keduanya: *ob osmih zjutraj* (jam delapan pagi), *ob osmih zvečer* (jam delapan malam). Cara ini lebih sering dipakai daripada jam dua puluh empat di percakapan sehari-hari."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Waktu dalam kehidupan sehari-hari",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Selain jam, ada selusin kata waktu yang dipakai setiap hari dan tidak menuntut sklon apa pun — hadiah kecil di tengah unit yang penuh angka."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**zdaj**",
+              "zday",
+              "sekarang"
+            ],
+            [
+              "**danes**",
+              "DA-nes",
+              "hari ini"
+            ],
+            [
+              "**jutri**",
+              "YU-tri",
+              "besok"
+            ],
+            [
+              "**včeraj**",
+              "u-CÉ-ray",
+              "kemarin"
+            ],
+            [
+              "**pojutrišnjem**",
+              "po-YU-trisy-nyem",
+              "lusa"
+            ],
+            [
+              "**predvčerajšnjim**",
+              "pret-u-CÉ-raysy-nyim",
+              "kemarin dulu"
+            ],
+            [
+              "**kmalu**",
+              "KMA-lu",
+              "sebentar lagi"
+            ],
+            [
+              "**takoj**",
+              "ta-KÒY",
+              "segera"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Predvčerajšnjim* (kemarin dulu) adalah salah satu kata terpanjang yang dipakai sehari-hari di Slovenia, dan orang Slovenia bangga padanya. Kamu tidak wajib memakainya — *pred dvema dnevoma* (dua hari lalu) sama benarnya — tetapi mengucapkannya dengan benar satu kali akan membuat lawan bicaramu tertawa senang."
+        },
+        {
+          "type": "p",
+          "text": "**Nikoli** (tidak pernah) menuntut kata kerjanya tetap disangkal: *Nikoli ne pijem kave* — harfiahnya \"tidak pernah tidak saya-minum kopi\". Dua penyangkalan dalam satu kalimat bukan salah di bahasa Slovenia; ia justru wajib. Pola yang sama berlaku untuk *nič* (tidak ada apa-apa) dan *nihče* (tidak ada siapa-siapa): *Nič ne razumem*, *Nihče ne ve*."
+        }
+      ]
+    },
+    {
+      "title": "Membuat janji",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kalimat-kalimat di bawah ini menutup hampir semua janji temu sehari-hari — dari mengusulkan sampai membatalkan dengan sopan."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Se dobiva ob petih?*",
+              "se do-BI-va op PÉ-tih",
+              "Kita ketemu jam lima? (berdua)"
+            ],
+            [
+              "*Se dobimo ob petih?*",
+              "se do-BI-mo",
+              "Kita ketemu jam lima? (bertiga ke atas)"
+            ],
+            [
+              "*Kdaj ti ustreza?*",
+              "kday ti us-TRÉ-za",
+              "Kapan kamu bisa?"
+            ],
+            [
+              "*Meni ustreza.*",
+              "MÉ-ni us-TRÉ-za",
+              "Saya bisa."
+            ],
+            [
+              "*Velja!*",
+              "VÉ-lya",
+              "Sip! Deal!"
+            ],
+            [
+              "*Se vidiva jutri.*",
+              "se VI-di-va YU-tri",
+              "Sampai besok."
+            ],
+            [
+              "*Zamujam petnajst minut.*",
+              "za-MU-yam pet-NAYST mi-NUT",
+              "Saya telat lima belas menit."
+            ],
+            [
+              "*Oprosti, ne morem.*",
+              "o-PRÒS-ti, né MO-rem",
+              "Maaf, saya tidak bisa."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Velja* harfiahnya \"berlaku\" dan dipakai persis seperti \"deal\" atau \"sip\" — satu kata untuk menutup kesepakatan. Ia salah satu kata yang paling sering kamu dengar di antara teman, dan memakainya sekali saja langsung membuatmu terdengar jauh lebih santai."
+        },
+        {
+          "type": "kotak",
+          "title": "Soal ketepatan waktu",
+          "items": [
+            "Slovenia berada di sisi Eropa Tengah dalam urusan jam: janji jam lima berarti jam lima, dan datang sepuluh menit terlambat sudah pantas dijelaskan dengan *Oprosti, zamujam*.",
+            "Kereta dan bus berangkat **tepat** pada menit yang tertulis. Jadwal di Slovenia bukan perkiraan.",
+            "Tapi undangan makan malam di rumah orang punya aturan sendiri: datang lima sampai sepuluh menit setelah jam yang disebut justru dianggap sopan, supaya tuan rumah sempat selesai."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Satu kalimat terakhir yang perlu kamu simpan: **Nimam časa** (saya tidak punya waktu). Perhatikan bentuknya — *čas* jadi *časa*, karena kalimatnya menyangkal, persis aturan dari unit 7. Lawannya: *Imam čas.*"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "ura",
+      "baca": "U-ra",
+      "id": "jam; jam dinding"
+    },
+    {
+      "sl": "minuta",
+      "baca": "mi-NU-ta",
+      "id": "menit"
+    },
+    {
+      "sl": "pol",
+      "baca": "pou",
+      "id": "setengah"
+    },
+    {
+      "sl": "četrt",
+      "baca": "cé-TERT",
+      "id": "seperempat"
+    },
+    {
+      "sl": "čez",
+      "baca": "céz",
+      "id": "lewat; menyeberang"
+    },
+    {
+      "sl": "ob",
+      "baca": "op",
+      "id": "pada (jam)"
+    },
+    {
+      "sl": "kdaj",
+      "baca": "kday",
+      "id": "kapan"
+    },
+    {
+      "sl": "zjutraj",
+      "baca": "ZYU-tray",
+      "id": "pagi"
+    },
+    {
+      "sl": "popoldne",
+      "baca": "po-POU-dné",
+      "id": "siang; sore"
+    },
+    {
+      "sl": "zvečer",
+      "baca": "zvé-CÉR",
+      "id": "malam (sore ke malam)"
+    },
+    {
+      "sl": "ponoči",
+      "baca": "po-NÒ-ci",
+      "id": "tengah malam"
+    },
+    {
+      "sl": "poldne",
+      "baca": "POU-dné",
+      "id": "tengah hari"
+    },
+    {
+      "sl": "danes",
+      "baca": "DA-nes",
+      "id": "hari ini"
+    },
+    {
+      "sl": "jutri",
+      "baca": "YU-tri",
+      "id": "besok"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis jamnya dalam bahasa Slovenia.",
+      "items": [
+        "14.30 — Ura je ____.",
+        "17.15 — Ura je ____.",
+        "20.45 — Ura je ____.",
+        "10.05 — Ura je ____.",
+        "12.00 — ____ je.",
+        "22.30 — Ura je ____."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk ob yang tepat.",
+      "items": [
+        "Predavanje se začne ob ____. (3)",
+        "Se dobiva ob ____. (5)",
+        "Vlak gre ob ____. (7)",
+        "Trgovina se zapre ob ____. (8)",
+        "Kosilo je ob ____. (12)",
+        "Film se začne ob pol ____. (9)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Slovenia.",
+      "items": [
+        "Jam berapa sekarang?",
+        "Jam setengah tiga.",
+        "Jam tiga saya ada kuliah.",
+        "Kita ketemu jam lima?",
+        "Maaf, saya telat sepuluh menit.",
+        "Saya tidak punya waktu."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 7. Terjemahkan ke bahasa Slovenia tanpa melihat unitnya.",
+      "items": [
+        "Apelnya berapa?",
+        "Satu kilo, tolong.",
+        "Semuanya berapa?",
+        "Saya tidak punya uang kecil.",
+        "Boleh bayar pakai kartu?"
+      ]
+    }
+  ],
+  "answers": [
+    "pol treh — četrt na šest — tri četrt na devet — pet čez deset — Poldne — pol enajstih",
+    "treh — petih — sedmih — osmih — dvanajstih — devetih",
+    "Koliko je ura? — Ura je pol treh. — Ob treh imam predavanje. — Se dobiva ob petih? — Oprosti, zamujam deset minut. — Nimam časa.",
+    "Koliko stanejo jabolka? — En kilogram, prosim. — Koliko je vse skupaj? — Nimam drobiža. — Lahko plačam s kartico?"
+  ]
+}

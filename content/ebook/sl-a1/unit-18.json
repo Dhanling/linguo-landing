@@ -1,0 +1,514 @@
+{
+  "title": "Naik kereta — dan kata depan yang berganti bunyi",
+  "title_target": "Potujemo z vlakom",
+  "goal": "Membeli tiket, memahami jadwal, dan menyebut naik apa — sekaligus memasang orodnik, sklon terakhir yang kamu butuhkan di tingkat A1, beserta satu kata depan yang berganti rupa menurut bunyi sesudahnya.",
+  "bekal": [
+    "menyebut alat angkut: *z vlakom*, *z avtobusom*, *s kolesom*, *peš*",
+    "memilih *z* atau *s* dari bunyi kata yang menyusul",
+    "membeli tiket dan menanyakan lama perjalanan"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Na blagajni železniške postaje",
+      "intro": "Loket stasiun kereta Ljubljana, Sabtu pagi. Budi hendak ke Bled dan mendapat pelajaran fonetik sebagai bonus.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Eno vozovnico do Bleda, prosim.",
+          "id": "Satu tiket ke Bled.",
+          "literal": "satu tiket-sasaran sampai dari-Bled, tolong."
+        },
+        {
+          "speaker": "Blagajničarka:",
+          "text": "Enosmerno ali povratno?",
+          "id": "Sekali jalan atau pulang pergi?",
+          "literal": "satu-arah atau kembali-punya?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Povratno. Kdaj gre vlak?",
+          "id": "Pulang pergi. Keretanya berangkat jam berapa?",
+          "literal": "kembali-punya. kapan pergi kereta?"
+        },
+        {
+          "speaker": "Blagajničarka:",
+          "text": "Ob osmih petnajst. Peron tri.",
+          "id": "Jam delapan lewat lima belas. Peron tiga.",
+          "literal": "pada dari-delapan lima-belas. peron tiga."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Koliko časa traja?",
+          "id": "Berapa lama perjalanannya?",
+          "literal": "berapa dari-waktu berlangsung?"
+        },
+        {
+          "speaker": "Blagajničarka:",
+          "text": "Uro in pol. Z avtobusom je dlje.",
+          "id": "Satu setengah jam. Naik bus lebih lama.",
+          "literal": "jam-sasaran dan setengah. dengan bus adalah lebih-lama."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Z avtobusom, ne s avtobusom?",
+          "id": "\"Z avtobusom\", bukan \"s avtobusom\"?",
+          "literal": "dengan bus, bukan dengan bus?"
+        },
+        {
+          "speaker": "Blagajničarka:",
+          "text": "Odvisno od glasu za njim.",
+          "id": "Tergantung bunyi yang mengikutinya.",
+          "literal": "tergantung dari dari-bunyi di-belakang dengan-dia."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aha — s kartico, z avtom.",
+          "id": "Oh — \"s kartico\", tapi \"z avtom\".",
+          "literal": "aha — dengan kartu, dengan mobil."
+        },
+        {
+          "speaker": "Blagajničarka:",
+          "text": "Točno. Devet evrov, prosim.",
+          "id": "Tepat. Sembilan euro.",
+          "literal": "tepat. sembilan dari-euro, tolong."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Izvolite. Hvala lepa!",
+          "id": "Ini. Terima kasih banyak!",
+          "literal": "silakan. terima kasih indah!"
+        }
+      ],
+      "notes": [
+        "**Z dan s adalah kata yang sama.** Yang memutuskan bunyi mana yang dipakai adalah huruf **pertama kata berikutnya**, bukan artinya. Aturannya murni soal enak diucapkan: *s* di depan bunyi tak bersuara, *z* di depan sisanya. Bahasa Slovenia melakukan hal serupa pada *iz/z*, *v/u*, dan *k/h*.",
+        "**Alat angkut memakai orodnik.** *Z vlakom*, *z avtobusom*, *s kolesom*, *z avtom*. Harfiahnya \"dengan kereta\" — bahasa Slovenia memperlakukan kendaraan sebagai alat, persis seperti pisau atau pena. Satu pengecualian yang tidak memakai kata depan sama sekali: *peš* (jalan kaki).",
+        "**Koliko časa traja? memakai rodilnik.** Sudah kamu kenal sejak unit 5: *koliko* selalu menyeret bentuk itu. Jawabannya justru memakai bentuk sasaran, karena lama waktu diperlakukan sebagai sasaran: *Traja uro in pol* (berlangsung satu setengah jam), *Traja dve uri*.",
+        "**Uro in pol = satu setengah jam.** Bahasa Slovenia mengatakan \"jam dan setengah\", bukan \"satu setengah jam\". Bentuk lain yang sama polanya: *dan in pol* (satu setengah hari), *leto in pol* (satu setengah tahun). Untuk setengah saja: *pol ure*.",
+        "**Srečno pot!** — \"semoga perjalananmu beruntung\" — adalah ucapan yang akan kamu dengar setiap kali berpisah di stasiun atau bandara. Saudaranya: *Lep dan!*, *Lep večer!*, *Srečno!* Semuanya pendek, hangat, dan tidak menuntut jawaban selain *Hvala, enako!* (terima kasih, sama-sama)."
+      ],
+      "grammars": [
+        {
+          "title": "Orodnik — sklon alat dan penyerta",
+          "body": [
+            "Sklon terakhir yang kamu butuhkan di tingkat A1. Ia menandai **dengan apa** atau **dengan siapa** sesuatu dilakukan, dan ia juga muncul setelah kata depan posisi seperti *pred*, *za*, *nad*, *pod*, dan *med*."
+          ],
+          "table": {
+            "head": [
+              "Jenis",
+              "Bentuk dasar",
+              "Orodnik",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "laki-laki",
+                "*vlak*",
+                "**z vlak*om***",
+                "*Potujem z vlakom.* — Saya naik kereta."
+              ],
+              [
+                "laki-laki",
+                "*avto*",
+                "**z avt*om***",
+                "*Grem z avtom.* — Saya naik mobil."
+              ],
+              [
+                "laki-laki",
+                "*prijatelj*",
+                "**s prijatelj*em***",
+                "*Grem s prijateljem.* — Saya pergi dengan teman."
+              ],
+              [
+                "perempuan",
+                "*kartica*",
+                "**s kartic*o***",
+                "*Plačam s kartico.* — Saya bayar pakai kartu."
+              ],
+              [
+                "perempuan",
+                "*Maja*",
+                "**z Maj*o***",
+                "*Grem z Majo.* — Saya pergi dengan Maja."
+              ],
+              [
+                "netral",
+                "*letalo*",
+                "**z letal*om***",
+                "*Letim z letalom.* — Saya naik pesawat."
+              ],
+              [
+                "kata depan",
+                "*pošta*",
+                "**pred pošt*o***",
+                "*Pred pošto.* — Di depan kantor pos."
+              ],
+              [
+                "kata depan",
+                "*miza*",
+                "**pod miz*o***",
+                "*Pod mizo.* — Di bawah meja."
+              ]
+            ]
+          },
+          "after": [
+            "Ekornya cuma dua: **-om** untuk kata laki-laki dan netral (jadi **-em** setelah *c, č, j, š, ž*), dan **-o** untuk kata perempuan. Yang terakhir kebetulan sama bunyinya dengan bentuk sasaran — yang membedakan adalah kata depannya: *Vidim Majo* (sasaran) melawan *Grem z Majo* (penyerta).",
+            "Dengan orodnik, seluruh enam sklon bahasa Slovenia sudah lewat di depan matamu: **imenovalnik** (pelaku), **rodilnik** (dari, milik, penyangkalan), **dajalnik** (kepada), **tožilnik** (sasaran, arah), **mestnik** (tempat), **orodnik** (alat, penyerta). Ringkasan lengkapnya ada di halaman belakang modul ini."
+          ]
+        },
+        {
+          "title": "Z ali s — aturan bunyi",
+          "body": [
+            "Aturan ini tidak punya kaitan sama sekali dengan arti; ia semata-mata soal bunyi. Sekali kamu melihat daftarnya, ia berhenti terasa acak."
+          ],
+          "table": {
+            "head": [
+              "Pakai",
+              "Di depan bunyi",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**s**",
+                "p, t, k, s, š, c, č, f, h",
+                "*s prijateljem*, *s teboj*, *s kartico*, *s sestro*, *s hčerko*"
+              ],
+              [
+                "**z**",
+                "semua huruf hidup",
+                "*z avtom*, *z Evo*, *z očetom*, *z Ano*"
+              ],
+              [
+                "**z**",
+                "b, d, g, z, ž, j, l, m, n, r, v",
+                "*z bratom*, *z Majo*, *z vlakom*, *z ženo*, *z ladjo*"
+              ]
+            ]
+          },
+          "after": [
+            "Cara mengingatnya yang paling murah: **bunyi berbisik minta *s*, bunyi bersuara minta *z***. Letakkan tanganmu di leher — kalau tenggorokanmu bergetar saat mengucapkan huruf pertamanya, pakai *z*.",
+            "Aturan yang sama, dengan daftar yang sama, berlaku untuk pasangan **k / h** (ke tempat seseorang): *h* dipakai di depan *k* dan *g* saja — *h koncu*, *h gospe* — dan *k* untuk selebihnya: *k Maji*, *k zdravniku*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Potovanje — bepergian",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Slovenia berukuran sekitar seperempat Pulau Jawa, jadi hampir semua tujuan bisa dicapai dalam dua jam. Kereta dikelola **Slovenske železnice**; bus antarkota sering lebih cepat daripada kereta di jalur yang sama."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Naik apa",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**vlak**",
+              "vlak",
+              "*z vlakom*",
+              "kereta"
+            ],
+            [
+              "**avtobus**",
+              "au-to-BUS",
+              "*z avtobusom*",
+              "bus"
+            ],
+            [
+              "**avto**",
+              "AU-to",
+              "*z avtom*",
+              "mobil"
+            ],
+            [
+              "**kolo**",
+              "ko-LÒ",
+              "*s kolesom*",
+              "sepeda"
+            ],
+            [
+              "**letalo**",
+              "lé-TA-lo",
+              "*z letalom*",
+              "pesawat"
+            ],
+            [
+              "**taksi**",
+              "TAK-si",
+              "*s taksijem*",
+              "taksi"
+            ],
+            [
+              "**ladja**",
+              "LAD-ya",
+              "*z ladjo*",
+              "kapal"
+            ],
+            [
+              "**motor**",
+              "MÒ-tor",
+              "*z motorjem*",
+              "sepeda motor"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "*Eno vozovnico do Bleda.*",
+              "É-no vo-zou-NI-tso",
+              "Satu tiket ke Bled."
+            ],
+            [
+              "*Enosmerno ali povratno?*",
+              "é-no-SMÉR-no",
+              "Sekali jalan atau PP?"
+            ],
+            [
+              "*Kdaj gre vlak?*",
+              "kday gré vlak",
+              "Keretanya berangkat kapan?"
+            ],
+            [
+              "*S katerega perona?*",
+              "s ka-TÉ-ré-ga pé-RÒ-na",
+              "Dari peron berapa?"
+            ],
+            [
+              "*Koliko časa traja?*",
+              "KO-li-ko CA-sa TRA-ya",
+              "Berapa lama?"
+            ],
+            [
+              "*Je ta sedež prost?*",
+              "yé ta SÉ-desy pròst",
+              "Kursi ini kosong?"
+            ],
+            [
+              "*Kje moram prestopiti?*",
+              "kyé MO-ram prés-TÒ-pi-ti",
+              "Ganti kereta di mana?"
+            ],
+            [
+              "*Zamujam vlak!*",
+              "za-MU-yam vlak",
+              "Saya ketinggalan kereta!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tujuan yang paling sering disebut: **Bled** dan **Bohinj** di pegunungan, **Piran** dan **Portorož** di pantai, **Postojna** dan **Škocjan** untuk gua, **Maribor** dan **Ptuj** di timur, serta **Trst** — nama Slovenia untuk kota Trieste di Italia, yang bisa dicapai dengan bus dalam dua jam dari Ljubljana."
+        }
+      ]
+    },
+    {
+      "title": "Menginap dan menemukan jalan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sepuluh kalimat untuk hotel, penginapan, dan segala hal yang bisa keliru dalam perjalanan pendek."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Imam rezervacijo.*",
+              "I-mam ré-zér-VA-tsi-yo",
+              "Saya sudah pesan."
+            ],
+            [
+              "*Za dve noči.*",
+              "za dvé NÒ-ci",
+              "Untuk dua malam."
+            ],
+            [
+              "*Je zajtrk vključen?*",
+              "yé ZAY-terk uklyu-CEN",
+              "Sarapan termasuk?"
+            ],
+            [
+              "*Kje je moja soba?*",
+              "kyé yé MO-ya SÒ-ba",
+              "Kamar saya di mana?"
+            ],
+            [
+              "*Ključ, prosim.*",
+              "klyuc, PRO-sim",
+              "Kuncinya, tolong."
+            ],
+            [
+              "*Je wifi zastonj?*",
+              "yé VAY-fay zas-TÒNY",
+              "Wifi-nya gratis?"
+            ],
+            [
+              "*Ob kateri uri je odjava?*",
+              "od-YA-va",
+              "Check out jam berapa?"
+            ],
+            [
+              "*Kje lahko pustim prtljago?*",
+              "PERT-lya-go",
+              "Titip koper di mana?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan **zastonj** (gratis) — kata sehari-hari yang jauh lebih sering terdengar daripada bentuk resminya *brezplačno*. Dan **prtljaga** (bagasi) adalah salah satu kata paling sulit diucapkan di seluruh modul ini: **PERT-lya-ga**, dengan e pepet sebelum *r*."
+        },
+        {
+          "type": "kotak",
+          "title": "Yang perlu diketahui sebelum berangkat",
+          "items": [
+            "Tiket kereta bisa dibeli di aplikasi atau di loket; kalau kamu naik tanpa tiket, beli langsung dari kondektur **sebelum** ia menghampirimu, kalau tidak dendanya berlaku.",
+            "Bus antarkota berangkat dari **avtobusna postaja**, yang di Ljubljana bersebelahan dengan stasiun kereta. Untuk bus kota Ljubljana, kamu butuh kartu **Urbana**; uang tunai tidak diterima di dalam bus.",
+            "Untuk masuk jalan tol dengan mobil, kamu wajib punya **vinjeta** — stiker atau vinjeta elektronik. Tanpa itu dendanya besar, dan pemeriksaannya otomatis."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "potovati",
+      "baca": "po-TÒ-va-ti",
+      "id": "bepergian"
+    },
+    {
+      "sl": "pot",
+      "baca": "pòt",
+      "id": "jalan; perjalanan"
+    },
+    {
+      "sl": "vlak",
+      "baca": "vlak",
+      "id": "kereta"
+    },
+    {
+      "sl": "avtobus",
+      "baca": "au-to-BUS",
+      "id": "bus"
+    },
+    {
+      "sl": "letalo",
+      "baca": "lé-TA-lo",
+      "id": "pesawat"
+    },
+    {
+      "sl": "kolo",
+      "baca": "ko-LÒ",
+      "id": "sepeda"
+    },
+    {
+      "sl": "vozovnica",
+      "baca": "vo-zou-NI-tsa",
+      "id": "tiket"
+    },
+    {
+      "sl": "postaja",
+      "baca": "pos-TA-ya",
+      "id": "stasiun; halte"
+    },
+    {
+      "sl": "peron",
+      "baca": "pé-RÒN",
+      "id": "peron"
+    },
+    {
+      "sl": "prtljaga",
+      "baca": "PERT-lya-ga",
+      "id": "bagasi; koper"
+    },
+    {
+      "sl": "sedež",
+      "baca": "SÉ-desy",
+      "id": "kursi; tempat duduk"
+    },
+    {
+      "sl": "prestopiti",
+      "baca": "prés-TÒ-pi-ti",
+      "id": "berganti kendaraan"
+    },
+    {
+      "sl": "trajati",
+      "baca": "TRA-ya-ti",
+      "id": "berlangsung; makan waktu"
+    },
+    {
+      "sl": "rezervacija",
+      "baca": "ré-zér-VA-tsi-ya",
+      "id": "pemesanan"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan z atau s.",
+      "items": [
+        "Potujem ____ vlakom.",
+        "Grem ____ prijateljem.",
+        "Plačam ____ kartico.",
+        "Grem ____ avtom.",
+        "Grem ____ Majo.",
+        "Grem ____ kolesom."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk orodnik yang tepat.",
+      "items": [
+        "Potujem z ____. (avtobus)",
+        "Letim z ____. (letalo)",
+        "Plačam s ____. (kartica)",
+        "Grem s ____. (sestra)",
+        "Čakam pred ____. (pošta)",
+        "Sedim za ____. (miza)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Slovenia.",
+      "items": [
+        "Satu tiket ke Bled, tolong.",
+        "Sekali jalan atau pulang pergi?",
+        "Keretanya berangkat kapan?",
+        "Berapa lama perjalanannya?",
+        "Satu setengah jam.",
+        "Saya naik bus."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 16. Terjemahkan ke bahasa Slovenia tanpa melihat unitnya.",
+      "items": [
+        "Cuacanya hari ini gimana?",
+        "Hujan dan dingin.",
+        "Besok akan lebih hangat.",
+        "Bawa payung.",
+        "Hari ini lebih hangat daripada kemarin."
+      ]
+    }
+  ],
+  "answers": [
+    "z — s — s — z — z — s",
+    "avtobusom — letalom — kartico — sestro — pošto — mizo",
+    "Eno vozovnico do Bleda, prosim. — Enosmerno ali povratno? — Kdaj gre vlak? — Koliko časa traja? — Uro in pol. — Potujem z avtobusom.",
+    "Kakšno je vreme danes? — Dežuje in hladno je. — Jutri bo topleje. — Vzemi dežnik. — Danes je topleje kot včeraj."
+  ]
+}

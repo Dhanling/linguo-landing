@@ -1,0 +1,481 @@
+{
+  "title": "Memasak — dan dua rupa setiap kata kerja",
+  "title_target": "Kuham kosilo",
+  "goal": "Berbicara tentang makanan dan masak-memasak — sekaligus memasang vid: kenyataan bahwa hampir setiap kata kerja bahasa Slovenia datang berpasangan, satu untuk perbuatan yang sedang berjalan dan satu untuk perbuatan yang selesai.",
+  "bekal": [
+    "mengenali pasangan *kuhati / skuhati*, *brati / prebrati*, *jesti / pojesti*",
+    "tahu bahwa bentuk selesai dalam kalimat masa kini justru berarti masa depan",
+    "menyebut bahan, alat dapur, dan masakan khas Slovenia"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Kuham in skuham",
+      "intro": "Dapur asrama. Budi memasak; Maja duduk di meja dan bertanya tentang satu huruf yang mengubah segalanya.",
+      "lines": [
+        {
+          "speaker": "Maja:",
+          "text": "Kaj kuhaš?",
+          "id": "Masak apa?",
+          "literal": "apa kamu-memasak?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kuham juho. Skuham jo v pol ure.",
+          "id": "Saya masak sup. Setengah jam lagi jadi.",
+          "literal": "saya-memasak sup-sasaran. saya-akan-selesai-memasak dia-sasaran dalam setengah dari-jam."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Kuham in skuham — kakšna je razlika?",
+          "id": "\"Kuham\" dan \"skuham\" — apa bedanya?",
+          "literal": "saya-memasak dan saya-selesai-memasak — bagaimana adalah perbedaan?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kuham je zdaj. Skuham je do konca.",
+          "id": "\"Kuham\" itu sekarang. \"Skuham\" itu sampai selesai.",
+          "literal": "saya-memasak adalah sekarang. saya-selesai-memasak adalah sampai dari-ujung."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Torej skuham pomeni prihodnost?",
+          "id": "Jadi \"skuham\" berarti nanti?",
+          "literal": "jadi saya-selesai-memasak berarti masa-depan?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Skoraj. Pomeni, da bo gotovo.",
+          "id": "Hampir. Artinya nanti pasti jadi.",
+          "literal": "hampir. berarti, bahwa akan selesai."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "In kaj boš skuhal jutri?",
+          "id": "Besok kamu mau masak apa?",
+          "literal": "dan apa kamu-akan memasak-laki besok?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jutri kuham indonezijsko hrano.",
+          "id": "Besok saya masak makanan Indonesia.",
+          "literal": "besok saya-memasak Indonesia-punya makanan-sasaran."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Odlično. To pa bom pojedla.",
+          "id": "Bagus. Itu pasti saya habiskan.",
+          "literal": "sangat-baik. itu tapi saya-akan makan-habis-perempuan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pojedla — torej vse do konca.",
+          "id": "\"Pojedla\" — berarti sampai habis.",
+          "literal": "makan-habis-perempuan — jadi semua sampai dari-ujung."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Tako je. Za to imamo en glagol.",
+          "id": "Betul. Untuk itu kami punya satu kata kerja.",
+          "literal": "begitu adalah. untuk itu kami-punya satu kata-kerja."
+        }
+      ],
+      "notes": [
+        "**Hampir setiap kata kerja bahasa Slovenia punya kembaran.** Satu untuk perbuatan yang **sedang berjalan atau berulang** (*nedovršni*), satu untuk perbuatan yang **diselesaikan sampai tuntas** (*dovršni*). *Kuham juho* = saya sedang memasak sup. *Skuham juho* = saya akan menyelesaikan sup itu.",
+        "**Bentuk selesai dalam kalimat masa kini berarti masa depan.** Ini yang paling membingungkan pada awalnya: *Skuham* berbentuk masa kini, tetapi tidak bisa berarti \"sekarang\" — sebab sesuatu yang selesai tidak bisa sedang berlangsung. Jadi ia otomatis melompat ke masa depan. Bahasa Slovenia mendapat satu bentuk masa depan gratis dari cara berpikir ini.",
+        "**Bahasa Indonesia sebenarnya melakukan hal serupa, hanya lebih santai.** \"Saya makan\" melawan \"saya habiskan\"; \"saya baca\" melawan \"saya baca sampai selesai\"; \"saya kerjakan\" melawan \"saya selesaikan\". Bedanya, di bahasa Indonesia pemilahan ini boleh diabaikan, sedangkan di bahasa Slovenia kamu harus memilih sebelum membuka mulut.",
+        "**Awalan yang membuatnya selesai berbeda-beda per kata.** *s-* pada *skuhati*, *pre-* pada *prebrati*, *po-* pada *pojesti*, *na-* pada *napisati*. Tidak ada aturan yang bisa menebaknya, jadi hafalkan pasangannya berdampingan — sama seperti kamu menghafal jenis kata benda bersama kata sifatnya.",
+        "**Bom pojedla — bentuk masa depan penuh.** Untuk perbuatan yang belum selesai, bahasa Slovenia memakai *bom* + kata berekor *-l*: *bom kuhala* (saya akan memasak). Untuk yang selesai, bisa dua-duanya: *bom pojedla* atau cukup *pojem*. Seluruh sistemnya dipasang di unit 17."
+      ],
+      "grammars": [
+        {
+          "title": "Vid — dua rupa satu perbuatan",
+          "body": [
+            "Tabel ini memuat pasangan yang paling sering dipakai di tingkat A1. Kolom kiri untuk perbuatan yang berjalan atau berulang; kolom kanan untuk perbuatan yang tuntas satu kali."
+          ],
+          "table": {
+            "head": [
+              "Belum selesai",
+              "Selesai",
+              "Arti",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "*kuhati*",
+                "**skuhati**",
+                "memasak",
+                "*Kuham juho.* / *Skuham juho.*"
+              ],
+              [
+                "*jesti*",
+                "**pojesti**",
+                "makan / menghabiskan",
+                "*Jem kruh.* / *Pojem kruh.*"
+              ],
+              [
+                "*piti*",
+                "**popiti**",
+                "minum / menghabiskan",
+                "*Pijem kavo.* / *Popijem kavo.*"
+              ],
+              [
+                "*brati*",
+                "**prebrati**",
+                "membaca / menamatkan",
+                "*Berem knjigo.* / *Preberem knjigo.*"
+              ],
+              [
+                "*pisati*",
+                "**napisati**",
+                "menulis / menyelesaikan tulisan",
+                "*Pišem pismo.* / *Napišem pismo.*"
+              ],
+              [
+                "*delati*",
+                "**narediti**",
+                "mengerjakan / menyelesaikan",
+                "*Delam nalogo.* / *Naredim nalogo.*"
+              ],
+              [
+                "*kupovati*",
+                "**kupiti**",
+                "berbelanja / membeli",
+                "*Kupujem kruh.* / *Kupim kruh.*"
+              ],
+              [
+                "*učiti se*",
+                "**naučiti se**",
+                "belajar / menguasai",
+                "*Učim se.* / *Naučim se.*"
+              ]
+            ]
+          },
+          "after": [
+            "Cara memilih yang tidak pernah gagal: tanyakan **apakah perbuatannya punya ujung yang jelas dalam kalimat ini**. \"Setiap hari saya membaca\" — tidak berujung, pakai *berem*. \"Saya menamatkan buku itu kemarin\" — berujung, pakai *sem prebral*.",
+            "Di kalimat lampau, pemilahannya paling terasa: *Bral sem knjigo* (saya membaca buku itu, entah selesai atau tidak) melawan *Prebral sem knjigo* (saya menamatkannya). Bahasa Indonesia menuliskan keduanya \"saya membaca buku itu\" dan menambahkan \"sampai habis\" kalau perlu."
+          ]
+        },
+        {
+          "title": "Awalan yang mengubah arti",
+          "body": [
+            "Awalan bahasa Slovenia tidak cuma menandai selesai atau belum; sebagiannya benar-benar mengubah arti kata kerjanya. Enam yang paling sering kamu temui:"
+          ],
+          "table": {
+            "head": [
+              "Awalan",
+              "Artinya",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "**po-**",
+                "sampai habis",
+                "*jesti* → *pojesti*",
+                "menghabiskan"
+              ],
+              [
+                "**pre-**",
+                "menembus, dari ujung ke ujung",
+                "*brati* → *prebrati*",
+                "menamatkan"
+              ],
+              [
+                "**na-**",
+                "sampai jadi",
+                "*pisati* → *napisati*",
+                "menyelesaikan tulisan"
+              ],
+              [
+                "**s- / z-**",
+                "menyatukan, menuntaskan",
+                "*kuhati* → *skuhati*",
+                "selesai memasak"
+              ],
+              [
+                "**pri-**",
+                "datang, tiba",
+                "*iti* → *priti*",
+                "datang"
+              ],
+              [
+                "**od-**",
+                "pergi menjauh",
+                "*iti* → *oditi*",
+                "berangkat pergi"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa awalan yang sama bisa menempel pada banyak kata kerja dengan rasa yang serupa: *pri-* selalu berarti mendekat (*priti*, *prinesti* membawa datang, *priti domov* pulang), dan *od-* selalu berarti menjauh (*oditi*, *odnesti* membawa pergi).",
+            "Karena itu, satu kata kerja dasar bisa melahirkan selusin kata baru. *Nesti* (membawa) menghasilkan *prinesti*, *odnesti*, *ponesti*, *prenesti*, *znesti*. Ini alasan kamus bahasa Slovenia terlihat menakutkan padahal jumlah akarnya sedikit — dan sekaligus alasan kosakatamu akan tumbuh cepat begitu kamu mengenali awalannya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Hrana — makanan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Slovenia duduk di persimpangan empat dapur: Austria, Italia, Hungaria, dan Balkan. Hasilnya masakan yang berganti wajah setiap seratus kilometer — dan kosakata makanan yang sebagian terdengar akrab, sebagian sama sekali tidak."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**hrana**",
+              "HRA-na",
+              "makanan"
+            ],
+            [
+              "**meso**",
+              "mé-SÒ",
+              "daging"
+            ],
+            [
+              "**piščanec**",
+              "pisy-CA-nets",
+              "ayam"
+            ],
+            [
+              "**riba**",
+              "RI-ba",
+              "ikan"
+            ],
+            [
+              "**riž**",
+              "risy",
+              "nasi; beras"
+            ],
+            [
+              "**testenine**",
+              "tés-té-NI-né",
+              "pasta; mi"
+            ],
+            [
+              "**krompir**",
+              "krom-PIR",
+              "kentang"
+            ],
+            [
+              "**juha**",
+              "YU-ha",
+              "sup"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Masakan yang akan ditawarkan kepadamu cepat atau lambat: **kranjska klobasa** (sosis Carniola, dilindungi Uni Eropa seperti keju Parma), **jota** (sup kacang dan sauerkraut), **žganci** (bubur tepung soba, makanan petani), **ričet** (sup jelai), **štruklji** (gulungan adonan isi keju atau kacang), dan **potica** — kue gulung isi kenari yang muncul di setiap perayaan dan yang resepnya diperdebatkan di setiap keluarga."
+        },
+        {
+          "type": "p",
+          "text": "Satu kalimat yang mungkin kamu butuhkan: *Ne jem svinjine* (saya tidak makan daging babi). Perhatikan bentuknya — *svinjina* jadi *svinjine* karena kalimatnya menyangkal. Kalimat lain yang berguna: *Sem vegetarijanec* (laki-laki) atau *Sem vegetarijanka* (perempuan), dan *Ali to vsebuje meso?* (ini ada dagingnya?)."
+        }
+      ]
+    },
+    {
+      "title": "Di dapur dan di meja",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kalimat berikut dipilih karena semuanya memakai pasangan vid yang baru saja kamu pelajari — perhatikan mana yang berujung dan mana yang tidak."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Kaj kuhaš?*",
+              "kay KU-hasy",
+              "Masak apa?"
+            ],
+            [
+              "*Skuham v pol ure.*",
+              "SKU-ham u pou U-ré",
+              "Setengah jam lagi jadi."
+            ],
+            [
+              "*Rad kuham.*",
+              "rat KU-ham",
+              "Saya suka memasak."
+            ],
+            [
+              "*Ne znam kuhati.*",
+              "né ZNAM KU-ha-ti",
+              "Saya tidak bisa masak."
+            ],
+            [
+              "*Je zelo dobro.*",
+              "yé zé-LO DÒ-bro",
+              "Enak sekali."
+            ],
+            [
+              "*Preveč soli.*",
+              "pré-VÉC so-LI",
+              "Kegaraman."
+            ],
+            [
+              "*Še malo, prosim.*",
+              "syé MA-lo",
+              "Tambah sedikit, tolong."
+            ],
+            [
+              "*Sit sem, hvala.*",
+              "sit sem",
+              "Saya kenyang, terima kasih. (laki-laki)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan empat kata sifat yang ikut jenis kelamin: **sit / sita** (kenyang), **lačen / lačna** (lapar), **žejen / žejna** (haus), **utrujen / utrujena** (lelah). Keempatnya dipakai dengan *sem*, bukan dengan *imam* — jadi \"saya lapar\", bukan \"saya punya lapar\" seperti bahasa Prancis atau Spanyol."
+        },
+        {
+          "type": "kotak",
+          "title": "Kebiasaan makan di Slovenia",
+          "items": [
+            "**Kosilo** (makan siang) adalah makan utama, bukan makan malam — biasanya antara jam dua belas dan dua siang, dan hampir selalu berisi sup lebih dulu.",
+            "**Malica** adalah makan kecil pagi hari, sekitar jam sepuluh, dan di sekolah maupun kantor ia hampir jadi lembaga resmi.",
+            "Tuan rumah Slovenia akan menawarkan tambahan berkali-kali. Menolak satu kali dianggap sopan, bukan final — jadi kalau kamu benar-benar kenyang, katakan *Res sem sit, hvala* sambil tersenyum."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "kuhati",
+      "baca": "KU-ha-ti",
+      "id": "memasak"
+    },
+    {
+      "sl": "skuhati",
+      "baca": "SKU-ha-ti",
+      "id": "selesai memasak"
+    },
+    {
+      "sl": "pojesti",
+      "baca": "po-YÉS-ti",
+      "id": "menghabiskan (makanan)"
+    },
+    {
+      "sl": "popiti",
+      "baca": "po-PI-ti",
+      "id": "menghabiskan (minuman)"
+    },
+    {
+      "sl": "prebrati",
+      "baca": "pré-BRA-ti",
+      "id": "menamatkan bacaan"
+    },
+    {
+      "sl": "napisati",
+      "baca": "na-PI-sa-ti",
+      "id": "menyelesaikan tulisan"
+    },
+    {
+      "sl": "hrana",
+      "baca": "HRA-na",
+      "id": "makanan"
+    },
+    {
+      "sl": "meso",
+      "baca": "mé-SÒ",
+      "id": "daging"
+    },
+    {
+      "sl": "juha",
+      "baca": "YU-ha",
+      "id": "sup"
+    },
+    {
+      "sl": "riž",
+      "baca": "risy",
+      "id": "nasi; beras"
+    },
+    {
+      "sl": "sol",
+      "baca": "sou",
+      "id": "garam"
+    },
+    {
+      "sl": "olje",
+      "baca": "Ò-lyé",
+      "id": "minyak"
+    },
+    {
+      "sl": "lačen",
+      "baca": "LA-cen",
+      "id": "lapar"
+    },
+    {
+      "sl": "sit",
+      "baca": "sit",
+      "id": "kenyang"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih bentuk yang tepat: belum selesai atau selesai.",
+      "items": [
+        "Vsak dan ____ juho. (kuhati atau skuhati)",
+        "V pol ure ____ juho. (kuhati atau skuhati)",
+        "Zdaj ____ knjigo. (brati atau prebrati)",
+        "Jutri ____ knjigo. (brati atau prebrati)",
+        "Vedno ____ kavo zjutraj. (piti atau popiti)",
+        "Takoj ____ vso kavo. (piti atau popiti)"
+      ]
+    },
+    {
+      "prompt": "Tulis pasangan selesainya.",
+      "items": [
+        "jesti — ____",
+        "pisati — ____",
+        "delati — ____",
+        "kupovati — ____",
+        "učiti se — ____",
+        "kuhati — ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Slovenia.",
+      "items": [
+        "Masak apa?",
+        "Saya masak sup.",
+        "Saya suka memasak.",
+        "Saya tidak bisa masak.",
+        "Enak sekali.",
+        "Saya kenyang, terima kasih."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 12. Terjemahkan ke bahasa Slovenia tanpa melihat unitnya.",
+      "items": [
+        "Kemarin kamu ngapain?",
+        "Kemarin saya di rumah.",
+        "Saya naik gunung.",
+        "Tadi bagus sekali.",
+        "Saya tidak sempat."
+      ]
+    }
+  ],
+  "answers": [
+    "kuham — skuham — berem — preberem — pijem — popijem",
+    "pojesti — napisati — narediti — kupiti — naučiti se — skuhati",
+    "Kaj kuhaš? — Kuham juho. — Rad kuham. — Ne znam kuhati. — Je zelo dobro. — Sit sem, hvala.",
+    "Kaj si delal včeraj? — Včeraj sem bil doma. — Šel sem v hribe. — Bilo je zelo lepo. — Nisem imel časa."
+  ]
+}

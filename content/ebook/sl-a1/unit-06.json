@@ -1,0 +1,553 @@
+{
+  "title": "Di kafe — dan kata benda sebagai sasaran",
+  "title_target": "V kavarni",
+  "goal": "Memesan minuman dan makanan kecil dengan empat bentuk yang selalu sopan — sekaligus memasang tožilnik, bentuk yang dipakai kata benda ketika ia jadi SASARAN perbuatan, bukan pelakunya.",
+  "bekal": [
+    "memesan dengan *Prosim…*, *Jaz bi…*, *Želim…*, dan *Lahko dobim…?*",
+    "mengubah kata perempuan jadi sasaran: *kava* → *kavo*, *voda* → *vodo*, *solata* → *solato*",
+    "memakai dua kata kerja yang tidak menurut: *jesti* (makan) dan *piti* (minum)"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Tri naročila in en račun",
+      "intro": "Sore di sebuah kavarna di tepi Ljubljanica. Maja, Eva, dan Budi duduk di luar; pelayannya datang membawa buku catatan.",
+      "lines": [
+        {
+          "speaker": "Natakar:",
+          "text": "Dober dan. Kaj želite?",
+          "id": "Selamat siang. Mau pesan apa?",
+          "literal": "baik hari. apa Anda-mau?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Jaz bi eno kavo, prosim.",
+          "id": "Saya mau satu kopi.",
+          "literal": "saya akan satu kopi-sasaran, tolong."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Zame čaj. Zeleni čaj, prosim.",
+          "id": "Untuk saya teh. Teh hijau.",
+          "literal": "untuk-saya teh. hijau teh, tolong."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "In jaz bi vodo in eno pivo.",
+          "id": "Dan saya mau air putih dan satu bir.",
+          "literal": "dan saya akan air-sasaran dan satu bir."
+        },
+        {
+          "speaker": "Natakar:",
+          "text": "Veliko ali malo pivo?",
+          "id": "Birnya besar atau kecil?",
+          "literal": "besar atau kecil bir?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Malo, prosim. Imate kaj za pod zob?",
+          "id": "Kecil. Ada camilan juga?",
+          "literal": "kecil, tolong. Anda-punya apa untuk di-bawah gigi?"
+        },
+        {
+          "speaker": "Natakar:",
+          "text": "Imamo burek, sendvič in solato.",
+          "id": "Ada burek, roti isi, dan salad.",
+          "literal": "kami-punya burek, roti-isi dan salad."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Potem eno solato, prosim.",
+          "id": "Kalau begitu satu salad.",
+          "literal": "kemudian satu salad-sasaran, tolong."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "In račun kar skupaj.",
+          "id": "Dan bonnya digabung saja.",
+          "literal": "dan tagihan saja bersama."
+        },
+        {
+          "speaker": "Natakar:",
+          "text": "Seveda. Takoj pridem.",
+          "id": "Tentu. Saya segera kembali.",
+          "literal": "tentu-saja. segera saya-datang."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hvala lepa! Dober tek vsem!",
+          "id": "Terima kasih banyak! Selamat menikmati semuanya!",
+          "literal": "terima kasih indah! baik selera kepada-semua!"
+        }
+      ],
+      "notes": [
+        "**Jaz bi … — cara memesan yang paling sering terdengar.** Harfiahnya \"saya akan\", dan kata kerjanya sengaja dibuang: *Jaz bi eno kavo* sebenarnya potongan dari *Jaz bi rad eno kavo* (\"saya ingin satu kopi\"). Bentuk pendeknya sopan, hangat, dan dipakai orang Slovenia setiap hari — jauh lebih sering daripada *Želim*, yang terdengar seperti formulir.",
+        "**Kava jadi kavo, voda jadi vodo, solata jadi solato.** Inilah tožilnik: bentuk yang dipakai kata benda ketika ia menjadi **sasaran** perbuatan. Aturannya untuk kata perempuan cuma satu baris — ganti *-a* dengan *-o* — dan ia berlaku pada ribuan kata.",
+        "**Tapi čaj, burek, dan sendvič tidak berubah sama sekali.** Kata benda laki-laki yang bukan makhluk hidup memakai bentuk yang sama entah ia pelaku entah sasaran. Jadi separuh dari kekhawatiranmu tentang sklon barusan menguap: *Pijem čaj*, *Čaj je vroč* — bentuknya kembar.",
+        "**Zame = za + mene.** Kata depan *za* (untuk) menyatu dengan kata gantinya: *zame* (untuk saya), *zate* (untuk kamu), *zanj* (untuk dia laki-laki), *zanjo* (untuk dia perempuan), *za naju* (untuk kami berdua). Bentuk sambungan seperti ini banyak di bahasa Slovenia dan selalu lebih pendek dari bentuk panjangnya.",
+        "**Kaj za pod zob** harfiahnya \"sesuatu untuk di bawah gigi\" — ungkapan sehari-hari untuk camilan. Bahasa Slovenia penuh gambaran badan semacam ini, dan kalimat semacam ini yang membuat lawan bicaramu tersenyum. **Kar** di *račun kar skupaj* adalah kata pelunak, mirip \"saja\" bahasa Indonesia: ia membuat permintaan terdengar santai, bukan menuntut."
+      ],
+      "grammars": [
+        {
+          "title": "Tožilnik — bentuk sasaran",
+          "body": [
+            "Bahasa Slovenia menandai siapa pelaku dan apa sasaran lewat **bentuk kata bendanya**, bukan lewat urutan kata. Karena itu urutannya bisa dibolak-balik tanpa kalimatnya berubah arti."
+          ],
+          "table": {
+            "head": [
+              "Jenis",
+              "Pelaku (imenovalnik)",
+              "Sasaran (tožilnik)",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "perempuan",
+                "*kav**a***",
+                "**kav*o***",
+                "*Pijem kavo.* — Saya minum kopi."
+              ],
+              [
+                "perempuan",
+                "*vod**a***",
+                "**vod*o***",
+                "*Prosim vodo.* — Minta air."
+              ],
+              [
+                "laki-laki, benda",
+                "*čaj*",
+                "**čaj**",
+                "*Pijem čaj.* — Saya minum teh."
+              ],
+              [
+                "laki-laki, benda",
+                "*kruh*",
+                "**kruh**",
+                "*Jem kruh.* — Saya makan roti."
+              ],
+              [
+                "laki-laki, makhluk",
+                "*brat*",
+                "**brat*a***",
+                "*Vidim brata.* — Saya melihat saudara saya."
+              ],
+              [
+                "laki-laki, makhluk",
+                "*pes*",
+                "**ps*a***",
+                "*Imam psa.* — Saya punya anjing."
+              ],
+              [
+                "netral",
+                "*pivo*",
+                "**pivo**",
+                "*Pijem pivo.* — Saya minum bir."
+              ],
+              [
+                "netral",
+                "*mesto*",
+                "**mesto**",
+                "*Vidim mesto.* — Saya melihat kota itu."
+              ]
+            ]
+          },
+          "after": [
+            "Tiga dari empat baris tidak menuntut apa-apa: kata laki-laki yang bukan makhluk hidup dan **semua** kata netral memakai bentuk yang sama. Yang benar-benar harus kamu kerjakan cuma dua: *-a* → *-o* untuk perempuan, dan tambahan *-a* untuk laki-laki yang bernyawa.",
+            "Pemilahan bernyawa dan tidak bernyawa itu dipegang serius: *Vidim brata* (saya melihat saudara saya) tapi *Vidim stol* (saya melihat kursi). Yang dihitung bernyawa adalah manusia dan hewan — bukan tumbuhan, bukan mobil, walaupun pemiliknya sayang sekali padanya."
+          ]
+        },
+        {
+          "title": "Empat cara memesan yang selalu benar",
+          "body": [
+            "Berikut empat bentuk, disusun dari yang paling santai ke yang paling resmi. Semuanya sopan; tidak ada yang bisa membuatmu terdengar kasar."
+          ],
+          "table": {
+            "head": [
+              "Bentuk",
+              "Cara baca",
+              "Rasanya",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**Prosim …**",
+                "PRO-sim",
+                "singkat, netral",
+                "*Prosim eno kavo.*"
+              ],
+              [
+                "**Jaz bi …**",
+                "yas bi",
+                "hangat, paling sering dipakai",
+                "*Jaz bi eno pivo.*"
+              ],
+              [
+                "**Lahko dobim …?**",
+                "LAH-ko do-BIM",
+                "bertanya, sangat sopan",
+                "*Lahko dobim vodo?*"
+              ],
+              [
+                "**Želim …**",
+                "zhé-LIM",
+                "resmi, agak kaku",
+                "*Želim čaj.*"
+              ],
+              [
+                "**Za mene …**",
+                "za MÉ-né",
+                "menunjuk pesanan sendiri",
+                "*Zame čaj, prosim.*"
+              ],
+              [
+                "**Še …, prosim.**",
+                "syé",
+                "menambah pesanan",
+                "*Še eno kavo, prosim.*"
+              ]
+            ]
+          },
+          "after": [
+            "Baris terakhir sangat berguna: **še** berarti \"lagi\" atau \"tambah\". *Še enkrat, prosim* = \"sekali lagi, tolong\" — kalimat yang akan kamu pakai setiap hari saat orang bicara terlalu cepat.",
+            "Untuk meminta bon: *Račun, prosim* atau *Plačal bi* (saya mau bayar; perempuan mengatakan *Plačala bi*). Untuk membayar terpisah: *Vsak zase, prosim* — harfiahnya \"masing-masing untuk dirinya\"."
+          ]
+        },
+        {
+          "title": "Jesti in piti — dua kata kerja yang tidak menurut",
+          "body": [
+            "Dua kata kerja paling sering dipakai di meja makan, dan dua-duanya punya bentuk yang tidak mengikuti pola mana pun. Hafalkan sebagai bongkah."
+          ],
+          "table": {
+            "head": [
+              "Pelaku",
+              "jesti (makan)",
+              "piti (minum)",
+              "Cara baca"
+            ],
+            "rows": [
+              [
+                "jaz",
+                "**jem**",
+                "**pijem**",
+                "yém / PI-yem"
+              ],
+              [
+                "ti",
+                "**ješ**",
+                "**piješ**",
+                "yésy / PI-yesy"
+              ],
+              [
+                "on / ona",
+                "**je**",
+                "**pije**",
+                "yé / PI-yé"
+              ],
+              [
+                "midva",
+                "**jeva**",
+                "**pijeva**",
+                "YÉ-va / PI-yé-va"
+              ],
+              [
+                "vidva / onadva",
+                "**jesta**",
+                "**pijeta**",
+                "YÉS-ta / PI-yé-ta"
+              ],
+              [
+                "mi",
+                "**jemo**",
+                "**pijemo**",
+                "YÉ-mo / PI-yé-mo"
+              ],
+              [
+                "vi",
+                "**jeste**",
+                "**pijete**",
+                "YÉS-té / PI-yé-té"
+              ],
+              [
+                "oni",
+                "**jedo**",
+                "**pijejo**",
+                "YÉ-do / PI-yé-yo"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan jebakan yang cantik di baris ketiga: **je** berarti \"dia makan\" **dan** \"dia adalah\". *Ona je* bisa berarti \"dia adalah\" atau \"dia makan\", dan yang membedakan cuma apa yang menyusul. *Ona je učiteljica* = dia guru. *Ona je kruh* = dia makan roti. Orang Slovenia sendiri memakainya sebagai bahan lelucon.",
+            "Bentuk negatifnya menyatu untuk *jesti*: **ne jem** ditulis terpisah, tetapi diucapkan menyatu. Untuk \"tidak punya\", bentuknya *nimam*, dan yang tidak ada selalu berbentuk rodilnik: *Nimam časa* (saya tidak punya waktu), *Ni piva* (tidak ada bir)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pijača in prigrizki — minuman dan camilan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Semua kata di bawah ini ditulis dua kali: bentuk dasarnya, lalu bentuk yang kamu ucapkan saat memesan. Hafalkan kolom kedua — itulah yang keluar dari mulutmu di kafe."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bentuk dasar",
+            "Saat memesan",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*kava*",
+              "**eno kavo**",
+              "É-no KA-vo",
+              "kopi"
+            ],
+            [
+              "*voda*",
+              "**vodo**",
+              "VÒ-do",
+              "air putih"
+            ],
+            [
+              "*čaj*",
+              "**čaj**",
+              "cay",
+              "teh"
+            ],
+            [
+              "*pivo*",
+              "**eno pivo**",
+              "É-no PI-vo",
+              "bir"
+            ],
+            [
+              "*vino*",
+              "**vino**",
+              "VI-no",
+              "anggur"
+            ],
+            [
+              "*sok*",
+              "**sok**",
+              "sòk",
+              "jus"
+            ],
+            [
+              "*mleko*",
+              "**mleko**",
+              "MLÉ-ko",
+              "susu"
+            ],
+            [
+              "*limonada*",
+              "**limonado**",
+              "li-mo-NA-do",
+              "limun"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kopi di Slovenia punya kosakatanya sendiri: **bela kava** (kopi susu), **kava z mlekom** (kopi dengan susu), **espresso**, dan **makijato**. Kalau kamu memesan *kava* begitu saja, yang datang adalah espresso pendek — bukan kopi panjang seperti kebiasaan Indonesia. Untuk yang panjang, minta *podaljšano kavo*."
+        },
+        {
+          "type": "p",
+          "text": "**Burek** adalah pastri berlapis isi daging atau keju, warisan masa Yugoslavia, dan makanan penyelamat setiap mahasiswa di Ljubljana pada jam dua pagi. Ia dijual per potong dan tidak berubah bentuk saat dipesan — hadiah kecil bagi pelajar bahasa yang sedang lapar."
+        }
+      ]
+    },
+    {
+      "title": "Adab meja di Slovenia",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Beberapa kebiasaan yang tidak tertulis di buku tata bahasa mana pun, tetapi terasa langsung kalau dilanggar."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Kapan dipakai"
+          ],
+          "rows": [
+            [
+              "**Dober tek!**",
+              "DÒ-ber ték",
+              "Sebelum makan — \"selamat makan\""
+            ],
+            [
+              "**Na zdravje!**",
+              "na ZDRAU-yé",
+              "Bersulang — \"untuk kesehatan\""
+            ],
+            [
+              "**Izvolite.**",
+              "iz-VÒ-li-té",
+              "Silakan; ini pesanan Anda"
+            ],
+            [
+              "**Račun, prosim.**",
+              "ra-CUN, PRO-sim",
+              "Minta bon"
+            ],
+            [
+              "**Vsak zase, prosim.**",
+              "usak ZA-sé",
+              "Bayar sendiri-sendiri"
+            ],
+            [
+              "**Obdržite drobiž.**",
+              "ob-DER-zhi-té DRO-bisy",
+              "Kembaliannya ambil saja"
+            ],
+            [
+              "**Je bilo odlično.**",
+              "yé BI-lo od-LIC-no",
+              "Tadi enak sekali"
+            ],
+            [
+              "**Še eno, prosim.**",
+              "syé É-no, PRO-sim",
+              "Satu lagi, tolong"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Dober tek** diucapkan kepada siapa pun yang sedang atau akan makan — termasuk kepada orang asing di meja sebelah. Diam saat lewat di depan orang yang sedang makan terasa sedikit dingin, persis seperti tidak menyapa saat masuk lift."
+        },
+        {
+          "type": "p",
+          "text": "**Na zdravje!** punya satu aturan yang dipegang serius: saat bersulang, **tatap matanya**. Bukan gelasnya, matanya. Orang Slovenia — seperti tetangganya di Austria dan Jerman — menganggap menatap gelas sebagai tanda kurang tulus, dan sebagian bahkan menyebutkan akibat buruk yang menyusul. Ucapan yang sama juga dipakai saat orang bersin."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "kavarna",
+      "baca": "ka-VAR-na",
+      "id": "kafe"
+    },
+    {
+      "sl": "natakar",
+      "baca": "na-ta-KAR",
+      "id": "pelayan"
+    },
+    {
+      "sl": "naročiti",
+      "baca": "na-RO-ci-ti",
+      "id": "memesan"
+    },
+    {
+      "sl": "kava",
+      "baca": "KA-va",
+      "id": "kopi"
+    },
+    {
+      "sl": "voda",
+      "baca": "VÒ-da",
+      "id": "air"
+    },
+    {
+      "sl": "čaj",
+      "baca": "cay",
+      "id": "teh"
+    },
+    {
+      "sl": "pivo",
+      "baca": "PI-vo",
+      "id": "bir"
+    },
+    {
+      "sl": "vino",
+      "baca": "VI-no",
+      "id": "anggur"
+    },
+    {
+      "sl": "kruh",
+      "baca": "kruh",
+      "id": "roti"
+    },
+    {
+      "sl": "solata",
+      "baca": "so-LA-ta",
+      "id": "salad"
+    },
+    {
+      "sl": "jesti",
+      "baca": "YÉS-ti",
+      "id": "makan"
+    },
+    {
+      "sl": "piti",
+      "baca": "PI-ti",
+      "id": "minum"
+    },
+    {
+      "sl": "račun",
+      "baca": "ra-CUN",
+      "id": "bon; tagihan"
+    },
+    {
+      "sl": "izvolite",
+      "baca": "iz-VÒ-li-té",
+      "id": "silakan; ini dia"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi bentuk sasaran (tožilnik).",
+      "items": [
+        "Pijem ____. (kava)",
+        "Prosim ____. (voda)",
+        "Jem ____. (kruh)",
+        "Naročim ____. (solata)",
+        "Vidim ____. (brat)",
+        "Pijem ____. (pivo)"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk jesti atau piti yang tepat.",
+      "items": [
+        "Jaz ____ kavo. (piti)",
+        "Ti ____ kruh. (jesti)",
+        "Maja ____ čaj. (piti)",
+        "Midva ____ solato. (jesti)",
+        "Mi ____ vodo. (piti)",
+        "Oni ____ burek. (jesti)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Slovenia.",
+      "items": [
+        "Selamat siang. Mau pesan apa?",
+        "Saya mau satu kopi.",
+        "Untuk saya teh, tolong.",
+        "Ada camilan?",
+        "Bonnya digabung saja.",
+        "Satu lagi, tolong."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 4. Terjemahkan ke bahasa Slovenia tanpa melihat unitnya.",
+      "items": [
+        "Ini apa?",
+        "Ini buku baru.",
+        "Kamar ini kecil.",
+        "Jendela itu besar.",
+        "Meja itu punya siapa?"
+      ]
+    }
+  ],
+  "answers": [
+    "kavo — vodo — kruh — solato — brata — pivo",
+    "pijem — ješ — pije — jeva — pijemo — jedo",
+    "Dober dan. Kaj želite? — Jaz bi eno kavo, prosim. — Zame čaj, prosim. — Imate kaj za pod zob? — Račun kar skupaj. — Še eno, prosim.",
+    "Kaj je to? — To je nova knjiga. — Ta soba je majhna. — Tisto okno je veliko. — Čigava je tista miza?"
+  ]
+}

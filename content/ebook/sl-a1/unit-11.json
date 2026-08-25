@@ -1,0 +1,475 @@
+{
+  "title": "Hari-hariku — dan kata kecil yang selalu duduk di kursi kedua",
+  "title_target": "Moj dan",
+  "goal": "Menceritakan kegiatan sehari-hari, memakai *se* untuk perbuatan yang kembali ke diri sendiri, dan memasang aturan urutan kata yang paling kaku di seluruh bahasa Slovenia: naslonke selalu di tempat kedua.",
+  "bekal": [
+    "menyebut rutinitas dari bangun sampai tidur",
+    "memakai kata kerja ber-*se*: *zbudim se*, *stuširam se*, *oblečem se*",
+    "menaruh *se*, *sem*, *mi*, *ga* di tempat yang benar — tempat kedua, selalu"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Se ti mudi?",
+      "intro": "Maja dan Budi menunggu bus. Budi menyadari bahwa kata-kata terkecil bahasa Slovenia justru yang paling keras kepala.",
+      "lines": [
+        {
+          "speaker": "Maja:",
+          "text": "Kako izgleda tvoj dan?",
+          "id": "Hari-harimu biasanya gimana?",
+          "literal": "bagaimana terlihat milikmu hari?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zbudim se ob šestih. Potem se stuširam.",
+          "id": "Saya bangun jam enam. Lalu mandi.",
+          "literal": "saya-bangunkan diri pada dari-enam. kemudian diri saya-mandi."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Tako zgodaj? Jaz se zbudim ob osmih.",
+          "id": "Sepagi itu? Saya bangun jam delapan.",
+          "literal": "begitu awal? saya diri saya-bangunkan pada dari-delapan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zajtrkujem doma, potem grem na univerzo.",
+          "id": "Sarapan di rumah, lalu berangkat ke kampus.",
+          "literal": "saya-sarapan di-rumah, kemudian saya-pergi ke universitas."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Se ti mudi zjutraj?",
+          "id": "Pagi-pagi kamu buru-buru?",
+          "literal": "diri kepadamu tergesa pagi?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vedno. Nikoli si ne vzamem časa.",
+          "id": "Selalu. Saya tidak pernah menyempatkan diri.",
+          "literal": "selalu. tidak-pernah kepada-diri tidak saya-ambil dari-waktu."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Dobro poveš. In besedni red je pravilen.",
+          "id": "Bagus ngomongnya. Dan urutan katanya benar.",
+          "literal": "baik kamu-mengatakan. dan kata-punya urutan adalah benar."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zakaj se ti mudi, ne ti se mudi?",
+          "id": "Kenapa \"se ti mudi\", bukan \"ti se mudi\"?",
+          "literal": "kenapa diri kepadamu tergesa, bukan kepadamu diri tergesa?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Male besede vedno skačejo naprej.",
+          "id": "Kata-kata kecil selalu melompat ke depan.",
+          "literal": "kecil-jamak kata-jamak selalu mereka-melompat ke-depan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Potem se moram navaditi.",
+          "id": "Kalau begitu saya harus membiasakan diri.",
+          "literal": "kemudian diri saya-harus membiasakan."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Se boš. Vsi se navadimo.",
+          "id": "Nanti juga terbiasa. Semua orang terbiasa.",
+          "literal": "diri kamu-akan. semua diri kami-terbiasa."
+        }
+      ],
+      "notes": [
+        "**Se menandai perbuatan yang kembali ke pelakunya.** *Zbudim* berarti \"saya membangunkan (orang lain)\"; *zbudim **se*** berarti \"saya membangunkan diri sendiri\", yaitu \"saya bangun\". Bahasa Indonesia memakai awalan *ber-* atau *me-…-diri* untuk sebagian hal yang sama: berpakaian, membiasakan diri. Bedanya, di bahasa Slovenia *se* adalah kata terpisah yang bebas berpindah tempat.",
+        "**Dan di situlah masalahnya: se tidak pernah berdiri di tempat yang kamu duga.** Ia termasuk **naslonke** — kata-kata kecil tanpa tekanan yang wajib duduk di **tempat kedua** dalam kalimat. Bukan setelah pelakunya, bukan sebelum kata kerjanya: tempat kedua, dihitung dari awal kalimat.",
+        "**Nikoli si ne vzamem časa — tiga penyangkalan yang tidak saling membatalkan.** *Nikoli* (tidak pernah) dan *ne* muncul bersama, dan itu wajib. Bahasa Slovenia menganggap penyangkalan harus diulang di kata kerjanya, persis seperti bahasa Rusia dan bahasa Spanyol. Menghilangkan *ne* justru membuat kalimatnya salah.",
+        "**Zajtrkujem, kosim, večerjam — tiga makan, tiga kata kerja sendiri.** Bahasa Slovenia punya kata kerja terpisah untuk sarapan, makan siang, dan makan malam. Kata bendanya: *zajtrk*, *kosilo*, *večerja*. Kamu bisa memakai *jem zajtrk*, tetapi orang Slovenia hampir selalu memakai bentuk kata kerjanya.",
+        "**Se boš** (nanti kamu akan) adalah bentuk masa depan yang dipasang lengkap di unit 17. Perhatikan bahwa kata kerjanya dibuang sama sekali karena sudah jelas dari kalimat sebelumnya — kebiasaan yang sangat Slovenia, dan yang membuat percakapan sehari-hari terdengar jauh lebih pendek daripada tata bahasanya."
+      ],
+      "grammars": [
+        {
+          "title": "Naslonke — kursi kedua yang tidak boleh diganggu",
+          "body": [
+            "Bahasa Slovenia punya sekelompok kata mungil tanpa tekanan: *se, si, sem, si, je, smo, ste, so, bi, me, te, ga, jo, jih, mi, ti, mu, ji*. Semuanya wajib berkumpul di **tempat kedua** kalimat — setelah satu kata atau satu kelompok kata pertama, tidak peduli apa isinya."
+          ],
+          "table": {
+            "head": [
+              "Kalimat",
+              "Yang di tempat kedua",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "*Ime **mi je** Budi.*",
+                "*mi je*",
+                "Nama saya Budi."
+              ],
+              [
+                "*Kako **ti je** ime?*",
+                "*ti je*",
+                "Siapa namamu?"
+              ],
+              [
+                "*Zbudil **sem se** ob šestih.*",
+                "*sem se*",
+                "Saya bangun jam enam."
+              ],
+              [
+                "*Danes **se mi** mudi.*",
+                "*se mi*",
+                "Hari ini saya buru-buru."
+              ],
+              [
+                "*Rad **te** imam.*",
+                "*te*",
+                "Saya sayang kamu."
+              ],
+              [
+                "*Knjigo **mu jo** dam.*",
+                "*mu jo*",
+                "Bukunya saya berikan kepadanya."
+              ]
+            ]
+          },
+          "after": [
+            "Urutan di dalam kelompoknya juga tetap, dan tidak pernah berubah: **bi → sem/si/je → se → mi/ti/mu (sasaran tak langsung) → me/te/ga/jo (sasaran langsung)**. Jadi *sem se* selalu, tidak pernah *se sem*; *mu jo* selalu, tidak pernah *jo mu*.",
+            "Kalau kalimatnya dimulai dengan kata sambung seperti *da*, *ker*, *ki*, atau *če*, kata sambung itu dihitung sebagai kata pertama: *Vem, **da se ti** mudi* (saya tahu kamu buru-buru)."
+          ]
+        },
+        {
+          "title": "Tiga ekor kata kerja: -am, -im, -em",
+          "body": [
+            "Semua kata kerja bahasa Slovenia jatuh ke salah satu dari tiga kelompok, dan yang membedakan cuma satu huruf hidup sebelum ekornya. Ekornya sendiri — *-m, -š, -∅, -va, -ta, -mo, -te, -jo* — selalu sama."
+          ],
+          "table": {
+            "head": [
+              "Kelompok",
+              "Saya",
+              "Kamu",
+              "Kami berdua",
+              "Mereka"
+            ],
+            "rows": [
+              [
+                "**-am** *delati* (bekerja)",
+                "del**am**",
+                "del**aš**",
+                "del**ava**",
+                "del**ajo**"
+              ],
+              [
+                "**-am** *zajtrkovati* (sarapan)",
+                "zajtrku**jem**",
+                "zajtrku**ješ**",
+                "zajtrku**jeva**",
+                "zajtrku**jejo**"
+              ],
+              [
+                "**-im** *govoriti* (bicara)",
+                "govor**im**",
+                "govor**iš**",
+                "govor**iva**",
+                "govor**ijo**"
+              ],
+              [
+                "**-im** *spati* (tidur)",
+                "sp**im**",
+                "sp**iš**",
+                "sp**iva**",
+                "sp**ijo**"
+              ],
+              [
+                "**-em** *brati* (membaca)",
+                "ber**em**",
+                "ber**eš**",
+                "ber**eva**",
+                "ber**ejo**"
+              ],
+              [
+                "**-em** *iti* (pergi)",
+                "gr**em**",
+                "gr**eš**",
+                "gr**eva**",
+                "gr**edo**"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa bentuk kamus (*delati*, *govoriti*, *brati*) tidak selalu memberi tahu kelompoknya — *brati* berakhiran *-ati* tetapi masuk kelompok *-em*, dan bentuk \"saya\"-nya bahkan berganti akar jadi *berem*. Karena itu, hafalkan tiap kata kerja dalam **dua bentuk**: bentuk kamus dan bentuk \"saya\".",
+            "Kelompok *-am* adalah yang terbesar dan paling ramah: hampir semua kata kerja baru dan kata pinjaman masuk ke situ. *Kliknem*, *guglam*, *parkiram* — semuanya mengikuti pola *delam*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Moj dan — dari bangun sampai tidur",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kalimat-kalimat berikut disusun berurutan seperti satu hari penuh. Ucapkan seluruhnya keras-keras sekali sehari selama seminggu, dan kamu akan bisa menceritakan harimu tanpa berpikir."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Zbudim se ob šestih.*",
+              "ZBU-dim se op SYÉS-tih",
+              "Saya bangun jam enam."
+            ],
+            [
+              "*Vstanem takoj.*",
+              "USTA-nem ta-KÒY",
+              "Saya langsung bangkit."
+            ],
+            [
+              "*Stuširam se.*",
+              "stu-SYI-ram se",
+              "Saya mandi."
+            ],
+            [
+              "*Oblečem se.*",
+              "o-BLÉ-cem se",
+              "Saya berpakaian."
+            ],
+            [
+              "*Zajtrkujem doma.*",
+              "zay-ter-KU-yem DÒ-ma",
+              "Saya sarapan di rumah."
+            ],
+            [
+              "*Grem na univerzo.*",
+              "grém na u-ni-VÈR-zo",
+              "Saya berangkat ke kampus."
+            ],
+            [
+              "*Delam do petih.*",
+              "DÉ-lam do PÉ-tih",
+              "Saya bekerja sampai jam lima."
+            ],
+            [
+              "*Kosim opoldne.*",
+              "KO-sim o-POU-dné",
+              "Saya makan siang tengah hari."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan **grem spat** (saya pergi tidur): bentuk *spat* adalah bentuk khusus yang cuma muncul setelah kata kerja gerak. *Grem jest* (pergi makan), *grem plavat* (pergi berenang), *grem delat* (pergi bekerja). Bentuk ini terdengar sangat sehari-hari, dan memakainya sekali saja langsung membuat kalimatmu terdengar wajar."
+        },
+        {
+          "type": "p",
+          "text": "Dan perhatikan *kosim* — dari *kosilo* (makan siang), bukan dari kata yang berarti memotong. Tiga kata kerja makan bahasa Slovenia: **zajtrkovati** (sarapan), **kositi** (makan siang), **večerjati** (makan malam)."
+        }
+      ]
+    },
+    {
+      "title": "Seberapa sering — dan penyangkalan yang berlapis",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kata keterangan frekuensi berdiri bebas di kalimat, biasanya sebelum kata kerja. Tapi tiga di antaranya menyeret *ne* ke dalam kalimat, dan itu wajib."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Contoh",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**vedno**",
+              "VÉD-no",
+              "*Vedno pijem kavo.*",
+              "selalu"
+            ],
+            [
+              "**pogosto**",
+              "po-GÒS-to",
+              "*Pogosto berem.*",
+              "sering"
+            ],
+            [
+              "**včasih**",
+              "u-CA-sih",
+              "*Včasih kuham.*",
+              "kadang-kadang"
+            ],
+            [
+              "**redko**",
+              "RÉT-ko",
+              "*Redko gledam film.*",
+              "jarang"
+            ],
+            [
+              "**nikoli … ne**",
+              "ni-KÒ-li né",
+              "*Nikoli **ne** pijem piva.*",
+              "tidak pernah"
+            ],
+            [
+              "**nič … ne**",
+              "nic né",
+              "*Nič **ne** razumem.*",
+              "tidak … apa-apa"
+            ],
+            [
+              "**nihče … ne**",
+              "NIH-cé né",
+              "*Nihče **ne** ve.*",
+              "tidak ada siapa pun"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tiga baris terakhir adalah **penyangkalan berlapis**, dan ia terasa aneh persis satu kali. *Nikoli ne pijem piva* harfiahnya \"tidak pernah tidak saya-minum dari-bir\" — dan perhatikan bahwa *pivo* berubah jadi *piva*, karena kalimatnya menyangkal, persis aturan unit 7. Satu kalimat, dua aturan sekaligus."
+        },
+        {
+          "type": "p",
+          "text": "Bahasa Indonesia dan bahasa Inggris memperlakukan dua penyangkalan sebagai saling membatalkan; bahasa Slovenia memperlakukannya sebagai saling menguatkan. Tidak ada yang perlu diperdebatkan — cukup terima bahwa *ne* wajib ikut, dan kalimatmu langsung benar."
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga kalimat untuk dipakai hari ini",
+          "items": [
+            "*Vsak dan se zbudim ob šestih.* — Setiap hari saya bangun jam enam.",
+            "*Danes se mi ne mudi.* — Hari ini saya tidak buru-buru.",
+            "*Nikoli ne zamujam.* — Saya tidak pernah terlambat. (Sebutkan sambil tersenyum.)"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "zbuditi se",
+      "baca": "ZBU-di-ti se",
+      "id": "bangun tidur"
+    },
+    {
+      "sl": "vstati",
+      "baca": "USTA-ti",
+      "id": "bangkit; berdiri"
+    },
+    {
+      "sl": "stuširati se",
+      "baca": "stu-SYI-ra-ti se",
+      "id": "mandi"
+    },
+    {
+      "sl": "obleči se",
+      "baca": "o-BLÉ-ci se",
+      "id": "berpakaian"
+    },
+    {
+      "sl": "zajtrk",
+      "baca": "ZAY-terk",
+      "id": "sarapan"
+    },
+    {
+      "sl": "kosilo",
+      "baca": "ko-SI-lo",
+      "id": "makan siang"
+    },
+    {
+      "sl": "večerja",
+      "baca": "vé-CÉR-ya",
+      "id": "makan malam"
+    },
+    {
+      "sl": "spati",
+      "baca": "SPA-ti",
+      "id": "tidur"
+    },
+    {
+      "sl": "brati",
+      "baca": "BRA-ti",
+      "id": "membaca"
+    },
+    {
+      "sl": "gledati",
+      "baca": "GLÉ-da-ti",
+      "id": "menonton; melihat"
+    },
+    {
+      "sl": "kuhati",
+      "baca": "KU-ha-ti",
+      "id": "memasak"
+    },
+    {
+      "sl": "mudi se mi",
+      "baca": "MU-di se mi",
+      "id": "saya buru-buru"
+    },
+    {
+      "sl": "navaditi se",
+      "baca": "na-VA-di-ti se",
+      "id": "membiasakan diri"
+    },
+    {
+      "sl": "beseda",
+      "baca": "bé-SÉ-da",
+      "id": "kata"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+      "items": [
+        "Jaz se ____ ob šestih. (zbuditi)",
+        "Ti ____ do petih. (delati)",
+        "Maja ____ knjigo. (brati)",
+        "Midva ____ doma. (spati)",
+        "Mi ____ večerjo. (kuhati)",
+        "Oni ____ film. (gledati)"
+      ]
+    },
+    {
+      "prompt": "Susun kalimatnya dengan urutan naslonke yang benar.",
+      "items": [
+        "mi / ime / Budi / je",
+        "se / ob / zbudim / šestih",
+        "ti / kako / ime / je / ?",
+        "mudi / se / mi / danes",
+        "imam / rad / te"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Slovenia.",
+      "items": [
+        "Saya bangun jam enam.",
+        "Lalu saya mandi.",
+        "Saya sarapan di rumah.",
+        "Hari ini saya buru-buru.",
+        "Saya tidak pernah minum bir.",
+        "Saya tidur delapan jam."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 9. Terjemahkan ke bahasa Slovenia tanpa melihat unitnya.",
+      "items": [
+        "Jam berapa sekarang?",
+        "Jam setengah tiga.",
+        "Kita ketemu jam lima?",
+        "Saya telat sepuluh menit.",
+        "Saya tidak punya waktu."
+      ]
+    }
+  ],
+  "answers": [
+    "zbudim — delaš — bere — spiva — kuhamo — gledajo",
+    "Ime mi je Budi. — Zbudim se ob šestih. — Kako ti je ime? — Danes se mi mudi. — Rad te imam.",
+    "Zbudim se ob šestih. — Potem se stuširam. — Zajtrkujem doma. — Danes se mi mudi. — Nikoli ne pijem piva. — Spim osem ur.",
+    "Koliko je ura? — Ura je pol treh. — Se dobiva ob petih? — Zamujam deset minut. — Nimam časa."
+  ]
+}

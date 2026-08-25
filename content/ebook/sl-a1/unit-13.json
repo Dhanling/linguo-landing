@@ -1,0 +1,541 @@
+{
+  "title": "Keluargaku — kepemilikan yang juga punya dvojina",
+  "title_target": "Moja družina",
+  "goal": "Menceritakan keluarga dan pekerjaan — sekaligus memasang dua hal yang tidak dimiliki bahasa Indonesia: kata milik khusus untuk DUA pemilik, dan kata *svoj* yang wajib dipakai ketika pemiliknya adalah pelaku kalimat itu sendiri.",
+  "bekal": [
+    "memakai *moj*, *tvoj*, *njegov*, *njen*, *naš*, *njihov* dengan ekor yang menyesuaikan barangnya",
+    "mengenali *najin*, *vajin*, *njun* — bentuk milik untuk tepat dua pemilik",
+    "memilih *svoj* ketika pemiliknya sama dengan pelaku kalimatnya"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Fotografije družine",
+      "intro": "Budi menunjukkan foto keluarganya di ponsel. Maja lebih tertarik pada tata bahasanya daripada pada fotonya.",
+      "lines": [
+        {
+          "speaker": "Maja:",
+          "text": "Je to tvoja družina?",
+          "id": "Ini keluargamu?",
+          "literal": "adalah ini milikmu-perempuan keluarga?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja. To sta moja starša, to pa moja sestra.",
+          "id": "Iya. Ini kedua orang tua saya, dan ini saudari saya.",
+          "literal": "ya. ini adalah-berdua milikku-berdua orang-tua, ini tapi milikku-perempuan saudari."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Kako ji je ime?",
+          "id": "Namanya siapa?",
+          "literal": "bagaimana kepadanya adalah nama?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sari. Njen mož je učitelj.",
+          "id": "Sari. Suaminya guru.",
+          "literal": "Sari. miliknya-perempuan suami adalah guru."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "In ta fant?",
+          "id": "Kalau anak laki-laki ini?",
+          "literal": "dan ini anak-laki?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Njun sin. Star je pet let.",
+          "id": "Anak mereka berdua. Umurnya lima tahun.",
+          "literal": "milik-mereka-berdua anak-laki. tua adalah lima dari-tahun."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Njun? Ne njihov?",
+          "id": "\"Njun\"? Bukan \"njihov\"?",
+          "literal": "milik-mereka-berdua? bukan milik-mereka?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Njun je za dva lastnika.",
+          "id": "\"Njun\" untuk dua pemilik.",
+          "literal": "milik-mereka-berdua adalah untuk dua pemilik-berdua."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Seveda — celo svojina ima dvojino.",
+          "id": "Tentu saja — kepemilikan pun punya dvojina.",
+          "literal": "tentu-saja — bahkan kepemilikan punya dvojina-sasaran."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rad gledam svoje fotografije.",
+          "id": "Saya suka melihat foto-foto saya sendiri.",
+          "literal": "suka-laki saya-melihat milik-diri-jamak foto-jamak."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Svoje — ker si ti tisti, ki gleda.",
+          "id": "\"Svoje\" — karena kamu yang melihat.",
+          "literal": "milik-diri-jamak — karena kamu-adalah kamu itu, yang melihat."
+        }
+      ],
+      "notes": [
+        "**Kata milik menyesuaikan diri dengan BARANGNYA, bukan dengan pemiliknya.** *Njen mož* berarti \"suaminya (perempuan)\" — *njen* menandai bahwa pemiliknya perempuan, tetapi ekornya kosong karena *mož* laki-laki. Kalau yang dimiliki perempuan, ekornya ikut: *njena sestra*. Dua informasi dalam satu kata.",
+        "**Njun = milik mereka berdua.** Dvojina merambat ke mana-mana, termasuk ke kepemilikan. Ada tiga bentuk milik khusus untuk dua pemilik: **najin** (milik kami berdua), **vajin** (milik kalian berdua), **njun** (milik mereka berdua). Bahasa Indonesia menyelesaikan semuanya dengan \"berdua\" yang ditempelkan di belakang.",
+        "**Kako ji je ime? — kepadanya, bukan miliknya.** Bandingkan dengan unit 1: *Kako **ti** je ime?* (namamu), *Kako **mu** je ime?* (namanya, laki-laki), *Kako **ji** je ime?* (namanya, perempuan). Ketiganya naslonke, jadi ketiganya duduk di tempat kedua.",
+        "**Svoj dipakai ketika pemiliknya adalah pelaku kalimat itu sendiri.** Ini pemilahan yang tidak ada di bahasa Indonesia dan sering diabaikan pelajar — padahal ia mengubah arti. *Ana bere **svojo** knjigo* = Ana membaca bukunya sendiri. *Ana bere **njeno** knjigo* = Ana membaca buku perempuan lain. Bahasa Indonesia menuliskan keduanya \"Ana membaca bukunya\".",
+        "**Fant** berarti anak laki-laki dan sekaligus pacar laki-laki; **punca** berarti anak perempuan dan pacar perempuan. Yang membedakan cuma konteks — dan orang Slovenia memakai kembaran ini sebagai bahan lelucon sejak SMP. Untuk pasangan yang sudah menikah, katanya berbeda: *mož* (suami) dan *žena* (istri)."
+      ],
+      "grammars": [
+        {
+          "title": "Svojilni zaimki — kata milik",
+          "body": [
+            "Sepuluh bentuk, dan tiga di antaranya khusus untuk dua pemilik. Semuanya berperilaku seperti kata sifat, jadi ekornya ikut barang yang dimiliki."
+          ],
+          "table": {
+            "head": [
+              "Pemilik",
+              "laki-laki",
+              "perempuan",
+              "netral",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "saya",
+                "**moj** brat",
+                "**moja** sestra",
+                "**moje** okno",
+                "milik saya"
+              ],
+              [
+                "kamu",
+                "**tvoj** brat",
+                "**tvoja** sestra",
+                "**tvoje** okno",
+                "milikmu"
+              ],
+              [
+                "dia (l)",
+                "**njegov** brat",
+                "**njegova** sestra",
+                "**njegovo** okno",
+                "miliknya"
+              ],
+              [
+                "dia (p)",
+                "**njen** brat",
+                "**njena** sestra",
+                "**njeno** okno",
+                "miliknya"
+              ],
+              [
+                "kami berdua",
+                "**najin** brat",
+                "**najina** sestra",
+                "**najino** okno",
+                "milik kami berdua"
+              ],
+              [
+                "kalian berdua",
+                "**vajin** brat",
+                "**vajina** sestra",
+                "**vajino** okno",
+                "milik kalian berdua"
+              ],
+              [
+                "mereka berdua",
+                "**njun** brat",
+                "**njuna** sestra",
+                "**njuno** okno",
+                "milik mereka berdua"
+              ],
+              [
+                "kami (3+)",
+                "**naš** brat",
+                "**naša** sestra",
+                "**naše** okno",
+                "milik kami"
+              ],
+              [
+                "kalian (3+)",
+                "**vaš** brat",
+                "**vaša** sestra",
+                "**vaše** okno",
+                "milik kalian"
+              ],
+              [
+                "mereka (3+)",
+                "**njihov** brat",
+                "**njihova** sestra",
+                "**njihovo** okno",
+                "milik mereka"
+              ]
+            ]
+          },
+          "after": [
+            "Bentuk *vaš* juga dipakai sebagai **milik Anda** dalam sapaan sopan: *vaša knjiga* (buku Anda). Sama seperti kata kerjanya, bentuk sopan meminjam bentuk jamak.",
+            "Di percakapan sehari-hari, kata milik sering dibuang sama sekali kalau sudah jelas: *Grem k mami* (saya ke tempat ibu) — tidak perlu *k moji mami*. Bahasa Slovenia berhemat di sini, persis seperti bahasa Indonesia."
+          ]
+        },
+        {
+          "title": "Svoj — milik pelaku kalimat itu sendiri",
+          "body": [
+            "Kalau pemilik barangnya adalah **pelaku kalimat**, bahasa Slovenia mewajibkan *svoj*, bukan *moj*, *tvoj*, atau *njegov*. Perbandingan berikut memperlihatkan bahwa ini bukan soal gaya — artinya benar-benar berbeda."
+          ],
+          "table": {
+            "head": [
+              "Kalimat",
+              "Arti",
+              "Siapa pemiliknya"
+            ],
+            "rows": [
+              [
+                "*Ana bere **svojo** knjigo.*",
+                "Ana membaca bukunya sendiri.",
+                "Ana"
+              ],
+              [
+                "*Ana bere **njeno** knjigo.*",
+                "Ana membaca buku perempuan lain.",
+                "orang lain"
+              ],
+              [
+                "*Peter kliče **svojega** brata.*",
+                "Peter memanggil saudaranya sendiri.",
+                "Peter"
+              ],
+              [
+                "*Peter kliče **njegovega** brata.*",
+                "Peter memanggil saudara orang lain.",
+                "orang lain"
+              ],
+              [
+                "*Berem **svojo** knjigo.*",
+                "Saya membaca buku saya.",
+                "saya"
+              ],
+              [
+                "*Imaš **svoj** ključ?*",
+                "Kamu bawa kuncimu sendiri?",
+                "kamu"
+              ]
+            ]
+          },
+          "after": [
+            "Aturannya bisa diringkas jadi satu pertanyaan: **apakah pemiliknya sama dengan pelaku kalimat?** Kalau ya, pakai *svoj*. Kalau tidak, pakai kata milik biasa.",
+            "Untuk orang pertama dan kedua, memakai *moj* atau *tvoj* sebenarnya masih dimengerti dan sering terdengar — *Berem mojo knjigo* tidak salah paham. Tetapi untuk orang ketiga, salah pilih benar-benar mengubah arti, dan di situlah *svoj* wajib diperhatikan."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bercerita tentang keluarga",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Dua belas kalimat yang menutup hampir seluruh percakapan tentang keluarga di tingkat A1 — dari jumlah saudara sampai status pernikahan."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Imaš brate in sestre?*",
+              "I-masy BRA-té in SÉS-tré",
+              "Kamu punya saudara?"
+            ],
+            [
+              "*Imam eno sestro.*",
+              "I-mam É-no SÉS-tro",
+              "Saya punya satu saudari."
+            ],
+            [
+              "*Nimam bratov.*",
+              "NI-mam BRA-tou",
+              "Saya tidak punya saudara laki-laki."
+            ],
+            [
+              "*Sem najstarejši.*",
+              "sem nay-sta-RÉY-syi",
+              "Saya anak sulung."
+            ],
+            [
+              "*Sem najmlajša.*",
+              "sem nay-MLAY-sya",
+              "Saya anak bungsu. (perempuan)"
+            ],
+            [
+              "*Moji starši živijo v Jakarti.*",
+              "MO-yi STAR-syi zhi-VI-yo",
+              "Orang tua saya tinggal di Jakarta."
+            ],
+            [
+              "*Sem poročen.*",
+              "sem po-RO-cen",
+              "Saya sudah menikah. (laki-laki)"
+            ],
+            [
+              "*Sem samska.*",
+              "sem SAM-ska",
+              "Saya lajang. (perempuan)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan *Nimam bratov* dan *Imam fanta*: yang pertama memakai rodilnik karena menyangkal, yang kedua memakai tožilnik bernyawa. Dua aturan lama muncul lagi dalam satu halaman — dan begitulah cara aturan bahasa Slovenia menempel, lewat pengulangan di tempat baru."
+        },
+        {
+          "type": "p",
+          "text": "*Pogrešam* (saya kangen) adalah kata kerja yang langsung menyeret sasarannya tanpa kata depan: *Pogrešam mamo*, *Pogrešam dom*, *Pogrešam indonezijsko hrano*. Ia salah satu kata yang paling sering dibutuhkan orang yang tinggal jauh dari rumah."
+        }
+      ]
+    },
+    {
+      "title": "Poklici — pekerjaan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Hampir setiap pekerjaan punya dua bentuk. Bentuk perempuan biasanya menambahkan *-ica* atau *-ka*, dan memakai bentuk laki-laki untuk perempuan terdengar salah — bukan sopan, bukan netral, hanya salah."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Laki-laki",
+            "Perempuan",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**učitelj**",
+              "*učiteljica*",
+              "u-CI-tely / u-ci-TÉ-lyi-tsa",
+              "guru"
+            ],
+            [
+              "**zdravnik**",
+              "*zdravnica*",
+              "zdrau-NIK / zdrau-NI-tsa",
+              "dokter"
+            ],
+            [
+              "**študent**",
+              "*študentka*",
+              "sytu-DÉNT / sytu-DÉNT-ka",
+              "mahasiswa"
+            ],
+            [
+              "**natakar**",
+              "*natakarica*",
+              "na-ta-KAR / na-ta-KA-ri-tsa",
+              "pelayan"
+            ],
+            [
+              "**prodajalec**",
+              "*prodajalka*",
+              "pro-da-YA-lets / pro-da-YAU-ka",
+              "penjual"
+            ],
+            [
+              "**inženir**",
+              "*inženirka*",
+              "in-zhé-NIR / in-zhé-NIR-ka",
+              "insinyur"
+            ],
+            [
+              "**kuhar**",
+              "*kuharica*",
+              "KU-har / ku-HA-ri-tsa",
+              "juru masak"
+            ],
+            [
+              "**novinar**",
+              "*novinarka*",
+              "no-vi-NAR / no-vi-NAR-ka",
+              "wartawan"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Untuk menyebut pekerjaan sendiri, tidak ada kata \"seorang\": *Sem učitelj*, *Sem študentka*, *Sem zdravnica*. Dua kata, selesai — persis seperti bahasa Indonesia, dan tidak seperti bahasa Inggris yang menuntut *a*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "*Kaj si po poklicu?*",
+              "kay si po po-KLI-tsu",
+              "Kerja apa kamu?"
+            ],
+            [
+              "*Kje delaš?*",
+              "kyé DÉ-lasy",
+              "Kerja di mana?"
+            ],
+            [
+              "*Delam v šoli.*",
+              "DÉ-lam u SYÒ-li",
+              "Saya kerja di sekolah."
+            ],
+            [
+              "*Še študiram.*",
+              "syé sytu-DI-ram",
+              "Saya masih kuliah."
+            ],
+            [
+              "*Iščem službo.*",
+              "ISY-cem SLUZH-bo",
+              "Saya sedang cari kerja."
+            ],
+            [
+              "*Delam od doma.*",
+              "DÉ-lam ot DÒ-ma",
+              "Saya kerja dari rumah."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Kaj si po poklicu?* harfiahnya \"apa kamu menurut pekerjaan?\" — dan ia terdengar jauh lebih wajar daripada terjemahan langsung \"apa pekerjaanmu\". Kalimat ini termasuk yang paling sering muncul di perkenalan orang dewasa di Slovenia, tepat setelah nama dan asal."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "moj",
+      "baca": "moy",
+      "id": "milik saya"
+    },
+    {
+      "sl": "tvoj",
+      "baca": "tvoy",
+      "id": "milikmu"
+    },
+    {
+      "sl": "njegov",
+      "baca": "nyé-GÒU",
+      "id": "miliknya (laki-laki)"
+    },
+    {
+      "sl": "njen",
+      "baca": "nyén",
+      "id": "miliknya (perempuan)"
+    },
+    {
+      "sl": "najin",
+      "baca": "NA-yin",
+      "id": "milik kami berdua"
+    },
+    {
+      "sl": "njun",
+      "baca": "nyun",
+      "id": "milik mereka berdua"
+    },
+    {
+      "sl": "naš",
+      "baca": "nasy",
+      "id": "milik kami"
+    },
+    {
+      "sl": "njihov",
+      "baca": "NYI-hou",
+      "id": "milik mereka"
+    },
+    {
+      "sl": "svoj",
+      "baca": "svoy",
+      "id": "milik sendiri"
+    },
+    {
+      "sl": "lastnik",
+      "baca": "LAST-nik",
+      "id": "pemilik"
+    },
+    {
+      "sl": "fant",
+      "baca": "fant",
+      "id": "anak laki-laki; pacar"
+    },
+    {
+      "sl": "punca",
+      "baca": "PUN-tsa",
+      "id": "anak perempuan; pacar"
+    },
+    {
+      "sl": "sin",
+      "baca": "sin",
+      "id": "anak laki-laki"
+    },
+    {
+      "sl": "hči",
+      "baca": "hci",
+      "id": "anak perempuan"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk kata milik yang tepat.",
+      "items": [
+        "To je ____ brat. (moj)",
+        "To je ____ sestra. (moj)",
+        "To je ____ okno. (naš)",
+        "To je ____ mož. (njen)",
+        "To je ____ sin. (njun)",
+        "To so ____ starši. (njegov)"
+      ]
+    },
+    {
+      "prompt": "Pilih svoj atau kata milik biasa.",
+      "items": [
+        "Ana bere ____ knjigo. (bukunya sendiri)",
+        "Ana bere ____ knjigo. (buku perempuan lain)",
+        "Berem ____ knjigo. (buku saya)",
+        "Peter kliče ____ brata. (saudaranya sendiri)",
+        "Imaš ____ ključ? (kuncimu sendiri)",
+        "To je ____ hiša. (rumah mereka)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Slovenia.",
+      "items": [
+        "Ini keluarga saya.",
+        "Saya punya satu saudari.",
+        "Suaminya guru.",
+        "Orang tua saya tinggal di Jakarta.",
+        "Kerja apa kamu?",
+        "Saya masih kuliah."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 11. Terjemahkan ke bahasa Slovenia tanpa melihat unitnya.",
+      "items": [
+        "Saya bangun jam enam.",
+        "Lalu saya mandi.",
+        "Hari ini saya buru-buru.",
+        "Saya tidak pernah minum bir.",
+        "Saya tidur delapan jam."
+      ]
+    }
+  ],
+  "answers": [
+    "moj — moja — naše — njen — njun — njegovi",
+    "svojo — njeno — svojo — svojega — svoj — njihova",
+    "To je moja družina. — Imam eno sestro. — Njen mož je učitelj. — Moji starši živijo v Jakarti. — Kaj si po poklicu? — Še študiram.",
+    "Zbudim se ob šestih. — Potem se stuširam. — Danes se mi mudi. — Nikoli ne pijem piva. — Spim osem ur."
+  ]
+}

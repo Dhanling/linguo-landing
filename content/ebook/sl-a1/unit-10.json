@@ -1,0 +1,609 @@
+{
+  "title": "Hari dan bulan — minggu yang sebenarnya alat hitung",
+  "title_target": "Kateri dan je danes?",
+  "goal": "Menyebut hari, bulan, dan tanggal — dan menemukan bahwa nama hari bahasa Slovenia bukan nama sama sekali, melainkan nomor urut yang membeku, dengan hari Rabu yang berarti \"tengah\".",
+  "bekal": [
+    "menyebut tujuh hari dan dua belas bulan, beserta bentuk *v ponedeljek* / *v sredo*",
+    "menyebut tanggal dengan bentuk rodilnik: *petnajstega marca*",
+    "memakai angka urut *prvi, drugi, tretji* untuk tanggal, lantai, dan nomor antrean"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Izpit je v petek",
+      "intro": "Eva dan Budi duduk di kantin kampus. Budi menyalin jadwal ke ponselnya dan menemukan bahwa nama hari bahasa Slovenia menyimpan aritmetika.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Kateri dan je danes?",
+          "id": "Hari ini hari apa?",
+          "literal": "yang-mana hari adalah hari-ini?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sreda. Zakaj?",
+          "id": "Rabu. Kenapa?",
+          "literal": "rabu. kenapa?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ker imamo izpit v petek.",
+          "id": "Karena hari Jumat kita ada ujian.",
+          "literal": "karena kami-punya ujian pada jumat."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "V petek? Mislil sem, da je v četrtek.",
+          "id": "Jumat? Saya kira Kamis.",
+          "literal": "pada jumat? berpikir saya-adalah, bahwa adalah pada kamis."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ne, četrtek je prost. Petek, petnajstega.",
+          "id": "Bukan, Kamis kosong. Jumat, tanggal lima belas.",
+          "literal": "tidak, kamis adalah bebas. jumat, dari-yang-kelima-belas."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zanimivo — sreda pomeni sredino, ne?",
+          "id": "Menarik — sreda artinya \"tengah\", kan?",
+          "literal": "menarik — rabu berarti bagian-tengah, tidak?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ja. In torek je drugi dan, četrtek četrti.",
+          "id": "Iya. Dan torek itu hari kedua, četrtek keempat.",
+          "literal": "ya. dan selasa adalah kedua hari, kamis keempat."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Torej teden je pravzaprav števec.",
+          "id": "Jadi seminggu itu sebenarnya alat hitung.",
+          "literal": "jadi minggu adalah sebenarnya penghitung."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ponedeljek pa pride po nedelji.",
+          "id": "Kalau ponedeljek datang setelah hari Minggu.",
+          "literal": "senin tapi datang setelah pada-minggu."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vse se ujema. Ob kateri uri je izpit?",
+          "id": "Semuanya masuk akal. Ujiannya jam berapa?",
+          "literal": "semua diri cocok. pada yang-mana pada-jam adalah ujian?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ob desetih zjutraj. Ne zamudi!",
+          "id": "Jam sepuluh pagi. Jangan telat!",
+          "literal": "pada dari-sepuluh pagi. tidak terlambat!"
+        }
+      ],
+      "notes": [
+        "**Nama hari bahasa Slovenia adalah nomor urut.** *Torek* dari *drugi* (kedua), *četrtek* dari *četrti* (keempat), *petek* dari *peti* (kelima). Yang paling cantik adalah *sreda* — dari *sredina*, tengah — karena dalam hitungan lama minggu dimulai hari Senin, jadi Rabu memang persis di tengah. Bahasa Jerman melakukan hal yang sama dengan *Mittwoch*.",
+        "**Ponedeljek = po nedelji**, \"setelah hari Minggu\". Dan *nedelja* sendiri berarti \"hari tanpa kerja\" — dari *ne delati*, tidak bekerja. Jadi seluruh minggu bahasa Slovenia bisa dibaca sebagai satu kalimat: hari tanpa kerja, hari setelah hari tanpa kerja, hari kedua, tengah, keempat, kelima, lalu *sobota* — satu-satunya yang datang dari luar, lewat bahasa Ibrani *šabat*.",
+        "**V ponedeljek, tapi v sredo.** Untuk mengatakan \"pada hari …\", pakai *v* dengan bentuk **sasaran** — bukan bentuk tempat. Lima hari pertama berjenis laki-laki dan tidak berubah (*v ponedeljek, v torek, v četrtek, v petek*), tetapi *sreda*, *sobota*, dan *nedelja* berjenis perempuan, jadi ekornya jadi *-o*: **v sredo, v soboto, v nedeljo**.",
+        "**Tanggal memakai bentuk rodilnik.** *Petnajstega* = \"pada yang kelima belas\". Bulan pun ikut: *petnajstega marca* (15 Maret), *prvega maja* (1 Mei). Kalau kamu sekadar menyebut tanggal hari ini tanpa \"pada\", bentuknya biasa: *Danes je petnajsti marec.*",
+        "**Mislil sem** dan **Ne zamudi!** adalah dua intipan ke depan. Yang pertama bentuk lampau — perhatikan ekornya *-l*, dibaca **MIS-liu**; perempuan mengatakan *mislila sem*. Yang kedua bentuk perintah. Keduanya dipasang lengkap di unit 12 dan unit 19; untuk sekarang, hafalkan sebagai bongkah."
+      ],
+      "grammars": [
+        {
+          "title": "Dnevi v tednu — tujuh hari dan asalnya",
+          "body": [
+            "Kolom terakhir adalah yang paling sering kamu pakai. Perhatikan bahwa tiga hari berjenis perempuan, dan cuma ketiganya yang berubah bentuk."
+          ],
+          "table": {
+            "head": [
+              "Slovenščina",
+              "Cara baca",
+              "Asalnya",
+              "Pada hari itu"
+            ],
+            "rows": [
+              [
+                "**ponedeljek**",
+                "po-né-DÉ-lyek",
+                "setelah *nedelja*",
+                "*v ponedeljek*"
+              ],
+              [
+                "**torek**",
+                "TÒ-rek",
+                "dari *drugi* (kedua)",
+                "*v torek*"
+              ],
+              [
+                "**sreda** (p)",
+                "SRÉ-da",
+                "dari *sredina* (tengah)",
+                "*v sredo*"
+              ],
+              [
+                "**četrtek**",
+                "cé-TER-tek",
+                "dari *četrti* (keempat)",
+                "*v četrtek*"
+              ],
+              [
+                "**petek**",
+                "PÉ-tek",
+                "dari *peti* (kelima)",
+                "*v petek*"
+              ],
+              [
+                "**sobota** (p)",
+                "so-BÒ-ta",
+                "dari *šabat*",
+                "*v soboto*"
+              ],
+              [
+                "**nedelja** (p)",
+                "né-DÉ-lya",
+                "dari *ne delati* (tidak bekerja)",
+                "*v nedeljo*"
+              ]
+            ]
+          },
+          "after": [
+            "Untuk mengatakan \"setiap hari Senin\", pakai *ob* dengan bentuk jamak: *ob ponedeljkih*, *ob sredah*, *ob petkih*. Ini bentuk yang dipakai di jadwal kursus dan jam buka toko.",
+            "Kata *teden* berarti minggu sebagai jangka waktu (tujuh hari), sedangkan *nedelja* berarti hari Minggu. Jangan tertukar: *naslednji teden* = minggu depan, *naslednja nedelja* = hari Minggu depan."
+          ]
+        },
+        {
+          "title": "Meseci in datumi — bulan dan tanggal",
+          "body": [
+            "Nama bulan bahasa Slovenia hampir sama dengan bahasa Indonesia, karena keduanya meminjam dari sumber Latin yang sama. Yang perlu dipelajari cuma bentuknya saat dipakai dalam tanggal."
+          ],
+          "table": {
+            "head": [
+              "Bulan",
+              "Cara baca",
+              "Dalam tanggal",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**januar**",
+                "YA-nu-ar",
+                "*januarja*",
+                "*prvega januarja* — 1 Januari"
+              ],
+              [
+                "**februar**",
+                "FÉ-bru-ar",
+                "*februarja*",
+                "*osmega februarja* — 8 Februari"
+              ],
+              [
+                "**marec**",
+                "MA-rets",
+                "*marca*",
+                "*petnajstega marca* — 15 Maret"
+              ],
+              [
+                "**april**",
+                "a-PRIU",
+                "*aprila*",
+                "*prvega aprila* — 1 April"
+              ],
+              [
+                "**maj**",
+                "may",
+                "*maja*",
+                "*prvega maja* — 1 Mei"
+              ],
+              [
+                "**junij**",
+                "YU-niy",
+                "*junija*",
+                "*petindvajsetega junija* — 25 Juni"
+              ],
+              [
+                "**julij**",
+                "YU-liy",
+                "*julija*",
+                "*desetega julija* — 10 Juli"
+              ],
+              [
+                "**avgust**",
+                "au-GUST",
+                "*avgusta*",
+                "*petnajstega avgusta* — 15 Agustus"
+              ],
+              [
+                "**september**",
+                "sep-TÉM-ber",
+                "*septembra*",
+                "*prvega septembra* — 1 September"
+              ],
+              [
+                "**oktober**",
+                "ok-TÒ-ber",
+                "*oktobra*",
+                "*tretjega oktobra* — 3 Oktober"
+              ],
+              [
+                "**november**",
+                "no-VÉM-ber",
+                "*novembra*",
+                "*prvega novembra* — 1 November"
+              ],
+              [
+                "**december**",
+                "dé-TSÉM-ber",
+                "*decembra*",
+                "*petindvajsetega decembra* — 25 Desember"
+              ]
+            ]
+          },
+          "after": [
+            "Di tulisan, tanggal ditulis dengan **titik**, bukan garis miring: **15. 3. 2026**. Urutannya hari-bulan-tahun, sama dengan kebiasaan Indonesia.",
+            "Untuk menanyakan tanggal: *Kateri datum je danes?* (tanggal berapa hari ini?). Jawabannya bentuk biasa: *Danes je petnajsti marec.* Tetapi begitu kamu mengatakan sesuatu **terjadi pada** tanggal itu, bentuknya berubah: *Izpit je petnajstega marca.*"
+          ]
+        },
+        {
+          "title": "Vrstilni števniki — angka urut",
+          "body": [
+            "Angka urut dipakai untuk tanggal, lantai, nomor antrean, dan urutan apa pun. Ia berperilaku seperti kata sifat, jadi ia ikut jenis dan jumlah kata bendanya."
+          ],
+          "table": {
+            "head": [
+              "Angka",
+              "Slovenščina",
+              "Cara baca",
+              "Angka",
+              "Slovenščina"
+            ],
+            "rows": [
+              [
+                "1.",
+                "**prvi**",
+                "PER-vi",
+                "7.",
+                "**sedmi**"
+              ],
+              [
+                "2.",
+                "**drugi**",
+                "DRU-gi",
+                "8.",
+                "**osmi**"
+              ],
+              [
+                "3.",
+                "**tretji**",
+                "TRÉT-yi",
+                "9.",
+                "**deveti**"
+              ],
+              [
+                "4.",
+                "**četrti**",
+                "cé-TER-ti",
+                "10.",
+                "**deseti**"
+              ],
+              [
+                "5.",
+                "**peti**",
+                "PÉ-ti",
+                "11.",
+                "**enajsti**"
+              ],
+              [
+                "6.",
+                "**šesti**",
+                "SYÉS-ti",
+                "20.",
+                "**dvajseti**"
+              ]
+            ]
+          },
+          "after": [
+            "Polanya: tambahkan **-i** pada angka biasa. Yang tidak menurut cuma empat yang pertama — *prvi*, *drugi*, *tretji*, *četrti* — dan itu wajar; angka pertama selalu yang paling tua di setiap bahasa.",
+            "Karena ia kata sifat, ekornya ikut: *prvi dan* (hari pertama), *prva knjiga* (buku pertama), *prvo nadstropje* (lantai pertama). Untuk gabungan, cuma angka terakhir yang berubah: *enaindvajseti* (kedua puluh satu)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Letni časi in prazniki — musim dan hari libur",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Slovenia punya empat musim yang sungguh-sungguh berbeda, dan orang membicarakannya setiap hari. Perhatikan bahwa musim memakai *spomladi*, *poleti*, *jeseni*, *pozimi* sebagai kata keterangan — tanpa kata depan."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Musim",
+            "Cara baca",
+            "Pada musim itu",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**pomlad** (p)",
+              "pom-LAT",
+              "*spomladi*",
+              "musim semi"
+            ],
+            [
+              "**poletje** (n)",
+              "po-LÉT-yé",
+              "*poleti*",
+              "musim panas"
+            ],
+            [
+              "**jesen** (p)",
+              "yé-SÉN",
+              "*jeseni*",
+              "musim gugur"
+            ],
+            [
+              "**zima** (p)",
+              "ZI-ma",
+              "*pozimi*",
+              "musim dingin"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan **jesen**: ia berakhiran huruf mati tetapi berjenis **perempuan** — salah satu dari daftar pengecualian di unit 4. *Dolga jesen*, bukan *dolg jesen*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Hari libur",
+            "Tanggal",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**novo leto**",
+              "1.-2. januar",
+              "Tahun Baru"
+            ],
+            [
+              "**Prešernov dan**",
+              "8. februar",
+              "Hari Kebudayaan"
+            ],
+            [
+              "**velika noč**",
+              "berpindah",
+              "Paskah"
+            ],
+            [
+              "**dan upora**",
+              "27. april",
+              "Hari Perlawanan"
+            ],
+            [
+              "**praznik dela**",
+              "1.-2. maj",
+              "Hari Buruh"
+            ],
+            [
+              "**dan državnosti**",
+              "25. junij",
+              "Hari Kemerdekaan"
+            ],
+            [
+              "**dan reformacije**",
+              "31. oktober",
+              "Hari Reformasi"
+            ],
+            [
+              "**dan spomina na mrtve**",
+              "1. november",
+              "Hari Mengenang Arwah"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Prešernov dan** pada 8 Februari layak diperhatikan: Slovenia adalah salah satu dari sedikit negara di dunia yang menjadikan hari wafat seorang **penyair** sebagai hari libur nasional. France Prešeren menulis puisi yang baitnya sekarang jadi lagu kebangsaan — dan bait yang dipilih bukan tentang perang atau kejayaan, melainkan tentang harapan agar semua bangsa hidup rukun. Kalau kamu ingin satu kalimat yang membuat orang Slovenia langsung hangat kepadamu, sebutkan bahwa kamu tahu siapa Prešeren."
+        }
+      ]
+    },
+    {
+      "title": "Merencanakan minggu",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kalimat-kalimat berikut memakai hari, tanggal, dan jam sekaligus — persis seperti yang kamu butuhkan untuk menyusun jadwal dengan orang Slovenia."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Kateri dan je danes?*",
+              "ka-TÉ-ri dan yé DA-nes",
+              "Hari ini hari apa?"
+            ],
+            [
+              "*Kateri datum je danes?*",
+              "ka-TÉ-ri DA-tum",
+              "Tanggal berapa hari ini?"
+            ],
+            [
+              "*V ponedeljek imam izpit.*",
+              "u po-né-DÉ-lyek",
+              "Hari Senin saya ada ujian."
+            ],
+            [
+              "*V sredo grem v Maribor.*",
+              "u SRÉ-do grém",
+              "Hari Rabu saya ke Maribor."
+            ],
+            [
+              "*Ob petkih ne delam.*",
+              "op PÉT-kih né DÉ-lam",
+              "Setiap Jumat saya tidak bekerja."
+            ],
+            [
+              "*Naslednji teden.*",
+              "na-SLÉD-nyi TÉ-den",
+              "Minggu depan."
+            ],
+            [
+              "*Prejšnji teden.*",
+              "PRÉY-syi TÉ-den",
+              "Minggu lalu."
+            ],
+            [
+              "*Ta konec tedna.*",
+              "ta KO-néts TÉD-na",
+              "Akhir pekan ini."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan **čez** dipakai untuk waktu ke depan (*čez tri dni* = tiga hari lagi) dan **pred** untuk waktu ke belakang (*pred tremi dnevi* = tiga hari yang lalu). Dua kata depan yang sama juga dipakai untuk ruang — *čez most* (menyeberang jembatan), *pred pošto* (di depan pos) — dan bahasa Slovenia tidak merasa perlu memisahkannya."
+        },
+        {
+          "type": "kotak",
+          "title": "Ritme minggu di Slovenia",
+          "items": [
+            "Kantor dan sekolah mulai **pagi sekali**: banyak kantor buka jam tujuh, dan kuliah pertama sering jam tujuh lewat. Sebagai gantinya, sore mulai jam tiga.",
+            "Toko besar tutup hari Minggu, dan sebagian toko kecil tutup lebih awal pada hari Sabtu. Rencanakan belanja pada Sabtu pagi.",
+            "Akhir pekan panjang di Slovenia berarti orang menghilang ke gunung atau ke pantai Adriatik. Kalau kamu ingin mengundang seseorang untuk hari Sabtu, tanyakan lebih awal."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "ponedeljek",
+      "baca": "po-né-DÉ-lyek",
+      "id": "Senin"
+    },
+    {
+      "sl": "torek",
+      "baca": "TÒ-rek",
+      "id": "Selasa"
+    },
+    {
+      "sl": "sreda",
+      "baca": "SRÉ-da",
+      "id": "Rabu"
+    },
+    {
+      "sl": "četrtek",
+      "baca": "cé-TER-tek",
+      "id": "Kamis"
+    },
+    {
+      "sl": "petek",
+      "baca": "PÉ-tek",
+      "id": "Jumat"
+    },
+    {
+      "sl": "sobota",
+      "baca": "so-BÒ-ta",
+      "id": "Sabtu"
+    },
+    {
+      "sl": "nedelja",
+      "baca": "né-DÉ-lya",
+      "id": "Minggu"
+    },
+    {
+      "sl": "teden",
+      "baca": "TÉ-den",
+      "id": "minggu (tujuh hari)"
+    },
+    {
+      "sl": "mesec",
+      "baca": "MÉ-sets",
+      "id": "bulan"
+    },
+    {
+      "sl": "datum",
+      "baca": "DA-tum",
+      "id": "tanggal"
+    },
+    {
+      "sl": "praznik",
+      "baca": "PRAZ-nik",
+      "id": "hari libur"
+    },
+    {
+      "sl": "pomlad",
+      "baca": "pom-LAT",
+      "id": "musim semi"
+    },
+    {
+      "sl": "poletje",
+      "baca": "po-LÉT-yé",
+      "id": "musim panas"
+    },
+    {
+      "sl": "jesen",
+      "baca": "yé-SÉN",
+      "id": "musim gugur"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk hari yang tepat setelah v.",
+      "items": [
+        "Izpit je v ____. (petek)",
+        "Grem v Maribor v ____. (sreda)",
+        "Delam v ____. (ponedeljek)",
+        "Počivam v ____. (nedelja)",
+        "Se dobiva v ____. (sobota)",
+        "Predavanje je v ____. (četrtek)"
+      ]
+    },
+    {
+      "prompt": "Tulis tanggalnya dalam bahasa Slovenia.",
+      "items": [
+        "1 Januari — ____",
+        "8 Februari — ____",
+        "15 Maret — ____",
+        "1 Mei — ____",
+        "25 Juni — ____",
+        "25 Desember — ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Slovenia.",
+      "items": [
+        "Hari ini hari apa?",
+        "Hari Rabu.",
+        "Hari Jumat kita ada ujian.",
+        "Setiap Jumat saya tidak bekerja.",
+        "Minggu depan saya ke Maribor.",
+        "Kapan kamu ada waktu?"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 8. Terjemahkan ke bahasa Slovenia tanpa melihat unitnya.",
+      "items": [
+        "Permisi, kantor pos di mana?",
+        "Jauh tidak?",
+        "Belok kiri.",
+        "Saya di sekolah.",
+        "Saya pergi ke sekolah."
+      ]
+    }
+  ],
+  "answers": [
+    "petek — sredo — ponedeljek — nedeljo — soboto — četrtek",
+    "prvega januarja — osmega februarja — petnajstega marca — prvega maja — petindvajsetega junija — petindvajsetega decembra",
+    "Kateri dan je danes? — Sreda. — V petek imamo izpit. — Ob petkih ne delam. — Naslednji teden grem v Maribor. — Kdaj imaš čas?",
+    "Oprostite, kje je pošta? — Je daleč? — Zavijte levo. — Sem v šoli. — Grem v šolo."
+  ]
+}

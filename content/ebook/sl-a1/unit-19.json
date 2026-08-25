@@ -1,0 +1,473 @@
+{
+  "title": "Undangan — bisa, boleh, harus, dan cara menolak",
+  "title_target": "Vabilo na večerjo",
+  "goal": "Mengundang, menerima, dan menolak dengan sopan — sekaligus memilah empat kata yang di bahasa Indonesia semuanya jadi \"bisa\", dan memasang satu kata yang sama sekali tidak pernah berubah bentuk: *lahko*.",
+  "bekal": [
+    "membedakan *lahko* (boleh, bisa), *moram* (harus), *smem* (boleh), *znam* (menguasai)",
+    "menyusun bentuk perintah: *pridi!*, *pridite!*, *ne pozabi!*",
+    "menerima dan menolak undangan tanpa terdengar kasar"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Vabilo k Maji domov",
+      "intro": "Kamis siang. Maja mengundang Budi makan malam di rumah keluarganya — dan menjelaskan satu kata yang tidak pernah berubah.",
+      "lines": [
+        {
+          "speaker": "Maja:",
+          "text": "Bi prišel v soboto na večerjo?",
+          "id": "Sabtu mau datang makan malam?",
+          "literal": "akan datang-laki pada sabtu ke makan-malam?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Z veseljem! Kam?",
+          "id": "Dengan senang hati! Ke mana?",
+          "literal": "dengan dengan-kegembiraan! ke-mana?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "K nam domov. Mama kuha.",
+          "id": "Ke rumah kami. Ibu yang masak.",
+          "literal": "ke kepada-kami pulang. ibu memasak."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Moram kaj prinesti?",
+          "id": "Perlu bawa sesuatu?",
+          "literal": "saya-harus apa membawa?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Ni treba. Lahko prineseš vino.",
+          "id": "Tidak usah. Boleh bawa anggur.",
+          "literal": "tidak-ada perlu. bisa kamu-membawa anggur."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Lahko prineseš — brez končnice?",
+          "id": "\"Lahko prineseš\" — tanpa akhiran?",
+          "literal": "bisa kamu-membawa — tanpa dari-akhiran?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Lahko ni glagol. Je prislov.",
+          "id": "\"Lahko\" bukan kata kerja. Ia kata keterangan.",
+          "literal": "bisa tidak-adalah kata-kerja. adalah kata-keterangan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Torej lahko grem, lahko greš, lahko gremo.",
+          "id": "Jadi \"lahko grem\", \"lahko greš\", \"lahko gremo\".",
+          "literal": "jadi bisa saya-pergi, bisa kamu-pergi, bisa kami-pergi."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Tako je. Samo glagol se spreminja.",
+          "id": "Betul. Cuma kata kerjanya yang berubah.",
+          "literal": "begitu adalah. hanya kata-kerja diri berubah."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Prav. Pridem ob sedmih.",
+          "id": "Baik. Saya datang jam tujuh.",
+          "literal": "benar. saya-datang pada dari-tujuh."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Super. Ne pozabi na rože za mamo!",
+          "id": "Mantap. Jangan lupa bunga buat ibu!",
+          "literal": "hebat. tidak lupalah pada bunga-jamak untuk ibu-sasaran!"
+        }
+      ],
+      "notes": [
+        "**Lahko tidak pernah berubah bentuk.** Ia bukan kata kerja melainkan kata keterangan, dan yang berubah adalah kata kerja di belakangnya: *lahko grem*, *lahko greš*, *lahko gremo*, *lahko sta prišla*. Pelajar yang datang dari bahasa Inggris sering mencoba mengubahnya seperti *can/could* — di bahasa Slovenia tidak ada yang bisa diubah di situ.",
+        "**Bi prišel? adalah undangan yang sopan.** Bentuk dengan *bi* melunakkan segalanya — ia setara \"maukah kamu\" dan bukan \"kamu datang\". Ekornya ikut jenis kelamin orang yang diajak: *Bi prišel?* kepada laki-laki, *Bi prišla?* kepada perempuan, *Bi prišla?* kepada dua orang, *Bi prišli?* kepada banyak orang atau secara sopan.",
+        "**Ni treba = tidak usah.** Kalimat tanpa pelaku, seperti kalimat cuaca di unit 16. Saudaranya: *Treba je* (perlu), *Ni mogoče* (tidak mungkin), *Ni problema* (tidak masalah). Semuanya tetap begitu, tidak peduli siapa yang bicara.",
+        "**K nam domov — dua kata arah sekaligus.** *K nam* berarti \"ke tempat kami\" dan *domov* berarti \"pulang ke rumah\". Digabungkan, ia berarti \"ke rumah kami\". Bentuk *k* adalah dajalnik dari unit 15, dipakai untuk pergi **ke tempat orang**.",
+        "**Ne pozabi na rože.** Bunga memang bukan basa-basi: di Slovenia, tamu yang diundang makan malam datang membawa sesuatu — bunga untuk tuan rumah perempuan, sebotol anggur, atau kue. Datang dengan tangan kosong tidak fatal, tetapi langsung terasa. Dan bunga selalu ganjil jumlahnya; jumlah genap dipakai untuk pemakaman."
+      ],
+      "grammars": [
+        {
+          "title": "Lahko, moram, smem, znam — empat \"bisa\"",
+          "body": [
+            "Bahasa Indonesia memakai \"bisa\" dan \"boleh\" untuk empat hal yang dipilah tajam oleh bahasa Slovenia. Salah pilih di sini tidak membuat kalimatmu tidak dimengerti, tetapi bisa membuatnya berarti lain."
+          ],
+          "table": {
+            "head": [
+              "Kata",
+              "Artinya",
+              "Berubah?",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**lahko**",
+                "bisa; boleh (keadaan mengizinkan)",
+                "tidak pernah",
+                "*Lahko grem?* — Boleh saya pergi?"
+              ],
+              [
+                "**morati**",
+                "harus",
+                "*moram, moraš, mora*",
+                "*Moram delati.* — Saya harus bekerja."
+              ],
+              [
+                "**smeti**",
+                "boleh (ada izin)",
+                "*smem, smeš, sme*",
+                "*Tu ne smem kaditi.* — Di sini saya tidak boleh merokok."
+              ],
+              [
+                "**znati**",
+                "bisa (sudah menguasai)",
+                "*znam, znaš, zna*",
+                "*Znam kuhati.* — Saya bisa memasak."
+              ],
+              [
+                "**moči**",
+                "mampu (terutama negatif)",
+                "*morem, moreš, more*",
+                "*Ne morem priti.* — Saya tidak bisa datang."
+              ],
+              [
+                "**hoteti**",
+                "mau",
+                "*hočem, hočeš, hoče*",
+                "*Hočem kavo.* — Saya mau kopi."
+              ]
+            ]
+          },
+          "after": [
+            "Perbedaan yang paling sering keliru adalah antara **ne morem** dan **ne smem** dan **ne znam**. *Ne morem plavati* = saya tidak sanggup berenang sekarang (kaki patah, air terlalu dingin). *Ne smem plavati* = saya dilarang berenang. *Ne znam plavati* = saya tidak bisa berenang, tidak pernah belajar.",
+            "*Lahko* juga dipakai untuk meminta dengan sopan, dan itulah pemakaian yang paling sering kamu butuhkan: *Lahko dobim račun?* (boleh minta bonnya?), *Lahko ponovite?* (bisa diulang?), *Lahko pomagam?* (boleh saya bantu?)."
+          ]
+        },
+        {
+          "title": "Velelnik — bentuk perintah",
+          "body": [
+            "Tiga ekor untuk tiga jumlah, persis seperti seluruh bahasa Slovenia. Yang sopan memakai bentuk jamak, seperti biasa."
+          ],
+          "table": {
+            "head": [
+              "Kata kerja",
+              "kepada satu",
+              "kepada dua",
+              "kepada banyak / sopan"
+            ],
+            "rows": [
+              [
+                "*priti* (datang)",
+                "**pridi!**",
+                "**pridita!**",
+                "**pridite!**"
+              ],
+              [
+                "*iti* (pergi)",
+                "**pojdi!**",
+                "**pojdita!**",
+                "**pojdite!**"
+              ],
+              [
+                "*piti* (minum)",
+                "**pij!**",
+                "**pijta!**",
+                "**pijte!**"
+              ],
+              [
+                "*počakati* (menunggu)",
+                "**počakaj!**",
+                "**počakajta!**",
+                "**počakajte!**"
+              ],
+              [
+                "*oprostiti* (memaafkan)",
+                "**oprosti!**",
+                "**oprostita!**",
+                "**oprostite!**"
+              ],
+              [
+                "*povedati* (memberi tahu)",
+                "**povej!**",
+                "**povejta!**",
+                "**povejte!**"
+              ]
+            ]
+          },
+          "after": [
+            "Untuk melarang, taruh *ne* di depan: *Ne pozabi!* (jangan lupa), *Ne skrbi!* (jangan khawatir), *Ne hodi tja!* (jangan ke sana). Perhatikan bahwa bentuk larangan memakai kata kerja yang **belum selesai**, bukan yang selesai — jadi *Ne odpiraj!* (jangan buka), bukan *Ne odpri!*",
+            "Bentuk perintah bahasa Slovenia terdengar jauh lebih ramah daripada dugaan penutur Indonesia, terutama kalau ditambah *prosim*: *Počakajte, prosim* (tunggu sebentar, tolong). Ia dipakai di toko, di kantor, dan di antara teman tanpa terasa memerintah."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mengundang, menerima, menolak",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Menolak dengan sopan adalah keterampilan yang jarang diajarkan padahal paling sering dibutuhkan. Baris di bagian bawah tabel ini semuanya menolak tanpa menutup pintu."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Bi šel na kavo?*",
+              "bi syeu na KA-vo",
+              "Mau ngopi? (kepada laki-laki)"
+            ],
+            [
+              "*Te vabim na večerjo.*",
+              "té VA-bim na vé-CÉR-yo",
+              "Saya undang kamu makan malam."
+            ],
+            [
+              "*Se nam pridružiš?*",
+              "se nam pri-DRU-zhisy",
+              "Gabung dengan kami?"
+            ],
+            [
+              "*Z veseljem!*",
+              "z vé-SÉ-lyem",
+              "Dengan senang hati!"
+            ],
+            [
+              "*Super ideja!*",
+              "SU-per i-DÉ-ya",
+              "Ide bagus!"
+            ],
+            [
+              "*Seveda, pridem.*",
+              "sé-VÉ-da, PRI-dem",
+              "Tentu, saya datang."
+            ],
+            [
+              "*Žal ne morem.*",
+              "zhau né MO-rem",
+              "Sayangnya saya tidak bisa."
+            ],
+            [
+              "*Ta teden ne gre.*",
+              "ta TÉ-den né gré",
+              "Minggu ini tidak bisa."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Ta teden ne gre* harfiahnya \"minggu ini tidak berjalan\" — cara menolak yang sangat Slovenia: tidak menyebut alasan, tidak meminta maaf berlebihan, dan tetap membuka kemungkinan lain. Digabung dengan *Mogoče drugič?*, ia menolak dengan lengkap dan hangat dalam dua kalimat pendek."
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan **žal** — kata yang sudah kamu temui di unit 15 sebagai *Žal mi je*. Di depan kalimat, ia berarti \"sayangnya\" dan langsung menandai bahwa yang menyusul adalah penolakan. Orang Slovenia memakainya sesering orang Indonesia memakai \"maaf\"."
+        }
+      ]
+    },
+    {
+      "title": "Bertamu di rumah orang Slovenia",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kalau undanganmu diterima, beberapa kebiasaan berikut akan menghemat kecanggungan — dan sebagiannya akan terasa sangat akrab bagi orang Indonesia."
+        },
+        {
+          "type": "kotak",
+          "title": "Sebelum masuk",
+          "items": [
+            "**Sepatu dilepas.** Hampir selalu, di hampir semua rumah — persis seperti kebiasaan Indonesia. Tuan rumah akan menawarkan *copate* (sandal rumah); terimalah.",
+            "**Bawa sesuatu.** Bunga dalam jumlah ganjil, sebotol anggur, atau kue. Kalau ada anak kecil, sesuatu yang manis selalu tepat.",
+            "**Datang lima sampai sepuluh menit setelah jam yang disebut.** Berbeda dari janji kerja yang harus tepat waktu, undangan makan malam justru memberi tuan rumah kelonggaran."
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Cara baca",
+            "Kapan dipakai"
+          ],
+          "rows": [
+            [
+              "*Dober večer, hvala za povabilo.*",
+              "DÒ-ber vé-CÉR",
+              "Saat masuk"
+            ],
+            [
+              "*To je za vas.*",
+              "to yé za vas",
+              "Menyerahkan hadiah"
+            ],
+            [
+              "*Naj sezujem čevlje?*",
+              "nay sé-ZU-yem CÉU-lyé",
+              "Sepatunya dilepas ya?"
+            ],
+            [
+              "*Lepo stanovanje imate.*",
+              "LÉ-po sta-no-VA-nyé",
+              "Memuji rumahnya"
+            ],
+            [
+              "*Na zdravje!*",
+              "na ZDRAU-yé",
+              "Bersulang — tatap matanya"
+            ],
+            [
+              "*Dober tek!*",
+              "DÒ-ber ték",
+              "Sebelum makan"
+            ],
+            [
+              "*Je zelo okusno.*",
+              "yé zé-LO o-KUS-no",
+              "Memuji masakannya"
+            ],
+            [
+              "*Res sem sit, hvala.*",
+              "rés sem sit",
+              "Menolak tambahan"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tuan rumah Slovenia akan menawarkan tambahan makanan berkali-kali, dan menolak sekali tidak dianggap final — persis seperti di Indonesia. Kalau kamu benar-benar kenyang, *Res sem sit, hvala* sambil tersenyum adalah cara yang jelas tanpa menyinggung."
+        },
+        {
+          "type": "p",
+          "text": "Dan satu kebiasaan yang sepenuhnya berbeda: **ketika bersulang, tatap mata orangnya**, bukan gelasnya, dan katakan namanya kalau kamu ingat. Menatap gelas dianggap tidak tulus. Ini aturan tak tertulis yang dipegang serius di seluruh Eropa Tengah, dan mematuhinya sekali saja akan langsung terlihat."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "vabilo",
+      "baca": "va-BI-lo",
+      "id": "undangan"
+    },
+    {
+      "sl": "vabiti",
+      "baca": "VA-bi-ti",
+      "id": "mengundang"
+    },
+    {
+      "sl": "lahko",
+      "baca": "LAH-ko",
+      "id": "bisa; boleh"
+    },
+    {
+      "sl": "morati",
+      "baca": "MO-ra-ti",
+      "id": "harus"
+    },
+    {
+      "sl": "smeti",
+      "baca": "SMÉ-ti",
+      "id": "boleh (ada izin)"
+    },
+    {
+      "sl": "znati",
+      "baca": "ZNA-ti",
+      "id": "bisa (menguasai)"
+    },
+    {
+      "sl": "hoteti",
+      "baca": "ho-TÉ-ti",
+      "id": "mau"
+    },
+    {
+      "sl": "prinesti",
+      "baca": "pri-NÉS-ti",
+      "id": "membawa"
+    },
+    {
+      "sl": "treba",
+      "baca": "TRÉ-ba",
+      "id": "perlu"
+    },
+    {
+      "sl": "rože",
+      "baca": "RÒ-zhé",
+      "id": "bunga"
+    },
+    {
+      "sl": "darilo",
+      "baca": "da-RI-lo",
+      "id": "hadiah"
+    },
+    {
+      "sl": "čevlji",
+      "baca": "CÉU-lyi",
+      "id": "sepatu"
+    },
+    {
+      "sl": "copate",
+      "baca": "tso-PA-té",
+      "id": "sandal rumah"
+    },
+    {
+      "sl": "pomagati",
+      "baca": "po-MA-ga-ti",
+      "id": "membantu"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih lahko, moram, smem, atau znam.",
+      "items": [
+        "____ kuhati. (saya menguasainya)",
+        "____ delati. (saya harus)",
+        "Tu ne ____ kaditi. (dilarang)",
+        "____ dobim račun? (boleh minta)",
+        "Ne ____ priti. (tidak sanggup)",
+        "____ ponovite? (bisa diulang)"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi bentuk perintah kepada satu orang.",
+      "items": [
+        "priti — ____",
+        "iti — ____",
+        "piti — ____",
+        "počakati — ____",
+        "povedati — ____",
+        "ne pozabiti — ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Slovenia.",
+      "items": [
+        "Sabtu mau datang makan malam?",
+        "Dengan senang hati!",
+        "Perlu bawa sesuatu?",
+        "Tidak usah.",
+        "Sayangnya saya tidak bisa.",
+        "Mungkin lain kali?"
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 17. Terjemahkan ke bahasa Slovenia tanpa melihat unitnya.",
+      "items": [
+        "Besok kamu ngapain?",
+        "Saya akan belajar.",
+        "Saya di rumah.",
+        "Kalau cerah, kita naik gunung.",
+        "Kita lihat nanti."
+      ]
+    }
+  ],
+  "answers": [
+    "Znam — Moram — smem — Lahko — morem — Lahko",
+    "pridi — pojdi — pij — počakaj — povej — ne pozabi",
+    "Bi prišel v soboto na večerjo? — Z veseljem! — Moram kaj prinesti? — Ni treba. — Žal ne morem. — Mogoče drugič?",
+    "Kaj boš delal jutri? — Bom študiral. — Bom doma. — Če bo lepo, gremo v hribe. — Bomo videli."
+  ]
+}

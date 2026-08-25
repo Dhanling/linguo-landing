@@ -1,0 +1,601 @@
+{
+  "title": "Kantor pos di mana? — bertanya arah",
+  "title_target": "Kje je pošta?",
+  "goal": "Bertanya dan memahami petunjuk arah di kota — sekaligus memasang mestnik, bentuk tempat, dan mengenali kenyataan yang harus diterima apa adanya: setiap kata depan menyeret sklon-nya sendiri.",
+  "bekal": [
+    "menyebut tempat dengan *v* dan *na* dan tahu bahwa pilihannya sebagian besar kebiasaan, bukan logika",
+    "memahami petunjuk arah: *naravnost*, *levo*, *desno*, *pri*, *poleg*, *pred*",
+    "membedakan *v šoli* (di sekolah) dari *v šolo* (ke sekolah) tanpa berpikir dua kali"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Oprostite, kje je pošta?",
+      "intro": "Budi berdiri di sebuah persimpangan di pusat Ljubljana dengan amplop di tangan. Ia menghentikan seseorang yang lewat.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Oprostite, kje je pošta?",
+          "id": "Permisi, kantor pos di mana ya?",
+          "literal": "maafkan, di-mana adalah pos?"
+        },
+        {
+          "speaker": "Mimoidoči:",
+          "text": "Pošta? Tam, za vogalom.",
+          "id": "Pos? Di sana, di balik tikungan.",
+          "literal": "pos? di-sana, di-belakang dengan-tikungan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Je daleč?",
+          "id": "Jauh tidak?",
+          "literal": "adalah jauh?"
+        },
+        {
+          "speaker": "Mimoidoči:",
+          "text": "Ne, pet minut peš. Greste naravnost, potem levo.",
+          "id": "Tidak, lima menit jalan kaki. Jalan lurus, lalu belok kiri.",
+          "literal": "tidak, lima dari-menit dengan-kaki. Anda-pergi lurus, kemudian kiri."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Naravnost do semaforja?",
+          "id": "Lurus sampai lampu merah?",
+          "literal": "lurus sampai dari-lampu-lalu-lintas?"
+        },
+        {
+          "speaker": "Mimoidoči:",
+          "text": "Ja, pri semaforju zavijete levo.",
+          "id": "Ya, di lampu merah belok kiri.",
+          "literal": "ya, di dengan-lampu-lalu-lintas Anda-membelok kiri."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "In potem?",
+          "id": "Habis itu?",
+          "literal": "dan kemudian?"
+        },
+        {
+          "speaker": "Mimoidoči:",
+          "text": "Pošta je na desni, poleg banke.",
+          "id": "Posnya di sebelah kanan, di samping bank.",
+          "literal": "pos adalah di kanan, di-samping dari-bank."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Odlično. In kje je najbližji bankomat?",
+          "id": "Bagus. Kalau ATM terdekat di mana?",
+          "literal": "sangat-baik. dan di-mana adalah paling-dekat ATM?"
+        },
+        {
+          "speaker": "Mimoidoči:",
+          "text": "Prav pred pošto. Ne morete zgrešiti.",
+          "id": "Persis di depan pos. Tidak mungkin kelewat.",
+          "literal": "tepat di-depan dengan-pos. tidak Anda-bisa melewatkan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Najlepša hvala! Lep dan še naprej!",
+          "id": "Terima kasih banyak! Semoga harinya menyenangkan!",
+          "literal": "paling-indah terima-kasih! indah hari lagi ke-depan!"
+        }
+      ],
+      "notes": [
+        "**Setiap kata depan menyeret sklon-nya sendiri.** Lihat satu dialog ini saja: *za vogalom* dan *pred pošto* memakai satu bentuk, *pri semaforju* memakai bentuk lain, *poleg banke* dan *do semaforja* memakai bentuk ketiga. Ini bukan kekacauan — tiap kata depan punya pasangan tetap, dan pasangannya tidak pernah berubah. Tabel lengkapnya ada di halaman berikutnya; hafalkan kata depannya **bersama** bentuknya, jangan sendirian.",
+        "**Na pošti, tapi v trgovini.** Sebagian tempat memakai *v* (di dalam), sebagian *na* (di atas/di). Kantor pos, bank, universitas, stasiun, dan pasar memakai *na*; toko, sekolah, kafe, dan rumah sakit memakai *v*. Sebagiannya bisa dijelaskan dengan sejarah — tempat yang dulu berupa lapangan terbuka memakai *na* — tetapi sebagian besarnya cuma kebiasaan yang harus diterima. Hafalkan berpasangan.",
+        "**Peš = jalan kaki.** Satu kata, tanpa kata kerja. *Grem peš* (saya jalan kaki), *pet minut peš* (lima menit jalan kaki). Untuk naik sesuatu, bahasa Slovenia memakai *z*: *z avtobusom*, *z avtom* — bentuk itu dipasang di unit 18.",
+        "**Ne morete zgrešiti** harfiahnya \"Anda tidak bisa melewatkannya\" — persis seperti \"tidak mungkin kelewat\" bahasa Indonesia, dan salah satu kalimat yang paling sering menutup petunjuk arah di Slovenia. Kalau kamu mendengarnya, artinya tempat yang kamu cari besar dan mencolok.",
+        "**Lep dan še naprej!** harfiahnya \"hari indah lagi ke depan\" — ucapan perpisahan kepada orang asing yang menolongmu, kira-kira setara \"semoga harimu menyenangkan\". Ia terdengar hangat tanpa jadi akrab, dan itu nada yang tepat untuk orang yang baru kamu temui tiga puluh detik lalu."
+      ],
+      "grammars": [
+        {
+          "title": "Mestnik — bentuk tempat",
+          "body": [
+            "Bentuk ini cuma muncul setelah kata depan, tidak pernah sendirian — itulah sebabnya ia disebut *mestnik*, \"sklon tempat\". Polanya paling gampang dari semua sklon: **-i** untuk kata perempuan, **-u** untuk kata laki-laki dan netral."
+          ],
+          "table": {
+            "head": [
+              "Bentuk dasar",
+              "Di tempat itu",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "*šola* (p)",
+                "**v šoli**",
+                "u SYÒ-li",
+                "di sekolah"
+              ],
+              [
+                "*trgovina* (p)",
+                "**v trgovini**",
+                "u ter-go-VI-ni",
+                "di toko"
+              ],
+              [
+                "*pošta* (p)",
+                "**na pošti**",
+                "na PÒSY-ti",
+                "di kantor pos"
+              ],
+              [
+                "*banka* (p)",
+                "**na banki**",
+                "na BAN-ki",
+                "di bank"
+              ],
+              [
+                "*univerza* (p)",
+                "**na univerzi**",
+                "na u-ni-VÈR-zi",
+                "di universitas"
+              ],
+              [
+                "*park* (l)",
+                "**v parku**",
+                "u PAR-ku",
+                "di taman"
+              ],
+              [
+                "*muzej* (l)",
+                "**v muzeju**",
+                "u mu-ZÉ-yu",
+                "di museum"
+              ],
+              [
+                "*mesto* (n)",
+                "**v mestu**",
+                "u MÉS-tu",
+                "di kota"
+              ],
+              [
+                "*mesto* (n)",
+                "**v mestu**",
+                "u MÉS-tu",
+                "di kota"
+              ],
+              [
+                "*letališče* (n)",
+                "**na letališču**",
+                "na lé-ta-LI-syu",
+                "di bandara"
+              ]
+            ]
+          },
+          "after": [
+            "Dua kata depan lain memakai bentuk yang sama: **pri** (di dekat, di tempatnya) dan **po** (di sepanjang, setelah). *Pri semaforju* (di lampu merah), *pri Maji* (di rumah Maja), *po kosilu* (setelah makan siang).",
+            "*Pri* sangat berguna dan tidak punya padanan tunggal di bahasa Indonesia: ia berarti \"di dekat\", \"di tempatnya\", dan \"pada saat\". *Pri zdravniku* = di tempat dokter. *Pri nas* = di tempat kami, di negara kami."
+          ]
+        },
+        {
+          "title": "Kata depan dan sklon pasangannya",
+          "body": [
+            "Tabel ini adalah peta seluruh sistem sklon bahasa Slovenia dalam satu halaman. Kamu tidak perlu menghafalnya sekarang; kamu perlu **tahu bahwa ia ada**, supaya bentuk-bentuk yang muncul di unit berikutnya tidak terasa acak."
+          ],
+          "table": {
+            "head": [
+              "Kata depan",
+              "Arti",
+              "Sklon",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**iz, od, do, brez, poleg, blizu**",
+                "dari, sampai, tanpa, dekat",
+                "rodilnik",
+                "*poleg bank**e***, *do semafor**ja***"
+              ],
+              [
+                "**k / h**",
+                "ke (orang)",
+                "dajalnik",
+                "*k Maj**i***, *h zdravnik**u***"
+              ],
+              [
+                "**v, na** (arah)",
+                "ke dalam, ke",
+                "tožilnik",
+                "*v šol**o***, *na pošt**o***"
+              ],
+              [
+                "**za, čez, skozi**",
+                "untuk, lewat, menembus",
+                "tožilnik",
+                "*za brat**a***, *čez most*"
+              ],
+              [
+                "**v, na, pri, po**",
+                "di, dekat, setelah",
+                "mestnik",
+                "*v šol**i***, *pri Maj**i***"
+              ],
+              [
+                "**z / s, pred, za, nad, pod, med**",
+                "dengan, di depan, di belakang",
+                "orodnik",
+                "*z avtobus**om***, *pred pošt**o***"
+              ]
+            ]
+          },
+          "after": [
+            "Baris ketiga dan kelima memperlihatkan pasangan yang paling penting untuk kehidupan sehari-hari: **v** dan **na** dipakai dua kali, dan sklon-nya yang membedakan artinya. *Grem v šol**o*** = saya pergi ke sekolah (bergerak). *Sem v šol**i*** = saya di sekolah (diam).",
+            "Inilah alasan bahasa Slovenia butuh enam sklon dan bukan tiga: kata depannya terlalu sedikit untuk semua maksud yang ingin diungkapkan, jadi bentuk kata bendanya ikut memikul beban."
+          ]
+        },
+        {
+          "title": "Kje in kam — pasangan yang wajib dipisah",
+          "body": [
+            "Dalam bahasa Indonesia, \"di sekolah\" dan \"ke sekolah\" berbagi kata yang sama dan cuma kata depannya berganti. Dalam bahasa Slovenia, kata depannya justru **sama** dan yang berganti adalah ekor kata bendanya."
+          ],
+          "table": {
+            "head": [
+              "Kje? (diam)",
+              "Kam? (bergerak)",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "*v šol**i***",
+                "*v šol**o***",
+                "di sekolah / ke sekolah"
+              ],
+              [
+                "*na pošt**i***",
+                "*na pošt**o***",
+                "di kantor pos / ke kantor pos"
+              ],
+              [
+                "*v Ljubljan**i***",
+                "*v Ljubljan**o***",
+                "di Ljubljana / ke Ljubljana"
+              ],
+              [
+                "*v trgovin**i***",
+                "*v trgovin**o***",
+                "di toko / ke toko"
+              ],
+              [
+                "*pri Maj**i***",
+                "*k Maj**i***",
+                "di rumah Maja / ke rumah Maja"
+              ],
+              [
+                "*dom**a***",
+                "*dom**ov***",
+                "di rumah / pulang"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa **kata depannya tidak menolongmu sama sekali** di empat baris pertama: *v* dipakai untuk dua-duanya. Yang menandai arah cuma satu huruf di ekor: *-i* untuk diam, *-o* untuk bergerak.",
+            "Baris kelima berbeda karena menyangkut orang: untuk pergi **ke tempat seseorang**, bahasa Slovenia memakai *k* — *k zdravniku* (ke dokter), *k mami* (ke tempat ibu). Bentuknya disebut dajalnik, dan kamu akan bertemu lagi dengannya di unit 15."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "V mestu — tempat di kota",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Hafalkan setiap tempat **bersama kata depannya**. Kolom ketiga adalah yang benar-benar akan keluar dari mulutmu; kolom pertama cuma bentuk kamusnya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Di sana",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**pošta**",
+              "PÒSY-ta",
+              "*na pošti*",
+              "kantor pos"
+            ],
+            [
+              "**banka**",
+              "BAN-ka",
+              "*na banki*",
+              "bank"
+            ],
+            [
+              "**trgovina**",
+              "ter-go-VI-na",
+              "*v trgovini*",
+              "toko"
+            ],
+            [
+              "**lekarna**",
+              "lé-KAR-na",
+              "*v lekarni*",
+              "apotek"
+            ],
+            [
+              "**bolnišnica**",
+              "bou-NISY-ni-tsa",
+              "*v bolnišnici*",
+              "rumah sakit"
+            ],
+            [
+              "**postaja**",
+              "pos-TA-ya",
+              "*na postaji*",
+              "stasiun; halte"
+            ],
+            [
+              "**letališče**",
+              "lé-ta-LI-syé",
+              "*na letališču*",
+              "bandara"
+            ],
+            [
+              "**univerza**",
+              "u-ni-VÈR-za",
+              "*na univerzi*",
+              "universitas"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Ljubljana kecil, dan dua tempat ini jadi patokan arah bagi semua orang: **Tromostovje** (Tiga Jembatan) di pusat kota, dan **Ljubljanski grad** di bukit yang terlihat dari mana-mana. Kalau kamu tersesat, kalimat *Kje je Tromostovje?* akan mengembalikanmu ke pusat dari titik mana pun."
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan **cerkev** → *v cerkvi*: huruf *e* di suku kata terakhir lenyap begitu ekornya ditambah, persis seperti yang terjadi pada kata sifat *svetel* → *svetla* di unit 4. Huruf *e* yang hilang itu selalu e pepet."
+        }
+      ]
+    },
+    {
+      "title": "Menanyakan dan memberi arah",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Selusin kata di bawah ini menutup hampir semua petunjuk arah yang akan kamu dengar. Sisanya adalah nama tempat, yang selalu bisa kamu tunjuk di peta."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**naravnost**",
+              "na-RAU-nost",
+              "lurus"
+            ],
+            [
+              "**levo**",
+              "LÉ-vo",
+              "kiri"
+            ],
+            [
+              "**desno**",
+              "DÉS-no",
+              "kanan"
+            ],
+            [
+              "**nazaj**",
+              "na-ZAY",
+              "kembali; mundur"
+            ],
+            [
+              "**blizu**",
+              "BLI-zu",
+              "dekat"
+            ],
+            [
+              "**daleč**",
+              "DA-léc",
+              "jauh"
+            ],
+            [
+              "**poleg**",
+              "PO-lek",
+              "di samping"
+            ],
+            [
+              "**nasproti**",
+              "na-SPRÒ-ti",
+              "di seberang"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "*Oprostite, kje je …?*",
+              "o-pros-TI-té, kyé yé",
+              "Permisi, … di mana?"
+            ],
+            [
+              "*Kako pridem do …?*",
+              "KA-ko PRI-dem do",
+              "Bagaimana saya sampai ke …?"
+            ],
+            [
+              "*Je daleč?*",
+              "yé DA-léc",
+              "Jauh tidak?"
+            ],
+            [
+              "*Pet minut peš.*",
+              "pét mi-NUT pésy",
+              "Lima menit jalan kaki."
+            ],
+            [
+              "*Zavijte levo.*",
+              "za-VIY-té LÉ-vo",
+              "Belok kiri."
+            ],
+            [
+              "*Pojdite naravnost.*",
+              "POY-di-té na-RAU-nost",
+              "Jalan terus lurus."
+            ],
+            [
+              "*Izgubil sem se.*",
+              "iz-GU-biu sem se",
+              "Saya tersesat. (laki-laki)"
+            ],
+            [
+              "*Izgubila sem se.*",
+              "iz-gu-BI-la sem se",
+              "Saya tersesat. (perempuan)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Izgubil sem se* dan *Izgubila sem se* adalah intipan pertamamu ke bentuk lampau: ekornya berubah menurut jenis kelamin **pembicaranya**, bukan lawan bicaranya. Perempuan mengatakan *izgubila*, laki-laki *izgubil* — dibaca **iz-GU-biu**, karena huruf *l* di ujung selalu jatuh jadi *u*. Seluruh sistemnya dipasang di unit 12."
+        },
+        {
+          "type": "kotak",
+          "title": "Kebiasaan yang menolong di Slovenia",
+          "items": [
+            "Orang Slovenia hampir selalu berhenti kalau ditanya arah, dan sangat sering langsung mengantar beberapa langkah. Jangan kaget.",
+            "Kalau kamu memulai dengan *Oprostite, ali govorite angleško?*, banyak yang akan menjawab dalam bahasa Inggris yang sangat baik — tapi kalau kamu bertahan dengan bahasa Slovenia, hampir semuanya akan memperlambat bicaranya dan menemanimu sampai selesai.",
+            "Jarak di Slovenia pendek. \"Jauh\" bagi orang Ljubljana biasanya berarti dua puluh menit jalan kaki."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "pošta",
+      "baca": "PÒSY-ta",
+      "id": "kantor pos"
+    },
+    {
+      "sl": "banka",
+      "baca": "BAN-ka",
+      "id": "bank"
+    },
+    {
+      "sl": "ulica",
+      "baca": "U-li-tsa",
+      "id": "jalan"
+    },
+    {
+      "sl": "most",
+      "baca": "mòst",
+      "id": "jembatan"
+    },
+    {
+      "sl": "semafor",
+      "baca": "sé-ma-FÒR",
+      "id": "lampu lalu lintas"
+    },
+    {
+      "sl": "vogal",
+      "baca": "VÒ-gau",
+      "id": "tikungan; sudut"
+    },
+    {
+      "sl": "naravnost",
+      "baca": "na-RAU-nost",
+      "id": "lurus"
+    },
+    {
+      "sl": "levo",
+      "baca": "LÉ-vo",
+      "id": "kiri"
+    },
+    {
+      "sl": "desno",
+      "baca": "DÉS-no",
+      "id": "kanan"
+    },
+    {
+      "sl": "zaviti",
+      "baca": "za-VI-ti",
+      "id": "membelok"
+    },
+    {
+      "sl": "blizu",
+      "baca": "BLI-zu",
+      "id": "dekat"
+    },
+    {
+      "sl": "daleč",
+      "baca": "DA-léc",
+      "id": "jauh"
+    },
+    {
+      "sl": "poleg",
+      "baca": "PO-lek",
+      "id": "di samping"
+    },
+    {
+      "sl": "nasproti",
+      "baca": "na-SPRÒ-ti",
+      "id": "di seberang"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk tempat (mestnik) yang tepat.",
+      "items": [
+        "Sem v ____. (šola)",
+        "Sem na ____. (pošta)",
+        "Sem v ____. (trgovina)",
+        "Sem na ____. (univerza)",
+        "Sem v ____. (park)",
+        "Sem v ____. (mesto)"
+      ]
+    },
+    {
+      "prompt": "Pilih bentuk yang tepat menurut kata kerjanya.",
+      "items": [
+        "Grem v ____. (šola)",
+        "Sem v ____. (šola)",
+        "Grem na ____. (pošta)",
+        "Sem na ____. (pošta)",
+        "Grem v ____. (Ljubljana)",
+        "Živim v ____. (Ljubljana)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Slovenia.",
+      "items": [
+        "Permisi, kantor pos di mana?",
+        "Jauh tidak?",
+        "Lima menit jalan kaki.",
+        "Belok kiri di lampu merah.",
+        "Banknya di sebelah kanan.",
+        "Saya tersesat."
+      ]
+    },
+    {
+      "prompt": "Ulangan berjenjang — unit 6. Terjemahkan ke bahasa Slovenia tanpa melihat unitnya.",
+      "items": [
+        "Saya mau satu kopi.",
+        "Untuk saya teh, tolong.",
+        "Saya minum air.",
+        "Bonnya, tolong.",
+        "Selamat makan!"
+      ]
+    }
+  ],
+  "answers": [
+    "šoli — pošti — trgovini — univerzi — parku — mestu",
+    "šolo — šoli — pošto — pošti — Ljubljano — Ljubljani",
+    "Oprostite, kje je pošta? — Je daleč? — Pet minut peš. — Pri semaforju zavijte levo. — Banka je na desni. — Izgubil sem se.",
+    "Jaz bi eno kavo, prosim. — Zame čaj, prosim. — Pijem vodo. — Račun, prosim. — Dober tek!"
+  ]
+}
