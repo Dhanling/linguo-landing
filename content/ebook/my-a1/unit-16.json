@@ -1,0 +1,193 @@
+{
+ "title": "Kepala saya sakit",
+ "title_target": "ခေါင်း ကိုက်တယ် — hkauⁿ: kaik-tè",
+ "goal": "Menyebut bagian tubuh dan keluhan sakit, lalu pergi ke apotek atau klinik — termasuk beberapa ungkapan sakit yang tidak bisa diterjemahkan kata demi kata dari bahasa Indonesia.",
+ "bekal": [
+  "menyebut bagian tubuh yang paling sering dikeluhkan",
+  "membedakan နာတယ်, ကိုက်တယ်, dan ဖျားတယ်",
+  "menerangkan keluhan kepada dokter atau penjual obat",
+  "menanyakan aturan minum obat",
+  "menanyakan kabar orang sakit dan mendoakannya"
+ ],
+ "dialogs": [
+  {
+   "title": "စကားပြော — Di apotek dekat kantor",
+   "intro": "Ani tidak enak badan sejak pagi dan mampir ke apotek. Perhatikan tiga kata yang semuanya diterjemahkan \"sakit\" dalam bahasa Indonesia tetapi tidak pernah saling menggantikan dalam bahasa Myanmar.",
+   "lines": [
+    {"speaker":"အာနီ:","text":"[မင်္ဂလာပါ|miⁿ-ga-la-ba]။ [ကျွန်မ|ca.ma.] [နေ|ne] [မ|ma.] [ကောင်း|kauⁿ:] [ဘူး|bu:]။","id":"Halo. Saya tidak enak badan.","literal":"berkah-ada. saya(pr) — tinggal — tidak — baik — tidak."},
+    {"speaker":"ဆေးဆိုင်:","text":"[ဘယ်နား|bè-na:] [မ|ma.] [ကောင်း|kauⁿ:] [လဲ|lè:]။","id":"Bagian mana yang tidak enak?","literal":"mana-dekat — tidak — baik — kah?"},
+    {"speaker":"အာနီ:","text":"[မနေ့က|ma.ne.-ga.] [ကတည်းက|ga.-dè:-ga.] [ခေါင်း|hkauⁿ:] [ကိုက်|kaik] [နေ|ne] [တယ်|dè]။","id":"Sejak kemarin kepala saya sakit.","literal":"kemarin — sejak — kepala — menggigit — sedang — berita."},
+    {"speaker":"ဆေးဆိုင်:","text":"[ဖျား|hpya:] [လား|la:]။","id":"Demam?","literal":"panas-badan — kah?"},
+    {"speaker":"အာနီ:","text":"[နည်းနည်း|nè:-nè:] [ဖျား|hpya:] [တယ်|dè]။ [လည်ချောင်း|lè-jauⁿ:] [လည်း|lè:] [နာ|na] [တယ်|dè]။","id":"Agak demam. Tenggorokan juga sakit.","literal":"sedikit — demam — berita. tenggorokan — juga — nyeri — berita."},
+    {"speaker":"ဆေးဆိုင်:","text":"[ချောင်း|hcauⁿ:] [ဆိုး|hso:] [လား|la:]။ [နှာစေး|hna-se:] [လား|la:]။","id":"Batuk? Pilek?","literal":"batuk — buruk — kah? hidung-encer — kah?"},
+    {"speaker":"အာနီ:","text":"[ချောင်း|hcauⁿ:] [နည်းနည်း|nè:-nè:] [ဆိုး|hso:] [တယ်|dè]။ [နှာ|hna] [မ|ma.] [စေး|se:] [ဘူး|bu:]။","id":"Batuk sedikit. Tidak pilek.","literal":"batuk — sedikit — buruk — berita. hidung — tidak — encer — tidak."},
+    {"speaker":"ဆေးဆိုင်:","text":"[အအေးမိ|a.e:-mi.] [တာ|da] [ပါ|ba]။ [ဒီဆေး|di-hse:] [သောက်|thauk] [ပါ|ba]။","id":"Masuk angin. Minum obat ini.","literal":"dingin-kena — hal — sopan. ini-obat — minum — sopan."},
+    {"speaker":"အာနီ:","text":"[ဘယ်လို|bè-lo] [သောက်|thauk] [ရ|ya.] [မ|ma.] [လဲ|lè:]။","id":"Cara minumnya bagaimana?","literal":"bagaimana — minum — harus — akan — kah?"},
+    {"speaker":"ဆေးဆိုင်:","text":"[တစ်နေ့|ta.ne.] [သုံး|thouⁿ:] [ကြိမ်|ceiⁿ]၊ [တစ်ကြိမ်|ta.ceiⁿ] [တစ်လုံး|ta.louⁿ:]။ [စား|sa:] [ပြီးမှ|pyi:-hma.] [သောက်|thauk] [ပါ|ba]။","id":"Tiga kali sehari, sekali satu butir. Diminum sesudah makan.","literal":"satu-hari — tiga — kali, satu-kali — satu-butir. makan — sesudah — minum — sopan."},
+    {"speaker":"အာနီ:","text":"[ဒီဆေး|di-hse:] [သောက်|thauk] [ရင်|yiⁿ] [အိပ်ငိုက်|eik-ngaik] [လား|la:]။","id":"Kalau minum obat ini jadi mengantuk?","literal":"ini-obat — minum — kalau — mengantuk — kah?"},
+    {"speaker":"ဆေးဆိုင်:","text":"[နည်းနည်း|nè:-nè:] [အိပ်ငိုက်|eik-ngaik] [တယ်|dè]။ [နှစ်ရက်|hna.yèk] [နေ|ne] [ပြီး|pyi:] [မ|ma.] [သက်သာ|thèk-tha] [ရင်|yiⁿ] [ဆရာဝန်|hsa.ya-waⁿ] [ပြ|pya.] [ပါ|ba]။","id":"Agak mengantuk. Kalau dua hari tidak membaik, periksakan ke dokter.","literal":"sedikit — mengantuk — berita. dua-hari — tinggal — lalu — tidak — enteng — kalau — dokter — perlihat — sopan."}
+   ],
+   "grammars": [
+    {
+     "title": "⚠️ Tiga kata untuk \"sakit\" yang tidak saling menggantikan",
+     "body": ["Bahasa Indonesia memakai satu kata \"sakit\" untuk demam, nyeri, dan penyakit. Bahasa Myanmar memisahkannya, dan memilih yang keliru langsung terdengar aneh — seperti mengatakan \"kepala saya demam\" dalam bahasa Indonesia."],
+     "tables": [
+      {"head":["Kata","Cara baca","Arti tepatnya","Contoh"],"rows":[
+       ["နာတယ်","*na-dè*","nyeri di satu tempat","လည်ချောင်း နာတယ် — tenggorokan sakit"],
+       ["ကိုက်တယ်","*kaik-tè*","nyeri berdenyut, ngilu","ခေါင်း ကိုက်တယ် — kepala sakit"],
+       ["ဖျားတယ်","*hpya:-dè*","demam, badan panas","ဖျားတယ် — demam"],
+       ["နေမကောင်းဘူး","*ne-ma.kauⁿ:-bu:*","tidak enak badan (umum)",""],
+       ["ဖျားနာတယ်","*hpya:-na-dè*","sakit, jatuh sakit",""]
+      ]}
+     ],
+     "after": [
+      "⚠️ **ကိုက်တယ် harfiahnya berarti \"menggigit\".** ခေါင်းကိုက်တယ် secara kata demi kata berarti \"kepala menggigit\" — gambaran yang sebenarnya sangat tepat untuk sakit kepala yang berdenyut. Ia dipakai untuk kepala, gigi, dan otot.",
+      "Untuk keluhan umum tanpa menunjuk bagian tubuh, နေမကောင်းဘူး adalah pilihan paling aman dan paling sering dipakai. Kalau kamu ragu, mulailah dari situ lalu tunggu ditanya ဘယ်နား မကောင်းလဲ."
+     ]
+    },
+    {
+     "title": "Menyebut bagian tubuh yang sakit",
+     "body": ["Susunannya sangat sederhana: **bagian tubuh + kata kerja sakit**. Tidak ada penanda milik, tidak ada \"saya\" — kalau kamu yang berbicara, sudah jelas tubuh siapa yang dimaksud."],
+     "tables": [
+      {"head":["Myanmar","Cara baca","Bahasa Indonesia"],"rows":[
+       ["ခေါင်း ကိုက်တယ်","*hkauⁿ: kaik-tè*","sakit kepala"],
+       ["ဗိုက် နာတယ်","*baik na-dè*","sakit perut"],
+       ["သွား ကိုက်တယ်","*thwa: kaik-tè*","sakit gigi"],
+       ["လည်ချောင်း နာတယ်","*lè-jauⁿ: na-dè*","sakit tenggorokan"],
+       ["ခါး နာတယ်","*hka: na-dè*","sakit pinggang"],
+       ["ချောင်း ဆိုးတယ်","*hcauⁿ: hso:-dè*","batuk"],
+       ["နှာ စေးတယ်","*hna se:-dè*","pilek"],
+       ["အန်တယ်","*aⁿ-dè*","muntah"],
+       ["ဝမ်းသွားတယ်","*wuⁿ:-thwa:-dè*","mencret"]
+      ]}
+     ],
+     "after": ["⚠️ Perhatikan **သွား** yang di sini berarti \"gigi\", bukan \"pergi\". Dua kata itu ditulis sama tetapi nadanya berbeda: \"gigi\" adalah *thwa:* dengan nada tinggi, dan \"pergi\" juga *thwa:* — dalam hal ini yang membedakan hanyalah kalimatnya. Bahasa Myanmar punya beberapa pasangan seperti ini, dan keadaan selalu menyelamatkanmu."]
+    },
+    {
+     "title": "Aturan minum obat",
+     "body": ["Frekuensi dinyatakan dengan pola **jangka waktu + angka + ကြိမ်** (\"kali\"), dan takaran memakai penggolong yang sesuai dengan bentuk obatnya."],
+     "tables": [
+      {"head":["Myanmar","Cara baca","Arti"],"rows":[
+       ["တစ်နေ့ သုံးကြိမ်","*ta.ne. thouⁿ:-ceiⁿ*","tiga kali sehari"],
+       ["တစ်ကြိမ် တစ်လုံး","*ta.ceiⁿ ta.louⁿ:*","sekali satu butir"],
+       ["စားပြီးမှ","*sa:-pyi:-hma.*","sesudah makan"],
+       ["မစားခင်","*ma.sa:-hkiⁿ*","sebelum makan"],
+       ["အိပ်ခါနီး","*eik-hka-ni:*","menjelang tidur"],
+       ["နှစ်ရက်","*hna.yèk*","dua hari"]
+      ]}
+     ],
+     "after": ["⚠️ **မ…ခင် berarti \"sebelum\"** dan memakai မ tanpa ဘူး — ini satu-satunya tempat di mana မ muncul tanpa pasangannya. မစားခင် (sebelum makan), မသွားခင် (sebelum pergi), မိုးမကျခင် (sebelum hujan turun), seperti pada dialog unit 14."]
+    },
+    {
+     "title": "…ကတည်းက — sejak",
+     "body": ["Untuk menyatakan sejak kapan sesuatu berlangsung, dipakai ကတည်းက (*ga.-dè:-ga.*) yang menempel pada keterangan waktunya. Kalimatnya hampir selalu memakai …နေတယ် karena keadaannya masih berjalan."],
+     "tables": [
+      {"head":["Myanmar","Cara baca","Arti"],"rows":[
+       ["မနေ့ကတည်းက","*ma.ne.-ga.-dè:-ga.*","sejak kemarin"],
+       ["မနက်ကတည်းက","*ma.nèk-ka.-dè:-ga.*","sejak pagi"],
+       ["ငယ်ငယ်ကတည်းက","*ngè-ngè-ga.-dè:-ga.*","sejak kecil"],
+       ["မနေ့ကတည်းက ကိုက်နေတယ်","*… kaik-ne-dè*","sakit sejak kemarin"]
+      ]}
+     ],
+     "after": ["Untuk menyebut berapa lama, dipakai jangka waktunya langsung ditambah ရှိပြီ: နှစ်ရက် ရှိပြီ (sudah dua hari). Digabungkan menjadi: ခေါင်းကိုက်တာ နှစ်ရက် ရှိပြီ — \"sudah dua hari sakit kepala\"."]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tubuh, obat, dan menengok orang sakit",
+   "blocks": [
+    {"type":"p","text":"Selain daftar bagian tubuh, ada beberapa kalimat yang perlu kamu punya untuk menengok orang sakit — dan di Myanmar, menengok orang sakit adalah kewajiban sosial yang cukup serius."},
+    {"type":"tabel","head":["Myanmar","Cara baca","Arti","Myanmar","Cara baca","Arti"],"rows":[
+     ["ခေါင်း","*hkauⁿ:*","kepala","မျက်လုံး","*myèk-louⁿ:*","mata"],
+     ["နှာခေါင်း","*hna-hkauⁿ:*","hidung","ပါးစပ်","*pa:-zak*","mulut"],
+     ["နား","*na:*","telinga","သွား","*thwa:*","gigi"],
+     ["လည်ချောင်း","*lè-jauⁿ:*","tenggorokan","လက်","*lèk*","tangan"],
+     ["ခြေ","*hce*","kaki","ဗိုက်","*baik*","perut"],
+     ["ခါး","*hka:*","pinggang","ကျော","*còw*","punggung"],
+     ["နှလုံး","*hna.louⁿ:*","jantung","သွေး","*thwe:*","darah"]
+    ]},
+    {"type":"tabel","head":["Myanmar","Cara baca","Bahasa Indonesia"],"rows":[
+     ["ဆေးခန်း","*hse:-hkaⁿ:*","klinik"],
+     ["ဆေးရုံ","*hse:-youⁿ*","rumah sakit"],
+     ["ဆရာဝန် ပြတယ်","*hsa.ya-waⁿ pya.-dè*","berobat ke dokter"],
+     ["ဆေး သောက်တယ်","*hse: thauk-tè*","minum obat"],
+     ["အနားယူတယ်","*a.na:-yu-dè*","beristirahat"],
+     ["သက်သာတယ်","*thèk-tha-dè*","membaik, mereda"],
+     ["ကောင်းသွားပြီ","*kauⁿ:-thwa:-bi*","sudah sembuh"],
+     ["မြန်မြန် သက်သာပါစေ","*myaⁿ-myaⁿ thèk-tha-ba-ze*","semoga lekas sembuh"]
+    ]},
+    {"type":"kotak","title":"Menengok orang sakit di Myanmar","items":[
+     "**မြန်မြန် သက်သာပါစေ** (*myaⁿ-myaⁿ thèk-tha-ba-ze*) adalah kalimat yang wajib kamu punya — \"semoga lekas membaik\". Akhiran ပါစေ (*ba-ze*) membentuk doa atau harapan, dan kamu sudah bertemu bentuk yang sama pada ကံကောင်းပါစေ (semoga beruntung).",
+     "Menengok orang sakit dianggap bagian dari **ကုသိုလ်** (pahala), jadi jangan heran kalau kamar rumah sakit di Myanmar penuh tamu. Membawa buah adalah kebiasaan yang aman.",
+     "⚠️ Untuk urusan kesehatan yang sungguh-sungguh, jangan mengandalkan apotek saja. Katakan ဆရာဝန် ပြချင်ပါတယ် (\"saya ingin berobat ke dokter\") dan minta dirujuk. Banyak obat di Myanmar dijual bebas tanpa resep, dan itu bukan alasan untuk mendiagnosis diri sendiri."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  {"my":"နေမကောင်းဘူး","baca":"ne-ma.kauⁿ:-bu:","id":"tidak enak badan"},
+  {"my":"နာတယ်","baca":"na-dè","id":"nyeri, sakit"},
+  {"my":"ကိုက်တယ်","baca":"kaik-tè","id":"nyeri berdenyut; menggigit"},
+  {"my":"ဖျားတယ်","baca":"hpya:-dè","id":"demam"},
+  {"my":"ခေါင်း","baca":"hkauⁿ:","id":"kepala"},
+  {"my":"ဗိုက်","baca":"baik","id":"perut"},
+  {"my":"လည်ချောင်း","baca":"lè-jauⁿ:","id":"tenggorokan"},
+  {"my":"သွား","baca":"thwa:","id":"gigi"},
+  {"my":"လက်","baca":"lèk","id":"tangan"},
+  {"my":"ခြေ","baca":"hce","id":"kaki"},
+  {"my":"မျက်လုံး","baca":"myèk-louⁿ:","id":"mata"},
+  {"my":"နား","baca":"na:","id":"telinga"},
+  {"my":"ချောင်းဆိုးတယ်","baca":"hcauⁿ:-hso:-dè","id":"batuk"},
+  {"my":"နှာစေးတယ်","baca":"hna-se:-dè","id":"pilek"},
+  {"my":"အအေးမိတယ်","baca":"a.e:-mi.-dè","id":"masuk angin"},
+  {"my":"ဆေး","baca":"hse:","id":"obat"},
+  {"my":"ဆေးခန်း","baca":"hse:-hkaⁿ:","id":"klinik"},
+  {"my":"ဆရာဝန်ပြတယ်","baca":"hsa.ya-waⁿ-pya.-dè","id":"berobat ke dokter"},
+  {"my":"ကြိမ်","baca":"ceiⁿ","id":"kali"},
+  {"my":"…ပြီးမှ","baca":"pyi:-hma.","id":"sesudah"},
+  {"my":"မ…ခင်","baca":"ma…hkiⁿ","id":"sebelum"},
+  {"my":"…ကတည်းက","baca":"ga.-dè:-ga.","id":"sejak"},
+  {"my":"အိပ်ငိုက်တယ်","baca":"eik-ngaik-tè","id":"mengantuk"},
+  {"my":"သက်သာတယ်","baca":"thèk-tha-dè","id":"membaik, mereda"},
+  {"my":"အနားယူတယ်","baca":"a.na:-yu-dè","id":"beristirahat"},
+  {"my":"ရက်","baca":"yèk","id":"hari (jumlah)"},
+  {"my":"…ပါစေ","baca":"ba-ze","id":"semoga …"},
+  {"my":"ဘယ်နား","baca":"bè-na:","id":"bagian mana"}
+ ],
+ "exercises": [
+  {"prompt":"Pilih နာတယ်, ကိုက်တယ်, atau ဖျားတယ်.","items":[
+   "Kepala sakit: ခေါင်း ____",
+   "Demam: ____",
+   "Tenggorokan sakit: လည်ချောင်း ____",
+   "Gigi sakit: သွား ____"
+  ]},
+  {"prompt":"Lengkapi dengan ပြီးမှ atau မ…ခင်.","items":[
+   "Sesudah makan: စား____",
+   "Sebelum makan: ____စား____",
+   "Sesudah pulang: ပြန်____",
+   "Sebelum tidur: ____အိပ်____"
+  ]},
+  {"prompt":"Susun jadi kalimat yang benar.","items":[
+   "နေတယ် / ကိုက် / ခေါင်း / မနေ့ကတည်းက",
+   "ဘူး / မ / ကောင်း / နေ / ကျွန်မ",
+   "တစ်လုံး / တစ်ကြိမ် / သုံးကြိမ် / တစ်နေ့",
+   "ပါ / သောက် / စားပြီးမှ / ဒီဆေး"
+  ]},
+  {"prompt":"Terjemahkan ke bahasa Myanmar.","items":[
+   "Saya tidak enak badan.",
+   "Sejak kemarin kepala saya sakit.",
+   "Agak demam.",
+   "Tenggorokan juga sakit.",
+   "Cara minumnya bagaimana?",
+   "Semoga lekas sembuh."
+  ]}
+ ],
+ "answers": [
+  "ကိုက်တယ် — ဖျားတယ် — နာတယ် — ကိုက်တယ်",
+  "ပြီးမှ — မ · ခင် — ပြီးမှ — မ · ခင်",
+  "မနေ့ကတည်းက ခေါင်း ကိုက်နေတယ်။ — ကျွန်မ နေမကောင်းဘူး။ — တစ်နေ့ သုံးကြိမ်၊ တစ်ကြိမ် တစ်လုံး။ — ဒီဆေး စားပြီးမှ သောက်ပါ။",
+  "ကျွန်မ နေမကောင်းဘူး။ — မနေ့ကတည်းက ခေါင်း ကိုက်နေတယ်။ — နည်းနည်း ဖျားတယ်။ — လည်ချောင်းလည်း နာတယ်။ — ဘယ်လို သောက်ရမလဲ။ — မြန်မြန် သက်သာပါစေ။"
+ ]
+}

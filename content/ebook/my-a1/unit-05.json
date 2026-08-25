@@ -1,0 +1,189 @@
+{
+ "title": "Berapa harganya?",
+ "title_target": "ဘယ်လောက်လဲ — bè-lauk-lè:",
+ "goal": "Menghitung sampai seratus ribu, membaca angka Myanmar, dan menanyakan harga — termasuk cara orang Myanmar menyebut uang, yang sama sekali tidak disusun seperti bahasa Indonesia.",
+ "bekal": [
+  "menghitung satu sampai seratus dalam bahasa Myanmar",
+  "membaca sepuluh angka Myanmar di plat nomor dan label harga",
+  "menanyakan harga dengan ဘယ်လောက်လဲ",
+  "menyebut harga dalam သောင်း dan သိန်း",
+  "mengatakan mahal, murah, dan tidak punya uang"
+ ],
+ "dialogs": [
+  {
+   "title": "စကားပြော — Di kedai buku dekat kantor",
+   "intro": "Ani mencari kamus. Perhatikan cara pemilik kedai menyebut harga: ia tidak menghitung nol satu per satu, melainkan memakai satuan သောင်း (sepuluh ribu). Inilah cara semua harga disebut di Myanmar, dan turis yang belum terbiasa hampir selalu ketinggalan.",
+   "lines": [
+    {"speaker":"အာနီ:","text":"[ဦးလေး|u:-le:]၊ [အဘိဓာန်|a.bi.da-naⁿ] [ရှိ|syi.] [လား|la:]။","id":"Pak, ada kamus?","literal":"paman, kamus — ada — kah?"},
+    {"speaker":"ဆိုင်ရှင်:","text":"[ရှိ|syi.] [ပါတယ်|ba-dè]။ [မြန်မာ|myaⁿ-ma] [အင်္ဂလိပ်|iⁿ-ga.leik] [အဘိဓာန်|a.bi.da-naⁿ] [ပါ|ba]။","id":"Ada. Kamus Myanmar-Inggris.","literal":"ada — sopan-berita. myanmar — inggris — kamus — sopan."},
+    {"speaker":"အာနီ:","text":"[ဘယ်လောက်|bè-lauk] [လဲ|lè:]။","id":"Berapa harganya?","literal":"berapa — kah?"},
+    {"speaker":"ဆိုင်ရှင်:","text":"[တစ်သောင်း|ta.thauⁿ:] [ငါးထောင်|nga:-htauⁿ] [ပါ|ba]။","id":"Lima belas ribu.","literal":"satu-puluh-ribu — lima-ribu — sopan."},
+    {"speaker":"အာနီ:","text":"[ဆယ့်ငါးထောင်|hse.nga:-htauⁿ] [လား|la:]။ [နည်းနည်း|nè:-nè:] [ဈေးကြီး|ze:-ci:] [တယ်|dè]။","id":"Lima belas ribu, ya? Agak mahal.","literal":"lima-belas-ribu — kah? sedikit — harga-besar — berita."},
+    {"speaker":"ဆိုင်ရှင်:","text":"[ဒီ|di] [တစ်အုပ်|ta.ouk] [က|ga.] [ပိုပြီး|po-byi:] [ပေါ|pau] [ပါတယ်|ba-dè]။ [ရှစ်ထောင်|syik-htauⁿ] [ပဲ|bè:] [ပါ|ba]။","id":"Yang satu ini lebih murah. Cuma delapan ribu.","literal":"ini — satu-buku — yang — lebih — murah — sopan-berita. delapan-ribu — saja — sopan."},
+    {"speaker":"အာနီ:","text":"[ဒါ|da] [သေး|the:] [တယ်|dè] [နော်|nò]။ [စာလုံး|sa-louⁿ:] [ဘယ်နှစ်လုံး|bè-hna.louⁿ:] [ပါ|pa] [လဲ|lè:]။","id":"Ini kecil ya. Isinya berapa kata?","literal":"ini — kecil — berita — ya. kata — berapa-butir — memuat — kah?"},
+    {"speaker":"ဆိုင်ရှင်:","text":"[တစ်သောင်း|ta.thauⁿ:] [လောက်|lauk] [ပါ|pa] [ပါတယ်|ba-dè]။ [ကျောင်းသား|còuⁿ:-tha:] [တွေ|dwe] [သုံး|thouⁿ:] [ကြ|ca.] [ပါတယ်|ba-dè]။","id":"Sekitar sepuluh ribu kata. Anak-anak sekolah pakai yang ini.","literal":"sepuluh-ribu — kira-kira — memuat — sopan-berita. pelajar — jamak — pakai — bersama — sopan-berita."},
+    {"speaker":"အာနီ:","text":"[ဒါဆို|da-hso] [ဒီ|di] [တစ်အုပ်|ta.ouk] [ယူ|yu] [ပါ့မယ်|ba.-mè]။","id":"Kalau begitu saya ambil yang ini.","literal":"kalau-begitu — ini — satu-buku — ambil — sopan-akan."},
+    {"speaker":"ဆိုင်ရှင်:","text":"[ရှစ်ထောင်|syik-htauⁿ] [ပါ|ba]။ [ဒီ|di] [ဘောပင်|bò-piⁿ] [ကို|ko] [လက်ဆောင်|lèk-hsauⁿ] [ပေး|pe:] [မယ်|mè]။","id":"Delapan ribu. Pena ini saya kasih sebagai hadiah.","literal":"delapan-ribu — sopan. ini — pena — objek — hadiah — beri — akan."},
+    {"speaker":"အာနီ:","text":"[ဟုတ်လား|houk-la:]! [ကျေးဇူးတင်ပါတယ်|ce:-zu:-tiⁿ-ba-dè] [ဦးလေး|u:-le:]။","id":"Wah! Terima kasih, Pak.","literal":"benar-kah! terima-kasih — paman."},
+    {"speaker":"ဆိုင်ရှင်:","text":"[ရ|ya.] [ပါတယ်|ba-dè]။ [နောက်တစ်ခေါက်|nauk-ta.hkauk] [လာ|la] [ခဲ့|hkè.] [ပါ|ba] [နော်|nò]။","id":"Sama-sama. Datang lagi ya.","literal":"boleh — sopan-berita. lain-kali — datang — sudah — sopan — ya."}
+   ],
+   "grammars": [
+    {
+     "title": "Angka satu sampai sepuluh, lalu seluruh sisanya",
+     "body": ["Sepuluh angka pertama harus dihafal mati. Sesudah itu bahasa Myanmar sangat teratur: puluhan dibentuk dengan \"berapa × sepuluh\", dan satuannya tinggal ditempelkan."],
+     "tables": [
+      {"head":["Angka","Myanmar","Cara baca","Angka","Myanmar","Cara baca"],"rows":[
+       ["1 · ၁","တစ်","*tik*","6 · ၆","ခြောက်","*hcauk*"],
+       ["2 · ၂","နှစ်","*hnik*","7 · ၇","ခုနစ်","*hku.nik*"],
+       ["3 · ၃","သုံး","*thouⁿ:*","8 · ၈","ရှစ်","*syik*"],
+       ["4 · ၄","လေး","*le:*","9 · ၉","ကိုး","*ko:*"],
+       ["5 · ၅","ငါး","*nga:*","10 · ၁၀","တစ်ဆယ်","*ta.hse*"]
+      ]},
+      {"head":["Angka","Myanmar","Cara baca","Catatan"],"rows":[
+       ["11","ဆယ့်တစ်","*hse.tik*","ဆယ် → ဆယ့် di depan angka"],
+       ["25","နှစ်ဆယ့်ငါး","*hna.hse.nga:*","harfiah \"dua sepuluh lima\""],
+       ["100","တစ်ရာ","*ta.ya*",""],
+       ["1.000","တစ်ထောင်","*ta.htauⁿ*",""],
+       ["10.000","တစ်သောင်း","*ta.thauⁿ:*","⚠️ punya kata sendiri"],
+       ["100.000","တစ်သိန်း","*ta.theiⁿ:*","⚠️ punya kata sendiri"]
+      ]}
+     ],
+     "after": ["⚠️ Perhatikan bahwa **တစ်ဆယ့်ခြောက်** (16) dibaca *ta.hse.hcauk*: ဆယ် berubah menjadi ဆယ့် dengan nada ditekan begitu ada angka menyusul di belakangnya. Perubahan kecil ini terjadi di setiap bilangan belasan dan puluhan, jadi biasakan sejak sekarang."]
+    },
+    {
+     "title": "⚠️ သောင်း dan သိန်း — cara Myanmar menyebut uang",
+     "body": ["Bahasa Indonesia menghitung uang dengan \"ribu\" dan \"juta\". Bahasa Myanmar menyisipkan dua satuan tambahan di antaranya, dan **hampir semua harga di Myanmar disebut dengan dua satuan itu**."],
+     "tables": [
+      {"head":["Jumlah","Myanmar","Cara baca","Cara menyebutnya"],"rows":[
+       ["5.000","ငါးထောင်","*nga:-htauⁿ*","lima ribu"],
+       ["15.000","တစ်သောင်းငါးထောင်","*ta.thauⁿ:-nga:-htauⁿ*","\"satu-puluh-ribu lima ribu\""],
+       ["30.000","သုံးသောင်း","*thouⁿ:-thauⁿ:*","\"tiga puluh-ribu\""],
+       ["200.000","နှစ်သိန်း","*hnik-theiⁿ:*","\"dua ratus-ribu\""],
+       ["1.500.000","ဆယ့်ငါးသိန်း","*hse.nga:-theiⁿ:*","\"lima belas ratus-ribu\""]
+      ]}
+     ],
+     "after": [
+      "Cara paling cepat membiasakannya: berhenti menerjemahkan, dan mulai **berpikir dalam kelipatan sepuluh ribu**. Harga sewa kamar 150.000 kyat bukan \"seratus lima puluh ribu\" melainkan ဆယ့်ငါးသိန်း — \"lima belas\" dengan satuan သိန်း.",
+      "Mata uangnya ကျပ် (*cak*), tetapi dalam percakapan sehari-hari kata itu sering **tidak diucapkan sama sekali**. Kalau seseorang menyebut ရှစ်ထောင်, yang dimaksud sudah pasti delapan ribu kyat."
+     ]
+    },
+    {
+     "title": "Menanyakan harga dan menawar",
+     "body": ["Menawar adalah hal biasa di pasar dan kedai kecil, tetapi tidak dilakukan di toko besar atau tempat berlabel harga. Kalimat-kalimat ini sudah cukup untuk seluruh urusan itu."],
+     "tables": [
+      {"head":["Myanmar","Cara baca","Bahasa Indonesia"],"rows":[
+       ["ဘယ်လောက်လဲ","*bè-lauk-lè:*","berapa harganya?"],
+       ["ဈေးကြီးတယ်","*ze:-ci:-dè*","mahal"],
+       ["ဈေးပေါတယ်","*ze:-pau-dè*","murah"],
+       ["နည်းနည်း လျှော့ပါ","*nè:-nè: syaw.-ba*","kurangi sedikit dong"],
+       ["ပိုက်ဆံ မပါဘူး","*paik-hsaⁿ ma.pa-bu:*","saya tidak bawa uang"],
+       ["ဒါ ယူပါ့မယ်","*da yu-ba.-mè*","saya ambil yang ini"]
+      ]}
+     ],
+     "after": ["⚠️ ဈေး (*ze:*) berarti \"harga\" sekaligus \"pasar\". ဈေးကြီးတယ် harfiahnya \"harganya besar\", dan ဈေးသွားတယ် berarti \"pergi ke pasar\". Bedanya selalu jelas dari kalimatnya."]
+    },
+    {
+     "title": "…လောက် dan …ပဲ — kira-kira dan cuma",
+     "body": ["Dua kata kecil yang membuat kalimat harga terdengar wajar, dan dua-duanya diletakkan **sesudah** angkanya."],
+     "tables": [
+      {"head":["Myanmar","Cara baca","Arti"],"rows":[
+       ["တစ်သောင်းလောက်","*ta.thauⁿ:-lauk*","sekitar sepuluh ribu"],
+       ["ရှစ်ထောင်ပဲ","*syik-htauⁿ-bè:*","cuma delapan ribu"],
+       ["ငါးယောက်လောက်","*nga:-yauk-lauk*","kira-kira lima orang"],
+       ["နည်းနည်းပဲ","*nè:-nè:-bè:*","sedikit saja"]
+      ]}
+     ],
+     "after": ["ဘယ်လောက် sendiri sebenarnya tersusun dari ဘယ် (\"mana\") + လောက် (\"kira-kira\") — harfiahnya \"kira-kira mana\". Begitu kamu melihatnya, kata itu berhenti terasa seperti kata baru yang harus dihafal."]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca angka Myanmar di jalan",
+   "blocks": [
+    {"type":"p","text":"Angka Myanmar masih dipakai di mana-mana: plat nomor kendaraan, nomor bis kota, label harga di pasar, nomor rumah, dan tanggal di koran. Bentuknya bundar seperti hurufnya, dan beberapa di antaranya mirip dengan huruf — ၀ sama bentuknya dengan huruf ဝ, dan ၇ mirip dengan ၅. Lima menit menghafalnya akan menghemat banyak kebingungan."},
+    {"type":"tabel","head":["၀","၁","၂","၃","၄","၅","၆","၇","၈","၉"],"rows":[
+     ["0","1","2","3","4","5","6","7","8","9"]
+    ]},
+    {"type":"tabel","head":["Yang tertulis","Dibaca","Artinya"],"rows":[
+     ["၈၀၀၀ ကျပ်","*syik-htauⁿ cak*","8.000 kyat"],
+     ["၁၅၀၀၀ ကျပ်","*ta.thauⁿ: nga:-htauⁿ cak*","15.000 kyat"],
+     ["ဘတ်စ်ကား ၃၆","*bak-sa.ka: thouⁿ:-hse.hcauk*","bis nomor 36"],
+     ["အခန်း ၂၀၄","*a.hkaⁿ: hnik-ya-le:*","kamar 204"],
+     ["၂၀၂၆ ခုနှစ်","*hnik-htauⁿ hna.hse.hcauk hku.hnik*","tahun 2026"]
+    ]},
+    {"type":"kotak","title":"Latihan yang paling cepat menempel","items":[
+     "Tulis nomor teleponmu sendiri, tanggal lahirmu, dan nomor rumahmu dengan angka Myanmar. Ketiganya sudah kamu hafal dalam angka biasa, jadi otakmu tinggal memasang bentuk barunya pada isi yang sudah dikenal.",
+     "Sesudah itu, bacalah keras-keras. ⚠️ Angka Myanmar dibaca dengan urutan yang sama persis dengan angka biasa — dari kiri ke kanan. Tidak ada yang dibalik."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  {"my":"ဘယ်လောက်လဲ","baca":"bè-lauk-lè:","id":"berapa harganya?"},
+  {"my":"အဘိဓာန်","baca":"a.bi.da-naⁿ","id":"kamus"},
+  {"my":"ဆိုင်","baca":"hsaiⁿ","id":"toko, kedai"},
+  {"my":"ဆိုင်ရှင်","baca":"hsaiⁿ-syiⁿ","id":"pemilik toko"},
+  {"my":"ကျပ်","baca":"cak","id":"kyat, mata uang Myanmar"},
+  {"my":"ထောင်","baca":"htauⁿ","id":"ribu"},
+  {"my":"သောင်း","baca":"thauⁿ:","id":"sepuluh ribu"},
+  {"my":"သိန်း","baca":"theiⁿ:","id":"seratus ribu"},
+  {"my":"ရာ","baca":"ya","id":"ratus"},
+  {"my":"ဆယ်","baca":"hse","id":"puluh"},
+  {"my":"ဈေးကြီးတယ်","baca":"ze:-ci:-dè","id":"mahal"},
+  {"my":"ဈေးပေါတယ်","baca":"ze:-pau-dè","id":"murah"},
+  {"my":"ဈေး","baca":"ze:","id":"harga; pasar"},
+  {"my":"ပိုပြီး","baca":"po-byi:","id":"lebih"},
+  {"my":"…လောက်","baca":"lauk","id":"kira-kira, sekitar"},
+  {"my":"…ပဲ","baca":"bè:","id":"saja, cuma"},
+  {"my":"အုပ်","baca":"ouk","id":"penggolong untuk buku"},
+  {"my":"လုံး","baca":"louⁿ:","id":"penggolong benda bulat, butir"},
+  {"my":"စာလုံး","baca":"sa-louⁿ:","id":"kata, huruf"},
+  {"my":"သေးတယ်","baca":"the:-dè","id":"kecil"},
+  {"my":"ကြီးတယ်","baca":"ci:-dè","id":"besar"},
+  {"my":"ပါတယ်","baca":"pa-dè","id":"termuat, ikut serta"},
+  {"my":"သုံးတယ်","baca":"thouⁿ:-dè","id":"memakai"},
+  {"my":"ယူတယ်","baca":"yu-dè","id":"mengambil"},
+  {"my":"ပေးတယ်","baca":"pe:-dè","id":"memberi"},
+  {"my":"လက်ဆောင်","baca":"lèk-hsauⁿ","id":"hadiah"},
+  {"my":"နောက်တစ်ခေါက်","baca":"nauk-ta.hkauk","id":"lain kali"},
+  {"my":"နော်","baca":"nò","id":"ya? (melunakkan kalimat)"}
+ ],
+ "exercises": [
+  {"prompt":"Tulis dalam angka biasa.","items":[
+   "၁၅",
+   "၄၀",
+   "၁၂၃",
+   "၈၀၀၀",
+   "၂၀၂၆",
+   "၉၇"
+  ]},
+  {"prompt":"Bacakan harga ini dalam bahasa Myanmar.","items":[
+   "3.000 kyat",
+   "20.000 kyat",
+   "45.000 kyat",
+   "100.000 kyat"
+  ]},
+  {"prompt":"Susun jadi kalimat yang benar.","items":[
+   "လဲ / ဘယ်လောက် / ဒါ",
+   "တယ် / ဈေးကြီး / နည်းနည်း",
+   "ပါ / ပဲ / ရှစ်ထောင်",
+   "ပါ့မယ် / ယူ / ဒီတစ်အုပ်"
+  ]},
+  {"prompt":"Terjemahkan ke bahasa Myanmar.","items":[
+   "Ada kamus?",
+   "Berapa harganya?",
+   "Agak mahal.",
+   "Cuma delapan ribu.",
+   "Kalau begitu saya ambil yang ini.",
+   "Saya tidak bawa uang."
+  ]}
+ ],
+ "answers": [
+  "15 — 40 — 123 — 8000 — 2026 — 97",
+  "သုံးထောင် — နှစ်သောင်း — လေးသောင်းငါးထောင် — တစ်သိန်း",
+  "ဒါ ဘယ်လောက်လဲ။ — နည်းနည်း ဈေးကြီးတယ်။ — ရှစ်ထောင်ပဲပါ။ — ဒီတစ်အုပ် ယူပါ့မယ်။",
+  "အဘိဓာန် ရှိလား။ — ဘယ်လောက်လဲ။ — နည်းနည်း ဈေးကြီးတယ်။ — ရှစ်ထောင်ပဲပါ။ — ဒါဆို ဒီတစ်အုပ် ယူပါ့မယ်။ — ပိုက်ဆံ မပါဘူး။"
+ ]
+}

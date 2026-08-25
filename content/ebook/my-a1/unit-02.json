@@ -1,0 +1,184 @@
+{
+ "title": "Ini apa?",
+ "title_target": "ဒါ ဘာလဲ — da ba-lè:",
+ "goal": "Menunjuk benda, menanyakan namanya, dan mengetahui kapan sebuah pertanyaan berakhir dengan လား dan kapan dengan လဲ — pilihan yang paling cepat terdengar salah oleh telinga orang Myanmar.",
+ "bekal": [
+  "menanyakan nama benda dengan ဒါ ဘာလဲ",
+  "membedakan ဒါ, ဒီ, dan ဟို",
+  "memilih ekor လား atau လဲ dengan benar",
+  "menjawab dengan ဒါ … ပါ dan menyangkal dengan မဟုတ်ဘူး",
+  "menyebut lima belas benda yang ada di setiap rumah"
+ ],
+ "dialogs": [
+  {
+   "title": "စကားပြော — Di ruang tamu Mya Mya",
+   "intro": "Ani duduk di ruang tamu sambil menunggu tehnya. Ia memakai kesempatan itu untuk menanyakan nama benda-benda di sekitarnya. Perhatikan ekor tiap pertanyaan: yang memakai kata tanya ဘာ berakhir dengan လဲ, yang jawabannya cuma \"ya\" atau \"tidak\" berakhir dengan လား.",
+   "lines": [
+    {"speaker":"အာနီ:","text":"[မြမြ|mya.mya.]၊ [ဒါ|da] [ဘာ|ba] [လဲ|lè:]။","id":"Mya Mya, ini apa?","literal":"mya-mya, ini — apa — kah?"},
+    {"speaker":"မြမြ:","text":"[ဒါ|da] [လက်ဖက်ရည်|la.hpèk-ye] [ပါ|ba]။ [မြန်မာ|myaⁿ-ma] [လက်ဖက်ရည်|la.hpèk-ye] [ပါ|ba]။","id":"Ini teh. Teh Myanmar.","literal":"ini — teh — sopan. myanmar — teh — sopan."},
+    {"speaker":"အာနီ:","text":"[ချို|hco] [လား|la:]။","id":"Manis?","literal":"manis — kah?"},
+    {"speaker":"မြမြ:","text":"[ဟုတ်ကဲ့|houk-kè.]၊ [အရမ်း|a.yaⁿ:] [ချို|hco] [ပါတယ်|ba-dè]။ [မြန်မာ|myaⁿ-ma] [လက်ဖက်ရည်|la.hpèk-ye] [နို့|no.] [နဲ့|nè.] [ပါ|ba]။","id":"Ya, sangat manis. Teh Myanmar pakai susu.","literal":"benar-iya, sangat — manis — sopan-berita. myanmar — teh — susu — dengan — sopan."},
+    {"speaker":"အာနီ:","text":"[ဟို|ho] [ဟာ|ha] [ရော|yò:]။ [ဘာ|ba] [လဲ|lè:]။","id":"Kalau yang itu? Apa itu?","literal":"itu — benda — bagaimana? apa — kah?"},
+    {"speaker":"မြမြ:","text":"[ဒါ|da] [သနပ်ခါး|tha.nak-hka:] [ပါ|ba]။ [မျက်နှာ|myèk-hna] [မှာ|hma] [လိမ်း|leiⁿ:] [ပါတယ်|ba-dè]။","id":"Itu thanaka. Dioleskan di wajah.","literal":"ini — thanaka — sopan. wajah — di — oles — sopan-berita."},
+    {"speaker":"အာနီ:","text":"[ဆေး|hse:] [လား|la:]။","id":"Obat?","literal":"obat — kah?"},
+    {"speaker":"မြမြ:","text":"[ဆေး|hse:] [မဟုတ်ဘူး|ma.houk-bu:]။ [နေ|ne] [ကာကွယ်|ka-kwè] [တာ|da] [ပါ|ba]။ [အေး|e:] [ပါတယ်|ba-dè]။","id":"Bukan obat. Untuk melindungi dari matahari. Rasanya sejuk.","literal":"obat — bukan. matahari — lindung — hal — sopan. sejuk — sopan-berita."},
+    {"speaker":"အာနီ:","text":"[ဒီ|di] [စာအုပ်|sa-ouk] [က|ga.] [ဘယ်သူ့|bè-thu.] [ဟာ|ha] [လဲ|lè:]။","id":"Buku ini punya siapa?","literal":"ini — buku — yang, siapa-punya — benda — kah?"},
+    {"speaker":"မြမြ:","text":"[ကျွန်မ|ca.ma.] [ဟာ|ha] [ပါ|ba]။ [မြန်မာ|myaⁿ-ma] [စာအုပ်|sa-ouk] [ပါ|ba]။ [ဖတ်|hpak] [ချင်|hciⁿ] [လား|la:]။","id":"Punya saya. Buku Myanmar. Mau baca?","literal":"saya(pr) — benda — sopan. myanmar — buku — sopan. baca — ingin — kah?"},
+    {"speaker":"အာနီ:","text":"[ဖတ်|hpak] [ချင်|hciⁿ] [ပါတယ်|ba-dè]၊ [ဒါပေမဲ့|da-be-mè.] [မဖတ်တတ်သေးဘူး|ma.hpak-tak-the:-bu:]။","id":"Mau, tapi saya belum bisa membaca.","literal":"baca — ingin — sopan-berita, tetapi — tidak-baca-terlatih-belum-tidak."},
+    {"speaker":"မြမြ:","text":"[ရပါတယ်|ya.-ba-dè]။ [မနက်ဖြန်|ma.nèk-hpyaⁿ] [စ|sa.] [သင်|thiⁿ] [ရအောင်|ya.-auⁿ]။","id":"Tidak apa-apa. Besok kita mulai belajar.","literal":"boleh-sopan-berita. besok — mulai — belajar — mari."}
+   ],
+   "grammars": [
+    {
+     "title": "⚠️ လား atau လဲ — dua ekor pertanyaan yang tidak boleh tertukar",
+     "body": ["Bahasa Indonesia memakai nada suara yang sama untuk \"Kamu makan?\" dan \"Kamu makan apa?\". Bahasa Myanmar memakai **dua ekor yang berbeda**, dan aturannya cuma satu kalimat: kalau di dalam kalimat ada kata tanya, pakai လဲ; kalau tidak ada, pakai လား."],
+     "tables": [
+      {"head":["Kalimat","Cara baca","Arti","Ekornya"],"rows":[
+       ["ဒါ ဘာလဲ","*da ba-lè:*","ini apa?","ada ဘာ → **လဲ**"],
+       ["ဒါ လက်ဖက်ရည်လား","*da la.hpèk-ye-la:*","ini teh?","tidak ada kata tanya → **လား**"],
+       ["ဘယ်သူလဲ","*bè-thu-lè:*","siapa?","ada ဘယ်သူ → **လဲ**"],
+       ["ဖတ်ချင်လား","*hpak-hciⁿ-la:*","mau baca?","→ **လား**"],
+       ["ဘယ်မှာလဲ","*bè-hma-lè:*","di mana?","ada ဘယ်မှာ → **လဲ**"]
+      ]}
+     ],
+     "after": ["Cara mengingatnya: **လဲ menagih keterangan, လား menagih persetujuan.** Kalau lawan bicaramu harus menjawab dengan kalimat, pakai လဲ. Kalau ia cukup mengangguk, pakai လား. Salah memilih tidak membuat kalimatmu tak dimengerti, tapi langsung terdengar seperti orang asing."]
+    },
+    {
+     "title": "ဒါ, ဒီ, ဟို — menunjuk benda",
+     "body": ["Bahasa Myanmar membedakan kata tunjuk yang **berdiri sendiri** dari kata tunjuk yang **menempel pada benda**. Bahasa Indonesia memakai \"ini\" untuk dua-duanya, jadi bagian ini perlu diperhatikan."],
+     "tables": [
+      {"head":["Myanmar","Cara baca","Dipakai bagaimana","Contoh"],"rows":[
+       ["ဒါ","*da*","berdiri sendiri sebagai pokok kalimat","ဒါ ဘာလဲ — ini apa?"],
+       ["ဒီ","*di*","menempel di **depan** benda","ဒီစာအုပ် — buku ini"],
+       ["ဟို","*ho*","yang jauh, di sana","ဟိုကား — mobil itu"],
+       ["ဟာ","*ha*","kata pengganti \"barang, yang\"","ဟိုဟာ — yang itu"],
+       ["ဒီမှာ · ဟိုမှာ","*di-hma* · *ho-hma*","di sini · di sana",""]
+      ]}
+     ],
+     "after": ["⚠️ ဒါ tidak pernah menempel pada benda. \"Buku ini\" adalah ဒီစာအုပ်, bukan ဒါစာအုပ်. Kesalahan ini terdengar seperti mengatakan \"ini buku ini\" dalam bahasa Indonesia."]
+    },
+    {
+     "title": "Kalimat \"A adalah B\" tidak memakai kata kerja",
+     "body": ["Untuk mengatakan \"ini teh\", bahasa Myanmar cukup meletakkan dua bendanya berurutan lalu menutup dengan ပါ. Tidak ada kata yang setara dengan \"adalah\"."],
+     "tables": [
+      {"head":["Myanmar","Cara baca","Arti"],"rows":[
+       ["ဒါ လက်ဖက်ရည်ပါ","*da la.hpèk-ye-ba*","ini teh"],
+       ["ဒါ ကျွန်မဟာပါ","*da ca.ma.-ha-ba*","ini punya saya"],
+       ["ဒါ ဆေး မဟုတ်ဘူး","*da hse: ma.houk-bu:*","ini bukan obat"],
+       ["ဒါ ဘာလဲ","*da ba-lè:*","ini apa?"]
+      ]}
+     ],
+     "after": ["Untuk **menyangkal**, barulah muncul kata kerja ဟုတ် (\"benar\") yang disangkal: မဟုတ်ဘူး. Jadi pola kalimatnya tidak setangkup — kalimat positifnya tanpa kata kerja, kalimat sangkalannya memakai kata kerja. Hafalkan keduanya sebagai dua pola terpisah dan kamu tidak akan bingung."]
+    },
+    {
+     "title": "Kepunyaan: ဟာ dan nada yang ditekan",
+     "body": ["Ada dua cara menyatakan milik. Yang pertama memakai kata ဟာ (\"barang\"); yang kedua cukup **menekan nada** suku kata terakhir kata gantinya — ditandai dengan တိတ်ဆံ ့ di bawah huruf."],
+     "tables": [
+      {"head":["Bentuk biasa","Bentuk milik","Cara baca","Arti"],"rows":[
+       ["ကျွန်တော်","ကျွန်တော့်","*ca.nò.*","milik saya (lk)"],
+       ["သူ","သူ့","*thu.*","miliknya"],
+       ["ဘယ်သူ","ဘယ်သူ့","*bè-thu.*","milik siapa"],
+       ["မြမြ","မြမြရဲ့","*mya.mya.-yè.*","milik Mya Mya"],
+       ["—","ကျွန်မဟာ","*ca.ma.-ha*","punya saya (pr)"]
+      ]}
+     ],
+     "after": ["Untuk nama orang dan benda, dipakai ရဲ့ (*yè.*): မြမြရဲ့ စာအုပ် = buku Mya Mya. ⚠️ ကျွန်မ tidak berubah karena nadanya memang sudah ditekan sejak awal — inilah satu-satunya keuntungan kecil yang dimiliki penutur perempuan di bab ini."]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Lima belas benda yang ada di setiap rumah",
+   "blocks": [
+    {"type":"p","text":"Tunjuk benda-benda ini di rumahmu sendiri sambil mengucapkan namanya keras-keras. Sepuluh menit melakukan itu jauh lebih berguna daripada satu jam membaca daftarnya."},
+    {"type":"tabel","head":["Myanmar","Cara baca","Bahasa Indonesia"],"rows":[
+     ["အိမ်","*eiⁿ*","rumah"],
+     ["အခန်း","*a.hkaⁿ:*","kamar"],
+     ["တံခါး","*ta.hka:*","pintu"],
+     ["ပြတင်းပေါက်","*pa.diⁿ:-bauk*","jendela"],
+     ["စားပွဲ","*za.bwè:*","meja"],
+     ["ကုလားထိုင်","*ka.la:-htaiⁿ*","kursi"],
+     ["ကုတင်","*ku.diⁿ*","tempat tidur"],
+     ["စာအုပ်","*sa-ouk*","buku"],
+     ["ဘောပင်","*bò-piⁿ*","pena"],
+     ["ဖုန်း","*hpouⁿ:*","telepon"],
+     ["ရေ","*ye*","air"],
+     ["ခွက်","*hkwèk*","gelas, cangkir"],
+     ["ပန်းကန်","*pa.gaⁿ*","piring"],
+     ["အိတ်","*eik*","tas"],
+     ["ပိုက်ဆံ","*paik-hsaⁿ*","uang"]
+    ]},
+    {"type":"kotak","title":"သနပ်ခါး — tanda pengenal wajah Myanmar","items":[
+     "Bubuk kuning yang dioleskan di pipi orang Myanmar itu bernama **သနပ်ခါး** (*tha.nak-hka:*), dibuat dari kulit pohon yang digosok pada batu bersama sedikit air. Ia sekaligus tabir surya, bedak dingin, dan hiasan.",
+     "Menanyakannya adalah salah satu cara tercepat membuka percakapan dengan orang Myanmar, karena hampir tidak ada orang asing yang tahu namanya. Coba: ဒါ သနပ်ခါးလား။"
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  {"my":"ဘာ","baca":"ba","id":"apa"},
+  {"my":"လဲ","baca":"lè:","id":"ekor tanya yang memakai kata tanya"},
+  {"my":"လား","baca":"la:","id":"ekor tanya ya-atau-tidak"},
+  {"my":"ဒီ","baca":"di","id":"ini (di depan benda)"},
+  {"my":"ဟို","baca":"ho","id":"itu (jauh)"},
+  {"my":"ဟာ","baca":"ha","id":"barang, yang; milik"},
+  {"my":"ဘယ်သူ","baca":"bè-thu","id":"siapa"},
+  {"my":"ရဲ့","baca":"yè.","id":"punya (untuk nama dan benda)"},
+  {"my":"ချိုတယ်","baca":"hco-dè","id":"manis"},
+  {"my":"အရမ်း","baca":"a.yaⁿ:","id":"sangat, terlalu"},
+  {"my":"နို့","baca":"no.","id":"susu"},
+  {"my":"နဲ့","baca":"nè.","id":"dengan, bersama"},
+  {"my":"သနပ်ခါး","baca":"tha.nak-hka:","id":"thanaka, bedak kulit kayu"},
+  {"my":"မျက်နှာ","baca":"myèk-hna","id":"wajah"},
+  {"my":"လိမ်းတယ်","baca":"leiⁿ:-dè","id":"mengoleskan"},
+  {"my":"ဆေး","baca":"hse:","id":"obat"},
+  {"my":"နေ","baca":"ne","id":"matahari"},
+  {"my":"ကာကွယ်တယ်","baca":"ka-kwè-dè","id":"melindungi"},
+  {"my":"အေးတယ်","baca":"e:-dè","id":"sejuk, dingin"},
+  {"my":"စာအုပ်","baca":"sa-ouk","id":"buku"},
+  {"my":"ဖတ်တယ်","baca":"hpak-tè","id":"membaca"},
+  {"my":"ချင်တယ်","baca":"hciⁿ-dè","id":"ingin"},
+  {"my":"ဒါပေမဲ့","baca":"da-be-mè.","id":"tetapi"},
+  {"my":"မ…သေးဘူး","baca":"ma…the:-bu:","id":"belum"},
+  {"my":"ရပါတယ်","baca":"ya.-ba-dè","id":"tidak apa-apa; boleh"},
+  {"my":"မနက်ဖြန်","baca":"ma.nèk-hpyaⁿ","id":"besok"},
+  {"my":"စတယ်","baca":"sa.-dè","id":"memulai"},
+  {"my":"…ရအောင်","baca":"ya.-auⁿ","id":"mari kita …"}
+ ],
+ "exercises": [
+  {"prompt":"Lengkapi dengan လား atau လဲ.","items":[
+   "ဒါ ဘာ____။",
+   "ဒါ လက်ဖက်ရည်____။",
+   "ဘယ်သူ့ဟာ____။",
+   "ဖတ်ချင်____။",
+   "ဒါ ဆေး____။",
+   "ဘယ်မှာ____။"
+  ]},
+  {"prompt":"Pilih ဒါ atau ဒီ.","items":[
+   "____ ဘာလဲ။",
+   "____ စာအုပ် ကောင်းတယ်။",
+   "____ ကျွန်မဟာပါ။",
+   "____ အိမ် ကြီးတယ်။"
+  ]},
+  {"prompt":"Susun jadi kalimat yang benar.","items":[
+   "လဲ / ဘာ / ဒါ",
+   "ပါ / လက်ဖက်ရည် / ဒါ / မြန်မာ",
+   "မဟုတ်ဘူး / ဆေး / ဒါ",
+   "လား / ဟာ / ကျွန်တော့် / ဒီစာအုပ်"
+  ]},
+  {"prompt":"Terjemahkan ke bahasa Myanmar.","items":[
+   "Ini apa?",
+   "Ini buku.",
+   "Ini bukan teh.",
+   "Buku ini punya siapa?",
+   "Mau baca?",
+   "Saya belum bisa membaca."
+  ]}
+ ],
+ "answers": [
+  "လဲ — လား — လဲ — လား — လား — လဲ",
+  "ဒါ — ဒီ — ဒါ — ဒီ",
+  "ဒါ ဘာလဲ။ — ဒါ မြန်မာလက်ဖက်ရည်ပါ။ — ဒါ ဆေး မဟုတ်ဘူး။ — ဒီစာအုပ် ကျွန်တော့်ဟာလား။",
+  "ဒါ ဘာလဲ။ — ဒါ စာအုပ်ပါ။ — ဒါ လက်ဖက်ရည် မဟုတ်ဘူး။ — ဒီစာအုပ် ဘယ်သူ့ဟာလဲ။ — ဖတ်ချင်လား။ — မဖတ်တတ်သေးဘူး။"
+ ]
+}

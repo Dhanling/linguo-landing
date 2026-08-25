@@ -372,11 +372,18 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
      digambar di luar kotak em fonnya, jadi Chromium tidak menyediakan tempat
      untuknya dan cara baca menimpanya. Nilai top -3pt menggeser cara bacanya naik
      TANPA menambah tinggi baris — melonggarkan line-height sama sekali tidak
-     menolong, sudah dicoba sampai 2.15 dan tumpang tindihnya tetap. */
+     menolong, sudah dicoba sampai 2.15 dan tumpang tindihnya tetap.
+
+     [ebook-ruby-tinggi-v1] Seberapa jauh naiknya BERBEDA per aksara, jadi
+     angkanya bisa ditimpa lewat meta.ruby_top. Aksara Myanmar menggantung
+     tanda-tandanya jauh lebih tinggi daripada Devanagari — ဂ်, ြ, dan tumpukan
+     ကျွန်တော့် menembus jauh ke atas kotak em — sehingga -3pt masih tertimpa dan
+     modul my-a1 memakai -7.5pt. Bawaannya tetap -3pt supaya modul beruby yang
+     sudah terbit tak bergeser satu halaman pun. */
   ruby { ruby-position: over; ruby-align: ${meta.ruby_align === "start" ? "start" : "center"}; }
   rt { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 6.4pt; font-weight: 500;
        font-style: normal; color: #12776F; letter-spacing: .01em; line-height: ${meta.ruby_align === "start" ? "1.35" : "1"};
-       ${meta.ruby_align === "start" ? "position: relative; top: -3pt;" : ""} }
+       ${meta.ruby_align === "start" ? `position: relative; top: ${esc(meta.ruby_top ?? "-3pt")};` : ""} }
   /* Cuma baris yang BENAR-BENAR beruby yang dilonggarkan. Melonggarkan seluruh
      badan teks bikin paragraf Indonesia ikut melar dan modulnya membengkak
      puluhan halaman tanpa satu pun aksara asing di dalamnya. */

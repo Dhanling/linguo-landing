@@ -1,0 +1,187 @@
+{
+ "title": "Jam berapa sekarang?",
+ "title_target": "အခု ဘယ်နှစ်နာရီလဲ — a.hku. bè-hna.na-yi-lè:",
+ "goal": "Menyebut jam, hari, dan tanggal — dan menghindari jebakan setengah jam, yang dalam bahasa Myanmar menunjuk jam yang sudah lewat, bukan jam yang akan datang.",
+ "bekal": [
+  "menanyakan dan menyebut jam",
+  "memakai ခွဲ untuk setengah jam tanpa salah hitung",
+  "menyebut pagi, siang, sore, dan malam di tempat yang benar",
+  "menyebut tujuh nama hari",
+  "membuat janji dengan …မှာ တွေ့မယ်"
+ ],
+ "dialogs": [
+  {
+   "title": "စကားပြော — Membuat janji makan siang",
+   "intro": "Ko Zaw mengajak Ani makan siang. Perhatikan satu baris di tengah dialog: Ani salah menghitung သုံးနာရီခွဲ, dan kesalahan itu justru kesalahan yang paling sering dilakukan penutur Indonesia.",
+   "lines": [
+    {"speaker":"ကိုဇော်:","text":"[အာနီ|a-ni]၊ [အခု|a.hku.] [ဘယ်နှစ်နာရီ|bè-hna.na-yi] [လဲ|lè:]။","id":"Ani, sekarang jam berapa?","literal":"ani, sekarang — berapa-jam — kah?"},
+    {"speaker":"အာနီ:","text":"[ဆယ့်တစ်နာရီ|hse.tik-na-yi] [နှစ်ဆယ်|hna.hse] [မိနစ်|mi.nik] [ပါ|ba]။","id":"Jam sebelas lewat dua puluh menit.","literal":"sebelas-jam — dua-puluh — menit — sopan."},
+    {"speaker":"ကိုဇော်:","text":"[ဒါဆို|da-hso] [နေ့လယ်စာ|ne.-lè-za] [အတူတူ|a.tu-du] [စား|sa:] [ရအောင်|ya.-auⁿ]။ [တစ်နာရီ|ta.na-yi] [ဘယ်လို|bè-lo] [လဲ|lè:]။","id":"Kalau begitu mari makan siang bersama. Jam satu bagaimana?","literal":"kalau-begitu — siang-makanan — bersama — makan — mari. satu-jam — bagaimana — kah?"},
+    {"speaker":"အာနီ:","text":"[တစ်နာရီ|ta.na-yi] [မ|ma.] [အား|a:] [ဘူး|bu:]။ [အစည်းအဝေး|a.si:-a.we:] [ရှိ|syi.] [တယ်|dè]။","id":"Jam satu saya tidak sempat. Ada rapat.","literal":"satu-jam — tidak — luang — tidak. rapat — ada — berita."},
+    {"speaker":"ကိုဇော်:","text":"[ဘယ်နှစ်နာရီ|bè-hna.na-yi] [ပြီး|pyi:] [လဲ|lè:]။","id":"Selesai jam berapa?","literal":"berapa-jam — selesai — kah?"},
+    {"speaker":"အာနီ:","text":"[နှစ်နာရီခွဲ|hna.na-yi-hkwè:] [လောက်|lauk] [ပြီး|pyi:] [မယ်|mè]။","id":"Sekitar setengah tiga selesai.","literal":"dua-jam-setengah — kira-kira — selesai — akan."},
+    {"speaker":"ကိုဇော်:","text":"[ဟုတ်ကဲ့|houk-kè.]၊ [ဒါဆို|da-hso] [သုံးနာရီ|thouⁿ:-na-yi] [တွေ့|twe.] [ရအောင်|ya.-auⁿ]။","id":"Baik, kalau begitu ketemu jam tiga.","literal":"benar-iya, kalau-begitu — tiga-jam — bertemu — mari."},
+    {"speaker":"အာနီ:","text":"[ဟင်|hiⁿ]၊ [သုံးနာရီခွဲ|thouⁿ:-na-yi-hkwè:] [လား|la:]။ [နှစ်နာရီခွဲ|hna.na-yi-hkwè:] [လား|la:]။ [ခွဲ|hkwè:] [က|ga.] [ရှုပ်|syouk] [တယ်|dè]။","id":"Eh, setengah tiga atau setengah dua? ခွဲ ini membingungkan.","literal":"eh, tiga-jam-setengah — kah? dua-jam-setengah — kah? setengah — yang — kusut — berita."},
+    {"speaker":"ကိုဇော်:","text":"[လွယ်|lwè] [ပါတယ်|ba-dè]။ [နှစ်နာရီခွဲ|hna.na-yi-hkwè:] [က|ga.] [နှစ်နာရီ|hna.na-yi] [ပြီးမှ|pyi:-hma.] [မိနစ်|mi.nik] [သုံးဆယ်|thouⁿ:-hse] [ပါ|ba]။","id":"Gampang. နှစ်နာရီခွဲ itu jam dua lewat tiga puluh menit.","literal":"mudah — sopan-berita. dua-jam-setengah — yang — dua-jam — sesudah — menit — tiga-puluh — sopan."},
+    {"speaker":"အာနီ:","text":"[အင်း|iⁿ:]၊ [အင်ဒိုနီးရှားလို|iⁿ-do-ni:-sya:-lo] [ဆို|hso] [ပြောင်းပြန်|pyauⁿ:-byaⁿ] [ပါ|ba]။ [ကျွန်မ|ca.ma.] [တို့|do.] [နောက်|nauk] [နာရီ|na-yi] [ကို|ko] [ပြော|pyò:] [တယ်|dè]။","id":"Hmm, dalam bahasa Indonesia terbalik. Kami menyebut jam berikutnya.","literal":"hmm, indonesia-cara — kalau — terbalik — sopan. saya(pr) — jamak — belakang — jam — objek — bicara — berita."},
+    {"speaker":"ကိုဇော်:","text":"[ဟုတ်လား|houk-la:]! [ဒါဆို|da-hso] [သတိထား|tha.di.-hta:] [ပါ|ba] [နော်|nò]။","id":"Oh ya? Kalau begitu hati-hati ya.","literal":"benar-kah! kalau-begitu — ingatan-taruh — sopan — ya."},
+    {"speaker":"အာနီ:","text":"[ဟုတ်ကဲ့|houk-kè.]၊ [သုံးနာရီ|thouⁿ:-na-yi] [ဘူတာ|bu-ta] [ရှေ့မှာ|sye.-hma] [တွေ့|twe.] [မယ်|mè] [နော်|nò]။","id":"Ya. Jam tiga ketemu di depan stasiun ya.","literal":"benar-iya, tiga-jam — stasiun — depan-di — bertemu — akan — ya."}
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut jam",
+     "body": ["Jam disusun dengan **angka + နာရီ**, lalu menit ditambahkan di belakangnya. နာရီ (*na-yi*) berarti \"jam\" sekaligus \"arloji\", dan datang dari bahasa Sanskerta."],
+     "tables": [
+      {"head":["Bahasa Indonesia","Myanmar","Cara baca"],"rows":[
+       ["jam berapa?","ဘယ်နှစ်နာရီလဲ","*bè-hna.na-yi-lè:*"],
+       ["jam tiga","သုံးနာရီ","*thouⁿ:-na-yi*"],
+       ["jam tiga lewat sepuluh","သုံးနာရီ ဆယ်မိနစ်","*thouⁿ:-na-yi hse-mi.nik*"],
+       ["jam tiga lewat lima belas","သုံးနာရီ ဆယ့်ငါးမိနစ်","*… hse.nga:-mi.nik*"],
+       ["jam tiga kurang sepuluh","သုံးနာရီ ထိုးဖို့ ဆယ်မိနစ်","*… hto:-hpo. hse-mi.nik*"],
+       ["tepat jam tiga","သုံးနာရီတိတိ","*thouⁿ:-na-yi-ti.di.*"]
+      ]}
+     ],
+     "after": ["⚠️ Untuk **kurang berapa menit**, bahasa Myanmar memakai ထိုးဖို့ (*hto:-hpo.*, \"untuk berdentang\") — harfiahnya \"sepuluh menit lagi jam tiga berdentang\". Ungkapan ini sering dipendekkan dalam percakapan cepat, dan pemula boleh menghindarinya dengan menyebut menit lewat saja."]
+    },
+    {
+     "title": "⚠️ ခွဲ — setengah jam yang menunjuk ke BELAKANG",
+     "body": ["Ini jebakan waktu yang paling sering menjegal penutur Indonesia, dan sayangnya jebakan yang mahal — salah satu jam bisa berarti ketinggalan janji."],
+     "tables": [
+      {"head":["Myanmar","Cara baca","Artinya","Bahasa Indonesia sehari-hari"],"rows":[
+       ["နှစ်နာရီခွဲ","*hna.na-yi-hkwè:*","**02.30**","\"setengah tiga\""],
+       ["သုံးနာရီခွဲ","*thouⁿ:-na-yi-hkwè:*","**03.30**","\"setengah empat\""],
+       ["ဆယ့်တစ်နာရီခွဲ","*hse.tik-na-yi-hkwè:*","**11.30**","\"setengah dua belas\""]
+      ]}
+     ],
+     "after": [
+      "Bahasa Myanmar menyebut jam yang **sudah lewat** lalu menambahkan \"setengah\": နှစ်နာရီခွဲ harfiahnya \"jam dua, setengah\". Bahasa Indonesia sehari-hari menyebut jam yang **akan datang**: \"setengah tiga\" berarti setengah jalan menuju jam tiga.",
+      "Cara mengingatnya dengan aman: **angka yang kamu dengar adalah jam yang sudah lewat.** Kalau kamu mendengar သုံး, tambahkan tiga puluh menit pada jam tiga. Ini sama dengan cara bahasa Inggris (*half past three*) dan cara kita menyebut \"jam tiga lewat setengah\"."
+     ]
+    },
+    {
+     "title": "Pagi, siang, sore, malam — dan tempatnya di kalimat",
+     "body": ["Bahasa Myanmar membagi hari menjadi empat bagian, dan keterangan itu selalu berdiri **di depan** angka jamnya — kebalikan dari kebiasaan bahasa Indonesia yang menaruhnya di belakang."],
+     "tables": [
+      {"head":["Myanmar","Cara baca","Bagian hari","Contoh"],"rows":[
+       ["မနက်","*ma.nèk*","pagi sampai tengah hari","မနက် ခုနစ်နာရီ — jam 7 pagi"],
+       ["နေ့လယ်","*ne.-lè*","tengah hari","နေ့လယ် တစ်နာရီ — jam 1 siang"],
+       ["ညနေ","*nya.-ne*","sore","ညနေ ငါးနာရီ — jam 5 sore"],
+       ["ည","*nya.*","malam","ည ရှစ်နာရီ — jam 8 malam"],
+       ["သန်းခေါင်","*thaⁿ:-gauⁿ*","tengah malam",""]
+      ]}
+     ],
+     "after": ["⚠️ Kita mengatakan \"jam tujuh pagi\"; bahasa Myanmar mengatakan မနက် ခုနစ်နာရီ — \"pagi jam tujuh\". Sekali lagi polanya: **yang besar lebih dulu, yang kecil menyusul**, sama seperti pada keterangan tempat di unit 7."]
+    },
+    {
+     "title": "Hari dan membuat janji",
+     "body": ["Nama hari dalam bahasa Myanmar berasal dari nama benda langit dalam bahasa Sanskerta, sumber yang sama dengan nama hari kalender Jawa dan Bali. နေ့ (*ne.*) di ujung berarti \"hari\"."],
+     "tables": [
+      {"head":["Hari","Myanmar","Cara baca"],"rows":[
+       ["Senin","တနင်္လာနေ့","*ta.niⁿ-la-ne.*"],
+       ["Selasa","အင်္ဂါနေ့","*iⁿ-ga-ne.*"],
+       ["Rabu","ဗုဒ္ဓဟူးနေ့","*bouk-da.hu:-ne.*"],
+       ["Kamis","ကြာသပတေးနေ့","*ca-tha.pa.de:-ne.*"],
+       ["Jumat","သောကြာနေ့","*thau-ca-ne.*"],
+       ["Sabtu","စနေနေ့","*sa.ne-ne.*"],
+       ["Minggu","တနင်္ဂနွေနေ့","*ta.niⁿ-ga.nwe-ne.*"]
+      ]}
+     ],
+     "after": ["Untuk membuat janji, pola yang paling sering dipakai adalah **waktu — tempat — တွေ့မယ်**: သုံးနာရီ ဘူတာရှေ့မှာ တွေ့မယ် (jam tiga ketemu di depan stasiun). Perhatikan bahwa waktu mendahului tempat, dan kata kerjanya tetap di ujung."]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Waktu, hari, dan cara menyebut kapan",
+   "blocks": [
+    {"type":"p","text":"Keterangan waktu berikut melengkapi apa yang sudah kamu kenal dari unit 8. Semuanya berdiri di depan kalimat, dan tidak satu pun mengubah bentuk kata kerjanya."},
+    {"type":"tabel","head":["Myanmar","Cara baca","Bahasa Indonesia"],"rows":[
+     ["အခု","*a.hku.*","sekarang"],
+     ["ခဏနေ","*hka.na.-ne*","sebentar lagi"],
+     ["မကြာခင်","*ma.ca-hkiⁿ*","tidak lama lagi"],
+     ["ဒီအပတ်","*di-a.pak*","minggu ini"],
+     ["နောက်အပတ်","*nauk-a.pak*","minggu depan"],
+     ["ပြီးခဲ့တဲ့အပတ်","*pyi:-hkè.-dè.-a.pak*","minggu lalu"],
+     ["ဒီလ","*di-la.*","bulan ini"],
+     ["နောက်နှစ်","*nauk-hnik*","tahun depan"],
+     ["အားတယ်","*a:-dè*","sempat, luang"],
+     ["မအားဘူး","*ma.a:-bu:*","tidak sempat"],
+     ["အစည်းအဝေး","*a.si:-a.we:*","rapat"],
+     ["ချိန်းတယ်","*hceiⁿ:-dè*","membuat janji"]
+    ]},
+    {"type":"kotak","title":"⚠️ Waktu di Myanmar berbeda tiga puluh menit dari tetangganya","items":[
+     "Zona waktu Myanmar adalah **UTC+6.30** — setengah jam di belakang Thailand dan Jakarta, dan satu setengah jam di belakang Indonesia bagian tengah. Perbedaan setengah jam ini jarang diingat orang asing dan sering merusak janji lewat telepon.",
+     "Jadi kalau kamu berjanji dengan orang di Jakarta, sebutkan zona waktunya dengan jelas. Jam sepuluh pagi di Yangon adalah setengah dua belas siang di Jakarta.",
+     "Untuk urusan resmi dan keagamaan, orang Myanmar masih memakai **kalender bulan** tersendiri; tahun Myanmar berselisih sekitar 638 tahun dari tahun Masehi. Tanggal purnama tiap bulan, လပြည့်နေ့ (*la.-pyè.-ne.*), adalah hari besar keagamaan dan banyak kantor tutup."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  {"my":"နာရီ","baca":"na-yi","id":"jam; arloji"},
+  {"my":"မိနစ်","baca":"mi.nik","id":"menit"},
+  {"my":"ခွဲ","baca":"hkwè:","id":"lewat setengah"},
+  {"my":"တိတိ","baca":"ti.di.","id":"tepat, pas"},
+  {"my":"မနက်","baca":"ma.nèk","id":"pagi"},
+  {"my":"နေ့လယ်","baca":"ne.-lè","id":"tengah hari, siang"},
+  {"my":"ည","baca":"nya.","id":"malam"},
+  {"my":"နေ့","baca":"ne.","id":"hari"},
+  {"my":"အပတ်","baca":"a.pak","id":"minggu"},
+  {"my":"လ","baca":"la.","id":"bulan"},
+  {"my":"အားတယ်","baca":"a:-dè","id":"sempat, luang"},
+  {"my":"အစည်းအဝေး","baca":"a.si:-a.we:","id":"rapat"},
+  {"my":"ပြီးတယ်","baca":"pyi:-dè","id":"selesai"},
+  {"my":"အတူတူ","baca":"a.tu-du","id":"bersama-sama"},
+  {"my":"တွေ့တယ်","baca":"twe.-dè","id":"bertemu"},
+  {"my":"ချိန်းတယ်","baca":"hceiⁿ:-dè","id":"membuat janji"},
+  {"my":"ဘယ်လိုလဲ","baca":"bè-lo-lè:","id":"bagaimana?"},
+  {"my":"ရှုပ်တယ်","baca":"syouk-tè","id":"rumit, membingungkan"},
+  {"my":"လွယ်တယ်","baca":"lwè-dè","id":"mudah"},
+  {"my":"ခက်တယ်","baca":"hkèk-tè","id":"sulit"},
+  {"my":"ပြောင်းပြန်","baca":"pyauⁿ:-byaⁿ","id":"terbalik"},
+  {"my":"သတိထားတယ်","baca":"tha.di.-hta:-dè","id":"berhati-hati, memperhatikan"},
+  {"my":"ပြီးမှ","baca":"pyi:-hma.","id":"sesudah"},
+  {"my":"နောက်အပတ်","baca":"nauk-a.pak","id":"minggu depan"},
+  {"my":"ခဏနေ","baca":"hka.na.-ne","id":"sebentar lagi"},
+  {"my":"တနင်္လာနေ့","baca":"ta.niⁿ-la-ne.","id":"Senin"},
+  {"my":"သောကြာနေ့","baca":"thau-ca-ne.","id":"Jumat"},
+  {"my":"စနေနေ့","baca":"sa.ne-ne.","id":"Sabtu"}
+ ],
+ "exercises": [
+  {"prompt":"Tulis pukul berapa dalam angka.","items":[
+   "သုံးနာရီခွဲ",
+   "ဆယ့်တစ်နာရီခွဲ",
+   "မနက် ခုနစ်နာရီ",
+   "ည ရှစ်နာရီခွဲ",
+   "ငါးနာရီ ဆယ်မိနစ်",
+   "နှစ်နာရီတိတိ"
+  ]},
+  {"prompt":"Lengkapi dengan မနက်, နေ့လယ်, ညနေ, atau ည.","items":[
+   "Jam 7 pagi: ____ ခုနစ်နာရီ",
+   "Jam 1 siang: ____ တစ်နာရီ",
+   "Jam 5 sore: ____ ငါးနာရီ",
+   "Jam 9 malam: ____ ကိုးနာရီ"
+  ]},
+  {"prompt":"Susun jadi kalimat yang benar.","items":[
+   "လဲ / ဘယ်နှစ်နာရီ / အခု",
+   "မယ် / တွေ့ / ဘူတာရှေ့မှာ / သုံးနာရီ",
+   "ဘူး / မ / အား / တစ်နာရီ",
+   "ရအောင် / စား / အတူတူ / နေ့လယ်စာ"
+  ]},
+  {"prompt":"Terjemahkan ke bahasa Myanmar.","items":[
+   "Sekarang jam berapa?",
+   "Jam sebelas lewat dua puluh menit.",
+   "Jam satu saya tidak sempat.",
+   "Ada rapat.",
+   "Jam tiga ketemu di depan stasiun ya.",
+   "Setengah tiga sekitar selesai."
+  ]}
+ ],
+ "answers": [
+  "03.30 — 11.30 — 07.00 — 20.30 — 05.10 — 02.00",
+  "မနက် — နေ့လယ် — ညနေ — ည",
+  "အခု ဘယ်နှစ်နာရီလဲ။ — သုံးနာရီ ဘူတာရှေ့မှာ တွေ့မယ်။ — တစ်နာရီ မအားဘူး။ — နေ့လယ်စာ အတူတူ စားရအောင်။",
+  "အခု ဘယ်နှစ်နာရီလဲ။ — ဆယ့်တစ်နာရီ နှစ်ဆယ်မိနစ်ပါ။ — တစ်နာရီ မအားဘူး။ — အစည်းအဝေး ရှိတယ်။ — သုံးနာရီ ဘူတာရှေ့မှာ တွေ့မယ်နော်။ — နှစ်နာရီခွဲလောက် ပြီးမယ်။"
+ ]
+}

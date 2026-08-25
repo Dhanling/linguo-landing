@@ -1,0 +1,180 @@
+{
+ "title": "Di pasar Bogyoke",
+ "title_target": "ဗိုလ်ချုပ်ဈေး မှာ — bo-couk-ze: hma",
+ "goal": "Membeli barang dengan menyebut jumlahnya — dan menemukan bahwa cara menghitung benda dalam bahasa Myanmar disusun persis sama dengan bahasa Indonesia, satu hadiah yang tidak dimiliki penutur bahasa Inggris.",
+ "bekal": [
+  "menyebut jumlah barang dengan benda — angka — penggolong",
+  "memilih penggolong ခု, လုံး, ယောက်, ခွက်, dan စီး",
+  "menanyakan jumlah dengan ဘယ်နှစ်…လဲ",
+  "meminta sesuatu dengan …ပေးပါ",
+  "menawar tanpa terdengar kasar"
+ ],
+ "dialogs": [
+  {
+   "title": "စကားပြော — Membeli buah dan longyi",
+   "intro": "Ani ke pasar Bogyoke bersama Mya Mya. Perhatikan susunan tiap permintaan: nama benda dulu, lalu angkanya, lalu penggolongnya. Bacalah baris harfiahnya dan bandingkan dengan cara kita mengatakan \"jeruk lima buah\" — susunannya sama persis.",
+   "lines": [
+    {"speaker":"မြမြ:","text":"[ဒီမှာ|di-hma] [သစ်သီး|thik-thi:] [တွေ|dwe] [ကောင်း|kauⁿ:] [ပါတယ်|ba-dè]။ [ဘာ|ba] [ဝယ်|wè] [ချင်|hciⁿ] [လဲ|lè:]။","id":"Buah di sini bagus. Mau beli apa?","literal":"sini-di — buah — jamak — baik — sopan-berita. apa — beli — ingin — kah?"},
+    {"speaker":"အာနီ:","text":"[သံပုရာသီး|thaⁿ-ba.ya-dhi:] [ငါး|nga:] [လုံး|louⁿ:] [နဲ့|nè.] [ငှက်ပျောသီး|hngèk-pyò:-dhi:] [တစ်|ta.] [ဖီး|hpi:] [ပေး|pe:] [ပါ|ba]။","id":"Tolong lima buah jeruk nipis dan satu sisir pisang.","literal":"jeruk-nipis — lima — butir — dan — pisang — satu — sisir — beri — sopan."},
+    {"speaker":"သည်သည်:","text":"[ရ|ya.] [ပါတယ်|ba-dè]။ [နှစ်ထောင်|hna.htauⁿ] [ပါ|ba] [ဒေါ်ဒေါ်|dò-dò]။","id":"Baik. Dua ribu, Bu.","literal":"boleh — sopan-berita. dua-ribu — sopan — bibi."},
+    {"speaker":"အာနီ:","text":"[ဒီ|di] [မန်ကျည်းသီး|maⁿ-ci:-dhi:] [ရော|yò:]။ [တစ်|ta.] [ပိဿာ|peik-tha] [ဘယ်လောက်|bè-lauk] [လဲ|lè:]။","id":"Kalau asam ini? Sekilo berapa?","literal":"ini — asam — bagaimana? satu — viss — berapa — kah?"},
+    {"speaker":"သည်သည်:","text":"[တစ်ပိဿာ|ta.peik-tha] [သုံးထောင်|thouⁿ:-htauⁿ] [ပါ|ba]။ [ချို|hco] [ပါတယ်|ba-dè]၊ [မြည်း|myi:] [ကြည့်|ci.] [ပါ|ba]။","id":"Satu viss tiga ribu. Manis, coba cicipi.","literal":"satu-viss — tiga-ribu — sopan. manis — sopan-berita, cicip — lihat — sopan."},
+    {"speaker":"အာနီ:","text":"[အင်း|iⁿ:]၊ [ချို|hco] [တယ်|dè]။ [တစ်ပိဿာ|ta.peik-tha] [ယူ|yu] [မယ်|mè]။","id":"Hmm, manis. Saya ambil satu viss.","literal":"hmm, manis — berita. satu-viss — ambil — akan."},
+    {"speaker":"မြမြ:","text":"[အာနီ|a-ni]၊ [ထဘီ|hta.mèiⁿ] [ဝယ်|wè] [ချင်|hciⁿ] [လား|la:]။ [ဟိုမှာ|ho-hma] [ဆိုင်|hsaiⁿ] [ရှိ|syi.] [တယ်|dè]။","id":"Ani, mau beli longyi? Di sana ada tokonya.","literal":"ani, longyi — beli — ingin — kah? sana-di — toko — ada — berita."},
+    {"speaker":"အာနီ:","text":"[ဝယ်|wè] [ချင်|hciⁿ] [ပါတယ်|ba-dè]။ [တစ်ထည်|ta.htè] [ဘယ်လောက်|bè-lauk] [လဲ|lè:]။","id":"Mau. Satu helai berapa?","literal":"beli — ingin — sopan-berita. satu-helai — berapa — kah?"},
+    {"speaker":"ဆိုင်ရှင်:","text":"[တစ်ထည်|ta.htè] [တစ်သောင်း|ta.thauⁿ:] [ပါ|ba]။ [နှစ်ထည်|hna.htè] [ဆို|hso] [တစ်သောင်း|ta.thauⁿ:] [ရှစ်ထောင်|syik-htauⁿ] [ပေး|pe:] [ပါ|ba]။","id":"Satu helai sepuluh ribu. Kalau dua helai, delapan belas ribu saja.","literal":"satu-helai — sepuluh-ribu — sopan. dua-helai — kalau — sepuluh-ribu — delapan-ribu — beri — sopan."},
+    {"speaker":"အာနီ:","text":"[နည်းနည်း|nè:-nè:] [လျှော့|syaw.] [ပါ|ba] [ဦး|ouⁿ:]။ [တစ်သောင်း|ta.thauⁿ:] [ငါးထောင်|nga:-htauⁿ] [ရ|ya.] [မလား|ma.la:]။","id":"Kurangi sedikit dong. Lima belas ribu bisa?","literal":"sedikit — kurangi — sopan — lagi. sepuluh-ribu — lima-ribu — boleh — akan-kah?"},
+    {"speaker":"ဆိုင်ရှင်:","text":"[ဟုတ်ကဲ့|houk-kè.]၊ [ရ|ya.] [ပါတယ်|ba-dè]။ [ဘယ်|bè] [အရောင်|a.yauⁿ] [တွေ|dwe] [ယူ|yu] [မ|ma.] [လဲ|lè:]။","id":"Baik, boleh. Mau warna apa saja?","literal":"benar-iya, boleh — sopan-berita. mana — warna — jamak — ambil — akan — kah?"},
+    {"speaker":"အာနီ:","text":"[အပြာ|a.pya] [တစ်ထည်|ta.htè] [နဲ့|nè.] [အစိမ်း|a.seiⁿ:] [တစ်ထည်|ta.htè] [ပေး|pe:] [ပါ|ba]။","id":"Satu biru dan satu hijau.","literal":"biru — satu-helai — dan — hijau — satu-helai — beri — sopan."}
+   ],
+   "grammars": [
+    {
+     "title": "Benda — angka — penggolong: susunan yang sama dengan bahasa Indonesia",
+     "body": ["Inilah bagian tata bahasa Myanmar yang paling mudah bagi penutur Indonesia, dan sebaiknya kamu menikmatinya. Kita berkata \"jeruk lima buah\"; orang Myanmar berkata သံပုရာသီး ငါး လုံး — **benda, angka, penggolong**, dalam urutan yang sama persis."],
+     "tables": [
+      {"head":["Bahasa Indonesia","Myanmar","Cara baca"],"rows":[
+       ["jeruk lima buah","သံပုရာသီး ငါး လုံး","*thaⁿ-ba.ya-dhi: nga: louⁿ:*"],
+       ["buku tiga buah","စာအုပ် သုံး အုပ်","*sa-ouk thouⁿ: ouk*"],
+       ["orang dua orang","လူ နှစ် ယောက်","*lu hna.yauk*"],
+       ["teh satu gelas","လက်ဖက်ရည် တစ် ခွက်","*la.hpèk-ye ta.hkwèk*"],
+       ["mobil satu buah","ကား တစ် စီး","*ka: ta.si:*"]
+      ]}
+     ],
+     "after": ["Bandingkan dengan bahasa Inggris, yang menaruh angkanya di depan: *five oranges*. Penutur Inggris harus membalik cara berpikirnya untuk belajar bahasa Myanmar; kamu tidak. Manfaatkan itu — susunan ini sudah benar di kepalamu sejak sebelum membuka modul ini."]
+    },
+    {
+     "title": "Penggolong yang benar-benar terpakai",
+     "body": ["Bahasa Myanmar punya puluhan penggolong, tetapi tingkat A1 hanya butuh sekitar sepuluh. Kalau kamu benar-benar lupa, pakailah **ခု** (*hku.*) — ia dipakai untuk benda umum dan hampir tidak pernah terdengar salah."],
+     "tables": [
+      {"head":["Penggolong","Cara baca","Untuk apa","Contoh"],"rows":[
+       ["ယောက်","*yauk*","orang","လူ သုံးယောက်"],
+       ["ခု","*hku.*","benda umum — pilihan aman","အိတ် နှစ်ခု"],
+       ["လုံး","*louⁿ:*","benda bulat, buah, telur","ဥ လေးလုံး"],
+       ["အုပ်","*ouk*","buku","စာအုပ် ငါးအုပ်"],
+       ["ခွက်","*hkwèk*","isi cangkir atau gelas","ကော်ဖီ တစ်ခွက်"],
+       ["စီး","*si:*","kendaraan","ကား နှစ်စီး"],
+       ["ကောင်","*kauⁿ*","binatang","ကြောင် တစ်ကောင်"],
+       ["ထည်","*htè*","helai kain, pakaian","ထဘီ တစ်ထည်"]
+      ]}
+     ],
+     "after": ["⚠️ Ingat perubahan bunyi angka di depan penggolong: တစ် menjadi *ta.* dan နှစ် menjadi *hna.*. Jadi တစ်ခု dibaca *ta.hku.* dan နှစ်ခွက် dibaca *hna.hkwèk*. Bunyi ini sudah kamu temui di unit 4 dan berlaku di semua penggolong tanpa kecuali."]
+    },
+    {
+     "title": "…ပေးပါ — meminta dengan sopan",
+     "body": ["Untuk meminta barang, dipakai kata kerja ပေး (\"beri\") ditambah ပါ. Susunannya: benda, jumlah, lalu ပေးပါ di ujung — kata kerja tetap di tempatnya yang biasa."],
+     "tables": [
+      {"head":["Myanmar","Cara baca","Arti"],"rows":[
+       ["ရေ တစ်ပုလင်း ပေးပါ","*ye ta.pa.liⁿ: pe:-ba*","tolong satu botol air"],
+       ["ကော်ဖီ နှစ်ခွက် ပေးပါ","*kò-hpi hna.hkwèk pe:-ba*","tolong dua gelas kopi"],
+       ["ဒါ ပြပါ","*da pya.-ba*","tolong perlihatkan ini"],
+       ["နည်းနည်း လျှော့ပါဦး","*nè:-nè: syaw.-ba-ouⁿ:*","kurangi sedikit dong"]
+      ]}
+     ],
+     "after": ["ဦး (*ouⁿ:*) di ujung permintaan berarti \"sedikit lagi, sekali ini saja\" dan membuat permintaanmu terdengar merayu, bukan menuntut. Ia hampir wajib dipakai saat menawar — tanpa ဦး, ကျေးဇူးပြု၍ လျှော့ပါ terdengar seperti perintah."]
+    },
+    {
+     "title": "Warna",
+     "body": ["Nama warna dibentuk dengan awalan အ (*a.*) di depan kata dasarnya. Sebagai kata sifat, warna diletakkan **di depan** bendanya, berbeda dengan bahasa Indonesia."],
+     "tables": [
+      {"head":["Myanmar","Cara baca","Warna","Contoh"],"rows":[
+       ["အနီ","*a.ni*","merah","အနီ တစ်ထည်"],
+       ["အပြာ","*a.pya*","biru",""],
+       ["အစိမ်း","*a.seiⁿ:*","hijau",""],
+       ["အဝါ","*a.wa*","kuning",""],
+       ["အမည်း","*a.mè:*","hitam",""],
+       ["အဖြူ","*a.hpyu*","putih",""]
+      ]}
+     ],
+     "after": ["⚠️ Perhatikan bahwa **အနီ** (merah) terdengar hampir sama dengan nama tokoh kita, အာနီ (Ani) — bedanya cuma pada panjang vokal pertamanya. Ini contoh bagus mengapa panjang bunyi dalam bahasa Myanmar perlu diperhatikan."]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Belanja di pasar Myanmar",
+   "blocks": [
+    {"type":"p","text":"Pasar Bogyoke Aung San di Yangon adalah pasar tertutup peninggalan zaman kolonial, dan bersama pasar-pasar kecil di setiap kampung ia masih menjadi tempat sebagian besar orang berbelanja. Beberapa hal berbeda dari kebiasaan kita."},
+    {"type":"tabel","head":["Myanmar","Cara baca","Bahasa Indonesia"],"rows":[
+     ["ပိဿာ","*peik-tha*","viss, satuan berat setara 1,63 kg"],
+     ["ကျပ်သား","*cak-tha:*","satuan berat kecil, untuk emas dan rempah"],
+     ["တစ်ဖီး","*ta.hpi:*","satu sisir (pisang)"],
+     ["တစ်ထုပ်","*ta.htouk*","satu bungkus"],
+     ["တစ်ပုလင်း","*ta.pa.liⁿ:*","satu botol"],
+     ["အလကား","*a.la.ga:*","gratis"]
+    ]},
+    {"type":"kotak","title":"⚠️ Tiga hal yang perlu diketahui sebelum menawar","items":[
+     "**Berat diukur dengan ပိဿာ (viss), bukan kilogram.** Satu viss kira-kira 1,6 kg. Kalau kamu meminta \"satu kilo\", banyak pedagang akan mengerti, tetapi harga yang disebut tetap mengacu pada viss — tanyakan dengan jelas: တစ်ပိဿာ ဘယ်လောက်လဲ။",
+     "**Menawar dilakukan dengan senyum, bukan dengan wajah serius.** Turun sekitar sepersepuluh sampai seperlima dari harga awal dianggap wajar; menawar setengah harga dianggap tidak sopan dan biasanya justru menghentikan pembicaraan.",
+     "**Pembeli pertama pada pagi hari disebut ဖွင့်ဈေး** (*hpwiⁿ.-ze:*, \"harga pembuka\"), dan banyak pedagang memberi harga khusus karena dipercaya membawa keberuntungan seharian. Datang pagi punya untungnya sendiri."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  {"my":"ဈေး","baca":"ze:","id":"pasar; harga"},
+  {"my":"ဝယ်တယ်","baca":"wè-dè","id":"membeli"},
+  {"my":"ရောင်းတယ်","baca":"yauⁿ:-dè","id":"menjual"},
+  {"my":"သစ်သီး","baca":"thik-thi:","id":"buah"},
+  {"my":"သံပုရာသီး","baca":"thaⁿ-ba.ya-dhi:","id":"jeruk nipis"},
+  {"my":"ငှက်ပျောသီး","baca":"hngèk-pyò:-dhi:","id":"pisang"},
+  {"my":"မန်ကျည်းသီး","baca":"maⁿ-ci:-dhi:","id":"asam jawa"},
+  {"my":"ပိဿာ","baca":"peik-tha","id":"viss, satuan berat ±1,6 kg"},
+  {"my":"ခု","baca":"hku.","id":"penggolong benda umum"},
+  {"my":"လုံး","baca":"louⁿ:","id":"penggolong benda bulat"},
+  {"my":"ခွက်","baca":"hkwèk","id":"penggolong gelas, cangkir"},
+  {"my":"စီး","baca":"si:","id":"penggolong kendaraan"},
+  {"my":"ကောင်","baca":"kauⁿ","id":"penggolong binatang"},
+  {"my":"ထည်","baca":"htè","id":"penggolong helai pakaian"},
+  {"my":"ထဘီ","baca":"hta.mèiⁿ","id":"longyi perempuan"},
+  {"my":"လုံချည်","baca":"louⁿ-ji","id":"longyi laki-laki"},
+  {"my":"မြည်းတယ်","baca":"myi:-dè","id":"mencicipi"},
+  {"my":"ကြည့်တယ်","baca":"ci.-dè","id":"melihat; mencoba"},
+  {"my":"လျှော့တယ်","baca":"syaw.-dè","id":"mengurangi, memotong harga"},
+  {"my":"…ဦး","baca":"ouⁿ:","id":"sedikit lagi, dong"},
+  {"my":"အရောင်","baca":"a.yauⁿ","id":"warna"},
+  {"my":"အနီ","baca":"a.ni","id":"merah"},
+  {"my":"အပြာ","baca":"a.pya","id":"biru"},
+  {"my":"အစိမ်း","baca":"a.seiⁿ:","id":"hijau"},
+  {"my":"အဝါ","baca":"a.wa","id":"kuning"},
+  {"my":"အမည်း","baca":"a.mè:","id":"hitam"},
+  {"my":"အဖြူ","baca":"a.hpyu","id":"putih"},
+  {"my":"အလကား","baca":"a.la.ga:","id":"gratis"}
+ ],
+ "exercises": [
+  {"prompt":"Lengkapi dengan penggolong yang tepat: ယောက်, ခု, လုံး, အုပ်, ခွက်, atau စီး.","items":[
+   "လူ သုံး____",
+   "စာအုပ် နှစ်____",
+   "ကော်ဖီ တစ်____",
+   "ကား လေး____",
+   "ဥ ငါး____",
+   "အိတ် တစ်____"
+  ]},
+  {"prompt":"Susun jadi permintaan yang sopan.","items":[
+   "ပါ / ပေး / နှစ်ခွက် / ကော်ဖီ",
+   "ပါ / ပေး / ငါးလုံး / သံပုရာသီး",
+   "ပါဦး / လျှော့ / နည်းနည်း",
+   "ပါ / ပေး / တစ်ထည် / အပြာ"
+  ]},
+  {"prompt":"Tulis dalam bahasa Myanmar dengan susunan benda — angka — penggolong.","items":[
+   "tiga buku",
+   "dua orang",
+   "satu gelas teh",
+   "lima mobil"
+  ]},
+  {"prompt":"Terjemahkan ke bahasa Myanmar.","items":[
+   "Mau beli apa?",
+   "Satu viss berapa?",
+   "Tolong dua gelas kopi.",
+   "Agak mahal, kurangi sedikit dong.",
+   "Saya ambil yang biru.",
+   "Warna apa saja yang ada?"
+  ]}
+ ],
+ "answers": [
+  "ယောက် — အုပ် — ခွက် — စီး — လုံး — ခု",
+  "ကော်ဖီ နှစ်ခွက် ပေးပါ။ — သံပုရာသီး ငါးလုံး ပေးပါ။ — နည်းနည်း လျှော့ပါဦး။ — အပြာ တစ်ထည် ပေးပါ။",
+  "စာအုပ် သုံးအုပ် — လူ နှစ်ယောက် — လက်ဖက်ရည် တစ်ခွက် — ကား ငါးစီး",
+  "ဘာ ဝယ်ချင်လဲ။ — တစ်ပိဿာ ဘယ်လောက်လဲ။ — ကော်ဖီ နှစ်ခွက် ပေးပါ။ — နည်းနည်း ဈေးကြီးတယ်၊ လျှော့ပါဦး။ — အပြာ ယူပါ့မယ်။ — ဘယ်အရောင်တွေ ရှိလဲ။"
+ ]
+}

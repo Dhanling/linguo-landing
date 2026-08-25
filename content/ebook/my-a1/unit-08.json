@@ -1,0 +1,188 @@
+{
+ "title": "Setiap hari saya bangun jam enam",
+ "title_target": "နေ့တိုင်း ခြောက်နာရီ ထပါတယ် — ne.-daiⁿ: hcauk-na-yi hta.-ba-dè",
+ "goal": "Menceritakan kegiatan sehari-hari — dan menghadapi kesalahpahaman terbesar tentang bahasa Myanmar: akhiran တယ် sama sekali bukan penanda waktu sekarang.",
+ "bekal": [
+  "menyebut kegiatan sehari-hari dari bangun sampai tidur",
+  "memakai ekor တယ် untuk kejadian nyata, kapan pun waktunya",
+  "memakai ekor မယ် untuk niat dan rencana",
+  "menyangkal dengan မ … ဘူး tanpa lupa salah satu bagiannya",
+  "menyisipkan keterangan waktu di tempat yang benar"
+ ],
+ "dialogs": [
+  {
+   "title": "စကားပြော — Menceritakan hari kepada Ko Zaw",
+   "intro": "Ko Zaw bertanya bagaimana Ani menjalani harinya. Perhatikan bahwa kalimat yang berbicara tentang **kemarin** dan kalimat yang berbicara tentang **setiap hari** memakai ekor yang sama, တယ်. Yang menentukan waktunya adalah keterangan di depan kalimat, bukan ekornya.",
+   "lines": [
+    {"speaker":"ကိုဇော်:","text":"[အာနီ|a-ni]၊ [နေ့တိုင်း|ne.-daiⁿ:] [ဘယ်နှစ်နာရီ|bè-hna.na-yi] [ထ|hta.] [လဲ|lè:]။","id":"Ani, setiap hari bangun jam berapa?","literal":"ani, hari-tiap — berapa-jam — bangun — kah?"},
+    {"speaker":"အာနီ:","text":"[ခြောက်နာရီ|hcauk-na-yi] [ထ|hta.] [ပါတယ်|ba-dè]။ [ပြီးတော့|pyi:-dò.] [ရေချိုး|ye-hco:] [ပါတယ်|ba-dè]။","id":"Bangun jam enam. Lalu mandi.","literal":"enam-jam — bangun — sopan-berita. sesudah-itu — air-siram — sopan-berita."},
+    {"speaker":"ကိုဇော်:","text":"[မနက်စာ|ma.nèk-sa] [ဘာ|ba] [စား|sa:] [လဲ|lè:]။","id":"Sarapan apa?","literal":"pagi-makanan — apa — makan — kah?"},
+    {"speaker":"အာနီ:","text":"[ဘာမှ|ba-hma.] [မစားဘူး|ma.sa:-bu:]။ [ကော်ဖီ|kò-hpi] [တစ်ခွက်|ta.hkwèk] [ပဲ|bè:] [သောက်|thauk] [ပါတယ်|ba-dè]။","id":"Tidak makan apa-apa. Cuma minum kopi segelas.","literal":"apa-pun — tidak-makan. kopi — satu-gelas — saja — minum — sopan-berita."},
+    {"speaker":"ကိုဇော်:","text":"[အဲဒါ|è:-da] [မကောင်းဘူး|ma.kauⁿ:-bu:]။ [မနေ့က|ma.ne.-ga.] [ရော|yò:]။ [ဘာ|ba] [လုပ်|louk] [လဲ|lè:]။","id":"Itu tidak baik. Kalau kemarin? Ngapain?","literal":"itu — tidak-baik. kemarin — bagaimana? apa — kerja — kah?"},
+    {"speaker":"အာနီ:","text":"[မနေ့က|ma.ne.-ga.] [ရုံး|youⁿ:] [သွား|thwa:] [တယ်|dè]။ [ညနေ|nya.-ne] [ဈေး|ze:] [သွား|thwa:] [တယ်|dè]။","id":"Kemarin ke kantor. Sorenya ke pasar.","literal":"kemarin — kantor — pergi — berita. sore — pasar — pergi — berita."},
+    {"speaker":"ကိုဇော်:","text":"[ခဏ|hka.na.]၊ [မနေ့က|ma.ne.-ga.] [ဆိုပေမဲ့|hso-be-mè.] [တယ်|dè] [ပဲ|bè:] [သုံး|thouⁿ:] [တယ်|dè] [နော်|nò]။","id":"Sebentar — kemarin, tapi tetap pakai တယ် ya.","literal":"sebentar, kemarin — walaupun — berita — saja — pakai — berita — ya."},
+    {"speaker":"အာနီ:","text":"[ဟုတ်ကဲ့|houk-kè.]၊ [မှန်|hmaⁿ] [လား|la:]။ [ကျွန်မ|ca.ma.] [မှား|hma:] [နေ|ne] [လား|la:] [လို့|lo.]။","id":"Ya, betul begitu? Saya kira saya salah.","literal":"benar-iya, benar — kah? saya(pr) — salah — sedang — kah — pikir."},
+    {"speaker":"ကိုဇော်:","text":"[မမှားဘူး|ma.hma:-bu:]။ [မြန်မာလို|myaⁿ-ma-lo] [တယ်|dè] [က|ga.] [အချိန်|a.hceiⁿ] [မ|ma.] [ပြော|pyò:] [ဘူး|bu:]။","id":"Tidak salah. Dalam bahasa Myanmar, တယ် tidak menyatakan waktu.","literal":"tidak-salah. myanmar-cara — berita — yang — waktu — tidak — bicara — tidak."},
+    {"speaker":"အာနီ:","text":"[ဒါဆို|da-hso] [ဘာ|ba] [ကို|ko] [ပြော|pyò:] [လဲ|lè:]။","id":"Kalau begitu, dia menyatakan apa?","literal":"kalau-begitu — apa — objek — bicara — kah?"},
+    {"speaker":"ကိုဇော်:","text":"[တကယ်|ta.kè] [ဖြစ်|hpyik] [တာ|da] [ကို|ko] [ပြော|pyò:] [တယ်|dè]။ [မဖြစ်သေးရင်|ma.hpyik-the:-yiⁿ] [မယ်|mè] [သုံး|thouⁿ:] [တယ်|dè]။","id":"Menyatakan hal yang benar-benar terjadi. Kalau belum terjadi, pakai မယ်.","literal":"sungguh — terjadi — hal — objek — bicara — berita. belum-terjadi-kalau — akan — pakai — berita."},
+    {"speaker":"အာနီ:","text":"[နားလည်|na:-lè] [ပါပြီ|ba-bi]။ [မနက်ဖြန်|ma.nèk-hpyaⁿ] [စောစော|sò-sò] [ထ|hta.] [မယ်|mè]!","id":"Saya mengerti. Besok saya akan bangun pagi-pagi!","literal":"mengerti — sopan-sudah. besok — pagi-pagi — bangun — akan!"}
+   ],
+   "grammars": [
+    {
+     "title": "⚠️ တယ် BUKAN penanda waktu sekarang",
+     "body": ["Hampir semua pemula memperlakukan တယ် seperti akhiran \"-s\" pada kata kerja bahasa Inggris atau seperti keterangan \"sedang\". Itu keliru, dan kekeliruannya akan menahanmu berbulan-bulan kalau tidak diluruskan sekarang. **တယ် menandai kejadian yang nyata** — sudah terjadi, sedang berlaku, atau menjadi kebiasaan. Waktunya ditentukan oleh keterangan waktu, bukan oleh ekornya."],
+     "tables": [
+      {"head":["Kalimat","Cara baca","Artinya"],"rows":[
+       ["ရုံး သွားတယ်","*youⁿ: thwa:-dè*","(saya) pergi ke kantor — waktunya belum jelas"],
+       ["မနေ့က ရုံး သွားတယ်","*ma.ne.-ga. …*","**kemarin** pergi ke kantor"],
+       ["နေ့တိုင်း ရုံး သွားတယ်","*ne.-daiⁿ: …*","**setiap hari** pergi ke kantor"],
+       ["အခု ရုံး သွားတယ်","*a.hku. …*","**sekarang** pergi ke kantor"],
+       ["မနက်ဖြန် ရုံး သွားမယ်","*ma.nèk-hpyaⁿ … thwa:-mè*","**besok** akan pergi — memakai မယ်"]
+      ]}
+     ],
+     "after": [
+      "Garis pemisahnya bukan lampau lawan sekarang, melainkan **sudah nyata lawan belum nyata**. Segala sesuatu yang sudah terjadi atau memang berlaku memakai တယ်; segala sesuatu yang masih berupa niat, rencana, atau kemungkinan memakai မယ်.",
+      "Akibat praktisnya melegakan: kamu **tidak perlu** menghafal bentuk lampau apa pun. Cukup tambahkan မနေ့က (kemarin) atau ပြီးခဲ့တဲ့အပတ် (minggu lalu) di depan kalimat, dan kalimatnya selesai."
+     ]
+    },
+    {
+     "title": "မယ် — niat, rencana, dan tawaran",
+     "body": ["မယ် (*mè*) adalah pasangan တယ် untuk segala yang belum terjadi. Ia menutupi \"akan\", \"mau\", dan \"biar saya\" sekaligus."],
+     "tables": [
+      {"head":["Myanmar","Cara baca","Arti"],"rows":[
+       ["မနက်ဖြန် သွားမယ်","*ma.nèk-hpyaⁿ thwa:-mè*","besok akan pergi"],
+       ["ကျွန်တော် လုပ်ပါ့မယ်","*ca.nò louk-pa.-mè*","biar saya yang kerjakan"],
+       ["ဘာ စားမလဲ","*ba sa:-ma.lè:*","mau makan apa?"],
+       ["မသွားဘူး","*ma.thwa:-bu:*","tidak akan pergi"]
+      ]}
+     ],
+     "after": ["⚠️ Bentuk **sangkalannya sama** untuk တယ် dan မယ်: dua-duanya menjadi မ … ဘူး. မသွားဘူး bisa berarti \"tidak pergi\" maupun \"tidak akan pergi\", dan keadaanlah yang menentukan. Ini penyederhanaan yang menguntungkanmu — satu bentuk sangkalan untuk semua waktu."]
+    },
+    {
+     "title": "Sangkalan memakai DUA bagian",
+     "body": ["Kamu sudah bertemu pola ini sejak unit 1; sekarang saatnya memakainya tanpa berpikir. Sangkalan bahasa Myanmar mengapit kata kerjanya dari dua sisi: **မ** di depan dan **ဘူး** di belakang."],
+     "tables": [
+      {"head":["Kalimat berita","Sangkalannya","Cara baca"],"rows":[
+       ["သွားတယ်","မသွားဘူး","*ma.thwa:-bu:*"],
+       ["စားတယ်","မစားဘူး","*ma.sa:-bu:*"],
+       ["ရှိတယ်","မရှိဘူး","*ma.syi.-bu:*"],
+       ["ကောင်းတယ်","မကောင်းဘူး","*ma.kauⁿ:-bu:*"],
+       ["သွားပါတယ်","မသွားပါဘူး","*ma.thwa:-ba-bu:*"]
+      ]}
+     ],
+     "after": ["⚠️ Kalau kalimatnya memakai ပါ, maka ပါ berdiri **di antara** kata kerja dan ဘူး: မသွားပါဘူး. Menaruhnya di tempat lain langsung terdengar salah. Untuk \"tidak … apa pun\", dipakai ဘာမှ … မ … ဘူး: ဘာမှ မစားဘူး (tidak makan apa-apa)."]
+    },
+    {
+     "title": "Keterangan waktu berdiri di DEPAN",
+     "body": ["Karena ekornya tidak menyampaikan waktu, keterangan waktulah yang memikul seluruh tugas itu — dan tempatnya selalu di awal kalimat, sebelum pelaku atau tepat sesudahnya."],
+     "tables": [
+      {"head":["Myanmar","Cara baca","Arti"],"rows":[
+       ["မနေ့က","*ma.ne.-ga.*","kemarin"],
+       ["ဒီနေ့","*di-ne.*","hari ini"],
+       ["မနက်ဖြန်","*ma.nèk-hpyaⁿ*","besok"],
+       ["နေ့တိုင်း","*ne.-daiⁿ:*","setiap hari"],
+       ["အခု","*a.hku.*","sekarang"],
+       ["ခဏခဏ","*hka.na.-hka.na.*","sering"],
+       ["တစ်ခါတစ်လေ","*ta.hka-ta.le*","kadang-kadang"],
+       ["ဘယ်တော့မှ မ…ဘူး","*bè-dò.-hma. ma…bu:*","tidak pernah"]
+      ]}
+     ],
+     "after": ["⚠️ တိုင်း (*daiⁿ:*) berarti \"setiap\" dan menempel di belakang: နေ့တိုင်း (setiap hari), အပတ်တိုင်း (setiap minggu), နှစ်တိုင်း (setiap tahun). Sekali lagi, penandanya di belakang — pola yang sekarang seharusnya sudah tidak mengejutkanmu lagi."]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Satu hari dari bangun sampai tidur",
+   "blocks": [
+    {"type":"p","text":"Kata kerja di daftar ini menutupi hampir seluruh hari biasa. Cobalah menceritakan harimu sendiri keras-keras memakai daftar ini, dengan ekor တယ်, lalu ulangi dengan awalan မနေ့က di depannya — dan perhatikan bahwa kata kerjanya tidak berubah sama sekali."},
+    {"type":"tabel","head":["Myanmar","Cara baca","Bahasa Indonesia"],"rows":[
+     ["ထတယ်","*hta.-dè*","bangun"],
+     ["ရေချိုးတယ်","*ye-hco:-dè*","mandi"],
+     ["သွားတိုက်တယ်","*thwa:-taik-tè*","gosok gigi"],
+     ["အဝတ်လဲတယ်","*a.wak-lè:-dè*","berganti pakaian"],
+     ["မနက်စာ စားတယ်","*ma.nèk-sa sa:-dè*","sarapan"],
+     ["ရုံး သွားတယ်","*youⁿ: thwa:-dè*","pergi ke kantor"],
+     ["အလုပ် လုပ်တယ်","*a.louk louk-tè*","bekerja"],
+     ["နေ့လယ်စာ စားတယ်","*ne.-lè-za sa:-dè*","makan siang"],
+     ["အိမ် ပြန်တယ်","*eiⁿ pyaⁿ-dè*","pulang ke rumah"],
+     ["ချက်ပြုတ်တယ်","*hcèk-pyouk-tè*","memasak"],
+     ["တီဗွီ ကြည့်တယ်","*ti-bwi ci.-dè*","menonton televisi"],
+     ["စာဖတ်တယ်","*sa-hpak-tè*","membaca"],
+     ["အိပ်တယ်","*eik-tè*","tidur"]
+    ]},
+    {"type":"kotak","title":"Latihan tiga kalimat sehari","items":[
+     "Mulai hari ini, tulis **tiga kalimat** tentang harimu sebelum tidur: satu dengan မနေ့က, satu dengan ဒီနေ့, satu dengan မနက်ဖြန်. Yang ketiga akan memakai မယ်, dua yang pertama memakai တယ်.",
+     "Tiga kalimat sehari selama modul ini selesai berarti enam puluh kalimat yang kamu susun sendiri — jauh lebih berharga daripada enam puluh halaman yang cuma dibaca."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  {"my":"နေ့တိုင်း","baca":"ne.-daiⁿ:","id":"setiap hari"},
+  {"my":"တိုင်း","baca":"daiⁿ:","id":"setiap"},
+  {"my":"ထတယ်","baca":"hta.-dè","id":"bangun"},
+  {"my":"ရေချိုးတယ်","baca":"ye-hco:-dè","id":"mandi"},
+  {"my":"မနက်စာ","baca":"ma.nèk-sa","id":"sarapan"},
+  {"my":"နေ့လယ်စာ","baca":"ne.-lè-za","id":"makan siang"},
+  {"my":"ညစာ","baca":"nya.-za","id":"makan malam"},
+  {"my":"ပြီးတော့","baca":"pyi:-dò.","id":"lalu, sesudah itu"},
+  {"my":"ဘာမှ","baca":"ba-hma.","id":"apa pun (dengan sangkalan)"},
+  {"my":"မနေ့က","baca":"ma.ne.-ga.","id":"kemarin"},
+  {"my":"ဒီနေ့","baca":"di-ne.","id":"hari ini"},
+  {"my":"ညနေ","baca":"nya.-ne","id":"sore"},
+  {"my":"ရုံး","baca":"youⁿ:","id":"kantor"},
+  {"my":"သွားတယ်","baca":"thwa:-dè","id":"pergi"},
+  {"my":"ပြန်တယ်","baca":"pyaⁿ-dè","id":"pulang, kembali"},
+  {"my":"အိပ်တယ်","baca":"eik-tè","id":"tidur"},
+  {"my":"ခဏ","baca":"hka.na.","id":"sebentar"},
+  {"my":"မှန်တယ်","baca":"hmaⁿ-dè","id":"benar, tepat"},
+  {"my":"မှားတယ်","baca":"hma:-dè","id":"salah, keliru"},
+  {"my":"အချိန်","baca":"a.hceiⁿ","id":"waktu"},
+  {"my":"တကယ်","baca":"ta.kè","id":"sungguh, benar-benar"},
+  {"my":"ဖြစ်တယ်","baca":"hpyik-tè","id":"terjadi, menjadi"},
+  {"my":"မြန်မာလို","baca":"myaⁿ-ma-lo","id":"dalam bahasa Myanmar"},
+  {"my":"စောစော","baca":"sò-sò","id":"pagi-pagi, awal"},
+  {"my":"ခဏခဏ","baca":"hka.na.-hka.na.","id":"sering"},
+  {"my":"တစ်ခါတစ်လေ","baca":"ta.hka-ta.le","id":"kadang-kadang"},
+  {"my":"ချက်ပြုတ်တယ်","baca":"hcèk-pyouk-tè","id":"memasak"},
+  {"my":"အဲဒါ","baca":"è:-da","id":"itu (yang baru disebut)"}
+ ],
+ "exercises": [
+  {"prompt":"Pilih ekor တယ် atau မယ် sesuai keterangan waktunya.","items":[
+   "မနေ့က ဈေး သွား____။",
+   "မနက်ဖြန် ရုံး သွား____။",
+   "နေ့တိုင်း ခြောက်နာရီ ထ____။",
+   "နောက်နှစ် မြန်မာ လာ____။",
+   "အခု ကော်ဖီ သောက်နေ____။",
+   "ဒီည ညစာ ချက်____။"
+  ]},
+  {"prompt":"Ubah jadi kalimat sangkalan.","items":[
+   "ရုံး သွားတယ်။",
+   "မနက်စာ စားတယ်။",
+   "ပိုက်ဆံ ရှိတယ်။",
+   "မနက်ဖြန် လာမယ်။"
+  ]},
+  {"prompt":"Susun jadi kalimat yang benar.","items":[
+   "ပါတယ် / ထ / ခြောက်နာရီ / နေ့တိုင်း",
+   "တယ် / သွား / ရုံး / မနေ့က",
+   "ဘူး / မ / စား / ဘာမှ",
+   "မယ် / ထ / စောစော / မနက်ဖြန်"
+  ]},
+  {"prompt":"Terjemahkan ke bahasa Myanmar.","items":[
+   "Setiap hari saya bangun jam enam.",
+   "Kemarin saya pergi ke pasar.",
+   "Saya tidak makan apa-apa.",
+   "Besok saya akan bangun pagi-pagi.",
+   "Sore hari saya pulang ke rumah.",
+   "Saya tidak akan pergi."
+  ]}
+ ],
+ "answers": [
+  "တယ် — မယ် — တယ် — မယ် — တယ် — မယ်",
+  "ရုံး မသွားဘူး။ — မနက်စာ မစားဘူး။ — ပိုက်ဆံ မရှိဘူး။ — မနက်ဖြန် မလာဘူး။",
+  "နေ့တိုင်း ခြောက်နာရီ ထပါတယ်။ — မနေ့က ရုံး သွားတယ်။ — ဘာမှ မစားဘူး။ — မနက်ဖြန် စောစော ထမယ်။",
+  "နေ့တိုင်း ခြောက်နာရီ ထပါတယ်။ — မနေ့က ဈေး သွားတယ်။ — ဘာမှ မစားဘူး။ — မနက်ဖြန် စောစော ထမယ်။ — ညနေ အိမ် ပြန်ပါတယ်။ — မသွားဘူး။"
+ ]
+}
