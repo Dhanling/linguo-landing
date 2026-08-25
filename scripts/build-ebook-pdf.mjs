@@ -380,7 +380,19 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
      ကျွန်တော့် menembus jauh ke atas kotak em — sehingga -3pt masih tertimpa dan
      modul my-a1 memakai -7.5pt. Bawaannya tetap -3pt supaya modul beruby yang
      sudah terbit tak bergeser satu halaman pun. */
-  ruby { ruby-position: over; ruby-align: ${meta.ruby_align === "start" ? "start" : "center"}; }
+  /* [ebook-ruby-jarak-v1] Jarak antar gugus beruby, lewat meta.ruby_gap.
+
+     Aksara yang ditulis TANPA spasi antarkata (Lao, Thai, Myanmar) memakai satu
+     gugus ruby per kata, jadi begitu ruby-align start dipakai, cara baca dua kata
+     berturut-turut menempel jadi satu untaian: "Kènglǎai", "Phopkan". Perataan
+     center memisahkannya sendiri, tapi center-lah yang memecah gugus aksaranya
+     (ຂໍ jadi ຂ + ໍ), jadi kedua pilihan bawaan sama-sama salah untuk aksara
+     begini. Jarak sekecil satu-dua titik memulihkan batas kata di baris cara
+     baca; aksaranya sendiri cuma merenggang setipis rambut. Tanpa nilai di
+     meta.json aturan ini tidak ditulis sama sekali, jadi modul yang sudah terbit
+     tak bergeser satu halaman pun. */
+  ruby { ruby-position: over; ruby-align: ${meta.ruby_align === "start" ? "start" : "center"};
+         ${meta.ruby_gap ? `margin-inline-end: ${esc(meta.ruby_gap)};` : ""} }
   rt { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 6.4pt; font-weight: 500;
        font-style: normal; color: #12776F; letter-spacing: .01em; line-height: ${meta.ruby_align === "start" ? "1.35" : "1"};
        ${meta.ruby_align === "start" ? `position: relative; top: ${esc(meta.ruby_top ?? "-3pt")};` : ""} }

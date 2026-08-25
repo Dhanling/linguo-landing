@@ -1,0 +1,282 @@
+{
+ "title": "Angka dan harga: menawar di Talat Sao",
+ "title_target": "ເທົ່າໃດ — Thao-dai",
+ "goal": "Menghitung sampai sejuta, menanyakan harga, menawar tanpa terdengar kasar, dan menyebut angka kip yang panjang-panjang seperti orang setempat.",
+ "bekal": [
+  "angka 1-1.000.000 beserta jebakan ເອັດ dan ຊາວ",
+  "bertanya harga dengan ເທົ່າໃດ",
+  "menawar dengan ຫຼຸດແດ່ໄດ້ບໍ່",
+  "menyatakan mahal/murah dengan ແພງ dan ຖືກ",
+  "memutuskan dengan ເອົາ dan ບໍ່ເອົາ"
+ ],
+ "dialogs": [
+  {
+   "title": "ບົດສົນທະນາ — Di kios kain, Talat Sao",
+   "intro": "Budi menawar syal. Perhatikan iramanya: di Laos menawar dilakukan pelan, sambil tersenyum, dan hampir selalu berhasil turun sedikit — tapi jangan menawar setengah harga seperti di sebagian pasar Indonesia.",
+   "lines": [
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ສະບາຍດີ|Sa-baai-dii] [ອັນ|An][ນີ້|nîi][ເທົ່າໃດ|thao-dai]",
+     "id": "Halo. Yang ini berapa?",
+     "literal": "sehat-baik. buah — ini — berapa?"
+    },
+    {
+     "speaker": "ແມ່ຄ້າ:",
+     "text": "[ແປດ|Pèet][ສິບ|síp][ພັນ|phán][ກີບ|kìip]",
+     "id": "Delapan puluh ribu kip.",
+     "literal": "delapan — puluh — ribu — kip."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ໂອ້ຍ|Ôoy] [ແພງ|Pheeng][ຫຼາຍ|lǎai][ເນາະ|nāw] [ຫຼຸດ|Lut][ແດ່|dèe][ໄດ້|dâi][ບໍ່|bàw]",
+     "id": "Aduh, mahal ya. Bisa dikurangi sedikit?",
+     "literal": "aduh. mahal — banyak — ya kan? kurang — sedikit — bisa — kah?"
+    },
+    {
+     "speaker": "ແມ່ຄ້າ:",
+     "text": "[ເຈົ້າ|Jâo] [ເອົາ|Ao][ຈັກ|ják][ຜືນ|phʉ̌ʉn]",
+     "id": "Iya. Mau ambil berapa helai?",
+     "literal": "iya. ambil — berapa — helai?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ສອງ|Sǎwng][ຜືນ|phʉ̌ʉn] [ຖ້າ|Thàa][ເອົາ|ao][ສອງ|sǎwng][ຜືນ|phʉ̌ʉn] [ເທົ່າໃດ|thao-dai]",
+     "id": "Dua helai. Kalau ambil dua, berapa?",
+     "literal": "dua — helai. kalau — ambil — dua — helai — berapa?"
+    },
+    {
+     "speaker": "ແມ່ຄ້າ:",
+     "text": "[ໜຶ່ງ|Nʉ̀ng][ແສນ|sěen][ຫ້າ|hāa][ສິບ|síp][ພັນ|phán] [ລາຄາ|Láa-kháa][ພິເສດ|phi-sèet][ເດີ້|dòe]",
+     "id": "Seratus lima puluh ribu. Harga spesial ya.",
+     "literal": "satu — ratus-ribu — lima — puluh — ribu. harga — istimewa — ya."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ໜຶ່ງ|Nʉ̀ng][ແສນ|sěen][ສາມ|sǎam][ສິບ|síp][ພັນ|phán][ໄດ້|dâi][ບໍ່|bàw] [ຂ້ອຍ|Khàwy][ຊິ|si][ມາ|maa][ຊື້|sʉ̂ʉ][ອີກ|ìik]",
+     "id": "Seratus tiga puluh ribu bisa? Saya akan beli lagi nanti.",
+     "literal": "satu — ratus-ribu — tiga — puluh — ribu — bisa — kah? saya — akan — datang — beli — lagi."
+    },
+    {
+     "speaker": "ແມ່ຄ້າ:",
+     "text": "[ໂອ|Ôo] [ໜຶ່ງ|nʉ̀ng][ແສນ|sěen][ສີ່|sìi][ສິບ|síp][ພັນ|phán][ເນາະ|nāw] [ບໍ່|Bàw][ໄດ້|dâi][ກຳໄລ|kam-lái][ແລ້ວ|lèeo]",
+     "id": "Aduh… seratus empat puluh ribu ya. Sudah tidak untung ini.",
+     "literal": "oh. satu — ratus-ribu — empat — puluh — ribu — ya kan? tidak — dapat — untung — sudah."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ໄດ້|Dâi] [ເອົາ|Ao][ເລີຍ|lóei] [ຂ້ອຍ|Khàwy][ຈ່າຍ|jàai][ເງິນ|ngóen][ສົດ|sót]",
+     "id": "Oke, saya ambil. Saya bayar tunai.",
+     "literal": "bisa. ambil — langsung. saya — bayar — uang — segar."
+    },
+    {
+     "speaker": "ແມ່ຄ້າ:",
+     "text": "[ຂອບໃຈ|Khàwp-jai][ຫຼາຍໆ|lǎai-lǎai] [ນີ້|Nîi][ເງິນ|ngóen][ທອນ|thawn][ຫົກ|hók][ສິບ|síp][ພັນ|phán]",
+     "id": "Terima kasih banyak. Ini kembaliannya enam puluh ribu.",
+     "literal": "terima-kasih — banyak-banyak. ini — uang — kembali — enam — puluh — ribu."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ຖືກ|Thʉ̀ʉk][ແລ້ວ|lèeo] [ຂອບໃຈ|Khàwp-jai][ເດີ້| dòe] [ພົບ|Phop][ກັນ|kan][ໃໝ່|mài]",
+     "id": "Pas. Terima kasih ya. Sampai jumpa.",
+     "literal": "benar — sudah. terima-kasih — ya. bertemu — bersama — baru."
+    }
+   ],
+   "notes": [
+    "**ເທົ່າໃດ thao-dai adalah satu-satunya kata yang wajib kamu hafal hari ini.** Ia berarti \"berapa\" untuk harga dan jumlah, dan berdiri di **akhir**: *ອັນນີ້ເທົ່າໃດ* (ini berapa?). Menunjuk barang sambil mengucapkannya sudah cukup untuk berbelanja seharian.",
+    "**Angka kip selalu terdengar panjang, jadi orang memendekkannya.** 80.000 diucapkan *pèet-síp-phán* (delapan puluh ribu), tapi di pasar orang sering cukup berkata *pèet-síp* — dan keduanya tahu maksudnya ribuan. Kalau kamu ragu, ulangi angkanya dengan lengkap; penjual akan mengangguk atau membetulkan.",
+    "**ຫຼຸດ lut = \"kurangi\", dan ຫຼຸດແດ່ໄດ້ບໍ່ adalah kalimat tawar-menawar baku.** Kata *ແດ່ dèe* di tengah itulah yang membuatnya sopan — tanpa ia, kalimatnya terdengar seperti perintah. Bandingkan \"kurangi\" dengan \"kurangi sedikit dong\".",
+    "**ຈັກ ják juga berarti \"berapa\", tapi ia dipakai DENGAN kata bantu bilangan.** *ຈັກຜືນ* (berapa helai), *ຈັກຄົນ* (berapa orang), *ຈັກໂມງ* (jam berapa). Sedangkan *ເທົ່າໃດ* untuk jumlah yang tak terhitung satuan: uang, berat, umur.",
+    "**ເອົາ ao = \"ambil, mau, jadi beli\".** Ini kata kerja terpenting di pasar. *ເອົາອັນນີ້* (ambil yang ini), *ບໍ່ເອົາ* (tidak jadi, tidak mau). Diucapkan sendirian, *ເອົາ* berarti \"iya, saya mau\".",
+    "**ຖ້າ thàa = \"kalau\".** Letaknya di depan syaratnya, sama seperti bahasa Indonesia: *ຖ້າເອົາສອງຜືນ…* (kalau ambil dua helai…). Tidak ada kata penyambung wajib di anak kalimat berikutnya.",
+    "**ເລີຍ lóei berarti \"langsung, kalau begitu\" dan melicinkan keputusan.** *ເອົາເລີຍ* = \"ya sudah, ambil\". Kata ini muncul di mana-mana dalam percakapan Lao dan sulit diterjemahkan tepat; rasakan saja bahwa ia menutup pembicaraan.",
+    "**ຖືກ thʉ̀ʉk punya dua arti: \"murah\" dan \"benar\".** *ລາຄາຖືກ* (harganya murah), *ຖືກແລ້ວ* (betul, sudah pas). Konteks yang memisahkannya, dan keduanya sama-sama sering.",
+    "**Etika menawar di Laos.** Tawar sekali, paling banyak dua kali, dan berhenti. Menawar berkepanjangan atau menyebut angka jauh di bawah membuat penjual diam dan malu — dan di budaya Lao, membuat orang malu jauh lebih buruk daripada kehilangan uang. Kalau harganya tidak turun, tersenyum dan bilang *ຂອບໃຈເດີ້* lalu pergi; itu sopan dan tidak melukai siapa pun."
+   ],
+   "grammars": [
+    {
+     "title": "Angka: pola, dan dua jebakan yang wajib dihafal",
+     "table": {
+      "head": ["Angka", "Lao", "Baca", "Angka", "Lao", "Baca"],
+      "rows": [
+       ["1", "ໜຶ່ງ", "*nʉ̀ng*", "11", "ສິບເອັດ", "*síp-ét*"],
+       ["2", "ສອງ", "*sǎwng*", "12", "ສິບສອງ", "*síp-sǎwng*"],
+       ["3", "ສາມ", "*sǎam*", "20", "ຊາວ", "*saao*"],
+       ["4", "ສີ່", "*sìi*", "21", "ຊາວເອັດ", "*saao-ét*"],
+       ["5", "ຫ້າ", "*hāa*", "30", "ສາມສິບ", "*sǎam-síp*"],
+       ["6", "ຫົກ", "*hók*", "100", "ຮ້ອຍ", "*hâwy*"],
+       ["7", "ເຈັດ", "*jét*", "1.000", "ພັນ", "*phán*"],
+       ["8", "ແປດ", "*pèet*", "10.000", "ໝື່ນ", "*mʉ̀ʉn*"],
+       ["9", "ເກົ້າ", "*kào*", "100.000", "ແສນ", "*sěen*"],
+       ["10", "ສິບ", "*síp*", "1.000.000", "ລ້ານ", "*lâan*"]
+      ]
+     },
+     "after": [
+      "**Jebakan 1: satuan \"1\" berubah jadi ເອັດ *ét* di belakang puluhan.** 11 = *síp-ét*, bukan *síp-nʉ̀ng*. Berlaku untuk 21, 31, 101, 1.001 — semuanya *-ét*.",
+      "**Jebakan 2: 20 adalah kata tersendiri.** *ຊາວ saao*, bukan *sǎwng-síp*. Cuma 20 yang begini; 30 sampai 90 mengikuti pola biasa.",
+      "Untuk angka besar, bacalah dari satuan terbesar: 150.000 = *nʉ̀ng-sěen hāa-síp-phán* (satu ratus-ribu, lima puluh ribu). Terdengar rumit di kertas, biasa saja di telinga setelah beberapa hari."
+     ]
+    },
+    {
+     "title": "Kalimat belanja yang siap pakai",
+     "table": {
+      "head": ["Lao", "Baca", "Arti"],
+      "rows": [
+       ["ອັນນີ້ເທົ່າໃດ", "*an nîi thao-dai*", "ini berapa?"],
+       ["ແພງຫຼາຍ", "*pheeng lǎai*", "mahal sekali"],
+       ["ຫຼຸດແດ່ໄດ້ບໍ່", "*lut dèe dâi bàw*", "bisa kurang sedikit?"],
+       ["ຖືກແລ້ວບໍ່", "*thʉ̀ʉk lèeo bàw*", "sudah pas?"],
+       ["ເອົາອັນນີ້", "*ao an nîi*", "ambil yang ini"],
+       ["ບໍ່ເອົາ ຂອບໃຈ", "*bàw ao, khàwp-jai*", "tidak jadi, terima kasih"],
+       ["ມີສີອື່ນບໍ່", "*míi sǐi ʉ̀ʉn bàw*", "ada warna lain?"],
+       ["ຂໍເບິ່ງແດ່", "*khǎw bòeng dèe*", "boleh saya lihat?"],
+       ["ຈ່າຍເງິນສົດ", "*jàai ngóen sót*", "bayar tunai"],
+       ["ໂອນໄດ້ບໍ່", "*ôon dâi bàw*", "bisa transfer?"]
+      ]
+     },
+     "after": [
+      "Sepuluh kalimat itu menutup hampir semua transaksi kecil. Hafalkan lima yang pertama sekarang; sisanya akan menempel sendiri lewat pemakaian."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Uang, dan cara menyebut angkanya seperti orang setempat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Ditulis", "Diucapkan lengkap", "Diucapkan singkat di pasar"],
+     "rows": [
+      ["5.000", "*hāa-phán*", "*hāa-phán*"],
+      ["10.000", "*síp-phán* / *nʉ̀ng-mʉ̀ʉn*", "*síp*"],
+      ["20.000", "*saao-phán*", "*saao*"],
+      ["50.000", "*hāa-síp-phán*", "*hāa-síp*"],
+      ["100.000", "*nʉ̀ng-sěen*", "*sěen nʉ̀ng*"],
+      ["150.000", "*nʉ̀ng-sěen hāa-síp-phán*", "*sěen hāa*"],
+      ["500.000", "*hāa-sěen*", "*hāa-sěen*"],
+      ["1.000.000", "*nʉ̀ng-lâan*", "*lâan nʉ̀ng*"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan pola \"satu\" yang **dipindah ke belakang**: *ແສນໜຶ່ງ sěen nʉ̀ng* terdengar lebih alami daripada *ໜຶ່ງແສນ*. Aturan yang sama berlaku untuk kata bantu bilangan: *ຈອກໜຶ່ງ jàwk nʉ̀ng* (secangkir), bukan *ໜຶ່ງຈອກ*."
+    },
+    {
+     "type": "p",
+     "text": "Di kota besar, dolar Amerika dan baht Thailand ikut beredar di toko besar dan hotel: *ໂດລາ doo-laa*, *ບາດ bàat*. Di pasar dan warung, kip adalah satu-satunya yang dipakai."
+    }
+   ]
+  },
+  {
+   "title": "Kata sifat untuk menilai harga dan barang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Lao", "Baca", "Indonesia", "Lawannya", "Baca", "Indonesia"],
+     "rows": [
+      ["ແພງ", "*pheeng*", "mahal", "ຖືກ", "*thʉ̀ʉk*", "murah"],
+      ["ດີ", "*dii*", "bagus", "ບໍ່ດີ", "*bàw dii*", "jelek"],
+      ["ໃໝ່", "*mài*", "baru", "ເກົ່າ", "*kào*", "lama, bekas"],
+      ["ໃຫຍ່", "*nyài*", "besar", "ນ້ອຍ", "*nàwy*", "kecil"],
+      ["ຍາວ", "*nyáao*", "panjang", "ສັ້ນ", "*sân*", "pendek"],
+      ["ໜັກ", "*nak*", "berat", "ເບົາ", "*bao*", "ringan"],
+      ["ງາມ", "*ngáam*", "cantik, indah", "ບໍ່ງາມ", "*bàw ngáam*", "tidak bagus dipandang"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kata sifat berdiri **di belakang** kata bendanya, kebalikan dari bahasa Inggris dan sama seperti bahasa Indonesia: *ຜ້າງາມ phàa ngáam* (kain cantik), *ລາຄາແພງ láa-kháa pheeng* (harga mahal). Dan kata sifat tidak butuh kata kerja \"adalah\": *ຜ້າງາມ* sudah berarti \"kainnya cantik\"."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "lo": "ເທົ່າໃດ", "baca": "thao-dai", "id": "berapa (harga, jumlah)" },
+  { "lo": "ຈັກ", "baca": "ják", "id": "berapa (dengan kata bantu)" },
+  { "lo": "ລາຄາ", "baca": "láa-kháa", "id": "harga" },
+  { "lo": "ກີບ", "baca": "kìip", "id": "kip (mata uang Laos)" },
+  { "lo": "ພັນ", "baca": "phán", "id": "ribu" },
+  { "lo": "ໝື່ນ", "baca": "mʉ̀ʉn", "id": "sepuluh ribu" },
+  { "lo": "ແສນ", "baca": "sěen", "id": "seratus ribu" },
+  { "lo": "ລ້ານ", "baca": "lâan", "id": "juta" },
+  { "lo": "ຮ້ອຍ", "baca": "hâwy", "id": "ratus" },
+  { "lo": "ຊາວ", "baca": "saao", "id": "dua puluh" },
+  { "lo": "ເອັດ", "baca": "ét", "id": "satu (di belakang puluhan)" },
+  { "lo": "ແພງ", "baca": "pheeng", "id": "mahal" },
+  { "lo": "ຖືກ", "baca": "thʉ̀ʉk", "id": "murah; benar" },
+  { "lo": "ຫຼຸດ", "baca": "lut", "id": "mengurangi, memotong harga" },
+  { "lo": "ແດ່", "baca": "dèe", "id": "sedikit (melunakkan permintaan)" },
+  { "lo": "ເອົາ", "baca": "ao", "id": "ambil, mau" },
+  { "lo": "ຊື້", "baca": "sʉ̂ʉ", "id": "membeli" },
+  { "lo": "ຂາຍ", "baca": "khǎai", "id": "menjual" },
+  { "lo": "ຈ່າຍ", "baca": "jàai", "id": "membayar" },
+  { "lo": "ເງິນ", "baca": "ngóen", "id": "uang" },
+  { "lo": "ເງິນສົດ", "baca": "ngóen sót", "id": "uang tunai" },
+  { "lo": "ເງິນທອນ", "baca": "ngóen thawn", "id": "uang kembalian" },
+  { "lo": "ໂອນ", "baca": "ôon", "id": "transfer" },
+  { "lo": "ຖ້າ", "baca": "thàa", "id": "kalau" },
+  { "lo": "ເລີຍ", "baca": "lóei", "id": "langsung, kalau begitu" },
+  { "lo": "ອີກ", "baca": "ìik", "id": "lagi, lain kali" },
+  { "lo": "ຜືນ", "baca": "phʉ̌ʉn", "id": "helai (kata bantu kain)" },
+  { "lo": "ຜ້າ", "baca": "phàa", "id": "kain" },
+  { "lo": "ສີ", "baca": "sǐi", "id": "warna" },
+  { "lo": "ອື່ນ", "baca": "ʉ̀ʉn", "id": "lain" },
+  { "lo": "ເບິ່ງ", "baca": "bòeng", "id": "melihat" },
+  { "lo": "ກຳໄລ", "baca": "kam-lái", "id": "untung, laba" },
+  { "lo": "ພິເສດ", "baca": "phi-sèet", "id": "istimewa, spesial" },
+  { "lo": "ງາມ", "baca": "ngáam", "id": "cantik, indah" },
+  { "lo": "ແມ່ຄ້າ", "baca": "mèe-kháa", "id": "pedagang perempuan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angka ini dengan huruf Lao atau cara bacanya.",
+   "items": [
+    "11",
+    "20",
+    "21",
+    "45",
+    "80.000",
+    "150.000"
+   ]
+  },
+  {
+   "prompt": "Isi dengan ເທົ່າໃດ atau ຈັກ.",
+   "items": [
+    "ອັນນີ້____ (ini berapa?)",
+    "ເອົາ____ຜືນ (ambil berapa helai?)",
+    "ໄປ____ຄົນ (pergi berapa orang?)",
+    "ຄ່າລົດ____ (ongkosnya berapa?)",
+    "____ໂມງແລ້ວ (sudah jam berapa?)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ບໍ່ / ໄດ້ / ຫຼຸດ / ແດ່",
+    "ຫຼາຍ / ເນາະ / ແພງ",
+    "ນີ້ / ເທົ່າໃດ / ອັນ",
+    "ເລີຍ / ເອົາ",
+    "ສົດ / ຈ່າຍ / ຂ້ອຍ / ເງິນ"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Lao.",
+   "items": [
+    "Yang ini berapa?",
+    "Mahal sekali. Bisa kurang sedikit?",
+    "Kalau ambil dua helai, berapa?",
+    "Seratus empat puluh ribu bisa?",
+    "Oke, saya ambil. Bayar tunai.",
+    "Tidak jadi, terima kasih."
+   ]
+  }
+ ],
+ "answers": [
+  "ສິບເອັດ *síp-ét* — ຊາວ *saao* — ຊາວເອັດ *saao-ét* — ສີ່ສິບຫ້າ *sìi-síp-hāa* — ແປດສິບພັນ *pèet-síp-phán* — ໜຶ່ງແສນຫ້າສິບພັນ *nʉ̀ng-sěen hāa-síp-phán*",
+  "ເທົ່າໃດ — ຈັກ — ຈັກ — ເທົ່າໃດ — ຈັກ",
+  "ຫຼຸດແດ່ໄດ້ບໍ່ — ແພງຫຼາຍເນາະ — ອັນນີ້ເທົ່າໃດ — ເອົາເລີຍ — ຂ້ອຍຈ່າຍເງິນສົດ",
+  "ອັນນີ້ເທົ່າໃດ — ແພງຫຼາຍ ຫຼຸດແດ່ໄດ້ບໍ່ — ຖ້າເອົາສອງຜືນ ເທົ່າໃດ — ໜຶ່ງແສນສີ່ສິບພັນໄດ້ບໍ່ — ໄດ້ ເອົາເລີຍ ຈ່າຍເງິນສົດ — ບໍ່ເອົາ ຂອບໃຈ"
+ ],
+ "wave": "Ulangi unit 1: tutup bahasa Laonya, lalu perkenalkan dirimu dari ingatan — nama, asal, dan satu kalimat tentang kemampuan bahasa Laomu."
+}

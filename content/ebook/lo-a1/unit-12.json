@@ -1,0 +1,288 @@
+{
+ "title": "Belanja baju: ukuran, warna, dan mencoba",
+ "title_target": "ຊື້ເສື້ອຜ້າ — Sʉ̂ʉ sʉ̂a-phàa",
+ "goal": "Membeli pakaian dan sepatu: meminta ukuran lain, mencoba, mengeluh kesempitan atau kepanjangan, dan menukar barang yang salah — sekaligus memasang kata sifat ukuran yang dipakai di mana-mana.",
+ "bekal": [
+  "nama pakaian dan alas kaki",
+  "meminta ukuran dengan ຂະໜາດ dan ໃຫຍ່ກວ່ານີ້",
+  "mencoba dengan ລອງໃສ່",
+  "mengeluh dengan ຄັບ ຫຼວມ ສັ້ນ ຍາວ",
+  "menukar dengan ປ່ຽນ"
+ ],
+ "dialogs": [
+  {
+   "title": "ບົດສົນທະນາ — Di toko baju, Talat Sao lantai dua",
+   "intro": "Budi mencari baju untuk acara kantor. Perhatikan bahwa kata sifat ukuran selalu berdiri sendiri sebagai kalimat lengkap — tidak butuh kata kerja apa pun.",
+   "lines": [
+    {
+     "speaker": "ຄົນຂາຍ:",
+     "text": "[ສະບາຍດີ|Sa-baai-dii] [ຫາ|Hǎa][ຫຍັງ|nyǎng][ຢູ່|yùu]",
+     "id": "Halo. Cari apa?",
+     "literal": "sehat-baik. cari — apa — sedang?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ຫາ|Hǎa][ເສື້ອ|sʉ̂a][ແຂນ|khěen][ຍາວ|nyáao] [ມີ|Míi][ສີ|sǐi][ຂາວ|khǎao][ບໍ່|bàw]",
+     "id": "Cari kemeja lengan panjang. Ada yang putih?",
+     "literal": "cari — baju — lengan — panjang. ada — warna — putih — kah?"
+    },
+    {
+     "speaker": "ຄົນຂາຍ:",
+     "text": "[ມີ|Míi] [ໂຕ|Tǒo][ນີ້|nîi][ດີ|dii] [ຂະໜາດ|Kha-nàat][ໃດ|dai]",
+     "id": "Ada. Yang ini bagus. Ukuran berapa?",
+     "literal": "ada. helai — ini — baik. ukuran — mana?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ຂ້ອຍ|Khàwy][ບໍ່|bàw][ຮູ້|hûu] [ລອງ|Lawng][ໃສ່|sài][ໄດ້|dâi][ບໍ່|bàw]",
+     "id": "Saya tidak tahu. Boleh dicoba?",
+     "literal": "saya — tidak — tahu. coba — pakai — bisa — kah?"
+    },
+    {
+     "speaker": "ຄົນຂາຍ:",
+     "text": "[ໄດ້|Dâi][ເລີຍ|lóei] [ຫ້ອງ|Hàwng][ລອງ|lawng][ຢູ່|yùu][ຫຼັງ|lǎng][ພຸ້ນ|phûn]",
+     "id": "Boleh. Ruang gantinya di belakang sana.",
+     "literal": "bisa — langsung. ruang — coba — ada-di — belakang — sana."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ຄັບ|Khap][ໜ້ອຍ|nàwy][ໜຶ່ງ|nʉ̀ng] [ມີ|Míi][ໃຫຍ່|nyài][ກວ່າ|kwàa][ນີ້|nîi][ບໍ່|bàw]",
+     "id": "Agak sempit. Ada yang lebih besar dari ini?",
+     "literal": "sempit — sedikit — satu. ada — besar — lebih — ini — kah?"
+    },
+    {
+     "speaker": "ຄົນຂາຍ:",
+     "text": "[ມີ|Míi] [ໂຕ|Tǒo][ນີ້|nîi][ເອວ|ée-ǎw][ໃຫຍ່|nyài][ກວ່າ|kwàa] [ລອງ|Lawng][ເບິ່ງ|bòeng][ອີກ|ìik]",
+     "id": "Ada. Yang ini lebih longgar. Coba lagi.",
+     "literal": "ada. helai — ini — pinggang — besar — lebih. coba — lihat — lagi."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ອັນ|An][ນີ້|nîi][ພໍ|phaw][ດີ|dii] [ແຕ່|Tèe][ແຂນ|khěen][ຍາວ|nyáao][ໄປ|pai][ໜ້ອຍ|nàwy][ໜຶ່ງ|nʉ̀ng]",
+     "id": "Yang ini pas. Tapi lengannya agak kepanjangan.",
+     "literal": "buah — ini — cukup — baik. tetapi — lengan — panjang — lewat — sedikit — satu."
+    },
+    {
+     "speaker": "ຄົນຂາຍ:",
+     "text": "[ພັບ|Pháp][ຂຶ້ນ|khʉ̂n][ໄດ້|dâi] [ຫຼື|Lʉ̌ʉ][ຊິ|si][ຕັດ|tát][ໃຫ້|hài][ກໍ|kaw][ໄດ້|dâi] [ບໍ່|Bàw][ຄິດ|khit][ເງິນ|ngóen][ຕື່ມ|tʉ̀ʉm]",
+     "id": "Bisa dilipat. Atau mau dipotongkan juga bisa, tidak ada tambahan biaya.",
+     "literal": "lipat — naik — bisa. atau — akan — potong — beri — juga — bisa. tidak — hitung — uang — tambah."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ຂອບໃຈ|Khàwp-jai] [ເອົາ|Ao][ໂຕ|tǒo][ນີ້|nîi] [ເທົ່າໃດ|Thao-dai]",
+     "id": "Terima kasih. Ambil yang ini. Berapa?",
+     "literal": "terima-kasih. ambil — helai — ini. berapa?"
+    },
+    {
+     "speaker": "ຄົນຂາຍ:",
+     "text": "[ໜຶ່ງ|Nʉ̀ng][ແສນ|sěen][ຊາວ|saao][ພັນ|phán] [ຖ້າ|Thàa][ບໍ່|bàw][ພໍດີ|phaw-dii] [ເອົາ|ao][ມາ|maa][ປ່ຽນ|pìan][ໄດ້|dâi][ໃນ|nai][ເຈັດ|jét][ມື້|mʉ̂ʉ]",
+     "id": "Seratus dua puluh ribu. Kalau tidak pas, bisa ditukar dalam tujuh hari.",
+     "literal": "satu — ratus-ribu — dua-puluh — ribu. kalau — tidak — cukup-baik — ambil — datang — ganti — bisa — dalam — tujuh — hari."
+    }
+   ],
+   "notes": [
+    "**ລອງ lawng = \"mencoba\", dan ia berdiri di DEPAN kata kerja.** *ລອງໃສ່* (coba pakai), *ລອງເບິ່ງ* (coba lihat), *ລອງກິນ* (coba makan). Sendirian, *ລອງເບິ່ງ lawng bòeng* berarti \"coba dulu\" untuk apa saja.",
+    "**ຄັບ khap = \"sempit\", ຫຼວມ lǔam = \"longgar\".** Keduanya khusus untuk pakaian. Untuk ruang yang sempit, katanya lain: *ແຄບ khêep*. ⚠️ Jangan tertukar dengan *ຄັບ* yang di bahasa Thai adalah partikel sopan — di Lao ia betul-betul berarti sempit.",
+    "**ພໍດີ phaw-dii = \"pas, cukup baik\".** Ini kata yang kamu ucapkan begitu bajunya cocok. *ພໍດີເລີຍ* = pas banget. Ia juga dipakai untuk waktu: *ມາພໍດີ* (datangnya pas).",
+    "**ໄປ pai di belakang kata sifat = \"terlalu\", ingat dari unit 8.** *ຍາວໄປ* (kepanjangan), *ສັ້ນໄປ* (kependekan), *ໃຫຍ່ໄປ* (kebesaran). Menambahkan *ໜ້ອຍໜຶ່ງ nàwy nʉ̀ng* melunakkannya jadi \"agak\": *ຍາວໄປໜ້ອຍໜຶ່ງ* (agak kepanjangan).",
+    "**…ກວ່ານີ້ kwàa nîi = \"lebih … dari ini\", dan ini kalimat belanja yang wajib.** *ໃຫຍ່ກວ່ານີ້* (lebih besar dari ini), *ຖືກກວ່ານີ້* (lebih murah dari ini), *ສີອື່ນ* (warna lain).",
+    "**ຂະໜາດ kha-nàat = \"ukuran\".** Toko di Laos memakai huruf S, M, L, XL seperti di Indonesia, dan menyebutnya dengan bunyi Inggris: *ເອັມ em*, *ແອວ eeo*. Untuk sepatu, ukurannya angka Eropa.",
+    "**ປ່ຽນ pìan = \"menukar, mengganti\".** *ເອົາມາປ່ຽນ* (bawa untuk ditukar), *ປ່ຽນເປັນສີດຳ* (ganti jadi hitam). Untuk mengembalikan dan minta uang kembali, katanya *ຄືນເງິນ khʉ́ʉn ngóen* — tapi bersiaplah, di pasar hal itu jarang bisa.",
+    "**ໃສ່ sài lagi-lagi muncul, sekarang berarti \"memakai\" pakaian.** *ໃສ່ເສື້ອ* (pakai baju), *ໃສ່ເກີບ* (pakai sepatu), *ໃສ່ແວ່ນຕາ* (pakai kacamata). Kata yang sama yang kamu pakai di warung untuk \"memasukkan bahan\".",
+    "**Tentang berpakaian di Laos.** Untuk kantor pemerintahan, kuil, dan acara resmi, perempuan Lao memakai *ສິ້ນ sîn* — rok tenun panjang — dan itu diharapkan juga dari tamu perempuan. Bahu tertutup dan lutut tertutup adalah aturan tak tertulis di semua kuil, untuk laki-laki maupun perempuan."
+   ],
+   "grammars": [
+    {
+     "title": "Pakaian, alas kaki, dan yang menempel di badan",
+     "table": {
+      "head": ["Lao", "Baca", "Indonesia", "Kata bantu"],
+      "rows": [
+       ["ເສື້ອ", "*sʉ̂a*", "baju, kemeja", "ໂຕ"],
+       ["ເສື້ອຍືດ", "*sʉ̂a-yʉ̂ʉt*", "kaos", "ໂຕ"],
+       ["ໂສ້ງ", "*sôong*", "celana", "ໂຕ"],
+       ["ໂສ້ງຂາສັ້ນ", "*sôong khǎa sân*", "celana pendek", "ໂຕ"],
+       ["ສິ້ນ", "*sîn*", "rok tenun Lao", "ຜືນ"],
+       ["ຜ້າແພ", "*phàa-phée*", "selendang", "ຜືນ"],
+       ["ເກີບ", "*kòep*", "sepatu, sandal", "ຄູ່"],
+       ["ຖົງຕີນ", "*thǒng-tiin*", "kaus kaki", "ຄູ່"],
+       ["ໝວກ", "*mùak*", "topi", "ໜ່ວຍ"],
+       ["ແວ່ນຕາ", "*wèen-taa*", "kacamata", "ອັນ"],
+       ["ກະເປົ໋າ", "*ka-pǎo*", "tas", "ໜ່ວຍ / ໃບ"],
+       ["ໂມງ", "*móong*", "jam tangan", "ໜ່ວຍ"]
+      ]
+     },
+     "after": [
+      "⚠️ *ໂມງ móong* berarti \"jam\" sebagai waktu **dan** \"jam tangan\" sebagai benda. Untuk memperjelas bendanya, orang menyebut *ໂມງແຂນ móong khěen* (jam lengan)."
+     ]
+    },
+    {
+     "title": "Kalimat yang menutup seluruh urusan beli baju",
+     "table": {
+      "head": ["Lao", "Baca", "Arti"],
+      "rows": [
+       ["ຫາ…ຢູ່", "*hǎa… yùu*", "sedang mencari…"],
+       ["ມີສີອື່ນບໍ່", "*míi sǐi ʉ̀ʉn bàw*", "ada warna lain?"],
+       ["ຂະໜາດໃດ", "*kha-nàat dai*", "ukuran berapa?"],
+       ["ລອງໃສ່ໄດ້ບໍ່", "*lawng sài dâi bàw*", "boleh dicoba?"],
+       ["ຫ້ອງລອງຢູ່ໃສ", "*hàwng lawng yùu sǎi*", "ruang gantinya di mana?"],
+       ["ຄັບໜ້ອຍໜຶ່ງ", "*khap nàwy nʉ̀ng*", "agak sempit"],
+       ["ຫຼວມໄປ", "*lǔam pai*", "kelonggaran"],
+       ["ມີໃຫຍ່ກວ່ານີ້ບໍ່", "*míi nyài kwàa nîi bàw*", "ada yang lebih besar?"],
+       ["ພໍດີເລີຍ", "*phaw-dii lóei*", "pas banget"],
+       ["ເອົາມາປ່ຽນໄດ້ບໍ່", "*ao maa pìan dâi bàw*", "bisa ditukar?"]
+      ]
+     },
+     "after": [
+      "Pola *ຫາ…ຢູ່ hǎa… yùu* (\"sedang mencari…\") adalah cara paling alami menjawab sapaan penjual. Tanpa *ຢູ່* di ujung, kalimatnya terdengar seperti perintah."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata sifat ukuran dan bentuk",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Lao", "Baca", "Indonesia", "Lawannya", "Baca", "Indonesia"],
+     "rows": [
+      ["ໃຫຍ່", "*nyài*", "besar", "ນ້ອຍ", "*nàwy*", "kecil"],
+      ["ຍາວ", "*nyáao*", "panjang", "ສັ້ນ", "*sân*", "pendek"],
+      ["ຄັບ", "*khap*", "sempit (baju)", "ຫຼວມ", "*lǔam*", "longgar"],
+      ["ໜາ", "*nǎa*", "tebal", "ບາງ", "*baang*", "tipis"],
+      ["ໜັກ", "*nak*", "berat", "ເບົາ", "*bao*", "ringan"],
+      ["ສູງ", "*sǔung*", "tinggi", "ຕ່ຳ", "*tam*", "rendah"],
+      ["ກວ້າງ", "*kwâang*", "lebar", "ແຄບ", "*khêep*", "sempit (ruang)"],
+      ["ໃໝ່", "*mài*", "baru", "ເກົ່າ", "*kào*", "lama, bekas"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Semua kata di tabel ini berdiri sendiri sebagai kalimat lengkap. *ຄັບ* sudah berarti \"sempit nih\", *ພໍດີ* sudah berarti \"pas\". Tidak ada kata kerja \"adalah\" yang perlu ditambahkan — ini salah satu hal yang membuat bahasa Lao terasa cepat sekali dipakai."
+    },
+    {
+     "type": "p",
+     "text": "Untuk menyatakan derajat, tempelkan di belakangnya: *ໜ້ອຍໜຶ່ງ* (agak), *ຫຼາຍ* (sangat), *ໄປ / ໂພດ* (terlalu), *ທີ່ສຸດ* (paling). Contoh berjenjang: *ໃຫຍ່ໜ້ອຍໜຶ່ງ* → *ໃຫຍ່* → *ໃຫຍ່ຫຼາຍ* → *ໃຫຍ່ໂພດ*."
+    }
+   ]
+  },
+  {
+   "title": "Perak, tenun, dan oleh-oleh khas",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Lao", "Baca", "Apa itu"],
+     "rows": [
+      ["ຜ້າຝ້າຍ", "*phàa-fâai*", "kain katun"],
+      ["ຜ້າໄໝ", "*phàa-mǎi*", "kain sutra — tenun Lao terkenal karena ini"],
+      ["ຜ້າຕີນຈົກ", "*phàa tiin-jók*", "tenun bermotif kaki rok, kerajinan halus"],
+      ["ເຄື່ອງເງິນ", "*khʉ̂ang-ngóen*", "kerajinan perak"],
+      ["ເຄື່ອງໄມ້", "*khʉ̂ang-mâi*", "kerajinan kayu"],
+      ["ກາເຟລາວ", "*kaa-fée Láao*", "kopi Bolaven, arabika dataran tinggi"],
+      ["ຜ້າພັນຄໍ", "*phàa phán khàw*", "syal"],
+      ["ຕິບເຂົ້າ", "*típ khào*", "bakul ketan anyaman"],
+      ["ຂອງຝາກ", "*khǎwng-fàak*", "oleh-oleh"],
+      ["ເຮັດດ້ວຍມື", "*hét dûay mʉʉ*", "buatan tangan"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalau kamu ingin memastikan sesuatu benar-benar tenunan tangan, tanyakan *ເຮັດດ້ວຍມືບໍ່ hét dûay mʉʉ bàw* (buatan tangan?). Kata **ດ້ວຍ *dûay*** berarti \"dengan (alat)\": *ຂຽນດ້ວຍມື* (menulis dengan tangan), *ໄປດ້ວຍລົດເມ* (pergi dengan bus)."
+    },
+    {
+     "type": "p",
+     "text": "**ຂອງຝາກ *khǎwng-fàak*** (oleh-oleh) adalah kewajiban sosial yang nyata di Laos, sama seperti di Indonesia. Pulang dari perjalanan tanpa membawa sesuatu untuk rekan kerja akan diperhatikan — dan yang dibawa tidak perlu mahal, cukup ada."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "lo": "ເສື້ອ", "baca": "sʉ̂a", "id": "baju, kemeja" },
+  { "lo": "ເສື້ອຜ້າ", "baca": "sʉ̂a-phàa", "id": "pakaian" },
+  { "lo": "ໂສ້ງ", "baca": "sôong", "id": "celana" },
+  { "lo": "ສິ້ນ", "baca": "sîn", "id": "rok tenun Lao" },
+  { "lo": "ເກີບ", "baca": "kòep", "id": "sepatu, sandal" },
+  { "lo": "ໝວກ", "baca": "mùak", "id": "topi" },
+  { "lo": "ແວ່ນຕາ", "baca": "wèen-taa", "id": "kacamata" },
+  { "lo": "ກະເປົ໋າ", "baca": "ka-pǎo", "id": "tas" },
+  { "lo": "ແຂນ", "baca": "khěen", "id": "lengan" },
+  { "lo": "ຂະໜາດ", "baca": "kha-nàat", "id": "ukuran" },
+  { "lo": "ລອງ", "baca": "lawng", "id": "mencoba" },
+  { "lo": "ຫ້ອງລອງ", "baca": "hàwng lawng", "id": "ruang ganti" },
+  { "lo": "ຄັບ", "baca": "khap", "id": "sempit (baju)" },
+  { "lo": "ຫຼວມ", "baca": "lǔam", "id": "longgar" },
+  { "lo": "ພໍດີ", "baca": "phaw-dii", "id": "pas" },
+  { "lo": "ສັ້ນ", "baca": "sân", "id": "pendek" },
+  { "lo": "ຍາວ", "baca": "nyáao", "id": "panjang" },
+  { "lo": "ໜາ", "baca": "nǎa", "id": "tebal" },
+  { "lo": "ບາງ", "baca": "baang", "id": "tipis" },
+  { "lo": "ກວ້າງ", "baca": "kwâang", "id": "lebar" },
+  { "lo": "ແຄບ", "baca": "khêep", "id": "sempit (ruang)" },
+  { "lo": "ປ່ຽນ", "baca": "pìan", "id": "menukar, mengganti" },
+  { "lo": "ພັບ", "baca": "pháp", "id": "melipat" },
+  { "lo": "ຕັດ", "baca": "tát", "id": "memotong" },
+  { "lo": "ຄູ່", "baca": "khùu", "id": "pasang (kata bantu)" },
+  { "lo": "ຜ້າໄໝ", "baca": "phàa-mǎi", "id": "kain sutra" },
+  { "lo": "ຜ້າຝ້າຍ", "baca": "phàa-fâai", "id": "kain katun" },
+  { "lo": "ເຄື່ອງເງິນ", "baca": "khʉ̂ang-ngóen", "id": "kerajinan perak" },
+  { "lo": "ຂອງຝາກ", "baca": "khǎwng-fàak", "id": "oleh-oleh" },
+  { "lo": "ດ້ວຍ", "baca": "dûay", "id": "dengan (alat)" },
+  { "lo": "ມື", "baca": "mʉʉ", "id": "tangan" },
+  { "lo": "ຮູ້", "baca": "hûu", "id": "tahu" },
+  { "lo": "ຄິດເງິນຕື່ມ", "baca": "khit ngóen tʉ̀ʉm", "id": "biaya tambahan" },
+  { "lo": "ໂມງແຂນ", "baca": "móong khěen", "id": "jam tangan" },
+  { "lo": "ຖົງຕີນ", "baca": "thǒng-tiin", "id": "kaus kaki" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan ຄັບ, ຫຼວມ, ສັ້ນ, ຍາວ, atau ພໍດີ.",
+   "items": [
+    "ເສື້ອໂຕນີ້____ໄປ ຂ້ອຍໃສ່ບໍ່ໄດ້ (kesempitan)",
+    "ແຂນ____ໄປໜ້ອຍໜຶ່ງ (lengannya agak kepanjangan)",
+    "ໂຕນີ້____ເລີຍ ເອົາເລີຍ (pas banget)",
+    "ໂສ້ງ____ໄປ ຕ້ອງໃສ່ສາຍແອວ (kelonggaran)",
+    "ສິ້ນຜືນນີ້____ໄປ (kependekan)"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi permintaan yang tepat di toko.",
+   "items": [
+    "kamu ingin mencoba baju itu",
+    "kamu ingin ukuran yang lebih besar",
+    "kamu ingin warna lain",
+    "kamu bertanya di mana ruang ganti",
+    "kamu bertanya apakah bisa ditukar"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ບໍ່ / ໄດ້ / ໃສ່ / ລອງ",
+    "ບໍ່ / ນີ້ / ມີ / ກວ່າ / ໃຫຍ່",
+    "ໜຶ່ງ / ຄັບ / ໜ້ອຍ",
+    "ໃສ / ຢູ່ / ຫ້ອງລອງ",
+    "ບໍ່ / ໄດ້ / ປ່ຽນ / ເອົາມາ"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Lao.",
+   "items": [
+    "Cari kemeja lengan panjang. Ada yang putih?",
+    "Saya tidak tahu ukurannya. Boleh dicoba?",
+    "Agak sempit. Ada yang lebih besar dari ini?",
+    "Yang ini pas, tapi lengannya agak kepanjangan.",
+    "Ambil yang ini. Berapa?",
+    "Kalau tidak pas, bisa ditukar?"
+   ]
+  }
+ ],
+ "answers": [
+  "ຄັບ — ຍາວ — ພໍດີ — ຫຼວມ — ສັ້ນ",
+  "ລອງໃສ່ໄດ້ບໍ່ — ມີໃຫຍ່ກວ່ານີ້ບໍ່ — ມີສີອື່ນບໍ່ — ຫ້ອງລອງຢູ່ໃສ — ເອົາມາປ່ຽນໄດ້ບໍ່",
+  "ລອງໃສ່ໄດ້ບໍ່ — ມີໃຫຍ່ກວ່ານີ້ບໍ່ — ຄັບໜ້ອຍໜຶ່ງ — ຫ້ອງລອງຢູ່ໃສ — ເອົາມາປ່ຽນໄດ້ບໍ່",
+  "ຫາເສື້ອແຂນຍາວ ມີສີຂາວບໍ່ — ຂ້ອຍບໍ່ຮູ້ຂະໜາດ ລອງໃສ່ໄດ້ບໍ່ — ຄັບໜ້ອຍໜຶ່ງ ມີໃຫຍ່ກວ່ານີ້ບໍ່ — ໂຕນີ້ພໍດີ ແຕ່ແຂນຍາວໄປໜ້ອຍໜຶ່ງ — ເອົາໂຕນີ້ ເທົ່າໃດ — ຖ້າບໍ່ພໍດີ ເອົາມາປ່ຽນໄດ້ບໍ່"
+ ],
+ "wave": "Ulangi unit 10: tutup bahasa Laonya, lalu gambarkan tempat tinggalmu dan letak lima barang di dalamnya — dari ingatan."
+}

@@ -1,0 +1,288 @@
+{
+ "title": "Telepon, pesan, dan bertukar kontak",
+ "title_target": "ໂທລະສັບ ແລະ ຂໍ້ຄວາມ — Thóo-la-sáp lae khàw-khwáam",
+ "goal": "Menelepon dan menerima telepon, menukar nomor dan akun, menulis pesan singkat yang tidak terdengar kaku, dan mengatasi sambungan yang buruk.",
+ "bekal": [
+  "membuka dan menutup telepon",
+  "menukar nomor dengan ເບີໂທ",
+  "mengatasi gangguan: ຟັງບໍ່ຄັກ",
+  "menitip pesan dengan ຝາກບອກ",
+  "menulis pesan singkat yang wajar"
+ ],
+ "dialogs": [
+  {
+   "title": "ບົດສົນທະນາ — Menelepon karena akan terlambat",
+   "intro": "Budi terjebak hujan dan menelepon Bounmy. Perhatikan bahwa percakapan telepon bahasa Lao dibuka dengan kata yang sama sekali berbeda dari sapaan biasa.",
+   "lines": [
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ຮາໂລ|Haa-lóo] [ແມ່ນ|Mèen][ໃຜ|phǎi][ນໍ|náw]",
+     "id": "Halo? Ini siapa ya?",
+     "literal": "halo. adalah — siapa — ya?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ຮາໂລ|Haa-lóo] [ບູດີ|Buu-dii][ເອງ|éeng] [ຟັງ|Fáng][ຄັກ|khak][ບໍ່|bàw]",
+     "id": "Halo, ini Budi. Kedengaran jelas tidak?",
+     "literal": "halo. Budi — sendiri. dengar — jelas — kah?"
+    },
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ຟັງ|Fáng][ບໍ່|bàw][ຄັກ|khak] [ສັນຍານ|Sǎn-nyáan][ບໍ່|bàw][ດີ|dii] [ເວົ້າ|Vâo][ດັງໆ|dang-dang][ແດ່|dèe]",
+     "id": "Kurang jelas. Sinyalnya jelek. Bicara lebih keras dong.",
+     "literal": "dengar — tidak — jelas. sinyal — tidak — baik. bicara — keras-keras — sedikit."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ດຽວນີ້|Dǐao-nîi][ຄັກ|khak][ບໍ່|bàw] [ຂ້ອຍ|Khàwy][ຊິ|si][ມາ|maa][ຊ້າ|sâa][ໜ້ອຍ|nàwy][ໜຶ່ງ|nʉ̀ng] [ຝົນ|Fǒn][ຕົກ|tók][ໜັກ|nak]",
+     "id": "Sekarang jelas tidak? Saya akan agak telat. Hujannya deras.",
+     "literal": "sekarang — jelas — kah? saya — akan — datang — lambat — sedikit — satu. hujan — jatuh — berat."
+    },
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ຄັກ|Khak][ແລ້ວ|lèeo] [ບໍ່ເປັນຫຍັງ|Bàw pen nyǎng] [ຊິ|Si][ຮອດ|hâwt][ຈັກ|ják][ໂມງ|móong]",
+     "id": "Jelas sekarang. Tidak apa-apa. Sampai jam berapa kira-kira?",
+     "literal": "jelas — sudah. tidak — jadi — apa. akan — sampai — berapa — jam?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ປະມານ|Pa-máan][ເຈັດ|jét][ໂມງ|móong] [ຖ້າ|Thàa][ຝົນ|fǒn][ເຊົາ|sao] [ອາດ|àat][ຊິ|si][ໄວ|vái][ກວ່າ|kwàa][ນັ້ນ|nân]",
+     "id": "Sekitar jam tujuh. Kalau hujannya reda, mungkin lebih cepat.",
+     "literal": "kira-kira — tujuh — jam. kalau — hujan — reda — barangkali — akan — cepat — lebih — itu."
+    },
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ໄດ້|Dâi] [ຂ້ອຍ|Khàwy][ຊິ|si][ຖ້າ|thàa][ຢູ່|yùu][ຮ້ານ|hâan] [ຝາກ|Fàak][ບອກ|bàwk][ໝູ່|mùu][ໃຫ້|hài][ບໍ່|bàw]",
+     "id": "Baik, saya tunggu di warung. Perlu saya sampaikan ke teman-teman?",
+     "literal": "bisa. saya — akan — tunggu — berlangsung — warung. titip — bilang — teman — beri — kah?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ຝາກ|Fàak][ບອກ|bàwk][ແດ່|dèe] [ບອກ|Bàwk][ວ່າ|vàa][ຢ່າ|yàa][ຖ້າ|thàa][ຂ້ອຍ|khàwy] [ສັ່ງ|Sáng][ອາຫານ|aa-hǎan][ກ່ອນ|kàwn][ເລີຍ|lóei]",
+     "id": "Tolong sampaikan. Bilang jangan tunggu saya, pesan makanan duluan saja.",
+     "literal": "titip — bilang — sedikit. bilang — bahwa — jangan — tunggu — saya. pesan — makanan — dulu — langsung."
+    },
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ໄດ້|Dâi][ເລີຍ|lóei] [ສົ່ງ|Sóng][ຕຳແໜ່ງ|tam-nèng][ໃຫ້|hài][ຂ້ອຍ|khàwy][ໃນ|nai][ວອດແອັບ|wàwt-èp][ເດີ້|dòe]",
+     "id": "Boleh. Kirim lokasimu lewat WhatsApp ya.",
+     "literal": "bisa — langsung. kirim — posisi — beri — saya — dalam — WhatsApp — ya."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ໄດ້|Dâi] [ເບີ|Bòe][ໂທ|thóo][ເຈົ້າ|jâo][ຄື|khʉʉ][ເກົ່າ|kào][ບໍ່|bàw]",
+     "id": "Baik. Nomor kamu masih yang lama?",
+     "literal": "bisa. nomor — telepon — kamu — seperti — lama — kah?"
+    },
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ຄື|Khʉʉ][ເກົ່າ|kào] [ພົບ|Phop][ກັນ|kan][ຕອນ|tawn][ແລງ|léeng][ເດີ້|dòe] [ຂັບ|Khap][ລົດ|lot][ລະວັງ|la-wáng][ເດີ້|dòe]",
+     "id": "Masih sama. Ketemu nanti sore ya. Hati-hati di jalan.",
+     "literal": "seperti — lama. bertemu — bersama — saat — petang — ya. kemudi — kendaraan — hati-hati — ya."
+    }
+   ],
+   "notes": [
+    "**ຮາໂລ haa-lóo dipakai HANYA di telepon.** Menyapa orang di depanmu dengan *ຮາໂລ* terdengar aneh. Untuk tatap muka, tetap *ສະບາຍດີ*. Kebiasaan ini datang dari bahasa Prancis lewat *allô*, dan dipakai di seluruh bekas Indochina.",
+    "**ຄັກ khak = \"jelas, bagus, rapi\", dan ini kata yang sangat Lao.** *ຟັງບໍ່ຄັກ* (kedengarannya tidak jelas), *ເບິ່ງບໍ່ຄັກ* (tidak terlihat jelas), *ຄັກແລ້ວ* (bagus, oke). Di percakapan sehari-hari, *ຄັກ* juga berarti \"keren\": *ຄັກຫຼາຍ* (keren banget).",
+    "**ເອງ éeng sesudah nama = \"ini saya sendiri\".** *ບູດີເອງ* adalah cara paling alami memperkenalkan diri di telepon — bukan *ຂ້ອຍແມ່ນບູດີ* yang terdengar seperti membaca dokumen.",
+    "**ຝາກບອກ fàak bàwk = \"titip pesan\".** Kata *ຝາກ fàak* berarti \"menitipkan\": *ຝາກເງິນ* (menabung/menitip uang), *ຂອງຝາກ* (oleh-oleh — harfiahnya \"barang titipan\"). Untuk minta seseorang menyampaikan pesan: *ຝາກບອກລາວແດ່* (tolong sampaikan ke dia).",
+    "**ປະມານ pa-máan = \"kira-kira, sekitar\".** *ປະມານເຈັດໂມງ* (sekitar jam tujuh), *ປະມານສາມກິໂລ* (kira-kira tiga kilometer). Ini kata yang membuat janjimu longgar dengan cara yang jujur — dan sangat sering dipakai.",
+    "**ສັ່ງ sáng = \"memesan, menyuruh\".** *ສັ່ງອາຫານ* (memesan makanan), *ສັ່ງເຄື່ອງ* (memesan barang), *ສັ່ງໃຫ້ໄປ* (menyuruh pergi). Bandingkan dengan *ຈອງ jawng* (memesan tempat) dari unit 7.",
+    "**ດັງໆ dang-dang = \"keras-keras (suara)\".** Penggandaan kata sifat di bahasa Lao melunakkan sekaligus memperjelas: *ຊ້າໆ* (pelan-pelan), *ໄວໆ* (cepat-cepat), *ດີໆ* (baik-baik). Ini pola yang sama persis dengan bahasa Indonesia.",
+    "**ຄືເກົ່າ khʉʉ kào = \"masih yang lama, seperti biasa\".** Jawaban yang berguna untuk pertanyaan apa pun tentang sesuatu yang tidak berubah: nomor telepon, alamat, kabar. *ສະບາຍດີບໍ່ — ຄືເກົ່າ* (apa kabar? — begitu-begitu saja).",
+    "**Tentang telepon di Laos.** Dua aplikasi menguasai segalanya: **WhatsApp** untuk percakapan pribadi dan kerja, dan **Facebook** — *ເຟສບຸກ Fêet-búk* — untuk hampir semua hal lain, termasuk toko, restoran, dan pengumuman resmi. Banyak usaha kecil di Laos tidak punya situs web sama sekali, cuma halaman Facebook. Bertukar akun Facebook sama lumrahnya dengan bertukar nomor."
+   ],
+   "grammars": [
+    {
+     "title": "Kalimat telepon dari awal sampai tutup",
+     "table": {
+      "head": ["Lao", "Baca", "Arti"],
+      "rows": [
+       ["ຮາໂລ", "*haa-lóo*", "halo (telepon)"],
+       ["ແມ່ນໃຜນໍ", "*mèen phǎi náw*", "ini siapa ya?"],
+       ["…ເອງ", "*…éeng*", "ini … (nama diri)"],
+       ["ຢູ່ບໍ່", "*yùu bàw*", "ada di tempat? (mencari orang)"],
+       ["ຂໍເວົ້ານຳ…ແດ່", "*khǎw vâo nám… dèe*", "boleh bicara dengan…?"],
+       ["ລາວບໍ່ຢູ່", "*láao bàw yùu*", "dia tidak ada"],
+       ["ຝາກບອກໄດ້ບໍ່", "*fàak bàwk dâi bàw*", "boleh titip pesan?"],
+       ["ຟັງບໍ່ຄັກ", "*fáng bàw khak*", "suaranya tidak jelas"],
+       ["ສັນຍານບໍ່ດີ", "*sǎn-nyáan bàw dii*", "sinyalnya jelek"],
+       ["ໂທຫາໃໝ່ໄດ້ບໍ່", "*thóo hǎa mài dâi bàw*", "boleh telepon ulang?"],
+       ["ດຽວໂທຫາຄືນ", "*dǐao thóo hǎa khʉ́ʉn*", "nanti saya telepon balik"],
+       ["ໄປກ່ອນເດີ້", "*pai kàwn dòe*", "saya tutup dulu ya"]
+      ]
+     },
+     "after": [
+      "Menutup telepon dalam bahasa Lao tidak memakai kata \"sampai jumpa\" yang formal. Yang wajar: *ໄປກ່ອນເດີ້* (saya duluan ya) atau sekadar *ໂອເຄ ເດີ້ ôo-khée dòe*."
+     ]
+    },
+    {
+     "title": "Kata seputar telepon dan internet",
+     "table": {
+      "head": ["Lao", "Baca", "Indonesia", "Lao", "Baca", "Indonesia"],
+      "rows": [
+       ["ໂທລະສັບ", "*thóo-la-sáp*", "telepon, HP", "ເບີໂທ", "*bòe thóo*", "nomor telepon"],
+       ["ໂທ", "*thóo*", "menelepon", "ຮັບສາຍ", "*hap sǎai*", "mengangkat telepon"],
+       ["ວາງສາຍ", "*wáang sǎai*", "menutup telepon", "ສາຍຫຼຸດ", "*sǎai lut*", "sambungan terputus"],
+       ["ຂໍ້ຄວາມ", "*khàw-khwáam*", "pesan teks", "ສົ່ງ", "*sóng*", "mengirim"],
+       ["ອິນເຕີເນັດ", "*in-tôe-nét*", "internet", "ໄວໄຟ", "*wái-fái*", "wifi"],
+       ["ແອັບ", "*èp*", "aplikasi", "ເຟສບຸກ", "*Fêet-búk*", "Facebook"],
+       ["ຮູບໂປຣຟາຍ", "*hûup pôo-fáai*", "foto profil", "ຕຳແໜ່ງ", "*tam-nèng*", "lokasi, posisi"],
+       ["ແບັດໝົດ", "*bèt mót*", "baterai habis", "ສາກໄຟ", "*sàak fái*", "mengisi daya"]
+      ]
+     },
+     "after": [
+      "**ສາຍ *sǎai*** berarti \"kabel, jalur\", dan dipakai untuk sambungan telepon: *ຮັບສາຍ* (angkat), *ວາງສາຍ* (tutup), *ສາຍຫຼຸດ* (putus). Kata yang sama juga berarti \"jalur bus\" dan \"garis keturunan\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menulis pesan singkat yang terdengar wajar",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Lao", "Baca", "Arti", "Kapan"],
+     "rows": [
+      ["ສະບາຍດີເດີ້", "*sa-baai-dii dòe*", "hai", "membuka pesan"],
+      ["ຫວ່າງບໍ່", "*wàang bàw*", "lagi luang?", "sebelum minta tolong"],
+      ["ຢູ່ໃສ", "*yùu sǎi*", "di mana?", "mencari orang"],
+      ["ຮອດແລ້ວບໍ່", "*hâwt lèeo bàw*", "sudah sampai?", "menunggu"],
+      ["ກຳລັງໄປ", "*kam-láng pai*", "otw", "menjawab"],
+      ["ດຽວມາ", "*dǐao maa*", "sebentar lagi datang", "menjawab"],
+      ["ຂໍໂທດມາຊ້າ", "*khǎw-thôot maa sâa*", "maaf telat", "minta maaf"],
+      ["ຂອບໃຈເດີ້", "*khàwp-jai dòe*", "makasih ya", "menutup"],
+      ["ໂອເຄ", "*ôo-khée*", "oke", "setuju"],
+      ["ຮັບຊາບ", "*hap sâap*", "siap, dicatat", "resmi"],
+      ["ນອນເດີ້", "*náwn dòe*", "tidur ya", "menutup malam"],
+      ["ຝັນດີ", "*fǎn dii*", "mimpi indah", "menutup malam"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bahasa pesan singkat Lao jauh lebih pendek daripada bahasa lisannya. Kata ganti sering dibuang seluruhnya: *ຮອດແລ້ວບໍ່* tanpa \"kamu\", *ກຳລັງໄປ* tanpa \"saya\". Menulis kalimat lengkap di chat justru terdengar formal — sama persis seperti dalam bahasa Indonesia."
+    },
+    {
+     "type": "p",
+     "text": "Emoji dipakai sangat banyak, dan tertawa ditulis dengan angka: **555** — karena angka lima dalam bahasa Lao dan Thai dibaca *hāa*, jadi \"555\" adalah \"ha ha ha\". Kalau seseorang mengirimimu *555*, dia sedang tertawa, bukan memberi kode."
+    }
+   ]
+  },
+  {
+   "title": "Bertukar kontak",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Lao", "Baca", "Arti"],
+     "rows": [
+      ["ຂໍເບີໂທແດ່ໄດ້ບໍ່", "*khǎw bòe thóo dèe dâi bàw*", "boleh minta nomormu?"],
+      ["ເບີຂ້ອຍແມ່ນ…", "*bòe khàwy mèen…*", "nomor saya …"],
+      ["ມີເຟສບຸກບໍ່", "*míi Fêet-búk bàw*", "punya Facebook?"],
+      ["ຊື່ເຟສຫຍັງ", "*sʉ̂ʉ Fêet nyǎng*", "nama Facebook-nya apa?"],
+      ["ຂ້ອຍຊິສົ່ງໄປໃຫ້", "*khàwy si sóng pai hài*", "nanti saya kirimkan"],
+      ["ບັນທຶກເບີໄວ້ແລ້ວ", "*ban-thʉ́k bòe wâi lèeo*", "nomornya sudah saya simpan"],
+      ["ໂທຫາຂ້ອຍໄດ້ຕະຫຼອດ", "*thóo hǎa khàwy dâi ta-làwt*", "telepon saya kapan saja"],
+      ["ຕິດຕໍ່ກັນເດີ້", "*tít-taw kan dòe*", "tetap berhubungan ya"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Nomor telepon Laos dibaca **angka per angka**, bukan dikelompokkan seperti kebiasaan Indonesia. Nomor 020 5555 1234 dibaca *sǔun-sǎwng-sǔun hāa-hāa-hāa-hāa nʉ̀ng-sǎwng-sǎam-sìi*. Semua nomor ponsel dimulai dengan **020**."
+    },
+    {
+     "type": "p",
+     "text": "**ຕິດຕໍ່ *tít-taw*** berarti \"menghubungi\" dan *ຕິດຕໍ່ກັນ* berarti \"saling berhubungan\". Kalimat *ຕິດຕໍ່ກັນເດີ້* adalah perpisahan yang hangat dan sering dipakai — setara dengan \"jangan hilang ya\" dalam bahasa Indonesia."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "lo": "ຮາໂລ", "baca": "haa-lóo", "id": "halo (telepon)" },
+  { "lo": "ໂທລະສັບ", "baca": "thóo-la-sáp", "id": "telepon, HP" },
+  { "lo": "ເບີໂທ", "baca": "bòe thóo", "id": "nomor telepon" },
+  { "lo": "ໂທຫາ", "baca": "thóo hǎa", "id": "menelepon (seseorang)" },
+  { "lo": "ຮັບສາຍ", "baca": "hap sǎai", "id": "mengangkat telepon" },
+  { "lo": "ວາງສາຍ", "baca": "wáang sǎai", "id": "menutup telepon" },
+  { "lo": "ສາຍ", "baca": "sǎai", "id": "jalur, sambungan" },
+  { "lo": "ສັນຍານ", "baca": "sǎn-nyáan", "id": "sinyal" },
+  { "lo": "ຄັກ", "baca": "khak", "id": "jelas, bagus, keren" },
+  { "lo": "ດັງ", "baca": "dang", "id": "keras (suara), terkenal" },
+  { "lo": "ຝາກ", "baca": "fàak", "id": "menitipkan" },
+  { "lo": "ຝາກບອກ", "baca": "fàak bàwk", "id": "titip pesan" },
+  { "lo": "ຂໍ້ຄວາມ", "baca": "khàw-khwáam", "id": "pesan teks" },
+  { "lo": "ສົ່ງ", "baca": "sóng", "id": "mengirim" },
+  { "lo": "ສັ່ງ", "baca": "sáng", "id": "memesan, menyuruh" },
+  { "lo": "ປະມານ", "baca": "pa-máan", "id": "kira-kira" },
+  { "lo": "ຕຳແໜ່ງ", "baca": "tam-nèng", "id": "lokasi, jabatan" },
+  { "lo": "ອິນເຕີເນັດ", "baca": "in-tôe-nét", "id": "internet" },
+  { "lo": "ໄວໄຟ", "baca": "wái-fái", "id": "wifi" },
+  { "lo": "ເຟສບຸກ", "baca": "Fêet-búk", "id": "Facebook" },
+  { "lo": "ແອັບ", "baca": "èp", "id": "aplikasi" },
+  { "lo": "ແບັດ", "baca": "bèt", "id": "baterai" },
+  { "lo": "ສາກໄຟ", "baca": "sàak fái", "id": "mengisi daya" },
+  { "lo": "ບັນທຶກ", "baca": "ban-thʉ́k", "id": "menyimpan, mencatat" },
+  { "lo": "ຕິດຕໍ່", "baca": "tít-taw", "id": "menghubungi" },
+  { "lo": "ຕະຫຼອດ", "baca": "ta-làwt", "id": "sepanjang, kapan saja" },
+  { "lo": "ຄືເກົ່າ", "baca": "khʉʉ kào", "id": "masih sama seperti dulu" },
+  { "lo": "ໂອເຄ", "baca": "ôo-khée", "id": "oke" },
+  { "lo": "ຝັນດີ", "baca": "fǎn dii", "id": "mimpi indah" },
+  { "lo": "ຮັບຊາບ", "baca": "hap sâap", "id": "siap, dicatat (resmi)" },
+  { "lo": "ຂໍ້ມູນ", "baca": "khàw-múun", "id": "data, informasi" },
+  { "lo": "ຫຼຸດ", "baca": "lut", "id": "terputus; berkurang" },
+  { "lo": "ເອງ", "baca": "éeng", "id": "sendiri; ini saya" },
+  { "lo": "ຕອບ", "baca": "tàwp", "id": "menjawab, membalas" },
+  { "lo": "ຖາມ", "baca": "thǎam", "id": "bertanya" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi kalimat telepon yang tepat.",
+   "items": [
+    "____ (membuka telepon)",
+    "____ (memperkenalkan diri: ini Budi)",
+    "____ (suaranya tidak jelas)",
+    "____ (boleh titip pesan?)",
+    "____ (nanti saya telepon balik)"
+   ]
+  },
+  {
+   "prompt": "Tulis pesan singkat ini dalam bahasa Lao, sependek yang wajar.",
+   "items": [
+    "lagi luang?",
+    "sudah sampai?",
+    "otw",
+    "maaf telat",
+    "makasih ya"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ບໍ່ / ຄັກ / ຟັງ",
+    "ແດ່ / ດັງໆ / ເວົ້າ",
+    "ໜຶ່ງ / ຊ້າ / ຊິມາ / ຂ້ອຍ / ໜ້ອຍ",
+    "ບໍ່ / ໄດ້ / ແດ່ / ຂໍເບີໂທ",
+    "ເດີ້ / ຕິດຕໍ່ກັນ"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Lao.",
+   "items": [
+    "Halo, ini Budi. Kedengaran jelas tidak?",
+    "Kurang jelas, sinyalnya jelek.",
+    "Saya akan agak telat, hujannya deras.",
+    "Sekitar jam tujuh.",
+    "Tolong sampaikan: jangan tunggu saya.",
+    "Kirim lokasimu ya. Hati-hati di jalan."
+   ]
+  }
+ ],
+ "answers": [
+  "ຮາໂລ — ບູດີເອງ — ຟັງບໍ່ຄັກ — ຝາກບອກໄດ້ບໍ່ — ດຽວໂທຫາຄືນ",
+  "ຫວ່າງບໍ່ — ຮອດແລ້ວບໍ່ — ກຳລັງໄປ — ຂໍໂທດມາຊ້າ — ຂອບໃຈເດີ້",
+  "ຟັງບໍ່ຄັກ — ເວົ້າດັງໆແດ່ — ຂ້ອຍຊິມາຊ້າໜ້ອຍໜຶ່ງ — ຂໍເບີໂທແດ່ໄດ້ບໍ່ — ຕິດຕໍ່ກັນເດີ້",
+  "ຮາໂລ ບູດີເອງ ຟັງຄັກບໍ່ — ຟັງບໍ່ຄັກ ສັນຍານບໍ່ດີ — ຂ້ອຍຊິມາຊ້າໜ້ອຍໜຶ່ງ ຝົນຕົກໜັກ — ປະມານເຈັດໂມງ — ຝາກບອກແດ່ ບອກວ່າຢ່າຖ້າຂ້ອຍ — ສົ່ງຕຳແໜ່ງໃຫ້ຂ້ອຍເດີ້ ຂັບລົດລະວັງເດີ້"
+ ],
+ "wave": "Ulangi unit 16: tutup bahasa Laonya, lalu ceritakan tiga rencanamu bulan depan dengan tingkat kepastian yang berbeda-beda."
+}

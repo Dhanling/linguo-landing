@@ -1,0 +1,279 @@
+{
+ "title": "Menginap dan bepergian",
+ "title_target": "ຢູ່ໂຮງແຮມ ແລະ ເດີນທາງ — Yùu hoong-héem lae dòen-tháang",
+ "goal": "Memesan kamar, mengeluh soal fasilitas yang tidak jalan, membeli tiket bus atau kereta, dan mengurus keperluan di perbatasan — unit yang membuatmu bisa bepergian sendiri di seluruh Laos.",
+ "bekal": [
+  "memesan kamar dan menanyakan fasilitas",
+  "mengeluh dengan ໃຊ້ບໍ່ໄດ້ dan ເພ",
+  "membeli tiket dan bertanya jadwal",
+  "ອອກ dan ຮອດ untuk berangkat dan tiba",
+  "urusan dokumen: ໜັງສືຜ່ານແດນ dan ວີຊາ"
+ ],
+ "dialogs": [
+  {
+   "title": "ບົດສົນທະນາ — Check-in di penginapan, Luang Prabang",
+   "intro": "Budi tiba di penginapan kecil. Perhatikan bahwa hampir semua pertanyaannya memakai pola yang sudah kamu pelajari — *ມີ…ບໍ່*, *…ໄດ້ບໍ່*, *…ເທົ່າໃດ*.",
+   "lines": [
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ສະບາຍດີ|Sa-baai-dii] [ຂ້ອຍ|Khàwy][ຈອງ|jawng][ຫ້ອງ|hàwng][ໄວ້|wâi][ແລ້ວ|lèeo] [ຊື່|Sʉ̂ʉ][ບູດີ|Buu-dii]",
+     "id": "Halo. Saya sudah pesan kamar. Atas nama Budi.",
+     "literal": "sehat-baik. saya — pesan — kamar — simpan — sudah. nama — Budi."
+    },
+    {
+     "speaker": "ພະນັກງານ:",
+     "text": "[ສະບາຍດີ|Sa-baai-dii][ເຈົ້າ|jâo] [ຂໍ|Khǎw][ໜັງສືຜ່ານແດນ|nǎng-sʉ̌ʉ-phàan-deen][ແດ່|dèe] [ພັກ|Phak][ຈັກ|ják][ຄືນ|khʉ́ʉn]",
+     "id": "Halo. Boleh paspornya. Menginap berapa malam?",
+     "literal": "sehat-baik — iya. minta — surat-lewat-batas — sedikit. menginap — berapa — malam?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ສອງ|Sǎwng][ຄືນ|khʉ́ʉn] [ນີ້|Nîi][ໜັງສືຜ່ານແດນ|nǎng-sʉ̌ʉ-phàan-deen] [ຄ່າ|Khàa][ຫ້ອງ|hàwng][ຄືນ|khʉ́ʉn][ລະ|la][ເທົ່າໃດ|thao-dai]",
+     "id": "Dua malam. Ini paspornya. Kamarnya semalam berapa?",
+     "literal": "dua — malam. ini — paspor. biaya — kamar — malam — per — berapa?"
+    },
+    {
+     "speaker": "ພະນັກງານ:",
+     "text": "[ສາມ|Sǎam][ແສນ|sěen][ກີບ|kìip][ຕໍ່|taw][ຄືນ|khʉ́ʉn] [ລວມ|Lúam][ອາຫານ|aa-hǎan][ເຊົ້າ|sâo][ແລ້ວ|lèeo]",
+     "id": "Tiga ratus ribu kip per malam. Sudah termasuk sarapan.",
+     "literal": "tiga — ratus-ribu — kip — per — malam. gabung — makanan — pagi — sudah."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ດີ|Dii] [ມີ|Míi][ໄວໄຟ|wái-fái][ບໍ່|bàw] [ແລ້ວ|Lèeo][ນ້ຳ|nâm][ຮ້ອນ|hâwn][ມີ|míi][ບໍ່|bàw]",
+     "id": "Baik. Ada wifi? Lalu air panas ada?",
+     "literal": "baik. ada — wifi — kah? lalu — air — panas — ada — kah?"
+    },
+    {
+     "speaker": "ພະນັກງານ:",
+     "text": "[ມີ|Míi][ທັງ|tháng][ສອງ|sǎwng][ຢ່າງ|yàang] [ລະຫັດ|La-hát][ໄວໄຟ|wái-fái][ຢູ່|yùu][ເທິງ|thóeng][ໂຕະ|tó] [ອາຫານ|Aa-hǎan][ເຊົ້າ|sâo][ແຕ່|tèe][ເຈັດ|jét][ຫາ|hǎa][ເກົ້າ|kào][ໂມງ|móong]",
+     "id": "Dua-duanya ada. Sandi wifi di atas meja. Sarapan jam tujuh sampai sembilan.",
+     "literal": "ada — semua — dua — macam. kode — wifi — di — atas — meja. makanan — pagi — dari — tujuh — sampai — sembilan — jam."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ຂອບໃຈ|Khàwp-jai] [ຂໍ|Khǎw][ຖາມ|thǎam][ອີກ|ìik][ຂໍ້|khàw][ໜຶ່ງ|nʉ̀ng] [ປີ້|Pîi][ລົດ|lot][ໄປ|pai][ວັງວຽງ|Wáng-Wíang][ຊື້|sʉ̂ʉ][ຢູ່|yùu][ໃສ|sǎi]",
+     "id": "Terima kasih. Mau tanya satu lagi. Tiket bus ke Vang Vieng beli di mana?",
+     "literal": "terima-kasih. minta — tanya — lagi — butir — satu. tiket — kendaraan — pergi — Vang-Vieng — beli — di — mana?"
+    },
+    {
+     "speaker": "ພະນັກງານ:",
+     "text": "[ຊື້|Sʉ̂ʉ][ຢູ່|yùu][ນີ້|nîi][ກໍ|kaw][ໄດ້|dâi] [ລົດ|Lot][ອອກ|àwk][ແປດ|pèet][ໂມງ|móong][ເຊົ້າ|sâo] [ຮອດ|Hâwt][ບ່າຍ|bàai][ສອງ|sǎwng][ໂມງ|móong]",
+     "id": "Di sini juga bisa. Busnya berangkat jam delapan pagi, tiba jam dua siang.",
+     "literal": "beli — di — sini — juga — bisa. kendaraan — keluar — delapan — jam — pagi. sampai — siang — dua — jam."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ເອົາ|Ao][ໜຶ່ງ|nʉ̀ng][ໃບ|bai][ສຳລັບ|sǎm-lap][ມື້ຮື|mʉ̂ʉ-hʉ̌ʉ][ເດີ້|dòe]",
+     "id": "Ambil satu tiket untuk lusa ya.",
+     "literal": "ambil — satu — lembar — untuk — lusa — ya."
+    },
+    {
+     "speaker": "ພະນັກງານ:",
+     "text": "[ໄດ້|Dâi][ເລີຍ|lóei] [ຫ້ອງ|Hàwng][ເຈົ້າ|jâo][ເບີ|bòe][ສິບ|síp][ສອງ|sǎwng] [ຊັ້ນ|Sân][ສອງ|sǎwng] [ນີ້|Nîi][ກະແຈ|ka-jèe]",
+     "id": "Baik. Kamar kamu nomor dua belas, lantai dua. Ini kuncinya.",
+     "literal": "bisa — langsung. kamar — kamu — nomor — sepuluh — dua. lantai — dua. ini — kunci."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ຂອບໃຈ|Khàwp-jai][ຫຼາຍໆ|lǎai-lǎai][ເດີ້|dòe]",
+     "id": "Terima kasih banyak ya.",
+     "literal": "terima-kasih — banyak-banyak — ya."
+    }
+   ],
+   "notes": [
+    "**ຄືນລະ khʉ́ʉn la = \"per malam\", ຕໍ່ຄືນ taw khʉ́ʉn juga berarti sama.** Yang pertama lebih santai, yang kedua sedikit lebih resmi dan sering tertulis di daftar harga. Ingat pola *ລະ la* dari unit 14: *ຄົນລະ* (per orang), *ມື້ລະ* (per hari).",
+    "**ໜັງສືຜ່ານແດນ nǎng-sʉ̌ʉ-phàan-deen = \"paspor\", harfiahnya \"surat melewati batas\".** Panjang, dan orang sering memendekkannya jadi *ພາສປໍ pháat-saw-páw* dari kata Inggris. Keduanya dimengerti; yang tertulis di formulir selalu yang panjang.",
+    "**ລວມ lúam = \"termasuk, digabung\".** *ລວມອາຫານເຊົ້າແລ້ວ* (sudah termasuk sarapan), *ລວມພາສີ* (termasuk pajak), *ບໍ່ລວມ* (belum termasuk). Ini kata yang wajib kamu tanyakan sebelum menyetujui harga apa pun.",
+    "**ທັງສອງຢ່າງ tháng sǎwng yàang = \"dua-duanya\".** Kata *ທັງ tháng* berarti \"seluruh, semua\": *ທັງໝົດ* (semuanya), *ທັງມື້* (sepanjang hari), *ທັງໂຕ* (seluruh badan).",
+    "**ອອກ àwk = \"berangkat, keluar\", ຮອດ hâwt = \"tiba\".** *ລົດອອກແປດໂມງ* (bus berangkat jam delapan), *ຮອດບ່າຍສອງໂມງ* (tiba jam dua siang). Untuk menanyakan jadwal: *ອອກຈັກໂມງ* dan *ຮອດຈັກໂມງ*.",
+    "**ແຕ່… ຫາ… tèe… hǎa… = \"dari… sampai…\".** *ແຕ່ເຈັດຫາເກົ້າໂມງ* (dari jam tujuh sampai sembilan). ⚠️ Kata *ແຕ່ tèe* di sini berarti \"dari\", bukan \"tetapi\" — dan yang membedakan cuma keberadaan *ຫາ* setelahnya.",
+    "**ສຳລັບ sǎm-lap = \"untuk\".** *ສຳລັບມື້ຮື* (untuk lusa), *ສຳລັບສອງຄົນ* (untuk dua orang). Bedanya dengan *ເພື່ອ phʉ̂a* (untuk, supaya) dari unit 16: *ສຳລັບ* menandai penerima atau peruntukan, *ເພື່ອ* menandai tujuan.",
+    "**ຂໍ້ khàw = kata bantu untuk pertanyaan dan butir.** *ຖາມອີກຂໍ້ໜຶ່ງ* (tanya satu hal lagi), *ຂໍ້ສອງ* (butir kedua). Kata yang sama muncul di *ຂໍ້ຄວາມ* (pesan) dan *ຂໍ້ມູນ* (data).",
+    "**Tentang menginap di Laos.** Penginapan wajib menyimpan data pasporm dan melaporkannya; itu sebabnya paspor diminta di depan. Kamu boleh minta dikembalikan setelah disalin — kalimatnya *ຂໍໜັງສືຜ່ານແດນຄືນແດ່ໄດ້ບໍ່*. Simpan salinan digitalnya sendiri, karena kehilangan paspor di Laos berarti perjalanan ke kedutaan di Vientiane."
+   ],
+   "grammars": [
+    {
+     "title": "Kamar dan fasilitas",
+     "table": {
+      "head": ["Lao", "Baca", "Indonesia", "Lao", "Baca", "Indonesia"],
+      "rows": [
+       ["ໂຮງແຮມ", "*hoong-héem*", "hotel", "ເຮືອນພັກ", "*hʉan-phak*", "penginapan, guesthouse"],
+       ["ຫ້ອງດ່ຽວ", "*hàwng dìao*", "kamar single", "ຫ້ອງຄູ່", "*hàwng khùu*", "kamar double"],
+       ["ຄ່າຫ້ອງ", "*khàa hàwng*", "tarif kamar", "ມັດຈຳ", "*mat-jam*", "deposit"],
+       ["ນ້ຳຮ້ອນ", "*nâm hâwn*", "air panas", "ເຄື່ອງແອ", "*khʉ̂ang-ee*", "AC"],
+       ["ຜ້າເຊັດໂຕ", "*phàa sét tǒo*", "handuk", "ຜ້າຫົ່ມ", "*phàa hòm*", "selimut"],
+       ["ໝອນ", "*mǎwn*", "bantal", "ລະຫັດ", "*la-hát*", "sandi, kode"],
+       ["ຊັ້ນ", "*sân*", "lantai (tingkat)", "ຂັ້ນໄດ", "*khân-dai*", "tangga"],
+       ["ອາຫານເຊົ້າ", "*aa-hǎan sâo*", "sarapan", "ລວມແລ້ວ", "*lúam lèeo*", "sudah termasuk"]
+      ]
+     },
+     "after": [
+      "Kalimat pengaduan yang paling berguna: **…ໃຊ້ບໍ່ໄດ້ *…sâi bàw dâi*** (…tidak bisa dipakai). *ເຄື່ອງແອໃຊ້ບໍ່ໄດ້* (AC-nya rusak), *ໄວໄຟໃຊ້ບໍ່ໄດ້* (wifinya tidak jalan), *ນ້ຳຮ້ອນບໍ່ອອກ* (air panasnya tidak keluar). Untuk barang yang rusak, katanya *ເພ phée*: *ປະຕູເພ* (pintunya rusak)."
+     ]
+    },
+    {
+     "title": "Tiket dan jadwal",
+     "table": {
+      "head": ["Lao", "Baca", "Arti"],
+      "rows": [
+       ["ປີ້ໄປ…ເທົ່າໃດ", "*pîi pai… thao-dai*", "tiket ke… berapa?"],
+       ["ມີລົດໄປ…ບໍ່", "*míi lot pai… bàw*", "ada kendaraan ke…?"],
+       ["ອອກຈັກໂມງ", "*àwk ják móong*", "berangkat jam berapa?"],
+       ["ຮອດຈັກໂມງ", "*hâwt ják móong*", "tiba jam berapa?"],
+       ["ໃຊ້ເວລາຈັກຊົ່ວໂມງ", "*sâi wée-láa ják sùa-móong*", "berapa jam perjalanannya?"],
+       ["ມີບ່ອນນັ່ງບໍ່", "*míi bàwn nàng bàw*", "masih ada tempat duduk?"],
+       ["ຈອງລ່ວງໜ້າໄດ້ບໍ່", "*jawng lùang-nâa dâi bàw*", "bisa pesan lebih dulu?"],
+       ["ລົດອອກຈາກໃສ", "*lot àwk jàak sǎi*", "berangkat dari mana?"],
+       ["ຢຸດພັກບໍ່", "*yút phak bàw*", "berhenti istirahat tidak?"],
+       ["ປີ້ຄືນໄດ້ບໍ່", "*pîi khʉ́ʉn dâi bàw*", "tiketnya bisa dikembalikan?"]
+      ]
+     },
+     "after": [
+      "**ບ່ອນ *bàwn*** berarti \"tempat\": *ບ່ອນນັ່ງ* (tempat duduk), *ບ່ອນນອນ* (tempat tidur), *ບ່ອນນີ້* (tempat ini). Ia sedikit lebih konkret daripada *ທີ່ thìi* yang juga berarti tempat."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Mengeluh dengan sopan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Lao", "Baca", "Arti"],
+     "rows": [
+      ["ຂໍໂທດເດີ້ ມີບັນຫາໜ້ອຍໜຶ່ງ", "*khǎw-thôot dòe, míi ban-hǎa nàwy nʉ̀ng*", "maaf, ada sedikit masalah"],
+      ["ເຄື່ອງແອໃຊ້ບໍ່ໄດ້", "*khʉ̂ang-ee sâi bàw dâi*", "AC-nya tidak jalan"],
+      ["ນ້ຳຮ້ອນບໍ່ອອກ", "*nâm hâwn bàw àwk*", "air panasnya tidak keluar"],
+      ["ໄວໄຟຊ້າຫຼາຍ", "*wái-fái sâa lǎai*", "wifinya lambat sekali"],
+      ["ຫ້ອງມີສຽງດັງ", "*hàwng míi sǐang dang*", "kamarnya berisik"],
+      ["ປ່ຽນຫ້ອງໄດ້ບໍ່", "*pìan hàwng dâi bàw*", "bisa ganti kamar?"],
+      ["ຊ່ວຍມາເບິ່ງແດ່ໄດ້ບໍ່", "*sùay maa bòeng dèe dâi bàw*", "bisa tolong dicek?"],
+      ["ຂໍຜ້າເຊັດໂຕຕື່ມແດ່", "*khǎw phàa sét tǒo tʉ̀ʉm dèe*", "minta tambah handuk"],
+      ["ຂໍອອກສວາຍໜ້ອຍໜຶ່ງໄດ້ບໍ່", "*khǎw àwk sǔay nàwy nʉ̀ng dâi bàw*", "boleh check-out agak siang?"],
+      ["ຝາກກະເປົ໋າໄວ້ໄດ້ບໍ່", "*fàak ka-pǎo wâi dâi bàw*", "boleh titip tas?"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa **setiap keluhan dibuka dengan *ຂໍໂທດ khǎw-thôot* dan ditutup dengan *ໄດ້ບໍ່ dâi bàw***. Di Laos, keluhan yang disampaikan sebagai permintaan hampir selalu diselesaikan; keluhan yang disampaikan sebagai tuntutan sering berujung pada senyum sopan dan tidak ada perubahan apa pun. Ini bukan soal bahasa, melainkan soal cara."
+    }
+   ]
+  },
+  {
+   "title": "Dokumen, uang, dan perbatasan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Lao", "Baca", "Indonesia", "Lao", "Baca", "Indonesia"],
+     "rows": [
+      ["ໜັງສືຜ່ານແດນ", "*nǎng-sʉ̌ʉ-phàan-deen*", "paspor", "ວີຊາ", "*wíi-sâa*", "visa"],
+      ["ດ່ານ", "*dàan*", "pos perbatasan", "ຊາຍແດນ", "*sáai-deen*", "perbatasan"],
+      ["ຕົວະດ່ານ", "*tùa dàan*", "formulir imigrasi", "ຕາປະທັບ", "*taa pa-tháp*", "stempel"],
+      ["ບັດປະຈຳຕົວ", "*bát pa-jam-tǒa*", "kartu identitas", "ໃບຂັບຂີ່", "*bai khap-khìi*", "SIM"],
+      ["ແລກເງິນ", "*lèek ngóen*", "menukar uang", "ອັດຕາແລກປ່ຽນ", "*át-taa lèek-pìan*", "kurs"],
+      ["ຕູ້ເອທີເອັມ", "*tûu ee-thii-em*", "ATM", "ຄ່າທຳນຽມ", "*khàa tham-nìam*", "biaya administrasi"],
+      ["ປະກັນໄພ", "*pa-kan-phái*", "asuransi", "ສະຖານທູດ", "*sa-thǎan-thûut*", "kedutaan"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Warga Indonesia bisa masuk Laos **tanpa visa** untuk kunjungan singkat, karena keduanya sama-sama anggota ASEAN — tetapi aturan berubah dari waktu ke waktu, jadi periksa kembali sebelum berangkat. Yang tidak berubah: paspor harus berlaku minimal enam bulan."
+    },
+    {
+     "type": "p",
+     "text": "Kalimat yang berguna di bank atau tempat penukaran: *ຂໍແລກເງິນແດ່ khǎw lèek ngóen dèe* (mau tukar uang) dan *ອັດຕາແລກປ່ຽນມື້ນີ້ເທົ່າໃດ át-taa lèek-pìan mʉ̂ʉ-nîi thao-dai* (kursnya hari ini berapa). Rupiah jarang diterima; bawalah dolar Amerika atau baht Thailand."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "lo": "ໂຮງແຮມ", "baca": "hoong-héem", "id": "hotel" },
+  { "lo": "ເຮືອນພັກ", "baca": "hʉan-phak", "id": "penginapan" },
+  { "lo": "ຈອງ", "baca": "jawng", "id": "memesan (tempat)" },
+  { "lo": "ຄືນ", "baca": "khʉ́ʉn", "id": "malam (satuan menginap)" },
+  { "lo": "ຄ່າຫ້ອງ", "baca": "khàa hàwng", "id": "tarif kamar" },
+  { "lo": "ລວມ", "baca": "lúam", "id": "termasuk" },
+  { "lo": "ທັງ", "baca": "tháng", "id": "seluruh, semua" },
+  { "lo": "ລະຫັດ", "baca": "la-hát", "id": "sandi, kode" },
+  { "lo": "ຊັ້ນ", "baca": "sân", "id": "lantai, tingkat" },
+  { "lo": "ນ້ຳຮ້ອນ", "baca": "nâm hâwn", "id": "air panas" },
+  { "lo": "ຜ້າເຊັດໂຕ", "baca": "phàa sét tǒo", "id": "handuk" },
+  { "lo": "ຜ້າຫົ່ມ", "baca": "phàa hòm", "id": "selimut" },
+  { "lo": "ໝອນ", "baca": "mǎwn", "id": "bantal" },
+  { "lo": "ເພ", "baca": "phée", "id": "rusak" },
+  { "lo": "ບັນຫາ", "baca": "ban-hǎa", "id": "masalah" },
+  { "lo": "ສຽງ", "baca": "sǐang", "id": "suara, bunyi" },
+  { "lo": "ອອກ", "baca": "àwk", "id": "berangkat, keluar" },
+  { "lo": "ປີ້", "baca": "pîi", "id": "tiket" },
+  { "lo": "ບ່ອນນັ່ງ", "baca": "bàwn nàng", "id": "tempat duduk" },
+  { "lo": "ບ່ອນ", "baca": "bàwn", "id": "tempat" },
+  { "lo": "ລ່ວງໜ້າ", "baca": "lùang-nâa", "id": "lebih dulu, di muka" },
+  { "lo": "ສຳລັບ", "baca": "sǎm-lap", "id": "untuk" },
+  { "lo": "ຂໍ້", "baca": "khàw", "id": "butir, hal" },
+  { "lo": "ຖາມ", "baca": "thǎam", "id": "bertanya" },
+  { "lo": "ໜັງສືຜ່ານແດນ", "baca": "nǎng-sʉ̌ʉ-phàan-deen", "id": "paspor" },
+  { "lo": "ວີຊາ", "baca": "wíi-sâa", "id": "visa" },
+  { "lo": "ດ່ານ", "baca": "dàan", "id": "pos perbatasan" },
+  { "lo": "ແລກເງິນ", "baca": "lèek ngóen", "id": "menukar uang" },
+  { "lo": "ອັດຕາແລກປ່ຽນ", "baca": "át-taa lèek-pìan", "id": "kurs" },
+  { "lo": "ຄ່າທຳນຽມ", "baca": "khàa tham-nìam", "id": "biaya administrasi" },
+  { "lo": "ສະຖານທູດ", "baca": "sa-thǎan-thûut", "id": "kedutaan" },
+  { "lo": "ມັດຈຳ", "baca": "mat-jam", "id": "deposit" },
+  { "lo": "ວັງວຽງ", "baca": "Wáng-Wíang", "id": "Vang Vieng" },
+  { "lo": "ຂັ້ນໄດ", "baca": "khân-dai", "id": "tangga" },
+  { "lo": "ໃຊ້", "baca": "sâi", "id": "memakai" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis pertanyaan yang tepat untuk situasi ini.",
+   "items": [
+    "kamu ingin tahu tarif kamar per malam",
+    "kamu ingin tahu apakah sarapan sudah termasuk",
+    "kamu ingin tahu apakah ada wifi",
+    "kamu ingin tahu jam berapa busnya berangkat",
+    "kamu ingin menitipkan tas"
+   ]
+  },
+  {
+   "prompt": "Sampaikan keluhan ini dengan sopan.",
+   "items": [
+    "AC-nya tidak jalan",
+    "air panasnya tidak keluar",
+    "kamarnya berisik",
+    "wifinya lambat sekali",
+    "kamu ingin ganti kamar"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ຄືນ / ຈັກ / ພັກ",
+    "ແລ້ວ / ອາຫານເຊົ້າ / ລວມ",
+    "ໂມງ / ອອກ / ຈັກ / ລົດ",
+    "ບໍ່ / ໄດ້ / ຫ້ອງ / ປ່ຽນ",
+    "ໜຶ່ງ / ໃບ / ມື້ຮື / ສຳລັບ / ເອົາ"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Lao.",
+   "items": [
+    "Halo, saya sudah pesan kamar atas nama Budi.",
+    "Menginap dua malam. Kamarnya semalam berapa?",
+    "Sudah termasuk sarapan?",
+    "Ada wifi dan air panas?",
+    "Tiket bus ke Vang Vieng beli di mana?",
+    "Busnya berangkat jam delapan pagi, tiba jam dua siang."
+   ]
+  }
+ ],
+ "answers": [
+  "ຄ່າຫ້ອງຄືນລະເທົ່າໃດ — ລວມອາຫານເຊົ້າແລ້ວບໍ່ — ມີໄວໄຟບໍ່ — ລົດອອກຈັກໂມງ — ຝາກກະເປົ໋າໄວ້ໄດ້ບໍ່",
+  "ຂໍໂທດເດີ້ ເຄື່ອງແອໃຊ້ບໍ່ໄດ້ — ນ້ຳຮ້ອນບໍ່ອອກ — ຫ້ອງມີສຽງດັງ — ໄວໄຟຊ້າຫຼາຍ — ປ່ຽນຫ້ອງໄດ້ບໍ່",
+  "ພັກຈັກຄືນ — ລວມອາຫານເຊົ້າແລ້ວ — ລົດອອກຈັກໂມງ — ປ່ຽນຫ້ອງໄດ້ບໍ່ — ເອົາໜຶ່ງໃບສຳລັບມື້ຮື",
+  "ສະບາຍດີ ຂ້ອຍຈອງຫ້ອງໄວ້ແລ້ວ ຊື່ບູດີ — ພັກສອງຄືນ ຄ່າຫ້ອງຄືນລະເທົ່າໃດ — ລວມອາຫານເຊົ້າແລ້ວບໍ່ — ມີໄວໄຟກັບນ້ຳຮ້ອນບໍ່ — ປີ້ລົດໄປວັງວຽງຊື້ຢູ່ໃສ — ລົດອອກແປດໂມງເຊົ້າ ຮອດບ່າຍສອງໂມງ"
+ ],
+ "wave": "Ulangi unit 17: tutup bahasa Laonya, lalu jelaskan lima aturan di kuil memakai ຕ້ອງ, ຄວນ, ຫ້າມ, dan ໄດ້."
+}

@@ -1,0 +1,291 @@
+{
+ "title": "Badan, sakit, dan pergi ke apotek",
+ "title_target": "ບໍ່ສະບາຍ — Bàw sa-baai",
+ "goal": "Mengatakan bagian tubuh mana yang sakit, menjelaskan gejalanya, membeli obat, dan meminta tolong dalam keadaan darurat — unit yang mudah-mudahan tidak kamu butuhkan, tapi harus kamu punya.",
+ "bekal": [
+  "nama bagian tubuh",
+  "ເຈັບ untuk sakit di satu bagian",
+  "ບໍ່ສະບາຍ untuk sakit secara umum",
+  "gejala: ໄຂ້ ໄອ ຮາກ ຖອກທ້ອງ",
+  "membeli obat dan meminta pertolongan"
+ ],
+ "dialogs": [
+  {
+   "title": "ບົດສົນທະນາ — Di apotek dekat kantor",
+   "intro": "Budi tidak enak badan sejak semalam. Perhatikan bahwa keluhan bahasa Lao selalu disusun \"bagian tubuh + sakit\", bukan \"saya sakit di…\".",
+   "lines": [
+    {
+     "speaker": "ຄົນຂາຍຢາ:",
+     "text": "[ສະບາຍດີ|Sa-baai-dii] [ເປັນ|Pen][ຫຍັງ|nyǎng]",
+     "id": "Halo. Kenapa?",
+     "literal": "sehat-baik. jadi — apa?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ຂ້ອຍ|Khàwy][ບໍ່|bàw][ສະບາຍ|sa-baai] [ເຈັບ|Jép][ຫົວ|hǔa][ແລະ|lae][ເຈັບ|jép][ຄໍ|kháw]",
+     "id": "Saya tidak enak badan. Kepala sakit dan tenggorokan sakit.",
+     "literal": "saya — tidak — sehat. sakit — kepala — dan — sakit — leher."
+    },
+    {
+     "speaker": "ຄົນຂາຍຢາ:",
+     "text": "[ມີ|Míi][ໄຂ້|khài][ບໍ່|bàw] [ໄອ|Ai][ບໍ່|bàw]",
+     "id": "Ada demam? Batuk tidak?",
+     "literal": "ada — demam — kah? batuk — kah?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ມີ|Míi][ໄຂ້|khài][ໜ້ອຍ|nàwy][ໜຶ່ງ|nʉ̀ng] [ໄອ|Ai][ແຕ່|tèe][ຕອນ|tawn][ກາງຄືນ|kaang-khʉ́ʉn]",
+     "id": "Demam sedikit. Batuknya cuma malam.",
+     "literal": "ada — demam — sedikit — satu. batuk — tetapi — saat — malam."
+    },
+    {
+     "speaker": "ຄົນຂາຍຢາ:",
+     "text": "[ເປັນ|Pen][ມາ|maa][ຈັກ|ják][ມື້|mʉ̂ʉ][ແລ້ວ|lèeo]",
+     "id": "Sudah berapa hari begini?",
+     "literal": "jadi — datang — berapa — hari — sudah?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ສອງ|Sǎwng][ມື້|mʉ̂ʉ][ແລ້ວ|lèeo] [ມື້ວານນີ້|Mʉ̂ʉ-waan-nîi][ຍັງ|nyáng][ບໍ່|bàw][ຮ້າຍແຮງ|hâai-héeng] [ມື້ນີ້|Mʉ̂ʉ-nîi][ຮ້າຍ|hâai][ກວ່າ|kwàa]",
+     "id": "Sudah dua hari. Kemarin belum parah. Hari ini lebih parah.",
+     "literal": "dua — hari — sudah. hari — kemarin — masih — tidak — parah. hari — ini — parah — lebih."
+    },
+    {
+     "speaker": "ຄົນຂາຍຢາ:",
+     "text": "[ເອົາ|Ao][ຢາ|yaa][ນີ້|nîi] [ກິນ|Kin][ເທື່ອ|thʉ̀a][ລະ|la][ສອງ|sǎwng][ເມັດ|mét] [ມື້|Mʉ̂ʉ][ລະ|la][ສາມ|sǎam][ເທື່ອ|thʉ̀a] [ຫຼັງ|Lǎng][ອາຫານ|aa-hǎan]",
+     "id": "Ambil obat ini. Sekali minum dua butir, sehari tiga kali, sesudah makan.",
+     "literal": "ambil — obat — ini. makan — kali — per — dua — butir. hari — per — tiga — kali. belakang — makanan."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ຢາ|Yaa][ນີ້|nîi][ເຮັດ|hét][ໃຫ້|hài][ເຫງົາ|ngǎo][ນອນ|náwn][ບໍ່|bàw] [ຂ້ອຍ|Khàwy][ຕ້ອງ|tâwng][ເຮັດ|hét][ວຽກ|wîak]",
+     "id": "Obat ini bikin mengantuk tidak? Saya harus kerja.",
+     "literal": "obat — ini — buat — beri — kantuk — tidur — kah? saya — harus — buat — pekerjaan."
+    },
+    {
+     "speaker": "ຄົນຂາຍຢາ:",
+     "text": "[ບໍ່|Bàw][ເຫງົາ|ngǎo] [ແຕ່|Tèe][ຕ້ອງ|tâwng][ດື່ມ|dʉ̀ʉm][ນ້ຳ|nâm][ຫຼາຍໆ|lǎai-lǎai] [ແລະ|Lae][ພັກ|phak][ໃຫ້|hài][ພຽງພໍ|phíang-phaw]",
+     "id": "Tidak mengantuk. Tapi harus banyak minum air dan cukup istirahat.",
+     "literal": "tidak — kantuk. tetapi — harus — minum — air — banyak-banyak. dan — istirahat — supaya — cukup."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ຖ້າ|Thàa][ສາມ|sǎam][ມື້|mʉ̂ʉ][ບໍ່|bàw][ດີ|dii][ຂຶ້ນ|khʉ̂n] [ຄວນ|khuan][ເຮັດ|hét][ແນວ|neeo][ໃດ|dai]",
+     "id": "Kalau tiga hari tidak membaik, sebaiknya bagaimana?",
+     "literal": "kalau — tiga — hari — tidak — baik — naik — sebaiknya — buat — cara — mana?"
+    },
+    {
+     "speaker": "ຄົນຂາຍຢາ:",
+     "text": "[ໄປ|Pai][ຫາ|hǎa][ໝໍ|mǎw][ຢູ່|yùu][ໂຮງໝໍ|hoong-mǎw] [ຢ່າ|Yàa][ຖ້າ|thàa][ດົນ|dón][ເດີ້|dòe]",
+     "id": "Pergi ke dokter di rumah sakit. Jangan ditunda lama ya.",
+     "literal": "pergi — cari — dokter — di — rumah-sakit. jangan — tunggu — lama — ya."
+    }
+   ],
+   "notes": [
+    "**ເຈັບ jép = \"sakit\" di satu bagian tubuh, dan susunannya ເຈັບ + bagian tubuh.** *ເຈັບຫົວ* (sakit kepala), *ເຈັບທ້ອງ* (sakit perut), *ເຈັບແຂ້ວ* (sakit gigi). ⚠️ Perhatikan urutannya: kata sakitnya **di depan**, kebalikan dari bahasa Indonesia.",
+    "**ບໍ່ສະບາຍ bàw sa-baai = \"tidak enak badan\" secara umum.** Ingat *ສະບາຍດີ* dari unit 1 — inilah kebalikannya. Kalimat ini yang kamu pakai untuk membuka, lalu diperinci dengan *ເຈັບ…*.",
+    "**ເປັນຫຍັງ pen nyǎng punya dua arti, dan keduanya muncul di unit ini.** Sebagai pertanyaan kepada orang sakit, ia berarti \"kenapa kamu, sakit apa?\". Di kalimat lain ia berarti \"mengapa\". Nada bicara dan keadaan yang memisahkannya.",
+    "**ເທື່ອລະ… thʉ̀a la… = \"per sekali\", ມື້ລະ… mʉ̂ʉ la… = \"per hari\".** Kata *ລະ la* berarti \"per, setiap\": *ຄົນລະ* (per orang), *ອັນລະ* (per buah), *ມື້ລະສາມເທື່ອ* (tiga kali sehari). Ini pola yang wajib dipahami untuk aturan minum obat.",
+    "**ດີຂຶ້ນ dii khʉ̂n = \"membaik\", harfiahnya \"baik naik\".** Kata *ຂຶ້ນ khʉ̂n* (naik) di belakang kata sifat menandai perubahan menaik: *ຮ້ອນຂຶ້ນ* (makin panas), *ແພງຂຶ້ນ* (harganya naik). Kebalikannya *ລົງ lóng*: *ຖືກລົງ* (makin murah).",
+    "**ຢ່າ yàa = \"jangan\", dan ia berdiri di depan kata kerja.** *ຢ່າໄປ* (jangan pergi), *ຢ່າລືມ* (jangan lupa), *ຢ່າຖ້າດົນ* (jangan tunggu lama). Ini satu-satunya bentuk larangan yang perlu kamu kuasai di tingkat A1.",
+    "**ໃຫ້ hài berarti \"memberi\" dan juga \"supaya\".** *ພັກໃຫ້ພຽງພໍ* (istirahat supaya cukup), *ເຮັດໃຫ້ເຫງົານອນ* (membuat jadi mengantuk). Pemakaian kedua ini muncul terus-menerus dan tidak punya padanan langsung dalam bahasa Indonesia.",
+    "**ຮ້າຍແຮງ hâai-héeng = \"parah\".** Untuk gejala ringan, orang berkata *ບໍ່ຮ້າຍແຮງ* atau *ໜ້ອຍໜຶ່ງ*. Kata *ຮ້າຍ hâai* sendirian berarti \"jahat, buruk\".",
+    "**Tentang berobat di Laos.** Apotek — *ຮ້ານຂາຍຢາ hâan khǎai yaa* — menjual banyak obat tanpa resep dan penjaganya biasanya bisa memberi saran dasar. Untuk hal serius, rumah sakit terbaik ada di Vientiane, dan banyak orang asing menyeberang ke Nong Khai, Thailand, yang jaraknya kurang dari satu jam."
+   ],
+   "grammars": [
+    {
+     "title": "Bagian tubuh",
+     "table": {
+      "head": ["Lao", "Baca", "Indonesia", "Lao", "Baca", "Indonesia"],
+      "rows": [
+       ["ຫົວ", "*hǔa*", "kepala", "ໜ້າ", "*nâa*", "wajah"],
+       ["ຕາ", "*taa*", "mata", "ຫູ", "*hǔu*", "telinga"],
+       ["ດັງ", "*dang*", "hidung", "ປາກ", "*pàak*", "mulut"],
+       ["ແຂ້ວ", "*khêeo*", "gigi", "ລີ້ນ", "*lîn*", "lidah"],
+       ["ຄໍ", "*kháw*", "leher, tenggorokan", "ບ່າ", "*bàa*", "bahu"],
+       ["ແຂນ", "*khěen*", "lengan", "ມື", "*mʉʉ*", "tangan"],
+       ["ນິ້ວ", "*nîu*", "jari", "ຫຼັງ", "*lǎng*", "punggung"],
+       ["ທ້ອງ", "*thâwng*", "perut", "ຫົວໃຈ", "*hǔa-jai*", "jantung"],
+       ["ຂາ", "*khǎa*", "kaki (paha-betis)", "ຕີນ", "*tiin*", "kaki (telapak)"],
+       ["ເຂົ່າ", "*khào*", "lutut", "ຜິວໜັງ", "*phǐu-nǎng*", "kulit"]
+      ]
+     },
+     "after": [
+      "⚠️ Bahasa Lao membedakan *ຂາ khǎa* (kaki bagian atas) dari *ຕີນ tiin* (telapak kaki), sama seperti membedakan *ແຂນ* (lengan) dari *ມື* (tangan). Kalau kamu terkilir di pergelangan, yang sakit adalah *ຕີນ*, bukan *ຂາ*.",
+      "⚠️ Menunjuk sesuatu dengan **kaki** dan meletakkan kaki di atas meja adalah pelanggaran sopan santun yang serius di Laos. Sebaliknya, kepala dianggap bagian paling suci — jangan menyentuh kepala orang lain, termasuk kepala anak-anak."
+     ]
+    },
+    {
+     "title": "Gejala dan keluhan",
+     "table": {
+      "head": ["Lao", "Baca", "Arti"],
+      "rows": [
+       ["ບໍ່ສະບາຍ", "*bàw sa-baai*", "tidak enak badan"],
+       ["ເປັນໄຂ້", "*pen khài*", "demam"],
+       ["ໄອ", "*ai*", "batuk"],
+       ["ນ້ຳມູກໄຫຼ", "*nâm-mûuk lǎi*", "pilek"],
+       ["ເຈັບຄໍ", "*jép kháw*", "sakit tenggorokan"],
+       ["ຮາກ", "*hâak*", "muntah"],
+       ["ຖອກທ້ອງ", "*thàwk thâwng*", "diare"],
+       ["ວິນຫົວ", "*wín hǔa*", "pusing"],
+       ["ເມື່ອຍ", "*mʉ̂ay*", "capek, pegal"],
+       ["ນອນບໍ່ຫຼັບ", "*náwn bàw láp*", "tidak bisa tidur"],
+       ["ແພ້ຢາ", "*phêe yaa*", "alergi obat"],
+       ["ຍຸງກັດ", "*nyúng kát*", "digigit nyamuk"]
+      ]
+     },
+     "after": [
+      "**ຖອກທ້ອງ *thàwk thâwng*** adalah keluhan nomor satu bagi pendatang baru. Pencegahannya sederhana: minum air botol, hindari es di warung pinggir jalan yang tidak ramai, dan berikan waktu bagi perutmu untuk menyesuaikan diri dengan bumbu fermentasi khas Lao — terutama *ປາແດກ paa-dèek*, ikan fermentasi yang ada di hampir semua masakan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di apotek dan di dokter",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Lao", "Baca", "Arti"],
+     "rows": [
+      ["ຂ້ອຍບໍ່ສະບາຍ", "*khàwy bàw sa-baai*", "saya tidak enak badan"],
+      ["ເຈັບ…ຫຼາຍ", "*jép… lǎai*", "… sakit sekali"],
+      ["ເປັນມາສອງມື້ແລ້ວ", "*pen maa sǎwng mʉ̂ʉ lèeo*", "sudah dua hari begini"],
+      ["ມີຢາແກ້…ບໍ່", "*míi yaa kêe… bàw*", "ada obat untuk…?"],
+      ["ກິນແນວໃດ", "*kin neeo-dai*", "diminum bagaimana?"],
+      ["ມື້ລະຈັກເທື່ອ", "*mʉ̂ʉ la ják thʉ̀a*", "sehari berapa kali?"],
+      ["ກ່ອນ / ຫຼັງອາຫານ", "*kàwn / lǎng aa-hǎan*", "sebelum / sesudah makan"],
+      ["ຂ້ອຍແພ້ຢາ…", "*khàwy phêe yaa…*", "saya alergi obat…"],
+      ["ໂຮງໝໍຢູ່ໃສ", "*hoong-mǎw yùu sǎi*", "rumah sakit di mana?"],
+      ["ຊ່ວຍແດ່", "*sùay dèe*", "tolong!"],
+      ["ໂທຫາລົດໂຮງໝໍແດ່", "*thóo hǎa lot hoong-mǎw dèe*", "tolong panggil ambulans"],
+      ["ຂ້ອຍຕ້ອງໄປຫາໝໍ", "*khàwy tâwng pai hǎa mǎw*", "saya harus ke dokter"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**ຢາແກ້ *yaa kêe*** berarti \"obat untuk mengatasi\": *ຢາແກ້ໄຂ້* (obat demam), *ຢາແກ້ໄອ* (obat batuk), *ຢາແກ້ປວດ* (obat nyeri), *ຢາແກ້ຖອກທ້ອງ* (obat diare). Kata *ແກ້ kêe* sendirian berarti \"memperbaiki, menyelesaikan\"."
+    },
+    {
+     "type": "p",
+     "text": "Simpan dua kalimat ini di ponselmu: *ຂ້ອຍແພ້ຢາ… khàwy phêe yaa…* (saya alergi obat …) dan *ໂທຫາລົດໂຮງໝໍແດ່ thóo hǎa lot hoong-mǎw dèe* (tolong panggil ambulans). Keduanya adalah kalimat yang tidak sempat kamu cari waktu benar-benar dibutuhkan."
+    }
+   ]
+  },
+  {
+   "title": "Menanyakan kabar dan menghibur",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Lao", "Baca", "Arti", "Kapan"],
+     "rows": [
+      ["ເປັນຫຍັງ", "*pen nyǎng*", "kenapa? sakit apa?", "melihat orang tidak sehat"],
+      ["ດີຂຶ້ນບໍ່", "*dii khʉ̂n bàw*", "sudah membaik?", "menengok"],
+      ["ພັກຜ່ອນເດີ້", "*phak-phàwn dòe*", "istirahat ya", "menutup percakapan"],
+      ["ດູແລໂຕເອງເດີ້", "*duu-lee tǒo éeng dòe*", "jaga diri ya", "berpisah"],
+      ["ຫາຍໄວໆເດີ້", "*hǎai vái-vái dòe*", "cepat sembuh ya", "ke orang sakit"],
+      ["ຢ່າຄິດຫຼາຍ", "*yàa khit lǎai*", "jangan terlalu dipikirkan", "menghibur"],
+      ["ບໍ່ເປັນຫຍັງດອກ", "*bàw pen nyǎng dàwk*", "tidak apa-apa kok", "menenangkan"],
+      ["ເປັນຫ່ວງເດີ້", "*pen hùang dòe*", "saya khawatir lho", "menunjukkan perhatian"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**ຫາຍ *hǎai*** berarti \"sembuh\" dan juga \"hilang\": *ຫາຍແລ້ວ* (sudah sembuh / sudah hilang). Ucapan *ຫາຍໄວໆເດີ້* adalah cara paling umum mendoakan orang sakit, dan kamu akan mendengarnya setiap kali kamu bersin di kantor."
+    },
+    {
+     "type": "p",
+     "text": "**ດອກ *dàwk*** di ujung kalimat melembutkan penyangkalan — mirip \"kok\" dalam bahasa Indonesia. *ບໍ່ເປັນຫຍັງດອກ* (nggak apa-apa kok), *ບໍ່ແພງດອກ* (nggak mahal kok). Ia membuat kalimatmu terdengar menenangkan alih-alih membantah."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "lo": "ບໍ່ສະບາຍ", "baca": "bàw sa-baai", "id": "tidak enak badan" },
+  { "lo": "ເຈັບ", "baca": "jép", "id": "sakit (bagian tubuh)" },
+  { "lo": "ຫົວ", "baca": "hǔa", "id": "kepala" },
+  { "lo": "ຄໍ", "baca": "kháw", "id": "leher, tenggorokan" },
+  { "lo": "ທ້ອງ", "baca": "thâwng", "id": "perut" },
+  { "lo": "ແຂ້ວ", "baca": "khêeo", "id": "gigi" },
+  { "lo": "ຕາ", "baca": "taa", "id": "mata" },
+  { "lo": "ຫູ", "baca": "hǔu", "id": "telinga" },
+  { "lo": "ດັງ", "baca": "dang", "id": "hidung" },
+  { "lo": "ຂາ", "baca": "khǎa", "id": "kaki (paha-betis)" },
+  { "lo": "ຕີນ", "baca": "tiin", "id": "kaki (telapak)" },
+  { "lo": "ມື", "baca": "mʉʉ", "id": "tangan" },
+  { "lo": "ໄຂ້", "baca": "khài", "id": "demam" },
+  { "lo": "ໄອ", "baca": "ai", "id": "batuk" },
+  { "lo": "ຮາກ", "baca": "hâak", "id": "muntah" },
+  { "lo": "ຖອກທ້ອງ", "baca": "thàwk thâwng", "id": "diare" },
+  { "lo": "ວິນຫົວ", "baca": "wín hǔa", "id": "pusing" },
+  { "lo": "ເມື່ອຍ", "baca": "mʉ̂ay", "id": "capek, pegal" },
+  { "lo": "ຢາ", "baca": "yaa", "id": "obat" },
+  { "lo": "ຢາແກ້", "baca": "yaa kêe", "id": "obat untuk…" },
+  { "lo": "ເມັດ", "baca": "mét", "id": "butir (kata bantu obat)" },
+  { "lo": "ເທື່ອ", "baca": "thʉ̀a", "id": "kali" },
+  { "lo": "ລະ", "baca": "la", "id": "per, setiap" },
+  { "lo": "ໝໍ", "baca": "mǎw", "id": "dokter" },
+  { "lo": "ໂຮງໝໍ", "baca": "hoong-mǎw", "id": "rumah sakit" },
+  { "lo": "ຮ້ານຂາຍຢາ", "baca": "hâan khǎai yaa", "id": "apotek" },
+  { "lo": "ຫາຍ", "baca": "hǎai", "id": "sembuh; hilang" },
+  { "lo": "ດີຂຶ້ນ", "baca": "dii khʉ̂n", "id": "membaik" },
+  { "lo": "ຮ້າຍແຮງ", "baca": "hâai-héeng", "id": "parah" },
+  { "lo": "ຢ່າ", "baca": "yàa", "id": "jangan" },
+  { "lo": "ພັກຜ່ອນ", "baca": "phak-phàwn", "id": "beristirahat" },
+  { "lo": "ເຫງົານອນ", "baca": "ngǎo náwn", "id": "mengantuk" },
+  { "lo": "ແພ້", "baca": "phêe", "id": "alergi; kalah" },
+  { "lo": "ດອກ", "baca": "dàwk", "id": "…kok (melembutkan)" },
+  { "lo": "ເປັນຫ່ວງ", "baca": "pen hùang", "id": "khawatir, peduli" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis keluhan ini dalam bahasa Lao dengan pola ເຈັບ + bagian tubuh.",
+   "items": [
+    "sakit kepala",
+    "sakit perut",
+    "sakit gigi",
+    "sakit tenggorokan",
+    "sakit punggung"
+   ]
+  },
+  {
+   "prompt": "Isi dengan ໄຂ້, ໄອ, ຖອກທ້ອງ, ວິນຫົວ, atau ເມື່ອຍ.",
+   "items": [
+    "ຂ້ອຍເປັນ____ ຮ້ອນທັງໂຕ (demam)",
+    "ຂ້ອຍ____ຕອນກາງຄືນ (batuk)",
+    "ກິນອາຫານແປກ ແລ້ວ____ (diare)",
+    "ຂ້ອຍ____ ຢາກນັ່ງລົງ (pusing)",
+    "ເຮັດວຽກໜັກ ຂ້ອຍ____ຫຼາຍ (capek)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ບໍ່ສະບາຍ / ຂ້ອຍ",
+    "ບໍ່ / ໄຂ້ / ມີ",
+    "ເທື່ອ / ມື້ / ສາມ / ລະ",
+    "ອາຫານ / ຫຼັງ / ກິນ",
+    "ດົນ / ຖ້າ / ຢ່າ"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Lao.",
+   "items": [
+    "Saya tidak enak badan. Kepala sakit.",
+    "Demam sedikit, batuknya cuma malam.",
+    "Sudah dua hari begini.",
+    "Ada obat untuk sakit tenggorokan?",
+    "Sehari berapa kali? Sebelum atau sesudah makan?",
+    "Kalau tidak membaik, saya harus ke dokter."
+   ]
+  }
+ ],
+ "answers": [
+  "ເຈັບຫົວ — ເຈັບທ້ອງ — ເຈັບແຂ້ວ — ເຈັບຄໍ — ເຈັບຫຼັງ",
+  "ໄຂ້ — ໄອ — ຖອກທ້ອງ — ວິນຫົວ — ເມື່ອຍ",
+  "ຂ້ອຍບໍ່ສະບາຍ — ມີໄຂ້ບໍ່ — ມື້ລະສາມເທື່ອ — ກິນຫຼັງອາຫານ — ຢ່າຖ້າດົນ",
+  "ຂ້ອຍບໍ່ສະບາຍ ເຈັບຫົວ — ມີໄຂ້ໜ້ອຍໜຶ່ງ ໄອແຕ່ຕອນກາງຄືນ — ເປັນມາສອງມື້ແລ້ວ — ມີຢາແກ້ເຈັບຄໍບໍ່ — ມື້ລະຈັກເທື່ອ ກ່ອນຫຼືຫຼັງອາຫານ — ຖ້າບໍ່ດີຂຶ້ນ ຂ້ອຍຕ້ອງໄປຫາໝໍ"
+ ],
+ "wave": "Ulangi unit 12: tutup bahasa Laonya, lalu beli satu potong baju dari awal sampai selesai — termasuk minta ukuran lain dan bertanya soal tukar."
+}

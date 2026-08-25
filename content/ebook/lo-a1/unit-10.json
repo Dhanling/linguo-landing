@@ -1,0 +1,281 @@
+{
+ "title": "Rumah, barang, dan punya siapa",
+ "title_target": "ເຮືອນ ແລະ ຂອງໃຜ — Hʉan lae khǎwng phǎi",
+ "goal": "Menggambarkan tempat tinggalmu, menyatakan ada dan tidak ada, menyebut milik siapa, dan menemukan barang yang hilang — sekaligus memasang tiga kata tunjuk jarak bahasa Lao.",
+ "bekal": [
+  "ມີ dan ບໍ່ມີ untuk ada dan tidak ada",
+  "kepemilikan dengan ຂອງ dan ຂອງໃຜ",
+  "tiga jarak: ນີ້ ນັ້ນ ພຸ້ນ",
+  "letak benda: ເທິງ ລຸ່ມ ໃນ ນອກ ຂ້າງ",
+  "kehilangan dan menemukan: ເສຍ dan ພົບ"
+ ],
+ "dialogs": [
+  {
+   "title": "ບົດສົນທະນາ — Kunci yang hilang di ruang kerja",
+   "intro": "Budi kehilangan kunci kamarnya. Perhatikan bagaimana kata tunjuk berubah menurut siapa yang lebih dekat ke bendanya — bukan menurut jauh-dekatnya dari pembicara saja.",
+   "lines": [
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ບຸນມີ|Bun-míi] [ເຫັນ|hěn][ກະແຈ|ka-jèe][ຂ້ອຍ|khàwy][ບໍ່|bàw] [ຂ້ອຍ|Khàwy][ເສຍ|sǐa][ແລ້ວ|lèeo]",
+     "id": "Bounmy, lihat kunci saya tidak? Hilang.",
+     "literal": "Bounmy — melihat — kunci — saya — kah? saya — hilang — sudah."
+    },
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ກະແຈ|Ka-jèe][ໃດ|dai] [ອັນ|An][ນີ້|nîi][ບໍ່|bàw]",
+     "id": "Kunci yang mana? Yang ini bukan?",
+     "literal": "kunci — mana? buah — ini — kah?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ບໍ່ແມ່ນ|Bàw mèen] [ອັນ|An][ນັ້ນ|nân][ຂອງ|khǎwng][ເຈົ້າ|jâo] [ຂອງ|Khǎwng][ຂ້ອຍ|khàwy][ສີ|sǐi][ດຳ|dam]",
+     "id": "Bukan. Yang itu punyamu. Punya saya warna hitam.",
+     "literal": "bukan. buah — itu — milik — kamu. milik — saya — warna — hitam."
+    },
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ຢູ່|Yùu][ເທິງ|thóeng][ໂຕະ|tó][ບໍ່|bàw] [ຫຼື|Lʉ̌ʉ][ຢູ່|yùu][ໃນ|nai][ຖົງ|thǒng]",
+     "id": "Di atas meja tidak? Atau di dalam tas?",
+     "literal": "ada-di — atas — meja — kah? atau — ada-di — dalam — kantong?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ບໍ່ມີ|Bàw míi] [ຂ້ອຍ|Khàwy][ຫາ|hǎa][ແລ້ວ|lèeo] [ຢູ່|Yùu][ລຸ່ມ|lùm][ຕັ່ງ|tàng][ກໍ|kaw][ບໍ່ມີ|bàw míi]",
+     "id": "Tidak ada. Sudah saya cari. Di bawah kursi juga tidak ada.",
+     "literal": "tidak — ada. saya — cari — sudah. ada-di — bawah — kursi — juga — tidak — ada."
+    },
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ເບິ່ງ|Bòeng][ພຸ້ນ|phûn][ແດ່|dèe] [ຢູ່|Yùu][ຂ້າງ|khàang][ຄອມ|khawm][ພຸ້ນ|phûn] [ແມ່ນ|Mèen][ບໍ່|bàw]",
+     "id": "Coba lihat yang di sana. Di samping komputer itu. Bukan?",
+     "literal": "lihat — sana — sedikit. ada-di — samping — kompu — sana. benar — kah?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ແມ່ນ|Mèen][ແລ້ວ|lèeo] [ຂອບໃຈ|Khàwp-jai][ຫຼາຍໆ|lǎai-lǎai] [ຂ້ອຍ|Khàwy][ຂີ້ລືມ|khîi-lʉʉm][ຫຼາຍ|lǎai]",
+     "id": "Betul! Terima kasih banyak. Saya pelupa sekali.",
+     "literal": "benar — sudah. terima-kasih — banyak-banyak. saya — pelupa — banyak."
+    },
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ບໍ່ເປັນຫຍັງ|Bàw pen nyǎng] [ເຮືອນ|Hʉan][ເຈົ້າ|jâo][ເປັນ|pen][ແນວ|neeo][ໃດ|dai] [ໃຫຍ່|Nyài][ບໍ່|bàw]",
+     "id": "Tidak apa-apa. Rumahmu bagaimana? Besar tidak?",
+     "literal": "tidak — jadi — apa. rumah — kamu — adalah — cara — mana? besar — kah?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ບໍ່|Bàw][ໃຫຍ່|nyài] [ມີ|Míi][ສອງ|sǎwng][ຫ້ອງ|hàwng] [ຫ້ອງ|Hàwng][ນອນ|náwn][ກັບ|kap][ຫ້ອງ|hàwng][ຄົວ|khúa] [ແຕ່|Tèe][ບໍ່ມີ|bàw míi][ເຄື່ອງ|khʉ̂ang][ແອ|ee]",
+     "id": "Tidak besar. Ada dua ruang: kamar tidur dan dapur. Tapi tidak ada AC.",
+     "literal": "tidak — besar. ada — dua — ruang. ruang — tidur — dengan — ruang — masak. tetapi — tidak — ada — mesin — dingin."
+    },
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ບໍ່ມີ|Bàw míi][ເຄື່ອງແອ|khʉ̂ang-ee][ຮ້ອນ|hâwn][ບໍ່|bàw]",
+     "id": "Tanpa AC panas tidak?",
+     "literal": "tidak — ada — pendingin — panas — kah?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ຮ້ອນ|Hâwn][ຢູ່|yùu] [ແຕ່|Tèe][ມີ|míi][ພັດລົມ|phat-lóm][ສອງ|sǎwng][ໜ່ວຍ|nùay] [ພໍ|Phaw][ໄດ້|dâi]",
+     "id": "Panas sih. Tapi ada dua kipas. Cukuplah.",
+     "literal": "panas — berlangsung. tetapi — ada — kipas-angin — dua — buah. cukup — bisa."
+    }
+   ],
+   "notes": [
+    "**ມີ míi berarti \"ada\" DAN \"punya\", satu kata untuk keduanya** — persis seperti bahasa Indonesia percakapan. *ຂ້ອຍມີລົດ* (saya punya mobil), *ຢູ່ນີ້ມີຮ້ານກາເຟ* (di sini ada kedai kopi). Bentuk negatifnya *ບໍ່ມີ bàw míi*, dan itu salah satu kalimat yang paling sering kamu dengar dan ucapkan.",
+    "**ຂອງໃຜ khǎwng phǎi = \"punya siapa\".** Jawabannya *ຂອງຂ້ອຍ* (punya saya), *ຂອງລາວ* (punya dia). Dalam percakapan cepat *ຂອງ* sering dibuang di depan orangnya: *ກະແຈຂ້ອຍ* sudah cukup untuk \"kunci saya\".",
+    "**Tiga jarak, bukan dua.** *ນີ້ nîi* = dekat pembicara (ini). *ນັ້ນ nân* = dekat lawan bicara (itu). *ພຸ້ນ phûn* = jauh dari keduanya (itu di sana). Bahasa Indonesia memakai \"itu\" untuk dua yang terakhir; bahasa Lao memisahkannya, persis seperti bahasa Sunda dan Jawa.",
+    "**Kata tunjuk berdiri SESUDAH bendanya.** *ກະແຈອັນນີ້* (kunci ini), *ຄົນນັ້ນ* (orang itu), *ເຮືອນພຸ້ນ* (rumah di sana). Kata bantu bilangan ikut masuk di antaranya kalau bendanya benda: *ອັນນີ້*, *ໂຕນັ້ນ*.",
+    "**ເສຍ sǐa = \"hilang, rusak, terbuang\".** *ກະແຈເສຍ* (kuncinya hilang), *ລົດເສຍ* (mobilnya rusak), *ເສຍເງິນ* (kehilangan uang), *ເສຍໃຈ sǐa-jai* (sedih, harfiah \"kehilangan hati\"). Satu kata, banyak kerugian.",
+    "**ຫາ hǎa = \"mencari\".** *ຫາກະແຈ* (mencari kunci). Kata yang sama berarti \"kepada\" dalam *ໂທຫາ thóo hǎa* (menelepon kepada). Dan *ພົບ phop* atau *ເຫັນ hěn* untuk \"menemukan, melihat\": *ພົບແລ້ວ* (sudah ketemu).",
+    "**ພໍໄດ້ phaw dâi = \"cukuplah, lumayan\".** Ungkapan yang sangat Lao untuk menerima keadaan tanpa mengeluh dan tanpa memuji. Kembarannya: *ພໍໃຊ້ໄດ້ phaw sâi dâi* (bisa dipakailah).",
+    "**ຂີ້ລືມ khîi-lʉʉm = \"pelupa\".** Ingat awalan *ຂີ້-* dari unit 9 yang menandai kebiasaan. Kalimat *ຂ້ອຍຂີ້ລືມ* adalah permintaan maaf yang ringan dan hampir selalu dibalas dengan tawa.",
+    "**ຢູ່ yùu di ujung kalimat berarti \"lagi begitu, sedang begitu\".** *ຮ້ອນຢູ່* = \"panas sih\" — mengakui keadaan yang sedang berlangsung. Ini pemakaian *ຢູ່* yang ketiga, setelah \"ada di\" dan \"di\"."
+   ],
+   "grammars": [
+    {
+     "title": "Letak benda: delapan kata yang menutup semuanya",
+     "table": {
+      "head": ["Lao", "Baca", "Indonesia", "Contoh"],
+      "rows": [
+       ["ເທິງ", "*thóeng*", "di atas", "*ຢູ່ເທິງໂຕະ* — di atas meja"],
+       ["ລຸ່ມ", "*lùm*", "di bawah", "*ຢູ່ລຸ່ມຕັ່ງ* — di bawah kursi"],
+       ["ໃນ", "*nai*", "di dalam", "*ຢູ່ໃນຖົງ* — di dalam tas"],
+       ["ນອກ", "*nàwk*", "di luar", "*ຢູ່ນອກເຮືອນ* — di luar rumah"],
+       ["ຂ້າງ", "*khàang*", "di samping", "*ຢູ່ຂ້າງປະຕູ* — di samping pintu"],
+       ["ໜ້າ", "*nâa*", "di depan", "*ຢູ່ໜ້າຮ້ານ* — di depan toko"],
+       ["ຫຼັງ", "*lǎng*", "di belakang", "*ຢູ່ຫຼັງເຮືອນ* — di belakang rumah"],
+       ["ລະຫວ່າງ", "*la-wàang*", "di antara", "*ຢູ່ລະຫວ່າງສອງເຮືອນ*"]
+      ]
+     },
+     "after": [
+      "Semuanya dipakai dengan *ຢູ່ yùu* di depan. Tanpa *ຢູ່*, kata-kata ini jadi kata benda: *ເທິງ* (bagian atas), *ໃນ* (bagian dalam)."
+     ]
+    },
+    {
+     "title": "Menyatakan milik",
+     "table": {
+      "head": ["Lao", "Baca", "Arti"],
+      "rows": [
+       ["ອັນນີ້ຂອງໃຜ", "*an nîi khǎwng phǎi*", "yang ini punya siapa?"],
+       ["ຂອງຂ້ອຍ", "*khǎwng khàwy*", "punya saya"],
+       ["ຂອງຂ້ອຍເອງ", "*khǎwng khàwy éeng*", "punya saya sendiri"],
+       ["ບໍ່ແມ່ນຂອງຂ້ອຍ", "*bàw mèen khǎwng khàwy*", "bukan punya saya"],
+       ["ກະແຈຂອງບຸນມີ", "*ka-jèe khǎwng Bun-míi*", "kunci Bounmy"],
+       ["ໜ້າຈະແມ່ນຂອງລາວ", "*nâa-ja mèen khǎwng láao*", "sepertinya punya dia"],
+       ["ຢືມໄດ້ບໍ່", "*yʉʉm dâi bàw*", "boleh pinjam?"],
+       ["ຂໍຢືມແດ່", "*khǎw yʉʉm dèe*", "pinjam sebentar dong"]
+      ]
+     },
+     "after": [
+      "**ເອງ *éeng*** berarti \"sendiri\" dan menegaskan: *ຂອງຂ້ອຍເອງ* (punya saya sendiri), *ເຮັດເອງ* (bikin sendiri), *ໄປເອງ* (pergi sendiri).",
+      "**ໜ້າຈະ *nâa-ja*** = \"sepertinya, kemungkinan besar\". Kata ini melunakkan tebakan dan membuatmu terdengar tidak menuduh — berguna sekali waktu barang orang tertukar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Rumah dan isinya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Lao", "Baca", "Indonesia", "Lao", "Baca", "Indonesia"],
+     "rows": [
+      ["ເຮືອນ", "*hʉan*", "rumah", "ຫ້ອງ", "*hàwng*", "kamar, ruang"],
+      ["ຫ້ອງນອນ", "*hàwng náwn*", "kamar tidur", "ຫ້ອງຄົວ", "*hàwng khúa*", "dapur"],
+      ["ຫ້ອງນ້ຳ", "*hàwng nâm*", "kamar mandi", "ຫ້ອງຮັບແຂກ", "*hàwng hap khèek*", "ruang tamu"],
+      ["ປະຕູ", "*pa-tuu*", "pintu", "ປ່ອງຢ້ຽມ", "*pàwng-yîam*", "jendela"],
+      ["ໂຕະ", "*tó*", "meja", "ຕັ່ງ", "*tàng*", "kursi"],
+      ["ຕຽງ", "*tíang*", "tempat tidur", "ຕູ້", "*tûu*", "lemari"],
+      ["ພັດລົມ", "*phat-lóm*", "kipas angin", "ເຄື່ອງແອ", "*khʉ̂ang-ee*", "AC"],
+      ["ໄຟ", "*fái*", "lampu, listrik", "ນ້ຳປະປາ", "*nâm pa-paa*", "air ledeng"],
+      ["ຕູ້ເຢັນ", "*tûu-yén*", "kulkas", "ເຕົາ", "*tao*", "kompor"],
+      ["ຄອມພິວເຕີ", "*khawm-phiu-tôe*", "komputer", "ກະແຈ", "*ka-jèe*", "kunci"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan **ຫ້ອງ *hàwng*** yang berarti \"ruang\" dan menempel di depan fungsinya: *ຫ້ອງນອນ* (ruang tidur), *ຫ້ອງຄົວ* (ruang masak), *ຫ້ອງນ້ຳ* (ruang air = kamar mandi/toilet), *ຫ້ອງການ hàwng-kaan* (ruang kerja = kantor). Sistem yang sama persis dengan bahasa Indonesia."
+    },
+    {
+     "type": "p",
+     "text": "Rumah tradisional Lao — *ເຮືອນລາວ* — berdiri di atas tiang, dengan ruang terbuka di bawahnya untuk bekerja dan berteduh dari panas. Kalau kamu diundang masuk, **lepaskan alas kaki di tangga** dan jangan menginjak ambang pintu; di kepercayaan setempat ambang itu tempat roh penjaga rumah."
+    }
+   ]
+  },
+  {
+   "title": "Kalimat untuk barang hilang dan pinjam-meminjam",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Lao", "Baca", "Arti"],
+     "rows": [
+      ["ຂ້ອຍເສຍ…", "*khàwy sǐa…*", "saya kehilangan…"],
+      ["ເຫັນ…ບໍ່", "*hěn… bàw*", "lihat… tidak?"],
+      ["ຫາບໍ່ພົບ", "*hǎa bàw phop*", "cari tidak ketemu"],
+      ["ພົບແລ້ວ", "*phop lèeo*", "sudah ketemu"],
+      ["ລືມໄວ້ຢູ່…", "*lʉʉm wâi yùu…*", "ketinggalan di…"],
+      ["ອັນນີ້ຂອງໃຜ", "*an nîi khǎwng phǎi*", "ini punya siapa?"],
+      ["ຂໍຢືມແດ່", "*khǎw yʉʉm dèe*", "pinjam sebentar dong"],
+      ["ຄືນໃຫ້ມື້ອື່ນ", "*khʉ́ʉn hài mʉ̂ʉ-ʉ̀ʉn*", "saya kembalikan besok"],
+      ["ເອົາຄືນແດ່", "*ao khʉ́ʉn dèe*", "tolong dikembalikan"],
+      ["ຢູ່ໃສກໍບໍ່ມີ", "*yùu sǎi kaw bàw míi*", "di mana-mana tidak ada"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**ຄືນ *khʉ́ʉn*** di belakang kata kerja berarti \"kembali\": *ເອົາຄືນ* (ambil kembali), *ໃຫ້ຄືນ* (berikan kembali), *ໄປຄືນ* (pergi balik). Kata yang bunyinya sama juga berarti \"malam\" — dan seperti biasa, konteksnya yang memisahkan."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "lo": "ເຮືອນ", "baca": "hʉan", "id": "rumah" },
+  { "lo": "ຫ້ອງ", "baca": "hàwng", "id": "kamar, ruang" },
+  { "lo": "ຫ້ອງນອນ", "baca": "hàwng náwn", "id": "kamar tidur" },
+  { "lo": "ຫ້ອງຄົວ", "baca": "hàwng khúa", "id": "dapur" },
+  { "lo": "ປະຕູ", "baca": "pa-tuu", "id": "pintu" },
+  { "lo": "ປ່ອງຢ້ຽມ", "baca": "pàwng-yîam", "id": "jendela" },
+  { "lo": "ຕັ່ງ", "baca": "tàng", "id": "kursi" },
+  { "lo": "ຕຽງ", "baca": "tíang", "id": "tempat tidur" },
+  { "lo": "ຕູ້", "baca": "tûu", "id": "lemari" },
+  { "lo": "ຕູ້ເຢັນ", "baca": "tûu-yén", "id": "kulkas" },
+  { "lo": "ພັດລົມ", "baca": "phat-lóm", "id": "kipas angin" },
+  { "lo": "ເຄື່ອງແອ", "baca": "khʉ̂ang-ee", "id": "AC" },
+  { "lo": "ໄຟ", "baca": "fái", "id": "lampu, listrik, api" },
+  { "lo": "ກະແຈ", "baca": "ka-jèe", "id": "kunci" },
+  { "lo": "ຄອມພິວເຕີ", "baca": "khawm-phiu-tôe", "id": "komputer" },
+  { "lo": "ເທິງ", "baca": "thóeng", "id": "di atas" },
+  { "lo": "ລຸ່ມ", "baca": "lùm", "id": "di bawah" },
+  { "lo": "ໃນ", "baca": "nai", "id": "di dalam" },
+  { "lo": "ນອກ", "baca": "nàwk", "id": "di luar" },
+  { "lo": "ໜ້າ", "baca": "nâa", "id": "di depan; muka" },
+  { "lo": "ຫຼັງ", "baca": "lǎng", "id": "di belakang" },
+  { "lo": "ລະຫວ່າງ", "baca": "la-wàang", "id": "di antara" },
+  { "lo": "ເສຍ", "baca": "sǐa", "id": "hilang, rusak" },
+  { "lo": "ຫາ", "baca": "hǎa", "id": "mencari" },
+  { "lo": "ເຫັນ", "baca": "hěn", "id": "melihat, menemukan" },
+  { "lo": "ຢືມ", "baca": "yʉʉm", "id": "meminjam" },
+  { "lo": "ຄືນ", "baca": "khʉ́ʉn", "id": "kembali" },
+  { "lo": "ໃຫ້", "baca": "hài", "id": "memberi; supaya" },
+  { "lo": "ເອງ", "baca": "éeng", "id": "sendiri" },
+  { "lo": "ໜ້າຈະ", "baca": "nâa-ja", "id": "sepertinya" },
+  { "lo": "ຂີ້ລືມ", "baca": "khîi-lʉʉm", "id": "pelupa" },
+  { "lo": "ພໍ", "baca": "phaw", "id": "cukup" },
+  { "lo": "ພໍໄດ້", "baca": "phaw dâi", "id": "cukuplah, lumayan" },
+  { "lo": "ກັບ", "baca": "kap", "id": "dengan, dan" },
+  { "lo": "ແຂກ", "baca": "khèek", "id": "tamu" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih kata tunjuk yang tepat: ນີ້, ນັ້ນ, atau ພຸ້ນ.",
+   "items": [
+    "ອັນ____ຂອງຂ້ອຍ (yang ini punya saya — di tanganku)",
+    "ອັນ____ຂອງເຈົ້າ (yang itu punyamu — di tanganmu)",
+    "ເຮືອນ____ໃຫຍ່ຫຼາຍ (rumah di sana besar sekali)",
+    "ຄົນ____ແມ່ນໃຜ (orang itu siapa — yang berdiri dekatmu)",
+    "ກະແຈອັນ____ (kunci ini)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata letak: ເທິງ, ລຸ່ມ, ໃນ, ຂ້າງ, atau ໜ້າ.",
+   "items": [
+    "ຢູ່____ໂຕະ (di atas meja)",
+    "ຢູ່____ຖົງ (di dalam tas)",
+    "ຢູ່____ຕັ່ງ (di bawah kursi)",
+    "ຢູ່____ປະຕູ (di samping pintu)",
+    "ຢູ່____ຮ້ານ (di depan toko)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ໃຜ / ຂອງ / ນີ້ / ອັນ",
+    "ແລ້ວ / ເສຍ / ກະແຈ / ຂ້ອຍ",
+    "ບໍ່ / ພົບ / ຫາ",
+    "ແດ່ / ຢືມ / ຂໍ",
+    "ແອ / ບໍ່ມີ / ເຄື່ອງ"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Lao.",
+   "items": [
+    "Lihat kunci saya tidak?",
+    "Bukan. Yang itu punyamu.",
+    "Di atas meja tidak? Atau di dalam tas?",
+    "Sudah saya cari, tidak ada.",
+    "Rumah saya tidak besar, ada dua ruang.",
+    "Tidak ada AC, tapi ada dua kipas. Cukuplah."
+   ]
+  }
+ ],
+ "answers": [
+  "ນີ້ — ນັ້ນ — ພຸ້ນ — ນັ້ນ — ນີ້",
+  "ເທິງ — ໃນ — ລຸ່ມ — ຂ້າງ — ໜ້າ",
+  "ອັນນີ້ຂອງໃຜ — ຂ້ອຍເສຍກະແຈແລ້ວ — ຫາບໍ່ພົບ — ຂໍຢືມແດ່ — ບໍ່ມີເຄື່ອງແອ",
+  "ເຫັນກະແຈຂ້ອຍບໍ່ — ບໍ່ແມ່ນ ອັນນັ້ນຂອງເຈົ້າ — ຢູ່ເທິງໂຕະບໍ່ ຫຼືຢູ່ໃນຖົງ — ຂ້ອຍຫາແລ້ວ ບໍ່ມີ — ເຮືອນຂ້ອຍບໍ່ໃຫຍ່ ມີສອງຫ້ອງ — ບໍ່ມີເຄື່ອງແອ ແຕ່ມີພັດລົມສອງໜ່ວຍ ພໍໄດ້"
+ ],
+ "wave": "Ulangi unit 8: tutup bahasa Laonya, lalu tawar satu tumpangan tuk-tuk dari awal sampai turun — termasuk menanyakan arah dan menyuruh berhenti."
+}

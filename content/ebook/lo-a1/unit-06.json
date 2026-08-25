@@ -1,0 +1,266 @@
+{
+ "title": "Jam berapa: waktu dan rutinitas harian",
+ "title_target": "ຈັກໂມງແລ້ວ — Ják móong lèeo",
+ "goal": "Menyebut jam berapa, membagi hari jadi bagian-bagiannya, dan menceritakan rutinitasmu dari bangun sampai tidur — sekaligus memasang penanda \"sedang\" dan \"biasanya\".",
+ "bekal": [
+  "bertanya dan menjawab ຈັກໂມງ",
+  "bagian hari: ເຊົ້າ ສວາຍ ທ່ຽງ ບ່າຍ ແລງ ກາງຄືນ",
+  "urutan kegiatan dengan ແລ້ວ dan ຫຼັງຈາກນັ້ນ",
+  "penanda sedang: ກຳລັງ dan ຢູ່",
+  "seberapa sering: ທຸກມື້ ບາງເທື່ອ ບໍ່ເຄີຍ"
+ ],
+ "dialogs": [
+  {
+   "title": "ບົດສົນທະນາ — Menunggu rapat mulai",
+   "intro": "Bounmy dan Budi mengobrol soal jadwal masing-masing. Perhatikan bahwa jam disebut dengan bagian harinya, bukan dengan angka 24 jam.",
+   "lines": [
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ດຽວນີ້|Dǐao-nîi][ຈັກ|ják][ໂມງ|móong][ແລ້ວ|lèeo]",
+     "id": "Sekarang jam berapa?",
+     "literal": "sekarang — berapa — jam — sudah?"
+    },
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ເກົ້າ|Kào][ໂມງ|móong][ເຄິ່ງ|khòeng] [ປະຊຸມ|Pa-sum][ສິບ|síp][ໂມງ|móong]",
+     "id": "Setengah sepuluh. Rapatnya jam sepuluh.",
+     "literal": "sembilan — jam — setengah. rapat — sepuluh — jam."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ຍັງ|Nyáng][ມີ|míi][ເວລາ|wée-láa] [ເຈົ້າ|Jâo][ຕື່ນ|tʉ̀ʉn][ນອນ|náwn][ຈັກ|ják][ໂມງ|móong]",
+     "id": "Masih ada waktu. Kamu bangun jam berapa?",
+     "literal": "masih — ada — waktu. kamu — bangun — tidur — berapa — jam?"
+    },
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ຫົກ|Hók][ໂມງ|móong][ເຊົ້າ|sâo] [ແລ້ວ|Lèeo][ກໍ|kaw][ອອກ|àwk][ກຳລັງ|kam-láng][ກາຍ|kaai][ໜ້ອຍ|nàwy][ໜຶ່ງ|nʉ̀ng]",
+     "id": "Jam enam pagi. Lalu olahraga sebentar.",
+     "literal": "enam — jam — pagi. lalu — juga — keluar — tenaga — sedikit — satu."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ເຈົ້າ|Jâo][ຂະຫຍັນ|kha-nyǎn][ຫຼາຍ|lǎai] [ຂ້ອຍ|Khàwy][ຕື່ນ|tʉ̀ʉn][ເຈັດ|jét][ໂມງ|móong][ເຄິ່ງ|khòeng] [ບາງ|Baang][ເທື່ອ|thʉ̀a][ແປດ|pèet][ໂມງ|móong]",
+     "id": "Kamu rajin sekali. Saya bangun setengah delapan. Kadang jam delapan.",
+     "literal": "kamu — rajin — banyak. saya — bangun — tujuh — jam — setengah. sebagian — kali — delapan — jam."
+    },
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ເຈົ້າ|Jâo][ກິນ|kin][ເຂົ້າ|khào][ສວຍ|sǔay][ບໍ່|bàw]",
+     "id": "Kamu sarapan tidak?",
+     "literal": "kamu — makan — nasi — pagi-siang — kah?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ກິນ|Kin][ທຸກ|thuk][ມື້|mʉ̂ʉ] [ຢູ່|Yùu][ຮ້ານ|hâan][ໃກ້|kâi][ບ້ານ|bâan] [ຫຼັງ|Lǎng][ຈາກ|jàak][ນັ້ນ|nân][ຍ່າງ|nyàang][ມາ|maa][ອອບ|áwp][ຟິດ|fit]",
+     "id": "Makan tiap hari, di warung dekat rumah. Setelah itu jalan kaki ke kantor.",
+     "literal": "makan — setiap — hari. di — warung — dekat — rumah. belakang — dari — itu — berjalan — datang — kantor."
+    },
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ເລີກ|Lôek][ວຽກ|wîak][ຈັກ|ják][ໂມງ|móong]",
+     "id": "Pulang kerja jam berapa?",
+     "literal": "berhenti — pekerjaan — berapa — jam?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ຫ້າ|Hāa][ໂມງ|móong][ແລງ|léeng] [ແຕ່|Tèe][ຕອນ|tawn][ທ້າຍ|thâai][ເດືອນ|dʉan][ຊິ|si][ດົນ|dón][ກວ່າ|kwàa][ນັ້ນ|nân]",
+     "id": "Jam lima sore. Tapi akhir bulan biasanya lebih lama.",
+     "literal": "lima — jam — petang. tetapi — bagian — ujung — bulan — akan — lama — lebih — itu."
+    },
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ຄື|Khʉʉ][ກັນ|kan] [ດຽວນີ້|Dǐao-nîi][ຫົວໜ້າ|hǔa-nâa][ກຳລັງ|kam-láng][ຖ້າ|thàa][ຢູ່|yùu] [ໄປ|Pai][ເນາະ|nāw]",
+     "id": "Sama. Sekarang bosnya sedang menunggu. Ayo.",
+     "literal": "sama — bersama. sekarang — kepala-depan — sedang — menunggu — berlangsung. pergi — ya?"
+    }
+   ],
+   "notes": [
+    "**ຈັກໂມງ ják móong = \"jam berapa\", dan ໂມງ móong = \"jam\" sebagai penunjuk waktu.** Bandingkan dengan *ຊົ່ວໂມງ sùa-móong* yang berarti lamanya. *ສອງໂມງ* = jam dua; *ສອງຊົ່ວໂມງ* = dua jam.",
+    "**Bagian hari WAJIB ikut, karena bahasa Lao memakai jam 12.** *ຫ້າໂມງເຊົ້າ* (jam lima pagi) dan *ຫ້າໂມງແລງ* (jam lima sore) berbeda oleh satu kata di ujung. Tanpa kata itu, orang akan bertanya balik.",
+    "**ເຄິ່ງ khòeng = \"setengah\", dan letaknya SESUDAH jamnya.** *ເກົ້າໂມງເຄິ່ງ* = setengah sepuluh dalam bahasa Indonesia — yaitu jam sembilan lewat tiga puluh menit. ⚠️ Jangan diterjemahkan langsung dari kebiasaan Indonesia yang menyebut jam berikutnya.",
+    "**Menit disebut dengan ນາທີ *náa-thíi* sesudah jamnya**: *ສິບໂມງສິບຫ້ານາທີ* (jam sepuluh lewat lima belas). Untuk \"kurang\", pakai *ອີກ ìik*: *ອີກສິບນາທີສິບໂມງ* (sepuluh menit lagi jam sepuluh).",
+    "**ກຳລັງ kam-láng = \"sedang\", dan berdiri di DEPAN kata kerja.** Sering dipasangkan dengan *ຢູ່ yùu* di ujung: *ກຳລັງຖ້າຢູ່* (sedang menunggu). Kedua penanda itu boleh dipakai sendiri-sendiri, dan dalam percakapan santai orang lebih sering memakai *ພວມ phuam*.",
+    "**ຫຼັງຈາກນັ້ນ lǎng jàak nân = \"setelah itu\", dan ແລ້ວກໍ lèeo kaw = \"lalu\".** Keduanya menyambung urutan kegiatan. *ແລ້ວກໍ* jauh lebih sering di percakapan; *ຫຼັງຈາກນັ້ນ* terdengar lebih rapi dan dipakai kalau kamu bercerita panjang.",
+    "**ບາງເທື່ອ baang thʉ̀a = \"kadang-kadang\".** Bersama *ທຸກມື້* (tiap hari), *ເລື້ອຍໆ lʉ̂ay-lʉ̂ay* (sering), dan *ບໍ່ຄ່ອຍ bàw khàwy* (jarang), empat kata ini cukup untuk semua urusan frekuensi di tingkat A1.",
+    "**ຕື່ນນອນ tʉ̀ʉn náwn = \"bangun tidur\", ເຂົ້ານອນ khào náwn = \"pergi tidur\".** Perhatikan bahwa *ນອນ náwn* sendirian berarti \"tidur\" maupun \"berbaring\" — konteksnya yang memisahkan.",
+    "**ເລີກວຽກ lôek wîak = \"selesai kerja\".** Kata *ເລີກ lôek* berarti \"berhenti, membubarkan\": *ເລີກຮຽນ* (pulang sekolah), *ເລີກແລ້ວ* (sudah bubar)."
+   ],
+   "grammars": [
+    {
+     "title": "Menyusun jam: enam bagian hari",
+     "table": {
+      "head": ["Bagian hari", "Baca", "Kira-kira jam", "Contoh"],
+      "rows": [
+       ["ຕອນເຊົ້າ", "*tawn sâo*", "05.00 – 10.00", "*ແປດໂມງເຊົ້າ* — jam 8 pagi"],
+       ["ຕອນສວາຍ", "*tawn sǔay*", "10.00 – 12.00", "*ສິບເອັດໂມງສວາຍ* — jam 11 siang"],
+       ["ຕອນທ່ຽງ", "*tawn thìang*", "12.00", "*ທ່ຽງ* — tengah hari"],
+       ["ຕອນບ່າຍ", "*tawn bàai*", "13.00 – 16.00", "*ບ່າຍສາມໂມງ* — jam 3 sore"],
+       ["ຕອນແລງ", "*tawn léeng*", "16.00 – 19.00", "*ຫ້າໂມງແລງ* — jam 5 petang"],
+       ["ຕອນກາງຄືນ", "*tawn kaang-khʉ́ʉn*", "19.00 – 05.00", "*ສາມທຸ່ມ sǎam thùm* — jam 9 malam"]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa *ບ່າຍ* berdiri **sebelum** angkanya (*ບ່າຍສາມໂມງ*), sedangkan bagian hari lain berdiri **sesudah** (*ຫ້າໂມງແລງ*). Itu satu-satunya keanehan letak, dan ia hanya berlaku untuk sore.",
+      "Untuk malam, orang Lao punya satuan tersendiri: **ທຸ່ມ *thùm*** yang dihitung dari jam 7 malam. *ໜຶ່ງທຸ່ມ* = jam 7 malam, *ສອງທຸ່ມ* = jam 8, *ສາມທຸ່ມ* = jam 9. Kamu boleh saja memakai *ໂມງກາງຄືນ* dan tetap dimengerti."
+     ]
+    },
+    {
+     "title": "Kata kerja sehari-hari, berurutan dari bangun sampai tidur",
+     "table": {
+      "head": ["Lao", "Baca", "Indonesia", "Lao", "Baca", "Indonesia"],
+      "rows": [
+       ["ຕື່ນນອນ", "*tʉ̀ʉn náwn*", "bangun tidur", "ອາບນ້ຳ", "*àap nâm*", "mandi"],
+       ["ຖູແຂ້ວ", "*thǔu khêeo*", "sikat gigi", "ແຕ່ງຕົວ", "*tèng tǒa*", "berpakaian"],
+       ["ກິນເຂົ້າສວຍ", "*kin khào sǔay*", "sarapan", "ໄປເຮັດວຽກ", "*pai hét wîak*", "berangkat kerja"],
+       ["ກິນເຂົ້າທ່ຽງ", "*kin khào thìang*", "makan siang", "ພັກ", "*phak*", "istirahat"],
+       ["ເລີກວຽກ", "*lôek wîak*", "pulang kerja", "ກັບບ້ານ", "*kap bâan*", "pulang ke rumah"],
+       ["ກິນເຂົ້າແລງ", "*kin khào léeng*", "makan malam", "ເບິ່ງໂທລະພາບ", "*bòeng thóo-la-phâap*", "menonton TV"],
+       ["ອ່ານປຶ້ມ", "*àan pʉ̂m*", "membaca buku", "ເຂົ້ານອນ", "*khào náwn*", "pergi tidur"]
+      ]
+     },
+     "after": [
+      "Dengan tabel ini kamu sudah bisa menceritakan satu hari penuh. Coba sekarang: rangkai lima kegiatan berurutan, sambungkan dengan *ແລ້ວກໍ*, dan bacalah keras-keras."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Seberapa sering: empat kata yang menutup semuanya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Lao", "Baca", "Indonesia", "Letaknya", "Contoh"],
+     "rows": [
+      ["ທຸກມື້", "*thuk mʉ̂ʉ*", "setiap hari", "awal / akhir", "*ຂ້ອຍກິນທຸກມື້*"],
+      ["ເລື້ອຍໆ", "*lʉ̂ay-lʉ̂ay*", "sering", "akhir", "*ໄປເລື້ອຍໆ*"],
+      ["ບາງເທື່ອ", "*baang thʉ̀a*", "kadang-kadang", "awal", "*ບາງເທື່ອຂ້ອຍໄປ*"],
+      ["ບໍ່ຄ່ອຍ", "*bàw khàwy*", "jarang, tidak begitu", "depan kata kerja", "*ຂ້ອຍບໍ່ຄ່ອຍໄປ*"],
+      ["ບໍ່ເຄີຍ", "*bàw khóei*", "belum pernah", "depan kata kerja", "*ຂ້ອຍບໍ່ເຄີຍໄປ*"],
+      ["ເລື້ອຍ", "*lʉ̂ay*", "terus-menerus", "akhir", "*ເວົ້າເລື້ອຍ*"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**ບໍ່ຄ່ອຍ *bàw khàwy*** adalah kata yang paling berguna dan paling sering salah dipakai. Ia bukan \"tidak\" melainkan \"tidak begitu\", dan orang Lao memakainya untuk menolak dengan halus. *ບໍ່ຄ່ອຍແຊບ* (tidak begitu enak) jauh lebih sopan daripada *ບໍ່ແຊບ* (tidak enak), dan sering itulah maksud sebenarnya."
+    }
+   ]
+  },
+  {
+   "title": "Kata waktu yang menempel di semua kalimat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Lao", "Baca", "Indonesia", "Lao", "Baca", "Indonesia"],
+     "rows": [
+      ["ດຽວນີ້", "*dǐao-nîi*", "sekarang", "ຕໍ່ໄປ", "*taw pai*", "selanjutnya"],
+      ["ມື້ນີ້", "*mʉ̂ʉ-nîi*", "hari ini", "ດຽວ", "*dǐao*", "sebentar lagi"],
+      ["ມື້ອື່ນ", "*mʉ̂ʉ-ʉ̀ʉn*", "besok", "ກ່ອນ", "*kàwn*", "sebelum, dulu"],
+      ["ມື້ວານນີ້", "*mʉ̂ʉ-waan-nîi*", "kemarin", "ຫຼັງ", "*lǎng*", "sesudah"],
+      ["ຕອນເຊົ້ານີ້", "*tawn sâo-nîi*", "tadi pagi", "ຍັງ", "*nyáng*", "masih"],
+      ["ຄືນນີ້", "*khʉ́ʉn-nîi*", "malam ini", "ແລ້ວ", "*lèeo*", "sudah"],
+      ["ເວລາ", "*wée-láa*", "waktu", "ບໍ່ທັນ", "*bàw than*", "belum"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Penanda waktu bahasa Lao boleh berdiri di **awal** atau **akhir** kalimat, dan tidak mengubah apa pun pada kata kerjanya: *ມື້ອື່ນຂ້ອຍໄປ* dan *ຂ້ອຍໄປມື້ອື່ນ* sama-sama benar dan sama-sama berarti \"besok saya pergi\". Menaruhnya di depan sedikit lebih menekankan waktunya."
+    },
+    {
+     "type": "p",
+     "text": "Untuk \"belum\", bahasa Lao memakai **ຍັງບໍ່ທັນ *nyáng bàw than*** — harfiahnya \"masih tidak sempat\". *ຂ້ອຍຍັງບໍ່ທັນກິນ* = \"saya belum makan\". Dalam percakapan cepat sering dipendekkan jadi *ຍັງ* saja, dan itu sudah cukup sebagai jawaban."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "lo": "ໂມງ", "baca": "móong", "id": "jam (penunjuk waktu)" },
+  { "lo": "ຈັກໂມງ", "baca": "ják móong", "id": "jam berapa" },
+  { "lo": "ເຄິ່ງ", "baca": "khòeng", "id": "setengah" },
+  { "lo": "ເວລາ", "baca": "wée-láa", "id": "waktu" },
+  { "lo": "ດຽວນີ້", "baca": "dǐao-nîi", "id": "sekarang" },
+  { "lo": "ຕອນ", "baca": "tawn", "id": "saat, bagian" },
+  { "lo": "ສວາຍ", "baca": "sǔay", "id": "menjelang siang" },
+  { "lo": "ທ່ຽງ", "baca": "thìang", "id": "tengah hari" },
+  { "lo": "ບ່າຍ", "baca": "bàai", "id": "siang-sore" },
+  { "lo": "ແລງ", "baca": "léeng", "id": "petang" },
+  { "lo": "ກາງຄືນ", "baca": "kaang-khʉ́ʉn", "id": "malam" },
+  { "lo": "ທຸ່ມ", "baca": "thùm", "id": "jam malam (dari pukul 19)" },
+  { "lo": "ຕື່ນນອນ", "baca": "tʉ̀ʉn náwn", "id": "bangun tidur" },
+  { "lo": "ເຂົ້ານອນ", "baca": "khào náwn", "id": "pergi tidur" },
+  { "lo": "ນອນ", "baca": "náwn", "id": "tidur, berbaring" },
+  { "lo": "ອາບນ້ຳ", "baca": "àap nâm", "id": "mandi" },
+  { "lo": "ແຕ່ງຕົວ", "baca": "tèng tǒa", "id": "berpakaian" },
+  { "lo": "ກັບບ້ານ", "baca": "kap bâan", "id": "pulang ke rumah" },
+  { "lo": "ເລີກ", "baca": "lôek", "id": "berhenti, bubar" },
+  { "lo": "ກຳລັງ", "baca": "kam-láng", "id": "sedang" },
+  { "lo": "ພວມ", "baca": "phuam", "id": "sedang (percakapan)" },
+  { "lo": "ຫຼັງຈາກນັ້ນ", "baca": "lǎng jàak nân", "id": "setelah itu" },
+  { "lo": "ບາງເທື່ອ", "baca": "baang thʉ̀a", "id": "kadang-kadang" },
+  { "lo": "ເລື້ອຍໆ", "baca": "lʉ̂ay-lʉ̂ay", "id": "sering" },
+  { "lo": "ບໍ່ຄ່ອຍ", "baca": "bàw khàwy", "id": "jarang, tidak begitu" },
+  { "lo": "ຍັງບໍ່ທັນ", "baca": "nyáng bàw than", "id": "belum" },
+  { "lo": "ຂະຫຍັນ", "baca": "kha-nyǎn", "id": "rajin" },
+  { "lo": "ຫົວໜ້າ", "baca": "hǔa-nâa", "id": "atasan, kepala" },
+  { "lo": "ອອບຟິດ", "baca": "áwp-fit", "id": "kantor" },
+  { "lo": "ໂທລະພາບ", "baca": "thóo-la-phâap", "id": "televisi" },
+  { "lo": "ອ່ານ", "baca": "àan", "id": "membaca" },
+  { "lo": "ກວ່າ", "baca": "kwàa", "id": "lebih (pembanding)" },
+  { "lo": "ມື້ນີ້", "baca": "mʉ̂ʉ-nîi", "id": "hari ini" },
+  { "lo": "ມື້ອື່ນ", "baca": "mʉ̂ʉ-ʉ̀ʉn", "id": "besok" },
+  { "lo": "ມື້ວານນີ້", "baca": "mʉ̂ʉ-waan-nîi", "id": "kemarin" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis jam ini dalam bahasa Lao, lengkap dengan bagian harinya.",
+   "items": [
+    "07.00",
+    "09.30",
+    "12.00",
+    "15.00",
+    "17.30",
+    "21.00"
+   ]
+  },
+  {
+   "prompt": "Isi dengan ທຸກມື້, ບາງເທື່ອ, ບໍ່ຄ່ອຍ, atau ຍັງບໍ່ທັນ.",
+   "items": [
+    "ຂ້ອຍກິນເຂົ້າສວຍ____ (saya sarapan tiap hari)",
+    "____ຂ້ອຍໄປຕະຫຼາດ (kadang saya ke pasar)",
+    "ຂ້ອຍ____ເບິ່ງໂທລະພາບ (saya jarang nonton TV)",
+    "ຂ້ອຍ____ກິນ (saya belum makan)",
+    "ລາວ____ໄປອອບຟິດ (dia jarang ke kantor)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ແລ້ວ / ຈັກໂມງ / ດຽວນີ້",
+    "ໂມງ / ຕື່ນນອນ / ຫົກ / ຂ້ອຍ / ເຊົ້າ",
+    "ຢູ່ / ຖ້າ / ກຳລັງ / ຫົວໜ້າ",
+    "ແລງ / ເລີກວຽກ / ຫ້າໂມງ",
+    "ກໍ / ແລ້ວ / ອາບນ້ຳ / ຕື່ນນອນ"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Lao.",
+   "items": [
+    "Sekarang jam berapa?",
+    "Setengah sepuluh. Rapatnya jam sepuluh.",
+    "Kamu bangun jam berapa?",
+    "Jam enam pagi, lalu olahraga sebentar.",
+    "Saya sarapan tiap hari di warung dekat rumah.",
+    "Bosnya sedang menunggu."
+   ]
+  }
+ ],
+ "answers": [
+  "ເຈັດໂມງເຊົ້າ — ເກົ້າໂມງເຄິ່ງ — ທ່ຽງ — ບ່າຍສາມໂມງ — ຫ້າໂມງເຄິ່ງແລງ — ສາມທຸ່ມ",
+  "ທຸກມື້ — ບາງເທື່ອ — ບໍ່ຄ່ອຍ — ຍັງບໍ່ທັນ — ບໍ່ຄ່ອຍ",
+  "ດຽວນີ້ຈັກໂມງແລ້ວ — ຂ້ອຍຕື່ນນອນຫົກໂມງເຊົ້າ — ຫົວໜ້າກຳລັງຖ້າຢູ່ — ເລີກວຽກຫ້າໂມງແລງ — ຕື່ນນອນແລ້ວກໍອາບນ້ຳ",
+  "ດຽວນີ້ຈັກໂມງແລ້ວ — ເກົ້າໂມງເຄິ່ງ ປະຊຸມສິບໂມງ — ເຈົ້າຕື່ນນອນຈັກໂມງ — ຫົກໂມງເຊົ້າ ແລ້ວກໍອອກກຳລັງກາຍໜ້ອຍໜຶ່ງ — ຂ້ອຍກິນເຂົ້າສວຍທຸກມື້ຢູ່ຮ້ານໃກ້ບ້ານ — ຫົວໜ້າກຳລັງຖ້າຢູ່"
+ ],
+ "wave": "Ulangi unit 4: tutup bahasa Laonya, lalu belanja lima barang dengan jumlah dan kata bantunya yang benar — dari ingatan, tanpa melihat tabel."
+}

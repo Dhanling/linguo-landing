@@ -1,0 +1,273 @@
+{
+ "title": "Kata bantu bilangan: menghitung benda dengan benar",
+ "title_target": "ລັກສະນະນາມ — Lak-sa-na-náam",
+ "goal": "Menghitung apa pun dengan kata bantu yang tepat, memesan jumlah di warung dan toko, dan menunjuk \"yang ini, yang itu\" tanpa perlu menyebut nama bendanya.",
+ "bekal": [
+  "susunan benda + angka + kata bantu",
+  "kata bantu paling sering: ຄົນ ໂຕ ອັນ ໜ່ວຍ ໃບ ຫົວ",
+  "membalik angka \"satu\" ke belakang",
+  "bertanya jumlah dengan ຈັກ + kata bantu",
+  "memakai ອັນນີ້ / ອັນນັ້ນ sebagai pengganti benda"
+ ],
+ "dialogs": [
+  {
+   "title": "ບົດສົນທະນາ — Di toko kelontong sudut jalan",
+   "intro": "Budi berbelanja keperluan sehari-hari. Hitunglah berapa kali kata bantu bilangan muncul di dialog ini — bahasa Lao hampir tidak pernah menyebut angka tanpa mereka.",
+   "lines": [
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ສະບາຍດີ|Sa-baai-dii] [ມີ|Míi][ນ້ຳ|nâm][ບໍ່|bàw]",
+     "id": "Halo. Ada air?",
+     "literal": "sehat-baik. ada — air — kah?"
+    },
+    {
+     "speaker": "ຄົນຂາຍ:",
+     "text": "[ມີ|Míi] [ເອົາ|Ao][ຈັກ|ják][ຂວດ|khùat]",
+     "id": "Ada. Mau berapa botol?",
+     "literal": "ada. ambil — berapa — botol?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ສາມ|Sǎam][ຂວດ|khùat] [ແລ້ວ|Lèeo][ກໍ|kaw][ເບຍ|bia][ສອງ|sǎwng][ຂວດ|khùat][ນຳ|nám]",
+     "id": "Tiga botol. Lalu bir dua botol juga.",
+     "literal": "tiga — botol. lalu — juga — bir — dua — botol — ikut."
+    },
+    {
+     "speaker": "ຄົນຂາຍ:",
+     "text": "[ໄດ້|Dâi] [ເອົາ|Ao][ຫຍັງ|nyǎng][ອີກ|ìik][ບໍ່|bàw]",
+     "id": "Baik. Ambil apa lagi?",
+     "literal": "bisa. ambil — apa — lagi — kah?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ຂໍ|Khǎw][ໄຂ່|khài][ສິບ|síp][ໜ່ວຍ|nùay] [ແລະ|Lae][ເຂົ້າໜົມ|khào-nǒm][ຖົງ|thǒng][ໜຶ່ງ|nʉ̀ng]",
+     "id": "Minta telur sepuluh butir, dan sebungkus kue.",
+     "literal": "minta — telur — sepuluh — butir. dan — kue — bungkus — satu."
+    },
+    {
+     "speaker": "ຄົນຂາຍ:",
+     "text": "[ເຂົ້າໜົມ|Khào-nǒm][ອັນ|an][ໃດ|dai] [ອັນ|An][ນີ້|nîi][ຫຼື|lʉ̌ʉ][ອັນ|an][ນັ້ນ|nân]",
+     "id": "Kue yang mana? Yang ini atau yang itu?",
+     "literal": "kue — buah — mana? buah — ini — atau — buah — itu?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ອັນ|An][ນັ້ນ|nân] [ອັນ|An][ສີ|sǐi][ຂຽວ|khǐao]",
+     "id": "Yang itu. Yang warna hijau.",
+     "literal": "buah — itu. buah — warna — hijau."
+    },
+    {
+     "speaker": "ຄົນຂາຍ:",
+     "text": "[ໄດ້|Dâi] [ໝົດ|Mót][ຫ້າ|hāa][ສິບ|síp][ພັນ|phán][ກີບ|kìip]",
+     "id": "Baik. Semuanya lima puluh ribu kip.",
+     "literal": "bisa. habis — lima — puluh — ribu — kip."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ນີ້|Nîi][ເດີ້|dòe] [ຂ້ອຍ|Khàwy][ບໍ່|bàw][ມີ|míi][ຖົງ|thǒng] [ຂໍ|Khǎw][ຖົງ|thǒng][ໜຶ່ງ|nʉ̀ng][ໃບ|bai][ໄດ້|dâi][ບໍ່|bàw]",
+     "id": "Ini ya. Saya tidak bawa kantong. Boleh minta satu kantong?",
+     "literal": "ini — ya. saya — tidak — punya — kantong. minta — kantong — satu — lembar — bisa — kah?"
+    },
+    {
+     "speaker": "ຄົນຂາຍ:",
+     "text": "[ໄດ້|Dâi][ເລີຍ|lóei] [ຂອບໃຈ|Khàwp-jai][ເດີ້|dòe]",
+     "id": "Boleh saja. Terima kasih ya.",
+     "literal": "bisa — langsung. terima-kasih — ya."
+    }
+   ],
+   "notes": [
+    "**Susunannya selalu: benda + angka + kata bantu.** *ນ້ຳສາມຂວດ nâm sǎam khùat* = \"air tiga botol\". Bahasa Indonesia menaruh angkanya di depan (\"tiga botol air\"), bahasa Lao di belakang bendanya. Salah urutan tetap dimengerti, tapi langsung terdengar asing.",
+    "**Untuk \"satu\", angkanya pindah ke BELAKANG kata bantu.** *ຖົງໜຶ່ງ thǒng nʉ̀ng* (satu bungkus) terdengar alami; *ໜຶ່ງຖົງ* terdengar seperti membaca daftar. Ini kebiasaan, bukan aturan mati — tapi ikuti saja, karena semua orang melakukannya.",
+    "**ຈັກ ják + kata bantu = \"berapa\".** *ຈັກຂວດ* (berapa botol), *ຈັກຄົນ* (berapa orang), *ຈັກໜ່ວຍ* (berapa butir). Perhatikan bahwa kata bantunya tetap wajib muncul walau angkanya belum diketahui.",
+    "**ອັນ an adalah kata bantu darurat.** Ia dipakai untuk benda kecil yang tak punya kata bantu khusus — dan kalau kamu lupa kata bantunya, *ອັນ* hampir selalu diterima. Ia juga jadi kata ganti benda: *ອັນນີ້* (yang ini), *ອັນນັ້ນ* (yang itu), *ອັນໃດ* (yang mana).",
+    "**Kata bantu bisa berdiri sendiri tanpa nama bendanya**, asal kedua pihak tahu bendanya apa. *ເອົາສອງໂຕ* (ambil dua ekor), *ເອົາອັນສີຂຽວ* (ambil yang hijau). Ini yang membuat percakapan Lao terdengar sangat ringkas.",
+    "**ຂໍ khǎw = \"minta\", dan ia adalah kata paling sopan untuk memulai permintaan.** *ຂໍນ້ຳແດ່* (minta air dong), *ຂໍເບິ່ງແດ່* (boleh saya lihat). Bandingkan dengan *ເອົາ ao* yang lebih seperti \"ambil\" — dipakai di warung dan toko, tetapi terlalu langsung untuk meminta tolong.",
+    "**ໝົດ mót berarti \"habis\", dan dipakai untuk \"totalnya\".** *ໝົດຫ້າສິບພັນ* = \"semuanya lima puluh ribu\". Kata yang sama berarti \"habis\" dalam arti stok: *ໝົດແລ້ວ* (sudah habis).",
+    "**ກໍ kaw = \"juga, kalau begitu\".** Ia berdiri sebelum kata kerja dan menyambung kalimat ke kalimat sebelumnya: *ແລ້ວກໍເອົາເບຍນຳ* (lalu ambil bir juga). Bersama *ນຳ nám* (ikut, juga) di ujung, keduanya adalah cara paling umum menambahkan sesuatu."
+   ],
+   "grammars": [
+    {
+     "title": "Dua belas kata bantu yang menutup hampir semua keperluan",
+     "table": {
+      "head": ["Kata bantu", "Baca", "Dipakai untuk", "Contoh"],
+      "rows": [
+       ["ຄົນ", "*khón*", "orang", "*ໝູ່ສາມຄົນ* — tiga teman"],
+       ["ໂຕ", "*tǒo*", "binatang, baju, meja, kursi", "*ໝາສອງໂຕ* — dua ekor anjing"],
+       ["ອັນ", "*an*", "benda kecil, apa saja", "*ອັນນີ້* — yang ini"],
+       ["ໜ່ວຍ", "*nùay*", "buah, telur, benda bulat, hp", "*ໄຂ່ສິບໜ່ວຍ* — sepuluh telur"],
+       ["ໃບ", "*bai*", "lembar, tas, tiket, kantong", "*ປີ້ໜຶ່ງໃບ* — satu tiket"],
+       ["ຫົວ", "*hǔa*", "buku", "*ປຶ້ມສອງຫົວ* — dua buku"],
+       ["ຄັນ", "*khán*", "kendaraan, payung", "*ລົດສາມຄັນ* — tiga mobil"],
+       ["ຂວດ", "*khùat*", "botol", "*ນ້ຳສາມຂວດ* — tiga botol air"],
+       ["ແກ້ວ", "*kêeo*", "gelas", "*ນ້ຳສອງແກ້ວ* — dua gelas air"],
+       ["ຈອກ", "*jàwk*", "cangkir", "*ກາເຟຈອກໜຶ່ງ* — secangkir kopi"],
+       ["ຖ້ວຍ", "*thûay*", "mangkuk", "*ເຝີສອງຖ້ວຍ* — dua mangkuk fer"],
+       ["ຖົງ", "*thǒng*", "bungkus, kantong", "*ເຂົ້າໜົມຖົງໜຶ່ງ* — sebungkus kue"]
+      ]
+     },
+     "after": [
+      "Jangan menghafal seluruh tabel hari ini. Ambil enam yang pertama; sisanya akan menempel lewat pemakaian, dan *ອັນ* menutupi semua yang belum kamu kuasai."
+     ]
+    },
+    {
+     "title": "Menunjuk tanpa menyebut bendanya",
+     "body": [
+      "Kata bantu + kata tunjuk membentuk kata ganti benda yang lengkap. Ini dipakai terus-menerus di toko dan warung."
+     ],
+     "table": {
+      "head": ["Lao", "Baca", "Arti", "Kapan"],
+      "rows": [
+       ["ອັນນີ້", "*an nîi*", "yang ini", "benda di dekatmu"],
+       ["ອັນນັ້ນ", "*an nân*", "yang itu", "benda dekat lawan bicara"],
+       ["ອັນພຸ້ນ", "*an phûn*", "yang di sana", "benda jauh dari keduanya"],
+       ["ອັນໃດ", "*an dai*", "yang mana", "bertanya memilih"],
+       ["ໂຕນີ້", "*tǒo nîi*", "yang ini (baju/binatang)", "kata bantunya ikut bendanya"],
+       ["ຄົນນັ້ນ", "*khón nân*", "orang itu", "menunjuk orang"]
+      ]
+     },
+     "after": [
+      "⚠️ Bahasa Lao membedakan **tiga jarak**, bukan dua: *ນີ້* (dekat saya), *ນັ້ນ* (dekat kamu), *ພຸ້ນ* (jauh dari kita berdua). Bahasa Indonesia memakai \"itu\" untuk dua yang terakhir — persis seperti bahasa Jawa dan Sunda yang juga punya tiga tingkat."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Barang belanjaan sehari-hari beserta kata bantunya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Lao", "Baca", "Indonesia", "Kata bantu"],
+     "rows": [
+      ["ນ້ຳ", "*nâm*", "air", "ຂວດ / ແກ້ວ"],
+      ["ເບຍ", "*bia*", "bir", "ຂວດ"],
+      ["ກາເຟ", "*kaa-fée*", "kopi", "ຈອກ"],
+      ["ໄຂ່", "*khài*", "telur", "ໜ່ວຍ"],
+      ["ເຂົ້າໜົມ", "*khào-nǒm*", "kue, makanan ringan", "ຖົງ / ອັນ"],
+      ["ໝາກໄມ້", "*màak-mâi*", "buah-buahan", "ໜ່ວຍ"],
+      ["ເຂົ້າ", "*khào*", "nasi, beras", "ຈານ / ຖົງ"],
+      ["ຢາສູບ", "*yaa sùup*", "rokok", "ຊອງ"],
+      ["ສະບູ", "*sa-buu*", "sabun", "ກ້ອນ"],
+      ["ເຈ້ຍ", "*jîa*", "kertas, tisu", "ໃບ / ຫໍ່"],
+      ["ປຶ້ມ", "*pʉ̂m*", "buku", "ຫົວ"],
+      ["ໂທລະສັບ", "*thóo-la-sáp*", "telepon, HP", "ໜ່ວຍ"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan **ເຂົ້າ *khào*** (nasi) dan **ເຂົ້າໜົມ *khào-nǒm*** (kue): keduanya berbagi kata yang sama, karena keduanya terbuat dari beras. Di Laos yang dimaksud \"nasi\" hampir selalu **ເຂົ້າໜຽວ *khào-nǐao*** — ketan, dimakan dengan tangan dari bakul anyaman. Nasi biasa disebut *ເຂົ້າຈ້າວ khào-jâao*."
+    }
+   ]
+  },
+  {
+   "title": "Warna",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Lao", "Baca", "Indonesia", "Lao", "Baca", "Indonesia"],
+     "rows": [
+      ["ສີແດງ", "*sǐi deeng*", "merah", "ສີຟ້າ", "*sǐi fâa*", "biru muda"],
+      ["ສີຂາວ", "*sǐi khǎao*", "putih", "ສີນ້ຳເງິນ", "*sǐi nâm-ngóen*", "biru tua"],
+      ["ສີດຳ", "*sǐi dam*", "hitam", "ສີເຫຼືອງ", "*sǐi lʉ̌ang*", "kuning"],
+      ["ສີຂຽວ", "*sǐi khǐao*", "hijau", "ສີສົ້ມ", "*sǐi sôm*", "oranye"],
+      ["ສີນ້ຳຕານ", "*sǐi nâm-taan*", "cokelat", "ສີມ່ວງ", "*sǐi mùang*", "ungu"],
+      ["ສີເທົາ", "*sǐi thao*", "abu-abu", "ສີບົວ", "*sǐi bua*", "merah muda"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa banyak nama warna adalah **benda + warnanya**, persis seperti bahasa Indonesia: *ສີນ້ຳຕານ* harfiahnya \"warna air gula\" (cokelat), *ສີບົວ* \"warna teratai\" (merah muda), *ສີຟ້າ* \"warna langit\". Kata *ສີ sǐi* di depan boleh dibuang kalau sudah jelas: *ເສື້ອແດງ sʉ̂a deeng* (baju merah)."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "lo": "ຂວດ", "baca": "khùat", "id": "botol (kata bantu)" },
+  { "lo": "ໜ່ວຍ", "baca": "nùay", "id": "butir, buah (kata bantu)" },
+  { "lo": "ໃບ", "baca": "bai", "id": "lembar (kata bantu)" },
+  { "lo": "ຫົວ", "baca": "hǔa", "id": "buah untuk buku; kepala" },
+  { "lo": "ໂຕ", "baca": "tǒo", "id": "ekor, helai (kata bantu)" },
+  { "lo": "ອັນ", "baca": "an", "id": "buah (kata bantu umum)" },
+  { "lo": "ຖົງ", "baca": "thǒng", "id": "kantong, bungkus" },
+  { "lo": "ຈອກ", "baca": "jàwk", "id": "cangkir" },
+  { "lo": "ແກ້ວ", "baca": "kêeo", "id": "gelas" },
+  { "lo": "ຖ້ວຍ", "baca": "thûay", "id": "mangkuk" },
+  { "lo": "ຄັນ", "baca": "khán", "id": "kata bantu kendaraan" },
+  { "lo": "ນ້ຳ", "baca": "nâm", "id": "air" },
+  { "lo": "ເບຍ", "baca": "bia", "id": "bir" },
+  { "lo": "ກາເຟ", "baca": "kaa-fée", "id": "kopi" },
+  { "lo": "ໄຂ່", "baca": "khài", "id": "telur" },
+  { "lo": "ເຂົ້າ", "baca": "khào", "id": "nasi, beras" },
+  { "lo": "ເຂົ້າໜຽວ", "baca": "khào-nǐao", "id": "ketan" },
+  { "lo": "ເຂົ້າໜົມ", "baca": "khào-nǒm", "id": "kue, camilan" },
+  { "lo": "ໝາກໄມ້", "baca": "màak-mâi", "id": "buah-buahan" },
+  { "lo": "ປຶ້ມ", "baca": "pʉ̂m", "id": "buku" },
+  { "lo": "ໂທລະສັບ", "baca": "thóo-la-sáp", "id": "telepon, HP" },
+  { "lo": "ຂໍ", "baca": "khǎw", "id": "minta" },
+  { "lo": "ມີ", "baca": "míi", "id": "ada, punya" },
+  { "lo": "ບໍ່ມີ", "baca": "bàw míi", "id": "tidak ada" },
+  { "lo": "ໝົດ", "baca": "mót", "id": "habis; totalnya" },
+  { "lo": "ກໍ", "baca": "kaw", "id": "juga, kalau begitu" },
+  { "lo": "ຫຼື", "baca": "lʉ̌ʉ", "id": "atau" },
+  { "lo": "ໃດ", "baca": "dai", "id": "mana" },
+  { "lo": "ນີ້", "baca": "nîi", "id": "ini" },
+  { "lo": "ນັ້ນ", "baca": "nân", "id": "itu" },
+  { "lo": "ພຸ້ນ", "baca": "phûn", "id": "itu (jauh)" },
+  { "lo": "ສີຂຽວ", "baca": "sǐi khǐao", "id": "hijau" },
+  { "lo": "ສີແດງ", "baca": "sǐi deeng", "id": "merah" },
+  { "lo": "ສີດຳ", "baca": "sǐi dam", "id": "hitam" },
+  { "lo": "ສີຂາວ", "baca": "sǐi khǎao", "id": "putih" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi kata bantu yang tepat: ຄົນ, ໂຕ, ອັນ, ໜ່ວຍ, ຂວດ, atau ຫົວ.",
+   "items": [
+    "ນ້ຳສາມ____ (tiga botol air)",
+    "ໝູ່ສີ່____ (empat teman)",
+    "ໄຂ່ສິບ____ (sepuluh telur)",
+    "ປຶ້ມສອງ____ (dua buku)",
+    "ໝາໜຶ່ງ____ (seekor anjing)",
+    "____ນີ້ເທົ່າໃດ (yang ini berapa?)"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi bahasa Lao dengan urutan yang benar.",
+   "items": [
+    "dua gelas kopi",
+    "sebungkus kue",
+    "tiga mangkuk",
+    "lima buah",
+    "satu tiket"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ຂວດ / ຈັກ / ເອົາ",
+    "ບໍ່ / ມີ / ນ້ຳ",
+    "ນັ້ນ / ເອົາ / ອັນ",
+    "ໜຶ່ງ / ຂໍ / ໃບ / ຖົງ",
+    "ພັນ / ຫ້າສິບ / ໝົດ / ກີບ"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Lao.",
+   "items": [
+    "Ada air?",
+    "Mau berapa botol?",
+    "Tiga botol, dan bir dua botol juga.",
+    "Minta telur sepuluh butir.",
+    "Yang mana? Yang ini atau yang itu?",
+    "Yang itu, yang warna hijau."
+   ]
+  }
+ ],
+ "answers": [
+  "ຂວດ — ຄົນ — ໜ່ວຍ — ຫົວ — ໂຕ — ອັນ",
+  "ກາເຟສອງຈອກ — ເຂົ້າໜົມຖົງໜຶ່ງ — ສາມຖ້ວຍ — ຫ້າໜ່ວຍ — ປີ້ໜຶ່ງໃບ",
+  "ເອົາຈັກຂວດ — ບໍ່ມີນ້ຳ — ເອົາອັນນັ້ນ — ຂໍຖົງໜຶ່ງໃບ — ໝົດຫ້າສິບພັນກີບ",
+  "ມີນ້ຳບໍ່ — ເອົາຈັກຂວດ — ສາມຂວດ ແລ້ວກໍເບຍສອງຂວດນຳ — ຂໍໄຂ່ສິບໜ່ວຍ — ອັນໃດ ອັນນີ້ຫຼືອັນນັ້ນ — ອັນນັ້ນ ອັນສີຂຽວ"
+ ],
+ "wave": "Ulangi unit 2: tutup bahasa Laonya, lalu ceritakan pekerjaanmu, tempat tinggalmu, dan sudah berapa lama kamu di sana — semuanya dari ingatan."
+}

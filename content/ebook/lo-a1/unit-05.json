@@ -1,0 +1,289 @@
+{
+ "title": "Di warung: memesan dan bilang seenak apa",
+ "title_target": "ຢູ່ຮ້ານອາຫານ — Yùu hâan aa-hǎan",
+ "goal": "Memesan makanan dan minuman, meminta sesuatu ditambah atau tidak dimasukkan, memuji rasa, dan minta bon — satu kali duduk yang menutup seluruh urusan makan.",
+ "bekal": [
+  "memesan dengan ເອົາ dan ຂໍ",
+  "ໃສ່ dan ບໍ່ໃສ່ untuk bahan yang dimasukkan",
+  "menilai rasa: ແຊບ ເຜັດ ຫວານ ເຄັມ",
+  "ຫິວ dan ອີ່ມ untuk lapar dan kenyang",
+  "minta bon dengan ຄິດເງິນແດ່"
+ ],
+ "dialogs": [
+  {
+   "title": "ບົດສົນທະນາ — Warung fer di pinggir jalan, jam tujuh pagi",
+   "intro": "Budi sarapan bersama Bounmy. Perhatikan bahwa memesan di Laos hampir tidak pernah memakai kalimat panjang — nama makanan, jumlah, kata bantu, selesai.",
+   "lines": [
+    {
+     "speaker": "ແມ່ຄ້າ:",
+     "text": "[ສະບາຍດີ|Sa-baai-dii] [ເອົາ|Ao][ຫຍັງ|nyǎng]",
+     "id": "Halo. Mau apa?",
+     "literal": "sehat-baik. ambil — apa?"
+    },
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ເອົາ|Ao][ເຝີ|fǒe][ໄກ່|kài][ສອງ|sǎwng][ຖ້ວຍ|thûay][ເດີ້|dòe]",
+     "id": "Fer ayam dua mangkuk ya.",
+     "literal": "ambil — fer — ayam — dua — mangkuk — ya."
+    },
+    {
+     "speaker": "ແມ່ຄ້າ:",
+     "text": "[ໃສ່|Sài][ຜັກ|phák][ບໍ່|bàw] [ເຜັດ|Phét][ບໍ່|bàw]",
+     "id": "Pakai sayur? Pedas tidak?",
+     "literal": "masukkan — sayur — kah? pedas — kah?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ໃສ່|Sài][ຜັກ|phák] [ແຕ່|Tèe][ບໍ່|bàw][ໃສ່|sài][ຜັກຫອມ|phák-hǎwm][ເດີ້|dòe] [ຂ້ອຍ|Khàwy][ບໍ່|bàw][ມັກ|mak]",
+     "id": "Pakai sayur, tapi jangan pakai daun ketumbar ya. Saya tidak suka.",
+     "literal": "masukkan — sayur. tetapi — tidak — masukkan — daun-wangi — ya. saya — tidak — suka."
+    },
+    {
+     "speaker": "ແມ່ຄ້າ:",
+     "text": "[ໄດ້|Dâi] [ເຜັດ|Phét][ບໍ່|bàw]",
+     "id": "Baik. Pedas tidak?",
+     "literal": "bisa. pedas — kah?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ເຜັດ|Phét][ໜ້ອຍ|nàwy][ໜຶ່ງ|nʉ̀ng] [ຂ້ອຍ|Khàwy][ກິນ|kin][ເຜັດ|phét][ໄດ້|dâi][ແຕ່|tèe][ບໍ່|bàw][ຫຼາຍ|lǎai]",
+     "id": "Pedas sedikit. Saya bisa makan pedas tapi tidak banyak.",
+     "literal": "pedas — sedikit — satu. saya — makan — pedas — bisa — tetapi — tidak — banyak."
+    },
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ຂໍ|Khǎw][ນ້ຳ|nâm][ສອງ|sǎwng][ແກ້ວ|kêeo][ນຳ|nám][ແດ່|dèe]",
+     "id": "Minta air dua gelas juga.",
+     "literal": "minta — air — dua — gelas — ikut — sedikit."
+    },
+    {
+     "speaker": "ແມ່ຄ້າ:",
+     "text": "[ໄດ້|Dâi][ເລີຍ|lóei] [ຖ້າ|Thàa][ໜ້ອຍ|nàwy][ໜຶ່ງ|nʉ̀ng][ເດີ້|dòe]",
+     "id": "Baik. Tunggu sebentar ya.",
+     "literal": "bisa — langsung. tunggu — sedikit — satu — ya."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ແຊບ|Sèep][ຫຼາຍ|lǎai][ເນາະ|nāw] [ຮ້ານ|Hâan][ນີ້|nîi][ດີ|dii]",
+     "id": "Enak sekali ya. Warung ini bagus.",
+     "literal": "enak — banyak — ya kan? warung — ini — baik."
+    },
+    {
+     "speaker": "ບຸນມີ:",
+     "text": "[ແມ່ນ|Mèen][ແລ້ວ|lèeo] [ຂ້ອຍ|Khàwy][ມາ|maa][ກິນ|kin][ທຸກ|thuk][ເຊົ້າ|sâo] [ອີ່ມ|Ìm][ບໍ່|bàw]",
+     "id": "Betul. Saya makan di sini tiap pagi. Sudah kenyang?",
+     "literal": "benar — sudah. saya — datang — makan — setiap — pagi. kenyang — kah?"
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ອີ່ມ|Ìm][ຫຼາຍ|lǎai] [ຄິດ|Khit][ເງິນ|ngóen][ແດ່|dèe]",
+     "id": "Kenyang sekali. Minta bon.",
+     "literal": "kenyang — banyak. hitung — uang — sedikit."
+    },
+    {
+     "speaker": "ແມ່ຄ້າ:",
+     "text": "[ສາມ|Sǎam][ສິບ|síp][ພັນ|phán][ກີບ|kìip][ເຈົ້າ|jâo]",
+     "id": "Tiga puluh ribu kip.",
+     "literal": "tiga — puluh — ribu — kip — iya."
+    }
+   ],
+   "notes": [
+    "**ເອົາ ao untuk memesan, ຂໍ khǎw untuk meminta.** Keduanya benar di warung, tapi rasanya berbeda: *ເອົາເຝີສອງຖ້ວຍ* adalah pesanan, *ຂໍນ້ຳແດ່* adalah permintaan. Untuk sesuatu yang gratis atau kecil — air putih, sendok, tisu — pakailah *ຂໍ*.",
+    "**ໃສ່ sài berarti \"memasukkan\" dan menjadi kata kunci di seluruh urusan makanan.** *ໃສ່ຜັກ* (pakai sayur), *ບໍ່ໃສ່ນ້ຳຕານ* (tanpa gula), *ໃສ່ນ້ຳກ້ອນ* (pakai es). Kata yang sama berarti \"memakai\" untuk baju: *ໃສ່ເສື້ອ* (memakai baju).",
+    "**ເຜັດບໍ່ phét bàw adalah pertanyaan yang PASTI kamu dengar.** Jawaban yang aman untuk lidah Indonesia: *ເຜັດໜ້ອຍໜຶ່ງ* (pedas sedikit). Kalau kamu benar-benar tidak tahan, *ບໍ່ເຜັດ* — tapi bersiaplah, karena batas \"tidak pedas\" di Laos masih terasa hangat.",
+    "**ແຊບ sèep adalah kata untuk \"enak\", dan ia bukan kata Thai *อร่อย*.** Ini salah satu kata yang paling khas Lao — dipakai juga di Isan, Thailand timur laut. Mengucapkannya di warung dijamin membuat pemiliknya tersenyum. Bentuk penguatnya *ແຊບຫຼາຍ* (enak sekali) dan *ແຊບອີ່ຫຼີ sèep ìi-lǐi* (enak beneran).",
+    "**ຫິວ hǐu = lapar, ອີ່ມ ìm = kenyang.** Keduanya kata sifat, jadi tidak butuh kata kerja: *ຂ້ອຍຫິວ* (saya lapar). Untuk haus, bahasa Lao menyusunnya sebagai \"lapar air\": *ຫິວນ້ຳ hǐu nâm*.",
+    "**ຄິດເງິນແດ່ khit ngóen dèe = \"minta bon\", harfiahnya \"hitung uang dong\".** Di warung kecil tidak ada nota; pemilik menghitung di kepala dan menyebut angkanya. Membayar dilakukan di meja, bukan di kasir.",
+    "**ທຸກ thuk = \"setiap\".** *ທຸກເຊົ້າ* (setiap pagi), *ທຸກມື້* (setiap hari), *ທຸກຄົນ* (semua orang). Ia berdiri di depan kata bendanya dan tidak butuh kata bantu bilangan.",
+    "**ຖ້າ thàa punya dua kembar yang harus dipisahkan.** *ຖ້າ thàa* dengan nada jatuh-rendah berarti **\"menunggu\"** (*ຖ້າໜ້ອຍໜຶ່ງ* = tunggu sebentar), sementara *ຖ້າ* yang kamu pelajari di unit 3 berarti **\"kalau\"**. Ejaannya sama, konteksnya yang memisahkan — dan untunglya keduanya jarang muncul di kalimat yang sama.",
+    "**ເຈົ້າ jâo di ujung kalimat penjual adalah \"iya\" yang sopan**, bukan \"kamu\". Penjual sering menutup kalimat dengannya sebagai tanda hormat kepada pembeli."
+   ],
+   "grammars": [
+    {
+     "title": "Memesan: satu pola, semua makanan",
+     "body": [
+      "Pesanan bahasa Lao selalu bisa disusun dari kerangka ini. Tidak ada satu pun kata sambung yang wajib."
+     ],
+     "table": {
+      "head": ["Kata kerja", "Makanan", "Jumlah + kata bantu", "Ekor", "Arti"],
+      "rows": [
+       ["ເອົາ *ao*", "ເຝີ *fǒe*", "ສອງຖ້ວຍ *sǎwng thûay*", "ເດີ້ *dòe*", "fer dua mangkuk ya"],
+       ["ຂໍ *khǎw*", "ນ້ຳ *nâm*", "ແກ້ວໜຶ່ງ *kêeo nʉ̀ng*", "ແດ່ *dèe*", "minta segelas air"],
+       ["ເອົາ *ao*", "ກາເຟຮ້ອນ *kaa-fée hâwn*", "ຈອກໜຶ່ງ *jàwk nʉ̀ng*", "—", "kopi panas satu"],
+       ["ຂໍ *khǎw*", "ບ່ວງ *bùang*", "ອັນໜຶ່ງ *an nʉ̀ng*", "ແດ່ *dèe*", "minta satu sendok"]
+      ]
+     },
+     "after": [
+      "Untuk mengubah pesanan, tempelkan *ໃສ່* atau *ບໍ່ໃສ່* di belakang: *ເອົາເຝີໄກ່ ບໍ່ໃສ່ຜັກຫອມ* (fer ayam, tanpa daun ketumbar)."
+     ]
+    },
+    {
+     "title": "Rasa dan cara masak",
+     "table": {
+      "head": ["Lao", "Baca", "Indonesia", "Lao", "Baca", "Indonesia"],
+      "rows": [
+       ["ແຊບ", "*sèep*", "enak", "ປີ້ງ", "*pîng*", "dibakar"],
+       ["ເຜັດ", "*phét*", "pedas", "ຈືນ", "*jʉʉn*", "digoreng"],
+       ["ຫວານ", "*wǎan*", "manis", "ຕົ້ມ", "*tôm*", "direbus"],
+       ["ເຄັມ", "*khem*", "asin", "ໜຶ້ງ", "*nʉ̂ng*", "dikukus"],
+       ["ສົ້ມ", "*sôm*", "asam", "ຂົ້ວ", "*khùa*", "ditumis"],
+       ["ຂົມ", "*khǒm*", "pahit", "ດິບ", "*díp*", "mentah"],
+       ["ຮ້ອນ", "*hâwn*", "panas", "ສຸກ", "*súk*", "matang"],
+       ["ເຢັນ", "*yén*", "dingin", "ໄໝ້", "*mài*", "gosong"]
+      ]
+     },
+     "after": [
+      "Kata sifat rasa berdiri sendiri sebagai kalimat lengkap: *ແຊບ* sudah berarti \"enak\". Untuk menyangkal, tempelkan *ບໍ່* di depan: *ບໍ່ເຜັດ* (tidak pedas)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Makanan yang benar-benar akan kamu temui di Laos",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Lao", "Baca", "Apa itu"],
+     "rows": [
+      ["ເຂົ້າໜຽວ", "*khào-nǐao*", "ketan — makanan pokok, dimakan dengan tangan"],
+      ["ເຝີ", "*fǒe*", "sup mi sapi/ayam, sarapan nasional"],
+      ["ຂ້າວປຽກ", "*khào-pìak*", "bubur beras berkuah"],
+      ["ຕຳໝາກຫຸ່ງ", "*tam màak-hùng*", "rujak pepaya (padanan som tam), biasanya sangat pedas"],
+      ["ລາບ", "*làap*", "daging cincang berbumbu — hidangan nasional Laos"],
+      ["ປີ້ງໄກ່", "*pîng kài*", "ayam bakar"],
+      ["ຊີ້ນແຫ້ງ", "*sîn hèeng*", "dendeng sapi"],
+      ["ແກງ", "*keeng*", "sup, gulai"],
+      ["ຂະໜົມຈີນ", "*kha-nǒm jiin*", "mi beras dengan kuah kari"],
+      ["ເຂົ້າຈີ່", "*khào-jìi*", "roti baguette — warisan Prancis, isian daging dan sayur"],
+      ["ໝາກກ້ວຍ", "*màak-kûay*", "pisang"],
+      ["ນ້ຳໝາກນາວ", "*nâm màak-náao*", "air jeruk nipis"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu hal yang perlu kamu tahu sebelum makan bersama orang Laos: **ketan dimakan dengan tangan kanan**, dikepal jadi bola kecil, lalu dicelupkan ke lauk. Bakul anyaman tempatnya — *ຕິບເຂົ້າ típ khào* — dibuka untuk menandai makan dimulai dan ditutup kembali ketika selesai. Menutupnya adalah tanda kamu sudah kenyang, dan itu lebih jelas daripada kata-kata."
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan awalan **ໝາກ *màak*** di depan hampir semua nama buah: *ໝາກກ້ວຍ* (pisang), *ໝາກນາວ* (jeruk nipis), *ໝາກຫຸ່ງ* (pepaya), *ໝາກໄມ້* (buah-buahan). Kalau kamu mendengar *màak-* di awal kata, hampir pasti sedang membicarakan buah."
+    }
+   ]
+  },
+  {
+   "title": "Kalimat siap pakai di meja makan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Lao", "Baca", "Arti"],
+     "rows": [
+      ["ເມນູມີບໍ່", "*mée-nuu míi bàw*", "ada menu?"],
+      ["ອັນນີ້ແມ່ນຫຍັງ", "*an nîi mèen nyǎng*", "ini apa?"],
+      ["ມີຫຍັງແຊບໆ", "*míi nyǎng sèep-sèep*", "ada yang enak apa?"],
+      ["ບໍ່ໃສ່ນ້ຳຕານ", "*bàw sài nâm-taan*", "tanpa gula"],
+      ["ບໍ່ໃສ່ນ້ຳກ້ອນ", "*bàw sài nâm-kâwn*", "tanpa es"],
+      ["ຂໍບ່ວງແດ່", "*khǎw bùang dèe*", "minta sendok"],
+      ["ຂໍນ້ຳຕື່ມແດ່", "*khǎw nâm tʉ̀ʉm dèe*", "minta tambah air"],
+      ["ອີ່ມແລ້ວ", "*ìm lèeo*", "sudah kenyang"],
+      ["ຄິດເງິນແດ່", "*khit ngóen dèe*", "minta bon"],
+      ["ຂ້ອຍກິນຊີ້ນບໍ່ໄດ້", "*khàwy kin sîn bàw dâi*", "saya tidak makan daging"],
+      ["ຂ້ອຍກິນຊີ້ນໝູບໍ່ໄດ້", "*khàwy kin sîn-mǔu bàw dâi*", "saya tidak makan babi"],
+      ["ຫ້ອງນ້ຳຢູ່ໃສ", "*hàwng-nâm yùu sǎi*", "toilet di mana?"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalimat *ຂ້ອຍກິນຊີ້ນໝູບໍ່ໄດ້* penting untuk pembaca Indonesia yang menjaga makanan halal. Babi hadir di banyak masakan Lao, sering sebagai kaldu yang tidak terlihat. Kalimat yang lebih aman lagi: *ຂ້ອຍກິນໄດ້ແຕ່ໄກ່ກັບປາ khàwy kin dâi tèe kài kap paa* — \"saya hanya bisa makan ayam dan ikan\"."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "lo": "ຮ້ານ", "baca": "hâan", "id": "toko, warung" },
+  { "lo": "ອາຫານ", "baca": "aa-hǎan", "id": "makanan" },
+  { "lo": "ກິນ", "baca": "kin", "id": "makan" },
+  { "lo": "ດື່ມ", "baca": "dʉ̀ʉm", "id": "minum" },
+  { "lo": "ເຝີ", "baca": "fǒe", "id": "sup mi (fer)" },
+  { "lo": "ໄກ່", "baca": "kài", "id": "ayam" },
+  { "lo": "ໝູ", "baca": "mǔu", "id": "babi" },
+  { "lo": "ຊີ້ນ", "baca": "sîn", "id": "daging" },
+  { "lo": "ປາ", "baca": "paa", "id": "ikan" },
+  { "lo": "ຜັກ", "baca": "phák", "id": "sayur" },
+  { "lo": "ຜັກຫອມ", "baca": "phák-hǎwm", "id": "daun ketumbar" },
+  { "lo": "ໃສ່", "baca": "sài", "id": "memasukkan; memakai" },
+  { "lo": "ເຜັດ", "baca": "phét", "id": "pedas" },
+  { "lo": "ແຊບ", "baca": "sèep", "id": "enak" },
+  { "lo": "ຫວານ", "baca": "wǎan", "id": "manis" },
+  { "lo": "ເຄັມ", "baca": "khem", "id": "asin" },
+  { "lo": "ສົ້ມ", "baca": "sôm", "id": "asam" },
+  { "lo": "ຮ້ອນ", "baca": "hâwn", "id": "panas" },
+  { "lo": "ເຢັນ", "baca": "yén", "id": "dingin" },
+  { "lo": "ຫິວ", "baca": "hǐu", "id": "lapar" },
+  { "lo": "ຫິວນ້ຳ", "baca": "hǐu nâm", "id": "haus" },
+  { "lo": "ອີ່ມ", "baca": "ìm", "id": "kenyang" },
+  { "lo": "ມັກ", "baca": "mak", "id": "suka" },
+  { "lo": "ຄິດເງິນ", "baca": "khit ngóen", "id": "menghitung bon" },
+  { "lo": "ບ່ວງ", "baca": "bùang", "id": "sendok" },
+  { "lo": "ນ້ຳຕານ", "baca": "nâm-taan", "id": "gula" },
+  { "lo": "ນ້ຳກ້ອນ", "baca": "nâm-kâwn", "id": "es batu" },
+  { "lo": "ຕື່ມ", "baca": "tʉ̀ʉm", "id": "menambah" },
+  { "lo": "ຖ້າ", "baca": "thàa", "id": "menunggu; kalau" },
+  { "lo": "ທຸກ", "baca": "thuk", "id": "setiap" },
+  { "lo": "ເຊົ້າ", "baca": "sâo", "id": "pagi" },
+  { "lo": "ເມນູ", "baca": "mée-nuu", "id": "menu" },
+  { "lo": "ຫ້ອງນ້ຳ", "baca": "hàwng-nâm", "id": "toilet, kamar mandi" },
+  { "lo": "ເຂົ້າຈີ່", "baca": "khào-jìi", "id": "roti" },
+  { "lo": "ລາບ", "baca": "làap", "id": "laap (daging cincang berbumbu)" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan ເອົາ, ຂໍ, ໃສ່, atau ບໍ່ໃສ່.",
+   "items": [
+    "____ເຝີສອງຖ້ວຍ (fer dua mangkuk)",
+    "____ນ້ຳແດ່ (minta air)",
+    "____ຜັກເດີ້ (pakai sayur ya)",
+    "____ນ້ຳຕານ (tanpa gula)",
+    "____ບ່ວງອັນໜຶ່ງແດ່ (minta satu sendok)"
+   ]
+  },
+  {
+   "prompt": "Jawab pertanyaan penjual ini dengan bahasa Lao.",
+   "items": [
+    "ເອົາຫຍັງ (kamu mau fer ayam satu mangkuk)",
+    "ເຜັດບໍ່ (pedas sedikit)",
+    "ໃສ່ຜັກບໍ່ (pakai, tapi tanpa daun ketumbar)",
+    "ດື່ມຫຍັງ (air satu gelas)",
+    "ອີ່ມບໍ່ (kenyang sekali)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ແດ່ / ຄິດເງິນ",
+    "ຫຼາຍ / ແຊບ / ເນາະ",
+    "ບໍ່ໄດ້ / ຊີ້ນໝູ / ຂ້ອຍ / ກິນ",
+    "ໜຶ່ງ / ເຜັດ / ໜ້ອຍ",
+    "ໃສ / ຢູ່ / ຫ້ອງນ້ຳ"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Lao.",
+   "items": [
+    "Halo, mau fer ayam dua mangkuk.",
+    "Pakai sayur, tapi jangan pakai daun ketumbar.",
+    "Saya bisa makan pedas, tapi tidak banyak.",
+    "Minta air dua gelas juga.",
+    "Enak sekali. Warung ini bagus.",
+    "Sudah kenyang. Minta bon."
+   ]
+  }
+ ],
+ "answers": [
+  "ເອົາ — ຂໍ — ໃສ່ — ບໍ່ໃສ່ — ຂໍ",
+  "ເອົາເຝີໄກ່ຖ້ວຍໜຶ່ງ — ເຜັດໜ້ອຍໜຶ່ງ — ໃສ່ ແຕ່ບໍ່ໃສ່ຜັກຫອມ — ຂໍນ້ຳແກ້ວໜຶ່ງ — ອີ່ມຫຼາຍ",
+  "ຄິດເງິນແດ່ — ແຊບຫຼາຍເນາະ — ຂ້ອຍກິນຊີ້ນໝູບໍ່ໄດ້ — ເຜັດໜ້ອຍໜຶ່ງ — ຫ້ອງນ້ຳຢູ່ໃສ",
+  "ສະບາຍດີ ເອົາເຝີໄກ່ສອງຖ້ວຍ — ໃສ່ຜັກ ແຕ່ບໍ່ໃສ່ຜັກຫອມ — ຂ້ອຍກິນເຜັດໄດ້ ແຕ່ບໍ່ຫຼາຍ — ຂໍນ້ຳສອງແກ້ວນຳແດ່ — ແຊບຫຼາຍ ຮ້ານນີ້ດີ — ອີ່ມແລ້ວ ຄິດເງິນແດ່"
+ ],
+ "wave": "Ulangi unit 3: tutup bahasa Laonya, lalu jalankan seluruh tawar-menawar di pasar dari ingatan — dari bertanya harga sampai menerima kembalian."
+}

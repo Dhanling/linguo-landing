@@ -1,0 +1,283 @@
+{
+ "title": "Arah dan kendaraan: sampai ke tempat tujuan",
+ "title_target": "ໄປແນວໃດ — Pai neeo-dai",
+ "goal": "Menanyakan jalan, memahami jawabannya, menawar ongkos tuk-tuk, dan menyuruh sopir berhenti di tempat yang tepat — dengan kalimat yang cukup pendek untuk dipakai sambil berdiri di pinggir jalan.",
+ "bekal": [
+  "bertanya arah dengan ໄປແນວໃດ dan ຢູ່ໃສ",
+  "kiri, kanan, lurus, belok",
+  "menawar ongkos dengan ຄ່າລົດເທົ່າໃດ",
+  "menyuruh berhenti dengan ຈອດ",
+  "jarak dengan ໄກບໍ່ dan ຈັກກິໂລ"
+ ],
+ "dialogs": [
+  {
+   "title": "ບົດສົນທະນາ — Menuju Wat Sisaket dengan tuk-tuk",
+   "intro": "Budi menawar tumpangan. Perhatikan bahwa harga selalu disepakati SEBELUM naik — tidak ada argo, dan bertanya di tengah jalan sudah terlambat.",
+   "lines": [
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ສະບາຍດີ|Sa-baai-dii] [ໄປ|Pai][ວັດ|wat][ສີສະເກດ|Sǐi-sa-kèet][ບໍ່|bàw]",
+     "id": "Halo. Ke Wat Sisaket, bisa?",
+     "literal": "sehat-baik. pergi — kuil — Sisaket — kah?"
+    },
+    {
+     "speaker": "ຄົນຂັບ:",
+     "text": "[ໄປ|Pai] [ຄ່າ|Khàa][ລົດ|lot][ຫ້າ|hāa][ສິບ|síp][ພັນ|phán]",
+     "id": "Bisa. Ongkosnya lima puluh ribu.",
+     "literal": "pergi. biaya — kendaraan — lima — puluh — ribu."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ແພງ|Pheeng][ໄປ|pai] [ໄກ|Kai][ບໍ່|bàw] [ຈັກ|Ják][ກິໂລ|ki-lóo]",
+     "id": "Kemahalan. Jauh tidak? Berapa kilometer?",
+     "literal": "mahal — lewat. jauh — kah? berapa — kilo?"
+    },
+    {
+     "speaker": "ຄົນຂັບ:",
+     "text": "[ບໍ່|Bàw][ໄກ|kai] [ສາມ|Sǎam][ກິໂລ|ki-lóo][ເທົ່າ|thao][ນັ້ນ|nân]",
+     "id": "Tidak jauh. Tiga kilometer saja.",
+     "literal": "tidak — jauh. tiga — kilo — sebatas — itu."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ຄັນ|Khán][ຊັ້ນ|sân] [ສາມ|sǎam][ສິບ|síp][ພັນ|phán][ໄດ້|dâi][ບໍ່|bàw]",
+     "id": "Kalau begitu tiga puluh ribu bisa?",
+     "literal": "kalau — begitu — tiga — puluh — ribu — bisa — kah?"
+    },
+    {
+     "speaker": "ຄົນຂັບ:",
+     "text": "[ສີ່|Sìi][ສິບ|síp][ພັນ|phán] [ຂຶ້ນ|Khʉ̂n][ມາ|maa][ເລີຍ|lóei]",
+     "id": "Empat puluh ribu. Naik saja.",
+     "literal": "empat — puluh — ribu. naik — datang — langsung."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ໄດ້|Dâi] [ໄປ|Pai][ແນວ|neeo][ໃດ|dai] [ຜ່ານ|Phàan][ຕະຫຼາດ|ta-làat][ບໍ່|bàw]",
+     "id": "Oke. Lewat mana? Lewat pasar tidak?",
+     "literal": "bisa. pergi — cara — mana? lewat — pasar — kah?"
+    },
+    {
+     "speaker": "ຄົນຂັບ:",
+     "text": "[ຜ່ານ|Phàan] [ໄປ|Pai][ຊື່ໆ|sʉ̂ʉ-sʉ̂ʉ][ແລ້ວ|lèeo][ລ້ຽວ|lîao][ຂວາ|khwǎa][ຢູ່|yùu][ໄຟ|fái][ແດງ|deeng]",
+     "id": "Lewat. Lurus terus, lalu belok kanan di lampu merah.",
+     "literal": "lewat. pergi — lurus-lurus — lalu — belok — kanan — di — api — merah."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ວັດ|Wat][ຢູ່|yùu][ເບື້ອງ|bʉ̂ang][ໃດ|dai]",
+     "id": "Kuilnya ada di sebelah mana?",
+     "literal": "kuil — ada-di — sisi — mana?"
+    },
+    {
+     "speaker": "ຄົນຂັບ:",
+     "text": "[ເບື້ອງ|Bʉ̂ang][ຊ້າຍ|sâai] [ຢູ່|Yùu][ກົງ|kong][ຂ້າມ|khàam][ຫໍ|hǎw][ພະແກ້ວ|Pha-Kêeo]",
+     "id": "Sebelah kiri, tepat di depan Haw Phra Kaew.",
+     "literal": "sisi — kiri. ada-di — lurus — seberang — balai — Phra-Kaew."
+    },
+    {
+     "speaker": "ບູດີ:",
+     "text": "[ຮອດ|Hâwt][ແລ້ວ|lèeo][ບອກ|bàwk][ແດ່|dèe][ເດີ້|dòe] [ຈອດ|Jàwt][ຢູ່|yùu][ນີ້|nîi][ໄດ້|dâi][ບໍ່|bàw]",
+     "id": "Kalau sudah sampai, bilang ya. Berhenti di sini bisa?",
+     "literal": "sampai — sudah — bilang — sedikit — ya. berhenti — di — sini — bisa — kah?"
+    },
+    {
+     "speaker": "ຄົນຂັບ:",
+     "text": "[ໄດ້|Dâi] [ຮອດ|Hâwt][ແລ້ວ|lèeo] [ວັດ|Wat][ຢູ່|yùu][ພຸ້ນ|phûn]",
+     "id": "Bisa. Sudah sampai. Kuilnya di sana.",
+     "literal": "bisa. sampai — sudah. kuil — ada-di — sana."
+    }
+   ],
+   "notes": [
+    "**ໄປແນວໃດ pai neeo-dai = \"pergi bagaimana, lewat mana\".** Kata *ແນວໃດ neeo-dai* berarti \"bagaimana\" dan selalu di ujung kalimat. Untuk bertanya letak, pakai *ຢູ່ໃສ yùu sǎi*: *ວັດຢູ່ໃສ* (kuilnya di mana).",
+    "**ຄ່າ khàa berarti \"biaya, ongkos\", dan menempel di depan bendanya.** *ຄ່າລົດ* (ongkos kendaraan), *ຄ່າຫ້ອງ* (biaya kamar), *ຄ່າອາຫານ* (biaya makan), *ຄ່າໄຟ* (tagihan listrik). ⚠️ Jangan tertukar dengan *ຂ້າ khàa* (membunuh) yang bernada rendah.",
+    "**ແພງໄປ pheeng pai = \"kemahalan\".** Kata *ໄປ pai* di belakang kata sifat berarti \"terlalu, kelewat\": *ໄກໄປ* (kejauhan), *ນ້ອຍໄປ* (kekecilan), *ຊ້າໄປ* (kelambatan). Ini penambahan yang murah dan sangat berguna.",
+    "**Sepakati harga SEBELUM naik.** Tuk-tuk dan songthaew tidak punya argo, dan harga yang tidak disepakati akan disepakati sepihak di tujuan. Bertanya *ຄ່າລົດເທົ່າໃດ* sebelum melangkah naik adalah kebiasaan wajib, bukan tanda tidak percaya.",
+    "**ຂຶ້ນ khʉ̂n = naik, ລົງ lóng = turun.** Keduanya dipakai untuk kendaraan maupun tangga: *ຂຶ້ນລົດ* (naik kendaraan), *ລົງລົດ* (turun dari kendaraan), *ຂຶ້ນຂັ້ນໄດ* (naik tangga). Kata yang sama juga muncul di *ຂຶ້ນລາຄາ* (harga naik).",
+    "**ຈອດ jàwt = \"berhenti dan parkir\".** Untuk menyuruh sopir berhenti, katakan *ຈອດຢູ່ນີ້ jàwt yùu nîi* (berhenti di sini). Kata *ຢຸດ yút* juga berarti berhenti, tapi lebih ke berhenti bergerak — bukan menepi.",
+    "**ຮອດ hâwt = \"sampai, tiba\".** *ຮອດແລ້ວ* (sudah sampai), *ຍັງບໍ່ທັນຮອດ* (belum sampai). ⚠️ Kata ini khas Lao; di bahasa Thai padanannya *ถึง thʉ̌ng*, yang juga ada di Lao (*ເຖິງ*) tetapi lebih formal.",
+    "**ເບື້ອງ bʉ̂ang = \"sisi\", dan dipakai untuk kiri-kanan.** *ເບື້ອງຊ້າຍ* (sebelah kiri), *ເບື້ອງຂວາ* (sebelah kanan). Untuk arah belok, kata kerjanya *ລ້ຽວ lîao*: *ລ້ຽວຊ້າຍ* (belok kiri).",
+    "**ກົງຂ້າມ kong khàam = \"tepat di seberang\", dan ຂ້າງ khàang = \"di samping\".** Dua kata ini menutup hampir semua penunjuk lokasi yang dipakai orang saat memberi arah."
+   ],
+   "grammars": [
+    {
+     "title": "Arah dan letak",
+     "table": {
+      "head": ["Lao", "Baca", "Indonesia", "Lao", "Baca", "Indonesia"],
+      "rows": [
+       ["ຊື່ໆ", "*sʉ̂ʉ-sʉ̂ʉ*", "lurus terus", "ຂ້າງ", "*khàang*", "di samping"],
+       ["ລ້ຽວຊ້າຍ", "*lîao sâai*", "belok kiri", "ກົງຂ້າມ", "*kong khàam*", "di seberang"],
+       ["ລ້ຽວຂວາ", "*lîao khwǎa*", "belok kanan", "ຫຼັງ", "*lǎng*", "di belakang"],
+       ["ເບື້ອງຊ້າຍ", "*bʉ̂ang sâai*", "sebelah kiri", "ໜ້າ", "*nâa*", "di depan"],
+       ["ເບື້ອງຂວາ", "*bʉ̂ang khwǎa*", "sebelah kanan", "ໃນ", "*nai*", "di dalam"],
+       ["ກັບຫຼັງ", "*kap lǎng*", "putar balik", "ນອກ", "*nàwk*", "di luar"],
+       ["ຜ່ານ", "*phàan*", "melewati", "ເທິງ", "*thóeng*", "di atas"],
+       ["ຮອດ", "*hâwt*", "sampai di", "ລຸ່ມ", "*lùm*", "di bawah"]
+      ]
+     },
+     "after": [
+      "Untuk memberi arah, orang Lao merangkainya dengan *ແລ້ວ lèeo* (lalu): *ໄປຊື່ໆ ແລ້ວລ້ຽວຂວາ ແລ້ວກໍຮອດ* — \"lurus, lalu belok kanan, lalu sampai\". Sederhana dan cukup."
+     ]
+    },
+    {
+     "title": "Kendaraan dan tempat umum",
+     "table": {
+      "head": ["Lao", "Baca", "Indonesia", "Lao", "Baca", "Indonesia"],
+      "rows": [
+       ["ຕຸກຕຸກ", "*túk-túk*", "tuk-tuk", "ສະຖານີລົດເມ", "*sa-thǎa-níi lot-mée*", "terminal bus"],
+       ["ລົດເມ", "*lot-mée*", "bus", "ສະໜາມບິນ", "*sa-nǎam bin*", "bandara"],
+       ["ລົດຈັກ", "*lot-ják*", "sepeda motor", "ໂຮງໝໍ", "*hoong-mǎw*", "rumah sakit"],
+       ["ລົດຖີບ", "*lot-thìip*", "sepeda", "ຕະຫຼາດ", "*ta-làat*", "pasar"],
+       ["ລົດໄຟ", "*lot-fái*", "kereta api", "ທະນາຄານ", "*tha-náa-kháan*", "bank"],
+       ["ເຮືອ", "*hʉa*", "perahu", "ໄປສະນີ", "*pai-sa-níi*", "kantor pos"],
+       ["ຍ່າງ", "*nyàang*", "jalan kaki", "ວັດ", "*wat*", "kuil"],
+       ["ແທັກຊີ", "*thek-síi*", "taksi", "ຮ້ານກາເຟ", "*hâan kaa-fée*", "kedai kopi"]
+      ]
+     },
+     "after": [
+      "Perhatikan awalan **ລົດ *lot*** yang berarti \"kendaraan\" dan menempel di depan jenisnya: *ລົດຈັກ* (kendaraan bermesin = motor), *ລົດຖີບ* (kendaraan dikayuh = sepeda), *ລົດໄຟ* (kendaraan api = kereta). Kalau kamu mendengar *lot-* di awal, itu pasti sesuatu yang bergerak."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalimat yang cukup untuk sampai ke mana pun",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Lao", "Baca", "Arti"],
+     "rows": [
+      ["ໄປ… ບໍ່", "*pai… bàw*", "ke… bisa? (ke sopir)"],
+      ["ຄ່າລົດເທົ່າໃດ", "*khàa lot thao-dai*", "ongkosnya berapa?"],
+      ["ແພງໄປ ຫຼຸດແດ່", "*pheeng pai, lut dèe*", "kemahalan, kurangi"],
+      ["…ຢູ່ໃສ", "*…yùu sǎi*", "… di mana?"],
+      ["ໄປ…ແນວໃດ", "*pai… neeo-dai*", "ke… lewat mana?"],
+      ["ໄກບໍ່", "*kai bàw*", "jauh tidak?"],
+      ["ຍ່າງໄປໄດ້ບໍ່", "*nyàang pai dâi bàw*", "bisa jalan kaki?"],
+      ["ໃຊ້ເວລາຈັກນາທີ", "*sâi wée-láa ják náa-thíi*", "makan waktu berapa menit?"],
+      ["ຈອດຢູ່ນີ້", "*jàwt yùu nîi*", "berhenti di sini"],
+      ["ຮອດແລ້ວບອກແດ່", "*hâwt lèeo bàwk dèe*", "kalau sampai, bilang ya"],
+      ["ຂ້ອຍຫຼົງທາງ", "*khàwy lǒng tháang*", "saya tersesat"],
+      ["ຊ່ວຍພາໄປແດ່", "*sùay phaa pai dèe*", "tolong antarkan saya"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua kalimat terakhir adalah jaring pengamanmu. *ຂ້ອຍຫຼົງທາງ* diucapkan sambil menunjukkan alamat di layar ponsel hampir selalu berujung pada seseorang yang mengantarmu — di Laos menolong orang tersesat dianggap kebaikan yang menumpuk *ບຸນ*, dan orang melakukannya dengan senang hati."
+    }
+   ]
+  },
+  {
+   "title": "Bertanya jarak dan waktu tempuh",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Pertanyaan", "Baca", "Kemungkinan jawaban"],
+     "rows": [
+      ["ໄກບໍ່", "*kai bàw*", "*ບໍ່ໄກ* / *ໄກໜ້ອຍໜຶ່ງ* / *ໄກຫຼາຍ*"],
+      ["ຈັກກິໂລ", "*ják ki-lóo*", "*ສາມກິໂລ* — tiga kilometer"],
+      ["ໃຊ້ເວລາດົນບໍ່", "*sâi wée-láa dón bàw*", "*ສິບນາທີ* — sepuluh menit"],
+      ["ຍ່າງໄປໄດ້ບໍ່", "*nyàang pai dâi bàw*", "*ໄດ້* / *ບໍ່ໄດ້ ໄກໂພດ*"],
+      ["ມີລົດເມໄປບໍ່", "*míi lot-mée pai bàw*", "*ມີ* / *ບໍ່ມີ*"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**ໂພດ *phôot*** adalah kembaran *ໄປ pai* untuk \"terlalu\", dan sedikit lebih kuat: *ໄກໂພດ* (kejauhan banget), *ແພງໂພດ* (mahal banget). Dua-duanya benar; *ໂພດ* terdengar lebih Lao, *ໄປ* lebih netral."
+    },
+    {
+     "type": "p",
+     "text": "Satu catatan praktis tentang jarak di Vientiane: kota ini datar dan kecil, dan sebagian besar tujuan wisata berada dalam radius tiga kilometer dari tepi Mekong. Sebelum menawar tuk-tuk, tanyakan dulu *ຍ່າງໄປໄດ້ບໍ່* — jawabannya sering \"bisa\", dan berjalan kaki di sore hari adalah cara terbaik melihat kota ini."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "lo": "ແນວໃດ", "baca": "neeo-dai", "id": "bagaimana" },
+  { "lo": "ຄ່າ", "baca": "khàa", "id": "biaya, ongkos" },
+  { "lo": "ຄ່າລົດ", "baca": "khàa lot", "id": "ongkos kendaraan" },
+  { "lo": "ຕຸກຕຸກ", "baca": "túk-túk", "id": "tuk-tuk" },
+  { "lo": "ລົດເມ", "baca": "lot-mée", "id": "bus" },
+  { "lo": "ລົດຈັກ", "baca": "lot-ják", "id": "sepeda motor" },
+  { "lo": "ຂຶ້ນ", "baca": "khʉ̂n", "id": "naik" },
+  { "lo": "ລົງ", "baca": "lóng", "id": "turun" },
+  { "lo": "ຈອດ", "baca": "jàwt", "id": "berhenti, parkir" },
+  { "lo": "ຮອດ", "baca": "hâwt", "id": "sampai, tiba" },
+  { "lo": "ຜ່ານ", "baca": "phàan", "id": "melewati" },
+  { "lo": "ຊື່ໆ", "baca": "sʉ̂ʉ-sʉ̂ʉ", "id": "lurus terus" },
+  { "lo": "ລ້ຽວ", "baca": "lîao", "id": "belok" },
+  { "lo": "ຊ້າຍ", "baca": "sâai", "id": "kiri" },
+  { "lo": "ຂວາ", "baca": "khwǎa", "id": "kanan" },
+  { "lo": "ເບື້ອງ", "baca": "bʉ̂ang", "id": "sisi, sebelah" },
+  { "lo": "ກົງຂ້າມ", "baca": "kong khàam", "id": "di seberang" },
+  { "lo": "ຂ້າງ", "baca": "khàang", "id": "di samping" },
+  { "lo": "ໄຟແດງ", "baca": "fái deeng", "id": "lampu merah" },
+  { "lo": "ທາງ", "baca": "tháang", "id": "jalan, arah" },
+  { "lo": "ຫຼົງທາງ", "baca": "lǒng tháang", "id": "tersesat" },
+  { "lo": "ບອກ", "baca": "bàwk", "id": "memberitahu" },
+  { "lo": "ພາ", "baca": "phaa", "id": "membawa, mengantar" },
+  { "lo": "ຊ່ວຍ", "baca": "sùay", "id": "menolong; tolong…" },
+  { "lo": "ກິໂລ", "baca": "ki-lóo", "id": "kilometer, kilogram" },
+  { "lo": "ໃຊ້ເວລາ", "baca": "sâi wée-láa", "id": "memakan waktu" },
+  { "lo": "ໂພດ", "baca": "phôot", "id": "terlalu" },
+  { "lo": "ວັດ", "baca": "wat", "id": "kuil" },
+  { "lo": "ສະໜາມບິນ", "baca": "sa-nǎam bin", "id": "bandara" },
+  { "lo": "ທະນາຄານ", "baca": "tha-náa-kháan", "id": "bank" },
+  { "lo": "ໂຮງໝໍ", "baca": "hoong-mǎw", "id": "rumah sakit" },
+  { "lo": "ສະຖານີ", "baca": "sa-thǎa-níi", "id": "stasiun, terminal" },
+  { "lo": "ເຮືອ", "baca": "hʉa", "id": "perahu" },
+  { "lo": "ແທັກຊີ", "baca": "thek-síi", "id": "taksi" },
+  { "lo": "ຢຸດ", "baca": "yút", "id": "berhenti" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan ຢູ່ໃສ, ແນວໃດ, ໄກບໍ່, atau ເທົ່າໃດ.",
+   "items": [
+    "ວັດ____ (kuilnya di mana?)",
+    "ໄປຕະຫຼາດ____ (ke pasar lewat mana?)",
+    "ຄ່າລົດ____ (ongkosnya berapa?)",
+    "ສະໜາມບິນ____ (bandaranya jauh tidak?)",
+    "ຫ້ອງນ້ຳ____ (toiletnya di mana?)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan arah ini ke bahasa Lao.",
+   "items": [
+    "lurus terus",
+    "belok kiri di lampu merah",
+    "di sebelah kanan",
+    "di seberang bank",
+    "lewat pasar"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ບໍ່ / ຈອດ / ໄດ້ / ຢູ່ນີ້",
+    "ແດ່ / ບອກ / ຮອດແລ້ວ",
+    "ໄປ / ແພງ / ຫຼຸດແດ່",
+    "ບໍ່ / ໄດ້ / ຍ່າງໄປ",
+    "ຫຼົງທາງ / ຂ້ອຍ"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Lao.",
+   "items": [
+    "Ke Wat Sisaket, bisa?",
+    "Ongkosnya berapa?",
+    "Kemahalan. Jauh tidak?",
+    "Tiga puluh ribu bisa?",
+    "Lurus terus, lalu belok kanan di lampu merah.",
+    "Berhenti di sini bisa?"
+   ]
+  }
+ ],
+ "answers": [
+  "ຢູ່ໃສ — ແນວໃດ — ເທົ່າໃດ — ໄກບໍ່ — ຢູ່ໃສ",
+  "ໄປຊື່ໆ — ລ້ຽວຊ້າຍຢູ່ໄຟແດງ — ເບື້ອງຂວາ — ກົງຂ້າມທະນາຄານ — ຜ່ານຕະຫຼາດ",
+  "ຈອດຢູ່ນີ້ໄດ້ບໍ່ — ຮອດແລ້ວບອກແດ່ — ແພງໄປ ຫຼຸດແດ່ — ຍ່າງໄປໄດ້ບໍ່ — ຂ້ອຍຫຼົງທາງ",
+  "ໄປວັດສີສະເກດບໍ່ — ຄ່າລົດເທົ່າໃດ — ແພງໄປ ໄກບໍ່ — ສາມສິບພັນໄດ້ບໍ່ — ໄປຊື່ໆ ແລ້ວລ້ຽວຂວາຢູ່ໄຟແດງ — ຈອດຢູ່ນີ້ໄດ້ບໍ່"
+ ],
+ "wave": "Ulangi unit 6: tutup bahasa Laonya, lalu ceritakan satu hari penuh dari bangun sampai tidur — lengkap dengan jamnya."
+}
