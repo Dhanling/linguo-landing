@@ -448,6 +448,134 @@ function ambilBerkas(purchaseId: string, accessToken: string): Promise<ArrayBuff
   return janji;
 }
 
+/* ── membuka modul dari potongan ───────────────────────────────────────────
+   [ebook-buka-cepat-v4] Kepala & ekor berkas ditarik BARENGAN di muka.
+
+   Dibiarkan sendiri, pdf.js membuka modul dengan ~7 permintaan Range yang
+   BERURUTAN: tiap potongan harus mendarat dulu sebelum ia tahu mau minta apa
+   berikutnya. Satu perjalanan (browser → fungsi kita → Supabase) 200-400 ms,
+   jadi separuh isi layar "Menyiapkan modul…" itu menunggu GILIRAN, bukan
+   menunggu byte.
+
+   Yang dimintanya selalu jatuh di dua wilayah yang sama: pangkal berkas
+   (katalog + isi halaman-halaman awal) dan buntutnya — Chromium menaruh pohon
+   halaman, xref, dan fon tertanam di 83-91% berkas. Jadi dua wilayah itu
+   diambil sekali jalan, BERSAMAAN, lalu permintaan pdf.js dilayani dari
+   memori. Diukur di 10 modul: 7 permintaan berurutan → 2 permintaan paralel
+   plus 0-1 susulan.
+
+   Ukurannya hasil sapuan, bukan tebakan: di bawah 1,25 MB + 1 MB modul
+   beraksara CJK mulai butuh 2-3 susulan berurutan lagi. */
+const KEPALA_BYTE = 1280 * 1024;
+const EKOR_BYTE = 1024 * 1024;
+
+/** Sepotong berkas yang sudah di memori, lengkap dengan posisi awalnya. */
+type Blok = { mulai: number; buf: Uint8Array };
+
+async function ambilRentang(url: string, rentang: string): Promise<Blok & { total: number }> {
+  const res = await fetch(url, { headers: { Range: rentang }, cache: "no-store" });
+  if (!res.ok) throw new Error(tr("Gagal memuat modul"));
+  const buf = new Uint8Array(await res.arrayBuffer());
+  // Server yang mengabaikan Range membalas 200 + seluruh berkas. Itu bukan
+  // galat — cuma berarti seluruh isinya langsung ada di tangan.
+  const m = /bytes\s+(\d+)-\d+\/(\d+)/i.exec(res.headers.get("content-range") || "");
+  return { buf, mulai: m ? Number(m[1]) : 0, total: m ? Number(m[2]) : buf.length };
+}
+
+type ModulPotongan = {
+  doc: PdfDoc;
+  /** Byte UTUH modulnya. Kepala & ekor yang sudah di tangan dipakai ulang —
+   *  yang masih perlu jaringan cuma bagian TENGAHNYA, jadi membuka modul
+   *  sekali tak lagi berarti mengunduh wilayah yang sama dua kali. */
+  utuh: () => Promise<ArrayBuffer>;
+  /** true = kepala & ekor ternyata sudah menutup seluruh berkas. */
+  penuh: boolean;
+};
+
+/* Kepala & ekor yang sudah ditarik, per modul. Isinya dipakai ulang reader
+   kalau Perpustakaan sudah menariknya waktu kursor menyentuh kartu — di situ
+   pembukaan modulnya tak menyentuh jaringan sama sekali.
+
+   Dibatasi dua modul: satu blok 2,25 MB, dan siswa yang menyapu kursornya di
+   sepanjang rak akan menyentuh belasan kartu. */
+const PRIMER_MAX = 2;
+type Primer = { depan: Blok & { total: number }; belakang: Blok & { total: number } };
+const primerCache = new Map<string, Promise<Primer>>();
+
+function primer(id: string, url: string): Promise<Primer> {
+  const ada = primerCache.get(id);
+  if (ada) return ada;
+  const janji = Promise.all([
+    ambilRentang(url, `bytes=0-${KEPALA_BYTE - 1}`),
+    ambilRentang(url, `bytes=-${EKOR_BYTE}`),
+  ]).then(([depan, belakang]) => ({ depan, belakang }));
+  janji.catch(() => { primerCache.delete(id); });
+  primerCache.set(id, janji);
+  // Map menjaga urutan sisip, jadi kunci pertama = yang paling lama disentuh.
+  for (const k of [...primerCache.keys()].slice(0, primerCache.size - PRIMER_MAX)) {
+    primerCache.delete(k);
+  }
+  return janji;
+}
+
+async function bukaPotongan(pdfjs: any, url: string, id: string): Promise<ModulPotongan> {
+  const { depan, belakang } = await primer(id, url);
+  const total = depan.total || belakang.total;
+  const penuh = depan.buf.length + belakang.buf.length >= total;
+
+  const utuh = async (): Promise<ArrayBuffer> => {
+    const rakit = new Uint8Array(total);
+    const batasDepan = Math.min(depan.buf.length, belakang.mulai);
+    rakit.set(depan.buf.subarray(0, batasDepan), 0);
+    if (batasDepan < belakang.mulai) {
+      const tengah = await ambilRentang(url, `bytes=${batasDepan}-${belakang.mulai - 1}`);
+      rakit.set(tengah.buf, batasDepan);
+    }
+    rakit.set(belakang.buf, belakang.mulai);
+    return rakit.buffer;
+  };
+
+  // Modul kecil: dua tarikan tadi sudah memuat semuanya, jadi tak ada gunanya
+  // menggantungkan dokumennya pada jaringan.
+  if (penuh) {
+    const buf = await utuh();
+    return {
+      doc: await pdfjs.getDocument({ data: new Uint8Array(buf.slice(0)) }).promise,
+      utuh: async () => buf,
+      penuh,
+    };
+  }
+
+  const punya = (b: Blok, a: number, z: number) => a >= b.mulai && z <= b.mulai + b.buf.length;
+  const transport = new pdfjs.PDFDataRangeTransport(total, new Uint8Array(0), false, null);
+  transport.requestDataRange = (a: number, z: number) => {
+    for (const b of [depan, belakang]) {
+      if (!punya(b, a, z)) continue;
+      /* slice, BUKAN subarray: pdf.js MEMINDAHKAN buffer yang diterimanya ke
+         worker, dan itu mengosongkan blok simpanan kita kalau memorinya
+         dipakai bersama — permintaan berikutnya ke wilayah yang sama akan
+         dilayani dengan byte kosong. */
+      const potong = b.buf.slice(a - b.mulai, z - b.mulai);
+      /* Ditunda satu microtask: pdf.js baru mendaftarkan pembacanya SESUDAH
+         requestDataRange kembali, jadi jawaban seketika hilang begitu saja. */
+      queueMicrotask(() => transport.onDataRange(a, potong));
+      return;
+    }
+    void ambilRentang(url, `bytes=${a}-${z - 1}`)
+      .then((r) => transport.onDataRange(a, r.buf))
+      .catch(() => { /* pdf.js yang meneruskan galatnya ke pemanggil */ });
+  };
+
+  const doc = await pdfjs.getDocument({
+    range: transport,
+    rangeChunkSize: 1 << 18, // 256 KB — cukup besar supaya permintaannya
+                             // sedikit, cukup kecil supaya susulannya ringan.
+    disableAutoFetch: true,  // jangan menyedot sisa berkas di latar,
+    disableStream: true,     // jangan menunggu badan respons yang panjang.
+  }).promise;
+  return { doc, utuh, penuh };
+}
+
 /* [ebook-latihan-interaktif-v1] Berkas soal pendamping modul. Kecil (puluhan
    KB) dan tak berubah selama modulnya tak dirakit ulang, jadi cukup diambil
    sekali per sesi. Gagal = diam: modul pihak ketiga memang tak punya soal. */
@@ -490,13 +618,27 @@ async function ambilSoal(purchaseId: string, accessToken: string): Promise<Berka
 let docCache: { id: string; doc: PdfDoc } | null = null;
 
 /** Dipanggil Perpustakaan saat kursor/jari menyentuh kartu e-book — begitu
- *  tombolnya benar-benar ditekan, byte modulnya biasanya sudah utuh di memori
- *  sehingga readernya terbuka tanpa layar tunggu. Gagal = diam saja. */
+ *  tombolnya benar-benar ditekan, bahan pembuka modulnya sudah di memori
+ *  sehingga readernya terbuka tanpa layar tunggu. Gagal = diam saja.
+ *
+ *  ⚠️ Yang dipanaskan cuma KEPALA & EKOR (2,25 MB), bukan modul utuhnya.
+ *  Sebelumnya kartu yang tersentuh langsung menyeret 3,5-7,5 MB, dan kalau
+ *  siswa mengeklik sebelum itu rampung, unduhan raksasa tadi malah berebut
+ *  jalur dengan potongan yang sedang ditunggu matanya. Sisa berkasnya menyusul
+ *  2,5 detik SESUDAH modulnya terbuka, waktu tak ada yang menunggu. */
 export function prewarmEbookModul(purchaseId: string, accessToken: string) {
   if (typeof window === "undefined" || !purchaseId || !accessToken) return;
   if (docCache?.id === purchaseId || bufCache.has(purchaseId)) return;
+  if (primerCache.has(purchaseId)) return;
   void muatPdfjs().catch(() => {});
-  void ambilBerkas(purchaseId, accessToken).catch(() => {});
+  void (async () => {
+    // Laci perangkat dulu: modul yang pernah dibaca tak perlu jaringan lagi.
+    const lokal = await bufLokal(purchaseId);
+    if (lokal) { simpanBuf(purchaseId, lokal.buf); return; }
+    const meta = await ambilMeta(purchaseId, accessToken);
+    if (meta.urlPotong) await primer(purchaseId, meta.urlPotong);
+    else await ambilBerkas(purchaseId, accessToken);
+  })().catch(() => {});
 }
 
 /* [ebook-tts-ketuk-kata-v1] Satu potong teks dari getTextContent(), koordinatnya
@@ -896,6 +1038,24 @@ export default function EbookReader({
        tergambar tetap di layar (bitmapnya disimpan per nomor halaman), yang
        berubah cuma dari mana halaman BERIKUTNYA dibaca. */
     let jamUtuh: number | null = null;
+    /* [ebook-buka-cepat-v4] Perakit byte utuh dari potongan yang SUDAH di
+       tangan (kepala + ekor), diisi bukaPotongan. Selama ada, penukaran ke
+       berkas utuh cuma perlu menarik bagian tengahnya — bukan mengunduh ulang
+       seluruh modul yang 2,25 MB pertamanya barusan lewat. */
+    let rakitUtuh: (() => Promise<ArrayBuffer>) | null = null;
+    let versiDipakai: string | null = null;
+    /** Byte utuh modul: lewat potongan yang sudah ada kalau bisa. */
+    const utuhkan = async (): Promise<ArrayBuffer> => {
+      if (!rakitUtuh) return ambilBerkas(purchaseId, accessToken);
+      const ada = bufCache.get(purchaseId);
+      if (ada) return ada;
+      const buf = await rakitUtuh();
+      simpanBuf(purchaseId, buf);
+      void keLaci(purchaseId, buf, versiDipakai);
+      // Kepala & ekornya sudah termuat di byte utuh ini — jangan disimpan dobel.
+      primerCache.delete(purchaseId);
+      return buf;
+    };
     /** Koneksi hemat/lambat: jangan menyeret 3,5 MB di latar cuma untuk
         simpanan besok. Membaca hari ini tetap jalan lewat potongan. */
     const koneksiIrit = () => {
@@ -906,7 +1066,7 @@ export default function EbookReader({
     const gantiKeUtuh = async () => {
       if (koneksiIrit()) return;
       try {
-        const buf = await ambilBerkas(purchaseId, accessToken);
+        const buf = await utuhkan();
         const pdfjs = pdfjsRef.current;
         const lama = docRef.current;
         if (!hidup || !pdfjs || !lama) return;
@@ -980,19 +1140,18 @@ export default function EbookReader({
             if (!hidup) return;
             if (meta?.urlPotong) {
               /* Modul 3,5 MB di koneksi rumahan = 5–17 detik menatap
-                 "Menyiapkan modul…". pdf.js cuma butuh beberapa ratus KB untuk
-                 bentangan pertama, jadi biarkan ia meminta seperlunya:
-                 - disableAutoFetch: jangan menyedot sisa berkas di latar,
-                 - disableStream: jangan menunggu badan respons yang panjang. */
-              d = await pdfjs.getDocument({
-                url: meta.urlPotong,
-                rangeChunkSize: 1 << 18, // 256 KB — cukup besar supaya jumlah
-                                         // permintaannya sedikit, cukup kecil
-                                         // supaya halaman pertama tak menunggu.
-                disableAutoFetch: true,
-                disableStream: true,
-              }).promise;
-              dariPotongan = true;
+                 "Menyiapkan modul…". pdf.js cuma butuh wilayah pangkal dan
+                 buntut berkas untuk bentangan pertama — bukaPotongan menarik
+                 keduanya sekali jalan, berbarengan. */
+              const potongan = await bukaPotongan(pdfjs, meta.urlPotong, purchaseId);
+              if (!hidup) { potongan.doc.destroy?.(); return; }
+              d = potongan.doc;
+              rakitUtuh = potongan.utuh;
+              versiDipakai = meta.versi;
+              dariPotongan = !potongan.penuh;
+              // Sudah utuh sejak awal → langsung dititipkan ke perangkat; tak
+              // ada dokumen yang perlu ditukar 2,5 detik lagi.
+              if (potongan.penuh) void utuhkan();
             } else {
               // Tak dapat alamat (jaringan/hak) — jalur lama yang menentukan,
               // sekalian supaya pesan galatnya sampai apa adanya.
