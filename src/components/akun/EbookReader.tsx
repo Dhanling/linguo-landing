@@ -959,6 +959,13 @@ export default function EbookReader({
   const [layarPenuh, setLayarPenuh] = useState(false);
 
   const wadahRef = useRef<HTMLDivElement | null>(null);
+  /* [ebook-zoom-hp-v1] Kotak buku dipegang ref-nya supaya titik yang sedang
+     dilihat bisa dipertahankan waktu halaman diraster ulang di zoom baru —
+     tanpa itu, tiap kali cubitan dikomit tampilan melompat ke pojok kiri-atas
+     dan terasa seperti "zoom-nya mental sendiri". */
+  const bukuRef = useRef<HTMLDivElement | null>(null);
+  /** Titik yang harus tetap berada di tengah wadah sesudah raster ulang. */
+  const jangkarRef = useRef<{ fx: number; fy: number } | null>(null);
   /** Tepi tujuan setelah halaman terbalik gara-gara gulir mentok — lihat panah ↑/↓. */
   const mendaratDiRef = useRef<1 | -1 | null>(null);
   const kiriRef = useRef<HTMLCanvasElement | null>(null);
@@ -1279,8 +1286,39 @@ export default function EbookReader({
     return () => ro.disconnect();
   }, [hitungSkala]);
 
-  /* ── zoom yang mengikuti gerakan ────────────────────────────────────────
-     [ebook-zoom-cubit-v1] Dulu zoom cuma bisa lewat dua tombol ± di bilah atas,
+  /* ── zoom yang mengikuti gerakan ─────────────────────────────────────── */
+  /* [ebook-zoom-hp-v1] Catat bagian buku mana yang sedang berada di tengah
+     layar (dalam pecahan 0..1 dari kotak buku). Dipanggil PERSIS sebelum zoom
+     dikomit, jadi rect-nya masih memuat skala CSS yang dipegang jari. */
+  const catatJangkar = useCallback(() => {
+    const el = wadahRef.current;
+    const buku = bukuRef.current;
+    if (!el || !buku) return;
+    const rb = buku.getBoundingClientRect();
+    const rw = el.getBoundingClientRect();
+    if (rb.width < 1 || rb.height < 1) return;
+    jangkarRef.current = {
+      fx: (rw.left + rw.width / 2 - rb.left) / rb.width,
+      fy: (rw.top + rw.height / 2 - rb.top) / rb.height,
+    };
+  }, []);
+
+  /* Halaman baru sudah terpasang di ukuran barunya → geser gulirannya supaya
+     titik yang tadi di tengah layar kembali ke tengah. */
+  useLayoutEffect(() => {
+    const j = jangkarRef.current;
+    if (!j) return;
+    jangkarRef.current = null;
+    const el = wadahRef.current;
+    const buku = bukuRef.current;
+    if (!el || !buku) return;
+    const rb = buku.getBoundingClientRect();
+    const rw = el.getBoundingClientRect();
+    el.scrollLeft += rb.left + j.fx * rb.width - (rw.left + rw.width / 2);
+    el.scrollTop += rb.top + j.fy * rb.height - (rw.top + rw.height / 2);
+  }, [ukuran]);
+
+  /* [ebook-zoom-cubit-v1] Dulu zoom cuma bisa lewat dua tombol ± di bilah atas,
      dan cubitan trackpad malah memperbesar SELURUH halaman browser (bilah alamat
      ikut membesar, modulnya tidak). */
   const aturZoom = useCallback((next: number, langsung = false) => {
@@ -1292,12 +1330,13 @@ export default function EbookReader({
     // tak lagi sahih.
     setUcap(null);
     if (komitRef.current) { window.clearTimeout(komitRef.current); komitRef.current = null; }
-    if (langsung) { setZoom(z); return; }
+    if (langsung) { catatJangkar(); setZoom(z); return; }
     komitRef.current = window.setTimeout(() => {
       komitRef.current = null;
+      catatJangkar();
       setZoom(zoomLiveRef.current);
     }, JEDA_KOMIT_ZOOM);
-  }, []);
+  }, [catatJangkar]);
 
   useEffect(() => () => { if (komitRef.current) window.clearTimeout(komitRef.current); }, []);
 
@@ -1343,7 +1382,17 @@ export default function EbookReader({
       Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
     const onStart = (e: TouchEvent) => {
       cubit = e.touches.length === 2 ? { jarak: jarak2(e.touches), zoom: zoomLiveRef.current } : null;
+      /* [ebook-zoom-hp-v1] Cubitan dua jari WAJIB direbut sejak touchstart.
+         Kalau tidak, browser HP menganggapnya cubitan halaman: Chrome mencabut
+         urutan sentuhnya (touchcancel — handler di bawah tak pernah jalan) dan
+         Safari menskalakan visual viewport, yang begitu jari diangkat memantul
+         balik ke ukuran semula di atas overlay `fixed` seperti reader ini.
+         Itulah "sudah di-zoom, mental sendiri jadi zoom out" yang dilaporkan. */
+      if (cubit && e.cancelable) e.preventDefault();
     };
+    /* iOS Safari tidak selalu tunduk pada touch-action: gestur cubitnya datang
+       sebagai gesturestart/gesturechange yang harus ditolak terpisah. */
+    const onGestur = (e: Event) => { if (e.cancelable) e.preventDefault(); };
     const onMove = (e: TouchEvent) => {
       if (!cubit || e.touches.length !== 2) return;
       e.preventDefault(); // jangan sampai jadi gulir/zoom bawaan halaman
@@ -1378,7 +1427,11 @@ export default function EbookReader({
     el.addEventListener("pointerup", onUp, { passive: true });
     const onBatalSeret = () => { seret = null; };
     el.addEventListener("pointercancel", onBatalSeret, { passive: true });
-    el.addEventListener("touchstart", onStart, { passive: true });
+    // passive:false — onStart menolak cubitan bawaan browser (lihat di atas).
+    el.addEventListener("touchstart", onStart, { passive: false });
+    el.addEventListener("gesturestart", onGestur as EventListener, { passive: false });
+    el.addEventListener("gesturechange", onGestur as EventListener, { passive: false });
+    el.addEventListener("gestureend", onGestur as EventListener, { passive: false });
     el.addEventListener("touchmove", onMove, { passive: false });
     el.addEventListener("touchend", onEnd, { passive: true });
     el.addEventListener("touchcancel", onEnd, { passive: true });
@@ -1389,6 +1442,9 @@ export default function EbookReader({
       el.removeEventListener("pointerup", onUp);
       el.removeEventListener("pointercancel", onBatalSeret);
       el.removeEventListener("touchstart", onStart);
+      el.removeEventListener("gesturestart", onGestur as EventListener);
+      el.removeEventListener("gesturechange", onGestur as EventListener);
+      el.removeEventListener("gestureend", onGestur as EventListener);
       el.removeEventListener("touchmove", onMove);
       el.removeEventListener("touchend", onEnd);
       el.removeEventListener("touchcancel", onEnd);
@@ -1797,6 +1853,15 @@ export default function EbookReader({
     const a = sentuh.current;
     if (!a) return;
     if (e.touches.length > 0) { sentuh.current = null; return; }
+    /* [ebook-zoom-hp-v1] Halaman yang di-zoom LEBIH LEBAR dari layar: di situ
+       geseran satu jari adalah menggeser kertas (gulir bawaan wadah), bukan
+       perintah pindah halaman — sama seperti penjagaan seretan tetikus di
+       atas. Dulu tak ada penjagaan ini, jadi begitu siswa menggeser untuk
+       melihat sisi kanan halaman, modulnya malah lompat ke halaman berikutnya
+       dan zoom-nya seolah hilang. Pindah halaman tetap tersedia lewat panah di
+       bilah bawah, atau sesudah zoom dikembalikan ke muat-layar. */
+    const w = wadahRef.current;
+    if (w && w.scrollWidth - w.clientWidth > 4) { sentuh.current = null; return; }
     const dx = e.changedTouches[0].clientX - a.x;
     const dy = e.changedTouches[0].clientY - a.y;
     // Geser mendatar yang tegas saja — kalau tidak, gulir vertikal ikut
@@ -2885,6 +2950,10 @@ export default function EbookReader({
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
         className="relative flex flex-1 overflow-auto p-4"
+        /* [ebook-zoom-hp-v1] `pan-x pan-y` = menggeser kertas dengan satu jari
+           tetap gulir bawaan (mulus, tanpa JS), tapi cubitan & ketuk-dua-kali
+           tidak lagi diambil alih browser — itu jatah zoom reader ini. */
+        style={{ touchAction: "pan-x pan-y", overscrollBehavior: "contain" }}
       >
         {memuat && tundaMemuat && (
           <div className="m-auto text-center">
@@ -2916,6 +2985,7 @@ export default function EbookReader({
                Dua akibatnya: halaman kanan yang menjulur TIDAK bisa digulir untuk
                dilihat, dan koordinat ketukan meleset sampai 1,6x — kata yang
                diketuk tak pernah ketemu, jadi pelafalannya terlihat "mati". */
+            ref={bukuRef}
             className="ebook-buku relative m-auto shrink-0"
             style={{
               width: lebarBuku,
