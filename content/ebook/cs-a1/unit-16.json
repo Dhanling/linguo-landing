@@ -1,0 +1,201 @@
+{
+ "title": "Akhir pekan lalu — waktu lampau",
+ "title_target": "Minulý víkend",
+ "goal": "Menceritakan apa yang sudah terjadi, memasang kata bantu lampau di tempat yang benar, dan menyesuaikan ekor kata kerja dengan jenis kelamin pelakunya.",
+ "bekal": [
+  "membentuk lampau dari kata kerja apa pun: batang + *-l/-la/-lo/-li* + kata bantu",
+  "menaruh *jsem*/*jsi* di tempat kedua, bukan di ujung",
+  "menceritakan akhir pekanmu dalam sepuluh kalimat"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Co jsi dělal o víkendu?",
+   "intro": "Senin pagi di kelas. Semua orang saling bertanya kabar akhir pekan.",
+   "lines": [
+    { "speaker": "Eva:", "text": "Ahoj! Co jsi dělal o víkendu?", "id": "Halo! Akhir pekan kamu ngapain?", "literal": "halo! apa kamu-adalah melakukan pada akhir-pekan?" },
+    { "speaker": "Budi:", "text": "V sobotu jsem byl v Krumlově. Bylo to nádherné.", "id": "Sabtu saya di Krumlov. Indah sekali.", "literal": "pada Sabtu saya-adalah adalah di Krumlov. adalah itu indah." },
+    { "speaker": "Eva:", "text": "Jel jsi sám?", "id": "Kamu pergi sendiri?", "literal": "pergi kamu-adalah sendiri?" },
+    { "speaker": "Budi:", "text": "Ne, jel jsem s Tomášem. Vstávali jsme v pět ráno.", "id": "Tidak, saya pergi dengan Tomáš. Kami bangun jam lima pagi.", "literal": "tidak, pergi saya-adalah dengan Tomáš. bangun kami-adalah pada lima pagi." },
+    { "speaker": "Eva:", "text": "V pět? To je hrůza. A co jste tam dělali?", "id": "Jam lima? Ngeri. Di sana kalian ngapain?", "literal": "pada lima? itu adalah kengerian. dan apa kalian-adalah di-sana melakukan?" },
+    { "speaker": "Budi:", "text": "Prošli jsme celé město a byli jsme na zámku.", "id": "Kami keliling seluruh kota dan naik ke kastil.", "literal": "berjalan kami-adalah seluruh kota dan adalah kami-adalah di kastil." },
+    { "speaker": "Eva:", "text": "Fotil jsi?", "id": "Kamu foto-foto?", "literal": "memotret kamu-adalah?" },
+    { "speaker": "Budi:", "text": "Moc ne — zapomněl jsem nabít baterii.", "id": "Nggak banyak — saya lupa mengisi baterai.", "literal": "banyak tidak — lupa saya-adalah mengisi baterai." },
+    { "speaker": "Eva:", "text": "Klasika! A v neděli?", "id": "Klasik! Hari Minggu?", "literal": "klasik! dan pada Minggu?" },
+    { "speaker": "Budi:", "text": "V neděli jsem nedělal nic. Spal jsem do jedenácti.", "id": "Minggu saya nggak ngapa-ngapain. Tidur sampai jam sebelas.", "literal": "pada Minggu saya-adalah tidak-melakukan apa-apa. tidur saya-adalah sampai kesebelas." },
+    { "speaker": "Eva:", "text": "To zní jako správná neděle. Já jsem uklízela byt.", "id": "Kedengarannya Minggu yang benar. Saya beres-beres apartemen.", "literal": "itu terdengar seperti benar Minggu. saya saya-adalah membereskan apartemen." },
+    { "speaker": "Budi:", "text": "Chudák. Příště pojeď s námi.", "id": "Kasihan. Lain kali ikut kami saja.", "literal": "orang-malang. lain-kali pergilah dengan kami." }
+   ],
+   "notes": [
+    "**Kata bantu lampau berdiri di tempat kedua kalimat**, bukan di ujung dan bukan menempel di kata kerjanya. *V sobotu **jsem** byl v Krumlově.* Kalau kata kerjanya yang di depan, ia langsung mengikuti: *Byl **jsem** v Krumlově.* Ini aturan letak paling penting di seluruh bahasa Ceko.",
+    "**Untuk dia dan mereka, kata bantunya hilang.** *On byl doma*, bukan *on je byl doma*. Hanya *já*, *ty*, *my*, *vy* yang memakai kata bantu. Itu artinya separuh bentuk lampau lebih pendek daripada yang kamu duga.",
+    "**Ekornya menandai jenis kelamin pelakunya.** *Byl jsem* kalau kamu laki-laki, *byla jsem* kalau perempuan. Ini satu-satunya tempat dalam bahasa Ceko di mana kata kerja peduli pada jenis kelamin — dan ia peduli setiap kali kamu bercerita tentang masa lalu.",
+    "**Nedělal jsem nic** — dua penyangkalan lagi, dan sekali lagi itu benar. Bahasa Ceko konsisten menumpuknya.",
+    "**Do jedenácti** — \"sampai jam sebelas\". Sesudah *do* muncul genitiv, dan angka jam memakai bentuk urutan (*jedenáctá → jedenácti*).",
+    "**Chudák** = orang malang, dipakai untuk bersimpati sekaligus mengejek ringan. Untuk perempuan: *chudinka*.",
+    "**Pojeď s námi** = ikutlah dengan kami. *Námi* adalah bentuk instrumentál dari *my* — bentuk yang baru saja kamu pelajari, sekarang muncul sebagai kata ganti."
+   ],
+   "grammars": [
+    {
+     "title": "Membentuk waktu lampau",
+     "body": ["Tiga langkah, dan hampir tak ada kekecualian: buang *-t* dari bentuk kamus, tempelkan ekor, tambahkan kata bantu."],
+     "table": {
+      "head": ["Pelaku", "Ekor", "*dělat* → *dělal*", "*být* → *byl*"],
+      "rows": [
+       ["já (lk)", "**-l jsem**", "*dělal jsem*", "*byl jsem*"],
+       ["já (pr)", "**-la jsem**", "*dělala jsem*", "*byla jsem*"],
+       ["ty (lk/pr)", "**-l/-la jsi**", "*dělal(a) jsi*", "*byl(a) jsi*"],
+       ["on", "**-l**", "*dělal*", "*byl*"],
+       ["ona", "**-la**", "*dělala*", "*byla*"],
+       ["ono", "**-lo**", "*dělalo*", "*bylo*"],
+       ["my", "**-li jsme**", "*dělali jsme*", "*byli jsme*"],
+       ["vy", "**-li jste**", "*dělali jste*", "*byli jste*"],
+       ["oni", "**-li**", "*dělali*", "*byli*"]
+      ]
+     },
+     "after": [
+      "Menyangkalnya cukup menempel *ne-* di depan kata kerjanya, bukan di kata bantunya: *Nedělal jsem nic.*",
+      "Kalimat tanpa pelaku pun lampau dengan cara yang sama: *Bylo hezky* (cuacanya bagus tadi), *Pršelo* (tadi hujan), *Bylo mi zima* (tadi saya kedinginan).",
+      "⚠️ Beberapa batang kata kerja berubah di bentuk lampau, dan yang paling sering dipakai perlu dihafal: *jít → šel/šla*, *jet → jel/jela*, *jíst → jedl*, *číst → četl*, *psát → psal*, *chtít → chtěl*, *moct → mohl*, *říct → řekl*."
+     ]
+    },
+    {
+     "title": "Aturan tempat kedua",
+     "body": ["Bahasa Ceko punya sekelompok kata kecil yang **wajib** berdiri di tempat kedua kalimat. Mereka tidak pernah memulai kalimat dan tidak pernah berdiri sendiri."],
+     "table": {
+      "head": ["Urutan", "Isinya", "Contoh"],
+      "rows": [
+       ["1", "kata pertama kalimat", "*Včera*"],
+       ["2a", "kata bantu lampau", "*jsem*"],
+       ["2b", "*se* / *si*", "*se*"],
+       ["2c", "kata ganti dativ", "*mu*"],
+       ["2d", "kata ganti akuzativ", "*to*"],
+       ["3", "sisanya", "*řekl.*"]
+      ]
+     },
+     "after": [
+      "Kalimat lengkapnya: *Včera **jsem mu to** řekl.* — kemarin saya mengatakannya kepadanya. Empat kata kecil berbaris rapi di tempat kedua, dalam urutan yang tak boleh ditukar.",
+      "Kalau kamu salah menaruhnya, orang Ceko tetap mengerti — tapi telinganya akan tersandung, kira-kira seperti kita mendengar \"saya kemarin sudah dia bilang\".",
+      "Cara paling cepat menguasainya: hafalkan kalimat utuh, bukan aturannya. *Jak se máš?*, *Jmenuju se…*, *Byl jsem doma.* — polanya masuk lewat kebiasaan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menceritakan akhir pekanmu",
+   "blocks": [
+    { "type": "p", "text": "Isi sepuluh kalimat ini untuk dirimu sendiri, lalu ceritakan tanpa melihat. Kalau kamu perempuan, ganti semua ekor *-l* jadi *-la*." },
+    { "type": "list", "items": [
+     "*V pátek večer jsem ____.* — Jumat malam saya …",
+     "*V sobotu ráno jsem vstal v ____.* — Sabtu pagi saya bangun jam …",
+     "*Pak jsem šel do ____.* — Lalu saya pergi ke …",
+     "*Obědval jsem ____.* — Saya makan siang …",
+     "*Odpoledne jsem se díval na ____.* — Sore saya menonton …",
+     "*Večer jsem se sešel s ____.* — Malam saya bertemu dengan …",
+     "*V neděli jsem nedělal ____.* — Minggu saya tidak …",
+     "*Uklidil jsem ____.* — Saya membereskan …",
+     "*Bylo to ____.* — Rasanya …",
+     "*Příští víkend chci ____.* — Akhir pekan depan saya mau …"
+    ] },
+    { "type": "kotak", "title": "Kata waktu untuk cerita masa lalu", "items": [
+     "*včera* (kemarin) · *předevčírem* (kemarin lusa) · *minulý týden* (minggu lalu) · *minulý měsíc* (bulan lalu) · *loni* (tahun lalu) · *před rokem* (setahun lalu) · *nedávno* (belum lama ini) · *kdysi* (dulu sekali).",
+     "*Nejdřív … pak … potom … nakonec* — pertama, lalu, kemudian, akhirnya. Empat kata ini mengubah daftar kejadian jadi cerita."
+    ] }
+   ]
+  },
+  {
+   "title": "Kata kerja lampau yang batangnya berubah",
+   "blocks": [
+    { "type": "tabel", "head": ["Bentuk kamus", "Sekarang", "Lampau (lk)", "Arti"], "rows": [
+     ["*jít*", "*jdu*", "***šel***", "berjalan"],
+     ["*jet*", "*jedu*", "*jel*", "berkendara"],
+     ["*jíst*", "*jím*", "***jedl***", "makan"],
+     ["*pít*", "*piju*", "*pil*", "minum"],
+     ["*číst*", "*čtu*", "***četl***", "membaca"],
+     ["*psát*", "*píšu*", "*psal*", "menulis"],
+     ["*chtít*", "*chci*", "***chtěl***", "mau"],
+     ["*moct*", "*můžu*", "***mohl***", "bisa"],
+     ["*říct*", "*řeknu*", "***řekl***", "mengatakan"],
+     ["*vzít*", "*vezmu*", "***vzal***", "mengambil"],
+     ["*spát*", "*spím*", "*spal*", "tidur"],
+     ["*být*", "*jsem*", "*byl*", "adalah"]
+    ] },
+    { "type": "kotak", "title": "Kabar baik tentang daftar ini", "items": [
+     "Dua belas kata kerja di atas adalah **hampir seluruh** kekecualian yang akan kamu temui di tingkat A1. Sisanya — ratusan kata kerja lain — mengikuti aturan buang *-t*, tempel *-l*.",
+     "Perhatikan juga bahwa bentuk lampau **tidak peduli** pada kelompok ekor yang kamu pelajari di unit 8. *Dělám / mluvím / pracuju* semuanya jadi *dělal / mluvil / pracoval*. Satu aturan untuk semua kelompok."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "cs": "minulý", "baca": "MI-nu-lii", "id": "yang lalu" },
+  { "cs": "včera", "baca": "VCE-ra", "id": "kemarin" },
+  { "cs": "loni", "baca": "LO-nyi", "id": "tahun lalu" },
+  { "cs": "nedávno", "baca": "NE-daav-no", "id": "belum lama ini" },
+  { "cs": "kdysi", "baca": "GDY-si", "id": "dulu sekali" },
+  { "cs": "nejdřív / nakonec", "baca": "NEY-drzyiif", "id": "pertama / akhirnya" },
+  { "cs": "příště", "baca": "PRZYIISY-tye", "id": "lain kali" },
+  { "cs": "šel / šla", "baca": "syel / syla", "id": "pergi (lampau)" },
+  { "cs": "jel / jela", "baca": "yel", "id": "berkendara (lampau)" },
+  { "cs": "byl / byla", "baca": "byl", "id": "adalah (lampau)" },
+  { "cs": "mohl / mohla", "baca": "MO-hl", "id": "bisa (lampau)" },
+  { "cs": "chtěl / chtěla", "baca": "KHTYEL", "id": "mau (lampau)" },
+  { "cs": "řekl / řekla", "baca": "RZYE-kl", "id": "berkata (lampau)" },
+  { "cs": "fotit / fotografovat", "baca": "FO-tyit", "id": "memotret" },
+  { "cs": "zapomenout", "baca": "ZA-po-me-nout", "id": "lupa" },
+  { "cs": "nabít", "baca": "NA-biit", "id": "mengisi (baterai)" },
+  { "cs": "baterie", "baca": "BA-te-ri-ye", "id": "baterai (pr)" },
+  { "cs": "uklidit / uklízet", "baca": "U-kli-jyit", "id": "membereskan" },
+  { "cs": "projít", "baca": "PRO-yiit", "id": "melewati, keliling" },
+  { "cs": "nádherný", "baca": "NAAD-her-nii", "id": "indah sekali" },
+  { "cs": "hrůza", "baca": "HRUU-za", "id": "kengerian (pr)" },
+  { "cs": "chudák", "baca": "KHU-daak", "id": "orang malang" },
+  { "cs": "klasika", "baca": "KLA-si-ka", "id": "klasik, seperti biasa" },
+  { "cs": "správný", "baca": "SPRAAV-nii", "id": "benar, tepat" },
+  { "cs": "celý", "baca": "TSE-lii", "id": "seluruh" },
+  { "cs": "sám / sama", "baca": "saam", "id": "sendiri" },
+  { "cs": "s námi / s vámi", "baca": "s NAA-mi", "id": "dengan kami / dengan kalian" },
+  { "cs": "o víkendu", "baca": "o VII-ken-du", "id": "di akhir pekan" },
+  { "cs": "do", "baca": "do", "id": "sampai (waktu)" },
+  { "cs": "moc ne", "baca": "mots ne", "id": "tidak banyak" }
+ ],
+ "exercises": [
+  { "prompt": "Ubah ke bentuk lampau (pelaku laki-laki).", "items": [
+   "dělám → ____",
+   "mluvím → ____",
+   "pracuju → ____",
+   "jsem → ____",
+   "jdu → ____",
+   "můžu → ____"
+  ] },
+  { "prompt": "Ubah ke bentuk lampau (pelaku perempuan).", "items": [
+   "Eva vstává v sedm. → ____",
+   "Eva jde do školy. → ____",
+   "Eva vaří večeři. → ____",
+   "Eva čte knihu. → ____",
+   "Eva je doma. → ____"
+  ] },
+  { "prompt": "Susun dengan urutan tempat kedua yang benar.", "items": [
+   "včera / jsem / doma / byl",
+   "jsem / ráno / vstal / v pět",
+   "jsem / to / mu / řekl / včera",
+   "se / jsem / sprchoval / pak",
+   "nic / jsem / nedělal / v neděli"
+  ] },
+  { "prompt": "Terjemahkan ke bahasa Ceko (pelaku laki-laki).", "items": [
+   "Akhir pekan kamu ngapain?",
+   "Sabtu saya di Praha.",
+   "Kami bangun jam lima.",
+   "Saya lupa.",
+   "Minggu saya tidak melakukan apa-apa.",
+   "Saya tidur sampai jam sebelas."
+  ] }
+ ],
+ "answers": [
+  "dělal jsem — mluvil jsem — pracoval jsem — byl jsem — šel jsem — mohl jsem",
+  "Eva vstávala v sedm. — Eva šla do školy. — Eva vařila večeři. — Eva četla knihu. — Eva byla doma.",
+  "Včera jsem byl doma. — Ráno jsem vstal v pět. — Včera jsem mu to řekl. — Pak jsem se sprchoval. — V neděli jsem nedělal nic.",
+  "Co jsi dělal o víkendu? — V sobotu jsem byl v Praze. — Vstávali jsme v pět. — Zapomněl jsem. — V neděli jsem nedělal nic. — Spal jsem do jedenácti."
+ ]
+}

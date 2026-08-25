@@ -1,0 +1,571 @@
+{
+ "title": "Bepergian — bentuk ketujuh",
+ "title_target": "Cestování — instrumentál",
+ "goal": "Menyatakan alat dan sarana dengan bentuk ketujuh, menanyakan arah, dan mengurus penginapan.",
+ "bekal": [
+  "menyebut kendaraan dengan *vlakem*, *autem*, *metrem*",
+  "memakai *s / se* untuk menyatakan \"bersama\"",
+  "bertanya arah dan mengerti jawabannya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Výlet do Českého Krumlova",
+   "intro": "Budi dan Eva merencanakan perjalanan akhir pekan ke kota kecil di selatan.",
+   "lines": [
+    {
+     "speaker": "Eva:",
+     "text": "Pojedeme autobusem, nebo vlakem?",
+     "id": "Kita naik bus atau kereta?",
+     "literal": "kita-akan-pergi dengan-bus, atau dengan-kereta?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Co je rychlejší?",
+     "id": "Mana yang lebih cepat?",
+     "literal": "apa adalah lebih-cepat?"
+    },
+    {
+     "speaker": "Eva:",
+     "text": "Autobusem. Vlakem se musí přestupovat v Českých Budějovicích.",
+     "id": "Bus. Kalau kereta harus ganti di České Budějovice.",
+     "literal": "dengan-bus. dengan-kereta diri harus berganti di České Budějovice."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tak autobusem. Kde je autobusové nádraží?",
+     "id": "Kalau begitu bus. Terminal busnya di mana?",
+     "literal": "jadi dengan-bus. di-mana adalah bus stasiun?"
+    },
+    {
+     "speaker": "Eva:",
+     "text": "Na Florenci. Pojedeme tam metrem, linkou B.",
+     "id": "Di Florenc. Kita ke sana naik metro, jalur B.",
+     "literal": "di Florenc. kita-akan-pergi ke-sana dengan-metro, dengan-jalur B."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A kde budeme spát?",
+     "id": "Kita menginap di mana?",
+     "literal": "dan di-mana kita-akan tidur?"
+    },
+    {
+     "speaker": "Eva:",
+     "text": "Rezervovala jsem penzion u řeky. Dvoulůžkový pokoj se snídaní.",
+     "id": "Saya sudah pesan penginapan dekat sungai. Kamar dua ranjang termasuk sarapan.",
+     "literal": "memesan saya-adalah penginapan dekat sungai. dua-ranjang kamar dengan sarapan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Skvělé. Co budeme dělat tam?",
+     "id": "Bagus. Kita mau ngapain di sana?",
+     "literal": "hebat. apa kita-akan melakukan di-sana?"
+    },
+    {
+     "speaker": "Eva:",
+     "text": "Projdeme se po starém městě a půjdeme na zámek.",
+     "id": "Jalan-jalan di kota tua dan ke kastil.",
+     "literal": "kita-akan-berjalan diri sepanjang tua kota dan kita-akan-pergi ke kastil."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Musím si vzít fotoaparát. Prý je to nejhezčí město v Česku.",
+     "id": "Saya harus bawa kamera. Katanya itu kota tercantik di Ceko.",
+     "literal": "saya-harus diri mengambil kamera. konon adalah itu paling-cantik kota di Ceko."
+    },
+    {
+     "speaker": "Eva:",
+     "text": "Po Praze, samozřejmě. Nikdy neříkej Pražákovi něco jiného.",
+     "id": "Setelah Praha, tentu saja. Jangan pernah bilang lain ke orang Praha.",
+     "literal": "sesudah Praha, tentu-saja. tidak-pernah jangan-katakan kepada-orang-Praha sesuatu lain."
+    }
+   ],
+   "notes": [
+    "**Autobusem, vlakem, metrem** — ekor *-em* pada kata laki-laki dan netral menandai **alat**: dengan bus, dengan kereta. Itu bentuk ketujuh, *instrumentál*, dan untuk sarana perjalanan ia dipakai **tanpa kata depan sama sekali**.",
+    "**Se snídaní, s Evou** — kalau artinya \"bersama\", barulah muncul kata depan *s/se*. Bedanya jelas: *jedu autem* (naik mobil, mobil itu alat) lawan *jedu s Evou* (bersama Eva, Eva bukan alat).",
+    "**Linkou B** — \"dengan jalur B\". Metro Praha punya tiga jalur: A (hijau), B (kuning), C (merah). Semuanya bertemu di tengah, dan sistemnya termasuk paling mudah dipahami di Eropa.",
+    "**Rezervovala jsem** — bentuk lampau, dan ekor *-la* menandai Eva perempuan. Unit berikutnya membongkarnya penuh; untuk sekarang cukup kenali bentuknya saat lewat.",
+    "**Prý** = \"katanya\", \"konon\". Satu kata kecil yang menandai bahwa kamu mengulang kabar orang lain, bukan pengetahuan sendiri — bahasa Ceko memakainya jauh lebih sering daripada kita memakai \"katanya\".",
+    "**Pražák** adalah sebutan sehari-hari untuk orang Praha, dan ia setengah ejekan. Persaingan Praha lawan daerah adalah bahan lelucon abadi, dan bercanda tentangnya adalah cara cepat mencairkan suasana.",
+    "**Nikdy neříkej** — dua penyangkalan sekaligus, dan itu benar. Bahasa Ceko menuntut *ne-* pada kata kerjanya meski sudah ada *nikdy*, *nikdo*, *nic*."
+   ],
+   "grammars": [
+    {
+     "title": "Instrumentál — bentuk ketujuh",
+     "body": [
+      "Bentuk terakhir yang kamu temui di modul ini. Ia menjawab *kým? čím?* — dengan siapa? dengan apa?"
+     ],
+     "table": {
+      "head": [
+       "Jenis kelamin",
+       "Bentuk kamus",
+       "Instrumentál",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "laki-laki",
+        "*vlak*, *autobus*",
+        "*vlak**em***, *autobus**em***",
+        "*jedu vlakem*"
+       ],
+       [
+        "netral *-o*",
+        "*auto*, *metro*",
+        "*aut**em***, *metr**em***",
+        "*jedu autem*"
+       ],
+       [
+        "perempuan *-a*",
+        "*Eva*, *sestra*",
+        "*Ev**ou***, *sestr**ou***",
+        "*s Evou*"
+       ],
+       [
+        "perempuan *-e*",
+        "*tramvaj*",
+        "*tramvaj**í***",
+        "*jedu tramvají*"
+       ],
+       [
+        "netral *-í*",
+        "*nádraží*",
+        "*nádraží**m***",
+        "*před nádražím*"
+       ]
+      ]
+     },
+     "after": [
+      "Kata sifatnya: laki-laki & netral **-ým** (*rychlým vlakem*), perempuan **-ou** (*s mladou sestrou*).",
+      "Kata depan yang menariknya: *s/se* (dengan), *před* (di depan, sebelum), *za* (di belakang), *nad* (di atas), *pod* (di bawah), *mezi* (di antara).",
+      "⚠️ Perhatikan bedanya dengan *s* + akuzativ yang **tidak ada**: kalau kamu melihat *s*, bentuknya pasti instrumentál. Itu salah satu kata depan yang paling patuh dalam bahasa Ceko."
+     ]
+    },
+    {
+     "title": "Tujuh bentuk, dilihat sekaligus",
+     "body": [
+      "Sekarang kamu sudah bertemu semuanya. Tabel ini bukan untuk dihafal — ia untuk dilirik saat ragu."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Contoh dengan *žena*",
+       "Contoh dengan *vlak*",
+       "Penanda khas"
+      ],
+      "rows": [
+       [
+        "1 nominativ",
+        "*žena*",
+        "*vlak*",
+        "pelaku"
+       ],
+       [
+        "2 genitiv",
+        "*ženy*",
+        "*vlaku*",
+        "*do, z, bez, u*"
+       ],
+       [
+        "3 dativ",
+        "*ženě*",
+        "*vlaku*",
+        "*k*, penerima"
+       ],
+       [
+        "4 akuzativ",
+        "*ženu*",
+        "*vlak*",
+        "yang dikenai, *na, pro*"
+       ],
+       [
+        "5 vokativ",
+        "*ženo!*",
+        "—",
+        "memanggil"
+       ],
+       [
+        "6 lokál",
+        "*ženě*",
+        "*vlaku*",
+        "*v, na, o, po*"
+       ],
+       [
+        "7 instrumentál",
+        "*ženou*",
+        "*vlakem*",
+        "*s*, alat"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan sesuatu yang melegakan: untuk kata laki-laki benda mati, empat dari tujuh bentuknya **sama persis** (*vlak*, *vlaku*, *vlaku*, *vlak*). Sistemnya kelihatan lebih besar di atas kertas daripada di mulut.",
+      "Dan perhatikan bahwa *ženě* muncul dua kali — dativ dan lokál kata perempuan selalu sama. Begitu juga genitiv dan dativ kata laki-laki benda mati. Tujuh nama, jauh lebih sedikit dari tujuh bentuk."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menanyakan dan mengerti arah",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bertanya",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Promiňte, kde je …?*",
+       "Maaf, di mana …?"
+      ],
+      [
+       "*Jak se dostanu na …?*",
+       "Bagaimana caranya ke …?"
+      ],
+      [
+       "*Je to daleko?*",
+       "Jauh?"
+      ],
+      [
+       "*Jak dlouho to trvá pěšky?*",
+       "Berapa lama jalan kaki?"
+      ],
+      [
+       "*Kterou tramvají mám jet?*",
+       "Naik trem nomor berapa?"
+      ],
+      [
+       "*Jsem tady poprvé.*",
+       "Saya baru pertama kali di sini."
+      ],
+      [
+       "*Ztratil jsem se.*",
+       "Saya tersesat."
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Jawaban yang akan kamu dengar",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Rovně.*",
+       "Lurus."
+      ],
+      [
+       "*Doleva / doprava.*",
+       "Ke kiri / ke kanan."
+      ],
+      [
+       "*Zahněte doleva.*",
+       "Belok kiri."
+      ],
+      [
+       "*Na křižovatce.*",
+       "Di persimpangan."
+      ],
+      [
+       "*Na rohu.*",
+       "Di sudut."
+      ],
+      [
+       "*Přes ulici.*",
+       "Seberang jalan."
+      ],
+      [
+       "*Za rohem.*",
+       "Di balik sudut."
+      ],
+      [
+       "*Vedle pošty.*",
+       "Di sebelah kantor pos."
+      ],
+      [
+       "*Naproti nádraží.*",
+       "Berhadapan dengan stasiun."
+      ],
+      [
+       "*Asi pět minut pěšky.*",
+       "Sekitar lima menit jalan kaki."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Satu keping saran yang jarang ditulis",
+     "items": [
+      "Orang Ceko sering terlihat dingin kepada orang asing di jalan, tapi hampir selalu menolong kalau ditanya langsung. Yang membuat perbedaan: mulailah dengan *Promiňte* dan pertanyaan pendek dalam bahasa Ceko, bukan langsung dengan bahasa Inggris.",
+      "Kalimat penyelamat kalau jawabannya terlalu cepat: *Můžete to zopakovat pomalu?* atau, kalau semuanya gagal, *Můžete mi to ukázat na mapě?*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menginap",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Máte volný pokoj?*",
+       "Ada kamar kosong?"
+      ],
+      [
+       "*Mám rezervaci na jméno …*",
+       "Saya punya reservasi atas nama …"
+      ],
+      [
+       "*Jednolůžkový / dvoulůžkový pokoj*",
+       "Kamar satu / dua ranjang"
+      ],
+      [
+       "*Je snídaně v ceně?*",
+       "Sarapan termasuk?"
+      ],
+      [
+       "*Kolik stojí noc?*",
+       "Semalam berapa?"
+      ],
+      [
+       "*Do kolika je snídaně?*",
+       "Sarapan sampai jam berapa?"
+      ],
+      [
+       "*Je tu wifi? Jaké je heslo?*",
+       "Ada wifi? Kata sandinya apa?"
+      ],
+      [
+       "*V kolik musíme opustit pokoj?*",
+       "Jam berapa kami harus keluar kamar?"
+      ],
+      [
+       "*Můžeme nechat zavazadla?*",
+       "Boleh titip barang?"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat tempat yang layak jadi tujuan pertama",
+     "items": [
+      "***Český Krumlov*** — kota abad pertengahan berkelok di tepi sungai Vltava, kastilnya kedua terbesar di Ceko. Tiga jam dari Praha dengan bus.",
+      "***Kutná Hora*** — bekas kota perak, dengan katedral gotik dan kapel tulang yang terkenal. Satu jam dengan kereta.",
+      "***Brno*** — kota kedua, jauh lebih santai dari Praha, penuh kafe dan mahasiswa. Dua setengah jam dengan kereta.",
+      "***Olomouc*** — kota universitas di Moravia dengan alun-alun luar biasa dan hampir tanpa turis. Tempat terbaik untuk melatih bahasa Ceko, justru karena sedikit yang beralih ke bahasa Inggris."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "cs": "cestovat / cesta",
+   "baca": "TSES-to-vat",
+   "id": "bepergian / perjalanan"
+  },
+  {
+   "cs": "zavazadlo",
+   "baca": "ZA-va-zad-lo",
+   "id": "bagasi (netral)"
+  },
+  {
+   "cs": "kufr / batoh",
+   "baca": "KU-fr",
+   "id": "koper / ransel"
+  },
+  {
+   "cs": "hotel / penzion",
+   "baca": "HO-tel",
+   "id": "hotel / penginapan"
+  },
+  {
+   "cs": "pokoj / noc",
+   "baca": "PO-koy",
+   "id": "kamar / malam"
+  },
+  {
+   "cs": "rezervace / rezervovat",
+   "baca": "RE-zer-va-tse",
+   "id": "reservasi / memesan"
+  },
+  {
+   "cs": "klíč / recepce",
+   "baca": "kliic / RE-tsep-tse",
+   "id": "kunci / resepsionis"
+  },
+  {
+   "cs": "linka",
+   "baca": "LIN-ka",
+   "id": "jalur, nomor (pr)"
+  },
+  {
+   "cs": "zastávka",
+   "baca": "ZAS-taaf-ka",
+   "id": "halte (pr)"
+  },
+  {
+   "cs": "mapa / plán",
+   "baca": "MA-pa",
+   "id": "peta / denah"
+  },
+  {
+   "cs": "rovně",
+   "baca": "ROV-nye",
+   "id": "lurus"
+  },
+  {
+   "cs": "doleva / doprava",
+   "baca": "DO-le-va",
+   "id": "ke kiri / ke kanan"
+  },
+  {
+   "cs": "zahnout",
+   "baca": "ZA-hnout",
+   "id": "belok"
+  },
+  {
+   "cs": "křižovatka",
+   "baca": "KRZYI-zyo-vat-ka",
+   "id": "persimpangan (pr)"
+  },
+  {
+   "cs": "roh",
+   "baca": "rokh",
+   "id": "sudut (lk)"
+  },
+  {
+   "cs": "přes / naproti",
+   "baca": "przyes / NA-pro-tyi",
+   "id": "seberang / berhadapan"
+  },
+  {
+   "cs": "zámek / hrad",
+   "baca": "ZAA-mek / hrat",
+   "id": "kastil / benteng"
+  },
+  {
+   "cs": "kostel / muzeum",
+   "baca": "KOS-tel",
+   "id": "gereja / museum"
+  },
+  {
+   "cs": "řeka / most",
+   "baca": "RZYE-ka / most",
+   "id": "sungai / jembatan"
+  },
+  {
+   "cs": "věž / park",
+   "baca": "vyesy",
+   "id": "menara / taman"
+  },
+  {
+   "cs": "fotoaparát",
+   "baca": "FO-to-a-pa-raat",
+   "id": "kamera (lk)"
+  },
+  {
+   "cs": "projít se",
+   "baca": "PRO-yiit se",
+   "id": "berjalan-jalan"
+  },
+  {
+   "cs": "dostat se",
+   "baca": "DOS-tat se",
+   "id": "sampai ke"
+  },
+  {
+   "cs": "ztratit se",
+   "baca": "STRA-tyit se",
+   "id": "tersesat"
+  },
+  {
+   "cs": "ukázat",
+   "baca": "U-kaa-zat",
+   "id": "menunjukkan"
+  },
+  {
+   "cs": "opustit / nechat",
+   "baca": "O-pus-tyit",
+   "id": "meninggalkan / menitipkan"
+  },
+  {
+   "cs": "heslo",
+   "baca": "HES-lo",
+   "id": "kata sandi (netral)"
+  },
+  {
+   "cs": "prý",
+   "baca": "prii",
+   "id": "katanya, konon"
+  },
+  {
+   "cs": "samozřejmě",
+   "baca": "SA-mo-zrzyey-mnye",
+   "id": "tentu saja"
+  },
+  {
+   "cs": "skvělý",
+   "baca": "SKVYE-lii",
+   "id": "hebat, bagus sekali"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk *instrumentál*.",
+   "items": [
+    "vlak → jedu ____",
+    "auto → jedu ____",
+    "metro → jedu ____",
+    "tramvaj → jedu ____",
+    "autobus → jedu ____",
+    "Eva → jdu s ____"
+   ]
+  },
+  {
+   "prompt": "Lengkapi. Pakai *s* kalau artinya \"bersama\", tanpa *s* kalau artinya alat.",
+   "items": [
+    "Jedu ____. (naik kereta)",
+    "Jdu ____. (bersama Eva)",
+    "Piju kávu ____. (dengan susu)",
+    "Jedeme ____. (naik mobil)",
+    "Bydlím ____. (bersama saudara laki-laki)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Ceko.",
+   "items": [
+    "Maaf, stasiun di mana?",
+    "Jauh?",
+    "Sekitar lima menit jalan kaki.",
+    "Belok kiri di persimpangan.",
+    "Ada kamar kosong?",
+    "Sarapan termasuk?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "vlakem / pojedeme",
+    "nádraží / je / kde / ?",
+    "doleva / zahněte",
+    "pokoj / volný / máte / ?",
+    "ceně / snídaně / v / je / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "vlakem — autem — metrem — tramvají — autobusem — Evou",
+  "vlakem — s Evou — s mlékem — autem — s bratrem",
+  "Promiňte, kde je nádraží? — Je to daleko? — Asi pět minut pěšky. — Zahněte doleva na křižovatce. — Máte volný pokoj? — Je snídaně v ceně?",
+  "Pojedeme vlakem. — Kde je nádraží? — Zahněte doleva. — Máte volný pokoj? — Je snídaně v ceně?"
+ ]
+}

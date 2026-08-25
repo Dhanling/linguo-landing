@@ -1,0 +1,210 @@
+{
+ "title": "Keluargaku",
+ "title_target": "Moje rodina",
+ "goal": "Menyebut anggota keluarga, memakai kata kerja *mít* (punya), memasang kata milik yang benar, dan memanggil orang dengan bentuk *vokativ*.",
+ "bekal": [
+  "menjawab *Máš sourozence?* dan menyebutkan anggota keluargamu",
+  "memakai *můj / moje / moje* dan *tvůj / tvoje* dengan ekor yang tepat",
+  "memanggil orang dengan namanya: *Evo!*, *Petře!*, *pane Nováku!*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Fotky v telefonu",
+   "intro": "Di sela istirahat, Eva menunjukkan foto keluarganya. Budi balas menunjukkan fotonya sendiri.",
+   "lines": [
+    { "speaker": "Eva:", "text": "Podívej, Budi. To je moje rodina.", "id": "Lihat, Budi. Ini keluargaku.", "literal": "lihat, Budi. itu adalah milikku (pr) keluarga." },
+    { "speaker": "Budi:", "text": "Máte velkou rodinu! Kdo je ten muž vlevo?", "id": "Keluarga kalian besar! Siapa laki-laki di kiri itu?", "literal": "kalian-punya besar keluarga! siapa adalah itu laki-laki di-kiri?" },
+    { "speaker": "Eva:", "text": "To je můj táta. Je učitel. A vedle je moje máma.", "id": "Itu ayahku. Dia guru. Di sebelahnya ibuku.", "literal": "itu adalah milikku ayah. adalah guru. dan di-sebelah adalah milikku ibu." },
+    { "speaker": "Budi:", "text": "A ta holka? Je to tvoje sestra?", "id": "Kalau anak perempuan itu? Adikmu?", "literal": "dan itu gadis? adalah itu milikmu saudari?" },
+    { "speaker": "Eva:", "text": "Ano, moje mladší sestra Klára. Má patnáct let.", "id": "Ya, adik perempuanku Klára. Umurnya lima belas.", "literal": "ya, milikku lebih-muda saudari Klára. punya lima-belas tahun." },
+    { "speaker": "Budi:", "text": "Máš taky bratra?", "id": "Kamu punya saudara laki-laki juga?", "literal": "kamu-punya juga saudara-laki-laki?" },
+    { "speaker": "Eva:", "text": "Nemám. Jenom sestru. A ty? Máš sourozence?", "id": "Tidak. Cuma adik perempuan. Kamu? Punya saudara?", "literal": "tidak-saya-punya. hanya saudari. dan kamu? kamu-punya saudara-kandung?" },
+    { "speaker": "Budi:", "text": "Mám dva bratry a jednu sestru. Jsem nejstarší.", "id": "Saya punya dua saudara laki-laki dan satu perempuan. Saya yang paling tua.", "literal": "saya-punya dua saudara dan satu saudari. saya-adalah paling-tua." },
+    { "speaker": "Eva:", "text": "A jsi ženatý?", "id": "Kamu sudah menikah?", "literal": "dan kamu-adalah beristri?" },
+    { "speaker": "Budi:", "text": "Ne, jsem svobodný. Mám ale přítelkyni v Jakartě.", "id": "Belum, saya lajang. Tapi punya pacar di Jakarta.", "literal": "tidak, saya-adalah bebas. saya-punya tapi pacar-perempuan di Jakarta." },
+    { "speaker": "Eva:", "text": "Ta ti určitě chybí, viď?", "id": "Pasti kamu kangen dia, ya?", "literal": "dia kepada-kamu pasti kurang, bukan?" }
+   ],
+   "notes": [
+    "**Máte velkou rodinu**, bukan *velká rodina*. Sesudah *mít* (punya), kata bendanya masuk ke bentuk *akuzativ* — bentuk untuk hal yang dikenai pekerjaan. Kata perempuan berujung *-a* jadi *-u*, dan kata sifatnya ikut jadi *-ou*. Ini bentuk yang akan kamu urus penuh di unit 5; untuk sekarang cukup rasakan polanya.",
+    "**Táta dan máma** adalah kata sehari-hari untuk ayah dan ibu — hangat, dipakai semua orang. Bentuk bukunya *otec* dan *matka*, dan itu terdengar agak resmi, seperti \"ayahanda\" dan \"ibunda\" di telinga kita.",
+    "**Má patnáct let** harfiahnya \"dia punya lima belas tahun\" — persis seperti bahasa Prancis dan Spanyol, dan tidak seperti bahasa Inggris. Umur di bahasa Ceko **dipunyai**, bukan \"adalah\".",
+    "**Nemám** = *ne* + *mám*, ditulis menyatu. Dan ini penting: dalam bahasa Ceko, penyangkalan boleh menumpuk. *Nikdo nic neříká* — harfiahnya \"tidak-siapa tidak-apa tidak-mengatakan\" — adalah kalimat yang **benar** dan berarti \"tidak ada yang bilang apa-apa\". Yang salah justru menghilangkan salah satu *ne*.",
+    "**Sourozenec** (saudara kandung) adalah satu kata untuk kakak/adik laki-laki maupun perempuan. Bahasa Ceko tidak punya kata terpisah untuk kakak dan adik seperti bahasa Indonesia — kalau perlu jelas, ditambahkan *starší* (lebih tua) atau *mladší* (lebih muda).",
+    "**Ženatý vs vdaná.** \"Sudah menikah\" punya dua kata berbeda menurut siapa yang bicara: laki-laki *ženatý* (harfiahnya \"ber-istri\"), perempuan *vdaná*. Lajang: *svobodný / svobodná* — harfiahnya \"bebas\".",
+    "**Ta ti chybí** harfiahnya \"dia kepadamu kurang\". Bahasa Ceko membalik susunan \"kangen\": yang jadi pelaku adalah **orang yang tidak ada**, dan yang merindukan justru jadi penerima. *Chybíš mi* = \"aku kangen kamu\"."
+   ],
+   "grammars": [
+    {
+     "title": "Mít — punya",
+     "body": ["Kata kerja kedua tersering sesudah *být*, dan ekornya adalah pola *-ám* yang paling gampang."],
+     "table": {
+      "head": ["Pelaku", "*mít*", "Menyangkal", "Contoh"],
+      "rows": [
+       ["já", "**mám**", "nemám", "*Mám čas.* — saya punya waktu"],
+       ["ty", "**máš**", "nemáš", "*Máš klíč?* — kamu punya kunci?"],
+       ["on/ona/ono", "**má**", "nemá", "*Má bratra.* — dia punya saudara"],
+       ["my", "**máme**", "nemáme", "*Máme hlad.* — kami lapar"],
+       ["vy", "**máte**", "nemáte", "*Máte děti?* — Anda punya anak?"],
+       ["oni/ony", "**mají**", "nemají", "*Mají dům.* — mereka punya rumah"]
+      ]
+     },
+     "after": [
+      "*Mít* dipakai untuk banyak hal yang di bahasa Indonesia tidak memakai \"punya\": *mám hlad* (saya lapar — harfiahnya \"punya lapar\"), *mám žízeň* (saya haus), *mám radost* (saya senang), *mám strach* (saya takut), *mám pravdu* (saya benar).",
+      "Ia juga berarti \"seharusnya\" kalau diikuti kata kerja: *Máš to udělat* — kamu seharusnya melakukannya."
+     ]
+    },
+    {
+     "title": "Kata milik: můj, tvůj, jeho, její",
+     "body": ["Kata milik untuk \"saya\" dan \"kamu\" ikut berubah menurut jenis kelamin benda yang dimiliki. Yang untuk orang ketiga tidak berubah sama sekali."],
+     "table": {
+      "head": ["Pemilik", "+ benda lk", "+ benda pr", "+ benda netral"],
+      "rows": [
+       ["saya", "**můj** bratr", "**moje** sestra", "**moje** auto"],
+       ["kamu", "**tvůj** bratr", "**tvoje** sestra", "**tvoje** auto"],
+       ["dia (lk)", "**jeho** bratr", "**jeho** sestra", "**jeho** auto"],
+       ["dia (pr)", "**její** bratr", "**její** sestra", "**její** auto"],
+       ["kami", "**náš** bratr", "**naše** sestra", "**naše** auto"],
+       ["kalian/Anda", "**váš** bratr", "**vaše** sestra", "**vaše** auto"],
+       ["mereka", "**jejich** bratr", "**jejich** sestra", "**jejich** auto"]
+      ]
+     },
+     "after": [
+      "Perhatikan hematnya: *jeho*, *její*, dan *jejich* **tidak pernah berubah**. Tiga kata itu langsung bisa kamu pakai tanpa memikirkan apa pun.",
+      "Bentuk buku *můj* punya saudara *má* (pr) dan *mé* (netral) yang masih dipakai dalam tulisan resmi dan lagu. Dalam percakapan, *moje* dipakai untuk keduanya — itu yang dipakai modul ini.",
+      "⚠️ Kalau pemiliknya sama dengan pelaku kalimat, bahasa Ceko lebih suka satu kata khusus: *svůj*. *Mám svoje auto* (saya punya mobil saya sendiri). Untuk A1 kamu boleh melewatinya, tapi jangan kaget saat mendengarnya."
+     ]
+    },
+    {
+     "title": "Vokativ — bentuk khusus untuk memanggil",
+     "body": ["Kalau kamu memanggil orang dengan namanya, bahasa Ceko memakai bentuk kelima: *vokativ*. Ia dipakai di sapaan surat, di panggilan, dan setiap kali kamu menyebut nama orang yang kamu ajak bicara."],
+     "table": {
+      "head": ["Bentuk kamus", "Panggilan", "Aturannya"],
+      "rows": [
+       ["*Eva*", "**Evo!**", "nama pr berujung *-a* → *-o*"],
+       ["*Jana*", "**Jano!**", "sama"],
+       ["*Petr*", "**Petře!**", "nama lk berujung huruf mati → *-e/-ě*"],
+       ["*Tomáš*", "**Tomáši!**", "sesudah *š, č, ž, j* → *-i*"],
+       ["*pan Novák*", "**pane Nováku!**", "*pan* → *pane*, nama → *-u*"],
+       ["*paní Nováková*", "**paní Nováková!**", "*paní* tidak berubah"]
+      ]
+     },
+     "after": [
+      "Bentuk ini terdengar aneh bagi pemula, tapi mengabaikannya terdengar lebih aneh lagi bagi orang Ceko — seperti memanggil seseorang dengan membaca papan namanya keras-keras.",
+      "Kalau kamu ragu, jalan amannya: **jangan sebut namanya**. *Dobrý den!* saja sudah lengkap dan sopan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Anggota keluarga",
+   "blocks": [
+    { "type": "tabel", "head": ["Laki-laki", "Perempuan", "Arti"], "rows": [
+     ["*otec / táta*", "*matka / máma*", "ayah / ibu"],
+     ["*syn*", "*dcera*", "anak laki-laki / perempuan"],
+     ["*bratr*", "*sestra*", "saudara laki-laki / perempuan"],
+     ["*dědeček / děda*", "*babička*", "kakek / nenek"],
+     ["*strýc / strejda*", "*teta*", "paman / bibi"],
+     ["*bratranec*", "*sestřenice*", "sepupu"],
+     ["*manžel*", "*manželka*", "suami / istri"],
+     ["*přítel / kluk*", "*přítelkyně / holka*", "pacar"],
+     ["*vnuk*", "*vnučka*", "cucu"],
+     ["*rodiče* (jamak)", "*děti* (jamak)", "orang tua / anak-anak"]
+    ] },
+    { "type": "kotak", "title": "Satu kata yang perlu kehati-hatian", "items": [
+     "*Přítel* berarti \"teman\" **dan** \"pacar\" sekaligus, dan yang menentukan adalah kata milik di depannya. *To je přítel* = itu teman. *To je **můj** přítel* = itu pacarku. Kalau kamu cuma mau bilang \"temanku\", pakailah *kamarád / kamarádka*.",
+     "*Holka* dan *kluk* harfiahnya \"anak perempuan\" dan \"anak laki-laki\", tapi dalam percakapan sehari-hari keduanya juga berarti pacar. Bahasa Ceko sehari-hari memakainya jauh lebih sering daripada *přítelkyně*."
+    ] }
+   ]
+  },
+  {
+   "title": "Bertanya tentang keluarga",
+   "blocks": [
+    { "type": "tabel", "head": ["Pertanyaan", "Arti", "Jawaban contoh"], "rows": [
+     ["*Máš sourozence?*", "Punya saudara?", "*Mám bratra a sestru.*"],
+     ["*Máš děti?*", "Punya anak?", "*Ne, nemám.*"],
+     ["*Jsi ženatý / vdaná?*", "Sudah menikah?", "*Jsem svobodný.*"],
+     ["*Kolik ti je let?*", "Umurmu berapa?", "*Je mi dvacet pět.*"],
+     ["*Kde bydlí tvoje rodina?*", "Keluargamu tinggal di mana?", "*V Jakartě.*"],
+     ["*Čím je tvůj táta?*", "Ayahmu kerja apa?", "*Je učitel.*"]
+    ] },
+    { "type": "p", "text": "Perhatikan *Kolik ti je let?* — harfiahnya \"berapa kepadamu adalah tahun\". Umur bisa dikatakan dua cara: dengan *mít* (*mám dvacet let*) atau dengan *být* + penerima (*je mi dvacet*). Yang kedua lebih sering terdengar." },
+    { "type": "kotak", "title": "Pekerjaan yang paling sering disebut", "items": [
+     "*učitel / učitelka* (guru), *student / studentka* (mahasiswa), *lékař / lékařka* (dokter), *inženýr* (insinyur), *číšník / servírka* (pelayan), *prodavač / prodavačka* (penjual), *řidič* (sopir), *programátor* (pemrogram).",
+     "Menyebutkannya cukup dengan *jsem*: *Jsem student.* Perempuan memakai bentuk perempuannya: *Jsem studentka.* Bahasa Ceko hampir selalu punya bentuk perempuan untuk tiap pekerjaan, dan memakainya adalah hal yang normal, bukan penekanan."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "cs": "rodina", "baca": "RO-jyi-na", "id": "keluarga (pr)" },
+  { "cs": "mít", "baca": "miit", "id": "punya" },
+  { "cs": "táta / otec", "baca": "TAA-ta / O-tets", "id": "ayah" },
+  { "cs": "máma / matka", "baca": "MAA-ma / MAT-ka", "id": "ibu" },
+  { "cs": "bratr", "baca": "bra-tr", "id": "saudara laki-laki" },
+  { "cs": "sestra", "baca": "SES-tra", "id": "saudara perempuan" },
+  { "cs": "sourozenec", "baca": "SOU-ro-ze-nets", "id": "saudara kandung" },
+  { "cs": "syn / dcera", "baca": "syn / DTSE-ra", "id": "anak lk / anak pr" },
+  { "cs": "děti", "baca": "JE-tyi", "id": "anak-anak (jamak)" },
+  { "cs": "rodiče", "baca": "RO-jyi-ce", "id": "orang tua (jamak)" },
+  { "cs": "babička / dědeček", "baca": "BA-bic-ka / JE-de-cek", "id": "nenek / kakek" },
+  { "cs": "manžel / manželka", "baca": "MAN-zyel", "id": "suami / istri" },
+  { "cs": "přítel / přítelkyně", "baca": "PRZYII-tel", "id": "teman; pacar" },
+  { "cs": "kamarád / kamarádka", "baca": "KA-ma-raat", "id": "teman" },
+  { "cs": "kluk / holka", "baca": "kluk / HOL-ka", "id": "anak lk / anak pr; pacar" },
+  { "cs": "muž / žena", "baca": "musy / ZYE-na", "id": "laki-laki / perempuan" },
+  { "cs": "můj / moje", "baca": "muuy / MO-ye", "id": "milikku" },
+  { "cs": "tvůj / tvoje", "baca": "tvuuy / TVO-ye", "id": "milikmu" },
+  { "cs": "jeho / její", "baca": "YE-ho / YE-yii", "id": "miliknya (lk / pr)" },
+  { "cs": "náš / váš", "baca": "naasy / vaasy", "id": "milik kami / milik kalian" },
+  { "cs": "starší / mladší", "baca": "STAR-syii / MLAT-syii", "id": "lebih tua / lebih muda" },
+  { "cs": "ženatý / vdaná", "baca": "ZYE-na-tii / VDA-naa", "id": "menikah (lk / pr)" },
+  { "cs": "svobodný", "baca": "SVO-bod-nii", "id": "lajang; bebas" },
+  { "cs": "učitel / učitelka", "baca": "U-ci-tel", "id": "guru" },
+  { "cs": "student / studentka", "baca": "STU-dent", "id": "mahasiswa" },
+  { "cs": "lékař / lékařka", "baca": "LEE-karsy", "id": "dokter" },
+  { "cs": "chybět", "baca": "KHY-byet", "id": "kurang; hilang; dirindukan" },
+  { "cs": "vedle", "baca": "VED-le", "id": "di sebelah" },
+  { "cs": "vlevo / vpravo", "baca": "VLE-vo / VPRA-vo", "id": "di kiri / di kanan" },
+  { "cs": "určitě", "baca": "UR-ci-tye", "id": "pasti" }
+ ],
+ "exercises": [
+  { "prompt": "Lengkapi dengan bentuk *mít* yang tepat.", "items": [
+   "Já ____ jednu sestru.",
+   "Ty ____ bratra?",
+   "Eva ____ malou rodinu.",
+   "My ne____ děti.",
+   "Vy ____ hlad?",
+   "Oni ____ dva syny."
+  ] },
+  { "prompt": "Pilih kata milik yang tepat: *můj*, *moje*, *tvůj*, *tvoje*.", "items": [
+   "To je ____ bratr.",
+   "To je ____ sestra.",
+   "To je ____ auto.",
+   "Je to ____ kniha? (kamu)",
+   "Je to ____ telefon? (kamu)"
+  ] },
+  { "prompt": "Ubah jadi bentuk panggilan (*vokativ*).", "items": [
+   "Eva → ____!",
+   "Jana → ____!",
+   "Petr → ____!",
+   "Tomáš → ____!",
+   "pan Novák → ____!"
+  ] },
+  { "prompt": "Terjemahkan ke bahasa Ceko.", "items": [
+   "Ini keluargaku.",
+   "Saya punya dua saudara laki-laki.",
+   "Saya tidak punya adik perempuan.",
+   "Umurnya lima belas tahun.",
+   "Saya belum menikah.",
+   "Ayahku seorang guru."
+  ] }
+ ],
+ "answers": [
+  "mám — máš — má — nemáme — máte — mají",
+  "můj — moje — moje — tvoje — tvůj",
+  "Evo — Jano — Petře — Tomáši — pane Nováku",
+  "To je moje rodina. — Mám dva bratry. — Nemám sestru. — Má patnáct let. — Jsem svobodný. — Můj táta je učitel."
+ ]
+}

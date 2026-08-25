@@ -1,0 +1,206 @@
+{
+ "title": "Hariku dari pagi sampai malam",
+ "title_target": "Můj den",
+ "goal": "Menceritakan kegiatan sehari-hari, menguasai tiga kelompok ekor kata kerja sekaligus, dan memakai kata kerja yang membawa *se*.",
+ "bekal": [
+  "menceritakan rutinitas harianmu dalam sepuluh kalimat",
+  "mengenali kelompok ekor *-ám*, *-ím*, dan *-u/-uju* dari bentuk kamusnya",
+  "memakai *se* dan *si* di tempat yang benar dalam kalimat"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Jak vypadá tvůj den?",
+   "intro": "Tugas kelas: menceritakan satu hari biasa. Budi maju lebih dulu.",
+   "lines": [
+    { "speaker": "Nováková:", "text": "Budi, jak vypadá váš normální den?", "id": "Budi, hari biasa Anda seperti apa?", "literal": "Budi, bagaimana tampak Anda-punya normal hari?" },
+    { "speaker": "Budi:", "text": "Vstávám v sedm. Nejdřív si dám kávu.", "id": "Saya bangun jam tujuh. Pertama saya minum kopi.", "literal": "saya-bangun pada tujuh. paling-dulu diri saya-beri kopi." },
+    { "speaker": "Nováková:", "text": "Snídáte doma?", "id": "Sarapan di rumah?", "literal": "Anda-sarapan di-rumah?" },
+    { "speaker": "Budi:", "text": "Ano. Pak se sprchuju a oblékám se.", "id": "Ya. Lalu saya mandi dan berpakaian.", "literal": "ya. lalu diri saya-mandi dan saya-memakaikan diri." },
+    { "speaker": "Nováková:", "text": "A jak jezdíte do školy?", "id": "Anda ke sekolah naik apa?", "literal": "dan bagaimana Anda-pergi ke sekolah?" },
+    { "speaker": "Budi:", "text": "Jezdím tramvají. Trvá to dvacet minut.", "id": "Naik trem. Dua puluh menit.", "literal": "saya-pergi dengan-trem. berlangsung itu dua-puluh menit." },
+    { "speaker": "Nováková:", "text": "Co děláte odpoledne?", "id": "Sore hari Anda ngapain?", "literal": "apa Anda-lakukan sore?" },
+    { "speaker": "Budi:", "text": "Pracuju v kavárně. Vracím se domů v sedm.", "id": "Saya kerja di kafe. Pulang jam tujuh.", "literal": "saya-bekerja di kafe. saya-kembali diri ke-rumah pada tujuh." },
+    { "speaker": "Nováková:", "text": "A večer? Odpočíváte?", "id": "Malamnya? Istirahat?", "literal": "dan malam? Anda-beristirahat?" },
+    { "speaker": "Budi:", "text": "Vařím, dívám se na film a učím se česky.", "id": "Masak, nonton film, dan belajar bahasa Ceko.", "literal": "saya-memasak, saya-melihat diri pada film dan saya-belajar diri ceko-nya." },
+    { "speaker": "Nováková:", "text": "A kdy chodíte spát?", "id": "Tidurnya jam berapa?", "literal": "dan kapan Anda-pergi tidur?" },
+    { "speaker": "Budi:", "text": "Kolem půlnoci. Vždycky moc pozdě.", "id": "Sekitar tengah malam. Selalu terlalu larut.", "literal": "sekitar tengah-malam. selalu sangat terlambat." }
+   ],
+   "notes": [
+    "**Vstávám v sedm** — tanpa kata \"jam\". Bahasa Ceko cukup *v sedm*, seperti kita bilang \"jam tujuh\" tanpa \"pukul\". Menambahkan *hodin* tidak salah, cuma lebih panjang.",
+    "**Se dan si adalah dua kata kecil yang berbeda.** *Se* = diri sendiri sebagai yang dikenai (*myju se* — saya memandikan diri). *Si* = diri sendiri sebagai penerima (*myju si ruce* — saya mencuci tangan saya). Kalau ada benda lain dalam kalimat, hampir selalu *si*.",
+    "**Letak se/si hampir selalu di tempat kedua kalimat.** *Pak **se** sprchuju.* — bukan di ujung, bukan menempel di kata kerjanya. Aturan \"tempat kedua\" ini juga berlaku untuk kata bantu lampau nanti, jadi kenali sekarang.",
+    "**Jezdit vs jet.** *Jezdit* = pergi naik kendaraan **berulang kali, sebagai kebiasaan**. *Jet* = pergi naik kendaraan **sekali, sekarang**. Bahasa Ceko membedakan gerakan berulang dari gerakan sekali jalan, dan pembedaan ini juga berlaku untuk *chodit / jít* (jalan kaki). Unit 10 mengurusnya penuh.",
+    "**Tramvají** — ekor *-í* di sini menandai alat: \"dengan trem\". Itu bentuk ketujuh (*instrumentál*), diurus penuh di unit 15. Kenali dulu potongannya: *autem* (naik mobil), *vlakem* (naik kereta), *metrem* (naik metro).",
+    "**Dívám se na film**, bukan *dívám film*. Beberapa kata kerja Ceko wajib membawa kata depan tertentu, dan yang mana harus dihafal bersama katanya: *dívat se **na*** (menonton), *čekat **na*** (menunggu), *ptát se **na*** (bertanya tentang), *myslet **na*** (memikirkan).",
+    "**Chodit spát** harfiahnya \"berjalan tidur\" — ungkapan tetap untuk \"pergi tidur\". Begitu juga *chodit do práce* (pergi kerja) dan *chodit do školy* (bersekolah)."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga kelompok ekor kata kerja",
+     "body": ["Hampir semua kata kerja Ceko masuk salah satu dari tiga kelompok ini, dan bentuk kamusnya memberi petunjuk yang cukup baik."],
+     "table": {
+      "head": ["Pelaku", "I. *-at* → *-ám*", "II. *-it/-et* → *-ím*", "III. *-ovat* → *-uju*"],
+      "rows": [
+       ["", "*dělat* (melakukan)", "*mluvit* (bicara)", "*pracovat* (bekerja)"],
+       ["já", "děl**ám**", "mluv**ím**", "prac**uju**"],
+       ["ty", "děl**áš**", "mluv**íš**", "prac**uješ**"],
+       ["on/ona", "děl**á**", "mluv**í**", "prac**uje**"],
+       ["my", "děl**áme**", "mluv**íme**", "prac**ujeme**"],
+       ["vy", "děl**áte**", "mluv**íte**", "prac**ujete**"],
+       ["oni", "děl**ají**", "mluv**í**", "prac**ujou**"]
+      ]
+     },
+     "after": [
+      "Kelompok III adalah yang paling ramah pendatang: hampir semua kata serapan masuk ke sini. *Studovat*, *telefonovat*, *organizovat*, *fotografovat* — semuanya berekor *-uju*.",
+      "⚠️ Bentuk buku kelompok III adalah *pracuji* dan *pracují*; bentuk yang benar-benar dipakai orang adalah *pracuju* dan *pracujou*. Modul ini memakai bentuk yang dipakai orang, dan menandai bentuk bukunya bila perlu.",
+      "Ada juga kelompok keempat kecil berekor *-u* murni: *nést* (membawa) → *nesu, neseš, nese*. Jumlahnya sedikit tapi anggotanya sering dipakai — *jít*, *jet*, *číst*, *psát* termasuk di dalamnya."
+     ]
+    },
+    {
+     "title": "Kata kerja yang membawa se atau si",
+     "body": ["Banyak kata kerja Ceko **selalu** datang bersama *se* atau *si*, dan menghilangkannya membuat kalimat salah atau berubah arti."],
+     "table": {
+      "head": ["Dengan *se*", "Arti", "Dengan *si*", "Arti"],
+      "rows": [
+       ["*jmenovat se*", "bernama", "*dát si*", "memesan, mengambil"],
+       ["*učit se*", "belajar", "*koupit si*", "membeli untuk diri"],
+       ["*dívat se*", "menonton", "*myslet si*", "berpendapat"],
+       ["*ptát se*", "bertanya", "*přát si*", "menginginkan"],
+       ["*vracet se*", "kembali", "*vzít si*", "mengambil"],
+       ["*sprchovat se*", "mandi", "*povídat si*", "mengobrol"],
+       ["*cítit se*", "merasa", "*sednout si*", "duduk"]
+      ]
+     },
+     "after": [
+      "Ada pasangan yang berubah arti tergantung kata kecilnya: *učit* (mengajar) vs *učit se* (belajar), *myslet na* (memikirkan) vs *myslet si* (berpendapat).",
+      "Kalau kalimatnya menyangkal, *se* tetap di tempat kedua: *Ne**dívám se** na televizi.* → lebih tepatnya *Nedívám se na televizi.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata kerja sehari-hari",
+   "blocks": [
+    { "type": "tabel", "head": ["Kata kerja", "Bentuk \"saya\"", "Arti"], "rows": [
+     ["*vstávat*", "*vstávám*", "bangun tidur"],
+     ["*snídat*", "*snídám*", "sarapan"],
+     ["*obědvat*", "*obědvám*", "makan siang"],
+     ["*večeřet*", "*večeřím*", "makan malam"],
+     ["*sprchovat se*", "*sprchuju se*", "mandi"],
+     ["*oblékat se*", "*oblékám se*", "berpakaian"],
+     ["*pracovat*", "*pracuju*", "bekerja"],
+     ["*studovat*", "*studuju*", "kuliah, belajar (di kampus)"],
+     ["*vařit*", "*vařím*", "memasak"],
+     ["*uklízet*", "*uklízím*", "membereskan"],
+     ["*odpočívat*", "*odpočívám*", "beristirahat"],
+     ["*číst*", "*čtu*", "membaca"],
+     ["*psát*", "*píšu*", "menulis"],
+     ["*spát*", "*spím*", "tidur"],
+     ["*vracet se*", "*vracím se*", "kembali, pulang"]
+    ] },
+    { "type": "kotak", "title": "Empat kata kerja yang bentuknya nakal", "items": [
+     "*jíst* (makan) → *jím, jíš, jí, jíme, jíte, jedí*. Perhatikan bedanya dari *jít* (berjalan) — satu huruf saja.",
+     "*pít* (minum) → *piju, piješ, pije, pijeme, pijete, pijou*.",
+     "*číst* (membaca) → *čtu, čteš, čte, čteme, čtete, čtou*.",
+     "*psát* (menulis) → *píšu, píšeš, píše, píšeme, píšete, píšou*. Batangnya berubah total dari bentuk kamusnya — itu normal untuk kelompok keempat."
+    ] }
+   ]
+  },
+  {
+   "title": "Menceritakan hari sendiri",
+   "blocks": [
+    { "type": "p", "text": "Susun sepuluh kalimat ini untuk dirimu, lalu ucapkan tanpa melihat. Ini latihan bicara paling berguna di seluruh modul: ia memakai bentuk \"saya\" dari tiga kelompok kata kerja sekaligus." },
+    { "type": "list", "items": [
+     "*Vstávám v ____.* — Saya bangun jam …",
+     "*Snídám ____.* — Saya sarapan …",
+     "*Do práce jezdím ____.* — Saya ke tempat kerja naik …",
+     "*Pracuju od ____ do ____.* — Saya bekerja dari … sampai …",
+     "*Obědvám v ____.* — Saya makan siang jam …",
+     "*Odpoledne ____.* — Sore hari saya …",
+     "*Večer vařím a ____.* — Malam saya memasak dan …",
+     "*Dvakrát týdně ____.* — Dua kali seminggu saya …",
+     "*O víkendu rád ____.* — Akhir pekan saya senang …",
+     "*Chodím spát kolem ____.* — Saya tidur sekitar jam …"
+    ] },
+    { "type": "kotak", "title": "Menyebut seberapa sering", "items": [
+     "*jednou / dvakrát / třikrát týdně* — sekali / dua kali / tiga kali seminggu.",
+     "*každý den* (tiap hari), *obden* (selang sehari), *o víkendu* (di akhir pekan), *ve všední dny* (di hari kerja).",
+     "*vždycky* (selalu) → *často* (sering) → *někdy* (kadang) → *málokdy* (jarang) → *nikdy* (tidak pernah). ⚠️ *nikdy* wajib bersama *ne-*: *Nikdy nevařím.*"
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "cs": "vstávat", "baca": "VSTAA-vat", "id": "bangun tidur" },
+  { "cs": "snídat / snídaně", "baca": "SNYII-dat", "id": "sarapan (kata kerja / benda)" },
+  { "cs": "oběd / večeře", "baca": "O-byet / VE-ce-rzye", "id": "makan siang / makan malam" },
+  { "cs": "sprchovat se", "baca": "SPR-kho-vat se", "id": "mandi" },
+  { "cs": "oblékat se", "baca": "O-blee-kat se", "id": "berpakaian" },
+  { "cs": "pracovat / práce", "baca": "PRA-tso-vat", "id": "bekerja / pekerjaan" },
+  { "cs": "studovat", "baca": "STU-do-vat", "id": "kuliah" },
+  { "cs": "dělat", "baca": "JE-lat", "id": "melakukan, membuat" },
+  { "cs": "vařit", "baca": "VA-rzyit", "id": "memasak" },
+  { "cs": "uklízet", "baca": "U-klii-zet", "id": "membereskan" },
+  { "cs": "odpočívat", "baca": "OT-po-cii-vat", "id": "beristirahat" },
+  { "cs": "dívat se na", "baca": "JII-vat se na", "id": "menonton" },
+  { "cs": "číst / psát", "baca": "ciist / psaat", "id": "membaca / menulis" },
+  { "cs": "jíst / pít", "baca": "yiist / piit", "id": "makan / minum" },
+  { "cs": "spát", "baca": "spaat", "id": "tidur" },
+  { "cs": "vracet se", "baca": "VRA-tset se", "id": "kembali, pulang" },
+  { "cs": "jezdit / jet", "baca": "YEZ-jyit / yet", "id": "pergi berkendara (biasa / sekali)" },
+  { "cs": "chodit / jít", "baca": "KHO-jyit / yiit", "id": "berjalan (biasa / sekali)" },
+  { "cs": "tramvaj / metro", "baca": "TRAM-vay / MET-ro", "id": "trem / metro" },
+  { "cs": "doma / domů", "baca": "DO-ma / DO-muu", "id": "di rumah / pulang ke rumah" },
+  { "cs": "nejdřív", "baca": "NEY-drzyiif", "id": "pertama-tama" },
+  { "cs": "od … do …", "baca": "ot … do …", "id": "dari … sampai …" },
+  { "cs": "normální / obyčejný", "baca": "NOR-maal-nyii", "id": "biasa" },
+  { "cs": "vypadat", "baca": "VY-pa-dat", "id": "tampak, kelihatan" },
+  { "cs": "vždycky / nikdy", "baca": "VZYDYTS-ky / NYIG-dy", "id": "selalu / tidak pernah" },
+  { "cs": "často / málokdy", "baca": "CAS-to / MAA-lo-gdy", "id": "sering / jarang" },
+  { "cs": "jednou / dvakrát", "baca": "YED-nou / DVA-kraat", "id": "sekali / dua kali" },
+  { "cs": "týdně", "baca": "TIID-nye", "id": "per minggu" },
+  { "cs": "všední den", "baca": "VSYED-nyii den", "id": "hari kerja" },
+  { "cs": "televize", "baca": "TE-le-vi-ze", "id": "televisi (pr)" }
+ ],
+ "exercises": [
+  { "prompt": "Lengkapi dengan bentuk \"saya\" yang tepat.", "items": [
+   "dělat → ____",
+   "mluvit → ____",
+   "pracovat → ____",
+   "vstávat → ____",
+   "vařit → ____",
+   "studovat → ____"
+  ] },
+  { "prompt": "Pilih *se* atau *si*.", "items": [
+   "Jmenuju ____ Budi.",
+   "Dám ____ kávu.",
+   "Dívám ____ na film.",
+   "Učím ____ česky.",
+   "Myslím ____, že je to dobré.",
+   "Vracím ____ domů."
+  ] },
+  { "prompt": "Terjemahkan ke bahasa Ceko.", "items": [
+   "Saya bangun jam tujuh.",
+   "Saya sarapan di rumah.",
+   "Saya kerja di kafe.",
+   "Sore saya belajar bahasa Ceko.",
+   "Saya tidur sekitar tengah malam.",
+   "Saya tidak pernah memasak."
+  ] },
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "v / vstávám / sedm",
+   "se / sprchuju / pak",
+   "kavárně / pracuju / v",
+   "na / se / film / dívám",
+   "spát / chodím / pozdě"
+  ] }
+ ],
+ "answers": [
+  "dělám — mluvím — pracuju — vstávám — vařím — studuju",
+  "se — si — se — se — si — se",
+  "Vstávám v sedm. — Snídám doma. — Pracuju v kavárně. — Odpoledne se učím česky. — Chodím spát kolem půlnoci. — Nikdy nevařím.",
+  "Vstávám v sedm. — Pak se sprchuju. — Pracuju v kavárně. — Dívám se na film. — Chodím spát pozdě."
+ ]
+}

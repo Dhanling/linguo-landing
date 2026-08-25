@@ -1,0 +1,197 @@
+{
+ "title": "Menelepon dan membuat janji",
+ "title_target": "Telefon a domluva",
+ "goal": "Menelepon, menerima telepon, menawar waktu, dan memakai empat kata kerja bantu: *muset*, *moct*, *smět*, *umět*.",
+ "bekal": [
+  "membuka dan menutup telepon dengan cara yang wajar di Ceko",
+  "membedakan *můžu* (boleh/sanggup), *umím* (bisa keterampilan), dan *musím* (harus)",
+  "menawar waktu, menolak dengan sopan, dan mengusulkan waktu lain"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Můžeme to přesunout?",
+   "intro": "Budi harus mengubah jadwal les privat dengan gurunya, paní Nováková.",
+   "lines": [
+    { "speaker": "Nováková:", "text": "Nováková, prosím.", "id": "Nováková, halo.", "literal": "Nováková, tolong." },
+    { "speaker": "Budi:", "text": "Dobrý den, tady Budi. Nerušim?", "id": "Selamat siang, ini Budi. Tidak mengganggu?", "literal": "baik hari, di-sini Budi. tidak-saya-mengganggu?" },
+    { "speaker": "Nováková:", "text": "Vůbec ne. Co potřebujete?", "id": "Sama sekali tidak. Ada apa?", "literal": "sama-sekali tidak. apa Anda-butuhkan?" },
+    { "speaker": "Budi:", "text": "Nemůžu přijít ve čtvrtek. Musím jít na úřad.", "id": "Saya tidak bisa datang hari Kamis. Saya harus ke kantor imigrasi.", "literal": "tidak-saya-bisa datang pada-Kamis. saya-harus pergi ke kantor." },
+    { "speaker": "Nováková:", "text": "To se dá přesunout. Kdy můžete?", "id": "Bisa digeser. Anda bisanya kapan?", "literal": "itu diri bisa menggeser. kapan Anda-bisa?" },
+    { "speaker": "Budi:", "text": "Hodil by se mi pátek odpoledne. Šlo by to?", "id": "Jumat sore cocok untuk saya. Bisa?", "literal": "cocok akan diri kepada-saya Jumat sore. berjalan akan itu?" },
+    { "speaker": "Nováková:", "text": "V pátek mám jinou hodinu do čtyř. Ale v pět můžu.", "id": "Jumat saya ada kelas lain sampai jam empat. Tapi jam lima bisa.", "literal": "pada Jumat saya-punya lain jam sampai empat. tapi pada lima saya-bisa." },
+    { "speaker": "Budi:", "text": "V pět je super. Můžeme se sejít v kavárně?", "id": "Jam lima bagus. Kita bisa ketemu di kafe?", "literal": "pada lima adalah bagus. kita-bisa diri bertemu di kafe?" },
+    { "speaker": "Nováková:", "text": "Radši ve škole, je tam klid. Smíte tam přijít i v pátek.", "id": "Lebih baik di sekolah, di sana tenang. Anda boleh datang meski hari Jumat.", "literal": "lebih-suka di sekolah, adalah di-sana ketenangan. Anda-boleh ke-sana datang bahkan pada-Jumat." },
+    { "speaker": "Budi:", "text": "Dobře. Ještě jednou se omlouvám.", "id": "Baik. Sekali lagi saya minta maaf.", "literal": "baik. masih sekali diri saya-meminta-maaf." },
+    { "speaker": "Nováková:", "text": "To nic. Tak v pátek v pět. Na shledanou.", "id": "Tidak apa-apa. Kalau begitu Jumat jam lima. Sampai jumpa.", "literal": "itu tidak-apa. jadi pada-Jumat pada lima. sampai jumpa." },
+    { "speaker": "Budi:", "text": "Na shledanou a hezký den!", "id": "Sampai jumpa dan semoga harinya menyenangkan!", "literal": "sampai jumpa dan bagus hari!" }
+   ],
+   "notes": [
+    "**Orang Ceko mengangkat telepon dengan menyebut nama belakangnya**, bukan \"halo\". *Nováková, prosím.* Ini kebiasaan yang mengagetkan pendatang, tapi standar di urusan resmi dan setengah resmi. Ke teman, cukup *Ahoj* atau *Prosím*.",
+    "**Tady Budi** = \"ini Budi\", harfiahnya \"di sini Budi\". Cara baku memperkenalkan diri di telepon. Versi lebih resmi: *U telefonu Budi.*",
+    "**Nemůžu vs neumím.** *Nemůžu přijít* = saya tidak bisa datang (keadaan menghalangi). *Neumím česky* = saya tidak bisa bahasa Ceko (keterampilan belum ada). Salah pilih di antara keduanya adalah kesalahan pemula yang paling sering terdengar.",
+    "**Musím jít na úřad** — kata *úřad* (kantor pemerintahan) akan sering muncul dalam hidupmu di Ceko. Yang paling dikenal pendatang: *cizinecká policie* (polisi keimigrasian) dan *MV ČR* (kementerian dalam negeri), tempat izin tinggal diurus.",
+    "**To se dá přesunout** — harfiahnya \"itu diri memberi menggeser\", ungkapan tetap untuk \"itu bisa diatur\". Bentuk ini sangat sering: *To se dá udělat* (bisa dikerjakan), *To se nedá* (tidak bisa).",
+    "**Hodil by se mi pátek** = \"Jumat akan cocok bagi saya\". *Hodit se* (cocok) selalu dengan penerima dativ, dan bentuk *by* membuatnya jadi usulan, bukan pernyataan.",
+    "**To nic** = \"tidak apa-apa\", jawaban standar untuk permintaan maaf. Bentuk lain: *nevadí* (tidak masalah), *v pohodě* (santai saja).",
+    "**Smíte** dari *smět* (boleh, diizinkan). Bedanya halus dari *můžete*: *smět* soal izin, *moct* soal kemampuan atau kesempatan. Dalam percakapan sehari-hari, *můžu* mengambil alih hampir semua peran *smím*."
+   ],
+   "grammars": [
+    {
+     "title": "Empat kata kerja bantu",
+     "body": ["Diikuti bentuk kamus kata kerja lain, seperti \"harus pergi\", \"bisa datang\"."],
+     "table": {
+      "head": ["Pelaku", "*muset* (harus)", "*moct* (bisa)", "*smět* (boleh)", "*umět* (menguasai)"],
+      "rows": [
+       ["já", "*musím*", "*můžu*", "*smím*", "*umím*"],
+       ["ty", "*musíš*", "*můžeš*", "*smíš*", "*umíš*"],
+       ["on/ona", "*musí*", "*může*", "*smí*", "*umí*"],
+       ["my", "*musíme*", "*můžeme*", "*smíme*", "*umíme*"],
+       ["vy", "*musíte*", "*můžete*", "*smíte*", "*umíte*"],
+       ["oni", "*musí*", "*můžou*", "*smí*", "*umí*"]
+      ]
+     },
+     "after": [
+      "⚠️ **Menyangkal *muset* tidak berarti \"tidak boleh\".** *Nemusím jít* berarti \"saya **tidak perlu** pergi\" — bukan \"saya dilarang pergi\". Untuk larangan, bahasa Ceko memakai *nesmím*: *Nesmíš tam jít* = kamu tidak boleh ke sana. Ini jebakan yang bisa berujung salah paham serius.",
+      "*Mít* juga bisa berperan sebagai kata bantu dengan arti \"seharusnya\": *Máš mu zavolat* — kamu sebaiknya meneleponnya.",
+      "Bentuk lampau kata bantu ini tidak beraturan: *musel jsem*, *mohl jsem*, *směl jsem*, *uměl jsem*."
+     ]
+    },
+    {
+     "title": "Bentuk pengandaian dengan by",
+     "body": ["Sudah kamu pakai sejak unit 5 (*chtěl bych*). Sekarang lihat susunannya utuh — ia adalah alat kesopanan nomor satu dalam bahasa Ceko."],
+     "table": {
+      "head": ["Pelaku", "Bentuk", "Contoh"],
+      "rows": [
+       ["já", "*-l/-la* + **bych**", "*Chtěl bych kávu.*"],
+       ["ty", "*-l/-la* + **bys**", "*Mohl bys mi pomoct?*"],
+       ["on/ona", "*-l/-la* + **by**", "*Hodilo by se to.*"],
+       ["my", "*-li* + **bychom**", "*Chtěli bychom stůl.*"],
+       ["vy", "*-li* + **byste**", "*Mohli byste přijít?*"],
+       ["oni", "*-li* + **by**", "*Chtěli by jít.*"]
+      ]
+     },
+     "after": [
+      "Bentuknya persis bentuk lampau, hanya kata bantunya diganti *bych / bys / by / bychom / byste / by* — dan letaknya tetap di tempat kedua.",
+      "Ia dipakai untuk tiga hal: **permintaan sopan** (*Mohl bys…*), **keinginan** (*Chtěl bych…*), dan **pengandaian** (*Kdybych měl čas…* — kalau saya punya waktu).",
+      "Dalam percakapan sehari-hari *bychom* sering diucapkan *bysme*. Guru bahasa akan mengoreksinya; semua orang lain memakainya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Percakapan telepon dari awal sampai akhir",
+   "blocks": [
+    { "type": "tabel", "head": ["Kapan", "Kalimat", "Arti"], "rows": [
+     ["Mengangkat", "*Prosím?* / *Nováková, prosím.*", "Halo?"],
+     ["Memperkenalkan", "*Dobrý den, tady Budi.*", "Selamat siang, ini Budi."],
+     ["Bertanya", "*Můžu mluvit s Evou?*", "Bisa bicara dengan Eva?"],
+     ["Menjawab", "*Moment, přepojím vás.*", "Sebentar, saya sambungkan."],
+     ["Tidak ada", "*Není tady. Zavolejte později.*", "Dia tidak ada. Telepon lagi nanti."],
+     ["Pesan", "*Můžu nechat vzkaz?*", "Boleh titip pesan?"],
+     ["Sinyal", "*Neslyším vás dobře.*", "Saya tidak dengar jelas."],
+     ["Sinyal", "*Máte špatný signál.*", "Sinyal Anda jelek."],
+     ["Salah sambung", "*Máte špatné číslo.*", "Anda salah sambung."],
+     ["Menutup", "*Tak zatím. Na shledanou.*", "Kalau begitu sampai nanti."]
+    ] },
+    { "type": "kotak", "title": "Menulis pesan, bukan menelepon", "items": [
+     "Untuk urusan tak mendesak, orang Ceko sering lebih suka pesan tertulis. Yang paling dipakai: WhatsApp, Messenger, dan surel untuk urusan resmi.",
+     "Pembuka pesan tertulis: *Dobrý den,* (resmi) atau *Ahoj,* (akrab). Penutupnya: *S pozdravem* (hormat saya), *Děkuji předem* (terima kasih sebelumnya), atau cukup *Díky*.",
+     "Singkatan yang akan kamu lihat: *dík* (makasih), *nz* (*není zač* — sama-sama), *jj* (iya iya), *nvm* (*nevím* — tidak tahu)."
+    ] }
+   ]
+  },
+  {
+   "title": "Menawar waktu",
+   "blocks": [
+    { "type": "tabel", "head": ["Kalimat", "Arti"], "rows": [
+     ["*Kdy se ti to hodí?*", "Kapan kamu enaknya?"],
+     ["*Hodí se ti pátek?*", "Jumat cocok?"],
+     ["*Mám čas až v pět.*", "Saya baru bisa jam lima."],
+     ["*Můžeme to přesunout?*", "Bisa digeser?"],
+     ["*Nešlo by to jindy?*", "Bisa lain waktu?"],
+     ["*Bohužel nemůžu.*", "Sayangnya saya tidak bisa."],
+     ["*To mi nevyhovuje.*", "Itu tidak cocok untuk saya."],
+     ["*Co třeba v sobotu?*", "Bagaimana kalau Sabtu?"],
+     ["*Platí!*", "Deal!"],
+     ["*Tak domluveno.*", "Kalau begitu sepakat."]
+    ] },
+    { "type": "kotak", "title": "Menolak tanpa terdengar kasar", "items": [
+     "Bahasa Ceko lebih langsung daripada bahasa Indonesia, dan *ne* yang tegas tidak dianggap kasar. Yang membuatnya halus bukan basa-basi panjang, melainkan satu kata: *bohužel* (sayangnya).",
+     "*Bohužel nemůžu, mám něco jiného.* — Sayangnya saya tidak bisa, ada acara lain. Itu sudah dianggap sopan dan lengkap; tidak perlu menambah alasan berlapis.",
+     "Yang justru dianggap tidak sopan: menyanggupi tanpa yakin lalu membatalkan di menit terakhir. Ketegasan lebih dihargai daripada keramahan yang kosong."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "cs": "telefon / mobil", "baca": "TE-le-fon", "id": "telepon / HP" },
+  { "cs": "volat / zavolat", "baca": "VO-lat", "id": "menelepon" },
+  { "cs": "číslo", "baca": "CIIS-lo", "id": "nomor (netral)" },
+  { "cs": "vzkaz", "baca": "fskas", "id": "pesan (lk)" },
+  { "cs": "přepojit", "baca": "PRZYE-po-yit", "id": "menyambungkan" },
+  { "cs": "signál", "baca": "SIG-naal", "id": "sinyal (lk)" },
+  { "cs": "rušit", "baca": "RU-syit", "id": "mengganggu" },
+  { "cs": "muset / musím", "baca": "MU-set", "id": "harus" },
+  { "cs": "moct / můžu", "baca": "motst / MUU-zyu", "id": "bisa, boleh" },
+  { "cs": "smět / smím", "baca": "smnyet", "id": "boleh, diizinkan" },
+  { "cs": "umět / umím", "baca": "U-mnyet", "id": "bisa (keterampilan)" },
+  { "cs": "přijít / přijdu", "baca": "PRZYI-yiit", "id": "datang" },
+  { "cs": "přesunout", "baca": "PRZYE-su-nout", "id": "menggeser (jadwal)" },
+  { "cs": "hodit se", "baca": "HO-jyit se", "id": "cocok" },
+  { "cs": "vyhovovat", "baca": "VY-ho-vo-vat", "id": "sesuai, cocok" },
+  { "cs": "domluvit se", "baca": "DO-mlu-vit se", "id": "sepakat, janjian" },
+  { "cs": "omlouvat se", "baca": "OM-lou-vat se", "id": "minta maaf" },
+  { "cs": "bohužel", "baca": "BO-hu-zyel", "id": "sayangnya" },
+  { "cs": "naštěstí", "baca": "NASY-tyes-tyii", "id": "untungnya" },
+  { "cs": "úřad", "baca": "UU-rzyat", "id": "kantor pemerintah (lk)" },
+  { "cs": "schůzka", "baca": "SKHUUS-ka", "id": "pertemuan (pr)" },
+  { "cs": "klid / v pohodě", "baca": "klit", "id": "ketenangan / santai saja" },
+  { "cs": "nevadí", "baca": "NE-va-jyii", "id": "tidak masalah" },
+  { "cs": "vůbec ne", "baca": "VUU-bets ne", "id": "sama sekali tidak" },
+  { "cs": "jindy", "baca": "YIN-dy", "id": "lain waktu" },
+  { "cs": "později", "baca": "POZ-jye-yi", "id": "nanti, kemudian" },
+  { "cs": "třeba", "baca": "TRZYE-ba", "id": "misalnya; barangkali" },
+  { "cs": "platí", "baca": "PLA-tyii", "id": "deal, sepakat" },
+  { "cs": "ještě jednou", "baca": "YESY-tye YED-nou", "id": "sekali lagi" },
+  { "cs": "s pozdravem", "baca": "s POZ-dra-vem", "id": "hormat saya (surat)" }
+ ],
+ "exercises": [
+  { "prompt": "Pilih *musím*, *můžu*, *umím*, atau *nesmím*.", "items": [
+   "____ jít na úřad. (harus)",
+   "Ne____ přijít ve čtvrtek. (tidak bisa)",
+   "____ trochu česky. (menguasai)",
+   "Tady ____ kouřit. (dilarang)",
+   "____ ti pomoct? (boleh saya)"
+  ] },
+  { "prompt": "Ubah jadi bentuk sopan dengan *by*.", "items": [
+   "Chci kávu. → ____",
+   "Můžeš mi pomoct? → ____",
+   "Chceme stůl pro dva. → ____",
+   "Můžete přijít? → ____",
+   "Hodí se to. → ____"
+  ] },
+  { "prompt": "Terjemahkan ke bahasa Ceko.", "items": [
+   "Selamat siang, ini Budi.",
+   "Bisa bicara dengan Eva?",
+   "Saya tidak bisa datang hari Kamis.",
+   "Bisa digeser?",
+   "Sayangnya saya tidak bisa.",
+   "Kalau begitu sepakat."
+  ] },
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "tady / den / dobrý / Budi",
+   "přijít / nemůžu / ve čtvrtek",
+   "to / můžeme / přesunout / ?",
+   "ti / kdy / hodí / se / to / ?",
+   "nemůžu / bohužel"
+  ] }
+ ],
+ "answers": [
+  "Musím — Nemůžu — Umím — nesmím — Můžu",
+  "Chtěl bych kávu. — Mohl bys mi pomoct? — Chtěli bychom stůl pro dva. — Mohli byste přijít? — Hodilo by se to.",
+  "Dobrý den, tady Budi. — Můžu mluvit s Evou? — Nemůžu přijít ve čtvrtek. — Můžeme to přesunout? — Bohužel nemůžu. — Tak domluveno.",
+  "Dobrý den, tady Budi. — Nemůžu přijít ve čtvrtek. — Můžeme to přesunout? — Kdy se ti to hodí? — Bohužel nemůžu."
+ ]
+}

@@ -1,0 +1,194 @@
+{
+ "title": "Badan dan kesehatan — bentuk ketiga",
+ "title_target": "U lékaře — dativ",
+ "goal": "Menyebut bagian tubuh yang sakit, memakai bentuk ketiga (*dativ*) yang menandai penerima, dan mengurus kunjungan ke dokter atau apotek.",
+ "bekal": [
+  "mengatakan apa yang sakit dengan *bolí mě…*",
+  "memakai kata ganti penerima: *mi, ti, mu, jí, nám, vám*",
+  "membeli obat di apotek tanpa resep"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Není mi dobře",
+   "intro": "Budi menelepon Eva pagi-pagi. Suaranya serak.",
+   "lines": [
+    { "speaker": "Eva:", "text": "Ahoj. Ty zníš hrozně. Co je ti?", "id": "Halo. Suaramu parah. Kamu kenapa?", "literal": "halo. kamu terdengar mengerikan. apa adalah kepada-kamu?" },
+    { "speaker": "Budi:", "text": "Není mi dobře. Bolí mě hlava a v krku.", "id": "Saya kurang enak badan. Kepala saya sakit dan tenggorokan.", "literal": "tidak-adalah kepada-saya baik. sakit saya kepala dan di tenggorokan." },
+    { "speaker": "Eva:", "text": "Máš horečku?", "id": "Kamu demam?", "literal": "kamu-punya demam?" },
+    { "speaker": "Budi:", "text": "Myslím, že jo. Je mi zima a pak zase horko.", "id": "Kayaknya iya. Kedinginan lalu kepanasan lagi.", "literal": "saya-pikir, bahwa ya. adalah kepada-saya dingin dan lalu lagi panas." },
+    { "speaker": "Eva:", "text": "To zní jako chřipka. Musíš jít k doktorovi.", "id": "Kedengarannya flu. Kamu harus ke dokter.", "literal": "itu terdengar seperti flu. kamu-harus pergi ke dokter." },
+    { "speaker": "Budi:", "text": "Nemám tady praktického lékaře. Co mám dělat?", "id": "Saya belum punya dokter umum di sini. Harus bagaimana?", "literal": "tidak-saya-punya di-sini praktis dokter. apa saya-punya melakukan?" },
+    { "speaker": "Eva:", "text": "Zajdi do lékárny. Dají ti něco na horečku.", "id": "Mampir ke apotek. Mereka akan kasih obat demam.", "literal": "mampirlah ke apotek. mereka-akan-beri kepada-kamu sesuatu untuk demam." },
+    { "speaker": "Budi:", "text": "A co jim mám říct?", "id": "Saya harus bilang apa ke mereka?", "literal": "dan apa kepada-mereka saya-punya mengatakan?" },
+    { "speaker": "Eva:", "text": "Řekni: „Bolí mě v krku a mám teplotu.\" To stačí.", "id": "Bilang: \"Tenggorokan saya sakit dan saya demam.\" Cukup.", "literal": "katakanlah: \"sakit saya di tenggorokan dan saya-punya suhu.\" itu cukup." },
+    { "speaker": "Budi:", "text": "Dobře. Díky za pomoc.", "id": "Baik. Terima kasih bantuannya.", "literal": "baik. terima-kasih untuk bantuan." },
+    { "speaker": "Eva:", "text": "Není zač. A hlavně pij hodně vody. Ať ti je líp!", "id": "Sama-sama. Yang penting banyak minum air. Semoga cepat sembuh!", "literal": "tidak-adalah untuk-apa. dan terutama minum banyak air. semoga kepada-kamu adalah lebih-baik!" }
+   ],
+   "notes": [
+    "**Bolí mě hlava** harfiahnya \"kepala menyakiti saya\". Susunannya terbalik dari bahasa Indonesia: yang jadi pelaku adalah **bagian tubuhnya**, dan orangnya jadi yang dikenai (*mě*, bentuk akuzativ). Kalau yang sakit lebih dari satu, kata kerjanya jamak: *Bolí mě nohy* (kaki saya sakit).",
+    "**Bolí mě v krku**, bukan *bolí mě krk*. Untuk tenggorokan, orang Ceko memakai kata depan *v* — \"sakit di dalam tenggorokan\". Begitu juga *bolí mě v zádech* (punggung), *bolí mě v uchu* (telinga).",
+    "**Co je ti?** — \"kamu kenapa?\", harfiahnya \"apa (yang) bagimu?\". *Ti* adalah bentuk dativ dari *ty*, dan seluruh unit ini berputar di sekitar bentuk itu.",
+    "**Není mi dobře** — \"tidak baik bagi saya\", cara paling umum mengatakan tidak enak badan. Perhatikan bahwa *dobře* bukan *dobrý*: sekali lagi bentuk keterangan, karena tidak ada benda yang disifati.",
+    "**Praktický lékař** adalah dokter umum yang jadi pintu masuk sistem kesehatan Ceko. Kamu harus mendaftar ke satu dokter, dan dia yang merujuk ke spesialis. Tanpa itu, satu-satunya pilihan adalah *pohotovost* (gawat darurat), yang berbayar untuk keluhan ringan.",
+    "**Zajdi, řekni, pij** — semuanya bentuk perintah untuk *ty*. Bentuk sopannya menambahkan *-te*: *zajděte*, *řekněte*, *pijte*.",
+    "**Není zač** = \"sama-sama\", harfiahnya \"tidak ada untuk apa\". Bentuk lain: *rádo se stalo* (dengan senang hati), atau cukup *prosím*.",
+    "**Ať ti je líp!** — \"semoga kamu lebih baik\", ucapan wajib kepada orang sakit. Kalau ia bersin, ucapannya lain lagi: *Na zdraví!* (untuk kesehatan) — kata yang sama yang dipakai untuk bersulang."
+   ],
+   "grammars": [
+    {
+     "title": "Dativ — bentuk ketiga",
+     "body": ["Bentuk penerima: kepada siapa sesuatu diberikan, dikatakan, atau terasa. Ia juga muncul sesudah kata depan *k/ke* (ke arah, ke tempat orang), *proti* (melawan), dan *díky* (berkat)."],
+     "table": {
+      "head": ["Jenis kelamin", "Bentuk kamus", "Dativ", "Contoh"],
+      "rows": [
+       ["perempuan *-a*", "*Eva*, *sestra*", "*Ev**ě***, *sestř**e***", "*Dám to Evě.*"],
+       ["laki-laki hidup", "*bratr*, *doktor*", "*bratr**ovi***, *doktor**ovi***", "*Jdu k doktorovi.*"],
+       ["laki-laki benda mati", "*obchod*", "*obchod**u***", "*k obchodu*"],
+       ["netral", "*město*, *okno*", "*měst**u***, *okn**u***", "*k oknu*"]
+      ]
+     },
+     "after": [
+      "Kata sifatnya: laki-laki & netral **-ému** (*k praktickému lékaři*), perempuan **-é** (*k mladé sestře*).",
+      "**Kata ganti bentuk dativ jauh lebih sering dipakai daripada kata bendanya**, dan hanya tujuh kata — hafalkan yang ini, bukan tabelnya."
+     ]
+    },
+    {
+     "title": "Tujuh kata kecil yang wajib dihafal",
+     "body": ["Ini yang benar-benar kamu pakai tiap hari."],
+     "table": {
+      "head": ["Kata ganti", "Dativ", "Contoh", "Arti"],
+      "rows": [
+       ["*já*", "**mi / mně**", "*Není mi dobře.*", "kepada saya"],
+       ["*ty*", "**ti / tobě**", "*Co je ti?*", "kepada kamu"],
+       ["*on*", "**mu / jemu**", "*Řekni mu to.*", "kepada dia (lk)"],
+       ["*ona*", "**jí**", "*Dej jí to.*", "kepada dia (pr)"],
+       ["*my*", "**nám**", "*Pomozte nám.*", "kepada kami"],
+       ["*vy*", "**vám**", "*Chutnalo vám?*", "kepada kalian"],
+       ["*oni*", "**jim**", "*Co jim mám říct?*", "kepada mereka"]
+      ]
+     },
+     "after": [
+      "Bentuk pendek (*mi*, *ti*, *mu*) dipakai di tempat kedua kalimat. Bentuk panjang (*mně*, *tobě*, *jemu*) dipakai kalau ditekankan atau sesudah kata depan: *ke mně* (ke tempat saya).",
+      "Kata kerja yang wajib membawa dativ dan sering dipakai: *pomáhat* (menolong), *děkovat* (berterima kasih), *volat* (menelepon), *rozumět* (mengerti), *chutnat* (terasa enak), *slušet* (cocok dipakai), *chybět* (dirindukan), *patřit* (milik)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Badan",
+   "blocks": [
+    { "type": "tabel", "head": ["Čeština", "Arti", "Čeština", "Arti"], "rows": [
+     ["*hlava*", "kepala", "*ruka / ruce*", "tangan ⚠️ jamak"],
+     ["*oko / oči*", "mata ⚠️", "*prst*", "jari"],
+     ["*ucho / uši*", "telinga ⚠️", "*noha / nohy*", "kaki"],
+     ["*nos*", "hidung", "*záda*", "punggung (selalu jamak)"],
+     ["*ústa / pusa*", "mulut", "*břicho*", "perut"],
+     ["*zub / zuby*", "gigi", "*srdce*", "jantung"],
+     ["*krk*", "leher, tenggorokan", "*žaludek*", "lambung"],
+     ["*rameno*", "bahu", "*koleno*", "lutut"]
+    ] },
+    { "type": "kotak", "title": "Tiga kata benda yang jamaknya kuno", "items": [
+     "*oko → oči*, *ucho → uši*, *ruka → ruce*. Bentuk-bentuk ini sisa dari bilangan \"dua\" bahasa Slavia kuno — bentuk khusus untuk hal yang memang selalu berpasangan. Bahasa Ceko modern sudah kehilangan bilangan dua, tapi ketiga kata ini tak pernah menyesuaikan diri.",
+     "Karena itu kalimatnya: *Bolí mě oči* (mata saya sakit), *Bolí mě uši*, *Bolí mě ruce* — semuanya jamak, dan kata kerjanya ikut jamak."
+    ] }
+   ]
+  },
+  {
+   "title": "Di dokter dan di apotek",
+   "blocks": [
+    { "type": "tabel", "head": ["Kalimat", "Arti"], "rows": [
+     ["*Není mi dobře.*", "Saya kurang enak badan."],
+     ["*Bolí mě hlava / břicho / záda.*", "Kepala / perut / punggung saya sakit."],
+     ["*Mám teplotu / horečku.*", "Saya demam."],
+     ["*Mám rýmu a kašel.*", "Saya pilek dan batuk."],
+     ["*Je mi špatně.*", "Saya mual."],
+     ["*Jsem alergický na …*", "Saya alergi …"],
+     ["*Potřebuju něco na bolest.*", "Saya butuh obat pereda nyeri."],
+     ["*Máte to bez receptu?*", "Ada yang tanpa resep?"],
+     ["*Kolikrát denně?*", "Berapa kali sehari?"],
+     ["*Jak dlouho to mám brát?*", "Berapa lama saya harus minum ini?"],
+     ["*Kde je nejbližší lékárna?*", "Apotek terdekat di mana?"],
+     ["*Potřebuju rychlou pomoc.*", "Saya perlu bantuan darurat."]
+    ] },
+    { "type": "kotak", "title": "Sistem kesehatan Ceko dalam empat baris", "items": [
+     "**Asuransi kesehatan wajib** bagi siapa pun yang tinggal lebih dari tiga bulan. Pendatang bekerja masuk sistem umum lewat pemberi kerja; mahasiswa dan yang lain membeli asuransi komersial.",
+     "**Nomor darurat 112** berlaku untuk semua keadaan darurat dan operatornya berbicara bahasa Inggris. Untuk ambulans saja: 155.",
+     "**Lékárna** (apotek) buka jam biasa; yang buka 24 jam ada di kota besar dan disebut *lékárna s nepřetržitým provozem*.",
+     "**Antibiotik tidak dijual bebas** dan dokter Ceko relatif hemat memberikannya. Yang tersedia tanpa resep: pereda nyeri, obat demam, dan obat batuk."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "cs": "zdraví / nemoc", "baca": "ZDRA-vii / NE-mots", "id": "kesehatan / penyakit" },
+  { "cs": "nemocný", "baca": "NE-mots-nii", "id": "sakit (kata sifat)" },
+  { "cs": "bolet / bolí", "baca": "BO-let", "id": "sakit, menyakiti" },
+  { "cs": "bolest", "baca": "BO-lest", "id": "rasa sakit (pr)" },
+  { "cs": "horečka / teplota", "baca": "HO-rec-ka", "id": "demam / suhu" },
+  { "cs": "chřipka / rýma", "baca": "KHRZYIP-ka / RII-ma", "id": "flu / pilek" },
+  { "cs": "kašel", "baca": "KA-syel", "id": "batuk (lk)" },
+  { "cs": "lékař / doktor", "baca": "LEE-karsy", "id": "dokter (lk)" },
+  { "cs": "lékárna", "baca": "LEE-kaar-na", "id": "apotek (pr)" },
+  { "cs": "lék", "baca": "leek", "id": "obat (lk)" },
+  { "cs": "recept", "baca": "RE-tsept", "id": "resep (lk)" },
+  { "cs": "pohotovost", "baca": "PO-ho-to-vost", "id": "gawat darurat (pr)" },
+  { "cs": "nemocnice", "baca": "NE-mots-nyi-tse", "id": "rumah sakit (pr)" },
+  { "cs": "pojištění", "baca": "PO-yisy-tye-nyii", "id": "asuransi (netral)" },
+  { "cs": "hlava / krk", "baca": "HLA-va / krk", "id": "kepala / leher" },
+  { "cs": "ruka / noha", "baca": "RU-ka / NO-ha", "id": "tangan / kaki" },
+  { "cs": "oko / ucho", "baca": "O-ko / U-kho", "id": "mata / telinga" },
+  { "cs": "břicho / záda", "baca": "BRZYI-kho / ZAA-da", "id": "perut / punggung" },
+  { "cs": "zub", "baca": "zup", "id": "gigi (lk)" },
+  { "cs": "pomoc / pomáhat", "baca": "PO-mots", "id": "bantuan / menolong" },
+  { "cs": "potřebovat", "baca": "PO-trzye-bo-vat", "id": "membutuhkan" },
+  { "cs": "muset", "baca": "MU-set", "id": "harus" },
+  { "cs": "brát / vzít", "baca": "braat", "id": "mengambil; minum obat" },
+  { "cs": "znít / zní", "baca": "znyiit", "id": "terdengar" },
+  { "cs": "říct / řekni", "baca": "rzyiitst", "id": "mengatakan / katakanlah" },
+  { "cs": "zajít", "baca": "ZA-yiit", "id": "mampir" },
+  { "cs": "kolikrát denně", "baca": "KO-li-kraat DEN-nye", "id": "berapa kali sehari" },
+  { "cs": "není zač", "baca": "NE-nyii zac", "id": "sama-sama" },
+  { "cs": "hlavně", "baca": "HLAV-nye", "id": "terutama, yang penting" },
+  { "cs": "líp / lépe", "baca": "liip / LEE-pe", "id": "lebih baik" }
+ ],
+ "exercises": [
+  { "prompt": "Lengkapi dengan kata ganti *dativ* yang tepat.", "items": [
+   "Není ____ dobře. (saya)",
+   "Co je ____? (kamu)",
+   "Řekni ____ to. (dia lk)",
+   "Dej ____ knihu. (dia pr)",
+   "Pomozte ____. (kami)",
+   "Co ____ mám říct? (mereka)"
+  ] },
+  { "prompt": "Terjemahkan dengan *bolí mě …*.", "items": [
+   "Kepala saya sakit.",
+   "Perut saya sakit.",
+   "Gigi saya sakit.",
+   "Mata saya sakit.",
+   "Tenggorokan saya sakit."
+  ] },
+  { "prompt": "Terjemahkan ke bahasa Ceko.", "items": [
+   "Saya kurang enak badan.",
+   "Saya demam.",
+   "Saya pilek dan batuk.",
+   "Saya butuh obat pereda nyeri.",
+   "Ada yang tanpa resep?",
+   "Apotek terdekat di mana?"
+  ] },
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "mi / dobře / není",
+   "hlava / mě / bolí",
+   "teplotu / mám",
+   "lékárny / zajdi / do",
+   "je / líp / ať / ti"
+  ] }
+ ],
+ "answers": [
+  "mi — ti — mu — jí — nám — jim",
+  "Bolí mě hlava. — Bolí mě břicho. — Bolí mě zub. — Bolí mě oči. — Bolí mě v krku.",
+  "Není mi dobře. — Mám teplotu. — Mám rýmu a kašel. — Potřebuju něco na bolest. — Máte to bez receptu? — Kde je nejbližší lékárna?",
+  "Není mi dobře. — Bolí mě hlava. — Mám teplotu. — Zajdi do lékárny. — Ať ti je líp!"
+ ]
+}

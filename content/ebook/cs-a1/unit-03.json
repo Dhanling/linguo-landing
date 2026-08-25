@@ -1,0 +1,546 @@
+{
+ "title": "Ini apa? — tiga jenis kelamin",
+ "title_target": "Co je to? Ten, ta, to",
+ "goal": "Mengenali jenis kelamin kata benda Ceko dari ejaannya, memakai *ten / ta / to*, dan menyesuaikan kata sifat dengan kata bendanya.",
+ "bekal": [
+  "menebak jenis kelamin hampir semua kata benda hanya dari huruf terakhirnya",
+  "memakai *ten / ta / to* untuk menunjuk benda",
+  "menyesuaikan ekor kata sifat: *dobrý / dobrá / dobré*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ve třídě",
+   "intro": "Di kelas, guru bernama paní Nováková memperkenalkan benda-benda di sekitar. Budi mencatat.",
+   "lines": [
+    {
+     "speaker": "Nováková:",
+     "text": "Co je to, Budi?",
+     "id": "Ini apa, Budi?",
+     "literal": "apa adalah itu, Budi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "To je stůl. Je velký a starý.",
+     "id": "Ini meja. Besar dan tua.",
+     "literal": "itu adalah meja. adalah besar dan tua."
+    },
+    {
+     "speaker": "Nováková:",
+     "text": "Výborně. A ta věc tady?",
+     "id": "Bagus sekali. Kalau benda ini?",
+     "literal": "bagus-sekali. dan benda-itu (pr) di-sini?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "To je tabule. Ta tabule je zelená.",
+     "id": "Itu papan tulis. Papan tulisnya hijau.",
+     "literal": "itu adalah papan-tulis. papan-tulis-itu adalah hijau."
+    },
+    {
+     "speaker": "Nováková:",
+     "text": "Správně. A tohle malé?",
+     "id": "Betul. Dan yang kecil ini?",
+     "literal": "betul. dan ini kecil?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "To je okno. Je malé, ale čisté.",
+     "id": "Itu jendela. Kecil, tapi bersih.",
+     "literal": "itu adalah jendela. adalah kecil, tapi bersih."
+    },
+    {
+     "speaker": "Nováková:",
+     "text": "Perfektní. Víte proč říkáme *ten* stůl, ale *ta* tabule?",
+     "id": "Sempurna. Anda tahu kenapa kita bilang *ten* stůl tapi *ta* tabule?",
+     "literal": "sempurna. Anda-tahu kenapa kami-mengatakan itu(lk) meja, tapi itu(pr) papan-tulis?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ne, nevím. Je to těžké.",
+     "id": "Tidak tahu. Itu sulit.",
+     "literal": "tidak, tidak-saya-tahu. adalah itu sulit."
+    },
+    {
+     "speaker": "Nováková:",
+     "text": "Není! Podívejte se na poslední písmeno.",
+     "id": "Tidak kok! Lihat huruf terakhirnya.",
+     "literal": "tidak-adalah! lihatlah diri pada terakhir huruf."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Aha — souhláska, *a*, nebo *o*. To je jednoduché!",
+     "id": "Oh — huruf mati, *a*, atau *o*. Itu gampang!",
+     "literal": "aha — huruf-mati, a, atau o. itu adalah sederhana!"
+    },
+    {
+     "speaker": "Nováková:",
+     "text": "Přesně tak. Zbytek už je jen cvičení.",
+     "id": "Tepat sekali. Sisanya tinggal latihan.",
+     "literal": "tepat begitu. sisa sudah adalah hanya latihan."
+    }
+   ],
+   "notes": [
+    "**To je … dipakai untuk semua jenis kelamin.** Waktu memperkenalkan sesuatu, kamu selalu bilang *to je* — tak peduli bendanya laki-laki, perempuan, atau netral: *to je stůl*, *to je tabule*, *to je okno*. Barulah kalau benda itu jadi pokok kalimat, kata penunjuknya menyesuaikan: *ten stůl je velký*.",
+    "**Nevím ≠ nerozumím.** *Nevím* = saya tidak tahu (informasinya tidak ada di kepala saya). *Nerozumím* = saya tidak mengerti (kata-katanya tidak tertangkap). Orang Ceko memperhatikan bedanya.",
+    "**Není** adalah bentuk menyangkal dari *je*, dan ia satu-satunya yang tidak dibentuk dengan menempel *ne-* di depan bentuk biasa. Hafalkan terpisah: *je* → *není*.",
+    "**Tohle, tenhle, tahle** adalah versi sehari-hari dari *toto, tento, tato* — artinya \"ini\" (yang dekat), lawan dari \"itu\". Di percakapan, bentuk *-hle* jauh lebih sering terdengar daripada bentuk buku.",
+    "**Kata sifat berubah ekornya mengikuti kata bendanya**: *velký stůl*, *velká tabule*, *velké okno*. Ini bukan hiasan — ekor itulah yang memberi tahu pendengar kata benda mana yang sedang kamu sifati, terutama ketika urutan katanya dibolak-balik.",
+    "**Souhláska = huruf mati, samohláska = huruf hidup.** Dua kata ini akan kamu temui terus di penjelasan tata bahasa, jadi kenali sekarang."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga jenis kelamin — dan cara menebaknya dari huruf terakhir",
+     "body": [
+      "Setiap kata benda Ceko punya salah satu dari tiga jenis kelamin. Untungnya, ejaannya hampir selalu membocorkan yang mana."
+     ],
+     "table": {
+      "head": [
+       "Jenis",
+       "Huruf terakhir",
+       "Penunjuk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**laki-laki** (*mužský*)",
+        "huruf mati",
+        "*ten*",
+        "*ten stůl*, *ten dům*, *ten čaj*"
+       ],
+       [
+        "**perempuan** (*ženský*)",
+        "**-a** (atau *-e/-ě*)",
+        "*ta*",
+        "*ta káva*, *ta žena*, *ta tabule*"
+       ],
+       [
+        "**netral** (*střední*)",
+        "**-o** (atau *-e/-í*)",
+        "*to*",
+        "*to okno*, *to město*, *to pivo*"
+       ]
+      ]
+     },
+     "after": [
+      "Aturan ini benar untuk sekitar sembilan dari sepuluh kata. Yang menyimpang paling sering adalah kata berujung *-e* — ia bisa perempuan (*tabule*) atau netral (*moře*, laut) — dan sekelompok kata perempuan berujung huruf mati (*věc* — benda, *noc* — malam). Yang seperti itu kami tandai di lajur kosakata.",
+      "**Jenis kelamin tidak ada hubungannya dengan makna.** *Dívka* (gadis) memang perempuan, tapi *děvče* (gadis, bentuk lain) justru netral, dan *stůl* (meja) laki-laki tanpa alasan apa pun. Jangan mencari logikanya; catat saja penunjuknya bersama katanya.",
+      "⚠️ **Cara paling hemat menghafal:** setiap kali menulis kata benda baru, tulis bersama penunjuknya — bukan *káva*, tapi *ta káva*. Kebiasaan kecil ini menghemat berbulan-bulan kebingungan nanti, karena semua ekor lain (kata sifat, bentuk kata benda, kata kerja lampau) bergantung padanya."
+     ]
+    },
+    {
+     "title": "Kata sifat: satu kata, tiga ekor",
+     "body": [
+      "Kata sifat Ceko terbagi dua kelompok: yang **keras** (mayoritas, berujung *-ý*) dan yang **lunak** (berujung *-í*, dan tidak pernah berubah menurut jenis kelamin)."
+     ],
+     "table": {
+      "head": [
+       "Kelompok",
+       "Laki-laki",
+       "Perempuan",
+       "Netral"
+      ],
+      "rows": [
+       [
+        "keras: *dobrý* (baik)",
+        "dobr**ý**",
+        "dobr**á**",
+        "dobr**é**"
+       ],
+       [
+        "keras: *velký* (besar)",
+        "velk**ý**",
+        "velk**á**",
+        "velk**é**"
+       ],
+       [
+        "keras: *malý* (kecil)",
+        "mal**ý**",
+        "mal**á**",
+        "mal**é**"
+       ],
+       [
+        "lunak: *moderní* (modern)",
+        "modern**í**",
+        "modern**í**",
+        "modern**í**"
+       ],
+       [
+        "lunak: *cizí* (asing)",
+        "ciz**í**",
+        "ciz**í**",
+        "ciz**í**"
+       ]
+      ]
+     },
+     "after": [
+      "Kabar baiknya: kata sifat lunak tidak berubah sama sekali — satu bentuk untuk semua. Kabar kurang baiknya: jumlahnya sedikit. Kalau kamu melihat *-í* di ujung kata sifat, kamu boleh santai.",
+      "Ekor kata sifat sama saja apakah ia berdiri di depan kata benda (*dobrá káva*) atau sesudah *je* (*káva je dobrá*)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Benda di sekelilingmu",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Semua kata di bawah ini ditulis bersama penunjuknya — pakailah kebiasaan itu sejak sekarang."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Laki-laki (*ten*)",
+      "Perempuan (*ta*)",
+      "Netral (*to*)"
+     ],
+     "rows": [
+      [
+       "*ten stůl* — meja",
+       "*ta židle* — kursi",
+       "*to okno* — jendela"
+      ],
+      [
+       "*ten dům* — rumah",
+       "*ta kniha* — buku",
+       "*to auto* — mobil"
+      ],
+      [
+       "*ten telefon* — telepon",
+       "*ta taška* — tas",
+       "*to město* — kota"
+      ],
+      [
+       "*ten klíč* — kunci",
+       "*ta káva* — kopi",
+       "*to pivo* — bir"
+      ],
+      [
+       "*ten počítač* — komputer",
+       "*ta voda* — air",
+       "*to jídlo* — makanan"
+      ],
+      [
+       "*ten chleba* — roti",
+       "*ta škola* — sekolah",
+       "*to jméno* — nama"
+      ],
+      [
+       "*ten pes* — anjing",
+       "*ta kočka* — kucing",
+       "*to zvíře* — hewan"
+      ],
+      [
+       "*ten den* — hari",
+       "*ta noc* — malam ⚠️",
+       "*to slovo* — kata"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kata yang menipu mata",
+     "items": [
+      "*ta věc* (benda), *ta noc* (malam), *ta řeč* (bahasa), *ta postel* (tempat tidur) — semuanya **perempuan** meski berujung huruf mati. Ciri samarnya: banyak dari mereka berujung *-c*, *-č*, *-ž*, *-l* lunak.",
+      "*to nádraží* (stasiun), *to náměstí* (alun-alun), *to zdraví* (kesehatan) — berujung *-í* dan **netral**. Kelompok ini besar dan mudah dikenali."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sifat yang paling sering kamu butuhkan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kata sifat",
+      "Cara baca",
+      "Arti",
+      "Lawannya"
+     ],
+     "rows": [
+      [
+       "*velký*",
+       "VEL-kii",
+       "besar",
+       "*malý* — kecil"
+      ],
+      [
+       "*dobrý*",
+       "DOB-rii",
+       "baik, enak",
+       "*špatný* — buruk"
+      ],
+      [
+       "*nový*",
+       "NO-vii",
+       "baru",
+       "*starý* — tua, lama"
+      ],
+      [
+       "*drahý*",
+       "DRA-hii",
+       "mahal",
+       "*levný* — murah"
+      ],
+      [
+       "*teplý*",
+       "TEP-lii",
+       "hangat",
+       "*studený* — dingin"
+      ],
+      [
+       "*dlouhý*",
+       "DLOU-hii",
+       "panjang",
+       "*krátký* — pendek"
+      ],
+      [
+       "*těžký*",
+       "TYESY-kii",
+       "berat, sulit",
+       "*lehký* — ringan, mudah"
+      ],
+      [
+       "*čistý*",
+       "CIS-tii",
+       "bersih",
+       "*špinavý* — kotor"
+      ],
+      [
+       "*krásný*",
+       "KRAAS-nii",
+       "indah",
+       "*ošklivý* — jelek"
+      ],
+      [
+       "*rychlý*",
+       "RYKH-lii",
+       "cepat",
+       "*pomalý* — lambat"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Warna juga kata sifat, dan berperilaku persis sama: *červený* (merah), *modrý* (biru), *zelený* (hijau), *žlutý* (kuning), *černý* (hitam), *bílý* (putih), *hnědý* (cokelat), *šedý* (abu-abu), *růžový* (merah muda), *oranžový* (oranye). Semuanya kelompok **keras**, jadi ekornya *-ý / -á / -é* tanpa kecuali."
+    },
+    {
+     "type": "kotak",
+     "title": "Menyusun kalimat pertamamu sendiri",
+     "items": [
+      "Rumusnya: *(penunjuk) + kata benda + je + kata sifat*. Contoh: *Ta káva je dobrá.* (Kopi ini enak.)",
+      "Atau tanpa penunjuk sama sekali: *Káva je dobrá.* — sama benarnya, dan lebih sering dipakai kalau bendanya sudah jelas dari keadaan.",
+      "Menyangkalnya cukup satu huruf: *Ta káva **není** dobrá.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "cs": "ten / ta / to",
+   "baca": "ten / ta / to",
+   "id": "itu (lk / pr / netral)"
+  },
+  {
+   "cs": "tenhle / tahle / tohle",
+   "baca": "TEN-hle",
+   "id": "ini (sehari-hari)"
+  },
+  {
+   "cs": "co",
+   "baca": "tso",
+   "id": "apa"
+  },
+  {
+   "cs": "stůl",
+   "baca": "stuul",
+   "id": "meja (lk)"
+  },
+  {
+   "cs": "židle",
+   "baca": "ZYID-le",
+   "id": "kursi (pr)"
+  },
+  {
+   "cs": "okno",
+   "baca": "OK-no",
+   "id": "jendela (netral)"
+  },
+  {
+   "cs": "tabule",
+   "baca": "TA-bu-le",
+   "id": "papan tulis (pr)"
+  },
+  {
+   "cs": "kniha",
+   "baca": "KNYI-ha",
+   "id": "buku (pr)"
+  },
+  {
+   "cs": "věc",
+   "baca": "vyets",
+   "id": "benda, hal (pr) ⚠️"
+  },
+  {
+   "cs": "dům",
+   "baca": "duum",
+   "id": "rumah (lk)"
+  },
+  {
+   "cs": "město",
+   "baca": "MNYES-to",
+   "id": "kota (netral)"
+  },
+  {
+   "cs": "škola",
+   "baca": "SYKO-la",
+   "id": "sekolah (pr)"
+  },
+  {
+   "cs": "třída",
+   "baca": "TRZYII-da",
+   "id": "kelas (pr)"
+  },
+  {
+   "cs": "velký / malý",
+   "baca": "VEL-kii / MA-lii",
+   "id": "besar / kecil"
+  },
+  {
+   "cs": "nový / starý",
+   "baca": "NO-vii / STA-rii",
+   "id": "baru / tua, lama"
+  },
+  {
+   "cs": "čistý / špinavý",
+   "baca": "CIS-tii / SYPI-na-vii",
+   "id": "bersih / kotor"
+  },
+  {
+   "cs": "těžký / lehký",
+   "baca": "TYESY-kii / LEKH-kii",
+   "id": "berat, sulit / ringan, mudah"
+  },
+  {
+   "cs": "jednoduchý",
+   "baca": "YED-no-du-khii",
+   "id": "sederhana, gampang"
+  },
+  {
+   "cs": "zelený",
+   "baca": "ZE-le-nii",
+   "id": "hijau"
+  },
+  {
+   "cs": "červený",
+   "baca": "CER-ve-nii",
+   "id": "merah"
+  },
+  {
+   "cs": "modrý",
+   "baca": "MOD-rii",
+   "id": "biru"
+  },
+  {
+   "cs": "bílý / černý",
+   "baca": "BII-lii / CER-nii",
+   "id": "putih / hitam"
+  },
+  {
+   "cs": "souhláska",
+   "baca": "SOU-hlaas-ka",
+   "id": "huruf mati"
+  },
+  {
+   "cs": "samohláska",
+   "baca": "SA-mo-hlaas-ka",
+   "id": "huruf hidup"
+  },
+  {
+   "cs": "písmeno",
+   "baca": "PIIS-me-no",
+   "id": "huruf (netral)"
+  },
+  {
+   "cs": "slovo",
+   "baca": "SLO-vo",
+   "id": "kata (netral)"
+  },
+  {
+   "cs": "poslední",
+   "baca": "POS-led-nyii",
+   "id": "terakhir"
+  },
+  {
+   "cs": "správně",
+   "baca": "SPRAAV-nye",
+   "id": "betul"
+  },
+  {
+   "cs": "výborně",
+   "baca": "VII-bor-nye",
+   "id": "bagus sekali"
+  },
+  {
+   "cs": "cvičení",
+   "baca": "TSVI-ce-nyii",
+   "id": "latihan (netral)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis penunjuk yang tepat: *ten*, *ta*, atau *to*.",
+   "items": [
+    "____ stůl",
+    "____ káva",
+    "____ okno",
+    "____ kniha",
+    "____ pivo",
+    "____ telefon",
+    "____ škola",
+    "____ město"
+   ]
+  },
+  {
+   "prompt": "Sesuaikan ekor kata sifatnya.",
+   "items": [
+    "Ten dům je velk__.",
+    "Ta káva je dobr__.",
+    "To okno je mal__.",
+    "Ta kniha je nov__.",
+    "To pivo je studen__.",
+    "Ten stůl je star__."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Ceko.",
+   "items": [
+    "Ini apa?",
+    "Ini buku.",
+    "Buku ini baru.",
+    "Jendela itu kecil.",
+    "Kopi ini tidak enak.",
+    "Saya tidak tahu."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "je / co / to / ?",
+    "kniha / to / je",
+    "velký / je / dům / ten",
+    "dobrá / není / káva / ta",
+    "zelená / je / tabule / ta"
+   ]
+  }
+ ],
+ "answers": [
+  "ten — ta — to — ta — to — ten — ta — to",
+  "velký — dobrá — malé — nová — studené — starý",
+  "Co je to? — To je kniha. — Ta kniha je nová. — To okno je malé. — Ta káva není dobrá. — Nevím.",
+  "Co je to? — To je kniha. — Ten dům je velký. — Ta káva není dobrá. — Ta tabule je zelená."
+ ]
+}

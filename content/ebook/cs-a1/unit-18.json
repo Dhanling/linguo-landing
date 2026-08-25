@@ -1,0 +1,200 @@
+{
+ "title": "Pasangan kata kerja dan waktu depan",
+ "title_target": "Vid a budoucí čas",
+ "goal": "Mengenali pasangan kata kerja Ceko — yang berjalan lawan yang tuntas — dan membentuk kalimat tentang hari depan dengan dua cara berbeda.",
+ "bekal": [
+  "membedakan *dělat* dari *udělat*, *psát* dari *napsat*",
+  "membentuk waktu depan dengan *budu* dan tanpa *budu*",
+  "menceritakan rencanamu untuk minggu depan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Co budeš dělat příští týden?",
+   "intro": "Jumat sore. Eva dan Budi merencanakan minggu berikutnya di depan sekolah.",
+   "lines": [
+    { "speaker": "Eva:", "text": "Co budeš dělat příští týden?", "id": "Minggu depan kamu mau ngapain?", "literal": "apa kamu-akan melakukan berikut minggu?" },
+    { "speaker": "Budi:", "text": "Budu se učit. V pátek mám zkoušku.", "id": "Saya akan belajar. Jumat ada ujian.", "literal": "saya-akan diri belajar. pada Jumat saya-punya ujian." },
+    { "speaker": "Eva:", "text": "Zvládneš to. Kolik toho musíš přečíst?", "id": "Kamu pasti bisa. Berapa banyak yang harus kamu baca?", "literal": "kamu-akan-mengatasi itu. berapa dari-itu kamu-harus membaca-habis?" },
+    { "speaker": "Budi:", "text": "Dvě kapitoly. Dneska večer přečtu první.", "id": "Dua bab. Malam ini saya selesaikan yang pertama.", "literal": "dua bab. hari-ini malam saya-membaca-habis pertama." },
+    { "speaker": "Eva:", "text": "Počkej — *přečtu*? Ne *budu číst*?", "id": "Tunggu — *přečtu*? Bukan *budu číst*?", "literal": "tunggu — saya-baca-habis? tidak saya-akan membaca?" },
+    { "speaker": "Budi:", "text": "Paní Nováková říkala, že u dokonavých se *budu* nepoužívá.", "id": "Bu Nováková bilang, untuk bentuk tuntas *budu* tidak dipakai.", "literal": "ibu Nováková berkata, bahwa pada tuntas diri *budu* tidak-dipakai." },
+    { "speaker": "Eva:", "text": "Přesně tak. *Budu číst* je dlouhý proces, *přečtu* je hotovo.", "id": "Tepat. *Budu číst* itu prosesnya, *přečtu* itu selesainya.", "literal": "tepat begitu. saya-akan membaca adalah panjang proses, saya-baca-habis adalah selesai." },
+    { "speaker": "Budi:", "text": "A když nestihnu? Budu číst celý víkend.", "id": "Kalau tidak keburu? Saya akan baca sepanjang akhir pekan.", "literal": "dan kalau tidak-saya-sempat? saya-akan membaca seluruh akhir-pekan." },
+    { "speaker": "Eva:", "text": "Vidíš? Použil jsi obě formy správně.", "id": "Lihat kan? Kamu pakai dua bentuknya dengan benar.", "literal": "kamu-melihat? memakai kamu-adalah kedua bentuk benar." },
+    { "speaker": "Budi:", "text": "Náhoda. Ještě tomu úplně nerozumím.", "id": "Kebetulan. Saya belum benar-benar paham.", "literal": "kebetulan. masih kepada-itu sepenuhnya tidak-saya-mengerti." },
+    { "speaker": "Eva:", "text": "Nikdo tomu nerozumí hned. Přijde to samo.", "id": "Tidak ada yang langsung paham. Nanti datang sendiri.", "literal": "tidak-siapa kepada-itu tidak-mengerti segera. akan-datang itu sendiri." }
+   ],
+   "notes": [
+    "**Hampir setiap kata kerja Ceko punya kembaran.** *Dělat / udělat*, *číst / přečíst*, *psát / napsat*. Yang pertama disebut **nedokonavý** (belum tuntas) dan menggambarkan pekerjaan sebagai jalannya; yang kedua **dokonavý** (tuntas) dan menggambarkannya sebagai hasil.",
+    "**Bentuk tuntas tidak punya \"sekarang\".** Ini titik yang paling membingungkan, dan sekaligus paling berguna: kalau kamu memasang bentuk tuntas ke ekor \"sekarang\", artinya otomatis jadi **nanti**. *Přečtu* kelihatan seperti \"saya membaca\", tapi berarti \"saya akan selesai membaca\".",
+    "**Karena itu *budu* dilarang untuk bentuk tuntas.** *Budu přečíst* salah dan terdengar kacau. Bentuk depan yang memakai *budu* hanya untuk kata kerja belum tuntas: *budu číst*, *budu dělat*, *budu se učit*.",
+    "**Kolik toho** — \"berapa banyak dari itu\". *Toho* adalah genitiv dari *to*, muncul karena *kolik* menuntut genitiv, seperti angka lima ke atas di unit 6.",
+    "**Zvládneš to** = kamu akan mengatasinya. Bentuk tuntas, jadi artinya masa depan tanpa *budeš*. Ini kalimat penyemangat yang sangat sering dipakai orang Ceko.",
+    "**Nestihnu** dari *stihnout* (sempat, keburu) — kata kerja yang akan sangat sering kamu butuhkan: *Nestihl jsem vlak* (saya ketinggalan kereta), *Stihneš to?* (keburu?).",
+    "**Přijde to samo** — \"itu akan datang sendiri\". Kalimat yang pantas ditempel di dinding ketika belajar tata bahasa Ceko terasa mustahil, dan yang secara kebetulan juga contoh sempurna dari bentuk tuntas."
+   ],
+   "grammars": [
+    {
+     "title": "Dua bentuk, satu arti dasar",
+     "body": ["Bandingkan lajur kiri dan kanan. Artinya sama; yang berbeda adalah apakah pekerjaannya dilihat sebagai **jalannya** atau sebagai **selesainya**."],
+     "table": {
+      "head": ["Belum tuntas", "Tuntas", "Arti", "Cara membentuknya"],
+      "rows": [
+       ["*dělat*", "*u**dělat*", "melakukan", "awalan *u-*"],
+       ["*psát*", "*na**psat*", "menulis", "awalan *na-*"],
+       ["*číst*", "*pře**číst*", "membaca", "awalan *pře-*"],
+       ["*jíst*", "*s**níst*", "makan", "awalan *s-*"],
+       ["*pít*", "*vy**pít*", "minum", "awalan *vy-*"],
+       ["*učit se*", "*na**učit se*", "belajar", "awalan *na-*"],
+       ["*vařit*", "*u**vařit*", "memasak", "awalan *u-*"],
+       ["*kupovat*", "*koupit*", "membeli", "batangnya berubah ⚠️"],
+       ["*dávat*", "*dát*", "memberi", "batangnya berubah ⚠️"],
+       ["*začínat*", "*začít*", "memulai", "batangnya berubah ⚠️"]
+      ]
+     },
+     "after": [
+      "Lihat kalimatnya berdampingan: *Včera **jsem psal** dopis* (kemarin saya menulis surat — mungkin belum selesai) lawan *Včera **jsem napsal** dopis* (kemarin surat itu selesai saya tulis).",
+      "Untuk hal yang **berulang**, selalu bentuk belum tuntas: *Každý den píšu.* Untuk hal yang **sekali dan tuntas**, bentuk tuntas: *Napsal jsem to.*",
+      "⚠️ **Jangan menghafal awalannya sebagai aturan.** Tiap kata punya awalannya sendiri, dan tidak ada pola yang bisa ditebak. Yang benar: setiap kali belajar kata kerja baru, hafalkan **sepasang** sejak awal — seperti menghafal kata benda bersama penunjuknya."
+     ]
+    },
+    {
+     "title": "Dua cara berbicara tentang hari depan",
+     "body": ["Bahasa Ceko tidak punya satu bentuk masa depan. Ia punya dua, dan yang mana dipakai ditentukan oleh bentuk kata kerjanya."],
+     "table": {
+      "head": ["", "Belum tuntas → pakai *budu*", "Tuntas → tanpa *budu*"],
+      "rows": [
+       ["já", "*budu číst*", "*přečtu*"],
+       ["ty", "*budeš číst*", "*přečteš*"],
+       ["on/ona", "*bude číst*", "*přečte*"],
+       ["my", "*budeme číst*", "*přečteme*"],
+       ["vy", "*budete číst*", "*přečtete*"],
+       ["oni", "*budou číst*", "*přečtou*"],
+       ["Artinya", "akan membaca (prosesnya)", "akan selesai membaca"]
+      ]
+     },
+     "after": [
+      "*Budu* sendiri juga berarti \"saya akan ada/berada\": *Budu doma* (saya akan di rumah), *Bude zima* (nanti dingin).",
+      "⚠️ Kata kerja gerak punya cara ketiga: bukan *budu jít* melainkan **půjdu** (saya akan pergi), dan bukan *budu jet* melainkan **pojedu**. Dua bentuk ini sangat sering dipakai — hafalkan utuh: *půjdu, půjdeš, půjde, půjdeme, půjdete, půjdou* dan *pojedu, pojedeš, pojede…*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menceritakan rencana",
+   "blocks": [
+    { "type": "tabel", "head": ["Kalimat", "Arti"], "rows": [
+     ["*Co budeš dělat zítra?*", "Besok kamu mau ngapain?"],
+     ["*Budu doma.*", "Saya akan di rumah."],
+     ["*Půjdu do kina.*", "Saya akan ke bioskop."],
+     ["*Pojedu do Brna.*", "Saya akan ke Brno."],
+     ["*Budu se učit celý večer.*", "Saya akan belajar sepanjang malam."],
+     ["*Uvidíme se v pátek.*", "Kita ketemu Jumat."],
+     ["*Zavolám ti večer.*", "Saya telepon kamu nanti malam."],
+     ["*Napíšu ti zprávu.*", "Saya kirim pesan ke kamu."],
+     ["*Mám v plánu …*", "Saya berencana …"],
+     ["*Ještě nevím.*", "Saya belum tahu."]
+    ] },
+    { "type": "kotak", "title": "Petunjuk cepat memilih bentuk", "items": [
+     "Ada kata *každý den*, *často*, *vždycky*, *celý večer*, *dlouho*? → **belum tuntas** (*budu číst*).",
+     "Ada kata *jednou*, *hned*, *do pátku*, *najednou*, atau kamu bicara tentang hasil? → **tuntas** (*přečtu*).",
+     "Kamu ragu? Pakai **belum tuntas**. Ia lebih sering benar, dan salahnya lebih ringan — kalimatmu terdengar kurang tepat, bukan salah arti."
+    ] }
+   ]
+  },
+  {
+   "title": "Dua puluh pasangan yang paling sering",
+   "blocks": [
+    { "type": "tabel", "head": ["Belum tuntas", "Tuntas", "Arti", "Belum tuntas", "Tuntas", "Arti"], "rows": [
+     ["*dělat*", "*udělat*", "melakukan", "*platit*", "*zaplatit*", "membayar"],
+     ["*číst*", "*přečíst*", "membaca", "*volat*", "*zavolat*", "menelepon"],
+     ["*psát*", "*napsat*", "menulis", "*ptát se*", "*zeptat se*", "bertanya"],
+     ["*jíst*", "*sníst*", "makan", "*vidět*", "*uvidět*", "melihat"],
+     ["*pít*", "*vypít*", "minum", "*slyšet*", "*uslyšet*", "mendengar"],
+     ["*vařit*", "*uvařit*", "memasak", "*učit se*", "*naučit se*", "belajar"],
+     ["*uklízet*", "*uklidit*", "membereskan", "*končit*", "*skončit*", "berakhir"],
+     ["*kupovat*", "*koupit*", "membeli", "*začínat*", "*začít*", "memulai"],
+     ["*dávat*", "*dát*", "memberi", "*brát*", "*vzít*", "mengambil"],
+     ["*říkat*", "*říct*", "mengatakan", "*rozumět*", "*porozumět*", "mengerti"]
+    ] },
+    { "type": "kotak", "title": "Kenapa bagian ini ditaruh di unit 18, bukan di unit 3", "items": [
+     "Karena pasangan kata kerja tidak bisa dipahami dari penjelasan — ia dipahami dari perasaan atas ratusan kalimat. Kalau diperkenalkan di awal, ia cuma jadi tabel yang bikin putus asa.",
+     "Sekarang, sesudah tujuh belas unit, kamu sudah memakai puluhan kata kerja dari kedua kelompok tanpa menyadarinya. Unit ini hanya memberi nama pada apa yang sudah masuk ke telingamu.",
+     "Dan jangan menunggu sampai kamu \"paham\" untuk melanjutkan. Penutur bahasa Ceko sendiri tidak bisa menjelaskannya; mereka hanya merasakannya. Itu juga jalan yang menunggumu."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "cs": "budoucnost", "baca": "BU-dou-tsnost", "id": "masa depan (pr)" },
+  { "cs": "budu / budeš", "baca": "BU-du", "id": "saya akan / kamu akan" },
+  { "cs": "půjdu / pojedu", "baca": "PUUY-du / PO-ye-du", "id": "saya akan pergi / berkendara" },
+  { "cs": "příští", "baca": "PRZYIISY-tyii", "id": "berikutnya" },
+  { "cs": "plán / plánovat", "baca": "plaan", "id": "rencana / merencanakan" },
+  { "cs": "zkouška", "baca": "SKOUSY-ka", "id": "ujian (pr)" },
+  { "cs": "kapitola", "baca": "KA-pi-to-la", "id": "bab (pr)" },
+  { "cs": "zvládnout", "baca": "ZVLAAD-nout", "id": "mengatasi, sanggup" },
+  { "cs": "stihnout", "baca": "STYIH-nout", "id": "sempat, keburu" },
+  { "cs": "přečíst", "baca": "PRZYE-ciist", "id": "membaca sampai selesai" },
+  { "cs": "napsat", "baca": "NAP-sat", "id": "menulis sampai selesai" },
+  { "cs": "udělat", "baca": "U-jye-lat", "id": "menyelesaikan" },
+  { "cs": "naučit se", "baca": "NA-u-cit se", "id": "menguasai (hasil belajar)" },
+  { "cs": "zavolat", "baca": "ZA-vo-lat", "id": "menelepon (sekali)" },
+  { "cs": "zeptat se", "baca": "ZEP-tat se", "id": "bertanya (sekali)" },
+  { "cs": "uvidět", "baca": "U-vi-jyet", "id": "melihat (nanti)" },
+  { "cs": "zpráva", "baca": "SPRAA-va", "id": "pesan, kabar (pr)" },
+  { "cs": "forma / tvar", "baca": "FOR-ma", "id": "bentuk (pr)" },
+  { "cs": "proces", "baca": "PRO-tses", "id": "proses (lk)" },
+  { "cs": "hotovo", "baca": "HO-to-vo", "id": "selesai" },
+  { "cs": "náhoda", "baca": "NAA-ho-da", "id": "kebetulan (pr)" },
+  { "cs": "úplně", "baca": "UUPL-nye", "id": "sepenuhnya" },
+  { "cs": "hned", "baca": "hnet", "id": "segera, langsung" },
+  { "cs": "najednou", "baca": "NA-yed-nou", "id": "tiba-tiba; sekaligus" },
+  { "cs": "obě / oba", "baca": "O-bye / O-ba", "id": "kedua-duanya" },
+  { "cs": "samo / sám", "baca": "SA-mo", "id": "sendiri, dengan sendirinya" },
+  { "cs": "používat", "baca": "PO-u-zyii-vat", "id": "memakai" },
+  { "cs": "když", "baca": "gdysy", "id": "kalau, ketika" },
+  { "cs": "nikdo", "baca": "NYIG-do", "id": "tidak seorang pun" },
+  { "cs": "dopis", "baca": "DO-pis", "id": "surat (lk)" }
+ ],
+ "exercises": [
+  { "prompt": "Pasangkan dengan bentuk tuntasnya.", "items": [
+   "dělat → ____",
+   "číst → ____",
+   "psát → ____",
+   "vařit → ____",
+   "volat → ____",
+   "kupovat → ____"
+  ] },
+  { "prompt": "Pilih *budu* + bentuk kamus, atau bentuk tuntas saja.", "items": [
+   "Zítra ____ (číst) celý den.",
+   "Dnes večer ____ (přečíst) první kapitolu.",
+   "Zítra ti ____ (zavolat).",
+   "Celý víkend ____ (se učit).",
+   "V pátek ____ (udělat) zkoušku."
+  ] },
+  { "prompt": "Terjemahkan ke bahasa Ceko.", "items": [
+   "Besok kamu mau ngapain?",
+   "Saya akan di rumah.",
+   "Saya akan ke bioskop.",
+   "Saya telepon kamu nanti malam.",
+   "Saya belum tahu.",
+   "Kita ketemu Jumat."
+  ] },
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "budeš / co / zítra / dělat / ?",
+   "se / budu / učit",
+   "do / půjdu / kina",
+   "ti / zavolám / večer",
+   "nevím / ještě"
+  ] }
+ ],
+ "answers": [
+  "udělat — přečíst — napsat — uvařit — zavolat — koupit",
+  "budu číst — přečtu — zavolám — se budu učit — udělám",
+  "Co budeš dělat zítra? — Budu doma. — Půjdu do kina. — Zavolám ti večer. — Ještě nevím. — Uvidíme se v pátek.",
+  "Co budeš zítra dělat? — Budu se učit. — Půjdu do kina. — Zavolám ti večer. — Ještě nevím."
+ ]
+}

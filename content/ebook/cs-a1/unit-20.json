@@ -1,0 +1,578 @@
+{
+ "title": "Bertamu ke rumah orang Ceko",
+ "title_target": "Na návštěvě",
+ "goal": "Mengumpulkan semua yang sudah kamu pelajari dalam satu percakapan panjang, dan mengetahui aturan tak tertulis saat diundang ke rumah orang Ceko.",
+ "bekal": [
+  "berperilaku benar sebagai tamu: sepatu, oleh-oleh, bersulang",
+  "memakai bentuk sekarang, lampau, dan depan dalam satu percakapan",
+  "berpamitan dan menawarkan pertemuan berikutnya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Nedělní oběd",
+   "intro": "Eva mengundang Budi makan siang di rumah orang tuanya di pinggir Praha. Ini kunjungan pertamanya ke rumah keluarga Ceko.",
+   "lines": [
+    {
+     "speaker": "Eva:",
+     "text": "Pojď dál! Můžeš se zout tady.",
+     "id": "Masuk! Sepatunya bisa dilepas di sini.",
+     "literal": "datanglah lebih-jauh! kamu-bisa diri melepas-sepatu di-sini."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Děkuju. Tohle je pro maminku — malá pozornost.",
+     "id": "Terima kasih. Ini untuk ibumu — hadiah kecil.",
+     "literal": "saya-berterima-kasih. ini adalah untuk ibu — kecil perhatian."
+    },
+    {
+     "speaker": "Máma:",
+     "text": "Ale to jste nemusel! Pojďte do obýváku.",
+     "id": "Wah, tidak perlu repot! Mari ke ruang tamu.",
+     "literal": "tapi itu Anda-adalah tidak-harus! datanglah ke ruang-tamu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Máte krásný dům. Jak dlouho tady bydlíte?",
+     "id": "Rumah Anda bagus. Sudah lama tinggal di sini?",
+     "literal": "kalian-punya indah rumah. bagaimana lama di-sini kalian-tinggal?"
+    },
+    {
+     "speaker": "Máma:",
+     "text": "Třicet let. Manžel ho postavil sám.",
+     "id": "Tiga puluh tahun. Suami saya yang membangunnya sendiri.",
+     "literal": "tiga-puluh tahun. suami itu membangun sendiri."
+    },
+    {
+     "speaker": "Táta:",
+     "text": "Dáte si slivovici? Domácí!",
+     "id": "Mau slivovice? Buatan sendiri!",
+     "literal": "kalian-beri diri slivovice? rumahan!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Malou, prosím. Nepiju moc alkoholu.",
+     "id": "Sedikit saja. Saya tidak banyak minum alkohol.",
+     "literal": "kecil, tolong. tidak-saya-minum banyak alkohol."
+    },
+    {
+     "speaker": "Táta:",
+     "text": "Tak na zdraví! A dívej se mi do očí.",
+     "id": "Kalau begitu, sehat selalu! Dan tatap mata saya.",
+     "literal": "jadi untuk kesehatan! dan lihat diri kepada-saya ke mata."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Do očí? Proč?",
+     "id": "Tatap mata? Kenapa?",
+     "literal": "ke mata? kenapa?"
+    },
+    {
+     "speaker": "Eva:",
+     "text": "Jinak prý sedm let smůly. Nikdo neví, odkud to je.",
+     "id": "Kalau tidak, katanya tujuh tahun sial. Tidak ada yang tahu dari mana asalnya.",
+     "literal": "kalau-tidak konon tujuh tahun kesialan. tidak-siapa tidak-tahu, dari-mana itu adalah."
+    },
+    {
+     "speaker": "Máma:",
+     "text": "Oběd bude za deset minut. Máte rád svíčkovou?",
+     "id": "Makan siang sepuluh menit lagi. Anda suka svíčková?",
+     "literal": "makan-siang akan dalam sepuluh menit. kalian-punya senang svíčková?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Zatím jsem ji jedl jenom v restauraci. Těším se!",
+     "id": "Selama ini saya cuma makan di restoran. Saya tidak sabar!",
+     "literal": "sementara saya-adalah dia makan hanya di restoran. saya-menyenangkan diri!"
+    }
+   ],
+   "notes": [
+    "**Sepatu selalu dilepas.** Ini bukan pilihan sopan santun melainkan aturan mutlak di hampir semua rumah Ceko — dan tuan rumah sering menyodorkan sandal rumah (*bačkory*). Masuk dengan sepatu adalah salah satu dari sedikit hal yang benar-benar bisa membuat tuan rumah Ceko tidak nyaman.",
+    "**Malá pozornost** — \"perhatian kecil\", cara sopan menyerahkan oleh-oleh. Yang lazim dibawa: bunga (jumlah **ganjil**, jangan genap — genap untuk pemakaman), sebotol anggur, atau kue.",
+    "**To jste nemusel!** — \"tidak perlu repot!\" — adalah jawaban wajib atas hadiah, dan ia tidak berarti hadiahnya ditolak. Perhatikan juga *nemusel* yang berarti \"tidak perlu\", bukan \"tidak boleh\" — jebakan dari unit 17.",
+    "**Pojď dál** harfiahnya \"datanglah lebih jauh\", ungkapan tetap untuk \"silakan masuk\". Bentuk sopannya *pojďte dál*.",
+    "**Slivovice** adalah minuman plum keras buatan rumah yang jadi kebanggaan keluarga, terutama di Moravia. Menolaknya sepenuhnya bisa terasa dingin; menerima sedikit lalu menyesapnya pelan selalu diterima. *Nepiju alkohol* dengan alasan agama atau kesehatan juga dihormati — cukup katakan sekali dengan jelas.",
+    "**Na zdraví!** — \"untuk kesehatan\", ucapan bersulang. Aturannya: bentur gelas dengan **setiap** orang di meja, dan **tatap matanya** saat membentur. Takhayul tujuh tahun sial itu ditanggapi setengah bercanda, tapi semua orang tetap melakukannya.",
+    "**Těším se** = \"saya menantikan\", harfiahnya \"saya menyenangkan diri\". Salah satu kata paling berguna untuk terdengar hangat: *Těším se na tebe* (aku menantikanmu), *Těšilo mě* (senang berkenalan, saat berpisah)."
+   ],
+   "grammars": [
+    {
+     "title": "Semua yang sudah kamu kumpulkan, dalam satu halaman",
+     "body": [
+      "Dua puluh unit, dan ini isinya. Kalau ada baris yang membuatmu ragu, kembalilah ke unit yang disebut."
+     ],
+     "table": {
+      "head": [
+       "Bagian",
+       "Isinya",
+       "Unit"
+      ],
+      "rows": [
+       [
+        "Kata kerja sekarang",
+        "tiga kelompok: *-ám*, *-ím*, *-uju*",
+        "2, 8"
+       ],
+       [
+        "Kata kerja lampau",
+        "*-l/-la/-li* + *jsem/jsi/jsme/jste*",
+        "16"
+       ],
+       [
+        "Kata kerja depan",
+        "*budu* + kamus, atau bentuk tuntas sendirian",
+        "18"
+       ],
+       [
+        "Kata bantu",
+        "*muset*, *moct*, *smět*, *umět*, *chtít*",
+        "5, 17"
+       ],
+       [
+        "Bentuk sopan",
+        "*chtěl bych*, *mohl byste*",
+        "5, 17"
+       ],
+       [
+        "Jenis kelamin",
+        "*ten / ta / to* dari huruf terakhir",
+        "3"
+       ],
+       [
+        "Kata sifat",
+        "*-ý / -á / -é*, perbandingan *-ější*, *nej-*",
+        "3, 11"
+       ],
+       [
+        "Kata benda",
+        "tujuh bentuk, tunggal",
+        "5, 9, 10, 14, 15"
+       ],
+       [
+        "Jamak",
+        "*-y / -i / -a*",
+        "12"
+       ],
+       [
+        "Angka",
+        "0–1000, aturan 1 / 2–4 / 5+",
+        "6"
+       ],
+       [
+        "Waktu",
+        "jam menghitung ke depan, hari, bulan",
+        "7"
+       ],
+       [
+        "Letak kata kecil",
+        "*jsem*, *se*, *mi*, *to* di tempat kedua",
+        "16"
+       ],
+       [
+        "Bahasa jalanan",
+        "*-ej*, *í*, *v-*, *s-*",
+        "19"
+       ]
+      ]
+     },
+     "after": [
+      "Itu bukan daftar yang perlu dihafal ulang. Ia peta untuk memeriksa: bagian mana yang sudah otomatis, dan bagian mana yang masih perlu kamu pikirkan sebelum bicara.",
+      "Aturan praktisnya: apa pun yang masih perlu **dipikirkan** belum jadi milikmu. Ulangi dialog unitnya keras-keras sampai ia keluar tanpa jeda."
+     ]
+    },
+    {
+     "title": "Sepuluh kalimat yang membawa kamu jauh",
+     "body": [
+      "Kalau seluruh modul ini harus dipadatkan jadi sepuluh baris, inilah yang tersisa."
+     ],
+     "table": {
+      "head": [
+       "Ceko",
+       "Arti",
+       "Dipakai untuk"
+      ],
+      "rows": [
+       [
+        "*Dobrý den. Jmenuji se…*",
+        "Selamat siang. Nama saya…",
+        "membuka apa pun"
+       ],
+       [
+        "*Mluvím jenom trochu česky.*",
+        "Saya cuma bisa sedikit Ceko.",
+        "menurunkan tuntutan"
+       ],
+       [
+        "*Můžete mluvit pomaleji?*",
+        "Bisa bicara lebih pelan?",
+        "menyelamatkan percakapan"
+       ],
+       [
+        "*Nerozumím. Co to znamená?*",
+        "Saya tidak paham. Apa artinya?",
+        "bertahan"
+       ],
+       [
+        "*Dám si…, prosím.*",
+        "Saya pesan…, tolong.",
+        "memesan apa pun"
+       ],
+       [
+        "*Kolik to stojí?*",
+        "Berapa harganya?",
+        "berbelanja"
+       ],
+       [
+        "*Kde je…?*",
+        "Di mana…?",
+        "mencari apa pun"
+       ],
+       [
+        "*Můžete mi pomoct?*",
+        "Bisa bantu saya?",
+        "keadaan sulit"
+       ],
+       [
+        "*Promiňte, nevím.*",
+        "Maaf, saya tidak tahu.",
+        "menjawab jujur"
+       ],
+       [
+        "*Děkuju. Na shledanou.*",
+        "Terima kasih. Sampai jumpa.",
+        "menutup apa pun"
+       ]
+      ]
+     },
+     "after": [
+      "Sepuluh kalimat ini sudah cukup untuk hidup satu minggu di Praha tanpa sepatah kata bahasa Inggris. Sisanya — sembilan belas unit yang lain — adalah yang membuat minggu itu menyenangkan alih-alih sekadar bertahan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Aturan tak tertulis saat bertamu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Hal",
+      "Yang berlaku di Ceko"
+     ],
+     "rows": [
+      [
+       "Sepatu",
+       "**Selalu dilepas.** Sandal rumah biasanya disediakan."
+      ],
+      [
+       "Oleh-oleh",
+       "Bunga (jumlah ganjil), anggur, atau kue."
+      ],
+      [
+       "Datang",
+       "Tepat waktu, atau lima menit terlambat — bukan lebih."
+      ],
+      [
+       "Bersulang",
+       "Bentur gelas dengan semua orang, tatap matanya."
+      ],
+      [
+       "Makanan",
+       "Menghabiskan piring dianggap pujian."
+      ],
+      [
+       "Tambah",
+       "Menolak tambahan pertama itu biasa; tuan rumah akan menawarkan lagi."
+      ],
+      [
+       "Pujian",
+       "Puji makanannya langsung dan spesifik, bukan berlebihan."
+      ],
+      [
+       "Pulang",
+       "Setelah kopi dan kue, bukan langsung setelah makan."
+      ],
+      [
+       "Ucapan",
+       "*Děkuju za pozvání* — terima kasih atas undangannya."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang bikin salah paham",
+     "items": [
+      "**Orang Ceko tidak banyak basa-basi**, dan diam di antara percakapan tidak berarti suasana canggung. Mengisi setiap jeda dengan bicara justru bisa terasa melelahkan bagi mereka.",
+      "**Pujian dibalas dengan bantahan.** Kalau kamu memuji rumah atau masakan, jawaban khasnya adalah merendahkannya (*ale to nic není*). Itu bukan penolakan pujian, itu sopan santun. Ulangi pujianmu sekali lagi dan berhenti di situ.",
+      "**Pertanyaan pribadi datang lebih cepat** daripada yang mungkin kamu duga — gaji, sewa, agama, politik bisa muncul di kunjungan pertama. Kamu boleh tidak menjawab: *To radši nechám pro sebe* (itu saya simpan sendiri saja) diterima tanpa masalah."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Berpamitan dan menjaga hubungan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Už budu muset jít.*",
+       "Saya harus pamit."
+      ],
+      [
+       "*Děkuju za pozvání.*",
+       "Terima kasih undangannya."
+      ],
+      [
+       "*Bylo to výborné.*",
+       "Enak sekali."
+      ],
+      [
+       "*Moc jsem si to užil.*",
+       "Saya sangat menikmatinya."
+      ],
+      [
+       "*Pozdravujte doma.*",
+       "Salam untuk keluarga."
+      ],
+      [
+       "*Ozvu se.*",
+       "Nanti saya kabari."
+      ],
+      [
+       "*Uvidíme se brzy.*",
+       "Sampai jumpa lagi."
+      ],
+      [
+       "*Přijďte zase.*",
+       "Datang lagi ya."
+      ],
+      [
+       "*Měj se hezky.*",
+       "Jaga diri baik-baik."
+      ],
+      [
+       "*Tak zatím ahoj!*",
+       "Sampai nanti!"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Satu hal terakhir",
+     "items": [
+      "Orang Ceko terkenal sulit didekati di awal dan sangat setia sesudahnya. Bulan-bulan pertama akan terasa dingin — sedikit senyum di jalan, sedikit basa-basi, banyak jawaban singkat.",
+      "Yang membalik keadaan itu bukan usaha menjadi ramah, melainkan **muncul terus**: datang lagi ke kedai yang sama, menyapa tetangga yang sama, mencoba bahasa Ceko meski salah. Ketekunan lebih dihargai daripada kefasihan.",
+      "Dan tak ada satu pun kalimat yang membuka pintu secepat *Učím se česky* — \"saya sedang belajar bahasa Ceko\". Bahasa ini jarang dipelajari orang asing, dan tiap orang Ceko tahu itu."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "cs": "návštěva",
+   "baca": "NAAF-syitye-va",
+   "id": "kunjungan; tamu (pr)"
+  },
+  {
+   "cs": "pozvání / pozvat",
+   "baca": "POZ-vaa-nyii",
+   "id": "undangan / mengundang"
+  },
+  {
+   "cs": "hostitel / host",
+   "baca": "HOS-tyi-tel",
+   "id": "tuan rumah / tamu"
+  },
+  {
+   "cs": "pojď dál",
+   "baca": "poyty daal",
+   "id": "silakan masuk"
+  },
+  {
+   "cs": "zout se",
+   "baca": "zout se",
+   "id": "melepas sepatu"
+  },
+  {
+   "cs": "bačkory",
+   "baca": "BAC-ko-ry",
+   "id": "sandal rumah (jamak)"
+  },
+  {
+   "cs": "dárek / pozornost",
+   "baca": "DAA-rek",
+   "id": "hadiah / perhatian kecil"
+  },
+  {
+   "cs": "květiny",
+   "baca": "KVYE-tyi-ny",
+   "id": "bunga (jamak)"
+  },
+  {
+   "cs": "domácí",
+   "baca": "DO-maa-tsii",
+   "id": "buatan rumah"
+  },
+  {
+   "cs": "slivovice",
+   "baca": "SLI-vo-vi-tse",
+   "id": "minuman plum keras (pr)"
+  },
+  {
+   "cs": "alkohol / nealko",
+   "baca": "AL-ko-hol",
+   "id": "alkohol / non-alkohol"
+  },
+  {
+   "cs": "na zdraví",
+   "baca": "na ZDRA-vii",
+   "id": "bersulang; sehat selalu"
+  },
+  {
+   "cs": "smůla / štěstí",
+   "baca": "SMUU-la / SYTYES-tyii",
+   "id": "sial / untung"
+  },
+  {
+   "cs": "postavit",
+   "baca": "POS-ta-vit",
+   "id": "membangun"
+  },
+  {
+   "cs": "těšit se na",
+   "baca": "TYE-syit se na",
+   "id": "menantikan"
+  },
+  {
+   "cs": "užít si",
+   "baca": "U-zyiit si",
+   "id": "menikmati"
+  },
+  {
+   "cs": "ozvat se",
+   "baca": "OZ-vat se",
+   "id": "mengabari"
+  },
+  {
+   "cs": "zase / znovu",
+   "baca": "ZA-se",
+   "id": "lagi"
+  },
+  {
+   "cs": "brzy",
+   "baca": "BR-zy",
+   "id": "segera"
+  },
+  {
+   "cs": "jinak",
+   "baca": "YI-nak",
+   "id": "kalau tidak; selain itu"
+  },
+  {
+   "cs": "maminka / tatínek",
+   "baca": "MA-min-ka",
+   "id": "ibu / ayah (hangat)"
+  },
+  {
+   "cs": "obývák",
+   "baca": "O-bii-vaak",
+   "id": "ruang tamu (lk)"
+  },
+  {
+   "cs": "sklenice / sklenička",
+   "baca": "SKLE-nyi-tse",
+   "id": "gelas (pr)"
+  },
+  {
+   "cs": "talíř / lžíce",
+   "baca": "TA-liirsy / LZYII-tse",
+   "id": "piring / sendok"
+  },
+  {
+   "cs": "vidlička / nůž",
+   "baca": "VID-lic-ka / nuusy",
+   "id": "garpu / pisau"
+  },
+  {
+   "cs": "ubrousek",
+   "baca": "U-brou-sek",
+   "id": "serbet (lk)"
+  },
+  {
+   "cs": "přidat si",
+   "baca": "PRZYI-dat si",
+   "id": "menambah (makanan)"
+  },
+  {
+   "cs": "sytý / hladový",
+   "baca": "SY-tii / HLA-do-vii",
+   "id": "kenyang / lapar"
+  },
+  {
+   "cs": "měj se",
+   "baca": "mnyey se",
+   "id": "jaga diri"
+  },
+  {
+   "cs": "zatím ahoj",
+   "baca": "ZA-tyiim A-hoy",
+   "id": "sampai nanti"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ceko.",
+   "items": [
+    "Silakan masuk.",
+    "Ini untuk Anda.",
+    "Rumah Anda bagus.",
+    "Sehat selalu!",
+    "Terima kasih undangannya.",
+    "Sampai jumpa lagi."
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk waktu yang tepat: sekarang, lampau, atau depan.",
+   "items": [
+    "Včera jsem ____ (být) doma.",
+    "Teď ____ (bydlet) v Praze.",
+    "Zítra ____ (jít, waktu depan) do kina.",
+    "Minulý týden jsme ____ (jet) do Brna.",
+    "Příští rok ____ (studovat, waktu depan) v Brně."
+   ]
+  },
+  {
+   "prompt": "Benar atau salah? Perbaiki yang salah.",
+   "items": [
+    "Masuk rumah Ceko dengan sepatu itu wajar.",
+    "Bunga dibawa dalam jumlah genap.",
+    "Saat bersulang, tatap mata lawan bicara.",
+    "*Nemusíš jít* berarti \"kamu tidak boleh pergi\".",
+    "*No* di bahasa Ceko berarti \"tidak\"."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "dál / pojď",
+    "vás / pro / to / je",
+    "zdraví / na",
+    "pozvání / děkuju / za",
+    "se / brzy / uvidíme"
+   ]
+  }
+ ],
+ "answers": [
+  "Pojď dál. — To je pro vás. — Máte krásný dům. — Na zdraví! — Děkuju za pozvání. — Uvidíme se brzy.",
+  "byl — bydlím — půjdu — jeli — budu studovat",
+  "Salah: sepatu selalu dilepas. — Salah: jumlahnya ganjil. — Benar. — Salah: artinya \"kamu tidak perlu pergi\"; larangan memakai *nesmíš*. — Salah: *no* berarti \"ya\".",
+  "Pojď dál. — To je pro vás. — Na zdraví! — Děkuju za pozvání. — Uvidíme se brzy."
+ ]
+}

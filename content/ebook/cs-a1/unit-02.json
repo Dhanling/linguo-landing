@@ -1,0 +1,195 @@
+{
+ "title": "Dari mana asalmu?",
+ "title_target": "Odkud jsi? Jakou řečí mluvíš?",
+ "goal": "Menyebut asal negara dan kota, mengatakan bahasa apa saja yang kamu bisa, dan memakai kelompok kata kerja pertama yang berekor -ím.",
+ "bekal": [
+  "menjawab *odkud jsi?* dengan *jsem z…* dan nama negara yang benar",
+  "membedakan *mluvit* (berbicara) dari *umět* (menguasai) dan *rozumět* (mengerti)",
+  "memakai bentuk keterangan bahasa: *česky*, *anglicky*, *indonésky*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — V kavárně po hodině",
+   "intro": "Sesudah kelas pertama, Eva dan Budi mampir ke kafe di seberang sekolah. Mereka sudah sepakat ber-*ty*.",
+   "lines": [
+    { "speaker": "Eva:", "text": "Tak odkud jsi, Budi? Z Jakarty, viď?", "id": "Jadi kamu dari mana, Budi? Dari Jakarta, ya?", "literal": "jadi dari-mana kamu-adalah, Budi? dari Jakarta, bukan?" },
+    { "speaker": "Budi:", "text": "Ano, jsem z Jakarty, ale bydlím tady v Praze.", "id": "Ya, saya dari Jakarta, tapi tinggal di sini di Praha.", "literal": "ya, saya-adalah dari Jakarta, tapi saya-tinggal di-sini di Praha." },
+    { "speaker": "Eva:", "text": "Jak dlouho už tady jsi?", "id": "Sudah berapa lama kamu di sini?", "literal": "bagaimana lama sudah di-sini kamu-adalah?" },
+    { "speaker": "Budi:", "text": "Tři měsíce. Ještě neumím dobře česky.", "id": "Tiga bulan. Saya belum bisa bahasa Ceko dengan baik.", "literal": "tiga bulan. masih tidak-saya-menguasai baik ceko-nya." },
+    { "speaker": "Eva:", "text": "Ale mluvíš dobře! Rozumíš mi?", "id": "Tapi kamu bicaranya bagus! Kamu mengerti saya?", "literal": "tapi kamu-berbicara baik! kamu-mengerti kepada-saya?" },
+    { "speaker": "Budi:", "text": "Rozumím, ale mluv pomalu, prosím.", "id": "Mengerti, tapi bicaranya pelan-pelan ya.", "literal": "saya-mengerti, tapi bicara pelan, tolong." },
+    { "speaker": "Eva:", "text": "Dobře. A jakými jazyky mluvíš?", "id": "Baik. Bahasa apa saja yang kamu bisa?", "literal": "baik. dan dengan-bahasa-apa kamu-berbicara?" },
+    { "speaker": "Budi:", "text": "Indonésky, anglicky a trochu arabsky.", "id": "Indonesia, Inggris, dan sedikit Arab.", "literal": "indonesia-nya, inggris-nya dan sedikit arab-nya." },
+    { "speaker": "Eva:", "text": "To je hodně! Já umím jenom česky a anglicky.", "id": "Itu banyak! Saya cuma bisa Ceko dan Inggris.", "literal": "itu adalah banyak! saya saya-menguasai hanya ceko-nya dan inggris-nya." },
+    { "speaker": "Budi:", "text": "A německy? Praha je blízko Německa, ne?", "id": "Bahasa Jerman? Praha kan dekat Jerman?", "literal": "dan jerman-nya? Praha adalah dekat Jerman, bukan?" },
+    { "speaker": "Eva:", "text": "Trochu. Ale učím se raději španělsky.", "id": "Sedikit. Tapi saya lebih suka belajar bahasa Spanyol.", "literal": "sedikit. tapi saya-mengajar diri lebih-suka spanyol-nya." }
+   ],
+   "notes": [
+    "**Odkud = \"dari mana\", kde = \"di mana\", kam = \"ke mana\".** Bahasa Ceko memisahkan tiga hal yang bahasa Indonesia gabung jadi satu kata \"mana\" plus kata depan. Ketiganya juga menuntut bentuk kata benda yang berbeda — kamu akan menemuinya satu per satu.",
+    "**Z Jakarty, z Prahy** — perhatikan ekornya berubah. *Jakarta → Jakarty*, *Praha → Prahy*. Kata depan *z* (dari) selalu menarik ekor *genitiv*, dan untuk kata perempuan berujung *-a* ekornya jadi *-y*. Terima dulu; bentuknya diurus penuh di unit 10.",
+    "**V Praze, bukan v Praha.** Kata depan *v* (di) menarik ekor lain lagi, dan *Praha* berubah jadi *Praze* — huruf *h* pun ikut berganti jadi *z*. Ini yang paling sering bikin pemula ragu apakah dia salah baca.",
+    "**Viď?** adalah \"kan?\" versi Ceko — ditempel di ujung kalimat untuk minta persetujuan. Versi sopannya *viďte?*, versi paling santai *že jo?*",
+    "**Neumím ditulis menyatu.** Semua penyangkalan kata kerja di bahasa Ceko ditempel di depan sebagai *ne-*, tanpa spasi: *nemluvím* (saya tidak bicara), *nerozumím* (saya tidak mengerti), *nevím* (saya tidak tahu). Ini beda tajam dari bahasa Indonesia yang memisah \"tidak\".",
+    "**Mluv pomalu!** — bentuk perintah. Untuk *ty* biasanya cukup batang kata kerjanya: *mluv!* (bicaralah), *počkej!* (tunggu). Versi sopannya ditambah *-te*: *mluvte*, *počkejte*.",
+    "**Trochu** (sedikit) adalah kata paling berguna di bulan pertamamu. *Mluvím trochu česky* menyelamatkan percakapan lebih sering daripada kalimat apa pun yang lebih sopan."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja berekor -ím: mluvit, rozumět, bydlet",
+     "body": ["Kelompok kata kerja kedua yang paling banyak anggotanya. Ciri bentuk kamusnya berujung *-it*, *-et*, atau *-ět*."],
+     "table": {
+      "head": ["Pelaku", "*mluvit* (bicara)", "*rozumět* (mengerti)", "*bydlet* (tinggal)"],
+      "rows": [
+       ["já", "mluv**ím**", "rozum**ím**", "bydl**ím**"],
+       ["ty", "mluv**íš**", "rozum**íš**", "bydl**íš**"],
+       ["on/ona/ono", "mluv**í**", "rozum**í**", "bydl**í**"],
+       ["my", "mluv**íme**", "rozum**íme**", "bydl**íme**"],
+       ["vy", "mluv**íte**", "rozum**íte**", "bydl**íte**"],
+       ["oni/ony", "mluv**í**", "rozum**ějí**", "bydl**í**"]
+      ]
+     },
+     "after": [
+      "Perhatikan yang mengejutkan: bentuk **dia** dan bentuk **mereka** sering sama persis (*mluví*). Itu sebabnya kata ganti *on/ona/oni* jauh lebih sering ditulis daripada *já* atau *ty*.",
+      "Ekornya persis pola yang sudah kamu lihat pada *být*: **-m, -š, —, -me, -te**. Sekali kamu mengenali empat huruf ini, separuh sistem kata kerja Ceko sudah di tanganmu."
+     ]
+    },
+    {
+     "title": "Tiga kata kerja yang di bahasa Indonesia jadi satu \"bisa\"",
+     "body": ["Bahasa Indonesia memakai \"bisa bahasa Ceko\" untuk semuanya. Bahasa Ceko memisahkan tiga hal yang berbeda:"],
+     "table": {
+      "head": ["Kata kerja", "Artinya", "Contoh"],
+      "rows": [
+       ["*mluvit*", "**berbicara** — perbuatannya", "*Mluvím česky.* — saya berbicara Ceko"],
+       ["*umět*", "**menguasai** — keterampilannya", "*Umím česky.* — saya bisa bahasa Ceko"],
+       ["*rozumět*", "**mengerti** — menangkap artinya", "*Rozumím česky.* — saya paham Ceko"],
+       ["*učit se*", "**belajar** — sedang menuju bisa", "*Učím se česky.* — saya belajar Ceko"]
+      ]
+     },
+     "after": [
+      "Semuanya diikuti bentuk keterangan (*česky*, *anglicky*), bukan nama bahasanya. Nama bahasanya sendiri — *čeština*, *angličtina* — dipakai untuk hal lain: *Čeština je těžká* (bahasa Ceko itu sulit).",
+      "⚠️ *rozumět* menuntut ekor *dativ* pada orang yang dimengerti: *Rozumím **ti*** (aku mengerti kamu), *Nerozumím **mu*** (aku tidak mengerti dia). Kenali dua kata kecil ini sekarang; bentuk lengkapnya di unit 14."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Negara, orangnya, dan bahasanya",
+   "blocks": [
+    { "type": "p", "text": "Tiga lajur, tiga bentuk berbeda dari satu akar yang sama. Yang paling sering kamu pakai adalah lajur ketiga." },
+    { "type": "tabel", "head": ["Negara", "Orangnya (lk / pr)", "Bahasanya", "\"dari …\""], "rows": [
+     ["*Česko*", "*Čech / Češka*", "*česky*", "*z Česka*"],
+     ["*Indonésie*", "*Indonésan / Indonésanka*", "*indonésky*", "*z Indonésie*"],
+     ["*Anglie*", "*Angličan / Angličanka*", "*anglicky*", "*z Anglie*"],
+     ["*Amerika*", "*Američan / Američanka*", "*anglicky*", "*z Ameriky*"],
+     ["*Německo*", "*Němec / Němka*", "*německy*", "*z Německa*"],
+     ["*Slovensko*", "*Slovák / Slovenka*", "*slovensky*", "*ze Slovenska*"],
+     ["*Polsko*", "*Polák / Polka*", "*polsky*", "*z Polska*"],
+     ["*Rakousko*", "*Rakušan / Rakušanka*", "*německy*", "*z Rakouska*"],
+     ["*Francie*", "*Francouz / Francouzka*", "*francouzsky*", "*z Francie*"],
+     ["*Japonsko*", "*Japonec / Japonka*", "*japonsky*", "*z Japonska*"],
+     ["*Čína*", "*Číňan / Číňanka*", "*čínsky*", "*z Číny*"],
+     ["*Vietnam*", "*Vietnamec / Vietnamka*", "*vietnamsky*", "*z Vietnamu*"]
+    ] },
+    { "type": "kotak", "title": "Kenapa Vietnam ada di daftar ini", "items": [
+     "Orang Vietnam adalah kelompok pendatang terbesar ketiga di Ceko dan sudah tiga generasi tinggal di sana. Toko kelontong kecil di tiap sudut kota — *večerka* — hampir selalu dikelola keluarga Vietnam, dan buka saat semua toko lain tutup.",
+     "Artinya: kalau kamu orang Asia Tenggara di Praha, kemungkinan besar orang akan menyapa dengan menduga kamu orang Vietnam. Kalimat *Nejsem Vietnamec, jsem Indonésan* akan sering berguna — dan hampir selalu disambut senyum."
+    ] }
+   ]
+  },
+  {
+   "title": "Tiga kata tanya yang tidak boleh tertukar",
+   "blocks": [
+    { "type": "tabel", "head": ["Kata tanya", "Cara baca", "Menanyakan", "Contoh jawaban"], "rows": [
+     ["*Kdo?*", "gdo", "siapa", "*To je Eva.*"],
+     ["*Co?*", "tso", "apa", "*To je káva.*"],
+     ["*Kde?*", "gde", "di mana", "*V Praze.*"],
+     ["*Kam?*", "kam", "ke mana", "*Do Prahy.*"],
+     ["*Odkud?*", "OT-kut", "dari mana", "*Z Prahy.*"],
+     ["*Kdy?*", "gdy", "kapan", "*Zítra.*"],
+     ["*Proč?*", "proc", "kenapa", "*Protože…*"],
+     ["*Jak?*", "yak", "bagaimana", "*Dobře.*"],
+     ["*Kolik?*", "KO-lik", "berapa", "*Tři.*"]
+    ] },
+    { "type": "p", "text": "Perhatikan *kd-* di awal empat kata: huruf *d* di sana **dibunyikan sebagai g** — *kdo* jadi \"gdo\", *kde* jadi \"gde\". Ini satu-satunya kelompok kata di mana ejaan Ceko tidak persis mengikuti bunyinya, dan untungnya jumlahnya bisa dihitung jari." },
+    { "type": "kotak", "title": "Kalimat penyelamat bulan pertama", "items": [
+     "*Mluvím jenom trochu česky.* — Saya cuma bisa sedikit bahasa Ceko.",
+     "*Můžete to zopakovat?* — Bisa diulang?",
+     "*Co znamená …?* — Apa artinya …?",
+     "*Jak se to píše?* — Bagaimana menulisnya?"
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "cs": "odkud", "baca": "OT-kut", "id": "dari mana" },
+  { "cs": "kde", "baca": "gde", "id": "di mana" },
+  { "cs": "kam", "baca": "kam", "id": "ke mana" },
+  { "cs": "bydlet", "baca": "BYD-let", "id": "tinggal, berdiam" },
+  { "cs": "mluvit", "baca": "MLU-vit", "id": "berbicara" },
+  { "cs": "umět", "baca": "U-mnyet", "id": "bisa, menguasai" },
+  { "cs": "rozumět", "baca": "RO-zu-mnyet", "id": "mengerti" },
+  { "cs": "učit se", "baca": "U-cit se", "id": "belajar" },
+  { "cs": "vědět", "baca": "VYE-jet", "id": "tahu" },
+  { "cs": "jazyk / řeč", "baca": "YA-zyk / rzyec", "id": "bahasa; lidah" },
+  { "cs": "čeština", "baca": "CES-yti-na", "id": "bahasa Ceko (sebagai nama)" },
+  { "cs": "česky", "baca": "CES-ky", "id": "dalam bahasa Ceko" },
+  { "cs": "anglicky", "baca": "AN-glits-ky", "id": "dalam bahasa Inggris" },
+  { "cs": "indonésky", "baca": "IN-do-nees-ky", "id": "dalam bahasa Indonesia" },
+  { "cs": "trochu", "baca": "TRO-khu", "id": "sedikit" },
+  { "cs": "hodně", "baca": "HOD-nye", "id": "banyak" },
+  { "cs": "jenom / jen", "baca": "YE-nom / yen", "id": "hanya" },
+  { "cs": "ještě", "baca": "YES-yitye", "id": "masih; lagi" },
+  { "cs": "už", "baca": "usy", "id": "sudah" },
+  { "cs": "ale", "baca": "A-le", "id": "tapi" },
+  { "cs": "protože", "baca": "PRO-to-zye", "id": "karena" },
+  { "cs": "pomalu", "baca": "PO-ma-lu", "id": "pelan-pelan" },
+  { "cs": "rychle", "baca": "RYKH-le", "id": "cepat" },
+  { "cs": "dlouho", "baca": "DLOU-ho", "id": "lama" },
+  { "cs": "měsíc", "baca": "MNYE-siits", "id": "bulan" },
+  { "cs": "rok", "baca": "rok", "id": "tahun" },
+  { "cs": "blízko", "baca": "BLIIS-ko", "id": "dekat" },
+  { "cs": "daleko", "baca": "DA-le-ko", "id": "jauh" },
+  { "cs": "tady / tu", "baca": "TA-dy / tu", "id": "di sini" },
+  { "cs": "raději", "baca": "RA-jey-yi", "id": "lebih suka" }
+ ],
+ "exercises": [
+  { "prompt": "Terjemahkan ke bahasa Ceko.", "items": [
+   "Kamu dari mana?",
+   "Saya dari Indonesia.",
+   "Saya tinggal di Praha.",
+   "Saya belum bisa bahasa Ceko.",
+   "Saya mengerti sedikit.",
+   "Pelan-pelan, tolong."
+  ] },
+  { "prompt": "Lengkapi dengan bentuk *mluvit* yang tepat.", "items": [
+   "Já ____ indonésky.",
+   "Ty ____ moc rychle!",
+   "Eva ____ anglicky a německy.",
+   "My ____ česky doma.",
+   "Vy ____ pomalu, děkuji.",
+   "Oni ____ vietnamsky."
+  ] },
+  { "prompt": "Pilih *umím*, *mluvím*, *rozumím*, atau *učím se*.", "items": [
+   "____ česky, ale jenom trochu. (menguasai)",
+   "Ne____ ti, mluv pomalu. (mengerti)",
+   "Každý den ____ česky. (belajar)",
+   "Teď ____ s Evou. (berbicara)",
+   "____ anglicky velmi dobře. (menguasai)"
+  ] },
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "jsi / odkud / ?",
+   "v / bydlím / Praze",
+   "česky / neumím / ještě",
+   "trochu / mluvím / jenom",
+   "se / učím / španělsky"
+  ] }
+ ],
+ "answers": [
+  "Odkud jsi? — Jsem z Indonésie. — Bydlím v Praze. — Ještě neumím česky. — Rozumím trochu. — Pomalu, prosím.",
+  "mluvím — mluvíš — mluví — mluvíme — mluvíte — mluví",
+  "Umím — Nerozumím — učím se — mluvím — Umím",
+  "Odkud jsi? — Bydlím v Praze. — Ještě neumím česky. — Mluvím jenom trochu. — Učím se španělsky."
+ ]
+}

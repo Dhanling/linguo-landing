@@ -1,0 +1,210 @@
+{
+ "title": "Jam berapa sekarang?",
+ "title_target": "Kolik je hodin?",
+ "goal": "Membaca jam dengan dua cara yang dipakai orang Ceko, menyebut hari dan bulan, dan membuat janji sederhana.",
+ "bekal": [
+  "menjawab *Kolik je hodin?* baik dengan cara resmi maupun cara sehari-hari",
+  "menyebut hari dalam seminggu dengan *v pondělí*, *ve středu*",
+  "menanyakan jam buka dan jam kereta"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Domlouváme se na kino",
+   "intro": "Eva menelepon Budi untuk mengajaknya nonton.",
+   "lines": [
+    { "speaker": "Eva:", "text": "Ahoj Budi. Máš čas ve čtvrtek večer?", "id": "Halo Budi. Kamu ada waktu Kamis malam?", "literal": "halo Budi. kamu-punya waktu pada-Kamis malam?" },
+    { "speaker": "Budi:", "text": "Ve čtvrtek? Moment… ano, mám. Proč?", "id": "Kamis? Sebentar… ya, ada. Kenapa?", "literal": "pada-Kamis? sebentar… ya, saya-punya. kenapa?" },
+    { "speaker": "Eva:", "text": "V kině dávají nový český film. Začíná v osm.", "id": "Di bioskop ada film Ceko baru. Mulai jam delapan.", "literal": "di bioskop mereka-memberi baru ceko film. mulai pada delapan." },
+    { "speaker": "Budi:", "text": "V osm večer? To je super. Kdy se sejdeme?", "id": "Jam delapan malam? Bagus. Kita ketemu jam berapa?", "literal": "pada delapan malam? itu adalah bagus. kapan diri kita-bertemu?" },
+    { "speaker": "Eva:", "text": "Ve tři čtvrtě na osm před kinem?", "id": "Jam tujuh empat puluh lima di depan bioskop?", "literal": "pada tiga perempat menuju delapan di-depan bioskop?" },
+    { "speaker": "Budi:", "text": "Počkej — tři čtvrtě na osm? To je kolik?", "id": "Tunggu — tři čtvrtě na osm? Itu jam berapa?", "literal": "tunggu — tiga perempat menuju delapan? itu adalah berapa?" },
+    { "speaker": "Eva:", "text": "Sedm čtyřicet pět. My počítáme dopředu, ne dozadu.", "id": "Tujuh empat lima. Kami menghitung ke depan, bukan ke belakang.", "literal": "tujuh empat-puluh lima. kami kami-menghitung ke-depan, tidak ke-belakang." },
+    { "speaker": "Budi:", "text": "Aha! Takže půl osmé je sedm třicet?", "id": "Oh! Jadi *půl osmé* itu tujuh tiga puluh?", "literal": "aha! jadi setengah kedelapan adalah tujuh tiga-puluh?" },
+    { "speaker": "Eva:", "text": "Přesně. Půl cesty k osmé hodině.", "id": "Tepat. Setengah jalan menuju jam delapan.", "literal": "tepat. setengah jalan ke delapan jam." },
+    { "speaker": "Budi:", "text": "Dobře, budu tam. A v kolik to končí?", "id": "Baik, saya akan di sana. Selesai jam berapa?", "literal": "baik, saya-akan di-sana. dan pada berapa itu berakhir?" },
+    { "speaker": "Eva:", "text": "Kolem desáté. Pak můžeme na pivo. Tak zatím!", "id": "Sekitar jam sepuluh. Habis itu kita bisa minum bir. Sampai nanti!", "literal": "sekitar kesepuluh. lalu kita-bisa untuk bir. jadi sementara!" }
+   ],
+   "notes": [
+    "**Bahasa Ceko menghitung jam ke depan, bukan ke belakang.** Ini jebakan terbesar unit ini. *Půl osmé* bukan \"setengah delapan\" seperti dugaan kita, melainkan **7.30** — harfiahnya \"setengah (jalan menuju jam) kedelapan\". Bahasa Indonesia dan Inggris menghitung dari jam yang sudah lewat; bahasa Ceko, seperti Jerman dan Belanda, menghitung menuju jam berikutnya.",
+    "**Tři čtvrtě na osm** = tiga perempat menuju delapan = **7.45**. Dan *čtvrt na osm* = seperempat menuju delapan = **7.15**. Sekali kamu menerima logika \"menuju\", tiga bentuk ini jadi satu keluarga yang rapi.",
+    "**Untungnya ada jalan keluar.** Cara resmi — angka 24 jam seperti jadwal kereta — dipakai semua orang dan tidak pernah salah paham: *sedm čtyřicet pět*, *devatenáct hodin*. Kalau kamu ragu, pakai itu.",
+    "**V osm, ve čtvrtek** — kata depan *v* jadi *ve* di depan kata yang diawali dua huruf mati atau huruf yang sama. Itu bukan kata lain; itu cuma vokal penolong supaya lidah tidak tersandung. Hal yang sama terjadi pada *s → se*, *z → ze*, *k → ke*.",
+    "**Sejdeme se** = kita bertemu (janjian). Kata kerja ini hampir selalu membawa *se*. Bentuk lain yang sering: *Kde se sejdeme?* (ketemu di mana?), *Sejdeme se v osm.*",
+    "**Zatím!** harfiahnya \"sementara\", dipakai sebagai \"sampai nanti\" yang santai. Salam perpisahan lain yang sering: *měj se* (jaga diri, ke satu orang), *mějte se* (sopan/banyak), *tak čau*.",
+    "**Kolem desáté** = sekitar jam sepuluh. *Kolem* (sekitar) diikuti bentuk *genitiv*, dan angka jam memakai bentuk urutan: *desátá hodina* → *kolem desáté*."
+   ],
+   "grammars": [
+    {
+     "title": "Dua cara menyebut jam",
+     "body": ["Pakailah lajur kanan sampai telingamu terbiasa; pakailah lajur tengah supaya kamu mengerti orang Ceko."],
+     "table": {
+      "head": ["Jam", "Cara sehari-hari", "Cara resmi (24 jam)"],
+      "rows": [
+       ["7.00", "*sedm hodin*", "*sedm hodin*"],
+       ["7.15", "*čtvrt na osm*", "*sedm patnáct*"],
+       ["7.30", "*půl osmé*", "*sedm třicet*"],
+       ["7.45", "*tři čtvrtě na osm*", "*sedm čtyřicet pět*"],
+       ["8.00", "*osm hodin*", "*osm hodin*"],
+       ["12.00", "*poledne*", "*dvanáct hodin*"],
+       ["19.00", "*sedm večer*", "*devatenáct hodin*"],
+       ["00.00", "*půlnoc*", "*nula hodin*"]
+      ]
+     },
+     "after": [
+      "Menanyakannya: *Kolik je hodin?* (jam berapa sekarang) — perhatikan *hodin*, bentuk genitiv jamak sesudah *kolik*, seperti aturan unit 6.",
+      "Menanyakan waktu janji: *V kolik?* (jam berapa?). Menjawabnya dengan *v*: *V osm.* — kecuali untuk setengah dan perempat, yang tidak memakai *v* sama sekali: *Půl osmé.*",
+      "*ráno* (pagi), *dopoledne* (menjelang siang), *odpoledne* (sore), *večer* (malam), *v noci* (dini hari) — dipasang di belakang angka kalau perlu jelas: *v osm ráno*, *v osm večer*."
+     ]
+    },
+    {
+     "title": "Hari, minggu, bulan",
+     "body": ["Nama hari Ceko punya arti yang masih terbaca, dan hari Senin adalah hari pertama."],
+     "tables": [
+      {
+       "head": ["Hari", "\"pada hari…\"", "Arti aslinya"],
+       "rows": [
+        ["*pondělí*", "*v pondělí*", "sesudah *neděle* (hari istirahat)"],
+        ["*úterý*", "*v úterý*", "yang kedua"],
+        ["*středa*", "**ve** *středu*", "yang di tengah"],
+        ["*čtvrtek*", "*ve čtvrtek*", "yang keempat"],
+        ["*pátek*", "*v pátek*", "yang kelima"],
+        ["*sobota*", "*v sobotu*", "dari kata *šabat*"],
+        ["*neděle*", "*v neděli*", "hari tanpa kerja"]
+       ]
+      },
+      {
+       "head": ["Bulan", "Arti aslinya", "Bulan", "Arti aslinya"],
+       "rows": [
+        ["*leden*", "es", "*červenec*", "merah (lanjutan)"],
+        ["*únor*", "es hanyut", "*srpen*", "sabit panen"],
+        ["*březen*", "pohon birch", "*září*", "rusa mengaum"],
+        ["*duben*", "pohon ek", "*říjen*", "musim kawin rusa"],
+        ["*květen*", "bunga", "*listopad*", "daun gugur"],
+        ["*červen*", "merah", "*prosinec*", "permintaan"]
+       ]
+      }
+     ],
+     "after": [
+      "**Nama bulan Ceko bukan dari bahasa Latin.** Berbeda dari hampir seluruh Eropa, bahasa Ceko mempertahankan nama Slavia asli yang menggambarkan alam: *listopad* benar-benar berarti \"daun gugur\". Itu membuat menghafalnya lebih menyenangkan — tapi juga berarti tak ada satu pun yang bisa kamu tebak dari bahasa Inggris.",
+      "\"Pada bulan…\" memakai *v* + bentuk keenam: *v lednu*, *v únoru*, *v květnu*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata waktu yang paling sering",
+   "blocks": [
+    { "type": "tabel", "head": ["Čeština", "Cara baca", "Arti"], "rows": [
+     ["*teď*", "tety", "sekarang"],
+     ["*dnes*", "dnes", "hari ini"],
+     ["*včera*", "VCE-ra", "kemarin"],
+     ["*zítra*", "ZII-tra", "besok"],
+     ["*předevčírem*", "PRZYE-de-vcii-rem", "kemarin lusa"],
+     ["*pozítří*", "PO-ziit-rzyii", "lusa"],
+     ["*dneska ráno*", "DNES-ka RAA-no", "tadi pagi"],
+     ["*minulý týden*", "MI-nu-lii TII-den", "minggu lalu"],
+     ["*příští týden*", "PRZYIISY-tyii", "minggu depan"],
+     ["*každý den*", "KAZY-dii den", "setiap hari"],
+     ["*vždycky / nikdy*", "VZYDYTS-ky / NYIG-dy", "selalu / tidak pernah"],
+     ["*často / někdy*", "CAS-to / NYEG-dy", "sering / kadang"]
+    ] },
+    { "type": "kotak", "title": "Satu jebakan kecil yang sering", "items": [
+     "*Týden* berarti **minggu** (tujuh hari), sementara **hari Minggu** adalah *neděle*. Dua kata yang sama sekali berbeda, dan bahasa Indonesia menyatukannya jadi satu.",
+     "*Za týden* = seminggu lagi. *Před týdnem* = seminggu lalu. Dua kata depan ini menandai arah waktu, dan keduanya menuntut ekor kata benda yang berbeda."
+    ] }
+   ]
+  },
+  {
+   "title": "Menanyakan waktu di dunia nyata",
+   "blocks": [
+    { "type": "tabel", "head": ["Kalimat", "Arti"], "rows": [
+     ["*Kolik je hodin?*", "Jam berapa sekarang?"],
+     ["*V kolik hodin?*", "Jam berapa (acaranya)?"],
+     ["*Kdy to začíná?*", "Kapan mulainya?"],
+     ["*Kdy to končí?*", "Kapan selesainya?"],
+     ["*Máš čas zítra?*", "Besok kamu ada waktu?"],
+     ["*Kdy máte otevřeno?*", "Jam buka Anda kapan?"],
+     ["*Do kolika máte otevřeno?*", "Buka sampai jam berapa?"],
+     ["*Kdy jede další vlak?*", "Kereta berikutnya jam berapa?"],
+     ["*Jak dlouho to trvá?*", "Berapa lama?"],
+     ["*Promiňte, jdu pozdě.*", "Maaf, saya terlambat."]
+    ] },
+    { "type": "kotak", "title": "Ketepatan waktu di Ceko", "items": [
+     "Datang tepat waktu di Ceko bukan basa-basi. Untuk janji pribadi, terlambat lima menit masih dimaafkan; untuk urusan kantor, dokter, atau kelas, lima menit sudah terasa lalai.",
+     "*Otevřeno* (buka) dan *zavřeno* (tutup) adalah dua kata yang paling sering kamu baca di pintu. Tambahan yang berguna: *polední pauza* — jeda makan siang, biasanya 12.00–13.00, ketika kantor kecil dan kantor pos benar-benar tutup."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "cs": "hodina", "baca": "HO-jyi-na", "id": "jam (satuan); pelajaran" },
+  { "cs": "minuta", "baca": "MI-nu-ta", "id": "menit" },
+  { "cs": "čas", "baca": "cas", "id": "waktu (lk)" },
+  { "cs": "půl", "baca": "puul", "id": "setengah" },
+  { "cs": "čtvrt", "baca": "ctvrt", "id": "seperempat" },
+  { "cs": "poledne / půlnoc", "baca": "PO-led-ne / PUUL-nots", "id": "tengah hari / tengah malam" },
+  { "cs": "ráno / dopoledne", "baca": "RAA-no", "id": "pagi / menjelang siang" },
+  { "cs": "odpoledne / večer", "baca": "OT-po-led-ne / VE-cer", "id": "sore / malam" },
+  { "cs": "noc", "baca": "nots", "id": "malam (pr) ⚠️" },
+  { "cs": "den / týden", "baca": "den / TII-den", "id": "hari / minggu" },
+  { "cs": "pondělí / úterý", "baca": "PON-dye-lii / UU-te-rii", "id": "Senin / Selasa" },
+  { "cs": "středa / čtvrtek", "baca": "STRZYE-da / CTVR-tek", "id": "Rabu / Kamis" },
+  { "cs": "pátek / sobota", "baca": "PAA-tek / SO-bo-ta", "id": "Jumat / Sabtu" },
+  { "cs": "neděle", "baca": "NE-jye-le", "id": "hari Minggu" },
+  { "cs": "víkend", "baca": "VII-kent", "id": "akhir pekan (lk)" },
+  { "cs": "začínat / začít", "baca": "ZA-cii-nat", "id": "mulai" },
+  { "cs": "končit / skončit", "baca": "KON-cit", "id": "berakhir" },
+  { "cs": "trvat", "baca": "TR-vat", "id": "berlangsung, memakan waktu" },
+  { "cs": "sejít se", "baca": "SE-yiit se", "id": "bertemu, janjian" },
+  { "cs": "čekat / počkat", "baca": "CE-kat", "id": "menunggu" },
+  { "cs": "otevřeno / zavřeno", "baca": "O-tev-rzye-no", "id": "buka / tutup" },
+  { "cs": "pozdě / brzy", "baca": "POZ-dye / BR-zy", "id": "terlambat / awal" },
+  { "cs": "kolem", "baca": "KO-lem", "id": "sekitar" },
+  { "cs": "pak / potom", "baca": "pak / PO-tom", "id": "lalu, kemudian" },
+  { "cs": "kino", "baca": "KI-no", "id": "bioskop (netral)" },
+  { "cs": "film", "baca": "film", "id": "film (lk)" },
+  { "cs": "před / za", "baca": "przyet / za", "id": "sebelum, di depan / sesudah, di balik" },
+  { "cs": "moment / momentík", "baca": "MO-ment", "id": "sebentar" },
+  { "cs": "zatím", "baca": "ZA-tyiim", "id": "sementara; sampai nanti" },
+  { "cs": "vlak / autobus", "baca": "vlak / AU-to-bus", "id": "kereta / bus" }
+ ],
+ "exercises": [
+  { "prompt": "Tulis jamnya dengan cara sehari-hari.", "items": [
+   "9.30 → ____",
+   "6.15 → ____",
+   "10.45 → ____",
+   "3.30 → ____",
+   "12.00 → ____"
+  ] },
+  { "prompt": "Lengkapi dengan *v* atau *ve* dan bentuk hari yang benar.", "items": [
+   "pondělí → ____",
+   "středa → ____",
+   "čtvrtek → ____",
+   "sobota → ____",
+   "neděle → ____"
+  ] },
+  { "prompt": "Terjemahkan ke bahasa Ceko.", "items": [
+   "Jam berapa sekarang?",
+   "Sekarang jam delapan.",
+   "Besok kamu ada waktu?",
+   "Filmnya mulai jam tujuh.",
+   "Kita ketemu di depan bioskop.",
+   "Maaf, saya terlambat."
+  ] },
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "hodin / je / kolik / ?",
+   "osm / v / začíná / to",
+   "čas / máš / zítra / ?",
+   "se / kde / sejdeme / ?",
+   "otevřeno / máte / kdy / ?"
+  ] }
+ ],
+ "answers": [
+  "půl desáté — čtvrt na sedm — tři čtvrtě na jedenáct — půl čtvrté — poledne",
+  "v pondělí — ve středu — ve čtvrtek — v sobotu — v neděli",
+  "Kolik je hodin? — Je osm hodin. — Máš čas zítra? — Film začíná v sedm. — Sejdeme se před kinem. — Promiňte, jdu pozdě.",
+  "Kolik je hodin? — To začíná v osm. — Máš zítra čas? — Kde se sejdeme? — Kdy máte otevřeno?"
+ ]
+}

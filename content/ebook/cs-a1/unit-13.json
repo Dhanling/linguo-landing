@@ -1,0 +1,196 @@
+{
+ "title": "Cuaca dan empat musim",
+ "title_target": "Jaké je počasí?",
+ "goal": "Menceritakan cuaca dan musim, memakai kalimat tanpa pelaku, dan memahami kenapa cuaca adalah topik pembuka percakapan nomor satu di Ceko.",
+ "bekal": [
+  "menjawab *Jaké je dnes počasí?* dengan lima cara berbeda",
+  "memakai kalimat tanpa pelaku: *prší*, *sněží*, *je zima*",
+  "menyebut empat musim dan apa yang orang lakukan di dalamnya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Listopadové ráno",
+   "intro": "Pagi November, gelap dan berkabut. Budi bertemu tetangganya, pan Dvořák, di depan gedung.",
+   "lines": [
+    { "speaker": "Dvořák:", "text": "Dobrý den. To je ale počasí, co?", "id": "Selamat pagi. Cuacanya ya ampun, ya?", "literal": "baik hari. itu adalah tapi cuaca, apa?" },
+    { "speaker": "Budi:", "text": "Dobrý den. Je hrozná zima a nic nevidím.", "id": "Selamat pagi. Dingin sekali dan saya tidak lihat apa-apa.", "literal": "baik hari. adalah mengerikan dingin dan apa-pun tidak-saya-lihat." },
+    { "speaker": "Dvořák:", "text": "To je mlha. V listopadu je to normální.", "id": "Itu kabut. Bulan November memang begitu.", "literal": "itu adalah kabut. di November adalah itu normal." },
+    { "speaker": "Budi:", "text": "U nás v Indonésii mlha nikdy není.", "id": "Di Indonesia kabutnya tidak pernah ada.", "literal": "di kami di Indonesia kabut tidak-pernah tidak-adalah." },
+    { "speaker": "Dvořák:", "text": "A jaké je u vás počasí?", "id": "Cuaca di tempat Anda bagaimana?", "literal": "dan bagaimana adalah di kalian cuaca?" },
+    { "speaker": "Budi:", "text": "Vždycky teplo, kolem třiceti stupňů. Buď svítí slunce, nebo prší.", "id": "Selalu hangat, sekitar tiga puluh derajat. Kalau tidak panas ya hujan.", "literal": "selalu hangat, sekitar tiga-puluh derajat. entah bersinar matahari, atau turun-hujan." },
+    { "speaker": "Dvořák:", "text": "Jenom dvě roční období? To je nuda!", "id": "Cuma dua musim? Membosankan!", "literal": "hanya dua tahunan masa? itu adalah kebosanan!" },
+    { "speaker": "Budi:", "text": "Možná. Ale nikdy mi není zima.", "id": "Mungkin. Tapi saya tidak pernah kedinginan.", "literal": "mungkin. tapi tidak-pernah kepada-saya tidak-adalah dingin." },
+    { "speaker": "Dvořák:", "text": "Počkejte na leden. Bude mínus deset a bude sněžit.", "id": "Tunggu Januari. Nanti minus sepuluh dan turun salju.", "literal": "tunggulah pada Januari. akan minus sepuluh dan akan turun-salju." },
+    { "speaker": "Budi:", "text": "Mínus deset? To je horor. Budu doma.", "id": "Minus sepuluh? Horor. Saya di rumah saja.", "literal": "minus sepuluh? itu adalah horor. saya-akan di-rumah." },
+    { "speaker": "Dvořák:", "text": "Ale kdepak! Zima je krásná. Uvidíte.", "id": "Ah, tidak juga! Musim dingin itu indah. Anda akan lihat sendiri.", "literal": "tapi di-mana-pun! musim-dingin adalah indah. kalian-akan-melihat." }
+   ],
+   "notes": [
+    "**Prší, sněží, mrzne** — kalimat tanpa pelaku. Bahasa Ceko tidak memakai \"itu\" seperti bahasa Inggris (*it rains*); kata kerjanya berdiri sendiri, persis seperti bahasa Indonesia \"hujan\". Untuk sekali ini, susunannya justru lebih dekat ke bahasa kita daripada ke bahasa Inggris.",
+    "**Je zima punya dua arti.** Sebagai kalimat tanpa pelaku ia berarti \"dingin\" (cuacanya). Sebagai kata benda, *zima* berarti \"musim dingin\". Kalimat *V zimě je zima* — \"di musim dingin dinginnya terasa\" — sepenuhnya benar dan sering dijadikan lelucon oleh guru bahasa.",
+    "**Mi není zima** — \"bagi saya tidak dingin\". Untuk merasa dingin, orang Ceko memakai penerima, bukan pelaku: *Je mi zima* (saya kedinginan), *Je mi teplo* (saya kepanasan). Membedakannya penting: *Jsem studený* berarti tubuhmu dingin ketika disentuh — kalimat yang biasanya dipakai untuk mayat.",
+    "**To je ale počasí!** — \"cuacanya, ya ampun!\". *Ale* di tengah kalimat seruan bukan berarti \"tapi\", melainkan penguat, seperti \"deh\" atau \"ya ampun\" dalam bahasa Indonesia.",
+    "**Kolem třiceti stupňů** — sesudah *kolem* muncul genitiv, dan angka pun ikut berubah bentuk (*třicet → třiceti*). Angka Ceko memang punya bentuk sendiri; untuk A1 cukup kenali potongannya.",
+    "**Buď … nebo …** = entah … atau …. Pasangan kata sambung yang berguna, sama seperti *ani … ani …* (tidak … tidak juga …).",
+    "**Kdepak!** adalah penolakan ramah — \"ah, mana mungkin\", \"nggak lah\". Kata seruan Ceko lain yang sering: *no jo* (ya sudahlah), *ale jo* (eh, iya juga), *fakt?* (serius?)."
+   ],
+   "grammars": [
+    {
+     "title": "Kalimat tanpa pelaku",
+     "body": ["Seluruh percakapan cuaca berdiri di atas bentuk ini. Kata kerjanya selalu bentuk **dia**, dan pelakunya memang tidak ada."],
+     "table": {
+      "head": ["Ceko", "Cara baca", "Arti"],
+      "rows": [
+       ["*Prší.*", "PR-syii", "Hujan."],
+       ["*Sněží.*", "SNYE-zyii", "Turun salju."],
+       ["*Mrzne.*", "MRZ-ne", "Membeku, di bawah nol."],
+       ["*Fouká vítr.*", "FOU-kaa VII-tr", "Angin bertiup."],
+       ["*Svítí slunce.*", "SVII-tyii SLUN-tse", "Matahari bersinar."],
+       ["*Je zima.*", "ye ZI-ma", "Dingin."],
+       ["*Je teplo.*", "ye TEP-lo", "Hangat."],
+       ["*Je horko.*", "ye HOR-ko", "Panas."],
+       ["*Je hezky.*", "ye HES-ky", "Cuacanya bagus."],
+       ["*Je ošklivo.*", "ye OSY-kli-vo", "Cuacanya jelek."],
+       ["*Je zataženo.*", "ye ZA-ta-zye-no", "Mendung."],
+       ["*Je mlha.*", "ye ML-ha", "Berkabut."]
+      ]
+     },
+     "after": [
+      "Perhatikan ekornya: kata yang mengikuti *je* berbentuk **-o** atau **-y** (*teplo*, *hezky*) — itu bentuk keterangan, bukan kata sifat. Karena tidak ada benda yang disifati, tidak ada jenis kelamin yang perlu diikuti.",
+      "Bentuk lampaunya cukup menambahkan *bylo*: *Bylo hezky.* (cuacanya tadi bagus), *Pršelo.* (tadi hujan). Bentuk depannya *bude*: *Bude zima.* (nanti dingin)."
+     ]
+    },
+    {
+     "title": "Empat musim",
+     "body": ["Ceko punya empat musim yang benar-benar berbeda satu sama lain — kenyataan yang bagi pembaca dari daerah tropis lebih penting daripada tata bahasanya."],
+     "table": {
+      "head": ["Musim", "\"di musim …\"", "Bulan", "Yang khas"],
+      "rows": [
+       ["*jaro* — semi", "*na jaře*", "Mar–Mei", "*všechno kvete* — semuanya berbunga"],
+       ["*léto* — panas", "*v létě*", "Jun–Agu", "*chataření* — pergi ke pondok desa"],
+       ["*podzim* — gugur", "*na podzim*", "Sep–Nov", "*houbaření* — berburu jamur"],
+       ["*zima* — dingin", "*v zimě*", "Des–Feb", "*vánoční trhy* — pasar Natal"]
+      ]
+     },
+     "after": [
+      "**Berburu jamur adalah olahraga nasional Ceko.** Setiap akhir pekan musim gugur, jutaan orang masuk hutan dengan keranjang. Ceko punya jumlah pemburu jamur per kepala tertinggi di dunia, dan hampir setiap keluarga punya tempat rahasia yang tidak diberitahukan ke siapa pun.",
+      "**Chata dan chalupa** — pondok akhir pekan di desa — juga bagian dari kehidupan Ceko yang tak terjelaskan tanpa sejarah: selama masa sosialis, pondok kecil adalah satu-satunya milik pribadi yang boleh diurus sesuka hati, dan kebiasaan itu tak pernah hilang."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bicara cuaca seperti orang Ceko",
+   "blocks": [
+    { "type": "p", "text": "Cuaca adalah pembuka percakapan nomor satu di Ceko, dipakai di lift, di antrean, dan di halte trem. Mengeluhkan cuaca bersama-sama adalah bentuk keakraban, bukan kesuraman — dan bergabung di dalamnya adalah cara tercepat terdengar seperti orang lokal." },
+    { "type": "tabel", "head": ["Kalimat", "Arti"], "rows": [
+     ["*Jaké je dnes počasí?*", "Hari ini cuacanya bagaimana?"],
+     ["*Je hezky, že jo?*", "Bagus ya cuacanya?"],
+     ["*To je ale zima!*", "Dingin banget!"],
+     ["*Prší celý den.*", "Hujan seharian."],
+     ["*Kolik je stupňů?*", "Berapa derajat?"],
+     ["*Je dvacet stupňů.*", "Dua puluh derajat."],
+     ["*Je mínus pět.*", "Minus lima."],
+     ["*Zítra má pršet.*", "Besok katanya hujan."],
+     ["*Vezmi si deštník.*", "Bawa payung."],
+     ["*Konečně svítí slunce!*", "Akhirnya matahari keluar!"]
+    ] },
+    { "type": "kotak", "title": "Yang tidak tertulis di buku cuaca", "items": [
+     "**Gelap datang jam empat sore di Desember**, dan itu — bukan suhunya — yang paling memukul pendatang dari daerah khatulistiwa. Sebaliknya di Juni, matahari masih terang jam sembilan malam.",
+     "*Babí léto* (\"musim panas nenek\") adalah minggu-minggu hangat di awal musim gugur yang ditunggu semua orang, sepupu dari \"Indian summer\".",
+     "*Zamrzlý* (beku), *náledí* (jalan licin berlapis es), *plískanice* (campuran hujan-salju yang membuat semua orang murung) — tiga kata yang akan kamu pelajari lewat pengalaman."
+    ] }
+   ]
+  },
+  {
+   "title": "Kegiatan menurut musim",
+   "blocks": [
+    { "type": "tabel", "head": ["Musim", "Kegiatan", "Ceko"], "rows": [
+     ["*jaro*", "jalan-jalan ke taman", "*chodit na procházky*"],
+     ["*jaro*", "bersepeda", "*jezdit na kole*"],
+     ["*léto*", "berenang di danau", "*koupat se v jezeře*"],
+     ["*léto*", "berkemah, pergi ke pondok", "*jezdit na chatu*"],
+     ["*podzim*", "berburu jamur", "*chodit na houby*"],
+     ["*podzim*", "minum anggur muda", "*pít burčák*"],
+     ["*zima*", "bermain ski", "*jezdit na lyžích*"],
+     ["*zima*", "meluncur es", "*bruslit*"],
+     ["*zima*", "minum anggur panas di pasar Natal", "*pít svařák*"]
+    ] },
+    { "type": "kotak", "title": "Dua minuman musiman yang perlu dicoba", "items": [
+     "***Burčák*** — anggur yang baru setengah jadi, manis, keruh, dan masih berfermentasi. Hanya ada beberapa minggu di September, hanya di Moravia, dan orang menempuh perjalanan jauh untuknya.",
+     "***Svařák*** — anggur merah panas berbumbu kayu manis dan cengkih, dijual di setiap pasar Natal dari akhir November. Dipegang dengan dua tangan sebagai penghangat, bukan cuma sebagai minuman."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "cs": "počasí", "baca": "PO-ca-sii", "id": "cuaca (netral)" },
+  { "cs": "pršet / prší", "baca": "PR-syet", "id": "hujan" },
+  { "cs": "sněžit / sněží", "baca": "SNYE-zyit", "id": "turun salju" },
+  { "cs": "déšť / sníh", "baca": "deesyty / snyiikh", "id": "hujan / salju (kata benda)" },
+  { "cs": "slunce", "baca": "SLUN-tse", "id": "matahari (netral)" },
+  { "cs": "vítr", "baca": "VII-tr", "id": "angin (lk)" },
+  { "cs": "mrak / oblačno", "baca": "mrak", "id": "awan / berawan" },
+  { "cs": "mlha", "baca": "ML-ha", "id": "kabut (pr)" },
+  { "cs": "bouřka", "baca": "BOURSY-ka", "id": "badai petir (pr)" },
+  { "cs": "led / náledí", "baca": "let", "id": "es / jalan berlapis es" },
+  { "cs": "stupeň / stupňů", "baca": "STU-peny", "id": "derajat" },
+  { "cs": "teplota", "baca": "TEP-lo-ta", "id": "suhu (pr)" },
+  { "cs": "mínus / plus", "baca": "MII-nus", "id": "minus / plus" },
+  { "cs": "zima / horko", "baca": "ZI-ma / HOR-ko", "id": "dingin / panas" },
+  { "cs": "teplo / chladno", "baca": "TEP-lo / KHLAD-no", "id": "hangat / sejuk" },
+  { "cs": "hezky / ošklivo", "baca": "HES-ky", "id": "cuaca bagus / jelek" },
+  { "cs": "jaro / léto", "baca": "YA-ro / LEE-to", "id": "musim semi / musim panas" },
+  { "cs": "podzim / zima", "baca": "POD-zim", "id": "musim gugur / musim dingin" },
+  { "cs": "roční období", "baca": "ROC-nyii OB-do-bii", "id": "musim (istilah)" },
+  { "cs": "deštník", "baca": "DESYTY-nyiik", "id": "payung (lk)" },
+  { "cs": "chata / chalupa", "baca": "KHA-ta", "id": "pondok akhir pekan (pr)" },
+  { "cs": "houby", "baca": "HOU-by", "id": "jamur (jamak)" },
+  { "cs": "lyže / bruslit", "baca": "LY-zye", "id": "ski / meluncur es" },
+  { "cs": "procházka", "baca": "PRO-khaas-ka", "id": "jalan-jalan (pr)" },
+  { "cs": "hrozný", "baca": "HROZ-nii", "id": "mengerikan" },
+  { "cs": "krásný", "baca": "KRAAS-nii", "id": "indah" },
+  { "cs": "možná", "baca": "MOZY-naa", "id": "mungkin" },
+  { "cs": "konečně", "baca": "KO-nec-nye", "id": "akhirnya" },
+  { "cs": "celý den", "baca": "TSE-lii den", "id": "seharian" },
+  { "cs": "buď … nebo …", "baca": "buty … NE-bo", "id": "entah … atau …" }
+ ],
+ "exercises": [
+  { "prompt": "Terjemahkan ke bahasa Ceko (kalimat tanpa pelaku).", "items": [
+   "Hujan.",
+   "Turun salju.",
+   "Dingin.",
+   "Panas.",
+   "Cuacanya bagus.",
+   "Mendung."
+  ] },
+  { "prompt": "Lengkapi dengan nama musim dan kata depannya.", "items": [
+   "Bunga bermekaran ____ (musim semi).",
+   "Orang ke pondok ____ (musim panas).",
+   "Orang berburu jamur ____ (musim gugur).",
+   "Turun salju ____ (musim dingin).",
+   "Pasar Natal ada ____ (musim dingin)."
+  ] },
+  { "prompt": "Pilih *je mi zima* atau *jsem studený* — mana yang benar untuk artinya?", "items": [
+   "Saya kedinginan. → ____",
+   "Saya kepanasan. → ____",
+   "Cuacanya dingin. → ____",
+   "Cuacanya hangat. → ____",
+   "Berapa derajat? → ____"
+  ] },
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "počasí / je / jaké / dnes / ?",
+   "zima / to / ale / je",
+   "den / prší / celý",
+   "stupňů / je / dvacet",
+   "deštník / si / vezmi"
+  ] }
+ ],
+ "answers": [
+  "Prší. — Sněží. — Je zima. — Je horko. — Je hezky. — Je zataženo.",
+  "na jaře — v létě — na podzim — v zimě — v zimě",
+  "Je mi zima. — Je mi teplo. — Je zima. — Je teplo. — Kolik je stupňů?",
+  "Jaké je dnes počasí? — To je ale zima! — Prší celý den. — Je dvacet stupňů. — Vezmi si deštník."
+ ]
+}

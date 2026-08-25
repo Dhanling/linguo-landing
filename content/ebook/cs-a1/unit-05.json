@@ -1,0 +1,195 @@
+{
+ "title": "Di kafe — bentuk yang dikenai pekerjaan",
+ "title_target": "V kavárně — akuzativ",
+ "goal": "Memesan minuman dan makanan kecil, memakai *chtít* dan *dát si*, dan mengenali bentuk keempat (*akuzativ*) — ekor untuk benda yang dikenai pekerjaan.",
+ "bekal": [
+  "memesan dengan *dám si…* dan *chtěl bych…*",
+  "mengubah *káva → kávu*, *čaj → čaj*, *pivo → pivo* dengan sadar kenapa",
+  "meminta bon dan membayar tanpa panik"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Objednáváme",
+   "intro": "Eva dan Budi duduk di kafe kecil di Vinohrady. Pelayan datang.",
+   "lines": [
+    { "speaker": "Číšník:", "text": "Dobrý den. Co si dáte?", "id": "Selamat siang. Mau pesan apa?", "literal": "baik hari. apa diri kalian-memberi?" },
+    { "speaker": "Eva:", "text": "Já si dám kávu a vodu, prosím.", "id": "Saya pesan kopi dan air putih.", "literal": "saya diri saya-memberi kopi dan air, tolong." },
+    { "speaker": "Číšník:", "text": "Malou, nebo velkou kávu?", "id": "Kopinya kecil atau besar?", "literal": "kecil, atau besar kopi?" },
+    { "speaker": "Eva:", "text": "Velkou, prosím. A bez cukru.", "id": "Yang besar. Tanpa gula.", "literal": "besar, tolong. dan tanpa gula." },
+    { "speaker": "Číšník:", "text": "A pro vás, pane?", "id": "Untuk Anda, Pak?", "literal": "dan untuk Anda, Tuan?" },
+    { "speaker": "Budi:", "text": "Chtěl bych čaj. Máte zelený čaj?", "id": "Saya mau teh. Ada teh hijau?", "literal": "ingin saya-akan teh. kalian-punya hijau teh?" },
+    { "speaker": "Číšník:", "text": "Máme. A něco k jídlu?", "id": "Ada. Mau makanan juga?", "literal": "kami-punya. dan sesuatu untuk makanan?" },
+    { "speaker": "Budi:", "text": "Dám si jeden koláč, prosím.", "id": "Saya mau satu kue.", "literal": "saya-memberi diri satu kue, tolong." },
+    { "speaker": "Číšník:", "text": "Dobře. Něco ještě?", "id": "Baik. Ada lagi?", "literal": "baik. sesuatu masih?" },
+    { "speaker": "Eva:", "text": "Ne, děkujeme. To je všechno.", "id": "Tidak, terima kasih. Itu saja.", "literal": "tidak, kami-berterima-kasih. itu adalah semua." },
+    { "speaker": "Budi:", "text": "A zaplatíme spolu, prosím.", "id": "Dan kami bayar jadi satu ya.", "literal": "dan kami-akan-membayar bersama, tolong." }
+   ],
+   "notes": [
+    "**Dát si** harfiahnya \"memberi kepada diri sendiri\", dan itulah cara paling Ceko untuk memesan. *Dám si kávu* = saya mau kopi. Ia terdengar lebih alami daripada *chci* (saya mau), yang di telinga Ceko bisa terdengar agak menuntut.",
+    "**Chtěl bych** = \"saya ingin\" versi sopan, harfiahnya \"saya akan mau\". Perempuan memakai *chtěla bych*. Ini bentuk paling aman kalau kamu ragu: sopan di semua keadaan, dari kafe sampai kantor imigrasi.",
+    "**Kávu, vodu, malou, velkou** — semuanya berekor *-u* atau *-ou*. Itulah bentuk *akuzativ*: ekor untuk benda yang **dikenai** pekerjaan. Yang memesan tetap kamu; yang dipesan adalah kopinya, jadi kopinya yang berganti ekor.",
+    "**Čaj tidak berubah**, dan itu bukan kelalaian. Kata benda laki-laki **yang bukan makhluk hidup** memakai bentuk yang sama untuk pelaku dan untuk yang dikenai. Begitu juga kata netral (*pivo*, *jídlo*). Jadi dari tiga jenis kelamin, cuma satu setengah yang benar-benar berubah.",
+    "**Bez cukru** — sesudah *bez* (tanpa) muncul lagi ekor lain, yaitu *genitiv*. Simpan dulu; unit 10 yang mengurusnya. Untuk sekarang, hafalkan *bez cukru* dan *bez mléka* sebagai satu potongan.",
+    "**Zaplatíme spolu** = \"kami bayar bersama\", lawannya *zvlášť* (terpisah). Di Ceko pertanyaan *Spolu, nebo zvlášť?* hampir selalu ditanyakan, dan menjawab *zvlášť* sama sekali tidak dianggap pelit.",
+    "**Membayar di meja, bukan di kasir.** Di kafe dan restoran Ceko, kamu tetap duduk dan bilang *Zaplatím, prosím* atau *Účet, prosím*. Berdiri lalu ke kasir justru membingungkan pelayan."
+   ],
+   "grammars": [
+    {
+     "title": "Akuzativ — bentuk keempat",
+     "body": ["Bentuk ini dipakai untuk benda yang **dikenai** pekerjaan: yang diminum, dibeli, dilihat, dipunyai. Ia juga muncul sesudah kata depan *na*, *pro*, dan *za*."],
+     "table": {
+      "head": ["Jenis kelamin", "Bentuk kamus", "Akuzativ", "Perubahannya"],
+      "rows": [
+       ["perempuan *-a*", "*káva*", "*káv**u***", "**-a → -u**"],
+       ["perempuan *-e*", "*restaurace*", "*restaurac**i***", "**-e → -i**"],
+       ["laki-laki benda mati", "*čaj*, *dům*", "*čaj*, *dům*", "**tidak berubah**"],
+       ["laki-laki makhluk hidup", "*bratr*, *pes*", "*bratr**a***, *ps**a***", "**+ -a**"],
+       ["netral", "*pivo*, *auto*", "*pivo*, *auto*", "**tidak berubah**"]
+      ]
+     },
+     "after": [
+      "Kata sifatnya ikut: perempuan *-á → -ou* (*velká → velkou*), laki-laki hidup *-ý → -ého* (*starý → starého*), sisanya tidak berubah.",
+      "**Pembelahan yang mengejutkan:** bahasa Ceko membedakan laki-laki **hidup** (orang, hewan) dari laki-laki **mati** (benda). Pembedaan ini kembali berkali-kali sepanjang bahasa ini, jadi kenali sekarang: *Vidím bratra* (saya melihat saudara), tapi *Vidím dům* (saya melihat rumah).",
+      "Kata ganti pun punya bentuk akuzativ sendiri: *já → mě*, *ty → tě*, *on → ho*, *ona → ji*, *my → nás*, *vy → vás*, *oni → je*. *Vidím tě* — saya melihatmu."
+     ]
+    },
+    {
+     "title": "Chtít — mau",
+     "body": ["Kata kerja yang bentuknya tidak beraturan tapi terlalu sering dipakai untuk dihindari."],
+     "table": {
+      "head": ["Pelaku", "Sekarang", "Sopan (\"ingin\")"],
+      "rows": [
+       ["já", "**chci**", "*chtěl / chtěla bych*"],
+       ["ty", "**chceš**", "*chtěl / chtěla bys*"],
+       ["on/ona", "**chce**", "*chtěl / chtěla by*"],
+       ["my", "**chceme**", "*chtěli bychom*"],
+       ["vy", "**chcete**", "*chtěli byste*"],
+       ["oni", "**chtějí**", "*chtěli by*"]
+      ]
+     },
+     "after": [
+      "*Chci* dipakai antar teman dan di rumah; di toko dan restoran, *chtěl bych* jauh lebih halus. Bedanya kira-kira seperti \"mau\" dan \"boleh minta\" dalam bahasa Indonesia.",
+      "⚠️ *chci* dibaca \"khtsi\" — huruf *ch* di sini satu bunyi (kh), bukan c-h terpisah."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Isi daftar minuman",
+   "blocks": [
+    { "type": "tabel", "head": ["Čeština", "Cara baca", "Bahasa Indonesia"], "rows": [
+     ["*káva*", "KAA-va", "kopi"],
+     ["*bílá káva*", "BII-laa KAA-va", "kopi susu"],
+     ["*čaj*", "cay", "teh"],
+     ["*voda*", "VO-da", "air"],
+     ["*minerálka*", "MI-ne-raal-ka", "air mineral bersoda"],
+     ["*džus*", "dzyus", "jus"],
+     ["*mléko*", "MLEE-ko", "susu"],
+     ["*pivo*", "PI-vo", "bir"],
+     ["*víno*", "VII-no", "anggur"],
+     ["*limonáda*", "LI-mo-naa-da", "minuman manis bersoda"],
+     ["*horká čokoláda*", "HOR-kaa CO-ko-laa-da", "cokelat panas"],
+     ["*voda z kohoutku*", "VO-da s KO-hout-ku", "air keran"]
+    ] },
+    { "type": "kotak", "title": "Dua hal yang mengagetkan orang Indonesia", "items": [
+     "**Air putih tidak gratis.** Di restoran Ceko, air minum hampir selalu dibayar dan datang dalam botol. Kalau kamu mau air keran gratis, minta *vodu z kohoutku* — sah, tapi tidak semua tempat mau memberikannya.",
+     "**Bir sering lebih murah daripada air.** Itu bukan lelucon: setengah liter *pivo* kerap seharga 45 koruna sementara sebotol air 40 koruna. Ceko adalah negara peminum bir per kepala terbanyak di dunia, dan harga itu salah satu sebabnya."
+    ] }
+   ]
+  },
+  {
+   "title": "Kalimat yang menyelesaikan satu kunjungan kafe",
+   "blocks": [
+    { "type": "tabel", "head": ["Kapan", "Kalimat", "Arti"], "rows": [
+     ["Masuk", "*Máte volný stůl?*", "Ada meja kosong?"],
+     ["Duduk", "*Můžu si sednout?*", "Boleh saya duduk?"],
+     ["Memesan", "*Dám si…* / *Chtěl bych…*", "Saya pesan… / Saya mau…"],
+     ["Bertanya", "*Co doporučujete?*", "Apa yang Anda sarankan?"],
+     ["Bertanya", "*Máte něco bez masa?*", "Ada yang tanpa daging?"],
+     ["Minta lagi", "*Ještě jednu kávu, prosím.*", "Satu kopi lagi."],
+     ["Membayar", "*Zaplatím, prosím.*", "Saya mau bayar."],
+     ["Membayar", "*Spolu, nebo zvlášť?*", "Jadi satu atau terpisah?"],
+     ["Membayar", "*Můžu platit kartou?*", "Bisa bayar pakai kartu?"],
+     ["Pergi", "*Děkuju, na shledanou.*", "Terima kasih, sampai jumpa."]
+    ] },
+    { "type": "kotak", "title": "Soal uang kecil", "items": [
+     "Memberi tip di Ceko normal tapi tidak besar: membulatkan ke atas 5–10% sudah cukup. Caranya bukan meninggalkan uang di meja, melainkan **menyebutkan jumlah total** saat membayar. Kalau tagihan 87 koruna, kamu menyerahkan uang sambil bilang *Devadesát* (sembilan puluh) — sisanya untuk pelayan.",
+     "*Drobné si nechte* — \"kembaliannya ambil saja\" — juga dipakai, dan selalu dimengerti."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "cs": "kavárna", "baca": "KA-vaar-na", "id": "kafe (pr)" },
+  { "cs": "restaurace", "baca": "RES-tau-ra-tse", "id": "restoran (pr)" },
+  { "cs": "číšník / servírka", "baca": "CIISY-nyiik", "id": "pelayan (lk / pr)" },
+  { "cs": "dát si", "baca": "daat si", "id": "memesan; mengambil" },
+  { "cs": "chtít", "baca": "khtyiit", "id": "mau, ingin" },
+  { "cs": "objednat si", "baca": "OB-yed-nat si", "id": "memesan" },
+  { "cs": "platit / zaplatit", "baca": "PLA-tyit", "id": "membayar" },
+  { "cs": "účet", "baca": "UU-cet", "id": "bon, tagihan (lk)" },
+  { "cs": "karta", "baca": "KAR-ta", "id": "kartu (pr)" },
+  { "cs": "hotově", "baca": "HO-to-vye", "id": "tunai" },
+  { "cs": "spolu / zvlášť", "baca": "SPO-lu / zvlaasyty", "id": "bersama / terpisah" },
+  { "cs": "cukr", "baca": "tsu-kr", "id": "gula (lk)" },
+  { "cs": "mléko", "baca": "MLEE-ko", "id": "susu (netral)" },
+  { "cs": "bez", "baca": "bes", "id": "tanpa" },
+  { "cs": "s / se", "baca": "s / se", "id": "dengan" },
+  { "cs": "koláč", "baca": "KO-laac", "id": "kue (lk)" },
+  { "cs": "dort", "baca": "dort", "id": "kue tar (lk)" },
+  { "cs": "něco", "baca": "NYE-tso", "id": "sesuatu" },
+  { "cs": "nic", "baca": "nyits", "id": "tidak ada apa-apa" },
+  { "cs": "všechno", "baca": "VSYEKH-no", "id": "semua" },
+  { "cs": "volný", "baca": "VOL-nii", "id": "kosong; bebas" },
+  { "cs": "obsazeno", "baca": "OB-sa-ze-no", "id": "terisi, penuh" },
+  { "cs": "doporučovat", "baca": "DO-po-ru-co-vat", "id": "menyarankan" },
+  { "cs": "maso", "baca": "MA-so", "id": "daging (netral)" },
+  { "cs": "horký / studený", "baca": "HOR-kii / STU-de-nii", "id": "panas / dingin" },
+  { "cs": "sladký / hořký", "baca": "SLAT-kii / HORSY-kii", "id": "manis / pahit" },
+  { "cs": "drobné", "baca": "DROB-nee", "id": "uang kembalian" },
+  { "cs": "nebo", "baca": "NE-bo", "id": "atau" },
+  { "cs": "pro", "baca": "pro", "id": "untuk" },
+  { "cs": "sednout si", "baca": "SED-nout si", "id": "duduk" }
+ ],
+ "exercises": [
+  { "prompt": "Ubah ke bentuk *akuzativ*.", "items": [
+   "káva → Dám si ____.",
+   "voda → Dám si ____.",
+   "čaj → Dám si ____.",
+   "pivo → Dám si ____.",
+   "limonáda → Dám si ____.",
+   "džus → Dám si ____."
+  ] },
+  { "prompt": "Lengkapi dengan bentuk *chtít* yang tepat.", "items": [
+   "Já ____ kávu.",
+   "Ty ____ pivo?",
+   "Eva ____ vodu.",
+   "My ____ zaplatit.",
+   "Vy ____ něco k jídlu?",
+   "Oni ____ jít domů."
+  ] },
+  { "prompt": "Terjemahkan ke bahasa Ceko.", "items": [
+   "Selamat siang. Mau pesan apa?",
+   "Saya pesan kopi besar.",
+   "Tanpa gula, tolong.",
+   "Ada teh hijau?",
+   "Saya mau bayar.",
+   "Bisa bayar pakai kartu?"
+  ] },
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "si / dám / kávu",
+   "bych / chtěl / čaj",
+   "prosím / zaplatím",
+   "vás / a / pane / pro / ?",
+   "všechno / to / je"
+  ] }
+ ],
+ "answers": [
+  "kávu — vodu — čaj — pivo — limonádu — džus",
+  "chci — chceš — chce — chceme — chcete — chtějí",
+  "Dobrý den. Co si dáte? — Dám si velkou kávu. — Bez cukru, prosím. — Máte zelený čaj? — Zaplatím, prosím. — Můžu platit kartou?",
+  "Dám si kávu. — Chtěl bych čaj. — Zaplatím, prosím. — A pro vás, pane? — To je všechno."
+ ]
+}

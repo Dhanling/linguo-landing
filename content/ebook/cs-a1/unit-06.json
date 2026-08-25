@@ -1,0 +1,212 @@
+{
+ "title": "Berapa harganya?",
+ "title_target": "Kolik to stojí?",
+ "goal": "Menghitung sampai seribu, menanyakan dan memahami harga, dan mengenali aturan angka yang mengubah bentuk kata sesudahnya.",
+ "bekal": [
+  "menyebut angka 0–1000 dan membaca harga dalam koruna",
+  "menerapkan aturan 1 / 2–4 / 5-ke-atas pada kata benda",
+  "menawar, menolak, dan meminta yang lebih murah tanpa kasar"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Na trhu na Náplavce",
+   "intro": "Pasar tepi sungai di Praha, Sabtu pagi. Budi berbelanja sendiri untuk pertama kalinya.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Dobrý den. Kolik stojí ten sýr?", "id": "Selamat siang. Keju itu berapa?", "literal": "baik hari. berapa berdiri itu keju?" },
+    { "speaker": "Prodavačka:", "text": "Sto dvacet korun za kilo.", "id": "Seratus dua puluh koruna per kilo.", "literal": "seratus dua-puluh koruna per kilo." },
+    { "speaker": "Budi:", "text": "A ta šunka?", "id": "Kalau sosis itu?", "literal": "dan itu sosis?" },
+    { "speaker": "Prodavačka:", "text": "Dvě stě padesát. Chcete ochutnat?", "id": "Dua ratus lima puluh. Mau coba?", "literal": "dua ratus lima-puluh. kalian-mau mencicipi?" },
+    { "speaker": "Budi:", "text": "Rád. Hmm, je moc dobrá. Dám si dvacet deka.", "id": "Boleh. Hmm, enak sekali. Saya ambil dua ratus gram.", "literal": "senang. hmm, adalah sangat enak. saya-memberi diri dua-puluh deka." },
+    { "speaker": "Prodavačka:", "text": "Ještě něco? Máme čerstvé rohlíky, pět korun kus.", "id": "Ada lagi? Ada roti segar, lima koruna sebuah.", "literal": "masih sesuatu? kami-punya segar roti, lima koruna buah." },
+    { "speaker": "Budi:", "text": "Dobře, dám si šest rohlíků.", "id": "Baik, saya ambil enam roti.", "literal": "baik, saya-memberi diri enam roti." },
+    { "speaker": "Prodavačka:", "text": "Takže šunka a rohlíky. Dohromady sto třicet korun.", "id": "Jadi sosis dan roti. Semuanya seratus tiga puluh koruna.", "literal": "jadi sosis dan roti. bersama-sama seratus tiga-puluh koruna." },
+    { "speaker": "Budi:", "text": "Tady je dvě stě. Nemáte drobné?", "id": "Ini dua ratus. Anda punya kembalian?", "literal": "di-sini adalah dua ratus. tidak-Anda-punya uang-kecil?" },
+    { "speaker": "Prodavačka:", "text": "Mám. Sedmdesát nazpátek. Děkuju!", "id": "Ada. Kembali tujuh puluh. Terima kasih!", "literal": "saya-punya. tujuh-puluh kembali. saya-berterima-kasih!" },
+    { "speaker": "Budi:", "text": "Já děkuju. Hezký den!", "id": "Saya yang terima kasih. Semoga harimu menyenangkan!", "literal": "saya saya-berterima-kasih. bagus hari!" }
+   ],
+   "notes": [
+    "**Kolik to stojí** harfiahnya \"berapa itu berdiri\" — kata kerjanya *stát* (berdiri), dipakai untuk harga persis seperti bahasa Jerman *kosten* dan Inggris *cost*. Bentuk lainnya: *Kolik stojí ta kniha?*, *Kolik to dělá?* (berapa jadinya).",
+    "**Korun, bukan koruny.** Sesudah angka lima ke atas, kata bendanya masuk ke bentuk *genitiv* jamak: *jedna koruna*, *dvě koruny*, tapi *pět korun*, *sto korun*. Aturan ini yang membuat harga di Ceko terdengar berubah-ubah — padahal polanya tetap.",
+    "**Deka = 10 gram.** Ini satuan sehari-hari yang tidak ada di Indonesia. *Dvacet deka* = 200 gram, *deset deka* = 100 gram. Di toko keju dan daging, orang Ceko hampir selalu memesan dengan *deka*, bukan gram.",
+    "**Rohlík** adalah roti panjang khas Ceko yang bentuknya seperti bulan sabit lurus, dan ia semacam nasi bagi orang Ceko — dimakan setiap hari, paling murah, ada di mana-mana. Harganya dipakai orang sebagai patokan inflasi.",
+    "**Dvě stě, bukan dva sto.** Angka 2 punya dua bentuk: *dva* untuk kata laki-laki dan netral, *dvě* untuk perempuan. Karena *stě* (ratus) di sini bentuk khusus, yang dipakai *dvě stě*. Begitu juga *dvě koruny*, *dvě piva* — tapi *dva bratři*.",
+    "**Rád** harfiahnya \"senang\", dan berdiri sendiri ia berarti \"dengan senang hati\". Perempuan bilang *ráda*. Kata ini juga dipakai untuk menyatakan suka: *Mám rád kávu* (saya suka kopi).",
+    "**Hezký den!** — \"semoga harimu bagus\" — adalah salam perpisahan yang sangat Ceko, dipakai kasir, sopir, dan tetangga. Menjawabnya cukup *Nápodobně* (sama-sama)."
+   ],
+   "grammars": [
+    {
+     "title": "Angka 0–100",
+     "body": ["Angka Ceko disusun persis seperti bahasa Indonesia: puluhan dulu, baru satuan."],
+     "tables": [
+      {
+       "head": ["0–10", "", "11–20", ""],
+       "rows": [
+        ["*nula*", "0", "*jedenáct*", "11"],
+        ["*jeden / jedna / jedno*", "1", "*dvanáct*", "12"],
+        ["*dva / dvě*", "2", "*třináct*", "13"],
+        ["*tři*", "3", "*čtrnáct*", "14"],
+        ["*čtyři*", "4", "*patnáct*", "15"],
+        ["*pět*", "5", "*šestnáct*", "16"],
+        ["*šest*", "6", "*sedmnáct*", "17"],
+        ["*sedm*", "7", "*osmnáct*", "18"],
+        ["*osm*", "8", "*devatenáct*", "19"],
+        ["*devět*", "9", "*dvacet*", "20"],
+        ["*deset*", "10", "*dvacet jedna*", "21"]
+       ]
+      },
+      {
+       "head": ["Puluhan", "", "Ratusan", ""],
+       "rows": [
+        ["*třicet*", "30", "*sto*", "100"],
+        ["*čtyřicet*", "40", "*dvě stě*", "200"],
+        ["*padesát*", "50", "*tři sta*", "300"],
+        ["*šedesát*", "60", "*čtyři sta*", "400"],
+        ["*sedmdesát*", "70", "*pět set*", "500"],
+        ["*osmdesát*", "80", "*devět set*", "900"],
+        ["*devadesát*", "90", "*tisíc*", "1000"]
+       ]
+      }
+     ],
+     "after": [
+      "Perhatikan *-náct* di semua belasan dan *-desát* di puluhan besar — pola yang sama seperti \"-belas\" dan \"-puluh\" kita.",
+      "⚠️ *sedm* dan *osm* praktis tanpa vokal di ujungnya; orang Ceko sehari-hari menyisipkan bunyi \"u\": \"se-dum\", \"o-sum\". Itu pelafalan yang normal, bukan malas.",
+      "Angka gabungan boleh dibaca dua cara: *dvacet jedna* (dua puluh satu) atau versi lama *jedenadvacet* (satu-dan-dua-puluh) yang masih terdengar dari orang tua."
+     ]
+    },
+    {
+     "title": "Aturan besar: angka menentukan bentuk kata sesudahnya",
+     "body": ["Ini salah satu hal paling khas bahasa Ceko, dan ia berlaku di mana pun ada bilangan."],
+     "table": {
+      "head": ["Angka", "Bentuk kata sesudahnya", "Contoh"],
+      "rows": [
+       ["**1**", "tunggal biasa", "*jedna koruna*, *jeden rohlík*, *jedno pivo*"],
+       ["**2, 3, 4**", "jamak biasa", "*dvě koruny*, *tři rohlíky*, *čtyři piva*"],
+       ["**5 ke atas**", "*genitiv* jamak", "*pět korun*, *šest rohlíků*, *deset piv*"],
+       ["*kolik?* (berapa)", "*genitiv* jamak", "*Kolik korun?*"],
+       ["*hodně* (banyak)", "*genitiv* jamak", "*hodně lidí*"],
+       ["*málo* (sedikit)", "*genitiv* jamak", "*málo času*"]
+      ]
+     },
+     "after": [
+      "Kenapa begitu? Karena dulu bahasa Slavia punya bentuk khusus untuk \"dua\", dan angka besar dulunya kata benda sendiri — *pět korun* aslinya berarti \"kelimaan dari koruna\", persis seperti \"selusin telur\".",
+      "**Untuk A1 kamu tidak perlu menghafal seluruh genitiv jamak.** Cukup kenali tiga yang paling sering: *korun* (koruna), *piv* (bir), *lidí* (orang). Sisanya akan datang sendiri dari kebiasaan.",
+      "Angka gabungan mengikuti angka **terakhirnya**: *dvacet jedna koruna* (tunggal!), *dvacet dvě koruny*, *dvacet pět korun*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Uang Ceko dan cara membaca harganya",
+   "blocks": [
+    { "type": "p", "text": "Mata uangnya *koruna česká*, ditulis **Kč** dan diucapkan \"korun cheskych\" atau cukup *korun*. Ceko belum memakai euro dan tidak berencana segera memakainya." },
+    { "type": "tabel", "head": ["Ditulis", "Dibaca", "Bahasa Indonesia"], "rows": [
+     ["*5 Kč*", "*pět korun*", "lima koruna"],
+     ["*20 Kč*", "*dvacet korun*", "dua puluh koruna"],
+     ["*49 Kč*", "*čtyřicet devět korun*", "empat puluh sembilan"],
+     ["*100 Kč*", "*sto korun*", "seratus"],
+     ["*250 Kč*", "*dvě stě padesát*", "dua ratus lima puluh"],
+     ["*1 500 Kč*", "*tisíc pět set*", "seribu lima ratus"],
+     ["*99,90 Kč*", "*devadesát devět devadesát*", "sembilan puluh sembilan koma sembilan puluh"]
+    ] },
+    { "type": "kotak", "title": "Patokan harga di Praha", "items": [
+     "*rohlík* 5 Kč · kopi di kafe 60–90 Kč · setengah liter bir 45–70 Kč · makan siang menu harian 150–200 Kč · tiket transportasi 30 menit 30 Kč.",
+     "Harga di luar Praha turun 20–30% untuk hampir semuanya. Kota kedua terbesar, Brno, lebih murah dan sering dianggap lebih ramah untuk pendatang baru."
+    ] }
+   ]
+  },
+  {
+   "title": "Kalimat untuk berbelanja",
+   "blocks": [
+    { "type": "tabel", "head": ["Kalimat", "Arti"], "rows": [
+     ["*Kolik to stojí?*", "Berapa harganya?"],
+     ["*Kolik to dělá dohromady?*", "Semuanya berapa?"],
+     ["*To je moc drahé.*", "Itu terlalu mahal."],
+     ["*Máte něco levnějšího?*", "Ada yang lebih murah?"],
+     ["*Můžu se podívat?*", "Boleh saya lihat?"],
+     ["*Beru to.*", "Saya ambil."],
+     ["*Nechci, děkuju.*", "Tidak, terima kasih."],
+     ["*Jenom se dívám.*", "Saya cuma lihat-lihat."],
+     ["*Máte to i v jiné barvě?*", "Ada warna lain?"],
+     ["*Můžu dostat účtenku?*", "Boleh minta struknya?"]
+    ] },
+    { "type": "kotak", "title": "Menawar? Hampir tidak pernah", "items": [
+     "Di toko, supermarket, dan pasar Ceko, harga adalah harga. Menawar tidak dikenal dan bisa terasa aneh — beda dari kebiasaan pasar Indonesia.",
+     "Yang sah dilakukan: bertanya apakah ada yang lebih murah (*Máte něco levnějšího?*), menanyakan diskon (*Je na to sleva?*), atau di pasar loak (*bleší trh*) — satu-satunya tempat di mana tawar-menawar memang normal."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "cs": "kolik", "baca": "KO-lik", "id": "berapa" },
+  { "cs": "stát", "baca": "staat", "id": "berdiri; berharga" },
+  { "cs": "koruna / Kč", "baca": "KO-ru-na", "id": "koruna (mata uang)" },
+  { "cs": "cena", "baca": "TSE-na", "id": "harga (pr)" },
+  { "cs": "peníze", "baca": "PE-nyii-ze", "id": "uang (jamak)" },
+  { "cs": "drahý / levný", "baca": "DRA-hii / LEV-nii", "id": "mahal / murah" },
+  { "cs": "sleva", "baca": "SLE-va", "id": "diskon (pr)" },
+  { "cs": "účtenka", "baca": "UUC-ten-ka", "id": "struk (pr)" },
+  { "cs": "dohromady", "baca": "DO-hro-ma-dy", "id": "semuanya, jadi satu" },
+  { "cs": "nazpátek", "baca": "NAS-paa-tek", "id": "kembali(an)" },
+  { "cs": "kus", "baca": "kus", "id": "buah, potong (lk)" },
+  { "cs": "kilo", "baca": "KI-lo", "id": "kilogram" },
+  { "cs": "deka", "baca": "DE-ka", "id": "10 gram" },
+  { "cs": "obchod", "baca": "OP-khot", "id": "toko (lk)" },
+  { "cs": "trh", "baca": "trkh", "id": "pasar (lk)" },
+  { "cs": "prodavač / prodavačka", "baca": "PRO-da-vac", "id": "penjual" },
+  { "cs": "sýr", "baca": "siir", "id": "keju (lk)" },
+  { "cs": "šunka", "baca": "SYUN-ka", "id": "sosis, ham (pr)" },
+  { "cs": "rohlík", "baca": "RO-hliik", "id": "roti panjang khas Ceko (lk)" },
+  { "cs": "chléb / chleba", "baca": "khleep / KHLE-ba", "id": "roti (lk)" },
+  { "cs": "čerstvý", "baca": "CERST-vii", "id": "segar" },
+  { "cs": "ochutnat", "baca": "O-khut-nat", "id": "mencicipi" },
+  { "cs": "brát / vzít", "baca": "braat / vziit", "id": "mengambil" },
+  { "cs": "rád / ráda", "baca": "raat / RAA-da", "id": "senang; dengan senang hati" },
+  { "cs": "takže", "baca": "TAK-zye", "id": "jadi" },
+  { "cs": "moc", "baca": "mots", "id": "terlalu; sangat" },
+  { "cs": "jiný", "baca": "YI-nii", "id": "lain" },
+  { "cs": "barva", "baca": "BAR-va", "id": "warna (pr)" },
+  { "cs": "hezký", "baca": "HES-kii", "id": "bagus, cantik" },
+  { "cs": "nápodobně", "baca": "NAA-po-dob-nye", "id": "sama-sama, begitu juga" }
+ ],
+ "exercises": [
+  { "prompt": "Tulis angkanya dengan huruf Ceko.", "items": [
+   "7 → ____",
+   "13 → ____",
+   "25 → ____",
+   "48 → ____",
+   "90 → ____",
+   "300 → ____"
+  ] },
+  { "prompt": "Pilih bentuk yang tepat: *koruna*, *koruny*, atau *korun*.", "items": [
+   "jedna ____",
+   "dvě ____",
+   "čtyři ____",
+   "pět ____",
+   "dvacet ____",
+   "sto ____"
+  ] },
+  { "prompt": "Terjemahkan ke bahasa Ceko.", "items": [
+   "Berapa harganya?",
+   "Seratus dua puluh koruna.",
+   "Itu terlalu mahal.",
+   "Ada yang lebih murah?",
+   "Saya ambil.",
+   "Semuanya berapa?"
+  ] },
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "stojí / to / kolik / ?",
+   "korun / sto / dvacet",
+   "drahé / je / moc / to",
+   "to / beru",
+   "drobné / nemáte / ?"
+  ] }
+ ],
+ "answers": [
+  "sedm — třináct — dvacet pět — čtyřicet osm — devadesát — tři sta",
+  "koruna — koruny — koruny — korun — korun — korun",
+  "Kolik to stojí? — Sto dvacet korun. — To je moc drahé. — Máte něco levnějšího? — Beru to. — Kolik to dělá dohromady?",
+  "Kolik to stojí? — sto dvacet korun — To je moc drahé. — Beru to. — Nemáte drobné?"
+ ]
+}

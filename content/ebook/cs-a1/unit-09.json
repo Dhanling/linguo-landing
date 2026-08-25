@@ -1,0 +1,199 @@
+{
+ "title": "Tinggal di mana? — bentuk keenam",
+ "title_target": "Kde bydlíš? — lokál",
+ "goal": "Menyebut tempat dengan benar, memakai bentuk keenam yang hanya hidup sesudah kata depan, dan menggambarkan tempat tinggalmu.",
+ "bekal": [
+  "menjawab *Kde bydlíš?* dengan *v Praze*, *na koleji*, *v Jakartě*",
+  "memilih antara *v* dan *na* untuk tempat",
+  "menyebut isi rumah dan menggambarkan kamarmu"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Nový byt",
+   "intro": "Budi baru pindah dari asrama ke apartemen kecil. Eva bertanya-tanya.",
+   "lines": [
+    { "speaker": "Eva:", "text": "Slyšela jsem, že bydlíš v novém bytě. Kde přesně?", "id": "Katanya kamu tinggal di apartemen baru. Persisnya di mana?", "literal": "mendengar saya-adalah, bahwa kamu-tinggal di baru apartemen. di-mana tepatnya?" },
+    { "speaker": "Budi:", "text": "V Karlíně, blízko metra. Dřív jsem bydlel na koleji.", "id": "Di Karlín, dekat metro. Dulu saya tinggal di asrama.", "literal": "di Karlín, dekat metro. dulu saya-adalah tinggal di asrama." },
+    { "speaker": "Eva:", "text": "A jaký ten byt je? Velký?", "id": "Apartemennya bagaimana? Besar?", "literal": "dan bagaimana itu apartemen adalah? besar?" },
+    { "speaker": "Budi:", "text": "Malý, ale hezký. Jeden pokoj, kuchyň a koupelna.", "id": "Kecil tapi bagus. Satu kamar, dapur, dan kamar mandi.", "literal": "kecil, tapi bagus. satu kamar, dapur dan kamar-mandi." },
+    { "speaker": "Eva:", "text": "V jakém patře?", "id": "Di lantai berapa?", "literal": "di lantai-yang-mana?" },
+    { "speaker": "Budi:", "text": "Ve třetím. Bez výtahu — každý den trénink.", "id": "Lantai tiga. Tanpa lift — olahraga tiap hari.", "literal": "di ketiga. tanpa lift — setiap hari latihan." },
+    { "speaker": "Eva:", "text": "Ha! A co nábytek? Máš postel?", "id": "Ha! Perabotnya bagaimana? Punya tempat tidur?", "literal": "ha! dan apa perabot? kamu-punya tempat-tidur?" },
+    { "speaker": "Budi:", "text": "Postel, stůl, dvě židle a skříň. Zatím stačí.", "id": "Tempat tidur, meja, dua kursi, dan lemari. Cukup untuk sekarang.", "literal": "tempat-tidur, meja, dua kursi dan lemari. sementara cukup." },
+    { "speaker": "Eva:", "text": "A co nájem? Je to drahé?", "id": "Sewanya? Mahal?", "literal": "dan apa sewa? adalah itu mahal?" },
+    { "speaker": "Budi:", "text": "Osmnáct tisíc měsíčně, včetně energií.", "id": "Delapan belas ribu per bulan, termasuk listrik.", "literal": "delapan-belas ribu bulanan, termasuk energi." },
+    { "speaker": "Eva:", "text": "To není špatné. V centru by to bylo dvakrát tolik.", "id": "Itu tidak buruk. Di pusat kota bisa dua kali lipat.", "literal": "itu tidak-adalah buruk. di pusat akan itu adalah dua-kali sebanyak." }
+   ],
+   "notes": [
+    "**V novém bytě, v Karlíně, ve třetím patře** — semuanya berekor *-ě/-e* atau *-ém*. Itu bentuk keenam, *lokál*, dan ciri istimewanya: ia **tidak pernah muncul tanpa kata depan**. Karena itu banyak buku menyebutnya \"bentuk kata depan\".",
+    "**Na koleji, bukan v koleji.** Beberapa tempat memakai *na*, bukan *v*, dan daftarnya harus dihafal. Untungnya polanya agak masuk akal: *na* dipakai untuk tempat terbuka dan lembaga (*na nádraží*, *na poště*, *na univerzitě*), *v* untuk ruang tertutup (*v bytě*, *v obchodě*, *v kině*).",
+    "**Kuchyň dan koupelna** dua-duanya perempuan meski ejaannya beda-beda ujung. *Kuchyň* berujung huruf mati lunak — anggota kelompok perempuan yang menipu mata yang kamu temui di unit 3.",
+    "**Slyšela jsem** = \"saya (perempuan) mendengar\". Itu bentuk lampau, yang akan kamu urus di unit 16. Perhatikan sekarang saja dua hal: ekor *-la* menandai pembicaranya perempuan, dan *jsem* menempel di tempat kedua.",
+    "**Tisíc, bukan tisíce.** Sewa 18 000 dibaca *osmnáct tisíc* — *tisíc* di sini bentuk genitiv jamak sesudah angka lima ke atas, dan kebetulan bentuknya sama dengan bentuk tunggalnya.",
+    "**Lantai dihitung berbeda.** *Přízemí* adalah lantai dasar, dan *první patro* adalah lantai **di atasnya** — jadi \"lantai tiga\" Ceko adalah lantai empat menurut hitungan Indonesia. Ini kebiasaan Eropa daratan, dan penting saat mencari alamat.",
+    "**Včetně** (termasuk) diikuti bentuk genitiv: *včetně energií*, *včetně snídaně*. Lawannya *bez* (tanpa), yang juga genitiv."
+   ],
+   "grammars": [
+    {
+     "title": "Lokál — bentuk keenam",
+     "body": ["Dipakai **hanya** sesudah enam kata depan: *v* (di dalam), *na* (di atas/di), *o* (tentang), *po* (sesudah, sepanjang), *při* (saat), *ve* (varian *v*)."],
+     "table": {
+      "head": ["Jenis kelamin", "Bentuk kamus", "Lokál", "Contoh"],
+      "rows": [
+       ["perempuan *-a*", "*Praha*, *škola*", "*Praz**e***, *škol**e***", "*v Praze*, *ve škole*"],
+       ["perempuan *-e*", "*restaurace*", "*restaurac**i***", "*v restauraci*"],
+       ["laki-laki", "*byt*, *obchod*", "*byt**ě***, *obchod**ě***", "*v bytě*, *v obchodě*"],
+       ["laki-laki (k, h, ch, g)", "*Karlín*, *vlak*", "*Karlín**ě***, *vlak**u***", "*ve vlaku*"],
+       ["netral *-o*", "*město*, *kino*", "*měst**ě***, *kin**ě***", "*ve městě*, *v kině*"],
+       ["netral *-í*", "*nádraží*", "*nádraží*", "*na nádraží* (tetap)"]
+      ]
+     },
+     "after": [
+      "**Perubahan huruf yang mengagetkan.** Ekor *-e/-ě* melunakkan huruf sebelumnya, dan kadang mengubahnya: *Praha → Praze* (h→z), *ruka → ruce* (k→c), *kniha → knize*. Ini sisa aturan pelunakan Slavia kuno, dan jumlah katanya terbatas — kamu akan hafal dari kebiasaan, bukan dari tabel.",
+      "Kata sifat: laki-laki & netral **-ém** (*v novém bytě*), perempuan **-é** (*v nové škole*).",
+      "⚠️ Kata benda laki-laki yang berujung *k, h, ch, g* memakai *-u* alih-alih *-ě*: *ve vlaku*, *v parku*, *na rohu*. Ini kelompok kecil tapi sangat sering dipakai."
+     ]
+    },
+    {
+     "title": "V atau na? Daftar yang perlu dihafal",
+     "body": ["Bahasa Ceko memilih kata depan berdasarkan kebiasaan, bukan logika penuh. Berikut yang paling sering."],
+     "tables": [
+      {
+       "head": ["Pakai *v*", "Pakai *na*"],
+       "rows": [
+        ["*v bytě* — di apartemen", "*na nádraží* — di stasiun"],
+        ["*v domě* — di rumah (bangunan)", "*na poště* — di kantor pos"],
+        ["*v obchodě* — di toko", "*na univerzitě* — di universitas"],
+        ["*v restauraci* — di restoran", "*na koleji* — di asrama"],
+        ["*v kině / v divadle* — di bioskop / teater", "*na náměstí* — di alun-alun"],
+        ["*v práci* — di tempat kerja", "*na ulici* — di jalan"],
+        ["*v Praze / v Brně* — di kota", "*na Moravě* — di Moravia (wilayah)"],
+        ["*v Česku / v Indonésii* — di negara", "*na Slovensku* — di Slowakia ⚠️"]
+       ]
+      }
+     ],
+     "after": [
+      "**Na Slovensku** adalah keanehan sejarah, bukan aturan: negara memakai *v*, tapi Slowakia — bekas satu negara dengan Ceko — tetap memakai *na*, seperti sebuah wilayah. Orang Slowakia sudah lama terbiasa dengannya.",
+      "Kalau kamu ragu di kota kecil atau tempat baru, *v* adalah tebakan yang lebih aman."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Rumah dan isinya",
+   "blocks": [
+    { "type": "tabel", "head": ["Ruangan", "Arti", "Perabot", "Arti"], "rows": [
+     ["*byt*", "apartemen", "*postel*", "tempat tidur"],
+     ["*dům*", "rumah", "*stůl*", "meja"],
+     ["*pokoj*", "kamar", "*židle*", "kursi"],
+     ["*ložnice*", "kamar tidur", "*skříň*", "lemari"],
+     ["*obývák*", "ruang tamu", "*gauč / pohovka*", "sofa"],
+     ["*kuchyň*", "dapur", "*lednice*", "kulkas"],
+     ["*koupelna*", "kamar mandi", "*sporák*", "kompor"],
+     ["*záchod / WC*", "toilet", "*pračka*", "mesin cuci"],
+     ["*chodba*", "koridor", "*lampa*", "lampu"],
+     ["*balkon*", "balkon", "*koberec*", "karpet"]
+    ] },
+    { "type": "kotak", "title": "Membaca iklan sewa Ceko", "items": [
+     "Ukuran apartemen ditulis dengan kode: **1+kk** = satu ruangan dengan sudut dapur, **2+1** = dua kamar plus dapur terpisah, **3+kk** = tiga ruangan dengan sudut dapur. Angkanya menghitung ruangan **selain** kamar mandi dan koridor.",
+     "*Nájem* = uang sewa. *Poplatky / energie* = biaya listrik, air, pemanas — sering terpisah dan bisa menambah 3 000–5 000 Kč. Selalu tanyakan: *Je nájem včetně energií?*",
+     "*Kauce* = uang jaminan, biasanya dua sampai tiga kali sewa bulanan, dikembalikan saat keluar."
+    ] }
+   ]
+  },
+  {
+   "title": "Menggambarkan tempat",
+   "blocks": [
+    { "type": "tabel", "head": ["Kalimat", "Arti"], "rows": [
+     ["*Bydlím v Praze.*", "Saya tinggal di Praha."],
+     ["*Bydlím v centru.*", "Saya tinggal di pusat kota."],
+     ["*Bydlím na okraji města.*", "Saya tinggal di pinggir kota."],
+     ["*Je to blízko metra.*", "Dekat metro."],
+     ["*Je to daleko od centra.*", "Jauh dari pusat."],
+     ["*Bydlím sám / sama.*", "Saya tinggal sendiri."],
+     ["*Bydlím se spolubydlícím.*", "Saya tinggal dengan teman sekamar."],
+     ["*Byt je světlý a tichý.*", "Apartemennya terang dan tenang."],
+     ["*Sousedi jsou hluční.*", "Tetangganya berisik."],
+     ["*Kolik platíš za nájem?*", "Sewamu berapa?"]
+    ] },
+    { "type": "kotak", "title": "Kata tempat yang menolong", "items": [
+     "*tady* (di sini) · *tam* (di sana) · *nahoře* (di atas) · *dole* (di bawah) · *vlevo* (di kiri) · *vpravo* (di kanan) · *uprostřed* (di tengah) · *vzadu* (di belakang) · *vepředu* (di depan) · *venku* (di luar) · *uvnitř* (di dalam).",
+     "Kata depan yang menuntut lokál gampang dikenali karena jumlahnya cuma enam: *v, na, o, po, při*. Kalau kamu melihat salah satunya, kamu tahu ekor apa yang datang."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "cs": "byt", "baca": "byt", "id": "apartemen (lk)" },
+  { "cs": "pokoj", "baca": "PO-koy", "id": "kamar (lk)" },
+  { "cs": "kuchyň", "baca": "KU-khyny", "id": "dapur (pr)" },
+  { "cs": "koupelna", "baca": "KOU-pel-na", "id": "kamar mandi (pr)" },
+  { "cs": "ložnice / obývák", "baca": "LOZY-nyi-tse", "id": "kamar tidur / ruang tamu" },
+  { "cs": "postel", "baca": "POS-tel", "id": "tempat tidur (pr) ⚠️" },
+  { "cs": "skříň", "baca": "skrzyiiny", "id": "lemari (pr)" },
+  { "cs": "lednice", "baca": "LED-nyi-tse", "id": "kulkas (pr)" },
+  { "cs": "nábytek", "baca": "NAA-by-tek", "id": "perabot (lk)" },
+  { "cs": "patro", "baca": "PAT-ro", "id": "lantai (netral)" },
+  { "cs": "přízemí", "baca": "PRZYII-ze-mii", "id": "lantai dasar" },
+  { "cs": "výtah", "baca": "VII-takh", "id": "lift (lk)" },
+  { "cs": "kolej", "baca": "KO-ley", "id": "asrama (pr)" },
+  { "cs": "nájem", "baca": "NAA-yem", "id": "sewa (lk)" },
+  { "cs": "kauce", "baca": "KAU-tse", "id": "uang jaminan (pr)" },
+  { "cs": "energie / poplatky", "baca": "E-ner-gi-ye", "id": "listrik-air / biaya" },
+  { "cs": "soused / sousedka", "baca": "SOU-set", "id": "tetangga" },
+  { "cs": "centrum", "baca": "TSEN-trum", "id": "pusat kota (netral)" },
+  { "cs": "okraj", "baca": "OK-ray", "id": "pinggir (lk)" },
+  { "cs": "ulice", "baca": "U-li-tse", "id": "jalan (pr)" },
+  { "cs": "náměstí", "baca": "NAA-mnyes-tyii", "id": "alun-alun (netral)" },
+  { "cs": "nádraží", "baca": "NAA-dra-zyii", "id": "stasiun (netral)" },
+  { "cs": "pošta", "baca": "POSY-ta", "id": "kantor pos (pr)" },
+  { "cs": "světlý / tmavý", "baca": "SVYET-lii / TMA-vii", "id": "terang / gelap" },
+  { "cs": "tichý / hlučný", "baca": "TYI-khii / HLUC-nii", "id": "tenang / berisik" },
+  { "cs": "sám / sama", "baca": "saam / SA-ma", "id": "sendiri" },
+  { "cs": "včetně", "baca": "VCET-nye", "id": "termasuk" },
+  { "cs": "stačit", "baca": "STA-cit", "id": "cukup" },
+  { "cs": "dřív", "baca": "drzyiif", "id": "dulu, sebelumnya" },
+  { "cs": "měsíčně", "baca": "MNYE-siic-nye", "id": "per bulan" }
+ ],
+ "exercises": [
+  { "prompt": "Ubah ke bentuk *lokál* dengan kata depan *v* atau *ve*.", "items": [
+   "Praha → ____",
+   "škola → ____",
+   "byt → ____",
+   "město → ____",
+   "kino → ____",
+   "restaurace → ____"
+  ] },
+  { "prompt": "Pilih *v* atau *na*.", "items": [
+   "____ nádraží",
+   "____ obchodě",
+   "____ poště",
+   "____ restauraci",
+   "____ univerzitě",
+   "____ Slovensku"
+  ] },
+  { "prompt": "Terjemahkan ke bahasa Ceko.", "items": [
+   "Saya tinggal di Praha.",
+   "Apartemennya kecil tapi bagus.",
+   "Saya tinggal di lantai tiga.",
+   "Dekat metro.",
+   "Sewanya berapa?",
+   "Saya tinggal sendiri."
+  ] },
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "v / bydlím / bytě / novém",
+   "metra / je / blízko / to",
+   "patře / ve / třetím",
+   "za / kolik / nájem / platíš / ?",
+   "tichý / světlý / byt / a / je"
+  ] }
+ ],
+ "answers": [
+  "v Praze — ve škole — v bytě — ve městě — v kině — v restauraci",
+  "na — v — na — v — na — na",
+  "Bydlím v Praze. — Byt je malý, ale hezký. — Bydlím ve třetím patře. — Je to blízko metra. — Kolik platíš za nájem? — Bydlím sám.",
+  "Bydlím v novém bytě. — Je to blízko metra. — ve třetím patře — Kolik platíš za nájem? — Byt je světlý a tichý."
+ ]
+}

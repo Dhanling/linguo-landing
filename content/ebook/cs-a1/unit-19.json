@@ -1,0 +1,199 @@
+{
+ "title": "Bahasa Ceko yang benar-benar dipakai orang",
+ "title_target": "Obecná čeština",
+ "goal": "Mengenali bahasa Ceko sehari-hari yang bunyinya berbeda dari buku pelajaran, supaya kamu tidak merasa telah belajar bahasa yang keliru.",
+ "bekal": [
+  "mengenali empat perubahan bunyi yang mengubah hampir semua kata sehari-hari",
+  "tahu kapan memakai bahasa buku dan kapan bahasa jalanan",
+  "mengerti percakapan yang kecepatannya normal"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Dvě verze jedné rozmluvy",
+   "intro": "Dua rekaman percakapan yang sama. Yang pertama dalam bahasa Ceko buku, yang kedua seperti yang benar-benar diucapkan.",
+   "lines": [
+    { "speaker": "Buku:", "text": "Dobrý den, jak se máte?", "id": "Selamat siang, apa kabar?", "literal": "baik hari, bagaimana diri Anda-punya?" },
+    { "speaker": "Jalanan:", "text": "Ahoj, jak se máš? Dobrý?", "id": "Halo, apa kabar? Baik?", "literal": "halo, bagaimana diri kamu-punya? baik?" },
+    { "speaker": "Buku:", "text": "Mám se dobře, děkuji. A vy?", "id": "Baik, terima kasih. Anda?", "literal": "saya-punya diri baik, saya-berterima-kasih. dan Anda?" },
+    { "speaker": "Jalanan:", "text": "Dobrý, dík. A ty?", "id": "Baik, makasih. Kamu?", "literal": "baik, makasih. dan kamu?" },
+    { "speaker": "Buku:", "text": "Ten nový byt je velmi hezký.", "id": "Apartemen barunya bagus sekali.", "literal": "itu baru apartemen adalah sangat bagus." },
+    { "speaker": "Jalanan:", "text": "Ten novej byt je fakt hezkej.", "id": "Apartemen barunya bagus banget.", "literal": "itu baru apartemen adalah sungguh bagus." },
+    { "speaker": "Buku:", "text": "Jsem unavený, byl jsem v práci.", "id": "Saya capek, tadi kerja.", "literal": "saya-adalah lelah, adalah saya-adalah di kerja." },
+    { "speaker": "Jalanan:", "text": "Sem unavenej, byl sem v práci.", "id": "Capek nih, tadi kerja.", "literal": "saya-adalah lelah, adalah saya-adalah di kerja." },
+    { "speaker": "Buku:", "text": "Kam jdeš? Do obchodu?", "id": "Mau ke mana? Ke toko?", "literal": "ke-mana kamu-jalan? ke toko?" },
+    { "speaker": "Jalanan:", "text": "Kam deš? Do krámu?", "id": "Mau ke mana? Ke warung?", "literal": "ke-mana kamu-jalan? ke toko?" },
+    { "speaker": "Buku:", "text": "Ano, chci koupit okurky a chleba.", "id": "Ya, mau beli timun dan roti.", "literal": "ya, saya-mau membeli timun dan roti." },
+    { "speaker": "Jalanan:", "text": "Jo, chci koupit vokurky a chleba.", "id": "Iya, mau beli timun sama roti.", "literal": "ya, saya-mau membeli timun dan roti." }
+   ],
+   "notes": [
+    "**Ini bukan bahasa yang salah.** *Obecná čeština* adalah ragam sehari-hari yang dipakai sebagian besar penduduk Bohemia — di rumah, di kantor, di antara teman, dan di sebagian besar film serta serial. Bahasa buku (*spisovná čeština*) dipakai di berita, tulisan resmi, dan pengajaran.",
+    "**Jarak antara keduanya lebih lebar daripada di kebanyakan bahasa Eropa,** dan itulah sebabnya pemula sering merasa telah belajar bahasa yang keliru begitu keluar dari kelas. Kamu belum keliru — kamu baru belajar setengahnya.",
+    "**Dobrý? sebagai jawaban** adalah versi pendek dari *Mám se dobře* dan sangat sering terdengar. Bentuk lain: *ujde to* (lumayan), *nic moc* (biasa saja), *v pohodě* (santai, baik-baik saja), *jde to* (jalan lah).",
+    "**Fakt** = sungguh, banget. Salah satu kata paling sering di percakapan Ceko modern, dan lawannya *fakt?* berarti \"serius?\".",
+    "**Krám** adalah kata santai untuk toko, sedikit kasar tapi umum. Kata santai lain: *hospoda* → *putyka*, *auto* → *fáro*, *peníze* → *prachy*.",
+    "**Kabar melegakan untuk Moravia:** perubahan-perubahan ini paling kuat di Bohemia dan Praha. Di Moravia dan Silesia, ragam sehari-harinya lebih dekat ke bahasa buku, dengan logat daerahnya sendiri. Jadi kalau kamu belajar di Brno atau Olomouc, jarak yang kamu rasakan lebih kecil."
+   ],
+   "grammars": [
+    {
+     "title": "Empat perubahan yang menjelaskan hampir semuanya",
+     "body": ["Kalau kamu hafal empat baris ini, sebagian besar bahasa jalanan langsung terbuka."],
+     "table": {
+      "head": ["Perubahan", "Buku", "Jalanan", "Contoh lain"],
+      "rows": [
+       ["**-ý → -ej** (di ujung kata sifat)", "*dobrý*", "*dobrej*", "*novej*, *velkej*, *malej*"],
+       ["**é → ý/í** (di tengah kata)", "*mléko*", "*mlíko*", "*polívka*, *dýl*, *lítat*"],
+       ["**v- di depan o-**", "*okno*", "*vokno*", "*von*, *vona*, *vono*, *voni*"],
+       ["**js- → s-**", "*jsem*, *jsi*", "*sem*, *seš*", "*sme*, *ste*, *sou*"]
+      ]
+     },
+     "after": [
+      "Perubahan kelima yang juga sering: **-ým / -ými → -ejma / -ýma** di bentuk instrumentál jamak — *s dobrými lidmi* jadi *s dobrejma lidma*. Untuk A1 cukup mengenalinya saat lewat.",
+      "**Dan yang paling sering luput diperhatikan:** huruf *j* di awal kata kerja gerak juga hilang. *Jdu* jadi *du*, *jdeš* jadi *deš*, *jdeme* jadi *deme*. Kalau kamu mendengar \"kam deš?\" dan bingung, inilah sebabnya.",
+      "⚠️ **Jangan memakai bentuk ini dalam tulisan resmi, surel ke kantor, atau ujian.** Di sana bahasa buku yang berlaku, dan memakai bentuk jalanan terbaca seperti menulis surat lamaran dengan \"gue\" dan \"lu\"."
+     ]
+    },
+    {
+     "title": "Kata sehari-hari yang tidak ada di buku pelajaran",
+     "body": ["Kosakata yang akan kamu dengar di minggu pertama, tapi jarang diajarkan."],
+     "table": {
+      "head": ["Sehari-hari", "Bahasa buku", "Arti"],
+      "rows": [
+       ["*jo*", "*ano*", "ya"],
+       ["*dík / díky*", "*děkuji*", "makasih"],
+       ["*čau / ahoj*", "*na shledanou*", "dah"],
+       ["*fakt*", "*opravdu*", "sungguh, banget"],
+       ["*v pohodě*", "*v pořádku*", "santai, oke"],
+       ["*hustý*", "*úžasné*", "keren"],
+       ["*trapný*", "*nepříjemné*", "memalukan, canggung"],
+       ["*je mi to jedno*", "*je mi to lhostejné*", "terserah"],
+       ["*no jo*", "*ano, souhlasím*", "ya sudah lah"],
+       ["*hele / heleď*", "*podívej*", "eh, dengar"],
+       ["*prostě*", "*jednoduše*", "pokoknya"],
+       ["*vole* ⚠️", "—", "kata sisipan yang sangat kasar"]
+      ]
+     },
+     "after": [
+      "⚠️ ***Vole*** akan kamu dengar sepanjang hari di antara laki-laki muda, dipakai seperti tanda baca. Ia **kasar** dan berasal dari kata \"sapi jantan kebiri\". Kenali artinya, jangan pakai — dari mulut pendatang ia terdengar jauh lebih kasar daripada dari mulut penutur asli.",
+      "*No* di bahasa Ceko berarti **ya**, bukan \"tidak\". Ini salah satu jebakan yang paling cepat menjebak penutur bahasa Inggris dan Indonesia. *No jo* = ya sudah lah."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Mendengar bahasa Ceko di kecepatan aslinya",
+   "blocks": [
+    { "type": "p", "text": "Kesulitan mendengar bukan cuma soal kosakata; ia soal kata-kata yang menempel. Berikut potongan yang paling sering menempel, dan bunyinya di telinga." },
+    { "type": "tabel", "head": ["Ditulis", "Terdengar", "Arti"], "rows": [
+     ["*Jak se máš?*", "yak-se-MAASY", "apa kabar?"],
+     ["*Nevím.*", "NE-viim", "tidak tahu"],
+     ["*Není zač.*", "NE-nyii-zac", "sama-sama"],
+     ["*Co to je?*", "TSO-to-ye", "itu apa?"],
+     ["*Jak se to řekne?*", "yak-se-to-RZYEK-ne", "bagaimana bilangnya?"],
+     ["*Prosím tě*", "PRO-siim-tye", "eh, tolong deh"],
+     ["*Ještě jednou*", "YESY-tye-YED-nou", "sekali lagi"],
+     ["*Nemám ponětí.*", "NE-maam-PO-nye-tyii", "tidak ada bayangan sama sekali"],
+     ["*To je jedno.*", "TO-ye-YED-no", "terserah, sama saja"],
+     ["*Dej mi pokoj.*", "DEY-mi-PO-koy", "jangan ganggu"]
+    ] },
+    { "type": "kotak", "title": "Empat kalimat penyelamat percakapan", "items": [
+     "*Můžeš mluvit pomaleji?* — Bisa bicara lebih pelan?",
+     "*Promiň, nerozuměl jsem.* — Maaf, saya tidak paham.",
+     "*Jak se to řekne česky?* — Bagaimana mengatakannya dalam bahasa Ceko?",
+     "*Co to znamená?* — Apa artinya itu?"
+    ] }
+   ]
+  },
+  {
+   "title": "Kapan memakai yang mana",
+   "blocks": [
+    { "type": "tabel", "head": ["Keadaan", "Ragam yang dipakai"], "rows": [
+     ["Berbicara dengan teman", "**jalanan**"],
+     ["Berbicara dengan tetangga, penjual", "campuran, condong jalanan"],
+     ["Berbicara dengan dokter, pegawai kantor", "**buku**, dengan *vy*"],
+     ["Wawancara kerja", "**buku**"],
+     ["Menulis surel resmi atau surat", "**buku**"],
+     ["Menulis pesan ke teman", "**jalanan**"],
+     ["Ujian bahasa, kelas", "**buku**"],
+     ["Menonton berita", "**buku**"],
+     ["Menonton serial atau film", "**jalanan**"]
+    ] },
+    { "type": "kotak", "title": "Saran yang jujur untuk pemula", "items": [
+     "**Berbicaralah dalam bahasa buku, dengarkanlah bahasa jalanan.** Bahasa buku selalu diterima di semua keadaan; paling banter kamu terdengar sedikit formal, dan itu tidak pernah menyinggung siapa pun.",
+     "Bentuk jalanan akan masuk ke mulutmu sendiri kalau kamu tinggal di sana cukup lama. Memaksakannya terlalu awal justru sering terdengar janggal — seperti orang asing yang belajar bahasa Indonesia langsung dari kolom komentar.",
+     "Yang perlu kamu kejar sekarang hanyalah **mengenalinya**. Begitu telingamu tahu bahwa *dobrej*, *mlíko*, *sem*, dan *vokno* adalah kata yang sudah kamu kenal, sembilan puluh persen kebingungannya hilang."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "cs": "obecná čeština", "baca": "O-bets-naa CES-yti-na", "id": "bahasa Ceko sehari-hari" },
+  { "cs": "spisovná čeština", "baca": "SPI-sov-naa", "id": "bahasa Ceko baku" },
+  { "cs": "nářečí", "baca": "NAA-rzye-cii", "id": "logat, dialek (netral)" },
+  { "cs": "jo / no", "baca": "yo / no", "id": "ya ⚠️" },
+  { "cs": "dík / díky", "baca": "jiik", "id": "makasih" },
+  { "cs": "fakt", "baca": "fakt", "id": "sungguh; serius?" },
+  { "cs": "v pohodě", "baca": "f PO-ho-dye", "id": "santai, baik-baik saja" },
+  { "cs": "ujde to", "baca": "UY-de to", "id": "lumayan" },
+  { "cs": "nic moc", "baca": "nyits mots", "id": "biasa saja" },
+  { "cs": "hustý", "baca": "HUS-tii", "id": "keren" },
+  { "cs": "trapný", "baca": "TRAP-nii", "id": "canggung, memalukan" },
+  { "cs": "hele", "baca": "HE-le", "id": "eh, coba lihat" },
+  { "cs": "prostě", "baca": "PROS-tye", "id": "pokoknya" },
+  { "cs": "je mi to jedno", "baca": "ye mi to YED-no", "id": "terserah" },
+  { "cs": "nemám ponětí", "baca": "NE-maam PO-nye-tyii", "id": "tidak ada bayangan" },
+  { "cs": "dej mi pokoj", "baca": "dey mi PO-koy", "id": "jangan ganggu" },
+  { "cs": "krám", "baca": "kraam", "id": "warung, toko (santai)" },
+  { "cs": "prachy", "baca": "PRA-khy", "id": "duit (santai)" },
+  { "cs": "unavený", "baca": "U-na-ve-nii", "id": "lelah" },
+  { "cs": "opravdu", "baca": "O-prav-du", "id": "sungguh" },
+  { "cs": "znamenat", "baca": "ZNA-me-nat", "id": "berarti" },
+  { "cs": "pomaleji", "baca": "PO-ma-le-yi", "id": "lebih pelan" },
+  { "cs": "verze", "baca": "VER-ze", "id": "versi (pr)" },
+  { "cs": "rozmluva / rozhovor", "baca": "ROZ-mlu-va", "id": "percakapan" },
+  { "cs": "Čechy / Morava", "baca": "CE-khy / MO-ra-va", "id": "Bohemia / Moravia" },
+  { "cs": "seriál / zprávy", "baca": "SE-ri-yaal", "id": "serial / berita" },
+  { "cs": "okurka / vokurka", "baca": "O-kur-ka", "id": "timun (buku / jalanan)" },
+  { "cs": "mléko / mlíko", "baca": "MLEE-ko / MLII-ko", "id": "susu (buku / jalanan)" },
+  { "cs": "dobrý / dobrej", "baca": "DOB-rii / DOB-rey", "id": "baik (buku / jalanan)" },
+  { "cs": "jsem / sem", "baca": "ysem / sem", "id": "saya adalah (buku / jalanan)" }
+ ],
+ "exercises": [
+  { "prompt": "Ubah ke bentuk sehari-hari.", "items": [
+   "dobrý → ____",
+   "nový → ____",
+   "mléko → ____",
+   "okno → ____",
+   "jsem → ____",
+   "jdeš → ____"
+  ] },
+  { "prompt": "Ubah kembali ke bahasa buku.", "items": [
+   "velkej → ____",
+   "polívka → ____",
+   "von → ____",
+   "sme → ____",
+   "hezkej → ____"
+  ] },
+  { "prompt": "Pilih ragam yang tepat: buku atau jalanan.", "items": [
+   "Surel ke kantor imigrasi → ____",
+   "Pesan WhatsApp ke teman → ____",
+   "Wawancara kerja → ____",
+   "Ngobrol di kedai bir → ____",
+   "Ujian bahasa → ____"
+  ] },
+  { "prompt": "Terjemahkan ke bahasa Ceko sehari-hari.", "items": [
+   "Halo, apa kabar?",
+   "Baik, makasih.",
+   "Lumayan.",
+   "Bisa bicara lebih pelan?",
+   "Apa artinya itu?"
+  ] }
+ ],
+ "answers": [
+  "dobrej — novej — mlíko — vokno — sem — deš",
+  "velký — polévka — on — jsme — hezký",
+  "buku — jalanan — buku — jalanan — buku",
+  "Ahoj, jak se máš? — Dobrý, dík. — Ujde to. — Můžeš mluvit pomaleji? — Co to znamená?"
+ ]
+}

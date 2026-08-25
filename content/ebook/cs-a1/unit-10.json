@@ -1,0 +1,191 @@
+{
+ "title": "Ke mana kita pergi? — bentuk kedua",
+ "title_target": "Kam jdeme? — genitiv",
+ "goal": "Menyatakan tujuan dengan *do* dan *na*, memakai bentuk kedua (*genitiv*) untuk kepemilikan dan asal, dan memisahkan kata kerja gerak yang berpasangan.",
+ "bekal": [
+  "membedakan *jdu / jedu* (sekali jalan) dari *chodím / jezdím* (kebiasaan)",
+  "memakai *do* + genitiv untuk tujuan dan *z* + genitiv untuk asal",
+  "menyatakan milik tanpa kata \"punya\": *kniha mého bratra*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Sobota dopoledne",
+   "intro": "Sabtu pagi. Eva menelepon; Budi sudah di jalan.",
+   "lines": [
+    { "speaker": "Eva:", "text": "Ahoj, kde jsi? Slyším hluk.", "id": "Halo, kamu di mana? Berisik sekali.", "literal": "halo, di-mana kamu-adalah? saya-mendengar keributan." },
+    { "speaker": "Budi:", "text": "Jdu z obchodu. Byl jsem koupit chleba.", "id": "Saya jalan pulang dari toko. Tadi beli roti.", "literal": "saya-jalan dari toko. adalah saya-adalah membeli roti." },
+    { "speaker": "Eva:", "text": "A kam jdeš teď?", "id": "Sekarang mau ke mana?", "literal": "dan ke-mana kamu-jalan sekarang?" },
+    { "speaker": "Budi:", "text": "Domů. A potom jedu do Brna, k bratranci.", "id": "Pulang. Lalu saya ke Brno, ke tempat sepupu.", "literal": "ke-rumah. dan lalu saya-berkendara ke Brno, ke sepupu." },
+    { "speaker": "Eva:", "text": "Do Brna? Autem, nebo vlakem?", "id": "Ke Brno? Naik mobil atau kereta?", "literal": "ke Brno? dengan-mobil, atau dengan-kereta?" },
+    { "speaker": "Budi:", "text": "Vlakem. Auto nemám a nechci ho ani mít.", "id": "Kereta. Saya tidak punya mobil dan tidak ingin punya.", "literal": "dengan-kereta. mobil tidak-saya-punya dan tidak-saya-mau itu bahkan punya." },
+    { "speaker": "Eva:", "text": "Rozumný. Do Brna jezdím taky vlakem, je to rychlejší.", "id": "Masuk akal. Saya ke Brno juga naik kereta, lebih cepat.", "literal": "masuk-akal. ke Brno saya-berkendara juga dengan-kereta, adalah itu lebih-cepat." },
+    { "speaker": "Budi:", "text": "Jak dlouho to trvá z Prahy?", "id": "Dari Praha berapa lama?", "literal": "bagaimana lama itu berlangsung dari Praha?" },
+    { "speaker": "Eva:", "text": "Dvě a půl hodiny. Jedeš z hlavního nádraží?", "id": "Dua setengah jam. Kamu berangkat dari stasiun utama?", "literal": "dua dan setengah jam. kamu-berkendara dari utama stasiun?" },
+    { "speaker": "Budi:", "text": "Ano. Mimochodem, nemáš číslo tvého bratra? Bydlí v Brně, ne?", "id": "Ya. Ngomong-ngomong, punya nomor saudaramu? Dia tinggal di Brno kan?", "literal": "ya. omong-omong, tidak-kamu-punya nomor milikmu saudara? dia-tinggal di Brno, bukan?" },
+    { "speaker": "Eva:", "text": "Mám. Pošlu ti ho. Pozdravuj Moravu!", "id": "Ada. Nanti saya kirim. Salam untuk Moravia!", "literal": "saya-punya. saya-akan-kirim kepada-kamu itu. salami Moravia!" }
+   ],
+   "notes": [
+    "**Do Brna, z Prahy, z obchodu** — semuanya bentuk kedua, *genitiv*. Ia dipakai untuk **asal** (*z*), **tujuan yang dimasuki** (*do*), **milik**, dan sesudah *bez* (tanpa), *u* (di tempat), *vedle* (di sebelah), *kromě* (kecuali).",
+    "**Do vs na untuk tujuan.** Aturannya mengikuti pilihan *v/na* yang kamu pelajari di unit 9: tempat yang memakai *v* akan memakai *do* (*v obchodě → do obchodu*), tempat yang memakai *na* akan memakai *na* + akuzativ (*na poště → na poštu*). Satu pasangan, dua arah.",
+    "**Jdu vs chodím.** *Jdu* = saya sedang berjalan ke suatu tempat, sekarang, sekali ini. *Chodím* = saya biasa berjalan ke sana. Bahasa Indonesia memakai satu kata \"pergi\" untuk dua hal ini; bahasa Ceko memisahkannya, dan salah pilih membuat kalimatmu berarti hal lain.",
+    "**Jdu = jalan kaki, jedu = berkendara.** Pembelahan kedua. *Jdu do školy* berarti saya berjalan kaki ke sekolah; *jedu do školy* berarti naik sesuatu. Untuk kota lain, selalu *jedu* — tidak ada yang berjalan kaki ke Brno.",
+    "**Domů, bukan do domu.** \"Pulang ke rumah\" punya kata sendiri: *domů*. Dan \"di rumah\" adalah *doma*. Dua kata pendek, dua arah berbeda, dan keduanya tidak berubah bentuk.",
+    "**Ani** berarti \"bahkan (tidak)\" dan menguatkan penyangkalan: *nechci ho ani mít* — bahkan punya pun saya tidak mau.",
+    "**Pozdravuj Moravu!** — \"salami Moravia\". Ceko terbagi dua wilayah budaya: **Čechy** (Bohemia, dengan Praha) dan **Morava** (Moravia, dengan Brno). Perbedaan logat, makanan, dan gengsi antara keduanya adalah bahan lelucon abadi — orang Moravia menganggap Praha sombong, orang Praha menganggap Moravia desa."
+   ],
+   "grammars": [
+    {
+     "title": "Genitiv — bentuk kedua",
+     "body": ["Bentuk paling sering kedua sesudah nominativ. Ia menjawab pertanyaan *koho? čeho?* (dari siapa? dari apa?)."],
+     "table": {
+      "head": ["Jenis kelamin", "Bentuk kamus", "Genitiv", "Contoh"],
+      "rows": [
+       ["perempuan *-a*", "*Praha*, *škola*", "*Prah**y***, *škol**y***", "*z Prahy*, *do školy*"],
+       ["perempuan *-e*", "*restaurace*", "*restaurac**e***", "*do restaurace*"],
+       ["laki-laki benda mati", "*obchod*, *Brno*", "*obchod**u***", "*z obchodu*"],
+       ["laki-laki makhluk hidup", "*bratr*, *pes*", "*bratr**a***, *ps**a***", "*kniha bratra*"],
+       ["netral *-o*", "*město*, *Brno*", "*měst**a***, *Brn**a***", "*do Brna*"],
+       ["netral *-í*", "*nádraží*", "*nádraží*", "*z nádraží* (tetap)"]
+      ]
+     },
+     "after": [
+      "Kata sifat: laki-laki & netral **-ého** (*z hlavního nádraží*), perempuan **-é** (*do nové školy*).",
+      "**Milik dinyatakan dengan urutan terbalik.** Bahasa Indonesia bilang \"buku saudara saya\"; bahasa Ceko bilang *kniha mého bratra* — bendanya dulu, pemiliknya belakangan dengan ekor genitiv. Ini sama seperti *of* dalam bahasa Inggris.",
+      "Genitiv juga wajib sesudah angka lima ke atas (unit 6), sesudah *hodně*, *málo*, *kolik*, dan sesudah kata kerja yang menyangkal dalam bahasa tulis lama."
+     ]
+    },
+    {
+     "title": "Empat kata kerja gerak — dan cara memilihnya",
+     "body": ["Bahasa Ceko membelah \"pergi\" dua kali: jalan kaki lawan berkendara, dan sekali jalan lawan kebiasaan. Hasilnya empat kata kerja."],
+     "table": {
+      "head": ["", "Sekali, sekarang", "Kebiasaan, berulang"],
+      "rows": [
+       ["**Jalan kaki**", "*jít* → *jdu, jdeš, jde*", "*chodit* → *chodím, chodíš*"],
+       ["**Berkendara**", "*jet* → *jedu, jedeš, jede*", "*jezdit* → *jezdím, jezdíš*"],
+       ["Contoh", "*Jdu do obchodu.* (sekarang)", "*Chodím do obchodu každý den.*"],
+       ["Contoh", "*Jedu do Brna.* (hari ini)", "*Jezdím do Brna často.*"]
+      ]
+     },
+     "after": [
+      "Petunjuk cepat: kalau ada kata keterangan seperti *často*, *každý den*, *vždycky*, *nikdy* — pakai kelompok kebiasaan. Kalau ada *teď*, *dnes*, *zítra* untuk satu perjalanan — pakai kelompok sekali jalan.",
+      "*Jít* juga dipakai untuk hal yang bukan gerak: *Jak to jde?* (bagaimana kabarnya?), *To nejde* (itu tidak bisa), *Jde o…* (ini soal…).",
+      "⚠️ Bentuk perintahnya tidak beraturan dan sangat sering dipakai: *Pojď!* (ayo, ke satu orang), *Pojďte!* (sopan/banyak), *Jeď!* (jalan!)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tujuan: do atau na?",
+   "blocks": [
+    { "type": "tabel", "head": ["Tujuan dengan *do* + genitiv", "Tujuan dengan *na* + akuzativ"], "rows": [
+     ["*do obchodu* — ke toko", "*na nádraží* — ke stasiun"],
+     ["*do školy* — ke sekolah", "*na poštu* — ke kantor pos"],
+     ["*do kina* — ke bioskop", "*na univerzitu* — ke universitas"],
+     ["*do restaurace* — ke restoran", "*na náměstí* — ke alun-alun"],
+     ["*do práce* — ke tempat kerja", "*na oběd* — makan siang"],
+     ["*do Brna / do Prahy* — ke kota", "*na Slovensko* — ke Slowakia"],
+     ["*do Indonésie* — ke negara", "*na Moravu* — ke Moravia"],
+     ["*do postele* — ke tempat tidur", "*na výlet* — jalan-jalan"]
+    ] },
+    { "type": "kotak", "title": "Satu cara agar tidak perlu menghafal dua kali", "items": [
+     "Hafalkan tempatnya **berpasangan**: *v obchodě → do obchodu*, *na poště → na poštu*. Kata depan yang dipakai untuk \"di\" selalu menentukan kata depan untuk \"ke\".",
+     "Dan arah ketiganya mengikuti pola yang sama: \"dari\" adalah *z* untuk kelompok *v/do*, dan *z* juga untuk kelompok *na* — *z pošty*, *z nádraží*. Kabar baiknya, arah \"dari\" cuma punya satu kata depan."
+    ] }
+   ]
+  },
+  {
+   "title": "Bepergian di dalam kota dan antar kota",
+   "blocks": [
+    { "type": "tabel", "head": ["Kalimat", "Arti"], "rows": [
+     ["*Kam jedeš?*", "Kamu mau ke mana?"],
+     ["*Jedu do Brna.*", "Saya mau ke Brno."],
+     ["*Čím jedeš?*", "Naik apa?"],
+     ["*Jedu vlakem / autobusem / autem.*", "Naik kereta / bus / mobil."],
+     ["*Kdy jede další vlak?*", "Kereta berikutnya kapan?"],
+     ["*Z kterého nástupiště?*", "Dari peron berapa?"],
+     ["*Jednu jízdenku do Brna, prosím.*", "Satu tiket ke Brno."],
+     ["*Zpáteční, nebo jednosměrnou?*", "Pulang-pergi atau sekali jalan?"],
+     ["*Musím přestupovat?*", "Perlu ganti kendaraan?"],
+     ["*Kde mám vystoupit?*", "Saya harus turun di mana?"]
+    ] },
+    { "type": "kotak", "title": "Transportasi Ceko dalam tiga kalimat", "items": [
+     "Kereta dan bus antar kota di Ceko murah, tepat waktu, dan menjangkau hampir semua desa. Untuk pelajar dan lansia ada potongan besar, sering sampai 75%.",
+     "Di Praha, satu tiket berlaku untuk metro, trem, dan bus sekaligus — tiket **waktu**, bukan tiket jarak: 30 menit, 90 menit, sehari, sebulan. Tiket harus dicap (*označit*) di mesin kuning saat pertama naik.",
+     "Pemeriksa tiket (*revizor*) berpakaian biasa dan denda ketidakhadiran tiket di tempat kira-kira 1 000 Kč. Menawar tidak berhasil; membeli tiket 30 Kč jauh lebih murah."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "cs": "jít / jdu", "baca": "yiit / ydu", "id": "berjalan (sekali)" },
+  { "cs": "chodit / chodím", "baca": "KHO-jyit", "id": "berjalan (kebiasaan)" },
+  { "cs": "jet / jedu", "baca": "yet / YE-du", "id": "berkendara (sekali)" },
+  { "cs": "jezdit / jezdím", "baca": "YEZ-jyit", "id": "berkendara (kebiasaan)" },
+  { "cs": "do", "baca": "do", "id": "ke (masuk ke dalam)" },
+  { "cs": "z / ze", "baca": "z / ze", "id": "dari" },
+  { "cs": "u", "baca": "u", "id": "di tempat (orang)" },
+  { "cs": "k / ke", "baca": "k / ke", "id": "ke arah, ke tempat (orang)" },
+  { "cs": "kromě", "baca": "KRO-mnye", "id": "kecuali" },
+  { "cs": "domů / doma", "baca": "DO-muu / DO-ma", "id": "pulang / di rumah" },
+  { "cs": "jízdenka", "baca": "YIIZ-den-ka", "id": "tiket (pr)" },
+  { "cs": "zpáteční", "baca": "SPAA-tec-nyii", "id": "pulang-pergi" },
+  { "cs": "jednosměrný", "baca": "YED-nos-mnyer-nii", "id": "sekali jalan" },
+  { "cs": "nástupiště", "baca": "NAAS-tu-pisy-tye", "id": "peron (netral)" },
+  { "cs": "přestupovat", "baca": "PRZYES-tu-po-vat", "id": "ganti kendaraan" },
+  { "cs": "vystoupit / nastoupit", "baca": "VYS-tou-pit", "id": "turun / naik" },
+  { "cs": "označit", "baca": "OZ-na-cit", "id": "mencap tiket" },
+  { "cs": "revizor", "baca": "RE-vi-zor", "id": "pemeriksa tiket (lk)" },
+  { "cs": "pokuta", "baca": "PO-ku-ta", "id": "denda (pr)" },
+  { "cs": "auto / autobus", "baca": "AU-to", "id": "mobil / bus" },
+  { "cs": "letadlo", "baca": "LE-tad-lo", "id": "pesawat (netral)" },
+  { "cs": "kolo", "baca": "KO-lo", "id": "sepeda; roda (netral)" },
+  { "cs": "pěšky", "baca": "PYESY-ky", "id": "jalan kaki" },
+  { "cs": "cesta", "baca": "TSES-ta", "id": "jalan, perjalanan (pr)" },
+  { "cs": "výlet", "baca": "VII-let", "id": "jalan-jalan, tamasya (lk)" },
+  { "cs": "hlavní", "baca": "HLAV-nyii", "id": "utama" },
+  { "cs": "rychlejší", "baca": "RYKH-ley-syii", "id": "lebih cepat" },
+  { "cs": "mimochodem", "baca": "MI-mo-kho-dem", "id": "ngomong-ngomong" },
+  { "cs": "poslat / pošlu", "baca": "POS-lat", "id": "mengirim" },
+  { "cs": "pozdravovat", "baca": "POZ-dra-vo-vat", "id": "menyampaikan salam" }
+ ],
+ "exercises": [
+  { "prompt": "Ubah ke bentuk *genitiv* sesudah *do*.", "items": [
+   "Praha → ____",
+   "Brno → ____",
+   "škola → ____",
+   "obchod → ____",
+   "kino → ____",
+   "restaurace → ____"
+  ] },
+  { "prompt": "Pilih *jdu*, *jedu*, *chodím*, atau *jezdím*.", "items": [
+   "Teď ____ do obchodu. (jalan kaki, sekarang)",
+   "Každý den ____ do školy pěšky.",
+   "Zítra ____ do Brna vlakem.",
+   "Často ____ do Brna.",
+   "____ domů, jsem unavený. (sekarang, jalan kaki)"
+  ] },
+  { "prompt": "Terjemahkan ke bahasa Ceko.", "items": [
+   "Kamu mau ke mana?",
+   "Saya mau ke Brno.",
+   "Saya naik kereta.",
+   "Saya pulang dari toko.",
+   "Satu tiket ke Praha, tolong.",
+   "Berapa lama dari Praha?"
+  ] },
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "jedeš / kam / ?",
+   "Brna / jedu / do",
+   "obchodu / jdu / z",
+   "vlakem / jezdím / často",
+   "prosím / jízdenku / jednu"
+  ] }
+ ],
+ "answers": [
+  "do Prahy — do Brna — do školy — do obchodu — do kina — do restaurace",
+  "jdu — chodím — jedu — jezdím — Jdu",
+  "Kam jedeš? — Jedu do Brna. — Jedu vlakem. — Jdu z obchodu. — Jednu jízdenku do Prahy, prosím. — Jak dlouho to trvá z Prahy?",
+  "Kam jedeš? — Jedu do Brna. — Jdu z obchodu. — Často jezdím vlakem. — Jednu jízdenku, prosím."
+ ]
+}

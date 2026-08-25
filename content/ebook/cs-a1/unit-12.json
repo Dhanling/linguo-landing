@@ -1,0 +1,210 @@
+{
+ "title": "Belanja: pasar, supermarket, toko baju",
+ "title_target": "Nakupování",
+ "goal": "Berbelanja bahan makanan dan pakaian, menyebut jumlah dan ukuran, dan mengenali bentuk jamak yang paling sering dipakai.",
+ "bekal": [
+  "meminta jumlah dengan satuan Ceko: *kilo*, *deka*, *kus*, *balení*",
+  "mencoba dan menukar pakaian di toko",
+  "membentuk jamak sederhana dari tiga jenis kelamin"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Dvě zastávky",
+   "intro": "Sabtu. Budi berbelanja mingguan, lalu mampir mencari jaket musim dingin.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Dobrý den. Máte čerstvá rajčata?", "id": "Selamat siang. Ada tomat segar?", "literal": "baik hari. kalian-punya segar tomat?" },
+    { "speaker": "Prodavač:", "text": "Máme, tamhle. Kolik chcete?", "id": "Ada, di sana. Mau berapa?", "literal": "kami-punya, di-sana. berapa kalian-mau?" },
+    { "speaker": "Budi:", "text": "Půl kila. A dvě velké cibule.", "id": "Setengah kilo. Dan dua bawang bombai besar.", "literal": "setengah kilo. dan dua besar bawang." },
+    { "speaker": "Prodavač:", "text": "Ještě něco? Jablka jsou dnes ve slevě.", "id": "Ada lagi? Apel hari ini diskon.", "literal": "masih sesuatu? apel adalah hari-ini dalam diskon." },
+    { "speaker": "Budi:", "text": "Tak kilo jablek. To je všechno, děkuju.", "id": "Kalau begitu sekilo apel. Itu saja, terima kasih.", "literal": "jadi kilo apel. itu adalah semua, saya-berterima-kasih." },
+    { "speaker": "Prodavačka:", "text": "Dobrý den, hledáte něco konkrétního?", "id": "Selamat siang, cari sesuatu yang khusus?", "literal": "baik hari, kalian-mencari sesuatu konkret?" },
+    { "speaker": "Budi:", "text": "Hledám zimní bundu. Bude tady zima, viďte?", "id": "Saya cari jaket musim dingin. Di sini bakal dingin ya?", "literal": "saya-mencari musim-dingin jaket. akan di-sini dingin, bukan?" },
+    { "speaker": "Prodavačka:", "text": "Bude! Jakou máte velikost?", "id": "Bakal! Ukuran Anda berapa?", "literal": "akan! yang-mana kalian-punya ukuran?" },
+    { "speaker": "Budi:", "text": "Nevím přesně. Asi médium.", "id": "Tidak tahu persisnya. Mungkin M.", "literal": "tidak-saya-tahu tepatnya. kira-kira medium." },
+    { "speaker": "Prodavačka:", "text": "Zkuste tuhle. Kabinka je vzadu vlevo.", "id": "Coba yang ini. Kamar pasnya di belakang kiri.", "literal": "cobalah ini. kamar-pas adalah di-belakang di-kiri." },
+    { "speaker": "Budi:", "text": "Je mi trochu malá. Máte větší?", "id": "Agak kekecilan. Ada yang lebih besar?", "literal": "adalah kepada-saya sedikit kecil. kalian-punya lebih-besar?" },
+    { "speaker": "Prodavačka:", "text": "Mám, ale jenom v černé. Vezmete ji?", "id": "Ada, tapi cuma yang hitam. Anda ambil?", "literal": "saya-punya, tapi hanya dalam hitam. kalian-akan-ambil dia?" }
+   ],
+   "notes": [
+    "**Rajčata, jablka** — dua-duanya jamak dari kata netral (*rajče*, *jablko*). Kata netral membentuk jamak dengan **-a**, dan itu kelompok jamak paling gampang dalam bahasa Ceko.",
+    "**Kilo jablek** — sesudah satuan jumlah, kata bendanya masuk genitiv jamak: *kilo jablek*, *půl kila rajčat*, *balení mléka*. Aturannya sama seperti sesudah angka lima ke atas di unit 6.",
+    "**Ve slevě** = sedang diskon, harfiahnya \"dalam potongan\". Kata yang berdampingan: *akce* (promo), *výprodej* (obral), *sleva 30 %*.",
+    "**Je mi malá** harfiahnya \"ia bagi saya kecil\". Bahasa Ceko menempatkan orang yang merasakannya sebagai penerima (*mi*), bukan sebagai pelaku. Pola yang sama muncul di *je mi zima* (saya kedinginan), *je mi špatně* (saya tidak enak badan) — dan itu isi unit 14.",
+    "**Zkuste** = cobalah (sopan). Bentuk *ty*-nya *zkus*. Untuk pakaian ada kata yang lebih tepat: *vyzkoušet si* (mencoba pakai) — *Můžu si to vyzkoušet?*",
+    "**V černé** — \"dalam warna hitam\". Warna sebagai pilihan barang memakai bentuk lokál perempuan, karena kata *barva* (warna) tersembunyi di baliknya.",
+    "**Viďte** adalah versi sopan dari *viď* yang kamu temui di unit 2 — \"kan?\" untuk orang yang kamu panggil *vy*."
+   ],
+   "grammars": [
+    {
+     "title": "Jamak: bentuk dasar",
+     "body": ["Untuk A1 kamu perlu satu hal saja: mengenali bentuk jamak saat mendengarnya, dan membentuk yang paling sering. Ini polanya."],
+     "table": {
+      "head": ["Jenis kelamin", "Tunggal", "Jamak", "Ekor"],
+      "rows": [
+       ["laki-laki benda mati", "*obchod*, *dům*", "*obchod**y***, *dom**y***", "**-y**"],
+       ["laki-laki makhluk hidup", "*student*, *Čech*", "*student**i***, *Češ**i***", "**-i** (huruf sebelumnya melunak)"],
+       ["perempuan *-a*", "*žena*, *kniha*", "*žen**y***, *knih**y***", "**-y**"],
+       ["perempuan *-e*", "*židle*, *ulice*", "*židl**e***, *ulic**e***", "**-e** (tetap)"],
+       ["netral *-o*", "*okno*, *jablko*", "*okn**a***, *jablk**a***", "**-a**"],
+       ["netral *-í*", "*nádraží*", "*nádraží*", "**tetap**"]
+      ]
+     },
+     "after": [
+      "Kata sifatnya juga berubah: laki-laki hidup **-í** (*dobří studenti*), sisanya **-é / -á**: *dobré knihy*, *dobrá jablka*.",
+      "⚠️ Beberapa jamak yang sangat sering dipakai tidak beraturan dan lebih baik dihafal utuh: *člověk → lidé* (orang), *dítě → děti* (anak), *oko → oči* (mata), *ucho → uši* (telinga), *ruka → ruce* (tangan).",
+      "**Kabar melegakan:** untuk berbelanja, kamu jarang benar-benar butuh membentuk jamak sendiri. Satuan (*kilo*, *balení*, *kus*) dan angka menyelesaikan hampir semuanya."
+     ]
+    },
+    {
+     "title": "Menyebut jumlah",
+     "body": ["Satuan yang dipakai orang Ceko di toko, dan bentuk kata yang mengikutinya."],
+     "table": {
+      "head": ["Satuan", "Arti", "Contoh"],
+      "rows": [
+       ["*kilo*", "kilogram", "*kilo jablek*"],
+       ["*půl kila*", "setengah kilo", "*půl kila rajčat*"],
+       ["*deka*", "10 gram", "*dvacet deka sýra*"],
+       ["*litr*", "liter", "*litr mléka*"],
+       ["*kus*", "buah", "*tři kusy*"],
+       ["*balení*", "bungkus, kemasan", "*balení kávy*"],
+       ["*láhev*", "botol", "*láhev vína*"],
+       ["*plechovka*", "kaleng", "*plechovka piva*"],
+       ["*krabice*", "kotak", "*krabice mléka*"],
+       ["*sáček*", "kantong kecil", "*sáček čaje*"]
+      ]
+     },
+     "after": [
+      "Kalimat siap pakainya cuma dua: *Dám si …, prosím.* dan *Chtěl bych …, prosím.* Isi titik-titiknya dengan jumlah + barang, dan kamu sudah bisa berbelanja apa pun.",
+      "Kalau kamu tidak tahu nama barangnya, tunjuk sambil bilang *Tohle, prosím* (yang ini). Itu bukan kecurangan — orang lokal melakukannya juga."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Isi keranjang belanja",
+   "blocks": [
+    { "type": "tabel", "head": ["Bahan pokok", "Arti", "Sayur & buah", "Arti"], "rows": [
+     ["*chléb / chleba*", "roti", "*jablko*", "apel"],
+     ["*rohlík*", "roti panjang", "*banán*", "pisang"],
+     ["*mléko*", "susu", "*pomeranč*", "jeruk"],
+     ["*máslo*", "mentega", "*hruška*", "pir"],
+     ["*sýr*", "keju", "*rajče*", "tomat"],
+     ["*vejce*", "telur", "*okurka*", "timun"],
+     ["*jogurt*", "yoghurt", "*cibule*", "bawang bombai"],
+     ["*mouka*", "tepung", "*česnek*", "bawang putih"],
+     ["*cukr / sůl*", "gula / garam", "*brambory*", "kentang"],
+     ["*olej*", "minyak", "*mrkev*", "wortel"],
+     ["*rýže*", "beras", "*paprika*", "paprika"],
+     ["*maso*", "daging", "*salát*", "selada"]
+    ] },
+    { "type": "kotak", "title": "Belanja di Ceko dalam empat catatan", "items": [
+     "**Kantong plastik berbayar** dan tidak dibagikan sendiri; hampir semua orang membawa tas kain. *Chcete tašku?* — \"mau kantong?\" — akan sering ditanyakan.",
+     "**Koin untuk troli.** Troli belanja di supermarket besar dikunci dan dibuka dengan koin 10 Kč yang kembali saat troli dikembalikan.",
+     "**Toko tutup lebih awal.** Banyak toko kecil tutup jam 18, dan pada hari libur nasional supermarket besar wajib tutup seharian. Yang tetap buka: *večerka* dan pompa bensin.",
+     "**Botol berpanjar.** Botol bir kaca punya jaminan *záloha* 3 Kč yang dikembalikan kalau botolnya dibawa balik ke toko."
+    ] }
+   ]
+  },
+  {
+   "title": "Pakaian dan ukuran",
+   "blocks": [
+    { "type": "tabel", "head": ["Čeština", "Arti", "Čeština", "Arti"], "rows": [
+     ["*tričko*", "kaus", "*bunda*", "jaket"],
+     ["*košile*", "kemeja", "*kabát*", "mantel"],
+     ["*svetr / mikina*", "sweter / hoodie", "*čepice*", "topi rajut"],
+     ["*kalhoty*", "celana", "*šála*", "syal"],
+     ["*džíny*", "celana jins", "*rukavice*", "sarung tangan"],
+     ["*sukně / šaty*", "rok / gaun", "*boty*", "sepatu"],
+     ["*ponožky*", "kaus kaki", "*batoh*", "ransel"],
+     ["*spodní prádlo*", "pakaian dalam", "*deštník*", "payung"]
+    ] },
+    { "type": "tabel", "head": ["Kalimat", "Arti"], "rows": [
+     ["*Můžu si to vyzkoušet?*", "Boleh saya coba?"],
+     ["*Kde je kabinka?*", "Kamar pasnya di mana?"],
+     ["*Máte to o číslo větší?*", "Ada yang lebih besar satu ukuran?"],
+     ["*Je mi to malé / velké.*", "Kekecilan / kebesaran."],
+     ["*Máte to v jiné barvě?*", "Ada warna lain?"],
+     ["*Kolik to stojí ve slevě?*", "Harga diskonnya berapa?"],
+     ["*Můžu to vrátit?*", "Bisa dikembalikan?"],
+     ["*Chtěl bych to vyměnit.*", "Saya mau tukar."]
+    ] },
+    { "type": "kotak", "title": "Musim dingin adalah alasan nyata membeli jaket", "items": [
+     "Suhu Praha di Januari sering berada di sekitar −5 °C dan bisa turun ke −15 °C. Bagi pendatang dari daerah tropis, jaket tebal, sepatu tahan air, dan sarung tangan bukan pilihan gaya melainkan kebutuhan.",
+     "Kata yang akan kamu dengar di toko: *zimní* (musim dingin), *nepromokavý* (tahan air), *teplý* (hangat), *péřová bunda* (jaket bulu angsa)."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "cs": "nakupovat", "baca": "NA-ku-po-vat", "id": "berbelanja" },
+  { "cs": "hledat", "baca": "HLE-dat", "id": "mencari" },
+  { "cs": "koupit", "baca": "KOU-pit", "id": "membeli" },
+  { "cs": "prodávat", "baca": "PRO-daa-vat", "id": "menjual" },
+  { "cs": "zkusit / vyzkoušet si", "baca": "SKU-sit", "id": "mencoba" },
+  { "cs": "vrátit / vyměnit", "baca": "VRAA-tyit", "id": "mengembalikan / menukar" },
+  { "cs": "velikost / číslo", "baca": "VE-li-kost", "id": "ukuran / nomor" },
+  { "cs": "kabinka", "baca": "KA-bin-ka", "id": "kamar pas (pr)" },
+  { "cs": "sleva / akce", "baca": "SLE-va / AK-tse", "id": "diskon / promo" },
+  { "cs": "výprodej", "baca": "VII-pro-dey", "id": "obral (lk)" },
+  { "cs": "taška / batoh", "baca": "TASY-ka / BA-tokh", "id": "tas / ransel" },
+  { "cs": "košík / vozík", "baca": "KO-syiik", "id": "keranjang / troli" },
+  { "cs": "pokladna", "baca": "PO-klad-na", "id": "kasir (pr)" },
+  { "cs": "záloha", "baca": "ZAA-lo-ha", "id": "uang panjar (botol)" },
+  { "cs": "balení / láhev", "baca": "BA-le-nyii / LAA-hef", "id": "kemasan / botol" },
+  { "cs": "ovoce / zelenina", "baca": "O-vo-tse", "id": "buah / sayur" },
+  { "cs": "jablko / banán", "baca": "YAB-l-ko", "id": "apel / pisang" },
+  { "cs": "rajče / okurka", "baca": "RAY-ce / O-kur-ka", "id": "tomat / timun" },
+  { "cs": "cibule / česnek", "baca": "TSI-bu-le / CES-nek", "id": "bawang bombai / bawang putih" },
+  { "cs": "brambory / mrkev", "baca": "BRAM-bo-ry", "id": "kentang / wortel" },
+  { "cs": "vejce / máslo", "baca": "VEY-tse / MAAS-lo", "id": "telur / mentega" },
+  { "cs": "tričko / košile", "baca": "TRIC-ko / KO-syi-le", "id": "kaus / kemeja" },
+  { "cs": "kalhoty / boty", "baca": "KAL-ho-ty / BO-ty", "id": "celana / sepatu" },
+  { "cs": "bunda / kabát", "baca": "BUN-da / KA-baat", "id": "jaket / mantel" },
+  { "cs": "čepice / šála", "baca": "CE-pi-tse / SYAA-la", "id": "topi rajut / syal" },
+  { "cs": "zimní / letní", "baca": "ZIM-nyii / LET-nyii", "id": "musim dingin / musim panas" },
+  { "cs": "lidé / lidi", "baca": "LI-dee / LI-jyi", "id": "orang-orang ⚠️" },
+  { "cs": "asi", "baca": "A-si", "id": "kira-kira, mungkin" },
+  { "cs": "konkrétní", "baca": "KON-kreet-nyii", "id": "tertentu, khusus" },
+  { "cs": "vzadu / vepředu", "baca": "VZA-du", "id": "di belakang / di depan" }
+ ],
+ "exercises": [
+  { "prompt": "Buat bentuk jamaknya.", "items": [
+   "obchod → ____",
+   "kniha → ____",
+   "okno → ____",
+   "student → ____",
+   "židle → ____",
+   "jablko → ____"
+  ] },
+  { "prompt": "Lengkapi dengan satuan yang tepat.", "items": [
+   "____ jablek (1 kg)",
+   "____ mléka (1 l)",
+   "dvacet ____ sýra (200 g)",
+   "____ vína (1 botol)",
+   "____ kávy (1 kemasan)"
+  ] },
+  { "prompt": "Terjemahkan ke bahasa Ceko.", "items": [
+   "Ada tomat segar?",
+   "Setengah kilo, tolong.",
+   "Saya cari jaket.",
+   "Boleh saya coba?",
+   "Kekecilan untuk saya.",
+   "Ada warna lain?"
+  ] },
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+   "rajčata / máte / čerstvá / ?",
+   "jablek / kilo / prosím",
+   "bundu / hledám / zimní",
+   "vyzkoušet / to / si / můžu / ?",
+   "větší / máte / ?"
+  ] }
+ ],
+ "answers": [
+  "obchody — knihy — okna — studenti — židle — jablka",
+  "kilo — litr — deka — láhev — balení",
+  "Máte čerstvá rajčata? — Půl kila, prosím. — Hledám bundu. — Můžu si to vyzkoušet? — Je mi to malé. — Máte to v jiné barvě?",
+  "Máte čerstvá rajčata? — Kilo jablek, prosím. — Hledám zimní bundu. — Můžu si to vyzkoušet? — Máte větší?"
+ ]
+}

@@ -1,0 +1,599 @@
+{
+ "title": "Di restoran",
+ "title_target": "V restauraci",
+ "goal": "Membaca daftar menu Ceko, memesan satu makan lengkap, dan mengurus hal-hal yang tak tertulis: menu harian, roti berbayar, dan meja yang dipesan.",
+ "bekal": [
+  "memesan makanan pembuka, utama, dan penutup dalam satu percakapan",
+  "menyebut alergi dan pantangan makanan",
+  "mengeluh dengan sopan kalau ada yang salah"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Polední menu",
+   "intro": "Siang hari kerja. Eva mengajak Budi ke restoran biasa dekat kantornya.",
+   "lines": [
+    {
+     "speaker": "Servírka:",
+     "text": "Dobrý den, máte rezervaci?",
+     "id": "Selamat siang, ada reservasi?",
+     "literal": "baik hari, kalian-punya reservasi?"
+    },
+    {
+     "speaker": "Eva:",
+     "text": "Nemáme. Máte volný stůl pro dva?",
+     "id": "Tidak. Ada meja untuk dua orang?",
+     "literal": "tidak-kami-punya. kalian-punya kosong meja untuk dua?"
+    },
+    {
+     "speaker": "Servírka:",
+     "text": "Támhle u okna. Tady je jídelní lístek a denní menu.",
+     "id": "Di sana dekat jendela. Ini menu dan menu harian.",
+     "literal": "di-sana dekat jendela. di-sini adalah makanan daftar dan harian menu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Co je denní menu?",
+     "id": "Menu harian itu apa?",
+     "literal": "apa adalah harian menu?"
+    },
+    {
+     "speaker": "Eva:",
+     "text": "Polévka a hlavní jídlo za pevnou cenu. Levnější než à la carte.",
+     "id": "Sup dan makanan utama dengan harga tetap. Lebih murah daripada à la carte.",
+     "literal": "sup dan utama makanan dengan tetap harga. lebih-murah daripada à la carte."
+    },
+    {
+     "speaker": "Servírka:",
+     "text": "Dnes máme česnekovou polévku a svíčkovou.",
+     "id": "Hari ini ada sup bawang putih dan svíčková.",
+     "literal": "hari-ini kami-punya bawang-putih sup dan svíčková."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Co je svíčková? Je v tom maso?",
+     "id": "Svíčková itu apa? Ada dagingnya?",
+     "literal": "apa adalah svíčková? adalah di itu daging?"
+    },
+    {
+     "speaker": "Servírka:",
+     "text": "Hovězí maso se smetanovou omáčkou a knedlíky.",
+     "id": "Daging sapi dengan saus krim dan knedlík.",
+     "literal": "sapi daging dengan krim saus dan knedlík."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobře, dám si to. A vodu bez bublinek, prosím.",
+     "id": "Baik, saya pesan itu. Dan air tanpa soda.",
+     "literal": "baik, saya-beri diri itu. dan air tanpa gelembung, tolong."
+    },
+    {
+     "speaker": "Eva:",
+     "text": "Pro mě smažený sýr s hranolkami a pivo.",
+     "id": "Untuk saya keju goreng dengan kentang goreng dan bir.",
+     "literal": "untuk saya goreng keju dengan kentang-goreng dan bir."
+    },
+    {
+     "speaker": "Servírka:",
+     "text": "Chcete k tomu chleba? Za deset korun.",
+     "id": "Mau roti juga? Sepuluh koruna.",
+     "literal": "kalian-mau untuk itu roti? seharga sepuluh koruna."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ne, děkuju. To stačí.",
+     "id": "Tidak, terima kasih. Cukup.",
+     "literal": "tidak, saya-berterima-kasih. itu cukup."
+    }
+   ],
+   "notes": [
+    "**Denní menu adalah rahasia terbesar makan siang di Ceko.** Antara jam 11 dan 14, hampir semua restoran menyajikan sup plus makanan utama dengan harga tetap — sering setengah dari harga menu biasa. Tanyakan *Máte polední menu?* dan kamu langsung terdengar seperti orang yang tinggal di sana.",
+    "**Roti dan saus dihitung terpisah.** Beda dari kebiasaan Indonesia, *chleba*, *pečivo*, dan kadang saus tambahan **berbayar** dan akan muncul di bon meski dibawa tanpa ditanya. Kalau tidak mau, cukup bilang *Ne, děkuju*.",
+    "**Knedlík** adalah roti kukus yang diiris bundar, teman wajib bagi hampir semua masakan bersaus Ceko. Ia bukan pelengkap, melainkan pengganti nasi — dan menolaknya dianggap agak aneh, seperti memesan rendang tanpa nasi.",
+    "**Smažený sýr** — keju digoreng tepung, disajikan dengan kentang goreng dan saus tartar. Ia satu-satunya pilihan tanpa daging di banyak restoran desa, dan sudah jadi penyelamat vegetarian selama puluhan tahun.",
+    "**Voda bez bublinek** — air tanpa gelembung. Kalau tidak disebut, air yang datang hampir selalu bersoda (*perlivá*). Kata lainnya: *neperlivá* (tanpa soda), *jemně perlivá* (sedikit soda).",
+    "**Levnější než** — lebih murah daripada. Bentuk perbandingan ditandai *-ější* atau *-ší*: *levný → levnější*, *dobrý → lepší*, *velký → větší*, *malý → menší*, *dlouhý → delší*. Empat yang terakhir tidak beraturan dan sangat sering dipakai.",
+    "**Sesudah makan, pelayan bertanya *Chutnalo vám?*** — \"apakah terasa enak bagi kalian?\". Pertanyaan itu hampir selalu datang, dan jawaban standarnya *Bylo to výborné, děkuji.*"
+   ],
+   "grammars": [
+    {
+     "title": "Perbandingan: lebih … dan paling …",
+     "body": [
+      "Bentuk perbandingan Ceko dibentuk dengan menempel ekor, bukan dengan kata tambahan."
+     ],
+     "table": {
+      "head": [
+       "Biasa",
+       "Lebih …",
+       "Paling …",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*levný*",
+        "*levn**ější***",
+        "*nejlevnější*",
+        "murah"
+       ],
+       [
+        "*rychlý*",
+        "*rychl**ejší***",
+        "*nejrychlejší*",
+        "cepat"
+       ],
+       [
+        "*dobrý*",
+        "***lepší***",
+        "*nejlepší*",
+        "baik ⚠️"
+       ],
+       [
+        "*špatný*",
+        "***horší***",
+        "*nejhorší*",
+        "buruk ⚠️"
+       ],
+       [
+        "*velký*",
+        "***větší***",
+        "*největší*",
+        "besar ⚠️"
+       ],
+       [
+        "*malý*",
+        "***menší***",
+        "*nejmenší*",
+        "kecil ⚠️"
+       ],
+       [
+        "*dlouhý*",
+        "***delší***",
+        "*nejdelší*",
+        "panjang ⚠️"
+       ]
+      ]
+     },
+     "after": [
+      "\"Paling\" cukup ditambah awalan **nej-** di depan bentuk \"lebih\". Satu awalan, tanpa kecuali — bagian termudah dari seluruh sistem ini.",
+      "\"Daripada\" adalah *než*: *Vlak je rychlejší **než** autobus.* Bentuk lainnya: *Je stejně dobrý **jako**…* (sama baiknya dengan…).",
+      "Untuk keterangan (bukan kata sifat) polanya mirip: *dobře → lépe → nejlépe*, *hodně → víc → nejvíc*, *málo → míň → nejmíň*."
+     ]
+    },
+    {
+     "title": "Kata depan yang sudah kamu kumpulkan",
+     "body": [
+      "Sepuluh unit, dan kamu sudah memakai hampir semua kata depan penting. Ini petanya."
+     ],
+     "table": {
+      "head": [
+       "Kata depan",
+       "Arti",
+       "Bentuk yang ditarik",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*v / ve*",
+        "di dalam",
+        "**lokál**",
+        "*v restauraci*"
+       ],
+       [
+        "*na*",
+        "di / ke",
+        "**lokál** / **akuzativ**",
+        "*na poště* / *na poštu*"
+       ],
+       [
+        "*do*",
+        "ke dalam",
+        "**genitiv**",
+        "*do restaurace*"
+       ],
+       [
+        "*z / ze*",
+        "dari",
+        "**genitiv**",
+        "*z Prahy*"
+       ],
+       [
+        "*bez*",
+        "tanpa",
+        "**genitiv**",
+        "*bez cukru*"
+       ],
+       [
+        "*u*",
+        "di tempat",
+        "**genitiv**",
+        "*u okna*"
+       ],
+       [
+        "*pro*",
+        "untuk",
+        "**akuzativ**",
+        "*pro mě*"
+       ],
+       [
+        "*s / se*",
+        "dengan",
+        "**instrumentál**",
+        "*s omáčkou*"
+       ],
+       [
+        "*k / ke*",
+        "ke arah",
+        "**dativ**",
+        "*k tomu*"
+       ],
+       [
+        "*o*",
+        "tentang",
+        "**lokál**",
+        "*o Praze*"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan *na*: satu-satunya yang menarik dua bentuk berbeda, tergantung apakah kamu **berada** di sana (lokál) atau **menuju** ke sana (akuzativ). *Jsem na poště* / *Jdu na poštu*.",
+      "Cara paling hemat: hafalkan kata depannya **bersama contoh potongannya**, bukan bersama nama bentuknya. Otakmu akan mengenali polanya jauh sebelum kamu bisa menamainya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca menu Ceko",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian menu",
+      "Arti",
+      "Contoh isinya"
+     ],
+     "rows": [
+      [
+       "*předkrmy*",
+       "pembuka",
+       "*šunka*, *paštika*"
+      ],
+      [
+       "*polévky*",
+       "sup",
+       "*česneková*, *gulášová*, *bramborová*"
+      ],
+      [
+       "*hlavní jídla*",
+       "makanan utama",
+       "*svíčková*, *guláš*, *řízek*"
+      ],
+      [
+       "*bezmasá jídla*",
+       "tanpa daging",
+       "*smažený sýr*, *špagety*"
+      ],
+      [
+       "*přílohy*",
+       "pendamping",
+       "*knedlíky*, *brambory*, *hranolky*, *rýže*"
+      ],
+      [
+       "*saláty*",
+       "salad",
+       "*okurkový*, *zelný*"
+      ],
+      [
+       "*dezerty*",
+       "penutup",
+       "*palačinky*, *zmrzlina*, *štrúdl*"
+      ],
+      [
+       "*nápoje*",
+       "minuman",
+       "*pivo*, *víno*, *limonáda*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Enam makanan yang wajib kamu kenali",
+     "items": [
+      "***svíčková na smetaně*** — daging sapi dengan saus krim sayur, knedlík, sesendok krim dan selai lingonberry. Dianggap masakan nasional nomor satu.",
+      "***vepřo-knedlo-zelo*** — babi panggang, knedlík, dan kol asam. Kalau kamu menghindari babi, ini yang paling perlu diingat namanya.",
+      "***guláš*** — semur daging berbumbu paprika, biasanya dengan knedlík. Warisan dari Hungaria, sudah jadi milik Ceko sendiri.",
+      "***smažený řízek*** — daging tipis bertepung goreng, sepupu Wiener Schnitzel; dimakan panas dengan kentang atau dingin sebagai bekal.",
+      "***bramborák*** — panekuk kentang berbawang putih, dijual di kios pasar.",
+      "***trdelník*** — gulungan roti manis berputar yang dijual di seluruh pusat Praha; wisatawan mengira ini kue kuno Ceko, padahal ia hampir seluruhnya jualan untuk turis."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kalimat untuk sepanjang makan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kapan",
+      "Kalimat",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Masuk",
+       "*Stůl pro dva, prosím.*",
+       "Meja untuk dua."
+      ],
+      [
+       "Menu",
+       "*Máte polední menu?*",
+       "Ada menu harian?"
+      ],
+      [
+       "Menu",
+       "*Co byste doporučila?*",
+       "Anda menyarankan apa?"
+      ],
+      [
+       "Pantangan",
+       "*Nejím vepřové maso.*",
+       "Saya tidak makan babi."
+      ],
+      [
+       "Pantangan",
+       "*Mám alergii na ořechy.*",
+       "Saya alergi kacang."
+      ],
+      [
+       "Pantangan",
+       "*Je to bez masa?*",
+       "Ini tanpa daging?"
+      ],
+      [
+       "Saat makan",
+       "*Dobrou chuť!*",
+       "Selamat makan!"
+      ],
+      [
+       "Masalah",
+       "*To jsem si neobjednal.*",
+       "Saya tidak memesan ini."
+      ],
+      [
+       "Masalah",
+       "*Je to studené.*",
+       "Ini dingin."
+      ],
+      [
+       "Selesai",
+       "*Bylo to výborné.*",
+       "Enak sekali."
+      ],
+      [
+       "Selesai",
+       "*Zaplatíme, prosím.*",
+       "Kami mau bayar."
+      ],
+      [
+       "Bawa pulang",
+       "*Můžete to zabalit?*",
+       "Bisa dibungkus?"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kebiasaan meja yang perlu diketahui",
+     "items": [
+      "**Duduk bersama orang asing itu normal.** Kalau restoran penuh, pelayan bisa menempatkanmu di meja yang sudah ada orangnya. Cukup tanya *Je tu volno?* dan duduk.",
+      "*Dobrou chuť* diucapkan ke semua orang di meja sebelum mulai makan, dan ke meja sebelah kalau kamu lewat. Jawabannya *Nápodobně*.",
+      "Bir dituang ulang tanpa diminta di banyak *hospoda* — pelayan akan terus membawa gelas baru sampai kamu meletakkan tatakan di atas gelas. Itu tanda \"cukup\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "cs": "jídelní lístek",
+   "baca": "YII-del-nyii LIIS-tek",
+   "id": "buku menu"
+  },
+  {
+   "cs": "denní menu",
+   "baca": "DEN-nyii ME-nu",
+   "id": "menu harian"
+  },
+  {
+   "cs": "rezervace",
+   "baca": "RE-zer-va-tse",
+   "id": "reservasi (pr)"
+  },
+  {
+   "cs": "polévka",
+   "baca": "PO-leef-ka",
+   "id": "sup (pr)"
+  },
+  {
+   "cs": "hlavní jídlo",
+   "baca": "HLAV-nyii YIID-lo",
+   "id": "makanan utama"
+  },
+  {
+   "cs": "příloha",
+   "baca": "PRZYII-lo-ha",
+   "id": "pendamping (pr)"
+  },
+  {
+   "cs": "dezert / moučník",
+   "baca": "DE-zert",
+   "id": "makanan penutup"
+  },
+  {
+   "cs": "maso",
+   "baca": "MA-so",
+   "id": "daging"
+  },
+  {
+   "cs": "hovězí / vepřové",
+   "baca": "HO-vye-zii / VEP-rzyo-vee",
+   "id": "sapi / babi"
+  },
+  {
+   "cs": "kuřecí / ryba",
+   "baca": "KU-rzye-tsii / RY-ba",
+   "id": "ayam / ikan"
+  },
+  {
+   "cs": "knedlík",
+   "baca": "KNED-liik",
+   "id": "roti kukus khas Ceko"
+  },
+  {
+   "cs": "brambory / hranolky",
+   "baca": "BRAM-bo-ry",
+   "id": "kentang / kentang goreng"
+  },
+  {
+   "cs": "rýže / těstoviny",
+   "baca": "RII-zye",
+   "id": "nasi / pasta"
+  },
+  {
+   "cs": "zelenina / ovoce",
+   "baca": "ZE-le-nyi-na / O-vo-tse",
+   "id": "sayur / buah"
+  },
+  {
+   "cs": "omáčka",
+   "baca": "O-maac-ka",
+   "id": "saus (pr)"
+  },
+  {
+   "cs": "smetana",
+   "baca": "SME-ta-na",
+   "id": "krim (pr)"
+  },
+  {
+   "cs": "sůl / pepř",
+   "baca": "suul / peprzy",
+   "id": "garam / merica"
+  },
+  {
+   "cs": "smažený / pečený",
+   "baca": "SMA-zye-nii",
+   "id": "goreng / panggang"
+  },
+  {
+   "cs": "vařený / grilovaný",
+   "baca": "VA-rzye-nii",
+   "id": "rebus / bakar"
+  },
+  {
+   "cs": "alergie",
+   "baca": "A-ler-gi-ye",
+   "id": "alergi (pr)"
+  },
+  {
+   "cs": "vegetarián",
+   "baca": "VE-ge-ta-ri-yaan",
+   "id": "vegetarian (lk)"
+  },
+  {
+   "cs": "chutnat",
+   "baca": "KHUT-nat",
+   "id": "terasa enak"
+  },
+  {
+   "cs": "dobrou chuť",
+   "baca": "DOB-rou khuty",
+   "id": "selamat makan"
+  },
+  {
+   "cs": "výborný",
+   "baca": "VII-bor-nii",
+   "id": "enak sekali, bagus sekali"
+  },
+  {
+   "cs": "lepší / horší",
+   "baca": "LEP-syii / HOR-syii",
+   "id": "lebih baik / lebih buruk"
+  },
+  {
+   "cs": "větší / menší",
+   "baca": "VYET-syii / MEN-syii",
+   "id": "lebih besar / lebih kecil"
+  },
+  {
+   "cs": "než",
+   "baca": "nesy",
+   "id": "daripada"
+  },
+  {
+   "cs": "zabalit",
+   "baca": "ZA-ba-lit",
+   "id": "membungkus"
+  },
+  {
+   "cs": "hospoda",
+   "baca": "HOS-po-da",
+   "id": "kedai bir (pr)"
+  },
+  {
+   "cs": "bublinky",
+   "baca": "BUB-lin-ky",
+   "id": "gelembung, soda"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Buat bentuk \"lebih …\" lalu bentuk \"paling …\".",
+   "items": [
+    "levný → ____ (lebih) → ____ (paling)",
+    "dobrý → ____ (lebih) → ____ (paling)",
+    "velký → ____ (lebih) → ____ (paling)",
+    "malý → ____ (lebih) → ____ (paling)",
+    "rychlý → ____ (lebih) → ____ (paling)"
+   ]
+  },
+  {
+   "prompt": "Pilih kata depan yang tepat: *v*, *do*, *z*, *na*, *pro*, *bez*.",
+   "items": [
+    "Jsem ____ restauraci.",
+    "Jdu ____ restaurace.",
+    "Vracím se ____ restaurace.",
+    "Stůl ____ dva, prosím.",
+    "Kávu ____ cukru, prosím.",
+    "Jdu ____ poštu."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Ceko.",
+   "items": [
+    "Ada menu harian?",
+    "Saya tidak makan daging babi.",
+    "Ini tanpa daging?",
+    "Air tanpa soda, tolong.",
+    "Enak sekali.",
+    "Kami mau bayar."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "dva / stůl / prosím / pro",
+    "menu / máte / polední / ?",
+    "masa / to / bez / je / ?",
+    "chuť / dobrou",
+    "výborné / bylo / to"
+   ]
+  }
+ ],
+ "answers": [
+  "levnější / nejlevnější — lepší / nejlepší — větší / největší — menší / nejmenší — rychlejší / nejrychlejší",
+  "v — do — z — pro — bez — na",
+  "Máte polední menu? — Nejím vepřové maso. — Je to bez masa? — Vodu bez bublinek, prosím. — Bylo to výborné. — Zaplatíme, prosím.",
+  "Stůl pro dva, prosím. — Máte polední menu? — Je to bez masa? — Dobrou chuť. — Bylo to výborné."
+ ]
+}
