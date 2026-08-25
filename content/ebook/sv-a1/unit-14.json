@@ -1,0 +1,208 @@
+{
+  "title": "Berbelanja",
+  "title_target": "Vad kostar det?",
+  "goal": "Membeli barang, menanyakan harga, membayar tanpa uang tunai, dan mengerti kalimat yang diucapkan kasir Swedia dengan sangat cepat.",
+  "bekal": [
+    "kalimat baku di toko, kafe, dan kasir",
+    "*finns det…?* — susunan menanyakan ketersediaan",
+    "ukuran, jumlah, dan satuan belanja"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — På ICA och på caféet",
+      "intro": "Kamis sore. Dian berbelanja di ICA sebelum mampir ke kafe kampus bersama Oskar.",
+      "lines": [
+        { "speaker": "Dian:", "text": "Ursäkta, finns det ris här?", "id": "Permisi, ada beras di sini?", "literal": "maaf, ada itu beras di-sini?" },
+        { "speaker": "Personalen:", "text": "Ja, i gång fyra, bredvid pastan.", "id": "Ada, di lorong empat, sebelah pasta.", "literal": "ya, di lorong empat, di-samping pasta-itu." },
+        { "speaker": "Dian:", "text": "Tack. Och vad kostar den här osten?", "id": "Makasih. Terus keju ini berapa?", "literal": "terima-kasih. dan apa berharga ini di-sini keju-itu?" },
+        { "speaker": "Personalen:", "text": "Sextionio kronor kilot. Den är på extrapris den här veckan.", "id": "Enam puluh sembilan kronor per kilo. Minggu ini lagi diskon.", "literal": "enam-puluh-sembilan kronor kilo-itu. ia adalah pada ekstra-harga ini di-sini minggu-itu." },
+        { "speaker": "Dian:", "text": "Då tar jag en bit. Var betalar man?", "id": "Kalau begitu saya ambil sepotong. Bayarnya di mana?", "literal": "kalau-begitu ambil saya satu potong. di-mana membayar orang?" },
+        { "speaker": "Personalen:", "text": "Vid självutcheckningen, eller i kassa två.", "id": "Di kasir mandiri, atau di kasir dua.", "literal": "di sendiri-keluar-cek-itu, atau di kasir dua." },
+        { "speaker": "Kassören:", "text": "Hej! Vill du ha kvitto? Och har du ICA-kort?", "id": "Halo! Mau struk? Punya kartu ICA?", "literal": "hai! mau kamu punya struk? dan punya kamu ICA-kartu?" },
+        { "speaker": "Dian:", "text": "Nej tack, inget kvitto. Och nej, jag har inget kort.", "id": "Nggak usah, nggak perlu struk. Dan nggak, saya nggak punya kartunya.", "literal": "tidak terima-kasih, tidak-ada struk. dan tidak, saya punya tidak-ada kartu." },
+        { "speaker": "Kassören:", "text": "Det blir tvåhundrafemton kronor. Kort eller Swish?", "id": "Jadinya dua ratus lima belas kronor. Kartu atau Swish?", "literal": "itu menjadi dua-ratus-lima-belas kronor. kartu atau Swish?" },
+        { "speaker": "Dian:", "text": "Kort, tack.", "id": "Kartu, ya.", "literal": "kartu, terima-kasih." },
+        { "speaker": "Oskar:", "text": "Och på caféet sen — vill du ha en kaffe och en bulle?", "id": "Terus di kafe nanti — mau kopi sama roti manis?", "literal": "dan pada kafe-itu kemudian — mau kamu punya satu kopi dan satu roti-manis?" },
+        { "speaker": "Dian:", "text": "Gärna. Men den här gången bjuder jag.", "id": "Boleh. Tapi kali ini saya yang traktir.", "literal": "dengan-senang-hati. tapi ini di-sini kali-itu menawarkan saya." }
+      ],
+      "notes": [
+        "**Finns det…?** adalah susunan menanyakan ketersediaan: \"apakah ada…?\". Kata *finns* berasal dari *att finnas* (ada, terdapat), dan ia selalu dipasangkan dengan *det*, berapa pun jumlah barangnya: *Finns det ris?*, *Finns det billiga hotell?* Susunan yang sama untuk memberitahu: *Det finns ett apotek vid torget.*",
+        "**Det blir…** adalah kalimat kasir yang paling sering kamu dengar — harfiahnya \"itu menjadi…\", artinya \"totalnya…\". Kata kerja *bli* (menjadi) muncul di banyak tempat tak terduga: *det blir bra* (nanti juga beres), *det blir kallt* (bakal dingin), *vi blir fem* (kami jadi berlima).",
+        "**Swish** adalah aplikasi pembayaran antar-nomor telepon yang dipakai hampir seluruh penduduk Swedia. Bersama kartu, ia sudah hampir sepenuhnya menggantikan uang tunai: banyak toko, kafe, bahkan gereja memasang tulisan *Vi tar inte kontanter* (kami tidak menerima uang tunai). Datang ke Swedia dengan hanya membawa uang kertas adalah cara tercepat untuk kelaparan.",
+        "**Extrapris** berarti harga diskon; kata lain yang perlu dikenali di rak: *rea* (obral), *erbjudande* (penawaran), *stammis* (pelanggan tetap), *bäst före* (baik digunakan sebelum). Yang terakhir bukan tanggal kedaluwarsa — untuk itu tulisannya *sista förbrukningsdag*.",
+        "**Jag bjuder** berarti \"saya traktir\". Kata kerja *bjuda* juga berarti \"mengundang\": *jag bjuder dig på middag* bisa berarti mengundang makan malam sekaligus membayarinya. Perlu diketahui bahwa membagi tagihan adalah kebiasaan baku di Swedia — menawarkan traktiran adalah isyarat khusus, bukan kesopanan otomatis.",
+        "**Inget kvitto** memakai *inget*, bukan *inte*. Untuk menyangkal **kata benda**, bahasa Swedia memakai *ingen/inget/inga* — bentuknya mengikuti jenis dan jumlah bendanya, persis seperti kata sifat: *ingen bok*, *inget kort*, *inga pengar*."
+      ],
+      "grammars": [
+        {
+          "title": "Ingen, inget, inga",
+          "body": [
+            "Kamu sudah memakai *inte* untuk menyangkal kalimat. Untuk menyangkal kata benda, ada keluarga kata tersendiri:"
+          ],
+          "table": {
+            "head": ["Jenisnya", "Bentuknya", "Contoh", "Sama artinya dengan"],
+            "rows": [
+              ["*en*-ord", "**ingen**", "Jag har **ingen** bil.", "Jag har inte någon bil."],
+              ["*ett*-ord", "**inget**", "Jag har **inget** kort.", "Jag har inte något kort."],
+              ["jamak", "**inga**", "Jag har **inga** pengar.", "Jag har inte några pengar."],
+              ["berdiri sendiri", "**ingenting**", "Jag ser **ingenting**.", "Jag ser inte något."],
+              ["orang", "**ingen**", "**Ingen** vet.", "Tidak ada yang tahu."]
+            ]
+          },
+          "after": [
+            "Kolom terakhir memperlihatkan bahwa selalu ada dua cara mengatakan hal yang sama. Bentuk *ingen* lebih pendek dan lebih sering dipakai di kalimat sederhana; bentuk *inte någon* wajib dipakai kalau ada kata kerja bantu: *Jag kan **inte** hitta **någon** nyckel* — bukan *jag kan ingen nyckel hitta*.",
+            "**Ingenting** (tidak ada apa-apa) dan **ingen** (tidak ada seorang pun) berdiri sendiri tanpa kata benda. Sepupunya di sisi positif: *någonting/något* (sesuatu) dan *någon* (seseorang)."
+          ]
+        },
+        {
+          "title": "Kalimat di kasir, kata demi kata",
+          "table": {
+            "head": ["Yang kamu dengar", "Artinya", "Jawabannya"],
+            "rows": [
+              ["**Hej hej!**", "Halo!", "Hej!"],
+              ["**Var det bra så?**", "Sudah semua?", "Ja tack. / Nej, jag vill ha…"],
+              ["**Har du medlemskort?**", "Punya kartu anggota?", "Nej, tack."],
+              ["**Vill du ha kvitto?**", "Mau struk?", "Nej tack. / Ja tack."],
+              ["**Det blir 215 kronor.**", "Totalnya 215 kronor.", "(bayar)"],
+              ["**Kort eller Swish?**", "Kartu atau Swish?", "Kort, tack."],
+              ["**Tryck på grön knapp.**", "Tekan tombol hijau.", "(tekan)"],
+              ["**Ha en fortsatt bra dag!**", "Semoga harimu lancar terus!", "Detsamma! / Tack, du med!"]
+            ]
+          },
+          "after": [
+            "Kalimat-kalimat ini diucapkan sangat cepat dan hampir tanpa jeda, karena kasir mengucapkannya ratusan kali sehari. Jangan panik: seluruh percakapan di kasir Swedia bisa diselesaikan dengan tiga kata — *hej*, *nej tack*, *tack*.",
+            "**Detsamma!** berarti \"kamu juga!\" dan merupakan jawaban baku atas ucapan selamat apa pun. Alternatifnya *tack detsamma* atau *du med*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Belanja: barang, ukuran, jumlah",
+      "blocks": [
+        { "type": "tabel", "head": ["Svenska", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["en matbutik", "en MAT-bü-tik", "toko bahan makanan"], 
+          ["en kundvagn", "en KUND-vangn", "troli"],
+          ["en kasse", "en KAS-se", "kantong belanja"],
+          ["ett kvitto", "et KVIT-to", "struk"],
+          ["en kassa", "en KAS-sa", "kasir"],
+          ["ett kort", "et kot", "kartu"],
+          ["kontanter", "kon-TAN-ter", "uang tunai"],
+          ["ett pris", "et pris", "harga"],
+          ["en rea", "en RÈ-a", "obral"],
+          ["en storlek", "en STUR-lèk", "ukuran"],
+          ["ett kilo / ett hekto", "et SYI-lu · et HEK-tu", "kilogram / 100 gram"],
+          ["en påse / en burk", "en PO-se · en burk", "bungkus / kaleng"]
+        ] },
+        { "type": "p", "text": "**Ett hekto** (100 gram) adalah satuan yang masih hidup di Swedia dan tidak dipakai di banyak negara lain. Di konter daging dan keju, orang memesan *två hekto skinka* (dua ons ham). Kalau kamu menyebut gram, kasirnya tetap mengerti — tapi *hekto* yang akan kamu dengar." },
+        { "type": "kotak", "title": "Kalimat yang kamu ucapkan", "items": [
+          "**Jag skulle vilja ha…** — Saya mau… (bentuk paling sopan di toko dan restoran)",
+          "**Finns det…?** — Ada…?",
+          "**Har ni den här i storlek M?** — Ada yang ukuran M?",
+          "**Kan jag få prova?** — Boleh saya coba?",
+          "**Vad kostar det?** — Berapa harganya?",
+          "**Det är för dyrt.** — Terlalu mahal.",
+          "**Jag tittar bara, tack.** — Cuma lihat-lihat, terima kasih."
+        ] }
+      ]
+    },
+    {
+      "title": "Di kafe dan restoran",
+      "blocks": [
+        { "type": "tabel", "head": ["Svenska", "Bahasa Indonesia"], "rows": [
+          ["Ett bord för två, tack.", "Meja untuk dua orang."],
+          ["Kan jag få se menyn?", "Boleh lihat menunya?"],
+          ["Jag tar dagens rätt.", "Saya ambil menu hari ini."],
+          ["Har ni något vegetariskt?", "Ada yang vegetarian?"],
+          ["Jag är allergisk mot nötter.", "Saya alergi kacang."],
+          ["Kan vi få notan, tack?", "Boleh minta bonnya?"],
+          ["Vi delar på notan.", "Kami bagi rata bonnya."],
+          ["Påtår?", "Kopi isi ulang? (gratis di banyak kafe)"]
+        ] },
+        { "type": "p", "text": "**Dagens rätt** — sering ditulis *dagens* saja — adalah menu makan siang berharga tetap yang disajikan hampir semua restoran Swedia pada hari kerja, biasanya pukul 11.00-14.00. Harganya jauh lebih murah daripada menu malam, dan biasanya sudah termasuk salad, roti, dan kopi. Ini cara termurah makan di luar di Swedia." },
+        { "type": "p", "text": "**Påtår** berarti cangkir kopi kedua, dan di banyak kafe ia **gratis** — tanyakan *ingår påtår?* (apakah termasuk?). Kata ini tidak punya padanan di bahasa mana pun yang kamu kenal, dan ia menjelaskan banyak hal tentang tempat kopi dalam kebudayaan Swedia." },
+        { "type": "kotak", "title": "Ulangan berjenjang — kembali ke unit 12", "items": [
+          "Sebutkan tiga bentuk dari lima kata sifat: stor, ny, liten, gammal, billig.",
+          "Lalu pakai dalam kalimat belanja: *Har ni en billigare tröja?*, *Den här är för dyr*, *Jag vill ha den lilla påsen*.",
+          "Terakhir, tanyakan harga lima barang di sekitarmu memakai *Vad kostar…?* dan jawab dengan angka Swedia."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sv": "att finnas / finns", "baca": "at FIN-nas · fins", "id": "ada, terdapat" },
+    { "sv": "att kosta", "baca": "at KOS-ta", "id": "berharga" },
+    { "sv": "att betala", "baca": "at be-TA-la", "id": "membayar" },
+    { "sv": "att bli", "baca": "at bli", "id": "menjadi" },
+    { "sv": "att bjuda", "baca": "at BYÜ-da", "id": "mentraktir, mengundang" },
+    { "sv": "att prova", "baca": "at PRU-va", "id": "mencoba" },
+    { "sv": "att dela", "baca": "at DÈ-la", "id": "membagi" },
+    { "sv": "ingen / inget / inga", "baca": "ING-en · ING-et", "id": "tidak ada" },
+    { "sv": "något / någon", "baca": "NO-got · NO-gon", "id": "sesuatu / seseorang" },
+    { "sv": "ett kvitto", "baca": "et KVIT-to", "id": "struk" },
+    { "sv": "ett kort", "baca": "et kot", "id": "kartu" },
+    { "sv": "kontanter", "baca": "kon-TAN-ter", "id": "uang tunai" },
+    { "sv": "pengar", "baca": "PENG-ar", "id": "uang" },
+    { "sv": "ett pris", "baca": "et pris", "id": "harga" },
+    { "sv": "en storlek", "baca": "en STUR-lèk", "id": "ukuran" },
+    { "sv": "en påse", "baca": "en PO-se", "id": "kantong, bungkus" },
+    { "sv": "en meny", "baca": "en me-NÜ", "id": "menu" },
+    { "sv": "en nota", "baca": "en NU-ta", "id": "bon, tagihan" },
+    { "sv": "dagens rätt", "baca": "DA-gens ret", "id": "menu hari ini" },
+    { "sv": "en bit", "baca": "en bit", "id": "potongan" },
+    { "sv": "en gång", "baca": "en gong", "id": "kali; lorong" },
+    { "sv": "extrapris", "baca": "EKS-tra-pris", "id": "harga diskon" },
+    { "sv": "allergisk mot", "baca": "a-LÈR-gisk mut", "id": "alergi terhadap" },
+    { "sv": "detsamma", "baca": "det-SAM-ma", "id": "kamu juga" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan *ingen*, *inget*, atau *inga*.",
+      "items": [
+        "Jag har ____ kort.",
+        "Vi har ____ pengar.",
+        "Hon har ____ bil.",
+        "Det finns ____ mjölk kvar.",
+        "Han har ____ syskon.",
+        "Jag vill ha ____ kvitto."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kalimat yang tepat: *Vad kostar det?*, *Finns det ris här?*, *Kort, tack.*, *Nej tack.*, *Kan vi få notan, tack?*",
+      "items": [
+        "Kamu mencari beras di rak toko: ____",
+        "Kamu ingin tahu harga sepotong keju: ____",
+        "Kasir bertanya *Vill du ha kvitto?* dan kamu tidak mau: ____",
+        "Kasir bertanya *Kort eller Swish?*: ____",
+        "Kamu selesai makan di restoran: ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "kostar / den / vad / här / osten / ?",
+        "det / här / finns / ris / ?",
+        "kronor / blir / tvåhundra / det",
+        "kort / jag / inget / har",
+        "gången / bjuder / den / här / jag"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swedia.",
+      "items": [
+        "Ada beras di sini?",
+        "Berapa harganya?",
+        "Totalnya dua ratus lima belas kronor.",
+        "Saya tidak punya uang tunai.",
+        "Boleh minta bonnya?"
+      ]
+    }
+  ],
+  "answers": [
+    "inget — inga — ingen — ingen — inga — inget",
+    "Finns det ris här? — Vad kostar det? — Nej tack. — Kort, tack. — Kan vi få notan, tack?",
+    "Vad kostar den här osten? — Finns det ris här? — Det blir tvåhundra kronor. — Jag har inget kort. — Den här gången bjuder jag.",
+    "Finns det ris här? — Vad kostar det? — Det blir tvåhundrafemton kronor. — Jag har inga kontanter. — Kan vi få notan, tack?"
+  ]
+}

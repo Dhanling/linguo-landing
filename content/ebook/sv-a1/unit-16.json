@@ -1,0 +1,201 @@
+{
+  "title": "Yang pernah dan yang sudah",
+  "title_target": "Har du varit i Norrland?",
+  "goal": "Memakai bentuk *har* + supinum untuk pengalaman dan hasil — dan tahu kapan bahasa Swedia memilihnya, bukan bentuk lampau biasa.",
+  "bekal": [
+    "supinum: bentuk yang cuma hidup bersama *har* dan *hade*",
+    "kapan memakai *har gjort* dan kapan *gjorde*",
+    "menceritakan pengalaman: pernah, belum pernah, baru saja"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Har du sett norrsken?",
+      "intro": "Malam November. Dian, Elin, dan Oskar duduk di dapur asrama. Di luar, suhu sudah minus enam.",
+      "lines": [
+        { "speaker": "Elin:", "text": "Har du varit i Norrland någon gång?", "id": "Kamu pernah ke Norrland?", "literal": "punya kamu ada di Norrland satu kali?" },
+        { "speaker": "Dian:", "text": "Nej, jag har aldrig varit norr om Uppsala.", "id": "Belum, saya belum pernah ke utara Uppsala.", "literal": "tidak, saya punya tidak-pernah ada utara dari Uppsala." },
+        { "speaker": "Elin:", "text": "Då har du inte sett norrsken heller.", "id": "Berarti kamu juga belum pernah lihat aurora.", "literal": "kalau-begitu punya kamu tidak melihat utara-cahaya juga-tidak." },
+        { "speaker": "Dian:", "text": "Nej. Har du sett det?", "id": "Belum. Kamu pernah lihat?", "literal": "tidak. punya kamu melihat itu?" },
+        { "speaker": "Elin:", "text": "Ja, många gånger. Vi åkte till Kiruna varje vinter när jag var liten.", "id": "Pernah, sering. Kami ke Kiruna tiap musim dingin waktu saya kecil.", "literal": "ya, banyak kali-kali. kami pergi ke Kiruna setiap musim-dingin ketika saya adalah kecil." },
+        { "speaker": "Oskar:", "text": "Jag har bott där i två år. Jag jobbade på gruvan.", "id": "Saya pernah tinggal di sana dua tahun. Saya kerja di tambang.", "literal": "saya punya tinggal di-sana dalam dua tahun. saya bekerja pada tambang-itu." },
+        { "speaker": "Dian:", "text": "Har du gjort det? Det visste jag inte!", "id": "Serius? Saya nggak tahu itu!", "literal": "punya kamu melakukan itu? itu tahu saya tidak!" },
+        { "speaker": "Oskar:", "text": "Jag har aldrig berättat det. Det var före universitetet.", "id": "Saya belum pernah cerita. Itu sebelum kuliah.", "literal": "saya punya tidak-pernah menceritakan itu. itu adalah sebelum universitas-itu." },
+        { "speaker": "Elin:", "text": "Har ni ätit surströmming, förresten?", "id": "Ngomong-ngomong, kalian pernah makan surströmming?", "literal": "punya kalian makan asam-ikan, omong-omong?" },
+        { "speaker": "Dian:", "text": "Nej, och jag har hört tillräckligt om den.", "id": "Belum, dan saya sudah dengar cukup banyak soal itu.", "literal": "tidak, dan saya punya mendengar cukup tentang ia." },
+        { "speaker": "Oskar:", "text": "Klokt. Jag har provat en gång. En gång räcker.", "id": "Bijak. Saya pernah coba sekali. Sekali cukup.", "literal": "bijak. saya punya mencoba satu kali. satu kali cukup." },
+        { "speaker": "Elin:", "text": "Vi har precis bestämt: nästa vinter åker vi norrut allihop.", "id": "Kami barusan mutusin: musim dingin depan kita ke utara ramai-ramai.", "literal": "kami punya persis memutuskan: berikut musim-dingin pergi kami utara-ke semuanya." }
+      ],
+      "notes": [
+        "**Supinum tidak pernah berdiri sendiri.** Ia selalu didahului *har* (sudah) atau *hade* (waktu itu sudah). Bentuknya tidak pernah berubah — tidak menurut pelaku, tidak menurut jenis, tidak menurut jumlah. *Jag har varit, du har varit, vi har varit*.",
+        "**Har varit vs var.** Perbedaannya sama dengan bahasa Inggris: *har varit* menceritakan **pengalaman tanpa waktu tertentu** (\"pernah\"), sedangkan *var* menceritakan **peristiwa pada waktu tertentu**. *Jag har varit i Kiruna* (saya pernah ke Kiruna) vs *Jag var i Kiruna förra vintern* (saya ke Kiruna musim dingin lalu). Begitu ada keterangan waktu yang jelas, bentuk lampau biasa yang dipakai.",
+        "**Aldrig + har = belum pernah.** *Jag har aldrig varit där* — perhatikan bahwa *aldrig* berdiri **sesudah** *har* dan **sebelum** supinum, persis di tempat *inte* berdiri. Susunan ini persis sama dengan kata kerja bantu di unit 8.",
+        "**Norrsken** — aurora borealis, harfiahnya \"cahaya utara\". Ia terlihat di sepertiga bagian utara Swedia sekitar dua ratus malam setahun, dan menjadi alasan utama orang berkunjung ke Kiruna dan Abisko di musim dingin.",
+        "**Surströmming** adalah ikan haring yang difermentasi di dalam kaleng sampai kalengnya menggembung. Baunya termasuk yang paling menyengat di dunia makanan, dan orang Swedia membukanya di luar rumah, di bawah air, sambil tertawa melihat wajah pendatang. Menolaknya sepenuhnya dapat diterima; mencobanya sekali akan membuatmu diterima di mana saja di Swedia utara.",
+        "**Precis bestämt** — *precis* bersama bentuk *har* berarti \"baru saja\": *jag har precis kommit* (saya baru saja sampai). Ini salah satu tempat di mana bentuk *har* dipakai untuk sesuatu yang jelas-jelas baru terjadi, karena yang ditekankan adalah **hasilnya sekarang**, bukan kejadiannya."
+      ],
+      "grammars": [
+        {
+          "title": "Supinum menurut golongan",
+          "table": {
+            "head": ["Gol.", "Dasar", "Lampau", "Supinum", "Contoh"],
+            "rows": [
+              ["**1**", "att tala", "talade", "tal**at**", "Jag har talat med henne."],
+              ["**2a**", "att ringa", "ringde", "ring**t**", "Har du ringt mamma?"],
+              ["**2b**", "att köpa", "köpte", "köp**t**", "Vi har köpt biljetter."],
+              ["**3**", "att bo", "bodde", "bo**tt**", "Han har bott i Kiruna."],
+              ["**4**", "att skriva", "skrev", "skriv**it**", "Jag har skrivit ett brev."],
+              ["**4**", "att äta", "åt", "ät**it**", "Har ni ätit?"]
+            ]
+          },
+          "after": [
+            "Polanya rapi sekali: **golongan 1 memakai *-at*, golongan 2 memakai *-t*, golongan 3 memakai *-tt*, golongan 4 (kuat) memakai *-it*.** Empat ekor, empat golongan, tanpa kekecualian di tingkat A1.",
+            "Kata kerja kuat memakai **vokal bentuk dasarnya**, bukan vokal bentuk lampaunya: *skriva → skrev → skrivit* (bukan *skrevit*), *dricka → drack → druckit*, *sitta → satt → suttit*. Perhatikan vokal *u* yang muncul di beberapa supinum — sisa pola kuno yang sama dengan bahasa Inggris *drunk* dan *sung*.",
+            "Beberapa bentuk yang paling sering dipakai: **varit** (vara), **haft** (ha), **gjort** (göra), **gått** (gå), **kommit** (komma), **sett** (se), **fått** (få), **tagit** (ta), **sagt** (säga), **blivit** (bli)."
+          ]
+        },
+        {
+          "title": "Har gjort atau gjorde",
+          "table": {
+            "head": ["Pakai *har* + supinum kalau…", "Contoh", "Pakai bentuk lampau kalau…", "Contoh"],
+            "rows": [
+              ["menceritakan pengalaman tanpa waktu", "Jag **har varit** i Kiruna.", "waktunya disebut", "Jag **var** i Kiruna i januari."],
+              ["hasilnya masih terasa sekarang", "Jag **har tappat** nyckeln.", "cerita berurutan di masa lalu", "Jag **tappade** nyckeln och **letade** i en timme."],
+              ["baru saja terjadi", "Han **har precis** gått.", "menjawab \"kapan?\"", "Han **gick** för fem minuter sedan."],
+              ["dengan *aldrig*, *någon gång*, *redan*", "**Har** du **redan** ätit?", "dengan *igår*, *förra veckan*", "Jag **åt** igår."]
+            ]
+          },
+          "after": [
+            "Aturan praktisnya: **kalau kalimatmu memuat keterangan waktu yang menunjuk saat tertentu di masa lalu, pakai bentuk lampau.** *Igår*, *förra veckan*, *i helgen*, *klockan tre* — semuanya menuntut *gjorde*, bukan *har gjort*.",
+            "Bentuk **hade + supinum** (\"waktu itu sudah\") juga ada dan bekerja persis seperti *had done* dalam bahasa Inggris: *När jag kom hade de redan ätit* (waktu saya datang mereka sudah makan). Ia jarang dipakai di A1, tapi kamu akan mengenalinya dari polanya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bertanya tentang pengalaman",
+      "blocks": [
+        { "type": "tabel", "head": ["Svenska", "Bahasa Indonesia"], "rows": [
+          ["Har du varit i Sverige förut?", "Kamu pernah ke Swedia sebelumnya?"],
+          ["Har du provat surströmming?", "Kamu pernah coba surströmming?"],
+          ["Jag har aldrig sett snö.", "Saya belum pernah lihat salju."],
+          ["Har du redan ätit?", "Kamu sudah makan?"],
+          ["Jag har precis kommit.", "Saya baru saja sampai."],
+          ["Vi har inte bestämt än.", "Kami belum memutuskan."],
+          ["Hur länge har du bott här?", "Sudah berapa lama tinggal di sini?"],
+          ["Jag har bott här i sex månader.", "Saya sudah tinggal di sini enam bulan."]
+        ] },
+        { "type": "p", "text": "Dua baris terakhir memperlihatkan satu tempat di mana bahasa Swedia dan Indonesia **sepakat** melawan bahasa Inggris: untuk sesuatu yang dimulai di masa lalu dan **masih berlangsung**, bahasa Swedia memakai *har bott* — sama seperti bahasa Inggris (*have lived*), dan berbeda dari banyak bahasa Eropa lain yang memakai bentuk sekarang. Bahasa Indonesia \"sudah tinggal enam bulan\" juga memakai penanda selesai. Polanya sama." },
+        { "type": "kotak", "title": "Än, redan, fortfarande", "items": [
+          "**än** — belum/lagi, dipakai dalam kalimat bersangkalan atau pertanyaan: *Har du ätit än?* · *Jag har inte bestämt än.*",
+          "**redan** — sudah: *Han har redan gått.*",
+          "**fortfarande** — masih: *Jag är fortfarande hungrig.*",
+          "**inte längre** — tidak lagi: *Hon bor inte längre här.*",
+          "Empat kata ini menutupi hampir seluruh percakapan tentang apa yang sudah dan belum terjadi."
+        ] }
+      ]
+    },
+    {
+      "title": "Swedia utara, dan musim dingin sungguhan",
+      "blocks": [
+        { "type": "tabel", "head": ["Svenska", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["norr / söder", "nor · SÖ-der", "utara / selatan"],
+          ["öster / väster", "ÖS-ter · VES-ter", "timur / barat"],
+          ["norrsken", "NOR-syèn", "aurora borealis"],
+          ["snö", "snö", "salju"],
+          ["is", "is", "es"],
+          ["mörker", "MÖR-ker", "kegelapan"],
+          ["en gruva", "en GRÜ-va", "tambang"],
+          ["en ren", "en rèn", "rusa kutub"],
+          ["midnattssol", "MID-nats-sul", "matahari tengah malam"],
+          ["att åka skidor", "at O-ka HWI-dor", "bermain ski"],
+          ["att frysa", "at FRÜ-sa", "kedinginan"],
+          ["minusgrader", "MI-nus-gra-der", "suhu di bawah nol"]
+        ] },
+        { "type": "p", "text": "Di Kiruna, kota paling utara Swedia, matahari **tidak terbit sama sekali** selama sekitar dua puluh hari di bulan Desember, dan **tidak terbenam sama sekali** selama sekitar lima puluh hari di musim panas. Penduduknya menyebut masa gelap itu *polarnatt* dan masa terang itu *midnattssol*. Kotanya sendiri sedang dipindahkan tiga kilometer ke timur, gedung demi gedung, karena tambang bijih besi di bawahnya membuat tanahnya turun." },
+        { "type": "kotak", "title": "Ulangan berjenjang — kembali ke unit 14", "items": [
+          "Ucapkan seluruh percakapan di kasir dari ingatan, dari *hej* sampai *detsamma*.",
+          "Lalu ubah jadi cerita lampau: *Jag handlade på ICA, jag köpte ost, jag betalade med kort.*",
+          "Terakhir, ubah lagi jadi bentuk pengalaman: *Jag har handlat på ICA många gånger. Jag har aldrig betalat med kontanter.*"
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sv": "har + supinum", "baca": "har", "id": "sudah, pernah" },
+    { "sv": "varit", "baca": "VA-rit", "id": "pernah ada, sudah" },
+    { "sv": "gjort", "baca": "yut", "id": "sudah melakukan" },
+    { "sv": "gått", "baca": "got", "id": "sudah pergi" },
+    { "sv": "kommit", "baca": "KOM-mit", "id": "sudah datang" },
+    { "sv": "sett", "baca": "set", "id": "sudah melihat" },
+    { "sv": "ätit", "baca": "È-tit", "id": "sudah makan" },
+    { "sv": "att berätta", "baca": "at be-RET-ta", "id": "menceritakan" },
+    { "sv": "att bestämma", "baca": "at be-STEM-ma", "id": "memutuskan" },
+    { "sv": "att höra", "baca": "at HÖ-ra", "id": "mendengar" },
+    { "sv": "att räcka", "baca": "at REK-ka", "id": "cukup" },
+    { "sv": "än", "baca": "en", "id": "belum, lagi" },
+    { "sv": "redan", "baca": "RÈ-dan", "id": "sudah" },
+    { "sv": "fortfarande", "baca": "fot-FA-ran-de", "id": "masih" },
+    { "sv": "någon gång", "baca": "NO-gon gong", "id": "pernah, suatu kali" },
+    { "sv": "tillräckligt", "baca": "til-REK-lit", "id": "cukup banyak" },
+    { "sv": "före", "baca": "FÖ-re", "id": "sebelum" },
+    { "sv": "snö", "baca": "snö", "id": "salju" },
+    { "sv": "norrsken", "baca": "NOR-syèn", "id": "aurora" },
+    { "sv": "en gruva", "baca": "en GRÜ-va", "id": "tambang" },
+    { "sv": "klokt", "baca": "klukt", "id": "bijak" },
+    { "sv": "allihop", "baca": "AL-li-hup", "id": "semuanya, ramai-ramai" },
+    { "sv": "heller", "baca": "HEL-ler", "id": "juga tidak" },
+    { "sv": "norrut", "baca": "NOR-üt", "id": "ke arah utara" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis bentuk supinumnya. Contoh: *tala* → *talat*.",
+      "items": [
+        "bo",
+        "köpa",
+        "ringa",
+        "arbeta",
+        "skriva",
+        "äta"
+      ]
+    },
+    {
+      "prompt": "Isi dengan supinum dari kata dalam kurung.",
+      "items": [
+        "Jag har ____ i Sverige i sex månader. (bo)",
+        "Har du ____ surströmming? (prova)",
+        "Vi har aldrig ____ norrsken. (se)",
+        "Hon har ____ till sin mamma. (ringa)",
+        "De har redan ____. (äta)",
+        "Har ni ____ biljetterna? (köpa)"
+      ]
+    },
+    {
+      "prompt": "Pilih bentuk yang benar, lalu tulis kalimat lengkapnya. Petunjuk: keterangan waktu tertentu menuntut bentuk lampau.",
+      "items": [
+        "Jag ____ i Kiruna förra vintern. (vara)",
+        "Jag ____ aldrig ____ i Kiruna. (vara)",
+        "Han ____ hem för fem minuter sedan. (gå)",
+        "Han ____ precis ____ hem. (gå)",
+        "Vi ____ jordgubbar igår. (äta)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swedia.",
+      "items": [
+        "Kamu pernah ke Norrland?",
+        "Saya belum pernah lihat salju.",
+        "Sudah berapa lama kamu tinggal di sini?",
+        "Kami belum memutuskan.",
+        "Dia baru saja pulang."
+      ]
+    }
+  ],
+  "answers": [
+    "bott — köpt — ringt — arbetat — skrivit — ätit",
+    "bott — provat — sett — ringt — ätit — köpt",
+    "Jag var i Kiruna förra vintern. — Jag har aldrig varit i Kiruna. — Han gick hem för fem minuter sedan. — Han har precis gått hem. — Vi åt jordgubbar igår.",
+    "Har du varit i Norrland? — Jag har aldrig sett snö. — Hur länge har du bott här? — Vi har inte bestämt än. — Han har precis gått hem."
+  ]
+}

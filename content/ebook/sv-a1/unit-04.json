@@ -1,0 +1,501 @@
+{
+  "title": "Kata sandang yang menempel di ekor",
+  "title_target": "Var är nyckeln?",
+  "goal": "Memahami dua jenis kata benda Swedia dan ekor yang menggantikan kata \"itu\" — satu hal yang tidak ada padanannya dalam bahasa Indonesia maupun Inggris.",
+  "bekal": [
+    "membedakan *en*-ord dan *ett*-ord, dan tahu kapan boleh menebak",
+    "mengubah *en bok* jadi *boken* — kata sandang yang menempel di belakang",
+    "kata-kata rumah dan barang sehari-hari"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Nyckeln är borta",
+      "intro": "Sore hari. Dian berdiri di depan pintu kamarnya, membongkar seluruh isi tasnya. Ahmad lewat membawa sekantong belanjaan.",
+      "lines": [
+        {
+          "speaker": "Dian:",
+          "text": "Ahmad! Jag hittar inte nyckeln.",
+          "id": "Ahmad! Saya tidak menemukan kuncinya.",
+          "literal": "Ahmad! saya menemukan tidak kunci-itu."
+        },
+        {
+          "speaker": "Ahmad:",
+          "text": "Har du en nyckel i väskan?",
+          "id": "Ada kunci di tasmu?",
+          "literal": "punya kamu satu kunci di tas-itu?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Väskan är tom. Jag har bara en bok, en telefon och ett paraply.",
+          "id": "Tasnya kosong. Saya cuma punya buku, telepon, dan payung.",
+          "literal": "tas-itu adalah kosong. saya punya cuma satu buku, satu telepon dan satu payung."
+        },
+        {
+          "speaker": "Ahmad:",
+          "text": "Ligger nyckeln på bordet i köket?",
+          "id": "Kuncinya ada di meja dapur, mungkin?",
+          "literal": "terletak kunci-itu pada meja-itu di dapur-itu?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Nej, jag tittar där varje dag. Bordet är tomt.",
+          "id": "Tidak, saya lihat ke situ tiap hari. Mejanya kosong.",
+          "literal": "tidak, saya melihat di-sana setiap hari. meja-itu adalah kosong."
+        },
+        {
+          "speaker": "Ahmad:",
+          "text": "Och fickan? Jackan har två fickor.",
+          "id": "Kantongnya? Jaketmu punya dua kantong.",
+          "literal": "dan kantong-itu? jaket-itu punya dua kantong."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Oj. Nyckeln ligger i fickan.",
+          "id": "Ups. Kuncinya ada di kantong.",
+          "literal": "ups. kunci-itu terletak di kantong-itu."
+        },
+        {
+          "speaker": "Ahmad:",
+          "text": "Det händer varje vecka, Dian.",
+          "id": "Itu kejadian tiap minggu, Dian.",
+          "literal": "itu terjadi setiap minggu, Dian."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Jag vet. Huset är nytt och huvudet är trött.",
+          "id": "Saya tahu. Rumahnya baru dan kepalanya capek.",
+          "literal": "saya tahu. rumah-itu adalah baru dan kepala-itu adalah capek."
+        },
+        {
+          "speaker": "Ahmad:",
+          "text": "Kom, vi tar en fika. Kaffet är redan klart.",
+          "id": "Ayo, kita fika. Kopinya sudah siap.",
+          "literal": "ayo, kami ambil satu fika. kopi-itu adalah sudah siap."
+        }
+      ],
+      "notes": [
+        "**Nyckeln = nyckel + n.** Bahasa Swedia tidak punya kata terpisah untuk \"itu\" di depan kata benda. Yang dilakukannya adalah **menempelkan** kata sandangnya di ekor: *en nyckel* (sebuah kunci) → *nyckeln* (kunci itu). Bahasa Indonesia menyelesaikan ini dengan konteks; bahasa Inggris memakai *the* di depan. Bahasa Swedia — bersama seluruh bahasa Skandinavia — menaruhnya di belakang.",
+        "**Ada dua jenis kata benda**, dan jenisnya menentukan ekornya: *en*-ord mendapat **-en**, *ett*-ord mendapat **-et**. *en nyckel* → *nyckeln*; *ett bord* → *bordet*. Jenisnya tidak ada hubungannya dengan laki-laki atau perempuan, dan sayangnya juga tidak ada hubungannya dengan arti. Yang bisa diandalkan cuma satu: **sekitar 75% kata benda adalah *en*-ord**, jadi kalau benar-benar buntu, tebak *en*.",
+        "**Kata sifat ikut berubah.** *Väskan är tom* tapi *bordet är tomt*. Kata sifat yang menerangkan *ett*-ord mendapat ekor **-t**: *tom* → *tomt*, *ny* → *nytt*, *bra* → tetap *bra*. Ini baru dibahas tuntas di unit 12, tapi mulailah memperhatikannya sekarang: setiap kali kamu melihat *-t* di ujung kata sifat, di dekatnya pasti ada *ett*-ord.",
+        "**Ligger** berarti \"terletak, berbaring\". Bahasa Swedia sangat memperhatikan **posisi** benda: sesuatu yang mendatar *ligger*, sesuatu yang tegak *står*, sesuatu yang duduk *sitter*. Kunci di meja *ligger*; botol di meja *står*. Menanyakan *var ligger…* untuk sebuah kota juga wajar: *Var ligger Uppsala?*",
+        "**Varje dag, varje vecka** — \"tiap hari, tiap minggu\". *Varje* selalu diikuti bentuk **tak bertentu** (*dag*, bukan *dagen*), karena \"setiap\" sudah menentukan sendiri. Sama seperti bahasa Indonesia: kita mengatakan \"tiap hari\", bukan \"tiap harinya\".",
+        "**Huvudet** (kepala itu) dibaca **HÜ-vu-de** — huruf *d* terakhir pada akhiran *-det* nyaris hilang dalam percakapan, dan begitu juga *t* pada *det*, *huset*, *bordet*. Ini bukan kemalasan; ini pelafalan baku."
+      ],
+      "grammars": [
+        {
+          "title": "Empat bentuk setiap kata benda",
+          "body": [
+            "Setiap kata benda bahasa Swedia punya empat bentuk. Kamu sudah bertemu dua di antaranya; dua sisanya (jamak) adalah isi unit 5. Tabel ini akan kamu temui berulang kali — kenali susunannya sekarang."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Satu, tak tentu",
+              "Satu itu",
+              "Banyak, tak tentu",
+              "Banyak itu"
+            ],
+            "rows": [
+              [
+                "*en*-ord",
+                "**en** nyckel",
+                "nyckel**n**",
+                "nyckl**ar**",
+                "nyckl**arna**"
+              ],
+              [
+                "*en*-ord",
+                "**en** bok",
+                "bok**en**",
+                "böck**er**",
+                "böck**erna**"
+              ],
+              [
+                "*ett*-ord",
+                "**ett** bord",
+                "bord**et**",
+                "bord",
+                "bord**en**"
+              ],
+              [
+                "*ett*-ord",
+                "**ett** äpple",
+                "äppl**et**",
+                "äppl**en**",
+                "äppl**ena**"
+              ]
+            ]
+          },
+          "after": [
+            "Aturan ekor bertentu tunggal punya satu penyesuaian: kalau katanya **sudah berakhir dengan vokal**, yang ditambahkan cuma satu huruf. *en flicka* → *flickan* (bukan *flickaen*); *ett äpple* → *äpplet* (bukan *äppleet*).",
+            "Sebaliknya, kata *en*-ord yang berakhir dengan **-el, -er, -en** kehilangan huruf *e*-nya begitu ekornya menempel: *en nyckel* → *nyckeln*, *en syster* → *systern*, *en cykel* → *cykeln*. Ini bukan kekecualian acak — ia terjadi supaya kata tidak punya dua suku lemah berturut-turut."
+          ]
+        },
+        {
+          "title": "Menebak jenis dengan lumayan tepat",
+          "body": [
+            "Tidak ada aturan yang selalu benar, tapi ada beberapa kecenderungan yang menolong lebih sering daripada tidak."
+          ],
+          "table": {
+            "head": [
+              "Cenderung *en*",
+              "Contoh",
+              "Cenderung *ett*",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "orang & profesi",
+                "en man, en lärare, en student",
+                "kata yang berakhiran *-um, -em*",
+                "ett museum, ett problem"
+              ],
+              [
+                "hewan",
+                "en hund, en katt, en fågel",
+                "banyak nama tempat & bangunan",
+                "ett hus, ett rum, ett kök"
+              ],
+              [
+                "berakhiran *-a*",
+                "en flicka, en gata, en skola",
+                "kata benda dari negara & bahasa",
+                "ett land, ett språk"
+              ],
+              [
+                "berakhiran *-are, -het, -ing*",
+                "en lärare, en möjlighet",
+                "huruf & angka",
+                "ett a, ett tre"
+              ],
+              [
+                "hari, bulan, musim",
+                "en måndag, en sommar",
+                "berakhiran *-ande, -ende*",
+                "ett leende"
+              ]
+            ]
+          },
+          "after": [
+            "Cara belajar yang benar-benar bekerja bukan menghafal aturan, melainkan **menghafal kata bendanya bersama sandangnya sejak awal**. Jangan pernah menyimpan \"bok\" di kepala; simpan \"**en** bok\". Semua tabel kosakata di modul ini ditulis begitu, dan itu sengaja.",
+            "Kalau kamu salah menebak, tidak ada bencana. Salah antara *en* dan *ett* adalah kesalahan yang paling sering dibuat penutur asing, termasuk yang sudah tinggal bertahun-tahun di Swedia, dan tidak pernah membuat kalimat jadi tidak dimengerti."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kapan memakai bentuk bertentu",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Pemakaiannya hampir sama dengan *the* dalam bahasa Inggris, dan hampir sama dengan \"-nya\" dalam bahasa Indonesia sehari-hari."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalau…",
+            "Bentuknya",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "baru disebut pertama kali",
+              "tak tentu",
+              "Jag har **en nyckel**."
+            ],
+            [
+              "sudah disebut sebelumnya",
+              "bertentu",
+              "**Nyckeln** ligger i fickan."
+            ],
+            [
+              "cuma ada satu di dunia si pembicara",
+              "bertentu",
+              "Var är **bilen**? (mobil keluarga kita)"
+            ],
+            [
+              "hal umum, jenisnya",
+              "tak tentu jamak / tanpa sandang",
+              "Jag dricker **kaffe**."
+            ],
+            [
+              "sesudah *varje*, *någon*, *ingen*",
+              "tak tentu",
+              "**varje dag**, **ingen bok**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perbedaan yang perlu diperhatikan penutur Indonesia: bahasa Swedia **wajib** memilih salah satu. Tidak ada kata benda yang berdiri telanjang tanpa *en/ett* atau tanpa ekor, kecuali untuk hal umum yang tak terhitung (*kaffe*, *vatten*, *mat*) dan jamak tak tentu. Mengatakan *jag har bok* salah; yang benar *jag har en bok*."
+        },
+        {
+          "type": "kotak",
+          "title": "Jebakan \"-nya\"",
+          "items": [
+            "Akhiran \"-nya\" dalam bahasa Indonesia mengerjakan dua tugas: menunjuk sesuatu yang sudah dikenal (\"kuncinya\" = kunci itu) **dan** menyatakan milik (\"kuncinya\" = kunci dia). Bahasa Swedia memisahkan keduanya.",
+            "*Nyckeln* = kunci itu. *Hans nyckel* = kunci dia (laki-laki). Kalau kamu memakai bentuk bertentu padahal maksudmu milik, kalimatnya tetap benar tapi artinya bergeser.",
+            "Kepemilikan adalah isi unit 9. Untuk sekarang, cukup sadari bahwa \"-nya\" tidak selalu berarti ekor *-en*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Rumah, dan barang di dalamnya",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Latihlah kolom kedua dan ketiga bersamaan: begitu kamu hafal bentuk bertentunya, jenis katanya ikut terhafal tanpa usaha tambahan."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tak tentu",
+            "Bertentu",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "ett hus",
+              "huset",
+              "rumah"
+            ],
+            [
+              "en lägenhet",
+              "lägenheten",
+              "apartemen"
+            ],
+            [
+              "ett rum",
+              "rummet",
+              "kamar"
+            ],
+            [
+              "ett kök",
+              "köket",
+              "dapur"
+            ],
+            [
+              "ett badrum",
+              "badrummet",
+              "kamar mandi"
+            ],
+            [
+              "en dörr",
+              "dörren",
+              "pintu"
+            ],
+            [
+              "ett fönster",
+              "fönstret",
+              "jendela"
+            ],
+            [
+              "en säng",
+              "sängen",
+              "tempat tidur"
+            ],
+            [
+              "en lampa",
+              "lampan",
+              "lampu"
+            ],
+            [
+              "en dator",
+              "datorn",
+              "komputer"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Ett fönster → fönstret**, bukan *fönsteret*: kata *ett*-ord yang berakhiran *-er* juga kehilangan huruf *e*-nya, persis seperti *en*-ord tadi. Pola ini berlaku untuk *ett mönster* → *mönstret*, *ett teater* → *teatern* — dan tidak untuk banyak kata lain, jadi jangan digeneralisasi."
+        },
+        {
+          "type": "kotak",
+          "title": "Kata Swedia yang sudah kamu kenal",
+          "items": [
+            "**en telefon, en dator, ett problem, en bank, ett hotell, en buss, en film, ett kort, en toalett, en adress** — semuanya terbaca sendiri lewat bahasa Inggris atau bahasa Indonesia.",
+            "Hati-hati dengan yang **mirip tapi berbeda arti**: *en fabrik* (pabrik, bukan fabrik kain), *en gift* (racun — sedangkan *gift* sebagai kata sifat berarti \"menikah\"), *rolig* (lucu, bukan \"tenang\"), *bra* (bagus, bukan pakaian dalam).",
+            "Kata **semester** berarti **liburan**, bukan semester kuliah. Semester kuliah adalah *en termin*. Ini salah satu jebakan yang paling sering menjerat mahasiswa asing di Swedia."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sv": "en nyckel",
+      "baca": "en NÜK-kel",
+      "id": "kunci"
+    },
+    {
+      "sv": "en väska",
+      "baca": "en VES-ka",
+      "id": "tas"
+    },
+    {
+      "sv": "en ficka",
+      "baca": "en FIK-ka",
+      "id": "kantong, saku"
+    },
+    {
+      "sv": "en jacka",
+      "baca": "en YAK-ka",
+      "id": "jaket"
+    },
+    {
+      "sv": "en bok",
+      "baca": "en buk",
+      "id": "buku"
+    },
+    {
+      "sv": "ett bord",
+      "baca": "et bud",
+      "id": "meja"
+    },
+    {
+      "sv": "ett hus",
+      "baca": "et hüs",
+      "id": "rumah"
+    },
+    {
+      "sv": "ett huvud",
+      "baca": "et HÜ-vud",
+      "id": "kepala"
+    },
+    {
+      "sv": "en dörr",
+      "baca": "en dör",
+      "id": "pintu"
+    },
+    {
+      "sv": "ett fönster",
+      "baca": "et FÖNS-ter",
+      "id": "jendela"
+    },
+    {
+      "sv": "en säng",
+      "baca": "en seng",
+      "id": "tempat tidur"
+    },
+    {
+      "sv": "en dator",
+      "baca": "en DA-tor",
+      "id": "komputer"
+    },
+    {
+      "sv": "ett paraply",
+      "baca": "et pa-ra-PLÜ",
+      "id": "payung"
+    },
+    {
+      "sv": "en lägenhet",
+      "baca": "en LÈ-gen-hèt",
+      "id": "apartemen"
+    },
+    {
+      "sv": "att hitta",
+      "baca": "at HIT-ta",
+      "id": "menemukan"
+    },
+    {
+      "sv": "att ligga",
+      "baca": "at LIG-ga",
+      "id": "terletak, berbaring"
+    },
+    {
+      "sv": "att stå",
+      "baca": "at sto",
+      "id": "berdiri"
+    },
+    {
+      "sv": "att hända",
+      "baca": "at HEN-da",
+      "id": "terjadi"
+    },
+    {
+      "sv": "tom / tomt",
+      "baca": "tum · tumt",
+      "id": "kosong"
+    },
+    {
+      "sv": "klar / klart",
+      "baca": "klar · klart",
+      "id": "siap, selesai"
+    },
+    {
+      "sv": "varje",
+      "baca": "VAR-ye",
+      "id": "setiap"
+    },
+    {
+      "sv": "en vecka",
+      "baca": "en VEK-ka",
+      "id": "minggu"
+    },
+    {
+      "sv": "en dag",
+      "baca": "en dag",
+      "id": "hari"
+    },
+    {
+      "sv": "redan",
+      "baca": "RÈ-dan",
+      "id": "sudah"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis bentuk bertentunya. Contoh: *en bok* → *boken*.",
+      "items": [
+        "en nyckel",
+        "ett bord",
+        "en väska",
+        "ett hus",
+        "en lampa",
+        "ett fönster"
+      ]
+    },
+    {
+      "prompt": "Isi dengan *en* atau *ett*.",
+      "items": [
+        "Jag har ____ dator.",
+        "Det är ____ kök.",
+        "Hon har ____ jacka.",
+        "Vi bor i ____ hus.",
+        "Han läser ____ bok.",
+        "Där ligger ____ paraply."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk **bertentu** dari kata dalam kurung. Contoh: Var är ____? (bok) → *boken*.",
+      "items": [
+        "Var är ____? (nyckel)",
+        "____ är tomt. (bord)",
+        "Jag hittar inte ____. (väska)",
+        "____ är nytt. (hus)",
+        "Han öppnar ____. (dörr)",
+        "____ står i rummet. (lampa)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swedia.",
+      "items": [
+        "Kuncinya ada di kantong.",
+        "Mejanya kosong.",
+        "Saya punya sebuah payung.",
+        "Rumahnya baru.",
+        "Itu terjadi setiap minggu."
+      ]
+    }
+  ],
+  "answers": [
+    "nyckeln — bordet — väskan — huset — lampan — fönstret",
+    "en — ett — en — ett — en — ett",
+    "nyckeln — Bordet — väskan — Huset — dörren — Lampan",
+    "Nyckeln ligger i fickan. — Bordet är tomt. — Jag har ett paraply. — Huset är nytt. — Det händer varje vecka."
+  ]
+}

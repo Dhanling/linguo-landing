@@ -1,0 +1,183 @@
+{
+  "title": "Menyapa dan menyebut nama",
+  "title_target": "Hej! Jag heter Dian",
+  "goal": "Menyapa, menyebut nama, dan mengatakan dari mana kamu berasal — sambil menemukan hadiah terbesar bahasa Swedia: kata kerjanya tidak pernah berubah menurut pelakunya.",
+  "bekal": [
+    "menyapa dan berpamitan dengan kata yang benar-benar dipakai orang Swedia",
+    "menyebut nama dengan *jag heter* dan asal dengan *jag kommer från*",
+    "memakai delapan kata ganti orang dengan satu bentuk kata kerja yang sama"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — I korridoren",
+      "intro": "Hari pertama Dian di asrama mahasiswa Lappis, Stockholm. Ia sedang menyeret kopernya menyusuri koridor ketika seseorang keluar dari dapur bersama secangkir kopi.",
+      "lines": [
+        { "speaker": "Elin:", "text": "Hej! Är du ny här?", "id": "Hai! Kamu baru di sini?", "literal": "hai! adalah kamu baru di-sini?" },
+        { "speaker": "Dian:", "text": "Ja, jag är ny. Jag heter Dian.", "id": "Ya, saya baru. Nama saya Dian.", "literal": "ya, saya adalah baru. saya dinamai Dian." },
+        { "speaker": "Elin:", "text": "Trevligt! Jag heter Elin. Jag bor i rum tolv.", "id": "Senang berkenalan! Nama saya Elin. Saya tinggal di kamar dua belas.", "literal": "menyenangkan! saya dinamai Elin. saya tinggal di kamar dua-belas." },
+        { "speaker": "Dian:", "text": "Trevligt att träffas. Var kommer du ifrån?", "id": "Senang bertemu. Kamu berasal dari mana?", "literal": "menyenangkan untuk bertemu. di-mana datang kamu dari?" },
+        { "speaker": "Elin:", "text": "Jag är svensk. Jag kommer från Göteborg. Och du?", "id": "Saya orang Swedia. Saya dari Göteborg. Kamu?", "literal": "saya adalah Swedia. saya datang dari Göteborg. dan kamu?" },
+        { "speaker": "Dian:", "text": "Jag kommer från Indonesien. Jag är student här.", "id": "Saya dari Indonesia. Saya mahasiswa di sini.", "literal": "saya datang dari Indonesia. saya adalah mahasiswa di-sini." },
+        { "speaker": "Elin:", "text": "Vad kul! Talar du svenska?", "id": "Wah, seru! Kamu bisa bahasa Swedia?", "literal": "apa asyik! berbicara kamu Swedia?" },
+        { "speaker": "Dian:", "text": "Lite grann. Jag lär mig.", "id": "Sedikit. Saya sedang belajar.", "literal": "sedikit sekali. saya mengajar diri-saya." },
+        { "speaker": "Elin:", "text": "Bra! Då pratar vi svenska, va?", "id": "Bagus! Kalau begitu kita bicara bahasa Swedia, ya?", "literal": "bagus! kalau-begitu mengobrol kami Swedia, kan?" },
+        { "speaker": "Dian:", "text": "Ja! Tack, Elin. Vi ses!", "id": "Ya! Terima kasih, Elin. Sampai jumpa!", "literal": "ya! terima-kasih, Elin. kami terlihat!" }
+      ],
+      "notes": [
+        "**Hej** adalah sapaan yang dipakai untuk siapa saja, kapan saja — kepada teman, kepada dosen, kepada kasir, kepada menteri. Bahasa Swedia hampir tidak memakai sapaan menurut waktu hari. *God morgon* memang ada, tapi terdengar resmi; *god dag* nyaris cuma dipakai di film lama. Kalau bingung, ucapkan *hej*, dan kalau ingin terdengar lebih hangat, ucapkan dua kali: **hej hej**.",
+        "**Jag heter Dian** secara harfiah berarti \"saya dinamai Dian\". Bahasa Swedia memakai kata kerja *att heta* untuk memperkenalkan diri, bukan susunan \"nama saya adalah…\". Bentuk *mitt namn är Dian* memang benar, tapi terdengar seperti mengisi formulir imigrasi. Pakai *jag heter*.",
+        "**Inilah hadiah terbesarnya.** Perhatikan *jag är* dan *är du* — bentuk kata kerjanya sama persis. Begitu juga *jag heter* / *du heter*, *jag bor* / *bor du*, *jag kommer* / *kommer du*. Kata kerja bahasa Swedia **tidak berubah sama sekali** menurut siapa pelakunya. Tidak ada *am/is/are*, tidak ada *-s* di orang ketiga. Satu bentuk untuk delapan orang, persis seperti bahasa Indonesia.",
+        "**Jag dibaca \"ya\"**, bukan \"yag\". Huruf *g* di ujung *jag* dan *dag* biasanya diam dalam percakapan. Dan **är dibaca \"e\"** — huruf *r*-nya nyaris hilang. Jadi *jag är* keluar sebagai **ya e**, dua bunyi pendek yang menempel jadi satu. Ini gabungan kata paling sering di seluruh bahasa Swedia, jadi pasang bunyinya sekarang juga.",
+        "**Trevligt** dibaca **TREV-lit** — huruf *g* di akhiran *-igt* diam. Kata ini dipakai untuk orang, sore hari, percakapan, restoran: apa saja yang terasa menyenangkan. *Trevligt att träffas* adalah kalimat perkenalan baku, dan kamu akan mendengarnya ratusan kali.",
+        "**Vi ses** secara harfiah \"kami terlihat\" — bentuk saling yang dibuat dengan ekor *-s*. Ini ucapan perpisahan paling umum antarteman, bersama *hej då*. Ekor *-s* yang membuat kata kerja jadi saling akan dibahas tuntas di A2; untuk sekarang hafalkan *vi ses* dan *vi hörs* sebagai kalimat utuh."
+      ],
+      "grammars": [
+        {
+          "title": "Satu bentuk kata kerja untuk semua orang",
+          "body": [
+            "Tabel ini adalah alasan kenapa bahasa Swedia terasa ringan di minggu pertama. Bandingkan kolomnya dari atas ke bawah: tidak ada satu pun yang berubah."
+          ],
+          "table": {
+            "head": ["Kata ganti", "Artinya", "*att vara* (adalah)", "*att heta* (bernama)", "*att bo* (tinggal)"],
+            "rows": [
+              ["**jag**", "saya", "är", "heter", "bor"],
+              ["**du**", "kamu", "är", "heter", "bor"],
+              ["**han / hon**", "dia (lk) / dia (pr)", "är", "heter", "bor"],
+              ["**den / det**", "ia (benda)", "är", "heter", "bor"],
+              ["**vi**", "kami, kita", "är", "heter", "bor"],
+              ["**ni**", "kalian", "är", "heter", "bor"],
+              ["**de**", "mereka", "är", "heter", "bor"]
+            ]
+          },
+          "after": [
+            "Bandingkan dengan bahasa Inggris (*I am, you are, he is*) atau bahasa Prancis (*je suis, tu es, il est, nous sommes*). Bahasa Swedia menghapus seluruh urusan itu. Yang perlu kamu hafal cuma **satu bentuk per kata kerja**.",
+            "Kata ganti **de** (mereka) dibaca **dom**, dan begitu juga *dem*. Jangan mencoba membunyikan huruf yang tertulis — tidak ada orang Swedia yang mengucapkan \"de\" seperti ejaannya. Di pesan singkat, banyak orang Swedia bahkan menulisnya *dom* langsung.",
+            "**Ni** berarti \"kalian\", untuk lebih dari satu orang. Dulu ia juga dipakai sebagai bentuk hormat untuk \"Anda\", tapi sejak *du-reformen* tahun 1960-an, orang Swedia memanggil **du** kepada siapa pun — dosen, dokter, bos, bahkan perdana menteri. Memakai *ni* kepada satu orang tua justru bisa terdengar aneh, bukan sopan."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menyebut asal, bangsa, dan bahasa",
+      "blocks": [
+        { "type": "p", "text": "Ada beberapa susunan yang dipakai bergantian, dan semuanya sama benarnya:" },
+        { "type": "tabel", "head": ["Svenska", "Bahasa Indonesia", "Harfiahnya"], "rows": [
+          ["Jag **är från** Indonesien.", "Saya dari Indonesia.", "saya adalah dari Indonesia"],
+          ["Jag **kommer från** Indonesien.", "Saya berasal dari Indonesia.", "saya datang dari Indonesia"],
+          ["Jag **är** indonesier.", "Saya orang Indonesia.", "saya adalah orang-Indonesia"],
+          ["Jag **bor i** Stockholm.", "Saya tinggal di Stockholm.", "saya tinggal di Stockholm"],
+          ["Jag **talar** indonesiska.", "Saya berbahasa Indonesia.", "saya berbicara Indonesia"]
+        ] },
+        { "type": "p", "text": "Perhatikan bahwa **tidak ada kata sandang** di depan nama bahasa dan kebangsaan: bukan *jag talar den svenska*, cuma *jag talar svenska*. Sama persis dengan bahasa Indonesia. Nama bahasa dan kebangsaan juga ditulis dengan **huruf kecil** — *svenska*, *engelska*, *indonesiska* — berbeda dengan bahasa Inggris. Nama negaranya tetap berhuruf besar: *Sverige*, *Indonesien*." },
+        { "type": "tabel", "head": ["Negara", "Bahasanya", "Cara baca"], "rows": [
+          ["Sverige", "svenska", "SVÈR-ye · SVÈN-ska"],
+          ["Indonesien", "indonesiska", "in-du-NÈ-si-en · in-du-NÈ-si-ska"],
+          ["England", "engelska", "ENG-land · ENG-el-ska"],
+          ["Tyskland", "tyska", "TÜSK-land · TÜS-ka"],
+          ["Norge", "norska", "NOR-ye · NOSY-ka"],
+          ["Danmark", "danska", "DAN-mark · DAN-ska"],
+          ["Finland", "finska", "FIN-land · FIN-ska"],
+          ["Kina", "kinesiska", "SYI-na · syi-NÈ-si-ska"]
+        ] },
+        { "type": "p", "text": "**Kina** dibaca **SYI-na**, bukan \"kina\": huruf *k* di depan *i* berubah jadi bunyi desis *sy*. Aturan yang sama membuat *köpa* jadi **SYÖ-pa** dan *kyrka* jadi **SYÜR-ka**. Ia berlaku di depan *e, i, y, ä, ö* — lima vokal itu saja." }
+      ]
+    },
+    {
+      "title": "Kenapa ini terasa mudah bagi penutur Indonesia",
+      "blocks": [
+        { "type": "p", "text": "Unit pertama modul bahasa apa pun biasanya sudah menabrakkanmu ke satu tembok. Di sini tidak ada tembok, dan itu bukan kebetulan — tiga sifat bahasa Swedia kebetulan sama persis dengan bahasa Indonesia:" },
+        { "type": "list", "items": [
+          "**Kata kerja tidak berubah menurut pelakunya.** \"Saya makan, kamu makan, mereka makan\" — bahasa Indonesia sudah begitu seumur hidupmu. Bahasa Swedia sama: *jag äter, du äter, de äter*.",
+          "**Tidak ada bentuk sedang berlangsung.** *Jag äter* berarti \"saya makan\" **dan** \"saya sedang makan\". Bahasa Inggris memaksamu memilih antara *I eat* dan *I am eating*; bahasa Swedia tidak, persis seperti bahasa Indonesia.",
+          "**Tidak ada jenis kelamin kata.** Bahasa Swedia memang punya dua jenis kata benda (*en* dan *ett*), tapi keduanya tidak ada hubungannya dengan laki-laki atau perempuan, dan tidak mengubah bentuk kata sifat sebanyak bahasa Jerman. Itu urusan unit 4, dan ia jauh lebih ringan daripada kedengarannya."
+        ] },
+        { "type": "p", "text": "Yang perlu perhatian sejak awal justru bunyinya, bukan tata bahasanya. Dua bunyi desis Swedia — **sy** dan **hw** — tidak ada dalam bahasa Indonesia, dan keduanya muncul di kata yang sangat sering: *tjugo* (dua puluh), *kök* (dapur), *sju* (tujuh), *station*. Kembalilah ke bab pelafalan sesering yang kamu butuhkan." },
+        { "type": "kotak", "title": "Kalimat penyelamat", "items": [
+          "**Ursäkta, kan du prata långsammare?** — Maaf, bisa bicara lebih pelan? (*ur-SYEK-ta, kan dü PRA-ta LONG-sam-ma-re*)",
+          "**Jag förstår inte.** — Saya tidak mengerti. (*ya fö-STOR IN-te*)",
+          "**Vad betyder det?** — Apa artinya itu? (*va be-TÜ-der de*)",
+          "**Kan vi prata svenska? Jag övar.** — Bisa kita bicara bahasa Swedia? Saya sedang berlatih. Ucapkan ini di awal percakapan, dan orang Swedia tidak akan berpindah ke bahasa Inggris."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sv": "hej", "baca": "hey", "id": "hai, halo" },
+    { "sv": "hej då", "baca": "hey do", "id": "sampai jumpa" },
+    { "sv": "ja", "baca": "ya", "id": "ya" },
+    { "sv": "nej", "baca": "ney", "id": "tidak" },
+    { "sv": "tack", "baca": "tak", "id": "terima kasih" },
+    { "sv": "att vara", "baca": "at VA-ra", "id": "adalah, berada" },
+    { "sv": "är", "baca": "e", "id": "adalah (bentuk sekarang)" },
+    { "sv": "att heta", "baca": "at HÈ-ta", "id": "bernama" },
+    { "sv": "att bo", "baca": "at bu", "id": "tinggal, berdiam" },
+    { "sv": "att komma", "baca": "at KOM-ma", "id": "datang" },
+    { "sv": "att tala", "baca": "at TA-la", "id": "berbicara" },
+    { "sv": "att prata", "baca": "at PRA-ta", "id": "mengobrol, bicara" },
+    { "sv": "att träffas", "baca": "at TREF-fas", "id": "bertemu (saling)" },
+    { "sv": "ny", "baca": "nü", "id": "baru" },
+    { "sv": "här", "baca": "hèr", "id": "di sini" },
+    { "sv": "var", "baca": "var", "id": "di mana" },
+    { "sv": "från / ifrån", "baca": "fron · i-FRON", "id": "dari" },
+    { "sv": "och", "baca": "ok", "id": "dan" },
+    { "sv": "lite grann", "baca": "LI-te gran", "id": "sedikit saja" },
+    { "sv": "trevligt", "baca": "TREV-lit", "id": "menyenangkan" },
+    { "sv": "bra", "baca": "bra", "id": "bagus, baik" },
+    { "sv": "en student", "baca": "en stu-DENT", "id": "mahasiswa" },
+    { "sv": "ett rum", "baca": "et rum", "id": "kamar, ruangan" },
+    { "sv": "svenska", "baca": "SVÈN-ska", "id": "bahasa Swedia" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Lengkapi dengan bentuk *att vara* yang benar. (Petunjuk: bentuknya cuma satu.)",
+      "items": [
+        "Jag ____ ny här.",
+        "Du ____ från Göteborg.",
+        "Hon ____ svensk.",
+        "Vi ____ studenter.",
+        "De ____ i Stockholm.",
+        "Ni ____ trevliga."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata kerja yang tepat: *heter*, *bor*, *kommer*, *talar*.",
+      "items": [
+        "Jag ____ Dian.",
+        "Hon ____ i Göteborg.",
+        "Han ____ från Indonesien.",
+        "Vi ____ svenska och engelska.",
+        "Vad ____ du?",
+        "Var ____ ni ifrån?"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swedia.",
+      "items": [
+        "Hai! Nama saya Ahmad.",
+        "Saya dari Indonesia.",
+        "Kamu tinggal di sini juga?",
+        "Senang bertemu.",
+        "Dia (perempuan) bicara bahasa Swedia sedikit.",
+        "Sampai jumpa!"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "heter / jag / Elin",
+        "du / var / ifrån / kommer / ?",
+        "i / bor / Stockholm / vi",
+        "svenska / talar / lite / han",
+        "ny / är / här / du / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "är — är — är — är — är — är",
+    "heter — bor — kommer — talar — heter — kommer",
+    "Hej! Jag heter Ahmad. — Jag kommer från Indonesien. — Bor du här också? — Trevligt att träffas. — Hon talar lite svenska. — Vi ses!",
+    "Jag heter Elin. — Var kommer du ifrån? — Vi bor i Stockholm. — Han talar lite svenska. — Är du ny här?"
+  ]
+}

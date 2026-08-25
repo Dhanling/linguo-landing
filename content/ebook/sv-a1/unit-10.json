@@ -1,0 +1,201 @@
+{
+  "title": "Dirinya sendiri atau orang lain",
+  "title_target": "Han ringer sin mamma",
+  "goal": "Menguasai *sin/sitt/sina* — satu kata yang tidak ada padanannya dalam bahasa Indonesia maupun Inggris, dan yang memisahkan \"ibunya sendiri\" dari \"ibunya orang lain\" tanpa satu kata tambahan.",
+  "bekal": [
+    "kapan memakai *sin/sitt/sina* dan kapan *hans/hennes/deras*",
+    "satu uji yang selalu berhasil: siapa pelaku kalimatnya",
+    "kata kerja *ringa*, *hälsa på*, dan urusan menelepon keluarga"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Söndagssamtalet",
+      "intro": "Minggu sore. Oskar baru menutup telepon. Dian, yang baru saja melakukan hal yang sama dengan keluarganya di Bandung, penasaran dengan kebiasaan keluarga Swedia.",
+      "lines": [
+        { "speaker": "Dian:", "text": "Vem pratade du med?", "id": "Kamu tadi ngobrol sama siapa?", "literal": "siapa mengobrol kamu dengan?" },
+        { "speaker": "Oskar:", "text": "Jag ringde min mamma. Jag ringer henne varje söndag.", "id": "Saya telepon ibu saya. Tiap Minggu saya telepon dia.", "literal": "saya menelepon milikku ibu. saya menelepon dia setiap Minggu." },
+        { "speaker": "Dian:", "text": "Ringer Elin också sin mamma på söndagar?", "id": "Elin juga telepon ibunya tiap Minggu?", "literal": "menelepon Elin juga sendiri-punya ibu pada Minggu-Minggu?" },
+        { "speaker": "Oskar:", "text": "Nej, hon ringer sin pappa. Hennes mamma bor i Norge.", "id": "Nggak, dia telepon ayahnya. Ibunya tinggal di Norwegia.", "literal": "tidak, dia menelepon sendiri-punya ayah. dia-punya ibu tinggal di Norwegia." },
+        { "speaker": "Dian:", "text": "Vänta — sin pappa och hennes mamma? Varför inte samma ord?", "id": "Tunggu — sin pappa tapi hennes mamma? Kok nggak kata yang sama?", "literal": "tunggu — sendiri-punya ayah dan dia-punya ibu? mengapa tidak sama kata?" },
+        { "speaker": "Oskar:", "text": "För att Elin är den som ringer. Då säger vi sin.", "id": "Karena Elin-lah yang menelepon. Kalau begitu kami pakai sin.", "literal": "untuk bahwa Elin adalah yang yang menelepon. kalau-begitu berkata kami sendiri-punya." },
+        { "speaker": "Dian:", "text": "Och i andra meningen är mamman ämnet, inte Elin.", "id": "Dan di kalimat kedua, ibunya yang jadi subjek, bukan Elin.", "literal": "dan di kedua kalimat-itu adalah ibu-itu pokok-itu, tidak Elin." },
+        { "speaker": "Oskar:", "text": "Precis! Du fattar snabbt.", "id": "Tepat! Kamu cepat nangkap.", "literal": "persis! kamu memahami cepat." },
+        { "speaker": "Dian:", "text": "Ett till: Ahmad tog sin cykel eller hans cykel?", "id": "Satu lagi: Ahmad ambil sepedanya sendiri atau sepeda orang?", "literal": "satu ke: Ahmad mengambil sendiri-punya sepeda atau dia-punya sepeda?" },
+        { "speaker": "Oskar:", "text": "Sin, om det är hans egen. Hans, om det är någon annans.", "id": "Sin, kalau itu sepedanya sendiri. Hans, kalau itu punya orang lain.", "literal": "sendiri-punya, kalau itu adalah dia-punya sendiri. dia-punya, kalau itu adalah seseorang lain-punya." },
+        { "speaker": "Dian:", "text": "Då tog han hans cykel. Min cykel står ju kvar!", "id": "Berarti dia ambil sepeda orang. Sepeda saya masih ada, kok!", "literal": "kalau-begitu mengambil dia dia-punya sepeda. milikku sepeda berdiri kan tetap!" }
+      ],
+      "notes": [
+        "**Uji yang selalu berhasil:** tanyakan *siapa pelaku kalimat ini?* Kalau pemilik barangnya **sama dengan pelakunya**, pakai *sin/sitt/sina*. Kalau pemiliknya **orang lain**, pakai *hans/hennes/deras*. Tidak ada pengecualian di tingkat A1.",
+        "**Han ringer sin mamma** = dia menelepon ibunya sendiri. **Han ringer hans mamma** = dia menelepon ibu orang lain. Dua kalimat itu berbeda arti dan dua-duanya benar secara tata bahasa, jadi tidak ada yang akan mengoreksimu — orang cuma akan mengerti sesuatu yang tidak kamu maksud.",
+        "**Sin tidak pernah jadi pelaku.** Kamu tidak akan pernah melihat kalimat yang dimulai dengan *sin*. Ia selalu berada di bagian kalimat yang **bukan** pelaku: sasaran, keterangan, atau sesudah kata depan. Kalau kamu tergoda menulis *Sin mamma ringer…*, itu tanda kalimatnya harus disusun ulang jadi *Hans mamma ringer…*",
+        "**Ringde** adalah bentuk lampau dari *ringa* — golongan 2a, jadi ekornya *-de*. Bentuk lampau baru dipasang tuntas di unit 15; untuk sekarang cukup kenali bahwa *-de* dan *-te* di ujung kata kerja berarti masa lampau.",
+        "**Fatta** berarti \"paham, nangkap\" dalam percakapan sehari-hari — lebih santai daripada *förstå*. *Jag fattar inte* (saya nggak ngerti) sangat sering terdengar di antara anak muda, sedangkan *jag förstår inte* lebih netral dan aman untuk semua situasi.",
+        "**Ju** dalam *Min cykel står ju kvar* adalah kata bumbu yang berarti kira-kira \"kan\" atau \"kan memang\" — ia mengingatkan bahwa lawan bicara sebenarnya sudah tahu. Bersama *nog* (kayaknya) dan *väl* (kan?), ketiganya tidak diterjemahkan tapi mengubah rasa kalimat sepenuhnya."
+      ],
+      "grammars": [
+        {
+          "title": "Sin, sitt, sina",
+          "body": [
+            "Bentuknya mengikuti barangnya, persis seperti *min/mitt/mina*. Yang menentukan pemakaiannya adalah pelaku kalimat."
+          ],
+          "table": {
+            "head": ["Barangnya", "Bentuknya", "Contoh", "Artinya"],
+            "rows": [
+              ["*en*-ord", "**sin**", "Han ringer **sin** mamma.", "ibunya sendiri"],
+              ["*ett*-ord", "**sitt**", "Hon tar **sitt** paraply.", "payungnya sendiri"],
+              ["jamak", "**sina**", "De städar **sina** rum.", "kamar mereka sendiri"],
+              ["orang lain", "hans / hennes / deras", "Han ringer **hennes** mamma.", "ibu perempuan itu"]
+            ]
+          },
+          "after": [
+            "**Sin hanya untuk orang ketiga.** Untuk *jag*, *du*, *vi*, *ni*, pertanyaan ini tidak pernah muncul: *jag ringer min mamma* sudah jelas ibunya siapa. Jadi seluruh urusan *sin* cuma menyangkut *han*, *hon*, *den*, *det*, dan *de*.",
+            "Kalau pelakunya jamak, bentuknya tetap *sin/sitt/sina* — bukan *deras*: *De städar **sina** rum* (mereka membersihkan kamar mereka sendiri) vs *De städar **deras** rum* (mereka membersihkan kamar orang lain).",
+            "Bahasa Norwegia dan Denmark punya kata yang sama persis, dan bahasa Latin dulu juga (*suus*). Bahasa Inggris kehilangannya, dan karena itu kalimat *he called his mother* dalam bahasa Inggris memang bermakna ganda — sesuatu yang tidak pernah terjadi dalam bahasa Swedia."
+          ]
+        },
+        {
+          "title": "Empat kalimat yang memperlihatkan bedanya",
+          "table": {
+            "head": ["Kalimat", "Pelaku", "Artinya"],
+            "rows": [
+              ["Anna älskar **sin** bror.", "Anna", "Anna sayang saudara laki-lakinya sendiri."],
+              ["Anna älskar **hennes** bror.", "Anna", "Anna sayang saudara laki-laki perempuan lain."],
+              ["**Hennes** bror är student.", "brodern", "Saudara laki-lakinya mahasiswa. (*sin* mustahil di sini)"],
+              ["Anna och **hennes** bror bor här.", "Anna och brodern", "Mereka berdua bagian dari pelaku, jadi bukan *sin*."]
+            ]
+          },
+          "after": [
+            "Baris keempat adalah jebakan yang paling sering menjerat pelajar tingkat menengah: begitu si pemilik **ikut menjadi bagian dari pelaku** (*Anna och hennes bror*), *sin* tidak bisa dipakai lagi. Alasannya masuk akal kalau dipikir: *sin* selalu menunjuk **kembali** ke pelaku, dan sesuatu tidak bisa menunjuk kembali ke dirinya sendiri di dalam pelaku yang sama.",
+            "Untuk A1, cukup tiga baris pertama. Baris keempat ditulis di sini supaya kamu mengenalinya saat bertemu nanti, bukan untuk dihafal sekarang."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menelepon dan berkunjung",
+      "blocks": [
+        { "type": "tabel", "head": ["Svenska", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["att ringa", "at RING-a", "menelepon"],
+          ["att ringa upp", "at RING-a up", "menelepon (menghubungi)"],
+          ["ett samtal", "et SAM-tal", "percakapan, panggilan"],
+          ["att svara", "at SVA-ra", "menjawab"],
+          ["att höra av sig", "at HÖ-ra av sey", "mengabari"],
+          ["att hälsa på", "at HEL-sa po", "berkunjung"],
+          ["att hälsa", "at HEL-sa", "menyapa"],
+          ["att sakna", "at SAK-na", "merindukan"],
+          ["att skicka", "at SYIK-ka", "mengirim"],
+          ["ett meddelande", "et me-DÈ-lan-de", "pesan"]
+        ] },
+        { "type": "p", "text": "**Hälsa på** dan **hälsa** adalah pasangan yang berbahaya. Dengan sayap *på* dan tekanan pada *på*, artinya \"berkunjung\": *jag ska hälsa **på** min mormor* (saya mau menjenguk nenek). Tanpa sayap, artinya \"menyapa\": *hälsa till din familj!* (salam untuk keluargamu!). Bedanya cuma pada tekanan, dan orang Swedia mendengarnya dengan jelas." },
+        { "type": "kotak", "title": "Menelepon dalam bahasa Swedia", "items": [
+          "**Hej, det är Dian.** — Halo, ini Dian. (bukan *jag är* — di telepon selalu *det är*)",
+          "**Kan jag få prata med Elin?** — Bisa bicara dengan Elin?",
+          "**Ett ögonblick.** — Sebentar ya.",
+          "**Hon är inte hemma just nu.** — Dia sedang tidak di rumah.",
+          "**Kan du be henne ringa mig?** — Bisa minta dia telepon saya?",
+          "**Vi hörs!** — Nanti kita ngobrol lagi. (penutup telepon paling umum)"
+        ] }
+      ]
+    },
+    {
+      "title": "Kata ganti sasaran, dan diri sendiri",
+      "blocks": [
+        { "type": "p", "text": "Sebelum meninggalkan unit ini, satu tabel pendek yang melengkapinya: kata ganti saat ia jadi **sasaran**, bukan pelaku." },
+        { "type": "tabel", "head": ["Pelaku", "Sasaran", "Cara baca", "Contoh"], "rows": [
+          ["jag", "**mig**", "mey", "Han ser mig."],
+          ["du", "**dig**", "dey", "Jag ser dig."],
+          ["han", "**honom**", "HON-nom", "Vi ringer honom."],
+          ["hon", "**henne**", "HEN-ne", "Jag träffar henne."],
+          ["den / det", "den / det", "den · de", "Jag tar den."],
+          ["vi", "**oss**", "os", "De hjälper oss."],
+          ["ni", "**er**", "èr", "Vi ser er."],
+          ["de", "**dem**", "dom", "Jag känner dem."]
+        ] },
+        { "type": "p", "text": "**Dem dibaca \"dom\", sama persis dengan *de*.** Karena bunyinya identik, orang Swedia sendiri sering salah menulis mana yang pelaku dan mana yang sasaran — perdebatan \"de eller dem\" adalah pertengkaran ejaan nasional yang tak kunjung selesai. Kamu boleh menghibur diri dengan itu." },
+        { "type": "p", "text": "Untuk kata kerja yang kembali ke dirinya sendiri, bentuk sasarannya berubah di orang ketiga jadi **sig** (dibaca *sey*): *han tvättar sig* (dia mandi/mencuci diri), *hon sätter sig* (dia duduk), *de klär på sig* (mereka berpakaian). Sepupu langsung dari *sin* — dan uji yang sama berlaku." },
+        { "type": "kotak", "title": "Ulangan berjenjang — kembali ke unit 8", "items": [
+          "Sebutkan enam kata bantu unit 8 beserta artinya tanpa melihat, lalu buat satu kalimat untuk masing-masing.",
+          "Gabungkan dengan unit ini: *Han måste ringa sin mamma*, *Hon vill hälsa på sina föräldrar*, *De ska städa sina rum*.",
+          "Perhatikan bahwa kata bantu tidak mengubah apa pun tentang *sin* — yang menentukan tetap siapa pelakunya."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sv": "sin / sitt / sina", "baca": "sin · sit · SI-na", "id": "…-nya sendiri" },
+    { "sv": "sig", "baca": "sey", "id": "dirinya (sendiri)" },
+    { "sv": "honom", "baca": "HON-nom", "id": "dia (lk, sasaran)" },
+    { "sv": "henne", "baca": "HEN-ne", "id": "dia (pr, sasaran)" },
+    { "sv": "oss", "baca": "os", "id": "kami (sasaran)" },
+    { "sv": "dem", "baca": "dom", "id": "mereka (sasaran)" },
+    { "sv": "att ringa", "baca": "at RING-a", "id": "menelepon" },
+    { "sv": "ett samtal", "baca": "et SAM-tal", "id": "percakapan" },
+    { "sv": "att svara", "baca": "at SVA-ra", "id": "menjawab" },
+    { "sv": "att hälsa på", "baca": "at HEL-sa PO", "id": "berkunjung" },
+    { "sv": "att skicka", "baca": "at SYIK-ka", "id": "mengirim" },
+    { "sv": "ett meddelande", "baca": "et me-DÈ-lan-de", "id": "pesan" },
+    { "sv": "att fatta", "baca": "at FAT-ta", "id": "paham (santai)" },
+    { "sv": "att känna", "baca": "at SYEN-na", "id": "mengenal, merasa" },
+    { "sv": "att älska", "baca": "at ELS-ka", "id": "mencintai" },
+    { "sv": "att gilla", "baca": "at YIL-la", "id": "menyukai" },
+    { "sv": "egen / eget / egna", "baca": "È-gen · È-get", "id": "sendiri, milik pribadi" },
+    { "sv": "annan / annat / andra", "baca": "AN-nan · AN-nat", "id": "lain" },
+    { "sv": "någon / något", "baca": "NO-gon · NO-got", "id": "seseorang / sesuatu" },
+    { "sv": "snabbt", "baca": "snabt", "id": "cepat" },
+    { "sv": "att vänta", "baca": "at VEN-ta", "id": "menunggu" },
+    { "sv": "ju", "baca": "yü", "id": "kan (kata bumbu)" },
+    { "sv": "en cykel", "baca": "en SÜK-kel", "id": "sepeda" },
+    { "sv": "ett ögonblick", "baca": "et Ö-gon-blik", "id": "sebentar, sesaat" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan *sin*, *sitt*, *sina*, *hans*, *hennes*, atau *deras*.",
+      "items": [
+        "Oskar ringer ____ mamma varje söndag. (ibunya sendiri)",
+        "Elin bor hos ____ pappa. (ayahnya sendiri)",
+        "Han tog ____ cykel — den står där borta. (sepeda orang lain)",
+        "De städar ____ rum på lördagar. (kamar mereka sendiri)",
+        "____ mamma bor i Norge. (ibunya Elin, sebagai pelaku kalimat)",
+        "Hon glömde ____ paraply hemma. (payungnya sendiri)"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata ganti sasaran: *mig*, *dig*, *honom*, *henne*, *oss*, *er*, *dem*.",
+      "items": [
+        "Kan du hjälpa ____? (saya)",
+        "Jag ringer ____ ikväll. (dia, perempuan)",
+        "Vi träffar ____ imorgon. (mereka)",
+        "De ser ____ varje dag. (kami)",
+        "Jag känner ____ inte. (dia, laki-laki)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan, lalu jelaskan pilihanmu pada dirimu sendiri.",
+      "items": [
+        "Dia (lk) menelepon ibunya sendiri.",
+        "Dia (lk) menelepon ibunya Elin.",
+        "Mereka membersihkan kamar mereka sendiri.",
+        "Ibunya (perempuan) tinggal di Norwegia.",
+        "Dia (pr) mengambil payungnya sendiri."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "sin / ringer / mamma / han",
+        "hälsa på / vill / sina / hon / föräldrar",
+        "cykel / tog / hans / han",
+        "rum / städar / sina / de",
+        "bor / hennes / i Norge / mamma"
+      ]
+    }
+  ],
+  "answers": [
+    "sin — sin — hans — sina — Hennes — sitt",
+    "mig — henne — dem — oss — honom",
+    "Han ringer sin mamma. — Han ringer Elins mamma. — De städar sina rum. — Hennes mamma bor i Norge. — Hon tar sitt paraply.",
+    "Han ringer sin mamma. — Hon vill hälsa på sina föräldrar. — Han tog hans cykel. — De städar sina rum. — Hennes mamma bor i Norge."
+  ]
+}

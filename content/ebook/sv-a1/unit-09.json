@@ -1,0 +1,203 @@
+{
+  "title": "Milik siapa",
+  "title_target": "Är det här din tröja?",
+  "goal": "Menyatakan kepemilikan dengan tiga bentuk yang mengikuti barangnya — bukan pemiliknya — dan memakai ekor *-s* yang jauh lebih sederhana daripada bahasa Inggris.",
+  "bekal": [
+    "min/mitt/mina dan seluruh keluarganya",
+    "ekor *-s* untuk nama orang: *Elins jacka*",
+    "kata benda pakaian dan barang pribadi"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — I tvättstugan",
+      "intro": "Sabtu pagi di ruang cuci bersama. Sekeranjang pakaian tertinggal di atas mesin, dan Dian tidak tahu itu milik siapa.",
+      "lines": [
+        { "speaker": "Dian:", "text": "Elin, är det här din tröja?", "id": "Elin, ini sweatermu?", "literal": "Elin, adalah itu di-sini milikmu sweater?" },
+        { "speaker": "Elin:", "text": "Nej, min tröja är blå. Den där är nog Oskars.", "id": "Bukan, sweater saya biru. Yang itu kayaknya punya Oskar.", "literal": "tidak, milikku sweater adalah biru. yang di-sana adalah mungkin Oskar-punya." },
+        { "speaker": "Dian:", "text": "Och vems är byxorna?", "id": "Terus celananya punya siapa?", "literal": "dan siapa-punya adalah celana-itu?" },
+        { "speaker": "Elin:", "text": "De är mina. Tack för att du frågar!", "id": "Itu punya saya. Makasih sudah nanya!", "literal": "mereka adalah milikku-jamak. terima-kasih untuk bahwa kamu bertanya!" },
+        { "speaker": "Dian:", "text": "Var är mitt paraply? Jag hittar det inte.", "id": "Payung saya di mana ya? Saya nggak nemu.", "literal": "di-mana adalah milikku payung? saya menemukan itu tidak." },
+        { "speaker": "Elin:", "text": "Är det svart? Då står det vid dörren. Ahmad tog det igår.", "id": "Yang hitam? Itu ada di dekat pintu. Kemarin dipakai Ahmad.", "literal": "adalah itu hitam? kalau-begitu berdiri itu di pintu-itu. Ahmad mengambil itu kemarin." },
+        { "speaker": "Dian:", "text": "Typiskt Ahmad. Han lånar alltid mina saker.", "id": "Ahmad banget. Dia selalu pinjam barang-barang saya.", "literal": "khas Ahmad. dia meminjam selalu milikku-jamak barang-barang." },
+        { "speaker": "Elin:", "text": "Han lånar våra saker också. Men han lämnar alltid tillbaka.", "id": "Barang-barang kami juga dia pinjam. Tapi selalu dikembalikan.", "literal": "dia meminjam milik-kami barang-barang juga. tapi dia meninggalkan selalu kembali." },
+        { "speaker": "Dian:", "text": "Det är sant. Förresten, är den här nyckeln er?", "id": "Bener juga. Ngomong-ngomong, kunci ini punya kalian?", "literal": "itu adalah benar. omong-omong, adalah ini di-sini kunci milik-kalian?" },
+        { "speaker": "Elin:", "text": "Nej, den är inte vår. Kanske är den Ahmads — eller hans kompis.", "id": "Bukan, bukan punya kami. Mungkin punya Ahmad — atau temannya.", "literal": "tidak, ia adalah tidak milik-kami. mungkin adalah ia Ahmad-punya — atau dia-punya teman." },
+        { "speaker": "Dian:", "text": "Då lägger jag den på hans dörr.", "id": "Kalau begitu saya taruh di pintunya dia.", "literal": "kalau-begitu meletakkan saya ia pada dia-punya pintu." }
+      ],
+      "notes": [
+        "**Bentuknya mengikuti barangnya, bukan pemiliknya.** *Min tröja* (sweaterku, *en*-ord), *mitt paraply* (payungku, *ett*-ord), *mina saker* (barang-barangku, jamak). Yang berubah adalah ekornya, dan yang menentukan adalah jenis dan jumlah **benda yang dimiliki**. Bahasa Indonesia tidak punya urusan ini sama sekali — \"saya punya\" tetap \"saya punya\" apa pun bendanya.",
+        "**Hans, hennes, deras, dess tidak pernah berubah.** Hanya *min*, *din*, *vår*, *er* yang punya tiga bentuk. Kata milik orang ketiga (*hans*, *hennes*, *deras*) sudah berakhiran *-s* dan berhenti di situ: *hans tröja*, *hans paraply*, *hans saker*. Ini menghemat separuh hafalan.",
+        "**Vems** berarti \"milik siapa\" — satu kata untuk apa yang bahasa Indonesia butuh dua. *Vems är byxorna?* (celananya punya siapa?), *Vems bok är det här?* (ini buku siapa?).",
+        "**Oskars, Ahmads** — nama orang cukup ditambah **-s**, tanpa tanda kutip satu. Bahasa Swedia menulis *Oskars tröja*, bukan *Oskar's tröja*. Kalau namanya sudah berakhiran *-s*, *-x*, atau *-z*, tidak ditambah apa-apa: *Lars bok*, *Max jacka*.",
+        "**Byxorna är mina** — perhatikan bahwa \"celana\" dalam bahasa Swedia selalu **jamak**, persis seperti bahasa Inggris (*trousers*). Begitu juga *glasögon* (kacamata) dan *pengar* (uang). Karena jamak, kata miliknya juga jamak: *mina byxor*.",
+        "**Nog** berarti \"kayaknya, kurasa\" — kata bumbu yang tidak diterjemahkan tapi melunakkan seluruh kalimat. Ia sepupu dari *väl* dan *ju*, dan tiga kata inilah yang membuat kalimat terdengar seperti orang Swedia asli, bukan buku teks."
+      ],
+      "grammars": [
+        {
+          "title": "Seluruh keluarga kata milik",
+          "table": {
+            "head": ["Pemilik", "*en*-ord", "*ett*-ord", "Jamak", "Contoh"],
+            "rows": [
+              ["saya", "**min**", "**mitt**", "**mina**", "min bok · mitt hus · mina böcker"],
+              ["kamu", "**din**", "**ditt**", "**dina**", "din bok · ditt hus · dina böcker"],
+              ["dia (lk)", "hans", "hans", "hans", "hans bok · hans hus · hans böcker"],
+              ["dia (pr)", "hennes", "hennes", "hennes", "hennes bok · hennes hus"],
+              ["ia (benda)", "dess", "dess", "dess", "dess färg"],
+              ["kami/kita", "**vår**", "**vårt**", "**våra**", "vår bok · vårt hus · våra böcker"],
+              ["kalian", "**er**", "**ert**", "**era**", "er bok · ert hus · era böcker"],
+              ["mereka", "deras", "deras", "deras", "deras bok · deras hus"]
+            ]
+          },
+          "after": [
+            "Cara termudah mengingatnya: **ekor *-tt* untuk *ett*-ord, ekor *-a* untuk jamak**. Itu pola yang sama dengan kata sifat (*stor / stort / stora*), dan kamu akan bertemu pola ini lagi di unit 12.",
+            "Kata benda sesudah kata milik selalu berbentuk **tak tentu**: *min bok*, bukan *min boken*. Kepemilikan sudah cukup menentukan, jadi ekor bertentu tidak dipakai lagi. Ini berbeda dari bahasa Norwegia dan Denmark, yang membolehkan kedua susunan."
+          ]
+        },
+        {
+          "title": "Tiga cara menyatakan milik",
+          "table": {
+            "head": ["Cara", "Susunannya", "Contoh", "Kapan dipakai"],
+            "rows": [
+              ["Kata milik", "min/mitt/mina + benda", "**min** jacka", "pemiliknya kata ganti"],
+              ["Ekor *-s*", "nama + **s** + benda", "**Elins** jacka", "pemiliknya orang atau lembaga"],
+              ["*till* / *på*", "benda + *till/på* + …", "nyckeln **till** rummet", "hubungan bagian-keseluruhan"],
+              ["Berdiri sendiri", "…är + min/mitt/mina", "Jackan är **min**.", "menjawab \"punya siapa?\""]
+            ]
+          },
+          "after": [
+            "Baris ketiga sering luput: untuk benda mati yang \"milik\" benda lain, bahasa Swedia lebih suka *till* atau *på* daripada ekor *-s*. *Nyckeln till rummet* (kunci kamar), *taket på huset* (atap rumah), *slutet på filmen* (akhir filmnya). Memakai *-s* di situ — *rummets nyckel* — benar secara tata bahasa tapi berbau tulisan resmi.",
+            "Baris keempat memakai bentuk yang sama persis dengan baris pertama, tanpa kata benda sesudahnya: *Boken är min*, *Huset är vårt*, *Sakerna är mina*. Bahasa Inggris mengubah bentuknya di sini (*mine*, *ours*); bahasa Swedia tidak."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pakaian dan barang pribadi",
+      "blocks": [
+        { "type": "tabel", "head": ["Svenska", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["en tröja", "en TRÖY-a", "sweater, kaus"],
+          ["en skjorta", "en HWUR-ta", "kemeja"],
+          ["en jacka", "en YAK-ka", "jaket"],
+          ["byxor", "BÜK-sor", "celana"],
+          ["en klänning", "en KLEN-ning", "gaun"],
+          ["skor", "skur", "sepatu"],
+          ["strumpor", "STRUM-por", "kaus kaki"],
+          ["en mössa", "en MÖS-sa", "topi kupluk"],
+          ["vantar / handskar", "VAN-tar · HAND-skar", "sarung tangan"],
+          ["en halsduk", "en HALS-dük", "syal"],
+          ["glasögon", "GLAS-ö-gon", "kacamata"],
+          ["en plånbok", "en PLON-buk", "dompet"]
+        ] },
+        { "type": "p", "text": "**En mössa, vantar, en halsduk** adalah tiga kata yang akan kamu pakai setiap hari dari Oktober sampai April. Ada ungkapan Swedia yang menjelaskan seluruh sikap mereka terhadap cuaca: *Det finns inget dåligt väder, bara dåliga kläder* — \"tidak ada cuaca yang buruk, yang ada cuma pakaian yang buruk\"." },
+        { "type": "tabel", "head": ["Warna", "Cara baca", "*ett*-ord", "Jamak"], "rows": [
+          ["vit", "vit", "vitt", "vita"],
+          ["svart", "svat", "svart", "svarta"],
+          ["röd", "röd", "rött", "röda"],
+          ["blå", "blo", "blått", "blåa"],
+          ["grön", "grön", "grönt", "gröna"],
+          ["gul", "gül", "gult", "gula"],
+          ["brun", "brün", "brunt", "bruna"],
+          ["grå", "gro", "grått", "gråa"]
+        ] },
+        { "type": "p", "text": "Warna adalah kata sifat, jadi ia mengikuti pola yang sama: ekor *-t* untuk *ett*-ord, ekor *-a* untuk jamak. *En röd jacka*, *ett rött hus*, *röda skor*. Kata *svart* sudah berakhiran *-t*, jadi bentuk *ett*-nya tidak berubah." }
+      ]
+    },
+    {
+      "title": "Meminjam, mengembalikan, kehilangan",
+      "blocks": [
+        { "type": "tabel", "head": ["Svenska", "Bahasa Indonesia", "Catatan"], "rows": [
+          ["Får jag låna din penna?", "Boleh pinjam pulpenmu?", "*låna* = meminjam **dan** meminjamkan"],
+          ["Kan du låna mig hundra kronor?", "Bisa pinjami saya seratus kronor?", "arah pinjamnya ditentukan sasarannya"],
+          ["Jag lämnar tillbaka den imorgon.", "Saya kembalikan besok.", "*lämna tillbaka* = mengembalikan"],
+          ["Jag har tappat bort min nyckel.", "Kunci saya hilang.", "*tappa bort* = menjatuhkan sampai hilang"],
+          ["Har du sett min telefon?", "Lihat teleponku nggak?", "*ha sett* = sudah melihat"],
+          ["Den är inte min.", "Itu bukan punya saya.", ""],
+          ["Vems är den här?", "Ini punya siapa?", ""]
+        ] },
+        { "type": "p", "text": "**Låna** mengerjakan dua tugas yang dipisahkan bahasa Indonesia: \"meminjam\" dan \"meminjamkan\". Yang membedakan adalah ada tidaknya sasaran. *Jag lånar en bok* = saya meminjam sebuah buku. *Jag lånar dig en bok* = saya meminjami kamu sebuah buku. Bahasa Inggris memakai dua kata berbeda (*borrow* / *lend*), dan penutur Inggris justru sering tersandung di sini." },
+        { "type": "kotak", "title": "Ulangan berjenjang — kembali ke unit 7", "items": [
+          "Sebutkan bentuk sekarang dari sepuluh kata kerja unit 7 tanpa melihat: vakna, duscha, cykla, plugga, handla, laga, träffa, börja, sluta, läsa.",
+          "Lalu gabungkan dengan kata milik unit ini: *Jag lånar min…*, *Hon tar sina…*, *Vi städar vårt…*",
+          "Terakhir, tanyakan lima barang di sekitarmu: *Vems är…?* dan jawab sendiri dengan *Den är min* atau *Det är mitt*."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sv": "min / mitt / mina", "baca": "min · mit · MI-na", "id": "milik saya" },
+    { "sv": "din / ditt / dina", "baca": "din · dit · DI-na", "id": "milik kamu" },
+    { "sv": "hans", "baca": "hans", "id": "milik dia (lk)" },
+    { "sv": "hennes", "baca": "HEN-nes", "id": "milik dia (pr)" },
+    { "sv": "vår / vårt / våra", "baca": "vor · vort · VO-ra", "id": "milik kami" },
+    { "sv": "er / ert / era", "baca": "èr · èrt · È-ra", "id": "milik kalian" },
+    { "sv": "deras", "baca": "DÈ-ras", "id": "milik mereka" },
+    { "sv": "vems", "baca": "vems", "id": "milik siapa" },
+    { "sv": "en tröja", "baca": "en TRÖY-a", "id": "sweater" },
+    { "sv": "byxor", "baca": "BÜK-sor", "id": "celana" },
+    { "sv": "skor", "baca": "skur", "id": "sepatu" },
+    { "sv": "en plånbok", "baca": "en PLON-buk", "id": "dompet" },
+    { "sv": "kläder", "baca": "KLÈ-der", "id": "pakaian" },
+    { "sv": "att låna", "baca": "at LO-na", "id": "meminjam, meminjamkan" },
+    { "sv": "att lämna tillbaka", "baca": "at LEM-na til-BA-ka", "id": "mengembalikan" },
+    { "sv": "att tappa bort", "baca": "at TAP-pa bot", "id": "menghilangkan" },
+    { "sv": "att lägga", "baca": "at LEG-ga", "id": "meletakkan" },
+    { "sv": "blå / blått", "baca": "blo · blot", "id": "biru" },
+    { "sv": "svart", "baca": "svat", "id": "hitam" },
+    { "sv": "röd / rött", "baca": "röd · röt", "id": "merah" },
+    { "sv": "nog", "baca": "nug", "id": "kayaknya, kurasa" },
+    { "sv": "sant", "baca": "sant", "id": "benar" },
+    { "sv": "förresten", "baca": "fö-RES-ten", "id": "ngomong-ngomong" },
+    { "sv": "typiskt", "baca": "TÜ-piskt", "id": "khas, biasanya begitu" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan *min*, *mitt*, atau *mina*.",
+      "items": [
+        "Det är ____ jacka.",
+        "Var är ____ paraply?",
+        "Här är ____ skor.",
+        "____ rum är litet.",
+        "Han lånar ____ saker.",
+        "____ telefon är svart."
+      ]
+    },
+    {
+      "prompt": "Isi dengan *din*, *ditt*, *dina*, *vår*, *vårt*, atau *våra* sesuai artinya dalam kurung.",
+      "items": [
+        "Är det här ____ tröja? (kamu)",
+        "Var är ____ hus? (kami)",
+        "____ böcker ligger på bordet. (kamu, jamak)",
+        "____ kök är stort. (kami)",
+        "Jag gillar ____ skor. (kamu, jamak)"
+      ]
+    },
+    {
+      "prompt": "Tulis ulang memakai ekor *-s*. Contoh: *jackan som Elin har* → *Elins jacka*.",
+      "items": [
+        "tröjan som Oskar har",
+        "boken som Ahmad har",
+        "rummet som Elin har",
+        "nyckeln som Lars har",
+        "cykeln som Dian har"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swedia.",
+      "items": [
+        "Ini sweatermu?",
+        "Bukan, sweater saya biru.",
+        "Celananya punya siapa?",
+        "Itu punya saya.",
+        "Dia selalu pinjam barang-barang saya."
+      ]
+    }
+  ],
+  "answers": [
+    "min — mitt — mina — Mitt — mina — Min",
+    "din — vårt — Dina — Vårt — dina",
+    "Oskars tröja — Ahmads bok — Elins rum — Lars bok — Dians cykel",
+    "Är det här din tröja? — Nej, min tröja är blå. — Vems är byxorna? — De är mina. — Han lånar alltid mina saker."
+  ]
+}

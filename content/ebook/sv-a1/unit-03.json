@@ -1,0 +1,210 @@
+{
+  "title": "Kata kerja yang wajib duduk di tempat kedua",
+  "title_target": "Idag går jag till universitetet",
+  "goal": "Menguasai satu aturan yang mengatur seluruh susunan kalimat bahasa Swedia — dan yang paling sering dilanggar penutur Indonesia sepanjang tahun pertama.",
+  "bekal": [
+    "menaruh keterangan waktu di depan kalimat tanpa merusak susunannya",
+    "aturan tempat kedua: apa pun yang di depan, kata kerjanya tetap nomor dua",
+    "menyebut hari dan bagian hari"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — På väg till tunnelbanan",
+      "intro": "Pagi Senin. Dian bertemu Elin di depan pintu asrama; keduanya menuju halte kereta bawah tanah yang sama.",
+      "lines": [
+        { "speaker": "Elin:", "text": "God morgon! Vart ska du idag?", "id": "Selamat pagi! Kamu mau ke mana hari ini?", "literal": "selamat pagi! ke-mana akan kamu hari-ini?" },
+        { "speaker": "Dian:", "text": "Idag går jag till universitetet. Jag har en lektion klockan nio.", "id": "Hari ini saya ke kampus. Saya ada kelas jam sembilan.", "literal": "hari-ini pergi saya ke universitas-itu. saya punya satu pelajaran jam sembilan." },
+        { "speaker": "Elin:", "text": "Då tar vi samma tåg. Jag jobbar på ett bibliotek i stan.", "id": "Kalau begitu kita naik kereta yang sama. Saya kerja di sebuah perpustakaan di kota.", "literal": "kalau-begitu ambil kami sama kereta. saya bekerja pada satu perpustakaan di kota." },
+        { "speaker": "Dian:", "text": "På morgonen är tunnelbanan alltid full.", "id": "Kalau pagi, keretanya selalu penuh.", "literal": "pada pagi-itu adalah kereta-bawah-tanah-itu selalu penuh." },
+        { "speaker": "Elin:", "text": "Ja, men efter nio blir det bättre.", "id": "Iya, tapi sesudah jam sembilan jadi lebih baik.", "literal": "ya, tapi sesudah sembilan menjadi itu lebih-baik." },
+        { "speaker": "Dian:", "text": "Vad gör du på kvällen?", "id": "Kamu ngapain nanti malam?", "literal": "apa melakukan kamu pada malam-itu?" },
+        { "speaker": "Elin:", "text": "Ikväll lagar jag mat hemma. Sedan tittar jag på en film.", "id": "Malam ini saya masak di rumah. Habis itu saya nonton film.", "literal": "malam-ini memasak saya makanan di-rumah. kemudian menonton saya pada satu film." },
+        { "speaker": "Dian:", "text": "På fredag är jag ledig. Ska vi fika då?", "id": "Hari Jumat saya senggang. Fika, yuk?", "literal": "pada Jumat adalah saya senggang. akan kami fika kalau-begitu?" },
+        { "speaker": "Elin:", "text": "Gärna! Vi ses på fredag.", "id": "Boleh banget! Sampai jumpa hari Jumat.", "literal": "dengan-senang-hati! kami terlihat pada Jumat." },
+        { "speaker": "Dian:", "text": "Perfekt. Nu springer jag — tåget kommer!", "id": "Sip. Sekarang saya lari — keretanya datang!", "literal": "sempurna. sekarang berlari saya — kereta-itu datang!" }
+      ],
+      "notes": [
+        "**Idag går jag** — bukan *idag jag går*. Ini kalimatnya sendiri yang mengajarkan seluruh unit ini. Begitu ada sesuatu di depan kalimat, pelakunya melompat ke belakang kata kerja. Kalau kamu mengatakan *idag jag går*, orang Swedia tetap mengerti, tapi telinganya tersandung — persis seperti telingamu tersandung mendengar \"besok saya pergi akan\".",
+        "**Vart ska du?** secara harfiah \"ke mana akan kamu?\". Kata kerja *gå* boleh dihilangkan setelah *ska* kalau arah sudah jelas: *Vart ska du?* sudah lengkap sebagai kalimat. Bandingkan *Var är du?* — \"kamu di mana?\", tanpa arah.",
+        "**Att gå** berarti **berjalan kaki**, bukan sekadar \"pergi\". Kalau kamu berpindah dengan kendaraan, kata kerjanya **att åka**: *jag åker buss*, *jag åker tåg*, *jag åker till Göteborg*. Mengatakan *jag går till Göteborg* berarti kamu benar-benar berjalan kaki 470 kilometer.",
+        "**På morgonen, på kvällen** — bagian hari memakai *på* dan bentuk bertentu (*morgonen*, bukan *morgon*). Susunan ini dihafal utuh saja; ekor *-en* yang menempel di ujung kata benda baru dijelaskan di unit berikutnya.",
+        "**Sedan** (dibaca **SEN**, dan sering ditulis *sen* saja dalam percakapan) berarti \"kemudian, habis itu\". Ia salah satu kata penyambung tersering di bahasa Swedia lisan, sejajar dengan *och sen* — \"dan habis itu\".",
+        "**Gärna** tidak punya padanan tunggal dalam bahasa Indonesia. Ia berarti \"dengan senang hati, boleh banget\", dan ia satu kata jawaban yang sopan sekaligus hangat. *Vill du ha kaffe?* — *Gärna!* Dibaca **YÈR-na**."
+      ],
+      "grammars": [
+        {
+          "title": "Aturan tempat kedua (V2)",
+          "body": [
+            "Dalam kalimat berita bahasa Swedia, **kata kerja selalu jadi unsur kedua**. Bukan kata kedua — unsur kedua. Satu unsur boleh terdiri dari beberapa kata (*på fredagsmorgonen*, *min bror och jag*), tapi ia tetap dihitung satu.",
+            "Yang berubah bukan kata kerjanya, melainkan siapa yang berdiri di tempat pertama:"
+          ],
+          "table": {
+            "head": ["Tempat 1", "Tempat 2 (**kerja**)", "Tempat 3", "Sisanya"],
+            "rows": [
+              ["Jag", "**går**", "till universitetet", "idag."],
+              ["Idag", "**går**", "jag", "till universitetet."],
+              ["Till universitetet", "**går**", "jag", "idag."],
+              ["På morgonen", "**dricker**", "vi", "kaffe."],
+              ["Hemma", "**lagar**", "hon", "mat."]
+            ]
+          },
+          "after": [
+            "Perhatikan kolom kedua: **går, går, går, dricker, lagar** — tidak pernah bergeser. Yang bergeser adalah pelakunya, yang terlempar ke tempat ketiga setiap kali ada sesuatu di depan.",
+            "Kenapa ada yang mau menaruh keterangan di depan? Karena di situlah **penekanannya**. *Idag går jag till universitetet* menekankan hari ini (bukan besok); *Jag går till universitetet idag* adalah pemberitahuan biasa. Orang Swedia memindahkan unsur ke depan sesering orang Indonesia memakai kata \"kalau\" dan \"nah\".",
+            "Aturan ini juga menjelaskan bentuk pertanyaan yang sudah kamu pelajari di unit 2: dalam pertanyaan ya/tidak, tempat pertama sengaja **dikosongkan**, jadi kata kerjanya naik ke depan."
+          ]
+        },
+        {
+          "title": "Hari, dan bagian hari",
+          "tables": [
+            {
+              "head": ["Svenska", "Cara baca", "Bahasa Indonesia"],
+              "rows": [
+                ["måndag", "MON-da", "Senin"],
+                ["tisdag", "TIS-da", "Selasa"],
+                ["onsdag", "UNS-da", "Rabu"],
+                ["torsdag", "TOSY-da", "Kamis"],
+                ["fredag", "FRÈ-da", "Jumat"],
+                ["lördag", "LÖR-da", "Sabtu"],
+                ["söndag", "SÖN-da", "Minggu"]
+              ]
+            },
+            {
+              "head": ["Svenska", "Artinya", "Dipakai begini"],
+              "rows": [
+                ["**morgon**", "pagi", "på morgonen · imorse (tadi pagi)"],
+                ["**förmiddag**", "menjelang siang", "på förmiddagen"],
+                ["**eftermiddag**", "sore", "på eftermiddagen"],
+                ["**kväll**", "petang, malam", "på kvällen · ikväll (malam ini)"],
+                ["**natt**", "malam (tidur)", "på natten · inatt"],
+                ["**idag / imorgon / igår**", "hari ini / besok / kemarin", "berdiri sendiri, tanpa *på*"]
+              ]
+            }
+          ],
+          "after": [
+            "Nama hari **tidak berhuruf besar** dalam bahasa Swedia, dan huruf *-g* di ujungnya nyaris selalu diam: *fredag* keluar sebagai **FRÈ-da**.",
+            "\"Pada hari Jumat\" adalah *på fredag*. Kalau maksudnya \"setiap Jumat\", bentuknya jamak: *på fredagar*. Bedanya cuma satu huruf, tapi ia memisahkan janji sekali dari kebiasaan mingguan."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Lima kesalahan susunan yang paling sering terjadi",
+      "blocks": [
+        { "type": "p", "text": "Semuanya berasal dari satu sebab: menerjemahkan susunan bahasa Indonesia kata demi kata. Bacalah kolom kanan keras-keras sampai ia terdengar wajar." },
+        { "type": "tabel", "head": ["Salah", "Benar", "Kenapa"], "rows": [
+          ["*Idag jag går hem.*", "**Idag går jag hem.**", "ada unsur di depan → pelaku pindah ke belakang kerja"],
+          ["*Jag inte förstår.*", "**Jag förstår inte.**", "*inte* datang sesudah kata kerja"],
+          ["*På fredag jag är ledig.*", "**På fredag är jag ledig.**", "sama seperti baris pertama"],
+          ["*Varför du sitter där?*", "**Varför sitter du där?**", "kata tanya menempati tempat 1, kerja tetap tempat 2"],
+          ["*Sedan vi äter middag.*", "**Sedan äter vi middag.**", "*sedan* juga sebuah unsur — ia mengisi tempat 1"]
+        ] },
+        { "type": "p", "text": "Satu cara memeriksa yang selalu berhasil: **hitung sampai dua**. Unsur pertama boleh apa saja dan sepanjang apa saja; yang kedua wajib kata kerja. Kalau yang kedua ternyata *jag*, *vi*, atau *han*, susunannya salah." },
+        { "type": "kotak", "title": "Ulangan berjenjang — kembali ke unit 1", "items": [
+          "Tutup kolom bahasa Swedia di kosakata unit 1, lihat kolom bahasa Indonesianya, dan sebutkan kata Swedianya keras-keras.",
+          "Lalu susun ulang lima kalimat ini tanpa melihat: \"Saya bernama…\", \"Saya berasal dari Indonesia\", \"Kamu tinggal di mana?\", \"Senang bertemu\", \"Sampai jumpa\".",
+          "Terakhir, ucapkan tiga di antaranya dengan keterangan waktu di depan — *Idag är jag…*, *Ikväll bor jag…* — dan rasakan pelakunya melompat ke belakang."
+        ] }
+      ]
+    },
+    {
+      "title": "Kata kerja sehari-hari yang dipakai unit ini",
+      "blocks": [
+        { "type": "p", "text": "Semua kata kerja bahasa Swedia punya bentuk sekarang yang **satu** dan berakhiran *-r*. Itu satu-satunya ciri yang perlu kamu kenali sekarang; pembagian golongannya menunggu di unit 7." },
+        { "type": "tabel", "head": ["Dasar", "Sekarang", "Artinya", "Contoh kalimat"], "rows": [
+          ["att gå", "går", "berjalan, pergi (kaki)", "Jag går hem nu."],
+          ["att åka", "åker", "pergi berkendaraan", "Vi åker buss till stan."],
+          ["att ta", "tar", "mengambil, naik", "Hon tar tåget klockan åtta."],
+          ["att jobba", "jobbar", "bekerja", "Han jobbar på ett café."],
+          ["att laga", "lagar", "memasak, memperbaiki", "Ikväll lagar jag mat."],
+          ["att titta", "tittar", "melihat, menonton", "Vi tittar på en film."],
+          ["att springa", "springer", "berlari", "Nu springer jag!"],
+          ["att göra", "gör", "melakukan", "Vad gör du?"]
+        ] },
+        { "type": "p", "text": "**Att göra** dibaca **at YÖ-ra**, dan bentuk sekarangnya *gör* dibaca **yör** — huruf *g* di depan *ö* berbunyi *y*. Kata ini muncul di pertanyaan tersering bahasa Swedia: *Vad gör du?* (\"kamu lagi apa?\"), yang dibaca **va yör dü**." },
+        { "type": "kotak", "title": "Titta på, lyssna på", "items": [
+          "Bahasa Swedia menempelkan **på** pada beberapa kata kerja panca indera: *titta **på** en film* (menonton film), *lyssna **på** musik* (mendengarkan musik).",
+          "Menghilangkan *på* mengubah artinya: *titta* sendirian cuma berarti \"melihat, memandang\" tanpa sasaran. Hafalkan sepasang: **titta på** dan **lyssna på**."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sv": "idag", "baca": "i-DA", "id": "hari ini" },
+    { "sv": "imorgon", "baca": "i-MOR-ron", "id": "besok" },
+    { "sv": "igår", "baca": "i-GOR", "id": "kemarin" },
+    { "sv": "ikväll", "baca": "i-KVEL", "id": "malam ini" },
+    { "sv": "sedan / sen", "baca": "sen", "id": "kemudian, habis itu" },
+    { "sv": "nu", "baca": "nü", "id": "sekarang" },
+    { "sv": "alltid", "baca": "AL-tid", "id": "selalu" },
+    { "sv": "gärna", "baca": "YÈR-na", "id": "dengan senang hati" },
+    { "sv": "ledig", "baca": "LÈ-di", "id": "senggang, libur" },
+    { "sv": "full", "baca": "ful", "id": "penuh" },
+    { "sv": "samma", "baca": "SAM-ma", "id": "sama, yang sama" },
+    { "sv": "att gå", "baca": "at go", "id": "berjalan, pergi" },
+    { "sv": "att åka", "baca": "at O-ka", "id": "pergi berkendaraan" },
+    { "sv": "att ta", "baca": "at ta", "id": "mengambil, naik" },
+    { "sv": "att jobba", "baca": "at YOB-ba", "id": "bekerja" },
+    { "sv": "att laga mat", "baca": "at LA-ga mat", "id": "memasak" },
+    { "sv": "att titta på", "baca": "at TIT-ta po", "id": "menonton" },
+    { "sv": "att göra", "baca": "at YÖ-ra", "id": "melakukan" },
+    { "sv": "ett tåg", "baca": "et tog", "id": "kereta" },
+    { "sv": "en buss", "baca": "en bus", "id": "bus" },
+    { "sv": "tunnelbanan", "baca": "TUN-nel-ba-nan", "id": "kereta bawah tanah" },
+    { "sv": "ett bibliotek", "baca": "et bib-li-u-TÈK", "id": "perpustakaan" },
+    { "sv": "en lektion", "baca": "en lek-HWUN", "id": "pelajaran, kelas" },
+    { "sv": "en stad / i stan", "baca": "en stad · i stan", "id": "kota / di pusat kota" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Susun ulang dengan keterangan di depan. Contoh: *Jag går hem idag.* → *Idag går jag hem.*",
+      "items": [
+        "Jag dricker kaffe på morgonen.",
+        "Vi åker buss till stan idag.",
+        "Hon jobbar på ett bibliotek på fredag.",
+        "Jag lagar mat ikväll.",
+        "De tittar på en film sedan.",
+        "Han är ledig imorgon."
+      ]
+    },
+    {
+      "prompt": "Perbaiki susunan kalimat berikut.",
+      "items": [
+        "Idag jag går till universitetet.",
+        "På kvällen vi äter middag.",
+        "Varför du sitter här?",
+        "Jag inte förstår svenska.",
+        "Sedan hon tar tåget.",
+        "Imorgon jag jobbar hemma."
+      ]
+    },
+    {
+      "prompt": "Isi dengan *går* atau *åker*.",
+      "items": [
+        "Jag ____ hem — det är bara femhundra meter.",
+        "Vi ____ tåg till Göteborg.",
+        "Hon ____ buss varje morgon.",
+        "Han ____ till köket och tar en kopp kaffe.",
+        "På söndag ____ vi till Finland."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swedia. Perhatikan tempat kata kerjanya.",
+      "items": [
+        "Hari ini saya bekerja di rumah.",
+        "Nanti malam kami menonton film.",
+        "Hari Jumat saya senggang.",
+        "Kenapa kamu tidak minum kopi?",
+        "Kalau pagi keretanya selalu penuh."
+      ]
+    }
+  ],
+  "answers": [
+    "På morgonen dricker jag kaffe. — Idag åker vi buss till stan. — På fredag jobbar hon på ett bibliotek. — Ikväll lagar jag mat. — Sedan tittar de på en film. — Imorgon är han ledig.",
+    "Idag går jag till universitetet. — På kvällen äter vi middag. — Varför sitter du här? — Jag förstår inte svenska. — Sedan tar hon tåget. — Imorgon jobbar jag hemma.",
+    "går — åker — åker — går — åker",
+    "Idag jobbar jag hemma. — Ikväll tittar vi på en film. — På fredag är jag ledig. — Varför dricker du inte kaffe? — På morgonen är tunnelbanan alltid full."
+  ]
+}

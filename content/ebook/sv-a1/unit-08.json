@@ -1,0 +1,201 @@
+{
+  "title": "Bisa, mau, harus, boleh",
+  "title_target": "Du måste läsa reglerna",
+  "goal": "Memakai enam kata kerja bantu yang membuka seluruh percakapan sehari-hari — dan menemukan bahwa sesudahnya kata kerja kedua berdiri telanjang, tanpa *att*.",
+  "bekal": [
+    "kan, vill, måste, ska, får, bör — arti dan bentuknya",
+    "aturan: sesudah kata bantu, kata kerja kedua tanpa *att*",
+    "meminta, menawarkan, dan menolak dengan sopan"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Reglerna i korridoren",
+      "intro": "Ahmad menempelkan selembar kertas di pintu dapur. Dian membacanya sambil mengernyit.",
+      "lines": [
+        { "speaker": "Dian:", "text": "Vad är det där för papper?", "id": "Kertas apa itu?", "literal": "apa adalah itu di-sana untuk kertas?" },
+        { "speaker": "Ahmad:", "text": "Korridorreglerna. Du måste läsa dem.", "id": "Peraturan koridor. Kamu harus membacanya.", "literal": "koridor-aturan-itu. kamu harus membaca mereka." },
+        { "speaker": "Dian:", "text": "Måste jag? Vad står det?", "id": "Harus, ya? Isinya apa?", "literal": "harus saya? apa berdiri itu?" },
+        { "speaker": "Ahmad:", "text": "Man får inte diska på natten. Och man ska städa varje vecka.", "id": "Tidak boleh cuci piring malam hari. Dan tiap minggu harus bersih-bersih.", "literal": "orang boleh tidak mencuci-piring pada malam-itu. dan orang akan membersihkan setiap minggu." },
+        { "speaker": "Dian:", "text": "Kan jag städa på söndag istället?", "id": "Boleh saya bersih-bersih hari Minggu saja?", "literal": "bisa saya membersihkan pada Minggu sebagai-ganti?" },
+        { "speaker": "Ahmad:", "text": "Visst. Men du ska skriva ditt namn på listan.", "id": "Boleh. Tapi kamu harus menulis namamu di daftarnya.", "literal": "tentu. tapi kamu akan menulis namamu pada daftar-itu." },
+        { "speaker": "Dian:", "text": "Jag vill gärna hjälpa till. Får jag använda dammsugaren?", "id": "Saya mau bantu-bantu. Boleh pakai penyedot debunya?", "literal": "saya mau dengan-senang-hati menolong ke. boleh saya menggunakan penyedot-debu-itu?" },
+        { "speaker": "Ahmad:", "text": "Ja, den står i skåpet. Men du bör fråga Elin först.", "id": "Boleh, ada di lemari. Tapi sebaiknya tanya Elin dulu.", "literal": "ya, ia berdiri di lemari-itu. tapi kamu sebaiknya bertanya Elin pertama." },
+        { "speaker": "Dian:", "text": "Varför det?", "id": "Kenapa begitu?", "literal": "mengapa itu?" },
+        { "speaker": "Ahmad:", "text": "Den går sönder ibland. Hon kan laga den.", "id": "Kadang rusak. Dia bisa memperbaikinya.", "literal": "ia pergi patah kadang-kadang. dia bisa memperbaiki ia." },
+        { "speaker": "Dian:", "text": "Okej. Då ska jag prata med henne ikväll.", "id": "Oke. Kalau begitu nanti malam saya bicara sama dia.", "literal": "oke. kalau-begitu akan saya berbicara dengan dia ikvall." }
+      ],
+      "notes": [
+        "**Sesudah kata bantu, kata kerja kedua berdiri telanjang.** *Du måste **läsa*** — bukan *du måste att läsa*. Ini kabar baik: bahasa Swedia membuang *att* persis di tempat bahasa Inggris membuang *to* (*you must read*, bukan *you must to read*). Aturannya berlaku untuk keenam kata bantu di unit ini.",
+        "**Man får inte** berarti \"tidak boleh\", bukan \"tidak dapat\". Kata *få* dengan *inte* selalu tentang **izin**, bukan kemampuan. Untuk \"tidak bisa\", kata yang benar adalah *kan inte*: *jag kan inte simma* (saya tidak bisa berenang) vs *jag får inte simma* (saya tidak boleh berenang).",
+        "**Ska vs måste.** *Måste* adalah keharusan yang datang dari luar dan tidak bisa ditawar (*jag måste jobba imorgon*). *Ska* lebih lunak: rencana, kesepakatan, atau aturan yang disepakati bersama (*du ska städa varje vecka*). Kalau kamu ragu, *måste* selalu bisa dipakai dan tidak akan salah paham.",
+        "**Bör** berarti \"sebaiknya\" — saran, bukan perintah. Ia lebih halus daripada *ska* dan jauh lebih halus daripada *måste*. Di papan pengumuman Swedia kamu akan sering melihat ketiganya berjejer, dan bedanya sungguh-sungguh diperhatikan.",
+        "**Går sönder** — \"rusak\", harfiahnya \"pergi patah\". Ini salah satu susunan yang tidak bisa diterjemahkan kata demi kata; hafalkan utuh. Sepupunya: *går bra* (berjalan lancar), *går inte* (tidak mungkin).",
+        "**Vad är det där för papper?** — susunan *vad… för…* berarti \"apa jenis…?\". *Vad är det för bok?* (buku apa itu?), *Vad är det för fel?* (apanya yang salah?). Bagian *för* selalu jatuh sesudah kata bendanya, dan susunan ini terdengar jauh lebih wajar daripada *vilken sorts*."
+      ],
+      "grammars": [
+        {
+          "title": "Enam kata kerja bantu",
+          "table": {
+            "head": ["Sekarang", "Dasar", "Lampau", "Artinya", "Contoh"],
+            "rows": [
+              ["**kan**", "att kunna", "kunde", "bisa, dapat", "Jag kan simma."],
+              ["**vill**", "att vilja", "ville", "mau, ingin", "Vill du ha kaffe?"],
+              ["**måste**", "—", "var tvungen", "harus", "Du måste läsa reglerna."],
+              ["**ska**", "att skola", "skulle", "akan, harus (kesepakatan)", "Vi ska städa på söndag."],
+              ["**får**", "att få", "fick", "boleh; mendapat", "Får jag komma in?"],
+              ["**bör**", "att böra", "borde", "sebaiknya", "Du bör fråga först."]
+            ]
+          },
+          "after": [
+            "Perhatikan kolom pertama: **kan, vill, måste, ska, får, bör** — semuanya satu bentuk untuk semua orang, sama seperti kata kerja lain. Dan tidak satu pun berakhiran *-ar* atau *-er*, jadi ia mudah dikenali dari jauh.",
+            "**Måste tidak punya bentuk dasar yang hidup.** Dalam kalimat lampau, orang Swedia memakai *var tvungen att…* (\"terpaksa\") atau membiarkan *måste* apa adanya, yang dalam percakapan sering berarti lampau juga. Untuk A1, pakai *måste* dan jangan khawatir.",
+            "**Vill ha** adalah pasangan yang perlu dihafal utuh: *vill* saja berarti \"mau melakukan\", tapi \"mau punya sesuatu\" adalah *vill **ha***. *Jag vill ha kaffe* (saya mau kopi) — bukan *jag vill kaffe*, yang salah."
+          ]
+        },
+        {
+          "title": "Susunan kalimat dengan kata bantu",
+          "body": [
+            "Kata bantu menempati tempat kedua; kata kerja utamanya menunggu di belakang, sesudah pelaku dan sesudah *inte*."
+          ],
+          "table": {
+            "head": ["Jenis", "Contoh", "Artinya"],
+            "rows": [
+              ["Berita", "Jag **ska** städa imorgon.", "Saya akan bersih-bersih besok."],
+              ["Berita dibalik", "Imorgon **ska** jag städa.", "Besok saya bersih-bersih."],
+              ["Sangkalan", "Jag **kan** **inte** komma.", "Saya tidak bisa datang."],
+              ["Tanya", "**Kan** du hjälpa mig?", "Bisa bantu saya?"],
+              ["Tanya + kata tanya", "När **ska** vi äta?", "Kapan kita makan?"],
+              ["Dua kata kerja", "Jag **vill** **börja** jobba.", "Saya mau mulai bekerja."]
+            ]
+          },
+          "after": [
+            "Perhatikan baris terakhir: kalau ada **tiga** kata kerja berderet, cuma yang pertama yang jadi kata bantu; yang kedua dan ketiga tetap bentuk dasar. *Jag vill börja jobba*, *Du måste sluta röka*.",
+            "**Inte** selalu berdiri sesudah kata bantu dan sebelum kata kerja utama: *jag kan inte komma*, *hon vill inte äta*. Ini penting diingat, karena posisinya berbeda dari kalimat tanpa kata bantu (*jag kommer inte*)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Meminta, menawarkan, menolak",
+      "blocks": [
+        { "type": "p", "text": "Bahasa Swedia terkenal tidak punya kata \"tolong\". Tidak ada padanan langsung untuk *please*. Yang dipakai sebagai gantinya adalah **susunan kalimatnya** dan kata *tack*." },
+        { "type": "tabel", "head": ["Keperluan", "Svenska", "Nada"], "rows": [
+          ["Meminta bantuan", "**Kan du hjälpa mig?**", "biasa"],
+          ["Meminta lebih halus", "**Skulle du kunna hjälpa mig?**", "sangat sopan"],
+          ["Meminta barang", "**Kan jag få en kaffe, tack?**", "di kafe & toko"],
+          ["Menawarkan", "**Vill du ha lite te?**", "hangat"],
+          ["Menerima", "**Ja, gärna!** / **Ja tack!**", "hangat"],
+          ["Menolak", "**Nej tack.**", "cukup, tidak kasar"],
+          ["Meminta izin", "**Får jag…?**", "baku"],
+          ["Menyanggupi", "**Visst!** / **Absolut!**", "santai"]
+        ] },
+        { "type": "p", "text": "**Nej tack** adalah penolakan yang sudah lengkap dan sudah sopan; tidak perlu ditambah alasan panjang. Orang Swedia sungguh-sungguh menganggap satu penolakan sebagai satu penolakan, dan tidak akan menawarkan tiga kali seperti kebiasaan Indonesia. Kalau kamu sebenarnya mau tapi menolak karena sungkan, kamu tidak akan ditawari lagi." },
+        { "type": "kotak", "title": "Tack yang sepuluh macam", "items": [
+          "**Tack** — terima kasih · **Tack så mycket** — terima kasih banyak · **Tusen tack** — seribu terima kasih",
+          "**Tack ska du ha** — terima kasih ya (hangat, sangat Swedia)",
+          "**Tack för idag** — terima kasih untuk hari ini (diucapkan saat berpisah dari kelas atau rapat)",
+          "**Tack för maten** — terima kasih atas makanannya; **wajib** diucapkan sesudah makan di rumah orang. Melewatkannya benar-benar diperhatikan.",
+          "**Tack detsamma** — terima kasih, kamu juga (menjawab ucapan selamat)"
+        ] }
+      ]
+    },
+    {
+      "title": "Aturan dan izin: bahasa papan pengumuman",
+      "blocks": [
+        { "type": "p", "text": "Kalimat berikut menempel di dinding asrama, dapur bersama, dan tempat umum di seluruh Swedia. Kamu akan membacanya setiap hari." },
+        { "type": "tabel", "head": ["Svenska", "Bahasa Indonesia"], "rows": [
+          ["Man får inte röka här.", "Dilarang merokok di sini."],
+          ["Du måste boka tvättstugan.", "Kamu harus memesan ruang cuci."],
+          ["Var vänlig stäng dörren.", "Mohon tutup pintunya."],
+          ["Diska efter dig!", "Cuci piringmu sendiri!"],
+          ["Sopsortering är obligatorisk.", "Pemilahan sampah wajib."],
+          ["Tyst efter klockan 22.", "Tenang sesudah pukul 22."],
+          ["Endast för boende.", "Khusus penghuni."]
+        ] },
+        { "type": "p", "text": "**Tvättstugan** — ruang cuci bersama — pantas mendapat catatan tersendiri. Hampir semua rumah susun Swedia punya satu, dan pemakaiannya dipesan lewat papan jadwal atau aplikasi. Memakainya di luar jadwalmu, atau meninggalkannya kotor, adalah salah satu pelanggaran sosial paling serius yang bisa dilakukan pendatang di Swedia. Ini bukan lelucon." },
+        { "type": "kotak", "title": "Ulangan berjenjang — kembali ke unit 6", "items": [
+          "Sebutkan lima jam dari ingatan: 06.30, 08.15, 11.45, 14.25, 19.35.",
+          "Lalu gabungkan dengan kata bantu unit ini: *Jag måste vakna klockan…*, *Vi ska äta klockan…*, *Tåget ska gå kvart över…*",
+          "Terakhir, tanyakan tiga izin: boleh masuk, boleh duduk di sini, boleh pinjam penyedot debu."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sv": "att kunna / kan", "baca": "at KUN-na · kan", "id": "bisa, dapat" },
+    { "sv": "att vilja / vill", "baca": "at VIL-ya · vil", "id": "mau, ingin" },
+    { "sv": "måste", "baca": "MOS-te", "id": "harus" },
+    { "sv": "ska", "baca": "ska", "id": "akan, harus" },
+    { "sv": "att få / får", "baca": "at fo · for", "id": "boleh; mendapat" },
+    { "sv": "bör", "baca": "bör", "id": "sebaiknya" },
+    { "sv": "att hjälpa", "baca": "at YEL-pa", "id": "menolong" },
+    { "sv": "att städa", "baca": "at STÈ-da", "id": "membersihkan" },
+    { "sv": "att diska", "baca": "at DIS-ka", "id": "mencuci piring" },
+    { "sv": "att tvätta", "baca": "at TVET-ta", "id": "mencuci pakaian" },
+    { "sv": "att använda", "baca": "at an-VEN-da", "id": "menggunakan" },
+    { "sv": "att boka", "baca": "at BU-ka", "id": "memesan (tempat)" },
+    { "sv": "att röka", "baca": "at RÖ-ka", "id": "merokok" },
+    { "sv": "en regel / regler", "baca": "en RÈ-gel · RÈG-ler", "id": "aturan" },
+    { "sv": "en lista", "baca": "en LIS-ta", "id": "daftar" },
+    { "sv": "ett skåp", "baca": "et skop", "id": "lemari" },
+    { "sv": "en tvättstuga", "baca": "en TVET-stü-ga", "id": "ruang cuci bersama" },
+    { "sv": "att gå sönder", "baca": "at go SÖN-der", "id": "rusak" },
+    { "sv": "visst", "baca": "vist", "id": "tentu, boleh" },
+    { "sv": "istället", "baca": "i-STEL-let", "id": "sebagai gantinya" },
+    { "sv": "tyst", "baca": "tüst", "id": "diam, tenang" },
+    { "sv": "först", "baca": "fösyt", "id": "pertama, dulu" },
+    { "sv": "med", "baca": "me", "id": "dengan" },
+    { "sv": "ett papper", "baca": "et PAP-per", "id": "kertas" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata bantu yang tepat: *kan*, *vill*, *måste*, *får*, *bör*.",
+      "items": [
+        "Jag ____ inte simma — jag har aldrig lärt mig.",
+        "Du ____ ha pass när du reser.",
+        "____ jag komma in?",
+        "Hon ____ ha en kopp te, tack.",
+        "Du ____ fråga Elin först — det är artigt.",
+        "Man ____ inte röka här."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "hjälpa / du / kan / mig / ?",
+        "inte / jag / komma / kan / ikväll",
+        "städa / vi / på söndag / ska",
+        "ha / vill / kaffe / du / ?",
+        "läsa / du / reglerna / måste"
+      ]
+    },
+    {
+      "prompt": "Sangkal kalimat berikut. Ingat: *inte* berdiri sesudah kata bantu.",
+      "items": [
+        "Jag kan komma imorgon.",
+        "Hon vill äta kött.",
+        "Vi ska städa idag.",
+        "Du får röka här.",
+        "Han måste jobba på söndag."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swedia.",
+      "items": [
+        "Bisa bantu saya?",
+        "Saya mau kopi, terima kasih.",
+        "Boleh saya pakai penyedot debunya?",
+        "Kamu harus membaca aturannya.",
+        "Sebaiknya kamu tanya dulu."
+      ]
+    }
+  ],
+  "answers": [
+    "kan — måste — Får — vill — bör — får",
+    "Kan du hjälpa mig? — Jag kan inte komma ikväll. — Vi ska städa på söndag. — Vill du ha kaffe? — Du måste läsa reglerna.",
+    "Jag kan inte komma imorgon. — Hon vill inte äta kött. — Vi ska inte städa idag. — Du får inte röka här. — Han måste inte jobba på söndag.",
+    "Kan du hjälpa mig? — Jag vill ha kaffe, tack. — Får jag använda dammsugaren? — Du måste läsa reglerna. — Du bör fråga först."
+  ]
+}

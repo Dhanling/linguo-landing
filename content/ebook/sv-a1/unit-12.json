@@ -1,0 +1,201 @@
+{
+  "title": "Menyifati benda",
+  "title_target": "Den stora gröna ryggsäcken",
+  "goal": "Memakai kata sifat dalam tiga bentuknya, dan memahami kata sandang ganda — susunan yang membuat bahasa Swedia menyebut \"itu\" dua kali dalam satu frasa.",
+  "bekal": [
+    "tiga bentuk kata sifat: *stor*, *stort*, *stora*",
+    "kata sandang ganda: *den stora bilen*",
+    "kata sifat yang paling sering dipakai, dan yang tak beraturan"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Den gröna ryggsäcken",
+      "intro": "Sebuah ransel tertinggal di ruang belajar perpustakaan kampus. Dian membawanya ke meja penerima tamu.",
+      "lines": [
+        { "speaker": "Dian:", "text": "Hej, jag hittade en ryggsäck i läsesalen.", "id": "Halo, saya menemukan ransel di ruang baca.", "literal": "hai, saya menemukan satu ransel di ruang-baca-itu." },
+        { "speaker": "Personalen:", "text": "Tack! Hur ser den ut?", "id": "Terima kasih! Bentuknya bagaimana?", "literal": "terima-kasih! bagaimana melihat ia keluar?" },
+        { "speaker": "Dian:", "text": "Den är grön och ganska stor. Den har en gul rand.", "id": "Warnanya hijau dan lumayan besar. Ada garis kuningnya.", "literal": "ia adalah hijau dan lumayan besar. ia punya satu kuning garis." },
+        { "speaker": "Personalen:", "text": "Den stora gröna ryggsäcken? Den har någon frågat efter.", "id": "Ransel hijau besar itu? Sudah ada yang menanyakannya.", "literal": "yang besar hijau ransel-itu? ia punya seseorang bertanya sesudah." },
+        { "speaker": "Dian:", "text": "Vad bra. Är det en student?", "id": "Bagus. Mahasiswa?", "literal": "apa bagus. adalah itu satu mahasiswa?" },
+        { "speaker": "Personalen:", "text": "Ja, en ung kille med blå jacka. Han var väldigt orolig.", "id": "Iya, cowok muda pakai jaket biru. Dia panik banget tadi.", "literal": "ya, satu muda cowok dengan biru jaket. dia adalah sangat khawatir." },
+        { "speaker": "Dian:", "text": "Det förstår jag. Min gamla dator ligger i min ryggsäck.", "id": "Saya ngerti banget. Laptop lama saya juga ada di ransel saya.", "literal": "itu mengerti saya. milikku tua komputer terletak di milikku ransel." },
+        { "speaker": "Personalen:", "text": "Har du ett nytt lås? Gamla lås är inte säkra.", "id": "Kamu punya kunci baru? Kunci lama nggak aman.", "literal": "punya kamu satu baru kunci? tua kunci-kunci adalah tidak aman." },
+        { "speaker": "Dian:", "text": "Nej. Var kan jag köpa ett bra lås?", "id": "Nggak punya. Di mana saya bisa beli kunci yang bagus?", "literal": "tidak. di-mana bisa saya membeli satu bagus kunci?" },
+        { "speaker": "Personalen:", "text": "I den lilla affären bredvid kyrkan. De har billiga och bra lås.", "id": "Di toko kecil sebelah gereja. Kuncinya murah dan bagus.", "literal": "di yang kecil toko-itu di-samping gereja-itu. mereka punya murah-murah dan bagus kunci-kunci." },
+        { "speaker": "Dian:", "text": "Perfekt, tack! Då går jag dit imorgon.", "id": "Sip, makasih! Besok saya ke sana.", "literal": "sempurna, terima-kasih! kalau-begitu pergi saya ke-sana besok." }
+      ],
+      "notes": [
+        "**Den stora gröna ryggsäcken** menyebut \"itu\" **dua kali**: sekali di depan sebagai *den*, sekali di belakang sebagai ekor *-en*. Inilah **kata sandang ganda**, dan ia ciri khas bahasa Swedia — bahasa Denmark dan Norwegia tidak mewajibkannya. Bagi telinga Indonesia ia terasa boros, tapi tanpa salah satunya kalimatnya terdengar patah.",
+        "**Kata sifat dalam susunan bertentu selalu berakhiran *-a***, apa pun jenis dan jumlah kata bendanya: *den stor**a** bilen*, *det stor**a** huset*, *de stor**a** bilarna*. Ini menghemat hafalan — kesulitannya cuma ada di susunan tak bertentu.",
+        "**Liten adalah satu-satunya kata sifat yang benar-benar tak beraturan**: *en liten bil*, *ett litet hus*, *små bilar*, *den lilla bilen*, *de små bilarna*. Empat bentuk yang bahkan tidak mirip satu sama lain. Ia juga salah satu kata tersering, jadi ia akan terhafal lewat pemakaian.",
+        "**Gammal** kehilangan satu huruf saat mendapat ekor: *en gammal bil* → *den gamla bilen*, *gamla bilar*. Pola yang sama berlaku untuk *vacker* → *vackra* dan *enkel* → *enkla*. Ini penyesuaian bunyi, bukan kekecualian acak.",
+        "**En kille** berarti \"cowok\", dan pasangannya *en tjej* berarti \"cewek\" (dibaca **syey**). Keduanya kata sehari-hari; bentuk bakunya *en man* dan *en kvinna*, sedangkan *en pojke* dan *en flicka* dipakai untuk anak-anak. Menyebut mahasiswa dua puluh tahun sebagai *pojke* terdengar aneh.",
+        "**Väldigt** berarti \"sangat\" dan jauh lebih sering dipakai daripada *mycket* di depan kata sifat dalam percakapan. Sepupunya: *jättebra* (bagus banget), *jättestor* (gede banget) — awalan *jätte-* harfiahnya \"raksasa\", dan ia menempel di depan kata sifat apa pun."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga bentuk kata sifat",
+          "table": {
+            "head": ["Susunan", "Bentuknya", "Contoh", "Artinya"],
+            "rows": [
+              ["*en*-ord, tak tentu", "dasar", "en **stor** bil", "sebuah mobil besar"],
+              ["*ett*-ord, tak tentu", "+ **t**", "ett **stort** hus", "sebuah rumah besar"],
+              ["jamak, tak tentu", "+ **a**", "**stora** bilar", "mobil-mobil besar"],
+              ["bertentu (semua)", "**den/det/de** + **-a** + ekor", "**den stora bilen**", "mobil besar itu"],
+              ["sesudah *är*, *blir*", "ikut jenis & jumlah", "Bilen är **stor**.", "Mobil itu besar."],
+              ["sesudah kata milik", "+ **a**", "min **stora** bil", "mobil besar saya"]
+            ]
+          },
+          "after": [
+            "Baris kelima sering luput: kata sifat yang berdiri **sesudah kata kerja** (*är*, *blir*, *verkar*) tidak pernah memakai ekor *-a* dalam bentuk tunggal. *Bilen är stor*, *Huset är stort*, *Bilarna är stora*. Yang menentukan tetap jenis dan jumlah kata bendanya.",
+            "Baris terakhir juga penting: sesudah *min*, *din*, *hans*, atau nama berakhiran *-s*, kata sifatnya memakai bentuk *-a* meskipun tanpa *den*. *Min stora bil*, *Elins nya jacka*, *hans gamla dator*.",
+            "Kata sifat yang **sudah berakhiran *-t*** tidak berubah untuk *ett*-ord: *svart* tetap *svart*. Yang berakhiran vokal panjang menggandakan huruf *t*-nya: *blå* → *blått*, *ny* → *nytt*, *fri* → *fritt*."
+          ]
+        },
+        {
+          "title": "Kata sifat yang tak beraturan",
+          "table": {
+            "head": ["*en*-ord", "*ett*-ord", "Jamak / bertentu", "Artinya"],
+            "rows": [
+              ["**liten**", "litet", "**små** / lilla", "kecil"],
+              ["**gammal**", "gammalt", "**gamla**", "tua, lama"],
+              ["**vacker**", "vackert", "**vackra**", "indah"],
+              ["**enkel**", "enkelt", "**enkla**", "sederhana"],
+              ["**bra**", "bra", "bra", "bagus (tidak pernah berubah)"],
+              ["**kul / roligt**", "kul / roligt", "kul / roliga", "asyik, lucu"]
+            ]
+          },
+          "after": [
+            "**Bra tidak pernah berubah** dalam bentuk apa pun: *en bra bok*, *ett bra hus*, *bra böcker*, *den bra boken*. Ia salah satu dari segelintir kata sifat yang bebas dari seluruh aturan di halaman ini, dan untungnya ia juga salah satu yang paling sering dipakai.",
+            "**Liten/lilla/små** perlu diperhatikan: *lilla* dipakai dalam susunan bertentu tunggal (*den lilla bilen*), sedangkan *små* untuk jamak (*små bilar*, *de små bilarna*). Tidak ada bentuk *litena* atau *litna*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata sifat yang paling sering dipakai",
+      "blocks": [
+        { "type": "tabel", "head": ["Svenska", "Cara baca", "Artinya", "Lawannya"], "rows": [
+          ["stor", "stur", "besar", "liten"],
+          ["ny", "nü", "baru", "gammal"],
+          ["bra", "bra", "bagus", "dålig"],
+          ["lätt", "let", "mudah, ringan", "svår / tung"],
+          ["billig", "BIL-li", "murah", "dyr"],
+          ["snäll", "snel", "baik hati", "elak"],
+          ["glad", "glad", "senang", "ledsen"],
+          ["varm", "varm", "hangat", "kall"],
+          ["lång", "long", "panjang, tinggi", "kort"],
+          ["snabb", "snab", "cepat", "långsam"],
+          ["ren", "rèn", "bersih", "smutsig"],
+          ["trött", "tröt", "capek", "pigg"]
+        ] },
+        { "type": "p", "text": "**Lätt** mengerjakan dua tugas: \"mudah\" dan \"ringan\". Lawannya pun dua: *svår* (sulit) dan *tung* (berat). Konteks yang memisahkan, dan ini sama persis dengan bahasa Inggris (*light*, *easy*) — hanya saja bahasa Inggris memakai dua kata dan bahasa Swedia satu." },
+        { "type": "kotak", "title": "Menguatkan dan melemahkan", "items": [
+          "**jätte-** — banget: *jättebra*, *jättestor*, *jättetrött* (paling sering dipakai anak muda)",
+          "**väldigt** — sangat: *väldigt snäll*",
+          "**mycket** — sangat (lebih baku): *mycket bra*",
+          "**ganska** — lumayan: *ganska stor*",
+          "**lite** — sedikit: *lite trött*",
+          "**inte så** — tidak begitu: *inte så dyr*",
+          "**för** — terlalu: *för kallt* (perhatikan: *för* juga berarti \"untuk\")"
+        ] }
+      ]
+    },
+    {
+      "title": "Menunjuk: den här, den där",
+      "blocks": [
+        { "type": "p", "text": "Sesudah kata sandang ganda, satu susunan lagi yang memakai pola yang sama: kata tunjuk." },
+        { "type": "tabel", "head": ["Susunan", "*en*-ord", "*ett*-ord", "Jamak"], "rows": [
+          ["yang ini", "den här bilen", "det här huset", "de här bilarna"],
+          ["yang itu", "den där bilen", "det där huset", "de där bilarna"],
+          ["yang itu (baku)", "denna bil", "detta hus", "dessa bilar"],
+          ["+ kata sifat", "den här stora bilen", "det där nya huset", "de här små bilarna"]
+        ] },
+        { "type": "p", "text": "Perhatikan baris ketiga: bentuk baku *denna/detta/dessa* memakai kata benda **tak bertentu** (*denna bil*, bukan *denna bilen*), sedangkan *den här* memakai bentuk **bertentu** (*den här bilen*). Bentuk baku dipakai di tulisan resmi dan berita; dalam percakapan, *den här* menang telak." },
+        { "type": "kotak", "title": "Ulangan berjenjang — kembali ke unit 10", "items": [
+          "Jelaskan pada dirimu sendiri, dalam satu kalimat, bedanya *sin* dan *hans*.",
+          "Lalu gabungkan dengan kata sifat unit ini: *Han tog sin gamla cykel*, *Hon ringde sin snälla mamma*, *De städade sina små rum*.",
+          "Perhatikan bahwa kata sifat sesudah *sin/min/hans* selalu memakai bentuk *-a*, tanpa perlu *den* di depannya."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sv": "stor / stort / stora", "baca": "stur · stut · STU-ra", "id": "besar" },
+    { "sv": "liten / litet / små", "baca": "LI-ten · LI-tet · smo", "id": "kecil" },
+    { "sv": "gammal / gamla", "baca": "GAM-mal · GAM-la", "id": "tua, lama" },
+    { "sv": "ny / nytt / nya", "baca": "nü · nüt · NÜ-a", "id": "baru" },
+    { "sv": "dålig", "baca": "DO-li", "id": "buruk" },
+    { "sv": "billig", "baca": "BIL-li", "id": "murah" },
+    { "sv": "dyr", "baca": "dür", "id": "mahal" },
+    { "sv": "lätt", "baca": "let", "id": "mudah, ringan" },
+    { "sv": "svår", "baca": "svor", "id": "sulit" },
+    { "sv": "snäll", "baca": "snel", "id": "baik hati" },
+    { "sv": "glad", "baca": "glad", "id": "senang" },
+    { "sv": "ledsen", "baca": "LES-sen", "id": "sedih" },
+    { "sv": "varm / kall", "baca": "varm · kal", "id": "hangat / dingin" },
+    { "sv": "ren / smutsig", "baca": "rèn · SMUT-si", "id": "bersih / kotor" },
+    { "sv": "en ryggsäck", "baca": "en RÜG-sek", "id": "ransel" },
+    { "sv": "ett lås", "baca": "et los", "id": "kunci gembok" },
+    { "sv": "en kille / en tjej", "baca": "en SYIL-le · en syey", "id": "cowok / cewek" },
+    { "sv": "ung", "baca": "ung", "id": "muda" },
+    { "sv": "väldigt", "baca": "VEL-dit", "id": "sangat" },
+    { "sv": "ganska", "baca": "GANS-ka", "id": "lumayan" },
+    { "sv": "jätte-", "baca": "YET-te", "id": "banget (awalan)" },
+    { "sv": "säker", "baca": "SÈ-ker", "id": "aman, yakin" },
+    { "sv": "orolig", "baca": "u-RU-li", "id": "khawatir" },
+    { "sv": "dit", "baca": "dit", "id": "ke sana" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis bentuk kata sifat yang benar untuk *ett*-ord. Contoh: *stor* → *stort*.",
+      "items": [
+        "ny",
+        "billig",
+        "liten",
+        "gammal",
+        "blå",
+        "bra"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi susunan bertentu. Contoh: *en stor bil* → *den stora bilen*.",
+      "items": [
+        "en ny cykel",
+        "ett gammalt hus",
+        "en liten affär",
+        "ett billigt lås",
+        "en grön ryggsäck",
+        "ett stort rum"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk kata sifat yang benar dari kata dalam kurung.",
+      "items": [
+        "Huset är ____. (stor)",
+        "Bilarna är ____. (ny)",
+        "Det är ett ____ rum. (liten)",
+        "Min ____ dator fungerar inte. (gammal)",
+        "De ____ affärerna ligger vid torget. (billig)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swedia.",
+      "items": [
+        "Ransel hijau besar itu.",
+        "Rumah kecil itu tua.",
+        "Saya mau beli kunci yang bagus.",
+        "Toko-toko murah ada di dekat gereja.",
+        "Laptop lama saya ada di ransel saya."
+      ]
+    }
+  ],
+  "answers": [
+    "nytt — billigt — litet — gammalt — blått — bra",
+    "den nya cykeln — det gamla huset — den lilla affären — det billiga låset — den gröna ryggsäcken — det stora rummet",
+    "stort — nya — litet — gamla — billiga",
+    "Den stora gröna ryggsäcken. — Det lilla huset är gammalt. — Jag vill köpa ett bra lås. — De billiga affärerna ligger nära kyrkan. — Min gamla dator ligger i min ryggsäck."
+  ]
+}

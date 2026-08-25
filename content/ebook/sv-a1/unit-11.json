@@ -1,0 +1,204 @@
+{
+  "title": "Di, ke, dari",
+  "title_target": "Vart ska du?",
+  "goal": "Memilih kata depan yang benar untuk tempat dan arah — bagian bahasa Swedia yang paling sedikit aturannya dan paling banyak kebiasaannya.",
+  "bekal": [
+    "*i* dan *på* untuk tempat, dan kenapa lembaga selalu memakai *på*",
+    "*till*, *från*, *hos*, *vid*, *mellan* dan kawan-kawan",
+    "menanyakan dan menunjukkan arah di kota"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Var ligger posten?",
+      "intro": "Dian harus mengambil paket dari Indonesia. Ia berhenti di depan sebuah toko kelontong dan bertanya kepada seorang perempuan yang baru keluar.",
+      "lines": [
+        { "speaker": "Dian:", "text": "Ursäkta, vet du var posten ligger?", "id": "Permisi, tahu kantor posnya di mana?", "literal": "maaf, tahu kamu di-mana pos-itu terletak?" },
+        { "speaker": "Kvinnan:", "text": "Paketutlämningen? Den ligger i affären, längst in till höger.", "id": "Pengambilan paket? Ada di dalam toko, paling ujung sebelah kanan.", "literal": "paket-penyerahan-itu? ia terletak di toko-itu, paling dalam ke kanan." },
+        { "speaker": "Dian:", "text": "I affären? Inte på ett postkontor?", "id": "Di dalam toko? Bukan di kantor pos?", "literal": "di toko-itu? tidak pada satu pos-kantor?" },
+        { "speaker": "Kvinnan:", "text": "Nej, vi har nästan inga postkontor kvar i Sverige.", "id": "Enggak, kantor pos hampir nggak ada lagi di Swedia.", "literal": "tidak, kami punya hampir tidak-ada pos-kantor tersisa di Swedia." },
+        { "speaker": "Dian:", "text": "Vad praktiskt. Och var ligger apoteket?", "id": "Praktis juga. Terus apoteknya di mana?", "literal": "apa praktis. dan di-mana terletak apotek-itu?" },
+        { "speaker": "Kvinnan:", "text": "Gå rakt fram, sedan till vänster vid kyrkan. Det ligger mellan banken och biblioteket.", "id": "Lurus terus, terus belok kiri di gereja. Letaknya antara bank dan perpustakaan.", "literal": "berjalan lurus depan, kemudian ke kiri di gereja-itu. itu terletak antara bank-itu dan perpustakaan-itu." },
+        { "speaker": "Dian:", "text": "Är det långt?", "id": "Jauh nggak?", "literal": "adalah itu jauh?" },
+        { "speaker": "Kvinnan:", "text": "Nej då, femhundra meter. Fem minuter till fots.", "id": "Nggak kok, lima ratus meter. Lima menit jalan kaki.", "literal": "tidak lah, lima-ratus meter. lima menit ke kaki." },
+        { "speaker": "Dian:", "text": "Tack så mycket! En sak till — bor du här i stan?", "id": "Makasih banyak! Satu lagi — kamu tinggal di kota ini?", "literal": "terima-kasih begitu banyak! satu hal ke — tinggal kamu di-sini di kota-itu?" },
+        { "speaker": "Kvinnan:", "text": "Jag bor på Söder, men jag jobbar på ett kontor i Vasastan.", "id": "Saya tinggal di Söder, tapi kerja di kantor di Vasastan.", "literal": "saya tinggal pada Söder, tapi saya bekerja pada satu kantor di Vasastan." },
+        { "speaker": "Dian:", "text": "Tack igen. Ha en bra dag!", "id": "Makasih lagi. Semoga harimu menyenangkan!", "literal": "terima-kasih lagi. punya satu bagus hari!" }
+      ],
+      "notes": [
+        "**I affären, men på ett kontor.** Inilah pembedaan yang paling sering ditanyakan pelajar bahasa Swedia, dan jawabannya sebagian aturan, sebagian kebiasaan. Aturan kasarnya: **i** untuk ruang tertutup yang benar-benar kamu masuki (*i huset*, *i rummet*, *i affären*), **på** untuk lembaga, permukaan, dan kegiatan (*på jobbet*, *på universitetet*, *på bordet*, *på bio*).",
+        "**Nästan inga postkontor kvar.** Swedia menutup hampir seluruh kantor posnya sejak awal tahun 2000-an; paket diambil di toko kelontong, kios, atau pom bensin. Kalau kamu mencari gedung bertuliskan \"Posten\", kamu tidak akan menemukannya. Yang dicari adalah tulisan *ombud* atau *paketutlämning* di jendela toko.",
+        "**Söder** adalah nama pendek untuk Södermalm, dan seperti sebagian besar nama tempat di Stockholm, ia memakai **på**, bukan *i*: *på Söder*, *på Kungsholmen*, *på Gotland*. Pulau dan bagian kota memakai *på*; kota memakai *i*: *i Stockholm*, *i Göteborg*, *i Uppsala*. Ini kebiasaan, bukan logika.",
+        "**Till fots** berarti \"dengan berjalan kaki\" — bentuk beku dari bahasa Swedia lama yang masih hidup, seperti *till sjöss* (dengan kapal) dan *till bords* (ke meja makan). Jangan mencoba mengurai tata bahasanya; hafalkan saja.",
+        "**Nej då** bukan penolakan yang lebih keras — justru sebaliknya. Kata *då* di sini melunakkan: \"aduh, nggak kok\". Bandingkan dengan *ja då* (iya lah) dan *jo då* (ada kok). Ketiganya sangat sering dipakai dan membuat jawabanmu terdengar hangat.",
+        "**Ha en bra dag!** memang terdengar seperti terjemahan dari bahasa Inggris, dan sebagian orang Swedia berpendapat begitu. Bentuk yang lebih Swedia: *Ha det bra!* atau *Ha det så bra!* — dua ucapan perpisahan yang paling umum sesudah *hej då*."
+      ],
+      "grammars": [
+        {
+          "title": "I atau på",
+          "table": {
+            "head": ["Pakai **i** untuk", "Contoh", "Pakai **på** untuk", "Contoh"],
+            "rows": [
+              ["ruangan & bangunan", "i köket, i huset", "lembaga & tempat kerja", "på jobbet, på banken"],
+              ["kota & negara", "i Stockholm, i Sverige", "pulau & bagian kota", "på Gotland, på Söder"],
+              ["kotak & wadah", "i väskan, i fickan", "permukaan", "på bordet, på golvet"],
+              ["waktu ke depan", "i sommar, i morgon", "hari & bagian hari", "på fredag, på morgonen"],
+              ["bahasa", "på svenska (kekecualian!)", "kegiatan", "på bio, på fest, på semester"],
+              ["jangka waktu", "i tre timmar", "jalan (alamat)", "på Storgatan 5"]
+            ]
+          },
+          "after": [
+            "Baris kelima adalah kekecualian yang perlu dihafal terbalik: nama bahasa memakai **på**, bukan *i*. *Vad heter det på svenska?* — bukan *i svenska*.",
+            "Sekolah dan universitas memakai **på** karena dianggap lembaga: *på skolan*, *på universitetet*, *på Linguo*. Tapi begitu yang dimaksud adalah gedungnya secara fisik, *i* juga muncul: *det regnar in i skolan* (air hujan masuk ke dalam gedung sekolah).",
+            "Kalau kamu benar-benar tidak tahu, **på** lebih sering benar untuk tempat kegiatan, dan **i** lebih sering benar untuk tempat tertutup. Salah memilih tidak pernah membuat kalimatmu tidak dimengerti."
+          ]
+        },
+        {
+          "title": "Arah dan tempat: dua pertanyaan yang berbeda",
+          "table": {
+            "head": ["Pertanyaan", "Kata depannya", "Contoh", "Artinya"],
+            "rows": [
+              ["**Var?** (di mana)", "i, på, hos, vid", "Jag är **på** jobbet.", "Saya di kantor."],
+              ["**Vart?** (ke mana)", "till", "Jag går **till** jobbet.", "Saya pergi ke kantor."],
+              ["**Varifrån?** (dari mana)", "från", "Jag kommer **från** jobbet.", "Saya dari kantor."],
+              ["ke rumah orang", "**till** + orang", "Jag går **till** Elin.", "Saya ke tempat Elin."],
+              ["di rumah orang", "**hos** + orang", "Jag är **hos** Elin.", "Saya di tempat Elin."]
+            ]
+          },
+          "after": [
+            "**Till** hampir selalu benar untuk arah, dengan satu kekecualian besar: **hem**. \"Pulang\" adalah *gå **hem***, tanpa *till*; \"di rumah\" adalah *vara **hemma***. Dua kata yang berbeda untuk arah dan tempat — sisa dari bahasa Skandinavia kuno, dan bahasa Inggris punya sisa yang sama (*go home*, bukan *go to home*).",
+            "**Hos** tidak punya padanan tunggal dalam bahasa Indonesia; ia berarti \"di tempatnya\", seperti *chez* dalam bahasa Prancis. *Hos Elin*, *hos doktorn*, *hos frisören*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tempat di kota",
+      "blocks": [
+        { "type": "tabel", "head": ["Svenska", "Cara baca", "Bahasa Indonesia", "Kata depannya"], "rows": [
+          ["en affär / en butik", "en af-FÈR", "toko", "i affären"],
+          ["ett apotek", "et a-pu-TÈK", "apotek", "på apoteket"],
+          ["en bank", "en bank", "bank", "på banken"],
+          ["ett sjukhus", "et HWÜK-hüs", "rumah sakit", "på sjukhuset"],
+          ["en kyrka", "en SYÜR-ka", "gereja", "i kyrkan"],
+          ["ett torg", "et tory", "alun-alun, pasar", "på torget"],
+          ["en gata", "en GA-ta", "jalan", "på gatan"],
+          ["ett café", "et ka-FÈ", "kafe", "på ett café"],
+          ["en restaurang", "en res-tau-RANG", "restoran", "på en restaurang"],
+          ["ett kontor", "et kon-TUR", "kantor", "på ett kontor"],
+          ["en park", "en park", "taman", "i parken"],
+          ["ett museum", "et mü-SÈ-um", "museum", "på museet"]
+        ] },
+        { "type": "p", "text": "**Ett sjukhus** harfiahnya \"rumah sakit\" — persis susunan bahasa Indonesia, kata demi kata (*sjuk* = sakit, *hus* = rumah). Kebetulan seperti ini muncul beberapa kali dalam bahasa Swedia dan patut dimanfaatkan: *tandläkare* (dokter gigi, \"tukang gigi\"), *kylskåp* (kulkas, \"lemari dingin\"), *handduk* (handuk, \"kain tangan\")." },
+        { "type": "kotak", "title": "Menanyakan arah", "items": [
+          "**Ursäkta, var ligger…?** — Permisi, di mana letaknya…?",
+          "**Hur kommer jag till…?** — Bagaimana caranya saya ke…?",
+          "**Är det långt härifrån?** — Jauh dari sini?",
+          "**Gå rakt fram.** — Jalan lurus terus.",
+          "**Ta till höger / till vänster.** — Belok kanan / kiri.",
+          "**Det ligger mitt emot banken.** — Letaknya berseberangan dengan bank.",
+          "**Vid andra korsningen.** — Di persimpangan kedua."
+        ] }
+      ]
+    },
+    {
+      "title": "Kata depan yang tersisa",
+      "blocks": [
+        { "type": "tabel", "head": ["Svenska", "Artinya", "Contoh"], "rows": [
+          ["**vid**", "di dekat, di sebelah", "Vi ses vid dörren."],
+          ["**mellan**", "antara", "Mellan banken och biblioteket."],
+          ["**bakom**", "di belakang", "Cykeln står bakom huset."],
+          ["**framför**", "di depan", "Han sitter framför mig."],
+          ["**under**", "di bawah", "Katten ligger under bordet."],
+          ["**över**", "di atas, melewati", "Vi går över gatan."],
+          ["**bredvid**", "di samping", "Hon bor bredvid mig."],
+          ["**mitt emot**", "berseberangan", "Apoteket ligger mitt emot torget."],
+          ["**genom**", "melalui", "Vi går genom parken."],
+          ["**runt**", "mengelilingi", "Vi går runt sjön."]
+        ] },
+        { "type": "p", "text": "Kata depan bahasa Swedia **tidak mengubah bentuk kata benda sesudahnya** — tidak ada kasus seperti bahasa Jerman atau Rusia. Itu berarti seluruh kesulitannya cuma soal memilih kata yang tepat, dan tidak ada hukuman tata bahasa kalau salah. Bandingkan dengan bahasa Jerman, di mana memilih *in* yang salah juga memaksamu mengubah tiga kata berikutnya." },
+        { "type": "kotak", "title": "Ulangan berjenjang — kembali ke unit 9", "items": [
+          "Sebutkan seluruh keluarga *min/mitt/mina* dan *vår/vårt/våra* tanpa melihat.",
+          "Gabungkan dengan tempat unit ini: *Min bank ligger på…*, *Vårt hus ligger vid…*, *Mina böcker ligger i…*",
+          "Terakhir, jelaskan jalan dari kamarmu ke dapur dalam empat kalimat memakai *rakt fram*, *till höger*, *till vänster*, *bredvid*."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sv": "en affär", "baca": "en af-FÈR", "id": "toko" },
+    { "sv": "ett apotek", "baca": "et a-pu-TÈK", "id": "apotek" },
+    { "sv": "en bank", "baca": "en bank", "id": "bank" },
+    { "sv": "ett sjukhus", "baca": "et HWÜK-hüs", "id": "rumah sakit" },
+    { "sv": "en kyrka", "baca": "en SYÜR-ka", "id": "gereja" },
+    { "sv": "ett torg", "baca": "et tory", "id": "alun-alun" },
+    { "sv": "en gata", "baca": "en GA-ta", "id": "jalan" },
+    { "sv": "ett kontor", "baca": "et kon-TUR", "id": "kantor" },
+    { "sv": "till", "baca": "til", "id": "ke" },
+    { "sv": "hos", "baca": "hus", "id": "di tempat (orang)" },
+    { "sv": "vid", "baca": "vid", "id": "di dekat" },
+    { "sv": "mellan", "baca": "MEL-lan", "id": "antara" },
+    { "sv": "bakom", "baca": "BA-kom", "id": "di belakang" },
+    { "sv": "framför", "baca": "FRAM-för", "id": "di depan" },
+    { "sv": "bredvid", "baca": "bre-VID", "id": "di samping" },
+    { "sv": "mitt emot", "baca": "mit e-MUT", "id": "berseberangan" },
+    { "sv": "rakt fram", "baca": "rakt fram", "id": "lurus terus" },
+    { "sv": "till höger", "baca": "til HÖ-ger", "id": "ke kanan" },
+    { "sv": "till vänster", "baca": "til VENS-ter", "id": "ke kiri" },
+    { "sv": "hem / hemma", "baca": "hem · HEM-ma", "id": "pulang / di rumah" },
+    { "sv": "långt", "baca": "longt", "id": "jauh" },
+    { "sv": "nära", "baca": "NÈ-ra", "id": "dekat" },
+    { "sv": "nästan", "baca": "NES-tan", "id": "hampir" },
+    { "sv": "igen", "baca": "i-YEN", "id": "lagi" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan *i* atau *på*.",
+      "items": [
+        "Jag jobbar ____ ett kontor.",
+        "Vi bor ____ Stockholm.",
+        "Boken ligger ____ bordet.",
+        "Hon är ____ banken.",
+        "Nyckeln ligger ____ fickan.",
+        "Vad heter det ____ svenska?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan *till*, *från*, *hos*, atau *hem*.",
+      "items": [
+        "Jag går ____ jobbet klockan åtta.",
+        "Hon kommer ____ Norge.",
+        "Vi är ____ Elin ikväll.",
+        "Klockan sex går jag ____.",
+        "Tåget går ____ Uppsala."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata depan tempat yang tepat: *mellan*, *bakom*, *framför*, *under*, *bredvid*.",
+      "items": [
+        "Apoteket ligger ____ banken och biblioteket.",
+        "Cykeln står ____ huset.",
+        "Katten ligger ____ bordet.",
+        "Hon sitter ____ mig i klassen.",
+        "Han bor ____ mig — vi är grannar."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swedia.",
+      "items": [
+        "Permisi, kantor posnya di mana?",
+        "Jalan lurus terus, lalu belok kiri.",
+        "Jauh dari sini?",
+        "Saya tinggal di Söder tapi kerja di Vasastan.",
+        "Letaknya berseberangan dengan alun-alun."
+      ]
+    }
+  ],
+  "answers": [
+    "på — i — på — på — i — på",
+    "till — från — hos — hem — till",
+    "mellan — bakom — under — framför — bredvid",
+    "Ursäkta, var ligger posten? — Gå rakt fram, sedan till vänster. — Är det långt härifrån? — Jag bor på Söder men jobbar i Vasastan. — Det ligger mitt emot torget."
+  ]
+}

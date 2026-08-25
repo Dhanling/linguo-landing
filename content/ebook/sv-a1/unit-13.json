@@ -1,0 +1,201 @@
+{
+  "title": "Menyuruh dan meminta",
+  "title_target": "Kom in och slå dig ner!",
+  "goal": "Membentuk kalimat perintah dari bentuk dasar kata kerja, lalu melunakkannya sampai terdengar seperti undangan — bukan seperti perintah.",
+  "bekal": [
+    "bentuk suruhan untuk keempat golongan kata kerja",
+    "melunakkan perintah dengan *kan du*, *skulle du kunna*, dan *var snäll och*",
+    "bertamu: masuk, duduk, makan, dan berterima kasih"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Middag hos Elin",
+      "intro": "Sabtu petang. Elin mengundang Dian makan malam di apartemen orang tuanya di Vasastan. Dian berdiri di depan pintu dengan sebuket bunga.",
+      "lines": [
+        { "speaker": "Elin:", "text": "Hej! Kom in och slå dig ner!", "id": "Halo! Masuk, duduk aja!", "literal": "hai! datang dalam dan pukul dirimu turun!" },
+        { "speaker": "Dian:", "text": "Tack. Ska jag ta av mig skorna?", "id": "Makasih. Sepatunya perlu dilepas?", "literal": "terima-kasih. akan saya mengambil dari diriku sepatu-itu?" },
+        { "speaker": "Elin:", "text": "Ja tack, ställ dem vid dörren. Vi gör alltid så här.", "id": "Iya, taruh di dekat pintu. Kami selalu begitu.", "literal": "ya terima-kasih, letakkan mereka di pintu-itu. kami melakukan selalu begini." },
+        { "speaker": "Dian:", "text": "Här är blommor till dig.", "id": "Ini bunga buat kamu.", "literal": "di-sini adalah bunga-bunga untuk kamu." },
+        { "speaker": "Elin:", "text": "Vad fint, tack så mycket! Sätt dig, maten är nästan klar.", "id": "Cantik banget, makasih! Duduk ya, makanannya hampir siap.", "literal": "apa cantik, terima-kasih begitu banyak! dudukkan dirimu, makanan-itu adalah hampir siap." },
+        { "speaker": "Dian:", "text": "Kan jag hjälpa till med något?", "id": "Ada yang bisa saya bantu?", "literal": "bisa saya menolong ke dengan sesuatu?" },
+        { "speaker": "Elin:", "text": "Gärna. Skulle du kunna skära brödet?", "id": "Boleh. Bisa tolong potong rotinya?", "literal": "dengan-senang-hati. akan kamu bisa memotong roti-itu?" },
+        { "speaker": "Dian:", "text": "Visst. Var ligger kniven?", "id": "Boleh. Pisaunya di mana?", "literal": "tentu. di-mana terletak pisau-itu?" },
+        { "speaker": "Elin:", "text": "Titta i lådan till vänster. Och ta gärna ett glas vatten.", "id": "Coba lihat di laci sebelah kiri. Ambil air putih juga, ya.", "literal": "melihat di laci-itu ke kiri. dan ambil dengan-senang-hati satu gelas air." },
+        { "speaker": "Dian:", "text": "Tack. Det luktar fantastiskt!", "id": "Makasih. Baunya enak banget!", "literal": "terima-kasih. itu berbau fantastis!" },
+        { "speaker": "Elin:", "text": "Varsågod, ta för dig! Och glöm inte — tack för maten efteråt.", "id": "Silakan, ambil sendiri ya! Dan jangan lupa — habis makan bilang tack för maten.", "literal": "silakan, ambil untuk dirimu! dan lupa tidak — terima-kasih untuk makanan-itu sesudahnya." }
+      ],
+      "notes": [
+        "**Bentuk suruhan dibuat dari bentuk dasar, bukan dari bentuk sekarang.** *Att komma* → *kom!*, *att sitta* → *sitt!*, *att ta* → *ta!*. Untuk golongan 1, bentuk suruhannya sama persis dengan bentuk dasarnya: *att tala* → *tala!*, *att titta* → *titta!*. Untuk golongan lain, ekornya dibuang.",
+        "**Slå dig ner** harfiahnya \"pukul dirimu turun\" — susunan beku yang berarti \"silakan duduk\". Bersama *sätt dig* (duduklah) dan *ta för dig* (ambil sendiri), tiga kalimat ini adalah yang paling sering kamu dengar begitu masuk ke rumah orang Swedia.",
+        "**Melepas sepatu itu wajib.** Di seluruh Swedia, sepatu ditinggalkan di dekat pintu — di rumah, di apartemen, sering juga di kantor kecil. Bertanya *ska jag ta av mig skorna?* selalu aman, dan jawabannya hampir selalu ya. Kaus kaki yang rapi jauh lebih penting di Swedia daripada di negara lain.",
+        "**Varsågod** (dibaca **va-syo-GUD**) adalah satu kata yang menutupi tiga situasi: \"silakan\" saat mempersilakan, \"ini dia\" saat menyerahkan sesuatu, dan \"sama-sama\" saat menjawab terima kasih. Bentuk jamaknya *varsågoda* saat berbicara kepada beberapa orang.",
+        "**Tack för maten** wajib diucapkan sesudah makan di rumah orang, oleh setiap orang yang makan, tanpa kecuali. Anak-anak Swedia diajari ini sejak usia tiga tahun. Melewatkannya diperhatikan — bukan sebagai kekasaran, tapi sebagai keanehan.",
+        "**Skulle du kunna…?** adalah bentuk permintaan paling halus dalam bahasa Swedia, sejajar dengan \"would you be able to…\". Ia dua tingkat lebih sopan daripada *kan du…?* dan dipakai untuk permintaan yang benar-benar merepotkan orang."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk suruhan menurut golongan",
+          "table": {
+            "head": ["Gol.", "Dasar", "Suruhan", "Contoh", "Artinya"],
+            "rows": [
+              ["**1**", "att tala", "**tala!**", "Tala långsammare!", "Bicara lebih pelan!"],
+              ["**1**", "att titta", "**titta!**", "Titta här!", "Lihat sini!"],
+              ["**2a**", "att ringa", "**ring!**", "Ring mig ikväll!", "Telepon saya nanti malam!"],
+              ["**2b**", "att köpa", "**köp!**", "Köp två!", "Beli dua!"],
+              ["**3**", "att bo", "**bo!**", "Bo hos oss!", "Tinggal di tempat kami!"],
+              ["**4**", "att komma", "**kom!**", "Kom in!", "Masuk!"],
+              ["**4**", "att ta", "**ta!**", "Ta en kaka!", "Ambil kue!"]
+            ]
+          },
+          "after": [
+            "Aturannya bisa dipendekkan jadi satu kalimat: **golongan 1 memakai bentuk dasar apa adanya; golongan lain membuang ekor *-a***. Karena golongan 1 adalah yang terbesar, sebagian besar suruhan bahasa Swedia berakhiran *-a*.",
+            "Sangkalan suruhan memakai *inte* **sesudah** kata kerjanya: *Glöm inte!* (jangan lupa!), *Gå inte!* (jangan pergi!), *Oroa dig inte!* (jangan khawatir!). Tidak ada kata khusus untuk \"jangan\" seperti dalam bahasa Indonesia.",
+            "Bentuk suruhan bahasa Swedia terdengar **jauh lebih keras** daripada padanannya dalam bahasa Indonesia. *Kom hit!* adalah perintah, bukan ajakan. Untuk permintaan sehari-hari kepada orang yang belum akrab, hampir selalu lebih baik memakai bentuk pertanyaan."
+          ]
+        },
+        {
+          "title": "Lima tingkat kesopanan",
+          "table": {
+            "head": ["Susunan", "Contoh", "Nadanya"],
+            "rows": [
+              ["Suruhan telanjang", "**Stäng** dörren.", "perintah — untuk anak, teman dekat, keadaan darurat"],
+              ["Suruhan + *tack*", "**Stäng** dörren, tack.", "netral — di toko, di kelas"],
+              ["*Kan du…?*", "**Kan du stänga** dörren?", "biasa & aman — pilihan bawaan"],
+              ["*Skulle du kunna…?*", "**Skulle du kunna stänga** dörren?", "sangat sopan — permintaan merepotkan"],
+              ["*Var snäll och…*", "**Var snäll och stäng** dörren.", "sopan tapi agak tegas — papan pengumuman"]
+            ]
+          },
+          "after": [
+            "Baris ketiga adalah pilihan bawaanmu. Kalau kamu ragu, pakai *kan du…?* — ia benar dalam sembilan dari sepuluh situasi, dan tidak pernah terdengar kasar maupun berlebihan.",
+            "Perhatikan bahwa **tidak satu pun memakai kata \"tolong\"** — karena bahasa Swedia memang tidak punya. Kesopanan dibawa oleh susunan kalimatnya dan oleh *tack*, bukan oleh satu kata sakti."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bertamu di rumah orang Swedia",
+      "blocks": [
+        { "type": "tabel", "head": ["Svenska", "Kapan diucapkan", "Bahasa Indonesia"], "rows": [
+          ["Kom in!", "membuka pintu", "Masuk!"],
+          ["Ta av dig skorna.", "di lorong masuk", "Lepas sepatumu."],
+          ["Slå dig ner. / Sätt dig.", "menunjuk kursi", "Silakan duduk."],
+          ["Vill du ha något att dricka?", "sesudah duduk", "Mau minum sesuatu?"],
+          ["Varsågod!", "menyerahkan sesuatu", "Silakan."],
+          ["Ta för dig!", "makanan sudah di meja", "Ambil sendiri ya!"],
+          ["Smaklig måltid!", "sebelum makan", "Selamat makan."],
+          ["Tack för maten!", "sesudah makan", "Terima kasih atas makanannya."],
+          ["Tack för ikväll!", "saat berpamitan", "Terima kasih untuk malam ini."],
+          ["Tack för senast!", "bertemu lagi berikutnya", "Terima kasih untuk yang kemarin."]
+        ] },
+        { "type": "p", "text": "**Tack för senast** pantas dijelaskan tersendiri: kalau seseorang menjamumu, kamu mengucapkannya lagi **pada pertemuan berikutnya**, kapan pun itu — seminggu kemudian, sebulan kemudian. Ini kebiasaan yang sangat Swedia dan sangat diperhatikan; melewatkannya membuatmu terkesan tidak menghargai jamuan tadi." },
+        { "type": "kotak", "title": "Datang tepat waktu", "items": [
+          "Kalau undangannya pukul 18.00, datanglah pukul 18.00 — bukan 18.20. Terlambat lima belas menit di Swedia dianggap terlambat sungguhan, dan tuan rumah biasanya sudah menyiapkan makanan tepat waktu.",
+          "Datang **lebih awal** juga tidak sopan. Kalau kamu terlanjur sampai sepuluh menit lebih cepat, tunggulah di luar.",
+          "Kalimat penyelamat kalau terlambat: **Förlåt att jag är sen!** — Maaf saya telat!"
+        ] }
+      ]
+    },
+    {
+      "title": "Makanan di meja",
+      "blocks": [
+        { "type": "tabel", "head": ["Svenska", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["mat", "mat", "makanan"],
+          ["kött", "syöt", "daging"],
+          ["kyckling", "SYÜK-ling", "ayam"],
+          ["fisk", "fisk", "ikan"],
+          ["potatis", "pu-TA-tis", "kentang"],
+          ["ris", "ris", "nasi"],
+          ["grönsaker", "GRÖN-sa-ker", "sayuran"],
+          ["frukt", "frukt", "buah"],
+          ["salt / peppar", "salt · PEP-par", "garam / merica"],
+          ["en kniv / en gaffel", "en kniv · en GAF-fel", "pisau / garpu"],
+          ["en sked / en tallrik", "en syèd · en TAL-rik", "sendok / piring"],
+          ["en kaka / en bulle", "en KA-ka · en BUL-le", "kue / roti manis"]
+        ] },
+        { "type": "p", "text": "**En kanelbulle** — roti manis gulung berisi kayu manis — adalah bintang utama meja *fika* Swedia, dan ia punya hari nasionalnya sendiri setiap 4 Oktober. Kalau kamu diundang *fika*, membawa sekantong *bullar* dari toko roti selalu diterima dengan gembira." },
+        { "type": "kotak", "title": "Ulangan berjenjang — kembali ke unit 11", "items": [
+          "Sebutkan sepuluh tempat di kota dari unit 11 lengkap dengan kata depannya: *på banken*, *i affären*, dan seterusnya.",
+          "Lalu ubah jadi suruhan: *Gå till banken!*, *Titta i affären!*, *Vänta vid kyrkan!*",
+          "Terakhir, lunakkan kelimanya jadi pertanyaan: *Kan du gå till banken?*"
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sv": "att komma in", "baca": "at KOM-ma in", "id": "masuk" },
+    { "sv": "att sätta sig", "baca": "at SET-ta sey", "id": "duduk" },
+    { "sv": "att ta av sig", "baca": "at ta av sey", "id": "melepas (pakaian)" },
+    { "sv": "att ställa", "baca": "at STEL-la", "id": "menaruh (berdiri)" },
+    { "sv": "att skära", "baca": "at SYÈ-ra", "id": "memotong" },
+    { "sv": "att glömma", "baca": "at GLÖM-ma", "id": "melupakan" },
+    { "sv": "att lukta", "baca": "at LUK-ta", "id": "berbau" },
+    { "sv": "att smaka", "baca": "at SMA-ka", "id": "berasa, mencicipi" },
+    { "sv": "varsågod", "baca": "va-syo-GUD", "id": "silakan, sama-sama" },
+    { "sv": "förlåt", "baca": "fö-LOT", "id": "maaf" },
+    { "sv": "en blomma", "baca": "en BLOM-ma", "id": "bunga" },
+    { "sv": "en kniv", "baca": "en kniv", "id": "pisau" },
+    { "sv": "en gaffel", "baca": "en GAF-fel", "id": "garpu" },
+    { "sv": "en tallrik", "baca": "en TAL-rik", "id": "piring" },
+    { "sv": "en låda", "baca": "en LO-da", "id": "laci, kotak" },
+    { "sv": "ett bröd", "baca": "et bröd", "id": "roti" },
+    { "sv": "kött", "baca": "syöt", "id": "daging" },
+    { "sv": "kyckling", "baca": "SYÜK-ling", "id": "ayam" },
+    { "sv": "grönsaker", "baca": "GRÖN-sa-ker", "id": "sayuran" },
+    { "sv": "en kanelbulle", "baca": "en ka-NÈL-bul-le", "id": "roti kayu manis" },
+    { "sv": "sen", "baca": "sèn", "id": "terlambat" },
+    { "sv": "fint", "baca": "fint", "id": "bagus, cantik" },
+    { "sv": "efteråt", "baca": "EF-ter-ot", "id": "sesudahnya" },
+    { "sv": "så här", "baca": "so hèr", "id": "begini" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis bentuk suruhannya. Contoh: *att tala* → *tala!*",
+      "items": [
+        "att komma",
+        "att titta",
+        "att ringa",
+        "att köpa",
+        "att ta",
+        "att vänta"
+      ]
+    },
+    {
+      "prompt": "Lunakkan jadi permintaan dengan *Kan du…?* Contoh: *Stäng dörren!* → *Kan du stänga dörren?*",
+      "items": [
+        "Hjälp mig!",
+        "Öppna fönstret!",
+        "Skär brödet!",
+        "Ring mig ikväll!",
+        "Vänta här!"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kalimat yang tepat: *varsågod*, *tack för maten*, *förlåt att jag är sen*, *ta av dig skorna*, *smaklig måltid*.",
+      "items": [
+        "Kamu baru tiba di rumah orang Swedia dan berdiri di lorong masuk: ____",
+        "Kamu menyerahkan bunga kepada tuan rumah dan dia berterima kasih; kamu menjawab: ____",
+        "Semua sudah duduk dan makanan terhidang: ____",
+        "Kamu selesai makan dan berdiri dari meja: ____",
+        "Kamu datang dua puluh menit setelah waktu undangan: ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swedia.",
+      "items": [
+        "Masuk dan duduk!",
+        "Jangan lupa kuncinya!",
+        "Bisa tolong potong rotinya?",
+        "Sepatunya perlu dilepas?",
+        "Terima kasih atas makanannya!"
+      ]
+    }
+  ],
+  "answers": [
+    "kom! — titta! — ring! — köp! — ta! — vänta!",
+    "Kan du hjälpa mig? — Kan du öppna fönstret? — Kan du skära brödet? — Kan du ringa mig ikväll? — Kan du vänta här?",
+    "ta av dig skorna — varsågod — smaklig måltid — tack för maten — förlåt att jag är sen",
+    "Kom in och sätt dig! — Glöm inte nyckeln! — Skulle du kunna skära brödet? — Ska jag ta av mig skorna? — Tack för maten!"
+  ]
+}

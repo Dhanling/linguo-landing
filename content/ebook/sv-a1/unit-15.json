@@ -1,0 +1,210 @@
+{
+  "title": "Yang sudah lewat",
+  "title_target": "Vad gjorde du i helgen?",
+  "goal": "Menceritakan yang sudah terjadi dengan bentuk lampau — dan mengenali empat pola ekornya dari golongan kata kerja yang sudah kamu pelajari di unit 7.",
+  "bekal": [
+    "ekor lampau untuk keempat golongan: *-ade, -de, -te, -dde*",
+    "dua puluh kata kerja kuat yang paling sering dipakai",
+    "keterangan waktu lampau: *igår*, *i helgen*, *förra veckan*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Måndagsmorgon",
+      "intro": "Senin pagi di kantin kampus. Oskar terlihat lelah, dan Dian penasaran ke mana ia menghilang sepanjang akhir pekan.",
+      "lines": [
+        { "speaker": "Dian:", "text": "Vad gjorde du i helgen? Du svarade aldrig.", "id": "Akhir pekan kamu ngapain? Nggak pernah bales.", "literal": "apa melakukan kamu di akhir-pekan-itu? kamu menjawab tidak-pernah." },
+        { "speaker": "Oskar:", "text": "Förlåt! Jag åkte till Dalarna med min familj.", "id": "Maaf! Saya ke Dalarna sama keluarga.", "literal": "maaf! saya pergi ke Dalarna dengan milikku keluarga." },
+        { "speaker": "Dian:", "text": "Vad kul! Hur länge var ni där?", "id": "Seru! Berapa lama di sana?", "literal": "apa asyik! berapa lama adalah kalian di-sana?" },
+        { "speaker": "Oskar:", "text": "Vi åkte på fredag kväll och kom hem igår natt.", "id": "Kami berangkat Jumat malam dan pulang tadi malam.", "literal": "kami pergi pada Jumat malam dan datang rumah kemarin malam." },
+        { "speaker": "Dian:", "text": "Vad gjorde ni där?", "id": "Ngapain aja di sana?", "literal": "apa melakukan kalian di-sana?" },
+        { "speaker": "Oskar:", "text": "Vi bodde i en röd stuga vid en sjö. Vi badade, fiskade och grillade.", "id": "Kami nginep di rumah kayu merah di tepi danau. Kami berenang, mancing, dan bakar-bakar.", "literal": "kami tinggal di satu merah pondok di satu danau. kami mandi, memancing dan memanggang." },
+        { "speaker": "Dian:", "text": "Badade ni? I september?", "id": "Berenang? Bulan September?", "literal": "mandi kalian? di September?" },
+        { "speaker": "Oskar:", "text": "Ja! Vattnet var kallt, men vi bastade först. Det är tradition.", "id": "Iya! Airnya dingin, tapi kami sauna dulu. Itu tradisi.", "literal": "ya! air-itu adalah dingin, tapi kami ber-sauna pertama. itu adalah tradisi." },
+        { "speaker": "Dian:", "text": "Och maten? Vad åt ni?", "id": "Makanannya? Kalian makan apa?", "literal": "dan makanan-itu? apa makan kalian?" },
+        { "speaker": "Oskar:", "text": "Vi grillade korv och åt jordgubbar. Min farmor bakade en kaka.", "id": "Kami bakar sosis dan makan stroberi. Nenek saya bikin kue.", "literal": "kami memanggang sosis dan makan stroberi-stroberi. milikku nenek memanggang satu kue." },
+        { "speaker": "Dian:", "text": "Nu blir jag hungrig. Och lite avundsjuk.", "id": "Jadi lapar deh. Dan agak iri.", "literal": "sekarang menjadi saya lapar. dan sedikit iri." },
+        { "speaker": "Oskar:", "text": "Följ med nästa gång! Vi åker igen i juni.", "id": "Ikut aja lain kali! Kami ke sana lagi bulan Juni.", "literal": "ikut dengan berikut kali! kami pergi lagi di Juni." }
+      ],
+      "notes": [
+        "**Bentuk lampau bahasa Swedia cuma satu.** Tidak ada perbedaan antara \"saya makan\", \"saya sedang makan\", dan \"saya telah makan\" seperti dalam bahasa Inggris — *jag åt* menutupi ketiganya. Dan sama seperti bentuk sekarang, ia **satu bentuk untuk semua orang**: *jag åt, du åt, vi åt, de åt*.",
+        "**Bodde, badade, fiskade, grillade** — semua kata kerja golongan 1 memakai ekor **-ade** yang panjang dan mudah dikenali. Golongan ini yang paling banyak, jadi kalau kamu ragu, *-ade* adalah tebakan terbaikmu.",
+        "**Åkte, bastade, var, åt, kom, gjorde** — inilah kata kerja yang tidak menuruti pola. *Var* (adalah), *åt* (makan), *kom* (datang), *gjorde* (melakukan), *gick* (pergi), *fick* (mendapat) adalah enam bentuk lampau yang paling sering kamu dengar dalam percakapan Swedia, dan enam-enamnya tak beraturan.",
+        "**En stuga** adalah rumah kayu kecil di pedesaan — biasanya dicat merah dengan sudut putih (*faluröd*), warna yang sudah jadi tanda pengenal pemandangan Swedia. Banyak keluarga Swedia punya satu, dan menghabiskan akhir pekan di *stugan* adalah kebiasaan nasional.",
+        "**Bastade** dari *att basta*, \"ber-sauna\". Kata *bastu* sendiri berasal dari bahasa Finlandia, dan urutan sauna-lalu-berenang-di-air-dingin bukan lelucon: ia dilakukan sungguh-sungguh, sepanjang tahun, termasuk di atas es yang dilubangi.",
+        "**Jordgubbar** — stroberi, harfiahnya \"orang tua tanah\". Musimnya cuma beberapa minggu di bulan Juni-Juli, dan orang Swedia menantikannya seperti perayaan. Sekotak *jordgubbar* di meja *midsommar* hampir wajib hukumnya."
+      ],
+      "grammars": [
+        {
+          "title": "Ekor lampau menurut golongan",
+          "table": {
+            "head": ["Gol.", "Dasar", "Sekarang", "Lampau", "Contoh kalimat"],
+            "rows": [
+              ["**1**", "att tala", "talar", "tal**ade**", "Vi talade svenska hela kvällen."],
+              ["**1**", "att bada", "badar", "bad**ade**", "Vi badade i sjön."],
+              ["**2a**", "att ringa", "ringer", "ring**de**", "Jag ringde igår."],
+              ["**2b**", "att köpa", "köper", "köp**te**", "Hon köpte en bok."],
+              ["**3**", "att bo", "bor", "bo**dde**", "De bodde i en stuga."],
+              ["**4**", "att äta", "äter", "**åt**", "Vi åt jordgubbar."]
+            ]
+          },
+          "after": [
+            "Yang menentukan **-de** atau **-te** pada golongan 2 adalah bunyi terakhir akar katanya: kalau bersuara (*l, m, n, r, v, ng*), ekornya *-de*; kalau tak bersuara (*k, p, s, t, x*), ekornya *-te*. Ini bukan aturan yang perlu dihafal — mulutmu akan memilih sendiri yang lebih mudah diucapkan, dan mulutmu benar.",
+            "Golongan 1 (*-ade*) mencakup sekitar 80% seluruh kata kerja bahasa Swedia, dan seluruh kata kerja baru masuk ke sini. Kalau kamu bertemu kata kerja asing dan perlu bentuk lampaunya, *-ade* hampir selalu benar.",
+            "Dalam percakapan cepat, ekor *-ade* sering dipendekkan jadi *-a*: *jag prata* alih-alih *jag pratade*. Kamu akan mendengarnya; jangan menirukan dalam tulisan."
+          ]
+        },
+        {
+          "title": "Dua puluh kata kerja kuat yang paling sering",
+          "table": {
+            "head": ["Dasar", "Lampau", "Artinya", "Dasar", "Lampau", "Artinya"],
+            "rows": [
+              ["vara", "**var**", "adalah", "se", "**såg**", "melihat"],
+              ["ha", "**hade**", "punya", "ta", "**tog**", "mengambil"],
+              ["gå", "**gick**", "pergi", "ge", "**gav**", "memberi"],
+              ["komma", "**kom**", "datang", "äta", "**åt**", "makan"],
+              ["göra", "**gjorde**", "melakukan", "dricka", "**drack**", "minum"],
+              ["få", "**fick**", "mendapat", "sova", "**sov**", "tidur"],
+              ["säga", "**sa**", "berkata", "skriva", "**skrev**", "menulis"],
+              ["veta", "**visste**", "tahu", "sitta", "**satt**", "duduk"],
+              ["bli", "**blev**", "menjadi", "stå", "**stod**", "berdiri"],
+              ["kunna", "**kunde**", "bisa", "ligga", "**låg**", "terletak"]
+            ]
+          },
+          "after": [
+            "**Gjorde** dibaca **YU-de** — huruf *g* diam dan *j* memberi bunyi *y*. Ia bentuk lampau dari *göra*, dan muncul di pertanyaan yang membuka hampir semua percakapan Senin pagi di Swedia: *Vad gjorde du i helgen?*",
+            "**Sa** adalah bentuk pendek dari *sade*, dan dalam percakapan hampir selalu *sa* yang dipakai. Tulisan resmi memakai *sade*, tapi bahkan koran kini menulis *sa*.",
+            "Perhatikan berapa banyak yang punya sepupu dalam bahasa Inggris: *drack-drank*, *sov-slept* (pola vokal), *skrev-wrote*, *gav-gave*, *såg-saw*, *satt-sat*, *stod-stood*. Bahasa Inggris dan Swedia mewarisi daftar kata kerja kuat yang sama dari nenek moyang yang sama."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Keterangan waktu lampau",
+      "blocks": [
+        { "type": "tabel", "head": ["Svenska", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["igår", "i-GOR", "kemarin"],
+          ["i förrgår", "i-FÖR-gor", "kemarin dulu"],
+          ["igår kväll", "i-GOR kvel", "tadi malam"],
+          ["imorse", "i-MOR-se", "tadi pagi"],
+          ["i helgen", "i HEL-gen", "akhir pekan lalu"],
+          ["förra veckan", "FÖR-ra VEK-kan", "minggu lalu"],
+          ["förra året", "FÖR-ra O-ret", "tahun lalu"],
+          ["för tre dagar sedan", "för tre DA-gar sen", "tiga hari yang lalu"],
+          ["nyss", "nüs", "barusan"],
+          ["förut", "fö-RÜT", "sebelumnya, dulu"]
+        ] },
+        { "type": "p", "text": "**I helgen** punya keanehan yang berguna: ia berarti \"akhir pekan lalu\" **maupun** \"akhir pekan nanti\", tergantung bentuk kata kerjanya. *Vad gjorde du i helgen?* menanyakan yang lalu; *Vad ska du göra i helgen?* menanyakan yang akan datang. Bentuk kata kerja yang menentukan, bukan keterangannya." },
+        { "type": "p", "text": "**För … sedan** adalah susunan berkurung untuk \"… yang lalu\": *för tre dagar sedan*, *för en vecka sedan*, *för länge sedan* (dahulu kala). Dua bagiannya wajib dipakai bersama; menghilangkan *sedan* membuat kalimatnya berarti lain sama sekali." },
+        { "type": "kotak", "title": "Bercerita: empat kata penyambung", "items": [
+          "**först** — mula-mula · **sedan** — lalu · **efter det** — sesudah itu · **till slut** — akhirnya",
+          "*Först åkte vi till Dalarna. Sedan badade vi i sjön. Efter det grillade vi korv. Till slut somnade alla vid brasan.*",
+          "Perhatikan bahwa keempatnya menempati tempat pertama, jadi kata kerjanya menyusul persis di belakangnya dan pelakunya terlempar ke belakang. Aturan unit 3 tetap berlaku, apa pun bentuk kata kerjanya."
+        ] }
+      ]
+    },
+    {
+      "title": "Akhir pekan orang Swedia",
+      "blocks": [
+        { "type": "tabel", "head": ["Svenska", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["en helg", "en hely", "akhir pekan"],
+          ["en stuga", "en STÜ-ga", "rumah kayu di desa"],
+          ["en sjö", "en hwö", "danau"],
+          ["en skog", "en skug", "hutan"],
+          ["att bada", "at BA-da", "berenang, mandi"],
+          ["att fiska", "at FIS-ka", "memancing"],
+          ["att grilla", "at GRIL-la", "memanggang"],
+          ["en bastu", "en BAS-tü", "sauna"],
+          ["att vandra", "at VAND-ra", "berjalan jauh, hiking"],
+          ["att plocka bär", "at PLOK-ka bèr", "memetik buah beri"],
+          ["en brasa", "en BRA-sa", "api unggun, perapian"],
+          ["jordgubbar", "YUR-gub-bar", "stroberi"]
+        ] },
+        { "type": "p", "text": "**Allemansrätten** — \"hak setiap orang\" — adalah aturan Swedia yang membolehkan siapa pun berjalan, berkemah semalam, dan memetik buah beri serta jamur di hutan mana pun, termasuk tanah milik orang lain, selama tidak merusak dan tidak mendekati rumah. Ini hak yang dijamin undang-undang dan sangat dibanggakan. Syaratnya satu: *inte störa, inte förstöra* — jangan mengganggu, jangan merusak." },
+        { "type": "kotak", "title": "Ulangan berjenjang — kembali ke unit 13", "items": [
+          "Sebutkan bentuk suruhan dari sepuluh kata kerja unit 13 tanpa melihat.",
+          "Lalu ubah kesepuluhnya jadi bentuk lampau: *kom* → *kom*, *titta* → *tittade*, *ring* → *ringde*, *köp* → *köpte*.",
+          "Terakhir, ceritakan akhir pekanmu sendiri dalam enam kalimat lampau memakai *först, sedan, efter det, till slut*."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sv": "en helg", "baca": "en hely", "id": "akhir pekan" },
+    { "sv": "igår", "baca": "i-GOR", "id": "kemarin" },
+    { "sv": "förra veckan", "baca": "FÖR-ra VEK-kan", "id": "minggu lalu" },
+    { "sv": "för … sedan", "baca": "för … sen", "id": "… yang lalu" },
+    { "sv": "nyss", "baca": "nüs", "id": "barusan" },
+    { "sv": "en stuga", "baca": "en STÜ-ga", "id": "rumah kayu desa" },
+    { "sv": "en sjö", "baca": "en hwö", "id": "danau" },
+    { "sv": "en skog", "baca": "en skug", "id": "hutan" },
+    { "sv": "att bada", "baca": "at BA-da", "id": "berenang, mandi" },
+    { "sv": "att fiska", "baca": "at FIS-ka", "id": "memancing" },
+    { "sv": "att grilla", "baca": "at GRIL-la", "id": "memanggang" },
+    { "sv": "en bastu", "baca": "en BAS-tü", "id": "sauna" },
+    { "sv": "att baka", "baca": "at BA-ka", "id": "memanggang (kue)" },
+    { "sv": "en korv", "baca": "en korv", "id": "sosis" },
+    { "sv": "jordgubbar", "baca": "YUR-gub-bar", "id": "stroberi" },
+    { "sv": "att följa med", "baca": "at FÖL-ya me", "id": "ikut serta" },
+    { "sv": "hur länge", "baca": "hür LENG-e", "id": "berapa lama" },
+    { "sv": "hela", "baca": "HÈ-la", "id": "seluruh, sepanjang" },
+    { "sv": "hungrig", "baca": "HUNG-ri", "id": "lapar" },
+    { "sv": "avundsjuk", "baca": "A-vund-hwük", "id": "iri" },
+    { "sv": "en tradition", "baca": "en tra-di-HWUN", "id": "tradisi" },
+    { "sv": "nästa", "baca": "NES-ta", "id": "berikutnya" },
+    { "sv": "en gång till", "baca": "en gong til", "id": "sekali lagi" },
+    { "sv": "kul", "baca": "kül", "id": "asyik, seru" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis bentuk lampaunya. Contoh: *tala* → *talade*.",
+      "items": [
+        "bada",
+        "ringa",
+        "köpa",
+        "bo",
+        "grilla",
+        "läsa"
+      ]
+    },
+    {
+      "prompt": "Tulis bentuk lampau kata kerja kuat berikut.",
+      "items": [
+        "vara",
+        "göra",
+        "äta",
+        "komma",
+        "gå",
+        "se"
+      ]
+    },
+    {
+      "prompt": "Ubah ke bentuk lampau.",
+      "items": [
+        "Jag åker till Dalarna.",
+        "Vi badar i sjön.",
+        "Hon köper en bok.",
+        "De bor i en stuga.",
+        "Han gör ingenting.",
+        "Vi äter jordgubbar."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swedia.",
+      "items": [
+        "Akhir pekan kemarin kamu ngapain?",
+        "Kami pergi ke Dalarna hari Jumat.",
+        "Kami tinggal di rumah kayu merah.",
+        "Airnya dingin.",
+        "Nenek saya membuat kue."
+      ]
+    }
+  ],
+  "answers": [
+    "badade — ringde — köpte — bodde — grillade — läste",
+    "var — gjorde — åt — kom — gick — såg",
+    "Jag åkte till Dalarna. — Vi badade i sjön. — Hon köpte en bok. — De bodde i en stuga. — Han gjorde ingenting. — Vi åt jordgubbar.",
+    "Vad gjorde du i helgen? — Vi åkte till Dalarna på fredag. — Vi bodde i en röd stuga. — Vattnet var kallt. — Min farmor bakade en kaka."
+  ]
+}

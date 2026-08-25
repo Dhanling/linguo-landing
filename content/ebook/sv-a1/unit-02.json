@@ -1,0 +1,203 @@
+{
+  "title": "Bertanya, menjawab, menyangkal",
+  "title_target": "Vad är det här?",
+  "goal": "Menanyakan sesuatu dengan dua cara, menyangkal dengan satu kata, dan menemukan bahwa jawaban \"tidak\" bahasa Swedia punya dua bentuk yang tidak boleh tertukar.",
+  "bekal": [
+    "membuat pertanyaan ya/tidak hanya dengan membalik dua kata",
+    "tujuh kata tanya yang menutupi hampir semua kebutuhan A1",
+    "menaruh *inte* di tempat yang benar, dan menjawab dengan *jo*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — I köket",
+      "intro": "Malam pertama. Dian membuka lemari dapur bersama dan menemukan sederet benda yang tidak ia kenali. Ahmad, teman sekamarnya yang sudah setahun di Stockholm, duduk di meja.",
+      "lines": [
+        { "speaker": "Dian:", "text": "Ahmad, vad är det här?", "id": "Ahmad, ini apa?", "literal": "Ahmad, apa adalah itu di-sini?" },
+        { "speaker": "Ahmad:", "text": "Det är filmjölk. Det är inte mjölk.", "id": "Itu filmjölk. Itu bukan susu.", "literal": "itu adalah film-susu. itu adalah tidak susu." },
+        { "speaker": "Dian:", "text": "Är det gott?", "id": "Enak?", "literal": "adalah itu enak?" },
+        { "speaker": "Ahmad:", "text": "Ja, mycket gott. Man äter det till frukost.", "id": "Ya, enak sekali. Orang memakannya untuk sarapan.", "literal": "ya, banyak enak. orang makan itu untuk sarapan." },
+        { "speaker": "Dian:", "text": "Och vem är det där?", "id": "Dan itu siapa?", "literal": "dan siapa adalah itu di-sana?" },
+        { "speaker": "Ahmad:", "text": "Det är Oskar. Han bor också här.", "id": "Itu Oskar. Dia tinggal di sini juga.", "literal": "itu adalah Oskar. dia tinggal juga di-sini." },
+        { "speaker": "Dian:", "text": "Varför sitter han där ute?", "id": "Kenapa dia duduk di luar sana?", "literal": "mengapa duduk dia di-sana luar?" },
+        { "speaker": "Ahmad:", "text": "Han dricker kaffe. Svenskar dricker mycket kaffe.", "id": "Dia minum kopi. Orang Swedia minum banyak kopi.", "literal": "dia minum kopi. orang-Swedia minum banyak kopi." },
+        { "speaker": "Dian:", "text": "Dricker du inte kaffe?", "id": "Kamu tidak minum kopi?", "literal": "minum kamu tidak kopi?" },
+        { "speaker": "Ahmad:", "text": "Jo, men inte på kvällen. Då sover jag inte.", "id": "Minum, kok — tapi tidak malam hari. Nanti saya tidak bisa tidur.", "literal": "ya-justru, tapi tidak pada malam-itu. kalau-begitu tidur saya tidak." },
+        { "speaker": "Dian:", "text": "Hur säger man \"ngantuk\" på svenska?", "id": "Bagaimana mengatakan \"ngantuk\" dalam bahasa Swedia?", "literal": "bagaimana berkata orang \"ngantuk\" pada Swedia?" },
+        { "speaker": "Ahmad:", "text": "Trött. Och det är jag nu. God natt!", "id": "Trött. Dan itulah saya sekarang. Selamat malam!", "literal": "capek. dan itu adalah saya sekarang. selamat malam!" }
+      ],
+      "notes": [
+        "**Det är** adalah pembuka kalimat paling berguna di seluruh bahasa Swedia: \"itu adalah…\". Ia dipakai untuk benda, orang, cuaca, dan keadaan — *det är kallt* (dingin), *det är bra* (bagus), *det är Oskar*. Dibaca **de e**, dua bunyi pendek yang meleleh jadi satu.",
+        "**Det här / det där** — \"yang ini\" dan \"yang itu\". Bahasa Swedia menempelkan keterangan tempat pada kata tunjuknya: *här* (di sini) dan *där* (di sana). Ada juga bentuk pendek *detta* (ini), tapi ia berbau tulisan resmi; dalam percakapan orang mengatakan *det här*.",
+        "**Inte selalu datang sesudah kata kerja.** *Det är inte mjölk*, *jag talar inte svenska*, *han sover inte*. Ini kebalikan dari bahasa Indonesia, yang menaruh \"tidak\" di depan. Kalau kamu terlanjur mengatakan *jag inte talar*, kalimatnya masih dimengerti — tapi ia langsung menandaimu sebagai pemula. Satu-satunya tempat *inte* pindah ke depan kata kerja adalah di dalam anak kalimat, dan itu urusan unit 18.",
+        "**Jo bukan ja.** Kalau pertanyaannya **bermuatan sangkalan** — *Dricker du inte kaffe?* (\"kamu tidak minum kopi?\") — dan jawabanmu membantahnya, jawablah **jo**, bukan *ja*. Menjawab *ja* di situ justru berarti kamu setuju bahwa kamu tidak minum kopi. Bahasa Indonesia menyelesaikan ini dengan intonasi; bahasa Swedia punya kata tersendiri, dan orang Swedia memakainya puluhan kali sehari.",
+        "**Man** berarti \"orang\", dalam arti \"orang pada umumnya\". *Man äter det till frukost* = \"orang memakannya untuk sarapan\". Ia dipakai sesering *one* dalam bahasa Inggris lama atau \"kita\" yang tidak menunjuk siapa-siapa dalam bahasa Indonesia — dan jauh lebih sering daripada bentuk pasif.",
+        "**Mycket** berarti \"banyak\" untuk sesuatu yang tidak dihitung (kopi, waktu, uang) dan \"sangat\" di depan kata sifat: *mycket gott* (enak sekali). Untuk benda yang bisa dihitung, kata yang benar adalah *många*: *många böcker* (banyak buku). Dibaca **MÜK-ke** — huruf *ch*-nya diam."
+      ],
+      "grammars": [
+        {
+          "title": "Dua cara bertanya",
+          "body": [
+            "Bahasa Swedia tidak punya kata bantu seperti *do* dalam bahasa Inggris. Membuat pertanyaan cuma soal memindahkan kata kerja ke depan."
+          ],
+          "table": {
+            "head": ["Jenis", "Susunannya", "Contoh", "Artinya"],
+            "rows": [
+              ["Berita", "pelaku – kerja", "Du **talar** svenska.", "Kamu bicara bahasa Swedia."],
+              ["Tanya ya/tidak", "**kerja** – pelaku", "**Talar** du svenska?", "Kamu bicara bahasa Swedia?"],
+              ["Tanya berkata tanya", "kata tanya – **kerja** – pelaku", "Vad **talar** du?", "Kamu bicara bahasa apa?"],
+              ["Tanya + sangkalan", "**kerja** – pelaku – **inte**", "**Talar** du **inte** svenska?", "Kamu tidak bicara bahasa Swedia?"]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa **kata kerjanya tidak pernah pindah dari tempat kedua** kecuali dalam pertanyaan ya/tidak, di mana ia justru naik ke tempat pertama. Aturan \"kata kerja di tempat kedua\" adalah tulang punggung susunan kalimat Swedia, dan unit 3 seluruhnya membahasnya.",
+            "Nada bicaramu **tidak cukup** untuk membuat pertanyaan. Mengucapkan *du talar svenska?* dengan nada naik memang bisa dimengerti, tapi susunan yang benar adalah membalik. Ini berbeda dari bahasa Indonesia, di mana intonasi saja sudah menyelesaikan tugasnya."
+          ]
+        },
+        {
+          "title": "Tujuh kata tanya",
+          "table": {
+            "head": ["Svenska", "Cara baca", "Artinya", "Contoh"],
+            "rows": [
+              ["**vad**", "va", "apa", "Vad heter du?"],
+              ["**vem**", "vem", "siapa", "Vem är det där?"],
+              ["**var**", "var", "di mana", "Var bor du?"],
+              ["**vart**", "vart", "ke mana", "Vart går du?"],
+              ["**när**", "nèr", "kapan", "När kommer bussen?"],
+              ["**hur**", "hür", "bagaimana, berapa", "Hur mår du?"],
+              ["**varför**", "var-FÖR", "kenapa", "Varför sitter han där?"]
+            ]
+          },
+          "after": [
+            "**Var** dan **vart** adalah pasangan yang sering tertukar: *var* menanyakan **tempat diam** (\"di mana\"), *vart* menanyakan **arah** (\"ke mana\"). *Var är du?* — kamu di mana? *Vart ska du?* — kamu mau ke mana? Bahasa Inggris sudah kehilangan bedanya (*where* untuk dua-duanya), tapi bahasa Swedia masih memakainya setiap hari.",
+            "**Hur mår du?** adalah \"apa kabar\" yang sesungguhnya. Jawaban bakunya: *Bra, tack!* (baik, terima kasih), *Ganska bra* (lumayan), *Så där* (biasa saja), *Inte så bra* (kurang baik). Berbeda dari bahasa Inggris, pertanyaan ini dianggap sungguh-sungguh — orang Swedia betul-betul menunggu jawabanmu."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menyangkal: satu kata, satu tempat",
+      "blocks": [
+        { "type": "p", "text": "Bahasa Swedia cuma punya satu kata pengingkar untuk kalimat: **inte**. Tidak ada perbedaan seperti \"tidak\" dan \"bukan\" dalam bahasa Indonesia, dan tidak ada dua bagian seperti *ne… pas* dalam bahasa Prancis." },
+        { "type": "tabel", "head": ["Kalimat", "Sangkalannya", "Artinya"], "rows": [
+          ["Jag talar svenska.", "Jag talar **inte** svenska.", "Saya tidak bicara bahasa Swedia."],
+          ["Det är mjölk.", "Det är **inte** mjölk.", "Itu bukan susu."],
+          ["Han bor här.", "Han bor **inte** här.", "Dia tidak tinggal di sini."],
+          ["Jag förstår.", "Jag förstår **inte**.", "Saya tidak mengerti."],
+          ["Vi har tid.", "Vi har **inte** tid.", "Kami tidak punya waktu."]
+        ] },
+        { "type": "p", "text": "Untuk menyangkal **kata benda** ada kata tersendiri: **ingen / inget / inga**, yang berarti \"tidak ada satu pun\". *Jag har inga pengar* (saya tidak punya uang sama sekali) terdengar lebih tegas daripada *jag har inte pengar*. Bentuknya mengikuti jenis kata bendanya, dan itu akan masuk akal sesudah unit 4." },
+        { "type": "kotak", "title": "Ja, nej, jo", "items": [
+          "**Ja** — menjawab \"ya\" atas pertanyaan biasa. *Talar du svenska?* — *Ja.*",
+          "**Nej** — menjawab \"tidak\" atas pertanyaan apa pun. *Talar du svenska?* — *Nej.*",
+          "**Jo** — menjawab \"ya, justru\" atas pertanyaan yang bermuatan sangkalan. *Talar du inte svenska?* — *Jo, det gör jag!* (\"Bicara, kok!\")",
+          "Salah memilih antara *ja* dan *jo* adalah kesalahan yang paling sering dibuat penutur asing, dan ia mengubah arti jawabanmu jadi kebalikannya. Kalau pertanyaannya memuat *inte*, jawaban positifnya hampir selalu **jo**."
+        ] }
+      ]
+    },
+    {
+      "title": "Barang di dapur, dan sebuah kebiasaan bernama fika",
+      "blocks": [
+        { "type": "p", "text": "Kosakata unit ini sengaja berkumpul di dapur, karena di situlah percakapan pertama di asrama Swedia hampir selalu terjadi." },
+        { "type": "tabel", "head": ["Svenska", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["ett kök", "et syök", "dapur"],
+          ["ett bord", "et bud", "meja"],
+          ["en stol", "en stul", "kursi"],
+          ["ett glas", "et glas", "gelas"],
+          ["en kopp", "en kop", "cangkir"],
+          ["mjölk", "myölk", "susu"],
+          ["bröd", "bröd", "roti"],
+          ["ost", "ost", "keju"],
+          ["vatten", "VAT-ten", "air"],
+          ["te", "te", "teh"]
+        ] },
+        { "type": "p", "text": "**Fika** adalah kata Swedia yang tidak punya terjemahan. Ia berarti duduk bersama, minum kopi atau teh, dan makan sesuatu yang manis — bukan sekadar \"ngopi\", karena yang penting justru duduknya, bukan kopinya. Ia kata benda (*en fika*) sekaligus kata kerja (*att fika*), dan ia bagian resmi hari kerja: banyak kantor Swedia berhenti dua kali sehari untuk itu." },
+        { "type": "kotak", "title": "Kalimat yang akan kamu pakai minggu ini", "items": [
+          "**Ska vi fika?** — Yuk, fika? (ajakan paling umum di Swedia)",
+          "**Vad heter det på svenska?** — Apa namanya dalam bahasa Swedia?",
+          "**Jag vet inte.** — Saya tidak tahu.",
+          "**Ursäkta?** — Maaf? (untuk minta diulang; dibaca *ur-SYEK-ta*)",
+          "**God natt.** — Selamat malam (untuk berpisah tidur, bukan untuk menyapa)."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sv": "vad", "baca": "va", "id": "apa" },
+    { "sv": "vem", "baca": "vem", "id": "siapa" },
+    { "sv": "när", "baca": "nèr", "id": "kapan" },
+    { "sv": "hur", "baca": "hür", "id": "bagaimana, berapa" },
+    { "sv": "varför", "baca": "var-FÖR", "id": "kenapa" },
+    { "sv": "inte", "baca": "IN-te", "id": "tidak, bukan" },
+    { "sv": "jo", "baca": "yu", "id": "ya (membantah sangkalan)" },
+    { "sv": "det här", "baca": "de hèr", "id": "yang ini" },
+    { "sv": "det där", "baca": "de dèr", "id": "yang itu" },
+    { "sv": "man", "baca": "man", "id": "orang (pada umumnya)" },
+    { "sv": "mycket", "baca": "MÜK-ke", "id": "banyak, sangat" },
+    { "sv": "att dricka", "baca": "at DRIK-ka", "id": "minum" },
+    { "sv": "att äta", "baca": "at È-ta", "id": "makan" },
+    { "sv": "att sitta", "baca": "at SIT-ta", "id": "duduk" },
+    { "sv": "att sova", "baca": "at SU-va", "id": "tidur" },
+    { "sv": "att säga", "baca": "at SÈY-a", "id": "berkata" },
+    { "sv": "att förstå", "baca": "at fö-STO", "id": "mengerti" },
+    { "sv": "att veta", "baca": "at VÈ-ta", "id": "tahu" },
+    { "sv": "kaffe", "baca": "KAF-fe", "id": "kopi" },
+    { "sv": "ett kök", "baca": "et syök", "id": "dapur" },
+    { "sv": "gott", "baca": "got", "id": "enak" },
+    { "sv": "trött", "baca": "tröt", "id": "capek, ngantuk" },
+    { "sv": "en kväll", "baca": "en kvel", "id": "malam (petang)" },
+    { "sv": "att fika", "baca": "at FI-ka", "id": "duduk sambil ngopi" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi pertanyaan ya/tidak dengan membalik kata kerjanya.",
+      "items": [
+        "Du bor i Stockholm.",
+        "Han dricker kaffe.",
+        "Det är gott.",
+        "Ni talar svenska.",
+        "Hon kommer från Göteborg.",
+        "De sitter i köket."
+      ]
+    },
+    {
+      "prompt": "Sangkal kalimat berikut dengan menaruh *inte* di tempat yang benar.",
+      "items": [
+        "Jag förstår svenska.",
+        "Det är mjölk.",
+        "Han bor här.",
+        "Vi dricker kaffe på kvällen.",
+        "Du vet det.",
+        "Hon är trött."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata tanya yang tepat: *vad*, *vem*, *var*, *när*, *hur*, *varför*.",
+      "items": [
+        "____ heter du?",
+        "____ bor du?",
+        "____ mår du?",
+        "____ är det där?",
+        "____ kommer bussen?",
+        "____ dricker han kaffe på kvällen?"
+      ]
+    },
+    {
+      "prompt": "Jawab dengan *ja*, *nej*, atau *jo*. (Jawaban positif atas pertanyaan bersangkalan memakai *jo*.)",
+      "items": [
+        "Talar du svenska? (positif)",
+        "Dricker du inte te? (positif)",
+        "Är det mjölk? (negatif)",
+        "Bor han inte här? (positif)",
+        "Förstår du? (negatif)"
+      ]
+    }
+  ],
+  "answers": [
+    "Bor du i Stockholm? — Dricker han kaffe? — Är det gott? — Talar ni svenska? — Kommer hon från Göteborg? — Sitter de i köket?",
+    "Jag förstår inte svenska. — Det är inte mjölk. — Han bor inte här. — Vi dricker inte kaffe på kvällen. — Du vet det inte. — Hon är inte trött.",
+    "Vad — Var — Hur — Vem — När — Varför",
+    "Ja — Jo — Nej — Jo — Nej"
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "title": "Angka dan jam",
+  "title_target": "Klockan är kvart över åtta",
+  "goal": "Menghitung sampai seribu, menyebut jam seperti orang Swedia, dan tidak pernah lagi salah paham tentang kata *halv* — yang artinya kebalikan dari dugaanmu.",
+  "bekal": [
+    "angka 0-1000 dan bentuk urutannya",
+    "menyebut jam dengan *över*, *i*, dan *halv*",
+    "menanyakan waktu keberangkatan dan membuat janji"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — På Centralstationen",
+      "intro": "Jumat pagi. Dian dan Oskar berdiri di depan papan keberangkatan di Stockholms Centralstation. Mereka hendak ke Uppsala.",
+      "lines": [
+        { "speaker": "Dian:", "text": "Ursäkta, vad är klockan?", "id": "Permisi, jam berapa sekarang?", "literal": "maaf, apa adalah jam-itu?" },
+        { "speaker": "Oskar:", "text": "Den är kvart över åtta.", "id": "Jam delapan lewat seperempat.", "literal": "ia adalah seperempat atas delapan." },
+        { "speaker": "Dian:", "text": "Och när går tåget till Uppsala?", "id": "Terus kereta ke Uppsala berangkat jam berapa?", "literal": "dan kapan pergi kereta-itu ke Uppsala?" },
+        { "speaker": "Oskar:", "text": "Halv nio. Vi har femton minuter.", "id": "Setengah sembilan. Kita punya lima belas menit.", "literal": "setengah sembilan. kami punya lima-belas menit." },
+        { "speaker": "Dian:", "text": "Halv nio? Alltså klockan nio och trettio?", "id": "Setengah sembilan? Berarti jam sembilan tiga puluh?", "literal": "setengah sembilan? jadi jam sembilan dan tiga-puluh?" },
+        { "speaker": "Oskar:", "text": "Nej! Halv nio betyder åtta trettio. Vi säger halva timmen framåt.", "id": "Bukan! Halv nio artinya delapan tiga puluh. Kami menyebut setengah jam yang menuju ke depan.", "literal": "tidak! setengah sembilan berarti delapan tiga-puluh. kami berkata setengah jam-itu ke-depan." },
+        { "speaker": "Dian:", "text": "Oj. Då har vi bara femton minuter, inte fyrtiofem.", "id": "Ups. Berarti kita cuma punya lima belas menit, bukan empat puluh lima.", "literal": "ups. kalau-begitu punya kami cuma lima-belas menit, tidak empat-puluh-lima." },
+        { "speaker": "Oskar:", "text": "Precis. Vilket spår? Spår sex, tror jag.", "id": "Persis. Peron berapa? Peron enam, kayaknya.", "literal": "persis. yang-mana peron? peron enam, mengira saya." },
+        { "speaker": "Dian:", "text": "Hur mycket kostar biljetten?", "id": "Tiketnya berapa?", "literal": "berapa banyak berharga tiket-itu?" },
+        { "speaker": "Oskar:", "text": "Nittiofem kronor. Eller hundra tio om du köper ombord.", "id": "Sembilan puluh lima kronor. Atau seratus sepuluh kalau kamu beli di kereta.", "literal": "sembilan-puluh-lima kronor. atau seratus sepuluh kalau kamu membeli di-atas-kapal." },
+        { "speaker": "Dian:", "text": "Då köper jag nu. Och vi ses vid spår sex om tio minuter.", "id": "Kalau begitu saya beli sekarang. Ketemu di peron enam sepuluh menit lagi.", "literal": "kalau-begitu membeli saya sekarang. dan kami terlihat di peron enam dalam sepuluh menit." }
+      ],
+      "notes": [
+        "**Halv nio berarti 08.30, bukan 09.30.** Inilah kesalahpahaman paling mahal yang bisa dialami pendatang di Swedia, dan ia membuat orang ketinggalan kereta setiap minggu. Bahasa Swedia — bersama bahasa Jerman, Belanda, Denmark, dan Norwegia — menghitung setengah jam **menuju** jam berikutnya, bukan setengah jam **sesudah** jam sekarang. *Halv nio* = \"setengah menuju sembilan\". Kalau ragu, tanyakan ulang dengan angka: *Alltså åtta trettio?*",
+        "**Klockan** (jam itu) sering dipendekkan jadi **klockan är** atau bahkan **den är**. Tiga cara bertanya yang sama-sama benar: *Vad är klockan?*, *Hur mycket är klockan?*, dan yang paling santai, *Vet du vad klockan är?*",
+        "**Vilket spår?** — \"peron yang mana?\". *Vilken* dipakai untuk *en*-ord, *vilket* untuk *ett*-ord, *vilka* untuk jamak. Karena *ett spår*, bentuknya *vilket*. Ini pola yang sama dengan kata sifat: ekor *-t* untuk *ett*-ord.",
+        "**Hundra tio** ditulis terpisah, tapi **nittiofem** ditulis menyatu. Aturannya: angka di bawah seratus ditulis sebagai satu kata (*tjugoett*, *fyrtiofem*, *nittionio*), sedangkan ratusan dan ribuan boleh dipisah. Dalam praktiknya orang Swedia menulisnya dengan angka saja.",
+        "**Om tio minuter** berarti \"sepuluh menit **lagi**\", menunjuk waktu ke depan. Jangan tertukar dengan *i tio minuter*, yang berarti \"selama sepuluh menit\". *Jag kommer om tio minuter* (saya datang sepuluh menit lagi) sangat berbeda dari *jag väntar i tio minuter* (saya menunggu selama sepuluh menit).",
+        "**Kronor** adalah bentuk jamak dari *en krona*, mata uang Swedia. Dalam percakapan orang menyebut *spänn* atau *kronor*; harga ditulis \"95 kr\". Satu krona kira-kira seribu lima ratus rupiah, jadi biasakan mengalikan cepat di kepala."
+      ],
+      "grammars": [
+        {
+          "title": "Angka 0-20, lalu puluhan",
+          "tables": [
+            {
+              "head": ["", "Svenska", "Cara baca", "", "Svenska", "Cara baca"],
+              "rows": [
+                ["0", "noll", "nol", "11", "elva", "EL-va"],
+                ["1", "ett / en", "et · en", "12", "tolv", "tolv"],
+                ["2", "två", "tvo", "13", "tretton", "TRET-ton"],
+                ["3", "tre", "tre", "14", "fjorton", "FYUR-ton"],
+                ["4", "fyra", "FÜ-ra", "15", "femton", "FEM-ton"],
+                ["5", "fem", "fem", "16", "sexton", "SEKS-ton"],
+                ["6", "sex", "seks", "17", "sjutton", "HWUT-ton"],
+                ["7", "sju", "hwü", "18", "arton", "AR-ton"],
+                ["8", "åtta", "OT-ta", "19", "nitton", "NIT-ton"],
+                ["9", "nio", "NI-u", "20", "tjugo", "SYÜ-gu"],
+                ["10", "tio", "TI-u", "21", "tjugoett", "syü-gu-ET"]
+              ]
+            },
+            {
+              "head": ["Puluhan", "Cara baca", "Ratusan & ribuan", "Cara baca"],
+              "rows": [
+                ["trettio (30)", "TRET-ti", "hundra (100)", "HUND-ra"],
+                ["fyrtio (40)", "FÖR-ti", "tvåhundra (200)", "tvo-HUND-ra"],
+                ["femtio (50)", "FEM-ti", "tusen (1000)", "TÜ-sen"],
+                ["sextio (60)", "SEKS-ti", "tvåtusen (2000)", "tvo-TÜ-sen"],
+                ["sjuttio (70)", "HWUT-ti", "en miljon", "en mil-YUN"],
+                ["åttio (80)", "OT-ti", "", ""],
+                ["nittio (90)", "NIT-ti", "", ""]
+              ]
+            }
+          ],
+          "after": [
+            "Huruf **-o** di ujung puluhan (*trettio*, *fyrtio*, *sjuttio*) hampir selalu diam dalam percakapan: **TRET-ti**, **FÖR-ti**, **HWUT-ti**. Menyebutnya lengkap terdengar seperti membaca dokumen.",
+            "Angka **1** punya dua bentuk yang mengikuti jenis kata bendanya: *ett hus* tapi *en bok*. Kalau angkanya berdiri sendiri — menghitung, nomor telepon, hasil — bentuknya selalu **ett**: \"satu, dua, tiga\" adalah *ett, två, tre*.",
+            "**Sju (7)** dan **sjuttio (70)** dua-duanya memakai bunyi desis belakang: **hwü** dan **HWUT-ti**. Latih keduanya bersama *sjutton* (17), karena tiga angka ini terdengar mirip di telinga pemula dan sering tertukar saat mendengar harga."
+          ]
+        },
+        {
+          "title": "Menyebut jam",
+          "table": {
+            "head": ["Jam", "Svenska", "Harfiahnya"],
+            "rows": [
+              ["08.00", "**Klockan är åtta.**", "jam-itu adalah delapan"],
+              ["08.05", "**Fem över åtta.**", "lima atas delapan"],
+              ["08.15", "**Kvart över åtta.**", "seperempat atas delapan"],
+              ["08.20", "**Tjugo över åtta.**", "dua-puluh atas delapan"],
+              ["08.25", "**Fem i halv nio.**", "lima menjelang setengah sembilan"],
+              ["08.30", "**Halv nio.**", "setengah sembilan"],
+              ["08.35", "**Fem över halv nio.**", "lima atas setengah sembilan"],
+              ["08.45", "**Kvart i nio.**", "seperempat menjelang sembilan"],
+              ["08.55", "**Fem i nio.**", "lima menjelang sembilan"]
+            ]
+          },
+          "after": [
+            "Perhatikan dua baris yang paling asing bagi telinga Indonesia: **fem i halv nio** (08.25) dan **fem över halv nio** (08.35). Bahasa Swedia memakai pukul setengah sebagai **titik pegangan tersendiri**, lalu menghitung maju-mundur darinya. Bahasa Indonesia tidak punya kebiasaan ini sama sekali.",
+            "Untuk jadwal resmi — kereta, penerbangan, jam buka — orang Swedia memakai **jam 24 dan angka apa adanya**: *tåget går 14.37* dibaca *fjorton trettiosju*. Jadi kalau kamu bingung dengan *halv*, kamu selalu boleh menyebut angka mentahnya, dan itu tetap terdengar wajar.",
+            "**Klockan** dipendekkan jadi **kl.** dalam tulisan. Menanyakan janji: *Hur dags?* (\"jam berapa?\") — bentuk yang lebih pendek dan lebih santai daripada *vilken tid*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bulan, tanggal, dan angka urutan",
+      "blocks": [
+        { "type": "tabel", "head": ["Bulan", "Cara baca", "Bulan", "Cara baca"], "rows": [
+          ["januari", "ya-nu-A-ri", "juli", "YÜ-li"],
+          ["februari", "feb-ru-A-ri", "augusti", "au-GUS-ti"],
+          ["mars", "masy", "september", "sep-TEM-ber"],
+          ["april", "ap-RIL", "oktober", "ok-TU-ber"],
+          ["maj", "may", "november", "nu-VEM-ber"],
+          ["juni", "YÜ-ni", "december", "de-SEM-ber"]
+        ] },
+        { "type": "p", "text": "Nama bulan **tidak berhuruf besar**, sama seperti nama hari. Tanggal disebut dengan angka urutan: *den första januari* (1 Januari), *den tjugofjärde december* (24 Desember). Dalam tulisan sehari-hari cukup ditulis *1 januari* atau *2026-01-01* — Swedia memakai susunan tahun-bulan-tanggal, dan itu bahkan standar resmi ISO." },
+        { "type": "tabel", "head": ["Angka", "Urutan", "Cara baca", "Angka", "Urutan", "Cara baca"], "rows": [
+          ["1", "första", "FÖSY-ta", "6", "sjätte", "HWET-te"],
+          ["2", "andra", "AND-ra", "7", "sjunde", "HWUN-de"],
+          ["3", "tredje", "TRÈD-ye", "8", "åttonde", "OT-ton-de"],
+          ["4", "fjärde", "FYÈR-de", "9", "nionde", "NI-un-de"],
+          ["5", "femte", "FEM-te", "10", "tionde", "TI-un-de"]
+        ] },
+        { "type": "p", "text": "Mulai angka sebelas, bentuk urutannya cuma menambahkan **-de** atau **-e**: *elfte*, *tolfte*, *trettonde*, *tjugonde*, *trettiofemte*. Hanya sepuluh pertama yang perlu dihafal terpisah — dan tiga di antaranya (*första*, *andra*, *tredje*) sudah kamu kenal dari bahasa Inggris (*first*, *second*, *third*), yang memang punya pola tak beraturan yang sama." },
+        { "type": "kotak", "title": "Musim, dan kenapa orang Swedia membicarakannya terus", "items": [
+          "**en vinter** (musim dingin) · **en vår** (semi) · **en sommar** (panas) · **en höst** (gugur)",
+          "\"Pada musim panas\" = *på sommaren*; \"musim panas ini\" = *i sommar*. Pola yang sama seperti *på kvällen* dan *ikväll*.",
+          "Di Stockholm, matahari terbenam pukul 14.50 di bulan Desember dan pukul 22.10 di bulan Juni. Itulah sebabnya cuaca dan cahaya adalah topik pembuka percakapan nomor satu di Swedia, jauh di atas pekerjaan atau keluarga."
+        ] }
+      ]
+    },
+    {
+      "title": "Angka yang kamu pakai setiap hari",
+      "blocks": [
+        { "type": "tabel", "head": ["Keperluan", "Contoh", "Cara menyebutnya"], "rows": [
+          ["Harga", "95 kr", "nittiofem kronor"],
+          ["Nomor telepon", "070-123 45 67", "noll sjuttio, ett två tre, fyrtiofem, sextiosju"],
+          ["Umur", "Jag är 24 år.", "tjugofyra år"],
+          ["Suhu", "-7 °C", "minus sju grader"],
+          ["Nomor peron", "spår 6", "spår sex"],
+          ["Nomor kamar", "rum 312", "rum tre tolv"],
+          ["Tahun", "2026", "tjugohundratjugosex / två tusen tjugosex"]
+        ] },
+        { "type": "p", "text": "Nomor telepon Swedia dibaca **berpasangan**, bukan satu-satu: *45* dibaca *fyrtiofem*, bukan *fyra fem*. Ini terasa cepat sekali di telinga pemula. Kalimat penyelamatnya: *Kan du säga siffra för siffra?* — \"bisa disebutkan satu per satu?\"" },
+        { "type": "kotak", "title": "Ulangan berjenjang — kembali ke unit 4", "items": [
+          "Tutup kolom bahasa Swedia di tabel rumah unit 4 dan sebutkan bentuk **bertentu**-nya dari ingatan: rumah itu, dapur itu, pintu itu, jendela itu.",
+          "Lalu gabungkan dengan angka unit ini: *tre hus*, *två dörrar*, *fem fönster*, *tio rum*. Perhatikan mana yang berubah dan mana yang tidak.",
+          "Terakhir, ucapkan tiga jam keras-keras: 07.15, 09.30, 17.45 — dalam bahasa Swedia, tanpa melihat tabel."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sv": "en klocka", "baca": "en KLOK-ka", "id": "jam, lonceng" },
+    { "sv": "en timme", "baca": "en TIM-me", "id": "jam (durasi)" },
+    { "sv": "en minut", "baca": "en mi-NÜT", "id": "menit" },
+    { "sv": "kvart", "baca": "kvart", "id": "seperempat" },
+    { "sv": "halv", "baca": "halv", "id": "setengah (menuju)" },
+    { "sv": "över", "baca": "Ö-ver", "id": "lewat, di atas" },
+    { "sv": "i (waktu)", "baca": "i", "id": "menjelang, kurang" },
+    { "sv": "om", "baca": "om", "id": "…lagi (waktu ke depan)" },
+    { "sv": "en biljett", "baca": "en bil-YET", "id": "tiket" },
+    { "sv": "ett spår", "baca": "et spor", "id": "peron, jalur" },
+    { "sv": "en krona", "baca": "en KRU-na", "id": "kronor (mata uang)" },
+    { "sv": "att kosta", "baca": "at KOS-ta", "id": "berharga" },
+    { "sv": "att köpa", "baca": "at SYÖ-pa", "id": "membeli" },
+    { "sv": "att tro", "baca": "at tru", "id": "mengira, percaya" },
+    { "sv": "att betyda", "baca": "at be-TÜ-da", "id": "berarti" },
+    { "sv": "alltså", "baca": "ALT-so", "id": "jadi, berarti" },
+    { "sv": "eller", "baca": "EL-ler", "id": "atau" },
+    { "sv": "en månad", "baca": "en MO-nad", "id": "bulan" },
+    { "sv": "ett år", "baca": "et or", "id": "tahun" },
+    { "sv": "en sommar", "baca": "en SOM-mar", "id": "musim panas" },
+    { "sv": "en vinter", "baca": "en VIN-ter", "id": "musim dingin" },
+    { "sv": "en grad", "baca": "en grad", "id": "derajat" },
+    { "sv": "hur dags", "baca": "hür daks", "id": "jam berapa" },
+    { "sv": "ungefär", "baca": "un-ye-FÈR", "id": "kira-kira" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis jamnya dalam bahasa Swedia.",
+      "items": [
+        "07.00",
+        "09.15",
+        "10.30",
+        "12.45",
+        "15.25",
+        "18.35"
+      ]
+    },
+    {
+      "prompt": "Tulis angkanya dengan huruf.",
+      "items": [
+        "7",
+        "17",
+        "20",
+        "45",
+        "90",
+        "365"
+      ]
+    },
+    {
+      "prompt": "Isi dengan *om* atau *i*.",
+      "items": [
+        "Jag kommer ____ tio minuter.",
+        "Vi väntade ____ en timme.",
+        "Tåget går ____ fem minuter.",
+        "Hon bodde i Sverige ____ tre år.",
+        "Vi ses ____ en vecka."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swedia.",
+      "items": [
+        "Jam berapa sekarang?",
+        "Kereta berangkat setengah sembilan.",
+        "Tiketnya berapa?",
+        "Sembilan puluh lima kronor.",
+        "Kita ketemu sepuluh menit lagi."
+      ]
+    }
+  ],
+  "answers": [
+    "Klockan är sju. — Kvart över nio. — Halv elva. — Kvart i ett. — Fem i halv fyra. — Fem över halv sju.",
+    "sju — sjutton — tjugo — fyrtiofem — nittio — trehundrasextiofem",
+    "om — i — om — i — om",
+    "Vad är klockan? — Tåget går halv nio. — Hur mycket kostar biljetten? — Nittiofem kronor. — Vi ses om tio minuter."
+  ]
+}

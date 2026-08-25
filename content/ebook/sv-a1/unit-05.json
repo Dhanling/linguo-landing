@@ -1,0 +1,206 @@
+{
+  "title": "Menyebut lebih dari satu",
+  "title_target": "Två bröder och en syster",
+  "goal": "Membentuk jamak dengan lima pola yang ada — dan mengetahui pola mana yang berlaku untuk kata benda apa, sebelum menghafalnya satu per satu.",
+  "bekal": [
+    "lima golongan jamak dan cirinya masing-masing",
+    "bentuk \"banyak itu\": *bilarna*, *böckerna*, *husen*",
+    "menyebut anggota keluarga dan menanyakan keluarga orang lain"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Familjen på telefonen",
+      "intro": "Minggu sore. Elin masuk ke dapur dan menemukan Dian sedang menutup panggilan video, di depannya masih terbuka sebuah foto keluarga.",
+      "lines": [
+        { "speaker": "Elin:", "text": "Vilka är det på bilden?", "id": "Siapa saja itu di fotonya?", "literal": "siapa-siapa adalah itu pada gambar-itu?" },
+        { "speaker": "Dian:", "text": "Det är min familj. Vi är sex personer.", "id": "Itu keluarga saya. Kami enam orang.", "literal": "itu adalah keluargaku. kami adalah enam orang-orang." },
+        { "speaker": "Elin:", "text": "Sex! Har du syskon?", "id": "Enam! Kamu punya saudara?", "literal": "enam! punya kamu saudara-saudara?" },
+        { "speaker": "Dian:", "text": "Ja, jag har två bröder och en syster. Bröderna bor kvar hemma.", "id": "Ya, saya punya dua saudara laki-laki dan satu perempuan. Saudara-saudara laki-laki saya masih tinggal di rumah.", "literal": "ya, saya punya dua saudara-lk dan satu saudari. saudara-lk-itu tinggal tetap di-rumah." },
+        { "speaker": "Elin:", "text": "Vad gör systern?", "id": "Kakak/adik perempuanmu ngapain?", "literal": "apa melakukan saudari-itu?" },
+        { "speaker": "Dian:", "text": "Hon är lärare. Hon har trettio elever i klassen.", "id": "Dia guru. Muridnya tiga puluh di kelas.", "literal": "dia adalah guru. dia punya tiga-puluh murid-murid di kelas-itu." },
+        { "speaker": "Elin:", "text": "Trettio barn! Här har vi bara tjugo i varje klass.", "id": "Tiga puluh anak! Di sini cuma dua puluh per kelas.", "literal": "tiga-puluh anak-anak! di-sini punya kami cuma dua-puluh di setiap kelas." },
+        { "speaker": "Dian:", "text": "Har du en stor familj?", "id": "Keluargamu besar?", "literal": "punya kamu satu besar keluarga?" },
+        { "speaker": "Elin:", "text": "Nej, vi är tre. Men vi har fyra katter och två hundar.", "id": "Tidak, kami bertiga. Tapi kami punya empat kucing dan dua anjing.", "literal": "tidak, kami adalah tiga. tapi kami punya empat kucing-kucing dan dua anjing-anjing." },
+        { "speaker": "Dian:", "text": "Så djuren är också familjen!", "id": "Jadi hewan-hewannya juga keluarga!", "literal": "jadi hewan-hewan-itu adalah juga keluarga-itu!" },
+        { "speaker": "Elin:", "text": "Precis. Fråga mina föräldrar — de säger samma sak.", "id": "Persis. Tanya orang tua saya — mereka bilang hal yang sama.", "literal": "persis. tanya orang-tuaku — mereka berkata sama hal." },
+        { "speaker": "Dian:", "text": "Jag saknar mina föräldrar. Men vi hörs varje söndag.", "id": "Saya kangen orang tua saya. Tapi kami telponan tiap Minggu.", "literal": "saya merindukan orang-tuaku. tapi kami terdengar setiap Minggu." }
+      ],
+      "notes": [
+        "**Syskon** berarti \"saudara kandung\" tanpa menyebut jenis kelamin — satu kata untuk apa yang bahasa Indonesia sebut \"kakak atau adik\". Bentuk jamaknya sama persis (*ett syskon* → *syskon*), jadi *har du syskon?* sudah berarti \"kamu punya saudara?\".",
+        "**Bahasa Swedia tidak membedakan kakak dan adik.** *En bror* adalah saudara laki-laki, berapa pun umurnya; *en syster* saudara perempuan. Kalau umur benar-benar perlu disebut, ditambahkan kata sifat: *storebror* (kakak lk), *lillasyster* (adik pr). Bagi penutur Indonesia ini terasa kehilangan informasi, dan bagi orang Swedia informasi itu memang tidak dianggap penting.",
+        "**Bröder, bukan brorar.** Beberapa kata benda tersering mengubah vokalnya saat menjadi jamak: *en bror* → *bröder*, *en bok* → *böcker*, *en man* → *män*, *en fot* → *fötter*. Jumlahnya tidak banyak — kira-kira dua lusin — dan hampir semuanya kata yang kamu pakai setiap hari, jadi ia akan terhafal lewat pemakaian, bukan lewat daftar.",
+        "**Vilka** adalah bentuk jamak dari *vilken/vilket* (\"yang mana\"). Saat menanyakan beberapa orang sekaligus, orang Swedia bertanya *vilka är det?*, bukan *vem är det?*. Kalau yang ditanya cuma satu orang: *vem är det?*",
+        "**Föräldrar** (orang tua) hampir selalu muncul dalam bentuk jamak, karena bentuk tunggalnya *en förälder* jarang dipakai — persis seperti bahasa Indonesia yang jarang mengatakan \"seorang orang tua\".",
+        "**Vi hörs** — \"kita berkabaran nanti\", harfiahnya \"kami terdengar\". Bersama *vi ses* (\"sampai jumpa\"), ini pasangan ucapan perpisahan yang paling sering dipakai lewat telepon. Keduanya memakai ekor *-s* yang membuat kata kerja jadi saling."
+      ],
+      "grammars": [
+        {
+          "title": "Lima golongan jamak",
+          "body": [
+            "Semua kata benda bahasa Swedia jatuh ke salah satu dari lima golongan ini. Kolom \"cirinya\" adalah yang perlu kamu simpan — ia menebak golongan dengan tepat untuk sebagian besar kata."
+          ],
+          "table": {
+            "head": ["Gol.", "Ekor", "Contoh", "Cirinya"],
+            "rows": [
+              ["**1**", "**-or**", "en flicka → flick**or**", "*en*-ord berakhiran *-a*; huruf *a*-nya dibuang dulu"],
+              ["**2**", "**-ar**", "en stol → stol**ar** · en pojke → pojk**ar**", "*en*-ord bersuku satu, dan yang berakhiran *-e, -el, -er, -en*"],
+              ["**3**", "**-er**", "en bok → böck**er** · en student → student**er**", "*en*-ord serapan (tekanan di belakang) & sebagian bersuku satu"],
+              ["**4**", "**-n**", "ett äpple → äppl**en**", "*ett*-ord berakhiran **vokal**"],
+              ["**5**", "**—**", "ett hus → hus · ett barn → barn", "*ett*-ord berakhiran **huruf mati**: tidak berubah"]
+            ]
+          },
+          "after": [
+            "Golongan 5 adalah kabar baik yang tidak pernah disebut buku pelajaran: **seluruh *ett*-ord berakhiran huruf mati tidak berubah sama sekali dalam bentuk jamak**. *Ett hus* → *hus*, *ett barn* → *barn*, *ett rum* → *rum*, *ett kök* → *kök*. Hitungan yang menyebutkan jumlahnya: *tre hus*, *fem barn*.",
+            "Golongan 3 sering ikut mengubah vokal di dalam katanya (*bok* → *böcker*, *hand* → *händer*, *natt* → *nätter*). Ini sisa dari bahasa Skandinavia kuno, dan bahasa Inggris punya sisa yang sama persis: *foot* → *feet*, *man* → *men*, *goose* → *geese*.",
+            "Kata serapan dari bahasa Inggris yang masuk belakangan biasanya masuk golongan 3: *en dator* → *datorer*, *en film* → *filmer*, *en app* → *appar* (yang ini golongan 2, karena bersuku satu)."
+          ]
+        },
+        {
+          "title": "Jamak yang bertentu: \"banyak itu\"",
+          "body": [
+            "Sesudah bentuk jamak terbentuk, ekor bertentu ditempelkan lagi di belakangnya. Yang menentukan ekor mana adalah **jenis katanya**, bukan golongan jamaknya."
+          ],
+          "table": {
+            "head": ["Jenis", "Banyak", "Banyak itu", "Contoh dalam kalimat"],
+            "rows": [
+              ["*en*-ord", "flickor", "flickor**na**", "Flickorna sitter i köket."],
+              ["*en*-ord", "stolar", "stolar**na**", "Stolarna är nya."],
+              ["*en*-ord", "böcker", "böcker**na**", "Böckerna ligger på bordet."],
+              ["*ett*-ord (gol. 4)", "äpplen", "äpplen**a**", "Äpplena är gröna."],
+              ["*ett*-ord (gol. 5)", "hus", "hus**en**", "Husen är gamla."]
+            ]
+          },
+          "after": [
+            "Aturannya bisa dipendekkan jadi satu kalimat: **kalau bentuk jamaknya berakhiran huruf mati (-r, -n), tambahkan *-na* atau *-a*; kalau tidak berubah sama sekali, tambahkan *-en*.**",
+            "Perhatikan bahwa *husen* adalah \"rumah-rumah itu\" sedangkan *huset* adalah \"rumah itu\". Bedanya satu huruf, dan ia satu-satunya tempat di seluruh tata bahasa Swedia di mana tunggal dan jamak bisa tertukar. Bacalah ujungnya baik-baik."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Keluarga",
+      "blocks": [
+        { "type": "tabel", "head": ["Satu", "Banyak", "Bahasa Indonesia"], "rows": [
+          ["en familj", "familjer", "keluarga"],
+          ["en mamma / mor", "mammor / mödrar", "ibu"],
+          ["en pappa / far", "pappor / fäder", "ayah"],
+          ["föräldrar", "föräldrarna", "orang tua"],
+          ["en bror", "bröder", "saudara laki-laki"],
+          ["en syster", "systrar", "saudara perempuan"],
+          ["ett syskon", "syskon", "saudara kandung"],
+          ["ett barn", "barn", "anak"],
+          ["en son", "söner", "anak laki-laki"],
+          ["en dotter", "döttrar", "anak perempuan"],
+          ["en mormor / farmor", "mormödrar", "nenek (dari ibu / dari ayah)"],
+          ["en morfar / farfar", "morfäder", "kakek (dari ibu / dari ayah)"]
+        ] },
+        { "type": "p", "text": "Bahasa Swedia menyebut kakek-nenek dengan cara yang sangat tepat dan sangat masuk akal: **mormor** = \"ibunya ibu\", **farmor** = \"ibunya ayah\", **morfar** = \"ayahnya ibu\", **farfar** = \"ayahnya ayah\". Sekali kamu melihat polanya, ia tidak perlu dihafal lagi. Pola yang sama berlanjut ke paman dan bibi: **morbror** (paman dari pihak ibu), **faster** (bibi dari pihak ayah, dari *far* + *syster*)." },
+        { "type": "kotak", "title": "Bertanya tentang keluarga", "items": [
+          "**Har du syskon?** — Kamu punya saudara?",
+          "**Hur många är ni i familjen?** — Kalian berapa orang di keluarga?",
+          "**Var bor dina föräldrar?** — Orang tuamu tinggal di mana?",
+          "**Jag är enda barnet.** — Saya anak tunggal.",
+          "**Jag saknar min familj.** — Saya kangen keluarga saya."
+        ] }
+      ]
+    },
+    {
+      "title": "Menghitung benda, dan satu kata bernama sak",
+      "blocks": [
+        { "type": "p", "text": "Angka di depan kata benda selalu diikuti bentuk **jamak tak tentu** — tanpa *en/ett*, tanpa ekor bertentu. *Tre böcker*, *fem hus*, *tjugo elever*." },
+        { "type": "tabel", "head": ["Salah", "Benar", "Kenapa"], "rows": [
+          ["*två en bok*", "**två böcker**", "angka menggantikan kata sandang"],
+          ["*tre husen*", "**tre hus**", "bentuk bertentu tidak dipakai sesudah angka"],
+          ["*många bok*", "**många böcker**", "*många* menuntut jamak"],
+          ["*mycket böcker*", "**många böcker**", "*mycket* untuk yang tak terhitung"],
+          ["*många kaffe*", "**mycket kaffe**", "kopi tidak dihitung satuan"]
+        ] },
+        { "type": "p", "text": "**Många** dipakai untuk yang bisa dihitung (buku, orang, hari), **mycket** untuk yang tidak bisa (kopi, air, waktu, uang). Bahasa Indonesia memakai \"banyak\" untuk keduanya, jadi ini pembedaan baru yang perlu dilatih sadar-sadar selama beberapa minggu." },
+        { "type": "kotak", "title": "En sak, ett ting, en grej", "items": [
+          "**En sak** — \"hal, benda\". Kata paling berguna saat kamu lupa nama sesuatu: *Vad heter den där saken?*",
+          "**En grej** — versi sehari-harinya, kira-kira seperti \"barang\" atau \"itu tuh\" dalam obrolan. *Ge mig den där grejen.*",
+          "**Samma sak** — \"hal yang sama\". *De säger samma sak.*",
+          "**Grejen är att…** — \"masalahnya adalah…\", pembuka kalimat yang sangat sering dipakai anak muda Swedia."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sv": "en familj", "baca": "en fa-MILY", "id": "keluarga" },
+    { "sv": "ett syskon", "baca": "et SÜS-kon", "id": "saudara kandung" },
+    { "sv": "en bror", "baca": "en brur", "id": "saudara laki-laki" },
+    { "sv": "en syster", "baca": "en SÜS-ter", "id": "saudara perempuan" },
+    { "sv": "föräldrar", "baca": "fö-REL-drar", "id": "orang tua" },
+    { "sv": "ett barn", "baca": "et baan", "id": "anak" },
+    { "sv": "en person", "baca": "en pè-SYUN", "id": "orang" },
+    { "sv": "en lärare", "baca": "en LÈ-ra-re", "id": "guru" },
+    { "sv": "en elev", "baca": "en e-LÈV", "id": "murid" },
+    { "sv": "en klass", "baca": "en klas", "id": "kelas" },
+    { "sv": "en katt", "baca": "en kat", "id": "kucing" },
+    { "sv": "en hund", "baca": "en hund", "id": "anjing" },
+    { "sv": "ett djur", "baca": "et yür", "id": "hewan" },
+    { "sv": "en flicka", "baca": "en FLIK-ka", "id": "anak perempuan" },
+    { "sv": "en pojke", "baca": "en POY-ke", "id": "anak laki-laki" },
+    { "sv": "en sak", "baca": "en sak", "id": "hal, benda" },
+    { "sv": "många", "baca": "MONG-a", "id": "banyak (terhitung)" },
+    { "sv": "hur många", "baca": "hür MONG-a", "id": "berapa banyak" },
+    { "sv": "stor / stort", "baca": "stur · stut", "id": "besar" },
+    { "sv": "liten / litet", "baca": "LI-ten · LI-tet", "id": "kecil" },
+    { "sv": "att sakna", "baca": "at SAK-na", "id": "merindukan" },
+    { "sv": "att fråga", "baca": "at FRO-ga", "id": "bertanya" },
+    { "sv": "kvar", "baca": "kvar", "id": "masih, tersisa" },
+    { "sv": "precis", "baca": "pre-SIS", "id": "persis" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis bentuk jamak tak tentunya. Contoh: *en stol* → *stolar*.",
+      "items": [
+        "en flicka",
+        "en stol",
+        "ett hus",
+        "en bok",
+        "ett äpple",
+        "en student"
+      ]
+    },
+    {
+      "prompt": "Tulis bentuk jamak **bertentu**. Contoh: *stolar* → *stolarna*.",
+      "items": [
+        "flickor",
+        "böcker",
+        "hus",
+        "äpplen",
+        "hundar",
+        "barn"
+      ]
+    },
+    {
+      "prompt": "Isi dengan *många* atau *mycket*.",
+      "items": [
+        "Jag dricker ____ kaffe.",
+        "Hon har ____ böcker.",
+        "Vi har inte ____ tid.",
+        "Det finns ____ studenter här.",
+        "Han har ____ pengar."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swedia.",
+      "items": [
+        "Saya punya dua saudara laki-laki dan satu saudara perempuan.",
+        "Kalian berapa orang di keluarga?",
+        "Buku-buku itu ada di meja.",
+        "Kami punya empat kucing.",
+        "Rumah-rumah itu tua."
+      ]
+    }
+  ],
+  "answers": [
+    "flickor — stolar — hus — böcker — äpplen — studenter",
+    "flickorna — böckerna — husen — äpplena — hundarna — barnen",
+    "mycket — många — mycket — många — mycket",
+    "Jag har två bröder och en syster. — Hur många är ni i familjen? — Böckerna ligger på bordet. — Vi har fyra katter. — Husen är gamla."
+  ]
+}
