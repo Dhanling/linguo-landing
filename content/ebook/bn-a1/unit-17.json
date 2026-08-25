@@ -1,0 +1,190 @@
+{
+ "title": "Meminta, menyuruh, dan melarang",
+ "title_target": "একটু বসুন, চা খেয়ে যান — èk-Tu bô-sun, ca khé-yé jan",
+ "goal": "Menyuruh dan meminta pada tiga tingkat kesopanan, dan melarang dengan না yang berdiri di ujung — termasuk satu bentuk halus yang terdengar seperti masa depan tapi sebenarnya permintaan.",
+ "bekal": [
+  "membentuk perintah untuk আপনি, তুমি, dan তুই",
+  "melarang dengan করবেন না, করো না",
+  "melembutkan permintaan dengan একটু dan না",
+  "memakai bentuk -বেন sebagai permintaan yang paling sopan",
+  "menerima dan menolak tawaran dengan wajar"
+ ],
+ "dialogs": [
+  {
+   "title": "কথোপকথন — Tamu datang tanpa memberi tahu",
+   "intro": "Seorang tetangga, Kakak Rina, datang berkunjung. Seluruh dialog ini penuh perintah — tapi perhatikan bahwa hampir semuanya sebenarnya adalah keramahan, bukan suruhan.",
+   "lines": [
+    {"speaker":"মিতালি:","text":"[রিনা|ri-na] [আপা|a-pa]! [আসুন|a-sun], [আসুন|a-sun]। [বসুন|bô-sun] [এখানে|è-kha-né]।","id":"Kak Rina! Masuk, masuk. Duduk di sini.","literal":"rina — kakak! datanglah, datanglah. duduklah — di-sini."},
+    {"speaker":"রিনা:","text":"[না|na] [না|na], [বেশিক্ষণ|bè-syik-khôn] [থাকব|thak-bô] [না|na]। [কাজ|kaj] [আছে|a-chhé]।","id":"Tidak-tidak, saya tidak akan lama. Ada urusan.","literal":"tidak — tidak, lama — akan-tinggal — tidak. urusan — ada."},
+    {"speaker":"মিতালি:","text":"[অন্তত|ôn-tô-tô] [চা|ca] [খেয়ে|khé-yé] [যান|jan]। [আনি|a-ni], [একটু|èk-Tu] [পানি|pa-ni] [দেবেন|dé-bèn]?","id":"Setidaknya minum teh dulu. Ani, tolong ambilkan air?","literal":"setidaknya — teh — minum-lalu — pergilah. ani, sedikit — air — akan-memberi?"},
+    {"speaker":"আনি:","text":"[অবশ্যই|ô-bô-syyô-i]। [আপা|a-pa], [ঠান্ডা|Than-Da] [না|na] [গরম|gô-rôm]?","id":"Tentu. Kak, dingin atau panas?","literal":"tentu. kakak, dingin — atau — panas?"},
+    {"speaker":"রিনা:","text":"[ঠান্ডাই|Than-Da-i] [দিন|din]। [আর|ar] [শোনো|syo-no], [চিনি|ci-ni] [দিও|di-o] [না|na]।","id":"Yang dingin saja. Dan dengar ya, jangan diberi gula.","literal":"dingin-lah — berikanlah. dan — dengarlah, gula — berikanlah — jangan."},
+    {"speaker":"মিতালি:","text":"[আপা|a-pa] [ডায়াবেটিস|Da-ya-bé-Tisy]। [আনি|a-ni], [চিনি|ci-ni] [ছাড়া|chha-Ra] [বানাবেন|ba-na-bèn]।","id":"Kak Rina diabetes. Ani, buatkan tanpa gula ya.","literal":"kakak — diabetes. ani, gula — tanpa — akan-membuat."},
+    {"speaker":"রিনা:","text":"[তোমরা|tom-ra] [ব্যস্ত|bêas-tô] [হয়ো|hô-yo] [না|na]। [আমি|a-mi] [শুধু|syu-dhu] [দেখতে|dèkh-té] [এসেছি|é-sé-chhi]।","id":"Kalian jangan repot-repot. Saya cuma datang menengok.","literal":"kalian — sibuk — jadilah — jangan. saya — hanya — melihat-untuk — sudah-datang."},
+    {"speaker":"মিতালি:","text":"[একদম|èk-dôm] [ব্যস্ত|bêas-tô] [হচ্ছি|hôc-chhi] [না|na]। [একটু|èk-Tu] [অপেক্ষা|ô-pék-kha] [করুন|kô-run]।","id":"Sama sekali tidak repot. Tunggu sebentar.","literal":"sama-sekali — sibuk — sedang-jadi — tidak. sedikit — penantian — lakukanlah."},
+    {"speaker":"রিনা:","text":"[আনি|a-ni], [তুমি|tu-mi] [কেমন|kè-mon] [আছ|achh]? [বাংলা|bang-la] [বলো|bô-lo] [তো|to] [একটু|èk-Tu]!","id":"Ani, apa kabar? Coba bicara bahasa Bengali sedikit!","literal":"ani, kamu — bagaimana — berada? bengali — bicaralah — kan — sedikit!"},
+    {"speaker":"আনি:","text":"[আমি|a-mi] [ভালো|bha-lo] [আছি|a-chhi], [আপা|a-pa]। [আস্তে|as-té] [বলবেন|bôl-bèn], [তাহলে|ta-hô-lé] [বুঝব|bujh-bô]।","id":"Saya baik, Kak. Tolong bicara pelan, nanti saya mengerti.","literal":"saya — baik — berada, kakak. pelan — akan-berkata, kalau-begitu — akan-mengerti."},
+    {"speaker":"রিনা:","text":"[বাহ|bah]! [চমৎকার|cô-môt-kar]! [ভয়|bhôy] [পেয়ো|pé-yo] [না|na], [তুমি|tu-mi] [পারবে|par-bé]।","id":"Wah! Bagus sekali! Jangan takut, kamu pasti bisa.","literal":"wah! luar-biasa! takut — dapatlah — jangan, kamu — akan-bisa."},
+    {"speaker":"মিতালি:","text":"[এই|èi] [নিন|nin] [চা|ca]। [গরম|gô-rôm] [গরম|gô-rôm] [খান|khan]!","id":"Ini tehnya. Diminum selagi hangat!","literal":"ini — ambillah — teh. panas — panas — makanlah!"}
+   ],
+   "notes": [
+    "**Perintah punya tiga tingkat, sejajar dengan tiga kata “kamu”.** Untuk **আপনি**, akhirannya **-উন**: করুন, বলুন, বসুন, শুনুন — dan inilah bentuk yang harus kamu pakai kepada semua orang di awal. Untuk **তুমি**, akhirannya **-ও**: করো, বলো, বসো, শোনো. Untuk **তুই**, batangnya telanjang tanpa akhiran: কর, বল, বস, শোন.",
+    "⚠️ **Beberapa perintah untuk আপনি tidak beraturan dan sangat sering dipakai:** যাওয়া → **যান** (bukan *যাউন*), আসা → **আসুন**, খাওয়া → **খান**, দেওয়া → **দিন**, নেওয়া → **নিন**, হওয়া → **হন**. Enam ini menutupi sebagian besar percakapan sehari-hari; hafalkan sekaligus.",
+    "**Ada bentuk keempat yang lebih sopan lagi, dan ia terlihat seperti masa depan: -বেন.** আস্তে **বলবেন** (tolong bicara pelan), একটু **দেবেন**? (tolong berikan?), **আসবেন** কিন্তু! (datang ya!). Harfiahnya “Anda akan berkata”, tapi maknanya adalah permintaan yang halus dan tidak mendesak. ⚠️ Ini bentuk yang paling aman untuk meminta sesuatu kepada orang yang tidak kamu kenal.",
+    "**Melarang dilakukan dengan menaruh না di ujung, sama seperti menyangkal.** করবেন না (jangan lakukan), যাবেন না (jangan pergi), চিন্তা করবেন না (jangan khawatir), ভয় পাবেন না (jangan takut). ⚠️ Perhatikan bahwa larangan sopan memakai bentuk **-বেন**, bukan bentuk perintah -উন: *করুন না* justru berarti “lakukanlah, dong” — kebalikan penuh dari yang kamu maksud.",
+    "⚠️ **Karena itu না di ujung kalimat perintah bisa berarti dua hal yang berlawanan, dan nadanya yang memutuskan.** **করবেন না** (dengan bentuk -বেন) = jangan lakukan. **করুন না** (dengan bentuk -উন) = ayo lakukan, dong. Bahasa Indonesia punya kesulitan yang mirip dengan kata *dong* dan *jangan*; kuncinya adalah bentuk kata kerjanya, bukan না-nya.",
+    "**একটু melembutkan hampir semua permintaan.** একটু বসুন (duduk sebentar), একটু দেখুন (coba lihat), একটু সরুন (geser sedikit), একটু অপেক্ষা করুন (tunggu sebentar). ⚠️ Tanpa একটু, kalimat perintah terdengar seperti instruksi; dengan একটু, ia jadi permintaan. Ini persis fungsi kata *sedikit* dan *sebentar* dalam bahasa Indonesia.",
+    "**Menolak tawaran di rumah orang Bengal punya tata caranya sendiri.** Menolak sekali dianggap kesopanan; tuan rumah akan menawarkan lagi. Kalimat yang bekerja: **সত্যিই লাগবে না, ধন্যবাদ** (sungguh tidak perlu, terima kasih). ⚠️ Tapi kalau tehnya sudah dituang, terimalah — menolak setelah itu terasa seperti menolak orangnya, bukan minumannya. Dan kalimat **চা খেয়ে যান** (minum teh dulu sebelum pergi) sebaiknya kamu terima setidaknya sekali."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga tingkat perintah",
+     "tables": [
+      {
+       "head":["Kata kerja","আপনি (-উন)","তুমি (-ও)","তুই (polos)","Larangan sopan"],
+       "rows":[
+        ["করা — melakukan","করুন","করো","কর","করবেন না"],
+        ["বলা — berkata","বলুন","বলো","বল","বলবেন না"],
+        ["বসা — duduk","বসুন","বসো","বস","বসবেন না"],
+        ["দেখা — melihat","দেখুন","দেখো","দেখ","দেখবেন না"],
+        ["শোনা — mendengar","শুনুন","শোনো","শোন","শুনবেন না"],
+        ["যাওয়া — pergi ⚠️","যান","যাও","যা","যাবেন না"],
+        ["আসা — datang ⚠️","আসুন","এসো","আয়","আসবেন না"],
+        ["খাওয়া — makan ⚠️","খান","খাও","খা","খাবেন না"],
+        ["দেওয়া — memberi ⚠️","দিন","দাও","দে","দেবেন না"],
+        ["নেওয়া — mengambil ⚠️","নিন","নাও","নে","নেবেন না"]
+       ]
+      }
+     ],
+     "after": [
+      "**Bentuk permintaan halus -বেন dipakai untuk hal yang tidak mendesak dan untuk pesan yang berlaku nanti:** আসবেন (datang ya), লিখে দেবেন (tolong tuliskan nanti), ভালো থাকবেন (jaga diri). ⚠️ Perhatikan bahwa **ভালো থাকবেন** — perpisahan yang paling hangat — sebenarnya adalah bentuk perintah halus ini."
+     ]
+    },
+    {
+     "title": "Permintaan yang paling sering dipakai",
+     "table": {
+      "head":["বাংলা","Cara baca","Artinya"],
+      "rows":[
+       ["একটু বসুন।","èk-Tu bô-sun","Duduk sebentar."],
+       ["একটু অপেক্ষা করুন।","èk-Tu ô-pék-kha kô-run","Tunggu sebentar."],
+       ["আস্তে বলুন।","as-té bô-lun","Bicara pelan."],
+       ["আবার বলুন।","a-bar bô-lun","Ulangi lagi."],
+       ["একটু সাহায্য করবেন?","èk-Tu sa-haj-jô kôr-bèn","Tolong bantu sedikit?"],
+       ["লিখে দেবেন?","li-khé dé-bèn","Tolong tuliskan?"],
+       ["চিন্তা করবেন না।","cin-ta kôr-bèn na","Jangan khawatir."],
+       ["ভয় পাবেন না।","bhôy pa-bèn na","Jangan takut."],
+       ["কিছু মনে করবেন না।","ki-chu mô-né kôr-bèn na","Jangan tersinggung; maaf."],
+       ["দয়া করে …","dô-ya kô-ré","Tolong … (resmi)"]
+      ]
+     },
+     "after": [
+      "⚠️ **দয়া করে terdengar sangat resmi dan jarang dipakai dalam percakapan sehari-hari.** Untuk permintaan biasa, একটু sudah lebih dari cukup dan terdengar jauh lebih wajar. Simpan দয়া করে untuk surat, pengumuman, dan permohonan yang sungguh-sungguh."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menerima dan menolak dengan sopan",
+   "blocks": [
+    {"type":"tabel","head":["Kalimat","Cara baca","Kapan dipakai"],"rows":[
+     ["হ্যাঁ, দিন।","hèⁿ, din","Ya, boleh."],
+     ["একটুখানি দিন।","èk-Tu-kha-ni din","Sedikit saja."],
+     ["আর লাগবে না, ধন্যবাদ।","ar lag-bé na, dhôn-nô-bad","Cukup, terima kasih."],
+     ["সত্যিই লাগবে না।","sôt-ti-i lag-bé na","Sungguh tidak perlu."],
+     ["পরে খাব।","pô-ré kha-bô","Nanti saya makan."],
+     ["আজ পারব না, দুঃখিত।","aj par-bô na, duk-khi-tô","Hari ini tidak bisa, maaf."],
+     ["পরের বার নিশ্চয়ই।","pô-rér bar nisy-côy-i","Lain kali pasti."]
+    ]},
+    {"type":"kotak","title":"⚠️ Tentang menyuruh dan disuruh","items":[
+     "**Perintah dalam bahasa Bengali terdengar jauh lebih ramah daripada terjemahannya.** আসুন, বসুন, খান — deretan perintah ini adalah keramahan tuan rumah, bukan suruhan. Jangan tersinggung mendengarnya, dan jangan takut memakainya.",
+     "**Kepada anak kecil, orang dewasa memakai তুমি atau তুই**, dan itu wajar. Tapi kalau seseorang memakai তুই kepada **kamu** dan kalian belum akrab, itu tanda kurang hormat — walaupun sering kali tak disengaja oleh orang yang lebih tua.",
+     "**Kalau kamu diminta berbicara bahasa Bengali di depan orang banyak**, seperti Ani dalam dialog ini, jawab saja dengan satu kalimat yang kamu kuasai. Kalimat pendek yang benar jauh lebih berkesan daripada kalimat panjang yang berantakan — dan orang akan bertepuk tangan untuk keduanya."
+    ]},
+    {"type":"p","text":"Satu ungkapan yang perlu disimpan: **গরম গরম খান** — “makanlah selagi masih panas”. Bahasa Bengali sering mengulang kata sifat untuk menekankan keadaannya: গরম গরম (panas-panas), তাজা তাজা (segar-segar), আস্তে আস্তে (pelan-pelan), তাড়াতাড়ি (cepat-cepat, dari তাড়া). ⚠️ Pengulangan seperti ini persis kebiasaan bahasa Indonesia — *pelan-pelan*, *panas-panas* — jadi ia akan terasa alami sejak hari pertama."}
+   ]
+  }
+ ],
+ "vocab": [
+  {"bn":"করুন","baca":"kô-run","id":"lakukanlah (sopan)"},
+  {"bn":"বলুন","baca":"bô-lun","id":"katakanlah"},
+  {"bn":"বসুন","baca":"bô-sun","id":"duduklah"},
+  {"bn":"আসুন","baca":"a-sun","id":"datanglah, masuklah"},
+  {"bn":"যান","baca":"jan","id":"pergilah"},
+  {"bn":"খান","baca":"khan","id":"makanlah"},
+  {"bn":"দিন · নিন","baca":"din · nin","id":"berikanlah · ambillah"},
+  {"bn":"শুনুন","baca":"syu-nun","id":"dengarlah"},
+  {"bn":"দেখুন","baca":"dè-khun","id":"lihatlah"},
+  {"bn":"করবেন না","baca":"kôr-bèn na","id":"jangan lakukan"},
+  {"bn":"-বেন","baca":"-bèn","id":"akhiran permintaan halus"},
+  {"bn":"একটু","baca":"èk-Tu","id":"sedikit, sebentar"},
+  {"bn":"একটুখানি","baca":"èk-Tu-kha-ni","id":"sedikit saja"},
+  {"bn":"দয়া করে","baca":"dô-ya kô-ré","id":"tolong (resmi)"},
+  {"bn":"অন্তত","baca":"ôn-tô-tô","id":"setidaknya"},
+  {"bn":"ব্যস্ত","baca":"bêas-tô","id":"sibuk, repot"},
+  {"bn":"বেশিক্ষণ","baca":"bè-syik-khôn","id":"lama"},
+  {"bn":"নিশ্চয়ই","baca":"nisy-côy-i","id":"pasti"},
+  {"bn":"সত্যিই","baca":"sôt-ti-i","id":"sungguh"},
+  {"bn":"পরের বার","baca":"pô-rér bar","id":"lain kali"},
+  {"bn":"সরা","baca":"sô-ra","id":"bergeser"},
+  {"bn":"বানানো","baca":"ba-na-no","id":"membuat"},
+  {"bn":"ভয় পাওয়া","baca":"bhôy pa-oa","id":"merasa takut"},
+  {"bn":"পারা","baca":"pa-ra","id":"bisa, sanggup"},
+  {"bn":"গরম গরম","baca":"gô-rôm gô-rôm","id":"selagi panas"},
+  {"bn":"আস্তে আস্তে","baca":"as-té as-té","id":"pelan-pelan"},
+  {"bn":"ঠান্ডা","baca":"Than-Da","id":"dingin"},
+  {"bn":"চা","baca":"ca","id":"teh"},
+  {"bn":"কাজ","baca":"kaj","id":"urusan, pekerjaan"},
+  {"bn":"তো","baca":"to","id":"kan, coba (penghalus)"}
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah jadi perintah untuk আপনি.",
+   "items": [
+    "বসা → ____",
+    "যাওয়া → ____",
+    "খাওয়া → ____",
+    "দেওয়া → ____",
+    "শোনা → ____",
+    "আসা → ____"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi larangan sopan dengan -বেন না.",
+   "items": [
+    "চিন্তা করুন। → ____",
+    "যান। → ____",
+    "ভয় পান। → ____",
+    "এখানে বসুন। → ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "করুন / একটু / অপেক্ষা",
+    "না / করবেন / চিন্তা",
+    "যান / চা / খেয়ে",
+    "দেবেন / লিখে / একটু",
+    "খান / গরম / গরম"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Bengali.",
+   "items": [
+    "Duduk sebentar.",
+    "Tolong bicara pelan.",
+    "Jangan khawatir.",
+    "Tunggu sebentar.",
+    "Cukup, terima kasih.",
+    "Hari ini saya tidak bisa, maaf."
+   ]
+  }
+ ],
+ "answers": [
+  "বসুন — যান — খান — দিন — শুনুন — আসুন",
+  "চিন্তা করবেন না। — যাবেন না। — ভয় পাবেন না। — এখানে বসবেন না।",
+  "একটু অপেক্ষা করুন। — চিন্তা করবেন না। — চা খেয়ে যান। — একটু লিখে দেবেন। — গরম গরম খান।",
+  "একটু বসুন। — আস্তে বলুন। — চিন্তা করবেন না। — একটু অপেক্ষা করুন। — আর লাগবে না, ধন্যবাদ। — আজ পারব না, দুঃখিত।"
+ ]
+}

@@ -1,0 +1,519 @@
+{
+ "title": "Sudah atau belum — bentuk করেছি",
+ "title_target": "ভাত খেয়েছেন? — bhat khé-yé-chhèn?",
+ "goal": "Mengatakan sesuatu sudah terjadi, dan mempelajari satu penyangkalan yang bentuknya sama sekali berbeda dari yang sudah kamu kenal: -নি, yang berarti “belum” dan “tidak” sekaligus.",
+ "bekal": [
+  "membentuk bentuk sudah: করেছি, গেছি, খেয়েছি",
+  "menyangkalnya dengan ekor -নি, bukan dengan না",
+  "membedakan খেলাম (kemarin makan) dari খেয়েছি (sudah makan)",
+  "menjawab sapaan ভাত খেয়েছেন? dengan wajar",
+  "memakai এখনো … নি untuk “belum”"
+ ],
+ "dialogs": [
+  {
+   "title": "কথোপকথন — Pulang malam",
+   "intro": "Ani pulang pukul sembilan malam dan menemukan Mitali masih menunggu di ruang makan. Perhatikan pertanyaan pertama Mitali — di Bengal, itulah sapaan yang sesungguhnya.",
+   "lines": [
+    {
+     "speaker": "মিতালি:",
+     "text": "[এসেছেন|é-sé-chhèn]! [ভাত|bhat] [খেয়েছেন|khé-yé-chhèn]?",
+     "id": "Sudah pulang! Sudah makan?",
+     "literal": "sudah-datang! nasi — sudah-makan?"
+    },
+    {
+     "speaker": "আনি:",
+     "text": "[না|na], [এখনো|è-khô-no] [খাইনি|khai-ni]। [দেরি|dé-ri] [হয়ে|hô-yé] [গেছে|gé-chhé]।",
+     "id": "Belum, saya belum makan. Sudah telanjur larut.",
+     "literal": "tidak, masih — belum-makan. terlambat — menjadi — sudah-pergi."
+    },
+    {
+     "speaker": "মিতালি:",
+     "text": "[আমি|a-mi] [জানতাম|jan-tam]! [তাই|tai] [আমিও|a-mi-o] [খাইনি|khai-ni]। [চলুন|cô-lun]।",
+     "id": "Sudah saya duga! Makanya saya juga belum makan. Ayo.",
+     "literal": "saya — dulu-tahu! karena-itu — saya-juga — belum-makan. marilah."
+    },
+    {
+     "speaker": "আনি:",
+     "text": "[আপনি|ap-ni] [আমার|a-mar] [জন্য|jôn-nô] [অপেক্ষা|ô-pék-kha] [করেছেন|kô-ré-chhèn]?",
+     "id": "Anda menunggu saya?",
+     "literal": "Anda — saya-punya — untuk — penantian — sudah-melakukan?"
+    },
+    {
+     "speaker": "মিতালি:",
+     "text": "[অবশ্যই|ô-bô-syyô-i]। [একা|è-ka] [খেতে|khé-té] [ভালো|bha-lo] [লাগে|la-gé] [না|na]।",
+     "id": "Tentu saja. Makan sendirian itu tidak enak.",
+     "literal": "tentu-saja. sendirian — makan-untuk — baik — terasa — tidak."
+    },
+    {
+     "speaker": "আনি:",
+     "text": "[আপনারা|ap-na-ra] [সবসময়|sôb-sô-môy] [এমন|èmôn] [করেন|kô-rèn]?",
+     "id": "Kalian selalu begitu?",
+     "literal": "kalian — selalu — begini — melakukan?"
+    },
+    {
+     "speaker": "মিতালি:",
+     "text": "[হ্যাঁ|hèⁿ]। [আম্মা|am-ma] [আজ|aj] [ইলিশ|i-lisy] [রান্না|ran-na] [করেছেন|kô-ré-chhèn]।",
+     "id": "Ya. Ibu hari ini masak ikan hilsa.",
+     "literal": "ya. ibu — hari-ini — hilsa — masakan — sudah-melakukan."
+    },
+    {
+     "speaker": "আনি:",
+     "text": "[ইলিশ|i-lisy]! [আমি|a-mi] [কখনো|kô-khô-no] [খাইনি|khai-ni]।",
+     "id": "Hilsa! Saya belum pernah makan.",
+     "literal": "hilsa! saya — pernah — belum-makan."
+    },
+    {
+     "speaker": "মিতালি:",
+     "text": "[তাহলে|ta-hô-lé] [আজ|aj] [আপনার|ap-nar] [জীবন|ji-bôn] [বদলে|bô-dô-lé] [যাবে|ja-bé]!",
+     "id": "Kalau begitu hari ini hidup Anda akan berubah!",
+     "literal": "kalau-begitu — hari-ini — Anda-punya — hidup — berubah — akan-pergi!"
+    },
+    {
+     "speaker": "আনি:",
+     "text": "[কাঁটা|kaⁿ-Ta] [অনেক|ô-nék] [শুনেছি|syu-né-chhi]। [আমি|a-mi] [পারব|par-bô] [তো|to]?",
+     "id": "Katanya durinya banyak. Saya bisa nggak ya?",
+     "literal": "duri — banyak — sudah-mendengar. saya — akan-bisa — kan?"
+    },
+    {
+     "speaker": "মিতালি:",
+     "text": "[আস্তে|as-té] [খান|khan]। [আমি|a-mi] [দেখিয়ে|dè-khi-yé] [দিচ্ছি|dic-chhi]।",
+     "id": "Makan pelan-pelan. Saya tunjukkan caranya.",
+     "literal": "pelan — makanlah. saya — menunjukkan — sedang-memberi."
+    },
+    {
+     "speaker": "আনি:",
+     "text": "[আপনি|ap-ni] [আমার|a-mar] [জন্য|jôn-nô] [অনেক|ô-nék] [করেছেন|kô-ré-chhèn], [দিদি|di-di]।",
+     "id": "Anda sudah melakukan banyak hal untuk saya, Kak.",
+     "literal": "Anda — saya-punya — untuk — banyak — sudah-melakukan, kakak."
+    }
+   ],
+   "notes": [
+    "⚠️ **ভাত খেয়েছেন? bukan sekadar pertanyaan — itu sapaan.** Harfiahnya “sudah makan nasi?”, tapi maknanya lebih dekat dengan “apa kabar” dan “saya peduli padamu”. Bahasa Indonesia punya kebiasaan yang persis sama — *sudah makan?* — sehingga kita, tidak seperti penutur bahasa Eropa, tidak perlu diajari apa-apa tentang ini. Jawaban yang wajar: **হ্যাঁ, খেয়েছি** atau **না, এখনো খাইনি**, dan pertanyaan itu sering diikuti tawaran makanan yang sungguh-sungguh.",
+    "**Bentuk “sudah” dibuat dengan menyisipkan -েছ- sebelum akhiran biasa:** করি → কর**েছি**, করেন → কর**েছেন**, করে → কর**েছে**. Sama persis pola unit 8, cuma sisipannya berbeda. ⚠️ Kata kerja yang berakhiran vokal menyisipkan -য়ে-: খাওয়া → **খেয়েছি**, দেওয়া → **দিয়েছি**, পাওয়া → **পেয়েছি**, হওয়া → **হয়েছে**. Dan যাওয়া memendek jadi **গেছি**.",
+    "⚠️ **Penyangkalannya sama sekali tidak memakai না.** Yang benar adalah ekor **-নি** yang ditempel pada batang bentuk masa kini: খেয়েছি → **খাইনি** (belum makan), গেছি → **যাইনি**, দেখেছি → **দেখিনি**, শুনেছি → **শুনিনি**. Perhatikan bahwa batangnya kembali ke bentuk masa kini — খাই + নি, যাই + নি. Ini salah satu bentuk yang paling sering keliru, jadi hafalkan sebagai pasangan: **খেয়েছি ↔ খাইনি**.",
+    "⚠️ **Dan -নি berarti “belum” maupun “tidak” di masa lampau sekaligus.** আমি যাইনি bisa berarti “saya belum pergi” atau “saya tidak pergi”. Untuk menegaskan “belum”, tambahkan **এখনো** *èkhôno*: আমি এখনো যাইনি. Untuk menegaskan “belum pernah”, tambahkan **কখনো** *kôkhôno*: আমি কখনো খাইনি (saya belum pernah makan).",
+    "**Kapan memakai খেলাম dan kapan memakai খেয়েছি?** **খেলাম** untuk peristiwa yang selesai pada waktu tertentu di masa lampau — কাল দুপুরে ভাত খেলাম. **খেয়েছি** untuk sesuatu yang sudah terjadi dan **masih terasa akibatnya sekarang** — আমি খেয়েছি (saya sudah makan, jadi saya tidak lapar). Bedanya sejajar dengan bahasa Indonesia yang memakai kata **sudah**.",
+    "**হয়ে গেছে — “sudah telanjur jadi”.** Bahasa Bengali sering menempelkan **যাওয়া** di belakang kata kerja lain untuk menandai bahwa perubahannya sudah tuntas dan tak bisa ditarik kembali: দেরি হয়ে গেছে (sudah telanjur terlambat), ভুলে গেছি (sudah telanjur lupa), ঘুমিয়ে গেছে (sudah telanjur tidur). ⚠️ Pola ini sangat sering muncul, dan artinya bukan “pergi” sama sekali.",
+    "⚠️ **ইলিশ — ikan hilsa — layak diperlakukan dengan hormat.** Ia ikan nasional Bangladesh, berduri sangat banyak, sangat berminyak, dan dianggap puncak masakan Bengal. Memakannya adalah keterampilan tersendiri: duri dipisahkan dengan lidah, bukan dengan tangan. Kalau kamu tersedak sekali, tidak ada yang akan mengejek; tapi kalau kamu memujinya dengan tulus, kamu akan diingat bertahun-tahun."
+   ],
+   "grammars": [
+    {
+     "title": "Bentuk sudah dan penyangkalannya",
+     "tables": [
+      {
+       "head": [
+        "Kata kerja",
+        "আমি",
+        "আপনি",
+        "সে",
+        "Penyangkalan (আমি)"
+       ],
+       "rows": [
+        [
+         "করা — melakukan",
+         "করেছি",
+         "করেছেন",
+         "করেছে",
+         "করিনি"
+        ],
+        [
+         "দেখা — melihat",
+         "দেখেছি",
+         "দেখেছেন",
+         "দেখেছে",
+         "দেখিনি"
+        ],
+        [
+         "বলা — berkata",
+         "বলেছি",
+         "বলেছেন",
+         "বলেছে",
+         "বলিনি"
+        ],
+        [
+         "শোনা — mendengar",
+         "শুনেছি",
+         "শুনেছেন",
+         "শুনেছে",
+         "শুনিনি"
+        ],
+        [
+         "পড়া — membaca",
+         "পড়েছি",
+         "পড়েছেন",
+         "পড়েছে",
+         "পড়িনি"
+        ],
+        [
+         "যাওয়া — pergi",
+         "গেছি",
+         "গেছেন",
+         "গেছে",
+         "যাইনি"
+        ],
+        [
+         "আসা — datang",
+         "এসেছি",
+         "এসেছেন",
+         "এসেছে",
+         "আসিনি"
+        ],
+        [
+         "খাওয়া — makan",
+         "খেয়েছি",
+         "খেয়েছেন",
+         "খেয়েছে",
+         "খাইনি"
+        ],
+        [
+         "দেওয়া — memberi",
+         "দিয়েছি",
+         "দিয়েছেন",
+         "দিয়েছে",
+         "দিইনি"
+        ],
+        [
+         "পাওয়া — mendapat",
+         "পেয়েছি",
+         "পেয়েছেন",
+         "পেয়েছে",
+         "পাইনি"
+        ],
+        [
+         "হওয়া — terjadi",
+         "হয়েছি",
+         "হয়েছেন",
+         "হয়েছে",
+         "হইনি"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "**Untuk masa lampau yang lebih jauh — “waktu itu sudah …” — tambahkan ছিল:** করেছিলাম, গিয়েছিলাম, খেয়েছিলাম. ⚠️ Bentuk ini dipakai untuk peristiwa yang sudah selesai **sebelum** peristiwa lampau lain, dan untuk masa lampau yang jauh: ছোটবেলায় আমি ঢাকায় গিয়েছিলাম (waktu kecil saya pernah ke Dhaka)."
+     ]
+    },
+    {
+     "title": "Sudah, belum, dan pernah",
+     "table": {
+      "head": [
+       "বাংলা",
+       "Cara baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "আমি খেয়েছি।",
+        "a-mi khé-yé-chhi",
+        "Saya sudah makan."
+       ],
+       [
+        "আমি এখনো খাইনি।",
+        "a-mi è-khô-no khai-ni",
+        "Saya belum makan."
+       ],
+       [
+        "আমি কখনো যাইনি।",
+        "a-mi kô-khô-no jai-ni",
+        "Saya belum pernah pergi."
+       ],
+       [
+        "আপনি কি শুনেছেন?",
+        "ap-ni ki syu-né-chhèn",
+        "Apakah Anda sudah dengar?"
+       ],
+       [
+        "সে এখনো আসেনি।",
+        "sé è-khô-no a-sé-ni",
+        "Dia belum datang."
+       ],
+       [
+        "দেরি হয়ে গেছে।",
+        "dé-ri hô-yé gé-chhé",
+        "Sudah telanjur terlambat."
+       ],
+       [
+        "আমি ভুলে গেছি।",
+        "a-mi bhu-lé gé-chhi",
+        "Saya sudah lupa."
+       ],
+       [
+        "কী হয়েছে?",
+        "ki hô-yé-chhé",
+        "Apa yang terjadi?"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **কী হয়েছে? adalah kalimat yang akan sering kamu dengar dan sering kamu perlukan** — “ada apa?”, “apa yang terjadi?”, atau “kenapa?”. Diucapkan dengan nada lembut, ia jadi ungkapan perhatian; diucapkan cepat, ia jadi pertanyaan mendesak."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kabar, keadaan, dan basa-basi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Cara baca",
+      "Kapan dipakai"
+     ],
+     "rows": [
+      [
+       "ভাত খেয়েছেন?",
+       "bhat khé-yé-chhèn",
+       "Sapaan sehari-hari — bukan sekadar soal makan."
+      ],
+      [
+       "শরীর ভালো আছে?",
+       "syô-rir bha-lo a-chhé",
+       "Sehat? — sapaan kepada orang tua."
+      ],
+      [
+       "বাড়ির সবাই ভালো?",
+       "ba-Rir sô-bai bha-lo",
+       "Keluarga di rumah baik semua?"
+      ],
+      [
+       "অনেক দিন পর!",
+       "ô-nék din pôr",
+       "Lama tidak bertemu!"
+      ],
+      [
+       "কী খবর?",
+       "ki khô-bôr",
+       "Apa kabar? (santai)"
+      ],
+      [
+       "সব ঠিকঠাক?",
+       "sôb Thik-Thak",
+       "Semuanya beres?"
+      ],
+      [
+       "চলছে।",
+       "côl-chhé",
+       "Ya begitulah. (harfiah: berjalan)"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Tentang menjawab basa-basi",
+     "items": [
+      "**চলছে** *côlchhé* — “berjalan” — adalah jawaban paling khas Bengal untuk “apa kabar”. Ia berarti “biasa saja, hidup terus berjalan”, dan jauh lebih sering dipakai daripada “baik sekali”. Menjawab দারুণ! (hebat!) terus-menerus justru terdengar berlebihan.",
+      "**Pertanyaan tentang keluarga bukan kepo.** বাড়ির সবাই ভালো? adalah bagian wajib dari sapaan kepada orang yang sudah dikenal, dan tidak menanyakannya bisa terasa dingin. Jawab saja **সবাই ভালো, আপনার?**",
+      "**অনেক দিন পর!** dipakai bahkan kalau kalian baru bertemu seminggu lalu. Ia bukan pernyataan waktu melainkan ungkapan senang — seperti *ke mana aja?* dalam bahasa Indonesia."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu hal yang layak disimpan tentang unit ini. Bentuk **-েছি** adalah bentuk yang paling sering kamu dengar dalam percakapan nyata, jauh lebih sering daripada bentuk -লাম. Alasannya sederhana: percakapan sehari-hari lebih banyak membicarakan apa yang **sudah** terjadi dan masih terasa akibatnya daripada mencatat kejadian di titik waktu tertentu. Kalau kamu harus memilih satu bentuk lampau untuk dikuasai lebih dulu, pilih yang ini."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bn": "করেছি",
+   "baca": "kô-ré-chhi",
+   "id": "saya sudah melakukan"
+  },
+  {
+   "bn": "গেছি",
+   "baca": "gé-chhi",
+   "id": "saya sudah pergi"
+  },
+  {
+   "bn": "এসেছি",
+   "baca": "é-sé-chhi",
+   "id": "saya sudah datang"
+  },
+  {
+   "bn": "খেয়েছি",
+   "baca": "khé-yé-chhi",
+   "id": "saya sudah makan"
+  },
+  {
+   "bn": "খাইনি",
+   "baca": "khai-ni",
+   "id": "saya belum makan"
+  },
+  {
+   "bn": "-নি",
+   "baca": "-ni",
+   "id": "ekor penyangkal “belum/tidak”"
+  },
+  {
+   "bn": "এখনো",
+   "baca": "è-khô-no",
+   "id": "masih; (dengan -নি) belum"
+  },
+  {
+   "bn": "কখনো",
+   "baca": "kô-khô-no",
+   "id": "pernah; (dengan -নি) belum pernah"
+  },
+  {
+   "bn": "হয়েছে",
+   "baca": "hô-yé-chhé",
+   "id": "sudah terjadi"
+  },
+  {
+   "bn": "হয়ে যাওয়া",
+   "baca": "hô-yé ja-oa",
+   "id": "telanjur menjadi"
+  },
+  {
+   "bn": "ভুলে যাওয়া",
+   "baca": "bhu-lé ja-oa",
+   "id": "lupa"
+  },
+  {
+   "bn": "জানা",
+   "baca": "ja-na",
+   "id": "tahu"
+  },
+  {
+   "bn": "জানতাম",
+   "baca": "jan-tam",
+   "id": "saya dulu tahu, saya sudah duga"
+  },
+  {
+   "bn": "সবসময়",
+   "baca": "sôb-sô-môy",
+   "id": "selalu"
+  },
+  {
+   "bn": "এমন",
+   "baca": "è-môn",
+   "id": "begini, seperti ini"
+  },
+  {
+   "bn": "ইলিশ",
+   "baca": "i-lisy",
+   "id": "ikan hilsa"
+  },
+  {
+   "bn": "কাঁটা",
+   "baca": "kaⁿ-Ta",
+   "id": "duri (ikan)"
+  },
+  {
+   "bn": "জীবন",
+   "baca": "ji-bôn",
+   "id": "hidup, kehidupan"
+  },
+  {
+   "bn": "বদলানো",
+   "baca": "bô-dô-la-no",
+   "id": "berubah, mengganti"
+  },
+  {
+   "bn": "আস্তে",
+   "baca": "as-té",
+   "id": "pelan-pelan"
+  },
+  {
+   "bn": "চলুন",
+   "baca": "cô-lun",
+   "id": "ayo, mari"
+  },
+  {
+   "bn": "শরীর",
+   "baca": "syô-rir",
+   "id": "badan, kesehatan"
+  },
+  {
+   "bn": "খবর",
+   "baca": "khô-bôr",
+   "id": "kabar, berita"
+  },
+  {
+   "bn": "ঠিকঠাক",
+   "baca": "Thik-Thak",
+   "id": "beres, baik-baik saja"
+  },
+  {
+   "bn": "চলছে",
+   "baca": "côl-chhé",
+   "id": "begitulah; sedang berjalan"
+  },
+  {
+   "bn": "দারুণ",
+   "baca": "da-run",
+   "id": "hebat, luar biasa"
+  },
+  {
+   "bn": "ছোটবেলায়",
+   "baca": "cho-To-bè-lay",
+   "id": "waktu kecil"
+  },
+  {
+   "bn": "পর",
+   "baca": "pôr",
+   "id": "sesudah"
+  },
+  {
+   "bn": "অপেক্ষা",
+   "baca": "ô-pék-kha",
+   "id": "penantian"
+  },
+  {
+   "bn": "দেখানো",
+   "baca": "dè-kha-no",
+   "id": "menunjukkan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah jadi bentuk “sudah” untuk আমি.",
+   "items": [
+    "আমি খাই। → আমি ____ ।",
+    "আমি যাই। → আমি ____ ।",
+    "আমি দেখি। → আমি ____ ।",
+    "আমি শুনি। → আমি ____ ।",
+    "আমি আসি। → আমি ____ ।"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi penyangkalan dengan -নি.",
+   "items": [
+    "আমি খেয়েছি।",
+    "সে এসেছে।",
+    "আমি দেখেছি।",
+    "আমরা গেছি।"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "খেয়েছেন / ভাত / কি / আপনি",
+    "খাইনি / এখনো / আমি",
+    "গেছে / হয়ে / দেরি",
+    "খাইনি / কখনো / ইলিশ / আমি",
+    "করেছেন / অপেক্ষা / আমার জন্য / আপনি"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Bengali.",
+   "items": [
+    "Sudah makan?",
+    "Belum, saya belum makan.",
+    "Saya belum pernah ke Dhaka.",
+    "Dia belum datang.",
+    "Apa yang terjadi?",
+    "Saya sudah lupa."
+   ]
+  }
+ ],
+ "answers": [
+  "খেয়েছি — গেছি — দেখেছি — শুনেছি — এসেছি",
+  "আমি খাইনি। — সে আসেনি। — আমি দেখিনি। — আমরা যাইনি।",
+  "আপনি কি ভাত খেয়েছেন? — আমি এখনো খাইনি। — দেরি হয়ে গেছে। — আমি কখনো ইলিশ খাইনি। — আপনি আমার জন্য অপেক্ষা করেছেন।",
+  "ভাত খেয়েছেন? — না, এখনো খাইনি। — আমি কখনো ঢাকায় যাইনি। — সে এখনো আসেনি। — কী হয়েছে? — আমি ভুলে গেছি।"
+ ]
+}

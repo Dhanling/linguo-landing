@@ -1,0 +1,193 @@
+{
+ "title": "Sedang apa? — perbuatan yang berlangsung",
+ "title_target": "কী করছেন? — ki kôr-chhèn?",
+ "goal": "Mengatakan apa yang sedang terjadi sekarang dengan akhiran -ছি, dan mempelajari kebiasaan Bengali yang tidak dimiliki bahasa Indonesia: berpamitan dengan kata “saya datang”, bukan “saya pergi”.",
+ "bekal": [
+  "membentuk bentuk sedang: করছি, যাচ্ছি, খাচ্ছি",
+  "membedakan আমি করি (kebiasaan) dari আমি করছি (sekarang)",
+  "memakai bentuk sedang untuk rencana dekat",
+  "berbicara di telepon dengan kalimat baku",
+  "berpamitan dengan আসি dan আসছি"
+ ],
+ "dialogs": [
+  {
+   "title": "কথোপকথন — Menelepon dari pasar",
+   "intro": "Ani menelepon Mitali dari pasar karena lupa nama sayur yang harus dibeli. Perhatikan akhiran -ছি yang muncul di hampir setiap baris — itulah tanda bahwa perbuatannya sedang berlangsung saat itu juga.",
+   "lines": [
+    {"speaker":"মিতালি:","text":"[হ্যালো|hêa-lo], [আনি|a-ni]? [কোথায়|ko-thay] [আছেন|a-chhèn]?","id":"Halo, Ani? Di mana?","literal":"halo, ani? di-mana — berada?"},
+    {"speaker":"আনি:","text":"[আমি|a-mi] [বাজারে|ba-ja-ré] [আছি|a-chhi]। [সবজি|sôb-ji] [কিনছি|kin-chhi]।","id":"Saya di pasar. Sedang beli sayur.","literal":"saya — pasar-di — berada. sayur — sedang-membeli."},
+    {"speaker":"মিতালি:","text":"[ভালো|bha-lo]! [আম্মা|am-ma] [এখন|è-khôn] [রান্না|ran-na] [করছেন|kôr-chhèn]।","id":"Bagus! Ibu sekarang sedang masak.","literal":"baik! ibu — sekarang — masakan — sedang-melakukan."},
+    {"speaker":"আনি:","text":"[কী|ki] [রান্না|ran-na] [করছেন|kôr-chhèn]? [গন্ধ|gôn-dhô] [এখান|è-khan] [থেকে|thè-kè] [পাচ্ছি|pac-chhi] [না|na] [তো|to]!","id":"Masak apa? Baunya tidak sampai sini lho!","literal":"apa — masakan — sedang-melakukan? bau — sini — dari — sedang-mendapat — tidak — kan!"},
+    {"speaker":"মিতালি:","text":"[হা|ha] [হা|ha]! [মাছ|machh] [ভাজছেন|bhaj-chhèn]। [আপনি|ap-ni] [কী|ki] [খুঁজছেন|khuⁿj-chhèn]?","id":"Ha ha! Sedang menggoreng ikan. Anda sedang cari apa?","literal":"ha ha! ikan — sedang-menggoreng. Anda — apa — sedang-mencari?"},
+    {"speaker":"আনি:","text":"[সেই|séi] [সবুজ|sô-buj] [সবজিটার|sôb-ji-Tar] [নাম|nam] [ভুলে|bhu-lé] [গেছি|gé-chhi]।","id":"Saya lupa nama sayur hijau itu.","literal":"itu — hijau — sayur-itu-punya — nama — lupa — sudah-pergi."},
+    {"speaker":"মিতালি:","text":"[লাউ|lau]? [নাকি|na-ki] [পুঁইশাক|puⁿi-syak]? [একটু|èk-Tu] [ছবি|chhô-bi] [পাঠান|pa-Than]।","id":"Labu? Atau daun pui? Coba kirim foto.","literal":"labu? atau — daun-pui? sedikit — foto — kirimlah."},
+    {"speaker":"আনি:","text":"[পাঠাচ্ছি|pa-Thac-chhi]। [দাঁড়ান|daⁿ-Ran], [দোকানদার|do-kan-dar] [ডাকছেন|Dak-chhèn]।","id":"Sedang saya kirim. Sebentar, penjualnya memanggil.","literal":"sedang-mengirim. tunggulah, penjual — sedang-memanggil."},
+    {"speaker":"মিতালি:","text":"[ঠিক|Thik] [আছে|a-chhé]। [আমি|a-mi] [অপেক্ষা|ô-pék-kha] [করছি|kôr-chhi]।","id":"Baik. Saya menunggu.","literal":"beres — ada. saya — penantian — sedang-melakukan."},
+    {"speaker":"আনি:","text":"[পেয়েছেন|pé-yé-chhèn]? [এটাই|è-Ta-i] [তো|to]?","id":"Sudah dapat? Ini kan?","literal":"sudah-mendapat? ini-lah — kan?"},
+    {"speaker":"মিতালি:","text":"[হ্যাঁ|hèⁿ], [ওটা|o-Ta] [লাউ|lau]। [দুটো|du-To] [নিন|nin]। [আপনি|ap-ni] [কখন|kô-khôn] [ফিরছেন|phir-chhèn]?","id":"Ya, itu labu. Ambil dua. Anda pulang jam berapa?","literal":"ya, itu — labu. dua-buah — ambillah. Anda — kapan — sedang-pulang?"},
+    {"speaker":"আনি:","text":"[এখনই|è-khôn-i] [আসছি|as-chhi]। [দশ|dôsy] [মিনিট|mi-niT]!","id":"Sekarang juga saya pulang. Sepuluh menit!","literal":"sekarang-lah — sedang-datang. sepuluh — menit!"}
+   ],
+   "notes": [
+    "**Bentuk sedang dibuat dengan menyisipkan -ছ- sebelum akhiran biasa.** করি → কর**ছি**, করেন → কর**ছেন**, করে → কর**ছে**. Empat akhiran yang sudah kamu hafal di unit 6 tetap sama; yang baru cuma satu suku kata di tengah. ⚠️ Untuk kata kerja yang berakhiran vokal, ছ berlipat jadi চ্ছ: যাওয়া → **যাচ্ছি**, খাওয়া → **খাচ্ছি**, পাঠানো → **পাঠাচ্ছি**.",
+    "**Perbedaan করি dan করছি sama persis dengan “saya kerja” dan “saya sedang kerja”.** আমি রোজ কাজ করি (saya bekerja tiap hari — kebiasaan) melawan আমি এখন কাজ করছি (saya sedang bekerja sekarang). Bahasa Indonesia menandainya dengan kata *sedang*; bahasa Bengali dengan sisipan. Karena kita sudah punya kebiasaan membedakan keduanya, unit ini seharusnya terasa mudah.",
+    "⚠️ **Bahasa Bengali memakai bentuk sedang jauh lebih sering daripada bahasa Indonesia memakai “sedang”.** আমি বুঝছি না terdengar lebih wajar daripada আমি বুঝি না dalam percakapan langsung. Kalau ragu di tengah pembicaraan tatap muka, bentuk sedang hampir selalu pilihan yang aman.",
+    "**Bentuk sedang juga dipakai untuk rencana yang sudah pasti.** আমি কাল যাচ্ছি berarti “besok saya berangkat” — bukan “besok saya sedang berangkat”. Sama persis dengan kebiasaan bahasa Indonesia: “besok saya pergi”, atau bahasa Inggris *I'm leaving tomorrow*. ⚠️ Yang membedakannya dari masa depan sungguhan (unit 18) adalah kepastiannya: যাচ্ছি berarti tiketnya sudah ada.",
+    "⚠️ **Kata kerja yang menaikkan vokalnya menaikkannya di SEMUA orang pada bentuk sedang.** Di masa kini biasa, শোনা cuma naik pada আমি (শুনি, tapi তুমি শোনো). Di bentuk sedang, semuanya naik: **শুনছি, শুনছ, শুনছেন, শুনছে**. Begitu juga বুঝছি, লিখছি, দিচ্ছি, নিচ্ছি. Ini justru menyederhanakan — satu batang untuk seluruh baris.",
+    "**Berpamitan dengan “saya datang”, bukan “saya pergi”.** Kalimat perpisahan yang paling sering terdengar bukan “saya pergi” melainkan **আসি** (*a-si* — saya datang) atau **আসছি** (saya sedang datang). Alasannya kuno dan masih terasa: mengucapkan “saya pergi” dianggap membawa sial, seolah-olah kamu tidak akan kembali. ⚠️ Kalau seseorang berkata আসি sambil melambaikan tangan, ia sedang berpamitan, bukan mengumumkan kedatangan.",
+    "**Berbicara di telepon punya kalimatnya sendiri.** হ্যালো untuk mengangkat, **কে বলছেন?** (siapa yang berbicara?), **একটু ধরুন** (tunggu sebentar — harfiah “pegang sedikit”), **শুনতে পাচ্ছি না** (saya tidak bisa mendengar), **রাখছি** (saya tutup teleponnya — harfiah “saya menaruh”). Empat kalimat ini akan menutupi hampir semua percakapan telepon pemula."
+   ],
+   "grammars": [
+    {
+     "title": "Bentuk sedang — ঘটমান বর্তমান",
+     "tables": [
+      {
+       "head":["Kata kerja","আমি","তুমি","আপনি","সে"],
+       "rows":[
+        ["করা — melakukan","করছি","করছ","করছেন","করছে"],
+        ["যাওয়া — pergi","যাচ্ছি","যাচ্ছ","যাচ্ছেন","যাচ্ছে"],
+        ["আসা — datang","আসছি","আসছ","আসছেন","আসছে"],
+        ["খাওয়া — makan","খাচ্ছি","খাচ্ছ","খাচ্ছেন","খাচ্ছে"],
+        ["বলা — berkata","বলছি","বলছ","বলছেন","বলছে"],
+        ["পড়া — membaca","পড়ছি","পড়ছ","পড়ছেন","পড়ছে"],
+        ["শোনা — mendengar","শুনছি","শুনছ","শুনছেন","শুনছে"],
+        ["বোঝা — mengerti","বুঝছি","বুঝছ","বুঝছেন","বুঝছে"],
+        ["লেখা — menulis","লিখছি","লিখছ","লিখছেন","লিখছে"],
+        ["দেওয়া — memberi","দিচ্ছি","দিচ্ছ","দিচ্ছেন","দিচ্ছে"],
+        ["নেওয়া — mengambil","নিচ্ছি","নিচ্ছ","নিচ্ছেন","নিচ্ছে"],
+        ["থাকা — tinggal","থাকছি","থাকছ","থাকছেন","থাকছে"]
+       ]
+      }
+     ],
+     "after": [
+      "**Penyangkalannya tetap না di ujung:** আমি বুঝছি না (saya tidak sedang mengerti), সে আসছে না (dia tidak datang). ⚠️ Tidak ada bentuk khusus untuk penyangkalan; kaidah unit 6 berlaku apa adanya."
+     ]
+    },
+    {
+     "title": "Kalimat telepon dan sapaan sehari-hari",
+     "table": {
+      "head":["বাংলা","Cara baca","Artinya"],
+      "rows":[
+       ["হ্যালো, কে বলছেন?","hêa-lo, ké bôl-chhèn","Halo, siapa yang bicara?"],
+       ["একটু ধরুন।","èk-Tu dhô-run","Tunggu sebentar."],
+       ["শুনতে পাচ্ছি না।","syun-té pac-chhi na","Saya tidak bisa mendengar."],
+       ["আবার বলুন।","a-bar bô-lun","Tolong ulangi."],
+       ["পরে ফোন করছি।","pô-ré phon kôr-chhi","Nanti saya telepon."],
+       ["রাখছি, ভালো থাকবেন।","rakh-chhi, bha-lo thak-bèn","Saya tutup ya, jaga diri."],
+       ["আসি।","a-si","Saya pamit."],
+       ["আসছি।","as-chhi","Saya pamit (akan kembali)."],
+       ["ভালো থাকবেন।","bha-lo thak-bèn","Jaga diri baik-baik."]
+      ]
+     },
+     "after": [
+      "⚠️ **ভালো থাকবেন adalah perpisahan yang paling hangat dan paling aman** untuk siapa pun — harfiah “semoga Anda tetap baik”. Ia lebih sering dipakai daripada আল্লাহ হাফেজ atau নমস্কার dalam percakapan sehari-hari, dan cocok untuk penjual, tetangga, maupun atasan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di pasar sayur",
+   "blocks": [
+    {"type":"tabel","head":["বাংলা","Cara baca","Artinya","বাংলা","Cara baca","Artinya"],"rows":[
+     ["সবজি","sôb-ji","sayur","আলু","a-lu","kentang"],
+     ["মাছ","machh","ikan","পেঁয়াজ","péⁿ-yaj","bawang merah"],
+     ["মাংস","mang-sô","daging","রসুন","rô-sun","bawang putih"],
+     ["ডিম","Dim","telur","আদা","a-da","jahe"],
+     ["চাল","cal","beras","লঙ্কা · মরিচ","lông-ka · mô-ric","cabai"],
+     ["ভাত","bhat","nasi","লাউ","lau","labu"],
+     ["ডাল","Dal","kacang lentil","শাক","syak","daun sayur"],
+     ["তেল","tél","minyak","টমেটো","Tô-mé-To","tomat"],
+     ["লবণ","lô-bôn","garam","ফল","phôl","buah"],
+     ["চিনি","ci-ni","gula","আম","am","mangga"]
+    ]},
+    {"type":"kotak","title":"⚠️ Ikan bukan sekadar lauk","items":[
+     "**মাছে ভাতে বাঙালি** (*ma-chhé bha-té ban-ga-li*) — “orang Bengali itu ikan dan nasi”. Peribahasa ini bukan lelucon: ikan dan nasi adalah inti makanan sehari-hari, dan bertanya kepada seseorang ikan apa yang paling ia suka adalah pembuka percakapan yang selalu berhasil.",
+     "**ইলিশ** *ilisy* — ikan hilsa, ikan paling dipuja di Bengal, dan harganya bisa membuat pemula terkejut. Menyebutnya dengan penuh hormat akan langsung membuatmu terdengar seperti orang dalam.",
+     "**Di pasar, ikan dijual per কেজি dan sering dipotong di tempat.** Kalimat yang berguna: **কেটে দিন** (*kè-Té din* — tolong dipotong) dan **আজকের মাছ?** (*aj-kér machh* — ikan hari ini?)."
+    ]},
+    {"type":"p","text":"Satu kebiasaan yang menyenangkan di pasar Bengal: penjual hampir selalu memberi **sedikit tambahan gratis** sesudah timbangan — sehelai daun ketumbar, sebuah cabai, sepotong jahe. Namanya tidak resmi, tapi maknanya jelas: kamu pelanggan, bukan sekadar pembeli. Menerimanya dengan ucapan **ধন্যবাদ** dan senyum akan membuat kunjungan berikutnya jauh lebih hangat, dan sering kali juga lebih murah."}
+   ]
+  }
+ ],
+ "vocab": [
+  {"bn":"করছি","baca":"kôr-chhi","id":"sedang melakukan"},
+  {"bn":"যাচ্ছি","baca":"jac-chhi","id":"sedang pergi"},
+  {"bn":"আসছি","baca":"as-chhi","id":"sedang datang; pamit"},
+  {"bn":"খাচ্ছি","baca":"khac-chhi","id":"sedang makan"},
+  {"bn":"কেনা","baca":"kè-na","id":"membeli"},
+  {"bn":"বেচা","baca":"bè-ca","id":"menjual"},
+  {"bn":"খোঁজা","baca":"khoⁿ-ja","id":"mencari"},
+  {"bn":"পাঠানো","baca":"pa-Tha-no","id":"mengirim"},
+  {"bn":"পাওয়া","baca":"pa-oa","id":"mendapat"},
+  {"bn":"ডাকা","baca":"Da-ka","id":"memanggil"},
+  {"bn":"অপেক্ষা করা","baca":"ô-pék-kha kô-ra","id":"menunggu"},
+  {"bn":"ভাজা","baca":"bha-ja","id":"menggoreng"},
+  {"bn":"ভুলে যাওয়া","baca":"bhu-lé ja-oa","id":"lupa"},
+  {"bn":"ধরা","baca":"dhô-ra","id":"memegang; menunggu (telepon)"},
+  {"bn":"রাখা","baca":"ra-kha","id":"menaruh; menutup telepon"},
+  {"bn":"এখন","baca":"è-khôn","id":"sekarang"},
+  {"bn":"এখনই","baca":"è-khôn-i","id":"sekarang juga"},
+  {"bn":"পরে","baca":"pô-ré","id":"nanti, kemudian"},
+  {"bn":"নাকি","baca":"na-ki","id":"atau; apakah"},
+  {"bn":"গন্ধ","baca":"gôn-dhô","id":"bau, aroma"},
+  {"bn":"সবজি","baca":"sôb-ji","id":"sayur"},
+  {"bn":"মাছ","baca":"machh","id":"ikan"},
+  {"bn":"ভাত","baca":"bhat","id":"nasi"},
+  {"bn":"ডাল","baca":"Dal","id":"kacang lentil; masakan dal"},
+  {"bn":"আলু","baca":"a-lu","id":"kentang"},
+  {"bn":"পেঁয়াজ","baca":"péⁿ-yaj","id":"bawang merah"},
+  {"bn":"লঙ্কা · মরিচ","baca":"lông-ka · mô-ric","id":"cabai"},
+  {"bn":"সবুজ","baca":"sô-buj","id":"hijau"},
+  {"bn":"ভালো থাকবেন","baca":"bha-lo thak-bèn","id":"jaga diri baik-baik"},
+  {"bn":"হ্যালো","baca":"hêa-lo","id":"halo (telepon)"}
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah jadi bentuk sedang.",
+   "items": [
+    "আমি চা খাই। → আমি চা ____ ।",
+    "সে বাজারে যায়। → সে বাজারে ____ ।",
+    "আপনি কী করেন? → আপনি কী ____ ?",
+    "আমি বই পড়ি। → আমি বই ____ ।",
+    "আমি শুনি। → আমি ____ ।"
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk biasa atau bentuk sedang.",
+   "items": [
+    "আমি রোজ ছটায় (উঠি · উঠছি)।",
+    "এখন আম্মা রান্না (করেন · করছেন)।",
+    "সে রোজ বাসে (যায় · যাচ্ছে)।",
+    "দাঁড়ান, আমি (আসি · আসছি)।"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "করছি / আমি / অপেক্ষা",
+    "না / পাচ্ছি / শুনতে",
+    "করছেন / রান্না / কী / আম্মা",
+    "আসছি / দশ / এখনই / মিনিট",
+    "কিনছি / বাজারে / সবজি / আমি"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Bengali.",
+   "items": [
+    "Anda sedang apa?",
+    "Saya sedang beli sayur.",
+    "Saya tidak bisa mendengar.",
+    "Tunggu sebentar, saya sedang datang.",
+    "Ibu sedang menggoreng ikan.",
+    "Nanti saya telepon."
+   ]
+  }
+ ],
+ "answers": [
+  "খাচ্ছি — যাচ্ছে — করছেন — পড়ছি — শুনছি",
+  "উঠি — করছেন — যায় — আসছি",
+  "আমি অপেক্ষা করছি। — শুনতে পাচ্ছি না। — আম্মা কী রান্না করছেন? — এখনই আসছি, দশ মিনিট। — আমি বাজারে সবজি কিনছি।",
+  "আপনি কী করছেন? — আমি সবজি কিনছি। — শুনতে পাচ্ছি না। — একটু ধরুন, আমি আসছি। — আম্মা মাছ ভাজছেন। — পরে ফোন করছি।"
+ ]
+}

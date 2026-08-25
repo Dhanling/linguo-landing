@@ -1,0 +1,202 @@
+{
+ "title": "Berhitung — angka dan kata bantu bilangan",
+ "title_target": "কয়টা? কতজন? — kôy-Ta? kôtô-jôn?",
+ "goal": "Berhitung dari satu sampai seratus, dan memakai kata bantu bilangan -টা dan -জন — sesuatu yang sudah kita punya dalam bahasa Indonesia sebagai “sebuah” dan “seorang”.",
+ "bekal": [
+  "menghitung ১ sampai ২০ dan puluhan sampai ১০০",
+  "membaca angka Bengali ০ ১ ২ ৩ ৪ ৫ ৬ ৭ ৮ ৯",
+  "memasang -টা untuk benda dan -জন untuk orang",
+  "menanyakan কয়টা (berapa buah) dan কতজন (berapa orang)",
+  "mengerti লাখ dan কোটি yang tidak dipakai bahasa Indonesia"
+ ],
+ "dialogs": [
+  {
+   "title": "কথোপকথন — Di toko kue manis",
+   "intro": "Ani diajak Mitali membeli মিষ্টি — kue manis khas Bengal — untuk tamu sore nanti. Perhatikan bahwa tiap angka selalu ditempeli ekor kecil sebelum menyebut bendanya: itulah kata bantu bilangan.",
+   "lines": [
+    {"speaker":"দোকানদার:","text":"[বলুন|bô-lun] [আপা|a-pa], [কী|ki] [লাগবে|lag-bé]?","id":"Silakan Kak, perlu apa?","literal":"katakan — kakak, apa — akan-diperlukan?"},
+    {"speaker":"মিতালি:","text":"[দশটা|dôsy-Ta] [রসগোল্লা|rôsy-gôl-la] [দিন|din], [আর|ar] [পাঁচটা|paⁿc-Ta] [সন্দেশ|sôn-désy]।","id":"Beri sepuluh rosgolla, dan lima sondesh.","literal":"sepuluh-buah — rosgolla — berikan, dan — lima-buah — sondesh."},
+    {"speaker":"দোকানদার:","text":"[আচ্ছা|ac-cha]। [বাড়িতে|ba-Ri-té] [কতজন|kô-tô-jôn] [অতিথি|ô-ti-thi]?","id":"Baik. Di rumah berapa orang tamu?","literal":"baik. rumah-di — berapa-orang — tamu?"},
+    {"speaker":"মিতালি:","text":"[ছয়জন|chhôy-jôn]। [আর|ar] [আমরা|am-ra] [চারজন|car-jôn]।","id":"Enam orang. Dan kami berempat.","literal":"enam-orang. dan — kami — empat-orang."},
+    {"speaker":"আনি:","text":"[মিতালি|mi-ta-li] [দিদি|di-di], [এটা|è-Ta] [কয়টা|kôy-Ta]?","id":"Kak Mitali, ini berapa buah?","literal":"mitali — kakak, ini — berapa-buah?"},
+    {"speaker":"মিতালি:","text":"[ওই|oi] [বাক্সে|bak-sé] [বারোটা|ba-ro-Ta] [আছে|a-chhé]। [এক|èk] [ডজন|Dô-jôn]।","id":"Di kotak itu ada dua belas. Satu lusin.","literal":"itu — kotak-di — dua-belas-buah — ada. satu — lusin."},
+    {"speaker":"আনি:","text":"[আমি|a-mi] [তিনটা|tin-Ta] [নেব|né-bô]। [ঘরে|ghô-ré] [খাব|kha-bô]।","id":"Saya ambil tiga. Akan saya makan di kamar.","literal":"saya — tiga-buah — akan-ambil. kamar-di — akan-makan."},
+    {"speaker":"দোকানদার:","text":"[সব|sôb] [মিলে|mi-lé] [আঠারোটা|a-Tha-ro-Ta]। [দুশো|du-syo] [সত্তর|sôt-tôr] [টাকা|Ta-ka]।","id":"Semuanya delapan belas. Dua ratus tujuh puluh taka.","literal":"semua — bercampur — delapan-belas-buah. dua-ratus — tujuh-puluh — taka."},
+    {"speaker":"আনি:","text":"[দুশো|du-syo] [সত্তর|sôt-tôr]? [একটু|èk-Tu] [আস্তে|as-té] [বলুন|bô-lun]!","id":"Dua ratus tujuh puluh? Tolong bicara pelan sedikit!","literal":"dua-ratus — tujuh-puluh? sedikit — pelan — katakan!"},
+    {"speaker":"দোকানদার:","text":"[হা|ha] [হা|ha]! [দুই|dui]-[শো|syo]-[সত্তর|sôt-tôr]। [এই|èi] [যে|jé], [কাগজে|ka-gô-jé] [লিখে|li-khé] [দিচ্ছি|dic-chi] — ২৭০।","id":"Ha ha! Du-a ra-tus tu-juh pu-luh. Ini, saya tuliskan di kertas — 270.","literal":"ha ha! dua-ratus-tujuh-puluh. ini — yang, kertas-di — menulis — sedang-memberi — 270."},
+    {"speaker":"আনি:","text":"[ধন্যবাদ|dhôn-nô-bad]! [বাংলা|bang-la] [সংখ্যাও|sông-khôo] [শিখছি|syikh-chi]।","id":"Terima kasih! Angka Bengali juga sedang saya pelajari.","literal":"terima-kasih! bengali — angka-juga — sedang-belajar."},
+    {"speaker":"দোকানদার:","text":"[খুব|khub] [ভালো|bha-lo]! [তাহলে|ta-hô-lé] [আরও|a-ro] [একটা|èk-Ta] [ফ্রি|phri]।","id":"Bagus sekali! Kalau begitu satu lagi gratis.","literal":"sangat — baik! kalau-begitu — lagi — satu-buah — gratis."}
+   ],
+   "notes": [
+    "**Angka tidak pernah berdiri langsung di depan benda — selalu ada ekor di antaranya.** Kamu tidak boleh berkata *তিন বই*; yang benar **তিনটা বই** (tiga buah buku). Ekor itu bernama kata bantu bilangan, dan bahasa Indonesia punya persis hal yang sama: *tiga **buah** buku*, *lima **orang** tamu*, *dua **ekor** kucing*, *sebatang rokok*. Penutur bahasa Inggris harus dilatih berbulan-bulan untuk ini; kita tinggal memindahkan kebiasaan yang sudah ada.",
+    "**Dua ekor mengurus sembilan puluh persen keperluanmu: -টা untuk benda, -জন untuk orang.** একটা বই (sebuah buku), দুটো আম (dua buah mangga), তিনজন ছাত্র (tiga orang mahasiswa), কতজন? (berapa orang?). ⚠️ Untuk orang **jangan pernah** memakai -টা — একটা লোক terdengar seperti menyebut orang sebagai barang.",
+    "⚠️ **Beberapa gabungan angka + ekor berubah bentuk dan harus dihafal seperti kata baru.** এক + টা = **একটা**; দুই + টা = **দুটো** (bukan *দুইটা*); দুই + জন = **দুজন** (bukan *দুইজন*); তিন + টা = **তিনটে · তিনটা**. Sesudah angka tiga, gabungannya jadi teratur lagi: চারটা, পাঁচটা, ছয়টা.",
+    "**Angka satu sampai seratus masing-masing kata sendiri — dan tidak ada jalan pintas.** Tidak seperti bahasa Indonesia yang menyusun “dua puluh tiga” dari tiga potongan, bahasa Bengali punya kata utuh untuk tiap angka: ২১ **একুশ**, ২২ **বাইশ**, ২৩ **তেইশ**. ⚠️ Kabar baiknya, untuk tingkat A1 kamu **cukup hafal ১–২০ dan puluhannya**; sisanya bisa kamu tebak dari kemiripan, dan orang akan mengerti kalau kamu berkata বিশ-তিন sambil menunjukkan jari.",
+    "⚠️ **লাখ dan কোটি — dua satuan yang sama sekali tidak dipakai bahasa Indonesia.** Sesudah হাজার (ribu), bahasa Bengali tidak lompat ke “juta”, melainkan ke **লাখ** *lakh* = **seratus ribu**, lalu **কোটি** *koTi* = **sepuluh juta**. Jadi harga rumah disebut “tiga puluh lakh”, bukan “tiga juta”. Kalau kamu mendengar angka yang terdengar mustahil, kemungkinan besar satuannya yang berbeda, bukan harganya.",
+    "**Angka Bengali masih hidup di jalanan.** Nomor bus, harga di papan pasar, nomor rumah, dan nomor halaman buku sering ditulis ০ ১ ২ ৩ ৪ ৫ ৬ ৭ ৮ ৯. Bentuknya cuma sepuluh dan beberapa mirip angka yang sudah kamu kenal — ২ mirip angka dua terbalik, ৪ mirip angka delapan yang belum jadi. Satu sore menghafalnya sudah cukup, dan hasilnya langsung terasa.",
+    "**একটু আস্তে বলুন — kalimat penyelamat untuk angka.** Angka adalah bagian percakapan yang paling cepat diucapkan orang, di bahasa mana pun. Jangan malu meminta diulang, dan jangan segan meminta ditulis: **লিখে দিন** (*li-khé din* — tolong tuliskan). Pedagang mana pun akan melakukannya dengan senang hati, dan kalkulator ponsel adalah sahabat yang sah."
+   ],
+   "grammars": [
+    {
+     "title": "Satu sampai dua puluh",
+     "tables": [
+      {
+       "head":["Angka","বাংলা","Cara baca","Angka","বাংলা","Cara baca"],
+       "rows":[
+        ["১ — 1","এক","èk","১১ — 11","এগারো","è-ga-ro"],
+        ["২ — 2","দুই","dui","১২ — 12","বারো","ba-ro"],
+        ["৩ — 3","তিন","tin","১৩ — 13","তেরো","té-ro"],
+        ["৪ — 4","চার","car","১৪ — 14","চোদ্দ","cod-dô"],
+        ["৫ — 5","পাঁচ","paⁿc","১৫ — 15","পনেরো","pô-né-ro"],
+        ["৬ — 6","ছয়","chhôy","১৬ — 16","ষোলো","syo-lo"],
+        ["৭ — 7","সাত","sat","১৭ — 17","সতেরো","sô-té-ro"],
+        ["৮ — 8","আট","aT","১৮ — 18","আঠারো","a-Tha-ro"],
+        ["৯ — 9","নয়","nôy","১৯ — 19","ঊনিশ","u-nisy"],
+        ["১০ — 10","দশ","dôsy","২০ — 20","বিশ · কুড়ি","bisy · ku-Ri"]
+       ]
+      },
+      {
+       "head":["Puluhan","বাংলা","Cara baca","Satuan besar","বাংলা","Cara baca"],
+       "rows":[
+        ["৩০ — 30","ত্রিশ","trisy","১০০ — seratus","একশো","èk-syo"],
+        ["৪০ — 40","চল্লিশ","côl-lisy","২০০ — dua ratus","দুশো","du-syo"],
+        ["৫০ — 50","পঞ্চাশ","pôn-casy","১০০০ — seribu","হাজার","ha-jar"],
+        ["৬০ — 60","ষাট","syaT","১০০.০০০","লাখ","lakh"],
+        ["৭০ — 70","সত্তর","sôt-tôr","১০.০০০.০০০","কোটি","ko-Ti"],
+        ["৮০ — 80","আশি","a-syi","setengah","আধা","a-dha"],
+        ["৯০ — 90","নব্বই","nôb-boi","nol","শূন্য","syun-nô"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **আশি (80) dan আশা (harapan) beda satu huruf saja** — perhatikan baik-baik. Begitu juga **নয়** yang berarti “sembilan” dan **নয়** yang berarti “bukan”: dua kata yang ditulis sama persis, dan hanya letaknya dalam kalimat yang membedakan."
+     ]
+    },
+    {
+     "title": "Kata bantu bilangan",
+     "table": {
+      "head":["Ekor","Untuk apa","Contoh","Cara baca","Artinya"],
+      "rows":[
+       ["-টা · -টি","benda apa pun","একটা বই","èk-Ta bôi","sebuah buku"],
+       ["-জন","orang","তিনজন ছাত্র","tin-jôn chha-trô","tiga orang mahasiswa"],
+       ["-খানা · -খানি","benda pipih","দুখানা কাগজ","du-kha-na ka-gôj","dua lembar kertas"],
+       ["-টুকরো","potongan","একটুকরো কেক","èk-Tuk-ro kék","sepotong kue"],
+       ["কাপ · গ্লাস","cangkir · gelas","দুকাপ চা","du-kap ca","dua cangkir teh"],
+       ["কেজি · লিটার","kilo · liter","তিন কেজি চাল","tin ké-ji cal","tiga kilo beras"],
+       ["জোড়া","pasang","এক জোড়া জুতো","èk jo-Ra ju-to","sepasang sepatu"],
+       ["কয়টা · কটা","berapa buah","কয়টা আম?","kôy-Ta am","berapa buah mangga?"],
+       ["কতজন","berapa orang","কতজন এসেছে?","kô-tô-jôn é-sè-chhé","berapa orang yang datang?"]
+      ]
+     },
+     "after": [
+      "**কত** *kôt* sendirian berarti “berapa banyak” dan dipakai untuk yang tak terhitung — কত টাকা? (berapa uang?), কত দূর? (berapa jauh?). Untuk yang bisa dihitung, tambahkan ekornya: **কয়টা** (berapa buah), **কতজন** (berapa orang)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Angka dalam kehidupan sehari-hari",
+   "blocks": [
+    {"type":"tabel","head":["Kalimat","Cara baca","Artinya"],"rows":[
+     ["আমার বয়স আঠাশ।","a-mar bô-yôsy a-Tha-sy","Umur saya dua puluh delapan."],
+     ["আমাদের পরিবারে পাঁচজন।","a-ma-dér pô-ri-ba-ré paⁿc-jôn","Keluarga kami lima orang."],
+     ["দুকাপ চা দিন।","du-kap ca din","Beri dua cangkir teh."],
+     ["এটার দাম কত?","è-Tar dam kôt","Ini harganya berapa?"],
+     ["আমার ঘর তিন নম্বর।","a-mar ghôr tin nôm-bôr","Kamar saya nomor tiga."],
+     ["আমি দশ দিন থাকব।","a-mi dôsy din thak-bô","Saya akan tinggal sepuluh hari."]
+    ]},
+    {"type":"kotak","title":"Kue manis Bengal — sekalian menghitungnya","items":[
+     "**রসগোল্লা** *rôsygôlla* — bola keju bulat dalam air gula, kenyal dan basah. Kebanggaan Bengal, dan diperebutkan Bangladesh dengan Benggala Barat sampai ke pengadilan hak paten.",
+     "**সন্দেশ** *sôndésy* — kue keju padat yang lebih kering dan lebih halus; biasanya dijual per potong dan dibungkus kotak untuk oleh-oleh.",
+     "**মিষ্টি দই** *misyTi dôi* — yoghurt manis dalam mangkuk tanah liat. ⚠️ Ini bukan penutup biasa; menolaknya di rumah orang bisa terasa seperti menolak keramahan tuan rumah.",
+     "**Membawa মিষ্টি saat bertamu adalah kebiasaan, bukan kemewahan.** Satu kotak kecil sudah cukup, dan tuan rumah akan menghitungnya di depanmu — jadi angka di unit ini akan langsung terpakai."
+    ]},
+    {"type":"p","text":"Satu catatan tentang uang. Mata uang Bangladesh adalah **টাকা** *Taka*, dan mata uang India juga disebut **টাকা** dalam bahasa Bengali sehari-hari meskipun namanya rupee. Kata **পয়সা** *pôysa* berarti pecahan kecil, tapi dalam percakapan ia lebih sering berarti “uang” secara umum — persis seperti kita berkata *duit*. Kalau seseorang bertanya **পয়সা আছে?**, ia sedang menanyakan apakah kamu bawa uang, bukan apakah kamu punya koin."}
+   ]
+  }
+ ],
+ "vocab": [
+  {"bn":"এক · দুই · তিন","baca":"èk · dui · tin","id":"satu · dua · tiga"},
+  {"bn":"চার · পাঁচ · ছয়","baca":"car · paⁿc · chhôy","id":"empat · lima · enam"},
+  {"bn":"সাত · আট · নয়","baca":"sat · aT · nôy","id":"tujuh · delapan · sembilan"},
+  {"bn":"দশ","baca":"dôsy","id":"sepuluh"},
+  {"bn":"বিশ · ত্রিশ","baca":"bisy · trisy","id":"dua puluh · tiga puluh"},
+  {"bn":"একশো · হাজার","baca":"èk-syo · ha-jar","id":"seratus · seribu"},
+  {"bn":"লাখ · কোটি","baca":"lakh · ko-Ti","id":"seratus ribu · sepuluh juta"},
+  {"bn":"শূন্য","baca":"syun-nô","id":"nol"},
+  {"bn":"আধা","baca":"a-dha","id":"setengah"},
+  {"bn":"-টা · -টি","baca":"-Ta · -Ti","id":"kata bantu bilangan (benda)"},
+  {"bn":"-জন","baca":"-jôn","id":"kata bantu bilangan (orang)"},
+  {"bn":"কয়টা · কটা","baca":"kôy-Ta · kô-Ta","id":"berapa buah"},
+  {"bn":"কতজন","baca":"kô-tô-jôn","id":"berapa orang"},
+  {"bn":"কত","baca":"kôt","id":"berapa banyak"},
+  {"bn":"দাম","baca":"dam","id":"harga"},
+  {"bn":"টাকা · পয়সা","baca":"Ta-ka · pôy-sa","id":"uang"},
+  {"bn":"নম্বর","baca":"nôm-bôr","id":"nomor"},
+  {"bn":"সংখ্যা","baca":"sông-khô","id":"angka, bilangan"},
+  {"bn":"মিষ্টি","baca":"misy-Ti","id":"kue manis; manis"},
+  {"bn":"রসগোল্লা","baca":"rôsy-gôl-la","id":"rosgolla (kue keju bulat)"},
+  {"bn":"সন্দেশ","baca":"sôn-désy","id":"sondesh (kue keju padat)"},
+  {"bn":"দই","baca":"dôi","id":"yoghurt"},
+  {"bn":"অতিথি","baca":"ô-ti-thi","id":"tamu"},
+  {"bn":"বাক্স","baca":"bak-sô","id":"kotak"},
+  {"bn":"কাগজ","baca":"ka-gôj","id":"kertas"},
+  {"bn":"দিন","baca":"din","id":"hari; berikanlah"},
+  {"bn":"লাগবে","baca":"lag-bé","id":"diperlukan"},
+  {"bn":"আচ্ছা","baca":"ac-cha","id":"baik, oke"},
+  {"bn":"তাহলে","baca":"ta-hô-lé","id":"kalau begitu"},
+  {"bn":"সব মিলে","baca":"sôb mi-lé","id":"semuanya, totalnya"}
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angka berikut dengan kata Bengali.",
+   "items": [
+    "৩",
+    "৭",
+    "১২",
+    "২০",
+    "৫০",
+    "১০০"
+   ]
+  },
+  {
+   "prompt": "Pilih -টা atau -জন.",
+   "items": [
+    "তিন____ বই",
+    "পাঁচ____ ছাত্র",
+    "দশ____ আম",
+    "ছয়____ অতিথি",
+    "এক____ চেয়ার"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "আছে / বই / দুটো / টেবিলে",
+    "কতজন / পরিবারে / আপনাদের",
+    "দিন / চা / দুকাপ",
+    "কত / দাম / এটার",
+    "থাকব / দিন / আমি / দশ"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Bengali.",
+   "items": [
+    "Berapa orang tamu?",
+    "Beri sepuluh rosgolla.",
+    "Umur saya dua puluh lima.",
+    "Di kamar ada dua kursi.",
+    "Ini harganya berapa?",
+    "Kami berempat."
+   ]
+  }
+ ],
+ "answers": [
+  "তিন — সাত — বারো — বিশ — পঞ্চাশ — একশো",
+  "তিনটা — পাঁচজন — দশটা — ছয়জন — একটা",
+  "টেবিলে দুটো বই আছে। — আপনাদের পরিবারে কতজন? — দুকাপ চা দিন। — এটার দাম কত? — আমি দশ দিন থাকব।",
+  "কতজন অতিথি? — দশটা রসগোল্লা দিন। — আমার বয়স পঁচিশ। — ঘরে দুটো চেয়ার আছে। — এটার দাম কত? — আমরা চারজন।"
+ ]
+}

@@ -1,0 +1,188 @@
+{
+ "title": "Menanyakan arah — kata depan yang jadi ekor",
+ "title_target": "ডাকঘর কোন দিকে? — Dak-ghôr kon di-ké?",
+ "goal": "Menanyakan dan mengikuti petunjuk jalan, dan menguasai kata-kata tempat yang semuanya menuntut ekor milik di depannya: বাড়ির সামনে, টেবিলের উপরে.",
+ "bekal": [
+  "menanyakan arah dengan কোন দিকে dan কতদূর",
+  "memakai সামনে, পিছনে, উপরে, নিচে, ভিতরে, পাশে dengan ekor -র · -এর",
+  "membedakan -এ yang berarti “di” dan -এ yang berarti “ke”",
+  "memakai থেকে untuk “dari” tempat maupun waktu",
+  "menyebut ডানে, বামে, dan সোজা"
+ ],
+ "dialogs": [
+  {
+   "title": "কথোপকথন — Tersesat di dekat pasar",
+   "intro": "Ani mencari kantor pos dan salah belok tiga kali. Ia berhenti di depan warung teh dan bertanya kepada pemiliknya. Perhatikan bahwa tiap kata tempat — সামনে, পিছনে, পাশে — selalu didahului kata benda yang sudah memakai ekor milik.",
+   "lines": [
+    {"speaker":"আনি:","text":"[ভাই|bhai], [একটু|èk-Tu] [শুনুন|syu-nun]। [ডাকঘর|Dak-ghôr] [কোন|kon] [দিকে|di-ké]?","id":"Bang, permisi sebentar. Kantor pos ke arah mana?","literal":"abang, sedikit — dengarlah. kantor-pos — yang-mana — arah-ke?"},
+    {"speaker":"দোকানি:","text":"[ডাকঘর|Dak-ghôr]? [সোজা|so-ja] [যান|jan], [তারপর|tar-pôr] [ডানে|Da-né]।","id":"Kantor pos? Jalan lurus, lalu ke kanan.","literal":"kantor-pos? lurus — pergilah, sesudah-itu — kanan-ke."},
+    {"speaker":"আনি:","text":"[কতদূর|kô-tô-dur]? [হেঁটে|hèⁿ-Té] [যাওয়া|ja-oa] [যায়|jay]?","id":"Berapa jauh? Bisa jalan kaki?","literal":"berapa-jauh? berjalan — pergi — bisa?"},
+    {"speaker":"দোকানি:","text":"[খুব|khub] [কাছে|ka-chhé]। [পাঁচ|paⁿc] [মিনিট|mi-niT]। [ব্যাংকের|bêng-kér] [পাশে|pa-syé]।","id":"Dekat sekali. Lima menit. Di samping bank.","literal":"sangat — dekat. lima — menit. bank-punya — samping-di."},
+    {"speaker":"আনি:","text":"[ব্যাংকের|bêng-kér] [পাশে|pa-syé]? [আমি|a-mi] [ব্যাংক|bêngk] [দেখিনি|dè-khi-ni]।","id":"Di samping bank? Saya belum lihat banknya.","literal":"bank-punya — samping-di? saya — bank — belum-melihat."},
+    {"speaker":"দোকানি:","text":"[ওই|oi] [বড়|bô-Ro] [গাছটার|gach-Tar] [পিছনে|pi-chhô-né]। [গাছের|ga-chhér] [নিচে|ni-cé] [রিকশা|rik-sya] [দাঁড়ায়|daⁿ-Ray]।","id":"Di belakang pohon besar itu. Di bawah pohonnya becak-becak mangkal.","literal":"itu — besar — pohon-punya — belakang-di. pohon-punya — bawah-di — becak — berdiri."},
+    {"speaker":"আনি:","text":"[বুঝেছি|bu-jhé-chhi]। [আর|ar] [বাজার|ba-jar] [থেকে|thè-kè] [কীভাবে|ki-bha-bé] [যাব|ja-bô]?","id":"Saya mengerti. Dan dari pasar bagaimana perginya?","literal":"sudah-mengerti. dan — pasar — dari — bagaimana — akan-pergi?"},
+    {"speaker":"দোকানি:","text":"[বাজারের|ba-ja-rér] [ভিতরে|bhi-tô-ré] [ঢুকবেন|Dhuk-bèn] [না|na]। [বাইরে|bai-ré] [দিয়ে|di-yé] [বামে|ba-mé]।","id":"Jangan masuk ke dalam pasar. Lewat luarnya, ke kiri.","literal":"pasar-punya — dalam-ke — akan-masuk — jangan. luar-di — lewat — kiri-ke."},
+    {"speaker":"আনি:","text":"[আচ্ছা|ac-cha]। [ডাকঘর|Dak-ghôr] [কখন|kô-khôn] [বন্ধ|bôn-dhô] [হয়|hôy]?","id":"Baik. Kantor pos tutup jam berapa?","literal":"baik. kantor-pos — kapan — tutup — jadi?"},
+    {"speaker":"দোকানি:","text":"[চারটায়|car-Tay]। [এখন|è-khôn] [তিনটা|tin-Ta] [বাজে|ba-jé], [তাড়াতাড়ি|ta-Ra-ta-Ri] [যান|jan]।","id":"Jam empat. Sekarang jam tiga, cepat pergi.","literal":"jam-empat-pada. sekarang — jam-tiga — berbunyi, cepat-cepat — pergilah."},
+    {"speaker":"আনি:","text":"[অসংখ্য|ô-sông-khô] [ধন্যবাদ|dhôn-nô-bad] [ভাই|bhai]!","id":"Terima kasih banyak, Bang!","literal":"tak-terhitung — terima-kasih — abang!"},
+    {"speaker":"দোকানি:","text":"[আরে|a-ré], [কিছু|ki-chu] [মনে|mô-né] [করবেন|kôr-bèn] [না|na]। [ফেরার|phé-rar] [পথে|pô-thé] [চা|ca] [খেয়ে|khé-yé] [যাবেন|ja-bèn]!","id":"Ah, tidak apa-apa. Nanti pulangnya mampir minum teh ya!","literal":"eh, sesuatu — pikiran-di — akan-melakukan — jangan. pulang-punya — jalan-di — teh — minum-lalu — akan-pergi!"}
+   ],
+   "notes": [
+    "**Kata tempat bahasa Bengali menuntut ekor milik di depannya.** Kamu tidak boleh berkata *বাড়ি সামনে*; yang benar **বাড়ির সামনে** — harfiah “rumah-punya depan-di”. Begitu juga টেবিলের উপরে (di atas meja), গাছের নিচে (di bawah pohon), ব্যাংকের পাশে (di samping bank). ⚠️ Sekali kamu menyadari bahwa kata-kata ini sebenarnya **kata benda** — সামনে berarti “bagian depan”, নিচে berarti “bagian bawah” — susunannya jadi masuk akal: kamu sedang berkata “bagian depan milik rumah”.",
+    "⚠️ **Satu ekor untuk “di” dan “ke” sekaligus.** আমি ঢাকায় আছি berarti “saya **di** Dhaka”; আমি ঢাকায় যাই berarti “saya pergi **ke** Dhaka”. Ekornya sama persis. Yang membedakan hanyalah kata kerjanya: থাকা · আছা menuntut arti “di”, sedangkan যাওয়া · আসা menuntut arti “ke”. Bahasa Indonesia memakai dua kata berbeda; bahasa Bengali menyerahkan pilihannya pada kata kerja.",
+    "**থেকে berarti “dari” untuk tempat maupun waktu.** ঢাকা থেকে (dari Dhaka), সকাল থেকে (sejak pagi), ছটা থেকে (mulai jam enam). ⚠️ Kata থেকে berdiri **sesudah** kata bendanya tanpa ekor milik — berbeda dari সামনে dan পাশে yang menuntut ekor. Alasannya: থেকে bukan kata benda, melainkan kata bantu murni.",
+    "**দিকে berarti “ke arah” dan dipakai untuk arah yang belum tentu tujuan akhirnya.** কোন দিকে? (ke arah mana?), বাজারের দিকে (ke arah pasar), ডান দিকে (ke arah kanan). Ini kata yang akan sangat sering kamu dengar dari sopir becak.",
+    "⚠️ **“Lima menit” hampir tidak pernah berarti lima menit.** Di Bengal, seperti di banyak tempat, খুব কাছে (dekat sekali) dan পাঁচ মিনিট adalah cara sopan berkata “tidak terlalu jauh, jangan khawatir”. Kalau jaraknya penting, tanyakan **কত মিনিট হেঁটে?** (berapa menit jalan kaki?) atau lebih baik lagi, tunjukkan peta di ponselmu.",
+    "**কিছু মনে করবেন না** *ki-chu mô-né kôr-bèn na* adalah salah satu kalimat paling berguna dalam bahasa Bengali. Harfiahnya “jangan ambil apa pun ke dalam hati”, dan artinya bisa “tidak apa-apa”, “jangan tersinggung”, atau “maaf mengganggu” — tergantung kapan diucapkan. Simpan kalimat ini; ia menyelamatkan banyak situasi canggung.",
+    "**Tawaran “mampir minum teh” bukan basa-basi kosong.** Kalau seseorang yang baru memberimu petunjuk jalan mengundangmu minum teh, tawarannya sungguh-sungguh — dan menerimanya sesekali adalah cara tercepat untuk benar-benar berlatih bahasa. ⚠️ Kamu tidak wajib membayar; menolak dengan halus pun boleh, tapi lakukan dengan senyum dan **পরে আসব** (nanti saya datang)."
+   ],
+   "grammars": [
+    {
+     "title": "Kata tempat yang menuntut ekor milik",
+     "tables": [
+      {
+       "head":["Kata tempat","Cara baca","Artinya","Contoh","Artinya contoh"],
+       "rows":[
+        ["… -র সামনে","sam-né","di depan","বাড়ির সামনে","di depan rumah"],
+        ["… -র পিছনে","pi-chhô-né","di belakang","গাছের পিছনে","di belakang pohon"],
+        ["… -র উপরে","u-pô-ré","di atas","টেবিলের উপরে","di atas meja"],
+        ["… -র নিচে","ni-cé","di bawah","খাটের নিচে","di bawah ranjang"],
+        ["… -র ভিতরে","bhi-tô-ré","di dalam","ব্যাগের ভিতরে","di dalam tas"],
+        ["… -র বাইরে","bai-ré","di luar","ঘরের বাইরে","di luar kamar"],
+        ["… -র পাশে","pa-syé","di samping","ব্যাংকের পাশে","di samping bank"],
+        ["… -র মাঝে","ma-jhé","di tengah","শহরের মাঝে","di tengah kota"],
+        ["… -র কাছে","ka-chhé","dekat","বাজারের কাছে","dekat pasar"],
+        ["… -র জন্য","jôn-nô","untuk","আপনার জন্য","untuk Anda"]
+       ]
+      }
+     ],
+     "after": [
+      "**Tanpa ekor milik, kata bantu ini berdiri langsung sesudah kata benda:** … **থেকে** (dari), … **পর্যন্ত** (sampai), … **দিয়ে** (lewat, dengan), … **ছাড়া** (tanpa), … **সঙ্গে · সাথে** (bersama, dengan). ⚠️ সঙ্গে sebenarnya menuntut ekor juga — আমার সঙ্গে (bersama saya) — jadi hafalkan bersama kelompok pertama."
+     ]
+    },
+    {
+     "title": "Arah dan petunjuk jalan",
+     "table": {
+      "head":["বাংলা","Cara baca","Artinya"],
+      "rows":[
+       ["সোজা যান","so-ja jan","jalan lurus"],
+       ["ডানে · ডান দিকে","Da-né · Dan di-ké","ke kanan"],
+       ["বামে · বাঁ দিকে","ba-mé · baⁿ di-ké","ke kiri"],
+       ["এখানে থামুন","è-kha-né tha-mun","berhenti di sini"],
+       ["এখানে ঘুরুন","è-kha-né ghu-run","belok di sini"],
+       ["কোন দিকে?","kon di-ké","ke arah mana?"],
+       ["কতদূর?","kô-tô-dur","berapa jauh?"],
+       ["পথ হারিয়েছি।","pôth ha-ri-yé-chhi","Saya tersesat."],
+       ["একটু দেখিয়ে দিন।","èk-Tu dè-khi-yé din","Tolong tunjukkan sedikit."]
+      ]
+     },
+     "after": [
+      "⚠️ **ডান dan বাম adalah kata sifat; ডানে dan বামে sudah membawa ekor -এ.** Karena itu কোন দিকে memakai দিক + এ. Kalau kamu ingin berkata “sisi kanan jalan”, susunannya **রাস্তার ডান দিকে** — ekor milik pada jalan, lalu ডান, lalu দিকে."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Naik becak dan naik bus",
+   "blocks": [
+    {"type":"p","text":"রিকশা adalah becak kayuh yang jadi tulang punggung kota-kota Bengal, dan menawar ongkosnya **sebelum naik** adalah kebiasaan yang wajib. Sesudah duduk, harga tidak lagi bisa dirundingkan."},
+    {"type":"tabel","head":["Kalimat","Cara baca","Artinya"],"rows":[
+     ["ডাকঘর যাবেন?","Dak-ghôr ja-bèn","Mau ke kantor pos?"],
+     ["কত নেবেন?","kôt né-bèn","Minta berapa?"],
+     ["এত না, ষাট টাকা।","è-tô na, syaT Ta-ka","Jangan segitu, enam puluh taka."],
+     ["ঠিক আছে, চলুন।","Thik a-chhé, cô-lun","Baiklah, jalan."],
+     ["এখানে থামুন।","è-kha-né tha-mun","Berhenti di sini."],
+     ["ভাড়া কত?","bha-Ra kôt","Ongkosnya berapa?"]
+    ]},
+    {"type":"kotak","title":"⚠️ Tiga hal yang perlu diketahui sebelum naik","items":[
+     "**Sebutkan tujuan dulu, harga kedua.** Urutan yang wajar: “ডাকঘর যাবেন?” → “কত নেবেন?” → tawar → “চলুন”. Menanyakan harga sebelum tujuan akan membuat sopir kebingungan.",
+     "**Sopir becak sering tidak tahu nama gedung, tapi tahu nama persimpangan.** Sebut মোড় terdekat — “নিউমার্কেট মোড়” — jauh lebih berhasil daripada menyebut nama toko.",
+     "**Bus kota tidak selalu berhenti penuh.** Kata **নামব** (*nam-bô* — saya akan turun) diteriakkan sebelum turun, dan kondektur akan berteriak balik. Kalau kamu ragu, katakan tujuanmu kepada penumpang di sebelahmu; hampir selalu ada yang mengurusmu sampai turun."
+    ]},
+    {"type":"p","text":"Satu hal tentang alamat. Alamat di Dhaka dan Kolkata sering disusun dari yang **kecil ke besar**: nomor rumah, nomor jalan, nama kawasan, nama kota — misalnya ৭ নম্বর রোড, ধানমন্ডি, ঢাকা. Urutan ini sama dengan kebiasaan kita, jadi membacanya tidak akan membingungkan. Yang membingungkan justru bahwa satu kawasan bisa punya beberapa jalan bernomor sama; karena itu orang selalu menyebut **ল্যান্ডমার্ক** — masjid, pohon besar, atau toko terkenal — sebagai penunjuk terakhir."}
+   ]
+  }
+ ],
+ "vocab": [
+  {"bn":"দিকে","baca":"di-ké","id":"ke arah"},
+  {"bn":"সোজা","baca":"so-ja","id":"lurus"},
+  {"bn":"ডানে","baca":"Da-né","id":"ke kanan"},
+  {"bn":"বামে","baca":"ba-mé","id":"ke kiri"},
+  {"bn":"সামনে","baca":"sam-né","id":"di depan"},
+  {"bn":"পিছনে","baca":"pi-chhô-né","id":"di belakang"},
+  {"bn":"উপরে","baca":"u-pô-ré","id":"di atas"},
+  {"bn":"নিচে","baca":"ni-cé","id":"di bawah"},
+  {"bn":"ভিতরে","baca":"bhi-tô-ré","id":"di dalam"},
+  {"bn":"বাইরে","baca":"bai-ré","id":"di luar"},
+  {"bn":"মাঝে","baca":"ma-jhé","id":"di tengah"},
+  {"bn":"থেকে","baca":"thè-kè","id":"dari; sejak"},
+  {"bn":"পর্যন্ত","baca":"pôr-jôn-tô","id":"sampai"},
+  {"bn":"দিয়ে","baca":"di-yé","id":"lewat; dengan"},
+  {"bn":"সঙ্গে · সাথে","baca":"sông-gé · sa-thé","id":"bersama, dengan"},
+  {"bn":"জন্য","baca":"jôn-nô","id":"untuk"},
+  {"bn":"কতদূর","baca":"kô-tô-dur","id":"berapa jauh"},
+  {"bn":"কীভাবে","baca":"ki-bha-bé","id":"bagaimana"},
+  {"bn":"পথ","baca":"pôth","id":"jalan, jalur"},
+  {"bn":"গাছ","baca":"gachh","id":"pohon"},
+  {"bn":"শহর","baca":"sô-hôr","id":"kota"},
+  {"bn":"গ্রাম","baca":"gram","id":"desa"},
+  {"bn":"ভাড়া","baca":"bha-Ra","id":"ongkos, sewa"},
+  {"bn":"মিনিট","baca":"mi-niT","id":"menit"},
+  {"bn":"থামা","baca":"tha-ma","id":"berhenti"},
+  {"bn":"ঘোরা","baca":"gho-ra","id":"berbelok; berkeliling"},
+  {"bn":"ঢোকা","baca":"Dho-ka","id":"masuk"},
+  {"bn":"নামা","baca":"na-ma","id":"turun"},
+  {"bn":"হেঁটে","baca":"hèⁿ-Té","id":"dengan berjalan kaki"},
+  {"bn":"কিছু মনে করবেন না","baca":"ki-chu mô-né kôr-bèn na","id":"tidak apa-apa; maaf mengganggu"}
+ ],
+ "exercises": [
+  {
+   "prompt": "Tambahkan ekor milik -র atau -এর pada kata dalam kurung.",
+   "items": [
+    "(বাড়ি) ____ সামনে একটা গাছ আছে।",
+    "(টেবিল) ____ উপরে বইটা।",
+    "(ব্যাংক) ____ পাশে ডাকঘর।",
+    "(ব্যাগ) ____ ভিতরে চাবি আছে।",
+    "(গাছ) ____ নিচে রিকশা দাঁড়ায়।"
+   ]
+  },
+  {
+   "prompt": "Pilih -এ (di · ke) atau থেকে (dari).",
+   "items": [
+    "আমি ঢাকা ____ যাই।",
+    "আমি ঢাকা ____ এসেছি।",
+    "সে বাজার ____ আছে।",
+    "আমরা সকাল ____ কাজ করি।"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "দিকে / ডাকঘর / কোন",
+    "যান / তারপর / সোজা / ডানে",
+    "আছে / পাশে / ব্যাংকের / ডাকঘর",
+    "থামুন / এখানে",
+    "যাব / বাজার / কীভাবে / থেকে"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Bengali.",
+   "items": [
+    "Kantor pos ke arah mana?",
+    "Jalan lurus, lalu ke kiri.",
+    "Berapa jauh?",
+    "Bukunya di atas meja.",
+    "Saya tersesat.",
+    "Berhenti di sini, Bang."
+   ]
+  }
+ ],
+ "answers": [
+  "বাড়ির — টেবিলের — ব্যাংকের — ব্যাগের — গাছের",
+  "ঢাকায় — থেকে — বাজারে — থেকে",
+  "ডাকঘর কোন দিকে? — সোজা যান, তারপর ডানে। — ব্যাংকের পাশে ডাকঘর আছে। — এখানে থামুন। — বাজার থেকে কীভাবে যাব?",
+  "ডাকঘর কোন দিকে? — সোজা যান, তারপর বামে। — কতদূর? — বইটা টেবিলের উপরে। — আমি পথ হারিয়েছি। — এখানে থামুন ভাই।"
+ ]
+}

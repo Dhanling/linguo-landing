@@ -1,0 +1,190 @@
+{
+ "title": "Jam berapa? — waktu dan janji",
+ "title_target": "কটা বাজে? — kô-Ta ba-jé?",
+ "goal": "Menyebut jam, membuat janji — dan berhati-hati pada satu jebakan yang menjegal hampir semua penutur Indonesia: সাড়ে তিনটা berarti pukul 3.30, bukan pukul 2.30.",
+ "bekal": [
+  "menanyakan কটা বাজে dan menjawabnya",
+  "memakai সাড়ে, সোয়া, dan পৌনে untuk setengah dan seperempat",
+  "menghafal দেড়টা (1.30) dan আড়াইটা (2.30) yang punya kata sendiri",
+  "menyebut সকাল, দুপুর, বিকেল, সন্ধ্যা, রাত di depan angka jamnya",
+  "membuat janji dengan ekor -টায়"
+ ],
+ "dialogs": [
+  {
+   "title": "কথোপকথন — Membuat janji untuk besok",
+   "intro": "Mitali mengajak Ani ke museum besok. Percakapannya penuh angka jam. Perhatikan kata **সাড়ে**: ia berarti “setengah lebih”, bukan “setengah menuju”.",
+   "lines": [
+    {"speaker":"মিতালি:","text":"[কাল|kal] [জাদুঘরে|ja-du-ghô-ré] [যাবেন|ja-bèn]? [সকালে|sô-ka-lé]?","id":"Besok mau ke museum? Pagi hari?","literal":"besok — museum-ke — akan-pergi? pagi-pada?"},
+    {"speaker":"আনি:","text":"[যাব|ja-bô]! [কটার|kô-Tar] [সময়|sô-môy]?","id":"Mau! Jam berapa?","literal":"akan-pergi! berapa-jam-punya — waktu?"},
+    {"speaker":"মিতালি:","text":"[সাড়ে|sa-Ré] [দশটায়|dôsy-Tay] [বের|bér] [হব|hô-bô]। [ঠিক|Thik] [আছে|a-chhé]?","id":"Kita berangkat jam setengah sebelas. Bagaimana?","literal":"setengah-lebih — jam-sepuluh-pada — keluar — akan-jadi. beres — ada?"},
+    {"speaker":"আনি:","text":"[সাড়ে|sa-Ré] [দশটা|dôsy-Ta] [মানে|ma-né] [নটা|nô-Ta] [ত্রিশ|trisy]?","id":"Setengah sebelas artinya jam sembilan tiga puluh?","literal":"setengah-lebih — jam-sepuluh — arti — jam-sembilan — tiga-puluh?"},
+    {"speaker":"মিতালি:","text":"[না|na] [না|na]! [সাড়ে|sa-Ré] [দশটা|dôsy-Ta] [মানে|ma-né] [দশটা|dôsy-Ta] [ত্রিশ|trisy]। [দশের|dô-syér] [পরে|pô-ré]।","id":"Bukan-bukan! Setengah sebelas artinya jam sepuluh tiga puluh. Sesudah jam sepuluh.","literal":"tidak — tidak! setengah-lebih — jam-sepuluh — arti — jam-sepuluh — tiga-puluh. sepuluh-punya — sesudah."},
+    {"speaker":"আনি:","text":"[ওহ|oh]! [ইন্দোনেশিয়ায়|in-do-nè-syi-yay] [আমরা|am-ra] [উল্টো|ul-To] [বলি|bô-li]।","id":"Oh! Di Indonesia kami menyebutnya terbalik.","literal":"oh! indonesia-di — kami — terbalik — berkata."},
+    {"speaker":"মিতালি:","text":"[তাই|tai] [নাকি|na-ki]? [তাহলে|ta-hô-lé] [সাবধান|sab-dhan]! [আর|ar] [দেড়টায়|déR-Tay] [ফিরব|phir-bô]।","id":"Oh ya? Kalau begitu hati-hati! Dan kita pulang jam setengah dua.","literal":"begitu — apakah? kalau-begitu — hati-hati! dan — jam-satu-setengah-pada — akan-pulang."},
+    {"speaker":"আনি:","text":"[দেড়টা|déR-Ta]? [সাড়ে|sa-Ré] [একটা|èk-Ta] [নয়|nôy]?","id":"Deṛṭa? Bukan sarhe ekta?","literal":"satu-setengah? setengah-lebih — jam-satu — bukan?"},
+    {"speaker":"মিতালি:","text":"[না|na], [একটা|èk-Ta] [আর|ar] [দুটোর|du-Tor] [জন্য|jôn-nô] [আলাদা|a-la-da] [শব্দ|syôb-dô] [আছে|a-chhé]: [দেড়|déR] [আর|ar] [আড়াই|a-Rai]।","id":"Tidak, untuk jam satu dan dua ada kata sendiri: deṛ dan aṛai.","literal":"tidak, jam-satu — dan — jam-dua-punya — untuk — terpisah — kata — ada: satu-setengah — dan — dua-setengah."},
+    {"speaker":"আনি:","text":"[লিখে|li-khé] [রাখছি|rakh-chhi]। [জাদুঘর|ja-du-ghôr] [কখন|kô-khôn] [বন্ধ|bôn-dhô] [হয়|hôy]?","id":"Saya catat. Museumnya tutup jam berapa?","literal":"menulis — sedang-menaruh. museum — kapan — tutup — jadi?"},
+    {"speaker":"মিতালি:","text":"[বিকেল|bi-kél] [পাঁচটায়|paⁿc-Tay]। [আমাদের|a-ma-dér] [তিন|tin] [ঘণ্টা|ghôn-Ta] [সময়|sô-môy] [আছে|a-chhé]।","id":"Jam lima sore. Kita punya waktu tiga jam.","literal":"sore — jam-lima-pada. kami-punya — tiga — jam — waktu — ada."},
+    {"speaker":"আনি:","text":"[যথেষ্ট|jô-thésy-Tô]! [আমি|a-mi] [দেরি|dé-ri] [করব|kôr-bô] [না|na], [কথা|kô-tha] [দিলাম|di-lam]।","id":"Cukup! Saya tidak akan terlambat, saya janji.","literal":"cukup! saya — keterlambatan — akan-melakukan — tidak, kata — sudah-memberi."}
+   ],
+   "notes": [
+    "⚠️ **Inilah jebakan terbesar unit ini: সাড়ে তিনটা adalah pukul 3.30, bukan pukul 2.30.** Bahasa Indonesia berkata “setengah empat” dengan menyebut jam yang **akan datang**; bahasa Bengali berkata **সাড়ে তিনটা** dengan menyebut jam yang **sudah lewat**. Aturan sederhananya: **সাড়ে + angka = angka itu lewat tiga puluh menit.** সাড়ে ছটা = 6.30. সাড়ে নটা = 9.30. Salah membaca ini bisa membuatmu datang satu jam lebih awal — atau satu jam terlambat.",
+    "⚠️ **Pukul 1.30 dan 2.30 punya kata sendiri, dan সাড়ে tidak boleh dipakai untuk keduanya.** Pukul 1.30 adalah **দেড়টা** *déRTa*, pukul 2.30 adalah **আড়াইটা** *aRaiTa*. Berkata *সাড়ে একটা* atau *সাড়ে দুটো* akan langsung terdengar salah. Mulai dari jam tiga barulah সাড়ে berlaku: সাড়ে তিনটা, সাড়ে চারটা, dan seterusnya.",
+    "**Seperempat juga punya dua katanya sendiri: সোয়া dan পৌনে.** **সোয়া** *soa* berarti “lewat lima belas”: সোয়া তিনটা = 3.15. **পৌনে** *pouné* berarti “kurang lima belas”: পৌনে চারটা = 3.45 — perhatikan bahwa di sini angka yang disebut adalah jam yang **akan datang**, kebalikan dari সাড়ে. Kalau bingung, sebutkan saja angkanya polos: তিনটা পঁয়তাল্লিশ (3.45). Semua orang mengerti.",
+    "**Bagian hari disebut lebih dulu, baru angkanya.** সকাল আটটা (jam delapan pagi), দুপুর বারোটা (jam dua belas siang), বিকেল পাঁচটা (jam lima sore), রাত নটা (jam sembilan malam). ⚠️ Urutan ini kebalikan dari bahasa Indonesia yang berkata “jam delapan pagi”. Bahasa Bengali tidak memakai penanda pagi-sore seperti AM dan PM; kata bagian harinya yang mengerjakan tugas itu.",
+    "**Bengal membagi hari jadi lima, bukan empat.** ভোর *bhor* (subuh, sebelum matahari terbit), সকাল *sôkal* (pagi), দুপুর *dupur* (tengah hari), বিকেল *bikél* (sore), সন্ধ্যা *sôndha* (senja — kata yang sama dengan *senja* kita), রাত *rat* (malam). ⚠️ সন্ধ্যা punya tempat khusus dalam kehidupan Bengal: itulah waktu lampu dinyalakan, doa dibacakan, dan tamu mulai berdatangan.",
+    "**Untuk berkata “pada jam …”, tempelkan ekor tempat yang sudah kamu kenal: -য়.** তিনটা → **তিনটায়** (pada jam tiga), সাড়ে দশটা → **সাড়ে দশটায়**, পাঁচটা → **পাঁচটায়**. Ekor yang sama dengan “di rumah” dan “di Dhaka” — bahasa Bengali memperlakukan waktu sebagai tempat.",
+    "⚠️ **কটা বাজে? harfiah berarti “berapa berbunyi?”** — dari lonceng yang dulu dipukul sesuai jumlah jam. Jawabannya pun memakai kata yang sama: তিনটা বাজে (jam tiga). Jangan bingung mendengar kata বাজা (berbunyi) di dalam percakapan tentang waktu; ia tidak ada hubungannya dengan musik."
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut jam",
+     "tables": [
+      {
+       "head":["Waktu","বাংলা","Cara baca","Catatan"],
+       "rows":[
+        ["1.00","একটা","èk-Ta","—"],
+        ["2.00","দুটো","du-To","—"],
+        ["3.00","তিনটে · তিনটা","tin-Té · tin-Ta","—"],
+        ["1.30","দেড়টা","déR-Ta","⚠️ kata sendiri"],
+        ["2.30","আড়াইটা","a-Rai-Ta","⚠️ kata sendiri"],
+        ["3.30","সাড়ে তিনটা","sa-Ré tin-Ta","angka yang SUDAH lewat"],
+        ["6.30","সাড়ে ছটা","sa-Ré chhô-Ta","—"],
+        ["3.15","সোয়া তিনটা","so-a tin-Ta","lewat seperempat"],
+        ["3.45","পৌনে চারটা","pou-né car-Ta","⚠️ angka yang AKAN datang"],
+        ["3.10","তিনটা দশ","tin-Ta dôsy","cara paling aman"],
+        ["pukul 3","তিনটায়","tin-Tay","dengan ekor -য়"]
+       ]
+      }
+     ],
+     "after": [
+      "**Kalau ragu, sebut angkanya polos.** সাড়ে, সোয়া, dan পৌনে memang lebih wajar, tapi **আটটা পনেরো** (8.15) dan **নটা পঁয়তাল্লিশ** (9.45) dipakai orang setiap hari — terutama di stasiun, bandara, dan janji resmi. Tidak ada yang akan menganggapnya aneh."
+     ]
+    },
+    {
+     "title": "Bagian hari dan kata waktu",
+     "table": {
+      "head":["বাংলা","Cara baca","Artinya","বাংলা","Cara baca","Artinya"],
+      "rows":[
+       ["ভোর","bhor","subuh","সময়","sô-môy","waktu"],
+       ["সকাল","sô-kal","pagi","ঘণ্টা","ghôn-Ta","jam (durasi)"],
+       ["দুপুর","du-pur","tengah hari","মিনিট","mi-niT","menit"],
+       ["বিকেল","bi-kél","sore","কখন","kô-khôn","kapan"],
+       ["সন্ধ্যা","sôn-dha","senja","কতক্ষণ","kô-tôk-khôn","berapa lama"],
+       ["রাত","rat","malam","দেরি","dé-ri","terlambat"],
+       ["আজ","aj","hari ini","তাড়াতাড়ি","ta-Ra-ta-Ri","cepat, awal"],
+       ["কাল","kal","kemarin · besok","আগে · পরে","a-gé · pô-ré","sebelum · sesudah"]
+      ]
+     },
+     "after": [
+      "⚠️ **কাল berarti kemarin DAN besok sekaligus** — kata kerjanya yang menentukan yang mana. কাল এসেছি (kemarin saya datang) melawan কাল যাব (besok saya pergi). Untuk memperjelas, orang menambahkan **গতকাল** (*gôtôkal* — kemarin) atau **আগামীকাল** (*agamikal* — besok). Unit 10 membahas ini lebih jauh."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membuat dan mengubah janji",
+   "blocks": [
+    {"type":"tabel","head":["Kalimat","Cara baca","Artinya"],"rows":[
+     ["কটার সময় দেখা হবে?","kô-Tar sô-môy dè-kha hô-bé","Ketemu jam berapa?"],
+     ["সাড়ে চারটায় আসুন।","sa-Ré car-Tay a-sun","Datanglah jam setengah lima."],
+     ["আমি একটু দেরি করব।","a-mi èk-Tu dé-ri kôr-bô","Saya akan sedikit terlambat."],
+     ["আমার দশ মিনিট লাগবে।","a-mar dôsy mi-niT lag-bé","Saya perlu sepuluh menit."],
+     ["কতক্ষণ লাগবে?","kô-tôk-khôn lag-bé","Berapa lama perlunya?"],
+     ["আগামীকাল সকালে?","a-ga-mi-kal sô-ka-lé","Besok pagi?"],
+     ["দুঃখিত, আজ পারব না।","duk-khi-tô, aj par-bô na","Maaf, hari ini saya tidak bisa."]
+    ]},
+    {"type":"kotak","title":"⚠️ Tentang waktu dan kesabaran","items":[
+     "**Janji jam di Bengal sering punya lingkaran toleransi**, terutama untuk urusan tak resmi. “সাড়ে পাঁচটায় আসছি” bisa berarti antara pukul 5.30 dan 6.00. Ini bukan ketidaksopanan melainkan kebiasaan yang sudah sama-sama dipahami — dan kita di Indonesia mengenalnya dengan baik.",
+     "**Untuk urusan resmi, sebaliknya, datanglah tepat waktu.** Kantor, wawancara, dan janji dokter berjalan menurut jam. Kalimat pengaman: **আমি ঠিক সময়ে আসব** (*Thik sô-mô-yé* — saya akan datang tepat waktu).",
+     "**Kalau terlambat, katakan sejak awal, jangan diam.** Satu pesan singkat berbunyi **একটু দেরি হচ্ছে, দুঃখিত** (sedikit terlambat, maaf) sudah cukup, dan jauh lebih dihargai daripada penjelasan panjang setelah tiba."
+    ]},
+    {"type":"p","text":"Satu hal yang menyenangkan tentang kata **সময়** *sômôy*. Ia berarti “waktu”, tapi juga dipakai untuk berkata “kesempatan” dan “masa” — সময় নেই (tidak ada waktu), সময় হলে (kalau ada kesempatan), সেই সময় (masa itu). Dan ada satu ungkapan yang akan sering kamu dengar dari orang tua: **সময়মতো** *sômôy-môto*, “pada waktunya” — jawaban yang diberikan ketika seseorang terlalu tergesa-gesa menuntut sesuatu."}
+   ]
+  }
+ ],
+ "vocab": [
+  {"bn":"কটা বাজে","baca":"kô-Ta ba-jé","id":"jam berapa"},
+  {"bn":"সাড়ে","baca":"sa-Ré","id":"lewat setengah"},
+  {"bn":"সোয়া","baca":"so-a","id":"lewat seperempat"},
+  {"bn":"পৌনে","baca":"pou-né","id":"kurang seperempat"},
+  {"bn":"দেড়টা","baca":"déR-Ta","id":"pukul 1.30"},
+  {"bn":"আড়াইটা","baca":"a-Rai-Ta","id":"pukul 2.30"},
+  {"bn":"ঘণ্টা","baca":"ghôn-Ta","id":"jam (durasi)"},
+  {"bn":"মিনিট","baca":"mi-niT","id":"menit"},
+  {"bn":"সময়","baca":"sô-môy","id":"waktu"},
+  {"bn":"কখন","baca":"kô-khôn","id":"kapan"},
+  {"bn":"কতক্ষণ","baca":"kô-tôk-khôn","id":"berapa lama"},
+  {"bn":"ভোর","baca":"bhor","id":"subuh"},
+  {"bn":"সকাল","baca":"sô-kal","id":"pagi"},
+  {"bn":"দুপুর","baca":"du-pur","id":"tengah hari"},
+  {"bn":"বিকেল","baca":"bi-kél","id":"sore"},
+  {"bn":"সন্ধ্যা","baca":"sôn-dha","id":"senja"},
+  {"bn":"রাত","baca":"rat","id":"malam"},
+  {"bn":"আজ","baca":"aj","id":"hari ini"},
+  {"bn":"কাল","baca":"kal","id":"kemarin; besok"},
+  {"bn":"আগামীকাল","baca":"a-ga-mi-kal","id":"besok"},
+  {"bn":"গতকাল","baca":"gô-tô-kal","id":"kemarin"},
+  {"bn":"আগে","baca":"a-gé","id":"sebelum, dulu"},
+  {"bn":"পরে","baca":"pô-ré","id":"sesudah, nanti"},
+  {"bn":"দেরি","baca":"dé-ri","id":"terlambat"},
+  {"bn":"যথেষ্ট","baca":"jô-thésy-Tô","id":"cukup"},
+  {"bn":"জাদুঘর","baca":"ja-du-ghôr","id":"museum"},
+  {"bn":"দুঃখিত","baca":"duk-khi-tô","id":"maaf, menyesal"},
+  {"bn":"সাবধান","baca":"sab-dhan","id":"hati-hati"},
+  {"bn":"উল্টো","baca":"ul-To","id":"terbalik"},
+  {"bn":"কথা দেওয়া","baca":"kô-tha dè-oa","id":"berjanji"}
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis waktunya dalam angka.",
+   "items": [
+    "সাড়ে তিনটা",
+    "দেড়টা",
+    "আড়াইটা",
+    "সোয়া ছটা",
+    "পৌনে নটা",
+    "সাড়ে দশটা"
+   ]
+  },
+  {
+   "prompt": "Tulis dalam bahasa Bengali.",
+   "items": [
+    "pukul 4.30",
+    "pukul 1.30",
+    "pukul 2.30",
+    "pukul 7.15",
+    "jam delapan pagi"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "বাজে / কটা",
+    "যাব / সাড়ে / আমি / দশটায়",
+    "হয় / বন্ধ / পাঁচটায় / জাদুঘর / বিকেল",
+    "আছে / ঘণ্টা / আমাদের / তিন / সময়",
+    "না / করব / আমি / দেরি"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Bengali.",
+   "items": [
+    "Jam berapa sekarang?",
+    "Sekarang jam setengah empat.",
+    "Datanglah jam lima sore.",
+    "Saya akan sedikit terlambat.",
+    "Berapa lama perlunya?",
+    "Besok pagi kita berangkat."
+   ]
+  }
+ ],
+ "answers": [
+  "3.30 — 1.30 — 2.30 — 6.15 — 8.45 — 10.30",
+  "সাড়ে চারটা — দেড়টা — আড়াইটা — সোয়া সাতটা — সকাল আটটা",
+  "কটা বাজে? — আমি সাড়ে দশটায় যাব। — জাদুঘর বিকেল পাঁচটায় বন্ধ হয়। — আমাদের তিন ঘণ্টা সময় আছে। — আমি দেরি করব না।",
+  "এখন কটা বাজে? — এখন সাড়ে তিনটা বাজে। — বিকেল পাঁচটায় আসুন। — আমি একটু দেরি করব। — কতক্ষণ লাগবে? — আগামীকাল সকালে আমরা বের হব।"
+ ]
+}
