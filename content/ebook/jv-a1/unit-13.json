@@ -1,0 +1,538 @@
+{
+ "title": "Bertanya: tujuh kata tanya",
+ "title_target": "Apa, sapa, ngendi, kapan, pira, piyé, ngapa",
+ "goal": "Menguasai seluruh perangkat bertanya bahasa Jawa dalam satu unit — tujuh kata tanya, cara membuat pertanyaan ya-tidak, dan cara meminta pengulangan ketika kamu tidak menangkap jawabannya.",
+ "bekal": [
+  "memakai tujuh kata tanya dan pasangan kramanya",
+  "membuat pertanyaan ya-tidak dengan *apa* atau dengan nada saja",
+  "meminta pengulangan tanpa terdengar kaku: *pripun?*, *nyuwun sewu, malih?*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Kelangan HP",
+   "intro": "HP Dian hilang. Rini menanyainya bertubi-tubi — situasi yang sempurna untuk melihat tujuh kata tanya bekerja sekaligus. Percakapan ngoko, cepat, tanpa basa-basi.",
+   "lines": [
+    {
+     "speaker": "Rini:",
+     "text": "Lho, kena apa raimu?",
+     "id": "Lho, kenapa mukamu?",
+     "literal": "lho, kena apa muka-mu?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "HP-ku ilang, Rin.",
+     "id": "HP saya hilang, Rin.",
+     "literal": "HP-ku hilang, Rin."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Kapan ilangé?",
+     "id": "Kapan hilangnya?",
+     "literal": "kapan hilang-nya?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Ora ngerti. Mau ésuk isih ana.",
+     "id": "Tidak tahu. Tadi pagi masih ada.",
+     "literal": "tidak tahu. tadi pagi masih ada."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Mau kowé nyang ngendi waé?",
+     "id": "Tadi kamu ke mana saja?",
+     "literal": "tadi kamu ke mana saja?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Nyang kampus, banjur nyang warung.",
+     "id": "Ke kampus, lalu ke warung.",
+     "literal": "ke kampus, lalu ke warung."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Sing pungkasan kowé nyekel HP kapan?",
+     "id": "Terakhir kamu memegang HP kapan?",
+     "literal": "yang terakhir kamu memegang HP kapan?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Ing warung, nalika mbayar.",
+     "id": "Di warung, waktu membayar.",
+     "literal": "di warung, ketika membayar."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Wah, mesthi kèri ing kono. Sapa sing jaga?",
+     "id": "Wah, pasti tertinggal di situ. Siapa yang jaga?",
+     "literal": "wah, pasti tertinggal di situ. siapa yang jaga?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Bu Sri. Piyé carané takon?",
+     "id": "Bu Sri. Bagaimana caranya bertanya?",
+     "literal": "Bu Sri. bagaimana cara-nya bertanya?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Gampang. Ayo, tak terké saiki.",
+     "id": "Gampang. Ayo, saya antar sekarang.",
+     "literal": "gampang. ayo, saya antar sekarang."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Matur nuwun, Rin. Kowé pancèn kanca sing apik.",
+     "id": "Terima kasih, Rin. Kamu memang teman yang baik.",
+     "literal": "terima-kasih, Rin. kamu memang teman yang baik."
+    }
+   ],
+   "notes": [
+    "**Kena apa** berarti \"kenapa\" — harfiahnya \"kena apa\", terkena apa. Bentuk lain yang sama artinya: *ngapa*, *geneya*, *kenèng apa*. Kramanya *kénging punapa*. Dari semuanya, *ngapa* yang paling pendek dan paling sering.",
+    "**Rai** berarti \"muka, wajah\". Kramanya *pasuryan* (krama inggil) dan *rai* juga dipakai di krama biasa. Menyebut *rai* orang yang dihormati dengan kata ngoko terdengar kasar; pakai *pasuryan*.",
+    "**Banjur** berarti \"lalu, kemudian\", kramanya *lajeng*. Ia adalah kata sambung penghubung urutan kejadian yang paling sering dipakai, dan akan muncul lagi di unit 20.",
+    "**Nalika** berarti \"ketika, waktu\", kramanya *nalika* juga. Bentuk yang lebih santai: *pas* (dari bahasa Indonesia) dan *wektu*.",
+    "**Kèri** berarti \"tertinggal\". Awalan *ke-* di sini menandai kejadian tak sengaja — pola yang sudah kamu lihat pada *kepeksa* dan *kebablasen* di unit 8.",
+    "**Tak terké** = *tak* + *terké* (antar), \"saya antar\". Bentuk *tak* yang sudah muncul beberapa kali akan dijelaskan tuntas di unit 18; untuk sekarang, kenali saja bahwa *tak* + kata kerja berarti \"saya akan meng-\".",
+    "**Pancèn** berarti \"memang\", kramanya *pancèn* juga. Ia dipakai untuk membenarkan dengan tegas: *pancèn ngono* (memang begitu), *pancèn apik* (memang bagus)."
+   ],
+   "grammars": [
+    {
+     "title": "Tujuh kata tanya",
+     "body": [
+      "Semuanya berdiri **di tempat kata yang ditanyakan**, bukan wajib di awal kalimat — persis seperti bahasa Indonesia, dan berbeda dari bahasa Inggris yang memindahkannya ke depan."
+     ],
+     "table": {
+      "head": [
+       "Arti",
+       "Ngoko",
+       "Krama",
+       "Contoh ngoko"
+      ],
+      "rows": [
+       [
+        "apa",
+        "**apa**",
+        "*punapa*, *napa*",
+        "*Iki apa?*"
+       ],
+       [
+        "siapa",
+        "**sapa**",
+        "*sinten*",
+        "*Sing teka sapa?*"
+       ],
+       [
+        "mana, di mana",
+        "**ngendi**",
+        "*pundi*",
+        "*Kowé nyang ngendi?*"
+       ],
+       [
+        "yang mana",
+        "**sing endi**",
+        "*ingkang pundi*",
+        "*Sing endi sing apik?*"
+       ],
+       [
+        "kapan",
+        "**kapan**",
+        "*kapan*",
+        "*Kapan mulih?*"
+       ],
+       [
+        "berapa",
+        "**pira**",
+        "*pinten*",
+        "*Regané pira?*"
+       ],
+       [
+        "bagaimana",
+        "**piyé**, *kepriyé*",
+        "*kadospundi*, *pripun*",
+        "*Piyé carané?*"
+       ],
+       [
+        "kenapa",
+        "**ngapa**, *kena apa*",
+        "*kénging punapa*",
+        "*Ngapa ora teka?*"
+       ]
+      ]
+     },
+     "after": [
+      "**Kapan sama di kedua tingkat** — satu kata yang tidak perlu dihafal dua kali.",
+      "**Pripun** adalah bentuk pendek *kadospundi* dan yang jauh lebih sering terdengar di percakapan sungguhan. Kalau kamu cuma menghafal satu, hafalkan *pripun*.",
+      "Kata tanya bisa diikuti *waé* untuk arti \"saja, apa-apa saja\": *nyang ngendi waé?* (ke mana saja?), *sapa waé?* (siapa saja?), *apa waé?* (apa saja?)."
+     ]
+    },
+    {
+     "title": "Pertanyaan ya-tidak: tiga cara, semuanya benar",
+     "body": [
+      "Untuk pertanyaan yang jawabannya \"ya\" atau \"tidak\", bahasa Jawa punya tiga cara dan ketiganya dipakai bergantian."
+     ],
+     "table": {
+      "head": [
+       "Cara",
+       "Contoh",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "nada naik saja",
+        "*Kowé wis mangan?*",
+        "paling sering di percakapan santai"
+       ],
+       [
+        "*apa* di depan",
+        "*Apa kowé wis mangan?*",
+        "sedikit lebih tegas atau lebih resmi"
+       ],
+       [
+        "*… apa ora?*",
+        "*Kowé wis mangan apa durung?*",
+        "menawarkan kedua pilihannya"
+       ],
+       [
+        "krama: *punapa*",
+        "*Punapa panjenengan sampun dhahar?*",
+        "resmi"
+       ],
+       [
+        "krama: *… napa boten?*",
+        "*Pedhes napa boten?*",
+        "sangat sering di warung dan pasar"
+       ]
+      ]
+     },
+     "after": [
+      "**Menjawabnya cukup satu kata**: *iya* / *ora*, *wis* / *durung*, *ana* / *ora ana*, *gelem* / *ora*. Menjawab dengan kalimat penuh terdengar seperti sedang diwawancarai.",
+      "Perhatikan bahwa pertanyaan yang berpasangan **wis … durung**, bukan **wis … ora**. Menawarkan pilihan yang salah membuat pertanyaanmu terdengar aneh."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Ketika kamu tidak menangkap jawabannya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Ini bagian unit yang akan paling sering kamu pakai di dunia nyata, dan hampir tidak pernah diajarkan buku pelajaran. Orang Jawa berbicara cepat dan sering memakai madya yang tidak kamu kenal. Kalimat-kalimat berikut membeli waktu tanpa membuat percakapan berhenti."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Ngoko",
+      "Krama"
+     ],
+     "rows": [
+      [
+       "Apa? / Bagaimana?",
+       "*Piyé?*",
+       "*Pripun?*"
+      ],
+      [
+       "Maaf, sekali lagi?",
+       "*Apa, ya?*",
+       "*Nuwun sèwu, malih?*"
+      ],
+      [
+       "Pelan-pelan, ya.",
+       "*Alon-alon, ya.*",
+       "*Alon-alon, nggih.*"
+      ],
+      [
+       "Saya belum mengerti.",
+       "*Aku durung mudheng.*",
+       "*Kula dèrèng mangertos.*"
+      ],
+      [
+       "Itu artinya apa?",
+       "*Kuwi tegesé apa?*",
+       "*Menika tegesipun punapa?*"
+      ],
+      [
+       "Dalam bahasa Indonesia apa?",
+       "*Basa Indonesiané apa?*",
+       "*Basa Indonesianipun punapa?*"
+      ],
+      [
+       "Saya bisa sedikit saja.",
+       "*Aku mung bisa sithik.*",
+       "*Kula namung saged sekedhik.*"
+      ],
+      [
+       "Boleh pakai bahasa Indonesia?",
+       "*Éntuk nganggo basa Indonesia?*",
+       "*Angsal ngangge basa Indonesia?*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Mudheng: kata yang paling berguna di seluruh unit ini",
+     "items": [
+      "*Mudheng* berarti \"mengerti, paham\", dan ia berbeda dari *ngerti* yang berarti \"tahu\". *Aku ngerti* = saya tahu (informasinya). *Aku mudheng* = saya paham (penjelasannya).",
+      "Kalimat *aku durung mudheng* jauh lebih baik daripada mengangguk sambil bingung, dan orang Jawa menerimanya dengan senang hati — mereka akan mengulangi lebih pelan, atau beralih ke bahasa Indonesia.",
+      "Kramanya *mangertos*, dan yang sangat sering terdengar dalam bentuk pertanyaan: *sampun mangertos?* (sudah paham?)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bertanya dengan sopan kepada orang asing",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Susunan berikut hampir tidak pernah gagal di Jawa, dan ia terdiri dari empat bagian yang selalu sama:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Nuwun sèwu** — permisi. Membuka pintu.",
+      "**Badhé nyuwun pirsa** — mau bertanya. Memberi tahu apa yang akan datang.",
+      "**Pertanyaannya** — sependek mungkin, dalam krama sebisamu.",
+      "**Matur nuwun** — terima kasih, apa pun jawabannya."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Contoh utuh: *Nuwun sèwu, Pak. Badhé nyuwun pirsa. Stasiunipun wonten pundi, nggih? … Matur nuwun sanget.* Empat kalimat, dan kamu sudah bertanya seperti orang yang tumbuh di sana."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pertanyaan yang sering kamu butuhkan",
+      "Krama"
+     ],
+     "rows": [
+      [
+       "Ini apa namanya?",
+       "*Menika naminipun punapa?*"
+      ],
+      [
+       "Di mana kamar mandinya?",
+       "*Jedhingipun wonten pundi?*"
+      ],
+      [
+       "Jam berapa bukanya?",
+       "*Bikakipun jam pinten?*"
+      ],
+      [
+       "Berapa lama?",
+       "*Pintenlami?*"
+      ],
+      [
+       "Boleh saya duduk di sini?",
+       "*Menapa kula angsal lenggah ngriki?*"
+      ],
+      [
+       "Ada yang bisa berbahasa Indonesia?",
+       "*Wonten ingkang saged basa Indonesia?*"
+      ],
+      [
+       "Bisa minta tolong?",
+       "*Menapa saged nyuwun tulung?*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "jv": "apa",
+   "krama": "punapa, napa",
+   "baca": "O-po",
+   "id": "apa"
+  },
+  {
+   "jv": "sapa",
+   "krama": "sinten",
+   "baca": "SO-po · SIN-ten",
+   "id": "siapa"
+  },
+  {
+   "jv": "ngendi",
+   "krama": "pundi",
+   "baca": "ngen-DI",
+   "id": "mana"
+  },
+  {
+   "jv": "kapan",
+   "krama": "kapan",
+   "baca": "KA-pan",
+   "id": "kapan"
+  },
+  {
+   "jv": "pira",
+   "krama": "pinten",
+   "baca": "PI-ro · PIN-ten",
+   "id": "berapa"
+  },
+  {
+   "jv": "piyé, kepriyé",
+   "krama": "pripun, kadospundi",
+   "baca": "pi-YÉ · PRI-pun",
+   "id": "bagaimana"
+  },
+  {
+   "jv": "ngapa, kena apa",
+   "krama": "kénging punapa",
+   "baca": "nga-PO",
+   "id": "kenapa"
+  },
+  {
+   "jv": "mudheng",
+   "krama": "mangertos",
+   "baca": "MU-dheng",
+   "id": "paham, mengerti"
+  },
+  {
+   "jv": "ngerti",
+   "krama": "mangertos",
+   "baca": "nger-TI",
+   "id": "tahu"
+  },
+  {
+   "jv": "teges",
+   "krama": "teges",
+   "baca": "TE-ges",
+   "id": "arti, makna"
+  },
+  {
+   "jv": "banjur",
+   "krama": "lajeng",
+   "baca": "BAN-jur · LA-jeng",
+   "id": "lalu, kemudian"
+  },
+  {
+   "jv": "nalika",
+   "krama": "nalika",
+   "baca": "na-LI-ko",
+   "id": "ketika"
+  },
+  {
+   "jv": "ilang",
+   "krama": "ical",
+   "baca": "I-lang · I-cal",
+   "id": "hilang"
+  },
+  {
+   "jv": "kèri",
+   "krama": "kantun",
+   "baca": "KÈ-ri · KAN-tun",
+   "id": "tertinggal"
+  },
+  {
+   "jv": "nyekel",
+   "krama": "nyepeng",
+   "baca": "nye-KEL · nye-PENG",
+   "id": "memegang"
+  },
+  {
+   "jv": "jaga",
+   "krama": "jagi",
+   "baca": "JO-go · JA-gi",
+   "id": "menjaga"
+  },
+  {
+   "jv": "ngeterké",
+   "krama": "ngeteraken",
+   "baca": "nge-ter-KÉ",
+   "id": "mengantar"
+  },
+  {
+   "jv": "pancèn",
+   "krama": "pancèn",
+   "baca": "pan-CÈN",
+   "id": "memang"
+  },
+  {
+   "jv": "pungkasan",
+   "krama": "pungkasan",
+   "baca": "pung-KA-san",
+   "id": "terakhir"
+  },
+  {
+   "jv": "rai",
+   "krama": "pasuryan",
+   "baca": "RAI",
+   "id": "wajah, muka"
+  },
+  {
+   "jv": "malih, manèh",
+   "krama": "malih",
+   "baca": "MA-nèh · MA-lih",
+   "id": "lagi"
+  },
+  {
+   "jv": "alon-alon",
+   "krama": "alon-alon",
+   "baca": "A-lon-A-lon",
+   "id": "pelan-pelan"
+  },
+  {
+   "jv": "carané",
+   "krama": "caranipun",
+   "baca": "ca-RA-né",
+   "id": "caranya"
+  },
+  {
+   "jv": "kampus",
+   "krama": "kampus",
+   "baca": "KAM-pus",
+   "id": "kampus"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan kata tanya ngoko yang tepat.",
+   "items": [
+    "____ jenengmu?",
+    "Kowé nyang ____ ?",
+    "Regané ____ ?",
+    "____ kowé mulih? (kapan)",
+    "____ ora teka wingi? (kenapa)",
+    "____ carané nyang stasiun?"
+   ]
+  },
+  {
+   "prompt": "Ubah pertanyaan ngoko ini menjadi krama.",
+   "items": [
+    "Iki apa?",
+    "Sing teka sapa?",
+    "Kowé nyang ngendi?",
+    "Regané pira?",
+    "Piyé carané?"
+   ]
+  },
+  {
+   "prompt": "Tulis kalimat penyelamat berikut dalam **krama**.",
+   "items": [
+    "Maaf, sekali lagi?",
+    "Saya belum mengerti.",
+    "Pelan-pelan, ya.",
+    "Itu artinya apa?",
+    "Saya bisa sedikit saja."
+   ]
+  },
+  {
+   "prompt": "**Ulangan unit 11.** Tutup unit 11, lalu tulis kalimat Jawanya dalam ngoko.",
+   "items": [
+    "Kamar ini lebih luas daripada yang itu.",
+    "Yang paling murah berapa?",
+    "Mahal sekali.",
+    "Agak sempit, tapi sejuk.",
+    "Saya suka yang baru."
+   ]
+  }
+ ],
+ "answers": [
+  "Sapa — ngendi — pira — Kapan — Ngapa — Piyé",
+  "Menika punapa? — Ingkang rawuh sinten? — Panjenengan tindak pundi? — Reginipun pinten? — Pripun caranipun?",
+  "Nuwun sèwu, malih? — Kula dèrèng mangertos. — Alon-alon, nggih. — Menika tegesipun punapa? — Kula namung saged sekedhik.",
+  "Kamar iki luwih amba tinimbang sing kuwi. — Sing paling murah pira? — Larang banget. — Rada ciyut, ning adhem. — Aku seneng sing anyar."
+ ]
+}

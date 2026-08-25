@@ -1,0 +1,540 @@
+{
+ "title": "Keluarga dan kepemilikan",
+ "title_target": "Kulawargaku, kulawarga kula",
+ "goal": "Menyebut anggota keluarga, mengatakan apa yang kamu punya, dan memasang tiga ekor kepemilikan — *-ku*, *-mu*, *-é* — beserta cara krama menggantinya.",
+ "bekal": [
+  "menyebut anggota keluarga dalam ngoko dan krama",
+  "memakai *duwé* / *gadhah* untuk kepemilikan",
+  "mengganti *-ku* dan *-mu* dengan *kula* dan *panjenengan* dalam krama"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ngobrol karo Rini bab kulawarga",
+   "intro": "Malam pertama di kos. Dian dan Rini duduk di teras. Rini bertanya tentang keluarga Dian, dan percakapannya ngoko dari ujung ke ujung.",
+   "lines": [
+    {
+     "speaker": "Rini:",
+     "text": "Kowé duwé sedulur pira?",
+     "id": "Kamu punya saudara berapa?",
+     "literal": "kamu punya saudara berapa?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Loro. Aku duwé kakang siji lan adhi siji.",
+     "id": "Dua. Saya punya satu kakak laki-laki dan satu adik.",
+     "literal": "dua. aku punya kakak satu dan adik satu."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Adhimu lanang apa wédok?",
+     "id": "Adikmu laki-laki atau perempuan?",
+     "literal": "adik-mu laki-laki atau perempuan?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Wédok. Jenengé Sari, isih sekolah.",
+     "id": "Perempuan. Namanya Sari, masih sekolah.",
+     "literal": "perempuan. nama-nya Sari, masih sekolah."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Bapak ibumu ing Jakarta uga?",
+     "id": "Ayah ibumu di Jakarta juga?",
+     "literal": "bapak ibu-mu di Jakarta juga?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Iya. Bapakku guru, ibuku dodolan ing pasar.",
+     "id": "Ya. Ayah saya guru, ibu saya berjualan di pasar.",
+     "literal": "ya. bapak-ku guru, ibu-ku berjualan di pasar."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Wah, padha. Ibuku uga dodolan.",
+     "id": "Wah, sama. Ibu saya juga berjualan.",
+     "literal": "wah, sama. ibu-ku juga berjualan."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Kowé dhéwé duwé sedulur?",
+     "id": "Kamu sendiri punya saudara?",
+     "literal": "kamu sendiri punya saudara?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Ora. Aku anak siji-sijiné.",
+     "id": "Tidak. Saya anak satu-satunya.",
+     "literal": "tidak. aku anak satu-satu-nya."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Simbahmu isih ana?",
+     "id": "Nenek/kakekmu masih ada?",
+     "literal": "nenek-mu masih ada?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Isih. Simbah putri isih sehat, manggon ing Klaten.",
+     "id": "Masih. Nenek masih sehat, tinggal di Klaten.",
+     "literal": "masih. nenek masih sehat, tinggal di Klaten."
+    }
+   ],
+   "notes": [
+    "**Duwé** (punya) berdiri langsung di depan bendanya, tanpa kata sambung apa pun: *aku duwé buku*, *dhèwèké duwé omah*. Bentuk kramanya *gadhah*, dan untuk orang yang sangat dihormati ada bentuk krama inggil *kagungan* — *Bapak kagungan mobil*.",
+    "**Lanang** dan **wédok** adalah \"laki-laki\" dan \"perempuan\" untuk manusia dalam ngoko. Kramanya *jaler* dan *èstri*. Untuk hewan dipakai kata yang sama, dan itu wajar; tapi menyebut manusia dengan *jaler/èstri* di percakapan santai terdengar seperti sedang mengisi formulir.",
+    "**Isih** berarti \"masih\", kramanya *taksih*. Ia dipakai persis seperti dalam bahasa Indonesia: *isih sekolah* (masih sekolah), *isih ana* (masih ada), *isih adoh* (masih jauh).",
+    "**Jenengé Sari** — perhatikan bahwa ekor *-é* di sini berarti \"-nya\": nama**nya** Sari. Ekor yang sama juga dipakai untuk \"itu\", dan konteks yang memisahkan keduanya. Ini persis pekerjaan \"-nya\" dalam bahasa Indonesia, yang juga merangkap dua tugas.",
+    "**Apa** di tengah kalimat berarti \"atau\": *lanang apa wédok?* (laki-laki atau perempuan?). Jadi *apa* punya tiga pekerjaan — \"apa\" sebagai kata tanya, \"atau\" sebagai pilihan, dan penanda pertanyaan ya/tidak di awal kalimat (*apa kowé wis mangan?*). Kramanya *punapa* untuk ketiganya.",
+    "**Simbah** dipakai untuk kakek maupun nenek. Kalau perlu dibedakan: *simbah kakung* (kakek) dan *simbah putri* (nenek). Kata *kakung* dan *putri* itulah penanda jenis kelamin yang sopan, dan keduanya juga muncul di sapaan lain.",
+    "**Padha** berarti \"sama\" — *wah, padha* adalah reaksi paling wajar ketika menemukan kesamaan. Kata ini juga bertugas lain: menandai pelaku jamak, seperti pada *padha mangan* (mereka sama-sama makan). Kramanya *sami*."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga ekor kepemilikan, dan apa yang terjadi di krama",
+     "body": [
+      "Kepemilikan dalam bahasa Jawa ngoko bekerja dengan ekor yang menempel, persis seperti \"-ku\" dan \"-mu\" bahasa Indonesia. Yang perlu diperhatikan adalah baris paling kanan: dalam krama, dua dari tiga ekor itu **lepas dan berubah menjadi kata utuh**."
+     ],
+     "table": {
+      "head": [
+       "Pemilik",
+       "Ngoko",
+       "Contoh",
+       "Krama"
+      ],
+      "rows": [
+       [
+        "saya",
+        "**-ku**",
+        "*omahku* (rumahku)",
+        "*griya kula*"
+       ],
+       [
+        "kamu",
+        "**-mu**",
+        "*omahmu* (rumahmu)",
+        "*griya panjenengan*"
+       ],
+       [
+        "dia / itu",
+        "**-é / -né**",
+        "*omahé* (rumahnya)",
+        "*griyanipun*"
+       ],
+       [
+        "kami",
+        "*awaké dhéwé*",
+        "*omahé awaké dhéwé*",
+        "*griya kita*"
+       ],
+       [
+        "mereka",
+        "*dhèwèké kabèh*",
+        "*omahé dhèwèké kabèh*",
+        "*griyanipun*"
+       ]
+      ]
+     },
+     "after": [
+      "Aturan **-é** versus **-né** cuma soal huruf terakhir: kata yang berakhir **huruf mati** mendapat *-é* (*lawang* → *lawangé*, *anak* → *anaké*), kata yang berakhir **huruf hidup** mendapat *-né* (*buku* → *bukuné*, *méja* → *méjané*).",
+      "Dalam krama, ekor *-é/-né* menjadi **-ipun** (sesudah huruf mati) atau **-nipun** (sesudah huruf hidup): *lawangipun*, *bukunipun*. Ini salah satu pergantian paling teratur di seluruh bahasa Jawa — sekali dihafal, berlaku di mana-mana.",
+      "Untuk menyatakan milik **orang tertentu**, cukup tempelkan namanya sesudah bendanya, tanpa kata sambung: *omahé Rini* (rumah Rini), *bukuné Dian* (buku Dian), *anaké Pak Broto* (anak Pak Broto). Bandingkan dengan bahasa Indonesia yang bisa berkata \"rumah Rini\" tanpa \"-nya\"; bahasa Jawa hampir selalu menyisipkan *-é/-né*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Anggota keluarga",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa kata untuk orang tua sendiri dan orang tua orang lain **berbeda tingkatnya**. Ketika berbicara tentang ayahmu sendiri kepada orang yang kamu hormati, kamu tetap memakai *bapak*; ketika berbicara tentang ayah **orang itu**, kamu naik ke *rama*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ngoko",
+      "Krama",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*bapak*",
+       "*rama*",
+       "ayah"
+      ],
+      [
+       "*ibu*, *mbok*",
+       "*ibu*",
+       "ibu"
+      ],
+      [
+       "*anak*",
+       "*putra*",
+       "anak"
+      ],
+      [
+       "*kakang*, *mas*",
+       "*raka*",
+       "kakak laki-laki"
+      ],
+      [
+       "*mbakyu*, *mbak*",
+       "*mbakyu*",
+       "kakak perempuan"
+      ],
+      [
+       "*adhi*",
+       "*rayi*",
+       "adik"
+      ],
+      [
+       "*sedulur*",
+       "*sedhèrèk*",
+       "saudara"
+      ],
+      [
+       "*simbah*",
+       "*éyang*",
+       "kakek, nenek"
+      ],
+      [
+       "*putu*",
+       "*wayah*",
+       "cucu"
+      ],
+      [
+       "*bojo*",
+       "*sémah*, *garwa*",
+       "suami, istri"
+      ],
+      [
+       "*paklik*, *lik*",
+       "*paman*",
+       "paman"
+      ],
+      [
+       "*bulik*",
+       "*bibi*",
+       "bibi"
+      ],
+      [
+       "*kulawarga*",
+       "*kulawarga*",
+       "keluarga"
+      ],
+      [
+       "*lanang*",
+       "*jaler*",
+       "laki-laki"
+      ],
+      [
+       "*wédok*",
+       "*èstri*",
+       "perempuan"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Mas, Mbak, Pak, Bu — sapaan yang wajib",
+     "items": [
+      "Orang Jawa jarang memanggil orang dengan namanya saja. Yang dipakai adalah **sapaan + nama**: *Mas Ahmad*, *Mbak Rini*, *Pak Broto*, *Bu Sri*. Memanggil \"Rini!\" begitu saja kepada orang yang belum akrab terdengar kasar.",
+      "**Mas** untuk laki-laki seumuran atau sedikit lebih tua; **Mbak** untuk perempuan seumuran atau sedikit lebih tua; **Dhik** atau **Dik** untuk yang lebih muda; **Pak** dan **Bu** untuk yang jauh lebih tua atau yang berkedudukan.",
+      "Kalau kamu ragu antara *Mas* dan *Pak*, pilih **Pak**. Naik satu tingkat terlalu tinggi cuma membuat orang tersenyum; turun satu tingkat terlalu rendah membuat orang tersinggung."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bertanya tentang orang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Ngoko",
+      "Krama"
+     ],
+     "rows": [
+      [
+       "Kamu punya saudara berapa?",
+       "*Kowé duwé sedulur pira?*",
+       "*Panjenengan gadhah sedhèrèk pinten?*"
+      ],
+      [
+       "Ini siapa?",
+       "*Iki sapa?*",
+       "*Menika sinten?*"
+      ],
+      [
+       "Namanya siapa?",
+       "*Jenengé sapa?*",
+       "*Naminipun sinten?*"
+      ],
+      [
+       "Dia kerja apa?",
+       "*Dhèwèké kerja apa?*",
+       "*Piyambakipun nyambut damel punapa?*"
+      ],
+      [
+       "Tinggal di mana?",
+       "*Manggon ing ngendi?*",
+       "*Manggèn wonten pundi?*"
+      ],
+      [
+       "Masih sekolah?",
+       "*Isih sekolah?*",
+       "*Taksih sekolah?*"
+      ],
+      [
+       "Sudah menikah?",
+       "*Wis rabi?*",
+       "*Sampun palakrama?*"
+      ],
+      [
+       "Anak keberapa?",
+       "*Anak nomer pira?*",
+       "*Putra nomer pinten?*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Pertanyaan-pertanyaan ini akan datang kepadamu, bukan cuma dari mulutmu. Bertanya tentang keluarga, asal, dan status pernikahan adalah cara berbasa-basi yang wajar di Jawa — bukan kepo, melainkan bentuk perhatian. Menyiapkan jawabannya lebih berguna daripada menghafal pertanyaannya."
+    },
+    {
+     "type": "kotak",
+     "title": "Perbedaan penting: duwé, ana, dan iku",
+     "items": [
+      "*Aku duwé buku* — saya **punya** buku (kepemilikan).",
+      "*Ana buku* — **ada** buku (keberadaan).",
+      "*Iki bukuku* — ini buku **saya** (menyebut milik). Tidak perlu kata kerja sama sekali.",
+      "Ketiganya sering tertukar oleh pemula karena bahasa Indonesia bisa memakai \"ada\" untuk dua yang pertama (\"saya ada buku\" di percakapan santai). Dalam bahasa Jawa, *aku ana buku* salah dan terdengar aneh. Pakai *duwé*."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "jv": "kulawarga",
+   "krama": "kulawarga",
+   "baca": "ku-la-WAR-go",
+   "id": "keluarga"
+  },
+  {
+   "jv": "bapak",
+   "krama": "rama",
+   "baca": "BA-pa' · RO-mo",
+   "id": "ayah"
+  },
+  {
+   "jv": "ibu",
+   "krama": "ibu",
+   "baca": "I-bu",
+   "id": "ibu"
+  },
+  {
+   "jv": "anak",
+   "krama": "putra",
+   "baca": "A-na' · PU-tro",
+   "id": "anak"
+  },
+  {
+   "jv": "kakang, mas",
+   "krama": "raka",
+   "baca": "KA-kang · RO-ko",
+   "id": "kakak laki-laki"
+  },
+  {
+   "jv": "mbakyu, mbak",
+   "krama": "mbakyu",
+   "baca": "m-BA'-yu",
+   "id": "kakak perempuan"
+  },
+  {
+   "jv": "adhi",
+   "krama": "rayi",
+   "baca": "A-dhi · RA-yi",
+   "id": "adik"
+  },
+  {
+   "jv": "sedulur",
+   "krama": "sedhèrèk",
+   "baca": "se-DU-lur · se-DHÈ-rè'",
+   "id": "saudara"
+  },
+  {
+   "jv": "simbah",
+   "krama": "éyang",
+   "baca": "sim-BAH · É-yang",
+   "id": "kakek, nenek"
+  },
+  {
+   "jv": "bojo",
+   "krama": "sémah, garwa",
+   "baca": "BO-jo · GAR-wo",
+   "id": "suami, istri"
+  },
+  {
+   "jv": "putu",
+   "krama": "wayah",
+   "baca": "PU-tu · WA-yah",
+   "id": "cucu"
+  },
+  {
+   "jv": "duwé",
+   "krama": "gadhah",
+   "baca": "du-WÉ · GA-dhah",
+   "id": "punya"
+  },
+  {
+   "jv": "lanang",
+   "krama": "jaler",
+   "baca": "LA-nang · JA-ler",
+   "id": "laki-laki"
+  },
+  {
+   "jv": "wédok",
+   "krama": "èstri",
+   "baca": "WÉ-do' · ÈS-tri",
+   "id": "perempuan"
+  },
+  {
+   "jv": "isih",
+   "krama": "taksih",
+   "baca": "I-sih · TA'-sih",
+   "id": "masih"
+  },
+  {
+   "jv": "padha",
+   "krama": "sami",
+   "baca": "PO-dho · SA-mi",
+   "id": "sama"
+  },
+  {
+   "jv": "dhéwé",
+   "krama": "piyambak",
+   "baca": "dhé-WÉ · pi-YAM-ba'",
+   "id": "sendiri"
+  },
+  {
+   "jv": "manggon",
+   "krama": "manggèn",
+   "baca": "MANG-gon",
+   "id": "tinggal, bermukim"
+  },
+  {
+   "jv": "sekolah",
+   "krama": "sekolah",
+   "baca": "se-KO-lah",
+   "id": "sekolah"
+  },
+  {
+   "jv": "guru",
+   "krama": "guru",
+   "baca": "GU-ru",
+   "id": "guru"
+  },
+  {
+   "jv": "dodolan",
+   "krama": "sadéyan",
+   "baca": "do-DO-lan",
+   "id": "berjualan"
+  },
+  {
+   "jv": "kerja, nyambut gawé",
+   "krama": "nyambut damel",
+   "baca": "nyam-but GA-wé",
+   "id": "bekerja"
+  },
+  {
+   "jv": "pasar",
+   "krama": "peken",
+   "baca": "PA-sar · PE-ken",
+   "id": "pasar"
+  },
+  {
+   "jv": "omah",
+   "krama": "griya, dalem",
+   "baca": "O-mah · GRI-yo",
+   "id": "rumah"
+  },
+  {
+   "jv": "sehat",
+   "krama": "saras",
+   "baca": "SÉ-hat · SA-ras",
+   "id": "sehat"
+  },
+  {
+   "jv": "pira",
+   "krama": "pinten",
+   "baca": "PI-ro · PIN-ten",
+   "id": "berapa"
+  },
+  {
+   "jv": "rabi",
+   "krama": "palakrama",
+   "baca": "RA-bi",
+   "id": "menikah"
+  },
+  {
+   "jv": "kanca",
+   "krama": "kanca, réncang",
+   "baca": "KAN-co · RÉN-cang",
+   "id": "teman"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tempelkan ekor kepemilikan yang benar (*-ku*, *-mu*, *-é*, atau *-né*).",
+   "items": [
+    "Iki omah____ . (rumahku)",
+    "Adhi____ jenengé sapa? (adikmu)",
+    "Buku____ ing ndhuwur méja. (bukunya)",
+    "Bapak____ guru. (ayahku)",
+    "Kunci____ ilang. (kuncinya)",
+    "Méja____ gedhé. (mejanya)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat ngoko berikut menjadi krama. Perhatikan ekor kepemilikannya.",
+   "items": [
+    "Omahku adoh.",
+    "Adhimu isih sekolah?",
+    "Bapakku guru.",
+    "Aku duwé sedulur loro.",
+    "Bukuné ing ngendi?"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jawa ngoko.",
+   "items": [
+    "Saya punya satu adik perempuan.",
+    "Kakak saya bekerja di pasar.",
+    "Nenek saya masih sehat.",
+    "Ini bukan rumah saya.",
+    "Kamu punya saudara berapa?",
+    "Namanya Sari, masih sekolah."
+   ]
+  },
+  {
+   "prompt": "**Ulangan unit 1.** Tutup halaman unit 1, lalu tulis kalimat Jawanya dari terjemahan Indonesia ini.",
+   "items": [
+    "Nama saya Dian. (ngoko)",
+    "Anda dari mana? (krama)",
+    "Saya sedang belajar bahasa Jawa. (ngoko)",
+    "Selamat sore, Pak. (krama)",
+    "Baik-baik saja. (ngoko)"
+   ]
+  }
+ ],
+ "answers": [
+  "omahku — Adhimu — Bukuné — Bapakku — Kunciné — Méjané",
+  "Griya kula tebih. — Rayi panjenengan taksih sekolah? — Rama kula guru. — Kula gadhah sedhèrèk kalih. — Bukunipun wonten pundi?",
+  "Aku duwé adhi wédok siji. — Kakangku kerja ing pasar. — Simbahku isih sehat. — Iki dudu omahku. — Kowé duwé sedulur pira? — Jenengé Sari, isih sekolah.",
+  "Jenengku Dian. — Panjenengan saking pundi? — Aku lagi sinau basa Jawa. — Sugeng sonten, Pak. — Apik-apik waé."
+ ]
+}

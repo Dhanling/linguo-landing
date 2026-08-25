@@ -1,0 +1,564 @@
+{
+ "title": "Rencana, keinginan, dan doa",
+ "title_target": "Muga-muga lancar",
+ "goal": "Berbicara tentang yang belum terjadi — rencana, keinginan, syarat, dan doa — termasuk rombongan ucapan selamat yang akan kamu perlukan begitu kamu punya kenalan orang Jawa.",
+ "bekal": [
+  "membedakan *arep* (akan), *péngin* (ingin), *bakal* (bakal)",
+  "menyusun kalimat bersyarat dengan *nèk* / *menawi*",
+  "mengucapkan doa dan selamat: *muga-muga*, *mugi-mugi*, *sugeng*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Rencana riyaya",
+   "intro": "Dua minggu sebelum Lebaran. Rini akan pulang ke Klaten, Dian belum tahu mau ke mana. Pak Broto lewat dan menutup percakapan dengan doa — yang di Jawa adalah cara berpisah yang paling lazim.",
+   "lines": [
+    {
+     "speaker": "Rini:",
+     "text": "Riyaya sésuk kowé arep nyang endi, Yan?",
+     "id": "Lebaran besok kamu mau ke mana, Yan?",
+     "literal": "hari-raya besok kamu akan ke mana, Yan?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Durung mesthi. Péngin mulih Jakarta, ning tikèté larang.",
+     "id": "Belum pasti. Ingin pulang Jakarta, tapi tiketnya mahal.",
+     "literal": "belum pasti. ingin pulang Jakarta, tetapi tiket-nya mahal."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Nèk ora mulih, mèlu aku waé nyang Klaten.",
+     "id": "Kalau tidak pulang, ikut saya saja ke Klaten.",
+     "literal": "kalau tidak pulang, ikut aku saja ke Klaten."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Tenan? Ora ngrepoti?",
+     "id": "Sungguh? Tidak merepotkan?",
+     "literal": "sungguh? tidak merepotkan?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Ora babar pisan. Simbah malah seneng nèk ana tamu.",
+     "id": "Tidak sama sekali. Nenek malah senang kalau ada tamu.",
+     "literal": "tidak sama sekali. nenek malah senang kalau ada tamu."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Ya wis, tak pikir dhisik. Kapan mangkaté?",
+     "id": "Ya sudah, saya pikir dulu. Kapan berangkatnya?",
+     "literal": "ya sudah, saya pikir dulu. kapan berangkat-nya?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Bakal mangkat Setu ésuk, bèn ora kena macet.",
+     "id": "Akan berangkat Sabtu pagi, supaya tidak kena macet.",
+     "literal": "bakal berangkat Sabtu pagi, supaya tidak kena macet."
+    },
+    {
+     "speaker": "Pak Broto:",
+     "text": "Badhé sami mudhik, nggih?",
+     "id": "Mau sama-sama mudik, ya?",
+     "literal": "akan sama-sama mudik, ya?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Inggih, Pak. Kula badhé kondur Klaten.",
+     "id": "Iya, Pak. Saya mau pulang Klaten.",
+     "literal": "iya, Pak. saya akan pulang Klaten."
+    },
+    {
+     "speaker": "Pak Broto:",
+     "text": "Mugi-mugi lancar mawon lampahipun. Ngatos-atos.",
+     "id": "Semoga lancar saja perjalanannya. Hati-hati.",
+     "literal": "semoga lancar saja perjalanan-nya. hati-hati."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Aamiin. Matur nuwun, Pak. Sugeng riyadi rumiyin.",
+     "id": "Aamiin. Terima kasih, Pak. Selamat lebaran duluan.",
+     "literal": "aamiin. terima-kasih, Pak. selamat hari-raya dahulu."
+    }
+   ],
+   "notes": [
+    "**Babar pisan** berarti \"sama sekali\", dan hampir selalu dipakai bersama pengingkaran: *ora babar pisan* (tidak sama sekali). Kramanya *babar pisan* juga.",
+    "**Malah** berarti \"malah, justru\", persis seperti bahasa Indonesia. Ia membalikkan dugaan lawan bicara: *simbah malah seneng* (nenek malah senang).",
+    "**Tak pikir dhisik** — \"saya pikir dulu\". Ini cara menunda keputusan yang sopan dan sangat sering dipakai; menolak langsung jarang dilakukan di Jawa, dan *tak pikir dhisik* memberi kedua pihak ruang.",
+    "**Kondur** adalah krama inggil untuk \"pulang\". Perhatikan bahwa Rini memakainya untuk **dirinya sendiri** di sini — sesuatu yang secara aturan ketat kurang tepat, tapi sangat sering terjadi dalam percakapan sungguhan, terutama pada kata yang sudah terasa seperti kata biasa. Kamu akan mendengar banyak penyimpangan semacam ini; ia bukan alasan untuk cemas.",
+    "**Lampah** berarti \"jalan, perjalanan, langkah\" dalam krama. *Lampahipun lancar* = perjalanannya lancar. Kata ini juga muncul di *lelampahan* (pengalaman hidup).",
+    "**Sugeng riyadi** adalah \"selamat hari raya\" dalam bahasa Jawa. Ucapan lengkapnya: *Sugeng riyadi, nyuwun pangapunten lahir batos* — selamat lebaran, mohon maaf lahir batin."
+   ],
+   "grammars": [
+    {
+     "title": "Empat cara berbicara tentang yang belum terjadi",
+     "body": [
+      "Keempatnya berdiri di depan kata kerja dan tidak mengubahnya sama sekali. Bedanya ada pada seberapa pasti dan seberapa kamu menginginkannya."
+     ],
+     "table": {
+      "head": [
+       "Arti",
+       "Ngoko",
+       "Krama",
+       "Nadanya"
+      ],
+      "rows": [
+       [
+        "akan, mau",
+        "*arep*",
+        "*badhé*",
+        "rencana yang sudah diputuskan"
+       ],
+       [
+        "bakal, akan",
+        "*bakal*",
+        "*badhé*",
+        "ramalan atau kepastian"
+       ],
+       [
+        "ingin",
+        "*péngin*, *kepéngin*",
+        "*kepéngin*",
+        "keinginan, belum tentu terjadi"
+       ],
+       [
+        "mau, bersedia",
+        "*gelem*",
+        "*purun*",
+        "kesediaan atas ajakan"
+       ],
+       [
+        "harus",
+        "*kudu*",
+        "*kedah*",
+        "keharusan"
+       ],
+       [
+        "boleh",
+        "*éntuk*",
+        "*angsal*",
+        "izin"
+       ],
+       [
+        "mungkin",
+        "*mbokmenawa*",
+        "*mbokmenawi*",
+        "kemungkinan"
+       ],
+       [
+        "belum pasti",
+        "*durung mesthi*",
+        "*dèrèng mesthi*",
+        "penundaan"
+       ]
+      ]
+     },
+     "after": [
+      "**Arep versus péngin** adalah pembedaan yang sering tertukar. *Aku arep mulih* = saya akan pulang (sudah diputuskan). *Aku péngin mulih* = saya ingin pulang (belum tentu bisa). Dialog di atas memakai keduanya dalam dua kalimat berturut-turut, dan bedanya menentukan seluruh isi percakapan.",
+      "**Gelem hanya untuk menjawab ajakan**, tidak untuk menyatakan rencana sendiri. *Kowé gelem melu?* — *Gelem.* Mengatakan *aku gelem mulih* untuk \"saya akan pulang\" terdengar aneh."
+     ]
+    },
+    {
+     "title": "Kalimat bersyarat",
+     "body": [
+      "Susunannya sama persis dengan bahasa Indonesia: syaratnya dulu, akibatnya kemudian — atau dibalik, dan keduanya benar."
+     ],
+     "table": {
+      "head": [
+       "Bahasa Indonesia",
+       "Ngoko",
+       "Krama"
+      ],
+      "rows": [
+       [
+        "Kalau hujan, saya tidak pergi.",
+        "*Nèk udan, aku ora lunga.*",
+        "*Menawi jawah, kula boten késah.*"
+       ],
+       [
+        "Kalau ada waktu, mampir ya.",
+        "*Nèk ana wektu, mampir ya.*",
+        "*Menawi wonten wekdal, mampir nggih.*"
+       ],
+       [
+        "Kalau tidak bisa, tidak apa-apa.",
+        "*Nèk ora isa, ora apa-apa.*",
+        "*Menawi boten saged, mboten napa-napa.*"
+       ],
+       [
+        "Supaya tidak terlambat.",
+        "*Bèn ora telat.*",
+        "*Supados boten telat.*"
+       ],
+       [
+        "Sekiranya boleh…",
+        "*Nèk éntuk…*",
+        "*Menawi angsal…*"
+       ]
+      ]
+     },
+     "after": [
+      "**Nèk** adalah bentuk pendek *menawa* dan yang paling sering dipakai. Bentuk lain yang searti: *yèn* (sedikit lebih rapi, sering dipakai dalam tulisan) dan *nek* (ejaan santai).",
+      "**Bèn** dan **supaya** dua-duanya berarti \"supaya\". *Bèn* jauh lebih sering di percakapan; *supaya* dan kramanya *supados* lebih sering di tulisan dan dalam krama."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Doa dan ucapan selamat",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Percakapan Jawa sering ditutup dengan doa, bukan dengan \"sampai jumpa\". Ini bukan formalitas keagamaan; ia cara berpisah yang biasa, dan tidak membalasnya terasa dingin. Dua kata pembuka mengurus hampir semuanya: **muga-muga** (ngoko) dan **mugi-mugi** (krama)."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Ngoko",
+      "Krama"
+     ],
+     "rows": [
+      [
+       "Semoga lancar.",
+       "*Muga-muga lancar.*",
+       "*Mugi-mugi lancar.*"
+      ],
+      [
+       "Semoga sehat selalu.",
+       "*Muga-muga tansah sehat.*",
+       "*Mugi tansah pinaringan saras.*"
+      ],
+      [
+       "Semoga cepat sembuh.",
+       "*Ndang mari, ya.*",
+       "*Ndang saras, nggih.*"
+      ],
+      [
+       "Semoga berhasil.",
+       "*Muga-muga kasil.*",
+       "*Mugi-mugi kasil.*"
+      ],
+      [
+       "Selamat ulang tahun.",
+       "*Sugeng ambal warsa.*",
+       "*Sugeng ambal warsa.*"
+      ],
+      [
+       "Selamat hari raya.",
+       "*Sugeng riyadi.*",
+       "*Sugeng riyadi.*"
+      ],
+      [
+       "Selamat menempuh hidup baru.",
+       "*Sugeng dhaup.*",
+       "*Sugeng dhaup.*"
+      ],
+      [
+       "Turut berduka cita.",
+       "*Mèlu bela sungkawa.*",
+       "*Ndhèrèk bela sungkawa.*"
+      ],
+      [
+       "Selamat jalan.",
+       "*Sugeng tindak.*",
+       "*Sugeng tindak.*"
+      ],
+      [
+       "Selamat tinggal.",
+       "*Sugeng kantun.*",
+       "*Sugeng kantun.*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Sugeng tindak dan sugeng kantun — pasangan yang jangan tertukar",
+     "items": [
+      "**Sugeng tindak** diucapkan kepada **orang yang pergi**. **Sugeng kantun** diucapkan kepada **orang yang tinggal**. Keduanya diucapkan bersamaan ketika berpisah: yang pergi berkata *sugeng kantun*, yang ditinggal menjawab *sugeng tindak*.",
+      "Menukarnya membuat kalimatmu berarti kebalikannya, dan itu satu-satunya kesalahan di daftar ini yang benar-benar terdengar aneh.",
+      "Untuk perpisahan sehari-hari, *mangga* dan *ngatos-atos* sudah cukup, dan keduanya tidak pernah salah."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Rencana, waktu depan, dan menolak dengan halus",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Ngoko",
+      "Krama"
+     ],
+     "rows": [
+      [
+       "besok",
+       "*sésuk*",
+       "*bénjing*"
+      ],
+      [
+       "lusa",
+       "*sésuk émbèn*",
+       "*bénjing émbèn*"
+      ],
+      [
+       "minggu depan",
+       "*minggu ngarep*",
+       "*minggu ngajeng*"
+      ],
+      [
+       "bulan depan",
+       "*sasi ngarep*",
+       "*wulan ngajeng*"
+      ],
+      [
+       "tahun depan",
+       "*taun ngarep*",
+       "*taun ngajeng*"
+      ],
+      [
+       "nanti",
+       "*mengko*",
+       "*mangké*"
+      ],
+      [
+       "kapan-kapan",
+       "*kapan-kapan*",
+       "*kapan-kapan*"
+      ],
+      [
+       "secepatnya",
+       "*sak cepeté*",
+       "*sak enggalipun*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Menolak ajakan** adalah keterampilan yang di Jawa lebih halus daripada di banyak tempat. Menolak langsung — *ora* — jarang dilakukan kepada orang yang bukan teman dekat. Yang dipakai adalah penundaan atau alasan:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Wah, kapan-kapan waé, ya.** — Wah, kapan-kapan saja, ya. Penundaan yang semua orang mengerti artinya.",
+      "**Nuwun sèwu, kula wonten acara.** — Maaf, saya ada acara. Alasan yang tidak perlu dirinci.",
+      "**Tak pikir dhisik, ya.** — Saya pikir dulu, ya. Menunda keputusan tanpa menutup pintu.",
+      "**Mbokmenawa mengko, nggih.** — Mungkin nanti, ya. Paling halus dari semuanya."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Insya Allah, dan apa artinya di Jawa",
+     "items": [
+      "*Insya Allah* dipakai luas di Jawa, termasuk oleh orang yang bukan muslim, dan artinya bergeser dari makna harfiahnya. Dalam percakapan sehari-hari ia berarti **\"kemungkinan besar iya, tapi belum janji\"**.",
+      "Kalau kamu diundang dan menjawab *insya Allah*, kamu belum menjanjikan kehadiran. Kalau kamu mengundang dan dijawab *insya Allah*, jangan menghitung tempat duduknya.",
+      "Ini bukan ketidakjujuran; ia cara menjaga agar tidak ada janji yang terpaksa dilanggar. Bahasa Jawa punya banyak alat semacam ini, dan seluruhnya melayani tujuan yang sama: menjaga supaya tidak ada pihak yang kehilangan muka."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "jv": "arep",
+   "krama": "badhé",
+   "baca": "A-rep · ba-DHÉ",
+   "id": "akan, mau"
+  },
+  {
+   "jv": "bakal",
+   "krama": "badhé",
+   "baca": "BA-kal",
+   "id": "bakal"
+  },
+  {
+   "jv": "péngin, kepéngin",
+   "krama": "kepéngin",
+   "baca": "PÉ-ngin",
+   "id": "ingin"
+  },
+  {
+   "jv": "gelem",
+   "krama": "purun",
+   "baca": "GE-lem · PU-run",
+   "id": "mau, bersedia"
+  },
+  {
+   "jv": "kudu",
+   "krama": "kedah",
+   "baca": "KU-du · KE-dah",
+   "id": "harus"
+  },
+  {
+   "jv": "mbokmenawa",
+   "krama": "mbokmenawi",
+   "baca": "mbo'-me-NA-wo",
+   "id": "mungkin"
+  },
+  {
+   "jv": "nèk, yèn",
+   "krama": "menawi",
+   "baca": "NÈ' · YÈN",
+   "id": "kalau"
+  },
+  {
+   "jv": "bèn",
+   "krama": "supados",
+   "baca": "BÈN",
+   "id": "supaya"
+  },
+  {
+   "jv": "muga-muga",
+   "krama": "mugi-mugi",
+   "baca": "MU-go-MU-go",
+   "id": "semoga"
+  },
+  {
+   "jv": "lancar",
+   "krama": "lancar",
+   "baca": "LAN-car",
+   "id": "lancar"
+  },
+  {
+   "jv": "kasil",
+   "krama": "kasil",
+   "baca": "KA-sil",
+   "id": "berhasil"
+  },
+  {
+   "jv": "riyaya",
+   "krama": "riyadi",
+   "baca": "ri-YO-yo",
+   "id": "hari raya"
+  },
+  {
+   "jv": "tamu",
+   "krama": "tamu",
+   "baca": "TA-mu",
+   "id": "tamu"
+  },
+  {
+   "jv": "acara",
+   "krama": "acara",
+   "baca": "a-CA-ro",
+   "id": "acara"
+  },
+  {
+   "jv": "malah",
+   "krama": "malah",
+   "baca": "MA-lah",
+   "id": "malah, justru"
+  },
+  {
+   "jv": "babar pisan",
+   "krama": "babar pisan",
+   "baca": "BA-bar PI-san",
+   "id": "sama sekali"
+  },
+  {
+   "jv": "mikir",
+   "krama": "menggalih",
+   "baca": "MI-kir",
+   "id": "berpikir"
+  },
+  {
+   "jv": "mampir",
+   "krama": "mampir",
+   "baca": "MAM-pir",
+   "id": "mampir"
+  },
+  {
+   "jv": "telat",
+   "krama": "telat",
+   "baca": "TE-lat",
+   "id": "terlambat"
+  },
+  {
+   "jv": "macet",
+   "krama": "macet",
+   "baca": "MA-cet",
+   "id": "macet"
+  },
+  {
+   "jv": "tikèt",
+   "krama": "tikèt",
+   "baca": "TI-kèt",
+   "id": "tiket"
+  },
+  {
+   "jv": "lelakon, lampah",
+   "krama": "lampah",
+   "baca": "LAM-pah",
+   "id": "perjalanan"
+  },
+  {
+   "jv": "wektu",
+   "krama": "wekdal",
+   "baca": "WEK-tu · WEK-dal",
+   "id": "waktu"
+  },
+  {
+   "jv": "ngarep",
+   "krama": "ngajeng",
+   "baca": "nga-REP",
+   "id": "depan"
+  },
+  {
+   "jv": "mesthi",
+   "krama": "mesthi",
+   "baca": "MES-thi",
+   "id": "pasti"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih *arep*, *péngin*, atau *gelem*.",
+   "items": [
+    "Aku ____ mulih Jakarta, ning tikèté larang. (ingin)",
+    "Sésuk aku ____ nyang Klaten. (sudah diputuskan)",
+    "Kowé ____ melu? (bersedia?)",
+    "Aku ____ sinau basa Jawa nganti lancar. (ingin)",
+    "Rini ____ mangkat Setu ésuk. (sudah diputuskan)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat bersyarat dalam ngoko.",
+   "items": [
+    "udan / aku / ora / lunga",
+    "ana / wektu / mampir / ya",
+    "ora / isa / ora / apa-apa",
+    "telat / ora / bèn / mangkat ésuk",
+    "kowé / gelem / mèlu / aku waé"
+   ]
+  },
+  {
+   "prompt": "Tulis ucapan yang tepat dalam **krama**.",
+   "items": [
+    "Semoga lancar.",
+    "Semoga sehat selalu.",
+    "Selamat ulang tahun.",
+    "Selamat hari raya.",
+    "Selamat jalan. (kepada yang pergi)",
+    "Selamat tinggal. (kepada yang tinggal)"
+   ]
+  },
+  {
+   "prompt": "**Ulangan unit 15.** Tutup unit 15, lalu tulis kalimat Jawanya dalam krama.",
+   "items": [
+    "Anda bekerja di mana?",
+    "Saya masih kuliah.",
+    "Setiap hari saya bangun jam lima.",
+    "Biasanya saya pulang sore.",
+    "Saya sedang libur."
+   ]
+  }
+ ],
+ "answers": [
+  "péngin — arep — gelem — péngin — arep",
+  "Nèk udan, aku ora lunga. — Nèk ana wektu, mampir ya. — Nèk ora isa, ora apa-apa. — Mangkat ésuk bèn ora telat. — Nèk kowé gelem, mèlu aku waé.",
+  "Mugi-mugi lancar. — Mugi tansah pinaringan saras. — Sugeng ambal warsa. — Sugeng riyadi. — Sugeng tindak. — Sugeng kantun.",
+  "Panjenengan nyambut damel wonten pundi? — Kula taksih kuliah. — Saben dinten kula wungu jam gangsal. — Biasanipun kula wangsul sonten. — Kula nembé prei."
+ ]
+}

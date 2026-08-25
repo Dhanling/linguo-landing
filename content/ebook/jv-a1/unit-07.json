@@ -1,0 +1,610 @@
+{
+ "title": "Arah dan tempat",
+ "title_target": "Lor, kidul, wétan, kulon",
+ "goal": "Menanyakan dan memberi arah — sambil menghadapi kebiasaan Jawa yang paling membingungkan orang luar: menunjuk arah dengan mata angin, bukan dengan kiri dan kanan.",
+ "bekal": [
+  "memakai *menyang* / *dhateng* untuk tujuan dan *saka* / *saking* untuk asal",
+  "mengenali empat mata angin dan memakainya seperti orang Jawa memakainya",
+  "menanyakan jarak dan cara pergi ke suatu tempat"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Takon dalan ing prapatan",
+   "intro": "Dian tersesat di sekitar Tugu dan bertanya kepada seorang bapak penjaga parkir. Karena bapak itu lebih tua, Dian memakai krama; bapaknya menjawab dengan campuran, seperti orang sungguhan.",
+   "lines": [
+    {
+     "speaker": "Dian:",
+     "text": "Nuwun sèwu, Pak. Badhé nyuwun pirsa.",
+     "id": "Permisi, Pak. Mau bertanya.",
+     "literal": "mohon seribu, Pak. akan mohon tahu."
+    },
+    {
+     "speaker": "Pak parkir:",
+     "text": "Nggih, Mbak. Pripun?",
+     "id": "Ya, Mbak. Bagaimana?",
+     "literal": "ya, Mbak. bagaimana?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Stasiun Tugu menika arahipun pundi, nggih?",
+     "id": "Stasiun Tugu itu arahnya ke mana, ya?",
+     "literal": "stasiun Tugu ini arah-nya mana, ya?"
+    },
+    {
+     "speaker": "Pak parkir:",
+     "text": "Saking mriki ngidul, Mbak. Mengko ana prapatan, ménggok ngulon.",
+     "id": "Dari sini ke selatan, Mbak. Nanti ada perempatan, belok ke barat.",
+     "literal": "dari sini ke-selatan, Mbak. nanti ada perempatan, belok ke-barat."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Ngidul… menika ingkang pundi, Pak?",
+     "id": "Ke selatan… itu yang mana, Pak?",
+     "literal": "ke-selatan… itu yang mana, Pak?"
+    },
+    {
+     "speaker": "Pak parkir:",
+     "text": "Ha ha, njenengan mesthi saking Jakarta. Ngidul niku ngiwa, Mbak.",
+     "id": "Ha ha, Anda pasti dari Jakarta. Ke selatan itu ke kiri, Mbak.",
+     "literal": "ha ha, anda pasti dari Jakarta. ke-selatan itu ke-kiri, Mbak."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "O, inggih. Tebih boten, Pak?",
+     "id": "Oh, iya. Jauh tidak, Pak?",
+     "literal": "oh, iya. jauh tidak, Pak?"
+    },
+    {
+     "speaker": "Pak parkir:",
+     "text": "Boten. Mlampah gangsal menit sampun dugi.",
+     "id": "Tidak. Jalan kaki lima menit sudah sampai.",
+     "literal": "tidak. berjalan lima menit sudah sampai."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Matur nuwun sanget, Pak.",
+     "id": "Terima kasih banyak, Pak.",
+     "literal": "terima-kasih sangat, Pak."
+    },
+    {
+     "speaker": "Pak parkir:",
+     "text": "Sami-sami. Ngatos-atos, nggih.",
+     "id": "Sama-sama. Hati-hati, ya.",
+     "literal": "sama-sama. hati-hati, ya."
+    }
+   ],
+   "notes": [
+    "**Nyuwun pirsa** secara harfiah \"mohon (Anda) mengetahui\" — cara paling sopan untuk membuka pertanyaan kepada orang yang tidak dikenal. Bentuk ngokonya *arep takon*. Pasangkan dengan *nuwun sèwu* di depannya dan kamu punya pembuka yang aman di mana pun di Jawa.",
+    "**Njenengan** dan **niku** di mulut Pak parkir adalah **madya** — tingkat antara ngoko dan krama yang sangat sering dipakai orang di jalan. *Njenengan* adalah bentuk santai *panjenengan*, *niku* bentuk santai *menika*. Kamu tidak perlu memakainya; kamu cuma perlu **mengenalinya** ketika mendengarnya, karena kamu akan sering mendengarnya.",
+    "**Ménggok** berarti \"belok\", kramanya *ménggok* juga. Kata lain yang searti: *bèlok* (dari bahasa Indonesia) dan *minggir* (menepi).",
+    "**Mlampah** adalah krama untuk *mlaku* (berjalan). Perhatikan bahwa *mlaku* juga berarti \"berjalan\" dalam arti mesin bekerja — *motoré mlaku* (motornya jalan) — persis seperti bahasa Indonesia.",
+    "**Dugi** (krama) / **tekan** (ngoko) berarti \"sampai, tiba\". *Wis tekan* = sudah sampai. Kata *tekan* juga dipakai untuk batas: *tekan kono waé* (sampai situ saja).",
+    "**Ngatos-atos** adalah krama dari *ngati-ati* (hati-hati). Ini ucapan perpisahan yang sangat sering dipakai kepada orang yang akan pergi, dan mengucapkannya kembali adalah kesopanan yang murah dan selalu tepat."
+   ],
+   "grammars": [
+    {
+     "title": "Empat mata angin, dan kenapa orang Jawa memakainya",
+     "body": [
+      "Ini bagian unit yang paling membingungkan pendatang, dan sekaligus paling khas. Orang Jawa — terutama di Yogyakarta dan Solo — menunjuk arah dengan **utara, selatan, timur, barat**, bahkan untuk jarak sependek letak kamar mandi. \"Kiri\" dan \"kanan\" tetap ada, tapi jauh lebih jarang dipakai untuk arah jalan."
+     ],
+     "table": {
+      "head": [
+       "Arah",
+       "Kata benda",
+       "Ke arah itu",
+       "Di sisi itu"
+      ],
+      "rows": [
+       [
+        "utara",
+        "*lor*",
+        "*ngalor* (ke utara)",
+        "*ing lor* (di utara)"
+       ],
+       [
+        "selatan",
+        "*kidul*",
+        "*ngidul*",
+        "*ing kidul*"
+       ],
+       [
+        "timur",
+        "*wétan*",
+        "*ngétan*",
+        "*ing wétan*"
+       ],
+       [
+        "barat",
+        "*kulon*",
+        "*ngulon*",
+        "*ing kulon*"
+       ],
+       [
+        "kiri",
+        "*kiwa*",
+        "*ngiwa*",
+        "*ing kiwa*"
+       ],
+       [
+        "kanan",
+        "*tengen*",
+        "*nengen*",
+        "*ing tengen*"
+       ],
+       [
+        "lurus",
+        "*jejeg*, *terus*",
+        "*lurus waé*",
+        "—"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan polanya: awalan **ng-** mengubah kata arah menjadi \"menuju ke arah itu\". Pola yang sama akan kamu temui lagi di unit 8, di mana ia membentuk kata kerja aktif.",
+      "**Kenapa mata angin?** Karena Yogyakarta dan Solo dibangun di atas garis lurus utara-selatan antara Gunung Merapi dan Laut Selatan, dan gunung itu terlihat dari hampir mana saja. Orang Jawa tumbuh dengan peta yang selalu menempel di kepala. Kalau kamu bingung di Yogyakarta, cari Merapi: itulah utara.",
+      "Kamu **boleh** menjawab dengan *kiwa* dan *tengen*, dan orang akan mengerti. Tapi kamu perlu **mengerti** *ngalor* dan *ngidul* ketika mereka mengucapkannya, karena mereka akan mengucapkannya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Ke mana, dari mana, lewat mana",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Ngoko",
+      "Krama"
+     ],
+     "rows": [
+      [
+       "ke",
+       "*menyang*, *nyang*, *marang*",
+       "*dhateng*"
+      ],
+      [
+       "dari",
+       "*saka*",
+       "*saking*"
+      ],
+      [
+       "di",
+       "*ing*, *nang*",
+       "*wonten ing*"
+      ],
+      [
+       "lewat",
+       "*liwat*",
+       "*langkung*"
+      ],
+      [
+       "sampai",
+       "*tekan*",
+       "*dugi*"
+      ],
+      [
+       "dekat",
+       "*cedhak*",
+       "*celak*"
+      ],
+      [
+       "jauh",
+       "*adoh*",
+       "*tebih*"
+      ],
+      [
+       "Mau ke mana?",
+       "*Arep nyang ngendi?*",
+       "*Badhé tindak pundi?*"
+      ],
+      [
+       "Dari mana?",
+       "*Saka ngendi?*",
+       "*Saking pundi?*"
+      ],
+      [
+       "Di mana?",
+       "*Ing ngendi?*",
+       "*Wonten pundi?*"
+      ],
+      [
+       "Berapa jauh?",
+       "*Adohé pira?*",
+       "*Tebihipun pinten?*"
+      ],
+      [
+       "Bagaimana caranya ke sana?",
+       "*Piyé carané nyang kana?*",
+       "*Kadospundi caranipun dhateng mrika?*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Arep nyang ngendi? — pertanyaan yang bukan pertanyaan",
+     "items": [
+      "Kalau tetangga menyapamu dengan *arep nyang ngendi?* sambil kamu keluar pintu, mereka **tidak sedang meminta rincian rencanamu**. Itu sapaan, sepadan dengan \"mau ke mana?\" yang basa-basi dalam bahasa Indonesia atau \"how are you\" dalam bahasa Inggris.",
+      "Jawaban yang benar juga tidak perlu rinci: **\"Niki, mriki mawon\"** (ini, ke sini saja) atau **\"Arep nyang ngarep\"** (mau ke depan). Menjelaskan tujuanmu panjang lebar justru membuat penanya bingung.",
+      "Bentuk krama yang akan kamu dengar dari orang tua: *badhé tindak pundi?* — dengan *tindak*, kata krama inggil untuk \"pergi\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Tempat dan cara pergi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ngoko",
+      "Krama",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*dalan*",
+       "*margi*",
+       "jalan"
+      ],
+      [
+       "*prapatan*",
+       "*prapatan*",
+       "perempatan"
+      ],
+      [
+       "*pertelon*",
+       "*pertelon*",
+       "pertigaan"
+      ],
+      [
+       "*bangjo*",
+       "*bangjo*",
+       "lampu lalu lintas"
+      ],
+      [
+       "*kutha*",
+       "*kitha*",
+       "kota"
+      ],
+      [
+       "*désa*",
+       "*dhusun*",
+       "desa"
+      ],
+      [
+       "*pasar*",
+       "*peken*",
+       "pasar"
+      ],
+      [
+       "*sekolahan*",
+       "*sekolahan*",
+       "sekolah"
+      ],
+      [
+       "*mesjid*",
+       "*mesjid*",
+       "masjid"
+      ],
+      [
+       "*rumah sakit*",
+       "*griya sakit*",
+       "rumah sakit"
+      ],
+      [
+       "*kantor*",
+       "*kantor*",
+       "kantor"
+      ],
+      [
+       "*stasiun*",
+       "*stasiun*",
+       "stasiun"
+      ],
+      [
+       "*warung*",
+       "*warung*",
+       "warung"
+      ],
+      [
+       "*kali*",
+       "*lèpèn*",
+       "sungai"
+      ],
+      [
+       "*gunung*",
+       "*redi*",
+       "gunung"
+      ],
+      [
+       "*sawah*",
+       "*sabin*",
+       "sawah"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Bangjo** adalah salah satu kata Jawa modern yang paling menyenangkan: singkatan dari *abang-ijo*, \"merah-hijau\". Ia dipakai di seluruh Yogyakarta dan Solo untuk lampu lalu lintas, dan kamu akan mendengarnya dalam hampir setiap petunjuk arah."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Cara pergi",
+      "Ngoko",
+      "Krama"
+     ],
+     "rows": [
+      [
+       "jalan kaki",
+       "*mlaku*",
+       "*mlampah*"
+      ],
+      [
+       "naik (kendaraan)",
+       "*numpak*",
+       "*nitih*"
+      ],
+      [
+       "naik motor",
+       "*numpak motor*",
+       "*nitih motor*"
+      ],
+      [
+       "naik bus",
+       "*numpak bis*",
+       "*nitih bis*"
+      ],
+      [
+       "naik becak",
+       "*numpak bécak*",
+       "*nitih bécak*"
+      ],
+      [
+       "berangkat",
+       "*mangkat*",
+       "*bidhal*"
+      ],
+      [
+       "pulang",
+       "*mulih*",
+       "*wangsul*"
+      ],
+      [
+       "sampai",
+       "*tekan*",
+       "*dugi*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Mulih** (pulang) adalah kata yang akan sangat sering kamu pakai dan dengar, karena \"pulang\" adalah tema besar dalam percakapan Jawa: *wis mulih?*, *arep mulih*, *durung mulih*. Kramanya *wangsul*, dan krama inggilnya *kondur* — yang dipakai untuk orang yang dihormati: *Bapak sampun kondur* (Bapak sudah pulang)."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "jv": "lor",
+   "krama": "lèr",
+   "baca": "LOR",
+   "id": "utara"
+  },
+  {
+   "jv": "kidul",
+   "krama": "kidul",
+   "baca": "KI-dul",
+   "id": "selatan"
+  },
+  {
+   "jv": "wétan",
+   "krama": "wétan",
+   "baca": "WÉ-tan",
+   "id": "timur"
+  },
+  {
+   "jv": "kulon",
+   "krama": "kilèn",
+   "baca": "KU-lon · KI-lèn",
+   "id": "barat"
+  },
+  {
+   "jv": "kiwa",
+   "krama": "kiwa",
+   "baca": "KI-wo",
+   "id": "kiri"
+  },
+  {
+   "jv": "tengen",
+   "krama": "tengen",
+   "baca": "TE-ngen",
+   "id": "kanan"
+  },
+  {
+   "jv": "menyang, nyang",
+   "krama": "dhateng",
+   "baca": "me-NYANG · DHA-teng",
+   "id": "ke"
+  },
+  {
+   "jv": "liwat",
+   "krama": "langkung",
+   "baca": "LI-wat",
+   "id": "lewat"
+  },
+  {
+   "jv": "tekan",
+   "krama": "dugi",
+   "baca": "TE-kan · DU-gi",
+   "id": "sampai, tiba"
+  },
+  {
+   "jv": "ménggok",
+   "krama": "ménggok",
+   "baca": "MÉNG-go'",
+   "id": "belok"
+  },
+  {
+   "jv": "mlaku",
+   "krama": "mlampah",
+   "baca": "m-LA-ku",
+   "id": "berjalan"
+  },
+  {
+   "jv": "numpak",
+   "krama": "nitih",
+   "baca": "NUM-pa' · NI-tih",
+   "id": "naik kendaraan"
+  },
+  {
+   "jv": "mangkat",
+   "krama": "bidhal",
+   "baca": "MANG-kat",
+   "id": "berangkat"
+  },
+  {
+   "jv": "mulih",
+   "krama": "wangsul",
+   "baca": "MU-lih · WANG-sul",
+   "id": "pulang"
+  },
+  {
+   "jv": "lunga",
+   "krama": "késah",
+   "baca": "LUNG-o · KÉ-sah",
+   "id": "pergi"
+  },
+  {
+   "jv": "teka",
+   "krama": "rawuh",
+   "baca": "TE-ko · RA-wuh",
+   "id": "datang"
+  },
+  {
+   "jv": "dalan",
+   "krama": "margi",
+   "baca": "DA-lan · MAR-gi",
+   "id": "jalan"
+  },
+  {
+   "jv": "prapatan",
+   "krama": "prapatan",
+   "baca": "pra-PA-tan",
+   "id": "perempatan"
+  },
+  {
+   "jv": "bangjo",
+   "krama": "bangjo",
+   "baca": "BANG-jo",
+   "id": "lampu lalu lintas"
+  },
+  {
+   "jv": "kutha",
+   "krama": "kitha",
+   "baca": "KU-tho · KI-tho",
+   "id": "kota"
+  },
+  {
+   "jv": "désa",
+   "krama": "dhusun",
+   "baca": "DÉ-so · DHU-sun",
+   "id": "desa"
+  },
+  {
+   "jv": "kali",
+   "krama": "lèpèn",
+   "baca": "KA-li · LÈ-pèn",
+   "id": "sungai"
+  },
+  {
+   "jv": "gunung",
+   "krama": "redi",
+   "baca": "GU-nung · RE-di",
+   "id": "gunung"
+  },
+  {
+   "jv": "sawah",
+   "krama": "sabin",
+   "baca": "SA-wah · SA-bin",
+   "id": "sawah"
+  },
+  {
+   "jv": "takon",
+   "krama": "nyuwun pirsa",
+   "baca": "TA-kon",
+   "id": "bertanya"
+  },
+  {
+   "jv": "ngati-ati",
+   "krama": "ngatos-atos",
+   "baca": "nga-ti-A-ti",
+   "id": "hati-hati"
+  },
+  {
+   "jv": "mesthi",
+   "krama": "mesthi",
+   "baca": "MES-thi",
+   "id": "pasti"
+  },
+  {
+   "jv": "menit",
+   "krama": "menit",
+   "baca": "ME-nit",
+   "id": "menit"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah kata arah berikut menjadi bentuk \"menuju ke arah itu\".",
+   "items": [
+    "lor",
+    "kidul",
+    "wétan",
+    "kulon",
+    "kiwa",
+    "tengen"
+   ]
+  },
+  {
+   "prompt": "Isi dengan *menyang*, *saka*, *ing*, atau *liwat*.",
+   "items": [
+    "Aku arep ____ pasar.",
+    "Dhèwèké teka ____ Klaten.",
+    "Bukuné ____ ndhuwur méja.",
+    "Awaké dhéwé ____ dalan cilik waé.",
+    "Rini mulih ____ omahé jam wolu."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jawa **krama**.",
+   "items": [
+    "Permisi, Pak. Mau bertanya.",
+    "Stasiunnya di mana, ya?",
+    "Dari sini ke selatan.",
+    "Jauh tidak, Pak?",
+    "Jalan kaki lima menit sudah sampai.",
+    "Terima kasih banyak. Hati-hati, ya."
+   ]
+  },
+  {
+   "prompt": "**Ulangan unit 5.** Tutup unit 5, lalu tulis kalimat Jawanya.",
+   "items": [
+    "Berapa harganya? (krama)",
+    "Mahal. Tidak boleh kurang? (ngoko)",
+    "Saya ambil dua. (krama)",
+    "Kembaliannya berapa? (ngoko)",
+    "Semuanya jadi lima puluh ribu. (ngoko)"
+   ]
+  }
+ ],
+ "answers": [
+  "ngalor — ngidul — ngétan — ngulon — ngiwa — nengen",
+  "menyang — saka — ing — liwat — menyang",
+  "Nuwun sèwu, Pak. Badhé nyuwun pirsa. — Stasiunipun wonten pundi, nggih? — Saking mriki ngidul. — Tebih boten, Pak? — Mlampah gangsal menit sampun dugi. — Matur nuwun sanget. Ngatos-atos, nggih.",
+  "Pinten reginipun? — Larang. Ora éntuk kurang? — Kula pendhet kalih. — Susuké pira? — Kabèh dadi sèket èwu."
+ ]
+}

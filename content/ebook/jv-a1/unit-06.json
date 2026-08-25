@@ -1,0 +1,625 @@
+{
+ "title": "Waktu, hari, dan hari pasaran",
+ "title_target": "Jam pira saiki?",
+ "goal": "Menyebut jam, hari, dan bagian hari — lalu berkenalan dengan sesuatu yang tidak ada di kalender bahasa Indonesia: lima hari pasaran yang berputar bersamaan dengan tujuh hari biasa.",
+ "bekal": [
+  "menyebut jam, termasuk pola *setengah* yang menghitung maju, bukan mundur",
+  "menyebut tujuh hari dan lima hari pasaran",
+  "memakai *saiki*, *mau*, *mengko*, *wingi*, *sésuk* untuk menempatkan kejadian dalam waktu"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Janjian karo Rini",
+   "intro": "Dian dan Rini merencanakan pergi ke Malioboro. Percakapannya ngoko, cepat, dan penuh kata waktu — persis seperti percakapan janjian yang sebenarnya.",
+   "lines": [
+    {
+     "speaker": "Dian:",
+     "text": "Rin, sésuk kowé sibuk?",
+     "id": "Rin, besok kamu sibuk?",
+     "literal": "Rin, besok kamu sibuk?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Ésuk kuliah, awan kosong. Ana apa?",
+     "id": "Pagi kuliah, siang kosong. Ada apa?",
+     "literal": "pagi kuliah, siang kosong. ada apa?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Aku péngin nyang Malioboro. Melu, ora?",
+     "id": "Saya ingin ke Malioboro. Ikut, tidak?",
+     "literal": "aku ingin ke Malioboro. ikut, tidak?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Gelem. Jam pira?",
+     "id": "Mau. Jam berapa?",
+     "literal": "mau. jam berapa?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Jam telu piyé?",
+     "id": "Jam tiga bagaimana?",
+     "literal": "jam tiga bagaimana?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Rada awan. Setengah papat waé, luwih adhem.",
+     "id": "Agak siang. Setengah empat saja, lebih adem.",
+     "literal": "agak siang. setengah empat saja, lebih dingin."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Setengah papat kuwi jam telu luwih telung puluh, ta?",
+     "id": "Setengah empat itu jam tiga lebih tiga puluh, kan?",
+     "literal": "setengah empat itu jam tiga lebih tiga-puluh, kan?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Bener. Setengah nuju ing jam papat, dudu setengahé jam papat.",
+     "id": "Benar. Setengah menuju jam empat, bukan setengahnya jam empat.",
+     "literal": "benar. setengah menuju ke jam empat, bukan setengah-nya jam empat."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Oh, ngono. Sésuk dina apa, ya?",
+     "id": "Oh, begitu. Besok hari apa, ya?",
+     "literal": "oh, begitu. besok hari apa, ya?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Setu Kliwon. Pasar Beringharjo rame banget nèk Kliwon.",
+     "id": "Sabtu Kliwon. Pasar Beringharjo ramai sekali kalau Kliwon.",
+     "literal": "Sabtu Kliwon. pasar Beringharjo ramai sekali kalau Kliwon."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Kliwon kuwi apa?",
+     "id": "Kliwon itu apa?",
+     "literal": "Kliwon itu apa?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Dina pasaran. Mengko tak critani ing dalan.",
+     "id": "Hari pasaran. Nanti saya ceritakan di jalan.",
+     "literal": "hari pasaran. nanti saya ceritakan di jalan."
+    }
+   ],
+   "notes": [
+    "**Ta** di ujung kalimat adalah penanda \"kan?\", meminta pembenaran. Bahasa Indonesia memakai \"kan\" atau \"ya\" dengan cara yang sama. Bentuk lain yang sama artinya: *ya?*, *ta?*, dan di Jawa Timur *ta?* diucapkan lebih tegas.",
+    "**Gelem** berarti \"mau, bersedia\", kramanya *purun*. Bedakan dari *arep* (akan) dan *péngin* (ingin). *Aku gelem* menjawab ajakan; *aku arep* menyatakan rencana; *aku péngin* menyatakan keinginan.",
+    "**Melu** berarti \"ikut\", kramanya *ndhèrèk*. Kata *ndhèrèk* juga dipakai sebagai ucapan sopan saat memasuki rumah orang: *ndhèrèk langkung* (permisi, numpang lewat).",
+    "**Nèk** adalah bentuk pendek *menawa* (kalau, jika), dan yang paling sering terdengar. Kramanya *menawi*. Kamu akan memakainya di hampir setiap percakapan: *nèk ana wektu* (kalau ada waktu), *nèk kesel* (kalau lelah).",
+    "**Tak critani** — bentuk *tak* + kata kerja yang sudah muncul di unit 5, di sini dengan akhiran *-i* yang berarti \"kepada seseorang\". *Tak critani* = \"akan saya ceritakan kepadamu\". Akhiran *-i* dan *-aké* dibahas di unit 18.",
+    "**Rame** berarti \"ramai\", dan di Jawa ia hampir selalu bernada positif — ramai berarti hidup, seru, banyak orang. Kramanya *ramé* juga."
+   ],
+   "grammars": [
+    {
+     "title": "Jam: dan pola setengah yang menghitung maju",
+     "body": [
+      "Menyebut jam dalam bahasa Jawa sama dengan bahasa Indonesia — kecuali satu hal yang wajib kamu pasang benar sekarang juga, karena salah paham di sini bisa membuatmu terlambat satu jam."
+     ],
+     "table": {
+      "head": [
+       "Jam",
+       "Ngoko",
+       "Krama"
+      ],
+      "rows": [
+       [
+        "03.00",
+        "*jam telu*",
+        "*jam tiga*"
+       ],
+       [
+        "03.10",
+        "*jam telu luwih sepuluh*",
+        "*jam tiga langkung sedasa*"
+       ],
+       [
+        "03.15",
+        "*jam telu luwih seprapat*",
+        "*jam tiga langkung saprapat*"
+       ],
+       [
+        "**03.30**",
+        "***setengah papat***",
+        "***setengah sekawan***"
+       ],
+       [
+        "03.45",
+        "*jam papat kurang seprapat*",
+        "*jam sekawan kirang saprapat*"
+       ],
+       [
+        "04.00",
+        "*jam papat*",
+        "*jam sekawan*"
+       ],
+       [
+        "Jam berapa?",
+        "*Jam pira?*",
+        "*Jam pinten?*"
+       ],
+       [
+        "Jam berapa sekarang?",
+        "*Saiki jam pira?*",
+        "*Sakmenika jam pinten?*"
+       ]
+      ]
+     },
+     "after": [
+      "**Setengah papat berarti 03.30, bukan 04.30.** Bahasa Jawa menghitung *setengah perjalanan menuju* jam empat, bukan *setengahnya* jam empat. Pola yang sama ada di bahasa Belanda dan bahasa Jerman, dan ia masuk ke bahasa Jawa lewat zaman kolonial.",
+      "Kalau kamu tidak yakin, hindari sama sekali dan sebutkan angkanya: *jam telu telung puluh*. Ini benar, dimengerti, dan tidak berisiko. Tapi kamu tetap perlu **mengerti** bentuk *setengah* ketika orang lain memakainya — dan mereka akan memakainya.",
+      "**Luwih** (lebih) dan **kurang** (kurang) mengapit angka menitnya. Kramanya *langkung* dan *kirang*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Hari, dan hari pasaran yang berputar di belakangnya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tujuh hari biasa hampir sama dengan bahasa Indonesia, jadi tidak perlu banyak dihafal:"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ngoko",
+      "Krama",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Senèn*",
+       "*Senèn*",
+       "Senin"
+      ],
+      [
+       "*Selasa*",
+       "*Selasa*",
+       "Selasa"
+      ],
+      [
+       "*Rebo*",
+       "*Rebo*",
+       "Rabu"
+      ],
+      [
+       "*Kemis*",
+       "*Kemis*",
+       "Kamis"
+      ],
+      [
+       "*Jemuwah*",
+       "*Jumuwah*",
+       "Jumat"
+      ],
+      [
+       "*Setu*",
+       "*Setu*",
+       "Sabtu"
+      ],
+      [
+       "*Minggu*, *Akad*",
+       "*Akad*",
+       "Minggu"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Yang tidak ada di kalender bahasa Indonesia adalah **pasaran** — putaran **lima hari** yang berjalan bersamaan dengan tujuh hari biasa. Namanya: **Legi, Pahing, Pon, Wagé, Kliwon**. Karena lima dan tujuh berputar bersamaan, satu gabungan tertentu — misalnya *Setu Kliwon* — kembali setiap tiga puluh lima hari sekali. Rentang tiga puluh lima hari itu disebut **selapan**."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pasaran",
+      "Cara baca",
+      "Yang perlu kamu tahu"
+     ],
+     "rows": [
+      [
+       "*Legi*",
+       "LE-gi",
+       "sering dipakai untuk nama pasar dan hari pasar desa"
+      ],
+      [
+       "*Pahing*",
+       "PA-hing",
+       "juga ditulis *Paing*"
+      ],
+      [
+       "*Pon*",
+       "PON",
+       "pasar Pon ada di banyak kota kecil"
+      ],
+      [
+       "*Wagé*",
+       "wa-GÉ",
+       "juga ditulis *Wage*"
+      ],
+      [
+       "*Kliwon*",
+       "KLI-won",
+       "dianggap paling istimewa; *Jemuwah Kliwon* dan *Setu Kliwon* punya arti khusus dalam tradisi"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Weton: kenapa orang menanyakan hari lahirmu",
+     "items": [
+      "Gabungan hari biasa dan pasaran pada hari kelahiran seseorang disebut **weton** — misalnya *Rebo Pon*. Ia dipakai untuk memilih tanggal pernikahan, hari baik untuk pindah rumah, dan hari selamatan.",
+      "Kalau ada orang tua bertanya *wetonmu apa?*, mereka menanyakan gabungan itu, bukan tanggalnya. Jawaban jujur \"kula boten mangertos\" (saya tidak tahu) sepenuhnya diterima — banyak orang Jawa muda juga tidak tahu.",
+      "Untuk A1 kamu tidak perlu bisa menghitung weton. Cukup **mengenali lima nama pasaran** ketika mendengarnya, supaya kamu tahu bahwa *Setu Kliwon* adalah hari, bukan nama tempat."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menempatkan kejadian dalam waktu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Ngoko",
+      "Krama"
+     ],
+     "rows": [
+      [
+       "sekarang",
+       "*saiki*",
+       "*sakmenika*"
+      ],
+      [
+       "tadi",
+       "*mau*",
+       "*wau*"
+      ],
+      [
+       "nanti",
+       "*mengko*",
+       "*mangké*"
+      ],
+      [
+       "kemarin",
+       "*wingi*",
+       "*kala wingi*"
+      ],
+      [
+       "besok",
+       "*sésuk*",
+       "*bénjing*"
+      ],
+      [
+       "lusa",
+       "*sésuk émbèn*",
+       "*bénjing émbèn*"
+      ],
+      [
+       "dulu, dahulu",
+       "*biyèn*",
+       "*rumiyin*"
+      ],
+      [
+       "nanti sore",
+       "*mengko soré*",
+       "*mangké sonten*"
+      ],
+      [
+       "tadi pagi",
+       "*mau ésuk*",
+       "*wau énjing*"
+      ],
+      [
+       "setiap hari",
+       "*saben dina*",
+       "*saben dinten*"
+      ],
+      [
+       "kadang-kadang",
+       "*kadhang-kadhang*",
+       "*kadhang-kadhang*"
+      ],
+      [
+       "belum pernah",
+       "*durung tau*",
+       "*dèrèng naté*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bagian hari dipakai berpasangan dengan kata di atas, persis seperti bahasa Indonesia:"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ngoko",
+      "Krama",
+      "Bahasa Indonesia",
+      "Kira-kira"
+     ],
+     "rows": [
+      [
+       "*ésuk*",
+       "*énjing*",
+       "pagi",
+       "subuh sampai pukul 10"
+      ],
+      [
+       "*awan*",
+       "*siyang*",
+       "siang",
+       "pukul 10 sampai 15"
+      ],
+      [
+       "*soré*",
+       "*sonten*",
+       "sore",
+       "pukul 15 sampai magrib"
+      ],
+      [
+       "*bengi*",
+       "*dalu*",
+       "malam",
+       "sesudah magrib"
+      ],
+      [
+       "*dina*",
+       "*dinten*",
+       "hari",
+       "—"
+      ],
+      [
+       "*minggu*",
+       "*minggu*",
+       "minggu",
+       "—"
+      ],
+      [
+       "*sasi*",
+       "*wulan*",
+       "bulan",
+       "—"
+      ],
+      [
+       "*taun*",
+       "*taun*, *warsa*",
+       "tahun",
+       "—"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Sasi** berarti \"bulan\" dalam arti penanggalan **dan** benda langit — sama seperti bahasa Indonesia. Kalau perlu dibedakan, benda langitnya disebut *rembulan*."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "jv": "saiki",
+   "krama": "sakmenika",
+   "baca": "sa-I-ki",
+   "id": "sekarang"
+  },
+  {
+   "jv": "mau",
+   "krama": "wau",
+   "baca": "MAU · WAU",
+   "id": "tadi"
+  },
+  {
+   "jv": "mengko",
+   "krama": "mangké",
+   "baca": "MENG-ko",
+   "id": "nanti"
+  },
+  {
+   "jv": "wingi",
+   "krama": "kala wingi",
+   "baca": "WI-ngi",
+   "id": "kemarin"
+  },
+  {
+   "jv": "sésuk",
+   "krama": "bénjing",
+   "baca": "SÉ-su' · BÉN-jing",
+   "id": "besok"
+  },
+  {
+   "jv": "biyèn",
+   "krama": "rumiyin",
+   "baca": "bi-YÈN",
+   "id": "dulu"
+  },
+  {
+   "jv": "dina",
+   "krama": "dinten",
+   "baca": "DI-no · DIN-ten",
+   "id": "hari"
+  },
+  {
+   "jv": "sasi",
+   "krama": "wulan",
+   "baca": "SO-si · WU-lan",
+   "id": "bulan"
+  },
+  {
+   "jv": "ésuk",
+   "krama": "énjing",
+   "baca": "É-su'",
+   "id": "pagi"
+  },
+  {
+   "jv": "awan",
+   "krama": "siyang",
+   "baca": "A-wan",
+   "id": "siang"
+  },
+  {
+   "jv": "soré",
+   "krama": "sonten",
+   "baca": "so-RÉ",
+   "id": "sore"
+  },
+  {
+   "jv": "bengi",
+   "krama": "dalu",
+   "baca": "BE-ngi · DA-lu",
+   "id": "malam"
+  },
+  {
+   "jv": "jam",
+   "krama": "jam",
+   "baca": "JAM",
+   "id": "jam"
+  },
+  {
+   "jv": "luwih",
+   "krama": "langkung",
+   "baca": "LU-wih",
+   "id": "lebih"
+  },
+  {
+   "jv": "seprapat",
+   "krama": "saprapat",
+   "baca": "se-PRA-pat",
+   "id": "seperempat"
+  },
+  {
+   "jv": "pasaran",
+   "krama": "pasaran",
+   "baca": "pa-SA-ran",
+   "id": "hari pasaran"
+  },
+  {
+   "jv": "gelem",
+   "krama": "purun",
+   "baca": "GE-lem · PU-run",
+   "id": "mau, bersedia"
+  },
+  {
+   "jv": "péngin",
+   "krama": "kepéngin",
+   "baca": "PÉ-ngin",
+   "id": "ingin"
+  },
+  {
+   "jv": "melu",
+   "krama": "ndhèrèk",
+   "baca": "ME-lu · n-DHÈ-rè'",
+   "id": "ikut"
+  },
+  {
+   "jv": "nèk, menawa",
+   "krama": "menawi",
+   "baca": "NÈ' · me-NA-wo",
+   "id": "kalau, jika"
+  },
+  {
+   "jv": "sibuk",
+   "krama": "sibuk",
+   "baca": "SI-bu'",
+   "id": "sibuk"
+  },
+  {
+   "jv": "rame",
+   "krama": "rame",
+   "baca": "RA-mé",
+   "id": "ramai"
+  },
+  {
+   "jv": "sepi",
+   "krama": "sepen",
+   "baca": "SE-pi · SE-pen",
+   "id": "sepi"
+  },
+  {
+   "jv": "adhem",
+   "krama": "asrep",
+   "baca": "A-dhem · AS-rep",
+   "id": "dingin, sejuk"
+  },
+  {
+   "jv": "panas",
+   "krama": "benter",
+   "baca": "PA-nas · BEN-ter",
+   "id": "panas"
+  },
+  {
+   "jv": "kuliah",
+   "krama": "kuliah",
+   "baca": "ku-LI-ah",
+   "id": "kuliah"
+  },
+  {
+   "jv": "dalan",
+   "krama": "margi",
+   "baca": "DA-lan · MAR-gi",
+   "id": "jalan"
+  },
+  {
+   "jv": "crita",
+   "krama": "cariyos",
+   "baca": "CRI-to · ca-RI-yos",
+   "id": "cerita"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis jam berikut dalam bahasa Jawa ngoko.",
+   "items": [
+    "02.00",
+    "05.30",
+    "07.15",
+    "08.45",
+    "11.10",
+    "09.30"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata waktu yang tepat: *saiki*, *mau*, *mengko*, *wingi*, *sésuk*.",
+   "items": [
+    "____ aku wis mangan, mula ora luwé.",
+    "____ jam pira? Aku ora nggawa jam.",
+    "____ soré aku arep nyang Malioboro.",
+    "____ aku ora kuliah, amarga dina Minggu.",
+    "____ aku arep tangi ésuk, jam lima."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi krama.",
+   "items": [
+    "Saiki jam pira?",
+    "Sésuk aku arep nyang pasar.",
+    "Mengko soré waé.",
+    "Wingi aku ora mangan.",
+    "Saben dina aku sinau."
+   ]
+  },
+  {
+   "prompt": "**Ulangan unit 4.** Tutup unit 4, lalu tulis angkanya dalam bahasa Jawa ngoko.",
+   "items": [
+    "25",
+    "50",
+    "60",
+    "22",
+    "3.500"
+   ]
+  }
+ ],
+ "answers": [
+  "jam loro — setengah enem — jam pitu luwih seprapat — jam sanga kurang seprapat — jam sewelas luwih sepuluh — setengah sepuluh",
+  "Mau — Saiki — Mengko — Wingi — Sésuk",
+  "Sakmenika jam pinten? — Bénjing kula badhé dhateng peken. — Mangké sonten mawon. — Kala wingi kula boten nedha. — Saben dinten kula sinau.",
+  "selawé — sèket — sewidak — rolikur — telung èwu limang atus"
+ ]
+}

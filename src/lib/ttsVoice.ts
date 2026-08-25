@@ -27,6 +27,12 @@ export const CHIRP_LOCALES: Record<string, string> = {
   fil: "fil-PH", tl: "fil-PH",
   eu: "eu-ES",
   ms: "ms-MY",
+  /* Basa Jawa tak punya suara sama sekali di katalog Google (dicek 25 Agu 2026:
+     nol voice untuk jv-*). Dipetakan ke id-ID karena ejaan Jawa memakai
+     kesepakatan huruf yang sama dengan bahasa Indonesia — suara Indonesia
+     membacanya nyaris benar, kecuali `a` di ujung kata yang berbunyi `o` dan
+     pasangan dh/th. Tanpa pemetaan ini ia jatuh ke en-US dan terbaca kacau. */
+  jv: "id-ID",
 };
 
 /** Kore = suara Chirp 3 HD bawaan (ada di semua locale di peta atas). */

@@ -1,0 +1,604 @@
+{
+ "title": "Ini, itu, dan barang di sekeliling",
+ "title_target": "Iki apa? Kuwi apa?",
+ "goal": "Menunjuk benda, menanyakan namanya, dan mengatakan ada atau tidak ada — sambil belajar bahwa bahasa Jawa punya tiga kata tunjuk sementara kramanya cukup satu.",
+ "bekal": [
+  "membedakan *iki*, *kuwi*, dan *kaé* menurut jaraknya dari pembicara",
+  "bertanya *apa iki?* dan menjawab dengan nama benda",
+  "memakai *ana* / *ora ana* untuk menyatakan keberadaan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Rini nuduhaké kamar",
+   "intro": "Rini mengajak Dian berkeliling kos: kamar, kamar mandi, dapur bersama. Ia berbicara ngoko karena mereka seumuran.",
+   "lines": [
+    {
+     "speaker": "Rini:",
+     "text": "Iki kamarmu. Rada cilik, nanging resik.",
+     "id": "Ini kamarmu. Agak kecil, tapi bersih.",
+     "literal": "ini kamar-mu. agak kecil, tetapi bersih."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Ora apa-apa. Kuwi apa?",
+     "id": "Tidak apa-apa. Itu apa?",
+     "literal": "tidak apa-apa. itu apa?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Kuwi lemari. Lawang lemariné rada seret.",
+     "id": "Itu lemari. Pintu lemarinya agak seret.",
+     "literal": "itu lemari. pintu lemari-nya agak seret."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Ana kunciné?",
+     "id": "Ada kuncinya?",
+     "literal": "ada kunci-nya?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Ana. Iki kunci kamar, kuwi kunci lemari.",
+     "id": "Ada. Ini kunci kamar, itu kunci lemari.",
+     "literal": "ada. ini kunci kamar, itu kunci lemari."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Kamar mandiné ngendi?",
+     "id": "Kamar mandinya di mana?",
+     "literal": "kamar mandi-nya di-mana?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Kaé, sing cèt biru. Banyuné akèh, aja kuwatir.",
+     "id": "Itu (di sana), yang cat biru. Airnya banyak, jangan khawatir.",
+     "literal": "itu-sana, yang cat biru. air-nya banyak, jangan khawatir."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Pawoné uga ing kono?",
+     "id": "Dapurnya juga di situ?",
+     "literal": "dapur-nya juga di situ?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Ora. Pawon ing ngisor. Ing ndhuwur ora ana pawon.",
+     "id": "Tidak. Dapur di bawah. Di atas tidak ada dapur.",
+     "literal": "tidak. dapur di bawah. di atas tidak ada dapur."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Oh, ngono. Matur nuwun, Rin.",
+     "id": "Oh, begitu. Terima kasih, Rin.",
+     "literal": "oh, begitu. terima-kasih, Rin."
+    }
+   ],
+   "notes": [
+    "**Rada** berarti \"agak, lumayan\" dan dipakai persis seperti dalam bahasa Indonesia: *rada cilik* (agak kecil), *rada adoh* (agak jauh), *rada larang* (agak mahal). Bentuk kramanya *radi*.",
+    "**Ora apa-apa** — sama persis dengan bahasa Indonesia, termasuk pengulangannya. Bentuk kramanya *boten punapa-punapa*, yang panjang sekali dan karena itu sering dipendekkan jadi *boten napa-napa*.",
+    "**Lemariné** = *lemari* + *-né*. Ekor *-é* / *-né* itu bekerja seperti \"-nya\" dalam bahasa Indonesia: ia bisa berarti \"milik dia\" (*lemariné Rini*) atau sekadar menegaskan bahwa benda itu yang tadi dibicarakan (\"lemari itu\"). Aturannya sederhana: kata yang berakhir huruf mati mendapat **-é** (*lawang* → *lawangé*), kata yang berakhir huruf hidup mendapat **-né** (*lemari* → *lemariné*).",
+    "**Ana kunciné?** — untuk bertanya \"ada?\", bahasa Jawa tidak perlu kata tanya sama sekali. Cukup naikkan nada di ujung kalimat, seperti bahasa Indonesia. Kalau ingin lebih jelas, sisipkan *apa* di depan: *apa ana kunciné?*",
+    "**Sing cèt biru** — *sing* berarti \"yang\", dan ia sangat sering dipakai untuk menunjuk: *sing gedhé* (yang besar), *sing kuwi* (yang itu), *sing anyar* (yang baru). Bentuk kramanya *ingkang*, sering dipendekkan jadi *kang*.",
+    "**Aja** adalah \"jangan\", dan ia hanya untuk larangan. Untuk mengingkari pernyataan biasa dipakai *ora*. Bandingkan: *aja lunga* (jangan pergi) dengan *ora lunga* (tidak pergi). Bentuk krama *aja* adalah *sampun* — dan ya, kata itu sama persis dengan *sampun* yang berarti \"sudah\". Nada dan letaknya yang membedakan.",
+    "**Ngono** berarti \"begitu\", saudaranya *ngéné* (begini) dan *ngana* (begitu, lebih jauh). *Oh, ngono* adalah jawaban paling sering ketika seseorang baru mengerti sesuatu, sepadan dengan \"oh, gitu\" dalam bahasa Indonesia."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga jarak dalam ngoko, satu dalam krama",
+     "body": [
+      "Bahasa Jawa membagi \"ini/itu\" menjadi tiga menurut jaraknya — tepat seperti sebagian bahasa daerah lain di Indonesia, dan tidak seperti bahasa Indonesia baku yang cuma punya dua."
+     ],
+     "table": {
+      "head": [
+       "Jarak",
+       "Benda (ngoko)",
+       "Tempat (ngoko)",
+       "Krama (benda)",
+       "Krama (tempat)"
+      ],
+      "rows": [
+       [
+        "dekat **saya**",
+        "**iki** (ini)",
+        "**kéné** (sini)",
+        "menika",
+        "ngriki"
+       ],
+       [
+        "dekat **kamu**",
+        "**kuwi** (itu)",
+        "**kono** (situ)",
+        "menika",
+        "ngriku"
+       ],
+       [
+        "jauh dari **keduanya**",
+        "**kaé** (itu di sana)",
+        "**kana** (sana)",
+        "menika",
+        "ngrika"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan kolom keempat: **krama meratakan ketiganya menjadi *menika***. Ini kabar baik — dalam percakapan sopan kamu cuma perlu satu kata. Kata *punika* juga dipakai dan artinya sama; *menika* lebih sering terdengar di Yogyakarta dan Solo.",
+      "Bentuk pendek yang sangat sering dipakai di percakapan cepat: *kuwi* menjadi **kuwi** atau **ki**/**kuwi** tergantung daerah, dan *iki* sering diucapkan **ki** saja — *ki apa?* untuk \"ini apa?\". Kamu akan sering mendengarnya; tidak perlu menirunya sekarang.",
+      "Kata tunjuk juga bisa berdiri di belakang kata benda, sama seperti bahasa Indonesia: *buku iki* (buku ini), *omah kuwi* (rumah itu), *gunung kaé* (gunung yang di sana itu)."
+     ]
+    },
+    {
+     "title": "Ana dan ora ana",
+     "body": [
+      "Untuk menyatakan bahwa sesuatu ada atau tidak ada, bahasa Jawa memakai satu kata saja, dan susunannya sama persis dengan bahasa Indonesia."
+     ],
+     "table": {
+      "head": [
+       "Bahasa Indonesia",
+       "Ngoko",
+       "Krama"
+      ],
+      "rows": [
+       [
+        "Ada air.",
+        "*Ana banyu.*",
+        "*Wonten toya.*"
+       ],
+       [
+        "Tidak ada air.",
+        "*Ora ana banyu.*",
+        "*Boten wonten toya.*"
+       ],
+       [
+        "Ada kuncinya?",
+        "*Ana kunciné?*",
+        "*Wonten kuncinipun?*"
+       ],
+       [
+        "Di kamar ada lemari.",
+        "*Ing kamar ana lemari.*",
+        "*Ing kamar wonten lemari.*"
+       ],
+       [
+        "Di sini tidak ada dapur.",
+        "*Ing kéné ora ana pawon.*",
+        "*Ing ngriki boten wonten pawon.*"
+       ]
+      ]
+     },
+     "after": [
+      "**Ana** juga berarti \"berada\": *Rini ana ing kamar* (Rini ada di kamar). Satu kata untuk dua pekerjaan, persis seperti \"ada\" dalam bahasa Indonesia.",
+      "Untuk mengingkari **kata benda** — bukan keberadaan — dipakai **dudu**, bukan *ora*: *iki dudu kunciku* (ini bukan kunci saya). Aturannya sama dengan bahasa Indonesia yang membedakan \"tidak\" dari \"bukan\". Bentuk krama *dudu* adalah *sanès*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Barang di kamar dan di kos",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kosakata unit ini sengaja dipilih dari benda yang benar-benar ada di sekitarmu sekarang. Bacalah tabelnya sambil menunjuk bendanya satu per satu — dua kali putaran biasanya sudah cukup untuk memasangnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ngoko",
+      "Krama",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*lawang*",
+       "*kori*",
+       "pintu"
+      ],
+      [
+       "*jendhéla*",
+       "–",
+       "jendela"
+      ],
+      [
+       "*méja*",
+       "–",
+       "meja"
+      ],
+      [
+       "*kursi*",
+       "–",
+       "kursi"
+      ],
+      [
+       "*amben*",
+       "*patileman*",
+       "tempat tidur"
+      ],
+      [
+       "*kasur*",
+       "–",
+       "kasur"
+      ],
+      [
+       "*lemari*",
+       "–",
+       "lemari"
+      ],
+      [
+       "*kunci*",
+       "–",
+       "kunci"
+      ],
+      [
+       "*sapu*",
+       "–",
+       "sapu"
+      ],
+      [
+       "*ember*",
+       "–",
+       "ember"
+      ],
+      [
+       "*klambi*",
+       "*rasukan*",
+       "baju"
+      ],
+      [
+       "*sandhal*",
+       "–",
+       "sandal"
+      ],
+      [
+       "*tas*",
+       "–",
+       "tas"
+      ],
+      [
+       "*buku*",
+       "–",
+       "buku"
+      ],
+      [
+       "*banyu*",
+       "*toya*",
+       "air"
+      ],
+      [
+       "*listrik*",
+       "–",
+       "listrik"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan berapa banyak baris yang kolom kramanya berisi tanda **–**. Empat belas dari enam belas kata di tabel ini **sama saja** di ngoko dan krama. Inilah bentuk sesungguhnya dari undha-usuk: bukan dua kosakata utuh, melainkan satu kosakata dengan sekitar dua ratus kata yang bercabang."
+    }
+   ]
+  },
+  {
+   "title": "Arah dan letak: atas, bawah, dalam, luar",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kata letak dalam bahasa Jawa hampir selalu didahului *ing* atau *nang* (\"di\"), lalu kata arahnya. Susunannya sama persis dengan bahasa Indonesia."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ngoko",
+      "Krama",
+      "Bahasa Indonesia",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*ndhuwur*",
+       "*nginggil*",
+       "atas",
+       "*ing ndhuwur méja* — di atas meja"
+      ],
+      [
+       "*ngisor*",
+       "*ngandhap*",
+       "bawah",
+       "*ing ngisor kursi* — di bawah kursi"
+      ],
+      [
+       "*jero*",
+       "*lebet*",
+       "dalam",
+       "*ing jero tas* — di dalam tas"
+      ],
+      [
+       "*njaba*",
+       "*jawi*",
+       "luar",
+       "*ing njaba* — di luar"
+      ],
+      [
+       "*ngarep*",
+       "*ngajeng*",
+       "depan",
+       "*ing ngarep kos* — di depan kos"
+      ],
+      [
+       "*mburi*",
+       "*wingking*",
+       "belakang",
+       "*ing mburi omah* — di belakang rumah"
+      ],
+      [
+       "*kiwa*",
+       "–",
+       "kiri",
+       "*ing kiwa lawang* — di kiri pintu"
+      ],
+      [
+       "*tengen*",
+       "–",
+       "kanan",
+       "*ing tengen lemari* — di kanan lemari"
+      ],
+      [
+       "*sandhing*",
+       "*sisih*",
+       "sebelah, samping",
+       "*ing sandhingku* — di sebelah saya"
+      ],
+      [
+       "*tengah*",
+       "*tengah*",
+       "tengah",
+       "*ing tengah kamar* — di tengah kamar"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Ing** dan **nang** sama-sama berarti \"di\" dan bisa saling menggantikan. *Ing* sedikit lebih rapi dan lebih sering dipakai dalam tulisan; *nang* lebih santai dan lebih sering terdengar dalam percakapan. Ada pula *ana ing* untuk penekanan. Kramanya *wonten ing*, sering dipendekkan jadi *wonten*."
+    },
+    {
+     "type": "kotak",
+     "title": "Perangkap kecil: ndhuwur dan ngisor",
+     "items": [
+      "Keduanya memakai bunyi **dh** dan **ng** di awal — *ndhuwur*, bukan *nduwur*; *ngisor*, bukan *ngisor* dengan *n* biasa. Bunyi *ng* dan *ny* di awal kata memang wajar dalam bahasa Jawa, meskipun terasa asing bagi lidah yang terbiasa bahasa Indonesia.",
+      "Kata dasarnya adalah *dhuwur* (tinggi) dan *isor*, dan awalan *n-* / *ng-* itulah yang mengubahnya menjadi keterangan tempat. Kamu akan bertemu awalan ini lagi di unit 8, di mana ia mengerjakan pekerjaan yang jauh lebih besar."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "jv": "iki",
+   "krama": "menika, punika",
+   "baca": "I-ki · me-NI-ka",
+   "id": "ini"
+  },
+  {
+   "jv": "kuwi",
+   "krama": "menika",
+   "baca": "KU-wi",
+   "id": "itu (dekat lawan bicara)"
+  },
+  {
+   "jv": "kaé",
+   "krama": "menika",
+   "baca": "ka-É",
+   "id": "itu (jauh)"
+  },
+  {
+   "jv": "kéné",
+   "krama": "ngriki",
+   "baca": "ké-NÉ · ngri-KI",
+   "id": "sini"
+  },
+  {
+   "jv": "kono",
+   "krama": "ngriku",
+   "baca": "KO-no · ngri-KU",
+   "id": "situ"
+  },
+  {
+   "jv": "kana",
+   "krama": "ngrika",
+   "baca": "KO-no · ngri-KO",
+   "id": "sana"
+  },
+  {
+   "jv": "apa",
+   "krama": "punapa, napa",
+   "baca": "O-po · pu-NA-po",
+   "id": "apa"
+  },
+  {
+   "jv": "sing",
+   "krama": "ingkang",
+   "baca": "SING · ING-kang",
+   "id": "yang"
+  },
+  {
+   "jv": "ana",
+   "krama": "wonten",
+   "baca": "O-no · WON-ten",
+   "id": "ada, berada"
+  },
+  {
+   "jv": "dudu",
+   "krama": "sanès",
+   "baca": "DU-du · SA-nès",
+   "id": "bukan"
+  },
+  {
+   "jv": "aja",
+   "krama": "sampun",
+   "baca": "O-jo · sam-PUN",
+   "id": "jangan"
+  },
+  {
+   "jv": "rada",
+   "krama": "radi",
+   "baca": "RO-do · RA-di",
+   "id": "agak"
+  },
+  {
+   "jv": "kamar",
+   "krama": "kamar",
+   "baca": "KA-mar",
+   "id": "kamar"
+  },
+  {
+   "jv": "kamar mandi",
+   "krama": "jedhing",
+   "baca": "je-DHING",
+   "id": "kamar mandi"
+  },
+  {
+   "jv": "pawon",
+   "krama": "pawon",
+   "baca": "PA-won",
+   "id": "dapur"
+  },
+  {
+   "jv": "lawang",
+   "krama": "kori",
+   "baca": "LA-wang · KO-ri",
+   "id": "pintu"
+  },
+  {
+   "jv": "banyu",
+   "krama": "toya",
+   "baca": "BA-nyu · TO-yo",
+   "id": "air"
+  },
+  {
+   "jv": "klambi",
+   "krama": "rasukan",
+   "baca": "KLAM-bi · ra-SU-kan",
+   "id": "baju"
+  },
+  {
+   "jv": "gedhé",
+   "krama": "ageng",
+   "baca": "ge-DHÉ · A-geng",
+   "id": "besar"
+  },
+  {
+   "jv": "cilik",
+   "krama": "alit",
+   "baca": "ci-LI' · A-lit",
+   "id": "kecil"
+  },
+  {
+   "jv": "resik",
+   "krama": "resik",
+   "baca": "RE-si'",
+   "id": "bersih"
+  },
+  {
+   "jv": "reged",
+   "krama": "reged",
+   "baca": "RE-get",
+   "id": "kotor"
+  },
+  {
+   "jv": "akèh",
+   "krama": "kathah",
+   "baca": "A-kèh · KA-thah",
+   "id": "banyak"
+  },
+  {
+   "jv": "lawas",
+   "krama": "lami",
+   "baca": "LA-was · LA-mi",
+   "id": "lama, usang"
+  },
+  {
+   "jv": "ndhuwur",
+   "krama": "nginggil",
+   "baca": "n-DHU-wur",
+   "id": "atas"
+  },
+  {
+   "jv": "ngisor",
+   "krama": "ngandhap",
+   "baca": "ngi-SOR",
+   "id": "bawah"
+  },
+  {
+   "jv": "jero",
+   "krama": "lebet",
+   "baca": "JE-ro · LE-bet",
+   "id": "dalam"
+  },
+  {
+   "jv": "njaba",
+   "krama": "jawi",
+   "baca": "n-JO-bo · JA-wi",
+   "id": "luar"
+  },
+  {
+   "jv": "ngono",
+   "krama": "mekaten",
+   "baca": "ngo-NO · me-KA-ten",
+   "id": "begitu"
+  },
+  {
+   "jv": "ngéné",
+   "krama": "mekaten",
+   "baca": "ngé-NÉ",
+   "id": "begini"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan *iki*, *kuwi*, atau *kaé* menurut petunjuk dalam kurung.",
+   "items": [
+    "____ tasku. (ada di tanganku)",
+    "____ apa? (di dekat lawan bicara)",
+    "Gunung ____ dhuwur banget. (kelihatan jauh di sana)",
+    "____ kunci kamarku. (kupegang)",
+    "Omah ____ anyar. (di seberang jalan, jauh)"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan *ana* atau *ora ana*, lalu tulis juga bentuk kramanya.",
+   "items": [
+    "Ing kamar ____ lemari. (ada)",
+    "Ing ndhuwur ____ pawon. (tidak ada)",
+    "____ banyu ing ember? (ada?)",
+    "Ing tas ____ buku loro. (ada)",
+    "Ing njaba ____ wong. (tidak ada)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jawa ngoko.",
+   "items": [
+    "Ini kamar saya.",
+    "Itu bukan kunci saya.",
+    "Kamar mandinya di mana?",
+    "Di dalam lemari ada baju.",
+    "Airnya banyak, jangan khawatir.",
+    "Bukunya di atas meja."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi krama.",
+   "items": [
+    "Iki apa?",
+    "Ora ana banyu.",
+    "Kamar mandiné ing ngendi?",
+    "Iki dudu kunciku.",
+    "Ing jero tas ana buku."
+   ]
+  }
+ ],
+ "answers": [
+  "Iki — Kuwi — kaé — Iki — kaé",
+  "ana (wonten) — ora ana (boten wonten) — Ana (Wonten) — ana (wonten) — ora ana (boten wonten)",
+  "Iki kamarku. — Kuwi dudu kunciku. — Kamar mandiné ngendi? — Ing jero lemari ana klambi. — Banyuné akèh, aja kuwatir. — Bukuné ing ndhuwur méja.",
+  "Menika punapa? — Boten wonten toya. — Jedhingipun wonten pundi? — Menika sanès kunci kula. — Ing lebet tas wonten buku."
+ ]
+}

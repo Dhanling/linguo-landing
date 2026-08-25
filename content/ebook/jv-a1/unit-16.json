@@ -1,0 +1,545 @@
+{
+ "title": "Menceritakan yang sudah lewat",
+ "title_target": "Dhèk cilik aku manggon ing désa",
+ "goal": "Bercerita tentang masa lalu tanpa mengubah satu huruf pun pada kata kerjanya — memakai penanda waktu yang berdiri sendiri, persis seperti bahasa Indonesia melakukannya.",
+ "bekal": [
+  "memakai *dhèk* dan *kepungkur* untuk menempatkan kejadian di masa lalu",
+  "menceritakan urutan kejadian dengan *nalika*, *banjur*, *sawisé kuwi*",
+  "membedakan *wis* (sudah) dari *tau* (pernah) dari *biyèn* (dulu)"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Crita bocah désa",
+   "intro": "Hujan deras, semua orang terkurung di teras. Rini bercerita tentang masa kecilnya di Klaten. Percakapan ngoko, dan hampir seluruhnya masa lalu — perhatikan bahwa tidak satu pun kata kerjanya berubah bentuk.",
+   "lines": [
+    {
+     "speaker": "Rini:",
+     "text": "Dhèk cilik aku ora manggon ing kutha, Yan.",
+     "id": "Waktu kecil saya tidak tinggal di kota, Yan.",
+     "literal": "waktu kecil aku tidak tinggal di kota, Yan."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Ing ngendi?",
+     "id": "Di mana?",
+     "literal": "di mana?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Ing désa, cedhak sawah. Omahé simbah.",
+     "id": "Di desa, dekat sawah. Rumah nenek.",
+     "literal": "di desa, dekat sawah. rumah-nya nenek."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Kepriyé rasané?",
+     "id": "Bagaimana rasanya?",
+     "literal": "bagaimana rasa-nya?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Seneng. Saben soré aku dolan ing kali karo kanca-kanca.",
+     "id": "Senang. Setiap sore saya bermain di sungai dengan teman-teman.",
+     "literal": "senang. setiap sore aku bermain di sungai dengan teman-teman."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Ora diseneni simbah?",
+     "id": "Tidak dimarahi nenek?",
+     "literal": "tidak dimarahi nenek?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Kerep. Nalika aku kelas telu, aku tiba ing kali, banjur lara seminggu.",
+     "id": "Sering. Ketika saya kelas tiga, saya jatuh di sungai, lalu sakit seminggu.",
+     "literal": "sering. ketika aku kelas tiga, aku jatuh di sungai, lalu sakit seminggu."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Wah. Sawisé kuwi isih dolan ing kali?",
+     "id": "Wah. Sesudah itu masih bermain di sungai?",
+     "literal": "wah. sesudah itu masih bermain di sungai?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Ha ha, isih. Nanging ora tau ngomong marang simbah manèh.",
+     "id": "Ha ha, masih. Tapi tidak pernah bilang ke nenek lagi.",
+     "literal": "ha ha, masih. tetapi tidak pernah bilang kepada nenek lagi."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Kowé pindhah nyang kutha kapan?",
+     "id": "Kamu pindah ke kota kapan?",
+     "literal": "kamu pindah ke kota kapan?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Telung taun kepungkur, nalika wiwit kuliah.",
+     "id": "Tiga tahun yang lalu, ketika mulai kuliah.",
+     "literal": "tiga tahun yang-lalu, ketika mulai kuliah."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Kangen désa, ora?",
+     "id": "Kangen desa, tidak?",
+     "literal": "kangen desa, tidak?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Kangen tenan. Nanging saiki wis kulina ing kéné.",
+     "id": "Kangen sekali. Tapi sekarang sudah terbiasa di sini.",
+     "literal": "kangen sungguh. tetapi sekarang sudah terbiasa di sini."
+    }
+   ],
+   "notes": [
+    "**Dhèk** adalah penanda waktu lampau yang berdiri di depan keterangan waktunya: *dhèk cilik* (waktu kecil), *dhèk wingi* (kemarin), *dhèk Senèn* (Senin lalu), *dhèk semana* (waktu itu). Kramanya *nalika* atau *rikala*. Kata ini tidak punya padanan satu kata dalam bahasa Indonesia — yang paling dekat adalah \"waktu\" dalam \"waktu kecil\".",
+    "**Kepungkur** berarti \"yang lalu\" dan berdiri **di belakang** satuan waktunya: *minggu kepungkur* (minggu lalu), *sasi kepungkur* (bulan lalu), *telung taun kepungkur* (tiga tahun lalu). Kramanya *kepengker*.",
+    "**Diseneni** = *di-* + *seneni* (memarahi), \"dimarahi\". Bentuk pasif *di-* yang sudah beberapa kali muncul akan dibahas tuntas di unit berikutnya kecuali satu — unit 18.",
+    "**Tiba** berarti \"jatuh\", kramanya *dhawah*. Hati-hati: bagi penutur bahasa Indonesia kata ini terlihat seperti \"tiba, sampai\", padahal artinya justru sebaliknya. Untuk \"tiba, sampai\" bahasa Jawa memakai *tekan*.",
+    "**Kangen** sama persis dengan bahasa Indonesia — memang kata Jawa yang dipinjam. Kramanya *kangen* juga; bentuk yang lebih halus *kangen sanget*.",
+    "**Marang** berarti \"kepada\", kramanya *dhateng*. Ia dipakai untuk sasaran perbuatan: *ngomong marang simbah* (bilang kepada nenek), *mènèhi marang kanca* (memberi kepada teman)."
+   ],
+   "grammars": [
+    {
+     "title": "Masa lalu tanpa mengubah kata kerja",
+     "body": [
+      "Ini bagian yang paling melegakan dari seluruh modul. Bahasa Jawa **tidak punya bentuk lampau**. Kata kerjanya persis sama dengan yang kamu pakai untuk sekarang; yang menempatkan kejadian di masa lalu adalah kata keterangan di sekitarnya."
+     ],
+     "table": {
+      "head": [
+       "Penanda",
+       "Ngoko",
+       "Krama",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "kemarin",
+        "*wingi*",
+        "*kala wingi*",
+        "*wingi aku lara*"
+       ],
+       [
+        "tadi",
+        "*mau*",
+        "*wau*",
+        "*mau aku ketemu Rini*"
+       ],
+       [
+        "dulu",
+        "*biyèn*",
+        "*rumiyin*",
+        "*biyèn aku manggon ing désa*"
+       ],
+       [
+        "waktu (dulu)",
+        "*dhèk*",
+        "*nalika*, *rikala*",
+        "*dhèk cilik*"
+       ],
+       [
+        "yang lalu",
+        "*kepungkur*",
+        "*kepengker*",
+        "*minggu kepungkur*"
+       ],
+       [
+        "ketika",
+        "*nalika*, *pas*",
+        "*nalika*",
+        "*nalika aku kelas telu*"
+       ],
+       [
+        "sudah",
+        "*wis*",
+        "*sampun*",
+        "*aku wis mangan*"
+       ],
+       [
+        "pernah",
+        "*tau*",
+        "*naté*",
+        "*aku wis tau nyang Solo*"
+       ],
+       [
+        "baru saja",
+        "*lagi waé*",
+        "*nembé kémawon*",
+        "*lagi waé mulih*"
+       ]
+      ]
+     },
+     "after": [
+      "**Bedakan wis, tau, dan biyèn.** *Aku wis mangan* = saya sudah makan (hari ini). *Aku wis tau mangan gudeg* = saya sudah pernah makan gudeg (dalam hidup saya). *Biyèn aku kerep mangan gudeg* = dulu saya sering makan gudeg (kebiasaan lama yang sudah berhenti).",
+      "**Kata kerjanya sama sekali tidak bergerak.** *Aku mangan* bisa berarti \"saya makan\", \"saya sedang makan\", atau \"saya makan (kemarin)\" — seluruhnya ditentukan keterangan waktu di sekitarnya. Kalau tidak ada keterangan sama sekali, konteks percakapan yang menentukan, dan itu hampir selalu cukup.",
+      "**Kalau kamu ragu, sisipkan keterangan waktunya.** Kalimat dengan keterangan waktu berlebih tidak pernah salah dalam bahasa Jawa; kalimat tanpa keterangan waktu bisa disalahpahami."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kerangka bercerita",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Cerita dalam bahasa Jawa hampir selalu memakai kerangka yang sama, dan kerangka itu cukup untuk seluruh keperluan A1. Perhatikan bahwa ia identik dengan kerangka bercerita bahasa Indonesia."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "Kata yang dipakai",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "membuka waktu",
+       "*dhèk…*, *nalika…*, *biyèn…*",
+       "*Dhèk cilik aku manggon ing désa.*"
+      ],
+      [
+       "kejadian pertama",
+       "kata kerja biasa",
+       "*Saben soré aku dolan ing kali.*"
+      ],
+      [
+       "kejadian berikutnya",
+       "*banjur*, *terus*",
+       "*Banjur aku tiba.*"
+      ],
+      [
+       "kejadian lanjutan",
+       "*sawisé kuwi*",
+       "*Sawisé kuwi aku lara seminggu.*"
+      ],
+      [
+       "sebab",
+       "*amarga*, *merga*",
+       "*Amarga banyuné jero.*"
+      ],
+      [
+       "akibat",
+       "*mula*, *dadi*",
+       "*Mula aku ora crita marang simbah.*"
+      ],
+      [
+       "penutup",
+       "*akhiré*, *saiki*",
+       "*Akhiré aku pindhah nyang kutha.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Latihan yang paling berguna dari seluruh unit ini: ceritakan **hari kemarinmu sendiri** memakai kerangka di atas, lima kalimat saja. Kalau kamu bisa melakukannya tanpa berhenti, kamu sudah bisa bercerita dalam bahasa Jawa."
+    },
+    {
+     "type": "kotak",
+     "title": "Kata pembuka cerita yang khas",
+     "items": [
+      "**Anu…** — pengisi jeda, sepadan dengan \"anu\" atau \"apa itu\" dalam bahasa Indonesia. Dipakai ketika kata yang dicari belum ketemu. Sangat sering terdengar, dan memakainya justru membuatmu terdengar wajar.",
+      "**Ngéné, lho** — \"begini, lho\". Membuka penjelasan panjang.",
+      "**Jaréné** — \"katanya\". Membuka kabar yang didengar dari orang lain: *jaréné udan gedhé ing Kaliurang*. Kramanya *criyosipun*.",
+      "**Jebulé** — \"ternyata\". Membuka bagian cerita yang mengejutkan: *jebulé HP-ku ana ing tas*. Kramanya *jebulipun*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata kerja yang sering muncul dalam cerita",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ngoko",
+      "Krama",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*tiba*",
+       "*dhawah*",
+       "jatuh"
+      ],
+      [
+       "*ketemu*",
+       "*kepanggih*",
+       "bertemu"
+      ],
+      [
+       "*pindhah*",
+       "*pindhah*",
+       "pindah"
+      ],
+      [
+       "*mlebu*",
+       "*mlebet*",
+       "masuk"
+      ],
+      [
+       "*metu*",
+       "*medal*",
+       "keluar"
+      ],
+      [
+       "*nemu*",
+       "*manggih*",
+       "menemukan"
+      ],
+      [
+       "*ilang*",
+       "*ical*",
+       "hilang"
+      ],
+      [
+       "*seneni*",
+       "*duka*",
+       "memarahi"
+      ],
+      [
+       "*nangis*",
+       "*muwun*",
+       "menangis"
+      ],
+      [
+       "*ngguyu*",
+       "*gumujeng*",
+       "tertawa"
+      ],
+      [
+       "*wedi*",
+       "*ajrih*",
+       "takut"
+      ],
+      [
+       "*kagèt*",
+       "*kagèt*",
+       "kaget"
+      ],
+      [
+       "*lali*",
+       "*kesupèn*",
+       "lupa"
+      ],
+      [
+       "*éling*",
+       "*émut*",
+       "ingat"
+      ],
+      [
+       "*kangen*",
+       "*kangen*",
+       "kangen"
+      ],
+      [
+       "*crita*",
+       "*criyos*",
+       "bercerita"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Duka** menyimpan jebakan yang bagus untuk diketahui sekarang: dalam krama ia berarti \"marah\" (perbuatan orang yang dihormati), tapi dalam percakapan ia juga sangat sering dipakai untuk **\"tidak tahu\"** — bentuk halus dari *boten mangertos*. Kalau seseorang menjawab pertanyaanmu dengan *duka*, mereka mengatakan \"kurang tahu\", bukan sedang marah."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "jv": "dhèk",
+   "krama": "nalika, rikala",
+   "baca": "DHÈ'",
+   "id": "waktu (dulu)"
+  },
+  {
+   "jv": "kepungkur",
+   "krama": "kepengker",
+   "baca": "ke-PUNG-kur",
+   "id": "yang lalu"
+  },
+  {
+   "jv": "biyèn",
+   "krama": "rumiyin",
+   "baca": "bi-YÈN",
+   "id": "dulu"
+  },
+  {
+   "jv": "nalika",
+   "krama": "nalika",
+   "baca": "na-LI-ko",
+   "id": "ketika"
+  },
+  {
+   "jv": "lagi waé",
+   "krama": "nembé kémawon",
+   "baca": "LA-gi wa-É",
+   "id": "baru saja"
+  },
+  {
+   "jv": "tiba",
+   "krama": "dhawah",
+   "baca": "TI-bo · DHA-wah",
+   "id": "jatuh"
+  },
+  {
+   "jv": "ketemu",
+   "krama": "kepanggih",
+   "baca": "ke-TE-mu",
+   "id": "bertemu"
+  },
+  {
+   "jv": "pindhah",
+   "krama": "pindhah",
+   "baca": "PIN-dhah",
+   "id": "pindah"
+  },
+  {
+   "jv": "nemu",
+   "krama": "manggih",
+   "baca": "NE-mu · MANG-gih",
+   "id": "menemukan"
+  },
+  {
+   "jv": "seneni",
+   "krama": "duka",
+   "baca": "se-NE-ni · DU-ko",
+   "id": "memarahi"
+  },
+  {
+   "jv": "nangis",
+   "krama": "muwun",
+   "baca": "NA-ngis · MU-wun",
+   "id": "menangis"
+  },
+  {
+   "jv": "ngguyu",
+   "krama": "gumujeng",
+   "baca": "ng-GU-yu",
+   "id": "tertawa"
+  },
+  {
+   "jv": "wedi",
+   "krama": "ajrih",
+   "baca": "WE-di · AJ-rih",
+   "id": "takut"
+  },
+  {
+   "jv": "kagèt",
+   "krama": "kagèt",
+   "baca": "ka-GÈT",
+   "id": "kaget"
+  },
+  {
+   "jv": "kangen",
+   "krama": "kangen",
+   "baca": "KA-ngen",
+   "id": "kangen"
+  },
+  {
+   "jv": "marang",
+   "krama": "dhateng",
+   "baca": "MA-rang",
+   "id": "kepada"
+  },
+  {
+   "jv": "jaréné",
+   "krama": "criyosipun",
+   "baca": "ja-RÉ-né",
+   "id": "katanya"
+  },
+  {
+   "jv": "jebulé",
+   "krama": "jebulipun",
+   "baca": "je-BU-lé",
+   "id": "ternyata"
+  },
+  {
+   "jv": "akhiré",
+   "krama": "akhiripun",
+   "baca": "a-KHI-ré",
+   "id": "akhirnya"
+  },
+  {
+   "jv": "anu",
+   "krama": "anu",
+   "baca": "A-nu",
+   "id": "anu, apa itu"
+  },
+  {
+   "jv": "rasané",
+   "krama": "raosipun",
+   "baca": "ra-SA-né",
+   "id": "rasanya"
+  },
+  {
+   "jv": "kanca-kanca",
+   "krama": "réncang-réncang",
+   "baca": "KAN-co-KAN-co",
+   "id": "teman-teman"
+  },
+  {
+   "jv": "kelas",
+   "krama": "kelas",
+   "baca": "KE-las",
+   "id": "kelas"
+  },
+  {
+   "jv": "udan",
+   "krama": "jawah",
+   "baca": "U-dan · JA-wah",
+   "id": "hujan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan *dhèk*, *kepungkur*, *wingi*, *mau*, atau *biyèn*.",
+   "items": [
+    "____ cilik aku manggon ing désa.",
+    "Minggu ____ aku nyang Solo.",
+    "____ ésuk aku ketemu Rini ing kampus.",
+    "____ aku ora kuliah, amarga lara.",
+    "____ omahku ora ana listriké."
+   ]
+  },
+  {
+   "prompt": "Susun jadi cerita berurutan dengan *banjur* dan *sawisé kuwi*.",
+   "items": [
+    "aku tangi telat",
+    "aku mlayu nyang kampus",
+    "kuliahé wis wiwit",
+    "aku ora éntuk mlebu",
+    "aku mulih manèh"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jawa ngoko.",
+   "items": [
+    "Waktu kecil saya tinggal di desa.",
+    "Tiga tahun yang lalu saya pindah ke kota.",
+    "Kemarin saya jatuh di jalan.",
+    "Saya belum pernah ke Bali.",
+    "Katanya kemarin hujan besar.",
+    "Ternyata HP saya ada di tas."
+   ]
+  },
+  {
+   "prompt": "**Ulangan unit 14.** Tutup unit 14, lalu tulis kalimat Jawanya dalam krama.",
+   "items": [
+    "Saya sakit, Pak.",
+    "Kepala saya pusing.",
+    "Sudah minum obat belum?",
+    "Semoga cepat sembuh.",
+    "Saya tidak enak badan."
+   ]
+  }
+ ],
+ "answers": [
+  "Dhèk — kepungkur — Mau — Wingi — Biyèn",
+  "Aku tangi telat. — banjur mlayu nyang kampus. — Jebulé kuliahé wis wiwit. — mula aku ora éntuk mlebu. — Sawisé kuwi aku mulih manèh.",
+  "Dhèk cilik aku manggon ing désa. — Telung taun kepungkur aku pindhah nyang kutha. — Wingi aku tiba ing dalan. — Aku durung tau nyang Bali. — Jaréné wingi udan gedhé. — Jebulé HP-ku ana ing tas.",
+  "Kula sakit, Pak. — Sirah kula mumet. — Sampun ngunjuk jampi dèrèng? — Ndang saras, nggih. — Kula boten sakéca."
+ ]
+}

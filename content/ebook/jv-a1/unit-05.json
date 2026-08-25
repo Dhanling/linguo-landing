@@ -1,0 +1,546 @@
+{
+ "title": "Harga, pasar, dan menawar",
+ "title_target": "Pinten reginipun, Mbak?",
+ "goal": "Menanyakan harga, menawar tanpa terdengar kasar, dan menyelesaikan satu transaksi utuh di pasar — semuanya dalam krama, karena kepada penjual yang lebih tua itulah tingkat yang benar.",
+ "bekal": [
+  "menanyakan harga dengan *pira regané* / *pinten reginipun*",
+  "menawar dengan *kirang* dan *mangga* tanpa terdengar memaksa",
+  "memakai *tuku* / *tumbas* dan satuan *kilo*, *iji*, *ikat*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ing peken Kranggan",
+   "intro": "Dian ikut Rini belanja ke Pasar Kranggan. Penjualnya, Mbak Sri, jauh lebih tua — jadi Dian memakai krama. Perhatikan bahwa Mbak Sri menjawab dengan campuran ngoko dan krama, dan itu wajar: penjual yang lebih tua tidak wajib naik ke krama.",
+   "lines": [
+    {
+     "speaker": "Dian:",
+     "text": "Nuwun sèwu, Mbak. Gedhang menika pinten reginipun?",
+     "id": "Permisi, Mbak. Pisang ini berapa harganya?",
+     "literal": "mohon seribu, Mbak. pisang ini berapa harga-nya?"
+    },
+    {
+     "speaker": "Mbak Sri:",
+     "text": "Rolas èwu sasisir, Mbak.",
+     "id": "Dua belas ribu satu sisir, Mbak.",
+     "literal": "dua-belas ribu satu-sisir, Mbak."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Menapa boten saged kirang?",
+     "id": "Apa tidak bisa kurang?",
+     "literal": "apa tidak bisa kurang?"
+    },
+    {
+     "speaker": "Mbak Sri:",
+     "text": "Sepuluh èwu waé, wis. Sing iki isih anyar kok.",
+     "id": "Sepuluh ribu saja, sudah. Yang ini masih baru kok.",
+     "literal": "sepuluh ribu saja, sudah. yang ini masih baru kok."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Inggih, kula pendhet kalih sisir. Lombokipun pinten sekilo?",
+     "id": "Baik, saya ambil dua sisir. Cabainya berapa sekilo?",
+     "literal": "iya, saya ambil dua sisir. cabai-nya berapa se-kilo?"
+    },
+    {
+     "speaker": "Mbak Sri:",
+     "text": "Lombok abang selawé èwu, lombok ijo wolulas.",
+     "id": "Cabai merah dua puluh lima ribu, cabai hijau delapan belas.",
+     "literal": "cabai merah dua-puluh-lima ribu, cabai hijau delapan-belas."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Awis nggih. Setengah kilo mawon.",
+     "id": "Mahal ya. Setengah kilo saja.",
+     "literal": "mahal ya. setengah kilo saja."
+    },
+    {
+     "speaker": "Mbak Sri:",
+     "text": "Iya. Sedaya dados telung puluh telung èwu.",
+     "id": "Ya. Semuanya jadi tiga puluh tiga ribu.",
+     "literal": "ya. semua jadi tiga-puluh tiga ribu."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Menika sèket èwu, Mbak.",
+     "id": "Ini lima puluh ribu, Mbak.",
+     "literal": "ini lima-puluh ribu, Mbak."
+    },
+    {
+     "speaker": "Mbak Sri:",
+     "text": "Susukipun pitulas èwu. Matur nuwun, nggih.",
+     "id": "Kembaliannya tujuh belas ribu. Terima kasih, ya.",
+     "literal": "kembalian-nya tujuh-belas ribu. terima-kasih, ya."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Sami-sami, Mbak. Mangga.",
+     "id": "Sama-sama, Mbak. Permisi.",
+     "literal": "sama-sama, Mbak. silakan."
+    }
+   ],
+   "notes": [
+    "**Mangga** adalah salah satu kata paling berguna di seluruh bahasa Jawa, dan artinya bergeser menurut keadaan: \"silakan\", \"mari\", \"permisi\", \"ayo\", dan — diucapkan sambil berlalu — \"saya pamit\". Bentuk ngokonya *ayo* atau *monggo* (ejaan santai dari *mangga*). Kalau kamu cuma hafal sepuluh kata Jawa, jadikan ini salah satunya.",
+    "**Nggih** adalah bentuk santai dari *inggih* (ya), dan sangat sering ditempelkan di ujung kalimat sebagai pelunak, sepadan dengan \"ya\" di ujung kalimat bahasa Indonesia: *awis nggih* (mahal ya), *matur nuwun nggih*. Bentuk ngokonya *ya*.",
+    "**Mawon** adalah krama untuk *waé* (saja), sering juga ditulis *kémawon* dalam bentuk penuhnya. Ia sangat sering dipakai untuk melunakkan permintaan: *setengah kilo mawon* terdengar jauh lebih halus daripada *setengah kilo*.",
+    "**Kok** di ujung kalimat bukan kata tanya. Ia penegas yang berarti \"lho, padahal\", dipakai untuk membantah dugaan lawan bicara secara halus: *isih anyar kok* — \"masih baru lho\". Bahasa Indonesia memakainya dengan cara yang sama persis.",
+    "**Dados** (krama) dan **dadi** (ngoko) berarti \"jadi, menjadi\". Di dialog ini artinya \"totalnya jadi\", yang persis pemakaian bahasa Indonesia. Kata ini juga berarti \"jadi\" sebagai kata sambung: *dadi aku ora lunga* (jadi saya tidak pergi).",
+    "**Pendhet** (krama) / **jupuk** (ngoko) berarti \"ambil\". Di pasar, mengatakan *kula pendhet kalih* (\"saya ambil dua\") adalah cara baku untuk menutup tawar-menawar dan menyatakan bahwa kamu jadi membeli.",
+    "**Susuk** berarti \"uang kembalian\" — satu kata untuk apa yang dalam bahasa Indonesia butuh dua. Kramanya *susuk* juga; yang berubah cuma ekornya jadi *susukipun*."
+   ],
+   "grammars": [
+    {
+     "title": "Menanyakan dan menyebut harga",
+     "body": [
+      "Ada beberapa susunan yang semuanya benar dan dipakai bergantian. Pilih satu, hafalkan, dan kamu sudah bisa berbelanja."
+     ],
+     "table": {
+      "head": [
+       "Bahasa Indonesia",
+       "Ngoko",
+       "Krama"
+      ],
+      "rows": [
+       [
+        "Berapa harganya?",
+        "*Pira regané?*",
+        "*Pinten reginipun?*"
+       ],
+       [
+        "Ini berapa?",
+        "*Iki pira?*",
+        "*Menika pinten?*"
+       ],
+       [
+        "Sekilo berapa?",
+        "*Sekilo pira?*",
+        "*Sekilo pinten?*"
+       ],
+       [
+        "Semuanya berapa?",
+        "*Kabèh pira?*",
+        "*Sedaya pinten?*"
+       ],
+       [
+        "Mahal.",
+        "*Larang.*",
+        "*Awis.*"
+       ],
+       [
+        "Murah.",
+        "*Murah.*",
+        "*Mirah.*"
+       ],
+       [
+        "Tidak bisa kurang?",
+        "*Ora éntuk kurang?*",
+        "*Menapa boten saged kirang?*"
+       ],
+       [
+        "Saya ambil dua.",
+        "*Tak jupuk loro.*",
+        "*Kula pendhet kalih.*"
+       ],
+       [
+        "Kembaliannya berapa?",
+        "*Susuké pira?*",
+        "*Susukipun pinten?*"
+       ]
+      ]
+     },
+     "after": [
+      "**Tak** di depan kata kerja berarti \"saya\" sebagai pelaku yang mengambil tindakan — *tak jupuk* (saya ambil), *tak tuku* (saya beli), *tak deleng* (saya lihat). Ini bentuk yang sangat khas bahasa Jawa dan akan dibahas tuntas di unit 18. Untuk sekarang, hafalkan sebagai satu kesatuan.",
+      "**Éntuk** berarti \"boleh, dapat izin\" (kramanya *angsal*), berbeda dari *bisa* yang berarti \"mampu\" (kramanya *saged*). *Ora éntuk* = tidak boleh; *ora bisa* = tidak mampu. Bahasa Indonesia sering meleburkan keduanya jadi \"tidak bisa\", jadi hati-hati di sini."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Belanjaan dan satuannya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ngoko",
+      "Krama",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*beras*",
+       "*uwos*",
+       "beras"
+      ],
+      [
+       "*sega*",
+       "*sekul*",
+       "nasi"
+      ],
+      [
+       "*gedhang*",
+       "*pisang*",
+       "pisang"
+      ],
+      [
+       "*jeruk*",
+       "–",
+       "jeruk"
+      ],
+      [
+       "*lombok*",
+       "*lombok*",
+       "cabai"
+      ],
+      [
+       "*brambang*",
+       "–",
+       "bawang merah"
+      ],
+      [
+       "*bawang*",
+       "–",
+       "bawang putih"
+      ],
+      [
+       "*janganan*, *sayur*",
+       "*jangan*",
+       "sayur"
+      ],
+      [
+       "*iwak*",
+       "*ulam*",
+       "ikan, lauk"
+      ],
+      [
+       "*endhog*",
+       "*tigan*",
+       "telur"
+      ],
+      [
+       "*gula*",
+       "*gendhis*",
+       "gula"
+      ],
+      [
+       "*uyah*",
+       "*sarem*",
+       "garam"
+      ],
+      [
+       "*tempé*",
+       "–",
+       "tempe"
+      ],
+      [
+       "*tahu*",
+       "–",
+       "tahu"
+      ],
+      [
+       "*klapa*",
+       "*kalapa*",
+       "kelapa"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satuan barang di pasar hampir semuanya sama dengan bahasa Indonesia, dengan awalan *sa-* / *se-* yang berarti \"satu\":"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Satuan",
+      "Untuk apa",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*sekilo*",
+       "berat",
+       "*lombok sekilo* — cabai satu kilo"
+      ],
+      [
+       "*sasisir*",
+       "pisang",
+       "*gedhang sasisir* — pisang satu sisir"
+      ],
+      [
+       "*seiji*, *siji*",
+       "barang satuan",
+       "*endhog seiji* — telur satu butir"
+      ],
+      [
+       "*seiket*",
+       "sayur, kayu",
+       "*kangkung seiket* — kangkung satu ikat"
+      ],
+      [
+       "*sabungkus*",
+       "yang dibungkus",
+       "*sega sabungkus* — nasi satu bungkus"
+      ],
+      [
+       "*sagelas*",
+       "minuman",
+       "*ès tèh sagelas* — es teh satu gelas"
+      ],
+      [
+       "*sapiring*",
+       "makanan",
+       "*sega sapiring* — nasi satu piring"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menawar tanpa terdengar kasar",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Menawar di pasar Jawa bukan pertarungan; ia percakapan. Penjual mengharapkannya, dan cara menawar yang halus justru sering menghasilkan harga yang lebih baik daripada menekan. Tiga kalimat berikut sudah cukup untuk seluruh keperluanmu."
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Menapa boten saged kirang, Bu?** — \"Apa tidak bisa kurang, Bu?\" Kalimat pembuka baku. Diucapkan sambil tersenyum, tanpa nada menuntut.",
+      "**Kirangi sekedhik nggih.** — \"Kurangi sedikit ya.\" Lebih lembut lagi, karena tidak menyebut angka dan menyerahkan keputusan kepada penjual.",
+      "**Kalih dasa mawon pripun?** — \"Dua puluh saja bagaimana?\" Menyebut angka, tapi dibungkus pertanyaan *pripun* (bagaimana) sehingga tidak terdengar sebagai ultimatum."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Aturan tak tertulis",
+     "items": [
+      "**Jangan menawar untuk barang yang sudah jelas murah**, seperti sayur seikat seribu rupiah. Menawar barang seribu rupiah terbaca sebagai penghinaan, bukan penghematan.",
+      "**Kalau kamu sudah menawar dan penjualnya setuju, kamu wajib membeli.** Menawar lalu pergi adalah satu-satunya hal yang benar-benar dianggap kasar dalam adab pasar.",
+      "**Tutup dengan *matur nuwun* dan *mangga*.** Dua kata itu mengubah transaksi jadi perkenalan, dan penjual di pasar mengingat wajah — harga besok bisa berbeda karenanya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "jv": "tuku",
+   "krama": "tumbas",
+   "baca": "TU-ku · TUM-bas",
+   "id": "membeli"
+  },
+  {
+   "jv": "adol",
+   "krama": "sadé",
+   "baca": "A-dol · sa-DÉ",
+   "id": "menjual"
+  },
+  {
+   "jv": "rega",
+   "krama": "regi",
+   "baca": "RE-go · RE-gi",
+   "id": "harga"
+  },
+  {
+   "jv": "larang",
+   "krama": "awis",
+   "baca": "LA-rang · A-wis",
+   "id": "mahal"
+  },
+  {
+   "jv": "murah",
+   "krama": "mirah",
+   "baca": "MU-rah · MI-rah",
+   "id": "murah"
+  },
+  {
+   "jv": "jupuk",
+   "krama": "pendhet",
+   "baca": "JU-pu' · PEN-dhet",
+   "id": "ambil"
+  },
+  {
+   "jv": "susuk",
+   "krama": "susuk",
+   "baca": "SU-su'",
+   "id": "uang kembalian"
+  },
+  {
+   "jv": "peken",
+   "krama": "peken",
+   "baca": "PE-ken",
+   "id": "pasar (krama)"
+  },
+  {
+   "jv": "éntuk",
+   "krama": "angsal",
+   "baca": "ÉN-tu' · ANG-sal",
+   "id": "boleh, dapat"
+  },
+  {
+   "jv": "mangga",
+   "krama": "mangga",
+   "baca": "MANG-go",
+   "id": "silakan, mari, permisi"
+  },
+  {
+   "jv": "mawon",
+   "krama": "mawon",
+   "baca": "MA-won",
+   "id": "saja (krama)"
+  },
+  {
+   "jv": "nggih",
+   "krama": "nggih",
+   "baca": "NGGIH",
+   "id": "ya (santai, krama)"
+  },
+  {
+   "jv": "dadi",
+   "krama": "dados",
+   "baca": "DA-di · DA-dos",
+   "id": "jadi, menjadi"
+  },
+  {
+   "jv": "sega",
+   "krama": "sekul",
+   "baca": "SE-go · SE-kul",
+   "id": "nasi"
+  },
+  {
+   "jv": "gedhang",
+   "krama": "pisang",
+   "baca": "ge-DHANG",
+   "id": "pisang"
+  },
+  {
+   "jv": "lombok",
+   "krama": "lombok",
+   "baca": "LOM-bo'",
+   "id": "cabai"
+  },
+  {
+   "jv": "endhog",
+   "krama": "tigan",
+   "baca": "en-DHOG · TI-gan",
+   "id": "telur"
+  },
+  {
+   "jv": "iwak",
+   "krama": "ulam",
+   "baca": "I-wa' · U-lam",
+   "id": "ikan, lauk"
+  },
+  {
+   "jv": "gula",
+   "krama": "gendhis",
+   "baca": "GU-lo · GEN-dhis",
+   "id": "gula"
+  },
+  {
+   "jv": "uyah",
+   "krama": "sarem",
+   "baca": "U-yah · SA-rem",
+   "id": "garam"
+  },
+  {
+   "jv": "abang",
+   "krama": "abrit",
+   "baca": "A-bang · A-brit",
+   "id": "merah"
+  },
+  {
+   "jv": "ijo",
+   "krama": "ijem",
+   "baca": "I-jo · I-jem",
+   "id": "hijau"
+  },
+  {
+   "jv": "putih",
+   "krama": "pethak",
+   "baca": "PU-tih · PE-tha'",
+   "id": "putih"
+  },
+  {
+   "jv": "ireng",
+   "krama": "cemeng",
+   "baca": "I-reng · CE-meng",
+   "id": "hitam"
+  },
+  {
+   "jv": "setengah",
+   "krama": "setengah",
+   "baca": "se-TE-ngah",
+   "id": "setengah"
+  },
+  {
+   "jv": "pripun, piyé",
+   "krama": "pripun",
+   "baca": "PRI-pun",
+   "id": "bagaimana"
+  },
+  {
+   "jv": "kirang",
+   "krama": "kirang",
+   "baca": "KI-rang",
+   "id": "kurang (krama)"
+  },
+  {
+   "jv": "dhuwit",
+   "krama": "arta",
+   "baca": "DHU-wit",
+   "id": "uang"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi percakapan di pasar ini dalam **krama**.",
+   "items": [
+    "Nuwun sèwu, Bu. Lombok menika ____ reginipun? (berapa)",
+    "____ boten saged kirang? (apa)",
+    "____ nggih, Bu. (mahal)",
+    "Kula ____ setengah kilo. (ambil)",
+    "____ pinten, Bu? (semuanya)",
+    "____ kula pinten? (kembalian)"
+   ]
+  },
+  {
+   "prompt": "Tulis harganya dengan huruf, dalam bahasa Jawa ngoko.",
+   "items": [
+    "Rp12.000",
+    "Rp25.000",
+    "Rp50.000",
+    "Rp3.500",
+    "Rp160.000"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jawa ngoko.",
+   "items": [
+    "Pisang ini berapa harganya?",
+    "Mahal. Tidak boleh kurang?",
+    "Saya ambil dua kilo.",
+    "Telurnya masih baru?",
+    "Kembaliannya tujuh belas ribu.",
+    "Saya mau beli nasi satu bungkus."
+   ]
+  },
+  {
+   "prompt": "**Ulangan unit 3.** Tutup unit 3, lalu tulis kalimat Jawanya.",
+   "items": [
+    "Saya punya dua saudara. (ngoko)",
+    "Ayah saya guru. (krama)",
+    "Adikmu masih sekolah? (ngoko)",
+    "Rumah saya jauh. (krama)",
+    "Ini bukunya. (ngoko)"
+   ]
+  }
+ ],
+ "answers": [
+  "pinten — Menapa — Awis — pendhet — Sedaya — Susukipun",
+  "rolas èwu — selawé èwu — sèket èwu — telung èwu limang atus — satus sewidak èwu",
+  "Gedhang iki pira regané? — Larang. Ora éntuk kurang? — Tak jupuk rong kilo. — Endhogé isih anyar? — Susuké pitulas èwu. — Aku arep tuku sega sabungkus.",
+  "Aku duwé sedulur loro. — Rama kula guru. — Adhimu isih sekolah? — Griya kula tebih. — Iki bukuné."
+ ]
+}

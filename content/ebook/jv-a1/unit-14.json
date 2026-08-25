@@ -1,0 +1,548 @@
+{
+ "title": "Badan dan sakit",
+ "title_target": "Sirahku mumet, Pak",
+ "goal": "Menyebut bagian badan dan menjelaskan apa yang sakit — sambil berkenalan dengan satu rombongan kata krama inggil yang tak terhindarkan, karena badan orang yang dihormati punya namanya sendiri.",
+ "bekal": [
+  "menyebut bagian badan dalam ngoko dan krama inggil",
+  "menjelaskan keluhan: *mumet*, *mules*, *watuk*, *mriyang*",
+  "menanyakan keadaan orang sakit dan mendoakan kesembuhannya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ora mèlu kuliah",
+   "intro": "Dian tidak keluar kamar sejak pagi. Rini mengetuk pintu, lalu Pak Broto ikut menengok. Perhatikan bagaimana kata yang sama diucapkan berbeda oleh Rini (ngoko) dan Dian (krama kepada Pak Broto).",
+   "lines": [
+    {
+     "speaker": "Rini:",
+     "text": "Yan, kowé ora mèlu kuliah? Lara ta?",
+     "id": "Yan, kamu tidak ikut kuliah? Sakit ya?",
+     "literal": "Yan, kamu tidak ikut kuliah? sakit ya?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Iya. Sirahku mumet ket mau bengi.",
+     "id": "Ya. Kepala saya pusing sejak tadi malam.",
+     "literal": "ya. kepala-ku pusing sejak tadi malam."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Wetengmu piyé? Mules ora?",
+     "id": "Perutmu bagaimana? Mulas tidak?",
+     "literal": "perut-mu bagaimana? mulas tidak?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Rada. Aku mau muntah pisan.",
+     "id": "Agak. Saya tadi muntah sekali.",
+     "literal": "agak. aku tadi muntah sekali."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Wis ngombé obat durung?",
+     "id": "Sudah minum obat belum?",
+     "literal": "sudah minum obat belum?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Durung. Ora duwé.",
+     "id": "Belum. Tidak punya.",
+     "literal": "belum. tidak punya."
+    },
+    {
+     "speaker": "Pak Broto:",
+     "text": "Mbak Dian gerah? Kula mireng saking ngajeng.",
+     "id": "Mbak Dian sakit? Saya dengar dari depan.",
+     "literal": "Mbak Dian sakit? saya dengar dari depan."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Inggih, Pak. Sirah kula ngelu, sakedhik mriyang.",
+     "id": "Iya, Pak. Kepala saya sakit, sedikit demam.",
+     "literal": "iya, Pak. kepala saya sakit, sedikit demam."
+    },
+    {
+     "speaker": "Pak Broto:",
+     "text": "Mangga dipun-priksakaken dhateng puskesmas. Celak kok, wonten kilèn.",
+     "id": "Silakan diperiksakan ke puskesmas. Dekat kok, ada di barat.",
+     "literal": "silakan di-periksa-kan ke puskesmas. dekat kok, ada di barat."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Nggih, Pak. Matur nuwun.",
+     "id": "Ya, Pak. Terima kasih.",
+     "literal": "ya, Pak. terima-kasih."
+    },
+    {
+     "speaker": "Pak Broto:",
+     "text": "Ndang saras, nggih.",
+     "id": "Semoga cepat sembuh, ya.",
+     "literal": "cepat sembuh, ya."
+    }
+   ],
+   "notes": [
+    "**Lara** (ngoko) / **sakit** (krama) / **gerah** (krama inggil) — tiga kata untuk satu keadaan. Pak Broto memakai *gerah* karena berbicara tentang keadaan Dian; Dian memakai kata biasa untuk dirinya sendiri. Ini pola yang sama dengan *dhahar* dan *nedha* di unit 9.",
+    "**Ngelu** khusus berarti \"sakit kepala\", berbeda dari *mumet* yang berarti \"pusing, berputar\". Keduanya sering dipakai bergantian dalam percakapan, tapi kalau kamu ingin tepat: *ngelu* untuk nyeri, *mumet* untuk kepala berputar.",
+    "**Mriyang** berarti \"meriang, demam ringan\" — badan hangat, tidak enak, tapi belum benar-benar panas tinggi. Untuk demam sungguhan dipakai *panas* atau *sumeng*. Ini pembedaan yang bahasa Indonesia juga punya lewat \"meriang\" dan \"demam\".",
+    "**Pisan** berarti \"sekali\" (satu kali) dan juga \"sekalian\". *Muntah pisan* = muntah satu kali. Bandingkan dengan *sepisan* yang berarti \"pertama kali\".",
+    "**Dipun-priksakaken** menumpuk tiga hal sekaligus: awalan pasif krama *dipun-*, kata dasar *priksa*, dan akhiran *-aken* (krama dari *-aké*) yang berarti \"membuat orang lain melakukannya\". Terjemahan harfiahnya \"diperiksakan\". Kamu belum perlu membentuknya sendiri, tapi kamu akan sering mendengarnya.",
+    "**Ndang saras** adalah doa kesembuhan yang paling sering diucapkan — harfiahnya \"cepat sehat\". Bentuk ngokonya *ndang mari*. Mengucapkannya kepada orang sakit adalah kesopanan yang tidak pernah salah."
+   ],
+   "grammars": [
+    {
+     "title": "Badan: tiga tingkat, dan kapan tingkat ketiga wajib",
+     "body": [
+      "Bagian badan adalah salah satu rombongan kata yang paling banyak punya bentuk krama inggil, karena berbicara tentang badan orang lain adalah hal yang sensitif di mana pun. Kabar baiknya, kamu **tidak perlu memakainya**; kamu perlu **mengenalinya**."
+     ],
+     "table": {
+      "head": [
+       "Ngoko",
+       "Krama inggil",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "*sirah*",
+        "*mustaka*",
+        "kepala"
+       ],
+       [
+        "*rambut*",
+        "*rikma*",
+        "rambut"
+       ],
+       [
+        "*mripat*",
+        "*paningal*",
+        "mata"
+       ],
+       [
+        "*kuping*",
+        "*talingan*",
+        "telinga"
+       ],
+       [
+        "*irung*",
+        "*grana*",
+        "hidung"
+       ],
+       [
+        "*cangkem*",
+        "*tutuk*",
+        "mulut"
+       ],
+       [
+        "*untu*",
+        "*waja*",
+        "gigi"
+       ],
+       [
+        "*gulu*",
+        "*jangga*",
+        "leher"
+       ],
+       [
+        "*tangan*",
+        "*asta*",
+        "tangan"
+       ],
+       [
+        "*sikil*",
+        "*samparan*",
+        "kaki"
+       ],
+       [
+        "*weteng*",
+        "*padharan*",
+        "perut"
+       ],
+       [
+        "*awak*",
+        "*sarira*",
+        "badan"
+       ]
+      ]
+     },
+     "after": [
+      "**Kapan bentuk krama inggil wajib?** Ketika kamu berbicara tentang badan orang yang kamu hormati: *asta panjenengan* (tangan Anda), bukan *tangan panjenengan*. Memakai kata ngoko untuk badan orang yang dihormati adalah salah satu kesalahan yang paling terasa.",
+      "**Untuk badanmu sendiri, pakai kata biasa.** *Sirah kula ngelu*, bukan *mustaka kula ngelu* — yang terakhir berarti kamu meninggikan dirimu sendiri.",
+      "Kalau kamu tidak yakin, **hindari menyebut bagian badannya sama sekali**: *panjenengan gerah punapa?* (Anda sakit apa?) sudah menanyakan hal yang sama tanpa risiko."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menjelaskan keluhan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Susunannya paling sering: **bagian badan + keluhan**, tanpa kata kerja penghubung. *Sirahku mumet* — kepalaku pusing. *Wetengku mules* — perutku mulas."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Keluhan",
+      "Ngoko",
+      "Krama"
+     ],
+     "rows": [
+      [
+       "sakit",
+       "*lara*",
+       "*sakit* / *gerah*"
+      ],
+      [
+       "pusing",
+       "*mumet*",
+       "*mumet*"
+      ],
+      [
+       "sakit kepala",
+       "*ngelu*",
+       "*ngelu*"
+      ],
+      [
+       "mulas",
+       "*mules*",
+       "*mules*"
+      ],
+      [
+       "demam ringan",
+       "*mriyang*",
+       "*mriyang*"
+      ],
+      [
+       "batuk",
+       "*watuk*",
+       "*watuk*"
+      ],
+      [
+       "pilek",
+       "*pilek*",
+       "*pilek*"
+      ],
+      [
+       "muntah",
+       "*muntah*",
+       "*muntah*"
+      ],
+      [
+       "luka",
+       "*tatu*",
+       "*tatu*"
+      ],
+      [
+       "lelah",
+       "*kesel*",
+       "*sayah*"
+      ],
+      [
+       "tidak enak badan",
+       "*ora kepénak awak*",
+       "*boten sakéca*"
+      ],
+      [
+       "sembuh",
+       "*mari*",
+       "*saras*"
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat yang akan kamu pakai",
+      "Ngoko",
+      "Krama"
+     ],
+     "rows": [
+      [
+       "Saya sakit.",
+       "*Aku lara.*",
+       "*Kula sakit.*"
+      ],
+      [
+       "Sakit apa?",
+       "*Lara apa?*",
+       "*Gerah punapa?*"
+      ],
+      [
+       "Kepala saya pusing.",
+       "*Sirahku mumet.*",
+       "*Sirah kula mumet.*"
+      ],
+      [
+       "Sejak kapan?",
+       "*Ket kapan?*",
+       "*Wiwit kapan?*"
+      ],
+      [
+       "Sudah minum obat?",
+       "*Wis ngombé obat?*",
+       "*Sampun ngunjuk jampi?*"
+      ],
+      [
+       "Perlu ke dokter?",
+       "*Perlu nyang dhokter?*",
+       "*Prelu dhateng dhokter?*"
+      ],
+      [
+       "Semoga cepat sembuh.",
+       "*Ndang mari, ya.*",
+       "*Ndang saras, nggih.*"
+      ],
+      [
+       "Sudah sembuh?",
+       "*Wis mari?*",
+       "*Sampun saras?*"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menengok orang sakit",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Menengok orang sakit — **nuwèni** dalam bahasa Jawa — adalah kewajiban sosial yang dipandang serius. Kalau tetangga atau teman sekantormu sakit dan kamu tidak menengok, ketidakhadiranmu tercatat. Kabar baiknya: yang diharapkan sangat sederhana."
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Datang sebentar saja.** Lima belas menit sudah cukup dan justru lebih baik daripada satu jam yang melelahkan orang sakit.",
+      "**Bawa sesuatu yang kecil** — buah, roti, atau apa pun yang bisa dibagi. Nilainya tidak penting; keberadaannya yang penting.",
+      "**Kalimat pembuka:** *Pripun kabaripun?* (bagaimana kabarnya?) atau *Sampun mendhingan?* (sudah mendingan?).",
+      "**Kalimat penutup:** *Ndang saras nggih* (semoga cepat sembuh) dan *Mangga, kula rumiyin* (mari, saya duluan)."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kata yang sebaiknya kamu hindari",
+     "items": [
+      "Jangan menanyakan **rincian penyakit** kalau orangnya tidak menawarkannya sendiri. *Gerah punapa?* sudah cukup; kalau dijawab singkat, berhenti di situ.",
+      "Jangan mengatakan *mesakaké* (kasihan) kepada orangnya langsung. Kata itu benar dan sering dipakai, tapi diucapkan kepada orang sakitnya sendiri ia terdengar seperti mengumumkan bahwa keadaannya buruk.",
+      "Jangan menawarkan obat atau nasihat pengobatan kecuali diminta. Yang diharapkan darimu adalah kehadiran, bukan diagnosis."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "jv": "awak",
+   "krama": "sarira",
+   "baca": "A-wa' · sa-RI-ro",
+   "id": "badan"
+  },
+  {
+   "jv": "sirah",
+   "krama": "mustaka",
+   "baca": "SI-rah · mus-TO-ko",
+   "id": "kepala"
+  },
+  {
+   "jv": "mripat",
+   "krama": "paningal",
+   "baca": "MRI-pat",
+   "id": "mata"
+  },
+  {
+   "jv": "kuping",
+   "krama": "talingan",
+   "baca": "KU-ping",
+   "id": "telinga"
+  },
+  {
+   "jv": "irung",
+   "krama": "grana",
+   "baca": "I-rung",
+   "id": "hidung"
+  },
+  {
+   "jv": "cangkem",
+   "krama": "tutuk",
+   "baca": "CANG-kem",
+   "id": "mulut"
+  },
+  {
+   "jv": "untu",
+   "krama": "waja",
+   "baca": "UN-tu · WO-jo",
+   "id": "gigi"
+  },
+  {
+   "jv": "tangan",
+   "krama": "asta",
+   "baca": "TO-ngan · AS-to",
+   "id": "tangan"
+  },
+  {
+   "jv": "sikil",
+   "krama": "samparan",
+   "baca": "si-KIL",
+   "id": "kaki"
+  },
+  {
+   "jv": "weteng",
+   "krama": "padharan",
+   "baca": "WE-teng",
+   "id": "perut"
+  },
+  {
+   "jv": "geger",
+   "krama": "geger",
+   "baca": "GE-ger",
+   "id": "punggung"
+  },
+  {
+   "jv": "lara",
+   "krama": "sakit, gerah",
+   "baca": "LO-ro · GE-rah",
+   "id": "sakit"
+  },
+  {
+   "jv": "mumet",
+   "krama": "mumet",
+   "baca": "MU-met",
+   "id": "pusing"
+  },
+  {
+   "jv": "ngelu",
+   "krama": "ngelu",
+   "baca": "nge-LU",
+   "id": "sakit kepala"
+  },
+  {
+   "jv": "mules",
+   "krama": "mules",
+   "baca": "MU-les",
+   "id": "mulas"
+  },
+  {
+   "jv": "mriyang",
+   "krama": "mriyang",
+   "baca": "MRI-yang",
+   "id": "meriang"
+  },
+  {
+   "jv": "watuk",
+   "krama": "watuk",
+   "baca": "WA-tu'",
+   "id": "batuk"
+  },
+  {
+   "jv": "tatu",
+   "krama": "tatu",
+   "baca": "TA-tu",
+   "id": "luka"
+  },
+  {
+   "jv": "obat",
+   "krama": "jampi",
+   "baca": "O-bat · JAM-pi",
+   "id": "obat"
+  },
+  {
+   "jv": "dhokter",
+   "krama": "dhokter",
+   "baca": "DHOK-ter",
+   "id": "dokter"
+  },
+  {
+   "jv": "mari",
+   "krama": "saras",
+   "baca": "MA-ri · SA-ras",
+   "id": "sembuh"
+  },
+  {
+   "jv": "kesel",
+   "krama": "sayah",
+   "baca": "KE-sel · SA-yah",
+   "id": "lelah"
+  },
+  {
+   "jv": "ndang",
+   "krama": "ndang",
+   "baca": "n-DANG",
+   "id": "cepat, segera"
+  },
+  {
+   "jv": "nuwèni",
+   "krama": "nuwèni",
+   "baca": "nu-WÈ-ni",
+   "id": "menengok orang sakit"
+  },
+  {
+   "jv": "mendhingan",
+   "krama": "mendhingan",
+   "baca": "men-DHI-ngan",
+   "id": "mendingan"
+  },
+  {
+   "jv": "mesakaké",
+   "krama": "mesakaken",
+   "baca": "me-sa-ka-KÉ",
+   "id": "kasihan"
+  },
+  {
+   "jv": "perlu",
+   "krama": "prelu",
+   "baca": "PER-lu",
+   "id": "perlu"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Sebutkan bagian badan ini dalam ngoko.",
+   "items": [
+    "kepala",
+    "mata",
+    "telinga",
+    "tangan",
+    "kaki",
+    "perut",
+    "gigi",
+    "hidung"
+   ]
+  },
+  {
+   "prompt": "Susun keluhan ini menjadi kalimat ngoko, contoh: *Sirahku mumet.*",
+   "items": [
+    "perut — mulas",
+    "kepala — sakit",
+    "badan — meriang",
+    "kaki — luka",
+    "mata — sakit"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jawa **krama**.",
+   "items": [
+    "Saya sakit, Pak.",
+    "Kepala saya pusing sejak tadi malam.",
+    "Sudah minum obat belum?",
+    "Perlu ke dokter?",
+    "Semoga cepat sembuh, ya.",
+    "Saya tidak enak badan."
+   ]
+  },
+  {
+   "prompt": "**Ulangan unit 12.** Tutup unit 12, lalu tulis kalimat Jawanya.",
+   "items": [
+    "Tolong ambilkan air. (ngoko)",
+    "Jangan lupa. (ngoko)",
+    "Silakan dimakan. (krama)",
+    "Tidak usah. (krama)",
+    "Coba lihat dulu. (ngoko)"
+   ]
+  }
+ ],
+ "answers": [
+  "sirah — mripat — kuping — tangan — sikil — weteng — untu — irung",
+  "Wetengku mules. — Sirahku ngelu. — Awakku mriyang. — Sikilku tatu. — Mripatku lara.",
+  "Kula sakit, Pak. — Sirah kula mumet wiwit wau dalu. — Sampun ngunjuk jampi dèrèng? — Prelu dhateng dhokter? — Ndang saras, nggih. — Kula boten sakéca.",
+  "Tulung jupukna banyu. — Aja lali. — Mangga dipun-dhahar. — Boten sisah. — Coba deloken dhisik."
+ ]
+}

@@ -643,6 +643,7 @@ const SUARA_BROWSER: Record<string, string> = {
   da: "da-DK", sv: "sv-SE", no: "nb-NO", fi: "fi-FI", pl: "pl-PL", cs: "cs-CZ",
   el: "el-GR", he: "he-IL", uk: "uk-UA", ro: "ro-RO", hu: "hu-HU",
   eu: "eu-ES",
+  jv: "id-ID", // lihat catatan jv di CHIRP_LOCALES (src/lib/ttsVoice.ts)
 };
 
 let audio: HTMLAudioElement | null = null;

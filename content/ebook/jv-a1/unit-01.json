@@ -1,0 +1,643 @@
+{
+ "title": "Menyapa dan menyebut nama",
+ "title_target": "Aku Dian, kula Dian",
+ "goal": "Menyapa, menyebut nama, dan mengatakan asalmu — dalam dua tingkat tutur sekaligus, supaya kamu melihat sejak menit pertama bahwa ngoko dan krama bukan dua bahasa, melainkan dua kosakata di atas satu tata bahasa.",
+ "bekal": [
+  "menyapa teman sebaya dengan ngoko dan orang yang lebih tua dengan krama",
+  "menyebut nama dan asal dengan *jenengku* / *nami kula* dan *saka* / *saking*",
+  "memakai enam kata ganti orang dengan satu bentuk kata kerja yang sama"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog 1 — Ing koridor kos (ngoko)",
+   "intro": "Hari pertama Dian di sebuah kos di daerah Sagan, Yogyakarta. Ia sedang membuka pintu kamarnya ketika seorang perempuan seumurannya keluar dari kamar sebelah membawa ember.",
+   "lines": [
+    {
+     "speaker": "Rini:",
+     "text": "Éh, kowé sing kamar telu, ya?",
+     "id": "Eh, kamu yang kamar tiga, ya?",
+     "literal": "eh, kamu yang kamar tiga, ya?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Iya, bener. Aku Dian.",
+     "id": "Ya, benar. Saya Dian.",
+     "literal": "ya, benar. aku Dian."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Aku Rini. Kamarku sebelah. Kowé wong ngendi?",
+     "id": "Saya Rini. Kamar saya sebelah. Kamu orang mana?",
+     "literal": "aku Rini. kamar-ku sebelah. kamu orang di-mana?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Aku saka Jakarta. Aku mahasiswa anyar ing kéné.",
+     "id": "Saya dari Jakarta. Saya mahasiswa baru di sini.",
+     "literal": "aku dari Jakarta. aku mahasiswa baru di sini."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Wah, adoh, ya. Aku wong Klaten.",
+     "id": "Wah, jauh, ya. Saya orang Klaten.",
+     "literal": "wah, jauh, ya. aku orang Klaten."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Piyé kabarmu, Rin?",
+     "id": "Apa kabar, Rin?",
+     "literal": "bagaimana kabar-mu, Rin?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Apik-apik waé. Kowé bisa basa Jawa?",
+     "id": "Baik-baik saja. Kamu bisa bahasa Jawa?",
+     "literal": "baik-baik saja. kamu bisa bahasa Jawa?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Sithik. Aku lagi sinau.",
+     "id": "Sedikit. Saya sedang belajar.",
+     "literal": "sedikit. aku sedang belajar."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Ya wis, ngobrol nganggo basa Jawa waé, ya?",
+     "id": "Ya sudah, kita ngobrol pakai bahasa Jawa saja, ya?",
+     "literal": "ya sudah, mengobrol memakai bahasa Jawa saja, ya?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Iya, matur nuwun, Rin!",
+     "id": "Ya, terima kasih, Rin!",
+     "literal": "ya, terima-kasih, Rin!"
+    }
+   ],
+   "notes": [
+    "**Aku Dian** — tanpa kata \"adalah\", persis seperti bahasa Indonesia. Bahasa Jawa tidak punya kata kerja penghubung untuk kalimat semacam ini. *Aku mahasiswa*, *aku wong Klaten*, *kamarku sebelah*: semuanya tinggal ditempelkan.",
+    "**Jenengku** dan **kamarku** — pemilik menempel di **ekor** kata, bukan berdiri sendiri di depannya. Ekornya *-ku* (milikku), *-mu* (milikmu), *-é* atau *-né* (miliknya, atau \"itu\"). Bahasa Indonesia melakukan hal yang sama dengan \"-ku\" dan \"-mu\", jadi ini bukan hal baru; yang baru cuma *-é*.",
+    "**Kowé** dibaca **ko-WÉ**, dengan *é* seperti pada \"méja\". Ia dipakai kepada teman sebaya dan orang yang lebih muda. Kepada orang yang lebih tua atau baru dikenal, ganti dengan *sampeyan* (agak sopan) atau *panjenengan* (sopan penuh) — dan begitu kamu memakai keduanya, kata-kata lain di kalimat itu biasanya ikut naik ke krama.",
+    "**Wong ngendi** secara harfiah \"orang di mana\". Untuk menanyakan asal, bahasa Jawa lebih sering memakai susunan ini daripada \"dari mana\". Jawabannya juga sejajar: *aku wong Klaten*, \"saya orang Klaten\". Kalau mau memakai \"dari\": *aku saka Jakarta*.",
+    "**Piyé** (bagaimana) punya banyak saudara yang artinya sama persis: *kepriyé*, *keprié*, *piyé*, dan di sebagian daerah *kepiyé*. Semuanya benar; *piyé* yang paling sering keluar dari mulut orang. Bentuk kramanya *kadospundi*.",
+    "**Apik-apik waé** — pengulangan kata untuk arti \"begitu-begitu saja, tidak ada yang istimewa\", dan *waé* (\"saja\") yang meredamnya. Ini jawaban baku untuk *piyé kabaré?*, sesering \"baik-baik saja\" dalam bahasa Indonesia.",
+    "**Matur nuwun** adalah \"terima kasih\" yang aman di semua tingkat — kepada teman maupun kepada orang yang dihormati. Bentuk pendeknya *nuwun* saja, dan bentuk paling akrabnya *suwun*. Kalau ingin lebih hormat lagi: *matur nuwun sanget* (terima kasih banyak)."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja tidak berubah menurut pelakunya",
+     "body": [
+      "Inilah alasan bahasa Jawa terasa ringan bagi penutur bahasa Indonesia. Bacalah tabel ini dari atas ke bawah dan perhatikan bahwa tiga kolom terakhir tidak bergerak sama sekali."
+     ],
+     "table": {
+      "head": [
+       "Kata ganti",
+       "Artinya",
+       "*sinau* (belajar)",
+       "*mangan* (makan)",
+       "*lunga* (pergi)"
+      ],
+      "rows": [
+       [
+        "**aku**",
+        "saya",
+        "sinau",
+        "mangan",
+        "lunga"
+       ],
+       [
+        "**kowé**",
+        "kamu",
+        "sinau",
+        "mangan",
+        "lunga"
+       ],
+       [
+        "**dhèwèké**",
+        "dia",
+        "sinau",
+        "mangan",
+        "lunga"
+       ],
+       [
+        "**awaké dhéwé**",
+        "kita",
+        "sinau",
+        "mangan",
+        "lunga"
+       ],
+       [
+        "**kowé kabèh**",
+        "kalian",
+        "sinau",
+        "mangan",
+        "lunga"
+       ],
+       [
+        "**dhèwèké kabèh**",
+        "mereka",
+        "sinau",
+        "mangan",
+        "lunga"
+       ]
+      ]
+     },
+     "after": [
+      "Tidak ada *am/is/are*, tidak ada akhiran orang ketiga, tidak ada enam baris konjugasi. Satu bentuk untuk semua orang — persis seperti \"saya makan, kamu makan, mereka makan\" dalam bahasa Indonesia.",
+      "Perhatikan bahwa **\"kita\" dan \"mereka\" bukan satu kata** melainkan susunan. *Awaké dhéwé* secara harfiah \"badan sendiri\", dan *dhèwèké kabèh* \"dia semua\". Bahasa Jawa juga punya *kita* (dari bahasa Indonesia, dipakai bebas) dan *pada* untuk menandai pelaku jamak: *padha mangan* — \"(mereka) sama-sama makan\".",
+      "**Dhèwèké** tidak membedakan laki-laki dan perempuan, sama seperti \"dia\". Bentuk pendek *dèké* juga sering terdengar."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog 2 — Ing ngarep kos (krama)",
+   "intro": "Sore harinya Dian berpapasan dengan seorang bapak berusia enam puluhan yang sedang menyapu halaman. Ternyata beliau pemilik kos. Perhatikan bahwa yang dibicarakan hampir sama persis dengan dialog pertama — yang berganti cuma kosakatanya.",
+   "lines": [
+    {
+     "speaker": "Pak Broto:",
+     "text": "Sugeng sonten, Mbak. Panjenengan ingkang énggal?",
+     "id": "Selamat sore, Mbak. Anda yang baru?",
+     "literal": "selamat sore, Mbak. anda yang baru?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Inggih, Pak. Nami kula Dian.",
+     "id": "Iya, Pak. Nama saya Dian.",
+     "literal": "iya, Pak. nama saya Dian."
+    },
+    {
+     "speaker": "Pak Broto:",
+     "text": "Kula Broto, ingkang gadhah kos menika.",
+     "id": "Saya Broto, pemilik kos ini.",
+     "literal": "saya Broto, yang punya kos ini."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Sugeng pinanggih, Pak.",
+     "id": "Senang bertemu, Pak.",
+     "literal": "selamat berjumpa, Pak."
+    },
+    {
+     "speaker": "Pak Broto:",
+     "text": "Panjenengan saking pundi?",
+     "id": "Anda dari mana?",
+     "literal": "anda dari mana?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Kula saking Jakarta. Kula mahasiswi énggal.",
+     "id": "Saya dari Jakarta. Saya mahasiswi baru.",
+     "literal": "saya dari Jakarta. saya mahasiswi baru."
+    },
+    {
+     "speaker": "Pak Broto:",
+     "text": "O, tebih. Sugeng rawuh ing Ngayogyakarta.",
+     "id": "O, jauh. Selamat datang di Yogyakarta.",
+     "literal": "o, jauh. selamat datang di Yogyakarta."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Matur nuwun, Pak.",
+     "id": "Terima kasih, Pak.",
+     "literal": "terima-kasih, Pak."
+    }
+   ],
+   "notes": [
+    "Bandingkan kedua dialog kata demi kata dan kamu akan melihat **bentuk kalimatnya identik**. *Kowé wong ngendi?* dan *Panjenengan saking pundi?* punya susunan yang sama: sapaan, kata tanya di ujung. Yang berganti cuma pilihan katanya.",
+    "**Sugeng** adalah kata pembuka semua ucapan selamat dalam krama: *sugeng énjing* (pagi), *sugeng siyang* (siang), *sugeng sonten* (sore), *sugeng dalu* (malam), *sugeng rawuh* (datang), *sugeng tindak* (jalan, kepada yang pergi), *sugeng pinanggih* (berjumpa), *sugeng sinau* (belajar). Satu kata, sepuluh ucapan.",
+    "**Inggih** adalah \"iya\" versi krama, lawan dari *iya*. Ia sangat sering dipakai, sering diulang (*inggih, inggih*), dan sering dipakai sendirian sebagai tanda bahwa kamu sedang mendengarkan — mirip \"iya, iya\" dalam bahasa Indonesia.",
+    "**Panjenengan** adalah \"Anda\" yang paling hormat. Satu tingkat di bawahnya ada *sampeyan*, yang dipakai kepada orang yang sedikit lebih tua atau setara tapi belum akrab. Kepada Pak Broto yang jauh lebih tua, *panjenengan* yang benar.",
+    "**Kula** menggantikan *aku* dalam krama. Ada pula bentuk yang lebih merendah lagi, *kawula* dan *dalem*, tapi keduanya terdengar sangat formal — dipakai di pidato, di keraton, atau kepada orang yang kedudukannya jauh di atas. Untuk sehari-hari, *kula* sudah cukup.",
+    "**Ngayogyakarta** adalah nama resmi Yogyakarta dalam bahasa Jawa. Sehari-hari orang menyebutnya *Jogja* atau *Yogya* — tidak perlu selalu bentuk panjangnya."
+   ],
+   "grammars": [
+    {
+     "title": "Kalimat yang sama, dua tingkat",
+     "body": [
+      "Simpan tabel ini. Ia adalah seluruh isi unit pertama dalam satu tempat, dan kamu akan melihat pola yang sama berulang di sembilan belas unit berikutnya."
+     ],
+     "table": {
+      "head": [
+       "Bahasa Indonesia",
+       "Ngoko",
+       "Krama"
+      ],
+      "rows": [
+       [
+        "Nama saya Dian.",
+        "*Jenengku Dian.*",
+        "*Nami kula Dian.*"
+       ],
+       [
+        "Siapa namamu?",
+        "*Jenengmu sapa?*",
+        "*Nami panjenengan sinten?*"
+       ],
+       [
+        "Saya dari Jakarta.",
+        "*Aku saka Jakarta.*",
+        "*Kula saking Jakarta.*"
+       ],
+       [
+        "Anda dari mana?",
+        "*Kowé saka ngendi?*",
+        "*Panjenengan saking pundi?*"
+       ],
+       [
+        "Ya.",
+        "*Iya.*",
+        "*Inggih.*"
+       ],
+       [
+        "Tidak.",
+        "*Ora.*",
+        "*Boten.*"
+       ],
+       [
+        "Saya belajar bahasa Jawa.",
+        "*Aku sinau basa Jawa.*",
+        "*Kula sinau basa Jawi.*"
+       ],
+       [
+        "Selamat bertemu.",
+        "*Seneng ketemu.*",
+        "*Sugeng pinanggih.*"
+       ]
+      ]
+     },
+     "after": [
+      "Baris terakhir sebelum ini menyimpan satu kejutan kecil: **\"Jawa\" sendiri punya bentuk krama, yaitu *Jawi***. Begitu juga nama beberapa tempat dan hal yang sering disebut. Jangan dikejar sekarang — cukup tahu bahwa itu ada.",
+      "Kalau kamu memperhatikan, kata **ora** dan **boten** belum muncul di dialog mana pun. Keduanya sengaja dipasang di sini karena kamu akan memakainya besok juga: dua kata ini adalah cara mengingkari apa pun dalam bahasa Jawa, dan tidak ada bentuk lain yang perlu dihafal."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyapa menurut waktu hari",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sapaan menurut waktu hari dalam bahasa Jawa **hanya ada dalam krama**. Tidak ada versi ngoko-nya, dan itu bukan kekurangan — kepada teman sebaya, orang Jawa memang tidak mengucapkan \"selamat pagi\". Mereka mengucapkan *piyé?* atau *arep menyang ngendi?* atau sekadar memanggil namanya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Waktu",
+      "Ucapan",
+      "Cara baca",
+      "Kira-kira jam"
+     ],
+     "rows": [
+      [
+       "pagi",
+       "*Sugeng énjing*",
+       "su-GENG én-JING",
+       "sebelum pukul 11"
+      ],
+      [
+       "siang",
+       "*Sugeng siyang*",
+       "su-GENG si-YANG",
+       "pukul 11-15"
+      ],
+      [
+       "sore",
+       "*Sugeng sonten*",
+       "su-GENG SON-ten",
+       "pukul 15-18"
+      ],
+      [
+       "malam",
+       "*Sugeng dalu*",
+       "su-GENG DA-lu",
+       "sesudah magrib"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Jawabannya adalah ucapan yang sama, dikembalikan begitu saja: kalau seseorang berkata *sugeng énjing*, kamu menjawab *sugeng énjing*. Tidak ada rumus lain."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Ngoko",
+      "Krama"
+     ],
+     "rows": [
+      [
+       "Halo / hai",
+       "*Halo*",
+       "*Halo*"
+      ],
+      [
+       "Apa kabar?",
+       "*Piyé kabaré?*",
+       "*Kadospundi kabaripun?*"
+      ],
+      [
+       "Baik-baik saja.",
+       "*Apik-apik waé.*",
+       "*Saé-saé kémawon.*"
+      ],
+      [
+       "Permisi (mau lewat / mau bicara)",
+       "*Nuwun sèwu*",
+       "*Nuwun sèwu*"
+      ],
+      [
+       "Terima kasih",
+       "*Matur nuwun*",
+       "*Matur nuwun*"
+      ],
+      [
+       "Sama-sama",
+       "*Padha-padha*",
+       "*Sami-sami*"
+      ],
+      [
+       "Sampai jumpa",
+       "*Sesuk manèh*",
+       "*Ngantos pinanggih malih*"
+      ],
+      [
+       "Saya duluan, ya",
+       "*Tak dhisik, ya*",
+       "*Kula rumiyin, nggih*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Nuwun sèwu** secara harfiah berarti \"mohon seribu\" — seribu maaf. Ia dipakai untuk permisi lewat, untuk menyela pembicaraan, dan untuk membuka pertanyaan kepada orang asing. Kalau kamu cuma sanggup menghafal tiga kata Jawa hari ini, jadikan ini salah satunya: ia membuka hampir semua pintu percakapan di Jawa."
+    }
+   ]
+  },
+  {
+   "title": "Kenapa unit pertama ini terasa mudah",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Unit pertama modul bahasa apa pun biasanya sudah menabrakkanmu ke satu tembok tata bahasa. Di sini temboknya tidak ada, dan itu bukan kebetulan — empat sifat bahasa Jawa kebetulan sama persis dengan bahasa Indonesia:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Kata kerja tidak berubah menurut pelakunya.** \"Saya makan, kamu makan, mereka makan\" — bahasa Indonesia sudah begitu seumur hidupmu, dan bahasa Jawa sama: *aku mangan, kowé mangan, dhèwèké mangan*.",
+      "**Tidak ada bentuk sedang berlangsung yang mengubah kata kerja.** Kalau perlu ditandai, cukup sisipkan *lagi*: *aku sinau* (saya belajar) → *aku lagi sinau* (saya sedang belajar). Persis pola bahasa Indonesia.",
+      "**Tidak ada kata sandang.** Tidak ada *the*, tidak ada *ein*, tidak ada *le/la*. *Omah* bisa berarti \"rumah\", \"sebuah rumah\", atau \"rumah itu\" tergantung keperluan; kalau perlu ditegaskan, ekor *-é* yang mengerjakannya: *omahé*, \"rumah itu\".",
+      "**Susunan kalimatnya sama.** Pelaku, kata kerja, sasaran; kata sifat sesudah kata benda (*omah gedhé*, rumah besar); kata tanya di tempat kata yang ditanyakan (*kowé wong ngendi?*)."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Yang benar-benar baru cuma **satu** — undha-usuk — dan modul ini sudah memulainya di unit pertama justru karena itu satu-satunya yang perlu waktu. Sisanya adalah kosakata, dan kosakata datang sendiri lewat pengulangan."
+    },
+    {
+     "type": "kotak",
+     "title": "Jangan takut mencampur",
+     "items": [
+      "Kalau di tengah kalimat krama kamu kehabisan kata, jangan berhenti — sisipkan kata bahasa Indonesia dan jalan terus. Orang Jawa melakukannya setiap hari.",
+      "Yang **tidak** boleh dicampur adalah mengganti *panjenengan* atau *sampeyan* jadi *kowé* di tengah percakapan dengan orang yang lebih tua. Kata ganti orang adalah bagian yang paling terdengar. Jaga yang satu itu, dan sisanya dimaafkan."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "jv": "aku",
+   "krama": "kula",
+   "baca": "A-ku · KU-la",
+   "id": "saya"
+  },
+  {
+   "jv": "kowé",
+   "krama": "panjenengan, sampeyan",
+   "baca": "ko-WÉ · pan-je-NENG-an",
+   "id": "kamu, Anda"
+  },
+  {
+   "jv": "dhèwèké",
+   "krama": "piyambakipun",
+   "baca": "dhè-wè-KÉ",
+   "id": "dia"
+  },
+  {
+   "jv": "jeneng",
+   "krama": "nami, asma",
+   "baca": "JE-neng · NA-mi",
+   "id": "nama"
+  },
+  {
+   "jv": "iya",
+   "krama": "inggih",
+   "baca": "I-yo · ING-gih",
+   "id": "ya"
+  },
+  {
+   "jv": "ora",
+   "krama": "boten",
+   "baca": "O-ro · BO-ten",
+   "id": "tidak, bukan"
+  },
+  {
+   "jv": "sapa",
+   "krama": "sinten",
+   "baca": "SO-po · SIN-ten",
+   "id": "siapa"
+  },
+  {
+   "jv": "ngendi",
+   "krama": "pundi",
+   "baca": "ngen-DI · PUN-di",
+   "id": "mana, di mana"
+  },
+  {
+   "jv": "saka",
+   "krama": "saking",
+   "baca": "SO-ko · SA-king",
+   "id": "dari"
+  },
+  {
+   "jv": "ing, nang",
+   "krama": "wonten ing",
+   "baca": "ING · NANG",
+   "id": "di"
+  },
+  {
+   "jv": "kéné",
+   "krama": "ngriki",
+   "baca": "ké-NÉ · ngri-KI",
+   "id": "sini"
+  },
+  {
+   "jv": "wong",
+   "krama": "tiyang",
+   "baca": "WONG · TI-yang",
+   "id": "orang"
+  },
+  {
+   "jv": "anyar",
+   "krama": "énggal",
+   "baca": "A-nyar · ÉNG-gal",
+   "id": "baru"
+  },
+  {
+   "jv": "adoh",
+   "krama": "tebih",
+   "baca": "A-doh · TE-bih",
+   "id": "jauh"
+  },
+  {
+   "jv": "cedhak",
+   "krama": "celak",
+   "baca": "ce-DHA' · CE-la'",
+   "id": "dekat"
+  },
+  {
+   "jv": "apik",
+   "krama": "saé",
+   "baca": "A-pi' · sa-É",
+   "id": "baik, bagus"
+  },
+  {
+   "jv": "kabar",
+   "krama": "kabar",
+   "baca": "KA-bar",
+   "id": "kabar"
+  },
+  {
+   "jv": "piyé, kepriyé",
+   "krama": "kadospundi",
+   "baca": "pi-YÉ · ka-dos-PUN-di",
+   "id": "bagaimana"
+  },
+  {
+   "jv": "sinau",
+   "krama": "–",
+   "baca": "si-NAU",
+   "id": "belajar"
+  },
+  {
+   "jv": "basa",
+   "krama": "basa",
+   "baca": "BO-so",
+   "id": "bahasa"
+  },
+  {
+   "jv": "bisa",
+   "krama": "saged",
+   "baca": "BI-so · SA-ged",
+   "id": "bisa, dapat"
+  },
+  {
+   "jv": "sithik",
+   "krama": "sekedhik",
+   "baca": "si-THI' · se-ke-DHI'",
+   "id": "sedikit"
+  },
+  {
+   "jv": "lagi",
+   "krama": "nembé",
+   "baca": "LA-gi · nem-BÉ",
+   "id": "sedang"
+  },
+  {
+   "jv": "waé",
+   "krama": "kémawon",
+   "baca": "wa-É · ké-MA-won",
+   "id": "saja"
+  },
+  {
+   "jv": "uga",
+   "krama": "ugi",
+   "baca": "U-go · U-gi",
+   "id": "juga"
+  },
+  {
+   "jv": "bener",
+   "krama": "leres",
+   "baca": "BE-ner · LE-res",
+   "id": "benar"
+  },
+  {
+   "jv": "sebelah",
+   "krama": "sebelah",
+   "baca": "se-be-LAH",
+   "id": "sebelah"
+  },
+  {
+   "jv": "matur nuwun",
+   "krama": "matur nuwun",
+   "baca": "MA-tur NU-wun",
+   "id": "terima kasih"
+  },
+  {
+   "jv": "nuwun sèwu",
+   "krama": "nuwun sèwu",
+   "baca": "NU-wun SÈ-wu",
+   "id": "permisi, maaf"
+  },
+  {
+   "jv": "sugeng",
+   "krama": "sugeng",
+   "baca": "su-GENG",
+   "id": "selamat (dalam ucapan)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan kata ganti orang yang benar. (Petunjuk: kata kerjanya tidak perlu diubah.)",
+   "items": [
+    "____ Dian. Aku saka Jakarta.",
+    "____ wong ngendi, Rin?",
+    "____ lagi sinau basa Jawa. (dia)",
+    "Nami ____ Dian, Pak. (saya, krama)",
+    "____ saking pundi, Bu? (Anda, krama)",
+    "____ kabèh mahasiswa. (mereka)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat ngoko ini menjadi krama.",
+   "items": [
+    "Aku saka Jakarta.",
+    "Jenengmu sapa?",
+    "Kowé saka ngendi?",
+    "Iya, bener.",
+    "Aku ora bisa basa Jawa.",
+    "Omahku adoh."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jawa **ngoko**.",
+   "items": [
+    "Nama saya Ahmad.",
+    "Saya orang Klaten.",
+    "Kamu mahasiswa baru?",
+    "Apa kabar?",
+    "Saya sedang belajar sedikit.",
+    "Sampai jumpa besok!"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "Dian / jenengku",
+    "ngendi / kowé / wong / ?",
+    "Jakarta / saka / aku",
+    "basa / sinau / lagi / Jawa / aku",
+    "pundi / panjenengan / saking / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "Aku — Kowé — Dhèwèké — kula — Panjenengan — Dhèwèké",
+  "Kula saking Jakarta. — Nami panjenengan sinten? — Panjenengan saking pundi? — Inggih, leres. — Kula boten saged basa Jawi. — Griya kula tebih.",
+  "Jenengku Ahmad. — Aku wong Klaten. — Kowé mahasiswa anyar? — Piyé kabaré? — Aku lagi sinau sithik. — Sesuk manèh!",
+  "Jenengku Dian. — Kowé wong ngendi? — Aku saka Jakarta. — Aku lagi sinau basa Jawa. — Panjenengan saking pundi?"
+ ]
+}

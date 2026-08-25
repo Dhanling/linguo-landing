@@ -1,0 +1,659 @@
+{
+ "title": "Pekerjaan dan hari-hari biasa",
+ "title_target": "Saben dina aku tangi jam lima",
+ "goal": "Menceritakan hari-harimu dari bangun sampai tidur, menyebut pekerjaan, dan memakai kata keseringan — *saben*, *kerep*, *arang*, *ora tau*.",
+ "bekal": [
+  "menyusun urutan kegiatan sehari dengan *banjur* dan *sawisé*",
+  "menyebut pekerjaan dan menanyakan pekerjaan orang lain",
+  "memakai kata keseringan: *saben dina*, *biasané*, *kerep*, *arang*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Padinané Rini",
+   "intro": "Malam minggu di teras. Dian penasaran bagaimana Rini bisa selalu bangun pagi. Percakapan ngoko yang penuh urutan kegiatan dan kata keseringan.",
+   "lines": [
+    {
+     "speaker": "Dian:",
+     "text": "Rin, kowé kok isa tangi ésuk terus?",
+     "id": "Rin, kamu kok bisa bangun pagi terus?",
+     "literal": "Rin, kamu kok bisa bangun pagi terus?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Wis kulina. Saben dina aku tangi jam lima.",
+     "id": "Sudah terbiasa. Setiap hari saya bangun jam lima.",
+     "literal": "sudah terbiasa. setiap hari aku bangun jam lima."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Banjur ngapa waé?",
+     "id": "Lalu ngapain saja?",
+     "literal": "lalu mengapa saja?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Adus, salat, banjur nyapu. Sawisé kuwi lagi sarapan.",
+     "id": "Mandi, salat, lalu menyapu. Sesudah itu baru sarapan.",
+     "literal": "mandi, salat, lalu menyapu. sesudah itu baru sarapan."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Mangkat kuliah jam pira?",
+     "id": "Berangkat kuliah jam berapa?",
+     "literal": "berangkat kuliah jam berapa?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Setengah pitu. Kuliahé wiwit jam pitu.",
+     "id": "Setengah tujuh. Kuliahnya mulai jam tujuh.",
+     "literal": "setengah tujuh. kuliah-nya mulai jam tujuh."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Muliné?",
+     "id": "Pulangnya?",
+     "literal": "pulang-nya?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Biasané soré. Nanging Selasa karo Kemis aku kerja part-time.",
+     "id": "Biasanya sore. Tapi Selasa dan Kamis saya kerja part-time.",
+     "literal": "biasanya sore. tetapi Selasa dan Kamis aku kerja part-time."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Kerja apa?",
+     "id": "Kerja apa?",
+     "literal": "kerja apa?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Ngajar les basa Inggris. Sithik-sithik, kanggo tambah dhuwit saku.",
+     "id": "Mengajar les bahasa Inggris. Sedikit-sedikit, untuk tambah uang saku.",
+     "literal": "mengajar les bahasa Inggris. sedikit-sedikit, untuk tambah uang saku."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Kowé kerep kesel, ora?",
+     "id": "Kamu sering lelah, tidak?",
+     "literal": "kamu sering lelah, tidak?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Kerep. Nanging aku arang lara, mula ya wis.",
+     "id": "Sering. Tapi saya jarang sakit, jadi ya sudah.",
+     "literal": "sering. tetapi aku jarang sakit, maka ya sudah."
+    }
+   ],
+   "notes": [
+    "**Kok** di sini berbeda dari *kok* penegas yang kamu temui di unit 5. Di depan kalimat, *kok* berarti \"kok, mengapa\" dengan nada heran: *kok isa?* (kok bisa?). Bahasa Indonesia memakainya persis sama.",
+    "**Isa** adalah bentuk lain dari *bisa*, dan keduanya sama benarnya. Di Yogyakarta *isa* sedikit lebih sering terdengar; di Jawa Timur *iso*.",
+    "**Kulina** berarti \"terbiasa\", kramanya *kulina* juga. Dari akar yang sama datang *kulinakaké* (membiasakan). Kata ini sangat berguna untuk menjelaskan kebiasaan: *aku wis kulina* (saya sudah terbiasa).",
+    "**Sawisé** berarti \"sesudah\", dari *sawis* + *-é*. Kramanya *sasampunipun*. Pasangannya *sadurungé* (sebelum), krama *saderengipun*. Keduanya berdiri di awal anak kalimat, sama seperti bahasa Indonesia.",
+    "**Mula** berarti \"maka, jadi\", kramanya *milanipun*. Ia menghubungkan sebab dengan akibat: *aku kesel, mula ora melu* (saya lelah, maka tidak ikut).",
+    "**Dhuwit saku** — uang saku. Susunan kata benda + kata benda tanpa penghubung, sama persis dengan bahasa Indonesia.",
+    "**Ya wis** di ujung kalimat berarti \"ya sudahlah\" — penerimaan atas keadaan yang tidak bisa diubah. Ini salah satu ungkapan paling Jawa yang ada, dan ia mengandung seluruh sikap yang sering disebut *nrima*."
+   ],
+   "grammars": [
+    {
+     "title": "Menyusun urutan kegiatan",
+     "body": [
+      "Untuk menceritakan urutan, bahasa Jawa memakai kata sambung yang letaknya persis seperti bahasa Indonesia. Yang perlu dipasang cuma kosakatanya."
+     ],
+     "table": {
+      "head": [
+       "Bahasa Indonesia",
+       "Ngoko",
+       "Krama"
+      ],
+      "rows": [
+       [
+        "lalu, kemudian",
+        "*banjur*, *terus*",
+        "*lajeng*"
+       ],
+       [
+        "sesudah itu",
+        "*sawisé kuwi*",
+        "*sasampunipun menika*"
+       ],
+       [
+        "sebelum",
+        "*sadurungé*",
+        "*saderengipun*"
+       ],
+       [
+        "sambil",
+        "*karo*, *sinambi*",
+        "*kaliyan*, *sinambi*"
+       ],
+       [
+        "akhirnya",
+        "*akhiré*",
+        "*akhiripun*"
+       ],
+       [
+        "maka, jadi",
+        "*mula*, *dadi*",
+        "*milanipun*, *dados*"
+       ],
+       [
+        "dan",
+        "*lan*, *karo*",
+        "*saha*, *kaliyan*"
+       ],
+       [
+        "tetapi",
+        "*nanging*, *ning*",
+        "*nanging*"
+       ],
+       [
+        "karena",
+        "*amarga*, *merga*",
+        "*amargi*"
+       ],
+       [
+        "kalau",
+        "*nèk*, *menawa*",
+        "*menawi*"
+       ]
+      ]
+     },
+     "after": [
+      "**Lan dan karo keduanya berarti \"dan\"**, tapi *karo* juga berarti \"dengan\": *aku karo Rini* (saya dan Rini / saya dengan Rini). Kalau kamu ingin jelas-jelas \"dan\" untuk menyambung dua kalimat, pakai *lan*.",
+      "**Terus** dipinjam dari bahasa Indonesia dan sangat sering dipakai untuk \"lalu\", sesering *banjur*. Keduanya benar; *banjur* sedikit lebih rapi.",
+      "Kata sambung ini adalah seluruh perkakas bercerita yang kamu butuhkan di A1. Unit 20 akan memakainya semua sekaligus."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kegiatan sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ngoko",
+      "Krama",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*tangi*",
+       "*wungu*",
+       "bangun"
+      ],
+      [
+       "*adus*",
+       "*siram*",
+       "mandi"
+      ],
+      [
+       "*sarapan*",
+       "*nedha énjing*",
+       "sarapan"
+      ],
+      [
+       "*salat*",
+       "*salat*",
+       "salat"
+      ],
+      [
+       "*mangkat*",
+       "*bidhal*",
+       "berangkat"
+      ],
+      [
+       "*kuliah*",
+       "*kuliah*",
+       "kuliah"
+      ],
+      [
+       "*nyambut gawé*",
+       "*nyambut damel*",
+       "bekerja"
+      ],
+      [
+       "*ngajar*",
+       "*mucal*",
+       "mengajar"
+      ],
+      [
+       "*sinau*",
+       "*sinau*",
+       "belajar"
+      ],
+      [
+       "*mulih*",
+       "*wangsul*",
+       "pulang"
+      ],
+      [
+       "*masak*",
+       "*masak*",
+       "memasak"
+      ],
+      [
+       "*ngumbah*",
+       "*ngumbah*",
+       "mencuci"
+      ],
+      [
+       "*nyapu*",
+       "*nyapu*",
+       "menyapu"
+      ],
+      [
+       "*ngaso*",
+       "*ngaso*",
+       "beristirahat"
+      ],
+      [
+       "*dolan*",
+       "*dolan*",
+       "bermain, bertamu"
+      ],
+      [
+       "*turu*",
+       "*tilem*",
+       "tidur"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Dolan** adalah kata yang tidak punya padanan pas: ia berarti bermain, bertandang, jalan-jalan santai, dan mampir ke rumah teman tanpa keperluan tertentu — semuanya sekaligus. *Ayo dolan* adalah ajakan yang sangat sering diucapkan dan sangat jarang punya rencana rinci di belakangnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Keseringan",
+      "Ngoko",
+      "Krama"
+     ],
+     "rows": [
+      [
+       "setiap hari",
+       "*saben dina*",
+       "*saben dinten*"
+      ],
+      [
+       "biasanya",
+       "*biasané*",
+       "*biasanipun*"
+      ],
+      [
+       "sering",
+       "*kerep*",
+       "*asring*"
+      ],
+      [
+       "kadang-kadang",
+       "*kadhang-kadhang*",
+       "*kadhang-kadhang*"
+      ],
+      [
+       "jarang",
+       "*arang*",
+       "*arang*"
+      ],
+      [
+       "tidak pernah",
+       "*ora tau*",
+       "*boten naté*"
+      ],
+      [
+       "selalu",
+       "*mesthi*, *tansah*",
+       "*tansah*"
+      ],
+      [
+       "sekali seminggu",
+       "*seminggu pisan*",
+       "*saminggu sepisan*"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pekerjaan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ngoko",
+      "Krama",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*guru*",
+       "*guru*",
+       "guru"
+      ],
+      [
+       "*dhokter*",
+       "*dhokter*",
+       "dokter"
+      ],
+      [
+       "*tani*, *wong tani*",
+       "*tani*",
+       "petani"
+      ],
+      [
+       "*bakul*",
+       "*sadéyan*",
+       "pedagang"
+      ],
+      [
+       "*buruh*",
+       "*buruh*",
+       "buruh"
+      ],
+      [
+       "*sopir*",
+       "*sopir*",
+       "sopir"
+      ],
+      [
+       "*tukang*",
+       "*tukang*",
+       "tukang, ahli"
+      ],
+      [
+       "*karyawan*",
+       "*karyawan*",
+       "karyawan"
+      ],
+      [
+       "*mahasiswa*",
+       "*mahasiswa*",
+       "mahasiswa"
+      ],
+      [
+       "*pegawé*",
+       "*pegawé*",
+       "pegawai"
+      ],
+      [
+       "*perawat*",
+       "*perawat*",
+       "perawat"
+      ],
+      [
+       "*wiraswasta*",
+       "*wiraswasta*",
+       "wiraswasta"
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Ngoko",
+      "Krama"
+     ],
+     "rows": [
+      [
+       "Kerja apa?",
+       "*Kerja apa?*",
+       "*Nyambut damel punapa?*"
+      ],
+      [
+       "Kerja di mana?",
+       "*Kerja ing ngendi?*",
+       "*Nyambut damel wonten pundi?*"
+      ],
+      [
+       "Saya masih kuliah.",
+       "*Aku isih kuliah.*",
+       "*Kula taksih kuliah.*"
+      ],
+      [
+       "Saya guru di SD.",
+       "*Aku guru ing SD.*",
+       "*Kula guru wonten SD.*"
+      ],
+      [
+       "Sudah berapa lama?",
+       "*Wis pirang taun?*",
+       "*Sampun pinten taun?*"
+      ],
+      [
+       "Berangkat jam berapa?",
+       "*Mangkat jam pira?*",
+       "*Bidhal jam pinten?*"
+      ],
+      [
+       "Sedang libur.",
+       "*Lagi prei.*",
+       "*Nembé prei.*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Bakul, tukang, dan kata yang tidak menghina",
+     "items": [
+      "**Bakul** berarti pedagang kecil — penjual di pasar, penjual keliling, pemilik warung. Dalam bahasa Jawa kata ini **netral sepenuhnya**, tidak seperti kesan yang mungkin ditangkap penutur bahasa Indonesia dari kata \"bakul\" yang dipinjam ke bahasa gaul.",
+      "**Tukang** juga netral dan bahkan sedikit terhormat: ia berarti orang yang ahli mengerjakan sesuatu. *Tukang kayu*, *tukang batu*, *tukang cukur*, *tukang becak* — semuanya sebutan yang wajar dan tidak merendahkan.",
+      "Kalau kamu ingin lebih sopan ketika menyebut pekerjaan orang, tambahkan sapaan di depannya: *Pak tukang*, *Bu bakul*, *Mas sopir*."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "jv": "saben",
+   "krama": "saben",
+   "baca": "SA-ben",
+   "id": "setiap"
+  },
+  {
+   "jv": "biasané",
+   "krama": "biasanipun",
+   "baca": "bi-a-SA-né",
+   "id": "biasanya"
+  },
+  {
+   "jv": "kerep",
+   "krama": "asring",
+   "baca": "KE-rep · AS-ring",
+   "id": "sering"
+  },
+  {
+   "jv": "arang",
+   "krama": "arang",
+   "baca": "A-rang",
+   "id": "jarang"
+  },
+  {
+   "jv": "tansah, mesthi",
+   "krama": "tansah",
+   "baca": "TAN-sah",
+   "id": "selalu"
+  },
+  {
+   "jv": "kulina",
+   "krama": "kulina",
+   "baca": "ku-LI-no",
+   "id": "terbiasa"
+  },
+  {
+   "jv": "banjur, terus",
+   "krama": "lajeng",
+   "baca": "BAN-jur",
+   "id": "lalu"
+  },
+  {
+   "jv": "sawisé",
+   "krama": "sasampunipun",
+   "baca": "sa-WI-sé",
+   "id": "sesudah"
+  },
+  {
+   "jv": "sadurungé",
+   "krama": "saderengipun",
+   "baca": "sa-du-RUNG-é",
+   "id": "sebelum"
+  },
+  {
+   "jv": "mula",
+   "krama": "milanipun",
+   "baca": "MU-lo",
+   "id": "maka, jadi"
+  },
+  {
+   "jv": "amarga, merga",
+   "krama": "amargi",
+   "baca": "a-MAR-go",
+   "id": "karena"
+  },
+  {
+   "jv": "lan",
+   "krama": "saha",
+   "baca": "LAN · SO-ho",
+   "id": "dan"
+  },
+  {
+   "jv": "karo",
+   "krama": "kaliyan",
+   "baca": "KO-ro · ka-LI-yan",
+   "id": "dengan, dan"
+  },
+  {
+   "jv": "sarapan",
+   "krama": "nedha énjing",
+   "baca": "sa-RA-pan",
+   "id": "sarapan"
+  },
+  {
+   "jv": "ngajar",
+   "krama": "mucal",
+   "baca": "nga-JAR · MU-cal",
+   "id": "mengajar"
+  },
+  {
+   "jv": "ngaso",
+   "krama": "ngaso",
+   "baca": "nga-SO",
+   "id": "beristirahat"
+  },
+  {
+   "jv": "dolan",
+   "krama": "dolan",
+   "baca": "DO-lan",
+   "id": "bermain, bertandang"
+  },
+  {
+   "jv": "prei",
+   "krama": "prei",
+   "baca": "PREI",
+   "id": "libur"
+  },
+  {
+   "jv": "gawéan",
+   "krama": "damelan",
+   "baca": "ga-WÉ-an",
+   "id": "pekerjaan"
+  },
+  {
+   "jv": "bakul",
+   "krama": "sadéyan",
+   "baca": "BA-kul",
+   "id": "pedagang"
+  },
+  {
+   "jv": "tani",
+   "krama": "tani",
+   "baca": "TA-ni",
+   "id": "petani"
+  },
+  {
+   "jv": "tukang",
+   "krama": "tukang",
+   "baca": "TU-kang",
+   "id": "tukang, ahli"
+  },
+  {
+   "jv": "sopir",
+   "krama": "sopir",
+   "baca": "SO-pir",
+   "id": "sopir"
+  },
+  {
+   "jv": "isa, bisa",
+   "krama": "saged",
+   "baca": "I-so · BI-so",
+   "id": "bisa"
+  },
+  {
+   "jv": "saku",
+   "krama": "saku",
+   "baca": "SA-ku",
+   "id": "saku"
+  },
+  {
+   "jv": "les",
+   "krama": "les",
+   "baca": "LES",
+   "id": "les, kursus"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Susun kegiatan berikut menjadi satu paragraf ngoko, pakai *banjur* dan *sawisé kuwi*.",
+   "items": [
+    "tangi jam lima",
+    "adus",
+    "sarapan",
+    "mangkat kuliah jam setengah pitu",
+    "mulih soré",
+    "turu jam sepuluh"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata keseringan yang tepat: *saben dina*, *biasané*, *kerep*, *arang*, *ora tau*.",
+   "items": [
+    "____ aku tangi jam lima.",
+    "Aku ____ lara, mula ora tau nyang dhokter.",
+    "____ aku mulih soré, nanging dina iki ésuk.",
+    "Rini ____ kesel amarga kerja lan kuliah.",
+    "Aku ____ nyang Bali. (belum pernah sama sekali)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jawa **krama**.",
+   "items": [
+    "Anda bekerja di mana?",
+    "Saya masih kuliah.",
+    "Setiap hari saya bangun jam lima.",
+    "Biasanya saya pulang sore.",
+    "Berangkat jam berapa?",
+    "Saya sedang libur."
+   ]
+  },
+  {
+   "prompt": "**Ulangan unit 13.** Tutup unit 13, lalu tulis pertanyaannya dalam ngoko.",
+   "items": [
+    "Siapa namamu?",
+    "Kamu ke mana?",
+    "Berapa harganya?",
+    "Kapan pulang?",
+    "Kenapa tidak datang?"
+   ]
+  }
+ ],
+ "answers": [
+  "Aku tangi jam lima. — banjur adus. — Sawisé kuwi aku sarapan. — banjur mangkat kuliah jam setengah pitu. — Aku mulih soré. — banjur turu jam sepuluh.",
+  "Saben dina — arang — Biasané — kerep — ora tau",
+  "Panjenengan nyambut damel wonten pundi? — Kula taksih kuliah. — Saben dinten kula wungu jam gangsal. — Biasanipun kula wangsul sonten. — Bidhal jam pinten? — Kula nembé prei.",
+  "Sapa jenengmu? — Kowé nyang ngendi? — Regané pira? — Kapan mulih? — Ngapa ora teka?"
+ ]
+}

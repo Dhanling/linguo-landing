@@ -1,0 +1,717 @@
+{
+ "title": "Angka dan menghitung",
+ "title_target": "Siji, loro, telu… selawe, sèket, sewidak",
+ "goal": "Menghitung dari satu sampai seribu, menyebut umur, dan menghadapi tiga kejutan angka Jawa yang tidak ada di bahasa mana pun yang kamu kenal: deret *likur*, *selawe*, dan *sèket*.",
+ "bekal": [
+  "menghitung 1-100 dalam ngoko dan krama",
+  "memakai bentuk gabungan *rong*, *telung*, *patang* di depan *puluh*, *atus*, *èwu*",
+  "menyebut umur dan menanyakannya dengan *pira* / *pinten*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ngitung ing teras",
+   "intro": "Rini sedang menghitung uang kas kos di teras. Dian ikut duduk dan percakapannya berbelok ke soal umur — pertanyaan yang di Jawa dianggap biasa saja, bukan tidak sopan.",
+   "lines": [
+    {
+     "speaker": "Rini:",
+     "text": "Sedhéla, aku lagi ngitung. Siji, loro, telu… ah, kliru manèh.",
+     "id": "Sebentar, saya sedang menghitung. Satu, dua, tiga… ah, salah lagi.",
+     "literal": "sebentar, aku sedang menghitung. satu, dua, tiga… ah, keliru lagi."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Ngitung apa?",
+     "id": "Menghitung apa?",
+     "literal": "menghitung apa?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Dhuwit kas kos. Kudune ana rong atus sèket èwu.",
+     "id": "Uang kas kos. Seharusnya ada dua ratus lima puluh ribu.",
+     "literal": "uang kas kos. seharusnya ada dua ratus lima-puluh ribu."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Kurang pira?",
+     "id": "Kurang berapa?",
+     "literal": "kurang berapa?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Kurang selawé èwu. Anak kos ing kéné ana sewelas.",
+     "id": "Kurang dua puluh lima ribu. Anak kos di sini ada sebelas.",
+     "literal": "kurang dua-puluh-lima ribu. anak kos di sini ada sebelas."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Sewelas? Aku kira mung wolu.",
+     "id": "Sebelas? Saya kira cuma delapan.",
+     "literal": "sebelas? aku kira hanya delapan."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Telu lagi mulih. Umurmu pira, Yan?",
+     "id": "Tiga sedang pulang. Umurmu berapa, Yan?",
+     "literal": "tiga sedang pulang. umur-mu berapa, Yan?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Rolikur. Kowé?",
+     "id": "Dua puluh dua. Kamu?",
+     "literal": "dua-puluh-dua. kamu?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Padha. Aku uga rolikur, lair taun sangang puluh telu.",
+     "id": "Sama. Saya juga dua puluh dua, lahir tahun sembilan puluh tiga.",
+     "literal": "sama. aku juga dua-puluh-dua, lahir tahun sembilan-puluh tiga."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Angka Jawa kuwi angèl, ya.",
+     "id": "Angka Jawa itu susah, ya.",
+     "literal": "angka Jawa itu susah, ya."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Sing angèl mung telu: likur, selawé, sèket. Liyané gampang.",
+     "id": "Yang susah cuma tiga: likur, selawe, seket. Sisanya gampang.",
+     "literal": "yang susah hanya tiga: likur, selawe, seket. lainnya gampang."
+    }
+   ],
+   "notes": [
+    "**Kudune** berarti \"seharusnya\", dari kata *kudu* (harus) + ekor *-né*. Kata *kudu* sendiri sangat sering dipakai: *aku kudu lunga* (saya harus pergi). Kramanya *kedah*.",
+    "**Mung** berarti \"cuma, hanya\", kramanya *namung* atau *namung kémawon*. Ia sepadan dengan *waé* dalam beberapa pemakaian, tapi *mung* berdiri di **depan** yang dibatasi (*mung wolu*) sementara *waé* berdiri di **belakang** (*wolu waé*).",
+    "**Kliru** berarti \"keliru, salah\". Kata ini dipakai untuk kesalahan hitung atau salah orang. Untuk \"salah\" dalam arti bersalah dipakai *salah*. Kramanya *lepat*.",
+    "**Lair** (lahir) dan **taun** (tahun) — dua kata yang bunyinya nyaris sama dengan bahasa Indonesia. Bahasa Jawa punya banyak sekali kata semacam ini, dan mengenali polanya (huruf *h* yang hilang, vokal yang bergeser) mempercepat belajarmu lebih daripada menghafal satu per satu.",
+    "**Umurmu pira?** adalah pertanyaan biasa di Jawa, dilontarkan kepada orang yang baru dikenal tanpa rasa canggung. Ia bukan basa-basi kosong: jawabannya menentukan sapaan apa yang akan dipakai orang itu kepadamu, dan tingkat tutur mana yang pantas. Bentuk kramanya *yuswa panjenengan pinten?* — dengan *yuswa*, kata krama inggil untuk umur.",
+    "**Sedhéla** berarti \"sebentar\" (*sekedhap* dalam krama). *Sedhéla* dengan *dh*, bukan *d* biasa — dan ini salah satu kata yang paling sering kamu ucapkan setiap hari."
+   ],
+   "grammars": [
+    {
+     "title": "Satu sampai sepuluh, dua tingkat",
+     "body": [
+      "Sepuluh angka pertama adalah pondasi seluruh sistem. Hafalkan kedua kolomnya berpasangan sekaligus — jangan ngoko dulu lalu krama belakangan."
+     ],
+     "table": {
+      "head": [
+       "Angka",
+       "Ngoko",
+       "Krama",
+       "Cara baca (ngoko)"
+      ],
+      "rows": [
+       [
+        "1",
+        "*siji*",
+        "*setunggal*",
+        "SI-ji"
+       ],
+       [
+        "2",
+        "*loro*",
+        "*kalih*",
+        "LO-ro"
+       ],
+       [
+        "3",
+        "*telu*",
+        "*tiga*",
+        "TE-lu"
+       ],
+       [
+        "4",
+        "*papat*",
+        "*sekawan*",
+        "PA-pat"
+       ],
+       [
+        "5",
+        "*lima*",
+        "*gangsal*",
+        "LI-mo"
+       ],
+       [
+        "6",
+        "*enem*",
+        "*enem*",
+        "E-nem"
+       ],
+       [
+        "7",
+        "*pitu*",
+        "*pitu*",
+        "PI-tu"
+       ],
+       [
+        "8",
+        "*wolu*",
+        "*wolu*",
+        "WO-lu"
+       ],
+       [
+        "9",
+        "*sanga*",
+        "*sanga*",
+        "SO-ngo"
+       ],
+       [
+        "10",
+        "*sepuluh*",
+        "*sedasa*",
+        "se-PU-luh"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa **enam sampai sembilan sama saja** di kedua tingkat. Yang perlu dihafal dua kali cuma lima angka pertama dan angka sepuluh.",
+      "**Nol** adalah *nul* atau *kosong* di kedua tingkat — sama seperti bahasa Indonesia."
+     ]
+    },
+    {
+     "title": "Sebelas sampai sembilan belas, dan deret likur yang terkenal",
+     "body": [
+      "Di sinilah bahasa Jawa berbeda dari bahasa mana pun yang mungkin kamu kenal. Angka 21-29 tidak memakai \"dua puluh\" sama sekali; ia punya deretnya sendiri yang berakhiran ***-likur***. Dan di tengah deret itu duduk satu kata yang sama sekali tidak berpola: **selawé** untuk 25."
+     ],
+     "table": {
+      "head": [
+       "",
+       "11-19 (ngoko)",
+       "",
+       "21-29 (ngoko)"
+      ],
+      "rows": [
+       [
+        "11",
+        "*sewelas*",
+        "21",
+        "*selikur*"
+       ],
+       [
+        "12",
+        "*rolas*",
+        "22",
+        "*rolikur*"
+       ],
+       [
+        "13",
+        "*telulas*",
+        "23",
+        "*telulikur*"
+       ],
+       [
+        "14",
+        "*patbelas*",
+        "24",
+        "*patlikur*"
+       ],
+       [
+        "15",
+        "*limalas*",
+        "**25**",
+        "***selawé***"
+       ],
+       [
+        "16",
+        "*nembelas*",
+        "26",
+        "*nemlikur*"
+       ],
+       [
+        "17",
+        "*pitulas*",
+        "27",
+        "*pitulikur*"
+       ],
+       [
+        "18",
+        "*wolulas*",
+        "28",
+        "*wolulikur*"
+       ],
+       [
+        "19",
+        "*sangalas*",
+        "29",
+        "*sangalikur*"
+       ]
+      ]
+     },
+     "after": [
+      "**Deret *-likur* hanya ada di 21-29.** Sesudah 29 sistemnya kembali normal: 31 adalah *telung puluh siji*, bukan sesuatu yang berakhiran *-likur*.",
+      "**Selawé (25)** adalah kata yang paling sering kamu dengar dari seluruh deret ini, karena ia dipakai untuk uang: *selawé èwu* = Rp25.000. Hafalkan ini lebih dulu daripada sisanya.",
+      "Dalam krama, deret *-likur* tetap dipakai apa adanya oleh banyak penutur, tapi bentuk bakunya memakai *kalih dasa* + angka: *kalih dasa setunggal* (21), *kalih dasa gangsal* (25). Untuk A1, memakai bentuk ngoko *selawé* di dalam kalimat krama masih sangat wajar terdengar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Puluhan, ratusan, ribuan — dan bentuk gabungan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Untuk membentuk puluhan, ratusan, dan ribuan, angka satuannya **berubah bentuk** dulu. Perubahan ini teratur dan cuma perlu dihafal satu kali."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Angka",
+      "Bentuk berdiri sendiri",
+      "Bentuk gabungan",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "1",
+       "*siji*",
+       "**se-**",
+       "*sepuluh*, *satus*, *sèwu*"
+      ],
+      [
+       "2",
+       "*loro*",
+       "**rong**",
+       "*rong puluh*, *rong atus*, *rong èwu*"
+      ],
+      [
+       "3",
+       "*telu*",
+       "**telung**",
+       "*telung puluh*, *telung atus*"
+      ],
+      [
+       "4",
+       "*papat*",
+       "**patang**",
+       "*patang puluh*, *patang atus*"
+      ],
+      [
+       "5",
+       "*lima*",
+       "**limang**",
+       "*limang puluh*, *limang atus*"
+      ],
+      [
+       "6",
+       "*enem*",
+       "**nem**",
+       "*nem puluh*, *nem atus*"
+      ],
+      [
+       "7",
+       "*pitu*",
+       "**pitung**",
+       "*pitung puluh*, *pitung atus*"
+      ],
+      [
+       "8",
+       "*wolu*",
+       "**wolung**",
+       "*wolung puluh*, *wolung atus*"
+      ],
+      [
+       "9",
+       "*sanga*",
+       "**sangang**",
+       "*sangang puluh*, *sangang atus*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Sesudah itu, dua puluhan menyimpan kejutan terakhir: **50 dan 60 punya nama sendiri**, bukan susunan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Angka",
+      "Ngoko",
+      "Krama",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "20",
+       "*rong puluh*",
+       "*kalih dasa*",
+       "berpola"
+      ],
+      [
+       "30",
+       "*telung puluh*",
+       "*tigang dasa*",
+       "berpola"
+      ],
+      [
+       "40",
+       "*patang puluh*",
+       "*kawan dasa*",
+       "berpola"
+      ],
+      [
+       "**50**",
+       "***sèket***",
+       "***sèket***",
+       "**tidak berpola — hafalkan**"
+      ],
+      [
+       "**60**",
+       "***sewidak***",
+       "***sewidak***",
+       "**tidak berpola — hafalkan**"
+      ],
+      [
+       "70",
+       "*pitung puluh*",
+       "*pitung dasa*",
+       "berpola"
+      ],
+      [
+       "80",
+       "*wolung puluh*",
+       "*wolung dasa*",
+       "berpola"
+      ],
+      [
+       "90",
+       "*sangang puluh*",
+       "*sangang dasa*",
+       "berpola"
+      ],
+      [
+       "100",
+       "*satus*",
+       "*satus*",
+       "*rong atus*, *telung atus*, …"
+      ],
+      [
+       "1.000",
+       "*sèwu*",
+       "*sèwu*",
+       "*rong èwu*, *telung èwu*, …"
+      ],
+      [
+       "1.000.000",
+       "*sayuta*",
+       "*sayuta*",
+       "*rong yuta*, *telung yuta*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Menyusun angka besar sama persis dengan bahasa Indonesia — dari yang terbesar ke yang terkecil, tanpa kata sambung: *rong atus sèket èwu* (250.000), *telung èwu limang atus* (3.500), *sèket loro* (52)."
+    },
+    {
+     "type": "kotak",
+     "title": "Empat kata yang harus dihafal, sisanya berpola",
+     "items": [
+      "**selawé** (25) · **sèket** (50) · **sewidak** (60) · deret **-likur** (21-29).",
+      "Empat hal ini adalah seluruh kesulitan angka bahasa Jawa. Semua angka lain dibentuk dengan aturan yang sudah kamu punya dari bahasa Indonesia.",
+      "Kabar baiknya lagi: di kota besar, orang Jawa sendiri sering memakai angka bahasa Indonesia untuk jumlah yang besar dan rumit. Yang tetap dipakai dalam bahasa Jawa adalah angka kecil dan harga."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Umur, urutan, dan pecahan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Ngoko",
+      "Krama"
+     ],
+     "rows": [
+      [
+       "Umurmu berapa?",
+       "*Umurmu pira?*",
+       "*Yuswa panjenengan pinten?*"
+      ],
+      [
+       "Umur saya 22 tahun.",
+       "*Umurku rolikur taun.*",
+       "*Yuswa kula kalih dasa kalih taun.*"
+      ],
+      [
+       "Anak keberapa?",
+       "*Anak nomer pira?*",
+       "*Putra nomer pinten?*"
+      ],
+      [
+       "Pertama, kedua, ketiga",
+       "*kapisan, kapindho, katelu*",
+       "*kaping setunggal, kaping kalih, kaping tiga*"
+      ],
+      [
+       "Setengah",
+       "*setengah*",
+       "*setengah*"
+      ],
+      [
+       "Seperempat",
+       "*seprapat*",
+       "*seprapat*"
+      ],
+      [
+       "Sekali, dua kali",
+       "*sepisan, kaping pindho*",
+       "*kaping setunggal, kaping kalih*"
+      ],
+      [
+       "Semua",
+       "*kabèh*",
+       "*sedaya*"
+      ],
+      [
+       "Beberapa",
+       "*sawetara*",
+       "*sawetawis*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Kapindho** (kedua) menyimpan satu keanehan kecil: *pindho* tidak berasal dari *loro* melainkan dari akar lama yang sama dengan *dwi*. Ia juga muncul di *ping pindho* (dua kali). Selebihnya, urutan dibentuk dengan awalan *ka-* yang teratur."
+    },
+    {
+     "type": "kotak",
+     "title": "Cara melatih angka yang benar-benar bekerja",
+     "items": [
+      "Hitung mundur dari 30 ke 20 dengan suara keras. Deret *-likur* akan terasa aneh persis di titik yang seharusnya, dan itulah yang membuatnya menempel.",
+      "Baca harga apa pun yang kamu lihat hari ini dalam bahasa Jawa: harga bensin, harga kopi, saldo di layar. Angka hanya menempel lewat pemakaian, tidak pernah lewat hafalan daftar.",
+      "Kalau kamu lupa di tengah percakapan, sebutkan saja dalam bahasa Indonesia dan jalan terus. Ini persis yang dilakukan orang Jawa muda setiap hari."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "jv": "siji",
+   "krama": "setunggal",
+   "baca": "SI-ji",
+   "id": "satu"
+  },
+  {
+   "jv": "loro",
+   "krama": "kalih",
+   "baca": "LO-ro · KA-lih",
+   "id": "dua"
+  },
+  {
+   "jv": "telu",
+   "krama": "tiga",
+   "baca": "TE-lu · TI-go",
+   "id": "tiga"
+  },
+  {
+   "jv": "papat",
+   "krama": "sekawan",
+   "baca": "PA-pat · se-KA-wan",
+   "id": "empat"
+  },
+  {
+   "jv": "lima",
+   "krama": "gangsal",
+   "baca": "LI-mo · GANG-sal",
+   "id": "lima"
+  },
+  {
+   "jv": "sepuluh",
+   "krama": "sedasa",
+   "baca": "se-PU-luh · se-DO-so",
+   "id": "sepuluh"
+  },
+  {
+   "jv": "sewelas",
+   "krama": "setunggal welas",
+   "baca": "se-WE-las",
+   "id": "sebelas"
+  },
+  {
+   "jv": "rolikur",
+   "krama": "kalih dasa kalih",
+   "baca": "ro-LI-kur",
+   "id": "dua puluh dua"
+  },
+  {
+   "jv": "selawé",
+   "krama": "selawé",
+   "baca": "se-la-WÉ",
+   "id": "dua puluh lima"
+  },
+  {
+   "jv": "sèket",
+   "krama": "sèket",
+   "baca": "SÈ-ket",
+   "id": "lima puluh"
+  },
+  {
+   "jv": "sewidak",
+   "krama": "sewidak",
+   "baca": "se-WI-da'",
+   "id": "enam puluh"
+  },
+  {
+   "jv": "satus",
+   "krama": "satus",
+   "baca": "SA-tus",
+   "id": "seratus"
+  },
+  {
+   "jv": "sèwu",
+   "krama": "sèwu",
+   "baca": "SÈ-wu",
+   "id": "seribu"
+  },
+  {
+   "jv": "sayuta",
+   "krama": "sayuta",
+   "baca": "sa-YU-to",
+   "id": "sejuta"
+  },
+  {
+   "jv": "pira",
+   "krama": "pinten",
+   "baca": "PI-ro · PIN-ten",
+   "id": "berapa"
+  },
+  {
+   "jv": "ngitung",
+   "krama": "ngétang",
+   "baca": "ngi-TUNG · ngé-TANG",
+   "id": "menghitung"
+  },
+  {
+   "jv": "dhuwit",
+   "krama": "arta, yatra",
+   "baca": "DHU-wit · AR-to",
+   "id": "uang"
+  },
+  {
+   "jv": "umur",
+   "krama": "yuswa",
+   "baca": "U-mur · YUS-wo",
+   "id": "umur"
+  },
+  {
+   "jv": "taun",
+   "krama": "taun, warsa",
+   "baca": "TA-un · WAR-so",
+   "id": "tahun"
+  },
+  {
+   "jv": "lair",
+   "krama": "lair, miyos",
+   "baca": "LA-ir · MI-yos",
+   "id": "lahir"
+  },
+  {
+   "jv": "kabèh",
+   "krama": "sedaya",
+   "baca": "ka-BÈH · se-DO-yo",
+   "id": "semua"
+  },
+  {
+   "jv": "mung",
+   "krama": "namung",
+   "baca": "MUNG · na-MUNG",
+   "id": "cuma, hanya"
+  },
+  {
+   "jv": "kurang",
+   "krama": "kirang",
+   "baca": "KU-rang · KI-rang",
+   "id": "kurang"
+  },
+  {
+   "jv": "kudu",
+   "krama": "kedah",
+   "baca": "KU-du · KE-dah",
+   "id": "harus"
+  },
+  {
+   "jv": "kliru",
+   "krama": "lepat",
+   "baca": "KLI-ru · LE-pat",
+   "id": "keliru, salah"
+  },
+  {
+   "jv": "sedhéla",
+   "krama": "sekedhap",
+   "baca": "se-DHÉ-lo",
+   "id": "sebentar"
+  },
+  {
+   "jv": "angèl",
+   "krama": "awrat",
+   "baca": "A-ngèl · AW-rat",
+   "id": "sulit"
+  },
+  {
+   "jv": "gampang",
+   "krama": "gampil",
+   "baca": "GAM-pang · GAM-pil",
+   "id": "mudah"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angka berikut dalam bahasa Jawa ngoko.",
+   "items": [
+    "7",
+    "12",
+    "23",
+    "25",
+    "50",
+    "60",
+    "84",
+    "250"
+   ]
+  },
+  {
+   "prompt": "Tulis dalam krama.",
+   "items": [
+    "1",
+    "3",
+    "4",
+    "5",
+    "10",
+    "20",
+    "40",
+    "100"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jawa ngoko.",
+   "items": [
+    "Saya punya dua adik.",
+    "Umur saya dua puluh dua tahun.",
+    "Kurang dua puluh lima ribu.",
+    "Anak kos di sini ada sebelas.",
+    "Uangnya cuma lima puluh ribu.",
+    "Saya harus menghitung lagi."
+   ]
+  },
+  {
+   "prompt": "**Ulangan unit 2.** Tutup unit 2, lalu tulis kalimat Jawanya.",
+   "items": [
+    "Ini kamar saya. (ngoko)",
+    "Di dalam lemari ada baju. (ngoko)",
+    "Tidak ada air. (krama)",
+    "Itu bukan kunci saya. (ngoko)",
+    "Dapurnya di bawah. (ngoko)"
+   ]
+  }
+ ],
+ "answers": [
+  "pitu — rolas — telulikur — selawé — sèket — sewidak — wolung puluh papat — rong atus sèket",
+  "setunggal — tiga — sekawan — gangsal — sedasa — kalih dasa — kawan dasa — satus",
+  "Aku duwé adhi loro. — Umurku rolikur taun. — Kurang selawé èwu. — Anak kos ing kéné ana sewelas. — Dhuwité mung sèket èwu. — Aku kudu ngitung manèh.",
+  "Iki kamarku. — Ing jero lemari ana klambi. — Boten wonten toya. — Kuwi dudu kunciku. — Pawoné ing ngisor."
+ ]
+}

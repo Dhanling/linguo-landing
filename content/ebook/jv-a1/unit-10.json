@@ -1,0 +1,602 @@
+{
+ "title": "Makanan dan memesan di warung",
+ "title_target": "Pesen sega goréng siji, Mbak",
+ "goal": "Memesan makanan dan minuman dari awal sampai membayar, memilih tingkat pedas, dan mengerti apa yang ditanyakan penjual kepadamu.",
+ "bekal": [
+  "memesan dengan *pesen* / *mesen* dan menyebut jumlahnya",
+  "menyatakan rasa: *enak*, *pedhes*, *legi*, *asin*",
+  "menutup transaksi: minta bon, membayar, berterima kasih"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ing warungé Bu Sri",
+   "intro": "Dian dan Rini akhirnya sampai di warung. Bu Sri jauh lebih tua, jadi keduanya memakai krama; Bu Sri menjawab dengan campuran krama dan ngoko, seperti kebanyakan penjual sungguhan.",
+   "lines": [
+    {
+     "speaker": "Bu Sri:",
+     "text": "Mangga, Mbak. Badhé dhahar punapa?",
+     "id": "Silakan, Mbak. Mau makan apa?",
+     "literal": "silakan, Mbak. akan makan apa?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Sega goréng wonten, Bu?",
+     "id": "Nasi goreng ada, Bu?",
+     "literal": "nasi goreng ada, Bu?"
+    },
+    {
+     "speaker": "Bu Sri:",
+     "text": "Wonten. Pedhes napa boten?",
+     "id": "Ada. Pedas atau tidak?",
+     "literal": "ada. pedas atau tidak?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Sekedhik mawon, Bu. Kula boten kiyat pedhes.",
+     "id": "Sedikit saja, Bu. Saya tidak kuat pedas.",
+     "literal": "sedikit saja, Bu. saya tidak kuat pedas."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Kula pecel mawon, Bu. Sambelipun kathah.",
+     "id": "Saya pecel saja, Bu. Sambalnya banyak.",
+     "literal": "saya pecel saja, Bu. sambal-nya banyak."
+    },
+    {
+     "speaker": "Bu Sri:",
+     "text": "Ngunjuk napa? Ès tèh napa tèh anget?",
+     "id": "Minum apa? Es teh atau teh hangat?",
+     "literal": "minum apa? es teh atau teh hangat?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Ès tèh kalih, Bu. Sing boten kathah gendhisipun.",
+     "id": "Es teh dua, Bu. Yang tidak banyak gulanya.",
+     "literal": "es teh dua, Bu. yang tidak banyak gula-nya."
+    },
+    {
+     "speaker": "Bu Sri:",
+     "text": "Nggih. Sekedhap nggih, taksih dipun-goréng.",
+     "id": "Ya. Sebentar ya, masih digoreng.",
+     "literal": "ya. sebentar ya, masih di-goreng."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Nggih, Bu. Boten kesesa.",
+     "id": "Ya, Bu. Tidak terburu-buru.",
+     "literal": "ya, Bu. tidak tergesa."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Bu, sedanten pinten?",
+     "id": "Bu, semuanya berapa?",
+     "literal": "Bu, semua berapa?"
+    },
+    {
+     "speaker": "Bu Sri:",
+     "text": "Kalih dasa gangsal èwu, Mbak.",
+     "id": "Dua puluh lima ribu, Mbak.",
+     "literal": "dua puluh lima ribu, Mbak."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Menika. Matur nuwun, Bu. Éca sanget.",
+     "id": "Ini. Terima kasih, Bu. Enak sekali.",
+     "literal": "ini. terima-kasih, Bu. enak sangat."
+    }
+   ],
+   "notes": [
+    "**Badhé dhahar punapa?** — Bu Sri memakai *dhahar* (krama inggil) untuk perbuatan pelanggannya, dan Dian menjawab tentang dirinya sendiri tanpa memakai *dhahar*. Pola yang sudah kamu lihat di unit 9 berulang di sini, dan ia akan berulang setiap hari.",
+    "**Napa** adalah bentuk madya dari *punapa*, dan di warung ia jauh lebih sering terdengar daripada bentuk penuhnya. *Pedhes napa boten?* = pedas atau tidak? Perhatikan *napa* di sini berarti \"atau\", pekerjaan yang sudah kamu lihat pada *apa* di unit 3.",
+    "**Kiyat** (krama) / **kuwat** (ngoko) berarti \"kuat\". *Boten kiyat pedhes* adalah cara baku menolak sambal — lebih halus daripada mengatakan tidak suka.",
+    "**Dipun-goréng** adalah bentuk pasif krama: awalan *di-* menjadi *dipun-* dalam krama. Bentuk ngokonya *digoréng*. Kalimat pasif dibahas tuntas di unit 18; untuk sekarang cukup kenali bahwa *dipun-* di depan kata kerja berarti \"di-\".",
+    "**Kesesa** berarti \"tergesa-gesa\". *Boten kesesa* (tidak terburu-buru) adalah kalimat sopan yang sangat berguna ketika penjual meminta maaf karena lama, dan ia meredakan suasana dengan segera.",
+    "**Éca** adalah krama dari *énak*. Memuji makanan sesudah selesai makan bukan basa-basi di Jawa; ia bagian dari transaksi, dan penjual mengingatnya.",
+    "**Sedanten** adalah bentuk lain *sedaya* (semua) yang sering terdengar di Yogyakarta. Keduanya benar."
+   ],
+   "grammars": [
+    {
+     "title": "Memesan: susunan yang selalu berhasil",
+     "body": [
+      "Ada satu susunan yang dipakai di hampir semua warung di Jawa, dan ia terdiri dari tiga bagian: **nama makanan + jumlah + pelunak**."
+     ],
+     "table": {
+      "head": [
+       "Bahasa Indonesia",
+       "Ngoko",
+       "Krama"
+      ],
+      "rows": [
+       [
+        "Ada nasi goreng?",
+        "*Ana sega goréng?*",
+        "*Sega goréng wonten?*"
+       ],
+       [
+        "Nasi goreng satu.",
+        "*Sega goréng siji.*",
+        "*Sega goréng setunggal.*"
+       ],
+       [
+        "Pesan dua, ya.",
+        "*Pesen loro, ya.*",
+        "*Pesen kalih, nggih.*"
+       ],
+       [
+        "Yang tidak pedas.",
+        "*Sing ora pedhes.*",
+        "*Ingkang boten pedhes.*"
+       ],
+       [
+        "Tanpa sambal.",
+        "*Ora nganggo sambel.*",
+        "*Boten ngangge sambel.*"
+       ],
+       [
+        "Dibungkus, ya.",
+        "*Dibungkus, ya.*",
+        "*Dipun-bungkus, nggih.*"
+       ],
+       [
+        "Makan di sini.",
+        "*Mangan ing kéné.*",
+        "*Nedha wonten ngriki.*"
+       ],
+       [
+        "Semuanya berapa?",
+        "*Kabèh pira?*",
+        "*Sedaya pinten?*"
+       ],
+       [
+        "Bayarnya di mana?",
+        "*Mbayaré ing ngendi?*",
+        "*Mbayaripun wonten pundi?*"
+       ],
+       [
+        "Enak sekali.",
+        "*Énak banget.*",
+        "*Éca sanget.*"
+       ]
+      ]
+     },
+     "after": [
+      "**Angka mengikuti bendanya**, tidak mendahuluinya: *sega goréng siji*, bukan *siji sega goréng*. Sama seperti bahasa Indonesia (\"nasi goreng satu\"), dan berlawanan dengan bahasa Inggris.",
+      "**Nganggo** berarti \"memakai\" dan dipakai untuk apa saja yang ditambahkan: *nganggo sambel* (pakai sambal), *nganggo endhog* (pakai telur), *nganggo gula* (pakai gula). Kramanya *ngangge*.",
+      "Kalau kamu benar-benar tersendat, **menunjuk sambil berkata *menika setunggal, Bu*** (\"ini satu, Bu\") sudah menyelesaikan pesanan apa pun di Jawa. Tidak ada yang salah dengan itu."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Makanan, minuman, dan rasa",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ngoko",
+      "Krama",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*sega*",
+       "*sekul*",
+       "nasi"
+      ],
+      [
+       "*sega goréng*",
+       "*sekul goréng*",
+       "nasi goreng"
+      ],
+      [
+       "*jangan*",
+       "*jangan*",
+       "sayur berkuah"
+      ],
+      [
+       "*iwak*",
+       "*ulam*",
+       "lauk, ikan"
+      ],
+      [
+       "*sambel*",
+       "*sambel*",
+       "sambal"
+      ],
+      [
+       "*krupuk*",
+       "*krupuk*",
+       "kerupuk"
+      ],
+      [
+       "*tèh*",
+       "*tèh*",
+       "teh"
+      ],
+      [
+       "*kopi*",
+       "*kopi*",
+       "kopi"
+      ],
+      [
+       "*banyu putih*",
+       "*toya pethak*",
+       "air putih"
+      ],
+      [
+       "*wédang*",
+       "*wédang*",
+       "minuman hangat"
+      ],
+      [
+       "*ès*",
+       "*ès*",
+       "es"
+      ],
+      [
+       "*roti*",
+       "*roti*",
+       "roti"
+      ],
+      [
+       "*jajan*",
+       "*jajanan*",
+       "jajanan, kudapan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Wédang** adalah kata Jawa yang tidak punya padanan pas dalam bahasa Indonesia: ia berarti minuman **panas** apa pun. *Wédang jahé*, *wédang uwuh*, *wédang tèh*. Di Yogyakarta, tempat menjual wédang di pinggir jalan malam hari disebut **angkringan**, dan porsi nasi bungkus kecilnya disebut **sega kucing** — nasi kucing, karena porsinya sebesar makanan kucing."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Rasa",
+      "Ngoko",
+      "Krama"
+     ],
+     "rows": [
+      [
+       "enak",
+       "*énak*",
+       "*éca*"
+      ],
+      [
+       "manis",
+       "*legi*",
+       "*legi*"
+      ],
+      [
+       "asin",
+       "*asin*",
+       "*asin*"
+      ],
+      [
+       "pedas",
+       "*pedhes*",
+       "*pedhes*"
+      ],
+      [
+       "asam",
+       "*kecut*",
+       "*kecut*"
+      ],
+      [
+       "pahit",
+       "*pait*",
+       "*pait*"
+      ],
+      [
+       "gurih",
+       "*gurih*",
+       "*gurih*"
+      ],
+      [
+       "hambar",
+       "*anyep*",
+       "*anyep*"
+      ],
+      [
+       "panas",
+       "*panas*",
+       "*benter*"
+      ],
+      [
+       "hangat",
+       "*anget*",
+       "*anget*"
+      ],
+      [
+       "dingin",
+       "*adhem*",
+       "*asrep*"
+      ],
+      [
+       "kenyang",
+       "*wareg*",
+       "*tuwuk*"
+      ],
+      [
+       "lapar",
+       "*luwé*",
+       "*luwé*"
+      ],
+      [
+       "haus",
+       "*ngelak*",
+       "*ngelak*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Legi** (manis) juga nama salah satu hari pasaran yang kamu temui di unit 6 — kata yang sama persis. Bahasa Jawa penuh dengan kata yang bertugas rangkap semacam ini, dan konteks selalu memisahkannya."
+    }
+   ]
+  },
+  {
+   "title": "Ditawari makan: apa yang sebenarnya terjadi",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kalau kamu bertamu di Jawa, kamu akan disuguhi. Kalau kamu lewat depan orang yang sedang makan, kamu akan diajak. Ini bukan basa-basi kosong, tapi juga bukan undangan yang wajib kamu terima. Ada tata caranya, dan ia cukup sederhana."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Yang dikatakan",
+      "Artinya",
+      "Jawaban yang pas"
+     ],
+     "rows": [
+      [
+       "*Mangga, dipun-dhahar.*",
+       "Silakan dimakan.",
+       "*Nggih, matur nuwun.*"
+      ],
+      [
+       "*Monggo, sareng-sareng.*",
+       "Mari, sama-sama (makan).",
+       "*Matur nuwun, sampun.*"
+      ],
+      [
+       "*Ayo mangan.*",
+       "Ayo makan. (ngoko)",
+       "*Wis, matur nuwun.*"
+      ],
+      [
+       "*Ngunjuk rumiyin.*",
+       "Minum dulu.",
+       "*Nggih, matur nuwun.*"
+      ],
+      [
+       "*Sampun dhahar dèrèng?*",
+       "Sudah makan belum?",
+       "*Sampun, Bu.* / *Dèrèng, Bu.*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga aturan tak tertulis",
+     "items": [
+      "**Suguhan yang disodorkan sebaiknya disentuh**, walau cuma seteguk. Menolak sama sekali terbaca sebagai menjaga jarak. Kalau kamu benar-benar tidak bisa, katakan alasannya: *nuwun sèwu, kula sawek boten sakéca* (maaf, saya sedang tidak enak badan).",
+      "**Ajakan makan dari orang yang sedang makan di warung** hampir selalu basa-basi. Jawaban yang benar adalah *matur nuwun, sampun* (terima kasih, sudah), bukan ikut duduk.",
+      "**Tunggu dipersilakan sebelum mulai.** Kata kuncinya *mangga*. Selama tuan rumah belum mengucapkannya, makanan di meja masih pemandangan."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "jv": "pesen",
+   "krama": "pesen",
+   "baca": "PE-sen",
+   "id": "memesan"
+  },
+  {
+   "jv": "énak",
+   "krama": "éca",
+   "baca": "É-na' · É-co",
+   "id": "enak"
+  },
+  {
+   "jv": "pedhes",
+   "krama": "pedhes",
+   "baca": "PE-dhes",
+   "id": "pedas"
+  },
+  {
+   "jv": "legi",
+   "krama": "legi",
+   "baca": "LE-gi",
+   "id": "manis"
+  },
+  {
+   "jv": "asin",
+   "krama": "asin",
+   "baca": "A-sin",
+   "id": "asin"
+  },
+  {
+   "jv": "pait",
+   "krama": "pait",
+   "baca": "PA-it",
+   "id": "pahit"
+  },
+  {
+   "jv": "kecut",
+   "krama": "kecut",
+   "baca": "KE-cut",
+   "id": "asam"
+  },
+  {
+   "jv": "wareg",
+   "krama": "tuwuk",
+   "baca": "WA-reg · TU-wu'",
+   "id": "kenyang"
+  },
+  {
+   "jv": "anget",
+   "krama": "anget",
+   "baca": "A-nget",
+   "id": "hangat"
+  },
+  {
+   "jv": "wédang",
+   "krama": "wédang",
+   "baca": "WÉ-dang",
+   "id": "minuman hangat"
+  },
+  {
+   "jv": "goréng",
+   "krama": "goréng",
+   "baca": "go-RÉNG",
+   "id": "goreng"
+  },
+  {
+   "jv": "godhog",
+   "krama": "godhog",
+   "baca": "GO-dhog",
+   "id": "rebus"
+  },
+  {
+   "jv": "bakar",
+   "krama": "bakar",
+   "baca": "BA-kar",
+   "id": "bakar"
+  },
+  {
+   "jv": "sambel",
+   "krama": "sambel",
+   "baca": "SAM-bel",
+   "id": "sambal"
+  },
+  {
+   "jv": "nganggo",
+   "krama": "ngangge",
+   "baca": "ngang-GO",
+   "id": "memakai, dengan"
+  },
+  {
+   "jv": "bungkus",
+   "krama": "bungkus",
+   "baca": "BUNG-kus",
+   "id": "bungkus"
+  },
+  {
+   "jv": "mbayar",
+   "krama": "mbayar",
+   "baca": "m-BA-yar",
+   "id": "membayar"
+  },
+  {
+   "jv": "piring",
+   "krama": "piring",
+   "baca": "PI-ring",
+   "id": "piring"
+  },
+  {
+   "jv": "gelas",
+   "krama": "gelas",
+   "baca": "GE-las",
+   "id": "gelas"
+  },
+  {
+   "jv": "séndhok",
+   "krama": "séndhok",
+   "baca": "SÉN-dho'",
+   "id": "sendok"
+  },
+  {
+   "jv": "kuwat",
+   "krama": "kiyat",
+   "baca": "KU-wat · KI-yat",
+   "id": "kuat"
+  },
+  {
+   "jv": "kesesa",
+   "krama": "kesesa",
+   "baca": "ke-SE-so",
+   "id": "tergesa-gesa"
+  },
+  {
+   "jv": "sedaya, sedanten",
+   "krama": "sedaya",
+   "baca": "se-DO-yo",
+   "id": "semua (krama)"
+  },
+  {
+   "jv": "banget",
+   "krama": "sanget",
+   "baca": "BA-nget · SA-nget",
+   "id": "sangat"
+  },
+  {
+   "jv": "tambah",
+   "krama": "tambah",
+   "baca": "TAM-bah",
+   "id": "tambah"
+  },
+  {
+   "jv": "sakéca",
+   "krama": "sakéca",
+   "baca": "sa-KÉ-co",
+   "id": "enak badan, nyaman"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi pesanan berikut dalam **krama**.",
+   "items": [
+    "Sega goréng ____, Bu. (satu)",
+    "____ boten pedhes, nggih. (yang)",
+    "Kula ____ kalih. (pesan)",
+    "Ès tèh ____ boten kathah gendhisipun. (yang)",
+    "____ pinten, Bu? (semuanya)",
+    "____ sanget, Bu. (enak)"
+   ]
+  },
+  {
+   "prompt": "Pasangkan rasa dengan makanannya. Tulis kalimat penuh dalam ngoko, contoh: *Sambelé pedhes banget.*",
+   "items": [
+    "sambel — pedas",
+    "tèh — manis",
+    "kopi — pahit",
+    "jeruk — asam",
+    "sega goréng — enak"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jawa ngoko.",
+   "items": [
+    "Ada nasi goreng?",
+    "Saya tidak kuat pedas.",
+    "Tanpa sambal, ya.",
+    "Dibungkus saja.",
+    "Semuanya berapa?",
+    "Saya sudah kenyang, terima kasih."
+   ]
+  },
+  {
+   "prompt": "**Ulangan unit 8.** Tutup unit 8, lalu ubah kata dasar ini menjadi kata kerja aktif.",
+   "items": [
+    "tulis",
+    "waca",
+    "jupuk",
+    "sapu",
+    "ombé"
+   ]
+  }
+ ],
+ "answers": [
+  "setunggal — Ingkang — pesen — ingkang — Sedaya — Éca",
+  "Sambelé pedhes banget. — Tèhé legi banget. — Kopiné pait. — Jeruké kecut. — Sega goréngé énak banget.",
+  "Ana sega goréng? — Aku ora kuwat pedhes. — Ora nganggo sambel, ya. — Dibungkus waé. — Kabèh pira? — Aku wis wareg, matur nuwun.",
+  "nulis — maca — njupuk — nyapu — ngombé"
+ ]
+}

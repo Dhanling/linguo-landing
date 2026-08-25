@@ -1,0 +1,513 @@
+{
+ "title": "Menyuruh, meminta, dan melarang",
+ "title_target": "Tulung, mangga, aja",
+ "goal": "Meminta sesuatu tanpa terdengar memerintah — keterampilan yang di Jawa lebih penting daripada di bahasa mana pun yang mungkin kamu kenal, karena perintah telanjang di sini terdengar jauh lebih keras daripada di bahasa Indonesia.",
+ "bekal": [
+  "membentuk perintah dengan akhiran *-a*, *-en*, dan *-na*",
+  "melunakkan permintaan dengan *tulung*, *coba*, *mangga*, dan *ya*",
+  "melarang dengan *aja* (ngoko) dan *sampun* (krama)"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Nyuwun tulung marang Pak Broto",
+   "intro": "Air di kamar mandi mati. Dian pergi menemui Pak Broto — permintaan kepada orang yang lebih tua, jadi seluruhnya krama. Lalu Rini datang dan nada percakapannya langsung berubah.",
+   "lines": [
+    {
+     "speaker": "Dian:",
+     "text": "Nuwun sèwu, Pak. Kula badhé nyuwun tulung.",
+     "id": "Permisi, Pak. Saya mau minta tolong.",
+     "literal": "mohon seribu, Pak. saya akan mohon tolong."
+    },
+    {
+     "speaker": "Pak Broto:",
+     "text": "Wonten punapa, Mbak?",
+     "id": "Ada apa, Mbak?",
+     "literal": "ada apa, Mbak?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Toya ing jedhing mboten medal wiwit wau énjing.",
+     "id": "Air di kamar mandi tidak keluar sejak tadi pagi.",
+     "literal": "air di kamar-mandi tidak keluar sejak tadi pagi."
+    },
+    {
+     "speaker": "Pak Broto:",
+     "text": "O, nggih. Mangké kula priksani. Sekedhap nggih.",
+     "id": "Oh, ya. Nanti saya periksa. Sebentar ya.",
+     "literal": "oh, ya. nanti saya periksa. sebentar ya."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Matur nuwun sanget, Pak. Ngrepoti.",
+     "id": "Terima kasih banyak, Pak. Merepotkan.",
+     "literal": "terima-kasih sangat, Pak. merepotkan."
+    },
+    {
+     "speaker": "Pak Broto:",
+     "text": "Mboten punapa-punapa. Sampun kuwatir.",
+     "id": "Tidak apa-apa. Jangan khawatir.",
+     "literal": "tidak apa-apa. jangan khawatir."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Yan, tulung jupukna émbèr ing ngisor, ya!",
+     "id": "Yan, tolong ambilkan ember di bawah, ya!",
+     "literal": "Yan, tolong ambil-kan ember di bawah, ya!"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Sing endi? Sing biru?",
+     "id": "Yang mana? Yang biru?",
+     "literal": "yang mana? yang biru?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Iya. Aja lali, sing gedhé, dudu sing cilik.",
+     "id": "Ya. Jangan lupa, yang besar, bukan yang kecil.",
+     "literal": "ya. jangan lupa, yang besar, bukan yang kecil."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Iya, sedhéla. Coba deloken, banyuné wis mili durung?",
+     "id": "Ya, sebentar. Coba lihat, airnya sudah mengalir belum?",
+     "literal": "ya, sebentar. coba lihat-lah, air-nya sudah mengalir belum?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Durung. Ayo, ngentèni waé ing ngarep.",
+     "id": "Belum. Ayo, menunggu saja di depan.",
+     "literal": "belum. ayo, menunggu saja di depan."
+    }
+   ],
+   "notes": [
+    "**Nyuwun tulung** (krama) / **njaluk tulung** (ngoko) adalah pembuka permintaan yang paling aman. Ia memberi tahu lawan bicara bahwa yang datang adalah permintaan, bukan perintah — dan itu setengah dari pekerjaannya.",
+    "**Ngrepoti** berarti \"merepotkan\", diucapkan sesudah orang setuju menolong. Ini bukan permintaan maaf yang sungguhan; ia bagian dari tata krama, sepadan dengan \"maaf merepotkan\" dalam bahasa Indonesia. Menghilangkannya membuat permintaanmu terasa datar.",
+    "**Sampun kuwatir** — *sampun* di sini berarti \"jangan\", bukan \"sudah\". Inilah kata yang paling sering membingungkan pemula. Cara memisahkannya: *sampun* + kata kerja **yang belum terjadi** = jangan; *sampun* + kata kerja yang **sudah** = sudah. Dan biasanya nada suaranya berbeda.",
+    "**Mboten** adalah bentuk lain *boten* (tidak) yang sama benarnya dan sama seringnya. Begitu juga *mangga* / *monggo*, *inggih* / *nggih*: bahasa Jawa lisan menyimpan banyak pasangan semacam ini.",
+    "**Jupukna** = *jupuk* + akhiran *-na*, berarti \"ambilkan (untuk saya)\". Bandingkan dengan *jupuken* yang berarti \"ambillah (benda itu)\". Satu huruf yang membedakan dua perintah yang berbeda.",
+    "**Deloken** = *deleng* + *-en*, \"lihatlah\". Perhatikan bahwa vokal terakhir kata dasarnya berubah ketika akhiran menempel — *deleng* → *deloken*. Perubahan semacam ini teratur tapi banyak; untuk A1, hafalkan bentuk yang sering dipakai apa adanya.",
+    "**Mili** berarti \"mengalir\". Kata ini muncul di banyak keperluan sehari-hari: air, lalu lintas, uang."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga bentuk perintah, dan bedanya",
+     "body": [
+      "Bahasa Jawa membedakan **siapa yang disuruh berbuat** dari **benda apa yang dikenai perbuatan**, dan pembedaan itu ditandai akhiran. Bahasa Indonesia tidak melakukan ini, jadi bagian ini benar-benar baru — tapi ia cuma tiga bentuk."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Artinya",
+       "Contoh",
+       "Terjemahan"
+      ],
+      "rows": [
+       [
+        "kata dasar saja",
+        "perintah paling telanjang",
+        "*Mangan!*",
+        "Makan!"
+       ],
+       [
+        "**-a**",
+        "perintah kepada orang, halus",
+        "*Lungguha.*",
+        "Duduklah."
+       ],
+       [
+        "**-en**",
+        "perintah atas **benda** tertentu",
+        "*Jupuken.*",
+        "Ambillah (benda itu)."
+       ],
+       [
+        "**-na**",
+        "perintah **untuk kepentingan** si penyuruh",
+        "*Jupukna.*",
+        "Ambilkan (untuk saya)."
+       ],
+       [
+        "**-ana**",
+        "perintah dikenakan **pada** sesuatu",
+        "*Wènèhana.*",
+        "Berilah (dia)."
+       ],
+       [
+        "krama: *mangga dipun-*",
+        "permintaan sopan",
+        "*Mangga dipun-dhahar.*",
+        "Silakan dimakan."
+       ]
+      ]
+     },
+     "after": [
+      "**Bedanya *-en* dan *-na* halus tapi nyata**: *tukokna* = belikan (untuk saya); *tukunen* = belilah (barang itu). Kalau kamu ragu, pakai *tulung* + kata dasar: *tulung tuku* sudah dimengerti semua orang dan tidak pernah salah.",
+      "**Perintah tanpa akhiran terdengar keras.** *Mangan!* kepada orang dewasa terasa seperti membentak. Yang wajar adalah menambahkan pelunak: *mangana* (dengan *-a*), atau *mangan ya* (dengan *ya* di ujung), atau *ayo mangan* (dengan ajakan).",
+      "**Dalam krama, perintah hampir selalu dibungkus pasif**: *mangga dipun-dhahar* (silakan dimakan), *mangga dipun-lenggahi* (silakan diduduki). Menyuruh orang yang dihormati secara langsung — *panjenengan dhahar!* — terdengar salah, walau kata-katanya sudah krama."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Melunakkan: lima kata yang mengubah nada",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Di Jawa, **cara meminta lebih diperhatikan daripada apa yang diminta**. Lima kata berikut adalah alat utamanya, dan semuanya bisa dipakai bersamaan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Letak",
+      "Fungsi",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*tulung*",
+       "di depan",
+       "\"tolong\"",
+       "*Tulung jupukna banyu.*"
+      ],
+      [
+       "*coba*",
+       "di depan",
+       "melunakkan jadi ajakan mencoba",
+       "*Coba deloken sik.*"
+      ],
+      [
+       "*mangga* / *ayo*",
+       "di depan",
+       "mengajak, bukan menyuruh",
+       "*Mangga dipun-dhahar.*"
+      ],
+      [
+       "*ya* / *nggih*",
+       "di ujung",
+       "meminta persetujuan",
+       "*Jupukna, ya.*"
+      ],
+      [
+       "*dhisik* / *sik*",
+       "di ujung",
+       "\"dulu\", mengecilkan tuntutan",
+       "*Ngentèni sik.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bandingkan tiga kalimat berikut, yang semuanya meminta hal yang sama:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Jupuk banyu!* — Ambil air! Terdengar seperti perintah kepada anak kecil atau bawahan.",
+      "*Jupukna banyu, ya.* — Ambilkan air, ya. Wajar antarteman.",
+      "*Nuwun sèwu, nyuwun tulung mendhetaken toya, nggih.* — Permisi, minta tolong ambilkan air, ya. Sopan penuh, untuk orang yang dihormati."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kenapa ini lebih penting di Jawa",
+     "items": [
+      "Bahasa Indonesia mengizinkan perintah langsung yang cukup netral (\"ambil air dong\"). Bahasa Jawa tidak punya nada netral yang sama: perintah telanjang jatuh ke ngoko, dan ngoko kepada orang yang salah terbaca sebagai merendahkan.",
+      "Karena itu orang Jawa sering meminta **tanpa kata kerja perintah sama sekali** — cukup menyatakan keadaan dan membiarkan lawan bicara menyimpulkan: *toya-nipun mboten medal, Pak* (airnya tidak keluar, Pak). Itu sudah permintaan yang lengkap, dan itulah yang Dian lakukan di dialog.",
+      "Teknik ini bekerja di mana-mana dan tidak pernah kasar. Kalau kamu cuma sanggup mengingat satu hal dari unit ini, ingat bahwa **menyebut masalahnya sudah cukup**."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Melarang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Ngoko",
+      "Krama"
+     ],
+     "rows": [
+      [
+       "Jangan pergi.",
+       "*Aja lunga.*",
+       "*Sampun késah.*"
+      ],
+      [
+       "Jangan lupa.",
+       "*Aja lali.*",
+       "*Sampun kesupèn.*"
+      ],
+      [
+       "Jangan khawatir.",
+       "*Aja kuwatir.*",
+       "*Sampun kuwatir.*"
+      ],
+      [
+       "Jangan begitu.",
+       "*Aja ngono.*",
+       "*Sampun mekaten.*"
+      ],
+      [
+       "Jangan berisik.",
+       "*Aja rame.*",
+       "*Sampun rame.*"
+      ],
+      [
+       "Tidak usah.",
+       "*Ora usah.*",
+       "*Boten sisah.*"
+      ],
+      [
+       "Tidak boleh.",
+       "*Ora éntuk.*",
+       "*Boten angsal.*"
+      ],
+      [
+       "Tidak apa-apa.",
+       "*Ora apa-apa.*",
+       "*Mboten napa-napa.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Aja** dan **sampun** hanya untuk melarang perbuatan. Untuk mengingkari pernyataan tetap dipakai *ora* / *boten*, dan untuk mengingkari kata benda dipakai *dudu* / *sanès*. Tiga kata untuk tiga pekerjaan — dan bahasa Indonesia melakukan pembagian yang persis sama dengan \"jangan\", \"tidak\", dan \"bukan\"."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Yang diingkari",
+      "Ngoko",
+      "Krama",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "perbuatan (larangan)",
+       "*aja*",
+       "*sampun*",
+       "*aja mangan kuwi*"
+      ],
+      [
+       "pernyataan, sifat",
+       "*ora*",
+       "*boten*",
+       "*ora énak*"
+      ],
+      [
+       "kata benda",
+       "*dudu*",
+       "*sanès*",
+       "*dudu bukuku*"
+      ],
+      [
+       "belum terjadi",
+       "*durung*",
+       "*dèrèng*",
+       "*durung mangan*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "jv": "tulung",
+   "krama": "tulung",
+   "baca": "TU-lung",
+   "id": "tolong"
+  },
+  {
+   "jv": "njaluk tulung",
+   "krama": "nyuwun tulung",
+   "baca": "n-JA-lu' TU-lung",
+   "id": "minta tolong"
+  },
+  {
+   "jv": "coba",
+   "krama": "cobi",
+   "baca": "CO-bo · CO-bi",
+   "id": "coba"
+  },
+  {
+   "jv": "aja",
+   "krama": "sampun",
+   "baca": "O-jo",
+   "id": "jangan"
+  },
+  {
+   "jv": "lali",
+   "krama": "kesupèn",
+   "baca": "LA-li · ke-su-PÈN",
+   "id": "lupa"
+  },
+  {
+   "jv": "éling",
+   "krama": "émut",
+   "baca": "É-ling · É-mut",
+   "id": "ingat"
+  },
+  {
+   "jv": "kuwatir",
+   "krama": "kuwatos",
+   "baca": "ku-WA-tir",
+   "id": "khawatir"
+  },
+  {
+   "jv": "medal, metu",
+   "krama": "medal",
+   "baca": "ME-tu · ME-dal",
+   "id": "keluar"
+  },
+  {
+   "jv": "mlebu",
+   "krama": "mlebet",
+   "baca": "m-LE-bu · m-LE-bet",
+   "id": "masuk"
+  },
+  {
+   "jv": "mili",
+   "krama": "mili",
+   "baca": "MI-li",
+   "id": "mengalir"
+  },
+  {
+   "jv": "ngrepoti",
+   "krama": "ngrepoti",
+   "baca": "ngre-PO-ti",
+   "id": "merepotkan"
+  },
+  {
+   "jv": "mriksani, priksa",
+   "krama": "mriksani",
+   "baca": "mri'-SA-ni",
+   "id": "memeriksa"
+  },
+  {
+   "jv": "lungguh",
+   "krama": "lenggah",
+   "baca": "LUNG-guh · LENG-gah",
+   "id": "duduk"
+  },
+  {
+   "jv": "ngadeg",
+   "krama": "jumeneng",
+   "baca": "nga-DEG",
+   "id": "berdiri"
+  },
+  {
+   "jv": "mènèhi",
+   "krama": "maringi",
+   "baca": "mè-NÈ-hi",
+   "id": "memberi"
+  },
+  {
+   "jv": "nyilih",
+   "krama": "ngampil",
+   "baca": "nyi-LIH · ngam-PIL",
+   "id": "meminjam"
+  },
+  {
+   "jv": "mbukak",
+   "krama": "mbikak",
+   "baca": "m-BU-ka'",
+   "id": "membuka"
+  },
+  {
+   "jv": "nutup",
+   "krama": "nutup",
+   "baca": "NU-tup",
+   "id": "menutup"
+  },
+  {
+   "jv": "ngenteni",
+   "krama": "ngentosi",
+   "baca": "ngen-TE-ni",
+   "id": "menunggu"
+  },
+  {
+   "jv": "émbèr",
+   "krama": "émbèr",
+   "baca": "ÈM-bèr",
+   "id": "ember"
+  },
+  {
+   "jv": "jedhing",
+   "krama": "jedhing",
+   "baca": "je-DHING",
+   "id": "kamar mandi"
+  },
+  {
+   "jv": "biru",
+   "krama": "biru",
+   "baca": "BI-ru",
+   "id": "biru"
+  },
+  {
+   "jv": "sik, dhisik",
+   "krama": "rumiyin",
+   "baca": "SI'",
+   "id": "dulu, dahulu"
+  },
+  {
+   "jv": "ora usah",
+   "krama": "boten sisah",
+   "baca": "O-ro U-sah",
+   "id": "tidak usah"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah kata kerja berikut menjadi perintah halus dengan akhiran **-a**.",
+   "items": [
+    "lungguh",
+    "mangan",
+    "turu",
+    "mlebu",
+    "ngombé"
+   ]
+  },
+  {
+   "prompt": "Pilih *-en* (perintah atas benda) atau *-na* (ambilkan untuk saya).",
+   "items": [
+    "Buku kuwi wac____ dhisik. (bacalah bukunya)",
+    "Tulung jupuk____ banyu. (ambilkan air untuk saya)",
+    "Lawangé tutup____ , ya. (tutuplah pintunya)",
+    "Tuko____ gedhang loro. (belikan dua pisang)",
+    "Klambiné umbah____ . (cucilah bajunya)"
+   ]
+  },
+  {
+   "prompt": "Ubah perintah kasar ini menjadi permintaan yang sopan dalam krama.",
+   "items": [
+    "Jupuk banyu!",
+    "Mangan!",
+    "Lungguh!",
+    "Aja lunga!",
+    "Ngentèni!"
+   ]
+  },
+  {
+   "prompt": "**Ulangan unit 10.** Tutup unit 10, lalu tulis kalimat Jawanya.",
+   "items": [
+    "Ada nasi goreng? (krama)",
+    "Yang tidak pedas, ya. (ngoko)",
+    "Dibungkus saja. (ngoko)",
+    "Semuanya berapa? (krama)",
+    "Enak sekali. (krama)"
+   ]
+  }
+ ],
+ "answers": [
+  "lungguha — mangana — turua — mlebua — ngombéa",
+  "wacanen — jupukna — tutupen — Tukokna — umbahen",
+  "Mangga, nyuwun tulung mendhetaken toya. — Mangga dipun-dhahar. — Mangga lenggah. — Sampun késah rumiyin, nggih. — Nyuwun tulung ngentosi sekedhap.",
+  "Sega goréng wonten? — Sing ora pedhes, ya. — Dibungkus waé. — Sedaya pinten? — Éca sanget."
+ ]
+}

@@ -1,0 +1,528 @@
+{
+ "title": "Sudah, sedang, akan, belum",
+ "title_target": "Wis, lagi, arep, durung",
+ "goal": "Menempatkan kejadian dalam waktu tanpa mengubah satu huruf pun pada kata kerjanya — memakai empat kata penanda yang bekerja persis seperti \"sudah, sedang, akan, belum\" dalam bahasa Indonesia.",
+ "bekal": [
+  "memakai *wis*, *lagi*, *arep*, *durung* dan pasangan kramanya",
+  "menjawab pertanyaan \"sudah?\" dengan benar — termasuk kapan *durung* wajib dipakai, bukan *ora*",
+  "memakai *tau* / *naté* untuk pengalaman"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Wis mangan durung?",
+   "intro": "Petang hari di teras kos. Pak Broto lewat dan menyapa dengan pertanyaan yang di Jawa berfungsi sebagai sapaan, bukan sebagai pertanyaan sungguhan. Dian menjawab krama; lalu Rini datang dan percakapan turun ke ngoko.",
+   "lines": [
+    {
+     "speaker": "Pak Broto:",
+     "text": "Mbak Dian, sampun dhahar dèrèng?",
+     "id": "Mbak Dian, sudah makan belum?",
+     "literal": "Mbak Dian, sudah makan belum?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Dèrèng, Pak. Nembé badhé mangkat pados nedhan.",
+     "id": "Belum, Pak. Baru mau berangkat cari makan.",
+     "literal": "belum, Pak. baru akan berangkat cari makanan."
+    },
+    {
+     "speaker": "Pak Broto:",
+     "text": "O, nggih. Warungipun Bu Sri sampun bikak kok.",
+     "id": "Oh, ya. Warungnya Bu Sri sudah buka kok.",
+     "literal": "oh, ya. warung-nya Bu Sri sudah buka kok."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Matur nuwun, Pak.",
+     "id": "Terima kasih, Pak.",
+     "literal": "terima-kasih, Pak."
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Yan! Arep nyang endi?",
+     "id": "Yan! Mau ke mana?",
+     "literal": "Yan! akan ke mana?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Arep mangan. Kowé wis?",
+     "id": "Mau makan. Kamu sudah?",
+     "literal": "akan makan. kamu sudah?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Durung. Aku lagi ngenteni kirimanku.",
+     "id": "Belum. Saya sedang menunggu kiriman saya.",
+     "literal": "belum. aku sedang menunggu kiriman-ku."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Wis tekan endi kirimané?",
+     "id": "Sudah sampai mana kirimannya?",
+     "literal": "sudah sampai mana kiriman-nya?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Ora ngerti. Ket mau durung ana kabar.",
+     "id": "Tidak tahu. Dari tadi belum ada kabar.",
+     "literal": "tidak tahu. sejak tadi belum ada kabar."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Wis, mangan dhisik waé. Kowé wis tau mangan ing warungé Bu Sri?",
+     "id": "Sudah, makan dulu saja. Kamu sudah pernah makan di warungnya Bu Sri?",
+     "literal": "sudah, makan dulu saja. kamu sudah pernah makan di warung-nya Bu Sri?"
+    },
+    {
+     "speaker": "Rini:",
+     "text": "Durung tau. Ayo, saiki waé.",
+     "id": "Belum pernah. Ayo, sekarang saja.",
+     "literal": "belum pernah. ayo, sekarang saja."
+    }
+   ],
+   "notes": [
+    "**Sampun dhahar dèrèng?** adalah sapaan, bukan undangan makan. Ia sepadan dengan \"sudah makan?\" dalam bahasa Indonesia, dan jawaban jujur — *sampun* atau *dèrèng* — sudah cukup. Kamu tidak perlu menjelaskan apa yang kamu makan.",
+    "**Perhatikan Pak Broto memakai *dhahar*, bukan *nedha***. Ia sedang berbicara tentang perbuatan **Dian**, dan meninggikan lawan bicara adalah kesopanan yang lazim. Dian menjawab dengan *mangan* — untuk perbuatannya sendiri, ia tidak boleh meninggikan diri.",
+    "**Nembé** (krama) / **lagi** (ngoko) punya dua arti yang berbeda tapi berdekatan: \"sedang\" (*lagi mangan* — sedang makan) dan \"baru saja\" (*lagi teka* — baru datang). Konteksnya yang memisahkan.",
+    "**Pados** adalah krama dari *golèk* (mencari). Kata *golèk* juga berarti \"boneka\" dalam *wayang golèk*, dan keduanya memang satu kata yang sama — boneka yang dicari-cari bentuknya.",
+    "**Dhisik** berarti \"dulu\" dalam arti \"lebih dahulu\", bukan \"zaman dulu\". *Mangan dhisik* = makan dulu. Untuk \"zaman dulu\" dipakai *biyèn*. Krama *dhisik* adalah *rumiyin*.",
+    "**Ayo** adalah ajakan ngoko, kramanya *mangga*. Bentuk yang lebih mendesak: *ayo ta!* atau *ayo gek!*"
+   ],
+   "grammars": [
+    {
+     "title": "Empat penanda, dan kata kerja yang tidak bergerak",
+     "body": [
+      "Semua penanda ini berdiri **di depan** kata kerja, dan kata kerjanya tidak berubah sama sekali. Sistemnya identik dengan bahasa Indonesia, jadi yang perlu dipasang cuma kosakatanya."
+     ],
+     "table": {
+      "head": [
+       "Arti",
+       "Ngoko",
+       "Krama",
+       "Contoh ngoko"
+      ],
+      "rows": [
+       [
+        "sudah",
+        "**wis**",
+        "*sampun*",
+        "*aku wis mangan*"
+       ],
+       [
+        "sedang, baru",
+        "**lagi**",
+        "*nembé*",
+        "*aku lagi mangan*"
+       ],
+       [
+        "akan, mau",
+        "**arep**",
+        "*badhé*",
+        "*aku arep mangan*"
+       ],
+       [
+        "belum",
+        "**durung**",
+        "*dèrèng*",
+        "*aku durung mangan*"
+       ],
+       [
+        "tidak",
+        "**ora**",
+        "*boten*",
+        "*aku ora mangan*"
+       ],
+       [
+        "masih",
+        "**isih**",
+        "*taksih*",
+        "*aku isih mangan*"
+       ],
+       [
+        "pernah",
+        "**tau**",
+        "*naté*",
+        "*aku wis tau mangan*"
+       ],
+       [
+        "belum pernah",
+        "**durung tau**",
+        "*dèrèng naté*",
+        "*aku durung tau mangan*"
+       ]
+      ]
+     },
+     "after": [
+      "**Durung bukan ora.** Ini kesalahan pemula yang paling sering, dan bahasa Indonesia tidak menolongmu karena ia juga membedakan \"belum\" dari \"tidak\" tapi penuturnya sering menukarnya di percakapan santai. Dalam bahasa Jawa bedanya terasa: *aku ora mangan* berarti saya memang tidak makan (mungkin puasa, mungkin tidak lapar); *aku durung mangan* berarti saya belum makan tapi akan makan.",
+      "**Menjawab pertanyaan \"wis … durung?\"** cukup dengan satu kata: *wis* atau *durung*. Menjawab *ora* terdengar salah dan sedikit ketus.",
+      "**Wis juga berarti \"sudahlah\"** ketika berdiri di awal kalimat sebagai penutup pembicaraan: *wis, mangan dhisik waé* (sudah, makan dulu saja). Kamu akan sangat sering mendengarnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Empat pertanyaan yang akan datang kepadamu setiap hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Pertanyaan (ngoko)",
+      "Krama",
+      "Artinya",
+      "Jawaban singkat"
+     ],
+     "rows": [
+      [
+       "*Wis mangan durung?*",
+       "*Sampun dhahar dèrèng?*",
+       "Sudah makan belum?",
+       "*Wis.* / *Durung.*"
+      ],
+      [
+       "*Wis mulih?*",
+       "*Sampun wangsul?*",
+       "Sudah pulang?",
+       "*Wis.* / *Durung.*"
+      ],
+      [
+       "*Lagi apa?*",
+       "*Nembé punapa?*",
+       "Sedang apa?",
+       "*Lagi sinau.*"
+      ],
+      [
+       "*Arep nyang endi?*",
+       "*Badhé tindak pundi?*",
+       "Mau ke mana?",
+       "*Arep nyang pasar.*"
+      ],
+      [
+       "*Wis tau nyang Solo?*",
+       "*Sampun naté dhateng Solo?*",
+       "Sudah pernah ke Solo?",
+       "*Wis.* / *Durung tau.*"
+      ],
+      [
+       "*Isih adoh?*",
+       "*Taksih tebih?*",
+       "Masih jauh?",
+       "*Isih.* / *Wis cedhak.*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kenapa orang Jawa selalu bertanya \"sudah makan?\"",
+     "items": [
+      "Pertanyaan itu adalah bentuk perhatian, bukan basa-basi kosong dan bukan undangan. Ia menandai bahwa lawan bicaramu memperlakukanmu sebagai orang yang keadaannya patut ditanyakan.",
+      "Jawaban paling aman: **jujur, singkat, lalu balikkan**. *Dèrèng, Pak. Panjenengan sampun?* — belum, Pak. Bapak sudah?",
+      "Kalau kamu menjawab *dèrèng* di rumah orang, kemungkinan besar kamu akan benar-benar disuguhi makanan. Ini bukan jebakan; ini memang cara kerjanya. Kalau tidak ingin makan, jawab *sampun, matur nuwun*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menyusun kalimat lengkap",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sekarang kamu punya cukup bahan untuk kalimat yang lengkap. Susunannya tetap sama dengan bahasa Indonesia — pelaku, penanda, kata kerja, sasaran, keterangan:"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pelaku",
+      "Penanda",
+      "Kata kerja",
+      "Sasaran / keterangan"
+     ],
+     "rows": [
+      [
+       "*Aku*",
+       "*wis*",
+       "*mangan*",
+       "*sega*"
+      ],
+      [
+       "*Rini*",
+       "*lagi*",
+       "*maca*",
+       "*buku ing kamar*"
+      ],
+      [
+       "*Dhèwèké*",
+       "*arep*",
+       "*tuku*",
+       "*gedhang ing pasar*"
+      ],
+      [
+       "*Kula*",
+       "*dèrèng*",
+       "*nedha*",
+       "*ket wau énjing*"
+      ],
+      [
+       "*Bapak*",
+       "*sampun*",
+       "*kondur*",
+       "*saking kantor*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Keterangan waktu boleh berpindah ke depan** untuk penekanan, persis seperti bahasa Indonesia: *sésuk aku arep nyang pasar* dan *aku arep nyang pasar sésuk* sama-sama benar. Yang tidak boleh berpindah adalah urutan penanda dan kata kerjanya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Gabungan yang sering dipakai",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "*wis tau*",
+       "sudah pernah"
+      ],
+      [
+       "*durung tau*",
+       "belum pernah"
+      ],
+      [
+       "*ora tau*",
+       "tidak pernah (sama sekali)"
+      ],
+      [
+       "*isih durung*",
+       "masih belum"
+      ],
+      [
+       "*wis ora*",
+       "sudah tidak (lagi)"
+      ],
+      [
+       "*arep ora*",
+       "akan tidak — jarang; biasanya cukup *ora bakal*"
+      ],
+      [
+       "*lagi waé*",
+       "baru saja"
+      ],
+      [
+       "*mèh*",
+       "hampir"
+      ],
+      [
+       "*kudu*",
+       "harus"
+      ],
+      [
+       "*ora éntuk*",
+       "tidak boleh"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Mèh** (hampir) sangat berguna dan sering terlupakan: *mèh tekan* (hampir sampai), *mèh rampung* (hampir selesai), *mèh waé tiba* (hampir saja jatuh). Kramanya *ambèng* atau lebih sering *mèh* juga."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "jv": "wis",
+   "krama": "sampun",
+   "baca": "WIS · sam-PUN",
+   "id": "sudah"
+  },
+  {
+   "jv": "durung",
+   "krama": "dèrèng",
+   "baca": "DU-rung · DÈ-rèng",
+   "id": "belum"
+  },
+  {
+   "jv": "arep",
+   "krama": "badhé",
+   "baca": "A-rep · ba-DHÉ",
+   "id": "akan, mau"
+  },
+  {
+   "jv": "lagi",
+   "krama": "nembé",
+   "baca": "LA-gi · nem-BÉ",
+   "id": "sedang, baru"
+  },
+  {
+   "jv": "tau",
+   "krama": "naté",
+   "baca": "TAU · na-TÉ",
+   "id": "pernah"
+  },
+  {
+   "jv": "isih",
+   "krama": "taksih",
+   "baca": "I-sih",
+   "id": "masih"
+  },
+  {
+   "jv": "dhisik",
+   "krama": "rumiyin",
+   "baca": "DHI-si'",
+   "id": "dulu, lebih dahulu"
+  },
+  {
+   "jv": "mèh",
+   "krama": "mèh",
+   "baca": "MÈH",
+   "id": "hampir"
+  },
+  {
+   "jv": "golèk",
+   "krama": "pados",
+   "baca": "go-LÈ' · PA-dos",
+   "id": "mencari"
+  },
+  {
+   "jv": "ayo",
+   "krama": "mangga",
+   "baca": "A-yo",
+   "id": "ayo, mari"
+  },
+  {
+   "jv": "rampung",
+   "krama": "rampung",
+   "baca": "RAM-pung",
+   "id": "selesai"
+  },
+  {
+   "jv": "wiwit",
+   "krama": "wiwit",
+   "baca": "WI-wit",
+   "id": "mulai"
+  },
+  {
+   "jv": "bikak, bukak",
+   "krama": "bikak",
+   "baca": "BU-ka'",
+   "id": "buka"
+  },
+  {
+   "jv": "tutup",
+   "krama": "tutup",
+   "baca": "TU-tup",
+   "id": "tutup"
+  },
+  {
+   "jv": "kiriman",
+   "krama": "kiriman",
+   "baca": "ki-RI-man",
+   "id": "kiriman"
+  },
+  {
+   "jv": "kabar",
+   "krama": "kabar",
+   "baca": "KA-bar",
+   "id": "kabar"
+  },
+  {
+   "jv": "luwé",
+   "krama": "luwé",
+   "baca": "lu-WÉ",
+   "id": "lapar"
+  },
+  {
+   "jv": "ngelak",
+   "krama": "ngelak",
+   "baca": "nge-LA'",
+   "id": "haus"
+  },
+  {
+   "jv": "kesel",
+   "krama": "sayah",
+   "baca": "KE-sel · SA-yah",
+   "id": "lelah"
+  },
+  {
+   "jv": "warung",
+   "krama": "warung",
+   "baca": "WA-rung",
+   "id": "warung"
+  },
+  {
+   "jv": "panganan",
+   "krama": "nedhan",
+   "baca": "pa-NGA-nan",
+   "id": "makanan"
+  },
+  {
+   "jv": "ombèn-ombèn",
+   "krama": "unjukan",
+   "baca": "om-BÈN-om-BÈN",
+   "id": "minuman"
+  },
+  {
+   "jv": "bakal",
+   "krama": "badhé",
+   "baca": "BA-kal",
+   "id": "bakal, akan"
+  },
+  {
+   "jv": "kepeksa",
+   "krama": "kepeksa",
+   "baca": "ke-PE'-so",
+   "id": "terpaksa"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan *wis*, *lagi*, *arep*, atau *durung*.",
+   "items": [
+    "Aku ____ mangan, mula ora luwé.",
+    "Rini ____ maca buku ing kamaré saiki.",
+    "Sésuk aku ____ nyang Solo.",
+    "Aku ____ tau nyang Bali. (belum pernah)",
+    "Kowé ____ mulih? Isih ésuk, lho.",
+    "Bapak ____ kondur saka kantor."
+   ]
+  },
+  {
+   "prompt": "Jawab pertanyaan ini dengan satu kata yang benar.",
+   "items": [
+    "Wis mangan durung?  (belum)",
+    "Wis tau nyang Solo?  (sudah)",
+    "Isih adoh?  (masih)",
+    "Wis rampung?  (belum)",
+    "Kowé arep melu?  (mau)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi krama.",
+   "items": [
+    "Aku wis mangan.",
+    "Aku durung tau nyang Solo.",
+    "Rini lagi maca buku.",
+    "Sésuk aku arep nyang pasar.",
+    "Aku isih ngenteni."
+   ]
+  },
+  {
+   "prompt": "**Ulangan unit 7.** Tutup unit 7, lalu tulis kalimat Jawanya.",
+   "items": [
+    "Dari sini ke selatan. (krama)",
+    "Nanti ada perempatan, belok ke kiri. (ngoko)",
+    "Jauh tidak, Pak? (krama)",
+    "Saya mau ke pasar. (ngoko)",
+    "Hati-hati, ya. (krama)"
+   ]
+  }
+ ],
+ "answers": [
+  "wis — lagi — arep — durung — arep — wis",
+  "Durung. — Wis. — Isih. — Durung. — Gelem.",
+  "Kula sampun nedha. — Kula dèrèng naté dhateng Solo. — Rini nembé maos buku. — Bénjing kula badhé dhateng peken. — Kula taksih ngentosi.",
+  "Saking mriki ngidul. — Mengko ana prapatan, ménggok ngiwa. — Tebih boten, Pak? — Aku arep nyang pasar. — Ngatos-atos, nggih."
+ ]
+}
