@@ -1,0 +1,174 @@
+{
+ "title": "Keluarga saya",
+ "title_target": "គ្រួសារខ្ញុំ — kruè-saa hknyom",
+ "goal": "Menyebut anggota keluarga dan umur — dan menemukan bahwa bahasa Khmer memakai kata \"kakak\" dan \"adik\" sebagai kata ganti orang, persis kebiasaan yang sudah kamu punya dalam bahasa Indonesia.",
+ "bekal": [
+  "menyebut anggota keluarga inti",
+  "memakai បង dan ប្អូន sebagai \"kamu\" DAN sebagai \"saya\"",
+  "bertanya umur dengan អាយុប៉ុន្មាន?",
+  "menyatakan milik tanpa kata penghubung apa pun",
+  "bertanya jumlah dengan ប៉ុន្មាននាក់?"
+ ],
+ "dialogs": [
+  {
+   "title": "កិច្ចសន្ទនា — Melihat foto keluarga",
+   "intro": "Sreymom mengeluarkan telepon dan memperlihatkan foto keluarganya. Perhatikan bagaimana keduanya menyebut diri sendiri: Sreymom yang lebih muda memakai ប្អូន, Ani yang lebih tua memakai បង. Tidak ada satu pun kata ខ្ញុំ di beberapa baris — dan kalimatnya tetap sopan, bahkan lebih hangat.",
+   "lines": [
+    {"speaker":"ស្រីមុំ:","text":"[នេះ|nih] [ជា|ciè] [រូបថត|ruup-htat] [គ្រួសារ|kruè-saa] [ខ្ញុំ|hknyom] [ចាស|caah]។","id":"Ini foto keluarga saya.","literal":"ini — adalah — gambar-potret — keluarga — saya — ya(pr)."},
+    {"speaker":"អានី:","text":"[គ្រួសារ|kruè-saa] [ប្អូន|p'oun] [មាន|mien] [ប៉ុន្មាន|pon-maan] [នាក់|neak]?","id":"Keluarga Dek berapa orang?","literal":"keluarga — adik — punya — berapa — orang?"},
+    {"speaker":"ស្រីមុំ:","text":"[ប្រាំ|pram] [នាក់|neak] [ចាស|caah]។ [ឪពុក|'euw-puk], [ម្តាយ|mdaay], [បង|baang] [សុខា|so-hkaa], [ខ្ញុំ|hknyom], [និង|neng] [ប្អូនប្រុស|p'oun-proh] [មួយ|muèy]។","id":"Lima orang. Ayah, ibu, Kak Sokha, saya, dan satu adik laki-laki.","literal":"lima — orang — ya(pr). ayah, ibu, kak — sokha, saya, dan — adik-laki-laki — satu."},
+    {"speaker":"អានី:","text":"[ប្អូនប្រុស|p'oun-proh] [អាយុ|'aa-yu] [ប៉ុន្មាន|pon-maan]?","id":"Adik laki-lakimu umur berapa?","literal":"adik-laki-laki — umur — berapa?"},
+    {"speaker":"ស្រីមុំ:","text":"[គាត់|koat] [អាយុ|'aa-yu] [ដប់ប្រាំ|dop-pram] [ឆ្នាំ|hcnam] [ចាស|caah]។ [គាត់|koat] [នៅ|neuw] [រៀន|rien] [វិទ្យាល័យ|wit-yie-lay]។","id":"Dia lima belas tahun. Dia masih sekolah menengah.","literal":"dia — umur — sepuluh-lima — tahun — ya(pr). dia — masih — belajar — sekolah-menengah."},
+    {"speaker":"អានី:","text":"[ឪពុក|'euw-puk] [ម្តាយ|mdaay] [ប្អូន|p'oun] [ធ្វើការ|htweu-kaa] [អ្វី|'wey]?","id":"Ayah ibu Dek kerja apa?","literal":"ayah — ibu — adik — bekerja — apa?"},
+    {"speaker":"ស្រីមុំ:","text":"[ឪពុក|'euw-puk] [ខ្ញុំ|hknyom] [ជា|ciè] [កសិករ|ka-se-kaa] [ចាស|caah]។ [គាត់|koat] [នៅ|neuw] [ខេត្ត|hkèt] [កំពង់ចាម|kam-pong-caam]។","id":"Ayah saya petani. Dia tinggal di provinsi Kampong Cham.","literal":"ayah — saya — adalah — petani — ya(pr). dia — tinggal — provinsi — kampong-cham."},
+    {"speaker":"អានី:","text":"[ចុះ|coh] [ម្តាយ|mdaay] [វិញ|weñ]?","id":"Kalau ibumu?","literal":"lalu — ibu — pula?"},
+    {"speaker":"ស្រីមុំ:","text":"[ម្តាយ|mdaay] [ខ្ញុំ|hknyom] [លក់|luèk] [ដូរ|dou] [នៅ|neuw] [ផ្សារ|hpsaa] [ចាស|caah]។ [បង|baang] [អានី|'aa-nii] [មាន|mien] [បងប្អូន|baang-p'oun] [ទេ|té]?","id":"Ibu saya berdagang di pasar. Kak Ani punya saudara?","literal":"ibu — saya — jual — tukar — di — pasar — ya(pr). kak — ani — punya — kakak-adik — kah?"},
+    {"speaker":"អានី:","text":"[បង|baang] [មាន|mien] [បងស្រី|baang-srey] [ម្នាក់|mneak] [ចាស|caah]។ [គាត់|koat] [នៅ|neuw] [ប្រទេស|pra-teh] [ឥណ្ឌូនេស៊ី|'en-do-né-sii]។","id":"Kakak punya seorang kakak perempuan. Dia di Indonesia.","literal":"kakak — punya — kakak-perempuan — se-orang — ya(pr). dia — tinggal — negara — indonesia."},
+    {"speaker":"ស្រីមុំ:","text":"[បង|baang] [អាយុ|'aa-yu] [ប៉ុន្មាន|pon-maan] [ចាស|caah]?","id":"Kakak umur berapa?","literal":"kakak — umur — berapa — ya(pr)?"},
+    {"speaker":"អានី:","text":"[បង|baang] [អាយុ|'aa-yu] [ម្ភៃ|m-hpey] [ប្រាំបួន|pram-buèn] [ឆ្នាំ|hcnam]។ [ចាស់|cah] [ជាង|cièng] [ប្អូន|p'oun] [ច្រើន|craeun] [ទេ|té]?","id":"Kakak dua puluh sembilan tahun. Jauh lebih tua dari Dek, ya?","literal":"kakak — umur — dua-puluh — lima-empat — tahun. tua — daripada — adik — banyak — kah?"},
+    {"speaker":"ស្រីមុំ:","text":"[អត់ទេ|'at-té] [ចាស|caah]! [ប្រាំពីរ|pram-pil] [ឆ្នាំ|hcnam] [ប៉ុណ្ណោះ|pon-nah]។","id":"Tidak kok! Cuma tujuh tahun.","literal":"tidak — ya(pr)! lima-dua — tahun — saja."}
+   ],
+   "grammars": [
+    {
+     "title": "⚠️ បង dan ប្អូន — kata keluarga yang dipakai sebagai kata ganti",
+     "body": ["Ini titik yang membuat penutur bahasa Inggris tersandung berbulan-bulan, dan yang bagi kita hampir tidak perlu dijelaskan. Dalam bahasa Khmer, kamu memanggil orang lain — dan menyebut dirimu sendiri — dengan **kata kekerabatan**, bukan dengan \"saya\" dan \"kamu\". Persis seperti kita berkata \"Kakak mau ke mana?\" dan \"Adik ikut, ya\"."],
+     "tables": [
+      {"head":["Khmer","Cara baca","Untuk siapa","Artinya bisa"],"rows":[
+       ["បង","*baang*","lebih tua sedikit","\"kamu\" atau \"saya\""],
+       ["ប្អូន","*p'oun*","lebih muda sedikit","\"kamu\" atau \"saya\""],
+       ["ពូ","*puu*","laki-laki seumur ayahmu","\"Om\", \"Pak\""],
+       ["មីង","*miing*","perempuan seumur ibumu","\"Tante\", \"Bu\""],
+       ["តា / យាយ","*taa / yiey*","seumur kakek-nenek","\"Kek\", \"Nek\""],
+       ["ខ្ញុំ","*hknyom*","selalu aman","\"saya\" netral"]
+      ]}
+     ],
+     "after": [
+      "⚠️ Yang menentukan bukan hubungan darah, melainkan **selisih umur yang kamu perkirakan**. Kamu memanggil pelayan warung បង kalau dia tampak lebih tua darimu, dan ប្អូន kalau lebih muda. Salah menebak bukan masalah besar; menghindarinya sama sekali dengan selalu memakai អ្នក justru terdengar dingin.",
+      "Perhatikan baris ke-10 dan ke-12 dialog: Ani menyebut dirinya បង, bukan ខ្ញុំ, karena dia yang lebih tua. Kalimatnya harfiah berbunyi \"kakak punya seorang kakak perempuan\" — dan itu sepenuhnya wajar. Kalau kamu ragu, ខ្ញុំ tidak pernah salah."
+     ]
+    },
+    {
+     "title": "Milik tanpa kata penghubung",
+     "body": ["Susunan miliknya adalah **benda dulu, pemilik belakangan**, tanpa kata apa pun di antaranya — sama persis dengan bahasa Indonesia. Tidak ada padanan \"punya\", \"-nya\", atau apostrof."],
+     "tables": [
+      {"head":["Khmer","Cara baca","Harfiah","Artinya"],"rows":[
+       ["ផ្ទះខ្ញុំ","*hpteah hknyom*","rumah saya","rumah saya"],
+       ["ឪពុកខ្ញុំ","*'euw-puk hknyom*","ayah saya","ayah saya"],
+       ["គ្រួសារប្អូន","*kruè-saa p'oun*","keluarga adik","keluargamu"],
+       ["សៀវភៅរបស់ខ្ញុំ","*siew-hpeuw ra-boh hknyom*","buku milik saya","buku saya (ditegaskan)"]
+      ]}
+     ],
+     "after": ["របស់ (*ra-boh*) berarti \"milik\" dan boleh disisipkan kalau kamu ingin menegaskan kepemilikan, terutama untuk benda. Untuk orang — ayah, ibu, keluarga — orang Kamboja hampir tidak pernah memakainya. ⚠️ Memakai របស់ untuk anggota keluarga terdengar seperti kamu memiliki mereka."]
+    },
+    {
+     "title": "Umur, jumlah orang, dan ប៉ុន្មាន",
+     "body": ["ប៉ុន្មាន (*pon-maan*) berarti \"berapa\", dan ia berdiri **sesudah** hal yang ditanyakan, sama seperti bahasa Indonesia."],
+     "tables": [
+      {"head":["Bahasa Indonesia","Khmer","Cara baca"],"rows":[
+       ["Umur berapa?","អាយុប៉ុន្មាន?","*'aa-yu pon-maan?*"],
+       ["Saya 29 tahun.","ខ្ញុំអាយុ ២៩ ឆ្នាំ","*hknyom 'aa-yu m-hpey pram-buèn hcnam*"],
+       ["Berapa orang?","ប៉ុន្មាននាក់?","*pon-maan neak?*"],
+       ["Lima orang.","ប្រាំនាក់","*pram neak*"],
+       ["Berapa harganya?","ថ្លៃប៉ុន្មាន?","*htlay pon-maan?*"]
+      ]}
+     ],
+     "after": [
+      "⚠️ Tidak ada kata \"adalah\" atau \"berumur\": ខ្ញុំអាយុ ២៩ ឆ្នាំ harfiahnya \"saya umur 29 tahun\". អាយុ sendiri adalah kata Sanskerta yang berakar sama dengan **usia** dalam bahasa Indonesia.",
+      "នាក់ (*neak*) adalah penggolong untuk orang — \"lima orang\", bukan \"lima\". Membiarkannya hilang terdengar seperti menyebut \"lima\" tanpa menyebut apa. Ini kebiasaan yang sudah kamu punya: kita pun berkata \"lima orang\", tidak \"lima\" saja."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Keluarga dari kakek sampai cucu",
+   "blocks": [
+    {"type":"tabel","head":["Khmer","Cara baca","Bahasa Indonesia"],"rows":[
+     ["ឪពុក","*'euw-puk*","ayah"],
+     ["ម្តាយ","*mdaay*","ibu"],
+     ["ប៉ា / ម៉ាក់","*paa / mak*","papa / mama (akrab)"],
+     ["បងប្រុស","*baang-proh*","kakak laki-laki"],
+     ["បងស្រី","*baang-srey*","kakak perempuan"],
+     ["ប្អូនប្រុស","*p'oun-proh*","adik laki-laki"],
+     ["ប្អូនស្រី","*p'oun-srey*","adik perempuan"],
+     ["បងប្អូន","*baang-p'oun*","saudara (kakak-adik)"],
+     ["កូន","*koun*","anak"],
+     ["កូនប្រុស / កូនស្រី","*koun-proh / koun-srey*","anak laki-laki / perempuan"],
+     ["ប្តី / ប្រពន្ធ","*pdey / pra-pun*","suami / istri"],
+     ["តា / យាយ","*taa / yiey*","kakek / nenek"],
+     ["ចៅ","*caw*","cucu"],
+     ["គ្រួសារ","*kruè-saa*","keluarga"]
+    ]},
+    {"type":"p","text":"⚠️ Perhatikan pola yang berulang: ប្រុស (*proh*, laki-laki) dan ស្រី (*srey*, perempuan) ditempelkan **di belakang** kata dasarnya untuk menentukan jenis kelamin, persis seperti bahasa Indonesia menempelkan \"laki-laki\" dan \"perempuan\". Sekali kamu tahu បង dan ប្អូន, kamu otomatis tahu empat kata sekaligus."},
+    {"type":"kotak","title":"Kenapa umur ditanyakan sejak hari pertama","items":[
+     "**Umur menentukan kata sapaan.** Orang Kamboja perlu tahu apakah kamu lebih tua atau lebih muda untuk bisa memilih antara បង dan ប្អូន. Pertanyaan \"umur berapa?\" bukan basa-basi dan sama sekali bukan hal yang tidak sopan — itu pertanyaan tata bahasa.",
+     "**Kalau kamu tidak mau menyebut angka**, jawab ជិតៗគ្នា (*cit-cit knie*, \"kira-kira sebaya\") sambil tersenyum. Itu cukup untuk menyelesaikan urusannya.",
+     "**Umur dihitung sejak lahir, sama seperti kita.** Berbeda dengan Korea atau sebagian Tiongkok, tidak ada tambahan satu tahun."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  {"km":"គ្រួសារ","baca":"kruè-saa","id":"keluarga"},
+  {"km":"រូបថត","baca":"ruup-htat","id":"foto — រូប berakar sama dengan *rupa*"},
+  {"km":"មាន","baca":"mien","id":"punya; ada"},
+  {"km":"ប៉ុន្មាន","baca":"pon-maan","id":"berapa"},
+  {"km":"នាក់","baca":"neak","id":"orang (penggolong)"},
+  {"km":"ឪពុក","baca":"'euw-puk","id":"ayah"},
+  {"km":"ម្តាយ","baca":"mdaay","id":"ibu"},
+  {"km":"ប្អូនប្រុស","baca":"p'oun-proh","id":"adik laki-laki"},
+  {"km":"បងស្រី","baca":"baang-srey","id":"kakak perempuan"},
+  {"km":"បងប្អូន","baca":"baang-p'oun","id":"saudara kandung"},
+  {"km":"និង","baca":"neng","id":"dan"},
+  {"km":"អាយុ","baca":"'aa-yu","id":"umur — akar yang sama dengan *usia*"},
+  {"km":"ឆ្នាំ","baca":"hcnam","id":"tahun"},
+  {"km":"វិទ្យាល័យ","baca":"wit-yie-lay","id":"sekolah menengah atas"},
+  {"km":"កសិករ","baca":"ka-se-kaa","id":"petani"},
+  {"km":"ខេត្ត","baca":"hkèt","id":"provinsi"},
+  {"km":"ចុះ","baca":"coh","id":"kalau …? lalu …?"},
+  {"km":"លក់ដូរ","baca":"luèk-dou","id":"berdagang"},
+  {"km":"ម្នាក់","baca":"mneak","id":"seorang"},
+  {"km":"ចាស់","baca":"cah","id":"tua"},
+  {"km":"ជាង","baca":"cièng","id":"lebih … daripada"},
+  {"km":"ច្រើន","baca":"craeun","id":"banyak"},
+  {"km":"ប៉ុណ្ណោះ","baca":"pon-nah","id":"saja, hanya"},
+  {"km":"របស់","baca":"ra-boh","id":"milik"},
+  {"km":"កូន","baca":"koun","id":"anak"},
+  {"km":"ប្រុស / ស្រី","baca":"proh / srey","id":"laki-laki / perempuan"}
+ ],
+ "exercises": [
+  {"prompt":"Lengkapi dengan បង atau ប្អូន sesuai keterangannya.","items":[
+   "Kamu 30 tahun, dia 22 tahun. Kamu memanggilnya ____។",
+   "Kamu 22 tahun, dia 30 tahun. Kamu memanggilnya ____។",
+   "Kamu 30 tahun, dia 22 tahun. Kamu menyebut dirimu ____។",
+   "Kamu 22 tahun, dia 30 tahun. Kamu menyebut dirimu ____។"
+  ]},
+  {"prompt":"Lengkapi dengan មាន, អាយុ, atau នាក់.","items":[
+   "គ្រួសារខ្ញុំ____ប្រាំ____។",
+   "ខ្ញុំ____ម្ភៃប្រាំឆ្នាំ។",
+   "អ្នក____បងប្អូនទេ?",
+   "គាត់____ដប់ប្រាំឆ្នាំ។"
+  ]},
+  {"prompt":"Susun jadi kalimat yang benar. Ingat: benda dulu, pemilik belakangan.","items":[
+   "ខ្ញុំ / គ្រួសារ / នេះ / ជា",
+   "ប៉ុន្មាន / អាយុ / អ្នក",
+   "នាក់ / មាន / ប្រាំ / គ្រួសារខ្ញុំ",
+   "ខ្ញុំ / កសិករ / ជា / ឪពុក"
+  ]},
+  {"prompt":"Terjemahkan ke bahasa Khmer.","items":[
+   "Ini foto keluarga saya.",
+   "Keluarga saya lima orang.",
+   "Ayah saya petani.",
+   "Kamu umur berapa?",
+   "Saya punya seorang kakak perempuan.",
+   "Adik saya masih sekolah."
+  ]}
+ ],
+ "answers": [
+  "ប្អូន — បង — បង — ប្អូន",
+  "មាន … នាក់ — អាយុ — មាន — អាយុ",
+  "នេះជាគ្រួសារខ្ញុំ។ — អ្នកអាយុប៉ុន្មាន? — គ្រួសារខ្ញុំមានប្រាំនាក់។ — ឪពុកខ្ញុំជាកសិករ។",
+  "នេះជារូបថតគ្រួសារខ្ញុំ។ — គ្រួសារខ្ញុំមានប្រាំនាក់។ — ឪពុកខ្ញុំជាកសិករ។ — អ្នកអាយុប៉ុន្មាន? — ខ្ញុំមានបងស្រីម្នាក់។ — ប្អូនខ្ញុំនៅរៀន។"
+ ]
+}

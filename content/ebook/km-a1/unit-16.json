@@ -1,0 +1,182 @@
+{
+ "title": "Kalau badan tidak enak",
+ "title_target": "ឈឺខ្លួន — hceu hkluèn",
+ "goal": "Menyebut bagian badan dan menjelaskan keluhan di apotek atau klinik — dengan susunan Khmer yang meletakkan bagian badan sebagai objek, bukan subjek.",
+ "bekal": [
+  "menyebut bagian badan yang paling sering dikeluhkan",
+  "menyusun keluhan dengan ខ្ញុំឈឺ + bagian badan",
+  "membedakan ឈឺ, គ្រុនក្តៅ, រាគ, ក្អួត",
+  "meminta obat di apotek",
+  "menyebut alergi dan meminta pertolongan darurat"
+ ],
+ "dialogs": [
+  {
+   "title": "កិច្ចសន្ទនា — Di apotek dekat pasar",
+   "intro": "Sepulang dari Siem Reap, perut Ani bermasalah. Perhatikan susunan kalimat keluhannya: bukan \"kepala saya sakit\" melainkan \"saya sakit kepala\" — bagian badannya berdiri sebagai objek.",
+   "lines": [
+    {"speaker":"ឱសថការី:","text":"[សួស្ដី|sua-sdey] [បង|baang]។ [មាន|mien] [រឿង|ruèng] [អ្វី|'wey] [ចាស|caah]?","id":"Halo Kak. Ada keluhan apa?","literal":"halo — kak. ada — hal — apa — ya(pr)?"},
+    {"speaker":"អានី:","text":"[ខ្ញុំ|hknyom] [ឈឺ|hceu] [ពោះ|puèh] [ចាស|caah]។ [ពី|pii] [យប់មិញ|yup-meñ]។","id":"Saya sakit perut. Sejak tadi malam.","literal":"saya — sakit — perut — ya(pr). dari — tadi-malam."},
+    {"speaker":"ឱសថការី:","text":"[រាគ|riek] [ទេ|té]?","id":"Diare?","literal":"diare — kah?"},
+    {"speaker":"អានី:","text":"[រាគ|riek] [ចាស|caah]។ [ហើយ|haeuy] [ក្អួត|k'uèt] [ពីរ|pii] [ដង|daang] [ដែរ|dae]។","id":"Iya diare. Dan muntah dua kali juga.","literal":"diare — ya(pr). dan — muntah — dua — kali — juga."},
+    {"speaker":"ឱសថការី:","text":"[មាន|mien] [គ្រុនក្តៅ|krun-kdaw] [ទេ|té] [ចាស|caah]?","id":"Ada demam?","literal":"ada — demam-panas — kah — ya(pr)?"},
+    {"speaker":"អានី:","text":"[បន្តិច|ban-tec] [ចាស|caah]។ [ហើយ|haeuy] [ខ្ញុំ|hknyom] [ឈឺ|hceu] [ក្បាល|kbaal] [ដែរ|dae]។","id":"Sedikit. Dan saya sakit kepala juga.","literal":"sedikit — ya(pr). dan — saya — sakit — kepala — juga."},
+    {"speaker":"ឱសថការី:","text":"[បង|baang] [ញ៉ាំ|nyam] [អ្វី|'wey] [ម្សិលមិញ|msel-meñ] [ចាស|caah]?","id":"Kakak makan apa kemarin?","literal":"kak — makan — apa — kemarin — ya(pr)?"},
+    {"speaker":"អានី:","text":"[ខ្ញុំ|hknyom] [ញ៉ាំ|nyam] [ត្រី|trey] [នៅ|neuw] [ផ្លូវ|hplow] [ចាស|caah]។ [ប្រហែល|pra-hael] [មិន|min] [ស្អាត|s'aat] [ទេ|té]។","id":"Saya makan ikan di jalan. Mungkin tidak bersih.","literal":"saya — makan — ikan — di — jalan — ya(pr). mungkin — tidak — bersih — tidak."},
+    {"speaker":"ឱសថការី:","text":"[អញ្ចឹង|'añ-ceung] [ខ្ញុំ|hknyom] [ឲ្យ|'aoy] [ថ្នាំ|htnam] [រាគ|riek] [និង|neng] [អូអេស៊ែល|'ou-'é-sael] [ចាស|caah]។ [ញ៉ាំ|nyam] [ក្រោយ|kraoy] [បាយ|baay]។","id":"Kalau begitu saya beri obat diare dan oralit. Diminum sesudah makan.","literal":"begitu — saya — beri — obat — diare — dan — oralit — ya(pr). makan — sesudah — nasi."},
+    {"speaker":"អានី:","text":"[ថ្នាំ|htnam] [នេះ|nih] [ញ៉ាំ|nyam] [ប៉ុន្មាន|pon-maan] [ដង|daang] [មួយ|muèy] [ថ្ងៃ|htngay] [ចាស|caah]?","id":"Obat ini diminum berapa kali sehari?","literal":"obat — ini — makan — berapa — kali — satu — hari — ya(pr)?"},
+    {"speaker":"ឱសថការី:","text":"[បី|bey] [ដង|daang] [ចាស|caah]។ [បើ|baeu] [ពីរ|pii] [ថ្ងៃ|htngay] [មិន|min] [ជា|ciè] [ទេ|té], [ត្រូវ|treuw] [ទៅ|teuw] [មន្ទីរពេទ្យ|mon-tii-pèt]។","id":"Tiga kali. Kalau dua hari tidak sembuh, harus ke rumah sakit.","literal":"tiga — kali — ya(pr). kalau — dua — hari — tidak — sembuh — tidak, harus — pergi — rumah-sakit."},
+    {"speaker":"អានី:","text":"[អរគុណ|'aa-kun] [ច្រើន|craeun] [ចាស|caah]។ [ខ្ញុំ|hknyom] [ទិញ|teñ] [ទឹក|teuk] [ដប|daap] [ធំ|htum] [ផង|hpaang]។","id":"Terima kasih banyak. Saya beli air botol besar juga.","literal":"terima-kasih — banyak — ya(pr). saya — beli — air — botol — besar — juga."}
+   ],
+   "grammars": [
+    {
+     "title": "⚠️ ឈឺ + bagian badan — susunan yang terbalik dari kebiasaan kita",
+     "body": ["Bahasa Indonesia berkata \"kepala saya sakit\" — kepala menjadi subjeknya. Bahasa Khmer berkata **\"saya sakit kepala\"** — orangnya subjek, bagian badannya objek. Susunannya sesungguhnya sama dengan ungkapan Indonesia \"saya sakit kepala\", jadi kamu sudah punya polanya; yang perlu dihindari adalah membalikkannya."],
+     "tables": [
+      {"head":["Khmer","Cara baca","Harfiah","Terjemahan"],"rows":[
+       ["ខ្ញុំឈឺក្បាល","*hknyom hceu kbaal*","saya sakit kepala","kepala saya sakit"],
+       ["ខ្ញុំឈឺពោះ","*hknyom hceu puèh*","saya sakit perut","perut saya sakit"],
+       ["ខ្ញុំឈឺធ្មេញ","*hknyom hceu htmeñ*","saya sakit gigi","gigi saya sakit"],
+       ["ខ្ញុំឈឺបំពង់ក","*hknyom hceu bam-puèng-kaa*","saya sakit tenggorokan","tenggorokan saya sakit"],
+       ["ខ្ញុំឈឺខ្នង","*hknyom hceu hknaang*","saya sakit punggung","punggung saya sakit"]
+      ]}
+     ],
+     "after": [
+      "⚠️ ក្បាលខ្ញុំឈឺ juga bisa dimengerti, tetapi terdengar seperti terjemahan. Yang wajar dan yang selalu kamu dengar dari orang Kamboja adalah ខ្ញុំឈឺក្បាល.",
+      "**ឈឺ juga berarti \"sakit\" dalam arti umum**: ខ្ញុំឈឺ berarti \"saya sedang sakit\". Untuk menyebut sakit yang lebih berat, orang memakai ឈឺធ្ងន់ (*hceu htngun*, \"sakit berat\")."
+     ]
+    },
+    {
+     "title": "Empat keluhan yang tidak boleh tertukar",
+     "body": ["Bahasa Khmer memakai kata yang benar-benar berbeda untuk empat keadaan yang dalam bahasa Indonesia semuanya bisa disebut \"sakit\". Menukarnya bisa membuat apoteker memberi obat yang salah."],
+     "tables": [
+      {"head":["Khmer","Cara baca","Artinya"],"rows":[
+       ["ឈឺ","*hceu*","sakit, nyeri"],
+       ["គ្រុនក្តៅ","*krun-kdaw*","demam — harfiah \"menggigil panas\""],
+       ["រាគ","*riek*","diare"],
+       ["ក្អួត","*k'uèt*","muntah"],
+       ["ក្អក","*k'aak*","batuk"],
+       ["ផ្តាសាយ","*hpdaa-saay*","pilek, masuk angin"],
+       ["វិលមុខ","*wil-muk*","pusing — harfiah \"muka berputar\""],
+       ["អស់កម្លាំង","*'ah kam-lang*","lemas, kehabisan tenaga"]
+      ]}
+     ],
+     "after": ["⚠️ Perhatikan **វិលមុខ** (pusing) dan **ឈឺក្បាល** (sakit kepala) — dua hal yang berbeda, dan menukarnya adalah kesalahan yang sangat sering terjadi. វិលមុខ berarti dunia terasa berputar; ឈឺក្បាល berarti kepalamu nyeri."]
+    },
+    {
+     "title": "ដង — menghitung berapa kali",
+     "body": ["ដង (*daang*) adalah penggolong untuk **kejadian**, setara dengan \"kali\" dalam bahasa Indonesia. Susunannya sama seperti penggolong lain: angka + ដង."],
+     "tables": [
+      {"head":["Khmer","Cara baca","Terjemahan"],"rows":[
+       ["ពីរដង","*pii daang*","dua kali"],
+       ["បីដងមួយថ្ងៃ","*bey daang muèy htngay*","tiga kali sehari"],
+       ["ម្តង","*mdaang*","sekali ⚠️ bukan មួយដង"],
+       ["ម្តងទៀត","*mdaang-tiet*","sekali lagi"],
+       ["ច្រើនដង","*craeun daang*","berkali-kali"],
+       ["ដងទីមួយ","*daang tii-muèy*","kali pertama"]
+      ]}
+     ],
+     "after": ["⚠️ \"Sekali\" adalah **ម្តង** (*mdaang*), bukan មួយដង. Ini satu-satunya angka yang bergabung menjadi bentuk khusus; dua kali dan seterusnya kembali teratur. ម្តង juga berarti \"sebentar\" dalam permintaan: មើលម្តង (\"lihat sebentar\")."]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bagian badan",
+   "blocks": [
+    {"type":"tabel","head":["Khmer","Cara baca","Arti","Khmer","Cara baca","Arti"],"rows":[
+     ["ក្បាល","*kbaal*","kepala","ដៃ","*day*","tangan"],
+     ["មុខ","*muk*","wajah","ម្រាមដៃ","*mriem-day*","jari"],
+     ["ភ្នែក","*hpnèk*","mata","ជើង","*ceung*","kaki"],
+     ["ត្រចៀក","*tra-ciek*","telinga","ក្រពះ","*kra-peah*","lambung"],
+     ["ច្រមុះ","*cra-moh*","hidung","ពោះ","*puèh*","perut"],
+     ["មាត់","*moat*","mulut","ខ្នង","*hknaang*","punggung"],
+     ["ធ្មេញ","*htmeñ*","gigi","ដួងចិត្ត","*duèng-cet*","jantung, hati"],
+     ["អណ្តាត","*'an-daat*","lidah","ឆ្អឹង","*hc'eng*","tulang"],
+     ["ក","*kaa*","leher","សាច់ដុំ","*sac-dom*","otot"],
+     ["បំពង់ក","*bam-puèng-kaa*","tenggorokan","ស្បែក","*sbaek*","kulit"]
+    ]},
+    {"type":"sub","text":"Di apotek dan klinik"},
+    {"type":"tabel","head":["Bahasa Indonesia","Khmer","Cara baca"],"rows":[
+     ["Saya sakit.","ខ្ញុំឈឺ","*hknyom hceu*"],
+     ["Ada obat untuk …?","មានថ្នាំសម្រាប់ … ទេ?","*mien htnam sam-rap … té?*"],
+     ["Diminum berapa kali sehari?","ញ៉ាំប៉ុន្មានដងមួយថ្ងៃ?","*nyam pon-maan daang muèy htngay?*"],
+     ["Sesudah makan.","ក្រោយបាយ","*kraoy baay*"],
+     ["Saya alergi …","ខ្ញុំមិនត្រូវនឹង …","*hknyom min treuw neng …*"],
+     ["Saya butuh dokter.","ខ្ញុំត្រូវការគ្រូពេទ្យ","*hknyom treuw-kaa kruu-pèt*"],
+     ["Rumah sakit di mana?","មន្ទីរពេទ្យនៅឯណា?","*mon-tii-pèt neuw 'ae-naa?*"],
+     ["Tolong!","ជួយផង!","*cuèy hpaang!*"],
+     ["Panggil ambulans.","ហៅរថយន្តសង្គ្រោះ","*haw rot-yun sang-kruèh*"]
+    ]},
+    {"type":"kotak","title":"⚠️ Tiga hal praktis untuk pendatang di Kamboja","items":[
+     "**Apotek jauh lebih longgar daripada di Indonesia.** Banyak obat yang di Indonesia butuh resep bisa dibeli langsung. Ini memudahkan, tetapi juga berarti kamu harus tahu sendiri apa yang kamu minum — sebutkan gejala dengan jelas, dan tanyakan namanya.",
+     "**Untuk sakit berat, klinik internasional ada di Phnom Penh dan Siem Reap.** Kalimat ខ្ញុំត្រូវការគ្រូពេទ្យនិយាយភាសាអង់គ្លេស (\"saya butuh dokter yang bicara bahasa Inggris\") berguna untuk disiapkan.",
+     "**Demam berdarah dan malaria nyata di musim hujan.** Kalau demam tidak turun dalam dua hari, jangan menunggu — ទៅមន្ទីរពេទ្យ. Kata ឈាម (*hciem*, darah) dan គ្រុនឈាម (demam berdarah) patut kamu kenali."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  {"km":"ឈឺ","baca":"hceu","id":"sakit, nyeri"},
+  {"km":"គ្រុនក្តៅ","baca":"krun-kdaw","id":"demam"},
+  {"km":"រាគ","baca":"riek","id":"diare"},
+  {"km":"ក្អួត","baca":"k'uèt","id":"muntah"},
+  {"km":"ក្អក","baca":"k'aak","id":"batuk"},
+  {"km":"ផ្តាសាយ","baca":"hpdaa-saay","id":"pilek"},
+  {"km":"វិលមុខ","baca":"wil-muk","id":"pusing"},
+  {"km":"ថ្នាំ","baca":"htnam","id":"obat"},
+  {"km":"ដង","baca":"daang","id":"kali (penggolong kejadian)"},
+  {"km":"ម្តង","baca":"mdaang","id":"sekali"},
+  {"km":"ក្បាល","baca":"kbaal","id":"kepala"},
+  {"km":"ពោះ","baca":"puèh","id":"perut"},
+  {"km":"ធ្មេញ","baca":"htmeñ","id":"gigi"},
+  {"km":"ភ្នែក","baca":"hpnèk","id":"mata"},
+  {"km":"ដៃ","baca":"day","id":"tangan"},
+  {"km":"ជើង","baca":"ceung","id":"kaki"},
+  {"km":"ខ្នង","baca":"hknaang","id":"punggung"},
+  {"km":"បំពង់ក","baca":"bam-puèng-kaa","id":"tenggorokan"},
+  {"km":"ខ្លួន","baca":"hkluèn","id":"badan, diri"},
+  {"km":"ជា","baca":"ciè","id":"sembuh (juga: adalah)"},
+  {"km":"គ្រូពេទ្យ","baca":"kruu-pèt","id":"dokter"},
+  {"km":"មន្ទីរពេទ្យ","baca":"mon-tii-pèt","id":"rumah sakit"},
+  {"km":"ឱសថស្ថាន","baca":"'ao-sat-sthaan","id":"apotek"},
+  {"km":"ត្រូវការ","baca":"treuw-kaa","id":"membutuhkan"},
+  {"km":"ជួយផង","baca":"cuèy hpaang","id":"tolong!"},
+  {"km":"រឿង","baca":"ruèng","id":"hal, perkara, cerita"},
+  {"km":"ឈាម","baca":"hciem","id":"darah"}
+ ],
+ "exercises": [
+  {"prompt":"Susun keluhannya dengan susunan Khmer yang benar.","items":[
+   "Kepala saya sakit.",
+   "Perut saya sakit.",
+   "Gigi saya sakit.",
+   "Tenggorokan saya sakit."
+  ]},
+  {"prompt":"Pilih kata yang tepat: ឈឺ, គ្រុនក្តៅ, រាគ, atau វិលមុខ.","items":[
+   "Badan terasa panas dan menggigil.",
+   "Buang air terus-menerus.",
+   "Dunia terasa berputar.",
+   "Ada rasa nyeri di lutut."
+  ]},
+  {"prompt":"Susun jadi kalimat yang benar.","items":[
+   "ពោះ / ខ្ញុំ / ឈឺ",
+   "ថ្ងៃ / មួយ / ដង / បី",
+   "ទេ / សម្រាប់រាគ / មាន / ថ្នាំ",
+   "ផង / ជួយ"
+  ]},
+  {"prompt":"Terjemahkan ke bahasa Khmer.","items":[
+   "Saya sakit perut.",
+   "Ada demam sedikit.",
+   "Saya muntah dua kali.",
+   "Obat ini diminum berapa kali sehari?",
+   "Sesudah makan.",
+   "Rumah sakit di mana?"
+  ]}
+ ],
+ "answers": [
+  "ខ្ញុំឈឺក្បាល។ — ខ្ញុំឈឺពោះ។ — ខ្ញុំឈឺធ្មេញ។ — ខ្ញុំឈឺបំពង់ក។",
+  "គ្រុនក្តៅ — រាគ — វិលមុខ — ឈឺ",
+  "ខ្ញុំឈឺពោះ។ — បីដងមួយថ្ងៃ។ — មានថ្នាំសម្រាប់រាគទេ? — ជួយផង។",
+  "ខ្ញុំឈឺពោះ។ — មានគ្រុនក្តៅបន្តិច។ — ខ្ញុំក្អួតពីរដង។ — ថ្នាំនេះញ៉ាំប៉ុន្មានដងមួយថ្ងៃ? — ក្រោយបាយ។ — មន្ទីរពេទ្យនៅឯណា?"
+ ]
+}

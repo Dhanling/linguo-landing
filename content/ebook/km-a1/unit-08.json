@@ -1,0 +1,193 @@
+{
+ "title": "Arah dan tempat",
+ "title_target": "ផ្លូវ និង ទីកន្លែង — hplow neng tii-kan-laeng",
+ "goal": "Bertanya arah dan menyebut letak benda — dan menyadari bahwa \"kata depan\" bahasa Khmer sebenarnya kata benda, sehingga \"di atas meja\" harfiahnya \"di permukaan meja\".",
+ "bekal": [
+  "bertanya arah dengan នៅឯណា? dan ទៅ … យ៉ាងម៉េច?",
+  "memakai ឆ្វេង, ស្ដាំ, ត្រង់ untuk memberi arah",
+  "menyebut letak dengan លើ, ក្រោម, ក្នុង, ក្រៅ, ខាង",
+  "menawar tuk-tuk dan menyebut tujuan",
+  "menyebut jarak dalam menit, bukan kilometer"
+ ],
+ "dialogs": [
+  {
+   "title": "កិច្ចសន្ទនា — Mencari kantor pos",
+   "intro": "Ani tersesat di antara jalan-jalan bernomor Phnom Penh. Perhatikan bahwa hampir setiap keterangan tempat dalam dialog ini dimulai dengan ខាង (*hkaang*) — kata yang berarti \"sisi\", dan yang menjadi tulang punggung seluruh sistem arah bahasa Khmer.",
+   "lines": [
+    {"speaker":"អានី:","text":"[សូមទោស|soum-touh] [ពូ|puu]។ [ប្រៃសណីយ៍|prey-sa-nii] [នៅ|neuw] [ឯណា|'ae-naa] [ចាស|caah]?","id":"Permisi Om. Kantor pos di mana?","literal":"maaf — om. pos — ada — di-mana — ya(pr)?"},
+    {"speaker":"ពូ:","text":"[ប្រៃសណីយ៍|prey-sa-nii] [ឬ|reu]? [នៅ|neuw] [ជិត|cit] [ទន្លេ|ton-lé] [បាទ|baat]។","id":"Kantor pos? Dekat sungai.","literal":"pos — atau? ada — dekat — sungai — ya(lk)."},
+    {"speaker":"អានី:","text":"[ទៅ|teuw] [ទីនោះ|tii-nuh] [យ៉ាងម៉េច|yaang-méc] [ចាស|caah]?","id":"Ke sana bagaimana caranya?","literal":"pergi — sana — bagaimana — ya(pr)?"},
+    {"speaker":"ពូ:","text":"[ដើរ|daeu] [ត្រង់|traang] [ទៅ|teuw] [មុខ|muk] [បន្តិច|ban-tec], [រួច|ruèc] [បត់|bat] [ស្ដាំ|sdam] [បាទ|baat]។","id":"Jalan lurus ke depan sedikit, lalu belok kanan.","literal":"jalan — lurus — pergi — muka — sedikit, lalu — belok — kanan — ya(lk)."},
+    {"speaker":"អានី:","text":"[បត់|bat] [ស្ដាំ|sdam] [នៅ|neuw] [ភ្លើង|hpleung] [ស្តុប|sdop] [មែនទេ|mèn-té]?","id":"Belok kanan di lampu merah, ya?","literal":"belok — kanan — di — lampu — stop — benar-kah?"},
+    {"speaker":"ពូ:","text":"[បាទ|baat]។ [រួច|ruèc] [ដើរ|daeu] [ត្រង់|traang] [ទៀត|tiet]។ [ប្រៃសណីយ៍|prey-sa-nii] [នៅ|neuw] [ខាងឆ្វេង|hkaang-hcwéng]។","id":"Ya. Lalu jalan lurus lagi. Kantor posnya di sebelah kiri.","literal":"ya(lk). lalu — jalan — lurus — lagi. pos — ada — sisi-kiri."},
+    {"speaker":"អានី:","text":"[ឆ្ងាយ|hcngaay] [ទេ|té] [ចាស|caah]?","id":"Jauh?","literal":"jauh — kah — ya(pr)?"},
+    {"speaker":"ពូ:","text":"[អត់ទេ|'at-té]។ [ដប់|dop] [នាទី|nie-tii] [ដោយ|daoy] [ថ្មើរជើង|htmaeu-ceung] [បាទ|baat]។","id":"Tidak. Sepuluh menit jalan kaki.","literal":"tidak. sepuluh — menit — dengan — kaki-berjalan — ya(lk)."},
+    {"speaker":"អានី:","text":"[អរគុណ|'aa-kun] [ច្រើន|craeun] [ចាស|caah]! [ចុះ|coh] [ធនាគារ|htu-nie-kiè] [វិញ|weñ]?","id":"Terima kasih banyak! Kalau bank?","literal":"terima-kasih — banyak — ya(pr)! lalu — bank — pula?"},
+    {"speaker":"ពូ:","text":"[ធនាគារ|htu-nie-kiè] [នៅ|neuw] [ខាងក្រោយ|hkaang-kraoy] [ផ្សារ|hpsaa] [បាទ|baat]។ [ជាប់|coap] [នឹង|neng] [ហាង|haang] [កាហ្វេ|kaa-fé]។","id":"Bank ada di belakang pasar. Bersebelahan dengan kedai kopi.","literal":"bank — ada — sisi-belakang — pasar — ya(lk). menempel — dengan — kedai — kopi."},
+    {"speaker":"អានី:","text":"[យល់|yual] [ហើយ|haeuy] [ចាស|caah]។ [អរគុណ|'aa-kun]!","id":"Mengerti. Terima kasih!","literal":"mengerti — sudah — ya(pr). terima-kasih!"},
+    {"speaker":"ពូ:","text":"[អត់អីទេ|'at-'ey-té] [បាទ|baat]។ [ដំណើរ|dam-naeu] [ល្អ|l'aa]!","id":"Sama-sama. Selamat jalan!","literal":"tidak-apa-tidak — ya(lk). perjalanan — baik!"}
+   ],
+   "grammars": [
+    {
+     "title": "⚠️ \"Kata depan\" bahasa Khmer sebenarnya kata benda",
+     "body": ["Bahasa Khmer hampir tidak punya kata depan sejati. Yang dipakainya adalah **kata benda yang menyebut bagian**: លើ berarti \"permukaan\", ក្រោម berarti \"bagian bawah\", ក្នុង berarti \"bagian dalam\". Jadi \"di atas meja\" harfiahnya \"di permukaan meja\"."],
+     "tables": [
+      {"head":["Khmer","Cara baca","Harfiah","Artinya"],"rows":[
+       ["លើតុ","*laeu tok*","permukaan meja","di atas meja"],
+       ["ក្រោមតុ","*kraom tok*","bawah meja","di bawah meja"],
+       ["ក្នុងផ្ទះ","*knong hpteah*","dalam rumah","di dalam rumah"],
+       ["ក្រៅផ្ទះ","*kraw hpteah*","luar rumah","di luar rumah"],
+       ["មុខផ្ទះ","*muk hpteah*","muka rumah","di depan rumah"],
+       ["ក្រោយផ្ទះ","*kraoy hpteah*","belakang rumah","di belakang rumah"],
+       ["ចន្លោះ … និង …","*can-loh … neng …*","celah A dan B","di antara A dan B"]
+      ]}
+     ],
+     "after": [
+      "Ini sebenarnya kabar baik: kamu tidak perlu menghafal daftar kata depan yang tidak berhubungan satu sama lain, cukup menghafal nama bagian-bagian benda. Bahasa Indonesia sesungguhnya bekerja mirip — \"di atas\", \"di dalam\", \"di belakang\" semuanya memakai kata tempat.",
+      "⚠️ Dan ingat unit 2: នៅ boleh mendahului semuanya kalau kamu ingin berkata \"berada di\" — ​សៀវភៅនៅលើតុ (\"buku ada di atas meja\"). Tanpa នៅ, សៀវភៅលើតុ berarti \"buku yang di atas meja\", sebuah frasa, bukan kalimat."
+     ]
+    },
+    {
+     "title": "ខាង — kata yang membuat semua arah",
+     "body": ["ខាង (*hkaang*) berarti \"sisi\". Ditempelkan di depan kata arah, ia mengubahnya menjadi keterangan tempat yang lengkap. Ini satu pola yang menghasilkan selusin kata sekaligus."],
+     "tables": [
+      {"head":["Khmer","Cara baca","Artinya"],"rows":[
+       ["ខាងឆ្វេង","*hkaang-hcwéng*","sebelah kiri"],
+       ["ខាងស្ដាំ","*hkaang-sdam*","sebelah kanan"],
+       ["ខាងមុខ","*hkaang-muk*","di depan"],
+       ["ខាងក្រោយ","*hkaang-kraoy*","di belakang"],
+       ["ខាងលើ","*hkaang-laeu*","di atas"],
+       ["ខាងក្រោម","*hkaang-kraom*","di bawah"],
+       ["ខាងជើង","*hkaang-ceung*","utara ⚠️ harfiah \"sisi kaki\""],
+       ["ខាងត្បូង","*hkaang-tbong*","selatan"],
+       ["ខាងកើត","*hkaang-kaeut*","timur ⚠️ harfiah \"sisi terbit\""],
+       ["ខាងលិច","*hkaang-lic*","barat ⚠️ harfiah \"sisi tenggelam\""]
+      ]}
+     ],
+     "after": ["⚠️ Perhatikan **timur dan barat**: ខាងកើត dari កើត (terbit) dan ខាងលិច dari លិច (tenggelam) — logika yang persis sama dengan \"matahari terbit\" dan \"matahari terbenam\" dalam bahasa Indonesia. Sekali kamu melihatnya, kamu tidak akan pernah tertukar lagi."]
+    },
+    {
+     "title": "Memberi dan meminta arah",
+     "body": ["Enam kata kerja ini menyusun hampir seluruh petunjuk arah yang akan kamu dengar dan ucapkan."],
+     "tables": [
+      {"head":["Khmer","Cara baca","Artinya"],"rows":[
+       ["ដើរ","*daeu*","berjalan"],
+       ["បត់","*bat*","belok"],
+       ["ត្រង់","*traang*","lurus"],
+       ["ឆ្លង","*hclaang*","menyeberang"],
+       ["ឈប់","*hcup*","berhenti"],
+       ["ដល់","*dal*","sampai, tiba di"]
+      ]},
+      {"head":["Kalimat penting","Cara baca","Artinya"],"rows":[
+       ["… នៅឯណា?","*… neuw 'ae-naa?*","… di mana?"],
+       ["ទៅ … យ៉ាងម៉េច?","*teuw … yaang-méc?*","ke … bagaimana?"],
+       ["ឆ្ងាយទេ?","*hcngaay té?*","jauh?"],
+       ["ប៉ុន្មាននាទី?","*pon-maan nie-tii?*","berapa menit?"],
+       ["ខ្ញុំវង្វេងផ្លូវ","*hknyom wong-wéng hplow*","saya tersesat"],
+       ["ឈប់ទីនេះ","*hcup tii-nih*","berhenti di sini"]
+      ]}
+     ],
+     "after": ["⚠️ **Jarak di Kamboja diukur dengan waktu, bukan kilometer.** Pertanyaan ប៉ុន្មានគីឡូម៉ែត្រ? (\"berapa kilometer?\") sering dijawab dengan tebakan yang tidak berguna. Pertanyaan ប៉ុន្មាននាទី? selalu mendapat jawaban yang bisa kamu pakai."]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Naik tuk-tuk tanpa salah paham",
+   "blocks": [
+    {"type":"p","text":"Tuk-tuk adalah cara paling lazim berpindah di kota Kamboja. Aturannya sederhana: **sepakati harga sebelum naik**, sebutkan tujuan dengan jelas, dan siapkan uang pas dalam riel."},
+    {"type":"tabel","head":["Bahasa Indonesia","Khmer","Cara baca"],"rows":[
+     ["Ke pasar berapa?","ទៅផ្សារប៉ុន្មាន?","*teuw hpsaa pon-maan?*"],
+     ["Mahal, tiga ribu saja ya?","ថ្លៃ! បីពាន់បានទេ?","*htlay! bey poan baan té?*"],
+     ["Tolong pelan-pelan.","សូមបើកយឺតៗ","*soum baeuk yeut-yeut*"],
+     ["Berhenti di sini.","ឈប់ទីនេះ","*hcup tii-nih*"],
+     ["Tunggu sebentar, ya.","រង់ចាំបន្តិចផង","*roang-cam ban-tec hpaang*"],
+     ["Saya tersesat.","ខ្ញុំវង្វេងផ្លូវ","*hknyom wong-wéng hplow*"]
+    ]},
+    {"type":"sub","text":"Tempat yang sering ditanyakan"},
+    {"type":"tabel","head":["Khmer","Cara baca","Bahasa Indonesia"],"rows":[
+     ["ប្រៃសណីយ៍","*prey-sa-nii*","kantor pos"],
+     ["ធនាគារ","*htu-nie-kiè*","bank"],
+     ["មន្ទីរពេទ្យ","*mon-tii-pèt*","rumah sakit"],
+     ["ប៉ុស្តិ៍ប៉ូលិស","*poh polih*","kantor polisi"],
+     ["ស្ថានទូត","*s-htaan-tuut*","kedutaan"],
+     ["វត្ត","*woat*","kuil, wat"],
+     ["ព្រះវិហារ","*preah wi-hiè*","masjid; rumah ibadah besar"],
+     ["បង្គន់","*bang-kun*","toilet"],
+     ["ស្ថានីយ៍រថភ្លើង","*s-htaa-nii rot-hpleung*","stasiun kereta"],
+     ["ព្រលានយន្តហោះ","*pra-lien yun-hah*","bandara"]
+    ]},
+    {"type":"kotak","title":"Kenapa jalan-jalan Phnom Penh bernomor","items":[
+     "**Jalan besar bernomor ganjil membujur utara-selatan, yang genap membujur timur-barat.** Sekali kamu tahu ini, kamu hampir tidak bisa tersesat: kalau nomor jalannya naik, kamu berjalan ke satu arah tetap.",
+     "**Orang Kamboja lebih sering menyebut patokan daripada nama jalan.** \"Di belakang pasar\", \"seberang wat\", \"sebelah kedai kopi\". Belajar menyebut patokan jauh lebih berguna daripada menghafal nama jalan.",
+     "**Sungai adalah patokan terbesar.** ទន្លេ (*ton-lé*) berarti sungai, dan di Phnom Penh selalu berarti tepi sungai Tonlé Sap. Menyebutnya kepada sopir tuk-tuk mana pun akan selalu dimengerti."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  {"km":"ផ្លូវ","baca":"hplow","id":"jalan"},
+  {"km":"ឆ្វេង","baca":"hcwéng","id":"kiri"},
+  {"km":"ស្ដាំ","baca":"sdam","id":"kanan"},
+  {"km":"ត្រង់","baca":"traang","id":"lurus"},
+  {"km":"បត់","baca":"bat","id":"belok"},
+  {"km":"ដើរ","baca":"daeu","id":"berjalan"},
+  {"km":"ឈប់","baca":"hcup","id":"berhenti"},
+  {"km":"ដល់","baca":"dal","id":"sampai di"},
+  {"km":"ខាង","baca":"hkaang","id":"sisi, sebelah"},
+  {"km":"លើ","baca":"laeu","id":"atas, permukaan"},
+  {"km":"ក្រោម","baca":"kraom","id":"bawah"},
+  {"km":"ក្នុង","baca":"knong","id":"dalam"},
+  {"km":"ក្រៅ","baca":"kraw","id":"luar"},
+  {"km":"មុខ","baca":"muk","id":"muka, depan"},
+  {"km":"ក្រោយ","baca":"kraoy","id":"belakang"},
+  {"km":"ចន្លោះ","baca":"can-loh","id":"antara"},
+  {"km":"ជាប់នឹង","baca":"coap neng","id":"bersebelahan dengan"},
+  {"km":"ទន្លេ","baca":"ton-lé","id":"sungai"},
+  {"km":"ភ្លើងស្តុប","baca":"hpleung sdop","id":"lampu lalu lintas"},
+  {"km":"ថ្មើរជើង","baca":"htmaeu-ceung","id":"jalan kaki"},
+  {"km":"យ៉ាងម៉េច","baca":"yaang-méc","id":"bagaimana"},
+  {"km":"រួច","baca":"ruèc","id":"lalu, kemudian"},
+  {"km":"ទៀត","baca":"tiet","id":"lagi"},
+  {"km":"ប្រៃសណីយ៍","baca":"prey-sa-nii","id":"kantor pos"},
+  {"km":"ធនាគារ","baca":"htu-nie-kiè","id":"bank"},
+  {"km":"ហាង","baca":"haang","id":"toko, kedai"},
+  {"km":"វង្វេងផ្លូវ","baca":"wong-wéng hplow","id":"tersesat"},
+  {"km":"ដំណើរល្អ","baca":"dam-naeu l'aa","id":"selamat jalan"}
+ ],
+ "exercises": [
+  {"prompt":"Lengkapi dengan លើ, ក្រោម, ក្នុង, atau ក្រៅ.","items":[
+   "សៀវភៅនៅ____តុ។",
+   "ឆ្កែនៅ____តុ។",
+   "គាត់នៅ____ផ្ទះ។",
+   "ម៉ូតូនៅ____ផ្ទះ។"
+  ]},
+  {"prompt":"Terjemahkan arahnya ke bahasa Indonesia.","items":[
+   "ដើរត្រង់ទៅមុខ។",
+   "បត់ស្ដាំនៅភ្លើងស្តុប។",
+   "ធនាគារនៅខាងក្រោយផ្សារ។",
+   "ដប់នាទីដោយថ្មើរជើង។"
+  ]},
+  {"prompt":"Susun jadi kalimat yang benar.","items":[
+   "ឯណា / នៅ / ប្រៃសណីយ៍",
+   "យ៉ាងម៉េច / ទីនោះ / ទៅ",
+   "ខាងឆ្វេង / នៅ / ធនាគារ",
+   "ទីនេះ / ឈប់"
+  ]},
+  {"prompt":"Terjemahkan ke bahasa Khmer.","items":[
+   "Kantor pos di mana?",
+   "Jalan lurus ke depan.",
+   "Belok kiri di lampu merah.",
+   "Jauh tidak?",
+   "Sepuluh menit jalan kaki.",
+   "Berhenti di sini."
+  ]}
+ ],
+ "answers": [
+  "លើ — ក្រោម — ក្នុង — ក្រៅ",
+  "Jalan lurus ke depan. — Belok kanan di lampu lalu lintas. — Bank ada di belakang pasar. — Sepuluh menit jalan kaki.",
+  "ប្រៃសណីយ៍នៅឯណា? — ទៅទីនោះយ៉ាងម៉េច? — ធនាគារនៅខាងឆ្វេង។ — ឈប់ទីនេះ។",
+  "ប្រៃសណីយ៍នៅឯណា? — ដើរត្រង់ទៅមុខ។ — បត់ឆ្វេងនៅភ្លើងស្តុប។ — ឆ្ងាយទេ? — ដប់នាទីដោយថ្មើរជើង។ — ឈប់ទីនេះ។"
+ ]
+}

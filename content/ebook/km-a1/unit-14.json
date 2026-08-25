@@ -1,0 +1,179 @@
+{
+ "title": "Kata sifat yang sebenarnya kata kerja",
+ "title_target": "គុណនាម ជា កិរិយាសព្ទ — kun-nie-niem ciè ke-re-yie-sap",
+ "goal": "Menggambarkan orang, benda, dan keadaan — dan berhenti mencari kata \"adalah\" yang memang tidak pernah ada di depan kata sifat.",
+ "bekal": [
+  "menyusun kalimat sifat tanpa kata penghubung apa pun",
+  "membedakan kapan ជា dipakai dan kapan tidak",
+  "menyangkal kata sifat dengan មិន … ទេ",
+  "memakai penguat ណាស់, ខ្លាំង, ពេក, បន្តិច",
+  "menggambarkan orang dan barang dengan tiga puluh kata sifat"
+ ],
+ "dialogs": [
+  {
+   "title": "កិច្ចសន្ទនា — Mencari kamar sewa",
+   "intro": "Ani mencari tempat tinggal yang lebih dekat ke sekolahnya. Perhatikan bahwa **tidak satu pun** kalimat sifat dalam dialog ini memakai kata penghubung. \"Kamarnya besar\" adalah dua kata, bukan tiga.",
+   "lines": [
+    {"speaker":"អានី:","text":"[បន្ទប់|ban-tup] [នេះ|nih] [ធំ|htum] [ទេ|té] [ចាស|caah]?","id":"Kamar ini besar?","literal":"kamar — ini — besar — kah — ya(pr)?"},
+    {"speaker":"ម្ចាស់ផ្ទះ:","text":"[ធំ|htum] [ល្មម|lmòòm] [ចាស|caah]។ [ហើយ|haeuy] [ភ្លឺ|hpleu] [ណាស់|nah] [ដែរ|dae]។","id":"Cukup besar. Dan terang sekali juga.","literal":"besar — cukup — ya(pr). dan — terang — sangat — juga."},
+    {"speaker":"អានី:","text":"[ស្ងាត់|sngat] [ទេ|té] [ចាស|caah]? [ខ្ញុំ|hknyom] [មិន|min] [ចូលចិត្ត|coul-cet] [កន្លែង|kan-laeng] [ថ្លង់|htlaang] [ទេ|té]។","id":"Sepi? Saya tidak suka tempat yang berisik.","literal":"sepi — kah — ya(pr)? saya — tidak — masuk-hati — tempat — bising — tidak."},
+    {"speaker":"ម្ចាស់ផ្ទះ:","text":"[ស្ងាត់|sngat] [ណាស់|nah] [ចាស|caah]។ [ផ្លូវ|hplow] [តូច|touc], [ឡាន|laan] [តិច|tec]។","id":"Sepi sekali. Jalannya kecil, mobilnya sedikit.","literal":"sepi — sangat — ya(pr). jalan — kecil, mobil — sedikit."},
+    {"speaker":"អានី:","text":"[ទឹក|teuk] [ក្តៅ|kdaw] [មាន|mien] [ទេ|té] [ចាស|caah]?","id":"Ada air panas?","literal":"air — panas — ada — kah — ya(pr)?"},
+    {"speaker":"ម្ចាស់ផ្ទះ:","text":"[មាន|mien] [ចាស|caah]។ [ប៉ុន្តែ|pon-tae] [បន្ទប់ទឹក|ban-tup-teuk] [តូច|touc] [បន្តិច|ban-tec]។","id":"Ada. Tapi kamar mandinya agak kecil.","literal":"ada — ya(pr). tetapi — kamar-air — kecil — sedikit."},
+    {"speaker":"អានី:","text":"[អត់អីទេ|'at-'ey-té] [ចាស|caah]។ [តម្លៃ|tam-lay] [ប៉ុន្មាន|pon-maan]?","id":"Tidak apa-apa. Harganya berapa?","literal":"tidak-apa-tidak — ya(pr). harga — berapa?"},
+    {"speaker":"ម្ចាស់ផ្ទះ:","text":"[មួយ|muèy] [ខែ|hkae] [មួយរយ|muèy-ròòy] [ហាសិប|haa-sep] [ដុល្លារ|dol-laa] [ចាស|caah]។","id":"Satu bulan seratus lima puluh dolar.","literal":"satu — bulan — satu-ratus — lima-puluh — dolar — ya(pr)."},
+    {"speaker":"អានី:","text":"[ថ្លៃ|htlay] [បន្តិច|ban-tec] [ចាស|caah]។ [បន្ទប់|ban-tup] [មុន|mun] [ខ្ញុំ|hknyom] [ថោក|htaok] [ជាង|cièng]។","id":"Agak mahal. Kamar saya sebelumnya lebih murah.","literal":"mahal — sedikit — ya(pr). kamar — dulu — saya — murah — lebih."},
+    {"speaker":"ម្ចាស់ផ្ទះ:","text":"[ប៉ុន្តែ|pon-tae] [ទីនេះ|tii-nih] [ស្អាត|s'aat] [ជាង|cièng] [ចាស|caah]។ [ថ្មី|htmey] [ហើយ|haeuy] [ជិត|cit] [សាលា|saa-laa]។","id":"Tapi di sini lebih bersih. Baru dan dekat sekolah.","literal":"tetapi — sini — bersih — lebih — ya(pr). baru — dan — dekat — sekolah."},
+    {"speaker":"អានី:","text":"[ពិត|pit] [ចាស|caah]។ [ខ្ញុំ|hknyom] [គិត|ket] [មួយ|muèy] [យប់|yup] [សិន|sen] [បាន|baan] [ទេ|té]?","id":"Betul. Saya pikir semalam dulu, boleh?","literal":"benar — ya(pr). saya — pikir — satu — malam — dulu — boleh — kah?"},
+    {"speaker":"ម្ចាស់ផ្ទះ:","text":"[បាន|baan] [ចាស|caah]។ [មិន|min] [ប្រញាប់|pra-ñap] [ទេ|té]។","id":"Boleh. Tidak buru-buru.","literal":"boleh — ya(pr). tidak — buru-buru — tidak."}
+   ],
+   "grammars": [
+    {
+     "title": "⚠️ Kata sifat ADALAH kata kerja — tidak ada \"adalah\"",
+     "body": ["Ini pergeseran cara berpikir yang paling penting di paruh kedua modul. Dalam bahasa Khmer, ធំ tidak berarti \"besar\" melainkan **\"menjadi besar\"** — ia adalah kata kerja penuh, dan bisa berdiri sebagai kalimat sendirian."],
+     "tables": [
+      {"head":["Khmer","Cara baca","Harfiah","Terjemahan"],"rows":[
+       ["បន្ទប់ធំ","*ban-tup htum*","kamar besar","kamarnya besar"],
+       ["ខ្ញុំឃ្លាន","*hknyom hklièn*","saya lapar","saya lapar"],
+       ["អាហារឆ្ងាញ់","*'aa-haa hcngañ*","makanan enak","makanannya enak"],
+       ["ថ្ងៃនេះក្តៅ","*htngay nih kdaw*","hari ini panas","hari ini panas"]
+      ]}
+     ],
+     "after": [
+      "⚠️ Karena kata sifat adalah kata kerja, **ia disangkal seperti kata kerja**: មិន … ទេ. \"Saya tidak lapar\" adalah ខ្ញុំមិនឃ្លានទេ, bukan sesuatu yang memakai \"bukan\".",
+      "⚠️ Dan karena itu pula, **ជា tidak pernah dipakai di depan kata sifat**. ខ្ញុំជាឃ្លាន adalah kesalahan yang sangat khas penutur Indonesia, karena kita merasa perlu menyisipkan sesuatu. Tidak perlu.",
+      "Kabar baiknya: bahasa Indonesia sesungguhnya melakukan hal yang sama. \"Saya lapar\" — dua kata, tanpa \"adalah\". Yang perlu kamu buang bukan kebiasaan bahasa Indonesia, melainkan kebiasaan bahasa Inggris yang menyisipkan *am/is/are*."
+     ]
+    },
+    {
+     "title": "Kapan ជា dipakai, kapan tidak",
+     "body": ["ជា (*ciè*) hanya menghubungkan **dua kata benda**. Kalau yang mengikutinya kata sifat, ia tidak boleh ada. Aturan ini tidak punya kekecualian di tingkat A1."],
+     "tables": [
+      {"head":["Kalimat","Benar?","Kenapa"],"rows":[
+       ["ខ្ញុំជាគ្រូ","✓","guru = kata benda"],
+       ["ខ្ញុំជាជនជាតិឥណ្ឌូនេស៊ី","✓","orang Indonesia = kata benda"],
+       ["នេះជាបន្ទប់ខ្ញុំ","✓","kamar saya = kata benda"],
+       ["ខ្ញុំជាឃ្លាន","✗","lapar = kata sifat → ខ្ញុំឃ្លាន"],
+       ["បន្ទប់ជាធំ","✗","besar = kata sifat → បន្ទប់ធំ"],
+       ["ថ្ងៃនេះជាក្តៅ","✗","panas = kata sifat → ថ្ងៃនេះក្តៅ"]
+      ]}
+     ],
+     "after": ["Jalan pintas untuk memeriksanya: **kalau kata sesudahnya bisa didahului \"sangat\", ia kata sifat — buang ជា.** \"Sangat guru\" tidak masuk akal, jadi ជាគ្រូ benar. \"Sangat lapar\" masuk akal, jadi ជាឃ្លាន salah."]
+    },
+    {
+     "title": "Penguat dan pelemah",
+     "body": ["Empat kata kecil ini mengatur seberapa kuat sifatnya, dan semuanya berdiri **di belakang** kata sifatnya — kebalikan dari \"sangat\" dan \"agak\" dalam bahasa Indonesia."],
+     "tables": [
+      {"head":["Kata","Cara baca","Artinya","Contoh"],"rows":[
+       ["ណាស់","*nah*","sangat","ធំណាស់ — besar sekali"],
+       ["ខ្លាំង","*hklang*","sangat (lebih kuat)","ក្តៅខ្លាំង — panas sekali"],
+       ["ពេក","*péék*","terlalu","ថ្លៃពេក — terlalu mahal"],
+       ["បន្តិច","*ban-tec*","sedikit, agak","ថ្លៃបន្តិច — agak mahal"],
+       ["ល្មម","*lmòòm*","cukup, pas","ធំល្មម — cukup besar"],
+       ["ណាស់ណាស់","*nah-nah*","luar biasa","ឆ្ងាញ់ណាស់ណាស់ — enak luar biasa"]
+      ]}
+     ],
+     "after": ["⚠️ Semuanya berdiri **di belakang**, tanpa kekecualian. ណាស់ធំ dan ពេកថ្លៃ salah. Ini salah satu dari sedikit tempat yang urutannya berbeda dari bahasa Indonesia, jadi patut diperiksa setiap kali kamu menyusun kalimat sifat."]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tiga puluh kata sifat yang menutupi hampir semuanya",
+   "blocks": [
+    {"type":"tabel","head":["Khmer","Cara baca","Arti","Lawannya","Cara baca","Arti"],"rows":[
+     ["ធំ","*htum*","besar","តូច","*touc*","kecil"],
+     ["វែង","*wéng*","panjang","ខ្លី","*hkley*","pendek"],
+     ["ថ្មី","*htmey*","baru","ចាស់","*cah*","tua, lama"],
+     ["ល្អ","*l'aa*","bagus","អាក្រក់","*'aa-krak*","jelek"],
+     ["ស្អាត","*s'aat*","bersih, cantik","កខ្វក់","*kaa-hkwak*","kotor"],
+     ["ក្តៅ","*kdaw*","panas","ត្រជាក់","*tra-ceak*","dingin"],
+     ["ភ្លឺ","*hpleu*","terang","ងងឹត","*ngò-ngeut*","gelap"],
+     ["ស្ងាត់","*sngat*","sepi","ថ្លង់","*htlaang*","berisik"],
+     ["ធ្ងន់","*htngun*","berat","ស្រាល","*sraal*","ringan"],
+     ["លឿន","*leuèn*","cepat","យឺត","*yeut*","lambat"],
+     ["ងាយ","*ngiey*","mudah","ពិបាក","*pi-baak*","sulit"],
+     ["សប្បាយ","*sap-baay*","senang","ក្រៀមក្រំ","*kriem-kram*","sedih"],
+     ["ខ្លាំង","*hklang*","kuat","ខ្សោយ","*hksaoy*","lemah"],
+     ["ច្រើន","*craeun*","banyak","តិច","*tec*","sedikit"],
+     ["អស់កម្លាំង","*'ah kam-lang*","lelah","ស្រស់","*sroh*","segar"]
+    ]},
+    {"type":"sub","text":"Menggambarkan orang"},
+    {"type":"tabel","head":["Khmer","Cara baca","Bahasa Indonesia"],"rows":[
+     ["ចិត្តល្អ","*cet l'aa*","baik hati — harfiah \"hatinya bagus\""],
+     ["ពូកែ","*puu-kae*","pandai, hebat"],
+     ["ខ្ជិល","*hkcel*","malas"],
+     ["ឧស្សាហ៍","*'ot-saa*","rajin"],
+     ["សុភាព","*so-hpiep*","sopan, lembut"],
+     ["អៀនខ្មាស់","*'ien-hkmah*","pemalu"],
+     ["ចាស់","*cah*","tua"],
+     ["ក្មេង","*kméng*","muda"],
+     ["ធាត់","*htoat*","gemuk"],
+     ["ស្គម","*skòòm*","kurus"]
+    ]},
+    {"type":"p","text":"⚠️ Perhatikan **ចិត្តល្អ** — harfiahnya \"hati bagus\". Kata ចិត្ត adalah kata Sanskerta yang sama dengan **cita** dalam bahasa Indonesia, tetapi artinya di sini adalah hati sebagai tempat perasaan. Pola ini berulang: **ចូលចិត្ត** (suka) harfiahnya \"masuk hati\", **ខឹង** berbeda dari **ចិត្តខូច** (patah hati, harfiah \"hati rusak\"). Sekali kamu melihat ចិត្ត, kamu akan menemukannya di puluhan kata."}
+   ]
+  }
+ ],
+ "vocab": [
+  {"km":"បន្ទប់","baca":"ban-tup","id":"kamar"},
+  {"km":"បន្ទប់ទឹក","baca":"ban-tup-teuk","id":"kamar mandi"},
+  {"km":"ធំ / តូច","baca":"htum / touc","id":"besar / kecil"},
+  {"km":"ភ្លឺ / ងងឹត","baca":"hpleu / ngò-ngeut","id":"terang / gelap"},
+  {"km":"ស្ងាត់ / ថ្លង់","baca":"sngat / htlaang","id":"sepi / berisik"},
+  {"km":"ស្អាត","baca":"s'aat","id":"bersih; cantik"},
+  {"km":"ក្តៅ / ត្រជាក់","baca":"kdaw / tra-ceak","id":"panas / dingin"},
+  {"km":"ល្មម","baca":"lmòòm","id":"cukup, pas"},
+  {"km":"ណាស់","baca":"nah","id":"sangat"},
+  {"km":"ខ្លាំង","baca":"hklang","id":"sangat; kuat"},
+  {"km":"ចូលចិត្ត","baca":"coul-cet","id":"suka — harfiah \"masuk hati\""},
+  {"km":"កន្លែង","baca":"kan-laeng","id":"tempat"},
+  {"km":"តម្លៃ","baca":"tam-lay","id":"harga"},
+  {"km":"ជាង","baca":"cièng","id":"lebih … daripada"},
+  {"km":"គិត","baca":"ket","id":"berpikir; menghitung"},
+  {"km":"សិន","baca":"sen","id":"dulu, sementara"},
+  {"km":"ប្រញាប់","baca":"pra-ñap","id":"buru-buru"},
+  {"km":"ពិបាក / ងាយ","baca":"pi-baak / ngiey","id":"sulit / mudah"},
+  {"km":"ធ្ងន់ / ស្រាល","baca":"htngun / sraal","id":"berat / ringan"},
+  {"km":"អស់កម្លាំង","baca":"'ah kam-lang","id":"lelah"},
+  {"km":"សប្បាយ","baca":"sap-baay","id":"senang"},
+  {"km":"ចិត្តល្អ","baca":"cet l'aa","id":"baik hati"},
+  {"km":"ខ្ជិល / ឧស្សាហ៍","baca":"hkcel / 'ot-saa","id":"malas / rajin"},
+  {"km":"ម្ចាស់ផ្ទះ","baca":"m-cah hpteah","id":"pemilik rumah"}
+ ],
+ "exercises": [
+  {"prompt":"Benar atau salah? Betulkan yang salah.","items":[
+   "ខ្ញុំជាឃ្លាន។",
+   "ខ្ញុំជាគ្រូ។",
+   "បន្ទប់ជាធំ។",
+   "នេះជាបន្ទប់ខ្ញុំ។"
+  ]},
+  {"prompt":"Letakkan penguatnya di tempat yang benar: ណាស់, ពេក, atau បន្តិច.","items":[
+   "ធំ____ (besar sekali)",
+   "ថ្លៃ____ (terlalu mahal)",
+   "តូច____ (agak kecil)",
+   "ឆ្ងាញ់____ (enak sekali)"
+  ]},
+  {"prompt":"Susun jadi kalimat yang benar.","items":[
+   "ណាស់ / ស្ងាត់ / នេះ / កន្លែង",
+   "ទេ / ខ្ញុំ / ឃ្លាន / មិន",
+   "ជាង / ថោក / បន្ទប់មុន",
+   "បន្តិច / ទឹក / តូច / បន្ទប់"
+  ]},
+  {"prompt":"Terjemahkan ke bahasa Khmer. Ingat: tanpa kata \"adalah\".","items":[
+   "Kamar ini besar.",
+   "Saya tidak lapar.",
+   "Hari ini panas sekali.",
+   "Terlalu mahal.",
+   "Saya tidak suka tempat yang berisik.",
+   "Dia baik hati."
+  ]}
+ ],
+ "answers": [
+  "salah → ខ្ញុំឃ្លាន។ — benar — salah → បន្ទប់ធំ។ — benar",
+  "ណាស់ — ពេក — បន្តិច — ណាស់",
+  "កន្លែងនេះស្ងាត់ណាស់។ — ខ្ញុំមិនឃ្លានទេ។ — បន្ទប់មុនថោកជាង។ — បន្ទប់ទឹកតូចបន្តិច។",
+  "បន្ទប់នេះធំ។ — ខ្ញុំមិនឃ្លានទេ។ — ថ្ងៃនេះក្តៅណាស់។ — ថ្លៃពេក។ — ខ្ញុំមិនចូលចិត្តកន្លែងថ្លង់ទេ។ — គាត់ចិត្តល្អ។"
+ ]
+}

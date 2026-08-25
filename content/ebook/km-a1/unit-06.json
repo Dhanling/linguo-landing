@@ -1,0 +1,184 @@
+{
+ "title": "Di pasar: menghitung dan menawar",
+ "title_target": "នៅផ្សារ — neuw hpsaa",
+ "goal": "Membeli barang, menghitungnya dengan penggolong yang benar, dan menawar — sambil menemukan bahwa cara menghitung benda dalam bahasa Khmer sama persis dengan cara kita.",
+ "bekal": [
+  "menghitung benda dengan susunan benda–angka–penggolong",
+  "memakai sepuluh penggolong yang benar-benar terpakai",
+  "menawar dengan ចុះថ្លៃបន្តិចបានទេ?",
+  "menunjuk barang dengan នេះ dan នោះ",
+  "menyebut warna dan ukuran"
+ ],
+ "dialogs": [
+  {
+   "title": "កិច្ចសន្ទនា — Psar Chas, pukul tujuh pagi",
+   "intro": "Sreymom mengajak Ani ke pasar lama. Perhatikan urutan tiap kali sesuatu dihitung: **bendanya dulu, lalu angkanya, lalu penggolongnya** — persis seperti kita berkata \"mangga lima buah\". Penutur bahasa Inggris harus membongkar kebiasaannya di sini; kamu tidak perlu.",
+   "lines": [
+    {"speaker":"ស្រីមុំ:","text":"[បង|baang] [ចង់|cang] [ទិញ|teñ] [អ្វី|'wey] [ចាស|caah]?","id":"Kakak mau beli apa?","literal":"kak — mau — beli — apa — ya(pr)?"},
+    {"speaker":"អានី:","text":"[ខ្ញុំ|hknyom] [ចង់|cang] [ទិញ|teñ] [ផ្លែឈើ|hplae-hceu] [និង|neng] [ត្រី|trey] [ចាស|caah]។","id":"Saya mau beli buah dan ikan.","literal":"saya — mau — beli — buah-kayu — dan — ikan — ya(pr)."},
+    {"speaker":"អ្នកលក់:","text":"[ស្វាយ|swaay] [ថ្មី|htmey] [ចាស|caah]! [ផ្អែម|hp'aem] [ណាស់|nah]។","id":"Mangga baru! Manis sekali.","literal":"mangga — baru — ya(pr)! manis — sangat."},
+    {"speaker":"អានី:","text":"[ស្វាយ|swaay] [ប្រាំ|pram] [ផ្លែ|hplae] [ថ្លៃ|htlay] [ប៉ុន្មាន|pon-maan] [ចាស|caah]?","id":"Mangga lima buah berapa harganya?","literal":"mangga — lima — buah — mahal — berapa — ya(pr)?"},
+    {"speaker":"អ្នកលក់:","text":"[មួយ|muèy] [ម៉ឺន|meun] [រៀល|riel] [ចាស|caah]។","id":"Sepuluh ribu riel.","literal":"satu — sepuluh-ribu — riel — ya(pr)."},
+    {"speaker":"អានី:","text":"[ថ្លៃ|htlay] [ណាស់|nah]! [ចុះថ្លៃ|coh-htlay] [បន្តិច|ban-tec] [បាន|baan] [ទេ|té] [ចាស|caah]?","id":"Mahal sekali! Boleh turun sedikit?","literal":"mahal — sangat! turun-harga — sedikit — boleh — kah — ya(pr)?"},
+    {"speaker":"អ្នកលក់:","text":"[ប្រាំបី|pram-bey] [ពាន់|poan] [ចុះ|coh]។ [ចុងក្រោយ|cong-kraoy] [ហើយ|haeuy] [ចាស|caah]។","id":"Delapan ribu deh. Terakhir, ya.","literal":"lima-tiga — ribu — turun. ujung-akhir — sudah — ya(pr)."},
+    {"speaker":"អានី:","text":"[បាន|baan] [ចាស|caah]។ [ចុះ|coh] [ត្រី|trey] [នេះ|nih]?","id":"Baik. Kalau ikan ini?","literal":"boleh — ya(pr). lalu — ikan — ini?"},
+    {"speaker":"អ្នកលក់:","text":"[ត្រី|trey] [ពីរ|pii] [ក្បាល|kbaal] [ដប់ពីរ|dop-pii] [ពាន់|poan] [ចាស|caah]។","id":"Ikan dua ekor dua belas ribu.","literal":"ikan — dua — kepala — sepuluh-dua — ribu — ya(pr)."},
+    {"speaker":"ស្រីមុំ:","text":"[បង|baang]! [យក|yòòk] [ត្រី|trey] [នោះ|nuh] [ល្អ|l'aa] [ជាង|cièng]។ [ធំ|htum] [ជាង|cièng]។","id":"Kak! Ambil ikan itu lebih bagus. Lebih besar.","literal":"kak! ambil — ikan — itu — bagus — lebih. besar — lebih."},
+    {"speaker":"អានី:","text":"[អញ្ចឹង|'añ-ceung] [យក|yòòk] [ត្រី|trey] [នោះ|nuh] [ពីរ|pii] [ក្បាល|kbaal] [ចាស|caah]។ [ទាំងអស់|teang-'ah] [ប៉ុន្មាន|pon-maan]?","id":"Kalau begitu ambil ikan itu dua ekor. Semuanya berapa?","literal":"begitu — ambil — ikan — itu — dua — kepala — ya(pr). semua — berapa?"},
+    {"speaker":"អ្នកលក់:","text":"[ម្ភៃ|m-hpey] [ពាន់|poan] [ចាស|caah]។ [ថង់|htang] [មួយ|muèy] [ឬ|reu] [ពីរ|pii]?","id":"Dua puluh ribu. Kantongnya satu atau dua?","literal":"dua-puluh — ribu — ya(pr). kantong — satu — atau — dua?"},
+    {"speaker":"អានី:","text":"[មួយ|muèy] [ថង់|htang] [គ្រប់គ្រាន់|krup-kroan] [ចាស|caah]។ [អរគុណ|'aa-kun]!","id":"Satu kantong cukup. Terima kasih!","literal":"satu — kantong — cukup — ya(pr). terima-kasih!"}
+   ],
+   "grammars": [
+    {
+     "title": "Menghitung benda: susunan yang sudah kamu punya",
+     "body": ["Bahasa Khmer menghitung dengan susunan **benda – angka – penggolong**. Bahasa Indonesia melakukan hal yang sama persis: \"mangga lima buah\", \"ikan dua ekor\", \"kertas tiga lembar\". Kamu tinggal mengganti kosakatanya, tanpa mengubah kebiasaan berpikir sama sekali."],
+     "tables": [
+      {"head":["Khmer","Cara baca","Harfiah","Bahasa Indonesia"],"rows":[
+       ["ស្វាយ ប្រាំ ផ្លែ","*swaay pram hplae*","mangga lima buah","lima mangga"],
+       ["ត្រី ពីរ ក្បាល","*trey pii kbaal*","ikan dua kepala","dua ekor ikan"],
+       ["សិស្ស ដប់ នាក់","*seh dop neak*","siswa sepuluh orang","sepuluh siswa"],
+       ["តែ មួយ កែវ","*tae muèy kaew*","teh satu gelas","segelas teh"],
+       ["ផ្ទះ បី ខ្នង","*hpteah bey hknaang*","rumah tiga bangunan","tiga rumah"]
+      ]}
+     ],
+     "after": [
+      "⚠️ Ini kebalikan dari bahasa Inggris (*five mangoes*) dan juga kebalikan dari bahasa Thai dan Myanmar dalam beberapa keadaan. Kalau kamu pernah belajar bahasa lain di kawasan ini, tahan dorongan untuk membalik — bahasa Khmer justru yang paling mirip dengan kita.",
+      "Kalau kamu lupa penggolongnya: **ulangi saja bendanya** — ថ្ងៃ បី ថ្ងៃ (\"hari tiga hari\") benar dan lazim. Atau **hilangkan sama sekali** — ស្វាយ ប្រាំ terdengar santai tapi tidak pernah salah. Bahasa Khmer jauh lebih longgar soal ini daripada bahasa Thai."
+     ]
+    },
+    {
+     "title": "នេះ dan នោះ — menunjuk sambil berbelanja",
+     "body": ["Kata penunjuk berdiri **di belakang** bendanya, sama seperti bahasa Indonesia. Tidak ada yang perlu dibalik, dan tidak ada perubahan bentuk untuk jamak."],
+     "tables": [
+      {"head":["Khmer","Cara baca","Artinya"],"rows":[
+       ["ត្រីនេះ","*trey nih*","ikan ini"],
+       ["ត្រីនោះ","*trey nuh*","ikan itu"],
+       ["ស្វាយទាំងនេះ","*swaay teang-nih*","mangga-mangga ini"],
+       ["យកមួយនេះ","*yòòk muèy nih*","ambil yang ini"],
+       ["ដូចនេះ","*douc nih*","yang seperti ini"]
+      ]}
+     ],
+     "after": ["Di pasar, menunjuk dengan jari telunjuk dianggap agak kasar. Orang Kamboja menunjuk dengan **seluruh telapak tangan terbuka menghadap ke atas**, atau cukup dengan dagu dan pandangan mata. Kalimat យកមួយនេះ sambil membuka telapak tangan sudah lebih dari cukup."]
+    },
+    {
+     "title": "Menawar: aturan tak tertulis Psar Chas",
+     "body": ["Menawar di pasar tradisional Kamboja bukan pertengkaran, melainkan percakapan yang diharapkan. Menerima harga pertama justru membuat penjual merasa kamu tidak berminat berbincang."],
+     "tables": [
+      {"head":["Bahasa Indonesia","Khmer","Cara baca"],"rows":[
+       ["Boleh turun sedikit?","ចុះថ្លៃបន្តិចបានទេ?","*coh-htlay ban-tec baan té?*"],
+       ["Mahal sekali!","ថ្លៃណាស់!","*htlay nah!*"],
+       ["Kalau … boleh?","… បានទេ?","*… baan té?*"],
+       ["Terakhir berapa?","ចុងក្រោយប៉ុន្មាន?","*cong-kraoy pon-maan?*"],
+       ["Ya sudah, saya ambil.","អញ្ចឹង ខ្ញុំយក","*'añ-ceung, hknyom yòòk*"],
+       ["Lain kali saja.","លើកក្រោយចុះ","*laeuk-kraoy coh*"]
+      ]}
+     ],
+     "after": [
+      "**Tawarlah sekitar tiga perempat harga pertama**, bukan setengahnya. Menawar setengah — kebiasaan sebagian turis — dianggap tidak serius dan sering mengakhiri percakapan.",
+      "⚠️ **Jangan menawar di toko berlabel harga, warung makan, atau supermarket.** Menawar hanya berlaku di pasar tradisional dan untuk tuk-tuk. Menawar harga semangkuk mi terdengar seperti menawar tagihan listrik.",
+      "Dan yang paling penting: **tersenyumlah**. Menawar dengan wajah datar terbaca sebagai marah. Kalimat terakhir yang menutup tawar-menawar hampir selalu diucapkan sambil tertawa kecil."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Barang, warna, dan ukuran",
+   "blocks": [
+    {"type":"tabel","head":["Khmer","Cara baca","Bahasa Indonesia"],"rows":[
+     ["ផ្លែឈើ","*hplae-hceu*","buah-buahan"],
+     ["ស្វាយ","*swaay*","mangga"],
+     ["ចេក","*céék*","pisang"],
+     ["ដូង","*doung*","kelapa"],
+     ["ត្រី","*trey*","ikan"],
+     ["សាច់","*sac*","daging"],
+     ["បន្លែ","*ban-lae*","sayur"],
+     ["អង្ករ","*'ang-kaa*","beras"],
+     ["ស៊ុត","*sut*","telur"],
+     ["ថង់","*htang*","kantong"]
+    ]},
+    {"type":"tabel","head":["Sifat","Cara baca","Lawannya","Cara baca"],"rows":[
+     ["ធំ besar","*htum*","តូច kecil","*touc*"],
+     ["ថ្មី baru","*htmey*","ចាស់ lama","*cah*"],
+     ["ថ្លៃ mahal","*htlay*","ថោក murah","*htaok*"],
+     ["ផ្អែម manis","*hp'aem*","ជូរ asam","*cuu*"],
+     ["ល្អ bagus","*l'aa*","អាក្រក់ jelek","*'aa-krak*"],
+     ["ច្រើន banyak","*craeun*","តិច sedikit","*tec*"]
+    ]},
+    {"type":"sub","text":"Warna"},
+    {"type":"tabel","head":["Khmer","Cara baca","Warna"],"rows":[
+     ["ក្រហម","*kra-haam*","merah"],
+     ["ខៀវ","*hkiew*","biru"],
+     ["បៃតង","*bay-taang*","hijau"],
+     ["លឿង","*leuèng*","kuning"],
+     ["ស","*saa*","putih"],
+     ["ខ្មៅ","*hkmaw*","hitam"]
+    ]},
+    {"type":"p","text":"⚠️ Kata sifat berdiri **di belakang** bendanya, sama seperti bahasa Indonesia: ស្វាយធំ = \"mangga besar\", ថង់ក្រហម = \"kantong merah\". Dan seperti yang akan dibahas tuntas di unit 14, kata sifat bahasa Khmer sebenarnya adalah **kata kerja** — jadi ស្វាយធំ juga bisa berarti \"mangganya besar\" sebagai kalimat utuh, tanpa perlu kata \"adalah\"."}
+   ]
+  }
+ ],
+ "vocab": [
+  {"km":"ទិញ","baca":"teñ","id":"membeli"},
+  {"km":"លក់","baca":"luèk","id":"menjual"},
+  {"km":"ផ្លែឈើ","baca":"hplae-hceu","id":"buah-buahan"},
+  {"km":"ផ្លែ","baca":"hplae","id":"buah (penggolong)"},
+  {"km":"ក្បាល","baca":"kbaal","id":"kepala; ekor (penggolong binatang)"},
+  {"km":"ត្រី","baca":"trey","id":"ikan"},
+  {"km":"ស្វាយ","baca":"swaay","id":"mangga"},
+  {"km":"ថ្មី","baca":"htmey","id":"baru, segar"},
+  {"km":"ផ្អែម","baca":"hp'aem","id":"manis"},
+  {"km":"ចុះថ្លៃ","baca":"coh-htlay","id":"menurunkan harga"},
+  {"km":"ចុងក្រោយ","baca":"cong-kraoy","id":"terakhir"},
+  {"km":"នេះ / នោះ","baca":"nih / nuh","id":"ini / itu"},
+  {"km":"ធំ / តូច","baca":"htum / touc","id":"besar / kecil"},
+  {"km":"អញ្ចឹង","baca":"'añ-ceung","id":"kalau begitu"},
+  {"km":"ថង់","baca":"htang","id":"kantong, tas"},
+  {"km":"គ្រប់គ្រាន់","baca":"krup-kroan","id":"cukup"},
+  {"km":"បន្លែ","baca":"ban-lae","id":"sayur"},
+  {"km":"សាច់","baca":"sac","id":"daging"},
+  {"km":"ស៊ុត","baca":"sut","id":"telur"},
+  {"km":"ខ្នង","baca":"hknaang","id":"bangunan (penggolong rumah)"},
+  {"km":"សន្លឹក","baca":"san-leuk","id":"lembar (penggolong)"},
+  {"km":"ដប","baca":"daap","id":"botol (penggolong)"},
+  {"km":"គ្រាប់","baca":"kroap","id":"butir (penggolong)"},
+  {"km":"ក្រហម","baca":"kra-haam","id":"merah"},
+  {"km":"ខ្មៅ","baca":"hkmaw","id":"hitam"},
+  {"km":"លើកក្រោយ","baca":"laeuk-kraoy","id":"lain kali"}
+ ],
+ "exercises": [
+  {"prompt":"Susun ulang jadi urutan Khmer yang benar: benda – angka – penggolong.","items":[
+   "lima mangga",
+   "dua ekor ikan",
+   "sepuluh siswa",
+   "tiga botol air"
+  ]},
+  {"prompt":"Pilih penggolong yang tepat: នាក់, ក្បាល, ផ្លែ, atau កែវ.","items":[
+   "សិស្ស ប្រាំ ____",
+   "ត្រី ពីរ ____",
+   "ស្វាយ ដប់ ____",
+   "កាហ្វេ មួយ ____"
+  ]},
+  {"prompt":"Susun jadi kalimat yang benar.","items":[
+   "ទេ / បាន / បន្តិច / ចុះថ្លៃ",
+   "នោះ / យក / ខ្ញុំ / ត្រី",
+   "ប៉ុន្មាន / ទាំងអស់",
+   "ណាស់ / ថ្លៃ"
+  ]},
+  {"prompt":"Terjemahkan ke bahasa Khmer.","items":[
+   "Saya mau beli buah.",
+   "Mangga lima buah berapa?",
+   "Boleh turun sedikit?",
+   "Ikan itu lebih besar.",
+   "Kalau begitu saya ambil.",
+   "Satu kantong cukup."
+  ]}
+ ],
+ "answers": [
+  "ស្វាយ ប្រាំ ផ្លែ — ត្រី ពីរ ក្បាល — សិស្ស ដប់ នាក់ — ទឹក បី ដប",
+  "នាក់ — ក្បាល — ផ្លែ — កែវ",
+  "ចុះថ្លៃបន្តិចបានទេ? — ខ្ញុំយកត្រីនោះ។ — ទាំងអស់ប៉ុន្មាន? — ថ្លៃណាស់។",
+  "ខ្ញុំចង់ទិញផ្លែឈើ។ — ស្វាយប្រាំផ្លែថ្លៃប៉ុន្មាន? — ចុះថ្លៃបន្តិចបានទេ? — ត្រីនោះធំជាង។ — អញ្ចឹង ខ្ញុំយក។ — មួយថង់គ្រប់គ្រាន់។"
+ ]
+}

@@ -1,0 +1,185 @@
+{
+ "title": "Angka yang dihitung dengan tangan",
+ "title_target": "លេខ និង លុយ — lék neng luy",
+ "goal": "Menguasai angka Khmer — dan memahami kenapa \"enam\" berbunyi \"lima-satu\": sistem hitung Khmer berbasis lima, warisan dari jari sebelah tangan.",
+ "bekal": [
+  "menghitung satu sampai seratus",
+  "membaca angka Khmer ០ sampai ៩ di papan harga",
+  "menyebut harga dalam riel dan dolar",
+  "bertanya ថ្លៃប៉ុន្មាន? dan mengerti jawabannya",
+  "memakai satuan ម៉ឺន dan សែន yang tidak ada dalam bahasa Indonesia"
+ ],
+ "dialogs": [
+  {
+   "title": "កិច្ចសន្ទនា — Di warung kopi seberang rumah",
+   "intro": "Ani membeli sarapan pertamanya sendiri. Dengarkan baik-baik angka-angkanya: setiap kali penjual menyebut angka di atas lima, kamu akan mendengar kata ប្រាំ (lima) muncul lebih dulu.",
+   "lines": [
+    {"speaker":"អ្នកលក់:","text":"[សួស្ដី|sua-sdey] [បង|baang]! [ចង់|cang] [បាន|baan] [អ្វី|'wey] [ចាស|caah]?","id":"Halo Kak! Mau apa?","literal":"halo — kak! mau — dapat — apa — ya(pr)?"},
+    {"speaker":"អានី:","text":"[ខ្ញុំ|hknyom] [ចង់|cang] [បាន|baan] [កាហ្វេ|kaa-fé] [ពីរ|pii] [កែវ|kaew] [ចាស|caah]។","id":"Saya mau dua gelas kopi.","literal":"saya — mau — dapat — kopi — dua — gelas — ya(pr)."},
+    {"speaker":"អ្នកលក់:","text":"[បាន|baan] [ចាស|caah]។ [ចង់|cang] [បាន|baan] [នំ|num] [ទេ|té]?","id":"Baik. Mau roti juga?","literal":"boleh — ya(pr). mau — dapat — kue — kah?"},
+    {"speaker":"អានី:","text":"[បាទ|baat]… [អូ|'ou] [សូមទោស|soum-touh], [ចាស|caah]។ [យក|yòòk] [នំ|num] [ប្រាំមួយ|pram-muèy]។","id":"Ya… oh maaf, ya. Ambil enam roti.","literal":"ya(lk)… oh — maaf, ya(pr). ambil — kue — lima-satu."},
+    {"speaker":"អ្នកលក់:","text":"[ប្រាំមួយ|pram-muèy] [មែនទេ|mèn-té]? [ថ្លៃ|htlay] [ទាំងអស់|teang-'ah] [ដប់ប្រាំបួន|dop-pram-buèn] [ពាន់|poan] [រៀល|riel] [ចាស|caah]។","id":"Enam, ya? Semuanya sembilan belas ribu riel.","literal":"lima-satu — benar-kah? mahal — semua — sepuluh-lima-empat — ribu — riel — ya(pr)."},
+    {"speaker":"អានី:","text":"[សូម|soum] [និយាយ|ni-yiey] [ម្តងទៀត|mdaang-tiet] [ចាស|caah]។ [យឺតៗ|yeut-yeut]។","id":"Tolong ulangi. Pelan-pelan.","literal":"mohon — bicara — sekali-lagi — ya(pr). lambat-lambat."},
+    {"speaker":"អ្នកលក់:","text":"[ដប់|dop] … [ប្រាំបួន|pram-buèn] … [ពាន់|poan] [រៀល|riel] [ចាស|caah]។ [ឬ|reu] [ប្រាំ|pram] [ដុល្លារ|dol-laa]។","id":"Sembilan… belas… ribu riel. Atau lima dolar.","literal":"sepuluh — lima-empat — ribu — riel — ya(pr). atau — lima — dolar."},
+    {"speaker":"អានី:","text":"[ខ្ញុំ|hknyom] [មាន|mien] [តែ|tae] [ដប់|dop] [ដុល្លារ|dol-laa] [ចាស|caah]។","id":"Saya cuma punya sepuluh dolar.","literal":"saya — punya — hanya — sepuluh — dolar — ya(pr)."},
+    {"speaker":"អ្នកលក់:","text":"[អត់អីទេ|'at-'ey-té] [ចាស|caah]។ [ខ្ញុំ|hknyom] [អាប់|'ap] [ជូន|cuun] [ប្រាំ|pram] [ដុល្លារ|dol-laa] [វិញ|weñ]។","id":"Tidak apa-apa. Saya kembalikan lima dolar.","literal":"tidak-apa-tidak — ya(pr). saya — kembalikan — beri — lima — dolar — kembali."},
+    {"speaker":"អានី:","text":"[ជូន|cuun] [ជា|ciè] [រៀល|riel] [បាន|baan] [ទេ|té] [ចាស|caah]?","id":"Boleh dikembalikan dalam riel?","literal":"beri — sebagai — riel — boleh — kah — ya(pr)?"},
+    {"speaker":"អ្នកលក់:","text":"[បាន|baan] [ចាស|caah]។ [ពីរ|pii] [ម៉ឺន|meun] [រៀល|riel]។","id":"Boleh. Dua puluh ribu riel.","literal":"boleh — ya(pr). dua — sepuluh-ribu — riel."},
+    {"speaker":"អានី:","text":"[អរគុណ|'aa-kun] [ច្រើន|craeun] [ចាស|caah]!","id":"Terima kasih banyak!","literal":"terima-kasih — banyak — ya(pr)!"}
+   ],
+   "grammars": [
+    {
+     "title": "⚠️ Sistem lima — kenapa \"enam\" berbunyi \"lima-satu\"",
+     "body": ["Bahasa Khmer menghitung dengan **satu tangan**. Satu sampai lima punya kata sendiri; enam sampai sembilan dibentuk dengan menambahkan ប្រាំ (lima) di depan. Ini bukan kekhasan yang lucu — ini yang akan kamu dengar setiap kali membeli sesuatu, dan pemula yang tidak menyadarinya akan mendengar ប្រាំបួន (9) dan mengira dirinya sedang mendengar dua angka."],
+     "tables": [
+      {"head":["Angka","Khmer","Cara baca","Susunannya"],"rows":[
+       ["1","មួយ","*muèy*","—"],
+       ["2","ពីរ","*pii*","—"],
+       ["3","បី","*bey*","—"],
+       ["4","បួន","*buèn*","—"],
+       ["5","ប្រាំ","*pram*","—"],
+       ["6","ប្រាំមួយ","*pram-muèy*","5 + 1"],
+       ["7","ប្រាំពីរ","*pram-pil*","5 + 2 ⚠️ bacanya *pil*"],
+       ["8","ប្រាំបី","*pram-bey*","5 + 3"],
+       ["9","ប្រាំបួន","*pram-buèn*","5 + 4"],
+       ["10","ដប់","*dop*","—"]
+      ]}
+     ],
+     "after": [
+      "⚠️ Perhatikan angka **tujuh**. Tertulis ប្រាំពីរ (\"lima-dua\"), tetapi dibaca *pram-pil*, bukan *pram-pii*. Ini satu-satunya angka yang berubah bunyi, dan justru angka itulah yang paling sering salah didengar pemula.",
+      "Sesudah sepuluh, susunannya kembali biasa: ដប់មួយ (11), ដប់ពីរ (12), ដប់ប្រាំមួយ (16 — \"sepuluh-lima-satu\"). Panjang, tapi tanpa kejutan."
+     ]
+    },
+    {
+     "title": "Puluhan: bagian yang tidak berbasis lima",
+     "body": ["Kalau sistem lima berlaku sampai sepuluh, mestinya dua puluh berbunyi \"dua sepuluh\". Ternyata tidak. **Puluhan bahasa Khmer dipinjam dari Thai dan Sanskerta**, dan masing-masing punya kata sendiri yang harus dihafal terpisah."],
+     "tables": [
+      {"head":["Angka","Khmer","Cara baca"],"rows":[
+       ["20","ម្ភៃ","*m-hpey*"],
+       ["30","សាមសិប","*saam-sep*"],
+       ["40","សែសិប","*sae-sep*"],
+       ["50","ហាសិប","*haa-sep*"],
+       ["60","ហុកសិប","*hok-sep*"],
+       ["70","ចិតសិប","*cet-sep*"],
+       ["80","ប៉ែតសិប","*paet-sep*"],
+       ["90","កៅសិប","*kaw-sep*"],
+       ["100","មួយរយ","*muèy-ròòy*"],
+       ["1.000","មួយពាន់","*muèy-poan*"]
+      ]}
+     ],
+     "after": ["Kabar baiknya: mulai tiga puluh, polanya kembali teratur — សិប (*sep*) adalah \"puluh\", dan angka di depannya tinggal diganti. ⚠️ Hanya ម្ភៃ (20) yang benar-benar berdiri sendiri dan tidak mengandung សិប sama sekali. Itu satu kata untuk dihafal mati-matian."]
+    },
+    {
+     "title": "⚠️ ម៉ឺន dan សែន — dua satuan yang tidak kita punya",
+     "body": ["Bahasa Indonesia melompat dari ribu langsung ke juta. Bahasa Khmer menyelipkan dua satuan di antaranya, dan keduanya dipakai setiap hari untuk harga."],
+     "tables": [
+      {"head":["Jumlah","Khmer","Cara baca","Cara Indonesia menyebutnya"],"rows":[
+       ["10.000","មួយម៉ឺន","*muèy-meun*","sepuluh ribu"],
+       ["20.000","ពីរម៉ឺន","*pii-meun*","dua puluh ribu"],
+       ["100.000","មួយសែន","*muèy-saen*","seratus ribu"],
+       ["1.000.000","មួយលាន","*muèy-lien*","satu juta"]
+      ]}
+     ],
+     "after": [
+      "Jadi ketika penjual berkata ពីរម៉ឺនរៀល, otakmu harus menerjemahkannya sebagai \"dua × sepuluh ribu\" = 20.000 riel, bukan \"dua ribu\". ⚠️ Salah satu satuan ini di pasar berarti membayar sepuluh kali lipat.",
+      "Kabar baiknya: **ដប់ពាន់ (sepuluh ribu) juga dipakai** dan sepenuhnya dimengerti, terutama oleh generasi muda di Phnom Penh. Kalau kamu belum yakin dengan ម៉ឺន, pakai ពាន់ dan kamu tetap aman."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Uang di Kamboja: dua mata uang di satu dompet",
+   "blocks": [
+    {"type":"p","text":"Kamboja memakai **riel dan dolar Amerika berdampingan**, dan kamu akan menerima kembalian dalam campuran keduanya sepanjang hari. Ini membingungkan di minggu pertama, lalu menjadi kebiasaan."},
+    {"type":"tabel","head":["Aturan praktis","Keterangan"],"rows":[
+     ["1 dolar ≈ 4.000 riel","Kursnya hampir tak pernah berubah; hitung saja 4.000."],
+     ["Harga besar dalam dolar","Sewa rumah, hotel, tiket bus, barang elektronik."],
+     ["Harga kecil dalam riel","Kopi, mi, tuk-tuk pendek, air botol."],
+     ["Kembalian di bawah 1 dolar selalu riel","Uang logam Amerika tidak beredar sama sekali di Kamboja."],
+     ["Uang kertas dolar yang sobek ditolak","⚠️ Periksa lembaranmu — dolar dengan sobekan kecil pun sering tidak diterima."]
+    ]},
+    {"type":"sub","text":"Kalimat yang kamu pakai setiap hari"},
+    {"type":"tabel","head":["Bahasa Indonesia","Khmer","Cara baca"],"rows":[
+     ["Berapa harganya?","ថ្លៃប៉ុន្មាន?","*htlay pon-maan?*"],
+     ["Mahal sekali!","ថ្លៃណាស់!","*htlay nah!*"],
+     ["Ada yang lebih murah?","មានថោកជាងនេះទេ?","*mien htaok cièng nih té?*"],
+     ["Boleh bayar dolar?","បង់ជាដុល្លារបានទេ?","*bang ciè dol-laa baan té?*"],
+     ["Tolong kembalikan dalam riel.","សូមអាប់ជារៀល","*soum 'ap ciè riel*"],
+     ["Saya cuma punya lima dolar.","ខ្ញុំមានតែប្រាំដុល្លារ","*hknyom mien tae pram dol-laa*"]
+    ]},
+    {"type":"kotak","title":"Dua kebiasaan yang menghemat banyak kebingungan","items":[
+     "**Minta penjual menuliskan angkanya.** សូមសរសេរលេខ (*soum saa-sé lék*). Angka Khmer ០-៩ ada di halaman aksara modul ini, dan sebagian besar penjual menulis dengan angka Arab yang kamu kenal.",
+     "**Selalu ulangi angkanya keras-keras sebelum membayar.** Penjual akan mengangguk atau membetulkan. Ini kebiasaan yang wajar di Kamboja, bukan tanda kamu tidak percaya."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  {"km":"លេខ","baca":"lék","id":"angka, nomor"},
+  {"km":"មួយ ពីរ បី បួន ប្រាំ","baca":"muèy pii bey buèn pram","id":"1 2 3 4 5"},
+  {"km":"ប្រាំមួយ","baca":"pram-muèy","id":"enam"},
+  {"km":"ប្រាំពីរ","baca":"pram-pil","id":"tujuh"},
+  {"km":"ប្រាំបី","baca":"pram-bey","id":"delapan"},
+  {"km":"ប្រាំបួន","baca":"pram-buèn","id":"sembilan"},
+  {"km":"ដប់","baca":"dop","id":"sepuluh"},
+  {"km":"ម្ភៃ","baca":"m-hpey","id":"dua puluh"},
+  {"km":"រយ","baca":"ròòy","id":"ratus"},
+  {"km":"ពាន់","baca":"poan","id":"ribu"},
+  {"km":"ម៉ឺន","baca":"meun","id":"sepuluh ribu"},
+  {"km":"សែន","baca":"saen","id":"seratus ribu"},
+  {"km":"លាន","baca":"lien","id":"juta"},
+  {"km":"រៀល","baca":"riel","id":"riel (mata uang Kamboja)"},
+  {"km":"ដុល្លារ","baca":"dol-laa","id":"dolar"},
+  {"km":"ថ្លៃ","baca":"htlay","id":"mahal; harga"},
+  {"km":"ថោក","baca":"htaok","id":"murah"},
+  {"km":"យក","baca":"yòòk","id":"ambil"},
+  {"km":"នំ","baca":"num","id":"roti, kue"},
+  {"km":"កែវ","baca":"kaew","id":"gelas (penggolong)"},
+  {"km":"ទាំងអស់","baca":"teang-'ah","id":"semuanya"},
+  {"km":"តែ","baca":"tae","id":"hanya, cuma"},
+  {"km":"ជូន","baca":"cuun","id":"memberi (hormat)"},
+  {"km":"អាប់","baca":"'ap","id":"mengembalikan (uang)"},
+  {"km":"បង់","baca":"bang","id":"membayar"},
+  {"km":"សូម","baca":"soum","id":"mohon, silakan"},
+  {"km":"និយាយ","baca":"ni-yiey","id":"berbicara"},
+  {"km":"ម្តងទៀត","baca":"mdaang-tiet","id":"sekali lagi"},
+  {"km":"យឺតៗ","baca":"yeut-yeut","id":"pelan-pelan"},
+  {"km":"ឬ","baca":"reu","id":"atau"}
+ ],
+ "exercises": [
+  {"prompt":"Tulis angkanya dalam huruf Latin sesuai cara baca Khmer.","items":[
+   "6",
+   "7",
+   "9",
+   "16"
+  ]},
+  {"prompt":"Berapa nilainya dalam angka?","items":[
+   "ប្រាំបី",
+   "ដប់ប្រាំ",
+   "ពីរម៉ឺន",
+   "បីពាន់ប្រាំរយ"
+  ]},
+  {"prompt":"Susun jadi kalimat yang benar.","items":[
+   "ប៉ុន្មាន / ថ្លៃ",
+   "កែវ / កាហ្វេ / ពីរ / ខ្ញុំចង់បាន",
+   "ដុល្លារ / តែ / មាន / ខ្ញុំ / ប្រាំ",
+   "ទេ / ជារៀល / បាន / ជូន"
+  ]},
+  {"prompt":"Terjemahkan ke bahasa Khmer.","items":[
+   "Berapa harganya?",
+   "Mahal sekali!",
+   "Saya mau enam roti.",
+   "Dua puluh ribu riel.",
+   "Tolong ulangi pelan-pelan.",
+   "Saya cuma punya sepuluh dolar."
+  ]}
+ ],
+ "answers": [
+  "pram-muèy — pram-pil — pram-buèn — dop-pram-muèy",
+  "8 — 15 — 20.000 — 3.500",
+  "ថ្លៃប៉ុន្មាន? — ខ្ញុំចង់បានកាហ្វេពីរកែវ។ — ខ្ញុំមានតែប្រាំដុល្លារ។ — ជូនជារៀលបានទេ?",
+  "ថ្លៃប៉ុន្មាន? — ថ្លៃណាស់! — ខ្ញុំចង់បាននំប្រាំមួយ។ — ពីរម៉ឺនរៀល។ — សូមនិយាយម្តងទៀត យឺតៗ។ — ខ្ញុំមានតែដប់ដុល្លារ។"
+ ]
+}

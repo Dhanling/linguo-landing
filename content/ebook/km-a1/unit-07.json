@@ -1,0 +1,178 @@
+{
+ "title": "Memesan makanan yang boleh kamu makan",
+ "title_target": "កុម្ម៉ង់បាយ — kom-mang baay",
+ "goal": "Memesan makanan dan minuman dengan tepat — termasuk menyampaikan pantangan makan dengan kalimat yang tidak menimbulkan salah paham.",
+ "bekal": [
+  "memesan dengan សុំ … និង …",
+  "menyampaikan pantangan dengan ខ្ញុំមិនញ៉ាំ …",
+  "meminta tanpa satu bahan tertentu memakai កុំដាក់ …",
+  "memuji masakan dengan ឆ្ងាញ់ណាស់",
+  "meminta bon dan membayar"
+ ],
+ "dialogs": [
+  {
+   "title": "កិច្ចសន្ទនា — Warung mi di pinggir jalan",
+   "intro": "Ani makan siang pertamanya di luar. Kalimat terpenting di seluruh unit ini adalah baris ketiga — pelajari sampai bisa diucapkan tanpa berpikir, karena kamu akan mengucapkannya hampir setiap hari selama di Kamboja.",
+   "lines": [
+    {"speaker":"អ្នកបម្រើ:","text":"[បង|baang] [ញ៉ាំ|nyam] [អ្វី|'wey] [ចាស|caah]?","id":"Kakak makan apa?","literal":"kak — makan — apa — ya(pr)?"},
+    {"speaker":"អានី:","text":"[មាន|mien] [អ្វី|'wey] [ខ្លះ|hklah] [ចាស|caah]?","id":"Ada apa saja?","literal":"ada — apa — beberapa — ya(pr)?"},
+    {"speaker":"អ្នកបម្រើ:","text":"[មាន|mien] [គុយទាវ|kuy-tiew], [បាយឆា|baay-hcaa], [អាម៉ុក|'aa-mok] [ចាស|caah]។","id":"Ada kuy teav, nasi goreng, amok.","literal":"ada — mi-kuah, nasi-goreng, amok — ya(pr)."},
+    {"speaker":"អានី:","text":"[ខ្ញុំ|hknyom] [មិន|min] [ញ៉ាំ|nyam] [សាច់ជ្រូក|sac-cruuk] [ទេ|té] [ចាស|caah]។ [មាន|mien] [សាច់មាន់|sac-moan] [ទេ|té]?","id":"Saya tidak makan daging babi. Ada daging ayam?","literal":"saya — tidak — makan — daging-babi — tidak — ya(pr). ada — daging-ayam — kah?"},
+    {"speaker":"អ្នកបម្រើ:","text":"[មាន|mien] [ចាស|caah]។ [គុយទាវ|kuy-tiew] [សាច់មាន់|sac-moan] [បាន|baan] [ទេ|té]?","id":"Ada. Kuy teav ayam boleh?","literal":"ada — ya(pr). mi-kuah — daging-ayam — boleh — kah?"},
+    {"speaker":"អានី:","text":"[បាន|baan] [ចាស|caah]។ [ប៉ុន្តែ|pon-tae] [កុំ|kom] [ដាក់|dak] [ទឹកត្រី|teuk-trey] [ច្រើន|craeun] [ពេក|péék]។","id":"Boleh. Tapi jangan pakai kecap ikan terlalu banyak.","literal":"boleh — ya(pr). tetapi — jangan — taruh — air-ikan — banyak — terlalu."},
+    {"speaker":"អ្នកបម្រើ:","text":"[បាទ|baat]។ [ហឹរ|hel] [បាន|baan] [ទេ|té]?","id":"Baik. Pedas boleh?","literal":"ya(lk). pedas — boleh — kah?"},
+    {"speaker":"អានី:","text":"[ហឹរ|hel] [បន្តិច|ban-tec] [បាន|baan] [ចាស|caah]។ [កុំ|kom] [ហឹរ|hel] [ពេក|péék]។","id":"Pedas sedikit boleh. Jangan terlalu pedas.","literal":"pedas — sedikit — boleh — ya(pr). jangan — pedas — terlalu."},
+    {"speaker":"អ្នកបម្រើ:","text":"[ផឹក|hpeuk] [អ្វី|'wey] [ចាស|caah]?","id":"Minum apa?","literal":"minum — apa — ya(pr)?"},
+    {"speaker":"អានី:","text":"[សុំ|som] [ទឹក|teuk] [មួយ|muèy] [ដប|daap] [ចាស|caah]។ [កុំ|kom] [ដាក់|dak] [ទឹកកក|teuk-kaak]។","id":"Minta satu botol air. Jangan pakai es.","literal":"minta — air — satu — botol — ya(pr). jangan — taruh — air-beku."},
+    {"speaker":"អ្នកបម្រើ:","text":"[បាទ|baat]។ [សូម|soum] [រង់ចាំ|roang-cam] [បន្តិច|ban-tec]។","id":"Baik. Mohon tunggu sebentar.","literal":"ya(lk). mohon — menunggu — sedikit."},
+    {"speaker":"អានី:","text":"[ឆ្ងាញ់|hcngañ] [ណាស់|nah] [ចាស|caah]! [សុំ|som] [គិតលុយ|ket-luy] [ផង|hpaang]។","id":"Enak sekali! Minta bonnya, ya.","literal":"enak — sangat — ya(pr)! minta — hitung-uang — juga."}
+   ],
+   "grammars": [
+    {
+     "title": "⚠️ Menyampaikan pantangan makan supaya benar-benar dimengerti",
+     "body": ["Ini bagian paling penting dari seluruh modul bagi pembaca Muslim, dan sengaja ditaruh di unit awal. Bahasa Khmer tidak punya satu kata untuk \"halal\" yang dipahami di setiap warung, jadi cara paling aman adalah **menyebut apa yang tidak kamu makan, bukan meminta kategori**."],
+     "tables": [
+      {"head":["Bahasa Indonesia","Khmer","Cara baca"],"rows":[
+       ["Saya tidak makan daging babi.","ខ្ញុំមិនញ៉ាំសាច់ជ្រូកទេ","*hknyom min nyam sac-cruuk té*"],
+       ["Saya Muslim.","ខ្ញុំជាមូស្លីម","*hknyom ciè muu-sliim*"],
+       ["Ada daging ayam?","មានសាច់មាន់ទេ?","*mien sac-moan té?*"],
+       ["Ini ada babinya?","នេះមានសាច់ជ្រូកទេ?","*nih mien sac-cruuk té?*"],
+       ["Saya tidak minum minuman keras.","ខ្ញុំមិនផឹកស្រាទេ","*hknyom min hpeuk sraa té*"],
+       ["Saya vegetarian.","ខ្ញុំញ៉ាំបួស","*hknyom nyam buèh*"]
+      ]}
+     ],
+     "after": [
+      "⚠️ **Tanyakan babinya secara khusus, jangan bertanya \"ada dagingnya?\"** Di Kamboja, សាច់ (*sac*, daging) tanpa keterangan hampir selalu berarti babi — sama seperti \"daging\" di banyak warung Tiongkok. Bertanya \"ada daging?\" akan dijawab \"ada\" dan tidak menyelesaikan apa pun.",
+      "⚠️ **Kaldu dan kecap ikan hampir ada di mana-mana.** Kuah គុយទាវ biasanya direbus dengan tulang babi. Kalau ini penting bagimu, cari rumah makan halal — di Phnom Penh terpusat di sekitar masjid Nurul Ihsan, Chraing Chamres, dan Boeung Kak; di Siem Reap di sekitar Wat Damnak. Kata **ហាឡាល់** (*haa-lal*) dikenali di rumah makan itu, tetapi belum tentu di warung pinggir jalan.",
+      "**ញ៉ាំបួស** (*nyam buèh*, \"makan vegetarian\") adalah kata yang dikenal semua orang Kamboja, karena berkaitan dengan hari puasa Buddha. Kalau situasinya sulit, ini kalimat cadangan yang selalu berhasil."
+     ]
+    },
+    {
+     "title": "សុំ, កុំ, dan ពេក — tiga kata pendek untuk memesan",
+     "body": ["Hampir seluruh pesananmu bisa disusun dari tiga kata ini. Semuanya berdiri di depan, dan tidak satu pun berubah bentuk."],
+     "tables": [
+      {"head":["Kata","Cara baca","Artinya","Contoh"],"rows":[
+       ["សុំ","*som*","minta (untuk diri sendiri)","សុំទឹកមួយដប — minta sebotol air"],
+       ["សូម","*soum*","mohon (lebih halus, untuk permintaan)","សូមរង់ចាំ — mohon tunggu"],
+       ["កុំ","*kom*","jangan","កុំដាក់ទឹកកក — jangan pakai es"],
+       ["ពេក","*péék*","terlalu (berdiri di BELAKANG)","ហឹរពេក — terlalu pedas"],
+       ["ផង","*hpaang*","juga, ya (pelembut di ujung)","សុំគិតលុយផង — minta bonnya, ya"]
+      ]}
+     ],
+     "after": ["⚠️ Perhatikan bahwa **ពេក berdiri di belakang** kata sifatnya, kebalikan dari \"terlalu\" bahasa Indonesia yang berdiri di depan. ហឹរពេក, bukan ពេកហឹរ. Ini satu dari sedikit tempat dalam bahasa Khmer yang urutannya berbeda dari kebiasaan kita, jadi patut diingat."]
+    },
+    {
+     "title": "Memuji, mengeluh, dan membayar",
+     "body": ["Memuji masakan di Kamboja bukan basa-basi — itu bagian dari makan bersama, dan tidak memujinya sama sekali terbaca sebagai kamu tidak suka."],
+     "tables": [
+      {"head":["Bahasa Indonesia","Khmer","Cara baca"],"rows":[
+       ["Enak sekali!","ឆ្ងាញ់ណាស់!","*hcngañ nah!*"],
+       ["Terlalu asin.","ប្រៃពេក","*prey péék*"],
+       ["Kurang matang.","មិនទាន់ឆ្អិន","*min-toan hc'en*"],
+       ["Saya sudah kenyang.","ឆ្អែតហើយ","*hc'aet haeuy*"],
+       ["Minta bonnya.","សុំគិតលុយ","*som ket-luy*"],
+       ["Boleh bungkus?","ខ្ចប់បានទេ?","*hkcap baan té?*"]
+      ]}
+     ],
+     "after": ["គិតលុយ (*ket-luy*) harfiahnya \"menghitung uang\" dan itulah cara meminta bon di seluruh Kamboja — di warung pinggir jalan maupun di rumah makan ber-AC. Mengangkat tangan sambil menulis di udara, kebiasaan Eropa, tidak dikenal di sini."]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menu yang benar-benar akan kamu temui",
+   "blocks": [
+    {"type":"tabel","head":["Khmer","Cara baca","Apa itu"],"rows":[
+     ["គុយទាវ","*kuy-tiew*","mi kuah sarapan — hidangan paling umum di Kamboja"],
+     ["បាយឆា","*baay-hcaa*","nasi goreng"],
+     ["បាយសាច់ជ្រូក","*baay sac-cruuk*","⚠️ nasi babi panggang — sarapan paling laris, hindari bila berpantang"],
+     ["អាម៉ុក","*'aa-mok*","ikan dikukus dalam daun pisang dengan santan — hidangan kebangsaan"],
+     ["សម្លម្ជូរ","*sam-laa mcuu*","sup asam"],
+     ["លុតឡាក់","*lok-lak*","daging sapi tumis dengan saus lada"],
+     ["នំបញ្ចុក","*num-ban-cok*","mi beras dengan kuah kari ikan"],
+     ["បបរ","*baa-baa*","bubur"],
+     ["ត្រីអាំង","*trey 'ang*","ikan bakar"],
+     ["ស្ងោរ","*sngao*","sup bening"]
+    ]},
+    {"type":"sub","text":"Bahan dan rasa"},
+    {"type":"tabel","head":["Khmer","Cara baca","Arti","Khmer","Cara baca","Arti"],"rows":[
+     ["សាច់មាន់","*sac-moan*","ayam","ហឹរ","*hel*","pedas"],
+     ["សាច់គោ","*sac-koo*","sapi","ប្រៃ","*prey*","asin"],
+     ["សាច់ជ្រូក","*sac-cruuk*","babi","ផ្អែម","*hp'aem*","manis"],
+     ["ត្រី","*trey*","ikan","ជូរ","*cuu*","asam"],
+     ["បង្គា","*bang-kie*","udang","ល្វីង","*lwiing*","pahit"],
+     ["ស៊ុត","*sut*","telur","ឆ្ងាញ់","*hcngañ*","enak"],
+     ["បន្លែ","*ban-lae*","sayur","ឆ្អិន","*hc'en*","matang"],
+     ["ទឹកត្រី","*teuk-trey*","kecap ikan","ឆៅ","*hcaw*","mentah"]
+    ]},
+    {"type":"kotak","title":"Tiga hal tentang meja makan Kamboja","items":[
+     "**Nasi adalah kata untuk makan.** បាយ (*baay*) berarti nasi, tetapi ញ៉ាំបាយ (\"makan nasi\") berarti makan apa pun. Pertanyaan ញ៉ាំបាយហើយឬនៅ? adalah sapaan sehari-hari yang setara dengan \"apa kabar\", persis seperti \"sudah makan?\" dalam bahasa Indonesia.",
+     "**Semua hidangan datang bersamaan dan dimakan bersama.** Memesan \"satu untuk saya sendiri\" terasa aneh; yang wajar adalah memesan beberapa piring untuk seluruh meja.",
+     "**Es batu di kota umumnya dibuat dari air bersih**, tetapi kalau perutmu belum terbiasa, កុំដាក់ទឹកកក (jangan pakai es) adalah kalimat yang tidak pernah menyinggung siapa pun."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  {"km":"សុំ","baca":"som","id":"minta"},
+  {"km":"សូម","baca":"soum","id":"mohon, silakan"},
+  {"km":"កុំ","baca":"kom","id":"jangan"},
+  {"km":"ពេក","baca":"péék","id":"terlalu (di belakang kata sifat)"},
+  {"km":"ផង","baca":"hpaang","id":"juga, ya (pelembut)"},
+  {"km":"ខ្លះ","baca":"hklah","id":"beberapa, sebagian"},
+  {"km":"គុយទាវ","baca":"kuy-tiew","id":"mi kuah"},
+  {"km":"បាយឆា","baca":"baay-hcaa","id":"nasi goreng"},
+  {"km":"អាម៉ុក","baca":"'aa-mok","id":"amok, ikan kukus berbumbu"},
+  {"km":"សាច់ជ្រូក","baca":"sac-cruuk","id":"daging babi"},
+  {"km":"សាច់មាន់","baca":"sac-moan","id":"daging ayam"},
+  {"km":"សាច់គោ","baca":"sac-koo","id":"daging sapi"},
+  {"km":"ទឹកត្រី","baca":"teuk-trey","id":"kecap ikan"},
+  {"km":"ហឹរ","baca":"hel","id":"pedas"},
+  {"km":"ប្រៃ","baca":"prey","id":"asin"},
+  {"km":"ឆ្អិន","baca":"hc'en","id":"matang"},
+  {"km":"ទឹកកក","baca":"teuk-kaak","id":"es — harfiah \"air beku\""},
+  {"km":"ដប","baca":"daap","id":"botol"},
+  {"km":"រង់ចាំ","baca":"roang-cam","id":"menunggu"},
+  {"km":"ឆ្ងាញ់","baca":"hcngañ","id":"enak"},
+  {"km":"គិតលុយ","baca":"ket-luy","id":"bon, hitung tagihan"},
+  {"km":"ខ្ចប់","baca":"hkcap","id":"membungkus"},
+  {"km":"ញ៉ាំបួស","baca":"nyam buèh","id":"makan vegetarian"},
+  {"km":"ឆ្អែត","baca":"hc'aet","id":"kenyang"},
+  {"km":"អ្នកបម្រើ","baca":"neak-bam-raeu","id":"pelayan"}
+ ],
+ "exercises": [
+  {"prompt":"Lengkapi dengan សុំ, កុំ, atau ពេក.","items":[
+   "____ទឹកមួយដប។",
+   "____ដាក់ទឹកកក។",
+   "ហឹរ____។",
+   "____គិតលុយផង។"
+  ]},
+  {"prompt":"Cocokkan: apa yang kamu ucapkan dalam keadaan berikut?","items":[
+   "Kamu tidak makan daging babi.",
+   "Masakannya enak.",
+   "Kamu sudah kenyang.",
+   "Kamu ingin membungkus sisanya."
+  ]},
+  {"prompt":"Susun jadi kalimat yang benar.","items":[
+   "ទេ / ជ្រូក / ខ្ញុំ / សាច់ / មិន / ញ៉ាំ",
+   "ទេ / មាន់ / មាន / សាច់",
+   "ពេក / កុំ / ហឹរ",
+   "ដប / ទឹក / សុំ / មួយ"
+  ]},
+  {"prompt":"Terjemahkan ke bahasa Khmer.","items":[
+   "Ada apa saja?",
+   "Saya tidak makan daging babi.",
+   "Ada daging ayam?",
+   "Jangan pakai es.",
+   "Enak sekali!",
+   "Minta bonnya."
+  ]}
+ ],
+ "answers": [
+  "សុំ — កុំ — ពេក — សុំ",
+  "ខ្ញុំមិនញ៉ាំសាច់ជ្រូកទេ។ — ឆ្ងាញ់ណាស់! — ឆ្អែតហើយ។ — ខ្ចប់បានទេ?",
+  "ខ្ញុំមិនញ៉ាំសាច់ជ្រូកទេ។ — មានសាច់មាន់ទេ? — កុំហឹរពេក។ — សុំទឹកមួយដប។",
+  "មានអ្វីខ្លះ? — ខ្ញុំមិនញ៉ាំសាច់ជ្រូកទេ។ — មានសាច់មាន់ទេ? — កុំដាក់ទឹកកក។ — ឆ្ងាញ់ណាស់! — សុំគិតលុយ។"
+ ]
+}
