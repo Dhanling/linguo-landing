@@ -1,0 +1,533 @@
+{
+ "title": "Jam berapa sekarang?",
+ "title_target": "Mis kell on?",
+ "goal": "Menyebut waktu dan membuat janji — di satu bidang yang jarang terjadi: bahasa Estonia dan bahasa Indonesia berpikir dengan cara yang **persis sama**, sementara bahasa Inggris justru menyimpang.",
+ "bekal": [
+  "menyebut jam dengan cara analog maupun digital",
+  "memakai *pool*, *veerand*, dan *kolmveerand* tanpa berhitung di kepala",
+  "membuat janji dan menyebut bagian hari"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Millal me kohtume?",
+   "intro": "Budi dan Kerli mengatur waktu bertemu sebelum kuliah sore.",
+   "lines": [
+    {
+     "speaker": "Kerli:",
+     "text": "Mis kell praegu on?",
+     "id": "Sekarang jam berapa?",
+     "literal": "apa jam sekarang adalah-ia?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kell on kaks.",
+     "id": "Jam dua.",
+     "literal": "jam adalah-ia dua."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Hea. Loeng algab kell kolm.",
+     "id": "Bagus. Kuliahnya mulai jam tiga.",
+     "literal": "baik. kuliah mulai-ia jam tiga."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Millal me kohtume?",
+     "id": "Kita ketemu kapan?",
+     "literal": "kapan kami bertemu-kami?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Pool kolm, kohviku ees.",
+     "id": "Setengah tiga, di depan kafe.",
+     "literal": "setengah tiga, kafe-punya di-depan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "\"Pool kolm\" — see on kaks kolmkümmend?",
+     "id": "\"Pool kolm\" — itu dua tiga puluh?",
+     "literal": "\"setengah tiga\" — itu adalah-ia dua tiga-puluh?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Jah. Miks sa küsid?",
+     "id": "Ya. Kenapa kamu tanya?",
+     "literal": "ya. kenapa kamu bertanya-kamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sest indoneesia keeles on täpselt sama!",
+     "id": "Karena dalam bahasa Indonesia persis sama!",
+     "literal": "karena Indonesia bahasa-di adalah tepatnya sama!"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Tõesti? Inglastel on teisiti.",
+     "id": "Sungguh? Orang Inggris beda.",
+     "literal": "sungguh? Inggris-orang-jamak-pada adalah lain-caranya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jah, ja see ajab mind alati segadusse.",
+     "id": "Ya, dan itu selalu membingungkan saya.",
+     "literal": "ya, dan itu mendorong-ia saya-bagian selalu kebingungan-ke-dalam."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Siis sul on eelis. Ja veerand kolm on kaks viisteist.",
+     "id": "Kalau begitu kamu punya keunggulan. Dan veerand kolm itu dua lima belas.",
+     "literal": "kalau-begitu kamu-pada adalah keunggulan. dan seperempat tiga adalah-ia dua lima-belas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sest see on veerand teed kolmeni?",
+     "id": "Karena itu seperempat jalan menuju tiga?",
+     "literal": "karena itu adalah-ia seperempat jalan-bagian tiga-sampai?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Just! Sa mõtled õigesti.",
+     "id": "Nah! Cara pikirmu benar.",
+     "literal": "persis! kamu berpikir-kamu benarnya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ja kolmveerand kolm on kaks nelikümmend viis.",
+     "id": "Dan kolmveerand kolm itu dua empat puluh lima.",
+     "literal": "dan tiga-perempat tiga adalah-ia dua empat-puluh lima."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Perfektne. Kohtume siis pool kolm.",
+     "id": "Sempurna. Ketemu setengah tiga kalau begitu.",
+     "literal": "sempurna. bertemu-kita kalau-begitu setengah tiga."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ma olen kohal. Ma ei hiline kunagi.",
+     "id": "Saya akan di sana. Saya tidak pernah telat.",
+     "literal": "saya adalah-saya tempat-di. saya tidak terlambat-saya pernah."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Hea. Eestlased ei hiline ka.",
+     "id": "Bagus. Orang Estonia juga tidak telat.",
+     "literal": "baik. Estonia-orang-jamak tidak terlambat juga."
+    }
+   ],
+   "notes": [
+    "**Pool kolm = 02.30.** Ini hadiah terbesar unit ini. Bahasa Estonia menghitung **maju ke jam berikutnya**, persis seperti \"setengah tiga\" dalam bahasa Indonesia. Bahasa Inggris menghitung mundur (*half past two*), dan itulah kenapa penutur Inggris yang belajar bahasa Estonia selalu salah satu jam. Kamu tidak akan.",
+    "**Veerand kolm = 02.15, kolmveerand kolm = 02.45.** Logikanya sama persis: seperempat perjalanan menuju jam tiga, lalu tiga perempat perjalanan menuju jam tiga. Sekali kamu menerima cara berhitung \"setengah tiga\", kedua kata ini datang gratis.",
+    "**Kell** punya dua tugas: \"jam\" sebagai benda (*Mul on uus kell* — saya punya jam baru) dan \"pukul\" (*kell kolm* — pukul tiga). Persis seperti kata \"jam\" bahasa Indonesia.",
+    "⚠️ **Orang Estonia benar-benar tepat waktu.** Datang lima menit terlambat sudah dianggap perlu diminta maaf; lima belas menit dianggap kasar. Kalau kamu terbiasa dengan kelonggaran waktu Indonesia, ini penyesuaian yang nyata — dan lebih baik disadari sekarang."
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut jam — cara analog",
+     "body": [
+      "Empat pola ini menutup seluruh kebutuhan sehari-hari. Perhatikan bahwa ketiganya menyebut **jam yang dituju**, bukan jam yang sudah lewat."
+     ],
+     "table": {
+      "head": [
+       "Waktu",
+       "Eesti keel",
+       "Harfiah",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "**2.00**",
+        "*kell kaks*",
+        "jam dua",
+        "pukul dua"
+       ],
+       [
+        "**2.15**",
+        "*veerand kolm*",
+        "seperempat tiga",
+        "⚠️ seperempat menuju tiga"
+       ],
+       [
+        "**2.30**",
+        "*pool kolm*",
+        "setengah tiga",
+        "**setengah tiga**"
+       ],
+       [
+        "**2.45**",
+        "*kolmveerand kolm*",
+        "tiga-perempat tiga",
+        "tiga perempat menuju tiga"
+       ],
+       [
+        "**3.00**",
+        "*kell kolm*",
+        "jam tiga",
+        "pukul tiga"
+       ]
+      ]
+     },
+     "after": [
+      "Bacalah kolom ketiga dan keempat bersamaan. Baris **2.30** sudah kamu kuasai seumur hidup. Dua baris lainnya memakai pikiran yang sama persis, cuma dengan pecahan yang berbeda.",
+      "⚠️ Satu-satunya jebakan: *veerand kolm* adalah **2.15**, bukan 3.15. Kalau kamu sempat ragu, terjemahkan dalam hati jadi \"seperempat menuju tiga\" — kamu tak akan salah.",
+      "Untuk menit yang lain, orang Estonia hampir selalu beralih ke cara digital, dan begitu juga sebaiknya kamu."
+     ]
+    },
+    {
+     "title": "Cara digital, dan menyebut janji",
+     "body": [
+      "Estonia memakai jam dua puluh empat dalam tulisan resmi, jadwal, dan tiket — sama seperti Indonesia."
+     ],
+     "table": {
+      "head": [
+       "Keperluan",
+       "Eesti keel",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "Bertanya jam",
+        "*Mis kell on?*",
+        "Jam berapa sekarang?"
+       ],
+       [
+        "Menjawab",
+        "*Kell on kolm.*",
+        "Jam tiga."
+       ],
+       [
+        "Digital",
+        "*Kell on kaks kolmkümmend.*",
+        "Pukul dua tiga puluh."
+       ],
+       [
+        "Jam 24",
+        "*Kell on neliteist.*",
+        "Pukul empat belas."
+       ],
+       [
+        "Bertanya janji",
+        "*Mis kell me kohtume?*",
+        "Kita ketemu jam berapa?"
+       ],
+       [
+        "Menyebut janji",
+        "*Kell kolm.*",
+        "Jam tiga."
+       ],
+       [
+        "Dari–sampai",
+        "*Kella kolmest viieni.*",
+        "Dari jam tiga sampai lima."
+       ],
+       [
+        "Kapan",
+        "*Millal?*",
+        "Kapan?"
+       ],
+       [
+        "Sekarang",
+        "*Praegu.*",
+        "Sekarang."
+       ],
+       [
+        "Lamanya",
+        "*Kaks tundi.*",
+        "Dua jam."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Perhatikan beda antara *kaks tundi* (dua jam lamanya) dan *kell kaks* (pukul dua). Yang pertama memakai bentuk bagian karena ia jumlah; yang kedua tidak.",
+      "*Kella kolmest viieni* memperlihatkan dua ekor bekerja bersama: **-st** (dari) dan **-ni** (sampai). Pola yang sama untuk hari: *esmaspäevast reedeni* (dari Senin sampai Jumat)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bagian hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Waktu",
+      "Bendanya",
+      "\"Pada waktu itu\"",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "06–11",
+       "*hommik*",
+       "*hommikul*",
+       "pagi"
+      ],
+      [
+       "12–13",
+       "*lõuna*",
+       "*lõunal*",
+       "tengah hari"
+      ],
+      [
+       "11–17",
+       "*päev*",
+       "*päeval*",
+       "siang"
+      ],
+      [
+       "17–23",
+       "*õhtu*",
+       "*õhtul*",
+       "sore, malam"
+      ],
+      [
+       "23–06",
+       "*öö*",
+       "*öösel*",
+       "malam, dini hari"
+      ],
+      [
+       "12.00",
+       "*keskpäev*",
+       "*keskpäeval*",
+       "tengah hari"
+      ],
+      [
+       "00.00",
+       "*kesköö*",
+       "*keskööl*",
+       "tengah malam"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Semuanya memakai ekor **-l** — rangkaian permukaan yang sama dengan *tööl* dan *turul*. Bahasa Estonia menaruh waktu \"di atas\" hari, bukan \"di dalam\"-nya."
+    },
+    {
+     "type": "kotak",
+     "title": "Hari-hari di sekitar hari ini",
+     "items": [
+      "*täna* — hari ini. *homme* — besok. *eile* — kemarin.",
+      "*ülehomme* — lusa. *üleeile* — kemarin dulu. Awalan *üle-* berarti \"lewat satu\".",
+      "*hommikul* — pagi ini/pagi-pagi. *täna õhtul* — nanti malam. *eile õhtul* — tadi malam.",
+      "*varsti* — sebentar lagi. *hiljem* — nanti. *kohe* — sekarang juga."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Cahaya Estonia mengubah arti \"pagi\" dan \"malam\"",
+     "items": [
+      "Di akhir Juni, matahari terbenam sekitar pukul 22.30 dan terbit lagi pukul 04.00. Langit tidak pernah benar-benar gelap. Malam pertengahan musim panas disebut *jaaniöö*, dan orang begadang semalaman.",
+      "Di akhir Desember, matahari terbit pukul 09.15 dan terbenam pukul 15.20. Kamu berangkat kerja dalam gelap dan pulang dalam gelap.",
+      "Akibatnya: *õhtul* bisa berarti langit terang benderang atau gelap gulita, tergantung bulan. Jangan mengandalkan cahaya untuk menebak jam.",
+      "Perbedaan ini nyata secara badan. Pendatang dari daerah khatulistiwa — tempat siang dan malam selalu dua belas jam — hampir selalu terkejut pada bulan pertama."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Rutinitas sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Eesti keel",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Ma ärkan kell seitse.*",
+       "Saya bangun jam tujuh."
+      ],
+      [
+       "*Ma söön hommikusööki.*",
+       "Saya sarapan."
+      ],
+      [
+       "*Ma lähen tööle kell kaheksa.*",
+       "Saya berangkat kerja jam delapan."
+      ],
+      [
+       "*Töö algab kell üheksa.*",
+       "Kerja mulai jam sembilan."
+      ],
+      [
+       "*Ma söön lõunat kell kaksteist.*",
+       "Saya makan siang jam dua belas."
+      ],
+      [
+       "*Töö lõpeb kell viis.*",
+       "Kerja selesai jam lima."
+      ],
+      [
+       "*Ma tulen koju kell kuus.*",
+       "Saya pulang jam enam."
+      ],
+      [
+       "*Ma söön õhtust kell seitse.*",
+       "Saya makan malam jam tujuh."
+      ],
+      [
+       "*Ma lähen magama kell üksteist.*",
+       "Saya tidur jam sebelas."
+      ],
+      [
+       "*Ma magan kaheksa tundi.*",
+       "Saya tidur delapan jam."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Tiga nama makan layak dihafal sekaligus: *hommikusöök* (sarapan — harfiah \"makan pagi\"), *lõunasöök* (makan siang), *õhtusöök* (makan malam). Ketiganya bagian hari + *söök* (makanan), jadi tak ada yang baru selain penempelannya."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "et": "kell",
+   "baca": "kell",
+   "id": "jam; pukul"
+  },
+  {
+   "et": "tund",
+   "baca": "tund",
+   "id": "jam (lamanya)"
+  },
+  {
+   "et": "minut",
+   "baca": "MI-nut",
+   "id": "menit"
+  },
+  {
+   "et": "pool",
+   "baca": "pool",
+   "id": "setengah"
+  },
+  {
+   "et": "veerand",
+   "baca": "VEE-rand",
+   "id": "seperempat"
+  },
+  {
+   "et": "kolmveerand",
+   "baca": "KOLM-vee-rand",
+   "id": "tiga perempat"
+  },
+  {
+   "et": "praegu",
+   "baca": "PRAE-gu",
+   "id": "sekarang"
+  },
+  {
+   "et": "millal",
+   "baca": "MIL-lal",
+   "id": "kapan"
+  },
+  {
+   "et": "hommik",
+   "baca": "HOM-mik",
+   "id": "pagi"
+  },
+  {
+   "et": "päev",
+   "baca": "pèev",
+   "id": "hari, siang"
+  },
+  {
+   "et": "õhtu",
+   "baca": "ËH-tu",
+   "id": "sore, malam"
+  },
+  {
+   "et": "öö",
+   "baca": "öö",
+   "id": "malam"
+  },
+  {
+   "et": "lõuna",
+   "baca": "LËU-na",
+   "id": "tengah hari; selatan"
+  },
+  {
+   "et": "täna",
+   "baca": "TÈ-na",
+   "id": "hari ini"
+  },
+  {
+   "et": "homme",
+   "baca": "HOM-me",
+   "id": "besok"
+  },
+  {
+   "et": "eile",
+   "baca": "EI-le",
+   "id": "kemarin"
+  },
+  {
+   "et": "varsti",
+   "baca": "VARS-ti",
+   "id": "sebentar lagi"
+  },
+  {
+   "et": "hiljem",
+   "baca": "HIL-yem",
+   "id": "nanti"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis waktunya dalam bahasa Estonia (cara analog).",
+   "items": [
+    "3.00",
+    "4.15",
+    "5.30",
+    "6.45",
+    "9.30",
+    "11.15"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Estonia.",
+   "items": [
+    "Jam berapa sekarang?",
+    "Sekarang jam dua.",
+    "Kita ketemu setengah tiga.",
+    "Kuliahnya mulai jam tiga.",
+    "Saya bangun jam tujuh.",
+    "Maaf, saya telat."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bagian hari yang tepat.",
+   "items": [
+    "Ma ärkan ____. (pagi)",
+    "Ma söön lõunat ____. (tengah hari)",
+    "Ma tulen koju ____. (sore)",
+    "Ma magan ____. (malam)",
+    "Ma lähen kinno ____ õhtul. (hari ini)",
+    "Ma olen vaba ____. (besok)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "kell / mis / on / ?",
+    "kolm / kohtume / pool / me",
+    "kell / algab / loeng / kolm",
+    "seitse / ma / ärkan / kell",
+    "hilinen / vabandust / ma"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "kell kolm — veerand viis — pool kuus — kolmveerand seitse — pool kümme — veerand kaksteist",
+  "1": "Mis kell on? — Kell on kaks. — Me kohtume pool kolm. — Loeng algab kell kolm. — Ma ärkan kell seitse. — Vabandust, ma hilinen.",
+  "2": "hommikul — lõunal — õhtul — öösel — täna — homme",
+  "3": "Mis kell on? — Me kohtume pool kolm. — Loeng algab kell kolm. — Ma ärkan kell seitse. — Vabandust, ma hilinen."
+ }
+}

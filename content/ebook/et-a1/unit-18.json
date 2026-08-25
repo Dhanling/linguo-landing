@@ -1,0 +1,512 @@
+{
+ "title": "Cuaca dan musim",
+ "title_target": "Ilm ja aastaajad",
+ "goal": "Berbicara tentang cuaca — pokok pembicaraan paling aman di Estonia — dan memakai kata kerja yang **tidak punya pelaku sama sekali**, persis seperti \"hujan\" dalam bahasa Indonesia.",
+ "bekal": [
+  "menggambarkan cuaca hari ini dan membaca ramalan sederhana",
+  "memakai *sajab* dan kerabatnya yang tanpa pelaku",
+  "menyebut empat musim dan menyatakan sesuatu terjadi pada musim itu"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Esimene lumi",
+   "intro": "Pertengahan November, pagi hari. Kerli mengetuk pintu kamar Budi.",
+   "lines": [
+    {
+     "speaker": "Kerli:",
+     "text": "Budi, vaata aknast välja!",
+     "id": "Budi, lihat ke luar jendela!",
+     "literal": "Budi, lihatlah jendela-dari keluar!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mis seal on?",
+     "id": "Ada apa di sana?",
+     "literal": "apa di-sana adalah?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Sajab lund. Esimene lumi!",
+     "id": "Turun salju. Salju pertama!",
+     "literal": "turun-ia salju-bagian. pertama salju!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "...",
+     "id": "...",
+     "literal": "..."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Kas kõik on korras?",
+     "id": "Kamu tidak apa-apa?",
+     "literal": "apakah semua adalah beres-di?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ma... ma ei ole kunagi lund näinud.",
+     "id": "Saya... saya belum pernah lihat salju.",
+     "literal": "saya... saya tidak adalah pernah salju-bagian lihat-nya."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Mitte kunagi? Päriselt?",
+     "id": "Belum pernah? Sungguh?",
+     "literal": "tidak pernah? sungguhnya?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Indoneesias ei saja kunagi lund. Meil on ainult vihm.",
+     "id": "Di Indonesia tidak pernah turun salju. Kami cuma punya hujan.",
+     "literal": "Indonesia-di tidak turun pernah salju-bagian. kami-pada adalah hanya hujan."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Lähme õue! Kohe!",
+     "id": "Ayo keluar! Sekarang juga!",
+     "literal": "pergi-kita halaman-ke! segera!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kui külm väljas on?",
+     "id": "Di luar berapa derajat?",
+     "literal": "seberapa dingin luar-di adalah?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Umbes miinus kaks. See on soe.",
+     "id": "Sekitar minus dua. Itu hangat.",
+     "literal": "sekitar minus dua. itu adalah-ia hangat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Soe?!",
+     "id": "Hangat?!",
+     "literal": "hangat?!"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Jaanuaris on miinus viisteist. Siis on külm.",
+     "id": "Januari minus lima belas. Itu baru dingin.",
+     "literal": "Januari-di adalah minus lima-belas. kalau-begitu adalah dingin."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ma pean istuma.",
+     "id": "Saya harus duduk dulu.",
+     "literal": "saya harus-saya untuk-duduk."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Ära muretse. Sa harjud ära.",
+     "id": "Jangan khawatir. Kamu akan terbiasa.",
+     "literal": "jangan khawatirlah. kamu terbiasa-kamu selesai."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kas tõesti?",
+     "id": "Sungguh?",
+     "literal": "apakah sungguh?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Kõik harjuvad. Ja kevad tuleb alati.",
+     "id": "Semua orang terbiasa. Dan musim semi selalu datang.",
+     "literal": "semua terbiasa-mereka. dan musim-semi datang-ia selalu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "See on ilus mõte.",
+     "id": "Itu pikiran yang indah.",
+     "literal": "itu adalah-ia indah pikiran."
+    }
+   ],
+   "notes": [
+    "⚠️ **Sajab tidak punya pelaku.** Tidak ada \"ia\" atau \"itu\" yang menurunkan hujan; kata kerjanya berdiri sendiri. Bahasa Indonesia melakukan hal yang sama persis — \"hujan\", \"gerimis\", \"salju turun\" — sementara bahasa Inggris terpaksa menambahkan *it* yang tak menunjuk apa pun.",
+    "**Sajab lund, sajab vihma.** Yang turun berbentuk **bagian**, karena tak ada yang menghitung seluruh salju atau seluruh hujan sekaligus. Aturan unit 13 bekerja lagi.",
+    "**Lähme õue** — \"ayo ke luar\". *Õue* adalah bentuk masuk pendek dari *õu* (halaman), sejenis dengan *kööki* dan *poodi* di unit 7. Lawannya *tuppa* (masuk ke dalam).",
+    "⚠️ **Miinus kaks dianggap hangat.** Ini bukan lelucon. Musim dingin Estonia berjalan antara nol dan minus lima selama sebagian besar waktunya, dengan minggu-minggu yang turun ke minus dua puluh. Suhu nol derajat pada bulan Februari benar-benar terasa lega."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja tanpa pelaku",
+     "body": [
+      "Sekelompok kecil kata kerja bahasa Estonia berbicara tentang cuaca dan waktu tanpa menyebut siapa yang melakukannya. Bahasa Indonesia punya kelompok yang sama, jadi bagian ini tidak menuntut cara berpikir baru."
+     ],
+     "table": {
+      "head": [
+       "Eesti keel",
+       "Harfiah",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "*Sajab.*",
+        "turun",
+        "Hujan."
+       ],
+       [
+        "*Sajab vihma.*",
+        "turun hujan-bagian",
+        "Hujan turun."
+       ],
+       [
+        "*Sajab lund.*",
+        "turun salju-bagian",
+        "Turun salju."
+       ],
+       [
+        "*Tuiskab.*",
+        "berbadai-salju",
+        "Ada badai salju."
+       ],
+       [
+        "*Külmetab.*",
+        "membeku",
+        "Membeku, di bawah nol."
+       ],
+       [
+        "*On pilves.*",
+        "adalah awan-di",
+        "Berawan."
+       ],
+       [
+        "*On udu.*",
+        "adalah kabut",
+        "Berkabut."
+       ],
+       [
+        "*Läheb pimedaks.*",
+        "pergi gelap-ke",
+        "Hari mulai gelap."
+       ],
+       [
+        "*Läheb soojemaks.*",
+        "pergi lebih-hangat-ke",
+        "Mulai menghangat."
+       ]
+      ]
+     },
+     "after": [
+      "Dua baris terakhir memakai pola **läheb + kata sifat + -ks**, yang berarti \"menjadi\". Pola ini produktif: *läheb külmaks* (menjadi dingin), *läheb hiljaks* (menjadi larut), *läheb paremaks* (menjadi lebih baik).",
+      "Untuk hal yang membutuhkan pelaku, bahasa Estonia tetap memakainya: *päike paistab* (matahari bersinar), *tuul puhub* (angin bertiup), *lumi sulab* (salju mencair).",
+      "⚠️ Perhatikan bahwa bentuknya selalu sama dengan bentuk \"dia\" (*-b*). Kalau kamu tahu merangkai kata kerja dari unit 10, kamu sudah bisa membentuk semua kalimat cuaca."
+     ]
+    },
+    {
+     "title": "Empat musim",
+     "body": [
+      "Musim memakai ekor **-l** — rangkaian permukaan yang sama dengan hari dan bagian hari."
+     ],
+     "table": {
+      "head": [
+       "Musim",
+       "Cara baca",
+       "\"Pada musim itu\"",
+       "Bulan",
+       "Rasanya"
+      ],
+      "rows": [
+       [
+        "*kevad*",
+        "*KE-vad*",
+        "*kevadel*",
+        "Mar–Mei",
+        "Salju mencair, hari memanjang cepat."
+       ],
+       [
+        "*suvi*",
+        "*SU-vi*",
+        "*suvel*",
+        "Jun–Agu",
+        "Terang sampai lewat tengah malam."
+       ],
+       [
+        "*sügis*",
+        "*SÜ-gis*",
+        "*sügisel*",
+        "Sep–Nov",
+        "Hujan, angin, daun berwarna."
+       ],
+       [
+        "*talv*",
+        "*talv*",
+        "*talvel*",
+        "Des–Feb",
+        "Salju, gelap, dan sauna."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *Suvi* menjadi *suvel*, bukan \"suvil\" — bentuk kepunyaannya *suve*. Sekali lagi pasangan kata benda dari unit 6 yang menentukan.",
+      "*Aastaaeg* berarti musim (harfiah: \"waktu tahun\"). *Neli aastaaega* — empat musim.",
+      "Untuk mengatakan \"tiap musim panas\", pakai *suviti*, sama seperti *esmaspäeviti* di unit 9."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Berbicara tentang cuaca",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Eesti keel",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Milline ilm täna on?*",
+       "Cuacanya bagaimana hari ini?"
+      ],
+      [
+       "*Ilm on ilus.*",
+       "Cuacanya bagus."
+      ],
+      [
+       "*Ilm on halb.*",
+       "Cuacanya buruk."
+      ],
+      [
+       "*Väljas on külm.*",
+       "Di luar dingin."
+      ],
+      [
+       "*Täna on soe.*",
+       "Hari ini hangat."
+      ],
+      [
+       "*Päike paistab.*",
+       "Matahari bersinar."
+      ],
+      [
+       "*Sajab vihma.*",
+       "Hujan."
+      ],
+      [
+       "*Sajab lund.*",
+       "Turun salju."
+      ],
+      [
+       "*Tuul puhub.*",
+       "Angin bertiup."
+      ],
+      [
+       "*On libe.*",
+       "Jalanan licin."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan *kümme kraadi **sooja*** dan *kümme kraadi **külma*** — bahasa Estonia menambahkan \"hangat\" atau \"dingin\" alih-alih tanda plus dan minus. Di ramalan cuaca tertulis kamu akan melihat *+10* dan *−10*, tapi di percakapan orang mengatakannya dengan kata."
+    },
+    {
+     "type": "kotak",
+     "title": "Cuaca adalah pokok pembicaraan yang aman",
+     "items": [
+      "Orang Estonia tidak banyak berbasa-basi, tapi cuaca adalah pengecualian yang diterima semua orang.",
+      "*Küll on täna ilus ilm!* — Bagus ya cuacanya hari ini!",
+      "*Küll on külm!* — Dingin sekali ya!",
+      "*Vihma sajab jälle.* — Hujan lagi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Empat musim, seperti yang benar-benar terasa",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Musim",
+      "Suhu biasa",
+      "Cahaya",
+      "Yang perlu kamu tahu"
+     ],
+     "rows": [
+      [
+       "*kevad*",
+       "0 sampai +15",
+       "Memanjang cepat",
+       "Salju mencair jadi lumpur. April sering masih bersalju."
+      ],
+      [
+       "*suvi*",
+       "+15 sampai +25",
+       "19 jam terang",
+       "⚠️ Puncaknya bisa +30. Sebagian besar rumah tanpa pendingin ruangan."
+      ],
+      [
+       "*sügis*",
+       "+10 turun ke 0",
+       "Memendek cepat",
+       "Bulan paling basah. Angin lebih menusuk daripada suhunya."
+      ],
+      [
+       "*talv*",
+       "0 sampai −20",
+       "6 jam terang",
+       "Desember paling gelap, Februari paling dingin."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kata musim yang akan kamu dengar",
+     "items": [
+      "*lumi* — salju. *lumesadu* — hujan salju. *jää* — es. *libedus* — jalanan licin.",
+      "*vihm* — hujan. *vihmavari* — payung (harfiah: \"naungan hujan\"). *saabas* — sepatu bot.",
+      "*tuul* — angin. *torm* — badai. *udu* — kabut. *pilv* — awan.",
+      "⚠️ *Porilumi* — campuran salju dan lumpur di jalanan bulan Maret. Tidak ada padanannya dalam bahasa Indonesia, dan orang Estonia membicarakannya dengan nada yang sama seperti kita membicarakan banjir."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "et": "ilm",
+   "baca": "ilm",
+   "id": "cuaca"
+  },
+  {
+   "et": "aastaaeg",
+   "baca": "AAS-ta-aeg",
+   "id": "musim"
+  },
+  {
+   "et": "kevad",
+   "baca": "KE-vad",
+   "id": "musim semi"
+  },
+  {
+   "et": "suvi",
+   "baca": "SU-vi",
+   "id": "musim panas (kep. suve)"
+  },
+  {
+   "et": "sügis",
+   "baca": "SÜ-gis",
+   "id": "musim gugur"
+  },
+  {
+   "et": "talv",
+   "baca": "talv",
+   "id": "musim dingin"
+  },
+  {
+   "et": "lumi",
+   "baca": "LU-mi",
+   "id": "salju (kep. lume)"
+  },
+  {
+   "et": "vihm",
+   "baca": "vihm",
+   "id": "hujan"
+  },
+  {
+   "et": "jää",
+   "baca": "yèè",
+   "id": "es"
+  },
+  {
+   "et": "tuul",
+   "baca": "tuul",
+   "id": "angin"
+  },
+  {
+   "et": "torm",
+   "baca": "torm",
+   "id": "badai"
+  },
+  {
+   "et": "udu",
+   "baca": "U-du",
+   "id": "kabut"
+  },
+  {
+   "et": "pilv",
+   "baca": "pilv",
+   "id": "awan"
+  },
+  {
+   "et": "sadama",
+   "baca": "SA-da-ma",
+   "id": "turun (hujan/salju)"
+  },
+  {
+   "et": "paistma",
+   "baca": "PAIST-ma",
+   "id": "bersinar, tampak"
+  },
+  {
+   "et": "puhuma",
+   "baca": "PU-hu-ma",
+   "id": "bertiup"
+  },
+  {
+   "et": "sulama",
+   "baca": "SU-la-ma",
+   "id": "mencair"
+  },
+  {
+   "et": "külmuma",
+   "baca": "KÜL-mu-ma",
+   "id": "membeku"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Estonia.",
+   "items": [
+    "Cuacanya bagaimana hari ini?",
+    "Cuacanya bagus.",
+    "Hujan.",
+    "Turun salju.",
+    "Di luar dingin.",
+    "Berapa derajat?"
+   ]
+  },
+  {
+   "prompt": "Tambahkan ekor -l (\"pada musim itu\").",
+   "items": [
+    "kevad",
+    "suvi",
+    "sügis",
+    "talv",
+    "hommik",
+    "õhtu"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata cuaca yang tepat.",
+   "items": [
+    "____ vihma. (turun)",
+    "____ paistab. (matahari)",
+    "Tuul ____. (bertiup)",
+    "Väljas on ____. (dingin)",
+    "Talvel sajab ____. (salju)",
+    "Kevadel lumi ____. (mencair)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ilm / on / ilus",
+    "lund / sajab",
+    "külm / väljas / on",
+    "kraadi / palju / kui / on / ?",
+    "tuleb / kevad / alati"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Milline ilm täna on? — Ilm on ilus. — Sajab vihma. — Sajab lund. — Väljas on külm. — Kui palju kraadi on?",
+  "1": "kevadel — suvel — sügisel — talvel — hommikul — õhtul",
+  "2": "Sajab — Päike — puhub — külm — lund — sulab",
+  "3": "Ilm on ilus. — Sajab lund. — Väljas on külm. — Kui palju kraadi on? — Kevad tuleb alati."
+ }
+}

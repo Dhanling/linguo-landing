@@ -1,0 +1,577 @@
+{
+ "title": "Dari mana kamu?",
+ "title_target": "Kust sa oled?",
+ "goal": "Menyebut asal, tempat tinggal, dan letak sebuah kota — sekaligus berkenalan dengan ekor kata pertama yang menggantikan kata depan: *-s* dan *-st*.",
+ "bekal": [
+  "menyebut negara, bangsa, dan bahasa tanpa tertukar bentuknya",
+  "memakai *-s* untuk \"di\" dan *-st* untuk \"dari\" pada nama tempat",
+  "mengetahui kapan sebuah tempat memakai *-l*, bukan *-s* — aturan satu baris yang menyelamatkan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Kohvikus ülikooli juures",
+   "intro": "Sehari kemudian, Kerli dan Budi duduk di kafe kecil di dekat kampus Universitas Tallinn.",
+   "lines": [
+    {
+     "speaker": "Kerli:",
+     "text": "Kust sa täpselt oled, Budi?",
+     "id": "Dari mana persisnya kamu, Budi?",
+     "literal": "dari-mana kamu tepatnya adalah-kamu, Budi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ma olen Indoneesiast, Bandungist.",
+     "id": "Saya dari Indonesia, dari Bandung.",
+     "literal": "saya adalah-saya Indonesia-dari, Bandung-dari."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Kus Bandung asub?",
+     "id": "Bandung itu letaknya di mana?",
+     "literal": "di-mana Bandung terletak-ia?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bandung asub Jaava saarel. See on suur linn.",
+     "id": "Bandung ada di pulau Jawa. Itu kota besar.",
+     "literal": "Bandung terletak-ia Jawa pulau-di-atas. itu adalah besar kota."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Kui suur?",
+     "id": "Sebesar apa?",
+     "literal": "seberapa besar?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Umbes kaks ja pool miljonit inimest.",
+     "id": "Sekitar dua setengah juta orang.",
+     "literal": "sekitar dua dan setengah juta-bagian orang-bagian."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Oi! Kogu Eestis elab ainult üks miljon inimest.",
+     "id": "Wah! Di seluruh Estonia cuma satu juta orang yang tinggal.",
+     "literal": "wah! seluruh Estonia-di tinggal-ia hanya satu juta orang-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tõesti? Ja sina, kust sa oled?",
+     "id": "Sungguh? Dan kamu, dari mana?",
+     "literal": "sungguh? dan kamu, dari-mana kamu adalah-kamu?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Ma olen Tartust, aga nüüd ma elan Tallinnas.",
+     "id": "Saya dari Tartu, tapi sekarang saya tinggal di Tallinn.",
+     "literal": "saya adalah-saya Tartu-dari, tapi sekarang saya tinggal-saya Tallinn-di."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kas Tartu on kaugel?",
+     "id": "Apakah Tartu jauh?",
+     "literal": "apakah Tartu adalah-ia jauh-di?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Ei ole. Umbes kaks tundi bussiga.",
+     "id": "Tidak. Sekitar dua jam naik bis.",
+     "literal": "tidak adalah. sekitar dua jam-bagian bis-dengan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ja su pere? Kas nad elavad ka Tartus?",
+     "id": "Dan keluargamu? Apakah mereka juga tinggal di Tartu?",
+     "literal": "dan kamu-punya keluarga? apakah mereka tinggal-mereka juga Tartu-di?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Ei, mu vanemad elavad Saaremaal.",
+     "id": "Tidak, orang tua saya tinggal di Saaremaa.",
+     "literal": "tidak, saya-punya orang-tua tinggal-mereka Saaremaa-di-atas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Saaremaal? Miks mitte Saaremaas?",
+     "id": "Saaremaal? Kenapa bukan Saaremaas?",
+     "literal": "Saaremaa-di-atas? kenapa bukan Saaremaa-di?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Hea küsimus! Kohad, mis lõpevad -maa, võtavad -l.",
+     "id": "Pertanyaan bagus! Tempat yang berakhiran -maa memakai -l.",
+     "literal": "tempat-jamak, yang berakhir-mereka -maa, mengambil-mereka -l."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Selge. Nii et Saksamaal ja Venemaal ka?",
+     "id": "Jelas. Jadi Saksamaal dan Venemaal juga?",
+     "literal": "jelas. begitu bahwa Jerman-di-atas dan Rusia-di-atas juga?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Täpselt! Sa õpid kiiresti.",
+     "id": "Tepat sekali! Kamu belajarnya cepat.",
+     "literal": "tepatnya! kamu belajar-kamu cepat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Aitäh! Aga sina oled hea õpetaja.",
+     "id": "Terima kasih! Tapi kamu memang guru yang baik.",
+     "literal": "terima-kasih! tapi kamu adalah-kamu baik guru."
+    }
+   ],
+   "notes": [
+    "**Indoneesiast, Bandungist, Tartust** — semuanya nama tempat + **-st**, yang berarti \"dari\". Perhatikan bahwa ekor ini menempel langsung tanpa spasi dan tanpa mengubah huruf besar di awal nama. Bahasa Indonesia menulis kata depan di depan; bahasa Estonia menempelkannya di belakang. Isinya sama.",
+    "**Tallinnas, Tartus, Eestis** — nama tempat + **-s**, yang berarti \"di\". Pasangkan langsung dengan *-st* di catatan sebelumnya: *Tartus* (di Tartu) lawan *Tartust* (dari Tartu). Bedanya satu huruf, dan huruf itu terdengar jelas.",
+    "**Su pere, mu vanemad.** *Su* adalah bentuk pendek dari *sinu* (punyamu), *mu* dari *minu* (punyaku). Sama seperti *ma* dan *mina* di unit 1: yang pendek untuk percakapan biasa, yang panjang saat ditekankan. Kepunyaan digarap penuh di unit 3.",
+    "⚠️ **Kui suur?** berarti \"seberapa besar\", bukan \"kalau besar\". *Kui* punya dua tugas: di depan kata sifat ia berarti \"seberapa\", di tempat lain berarti \"kalau\" atau \"daripada\". Konteks memisahkannya tanpa kesulitan."
+   ],
+   "grammars": [
+    {
+     "title": "Kus, kust, kuhu — tiga pertanyaan tempat",
+     "body": [
+      "Bahasa Estonia memisahkan \"di mana\", \"dari mana\", dan \"ke mana\" menjadi tiga kata tanya berbeda. Untungnya bahasa Indonesia melakukan hal yang sama, jadi bagian ini tidak menuntut cara berpikir baru — cuma tiga kata baru."
+     ],
+     "table": {
+      "head": [
+       "Kata tanya",
+       "Arti",
+       "Ekor jawabannya",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**kus**",
+        "di mana",
+        "**-s**",
+        "*Kus sa elad?* — *Tallinnas.*"
+       ],
+       [
+        "**kust**",
+        "dari mana",
+        "**-st**",
+        "*Kust sa oled?* — *Tartust.*"
+       ],
+       [
+        "**kuhu**",
+        "ke mana",
+        "**-sse**",
+        "*Kuhu sa lähed?* — *Tartusse.*"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa ekor jawabannya **mengikuti kata tanyanya**: *kus* menuntut *-s*, *kust* menuntut *-st*, *kuhu* menuntut *-sse*. Sekali kamu menangkap pasangan ini, kamu tak perlu menghafal tabel kasus — pertanyaannya sendiri yang memberi tahu ekor mana yang dipakai.",
+      "Unit ini menggarap dua yang pertama. *Kuhu* dan *-sse* menunggu di unit 7, karena di situlah panjang bunyi ketiga masuk ikut bermain."
+     ]
+    },
+    {
+     "title": "⚠️ Kapan sebuah tempat memakai -l, bukan -s",
+     "body": [
+      "Bahasa Estonia punya **dua rangkaian** ekor tempat. Yang satu berarti \"di dalam\", yang satu \"di permukaan\". Untuk benda biasa bedanya masuk akal — *majas* (di dalam rumah) lawan *laual* (di atas meja). Untuk nama tempat, pilihannya sudah dipatok tradisi, dan kamu tinggal mengikutinya."
+     ],
+     "table": {
+      "head": [
+       "Rangkaian",
+       "Di",
+       "Dari",
+       "Ke",
+       "Dipakai untuk"
+      ],
+      "rows": [
+       [
+        "**dalam**",
+        "**-s**",
+        "**-st**",
+        "**-sse**",
+        "Hampir semua negara dan kota"
+       ],
+       [
+        "**permukaan**",
+        "**-l**",
+        "**-lt**",
+        "**-le**",
+        "⚠️ Tempat berakhiran *-maa*, pulau, dan desa"
+       ]
+      ]
+     },
+     "after": [
+      "Aturannya satu baris: **kalau nama tempatnya berakhir *-maa*, pakai *-l*.** *Saksamaal* (di Jerman), *Venemaal* (di Rusia), *Inglismaal* (di Inggris), *Prantsusmaal* (di Prancis), *Saaremaal* (di Saaremaa). Selain itu pakai *-s*: *Eestis*, *Soomes*, *Indoneesias*, *Jaapanis*, *Tallinnas*.",
+      "Alasannya kebetulan masuk akal: *maa* sendiri berarti \"tanah\", dan orang berdiri **di atas** tanah, bukan di dalamnya. Bandingkan dengan \"Tanah Jawa\" dan \"Tanah Air\" — bahasa Indonesia memakai gambaran yang sama, cuma tidak mengubah kata depannya.",
+      "Ada segelintir pengecualian yang akan kamu temui belakangan (*maal* sendiri berarti \"di desa\", *Hiiumaal*, *Vormsil*). Jangan dikejar sekarang; aturan *-maa* sudah menutup lebih dari sembilan dari sepuluh perkara."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Negara, bangsa, bahasa",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tiga kolom pertama tabel ini punya pola yang sangat teratur: nama negara, lalu **-lane** untuk orangnya, lalu nama negara bentuk kepunyaan + *keel* untuk bahasanya. Sekali polanya tertangkap, kamu bisa menebak baris yang belum kamu lihat."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Negara",
+      "Orangnya",
+      "Bahasanya",
+      "\"Di\"",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Eesti*",
+       "*eestlane*",
+       "*eesti keel*",
+       "*Eestis*",
+       "Estonia"
+      ],
+      [
+       "*Indoneesia*",
+       "*indoneeslane*",
+       "*indoneesia keel*",
+       "*Indoneesias*",
+       "Indonesia"
+      ],
+      [
+       "*Soome*",
+       "*soomlane*",
+       "*soome keel*",
+       "*Soomes*",
+       "Finlandia"
+      ],
+      [
+       "*Läti*",
+       "*lätlane*",
+       "*läti keel*",
+       "*Lätis*",
+       "Latvia"
+      ],
+      [
+       "*Leedu*",
+       "*leedulane*",
+       "*leedu keel*",
+       "*Leedus*",
+       "Lituania"
+      ],
+      [
+       "*Rootsi*",
+       "*rootslane*",
+       "*rootsi keel*",
+       "*Rootsis*",
+       "Swedia"
+      ],
+      [
+       "*Saksamaa*",
+       "*sakslane*",
+       "*saksa keel*",
+       "⚠️ *Saksamaal*",
+       "Jerman"
+      ],
+      [
+       "*Venemaa*",
+       "*venelane*",
+       "*vene keel*",
+       "⚠️ *Venemaal*",
+       "Rusia"
+      ],
+      [
+       "*Inglismaa*",
+       "*inglane*",
+       "*inglise keel*",
+       "⚠️ *Inglismaal*",
+       "Inggris"
+      ],
+      [
+       "*Prantsusmaa*",
+       "*prantslane*",
+       "*prantsuse keel*",
+       "⚠️ *Prantsusmaal*",
+       "Prancis"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan empat baris terakhir. Negaranya berakhir *-maa*, jadi \"di\"-nya memakai **-l**. Perhatikan juga bahwa nama bangsanya **tidak** mengandung *-maa*: orang Jerman adalah *sakslane*, bukan \"saksamaalane\"."
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Tiga hal yang mudah tertukar",
+     "items": [
+      "**Nama bahasa selalu huruf kecil**, dan selalu dua kata: *eesti keel*, bukan \"Eesti keel\". Nama negara tetap huruf besar: *Eesti*.",
+      "**Nama bangsa juga huruf kecil**: *ta on eestlane*, bukan \"Eestlane\". Ini kebalikan dari bahasa Inggris.",
+      "Untuk mengatakan \"saya bicara bahasa X\", bahasanya berbentuk **bagian**: *ma räägin eesti keel**t***, *ma räägin inglise keel**t***. Hafalkan ekornya sebagai satu paket dengan kalimatnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kota dan tempat di Estonia",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tempat",
+      "Cara baca",
+      "\"Di\"",
+      "Keterangan"
+     ],
+     "rows": [
+      [
+       "*Tallinn*",
+       "*TAL-linn*",
+       "*Tallinnas*",
+       "Ibu kota, sekitar 460 ribu penduduk."
+      ],
+      [
+       "*Tartu*",
+       "*TAR-tu*",
+       "*Tartus*",
+       "Kota universitas tertua, dua jam dari Tallinn."
+      ],
+      [
+       "*Pärnu*",
+       "*PÈR-nu*",
+       "*Pärnus*",
+       "Kota pantai; ramai saat musim panas."
+      ],
+      [
+       "*Narva*",
+       "*NAR-va*",
+       "*Narvas*",
+       "Di perbatasan Rusia; sebagian besar berbahasa Rusia."
+      ],
+      [
+       "*Saaremaa*",
+       "*SAA-re-maa*",
+       "⚠️ *Saaremaal*",
+       "Pulau terbesar. *saar* = pulau."
+      ],
+      [
+       "*Hiiumaa*",
+       "*HII-u-maa*",
+       "⚠️ *Hiiumaal*",
+       "Pulau kedua terbesar."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kata tempat yang sering dipakai",
+     "items": [
+      "*linn* — kota. *suur linn* = kota besar, *väike linn* = kota kecil.",
+      "*küla* — desa. *maa* — tanah, negeri, desa. ⚠️ *maal* = \"di desa\", bukan \"di tanah\".",
+      "*saar* — pulau. *saarel* = di pulau. Perhatikan ia juga memakai *-l*.",
+      "*riik* — negara (sebagai lembaga). *pealinn* — ibu kota (harfiah: \"kota kepala\")."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pola kalimat siap pakai",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Eesti keel",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Kust sa oled?*",
+       "Kamu dari mana?"
+      ],
+      [
+       "*Ma olen Indoneesiast.*",
+       "Saya dari Indonesia."
+      ],
+      [
+       "*Kus sa elad?*",
+       "Kamu tinggal di mana?"
+      ],
+      [
+       "*Ma elan Tallinnas.*",
+       "Saya tinggal di Tallinn."
+      ],
+      [
+       "*Kaua sa oled Eestis olnud?*",
+       "Sudah berapa lama kamu di Estonia?"
+      ],
+      [
+       "*Ma olen siin kolm kuud.*",
+       "Saya di sini tiga bulan."
+      ],
+      [
+       "*Kus see asub?*",
+       "Itu letaknya di mana?"
+      ],
+      [
+       "*See asub kesklinnas.*",
+       "Itu ada di pusat kota."
+      ],
+      [
+       "*Kas see on kaugel?*",
+       "Apakah itu jauh?"
+      ],
+      [
+       "*Ei, see on lähedal.*",
+       "Tidak, itu dekat."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalimat terakhir memakai bentuk yang belum kamu pelajari (*mulle* = \"kepada saya\"), tapi ia terlalu berguna untuk ditunda. Hafalkan utuh: *mulle meeldib* + benda = \"saya suka\". Bahasa Estonia mengatakan \"kepada saya menyenangkan X\", bukan \"saya menyukai X\" — susunan yang akan terasa masuk akal begitu kamu sampai di unit 16."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "et": "kust",
+   "baca": "kust",
+   "id": "dari mana"
+  },
+  {
+   "et": "kus",
+   "baca": "kus",
+   "id": "di mana"
+  },
+  {
+   "et": "kuhu",
+   "baca": "KU-hu",
+   "id": "ke mana"
+  },
+  {
+   "et": "elama",
+   "baca": "E-la-ma",
+   "id": "tinggal, hidup"
+  },
+  {
+   "et": "asuma",
+   "baca": "A-su-ma",
+   "id": "terletak, berada"
+  },
+  {
+   "et": "linn",
+   "baca": "linn",
+   "id": "kota"
+  },
+  {
+   "et": "küla",
+   "baca": "KÜ-la",
+   "id": "desa"
+  },
+  {
+   "et": "maa",
+   "baca": "maa",
+   "id": "tanah, negeri, desa"
+  },
+  {
+   "et": "saar",
+   "baca": "saar",
+   "id": "pulau"
+  },
+  {
+   "et": "riik",
+   "baca": "riik",
+   "id": "negara"
+  },
+  {
+   "et": "pealinn",
+   "baca": "PEA-linn",
+   "id": "ibu kota"
+  },
+  {
+   "et": "kesklinn",
+   "baca": "KESK-linn",
+   "id": "pusat kota"
+  },
+  {
+   "et": "vanalinn",
+   "baca": "VA-na-linn",
+   "id": "kota tua"
+  },
+  {
+   "et": "suur",
+   "baca": "suur",
+   "id": "besar"
+  },
+  {
+   "et": "väike",
+   "baca": "VÈI-ke",
+   "id": "kecil"
+  },
+  {
+   "et": "kaugel",
+   "baca": "KAU-gel",
+   "id": "jauh"
+  },
+  {
+   "et": "lähedal",
+   "baca": "LÈ-he-dal",
+   "id": "dekat"
+  },
+  {
+   "et": "umbes",
+   "baca": "UM-bes",
+   "id": "kira-kira, sekitar"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Estonia.",
+   "items": [
+    "Kamu dari mana?",
+    "Saya dari Indonesia.",
+    "Saya tinggal di Tallinn.",
+    "Di mana letak Tartu?",
+    "Apakah itu jauh?",
+    "Tidak, itu dekat."
+   ]
+  },
+  {
+   "prompt": "Tambahkan ekor -s atau -l (\"di\"). Perhatikan aturan -maa.",
+   "items": [
+    "Eesti",
+    "Saksamaa",
+    "Indoneesia",
+    "Tallinn",
+    "Venemaa",
+    "Soome"
+   ]
+  },
+  {
+   "prompt": "Ubah ke bentuk -st (\"dari\").",
+   "items": [
+    "Tartu",
+    "Jaapan",
+    "Hiina",
+    "Pärnu",
+    "Itaalia",
+    "Rootsi"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "elan / Tallinnas / ma",
+    "sa / kust / oled / ?",
+    "asub / kus / Bandung / ?",
+    "vanemad / Saaremaal / elavad / mu",
+    "linn / see / suur / on"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Kust sa oled? — Ma olen Indoneesiast. — Ma elan Tallinnas. — Kus Tartu asub? — Kas see on kaugel? — Ei, see on lähedal.",
+  "1": "Eestis — Saksamaal — Indoneesias — Tallinnas — Venemaal — Soomes",
+  "2": "Tartust — Jaapanist — Hiinast — Pärnust — Itaaliast — Rootsist",
+  "3": "Ma elan Tallinnas. — Kust sa oled? — Kus Bandung asub? — Mu vanemad elavad Saaremaal. — See on suur linn."
+ }
+}

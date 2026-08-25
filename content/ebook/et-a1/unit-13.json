@@ -1,0 +1,512 @@
+{
+ "title": "Tuntas atau belum",
+ "title_target": "Sihitis — raamatu või raamatut?",
+ "goal": "Unit terberat modul ini. Bahasa Estonia menandai **selesai atau belumnya** sebuah perbuatan pada ekor bendanya — pekerjaan yang bahasa Indonesia serahkan kepada kata \"sedang\" dan \"sudah\".",
+ "bekal": [
+  "memilih antara bentuk kepunyaan dan bentuk bagian untuk benda yang dikenai perbuatan",
+  "memakai satu aturan yang tak pernah meleset: sesudah sangkalan, selalu bentuk bagian",
+  "mengenali kata kerja yang selamanya menuntut bentuk bagian"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Raamatupoes",
+   "intro": "Toko buku Rahva Raamat di pusat Tallinn. Budi mencari buku pelajaran.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Tere! Ma otsin raamatut.",
+     "id": "Halo! Saya sedang cari buku.",
+     "literal": "halo! saya cari-saya buku-bagian."
+    },
+    {
+     "speaker": "Müüja:",
+     "text": "Millist raamatut?",
+     "id": "Buku apa?",
+     "literal": "yang-mana-bagian buku-bagian?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Eesti keele õpikut algajatele.",
+     "id": "Buku pelajaran bahasa Estonia untuk pemula.",
+     "literal": "Estonia bahasa-punya buku-ajar-bagian pemula-jamak-kepada."
+    },
+    {
+     "speaker": "Müüja:",
+     "text": "Palun, see on hea.",
+     "id": "Silakan, ini bagus.",
+     "literal": "silakan, ini adalah-ia baik."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Aitäh. Ma ostan selle raamatu.",
+     "id": "Terima kasih. Saya beli buku ini.",
+     "literal": "terima-kasih. saya beli-saya ini-punya buku-punya."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Oota — sa ütlesid \"raamatut\", nüüd \"raamatu\".",
+     "id": "Tunggu — tadi kamu bilang \"raamatut\", sekarang \"raamatu\".",
+     "literal": "tunggulah — kamu berkata-lampau-kamu \"buku-bagian\", sekarang \"buku-punya\"."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jah, ma märkasin ka. Mis vahe on?",
+     "id": "Ya, saya juga sadar. Apa bedanya?",
+     "literal": "ya, saya sadar-lampau-saya juga. apa beda adalah-ia?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "\"Otsin raamatut\" — sa alles otsid. \"Ostan raamatu\" — asi saab tehtud.",
+     "id": "\"Otsin raamatut\" — kamu masih cari. \"Ostan raamatu\" — perkaranya selesai.",
+     "literal": "\"cari-saya buku-bagian\" — kamu masih cari-kamu. \"beli-saya buku-punya\" — hal dapat-ia dilakukan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nii et lõpetatus on tähtis?",
+     "id": "Jadi tuntas atau tidaknya yang penting?",
+     "literal": "begitu bahwa ketuntasan adalah-ia penting?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Just. Indoneesia keeles sa ütled \"sedang\" ja \"sudah\", eks?",
+     "id": "Nah. Dalam bahasa Indonesia kamu bilang \"sedang\" dan \"sudah\", kan?",
+     "literal": "persis. Indonesia bahasa-di kamu berkata-kamu \"sedang\" dan \"sudah\", kan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jah! \"Sedang membaca\" ja \"sudah membaca\".",
+     "id": "Ya! \"Sedang membaca\" dan \"sudah membaca\".",
+     "literal": "ya! \"sedang membaca\" dan \"sudah membaca\"."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Sama mõte. Meie paneme selle sõna lõppu, teie eraldi sõnasse.",
+     "id": "Pikiran yang sama. Kami menaruhnya di ujung kata, kalian di kata terpisah.",
+     "literal": "sama pikiran. kami taruh-kami itu-punya kata-punya ujung-ke, kalian terpisah kata-ke."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "See on tegelikult loogiline.",
+     "id": "Itu sebenarnya masuk akal.",
+     "literal": "itu adalah-ia sebenarnya logis."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Ja üks reegel on lihtne: eituse järel alati -t.",
+     "id": "Dan satu aturan mudah: sesudah sangkalan selalu -t.",
+     "literal": "dan satu aturan adalah-ia mudah: sangkalan-punya sesudah selalu -t."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "\"Ma ei osta raamatut\"?",
+     "id": "\"Ma ei osta raamatut\"?",
+     "literal": "\"saya tidak beli buku-bagian\"?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Täpselt. Alati. Eranditult.",
+     "id": "Tepat. Selalu. Tanpa kecuali.",
+     "literal": "tepatnya. selalu. tanpa-kecuali."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Siis ma tean vähemalt ühe kindla reegli.",
+     "id": "Kalau begitu saya tahu setidaknya satu aturan pasti.",
+     "literal": "kalau-begitu saya tahu-saya setidaknya satu-punya pasti-punya aturan-punya."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Ja kui kahtled — kasuta -t. Enamasti õige.",
+     "id": "Dan kalau ragu — pakai -t. Kebanyakan benar.",
+     "literal": "dan kalau ragu-kamu — pakailah -t. kebanyakannya benar."
+    }
+   ],
+   "notes": [
+    "⚠️ **Inilah gagasan inti unit ini, dan ia layak dibaca dua kali.** Bahasa Indonesia menandai tuntas atau belumnya sebuah perbuatan dengan kata terpisah: *sedang* membaca, *sudah* membaca, *habis* dibaca. Bahasa Estonia menandai hal yang sama persis dengan **mengubah ekor bendanya**. Isinya sama; letaknya saja yang pindah — persis seperti yang terjadi pada kata depan di unit 2.",
+    "**Ma otsin raamatut** — perbuatannya sedang berjalan, hasilnya belum ada. Bentuk **bagian**. **Ma ostan raamatu** — perbuatannya tuntas, satu buku berpindah tangan seluruhnya. Bentuk **kepunyaan**.",
+    "**Millist raamatut?** — \"buku yang mana?\" Perhatikan kata tanyanya ikut berbentuk bagian karena kata bendanya begitu. Kata sifat dan kata penunjuk **selalu** meniru bentuk kata bendanya; ini akan diulang di unit 14.",
+    "**Selle raamatu** — \"buku ini\". *See* menjadi *selle* dalam bentuk kepunyaan, sama seperti kata benda biasa. Bentuk bagiannya *seda*: *ma ei taha seda* (saya tidak mau itu)."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga bentuk, dan kapan masing-masing dipakai",
+     "body": [
+      "Benda yang dikenai perbuatan bisa muncul dalam tiga bentuk. Kolom terakhir memberi tahu kapan."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "*raamat* (buku)",
+       "Contoh",
+       "Kapan dipakai"
+      ],
+      "rows": [
+       [
+        "**bagian**",
+        "*raamatu**t***",
+        "*Ma loen raamatut.*",
+        "Sedang berjalan, belum tuntas."
+       ],
+       [
+        "**kepunyaan**",
+        "*raamatu*",
+        "*Ma loen raamatu läbi.*",
+        "Tuntas, hasilnya utuh."
+       ],
+       [
+        "**dasar**",
+        "*raamat*",
+        "*Osta raamat!*",
+        "⚠️ Hanya dalam kalimat perintah."
+       ]
+      ]
+     },
+     "after": [
+      "Bandingkan dua baris pertama dengan pasangan bahasa Indonesia: *ma loen raamatut* = \"saya **sedang** membaca buku\"; *ma loen raamatu läbi* = \"saya **selesai** membaca buku\". Kata *läbi* (habis, tuntas) memperjelasnya, tapi ekor *-u* sendiri sudah membawa arti itu.",
+      "⚠️ Baris ketiga sering dilupakan: dalam **kalimat perintah**, bendanya kembali ke bentuk dasar. *Osta raamat!* (Belilah buku itu!), *Tee töö ära!* (Selesaikan pekerjaannya!). Tapi kalau perintahnya bersangkal, bentuk bagian kembali: *Ära osta raamatut!*",
+      "Bentuk kepunyaan sebagai sasaran sering disebut \"bentuk sasaran utuh\". Namanya tidak penting; yang penting adalah gambarannya — **seluruh benda itu selesai diurus**."
+     ]
+    },
+    {
+     "title": "Lima keadaan yang selalu memakai bentuk bagian",
+     "body": [
+      "Kalau kamu cuma mau menghafal satu hal dari unit ini, hafalkan tabel ini. Kelima baris berikut tidak punya pengecualian di tingkat A1."
+     ],
+     "table": {
+      "head": [
+       "Keadaan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "⚠️ **Sesudah sangkalan**",
+        "*Ma ei osta raamatut.*",
+        "Saya tidak beli buku."
+       ],
+       [
+        "**Perbuatan belum tuntas**",
+        "*Ma loen raamatut.*",
+        "Saya sedang baca buku."
+       ],
+       [
+        "**Barang tak terhitung**",
+        "*Ma joon vett.*",
+        "Saya minum air."
+       ],
+       [
+        "**Sesudah angka**",
+        "*Ma ostan kaks raamatut.*",
+        "Saya beli dua buku."
+       ],
+       [
+        "**Sesudah *palju*, *vähe***",
+        "*Mul on palju tööd.*",
+        "Saya banyak kerjaan."
+       ]
+      ]
+     },
+     "after": [
+      "**Baris pertama adalah aturan paling berharga di seluruh modul ini.** Sesudah *ei* atau *ära*, bendanya **selalu** berbentuk bagian — tanpa kecuali, tanpa syarat, tanpa perlu memikirkan tuntas atau tidak. Kalau kamu ingat satu hal saja, ingat ini.",
+      "Baris ketiga sudah kamu pakai sejak unit 5 tanpa tahu namanya: *kohvi*, *teed*, *vett*, *piima*. Sekarang kamu tahu kenapa.",
+      "Baris keempat juga sudah kamu pakai sejak unit 4: *kaks eurot*, *kolm last*, *viis raamatut*. Naluri bahasa Indonesia sudah benar sejak awal — yang baru cuma ekornya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata kerja yang selamanya minta bentuk bagian",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sebagian kata kerja tidak pernah bisa \"tuntas\" secara wajar — kamu tidak bisa selesai mencintai atau selesai menunggu. Kata kerja semacam itu **selalu** memakai bentuk bagian, apa pun keadaannya. Sepuluh yang paling sering:"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata kerja",
+      "Contoh",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*armastama*",
+       "*Ma armastan sind.*",
+       "Saya mencintaimu."
+      ],
+      [
+       "*ootama*",
+       "*Ma ootan bussi.*",
+       "Saya menunggu bis."
+      ],
+      [
+       "*aitama*",
+       "*Ma aitan sind.*",
+       "Saya membantumu."
+      ],
+      [
+       "*kuulama*",
+       "*Ma kuulan muusikat.*",
+       "Saya mendengarkan musik."
+      ],
+      [
+       "*otsima*",
+       "*Ma otsin võtit.*",
+       "Saya mencari kunci."
+      ],
+      [
+       "*tundma*",
+       "*Ma tunnen teda.*",
+       "Saya kenal dia."
+      ],
+      [
+       "*mäletama*",
+       "*Ma mäletan sind.*",
+       "Saya ingat kamu."
+      ],
+      [
+       "*kartma*",
+       "*Ma kardan koera.*",
+       "Saya takut anjing."
+      ],
+      [
+       "*uskuma*",
+       "*Ma usun sind.*",
+       "Saya percaya kamu."
+      ],
+      [
+       "*tänama*",
+       "*Ma tänan teid.*",
+       "Saya berterima kasih."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Bentuk bagian kata ganti — dipakai setiap hari",
+     "items": [
+      "*mind* (saya), *sind* (kamu), *teda* (dia), *meid* (kami), *teid* (kalian), *neid* (mereka).",
+      "*Ma armastan sind.* — Saya mencintaimu. *Ta tunneb mind.* — Dia kenal saya.",
+      "⚠️ *Teid* dipakai untuk \"kalian\" **dan** untuk \"Anda\" yang sopan: *Ma tänan teid.* — Saya berterima kasih kepada Anda.",
+      "Bentuk-bentuk ini tak beraturan dan sangat sering muncul. Hafalkan keenamnya sekarang; kamu akan memakainya lebih sering daripada tabel mana pun di unit ini."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pasangan yang memperlihatkan bedanya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bacalah tiap baris bersuara, sepasang-sepasang. Beda ekornya kecil; beda artinya besar."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Belum tuntas",
+      "Arti",
+      "Tuntas",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Ma loen raamatut.*",
+       "Saya sedang baca buku.",
+       "*Ma loen raamatu läbi.*",
+       "Saya baca bukunya sampai habis."
+      ],
+      [
+       "*Ma söön õuna.*",
+       "Saya sedang makan apel.",
+       "*Ma söön õuna ära.*",
+       "Saya habiskan apelnya."
+      ],
+      [
+       "*Ma kirjutan kirja.*",
+       "Saya sedang menulis surat.",
+       "*Ma kirjutan kirja valmis.*",
+       "Saya selesaikan suratnya."
+      ],
+      [
+       "*Ma otsin võtit.*",
+       "Saya sedang cari kunci.",
+       "*Ma leian võtme.*",
+       "Saya menemukan kuncinya."
+      ],
+      [
+       "*Ma ehitan maja.*",
+       "Saya sedang bangun rumah.",
+       "*Ma ehitan maja valmis.*",
+       "Saya selesaikan rumahnya."
+      ],
+      [
+       "*Ta joob kohvi.*",
+       "Dia sedang minum kopi.",
+       "*Ta joob kohvi ära.*",
+       "Dia habiskan kopinya."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan kata kecil di kolom ketiga: *läbi*, *ära*, *valmis*. Bahasa Estonia sering menambahkannya untuk mempertegas ketuntasan — dan ketiganya berperan persis seperti \"habis\", \"selesai\", dan \"sampai tuntas\" dalam bahasa Indonesia. Kalau kamu memakainya, bendanya hampir pasti berbentuk kepunyaan."
+    },
+    {
+     "type": "kotak",
+     "title": "Urutan memutuskan — pakai ini saat ragu",
+     "items": [
+      "**1.** Apakah kalimatnya bersangkal? → **bentuk bagian**. Berhenti di sini; tidak ada langkah lain.",
+      "**2.** Apakah bendanya tak terhitung — cairan, bahan, waktu? → **bentuk bagian**.",
+      "**3.** Apakah ada angka lebih dari satu, atau *palju*/*vähe*? → **bentuk bagian**.",
+      "**4.** Apakah kata kerjanya ada di daftar sepuluh di atas? → **bentuk bagian**."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "et": "sihitis",
+   "baca": "SI-hi-tis",
+   "id": "sasaran, objek"
+  },
+  {
+   "et": "otsima",
+   "baca": "OT-si-ma",
+   "id": "mencari"
+  },
+  {
+   "et": "leidma",
+   "baca": "LEID-ma",
+   "id": "menemukan"
+  },
+  {
+   "et": "ostma",
+   "baca": "OST-ma",
+   "id": "membeli"
+  },
+  {
+   "et": "armastama",
+   "baca": "AR-mas-ta-ma",
+   "id": "mencintai"
+  },
+  {
+   "et": "ootama",
+   "baca": "OO-ta-ma",
+   "id": "menunggu"
+  },
+  {
+   "et": "aitama",
+   "baca": "AI-ta-ma",
+   "id": "membantu"
+  },
+  {
+   "et": "kartma",
+   "baca": "KART-ma",
+   "id": "takut"
+  },
+  {
+   "et": "uskuma",
+   "baca": "US-ku-ma",
+   "id": "percaya"
+  },
+  {
+   "et": "tänama",
+   "baca": "TÈ-na-ma",
+   "id": "berterima kasih"
+  },
+  {
+   "et": "ehitama",
+   "baca": "E-hi-ta-ma",
+   "id": "membangun"
+  },
+  {
+   "et": "märkama",
+   "baca": "MÈR-ka-ma",
+   "id": "menyadari"
+  },
+  {
+   "et": "kahtlema",
+   "baca": "KAHT-le-ma",
+   "id": "ragu"
+  },
+  {
+   "et": "mind",
+   "baca": "mind",
+   "id": "saya (sasaran)"
+  },
+  {
+   "et": "sind",
+   "baca": "sind",
+   "id": "kamu (sasaran)"
+  },
+  {
+   "et": "teda",
+   "baca": "TE-da",
+   "id": "dia (sasaran)"
+  },
+  {
+   "et": "meid",
+   "baca": "meid",
+   "id": "kami (sasaran)"
+  },
+  {
+   "et": "teid",
+   "baca": "teid",
+   "id": "kalian, Anda (sasaran)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih bentuk yang tepat: kepunyaan atau bagian.",
+   "items": [
+    "Ma ostan ____. (raamat, tuntas)",
+    "Ma otsin ____. (raamat, sedang cari)",
+    "Ma ei osta ____. (raamat)",
+    "Ma joon ____. (vesi)",
+    "Ma ostan kaks ____. (pilet)",
+    "Ma armastan ____. (sina)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat bersangkal. Ingat: sesudah ei selalu bentuk bagian.",
+   "items": [
+    "Ma ostan raamatu.",
+    "Ma söön õuna.",
+    "Ta loeb kirja.",
+    "Me võtame pileti.",
+    "Ma tean seda.",
+    "Nad ehitavad maja."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Estonia.",
+   "items": [
+    "Saya sedang cari buku.",
+    "Saya beli buku ini.",
+    "Saya tidak beli buku.",
+    "Saya menunggu bis.",
+    "Saya mencintaimu.",
+    "Saya minum air."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "otsin / raamatut / ma",
+    "raamatu / ostan / selle / ma",
+    "osta / ei / ma / raamatut",
+    "bussi / ma / ootan",
+    "läbi / raamatu / loen / ma"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "raamatu — raamatut — raamatut — vett — piletit — sind",
+  "1": "Ma ei osta raamatut. — Ma ei söö õuna. — Ta ei loe kirja. — Me ei võta piletit. — Ma ei tea seda. — Nad ei ehita maja.",
+  "2": "Ma otsin raamatut. — Ma ostan selle raamatu. — Ma ei osta raamatut. — Ma ootan bussi. — Ma armastan sind. — Ma joon vett.",
+  "3": "Ma otsin raamatut. — Ma ostan selle raamatu. — Ma ei osta raamatut. — Ma ootan bussi. — Ma loen raamatu läbi."
+ }
+}

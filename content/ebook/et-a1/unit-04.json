@@ -1,0 +1,564 @@
+{
+ "title": "Angka dan punya",
+ "title_target": "Numbrid ja \"mul on\"",
+ "goal": "Menghitung, menanyakan harga, dan mengatakan kamu punya sesuatu — dalam bahasa yang **tidak punya kata kerja \"punya\"** sama sekali.",
+ "bekal": [
+  "menghitung dari nol sampai satu juta tanpa menghafal seratus kata",
+  "memakai *mul on* / *mul ei ole* untuk kepemilikan",
+  "menanyakan dan memahami harga di toko dan pasar"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Turul",
+   "intro": "Sabtu pagi di Balti jaam turg, pasar dekat stasiun kereta Tallinn. Budi berbelanja sendiri untuk pertama kalinya.",
+   "lines": [
+    {
+     "speaker": "Müüja:",
+     "text": "Tere! Mida soovite?",
+     "id": "Halo! Mau apa?",
+     "literal": "halo! apa-bagian ingin-Anda?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tere! Kui palju maksavad õunad?",
+     "id": "Halo! Apelnya berapa?",
+     "literal": "halo! seberapa banyak berharga-mereka apel-jamak?"
+    },
+    {
+     "speaker": "Müüja:",
+     "text": "Kaks eurot kilo.",
+     "id": "Dua euro sekilo.",
+     "literal": "dua euro-bagian kilo."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ma võtan kaks kilo, palun.",
+     "id": "Saya ambil dua kilo, tolong.",
+     "literal": "saya ambil-saya dua kilo, tolong."
+    },
+    {
+     "speaker": "Müüja:",
+     "text": "Palun. Kas midagi veel?",
+     "id": "Silakan. Ada lagi?",
+     "literal": "silakan. apakah sesuatu lagi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jah. Kui palju maksab see leib?",
+     "id": "Ya. Roti ini berapa?",
+     "literal": "ya. seberapa banyak berharga-ia ini roti?"
+    },
+    {
+     "speaker": "Müüja:",
+     "text": "Kolm eurot viiskümmend.",
+     "id": "Tiga euro lima puluh.",
+     "literal": "tiga euro-bagian lima-puluh."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hea küll. Ja üks pudel vett.",
+     "id": "Baiklah. Dan satu botol air.",
+     "literal": "baik cukup. dan satu botol air-bagian."
+    },
+    {
+     "speaker": "Müüja:",
+     "text": "Kokku kaheksa eurot kolmkümmend senti.",
+     "id": "Totalnya delapan euro tiga puluh sen.",
+     "literal": "seluruhnya delapan euro-bagian tiga-puluh sen-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vabandust, mul ei ole sularaha. Kas kaart sobib?",
+     "id": "Maaf, saya tidak punya uang tunai. Boleh pakai kartu?",
+     "literal": "maaf, saya-pada tidak adalah tunai-uang. apakah kartu cocok-ia?"
+    },
+    {
+     "speaker": "Müüja:",
+     "text": "Muidugi. Eestis maksavad kõik kaardiga.",
+     "id": "Tentu. Di Estonia semua orang bayar pakai kartu.",
+     "literal": "tentu-saja. Estonia-di membayar-mereka semua kartu-dengan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Isegi turul?",
+     "id": "Bahkan di pasar?",
+     "literal": "bahkan pasar-di-atas?"
+    },
+    {
+     "speaker": "Müüja:",
+     "text": "Isegi turul. Meil pole peaaegu üldse sularaha.",
+     "id": "Bahkan di pasar. Kami hampir tidak punya uang tunai sama sekali.",
+     "literal": "bahkan pasar-di-atas. kami-pada tidak-ada hampir sama-sekali tunai-uang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Uskumatu. Indoneesias on vastupidi.",
+     "id": "Luar biasa. Di Indonesia sebaliknya.",
+     "literal": "tak-terpercaya. Indonesia-di adalah sebaliknya."
+    },
+    {
+     "speaker": "Müüja:",
+     "text": "Palun, siin on tšekk. Head päeva!",
+     "id": "Silakan, ini struknya. Selamat siang!",
+     "literal": "silakan, di-sini adalah struk. baik-punya hari-bagian!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Aitäh, teile ka!",
+     "id": "Terima kasih, Anda juga!",
+     "literal": "terima-kasih, Anda-kepada juga!"
+    }
+   ],
+   "notes": [
+    "**Maksab** untuk satu barang, **maksavad** untuk banyak barang. Perhatikan *maksab see leib* (satu roti) dan *maksavad õunad* (banyak apel). Kata kerja bahasa Estonia ikut berubah menurut jumlah pelakunya — ini digarap penuh di unit 10.",
+    "⚠️ **Kaks euro*t*, kolmkümmend sen*ti*.** Sesudah angka, kata bendanya berbentuk **bagian** dan **tetap tunggal**. Bukan \"kaks eurod\". Naluri bahasa Indonesia sudah benar di sini — \"dua euro\", bukan \"dua euro-euro\" — yang baru cuma ekornya.",
+    "**Mul ei ole** dan **meil pole** berarti hal yang sama: \"saya/kami tidak punya\". *Pole* adalah singkatan dari *ei ole*, dan ia sangat umum di percakapan. Pakai yang mana saja; keduanya benar.",
+    "**Kaardiga** = *kaart* + **-ga** (\"dengan\"). Ekor yang sama untuk alat pembayaran, alat kerja, dan kendaraan: *sularahaga* (dengan tunai), *bussiga* (naik bis), *pastakaga* (pakai pulpen)."
+   ],
+   "grammars": [
+    {
+     "title": "Angka — dan dua rahasia yang memangkas hafalan",
+     "body": [
+      "Kamu tidak perlu menghafal seratus kata. Bahasa Estonia membangun seluruh angkanya dari sepuluh kata dasar dan dua pola."
+     ],
+     "table": {
+      "head": [
+       "Angka",
+       "Eesti keel",
+       "Angka",
+       "Eesti keel",
+       "Angka",
+       "Eesti keel"
+      ],
+      "rows": [
+       [
+        "0",
+        "*null*",
+        "10",
+        "*kümme*",
+        "20",
+        "*kakskümmend*"
+       ],
+       [
+        "1",
+        "*üks*",
+        "11",
+        "*üksteist*",
+        "30",
+        "*kolmkümmend*"
+       ],
+       [
+        "2",
+        "*kaks*",
+        "12",
+        "*kaksteist*",
+        "40",
+        "*nelikümmend*"
+       ],
+       [
+        "3",
+        "*kolm*",
+        "13",
+        "*kolmteist*",
+        "50",
+        "*viiskümmend*"
+       ],
+       [
+        "4",
+        "*neli*",
+        "14",
+        "*neliteist*",
+        "60",
+        "*kuuskümmend*"
+       ],
+       [
+        "5",
+        "*viis*",
+        "15",
+        "*viisteist*",
+        "70",
+        "*seitsekümmend*"
+       ],
+       [
+        "6",
+        "*kuus*",
+        "16",
+        "*kuusteist*",
+        "80",
+        "*kaheksakümmend*"
+       ],
+       [
+        "7",
+        "*seitse*",
+        "17",
+        "*seitseteist*",
+        "90",
+        "*üheksakümmend*"
+       ],
+       [
+        "8",
+        "*kaheksa*",
+        "18",
+        "*kaheksateist*",
+        "100",
+        "*sada*"
+       ],
+       [
+        "9",
+        "*üheksa*",
+        "19",
+        "*üheksateist*",
+        "1000",
+        "*tuhat*"
+       ]
+      ]
+     },
+     "after": [
+      "**Rahasia pertama: -teist.** Angka 11–19 adalah angka satuan + *-teist*, yang berarti \"dari puluhan kedua\". *Üksteist* harfiahnya \"satu dari puluhan kedua\" = 11. Sekali kamu tahu 1–10, kamu langsung tahu 11–19 tanpa hafalan tambahan.",
+      "**Rahasia kedua: 8 dan 9 adalah pengurangan.** *Kaheksa* mengandung *kaks* (dua), *üheksa* mengandung *üks* (satu) — keduanya berarti \"dua kurang dari sepuluh\" dan \"satu kurang dari sepuluh\". Bahasa Latin memakai akal yang sama (*undeviginti* = 19). Begitu kamu melihatnya, kedua kata itu berhenti terasa acak.",
+      "**Puluhan:** angka satuan + *-kümmend*. Untuk angka di antaranya, tinggal ditempel: *kakskümmend üks* (21), *nelikümmend seitse* (47), *üheksakümmend üheksa* (99). Persis susunan bahasa Indonesia."
+     ]
+    },
+    {
+     "title": "⚠️ Punya — tanpa kata kerja \"punya\"",
+     "body": [
+      "Bahasa Estonia tidak punya padanan untuk \"punya\", \"memiliki\", atau *to have*. Ia menyusun gagasan itu dengan cara lain: **\"pada saya ada X\"**."
+     ],
+     "table": {
+      "head": [
+       "Bahasa Estonia",
+       "Harfiah",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "*Mul on auto.*",
+        "pada-saya adalah mobil",
+        "Saya punya mobil."
+       ],
+       [
+        "*Sul on aega?*",
+        "pada-kamu adalah waktu-bagian?",
+        "Kamu ada waktu?"
+       ],
+       [
+        "*Tal on kaks last.*",
+        "pada-dia adalah dua anak-bagian",
+        "Dia punya dua anak."
+       ],
+       [
+        "*Meil on suur pere.*",
+        "pada-kami adalah besar keluarga",
+        "Kami punya keluarga besar."
+       ],
+       [
+        "*Teil on ilus maja.*",
+        "pada-kalian adalah cantik rumah",
+        "Rumah kalian bagus."
+       ],
+       [
+        "*Neil on koer.*",
+        "pada-mereka adalah anjing",
+        "Mereka punya anjing."
+       ]
+      ]
+     },
+     "after": [
+      "Bentuk *mul, sul, tal, meil, teil, neil* adalah kata ganti + ekor **-l**, ekor yang sama dengan *Saksamaal* di unit 2. Jadi kamu tidak sedang belajar enam kata baru — kamu sedang melihat ekor lama dipakai untuk pekerjaan baru.",
+      "**Menyangkalnya:** *mul ei ole* atau *mul pole*. *Mul pole autot.* (Saya tidak punya mobil.) ⚠️ Perhatikan bahwa sesudah penyangkalan, barangnya jadi bentuk **bagian**: *auto* → *autot*. Aturan itu digarap di unit 11 dan 13; untuk sekarang cukup tahu bahwa ekornya berubah.",
+      "**Bertanya:** *Kas sul on...?* — *Kas sul on aega?* (Ada waktu?), *Kas teil on kohvi?* (Ada kopi?). Kalimat kedua itu akan kamu pakai setiap hari di kafe dan toko."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Uang, harga, dan berhitung",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Eesti keel",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Kui palju see maksab?*",
+       "*kui PAL-yu see MAK-sab*",
+       "Ini berapa harganya?"
+      ],
+      [
+       "*Kui palju need maksavad?*",
+       "*kui PAL-yu need MAK-sa-vad*",
+       "Ini berapa harganya? (banyak)"
+      ],
+      [
+       "*See maksab viis eurot.*",
+       "*see MAK-sab viis EU-rot*",
+       "Ini lima euro."
+      ],
+      [
+       "*Kokku üksteist eurot.*",
+       "*KOK-ku ÜKS-teist EU-rot*",
+       "Totalnya sebelas euro."
+      ],
+      [
+       "*See on liiga kallis.*",
+       "*see on LII-ga KAL-lis*",
+       "Ini terlalu mahal."
+      ],
+      [
+       "*Kas on midagi odavamat?*",
+       "*kas on MI-da-gi O-da-va-mat*",
+       "Ada yang lebih murah?"
+      ],
+      [
+       "*Ma võtan selle.*",
+       "*ma VË-tan SEL-le*",
+       "Saya ambil yang ini."
+      ],
+      [
+       "*Kas kaart sobib?*",
+       "*kas kaart SO-bib*",
+       "Boleh pakai kartu?"
+      ],
+      [
+       "*Mul ei ole sularaha.*",
+       "*mul ei O-le SU-la-ra-ha*",
+       "Saya tidak punya uang tunai."
+      ],
+      [
+       "*Palun tšekk.*",
+       "*PA-lun tsyekk*",
+       "Minta struknya."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Menyebut harga seperti orang Estonia",
+     "items": [
+      "Harga penuh: *kolm eurot viiskümmend senti* — tiga euro lima puluh sen.",
+      "Sehari-hari orang memendekkannya: *kolm viiskümmend*, sama seperti \"tiga lima puluh\" dalam bahasa Indonesia.",
+      "⚠️ Koma desimal dibaca *koma*: *3,50* = *kolm koma viis*. Dan tanda desimalnya memang **koma**, bukan titik — sama dengan kebiasaan Indonesia.",
+      "⚠️ *odav* berarti murah, *kallis* berarti mahal — tapi *kallis* juga berarti \"sayang\" saat menyapa orang. *Kallis Kerli!* di awal surat berarti \"Kerli sayang\", bukan \"Kerli mahal\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Angka di kehidupan sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Keperluan",
+      "Contoh Estonia",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Umur",
+       "*Ma olen kakskümmend viis.*",
+       "Umur saya dua puluh lima."
+      ],
+      [
+       "Jumlah orang",
+       "*Meid on neli.*",
+       "Kami berempat."
+      ],
+      [
+       "Nomor telepon",
+       "*Viis kaks üks kolm...*",
+       "Dibaca satu per satu."
+      ],
+      [
+       "Tahun",
+       "*Kaks tuhat kakskümmend kuus*",
+       "2026"
+      ],
+      [
+       "Lantai",
+       "*Kolmas korrus*",
+       "Lantai tiga"
+      ],
+      [
+       "Nomor bis",
+       "*Buss number kolm*",
+       "Bis nomor tiga"
+      ],
+      [
+       "Berat",
+       "*Pool kilo*",
+       "Setengah kilo"
+      ],
+      [
+       "Suhu",
+       "*Miinus kümme kraadi*",
+       "Minus sepuluh derajat"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Nomor telepon di Estonia dibaca **angka per angka**, bukan dipasangkan seperti kebiasaan Indonesia (\"nol delapan satu dua\"). Kalau kamu mendiktekan nomor, lambatkan dan pisahkan tiap angka."
+    },
+    {
+     "type": "kotak",
+     "title": "Angka bertingkat — kapan kamu membutuhkannya",
+     "items": [
+      "*esimene* (pertama), *teine* (kedua), *kolmas* (ketiga), *neljas* (keempat), *viies* (kelima).",
+      "*kuues* (keenam), *seitsmes* (ketujuh), *kaheksas* (kedelapan), *üheksas* (kesembilan), *kümnes* (kesepuluh).",
+      "Dipakai untuk lantai (*teine korrus*), tanggal (*kolmas mai*), dan urutan (*esimene kord* — pertama kali).",
+      "⚠️ *Esimene* dan *teine* tidak mengikuti pola apa pun — keduanya harus dihafal. Sisanya cukup teratur: angka dasar + *-s*."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "et": "number",
+   "baca": "NUM-ber",
+   "id": "nomor, angka"
+  },
+  {
+   "et": "null",
+   "baca": "null",
+   "id": "nol"
+  },
+  {
+   "et": "üks",
+   "baca": "üks",
+   "id": "satu"
+  },
+  {
+   "et": "kaks",
+   "baca": "kaks",
+   "id": "dua"
+  },
+  {
+   "et": "kolm",
+   "baca": "kolm",
+   "id": "tiga"
+  },
+  {
+   "et": "neli",
+   "baca": "NE-li",
+   "id": "empat"
+  },
+  {
+   "et": "viis",
+   "baca": "viis",
+   "id": "lima"
+  },
+  {
+   "et": "kuus",
+   "baca": "kuus",
+   "id": "enam"
+  },
+  {
+   "et": "seitse",
+   "baca": "SEIT-se",
+   "id": "tujuh"
+  },
+  {
+   "et": "kaheksa",
+   "baca": "KA-hek-sa",
+   "id": "delapan"
+  },
+  {
+   "et": "üheksa",
+   "baca": "Ü-hek-sa",
+   "id": "sembilan"
+  },
+  {
+   "et": "kümme",
+   "baca": "KÜM-me",
+   "id": "sepuluh"
+  },
+  {
+   "et": "sada",
+   "baca": "SA-da",
+   "id": "seratus"
+  },
+  {
+   "et": "tuhat",
+   "baca": "TU-hat",
+   "id": "seribu"
+  },
+  {
+   "et": "pool",
+   "baca": "pool",
+   "id": "setengah"
+  },
+  {
+   "et": "maksma",
+   "baca": "MAKS-ma",
+   "id": "membayar; berharga"
+  },
+  {
+   "et": "kallis",
+   "baca": "KAL-lis",
+   "id": "mahal; sayang"
+  },
+  {
+   "et": "odav",
+   "baca": "O-dav",
+   "id": "murah"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angkanya dengan huruf Estonia.",
+   "items": [
+    "7",
+    "13",
+    "20",
+    "48",
+    "99",
+    "365"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Estonia.",
+   "items": [
+    "Saya punya satu mobil.",
+    "Kamu punya waktu?",
+    "Dia punya dua anak.",
+    "Ini berapa harganya?",
+    "Ini lima euro.",
+    "Saya tidak punya uang tunai."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat dari mul on atau mul ei ole.",
+   "items": [
+    "____ aega. (saya punya)",
+    "____ raha. (kamu punya)",
+    "____ autot. (dia tidak punya)",
+    "____ suur pere. (kami punya)",
+    "____ kaarti. (kalian tidak punya)",
+    "____ koer. (mereka punya)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "maksab / palju / see / kui / ?",
+    "mul / auto / on",
+    "eurot / see / viis / maksab",
+    "sularaha / ei / mul / ole",
+    "sobib / kaart / kas / ?"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "seitse — kolmteist — kakskümmend — nelikümmend kaheksa — üheksakümmend üheksa — kolmsada kuuskümmend viis",
+  "1": "Mul on üks auto. — Kas sul on aega? — Tal on kaks last. — Kui palju see maksab? — See maksab viis eurot. — Mul ei ole sularaha.",
+  "2": "Mul on — Sul on — Tal ei ole — Meil on — Teil ei ole — Neil on",
+  "3": "Kui palju see maksab? — Mul on auto. — See maksab viis eurot. — Mul ei ole sularaha. — Kas kaart sobib?"
+ }
+}

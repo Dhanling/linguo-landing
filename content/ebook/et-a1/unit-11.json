@@ -1,0 +1,528 @@
+{
+ "title": "Menyangkal — satu kata untuk semuanya",
+ "title_target": "Eitus — ei",
+ "goal": "Menguasai penyangkalan bahasa Estonia, yang ternyata **lebih sederhana daripada bahasa Indonesia** dan jauh lebih sederhana daripada bahasa Finlandia atau Inggris.",
+ "bekal": [
+  "menyangkal kata kerja apa pun untuk siapa pun dengan satu kata: *ei*",
+  "memakai *ära* untuk melarang dan *mitte* untuk menyangkal selain kata kerja",
+  "memakai kata bersangkal *midagi*, *keegi*, *kunagi*, *kuskil*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Kadunud telefon",
+   "intro": "Di kantin kampus. Budi menepuk-nepuk sakunya dengan panik.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Kerli, ma ei leia oma telefoni.",
+     "id": "Kerli, saya tidak menemukan ponsel saya.",
+     "literal": "Kerli, saya tidak temukan sendiri-punya ponsel-bagian."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Kas see ei ole kotis?",
+     "id": "Bukannya ada di tas?",
+     "literal": "apakah itu tidak adalah tas-di?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ei ole. Ma ei näe seda kuskil.",
+     "id": "Tidak ada. Saya tidak lihat itu di mana pun.",
+     "literal": "tidak adalah. saya tidak lihat itu-bagian di-mana-pun."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Ära muretse. Helistame sellele.",
+     "id": "Jangan panik. Kita telepon saja.",
+     "literal": "jangan khawatirlah. telepon-kita itu-kepada."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hea mõte. Aga ma ei mäleta numbrit.",
+     "id": "Ide bagus. Tapi saya tidak ingat nomornya.",
+     "literal": "baik pikiran. tapi saya tidak ingat nomor-bagian."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Sa ei mäleta oma numbrit?",
+     "id": "Kamu tidak ingat nomormu sendiri?",
+     "literal": "kamu tidak ingat sendiri-punya nomor-bagian?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ei mäleta. Keegi ei mäleta enam numbreid.",
+     "id": "Tidak ingat. Tidak ada lagi yang ingat nomor.",
+     "literal": "tidak ingat. siapa-pun tidak ingat lagi nomor-jamak-bagian."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "See on tõsi. Mina ka ei mäleta.",
+     "id": "Itu benar. Saya juga tidak ingat.",
+     "literal": "itu adalah-ia benar. saya juga tidak ingat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Oota. Ma tunnen midagi taskus.",
+     "id": "Tunggu. Saya merasa ada sesuatu di kantong.",
+     "literal": "tunggulah. saya rasa-saya sesuatu saku-di."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Ära ütle.",
+     "id": "Jangan bilang.",
+     "literal": "jangan katakanlah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jah... see on siin. Kogu aeg.",
+     "id": "Iya... ada di sini. Dari tadi.",
+     "literal": "ya... itu adalah-ia di-sini. seluruh waktu."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Sa ei ole esimene ega viimane.",
+     "id": "Kamu bukan yang pertama dan bukan yang terakhir.",
+     "literal": "kamu tidak adalah pertama dan-tidak terakhir."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ma ei räägi sellest kellelegi.",
+     "id": "Saya tidak akan cerita ini ke siapa pun.",
+     "literal": "saya tidak bicara itu-dari siapa-pun-kepada."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Mina ei luba midagi.",
+     "id": "Saya tidak menjanjikan apa-apa.",
+     "literal": "saya tidak janji apa-pun."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sa oled halb sõber!",
+     "id": "Kamu teman yang jahat!",
+     "literal": "kamu adalah-kamu buruk teman!"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Ei ole. Ma olen aus sõber.",
+     "id": "Bukan. Saya teman yang jujur.",
+     "literal": "tidak adalah. saya adalah-saya jujur teman."
+    }
+   ],
+   "notes": [
+    "**Hitung berapa kali *ei* muncul di dialog ini, lalu perhatikan bahwa bentuknya tak pernah berubah.** *Ma ei leia*, *sa ei mäleta*, *keegi ei mäleta*, *mina ei luba* — satu kata untuk enam orang. Bandingkan dengan bahasa Finlandia yang punya enam bentuk berbeda (*en, et, ei, emme, ette, eivät*).",
+    "⚠️ **Kata kerjanya juga tidak berubah menurut orangnya.** *Ei mäleta* dipakai untuk saya, kamu, dia, kami, kalian, dan mereka. Jadi bentuk sangkalan bahasa Estonia sebenarnya **lebih sedikit hafalan** daripada bentuk biasanya.",
+    "**Ei ole = pole.** Keduanya benar dan sama sering. *Pole* sedikit lebih santai. *Mul pole aega* = *mul ei ole aega* = saya tidak ada waktu.",
+    "**Ära muretse, ära ütle.** *Ära* dipakai khusus untuk melarang. Ia **tidak bisa** diganti *ei*: \"ei muretse\" berarti \"tidak khawatir\", bukan \"jangan khawatir\"."
+   ],
+   "grammars": [
+    {
+     "title": "Ei — dan aturan satu baris untuk membentuknya",
+     "body": [
+      "Menyangkal kata kerja bahasa Estonia butuh dua langkah, dan langkah kedua punya jalan pintas yang sempurna."
+     ],
+     "table": {
+      "head": [
+       "Bentuk \"ma\"",
+       "Buang -n",
+       "Sangkalan",
+       "Berlaku untuk"
+      ],
+      "rows": [
+       [
+        "*ma ole**n***",
+        "*ole*",
+        "*ei ole*",
+        "saya, kamu, dia, kami, kalian, mereka"
+       ],
+       [
+        "*ma lähe**n***",
+        "*lähe*",
+        "*ei lähe*",
+        "semuanya"
+       ],
+       [
+        "*ma tea**n***",
+        "*tea*",
+        "*ei tea*",
+        "semuanya"
+       ],
+       [
+        "*ma söö**n***",
+        "*söö*",
+        "*ei söö*",
+        "semuanya"
+       ],
+       [
+        "*ma tee**n***",
+        "*tee*",
+        "*ei tee*",
+        "semuanya"
+       ],
+       [
+        "*ma räägi**n***",
+        "*räägi*",
+        "*ei räägi*",
+        "semuanya"
+       ],
+       [
+        "*ma loe**n***",
+        "*loe*",
+        "*ei loe*",
+        "semuanya"
+       ],
+       [
+        "*ma taha**n***",
+        "*taha*",
+        "*ei taha*",
+        "semuanya"
+       ]
+      ]
+     },
+     "after": [
+      "**Aturannya: ambil bentuk *ma*, buang *-n*, taruh *ei* di depannya.** Tidak ada pengecualian yang perlu kamu ingat di tingkat A1. Ini salah satu aturan paling bersih di seluruh bahasa Estonia.",
+      "Perhatikan bahwa jalan pintas ini adalah alasan tambahan untuk menghafal bentuk *ma* dari tiap kata kerja baru, sebagaimana dianjurkan di unit 10. Satu bentuk itu memberimu kelima bentuk lainnya **dan** seluruh sangkalannya.",
+      "⚠️ **Sesudah sangkalan, bendanya berubah ke bentuk bagian.** *Ma loen raamatu* (saya membaca buku itu sampai habis) → *ma ei loe raamatu**t***. *Mul on auto* → *mul ei ole auto**t***. Aturan ini digarap penuh di unit 13; untuk sekarang cukup sadari bahwa ekornya bergeser."
+     ]
+    },
+    {
+     "title": "Tiga penyangkal lain, dan kapan masing-masing dipakai",
+     "body": [
+      "*Ei* mengurus kata kerja. Tiga kata di bawah ini mengurus sisanya."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Tugasnya",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "**ei**",
+        "menyangkal kata kerja",
+        "*Ma ei tule.*",
+        "Saya tidak datang."
+       ],
+       [
+        "**ära**",
+        "melarang (satu orang)",
+        "*Ära tule!*",
+        "Jangan datang!"
+       ],
+       [
+        "**ärge**",
+        "melarang (banyak/hormat)",
+        "*Ärge tulge!*",
+        "Jangan datang!"
+       ],
+       [
+        "**mitte**",
+        "menyangkal selain kata kerja",
+        "*Mitte täna.*",
+        "Bukan hari ini."
+       ],
+       [
+        "**ega**",
+        "\"dan tidak\"",
+        "*Ei täna ega homme.*",
+        "Bukan hari ini maupun besok."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Ära dan ei tidak bisa ditukar.** *Sa ei tule* = kamu tidak datang (pernyataan). *Ära tule* = jangan datang (larangan). Bahasa Indonesia memisahkan keduanya juga — \"tidak\" lawan \"jangan\" — jadi nalurimu sudah benar; yang baru cuma katanya.",
+      "*Mitte* dipakai saat yang disangkal bukan kata kerja: *mitte mina* (bukan saya), *mitte siin* (bukan di sini), *mitte kunagi* (tak pernah), *mitte veel* (belum).",
+      "Larangan yang sering kamu lihat di papan: *Ära suitseta!* (Dilarang merokok), *Ärge puudutage!* (Jangan disentuh), *Sissepääs keelatud* (Dilarang masuk)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata bersangkal — dan sangkalan ganda",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Positif",
+      "Bersangkal",
+      "Contoh",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*keegi* (seseorang)",
+       "*mitte keegi*",
+       "*Keegi ei tea.*",
+       "Tidak ada yang tahu."
+      ],
+      [
+       "*midagi* (sesuatu)",
+       "*mitte midagi*",
+       "*Ma ei tea midagi.*",
+       "Saya tidak tahu apa-apa."
+      ],
+      [
+       "*kunagi* (pernah)",
+       "*mitte kunagi*",
+       "*Ma ei käi kunagi.*",
+       "Saya tidak pernah ke sana."
+      ],
+      [
+       "*kuskil* (di suatu tempat)",
+       "*mitte kuskil*",
+       "*Teda ei ole kuskil.*",
+       "Dia tidak ada di mana pun."
+      ],
+      [
+       "*kuidagi* (bagaimanapun)",
+       "*mitte kuidagi*",
+       "*Ma ei saa kuidagi.*",
+       "Saya sama sekali tidak bisa."
+      ],
+      [
+       "*keegi teine*",
+       "—",
+       "*Keegi teine tuleb.*",
+       "Ada orang lain yang datang."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Sangkalan ganda itu WAJIB — dan bahasa Indonesia sudah melakukannya",
+     "items": [
+      "*Ma ei tea midagi.* — harfiah \"saya tidak tahu apa-apa\". Dua sangkalan dalam satu kalimat, dan itulah bentuk yang **benar**.",
+      "Menghilangkan salah satunya menghasilkan kalimat yang salah. \"Ma tean midagi\" berarti \"saya tahu sesuatu\" — arti yang berkebalikan.",
+      "Bandingkan bahasa Indonesia: \"saya **tidak** tahu apa-**apa**\", \"**tidak** ada yang datang\", \"saya **tidak pernah** ke sana\". Kita juga memakai dua penyangkal, dan tak seorang pun menganggapnya aneh.",
+      "Bahasa Inggris yang justru menyimpang: *I don't know anything*, bukan *I don't know nothing*. Kalau kamu pernah dikoreksi guru bahasa Inggris soal ini, di bahasa Estonia kebiasaan aslimu kembali benar."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menolak dan menyangkal dengan sopan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Eesti keel",
+      "Bahasa Indonesia",
+      "Nadanya"
+     ],
+     "rows": [
+      [
+       "*Ei, aitäh.*",
+       "Tidak, terima kasih.",
+       "Netral, paling umum."
+      ],
+      [
+       "*Kahjuks ei.*",
+       "Sayangnya tidak.",
+       "Halus, menyesal."
+      ],
+      [
+       "*Ma ei saa täna.*",
+       "Saya tidak bisa hari ini.",
+       "Menolak ajakan."
+      ],
+      [
+       "*Mul ei ole aega.*",
+       "Saya tidak ada waktu.",
+       "Alasan langsung."
+      ],
+      [
+       "*Võib-olla mõni teine kord.*",
+       "Mungkin lain kali.",
+       "Menyisakan pintu."
+      ],
+      [
+       "*Ma ei ole kindel.*",
+       "Saya tidak yakin.",
+       "Menunda jawaban."
+      ],
+      [
+       "*Ma ei tea veel.*",
+       "Saya belum tahu.",
+       "Menunda jawaban."
+      ],
+      [
+       "*See ei sobi mulle.*",
+       "Itu tidak cocok buat saya.",
+       "Menolak usulan."
+      ],
+      [
+       "*Ma ei saa aru.*",
+       "Saya tidak mengerti.",
+       "Paling sering dipakai pemula."
+      ],
+      [
+       "*Vabandust, ma ei kuule.*",
+       "Maaf, saya tidak dengar.",
+       ""
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Orang Estonia menolak secara langsung, dan itu bukan ketidaksopanan.** *Ei* yang polos dianggap jawaban yang jujur dan menghormati waktu lawan bicara. Menghaluskan penolakan dengan tiga lapis basa-basi — kebiasaan yang wajar dalam bahasa Indonesia — justru bisa terbaca sebagai keraguan atau ketidakjujuran. Kalau kamu bermaksud menolak, tolaklah."
+    },
+    {
+     "type": "kotak",
+     "title": "Pole — bentuk pendek yang akan kamu dengar terus",
+     "items": [
+      "*pole* = *ei ole*. *Mul pole aega.* — Saya tidak ada waktu.",
+      "*Pole viga.* — Tidak apa-apa. (harfiah: \"tidak ada cacat\") ⚠️ Ini juga jawaban untuk permintaan maaf.",
+      "*Pole tänu väärt.* — Tidak usah berterima kasih. (harfiah: \"tidak layak terima kasih\")",
+      "*Pole hullu.* — Tidak parah kok."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "et": "ei",
+   "baca": "ei",
+   "id": "tidak"
+  },
+  {
+   "et": "pole",
+   "baca": "PO-le",
+   "id": "tidak ada (= ei ole)"
+  },
+  {
+   "et": "ära",
+   "baca": "È-ra",
+   "id": "jangan (satu orang)"
+  },
+  {
+   "et": "ärge",
+   "baca": "ÈR-ge",
+   "id": "jangan (banyak)"
+  },
+  {
+   "et": "mitte",
+   "baca": "MIT-te",
+   "id": "bukan"
+  },
+  {
+   "et": "ega",
+   "baca": "E-ga",
+   "id": "dan tidak"
+  },
+  {
+   "et": "midagi",
+   "baca": "MI-da-gi",
+   "id": "sesuatu; apa-apa"
+  },
+  {
+   "et": "keegi",
+   "baca": "KEE-gi",
+   "id": "seseorang; siapa pun"
+  },
+  {
+   "et": "kunagi",
+   "baca": "KU-na-gi",
+   "id": "pernah"
+  },
+  {
+   "et": "kuskil",
+   "baca": "KUS-kil",
+   "id": "di suatu tempat"
+  },
+  {
+   "et": "leidma",
+   "baca": "LEID-ma",
+   "id": "menemukan (leian)"
+  },
+  {
+   "et": "mäletama",
+   "baca": "MÈ-le-ta-ma",
+   "id": "mengingat"
+  },
+  {
+   "et": "muretsema",
+   "baca": "MU-ret-se-ma",
+   "id": "khawatir"
+  },
+  {
+   "et": "helistama",
+   "baca": "HE-lis-ta-ma",
+   "id": "menelepon"
+  },
+  {
+   "et": "lubama",
+   "baca": "LU-ba-ma",
+   "id": "menjanjikan; mengizinkan"
+  },
+  {
+   "et": "ootama",
+   "baca": "OO-ta-ma",
+   "id": "menunggu"
+  },
+  {
+   "et": "tundma",
+   "baca": "TUND-ma",
+   "id": "merasa; mengenal"
+  },
+  {
+   "et": "ütlema",
+   "baca": "ÜT-le-ma",
+   "id": "berkata (ütlen)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi kalimat sangkalan.",
+   "items": [
+    "Ma olen kodus.",
+    "Sa lähed kooli.",
+    "Ta teab.",
+    "Me sööme.",
+    "Te räägite eesti keelt.",
+    "Nad tulevad."
+   ]
+  },
+  {
+   "prompt": "Isi dengan ei, ära, atau mitte.",
+   "items": [
+    "Ma ____ tea.",
+    "____ tule!",
+    "____ täna, homme.",
+    "Ta ____ ole kodus.",
+    "____ muretse!",
+    "Keegi ____ tea."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Estonia.",
+   "items": [
+    "Saya tidak tahu apa-apa.",
+    "Tidak ada yang tahu.",
+    "Saya tidak pernah ke sana.",
+    "Saya tidak punya waktu.",
+    "Jangan khawatir!",
+    "Tidak, terima kasih."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "tea / ma / ei / midagi",
+    "ei / keegi / tea",
+    "muretse / ära",
+    "aega / mul / pole",
+    "aitäh / ei / ,"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Ma ei ole kodus. — Sa ei lähe kooli. — Ta ei tea. — Me ei söö. — Te ei räägi eesti keelt. — Nad ei tule.",
+  "1": "ei — Ära — Mitte — ei — Ära — ei",
+  "2": "Ma ei tea midagi. — Keegi ei tea. — Ma ei käi seal kunagi. — Mul ei ole aega. — Ära muretse! — Ei, aitäh.",
+  "3": "Ma ei tea midagi. — Keegi ei tea. — Ära muretse. — Mul pole aega. — Ei, aitäh."
+ }
+}

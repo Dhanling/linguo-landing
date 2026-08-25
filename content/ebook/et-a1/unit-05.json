@@ -1,0 +1,585 @@
+{
+ "title": "Di kafe",
+ "title_target": "Kohvikus",
+ "goal": "Memesan makanan dan minuman dengan tiga tingkat kesopanan, dan bertanya isi makanan — termasuk pertanyaan yang paling dibutuhkan pembaca modul ini.",
+ "bekal": [
+  "memesan dengan *palun*, *ma võtan*, dan *ma sooviksin*",
+  "menyebut tiga puluh makanan dan minuman yang benar-benar ada di kafe Estonia",
+  "menanyakan kandungan makanan dan menolak dengan sopan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Kohvik vanalinnas",
+   "intro": "Kerli membawa Budi ke sebuah kafe di kota tua Tallinn.",
+   "lines": [
+    {
+     "speaker": "Ettekandja:",
+     "text": "Tere! Kas olete valmis tellima?",
+     "id": "Halo! Sudah siap pesan?",
+     "literal": "halo! apakah adalah-kalian siap untuk-memesan?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Jah. Mulle üks suur latte ja üks saiake, palun.",
+     "id": "Ya. Untuk saya satu latte besar dan satu roti manis.",
+     "literal": "ya. saya-kepada satu besar latte dan satu roti-manis, tolong."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ma sooviksin teed. Kas teil on rohelist teed?",
+     "id": "Saya mau teh. Ada teh hijau?",
+     "literal": "saya ingin-akan-saya teh-bagian. apakah kalian-pada adalah hijau-bagian teh-bagian?"
+    },
+    {
+     "speaker": "Ettekandja:",
+     "text": "Jah, on küll. Kas soovite ka midagi süüa?",
+     "id": "Ya, ada. Mau makan sesuatu juga?",
+     "literal": "ya, adalah memang. apakah ingin-kalian juga sesuatu untuk-makan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vabandust, mis see on?",
+     "id": "Maaf, itu apa?",
+     "literal": "maaf, apa itu adalah-ia?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "See on kohuke. Väga eestimaine.",
+     "id": "Itu kohuke. Sangat khas Estonia.",
+     "literal": "itu adalah-ia kohuke. sangat Estonia-punya-sifat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kas selles on liha?",
+     "id": "Ada dagingnya?",
+     "literal": "apakah itu-di-dalam adalah daging?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Ei ole. See on magus, kohupiimast ja šokolaadist.",
+     "id": "Tidak ada. Itu manis, dari keju dadih dan coklat.",
+     "literal": "tidak adalah. itu adalah-ia manis, dadih-susu-dari dan coklat-dari."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Siis ma võtan ühe. Ja ka klaasi vett, palun.",
+     "id": "Kalau begitu saya ambil satu. Dan segelas air juga, tolong.",
+     "literal": "kalau-begitu saya ambil-saya satu-punya. dan juga gelas-punya air-bagian, tolong."
+    },
+    {
+     "speaker": "Ettekandja:",
+     "text": "Kas siia või kaasa?",
+     "id": "Di sini atau dibawa pulang?",
+     "literal": "apakah ke-sini atau ikut?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Siia, palun.",
+     "id": "Di sini, tolong.",
+     "literal": "ke-sini, tolong."
+    },
+    {
+     "speaker": "Ettekandja:",
+     "text": "Kokku üksteist eurot kakskümmend.",
+     "id": "Totalnya sebelas euro dua puluh.",
+     "literal": "seluruhnya sebelas euro-bagian dua-puluh."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Palun. Kas siin on vaba laud?",
+     "id": "Silakan. Ada meja kosong?",
+     "literal": "silakan. apakah di-sini adalah bebas meja?"
+    },
+    {
+     "speaker": "Ettekandja:",
+     "text": "Jah, akna kõrval. Palun võtke istet!",
+     "id": "Ya, di samping jendela. Silakan duduk!",
+     "literal": "ya, jendela-punya di-samping. tolong ambillah tempat-duduk-bagian!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Aitäh!",
+     "id": "Terima kasih!",
+     "literal": "terima-kasih!"
+    },
+    {
+     "speaker": "Ettekandja:",
+     "text": "Palun. Head isu!",
+     "id": "Sama-sama. Selamat menikmati!",
+     "literal": "sama-sama. baik-punya selera-bagian!"
+    }
+   ],
+   "notes": [
+    "**Mulle, teile** — \"untuk saya\", \"untuk Anda\". Saat memesan, orang Estonia sering langsung menyebut *mulle* + barangnya tanpa kata kerja sama sekali: *Mulle üks kohv, palun.* Ini pesanan yang paling ringkas dan sepenuhnya sopan.",
+    "**Rohelis*t* tee*d*.** Perhatikan bahwa **kata sifatnya ikut berubah** mengikuti kata bendanya: *roheline tee* menjadi *rohelist teed*. Ini berlaku di seluruh bahasa Estonia — kata sifat selalu meniru bentuk kata bendanya. Digarap di unit 14.",
+    "**Midagi süüa** — \"sesuatu untuk dimakan\". *Süüa* adalah bentuk kedua dari kata kerja \"makan\"; bentuk pertamanya *sööma*. Bahasa Estonia punya **dua bentuk dasar** untuk tiap kata kerja, dan mana yang dipakai ditentukan oleh kata di depannya. Ini digarap di unit 10 — jangan dikejar sekarang.",
+    "**Klaasi vett** — \"segelas air\". Wadahnya berbentuk kepunyaan (*klaas* → *klaasi*), isinya berbentuk bagian (*vesi* → *vett*). Pola yang sama: *tass kohvi* (secangkir kopi), *pudel veini* (sebotol anggur), *taldrik suppi* (sepiring sup)."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga cara memesan, dari yang paling singkat",
+     "body": [
+      "Semuanya sopan. Bedanya bukan kesopanan, melainkan seberapa hati-hati kamu terdengar."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Contoh",
+       "Rasanya",
+       "Kapan dipakai"
+      ],
+      "rows": [
+       [
+        "*Mulle... palun.*",
+        "*Mulle üks kohv, palun.*",
+        "Ringkas, wajar",
+        "Kafe ramai, kios, antre panjang."
+       ],
+       [
+        "*Ma võtan...*",
+        "*Ma võtan ühe kohvi.*",
+        "Mantap, sudah tahu mau apa",
+        "Paling umum di antara orang Estonia."
+       ],
+       [
+        "*Ma sooviksin...*",
+        "*Ma sooviksin kohvi.*",
+        "Halus, sedikit hati-hati",
+        "Restoran, atau kalau kamu ragu."
+       ],
+       [
+        "*Kas ma saaksin...?*",
+        "*Kas ma saaksin kohvi?*",
+        "Paling halus",
+        "Meminta hal di luar menu."
+       ]
+      ]
+     },
+     "after": [
+      "Dua bentuk terakhir memakai **bentuk pengandaian** (*-ksin*), yang setara dengan \"kiranya\" atau \"boleh\". Kamu tidak perlu memahami bentuknya sekarang — hafalkan *ma sooviksin* dan *kas ma saaksin* sebagai satu paket utuh. Bentuk ini dibongkar di unit 19.",
+      "⚠️ Jangan menambahkan *palun* di setiap kalimat. Bahasa Estonia tidak sesering bahasa Inggris memakainya, dan mengulang *palun* tiga kali dalam satu pesanan terdengar aneh. Sekali di akhir sudah cukup."
+     ]
+    },
+    {
+     "title": "⚠️ Kenapa minumannya berubah bentuk",
+     "body": [
+      "Perhatikan pola ini di seluruh dialog: *tee* menjadi *teed*, *vesi* menjadi *vett*, *kohv* menjadi *kohvi*. Bentuk kedua itu disebut bentuk **bagian**, dan alasannya masuk akal begitu diucapkan: kamu tidak memesan **seluruh teh yang ada di dunia**, kamu memesan sebagian darinya."
+     ],
+     "table": {
+      "head": [
+       "Bentuk dasar",
+       "Bentuk bagian",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*kohv*",
+        "*kohvi*",
+        "*Ma joon kohvi.*",
+        "Saya minum kopi."
+       ],
+       [
+        "*tee*",
+        "*teed*",
+        "*Kas teil on teed?*",
+        "Ada teh?"
+       ],
+       [
+        "*vesi*",
+        "*vett*",
+        "*Palun klaas vett.*",
+        "Tolong segelas air."
+       ],
+       [
+        "*mahl*",
+        "*mahla*",
+        "*Ma tahan mahla.*",
+        "Saya mau jus."
+       ],
+       [
+        "*piim*",
+        "*piima*",
+        "*Kohv piimaga.*",
+        "Kopi dengan susu."
+       ],
+       [
+        "*supp*",
+        "*suppi*",
+        "*Ma söön suppi.*",
+        "Saya makan sup."
+       ]
+      ]
+     },
+     "after": [
+      "Aturan praktis untuk sekarang: **barang yang tidak bisa dihitung satuannya — cairan, bahan, makanan tak berbentuk — hampir selalu memakai bentuk bagian.** Itu sudah menutup hampir seluruh menu kafe.",
+      "Bandingkan dengan barang yang bisa dihitung: *Ma võtan ühe saiakese* (Saya ambil satu roti manis) — ini bentuk **kepunyaan**, karena satu roti diambil seluruhnya. Beda ini digarap penuh di unit 13; jangan memaksa memahaminya sekarang.",
+      "Kalau kamu ragu, **pakai bentuk bagian**. Di kafe, kesalahan ke arah itu hampir tak pernah terdengar salah."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Minuman dan makanan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Eesti keel",
+      "Cara baca",
+      "Bentuk bagian",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*kohv*",
+       "*kohv*",
+       "*kohvi*",
+       "kopi"
+      ],
+      [
+       "*tee*",
+       "*tee*",
+       "*teed*",
+       "teh"
+      ],
+      [
+       "*vesi*",
+       "*VE-si*",
+       "*vett*",
+       "air"
+      ],
+      [
+       "*mahl*",
+       "*mahl*",
+       "*mahla*",
+       "jus"
+      ],
+      [
+       "*piim*",
+       "*piim*",
+       "*piima*",
+       "susu"
+      ],
+      [
+       "*õlu*",
+       "*Ë-lu*",
+       "*õlut*",
+       "bir"
+      ],
+      [
+       "*leib*",
+       "*leib*",
+       "*leiba*",
+       "roti hitam"
+      ],
+      [
+       "*sai*",
+       "*sai*",
+       "*saia*",
+       "roti putih"
+      ],
+      [
+       "*kala*",
+       "*KA-la*",
+       "*kala*",
+       "⚠️ ikan"
+      ],
+      [
+       "*kana*",
+       "*KA-na*",
+       "*kana*",
+       "⚠️ ayam"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga makanan Estonia yang akan ditawarkan kepadamu",
+     "items": [
+      "*kohuke* — batangan dadih susu berlapis coklat, dijual di setiap toko. Manis, dingin, dan sepenuhnya tanpa daging. Jajanan nasional yang sesungguhnya.",
+      "*must leib* — roti gandum hitam yang asam dan padat. Orang Estonia yang tinggal di luar negeri merindukan ini lebih daripada apa pun.",
+      "*kama* — tepung campuran empat serealia, diaduk dengan susu asam. Rasanya asing pada suapan pertama; berilah kesempatan kedua.",
+      "⚠️ *verivorst* (sosis darah) muncul di mana-mana saat Natal. Kalau kamu punya pantangan, kenali namanya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "⚠️ Bertanya isi makanan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Estonia bukan negara yang terbiasa dengan pantangan makan agama, dan daging babi ada di banyak masakan sehari-hari — sering tanpa disebut namanya. Kalimat di bawah ini bukan pelengkap; untuk sebagian besar pembaca modul ini, ia bagian paling berguna dari unit ini."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Eesti keel",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Kas selles on liha?*",
+       "*kas SEL-les on LI-ha*",
+       "Ada dagingnya?"
+      ],
+      [
+       "*Kas selles on sealiha?*",
+       "*kas SEL-les on SE-a-li-ha*",
+       "Ada daging babinya?"
+      ],
+      [
+       "*Ma ei söö sealiha.*",
+       "*ma ei söö SE-a-li-ha*",
+       "Saya tidak makan daging babi."
+      ],
+      [
+       "*Ma ei joo alkoholi.*",
+       "*ma ei yoo AL-ko-ho-li*",
+       "Saya tidak minum alkohol."
+      ],
+      [
+       "*Ma olen taimetoitlane.*",
+       "*ma o-len TAI-me-toit-la-ne*",
+       "Saya vegetarian."
+      ],
+      [
+       "*Kas siin on midagi ilma lihata?*",
+       "*kas siin on MI-da-gi IL-ma LI-ha-ta*",
+       "Ada yang tanpa daging?"
+      ],
+      [
+       "*Ma olen allergiline pähklite suhtes.*",
+       "*...PÈHK-li-te SUH-tes*",
+       "Saya alergi kacang."
+      ],
+      [
+       "*Kas selles on piima?*",
+       "*kas SEL-les on PII-ma*",
+       "Ada susunya?"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kata yang perlu kamu kenali di label",
+     "items": [
+      "*sealiha* — daging babi. Harfiah: \"daging babi\" (*siga* = babi). ⚠️ Ini kata terpenting di halaman ini.",
+      "*peekon* — bacon. *sink* — ham. *vorst* — sosis. Ketiganya hampir selalu dari babi kecuali disebut lain.",
+      "*veiseliha* — daging sapi. *lambaliha* — daging kambing/domba. *kanaliha* — daging ayam.",
+      "*alkohol* — alkohol. *alkoholivaba* — tanpa alkohol. ⚠️ Akhiran *-vaba* berarti \"bebas dari\": *gluteenivaba*, *laktoosivaba*, *suhkruvaba*."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Akhiran **-vaba** layak dihafal sekarang juga. Ia menempel di kata apa pun dan berarti \"tanpa\", jadi kamu bisa membaca label yang belum pernah kamu lihat: *lihavaba* (tanpa daging), *piimavaba* (tanpa susu). Bandingkan dengan awalan *eba-* di unit 3 — bahasa Estonia suka membangun kata dari bagian yang bisa dipasang ulang."
+    }
+   ]
+  },
+  {
+   "title": "Di dalam kafe",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Eesti keel",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Kas siin on vaba laud?*",
+       "Ada meja kosong?"
+      ],
+      [
+       "*Kas see koht on vaba?*",
+       "Kursi ini kosong?"
+      ],
+      [
+       "*Palun menüü.*",
+       "Minta menunya."
+      ],
+      [
+       "*Mida te soovitate?*",
+       "Apa yang Anda sarankan?"
+      ],
+      [
+       "*Kas siia või kaasa?*",
+       "Di sini atau dibawa pulang?"
+      ],
+      [
+       "*Palun arve.*",
+       "Minta bonnya."
+      ],
+      [
+       "*Kas saab eraldi maksta?*",
+       "Bisa bayar terpisah?"
+      ],
+      [
+       "*Kus on tualett?*",
+       "Toiletnya di mana?"
+      ],
+      [
+       "*Kas siin on WiFi?*",
+       "Ada WiFi di sini?"
+      ],
+      [
+       "*Mis on parool?*",
+       "Apa katasandinya?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Soal memberi tip: di Estonia tip **tidak wajib** dan tidak diharapkan. Di restoran, membulatkan ke atas atau meninggalkan lima sampai sepuluh persen dianggap murah hati; di kafe biasa, tidak memberi apa-apa sepenuhnya normal. Jangan merasa harus."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "et": "kohvik",
+   "baca": "KOH-vik",
+   "id": "kafe"
+  },
+  {
+   "et": "ettekandja",
+   "baca": "ET-te-kand-ya",
+   "id": "pelayan"
+  },
+  {
+   "et": "tellima",
+   "baca": "TEL-li-ma",
+   "id": "memesan"
+  },
+  {
+   "et": "soovima",
+   "baca": "SOO-vi-ma",
+   "id": "menginginkan"
+  },
+  {
+   "et": "sööma",
+   "baca": "SÖÖ-ma",
+   "id": "makan"
+  },
+  {
+   "et": "jooma",
+   "baca": "YOO-ma",
+   "id": "minum"
+  },
+  {
+   "et": "kohv",
+   "baca": "kohv",
+   "id": "kopi"
+  },
+  {
+   "et": "tee",
+   "baca": "tee",
+   "id": "teh; jalan"
+  },
+  {
+   "et": "vesi",
+   "baca": "VE-si",
+   "id": "air"
+  },
+  {
+   "et": "piim",
+   "baca": "piim",
+   "id": "susu"
+  },
+  {
+   "et": "leib",
+   "baca": "leib",
+   "id": "roti hitam"
+  },
+  {
+   "et": "liha",
+   "baca": "LI-ha",
+   "id": "daging"
+  },
+  {
+   "et": "sealiha",
+   "baca": "SE-a-li-ha",
+   "id": "⚠️ daging babi"
+  },
+  {
+   "et": "kala",
+   "baca": "KA-la",
+   "id": "⚠️ ikan"
+  },
+  {
+   "et": "kana",
+   "baca": "KA-na",
+   "id": "⚠️ ayam"
+  },
+  {
+   "et": "muna",
+   "baca": "MU-na",
+   "id": "telur"
+  },
+  {
+   "et": "juust",
+   "baca": "yuust",
+   "id": "keju"
+  },
+  {
+   "et": "magus",
+   "baca": "MA-gus",
+   "id": "manis"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Estonia.",
+   "items": [
+    "Saya mau teh, tolong.",
+    "Ada kopi?",
+    "Tolong segelas air.",
+    "Ada daging babinya?",
+    "Saya tidak makan daging babi.",
+    "Minta bonnya."
+   ]
+  },
+  {
+   "prompt": "Ubah ke bentuk bagian.",
+   "items": [
+    "kohv",
+    "tee",
+    "vesi",
+    "piim",
+    "supp",
+    "mahl"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang tepat dari unit ini.",
+   "items": [
+    "Kas siin on ____ laud? (kosong)",
+    "Ma ____ sealiha. (tidak makan)",
+    "Palun ____ vett. (segelas)",
+    "Kas siia või ____? (dibawa pulang)",
+    "See oli väga ____. (enak)",
+    "Palun ____. (bon)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "sooviksin / ma / teed",
+    "on / kas / teil / kohvi / ?",
+    "vett / palun / klaas",
+    "liha / selles / kas / on / ?",
+    "või / siia / kaasa / ?"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Ma sooviksin teed, palun. — Kas teil on kohvi? — Palun klaas vett. — Kas selles on sealiha? — Ma ei söö sealiha. — Palun arve.",
+  "1": "kohvi — teed — vett — piima — suppi — mahla",
+  "2": "vaba — ei söö — klaas — kaasa — maitsev — arve",
+  "3": "Ma sooviksin teed. — Kas teil on kohvi? — Palun klaas vett. — Kas selles on liha? — Kas siia või kaasa?"
+ }
+}

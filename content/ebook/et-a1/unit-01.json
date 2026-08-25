@@ -1,0 +1,580 @@
+{
+ "title": "Halo, siapa namamu?",
+ "title_target": "Tere! Mis sinu nimi on?",
+ "goal": "Menyapa, memperkenalkan diri, dan bertanya kabar — sekaligus menguasai satu kata kerja yang dipakai di hampir setiap kalimat bahasa Estonia: *olema*.",
+ "bekal": [
+  "menyapa dan berpamitan dengan tepat menurut waktu hari",
+  "menyebut nama, pekerjaan, dan asal dengan *olema*",
+  "bertanya ya/tidak memakai *kas* — dan tidak lagi tertukar antara *ja* dan *jah*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Esimene kohtumine",
+   "intro": "Budi baru tiba di Tallinn untuk satu semester pertukaran pelajar. Di lorong kampus ia berpapasan dengan Kerli.",
+   "lines": [
+    {
+     "speaker": "Kerli:",
+     "text": "Tere! Mina olen Kerli.",
+     "id": "Halo! Saya Kerli.",
+     "literal": "halo! saya adalah-saya Kerli."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tere! Mina olen Budi. Väga meeldiv.",
+     "id": "Halo! Saya Budi. Senang berkenalan.",
+     "literal": "halo! saya adalah-saya Budi. sangat menyenangkan."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Väga meeldiv. Kuidas läheb?",
+     "id": "Senang berkenalan. Apa kabar?",
+     "literal": "sangat menyenangkan. bagaimana berjalan-ia?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hästi, aitäh. Ja sina?",
+     "id": "Baik, terima kasih. Dan kamu?",
+     "literal": "dengan-baik, terima-kasih. dan kamu?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Ka hästi. Kas sa oled siin uus?",
+     "id": "Baik juga. Apakah kamu baru di sini?",
+     "literal": "juga dengan-baik. apakah kamu adalah-kamu di-sini baru?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jah, ma olen uus. Ma olen Indoneesiast.",
+     "id": "Ya, saya baru. Saya dari Indonesia.",
+     "literal": "ya, saya adalah-saya baru. saya adalah-saya Indonesia-dari."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Väga tore! Kas sa räägid eesti keelt?",
+     "id": "Bagus sekali! Apakah kamu bicara bahasa Estonia?",
+     "literal": "sangat bagus! apakah kamu bicara-kamu Estonia bahasa-bagian?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Natuke. Ma õpin.",
+     "id": "Sedikit. Saya sedang belajar.",
+     "literal": "sedikit. saya belajar-saya."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Sa räägid hästi!",
+     "id": "Kamu bicaranya bagus!",
+     "literal": "kamu bicara-kamu dengan-baik!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Aitäh! Aga ma õpin veel.",
+     "id": "Terima kasih! Tapi saya masih belajar.",
+     "literal": "terima-kasih! tapi saya belajar-saya masih."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Kas sa oled tudeng?",
+     "id": "Apakah kamu mahasiswa?",
+     "literal": "apakah kamu adalah-kamu mahasiswa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jah, ma olen tudeng. Ja sina?",
+     "id": "Ya, saya mahasiswa. Dan kamu?",
+     "literal": "ya, saya adalah-saya mahasiswa. dan kamu?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Mina olen õpetaja. Ma õpetan eesti keelt.",
+     "id": "Saya guru. Saya mengajar bahasa Estonia.",
+     "literal": "saya adalah-saya guru. saya ajar-saya Estonia bahasa-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Väga tore! Vabandust, ma pean minema.",
+     "id": "Bagus sekali! Maaf, saya harus pergi.",
+     "literal": "sangat bagus! maaf, saya harus-saya untuk-pergi."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Muidugi. Nägemist, Budi!",
+     "id": "Tentu saja. Sampai jumpa, Budi!",
+     "literal": "tentu-saja. sampai-jumpa, Budi!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Head aega, Kerli!",
+     "id": "Selamat jalan, Kerli!",
+     "literal": "baik-punya waktu-bagian, Kerli!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Ja bukan \"ya\".** *Ja* berarti **dan**; kata untuk \"ya\" adalah *jah*, dengan *h* yang benar-benar diucapkan. Ini jebakan nomor satu bagi penutur bahasa Indonesia, dan ia muncul di baris kelima dialog ini. Tahan sedikit napas di ujung *jah* dan kamu tak akan salah lagi.",
+    "**Mina olen** dan **ma olen** sama artinya. Bentuk panjang (*mina*, *sina*, *tema*) dipakai saat kamu menekankan siapa yang dimaksud — perhatikan Kerli memakainya saat memperkenalkan diri dan saat membandingkan pekerjaannya dengan Budi. Bentuk pendek (*ma*, *sa*, *ta*) dipakai di semua kesempatan lain, dan itulah yang paling sering kamu dengar.",
+    "**Kas** ditaruh di **depan kalimat** untuk membuat pertanyaan ya/tidak, persis seperti \"apakah\" dalam bahasa Indonesia. Susunan kata lainnya tidak berubah sedikit pun: *sa oled tudeng* → *kas sa oled tudeng?* Bahasa Inggris harus membalik urutannya; bahasa Estonia dan bahasa Indonesia tidak.",
+    "⚠️ **Nama bahasa ditulis huruf kecil**, dan bentuknya kata benda + kata benda: *eesti keel* harfiahnya \"bahasa Estonia\", bukan kata sifat. Sama untuk *indoneesia keel*, *inglise keel* (bahasa Inggris), *soome keel* (bahasa Finlandia)."
+   ],
+   "grammars": [
+    {
+     "title": "Olema — kata kerja yang paling sering kamu pakai",
+     "body": [
+      "Bahasa Indonesia sering menghilangkan kata \"adalah\" (\"Saya mahasiswa\"). Bahasa Estonia **tidak pernah** menghilangkannya. Setiap kalimat semacam itu butuh bentuk dari *olema*."
+     ],
+     "table": {
+      "head": [
+       "Panjang",
+       "Pendek",
+       "Bentuk *olema*",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*mina*",
+        "*ma*",
+        "**olen**",
+        "*ma olen tudeng*",
+        "saya mahasiswa"
+       ],
+       [
+        "*sina*",
+        "*sa*",
+        "**oled**",
+        "*sa oled õpetaja*",
+        "kamu guru"
+       ],
+       [
+        "*tema*",
+        "*ta*",
+        "**on**",
+        "*ta on Eestist*",
+        "dia dari Estonia"
+       ],
+       [
+        "*meie*",
+        "*me*",
+        "**oleme**",
+        "*me oleme siin*",
+        "kami di sini"
+       ],
+       [
+        "*teie*",
+        "*te*",
+        "**olete**",
+        "*te olete uued*",
+        "kalian baru"
+       ],
+       [
+        "*nemad*",
+        "*nad*",
+        "**on**",
+        "*nad on tudengid*",
+        "mereka mahasiswa"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan baris ketiga dan keenam: **on** dipakai untuk \"dia\" maupun \"mereka\". Tidak ada bentuk terpisah untuk jamak orang ketiga — satu bentuk mengurus keduanya.",
+      "⚠️ **Tema/ta berarti \"dia\" laki-laki maupun perempuan.** Bahasa Estonia tidak membedakan jenis kelamin di kata ganti, persis seperti bahasa Indonesia. Kalau kamu pernah tersiksa memilih *he* dan *she* dalam bahasa Inggris, di sini masalah itu tidak ada."
+     ]
+    },
+    {
+     "title": "Mina atau ma? Kapan memakai yang mana",
+     "body": [
+      "Tiap kata ganti bahasa Estonia punya dua wajah. Bedanya bukan sopan-tidak sopan, melainkan **ditekankan atau tidak**."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Kapan dipakai"
+      ],
+      "rows": [
+       [
+        "*Ma olen Budi.*",
+        "Kalimat biasa. Ini yang paling sering. Pakai ini kalau ragu."
+       ],
+       [
+        "***Mina** olen Budi.*",
+        "Menekankan \"saya\" — misalnya membetulkan orang, atau memperkenalkan diri pertama kali."
+       ],
+       [
+        "*Ta on õpetaja.*",
+        "Kalimat biasa."
+       ],
+       [
+        "***Tema** on õpetaja, mitte mina.*",
+        "\"**Dia** yang guru, bukan saya.\" Perbandingan."
+       ]
+      ]
+     },
+     "after": [
+      "Aturan praktisnya satu baris: **pakai bentuk pendek selalu**, kecuali kamu sedang membandingkan atau membetulkan. Penutur asli berbicara begitu.",
+      "Ada satu tempat bentuk panjang wajib: saat kata gantinya berdiri sendiri tanpa kata kerja. *Kes on siin?* — *Mina.* (Siapa di sini? — Saya.) Menjawab *ma* di situ terdengar aneh."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyapa dan berpamitan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Eesti keel",
+      "Cara baca",
+      "Bahasa Indonesia",
+      "Kapan"
+     ],
+     "rows": [
+      [
+       "*Tere!*",
+       "*TE-re*",
+       "Halo",
+       "Sepanjang hari, ke siapa pun. Yang paling aman."
+      ],
+      [
+       "*Tere hommikust!*",
+       "*TE-re HOM-mi-kust*",
+       "Selamat pagi",
+       "Sampai kira-kira pukul sebelas."
+      ],
+      [
+       "*Tere päevast!*",
+       "*TE-re PÈE-vast*",
+       "Selamat siang",
+       "Agak resmi; di toko dan kantor."
+      ],
+      [
+       "*Tere õhtust!*",
+       "*TE-re ËH-tust*",
+       "Selamat malam",
+       "Salam saat bertemu di malam hari."
+      ],
+      [
+       "*Head ööd!*",
+       "*HE-ad ööd*",
+       "Selamat tidur",
+       "⚠️ Hanya saat berpisah untuk tidur."
+      ],
+      [
+       "*Tervist!*",
+       "*TER-vist*",
+       "Salam",
+       "Sedikit lebih resmi daripada *tere*."
+      ],
+      [
+       "*Nägemist!*",
+       "*NÈ-ge-mist*",
+       "Sampai jumpa",
+       "Yang paling umum saat berpisah."
+      ],
+      [
+       "*Head aega!*",
+       "*HE-ad AE-ga*",
+       "Selamat jalan",
+       "Sedikit lebih hangat, untuk perpisahan lebih lama."
+      ],
+      [
+       "*Tšau!*",
+       "*tsyau*",
+       "Dah!",
+       "Santai, di antara teman. Dari bahasa Italia, sama seperti \"ciao\"."
+      ],
+      [
+       "*Homseni!*",
+       "*HOM-se-ni*",
+       "Sampai besok",
+       "Harfiah: \"sampai besok\"."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan bahwa *tere õhtust* dan *head ööd* **tidak bisa ditukar**. Yang pertama untuk bertemu, yang kedua untuk berpisah — persis seperti beda \"selamat malam\" saat datang dan \"selamat tidur\" saat pulang."
+    },
+    {
+     "type": "kotak",
+     "title": "Bertanya kabar",
+     "items": [
+      "*Kuidas läheb?* — Apa kabar? (harfiah: \"bagaimana berjalan?\") Yang paling umum.",
+      "*Kuidas sul läheb?* — Apa kabarmu? Sedikit lebih pribadi.",
+      "*Hästi, aitäh.* — Baik, terima kasih. *Väga hästi.* — Sangat baik.",
+      "*Halvasti.* — Buruk. ⚠️ Pakai hanya kalau memang ingin bercerita; orang Estonia menjawab jujur dan akan bertanya lanjut."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bertanya dengan kas",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "*Kas* adalah salah satu hadiah terbesar bahasa Estonia untuk penutur bahasa Indonesia. Ia bekerja persis seperti \"apakah\": ditaruh di depan, tidak mengubah apa pun di belakangnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pernyataan",
+      "Pertanyaan",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Sa oled tudeng.*",
+       "**Kas** *sa oled tudeng?*",
+       "Apakah kamu mahasiswa?"
+      ],
+      [
+       "*Ta on Eestist.*",
+       "**Kas** *ta on Eestist?*",
+       "Apakah dia dari Estonia?"
+      ],
+      [
+       "*Te räägite eesti keelt.*",
+       "**Kas** *te räägite eesti keelt?*",
+       "Apakah kalian bicara bahasa Estonia?"
+      ],
+      [
+       "*See on hea.*",
+       "**Kas** *see on hea?*",
+       "Apakah ini bagus?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Menjawabnya cukup *jah* atau *ei*. Kalau ingin lengkap, ulangi kata kerjanya: *Kas sa oled tudeng?* — *Jah, ma olen.* / *Ei, ma ei ole.*"
+    },
+    {
+     "type": "p",
+     "text": "Kata tanya lain menggantikan tempat *kas*, bukan menambahinya: *Mis see on?* (Apa ini?), *Kes sa oled?* (Siapa kamu?), *Kus sa oled?* (Di mana kamu?), *Kust sa oled?* (Dari mana kamu?), *Kuidas läheb?* (Bagaimana kabarnya?)"
+    }
+   ]
+  },
+  {
+   "title": "Sepuluh kalimat yang menyelamatkan pemula",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Eesti keel",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Vabandust.*",
+       "*VA-ban-dust*",
+       "Maaf. / Permisi."
+      ],
+      [
+       "*Palun.*",
+       "*PA-lun*",
+       "Tolong. / Silakan. / Sama-sama."
+      ],
+      [
+       "*Aitäh.*",
+       "*AI-tèhh*",
+       "Terima kasih."
+      ],
+      [
+       "*Ma ei saa aru.*",
+       "*ma ei saa A-ru*",
+       "Saya tidak mengerti."
+      ],
+      [
+       "*Ma ei tea.*",
+       "*ma ei TE-a*",
+       "Saya tidak tahu."
+      ],
+      [
+       "*Palun aeglasemalt.*",
+       "*PA-lun AEG-la-se-malt*",
+       "Tolong lebih pelan."
+      ],
+      [
+       "*Palun korrake.*",
+       "*PA-lun KOR-ra-ke*",
+       "Tolong ulangi."
+      ],
+      [
+       "*Mida see tähendab?*",
+       "*MI-da see TÈ-hen-dab*",
+       "Apa artinya itu?"
+      ],
+      [
+       "*Kas te räägite inglise keelt?*",
+       "*kas te RÈÈ-gi-te ING-li-se keelt*",
+       "Apakah Anda bicara bahasa Inggris?"
+      ],
+      [
+       "*Ma õpin eesti keelt.*",
+       "*ma Ë-pin EES-ti keelt*",
+       "Saya sedang belajar bahasa Estonia."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Palun mengerjakan tiga tugas sekaligus",
+     "items": [
+      "**\"Tolong\"** — *Palun kohvi.* (Tolong, kopi.)",
+      "**\"Silakan\"** — saat menyerahkan sesuatu: *Palun!* (Silakan!)",
+      "**\"Sama-sama\"** — jawaban atas *aitäh*: *Aitäh!* — *Palun!*",
+      "Ketiganya kata yang sama. Konteks yang membedakan, dan konteksnya tak pernah rancu."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalimat terakhir di tabel itu layak dihafal hari ini juga. Orang Estonia terbiasa langsung beralih ke bahasa Inggris begitu mendengar aksen asing; mengatakan *ma õpin eesti keelt* adalah cara paling sopan untuk meminta mereka tetap berbahasa Estonia — dan hampir selalu berhasil."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "et": "tere",
+   "baca": "TE-re",
+   "id": "halo"
+  },
+  {
+   "et": "aitäh",
+   "baca": "AI-tèhh",
+   "id": "terima kasih"
+  },
+  {
+   "et": "palun",
+   "baca": "PA-lun",
+   "id": "tolong; silakan; sama-sama"
+  },
+  {
+   "et": "vabandust",
+   "baca": "VA-ban-dust",
+   "id": "maaf; permisi"
+  },
+  {
+   "et": "nägemist",
+   "baca": "NÈ-ge-mist",
+   "id": "sampai jumpa"
+  },
+  {
+   "et": "head aega",
+   "baca": "HE-ad AE-ga",
+   "id": "selamat jalan"
+  },
+  {
+   "et": "jah",
+   "baca": "yahh",
+   "id": "ya"
+  },
+  {
+   "et": "ei",
+   "baca": "ei",
+   "id": "tidak"
+  },
+  {
+   "et": "ja",
+   "baca": "ya",
+   "id": "⚠️ dan"
+  },
+  {
+   "et": "kas",
+   "baca": "kas",
+   "id": "apakah"
+  },
+  {
+   "et": "olema",
+   "baca": "O-le-ma",
+   "id": "adalah; berada"
+  },
+  {
+   "et": "mina, ma",
+   "baca": "MI-na, ma",
+   "id": "saya"
+  },
+  {
+   "et": "sina, sa",
+   "baca": "SI-na, sa",
+   "id": "kamu"
+  },
+  {
+   "et": "tema, ta",
+   "baca": "TE-ma, ta",
+   "id": "dia"
+  },
+  {
+   "et": "meie, me",
+   "baca": "MEI-e, me",
+   "id": "kami, kita"
+  },
+  {
+   "et": "teie, te",
+   "baca": "TEI-e, te",
+   "id": "kalian; Anda"
+  },
+  {
+   "et": "nemad, nad",
+   "baca": "NE-mad, nad",
+   "id": "mereka"
+  },
+  {
+   "et": "nimi",
+   "baca": "NI-mi",
+   "id": "nama"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Estonia.",
+   "items": [
+    "Halo! Saya Budi.",
+    "Apakah kamu guru?",
+    "Ya, saya guru.",
+    "Saya dari Indonesia.",
+    "Saya sedang belajar bahasa Estonia.",
+    "Sampai jumpa!"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk olema yang tepat.",
+   "items": [
+    "Ma ____ tudeng.",
+    "Sa ____ õpetaja.",
+    "Ta ____ Eestist.",
+    "Me ____ siin.",
+    "Te ____ uued.",
+    "Nad ____ tudengid."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi pertanyaan dengan kas.",
+   "items": [
+    "Sa oled uus.",
+    "Ta räägib eesti keelt.",
+    "Te olete õpetajad.",
+    "See on hea.",
+    "Nad on siin.",
+    "Ma olen Indoneesiast."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "olen / ma / tudeng",
+    "sa / kas / eesti / räägid / keelt / ?",
+    "läheb / kuidas / ?",
+    "Indoneesiast / olen / ma",
+    "õpetaja / mina / olen"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Tere! Mina olen Budi. — Kas sa oled õpetaja? — Jah, ma olen õpetaja. — Ma olen Indoneesiast. — Ma õpin eesti keelt. — Nägemist!",
+  "1": "olen — oled — on — oleme — olete — on",
+  "2": "Kas sa oled uus? — Kas ta räägib eesti keelt? — Kas te olete õpetajad? — Kas see on hea? — Kas nad on siin? — Kas ma olen Indoneesiast?",
+  "3": "Ma olen tudeng. — Kas sa räägid eesti keelt? — Kuidas läheb? — Ma olen Indoneesiast. — Mina olen õpetaja."
+ }
+}

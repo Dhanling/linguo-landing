@@ -1,0 +1,524 @@
+{
+ "title": "Ke mana kamu pergi?",
+ "title_target": "Kuhu sa lähed?",
+ "goal": "Bergerak di dalam kota — bertanya arah, naik kendaraan, dan akhirnya melihat **keenam ekor tempat** berdiri berdampingan dalam satu tabel.",
+ "bekal": [
+  "memakai enam ekor tempat sebagai dua rangkaian yang sejajar",
+  "menyebut kendaraan dengan ekor *-ga*",
+  "bertanya arah dan memahami jawabannya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Kuidas ma saan Kadriorgu?",
+   "intro": "Budi ingin ke taman Kadriorg dan bertanya kepada orang yang lewat.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Vabandust, kuidas ma saan Kadriorgu?",
+     "id": "Permisi, bagaimana caranya ke Kadriorg?",
+     "literal": "maaf, bagaimana saya dapat-saya Kadriorg-ke?"
+    },
+    {
+     "speaker": "Möödakäija:",
+     "text": "Kadriorgu? Võtke tramm number üks.",
+     "id": "Ke Kadriorg? Naik trem nomor satu.",
+     "literal": "Kadriorg-ke? ambillah trem nomor satu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ja kus on peatus?",
+     "id": "Dan haltenya di mana?",
+     "literal": "dan di-mana adalah halte?"
+    },
+    {
+     "speaker": "Möödakäija:",
+     "text": "Minge otse, siis paremale. Peatus on seal.",
+     "id": "Jalan lurus, lalu ke kanan. Haltenya di sana.",
+     "literal": "pergilah lurus, kemudian kanan-ke. halte adalah-ia di-sana."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kui kaua see võtab?",
+     "id": "Berapa lama?",
+     "literal": "seberapa lama itu mengambil-ia?"
+    },
+    {
+     "speaker": "Möödakäija:",
+     "text": "Umbes viisteist minutit.",
+     "id": "Sekitar lima belas menit.",
+     "literal": "sekitar lima-belas menit-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ja kus ma pean väljuma?",
+     "id": "Dan saya turun di mana?",
+     "literal": "dan di-mana saya harus-saya untuk-keluar?"
+    },
+    {
+     "speaker": "Möödakäija:",
+     "text": "Viimases peatuses. Kadriorg on lõpp-peatus.",
+     "id": "Di halte terakhir. Kadriorg halte terakhir.",
+     "literal": "terakhir-di halte-di. Kadriorg adalah-ia akhir-halte."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Aitäh! Kas mul on piletit vaja?",
+     "id": "Terima kasih! Saya perlu tiket?",
+     "literal": "terima-kasih! apakah saya-pada adalah tiket-bagian perlu?"
+    },
+    {
+     "speaker": "Möödakäija:",
+     "text": "Kas te elate Tallinnas?",
+     "id": "Anda tinggal di Tallinn?",
+     "literal": "apakah Anda tinggal-Anda Tallinn-di?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jah, ma olen siin tudeng.",
+     "id": "Ya, saya mahasiswa di sini.",
+     "literal": "ya, saya adalah-saya di-sini mahasiswa."
+    },
+    {
+     "speaker": "Möödakäija:",
+     "text": "Siis on tasuta. Aga te vajate ühiskaarti.",
+     "id": "Kalau begitu gratis. Tapi Anda perlu kartu terusan.",
+     "literal": "kalau-begitu adalah gratis. tapi Anda perlu-Anda kartu-bersama-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tasuta? Tõesti?",
+     "id": "Gratis? Sungguh?",
+     "literal": "gratis? sungguh?"
+    },
+    {
+     "speaker": "Möödakäija:",
+     "text": "Jah, Tallinna elanikele. Ostke kaart kioskist.",
+     "id": "Ya, untuk penduduk Tallinn. Beli kartunya di kios.",
+     "literal": "ya, Tallinn-punya penduduk-jamak-kepada. belilah kartu kios-dari."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "See on uskumatu. Aitäh väga!",
+     "id": "Luar biasa. Terima kasih banyak!",
+     "literal": "itu adalah-ia tak-terpercaya. terima-kasih sangat!"
+    },
+    {
+     "speaker": "Möödakäija:",
+     "text": "Palun. Head teed!",
+     "id": "Sama-sama. Selamat jalan!",
+     "literal": "sama-sama. baik-punya jalan-bagian!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Orang asing memakai *te*, bukan *sa*.** Perhatikan seluruh kalimat orang yang lewat: *võtke*, *minge*, *te elate*, *ostke*. Kepada orang yang tidak dikenal, orang Estonia memakai bentuk jamak sebagai bentuk hormat, sama seperti \"Anda\". Ini digarap di unit 19.",
+    "**Võtke, minge, ostke** adalah bentuk perintah hormat. Bentuk akrabnya *võta*, *mine*, *osta*. Kalau kamu ragu kepada siapa kamu bicara, bentuk yang berakhiran *-ke* selalu aman.",
+    "⚠️ **Parem berarti \"kanan\" dan \"lebih baik\".** Kamu baru bertemu arti keduanya di unit 14. *Paremale* = ke kanan, *vasakule* = ke kiri. Konteks selalu memisahkannya, tapi ini layak diingat.",
+    "⚠️ **Angkutan umum Tallinn benar-benar gratis** untuk siapa pun yang terdaftar sebagai penduduk kota, termasuk mahasiswa asing yang mendaftarkan alamatnya. Kamu tetap perlu menempelkan kartu di setiap perjalanan. Ini kebijakan nyata dan salah satu alasan kota ini nyaman untuk pendatang."
+   ],
+   "grammars": [
+    {
+     "title": "Enam ekor tempat — seluruhnya, dalam satu tabel",
+     "body": [
+      "Kamu sudah memakai semuanya secara terpisah sejak unit 2. Inilah pertama kalinya keenamnya berdiri berdampingan, dan susunannya ternyata sangat rapi: dua rangkaian, tiga arah masing-masing."
+     ],
+     "table": {
+      "head": [
+       "Arah",
+       "Rangkaian dalam",
+       "*maja*",
+       "Rangkaian permukaan",
+       "*laud*"
+      ],
+      "rows": [
+       [
+        "**di** (kus?)",
+        "**-s**",
+        "*majas* — di rumah",
+        "**-l**",
+        "*laual* — di meja"
+       ],
+       [
+        "**dari** (kust?)",
+        "**-st**",
+        "*majast* — dari rumah",
+        "**-lt**",
+        "*laualt* — dari meja"
+       ],
+       [
+        "**ke** (kuhu?)",
+        "**-sse**",
+        "*majasse* — ke rumah",
+        "**-le**",
+        "*lauale* — ke meja"
+       ]
+      ]
+     },
+     "after": [
+      "**Bacalah tabel ini menurun, bukan melintang.** Tiap kolom adalah satu rangkaian utuh, dan tiap baris adalah satu arah. Enam ekor, dan tak satu pun yang perlu dihafal terpisah — yang perlu kamu ingat cuma tiga arah dan dua rangkaian.",
+      "Semuanya menempel di **bentuk kepunyaan**, sesuai janji unit 6. Sekarang kamu bisa melihat betapa besar hasil dari satu pasangan kata: enam bentuk tempat, ditambah *-ga*, *-ta*, *-na*, *-ni* dari unit 6. Sepuluh bentuk dari satu hafalan.",
+      "⚠️ Rangkaian permukaan juga dipakai untuk **orang**: *mul* (pada saya), *mulle* (kepada saya), *minult* (dari saya). Kamu sudah memakai semuanya sejak unit 4 dan 5 tanpa tahu bahwa ketiganya satu keluarga."
+     ]
+    },
+    {
+     "title": "Naik apa — ekor -ga",
+     "body": [
+      "Satu ekor mengurus alat, kendaraan, dan teman seperjalanan sekaligus."
+     ],
+     "table": {
+      "head": [
+       "Eesti keel",
+       "Bahasa Indonesia",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*bussi**ga***",
+        "naik bis",
+        "*Ma sõidan bussiga.*"
+       ],
+       [
+        "*trammi**ga***",
+        "naik trem",
+        "*Mine trammiga.*"
+       ],
+       [
+        "*rongi**ga***",
+        "naik kereta",
+        "*Rongiga on kiirem.*"
+       ],
+       [
+        "*auto**ga***",
+        "naik mobil",
+        "*Me tuleme autoga.*"
+       ],
+       [
+        "*lennuki**ga***",
+        "naik pesawat",
+        "*Ma lendan lennukiga.*"
+       ],
+       [
+        "*jalgratta**ga***",
+        "naik sepeda",
+        "*Ta sõidab jalgrattaga.*"
+       ],
+       [
+        "*sõbra**ga***",
+        "dengan teman",
+        "*Ma lähen sõbraga.*"
+       ],
+       [
+        "⚠️ *jalgsi*",
+        "jalan kaki",
+        "*Ma lähen jalgsi.*"
+       ]
+      ]
+     },
+     "after": [
+      "Baris terakhir adalah satu-satunya pengecualian yang perlu kamu tahu: \"jalan kaki\" bukan *jalgadega*, melainkan *jalgsi*. Ia bentuk beku dari kata *jalg* (kaki).",
+      "Ekor *-ga* juga mengurus alat: *pastakaga* (dengan pulpen), *noaga* (dengan pisau), *kaardiga* (dengan kartu — sudah kamu pakai di unit 4).",
+      "Lawannya adalah *-ta* (tanpa): *suhkruta* (tanpa gula), *piimata* (tanpa susu), *minuta* (tanpa saya). Berguna sekali di kafe."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kendaraan dan perjalanan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Eesti keel",
+      "Cara baca",
+      "\"Naik ...\"",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*buss*",
+       "*buss*",
+       "*bussiga*",
+       "bis"
+      ],
+      [
+       "*tramm*",
+       "*tramm*",
+       "*trammiga*",
+       "trem"
+      ],
+      [
+       "*rong*",
+       "*rong*",
+       "*rongiga*",
+       "kereta"
+      ],
+      [
+       "*auto*",
+       "*AU-to*",
+       "*autoga*",
+       "mobil"
+      ],
+      [
+       "*takso*",
+       "*TAK-so*",
+       "*taksoga*",
+       "taksi"
+      ],
+      [
+       "*lennuk*",
+       "*LEN-nuk*",
+       "*lennukiga*",
+       "pesawat"
+      ],
+      [
+       "*laev*",
+       "*laev*",
+       "*laevaga*",
+       "kapal"
+      ],
+      [
+       "*praam*",
+       "*praam*",
+       "*praamiga*",
+       "feri"
+      ],
+      [
+       "*jalgratas*",
+       "*YALG-ra-tas*",
+       "*jalgrattaga*",
+       "sepeda"
+      ],
+      [
+       "*tõukeratas*",
+       "*TËU-ke-ra-tas*",
+       "*tõukerattaga*",
+       "skuter listrik"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tempat dan kata perjalanan",
+     "items": [
+      "*peatus* — halte. *bussijaam* — terminal bis. *raudteejaam* — stasiun kereta. *lennujaam* — bandara. *sadam* — pelabuhan.",
+      "*pilet* — tiket. *ühiskaart* — kartu terusan. *tasuta* — gratis. *edasi-tagasi* — pulang pergi.",
+      "*väljuma* — turun, berangkat. *sisenema* — masuk, naik. *jõudma* — tiba. *ümber istuma* — pindah kendaraan.",
+      "⚠️ *Praam* ke Saaremaa dan Hiiumaa adalah bagian normal dari perjalanan di Estonia. Kalau kamu berencana ke pulau, pesan tiket feri lebih dulu di musim panas."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bertanya arah",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Eesti keel",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Vabandust, kuidas ma saan ...?*",
+       "Permisi, bagaimana caranya ke ...?"
+      ],
+      [
+       "*Kus asub ...?*",
+       "Di mana letak ...?"
+      ],
+      [
+       "*Kas see on kaugel?*",
+       "Apakah itu jauh?"
+      ],
+      [
+       "*Kui kaua see võtab?*",
+       "Berapa lama?"
+      ],
+      [
+       "*Ma olen eksinud.*",
+       "Saya tersesat."
+      ],
+      [
+       "*Minge otse.*",
+       "Jalan lurus."
+      ],
+      [
+       "*Pöörake paremale.*",
+       "Belok kanan."
+      ],
+      [
+       "*Pöörake vasakule.*",
+       "Belok kiri."
+      ],
+      [
+       "*See on üle tee.*",
+       "Itu di seberang jalan."
+      ],
+      [
+       "*See on nurga peal.*",
+       "Itu di pojok."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Kalimat terakhir berguna dari dua arah: kamu memakainya kalau ditanyai arah, dan kamu akan mendengarnya kalau bertanya kepada sesama pendatang. *Pärit* berarti \"berasal\"."
+    },
+    {
+     "type": "kotak",
+     "title": "Arah dan letak",
+     "items": [
+      "*otse* (lurus), *paremale* (ke kanan), *vasakule* (ke kiri), *tagasi* (kembali).",
+      "*paremal* (di kanan), *vasakul* (di kiri) — perhatikan **-le** untuk arah, **-l** untuk letak. Rangkaian permukaan yang sama lagi.",
+      "*ees* (di depan), *taga* (di belakang), *kõrval* (di samping), *vastas* (di seberang), *vahel* (di antara).",
+      "*põhi* (utara), *lõuna* (selatan), *ida* (timur), *lääne* (barat). ⚠️ *Lõuna* juga berarti tengah hari — kamu sudah bertemu arti itu di unit 8."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "et": "tramm",
+   "baca": "tramm",
+   "id": "trem"
+  },
+  {
+   "et": "rong",
+   "baca": "rong",
+   "id": "kereta"
+  },
+  {
+   "et": "lennuk",
+   "baca": "LEN-nuk",
+   "id": "pesawat"
+  },
+  {
+   "et": "laev",
+   "baca": "laev",
+   "id": "kapal"
+  },
+  {
+   "et": "praam",
+   "baca": "praam",
+   "id": "feri"
+  },
+  {
+   "et": "jalgratas",
+   "baca": "YALG-ra-tas",
+   "id": "sepeda"
+  },
+  {
+   "et": "peatus",
+   "baca": "PE-a-tus",
+   "id": "halte"
+  },
+  {
+   "et": "pilet",
+   "baca": "PI-let",
+   "id": "tiket"
+  },
+  {
+   "et": "tasuta",
+   "baca": "TA-su-ta",
+   "id": "gratis"
+  },
+  {
+   "et": "sõitma",
+   "baca": "SËIT-ma",
+   "id": "berkendara"
+  },
+  {
+   "et": "väljuma",
+   "baca": "VÈL-yu-ma",
+   "id": "turun, keluar"
+  },
+  {
+   "et": "jõudma",
+   "baca": "YËUD-ma",
+   "id": "tiba, sampai"
+  },
+  {
+   "et": "pöörama",
+   "baca": "PÖÖ-ra-ma",
+   "id": "berbelok"
+  },
+  {
+   "et": "kõndima",
+   "baca": "KËN-di-ma",
+   "id": "berjalan"
+  },
+  {
+   "et": "otse",
+   "baca": "OT-se",
+   "id": "lurus"
+  },
+  {
+   "et": "paremale",
+   "baca": "PA-re-ma-le",
+   "id": "ke kanan"
+  },
+  {
+   "et": "vasakule",
+   "baca": "VA-sa-ku-le",
+   "id": "ke kiri"
+  },
+  {
+   "et": "jalgsi",
+   "baca": "YALG-si",
+   "id": "⚠️ jalan kaki"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi rangkaiannya: di, dari, ke.",
+   "items": [
+    "maja: majas, ____, majasse",
+    "kool: koolis, koolist, ____",
+    "laud: ____, laualt, lauale",
+    "turg: turul, ____, turule",
+    "pood: poes, poest, ____",
+    "linn: ____, linnast, linna"
+   ]
+  },
+  {
+   "prompt": "Tambahkan ekor -ga (\"naik/dengan\").",
+   "items": [
+    "buss",
+    "rong",
+    "auto",
+    "lennuk",
+    "jalgratas",
+    "sõber"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Estonia.",
+   "items": [
+    "Permisi, bagaimana caranya ke Kadriorg?",
+    "Naik trem nomor satu.",
+    "Jalan lurus, lalu belok kanan.",
+    "Berapa lama?",
+    "Saya tersesat.",
+    "Saya jalan kaki."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "bussiga / sõidan / ma",
+    "otse / paremale / minge / siis / ,",
+    "kaua / kui / võtab / see / ?",
+    "eksinud / ma / olen",
+    "jalgsi / lähen / ma"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "majast — koolisse — laual — turult — poodi — linnas",
+  "1": "bussiga — rongiga — autoga — lennukiga — jalgrattaga — sõbraga",
+  "2": "Vabandust, kuidas ma saan Kadriorgu? — Võtke tramm number üks. — Minge otse, siis paremale. — Kui kaua see võtab? — Ma olen eksinud. — Ma lähen jalgsi.",
+  "3": "Ma sõidan bussiga. — Minge otse, siis paremale. — Kui kaua see võtab? — Ma olen eksinud. — Ma lähen jalgsi."
+ }
+}

@@ -1,0 +1,551 @@
+{
+ "title": "Badan dan kesehatan",
+ "title_target": "Tervis",
+ "goal": "Mengatakan bagian mana yang sakit, membeli obat, dan meminta pertolongan — dengan susunan kalimat yang bahasa Estonia pakai khusus untuk rasa sakit.",
+ "bekal": [
+  "menyebut bagian badan dan gejala yang paling sering",
+  "memakai *mul valutab* dan *mul on valus*",
+  "membentuk kalimat perintah untuk satu orang maupun untuk orang yang dihormati"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Apteegis",
+   "intro": "Bulan November. Budi masuk apotek dengan suara serak.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Tere. Ma tunnen end halvasti.",
+     "id": "Halo. Saya merasa tidak enak badan.",
+     "literal": "halo. saya rasa-saya diri buruknya."
+    },
+    {
+     "speaker": "Apteeker:",
+     "text": "Mis teil viga on?",
+     "id": "Anda kenapa?",
+     "literal": "apa Anda-pada cacat adalah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mul valutab pea ja kurk.",
+     "id": "Kepala dan tenggorokan saya sakit.",
+     "literal": "saya-pada sakit-ia kepala dan tenggorokan."
+    },
+    {
+     "speaker": "Apteeker:",
+     "text": "Kas teil on palavik?",
+     "id": "Anda demam?",
+     "literal": "apakah Anda-pada adalah demam?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ma ei tea. Mul on külm ja ma olen väsinud.",
+     "id": "Saya tidak tahu. Saya kedinginan dan capek.",
+     "literal": "saya tidak tahu. saya-pada adalah dingin dan saya adalah-saya lelah."
+    },
+    {
+     "speaker": "Apteeker:",
+     "text": "Kui kaua see on kestnud?",
+     "id": "Sudah berapa lama?",
+     "literal": "seberapa lama itu adalah berlangsung-nya?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kaks päeva.",
+     "id": "Dua hari.",
+     "literal": "dua hari-bagian."
+    },
+    {
+     "speaker": "Apteeker:",
+     "text": "See on tavaline külmetus. Siin on ravim.",
+     "id": "Itu masuk angin biasa. Ini obatnya.",
+     "literal": "itu adalah-ia biasa masuk-angin. di-sini adalah obat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kuidas ma pean seda võtma?",
+     "id": "Bagaimana cara minumnya?",
+     "literal": "bagaimana saya harus-saya itu-bagian untuk-mengambil?"
+    },
+    {
+     "speaker": "Apteeker:",
+     "text": "Kaks tabletti päevas, pärast sööki.",
+     "id": "Dua tablet sehari, sesudah makan.",
+     "literal": "dua tablet-bagian hari-di, sesudah makan-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Aitäh. Kas ma pean arsti juurde minema?",
+     "id": "Terima kasih. Perlu ke dokter?",
+     "literal": "terima-kasih. apakah saya harus-saya dokter-punya ke-tempat untuk-pergi?"
+    },
+    {
+     "speaker": "Apteeker:",
+     "text": "Kui palavik ei lange kolme päevaga, siis jah.",
+     "id": "Kalau demamnya tidak turun dalam tiga hari, iya.",
+     "literal": "kalau demam tidak turun-ia tiga hari-dengan, maka ya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Selge. Ja kui on hädaolukord?",
+     "id": "Jelas. Kalau darurat?",
+     "literal": "jelas. dan kalau adalah darurat-keadaan?"
+    },
+    {
+     "speaker": "Apteeker:",
+     "text": "Helistage 112. See on tasuta ja töötab alati.",
+     "id": "Telepon 112. Itu gratis dan selalu aktif.",
+     "literal": "teleponlah 112. itu adalah-ia gratis dan bekerja-ia selalu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Aitäh väga.",
+     "id": "Terima kasih banyak.",
+     "literal": "terima-kasih sangat."
+    },
+    {
+     "speaker": "Apteeker:",
+     "text": "Palun. Paranege ruttu!",
+     "id": "Sama-sama. Cepat sembuh!",
+     "literal": "sama-sama. sembuhlah cepat!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Mul valutab pea** — harfiahnya \"pada saya sakit kepala\". Yang sakit menjadi **pelaku kalimat**, dan pemiliknya ditandai ekor **-l**. Susunan ini dipakai untuk semua rasa sakit: *mul valutab kõht* (perut saya sakit), *tal valutab hammas* (giginya sakit).",
+    "**Mul on külm** berarti \"saya kedinginan\", bukan \"saya punya dingin\". Pola *mul on* + kata sifat mengurus banyak keadaan badan: *mul on soe* (saya kepanasan), *mul on igav* (saya bosan), *mul on hea meel* (saya senang).",
+    "**Mis teil viga on?** — kalimat baku petugas apotek dan dokter, harfiahnya \"apa cacat pada Anda\". Jangan tersinggung; ia sepenuhnya netral.",
+    "⚠️ **112 adalah nomor darurat untuk seluruh Estonia** — ambulans, pemadam, dan polisi sekaligus. Gratis dari nomor mana pun, termasuk ponsel tanpa pulsa, dan petugasnya berbahasa Inggris. Simpan sekarang."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga cara mengatakan sakit",
+     "body": [
+      "Ketiganya benar. Bedanya terletak pada seberapa tepat kamu bisa menunjuk letak sakitnya."
+     ],
+     "table": {
+      "head": [
+       "Susunan",
+       "Contoh",
+       "Bahasa Indonesia",
+       "Kapan"
+      ],
+      "rows": [
+       [
+        "*mul valutab* + bagian",
+        "*Mul valutab pea.*",
+        "Kepala saya sakit.",
+        "Sakit di satu tempat tertentu."
+       ],
+       [
+        "*mul on valus*",
+        "*Mul on valus.*",
+        "Saya kesakitan.",
+        "Sakit tanpa menunjuk tempat."
+       ],
+       [
+        "*mul on* + penyakit",
+        "*Mul on palavik.*",
+        "Saya demam.",
+        "Menyebut penyakitnya."
+       ],
+       [
+        "*ma olen haige*",
+        "*Ma olen haige.*",
+        "Saya sakit.",
+        "Keadaan umum."
+       ],
+       [
+        "*ma tunnen end halvasti*",
+        "*Ma tunnen end halvasti.*",
+        "Saya tidak enak badan.",
+        "Belum tahu sakit apa."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Perhatikan bahwa **tak satu pun memakai kata kepunyaan**. Bahasa Estonia tidak mengatakan \"kepala saya sakit\" dengan *minu pea*; ia mengatakan *mul valutab pea* — \"pada saya, kepala sakit\". Ekor *-l* sudah mengurus kepemilikannya.",
+      "Untuk bertanya: *Kus valutab?* (Di mana sakitnya?) atau *Mis viga?* (Kenapa?). Keduanya sangat sering dipakai.",
+      "*Valus* juga dipakai sebagai kata sifat: *valus hammas* (gigi yang sakit), *valus koht* (tempat yang sakit)."
+     ]
+    },
+    {
+     "title": "Kalimat perintah — dan jalan pintasnya",
+     "body": [
+      "Kamu sudah memakainya sejak unit 7 (*tule sisse*, *kuula*) dan unit 15 (*minge*, *võtke*). Inilah aturannya, dan ia punya jalan pintas yang menyenangkan."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Kepada *sa*",
+       "Kepada *te*",
+       "Larangan (*sa*)",
+       "Larangan (*te*)"
+      ],
+      "rows": [
+       [
+        "*minema*",
+        "*mine!*",
+        "*minge!*",
+        "*ära mine!*",
+        "*ärge minge!*"
+       ],
+       [
+        "*tulema*",
+        "*tule!*",
+        "*tulge!*",
+        "*ära tule!*",
+        "*ärge tulge!*"
+       ],
+       [
+        "*võtma*",
+        "*võta!*",
+        "*võtke!*",
+        "*ära võta!*",
+        "*ärge võtke!*"
+       ],
+       [
+        "*ostma*",
+        "*osta!*",
+        "*ostke!*",
+        "*ära osta!*",
+        "*ärge ostke!*"
+       ],
+       [
+        "*helistama*",
+        "*helista!*",
+        "*helistage!*",
+        "*ära helista!*",
+        "*ärge helistage!*"
+       ],
+       [
+        "*ootama*",
+        "*oota!*",
+        "*oodake!*",
+        "*ära oota!*",
+        "*ärge oodake!*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Jalan pintasnya: bentuk perintah untuk *sa* sama persis dengan bentuk sesudah *ei*.** *Ei mine* dan *mine!* memakai bentuk yang sama. Jadi aturan unit 11 — ambil bentuk *ma*, buang *-n* — juga memberimu seluruh bentuk perintahnya. Satu aturan, dua pekerjaan.",
+      "Bentuk untuk *te* dibuat dengan menambahkan **-ke** atau **-ge**. Ia dipakai kepada orang yang dihormati, kepada orang asing, dan kepada lebih dari satu orang.",
+      "Untuk mengajak, pakai bentuk *me* tanpa kata ganti: *lähme!* (ayo pergi), *sööme!* (ayo makan), *vaatame!* (ayo lihat). Kamu sudah memakainya sejak unit 7."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bagian badan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Eesti keel",
+      "Cara baca",
+      "Kepunyaan",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*pea*",
+       "*pe-a*",
+       "*pea*",
+       "kepala"
+      ],
+      [
+       "*juuksed*",
+       "*YUUK-sed*",
+       "*juuste*",
+       "rambut"
+      ],
+      [
+       "*nägu*",
+       "*NÈ-gu*",
+       "*näo*",
+       "wajah"
+      ],
+      [
+       "*silm*",
+       "*silm*",
+       "*silma*",
+       "mata"
+      ],
+      [
+       "*kõrv*",
+       "*kërv*",
+       "*kõrva*",
+       "telinga"
+      ],
+      [
+       "*nina*",
+       "*NI-na*",
+       "*nina*",
+       "hidung"
+      ],
+      [
+       "*suu*",
+       "*suu*",
+       "*suu*",
+       "mulut"
+      ],
+      [
+       "*hammas*",
+       "*HAM-mas*",
+       "*hamba*",
+       "gigi"
+      ],
+      [
+       "*kurk*",
+       "*kurk*",
+       "*kurgu*",
+       "tenggorokan"
+      ],
+      [
+       "*kael*",
+       "*kael*",
+       "*kaela*",
+       "leher"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Banyak di antaranya sudah kamu lihat di daftar pasangan unit 6 — *jalg – jala*, *käsi – käe*, *selg – selja*, *nägu – näo*. Bagian badan termasuk kosakata tertua sebuah bahasa, dan kata tertua adalah kata yang paling sering meluruh."
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Süda* berarti **jantung** sebagai organ dan **hati** sebagai perasaan, persis seperti pemakaian ganda kata \"hati\" dalam bahasa Indonesia. *Mul on hea süda* — saya berhati baik."
+    }
+   ]
+  },
+  {
+   "title": "Penyakit, obat, dan darurat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Eesti keel",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*külmetus*",
+       "*KÜL-me-tus*",
+       "masuk angin, flu ringan"
+      ],
+      [
+       "*gripp*",
+       "*gripp*",
+       "flu"
+      ],
+      [
+       "*palavik*",
+       "*PA-la-vik*",
+       "demam"
+      ],
+      [
+       "*köha*",
+       "*KÖ-ha*",
+       "batuk"
+      ],
+      [
+       "*nohu*",
+       "*NO-hu*",
+       "pilek"
+      ],
+      [
+       "*peavalu*",
+       "*PE-a-va-lu*",
+       "sakit kepala"
+      ],
+      [
+       "*kõhuvalu*",
+       "*KË-hu-va-lu*",
+       "sakit perut"
+      ],
+      [
+       "*hambavalu*",
+       "*HAM-ba-va-lu*",
+       "sakit gigi"
+      ],
+      [
+       "*allergia*",
+       "*al-LER-gi-a*",
+       "alergi"
+      ],
+      [
+       "*ravim, rohi*",
+       "*RA-vim, RO-hi*",
+       "obat"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat yang perlu kamu punya sekarang",
+     "items": [
+      "*Ma vajan arsti.* — Saya butuh dokter.",
+      "*Palun kutsuge kiirabi!* — Tolong panggil ambulans!",
+      "*Mul on allergia ...* — Saya alergi ...",
+      "⚠️ **112** — nomor darurat untuk ambulans, pemadam, dan polisi. Gratis, aktif dua puluh empat jam, dan petugasnya berbahasa Inggris."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Terviseks mengerjakan tiga tugas",
+     "items": [
+      "**Saat bersulang** — *Terviseks!* berarti \"untuk kesehatan\", padanan \"cheers\".",
+      "**Saat orang bersin** — *Terviseks!* berarti \"sehat selalu\", padanan \"alhamdulillah\" atau \"bless you\".",
+      "**Sebagai doa umum** — dipakai saat berpisah dengan orang yang sedang sakit.",
+      "Kata dasarnya *tervis* (kesehatan) — dan dari situ juga datang sapaan *tervist!* yang kamu pelajari di unit 1."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "et": "tervis",
+   "baca": "TER-vis",
+   "id": "kesehatan"
+  },
+  {
+   "et": "haige",
+   "baca": "HAI-ge",
+   "id": "sakit"
+  },
+  {
+   "et": "valu",
+   "baca": "VA-lu",
+   "id": "rasa sakit"
+  },
+  {
+   "et": "valus",
+   "baca": "VA-lus",
+   "id": "sakit, nyeri"
+  },
+  {
+   "et": "valutama",
+   "baca": "VA-lu-ta-ma",
+   "id": "terasa sakit"
+  },
+  {
+   "et": "pea",
+   "baca": "pe-a",
+   "id": "kepala"
+  },
+  {
+   "et": "silm",
+   "baca": "silm",
+   "id": "mata"
+  },
+  {
+   "et": "kõrv",
+   "baca": "kërv",
+   "id": "telinga"
+  },
+  {
+   "et": "nina",
+   "baca": "NI-na",
+   "id": "hidung"
+  },
+  {
+   "et": "suu",
+   "baca": "suu",
+   "id": "mulut"
+  },
+  {
+   "et": "hammas",
+   "baca": "HAM-mas",
+   "id": "gigi (kep. hamba)"
+  },
+  {
+   "et": "kurk",
+   "baca": "kurk",
+   "id": "tenggorokan"
+  },
+  {
+   "et": "kõht",
+   "baca": "këht",
+   "id": "perut (kep. kõhu)"
+  },
+  {
+   "et": "selg",
+   "baca": "selg",
+   "id": "punggung (kep. selja)"
+  },
+  {
+   "et": "süda",
+   "baca": "SÜ-da",
+   "id": "hati, jantung"
+  },
+  {
+   "et": "palavik",
+   "baca": "PA-la-vik",
+   "id": "demam"
+  },
+  {
+   "et": "köha",
+   "baca": "KÖ-ha",
+   "id": "batuk"
+  },
+  {
+   "et": "külmetus",
+   "baca": "KÜL-me-tus",
+   "id": "masuk angin"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Estonia.",
+   "items": [
+    "Kepala saya sakit.",
+    "Saya demam.",
+    "Saya tidak enak badan.",
+    "Perut saya sakit.",
+    "Saya butuh dokter.",
+    "Tolong panggil ambulans!"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat perintah untuk sa dan untuk te.",
+   "items": [
+    "minema",
+    "tulema",
+    "võtma",
+    "ootama",
+    "helistama",
+    "ostma"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bagian badan yang tepat.",
+   "items": [
+    "Mul valutab ____. (kepala)",
+    "Mul valutab ____. (perut)",
+    "Mul valutab ____. (gigi)",
+    "Mul valutab ____. (tenggorokan)",
+    "Mul valutab ____. (punggung)",
+    "Mul valutab ____. (telinga)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "valutab / pea / mul",
+    "palavik / on / mul",
+    "halvasti / tunnen / ma / end",
+    "arsti / ma / vajan",
+    "ruttu / paranege"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Mul valutab pea. — Mul on palavik. — Ma tunnen end halvasti. — Mul valutab kõht. — Ma vajan arsti. — Palun kutsuge kiirabi!",
+  "1": "mine! / minge! — tule! / tulge! — võta! / võtke! — oota! / oodake! — helista! / helistage! — osta! / ostke!",
+  "2": "pea — kõht — hammas — kurk — selg — kõrv",
+  "3": "Mul valutab pea. — Mul on palavik. — Ma tunnen end halvasti. — Ma vajan arsti. — Paranege ruttu."
+ }
+}

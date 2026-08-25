@@ -1,0 +1,560 @@
+{
+ "title": "Menceritakan yang sudah lewat",
+ "title_target": "Minevik",
+ "goal": "Bercerita tentang kemarin — dan menemukan bahwa bahasa Estonia, seperti bahasa Indonesia, **tidak punya bentuk masa depan sama sekali**.",
+ "bekal": [
+  "membentuk lampau dengan sisipan **-si-** dan mengenali sepuluh bentuk tak beraturan",
+  "menyangkal kalimat lampau dengan *ei* + bentuk **-nud**",
+  "berbicara tentang masa depan tanpa mempelajari satu bentuk baru pun"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Nädalavahetus Tartus",
+   "intro": "Senin pagi. Kerli bertanya bagaimana akhir pekan Budi.",
+   "lines": [
+    {
+     "speaker": "Kerli:",
+     "text": "Kuidas nädalavahetus oli?",
+     "id": "Bagaimana akhir pekannya?",
+     "literal": "bagaimana akhir-pekan adalah-lampau-ia?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Väga hea! Ma käisin Tartus.",
+     "id": "Bagus sekali! Saya ke Tartu.",
+     "literal": "sangat baik! saya pergi-lampau-saya Tartu-di."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Tõesti? Kellega sa läksid?",
+     "id": "Sungguh? Kamu pergi sama siapa?",
+     "literal": "sungguh? siapa-dengan kamu pergi-lampau-kamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Üksi. Ma sõitsin bussiga.",
+     "id": "Sendirian. Saya naik bis.",
+     "literal": "sendiri. saya berkendara-lampau-saya bis-dengan."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Ja mida sa seal tegid?",
+     "id": "Dan kamu ngapain di sana?",
+     "literal": "dan apa-bagian kamu di-sana lakukan-lampau-kamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ma jalutasin vanalinnas ja käisin muuseumis.",
+     "id": "Saya jalan-jalan di kota tua dan ke museum.",
+     "literal": "saya berjalan-lampau-saya kota-tua-di dan pergi-lampau-saya museum-di."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Kas sa nägid ülikooli?",
+     "id": "Kamu lihat universitasnya?",
+     "literal": "apakah kamu lihat-lampau-kamu universitas-bagian?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jah, see oli väga ilus. Ma tegin palju pilte.",
+     "id": "Ya, itu bagus sekali. Saya banyak foto.",
+     "literal": "ya, itu adalah-lampau-ia sangat cantik. saya buat-lampau-saya banyak gambar-jamak-bagian."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Kas sa sõid midagi head?",
+     "id": "Kamu makan sesuatu yang enak?",
+     "literal": "apakah kamu makan-lampau-kamu sesuatu baik-bagian?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ma sõin verivorsti.",
+     "id": "Saya makan verivorst.",
+     "literal": "saya makan-lampau-saya darah-sosis-bagian."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Ja?",
+     "id": "Terus?",
+     "literal": "dan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ma ei teadnud, mis see on. Nüüd ma tean.",
+     "id": "Saya tidak tahu itu apa. Sekarang saya tahu.",
+     "literal": "saya tidak tahu-lampau, apa itu adalah-ia. sekarang saya tahu-saya."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Oi ei. Vabandust!",
+     "id": "Aduh. Maaf!",
+     "literal": "aduh tidak. maaf!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Pole hullu. Aga järgmine kord ma küsin enne.",
+     "id": "Tidak apa-apa. Tapi lain kali saya tanya dulu.",
+     "literal": "tidak-ada parah-bagian. tapi berikutnya kali saya bertanya-saya sebelum."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Tark otsus. Millal sa jälle lähed?",
+     "id": "Keputusan bijak. Kapan kamu ke sana lagi?",
+     "literal": "pandai keputusan. kapan kamu lagi pergi-kamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Järgmisel kuul. Eesti keeles pole tulevikku, eks?",
+     "id": "Bulan depan. Dalam bahasa Estonia tidak ada bentuk masa depan, kan?",
+     "literal": "berikutnya bulan-di. Estonia bahasa-di tidak-ada masa-depan-bagian, kan?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Ei ole. Sama nagu indoneesia keeles.",
+     "id": "Tidak ada. Sama seperti bahasa Indonesia.",
+     "literal": "tidak adalah. sama seperti Indonesia bahasa-di."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Üks asi vähem õppida!",
+     "id": "Satu hal lagi yang tak perlu dipelajari!",
+     "literal": "satu hal lebih-sedikit untuk-belajar!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Bahasa Estonia tidak punya bentuk masa depan.** *Ma lähen* berarti \"saya pergi\" **dan** \"saya akan pergi\". Yang menentukan adalah keterangan waktunya: *ma lähen homme* (saya pergi besok), *ma lähen praegu* (saya pergi sekarang). Ini persis kebiasaan bahasa Indonesia, dan ia berarti satu bab besar yang tidak perlu kamu pelajari sama sekali.",
+    "**Käisin** dari *käima* — \"saya pernah pergi ke sana\". Bedakan dari *läksin* (*minema*): *käisin Tartus* berarti pergi dan sudah kembali; *läksin Tartusse* berarti berangkat ke sana. Bahasa Indonesia mengurus beda ini dengan konteks, bahasa Estonia dengan kata kerja berbeda.",
+    "**Kellega** = *kes* + **-ga**, \"dengan siapa\". Kata tanya pun bisa berekor: *millega* (dengan apa), *kellele* (kepada siapa), *kelle* (punya siapa), *millal* (kapan).",
+    "⚠️ **Verivorst** adalah sosis darah babi, hidangan Natal yang muncul di mana-mana antara November dan Januari. Kalau kamu punya pantangan makan, kenali namanya — ia jarang diterjemahkan di menu berbahasa Inggris."
+   ],
+   "grammars": [
+    {
+     "title": "Bentuk lampau — sisipan -si-",
+     "body": [
+      "Ambil batang kata kerjanya, sisipkan **-si-**, lalu tempel ekor orang yang sudah kamu kenal dari unit 10."
+     ],
+     "table": {
+      "head": [
+       "Orang",
+       "*elama* (tinggal)",
+       "*õppima* (belajar)",
+       "*olema* (adalah)",
+       "*minema* (pergi)"
+      ],
+      "rows": [
+       [
+        "*ma*",
+        "*ela**si**n*",
+        "*õppi**si**n*",
+        "⚠️ *olin*",
+        "⚠️ *läksin*"
+       ],
+       [
+        "*sa*",
+        "*ela**si**d*",
+        "*õppi**si**d*",
+        "*olid*",
+        "*läksid*"
+       ],
+       [
+        "*ta*",
+        "*ela**s***",
+        "*õppi**s***",
+        "*oli*",
+        "*läks*"
+       ],
+       [
+        "*me*",
+        "*ela**si**me*",
+        "*õppi**si**me*",
+        "*olime*",
+        "*läksime*"
+       ],
+       [
+        "*te*",
+        "*ela**si**te*",
+        "*õppi**si**te*",
+        "*olite*",
+        "*läksite*"
+       ],
+       [
+        "*nad*",
+        "*ela**si**d*",
+        "*õppi**si**d*",
+        "*olid*",
+        "*läksid*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Baris ketiga kehilangan *-i*: *elas*, bukan \"elasi\". Ini satu-satunya kejanggalan di dalam pola yang teratur.",
+      "Baris pertama dan keenam **sama persis** (*elasid* untuk \"kamu\" dan untuk \"mereka\"). Konteks selalu memisahkannya; jangan cemas.",
+      "⚠️ Perhatikan *õppisin* memakai **pp**, sementara bentuk sekarangnya *õpin* memakai **p**. Peluruhan huruf mati bekerja berbeda di kedua waktu. Sekali lagi jalan keluarnya bukan aturan, melainkan menghafal bentuk lampaunya bersama bentuk sekarangnya."
+     ]
+    },
+    {
+     "title": "Menyangkal masa lampau — ei + bentuk -nud",
+     "body": [
+      "Sama seperti di unit 11, *ei* tidak berubah untuk siapa pun. Yang berubah cuma bentuk kata kerjanya, dan bentuk itu **satu** untuk keenam orang."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Lampau positif",
+       "Lampau bersangkal",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*olema*",
+        "*ma olin*",
+        "*ma ei olnud* (*polnud*)",
+        "saya tidak ada"
+       ],
+       [
+        "*minema*",
+        "*ma läksin*",
+        "*ma ei läinud*",
+        "saya tidak pergi"
+       ],
+       [
+        "*tulema*",
+        "*ma tulin*",
+        "*ma ei tulnud*",
+        "saya tidak datang"
+       ],
+       [
+        "*tegema*",
+        "*ma tegin*",
+        "*ma ei teinud*",
+        "saya tidak melakukan"
+       ],
+       [
+        "*sööma*",
+        "*ma sõin*",
+        "*ma ei söönud*",
+        "saya tidak makan"
+       ],
+       [
+        "*teadma*",
+        "*ma teadsin*",
+        "*ma ei teadnud*",
+        "saya tidak tahu"
+       ],
+       [
+        "*nägema*",
+        "*ma nägin*",
+        "*ma ei näinud*",
+        "saya tidak melihat"
+       ],
+       [
+        "*rääkima*",
+        "*ma rääkisin*",
+        "*ma ei rääkinud*",
+        "saya tidak bicara"
+       ]
+      ]
+     },
+     "after": [
+      "Bentuk **-nud** ini juga dipakai untuk mengatakan \"sudah pernah\": *ma olen käinud Tartus* (saya pernah ke Tartu), *kas sa oled söönud?* (kamu sudah makan?). Jadi ia layak dihafal untuk dua keperluan sekaligus.",
+      "⚠️ *Polnud* adalah singkatan dari *ei olnud*, sepasang dengan *pole* untuk *ei ole*.",
+      "Kalimat *kas sa oled söönud?* sangat sering dipakai orang Estonia sebagai basa-basi, sama seperti \"sudah makan?\" dalam bahasa Indonesia. Salah satu dari sedikit kesamaan sosial antara dua budaya yang sangat berbeda."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bentuk lampau yang tak beraturan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Dua belas kata kerja ini muncul terus-menerus, dan bentuk lampaunya tidak bisa ditebak. Hafalkan kolom kedua; ia yang paling sering kamu butuhkan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Sekarang",
+      "Lampau",
+      "Bersangkal",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*ma olen*",
+       "*ma olin*",
+       "*ei olnud*",
+       "adalah"
+      ],
+      [
+       "*ma lähen*",
+       "*ma läksin*",
+       "*ei läinud*",
+       "pergi"
+      ],
+      [
+       "*ma tulen*",
+       "*ma tulin*",
+       "*ei tulnud*",
+       "datang"
+      ],
+      [
+       "*ma teen*",
+       "*ma tegin*",
+       "*ei teinud*",
+       "melakukan"
+      ],
+      [
+       "*ma näen*",
+       "*ma nägin*",
+       "*ei näinud*",
+       "melihat"
+      ],
+      [
+       "*ma söön*",
+       "*ma sõin*",
+       "*ei söönud*",
+       "makan"
+      ],
+      [
+       "*ma joon*",
+       "*ma jõin*",
+       "*ei joonud*",
+       "minum"
+      ],
+      [
+       "*ma saan*",
+       "*ma sain*",
+       "*ei saanud*",
+       "dapat"
+      ],
+      [
+       "*ma tean*",
+       "*ma teadsin*",
+       "*ei teadnud*",
+       "tahu"
+      ],
+      [
+       "*ma tahan*",
+       "*ma tahtsin*",
+       "*ei tahtnud*",
+       "mau"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Bagaimana bahasa Estonia berbicara tentang masa depan",
+     "items": [
+      "**Tanpa bentuk khusus.** Bentuk sekarang mengurus keduanya, persis seperti bahasa Indonesia.",
+      "*Ma lähen homme Tartusse.* — Besok saya pergi ke Tartu. Kata *homme* yang menandai waktunya.",
+      "Kalau ingin lebih tegas, tambahkan *hakkan* (mulai akan): *ma hakkan õppima* — saya akan mulai belajar.",
+      "Untuk niat, pakai *kavatsen* (berniat): *ma kavatsen minna* — saya berniat pergi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menceritakan yang sudah lewat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Eesti keel",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Kuidas nädalavahetus oli?*",
+       "Bagaimana akhir pekannya?"
+      ],
+      [
+       "*See oli väga tore.*",
+       "Menyenangkan sekali."
+      ],
+      [
+       "*Ma käisin Tartus.*",
+       "Saya ke Tartu."
+      ],
+      [
+       "*Ma sõitsin bussiga.*",
+       "Saya naik bis."
+      ],
+      [
+       "*Mida sa eile tegid?*",
+       "Kemarin kamu ngapain?"
+      ],
+      [
+       "*Ma töötasin terve päeva.*",
+       "Saya kerja seharian."
+      ],
+      [
+       "*Ma ei teinud midagi.*",
+       "Saya tidak melakukan apa-apa."
+      ],
+      [
+       "*Kas sa oled söönud?*",
+       "Kamu sudah makan?"
+      ],
+      [
+       "*Ma ei ole veel söönud.*",
+       "Saya belum makan."
+      ],
+      [
+       "*Ma olen siin kolm kuud olnud.*",
+       "Saya sudah tiga bulan di sini."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan *ma ei ole veel söönud* — \"saya belum makan\". Bahasa Estonia tidak punya satu kata untuk \"belum\"; ia memakai *ei ... veel* (tidak ... lagi/masih). Pola yang sama: *ma ei tea veel* (saya belum tahu), *ta ei ole veel tulnud* (dia belum datang)."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "et": "minevik",
+   "baca": "MI-ne-vik",
+   "id": "masa lampau"
+  },
+  {
+   "et": "tulevik",
+   "baca": "TU-le-vik",
+   "id": "masa depan"
+  },
+  {
+   "et": "eile",
+   "baca": "EI-le",
+   "id": "kemarin"
+  },
+  {
+   "et": "jalutama",
+   "baca": "YA-lu-ta-ma",
+   "id": "berjalan-jalan"
+  },
+  {
+   "et": "sõitma",
+   "baca": "SËIT-ma",
+   "id": "berkendara (sõidan – sõitsin)"
+  },
+  {
+   "et": "panema",
+   "baca": "PA-ne-ma",
+   "id": "meletakkan (panen – panin)"
+  },
+  {
+   "et": "jääma",
+   "baca": "YÈÈ-ma",
+   "id": "tinggal, tetap (jään – jäin)"
+  },
+  {
+   "et": "kavatsema",
+   "baca": "KA-vat-se-ma",
+   "id": "berniat"
+  },
+  {
+   "et": "pilt",
+   "baca": "pilt",
+   "id": "gambar, foto (kep. pildi)"
+  },
+  {
+   "et": "otsus",
+   "baca": "OT-sus",
+   "id": "keputusan"
+  },
+  {
+   "et": "tark",
+   "baca": "tark",
+   "id": "pandai, bijak"
+  },
+  {
+   "et": "asi",
+   "baca": "A-si",
+   "id": "hal, benda (kep. asja)"
+  },
+  {
+   "et": "kord",
+   "baca": "kord",
+   "id": "kali"
+  },
+  {
+   "et": "üksi",
+   "baca": "ÜK-si",
+   "id": "sendirian"
+  },
+  {
+   "et": "jälle",
+   "baca": "YÈL-le",
+   "id": "lagi"
+  },
+  {
+   "et": "enne",
+   "baca": "EN-ne",
+   "id": "sebelum, dulu"
+  },
+  {
+   "et": "pärast",
+   "baca": "PÈ-rast",
+   "id": "sesudah"
+  },
+  {
+   "et": "verivorst",
+   "baca": "VE-ri-vorst",
+   "id": "⚠️ sosis darah babi"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk lampau.",
+   "items": [
+    "Ma elan Tallinnas.",
+    "Sa õpid eesti keelt.",
+    "Ta läheb kooli.",
+    "Me sööme kohvikus.",
+    "Te teete tööd.",
+    "Nad tulevad koju."
+   ]
+  },
+  {
+   "prompt": "Ubah ke bentuk lampau bersangkal.",
+   "items": [
+    "Ma olin kodus.",
+    "Sa läksid Tartusse.",
+    "Ta tegi seda.",
+    "Me sõime.",
+    "Te teadsite.",
+    "Nad tulid."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Estonia.",
+   "items": [
+    "Kemarin kamu ngapain?",
+    "Saya tidak melakukan apa-apa.",
+    "Saya ke Tartu.",
+    "Kamu sudah makan?",
+    "Saya belum makan.",
+    "Besok saya pergi ke Tartu."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "käisin / ma / Tartus",
+    "tegid / mida / eile / sa / ?",
+    "midagi / ei / ma / teinud",
+    "söönud / oled / sa / kas / ?",
+    "lähen / homme / ma / Tartusse"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Ma elasin Tallinnas. — Sa õppisid eesti keelt. — Ta läks kooli. — Me sõime kohvikus. — Te tegite tööd. — Nad tulid koju.",
+  "1": "Ma ei olnud kodus. — Sa ei läinud Tartusse. — Ta ei teinud seda. — Me ei söönud. — Te ei teadnud. — Nad ei tulnud.",
+  "2": "Mida sa eile tegid? — Ma ei teinud midagi. — Ma käisin Tartus. — Kas sa oled söönud? — Ma ei ole veel söönud. — Homme ma lähen Tartusse.",
+  "3": "Ma käisin Tartus. — Mida sa eile tegid? — Ma ei teinud midagi. — Kas sa oled söönud? — Homme ma lähen Tartusse."
+ }
+}

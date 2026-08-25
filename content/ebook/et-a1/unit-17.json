@@ -1,0 +1,545 @@
+{
+ "title": "Di toko",
+ "title_target": "Poes",
+ "goal": "Membeli pakaian, mencoba ukuran, dan menyiapkan diri untuk hal yang paling menantang bagi pembaca dari daerah khatulistiwa: musim dingin Estonia.",
+ "bekal": [
+  "menyebut pakaian dan ukuran, dan meminta mencobanya",
+  "memakai *ilma ...-ta* untuk mengatakan \"tanpa\"",
+  "mengetahui apa yang benar-benar perlu dibeli sebelum November"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Talvejopet ostmas",
+   "intro": "Awal Oktober. Kerli mengantar Budi membeli jaket musim dingin pertamanya.",
+   "lines": [
+    {
+     "speaker": "Müüja:",
+     "text": "Tere! Kas ma saan aidata?",
+     "id": "Halo! Bisa saya bantu?",
+     "literal": "halo! apakah saya dapat-saya untuk-membantu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jah, palun. Ma otsin talvejopet.",
+     "id": "Ya, tolong. Saya cari jaket musim dingin.",
+     "literal": "ya, tolong. saya cari-saya musim-dingin-jaket-bagian."
+    },
+    {
+     "speaker": "Müüja:",
+     "text": "Mis suurus teil on?",
+     "id": "Ukuran Anda berapa?",
+     "literal": "apa ukuran Anda-pada adalah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ma ei tea täpselt. Indoneesias ma kandsin M-i.",
+     "id": "Saya tidak tahu persis. Di Indonesia saya pakai M.",
+     "literal": "saya tidak tahu tepatnya. Indonesia-di saya pakai-lampau-saya M-bagian."
+    },
+    {
+     "speaker": "Müüja:",
+     "text": "Siin võtke pigem L. Jope peab olema avar.",
+     "id": "Di sini ambil L saja. Jaketnya harus longgar.",
+     "literal": "di-sini ambillah lebih-baik L. jaket harus-ia untuk-menjadi longgar."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Miks avar?",
+     "id": "Kenapa longgar?",
+     "literal": "kenapa longgar?"
+    },
+    {
+     "speaker": "Müüja:",
+     "text": "Sest alla käivad kihid. Talvel kantakse kolme kihti.",
+     "id": "Karena di dalamnya ada lapisan. Musim dingin orang pakai tiga lapis.",
+     "literal": "karena bawah-ke pergi-mereka lapisan-jamak. musim-dingin-di dipakai-nya tiga lapis-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kolme kihti?",
+     "id": "Tiga lapis?",
+     "literal": "tiga lapis-bagian?"
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Jah: soe pesu, kampsun, jope. Nii teevad kõik.",
+     "id": "Ya: baju hangat, sweater, jaket. Semua begitu.",
+     "literal": "ya: hangat pakaian-dalam, sweter, jaket. begitu melakukan-mereka semua."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ma ei teadnud seda. Kas ma võin proovida?",
+     "id": "Saya tidak tahu itu. Boleh saya coba?",
+     "literal": "saya tidak tahu-lampau itu-bagian. apakah saya boleh-saya untuk-mencoba?"
+    },
+    {
+     "speaker": "Müüja:",
+     "text": "Muidugi. Proovikabiin on seal.",
+     "id": "Tentu. Kamar pasnya di sana.",
+     "literal": "tentu-saja. coba-kabin adalah-ia di-sana."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "See sobib hästi. Kui palju see maksab?",
+     "id": "Ini pas. Berapa harganya?",
+     "literal": "ini cocok-ia baiknya. seberapa banyak ini berharga-ia?"
+    },
+    {
+     "speaker": "Müüja:",
+     "text": "Sada kakskümmend eurot. Praegu on allahindlus.",
+     "id": "Seratus dua puluh euro. Sekarang lagi diskon.",
+     "literal": "seratus dua-puluh euro-bagian. sekarang adalah bawah-turun."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ma võtan selle. Ja mul on vaja mütsi ja kindaid.",
+     "id": "Saya ambil ini. Dan saya perlu topi dan sarung tangan.",
+     "literal": "saya ambil-saya ini-punya. dan saya-pada adalah perlu topi-bagian dan sarung-tangan-jamak-bagian."
+    },
+    {
+     "speaker": "Kerli:",
+     "text": "Tark mees. Ilma mütsita on talv väga pikk.",
+     "id": "Orang pintar. Tanpa topi, musim dingin terasa sangat panjang.",
+     "literal": "pandai laki-laki. tanpa topi-tanpa adalah musim-dingin sangat panjang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ma usun sind. Sa oled siin kogu elu elanud.",
+     "id": "Saya percaya kamu. Kamu seumur hidup di sini.",
+     "literal": "saya percaya-saya kamu-bagian. kamu adalah-kamu di-sini seluruh hidup-bagian tinggal-nya."
+    }
+   ],
+   "notes": [
+    "⚠️ **Ukuran pakaian Eropa berjalan berbeda.** Saran penjual di dialog ini bukan basa-basi: jaket musim dingin memang dibeli satu ukuran lebih besar, karena ia harus muat menutupi dua lapis pakaian di bawahnya. Kalau kamu membeli seukuran badan, jaketmu akan terasa sempit begitu suhunya benar-benar turun.",
+    "**Ilma mütsita** — perhatikan **dua penanda sekaligus**: kata *ilma* di depan dan ekor *-ta* di belakang. Bahasa Estonia menandai \"tanpa\" di kedua ujung. Ekor *-ta* saja sudah cukup (*mütsita*), tapi bentuk lengkap dengan *ilma* lebih umum di percakapan.",
+    "**Kantakse** — \"dipakai orang\". Ini bentuk tanpa pelaku, sepadan dengan kalimat pasif tanpa penyebut dalam bahasa Indonesia (\"dipakai\", \"dikatakan\"). Kamu akan sering melihatnya di papan pengumuman: *siin ei suitsetata* (di sini dilarang merokok).",
+    "**Mul on vaja mütsi** — susunan \"butuh\" dari unit 6, dan perhatikan bendanya berbentuk **bagian**. *Mul on vaja abi* (saya butuh bantuan), *mul on vaja aega* (saya butuh waktu)."
+   ],
+   "grammars": [
+    {
+     "title": "Ilma ...-ta — mengatakan tanpa",
+     "body": [
+      "Satu gagasan, dua penanda. Ekornya menempel di **bentuk kepunyaan**, seperti biasa."
+     ],
+     "table": {
+      "head": [
+       "Dasar",
+       "Kepunyaan",
+       "Tanpa",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*müts*",
+        "*mütsi*",
+        "*(ilma) mütsi**ta***",
+        "tanpa topi"
+       ],
+       [
+        "*suhkur*",
+        "*suhkru*",
+        "*(ilma) suhkru**ta***",
+        "tanpa gula"
+       ],
+       [
+        "*piim*",
+        "*piima*",
+        "*(ilma) piima**ta***",
+        "tanpa susu"
+       ],
+       [
+        "*liha*",
+        "*liha*",
+        "*(ilma) liha**ta***",
+        "tanpa daging"
+       ],
+       [
+        "*sina*",
+        "*sinu*",
+        "*(ilma) sinu**ta***",
+        "tanpa kamu"
+       ],
+       [
+        "*raha*",
+        "*raha*",
+        "*(ilma) raha**ta***",
+        "tanpa uang"
+       ]
+      ]
+     },
+     "after": [
+      "Dua baris tengah akan sering kamu pakai di kafe: *kohv ilma suhkruta* (kopi tanpa gula), *midagi ilma lihata* (sesuatu tanpa daging). Kamu sudah bertemu bentuk kedua di unit 5.",
+      "Lawan *-ta* adalah *-ga* (dengan) dari unit 15. Keduanya membentuk pasangan yang rapi: *piimaga* (dengan susu) lawan *piimata* (tanpa susu).",
+      "⚠️ Jangan bingung dengan akhiran *-vaba* dari unit 5 (*alkoholivaba*, *gluteenivaba*). *-vaba* membentuk **kata sifat** yang dipakai di label produk; *-ta* dipakai di kalimat biasa."
+     ]
+    },
+    {
+     "title": "Di toko — kalimat yang menyelesaikan urusan",
+     "body": [
+      "Delapan kalimat ini menutup hampir seluruh transaksi belanja."
+     ],
+     "table": {
+      "head": [
+       "Eesti keel",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "*Kas ma saan aidata?*",
+        "Bisa saya bantu? (kata penjual)"
+       ],
+       [
+        "*Ma lihtsalt vaatan, aitäh.*",
+        "Saya lihat-lihat saja, terima kasih."
+       ],
+       [
+        "*Kas teil on seda suuremas suuruses?*",
+        "Ada yang ukuran lebih besar?"
+       ],
+       [
+        "*Kas ma võin proovida?*",
+        "Boleh saya coba?"
+       ],
+       [
+        "*See on liiga suur / väike / kallis.*",
+        "Ini terlalu besar / kecil / mahal."
+       ],
+       [
+        "*See sobib hästi.*",
+        "Ini pas."
+       ],
+       [
+        "*Kas saab teise värviga?*",
+        "Ada warna lain?"
+       ],
+       [
+        "*Kas ma saan seda vahetada?*",
+        "Bisa ditukar?"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *Ma lihtsalt vaatan* layak dihafal hari ini. Penjual Estonia jarang mengikuti pembeli, tapi mereka akan menyapa sekali — dan kalimat ini adalah jawaban yang sepenuhnya sopan.",
+      "Kalau kamu ingin menukar barang, simpan struknya (*tšekk*). Batas waktunya biasanya empat belas hari, dan hampir selalu tertulis di struk itu sendiri."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pakaian",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Eesti keel",
+      "Cara baca",
+      "Bahasa Indonesia",
+      "Eesti keel",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*riided*",
+       "*RII-ded*",
+       "pakaian",
+       "*särk*",
+       "*sèrk*",
+       "kemeja"
+      ],
+      [
+       "*T-särk*",
+       "*TEE-sèrk*",
+       "kaus",
+       "*pluus*",
+       "*pluus*",
+       "blus"
+      ],
+      [
+       "*püksid*",
+       "*PÜK-sid*",
+       "celana",
+       "*teksad*",
+       "*TEK-sad*",
+       "jins"
+      ],
+      [
+       "*seelik*",
+       "*SEE-lik*",
+       "rok",
+       "*kleit*",
+       "*kleit*",
+       "gaun"
+      ],
+      [
+       "*kampsun*",
+       "*KAMP-sun*",
+       "sweter",
+       "*jope*",
+       "*YO-pe*",
+       "jaket"
+      ],
+      [
+       "*mantel*",
+       "*MAN-tel*",
+       "mantel",
+       "*ülikond*",
+       "*Ü-li-kond*",
+       "setelan jas"
+      ],
+      [
+       "*müts*",
+       "*müts*",
+       "topi hangat",
+       "*sall*",
+       "*sall*",
+       "syal"
+      ],
+      [
+       "*kindad*",
+       "*KIN-dad*",
+       "sarung tangan",
+       "*sokid*",
+       "*SO-kid*",
+       "kaus kaki"
+      ],
+      [
+       "*kingad*",
+       "*KIN-gad*",
+       "sepatu",
+       "*saapad*",
+       "*SAA-pad*",
+       "sepatu bot"
+      ],
+      [
+       "*sisepesu*",
+       "*SI-se-pe-su*",
+       "pakaian dalam",
+       "*rätik*",
+       "*RÈ-tik*",
+       "handuk"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa banyak di antaranya **selalu jamak**: *püksid*, *teksad*, *kindad*, *sokid*, *kingad*, *saapad*, *riided*. Sama seperti bahasa Inggris (*trousers*, *shoes*), dan tidak seperti bahasa Indonesia yang memakai bentuk tunggal untuk semuanya."
+    },
+    {
+     "type": "kotak",
+     "title": "Ukuran dan mencoba",
+     "items": [
+      "*suurus* — ukuran. *Mis suurus teil on?* — Ukuran Anda berapa?",
+      "*number* — nomor, dipakai untuk sepatu. *Mul on number nelikümmend kaks.*",
+      "*proovima* — mencoba. *proovikabiin* — kamar pas.",
+      "*allahindlus*, *soodus* — diskon. *soodushind* — harga diskon. ⚠️ *-50%* dibaca *miinus viiskümmend protsenti*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "⚠️ Bertahan di musim dingin Estonia",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bagian ini bukan pelengkap budaya. Untuk pembaca yang seumur hidup tinggal di suhu dua puluh lima sampai tiga puluh derajat, musim dingin Estonia adalah pengalaman badan yang benar-benar baru, dan ia dimulai lebih awal daripada dugaan kebanyakan orang — sekitar akhir Oktober."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Barang",
+      "Eesti keel",
+      "Kenapa perlu"
+     ],
+     "rows": [
+      [
+       "**Jaket musim dingin**",
+       "*talvejope*",
+       "Beli satu ukuran lebih besar. Cari yang tahan angin, bukan cuma tebal."
+      ],
+      [
+       "**Topi hangat**",
+       "*müts*",
+       "⚠️ Yang paling sering dilupakan pendatang, dan yang paling cepat terasa."
+      ],
+      [
+       "**Syal**",
+       "*sall*",
+       "Melindungi leher dan wajah dari angin laut Tallinn."
+      ],
+      [
+       "**Sarung tangan**",
+       "*kindad*",
+       "Jari adalah bagian pertama yang berhenti berfungsi."
+      ],
+      [
+       "**Sepatu bot**",
+       "*talvesaapad*",
+       "⚠️ Bersol kasar. Jalanan es tidak memaafkan sol licin."
+      ],
+      [
+       "**Pakaian dalam hangat**",
+       "*soe pesu*",
+       "Lapisan pertama dari tiga. Ini yang membuat sisanya bekerja."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Yang tidak diceritakan brosur",
+     "items": [
+      "**Tiga lapis, bukan satu jaket tebal.** Lapisan dalam menahan panas badan, lapisan tengah menyimpannya, lapisan luar menahan angin. Satu jaket tebal tanpa lapisan dalam terasa lebih dingin daripada tiga lapis tipis.",
+      "**Di dalam ruangan selalu hangat.** Rumah, bis, kantor, dan toko Estonia dipanaskan dengan baik — sering sampai dua puluh dua derajat. Karena itu kamu perlu pakaian yang **mudah dilepas**, bukan yang paling tebal.",
+      "⚠️ **Es lebih berbahaya daripada dingin.** *Libedus* (jalanan licin) adalah penyebab cedera paling umum bagi pendatang. Berjalanlah dengan langkah pendek dan telapak rata; jangan memasukkan tangan ke saku.",
+      "**Kegelapan lebih berat daripada suhunya.** Banyak pendatang terkejut bahwa yang paling menguras bukan minus lima belas derajat, melainkan pulang kerja dalam gelap selama tiga bulan. Orang Estonia mengatasinya dengan lampu terang di rumah, vitamin D, dan sauna."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "et": "riided",
+   "baca": "RII-ded",
+   "id": "pakaian"
+  },
+  {
+   "et": "särk",
+   "baca": "sèrk",
+   "id": "kemeja"
+  },
+  {
+   "et": "püksid",
+   "baca": "PÜK-sid",
+   "id": "celana"
+  },
+  {
+   "et": "kampsun",
+   "baca": "KAMP-sun",
+   "id": "sweter"
+  },
+  {
+   "et": "jope",
+   "baca": "YO-pe",
+   "id": "jaket"
+  },
+  {
+   "et": "mantel",
+   "baca": "MAN-tel",
+   "id": "mantel"
+  },
+  {
+   "et": "müts",
+   "baca": "müts",
+   "id": "topi hangat"
+  },
+  {
+   "et": "sall",
+   "baca": "sall",
+   "id": "syal"
+  },
+  {
+   "et": "kindad",
+   "baca": "KIN-dad",
+   "id": "sarung tangan"
+  },
+  {
+   "et": "sokid",
+   "baca": "SO-kid",
+   "id": "kaus kaki"
+  },
+  {
+   "et": "kingad",
+   "baca": "KIN-gad",
+   "id": "sepatu"
+  },
+  {
+   "et": "saapad",
+   "baca": "SAA-pad",
+   "id": "sepatu bot"
+  },
+  {
+   "et": "suurus",
+   "baca": "SUU-rus",
+   "id": "ukuran"
+  },
+  {
+   "et": "kiht",
+   "baca": "kiht",
+   "id": "lapisan (kep. kihi)"
+  },
+  {
+   "et": "proovima",
+   "baca": "PROO-vi-ma",
+   "id": "mencoba"
+  },
+  {
+   "et": "kandma",
+   "baca": "KAND-ma",
+   "id": "memakai; membawa"
+  },
+  {
+   "et": "sobima",
+   "baca": "SO-bi-ma",
+   "id": "cocok, pas"
+  },
+  {
+   "et": "vahetama",
+   "baca": "VA-he-ta-ma",
+   "id": "menukar"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Estonia.",
+   "items": [
+    "Saya cari jaket musim dingin.",
+    "Boleh saya coba?",
+    "Ini terlalu besar.",
+    "Ini pas.",
+    "Ada warna lain?",
+    "Saya lihat-lihat saja, terima kasih."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk \"tanpa\" (-ta).",
+   "items": [
+    "müts",
+    "suhkur",
+    "piim",
+    "liha",
+    "raha",
+    "sina"
+   ]
+  },
+  {
+   "prompt": "Isi dengan nama pakaian yang tepat.",
+   "items": [
+    "Talvel ma kannan ____. (topi hangat)",
+    "Mul on külmad käed — ma vajan ____. (sarung tangan)",
+    "Jää on libe, ma ostan ____. (sepatu bot)",
+    "Kaelas on ____. (syal)",
+    "Jope alla käib ____. (sweter)",
+    "Jalas on ____. (kaus kaki)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "talvejopet / ma / otsin",
+    "proovida / kas / võin / ma / ?",
+    "suur / see / liiga / on",
+    "hästi / sobib / see",
+    "mütsita / talv / ilma / pikk / on"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Ma otsin talvejopet. — Kas ma võin proovida? — See on liiga suur. — See sobib hästi. — Kas saab teise värviga? — Ma lihtsalt vaatan, aitäh.",
+  "1": "mütsita — suhkruta — piimata — lihata — rahata — sinuta",
+  "2": "mütsi — kindaid — saapad — sall — kampsun — sokid",
+  "3": "Ma otsin talvejopet. — Kas ma võin proovida? — See on liiga suur. — See sobib hästi. — Ilma mütsita on talv pikk."
+ }
+}
