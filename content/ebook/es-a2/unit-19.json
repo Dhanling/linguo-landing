@@ -1,0 +1,230 @@
+{
+  "title": "Katanya begini",
+  "title_target": "Dijo que…",
+  "goal": "Melaporkan perkataan, pertanyaan, dan permintaan orang lain.",
+  "bekal": [
+    "melaporkan kalimat berita (*dijo que*)",
+    "menggeser bentuk waktunya dengan benar",
+    "melaporkan pertanyaan (*preguntó si*, *preguntó qué*)",
+    "melaporkan permintaan (*me pidió que*)"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — El recado",
+      "intro": "Álvaro tidak sempat mengangkat telepon, jadi Rocío menyampaikan pesannya. Perhatikan bagaimana tiap kalimat asli bergeser bentuknya.",
+      "lines": [
+        {
+          "speaker": "Álvaro:",
+          "text": "¿Quién ha llamado antes?",
+          "id": "Tadi siapa yang nelepon?",
+          "literal": "siapa telah menelepon sebelumnya?"
+        },
+        {
+          "speaker": "Rocío:",
+          "text": "Tu jefa. Dijo que necesitaba el informe antes del viernes.",
+          "id": "Bos kamu. Katanya dia butuh laporannya sebelum Jumat.",
+          "literal": "kamu-punya bos. dia-berkata bahwa dia-membutuhkan itu laporan sebelum dari-itu Jumat."
+        },
+        {
+          "speaker": "Álvaro:",
+          "text": "Pero si se lo mandé el lunes.",
+          "id": "Lah, kan sudah saya kirim hari Senin.",
+          "literal": "tetapi jika kepadanya itu saya-kirim itu Senin."
+        },
+        {
+          "speaker": "Rocío:",
+          "text": "Eso le dije. Me contestó que no le había llegado nada.",
+          "id": "Itu yang saya bilang. Dia jawab nggak ada yang masuk ke dia.",
+          "literal": "itu kepadanya saya-katakan. kepadaku dia-menjawab bahwa tidak kepadanya telah tiba tak-ada."
+        },
+        {
+          "speaker": "Álvaro:",
+          "text": "Qué raro. ¿Y dijo algo más?",
+          "id": "Aneh. Ada pesan lain?",
+          "literal": "apa aneh. dan dia-berkata sesuatu lebih?"
+        },
+        {
+          "speaker": "Rocío:",
+          "text": "Sí, preguntó si podías ir mañana a la reunión de las diez.",
+          "id": "Ada, dia tanya apa kamu bisa datang rapat besok jam sepuluh.",
+          "literal": "ya, dia-bertanya jika kamu-bisa pergi besok ke itu rapat dari itu sepuluh."
+        },
+        {
+          "speaker": "Álvaro:",
+          "text": "¿Y qué le dijiste?",
+          "id": "Kamu jawab apa?",
+          "literal": "dan apa kepadanya kamu-katakan?"
+        },
+        {
+          "speaker": "Rocío:",
+          "text": "Que no lo sabía, que se lo confirmarías tú por la tarde.",
+          "id": "Saya bilang nggak tahu, nanti kamu sendiri yang konfirmasi sore.",
+          "literal": "bahwa tidak itu saya-tahu, bahwa kepadanya itu kamu-akan-mengonfirmasi kamu lewat itu sore."
+        },
+        {
+          "speaker": "Álvaro:",
+          "text": "Perfecto. ¿Y pidió algo más?",
+          "id": "Sip. Dia minta apa lagi?",
+          "literal": "sempurna. dan dia-meminta sesuatu lebih?"
+        },
+        {
+          "speaker": "Rocío:",
+          "text": "Me pidió que le mandaras también los números de marzo.",
+          "id": "Dia minta kamu kirim juga angka-angka bulan Maret.",
+          "literal": "kepadaku dia-meminta bahwa kepadanya kamu-mengirim juga itu angka-angka dari Maret."
+        },
+        {
+          "speaker": "Álvaro:",
+          "text": "Vale. ¿Te dijo cuándo volvía de viaje?",
+          "id": "Oke. Dia bilang kapan pulang dari perjalanan?",
+          "literal": "baik. kepadamu dia-katakan kapan dia-kembali dari perjalanan?"
+        },
+        {
+          "speaker": "Rocío:",
+          "text": "Dijo que llegaba el jueves por la noche. Y que la llamaras si había algún problema.",
+          "id": "Katanya sampai Kamis malam. Dan minta kamu telepon dia kalau ada masalah.",
+          "literal": "dia-berkata bahwa dia-tiba itu Kamis lewat itu malam. dan bahwa kepadanya kamu-menelepon jika ada suatu masalah."
+        }
+      ],
+      "notes": [
+        "**Melaporkan berita memakai *decir que* + kalimat yang bentuknya digeser satu langkah ke belakang.** *Necesito el informe* → *dijo que necesitaba el informe*. Pergeseran itu bukan pilihan gaya; tanpa itu kalimatnya terdengar seperti kamu mengutip mentah.",
+        "**Kalau kata kerja pelapor masih di masa sekarang, tak ada yang bergeser.** *Dice que necesita el informe*. Yang memicu pergeseran adalah *dijo*, *me contestó*, *preguntó* — semuanya lampau.",
+        "**Kata ganti dan penunjuk waktu ikut bergeser.** *Voy mañana* diucapkan hari Senin, dilaporkan hari Rabu, menjadi *dijo que iba al día siguiente*. Begitu pula *aquí → allí*, *este → ese*, *hoy → aquel día*.",
+        "**Pertanyaan ya-tidak dilaporkan dengan *si*.** *¿Puedes venir?* → *preguntó si podías venir*. Tanda tanyanya hilang, dan susunan kalimatnya kembali normal.",
+        "**Pertanyaan berkata tanya mempertahankan kata tanyanya, aksen dan semuanya.** *¿Cuándo vuelves?* → *preguntó cuándo volvía*. Aksen di *cuándo* tetap ada karena ia masih kata tanya, walau kalimatnya sudah tidak bertanda tanya.",
+        "**Permintaan memakai *pedir que* + subjuntivo lampau.** *Mándame los números* → *me pidió que le mandaras los números*. Bentuk *mandaras* adalah subjuntivo imperfecto — di A2 kamu cukup **mengenalinya**, belum perlu menghasilkannya sendiri dengan lancar.",
+        "**Que la llamaras si había algún problema.** Perhatikan bahwa *que* diulang untuk tiap potongan laporan. Bahasa Spanyol memang mengulangnya: *dijo que llegaba el jueves y que la llamaras*.",
+        "**Pero si se lo mandé** — *pero si* di awal kalimat menyatakan protes atau keheranan, bukan syarat: \"lah, kan sudah…\". Potongan sehari-hari yang tak bisa diterjemahkan harfiah."
+      ],
+      "grammars": [
+        {
+          "title": "Pergeseran bentuk waktu",
+          "body": [
+            "Kalau pelapornya di masa lampau (*dijo*, *preguntó*, *contó*), tiap bentuk mundur satu langkah:"
+          ],
+          "table": {
+            "head": ["Kalimat asli", "Dilaporkan", "Contoh"],
+            "rows": [
+              ["presente (necesito)", "imperfecto (necesitaba)", "Dijo que necesitaba el informe."],
+              ["perfecto (he terminado)", "pluscuamperfecto (había terminado)", "Dijo que había terminado."],
+              ["indefinido (llegué)", "pluscuamperfecto (había llegado)", "Dijo que había llegado tarde."],
+              ["futuro (llamaré)", "condicional (llamaría)", "Dijo que llamaría luego."],
+              ["imperativo (llámame)", "subjuntivo lampau (llamara)", "Me pidió que la llamara."],
+              ["imperfecto (estaba)", "**tidak berubah**", "Dijo que estaba cansada."]
+            ]
+          },
+          "after": [
+            "Baris terakhir menghemat banyak tenaga: imperfecto dan pluscuamperfecto sudah berada di lapis paling belakang, jadi tidak bisa mundur lagi."
+          ]
+        },
+        {
+          "title": "Tiga jenis laporan",
+          "body": [
+            "Yang membedakannya adalah kata penyambungnya:"
+          ],
+          "table": {
+            "head": ["Jenis", "Penyambung", "Contoh"],
+            "rows": [
+              ["Berita", "que", "Dijo **que** venía el jueves."],
+              ["Pertanyaan ya-tidak", "si", "Preguntó **si** podías venir."],
+              ["Pertanyaan berkata tanya", "kata tanyanya sendiri", "Preguntó **cuándo** volvías."],
+              ["Permintaan / perintah", "que + subjuntivo", "Me pidió **que** le mandaras los números."]
+            ]
+          },
+          "after": [
+            "Kata kerja pelapor yang paling sering: *decir* (berkata), *contar* (bercerita), *contestar* (menjawab), *comentar* (menyampaikan), *preguntar* (bertanya), *pedir* (meminta), *proponer* (mengusulkan)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menyampaikan pesan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Spanyol", "Arti"],
+          "rows": [
+            ["¿Le doy algún recado?", "Ada pesan yang mau saya sampaikan?"],
+            ["Dile que me llame.", "Bilang ke dia telepon saya."],
+            ["Que te llame cuando pueda.", "Suruh dia telepon kamu kalau sempat."],
+            ["Me ha dicho que llegará tarde.", "Katanya dia akan telat."],
+            ["No me ha comentado nada.", "Dia tidak menyampaikan apa-apa ke saya."],
+            ["Se lo comento y te digo algo.", "Saya sampaikan ke dia, nanti saya kabari."],
+            ["Según él, ya está resuelto.", "Menurut dia, sudah beres."],
+            ["Al parecer, no lo sabían.", "Sepertinya mereka tidak tahu."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kalau kamu tidak yakin persis kata-katanya",
+          "items": [
+            "Bahasa Spanyol punya cara aman untuk melaporkan tanpa mengaku tahu persis: *según él…* (menurut dia), *al parecer…* (sepertinya), *por lo visto…* (kelihatannya), *me dio a entender que…* (dia memberi kesan bahwa).",
+            "Keempatnya jauh lebih sering dipakai daripada terjemahan harfiah \"katanya sih\", dan semuanya diikuti bentuk biasa, bukan subjuntivo."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "es": "el recado", "baca": "rre-KA-do", "id": "pesan titipan" },
+    { "es": "la jefa", "baca": "KHE-fa", "id": "bos (perempuan)" },
+    { "es": "contestar", "baca": "kon-tes-TAR", "id": "menjawab" },
+    { "es": "confirmar", "baca": "kon-fir-MAR", "id": "memastikan" },
+    { "es": "comentar", "baca": "ko-men-TAR", "id": "menyampaikan" },
+    { "es": "proponer", "baca": "pro-po-NER", "id": "mengusulkan" },
+    { "es": "según", "baca": "se-GUN", "id": "menurut" },
+    { "es": "al parecer", "baca": "al pa-re-SER", "id": "sepertinya" },
+    { "es": "por lo visto", "baca": "por lo BIS-to", "id": "kelihatannya" },
+    { "es": "los números", "baca": "NU-me-ros", "id": "angka, data" },
+    { "es": "el viaje", "baca": "BIA-khe", "id": "perjalanan" },
+    { "es": "raro", "baca": "RRA-ro", "id": "aneh" },
+    { "es": "resuelto", "baca": "rre-SUEL-to", "id": "beres, selesai" },
+    { "es": "algún", "baca": "al-GUN", "id": "suatu, ada" },
+    { "es": "por la tarde", "baca": "por la TAR-de", "id": "sore hari" },
+    { "es": "el jueves", "baca": "KHUE-bes", "id": "hari Kamis" },
+    { "es": "antes de", "baca": "AN-tes de", "id": "sebelum" },
+    { "es": "llegar", "baca": "ye-GAR", "id": "tiba, sampai" },
+    { "es": "pero si", "baca": "PE-ro si", "id": "lah, kan…" },
+    { "es": "dar a entender", "baca": "dar a en-ten-DER", "id": "memberi kesan" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Laporkan kalimat berikut, diawali *Dijo que…*",
+      "items": [
+        "\"Necesito el informe.\" → ____",
+        "\"He terminado el trabajo.\" → ____",
+        "\"Llegué tarde.\" → ____",
+        "\"Te llamaré luego.\" → ____",
+        "\"Estoy muy cansada.\" → ____"
+      ]
+    },
+    {
+      "prompt": "Laporkan pertanyaan dan permintaan berikut.",
+      "items": [
+        "\"¿Puedes venir mañana?\" (preguntar) → ____",
+        "\"¿Cuándo vuelves?\" (preguntar) → ____",
+        "\"Mándame los números.\" (pedir) → ____",
+        "\"Llámame si hay algún problema.\" (pedir) → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Spanyol.",
+      "items": [
+        "Katanya dia butuh laporannya sebelum Jumat.",
+        "Dia jawab tidak ada yang masuk ke dia.",
+        "Dia tanya apa kamu bisa datang besok.",
+        "Dia minta kamu kirim angka bulan Maret.",
+        "Katanya dia sampai Kamis malam.",
+        "Menurut dia, sudah beres."
+      ]
+    }
+  ],
+  "answers": [
+    "Dijo que necesitaba el informe. — Dijo que había terminado el trabajo. — Dijo que había llegado tarde. — Dijo que te llamaría luego. — Dijo que estaba muy cansada.",
+    "Preguntó si podías venir al día siguiente. — Preguntó cuándo volvías. — Me pidió que le mandara los números. — Me pidió que la llamara si había algún problema.",
+    "Dijo que necesitaba el informe antes del viernes. — Me contestó que no le había llegado nada. — Preguntó si podías venir mañana. — Te pidió que le mandaras los números de marzo. — Dijo que llegaba el jueves por la noche. — Según él, ya está resuelto."
+  ],
+  "wave": "Ulangi **unit 17**: perankan satu keluhan hotel selama satu menit, dari melapor sampai menerima jalan keluarnya."
+}

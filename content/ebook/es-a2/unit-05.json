@@ -1,0 +1,235 @@
+{
+  "title": "Sudah saya kirim ke dia",
+  "title_target": "Ya se lo he mandado",
+  "goal": "Mengganti benda dan orang dengan kata ganti supaya kalimatmu tidak mengulang-ulang.",
+  "bekal": [
+    "memakai *lo*, *la*, *los*, *las* untuk benda dan orang",
+    "memakai *me*, *te*, *le*, *nos*, *les* untuk penerima",
+    "menumpuk dua kata ganti sekaligus (*se lo*)",
+    "tahu kapan kata ganti menempel di belakang kata kerja"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — En la oficina",
+      "intro": "Nuria mengejar satu berkas yang belum sampai. Hitung berapa kali kata ganti dipakai untuk menghindari pengulangan.",
+      "lines": [
+        {
+          "speaker": "Nuria:",
+          "text": "Óscar, ¿tienes el informe de mayo?",
+          "id": "Óscar, laporan bulan Mei ada di kamu?",
+          "literal": "Óscar, kamu-punya itu laporan dari Mei?"
+        },
+        {
+          "speaker": "Óscar:",
+          "text": "Lo tengo aquí, pero todavía no lo he revisado.",
+          "id": "Ada di saya, tapi belum saya periksa.",
+          "literal": "itu saya-punya di-sini, tetapi masih tidak itu saya-punya memeriksa."
+        },
+        {
+          "speaker": "Nuria:",
+          "text": "¿Puedes revisarlo esta mañana? La directora lo necesita.",
+          "id": "Bisa diperiksa pagi ini? Direktur butuh itu.",
+          "literal": "kamu-bisa memeriksa-itu ini pagi? itu direktur itu membutuhkan."
+        },
+        {
+          "speaker": "Óscar:",
+          "text": "Claro. ¿Se lo mando por correo o se lo imprimo?",
+          "id": "Siap. Saya kirim ke dia lewat email atau saya cetakkan?",
+          "literal": "jelas. kepadanya itu saya-kirim lewat pos atau kepadanya itu saya-cetak?"
+        },
+        {
+          "speaker": "Nuria:",
+          "text": "Mándaselo por correo, es más rápido. Y ponme a mí en copia.",
+          "id": "Kirim lewat email saja ke dia, lebih cepat. Dan CC saya juga.",
+          "literal": "kirim-kepadanya-itu lewat pos, adalah lebih cepat. dan taruh-kepadaku ke saya di salinan."
+        },
+        {
+          "speaker": "Óscar:",
+          "text": "Vale. Oye, ¿y las facturas? ¿Las has visto?",
+          "id": "Oke. Eh, tagihan-tagihannya gimana? Sudah kamu lihat?",
+          "literal": "baik. dengar, dan itu tagihan-tagihan? itu kamu-punya melihat?"
+        },
+        {
+          "speaker": "Nuria:",
+          "text": "Las tenía yo, pero se las di a Marta el viernes.",
+          "id": "Tadinya di saya, tapi Jumat sudah saya kasih ke Marta.",
+          "literal": "itu saya-punya saya, tetapi kepadanya itu saya-beri kepada Marta itu Jumat."
+        },
+        {
+          "speaker": "Óscar:",
+          "text": "Entonces se las pido a ella. ¿Y el contrato nuevo?",
+          "id": "Kalau gitu saya minta ke dia. Kontrak yang baru?",
+          "literal": "kalau-begitu kepadanya itu saya-minta kepada dia. dan itu kontrak baru?"
+        },
+        {
+          "speaker": "Nuria:",
+          "text": "No me lo han enviado todavía. Estoy esperándolo desde el lunes.",
+          "id": "Belum dikirim ke saya. Saya nunggu itu dari Senin.",
+          "literal": "tidak kepadaku itu mereka-punya mengirim masih. saya-berada menunggu-itu sejak itu Senin."
+        },
+        {
+          "speaker": "Óscar:",
+          "text": "¿Quieres que los llame?",
+          "id": "Mau saya telepon mereka?",
+          "literal": "kamu-mau bahwa mereka saya-telepon?"
+        },
+        {
+          "speaker": "Nuria:",
+          "text": "Sí, por favor. Diles que lo necesitamos hoy mismo.",
+          "id": "Iya, tolong. Bilang ke mereka kita butuh itu hari ini juga.",
+          "literal": "ya, mohon. katakan-kepada-mereka bahwa itu kita-butuhkan hari-ini sendiri."
+        },
+        {
+          "speaker": "Óscar:",
+          "text": "Ahora mismo los llamo y luego te cuento.",
+          "id": "Sekarang juga saya telepon, nanti saya kabari kamu.",
+          "literal": "sekarang sendiri mereka saya-telepon dan kemudian kepadamu saya-ceritakan."
+        }
+      ],
+      "notes": [
+        "**Ada dua jenis kata ganti, dan bedanya adalah pertanyaannya.** *Lo/la/los/las* menjawab **\"apa?\"** (*lo tengo* — apa? laporannya). *Me/te/le/nos/les* menjawab **\"kepada siapa?\"** (*se lo mando* — kepada siapa? kepada direktur).",
+        "**Lo dan la ikut jenis benda yang digantikan, bukan orangnya.** *El informe → lo*, *la factura → la*, *los contratos → los*, *las facturas → las*. Untuk orang pun sama: *veo a Juan → lo veo*, *veo a Ana → la veo*.",
+        "**Letaknya di depan kata kerja bertenses**, termasuk di depan *no*: *no lo he revisado*, bukan *he no lo revisado*. Ini terasa terbalik bagi telinga Indonesia dan perlu dilatih sampai otomatis.",
+        "**Tiga tempat kata ganti menempel di belakang** dan menyatu jadi satu kata: kata kerja dasar (*revisarlo*), gerundio (*esperándolo*), dan perintah positif (*mándaselo*, *diles*). Perhatikan tanda aksen yang muncul saat menempel — ia menjaga tekanan kata tetap di tempat semula.",
+        "**Kalau ada kata kerja dasar, kamu boleh memilih.** *Puedes revisarlo* dan *lo puedes revisar* sama-sama benar dan sama-sama umum. Yang tidak boleh adalah memotongnya di tengah.",
+        "**Le / les berubah jadi se di depan lo/la/los/las.** *Le lo mando* tidak pernah ada; yang benar *se lo mando*. Alasannya semata bunyi — orang Spanyol menghindari dua kata berdempet yang berawal l. Ini pemicu kesalahan nomor satu di tingkat A2.",
+        "**Se lo bisa berarti banyak hal**, jadi penutur sering menambahkan penjelas: *se lo di **a Marta***, *se las pido **a ella***. Tambahan itu tidak mubazir — ia justru yang membuat kalimatnya jelas.",
+        "**Ponme a mí en copia.** Bentuk *a mí*, *a ti*, *a él* dipakai untuk menekankan, dan selalu **menemani** kata gantinya, bukan menggantikannya. *A mí me gusta* — dua-duanya hadir."
+      ],
+      "grammars": [
+        {
+          "title": "Dua deret kata ganti",
+          "body": [
+            "Perhatikan bahwa keduanya hanya berbeda di baris orang ketiga. Empat dari enam baris sama persis, dan itu kabar baik:"
+          ],
+          "table": {
+            "head": ["Orang", "Langsung (apa?)", "Tak langsung (kepada siapa?)"],
+            "rows": [
+              ["yo", "me", "me"],
+              ["tú", "te", "te"],
+              ["él / ella / usted", "**lo / la**", "**le**"],
+              ["nosotros", "nos", "nos"],
+              ["vosotros", "os", "os"],
+              ["ellos / ustedes", "**los / las**", "**les**"]
+            ]
+          },
+          "after": [
+            "Di sebagian Spanyol, *le* juga dipakai untuk lelaki sebagai objek langsung (*le veo* = saya melihatnya). Kebiasaan ini disebut *leísmo*, diterima resmi hanya untuk orang lelaki tunggal, dan tidak dipakai di Amerika Latin. Modul ini memakai *lo* supaya aman di mana pun."
+          ]
+        },
+        {
+          "title": "Kalau keduanya muncul sekaligus",
+          "body": [
+            "Urutannya tidak pernah berubah: **kepada siapa dulu, apa belakangan**. Dan orang ketiga bertemu orang ketiga berubah jadi *se*."
+          ],
+          "table": {
+            "head": ["Kalimat penuh", "Satu kata ganti", "Dua kata ganti"],
+            "rows": [
+              ["Mando el informe a la directora.", "Le mando el informe.", "**Se lo** mando."],
+              ["Doy las facturas a Marta.", "Le doy las facturas.", "**Se las** doy."],
+              ["Explico el problema a ti.", "Te explico el problema.", "**Te lo** explico."],
+              ["Compran el regalo para mí.", "Me compran el regalo.", "**Me lo** compran."]
+            ]
+          },
+          "after": [
+            "Saat menempel di belakang perintah, keduanya ikut sekaligus dan tanda aksen muncul: *manda + se + lo* → **mándaselo**; *di + me + lo* → **dímelo**.",
+            "Kalau ada *no*, kata gantinya kembali ke depan: **no se lo mandes**."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kantor dan urusan surat-menyurat",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Spanyol", "Cara baca", "Arti"],
+          "rows": [
+            ["el informe", "in-FOR-me", "laporan"],
+            ["la factura", "fak-TU-ra", "tagihan, faktur"],
+            ["el contrato", "kon-TRA-to", "kontrak"],
+            ["el presupuesto", "pre-su-PUES-to", "anggaran, penawaran harga"],
+            ["el archivo", "ar-CHI-bo", "berkas, file"],
+            ["mandar / enviar", "man-DAR / en-BI-ar", "mengirim"],
+            ["adjuntar", "ad-khun-TAR", "melampirkan"],
+            ["imprimir", "im-pri-MIR", "mencetak"],
+            ["firmar", "fir-MAR", "menandatangani"],
+            ["revisar", "rre-bi-SAR", "memeriksa"],
+            ["por correo", "por ko-RRE-o", "lewat email/pos"],
+            ["en copia", "en KO-pia", "di-CC"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Latihan lima menit yang paling ampuh",
+          "items": [
+            "Ambil kalimat panjang mana pun dari dialog, lalu ucapkan ulang dengan sebanyak mungkin kata ganti. *Mando el informe a la directora* → *se lo mando*. Ulangi sampai perpindahannya terjadi tanpa jeda berpikir.",
+            "Kebalikannya juga berguna: dengar *se lo di*, lalu paksa dirimu menyebut versi panjangnya. Ini melatih telinga menangkap siapa dan apa yang sedang dibicarakan."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "es": "el informe", "baca": "in-FOR-me", "id": "laporan" },
+    { "es": "revisar", "baca": "rre-bi-SAR", "id": "memeriksa" },
+    { "es": "la directora", "baca": "di-rek-TO-ra", "id": "direktur (perempuan)" },
+    { "es": "necesitar", "baca": "ne-se-si-TAR", "id": "membutuhkan" },
+    { "es": "mandar", "baca": "man-DAR", "id": "mengirim" },
+    { "es": "el correo", "baca": "ko-RRE-o", "id": "surat, email" },
+    { "es": "imprimir", "baca": "im-pri-MIR", "id": "mencetak" },
+    { "es": "la factura", "baca": "fak-TU-ra", "id": "tagihan" },
+    { "es": "el contrato", "baca": "kon-TRA-to", "id": "kontrak" },
+    { "es": "pedir", "baca": "pe-DIR", "id": "meminta" },
+    { "es": "entonces", "baca": "en-TON-ses", "id": "kalau begitu" },
+    { "es": "desde", "baca": "DES-de", "id": "sejak" },
+    { "es": "vale", "baca": "BA-le", "id": "oke (Spanyol)" },
+    { "es": "hoy mismo", "baca": "OY MIS-mo", "id": "hari ini juga" },
+    { "es": "ahora mismo", "baca": "a-O-ra MIS-mo", "id": "sekarang juga" },
+    { "es": "rápido", "baca": "RRA-pi-do", "id": "cepat" },
+    { "es": "adjuntar", "baca": "ad-khun-TAR", "id": "melampirkan" },
+    { "es": "firmar", "baca": "fir-MAR", "id": "menandatangani" },
+    { "es": "el presupuesto", "baca": "pre-su-PUES-to", "id": "anggaran" },
+    { "es": "avisar", "baca": "a-bi-SAR", "id": "memberi tahu" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ganti bagian bergaris bawah dengan kata ganti yang tepat.",
+      "items": [
+        "Tengo (el informe) → ____ tengo.",
+        "Veo (a Ana) → ____ veo.",
+        "Compramos (las entradas) → ____ compramos.",
+        "No he revisado (los contratos) → No ____ he revisado.",
+        "Escribo (a mis padres) → ____ escribo."
+      ]
+    },
+    {
+      "prompt": "Ubah jadi dua kata ganti sekaligus.",
+      "items": [
+        "Mando el informe a la directora. → ____",
+        "Doy las facturas a Marta. → ____",
+        "Explico el problema a ti. → ____",
+        "Compran el regalo para mí. → ____",
+        "No digo la verdad a ellos. → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Spanyol.",
+      "items": [
+        "Bisa kamu periksa pagi ini?",
+        "Sudah saya kirim ke dia lewat email.",
+        "Saya sedang menunggunya sejak Senin.",
+        "Bilang ke mereka kita butuh itu hari ini.",
+        "Jangan kirim itu ke dia."
+      ]
+    }
+  ],
+  "answers": [
+    "Lo — La — Las — los — Les",
+    "Se lo mando. — Se las doy. — Te lo explico. — Me lo compran. — No se la digo.",
+    "¿Puedes revisarlo esta mañana? — Ya se lo he mandado por correo. — Lo estoy esperando desde el lunes. — Diles que lo necesitamos hoy. — No se lo mandes."
+  ],
+  "wave": "Ulangi **unit 3**: ceritakan akhir pekan lalu selama satu menit, seluruhnya dengan indefinido, tanpa membuka halamannya."
+}

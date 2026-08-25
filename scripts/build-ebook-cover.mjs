@@ -109,7 +109,11 @@ const html = `<!doctype html><html lang="id"><head><meta charset="utf-8"><style>
     <div class="tengah">
       ${d.label ? `<div class="label">${esc(d.label)}</div>` : ""}
       <div class="judul">${esc(d.judul ?? meta.title.replace(/\s*101$/, ""))}</div>
-      <div class="angka">101</div>
+      <!-- [ebook-sampul-angka-v1] Angka besar di sampul ikut modulnya. Dulu ia
+           dipaku "101" karena seluruh modul memang seri 101; modul lanjutan
+           (Español 102, tingkat A2) butuh angkanya sendiri. Bawaannya tetap
+           "101", jadi sampul modul lama tercetak sama persis. -->
+      <div class="angka">${esc(d.angka ?? "101")}</div>
       <div class="garis"></div>
       <div class="ringkas">${esc(d.ringkas ?? meta.subtitle)}</div>
       ${d.catatan ? `<div class="catatan">${esc(d.catatan)}</div>` : ""}

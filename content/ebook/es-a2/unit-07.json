@@ -1,0 +1,439 @@
+{
+  "title": "Cari kontrakan",
+  "title_target": "Buscando piso",
+  "goal": "Menggambarkan tempat tinggal, membandingkan dua pilihan, dan menyebut mana yang paling cocok.",
+  "bekal": [
+    "menggambarkan rumah dan isinya",
+    "membandingkan dengan *más … que*, *menos … que*, *tan … como*",
+    "menyebut yang paling (*el más*, *el mejor*)",
+    "menawar dan menanyakan biaya bulanan"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Dos pisos, una decisión",
+      "intro": "Lucía dan Andrés baru melihat dua kontrakan dan harus memilih malam ini juga.",
+      "lines": [
+        {
+          "speaker": "Lucía:",
+          "text": "Bueno, ¿cuál te ha gustado más?",
+          "id": "Nah, kamu lebih suka yang mana?",
+          "literal": "baik, yang-mana kepadamu telah menyenangkan lebih?"
+        },
+        {
+          "speaker": "Andrés:",
+          "text": "El segundo es más grande y tiene más luz, pero está más lejos del centro.",
+          "id": "Yang kedua lebih luas dan lebih terang, tapi lebih jauh dari pusat kota.",
+          "literal": "itu kedua adalah lebih besar dan punya lebih cahaya, tetapi berada lebih jauh dari-itu pusat."
+        },
+        {
+          "speaker": "Lucía:",
+          "text": "Ya, pero el primero es carísimo. Ochocientos euros por sesenta metros.",
+          "id": "Iya, tapi yang pertama mahal banget. Delapan ratus euro untuk enam puluh meter.",
+          "literal": "sudah, tetapi itu pertama adalah sangat-mahal. delapan-ratus euro untuk enam-puluh meter."
+        },
+        {
+          "speaker": "Andrés:",
+          "text": "¿Y los gastos están incluidos?",
+          "id": "Biaya lain-lain sudah termasuk?",
+          "literal": "dan itu biaya-biaya berada termasuk?"
+        },
+        {
+          "speaker": "Lucía:",
+          "text": "En el primero sí. En el segundo hay que pagar la luz y el agua aparte.",
+          "id": "Di yang pertama iya. Di yang kedua listrik dan air bayar terpisah.",
+          "literal": "di itu pertama ya. di itu kedua ada bahwa membayar itu listrik dan itu air terpisah."
+        },
+        {
+          "speaker": "Andrés:",
+          "text": "Entonces no es tan barato como parece.",
+          "id": "Berarti nggak semurah kelihatannya, dong.",
+          "literal": "kalau-begitu tidak adalah begitu murah seperti tampak."
+        },
+        {
+          "speaker": "Lucía:",
+          "text": "Exacto. Además, el barrio del segundo es menos tranquilo.",
+          "id": "Persis. Lagi pula, lingkungan yang kedua kurang tenang.",
+          "literal": "tepat. selain-itu, itu lingkungan dari-itu kedua adalah kurang tenang."
+        },
+        {
+          "speaker": "Andrés:",
+          "text": "Pero la cocina es mucho mejor y hay un balcón enorme.",
+          "id": "Tapi dapurnya jauh lebih bagus dan ada balkon gede banget.",
+          "literal": "tetapi itu dapur adalah banyak lebih-baik dan ada satu balkon besar."
+        },
+        {
+          "speaker": "Lucía:",
+          "text": "Es verdad. Y el metro está a diez minutos andando, no está mal.",
+          "id": "Betul juga. Dan stasiun metro sepuluh menit jalan kaki, lumayan.",
+          "literal": "adalah kebenaran. dan itu metro berada pada sepuluh menit berjalan, tidak berada buruk."
+        },
+        {
+          "speaker": "Andrés:",
+          "text": "Para mí lo más importante es el precio. Somos dos y el sueldo no da para tanto.",
+          "id": "Buat saya yang paling penting harganya. Kita berdua dan gaji nggak sampai segitu.",
+          "literal": "untuk saya itu paling penting adalah itu harga. kami-adalah dua dan itu gaji tidak memberi untuk begitu-banyak."
+        },
+        {
+          "speaker": "Lucía:",
+          "text": "Vale, entonces el segundo. ¿Llamamos al casero ahora?",
+          "id": "Oke, berarti yang kedua. Kita telepon pemiliknya sekarang?",
+          "literal": "baik, kalau-begitu itu kedua. kita-menelepon ke-itu pemilik sekarang?"
+        },
+        {
+          "speaker": "Andrés:",
+          "text": "Sí, antes de que lo alquile otro.",
+          "id": "Iya, sebelum keburu disewa orang lain.",
+          "literal": "ya, sebelum dari bahwa itu menyewa lain."
+        }
+      ],
+      "notes": [
+        "**Tiga rumus perbandingan, tak lebih.** *más … que* (lebih … daripada), *menos … que* (kurang … daripada), *tan … como* (se… dengan). Ketiganya dipakai untuk kata sifat maupun kata keterangan: *más grande que*, *más rápido que*, *tan bien como*.",
+        "**Untuk membandingkan jumlah**, *tan* diganti *tanto* dan ia ikut kata bendanya: *tanto dinero como*, *tanta luz como*, *tantos metros como*, *tantas habitaciones como*.",
+        "**Empat kata sifat punya bentuk sendiri** dan tak pernah memakai *más*: *bueno → mejor*, *malo → peor*, *grande → mayor*, *pequeño → menor*. Berkata *más bueno* untuk mutu adalah salah — yang benar *mejor*.",
+        "**Mucho mejor, bukan muy mejor.** Untuk menguatkan perbandingan dipakai *mucho*: *mucho más caro*, *mucho peor*. *Muy* hanya menemani kata sifat biasa: *muy caro*.",
+        "**Lo más importante** = \"yang paling penting\". *Lo* di depan kata sifat membuatnya jadi gagasan: *lo mejor* (yang terbaik dari semuanya), *lo difícil* (bagian sulitnya), *lo bueno* (untungnya).",
+        "**Está a diez minutos.** Jarak dinyatakan dengan *estar a*: *está a diez minutos andando*, *está a dos kilómetros*. Bandingkan dengan *hay* yang menyatakan keberadaan: *hay un metro cerca*.",
+        "**Carísimo** kembali muncul — akhiran *-ísimo* dari unit 2. Perhatikan penyesuaian ejaan: *rico → riquísimo*, *largo → larguísimo*, *feliz → felicísimo*.",
+        "**Antes de que lo alquile otro.** Sesudah *antes de que* kata kerjanya memakai bentuk khusus (subjuntivo) yang menunggu di unit 13. Untuk sekarang, terima saja sebagai potongan tetap: *antes de que sea tarde*."
+      ],
+      "grammars": [
+        {
+          "title": "Membandingkan dua hal",
+          "body": [
+            "Susunannya kaku dan justru itu keuntungannya — sekali hafal, tidak ada kejutan:"
+          ],
+          "table": {
+            "head": [
+              "Rumus",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "más + sifat + que",
+                "Es más grande que el otro.",
+                "lebih luas daripada yang lain"
+              ],
+              [
+                "menos + sifat + que",
+                "Es menos tranquilo que el mío.",
+                "kurang tenang dibanding punyaku"
+              ],
+              [
+                "tan + sifat + como",
+                "No es tan barato como parece.",
+                "tidak semurah kelihatannya"
+              ],
+              [
+                "tanto/-a/-os/-as + benda + como",
+                "No tiene tanta luz como el segundo.",
+                "tidak seterang yang kedua"
+              ],
+              [
+                "kata kerja + más/menos que",
+                "Trabajo más que tú.",
+                "saya bekerja lebih banyak darimu"
+              ],
+              [
+                "más de + angka",
+                "Cuesta más de mil euros.",
+                "lebih dari seribu euro"
+              ]
+            ]
+          },
+          "after": [
+            "Baris terakhir sering keliru: di depan **angka** dipakai *más de*, bukan *más que*. *Más que* hanya untuk membandingkan dengan sesuatu yang lain."
+          ]
+        },
+        {
+          "title": "Menyebut yang paling",
+          "body": [
+            "Bentuk superlatif dibangun dengan kata sandang + *más* atau *menos*, dan kata sandangnya harus cocok dengan bendanya:"
+          ],
+          "table": {
+            "head": [
+              "Rumus",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "el / la / los / las + más + sifat",
+                "Es la casa más barata del barrio.",
+                "rumah termurah di lingkungan itu"
+              ],
+              [
+                "el / la + menos + sifat",
+                "Es el menos caro de los tres.",
+                "yang paling tidak mahal dari ketiganya"
+              ],
+              [
+                "el mejor / el peor",
+                "Es el mejor piso que hemos visto.",
+                "kontrakan terbaik yang pernah kami lihat"
+              ],
+              [
+                "lo + más + sifat",
+                "Lo más importante es el precio.",
+                "yang paling penting adalah harganya"
+              ]
+            ]
+          },
+          "after": [
+            "Sesudah superlatif dipakai **de**, bukan *en*: *el más alto **de** la clase*, *la mejor **del** mundo*.",
+            "Perhatikan letaknya: *la casa más barata*, bukan *la más barata casa*. Kata sifat tetap berdiri di belakang bendanya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Rumah dan isinya",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Spanyol",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "el piso",
+              "PI-so",
+              "apartemen, kontrakan"
+            ],
+            [
+              "el alquiler",
+              "al-ki-LER",
+              "sewa"
+            ],
+            [
+              "el casero",
+              "ka-SE-ro",
+              "pemilik kontrakan"
+            ],
+            [
+              "la habitación",
+              "a-bi-ta-SION",
+              "kamar"
+            ],
+            [
+              "el salón",
+              "sa-LON",
+              "ruang tamu"
+            ],
+            [
+              "la cocina",
+              "ko-SI-na",
+              "dapur"
+            ],
+            [
+              "el baño",
+              "BA-nyo",
+              "kamar mandi"
+            ],
+            [
+              "el balcón",
+              "bal-KON",
+              "balkon"
+            ],
+            [
+              "los muebles",
+              "MUE-bles",
+              "perabot"
+            ],
+            [
+              "los gastos",
+              "GAS-tos",
+              "biaya lain-lain"
+            ],
+            [
+              "la fianza",
+              "FIAN-sa",
+              "uang jaminan"
+            ],
+            [
+              "el barrio",
+              "BA-rrio",
+              "lingkungan, kelurahan"
+            ],
+            [
+              "luminoso",
+              "lu-mi-NO-so",
+              "terang"
+            ],
+            [
+              "amueblado",
+              "a-mue-BLA-do",
+              "berperabot"
+            ],
+            [
+              "céntrico",
+              "SEN-tri-ko",
+              "dekat pusat kota"
+            ],
+            [
+              "ruidoso",
+              "rrui-DO-so",
+              "berisik"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kalimat siap pakai saat melihat kontrakan",
+          "items": [
+            "*¿Cuánto es el alquiler al mes?* — Sewanya berapa sebulan?",
+            "*¿Los gastos están incluidos?* — Biaya lain sudah termasuk?",
+            "*¿Cuánto hay que dejar de fianza?* — Jaminannya berapa?",
+            "*¿Está amueblado?* — Sudah berperabot?",
+            "*¿Se puede tener animales?* — Boleh pelihara hewan?",
+            "*¿Cuándo estaría libre?* — Kapan bisa ditempati?"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "el piso",
+      "baca": "PI-so",
+      "id": "kontrakan, apartemen"
+    },
+    {
+      "es": "la luz",
+      "baca": "LUS",
+      "id": "cahaya, listrik"
+    },
+    {
+      "es": "lejos",
+      "baca": "LE-khos",
+      "id": "jauh"
+    },
+    {
+      "es": "el centro",
+      "baca": "SEN-tro",
+      "id": "pusat kota"
+    },
+    {
+      "es": "los gastos",
+      "baca": "GAS-tos",
+      "id": "biaya lain-lain"
+    },
+    {
+      "es": "incluido",
+      "baca": "in-klu-I-do",
+      "id": "termasuk"
+    },
+    {
+      "es": "aparte",
+      "baca": "a-PAR-te",
+      "id": "terpisah"
+    },
+    {
+      "es": "parecer",
+      "baca": "pa-re-SER",
+      "id": "tampak, kelihatannya"
+    },
+    {
+      "es": "el barrio",
+      "baca": "BA-rrio",
+      "id": "lingkungan"
+    },
+    {
+      "es": "tranquilo",
+      "baca": "tran-KI-lo",
+      "id": "tenang"
+    },
+    {
+      "es": "enorme",
+      "baca": "e-NOR-me",
+      "id": "besar sekali"
+    },
+    {
+      "es": "el sueldo",
+      "baca": "SUEL-do",
+      "id": "gaji"
+    },
+    {
+      "es": "el casero",
+      "baca": "ka-SE-ro",
+      "id": "pemilik kontrakan"
+    },
+    {
+      "es": "alquilar",
+      "baca": "al-ki-LAR",
+      "id": "menyewa"
+    },
+    {
+      "es": "la fianza",
+      "baca": "FIAN-sa",
+      "id": "uang jaminan"
+    },
+    {
+      "es": "amueblado",
+      "baca": "a-mue-BLA-do",
+      "id": "berperabot"
+    },
+    {
+      "es": "el metro",
+      "baca": "ME-tro",
+      "id": "kereta bawah tanah"
+    },
+    {
+      "es": "no está mal",
+      "baca": "no es-TA MAL",
+      "id": "lumayan"
+    },
+    {
+      "es": "además",
+      "baca": "a-de-MAS",
+      "id": "lagi pula"
+    },
+    {
+      "es": "exacto",
+      "baca": "ek-SAK-to",
+      "id": "persis, tepat"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Lengkapi dengan *más*, *menos*, *tan*, *tanto* atau *como*.",
+      "items": [
+        "Este piso es ____ grande que el otro.",
+        "No es ____ barato ____ parece.",
+        "El segundo es ____ céntrico que el primero, está muy lejos.",
+        "No tiene ____ luz como el tuyo.",
+        "Cuesta ____ de mil euros."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Spanyol.",
+      "items": [
+        "Ini rumah termurah di lingkungan ini.",
+        "Dapurnya jauh lebih bagus.",
+        "Yang paling penting adalah harganya.",
+        "Stasiun metro sepuluh menit jalan kaki.",
+        "Biaya lain-lain sudah termasuk?",
+        "Ini kontrakan terbaik yang pernah kami lihat."
+      ]
+    },
+    {
+      "prompt": "Bandingkan kedua hal ini dalam satu kalimat, memakai kata sifat dalam kurung.",
+      "items": [
+        "Madrid, Valencia (grande)",
+        "el tren, el autobús (rápido)",
+        "mi barrio, el centro (tranquilo)",
+        "este piso, el otro (bueno)"
+      ]
+    }
+  ],
+  "answers": [
+    "más — tan, como — menos — tanta — más",
+    "Es la casa más barata del barrio. — La cocina es mucho mejor. — Lo más importante es el precio. — El metro está a diez minutos andando. — ¿Los gastos están incluidos? — Es el mejor piso que hemos visto.",
+    "Madrid es más grande que Valencia. — El tren es más rápido que el autobús. — Mi barrio es más tranquilo que el centro. — Este piso es mejor que el otro."
+  ],
+  "wave": "Ulangi **unit 5**: ambil lima kalimat panjang dari dialog unit 5, lalu ucapkan ulang seluruhnya dengan kata ganti sebanyak mungkin."
+}

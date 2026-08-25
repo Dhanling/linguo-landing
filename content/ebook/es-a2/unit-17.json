@@ -1,0 +1,244 @@
+{
+  "title": "Ada masalah di hotel",
+  "title_target": "Un problema en el hotel",
+  "goal": "Mengurus penginapan, melapor saat ada yang tidak beres, dan meminta ganti rugi dengan tenang.",
+  "bekal": [
+    "check-in dan menanyakan fasilitas",
+    "melaporkan kerusakan (*no funciona*, *está roto*)",
+    "meminta penyelesaian dengan sopan",
+    "memakai *lo que* untuk merangkum masalah"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — En la recepción",
+      "intro": "Malam kedua menginap, dan kamar 312 punya beberapa masalah sekaligus.",
+      "lines": [
+        {
+          "speaker": "Cliente:",
+          "text": "Buenas noches. Llamo de la habitación 312. Tenemos un problema.",
+          "id": "Selamat malam. Saya dari kamar 312. Ada masalah.",
+          "literal": "baik malam-malam. saya-menelepon dari itu kamar 312. kami-punya satu masalah."
+        },
+        {
+          "speaker": "Recepcionista:",
+          "text": "Dígame, ¿qué ocurre?",
+          "id": "Silakan, ada apa ya?",
+          "literal": "katakan-kepadaku, apa terjadi?"
+        },
+        {
+          "speaker": "Cliente:",
+          "text": "El aire acondicionado no funciona y la ventana no se puede abrir.",
+          "id": "AC-nya mati dan jendelanya tidak bisa dibuka.",
+          "literal": "itu udara ber-AC tidak berfungsi dan itu jendela tidak dirinya bisa membuka."
+        },
+        {
+          "speaker": "Recepcionista:",
+          "text": "Vaya, lo siento mucho. ¿Desde cuándo?",
+          "id": "Aduh, mohon maaf sekali. Sejak kapan?",
+          "literal": "wah, itu saya-sesali banyak. sejak kapan?"
+        },
+        {
+          "speaker": "Cliente:",
+          "text": "Desde anoche. Ya se lo dije a su compañero, pero no ha venido nadie.",
+          "id": "Sejak tadi malam. Sudah saya sampaikan ke rekan Anda, tapi tidak ada yang datang.",
+          "literal": "sejak tadi-malam. sudah kepadanya itu saya-katakan kepada Anda-punya rekan, tetapi tidak telah datang tak-seorang-pun."
+        },
+        {
+          "speaker": "Recepcionista:",
+          "text": "Le pido disculpas. Voy a mandar ahora mismo a alguien de mantenimiento.",
+          "id": "Saya mohon maaf. Sekarang juga saya kirim petugas perawatan.",
+          "literal": "kepada-Anda saya-minta maaf. saya-akan mengirim sekarang sendiri kepada seseorang dari pemeliharaan."
+        },
+        {
+          "speaker": "Cliente:",
+          "text": "Es que ya son las once. Lo que necesitamos es dormir.",
+          "id": "Masalahnya sudah jam sebelas. Yang kami butuhkan itu tidur.",
+          "literal": "adalah bahwa sudah adalah itu sebelas. itu yang kami-butuhkan adalah tidur."
+        },
+        {
+          "speaker": "Recepcionista:",
+          "text": "Lo entiendo perfectamente. ¿Le parece bien si les cambio de habitación?",
+          "id": "Saya sangat mengerti. Bagaimana kalau saya pindahkan kamarnya?",
+          "literal": "itu saya-mengerti sempurna. kepada-Anda tampak baik jika kepada-mereka saya-tukar dari kamar?"
+        },
+        {
+          "speaker": "Cliente:",
+          "text": "Sí, mucho mejor. ¿Es del mismo tipo?",
+          "id": "Iya, jauh lebih baik. Tipenya sama?",
+          "literal": "ya, banyak lebih-baik. adalah dari-itu sama tipe?"
+        },
+        {
+          "speaker": "Recepcionista:",
+          "text": "Es una superior, con terraza. Sin coste adicional, por supuesto.",
+          "id": "Yang ini tipe superior, ada terasnya. Tanpa biaya tambahan, tentu saja.",
+          "literal": "adalah satu unggul, dengan teras. tanpa biaya tambahan, tentu."
+        },
+        {
+          "speaker": "Cliente:",
+          "text": "Perfecto. ¿Nos ayudan con las maletas?",
+          "id": "Bagus. Bisa dibantu kopernya?",
+          "literal": "sempurna. kepada-kami mereka-membantu dengan itu koper-koper?"
+        },
+        {
+          "speaker": "Recepcionista:",
+          "text": "Por supuesto. Suben en cinco minutos. Y perdonen las molestias.",
+          "id": "Tentu saja. Lima menit lagi naik ke atas. Mohon maaf atas ketidaknyamanannya.",
+          "literal": "tentu. mereka-naik di lima menit. dan maafkanlah itu gangguan-gangguan."
+        }
+      ],
+      "notes": [
+        "**Melapor kerusakan hampir selalu memakai tiga kalimat pendek:** *no funciona* (tidak berfungsi), *está roto* (rusak), *no hay* (tidak tersedia). Ketiganya lebih efektif daripada kalimat panjang, dan tidak menuduh siapa pun.",
+        "**Lo que necesitamos es dormir.** Rumus *lo que + kata kerja + es…* dipakai untuk menyorot inti masalah. Ini alat retorika yang sangat berguna: *lo que pasa es que…* (masalahnya begini), *lo que quiero es…* (yang saya mau…).",
+        "**Le pido disculpas** adalah permintaan maaf resmi. Untuk yang lebih ringan: *lo siento* (saya menyesal), *perdón* (maaf), *perdone las molestias* (maaf atas ketidaknyamanan). Yang terakhir hampir selalu muncul di ujung percakapan resmi.",
+        "**¿Le parece bien si…?** — cara paling halus menawarkan jalan keluar, dan bentuk yang sama dipakai di kantor: *¿te parece bien si lo dejamos para mañana?*",
+        "**Ya se lo dije a su compañero.** Perhatikan bahwa penutur tetap memakai *usted* walau sedang mengeluh. Menjatuhkan kesopanan justru melemahkan posisinya — di dunia berbahasa Spanyol, keluhan yang tenang mendapat lebih banyak.",
+        "**No ha venido nadie** menumpuk sangkal lagi: harfiahnya \"tidak datang tak-seorang-pun\". Bahasa Spanyol memang begitu, dan menghapus salah satu sangkalnya membuat kalimatnya salah.",
+        "**Sin coste adicional, por supuesto.** *Por supuesto* = tentu saja, lebih formal dari *claro*. Di layanan pelanggan, kata inilah yang biasa dipakai.",
+        "**Perdonen, suben, ayudan** memakai bentuk *ustedes* — resepsionis berbicara kepada dua tamu sekaligus dengan sopan. Di Spanyol, staf hotel hampir selalu memilih bentuk ini."
+      ],
+      "grammars": [
+        {
+          "title": "Melapor apa yang tidak beres",
+          "body": [
+            "Tiga kerangka ini menutup hampir semua keluhan penginapan:"
+          ],
+          "table": {
+            "head": ["Kerangka", "Contoh", "Dipakai untuk"],
+            "rows": [
+              ["no funciona", "El aire acondicionado no funciona.", "alat yang mati"],
+              ["está roto / rota", "La cerradura está rota.", "barang yang rusak"],
+              ["no hay", "No hay toallas ni papel higiénico.", "yang tidak tersedia"],
+              ["no se puede + dasar", "La ventana no se puede abrir.", "sesuatu yang macet"],
+              ["huele a…", "La habitación huele a humedad.", "bau"],
+              ["se oye…", "Se oye mucho ruido de la calle.", "kebisingan"]
+            ]
+          },
+          "after": [
+            "Sesudah melapor, langsung tawarkan penyelesaian yang kamu inginkan — jangan menunggu ditawari: *¿podrían cambiarnos de habitación?*, *¿sería posible que viniera alguien ahora?*"
+          ]
+        },
+        {
+          "title": "Lo que dan kerabatnya",
+          "body": [
+            "*Lo* di depan *que* mengubah seluruh anak kalimat jadi satu benda yang bisa disorot:"
+          ],
+          "table": {
+            "head": ["Kalimat", "Arti"],
+            "rows": [
+              ["Lo que necesito es dormir.", "Yang saya butuhkan itu tidur."],
+              ["Lo que pasa es que ya es tarde.", "Masalahnya sudah malam."],
+              ["No entiendo lo que dice.", "Saya tidak paham apa yang dia katakan."],
+              ["Lo mejor es cambiar de habitación.", "Paling baik pindah kamar."],
+              ["Lo malo es que no hay otra libre.", "Sialnya tidak ada kamar kosong lain."],
+              ["Con lo que ahorro, puedo viajar.", "Dengan yang saya hemat, saya bisa jalan-jalan."]
+            ]
+          },
+          "after": [
+            "Bandingkan dengan *el que* dan *la que*, yang menunjuk **benda tertentu**: *el que está roto* (yang rusak itu). *Lo que* selalu menunjuk gagasan, tak pernah benda."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Hotel dan penginapan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Spanyol", "Cara baca", "Arti"],
+          "rows": [
+            ["la habitación doble", "a-bi-ta-SION DO-ble", "kamar untuk dua orang"],
+            ["la habitación individual", "in-di-bi-DUAL", "kamar untuk satu orang"],
+            ["la reserva", "rre-SER-ba", "pemesanan"],
+            ["a nombre de", "a NOM-bre de", "atas nama"],
+            ["el desayuno incluido", "de-sa-YU-no in-klu-I-do", "termasuk sarapan"],
+            ["la llave / la tarjeta", "YA-be / tar-KHE-ta", "kunci / kartu kamar"],
+            ["la caja fuerte", "KA-kha FUER-te", "brankas"],
+            ["la toalla", "to-A-ya", "handuk"],
+            ["la sábana", "SA-ba-na", "seprai"],
+            ["la almohada", "al-mo-A-da", "bantal"],
+            ["el ascensor", "as-sen-SOR", "lift"],
+            ["la recepción", "rre-sep-SION", "resepsionis"],
+            ["mantenimiento", "man-te-ni-MIEN-to", "perawatan, teknisi"],
+            ["la factura", "fak-TU-ra", "tagihan"],
+            ["la salida", "sa-LI-da", "check-out, keluar"],
+            ["las molestias", "mo-LES-tias", "ketidaknyamanan"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kalimat yang paling berguna dihafal utuh",
+          "items": [
+            "*Tengo una reserva a nombre de…* — Saya punya pemesanan atas nama…",
+            "*¿A qué hora es la salida?* — Check-out jam berapa?",
+            "*¿Podrían guardarme la maleta hasta las cinco?* — Bisa titip koper sampai jam lima?",
+            "*¿Hay wifi en la habitación? ¿Cuál es la contraseña?* — Ada wifi di kamar? Sandinya apa?",
+            "*Creo que hay un error en la factura.* — Sepertinya ada kekeliruan di tagihannya.",
+            "*Me han cobrado dos veces.* — Saya ditagih dua kali."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "es": "ocurrir", "baca": "o-ku-RRIR", "id": "terjadi" },
+    { "es": "el aire acondicionado", "baca": "AI-re a-kon-di-sio-NA-do", "id": "AC" },
+    { "es": "funcionar", "baca": "fun-sio-NAR", "id": "berfungsi" },
+    { "es": "la ventana", "baca": "ben-TA-na", "id": "jendela" },
+    { "es": "las disculpas", "baca": "dis-KUL-pas", "id": "permintaan maaf" },
+    { "es": "el mantenimiento", "baca": "man-te-ni-MIEN-to", "id": "perawatan" },
+    { "es": "cambiar de habitación", "baca": "kam-BIAR de a-bi-ta-SION", "id": "pindah kamar" },
+    { "es": "la terraza", "baca": "te-RRA-sa", "id": "teras, balkon" },
+    { "es": "el coste", "baca": "KOS-te", "id": "biaya" },
+    { "es": "adicional", "baca": "a-di-sio-NAL", "id": "tambahan" },
+    { "es": "por supuesto", "baca": "por su-PUES-to", "id": "tentu saja" },
+    { "es": "las molestias", "baca": "mo-LES-tias", "id": "ketidaknyamanan" },
+    { "es": "roto", "baca": "RRO-to", "id": "rusak, pecah" },
+    { "es": "la cerradura", "baca": "se-rra-DU-ra", "id": "kunci pintu" },
+    { "es": "la toalla", "baca": "to-A-ya", "id": "handuk" },
+    { "es": "oler a", "baca": "o-LER a", "id": "berbau" },
+    { "es": "la humedad", "baca": "u-me-DAD", "id": "lembap, apak" },
+    { "es": "la reserva", "baca": "rre-SER-ba", "id": "pemesanan" },
+    { "es": "cobrar", "baca": "ko-BRAR", "id": "menagih" },
+    { "es": "guardar", "baca": "guar-DAR", "id": "menyimpan, menitipkan" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Lengkapi keluhannya dengan *no funciona*, *está roto*, *no hay* atau *no se puede*.",
+      "items": [
+        "El aire acondicionado ____.",
+        "____ toallas en el baño.",
+        "La ventana ____ abrir.",
+        "La cerradura de la puerta ____.",
+        "El ascensor ____ desde ayer."
+      ]
+    },
+    {
+      "prompt": "Lengkapi dengan *lo que*, *lo mejor*, *lo malo* atau *lo que pasa*.",
+      "items": [
+        "____ necesitamos es dormir.",
+        "____ es que ya son las once.",
+        "____ sería cambiar de habitación.",
+        "____ es que no hay otra libre."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Spanyol.",
+      "items": [
+        "Saya dari kamar 312, ada masalah.",
+        "AC-nya mati sejak tadi malam.",
+        "Sudah saya sampaikan tapi tidak ada yang datang.",
+        "Bagaimana kalau saya pindahkan kamarnya?",
+        "Tanpa biaya tambahan, tentu saja.",
+        "Sepertinya ada kekeliruan di tagihannya."
+      ]
+    }
+  ],
+  "answers": [
+    "no funciona — No hay — no se puede — está rota — no funciona",
+    "Lo que — Lo que pasa — Lo mejor — Lo malo",
+    "Llamo de la habitación 312, tenemos un problema. — El aire acondicionado no funciona desde anoche. — Ya se lo dije, pero no ha venido nadie. — ¿Le parece bien si les cambio de habitación? — Sin coste adicional, por supuesto. — Creo que hay un error en la factura."
+  ],
+  "wave": "Ulangi **unit 15**: gambarkan selama satu menit apa yang sedang dilakukan lima orang di sekitarmu, memakai *estar*, *seguir*, dan *llevar* + gerundio."
+}

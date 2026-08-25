@@ -1,0 +1,252 @@
+{
+  "title": "Saya kurang enak badan",
+  "title_target": "No me encuentro bien",
+  "goal": "Menjelaskan keluhan badan, memahami saran dokter, dan menyarankan sesuatu kepada orang lain.",
+  "bekal": [
+    "menyebut bagian tubuh dan rasa sakitnya (*me duele*)",
+    "memakai kata kerja berpola *gustar* untuk badan",
+    "memberi saran dengan *deberías* dan *tienes que*",
+    "bercerita sejak kapan keluhannya muncul (*desde hace*)"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — En el centro de salud",
+      "intro": "Rubén datang ke puskesmas. Perhatikan bagaimana ia menyebut keluhannya tanpa sekali pun berkata \"saya punya sakit\".",
+      "lines": [
+        {
+          "speaker": "Médica:",
+          "text": "Buenos días, siéntese. ¿Qué le pasa?",
+          "id": "Selamat pagi, silakan duduk. Ada keluhan apa?",
+          "literal": "baik hari-hari, duduklah. apa kepada-Anda terjadi?"
+        },
+        {
+          "speaker": "Rubén:",
+          "text": "No me encuentro bien. Me duele mucho la garganta.",
+          "id": "Saya kurang enak badan. Tenggorokan saya sakit sekali.",
+          "literal": "tidak kepadaku saya-menemukan baik. kepadaku menyakitkan banyak itu tenggorokan."
+        },
+        {
+          "speaker": "Médica:",
+          "text": "¿Desde cuándo?",
+          "id": "Sejak kapan?",
+          "literal": "sejak kapan?"
+        },
+        {
+          "speaker": "Rubén:",
+          "text": "Desde hace tres días. Y anoche tuve fiebre.",
+          "id": "Sejak tiga hari lalu. Dan tadi malam saya demam.",
+          "literal": "sejak membuat tiga hari-hari. dan tadi-malam saya-punya demam."
+        },
+        {
+          "speaker": "Médica:",
+          "text": "¿Le duele al tragar? ¿Le duelen también los oídos?",
+          "id": "Sakit waktu menelan? Telinganya juga sakit?",
+          "literal": "kepada-Anda menyakitkan pada menelan? kepada-Anda menyakitkan juga itu telinga-telinga?"
+        },
+        {
+          "speaker": "Rubén:",
+          "text": "Los oídos no. Pero me duele la cabeza y estoy muy cansado.",
+          "id": "Telinga enggak. Tapi kepala saya sakit dan badan lemas sekali.",
+          "literal": "itu telinga-telinga tidak. tetapi kepadaku menyakitkan itu kepala dan saya-berada sangat lelah."
+        },
+        {
+          "speaker": "Médica:",
+          "text": "A ver, abra la boca. Sí, la tiene bastante roja. ¿Es alérgico a algo?",
+          "id": "Coba buka mulutnya. Iya, memang merah sekali. Ada alergi obat?",
+          "literal": "untuk melihat, bukalah itu mulut. ya, itu Anda-punya cukup merah. adalah alergi kepada sesuatu?"
+        },
+        {
+          "speaker": "Rubén:",
+          "text": "No, que yo sepa no.",
+          "id": "Nggak, setahu saya enggak.",
+          "literal": "tidak, bahwa saya tahu tidak."
+        },
+        {
+          "speaker": "Médica:",
+          "text": "Es una infección de garganta. Le receto un antibiótico, cada ocho horas.",
+          "id": "Ini infeksi tenggorokan. Saya resepkan antibiotik, tiap delapan jam.",
+          "literal": "adalah satu infeksi dari tenggorokan. kepada-Anda saya-resepkan satu antibiotik, tiap delapan jam."
+        },
+        {
+          "speaker": "Rubén:",
+          "text": "¿Puedo ir a trabajar?",
+          "id": "Saya boleh masuk kerja?",
+          "literal": "saya-bisa pergi untuk bekerja?"
+        },
+        {
+          "speaker": "Médica:",
+          "text": "Debería quedarse en casa dos o tres días. Y tiene que beber mucha agua.",
+          "id": "Sebaiknya Anda di rumah dua tiga hari. Dan harus banyak minum air.",
+          "literal": "Anda-harus tinggal di rumah dua atau tiga hari-hari. dan Anda-punya bahwa minum banyak air."
+        },
+        {
+          "speaker": "Rubén:",
+          "text": "De acuerdo. ¿Y si no mejoro?",
+          "id": "Baik. Kalau tidak membaik gimana?",
+          "literal": "dari kesepakatan. dan jika tidak saya-membaik?"
+        }
+      ],
+      "notes": [
+        "**Me duele la garganta**, harfiahnya \"tenggorokan itu menyakitkan bagi saya\". Yang sakit adalah **subjeknya**, bukan orangnya — persis seperti *me gusta*. Jadi kata kerjanya mengikuti bagian tubuhnya: *me duele **la** cabeza*, tapi *me duelen **los** pies*.",
+        "**Bagian tubuh memakai el/la, bukan mi/tu.** Bahasa Spanyol berkata *me duele **la** cabeza*, bukan *mi cabeza*, karena *me* sudah menerangkan kepala siapa. *Me lavo **las** manos*, *le duele **el** brazo*.",
+        "**Desde hace tres días** = sejak tiga hari lalu, dan keluhannya **masih berlangsung**. Bedakan dari *hace tres días* (tiga hari lalu, sudah selesai): *hace tres días fui al médico* versus *me duele desde hace tres días*.",
+        "**Tener fiebre, tener tos, tener frío.** Beberapa keadaan badan memakai *tener*, bukan *estar*: *tengo fiebre*, *tengo hambre*, *tengo sueño*. Menerjemahkannya dengan *soy* atau *estoy* adalah tanda paling cepat dikenali bahwa penuturnya pemula.",
+        "**Siéntese, abra la boca** adalah perintah bentuk *usted* — sopan dan langsung sekaligus. Bentuk lengkapnya dibedah di unit 12; untuk sekarang cukup kenali bahwa akhiran **-e** dan **-a** di sini berarti sopan, bukan orang ketiga.",
+        "**Debería** = \"sebaiknya\". Bentuk ini lebih halus daripada *tiene que* (harus) dan jauh lebih sering dipakai untuk menyarankan. Bentuk penuhnya dibahas di unit 11.",
+        "**Que yo sepa** = \"setahu saya\". Potongan tetap yang sangat berguna untuk menjawab tanpa memastikan. Pasangannya: *que yo recuerde* (seingat saya).",
+        "**A ver** dibaca \"a BER\" dan berarti \"coba lihat\" atau \"sebentar ya\". Kata pengisi jeda yang muncul di hampir semua percakapan Spanyol sehari-hari."
+      ],
+      "grammars": [
+        {
+          "title": "Doler dan kawan-kawannya",
+          "body": [
+            "Kelompok ini membalik susunan yang biasa kamu pakai. Yang berdiri di depan bukan pelakunya, melainkan **penerimanya**:"
+          ],
+          "table": {
+            "head": ["Kepada siapa", "Kata kerja", "Apa yang menyakitkan"],
+            "rows": [
+              ["me", "duele", "la cabeza"],
+              ["te", "duele", "el estómago"],
+              ["le", "duelen", "los pies"],
+              ["nos", "duele", "la espalda"],
+              ["les", "duelen", "las muelas"]
+            ]
+          },
+          "after": [
+            "Berpola sama persis: *molestar* (mengganggu), *picar* (gatal), *arder* (perih), *costar* (terasa berat), *apetecer* (lagi ingin), *encantar* (suka sekali).",
+            "Untuk menekankan atau memperjelas, tambahkan *a mí*, *a ti*, *a él*: *a mí me duele la cabeza, a ella le duele el estómago*."
+          ]
+        },
+        {
+          "title": "Empat cara menyarankan",
+          "body": [
+            "Diurutkan dari yang paling lembut ke yang paling memaksa:"
+          ],
+          "table": {
+            "head": ["Rumus", "Contoh", "Nada"],
+            "rows": [
+              ["¿Por qué no + sekarang?", "¿Por qué no descansas un poco?", "usul santai"],
+              ["deberías + dasar", "Deberías ir al médico.", "saran, sopan"],
+              ["tienes que + dasar", "Tienes que beber mucha agua.", "keharusan pribadi"],
+              ["hay que + dasar", "Hay que tomarlo cada ocho horas.", "aturan umum, tanpa menunjuk orang"]
+            ]
+          },
+          "after": [
+            "*Deberías* dipakai untuk *tú*; untuk *usted* bentuknya **debería** (sama seperti *él*), dan itu yang dipakai dokter di dialog."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Badan dan keluhannya",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Spanyol", "Cara baca", "Arti"],
+          "rows": [
+            ["la cabeza", "ka-BE-sa", "kepala"],
+            ["la garganta", "gar-GAN-ta", "tenggorokan"],
+            ["el estómago", "es-TO-ma-go", "perut, lambung"],
+            ["la espalda", "es-PAL-da", "punggung"],
+            ["el brazo", "BRA-so", "lengan"],
+            ["la pierna", "PIER-na", "kaki (paha ke bawah)"],
+            ["el pie", "PIE", "telapak kaki"],
+            ["la mano", "MA-no", "tangan"],
+            ["el oído", "o-I-do", "telinga bagian dalam"],
+            ["la muela", "MUE-la", "geraham"],
+            ["el pecho", "PE-cho", "dada"],
+            ["la rodilla", "rro-DI-ya", "lutut"]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Kalimat yang paling sering dipakai"
+        },
+        {
+          "type": "tabel",
+          "head": ["Spanyol", "Arti"],
+          "rows": [
+            ["No me encuentro bien.", "Saya kurang enak badan."],
+            ["Tengo fiebre / tos / gripe.", "Saya demam / batuk / flu."],
+            ["Estoy resfriado.", "Saya masuk angin, pilek."],
+            ["Me he hecho daño en la rodilla.", "Lutut saya cedera."],
+            ["¿Tiene algo para el dolor de cabeza?", "Ada obat sakit kepala?"],
+            ["¿Cada cuánto lo tomo?", "Diminum tiap berapa jam?"],
+            ["Soy alérgico a la penicilina.", "Saya alergi penisilin."],
+            ["Que te mejores.", "Semoga cepat sembuh."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Dua kata yang mudah tertukar",
+          "items": [
+            "**El oído** = telinga bagian dalam, yang sakit dan yang dipakai mendengar. **La oreja** = daun telinga, yang kelihatan dari luar. Dokter selalu bertanya soal *oído*.",
+            "**La pierna** = kaki dari pinggul ke bawah. **El pie** = telapaknya saja. Menyebut *me duele el pie* padahal lututmu yang sakit akan membuat pemeriksaannya salah arah."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "es": "encontrarse bien", "baca": "en-kon-TRAR-se BIEN", "id": "merasa sehat" },
+    { "es": "doler", "baca": "do-LER", "id": "terasa sakit" },
+    { "es": "la fiebre", "baca": "FIE-bre", "id": "demam" },
+    { "es": "la tos", "baca": "TOS", "id": "batuk" },
+    { "es": "tragar", "baca": "tra-GAR", "id": "menelan" },
+    { "es": "la boca", "baca": "BO-ka", "id": "mulut" },
+    { "es": "alérgico", "baca": "a-LER-khi-ko", "id": "alergi" },
+    { "es": "la infección", "baca": "in-fek-SION", "id": "infeksi" },
+    { "es": "recetar", "baca": "rre-se-TAR", "id": "meresepkan" },
+    { "es": "el antibiótico", "baca": "an-ti-BIO-ti-ko", "id": "antibiotik" },
+    { "es": "la pastilla", "baca": "pas-TI-ya", "id": "pil, tablet" },
+    { "es": "el jarabe", "baca": "kha-RA-be", "id": "obat sirup" },
+    { "es": "mejorar", "baca": "me-kho-RAR", "id": "membaik" },
+    { "es": "descansar", "baca": "des-kan-SAR", "id": "istirahat" },
+    { "es": "de acuerdo", "baca": "de a-KUER-do", "id": "setuju, baik" },
+    { "es": "desde hace", "baca": "DES-de A-se", "id": "sejak … yang lalu" },
+    { "es": "el centro de salud", "baca": "SEN-tro de sa-LUD", "id": "puskesmas" },
+    { "es": "la receta", "baca": "rre-SE-ta", "id": "resep" },
+    { "es": "resfriado", "baca": "rres-fri-A-do", "id": "pilek, masuk angin" },
+    { "es": "hacerse daño", "baca": "a-SER-se DA-nyo", "id": "cedera" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan *duele* atau *duelen*.",
+      "items": [
+        "Me ____ la cabeza.",
+        "Le ____ los pies.",
+        "¿Te ____ la garganta?",
+        "Nos ____ las piernas.",
+        "A mi padre le ____ la espalda."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Spanyol.",
+      "items": [
+        "Saya kurang enak badan.",
+        "Tenggorokan saya sakit sejak tiga hari lalu.",
+        "Tadi malam saya demam.",
+        "Sebaiknya kamu ke dokter.",
+        "Kamu harus banyak minum air.",
+        "Diminum tiap berapa jam?"
+      ]
+    },
+    {
+      "prompt": "Beri saran memakai *deberías* atau *tienes que*.",
+      "items": [
+        "Estoy muy cansado. → ____",
+        "Me duele mucho la muela. → ____",
+        "No entiendo la gramática. → ____",
+        "Tengo fiebre desde ayer. → ____"
+      ]
+    }
+  ],
+  "answers": [
+    "duele — duelen — duele — duelen — duele",
+    "No me encuentro bien. — Me duele la garganta desde hace tres días. — Anoche tuve fiebre. — Deberías ir al médico. — Tienes que beber mucha agua. — ¿Cada cuánto lo tomo?",
+    "Deberías descansar. — Tienes que ir al dentista. — Deberías repasar las notas. — Tienes que quedarte en casa."
+  ],
+  "wave": "Ulangi **unit 4**: ceritakan satu hari yang berantakan selama satu menit, memadukan latar (imperfecto) dan kejadian (indefinido)."
+}

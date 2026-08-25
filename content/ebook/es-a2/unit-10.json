@@ -1,0 +1,238 @@
+{
+  "title": "Belanja dan mengembalikan barang",
+  "title_target": "De compras y devoluciones",
+  "goal": "Berbelanja pakaian, menukar barang, dan mengeluh dengan sopan saat ada yang salah.",
+  "bekal": [
+    "menanyakan ukuran, warna, dan harga",
+    "memakai *quedar* untuk kecocokan ukuran",
+    "mengembalikan atau menukar barang",
+    "menyampaikan keluhan tanpa terdengar kasar"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — En la tienda",
+      "intro": "Paula membeli jaket, dan tiga hari kemudian kembali ke toko. Dua adegan, satu dialog.",
+      "lines": [
+        {
+          "speaker": "Dependienta:",
+          "text": "Hola, ¿te ayudo en algo?",
+          "id": "Halo, ada yang bisa dibantu?",
+          "literal": "halo, kepadamu saya-membantu di sesuatu?"
+        },
+        {
+          "speaker": "Paula:",
+          "text": "Sí, ¿tenéis esta chaqueta en una talla más grande?",
+          "id": "Iya, jaket ini ada ukuran yang lebih besar?",
+          "literal": "ya, kalian-punya ini jaket di satu ukuran lebih besar?"
+        },
+        {
+          "speaker": "Dependienta:",
+          "text": "En negro me queda una M. ¿Quieres probártela?",
+          "id": "Yang hitam sisa satu ukuran M. Mau dicoba?",
+          "literal": "di hitam kepadaku tersisa satu M. kamu-mau mencoba-kepadamu-itu?"
+        },
+        {
+          "speaker": "Paula:",
+          "text": "Vale. ¿Dónde están los probadores?",
+          "id": "Boleh. Kamar pasnya di mana?",
+          "literal": "baik. di-mana berada itu ruang-coba?"
+        },
+        {
+          "speaker": "Dependienta:",
+          "text": "Al fondo a la derecha. … ¿Qué tal te queda?",
+          "id": "Di ujung sebelah kanan. … Gimana, pas?",
+          "literal": "ke-itu ujung ke itu kanan. … apa begitu kepadamu tersisa?"
+        },
+        {
+          "speaker": "Paula:",
+          "text": "Me queda un poco ancha de hombros, pero me gusta. Me la llevo.",
+          "id": "Agak longgar di bahu, tapi saya suka. Saya ambil ini.",
+          "literal": "kepadaku tersisa se-sedikit lebar dari bahu, tetapi kepadaku menyenangkan. kepadaku itu saya-bawa."
+        },
+        {
+          "speaker": "Dependienta:",
+          "text": "Muy bien. Son cuarenta y cinco euros. ¿Con tarjeta o en efectivo?",
+          "id": "Baik. Empat puluh lima euro. Kartu atau tunai?",
+          "literal": "sangat baik. adalah empat-puluh dan lima euro. dengan kartu atau di tunai?"
+        },
+        {
+          "speaker": "Paula:",
+          "text": "Con tarjeta. ¿Me das el ticket, por favor? Por si acaso.",
+          "id": "Kartu. Minta struknya ya? Jaga-jaga.",
+          "literal": "dengan kartu. kepadaku kamu-beri itu struk, mohon? untuk jika kebetulan."
+        },
+        {
+          "speaker": "Paula:",
+          "text": "Buenas. Compré esta chaqueta el martes y se ha descosido una manga.",
+          "id": "Permisi. Saya beli jaket ini hari Selasa dan jahitan lengannya lepas.",
+          "literal": "baik-baik. saya-beli ini jaket itu Selasa dan dirinya telah melepas-jahitan satu lengan."
+        },
+        {
+          "speaker": "Dependienta:",
+          "text": "Vaya, lo siento. ¿Tienes el ticket?",
+          "id": "Aduh, maaf ya. Struknya ada?",
+          "literal": "wah, itu saya-sesali. kamu-punya itu struk?"
+        },
+        {
+          "speaker": "Paula:",
+          "text": "Aquí lo tienes. ¿Podéis cambiármela por otra igual?",
+          "id": "Ini strukmu. Bisa ditukar dengan yang sama?",
+          "literal": "di-sini itu kamu-punya. kalian-bisa menukar-kepadaku-itu dengan lain sama?"
+        },
+        {
+          "speaker": "Dependienta:",
+          "text": "Claro. Y si no queda tu talla, te devolvemos el dinero.",
+          "id": "Tentu. Kalau ukuranmu habis, uangnya kami kembalikan.",
+          "literal": "jelas. dan jika tidak tersisa kamu-punya ukuran, kepadamu kami-kembalikan itu uang."
+        }
+      ],
+      "notes": [
+        "**Quedar punya tiga arti yang semuanya sering dipakai.** (1) Berpola *gustar* untuk kecocokan pakaian: *me queda grande* (kebesaran di saya). (2) Tersisa: *me queda una M* (sisa satu ukuran M). (3) Janjian: *quedamos a las ocho* (kita ketemu jam delapan). Konteks selalu memisahkannya.",
+        "**Me queda bien versus me gusta.** *Me gusta* menilai barangnya; *me queda bien* menilai cocoknya di badanmu. Penjual toko hampir selalu bertanya dengan yang kedua: *¿qué tal te queda?*",
+        "**Probártela** menumpuk dua kata ganti di belakang kata kerja dasar: *probar + te + la*. Perhatikan aksen yang muncul untuk menjaga tekanan. Latihan unit 5 terbayar persis di sini.",
+        "**Me la llevo** = \"saya ambil ini\" saat memutuskan membeli. *Llevarse* adalah kata yang dipakai di toko, bukan *comprar* — *comprar* terdengar seperti sedang menjelaskan, bukan memutuskan.",
+        "**Tenéis, podéis** adalah bentuk *vosotros*: pembeli menyapa toko sebagai kelompok. Di Amerika Latin bentuknya *tienen*, *pueden*.",
+        "**Se ha descosido.** Sekali lagi bahasa Spanyol melempar tanggung jawab kepada bendanya: bukan \"saya merusak\", melainkan \"jahitannya lepas sendiri\". Ini pilihan halus yang membuat keluhanmu terdengar tidak menyalahkan siapa pun — dan justru karena itu lebih efektif.",
+        "**Por si acaso** = \"kalau-kalau\", \"jaga-jaga\". Potongan tetap yang tak perlu dibongkar.",
+        "**Aquí lo tienes** = \"ini, silakan\" saat menyerahkan sesuatu. Bentuk sopannya *aquí lo tiene*. Jauh lebih alami daripada menerjemahkan \"ini dia\" secara harfiah."
+      ],
+      "grammars": [
+        {
+          "title": "Quedar untuk pakaian",
+          "body": [
+            "Berpola persis seperti *gustar* dan *doler*: yang berdiri di depan adalah orangnya, dan kata kerjanya mengikuti **bendanya**."
+          ],
+          "table": {
+            "head": ["Kalimat", "Arti"],
+            "rows": [
+              ["Me queda bien.", "Pas di saya."],
+              ["Me queda grande / pequeño.", "Kebesaran / kekecilan."],
+              ["Me queda ancho de hombros.", "Longgar di bahu."],
+              ["Te quedan muy bien esos pantalones.", "Celana itu cocok banget di kamu."],
+              ["¿Cómo me queda?", "Gimana, cocok?"],
+              ["No me queda nada bien.", "Sama sekali tidak cocok."]
+            ]
+          },
+          "after": [
+            "Untuk warna dipakai *quedar bien con*: *el rojo te queda bien con la piel*. Untuk gaya, penutur asli lebih sering memakai *favorecer*: *ese color te favorece*."
+          ]
+        },
+        {
+          "title": "Mengeluh dengan sopan",
+          "body": [
+            "Bahasa Spanyol menyelesaikan keluhan lewat susunan kalimat, bukan lewat nada suara. Tiga lapis di bawah ini dipakai berurutan:"
+          ],
+          "table": {
+            "head": ["Lapis", "Kalimat", "Kenapa berhasil"],
+            "rows": [
+              ["1. Menyebut fakta", "Compré esto el martes y se ha roto.", "tanpa menuduh siapa pun"],
+              ["2. Meminta", "¿Podrían cambiármelo?", "kondisional membuatnya jadi permintaan, bukan tuntutan"],
+              ["3. Menawarkan jalan keluar", "Si no queda mi talla, prefiero que me devuelvan el dinero.", "memberi pilihan, bukan ultimatum"]
+            ]
+          },
+          "after": [
+            "Kalimat yang paling berguna dihafal utuh: *¿Me lo pueden cambiar?* · *¿Puedo devolverlo?* · *No funciona.* · *Me han cobrado de más.* (saya kelebihan ditagih) · *Esto no es lo que pedí.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Toko, ukuran, dan uang",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Spanyol", "Cara baca", "Arti"],
+          "rows": [
+            ["la talla", "TA-ya", "ukuran baju"],
+            ["el número", "NU-me-ro", "ukuran sepatu"],
+            ["el probador", "pro-ba-DOR", "kamar pas"],
+            ["el ticket / el recibo", "TI-ket / rre-SI-bo", "struk"],
+            ["la caja", "KA-kha", "kasir"],
+            ["en efectivo", "en e-fek-TI-bo", "tunai"],
+            ["con tarjeta", "kon tar-KHE-ta", "pakai kartu"],
+            ["el descuento", "des-KUEN-to", "diskon"],
+            ["las rebajas", "rre-BA-khas", "musim obral"],
+            ["devolver", "de-bol-BER", "mengembalikan"],
+            ["cambiar", "kam-BIAR", "menukar"],
+            ["la garantía", "ga-ran-TI-a", "garansi"],
+            ["ancho / estrecho", "AN-cho / es-TRE-cho", "longgar / sempit"],
+            ["apretado", "a-pre-TA-do", "ketat"],
+            ["el escaparate", "es-ka-pa-RA-te", "etalase"],
+            ["agotado", "a-go-TA-do", "habis stok"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Angka besar untuk harga",
+          "items": [
+            "Sesudah **cien**, angkanya disambung tanpa *y*: *ciento veinte*, *ciento cincuenta*. *Y* hanya muncul di antara puluhan dan satuan: *ciento treinta **y** cinco*.",
+            "Ratusan ikut jenis bendanya: *doscientos euros*, tapi *doscientas personas*. Ini sering terlewat.",
+            "Bahasa Spanyol memakai titik untuk ribuan dan koma untuk desimal — kebalikan bahasa Inggris, sama dengan bahasa Indonesia: *1.250,50 euros*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "es": "la talla", "baca": "TA-ya", "id": "ukuran baju" },
+    { "es": "probarse", "baca": "pro-BAR-se", "id": "mencoba (pakaian)" },
+    { "es": "el probador", "baca": "pro-ba-DOR", "id": "kamar pas" },
+    { "es": "quedar", "baca": "ke-DAR", "id": "cocok, tersisa" },
+    { "es": "ancho", "baca": "AN-cho", "id": "longgar, lebar" },
+    { "es": "el hombro", "baca": "OM-bro", "id": "bahu" },
+    { "es": "llevarse", "baca": "ye-BAR-se", "id": "mengambil, membeli" },
+    { "es": "la tarjeta", "baca": "tar-KHE-ta", "id": "kartu" },
+    { "es": "en efectivo", "baca": "en e-fek-TI-bo", "id": "tunai" },
+    { "es": "el ticket", "baca": "TI-ket", "id": "struk" },
+    { "es": "por si acaso", "baca": "por si a-KA-so", "id": "jaga-jaga" },
+    { "es": "descoserse", "baca": "des-ko-SER-se", "id": "lepas jahitannya" },
+    { "es": "la manga", "baca": "MAN-ga", "id": "lengan baju" },
+    { "es": "cambiar", "baca": "kam-BIAR", "id": "menukar" },
+    { "es": "devolver", "baca": "de-bol-BER", "id": "mengembalikan" },
+    { "es": "el dinero", "baca": "di-NE-ro", "id": "uang" },
+    { "es": "igual", "baca": "i-GUAL", "id": "sama" },
+    { "es": "al fondo", "baca": "al FON-do", "id": "di ujung" },
+    { "es": "las rebajas", "baca": "rre-BA-khas", "id": "obral" },
+    { "es": "agotado", "baca": "a-go-TA-do", "id": "habis stok" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Lengkapi dengan bentuk *quedar* yang tepat.",
+      "items": [
+        "Esta chaqueta me ____ grande.",
+        "Esos pantalones te ____ muy bien.",
+        "Solo nos ____ dos tallas.",
+        "¿Cómo me ____ el vestido?",
+        "No me ____ nada bien estos zapatos."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Spanyol.",
+      "items": [
+        "Ada ukuran yang lebih besar?",
+        "Mau dicoba dulu?",
+        "Agak longgar di bahu.",
+        "Saya ambil ini.",
+        "Bisa ditukar dengan yang sama?",
+        "Saya beli ini hari Selasa dan sudah rusak."
+      ]
+    },
+    {
+      "prompt": "Ubah jadi kalimat dengan kata ganti yang menempel di belakang.",
+      "items": [
+        "¿Quieres probar la chaqueta? → ¿Quieres ____?",
+        "¿Pueden cambiar el jersey a mí? → ¿Pueden ____?",
+        "Voy a devolver los zapatos. → Voy a ____.",
+        "Estoy buscando la talla. → Estoy ____."
+      ]
+    }
+  ],
+  "answers": [
+    "queda — quedan — quedan — queda — quedan",
+    "¿Tenéis una talla más grande? — ¿Quieres probártela? — Me queda un poco ancha de hombros. — Me la llevo. — ¿Podéis cambiármela por otra igual? — Compré esto el martes y ya se ha roto.",
+    "probártela — cambiármelo — devolverlos — buscándola"
+  ],
+  "wave": "Ulangi **unit 8**: ceritakan riwayat kerjamu selama satu menit, memakai *llevo … trabajando*, *he aprendido*, dan satu kejadian dengan indefinido."
+}
